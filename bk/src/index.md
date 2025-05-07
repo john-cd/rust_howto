@@ -17,47 +17,48 @@ This book is intended for
 - new Rust programmers, to get an overview of the capabilities of the Rust ecosystem and pointers to other resources.
 - experienced programmers, to find code examples and review best practices for common programming tasks.
 
-Readers should have already some basic familiarity with [`Rust`][rust]{{hi:Rust}}⮳ concepts. The [`Rust book`][book-rust]{{hi:Rust book}}⮳ is an excellent resource for complete beginners to get started with. This said, key features of the language are succinctly summarized in this book's [language][p-lang] section.
+Readers should have already some basic familiarity with [`Rust`][rust]{{hi:Rust}}⮳ concepts. The [`Rust book`][book-rust]{{hi:Rust book}}⮳ is an excellent resource for complete beginners to get started with. This said, key features of the language are summarized in this book's [language][p-lang] section.
 
 ## Why This Book
 
-Per the curated list of Rust crates [`blessed.rs`][blessed-rs-website]⮳, "the standard library in Rust is much smaller than in Python or Go, for example. Those languages come with "batteries included" support ... Rust, on the other hand, gets things like that from the [`crates.io`][crates.io-website]{{hi:crates.io}}⮳ ecosystem and the [`Cargo`][c-cargo]⮳{{hi:Cargo}} package manager. But with _more than 160 thousand crates_ (libraries) to choose from, a common complaint from new Rust developers is that they don't know where to start, which crates they ought to use, and which crates they ought to trust." There are no dominant frameworks or platforms akin to `Rails`, `Django`, `Spring` or `Node` in the Rust world at this time.
+Per the curated list of Rust crates [`blessed.rs`][blessed-rs-website]⮳, "the standard library in Rust is much smaller than in Python or Go, for example. Those languages come with "batteries included" support ... Rust, on the other hand, gets things like that from the [`crates.io`][crates.io-website]{{hi:crates.io}}⮳ ecosystem and the [`Cargo`][c-cargo]⮳{{hi:Cargo}} package manager. But with _more than 180 thousand crates_ (libraries) to choose from, a common complaint from new Rust developers is that they don't know where to start, which crates they ought to use, and which crates they ought to trust." There are no dominant frameworks or platforms akin to `Rails`, `Django`, `Spring` or `Node` in the Rust world at this time.
 
-This book therefore intends to provide EXAMPLES to demonstrate the uses of KEY CRATES, that is libraries necessary for day-to-day Rust coding - examples which are absent from or scattered in the [reference documentation][docs-rs]⮳. It hopes to become a "cheat sheet on steroid" for the Rust ecosystem (_not just_ for the Rust language).
+This book therefore intends to provide EXAMPLES to demonstrate the uses of KEY CRATES, that is libraries necessary for day-to-day Rust coding - examples which are absent from or scattered in the [reference documentation][docs-rs]⮳ of hundreds of crates. It hopes to become a "cheat sheet on steroid" for the Rust ECOSYSTEM (_not just_ for the Rust language).
 
 ## This Book Includes Most of the "Rust Cookbook"
 
-The "Rust How-to" project started as a set of notes kept while the author was learning Rust and evolved in a standalone book. The author then came across the [Rust Cookbook][book-rust-cookbook]⮳ community project, which shares very similar goals. Unfortunately, no updates have been made to that book in more than 4 years. Many of its examples no longer work. Several crates it references are no longer maintained. The author thus decided to merge the contents of the `Rust Cookbook` into this book, testing and refreshing its examples, and expanding its coverage significantly.
+The "Rust How-to" project started as a set of notes kept while the author was learning Rust and evolved in a standalone book. The author then came across the [Rust Cookbook][book-rust-cookbook]⮳ community project, which shares very similar goals. Unfortunately, few updates have been made to that book in the last 4 years. Many of its examples no longer work. Several crates it references are no longer maintained. The author thus decided to merge the contents of the `Rust Cookbook` into this book, testing and refreshing its examples.
 
 ## How to Read This Book
 
-The left sidebar is organized by topic.
+The left sidebar is organized by topic. Click on a topic in the sidebar to navigate to the page for that section of the book.
 
-- The book first quickly summarizes the basics of the [language][p-lang] and often-used elements of the [standard library][p-standard-library].
-- The crates section provides pointers on how to locate key crates and provides alphabetical and categorical indices of crates used in the book.
-- The bulk of the book is divided in sections named after the [`crates.io`][crates.io-website]{{hi:crates.io}}⮳ [categories][crates.io-category_slugs]⮳ whenever possible.
+- The book first summarizes the basics of the [language][p-lang] and often-used elements of the [standard library][p-standard-library]. The [[code_organization | code organization]] section explains how Rust code should be structured.
+- The [[crates | key crates]] section provides pointers on how to locate key crates and provides [[crates_alphabetical | alphabetical]] and [[crates_by_category | categorical]] indices of crates used in the book.
+- The bulk of the book is divided in sections named after the [`crates.io`][crates.io-website]{{hi:crates.io}}⮳ [categories][crates.io-category_slugs]⮳, whenever possible.
 - Each section contains a list of recipes. The recipes are simple statements of a task to accomplish, like "generate random numbers in a range"; and each recipe is tagged with badges indicating which _crates_ they use, like [![rand][c-rand-badge]][c-rand], and which categories on [`crates.io`][crates.io-website]{{hi:crates.io}} those crates belong to, like [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}}.
-- The book focuses on cross-cutting concerns that affect most aspects of development e.g. [error handling][p-errors], [error customization][p-error-customization], [configuration][p-config], [debugging][p-debugging]...
-- [Concurrency][p-concurrency], including [asynchronous programming][p-asynchronous], is covered in details. So are [development tools][p-development-tools].
-- programming domains such as [CLI][p-cli] and [Web][p-web-programming] development.
-
-The [links][p-links] section provides pointers to notable Rust websites, learning resources, cheat sheets, books, and code examples...
 
 The [contributing][p-contributing] section details how to contribute to the book itself.
 
-New Rust programmers should be comfortable reading from the first section to the last, and doing so should give one a strong overview of the crate ecosystem. Click on a topic in the sidebar to navigate to the page for that section of the book.
+If you are simply looking for the solution to a given task, the easiest ways to find a specific recipe are to
 
-If you are simply looking for the solution to a simple task, the easiest ways to find a specific recipe are to
+- use the search button (in the top toolbar),
+- scan the left-side bar for categories you are interested in,
+- scan the [Index of examples][p-index-examples], and from there, click on the name of the recipe to view it,
+- look up into the [Word index][p-word-index] lists concepts, crates (in lower case), and Rust items (using their full path e.g. [`parking_lot::ReentrantMutex`][c-parking_lot::ReentrantMutex]⮳{{hi:parking_lot::ReentrantMutex}}),
+- consult the [[crates_alphabetical | alphabetical]] and [[crates_by_category | categorical]] crates indices.
 
-- use the search button.
-- scan the left-side bar for categories you are interested in.
-- scan the [Index of examples][p-index-examples], and from there, click on the name of the recipe to view it.
-- look up into the [Word index][p-word-index] lists concepts, crates (in lowercase), and Rust items (using their full path e.g. [`parking_lot::ReentrantMutex`][c-parking_lot::ReentrantMutex]⮳{{hi:parking_lot::ReentrantMutex}}).
-- consult the alphabetical and categorical crates indices.
+The [links][p-links] section provides pointers to notable Rust websites, [[learning | learning]] resources, cheat sheets, [[books | books]], and[[example_code | code examples]]...
+
+## Important Sections
+
+- The book covers cross-cutting concerns that affect most aspects of development e.g. [error handling][p-errors], [error customization][p-error-customization], [configuration][p-config], [debugging][p-debugging]...
+- [Concurrency][p-concurrency], including [asynchronous programming][p-asynchronous], is covered in details.
+- So are [development tools][p-development-tools] and programming domains such as [CLI][p-cli] and [Web][p-web-programming] development.
 
 ## How to Use the Recipes
 
-Recipes are designed to give you instant access to working code, along with a full explanation of what it is doing, and to guide you to further information. All recipes are self-contained programs, so that they may be copied directly into your own projects for experimentation. To do so follow the instructions below.
+Recipes are designed to give you instant access to working code, along with a full explanation of what it is doing, and to guide you to further information. All recipes are self-contained programs, so that they may be copied directly into your own projects for experimentation. To do so, follow the instructions below.
 
 Consider this example for "generate random numbers within a range":
 
@@ -110,7 +111,7 @@ For more background on error handling in Rust, read [this page][book-rust-error-
 
 ## Additional Examples
 
-The [`crates/xmpl`][rust-howto-xmpl-github] folder in the book's GitHub repo contains additional examples that can't be embedded into the book, due to their length.
+The [`xmpl`][rust-howto-xmpl-github] folder in the book's GitHub repo contains additional examples that can't be embedded into the book, due to their length.
 
 ## A Note about Crate Representation
 
@@ -118,9 +119,10 @@ This book is intended to provide expansive coverage of "key" or "foundational" c
 
 Key crates are identified by cross-referencing:
 
-- [`blessed.rs`][blessed-rs-website]{{hi:blessed.rs}}⮳ and similar resources.
-- most downloaded crates (overall and per category) in [`crates.io`][crates.io-website]{{hi:crates.io}}⮳.
-- high-quality crates per [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳ [statistics][lib-rs-stats]⮳.
+- [`blessed.rs`][blessed-rs-website]{{hi:blessed.rs}}⮳ and similar resources,
+- Most downloaded crates (overall and per category) in [`crates.io`][crates.io-website]{{hi:crates.io}}⮳,
+- [Most popular Rust libraries][lib-rs-most-popular],
+- High-quality crates per [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳ [statistics][lib-rs-stats]⮳.
 
 The selection process is necessarily opinionated. Feel free to offer suggestions (or submit a PR), if the author missed an important, widely used crate.
 
@@ -128,11 +130,12 @@ The selection process is necessarily opinionated. Feel free to offer suggestions
 
 [Rust by Example][book-rust-by-example-book]⮳ is similar in concept - a collection of runnable examples - but not in scope, as it focuses solely on the Rust language and standard library.
 
-Consult the links section and its books page for other recommendations.
+Consult the [[links | Links]] section and its [[books | Books]] page for other recommendations.
 
 {{#include refs.incl.md}}
 {{#include refs/link-refs.md}}
 
 <div class="hidden">
 [index: polish NOW](https://github.com/john-cd/rust_howto/issues/536)
+link to categories.md
 </div>
