@@ -30,7 +30,7 @@ See also [OpenCV (example)][c-opencv-example]{{hi:opencv}}⮳.
 The [`opencv`][c-opencv]⮳{{hi:opencv}} Rust crate provides bindings to OpenCV.
 
 ```rust,editable
-{{#include ../../../crates/cats/computer_vision/tests/opencv.rs:example}}
+{{#include ../../../crates/cats/computer_vision/tests/opencv/opencv.rs:example}}
 ```
 
 ## See Also
