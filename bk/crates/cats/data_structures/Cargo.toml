@@ -29,7 +29,7 @@ multimap = "0.10.0"
 petgraph = "0.8.1"
 priority-queue = "2.3.1"
 rangemap = "1.5.1"
-skiplist = "0.5.1"
+skiplist = "0.6.0"
 slotmap = "1.0.7"
 smallvec = "2.0.0-alpha.8" # alpha
 tinyvec = { version = "1.8.1", features = ["alloc"] }
