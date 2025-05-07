@@ -124,7 +124,8 @@ RUN <<EOF
     fi
     cargo binstall --no-confirm mdbook-linkcheck
     cargo binstall --no-confirm mdbook-private
-    cargo binstall --no-confirm mdbook-indexing
+    # old version: cargo binstall --no-confirm mdbook-indexing
+    cargo install --force mdbook-indexing
     cargo install --locked mdbook-pandoc
 
     ## [LATER https://lib.rs/crates/mdbook-open-on-gh add an "Edit this file on GitHub" link on the bottom of every page, linking directly to the source file.](https://github.com/john-cd/rust_howto/issues/1278)

@@ -63,11 +63,12 @@ curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-
 cargo binstall --no-confirm --secure cargo-nextest
 
 # mdbook
-cargo binstall --version "0.4.35" --no-confirm --force mdbook
+cargo binstall --no-confirm --force mdbook
 
 cargo binstall --no-confirm mdbook-linkcheck
 cargo binstall --no-confirm mdbook-private
-cargo binstall --no-confirm mdbook-indexing
+# old version: cargo binstall --no-confirm mdbook-indexing
+cargo install --force mdbook-indexing
 
 cargo binstall --no-confirm just
 cargo binstall --no-confirm cargo-deny
