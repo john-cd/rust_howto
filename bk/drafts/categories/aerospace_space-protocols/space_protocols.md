@@ -5,7 +5,7 @@
 ## Space Protocols {#space-protocols}
 
 ```rust,editable
-{{#include ../../../crates/cats/aerospace_space_protocols/tests/space_protocols.rs:example}}
+{{#include ../../../crates/cats/aerospace_space_protocols/tests/space_protocols/space_protocols.rs:example}}
 ```
 
 ## See Also
