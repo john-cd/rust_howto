@@ -8733,6 +8733,7 @@ name = "development_tools_build_utils"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "autocfg",
  "cc",
 ]
 

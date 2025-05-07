@@ -10,21 +10,8 @@ Automatic cfg for Rust compiler features
 
 A Rust library for build scripts to automatically configure code based on compiler support. Code snippets are dynamically tested to see if the rustc will accept them, rather than hard-coding specific version support.
 
-Add to your `Cargo.toml`:
-
-```toml
-[build-dependencies]
-autocfg = "1.0.0" # Or latest version
-```
-
 ```rust,editable
-fn main() {
-    let ac = autocfg::new();
-    ac.emit_has_type("i128");
-
-    // (optional) We don't need to rerun for anything external.
-    autocfg::rerun_path("build.rs");
-}
+{{#include ../../../crates/cats/development_tools_build_utils/tests/autocfg/autocfg.rs:example}}
 ```
 
 {{#include refs.incl.md}}
