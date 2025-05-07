@@ -13,7 +13,7 @@ echo "----------"
 ## Spell checks
 .devcontainer/spellcheck.sh list
 
-cd ./bk
+cd ./bk/crates
 
 ## Checks the Rust code formatting
 ## Fails if not formatted properly
@@ -54,6 +54,7 @@ cargo test --workspace --doc --locked --profile ci -- --show-output
 ## NOTE supersedes: mdbook test / skeptic tests
 
 ## Build the book (html)
+cd ..
 mdbook build
 
 ## Add static assets

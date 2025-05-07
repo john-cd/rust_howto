@@ -18,7 +18,7 @@
 ## The target directories of all workspaces are kept in `<root>/target/<workspace_name>`.
 ## `<root>/target` is mounted on a separate docker volume to avoid bind mounting (which is very slow).
 ## See `compose.override.yaml` for more details.
-target-dir="../target/bk/"
+target-dir="../../target/bk/"
 # rustflags = ["…", "…"]        # custom flags to pass to all compiler invocations
 # rustflags = ["-C", "link-arg=-fuse-ld=lld"]
 # rustdocflags = ["…", "…"]     # custom flags to pass to rustdoc

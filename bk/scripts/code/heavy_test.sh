@@ -2,7 +2,7 @@
 set -ue
 
 root="$(realpath $1)/"
-d="${root}/../.devcontainer/"
+d="${root}/.devcontainer/"
 feature="$2"
 
 ## "feature" must be the name of a service in `compose-heavy-tests.yaml`

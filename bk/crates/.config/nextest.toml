@@ -1,7 +1,7 @@
 [store]
 # The directory under the workspace root at which nextest-related files are
 # written. Profile-specific storage is currently written to dir/<profile-name>.
-dir = "target/nextest"
+dir = "../../target/bk/nextest"
 
 # This section defines the default nextest profile. Custom profiles are layered
 # on top of the default profile.

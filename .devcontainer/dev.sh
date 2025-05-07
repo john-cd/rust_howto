@@ -19,10 +19,10 @@ fi
 
 echo "-------------------------------------------"
 
-cd ./bk
+cd ./bk/crates
 
 echo "Format the code"
-just fa
+cargo +nightly fmt --all
 
 echo "Fetch the dependencies"
 cargo fetch

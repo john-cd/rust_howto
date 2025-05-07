@@ -1,6 +1,8 @@
 set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 
-root := clean(source_directory() + "/../..")
+root := clean(source_directory() + "/../../..")
+book_root := clean(root + "/bk")
+code_root := clean(book_root + "/crates")
 
 [no-exit-message]
 _default:
@@ -12,14 +14,14 @@ alias f := fmt
 
 # Format all bin and lib files
 @fmt:
-  echo "Formatting {{root}}"; cd {{root}}; cargo +nightly fmt
+  echo "Formatting {{code_root}}"; cd {{code_root}}; cargo +nightly fmt
 
 alias fa := fmtall
 
 # Format all packages and their local path-based dependencies
 @fmtall:
-  echo "Formatting all packages and their local path-based dependencies in {{root}}"
-  cd {{root}}; cargo +nightly fmt --all
+  echo "Formatting all packages and their local path-based dependencies in {{code_root}}"
+  cd {{code_root}}; cargo +nightly fmt --all
 
 alias fc := fmtcurrent
 
@@ -41,8 +43,8 @@ alias cka := checkall
 
 # Check all code (all packages, all features)
 @checkall:
-  echo "Check all code (all packages, all features) in {{root}}"
-  cd {{root}}; cargo check --workspace --all-targets --locked --all-features
+  echo "Check all code (all packages, all features) in {{code_root}}"
+  cd {{code_root}}; cargo check --workspace --all-targets --locked --all-features
 # `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
 alias bc := buildcurrent
@@ -64,41 +66,41 @@ alias b := build
 
 # Build just the code used by the book (default packages, default features)
 @build:
-  echo "Build default packages (default features) in {{root}}"
-  cd {{root}}; cargo build --all-targets --locked --timings
+  echo "Build default packages (default features) in {{code_root}}"
+  cd {{code_root}}; cargo build --all-targets --locked --timings
 
 alias bf := buildfeat
 
 # Build just the code used by the book (default packages, all features)
 @buildfeat:
-  echo "Build default packages (all features) in {{root}}"
-  cd {{root}}; cargo build --all-targets --locked --all-features --timings
+  echo "Build default packages (all features) in {{code_root}}"
+  cd {{code_root}}; cargo build --all-targets --locked --all-features --timings
 
 alias ba := buildall
 
 # Build all packages (all features)
 @buildall:
-  echo "Build all packages, all features in {{root}}"
-  cd {{root}}; cargo build --workspace --all-targets --locked --all-features --timings
+  echo "Build all packages, all features in {{code_root}}"
+  cd {{code_root}}; cargo build --workspace --all-targets --locked --all-features --timings
 
 alias ca := clippyall
 
 # Scan all code for common mistakes (all packages, all features)
 @clippyall:
-  echo "Scan all code for common mistakes (all packages, all features) in {{root}}"
-  cd {{root}}; cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
+  echo "Scan all code for common mistakes (all packages, all features) in {{code_root}}"
+  cd {{code_root}}; cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
 
 # Test any doctests in the workspace
 @doctest:
-  echo "Test any doctests in the workspace in {{root}}"
-  cd {{root}}; cargo test --workspace --doc --locked
-
-current_crate := file_name(invocation_directory())
+  echo "Test any doctests in the workspace in {{code_root}}"
+  cd {{code_root}}; cargo test --workspace --doc --locked
 
 alias ntt := nextestthis
 
 @nextestthis test:
   cargo nextest run --locked --no-fail-fast --success-output final -E 'test(~{{test}}) or binary_id(~{{test}})'
+
+current_crate := file_name(invocation_directory())
 
 alias ntc := nextestcurrent
 
@@ -112,20 +114,20 @@ alias nt := nextest
 
 # Test the code used by the book (no doctests) (default packages, default features)
 @nextest: _clean_temp_dir && _clean_temp_dir
-  echo "Test the code under {{root}} (no doctests, default packages, default features)"
-  cd {{root}} && cargo nextest run --all-targets --locked --no-fail-fast --status-level all
+  echo "Test the code under {{code_root}} (no doctests, default packages, default features)"
+  cd {{code_root}} && cargo nextest run --all-targets --locked --no-fail-fast --status-level all
 
 alias nta := nextestall
 
 # Test all code in the workspace, including doctests (all features)
 @nextestall: _clean_temp_dir && _clean_temp_dir
-  echo "Test all code in the workspace in {{root}} (incl. doctests) (all features)"
-  cd {{root}} && cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all --all-features && cargo test --doc --workspace
+  echo "Test all code in the workspace in {{code_root}} (incl. doctests) (all features)"
+  cd {{code_root}} && cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all --all-features && cargo test --doc --workspace
 
 # Clean the `crates/**/temp` folders of most files prior / after testing
 @_clean_temp_dir:
   echo "Clean temp folders"
-  {{root}}/../bin/clean {{root}}
+  {{root}}/bin/clean {{code_root}}
 
 alias r := run
 
@@ -140,7 +142,7 @@ alias r := run
 [group('heavy tests')]
 [unix]
 @heavy_test feature:
-  echo "Run tests using {{feature}} in {{root}}"
+  echo "Run heavy tests using {{feature}}"
   ./heavy_test.sh {{root}} {{feature}}
 
 # Run all tests that require external services
