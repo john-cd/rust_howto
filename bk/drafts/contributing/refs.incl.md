@@ -13,40 +13,41 @@
 [ex-contributing-repo-structure]: repo_structure.md#repo-structure
 [ex-contributing-topics-of-interest]: topics_of_interest.md#topics-of-interest
 [ex-contributing-using-vs-code]: dev_environment_setup.md#using-vs-code
-[p-authentication]: ../../src/categories/authentication/index.md
+[p-authentication]: # "../categories/authentication/index.md"
 [p-aws]: # "../other/cloud/aws.md"
-[p-cargo]: ../../src/categories/development-tools/cargo/cargo.md
+[p-cargo]: # "../categories/development-tools/cargo/cargo.md"
 [p-cloud]: # "../other/cloud/index.md"
-[p-compression]: ../../src/categories/compression/index.md
-[p-configuration]: ../../src/categories/config/configuration.md
-[p-crates]: ../../src/crates/index.md
-[p-database]: ../../src/categories/database/index.md
-[p-databases]: ../../src/categories/database-implementations/databases.md
-[p-documentation]: ../../src/categories/development-tools/documentation/documentation.md
+[p-compression]: # "../categories/compression/index.md"
+[p-configuration]: # "../categories/config/configuration.md"
+[p-crates]: # "../crates/index.md"
+[p-database]: # "../categories/database/index.md"
+[p-databases]: # "../categories/database-implementations/databases.md"
+[p-documentation]: # "../categories/development-tools/documentation/documentation.md"
 [p-drones]: # "../categories/aerospace_drones/drones.md"
 [p-embedded]: # "../categories/embedded/index.md"
-[p-encryption]: ../../src/categories/cryptography/encryption.md
-[p-formatting]: ../../src/categories/development-tools/formatting/formatting.md
+[p-encryption]: # "../categories/cryptography/encryption.md"
+[p-formatting]: # "../categories/development-tools/formatting/formatting.md"
 [p-games]: # "../categories/games/games.md"
-[p-geo]: ../../src/categories/science_geo/geo.md
+[p-geo]: # "../categories/science_geo/geo.md"
 [p-gpu]: # "../other/gpu/gpu.md"
-[p-json]: ../../src/categories/parser-implementations/json.md
-[p-language]: ../../src/language/index.md
-[p-learning]: ../links/learning.md
+[p-json]: # "../categories/parser-implementations/json.md"
+[p-language]: # "../language/index.md"
+[p-learning]: # "../links/learning.md"
 [p-machine-learning]: # "../categories/science/machine_learning.md"
-[p-main]: ../../src/language/entrypoint.md
-[p-markdown]: ../../src/categories/parser-implementations/markdown.md
-[p-modules]: ../../src/code_organization/modules.md
-[p-network-programming]: ../../src/categories/network-programming/index.md
-[p-protocols]: ../../src/categories/aerospace_protocols/aerospace_protocols.md
+[p-main]: # "../language/entrypoint.md"
+[p-markdown]: # "../categories/parser-implementations/markdown.md"
+[p-modules]: # "../code_organization/modules.md"
+[p-network-programming]: # "../categories/network-programming/index.md"
+[p-protocols]: # "../categories/aerospace_protocols/aerospace_protocols.md"
 [p-science]: # "../categories/science/index.md"
-[p-search]: ../../src/categories/database/search.md
-[p-server]: ../../src/categories/network-programming/server.md
+[p-search]: # "../categories/database/search.md"
+[p-server]: # "../categories/network-programming/server.md"
 [p-serverless]: # "../other/cloud/serverless.md"
 [p-space-protocols]: # "../categories/aerospace_space-protocols/space_protocols.md"
-[p-src]: ../../src/index.md
-[p-statistics]: ../../src/categories/mathematics/statistics.md
-[p-toml]: ../../src/categories/parser-implementations/toml.md
-[p-uavs]: ../../src/categories/aerospace_unmanned-aerial-vehicles/uavs.md
+[p-src]: # "../index.md"
+[p-statistics]: # "../categories/mathematics/statistics.md"
+[p-toml]: # "../categories/parser-implementations/toml.md"
+[p-uavs]: # "../categories/aerospace_unmanned-aerial-vehicles/uavs.md"
 [p-version-control]: # "../other/devops/version_control.md"
-[p-windows]: ../../src/categories/os_windows-apis/windows.md
+[p-windows]: # "../categories/os_windows-apis/windows.md"
+[p-topics-of-interest]: topics_of_interest.md

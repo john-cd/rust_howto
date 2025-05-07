@@ -2,7 +2,7 @@
 
 {{#include publication.incl.md}}
 
-The `crates/publish` folder contains a placeholder crate, so that the book could be located when searching on [`crates.io`][crates.io-website]{{hi:crates.io}}⮳.
+The `publish` folder contains a placeholder crate, so that the book could be located when searching on [`crates.io`][crates.io-website]{{hi:crates.io}}⮳.
 
 - `cargo update` if necessary.
 - Go to [`crates.io`][crates.io-website]{{hi:crates.io}}⮳, sign in, and create an API token in `Account Settings` > `API Tokens`.
