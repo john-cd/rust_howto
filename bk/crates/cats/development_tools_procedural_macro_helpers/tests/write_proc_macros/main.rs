@@ -1,3 +1,9 @@
+mod darling;
+mod paste;
+mod proc_macro2;
+mod quote;
+mod syn;
+
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example

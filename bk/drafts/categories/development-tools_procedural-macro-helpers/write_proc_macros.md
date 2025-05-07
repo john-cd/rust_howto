@@ -21,7 +21,7 @@ The [`syn`][c-syn]{{hi:syn}}⮳ crate in Rust is a fundamental library for parsi
 - Refactoring: Developing tools to automate code refactoring tasks.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/tests/syn.rs:example}}
+{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/tests/write_proc_macros/syn.rs:example}}
 ```
 
 ## `paste` {#paste}
@@ -31,7 +31,7 @@ The [`syn`][c-syn]{{hi:syn}}⮳ crate in Rust is a fundamental library for parsi
 [`paste`][c-paste]⮳ provides a flexible way to paste together identifiers in a macro, including using pasted identifiers to define new items.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/tests/paste.rs:example}}
+{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/tests/write_proc_macros/paste.rs:example}}
 ```
 
 ## `quote` {#quote}
@@ -41,7 +41,7 @@ The [`syn`][c-syn]{{hi:syn}}⮳ crate in Rust is a fundamental library for parsi
 [`quote`][c-quote]⮳{{hi:quote}} is a crate that makes it easy to generate Rust code (as TokenStreams). It provides quasiquoting, which makes code generation much more readable and less error-prone. [`quote`][c-quote]⮳ provides the `quote!` macro for turning Rust syntax tree{{hi:Syntax tree}} data structures into tokens{{hi:Tokens}} of source code.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/tests/quote.rs:example}}
+{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/tests/write_proc_macros/quote.rs:example}}
 ```
 
 ## `proc-macro2` {#proc-macro2}
@@ -63,7 +63,7 @@ Make procedural [macros][p-macros] unit testable. As a consequence of being spec
 [![proc-macro-workshop][proc-macro-workshop-badge]][proc-macro-workshop]
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/tests/proc_macro2.rs:example}}
+{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/tests/write_proc_macros/proc_macro2.rs:example}}
 ```
 
 ### `darling` {#darling}
@@ -73,7 +73,7 @@ Make procedural [macros][p-macros] unit testable. As a consequence of being spec
 [`darling`][c-darling]⮳{{hi:darling}} provides derive macros to easily parse derive macro inputs.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/tests/darling.rs:example}}
+{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/tests/write_proc_macros/darling.rs:example}}
 ```
 
 ## Report Errors from Within a Procedural Macro {#skip}

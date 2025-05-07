@@ -13,7 +13,7 @@
 [`watt`][c-watt]⮳{{hi:watt}} is a runtime for executing Rust procedural [macros][p-macros] compiled as WebAssembly (WASM). By compiling [macros][p-macros] ahead-of-time to WASM, we save all downstream users of the macro from having to compile the macro logic or its dependencies themselves. Instead, what they compile is a small self-contained WASM runtime (~3 seconds, shared by all macros) and a tiny proc macro shim for each macro crate to hand off WASM bytecode into the Watt runtime (~0.3 seconds per proc-macro crate you depend on). This is much less than the 20+ seconds it can take to compile complex procedural [macros][p-macros] and their dependencies.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/tests/watt.rs:example}}
+{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/tests/compile_macros/watt.rs:example}}
 ```
 
 {{#include refs.incl.md}}
