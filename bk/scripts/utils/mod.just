@@ -8,19 +8,6 @@ _default:
 
 ## ---- UTILITIES -----------------------------------
 
-## .... SPELL ....
-
-# Check spelling in markdown
-[unix]
-@spell extra_param='':
-  {{root}}/../.devcontainer/spellcheck.sh {{extra_param}}
-
-[windows]
-@spell extra_param='':
-  echo "Spell check is not implemented for Windows!"
-
-## .... TOOLS ....
-
 help := 'help'
 empty := ''
 

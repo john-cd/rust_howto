@@ -143,8 +143,11 @@ u *args='':
 # Utilities
 mod utils 'scripts/utils'
 
+# Utilities
+mod spelling 'scripts/spelling'
+
 spell extra_param='':
-  @just utils spell {{extra_param}}
+  @just spelling spell {{extra_param}}
 
 lnk pattern:
   @just utils make_link {{pattern}}

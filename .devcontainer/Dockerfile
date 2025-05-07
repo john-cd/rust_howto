@@ -268,7 +268,7 @@ FROM base AS ci
 COPY . .
 
 ## Make sure the start scripts have permission to execute
-RUN chmod +x ./.devcontainer/ci.sh; chmod +x ./.devcontainer/spellcheck.sh
+RUN find . -name "target" -prune -o \( -type f -name "*.sh" -exec chmod +x {} \; \)
 
 ## Compilation of the whole code happens within that script at runtime
 ENTRYPOINT [ "./.devcontainer/ci.sh" ]

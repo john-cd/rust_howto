@@ -11,9 +11,9 @@ set -o pipefail
 echo "----------"
 
 ## Spell checks
-.devcontainer/spellcheck.sh list
+bk/scripts/spelling/spellcheck.sh list
 
-cd ./bk/crates
+cd bk/crates
 
 ## Checks the Rust code formatting
 ## Fails if not formatted properly
