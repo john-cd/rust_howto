@@ -19,10 +19,10 @@
 [ex-code_organization-visibility-rules]: visibility.md#visibility-rules
 [ex-code_organization-visibility-scope]: visibility.md#visibility-scope
 [ex-code_organization-visible-to-library-clients]: visibility.md#visible-to-library-clients
-[p-enums]: ../../drafts/language/enums.md
-[p-functions]: ../../drafts/language/functions.md
-[p-option]: ../../drafts/standard-library/option.md
-[p-rustup]: ../../drafts/categories/development-tools/installation/rustup.md
-[p-standard-library]: ../../drafts/standard-library/index.md
-[p-structs]: ../../drafts/language/structs.md
-[p-traits]: ../../drafts/language/traits.md
+[p-enums]: # "../language/enums.md"
+[p-functions]: # "../language/functions.md"
+[p-option]: # "../standard-library/option.md"
+[p-rustup]: # "../categories/development-tools/installation/rustup.md"
+[p-standard-library]: # "../standard-library/index.md"
+[p-structs]: # "../language/structs.md"
+[p-traits]: # "../language/traits.md"

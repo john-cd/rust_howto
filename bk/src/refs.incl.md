@@ -713,22 +713,21 @@
 [ex-web-programming_http-server-tower-http]: ../drafts/categories/web-programming_http-server/middleware.md#tower-http
 [ex-web-programming_http-server-tower]: ../drafts/categories/web-programming_http-server/middleware.md#tower
 [ex-web-programming_http-server-zola]: ../drafts/categories/web-programming_http-server/static_website_generators.md#zola
-[p-asynchronous]: ../drafts/../drafts/categories/asynchronous/index.md
-[p-cli]: ../drafts/../drafts/categories/command-line-interface/index.md
-[p-concurrency]: ../drafts/../drafts/categories/concurrency/index.md
-[p-config]: ../drafts/../drafts/categories/config/index.md
-[p-contributing]: ../drafts/contributing/index.md
-[p-crates-alphabetical]: ../drafts/crates/crates_alphabetical.md
-[p-crates-../drafts/categories]: ../drafts/crates/crates_by_category.md
-[p-debugging]: ../drafts/../drafts/categories/development-tools_debugging/index.md
-[p-development-tools]: ../drafts/../drafts/categories/development-tools/index.md
-[p-error-customization]: ../drafts/../drafts/categories/rust-patterns/error_handling/error_customization.md
-[p-errors]: ../drafts/../drafts/categories/rust-patterns/error_handling/error_handling.md
-[p-index-examples]: ../drafts/examples_index.md
+[p-asynchronous]: # "categories/asynchronous/index.md"
+[p-cli]: # "categories/command-line-interface/index.md"
+[p-concurrency]: # "categories/concurrency/index.md"
+[p-config]: # "categories/config/index.md"
+[p-contributing]: # "contributing/index.md"
+[p-crates-alphabetical]: # "crates/crates_alphabetical.md"
+[p-crates-../drafts/categories]: # "crates/crates_by_category.md"
+[p-debugging]: # "categories/development-tools_debugging/index.md"
+[p-development-tools]: # "categories/development-tools/index.md"
+[p-error-customization]: # "categories/rust-patterns/error_handling/error_customization.md"
+[p-errors]: # "categories/rust-patterns/error_handling/error_handling.md"
+[p-index-examples]: # "examples_index.md"
 [p-index]: index.md
-[p-lang]: ../drafts/language/index.md
-[p-links]: ../drafts/links/index.md
-[p-standard-library]: ../drafts/standard-library/index.md
-[p-web-programming]: ../drafts/../drafts/categories/web-programming/index.md
+[p-lang]: # "language/index.md"
+[p-links]: # "links/index.md"
+[p-standard-library]: # "standard-library/index.md"
+[p-web-programming]: # "categories/web-programming/index.md"
 [p-word-index]: word_index.md
-[rust-howto-xmpl-github]: https://github.com/john-cd/rust_howto/tree/main/xmpl
