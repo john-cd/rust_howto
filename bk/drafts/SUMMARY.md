@@ -59,7 +59,7 @@
   - [Basic Authentication](categories/authentication/basic_authentication.md)
 
 - [Caching](categories/caching/index.md)
-  - [LRU Caching](categories/caching/lru.md)
+  - [In-memory Caching](categories/caching/in_memory_cache.md)
 
 - [Command-line Interface](categories/command-line-interface/index.md)
   - [Argument Parsing](categories/command-line-interface/argument_parsing.md)

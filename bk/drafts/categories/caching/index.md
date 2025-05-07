@@ -6,7 +6,7 @@ Caching refers to storing the results of previous computations, in order to reus
 
 ## In-Memory Caches
 
-{{#include lru.incl.md}}
+{{#include in_memory_cache.incl.md}}
 
 ## Hybrid Caches
 

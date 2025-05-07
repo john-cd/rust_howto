@@ -38,9 +38,9 @@
 [ex-asynchronous-utilities]: ../drafts/categories/asynchronous/async_utilities.md#utilities
 [ex-asynchronous-which-crate-provides-what]: ../drafts/categories/asynchronous/async.md#which-crate-provides-what
 [ex-authentication-basic-authentication]: ../drafts/categories/authentication/basic_authentication.md#basic-authentication
-[ex-caching-cached]: ../drafts/categories/caching/lru.md#cached
-[ex-caching-lru-cache]: ../drafts/categories/caching/lru.md#lru-cache
-[ex-caching-moka]: ../drafts/categories/caching/lru.md#moka
+[ex-caching-cached]: ../drafts/categories/caching/in_memory_cache.md#cached
+[ex-caching-lru-cache]: ../drafts/categories/caching/in_memory_cache.md#lru-cache
+[ex-caching-moka]: ../drafts/categories/caching/in_memory_cache.md#moka
 [ex-cargo-basic-cargo-usage]: ../drafts/categories/development-tools/cargo/cargo.md#basic-cargo-usage
 [ex-cargo-cargo-toml]: ../drafts/categories/development-tools/cargo/cargo.md#cargo-toml
 [ex-cargo-crate-registries]: ../drafts/categories/development-tools/cargo/crate_registries.md#crate-registries

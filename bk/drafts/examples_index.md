@@ -54,7 +54,7 @@
 
 ### LRU
 
-{{#include categories/caching/lru.incl.md}}
+{{#include categories/caching/in_memory_cache.incl.md}}
 
 ## Command Line Interface
 
