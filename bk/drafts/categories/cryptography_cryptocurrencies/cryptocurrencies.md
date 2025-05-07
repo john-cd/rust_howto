@@ -13,7 +13,7 @@ Notable crypto projects using Rust include:
 ## Cryptocurrencies {#cryptocurrencies}
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography_cryptocurrencies/tests/cryptocurrencies.rs:example}}
+{{#include ../../../crates/cats/cryptography_cryptocurrencies/tests/cryptocurrencies/cryptocurrencies.rs:example}}
 ```
 
 ## Related Topics {#skip}
