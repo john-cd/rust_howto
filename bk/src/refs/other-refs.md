@@ -499,6 +499,7 @@
 [lechevspace-github]: https://github.com/LechevSpace
 [lechevspace-website]: https://lechev.space
 [lemmy-github]: https://github.com/LemmyNet/lemmy
+[lib-rs-most-popular]: https://lib.rs/std
 [lib-rs-stats]: https://lib.rs/stats
 [lib-rs]: https://lib.rs
 [libra-website]: https://libra.org
