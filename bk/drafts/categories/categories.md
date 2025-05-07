@@ -76,8 +76,8 @@
 | [![rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns] | Shared solutions for particular situations specific to programming in Rust. |
 | [![science][cat-science-badge]][cat-science] | Crates related to solving problems involving physics, chemistry, biology, machine learning, geoscience, and other scientific fields. |
 | [![science::bioinformatics][cat-science::bioinformatics-badge]][cat-science::bioinformatics] | Crates for processing large-scale biological data. |
-| [![science::bioinformatics::genomics][cat-science::bioinformatics::genomics-badge]][cat-science::bioinformatics::genomics] | Crates for processing genetic data, including sequences, abdundance, variants and analysis. |
-| [![science::bioinformatics::proteomics][cat-science::bioinformatics::proteomics-badge]][cat-science::bioinformatics::proteomics] | Crates for processing protein data including sequences, abdundance and analysis. |
+| [![science::bioinformatics::genomics][cat-science::bioinformatics::genomics-badge]][cat-science::bioinformatics::genomics] | Crates for processing genetic data, including sequences, abundance, variants and analysis. |
+| [![science::bioinformatics::proteomics][cat-science::bioinformatics::proteomics-badge]][cat-science::bioinformatics::proteomics] | Crates for processing protein data including sequences, abundance and analysis. |
 | [![science::bioinformatics::sequence-analysis][cat-science::bioinformatics::sequence-analysis-badge]][cat-science::bioinformatics::sequence-analysis] | Crates for processing biological sequences, including alignment, assembly, and annotation. |
 | [![science::geo][cat-science::geo-badge]][cat-science::geo] | Processing of spatial information, maps, navigation data, and geographic information systems. |
 | [![science::neuroscience][cat-science::neuroscience-badge]][cat-science::neuroscience] | Crates for research tools and processing of data related to the brain and nervous system. |

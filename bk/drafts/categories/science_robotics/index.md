@@ -56,7 +56,7 @@ See also the machine learning chapters: [[classical_machine_learning | Classical
 
 {{#include simulation_visualization.incl.md}}
 
-See also the [[simulation | Simulation]], [[aerospace_simulation | Aerospace Simulation]], and [[visualization | Visualization]] chpaters. [[game-engines | Game Engines]] like [`bevy`][c-bevy]⮳{{hi:bevy}} can also be adapted for robotics simulation.
+See also the [[simulation | Simulation]], [[aerospace_simulation | Aerospace Simulation]], and [[visualization | Visualization]] chapters. [[game-engines | Game Engines]] like [`bevy`][c-bevy]⮳{{hi:bevy}} can also be adapted for robotics simulation.
 
 ## Math and Geometry-related Libraries for Robotics
 
@@ -64,7 +64,7 @@ See also the [[simulation | Simulation]], [[aerospace_simulation | Aerospace Sim
 - `ncollide` - 2 and 3-dimensional collision detection library in Rust.
 - `kdtree` - K-dimensional tree in Rust for fast geospatial indexing.
 - `k` - Kinematics Library for rust-lang.
-- `static-math` - Safe and fast mathematical operations with static arrays in Rust programming language thinked for robotics.
+- `static-math` - Safe and fast mathematical operations with static arrays in Rust programming language for robotics.
 - [`ndarray`][c-ndarray]⮳{{hi:ndarray}} - N-dimensional tensor arithmetic library, inspired by python’s NumPy.
 - `faer-rs` - Linear algebra foundation for the Rust programming language.
 

@@ -10,7 +10,7 @@ _default:
 
 # Check spelling in markdown
 [unix]
-@spell extra_param='':
+@spell extra_param='list':
   ./spellcheck.sh {{extra_param}}
 
 [windows]

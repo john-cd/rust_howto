@@ -32,7 +32,7 @@ See also:
 
 ## Applications and Fields
 
-- Image Procesing - see [[multimedia_images | Multimedia: Images]].
+- Image Processing - see [[multimedia_images | Multimedia: Images]].
 - Ray Tracing.
 - [[computer-vision | Computer Vision]].
 - Game Development - see [[games | Games]], [[game-development | Game Development]] and [[game-engines | Game Engines]].

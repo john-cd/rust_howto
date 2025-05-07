@@ -12,7 +12,7 @@ A typical Rust/WASM development workflow involves writing Rust code, using [`was
 
 `wasm-pack` helps compile the code to WebAssembly and produce the right packaging for use in the browser.
 
-The [`wasm-pack`](https://rustwasm.github.io/docs/wasm-pack) book covers the Rust to WebAssembly workflow tool. This book covers prerequistes, project setup, and available commands for `wasm-pack`.
+The [`wasm-pack`](https://rustwasm.github.io/docs/wasm-pack) book covers the Rust to WebAssembly workflow tool. This book covers prerequisites, project setup, and available commands for `wasm-pack`.
 
 ```sh
 # Download and install

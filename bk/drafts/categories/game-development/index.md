@@ -25,7 +25,7 @@ Game development in Rust is a vibrant area, and the crates you'll need depend on
 | [[multimedia_audio | Audio]] | | [`cpal`][c-cpal]⮳{{hi:cpal}}: Cross-platform audio I/O. [`sdl2`][c-sdl2]⮳{{hi:sdl2}}: Can also be used for audio |
 | Inputs | See also [[gui | GUI]]. | [`winit`][c-winit]⮳{{hi:winit}} : Handles window events, including input. [`sdl2`][c-sdl2]⮳{{hi:sdl2}}: Can also be used for input. |
 | Game Logic / State Management | Often handled directly or with ECS libraries. See below. | |
-| Entity Component System (ECS) | For Data-Driven Design. | [`bevy_ecs`][c-bevy_ecs]⮳{{hi:bevy_ecs}} is Bevy's built-in ECS. [`specs`][c-specs]⮳{{hi:specs}} is a popular and mature ECS library. [`hecs`][c-hecs]⮳{{hi:hecs}} is nother ECS implementation. |
+| Entity Component System (ECS) | For Data-Driven Design. | [`bevy_ecs`][c-bevy_ecs]⮳{{hi:bevy_ecs}} is Bevy's built-in ECS. [`specs`][c-specs]⮳{{hi:specs}} is a popular and mature ECS library. [`hecs`][c-hecs]⮳{{hi:hecs}} is another ECS implementation. |
 | Physics Engine | See [Physics](https://arewegameyet.rs/ecosystem/physics) for 2D and 3D physics engines, collision detection libraries. | [`rapier`](https://rapier.rs): A physics engine (2D and 3D). [`nphysics`][c-nphysics]⮳{{hi:nphysics}}: Another physics engine. |
 | Networking | | [`ggrs`][c-ggrs]⮳{{hi:ggrs}}: A P2P networking library for games. [`tokio`][c-tokio]⮳{{hi:tokio}}: (For asynchronous networking in general). [`mio`][c-mio]⮳{{hi:mio}}: Lower-level networking. |
 | UI (User Interface) | See [[gui | GUI]]. | [`egui`][c-egui]⮳{{hi:egui}}: An immediate mode GUI library. [`iced`][c-iced]⮳{{hi:iced}}: A cross-platform GUI library focused on simplicity and type safety. [`conrod`][c-conrod]⮳{{hi:conrod}}: An older UI library. |

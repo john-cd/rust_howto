@@ -6,7 +6,7 @@ Low-level hardware access, [embedded][p-embedded] systems.
 
 ## Device Drivers {#skip}
 
-Robotics releated sensor/motor drivers
+Robotics-related sensor/motor drivers
 
 - `libsweep` - Rust wrapper for Scanse Sweep LIDAR libsweep
 - `freenect-rs` - Freenect wrapper for rust
