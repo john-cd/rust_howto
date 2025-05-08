@@ -5,7 +5,7 @@
 ## Bind to macOS APIs {#macos}
 
 ```rust,editable
-{{#include ../../../crates/cats/os_macos_apis/tests/macos.rs:example}}
+{{#include ../../../crates/cats/os_macos_apis/tests/macos/macos.rs:example}}
 ```
 
 {{#include refs.incl.md}}

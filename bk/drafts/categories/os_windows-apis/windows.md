@@ -13,7 +13,7 @@
 [`windows`][c-windows]⮳{{hi:windows}} is the official Microsoft-provided crate for interacting with Windows APIs.
 
 ```rust,editable
-{{#include ../../../crates/cats/os_windows_apis/tests/windows.rs:example}}
+{{#include ../../../crates/cats/os_windows_apis/tests/windows/windows.rs:example}}
 ```
 
 ## Bind to Windows APIs with `winapi` {#winapi}
@@ -29,7 +29,7 @@
 [`winapi`][c-winapi]⮳{{hi:winapi}} provides older binding to the Windows APIs. Unofficial, but more complete than [`windows-rs`][c-windows]⮳{{hi:windows-rs}}.
 
 ```rust,editable
-{{#include ../../../crates/cats/os_windows_apis/tests/winapi.rs:example}}
+{{#include ../../../crates/cats/os_windows_apis/tests/windows/winapi.rs:example}}
 ```
 
 ## See Also
