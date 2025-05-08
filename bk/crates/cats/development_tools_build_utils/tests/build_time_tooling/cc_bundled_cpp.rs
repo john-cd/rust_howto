@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 // ANCHOR: example
 //! This example demonstrates how to use the `cc` crate to compile a C++ file as
 //! part of a Rust build process.
