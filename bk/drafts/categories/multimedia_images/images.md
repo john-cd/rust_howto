@@ -14,7 +14,7 @@ Imaging library. Provides basic image processing and encoders/decoders for commo
 - Image Compression.
 
 ```rust,editable
-{{#include ../../../crates/cats/multimedia_images/tests/images.rs:example}}
+{{#include ../../../crates/cats/multimedia_images/tests/images/images.rs:example}}
 ```
 
 ## Image Manipulation {#image_manipulation}
