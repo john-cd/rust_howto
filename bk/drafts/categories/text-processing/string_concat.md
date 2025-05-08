@@ -13,7 +13,7 @@ String concatenation is the operation of joining two or more strings together en
 [`joinery`][c-joinery]⮳{{hi:joinery}} is a small crate for generically joining iterators with a separator.
 
 ```rust,editable
-{{#include ../../../crates/cats/text_processing/tests/string_concat.rs:example}}
+{{#include ../../../crates/cats/text_processing/tests/string_concat/string_concat.rs:example}}
 ```
 
 ## References
