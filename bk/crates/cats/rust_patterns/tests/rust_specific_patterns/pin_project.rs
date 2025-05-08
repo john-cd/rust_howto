@@ -6,9 +6,10 @@
 // //! `Pin`-ned struct.
 // //!
 // //! Pinning is a mechanism that guarantees that the memory location of a
-// //! value  will not change. This is useful when there are one or more pointers
-// //! pointing at that value, for example in self-referential data structures,
-// //! asynchronous programming, and `unsafe` code. See [`std::pin`](https://doc.rust-lang.org/std/pin/index.html).
+// //! value  will not change. This is useful when there are one or more
+// //! pointers pointing at that value, for example in self-referential data
+// //! structures, asynchronous programming, and `unsafe` code.
+// //! See [`std::pin`](https://doc.rust-lang.org/std/pin/index.html).
 // //!
 // //! Projection refers to allow borrowing one or more of the inner fields of a
 // //! struct when the caller has access to a borrow of the whole struct.
