@@ -7,7 +7,7 @@ use anyhow::bail;
 use serde::Serialize;
 
 static TEMPLATES: LazyLock<tera::Result<tera::Tera>> = LazyLock::new(|| {
-    tera::Tera::new("tests/templates/*").map(|mut t| {
+    tera::Tera::new("tests/tera/templates/*").map(|mut t| {
         // Configure the Tera template engine.
         // By default, Tera will auto-escape all content in files ending with
         // ".html", ".htm" and ".xml".
