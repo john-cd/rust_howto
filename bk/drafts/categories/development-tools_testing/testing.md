@@ -40,7 +40,7 @@ Snapshots tests (also sometimes called approval tests) are tests that assert val
 First, install the CLI with `cargo install cargo-insta`. Second, create a test, run it a first time with `cargo test`. This creates a snapshot file (ending with `.snap`). Use `cargo insta review` to review and accept the snapshot. Running `cargo test` again now succeeds, until the value returned by the function under test changes.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_testing/tests/insta.rs:example}}
+{{#include ../../../crates/cats/development_tools_testing/tests/testing/insta.rs:example}}
 ```
 
 ## Asynchronous Testing {#async_testing}
