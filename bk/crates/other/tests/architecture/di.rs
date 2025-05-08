@@ -67,7 +67,7 @@ impl Conversation for EnglishConversation {
 // Define a module.
 // `MyModule` is a module that groups related components and providers.
 // Modules link together components (and providers), and are core to providing
-// shaku’s compile time guarentees.
+// shaku's compile time guarentees.
 module! {
     MyModule {
         components = [EnglishGreeter, EnglishConversation],

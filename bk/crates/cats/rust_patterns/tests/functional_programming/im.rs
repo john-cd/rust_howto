@@ -12,8 +12,8 @@
 //! Most operations are O(log n) or better.
 //!
 //! The most obvious benefit of _immutable data structures_ - avoiding the
-//! accidental mutation of data - is already handled so well by Rust’s type
-//! system that it’s just not something a Rust programmer needs to worry about.
+//! accidental mutation of data - is already handled so well by Rust's type
+//! system that it's just not something a Rust programmer needs to worry about.
 //! Their most prominent advantage in Rust is therefore _structural sharing_. If
 //! two data structures are mostly copies of each other, most of the memory they
 //! take up will be shared between them. Therefore, making copies of an
@@ -23,7 +23,7 @@
 //!
 //! Because `im` makes copies of shared nodes in its data structures before
 //! updating them, the values you store must implement `Clone`. If you want to
-//! store values for which cloning is expensive, or values that don’t implement
+//! store values for which cloning is expensive, or values that don't implement
 //! `Clone`, you need to wrap them in `Rc` or `Arc`.
 use im::HashMap;
 use im::HashSet;
@@ -64,7 +64,7 @@ fn main() {
     // The `im` maps - HashMap and OrdMap - generally perform similarly to their
     // equivalents in the standard library, but tend to run a bit slower on the
     // basic operations. On the other hand, they offer the cheap copy and
-    // structural sharing between copies that you’d expect from immutable
+    // structural sharing between copies that you'd expect from immutable
     // data structures.
 
     // Let's explore the Immutable HashMap (based on hash array mapped tries).

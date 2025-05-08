@@ -67,7 +67,7 @@ Azul is a document object model, similar to HTML and CSS. Because Azul leverages
 
 [`xilem`][c-xilem]⮳{{hi:xilem}} is the replacement for [`druid`][c-druid]⮳{{hi:druid}}, based on the more interoperable [`vello`][c-vello]⮳{{hi:vello}} and [`glazier`][c-glazier]⮳{{hi:glazier}} crates. However, it's currently not complete enough to be usable.
 
-If you’re a Swift developer, you should find Xilem easy to use because its syntax and concepts resemble SwiftUI's.
+If you're a Swift developer, you should find Xilem easy to use because its syntax and concepts resemble SwiftUI's.
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/retained_mode_gui/xilem.rs:example}}

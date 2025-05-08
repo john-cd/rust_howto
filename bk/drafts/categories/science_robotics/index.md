@@ -65,7 +65,7 @@ See also the [[simulation | Simulation]], [[aerospace_simulation | Aerospace Sim
 - `kdtree` - K-dimensional tree in Rust for fast geospatial indexing.
 - `k` - Kinematics Library for rust-lang.
 - `static-math` - Safe and fast mathematical operations with static arrays in Rust programming language for robotics.
-- [`ndarray`][c-ndarray]⮳{{hi:ndarray}} - N-dimensional tensor arithmetic library, inspired by python’s NumPy.
+- [`ndarray`][c-ndarray]⮳{{hi:ndarray}} - N-dimensional tensor arithmetic library, inspired by python's NumPy.
 - `faer-rs` - Linear algebra foundation for the Rust programming language.
 
 See also the numerical computation ([[additional_numeric_types | Additional Numeric Types]], [[linear_algebra | Linear Algebra]]), [[data-processing | data]] analysis sections.

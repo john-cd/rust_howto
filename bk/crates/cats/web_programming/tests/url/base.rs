@@ -31,7 +31,7 @@ fn base_url(mut url: Url) -> Result<Url> {
     //     }
     //     Err(_) => {
     //         // Some (uncommon) URLs are said to be cannot-be-a-base:
-    //         // they don’t have a username, password, host, or port,
+    //         // they don't have a username, password, host, or port,
     //         // and their "path" is an arbitrary string rather than
     // slash-separated segments.         return Err(anyhow::anyhow!("This
     // URL is cannot-be-a-base."));     }

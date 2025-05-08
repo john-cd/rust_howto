@@ -6,6 +6,8 @@ Feel free to submit an issue or a pull request{{hi:Pull request}} to the [repo][
 
 Embedded examples should be ideally _runnable_ on the [Rust playground][rust-playground-website]⮳ or at least directly copy-pasteable into Rust code.
 
+## Goals
+
 This book's long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [`blessed.rs`][blessed-rs-website]{{hi:blessed.rs}}⮳, the most downloaded libraries in [`crates.io`][crates.io-website]{{hi:crates.io}}⮳, and 'high quality crates' per [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳ [statistics][lib-rs-stats]⮳. Review [key crates][p-crates]⮳{{hi:Key crates}} for topic ideas.
 
 ## See Also

@@ -20,7 +20,7 @@
 //!
 //! It also offers casting for types that have some invalid bit patterns by
 //! performing a runtime check. This is particularly useful for types like
-//! fieldless (‘C-style’) enums, char, bool, and structs containing them.
+//! fieldless ('C-style') enums, char, bool, and structs containing them.
 
 use bytemuck::AnyBitPattern;
 use bytemuck::NoUninit;

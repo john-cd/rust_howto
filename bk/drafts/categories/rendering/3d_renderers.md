@@ -31,7 +31,7 @@ A OpenGL/WebGL/OpenGL ES renderer which seeks to make graphics simple but still 
 
 Keep It Simple, Stupid 3d graphics engine.
 
-This library is born from the frustration that today’s 3D graphics library are either:
+This library is born from the frustration that today's 3D graphics library are either:
 
 - Too low level: you have to write your own [shaders][p-shaders] and opening a window takes 8 hours, 300 lines of code and 10L of coffee.
 - High level, but too hard to understand/use: these libraries are made to create beautiful photoreal (or close to it) animations or games. They have many features; too many, in fact, if you just want to draw a few objects on the screen with as little friction as possible.

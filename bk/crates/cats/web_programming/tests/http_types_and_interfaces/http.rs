@@ -4,7 +4,7 @@
 //!
 //! The `http` crate provides fundamental types for working with HTTP, such as
 //! `Request`, `Response`, `Uri` for what a `Request` is requesting, `Method`
-//! for how it’s being requested, `StatusCode` for what sort of response came
+//! for how it's being requested, `StatusCode` for what sort of response came
 //! back, `Version` for how this was communicated, `HeaderName`, and
 //! `HeaderValue`.
 //!

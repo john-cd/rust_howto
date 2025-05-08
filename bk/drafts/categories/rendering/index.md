@@ -8,7 +8,7 @@ Real-time or offline rendering of 2D or 3D graphics, usually with the help of a 
 
 The terms "rendering" and [[graphics | "graphics"]] are related but refer to distinct aspects of visual representation.
 
-Rendering is the process of converting the assets and abstract data defined within graphic design (models, geometry, shapes, textures, lighting, etc.) into a visual image or animation. It’s the "final step" where all the pieces come together to produce the image displayed on the screen, whether in real-time (like a video game) or offline (like a CGI scene in a movie).
+Rendering is the process of converting the assets and abstract data defined within graphic design (models, geometry, shapes, textures, lighting, etc.) into a visual image or animation. It's the "final step" where all the pieces come together to produce the image displayed on the screen, whether in real-time (like a video game) or offline (like a CGI scene in a movie).
 
 Examples:
 

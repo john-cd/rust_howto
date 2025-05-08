@@ -1,7 +1,7 @@
 // ANCHOR: example
 //! This example demonstrates how to parse a semantic version string.
 //!
-//! `semver` is a parser for Cargo’s flavor of Semantic Versioning.
+//! `semver` is a parser for Cargo's flavor of Semantic Versioning.
 
 use anyhow::Result;
 use semver::Version;

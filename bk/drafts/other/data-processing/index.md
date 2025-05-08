@@ -20,7 +20,7 @@
 
 - [Neon Serverless Postgres](https://neon.tech/)
 
-- [ClickHouse: ClickHouse® is a real-time analytics DBMS](https://github.com/ClickHouse/ClickHouse)
+- [ClickHouse: ClickHouse is a real-time analytics DBMS](https://github.com/ClickHouse/ClickHouse)
 - [vector: A high-performance observability data pipeline.](https://github.com/vectordotdev/vector)
 
 - [cube-js: Cube — The Semantic Layer for Building Data Applications](https://github.com/cube-js/cube)
