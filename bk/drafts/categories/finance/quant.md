@@ -9,7 +9,7 @@
 [`RustQuant`][c-rustquant-lib.rs]⮳ is a Rust library for quantitative [finance][p-finance].
 
 ```rust,editable
-{{#include ../../../crates/cats/finance/tests/rustquant.rs:example}}
+{{#include ../../../crates/cats/finance/tests/quant/rustquant.rs:example}}
 ```
 
 ## See Also
