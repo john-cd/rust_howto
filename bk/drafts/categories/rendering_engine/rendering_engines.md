@@ -5,7 +5,7 @@
 ## Use a Render Engine {#render}
 
 ```rust,editable
-{{#include ../../../crates/cats/rendering_engine/tests/render.rs:example}}
+{{#include ../../../crates/cats/rendering_engine/tests/rendering_engines/render.rs:example}}
 ```
 
 {{#include refs.incl.md}}

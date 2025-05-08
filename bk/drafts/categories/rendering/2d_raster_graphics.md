@@ -7,7 +7,7 @@
 [`pixels`][c-pixels]⮳{{hi:pixels}} is a crate for working with pixel buffers directly. Provides low-level access to pixel data, allowing you to draw primitives by manipulating the buffer. Good for simple 2D [graphics][p-graphics] or when you need fine-grained control.
 
 ```rust,editable
-{{#include ../../../crates/cats/rendering/tests/render.rs:example}}
+{{#include ../../../crates/cats/rendering/tests/2d_raster_graphics/render.rs:example}}
 ```
 
 ## `raqote` {#raqote}

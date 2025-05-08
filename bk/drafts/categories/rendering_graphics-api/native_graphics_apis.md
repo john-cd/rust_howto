@@ -25,7 +25,7 @@ Direct3D 12 access is usually through [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}}'s 
 [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}} (with a D3D12 backend), `d3d12` (more raw bindings)
 
 ```rust,editable
-{{#include ../../../crates/cats/rendering_graphics_api/tests/graphics.rs:example}}
+{{#include ../../../crates/cats/rendering_graphics_api/tests/native_graphics_apis/graphics.rs:example}}
 ```
 
 ## Low-Level Graphics (Metal) {#metal}
