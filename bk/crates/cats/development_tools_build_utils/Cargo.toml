@@ -18,8 +18,8 @@ autolib = false
 [dependencies]
 anyhow = "1.0.98"
 cc = "1.2.21"
+autocfg = "1.4.0"
 
 ## See build.rs
 [build-dependencies]
 cc = "1.2.21"
-autocfg = "1.4.0"
