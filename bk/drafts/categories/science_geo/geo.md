@@ -9,7 +9,7 @@
 [`geo`][c-geo]⮳{{hi:geo}} provides geospatial primitives and algorithms.
 
 ```rust,editable
-{{#include ../../../crates/cats/science_geo/tests/geo.rs:example}}
+{{#include ../../../crates/cats/science_geo/tests/geo/geo.rs:example}}
 ```
 
 {{#include refs.incl.md}}

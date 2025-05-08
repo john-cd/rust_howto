@@ -16,7 +16,7 @@ Consider [`bonsai-bt`][c-bonsai_bt]⮳{{hi:bonsai-bt}} (Behavior Tree implementa
 [`bonsai-bt`][c-bonsai_bt]⮳{{hi:bonsai-bt}} is a Rust implementation of behavior trees. A [Behavior Tree (Wikipedia)][behavior-tree-wikipedia] (BT) is a data structure in which we can set the rules of how certain behavior's can occur, and the order in which they would execute. BTs are a very efficient way of creating complex systems that are both modular and reactive. These properties are crucial in many applications, which has led to the spread of BT from computer game programming to many branches of AI and Robotics.
 
 ```rust,editable
-{{#include ../../../crates/cats/science_robotics/tests/bonsai_bt.rs:example}}
+{{#include ../../../crates/cats/science_robotics/tests/artificial_intelligence/bonsai_bt.rs:example}}
 ```
 
 ## Related Topics {#skip}

@@ -49,7 +49,7 @@ While ROS traditionally favored [Python][p-python] and C++, Rust is gradually ga
 [`r2r`][c-r2r]⮳{{hi:r2r}} offers minimal ROS2 Rust bindings. Easy to use, runtime-agnostic, async rust bindings for ROS2.
 
 ```rust,editable
-{{#include ../../../crates/cats/science_robotics/tests/robotics.rs:example}}
+{{#include ../../../crates/cats/science_robotics/tests/robot_operating_systems/robotics.rs:example}}
 ```
 
 ## `safe_drive` {#safe_drive}
