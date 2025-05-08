@@ -5,7 +5,7 @@
 ## Game Development {#game-development}
 
 ```rust,editable
-{{#include ../../../crates/cats/game_development/tests/game_development1.rs:example}}
+{{#include ../../../crates/cats/game_development/tests/game_development/game_development1.rs:example}}
 ```
 
 ### `glam` {#glam}
@@ -17,7 +17,7 @@
 "Fast math library optimized for [game development][p-game-development] use cases."
 
 ```rust,editable
-{{#include ../../../crates/cats/game_engines/tests/glam.rs:example}}
+{{#include ../../../crates/cats/game_development/tests/game_development/glam.rs:example}}
 ```
 
 ## See Also
