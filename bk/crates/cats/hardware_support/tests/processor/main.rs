@@ -1,1 +1,1 @@
-mod cpu_counts;
+mod cpu_count;
