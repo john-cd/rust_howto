@@ -17,7 +17,7 @@
 [`dhat`][c-dhat]⮳{{hi:dhat}} is a library for heap profiling and ad-hoc profiling with DHAT.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_profiling/src/dhat.rs:example}}
+{{#include ../../../crates/cats/development_tools_profiling/src/memory_usage_analysis/dhat.rs:example}}
 ```
 
 ## Leak Detection {#leaks}

@@ -1,5 +1,7 @@
-mod dhat;
+mod memory_usage_analysis {
+    pub mod dhat;
+}
 
 fn main() {
-    dhat::main();
+    memory_usage_analysis::dhat::main();
 }
