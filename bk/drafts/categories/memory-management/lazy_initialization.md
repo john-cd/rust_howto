@@ -27,7 +27,7 @@ The core functionality of [`once_cell`][c-once_cell]⮳{{hi:once_cell}} is now i
 The corresponding `Sync` version of `OnceCell<T>` is `OnceLock<T>`.
 
 ```rust,editable
-{{#include ../../../crates/cats/memory_management/tests/once_cell/once_cell.rs:example}}
+{{#include ../../../crates/cats/memory_management/tests/lazy_initialization/once_cell.rs:example}}
 ```
 
 ## `once_cell` {#once-cell}
@@ -42,7 +42,7 @@ The corresponding `Sync` version of `OnceCell<T>` is `OnceLock<T>`.
 [`once_cell`][c-once_cell]{{hi:once_cell}}⮳ provides two cell-like types, `unsync::OnceCell` and `sync::OnceCell`. A `OnceCell` might store arbitrary non-Copy types, can be assigned to at most once and provides direct access to the stored contents. The `sync` flavor is thread-safe. [`once_cell`][c-once_cell]⮳{{hi:once_cell}} also has a [`once_cell::sync::Lazy`][c-once_cell::sync::Lazy]{{hi:once_cell::sync::Lazy}}⮳ type, build on top of [`OnceCell`][c-once_cell::sync::OnceCell]⮳:
 
 ```rust,editable
-{{#include ../../../crates/cats/memory_management/tests/once_cell/once_cell2.rs:example}}
+{{#include ../../../crates/cats/memory_management/tests/lazy_initialization/once_cell2.rs:example}}
 ```
 
 ## `lazy_static` {#lazy-static}
@@ -58,7 +58,7 @@ The corresponding `Sync` version of `OnceCell<T>` is `OnceLock<T>`.
 [`lazy_static`][c-lazy_static]⮳{{hi:lazy_static}}
 
 ```rust,editable
-{{#include ../../../crates/cats/memory_management/tests/lazy_static/lazy_static.rs:example}}
+{{#include ../../../crates/cats/memory_management/tests/lazy_initialization/lazy_static.rs:example}}
 ```
 
 ## Declare Lazily Evaluated Constants {#declare-lazily-evaluated-constant}
@@ -74,7 +74,7 @@ The corresponding `Sync` version of `OnceCell<T>` is `OnceLock<T>`.
 Declares a lazily evaluated constant [`std::collections::HashMap`][c-std::collections::HashMap]{{hi:std::collections::HashMap}}⮳. The [`std::collections::HashMap`][c-std::collections::HashMap]{{hi:std::collections::HashMap}}⮳ will be evaluated once and stored behind a global static reference.
 
 ```rust,editable
-{{#include ../../../crates/cats/memory_management/tests/lazy_static/lazy_constant.rs:example}}
+{{#include ../../../crates/cats/memory_management/tests/lazy_initialization/lazy_constant.rs:example}}
 ```
 
 {{#include refs.incl.md}}
