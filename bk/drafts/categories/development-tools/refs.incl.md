@@ -73,7 +73,7 @@
 [p-configuration]: compilation/../../config/configuration.md
 [p-configuration]: formatting/../../config/configuration.md
 [p-contributing]: ../../../drafts/contributing/index.md
-[p-crates]: installation/../../../crates/index.md
+[p-crates]: ../../crate_selection/index.md
 [p-cross-platform]: other/# "../../../other/cross-platform/index.md"
 [p-documentation]: installation/../documentation/documentation.md
 [p-download]: other/../../web-programming_http-client/download.md

@@ -27,7 +27,7 @@
 [ex-cryptography-zeroize]: cryptography_utilities.md#zeroize
 [p-algorithms]: ../algorithms/index.md
 [p-authentication]: ../authentication/index.md
-[p-crates]: ../../crates/index.md
+[p-crates]: ../../crate_selection/index.md
 [p-database]: ../database/index.md
 [p-derive]: ../../../drafts/standard-library/derive.md
 [p-email]: # "../email/index.md"

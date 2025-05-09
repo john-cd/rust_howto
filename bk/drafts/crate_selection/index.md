@@ -1,7 +1,5 @@
 # Key Crates
 
-{{#include index.incl.md}}
-
 ## Select Crates for your Project {#select-crates}
 
 Use the following sites for crate recommendations:
@@ -27,35 +25,27 @@ You may also consult older resources, such as:
 - ["Must know" Rust crates](https://gitlab.com/samuel_schuepbach/must_know_rust_crates)⮳.
 - [Discover useful Rust development resources | RustRepo](https://rustrepo.com/)⮳.
 
+## See also {#skip}
+
+- [Crates by alphabetical order][p-crates-alphabetical].
+- [Crates by category][p-crates-categories].
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
 [crates/index: organize NOW](https://github.com/john-cd/rust_howto/issues/535)
 rename section to key crates
+
 review below
 
 ## Libs
 
-- [clap: A full featured, fast Command Line Argument Parser for Rust](https://github.com/clap-rs/clap)
-- [tantivy: Tantivy is a full-text search engine library inspired by Apache Lucene and written in Rust](https://github.com/quickwit-oss/tantivy)
-- [windows-rs: Rust for Windows](https://github.com/microsoft/windows-rs)
 - [quiche: Savory implementation of the QUIC transport protocol and HTTP/3](https://github.com/cloudflare/quiche)
-- [burn: Burn is a new comprehensive dynamic Deep Learning Framework built using Rust with extreme flexibility, compute efficiency and portability as its primary goals.](https://github.com/tracel-ai/burn)
-- [sled: the champagne of beta embedded databases](https://github.com/spacejam/sled)
-- [sea-orm: An async & dynamic ORM for Rust](https://github.com/SeaQL/sea-orm)
-- [rust-gpu: Making Rust a first-class language and ecosystem for GPU shaders 🚧](https://github.com/EmbarkStudios/rust-gpu)
 - [risingwave: Best-in-class stream processing, analytics, and management. Perform continuous analytics, or build event-driven applications, real-time ETL pipelines, and feature stores in minutes. Unified streaming and batch. PostgreSQL compatible.](https://github.com/risingwavelabs/risingwave)
-- [Apache DataFusion SQL Query Engine](https://github.com/apache/datafusion)
-- [rustls: A modern TLS library in Rust](https://github.com/rustls/rustls)
-- [shuttle: Build & ship backends without writing any infrastructure files.](https://github.com/shuttle-hq/shuttle)
 - [tensorflow: Rust language bindings for TensorFlow](https://github.com/tensorflow/rust)
-- [image: Encoding and decoding images in Rust](https://github.com/image-rs/image)
-- [pest: The Elegant Parser](https://github.com/pest-parser/pest)
 - [pathway: Python ETL framework for stream processing, real-time analytics, LLM pipelines, and RAG.](https://github.com/pathwaycom/pathway)
-- [strsim](https://lib.rs/crates/strsim)
 - [Passwords](https://lib.rs/crates/passwords)
-- [Either - data structures in Rust](https://lib.rs/crates/either)
 - [winnow](https://docs.rs/winnow/latest/winnow/)
 - [Equivalent — data structures in Rust](https://lib.rs/crates/equivalent)
 - [Bytes](https://lib.rs/crates/bytes)

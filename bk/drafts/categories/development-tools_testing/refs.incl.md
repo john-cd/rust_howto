@@ -20,7 +20,7 @@
 [p-attributes]: ../../language/attributes.md
 [p-cargo]: ../development-tools/cargo/cargo.md
 [p-code-coverage]: code_coverage.md
-[p-crates]: ../../crates/index.md
+[p-crates]: ../../crate_selection/index.md
 [p-functions]: ../../language/functions.md
 [p-install]: ../development-tools/installation/install.md
 [p-language]: ../../language/index.md

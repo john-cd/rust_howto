@@ -12,7 +12,7 @@
 [p-cargo]: ../../../src/categories/development-tools/cargo/cargo.md
 [p-configuration]: ../../categories/config/configuration.md
 [p-containers]: ../../categories/virtualization/containers.md
-[p-crates]: ../../crates/index.md
+[p-crates]: ../../crate_selection/index.md
 [p-development-tools]: ../../categories/development-tools/index.md
 [p-formatting]: ../../categories/development-tools/formatting/formatting.md
 [p-github-actions]: github_actions.md

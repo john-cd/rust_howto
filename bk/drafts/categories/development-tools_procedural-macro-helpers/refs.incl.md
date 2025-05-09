@@ -9,7 +9,7 @@
 [p-attributes]: ../../../src/language/attributes.md
 [p-building]: ../development-tools_cargo-plugins/building.md
 [p-configuration]: ../config/configuration.md
-[p-crates]: ../../crates/index.md
+[p-crates]: ../../crate_selection/index.md
 [p-macros]: ../../../src/language/macros.md
 [p-main]: ../../language/entrypoint.md
 [p-streams]: ../../../src/categories/asynchronous/streams.md

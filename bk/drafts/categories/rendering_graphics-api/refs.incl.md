@@ -14,7 +14,7 @@
 [ex-rendering_graphics-api-wgpu]: gpu_abstraction_layers.md#wgpu
 [p-apis]: ../../../src/categories/web-programming_http-client/apis.md
 [p-attributes]: ../../../src/language/attributes.md
-[p-crates]: ../../crates/index.md
+[p-crates]: ../../crate_selection/index.md
 [p-cross-platform]: ../../other/cross-platform/index.md
 [p-debugging]: ../../../src/categories/development-tools_debugging/debugging.md
 [p-fragment]: ../../other/cloud/_fragment.md

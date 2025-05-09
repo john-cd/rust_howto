@@ -1,2 +1,2 @@
 [ex-internationalization-internationalization]: internationalization.md#internationalization
-[p-crates]: ../../crates/index.md
+[p-crates]: ../../crate_selection/index.md
