@@ -91,5 +91,7 @@ See [[web-programming_websocket | Web Programming: Websocket]].
 - [Which Rust web framework to choose in 2022 (with code examples)](https://kerkour.com/rust-web-framework-2022)
 - [quiche: Savory implementation of the QUIC transport protocol and HTTP/3](https://github.com/cloudflare/quiche)
 - [Quinn — Rust network library](https://lib.rs/crates/quinn)
+- [msquic: Cross-platform, C implementation of the IETF QUIC protocol, exposed to C, C++, C# and Rust.](https://github.com/microsoft/msquic)
+- [Mockito — Rust web dev library](https://lib.rs/crates/mockito)
 
 </div>
