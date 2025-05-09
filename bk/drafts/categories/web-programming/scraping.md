@@ -42,4 +42,7 @@ MediaWiki link syntax is described [here][mediawiki-link-syntax]⮳.
 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/972)
+
+- [rust-headless-chrome/rust-headless-chrome: A high-level API to control headless Chrome or Chromium over the DevTools Protocol. It is the Rust equivalent of Puppeteer, a Node library maintained by the Chrome DevTools team.](https://github.com/rust-headless-chrome/rust-headless-chrome)
+
 </div>
