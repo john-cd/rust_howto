@@ -15,8 +15,6 @@
 
 [Index](word_index.md)
 
-[Thanks](thanks.md)
-
 {{#include refs.incl.md}}
 <div class="hidden">
 </div>
