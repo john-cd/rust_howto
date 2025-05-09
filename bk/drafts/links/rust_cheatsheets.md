@@ -4,7 +4,7 @@
 
 ## Cheatsheets {#cheatsheets}
 
-- [cheats.rs][cheats-rs-website]{{hi:Cheat sheets}}⮳.
+- [cheats.rs][cheats-rs-website]{{hi:Cheat sheets}}⮳ [(GitHub)](https://github.com/ralfbiedert/cheats.rs)⮳.
 - [Rust for professionals][rust-for-professionals-website]⮳.
 
 ## Comparison to Other Languages {#comparison-to-other-languages}
@@ -17,7 +17,4 @@
 
 <div class="hidden">
 [rust_cheatsheets: add more NOW](https://github.com/john-cd/rust_howto/issues/570)
-
-- [cheats.rs: Rust Language Cheat Sheet - https://cheats.rs](https://github.com/ralfbiedert/cheats.rs)
-
 </div>
