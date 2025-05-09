@@ -23,4 +23,10 @@ Databases allow clients to store and query large amounts of data in an efficient
 
 <div class="hidden">
 [database-implementations: expand](https://github.com/john-cd/rust_howto/issues/292)
+
+## Message Queues Written in Rust
+
+- [robustmq: RobustMQ is a next-generation, high-performance, cloud-native, converged message queue that is compatible with multiple mainstream message queuing protocols and has complete Serverless capabilities.](https://github.com/robustmq/robustmq)
+- [rocketmq-rust: Apache RocketMQ build in Rust. Faster, safer, and with lower memory usage.](https://github.com/mxsm/rocketmq-rust)
+
 </div>
