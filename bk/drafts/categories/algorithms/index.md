@@ -43,4 +43,7 @@ The following table denotes the most common crates used for each algorithm categ
 
 <div class="hidden">
 [review; add graph examples](https://github.com/john-cd/rust_howto/issues/1165)
+
+- [rust-algorithms: Common data structures and algorithms in Rust](https://github.com/EbTech/rust-algorithms)
+
 </div>
