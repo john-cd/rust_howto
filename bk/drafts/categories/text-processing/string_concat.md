@@ -29,4 +29,7 @@ String concatenation is the operation of joining two or more strings together en
 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/964)
+
+- [constcat](https://crates.io/crates/constcat)
+
 </div>
