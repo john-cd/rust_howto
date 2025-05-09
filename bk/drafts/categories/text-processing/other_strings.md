@@ -65,5 +65,6 @@ This crate provides extension traits for `&[u8]` and `Vec<u8>` that enable their
 [write](https://github.com/john-cd/rust_howto/issues/1194)
 
 - [compact_str](https://crates.io/crates/compact_str)
+- [string_cache](https://docs.rs/string_cache/latest/string_cache/) A library for interning things that are AsRef<str>.
 
 </div>
