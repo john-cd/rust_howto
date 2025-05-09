@@ -86,4 +86,8 @@ There is an unstable Cargo API, but it's not recommended for most plugins due to
 
 <div class="hidden">
 [review in depth, reorg table NOW](https://github.com/john-cd/rust_howto/issues/311)
+
+- [cargo-prefetch: Cargo subcommand to download popular crates.](https://github.com/ehuss/cargo-prefetch)
+- [cargo-cyclonedx](https://crates.io/crates/cargo-cyclonedx)
+
 </div>
