@@ -28,7 +28,7 @@ Shader translator and validator. Part of the [`wgpu`][c-wgpu]⮳{{hi:wgpu}} proj
 
 ## `rust-gpu` {#rust-gpu}
 
-Making Rust a first-class language and ecosystem for [GPU][p-gpu] shaders
+Making Rust a first-class language and ecosystem for [GPU][p-gpu] shaders.
 
 ## `cubecl` {#cubecl}
 
@@ -76,4 +76,7 @@ Compute Shaders are often handled through the low-level graphics [APIs][p-apis] 
 <div class="hidden">
 [decide what to cover, write](https://github.com/john-cd/rust_howto/issues/1228)
 review `gpu-allocator`
+
+- [rust-gpu: Making Rust a first-class language and ecosystem for GPU shaders](https://github.com/EmbarkStudios/rust-gpu)
+
 </div>
