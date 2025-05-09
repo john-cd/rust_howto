@@ -1,5 +1,7 @@
 
-[Index of Examples](../drafts/examples_index.md)
+[Index of Examples](indices/examples_index.md)
+[Crates (Alphabetic)](indices/crates_alphabetical.md)
+[Crates (by Category)](indices/crates_by_category.md)
 
 ---
 
@@ -24,20 +26,16 @@
   - [Iterators](language/iterators.md)
   - [Macros](language/macros.md)
 
-- [Standard Library](../drafts/standard-library/index.md)
-  - [Option](../drafts/standard-library/option.md)
-  - [Result](../drafts/standard-library/result.md)
-  - [Vectors](../drafts/standard-library/vectors.md)
-  - [HashMap](../drafts/standard-library/hashmaps.md)
-  - [Strings](../drafts/standard-library/strings.md)
-  - [Copy-on-Write](../drafts/standard-library/cow.md)
-  - [Smart Pointers](../drafts/standard-library/smart_pointers.md)
-  - [AsRef](../drafts/standard-library/asref.md)
-  - [Automatic Trait Derivation](../drafts/standard-library/derive.md)
-
-- [Crates](crates/index.md)
-  - [Crates (Alphabetic)](crates/crates_alphabetical.md)
-  - [Crates (by Category)](crates/crates_by_category.md)
+- [Standard Library](standard-library/index.md)
+  - [Option](standard-library/option.md)
+  - [Result](standard-library/result.md)
+  - [Vectors](standard-library/vectors.md)
+  - [HashMap](standard-library/hashmaps.md)
+  - [Strings](standard-library/strings.md)
+  - [Copy-on-Write](standard-library/cow.md)
+  - [Smart Pointers](standard-library/smart_pointers.md)
+  - [AsRef](standard-library/asref.md)
+  - [Automatic Trait Derivation](standard-library/derive.md)
 
 ---
 
@@ -305,37 +303,33 @@
 
 ---
 
-- [Links](../drafts/links/index.md)
-  - [Links](../drafts/links/links.md)
-  - [Example Code](../drafts/links/example_code.md)
-  - [Cheat Sheets](../drafts/links/rust_cheatsheets.md)
-  - [Blogs](../drafts/links/blogs_podcasts_meetups.md)
-  - [Books](../drafts/links/books.md)
-  - [Companies](../drafts/links/companies.md)
-  - [Learning](../drafts/links/learning.md)
+- [Links](links/index.md)
+  - [Links](links/links.md)
+  - [Example Code](links/example_code.md)
+  - [Cheat Sheets](links/rust_cheatsheets.md)
+  - [Blogs](links/blogs_podcasts_meetups.md)
+  - [Books](links/books.md)
+  - [Companies](links/companies.md)
+  - [Learning](links/learning.md)
 
-- [Contributing](../drafts/contributing/index.md)
-  - [Topics of Interest](../drafts/contributing/topics_of_interest.md)
-  - [Repository Structure](../drafts/contributing/repo_structure.md)
-  - [Environment Setup](../drafts/contributing/dev_environment_setup.md)
-  - [Editing](../drafts/contributing/development_editing.md)
-  - [Dev Containers and Docker](../drafts/contributing/dev_container_docker.md)
-  - [Optional Preprocessors](../drafts/contributing/optional_preprocessors.md)
-  - [API Documentation](../drafts/contributing/api_documentation.md)
-  - [Crate Publication](../drafts/contributing/publication.md)
+- [Contributing](contributing/index.md)
+  - [Topics of Interest](contributing/topics_of_interest.md)
+  - [Repository Structure](contributing/repo_structure.md)
+  - [Environment Setup](contributing/dev_environment_setup.md)
+  - [Editing](contributing/development_editing.md)
+  - [Dev Containers and Docker](contributing/dev_container_docker.md)
+  - [Optional Preprocessors](contributing/optional_preprocessors.md)
+  - [API Documentation](contributing/api_documentation.md)
+  - [Crate Publication](contributing/publication.md)
 
----
+[Thanks](thanks.md)
 
-- [Faster linking](categories/development-tools/compilation/faster_linking.md)
-- [Cross-compilation](categories/development-tools/cross-compilation/cross_compilation.md)
-- [Incremental computation](categories/compilers/incremental_computation.md)
+-----------------------------------------------------------
 
-- [Dependency Management](categories/development-tools_cargo-plugins/dependency_management.md)
+## LATER
 
----
-
-- [Accessibility](./drafts/categories/accessibility/index.md)
-  - [Enable screen readers](./drafts/categories/accessibility/screen_readers.md)
+- [Accessibility](categories/accessibility/index.md)
+  - [Enable screen readers](categories/accessibility/screen_readers.md)
 
 - [Aerospace](categories/categories/aerospace/index.md)
   - [Aerospace](categories/categories/aerospace/aerospace.md)
@@ -369,7 +363,8 @@
   - [Rust-native cloud development](other/cloud/rust_native_cloud_development.md)
 
 - [Compilers](categories/compilers/index.md)
-  - [Compilation duration reduction](../src/categories/development-tools/compilation/reduce_compilation_duration.md)
+  - [Compilation duration reduction](categories/development-tools/compilation/reduce_compilation_duration.md)
+  - [Incremental computation](categories/compilers/incremental_computation.md)
 
 - [Computer vision](categories/computer-vision/index.md)
   - [Open CV](categories/computer-vision/opencv.md)
