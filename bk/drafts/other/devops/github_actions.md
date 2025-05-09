@@ -139,4 +139,6 @@ rust-toolchain (github action): Github action to install Rust components via rus
 rust-cache (github action): Github action to cache compilation artifacts and speed up subsequent runs.
 install-action (github action): GitHub Action for installing [development tools][p-development-tools] (mainly from GitHub Releases).
 
+- [Octocrab](https://lib.rs/crates/octocrab)
+
 </div>

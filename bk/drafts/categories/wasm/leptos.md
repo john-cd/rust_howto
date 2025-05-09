@@ -21,4 +21,7 @@
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/1220)
+
+- [leptosfmt — Rust application](https://lib.rs/crates/leptosfmt)
+
 </div>

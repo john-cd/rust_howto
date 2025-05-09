@@ -37,4 +37,6 @@
 
 - [AWS Lambda + DuckDB (and Delta Lake) - by Daniel Beach](https://dataengineeringcentral.substack.com/p/aws-lambda-duckdb-and-delta-lake)
 
+- [Elusion — Rust utility](https://lib.rs/crates/elusion)
+
 </div>

@@ -25,4 +25,7 @@ The [Copenhagen Book][book-copenhagen] provides a general guideline on implement
 
 <div class="hidden">
 [add Oauth](https://github.com/john-cd/rust_howto/issues/636)
+
+- [jsonwebtoken — Rust auth library](https://lib.rs/crates/jsonwebtoken)
+
 </div>

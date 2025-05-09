@@ -65,4 +65,7 @@ See [[embedded | Embedded]] Systems.
 
 <div class="hidden">
 [expand hardware-support, write missing sections NOW](https://github.com/john-cd/rust_howto/issues/70)
+
+- [Multiversion — Rust HW library](https://lib.rs/crates/multiversion)
+
 </div>

@@ -88,10 +88,26 @@ See [[web-programming_websocket | Web Programming: Websocket]].
 <div class="hidden">
 [web-programming/index: organize; need full review; further cross link NOW](https://github.com/john-cd/rust_howto/issues/500)
 
+Frameworks
+
 - [Which Rust web framework to choose in 2022 (with code examples)](https://kerkour.com/rust-web-framework-2022)
+
+QUIC
+
 - [quiche: Savory implementation of the QUIC transport protocol and HTTP/3](https://github.com/cloudflare/quiche)
 - [Quinn — Rust network library](https://lib.rs/crates/quinn)
 - [msquic: Cross-platform, C implementation of the IETF QUIC protocol, exposed to C, C++, C# and Rust.](https://github.com/microsoft/msquic)
+
 - [Mockito — Rust web dev library](https://lib.rs/crates/mockito)
+
+HTTP
+
+- [H2 — Rust web dev library](https://lib.rs/crates/h2)
+
+OTHER
+
+- [webbrowser — Rust web dev library](https://lib.rs/crates/webbrowser)  open URLs and local files in the web browsers available on a platform
+
+- [webpki-root-certs — Rust crypto library](https://lib.rs/crates/webpki-root-certs)
 
 </div>
