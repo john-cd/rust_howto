@@ -87,4 +87,7 @@ The following examples cover less commonly-used data structures:
 
 <div class="hidden">
 [data-structures: expand](https://github.com/john-cd/rust_howto/issues/280)
+
+- [rust-algorithms: Common data structures and algorithms in Rust](https://github.com/EbTech/rust-algorithms)
+
 </div>
