@@ -35,4 +35,7 @@
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/1174)
+
+- [pretty_assertions — Rust dev tool](https://lib.rs/crates/pretty_assertions)
+
 </div>
