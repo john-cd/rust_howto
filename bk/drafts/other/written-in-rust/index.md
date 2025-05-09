@@ -186,4 +186,11 @@ This section provides a few examples of software written in Rust, organized by t
 
 - [Fish 4.0: The Fish Of Theseus](https://fishshell.com/blog/rustport/)
 
+- [shoes: A multi-protocol proxy server written in Rust (HTTP, SOCKS5, Vmess, Vless, Shadowsocks, Trojan, Snell, Hysteria2, TUIC v5)](https://github.com/cfal/shoes)
+
+- [Jujutsu (docs)](https://jj-vcs.github.io/jj/latest/)
+- [Steve's Jujutsu Tutorial](https://steveklabnik.github.io/jujutsu-tutorial/)
+
+- [Codename Goose](https://block.github.io/goose/docs/quickstart)
+
 </div>
