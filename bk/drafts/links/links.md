@@ -18,14 +18,12 @@
 ## Lists of Rust Links {#links}
 
 - [The Rust Starter Pack][rust-starter-pack]⮳.
-- [`Awesome Rust`][awesome-rust-github]⮳ [![awesome-rust-github][awesome-rust-github-badge]][awesome-rust-github].
+- [`Awesome Rust`: A curated list of Rust code and resources][awesome-rust-github]⮳ [(GitHub)][awesome-rust-github]⮳.
+- [`AreWeRustYet`: Awesome list of "Are We *thing* Yet" for Rust](https://github.com/UgurcanAkkok/AreWeRustYet)⮳.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
 [links: add more NOW](https://github.com/john-cd/rust_howto/issues/569)
-
-- [awesome-rust: A curated list of Rust code and resources.](https://github.com/rust-unofficial/awesome-rust)
-
 </div>
