@@ -1,7 +1,15 @@
 # TODOs
 
+- polish intro, thanks
 - language section: write / finish
-- finish to add RBE link #29
+  - finish to add RBE link #29
+
+- clean playground
+  - move WIP examples from playground
+
+- License
+
+## Now
 
 - Close NOW tickets: WIP
 - Go trough VS Code bookmarks (WSL): WIP
@@ -29,9 +37,8 @@
 
 ## Review tools and consolidate WIP
 
-- clean: done
 - crate-indices WIP
-- autogen TODO
+- autogen - in playground
 - links
 - templ
 - tool_lib
@@ -56,17 +63,11 @@ consolidate CLIs
 
 ## Replace inline links and naked URLs by ref-style links
 
-- fix inline_link script and/or finish pest parser (currently in autogen - move / cleanup)
+- fix inline_link script and/or finish pest parser (currently in playground)
 
 ## Update recipe tables
 
 - improve scripts that generate links / update recipe tables
-
----
-
-## Make it work on WSL fully
-
-- also fix VS code disconnect from WSL
 
 ---
 
