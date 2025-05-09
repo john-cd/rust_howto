@@ -49,4 +49,7 @@ Consult the [`no-std`][cat-no-std] category on `crates.io`.
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/427)
 review in depth
+
+- [micromath: Embedded Rust arithmetic, 2D/3D vector, and statistics library](https://github.com/tarcieri/micromath)
+
 </div>
