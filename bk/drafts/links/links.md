@@ -25,4 +25,7 @@
 
 <div class="hidden">
 [links: add more NOW](https://github.com/john-cd/rust_howto/issues/569)
+
+- [awesome-rust: A curated list of Rust code and resources.](https://github.com/rust-unofficial/awesome-rust)
+
 </div>
