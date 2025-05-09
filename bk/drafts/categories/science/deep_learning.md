@@ -38,5 +38,6 @@ Burn is a comprehensive dynamic Deep Learning Framework built using Rust with fl
 [write](https://github.com/john-cd/rust_howto/issues/1205)
 
 - [burn: Burn is a new comprehensive dynamic Deep Learning Framework built using Rust with extreme flexibility, compute efficiency and portability as its primary goals.](https://github.com/tracel-ai/burn)
+- [tensorflow: Rust language bindings for TensorFlow](https://github.com/tensorflow/rust)
 
 </div>
