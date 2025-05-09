@@ -52,4 +52,7 @@
 - [rust-course-fei: Rust course](https://github.com/Kobzol/rust-course-fei/tree/main)
 - [Rust Development Classes](https://rust-classes.com/preface)
 
+- [100-exercises-to-learn-rust: A self-paced course to learn Rust, one exercise at a time.](https://github.com/mainmatter/100-exercises-to-learn-rust)
+- [idiomatic-rust: A peer-reviewed collection of articles/talks/repos which teach concise, idiomatic Rust.](https://github.com/mre/idiomatic-rust)
+
 </div>
