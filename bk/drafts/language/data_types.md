@@ -77,4 +77,6 @@ TODO find spot for overflows
 - Return the value and a boolean indicating whether there was overflow with the `overflowing_*` methods.
 - Saturate at the value's minimum or maximum values with the `saturating_*` methods.
 
+- [half — data structures in Rust](https://lib.rs/crates/half)
+
 </div>
