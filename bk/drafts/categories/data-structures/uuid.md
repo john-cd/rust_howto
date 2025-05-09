@@ -25,4 +25,9 @@ A UUID is a unique 128-bit value, stored as 16 octets, and regularly formatted a
 
 <div class="hidden">
 [uuid: write](https://github.com/john-cd/rust_howto/issues/283)
+
+- [ulid](https://docs.rs/ulid/latest/ulid/index.html)
+
+Universally Unique Lexicographically Sortable Identifiers.
+
 </div>
