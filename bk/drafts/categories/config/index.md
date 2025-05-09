@@ -17,7 +17,7 @@ FIXME Configuration crates like [`config-rs`][c-config]⮳{{hi:config-rs}}, a po
 Excellent for 12-factor applications.
 
 Command-Line Arguments:
-Using crates like clap to parse command-line arguments.
+Using crates like `clap` to parse command-line arguments.
 Suitable for passing simple configuration options.
 
 ## Best Practices

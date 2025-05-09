@@ -48,5 +48,5 @@ Parse [TOML][p-toml] into your own [structs][p-structs] using [`serde`][c-serde]
 
 <div class="hidden">
 [complex: clean up `toml`](https://github.com/john-cd/rust_howto/issues/350)
-move to serde / binary_encoders?
+move to `serde` / binary_encoders?
 </div>

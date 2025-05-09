@@ -102,7 +102,7 @@ review below
 - [heapless](https://docs.rs/heapless/latest/heapless/)
 - [recurring-tasks: Rust crate to build an app that runs recurring, periodic tasks](https://github.com/rogusdev/recurring-tasks)
 - [unicode_width - Rust](https://unicode-rs.github.io/unicode-width/unicode_width/index.html)
-- [awesome-pest: A curated list of resources, projects, and tools using or for the pest parser generator in Rust](https://github.com/pest-parser/awesome-pest)
+- [awesome-pest: A curated list of resources, projects, and tools using or for the `pest` parser generator in Rust](https://github.com/pest-parser/awesome-pest)
 - [cgroups-rs](https://crates.io/crates/cgroups-rs)
 - [rauthy: OpenID Connect Single Sign-On Identity & Access Management](https://github.com/sebadob/rauthy)
 - [youki: A container runtime written in Rust](https://github.com/youki-dev/youki)

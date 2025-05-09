@@ -7,7 +7,7 @@
 | Documentation Generator | `cargo doc` (built-in) |
 | Doc Comments | Use /// or //! in your code. |
 | Testing with Documentation Examples | Use `#[doc = "```"]` in doc comments |
-| Markdown Processing (for docs) | pulldown-cmark, comrak |
+| Markdown Processing (for docs) | pulldown-cmark, `comrak` |
 | Generating Documentation from Tests | Often done with custom scripts or build tools. |
 | API Documentation Generators (for REST [APIs][p-apis], etc.) | Often tied to web frameworks; no single dominant crate. |
 
