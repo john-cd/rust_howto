@@ -74,4 +74,11 @@ https://www.kcl-lang.io/docs/user_docs/getting-started/
 `docker-api`: a Rust interface to Docker containers
 
 https://dev.to/mark_mwendia_0298dd9c0aad/optimizing-devops-pipelines-for-rust-projects-leveraging-cargo-and-cicd-474d
+
+CD/CI
+
+- [gh-workflow](https://crates.io/crates/gh-workflow)
+- [GitHub Actions best practices for Rust projects](https://www.infinyon.com/blog/2021/04/github-actions-best-practices/)
+- [GitHub - pipelight: Tiny automation pipelines. Bring CI/CD to the smallest projects. Self-hosted, Lightweight, CLI only.](https://github.com/pipelight/pipelight)
+
 </div>
