@@ -16,39 +16,39 @@
 [ex-links-realworld]: example_code.md#realworld
 [ex-links-rust-book-source-code]: example_code.md#rust-book-source-code
 [p-axum]: # "../categories/web-programming_http-server/axum.md"
-[p-benchmarking]: ../../src/categories/development-tools_profiling/benchmarking.md
-[p-building]: ../../src/categories/development-tools_cargo-plugins/building.md
+[p-benchmarking]: # "../categories/development-tools_profiling/benchmarking.md"
+[p-building]: # "../categories/development-tools_cargo-plugins/building.md"
 [p-cloud]: # "../other/cloud/index.md"
-[p-crates]: ../../src/crates/index.md
+[p-crates]: ../crate_selection/index.md
 [p-cross-platform]: # "../other/cross-platform/index.md"
-[p-cryptography]: ../../src/categories/cryptography/index.md
-[p-database]: ../../src/categories/database/index.md
-[p-design-patterns]: ../../src/categories/rust-patterns/behavioral_patterns.md
-[p-development-tools]: ../../src/categories/development-tools/index.md
-[p-documentation]: ../../src/categories/development-tools/documentation/documentation.md
+[p-cryptography]: # "../categories/cryptography/index.md"
+[p-database]: # "../categories/database/index.md"
+[p-design-patterns]: # "../categories/rust-patterns/behavioral_patterns.md"
+[p-development-tools]: # "../categories/development-tools/index.md"
+[p-documentation]: # "../categories/development-tools/documentation/documentation.md"
 [p-embedded]: # "../categories/embedded/index.md"
-[p-error-handling]: ../../src/categories/rust-patterns/error_handling/error_handling.md
-[p-generics]: ../../src/language/generics.md
-[p-java]: ../../src/categories/development-tools_ffi/java.md
-[p-language]: ../../src/language/index.md
+[p-error-handling]: # "../categories/rust-patterns/error_handling/error_handling.md"
+[p-generics]: # "../language/generics.md"
+[p-java]: # "../categories/development-tools_ffi/java.md"
+[p-language]: # "../language/index.md"
 [p-learning]: ./learning.md
 [p-links]: ./index.md
 [p-linux]: # "../categories/os_linux-apis/linux.md"
-[p-log]: ../../src/categories/development-tools_debugging/log.md
+[p-log]: # "../categories/development-tools_debugging/log.md"
 [p-machine-learning]: # "../categories/science/machine_learning.md"
-[p-main]: ../../src/language/entrypoint.md
-[p-maintaining]: ../../src/categories/development-tools_cargo-plugins/maintaining.md
-[p-middleware]: ../../src/categories/web-programming_http-server/middleware.md
-[p-parse]: ../../src/categories/date-and-time/parse.md
-[p-performance]: ../../src/categories/development-tools_cargo-plugins/performance.md
-[p-protocols]: ../../src/categories/aerospace_protocols/aerospace_protocols.md
-[p-robotics]: ../../src/categories/science_robotics/robotics.md
+[p-main]: # "../language/entrypoint.md"
+[p-maintaining]: # "../categories/development-tools_cargo-plugins/maintaining.md"
+[p-middleware]: # "../categories/web-programming_http-server/middleware.md"
+[p-parse]: # "../categories/date-and-time/parse.md"
+[p-performance]: # "../categories/development-tools_cargo-plugins/performance.md"
+[p-protocols]: # "../categories/aerospace_protocols/aerospace_protocols.md"
+[p-robotics]: # "../categories/science_robotics/robotics.md"
 [p-science]: # "../categories/science/index.md"
-[p-search]: ../../src/categories/database/search.md
-[p-server]: ../../src/categories/network-programming/server.md
+[p-search]: # "../categories/database/search.md"
+[p-server]: # "../categories/network-programming/server.md"
 [p-serverless]: # "../other/cloud/serverless.md"
-[p-virtualization]: ../../src/categories/virtualization/virtualization.md
+[p-virtualization]: # "../categories/virtualization/virtualization.md"
 [p-wasm]: # "../categories/wasm/index.md"
-[p-windows]: ../../src/categories/os_windows-apis/windows.md
+[p-windows]: # "../categories/os_windows-apis/windows.md"
 [p-written-in-rust]: # "../other/written-in-rust/index.md"
-[p-yew]: ../../src/categories/wasm/yew.md
+[p-yew]: # "../categories/wasm/yew.md"
