@@ -89,5 +89,7 @@ See [[web-programming_websocket | Web Programming: Websocket]].
 [web-programming/index: organize; need full review; further cross link NOW](https://github.com/john-cd/rust_howto/issues/500)
 
 - [Which Rust web framework to choose in 2022 (with code examples)](https://kerkour.com/rust-web-framework-2022)
+- [quiche: Savory implementation of the QUIC transport protocol and HTTP/3](https://github.com/cloudflare/quiche)
+- [Quinn — Rust network library](https://lib.rs/crates/quinn)
 
 </div>
