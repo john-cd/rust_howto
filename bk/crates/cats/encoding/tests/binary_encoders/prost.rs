@@ -10,7 +10,7 @@
 // use prost::Message;
 
 // mod person {
-//     include!(concat!(env!("OUT_DIR"), "/tests/proto/person.rs"));
+//     include!(concat!(env!("OUT_DIR"), "/tests/binary_encoders/person.rs"));
 // }
 
 // fn main() {

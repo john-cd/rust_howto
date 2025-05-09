@@ -18,7 +18,7 @@
 // //! fn main() {
 // //!     capnpc::CompilerCommand::new()
 // //!         //.src_prefix("schema")
-// //!         .file("tests/proto/foo.capnp")
+// //!         .file("tests/binary_encoders/foo.capnp")
 // //!         .run()
 // //!         .expect("schema compiler command");
 // //! }
@@ -33,9 +33,9 @@
 
 // // Define the schema for our data
 // mod foo_capnp {
-//     include!(concat!(env!("OUT_DIR"), "/tests/proto/foo_capnp.rs"));
-//     // Assuming your schema is in `foo_capnp.capnp`.
-// }
+//     include!(concat!(env!("OUT_DIR"),
+// "/tests/binary_encoders/foo_capnp.rs"));     // Assuming your schema is in
+// `foo_capnp.capnp`. }
 
 // fn main() {
 //     // Create a message builder.
