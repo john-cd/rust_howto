@@ -112,4 +112,7 @@ Combinatorics, set theory, and logic.
 
 <div class="hidden">
 [in depth review; decide what to cover in examples](https://github.com/john-cd/rust_howto/issues/936)
+
+- [micromath: Embedded Rust arithmetic, 2D/3D vector, and statistics library](https://github.com/tarcieri/micromath)
+
 </div>
