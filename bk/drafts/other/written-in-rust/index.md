@@ -193,5 +193,6 @@ This section provides a few examples of software written in Rust, organized by t
 
 - [Codename Goose](https://block.github.io/goose/docs/quickstart)
 - [grex: A command-line tool and Rust library with Python bindings for generating regular expressions from user-provided test cases](https://github.com/pemistahl/grex)
+- [youki: A container runtime written in Rust](https://github.com/youki-dev/youki)
 
 </div>
