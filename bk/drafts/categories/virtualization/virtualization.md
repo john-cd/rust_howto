@@ -5,7 +5,7 @@
 ## Implement Virtualization {#virt}
 
 ```rust,editable
-{{#include ../../../crates/cats/virtualization/tests/virtualization1.rs:example}}
+{{#include ../../../crates/cats/virtualization/tests/virtualization/virtualization1.rs:example}}
 ```
 
 {{#include refs.incl.md}}
