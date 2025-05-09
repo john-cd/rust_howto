@@ -40,4 +40,7 @@ Mention https://github.com/moby/buildkit
 need in-depth review
 cover [podman](https://github.com/containers/podman)
 cover [containerd-rust-extensions](https://github.com/containerd/rust-extensions) A collection of Rust crates to extend containerd.
+
+- [cgroups-rs](https://crates.io/crates/cgroups-rs)
+
 </div>
