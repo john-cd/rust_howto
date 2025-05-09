@@ -44,4 +44,7 @@ Refer to the [[wasm | WASM]] chapter.
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/951)
+
+- [Reval — Rust expression parser](https://lib.rs/crates/reval)
+
 </div>
