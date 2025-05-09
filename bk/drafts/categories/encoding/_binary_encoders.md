@@ -112,4 +112,7 @@ In `foo.capnp`:
 
 <div class="hidden">
 [binary_encoders: write; add anchors; add examples; add table; add to index / SUMMARY](https://github.com/john-cd/rust_howto/issues/349)
+
+- [pot](https://docs.rs/crate/pot)
+
 </div>
