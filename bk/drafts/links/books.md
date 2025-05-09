@@ -25,4 +25,7 @@
 
 <div class="hidden">
 [books: add / review NOW](https://github.com/john-cd/rust_howto/issues/565)
+
+- [Rust Atomics and Locks by Mara Bos](https://marabos.nl/atomics/)
+
 </div>

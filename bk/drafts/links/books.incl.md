@@ -1,3 +1,0 @@
-||
-|---|
-| [Books][ex-links-books] |
