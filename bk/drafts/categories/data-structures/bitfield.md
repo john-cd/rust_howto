@@ -44,4 +44,7 @@ A flagset refers to a bitfield used to represent a set of boolean flags or optio
 
 <div class="hidden">
 [bitfield: edit / review](https://github.com/john-cd/rust_howto/issues/279)
+
+- [roaring](https://crates.io/crates/roaring)
+
 </div>
