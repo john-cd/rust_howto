@@ -83,4 +83,7 @@ While tools like 'SWIG' exist, [`cxx`][c-cxx]⮳{{hi:cxx}} is generally preferre
 
 <div class="hidden">
 [generate_ffi_bindings: write](https://github.com/john-cd/rust_howto/issues/324)
+
+- [Rust ❤️ pre-existing C++ ♡ Existing C++](https://google.github.io/autocxx/)
+
 </div>
