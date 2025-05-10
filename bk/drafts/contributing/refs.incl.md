@@ -47,7 +47,7 @@
 [p-src]: # "../index.md"
 [p-statistics]: # "../categories/mathematics/statistics.md"
 [p-toml]: # "../categories/parser-implementations/toml.md"
+[p-topics-of-interest]: topics_of_interest.md
 [p-uavs]: # "../categories/aerospace_unmanned-aerial-vehicles/uavs.md"
 [p-version-control]: # "../other/devops/version_control.md"
 [p-windows]: # "../categories/os_windows-apis/windows.md"
-[p-topics-of-interest]: topics_of_interest.md
