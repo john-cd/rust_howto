@@ -92,5 +92,6 @@ The following examples cover less commonly-used data structures:
 - [PHF — data structures in Rust](https://lib.rs/crates/phf) Runtime support for perfect hash function data structures
 - [PriorityQueue — data structures in Rust](https://lib.rs/crates/priority-queue)
 - [elsa — data structures in Rust](https://lib.rs/crates/elsa)
+- [Equivalent — data structures in Rust](https://lib.rs/crates/equivalent)
 
 </div>
