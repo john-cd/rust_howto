@@ -35,7 +35,7 @@ cargo clean
 # Looks for tests to run in two places: in each of your src files and any tests in tests/.
 cargo test
 
-# Updates all dependencies - respect the SemVer constraints in Cargo.toml
+# Updates all dependencies - respects the SemVer constraints in Cargo.toml
 cargo update
 # Updates just "regex"
 cargo update -p regex
