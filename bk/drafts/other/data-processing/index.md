@@ -39,4 +39,6 @@
 
 - [Elusion — Rust utility](https://lib.rs/crates/elusion)
 
+- [risingwave: Best-in-class stream processing, analytics, and management. Perform continuous analytics, or build event-driven applications, real-time ETL pipelines, and feature stores in minutes. Unified streaming and batch. PostgreSQL compatible.](https://github.com/risingwavelabs/risingwave)
+
 </div>
