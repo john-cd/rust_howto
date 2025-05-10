@@ -1,13 +1,23 @@
 # TODOs
 
-- polish intro, thanks
+- move rest of links from TOREVIEW.md
+
+- polish intro
+  - review about examples
+
 - language section: write / finish
   - finish to add RBE link #29
 
+- polish thanks
+  - License / legal rethink
+
+- indices
+  - script for crates_and_examples
+  - rethink crates_alpha and categories
+  - categories.md
+
 - clean playground
   - move WIP examples from playground
-
-- License
 
 ## Now
 
