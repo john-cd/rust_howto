@@ -27,4 +27,9 @@ See [[architectural_patterns | Architectural Patterns]].
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/573)
+
+PLUGINS
+
+- [INVENTORY](https://lib.rs/crates/inventory)
+
 </div>
