@@ -41,4 +41,12 @@
 
 - [risingwave: Best-in-class stream processing, analytics, and management. Perform continuous analytics, or build event-driven applications, real-time ETL pipelines, and feature stores in minutes. Unified streaming and batch. PostgreSQL compatible.](https://github.com/risingwavelabs/risingwave)
 
+- [materialize: The Cloud Operational Data Store: use SQL to transform, deliver, and act on fast-changing data.](https://github.com/MaterializeInc/materialize)
+
+- [pathway: Python ETL framework for stream processing, real-time analytics, LLM pipelines, and RAG.](https://github.com/pathwaycom/pathway)
+
+- [recurring-tasks: Rust crate to build an app that runs recurring, periodic tasks](https://github.com/rogusdev/recurring-tasks)
+
+- [Hydro](https://hydro.run/docs/hydro) 
+
 </div>

@@ -38,4 +38,7 @@
 
 <div class="hidden">
 [others: review/add](https://github.com/john-cd/rust_howto/issues/615)
+
+- [ChatGPT: ChatGPT Desktop Application (Mac, Windows and Linux)](https://github.com/lencx/ChatGPT)
+
 </div>
