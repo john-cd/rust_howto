@@ -66,6 +66,7 @@ $ cargo semver-checks
 <div class="hidden">
 [maintaining: fix; titles; decide what goes where](https://github.com/john-cd/rust_howto/issues/313)
 
-- [SemVer — Rust parser](https://lib.rs/crates/semver)
+- [SemVer parser](https://lib.rs/crates/semver)
+- [SemVer Compatibility - The Cargo Book](https://doc.rust-lang.org/cargo/reference/semver.html)
 
 </div>
