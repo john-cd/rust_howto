@@ -17,13 +17,13 @@
 [ex-written-in-rust-utilities]: development_tools.md#utilities
 [ex-written-in-rust-uv]: python_tools.md#uv
 [ex-written-in-rust-zed]: development_tools.md#zed
-[p-cross-platform]: ../cross-platform/index.md
-[p-embedded]: ../../categories/embedded/index.md
-[p-environment-variables]: ../../../src/categories/config/environment_variables.md
-[p-filesystem]: ../../categories/filesystem/index.md
+[p-cross-platform]: # "../cross-platform/index.md"
+[p-embedded]: # "../../categories/embedded/index.md"
+[p-environment-variables]: # "../../categories/config/environment_variables.md"
+[p-filesystem]: # "../../categories/filesystem/index.md"
 [p-gui]: # "../../categories/gui/index.md"
-[p-language]: ../../language/index.md
-[p-python]: ../../categories/development-tools_ffi/python.md
+[p-language]: # "../../language/index.md"
+[p-python]: # "../../categories/development-tools_ffi/python.md"
 [p-scripting]: # "../scripting/index.md"
-[p-search]: ../../../src/categories/database/search.md
+[p-search]: # "../../categories/database/search.md"
 [p-written-in-rust]: index.md
