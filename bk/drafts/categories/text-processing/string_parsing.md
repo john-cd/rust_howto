@@ -24,4 +24,7 @@ Creates a custom struct `RGB` and implements the [`FromStr`][c-std::str::FromStr
 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/965)
+
+- [validator](https://lib.rs/crates/validator)
+
 </div>
