@@ -49,4 +49,17 @@ The [`indoc`][c-indoc]⮳{{hi:indoc}} crate exports five additional macros to su
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/1190)
+
+cover inflector
+
+```rust,noplayground
+use inflector::Inflector;
+
+fn main() {
+  let capitalized = "some string".to_title_case();
+}
+```
+
+- [Why is capitalizing the first letter of a string so convoluted in Rust? - Stack Overflow](https://stackoverflow.com/questions/38406793/why-is-capitalizing-the-first-letter-of-a-string-so-convoluted-in-rust)
+
 </div>
