@@ -98,7 +98,7 @@ alias ca := clippyall
 alias ntt := nextestthis
 
 @nextestthis test:
-  cargo nextest run --locked --no-fail-fast --success-output final -E 'test(~{{test}}) or binary_id(~{{test}})'
+  cd {{code_root}} && cargo nextest run --locked --no-fail-fast --success-output final -E 'test(~{{test}}) or binary_id(~{{test}})'
 
 current_crate := file_name(invocation_directory())
 
