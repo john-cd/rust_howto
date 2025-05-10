@@ -6,7 +6,6 @@
 [ex-links-example-code]: example_code.md#example-code
 [ex-links-ferrous-systems-training]: learning.md#ferrous-systems-training
 [ex-links-jobs]: companies.md#jobs
-[ex-links-key-websites]: links.md#key-websites
 [ex-links-learning]: learning.md#learning
 [ex-links-links]: links.md#links
 [ex-links-meetups]: blogs_podcasts_meetups.md#meetups
