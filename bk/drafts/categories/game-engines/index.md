@@ -40,4 +40,7 @@ Code examples are found below:
 <div class="hidden">
 [expand](https://github.com/john-cd/rust_howto/issues/370)
 Needs full review
+
+- [pyxel: A retro game engine for Python](https://github.com/kitao/pyxel)
+
 </div>
