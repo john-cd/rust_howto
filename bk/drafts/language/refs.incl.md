@@ -12,6 +12,7 @@
 [ex-language-conditional-compilation]: attributes.md#conditional-compilation
 [ex-language-constants-in-traits]: traits.md#constants-in-traits
 [ex-language-control-flow]: control_flow.md
+[ex-language-conversion-conventions]: naming_conventions.md#conversion-conventions
 [ex-language-create-an-iterator]: iterators.md#create-an-iterator
 [ex-language-data_types]: data_types.md
 [ex-language-default-implementation]: traits.md#default-implementation
@@ -28,8 +29,10 @@
 [ex-language-generic-structs]: generics.md#generic-structs
 [ex-language-generic-traits]: generics.md#generic-traits
 [ex-language-generics]: generics.md
+[ex-language-getter-conventions]: naming_conventions.md#getter-conventions
 [ex-language-if-else]: control_flow.md#if-else
 [ex-language-if-let]: match.md#if-let
+[ex-language-iterator-conventions]: naming_conventions.md#iterator-conventions
 [ex-language-iterators]: iterators.md
 [ex-language-lifetime-annotations]: lifetimes.md#lifetime-annotations
 [ex-language-lifetime]: lifetimes.md#lifetime
@@ -46,6 +49,7 @@
 [ex-language-multiple-traits]: traits.md#multiple-traits
 [ex-language-must-use]: attributes.md#must-use
 [ex-language-mutable-reference]: ownership_borrowing.md#mutable-reference
+[ex-language-naming-conventions]: naming_conventions.md#naming-conventions
 [ex-language-newtype-pattern]: traits.md#newtype-pattern
 [ex-language-overflow-handling]: data_types.md#overflow-handling
 [ex-language-ownership]: ownership_borrowing.md#ownership
@@ -70,6 +74,7 @@
 [ex-language-variables]: variables_and_constants.md#variables
 [ex-language-while-let]: match.md#while-let
 [ex-language-while]: control_flow.md#while
+[ex-language-write-generic-functions]: functions.md#write-generic-functions
 [p-async]: ../categories/asynchronous/index.md
 [p-automatic-derivation]: ../../drafts/standard-library/derive.md
 [p-documentation]: ../categories/development-tools/documentation/documentation.md
