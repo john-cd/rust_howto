@@ -8,8 +8,7 @@ Example codebases include:
 
 ## RealWorld {#realworld}
 
-[![realworld-example-apps][realworld-example-apps-badge]][realworld-example-apps]
-
+- ["Real World" Example Apps][realworld-example-apps]⮳.
 - A full-stack RealWorld implementation using Rust, [`axum`][c-axum]⮳{{hi:axum}}, [`sqlx`][c-sqlx]⮳{{hi:sqlx}}, and [`yew`][c-yew]⮳{{hi:yew}}: [realworld-rust-axum-sqlx][realworld-rust-axum-sqlx-github]⮳.
 
 ## Source Code for Rust Books {#rust-book-source-code}
