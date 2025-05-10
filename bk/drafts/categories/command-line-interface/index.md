@@ -49,5 +49,6 @@ Techniques to help create command line interfaces{{hi:Command-line interface}}, 
 
 - [rustyline](https://docs.rs/rustyline/latest/rustyline/#example)
 - [termimad: A library to display rich (Markdown) snippets and texts in a rust terminal application](https://github.com/Canop/termimad)
+- [rust-terminfo: Terminal information for Rust.](https://github.com/meh/rust-terminfo)
 
 </div>
