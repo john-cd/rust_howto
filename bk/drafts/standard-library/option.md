@@ -69,4 +69,7 @@ These methods extract the contained value in an [`std::option::Option`][c-std::o
 {{hi:Options}}
 <div class="hidden">
 [option: finish Option page map, unwrap_or NOW](https://github.com/john-cd/rust_howto/issues/625)
+
+- [ShowOption](https://lib.rs/crates/show-option)
+
 </div>
