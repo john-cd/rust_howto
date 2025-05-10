@@ -102,4 +102,7 @@ Review [`tonic`][c-tonic]⮳{{hi:tonic}}, [`grpc`][c-grpc]⮳{{hi:grpc}}. See [[
 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/929)
+
+- [encoding_rs — web char encoding library](https://lib.rs/crates/encoding_rs)
+
 </div>
