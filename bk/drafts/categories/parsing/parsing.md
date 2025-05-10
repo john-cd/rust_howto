@@ -66,5 +66,6 @@ Grammars are saved in separate [`.pest`][c-pest]⮳{{hi:.pest}}  files which ar
 [parsing: write; examples](https://github.com/john-cd/rust_howto/issues/448)
 
 - [awesome-pest: A curated list of resources, projects, and tools using or for the `pest` parser generator in Rust](https://github.com/pest-parser/awesome-pest)
+- [winnow](https://docs.rs/winnow/latest/winnow)
 
 </div>
