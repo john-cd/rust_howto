@@ -38,4 +38,8 @@ Rust's "module system" helps structure your projects effectively. It gives you f
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+TODO incorporate
+
+- [Rust Project Primer](https://rustprojectprimer.com/title.html)
+
 </div>
