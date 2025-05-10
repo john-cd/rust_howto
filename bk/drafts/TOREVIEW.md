@@ -64,11 +64,11 @@
 
 - [sonic: Fast, lightweight & schema-less search backend. An alternative to Elasticsearch that runs on a few MBs of RAM.](https://github.com/valeriansaliou/sonic)
 
-## Naming conv
+## Naming conventions
 
 - [naming conventions - When to use as_* vs to_* vs into_* in Rust? - Stack Overflow](https://stackoverflow.com/questions/72996050/when-to-use-as-vs-to-vs-into-in-rust)
 
-## Iter
+## Iterators
 
 - [What is the correct way to return an Iterator (or any other trait)?](https://stackoverflow.com/questions/27535289/what-is-the-correct-way-to-return-an-iterator-or-any-other-trait)
 - [Difference Between iter() and into_iter() in Rust](https://crustc.com/difference-iter-and-into_iter/)

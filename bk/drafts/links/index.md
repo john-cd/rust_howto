@@ -29,7 +29,7 @@
 
 {{#include books.incl.md}}
 
-### Blogs, Podcats, Meetups
+### Blogs, Podcasts, Meetups
 
 {{#include blogs_podcasts_meetups.incl.md}}
 
