@@ -3,7 +3,7 @@
 [Crates (Alphabetic)](indices/crates_alphabetical.md)
 [Crates (by Category)](indices/crates_by_category.md)
 
----
+# Language, Standard Library, and Code Organization
 
 - [Language](language/index.md)
   - [Rust Installation and First Steps](language/rust_install.md)
@@ -37,11 +37,18 @@
   - [AsRef](standard-library/asref.md)
   - [Automatic Trait Derivation](standard-library/derive.md)
 
----
+# Categories
 
 - [Algorithms](categories/algorithms/index.md)
   - [Generate Random Values](categories/algorithms/randomness.md)
   - [Sort a Vector](categories/algorithms/sorting.md)
+
+- [API bindings](categories/categories/api-bindings/index.md)
+
+- [Architecture](categories/other/architecture/index.md)
+  - [Architectural Patterns](categories/other/architecture/architectural_patterns.md)
+  - [Common Architectures](categories/other/architecture/common_architectures.md)
+  - [Software Architecture Process](categories/other/architecture/software_architecture_process.md)
 
 - [Asynchronous](categories/asynchronous/index.md)
   - [Async](categories/asynchronous/async.md)
@@ -301,6 +308,11 @@
   - [gRPC](categories/web-programming_http-server/_grpc.md)
   - [`hyper`](categories/web-programming_http-server/_hyper.md)
 
+- [Written in Rust](other/written-in-rust/index.md)
+  - [Development tools](other/written-in-rust/development_tools.md)
+  - [Python tools](other/written-in-rust/python_tools.md)
+  - [Others](other/written-in-rust/other_tools.md)
+
 ---
 
 - [Links](links/index.md)
@@ -349,12 +361,6 @@
 - [Aerospace - Unmanned Aerial Vehicles](categories/categories/aerospace_unmanned-aerial-vehicles/index.md)
   - [UAVs](categories/categories/aerospace_unmanned-aerial-vehicles/uavs.md)
 
-- [API bindings](categories/categories/api-bindings/index.md)
-  - [Interop with Python](categories/categories/api-bindings/python_interop.md)
-
-- [Architecture](categories/other/architecture/index.md)
-  - [Architecture](categories/other/architecture/architecture.md)
-
 - [Audio](categories/categories/multimedia_audio/index.md)
   - [Audio](categories/categories/multimedia_audio/audio.md)
 
@@ -368,9 +374,6 @@
 
 - [Computer vision](categories/computer-vision/index.md)
   - [Open CV](categories/computer-vision/opencv.md)
-
-- [Containers](other/containers/index.md)
-  - [Containers](categories/virtualization/containers.md)
 
 - [Cross-platform Development](other/cross-platform/index.md)
   - [Crux](other/cross-platform/crux.md)
@@ -523,6 +526,7 @@
 
 - [Virtualization](categories/virtualization/index.md)
   - [Virtualization](categories/virtualization/virtualization.md)
+  - [Containers](categories/virtualization/containers.md)
 
 - [Visualization](categories/visualization/index.md)
   - [Visualization](categories/visualization/visualization.md)
@@ -533,8 +537,3 @@
 
 - [Web programming - websocket](categories/web-programming_websocket/index.md)
   - [Websocket](categories/web-programming_websocket/websocket.md)
-
-- [Written in Rust](other/written-in-rust/index.md)
-  - [Development tools](other/written-in-rust/development_tools.md)
-  - [Python tools](other/written-in-rust/python_tools.md)
-  - [Others](other/written-in-rust/other_tools.md)
