@@ -52,4 +52,7 @@ Often involves using `tokio::test` or similar runtime-specific [attributes][p-at
 
 <div class="hidden">
 [testing: write](https://github.com/john-cd/rust_howto/issues/340)
+
+- [serial_test](https://docs.rs/serial_test/latest/serial_test/) serial_test allows for the creation of serialised Rust tests using the serial attribute
+
 </div>

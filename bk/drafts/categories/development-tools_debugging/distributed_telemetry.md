@@ -72,4 +72,7 @@ Prometheus instrumentation library for Rust applications. Prometheus is an open-
 
 <div class="hidden">
 [write / expand / organize. what to cover?](https://github.com/john-cd/rust_howto/issues/1343)
+
+- [quickwit: Cloud-native search engine for observability. An open-source alternative to Datadog, Elasticsearch, Loki, and Tempo.](https://github.com/quickwit-oss/quickwit)
+
 </div>
