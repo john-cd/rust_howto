@@ -162,4 +162,6 @@ See also [[cross_compiling | Cross Compiling (Cargo Plugins)]].
 
 - [Vagrant by HashiCorp](https://www.vagrantup.com/)
 
+- [include_dir — Rust dev tool](https://lib.rs/crates/include_dir) An evolution of the include_str!() and include_bytes!() macros for embedding an entire directory tree into your binary.
+
 </div>
