@@ -45,5 +45,6 @@ The following table denotes the most common crates used for each algorithm categ
 [review; add graph examples](https://github.com/john-cd/rust_howto/issues/1165)
 
 - [rust-algorithms: Common data structures and algorithms in Rust](https://github.com/EbTech/rust-algorithms)
+- [predicates](https://lib.rs/crates/predicates) boolean-valued predicate functions.
 
 </div>
