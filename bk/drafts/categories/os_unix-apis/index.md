@@ -46,4 +46,7 @@ Bindings to Unix-specific APIs.{{hi:UNIX-specific APIs}}.
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/437)
 convert into table?
+
+- [extrasafe — Rust API for Unix](https://lib.rs/crates/extrasafe)
+
 </div>
