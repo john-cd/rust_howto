@@ -35,6 +35,7 @@ Here's a list of some common command-line utilities written in Rust:
 - [[command-line-interface | Command Line Interface]].
 - [[external_commands | External Commands]].
 - [[links | Links]].
+- [[written_in_rust | Written in Rust]].
 
 ## References
 
@@ -44,5 +45,5 @@ Here's a list of some common command-line utilities written in Rust:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1189)
+[write; deduplicate with other > written in rust](https://github.com/john-cd/rust_howto/issues/1189)
 </div>
