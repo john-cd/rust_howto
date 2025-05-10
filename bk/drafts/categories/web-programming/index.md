@@ -110,4 +110,7 @@ OTHER
 
 - [webpki-root-certs — Rust crypto library](https://lib.rs/crates/webpki-root-certs)
 
+- [Sycamore](https://sycamore.dev/)
+- [sycamore: A library for creating reactive web apps in Rust and WebAssembly](https://github.com/sycamore-rs/sycamore)
+
 </div>
