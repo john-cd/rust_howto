@@ -77,9 +77,13 @@ Randomly generates a string of given length ASCII characters with custom user-de
 
 [`fastrand`][c-fastrand]⮳{{hi:fastrand}} is a simple and fast random number generator. No dependencies, non-cryptographically secure random numbers, lower complexity than [`rand`][c-rand]⮳{{hi:rand}}.
 
+```rust,editable
+{{#include ../../../crates/cats/algorithms/tests/rand/fastrand.rs:example}}
+```
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[randomness: add fastrand](https://github.com/john-cd/rust_howto/issues/208)
+TODO review
 </div>

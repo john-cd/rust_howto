@@ -747,6 +747,7 @@ name = "algorithms"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "fastrand 2.3.0",
  "rand 0.9.1",
  "rand_distr 0.5.1",
 ]

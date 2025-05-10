@@ -10,6 +10,7 @@
 //! global variable, logger for example) are allowed to do so via a `rust_fork`
 //! macro.
 
+mod fastrand;
 mod rand1;
 mod rand_choose;
 mod rand_custom;
