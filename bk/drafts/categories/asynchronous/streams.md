@@ -35,4 +35,7 @@ See also [Tokio][p-tokio] [`async-stream`][c-async_stream]⮳{{hi:async-stream}}
 
 <div class="hidden">
 [add more. streams2.rs is noplayground because it requires a network. rewrite](https://github.com/john-cd/rust_howto/issues/645)
+
+- [AsyncStream](https://lib.rs/crates/async-stream)
+
 </div>
