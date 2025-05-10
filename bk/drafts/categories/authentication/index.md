@@ -29,4 +29,6 @@ The [Copenhagen Book][book-copenhagen] provides a general guideline on implement
 - [jsonwebtoken — Rust auth library](https://lib.rs/crates/jsonwebtoken)
 - [rauthy: OpenID Connect Single Sign-On Identity & Access Management](https://github.com/sebadob/rauthy)
 
+- [Passwords](https://lib.rs/crates/passwords)
+
 </div>
