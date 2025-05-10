@@ -95,4 +95,6 @@ Middleware is a powerful way to add functionality to your web server.
 - [Cot](https://cot.rs)
 - [Salvo](https://salvo.rs)
 
+- [Gerust: Rust backend project generator | Gerust](https://gerust.rs/)
+
 </div>

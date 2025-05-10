@@ -38,4 +38,7 @@ This table covers Rust crates relevant for formatting values for display.
 need in-depth review
 Mention `rtu`, [`itoa`][c-itoa]⮳{{hi:itoa}} in this page
 cover  `Inflector`
+
+- [ShowOption](https://lib.rs/crates/show-option)
+
 </div>

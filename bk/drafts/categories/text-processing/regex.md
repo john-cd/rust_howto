@@ -91,4 +91,6 @@ The method [`regex::Regex::replace_all`][c-regex::Regex::replace_all]{{hi:regex:
 
 - [grex: A command-line tool and Rust library with Python bindings for generating regular expressions from user-provided test cases](https://github.com/pemistahl/grex)
 
+- [regex_automata](https://docs.rs/regex-automata/0.4.9/regex_automata/#should-i-be-using-this-crate) Multi-pattern searches with capture groups
+
 </div>

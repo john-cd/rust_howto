@@ -17,4 +17,7 @@
 
 <div class="hidden">
 [tera: write; add sample from tools code](https://github.com/john-cd/rust_howto/issues/483)
+
+- [Tera built-in-filters](https://keats.github.io/tera/docs/#built-in-filters)
+
 </div>
