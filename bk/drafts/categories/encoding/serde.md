@@ -67,4 +67,6 @@ dedupe [JSON][p-json] with complex.md
 - [serde_arrow — Rust data encoding library](https://lib.rs/crates/serde_arrow)
 - [serde-encrypted-value — Rust data encoding library](https://lib.rs/crates/serde-encrypted-value)
 
+- [validator](https://lib.rs/crates/validator) Common validation functions (email, url, length, …) and trait - to be used with validator_derive
+
 </div>
