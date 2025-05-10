@@ -52,4 +52,7 @@ Cover [`wat`][c-wat]⮳{{hi:wat}}, [`parity-wasm`][c-parity_wasm]⮳{{hi:parity-
 - [wasmtime: A fast and secure runtime for WebAssembly](https://github.com/bytecodealliance/wasmtime)
 - [WASI.dev](https://wasi.dev/)
 
+- [Sycamore](https://sycamore.dev/)
+- [sycamore: A library for creating reactive web apps in Rust and WebAssembly](https://github.com/sycamore-rs/sycamore)
+
 </div>
