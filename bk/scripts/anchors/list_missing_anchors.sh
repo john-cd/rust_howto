@@ -7,7 +7,7 @@ set -eu
 
 root="$(realpath $1)/"
 
-for file in $(find ${root}src ${root}drafts -type f \( -name "*.md" -not -name "*index.md" -not -wholename "${root}src/crates/*.md" \) )
+for file in $(find ${root}src ${root}drafts -type f \( -name "*.md" -not -name "*index.md" -not -name "SUMMARY.md" -not -wholename "${root}*/indices/*.md" \) )
 do
     # Grab headings without {, ignoring "## See also", etc...
     header=$(grep -P '^#{2,}[^{]+$' $file | sed -E 's/#{2,}\s+(See [aA]lso|Useful [lL]inks|Reference[s]?|Related Topics)//g')
