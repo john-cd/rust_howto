@@ -48,5 +48,6 @@
 
 - [Meilisearch vs Qdrant: Tradeoffs, Strengths and Weaknesses](https://blog.kerollmops.com/meilisearch-vs-qdrant-tradeoffs-strengths-and-weaknesses)
 - [Algolia vs Elasticsearch vs Meilisearch vs Typesense Comparison](https://typesense.org/typesense-vs-algolia-vs-elasticsearch-vs-meilisearch/)
+- [sonic: Fast, lightweight & schema-less search backend. An alternative to Elasticsearch that runs on a few MBs of RAM.](https://github.com/valeriansaliou/sonic) not a lot of activity in GitHub
 
 </div>
