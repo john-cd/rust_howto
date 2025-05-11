@@ -57,4 +57,6 @@
 
 - [Fast Track to Rust](https://freddiehaddad.github.io/fast-track-to-rust/)
 
+- [Yet Another Rust Resource (YARR!)](https://yarr.fyi/introduction)
+
 </div>
