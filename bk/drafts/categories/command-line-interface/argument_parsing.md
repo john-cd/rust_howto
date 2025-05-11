@@ -124,4 +124,7 @@ The [`pico-args`][c-pico_args]⮳{{hi:pico-args}} crate is a small and fast libr
 
 <div class="hidden">
 [arguments: review](https://github.com/john-cd/rust_howto/issues/233)
+
+[Parsing arguments in Rust with no dependencies](https://ntietz.com/blog/parsing-arguments-rust-no-deps).
+
 </div>
