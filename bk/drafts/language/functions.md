@@ -46,6 +46,41 @@ Functions are first-class citizens in Rust. This means you can treat them like a
 {{#include ../../crates/language/tests/functions/function_pointers.rs:example}}
 ```
 
+## Return a Reference from a Function {#return-reference}
+
+You cannot directly return a reference to a local variable created within and owned by a function:
+
+- Local variables reside on the stack. This memory is typically deallocated when the function finishes executing.
+- Returning a reference to a local variable would result in a dangling reference. The reference would point to a memory location that is no longer valid or might be overwritten later, leading to undefined behavior.
+
+In Rust, the borrow checker prevents returning references to local data, enforcing memory safety:
+
+```rust,compile_fail
+// Compile Error[E0515]: cannot return reference to temporary value.
+fn try_create<'a>() -> &'a String {
+    let s = String::new();
+    &s
+    // References are pointers to memory locations. Once the function is executed, the local variable is popped off the execution stack.
+}
+
+#[test]
+fn test() {
+    let _ = try_create();
+}
+```
+
+Instead, you should typically:
+
+- Return an owned value (`String` instead of `&str`, `Vec<T>` instead of `&[T]`, etc.).
+- Pass a reference as an argument: If the goal is to modify a variable, pass a mutable reference to a variable that exists in the calling scope. The function can then directly modify the original variable.
+- Use a literal, a static or a constant: Since a static variable lives as long as the process runs, its references will be pointing to the same memory location both inside and outside the function.
+
+```rust,editable
+{{#include ../../crates/language/tests/functions/return_reference.rs:example}}
+```
+
+You can also use `std::borrow::Cow` to generalize over owned data and unowned references. See the [[cow | COW]] chapter.
+
 ## Related Topics {#skip}
 
 - [[closures | Closures]].

@@ -1,36 +1,50 @@
 # Legal
 
+## No Warranty
+
+THE BOOK, CODE, SOFTWARE, AND OTHER CONTENTS OF THIS REPOSITORY (COLLECTIVELY, THE MATERIALS) ARE PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS, EDITORS, OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.
+
+## Copyright
+
 This book is written and edited by [John CD][john-cd]⮳.
 
 Copyright (C) 2024, 2025, and later John CD <https://github.com/john-cd> - All Rights Reserved.
 
-## No Warranty Whatsoever
+## License: Code Examples and Software
 
-THE BOOK, CODE, SOFTWARE, AND OTHER CONTENTS OF THIS REPOSITORY (COLLECTIVELY, THE MATERIALS) ARE PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS, EDITORS, OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE MATERIALS OR THEIR USE OR OTHER DEALINGS IN THE MATERIALS.
+Notwithstanding the above, all code examples included in or linked from the book, under the `bk/crates` and `xmpl` folders, are licensed under the Creative Commons Zero v1.0 Universal License [LICENSE-CC0][CC0]⮳. All other code (e.g., under the `tools`, `mdbook-scrub`, `publish` folders) is licensed under either of the Apache License Version 2.0 or the MIT license at your option, per the Rust community custom.
 
-## Code Examples and Software
-
-All code examples included in or linked from the book, under the `bk/crates` and `xmpl` folders, are licensed under the Creative Commons Zero v1.0 Universal License [LICENSE-CC0][CC0]⮳. All other software (e.g., under the `tools`, `mdbook-scrub`, `publish` folders) is licensed under either of the Apache License Version 2.0 or the MIT license at your option, per the Rust community custom.
+TODO issue of i=using CC0 for software??
 
 Refer to the LICENSE files in their respective folders.
 
 ## Contributions
 
-Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in this repository by you, as defined in the license, shall be licensed as above, without any additional terms or conditions.
+Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in this repository by you, shall be licensed as above, without any additional terms or conditions.
 
-## Acknowledgments and Thanks
-
-This project is not affiliated with the [Rust Foundation][rust-foundation-website]⮳. The copyrights, registered trademarks and uses trademarks of the Rust Foundation are hereby acknowledged.
+## Acknowledgments
 
 This project incorporates most of the [Rust Cookbook][rust-cookbook-website]⮳, licensed under the Creative Commons Zero v1.0 Universal License. Thanks to its many [contributors][rust-cookbook-contributors-website]⮳.
+
+This project, by its very nature, includes code examples for hundreds of Rust crates, and uses TODO
+
+The vast majority of these libraries are licensed under the [MIT] and/or [Apache 2.0] licenses.
+
+Copyright and permission notices for Rust crates are found TODO
+
+## Acknowledgments: Rust Foundation
+
+This project is not affiliated with the [Rust Foundation][rust-foundation-website]⮳. The copyrights, registered trademarks and uses trademarks of the Rust Foundation are hereby acknowledged.
 
 ## Code of Conduct
 
 This project operates under a [Code of Conduct][code-of-conduct], in the spirit of the [Rust Code of Conduct][rust-code-of-conduct].
 
-[CC0]: https://creativecommons.org/publicdomain/zero/1.0/
+[Apache 2.0]: https://choosealicense.com/licenses/apache-2.0
+[CC0]: https://creativecommons.org/publicdomain/zero/1.0
 [code-of-conduct]: https://github.com/john-cd/rust_howto/blob/main/CODE_OF_CONDUCT.md
 [john-cd]: https://github.com/john-cd
+[MIT]: https://choosealicense.com/licenses/mit
 [rust-foundation-website]: https://foundation.rust-lang.org
 [rust-code-of-conduct]: https://rustfoundation.org/policy/code-of-conduct
 [rust-cookbook-website]: https://rust-lang-nursery.github.io/rust-cookbook
