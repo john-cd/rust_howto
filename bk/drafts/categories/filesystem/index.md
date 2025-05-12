@@ -83,4 +83,7 @@ See also [[network-programming | Network Programming]].
 
 <div class="hidden">
 [write, review in depth, add missing sections NOW](https://github.com/john-cd/rust_howto/issues/1339)
+
+- [Rust Path vs PathBuf](https://nick.groenen.me/notes/rust-path-vs-pathbuf)
+
 </div>
