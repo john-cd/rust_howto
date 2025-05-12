@@ -26,4 +26,7 @@ NOTES:
 
 <div class="hidden">
 [asref: write NOW](https://github.com/john-cd/rust_howto/issues/619)
+
+- [Rust's AsRef Explained](https://oliverjumpertz.com/blog/rusts-asref-explained/)
+
 </div>
