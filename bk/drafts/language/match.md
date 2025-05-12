@@ -57,4 +57,7 @@ Patterns accept `1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` gua
 
 <div class="hidden">
 [match: add more / edit NOW](https://github.com/john-cd/rust_howto/issues/551)
+
+- [Patterns Are Not Expressions](https://h2co3.github.io/pattern)
+
 </div>
