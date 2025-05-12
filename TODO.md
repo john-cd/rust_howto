@@ -8,6 +8,40 @@
 - language section: write / finish
   - finish to add RBE link #29
 
+- move categories back to src, after final review
+  - algos
+  - api bindings
+  - memory
+  - caching
+  - config
+  - date and time
+  - cli
+  - command-line utils ~ dedupe with written_in_rust
+  - compression
+  - data structures
+  - email
+  - math
+  - ML
+  - database impl
+  - encoding
+  - filesystem
+  - template
+  - text processing
+  - HTTP client
+  - build utils
+  - dev tools
+  - async
+  - concurrency
+  - database
+  - os
+  - parser impl
+  - parsing
+  - rust patterns
+  - crypto
+  - auth
+
+- polish links
+
 - polish thanks
   - License / legal rethink
 
@@ -18,6 +52,9 @@
 
 - clean playground
   - move WIP examples from playground
+
+- finish
+ - auth
 
 ## Now
 
