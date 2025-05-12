@@ -42,4 +42,7 @@ Many types in Rust implement `IntoIterator`, which provides a method `into_iter(
 
 <div class="hidden">
 [iterators: edit NOW](https://github.com/john-cd/rust_howto/issues/546)
+
+- [What is the correct way to return an Iterator (or any other trait)?](https://stackoverflow.com/questions/27535289/what-is-the-correct-way-to-return-an-iterator-or-any-other-trait)
+
 </div>

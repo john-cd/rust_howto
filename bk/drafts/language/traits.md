@@ -111,4 +111,7 @@ See [Async][p-async]⮳.
 
 <div class="hidden">
 [traits: review; async_traits: review new Rust features NOW](https://github.com/john-cd/rust_howto/issues/561)
+
+- [What is the correct way to return an Iterator (or any other trait)?](https://stackoverflow.com/questions/27535289/what-is-the-correct-way-to-return-an-iterator-or-any-other-trait)
+
 </div>
