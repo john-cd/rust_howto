@@ -6,6 +6,7 @@ This section provides a few examples of software written in Rust, organized by t
 
 - Operating System Components:
   - Kernel modules (Parts of the Linux kernel are now being written in Rust.)
+    - [Rust-for-Linux: Adding support for the Rust language to the Linux kernel.](https://github.com/Rust-for-Linux/linux)⮳.
   - Bootloaders.
   - Virtual machine monitors. See [[virtualization | Virtualization]].
   - Examples:
