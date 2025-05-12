@@ -49,5 +49,4 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[index: organize NOW](https://github.com/john-cd/rust_howto/issues/567)
 </div>
