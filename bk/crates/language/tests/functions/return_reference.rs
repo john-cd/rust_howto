@@ -13,12 +13,12 @@ fn use_mut_ref(v: &mut Vec<i32>) {
 
 /// Variant: pass a mutable reference,
 /// return an immutable reference.
-fn use_mut_ref2(v: &mut Vec<i32>) -> &Vec<i32> {
+fn use_mut_ref2(v: &mut Vec<i32>) -> &[i32] {
     *v = vec![0; 3];
     &*v
 }
 
-/// The following is rarer:
+/// The following is possible but should be rare:
 /// Use a literal.
 /// This applies broadly to any item that is composed solely of literals.
 fn use_literal() -> &'static str {
@@ -39,6 +39,8 @@ fn use_const() -> &'static str {
     const MY_CONST: &str = "hello";
     MY_CONST
 }
+
+// You might also use `Box::leak`.
 
 fn main() {
     let s = return_string();
