@@ -56,6 +56,18 @@ Functions which take an `Iterator` and return another `Iterator` are often calle
 {{#include ../../crates/language/tests/iterators/iterator_adapters.rs:example}}
 ```
 
+## Return an Iterator from a Function or Method {#return-an-iterator}
+
+Iterator types produced by a chain of calls to iterator adapters (`map`, `take`, `filter`, etc.) can be quite complex.
+
+You can return `impl Iterator<Item = T>` to hide the concrete type of the iterator being returned.
+
+In addition, you can change the underlying implementation of the iterator within the function without breaking the calling code, as long as it still implements the `Iterator` trait with the correct `Item` type.
+
+```rust,editable
+{{#include ../../crates/language/tests/iterators/return_iterator.rs:example}}
+```
+
 ## Accept Various Iterable Types as the Input of a Function or Method {#accept-various-iterable-types}
 
 Many types in Rust implement `IntoIterator`, which provides a method `into_iter()` that returns an iterator.
@@ -66,7 +78,7 @@ It is common to use `IntoIterator` as a trait bound for function parameters. Thi
 {{#include ../../crates/language/tests/iterators/consume_intoiterator.rs:example}}
 ```
 
-## Implement an Iterator {#implement-an-iterator}
+## Implement `IntoIterator` {#implement-intoiterator}
 
 By implementing `IntoIterator` for a type, you define how it will be converted to an iterator. It is common for types which describe a collection of some kind.
 
@@ -76,23 +88,23 @@ One benefit of implementing `IntoIterator` is that your type will work with Rust
 {{#include ../../crates/language/tests/iterators/implement_intoiterator.rs:example}}
 ```
 
+## References {#skip}
+
+- [Iterators][book-rust-iterators]{{hi:iterators}}⮳.
+- [What is the correct way to return an Iterator (or any other trait)?](https://stackoverflow.com/questions/27535289/what-is-the-correct-way-to-return-an-iterator-or-any-other-trait)⮳.
+- [Implementing Iterator and IntoIterator in Rust](https://dev.to/wrongbyte/implementing-iterator-and-intoiterator-in-rust-3nio)⮳.
+
 ## Related Topics {#skip}
 
 - [[closures | Closures]].
 - [[data-structures | Data Structures]].
 - [[functional_programming | Functional Programming]].
+- [[rust-patterns | Rust Patterns]].
 - [[vectors | Vectors]].
-
-## References {#skip}
-
-- [Iterators][book-rust-iterators]{{hi:iterators}}⮳.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[iterators: review; return impl Iterator](https://github.com/john-cd/rust_howto/issues/546)
-
-- [What is the correct way to return an Iterator (or any other trait)?](https://stackoverflow.com/questions/27535289/what-is-the-correct-way-to-return-an-iterator-or-any-other-trait)
-
+[iterators: review](https://github.com/john-cd/rust_howto/issues/546)
 </div>
