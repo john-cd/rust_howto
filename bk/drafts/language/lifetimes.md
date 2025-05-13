@@ -7,7 +7,7 @@
 [![Rust by example - Lifetimes][book-rust-by-example-lifetimes-badge]][book-rust-by-example-lifetimes]{{hi:Lifetimes}}
 
 Lifetimes are a mechanism that the Rust compiler uses to ensure that references are valid for as long as they are used (i.e. ensure all borrows are valid.)
-Lifetimes help prevent dangling references, which occur when a reference points to memory that has been deallocated or otherwise invalidated.{{hi:Dangling references}}
+Lifetimes prevent dangling references, which occur when a reference points to memory that has been deallocated or otherwise invalidated.{{hi:Dangling references}}
 
 A lifetime represents the scope for which a reference is valid. Lifetime names are always prefixed with an apostrophe (e.g., `'a`, `'b`, `'static`). By convention, short, lowercase names are usually used. `'static` is a special lifetime that means the reference is valid for the entire duration of the program.
 
