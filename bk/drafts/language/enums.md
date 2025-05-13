@@ -23,7 +23,7 @@ If we make an enum{{hi:Enums}} public, all of its variants are then public. We o
 
 [![strum][c-strum-badge]][c-strum] [![strum-crates.io][c-strum-crates.io-badge]][c-strum-crates.io] [![strum-github][c-strum-github-badge]][c-strum-github] [![strum-lib.rs][c-strum-lib.rs-badge]][c-strum-lib.rs]{{hi:strum}}{{hi:Enum}}{{hi:Macros}}{{hi:Proc-macros}}{{hi:String}} [![cat-parsing][cat-parsing-badge]][cat-parsing]{{hi:Parsing tools}} [![cat-development-tools::procedural-macro-helpers][cat-development-tools::procedural-macro-helpers-badge]][cat-development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
 
-[`strum`][c-strum]⮳{{hi:strum}} provides helpful macros for working with enums and strings. It also can convert from an integer to an enum, add custom properties to enum variants, etc.
+The [`strum`][c-strum]⮳{{hi:strum}} crate provides helpful macros for working with enums and strings. It also can convert from an integer to an enum, add custom properties to enum variants, etc.
 
 ```rust,editable
 {{#include ../../crates/language/tests/enums/strum.rs:example}}

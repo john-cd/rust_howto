@@ -13,7 +13,7 @@ Here is a example of a short, inline closure with a simple expression as its bod
 {{#include ../../crates/language/tests/closures/closures.rs:example}}
 ```
 
-{{i:Closures}} can capture variables{{hi:Capture of variables}} from their surrounding scope
+{{i:Closures}} can capture variables{{hi:Capture of variables}} from their surrounding scope:
 
 - by reference: `&T`,
 - by mutable reference: `&mut T`, or
