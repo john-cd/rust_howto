@@ -15,7 +15,10 @@ NOTES:
 - [`AsRef`][c-std::convert::AsRef]⮳{{hi:AsRef}} is similar to [`AsMut`][c-std::convert::AsMut]⮳{{hi:AsMut}}, which is used for converting between mutable references.
 - If you need to do a costly conversion, it is better to implement `From` with type `&T` or write a custom function.
 
-[When and why to use AsRef<T>instead of &T][stackoverflow-asref]⮳{{hi:asref}}
+## References {#skip}
+
+- [When and why to use AsRef<T>instead of &T][stackoverflow-asref]⮳.
+- [Rust's AsRef Explained](https://oliverjumpertz.com/blog/rusts-asref-explained/)⮳.
 
 ## Related Topics {#skip}
 
@@ -26,7 +29,4 @@ NOTES:
 
 <div class="hidden">
 [asref: write NOW](https://github.com/john-cd/rust_howto/issues/619)
-
-- [Rust's AsRef Explained](https://oliverjumpertz.com/blog/rusts-asref-explained/)
-
 </div>
