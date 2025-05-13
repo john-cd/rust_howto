@@ -1,6 +1,7 @@
 #![allow(clippy::useless_vec)]
 // ANCHOR: example
-/// This example demonstrates the difference between `iter()`, `iter_mut()` and `into_iter()`.
+/// This example demonstrates the difference between `iter()`, `iter_mut()` and
+/// `into_iter()`.
 fn main() {
     let mut vec1 = vec![1, 2, 3];
     let vec2 = vec![4, 5, 6];
@@ -15,7 +16,8 @@ fn main() {
         print!("{:?}", x);
     }
     println!();
-    // You can modify values through the mutable reference provided by `iter_mut`.
+    // You can modify values through the mutable reference provided by
+    // `iter_mut`.
     for x in vec1.iter_mut() {
         *x *= 2;
     }

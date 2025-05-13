@@ -15,13 +15,14 @@ impl<T> MyVec<T> {
 }
 
 impl<T> IntoIterator for MyVec<T> {
-    // Type of the elements that the iterator will yield.
-    type Item = T;
     // Associated type for the actual iterator that will be created.
     // It must implement the `Iterator` trait and produce items of type `Item`.
     type IntoIter = MyVecIterator<T>;
+    // Type of the elements that the iterator will yield.
+    type Item = T;
 
-    /// The `into_iter` method takes self by value, meaning it consumes the collection.
+    /// The `into_iter` method takes self by value,
+    /// meaning it consumes the collection.
     fn into_iter(self) -> Self::IntoIter {
         MyVecIterator {
             data: self.data,

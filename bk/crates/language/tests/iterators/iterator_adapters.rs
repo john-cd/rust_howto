@@ -6,9 +6,10 @@ fn main() {
     let doubled: Vec<_> = numbers.iter().map(|x| x * 2).collect();
     println!("Doubled numbers: {:?}", doubled); // Output: Doubled numbers: [2, 4, 6]
 
-    // `filter` keeps elements that satisfy a predicate (a closure that returns a boolean).
+    // `filter` keeps elements that satisfy a predicate (a closure that returns
+    // a boolean).
     let even: Vec<_> = numbers.iter().filter(|x| *x % 2 == 0).collect();
-    println!("Even numbers: {:?}", even);   // Output: Even numbers: [2]
+    println!("Even numbers: {:?}", even); // Output: Even numbers: [2]
 
     // `take` takes the first `n` elements of an iterator.
     let first_two: Vec<_> = numbers.iter().take(2).collect();
@@ -33,10 +34,11 @@ fn main() {
     println!("Indexed numbers: {:?}", indexed); // Output: Indexed numbers: [(0, 1), (1, 2), (2, 3)]
 
     // Chain multiple adapters together.
-    let even_doubled: Vec<_> = numbers.iter()
-                                     .filter(|x| *x % 2 == 0)
-                                     .map(|x| x * 2)
-                                     .collect();
+    let even_doubled: Vec<_> = numbers
+        .iter()
+        .filter(|x| *x % 2 == 0)
+        .map(|x| x * 2)
+        .collect();
     println!("Even numbers doubled: {:?}", even_doubled); // Output: Even numbers doubled: [4, 8]
 }
 // ANCHOR_END: example
