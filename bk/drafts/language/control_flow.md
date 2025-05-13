@@ -8,7 +8,7 @@
 
 Control flow constructs allow you to run code conditionally or repeatedly, directing the "flow" of your program's execution. Rust provides several familiar ways to do this.
 
-## Exacute Code based on a Condition with `if` and `else` {#if-else}
+## Execute Code based on a Condition with `if` and `else` {#if-else}
 
 [![Rust by example - if else][book-rust-by-example-if_else-badge]][book-rust-by-example-if_else]
 

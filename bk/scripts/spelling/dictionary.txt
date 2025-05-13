@@ -3089,3 +3089,17 @@ nonconvex
 freenect
 rustros
 Lexicographically
+getters
+IterMut
+unowned
+deduplicate
+UpperCamelCase
+btree
+getter
+StdIn
+USize
+ItemType
+MyEnum
+VariantName
+intoiterator
+inflector
