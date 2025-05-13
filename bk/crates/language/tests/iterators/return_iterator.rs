@@ -8,7 +8,7 @@
 fn count_up_to(max: i32) -> impl Iterator<Item = i32> {
     // In this case, we convert a range into an iterator,
     // then transform it further.
-    (0..max).into_iter().map(|x| x + 1)
+    (0..max).map(|x| x + 1)
 }
 // You could also return a boxed trait object e.g.,
 // `Box<dyn Iterator<Item = T>>`.

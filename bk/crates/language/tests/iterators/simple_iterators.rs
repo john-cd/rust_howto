@@ -18,6 +18,7 @@ fn main() {
     assert_eq!(once_with_iter.next(), None);
 
     // Creates a new iterator that endlessly repeats a single element.
+    #[allow(clippy::manual_repeat_n)]
     let mut repeat_iter = iter::repeat(5).take(2); // Only take 2 elements of the infinite sequence.
     assert_eq!(repeat_iter.next(), Some(5));
     assert_eq!(repeat_iter.next(), Some(5));

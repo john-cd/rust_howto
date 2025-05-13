@@ -1,6 +1,6 @@
 // ANCHOR: example
 fn main() {
-    let numbers = vec![1, 2, 3];
+    let numbers = [1, 2, 3];
 
     // `map` applies a closure to each element, producing a new iterator.
     let doubled: Vec<_> = numbers.iter().map(|x| x * 2).collect();
@@ -20,12 +20,12 @@ fn main() {
     println!("After skipping two: {:?}", after_two); // Output: After skipping two: [3]
 
     // `chain` concatenates two iterators.
-    let more_numbers = vec![4, 5];
+    let more_numbers = [4, 5];
     let combined: Vec<_> = numbers.iter().chain(more_numbers.iter()).collect();
     println!("Combined two vectors: {:?}", combined);
 
     // `zip` combines two iterators element-wise into pairs.
-    let letters = vec!['a', 'b', 'c'];
+    let letters = ['a', 'b', 'c'];
     let zipped: Vec<_> = numbers.iter().zip(letters.iter()).collect();
     println!("Zipped numbers and letters: {:?}", zipped); // Output: Zipped numbers and letters: [(1, 'a'), (2, 'b'), (3, 'c')]
 
