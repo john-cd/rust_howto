@@ -59,26 +59,6 @@
 
 - [fractalide: Reusable Reproducible Composable Software](https://github.com/fractalide/fractalide)
 
-## Rust links to sort
-
-- [Is there any way to return a reference to a variable created in a function? - Stack Overflow](https://stackoverflow.com/questions/32682876/is-there-any-way-to-return-a-reference-to-a-variable-created-in-a-function)
-
-- [kaniko: Build Container Images In Kubernetes](https://github.com/GoogleContainerTools/kaniko)
-
-- [geckodriver: WebDriver for Firefox](https://github.com/mozilla/geckodriver)
-
-- [rust-shed: Repository containing Rust crates common between other Facebook open source projects (like Mononoke or Eden).](https://github.com/facebookexperimental/rust-shed)
-
-- [foreverVM: The sessionless code interpreter](https://forevervm.com/)
-
-- [cubecl: Multi-platform high-performance compute language extension for Rust.](https://github.com/tracel-ai/cubecl)
-
-- [Apache ECharts](https://echarts.apache.org/en/index.html)
-
-- [PocketBase](https://pocketbase.io/docs/)
-
-- [crates.io: development update | Rust Blog](https://blog.rust-lang.org/2025/02/05/crates-io-development-update.html)
-
 ## Layouts
 
 - [Other reprs - The Rustonomicon](https://doc.rust-lang.org/nomicon/other-reprs.html)
@@ -86,6 +66,10 @@
 ## List of crates available in the Rust Playground
 
 - [rust-lang/rust-playground](https://github.com/rust-lang/rust-playground/blob/main/compiler/base/Cargo.toml)
+
+## Crates.io
+
+- [crates.io: development update | Rust Blog](https://blog.rust-lang.org/2025/02/05/crates-io-development-update.html)
 
 ## Unstable Features
 
@@ -104,3 +88,11 @@
 ## Satire
 
 - [hello-world.rs: Memory safe, blazing fast, configurable, minimal hello world written in rust() in a few lines of code with few(1092) dependencies](https://github.com/mTvare6/hello-world.rs)
+
+## Rust links to sort
+
+- [geckodriver: WebDriver for Firefox](https://github.com/mozilla/geckodriver)
+
+- [rust-shed: Repository containing Rust crates common between other Facebook open source projects (like Mononoke or Eden).](https://github.com/facebookexperimental/rust-shed)
+
+- [foreverVM: The sessionless code interpreter](https://forevervm.com/)
