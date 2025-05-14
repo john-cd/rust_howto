@@ -27,17 +27,17 @@ The relationship between `String` and `&str` is similar to that between `Vec<T>`
 {{#include ../../crates/standard_library/tests/strings/strings.rs:example}}
 ```
 
-## String Formatting; Placeholders {#placeholders}
+## Print and Format Strings {#placeholders}
 
 [![std][c-std-badge]][c-std]
 
+`print!` and its siblings (like `println!` and `format!`) take a format string as its primary argument and prints it to the standard output (the terminal, usually). Format strings are string literals that can contain placeholders, indicated by curly braces `{}`. These placeholders tell `print!` where to insert values you provide as additional arguments or variables. Use `{:?}` placeholders for [`std::fmt::Debug`][c-std::fmt::Debug]{{hi:std::fmt::Debug}}⮳ output or `{:#?}` for pretty printing{{hi:Pretty printing}}.
+
+You may also use `dbg!` for debug output.{{hi:Debug output}} `dbg!` returns ownership of the expression's value, so it can be inserted almost anywhere.
+
 ```rust,editable
-{{#include ../../crates/standard_library/tests/strings/strings2.rs:example}}
+{{#include ../../crates/standard_library/tests/strings/string_format.rs:example}}
 ```
-
-Use `{:?}` to use the [`std::fmt::Debug`][c-std::fmt::Debug]{{hi:std::fmt::Debug}}⮳ output format{{hi:Output format}} (annotate type with `#[derive(Debug)]` ) or `{:#?}` for pretty print{{hi:Pretty print}}.
-
-Also use `dbg!(&rect1);` for debug output{{hi:Debug output}} (returns ownership of the expression's value).
 
 ## Concatenate Strings {#string-concatenation}
 
@@ -46,18 +46,19 @@ Also use `dbg!(&rect1);` for debug output{{hi:Debug output}} (returns ownership 
 Here are several common methods to concatenate{{hi:Concatenation}} [`String`][c-std::string::String]s⮳{{hi:String}}:
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/strings3.rs:example}}
+{{#include ../../crates/standard_library/tests/string_concat.rs:example}}
 ```
 
-Examples from [concatenation_benchmarks-rs][concatenation_benchmarks-github]⮳.
+See also the [[string_concat | String Concatenation]] chapter and the [Concatenation Benchmark][concatenation_benchmarks-github]⮳.
 
 ## String Manipulation {#skip}
+
+See:
 
 - [[regex | Regex (Regular Expressions)]].
 - [[parsing | Parsing]].
 - [[text-processing | Text Processing]].
 - [[string_parsing | String Parsing]].
-- [[string_concat | String Concatenation]].
 
 ## Related Data Structures {#skip}
 
@@ -83,5 +84,5 @@ Examples from [concatenation_benchmarks-rs][concatenation_benchmarks-github]⮳.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[strings: add NOW](https://github.com/john-cd/rust_howto/issues/630)
+[strings: review](https://github.com/john-cd/rust_howto/issues/630)
 </div>

@@ -1,2 +1,2 @@
+mod string_format;
 mod strings;
-mod strings2;
