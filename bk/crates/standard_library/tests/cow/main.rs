@@ -1,7 +1,6 @@
 mod cow1;
-mod cow2;
-mod cow3;
-mod cow4;
-mod cow5;
-mod cow6;
-mod cow7;
+mod cow_alternatives;
+mod cow_as_function_param;
+mod cow_into;
+mod function_returning_cow;
+mod modify_cow_in_place;

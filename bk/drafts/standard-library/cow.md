@@ -1,80 +1,85 @@
-# Copy-on-Write
+# Clone-on-Write
 
 {{#include cow.incl.md}}
 
-[![std][c-std-badge]][c-std]
+## `Cow` Use Cases {#skip}
 
-The type [`std::borrow::Cow`][c-std::borrow::Cow]{{hi:Cow}} is a smart pointer providing clone-on-write{{hi:Clone-on-write}} functionality.
+[![std][c-std-badge]][c-std] {{hi:Clone-on-write}}
 
-## Convert `Cow` to `&str` {#convert-cow-to-str}
+The type [`std::borrow::Cow`][c-std::borrow::Cow]{{hi:Cow}} is a smart pointer providing clone-on-write functionality: it encloses and provides immutable access to borrowed data, and clone the data lazily when mutation or ownership is required.
 
-`Cow`
-`&str`
+`Cow` optimizes memory usage by delaying cloning until mutation is required, if it is required. It is especially useful in cases where:
 
-Use [`std::borrow::Borrow`][c-std::borrow::Borrow]{{hi:std::borrow::Borrow}}⮳:
+- Cloning is costly (long strings, large arrays...),
+- Needing to modify the underlying value is rare,
+- The stored value is mostly used for read-only purposes.
 
-```rust,editable
-{{#include ../../crates/standard_library/tests/cow/cow1.rs:example}}
-```
+`Cow` is a smart pointer. It implements `Deref`, which means that you can call non-mutating methods directly on the data it encloses. If mutation is desired, `to_mut` will obtain a mutable reference to an owned value, cloning if necessary.
 
-Use [`std::convert::AsRef`][c-std::convert::AsRef]{{hi:std::convert::AsRef}}⮳:
+## Accept Either a Owned or Borrowed Value as the Input of a Function {#accept-either-owned-or-borrowed-values}
 
-```rust,editable
-{{#include ../../crates/standard_library/tests/cow/cow2.rs:example}}
-```
-
-Use [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ explicitly:
+Since `Cow` allows borrowing until mutation is needed, it's ideal for functions that take either borrowed or owned strings without unnecessary cloning.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/cow/cow3.rs:example}}
+{{#include ../../crates/standard_library/tests/cow/cow_as_function_param.rs:example}}
 ```
 
-Use [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ implicitly through a coercion{{hi:Coercion}}:
+## Modify a `Cow` In-place {#modify-cow-in-place}
+
+You can of course pass a `&mut Cow<T>` to a function. Modify the underlying value in place with `to_mut`:
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/cow/cow4.rs:example}}
+{{#include ../../crates/standard_library/tests/cow/modify_cow_in_place.rs:example}}
 ```
 
-## Convert `Cow` to `String` {#convert-cow-to-string}
+## Return a `Cow` from a Function {#return-cow-from-function}
 
-[![std][c-std-badge]][c-std]{{hi:std}}
-
-`Cow`
-
-Use [`std::string::ToString`][c-std::string::ToString]{{hi:std::string::ToString}}⮳:
+It is common to return a `Cow` from a function, if the (borrowed) input is returned unmodified in most, but not all, cases.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/cow/cow5.rs:example}}
+{{#include ../../crates/standard_library/tests/cow/function_returning_cow.rs:example}}
 ```
 
-Use [`std::borrow::Cow::into_owned`][c-std::borrow::Cow::into_owned]{{hi:std::borrow::Cow::into_owned}}⮳:
+## Efficiently Construct a `Cow` with `into` {#into-cow}
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/cow/cow6.rs:example}}
+{{#include ../../crates/standard_library/tests/cow/into_cow.rs:example}}
 ```
 
-Use any method to get a reference and then call [`std::borrow::ToOwned`][c-std::borrow::ToOwned]{{hi:std::borrow::ToOwned}}⮳:
+## Convert a `Cow` to a borrowed or owned type {#convert-cow-to-str}
+
+To use as a borrowed type, call a method from one of the following traits:
+
+- [`std::borrow::Borrow`][c-std::borrow::Borrow]{{hi:std::borrow::Borrow}}⮳,
+- [`std::convert::AsRef`][c-std::convert::AsRef]{{hi:std::convert::AsRef}}⮳,
+- [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ explicitly or implicitly through a coercion{{hi:Coercion}}.
+
+To convert to an owned type, use [`std::borrow::Cow::into_owned`][c-std::borrow::Cow::into_owned]{{hi:std::borrow::Cow::into_owned}}⮳, or [`std::string::ToString`][c-std::string::ToString]{{hi:std::string::ToString}}⮳ if a `Cow<str>`. Alternatively, use any method to get a reference and then call [`std::borrow::ToOwned`][c-std::borrow::ToOwned]{{hi:std::borrow::ToOwned}}⮳.
+
+The following example demonstrates how to convert a `Cow<str>` to a `&str` or a `String`:
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/cow/cow7.rs:example}}
+{{#include ../../crates/standard_library/tests/cow/cow_to_borrowed_owned.rs:example}}
 ```
 
-These examples were adapted from a [StackOverflow discussion][stackoverflow-how-do-i-get-a-str-or-string-from-stdborrowcowstr]⮳.
+This example was adapted from a [StackOverflow discussion][stackoverflow-how-do-i-get-a-str-or-string-from-stdborrowcowstr]⮳.
 
-## Related Data Structures {#skip}
+## References {#skip}
 
-- [[strings | Strings]].
+- [Using Cow in Rust for efficient memory utilization](https://blog.logrocket.com/using-cow-rust-efficient-memory-utilization)⮳.
+- [The Secret Life of Cows](https://deterministic.space/secret-life-of-cows.html)⮳.
 
-## See Also {#skip}
+## Related Topics {#skip}
 
 - [[lifetimes | Lifetimes]].
 - [[memory-management | Memory Management]].
 - [[ownership_borrowing | Ownership & Borrowing]].
 - [[rust-patterns | Rust Patterns]].
+- [[strings | Strings]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[cow: add more NOW](https://github.com/john-cd/rust_howto/issues/620)
+[cow: review; add fragment on Cow alternatives?](https://github.com/john-cd/rust_howto/issues/620)
 </div>
