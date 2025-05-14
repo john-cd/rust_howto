@@ -50,7 +50,7 @@ A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting t
 {{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_subscriber2.rs:example}}
 ```
 
-##  Write Logs to Multiple Destinations Simultaneously {#tracing-multiple-destinations}
+## Write Logs to Multiple Destinations Simultaneously {#tracing-multiple-destinations}
 
 [![tracing_subscriber][c-tracing_subscriber-badge]][c-tracing_subscriber]{{hi:tracing_subscriber}} [![tracing_subscriber-crates.io][c-tracing_subscriber-crates.io-badge]][c-tracing_subscriber-crates.io]
 

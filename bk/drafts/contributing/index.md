@@ -158,6 +158,6 @@ This guide is based on the **contributing.md**. [Make your own][make-your-own]!
 [new-issue]: https://github.com/john-cd/rust_howto/issues/new/choose
 [licecap]: https://www.cockos.com/licecap
 [silentcast]:https://github.com/colinkeenan/silentcast
-[Code of Conduct]: CODE_OF_CONDUCT.md
+[Code of Conduct]: ../../../CODE_OF_CONDUCT.md
 [styleguides]: #styleguides
 </div>

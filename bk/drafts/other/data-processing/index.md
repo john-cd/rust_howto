@@ -47,6 +47,6 @@
 
 - [recurring-tasks: Rust crate to build an app that runs recurring, periodic tasks](https://github.com/rogusdev/recurring-tasks)
 
-- [Hydro](https://hydro.run/docs/hydro) 
+- [Hydro](https://hydro.run/docs/hydro)
 
 </div>
