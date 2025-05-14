@@ -1,12 +1,15 @@
 # TODOs
 
-- move rest of links from TOREVIEW.md
+- insert examples that are not in book
 
-- polish intro
-  - review about examples
+- crate_selection - solo or part of indices?
 
 - language section: write / finish
   - finish to add RBE link #29
+
+- polish std_lib
+
+- polish contributing
 
 - move categories back to src, after final review
   - algos
@@ -40,6 +43,11 @@
   - crypto
   - auth
 
+- polish intro
+  - review `about` examples
+
+- `other` section - move what's ready
+
 - polish links
 
 - polish thanks
@@ -54,7 +62,9 @@
   - move WIP examples from playground
 
 - finish
- - auth
+  - auth
+
+- move rest of links from TOREVIEW.md
 
 ## Now
 
