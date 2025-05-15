@@ -3105,3 +3105,5 @@ intoiterator
 inflector
 ustr
 automagically
+Fowler
+Noll

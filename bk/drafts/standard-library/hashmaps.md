@@ -2,40 +2,46 @@
 
 {{#include hashmaps.incl.md}}
 
-## HashMap {#hashmap}
+## Store Key-Value Pairs into a HashMap {#hashmap}
 
-[![std][c-std-badge]][c-std]{{hi:std}}
+[![std][c-std-badge]][c-std]{{hi:std}}{{hi:Hashmap}}
 
-HashMap is a key-value data structure. It allows you to store data in an unordered collection, where each element is identified by a unique key. This makes HashMap an excellent choice for lookups, insertions, and deletions based on keys.
+`HashMap` is a key-value data structure. It allows you to store data in an unordered collection, where each element is identified by a unique key. This makes `HashMap` an excellent choice for lookups, insertions, and deletions based on keys.
 
-All of the hashmap{{hi:Hashmap}} keys{{hi:Keys}} must have the same type as each other, and all of the values{{hi:Values}} must have the same type.
+All hashmap keys{{hi:Keys}} must have the same type. All values{{hi:Values}} must have the same type.
 
 ```rust,editable
 {{#include ../../crates/standard_library/tests/hashmaps/hashmaps.rs:example}}
 ```
 
-## HashSet {#hashset}
+## Store Unique Items in a HashSet {#hashset}
 
 [![std][c-std-badge]][c-std]{{hi:std}}
+
+`HashSet` is a common data structure that stores a collection of unique items, similar to the keys of a `HashMap` but without associated values.
 
 ```rust,editable
 {{#include ../../crates/standard_library/tests/hashmaps/hashset.rs:example}}
 ```
 
-## HashMap and HashSet with Custom Hash Function {#custom-hash-function}
+## Use a Custom Type as the Key of a HashMap {#custom-key-type}
 
 [![std][c-std-badge]][c-std]{{hi:std}}
 
-```rust,editable
-{{#include ../../crates/standard_library/tests/hashmaps/custom_hash_function.rs:example}}
-```
-
-## HashMap Using a Custom Type as the Key {#custom-key-type}
-
-[![std][c-std-badge]][c-std]{{hi:std}}
+You can use a custom-defined type (typically a `struct`) as keys in a HashMap. It is useful when you need to associate data with complex, multi-component identifiers that don't fit naturally into a single primitive type like an integer or a string.
 
 ```rust,editable
 {{#include ../../crates/standard_library/tests/hashmaps/custom_type_as_key.rs:example}}
+```
+
+## Use a Custom Hash Function with `HashMap` and `HashSet` {#custom-hash-function}
+
+[![fnv][c-fnv-badge]][c-fnv] [![fnv-crates.io][c-fnv-crates.io-badge]][c-fnv-crates.io] [![fnv-github][c-fnv-github-badge]][c-fnv-github] [![fnv-lib.rs][c-fnv-lib.rs-badge]][c-fnv-lib.rs]{{hi:fnv}}
+
+You can use a custom hash function with `HashMap` and `HashSet`. In the following, the Fowler–Noll–Vo hash function is used for better performance with short keys.
+
+```rust,editable
+{{#include ../../crates/standard_library/tests/hashmaps/custom_hash_function.rs:example}}
 ```
 
 ## Related Data Structures {#skip}
@@ -55,5 +61,5 @@ All of the hashmap{{hi:Hashmap}} keys{{hi:Keys}} must have the same type as each
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[hashmaps: add NOW](https://github.com/john-cd/rust_howto/issues/622).
+[hashmaps: final review](https://github.com/john-cd/rust_howto/issues/622).
 </div>

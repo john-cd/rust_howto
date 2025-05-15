@@ -5,7 +5,7 @@
 //! **Warning:** FNV is not suitable if there is a risk of denial-of-service
 //! attacks. Be certain that your program is not exposed to malicious inputs.
 //!
-//! Add to Cargo.toml: fnv = "1.0.7" # Or latest
+//! Add to your `Cargo.toml`: `fnv = "1.0.7" # Or latest`.
 
 use std::collections::HashMap;
 use std::collections::HashSet;
@@ -18,7 +18,7 @@ fn main() {
     // Or simpler:
     let mut _map: fnv::FnvHashMap<&str, &str> = fnv::FnvHashMap::default();
 
-    // Similarly for HashSet:
+    // Similarly for `HashSet`:
     let mut fnv_set = fnv::FnvHashSet::default();
     fnv_set.insert("item1");
     fnv_set.insert("item2");
