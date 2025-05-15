@@ -26,10 +26,12 @@ fn main() {
     // Convert a `Cow<str>` to an owned `String`:
     let s: String = example.to_string();
     println!("{}", s);
-    // You could also convert the `Cow` to a borrowed reference using `as_ref()`,
-    // then, clone the borrowed reference to create an owned `String`.
+    // You could also convert the `Cow` to a borrowed reference using
+    // `as_ref()`, then clone the borrowed reference to create an owned
+    // `String`.
     println!("{}", example.as_ref().to_owned());
-    // `into_owned` extracts the owned data and clones the data if it is not already owned.
+    // `into_owned` extracts the owned data and clones the data if it is not
+    // already owned.
     println!("{}", example.into_owned());
 }
 // ANCHOR_END: example
