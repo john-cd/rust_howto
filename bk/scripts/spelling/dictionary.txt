@@ -3103,3 +3103,5 @@ MyEnum
 VariantName
 intoiterator
 inflector
+ustr
+automagically
