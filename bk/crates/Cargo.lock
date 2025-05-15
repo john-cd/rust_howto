@@ -28049,6 +28049,7 @@ dependencies = [
  "indoc",
  "joinery",
  "lazy_static",
+ "libc",
  "memchr",
  "once_cell",
  "regex",
@@ -28056,6 +28057,7 @@ dependencies = [
  "strsim 0.11.1",
  "textwrap 0.16.2",
  "unicode-segmentation",
+ "ustr",
 ]
 
 [[package]]
@@ -29902,6 +29904,18 @@ dependencies = [
  "serde 1.0.219",
  "unic-ucd-ident",
  "url",
+]
+
+[[package]]
+name = "ustr"
+version = "1.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "18b19e258aa08450f93369cf56dd78063586adf19e92a75b338a800f799a0208"
+dependencies = [
+ "ahash 0.8.12",
+ "byteorder",
+ "lazy_static",
+ "parking_lot 0.12.3",
 ]
 
 [[package]]
