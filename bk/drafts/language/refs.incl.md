@@ -1,3 +1,5 @@
+[ex-language-accept-various-iterable-types]: iterators.md#accept-various-iterable-types
+[ex-language-adapters]: iterators.md#adapters
 [ex-language-associated-types]: traits.md#associated-types
 [ex-language-async-and-traits]: traits.md#async-and-traits
 [ex-language-async-main-function]: entrypoint.md#async-main-function
@@ -32,6 +34,7 @@
 [ex-language-getter-conventions]: naming_conventions.md#getter-conventions
 [ex-language-if-else]: control_flow.md#if-else
 [ex-language-if-let]: match.md#if-let
+[ex-language-implement-intoiterator]: iterators.md#implement-intoiterator
 [ex-language-iterator-conventions]: naming_conventions.md#iterator-conventions
 [ex-language-iterators]: iterators.md
 [ex-language-lifetime-annotations]: lifetimes.md#lifetime-annotations
@@ -55,7 +58,9 @@
 [ex-language-ownership]: ownership_borrowing.md#ownership
 [ex-language-ownership_borrowing]: ownership_borrowing.md
 [ex-language-production-code-attributes]: attributes.md#production-code-attributes
+[ex-language-return-an-iterator]: iterators.md#return-an-iterator
 [ex-language-return-position-impl-trait]: traits.md#return-position-impl-trait
+[ex-language-return-reference]: functions.md#return-reference
 [ex-language-rust-install]: rust_install.md#rust-install
 [ex-language-scalar-data-types]: data_types.md#scalar-data-types
 [ex-language-shadowing]: variables_and_constants.md#shadowing
@@ -69,6 +74,7 @@
 [ex-language-traits-as-parameters]: traits.md#traits-as-parameters
 [ex-language-traits]: traits.md
 [ex-language-type-aliases]: data_types.md#type-aliases
+[ex-language-use-iterators]: iterators.md#use-iterators
 [ex-language-use-match-to-branch-on-a-pattern]: match.md#use-match-to-branch-on-a-pattern
 [ex-language-variables-and-constants]: variables_and_constants.md
 [ex-language-variables]: variables_and_constants.md#variables
@@ -80,9 +86,9 @@
 [p-documentation]: ../categories/development-tools/documentation/documentation.md
 [p-enums]: enums.md
 [p-functions]: functions.md
-[p-option]: ../../drafts/standard-library/option.md
-[p-rustup]: ../categories/development-tools/installation/rustup.md
-[p-standard-library]: ../../drafts/standard-library/index.md
+[p-option]: # "../standard-library/option.md"
+[p-rustup]: # "../categories/development-tools/installation/rustup.md"
+[p-standard-library]: # "../standard-library/index.md"
 [p-structs]: structs.md
 [p-traits]: traits.md
 [p-unix]: # "../categories/os_unix-apis/unix.md"

@@ -68,7 +68,7 @@ This is useful when the exact type is complex or not relevant to the caller.
 {{#include ../../crates/language/tests/traits/rpit.rs:example}}
 ```
 
-## Generic Traits {#generic-traits}
+## Generic Traits {#write-generic-traits}
 
 Traits can be generic, meaning they can have type parameters. This allows you to define traits that work with different types.
 

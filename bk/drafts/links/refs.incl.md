@@ -1,19 +1,28 @@
 [ex-links-books]: books.md#books
+[ex-links-cheat-sheets]: learning.md#cheat-sheets
 [ex-links-cheatsheets]: rust_cheatsheets.md#cheatsheets
 [ex-links-companies]: companies.md#companies
 [ex-links-comparison-to-other-languages]: rust_cheatsheets.md#comparison-to-other-languages
 [ex-links-courses]: learning.md#courses
 [ex-links-example-code]: example_code.md#example-code
+[ex-links-examples]: learning.md#examples
 [ex-links-ferrous-systems-training]: learning.md#ferrous-systems-training
 [ex-links-jobs]: companies.md#jobs
+[ex-links-learning-roadmap]: learning.md#learning-roadmap
 [ex-links-learning]: learning.md#learning
 [ex-links-links]: links.md#links
+[ex-links-lists]: learning.md#lists
 [ex-links-meetups]: blogs_podcasts_meetups.md#meetups
 [ex-links-newsletters]: blogs_podcasts_meetups.md#newsletters
+[ex-links-overview]: learning.md#overview
 [ex-links-people]: companies.md#people
 [ex-links-podcasts-blogs]: blogs_podcasts_meetups.md#podcasts-blogs
+[ex-links-projects]: learning.md#projects
 [ex-links-realworld]: example_code.md#realworld
+[ex-links-repositories]: learning.md#repositories
 [ex-links-rust-book-source-code]: example_code.md#rust-book-source-code
+[ex-links-tutorials]: learning.md#tutorials
+[ex-links-videos]: learning.md#videos
 [p-axum]: # "../categories/web-programming_http-server/axum.md"
 [p-benchmarking]: # "../categories/development-tools_profiling/benchmarking.md"
 [p-building]: # "../categories/development-tools_cargo-plugins/building.md"
