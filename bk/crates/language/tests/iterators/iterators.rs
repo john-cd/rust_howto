@@ -1,5 +1,7 @@
-#![allow(clippy::useless_vec)]
 // ANCHOR: example
+#![allow(clippy::useless_vec)]
+#![allow(clippy::manual_contains)]
+
 /// This example demonstrates the difference between `iter()`, `iter_mut()` and
 /// `into_iter()`.
 fn main() {

@@ -7,6 +7,7 @@ fn main() {
     let my_box: Box<String> = Box::new("hello from box".to_string());
 
     // 1. Using `&my_box` - reference *to the Box*
+    #[allow(clippy::borrowed_box)]
     let ref_to_box: &Box<String> = &my_box;
     println!("Debug of `ref_to_box`: {:?}", ref_to_box);
     // To access the inner string through `ref_to_box`, you'd need to
@@ -18,7 +19,7 @@ fn main() {
     println!("Content via `as_ref()`: {}", ref_to_contained_string);
     println!(
         "Content as `&str` via `Deref`: {}",
-        &*ref_to_contained_string
+        &**ref_to_contained_string
     );
 }
 // ANCHOR_END: example
