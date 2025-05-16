@@ -69,5 +69,4 @@ You can also implement derive for your own traits through procedural macros.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[derive: review NOW](https://github.com/john-cd/rust_howto/issues/621)
 </div>

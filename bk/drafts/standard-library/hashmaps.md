@@ -61,5 +61,4 @@ You can use a custom hash function with `HashMap` and `HashSet`. In the followin
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[hashmaps: final review](https://github.com/john-cd/rust_howto/issues/622).
 </div>

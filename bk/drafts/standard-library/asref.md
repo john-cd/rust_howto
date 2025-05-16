@@ -59,5 +59,4 @@ Note that [`AsMut`][c-std::convert::AsMut]⮳{{hi:AsMut}} can be used for conver
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[asref: final review](https://github.com/john-cd/rust_howto/issues/619)
 </div>
