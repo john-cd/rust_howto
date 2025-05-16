@@ -38,7 +38,7 @@ You can use a custom-defined type (typically a `struct`) as keys in a HashMap. I
 
 [![fnv][c-fnv-badge]][c-fnv] [![fnv-crates.io][c-fnv-crates.io-badge]][c-fnv-crates.io] [![fnv-github][c-fnv-github-badge]][c-fnv-github] [![fnv-lib.rs][c-fnv-lib.rs-badge]][c-fnv-lib.rs]{{hi:fnv}}
 
-You can use a custom hash function with `HashMap` and `HashSet`. In the following, the Fowler–Noll–Vo hash function is used for better performance with short keys.
+You can use a custom hash function with `HashMap` and `HashSet`. In the following, the Fowler-Noll-Vo hash function is used for better performance with short keys.
 
 ```rust,editable
 {{#include ../../crates/standard_library/tests/hashmaps/custom_hash_function.rs:example}}
