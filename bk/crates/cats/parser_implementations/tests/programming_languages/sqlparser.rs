@@ -59,7 +59,7 @@ fn main() -> anyhow::Result<()> {
     // You may also visit all statements, expressions, or tables.
     // You can also implement a custom `Visitor`.
     let mut visited = vec![];
-    sqlparser::ast::visit_statements(&statements, |stmt| {
+    let _ = sqlparser::ast::visit_statements(&statements, |stmt| {
         visited.push(format!("Statement: {}", stmt));
         ControlFlow::<()>::Continue(())
     });

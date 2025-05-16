@@ -35,7 +35,7 @@ impl std::fmt::Display for MyError {
 
 /// An example function that demonstrates how to create and return a `MyError`.
 fn example() -> Result<(), Box<dyn std::error::Error>> {
-    let io_error = std::io::Error::new(std::io::ErrorKind::Other, "oh no!");
+    let io_error = std::io::Error::other("oh no!");
     Err(Box::new(MyError {
         msg: "Error message".to_string(),
         source: io_error,

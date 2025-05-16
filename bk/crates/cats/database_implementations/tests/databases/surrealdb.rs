@@ -1,5 +1,6 @@
 #![cfg(feature = "surrealdb")]
 // ANCHOR: example
+#![allow(clippy::result_large_err)]
 use serde::Deserialize;
 use serde::Serialize;
 use surrealdb::Result;

@@ -6,7 +6,7 @@ fn find_mimetype(filename: &str) -> Mime {
     // Split the filename by '.' and collect the parts into a vector.
     let parts: Vec<&str> = filename.split('.').collect();
 
-    let res = match parts.last() {
+    match parts.last() {
         Some(v) => match *v {
             "png" => mime::IMAGE_PNG,
             "jpg" => mime::IMAGE_JPEG,
@@ -14,8 +14,7 @@ fn find_mimetype(filename: &str) -> Mime {
             &_ => mime::TEXT_PLAIN,
         },
         None => mime::TEXT_PLAIN,
-    };
-    res
+    }
 }
 
 fn main() {

@@ -7,7 +7,6 @@ use std::fs::File;
 use std::io::BufRead;
 use std::io::BufReader;
 use std::io::Error;
-use std::io::ErrorKind;
 use std::path::Path;
 
 use same_file::Handle;
@@ -23,8 +22,7 @@ fn main() -> Result<(), Error> {
 
     // Check if the file handle is the same as the standard output handle.
     if stdout_handle == handle {
-        return Err(Error::new(
-            ErrorKind::Other,
+        return Err(Error::other(
             "You are reading and writing to the same file!",
         ));
     } else {
