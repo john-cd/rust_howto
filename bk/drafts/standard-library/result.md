@@ -7,7 +7,7 @@
 [`Result`][c-std::result::Result]⮳{{hi:Result}}
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/other/result.rs:example}}
+{{#include ../../crates/standard_library/tests/result/result.rs:example}}
 ```
 
 ## Related Data Structures {#skip}
