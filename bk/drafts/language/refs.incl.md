@@ -81,6 +81,7 @@
 [ex-language-while-let]: match.md#while-let
 [ex-language-while]: control_flow.md#while
 [ex-language-write-generic-functions]: functions.md#write-generic-functions
+[ex-language-write-generic-traits]: traits.md#write-generic-traits
 [p-async]: ../categories/asynchronous/index.md
 [p-automatic-derivation]: ../../drafts/standard-library/derive.md
 [p-documentation]: ../categories/development-tools/documentation/documentation.md

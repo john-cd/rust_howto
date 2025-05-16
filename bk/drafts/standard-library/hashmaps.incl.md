@@ -1,6 +1,6 @@
 | Recipe | Crates |
 |---|---|
-| [HashMap][ex-standard-library-hashmap] | [![std][c-std-badge]][c-std] |
-| [HashSet][ex-standard-library-hashset] | [![std][c-std-badge]][c-std] |
-| [HashMap and HashSet with Custom Hash Function][ex-standard-library-custom-hash-function] | [![std][c-std-badge]][c-std] |
-| [HashMap Using a Custom Type as the Key][ex-standard-library-custom-key-type] | [![std][c-std-badge]][c-std] |
+| [Store Key-Value Pairs into a HashMap][ex-standard-library-hashmap] | [![std][c-std-badge]][c-std] |
+| [Store Unique Items in a HashSet][ex-standard-library-hashset] | [![std][c-std-badge]][c-std] |
+| [Use a Custom Type as the Key of a HashMap][ex-standard-library-custom-key-type] | [![std][c-std-badge]][c-std] |
+| [Use a Custom Hash Function with `HashMap` and `HashSet`][ex-standard-library-custom-hash-function] | [![std][c-std-badge]][c-std] |

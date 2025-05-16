@@ -1,5 +1,7 @@
 [ex-standard-library-accept-either-owned-or-borrowed-values]: cow.md#accept-either-owned-or-borrowed-values
 [ex-standard-library-adapters-for-working-with-references]: option.md#adapters-for-working-with-references
+[ex-standard-library-asref-smart-pointer]: asref.md#asref-smart-pointer
+[ex-standard-library-asref-vs-deref-vs-borrow]: asref.md#asref-vs-deref-vs-borrow
 [ex-standard-library-asref]: asref.md#asref
 [ex-standard-library-box]: smart_pointers.md#box
 [ex-standard-library-cell]: smart_pointers.md#cell
@@ -8,7 +10,7 @@
 [ex-standard-library-custom-hash-function]: hashmaps.md#custom-hash-function
 [ex-standard-library-custom-key-type]: hashmaps.md#custom-key-type
 [ex-standard-library-derive-more]: derive.md#derive-more
-[ex-standard-library-derive]: derive.md#automatic-trait-derivation
+[ex-standard-library-derive]: derive.md#derive
 [ex-standard-library-extracting-the-value-contained-in-option]: option.md#extracting-the-value-contained-in-option
 [ex-standard-library-hashmap]: hashmaps.md#hashmap
 [ex-standard-library-hashset]: hashmaps.md#hashset
