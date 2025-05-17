@@ -621,13 +621,13 @@
 [ex-standard-library-combinators]: ../drafts/standard-library/option.md#combinators
 [ex-standard-library-convert-cow-to-str]: ../drafts/standard-library/cow.md#convert-cow-to-str
 [ex-standard-library-convert-cow-to-string]: ../drafts/standard-library/cow.md#convert-cow-to-string
-[ex-standard-library-custom-hash-function]: ../drafts/standard-library/hashmaps.md#custom-hash-function
-[ex-standard-library-custom-key-type]: ../drafts/standard-library/hashmaps.md#custom-key-type
+[ex-standard-library-custom-hash-function]: ../drafts/standard-library/hashmap.md#custom-hash-function
+[ex-standard-library-custom-key-type]: ../drafts/standard-library/hashmap.md#custom-key-type
 [ex-standard-library-derive-more]: ../drafts/standard-library/derive.md#derive-more
 [ex-standard-library-derive]: ../drafts/standard-library/derive.md#automatic-trait-derivation
 [ex-standard-library-extracting-the-value-contained-in-option]: ../drafts/standard-library/option.md#extracting-the-value-contained-in-option
-[ex-standard-library-hashmap]: ../drafts/standard-library/hashmaps.md#hashmap
-[ex-standard-library-hashset]: ../drafts/standard-library/hashmaps.md#hashset
+[ex-standard-library-hashmap]: ../drafts/standard-library/hashmap.md#hashmap
+[ex-standard-library-hashset]: ../drafts/standard-library/hashmap.md#hashset
 [ex-standard-library-oncecell]: ../drafts/standard-library/smart_pointers.md#oncecell
 [ex-standard-library-option]: ../drafts/standard-library/option.md#option
 [ex-standard-library-placeholders]: ../drafts/standard-library/strings.md#placeholders

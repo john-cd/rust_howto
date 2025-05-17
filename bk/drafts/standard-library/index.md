@@ -14,7 +14,7 @@
 
 ## HashMap
 
-{{#include hashmaps.incl.md}}
+{{#include hashmap.incl.md}}
 
 ## Strings
 

@@ -30,7 +30,7 @@
   - [Option](standard-library/option.md)
   - [Result](standard-library/result.md)
   - [Vector](standard-library/vector.md)
-  - [HashMap](standard-library/hashmaps.md)
+  - [HashMap](standard-library/hashmap.md)
   - [Strings](standard-library/strings.md)
   - [Copy-on-Write](standard-library/cow.md)
   - [Smart Pointers](standard-library/smart_pointers.md)

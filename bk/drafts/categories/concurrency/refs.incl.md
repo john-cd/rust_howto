@@ -44,7 +44,7 @@
 [p-concurrency]: index.md
 [p-concurrent-data-structures]: concurrent_data_structures.md
 [p-global-static]: ../memory-management/global_static.md
-[p-hashmaps]: ../../../drafts/standard-library/hashmaps.md
+[p-hashmaps]: ../../standard-library/hashmap.md
 [p-iterators]: ../../language/iterators.md
 [p-lazy-initialization]: ../memory-management/lazy_initialization.md
 [p-main]: ../../language/entrypoint.mdint.md

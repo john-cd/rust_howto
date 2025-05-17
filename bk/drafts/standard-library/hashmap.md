@@ -1,6 +1,6 @@
 # Hashmaps
 
-{{#include hashmaps.incl.md}}
+{{#include hashmap.incl.md}}
 
 ## Store Key-Value Pairs into a HashMap {#hashmap}
 
@@ -11,7 +11,7 @@
 All hashmap keys{{hi:Keys}} must have the same type. All values{{hi:Values}} must have the same type.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/hashmaps/hashmaps.rs:example}}
+{{#include ../../crates/standard_library/tests/hashmap/hashmap.rs:example}}
 ```
 
 ## Store Unique Items in a HashSet {#hashset}
@@ -21,7 +21,7 @@ All hashmap keys{{hi:Keys}} must have the same type. All values{{hi:Values}} mus
 `HashSet` is a common data structure that stores a collection of unique items, similar to the keys of a `HashMap` but without associated values.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/hashmaps/hashset.rs:example}}
+{{#include ../../crates/standard_library/tests/hashmap/hashset.rs:example}}
 ```
 
 ## Use a Custom Type as the Key of a HashMap {#custom-key-type}
@@ -31,7 +31,7 @@ All hashmap keys{{hi:Keys}} must have the same type. All values{{hi:Values}} mus
 You can use a custom-defined type (typically a `struct`) as keys in a HashMap. It is useful when you need to associate data with complex, multi-component identifiers that don't fit naturally into a single primitive type like an integer or a string.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/hashmaps/custom_type_as_key.rs:example}}
+{{#include ../../crates/standard_library/tests/hashmap/custom_type_as_key.rs:example}}
 ```
 
 ## Use a Custom Hash Function with `HashMap` and `HashSet` {#custom-hash-function}
@@ -41,7 +41,7 @@ You can use a custom-defined type (typically a `struct`) as keys in a HashMap. I
 You can use a custom hash function with `HashMap` and `HashSet`. In the following, the Fowler-Noll-Vo hash function is used for better performance with short keys.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/hashmaps/custom_hash_function.rs:example}}
+{{#include ../../crates/standard_library/tests/hashmap/custom_hash_function.rs:example}}
 ```
 
 ## Related Data Structures {#skip}

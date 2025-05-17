@@ -7,13 +7,13 @@
 [ex-standard-library-cell]: smart_pointers.md#cell
 [ex-standard-library-combinators]: option.md#combinators
 [ex-standard-library-convert-cow-to-str]: cow.md#convert-cow-to-str
-[ex-standard-library-custom-hash-function]: hashmaps.md#custom-hash-function
-[ex-standard-library-custom-key-type]: hashmaps.md#custom-key-type
+[ex-standard-library-custom-hash-function]: hashmap.md#custom-hash-function
+[ex-standard-library-custom-key-type]: hashmap.md#custom-key-type
 [ex-standard-library-derive-more]: derive.md#derive-more
 [ex-standard-library-derive]: derive.md#derive
 [ex-standard-library-extracting-the-value-contained-in-option]: option.md#extracting-the-value-contained-in-option
-[ex-standard-library-hashmap]: hashmaps.md#hashmap
-[ex-standard-library-hashset]: hashmaps.md#hashset
+[ex-standard-library-hashmap]: hashmap.md#hashmap
+[ex-standard-library-hashset]: hashmap.md#hashset
 [ex-standard-library-into-cow]: cow.md#into-cow
 [ex-standard-library-modify-cow-in-place]: cow.md#modify-cow-in-place
 [ex-standard-library-oncecell]: smart_pointers.md#oncecell
@@ -25,7 +25,7 @@
 [ex-standard-library-return-cow-from-function]: cow.md#return-cow-from-function
 [ex-standard-library-string-concatenation]: strings.md#string-concatenation
 [ex-standard-library-string]: strings.md#string
-[ex-standard-library-vec]: vectors.md#vec
+[ex-standard-library-vec]: vector.md#vec
 [p-asref]: asref.md
 [p-crates]: # "../crates/index.md"
 [p-data-structures]: # "../categories/data-structures/index.md"
