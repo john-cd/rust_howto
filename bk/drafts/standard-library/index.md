@@ -20,7 +20,7 @@
 
 {{#include strings.incl.md}}
 
-## Copy-on-write
+## Copy-on-write (Cow)
 
 {{#include cow.incl.md}}
 
@@ -28,11 +28,11 @@
 
 {{#include smart_pointers.incl.md}}
 
-## Automatic Trait Derivation
+## Derive: Automatic Trait Derivation
 
 {{#include derive.incl.md}}
 
-## Asref
+## `AsRef`
 
 {{#include asref.incl.md}}
 
