@@ -6,7 +6,7 @@
 fn main() {
     // Vectors are resizable arrays.
 
-    // Create a `Vec`.
+    // Create a `Vec` with a macro:
     let _numbers: Vec<i32> = vec![1, 2, 3];
     // Note that an array would work as well in this specific case.
 
@@ -16,14 +16,33 @@ fn main() {
     numbers.push(2);
     numbers.push(3);
 
+    assert_eq!(numbers.len(), 3);
+
+    // For large vectors, reserve capacity when creating the `Vec`.
+    let mut vec: Vec<i32> = Vec::with_capacity(10);
+    vec.push(86);
+    assert!(vec.capacity() >= 10);
+
+    // Create a `Vec` with a macro - repeated elements.
+    // In this case, ten zeroes.
+    let mut zeroes: Vec<u8> = vec![0u8; 10];
+
     // Read a value at a given index.
     // 1. Panics if out of bounds.
     let _third: &i32 = &numbers[2];
     // 2. Returns `None` if out of bounds.
     let _third: Option<&i32> = numbers.get(2);
 
-    // Manipulate the `Vec`.
-    numbers.push(4); // Add an element to the end.
+    // Write at a given index:
+    numbers[0] = 1;
+
+    // Extend with an array.
+    numbers.extend([4, 5, 6]);
+
+    // Use a Vec<T> as a stack:
+    // Add an element to the end.
+    numbers.push(4);
+    // Remove the last element.
     numbers.pop();
 
     // Iterate over a `Vec`.
@@ -35,14 +54,14 @@ fn main() {
     println!("Iterate using `iter()`:");
     numbers.iter().for_each(|num| println!("{}", num));
 
-    // Modify the vector while iterating (requires `mut`).
-    for num in &mut numbers {
-        *num += 50; // Use the dereference operator to access the value.
+    // Modify a vector while iterating (requires `mut`).
+    for num in &mut zeroes {
+        *num += 5; // Use the dereference operator to access the value.
     }
 
     // Search in the `Vec` using `position`.
-    if let Some(index) = numbers.iter().position(|&x| x == 52) {
-        println!("Found the value `52` at index: {}", index);
+    if let Some(index) = numbers.iter().position(|&x| x == 2) {
+        println!("Found the value `2` at index: {}", index);
     } else {
         println!("Not found.");
     }
@@ -58,20 +77,32 @@ fn main() {
     println!("Even numbers: {:?}", even_numbers);
 
     // Map elements (square each number).
-     // Collect the results into a new `Vec`.
-    let squared_numbers: Vec<i32> = numbers.iter().map(|&x| x * x).collect();.
+    // Collect the results into a new `Vec`.
+    let squared_numbers: Vec<i32> = numbers.iter().map(|&x| x * x).collect();
     println!("Squared numbers: {:?}", squared_numbers);
 
     // Reduce.
     let sum: i32 = numbers.iter().sum();
     println!("Sum: {}", sum);
 
+    // Fold.
     let product: i32 = numbers.iter().fold(1, |acc, &x| acc * x);
     println!("Product: {}", product);
 
-    // Create a slice of the `Vec`.
-    let slice: &[i32] = &numbers[1..3];
+    // Get a slice of the `Vec`, using `&`.
+    let slice: &[i32] = &numbers[1..3]; // Second and third elements.
     println!("Slice: {:?}", slice);
+
+    // Slice over the entire array.
+    let _whole_cake: &[_] = &numbers[..];
+
+    // In Rust, it's common to pass slices, rather than vectors, as
+    // arguments, when you just want to provide read access.
+    fn read_vec(v: &[i32]) {
+        println!("Inside read_vec: {:?}", v);
+    }
+    // Coerce the `Vec` to a slice as well.
+    read_vec(&numbers);
 
     // Iterate over a slice.
     println!("Iterate over a slice:");
@@ -87,10 +118,7 @@ fn main() {
     for num in mutable_slice.iter_mut() {
         *num *= 2;
     }
-    println!(
-        "Mutable numbers after slice mutation: {:?}",
-        mutable_numbers
-    );
+    println!("After slice mutation: {:?}", mutable_numbers);
 
     // Chain iterators for complex operations.
     let numbers2: Vec<i32> = vec![10, 20, 30, 40, 50]; // Another vector for demonstration.

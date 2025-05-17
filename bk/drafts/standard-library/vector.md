@@ -2,21 +2,22 @@
 
 {{#include vectors.incl.md}}
 
-## Store Homogenous Data in a Contiguous, Growable Array: `Vec` {#vec}
+## Store Homogeneous Data in a Contiguous, Growable Array: `Vec` {#vec}
 
 [![std][c-std-badge]][c-std]{{hi:std}}{{hi:Vec}}{{hi:Vectors}}
 
-The Vector type (`Vec`)  is a contiguous, growable, heap-allocated array. `Vec<T>` can only store values that are the same type.
-Vectors have O(1) indexing, amortized O(1) `push` (to the end) and O(1) `pop` (from the end).
+The vector type `Vec<T>` is the go-to, general-purpose data structure, when you need a collection of elements that can change in size.
 
-The following example demonstrates common operations with `Vec`:
+- It is a contiguous, growable, owned, heap-allocated array.
+- It can only store values that are the same type.
+- It has O(1) indexing, amortized O(1) `push` (to the end) and O(1) `pop` (from the end).
+- Many other data structures are built upon or interact with `Vec`.
+
+The following example demonstrates common operations:
 
 ```rust,editable
 {{#include ../../crates/standard_library/tests/vec/vectors.rs:example}}
 ```
-
-
-
 
 ## Related Data Structures {#skip}
 
