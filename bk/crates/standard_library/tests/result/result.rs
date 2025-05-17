@@ -1,6 +1,6 @@
 // ANCHOR: example
-//! `Result` is a type that represents either success (`Ok`) or failure (`Err`).
-//! It is similar to:
+//! `Result` is a type that represents either success (`Ok`) or failure (`Err`):
+//!
 //! ```
 //! pub enum Result<T, E> {
 //!     Ok(T),
@@ -13,8 +13,8 @@ use std::io;
 use std::io::Read;
 use std::num::ParseIntError;
 
-// Faillible functions like `File::open` return a `Result`...
 fn open_file(file_path: &str) {
+    // Faillible functions like `File::open` return a `Result`...
     let open_result: Result<File, io::Error> = File::open(file_path);
     // You could handle their `Result` there and then...
     match open_result {
@@ -45,8 +45,8 @@ fn read_file(file_path: &str) -> Result<String, io::Error> {
 // in case of an error. The following is equivalent to the previous function.
 fn read_file2(file_path: &str) -> Result<String, io::Error> {
     let mut file: File = File::open(file_path)?;
-    // Note that `file` is of type `File`, not `io::Result<File> = Result<File,
-    // io::Error>`
+    // Note that `file` is of type `File`,
+    // not `io::Result<File> = Result<File, io::Error>`
     let mut contents = String::new();
     file.read_to_string(&mut contents)?;
     Ok(contents)
@@ -83,9 +83,9 @@ impl From<ParseIntError> for MyError {
     }
 }
 
-// The `thisError` crate provides a convenient derive macro
+// The `thisError` crate provides a convenient `derive` macro
 // for the standard library's `std::error::Error` trait.
-// Use when writing libraries.
+// Use when writing libraries, avoiding the need for custom error boilerplate.
 #[allow(dead_code)]
 #[derive(thiserror::Error, Debug)]
 enum MyError2 {
