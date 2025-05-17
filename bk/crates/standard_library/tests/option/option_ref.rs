@@ -4,7 +4,10 @@ fn as_ref() {
     // First, cast `Option<String>` to `Option<&String>` with `as_ref`,
     // then consume *that* with `map`, leaving `text` on the stack.
     let text_length: Option<usize> = text.as_ref().map(|s| s.len());
-    println!("We still can print `text`: {text:?}. Length: {:?}", text_length);
+    println!(
+        "We still can print `text`: {text:?}. Length: {:?}",
+        text_length
+    );
 }
 
 fn as_mut() {
