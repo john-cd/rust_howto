@@ -10,7 +10,7 @@
 
 ## Vectors
 
-{{#include vectors.incl.md}}
+{{#include vector.incl.md}}
 
 ## HashMap
 

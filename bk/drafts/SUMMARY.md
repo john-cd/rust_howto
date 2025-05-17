@@ -29,13 +29,13 @@
 - [Standard Library](standard-library/index.md)
   - [Option](standard-library/option.md)
   - [Result](standard-library/result.md)
-  - [Vectors](standard-library/vectors.md)
+  - [Vector](standard-library/vector.md)
   - [HashMap](standard-library/hashmaps.md)
   - [Strings](standard-library/strings.md)
   - [Copy-on-Write](standard-library/cow.md)
   - [Smart Pointers](standard-library/smart_pointers.md)
   - [AsRef](standard-library/asref.md)
-  - [Automatic Trait Derivation](standard-library/derive.md)
+  - [Derive (Automatic Trait Derivation)](standard-library/derive.md)
 
 # Categories
 

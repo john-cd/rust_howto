@@ -2,15 +2,21 @@
 
 {{#include vectors.incl.md}}
 
-## `Vec` {#vec}
+## Store Homogenous Data in a Contiguous, Growable Array: `Vec` {#vec}
 
 [![std][c-std-badge]][c-std]{{hi:std}}{{hi:Vec}}{{hi:Vectors}}
 
-Vectors (`Vec`) can only store values that are the same type.
+The Vector type (`Vec`)  is a contiguous, growable, heap-allocated array. `Vec<T>` can only store values that are the same type.
+Vectors have O(1) indexing, amortized O(1) `push` (to the end) and O(1) `pop` (from the end).
+
+The following example demonstrates common operations with `Vec`:
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/data_structures/vectors.rs:example}}
+{{#include ../../crates/standard_library/tests/vec/vectors.rs:example}}
 ```
+
+
+
 
 ## Related Data Structures {#skip}
 
@@ -36,5 +42,5 @@ Vectors (`Vec`) can only store values that are the same type.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[vectors: add NOW](https://github.com/john-cd/rust_howto/issues/631)
+[vectors: review; move to data structure??](https://github.com/john-cd/rust_howto/issues/631)
 </div>

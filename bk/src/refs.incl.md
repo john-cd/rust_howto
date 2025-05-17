@@ -636,7 +636,7 @@
 [ex-standard-library-result]: ../drafts/standard-library/result.md#result
 [ex-standard-library-string-concatenation]: ../drafts/standard-library/strings.md#string-concatenation
 [ex-standard-library-string]: ../drafts/standard-library/strings.md#string
-[ex-standard-library-vec]: ../drafts/standard-library/vectors.md#vec
+[ex-standard-library-vec]: ../drafts/standard-library/vector.md#vec
 [ex-template-engine-create-html-from-template]: ../drafts/categories/template-engine/tera.md#create-html-from-template
 [ex-template-engine-tinytemplate]: ../drafts/categories/template-engine/tinytemplate.md#tinytemplate
 [ex-text-editors-helix]: ../drafts/categories/text-editors/ides.md#helix
