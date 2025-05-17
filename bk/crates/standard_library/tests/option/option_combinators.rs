@@ -1,4 +1,5 @@
 #![allow(clippy::bind_instead_of_map)]
+#![allow(clippy::unwrap_or_default)]
 // ANCHOR: example
 use std::fs;
 
@@ -16,7 +17,7 @@ fn read_file(filename: &str) -> Option<String> {
 
 fn main() {
     let contents_maybe = read_file("temp/poem.txt");
-    // Provide a default with `unwrap_or_else`.
+    // Provide a default with `unwrap_or_else` or `unwrap_or_default`.
     let contents = contents_maybe.unwrap_or_else(String::new);
     println!("{}", contents);
 }
