@@ -6,9 +6,9 @@ Smart pointers{{hi:Smart pointers}} are special data structures that not only ac
 
 | Smart Pointer | Description |
 |---|---|
-| `Box<T>` | A smart pointer for allocating values on the heap. Useful when you have a large amount of data or a value whose size is not known at compile time. |
-| `Rc<T>` | A reference-counted smart pointer used for sharing ownership of data. Best for scenarios where multiple parts of your program need access to the same data. Not thread-safe; use  for thread-safe sharing. |
-| `Arc<T>` | Uses atomic operations to ensure safe concurrent access. Similar to  but thread-safe, enabling shared ownership across threads. |
+| `Box<T>` | A smart pointer for allocating values _on the heap_. Useful when you have a large amount of data or a value whose size is not known at compile time. |
+| `Rc<T>` | A reference-counted smart pointer used for sharing ownership of data. Best for scenarios where multiple parts of your program need access to the same data. Not thread-safe. |
+| `Arc<T>` | Uses atomic operations to ensure safe concurrent access. Similar to `Rc<T>` but thread-safe, enabling shared ownership across threads. |
 | `RefCell<T>` | Allows interior mutability (inside an immutable reference). Enforces borrow checking at runtime rather than compile time. Works well with  when shared data requires interior mutability. |
 | `Cell<T>` | Similar to , but with fewer safety checks and restrictions. Enables interior mutability for  types without borrowing. |
 
@@ -17,34 +17,6 @@ Smart pointers{{hi:Smart pointers}} are special data structures that not only ac
 - `Rc<T>`{{hi:Rc<T>}} enables multiple owners{{hi:Multiple owners}} of the same data; `Box<T>` and `RefCell<T>` have single owners.
 - `Box<T>` allows immutable or mutable borrows checked at compile time; `Rc<T>` allows only immutable borrows checked at compile time; `RefCell<T>` allows immutable or mutable borrows checked at runtime{{hi:Borrowing}}.
 - Because `RefCell<T>` allows mutable borrows checked at runtime, you can mutate the value inside the `RefCell<T>` even when the `RefCell<T>` is immutable.
-
-## `Box` {#box}
-
-[![book-rust-box][book-rust-box-badge]][book-rust-box]{{hi:Box}} [![Rust by example - box][book-rust-by-example-box-badge]][book-rust-by-example-box] [![std][c-std-badge]][c-std]{{hi:std}}
-
-All values in Rust are stack-allocated by default. `Box<T>` allow you to store data on the heap{{hi:Heap}} rather than the stack{{hi:Stack}}. What remains on the stack is the pointer to the heap data.
-
-Boxes provide ownership for this allocation, and drop their contents when they go out of scope. Boxes also ensure that they never allocate more than `isize::MAX` bytes.
-
-The `Box<T>` type is a smart pointer{{hi:Smart pointers}}, because it implements the [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ trait, which allows `Box<T>` values to be treated like a reference. You can use the de-reference operator{{hi:Dereference operator}} `*`{{hi:*}} or 'deref coercion' with the `.` operator to retrieve its inner value.
-
-```rust,editable
-let boxed: Box<u8> = Box::new(1);
-let _val: u8 = *boxed;
-let boxed = Box::new("example");
-// Deref coercion: equivalent to (*boxed.deref()).len()
-let _val = boxed.len();
-```
-
-Use `Box<T>` when
-
-- you have a dynamically sized type, whose size can't be known at compile time.
-- you want to own a value and you care only that it's a type that implements a particular trait rather than being of a specific type.
-- you don't want to rely on stack space.
-
-```rust,editable
-{{#include ../../crates/standard_library/tests/smart_pointers/box1.rs:example}}
-```
 
 ## `Rc` {#rc}
 
