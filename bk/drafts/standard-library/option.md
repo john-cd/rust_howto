@@ -61,7 +61,7 @@ This pattern removes the need for explicit, convoluted `match` or `if else` stat
 {{#include ../../crates/standard_library/tests/option/option_question_mark.rs:example}}
 ```
 
-## Common `Option` methods {#option-methods}
+## Common `Option` Methods {#option-methods}
 
 [![std][c-std-badge]][c-std]
 
@@ -140,7 +140,5 @@ See also the [[asref | AsRef]] chapter.
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
-{{hi:Options}}
 <div class="hidden">
-[option: review](https://github.com/john-cd/rust_howto/issues/625)
 </div>
