@@ -3,7 +3,7 @@
 [ex-standard-library-asref-smart-pointer]: asref.md#asref-smart-pointer
 [ex-standard-library-asref-vs-deref-vs-borrow]: asref.md#asref-vs-deref-vs-borrow
 [ex-standard-library-asref]: asref.md#asref
-[ex-standard-library-box]: smart_pointers.md#box
+[ex-standard-library-box]: box.md#box
 [ex-standard-library-cell]: smart_pointers.md#cell
 [ex-standard-library-combinators]: option.md#combinators
 [ex-standard-library-convert-cow-to-str]: cow.md#convert-cow-to-str
@@ -19,7 +19,7 @@
 [ex-standard-library-oncecell]: smart_pointers.md#oncecell
 [ex-standard-library-option]: option.md#option
 [ex-standard-library-placeholders]: strings.md#placeholders
-[ex-standard-library-rc]: smart_pointers.md#rc
+[ex-standard-library-rc]: rc.md#rc
 [ex-standard-library-refcell]: smart_pointers.md#refcell
 [ex-standard-library-result]: result.md#result
 [ex-standard-library-return-cow-from-function]: cow.md#return-cow-from-function
