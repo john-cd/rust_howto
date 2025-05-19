@@ -3112,3 +3112,6 @@ consts
 nullable
 FirstName
 LastName
+SomeTrait
+DSTs
+deallocates
