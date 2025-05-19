@@ -6,7 +6,7 @@
 
 [![std][c-std-badge]][c-std]{{hi:std}}{{hi:Strings}}
 
-`str` (String Slice) is a primitive type representing a view into a sequence of UTF-8 encoded bytes.
+`str` (String Slice) is a primitive type representing a view into a sequence of UTF-8 encoded bytes:
 
 - It is immutable.
 - Since `str`'s size is unknown at compile time, one can only handle it behind a pointer. It is most often seen in its borrowed form as `&str`.
@@ -15,7 +15,7 @@
 
 String literals (e.g., "hello") are of type `&'static str`, meaning they exist for the entire lifetime of the program.
 
-`String` is a growable, mutable, owned string type allocated on the heap.
+`String` is a growable, mutable, owned string type allocated on the heap:
 
 - It is similar to a `Vec<u8>` that is guaranteed to hold valid UTF-8.
 - String owns its data, meaning when a String goes out of scope, the memory it occupies on the heap is automatically deallocated.
@@ -84,5 +84,4 @@ See:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[strings: review](https://github.com/john-cd/rust_howto/issues/630)
 </div>
