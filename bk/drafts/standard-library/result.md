@@ -92,5 +92,4 @@ See also the [[option | Option]] chapter.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[result: review](https://github.com/john-cd/rust_howto/issues/626)
 </div>
