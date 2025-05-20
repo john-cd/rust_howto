@@ -26,7 +26,7 @@ Also of note: the `Weak` type, typically obtained via `Rc::downgrade`, allows fo
 
 [![std][c-std-badge]][c-std]{{hi:std}}
 
-`Rc<T>` allows you to share data between multiple parts of your program but it doesn’t allow _mutability_ by itself. If `Rc<T>` allowed multiple mutable references, it may violate Rust's borrowing rules: multiple mutable borrows to the same place can cause data races and inconsistencies.
+`Rc<T>` allows you to share data between multiple parts of your program but it doesn't allow _mutability_ by itself. If `Rc<T>` allowed multiple mutable references, it may violate Rust's borrowing rules: multiple mutable borrows to the same place can cause data races and inconsistencies.
 
 If you need mutability inside an `Rc`, you can use `RefCell<T>`, which offers _interior mutability_: `RefCell<T>` enforces borrowing rules at runtime instead of compile-time. It allows mutable borrows to the inner data at runtime, but panics if borrowing rules are violated (again, only one mutable borrow is allowed at a time).
 
