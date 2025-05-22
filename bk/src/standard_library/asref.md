@@ -23,7 +23,7 @@ For example, `Path`, `PathBuf`, `str`, `String`, `OsString`, `OsStr`, `Cow<'_, O
 For smart pointers like `Box<T>`, `Rc<T>`, `Arc<T>`, etc., their `as_ref()` methods typically provide a `&T`, which is a reference to the contained value. This is distinct from simply using `&` on the smart pointer itself, which would give you a reference to the smart pointer (`&Box<T>`), not its contents.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/asref/smart_pointer_as_ref.rs:example}}
+{{#include ../../crates/standard_library/tests/asref/smart_pointer_asref.rs:example}}
 ```
 
 Note that `Option::as_ref()` and `Result::as_ref()` are inherent methods on `Option` and `Result` respectively, not implementations of the `std::convert::AsRef` trait. They transform an `Option<T>` into an `Option<&T>` (or `Result<T, E>` into `Result<&T, &E>`), which is useful for working with references inside these enums without consuming the original value.
