@@ -10,7 +10,7 @@ use std::thread;
 /// A simple spinlock implementation.
 pub struct Spinlock<T> {
     locked: AtomicBool,
-    data: UnsafeCell<T>, // Allows mutation through &self via unsafe code
+    data: UnsafeCell<T>, // Allows mutation through `&self` via unsafe code
 }
 
 impl<T> Spinlock<T> {
@@ -29,7 +29,7 @@ impl<T> Spinlock<T> {
     #[inline]
     pub fn lock(&self) -> SpinlockGuard<T> {
         // Spin until we successfully acquire the lock.
-        // compare_exchange_weak is often preferred in loops as it can be
+        // `compare_exchange_weak` is often preferred in loops, as it can be
         // more performant on some platforms, even if it spuriously fails.
         while self
             .locked
@@ -129,13 +129,13 @@ fn main() {
             // Access and modify the data through the guard.
             *num += 1;
 
-            // Simulate some *very* short work while holding the lock
+            // Simulate some *very* short work while holding the lock.
             // If this work were longer, a `Mutex` would be better.
             thread::sleep(Duration::from_micros(5));
 
             println!("Thread {} releasing lock, value = {}", i, *num);
             // `num` (the guard) goes out of scope here, automatically calling
-            // `drop()` which releases the lock.
+            // `drop()`, which releases the lock.
         });
         handles.push(handle);
     }
@@ -157,4 +157,3 @@ fn main() {
 fn test() {
     main();
 }
-// TODO find a location

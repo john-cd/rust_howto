@@ -11,7 +11,7 @@ Atomic types{{hi:Atomic types}} in [`std::sync::atomic`][c-std::sync::atomic]{{h
 The `atomic` module provides [`std::sync::atomic::AtomicBool`][c-std::sync::atomic::AtomicBool]{{hi:std::sync::atomic::AtomicBool}}⮳, [`std::sync::atomic::AtomicIsize`][c-std::sync::atomic::AtomicIsize]{{hi:std::sync::atomic::AtomicIsize}}⮳, [`std::sync::atomic::AtomicUsize`][c-std::sync::atomic::AtomicUsize]{{hi:std::sync::atomic::AtomicUsize}}⮳, [`std::sync::atomic::AtomicI8`][c-std::sync::atomic::AtomicI8]{{hi:std::sync::atomic::AtomicI8}}⮳, [`std::sync::atomic::AtomicU16`][c-std::sync::atomic::AtomicU16]{{hi:std::sync::atomic::AtomicU16}}⮳, etc.
 
 ```rust,editable
-{{#include ../../../crates/cats/concurrency/tests/shared_state/atomics.rs:example}}
+{{#include ../../../crates/cats/concurrency/tests/atomics/atomics.rs:example}}
 ```
 
 The most common way to share an atomic variable is to put it into an [`std::sync::Arc`][c-std::sync::Arc]{{hi:std::sync::Arc}}⮳ (an atomically-reference-counted shared pointer).
@@ -23,7 +23,7 @@ The most common way to share an atomic variable is to put it into an [`std::sync
 `crossbeam_utils`provides miscellaneous tools for concurrent programming. It offers [`crossbeam::atomic::AtomicCell`][c-crossbeam::atomic::AtomicCell]{{hi:crossbeam::atomic::AtomicCell}}⮳, a thread-safe mutable memory location. This type is equivalent to [`std::cell::Cell`][c-std::cell::Cell]{{hi:std::cell::Cell}}⮳, except it can also be shared among multiple threads. Operations on AtomicCells use atomic instructions whenever possible, and synchronize using global locks otherwise.
 
 ```rust,editable
-{{#include ../../../crates/cats/concurrency/tests/shared_state/atomic_cell.rs:example}}
+{{#include ../../../crates/cats/concurrency/tests/atomics/atomic_cell.rs:example}}
 ```
 
 ## `arc-swap` {#arc-swap}
@@ -37,4 +37,9 @@ The `ArcSwap` type in [`arc-swap`][c-arc_swap]⮳{{hi:arc-swap}} is a container 
 
 <div class="hidden">
 [fix NOW](https://github.com/john-cd/rust_howto/issues/1342)
+
+```rust,editable
+{{#include ../../../crates/cats/concurrency/tests/atomics/spinlock.rs:example}}
+```
+
 </div>
