@@ -26,16 +26,10 @@
   - [Iterators](language/iterators.md)
   - [Macros](language/macros.md)
 
-- [Standard Library](standard-library/index.md)
-  - [Option](standard-library/option.md)
-  - [Result](standard-library/result.md)
-  - [Vector](standard-library/vector.md)
-  - [HashMap](standard-library/hashmap.md)
-  - [Strings](standard-library/strings.md)
-  - [Copy-on-Write](standard-library/cow.md)
-  - [Smart Pointers](standard-library/smart_pointers.md)
-  - [AsRef](standard-library/asref.md)
-  - [Derive (Automatic Trait Derivation)](standard-library/derive.md)
+  - [Strings](standard_library/strings.md)
+  - [Smart Pointers](standard_library/smart_pointers.md)
+  - [HashMap](standard_library/hashmap.md)
+  - [Vector](standard_library/vector.md)
 
 # Categories
 

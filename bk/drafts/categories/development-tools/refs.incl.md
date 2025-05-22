@@ -54,47 +54,37 @@
 [ex-versioning-find-latest-version-within-range]: versioning/versioning.md#find-latest-version-within-range
 [ex-versioning-parse-a-complex-version-string]: versioning/versioning.md#parse-a-complex-version-string
 [ex-versioning-parse-a-version-string]: versioning/versioning.md#parse-a-version-string
-[p-apis]: documentation/../../web-programming_http-client/apis.md
-[p-attributes]: cross-compilation/../../../language/attributes.md
-[p-attributes]: formatting/../../../language/attributes.md
-[p-books]: ../../../drafts/links/books.md
-[p-building]: cargo/../../development-tools_cargo-plugins/building.md
-[p-caching]: compilation/../../caching/index.md
+[p-apis]: ../web-programming_http-client/apis.md
+[p-attributes]: ../../language/attributes.md
+[p-books]: ../../links/books.md
+[p-building]: ../development-tools_cargo-plugins/building.md
+[p-caching]: ../caching/index.md
 [p-cargo]: cargo/cargo.md
-[p-cargo]: compilation/../cargo/cargo.md
-[p-cargo]: cross-compilation/../cargo/cargo.md
-[p-cargo]: documentation/../cargo/cargo.md
-[p-cargo]: installation/../cargo/cargo.md
-[p-cargo]: other/../cargo/cargo.md
-[p-cargo]: versioning/../cargo/cargo.md
-[p-concurrency]: documentation/../../concurrency/index.md
-[p-concurrency]: other/../../concurrency/index.md
-[p-config]: formatting/../../config/index.md
-[p-configuration]: compilation/../../config/configuration.md
-[p-configuration]: formatting/../../config/configuration.md
-[p-contributing]: ../../../drafts/contributing/index.md
+[p-concurrency]: ../concurrency/index.md
+[p-config]: ../config/index.md
+[p-configuration]: ../config/configuration.md
+[p-contributing]: ../../contributing/index.md
 [p-crates]: ../../crate_selection/index.md
-[p-cross-platform]: other/# "../../../other/cross-platform/index.md"
-[p-documentation]: installation/../documentation/documentation.md
-[p-download]: other/../../web-programming_http-client/download.md
-[p-duration]: compilation/../../date-and-time/duration.md
-[p-embedded]: other/# "../../embedded/index.md"
-[p-functions]: other/../../../language/functions.md
-[p-fuzzing]: other/../../development-tools_testing/fuzzing.md
-[p-generics]: compilation/../../../language/generics.md
-[p-ides]: formatting/../../text-editors/ides.md
-[p-images]: installation/# "../../multimedia_images/images.md"
-[p-linux]: other/# "../../os_linux-apis/linux.md"
-[p-macos]: installation/# "../../os_macos-apis/macos.md"
-[p-macros]: other/../../../language/macros.md
+[p-cross-platform]: # "../../../other/cross-platform/index.md"
+[p-documentation]: documentation/documentation.md
+[p-download]: ../web-programming_http-client/download.md
+[p-duration]: ../date-and-time/duration.md
+[p-embedded]: # "../../embedded/index.md"
+[p-functions]: ../../language/functions.md
+[p-fuzzing]: ../development-tools_testing/fuzzing.md
+[p-generics]: ../../language/generics.md
+[p-ides]: ../text-editors/ides.md
+[p-images]: # "../../multimedia_images/images.md"
+[p-linux]: # "../../os_linux-apis/linux.md"
+[p-macos]: # "../../os_macos-apis/macos.md"
+[p-macros]: ../../language/macros.md
 [p-main]: ../../language/entrypoint.md
-[p-memory]: other/../../development-tools_profiling/memory_usage_analysis.md
+[p-memory]: ../development-tools_profiling/memory_usage_analysis.md
 [p-modules]: ../../code_organization/modules.md
-[p-option]: ../../../drafts/standard-library/option.md
-[p-parsing]: versioning/# "../../parsing/index.md"
-[p-performance]: compilation/../../development-tools_cargo-plugins/performance.md
-[p-performance]: other/../../development-tools_cargo-plugins/performance.md
-[p-search]: other/../../database/search.md
-[p-strings]: ../../../drafts/standard-library/strings.md
-[p-testing]: other/../../development-tools_testing/testing.md
-[p-toml]: formatting/../../parser-implementations/toml.md
+[p-option]: ../../standard_library/option.md
+[p-parsing]: # "../../parsing/index.md"
+[p-performance]: # "../../development-tools_cargo-plugins/performance.md"
+[p-search]: ../database/search.md
+[p-strings]: ../../standard-library/strings.md
+[p-testing]: ../development-tools_testing/testing.md
+[p-toml]: ../parser-implementations/toml.md

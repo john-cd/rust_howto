@@ -16,14 +16,14 @@
 [ex-rendering-vello]: 2d_renderers.md#vello
 [ex-rendering-vger]: 2d_vector_graphics.md#vger
 [ex-rendering-webrender]: 2d_renderers.md#webrender
-[p-algorithms]: ../../../src/categories/algorithms/index.md
-[p-apis]: ../../../src/categories/web-programming_http-client/apis.md
+[p-algorithms]: ../algorithms/index.md
+[p-apis]: ../web-programming_http-client/apis.md
 [p-cross-platform]: ../../other/cross-platform/index.md
 [p-gpu]: ../../other/gpu/gpu.md
 [p-graphics]: ../graphics/index.md
 [p-images]: ../multimedia_images/images.md
-[p-option]: ../../standard-library/option.md
-[p-performance]: ../../../src/categories/development-tools_cargo-plugins/performance.md
+[p-option]: # "../../standard_library/option.md"
+[p-performance]: ../development-tools_cargo-plugins/performance.md
 [p-rendering-engine]: ../rendering_engine/index.md
 [p-rendering]: index.md
 [p-shaders]: ../rendering_graphics-api/shaders.md

@@ -6,5 +6,5 @@
 [p-assembly]: ../development-tools_profiling/assembly.md
 [p-caching]: ../caching/index.md
 [p-cargo]: ../development-tools/cargo/cargo.md
-[p-option]: ../../../drafts/standard-library/option.md
+[p-option]: ../../standard_library/option.md
 [p-toml]: ../parser-implementations/toml.md
