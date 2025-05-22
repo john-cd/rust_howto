@@ -23,4 +23,4 @@
 [p-option]: # "../../standard_library/option.md"
 [p-performance]: ../development-tools_cargo-plugins/performance.md
 [p-serde]: ../encoding/serde.md
-[p-strings]: ../../standard-library/strings.md
+[p-strings]: ../data-structures/strings.md

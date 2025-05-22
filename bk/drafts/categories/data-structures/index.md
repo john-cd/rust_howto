@@ -18,6 +18,18 @@ Standard library collections (in `std::collections`) include:
 
 Refer to the [[language | Language]] and [[standard-library | Standard Library]] sections for examples of use.
 
+## Vectors
+
+{{#include vector.incl.md}}
+
+## HashMap
+
+{{#include hashmap.incl.md}}
+
+## Strings
+
+{{#include strings.incl.md}}
+
 ## Code Examples
 
 The following examples cover less commonly-used data structures:

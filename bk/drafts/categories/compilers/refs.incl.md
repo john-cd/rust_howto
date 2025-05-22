@@ -19,6 +19,6 @@
 [p-generics]: ../../language/generics.md
 [p-modules]: ../../language/modules.md
 [p-performance]: ../development-tools_cargo-plugins/performance.md
-[p-strings]: ../../standard-library/strings.md
+[p-strings]: ../data-structures/strings.md
 [p-toml]: ../parser-implementations/toml.md
 [p-versioning]: ../development-tools/versioning/versioning.md

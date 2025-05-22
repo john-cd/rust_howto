@@ -8,33 +8,25 @@
 
 {{#include result.incl.md}}
 
-## Vectors
-
-{{#include vector.incl.md}}
-
-## HashMap
-
-{{#include hashmap.incl.md}}
-
-## Strings
-
-{{#include strings.incl.md}}
-
-## Copy-on-write (Cow)
-
-{{#include cow.incl.md}}
-
 ## Smart Pointers
 
 {{#include smart_pointers.incl.md}}
 
-## Derive: Automatic Trait Derivation
+## `Box`
 
-{{#include derive.incl.md}}
+{{#include box.incl.md}}
+
+## Copy-On-Write (Cow)
+
+{{#include cow.incl.md}}
 
 ## `AsRef`
 
 {{#include asref.incl.md}}
+
+## Derive: Automatic Trait Derivation
+
+{{#include derive.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

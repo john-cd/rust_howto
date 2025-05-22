@@ -85,6 +85,6 @@
 [p-parsing]: # "../../parsing/index.md"
 [p-performance]: # "../../development-tools_cargo-plugins/performance.md"
 [p-search]: ../database/search.md
-[p-strings]: ../../standard-library/strings.md
+[p-strings]: ../data-structures/strings.md
 [p-testing]: ../development-tools_testing/testing.md
 [p-toml]: ../parser-implementations/toml.md

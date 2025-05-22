@@ -16,7 +16,7 @@ The vector type `Vec<T>` is the go-to, general-purpose data structure, when you 
 The following example demonstrates common operations:
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/vec/vectors.rs:example}}
+{{#include ../../../crates/standard_library/tests/vec/vectors.rs:example}}
 ```
 
 ## Related Data Structures {#skip}
@@ -43,5 +43,5 @@ The following example demonstrates common operations:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[vectors: review; move to data structure??](https://github.com/john-cd/rust_howto/issues/631)
+[vectors: review](https://github.com/john-cd/rust_howto/issues/631)
 </div>
