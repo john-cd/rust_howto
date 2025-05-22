@@ -7,12 +7,16 @@
 //! This example demonstrates basic data processing operations using the Polars
 //! library.
 //!
-//! ## Prerequisites
-//!
 //! In `Cargo.toml`, add:
+//!
 //! ```toml
 //! [dependencies]
-//! polars = { version = "0.24", features = ["csv-file"] }
+//! polars = "0.48.1"
+//! ```
+//!
+//! `polars` has a large list of default features: you may want to cherry-pick required features:
+//! ```toml
+//! polars = { version = "0.48.1", default-features = false, features = ["<what you need>"] }
 //! ```
 
 // use std::fs::File;

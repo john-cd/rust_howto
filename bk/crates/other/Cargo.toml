@@ -33,27 +33,12 @@ crux_macros = "0.6.0"
 ## Data processing
 arrow = { version = "55.0.0", features = ["prettyprint"], optional = true }
 datafusion = { version = "47.0.0", optional = true }
-#polars = { version = "0.46.0", optional = true } # FIXME
+polars = { version = "0.48.1", optional = true }
 
 ## GPU
-# FIXME add deps
 
 ## Scripting
 rhai = "1.21.0"
-
-## Written in Rust FIXME
-# bat
-# broot
-# exa = "0.10.1" # FIXME review conflicts
-# gping = "1.17.3" # not a lib
-# just = "1.36.0"
-# lsd
-# roogle # not a lib
-# ruff # not a lib
-# rui = "0.6.1" # experimental at this point
-# rustdesk = "0.1.1" # app
-# xsv = "0.13.0" # not a lib
-# zed  # the `zed` crate is not the editor
 
 ## General
 anyhow = "1.0.95"
@@ -64,9 +49,8 @@ tracing = "0.1.41"
 tracing-subscriber = "0.3.19"
 
 [features]
-#default = []
 datafusion = ["dep:datafusion"]
-#polars = ["dep:polars"]
+polars = ["dep:polars"]
 arrow = ["dep:arrow"]
 ## For Crux:
 typegen = ["crux_core/typegen"]
