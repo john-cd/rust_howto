@@ -730,4 +730,4 @@
 [p-links]: # "links/index.md"
 [p-standard-library]: # "standard-library/index.md"
 [p-web-programming]: # "categories/web-programming/index.md"
-[p-word-index]: word_index.md"
+[p-word-index]: word_index.md
