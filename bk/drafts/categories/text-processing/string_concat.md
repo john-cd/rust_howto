@@ -32,4 +32,8 @@ String concatenation is the operation of joining two or more strings together en
 
 - [constcat](https://crates.io/crates/constcat)
 
+```rust,editable
+{{#include ../../../crates/cats/text_processing/tests/string_concat/string_concat2.rs:example}}
+```
+
 </div>

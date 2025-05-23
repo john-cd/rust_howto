@@ -41,15 +41,7 @@ You may also use `dbg!` for debug output.{{hi:Debug output}} `dbg!` returns owne
 
 ## Concatenate Strings {#string-concatenation}
 
-[![std][c-std-badge]][c-std]
-
-Here are several common methods to concatenate{{hi:Concatenation}} [`String`][c-std::string::String]s⮳{{hi:String}}:
-
-```rust,editable
-{{#include ../../crates/standard_library/tests/string_concat.rs:example}}
-```
-
-See also the [[string_concat | String Concatenation]] chapter and the [Concatenation Benchmark][concatenation_benchmarks-github]⮳.
+See the [[string_concat | String Concatenation]] chapter and the [Concatenation Benchmark][concatenation_benchmarks-github]⮳.
 
 ## String Manipulation {#skip}
 
