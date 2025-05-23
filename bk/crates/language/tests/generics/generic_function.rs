@@ -20,6 +20,7 @@ fn main() {
     print_value(MyStruct { value: 42 });
 }
 
+#[allow(dead_code)]
 #[derive(Debug)]
 struct MyStruct {
     value: i32,
