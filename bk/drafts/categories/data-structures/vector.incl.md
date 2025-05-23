@@ -1,3 +1,3 @@
 | Recipe | Crates |
 |---|---|
-| [`Vec`][] | [![std][c-std-badge]][c-std] |
+| [Store Homogeneous Data in a Contiguous, Growable Array: `Vec`][ex-data-structures-vec] | [![std][c-std-badge]][c-std] |
