@@ -7,7 +7,7 @@
 [![std][c-std-badge]][c-std] [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]
 
 ```rust,editable
-{{#include ../../../crates/standard_library/tests/data_structures/binaryheap.rs:example}}
+{{#include ../../../crates/cats/data_structures/tests/binaryheap/binaryheap.rs:example}}
 ```
 
 ## `priority-queue` {#priority-queue}
