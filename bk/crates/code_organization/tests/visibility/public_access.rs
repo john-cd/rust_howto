@@ -37,8 +37,8 @@ fn main() {
 // The same applies when calling from a brother module.
 mod another_module {
     fn call() {
-        // `super` refers to the parent and is therefore accessible from the
-        // child.
+        // `super` refers to the parent and is therefore accessible
+        // from the child.
         super::a_module::public();
         // ERROR: super::a_module::private();
         super::a_module::public_nested_module::public();

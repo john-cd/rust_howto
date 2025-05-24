@@ -16,14 +16,14 @@ autolib = false
 
 [dependencies]
 actix-web = "4.9.0"
-async-graphql = "7.0.13"
-async-graphql-axum = "7.0.13"
-axum = "0.7.9"                                                  # pinned because of tonic
+async-graphql = "7.0.17"
+async-graphql-axum = "7.0.17"
+axum = "0.7.9" # pinned because of tonic
 http = "1.2.0"
 http-body-util = "0.1.2"
 hyper = { version = "1.6.0", features = ["full"] }
 hyper-util = { version = "0.1", features = ["full"] }
-leptos = "0.7"
+leptos = "0.8.2"
 loco-rs = "0.15.0"
 mime = "0.3.17"
 prost = "0.13.4"

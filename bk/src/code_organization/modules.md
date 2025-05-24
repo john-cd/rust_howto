@@ -68,9 +68,9 @@ Note the following:
 - Modules (and items within) are private by default. Use the `pub` keyword - see [[visibility | visibility rules]].
 - It is possible (but confusing) to override the name and path of the file where a module is stored, using the [path attribute](https://doc.rust-lang.org/reference/items/modules.html#the-path-attribute)⮳.
 
-## Access Items in your Modules via Paths {#paths}
+## Access Items Within Modules via Paths {#paths}
 
-Paths let you access items (like functions, structs, enums, modules, etc.) within your Rust code, when those items are defined in different modules. Paths consist of a sequence of one or more segments separated by `::`, where each segment is an item (often a module) or a keyword like `super`, `self`, or `crate`:
+Paths let you use items (like functions, structs, enums, modules, etc.) within your Rust code, when those items are defined in different modules. Paths consist of a sequence of one or more segments separated by `::`, where each segment is an item (often a module), an alias, or a keyword like `super`, `self`, or `crate`:
 
 ```rust,noplayground
 a_module                          // Path to a module.
@@ -86,13 +86,13 @@ super::brother_module             // Path to another module declared in the pare
 crate::first_level::second_level  // Path to a nested module, starting from the crate root.
 ```
 
+Note that [[visibility | visibility]] rules apply. A path is valid only if all of its segments are accessible from the location of use. See the section below. Aliases are covered in [[use_keyword | `use` keyword]] chapter.
+
 Going into more details, there are two main kinds of paths: relative and absolute paths. Relative paths start from the current module you are writing code in:
 
 ```rust,noplayground
 /// Inline module declaration.
 mod a_module {
-    /// The inner function is marked public,
-    /// so that it can be accessed. See visibility rules.
     pub fn some_function() {
         // ...
     }
@@ -107,6 +107,8 @@ fn call_something_in_a_module() {
     // The above is equivalent to:
     self::a_module::some_function();
 }
+// The inner function was marked public with `pub`,
+// so that it could be accessed. See visibility rules below.
 ```
 
 The `super` keyword is used to refer to the parent module:
@@ -128,7 +130,7 @@ Absolute paths start from the root of your crate (the top-level module, usually 
 
 ```rust,editable,noplayground
 // In the crate root:
-pub mod module_a {
+mod module_a {
   pub mod submodule_b {
     pub fn some_function() {
       // ...
@@ -142,13 +144,29 @@ crate::module_a::submodule_b::some_function();
 
 Absolute paths are infrequently seen but useful for disambiguation, when a module name is the same than an external dependency.
 
-Note that paths can be used to refer to elements within containers other than modules: structs, enums, traits, etc.
+Paths can be used to refer to elements within containers other than modules: structs, enums, traits, etc.
 
 ```rust,noplayground
 a_module::Enum1::Variant1         // Path to a variant in an enum, itself in a module.
 TypeName::a_function()            // Path to an associated function within a type (e.g. a struct, an enum).
 <ImplType as Trait>::AssocType    // Path to an associated type within a trait.
 TypeName::CONSTANT_NAME           // Path to an associated constant within a type's `impl` block.
+```
+
+## Use Modules to Hide Implementation Details {#hide-implementation-details}
+
+Modules provides encapsulation, meaning they hide items within from their parent, unless the items are explicty made public.
+
+- Most items, including modules and items within, are private by default.
+- Use the `pub` keyword to make them public.
+- All items, public or private, can be accessed from within the _same_ module or child modules.
+- Items cannot be accessed from their parent, unless they are public.
+- Items cannot be accessed from another module, unless all items in the path from that module to the item are accessible (public, if traversed in the parent -> child direction; private or public, if traversed in the child -> parent direction or in the same module).
+
+The following example summarizes the visibility rules when it comes to modules. See the [[visibility | Visibility]] and [[use_keyword | `use` keyword]] chapters for complete details.
+
+```rust,editable
+{{#include ../../crates/code_organization/tests/modules/module_visibility.rs:example}}
 ```
 
 ## Related Topics {#skip}

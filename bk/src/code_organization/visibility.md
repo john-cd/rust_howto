@@ -2,7 +2,7 @@
 
 {{#include visibility.incl.md}}
 
-## Make your Code Items Public {#public}
+## Make your Code Items Public with the `pub` Keyword {#public}
 
 [![book-rust-by-example-visibility-rules][book-rust-by-example-visibility-rules-badge]][book-rust-by-example-visibility-rules]
 
@@ -11,7 +11,7 @@ In Rust, all items (modules, [functions][p-functions], methods, [structs][p-stru
 Use the `pub` keyword before an item's definition to make it public:
 
 ```rust,editable
-{{#include ../../crates/code_organization/tests/visibility/public.rs:example}}
+{{#include ../../crates/code_organization/tests/visibility/pub_keyword.rs:example}}
 ```
 
 There are two exceptions to the "privacy by default" rule: Enum variants in a `pub enum` are public by default. Associated items in a `pub` [[trait]] are also public by default.
@@ -19,7 +19,7 @@ There are two exceptions to the "privacy by default" rule: Enum variants in a `p
 Also note that, if we use `pub` before a struct definition, we make the struct public, but the fields of the struct will still be private. Mark relevant fields with `pub`:
 
 ```rust,editable
-{{#include ../../crates/code_organization/tests/visibility/public2.rs:example}}
+{{#include ../../crates/code_organization/tests/visibility/public_by_default.rs:example}}
 ```
 
 As discussed below, the scope where an item is visible can be specified after the `pub` keyword: `pub(crate)`, `pub(super)`, `pub(in` _path_`)`...

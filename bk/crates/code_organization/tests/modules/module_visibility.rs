@@ -1,21 +1,27 @@
+#![allow(dead_code)]
 // ANCHOR: example
-// Define a module inline.
-// Use the path syntax `module_name::item_name` to access items within.
+
+// This file is an (implicit) module.
+
+// A private function in this top module.
+fn private_in_top_module() {
+    println!("Called private_in_top_module.");
+}
+
+// Let's define an inner module inline with the `mod` keyword.
+// Modules are private by default.
 mod my_module {
-    // Items defined inside the module are private by default.
+    // Items defined inside the module are also private by default.
     fn private_function() {
         println!("Called private_function inside my_module.");
     }
-    // Use `pub` to make items visible outside the module.
+    // Use `pub` to make items public.
     pub fn public_function() {
         println!("Called public_function inside my_module.");
-        private_function(); // One can use / call private items within the same module.
     }
 
-    // Define a nested module.
-    // Nested modules are private by default.
-    // We make both the module and its inner function public to make the latter
-    // accessible.
+    // Define a public nested module with the `pub` keyword.
+    // We make both the module and its inner function public.
     pub mod nested_public_module {
         pub fn nested_public() {
             println!("Called nested_public inside nested_module.");
@@ -29,23 +35,31 @@ mod my_module {
     }
 
     // This function calls another in its parent module.
+    // This is always allowed, even if private.
     pub fn call_func_in_parent_module() {
         // `super` in a path refers to the parent module.
-        super::private_in_parent_module();
+        super::private_in_top_module();
     }
 }
 
-// This (private) function can be called from child modules.
-fn private_in_parent_module() {
-    println!("Called private_in_parent_module.");
-}
-
 fn main() {
+    // Items can access other items in the _same_ module, even if private.
+    private_in_top_module();
+
+    // In the same way, `my_module` is _private_, but _accessible_ from
+    // `main()`. Here, we define an alias;
+    use my_module as alias;
+
+    // Private items are inaccessible from a parent module.
+    // my_module::private_function(); // ERROR: private_function is private.
+
     // Call a public function within a child module.
-    // Note the relative path syntax: `<module_name>::<item_name>`.
+    // Note the relative path syntax: `<module_name>::<item_name>` to access
+    // items within a module.
     my_module::public_function();
 
-    // my_module::private_function(); // ERROR: private_function is private.
+    // You can also use the alias.
+    alias::public_function();
 
     // Paths can include multiple segments to reach nested modules.
     my_module::nested_public_module::nested_public();

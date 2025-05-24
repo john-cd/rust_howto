@@ -1,14 +1,13 @@
 #![allow(dead_code)]
 #![allow(unused_imports)]
 // ANCHOR: example
+/// Private module.
 mod m {
     /// Private function.
     fn private_function() {}
 
     /// Public function.
-    pub fn public_function() {
-        private_function();
-    }
+    pub fn public_function() {}
 
     /// Public unit-like struct.
     pub struct Struct;
@@ -21,6 +20,8 @@ mod m {
     /// Public trait.
     pub trait Trait {}
 
+    /// Trait implementation.
+    /// `pub` is not allowed here.
     impl Trait for Struct {}
 
     /// Private submodule.

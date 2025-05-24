@@ -4,11 +4,15 @@
 //! This example demonstrates various ways to concatenate strings in Rust.
 //! It includes examples using `concat`, `join`, `format`, `push_str`, `+`, and
 //! external macros.
-#[macro_use(concat_string)]
-extern crate concat_string;
 
-#[macro_use(concat_strs)]
-extern crate concat_strs;
+// #[macro_use(concat_string)]
+// extern crate concat_string;
+
+// #[macro_use(concat_strs)]
+// extern crate concat_strs;
+
+use concat_string::concat_string;
+use concat_strs::concat_strs;
 
 static DATE: &str = "2024-01-15";
 static T: &str = "T";
