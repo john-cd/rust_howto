@@ -4,7 +4,6 @@
 [ex-language-async-and-traits]: traits.md#async-and-traits
 [ex-language-async-main-function]: entrypoint.md#async-main-function
 [ex-language-attributes]: attributes.md
-[ex-language-automatic-trait-derivation]: attributes.md#automatic-trait-derivation
 [ex-language-borrowing]: ownership_borrowing.md#borrowing
 [ex-language-cfg-if]: attributes.md#cfg-if
 [ex-language-closure-with-type-annotations]: closures.md#closure-with-type-annotations
