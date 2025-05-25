@@ -1,6 +1,7 @@
 [ex-text-processing-aho-corasick]: string_search.md#aho-corasick
 [ex-text-processing-bstr]: other_strings.md#bstr
 [ex-text-processing-collect-unicode-graphemes]: unicode.md#collect-unicode-graphemes
+[ex-text-processing-compact_str]: other_strings.md#compact_str
 [ex-text-processing-cstring]: other_strings.md#cstring
 [ex-text-processing-diff]: diffing.md#diff
 [ex-text-processing-extract-a-list-of-unique-hashtags-from-a-text]: regex.md#extract-a-list-of-unique-hashtags-from-a-text
@@ -19,6 +20,7 @@
 [ex-text-processing-string-concat]: string_concat.md#string-concat
 [ex-text-processing-strsim]: string_search.md#strsim
 [ex-text-processing-textwrap]: string_manipulation.md#textwrap
+[ex-text-processing-ustr]: other_strings.md#ustr
 [ex-text-processing-verify-and-extract-login-from-an-email-address]: regex.md#verify-and-extract-login-from-an-email-address
 [p-email]: # "../email/index.md"
 [p-log]: ../development-tools_debugging/log.md
