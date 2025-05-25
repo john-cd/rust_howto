@@ -1,9 +1,10 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [`bstr`][ex-text-processing-bstr] | [![bstr][c-bstr-badge]][c-bstr]{{hi:bstr}} | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] |
-| [`CString` and `CStr`][ex-text-processing-cstring] | [![std][c-std-badge]][c-std]{{hi:std}} | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] |
-| [`OsString` and `OsStr`][ex-text-processing-osstring] | [![std][c-std-badge]][c-std]{{hi:std}} | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] |
+| [Work with Platform-specific Strings with `OsString` and `OsStr`][ex-text-processing-osstring] | [![std][c-std-badge]][c-std]{{hi:std}} | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] |
+| [Work with C-style, NUL-terminated Strings with `CString` and `CStr`][ex-text-processing-cstring] | [![std][c-std-badge]][c-std]{{hi:std}} | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] |
+| [Work with Non-UTF8 Strings with `bstr`][ex-text-processing-bstr] | [![bstr][c-bstr-badge]][c-bstr]{{hi:bstr}} | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] |
+| [Work with Small Formatted Strings with `compact_str`][ex-text-processing-compact_str] | | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] |
+| [Intern Strings with `ustr`][ex-text-processing-ustr] | | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] |
 
 <div class="hidden">
-FIXME
 </div>
