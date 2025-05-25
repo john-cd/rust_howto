@@ -6,6 +6,7 @@
 [ex-code_organization-complex-library-code-organization]: code_organization.md#complex-library-code-organization
 [ex-code_organization-dependencies]: dependencies.md#dependencies
 [ex-code_organization-flatten-module-hierarchy]: code_organization.md#flatten-module-hierarchy
+[ex-code_organization-hide-implementation-details]: modules.md#hide-implementation-details
 [ex-code_organization-large-projects]: code_organization.md#large-projects
 [ex-code_organization-less-common-code-organization]: code_organization.md#less-common-code-organization
 [ex-code_organization-modules]: modules.md#modules
