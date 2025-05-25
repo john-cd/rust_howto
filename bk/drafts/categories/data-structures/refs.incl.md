@@ -21,7 +21,6 @@
 [ex-data-structures-smallvec]: stack_allocated_arrays.md#smallvec
 [ex-data-structures-stack]: stack_and_queue.md#stack
 [ex-data-structures-string-concatenation]: strings.md#string-concatenation
-[ex-data-structures-string]: strings.md#string
 [ex-data-structures-tinyvec]: stack_allocated_arrays.md#tinyvec
 [ex-data-structures-vec]: vector.md#vec
 [p-containers]: ../../other/containers/containers.md
