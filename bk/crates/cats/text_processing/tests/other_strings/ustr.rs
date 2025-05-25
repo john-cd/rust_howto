@@ -3,6 +3,7 @@
 //!
 //! A `Ustr` (Unique str) is a lightweight handle representing a static,
 //! immutable entry in a global string cache, allowing for:
+//!
 //! - Fast string assignment and comparisons.
 //! - Efficient storage. Only one copy of the string is held in memory, and
 //!   getting access to it is just a pointer indirection.
@@ -12,23 +13,12 @@
 //!
 //! The downside is no strings are ever freed, so if you're creating lots of
 //! strings, you might run out of memory.
-//!
-//! The `ustr` crate is particularly useful in scenarios where:
-//!
-//! - You use a large number of identical strings (e.g., keywords, enum variants
-//!   represented as strings, common configuration values).
-//! - You frequently assign or compare strings for equality.
-//! - The creation of strings from raw characters is relatively rare compared to
-//!   copying or comparing to existing strings.
-//! - You use strings as keys in hash maps or elements in hash sets.
-//! - There is little character-by-character assembly of strings, string
-//!   concatenation, or other string manipulation (other than equality testing).
 
 use ustr::Ustr;
 use ustr::ustr;
 
 fn main() {
-    // Creating Ustr instances.
+    // Creating `Ustr` instances.
     // `Ustr` is the main type representing an interned string.
     // Create it with the `From` trait.
     let s1: Ustr = Ustr::from("hello");
@@ -46,7 +36,7 @@ fn main() {
     // `s1` and `s3` are the same. `s3` will be interned and share the same
     // underlying data as `s1`.
     let s3: Ustr = ustr("hello");
-    println!("s1 == s3: {}", s1 == s3); // Output: s1 == s3: true (due to interning).
+    println!("s1 == s3: {}", s1 == s3); // Output: s1 == s3: true.
     assert_eq!(s1, s3);
     // `s1` and `s3` point to the same underlying data:
     println!("s1's pointer: {:p}", s1.as_ptr());

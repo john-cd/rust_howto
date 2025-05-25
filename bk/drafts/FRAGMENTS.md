@@ -22,14 +22,6 @@ If you need reference-counting, note that `Rc::make_mut` and `Arc::make_mut` can
 
 ---
 
-## Other Strings {#other-strings}
-
-- Use a string type with a small-string optimization, if you need to return small formatted strings.
-- If you need to use a lot of strings, and copy them around, you probably want string interning.
-- Use `ustr` for interning global identifiers and hashmap keys.
-
----
-
 ## Emulate Inheritance with `AsRef` {#inheritance-in-rust}
 
 [![std][c-std-badge]][c-std]{{hi:std}}
