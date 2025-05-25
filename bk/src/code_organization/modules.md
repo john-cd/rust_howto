@@ -155,7 +155,7 @@ TypeName::CONSTANT_NAME           // Path to an associated constant within a typ
 
 ## Use Modules to Hide Implementation Details {#hide-implementation-details}
 
-Modules provides encapsulation, meaning they hide items within from their parent, unless the items are explicty made public.
+Modules provides encapsulation, meaning they hide items within from their parent, unless the items are explicitly made public.
 
 - Most items, including modules and items within, are private by default.
 - Use the `pub` keyword to make them public.
