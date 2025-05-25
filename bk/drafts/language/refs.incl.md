@@ -83,7 +83,6 @@
 [ex-language-write-generic-functions]: functions.md#write-generic-functions
 [ex-language-write-generic-traits]: traits.md#write-generic-traits
 [p-async]: ../categories/asynchronous/index.md
-[p-automatic-derivation]: # "../standard_library/derive.md"
 [p-documentation]: ../categories/development-tools/documentation/documentation.md
 [p-enums]: enums.md
 [p-functions]: functions.md

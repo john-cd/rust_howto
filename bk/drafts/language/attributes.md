@@ -10,32 +10,12 @@ Attributes are annotations you attach to your Rust code, like functions, structs
 
 Common attributes include:
 
+- `#[allow(...)]`, `#[warn(...)]`, `#[deny(...)]` to control compiler lints (ignore them; or make them into warnings or errors).
+- `#[deprecated]` to mark items as outdated.
+- `#[must_use]` to warn if the result of a function is not used.
+- `#[cfg(...)]` for conditional compilation.
 - `#[derive(...)]` to autogenerate an implementation of certain traits.
 - `#[test]` to mark functions as tests.
-- `#[allow(...)]`, `#[warn(...)]`, `#[deny(...)]` to control compiler lints (warnings/errors).
-- `#[deprecated]` to mark items as outdated.
-- `#[must_use]` to warn if the result of a function isn't used.
-- `#[cfg(...)]` for conditional compilation.
-
-The following is an example of `#[derive(...)]`:
-
-```rust,editable
-// This attribute tells the compiler to automatically generate
-// an implementation of the `std::fmt::Debug` trait for the `Point` struct.
-#[derive(Debug)]
-struct Point {
-    x: i32,
-    y: i32,
-}
-
-fn main() {
-    let p1 = Point { x: 10, y: 20 };
-
-    // Because we derived `Debug`, we can print the struct using the `{:?}` format specifier.
-    // Without `#[derive(Debug)]`, this line would cause a compile-time error.
-    println!("The point is: {:?}", p1);
-}
-```
 
 Attribute can take arguments with different syntaxes:
 
@@ -46,9 +26,21 @@ Attribute can take arguments with different syntaxes:
 #[attribute(value, value2)]
 ```
 
-Outer attributes `#[attr]` apply to the item below them. Inner attributes `#![attr]` apply to the item that the attribute is declared within. You often see these at the very top of a file (or inline module) to apply to the entire module, or at the very top of `lib.rs` or `main.rs` to apply to the entire crate.
+The following is an example of `#[derive(...)]`:
 
-## Mark an Item as `must use` {#must-use}
+```rust,editable
+{{#include ../../crates/language/tests/attributes/attributes_derive.rs:example}}
+```
+
+Outer attributes `#[attr]` apply to the item below them. Inner attributes `#![attr]` apply to the item that the attribute is declared within. You often see these at the very top of a file (or inline module) to apply to the entire module, or at the very top of `lib.rs` or `main.rs` to apply to the entire crate:
+
+```rust,noplayground
+// For example, add the following to the top of your file
+// to warn if public items are not documented.
+#![warn(missing_docs)]
+```
+
+## Mark an Item as `must_use` {#must-use}
 
 Apply the `#[must_use]` attribute to functions, methods, or entire types (like structs or enums) to signal that their return value is important and shouldn't be ignored.
 
@@ -58,11 +50,11 @@ Apply the `#[must_use]` attribute to functions, methods, or entire types (like s
 
 Functions that return `Result<T, E>` are often `#[must_use]`. If you call such a function and ignore the `Result`, you're potentially ignoring an error that occurred and could be corrected or reported.
 
-In the builder pattern, methods often return `Self` or a modified version of the builder. The final `.build()` or similar method returns the constructed object. If you forget to call the final method or assign the result, you haven't actually created the object you intended. `#[must_use]` on the builder type or its methods helps catch this.
+In the [[builder_pattern | builder pattern]], methods often return `Self` or a modified version of the builder. The final `.build()` or similar method returns the constructed object. If you forget to call the final method or assign the result, you haven't actually created the object you intended. Adding `#[must_use]` on the builder type or its methods helps catch this problem.
 
 ## Mark an Item as `deprecated` {#deprecated}
 
-When the Rust compiler sees code using an item marked as `#[deprecated]`, it will issue a warning during compilation.
+When the Rust compiler sees code using an item marked as `#[deprecated]`, it will issue a warning during compilation:
 
 ```rust,editable
 {{#include ../../crates/language/tests/attributes/attributes_deprecated.rs:example}}
@@ -70,43 +62,51 @@ When the Rust compiler sees code using an item marked as `#[deprecated]`, it wil
 
 ## Control Compilation Diagnostic Messages with Lint Check Attributes {#lint-attributes}
 
-The following attributes are used for controlling diagnostic messages (lints) during compilation.
-Replace `...` by the lint name e.g., `dead_code` to detects unused, unexported items.
+The Rust compiler runs a number of code lints (code diagnostics) when it compiles your code. These lints may produce a warning, an error, or nothing at all, depending on their default lint level and additional attributes you provide, replacing `...` below by the lint name:
 
-- `#[allow(...)]` overrides the check, so that violations will go unreported.
-- `#[expect(...)]` indicates that lint is expected to be emitted.
-- `#[warn(...)]` warns about violations but continues compilation.
+- `#[allow(...)]` overrides the check, so that violations will go unreported,
+- `#[expect(...)]` indicates that lint is expected to be emitted,
+- `#[warn(...)]` warns about violations but continues compilation,
 - `#[deny(...)]` signals an error after encountering a violation,
 - `#[forbid(...)]` is the same as `deny`, but also forbids changing the lint level afterwards.
 
-To print the list of compiler 'lint' options and default settings, enter `rustc -W help` at the command prompt. {{hi:Lint checks}}
-[`rustc`][rustc]{{hi:rustc}}⮳ also recognizes the tool lints for "clippy" and "rustdoc" e.g. `#![warn(clippy::pedantic)]`.
-
-You can apply lint attributes to specific items ([functions][p-functions], structs, etc.) or to entire modules:
+You can apply these lint attributes to specific items ([functions][p-functions], structs, etc.) or to entire modules (by using an inner attribute):
 
 ```rust,editable
 {{#include ../../crates/language/tests/attributes/allow_dead_code.rs:example}}
 ```
 
-See also [Lints (`rustc` book)](https://doc.rust-lang.org/rustc/lints/index.html)⮳.
+Common lint attributes are:
+
+```rust,noplayground
+#[allow(dead_code)]        // Silence warnings about unused functions, methods, or other items.
+#[allow(unused_imports)]   // Silence warnings about `use` statements that import items not used in the scope.
+#[allow(unused_variables)] // Silence warnings about unused variables in a function.
+#![warn(missing_docs)]     // Warn if public items are not documented.
+#![deny(unsafe_code)]      // Prevent the use of unsafe blocks.
+```
+
+To print the list of compiler 'lint' options and default settings, enter `rustc -W help` at the command prompt, or refer to the [lints chapter (`rustc` book)](https://doc.rust-lang.org/rustc/lints/index.html)⮳.{{hi:Lint checks}}
+
+There are also lints for other tools, such as "clippy" and "rustdoc". For example, `#![deny(clippy::all)]` is a very common attribute to make all Clippy lints that are "warn" by default into hard errors. This makes Clippy much stricter. You may also use `#![warn(clippy::pedantic)]` for even more pedantic Clippy lints.
 
 ### Suppress Irrelevant Warnings during Early Development {#early-development-attributes}
 
-During early development, consider placing the following lint attributes at the top of your `main.rs` or `lib.rs`.
+During early development, consider placing the following lint attributes at the top of your `main.rs` or `lib.rs` file, in order to temporarily ignore distracting warnings:
 
 ```rust,editable
-{{#include ../../crates/language/tests/attributes/attributes_debug.rs:example}}
+{{#include ../../crates/language/tests/attributes/attributes_early_development.rs:example}}
 ```
 
 ### Enforce Good Practices and Catch Issues Early with Lint Attributes {#production-code-attributes}
 
-For production-ready code{{hi:Production-ready code}}, replace the above by the following (or similar):
+For production-ready code{{hi:Production-ready code}}, replace the above by the following (or similar) to make linting stricter:
 
 ```rust,editable
 {{#include ../../crates/language/tests/attributes/attributes_production.rs:example}}
 ```
 
-## Compile Code Conditionally {#conditional-compilation}
+## Compile Code Conditionally with `#[cfg(...)]` {#conditional-compilation}
 
 Conditional compilation includes or excludes specific pieces of your code based on conditions that are checked at compile time.
 Use the `#[cfg(...)]` attribute to write code that only compiles for a specific operating system or architecture (like x86_64, ARM).
@@ -115,11 +115,13 @@ Use the `#[cfg(...)]` attribute to write code that only compiles for a specific 
 {{#include ../../crates/language/tests/attributes/conditional_compilation.rs:example}}
 ```
 
-See also [Conditional compilation][book-rust-reference-conditional-compilation]⮳.
+See also the [conditional compilation][book-rust-reference-conditional-compilation]⮳ chapter of the Rust Reference.
 
 ### Conditionally Compile Code Blocks with `cfg-if` {#cfg-if}
 
 [![cfg-if][c-cfg_if-badge]][c-cfg_if] [![cfg-if-crates.io][c-cfg_if-crates.io-badge]][c-cfg_if-crates.io] [![cfg-if-github][c-cfg_if-github-badge]][c-cfg_if-github] [![cfg-if-lib.rs][c-cfg_if-lib.rs-badge]][c-cfg_if-lib.rs]{{hi:cfg-if}}
+
+For complicated conditional compilation scenarios, consider using the `cfg-if` crate in addition to the `#[cfg(...)]` attribute.
 
 `cfg-if` is a macro to ergonomically define an item depending on a large number of `#[cfg]` parameters. It is structured like an "if-else" chain. The first matching branch is the item that gets emitted.
 
@@ -127,24 +129,20 @@ See also [Conditional compilation][book-rust-reference-conditional-compilation]�
 {{#include ../../crates/language/tests/attributes/cfg_if.rs:example}}
 ```
 
-## Automatically Derive Common Traits {#automatic-trait-derivation}
-
-See [Automatic derivation][p-automatic-derivation].
-
 ## Related Topics {#skip}
 
-- [[derive | Derive]].
+- [[derive | Derive]] for the `#[derive(...)]` attribute used to automatically derive common traits.
 - [[rust-patterns | Rust Patterns]].
-- [[testing | Testing]].
+- [[testing | Testing]] for the `#[test]` attribute.
+- [[documentation | Documentation]] for the `#[doc(...)]` attribute.
 
 ## References {#skip1}
 
 - [Attributes reference][book-rust-reference-attributes]⮳.
+- [The `#[doc]` attribute](https://doc.rust-lang.org/rustdoc/write-documentation/the-doc-attribute.html)⮳.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO automatic derivation location
-insert https://doc.rust-lang.org/rustdoc/write-documentation/the-doc-attribute.html
 </div>

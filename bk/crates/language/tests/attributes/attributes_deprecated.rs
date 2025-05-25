@@ -10,7 +10,7 @@ pub fn foo() {
 
 fn main() {
     // Use of a deprecated item.
-    // Normally, we would get a warning abou using a deprecated function.
+    // Normally, we would get a warning about using a deprecated function.
     foo();
     // In this case, the module-wide `#![allow(deprecated)]` attribute
     // (first line of the example) suppresses the warning.
