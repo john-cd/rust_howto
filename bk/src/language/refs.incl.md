@@ -3,7 +3,7 @@
 [ex-language-associated-types]: traits.md#associated-types
 [ex-language-async-and-traits]: traits.md#async-and-traits
 [ex-language-async-main-function]: entrypoint.md#async-main-function
-[ex-language-attributes]: attributes.md
+[ex-language-attributes]: attributes.md#attribute
 [ex-language-borrowing]: ownership_borrowing.md#borrowing
 [ex-language-cfg-if]: attributes.md#cfg-if
 [ex-language-closure-with-type-annotations]: closures.md#closure-with-type-annotations

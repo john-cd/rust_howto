@@ -2,7 +2,7 @@
 
 {{#include attributes.incl.md}}
 
-## Attribute Syntax {#skip}
+## Attribute Syntax {#attribute}
 
 [![Rust by example - attributes][book-rust-by-example-attributes-badge]][book-rust-by-example-attributes]{{hi:Attributes}}
 
