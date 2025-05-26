@@ -1,3 +1,4 @@
+mod closures_capture;
 mod closures;
 mod closures_as_input_parameters;
 mod closures_move;

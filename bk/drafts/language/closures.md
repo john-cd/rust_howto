@@ -2,7 +2,7 @@
 
 {{#include closures.incl.md}}
 
-## Closure Syntax {#skip}
+## Closure Syntax {#closure}
 
 [![Rust by example - Closures][book-rust-by-example-closures-badge]][book-rust-by-example-closures]
 
@@ -22,20 +22,7 @@ Here is a example of a short, inline closure with a simple expression as its bod
 They preferentially capture variables by reference and only go lower when required.
 
 ```rust,editable
-fn main() {
-    let outer_variable = 10;
-
-    // Define a simple closure that takes a parameter and captures `outer_variable`:
-    let my_closure = |x| {
-        println!("Parameter x = {}", x);
-        println!("Outer variable = {}", outer_variable); // Captured variable.
-        x + outer_variable // Optional return value.
-    }; // The body can be an expression or block between `{` and `}`.
-
-    // Call the closure:
-    let result = my_closure(5);
-    println!("Result from closure: {}", result); // Output: 15.
-}
+{{#include ../../crates/language/tests/closures/closures_capture.rs:example}}
 ```
 
 ## Force Closure Capture by Value {#move-closures}
@@ -81,5 +68,4 @@ When defining a function that accepts a closure, you use the `Fn`, `FnMut`, or `
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO final review
 </div>
