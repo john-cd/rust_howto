@@ -7,8 +7,8 @@
 [ex-language-borrowing]: ownership_borrowing.md#borrowing
 [ex-language-cfg-if]: attributes.md#cfg-if
 [ex-language-closure-with-type-annotations]: closures.md#closure-with-type-annotations
+[ex-language-closure]: closures.md#closure
 [ex-language-closures-as-input-parameters]: closures.md#closures-as-input-parameters
-[ex-language-closures]: closures.md
 [ex-language-compound-types]: data_types.md#compound-types
 [ex-language-conditional-compilation]: attributes.md#conditional-compilation
 [ex-language-constants-in-traits]: traits.md#constants-in-traits
