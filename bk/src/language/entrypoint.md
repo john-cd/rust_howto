@@ -1,6 +1,8 @@
-# Main Function
+# Entry Points
 
 {{#include entrypoint.incl.md}}{{hi:main}}
+
+## Main Function {#main-function}
 
 In Rust, the main function is special. It serves as the mandatory entry point for every executable program.
 The following is the most basic form of a main function:
@@ -32,7 +34,7 @@ More precisely, `main` should return a type that implements `std::process::Termi
 
 ## Async Main Function {#async-main-function}
 
-Rust also supports asynchronous main functions for writing concurrent applications using the `async` / `await` syntax. To use `async main`, you typically need an async runtime like `tokio`, often enabled via an attribute macro.
+Rust also supports asynchronous main functions for writing concurrent applications using the `async` / `await` syntax. To use `async main`, you will need an async runtime like `tokio`, often enabled via an attribute macro.
 
 ```rust,editable
 {{#include ../../crates/language/tests/entrypoint/async_main.rs:example}}

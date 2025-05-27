@@ -8,7 +8,10 @@ use anyhow::Result;
 ///
 /// Add `tokio` with at least the "macros" and
 /// "rt-multi-thread" features to your `Cargo.toml`:
-/// `tokio = { version = "1", features = ["full"] }`
+///
+/// ```toml
+/// tokio = { version = "1", features = ["full"] }
+/// ```
 #[tokio::main]
 async fn main() -> Result<()> {
     println!("I'm async!");
