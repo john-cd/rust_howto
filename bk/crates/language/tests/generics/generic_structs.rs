@@ -54,7 +54,7 @@ fn main() {
     println!("Float point: x = {}, y = {}", float_point.x, float_point.y);
 
     // This would cause a compile-time error because x and y must be the same
-    // type `T`. let wont_compile = Point { x: 5, y: 4.0 };
+    // type `T`: let wont_compile = Point { x: 5, y: 4.0 };
 }
 // ANCHOR_END: example
 
