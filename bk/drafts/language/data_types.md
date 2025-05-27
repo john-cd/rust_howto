@@ -6,7 +6,7 @@
 
 [![Rust by example - Primitives][book-rust-by-example-primitives-badge]][book-rust-by-example-primitives]{{hi:Primitives}}
 
-Rust has several categories of primitive types: integers, floating-point numbers, Booleans, unicode characters, 'Unit', and 'Never'.
+Rust has several categories of scalar types: integers, floating-point numbers, Booleans, and unicode characters.
 
 | Type Family | Types | Examples |
 |---|---|---|
@@ -15,8 +15,6 @@ Rust has several categories of primitive types: integers, floating-point numbers
 | Floating point | [`f32`][primitive-f32]{{hi:f32}}⮳, [`f64`][primitive-f64]{{hi:f64}}⮳. | `0.15`. |
 | Boolean | [`bool`][primitive-bool]{{hi:bool}}⮳. | `true`, `false`. |
 | Unicode Character | [`char`][primitive-char]⮳ | `let z: char = 'ℤ';` |
-| Unit | [`unit`][primitive-unit]⮳. | The `()` type (aka 'void' in other languages) has exactly one value `()`, and is used when there is no other meaningful value that could be returned. |
-| Never | [`never`][primitive-never]⮳. | `!` represents the type of computations which never resolve to any value at all. For example, the exit function `fn exit(code: i32) -> !` exits the process without ever returning, and so returns `!`. |
 
 [`usize`][primitive-usize]{{hi:usize}}⮳ and [`isize`][primitive-isize]{{hi:isize}}⮳ are 32 or 64 bits, depending on the architecture of the computer.
 
@@ -25,6 +23,8 @@ The following illustrates the various scalar data types:
 ```rust,editable
 {{#include ../../crates/language/tests/data_types/scalar_data_types.rs:example}}
 ```
+
+See also 'Unit' and 'Never' below.
 
 ## Compound Data Types: Tuples and Arrays {#compound-types}
 
@@ -44,6 +44,21 @@ The following provides examples of tuples and arrays:
 ```rust,editable
 {{#include ../../crates/language/tests/data_types/compound_data_types.rs:example}}
 ```
+
+## String Types {#string-types}
+
+```rust,editable
+{{#include ../../crates/language/tests/data_types/string_data_types.rs:example}}
+```
+
+## Special Types {#special-types}
+
+| Type Family | Types | Examples |
+|---|---|---|
+| Unit | [`unit`][primitive-unit]⮳. | The `()` type (aka 'void' in other languages) has exactly one value `()`, and is used when there is no other meaningful value that could be returned. |
+| Never | [`never`][primitive-never]⮳. | `!` represents the type of computations which never resolve to any value at all. For example, the exit function `fn exit(code: i32) -> !` exits the process without ever returning, and so returns `!`. |
+
+See also [[functions | Functions]].
 
 ## Type Aliases {#type-aliases}
 
@@ -66,6 +81,7 @@ See also:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+TODO string types / unit never examples
 TODO find spot for overflows
 
 | [Handle Overflows][ex-language-overflow-handling] |

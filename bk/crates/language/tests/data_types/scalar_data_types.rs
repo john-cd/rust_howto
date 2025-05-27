@@ -1,6 +1,6 @@
 // ANCHOR: example
 fn main() {
-    // Integer types
+    // Integer types:
     let a: i8 = -128; // 8-bit signed integer.
     let b: u8 = 255; // 8-bit unsigned integer.
     let c: i16 = 32767; // 16-bit signed integer.
@@ -11,8 +11,8 @@ fn main() {
     let h: u64 = 18446744073709551615; // 64-bit unsigned integer.
     let i: i128 = 170141183460469231731687303715884105727; // 128-bit signed integer.
     let j: u128 = 340282366920938463463374607431768211455; // 128-bit unsigned integer.
-    let k: isize = 9223372036854775807; // Pointer-sized signed integer (depends on architecture).
-    let l: usize = 18446744073709551615; // Pointer-sized unsigned integer (depends on architecture).
+    let k: isize = 92233720; // Pointer-sized signed integer (depends on architecture).
+    let l: usize = 18446740; // Pointer-sized unsigned integer (depends on architecture).
 
     // Type inference.
     let m = 42; // The compiler infers `i32` by default.
@@ -29,10 +29,6 @@ fn main() {
     let r: char = 'a';
     let s: char = '😀'; // Unicode emoji.
     let t: char = '∞'; // Unicode symbol.
-
-    // String types.
-    let u: &str = "Hello"; // String slice.
-    let v: String = String::from("World"); // Owned string.
 
     // Print all values.
     println!("Integers:");
@@ -63,10 +59,6 @@ fn main() {
     println!("Emoji: {}", s);
     println!("Symbol: {}", t);
 
-    println!("\nStrings:");
-    println!("String slice: {}", u);
-    println!("Owned string: {}", v);
-
     // Type operations:
     println!("\nType operations:");
     println!(
@@ -78,12 +70,6 @@ fn main() {
     println!("Float multiplication: {} * {} = {}", n, o, (n as f64) * o);
     println!("Boolean AND: {} && {} = {}", p, q, p && q);
     println!("Boolean OR: {} || {} = {}", p, q, p || q);
-    println!(
-        "String concatenation: {} + {} = {}",
-        u,
-        v,
-        u.to_string() + &v
-    );
 }
 // ANCHOR_END: example
 
