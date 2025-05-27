@@ -66,7 +66,8 @@ fn main() {
     for (index, fruit) in fruits.iter().enumerate() {
         println!("Fruit at index {}: {}", index, fruit);
     }
-    // Note that (index, value) above is a pattern that destructures elements as you iterate.
+    // Note that (index, value) above is a pattern that destructures elements as
+    // you iterate.
 }
 // ANCHOR_END: example
 
