@@ -5,11 +5,11 @@ fn main() {
     let mut number = 5;
     // The loop continues as long as the condition is true.
     while number != 0 {
-        println!("{number}!");
+        print!("{number} ");
         // Decrement the number.
         number -= 1;
     }
-    // Prints: 5! 4! 3! 2! 1!
+    // Prints: 5 4 3 2 1
 }
 // ANCHOR_END: example
 
