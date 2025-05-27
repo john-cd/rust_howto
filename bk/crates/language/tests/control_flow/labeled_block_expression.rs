@@ -2,10 +2,10 @@
 fn main() {
     // Labelled block expressions must begin with a label, here `'block`.
     let result = 'block: {
-        println!("Entering the labelled block.");
+        println!("Entering the labeled block.");
         if condition() {
             println!("About to break with value 1");
-            // Break expressions within a labelled block expression must have a
+            // Break expressions within a labeled block expression must have a
             // label.
             break 'block 1;
         }

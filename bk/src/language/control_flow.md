@@ -56,13 +56,13 @@ Many collection types (like ranges, arrays, vectors, strings) implement the `Int
 
 `for` loops support `break` expressions and loop labels.
 
-## Exit Early from Blocks {#labelled-block-expressions}
+## Exit Early from Blocks {#labeled-block-expressions}
 
 Labelled block expressions are like block expressions, except that they allow using `break` expressions within the block.
 You may think of them as a `loop` that executes only once and allows exiting early.
 
 ```rust,editable
-{{#include ../../crates/language/tests/control_flow/labelled_block_expression.rs:example}}
+{{#include ../../crates/language/tests/control_flow/labeled_block_expression.rs:example}}
 ```
 
 ## References {#skip}
