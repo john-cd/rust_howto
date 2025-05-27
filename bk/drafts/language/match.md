@@ -51,13 +51,11 @@ Patterns accept `1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` gua
 ## References {#skip}
 
 - [Pattern matching][book-rust-pattern-matching]{{hi:Pattern matching}}⮳.
+- [Patterns Are Not Expressions](https://h2co3.github.io/pattern)⮳.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
 [match: add more / edit NOW](https://github.com/john-cd/rust_howto/issues/551)
-
-- [Patterns Are Not Expressions](https://h2co3.github.io/pattern)
-
 </div>
