@@ -35,7 +35,7 @@ fn main() {
     println!("--- Displaying Enum Variants ---");
     let dir = Direction::North;
     // Using the `Display` trait.
-    println!("Current direction: {}", dir); // Prints "Current direction: North".
+    println!("Current direction: {}", dir);
 
     println!("\n--- Parsing Strings into Enums ---");
     let input_string_south = "South";
@@ -66,11 +66,6 @@ fn main() {
     for direction in Direction::iter() {
         println!("- {:?}", direction);
     }
-    // This will print:
-    // - North
-    // - East
-    // - South
-    // - West
 }
 // ANCHOR_END: example
 

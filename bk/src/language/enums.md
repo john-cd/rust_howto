@@ -2,7 +2,7 @@
 
 {{#include enums.incl.md}}
 
-## Enum Syntax {#skip}
+## Enum Syntax {#enum}
 
 [![Rust by example - Enums][book-rust-by-example-enums-badge]][book-rust-by-example-enums]{{hi:Enums}}{{hi:Variants}}
 
@@ -14,7 +14,9 @@ Enums are custom data types that define a set of possible 'variants' or states t
 
 If we make an enum{{hi:Enums}} public, all of its variants are then public. We only need [`pub`][book-rust-reference-visibility-and-privacy]{{hi:pub}}⮳ before the [`enum`][book-rust-reference-enum]⮳ keyword.
 
-### Common `enums` {#skip}
+### Common `enums` {#common-enums}
+
+See:
 
 - [[option | Option]].
 - [[result | Result]].
