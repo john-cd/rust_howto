@@ -35,7 +35,7 @@ fn foo(x: i32) -> i32 {
 /// This is equivalent to `fn print_coordinates(x: i32, y: i32) -> ()`.
 fn print_coordinates(x: i32, y: i32) {
     println!("Coordinates: ({}, {})", x, y); // Note the semicolon.
-    // No last expression needed to return `()`.
+    // Implicitly return `()`.
 }
 
 /// Function using an explicit `return` keyword (rarely needed).

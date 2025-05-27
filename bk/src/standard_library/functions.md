@@ -6,7 +6,7 @@
 
 [![Rust by example - Functions][book-rust-by-example-fn-badge]][book-rust-by-example-fn]{{hi:fn}}{{hi:Functions}}
 
-Functions are fundamental building blocks in Rust, used to encapsulate reusable blocks of code. Functions are defined with `fn`, followed by the function name, optional parameters between parentheses `(...)`, optional `->` followed by the return type, and curly braces `{ ... }` for the function body. Rust uses snake_case for function names by convention:
+Functions are fundamental building blocks in Rust, used to encapsulate reusable blocks of code. Functions are defined with `fn`, followed by the function name, optional parameters between parentheses `(...)`, optional `->` followed by the return type, and curly braces `{ ... }` for the function body. Rust uses snake_case for function names by convention.
 
 Here are examples of functions with or without parameters or return value:
 

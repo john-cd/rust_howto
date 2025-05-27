@@ -3,16 +3,16 @@
 // This is a generic function that can take any type.
 // The type parameter `T` is written between < and >.
 // It often can be inferred from the argument passed to the function.
-fn generic<T>(_: T) {
-    println!("Argument type: {}", std::any::type_name::<T>());
+fn generic<T>(t: T) {
+    println!("Argument: {t}; type: {}", std::any::type_name::<T>());
 }
 
 /// A generic function can take multiple type parameters.
 ///
 /// This function takes two arguments of potentially different types:
-fn take_two<T, U>(_a: T, _b: U) {
+fn take_two<T, U>(a: T, b: U) {
     println!(
-        "Argument types: {} {}",
+        "Arguments: {a} {b}; types: {} {}",
         std::any::type_name::<T>(),
         std::any::type_name::<U>()
     );
