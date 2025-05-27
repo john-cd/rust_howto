@@ -1,6 +1,6 @@
 // ANCHOR: example
 fn main() {
-    // Labelled block expressions must begin with a label, here `'block`.
+    // Labeled block expressions must begin with a label, here `'block`.
     let result = 'block: {
         println!("Entering the labeled block.");
         if condition() {

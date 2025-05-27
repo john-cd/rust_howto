@@ -58,7 +58,7 @@ Many collection types (like ranges, arrays, vectors, strings) implement the `Int
 
 ## Exit Early from Blocks {#labeled-block-expressions}
 
-Labelled block expressions are like block expressions, except that they allow using `break` expressions within the block.
+Labeled block expressions are like block expressions, except that they allow using `break` expressions within the block.
 You may think of them as a `loop` that executes only once and allows exiting early.
 
 ```rust,editable
