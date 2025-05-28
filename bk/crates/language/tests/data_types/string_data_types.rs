@@ -1,6 +1,5 @@
 // ANCHOR: example
 fn main() {
-
     // Basic string types:
     let u: &str = "Hello"; // String slice.
     let v: String = String::from("World"); // Owned string.
