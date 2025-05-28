@@ -19,11 +19,11 @@ Rust follows specific naming conventions to maintain consistency and readability
 - Macros: Use `snake_case!`.
 - Constants & Statics: Use `SCREAMING_SNAKE_CASE` (e.g., `MY_CONSTANT`).
 - Type Parameters: Use concise `UpperCamelCase`, usually a single uppercase letter (`T`, `U`, etc.). Use more descriptive names like `ItemType` only when clarity is needed.
-- Lifetimes: Use short `lowercase` names, usually a single letter (`'a`, `'de`, `'src`).
+- Lifetimes: Use short `lowercase` names, usually a single letter (`'a`, `'b`, `'de`, `'src`).
 
-- In `UpperCamelCase`, acronyms  and contractions of compound words count as one word: use `Uuid` rather than `UUID`, `Usize` rather than `USize` or `Stdin` rather than `StdIn`. In `snake_case`, acronyms are lower-cased: `is_xid_start`.
-- In `UpperCamelCase` names multiple numbers can be separated by a `_` for clarity: `Windows10_1709` instead of `Windows101709`.
-- In `snake_case` or `SCREAMING_SNAKE_CASE`, a "word" should never consist of a single letter unless it is the last "word". So, we have `btree_map` rather than `b_tree_map`, but `PI_2` rather than `PI2`.
+In `UpperCamelCase`, acronyms  and contractions of compound words count as one word: use `Uuid` rather than `UUID`, `Usize` rather than `USize` or `Stdin` rather than `StdIn`. In `snake_case`, acronyms are lower-cased: `is_xid_start`. In `UpperCamelCase` names multiple numbers can be separated by a `_` for clarity: `Windows10_1709` instead of `Windows101709`.
+
+In `snake_case` or `SCREAMING_SNAKE_CASE`, a "word" should never consist of a single letter unless it is the last "word". So, we have `btree_map` rather than `b_tree_map`, but `PI_2` rather than `PI2`.
 
 ## Decide Between `as_*` vs `to_*` vs `into_*` for Conversion Methods {#conversion-conventions}
 
@@ -31,9 +31,9 @@ Conversions should be provided as methods, with names prefixed as follows:
 
 | Prefix | Cost | Ownership |
 |---|---|---|
-| `as_` | Free      | borrowed -> borrowed. Use if it returns another "view" of the data. |
-| `to_` | Expensive | borrowed -> borrowed; borrowed -> owned (non-Copy types); owned -> owned (Copy types) |
-| `into_`  | Variable | owned -> owned (non-Copy types). `into_*` consumes its input. |
+| `as_` | Cheap | Borrowed -> borrowed. Use if it returns another "view" of the data. |
+| `to_` | Expensive | Borrowed -> borrowed; borrowed -> owned (non-`Copy` types); owned -> owned (`Copy` types) |
+| `into_` | Variable | Owned -> owned (non-Copy types). `into_*` consumes its input. |
 
 Examples:
 
@@ -53,12 +53,12 @@ pub struct S {
 }
 
 impl S {
-    // Not get_first.
+    // Not `get_first`.
     pub fn first(&self) -> &First {
         &self.first
     }
 
-    // Not get_first_mut, get_mut_first, or mut_first.
+    // Not `get_first_mut`, `get_mut_first`, or `mut_first`.
     pub fn first_mut(&mut self) -> &mut First {
         &mut self.first
     }
@@ -72,9 +72,9 @@ For getters that do runtime validation such as bounds checking, consider adding 
 For a container with elements of type `U`, iterator methods should be named:
 
 ```rust,noplayground
-fn iter(&self) -> Iter             // Iter implements Iterator<Item = &U>
-fn iter_mut(&mut self) -> IterMut  // IterMut implements Iterator<Item = &mut U>
-fn into_iter(self) -> IntoIter     // IntoIter implements Iterator<Item = U>
+fn iter(&self) -> Iter             // The `Iter` struct implements `Iterator<Item = &U>`.
+fn iter_mut(&mut self) -> IterMut  // `IterMut` implements `Iterator<Item = &mut U>`.
+fn into_iter(self) -> IntoIter     // `IntoIter` implements `Iterator<Item = U>`.
 ```
 
 ## References {#skip}
@@ -89,5 +89,4 @@ The above is adapted from:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO final review
 </div>
