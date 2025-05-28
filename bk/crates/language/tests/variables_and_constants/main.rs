@@ -1,3 +1,7 @@
+mod constants;
 mod destructuring;
 mod shadowing;
-mod vars_and_consts;
+mod static_mut;
+mod statics;
+mod vars;
+mod vars2;

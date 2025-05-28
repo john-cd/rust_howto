@@ -73,7 +73,7 @@ Instead, you should typically:
 
 - Return an owned value (`String` instead of `&str`, `Vec<T>` instead of `&[T]`, etc.).
 - Pass a reference as an argument: If the goal is to modify a variable, pass a mutable reference to a variable that exists in the calling scope. The function can then directly modify the original variable.
-- Use a literal, a static or a constant: Since a static variable lives as long as the process runs, its references will be pointing to the same memory location both inside and outside the function.
+- Use a literal, a static or a constant: Since a `static` variable lives as long as the process runs, its references will be pointing to the same memory location both inside and outside the function.
 
 ```rust,editable
 {{#include ../../crates/language/tests/functions/return_reference.rs:example}}

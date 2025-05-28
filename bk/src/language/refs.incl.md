@@ -18,7 +18,7 @@
 [ex-language-data_types]: data_types.md
 [ex-language-default-implementation]: traits.md#default-implementation
 [ex-language-deprecated]: attributes.md#deprecated
-[ex-language-destructuring]: variables_and_constants.md#destructuring
+[ex-language-destructuring]: variables.md#destructuring
 [ex-language-diverging-functions]: functions.md#diverging-functions
 [ex-language-early-development-attributes]: attributes.md#early-development-attributes
 [ex-language-enums]: enums.md
@@ -62,7 +62,7 @@
 [ex-language-return-reference]: functions.md#return-reference
 [ex-language-rust-install]: rust_install.md#rust-install
 [ex-language-scalar-data-types]: data_types.md#scalar-data-types
-[ex-language-shadowing]: variables_and_constants.md#shadowing
+[ex-language-shadowing]: variables.md#shadowing
 [ex-language-slices]: slices.md#slices
 [ex-language-static-lifetime]: lifetimes.md#static-lifetime
 [ex-language-structs]: structs.md
@@ -75,8 +75,7 @@
 [ex-language-type-aliases]: data_types.md#type-aliases
 [ex-language-use-iterators]: iterators.md#use-iterators
 [ex-language-use-match-to-branch-on-a-pattern]: match.md#use-match-to-branch-on-a-pattern
-[ex-language-variables-and-constants]: variables_and_constants.md
-[ex-language-variables]: variables_and_constants.md#variables
+[ex-language-variables]: variables.md
 [ex-language-while-let]: match.md#while-let
 [ex-language-while]: control_flow.md#while
 [ex-language-write-generic-functions]: functions.md#write-generic-functions
