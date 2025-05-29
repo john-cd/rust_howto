@@ -1,15 +1,13 @@
 # TODOs
 
-- insert examples that are not in book
-
-- crate_selection - solo or part of indices?
-
 - language section: write / finish
   - finish to add RBE link #29
 
 - polish std_lib
 
 - polish contributing
+
+- crate_selection - solo or part of indices?
 
 - move categories back to src, after final review
   - algos
