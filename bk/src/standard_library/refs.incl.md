@@ -12,7 +12,10 @@
 [ex-standard_library-convert-cow-to-str]: cow.md#convert-cow-to-str
 [ex-standard_library-derive-more]: derive.md#derive-more
 [ex-standard_library-derive]: derive.md#derive
+[ex-standard_library-diverging-functions]: functions.md#diverging-functions
 [ex-standard_library-extracting-the-value-contained-in-option]: option.md#extracting-the-value-contained-in-option
+[ex-standard_library-function-pointers]: functions.md#function-pointers
+[ex-standard_library-function]: functions.md#function
 [ex-standard_library-into-cow]: cow.md#into-cow
 [ex-standard_library-modify-cow-in-place]: cow.md#modify-cow-in-place
 [ex-standard_library-option-match-if-let-while-let]: option.md#option-match-if-let-while-let
@@ -24,6 +27,8 @@
 [ex-standard_library-result]: result.md#result
 [ex-standard_library-return-cow-from-function]: cow.md#return-cow-from-function
 [ex-standard_library-return-early-pattern]: option.md#return-early-pattern
+[ex-standard_library-return-reference]: functions.md#return-reference
+[ex-standard_library-write-generic-functions]: functions.md#write-generic-functions
 [p-asref]: asref.md
 [p-crates]: # "../crates/index.md"
 [p-data-structures]: # "../categories/data-structures/index.md"

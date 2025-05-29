@@ -3,15 +3,18 @@
 [ex-language-associated-types]: traits.md#associated-types
 [ex-language-async-and-traits]: traits.md#async-and-traits
 [ex-language-async-main-function]: entrypoint.md#async-main-function
+[ex-language-attribute]: attributes.md#attribute
 [ex-language-attributes]: attributes.md#attribute
 [ex-language-borrowing]: ownership_borrowing.md#borrowing
 [ex-language-cfg-if]: attributes.md#cfg-if
 [ex-language-closure-with-type-annotations]: closures.md#closure-with-type-annotations
 [ex-language-closure]: closures.md#closure
 [ex-language-closures-as-input-parameters]: closures.md#closures-as-input-parameters
+[ex-language-common-enums]: enums.md#common-enums
 [ex-language-compound-types]: data_types.md#compound-types
 [ex-language-conditional-compilation]: attributes.md#conditional-compilation
 [ex-language-constants-in-traits]: traits.md#constants-in-traits
+[ex-language-constants]: constants_and_statics.md#constants
 [ex-language-control-flow]: control_flow.md
 [ex-language-conversion-conventions]: naming_conventions.md#conversion-conventions
 [ex-language-create-an-iterator]: iterators.md#create-an-iterator
@@ -21,6 +24,7 @@
 [ex-language-destructuring]: variables.md#destructuring
 [ex-language-diverging-functions]: functions.md#diverging-functions
 [ex-language-early-development-attributes]: attributes.md#early-development-attributes
+[ex-language-enum]: enums.md#enum
 [ex-language-enums]: enums.md
 [ex-language-for]: control_flow.md#for
 [ex-language-function-pointers]: functions.md#function-pointers
@@ -33,9 +37,11 @@
 [ex-language-getter-conventions]: naming_conventions.md#getter-conventions
 [ex-language-if-else]: control_flow.md#if-else
 [ex-language-if-let]: match.md#if-let
+[ex-language-immutability]: variables.md#immutability
 [ex-language-implement-intoiterator]: iterators.md#implement-intoiterator
 [ex-language-iterator-conventions]: naming_conventions.md#iterator-conventions
 [ex-language-iterators]: iterators.md
+[ex-language-labeled-block-expressions]: control_flow.md#labeled-block-expressions
 [ex-language-lifetime-annotations]: lifetimes.md#lifetime-annotations
 [ex-language-lifetime]: lifetimes.md#lifetime
 [ex-language-lifetimes-in-functions]: lifetimes.md#lifetimes-in-functions
@@ -45,7 +51,7 @@
 [ex-language-macro-uses]: macros.md#macro-uses
 [ex-language-macros-by-example]: macros.md#macros-by-example
 [ex-language-macros]: macros.md
-[ex-language-main-function]: entrypoint.md
+[ex-language-main-function]: entrypoint.md#main-function
 [ex-language-match]: match.md#match
 [ex-language-move-closures]: closures.md#move-closures
 [ex-language-multiple-traits]: traits.md#multiple-traits
@@ -65,6 +71,7 @@
 [ex-language-shadowing]: variables.md#shadowing
 [ex-language-slices]: slices.md#slices
 [ex-language-static-lifetime]: lifetimes.md#static-lifetime
+[ex-language-statics]: constants_and_statics.md#statics
 [ex-language-structs]: structs.md
 [ex-language-strum]: enums.md#strum
 [ex-language-supertraits]: traits.md#supertraits
