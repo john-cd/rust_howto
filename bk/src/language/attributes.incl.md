@@ -1,6 +1,6 @@
 ||
 |--------|
-| [Attribute Syntax][ex-language-attributes] |
+| [Attribute Syntax][ex-language-attribute] |
 | [Mark an Item as `must_use`][ex-language-must-use] |
 | [Mark an Item as `deprecated`][ex-language-deprecated] |
 | [Control Compilation Diagnostic Messages with Lint Check Attributes][ex-language-lint-attributes] |
