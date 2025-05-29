@@ -17,7 +17,7 @@
 //! Add to your `Cargo.toml`:
 //! ```toml
 //! async-trait="0.1"
-//! pingora = { version = "0.4", features = [ "lb" ] }
+//! pingora = { version = "0.5", features = [ "lb" ] }
 //! ```
 //!
 //! Make sure that the following is installed on your system:
