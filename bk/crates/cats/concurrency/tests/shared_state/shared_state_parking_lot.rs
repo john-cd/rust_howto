@@ -17,7 +17,7 @@ fn get_cached_val() -> usize {
     // in a synchronized fashion (e.g. write once or read all)
     unsafe {
         // The given closure will be executed if this is the first time
-        // call_once has been called.
+        // `call_once` has been called.
         INIT.call_once(|| {
             VAL = expensive_computation();
             println!("This is printed only once!");
