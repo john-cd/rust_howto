@@ -3116,3 +3116,5 @@ SomeTrait
 DSTs
 deallocates
 CompactString
+inlined
+unsynchronized
