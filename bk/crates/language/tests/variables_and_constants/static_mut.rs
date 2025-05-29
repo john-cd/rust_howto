@@ -40,10 +40,14 @@ fn do_instead() {
     static COUNTER: AtomicU16 = AtomicU16::new(0);
 
     println!("Initial COUNTER value: {}", COUNTER.load(Ordering::Relaxed));
-    // Be sure to analyze your use case to determine the correct Ordering to use.
+    // Be sure to analyze your use case to determine the correct Ordering to
+    // use.
 
     let old_count = COUNTER.fetch_add(1, Ordering::Relaxed);
-    println!("COUNTER after incrementing on the main thread: {}", old_count + 1);
+    println!(
+        "COUNTER after incrementing on the main thread: {}",
+        old_count + 1
+    );
     assert_eq!(COUNTER.load(Ordering::Relaxed), 1);
 
     // Spin up two new threads to further increment the static:
