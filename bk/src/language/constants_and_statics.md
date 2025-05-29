@@ -19,7 +19,7 @@ Constants, declared using the `const` keyword, are values that are inlined direc
 Constants are primarily used for values that truly never change throughout the lifetime of your program, such as mathematical constants or configuration values.
 
 ```rust,editable
-{{#include ../../crates/language/tests/variables_and_constants/constants.rs:example}}
+{{#include ../../crates/language/tests/constants_and_statics/constants.rs:example}}
 ```
 
 ### References {#skip}
@@ -40,13 +40,13 @@ Static variables (declared with `static`) represent a single, fixed location in 
 - `Drop` behavior: static variables are _not_ dropped when the program exits. Their memory is simply reclaimed by the operating system. If they hold resources that need explicit cleanup (like file handles), you'd typically use a runtime-initialized global like `once_cell::sync::Lazy` or `parking_lot::Mutex`.
 
 ```rust,editable
-{{#include ../../crates/language/tests/variables_and_constants/statics.rs:example}}
+{{#include ../../crates/language/tests/constants_and_statics/statics.rs:example}}
 ```
 
 Statics can be mutable (`static mut`): Unlike `const`, static variables can be declared as mutable using `static mut`. However, accessing or modifying a `static mut` variable is `unsafe`, because it can lead to data races in a multi-threaded environment. Only consider `static mut` in last resort.
 
 ```rust,editable
-{{#include ../../crates/language/tests/variables_and_constants/static_mut.rs:example}}
+{{#include ../../crates/language/tests/constants_and_statics/static_mut.rs:example}}
 ```
 
 {{#include refs.incl.md}}
