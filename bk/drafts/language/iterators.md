@@ -6,7 +6,7 @@
 
 [![Rust by example - iterators][book-rust-by-example-iterators-badge]][book-rust-by-example-iterators]{{hi:Iterators}}
 
-Iterators allow you to process a sequence of items. An iterator is any type that implements the `Iterator` trait. This trait requires only one method: `next()`. Iterators are lazy, meaning they don't do any work until you ask for the next item (via `next()`).
+Iterators allow you to process a sequence of items. An iterator is any type that implements the `Iterator` trait. This trait requires only one required method: `next()`. Iterators are lazy, meaning they don't do any work until you ask for the next item (via `next()`).
 
 ```rust,noplayground
 pub trait Iterator {
