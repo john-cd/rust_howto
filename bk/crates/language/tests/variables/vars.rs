@@ -1,4 +1,5 @@
 #![allow(unused)]
+#![allow(clippy::needless_late_init)]
 // ANCHOR: example
 /// Variables are used to store values.
 fn main() {
