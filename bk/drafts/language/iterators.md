@@ -2,7 +2,7 @@
 
 {{#include iterators.incl.md}}
 
-## Iterator Trait {#skip}
+## Iterator Trait {#iterator-trait}
 
 [![Rust by example - iterators][book-rust-by-example-iterators-badge]][book-rust-by-example-iterators]{{hi:Iterators}}
 
@@ -50,7 +50,7 @@ The `std::iter` module in the standard library provide a number of functions to 
 
 Iterators are composable: it's very common to chain them together to do more complex forms of processing.
 
-Functions which take an `Iterator` and return another `Iterator` are often called "iterator adapters". Common iterator adapters include `map`, `take`, and `filter`.
+Functions which take an `Iterator` and return another `Iterator` are often called "iterator adapters". Common iterator adapters include `map`, `take`, and `filter`:
 
 ```rust,editable
 {{#include ../../crates/language/tests/iterators/iterator_adapters.rs:example}}
@@ -58,11 +58,12 @@ Functions which take an `Iterator` and return another `Iterator` are often calle
 
 ## Return an Iterator from a Function or Method {#return-an-iterator}
 
-Iterator types produced by a chain of calls to iterator adapters (`map`, `take`, `filter`, etc.) can be quite complex.
+The `impl SomeTrait` notation refers to an opaque type that implements a trait; it is only allowed in arguments and return types of functions and methods.
 
-You can return `impl Iterator<Item = T>` to hide the concrete type of the iterator being returned.
+Iterator types produced by a chain of calls to iterator adapters (`map`, `take`, `filter`, etc.) can be quite complex and hard to write.
+It is therefore common to use `impl Iterator<Item = T>` as the return type for functions or methods that return an iterator.
 
-In addition, you can change the underlying implementation of the iterator within the function without breaking the calling code, as long as it still implements the `Iterator` trait with the correct `Item` type.
+Advantageously, this also allows changing the implementation of the iterator within the function without breaking the calling code.
 
 ```rust,editable
 {{#include ../../crates/language/tests/iterators/return_iterator.rs:example}}
@@ -70,19 +71,19 @@ In addition, you can change the underlying implementation of the iterator within
 
 ## Accept Various Iterable Types as the Input of a Function or Method {#accept-various-iterable-types}
 
-Many types in Rust implement `IntoIterator`, which provides a method `into_iter()` that returns an iterator.
+Many collection types in Rust implement `IntoIterator`, which provides a method `into_iter()` that returns an iterator.
 
-It is common to use `IntoIterator` as a trait bound for function parameters. This allows the input collection type to change, so long as it is still an iterator. Additional bounds can be specified by restricting on Item.
+It is common to use `IntoIterator` as a trait bound for function parameters. This allows the input collection type to change.
 
 ```rust,editable
 {{#include ../../crates/language/tests/iterators/consume_intoiterator.rs:example}}
 ```
 
-## Implement `IntoIterator` {#implement-intoiterator}
+## Make a Collection Iterable by Implementing `IntoIterator` {#implement-intoiterator}
 
-By implementing `IntoIterator` for a type, you define how it will be converted to an iterator. It is common for types which describe a collection of some kind.
+You may define how a (collection) type is iterated by implementing the `IntoIterator` trait.
 
-One benefit of implementing `IntoIterator` is that your type will work with Rust's `for` loop syntax.
+One benefit of implementing `IntoIterator` is that your type will work with the `for` loop syntax.
 
 ```rust,editable
 {{#include ../../crates/language/tests/iterators/implement_intoiterator.rs:example}}
@@ -106,5 +107,4 @@ One benefit of implementing `IntoIterator` is that your type will work with Rust
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[iterators: review](https://github.com/john-cd/rust_howto/issues/546)
 </div>

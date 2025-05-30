@@ -3,6 +3,8 @@ fn main() {
     let numbers = [1, 2, 3];
 
     // `map` applies a closure to each element, producing a new iterator.
+    // `collect` transforms the iterator back into a collection. It is required,
+    // because iterators are lazy.
     let doubled: Vec<_> = numbers.iter().map(|x| x * 2).collect();
     println!("Doubled numbers: {:?}", doubled); // Output: Doubled numbers: [2, 4, 6]
 
