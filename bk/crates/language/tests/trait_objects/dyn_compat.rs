@@ -1,5 +1,5 @@
 // ANCHOR: example
-//!
+//! Example of (non-)dyn-compatible traits.
 
 #[allow(dead_code)]
 trait NotObjectSafe {
