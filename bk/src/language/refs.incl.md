@@ -18,6 +18,7 @@
 [ex-language-control-flow]: control_flow.md
 [ex-language-conversion-conventions]: naming_conventions.md#conversion-conventions
 [ex-language-create-an-iterator]: iterators.md#create-an-iterator
+[ex-language-create-slices]: slices.md#create-slices
 [ex-language-data_types]: data_types.md
 [ex-language-default-implementation]: traits.md#default-implementation
 [ex-language-deprecated]: attributes.md#deprecated
@@ -40,6 +41,7 @@
 [ex-language-immutability]: variables.md#immutability
 [ex-language-implement-intoiterator]: iterators.md#implement-intoiterator
 [ex-language-iterator-conventions]: naming_conventions.md#iterator-conventions
+[ex-language-iterator-trait]: iterators.md#iterator-trait
 [ex-language-iterators]: iterators.md
 [ex-language-labeled-block-expressions]: control_flow.md#labeled-block-expressions
 [ex-language-lifetime-annotations]: lifetimes.md#lifetime-annotations
@@ -72,6 +74,7 @@
 [ex-language-slices]: slices.md#slices
 [ex-language-static-lifetime]: lifetimes.md#static-lifetime
 [ex-language-statics]: constants_and_statics.md#statics
+[ex-language-string-slices]: slices.md#string-slices
 [ex-language-structs]: structs.md
 [ex-language-strum]: enums.md#strum
 [ex-language-supertraits]: traits.md#supertraits
@@ -82,6 +85,7 @@
 [ex-language-type-aliases]: data_types.md#type-aliases
 [ex-language-use-iterators]: iterators.md#use-iterators
 [ex-language-use-match-to-branch-on-a-pattern]: match.md#use-match-to-branch-on-a-pattern
+[ex-language-use-slice-as-function-argument]: slices.md#use-slice-as-function-argument
 [ex-language-variables]: variables.md
 [ex-language-while-let]: match.md#while-let
 [ex-language-while]: control_flow.md#while
