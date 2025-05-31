@@ -11,6 +11,8 @@ trait Example {
     /// Implementors of this trait can optionally override this default.
     const CONST_WITH_DEFAULT: i32 = 99;
 }
+
+/// A struct that implements the `Example` trait.
 struct S;
 
 impl Example for S {

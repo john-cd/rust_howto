@@ -1,40 +1,35 @@
 #![allow(dead_code)]
 // ANCHOR: example
-/// A trait that represents an iterator.
+/// A trait that represents an iterator (similar to what is in the standard
+/// library).
 trait Iterator {
-    /// The type of the elements yielded by the iterator.
+    /// This associated type is the type of the elements yielded by the
+    /// iterator.
     type Item;
 
     /// Returns the next element in the iterator, or `None` if the iterator is
-    /// exhausted. Note the use of `::` to refer to the associated type.
+    /// exhausted. Note the use of `Self::` to refer to the associated type.
     fn next(&mut self) -> Option<Self::Item>;
 }
 
 struct MyIterator(u32);
 
-// We implement the trait for a given struct
+// We implement the trait for a given struct...
 impl Iterator for MyIterator {
-    // ...and define what associated type should be used here
+    // ...and define what associated type should be used here.
     type Item = u32;
 
     fn next(&mut self) -> Option<Self::Item> {
+        // This example iterator returns the same value forever.
+        // `&mut self` is a shortcut for `self: &mut Self`,
+        // where `Self` is the implementing type e.g. `MyIterator`.
         Some(self.0)
     }
 }
 
+/// Use the trait. Note how the associated type is specified within < and >.
 fn use_iterator(it: &mut impl Iterator<Item = u32>) -> Option<u32> {
     it.next()
-}
-
-/// A trait that represents the ability to add two values together.
-///
-/// A common pattern is a generic type (with a default) and an associated type.
-trait Add<Rhs = Self> {
-    /// The type of the result of the addition.
-    type Output;
-
-    /// Adds two values together.
-    fn add(self, rhs: Rhs) -> Self::Output;
 }
 
 fn main() {

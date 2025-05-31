@@ -2,19 +2,17 @@
 
 {{#include traits.incl.md}}
 
-Traits are a way to define shared behavior that types (structs, enums, etc.) can implement. They are similar to interfaces or abstract classes in other languages.
+## Trait Syntax {#trait}
 
-## Trait Syntax {#skip}
+Traits are a way to define shared behavior that types (structs, enums, etc.) can implement. They are similar to interfaces or abstract classes in other languages. {{i:Trait}} methods{{hi:Methods}} are in scope only when their trait is.
 
 ```rust,editable
 {{#include ../../crates/language/tests/traits/traits.rs:example}}
 ```
 
-{{i:Trait}} methods{{hi:Methods}} are in scope only when their trait is.
+## Default Method Implementation {#default-implementation}
 
-## Default Implementation {#default-implementation}
-
-Traits can provide default implementations for their methods. This allows types that implement the trait to use the default implementation or override it with their own custom implementation.
+Traits can provide default implementations for their methods. This allows types that implement the trait to use the default implementation or override it with their own custom implementation:
 
 ```rust,editable
 {{#include ../../crates/language/tests/traits/traits2.rs:example}}
@@ -22,40 +20,63 @@ Traits can provide default implementations for their methods. This allows types 
 
 ## Supertraits {#supertraits}
 
-A trait can require that implementing types also implement other traits. These are called supertraits.
+A trait can require that implementing types also implement other traits. These are called supertraits:
 
 ```rust,editable
 {{#include ../../crates/language/tests/traits/traits3.rs:example}}
 ```
 
-## "Newtype" Pattern {#newtype-pattern}
+## Implement a Local Trait for a Type Defined Elsewhere {#traits-types-elsewhere}
 
-Unlike interfaces{{hi:Interfaces}} in languages like Java, C# or Scala, new traits{{hi:Traits}} can be implemented for _existing_ types.
+You can implement a trait defined in your crate {{hi:Traits}} on types defined outside of it - simply by writing a `impl` block.
+This is often used to extend the functionality of an external type:
 
 ```rust,editable
 {{#include ../../crates/language/tests/traits/traits4.rs:example}}
 ```
 
-One restriction to note is that we can implement a trait on a type only if at least one of the trait or the type is local to our crate. If neither are, use the newtype pattern{{hi:Newtype pattern}}.
+## Implement a Trait on a Type, Both Defined Elsewhere, with the "Newtype" Pattern {#newtype-pattern}
 
-The newtype pattern involves creating a new type (typically, a tuple struct with a single field) to wrap an existing type. This allows you to implement traits on the wrapper type, even if you don't own the original type or the trait.
+One restriction to note is that you can implement a trait on a type only if at least one of the trait or the type is _local to your crate_. If neither are, use the "newtype" pattern{{hi:Newtype pattern}}.
+
+The newtype pattern involves creating a new local type (typically, a tuple struct with a single field) to wrap an existing type. This allows you to implement traits on the wrapper type, even if you don't own the original type or the trait.
 
 ```rust,editable
 {{#include ../../crates/language/tests/traits/newtype.rs:example}}
 ```
 
-## Traits as Parameters {#traits-as-parameters}
+## Trait Bounds {#trait-bounds}
 
-Traits can be used as parameters to functions, allowing the function to accept any type that implements the specified trait.
+Trait bounds TODO
+
+```rust,editable
+{{#include ../../crates/language/tests/traits/trait_bounds.rs:example}}
+```
+
+Traits can be used as bounds to generic parameters of a functions, allowing the function to accept any type that implements the specified trait.
 
 ```rust,editable
 {{#include ../../crates/language/tests/traits/traits_as_parameters.rs:example}}
 ```
 
-## Multiple Traits {#multiple-traits}
+### Multiple Traits {#multiple-traits}
+
+Trait bounds with multiple traits TODO
 
 ```rust,editable
 {{#include ../../crates/language/tests/traits/traits5.rs:example}}
+```
+
+## Simply Method Signatures with `impl Trait`
+
+`impl Trait` specifies an unnamed but concrete type that implements a specific trait. It can only appear in argument position (where it can act as an anonymous type parameter to functions) and in return position (where it can act as an opaque return type).
+
+`impl Trait` is essentially syntactic sugar for a generic type parameter like `<T: Trait>`, except that, in argument position, the type is anonymous and doesn't appear in the generic parameter list of a function. In return position, unlike with a generic type parameter, the function, not the caller, chooses the return type.
+
+Do not confuse `impl Trait` with `dyn Trait`. The [[trait_objects | Trait Objects]] chapter explains the difference.
+
+```rust,editable
+TODO
 ```
 
 ## Return-position `impl` Trait {#return-position-impl-trait}
@@ -76,7 +97,7 @@ Traits can be generic, meaning they can have type parameters. This allows you to
 {{#include ../../crates/language/tests/traits/generic_traits.rs:example}}
 ```
 
-## Associated Types {#associated-types}
+## Associated Types in Traits {#associated-types}
 
 Traits can have associated types, which are types that are associated with the trait and can be used in its methods.
 
@@ -84,15 +105,23 @@ Traits can have associated types, which are types that are associated with the t
 {{#include ../../crates/language/tests/traits/associated_types.rs:example}}
 ```
 
-## Trait Bounds {#trait-bounds}
+A common pattern is a generic type (with a default) and an associated type.
+The use of an associated type eliminates the need to write generic type parameters in many places.
 
-```rust,editable
-{{#include ../../crates/language/tests/traits/trait_bounds.rs:example}}
+```rust,noplayground
+/// A trait that represents the ability to add two values together.
+trait Add<Rhs = Self> {
+    /// The type of the result of the addition.
+    type Output;
+
+    /// Adds two values together.
+    fn add(self, rhs: Rhs) -> Self::Output;
+}
 ```
 
-## Constants in Traits {#constants-in-traits}
+## Associated Constants in Traits {#constants-in-traits}
 
-Traits can define constants that implementing types can use.
+Traits can also define constants that implementing types can use.
 
 ```rust,editable
 {{#include ../../crates/language/tests/traits/const_in_traits.rs:example}}
@@ -100,18 +129,16 @@ Traits can define constants that implementing types can use.
 
 ## Async and Traits {#async-and-traits}
 
-See [Async][p-async]⮳.
+This topic is covered in the [Async][p-async]⮳ chapter.
 
-## See Also {#skip}
+## References {#skip}
 
-[Traits (blog)][blog-traits]⮳.
+- [Traits (blog)][blog-traits]⮳.
+- [What is the correct way to return an Iterator (or any other trait)?](https://stackoverflow.com/questions/27535289/what-is-the-correct-way-to-return-an-iterator-or-any-other-trait)⮳.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[traits: review; async_traits: review new Rust features NOW](https://github.com/john-cd/rust_howto/issues/561)
-
-- [What is the correct way to return an Iterator (or any other trait)?](https://stackoverflow.com/questions/27535289/what-is-the-correct-way-to-return-an-iterator-or-any-other-trait)
-
+TODO rename examples
 </div>

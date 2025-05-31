@@ -116,7 +116,7 @@ Both `impl Trait` and `dyn Trait` allow you to work with types that implement a 
 
 ## Trait Object Restrictions {#skip}
 
-This is an advanced topic. Consult it if the compiler rejects your trait object definitions.
+The following is an advanced topic. Consult it if the compiler rejects your trait object definitions.
 
 ### Dyn Compatibility / Object Safety {#dyn-compatibility}
 

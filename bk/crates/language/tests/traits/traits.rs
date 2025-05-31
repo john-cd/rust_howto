@@ -1,7 +1,11 @@
 #![allow(dead_code)]
 // ANCHOR: example
+//! Trait example.
+
+/// A trait with one method.
 pub trait Summary {
     /// Returns a string that summarizes the item.
+    /// Note that it can be just a method signature.
     fn summarize(&self) -> String;
 }
 

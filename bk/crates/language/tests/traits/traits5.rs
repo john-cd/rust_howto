@@ -27,6 +27,8 @@ fn main() {
     // `S` implements both `Debug` and `Clone`, thus we can call `some_function`
     // with it.
     a_function(&s);
+
+    some_function(&s, &s);
 }
 // ANCHOR_END: example
 

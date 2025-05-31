@@ -2,7 +2,7 @@
 |--------|
 | [Default Implementation][ex-language-default-implementation] |
 | [Supertraits][ex-language-supertraits] |
-| ["Newtype" Pattern][ex-language-newtype-pattern] |
+| [Use the "Newtype" Pattern][ex-language-newtype-pattern] |
 | [Traits as Parameters][ex-language-traits-as-parameters] |
 | [Multiple Traits][ex-language-multiple-traits] |
 | [Return-position `impl` Trait][ex-language-return-position-impl-trait] |

@@ -5,7 +5,8 @@ trait MyHash {
     fn myhash(&self) -> u64;
 }
 
-/// Implement the `MyHash` trait for `i64`.
+/// Implement the `MyHash` trait for preexisting type `i64`, defined in the
+/// standard library.
 impl MyHash for i64 {
     fn myhash(&self) -> u64 {
         *self as u64
