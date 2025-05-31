@@ -3118,3 +3118,12 @@ deallocates
 CompactString
 inlined
 unsynchronized
+dereference
+heterogenous
+dereferenced
+monomorphized
+CircleData
+SquareData
+autotrait
+supertraits
+supertrait
