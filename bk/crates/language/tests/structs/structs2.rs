@@ -24,7 +24,7 @@ fn main() {
     let user1: User = build_user("user@example.com".into(), "user".to_string());
 
     // Then update the struct.
-    // .. is used to fill in the rest
+    // `..` is used to fill in the rest
     let user2 = User {
         email: String::from("another@example.com"),
         ..user1 /* The remaining fields not explicitly set will have the

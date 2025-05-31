@@ -30,7 +30,7 @@ fn main() {
     // Note the syntax: `<Type>::<function>`.
     let sq: Rectangle = Rectangle::square(5);
     // Call the method. Note the dot.
-    // This is equivalent to `Rectangle::area(sq)`.
+    // This is equivalent to `Rectangle::area(&sq)`.
     println!("Area: {}", sq.area());
 }
 // ANCHOR_END: example

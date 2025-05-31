@@ -10,8 +10,7 @@ struct User {
     email: String,
     sign_in_count: u64,
 }
-// The `derive(Debug)` attribute is not required - it just enables `println!`
-// below.
+// The `#[derive(Debug)]` attribute enables the use of `println!` below.
 
 /// The `main` function creates an instance of the `User` struct.
 /// It then prints the struct to the console.
