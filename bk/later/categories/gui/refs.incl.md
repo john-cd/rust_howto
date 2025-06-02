@@ -20,25 +20,25 @@
 [ex-gui-vizia]: retained_mode_gui.md#vizia
 [ex-gui-winit]: window_creation.md#winit
 [ex-gui-xilem]: retained_mode_gui.md#xilem
-[p-apis]: ../web-programming_http-client/apis.md
-[p-asynchronous]: ../asynchronous/index.md
-[p-audio]: ../multimedia_audio/audio.md
+[p-apis]: ../../../drafts/categories/web-programming_http-client/apis.md
+[p-asynchronous]: ../../../drafts/categories/asynchronous/index.md
+[p-audio]: ../../../drafts/categories/multimedia_audio/audio.md
 [p-containers]: ../virtualization/containers.md
-[p-cross-platform]: ../../other/cross-platform/index.md
-[p-data-formats]: ../rendering_data-formats/data_formats.md
-[p-documentation]: ../development-tools/documentation/documentation.md
+[p-cross-platform]: ../../../drafts/other/cross-platform/index.md
+[p-data-formats]: ../../../drafts/categories/rendering_data-formats/data_formats.md
+[p-documentation]: ../../../drafts/categories/development-tools/documentation/documentation.md
 [p-embedded]: # "../embedded/index.md"
-[p-game-development]: ../game-development/game_development.md
-[p-games]: ../games/games.md
+[p-game-development]: ../../../drafts/categories/game-development/game_development.md
+[p-games]: ../../../drafts/categories/games/games.md
 [p-gpu]: # "../../other/gpu/gpu.md"
 [p-graphics]: # "../graphics/index.md"
 [p-gui]: index.md
 [p-html]: # "../../categories/parser-implementations/html.md"
 [p-immediate-mode-gui]: immediate_mode_gui.md
-[p-main]: ../../language/entrypoint.md
-[p-option]: ../../standard_library/option.md
+[p-main]: ../../../drafts/language/entrypoint.md
+[p-option]: ../../../drafts/standard_library/option.md
 [p-performance]: # "../../categories/development-tools_cargo-plugins/performance.md"
-[p-rendering]: ../rendering/index.md
+[p-rendering]: ../../../drafts/categories/rendering/index.md
 [p-ui-layout]: ui_layout.md
 [p-wasm]: ../wasm/index.md
-[p-windows]: ../os_windows-apis/windows.md
+[p-windows]: ../../../drafts/categories/os_windows-apis/windows.md
