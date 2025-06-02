@@ -20,7 +20,8 @@ fn load_record<'a>(line: &'a str) -> CsvRecord<'a> {
 
 // TODO cover Pin, UnPin
 
-// // Pin<Box<T>> ensures that the struct remains at a stable memory location, preventing accidental moves.
+// // Pin<Box<T>> ensures that the struct remains at a stable memory location,
+// preventing accidental moves.
 
 // struct SelfRef {
 //     data: String,
@@ -37,7 +38,8 @@ fn load_record<'a>(line: &'a str) -> CsvRecord<'a> {
 //         });
 
 //         let raw_ref = &boxed.data as *const String;
-//         unsafe { Pin::get_unchecked_mut(boxed.as_mut()).reference = raw_ref };
+//         unsafe { Pin::get_unchecked_mut(boxed.as_mut()).reference = raw_ref
+// };
 
 //         boxed
 //     }
@@ -48,9 +50,9 @@ fn load_record<'a>(line: &'a str) -> CsvRecord<'a> {
 //     println!("Data: {}", unsafe { &*self_ref.reference });
 // }
 
-
 // // Using Rc or Arc for Shared Ownership
-// // If multiple references are needed, Rc<T> (single-threaded) or Arc<T> (multi-threaded) can be used.
+// // If multiple references are needed, Rc<T> (single-threaded) or Arc<T>
+// (multi-threaded) can be used.
 
 // use std::rc::Rc;
 
@@ -75,12 +77,9 @@ fn load_record<'a>(line: &'a str) -> CsvRecord<'a> {
 // }
 
 fn main() {
-
     let s = "Joe,Doe,1994-01-01".to_string();
     let c = load_record(&s);
     println!("{:?}", c);
-
-
 }
 // ANCHOR_END: example
 

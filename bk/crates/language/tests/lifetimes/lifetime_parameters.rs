@@ -33,7 +33,8 @@ trait Describable<'a> {
 }
 
 // Generic implementation of a trait for a struct.
-// Note how the lifetime parameter appears after `impl` and in the name of the trait and struct.
+// Note how the lifetime parameter appears after `impl` and in the name of the
+// trait and struct.
 impl<'a, T: std::fmt::Debug> Describable<'a> for RefHolder<'a, T> {
     fn describe(&self) -> &'a str {
         "This is a reference holder."

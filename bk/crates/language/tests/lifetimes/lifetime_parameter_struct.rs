@@ -41,8 +41,11 @@ fn main() {
 
     // Let's create another instance with a lifetime shorter than `'static`:
     let another_part = String::from("another part");
-    let e2: Excerpt<'_> = Excerpt { part: &another_part };
-    // e2.only_if_static(); // ERROR: argument requires that `another_part` is borrowed for `'static`
+    let e2: Excerpt<'_> = Excerpt {
+        part: &another_part,
+    };
+    // e2.only_if_static(); // ERROR: argument requires that `another_part` is
+    // borrowed for `'static`
 }
 // ANCHOR_END: example
 

@@ -20,7 +20,8 @@ fn main() {
         l = longest(&x, &y);
         println!("Longest: {l}");
     } // y is dropped here.
-    // println!("Longest: {l}"); // ERROR: borrowed value does not live long enough.
+    // println!("Longest: {l}"); // ERROR: borrowed value does not live long
+    // enough.
     println!("x: {x}");
     // x is valid until this line.
 }
