@@ -25,7 +25,7 @@ Lifetimes are annotations, not types: Lifetimes don't change the underlying type
 
 A lifetime is said to "outlive" another one if its representative scope is as long or longer than the other. References with longer lifetimes can be freely coerced into references with shorter ones. As such, you should read a lifetime `'a` as "lives at least as long as `'a`".
 
-Lifetime paramters can be added to function or method signatures, struct definitions, `impl` blocks, in the same way that a type parameter can be added to a generic type (see below for details).
+Lifetime parameters can be added to function or method signatures, struct definitions, `impl` blocks, in the same way that a type parameter can be added to a generic type (see below for details).
 
 The compiler infers most lifetimes, eliminating most boilerplate, but explicit lifetime annotations are sometimes necessary: When the compiler can't figure out the relationships between the lifetimes of different references (especially in function signatures or struct definitions), you need to provide explicit lifetime annotations.
 
