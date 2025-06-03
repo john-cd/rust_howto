@@ -4,11 +4,14 @@
 fn main() {
     // Create a String on the heap.
     let s1 = String::from("hello");
-    // Clone the String, creating a new String with the same content on the
-    // heap.
+
+    // Clone the String,
+    // creating a new String with the same content on the heap.
     let s2 = s1.clone();
     // `clone` deeply copies the heap data of the `String`,
-    // not just the stack data.
+    // not just its stack data.
+
+    println!("{s1}"); // Both `s1` and `s2` are accessible.
     println!("{s2}");
 }
 // ANCHOR_END: example

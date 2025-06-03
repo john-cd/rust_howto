@@ -2,26 +2,53 @@
 
 {{#include ownership_borrowing.incl.md}}
 
+The memory of a computer program is primarily structured into a _stack_ and a _heap_. The stack is stuctured: it stores values in the order it gets them and removes the values in the opposite order ("last in, first out"). During program execution, the stack is used to store function parameters, non-static local variables, function return values and return addresses, or pointers to the heap.
+
+Under the covers, most CPUs maintain a pointer to the top of the stack in one of its internal registers. Pushing data onto the stack is a matter of copying a value onto the next available memory slot. Popping data off the stack is simply adjusting the stack pointer register value. Therefore, the stack is fast. It suffers from one major constraint: _all data stored on the stack must have a known, fixed size_.
+
+Data with an unknown size at compile time or a size that might change must be stored on the heap instead. The heap is less organized and managed by a _memory allocator_ subroutine. Upon request for a memory block, the memory allocator finds empty memory in the heap, marks it as being in use, and returns a pointer, which is the memory address of the allocated memory. Because a pointer to the heap is a known, fixed size, the pointer can be stored on the stack, but when you want the actual data, the pointer must be followed (dereferenced).
+
+Allocating space on the heap is slower than pushing data on the stack, because the allocator must first find a big enough space to hold the data and then perform bookkeeping to prepare for the next allocation. The allocator must track outstanding allocations to ensure that they do not overlap and that no memory that is no longer used is _leaked_ (lost; not reusable for the remainder of the program's execution). The heap further suffers from _fragmentation_, which arises when many small chunks of free memory is interspersed with allocated memory, to a point where large enough chunks of free memory cannot allocated.
+
+Some languages (Java, C#, Go...) use _garbage collection_ (GC) that regularly reclaims no-longer-used memory as the program runs, moving memory blocks around to defragment the free memory (compaction). GC is automatic but expensive, as it must either temporarily stop the program or run in the background.
+
+In other languages (C, C++...), the programmer must explicitly allocate and free the memory. This is excessively error-prone: each allocation must be paired with exactly one deallocation. Forgetting to free memory leaks it. Freeing memory too early or more than once ("double free") may lead to memory overlap and invalid variables.
+
+Rust manages memory through its _ownership_ system instead. The memory is automatically returned once the variable that owns it goes out of scope.
+
 ## Ownership {#ownership}
 
-[![Rust by example - Ownership][book-rust-by-example-move-badge]][book-rust-by-example-move]{{hi:move}}{{hi:Ownership}}
+[![Rust by example - Ownership][book-rust-by-example-move-badge]][book-rust-by-example-move]{{hi:Move}}{{hi:Ownership}}{{hi:Scope}}
 
-Rust's ownership system ensures memory safety without needing a garbage collector.{{hi:Garbage collector}} It is a set of rules that the compiler enforces at compile time:
+Rust's ownership system ensures automatic _memory safety_ without the need for a garbage collector.{{hi:Garbage collector}}
 
-- Each value in Rust has a variable that is its owner{{hi:Ownership}}.
-- There can only be one owner at a time.
+Ownership a set of rules that the compiler enforces _at compile time_. If these rules are violated, the program won't compile:
+
+1. **Each value in Rust has a variable that is its owner.**
+2. **There can only be one owner at a time.**
+3. **When the owner goes out of scope, the value is dropped** (meaning Rust automatically calls a special drop method to deallocate the memory).
+
+The _scope_ of a variable is defined as follows: A variable is valid from the point it is declared until the end of its current scope (usually a block of code enclosed in curly braces `{ }` and typically the body of a function).
+
+Rules 1 and 3 ensures automatic memory cleanup (no leaks). Rule 2 ensures no "double free". The following example illustrates these rules:
 
 ```rust,editable
-{{#include ../../crates/language/tests/ownership_borrowing/ownership.rs:example}}
+{{#include ../../crates/language/tests/ownership_borrowing/scope.rs:example}}
 ```
 
-When the owner goes out of scope{{hi:Scope}}, the value is dropped.
+### Move Semantics {#skip}
+
+When you assign a heap-allocated value (like a `String`) from one variable to another, Rust _moves_ the ownership of the value, since there can only be one owner.
+
+When ownership of value moves to another variable, the original variable _becomes invalid_. The compiler ensures that it cannot be accessed (or the program does not compile). The following example explains these concepts:
 
 ```rust,editable
-{{#include ../../crates/language/tests/ownership_borrowing/ownership2.rs:example}}
+{{#include ../../crates/language/tests/ownership_borrowing/move1.rs:example}}
 ```
 
-Rust will never automatically create deep copies of your data. Use the [`std::clone::Clone`][c-std::clone::Clone]{{hi:std::clone::Clone}}⮳ trait to explicitly create a deep copy.
+## Clone and Copy Data {#clone-and-copy-data}
+
+Rust will never automatically create deep copies of your data. Use the [`std::clone::Clone`][c-std::clone::Clone]{{hi:std::clone::Clone}}⮳ trait to explicitly create a deep copy:
 
 ```rust,editable
 {{#include ../../crates/language/tests/ownership_borrowing/clone.rs:example}}
@@ -38,6 +65,8 @@ If a type implements the [`std::marker::Copy`][c-std::marker::Copy]{{hi:std::mar
 ### Borrowing {#borrowing}
 
 Passing a variable to a function will move or copy, just as assignment does. To avoid transferring ownership, you can "borrow" the value:{{hi:Borrowing}}
+
+A _reference_ in Rust is essentially a pointer (a memory address) to a value in memory, plus a guarantee that the pointed-to data is valid.
 
 ```rust,editable
 {{#include ../../crates/language/tests/ownership_borrowing/borrowing.rs:example}}
@@ -66,5 +95,4 @@ If you have a mutable reference{{hi:Mutable references}} to a value, you can hav
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[ownership_borrowing: add text NOW](https://github.com/john-cd/rust_howto/issues/554)
 </div>

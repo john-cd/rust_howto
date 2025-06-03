@@ -2,5 +2,5 @@ mod borrowing;
 mod borrowing_mutable;
 mod clone;
 mod copy;
-mod ownership;
-mod ownership2;
+mod move1;
+mod scope;
