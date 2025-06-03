@@ -19,14 +19,6 @@ fn main() {
 // (deallocated). `s1` invalidation earlier prevents a "double free" error,
 // where two variables might try to deallocate the same memory when they go out
 // of scope.
-
-// Behind the scene: during runtime, the local variable `s1` (on the stack)
-// contains a pointer to heap-allocated data (here, the unicode characters of
-// the String). During the assignment `let s2 = s1`, the pointer is copied into
-// `s2`. The heap data is not copied. Earlier during compilation, the Rust
-// compiler made sure that `s1` would not be reused after the move, ensuring
-// memory safety.
-
 // ANCHOR_END: example
 
 #[test]
