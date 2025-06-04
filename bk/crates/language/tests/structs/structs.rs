@@ -9,13 +9,17 @@ struct User {
     username: String,
     email: String,
     sign_in_count: u64,
+    // A field may also be a reference, a tuple, an array, an enum, another
+    // struct...
 }
-// The `#[derive(Debug)]` attribute enables the use of `println!` below.
+// The `#[derive(Debug)]` attribute is not required; it enables the use of
+// `println!` below.
 
 /// The `main` function creates an instance of the `User` struct.
 /// It then prints the struct to the console.
 fn main() {
-    // Note that there is no `new` or similar.
+    // Note that there is no `new` keyword or similar.
+    // The order of fields doesn't need to match the definition.
     let user1 = User {
         active: true,
         username: String::from("someusername123"),
@@ -23,6 +27,9 @@ fn main() {
         sign_in_count: 1,
     };
     println!("{:?}", user1);
+
+    // Access field with the `.` operator:
+    let _ = user1.active;
 }
 // ANCHOR_END: example
 
