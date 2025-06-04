@@ -40,7 +40,7 @@ String literals are a common example of a string slice with `'static` lifetime.
 
 ## Lifetime Parameters {#skip}
 
-Functions, type aliases, structs, enumerations, unions, traits, and implementations may be parameterized by lifetimes (in addition of types and constants). Liftime parameters are listed in angle brackets (e.g. `<'a>`), usually immediately after the name of the item and before its definition. They can then ben used to specify the relationships between the lifetimes of different references in the function or type.
+Functions, type aliases, structs, enumerations, unions, traits, and implementations may be parameterized by lifetimes (in addition of types and constants). Lifetime parameters are listed in angle brackets (e.g. `<'a>`), usually immediately after the name of the item and before its definition. They can then ben used to specify the relationships between the lifetimes of different references in the function or type.
 
 ```rust,editable
 {{#include ../../crates/language/tests/lifetimes/lifetime_parameter.rs:example}}
