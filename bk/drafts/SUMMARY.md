@@ -8,7 +8,6 @@
 - [Language](language/index.md)
   - [Rust Installation and First Steps](language/rust_install.md)
   - [Data Types](language/data_types.md)
-  - [Ownership and Borrowing](language/ownership_borrowing.md)
   - [Structs](language/structs.md)
   - [Traits](language/traits.md)
   - [Trait Objects](language/trait_objects.md)

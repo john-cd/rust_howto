@@ -14,6 +14,7 @@
   - [Main Function](language/entrypoint.md)
   - [Variables](language/variables.md)
   - [Constants and Statics](language/constants_and_statics.md)
+  - [Ownership and Borrowing](language/ownership_borrowing.md)
   - [Slices](language/slices.md)
   - [Functions](language/functions.md)
   - [Control Flow](language/control_flow.md)
