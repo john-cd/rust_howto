@@ -9,8 +9,6 @@ struct User {
     username: String,
     email: String,
     sign_in_count: u64,
-    // A field may also be a reference, a tuple, an array, an enum, another
-    // struct...
 }
 // The `#[derive(Debug)]` attribute is not required; it enables the use of
 // `println!` below.
@@ -28,7 +26,7 @@ fn main() {
     };
     println!("{:?}", user1);
 
-    // Access field with the `.` operator:
+    // Access fields with the `.` operator:
     let _ = user1.active;
 }
 // ANCHOR_END: example

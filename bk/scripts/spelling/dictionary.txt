@@ -3131,3 +3131,6 @@ CPUs
 defragment
 deallocate
 bools
+TraitName
+StructName
+autoimplement

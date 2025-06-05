@@ -1,7 +1,8 @@
 mod common_traits;
+mod struct_fields;
+mod struct_impl;
+mod struct_init;
+mod struct_trait;
+mod struct_update;
 mod structs;
-mod structs_impl;
-mod structs_init;
-mod structs_trait;
-mod structs_update;
 mod tuple_structs;

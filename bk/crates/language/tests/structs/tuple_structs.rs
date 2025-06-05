@@ -5,7 +5,8 @@
 /// Note the ( ) and the lack of field names.
 /// It behaves like a named tuple.
 #[derive(Debug)]
-struct Color(i32, i32, i32);
+struct Color(pub i32, pub i32, pub i32);
+// We choose here to make all fields public.
 
 /// A unit-like struct.
 ///

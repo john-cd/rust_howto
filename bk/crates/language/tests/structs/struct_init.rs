@@ -10,7 +10,6 @@ struct User {
 
 // It is common to define a function or an associated function (see below) that
 // initializes the struct.
-//
 fn build_user(email: String, username: String) -> User {
     User {
         active: true,
@@ -40,7 +39,8 @@ fn main() {
 
     println!("user1: {:?}", user1);
 
-    // Or an associated function. Note the path syntax `<Type>::<function>`.
+    // Or with an associated function. Note the path syntax
+    // `<Type>::<function>`.
     let user2: User = User::new("user@example.com".into(), "user".to_string());
 
     println!("user2: {:?}", user2);
