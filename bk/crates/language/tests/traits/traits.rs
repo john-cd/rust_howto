@@ -5,7 +5,7 @@
 /// A trait with one method.
 pub trait Summary {
     /// Returns a string that summarizes the item.
-    /// Note that it can be just a method signature.
+    /// Note that it can be just a method signature (no function body).
     fn summarize(&self) -> String;
 }
 
@@ -32,6 +32,11 @@ fn main() {
     };
     // Since the type implements the trait, we can call its method.
     println!("Summary: {}", na.summarize());
+
+    // The method call above is equivalent to:
+    NewsArticle::summarize(&na);
+    // Or, if we needed to fully disambiguate:
+    <NewsArticle as Summary>::summarize(&na);
 }
 // ANCHOR_END: example
 

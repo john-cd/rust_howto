@@ -127,9 +127,31 @@ Traits can also define constants that implementing types can use.
 {{#include ../../crates/language/tests/traits/const_in_traits.rs:example}}
 ```
 
+## Sealed Trait Pattern {#sealed-trait-pattern}
+
+```rust,editable
+{{#include ../../crates/language/tests/traits/sealed_trait_pattern.rs:example}}
+```
+
+## Blanket Implementations {#blanket-implementations}
+
+```rust,editable
+{{#include ../../crates/language/tests/traits/blanket_implementations.rs:example}}
+```
+
+Blanket `impl` apply globally and can lead to conflicts if overused.
+
 ## Async and Traits {#async-and-traits}
 
 This topic is covered in the [Async][p-async]⮳ chapter.
+
+## Related Topics {#skip}
+
+- [[enums | Enums]].
+- [[generics | Generics]].
+- [[structs | Structs]].
+- [[trait_objects | Trait Objects]].
+- [[rust-patterns | Rust Patterns]].
 
 ## References {#skip}
 

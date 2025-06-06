@@ -1,8 +1,10 @@
 mod associated_types;
+mod blanket_implementations;
 mod const_in_traits;
 mod generic_traits;
 mod newtype;
 mod rpit;
+mod sealed_trait_pattern;
 mod trait_bounds;
 mod traits;
 mod traits2;
