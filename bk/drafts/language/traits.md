@@ -15,7 +15,7 @@ Traits are a way to define shared behavior that types (structs, enums, etc.) can
 Traits can provide default implementations for their methods. This allows types that implement the trait to use the default implementation or override it with their own custom implementation:
 
 ```rust,editable
-{{#include ../../crates/language/tests/traits/traits2.rs:example}}
+{{#include ../../crates/language/tests/traits/trait_default_implementation.rs:example}}
 ```
 
 ## Supertraits {#supertraits}
@@ -23,7 +23,7 @@ Traits can provide default implementations for their methods. This allows types 
 A trait can require that implementing types also implement other traits. These are called supertraits:
 
 ```rust,editable
-{{#include ../../crates/language/tests/traits/traits3.rs:example}}
+{{#include ../../crates/language/tests/traits/supertraits.rs:example}}
 ```
 
 ## Implement a Local Trait for a Type Defined Elsewhere {#traits-types-elsewhere}
@@ -32,7 +32,7 @@ You can implement a trait defined in your crate {{hi:Traits}} on types defined o
 This is often used to extend the functionality of an external type:
 
 ```rust,editable
-{{#include ../../crates/language/tests/traits/traits4.rs:example}}
+{{#include ../../crates/language/tests/traits/extend_external_type.rs:example}}
 ```
 
 ## Implement a Trait on a Type, Both Defined Elsewhere, with the "Newtype" Pattern {#newtype-pattern}
@@ -64,7 +64,7 @@ Traits can be used as bounds to generic parameters of a functions, allowing the 
 Trait bounds with multiple traits TODO
 
 ```rust,editable
-{{#include ../../crates/language/tests/traits/traits5.rs:example}}
+{{#include ../../crates/language/tests/traits/multiple_traits.rs:example}}
 ```
 
 ## Simplify Method Signatures with `impl Trait` {#impl-trait}
@@ -162,5 +162,4 @@ This topic is covered in the [Async][p-async]⮳ chapter.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO rename examples
 </div>
