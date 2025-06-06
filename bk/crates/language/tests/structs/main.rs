@@ -1,4 +1,5 @@
 mod common_traits;
+mod struct_constant;
 mod struct_fields;
 mod struct_impl;
 mod struct_init;

@@ -38,7 +38,7 @@
 [p-performance]: ../development-tools_cargo-plugins/performance.md
 [p-programming-languages]: ../parser-implementations/programming_languages.md
 [p-slices]: ../../language/slices.md
-[p-structs]: ../../language/structs.md
+[p-structs]: ../../../src/language/structs.md
 [p-toml]: ../parser-implementations/toml.md
 [p-trait-objects]: ../../language/trait_objects.md
 [p-traits]: ../../language/traits.md

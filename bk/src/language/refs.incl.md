@@ -7,16 +7,19 @@
 [ex-language-attributes]: attributes.md#attribute
 [ex-language-borrowing]: ownership_borrowing.md#borrowing
 [ex-language-cfg-if]: attributes.md#cfg-if
+[ex-language-clone]: ownership_borrowing.md#clone
 [ex-language-closure-with-type-annotations]: closures.md#closure-with-type-annotations
 [ex-language-closure]: closures.md#closure
 [ex-language-closures-as-input-parameters]: closures.md#closures-as-input-parameters
 [ex-language-common-enums]: enums.md#common-enums
+[ex-language-common-traits]: structs.md#common-traits
 [ex-language-compound-types]: data_types.md#compound-types
 [ex-language-conditional-compilation]: attributes.md#conditional-compilation
 [ex-language-constants-in-traits]: traits.md#constants-in-traits
 [ex-language-constants]: constants_and_statics.md#constants
 [ex-language-control-flow]: control_flow.md
 [ex-language-conversion-conventions]: naming_conventions.md#conversion-conventions
+[ex-language-copy-semantics]: ownership_borrowing.md#copy-semantics
 [ex-language-create-an-iterator]: iterators.md#create-an-iterator
 [ex-language-create-slices]: slices.md#create-slices
 [ex-language-data_types]: data_types.md
@@ -40,6 +43,7 @@
 [ex-language-if-let]: match.md#if-let
 [ex-language-immutability]: variables.md#immutability
 [ex-language-implement-intoiterator]: iterators.md#implement-intoiterator
+[ex-language-implement-trait-for-struct]: structs.md#implement-trait-for-struct
 [ex-language-iterator-conventions]: naming_conventions.md#iterator-conventions
 [ex-language-iterator-trait]: iterators.md#iterator-trait
 [ex-language-iterators]: iterators.md
@@ -55,7 +59,9 @@
 [ex-language-macros]: macros.md
 [ex-language-main-function]: entrypoint.md#main-function
 [ex-language-match]: match.md#match
+[ex-language-methods]: structs.md#methods
 [ex-language-move-closures]: closures.md#move-closures
+[ex-language-move-semantics]: ownership_borrowing.md#move-semantics
 [ex-language-multiple-traits]: traits.md#multiple-traits
 [ex-language-must-use]: attributes.md#must-use
 [ex-language-mutable-reference]: ownership_borrowing.md#mutable-reference
@@ -65,6 +71,7 @@
 [ex-language-ownership]: ownership_borrowing.md#ownership
 [ex-language-ownership_borrowing]: ownership_borrowing.md
 [ex-language-production-code-attributes]: attributes.md#production-code-attributes
+[ex-language-references]: ownership_borrowing.md#references
 [ex-language-return-an-iterator]: iterators.md#return-an-iterator
 [ex-language-return-position-impl-trait]: traits.md#return-position-impl-trait
 [ex-language-return-reference]: functions.md#return-reference
@@ -75,6 +82,10 @@
 [ex-language-static-lifetime]: lifetimes.md#static-lifetime
 [ex-language-statics]: constants_and_statics.md#statics
 [ex-language-string-slices]: slices.md#string-slices
+[ex-language-struct-constant]: structs.md#struct-constant
+[ex-language-struct-init]: structs.md#struct-init
+[ex-language-struct-ownership]: structs.md#struct-ownership
+[ex-language-struct]: structs.md#struct
 [ex-language-structs]: structs.md
 [ex-language-strum]: enums.md#strum
 [ex-language-supertraits]: traits.md#supertraits
@@ -82,7 +93,9 @@
 [ex-language-trait-objects]: trait_objects.md#trait-objects
 [ex-language-traits-as-parameters]: traits.md#traits-as-parameters
 [ex-language-traits]: traits.md
+[ex-language-tuple-structs]: structs.md#tuple-structs
 [ex-language-type-aliases]: data_types.md#type-aliases
+[ex-language-update-struct]: structs.md#update-struct
 [ex-language-use-iterators]: iterators.md#use-iterators
 [ex-language-use-match-to-branch-on-a-pattern]: match.md#use-match-to-branch-on-a-pattern
 [ex-language-use-slice-as-function-argument]: slices.md#use-slice-as-function-argument

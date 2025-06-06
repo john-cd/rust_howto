@@ -1,5 +1,8 @@
 ||
 |--------|
 | [Ownership][ex-language-ownership] |
-| [Borrowing][ex-language-borrowing] |
-| [Mutable References][ex-language-mutable-reference] |
+| [Move Semantics][ex-language-move-semantics] |
+| [Clone (Deep Copy)][ex-language-clone] |
+| [Copy Semantics][ex-language-copy-semantics] |
+| [References and Borrowing][ex-language-references] |
+| [Borrowing when Calling a Function][ex-language-borrowing] |

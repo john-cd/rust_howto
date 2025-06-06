@@ -8,5 +8,5 @@
 [p-config]: index.md
 [p-configuration]: configuration.md
 [p-json]: ../parser-implementations/json.md
-[p-structs]: ../../language/structs.md
+[p-structs]: ../../../src/language/structs.md
 [p-toml]: ../parser-implementations/toml.md
