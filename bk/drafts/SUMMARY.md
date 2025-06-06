@@ -11,7 +11,6 @@
   - [Traits](language/traits.md)
   - [Trait Objects](language/trait_objects.md)
   - [Generics](language/generics.md)
-  - [Lifetimes](language/lifetimes.md)
   - [Pattern Matching, `if / while let`](language/match.md)
   - [Macros](language/macros.md)
 
