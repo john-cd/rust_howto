@@ -1,5 +1,5 @@
 // ANCHOR: example
-/// This function has a lifetime parameter `<'a>`.
+/// This function has a lifetime parameter `'a`.
 /// The lifetime parameter can be used by references within the function
 /// signature, return type, or body.
 ///
