@@ -50,7 +50,7 @@ The [derive_more][c-derive_more-crates.io]⮳ crate derive lots of additional, c
 - `Constructor` to auto-generate constructors for structs,
 - Boolean Operators `Not`, `BitAnd`, `BitOr`, etc.
 
-You can also implement derive for your own traits through procedural macros.
+You can also implement `derive` for your own traits through procedural macros.
 
 ```rust,editable,noplayground
 {{#include ../../crates/standard_library/tests/derive/derive_more.rs:example}}

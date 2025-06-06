@@ -14,7 +14,7 @@ Use the `pub` keyword before an item's definition to make it public:
 {{#include ../../crates/code_organization/tests/visibility/pub_keyword.rs:example}}
 ```
 
-There are two exceptions to the "privacy by default" rule: Enum variants in a `pub enum` are public by default. Associated items in a `pub` [[trait]] are also public by default.
+There are two exceptions to the "privacy by default" rule: Enum variants in a `pub enum` are public by default. Associated items (incl. functions and methods) in a `pub` [[trait]] are also public by default.
 
 Also note that, if we use `pub` before a struct definition, we make the struct public, but the fields of the struct will still be private. Mark relevant fields with `pub`:
 

@@ -67,7 +67,7 @@ Trait bounds with multiple traits TODO
 {{#include ../../crates/language/tests/traits/traits5.rs:example}}
 ```
 
-## Simply Method Signatures with `impl Trait`
+## Simplify Method Signatures with `impl Trait` {#impl-trait}
 
 `impl Trait` specifies an unnamed but concrete type that implements a specific trait. It can only appear in argument position (where it can act as an anonymous type parameter to functions) and in return position (where it can act as an opaque return type).
 
