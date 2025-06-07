@@ -68,9 +68,11 @@ Self-referential structs, that is structs that hold a reference to their own fie
 
 Instead, you may:
 
-- Store owned data only in the struct,
+- Store only owned data in the struct,
 - Store the owned data outside the struct and let the struct hold only references,
 - Store ranges rather than references, if the pointed-to type is a sequence (array, string, vector...),
+- Use `Rc` or `Arc`.
+- Use raw pointers,
 - Use arena-style allocation to enforce shared lifetimes.
 
 ```rust,editable
