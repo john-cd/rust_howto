@@ -8,7 +8,6 @@
 - [Language](language/index.md)
   - [Rust Installation and First Steps](language/rust_install.md)
   - [Data Types](language/data_types.md)
-  - [Traits](language/traits.md)
   - [Trait Objects](language/trait_objects.md)
   - [Generics](language/generics.md)
   - [Pattern Matching, `if / while let`](language/match.md)

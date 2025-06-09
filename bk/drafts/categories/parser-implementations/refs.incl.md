@@ -23,4 +23,4 @@
 [ex-parser-implementations-xml5ever]: xml.md#xml5ever
 [ex-parser-implementations-xmlparser]: xml.md#xmlparser
 [p-streams]: ../asynchronous/streams.md
-[p-traits]: ../../language/traits.md
+[p-traits]: ../../../src/language/traits.md

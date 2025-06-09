@@ -38,5 +38,5 @@
 [p-standard-library]: ../../../drafts/standard-library/index.md
 [p-streams]: streams.md
 [p-tokio]: tokio.md
-[p-traits]: ../../language/traits.md
+[p-traits]: ../../../src/language/traits.md
 [p-writing]: ../development-tools_cargo-plugins/code_writing.md

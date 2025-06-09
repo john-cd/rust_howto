@@ -27,5 +27,5 @@
 [p-json]: ../parser-implementations/json.md
 [p-mathematics]: index.md
 [p-option]: # "../../standard_library/option.md"
-[p-traits]: ../../language/traits.md
+[p-traits]: ../../../src/language/traits.md
 [p-vectors]: # "../../standard-library/vector.md"

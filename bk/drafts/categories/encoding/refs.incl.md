@@ -41,5 +41,5 @@
 [p-structs]: ../../../src/language/structs.md
 [p-toml]: ../parser-implementations/toml.md
 [p-trait-objects]: ../../language/trait_objects.md
-[p-traits]: ../../language/traits.md
+[p-traits]: ../../../src/language/traits.md
 [p-url]: ../web-programming/url.md

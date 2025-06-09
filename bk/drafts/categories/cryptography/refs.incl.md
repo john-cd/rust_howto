@@ -42,4 +42,4 @@
 [p-server]: ../network-programming/server.md
 [p-signature]: signature.md
 [p-tls]: tls.md
-[p-traits]: ../../language/traits.md
+[p-traits]: ../../../src/language/traits.md

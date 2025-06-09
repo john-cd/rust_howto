@@ -11,7 +11,7 @@
   - [Code Organization by Project Type and Size](code_organization/code_organization.md)
 
 - [Language]()
-  - [Main Function](language/entrypoint.md)
+  - [Entrypoint](language/entrypoint.md)
   - [Variables](language/variables.md)
   - [Constants and Statics](language/constants_and_statics.md)
   - [Ownership and Borrowing](language/ownership_borrowing.md)
@@ -24,6 +24,7 @@
   - [Attributes](language/attributes.md)
   - [Closures](language/closures.md)
   - [Iterators](language/iterators.md)
+  - [Traits](../src/language/traits.md)
   - [impl Trait](language/impl_trait.md)
 
 - [Standard Library](standard_library/index.md)

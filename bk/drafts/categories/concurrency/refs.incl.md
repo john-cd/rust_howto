@@ -57,4 +57,4 @@
 [p-standard-library]: ../../../drafts/standard-library/index.md
 [p-streams]: ../asynchronous/streams.md
 [p-strings]: ../data-structures/strings.md
-[p-traits]: ../../language/traits.md
+[p-traits]: ../../../src/language/traits.md
