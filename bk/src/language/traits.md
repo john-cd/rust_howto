@@ -36,7 +36,7 @@ Traits can have associated types, which are types that can be used in its functi
 {{#include ../../crates/language/tests/traits/associated_types.rs:example}}
 ```
 
-An associated type declaration ccan include generic parameters and trait bounds (see [[generics | Generics]] for more details):
+An associated type declaration can include generic parameters and trait bounds (see [[generics | Generics]] for more details):
 
 ```rust,noplayground
 use std::fmt::Debug;
