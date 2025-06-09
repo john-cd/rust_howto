@@ -108,11 +108,7 @@ Trait objects enable dynamic dispatch. This means that the decision of which con
 
 Both `impl Trait` and `dyn Trait` allow you to work with types that implement a particular trait, providing a form of abstraction or polymorphism. However, they differ significantly in how they achieve this: `impl Trait` uses static dispatch (method calls are resolved at compile time); `dyn Trait` uses dynamic dispatch (resolved at run time).
 
-`impl Trait` specifies an unnamed but concrete type that implements a specific trait. It can only appear in argument position (where it can act as an anonymous type parameter to functions) and in return position (where it can act as an opaque return type). `impl Trait` is essentially syntactic sugar for a generic type parameter like `<T: Trait>`, except that, in argument position, the type is anonymous and doesn't appear in the generic parameter list of a function. In return position, unlike with a generic type parameter, the function, not the caller, chooses the return type.
-
-```rust,editable
-{{#include ../../crates/language/tests/trait_objects/impl_trait.rs:example}}
-```
+See [[impl_trait | Impl Trait]] and [[traits | Traits]] for more details.
 
 ## Trait Object Restrictions {#skip}
 

@@ -5,7 +5,6 @@ mod extend_external_type;
 mod generic_traits;
 mod multiple_traits;
 mod newtype;
-mod rpit;
 mod sealed_trait_pattern;
 mod supertraits;
 mod trait_bounds;
