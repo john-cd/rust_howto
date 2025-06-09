@@ -4,21 +4,85 @@
 
 ## Trait Syntax {#trait}
 
-Traits are a way to define shared behavior that types (structs, enums, etc.) can implement. They are similar to interfaces or abstract classes in other languages. {{i:Trait}} methods{{hi:Methods}} are in scope only when their trait is.
+Traits are a way to define shared behavior that types can implement. They are similar to interfaces or abstract classes in other languages.
+
+A trait consists of _associated items_: functions (including methods), types, and constants. {{i:Trait}} items are in scope only when their trait is.
+
+The following example demonstrates a trait with one method and its implementation on a type (here, a `struct`). Trait functions and methods typically omit the function body by replacing it with a semicolon. The trait implementation then must provide the function body:
 
 ```rust,editable
 {{#include ../../crates/language/tests/traits/traits.rs:example}}
 ```
 
-## Default Method Implementation {#default-implementation}
+A trait can be implemented by a struct, an enum, but also by a union, a primitive type, a sequence (slice or array), a tuple, a function pointer or a reference / pointer type:
 
-Traits can provide default implementations for their methods. This allows types that implement the trait to use the default implementation or override it with their own custom implementation:
+```rust,editable
+{{#include ../../crates/language/tests/traits/trait_types.rs:example}}
+```
+
+### Provide a Default Implementation for a Trait's Function or Method {#default-implementation}
+
+Traits can provide default implementations for their functions or methods. This allows types that implement the trait to either use the default implementation or override it with their own custom implementation:
 
 ```rust,editable
 {{#include ../../crates/language/tests/traits/trait_default_implementation.rs:example}}
 ```
 
-## Supertraits {#supertraits}
+### Define Associated Types in Traits {#associated-types}
+
+Traits can have associated types, which are types that can be used in its functions and methods:
+
+```rust,editable
+{{#include ../../crates/language/tests/traits/associated_types.rs:example}}
+```
+
+An associated type declaration ccan include generic parameters and trait bounds (see [[generics | Generics]] for more details):
+
+```rust,noplayground
+use std::fmt::Debug;
+use std::fmt::Display;
+
+trait Tr {
+    type Item;
+    // Associated type with a trait bound:
+    type Item2: Display;
+    // Associated type with multiple trait bounds:
+    type Item3: Debug + Display;
+    // Associated type with a generic type parameter:
+    type Item4<T>;
+    // Associated type with a lifetime, a generic type parameter, and a const generic:
+    type Item5<'a, T, const N: usize>;
+    // Associated type with a `where` bound:
+    type Item6<T>
+    where
+        T: Clone;
+}
+```
+
+A common pattern is a generic trait, with a generic type parameter with a default, plus an associated type for the output.
+The use of an associated type eliminates the need to write generic type parameters in many places:
+
+```rust,noplayground
+/// A trait that represents the ability to add two values together.
+/// Similar to `core::ops::Add`.
+trait Add<Rhs = Self> {
+    /// The type of the result of the addition.
+    type Output;
+
+    /// Adds two values together.
+    fn add(self, rhs: Rhs) -> Self::Output;
+}
+```
+
+### Define Associated Constants in Traits {#constants-in-traits}
+
+Traits can also define constants that implementing types can use. Associated constants may omit the equals sign and expression to indicate implementations must define the constant value:
+
+```rust,editable
+{{#include ../../crates/language/tests/traits/const_in_traits.rs:example}}
+```
+
+## Require that a Type Implement Other Traits (with Supertraits) {#supertraits}
 
 A trait can require that implementing types also implement other traits. These are called supertraits:
 
@@ -29,7 +93,7 @@ A trait can require that implementing types also implement other traits. These a
 ## Implement a Local Trait for a Type Defined Elsewhere {#traits-types-elsewhere}
 
 You can implement a trait defined in your crate {{hi:Traits}} on types defined outside of it - simply by writing a `impl` block.
-This is often used to extend the functionality of an external type:
+This is often used to extend the functionality of an external (e.g., standard library) type:
 
 ```rust,editable
 {{#include ../../crates/language/tests/traits/extend_external_type.rs:example}}
@@ -45,103 +109,35 @@ The newtype pattern involves creating a new local type (typically, a tuple struc
 {{#include ../../crates/language/tests/traits/newtype.rs:example}}
 ```
 
-## Trait Bounds {#trait-bounds}
+## Prohibit Trait Implementation with the Sealed Trait Pattern {#sealed-trait-pattern}
 
-Trait bounds TODO
+The sealed trait pattern is a way to prevent crates from implementing a trait that they don't own. This allows the author of the trait to add new items to it in the future without that being a breaking change for downstream users.
 
-```rust,editable
-{{#include ../../crates/language/tests/traits/trait_bounds.rs:example}}
-```
-
-Traits can be used as bounds to generic parameters of a functions, allowing the function to accept any type that implements the specified trait.
-
-```rust,editable
-{{#include ../../crates/language/tests/traits/traits_as_parameters.rs:example}}
-```
-
-### Multiple Traits {#multiple-traits}
-
-Trait bounds with multiple traits TODO
-
-```rust,editable
-{{#include ../../crates/language/tests/traits/multiple_traits.rs:example}}
-```
-
-## Simplify Method Signatures with `impl Trait` {#impl-trait}
-
-`impl Trait` specifies an unnamed but concrete type that implements a specific trait. It can only appear in argument position (where it can act as an anonymous type parameter to functions) and in return position (where it can act as an opaque return type).
-
-`impl Trait` is essentially syntactic sugar for a generic type parameter like `<T: Trait>`, except that, in argument position, the type is anonymous and doesn't appear in the generic parameter list of a function. In return position, unlike with a generic type parameter, the function, not the caller, chooses the return type.
-
-Do not confuse `impl Trait` with `dyn Trait`. The [[trait_objects | Trait Objects]] chapter explains the difference.
-
-```rust,editable
-TODO
-```
-
-## Return-position `impl` Trait {#return-position-impl-trait}
-
-You can use `impl Trait` in the return type of a function to indicate that the function returns a type that implements a specific trait, without specifying the exact type.
-
-This is useful when the exact type is complex or not relevant to the caller.
-
-```rust,editable
-{{#include ../../crates/language/tests/traits/rpit.rs:example}}
-```
-
-## Generic Traits {#write-generic-traits}
-
-Traits can be generic, meaning they can have type parameters. This allows you to define traits that work with different types.
-
-```rust,editable
-{{#include ../../crates/language/tests/traits/generic_traits.rs:example}}
-```
-
-## Associated Types in Traits {#associated-types}
-
-Traits can have associated types, which are types that are associated with the trait and can be used in its methods.
-
-```rust,editable
-{{#include ../../crates/language/tests/traits/associated_types.rs:example}}
-```
-
-A common pattern is a generic type (with a default) and an associated type.
-The use of an associated type eliminates the need to write generic type parameters in many places.
-
-```rust,noplayground
-/// A trait that represents the ability to add two values together.
-trait Add<Rhs = Self> {
-    /// The type of the result of the addition.
-    type Output;
-
-    /// Adds two values together.
-    fn add(self, rhs: Rhs) -> Self::Output;
-}
-```
-
-## Associated Constants in Traits {#constants-in-traits}
-
-Traits can also define constants that implementing types can use.
-
-```rust,editable
-{{#include ../../crates/language/tests/traits/const_in_traits.rs:example}}
-```
-
-## Sealed Trait Pattern {#sealed-trait-pattern}
+This is typically achieved by defining a public trait that has a dependency on another "sealer" trait which is kept private to the crate. Because the sealer trait is not accessible outside of the crate, no downstream crate can satisfy the necessary trait bounds to implement the public-facing trait. More recently, the `#[sealed]` attribute has been introduced as a more direct and cleaner way to apply this pattern:
 
 ```rust,editable
 {{#include ../../crates/language/tests/traits/sealed_trait_pattern.rs:example}}
 ```
 
-## Blanket Implementations {#blanket-implementations}
+## Provide a Blanket Implementation of a Trait {#blanket-implementations}
+
+A "blanket implementation" implements a trait for any type that satisfies a given set of trait bounds. This allows for broad, generic functionality to be applied across a wide range of different types automatically, promoting code reuse and extensibility. A well-known example in Rust's standard library is the implementation of the `ToString` trait for any type that implements the `Display` trait, allowing any displayable type to be converted into a string.
+
+Beware that blanket `impl` apply globally and can lead to conflicts if overused.
 
 ```rust,editable
 {{#include ../../crates/language/tests/traits/blanket_implementations.rs:example}}
 ```
 
-Blanket `impl` apply globally and can lead to conflicts if overused.
+## Define Generic Traits {#generic-traits}
 
-## Async and Traits {#async-and-traits}
+This topic is covered in the [[generics | Generics]] chapter.
+
+## Pass or Return Anonymous Types to Functions with `impl Trait` {#impl-trait}
+
+This topic is covered in the [[impl_trait | Impl Trait]] chapter.
+
+## Use Async with Traits {#async-and-traits}
 
 This topic is covered in the [Async][p-async]⮳ chapter.
 
@@ -149,6 +145,7 @@ This topic is covered in the [Async][p-async]⮳ chapter.
 
 - [[enums | Enums]].
 - [[generics | Generics]].
+- [[impl_trait | impl Trait]].
 - [[structs | Structs]].
 - [[trait_objects | Trait Objects]].
 - [[rust-patterns | Rust Patterns]].
