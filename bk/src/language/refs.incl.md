@@ -42,6 +42,7 @@
 [ex-language-if-else]: control_flow.md#if-else
 [ex-language-if-let]: match.md#if-let
 [ex-language-immutability]: variables.md#immutability
+[ex-language-impl-trait]: impl_trait.md#impl-trait
 [ex-language-implement-intoiterator]: iterators.md#implement-intoiterator
 [ex-language-implement-trait-for-struct]: structs.md#implement-trait-for-struct
 [ex-language-iterator-conventions]: naming_conventions.md#iterator-conventions
@@ -73,10 +74,11 @@
 [ex-language-production-code-attributes]: attributes.md#production-code-attributes
 [ex-language-references]: ownership_borrowing.md#references
 [ex-language-return-an-iterator]: iterators.md#return-an-iterator
-[ex-language-return-position-impl-trait]: traits.md#return-position-impl-trait
+[ex-language-return-position-impl-trait]: impl_trait.md#return-position-impl-trait
 [ex-language-return-reference]: functions.md#return-reference
 [ex-language-rust-install]: rust_install.md#rust-install
 [ex-language-scalar-data-types]: data_types.md#scalar-data-types
+[ex-language-self-referential-structs]: lifetimes.md#self-referential-structs
 [ex-language-shadowing]: variables.md#shadowing
 [ex-language-slices]: slices.md#slices
 [ex-language-static-lifetime]: lifetimes.md#static-lifetime

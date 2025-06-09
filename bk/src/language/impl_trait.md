@@ -14,7 +14,7 @@
 
 Do not confuse `impl Trait` with `dyn Trait`. The [[trait_objects | Trait Objects]] chapter explains the difference.
 
-## Return Opaque Types, esp. Closures, and Iterators, with Return-position `impl Trait` {#return-position-impl-trait}
+## Return Opaque Types (esp. Closures and Iterators) with Return-position `impl Trait` {#return-position-impl-trait}
 
 As discussed above, you can use `impl Trait` in the return type of a function to indicate that the function returns a type that implements a specific trait, without specifying the exact type.
 
@@ -26,6 +26,7 @@ This is useful when the exact type is complex, not relevant to the caller, or im
 
 ## Related Topics {#skip}
 
+- [[closures | Closures]].
 - [[generics | Generics]].
 - [[iterators | Iterators]].
 - [[traits | Traits]].
