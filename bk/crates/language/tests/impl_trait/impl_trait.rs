@@ -52,7 +52,8 @@ fn main() {
     // The return value implements the `Speak` trait:
     println!("The hidden dog says: {}", some_speaker.speak());
 
-    // // ERROR: mismatched types. Expected struct `Dog`, found opaque type `impl Speak`.
+    // // ERROR: mismatched types. Expected struct `Dog`, found opaque type
+    // `impl Speak`.
     // let dog: Dog = get_animal();
 }
 // ANCHOR_END: example
