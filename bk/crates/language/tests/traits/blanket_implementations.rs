@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 mod my {
     use std::fmt::Display;
 
@@ -16,13 +15,13 @@ mod my {
 }
 
 fn main() {
-    // Don't forget to bring the trait in scope.
+    // Don't forget to bring the trait in scope:
     use my::VeryUsefulTrait;
 
     let s = String::from("Hello, world!");
 
     // There is no need for an individual implementation
-    // of `VeryUsefulTrait` for String.
+    // of `VeryUsefulTrait` for `String`, since it implements `Display`:
     println!("{}", s.my_method());
 }
 // ANCHOR_END: example

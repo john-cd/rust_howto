@@ -9,5 +9,6 @@ mod sealed_trait_pattern;
 mod supertraits;
 mod trait_bounds;
 mod trait_default_implementation;
+mod trait_types;
 mod traits;
 mod traits_as_parameters;

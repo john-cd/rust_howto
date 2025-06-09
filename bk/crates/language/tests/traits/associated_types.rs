@@ -4,11 +4,12 @@
 /// library).
 trait Iterator {
     /// This associated type is the type of the elements yielded by the
-    /// iterator.
+    /// iterator. You can't provide a default implementation at this point.
     type Item;
 
-    /// Returns the next element in the iterator, or `None` if the iterator is
-    /// exhausted. Note the use of `Self::` to refer to the associated type.
+    /// A method to return the next element in the iterator, or `None` if the
+    /// iterator is exhausted. Note the use of `Self::` to refer to the
+    /// associated type.
     fn next(&mut self) -> Option<Self::Item>;
 }
 
@@ -17,6 +18,7 @@ struct MyIterator(u32);
 // We implement the trait for a given struct...
 impl Iterator for MyIterator {
     // ...and define what associated type should be used here.
+    // You can use `Self` in the associated type definition.
     type Item = u32;
 
     fn next(&mut self) -> Option<Self::Item> {
