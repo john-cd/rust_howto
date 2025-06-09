@@ -11,24 +11,25 @@ trait Greet: Message {
     }
 }
 
-// An example struct:
+// An example struct that implements `Greet`:
 struct Person {
     name: String,
 }
 
+impl Greet for Person {}
+
+// The struct must also implement the supertrait:
 impl Message for Person {
     fn message(&self, msg: &str) -> String {
         format!("{}: {msg}", self.name)
     }
 }
 
-impl Greet for Person {}
-
 // This function takes a trait object.
 fn say_hello_and_goodbye(entity: &dyn Greet) {
     println!("{}", entity.greet());
 
-    // Because `Greet` has Message as a supertrait,
+    // Because `Greet` has `Message` as a supertrait,
     // we can also call `Message`'s methods.
     println!("{}", entity.message("Goodbye."));
 }

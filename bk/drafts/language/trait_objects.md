@@ -28,10 +28,8 @@ The following example demonstrates the use of trait objects to store a heterogen
 
 Note the following:
 
-- Dynamic dispatch incurs a small runtime overhead. There is an indirection when calling a method: first, the vtable pointer is dereferenced, then the method pointer within the vtable is dereferenced and called. This indirection can sometimes hinder compiler optimizations like inlining.
-- Compared to generic types, trait objects can lead to smaller compiled binary sizes, because specialized (monomorphized) code is not generated for each concrete type; the trait-handling code is reused.
-- Type Information: The concrete type is "erased" at compile time for the part of the code holding the trait object. The code only knows it has something that implements e.g. `Animal`.
-- Object Safety: Traits must be "dyn-compatible" a.k.a. "object-safe" to be made into trait objects (see below).
+- Type information erasure: The concrete type is "erased" at compile time for the part of the code holding the trait object. The code only knows it has something that implements a trait.
+- Object safety: Traits must be "dyn-compatible" (a.k.a. "object-safe") to be made into trait objects (see below).
 
 ## Decide When to Use Trait Objects (and When Not To) {#when-to-use-trait-objects}
 
@@ -52,7 +50,7 @@ for animal in animals {
 }
 ```
 
-- You want to return different concrete types implementing the same trait from a function, and the caller doesn't need to know the specific concrete type
+- You want to return different concrete types implementing the same trait from a function, and the caller doesn't need to know the specific concrete type:
 
 ```rust,editable,noplayground
 fn get_animal(is_dog: bool) -> Box<dyn Animal> {
@@ -68,11 +66,12 @@ my_dog.make_noise();
 ```
 
 - You are implementing a plugin system where the types of plugins are not known at compile time.
-- You need to reduce compile times or binary size in situations where monomorphization (from generics) would lead to excessive code generation.
+- You need to reduce compile times or binary size. Compared to generic types, trait objects can lead to smaller compiled binary sizes, because specialized (monomorphized) code is not generated for each concrete type; the trait-handling code is reused.
 
 Consider alternatives (like generics or enums) when:
 
-- Performance is absolutely critical and the overhead of dynamic dispatch is unacceptable (profile first!).
+- Performance is absolutely critical and the overhead of dynamic dispatch is unacceptable (profile first!). Dynamic dispatch incurs a small runtime overhead. As discussed above, there is an indirection when calling a method: first, the vtable pointer is dereferenced, then the method pointer within the vtable is dereferenced and called. This indirection can sometimes hinder compiler optimizations like inlining.
+
 - You have a _small, fixed_ set of types that can implement the behavior. An enum with methods might be simpler and offer static dispatch:
 
 ```rust,editable
@@ -93,7 +92,7 @@ impl Shape {
 
 ## Static Dispatch vs. Dynamic Dispatch {#static-dispatch-vs-dynamic-dispatch}
 
-Trait objects enable dynamic dispatch. This means that the decision of which concrete method implementation to call is made _at runtime_, rather than at compile time. This is in contrast to static dispatch, which Rust uses with generics, where the compiler generates specialized code for each concrete type used with a generic function or struct.
+Trait objects enable _dynamic dispatch_. This means that the decision of which concrete method implementation to call is made _at runtime_, rather than at compile time. This is in contrast to _static dispatch_, which Rust uses with generics (and `impl Trait`, see below), where the compiler generates specialized code for each concrete type used by a generic item.
 
 | Feature | Static Dispatch (Generics) | Dynamic Dispatch (Trait Objects) |
 |---------|----------------------------|---------------------------------|
@@ -106,47 +105,63 @@ Trait objects enable dynamic dispatch. This means that the decision of which con
 
 ### `impl Trait` vs `dyn Trait` {#impl-trait-vs-dyn-trait}
 
+`impl Trait`, where `impl` is a keyword and `Trait` is a trait name, specifies an unnamed but concrete type that implements a specific trait.
+
 Both `impl Trait` and `dyn Trait` allow you to work with types that implement a particular trait, providing a form of abstraction or polymorphism. However, they differ significantly in how they achieve this: `impl Trait` uses static dispatch (method calls are resolved at compile time); `dyn Trait` uses dynamic dispatch (resolved at run time).
 
-See [[impl_trait | Impl Trait]] and [[traits | Traits]] for more details.
+See [[impl_trait | Impl Trait]] for more details.
 
 ## Trait Object Restrictions {#skip}
 
-The following is an advanced topic. Consult it if the compiler rejects your trait object definitions.
+### Trait Objects Can Have Only One Base Trait {#only-one-base-trait}
+
+Trait objects can implement _only one_ base [trait][p-traits]. If you need a trait object for two or more traits, create a new trait that e.g. uses them as supertraits.
+
+Note, however, two exceptions:
+
+- Types that implement a trait must implement its supertraits.{{hi:Supertraits}} As a result, you can call supertrait methods on a trait object:
+
+```rust,editable
+{{#include ../../crates/language/tests/trait_objects/dyn_supertraits.rs:example}}
+```
+
+- Trait objects can include "auto traits".{{hi:Autotraits}}{{hi:Auto traits}}
+
+Auto traits are [special traits][book-rust-reference-special-traits]⮳, one of [`std::marker::Send`][c-std::marker::Send]{{hi:std::marker::Send}}⮳, [`std::marker::Sync`][c-std::marker::Sync]{{hi:std::marker::Sync}}⮳, [`std::marker::Unpin`][c-std::marker::Unpin]{{hi:std::marker::Unpin}}⮳, [`std::panic::UnwindSafe`][c-std::panic::UnwindSafe]{{hi:std::panic::UnwindSafe}}⮳, and [`std::panic::RefUnwindSafe`][c-std::panic::RefUnwindSafe]{{hi:std::panic::RefUnwindSafe}}⮳. The compiler automatically implements these autotraits for types if certain conditions are met.
+
+For example, the following are valid trait objects:
+
+```rust,compile_fail,noplayground
+dyn Trait // Base trait.
+dyn Trait + Send // Base + autotrait. The order does not matter.
+dyn Trait + Send + Sync // Base + autotraits.
+dyn Trait + 'static // There may be also (at most) one lifetime parameter.
+```
+
+Common examples include `Send` and `Sync` for thread safety. A type is `Send` if it can be safely sent to another thread, and `Sync` if it can be safely shared between threads. To use a trait object in a multithreaded environment, you will often need one or both of these autotraits:
+
+```rust,editable
+{{#include ../../crates/language/tests/trait_objects/dyn_autotraits.rs:example}}
+```
 
 ### Dyn Compatibility / Object Safety {#dyn-compatibility}
 
-Only a trait that is "dyn-compatible" (or ["object-safe"][book-rust-reference-object-safe]⮳) can be made into a trait object. The main rules for dyn compatibility are:
+Only a trait that is "dyn-compatible" (or "object-safe") can be made into a trait object. The rules for dyn compatibility are rather complicated, constraining both the trait and the methods within, and (as of June 2025) not consistently documented in the [Rust reference][book-rust-reference-object-safe]⮳. When designing a trait for use in a trait object, let the compiler's error messages guide you.
 
-- All methods must not have `Self` as a return type. If a method returns `Self`, the compiler wouldn't know the concrete size of `Self` at runtime when dealing with a trait object. `Box<Self>` is allowed.
-- All methods must not use generic type parameters. If a method had a generic type parameter (e.g., `fn foo<T>(&self, arg: T)`), the compiler couldn't fill in the concrete type for `T` at runtime.
-- The trait itself cannot require `Self: Sized`. Trait objects are inherently `!Sized` (dynamically sized types), because their concrete type isn't known at compile time. Note that most methods in a trait implicitly have a `Self: Sized` bound on `Self`. You can relax this with `fn method_name(&self) where Self: ?Sized;`.
+The dyn compatibility restrictions stem from the fact that trait objects are inherently `!Sized` (dynamically sized types), because their concrete type (`Self`) isn't known at compile time:
+
+- The underlying trait cannot require `Self: Sized`.
+- All methods must not have `Self` as a return type. If a method returns `Self`, the compiler wouldn't know the concrete size of `Self` at runtime when dealing with a trait object.
+- All methods must not use generic type parameters. Generics are not compatible with vtables. If a method had a generic type parameter (e.g., `fn foo<T>(&self, arg: T)`), the compiler couldn't fill in the concrete type for `T` at runtime.
+- For the same reason, opaque return type (impl Trait, `async fn`) are not allowed.
+
+In addition,
+
+- The trait must not have any associated constant or any associated type with generics.
 - All supertraits, if any, must also be dyn-compatible.
 
 ```rust
 {{#include ../../crates/language/tests/trait_objects/dyn_compat.rs:example}}
-```
-
-### Trait Objects Can Have Only One Base Trait {#only-one-base-trait}
-
-Trait objects can implement only one base [trait][p-traits]. They however can include auto traits and a lifetime parameter.{{hi:Autotraits}}
-
-Auto traits are [special traits][book-rust-reference-special-traits]⮳, one of [`std::marker::Send`][c-std::marker::Send]{{hi:std::marker::Send}}⮳, [`std::marker::Sync`][c-std::marker::Sync]{{hi:std::marker::Sync}}⮳, [`std::marker::Unpin`][c-std::marker::Unpin]{{hi:std::marker::Unpin}}⮳, [`std::panic::UnwindSafe`][c-std::panic::UnwindSafe]{{hi:std::panic::UnwindSafe}}⮳, and [`std::panic::RefUnwindSafe`][c-std::panic::RefUnwindSafe]{{hi:std::panic::RefUnwindSafe}}⮳. `Sync` and `Send`, in particular, are useful in multithreaded environments.
-
-For example, the following are valid trait objects:
-
-```rust,editable,compile_fail,noplayground
-dyn Trait // Base trait.
-dyn Trait + Send // Base + autotrait. The order does not matter.
-dyn Trait + Send + Sync // Base + autotraits.
-dyn Trait + 'static // There may be at most one lifetime parameter.
-```
-
-Note that types that implement a trait must implements its supertraits.{{hi:Supertraits}}
-As a result, you can call supertrait methods on a trait object:
-
-```rust
-{{#include ../../crates/language/tests/trait_objects/dyn_supertraits.rs:example}}
 ```
 
 ## See Also {#skip}
@@ -157,7 +172,4 @@ As a result, you can call supertrait methods on a trait object:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO review
-review in depth Dyn Compatibility https://doc.rust-lang.org/reference/items/traits.html#dyn-compatibility
-example of use of a trait object with autotraits and/or a lifetime
 </div>
