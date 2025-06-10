@@ -135,7 +135,10 @@ For example, the following are valid trait objects:
 dyn Trait // Base trait.
 dyn Trait + Send // Base + autotrait. The order does not matter.
 dyn Trait + Send + Sync // Base + autotraits.
-dyn Trait + 'static // There may be also (at most) one lifetime parameter.
+
+// Note: there may be also (at most one) lifetime parameter:
+dyn Trait + 'static
+dyn Trait + Send + 'static
 ```
 
 Common examples include `Send` and `Sync` for thread safety. A type is `Send` if it can be safely sent to another thread, and `Sync` if it can be safely shared between threads. To use a trait object in a multithreaded environment, you will often need one or both of these autotraits:

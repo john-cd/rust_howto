@@ -16,3 +16,4 @@
 | [Pass or Return Anonymous Types to Functions with `impl Trait`][ex-language-impl-trait] |
 | [Prohibit Trait Implementation with the Sealed Trait Pattern][ex-language-sealed-trait-pattern] |
 | [Implement a Local Trait for a Type Defined Elsewhere][ex-language-traits-types-elsewhere] |
+| [Define Generic Traits][ex-language-write-generic-traits] |

@@ -5,6 +5,7 @@
 [ex-language-async-main-function]: entrypoint.md#async-main-function
 [ex-language-attribute]: attributes.md#attribute
 [ex-language-attributes]: attributes.md#attribute
+[ex-language-blanket-implementations]: traits.md#blanket-implementations
 [ex-language-borrowing]: ownership_borrowing.md#borrowing
 [ex-language-cfg-if]: attributes.md#cfg-if
 [ex-language-clone]: ownership_borrowing.md#clone
@@ -27,6 +28,7 @@
 [ex-language-deprecated]: attributes.md#deprecated
 [ex-language-destructuring]: variables.md#destructuring
 [ex-language-diverging-functions]: functions.md#diverging-functions
+[ex-language-dyn-compatibility]: trait_objects.md#dyn-compatibility
 [ex-language-early-development-attributes]: attributes.md#early-development-attributes
 [ex-language-enum]: enums.md#enum
 [ex-language-enums]: enums.md
@@ -36,12 +38,13 @@
 [ex-language-generic-enums]: generics.md#generic-enums
 [ex-language-generic-functions]: generics.md#generic-functions
 [ex-language-generic-structs]: generics.md#generic-structs
-[ex-language-generic-traits]: generics.md#generic-traits
+[ex-language-generic-traits]: traits.md#generic-traits
 [ex-language-generics]: generics.md
 [ex-language-getter-conventions]: naming_conventions.md#getter-conventions
 [ex-language-if-else]: control_flow.md#if-else
 [ex-language-if-let]: match.md#if-let
 [ex-language-immutability]: variables.md#immutability
+[ex-language-impl-trait-vs-dyn-trait]: trait_objects.md#impl-trait-vs-dyn-trait
 [ex-language-impl-trait]: impl_trait.md#impl-trait
 [ex-language-implement-intoiterator]: iterators.md#implement-intoiterator
 [ex-language-implement-trait-for-struct]: structs.md#implement-trait-for-struct
@@ -68,6 +71,7 @@
 [ex-language-mutable-reference]: ownership_borrowing.md#mutable-reference
 [ex-language-naming-conventions]: naming_conventions.md#naming-conventions
 [ex-language-newtype-pattern]: traits.md#newtype-pattern
+[ex-language-only-one-base-trait]: trait_objects.md#only-one-base-trait
 [ex-language-overflow-handling]: data_types.md#overflow-handling
 [ex-language-ownership]: ownership_borrowing.md#ownership
 [ex-language-ownership_borrowing]: ownership_borrowing.md
@@ -78,9 +82,11 @@
 [ex-language-return-reference]: functions.md#return-reference
 [ex-language-rust-install]: rust_install.md#rust-install
 [ex-language-scalar-data-types]: data_types.md#scalar-data-types
+[ex-language-sealed-trait-pattern]: traits.md#sealed-trait-pattern
 [ex-language-self-referential-structs]: lifetimes.md#self-referential-structs
 [ex-language-shadowing]: variables.md#shadowing
 [ex-language-slices]: slices.md#slices
+[ex-language-static-dispatch-vs-dynamic-dispatch]: trait_objects.md#static-dispatch-vs-dynamic-dispatch
 [ex-language-static-lifetime]: lifetimes.md#static-lifetime
 [ex-language-statics]: constants_and_statics.md#statics
 [ex-language-string-slices]: slices.md#string-slices
@@ -92,8 +98,11 @@
 [ex-language-strum]: enums.md#strum
 [ex-language-supertraits]: traits.md#supertraits
 [ex-language-trait-bounds]: traits.md#trait-bounds
+[ex-language-trait-objects-basics]: trait_objects.md#trait-objects-basics
 [ex-language-trait-objects]: trait_objects.md#trait-objects
+[ex-language-trait]: traits.md#trait
 [ex-language-traits-as-parameters]: traits.md#traits-as-parameters
+[ex-language-traits-types-elsewhere]: traits.md#traits-types-elsewhere
 [ex-language-traits]: traits.md
 [ex-language-tuple-structs]: structs.md#tuple-structs
 [ex-language-type-aliases]: data_types.md#type-aliases
@@ -102,6 +111,7 @@
 [ex-language-use-match-to-branch-on-a-pattern]: match.md#use-match-to-branch-on-a-pattern
 [ex-language-use-slice-as-function-argument]: slices.md#use-slice-as-function-argument
 [ex-language-variables]: variables.md
+[ex-language-when-to-use-trait-objects]: trait_objects.md#when-to-use-trait-objects
 [ex-language-while-let]: match.md#while-let
 [ex-language-while]: control_flow.md#while
 [ex-language-write-generic-functions]: functions.md#write-generic-functions
