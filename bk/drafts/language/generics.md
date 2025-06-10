@@ -28,7 +28,7 @@ Lifetime parameters are used when a `struct` contains references. They are used 
 
 ## Const Generics {#const-generics}
 
-"const generics" allow you to define generic parameters that are constant values rather than types. This is useful for working with arrays of fixed sizes (to parametrize their length):
+"const generics" allow you to define generic parameters that are constant values rather than types. This is useful for working with arrays of fixed sizes (to parameterize their length):
 
 ```rust,editable
 {{#include ../../crates/language/tests/generics/const_generics.rs:example}}

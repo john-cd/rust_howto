@@ -3134,3 +3134,5 @@ bools
 TraitName
 StructName
 autoimplement
+vtables
+parameterize

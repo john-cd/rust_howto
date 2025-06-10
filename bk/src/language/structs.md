@@ -121,7 +121,7 @@ See the [[derive | Derive]] chapter for more details.
 
 ## Define Generic Structs {#define-generic-structs}
 
-Generic structs are like templates with one or more parameters, which act as placeholders to be specified later (e.g., during variable delcaration or instance creation). They are declared by adding the aforementioned parameters between `<` and `>`, after the name of the struct. Their use promote code reuse.
+Generic structs are like templates with one or more parameters, which act as placeholders to be specified later (e.g., during variable declaration or instance creation). They are declared by adding the aforementioned parameters between `<` and `>`, after the name of the struct. Their use promote code reuse.
 
 Generic structs can be parameterized by types and (more infrequently) lifetimes and constants.
 
