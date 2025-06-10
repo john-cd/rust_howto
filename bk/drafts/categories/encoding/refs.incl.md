@@ -40,6 +40,6 @@
 [p-slices]: ../../language/slices.md
 [p-structs]: ../../../src/language/structs.md
 [p-toml]: ../parser-implementations/toml.md
-[p-trait-objects]: ../../language/trait_objects.md
+[p-trait-objects]: ../../../src/language/trait_objects.md
 [p-traits]: ../../../src/language/traits.md
 [p-url]: ../web-programming/url.md

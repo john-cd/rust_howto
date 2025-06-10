@@ -25,7 +25,8 @@
   - [Closures](language/closures.md)
   - [Iterators](language/iterators.md)
   - [Traits](../src/language/traits.md)
-  - [impl Trait](language/impl_trait.md)
+  - [`impl Trait`](language/impl_trait.md)
+  - [Trait Objects](language/trait_objects.md)
 
 - [Standard Library](standard_library/index.md)
   - [Option](standard_library/option.md)
