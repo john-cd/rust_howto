@@ -30,7 +30,13 @@ Type parameters can be constrained to implement specified traits:
 {{#include ../../crates/language/tests/functions/generic_functions2.rs:example}}
 ```
 
-## Diverging Functions {#diverging-functions}
+Functions can also include one or more explicit lifetime parameters, which are also written with < and >. Generic type parameters, lifetime parameters and `const` generic parameters can be intermixed, but with lifetime parameters first.
+
+```rust,editable
+{{#include ../../crates/language/tests/generics/generic_functions3.rs:example}}
+```
+
+## Work with Diverging Functions {#diverging-functions}
 
 Functions that are guaranteed never to return (e.g., they loop forever or exit the process) have the special return type `!` (the "never" type).{{hi:Diverging functions}}
 
@@ -38,7 +44,7 @@ Functions that are guaranteed never to return (e.g., they loop forever or exit t
 {{#include ../../crates/language/tests/functions/diverging_functions.rs:example}}
 ```
 
-## Function Pointers {#function-pointers}
+## Work with Function Pointers {#function-pointers}
 
 Functions are first-class citizens in Rust. This means you can treat them like any other value: assign them to variables, pass them as arguments to other functions, etc. The type of a function pointer looks like `fn(i32) -> i32`.
 

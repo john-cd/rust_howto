@@ -40,11 +40,7 @@ See [[enums | Enums]] for more details.
 
 ## Generic Functions {#generic-functions}
 
-Generic functions allow you to write code that can operate on parameters of various types without needing to rewrite the function for each specific type:
-
-```rust,editable
-{{#include ../../crates/language/tests/generics/generic_function.rs:example}}
-```
+Generic functions allow you to write code that can operate on parameters of various types without needing to rewrite the function for each specific type.
 
 See [[functions | Functions]] for more details.
 
