@@ -32,13 +32,21 @@ impl<T: Debug> Processor<T> for TupleStruct<T> {
 }
 
 fn main() {
+    // Use generic functions:
     // `T` is `&str`.
     print_type("hello");
     // `T` is `i32`.
     print_type(42);
+
+    // Use a generic type alias:
     // `K` is `String`.
     let _map = StringMap::<String>::new();
-    // `T` is `bool`.
+    // Note the `turbofish` notation `::<...>` to specify the type parameter
+    // when it cannot be inferred. You can also write:
+    let _map2: StringMap<String> = StringMap::new();
+
+    // Use generic structs:
+    // `T` is inferred to be `bool`.
     let s = MyStruct { data: false };
     print_type(s);
     // `T` is `f64`.
