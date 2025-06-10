@@ -31,10 +31,6 @@ impl<T: Debug> Processor<T> for TupleStruct<T> {
     }
 }
 
-/// Const generic parameters allow items to be generic over constant values.
-/// Note the `const` keyword and the type declaration.
-struct InnerArray<T, const N: usize>([T; N]);
-
 fn main() {
     // `T` is `&str`.
     print_type("hello");
@@ -48,8 +44,6 @@ fn main() {
     // `T` is `f64`.
     let tuple = TupleStruct(10.0);
     println!("{}", tuple.process(10.0));
-    // The array is `[i32; 3]`.
-    let _inner_array: InnerArray<i32, 3> = InnerArray([1, 2, 3]);
 }
 // ANCHOR_END: example
 
