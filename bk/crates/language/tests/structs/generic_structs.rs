@@ -8,7 +8,7 @@ struct Point<T> {
     y: T,
 }
 
-/// Implementation block for `Point<T>` where `T` can be any type:
+/// Generic implementation block for `Point<T>` where `T` can be any type:
 impl<T> Point<T> {
     fn x(&self) -> &T {
         &self.x

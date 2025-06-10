@@ -66,7 +66,7 @@ Associated functions, in contrast, do not take `self` as a parameter. They are o
 {{#include ../../crates/language/tests/structs/struct_impl.rs:example}}
 ```
 
-Each struct is allowed to have multiple `impl` blocks. Multiple `impl` blocks are useful when implementing generic types and traits - refer to the [[generics | Generics]] and [[traits | Traits]] chapters.
+Each struct is allowed to have multiple `impl` blocks. Multiple `impl` blocks are useful when implementing generic types and traits - see below; also refer to the [[generics | Generics]] chapters.
 
 Note that Rust automatic references and dereferences when calling methods: When you call a method with `object.something()`, Rust automatically adds in `&`, `&mut`, or `*`, so object matches the signature of the method. In other words, the following are the same:
 
@@ -118,6 +118,20 @@ Rather then forcing you to implement very common traits repeatedly, Rust provide
 ```
 
 See the [[derive | Derive]] chapter for more details.
+
+## Define Generic Structs {#define-generic-structs}
+
+Generic structs are like templates with one or more parameters, which act as placeholders to be specified later (e.g., during variable delcaration or instance creation). They are declared by adding the aforementioned parameters between `<` and `>`, after the name of the struct. Their use promote code reuse.
+
+Generic structs can be parameterized by types and (more infrequently) lifetimes and constants.
+
+The following example demonstrates the declaration, implementation, and instance creation of a generic struct with a type parameter `T`.
+
+Note how multiple `impl` blocks are possible; they can implement associated functions and methods for all possible `T`s; for specific types only; or conditionally, only for types that implement certain traits. See [[generics | Generics]] for more details.
+
+```rust,editable
+{{#include ../../crates/language/tests/structs/generic_structs.rs:example}}
+```
 
 ## References {#skip}
 
