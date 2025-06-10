@@ -42,7 +42,7 @@ Lifetime parameters can be added to function or method signatures, struct defini
 Lifetime parameters are listed in angle brackets (e.g. `<'a>`), usually immediately after the name of the item. Lifetime parameters are a form of [[generics | generics]]. Lifetime parameters, type parameters, and const generics can be intermixed within `<...>`. Lifetime parameters should appear before any generic type and const parameters (e.g. `<'a, T, const N: usize>`):
 
 ```rust,editable
-{{#include ../../crates/language/tests/lifetimes/lifetime_parameter.rs:example}}
+{{#include ../../crates/language/tests/lifetimes/lifetime_parameters.rs:example}}
 ```
 
 ### Use Lifetime Parameters in Functions {#lifetimes-in-functions}
