@@ -4,8 +4,13 @@
 
 ## Cheatsheets {#cheatsheets}
 
-- [cheats.rs][cheats-rs-website]{{hi:Cheat sheets}}⮳ [(GitHub)](https://github.com/ralfbiedert/cheats.rs)⮳.
+- [`cheats.rs`][cheats-rs-website]{{hi:Cheat sheets}}⮳ [(GitHub)](https://github.com/ralfbiedert/cheats.rs)⮳.
 - [Rust for professionals][rust-for-professionals-website]⮳.
+- [Rust Cheatsheet (cheatsheets.one)](https://cheatsheets.one/tech/rust)⮳.
+- [Rust Cheatsheet (phaiax)](https://phaiax.github.io/rust-cheatsheet)⮳.
+- [Rust Cheatsheet (programming-idioms.org)](https://www.programming-idioms.org/cheatsheet/Rust)⮳.
+- [Rust Cheatsheet (zerotomastery.io)](https://zerotomastery.io/cheatsheets/rust-cheat-sheet)⮳.
+- [The Complete(ish) Rust Cheat Sheet](https://dev.to/moekatib/the-completesh-rust-cheat-sheet-4fnn)⮳.
 
 ## Comparison to Other Languages {#comparison-to-other-languages}
 
@@ -16,5 +21,4 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[rust_cheatsheets: add more NOW](https://github.com/john-cd/rust_howto/issues/570)
 </div>
