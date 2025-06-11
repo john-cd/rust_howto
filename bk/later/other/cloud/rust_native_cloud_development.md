@@ -23,8 +23,8 @@ It offers a free tier with access to essential features for individual developer
 
 ## References
 
-- [`shuttle`][launchpad-shuttle.dev]⮳{{hi:shuttle}}
-- [docs.shuttle.dev][docs-shuttle-rs]{{hi:shuttle.rs}}
+- [`shuttle.dev`][shuttle-dev-website]⮳{{hi:shuttle}}
+- [docs.shuttle.dev][docs-shuttle-dev]{{hi:shuttle.dev}}
 - [Shuttle examples][shuttle-examples-github]
 
 ## Related Topics

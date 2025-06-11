@@ -495,7 +495,7 @@
 [l2-norm]: http://mathworld.wolfram.com/L2-Norm.html
 [lakesail-website]: https://lakesail.com
 [lapce-website]: https://lap.dev/lapce
-[launchpad-shuttle.dev]: https://www.shuttle.dev/launchpad
+[launchpad-shuttle-dev-website]: https://www.shuttle.dev/launchpad
 [lechevspace-github]: https://github.com/LechevSpace
 [lechevspace-website]: https://lechev.space
 [lemmy-github]: https://github.com/LemmyNet/lemmy
@@ -507,7 +507,6 @@
 [linebender-website]: https://linebender.org
 [linkerd-website]: https://linkerd.io
 [linux-embracing-rust-will-boost-robotics-community]: https://www.therobotreport.com/linux-embracing-rust-will-boost-robotics-community
-[linz.coderdojo.net]: https://linz.coderdojo.net
 [lld-website-badge]: https://img.shields.io/badge/lld-coral
 [lld-website]: https://lld.llvm.org
 [locahost:6080]: http://localhost:6080
@@ -701,7 +700,7 @@
 [rust-learning-github-badge]: https://img.shields.io/badge/rust_learning-steelblue?logo=github
 [rust-learning-github]: https://github.com/ctjhoa/rust-learning
 [rust-learning-linked-lists-website]: https://rust-unofficial.github.io/too-many-lists/index.html
-[rust-linz.at]: https://rust-linz.at
+[rust-linz-website]: https://rust-linz.at
 [rust-module-system-website]: https://www.sheshbabu.com/posts/rust-module-system
 [rust-on-nails-website-badge]: https://img.shields.io/badge/rust_on_nails-coral
 [rust-on-nails-website]: https://rust-on-nails.com
@@ -734,7 +733,7 @@
 [rustdesk-github]: https://github.com/rustdesk
 [rustdesk-website]: https://rustdesk.com
 [rustfmt.toml]: https://rust-lang.github.io/rustfmt
-[rustmagazine.org]: https://rustmagazine.org
+[rustmagazine-website]: https://rustmagazine.org
 [rustnl-website]: https://rustnl.org
 [rustpython-github]: https://github.com/RustPython/RustPython
 [rustrover-website]: https://www.jetbrains.com/rust
@@ -756,7 +755,7 @@
 [shield-io-website]: https://shields.io
 [shopify-website]: https://www.shopify.com
 [shuttle-examples-github]: https://github.com/shuttle-hq/shuttle-examples
-[shuttle-rs-website]: https://www.shuttle.rs
+[shuttle-dev-website]: https://www.shuttle.dev
 [simdjson-github]: https://github.com/simdjson/simdjson
 [slowtec-website]: http://www.slowtec.de
 [smartthings-website]: http://www.smartthings.com

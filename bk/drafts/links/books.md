@@ -18,7 +18,8 @@
 - [Writing Interpreters in Rust: a Guide][writing-interpreters-in-rust]{{hi:Interpreters}}⮳.
 - [Asynchronous Programming in Rust][book-asynchronous-programming-in-rust]⮳.
 - The [`rustdoc` book][book-rustdoc]⮳.
-- [Rust Atomics and Locks by Mara Bos][book-rust-atomics]⮳.
+- [Rust Atomics and Locks][book-rust-atomics]⮳.
+- [LukeMathWalker/zero-to-production: Code for \"Zero To Production In Rust\", a book on API development using Rust][book-zero-to-production]⮳ [![zero-to-production-github][book-zero-to-production-github-badge]][book-zero-to-production-github].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

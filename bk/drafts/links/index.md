@@ -4,16 +4,16 @@
 
 |||
 |---|---|
-| [`rust-lang.org`][rust]⮳ | Official website for the Rust programming language |
-| [The Rust Programming Language][book-rust]⮳ | "The Rust Book" |
-| [`crates.io`][crates.io-website]⮳ | The official crate (library) registry |
-| [`crates.io`'s categories][crates.io-category_slugs]⮳ | List of categories on [`crates.io`][crates.io-website]{{hi:crates.io}}⮳ - search with `category:<category-slug>` |
-| [`lib.rs`][lib-rs]⮳ | Curated, unofficial alternative to [`crates.io`][crates.io-website]{{hi:crates.io}}⮳ |
-| [`docs.rs`][docs-rs]⮳ | The central documentation website for Rust crates |
-| [`blessed.rs`][blessed-rs-website]⮳ | Unofficial guide to (the best of) the Rust ecosystem |
-| [`github.com`][github-website]⮳ | The home of most Rust code repositories |
+| [`rust-lang.org`][rust]⮳ | Official website for the Rust programming language. |
+| [The Rust Programming Language][book-rust]⮳ | "The Rust Book". |
+| [`crates.io`][crates.io-website]⮳ | The official crate (library) registry. |
+| [`crates.io`'s categories][crates.io-category_slugs]⮳ | List of categories on [`crates.io`][crates.io-website]{{hi:crates.io}}⮳ - search with `category:<category-slug>`. |
+| [`lib.rs`][lib-rs]⮳ | Curated, unofficial alternative to [`crates.io`][crates.io-website]{{hi:crates.io}}⮳. |
+| [`docs.rs`][docs-rs]⮳ | The central documentation website for Rust crates. |
+| [`blessed.rs`][blessed-rs-website]⮳ | Unofficial guide to (the best of) the Rust ecosystem. |
+| [`github.com`][github-website]⮳ | The home of most Rust code repositories. |
 
-## Lists of Links
+## Links and Resources
 
 {{#include links.incl.md}}
 
@@ -25,15 +25,23 @@
 
 {{#include learning.incl.md}}
 
-### Books
+## Books
 
 {{#include books.incl.md}}
 
-### Blogs, Podcasts, Meetups
+## Blogs
 
-{{#include blogs_podcasts_meetups.incl.md}}
+{{#include blogs.incl.md}}
 
-### Example Code
+## Videos, Podcasts
+
+{{#include videos.incl.md}}
+
+## Meetings & Events
+
+{{#include meetings.incl.md}}
+
+## Example Code
 
 {{#include example_code.incl.md}}
 
