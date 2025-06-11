@@ -1,8 +1,8 @@
 [ex-links-books]: books.md#books
 [ex-links-cheat-sheets]: learning.md#cheat-sheets
-[ex-links-cheatsheets]: rust_cheatsheets.md#cheatsheets
+[ex-links-cheatsheets]: ./rust_cheatsheets.md#cheatsheets
 [ex-links-companies]: companies.md#companies
-[ex-links-comparison-to-other-languages]: rust_cheatsheets.md#comparison-to-other-languages
+[ex-links-comparison-to-other-languages]: ./rust_cheatsheets.md#comparison-to-other-languages
 [ex-links-courses]: learning.md#courses
 [ex-links-example-code]: example_code.md#example-code
 [ex-links-examples]: learning.md#examples
@@ -27,7 +27,7 @@
 [p-benchmarking]: # "../categories/development-tools_profiling/benchmarking.md"
 [p-building]: # "../categories/development-tools_cargo-plugins/building.md"
 [p-cloud]: # "../other/cloud/index.md"
-[p-crates]: ../crate_selection/index.md
+[p-crates]: ../../drafts/crate_selection/index.md
 [p-cross-platform]: # "../other/cross-platform/index.md"
 [p-cryptography]: # "../categories/cryptography/index.md"
 [p-database]: # "../categories/database/index.md"
@@ -39,8 +39,8 @@
 [p-generics]: # "../language/generics.md"
 [p-java]: # "../categories/development-tools_ffi/java.md"
 [p-language]: # "../language/index.md"
-[p-learning]: ./learning.md
-[p-links]: ./index.md
+[p-learning]: learning.md
+[p-links]: index.md
 [p-linux]: # "../categories/os_linux-apis/linux.md"
 [p-log]: # "../categories/development-tools_debugging/log.md"
 [p-machine-learning]: # "../categories/science/machine_learning.md"

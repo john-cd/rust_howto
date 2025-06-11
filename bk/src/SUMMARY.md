@@ -40,6 +40,9 @@
 
 ---
 
+- [Links]()
+  - [Cheat Sheets](links/rust_cheatsheets.md)
+
 - [Contributing]()
   - [Topics of Interest](contributing/topics_of_interest.md)
 
