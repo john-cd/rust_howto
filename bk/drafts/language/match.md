@@ -6,7 +6,7 @@
 
 [![Rust by example - match][book-rust-by-example-match-badge]][book-rust-by-example-match]{{hi:match}}
 
-## Use `match` to Branch on a Pattern {#use-match-to-branch-on-a-pattern}
+### Use `match` to Branch on a Pattern {#use-match-to-branch-on-a-pattern}
 
 The following code demonstrates pattern matching against an enumeration (enum):
 
