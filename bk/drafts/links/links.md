@@ -2,29 +2,29 @@
 
 {{#include links.incl.md}}
 
-## Core Websites {#}
+## Core Websites {#core-websites}
 
-- [`rust-lang.org`][rust]⮳:
-- [`crates.io`][crates.io-website]⮳:
-- [`docs.rs`][docs-rs]⮳:
-- [`lib.rs`][lib-rs]⮳:
-- [`blessed.rs`][blessed-rs-website]⮳:
-- [`github.com`][github-website]⮳:
+- [`rust-lang.org`][rust]⮳.
+- [`crates.io`][crates.io-website]⮳.
+- [`docs.rs`][docs-rs]⮳.
+- [`lib.rs`][lib-rs]⮳.
+- [`blessed.rs`][blessed-rs-website]⮳.
+- [`github.com`][github-website]⮳.
+- The [Rust Foundation](https://rustfoundation.org)⮳.
 
-## Lists and Links {#lists}
+## Links and Resources {#}
 
 - [`Awesome Rust`][awesome-rust-github]⮳: a curated list of Rust code and resources.
-- [Rust Learning][rust-learning-github]⮳: a bunch of [links][p-links] to blog posts, articles, videos, etc for learning Rust [![rust-learning][rust-learning-github-badge]][rust-learning-github].
+- [Rust Learning][rust-learning-github]⮳: a bunch of links to blog posts, articles, videos, etc for learning Rust [![rust-learning][rust-learning-github-badge]][rust-learning-github].
 - [Learning Resources - Blessed.rs](https://blessed.rs/learning-resources)⮳.
-- [idiomatic-rust: A peer-reviewed collection of articles/talks/repos which teach concise, idiomatic Rust.](https://github.com/mre/idiomatic-rust)⮳.
-- A bunch of [links][p-links] to blog posts, articles, videos, etc for learning Rust [rust-learning][rust-learning-github]⮳.
-- [LearnRust: Rust Learning Resources](https://github.com/ImplFerris/LearnRust)⮳.
+- [Idiomatic Rust](https://github.com/mre/idiomatic-rust)⮳: a peer-reviewed collection of articles/talks/repos which teach concise, idiomatic Rust.
+- [LearnRust](https://github.com/ImplFerris/LearnRust)⮳.
 
 ## Rust Links and Resources {#links}
 
 - [The Rust Starter Pack][rust-starter-pack]⮳.
 - [`Awesome Rust`][awesome-rust-github]⮳ [(GitHub)][awesome-rust-github]⮳: a curated list of Rust code and resources.
-- [`AreWeRustYet`](https://github.com/UgurcanAkkok/AreWeRustYet)⮳: Awesome list of "Are We *thing* Yet" for Rust.
+- [Are We Rust Yet?](https://github.com/UgurcanAkkok/AreWeRustYet)⮳: Awesome list of "Are We *thing* Yet" for Rust.
 - [Are We Yet? (Mozilla Wiki)](https://wiki.mozilla.org/Areweyet)⮳.
 - [Awesome Rust (libhunt.com)](https://rust.libhunt.com)⮳.
 - [Not yet awesome Rust](https://github.com/not-yet-awesome-rust/not-yet-awesome-rust)⮳.
@@ -48,4 +48,5 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+TODO review all links; dedupe with index; what moves to other pages?
 </div>
