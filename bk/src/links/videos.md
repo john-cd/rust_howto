@@ -16,9 +16,15 @@
 - [Jon Gjengset's channel](https://www.youtube.com/@jonhoo)⮳.
 - [Logan Smith's channel](https://www.youtube.com/@_noisecode)⮳.
 - [Michael Mullin's channel](https://www.youtube.com/@masmullin)⮳.
+- [Ryan Levick's channel](https://www.youtube.com/@RyanLevicksVideos)⮳.
 - [Rust Nation UK (conference)](https://www.youtube.com/@rustnationuk)⮳.
 - [Learn Rust Programming - Complete Course](https://www.youtube.com/watch?v=BpPEoZW5IiY&ab_channel=freeCodeCamp.org)⮳.
 - [Learning Rust](https://www.youtube.com/@learning_rust)⮳.
+- [Engineer Man - Rust videos](https://www.youtube.com/playlist?list=PLlcnQQJK8SUjApd95LIcd3K9XXmE-IeCS)⮳ playlist.
+- [YouCodeThings - Rust videos](https://www.youtube.com/playlist?list=PLVT0QN6kDrbd3KZr4EkBNvjSDTaZyxwhM)⮳ playlist.
+- [Tensor Programming - Rust Projects](https://www.youtube.com/playlist?list=PLJbE2Yu2zumDD5vy2BuSHvFZU0a6RDmgb)⮳ playlist.
+- [Rust Tutorials](https://www.youtube.com/playlist?list=PLkO5ggdQuRaaeFke7nWS4ajhFVZ1biE7_)⮳ playlist.
+- [intorust.com](http://intorust.com/)⮳ screencasts.
 
 ## Rust Podcasts {#podcasts}
 
@@ -41,4 +47,5 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+TODO reorder links? + curate
 </div>
