@@ -41,4 +41,5 @@ The following example demonstrates various ways macros can be used in Rust.
 
 <div class="hidden">
 [macros: write NOW](https://github.com/john-cd/rust_howto/issues/548)
+cover common macros in std lib: https://doc.rust-lang.org/std/#macros
 </div>
