@@ -95,11 +95,11 @@ TODO review the following sections of https://opheron.github.io/rust-starter-pac
 
 ## Guides
 
-Rusty CS: “A Computer Science Curriculum with Rust flavor!” https://github.com/AbdesamedBendjeddou/Rusty-CS
+Rusty CS: "A Computer Science Curriculum with Rust flavor!" https://github.com/AbdesamedBendjeddou/Rusty-CS
 Curated Rust: “This is a guided walkthrough of the resources that I used to learn Rust. It is being added to incrementally as I myself learn rust over the next couple of weeks and months.”
 A Gentle Introduction to Rust
 Learning Rust in 2020
-py2rs: “From Python into Rust”
+py2rs: "From Python into Rust"
 Rust in 7 Programs
 24 Days of Rust
 Introduction to Rust Tutorial
