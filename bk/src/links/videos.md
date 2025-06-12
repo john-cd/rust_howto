@@ -4,7 +4,7 @@
 
 ## YouTube Channels and Videos {#videos}
 
-- Official [Rust YouTube channel](https://www.youtube.com/@RustVideos)⮳.
+- Official [Rust YouTube channel](https://www.youtube.com/@RustVideos)⮳.{{hi:YouTube Videos}}
 - The [Rust Foundation](https://www.youtube.com/@rustfoundation)⮳ channel.
 - [Crust of Rust](https://www.youtube.com/playlist?list=PLqbS7AVVErFiWDOAVrPt7aYmnuuOLYvOa)⮳ playlist.
 - [Rust Tutorial](https://www.youtube.com/playlist?list=PLLqEtX6ql2EyPAZ1M2_C0GgVd4A-_L4_5)⮳ playlist.
@@ -22,7 +22,7 @@
 
 ## Rust Podcasts {#podcasts}
 
-- [`rustacean-station.org`][rustacean-station]⮳ [(Apple podcasts)](https://podcasts.apple.com/us/podcast/rustacean-station/id1472535519)⮳.
+- [`rustacean-station.org`][rustacean-station]⮳ [(Apple podcasts)](https://podcasts.apple.com/us/podcast/rustacean-station/id1472535519)⮳.{{hi:Podcasts}}
 - [Rust in Production - The Podcast](https://corrode.dev/podcast/)⮳.
 - [RustShip - a RustLang podcast](https://creators.spotify.com/pod/profile/marco-ieni/)⮳.
 - [Chats with James](https://podcasts.apple.com/us/podcast/chats-with-james-podcast/id1548207257)⮳.
