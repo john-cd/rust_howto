@@ -1,5 +1,4 @@
 
-
 Generic traits allow you to define traits that can work with different types:
 
 ```rust,editable
