@@ -50,4 +50,17 @@ rustup doc
 
 <div class="hidden">
 [rustup: expand / clean up](https://github.com/john-cd/rust_howto/issues/302)
+
+Rustup is used to install and manage Rust toolchains. Toolchains are complete installations of Rust compiler and tools.
+
+| Command | Description |
+|---|---|
+| `rustup show` | Show currently installed & active toolchains. |
+| `rustup update` | Update all toolchains. |
+| `rustup default TOOLCHAIN` | Set the default toolchain. |
+| `rustup component list` | List available components. |
+| `rustup component add NAME` | Add a component (e.g., clippy, rustfmt). |
+| `rustup target list` | List available compilation targets. |
+| `rustup target add NAME` | Add a compilation target. |
+
 </div>
