@@ -112,7 +112,7 @@
 [blog-working-with-env-variables-badge]: https://img.shields.io/badge/blog-working_with_env_variables-beige
 [blog-working-with-env-variables]: https://www.thorsten-hans.com/working-with-environment-variables-in-rust
 [book-asynchronous-programming-in-rust-badge]: https://img.shields.io/badge/Asynchronous_programming_in_rust-peru?logo=mdbook
-[book-asynchronous-programming-in-rust]: https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html
+[book-asynchronous-programming-in-rust]: https://rust-lang.github.io/async-book
 [book-cargo-badge]: https://img.shields.io/badge/Cargo-peru?logo=mdbook
 [book-cargo-build-script-badge]: https://img.shields.io/badge/Cargo_build_script-peru?logo=mdbook
 [book-cargo-build-script]: https://doc.rust-lang.org/cargo/reference/build-scripts.html
@@ -134,7 +134,6 @@
 [book-programming-rust-2nd-edition-badge]: https://img.shields.io/badge/Programming_rust_2nd_edition-peru?logo=mdbook
 [book-programming-rust-2nd-edition]: https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586
 [book-programming-rust-badge]: https://img.shields.io/badge/Programming_Rust-peru?logo=mdbook
-[book-programming-rust]: https://www.oreilly.com/library/view/programming-rust/9781491927274
 [book-rust-atomics]: https://marabos.nl/atomics
 [book-rust-attributes-badge]: https://img.shields.io/badge/Rust_Book-Attributes-blue?logo=mdbook
 [book-rust-badge]: https://img.shields.io/badge/Rust_Book-blue?logo=mdbook
@@ -201,7 +200,6 @@
 [book-rust-by-example-while-badge]: https://img.shields.io/badge/Rust_By_Example-while-violet?logo=mdbook
 [book-rust-by-example-while]: https://doc.rust-lang.org/rust-by-example/flow_control/while.html
 [book-rust-by-practice-badge]: https://img.shields.io/badge/rust_by_practice-peru?logo=mdbook
-[book-rust-by-practice]: https://practice.rs
 [book-rust-cli-badge]: https://img.shields.io/badge/rust_cli-peru?logo=mdbook
 [book-rust-cli]: https://rust-cli.github.io/book/index.html
 [book-rust-code-block-attributes]: https://rust-lang.github.io/mdBook/format/mdbook.html#rust-code-block-attributes
