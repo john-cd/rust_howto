@@ -11,6 +11,7 @@
 - [Reddit: r/rust](https://www.reddit.com/r/rust)⮳.
 - [Reddit: r/learnrust](https://www.reddit.com/r/learnrust)⮳.
 - [Mastodon: #rustlang](https://hachyderm.io/tags/rustlang)⮳.
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/rust)⮳.
 
 ## Rust Blogs {#blogs}
 
@@ -35,7 +36,7 @@ You may also the lists of Medium blogs tagged with ['Rust'](https://medium.com/t
 |---|---|
 | [`codevoweb.com`][codevoweb-website]⮳ | Demonstrates how to build common applications using multiple languages, including Rust. |
 | [Rust magazine][rustmagazine-website]⮳ | A monthly magazine for the Rust community. |
-| A learning journal: [lpalmieri.com][lpalmieri-website]⮳ | Luca Palmieri's blog. |
+| A learning journal: [`lpalmieri.com`][lpalmieri-website]⮳ | Luca Palmieri's blog. |
 | Rust Atomics and Locks: [marabos.nl/atomics][book-rust-atomics]⮳ | A deep dive into atomics and locks by Mara Bos. |
 | [Mara Bos's Blog](https://blog.m-ou.se)⮳ | Thoughts and articles from a core Rust library team member. |
 | [Raph Levien's Blog](https://raphlinus.github.io)⮳ | Insights on Rust, GUIs, and high-performance code. |
@@ -46,18 +47,24 @@ You may also the lists of Medium blogs tagged with ['Rust'](https://medium.com/t
 | [PoignardAzur's Blog](https://poignardazur.github.io)⮳ | Blog covering various topics, including Rust. |
 | Sam Sartor's Blog: [samsartor.com](https://samsartor.com)⮳ | Posts on Rust, Nix, and software development. |
 | Matthew Brubeck's Blog: [limpet.net/mbrubeck][blog-rust-a-unique-perspective-html]⮳ | Writings on Rust, Servo, and web technologies. |
-| [www.polymonster.co.uk](https://www.polymonster.co.uk)⮳ | A blog about Rust, graphics, and game development. |
-| [tavianator.com](https://tavianator.com)⮳ | Technical articles on performance and low-level programming. |
+| [`www.polymonster.co.uk`](https://www.polymonster.co.uk)⮳ | A blog about Rust, graphics, and game development. |
+| [`tavianator.com`](https://tavianator.com)⮳ | Technical articles on performance and low-level programming. |
 | [Nicholas Nethercote's Blog](https://nnethercote.github.io)⮳ | A blog focusing on Rust performance and memory usage. |
 | [Billy DM's Blog](https://billydm.github.io/blog)⮳ | Posts on programming, including Rust. |
 | Tedinski's Archive: [www.tedinski.com/archive](https://www.tedinski.com/archive)⮳ | An archive of posts on various programming topics. |
-| [smallcultfollowing.com/babysteps](https://smallcultfollowing.com/babysteps)⮳ | General thoughts about Rust by Niko Matsakis. |
+| [`smallcultfollowing.com/babysteps`](https://smallcultfollowing.com/babysteps)⮳ | General thoughts about Rust by Niko Matsakis. |
 | Sean McArthur's Blog: [seanmonstar.com](https://seanmonstar.com)⮳ | Focused on Hyper, Tokio, and web development in Rust. |
 | [The Embedded Rustacean](https://blog.theembeddedrustacean.com)⮳ | Tutorial-style articles on embedded Rust. |
-| [rust-osdev.com](https://rust-osdev.com)⮳ | Monthly news on OS and bootloader development in Rust. |
+| [`rust-osdev.com`](https://rust-osdev.com)⮳ | Monthly news on OS and bootloader development in Rust. |
 | Writing an OS in Rust: [os.phil-opp.com](https://os.phil-opp.com)⮳ | A classic blog series on building a basic OS in Rust. |
-| [readrust.net](https://readrust.net)⮳ | Collects interesting posts related to the Rust programming language. |
+| [`readrust.net`](https://readrust.net)⮳ | Collects interesting posts related to the Rust programming language. |
 | [Rust Trends](https://rust-trends.com/)⮳ | Biweekly newsletter on all things Rust. |
+| Andrew Gallant's [blog](https://burntsushi.net)⮳ | Blogs covering regex, ripgrep, etc. |
+| Brian Anderson' [blog](https://brson.github.io/blog/index.html)⮳ |  |
+| Llogiq's [blog](https://llogiq.github.io)⮳ |  |
+| Steve Klabnik's [blog](https://steveklabnik.com)⮳ |  |
+
+You may also consult [this list](https://users.rust-lang.org/t/fearless-rust-bloggers/16770)⮳.
 
 ### Project & Organization Blogs {#project-blogs}
 
