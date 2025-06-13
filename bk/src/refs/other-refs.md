@@ -133,7 +133,6 @@
 [book-mdbook-badge]: https://img.shields.io/badge/mdBook-peru?logo=mdbook
 [book-programming-rust-2nd-edition-badge]: https://img.shields.io/badge/Programming_rust_2nd_edition-peru?logo=mdbook
 [book-programming-rust-2nd-edition]: https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586
-[book-programming-rust-badge]: https://img.shields.io/badge/Programming_Rust-peru?logo=mdbook
 [book-rust-atomics]: https://marabos.nl/atomics
 [book-rust-attributes-badge]: https://img.shields.io/badge/Rust_Book-Attributes-blue?logo=mdbook
 [book-rust-badge]: https://img.shields.io/badge/Rust_Book-blue?logo=mdbook
