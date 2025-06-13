@@ -220,17 +220,20 @@ Please also consult the `theirstack.com`'s [list of companies using Rust][theirs
 
 ## Jobs {#jobs}
 
-- [Rust Jobs for Rustaceans](https://jobs.letsgetrusty.com/)
-- [Rust jobs-report (Sep. 2024)][rust-jobs-report].
+- [RustJobs.dev](https://rustjobs.dev)⮳.
+- [RustJobs.com](https://www.rustjobs.com)⮳.
+- [Rust Jobs for Rustaceans](https://jobs.letsgetrusty.com)⮳.
+
+- [Rust jobs-report (Sep. 2024)][rust-jobs-report]⮳.
 - [AWS will pay devs to verify Rust standard library because of 7,500 unsafe functions and enormity of task](https://devclass.com/2024/11/21/aws-will-pay-devs-to-verify-rust-standard-library-because-of-7500-unsafe-functions-and-enormity-of-task/)
 
 [rust-jobs-report]: https://filtra.io/rust/jobs-report/sep-24
 
 ## People {#people}
 
-- [dystroy](https://dystroy.org/)
-- [Sylvain Kerkour](https://kerkour.com/)
-- [I'm an independent open source maintainer - seanmonstar](https://seanmonstar.com/blog/independent-open-source-maintainer/)
-- [leadership-council: Home of the Rust Leadership Council](https://github.com/rust-lang/leadership-council)
+- [`dystroy`](https://dystroy.org/)⮳.
+- [Sylvain Kerkour](https://kerkour.com/)⮳.
+- [I'm an independent open source maintainer - seanmonstar](https://seanmonstar.com/blog/independent-open-source-maintainer/)⮳.
+- [Rust Leadership Council](https://github.com/rust-lang/leadership-council)⮳.
 
 </div>
