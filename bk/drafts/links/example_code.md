@@ -4,13 +4,13 @@
 
 You can use the [Rust playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024)⮳ to quickly test snippets of code.
 
-## Repositories {#repositories}
+## Popular Repositories {#repositories}
 
-- [GitHub Topic: "Rust"](https://github.com/topics/rust)⮳.
+- [GitHub Topic: "Rust" topic](https://github.com/topics/rust)⮳: Browse popular repositories on GitHub.
 - [Trending GitHub repos](https://github.com/trending/rust)⮳.
 - [Awesome Rust](https://github.com/rust-unofficial/awesome-rust)⮳: a large curated list of Rust code and resources.
-- [Open-source projects categorized as Rust (libhunt.com)](https://www.libhunt.com/topic/rust)⮳.
-- [Rustrepo.com](https://rustrepo.com/)⮳.
+- [Open-source projects categorized as "Rust" (libhunt.com)](https://www.libhunt.com/topic/rust)⮳.
+- [Rustrepo.com](https://rustrepo.com/)⮳: A curated list of awesome Rust resources.
 - [Top 100 Best GitHub Repositories for Rust](https://bestofgit.codes/repositories/languages/rust)⮳.
 
 Example codebases include:
@@ -19,13 +19,13 @@ Example codebases include:
 
 ## "RealWorld" Examples {#realworld}
 
-- ["Real World" Example Apps][realworld-example-apps]⮳.
+- ["Real World" Example Apps][realworld-example-apps]⮳: exemplary real world application implemented in many languages and frameworks.
 - A full-stack RealWorld implementation using Rust, [`axum`][c-axum]⮳{{hi:axum}}, [`sqlx`][c-sqlx]⮳{{hi:sqlx}}, and [`yew`][c-yew]⮳{{hi:yew}}: [realworld-rust-axum-sqlx][realworld-rust-axum-sqlx-github]⮳.
 
 ## Source Code for Rust Books {#rust-book-source-code}
 
 - [Code][book-zero-to-production-github]⮳ for [Zero To Production In Rust (book)][book-zero-to-production]⮳.
-- Source Code for [Practical Rust Web Projects][practical-rust-web-projects-github]⮳ by Shing Lyu.
+- [Source Code][practical-rust-web-projects-github]⮳ for [Practical Rust Web Projects: Building Cloud and Web-Based Applications 1st ed.](https://www.amazon.com/Practical-Rust-Web-Projects-Applications/dp/1484265882)⮳ by Shing Lyu.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
