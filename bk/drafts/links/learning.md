@@ -2,12 +2,12 @@
 
 {{#include learning.incl.md}}
 
-## Rust Overviews {#overview}
+## Rust Overviews, Starting Point {#overview}
 
 - [Rust (programming language) - Wikipedia](https://en.wikipedia.org/wiki/Rust_(programming_language))⮳.
 - Rust [language][p-language] main site: [rust-lang.org][rust]{{hi:Rust learning}}⮳.
 
-## Learning Roadmap {#learning-roadmap}
+## Learning Roadmaps {#learning-roadmap}
 
 - [Learn to become a Rust developer](https://roadmap.sh/rust)⮳.
 - [Roadmap for Rust][roadmap-rust-website]⮳.
@@ -20,9 +20,9 @@
 ## Examples and Exercises {#examples}
 
 - [`Rust by Example`][rust-by-example]⮳.
-- [`Rust by Practice`][practice.course.rs]⮳.
+- [`Rust by Practice`][https://practice.course.rs]⮳.
 - [100 exercises to learn Rust: A self-paced course to learn Rust, one exercise at a time.](https://github.com/mainmatter/100-exercises-to-learn-rust)⮳.
-- [Rust mastery exercises][app.codecrafters.io/tracks/rust]⮳.
+- [Rust mastery exercises][https://app.codecrafters.io/tracks/rust]⮳.
 - [Rust quizz][rust-quizz]⮳.
 
 ## Courses {#courses}
@@ -34,13 +34,16 @@
 - [Rust Development Classes](https://rust-classes.com/preface)⮳.
 - [Fast Track to Rust](https://freddiehaddad.github.io/fast-track-to-rust/)⮳.
 - [Yet Another Rust Resource (YARR!)](https://yarr.fyi/introduction)⮳.
-- Open source training courses about distributed [database][p-database] and distributed systems: [Talent plan][talent-plan-github]⮳.
+- Open source training courses about distributed database and distributed systems: [Talent plan][talent-plan-github]⮳.
 
 - [Tour of Rust](https://tourofrust.com)⮳.
+- [Rust: The Basics](https://stepik.org/lesson/9268/step/1)⮳.
+
+### University Courses {#university-courses}
+
 - [CS 110L: Safety in Systems Programming](https://web.stanford.edu/class/cs110l)⮳.
 - [CIS 198: Rust Programming](https://cis198-2016s.github.io)⮳.
-- [cs4414: Operating Systems](https://www.rust-class.org)⮳.
-- [Rust: The Basics](https://stepik.org/lesson/9268/step/1)⮳.
+- [CS4414: Operating Systems](https://www.rust-class.org)⮳.
 
 ## Paid Courses
 
@@ -50,7 +53,7 @@
 
 ## Projects {#projects}
 
-- Top 15 Rust Projects To elevate your skills: [Rust practice projects][rust-practice-projects]⮳.
+- Top 15 Rust projects to elevate your skills: [Rust practice projects][rust-practice-projects]⮳.
 
 ## Ferrous Systems Training {#ferrous-systems-training}
 
@@ -74,10 +77,10 @@ See [[rust_cheatsheets | Rust Cheatsheets]].
 
 ## References {#references}
 
-- The [Standard Library](https://doc.rust-lang.org/std/#the-rust-standard-library) Docs: Documentation for the built-in `std`, `core`, and `alloc` crates.
-- The Rust Reference: Defines details of the language semantics that you might expect to find in a specification if Rust had a specification.
-- The Rustonomicon: A high-level companion to the reference and a guide to correctly writing unsafe code in Rust.
-- The Ferrocene Spec: An high quality specification for the Rust language developed by Ferrous Systems.
+- The [Standard Library](https://doc.rust-lang.org/std/#the-rust-standard-library)⮳ documentation for the built-in `std`, `core`, and `alloc` crates.
+- The [Rust Reference](https://doc.rust-lang.org/stable/reference)⮳: Details of the language semantics.
+- The [Rustonomicon](https://doc.rust-lang.org/nomicon)⮳: A high-level companion to the reference and a guide to correctly writing unsafe code in Rust.
+- The [Ferrocene Language Spec](https://rust-lang.github.io/fls/general.html)⮳: An high quality specification for the Rust language, initially developed by Ferrous Systems.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
@@ -85,46 +88,43 @@ See [[rust_cheatsheets | Rust Cheatsheets]].
 <div class="hidden">
 [learning: organize NOW](https://github.com/john-cd/rust_howto/issues/568)
 
-- [`rustmeup.com`](https://rustmeup.com).
+- [`rustmeup.com`](https://rustmeup.com)⮳.
 
 ## GitHub Repositories
 
-[rust-learning](https://github.com/ctjhoa/rust-learning) by Camille TJHOA — An extensive collection of links to blog posts, articles, videos, and more for learning Rust.
-
-TODO review the following sections of https://opheron.github.io/rust-starter-pack/
+- [rust-learning](https://github.com/ctjhoa/rust-learning)⮳ by Camille Tjhoa: An extensive collection of links to blog posts, articles, videos, and more for learning Rust.
 
 ## Guides
 
-Rusty CS: "A Computer Science Curriculum with Rust flavor!" https://github.com/AbdesamedBendjeddou/Rusty-CS
-Curated Rust: “This is a guided walkthrough of the resources that I used to learn Rust. It is being added to incrementally as I myself learn rust over the next couple of weeks and months.”
-A Gentle Introduction to Rust
-Learning Rust in 2020
-py2rs: "From Python into Rust"
-Rust in 7 Programs
-24 Days of Rust
-Introduction to Rust Tutorial
-Roguelike Tutorial in Rust: How to make a roguelike computer game in Rust
-Writing an OS in Rust
-Hecto: Build your own text editor in Rust
+- [Rusty CS](https://github.com/AbdesamedBendjeddou/Rusty-CS)⮳: "A Computer Science Curriculum with Rust flavor!"
+- [Curated Rust](https://github.com/saidaspen/curatedrust)⮳: "This is a guided walkthrough of the resources that I used to learn Rust. It is being added to incrementally as I myself learn rust over the next couple of weeks and months."
+- [A Gentle Introduction to Rust](https://stevedonovan.github.io/rust-gentle-intro/)⮳.
+- [Learning Rust in 2020](https://github.com/pretzelhammer/rust-blog/blob/master/posts/learning-rust-in-2020.md)⮳.
+- [py2rs: "From Python into Rust"](https://rochacbruno.github.io/py2rs/index.html)⮳.
+- [24 Days of Rust](https://zsiciarz.github.io/24daysofrust/index.html)⮳.
+- [Writing an OS in Rust](https://os.phil-opp.com)⮳.
+- [Hecto](https://philippflenker.com/hecto/)⮳: Build your own text editor in Rust.
 
 ## Exercises & Practice
 
-Rustlings [rustlings](https://github.com/rust-lang/rustlings) by Rust — Small exercises to get you used to reading and writing Rust code.
-Exercism - Rust
-Advent of Code: Language-agnostic programming challenges that can be done in Rust
-Project Euler: Language-agnostic programming challenges focused mostly on math problems
-Rust Practice Questions
-The r/dailyprogrammer subreddit
-Rust By Practice
-
-## Learning by Doing
-
-- Rustlings: Small exercises to get you used to reading and writing Rust code, including reading and responding to compiler error messages.
+- [Rustlings](https://github.com/rust-lang/rustlings)⮳: Small exercises to get you used to reading and writing Rust code, including reading and responding to compiler error messages.
+- [Exercism](https://exercism.org/tracks/rust)⮳.
+- [Advent of Code](https://adventofcode.com)⮳: Language-agnostic programming challenges that can be done in Rust.
+- [Project Euler](https://projecteuler.net)⮳: Language-agnostic programming challenges focused mostly on math problems.
+- [Rust Practice Questions](https://github.com/rust-unofficial/rust-practise-questions)⮳.
 
 ## Learning by Example
 
 - Rust Language Cheat Sheet A great simple quick-reference for all sorts of things from syntax to memory layouts of common types. Available in web and PDF form
-- Rust By Example: Learn rust features with small, targeted examples. Starting with "hello world" and moving up to more complex features like traits and generics.
-- The Rust Cookbook: A collection of simple examples that demonstrate good practices to accomplish common programming tasks, using the crates of the Rust ecosystem.
+- [Rust By Example](https://doc.rust-lang.org/stable/rust-by-example)⮳: Learn rust features with small, targeted examples. Starting with "hello world" and moving up to more complex features like traits and generics.
+- The [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook)⮳: A collection of simple examples that demonstrate good practices to accomplish common programming tasks, using the crates of the Rust ecosystem.
+
+- [Learn Rust](https://hackr.io/tutorials/learn-rust)⮳.
+- [Idiomatic Rust Snippets](https://idiomatic-rust-snippets.org/intro.html)⮳.
+
+## Tutorials & Workshop Materials
+
+- [Workshop](https://rust-tutorials.com/RustConf17)⮳ slides and exercises from RustConf 2017.
+- Jonathan Pallant's [Rust on the Raspberry Pi](https://github.com/thejpster/pi-workshop-rs)⮳ tutorial (using a Sense HAT).
 
 </div>
