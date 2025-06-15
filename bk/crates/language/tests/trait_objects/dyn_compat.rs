@@ -62,13 +62,14 @@ impl ObjectSafeClone for Circle {
 // Additional examples of dyn-compatible methods.
 trait TraitMethods {
     // Trait methods must have a receiver with one of the following types:
-    fn by_ref(self: &Self) {}
-    fn by_ref_mut(self: &mut Self) {}
+    fn by_ref(&self) {} // Equivalent to self: &Self.
+    fn by_ref_mut(&mut self) {} // Equivalent to self: &mut Self.
     fn by_box(self: Box<Self>) {}
     fn by_rc(self: Rc<Self>) {}
     fn by_arc(self: Arc<Self>) {}
     fn by_pin(self: Pin<&Self>) {}
-    fn with_lifetime<'a>(self: &'a Self) {}
+    #[allow(clippy::needless_lifetimes)]
+    fn with_lifetime<'a>(&'a self) {} // Equivalent to self: &'a Self.
     fn nested_pin(self: Pin<Arc<Self>>) {}
     // You can also constrain functions that otherwise could not be included in
     // a dyn-compatible trait, so they do not apply to trait objects.
