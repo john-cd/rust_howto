@@ -8,7 +8,6 @@
 [ex-contributing-optional-preprocessors]: optional_preprocessors.md#optional-preprocessors
 [ex-contributing-other-methods-to-preview-the-documentation-html]: api_documentation.md#other-methods-to-preview-the-documentation-html
 [ex-contributing-other]: dev_environment_setup.md#other
-[ex-contributing-publish]: publication.md#publish
 [ex-contributing-push-image-to-docker-hub]: dev_container_docker.md#push-image-to-docker-hub
 [ex-contributing-repo-structure]: repo_structure.md#repo-structure
 [ex-contributing-topics-of-interest]: topics_of_interest.md#topics-of-interest

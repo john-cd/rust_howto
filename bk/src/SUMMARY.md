@@ -44,6 +44,7 @@
   - [Cheat Sheets](links/rust_cheatsheets.md)
 
 - [Contributing]()
+  - [Crate Publication](../src/contributing/publication.md)
   - [Topics of Interest](contributing/topics_of_interest.md)
 
 [Index](word_index.md)

@@ -309,7 +309,6 @@
   - [Dev Containers and Docker](contributing/dev_container_docker.md)
   - [Optional Preprocessors](contributing/optional_preprocessors.md)
   - [API Documentation](contributing/api_documentation.md)
-  - [Crate Publication](contributing/publication.md)
 
 [Thanks](thanks.md)
 
