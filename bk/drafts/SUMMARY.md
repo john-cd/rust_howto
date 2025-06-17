@@ -6,7 +6,6 @@
 # Language, Standard Library, and Code Organization
 
 - [Language](language/index.md)
-  - [Rust Installation and First Steps](language/rust_install.md)
   - [Data Types](language/data_types.md)
   - [Generics](language/generics.md)
   - [Pattern Matching, `if / while let`](language/match.md)

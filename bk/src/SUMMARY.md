@@ -11,6 +11,7 @@
   - [Code Organization by Project Type and Size](code_organization/code_organization.md)
 
 - [Language]()
+  - [Rust Installation and First Steps](language/rust_install.md)
   - [Entrypoint](language/entrypoint.md)
   - [Variables](language/variables.md)
   - [Constants and Statics](language/constants_and_statics.md)
