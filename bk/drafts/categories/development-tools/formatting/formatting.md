@@ -81,6 +81,10 @@ rustfmt --help=config
 
 For things you do not want [`rustfmt`][c-rustfmt]⮳{{hi:rustfmt}} to mangle, use `#[rustfmt::skip]`{{hi:rustfmt::skip}} , `#[rustfmt::skip::macros(macro_name)]`{{hi:rustfmt::skip::macros(macro_name)}} , or `#![rustfmt::skip::attributes(custom_attribute)]`{{hi:rustfmt::skip::attributes(custom_attribute)}}
 
+## References {#skip}
+
+- [The Rust Style Guide](https://doc.rust-lang.org/stable/style-guide)⮳.
+
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
 
