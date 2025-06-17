@@ -233,7 +233,7 @@ Please also consult the `theirstack.com`'s [list of companies using Rust][theirs
 
 - [`dystroy`](https://dystroy.org/)⮳.
 - [Sylvain Kerkour](https://kerkour.com/)⮳.
-- [I'm an independent open source maintainer - seanmonstar](https://seanmonstar.com/blog/independent-open-source-maintainer/)⮳.
+- [seanmonstar](https://seanmonstar.com/blog/independent-open-source-maintainer/)⮳.
 - [Rust Leadership Council](https://github.com/rust-lang/leadership-council)⮳.
 
 </div>
