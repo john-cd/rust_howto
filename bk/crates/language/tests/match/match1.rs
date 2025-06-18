@@ -20,8 +20,9 @@ enum Coin {
 fn value_in_cents(coin: Coin) -> u8 {
     // The match expression takes a value and compares it against a series of
     // patterns. Each pattern represents a possible structure or value that the
-    // input value might have. It's similar to a 'switch' statement in other
-    // languages, but it's far more versatile.
+    // input value might have. It returns the value of the first matching arm.
+    // It's similar to a 'switch' statement in other languages, but it's far
+    // more versatile.
     match coin {
         // If the coin is a Penny, return 1 cent.
         Coin::Penny => 1,
@@ -29,16 +30,17 @@ fn value_in_cents(coin: Coin) -> u8 {
         Coin::Nickel => 5,
         // If the coin is a Dime, return 10 cents.
         Coin::Dime => 10,
-        // If the coin is a Quarter, which contains a state string, the `state` identifier is assigned the value of the field in the enum variant.
+        // The following is a binding to a variable.
+        // If the coin is a Quarter, which contains a String,
+        // the `state` identifier is assigned the value of the field in the enum variant.
         Coin::Quarter(state) => {
-            // The above is a pattern binding.
             println!("State quarter from {:?}!", state);
             25
         } // Rust's match expressions are exhaustive. This means that you must cover all possible cases.
-          // If needed, you can use a catchall:
+          // When needed, you can add a catchall via the `_` pattern.
           //_ => unreachable!(),
     }
-}
+} // `match` is an expression. In this case, it is the last expression in the function's body, thus its value is returned by the function.
 
 fn main() {
     println!("{}", value_in_cents(Coin::Penny));

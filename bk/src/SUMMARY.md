@@ -21,6 +21,7 @@
   - [Slices](language/slices.md)
   - [Functions](language/functions.md)
   - [Control Flow](language/control_flow.md)
+  - [Pattern Matching, `if / while let`](../src/language/match.md)
   - [Enums](language/enums.md)
   - [Attributes](language/attributes.md)
   - [Closures](language/closures.md)

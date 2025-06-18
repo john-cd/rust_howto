@@ -36,7 +36,7 @@
 [p-encryption]: encryption.md
 [p-functions]: ../../language/functions.md
 [p-hashing]: hashing.md
-[p-match]: ../../language/match.md
+[p-match]: ../../../src/language/match.md
 [p-performance]: ../development-tools_cargo-plugins/performance.md
 [p-search]: ../database/search.md
 [p-server]: ../network-programming/server.md

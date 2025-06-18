@@ -17,9 +17,9 @@ fn main() {
     // Use a match expression to perform pattern matching on the origin `Point`.
     match origin {
         // This pattern matches any `Point` struct.
-        // It binds the value of the x field to a variable named x.
-        // The .. syntax means "ignore the other fields".
-        // In this case, y and z are ignored.
+        // It binds the value of the x field to a variable named `x`.
+        // The `..` syntax means "ignore the other fields".
+        // In this case, `y` and `z` are ignored.
         Point { x, .. } => println!("x is {}", x),
     }
 }

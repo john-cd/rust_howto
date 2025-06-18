@@ -8,7 +8,6 @@
 - [Language](language/index.md)
   - [Data Types](language/data_types.md)
   - [Generics](language/generics.md)
-  - [Pattern Matching, `if / while let`](language/match.md)
   - [Macros](language/macros.md)
 
 # Categories
