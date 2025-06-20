@@ -52,7 +52,7 @@ fn main() {
 // ANCHOR_END: example
 
 // This test is executed by `cargo test` or `cargo nextest run`
-// everytime the code is built.
+// every time the code is built.
 #[test]
 fn test() {
     main();
