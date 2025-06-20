@@ -13,6 +13,7 @@ fn main() {
         Message::Write(text) => println!("Text message: {}", text),
         Message::Move { x, y } => println!("Move to x: {}, y: {}", x, y),
         Message::Quit => println!("Quit"),
+        // Must be exhaustive.
     }
 }
 // ANCHOR_END: example

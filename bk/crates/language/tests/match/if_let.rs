@@ -11,7 +11,8 @@ fn main() {
         println!("The maximum is configured to be {}.", max);
     }
 
-    // This is equivalent to:
+    // This is equivalent to the following `match` expression:
+    #[allow(clippy::single_match)]
     match config_max {
         Some(max) => println!("The maximum is configured to be {}.", max),
         _ => {} // Required because `match` is exhaustive.
@@ -24,12 +25,12 @@ fn main() {
 
     let left = Direction::Left;
 
-    // `if let` can match non-parameterized enum variants.
+    // `if let` can match non-parameterized, Unit-like enum variants.
     // This works even if the enum does not implement `PartialEq`.
     if let Direction::Left = left {
         println!("Going left.");
     } else {
-        // You can add `else` and `else if` clauses.
+        // You can also add `else` and `else if` clauses to `if let`.
         println!("Going right.");
     }
 }

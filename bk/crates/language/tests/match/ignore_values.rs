@@ -6,14 +6,12 @@ fn main() {
     let _unused = 42;
 
     let numbers = (2, 4, 8, 16, 32);
-    match numbers {
-        (first, .., last) => {
-            // Ignore middle elements.
-            println!("Some numbers: first = {}, last = {}", first, last);
-        }
-    }
 
-    // Use `_` to ignore a value completely.
+    // Use `..` to ignore e.g. the middle elements:
+    let (first, .., last) = numbers;
+    println!("Some numbers: first = {}, last = {}", first, last);
+
+    // Use `_` to ignore a value completely:
     fn foo(_: i32, y: i32) {
         // The first parameter is ignored.
         println!("y is: {}", y);

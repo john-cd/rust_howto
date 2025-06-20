@@ -8,6 +8,7 @@
 /// Define an `enum`.
 /// Each variant represents a type of US coin.
 enum Coin {
+    // Unit-like variants (no fields):
     Penny,
     Nickel,
     Dime,
@@ -18,7 +19,7 @@ enum Coin {
 
 /// Returns the value in cents of a given coin.
 fn value_in_cents(coin: Coin) -> u8 {
-    // The match expression takes a value and compares it against a series of
+    // The `match` expression takes a value and compares it against a series of
     // patterns. Each pattern represents a possible structure or value that the
     // input value might have. It returns the value of the first matching arm.
     // It's similar to a 'switch' statement in other languages, but it's far
@@ -32,7 +33,7 @@ fn value_in_cents(coin: Coin) -> u8 {
         Coin::Dime => 10,
         // The following is a binding to a variable.
         // If the coin is a Quarter, which contains a String,
-        // the `state` identifier is assigned the value of the field in the enum variant.
+        // the `state` identifier is assigned the value of the field in the `enum` variant.
         Coin::Quarter(state) => {
             println!("State quarter from {:?}!", state);
             25

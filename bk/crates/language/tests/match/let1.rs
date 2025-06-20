@@ -1,7 +1,7 @@
 // ANCHOR: example
 fn main() {
-    // Destructure the tuple into 2 variables:
     let t: (i32, i32) = (1, 2);
+    // Destructure the tuple into 2 variables:
     let (x, y) = t;
     // `x` and `y` are `i32`.
     println!("x: {}, y: {}", x, y);
@@ -10,7 +10,7 @@ fn main() {
     // see example below.)
     // let (3, y) = t; // ERROR: refutable pattern in local binding.
 
-    // Destructuring works with structs:
+    // Destructuring with structs:
     struct Point {
         x: i32,
         y: i32,
@@ -21,14 +21,15 @@ fn main() {
     // `x` and `y` are `i32`.
     println!("x: {}, y: {}", x, y);
 
-    // With arrays:
+    // Destructuring with arrays:
     let arr: [i32; 3] = [1, 2, 3];
     let [first, _, third] = arr; // Here, we ignore the second value.
     // `first` and `third` are `i32`.
     println!("first: {}, third: {}", first, third);
 
+    // Bind the middle of an array:
     let arr = [0, 1, 2, 3, 4];
-    let [start, middle @ .., end] = arr; // Bind the middle of the array.
+    let [start, middle @ .., end] = arr;
     println!("start: {}, middle: {:?}, end: {}", start, middle, end);
 }
 // ANCHOR_END: example
