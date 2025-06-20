@@ -160,7 +160,7 @@ Tuples can be destructured into their components:
 References can be destructured as well:
 
 ```rust,editable
-{{#include ../../crates/language/tests/match/destructure_tuple.rs:example}}
+{{#include ../../crates/language/tests/match/destructure_reference.rs:example}}
 ```
 
 ### Ignore Values {#ignore-values}
