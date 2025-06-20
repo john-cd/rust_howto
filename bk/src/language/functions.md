@@ -33,7 +33,7 @@ Type parameters can be constrained to implement specified traits:
 Functions can also include one or more explicit lifetime parameters, which are also written with < and >. Generic type parameters, lifetime parameters and `const` generic parameters can be intermixed, but with lifetime parameters first.
 
 ```rust,editable
-{{#include ../../crates/language/tests/generics/generic_functions3.rs:example}}
+{{#include ../../crates/language/tests/functions/generic_functions3.rs:example}}
 ```
 
 ## Work with Diverging Functions {#diverging-functions}
