@@ -3,15 +3,16 @@
 [ex-data-structures-bitvec]: ../../../drafts/categories/data-structures/bitfield.md#bitvec
 [ex-data-structures-btreemap]: ../../../drafts/categories/data-structures/btrees.md#btreemap
 [ex-data-structures-btreeset]: ../../../drafts/categories/data-structures/btrees.md#btreeset
-[ex-data-structures-custom-hash-function]: ./hashmap.md#custom-hash-function
-[ex-data-structures-custom-key-type]: ./hashmap.md#custom-key-type
+[ex-data-structures-custom-hash-function]: hashmap.md#custom-hash-function
+[ex-data-structures-custom-key-type]: hashmap.md#custom-key-type
 [ex-data-structures-flagset]: ../../../drafts/categories/data-structures/bitfield.md#flagset
 [ex-data-structures-generate-parse-uuid]: ../../../drafts/categories/data-structures/uuid.md#generate-parse-uuid
-[ex-data-structures-hashmap]: ./hashmap.md#hashmap
-[ex-data-structures-hashset]: ./hashmap.md#hashset
+[ex-data-structures-hashmap]: hashmap.md#hashmap
+[ex-data-structures-hashset]: hashmap.md#hashset
 [ex-data-structures-heapless]: ../../../drafts/categories/data-structures/heapless.md#heapless
 [ex-data-structures-indexmap]: ../../../drafts/categories/data-structures/maps.md#indexmap
 [ex-data-structures-linkedlist]: ../../../drafts/categories/data-structures/linkedlist.md#linkedlist
+[ex-data-structures-memory-allocation]: vector.md#memory-allocation
 [ex-data-structures-multimap]: ../../../drafts/categories/data-structures/maps.md#multimap
 [ex-data-structures-petgraph]: ../../../drafts/categories/data-structures/graph.md#petgraph
 [ex-data-structures-placeholders]: ../../../drafts/categories/data-structures/strings.md#placeholders
@@ -23,7 +24,7 @@
 [ex-data-structures-string-concatenation]: ../../../drafts/categories/data-structures/strings.md#string-concatenation
 [ex-data-structures-string]: ../../../drafts/categories/data-structures/strings.md#string
 [ex-data-structures-tinyvec]: ../../../drafts/categories/data-structures/stack_allocated_arrays.md#tinyvec
-[ex-data-structures-vec]: ../../../drafts/categories/data-structures/vector.md#vec
+[ex-data-structures-vec]: vector.md#vec
 [p-containers]: ../../../drafts/other/containers/containers.md
 [p-databases]: ../../../drafts/categories/database-implementations/databases.md
 [p-embedded]: # "../embedded/index.md"

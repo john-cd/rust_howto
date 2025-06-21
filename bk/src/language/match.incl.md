@@ -19,3 +19,4 @@
 | [Pattern Syntax][ex-language-pattern-syntax] |
 | [Create References While Binding with `ref` and `ref mut`][ex-language-ref-and-ref-mut-bindings] |
 | [Bind to Variables][ex-language-variable-bindings] |
+| [language at bindings][ex-language-at-bindings] | | |

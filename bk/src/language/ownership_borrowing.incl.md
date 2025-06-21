@@ -7,3 +7,4 @@
 | [References and Borrowing][ex-language-references] |
 | [Borrowing when Calling a Function][ex-language-borrowing] |
 | [Borrowing when Calling a Function][ex-language-ownership_borrowing] |
+| [language mutable reference][ex-language-mutable-reference] | | |

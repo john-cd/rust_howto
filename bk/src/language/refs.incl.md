@@ -1,9 +1,9 @@
-[ex-language-at-bindings]: match.md#at-bindings
 [ex-language-accept-various-iterable-types]: iterators.md#accept-various-iterable-types
 [ex-language-adapters]: iterators.md#adapters
 [ex-language-associated-types]: traits.md#associated-types
 [ex-language-async-and-traits]: traits.md#async-and-traits
 [ex-language-async-main-function]: entrypoint.md#async-main-function
+[ex-language-at-bindings]: match.md#at-bindings
 [ex-language-attribute]: attributes.md#attribute
 [ex-language-attributes]: attributes.md#attribute
 [ex-language-blanket-implementations]: traits.md#blanket-implementations
