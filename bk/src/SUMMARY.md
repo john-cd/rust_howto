@@ -40,6 +40,10 @@
 
 ## Categories
 
+- [Data Structures]()
+  - [HashMap](categories/data-structures/hashmap.md)
+  - [Vector](categories/data-structures/vector.md)
+
 ---
 
 - [Links]()

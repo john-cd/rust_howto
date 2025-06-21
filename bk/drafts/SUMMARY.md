@@ -10,6 +10,8 @@
   - [Generics](language/generics.md)
   - [Macros](language/macros.md)
 
+- [Smart Pointers](standard_library/smart_pointers.md)
+
 # Categories
 
 - [Algorithms](categories/algorithms/index.md)
@@ -85,11 +87,7 @@
   - [Heapless Data Structures](categories/data-structures/heapless.md)
   - [Stack-allocated Arrays](categories/data-structures/stack_allocated_arrays.md)
   - [UUIDs](categories/data-structures/uuid.md)
-
-  - [Strings](standard_library/strings.md)
-  - [Smart Pointers](standard_library/smart_pointers.md)
-  - [HashMap](standard_library/hashmap.md)
-  - [Vector](standard_library/vector.md)
+  - [Strings](categories/data-structures/strings.md)
 
 - [Database Access](categories/database/index.md)
   - [SQLite](categories/database/sqlite.md)
