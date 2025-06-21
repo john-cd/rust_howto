@@ -9,3 +9,4 @@
 | [Define an Associated Constant for a Struct][ex-language-struct-constant] |
 | [Implement a Trait for a Struct][ex-language-implement-trait-for-struct] |
 | [Implement Common Standard Library Traits][ex-language-common-traits] |
+| [Define Generic Structs][ex-language-define-generic-structs] |

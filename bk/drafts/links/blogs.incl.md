@@ -1,4 +1,4 @@
 ||
 |--------|
 | [Meetups][ex-links-meetups] |
-| [Rust Podcasts][ex-links-podcasts-blogs] |
+| [Rust Blogs][ex-links-podcasts-blogs] |
