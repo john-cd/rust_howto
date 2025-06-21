@@ -15,14 +15,14 @@
 [ex-data-structures-memory-allocation]: vector.md#memory-allocation
 [ex-data-structures-multimap]: ../../../drafts/categories/data-structures/maps.md#multimap
 [ex-data-structures-petgraph]: ../../../drafts/categories/data-structures/graph.md#petgraph
-[ex-data-structures-placeholders]: ../../../drafts/categories/data-structures/strings.md#placeholders
+[ex-data-structures-placeholders]: strings.md#placeholders
 [ex-data-structures-priority-queue]: ../../../drafts/categories/data-structures/binaryheap.md#priority-queue
 [ex-data-structures-queue]: ../../../drafts/categories/data-structures/stack_and_queue.md#queue
 [ex-data-structures-slotmap]: ../../../drafts/categories/data-structures/maps.md#slotmap
 [ex-data-structures-smallvec]: ../../../drafts/categories/data-structures/stack_allocated_arrays.md#smallvec
 [ex-data-structures-stack]: ../../../drafts/categories/data-structures/stack_and_queue.md#stack
-[ex-data-structures-string-concatenation]: ../../../drafts/categories/data-structures/strings.md#string-concatenation
-[ex-data-structures-string]: ../../../drafts/categories/data-structures/strings.md#string
+[ex-data-structures-string-concatenation]: ./strings.md#string-concatenation
+[ex-data-structures-string]: strings.md#string
 [ex-data-structures-tinyvec]: ../../../drafts/categories/data-structures/stack_allocated_arrays.md#tinyvec
 [ex-data-structures-vec]: vector.md#vec
 [p-containers]: ../../../drafts/other/containers/containers.md

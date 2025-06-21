@@ -42,6 +42,7 @@
 
 - [Data Structures]()
   - [HashMap](categories/data-structures/hashmap.md)
+  - [Strings](categories/data-structures/strings.md)
   - [Vector](categories/data-structures/vector.md)
 
 ---

@@ -11,17 +11,17 @@
 - It is immutable.
 - Since `str`'s size is unknown at compile time, one can only handle it behind a pointer. It is most often seen in its borrowed form as `&str`.
 - `&str` is a fat pointer containing a pointer to the string data (which can reside on the heap, stack, or in static memory) and its length.
-- `&str` is used when you need a view of existing string data without taking ownership. This is common for function arguments, where you don't need to own the string.
+- `&str` is used when you need a view of existing string data _without taking ownership_. This is common for function arguments, where you don't need to own the string.
 
 String literals (e.g., "hello") are of type `&'static str`, meaning they exist for the entire lifetime of the program.
 
-`String` is a growable, mutable, owned string type allocated on the heap:
+`String` is a growable, mutable, owned string allocated on the heap:
 
 - It is similar to a `Vec<u8>` that is guaranteed to hold valid UTF-8.
-- String owns its data, meaning when a String goes out of scope, the memory it occupies on the heap is automatically deallocated.
-- Use String when you need to modify a string, own string data (e.g., to pass it to another thread or store it in a struct that owns it), or create a new string at runtime.
+- `String` owns its data, meaning when a `String` goes out of scope, the memory it occupies on the heap is automatically deallocated.
+- Use `String` when you need to modify a string, own string data (e.g., to pass it to another thread or store it in a struct that owns it), or create a new string at runtime.
 
-The relationship between `String` and `&str` is similar to that between `Vec<T>` and `&[T]` (a vector and a slice of a vector). `String` owns the underlying buffer, while `&str` is a reference to a portion of that buffer or some other string data.
+The relationship between `String` and `&str` is similar to that between `Vec<T>` and `&[T]` (a vector and a slice, respectively). `String` owns the underlying buffer, while `&str` is a reference to a portion of that buffer or some other string data.
 
 ```rust,editable
 {{#include ../../crates/cats/data_structures/tests/strings/strings.rs:example}}

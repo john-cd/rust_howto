@@ -32,28 +32,28 @@ fn string_slices() {
     let my_string = String::from("Rust is awesome!");
 
     // Create a string slice pointing to the entire `String`:
-    let slice1 = &my_string[..]; // via `Index<RangeFull, Output = str>`.
-    println!("Slice of entire String: '{}'", slice1);
+    let slice1 = &my_string[..]; // Using `Index<RangeFull, Output = str>`.
+    println!("Slice of an entire `String`: '{}'", slice1);
 
     // The following works as well:
-    let _slice2 = &*my_string; // via `Deref<Target = str>`.
+    let _slice2 = &*my_string; // Using `Deref<Target = str>`.
     let _slice3: &str = &my_string; // Type ascription.
 
     // Create a string slice pointing to a part of the `String`:
     let slice4: &str = &my_string[0..4]; // "Rust"
-    println!("Slice of part of String: '{}'", slice4);
+    println!("Slice of part of a `String`: '{}'", slice4);
     // Caution: If we were to try to slice only part of a unicode
     // character's bytes, Rust would panic at runtime.
-    // String slices must always be valid UTF-8.
+    // String slices must always be valid UTF-8!
 
-    // Convert a `String` to `&str` using `as_str()`.
+    // Convert a `String` to `&str` explicitly using `as_str()`.
     fn print_slice(s: &str) {
         println!("Printing a slice: '{}'", s);
     }
     print_slice(my_string.as_str());
 
     // You can also convert bytes (in a vector or an array) into a string slice
-    // via `std::str::from_utf8`, if the bytes are valid UTF-8.
+    // via `std::str::from_utf8`, _if the bytes are valid UTF-8_.
 }
 
 /// String literals are immutable, fixed-size sequences of characters that are
@@ -81,7 +81,10 @@ fn common_operations() {
     // Note: s1 is moved and can no longer be used afterwards.
     // The `+` operator takes ownership of the first string and appends
     // a string slice to it.
-    // ERROR let _s = format!("{s1}-{s2}");
+
+    // Formatting:
+    let s1 = String::from("hello");
+    let _s = format!("{s1}{s2}");
 
     // Iteration:
     // Character by character:

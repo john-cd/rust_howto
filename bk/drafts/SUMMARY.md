@@ -87,7 +87,6 @@
   - [Heapless Data Structures](categories/data-structures/heapless.md)
   - [Stack-allocated Arrays](categories/data-structures/stack_allocated_arrays.md)
   - [UUIDs](categories/data-structures/uuid.md)
-  - [Strings](categories/data-structures/strings.md)
 
 - [Database Access](categories/database/index.md)
   - [SQLite](categories/database/sqlite.md)

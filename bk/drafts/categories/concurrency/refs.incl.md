@@ -56,5 +56,5 @@
 [p-shared-state]: shared_state.md
 [p-standard-library]: ../../../drafts/standard-library/index.md
 [p-streams]: ../asynchronous/streams.md
-[p-strings]: ../data-structures/strings.md
+[p-strings]: ../../../src/categories/data-structures/strings.md
 [p-traits]: ../../../src/language/traits.md

@@ -1,54 +1,84 @@
 // ANCHOR: example
+use std::io::Write;
 
-/// Example of using the `print` and `println!` macros.
+/// Example of using the `print` and `println!` macros:
 fn print() {
+    // The first argument of `print` must be a string literal.
     print!("This prints the string literal. ");
+    std::io::stdout().flush().unwrap(); // Emit message immediately, if stdout is line-buffered.
+
     println!("This prints a newline after the string.");
+
+    // `print` and related macros accept `{...}` as placeholders.
+    // Placeholders can refer to an argument or variable.
+    // The empty `{}` means "the next argument".
     let x = 5;
     let y = 10;
-    // `print` and related macros accept { } as placeholders.
-    println!("x = {x} and y + 2 = {}", y + 2);
+    println!("x = {x} and y + 2 = {}.", y + 2);
 }
 
-/// `print` calls `format` under the covers:
+/// Variants with `eprint`, `format` and `write`:
+fn variants() {
+    // `eprint` and `eprintln` write to `io::stderr` instead of `io::stdout`:
+    eprintln!("Error: Could not complete task {}.", 42);
+
+    // `format` creates a `String`:
+    let info = format!("{0}-{1}", "First", "Second");
+    println!("{}", info);
+
+    // `write` and `writeln` write formatted data into a writer.
+    // The writer may be any value with a `write_fmt` method,
+    // and usually implements the `fmt::Write` or `io::Write` traits.
+    // Here this is a simple buffer String:
+    use std::fmt::Write;
+    let mut output = String::new();
+    let z = "Rust";
+    write!(&mut output, "Hello {}!", z)
+        .expect("Error occurred while trying to write to a String.");
+}
+
+/// `print` and friends call `format_args` under the covers.
+/// They support a large number of placeholder formats:
 fn format() {
     let name = "Alice";
     let age = 30;
     let city = String::from("Seattle");
 
-    // Basic placeholder formatting.
-    let greeting: String =
-        format!("Hello, my name is {} and I am {} years old.", name, age);
-    println!("{}", greeting); // Output: Hello, my name is Alice and I am 30 years old.
+    // Substitute variables into placeholders:
+    println!("Hello, my name is {} and I am {} years old.", name, age);
+    // Output: Hello, my name is Alice and I am 30 years old.
 
-    // Named arguments for clarity.
-    let description =
-        format!("{subject} is a wonderful city to live in.", subject = city);
-    println!("{}", description); // Output: Seattle is a wonderful city to live in.
+    // Use named arguments for clarity:
+    print!("{subject} is a wonderful city to live in. ", subject = city);
+    // Output: Seattle is a wonderful city to live in.
 
-    // Positional arguments (less common but can be useful).
+    // Use positional arguments (less common but can be useful).
     let info = format!("{0} {1} {0}", "+", "-");
     println!("{}", info); // Output: + - +
 
-    // Formatting numbers with specific precision and alignment.
+    // You can format numbers with specific precision and alignment:
     let pi = std::f32::consts::PI;
-    let formatted_pi = format!("Pi to two decimal places: {:.2}", pi);
-    println!("{}", formatted_pi); // Output: Pi to two decimal places: 3.14.
+    println!("Pi to two decimal places: {:.2}", pi);
+    // Output: Pi to two decimal places: 3.14.
 
     let number = 123;
-    let aligned_number = format!("Right aligned with width 10: {:>10}", number);
-    println!("{}", aligned_number); // Output: Right aligned with width 10:        123.
+    println!("Right aligned with width 10: {:>10}", number);
+    // Output: Right aligned with width 10:        123.
 
-    let binary = format!("Binary representation: {:b}", number);
-    println!("{}", binary); // Output: Binary representation: 1111011.
+    // Print binary, hexadecimal...
+    println!("Binary representation: {:b}", number);
+    // Output: Binary representation: 1111011.
 
-    let hex = format!("Hexadecimal representation: {:x}", 255);
-    println!("{}", hex); // Output: Hexadecimal representation: ff.
+    println!("Hexadecimal representation: {:x}", 255);
+    // Output: Hexadecimal representation: ff.
 
-    let hex_uppercase = format!("Uppercase Hexadecimal: {:X}", 255);
-    println!("{}", hex_uppercase); // Output: Uppercase Hexadecimal: FF.
+    println!("Uppercase Hexadecimal: {:X}", 255);
+    // Output: Uppercase Hexadecimal: FF.
 
-    // Debug formatting for structs and enums (using `:?`):
+    // If no format letter is specified (as in `{}` or `{:6}`),
+    // `format_args` uses the `Display` trait.
+
+    // `:?` and friends use the `Debug` trait.
 
     /// An example struct that implements the `Debug` trait.
     #[allow(dead_code)]
@@ -58,12 +88,11 @@ fn format() {
         y: i32,
     }
     let p = Point { x: 10, y: 20 };
-    let debug_output = format!("Debug output of Point: {:?}", p); // `p` must implement `Debug`.
-    println!("{}", debug_output); // Output: Debug output of Point: Point { x: 10, y: 20 }
+    println!("Debug output of Point: {:?}", p); // `p` must implement `Debug`.
+    // Output: Debug output of Point: Point { x: 10, y: 20 }
 
     // Pretty debug formatting (using `:#?`):
-    let pretty_debug = format!("Pretty debug output:\n{:#?}", p);
-    println!("{}", pretty_debug);
+    println!("Pretty debug output:\n{:#?}", p);
     // Output:
     // Pretty debug output:
     // Point {
@@ -79,6 +108,7 @@ fn format() {
 
 fn main() {
     print();
+    variants();
     format();
 }
 // ANCHOR_END: example
