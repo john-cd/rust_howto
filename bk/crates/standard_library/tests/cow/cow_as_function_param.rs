@@ -1,6 +1,6 @@
 // ANCHOR: example
-//! Example of a function accepting either owned or borrowed values at its
-//! input.
+//! Example of a function accepting either owned or borrowed values
+//! at its input.
 use std::borrow::Cow;
 
 /// A function consuming a `Cow`:

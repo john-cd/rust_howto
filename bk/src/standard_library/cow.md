@@ -14,7 +14,7 @@ The type [`std::borrow::Cow`][c-std::borrow::Cow]{{hi:Cow}} is a smart pointer p
 - Needing to modify the underlying value is rare,
 - The stored value is mostly used for read-only purposes.
 
-`Cow` is a smart pointer. It implements `Deref`, which means that you can call non-mutating methods directly on the data it encloses. If mutation is desired, `to_mut` will obtain a mutable reference to an owned value, cloning if necessary.
+`Cow`, as a smart pointer, implements `Deref`, which means that you can call non-mutating methods directly on the data it encloses. If mutation is desired, `to_mut` will obtain a mutable reference to an owned value, cloning if necessary.
 
 ## Accept Either a Owned or Borrowed Value as the Input of a Function {#accept-either-owned-or-borrowed-values}
 
@@ -81,5 +81,4 @@ This example was adapted from a [StackOverflow discussion][stackoverflow-how-do-
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[cow: review; add fragment on Cow alternatives?](https://github.com/john-cd/rust_howto/issues/620)
 </div>
