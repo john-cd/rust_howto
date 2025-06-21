@@ -45,7 +45,7 @@
 - [CIS 198: Rust Programming](https://cis198-2016s.github.io)⮳.
 - [CS4414: Operating Systems](https://www.rust-class.org)⮳.
 
-## Paid Courses
+## Paid Courses {#paid-courses}
 
 - [Rust In Motion](https://www.manning.com/livevideo/rust-in-motion).
 - Pluralsight - [Rust Fundamentals](https://www.pluralsight.com/courses/rust-fundamentals).
@@ -90,11 +90,11 @@ See [[rust_cheatsheets | Rust Cheatsheets]].
 
 - [`rustmeup.com`](https://rustmeup.com)⮳.
 
-## GitHub Repositories
+## GitHub Repositories {#github-repos}
 
 - [rust-learning](https://github.com/ctjhoa/rust-learning)⮳ by Camille Tjhoa: An extensive collection of links to blog posts, articles, videos, and more for learning Rust.
 
-## Guides
+## Guides {#guides}
 
 - [Rusty CS](https://github.com/AbdesamedBendjeddou/Rusty-CS)⮳: "A Computer Science Curriculum with Rust flavor!"
 - [Curated Rust](https://github.com/saidaspen/curatedrust)⮳: "This is a guided walkthrough of the resources that I used to learn Rust. It is being added to incrementally as I myself learn rust over the next couple of weeks and months."
@@ -105,7 +105,7 @@ See [[rust_cheatsheets | Rust Cheatsheets]].
 - [Writing an OS in Rust](https://os.phil-opp.com)⮳.
 - [Hecto](https://philippflenker.com/hecto/)⮳: Build your own text editor in Rust.
 
-## Exercises & Practice
+## Exercises & Practice {#exercise}
 
 - [Rustlings](https://github.com/rust-lang/rustlings)⮳: Small exercises to get you used to reading and writing Rust code, including reading and responding to compiler error messages.
 - [Exercism](https://exercism.org/tracks/rust)⮳.
@@ -113,7 +113,7 @@ See [[rust_cheatsheets | Rust Cheatsheets]].
 - [Project Euler](https://projecteuler.net)⮳: Language-agnostic programming challenges focused mostly on math problems.
 - [Rust Practice Questions](https://github.com/rust-unofficial/rust-practise-questions)⮳.
 
-## Learning by Example
+## Learning by Example {#learning-by-example}
 
 - Rust Language Cheat Sheet A great simple quick-reference for all sorts of things from syntax to memory layouts of common types. Available in web and PDF form
 - [Rust By Example](https://doc.rust-lang.org/stable/rust-by-example)⮳: Learn rust features with small, targeted examples. Starting with "hello world" and moving up to more complex features like traits and generics.
@@ -122,7 +122,7 @@ See [[rust_cheatsheets | Rust Cheatsheets]].
 - [Learn Rust](https://hackr.io/tutorials/learn-rust)⮳.
 - [Idiomatic Rust Snippets](https://idiomatic-rust-snippets.org/intro.html)⮳.
 
-## Tutorials & Workshop Materials
+## Tutorials & Workshop Materials {#tutorials-and-workshop-materials}
 
 - [Workshop](https://rust-tutorials.com/RustConf17)⮳ slides and exercises from RustConf 2017.
 - Jonathan Pallant's [Rust on the Raspberry Pi](https://github.com/thejpster/pi-workshop-rs)⮳ tutorial (using a Sense HAT).

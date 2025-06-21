@@ -1,3 +1,4 @@
+[ex-language-at-bindings]: match.md#at-bindings
 [ex-language-accept-various-iterable-types]: iterators.md#accept-various-iterable-types
 [ex-language-adapters]: iterators.md#adapters
 [ex-language-associated-types]: traits.md#associated-types
@@ -25,7 +26,14 @@
 [ex-language-create-slices]: slices.md#create-slices
 [ex-language-data_types]: data_types.md
 [ex-language-default-implementation]: traits.md#default-implementation
+[ex-language-define-generic-structs]: structs.md#define-generic-structs
 [ex-language-deprecated]: attributes.md#deprecated
+[ex-language-destructure-enums]: match.md#destructure-enums
+[ex-language-destructure-for]: match.md#destructure-for
+[ex-language-destructure-function-or-closure]: match.md#destructure-function-or-closure
+[ex-language-destructure-references]: match.md#destructure-references
+[ex-language-destructure-structs]: match.md#destructure-structs
+[ex-language-destructure-tuples]: match.md#destructure-tuples
 [ex-language-destructuring]: variables.md#destructuring
 [ex-language-diverging-functions]: functions.md#diverging-functions
 [ex-language-dyn-compatibility]: trait_objects.md#dyn-compatibility
@@ -43,6 +51,7 @@
 [ex-language-getter-conventions]: naming_conventions.md#getter-conventions
 [ex-language-if-else]: control_flow.md#if-else
 [ex-language-if-let]: match.md#if-let
+[ex-language-ignore-values]: match.md#ignore-values
 [ex-language-immutability]: variables.md#immutability
 [ex-language-impl-trait-vs-dyn-trait]: trait_objects.md#impl-trait-vs-dyn-trait
 [ex-language-impl-trait]: impl_trait.md#impl-trait
@@ -52,6 +61,7 @@
 [ex-language-iterator-trait]: iterators.md#iterator-trait
 [ex-language-iterators]: iterators.md
 [ex-language-labeled-block-expressions]: control_flow.md#labeled-block-expressions
+[ex-language-let-else]: match.md#let-else
 [ex-language-lifetime-annotations]: lifetimes.md#lifetime-annotations
 [ex-language-lifetime]: lifetimes.md#lifetime
 [ex-language-lifetimes-in-functions]: lifetimes.md#lifetimes-in-functions
@@ -62,6 +72,9 @@
 [ex-language-macros-by-example]: macros.md#macros-by-example
 [ex-language-macros]: macros.md
 [ex-language-main-function]: entrypoint.md#main-function
+[ex-language-match-guards]: match.md#match-guards
+[ex-language-match-literals]: match.md#match-literals
+[ex-language-match-ranges]: match.md#match-ranges
 [ex-language-match]: match.md#match
 [ex-language-methods]: structs.md#methods
 [ex-language-move-closures]: closures.md#move-closures
@@ -72,10 +85,13 @@
 [ex-language-naming-conventions]: naming_conventions.md#naming-conventions
 [ex-language-newtype-pattern]: traits.md#newtype-pattern
 [ex-language-only-one-base-trait]: trait_objects.md#only-one-base-trait
+[ex-language-or-patterns]: match.md#or-patterns
 [ex-language-overflow-handling]: data_types.md#overflow-handling
 [ex-language-ownership]: ownership_borrowing.md#ownership
 [ex-language-ownership_borrowing]: ownership_borrowing.md
+[ex-language-pattern-syntax]: match.md#pattern-syntax
 [ex-language-production-code-attributes]: attributes.md#production-code-attributes
+[ex-language-ref-and-ref-mut-bindings]: match.md#ref-and-ref-mut-bindings
 [ex-language-references]: ownership_borrowing.md#references
 [ex-language-return-an-iterator]: iterators.md#return-an-iterator
 [ex-language-return-position-impl-trait]: impl_trait.md#return-position-impl-trait
@@ -110,6 +126,7 @@
 [ex-language-use-iterators]: iterators.md#use-iterators
 [ex-language-use-match-to-branch-on-a-pattern]: match.md#use-match-to-branch-on-a-pattern
 [ex-language-use-slice-as-function-argument]: slices.md#use-slice-as-function-argument
+[ex-language-variable-bindings]: match.md#variable-bindings
 [ex-language-variables]: variables.md
 [ex-language-when-to-use-trait-objects]: trait_objects.md#when-to-use-trait-objects
 [ex-language-while-let]: match.md#while-let

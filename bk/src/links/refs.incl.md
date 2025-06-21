@@ -1,3 +1,9 @@
+[ex-links-cheatsheets]: rust_cheatsheets.md#cheatsheets
+[ex-links-comparison-to-other-languages]: rust_cheatsheets.md#comparison-to-other-languages
+[ex-links-conferences]: meetings.md#conferences
+[ex-links-meetups]: meetings.md#meetups
+[ex-links-podcasts]: videos.md#podcasts
+[ex-links-videos]: videos.md#videos
 [p-axum]: # "../categories/web-programming_http-server/axum.md"
 [p-benchmarking]: # "../categories/development-tools_profiling/benchmarking.md"
 [p-building]: # "../categories/development-tools_cargo-plugins/building.md"

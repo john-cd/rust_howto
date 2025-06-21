@@ -133,7 +133,7 @@ Beware that blanket `impl` apply globally and can lead to conflicts if overused.
 
 This topic is covered in the [[generics | Generics]] chapter.
 
-## Pass or Return Anonymous Types to Functions with `impl Trait` {#impl-trait}
+## Pass or Return Anonymous Types to Functions with `impl Trait` {#skip}
 
 This topic is covered in the [[impl_trait | Impl Trait]] chapter.
 

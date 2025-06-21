@@ -181,7 +181,7 @@ A sequence of patterns separated by `|` match if any of the sub-patterns match. 
 {{#include ../../crates/language/tests/match/or_patterns.rs:example}}
 ```
 
-### Bind a Variable with `@` Bindings (Bind to Subpatterns) {#@-bindings}
+### Bind a Variable with `@` Bindings (Bind to Subpatterns) {#at-bindings}
 
 `variable @ pattern` binds a variable name to a value while also testing that value against a further pattern:
 
