@@ -5,7 +5,3 @@
 | [Special Types][ex-language-special-types] |
 | [String Types][ex-language-string-types] |
 | [Type Aliases][ex-language-type-aliases] |
-
-<div class="hidden">
-| [Handle Overflows][ex-language-overflow-handling] |
-</div>

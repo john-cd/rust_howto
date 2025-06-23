@@ -1,6 +1,6 @@
 // ANCHOR: example
-/// Demonstrates the use of tuples and arrays in Rust, including their
-/// declaration, access, destructuring, iteration, and mutation.
+/// Demonstrates the use of tuples and arrays in Rust, including
+/// their declaration, access, destructuring, iteration, and mutation.
 fn main() {
     println!("=== TUPLES ===");
 
@@ -17,8 +17,7 @@ fn main() {
     println!("Active: {}", person.2);
 
     // Destructure a tuple:
-    // Tuple elements can be extracted into separate variables
-    // using destructuring.
+    // Tuple elements can be extracted into separate variables.
     let (name, age, active) = person;
     println!(
         "Destructured - Name: {}, Age: {}, Active: {}",

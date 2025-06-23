@@ -13,6 +13,7 @@
 - [Language]()
   - [Rust Installation and First Steps](language/rust_install.md)
   - [Entrypoint](language/entrypoint.md)
+  - [Data Types](language/data_types.md)
   - [Variables](language/variables.md)
   - [Constants and Statics](language/constants_and_statics.md)
   - [Ownership and Borrowing](language/ownership_borrowing.md)

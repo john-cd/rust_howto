@@ -2,9 +2,9 @@
 
 ## Std {#skip}
 
-- [black_box in core::hint](https://doc.rust-lang.org/core/hint/fn.black_box.html)
-- [std::pin](https://doc.rust-lang.org/std/pin/index.html#projections-and-structural-pinning)
-- [core::iter](https://doc.rust-lang.org/stable/core/iter/index.html#for-loops-and-intoiterator)
+- [black_box in `core::hint`](https://doc.rust-lang.org/core/hint/fn.black_box.html)
+- [`std::pin`](https://doc.rust-lang.org/std/pin/index.html#projections-and-structural-pinning)
+- [`core::iter`](https://doc.rust-lang.org/stable/core/iter/index.html#for-loops-and-intoiterator)
 
 ## Libs {#skip}
 
@@ -15,11 +15,11 @@
 
 ## markdown {#skip}
 
-- [mdbook-pdf](https://crates.io/crates/mdbook-pdf)
+- [`mdbook-pdf`](https://crates.io/crates/mdbook-pdf)
 
 ## ML / Search {#skip}
 
-- [hora: efficient approximate nearest neighbor search algorithm collections library written in Rust.](https://github.com/hora-search/hora)
+- [`hora`: efficient approximate nearest neighbor search algorithm collections library written in Rust.](https://github.com/hora-search/hora)
 
 ## CD / CI {#skip}
 
@@ -35,7 +35,7 @@
 
 ## Language Features {#skip}
 
-- [Converting between different collection types: from Vec to HashSet or HashMap](https://www.slingacademy.com/article/converting-between-different-collection-types-from-vec-t-to-hashset-t-or-hashmap-t-u/)
+- [Converting between different collection types: from `Vec` to `HashSet` or `HashMap`](https://www.slingacademy.com/article/converting-between-different-collection-types-from-vec-t-to-hashset-t-or-hashmap-t-u/)
 
 ## Jobs {#skip}
 
@@ -47,7 +47,7 @@
 
 ## Markdown {#skip}
 
-- [mdbook-tools](https://lib.rs/crates/mdbook-tools)
+- [`mdbook-tools`](https://lib.rs/crates/mdbook-tools)
 
 - [Environment Variables - mdBook Documentation](https://rust-lang.github.io/mdBook/format/configuration/environment-variables.html)
 
@@ -57,7 +57,7 @@
 
 ## Dataflow Graphs {#skip}
 
-- [fractalide: Reusable Reproducible Composable Software](https://github.com/fractalide/fractalide)
+- [`fractalide`: Reusable Reproducible Composable Software](https://github.com/fractalide/fractalide)
 
 ## Layouts {#skip}
 
@@ -69,11 +69,11 @@
 
 ## Crates.io {#skip}
 
-- [crates.io: development update | Rust Blog](https://blog.rust-lang.org/2025/02/05/crates-io-development-update.html)
+- [`crates.io`: development update | Rust Blog](https://blog.rust-lang.org/2025/02/05/crates-io-development-update.html)
 
 ## Unstable Features {#skip}
 
-- [Coroutine in std::ops](https://doc.rust-lang.org/std/ops/trait.Coroutine.html)
+- [Coroutine in `std::ops`](https://doc.rust-lang.org/std/ops/trait.Coroutine.html)
 - [Unstable Features - The Cargo Book](https://doc.rust-lang.org/nightly/cargo/reference/unstable.html#script)
 
 ## Zed {#skip}
@@ -91,8 +91,8 @@
 
 ## Rust links to sort {#skip}
 
-- [geckodriver: WebDriver for Firefox](https://github.com/mozilla/geckodriver)
+- [`geckodriver`: WebDriver for Firefox](https://github.com/mozilla/geckodriver)
 
-- [rust-shed: Repository containing Rust crates common between other Facebook open source projects (like Mononoke or Eden).](https://github.com/facebookexperimental/rust-shed)
+- [`rust-shed`: Repository containing Rust crates common between other Facebook open source projects (like Mononoke or Eden).](https://github.com/facebookexperimental/rust-shed)
 
 - [foreverVM: The sessionless code interpreter](https://forevervm.com/)

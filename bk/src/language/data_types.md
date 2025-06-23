@@ -6,7 +6,7 @@
 
 [![Rust by example - Primitives][book-rust-by-example-primitives-badge]][book-rust-by-example-primitives]{{hi:Primitives}}
 
-Rust has several categories of scalar types: integers, floating-point numbers, Booleans, and unicode characters.
+Rust has several categories of primitive scalar types: integers, floating-point numbers, Booleans, and unicode characters.
 
 | Type Family | Types | Examples |
 |---|---|---|
@@ -24,8 +24,6 @@ The following illustrates the various scalar data types:
 {{#include ../../crates/language/tests/data_types/scalar_data_types.rs:example}}
 ```
 
-See also 'Unit' and 'Never' below.
-
 ## Compound Data Types: Tuples and Arrays {#compound-types}
 
 [![Rust by example - tuples][book-rust-by-example-tuples-badge]][book-rust-by-example-tuples] [![Rust by example - array][book-rust-by-example-array-badge]][book-rust-by-example-array]
@@ -35,7 +33,7 @@ Compound types can group multiple values into one type. Rust has two primitive c
 | Type | Examples |
 |---|---|
 | Tuples | `let tup: (i32, f64, u8) = (500, 6.4, 1);`. Access via `let five_hundred = x.0;`. Destructuring via `let (x, y, z) = tup;`. |
-| Arrays | `let a: [i32; 5] = [1, 2, 3, 4, 5];` allocated on the stack. Access via `let first = a[0];`. |
+| Arrays | `let a: [i32; 5] = [1, 2, 3, 4, 5];`. Access via `let first = a[0];`. |
 
 Both are fixed length. A [[vectors | Vector]] is a similar collection type provided by the [standard library][p-standard-library] that is allowed to grow or shrink in size.
 
@@ -47,9 +45,17 @@ The following provides examples of tuples and arrays:
 
 ## String Types {#string-types}
 
+Primitive type `str` is a string slice that represents a view into a string, allowing you to access a portion of a string without owning it. It is immutable and typically used as a reference type, denoted as `&str`, which allows for efficient borrowing of string data. Its memory can be on the heap, stack, or static. String slices must always be valid UTF-8. `&'static str` is the type of string literals.
+
+`String` is a growable, mutable, owned string allocated on the heap. It is not a primitive type, but is rather part of the standard library.
+
+`&String` can be coerced to `&str`, which makes `&str` a candidate for function arguments, if mutability and ownership are not required. If mutation is needed, use `&mut String`.
+
 ```rust,editable
 {{#include ../../crates/language/tests/data_types/string_data_types.rs:example}}
 ```
+
+Strings are covered in much more details in the [[strings | Strings]] and [[text-processing | Text Processing]] chapters.
 
 ## Special Types {#special-types}
 
@@ -58,11 +64,26 @@ The following provides examples of tuples and arrays:
 | Unit | [`unit`][primitive-unit]⮳. | The `()` type (aka 'void' in other languages) has exactly one value `()`, and is used when there is no other meaningful value that could be returned. |
 | Never | [`never`][primitive-never]⮳. | `!` represents the type of computations which never resolve to any value at all. For example, the exit function `fn exit(code: i32) -> !` exits the process without ever returning, and so returns `!`. |
 
-See also [[functions | Functions]].
+See also the [[functions | Functions]] chapter.
+
+```rust,editable
+{{#include ../../crates/language/tests/data_types/unit_never.rs:example}}
+```
 
 ## Type Aliases {#type-aliases}
 
-Use the `type` keyword to declare type aliases: `type Kilometers = i32;`.
+A type alias is a way to give a new name to an existing type, making code easier to read and write. It does not create a new type, meaning the original type's properties still apply.
+
+Use the `type` keyword to declare type aliases:
+
+```rust,editable
+type Kilometers = u32;
+
+type Point = (i32, i32);
+
+// With generics:
+type TypeAlias<T> = Bar<T> where T: Foo;
+```
 
 ## Related Topics {#skip}
 
@@ -71,6 +92,7 @@ See also:
 - [[enums | Enums]].
   - [[option | Option]].
   - [[result | Result]].
+- [[generics | Generics]].
 - [[slices | Slices]].
 - [[strings | Strings]].
 - [[structs | Structs]].
@@ -81,18 +103,4 @@ See also:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO string types / unit never examples
-TODO find spot for overflows
-
-| [Handle Overflows][ex-language-overflow-handling] |
-
-### Handle Overflows {#overflow-handling}
-
-- Wrap in all modes with the `wrapping_*` methods, such as [`wrapping_add`][primitive-u32::wrapping_add]{{hi:wrapping_add}}⮳.
-- Return the [`std::option::Option::None`][c-std::option::Option::None]{{hi:std::option::Option::None}}⮳ value if there is overflow{{hi:Overflow}} with the `checked_*` methods.
-- Return the value and a boolean indicating whether there was overflow with the `overflowing_*` methods.
-- Saturate at the value's minimum or maximum values with the `saturating_*` methods.
-
-- [half — data structures in Rust](https://lib.rs/crates/half)
-
 </div>

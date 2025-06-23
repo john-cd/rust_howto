@@ -66,7 +66,7 @@ fn main() {
         a,
         100,
         a.wrapping_add(100)
-    ); // Using wrapping_add to avoid overflow panic.
+    ); // Using `wrapping_add` to avoid overflow panic.
     println!("Float multiplication: {} * {} = {}", n, o, (n as f64) * o);
     println!("Boolean AND: {} && {} = {}", p, q, p && q);
     println!("Boolean OR: {} || {} = {}", p, q, p || q);

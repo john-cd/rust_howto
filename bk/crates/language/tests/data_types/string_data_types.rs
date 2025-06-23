@@ -7,7 +7,6 @@ fn main() {
     println!("String slice: {}", u);
     println!("Owned string: {}", v);
 
-    // Basic operations:
     println!(
         "String concatenation: {} + {} = {}",
         u,
