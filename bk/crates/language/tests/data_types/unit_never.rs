@@ -1,5 +1,6 @@
 // ANCHOR: example
 // The unit type is used when there is nothing to return:
+#[allow(clippy::unused_unit)]
 fn a_func() -> () {
     println!("a_func was called.");
 }
