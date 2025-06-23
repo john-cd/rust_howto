@@ -6,7 +6,7 @@
 
 ## Alternatives {#skip}
 
-- [`mdbook-hide`][c-mdbook_hide-github]{{hi:mdbook-hide}}⮳ hides chapters under construction. Install with `cargo install mdbook-hide`. Un-comment the related section in [`book.toml`][c-mdbook-book.toml]⮳{{hi:book.toml}} . To mark a chapter as hidden, add the following comment anywhere in the Markdown file. It is better to have it at the top of the file for clarity.
+- [`mdbook-hide`][c-mdbook_hide-github]{{hi:mdbook-hide}}⮳ hides chapters under construction. Install with `cargo install mdbook-hide`. Un-comment the related section in [`book.toml`][c-mdbook-book.toml]⮳{{hi:book.toml}}. To mark a chapter as hidden, add the following comment anywhere in the Markdown file. It is better to have it at the top of the file for clarity.
 
 ```xml
 <!--hidden-->

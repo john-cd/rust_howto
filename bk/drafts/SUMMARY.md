@@ -297,7 +297,6 @@
   - [Learning](links/learning.md)
 
 - [Contributing](contributing/index.md)
-  - [Repository Structure](contributing/repo_structure.md)
   - [Environment Setup](contributing/dev_environment_setup.md)
   - [Editing](contributing/development_editing.md)
   - [Dev Containers and Docker](contributing/dev_container_docker.md)

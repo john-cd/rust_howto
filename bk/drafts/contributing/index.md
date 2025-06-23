@@ -2,37 +2,16 @@
 
 Contributions to this book, from small edits to whole chapters, are most welcome.
 
-Feel free to submit an issue or a pull request{{hi:Pull request}} to the [repo][rust-howto-github]⮳. Draft chapters are kept in [this folder][rust-howto-drafts]⮳. An informal (and very long) list of subjects we would like to cover is kept in the [topics of interest][p-topics-of-interest]⮳ page.
+Feel free to submit an issue or a pull request{{hi:Pull request}} to the [repo][rust-howto-github]⮳.
 
-Embedded examples should be ideally _runnable_ on the [Rust playground][rust-playground-website]⮳ or at least directly copy-pasteable into Rust code.
-
-## Goals
-
-This book's long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [`blessed.rs`][blessed-rs-website]{{hi:blessed.rs}}⮳, the most downloaded libraries in [`crates.io`][crates.io-website]{{hi:crates.io}}⮳, and 'high quality crates' per [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳ [statistics][lib-rs-stats]⮳. Review [key crates][p-crates]⮳{{hi:Key crates}} for topic ideas.
-
-## See Also
-
-- [TODO list][rust-howto-todo-github]⮳.
-- [LICENSE][rust-howto-license]⮳.
-
-{{#include refs.incl.md}}
-{{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-[contributing/index: edit](https://github.com/john-cd/rust_howto/issues/529)
-link to issues and project boards on GH
-merge CONTRIBUTING.md below:
-
-First off, thanks for taking the time to contribute! ❤️
-
-All types of contributions are encouraged and valued. See the [Table of Contents][table-of-contents] for different ways to help and details about how this project handles them. Please make sure to read the relevant section before making your contribution. It will make it a lot easier for us maintainers and smooth out the experience for all involved. The community looks forward to your contributions. 🎉
+All types of contributions are encouraged and valued. See the [Table of Contents][table-of-contents] for different ways to help and details about how this project handles them. Please make sure to read the relevant section before making your contribution. It will make it a lot easier for us maintainers and smooth out the experience for all involved. The community looks forward to your contributions.
 
 > And if you like the project, but just don't have time to contribute, that's fine. There are other easy ways to support the project and show your appreciation, which we would also be very happy about:
 >
-> - Star the project
-> - Tweet about it
-> - Refer this project in your project's readme
-> - Mention the project at local meetups and tell your friends/colleagues
+> - Star the GitHub repo.
+> - Tweet about it.
+> - Refer this book in your project's README
+> - Mention the project at local meetups and tell your friends/colleagues.
 
 ## Table of Contents
 
@@ -47,10 +26,20 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 - [Commit Messages][commit-messages]
 - [Join The Project Team][join-the-project-team]
 
+
+An informal (and very long) list of subjects we would like to cover is kept in the [topics of interest][p-topics-of-interest]⮳ page.
+
+Draft chapters are kept in [this folder][rust-howto-drafts]⮳ and in the `bk/later` directory.
+
+Embedded examples should be ideally _runnable_ on the [Rust playground][rust-playground-website]⮳ or at least directly copy-pasteable into Rust code.
+
+## Goals {#goals}
+
+This book's long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [`blessed.rs`][blessed-rs-website]{{hi:blessed.rs}}⮳, the most downloaded libraries in [`crates.io`][crates.io-website]{{hi:crates.io}}⮳, and 'high quality crates' per [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳ [statistics][lib-rs-stats]⮳. Review [key crates][p-crates]⮳{{hi:Key crates}} for topic ideas.
+
 ## Code of Conduct
 
-This project and everyone participating in it is governed by the
-[Code of Conduct][Code of Conduct]. By participating, you are expected to uphold this code. Please report unacceptable behavior to the code owner.
+This project and everyone participating in it is governed by the [Code of Conduct][Code of Conduct]. By participating, you are expected to uphold this code. Please report unacceptable behavior to the code owner.
 
 ## I Have a Question
 
@@ -97,7 +86,7 @@ We use GitHub issues to track bugs and errors. If you run into an issue with the
 
 - Open an [Issue][new-issue]. Since we can't be sure at this point whether it is a bug or not, we ask you not to talk about a bug yet and not to label the issue.
 - Explain the behavior you would expect and the actual behavior.
-- Please provide as much context as possible and describe the *reproduction steps* that someone else can follow to recreate the issue on their own. This usually includes your code. For good bug reports you should isolate the problem and create a reduced test case.
+- Please provide as much context as possible and describe the _reproduction steps_ that someone else can follow to recreate the issue on their own. This usually includes your code. For good bug reports you should isolate the problem and create a reduced test case.
 - Provide the information you collected in the previous section.
 
 Once it's filed:
@@ -137,7 +126,16 @@ Enhancement suggestions are tracked as [GitHub issues][issues].
 
 ## Join The Project Team
 
-## Attribution
+
+
+## See Also {#see-also}
+
+- [TODO list][rust-howto-todo-github]⮳.
+- [LICENSE][rust-howto-license]⮳.
+
+TODO link to issues and project boards on GH
+
+## Attribution {#attribution}
 
 This guide is based on the **contributing.md**. [Make your own][make-your-own]!
 
@@ -160,4 +158,10 @@ This guide is based on the **contributing.md**. [Make your own][make-your-own]!
 [silentcast]:https://github.com/colinkeenan/silentcast
 [Code of Conduct]: ../../../CODE_OF_CONDUCT.md
 [styleguides]: #styleguides
+
+{{#include refs.incl.md}}
+{{#include ../refs/link-refs.md}}
+
+<div class="hidden">
+[contributing/index: edit](https://github.com/john-cd/rust_howto/issues/529)
 </div>

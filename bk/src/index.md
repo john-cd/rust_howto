@@ -48,7 +48,7 @@ If you are simply looking for the solution to a given task, the easiest ways to 
 - look up into the [Word index][p-word-index] lists concepts, crates (in lower case), and Rust items (using their full path e.g. [`parking_lot::ReentrantMutex`][c-parking_lot::ReentrantMutex]⮳{{hi:parking_lot::ReentrantMutex}}),
 - consult the [[crates_alphabetical | alphabetical]] and [[crates_by_category | categorical]] crates indices.
 
-The [links][p-links] section provides pointers to notable Rust websites, [[learning | learning]] resources, cheat sheets, [[books | books]], and[[example_code | code examples]]...
+The [links][p-links] section provides pointers to notable Rust websites, [[learning | learning]] resources, cheat sheets, [[books | books]], and [[example_code | code examples]]...
 
 ## Important Sections
 
@@ -60,7 +60,7 @@ The [links][p-links] section provides pointers to notable Rust websites, [[learn
 
 Recipes are designed to give you instant access to working code, along with a full explanation of what it is doing, and to guide you to further information. All recipes are self-contained programs, so that they may be copied directly into your own projects for experimentation. To do so, follow the instructions below.
 
-Consider this example for "generate random numbers within a range":
+Consider the following example for "generate random numbers within a range":
 
 [![rand][c-rand-badge]][c-rand]{{hi:rand}} [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}}
 
