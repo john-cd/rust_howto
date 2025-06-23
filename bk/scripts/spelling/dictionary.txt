@@ -3232,3 +3232,6 @@ destructures
 subpatterns
 Entrypoints
 reallocations
+expr
+Metavariables
+TypeAlias
