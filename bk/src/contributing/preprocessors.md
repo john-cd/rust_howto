@@ -4,25 +4,29 @@
 
 ## Preprocessors Used in the Book {#preprocessors}
 
-- [`mdbook-linkcheck`][c-mdbook_linkcheck-github]{{hi:mdbook-linkcheck}}⮳ is a backend for [`mdbook`][c-mdbook]{{hi:mdbook}}⮳ that will check links. Install with `cargo install mdbook-linkcheck`. Un-comment the related section in [`book.toml`][c-mdbook-book.toml]⮳{{hi:book.toml}} .
+This book is built from its markdown sources using [`mdbook`][c-mdbook]{{hi:mdbook}}⮳.
 
-## Alternatives {#skip}
+The [`bk/book.toml`](https://github.com/john-cd/rust_howto/blob/main/bk/book.toml)⮳ config file configures several [mdbook preprocessors](https://rust-lang.github.io/mdBook/format/configuration/preprocessors.html)⮳ and [backends](https://rust-lang.github.io/mdBook/format/configuration/renderers.html)⮳.
 
-- [`mdbook-hide`][c-mdbook_hide-github]{{hi:mdbook-hide}}⮳ hides chapters under construction. Install with `cargo install mdbook-hide`. Un-comment the related section in [`book.toml`][c-mdbook-book.toml]⮳{{hi:book.toml}}. To mark a chapter as hidden, add the following comment anywhere in the Markdown file. It is better to have it at the top of the file for clarity.
+- [`mdbook-private`][c-mdbook_private-github]⮳ hides private sections and chapters in the book.
+- `mdbook-scrub` is a custom preprocessor written specifically for this book. See below.
+- [`mdbook-indexing`](https://github.com/daviddrysdale/mdbook-indexing/tree/main)⮳ builds a word index via `{{i:<text>}}`, `{{hi:<text>}}` annotations in the book's Markdown.
+- [`mdbook-linkcheck`][c-mdbook_linkcheck-github]{{hi:mdbook-linkcheck}}⮳ is a [backend](https://rust-lang.github.io/mdBook/for_developers/backends.html)⮳ that checks (internal) links. Install with `cargo install mdbook-linkcheck`. Un-comment the related section in [`book.toml`][c-mdbook-book.toml]⮳{{hi:book.toml}}.
+- The default `html` backend is used to generate the HTML for deployment on GitHub Pages.
 
-```xml
-<!--hidden-->
-```
+The [[mdbook | `mdbook`]] chapter describes these preprocessors and backends in more detail.
 
-- [`mdbook-keeper`][c-mdbook_keeper-crates.io]{{hi:mdbook-keeper}}⮳. Install with:
+## `mdbook-scrub` {#mdbook-scrub}
 
-```bash
-cargo install mdbook_keeper --git https://github.com/tfpk/mdbook_keeper.git
-```
+[`mdbook-scrub`](https://github.com/john-cd/rust_howto/blob/main/mdbook-scrub)⮳ is a [custom preprocessor](https://rust-lang.github.io/mdBook/for_developers/preprocessors.html)⮳ written specifically for this book. It is a simple tool that
+
+- removes the hidden sections between <div class="hidden"> and </div> from the markdown before rendering. By default, `mdbook` hides <div class="hidden"></div> sections, but they remain searchable.
+- removes `{{#includes }}` that points to hidden files (files that start with `_`), if any. This feature fixes a gap of `mdbook-private`.
+
+Consult the project's [README](https://github.com/john-cd/rust_howto/blob/main/mdbook-scrub/README.md)⮳ for more details.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[optional_preprocessors: add NOW](https://github.com/john-cd/rust_howto/issues/530)
 </div>

@@ -149,4 +149,27 @@ jobs:
 
 [Byron-termbook][c-termbook-github]{{hi:termbook}} is a runner for [`mdbook`][c-mdbook]⮳{{hi:mdbook}} to keep your documentation tested:
 
+## Alternatives {#skip}
+
+[`mdbook-hide`][c-mdbook_hide-github]{{hi:mdbook-hide}}⮳ hides chapters under construction. Install with `cargo install mdbook-hide`. Configure in [`book.toml`][c-mdbook-book.toml]⮳{{hi:book.toml}}.
+
+```toml
+# Adds support for hidden chapters. The hidden chapters can be marked by adding a special Markdown comment: <!--hidden-->
+# https://github.com/ankitrgadiya/mdbook-hide/
+[preprocessor.hide]
+hide = true
+```
+
+To mark a chapter as hidden, add the following comment anywhere in the Markdown file. It is better to have it at the top of the file for clarity.
+
+```xml
+<!--hidden-->
+```
+
+- [`mdbook-keeper`][c-mdbook_keeper-crates.io]{{hi:mdbook-keeper}}⮳. Install with:
+
+```bash
+cargo install mdbook_keeper --git https://github.com/tfpk/mdbook_keeper.git
+```
+
 </div>
