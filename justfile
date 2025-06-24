@@ -24,7 +24,7 @@ all cmd:
 mod bk
 # Playground
 mod playground
-# Placeholder crate on crates.io
+# Placeholder crate on `crates.io`
 mod publish
 # `mdbook-scrub` preprocessor
 mod? scrub 'mdbook-scrub'
