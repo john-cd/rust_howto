@@ -1,6 +1,8 @@
 # MdBook pre-processors
 
-{{#include optional_preprocessors.incl.md}}
+{{#include preprocessors.incl.md}}
+
+## Preprocessors Used in the Book {#preprocessors}
 
 - [`mdbook-linkcheck`][c-mdbook_linkcheck-github]{{hi:mdbook-linkcheck}}⮳ is a backend for [`mdbook`][c-mdbook]{{hi:mdbook}}⮳ that will check links. Install with `cargo install mdbook-linkcheck`. Un-comment the related section in [`book.toml`][c-mdbook-book.toml]⮳{{hi:book.toml}} .
 

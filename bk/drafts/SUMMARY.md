@@ -300,7 +300,6 @@
   - [Environment Setup](contributing/dev_environment_setup.md)
   - [Editing](contributing/development_editing.md)
   - [Dev Containers and Docker](contributing/dev_container_docker.md)
-  - [Optional Preprocessors](contributing/optional_preprocessors.md)
   - [API Documentation](contributing/api_documentation.md)
 
 [Thanks](thanks.md)

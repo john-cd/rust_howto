@@ -54,6 +54,7 @@
 
 - [Contributing](contributing/index.md)
   - [Repository Structure](contributing/repo_structure.md)
+  - [Book Preprocessors](contributing/preprocessors.md)
   - [Crate Publication](contributing/publication.md)
   - [Topics of Interest](contributing/topics_of_interest.md)
 
