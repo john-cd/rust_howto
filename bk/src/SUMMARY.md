@@ -53,10 +53,14 @@
   - [Cheat Sheets](links/rust_cheatsheets.md)
 
 - [Contributing](contributing/index.md)
-  - [Repository Structure](contributing/repo_structure.md)
-  - [Book Preprocessors](contributing/preprocessors.md)
-  - [Crate Publication](contributing/publication.md)
   - [Topics of Interest](contributing/topics_of_interest.md)
+  - [Repository Structure](contributing/repo_structure.md)
+  - [Environment Setup](contributing/dev_environment_setup.md)
+  - [Editing](contributing/development_editing.md)
+  - [Book Preprocessors](contributing/preprocessors.md)
+  - [Dev Containers and Docker](contributing/dev_container_docker.md)
+  - [API Documentation](contributing/api_documentation.md)
+  - [Crate Publication](contributing/publication.md)
 
 [Index](word_index.md)
 
