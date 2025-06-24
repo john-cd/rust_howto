@@ -1,0 +1,3 @@
+mod elasticsearch;
+
+fn main() {}

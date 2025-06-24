@@ -1,0 +1,3 @@
+mod insta;
+
+fn main() {}

@@ -1,0 +1,3 @@
+mod cryptocurrencies;
+
+fn main() {}

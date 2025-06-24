@@ -1,0 +1,3 @@
+mod tinytemplate;
+
+fn main() {}

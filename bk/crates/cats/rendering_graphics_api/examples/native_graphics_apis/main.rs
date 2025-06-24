@@ -1,0 +1,3 @@
+mod graphics;
+
+fn main() {}

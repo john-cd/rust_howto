@@ -1,0 +1,3 @@
+mod libc;
+
+fn main() {}

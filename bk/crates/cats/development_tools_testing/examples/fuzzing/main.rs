@@ -1,0 +1,3 @@
+mod afl;
+
+fn main() {}

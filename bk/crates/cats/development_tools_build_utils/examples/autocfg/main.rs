@@ -1,0 +1,3 @@
+mod autocfg;
+
+fn main() {}

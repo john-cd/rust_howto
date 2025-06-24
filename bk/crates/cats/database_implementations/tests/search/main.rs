@@ -1,2 +1,0 @@
-mod meilisearch;
-mod tantivy;

@@ -37,4 +37,4 @@ use_field_init_shorthand = true # Use field initialize shorthand if possible. De
 use_try_shorthand = true # Replace uses of the try! macro by the ? shorthand. Default: false
 
 ## Ignore specific files
-ignore = ["crates/code_organization/tests/modules/module_visibility.rs"]
+ignore = ["crates/code_organization/examples/modules/module_visibility.rs"]

@@ -1,0 +1,3 @@
+mod lapin;
+
+fn main() {}

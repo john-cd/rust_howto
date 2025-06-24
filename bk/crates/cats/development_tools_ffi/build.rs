@@ -6,11 +6,11 @@ use std::path::PathBuf;
 fn bindgen() {
     // outputs `libexample.a` in target/debug/build/development_tools_ffi-.../
     cc::Build::new()
-        .file("tests/c/example.c")
+        .file("examples/c/example.c")
         .compile("example");
 
     // The path to the header file
-    let header = "tests/c/example.h";
+    let header = "examples/c/example.h";
     // Generate bindings
     let bindings = bindgen::Builder::default()
         .header(header)
@@ -46,14 +46,14 @@ fn cbindgen() {
 //     // `bridge` returns a `cc::Build` on which you should continue to set up
 // any     // additional source files or compiler flags, and lastly call its
 //     // `compile` method to execute the C++ build.
-//     cxx_build::bridge("tests/cpp/cxx.rs")
-//         .file("tests/hello.cc")
+//     cxx_build::bridge("examples/cpp/cxx.rs")
+//         .file("examples/hello.cc")
 //         .flag_if_supported("-std=c++14")
 //         .compile("cxxbridge-demo");
 
-//     println!("cargo:rerun-if-changed=tests/cpp/cxx.rs");
-//     println!("cargo:rerun-if-changed=tests/cpp/hello.h");
-//     println!("cargo:rerun-if-changed=tests/cpp/hello.cc");
+//     println!("cargo:rerun-if-changed=examples/cpp/cxx.rs");
+//     println!("cargo:rerun-if-changed=examples/cpp/hello.h");
+//     println!("cargo:rerun-if-changed=examples/cpp/hello.cc");
 // }
 // ANCHOR_END: CXX
 
@@ -63,7 +63,7 @@ fn cbindgen() {
 //     // This will generate the FFI library in the target/debug directory
 // (e.g., libmy_library.so on Linux, libmy_library.dylib on macOS).
 //     uniffi::generate_bindings(
-//         "tests/uniffi.rs", // Path to the Rust library file
+//         "examples/uniffi.rs", // Path to the Rust library file
 //         "my_library", // Name of the generated FFI library
 //     )
 //     .unwrap();

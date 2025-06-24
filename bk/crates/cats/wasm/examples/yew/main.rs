@@ -1,0 +1,3 @@
+mod yew;
+
+fn main() {}

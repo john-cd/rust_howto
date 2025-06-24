@@ -1,0 +1,3 @@
+mod profile;
+
+fn main() {}

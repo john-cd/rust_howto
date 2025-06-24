@@ -1,0 +1,3 @@
+mod macros;
+
+fn main() {}
