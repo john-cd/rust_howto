@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
- set -euo pipefail
+set -euo pipefail
+
+# NO LONGER IN USE!
 
 # Simple pre-processor for mdBook
 #
