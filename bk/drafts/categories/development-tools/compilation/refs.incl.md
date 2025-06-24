@@ -7,7 +7,7 @@
 [p-caching]: ../../caching/index.md
 [p-cargo]: ../cargo/cargo.md
 [p-configuration]: ../../config/configuration.md
-[p-contributing]: ../../../../drafts/contributing/index.md
+[p-contributing]: ../../../../src/contributing/index.md
 [p-duration]: ../../date-and-time/duration.md
 [p-generics]: ../../../language/generics.md
 [p-modules]: ../../../code_organization/modules.md

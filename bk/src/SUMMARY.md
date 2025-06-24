@@ -52,7 +52,7 @@
 - [Links]()
   - [Cheat Sheets](links/rust_cheatsheets.md)
 
-- [Contributing]()
+- [Contributing](contributing/index.md)
   - [Repository Structure](contributing/repo_structure.md)
   - [Crate Publication](contributing/publication.md)
   - [Topics of Interest](contributing/topics_of_interest.md)

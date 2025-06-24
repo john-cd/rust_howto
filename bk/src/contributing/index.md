@@ -24,22 +24,26 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 - [Improving The Documentation][improving-the-documentation]
 - [Styleguides][styleguides]
 - [Commit Messages][commit-messages]
-- [Join The Project Team][join-the-project-team]
+
+## Code of Conduct
+
+This project and everyone participating in it is governed by the [Code of Conduct][Code of Conduct]. By participating, you are expected to uphold this code. Please report unacceptable behavior to the repo owner.
+
+## Book Goals {#goals}
+
+We are writing a "bible" for the Rust ecosystem, providing examples for common programming tasks with Rust crates.
+
+This book's long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [`blessed.rs`][blessed-rs-website]{{hi:blessed.rs}}⮳, the most (recently) downloaded libraries in [`crates.io`][crates.io-website]{{hi:crates.io}}⮳, as well as popular crates per [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳ and its [statistics][lib-rs-stats]⮳ page - overall, by keyword and by category.
 
 
+
+
+Review [key crates][p-crates]⮳{{hi:Key crates}} for topic ideas.
 An informal (and very long) list of subjects we would like to cover is kept in the [topics of interest][p-topics-of-interest]⮳ page.
 
 Draft chapters are kept in [this folder][rust-howto-drafts]⮳ and in the `bk/later` directory.
 
 Embedded examples should be ideally _runnable_ on the [Rust playground][rust-playground-website]⮳ or at least directly copy-pasteable into Rust code.
-
-## Goals {#goals}
-
-This book's long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [`blessed.rs`][blessed-rs-website]{{hi:blessed.rs}}⮳, the most downloaded libraries in [`crates.io`][crates.io-website]{{hi:crates.io}}⮳, and 'high quality crates' per [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳ [statistics][lib-rs-stats]⮳. Review [key crates][p-crates]⮳{{hi:Key crates}} for topic ideas.
-
-## Code of Conduct
-
-This project and everyone participating in it is governed by the [Code of Conduct][Code of Conduct]. By participating, you are expected to uphold this code. Please report unacceptable behavior to the code owner.
 
 ## I Have a Question
 
@@ -116,17 +120,13 @@ Enhancement suggestions are tracked as [GitHub issues][issues].
 - You may want to **include screenshots and animated GIFs** which help you demonstrate the steps or point out the part which the suggestion is related to. You can use [this tool][licecap] to record GIFs on macOS and Windows, and [this tool][silentcast] on Linux.
 - **Explain why this enhancement would be useful** to most CONTRIBUTING.md users. You may also want to point out the other projects that solved it better and which could serve as inspiration.
 
-### Your First Code Contribution
+### Your First Contribution
 
 ### Improving The Documentation
 
 ## Styleguides
 
 ### Commit Messages
-
-## Join The Project Team
-
-
 
 ## See Also {#see-also}
 
@@ -139,17 +139,14 @@ TODO link to issues and project boards on GH
 
 This guide is based on the **contributing.md**. [Make your own][make-your-own]!
 
-[implemented by someone]: #your-first-code-contribution
 [code-of-conduct]: #code-of-conduct
 [commit-messages]: #commit-messages
 [improving-the-documentation]: #improving-the-documentation
 [i-have-a-question]: #i-have-a-question
 [i-want-to-contribute]: #i-want-to-contribute
-[join-the-project-team]: #join-the-project-team
 [reporting-bugs]: #reporting-bugs
 [suggesting-enhancements]: #suggesting-enhancements
 [table-of-contents]: #table-of-contents
-[your-first-code-contribution]: #your-first-code-contribution
 [documentation]: https://github.com/john-cd/rust_howto/blob/main/README.md
 [issues]: https://github.com/john-cd/rust_howto/issues
 [make-your-own]: https://contributing.md

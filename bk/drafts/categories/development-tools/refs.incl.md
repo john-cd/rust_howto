@@ -63,7 +63,7 @@
 [p-concurrency]: ../concurrency/index.md
 [p-config]: ../config/index.md
 [p-configuration]: ../config/configuration.md
-[p-contributing]: ../../contributing/index.md
+[p-contributing]: ../../../src/contributing/index.md
 [p-crates]: ../../crate_selection/index.md
 [p-cross-platform]: # "../../../other/cross-platform/index.md"
 [p-documentation]: documentation/documentation.md
