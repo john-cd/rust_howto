@@ -93,7 +93,7 @@ Loom attempts to check all possible interleavings, while Shuttle chooses interle
 | Unit [Testing][p-testing] | Use `cargo test` (built-in testing framework) |
 | Integration Testing | Often uses`cargo test`. Focuses on testing interactions between modules or components. |
 | Fuzzing | `cargo fuzz`, [`afl.rs`][c-afl]⮳{{hi:afl.rs}} (bindings to AFL) |
-| Code Review Tools: Not Rust-specific, but used in conjunction with Rust code. Examples: GitHub, GitLab, etc.
+| Code Review Tools: Not Rust-specific, but used in conjunction with Rust code. Examples: GitHub, GitLab, etc. | |
 
 ## References {#skip}
 
