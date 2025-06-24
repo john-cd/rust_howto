@@ -57,7 +57,7 @@ The book's [GitHub repository](https://github.com/john-cd/rust_howto)⮳ is a "m
   - The examples themselves are stored within the crate's `tests` folder in a subfolder named after their chapter, e.g., `bk/crates/<section or cats/some_category>/tests/<chapter_name>/<example_name>.rs`. In a few cases, you may also find examples in the crate's `examples` or `src` folders or within its `build.rs` file.
   - Each example are in a separate `.rs` Rust file that is a module in a `main.rs` file. All examples of a given chapter are therefore compiled together.
   - The book's code examples, being in a `cargo` [workspace](https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html)⮳, share the same dependency versions (a single `Cargo.lock` file) and one shared `target` directory, avoid unnecessary dependency rebuilding.
-- The rest of the code is either in standalone crates (`mdbook-scrub`, `publish`) or independent worskpaces (`playground`,`tools` and `xmpl`).
+- The rest of the code is either in standalone crates (`mdbook-scrub`, `publish`) or independent workspaces (`playground`,`tools` and `xmpl`).
   - The `tools` workspace builds a few CLI binaries that share a common `tool_lib` library.
   - In the base folder of each project, type `just` at the shell prompt for a list of commands you can use to format, check, build, lint and test the code. `just release` builds tools in release mode and copies the binaries into the `bin` folder (in the repo root).
 
