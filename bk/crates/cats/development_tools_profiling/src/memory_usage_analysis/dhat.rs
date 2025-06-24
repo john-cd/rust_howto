@@ -1,7 +1,9 @@
 // ANCHOR: example
 //! `dhat` provides heap profiling and ad-hoc profiling capabilities,
 //! similar to those provided by `DHAT`, a powerful heap profiler that
-//! comes with `Valgrind`. Warning: This crate is experimental.
+//! comes with `Valgrind`.
+//!
+//! Warning: This crate is experimental.
 //!
 //! First, add to your `Cargo.toml`:
 //! ```toml
@@ -71,7 +73,7 @@ fn adhoc_profiling() {
     }
 }
 
-pub fn main() {
+pub(crate) fn main() {
     heap_profiling();
     adhoc_profiling();
 }
