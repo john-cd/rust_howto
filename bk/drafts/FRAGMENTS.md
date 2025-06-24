@@ -4,7 +4,7 @@
 |---|
 | [Handle Overflows][ex-language-overflow-handling] |
 
-### Handle Overflows {#overflow-handling}
+## Handle Overflows {#overflow-handling}
 
 - Wrap in all modes with the `wrapping_*` methods, such as [`wrapping_add`][primitive-u32::wrapping_add]{{hi:wrapping_add}}⮳.
 - Return the [`std::option::Option::None`][c-std::option::Option::None]{{hi:std::option::Option::None}}⮳ value if there is overflow{{hi:Overflow}} with the `checked_*` methods.
