@@ -11,6 +11,7 @@
 
 - move categories back to src, after final review
   - algos
+  - data structures
   - api bindings
   - memory
   - caching
@@ -19,7 +20,6 @@
   - cli
   - command-line utils ~ dedupe with written_in_rust
   - compression
-  - data structures
   - email
   - math
   - ML
@@ -83,6 +83,14 @@
 ---
 
 ## Finish pandoc setup; generate PDF version of book WIP
+
+- pandoc
+- kindle create
+
+<https://gumroad.com>
+<https://pianomanfrazier.com/post/write-a-book-with-markdown/#bookdown-https-bookdown-org-yihui-bookdown>
+<https://pdworkman.com/write-book-with-obsidian/#getting-it-out-of-obsidian>
+<https://medium.com/@sydasif78/book-creation-with-pandoc-and-markdown-893c7d72cb35>
 
 ---
 
