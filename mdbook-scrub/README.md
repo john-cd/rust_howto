@@ -4,7 +4,7 @@ This is a **Work In Progress**. The API are subject to change.
 
 `mdbook-scrub` is a simple `mdbook` preprocessor that
 
-- removes the hidden sections between `<div class="hidden">` and `</div>`
+- removes the hidden sections between `<div class="hidden">` and `</div>` in the book,
 - removes `{{#includes }}` that points to hidden files (files that start with `_`)
 
 ## Installation

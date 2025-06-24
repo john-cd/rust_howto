@@ -23,14 +23,14 @@ bk
     ├── language
     ├── other
     ├── standard_library
-    ├── Cargo.toml (workspace)
+    ├── Cargo.toml (workspace config file)
 ```
 
 - `about` contains the code examples in the book's introduction.
 - `cats` contains many crates, each containing the code examples for one `crates.io` category.
 - `code_organization` contains the code examples for the code organization section.
 - `language` contains the code examples for the Rust language _per se_.
-- `other` contains the code examples for the Rust ecosystem that can't be mapped to a [`crates.io`][crates.io-website]{{hi:crates.io}}⮳ category.
+- `other` contains the code examples that can't be mapped to a [`crates.io`][crates.io-website]{{hi:crates.io}}⮳ category.
 - `standard_library` contains the code examples for the Rust standard library.
 
 ## In Each Crate Folder
@@ -48,7 +48,9 @@ See [Cargo package layout](https://doc.rust-lang.org/cargo/guide/project-layout.
 
 ## Common Commands
 
-At the terminal, type `just` or `just code` to browse available commands.
+At the terminal, type `just` to browse available commands.
+
+For example,
 
 - `just bc` runs `cargo build --all-targets --locked --all-features` for the crate in the current working directory.
 - `just ntc` tests the crate.
