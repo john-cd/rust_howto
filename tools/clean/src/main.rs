@@ -10,7 +10,7 @@ use walkdir::WalkDir;
 #[derive(Parser, Debug)]
 #[clap(version)]
 struct Args {
-    #[clap(help = "Path to directory to process")]
+    #[clap(help = "Path to the directory to clean.")]
     directory: PathBuf,
 }
 
@@ -20,9 +20,7 @@ fn main() -> anyhow::Result<()> {
         .init();
 
     let args = Args::parse();
-    // Root directory of the book e.g. /code/bk/
-    let root_dir = args.directory;
-    let crates_dir = root_dir.join("crates");
+    let crates_dir = args.directory;
     println!("Cleaning {}", crates_dir.display());
 
     // Look for "temp" subfolders
@@ -58,13 +56,13 @@ fn clean_folder(dir: &Path) -> anyhow::Result<()> {
         for entry in fs::read_dir(dir)? {
             let entry = entry?;
             let path = entry.path();
-            // ignore e.g. .gitkeep in the base folder
+            // Ignore e.g. .gitkeep in the base folder.
             if entry.path().is_file() && !is_hidden(&entry) {
                 fs::remove_file(path)?;
                 info!("Removed {:?}", entry.path());
             }
             let path = entry.path();
-            // remove subfolders
+            // Remove subfolders.
             if path.is_dir() {
                 fs::remove_dir_all(path)?;
                 info!("Removed {:?}", entry.path());
