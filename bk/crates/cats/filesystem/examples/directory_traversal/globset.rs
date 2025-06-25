@@ -17,7 +17,7 @@ fn main() -> anyhow::Result<()> {
     let glob_set: GlobSet = builder.build()?;
 
     // Specify the directory to search.
-    let dir = "./tests";
+    let dir = "./examples";
 
     // Iterate over the files in the directory.
     for entry in fs::read_dir(dir)? {

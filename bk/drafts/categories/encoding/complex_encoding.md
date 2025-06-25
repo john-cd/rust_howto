@@ -24,13 +24,13 @@ TOML is a simple, ergonomic, and readable [configuration][p-configuration] forma
 The following parses some TOML into a universal [`toml::Value`][c-toml::Value]⮳{{hi:toml::Value}} that is able to represent any valid [TOML][p-toml] data.
 
 ```rust,editable
-{{#include ../../../crates/cats/encoding/examples/toml/toml.rs:example}}
+{{#include ../../../crates/cats/encoding/examples/toml_encoding/toml.rs:example}}
 ```
 
 Parse [TOML][p-toml] into your own [structs][p-structs] using [`serde`][c-serde]{{hi:serde}}⮳.
 
 ```rust,editable
-{{#include ../../../crates/cats/encoding/examples/toml/toml1.rs:example}}
+{{#include ../../../crates/cats/encoding/examples/toml_encoding/toml1.rs:example}}
 ```
 
 ## Read and Write Integers in Little-endian Byte Order {#byteorder}

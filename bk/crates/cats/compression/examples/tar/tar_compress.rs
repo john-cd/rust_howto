@@ -21,9 +21,9 @@ pub fn main() -> Result<(), std::io::Error> {
     // Create a new archive builder with the underlying file as the
     // destination of all data written.
     let mut tar = tar::Builder::new(enc);
-    // Archive e.g. the `tests` directory and all of its contents
+    // Archive a directory and all of its contents
     // (recursively), renaming it in the process
-    tar.append_dir_all("backup", "./tests")?;
+    tar.append_dir_all("backup", "./temp")?;
     println!("`archive.tar.gz` file created!");
     Ok(())
 }
