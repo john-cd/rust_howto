@@ -17,7 +17,7 @@ use same_file::is_same_file;
 /// truncated path is the same file as the original path. If a loop is
 /// found, it returns the two paths that form the loop. Returns None otherwise.
 ///
-/// P: AsRef<Path> accepts PathBuf, Path...
+/// P: `AsRef<Path>` accepts `PathBuf`, `Path`...
 fn contains_loop<P: AsRef<Path>>(
     path: P,
 ) -> io::Result<Option<(PathBuf, PathBuf)>> {

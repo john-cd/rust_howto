@@ -32,7 +32,7 @@ static ALLOC: dhat::Alloc = dhat::Alloc;
 /// `dhat` will collect heap profiling information.
 /// The profiling data will be saved in a file named `dhat-heap.json`
 /// in the current directory. You can then use e.g.
-/// https://nnethercote.github.io/dh_view/dh_view.html
+/// <https://nnethercote.github.io/dh_view/dh_view.html>
 /// to analyze the profiling data.
 /// The profiler also prints to `stderr`, like:
 /// dhat: Total:     9,200 bytes in 10 blocks (note: "block" = allocation)
@@ -104,7 +104,7 @@ fn heap_usage_testing() {
     // dhat::assert_eq!(stats.curr_blocks, 1);
     dhat::assert_eq!(stats.curr_bytes, 16);
 }
-// Example adapted from https://docs.rs/dhat/latest/dhat/
+// Example adapted from <https://docs.rs/dhat/latest/dhat/>
 // ANCHOR_END: example
 
 #[test]

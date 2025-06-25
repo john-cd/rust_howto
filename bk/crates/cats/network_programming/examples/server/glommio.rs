@@ -89,7 +89,7 @@ fn main() {
         .unwrap();
     println!("glommio example finished");
 }
-// Example adapted from https://docs.rs/glommio/latest/glommio/
+// Example adapted from <https://docs.rs/glommio/latest/glommio/>
 // ANCHOR_END: example
 
 #[test]
@@ -97,7 +97,7 @@ fn test() {
     main();
 }
 // [finish](https://github.com/john-cd/rust_howto/issues/810)
-// review https://itnext.io/modern-storage-is-plenty-fast-it-is-the-apis-that-are-bad-6a68319fbc1a
-// https://www.datadoghq.com/blog/engineering/introducing-glommio/
-// https://docs.rs/glommio/latest/glommio/
-// https://github.com/DataDog/glommio
+// review <https://itnext.io/modern-storage-is-plenty-fast-it-is-the-apis-that-are-bad-6a68319fbc1a>
+// <https://www.datadoghq.com/blog/engineering/introducing-glommio/>
+// <https://docs.rs/glommio/latest/glommio/>
+// <https://github.com/DataDog/glommio>

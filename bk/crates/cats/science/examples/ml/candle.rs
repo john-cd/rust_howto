@@ -36,7 +36,7 @@
 // use candle_nn::linear;
 
 // // Choose between `Cpu`, `Cuda`, and `Metal`
-// // For CUDA / Metal, review https://huggingface.github.io/candle/guide/installation.html
+// // For CUDA / Metal, review <https://huggingface.github.io/candle/guide/installation.html>
 // const DEVICE: candle_core::Device = candle_core::Device::Cpu;
 
 // // Define the model architecture:
@@ -110,5 +110,5 @@
 //     main();
 // }
 // // [finish](https://github.com/john-cd/rust_howto/issues/835) review https://huggingface.github.io/candle/index.html
-// // https://github.com/ToluClassics/candle-tutorial
-// // https://huggingface.github.io/candle/index.html
+// // <https://github.com/ToluClassics/candle-tutorial>
+// // <https://huggingface.github.io/candle/index.html>

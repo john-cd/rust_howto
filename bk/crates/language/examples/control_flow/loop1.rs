@@ -14,7 +14,7 @@ fn main() {
             break counter * 2;
             // The value passed to `break` is returned by the loop.
             // `continue` and loop labels also exist.
-            // See https://doc.rust-lang.org/book/ch03-05-control-flow.html
+            // See <https://doc.rust-lang.org/book/ch03-05-control-flow.html>
         }
     };
     println!("{}", result);

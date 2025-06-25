@@ -19,7 +19,7 @@
 // use html5ever::tree_builder::TreeBuilderOpts;
 // use html5ever::tree_builder::TreeSink;
 // // A simple thread-safe reference-counted DOM.
-// // See https://en.wikipedia.org/wiki/Document_Object_Model
+// // See <https://en.wikipedia.org/wiki/Document_Object_Model>
 // use markup5ever_arcdom::ArcDom;
 // use markup5ever_arcdom::Handle;
 
@@ -63,5 +63,5 @@
 // }
 // // [finish NOW](https://github.com/john-cd/rust_howto/issues/1090)
 // // Look at
-// // https://github.com/servo/html5ever/blob/main/rcdom/examples/html2html.rs
-// // https://github.com/servo/html5ever/blob/main/rcdom/examples/print-rcdom.rs
+// // <https://github.com/servo/html5ever/blob/main/rcdom/examples/html2html.rs>
+// // <https://github.com/servo/html5ever/blob/main/rcdom/examples/print-rcdom.rs>

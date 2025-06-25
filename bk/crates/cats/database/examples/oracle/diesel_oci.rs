@@ -110,10 +110,10 @@ fn require_external_svc() -> anyhow::Result<()> {
 
 // The simplest Oracle Client is the free Oracle Instant Client.
 // Only the “Basic” or “Basic Light” package is required.
-// https://www.oracle.com/database/technologies/instant-client.html
-// https://github.com/oracle/docker-images/tree/main/OracleInstantClient
+// <https://www.oracle.com/database/technologies/instant-client.html>
+// <https://github.com/oracle/docker-images/tree/main/OracleInstantClient>
 
-// review install steps in https://odpi-c.readthedocs.io/en/latest/user_guide/introduction.html
+// review install steps in <https://odpi-c.readthedocs.io/en/latest/user_guide/introduction.html>
 // Oracle Database Programming Interface for C (ODPI-C) is an open source
 // library of C code that simplifies the use of common Oracle Call Interface
 // (OCI) features for Oracle Database drivers and user applications.
@@ -127,4 +127,4 @@ fn require_external_svc() -> anyhow::Result<()> {
 // `sudo apt install openjdk-11-jdk`. After that, extract the downloaded
 // software and run the setup script to complete the installation.
 
-// See also https://github.com/oracle/docker-images/tree/main/OracleDatabase
+// See also <https://github.com/oracle/docker-images/tree/main/OracleDatabase>

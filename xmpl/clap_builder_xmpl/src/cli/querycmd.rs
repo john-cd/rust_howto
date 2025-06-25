@@ -14,7 +14,7 @@ pub(super) fn cmd() -> Command {
                 .allow_negative_numbers(true),
         )
 }
-// See: https://docs.rs/clap/latest/clap/struct.Arg.html#method.trailing_var_arg
+// See: <https://docs.rs/clap/latest/clap/struct.Arg.html#method.trailing_var_arg>
 
 /// Returns `ArgMatches` for the `query` subcommand. Returns empty Vec
 /// if the subcommand wasn't present at runtime.
@@ -37,7 +37,7 @@ mod tests {
 
     #[test]
     fn verify_query_cmd() {
-        cmd().debug_assert(); // https://docs.rs/clap/latest/clap/struct.Command.html#method.debug_assert
+        cmd().debug_assert(); // <https://docs.rs/clap/latest/clap/struct.Command.html#method.debug_assert>
     }
 
     #[test]

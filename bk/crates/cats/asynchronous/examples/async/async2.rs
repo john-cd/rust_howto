@@ -22,7 +22,7 @@ async fn main() {
 // Prints:
 // hello
 // world
-// Example from https://tokio.rs/tokio/tutorial/hello-tokio
+// Example from <https://tokio.rs/tokio/tutorial/hello-tokio>
 // ANCHOR_END: example
 
 #[test]

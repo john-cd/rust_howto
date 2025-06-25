@@ -67,4 +67,4 @@ fn require_external_svc() -> anyhow::Result<()> {
     Ok(())
 }
 // [finish; need to fix heavy test](https://github.com/john-cd/rust_howto/issues/1021)
-// https://odpi-c.readthedocs.io/en/latest/user_guide/installation.html
+// <https://odpi-c.readthedocs.io/en/latest/user_guide/installation.html>

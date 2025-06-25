@@ -8,7 +8,7 @@
 //! In JSON and other self-describing formats, this externally tagged
 //! representation is often not ideal for readability. That can be changed with
 //! e.g. the `#[serde(untagged)]` attribute: the untagged JSON representation is
-//! {"success": "..."}. See https://serde.rs/enum-representations.html
+//! {"success": "..."}. See <https://serde.rs/enum-representations.html>.
 //!
 //! The `monostate` crate implements the `MustBe` macro, which makes fields
 //! `serde` deserializable only if they have one specific value. This is
@@ -51,7 +51,7 @@ fn main() {
         ApiResponse::Success { .. } => panic!(),
     }
 }
-// Example adapted from https://github.com/dtolnay/monostate/blob/master/tests/test.rs
+// Example adapted from <https://github.com/dtolnay/monostate/blob/master/tests/test.rs>.
 // ANCHOR_END: example
 
 #[test]

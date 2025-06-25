@@ -56,7 +56,7 @@ fn main() -> anyhow::Result<()> {
     }
     Ok(())
 }
-// Adapted from: https://github.com/rust-cli/config-rs/blob/main/examples/static_env.rs
+// Adapted from: <https://github.com/rust-cli/config-rs/blob/main/examples/static_env.rs>
 // ANCHOR_END: example
 
 #[test]

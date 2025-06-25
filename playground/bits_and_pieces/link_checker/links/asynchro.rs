@@ -16,7 +16,7 @@ use url::Url;
 
 pub fn launch() -> Result<()> {
     // Launch the tokio runtime the web link checking will run on
-    // https://tokio.rs/tokio/topics/bridging
+    // <https://tokio.rs/tokio/topics/bridging>
     let runtime = tokio::runtime::Builder::new_multi_thread()
         .enable_all() // Enables both I/O and time drivers.
         .build()?;
@@ -71,7 +71,7 @@ struct UrlCheck {
 
 // Query using a HEAD request (Client::head) and then inspect the response code
 // to determine success. This is a quick way to query a rest resource without
-// needing to receive a body. https://rust-lang-nursery.github.io/rust-cookbook/web/clients/apis.html#check-if-an-api-resource-exists
+// needing to receive a body. <https://rust-lang-nursery.github.io/rust-cookbook/web/clients/apis.html#check-if-an-api-resource-exists>
 async fn check_web_url(url: Url) -> Result<UrlCheck> {
     let timeout = Duration::new(5, 0);
     let client = ClientBuilder::new()

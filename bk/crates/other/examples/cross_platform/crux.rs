@@ -129,4 +129,4 @@ fn test() {
     main();
 }
 // [finish](https://github.com/john-cd/rust_howto/issues/880)
-// https://github.com/redbadger/crux/blob/master/examples/counter/shared/src/app.rs
+// <https://github.com/redbadger/crux/blob/master/examples/counter/shared/src/app.rs>

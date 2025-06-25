@@ -62,5 +62,5 @@ fn test() {
     main();
 }
 // [review further](https://github.com/john-cd/rust_howto/issues/1354)
-// https://docs.rs/cached/latest/cached/proc_macro/index.html
-// https://github.com/jaemk/cached/tree/master/examples
+// <https://docs.rs/cached/latest/cached/proc_macro/index.html>
+// <https://github.com/jaemk/cached/tree/master/examples>

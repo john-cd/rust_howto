@@ -9,7 +9,7 @@ use percent_encoding::CONTROLS;
 use percent_encoding::percent_decode;
 use percent_encoding::utf8_percent_encode;
 
-/// https://url.spec.whatwg.org/#fragment-percent-encode-set
+/// <https://url.spec.whatwg.org/#fragment-percent-encode-set>
 const FRAGMENT: &AsciiSet =
     &CONTROLS.add(b' ').add(b'"').add(b'<').add(b'>').add(b'`');
 

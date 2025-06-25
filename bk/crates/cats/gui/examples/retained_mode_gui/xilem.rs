@@ -11,7 +11,7 @@
 // use xilem::view::View;
 // use xilem::view::ViewExt;
 
-// // Requirements - see https://github.com/linebender/xilem
+// // Requirements - see <https://github.com/linebender/xilem>
 // // (Ubuntu): sudo apt-get install clang libwayland-dev libxkbcommon-x11-dev
 // libvulkan-dev
 
@@ -75,4 +75,4 @@
 
 pub fn main() {}
 // // [finish; https://github.com/linebender/xilem ](https://github.com/john-cd/rust_howto/issues/795)
-// // https://raphlinus.github.io/rust/gui/2022/07/15/next-dozen-guis.html
+// // <https://raphlinus.github.io/rust/gui/2022/07/15/next-dozen-guis.html>

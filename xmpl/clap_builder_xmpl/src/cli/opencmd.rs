@@ -30,7 +30,7 @@ mod tests {
 
     #[test]
     fn verify_open_cmd() {
-        cmd().debug_assert(); // https://docs.rs/clap/latest/clap/struct.Command.html#method.debug_assert
+        cmd().debug_assert(); // <https://docs.rs/clap/latest/clap/struct.Command.html#method.debug_assert>
     }
 
     #[test]

@@ -14,7 +14,7 @@ static GLOBAL_REGEX: Lazy<BTreeMap<&str, Re>> = Lazy::new(|| {
     println!("Initializing Regexes...\n");
     // A sorted map:
     let mut m = BTreeMap::new();
-    // A Markdown inline link - see https://spec.commonmark.org/
+    // A Markdown inline link - see <https://spec.commonmark.org/>
     // (?<name>  ) is a named capture group.
     // \s is a whitespace. \S is a not-whitespace.
     // [^!] excludes ! before [.

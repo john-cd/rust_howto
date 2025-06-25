@@ -53,4 +53,4 @@ fn main() {
 fn test() {
     main();
 }
-// See also examples in https://docs.rs/crate/moka/0.12.10
+// See also examples in <https://docs.rs/crate/moka/0.12.10>

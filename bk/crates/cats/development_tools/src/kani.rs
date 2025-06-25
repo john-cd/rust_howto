@@ -88,7 +88,7 @@ mod verification {
 fn main() {
     println!("2 + 3 = {}", add(2, 3));
 }
-// Examples adapted from the tutorial: https://model-checking.github.io/kani/tutorial-first-steps.html
+// Examples adapted from the tutorial: <https://model-checking.github.io/kani/tutorial-first-steps.html>
 // ANCHOR_END: example
 
 #[test]

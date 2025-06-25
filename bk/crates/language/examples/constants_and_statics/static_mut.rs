@@ -4,7 +4,7 @@
 //!
 //! `static mut` use is generally discouraged due to the potential for data
 //! races and undefined behavior. The following demonstrates alternatives.
-//! See https://doc.rust-lang.org/nightly/edition-guide/rust-2024/static-mut-references.html
+//! See <https://doc.rust-lang.org/nightly/edition-guide/rust-2024/static-mut-references.html>
 
 use std::sync::Mutex;
 use std::sync::atomic::AtomicU16;

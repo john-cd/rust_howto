@@ -88,7 +88,7 @@ rusty_fork_test! {
 // FIXME NOW
 
 // Per-Layer Filtering
-// https://docs.rs/tracing-subscriber/latest/tracing_subscriber/layer/index.html#per-layer-filtering
+// <https://docs.rs/tracing-subscriber/latest/tracing_subscriber/layer/index.html#per-layer-filtering>
 
 // // Generates an HTTP access log.
 // let access_log = // ...

@@ -13,7 +13,7 @@ struct Nation {
 
 /// Connects to a PostgreSQL database, queries artist nationalities and their
 /// counts, and prints the results. Data from
-// https://github.com/MuseumofModernArt/collection/tree/main
+// <https://github.com/MuseumofModernArt/collection/tree/main>
 pub fn main() -> Result<(), Error> {
     // The connection URL is formatted as
     // postgresql://<user>:<password>@<host>/<db>, for example

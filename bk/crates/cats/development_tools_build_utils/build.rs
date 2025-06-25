@@ -1,4 +1,4 @@
-// https://doc.rust-lang.org/cargo/reference/build-scripts.html
+// <https://doc.rust-lang.org/cargo/reference/build-scripts.html>
 #![allow(dead_code)]
 
 // ANCHOR: C

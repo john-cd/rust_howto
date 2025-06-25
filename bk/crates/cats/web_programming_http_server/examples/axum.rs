@@ -117,6 +117,6 @@ async fn main() -> anyhow::Result<()> {
 //     Ok(())
 // }
 // // [review time limit](https://github.com/john-cd/rust_howto/issues/865)
-// // https://docs.rs/axum/latest/axum/index.html
-// // https://docs.rs/axum/0.8.1/axum/extract/struct.State.html
-// // https://docs.rs/axum/0.8.1/axum/extract/index.html
+// // <https://docs.rs/axum/latest/axum/index.html>
+// // <https://docs.rs/axum/0.8.1/axum/extract/struct.State.html>
+// // <https://docs.rs/axum/0.8.1/axum/extract/index.html>

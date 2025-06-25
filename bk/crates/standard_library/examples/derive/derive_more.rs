@@ -116,4 +116,4 @@ fn transfer_amount(
 fn test() {
     main();
 }
-// Adapted from https://docs.rs/derive_more/latest/derive_more/
+// Adapted from <https://docs.rs/derive_more/latest/derive_more/>

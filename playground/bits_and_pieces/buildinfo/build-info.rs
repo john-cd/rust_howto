@@ -1,8 +1,8 @@
 // // List build info, incl. dependencies
 // //
 // // See
-// // https://crates.io/crates/build-info
-// // https://stackoverflow.com/questions/41618456/get-list-of-active-dependencies-and-their-versions-during-cargo-build
+// // <https://crates.io/crates/build-info>
+// // <https://stackoverflow.com/questions/41618456/get-list-of-active-dependencies-and-their-versions-during-cargo-build>
 
 // // In build.rs add:
 // // use build_info_build::DependencyDepth;

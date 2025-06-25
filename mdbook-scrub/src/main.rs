@@ -11,7 +11,7 @@ use mdbook::preprocess::Preprocessor;
 use semver::Version;
 use semver::VersionReq;
 
-// Adapted from https://github.com/rust-lang/mdBook/blob/master/examples/nop-preprocessor.rs
+// Adapted from<<https://github.com/rust-lang/mdBook/blob/master/examples/nop-preprocessor.rs>>
 
 pub fn make_app() -> Command {
     Command::new(crate_name!())

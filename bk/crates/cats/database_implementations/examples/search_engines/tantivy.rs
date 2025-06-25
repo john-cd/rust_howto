@@ -117,8 +117,8 @@
 
 //     Ok(())
 // }
-// // Adapted from https://docs.rs/tantivy/0.22.0/
-// // See also examples e.g. https://tantivy-search.github.io/examples/basic_search.html
+// // Adapted from <https://docs.rs/tantivy/0.22.0/>
+// // See also examples e.g. <https://tantivy-search.github.io/examples/basic_search.html>
 // // ANCHOR_END: example
 
 // #[test]

@@ -383,11 +383,11 @@
 // }
 
 // // FIXME finish NOW
-// // https://martinfowler.com/bliki/CQRS.html
-// // https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-1?source=more_series_bottom_blogs
-// // https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-2
-// // https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs
-// // https://doc.rust-cqrs.org/intro.html
-// // https://github.com/primait/event_sourcing.rs
-// // https://github.com/eniltrexAdmin/crappy-user
-// // https://github.com/serverlesstechnology/cqrs-demo/tree/main
+// // <https://martinfowler.com/bliki/CQRS.html>
+// // <https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-1?source=more_series_bottom_blogs>
+// // <https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-2>
+// // <https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs>
+// // <https://doc.rust-cqrs.org/intro.html>
+// // <https://github.com/primait/event_sourcing.rs>
+// // <https://github.com/eniltrexAdmin/crappy-user>
+// // <https://github.com/serverlesstechnology/cqrs-demo/tree/main>

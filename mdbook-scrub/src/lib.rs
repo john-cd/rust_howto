@@ -11,7 +11,7 @@ use regexes::*;
 use tracing::info;
 use tracing::warn;
 
-// Inspired from https://github.com/rust-lang/mdBook/blob/master/examples/nop-preprocessor.rs
+// Inspired from <https://github.com/rust-lang/mdBook/blob/master/examples/nop-preprocessor.rs>
 
 // The main preprocessor struct.
 pub struct Preproc;

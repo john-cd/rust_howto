@@ -2,7 +2,7 @@
 fn main() {
     // `tonic-build` compiles ProtoBuf files via `prost` and generates service
     // stubs and proto definitions for use with `tonic`.
-    // Install `protoc` first: https://grpc.io/docs/protoc-installation/
+    // Install `protoc` first: <https://grpc.io/docs/protoc-installation/>
     tonic_build::compile_protos("proto/helloworld.proto").unwrap();
 }
 // A more complicated example may be:

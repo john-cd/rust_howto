@@ -10,7 +10,7 @@
 // // To use Sibyl, you need to download the appropriate Instant Client packages
 // // for your Linux distribution and architecture (usually 64-bit) from the
 // // official Oracle website:
-// // https://www.oracle.com/database/technologies/instant-client/downloads.html
+// // <https://www.oracle.com/database/technologies/instant-client/downloads.html>
 // // Install the alien package: This tool is used to convert RPM packages
 // // (which Oracle provides) to Debian packages suitable for Ubuntu.
 // // sudo apt update
@@ -86,6 +86,6 @@
 //     Ok(())
 // }
 // [finish; review https://lib.rs/crates/sibyl ; also test / review in depth install steps NOW](https://github.com/john-cd/rust_howto/issues/1022)
-// // https://docs.oracle.com/en/database/oracle/oracle-database/21/lacli/sdk-instant-client.html
-// // https://docs.oracle.com/en/database/oracle/oracle-database/19/lacli/installing-ic-arm-packages.html
-// // https://help.ubuntu.com/community/RPM/AlienHowto
+// // <https://docs.oracle.com/en/database/oracle/oracle-database/21/lacli/sdk-instant-client.html>
+// // <https://docs.oracle.com/en/database/oracle/oracle-database/19/lacli/installing-ic-arm-packages.html>
+// // <https://help.ubuntu.com/community/RPM/AlienHowto>

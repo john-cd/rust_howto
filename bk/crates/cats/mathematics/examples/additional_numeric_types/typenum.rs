@@ -208,18 +208,18 @@
 //     main();
 // }
 // // [FINISH NOW](https://github.com/john-cd/rust_howto/issues/1351)
-// // https://users.rust-lang.org/t/making-a-type-level-type-function-with-typenum-crate/107008
-// // https://github.com/paholg/typenum/tree/main
-// // https://docs.rs/typenum/latest/typenum/
-// // https://crates.io/crates/generic-array/
+// // <https://users.rust-lang.org/t/making-a-type-level-type-function-with-typenum-crate/107008>
+// // <https://github.com/paholg/typenum/tree/main>
+// // <https://docs.rs/typenum/latest/typenum/>
+// // <https://crates.io/crates/generic-array/>
 
 // // Need #![feature(generic_const_exprs)] and the nightly toolchain?
 // // Use associated types
 
 // // ALSO
 // // const generics:
-// // https://practice.course.rs/generics-traits/const-generics.html
-// // https://www.awwsmm.com/blog/what-are-const-generics-and-how-are-they-used-in-rust
+// // <https://practice.course.rs/generics-traits/const-generics.html>
+// // <https://www.awwsmm.com/blog/what-are-const-generics-and-how-are-they-used-in-rust>
 // // struct Assert<const COND: bool> {}
 // // trait IsTrue {}
 

@@ -6,7 +6,8 @@
 // use tokio_postgres::{NoTls, Error};
 
 // // Cornucopia is a Rust library for managing database connections and
-// executing queries. It provides type-safe SQL in Rust. // https://cornucopia-rs.netlify.app/
+// executing queries. It provides type-safe SQL in Rust.
+// <https://cornucopia-rs.netlify.app/>
 
 // // tokio = { version = "1", features = ["full"] }
 // // cornucopia = "0.3.0"

@@ -61,7 +61,7 @@ fn main() {
         // Updates an existing entry atomically.
         assert_eq!(m.update('#', |e| e + 1), Some(&2));
     });
-    // Example adapted from https://docs.rs/papaya/latest/papaya/
+    // Example adapted from <https://docs.rs/papaya/latest/papaya/>
 }
 // ANCHOR_END: example
 

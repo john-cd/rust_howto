@@ -5,7 +5,7 @@
 //! All book examples are currently written as tests
 //!  under `crates/**/tests`, which are then included in the markdown.
 //!
-//! See https://crates.io/crates/skeptic for configuration.
+//! See <https://crates.io/crates/skeptic> for configuration.
 
 use std::path::Path;
 
@@ -21,7 +21,7 @@ const REMOVED_TESTS: &[&str] = &[];
 // time the markdown sources change.
 fn main() -> Result<()> {
     // Disable build.rs when building documentation at docs.rs
-    // https://docs.rs/about/builds
+    // <https://docs.rs/about/builds>
     if std::env::var("DOCS_RS").is_ok() {
         return Ok(());
     }

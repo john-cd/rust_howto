@@ -23,7 +23,7 @@
 //! However, _some can_, given proper restrictions on layout (aka
 //! "representation") and field types. `zerocopy` performs a sophisticated,
 //! compile-time safety analysis to determine whether such zero-cost, zero-copy
-//! conversions are safe. See e.g. https://docs.rs/zerocopy/0.8.14/zerocopy/derive.IntoBytes.html#analysis
+//! conversions are safe. See e.g. <https://docs.rs/zerocopy/0.8.14/zerocopy/derive.IntoBytes.html#analysis>
 //!
 //! For that purpose, Zerocopy provides several derivable traits: `FromBytes`,
 //! `TryFromBytes`, `FromZeros`, `Immutable`...
@@ -82,7 +82,7 @@ fn manipulate_zero_bytes() {
 // As discussed above, all user-defined composite types (structs, enums,
 // unions...) have a representation that specifies what the layout (its size,
 // alignment, and the order / relative offsets of its fields) is for the type:
-// https://doc.rust-lang.org/reference/type-layout.html#representations
+// <https://doc.rust-lang.org/reference/type-layout.html#representations>
 //
 // Types you expect to pass through an FFI / network boundary most often are
 // most often `repr(C)`, as C is the lingua-franca of the programming world.
@@ -206,7 +206,7 @@ fn main() -> anyhow::Result<()> {
     transmute();
     Ok(())
 }
-// Examples adapted from https://docs.rs/zerocopy/
+// Examples adapted from <https://docs.rs/zerocopy/>
 // ANCHOR_END: example
 
 #[test]

@@ -57,7 +57,7 @@ fn main() -> std::io::Result<()> {
 
     Ok(())
 }
-// Adapted from https://docs.rs/tempfile
+// Adapted from <https://docs.rs/tempfile>
 // ANCHOR_END: example
 
 #[test]

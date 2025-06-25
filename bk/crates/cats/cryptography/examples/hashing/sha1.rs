@@ -23,7 +23,7 @@ fn main() {
 
     println!("SHA-1 hash of 'hello world': {:x}", result);
 }
-// Example adapted from https://docs.rs/sha1/0.10.6/sha1/index.html
+// Example adapted from <https://docs.rs/sha1/0.10.6/sha1/index.html>
 // ANCHOR_END: example
 
 #[test]

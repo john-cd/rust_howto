@@ -45,4 +45,4 @@ fn require_network() {
     main();
 }
 // [finish NOW](https://github.com/john-cd/rust_howto/issues/812)
-// https://github.com/cloudflare/pingora/blob/main/pingora/examples/server.rs
+// <https://github.com/cloudflare/pingora/blob/main/pingora/examples/server.rs>
