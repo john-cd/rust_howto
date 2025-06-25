@@ -80,4 +80,9 @@ Often requires specialized libraries or custom implementations using compute [[s
 [write / organize / review in depth](https://github.com/john-cd/rust_howto/issues/1226)
 what applications do we want to cover?
 cover `nannou`
+
+```rust,editable
+{{#include ../../../crates/cats/graphics/examples/graphics.rs:example}}
+```
+
 </div>

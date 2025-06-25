@@ -22,4 +22,9 @@ Direct Rust FFI bindings to libraries written in other languages; often denoted 
 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/356)
+
+```rust,editable
+{{#include ../../../crates/cats/external_ffi_bindings/examples/api_bindings.rs:example}}
+```
+
 </div>
