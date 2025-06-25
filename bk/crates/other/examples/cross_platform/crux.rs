@@ -8,7 +8,7 @@
 //! It's a simple counter app that can increment and decrement a value.
 //!
 //! The following only provides an example of the Core of a Crux app.
-//! Follow the steps in https://redbadger.github.io/crux/
+//! Follow the steps in <https://redbadger.github.io/crux/>
 //! to install the toolchains and structure a complete project.
 //!
 //! Add the following to your `Cargo.toml`, as needed:
