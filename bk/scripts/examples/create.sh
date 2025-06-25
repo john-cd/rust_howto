@@ -6,7 +6,7 @@ set -euo pipefail
 
 root="$(realpath $1)/"
 
-for dir in $(find ${root}crates/drafts/ -type d -wholename "*/tests/*" )
+for dir in $(find ${root}crates/drafts/ -type d -wholename "*/examples/*" )
 do
   cat=$(basename $dir)
   path="${root}crates/cats/${cat}"

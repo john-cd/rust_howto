@@ -2,7 +2,7 @@
 set -eu
 
 # Convert {{#example <name>}} placeholders into ```rust {#include ...}``` blocks
-# and create the necessary code stubs (in subfolders of crates/**/tests/)
+# and create the necessary code stubs (in subfolders of crates/**/examples/)
 #
 # Usage: ./scripts/examples/convert_example_placeholders.sh <root folder>
 
@@ -21,7 +21,7 @@ do
         # [does not handle non-category examples](https://github.com/john-cd/rust_howto/issues/1257)
         current_file_dir=$(dirname $file)
         category=$(basename $current_file_dir | tr '-' '_')
-        folder_in_tests=$(basename $file '.md')
+        folder_in_examples=$(basename $file '.md')
     #     case ${category:0:1} in
 
     #     "a"|"b")
@@ -55,7 +55,7 @@ do
     #       ;;
     #   esac
 
-      absoluteexampledir="${root}crates/cats/${category}/tests/${folder_in_tests}"
+      absoluteexampledir="${root}crates/cats/${category}/examples/${folder_in_examples}"
       exampledir=$(realpath --relative-to=$current_file_dir "${absoluteexampledir}" | tr '-' '_')
       # echo "exampledir: $exampledir"
       examplefilename=$(tr '-' '_' <<< ${examplename})

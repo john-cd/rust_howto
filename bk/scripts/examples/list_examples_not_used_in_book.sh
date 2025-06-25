@@ -13,7 +13,7 @@ grep -Proh '\{\{#include .+?\.rs(:.+?)?\}\}' "${src}" "${drafts}" "${later}" | s
 find "${root}/crates/" -type f -name "*.rs" -exec realpath --relative-to=${root} {} \; | sed '/lib.rs/d; /main.rs/d; /mod.rs/d; /build.rs/d; /cat.rs/d; /lang.rs/d; /std.rs/d; /topic.rs/d' | sort -u > /tmp/examples_in_crates_ex.txt
 comm -13 /tmp/examples_in_markdown.txt /tmp/examples_in_crates_ex.txt
 
-# The script matches e.g. {{#include ../../../crates/cats/development_tools_debugging/tests/<...>/type_name_of_val.rs:example}} and extracts the file names
+# The script matches e.g. {{#include ../../../crates/cats/development_tools_debugging/examples/<...>/type_name_of_val.rs:example}} and extracts the file names
 # then compare to the list of test files in `crates`
 # A few files (e.g. `main.rs` and `mod.rs`) are not true examples and should not be included into the book.
 

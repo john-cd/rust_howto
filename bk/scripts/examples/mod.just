@@ -13,7 +13,7 @@ _default:
 [unix]
 @list_not_used_in_book:
     ./list_examples_not_used_in_book.sh {{ quote(justfile_directory()) }}
-# The script matches e.g. {{#include ../../../crates/cats/development_tools_debugging/tests/<...>/type_name_of_val.rs:example}}
+# The script matches e.g. {{#include ../../../crates/cats/development_tools_debugging/examples/<...>/type_name_of_val.rs:example}}
 # and extracts the file names, then compare to the list of test files
 # A few files e.g. `main.rs` and `mod.rs` are not true examples and should not be included into the book.
 
@@ -23,7 +23,7 @@ list_not_tested:
     #!/usr/bin/env bash
     root="{{root}}/"
     comm -1 -3 <(find "${root}crates" -type f \( -name "*.rs" \) -exec sed -nE 's/^mod (\w*)\s*?;/\1/pg' {} \; | sort -u) \
-          <(find "${root}crates" -type f -wholename "*/tests/*/*.rs" -exec basename -s '.rs' {} \; | sed '/main/d; /mod/d; /lib/d; /cat/d; /lang/d; /topic/d; /build/d' | sort -u)
+          <(find "${root}crates" -type f -wholename "*/examples/*/*.rs" -exec basename -s '.rs' {} \; | sed '/main/d; /mod/d; /lib/d; /cat/d; /lang/d; /topic/d; /build/d' | sort -u)
     echo "DONE"
 
 # Convert {{#example <name>}} placeholders into ```rust... {#include ...}``` blocks and create the necessary code stubs (in subfolders of crates)
