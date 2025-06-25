@@ -15,5 +15,6 @@ fn main() -> anyhow::Result<()> {
 
 #[test]
 fn test() -> anyhow::Result<()> {
-    main();
+    main()?;
+    Ok(())
 }
