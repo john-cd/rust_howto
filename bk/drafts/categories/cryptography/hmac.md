@@ -13,7 +13,7 @@ Note that HMAC (Hash-based Message Authentication Code) uses a shared secret key
 The following example uses [`ring::hmac`][c-ring::hmac]{{hi:ring::hmac}}⮳ to creates a [`ring::signature::Signature`][c-ring::signature::Signature]{{hi:ring::signature::Signature}}⮳ of a string, then verifies the signature{{hi:Signature}} is correct.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/sign/hmac.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/sign/hmac.rs:example}}
 ```
 
 {{#include refs.incl.md}}

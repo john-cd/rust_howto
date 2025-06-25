@@ -9,7 +9,7 @@
 [`serde_yml`][c-serde_yml]⮳{{hi:serde_yml}} is a robust Rust library that simplifies the serialization and deserialization of Rust data structures to and from YAML format using the widely-used [`serde`][c-serde]⮳{{hi:serde}} framework.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/tests/yaml/serde_yml.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/yaml/serde_yml.rs:example}}
 ```
 
 ## Other Options {#skip}

@@ -65,7 +65,7 @@ Consider the following example for "generate random numbers within a range":
 [![rand][c-rand-badge]][c-rand]{{hi:rand}} [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}}
 
 ```rust,editable
-{{#include ../crates/about/tests/about.rs:example}}
+{{#include ../crates/about/examples/about.rs:example}}
 ```
 
 To work with it locally we can run the following commands to create a new [`cargo`][c-cargo]⮳{{hi:cargo}} project, and change to that directory:
@@ -96,11 +96,11 @@ Error handling in Rust is robust when done correctly, but can require a fair bit
 Since this book's recipes are intended to be reused as-is and encourage best practices, they set up error handling correctly when there are [`Result`][c-std::result::Result]⮳{{hi:Result}} types involved. The structure generally looks like:
 
 ```rust,editable
-{{#include ../crates/about/tests/about1.rs:example}}
+{{#include ../crates/about/examples/about1.rs:example}}
 ```
 
 ```rust,editable
-{{#include ../crates/about/tests/about2.rs:example}}
+{{#include ../crates/about/examples/about2.rs:example}}
 ```
 
 In most examples, we have chosen to use [`anyhow`][c-anyhow]⮳{{hi:anyhow}}'s [`Result`][c-anyhow::Result] as the return type of any fallible function, instead of writing `std::result::Result<_, Box<dyn std::error::Error>>` or using custom [`Result`][c-std::result::Result]⮳{{hi:Result}} / [`Error`][c-std::error::Error]⮳{{hi:Error}} types.

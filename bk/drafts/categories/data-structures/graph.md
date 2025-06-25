@@ -9,7 +9,7 @@
 `petgraph` is a graph data structure library that provides graph types and graph algorithms.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/data_structures/tests/graph/petgraph.rs:example}}
+{{#include ../../../crates/cats/data_structures/examples/graph/petgraph.rs:example}}
 ```
 
 {{#include refs.incl.md}}

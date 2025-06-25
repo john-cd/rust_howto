@@ -16,7 +16,7 @@
 It offers a range of built-in prompts for various data types, including text input, selections, confirmations, and password entry, simplifying the creation of interactive CLI applications.
 
 ```rust,editable
-{{#include ../../../crates/cats/command_line_interface/tests/user_interaction/inquire.rs:example}}
+{{#include ../../../crates/cats/command_line_interface/examples/user_interaction/inquire.rs:example}}
 ```
 
 ## Display Progress Bars and Spinners {#indicatif}
@@ -30,11 +30,11 @@ It offers a range of built-in prompts for various data types, including text inp
 [`indicatif`][c-indicatif]{{hi:indicatif}}⮳ is a progress bar library for command line applications. It allows developers to easily create and manage progress bars, spinners, and other visual feedback mechanisms to display the progress of long-running tasks.{{hi:Progress bars and spinners}}
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/command_line_interface/tests/user_interaction/indicatif.rs:example}}
+{{#include ../../../crates/cats/command_line_interface/examples/user_interaction/indicatif.rs:example}}
 ```
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/command_line_interface/tests/user_interaction/indicatif2.rs:example}}
+{{#include ../../../crates/cats/command_line_interface/examples/user_interaction/indicatif2.rs:example}}
 ```
 
 ## Related Topics {#skip}

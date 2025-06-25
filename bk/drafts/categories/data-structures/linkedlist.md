@@ -13,7 +13,7 @@
 - The list can grow or shrink as needed.
 
 ```rust,editable
-{{#include ../../../crates/cats/data_structures/tests/linkedlist/linkedlist.rs:example}}
+{{#include ../../../crates/cats/data_structures/examples/linkedlist/linkedlist.rs:example}}
 ```
 
 ## Related Topics {#skip}

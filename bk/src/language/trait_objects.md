@@ -23,7 +23,7 @@ Trait objects permit "late binding" of methods. Calling a method on a trait obje
 The following example demonstrates the use of trait objects to store a heterogenous collection of UI widgets and dynamic dispatch:
 
 ```rust,editable
-{{#include ../../crates/language/tests/trait_objects/trait_objects.rs:example}}
+{{#include ../../crates/language/examples/trait_objects/trait_objects.rs:example}}
 ```
 
 Note the following:
@@ -122,7 +122,7 @@ Note, however, two exceptions:
 - Types that implement a trait must implement its supertraits.{{hi:Supertraits}} As a result, you can call supertrait methods on a trait object:
 
 ```rust,editable
-{{#include ../../crates/language/tests/trait_objects/dyn_supertraits.rs:example}}
+{{#include ../../crates/language/examples/trait_objects/dyn_supertraits.rs:example}}
 ```
 
 - Trait objects can include "auto traits".{{hi:Autotraits}}{{hi:Auto traits}}
@@ -144,7 +144,7 @@ dyn Trait + Send + 'static
 Common examples include `Send` and `Sync` for thread safety. A type is `Send` if it can be safely sent to another thread, and `Sync` if it can be safely shared between threads. To use a trait object in a multithreaded environment, you will often need one or both of these autotraits:
 
 ```rust,editable
-{{#include ../../crates/language/tests/trait_objects/dyn_autotraits.rs:example}}
+{{#include ../../crates/language/examples/trait_objects/dyn_autotraits.rs:example}}
 ```
 
 ### Dyn Compatibility / Object Safety {#dyn-compatibility}
@@ -164,7 +164,7 @@ In addition,
 - All supertraits, if any, must also be dyn-compatible.
 
 ```rust
-{{#include ../../crates/language/tests/trait_objects/dyn_compat.rs:example}}
+{{#include ../../crates/language/examples/trait_objects/dyn_compat.rs:example}}
 ```
 
 ## See Also {#skip}

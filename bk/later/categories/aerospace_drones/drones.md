@@ -5,7 +5,7 @@
 ## Drones {#drones}
 
 ```rust,editable
-{{#include ../../../crates/cats/aerospace_drones/tests/drones/drones1.rs:example}}
+{{#include ../../../crates/cats/aerospace_drones/examples/drones/drones1.rs:example}}
 ```
 
 ## See Also

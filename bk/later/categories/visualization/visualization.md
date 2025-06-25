@@ -20,7 +20,7 @@ A Rust drawing library focus on data plotting for both [WASM][p-wasm] and native
 [`plotly.rs`][c-plotly]⮳{{hi:Plotly.rs}} is a plotting library powered by [Plotly.js][plotly.js]⮳. The aim is to bring over to Rust all the functionality that [`Python`][python]⮳{{hi:Python}} users have come to rely on; with the added benefit of type safety and speed.{{hi:Visualization}}
 
 ```rust,editable
-{{#include ../../../crates/cats/visualization/tests/visualization/plotly.rs:example}}
+{{#include ../../../crates/cats/visualization/examples/visualization/plotly.rs:example}}
 ```
 
 {{#include refs.incl.md}}

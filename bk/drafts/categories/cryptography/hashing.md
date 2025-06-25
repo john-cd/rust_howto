@@ -21,7 +21,7 @@ SHA-256 (Secure Hash Algorithm 256-bit) is part of the SHA-2 family of cryptogra
 Writes some data to a file, then calculates the SHA-256{{hi:SHA-256}} [`digest::Digest`][c-digest::Digest]{{hi:digest::Digest}}⮳ of the file's contents using [`digest::Context`][c-digest::Context]{{hi:digest::Context}}⮳.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/hashing/sha_digest.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/hashing/sha_digest.rs:example}}
 ```
 
 ## Use General-purpose Hashing Algorithms {#skip1}
@@ -35,7 +35,7 @@ For more [algorithms][p-algorithms], see Rust Crypto Hashes: sha2{{hi:sha2}}, sh
 [`blake3`][c-blake3]⮳{{hi:blake3}} implements the BLAKE3 hash function. BLAKE3 is a cryptographic hash function that is faster than MD5, SHA-1, SHA-2, and SHA-3, yet is at least as secure as the latest standard SHA-3. It's designed to take advantage of parallel processing capabilities. BLAKE3 can produce hashes of arbitrary length, from short digests to longer ones. This is useful for various applications, including key derivation and password hashing. BLAKE3 allows for incremental hashing, where you can update the hash state with new data without recomputing the entire hash. This is useful for streaming data or situations where the input is received in chunks.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/hashing/blake3.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/hashing/blake3.rs:example}}
 ```
 
 ### `sha2` {#sha2}
@@ -47,7 +47,7 @@ SHA-2 (Secure Hash Algorithm 2) is a family of cryptographic hash functions desi
 [`sha2`][c-sha2]⮳{{hi:sha2}} is a pure Rust implementation of the SHA-2 hash function family, including SHA-224, SHA-256, SHA-384, and SHA-512. SHA-256 is the most commonly used variant.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/hashing/sha2.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/hashing/sha2.rs:example}}
 ```
 
 ### `sha1` {#sha1}
@@ -57,7 +57,7 @@ SHA-2 (Secure Hash Algorithm 2) is a family of cryptographic hash functions desi
 [`sha1`][c-sha1]⮳{{hi:sha1}} implements the SHA-1 hash function.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/hashing/sha1.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/hashing/sha1.rs:example}}
 ```
 
 ### `md-5` {#md-5}
@@ -67,7 +67,7 @@ SHA-2 (Secure Hash Algorithm 2) is a family of cryptographic hash functions desi
 [`md-5`][c-md_5]⮳{{hi:md-5}} implements the MD5 hash function.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/hashing/md_5.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/hashing/md_5.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -13,7 +13,7 @@ Prometheus and OpenTelemetry are two prominent open-source observability project
 The `opentelemetry` crate is an OpenTelemetry API for Rust.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_debugging/tests/other/open_telemetry.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/examples/other/open_telemetry.rs:example}}
 ```
 
 ### Useful Links {#skip}
@@ -49,7 +49,7 @@ Prometheus instrumentation library for Rust applications. Prometheus is an open-
 [OpenObserve][openobserve-github]{{hi:OpenObserve}}⮳ (written in Rust) is a petabyte-scale Elasticsearch / Splunk / DataDog alternative for logs, metrics, traces, RUM (Real User Monitoring), error tracking, and session replay.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_debugging/tests/other/open_observe.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/examples/other/open_observe.rs:example}}
 ```
 
 ## Other Common Observability Tools & Platforms {#skip}

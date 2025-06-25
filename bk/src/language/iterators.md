@@ -35,7 +35,7 @@ Use `iter()` when you need to iterate over the elements of a collection without 
 | `into_iter()` | Depends on type | `T` (typically) | Consumes | Not usable after |
 
 ```rust,editable
-{{#include ../../crates/language/tests/iterators/iterators.rs:example}}
+{{#include ../../crates/language/examples/iterators/iterators.rs:example}}
 ```
 
 ## Create Basic Iterators from Values and Closures {#create-an-iterator}
@@ -43,7 +43,7 @@ Use `iter()` when you need to iterate over the elements of a collection without 
 The `std::iter` module in the standard library provide a number of functions to create basic iterators from values or closures:
 
 ```rust,editable
-{{#include ../../crates/language/tests/iterators/simple_iterators.rs:example}}
+{{#include ../../crates/language/examples/iterators/simple_iterators.rs:example}}
 ```
 
 ## Use Iterator Adapters to Transform a Collection {#adapters}
@@ -53,7 +53,7 @@ Iterators are composable: it's very common to chain them together to do more com
 Functions which take an `Iterator` and return another `Iterator` are often called "iterator adapters". Common iterator adapters include `map`, `take`, and `filter`:
 
 ```rust,editable
-{{#include ../../crates/language/tests/iterators/iterator_adapters.rs:example}}
+{{#include ../../crates/language/examples/iterators/iterator_adapters.rs:example}}
 ```
 
 ## Return an Iterator from a Function or Method {#return-an-iterator}
@@ -66,7 +66,7 @@ It is therefore common to use `impl Iterator<Item = T>` as the return type for f
 Advantageously, this also allows changing the implementation of the iterator within the function without breaking the calling code.
 
 ```rust,editable
-{{#include ../../crates/language/tests/iterators/return_iterator.rs:example}}
+{{#include ../../crates/language/examples/iterators/return_iterator.rs:example}}
 ```
 
 ## Accept Various Iterable Types as the Input of a Function or Method {#accept-various-iterable-types}
@@ -76,7 +76,7 @@ Many collection types in Rust implement `IntoIterator`, which provides a method 
 It is common to use `IntoIterator` as a trait bound for function parameters. This allows the input collection type to change.
 
 ```rust,editable
-{{#include ../../crates/language/tests/iterators/consume_intoiterator.rs:example}}
+{{#include ../../crates/language/examples/iterators/consume_intoiterator.rs:example}}
 ```
 
 ## Make a Collection Iterable by Implementing `IntoIterator` {#implement-intoiterator}
@@ -86,7 +86,7 @@ You may define how a (collection) type is iterated by implementing the `IntoIter
 One benefit of implementing `IntoIterator` is that your type will work with the `for` loop syntax.
 
 ```rust,editable
-{{#include ../../crates/language/tests/iterators/implement_intoiterator.rs:example}}
+{{#include ../../crates/language/examples/iterators/implement_intoiterator.rs:example}}
 ```
 
 ## References {#skip}

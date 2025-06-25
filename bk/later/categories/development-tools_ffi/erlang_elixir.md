@@ -19,7 +19,7 @@ The `erlang_nif` crate allows you to write NIFs in Rust. NIFs run within the Erl
 [`rustler`][c-rustler]⮳{{hi:rustler}} provides safe Rust wrappers for creating Erlang NIF functions.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_ffi/tests/erlang_elixir/rustler.rs:example}}
+{{#include ../../../crates/cats/development_tools_ffi/examples/erlang_elixir/rustler.rs:example}}
 ```
 
 ## Communication/Serialization (for both Ports and NIFs) {#skip}

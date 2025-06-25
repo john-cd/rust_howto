@@ -14,7 +14,7 @@ task queues, background job processing, and publish-subscribe (pub-sub).
 [`lapin`][c-lapin]⮳{{hi:lapin}} is a AMQP client library. It is a pure Rust AMQP 0.9.1 client implementation, that is feature complete, fast, and easy to use.
 
 ```rust,editable
-{{#include ../../../crates/cats/database/tests/amqp/lapin.rs:example}}
+{{#include ../../../crates/cats/database/examples/amqp/lapin.rs:example}}
 ```
 
 {{#include refs.incl.md}}

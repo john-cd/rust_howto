@@ -9,7 +9,7 @@
 [`rust-ini`][c-rust_ini]⮳{{hi:rust-ini}} is an INI configuration file parsing library.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/tests/ini/rust_ini.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/ini/rust_ini.rs:example}}
 ```
 
 ## Other Options {#skip}

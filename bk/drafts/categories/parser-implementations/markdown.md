@@ -11,7 +11,7 @@
 [`pulldown-cmark`][c-pulldown_cmark]⮳{{hi:pulldown-cmark}} is a pull parser for CommonMark.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/tests/markdown/pulldown_cmark.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/markdown/pulldown_cmark.rs:example}}
 ```
 
 ## `markdown` {#markdown}
@@ -21,7 +21,7 @@
 [`markdown`][c-markdown]⮳{{hi:markdown}} is a CommonMark compliant markdown parser in Rust with ASTs and extensions.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/tests/markdown/markdown.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/markdown/markdown.rs:example}}
 ```
 
 ## `comrak` {#comrak}
@@ -31,7 +31,7 @@
 [`comrak`][c-comrak]⮳{{hi:comrak}} is a 100% CommonMark-compatible GitHub Flavored Markdown parser and formatter.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/tests/markdown/comrak.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/markdown/comrak.rs:example}}
 ```
 
 {{#include refs.incl.md}}

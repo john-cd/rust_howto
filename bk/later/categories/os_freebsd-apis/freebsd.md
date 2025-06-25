@@ -5,7 +5,7 @@
 ## Bind to FreeBSD APIs {#freebsd}
 
 ```rust,editable
-{{#include ../../../crates/cats/os_freebsd_apis/tests/freebsd/freebsd.rs:example}}
+{{#include ../../../crates/cats/os_freebsd_apis/examples/freebsd/freebsd.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -13,7 +13,7 @@ RSA (Rivest-Shamir-Adleman) is one of the most widely used public-key cryptosyst
 [`rsa`][c-rsa]⮳{{hi:rsa}} is a pure Rust RSA implementation. It allows you to generate RSA key pairs (public and private keys), encrypt data with the public key, and decrypt data with the corresponding private key. The crate also supports digital signatures, enabling you to sign data with the private key and verify the [signature][p-signature] with the public key. [`rsa`][c-rsa]⮳{{hi:rsa}} offers various functionalities for working with RSA keys, including loading and saving keys in different formats (like PEM), and provides implementations of different padding schemes (like PKCS#1 v1.5 padding and PSS padding).
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/rsa.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/rsa.rs:example}}
 ```
 
 ## `sodiumoxide` {#sodiumoxide}

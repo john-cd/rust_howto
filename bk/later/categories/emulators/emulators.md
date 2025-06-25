@@ -5,7 +5,7 @@
 ## Emulators {#emulators}
 
 ```rust,editable
-{{#include ../../../crates/cats/emulators/tests/emulators/emulator.rs:example}}
+{{#include ../../../crates/cats/emulators/examples/emulators/emulator.rs:example}}
 ```
 
 ## Virtual Machines / CPU Emulators {#skip}

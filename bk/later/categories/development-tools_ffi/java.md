@@ -9,7 +9,7 @@
 [`jni`][c-jni]⮳{{hi:jni}} provides Rust bindings to the `Java` JNI API.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_ffi/tests/java/jni.rs:example}}
+{{#include ../../../crates/cats/development_tools_ffi/examples/java/jni.rs:example}}
 ```
 
 {{#include refs.incl.md}}

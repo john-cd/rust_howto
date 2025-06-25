@@ -21,7 +21,7 @@ Creates two 2-D matrices with [`ndarray::arr2`][c-ndarray::arr2]{{hi:ndarray::ar
 Note that the sum is computed as `let sum = &a + &b`. The `&` operator is used to avoid consuming `a` and `b`, making them available later for display. A new array is created containing their sum.
 
 ```rust,editable
-{{#include ../../../crates/cats/mathematics/tests/linear_algebra/add_matrices.rs:example}}
+{{#include ../../../crates/cats/mathematics/examples/linear_algebra/add_matrices.rs:example}}
 ```
 
 ## Multiply Matrices {#multiplying-matrices}
@@ -36,7 +36,7 @@ Note that the sum is computed as `let sum = &a + &b`. The `&` operator is used t
 Creates two matrices with [`ndarray::arr2`][c-ndarray::arr2]{{hi:ndarray::arr2}}⮳ and performs matrix multiplication on them with [`ndarray::ArrayBase::dot`][c-ndarray::ArrayBase::dot]{{hi:ndarray::ArrayBase::dot}}⮳.
 
 ```rust,editable
-{{#include ../../../crates/cats/mathematics/tests/linear_algebra/multiply_matrices.rs:example}}
+{{#include ../../../crates/cats/mathematics/examples/linear_algebra/multiply_matrices.rs:example}}
 ```
 
 ## Multiply a Scalar with a Vector and a Matrix {#multiply-a-scalar-with-a-vector-and-a-matrix}
@@ -55,7 +55,7 @@ First, a scalar is multiplied by the vector to get another vector. Then, the mat
 In [`ndarray`][c-ndarray]{{hi:ndarray}}⮳, 1-D arrays can be interpreted as either row or column vectors depending on context. If representing the orientation of a vector is important, a 2-D array with one row or one column must be used instead. In this example, the vector is a 1-D array on the right-hand side, so `ndarray::Array2::dot`⮳ handles it as a column vector.
 
 ```rust,editable
-{{#include ../../../crates/cats/mathematics/tests/linear_algebra/multiply_scalar_vector_matrix.rs:example}}
+{{#include ../../../crates/cats/mathematics/examples/linear_algebra/multiply_scalar_vector_matrix.rs:example}}
 ```
 
 ## Compare Vectors {#vector-comparison}
@@ -78,7 +78,7 @@ This recipe also contains additional ownership examples. Here, `let z = a + b` c
 `let w = &c + &d` creates a new vector without consuming `c` or `d`, allowing their modification later. See [Binary Operators With Two Arrays][c-ndarray::ArrayBase]⮳ for additional detail.
 
 ```rust,editable
-{{#include ../../../crates/cats/mathematics/tests/linear_algebra/vector_comparison.rs:example}}
+{{#include ../../../crates/cats/mathematics/examples/linear_algebra/vector_comparison.rs:example}}
 ```
 
 ## Calculate Vector Norms {#vector-norm}
@@ -100,7 +100,7 @@ Note that both [`l1_norm`][l1-norm]{{hi:L1 norm}}⮳ and [`l2_norm`][l2-norm]{{h
 [`ndarray::Array`][c-ndarray::Array]{{hi:ndarray::Array}}⮳ and [`ndarray::Array`][c-ndarray::Array]{{hi:ndarray::Array}}⮳ are both type aliases for [`ndarray::Array`][c-ndarray::Array]{{hi:ndarray::Array}}⮳. So, the most general argument type for the caller would be `&ArrayBase<S, Ix1> where S: Data`, because then the caller could use `&array` or `&view` instead of `x.view()`. If the function is part of a public API, that may be a better choice for the benefit of users. For internal functions, the more concise `ArrayView1<f64>` may be preferable.
 
 ```rust,editable
-{{#include ../../../crates/cats/mathematics/tests/linear_algebra/vector_norm.rs:example}}
+{{#include ../../../crates/cats/mathematics/examples/linear_algebra/vector_norm.rs:example}}
 ```
 
 ## Invert a Matrix {#invert-matrix}
@@ -117,7 +117,7 @@ Note that both [`l1_norm`][l1-norm]{{hi:L1 norm}}⮳ and [`l2_norm`][l2-norm]{{h
 Creates a 3x3 matrix with [`nalgebra::Matrix3`][c-nalgebra::Matrix3]{{hi:nalgebra::Matrix3}}⮳ and inverts it, if possible.
 
 ```rust,editable
-{{#include ../../../crates/cats/mathematics/tests/linear_algebra/invert_matrix.rs:example}}
+{{#include ../../../crates/cats/mathematics/examples/linear_algebra/invert_matrix.rs:example}}
 ```
 
 ## (De)serialize a Matrix {#deserialize-a-matrix}
@@ -134,7 +134,7 @@ Serialize and deserialize a matrix to and from [JSON][p-json]. Serialization is 
 Note that serialization followed by deserialization gives back the original matrix.
 
 ```rust,editable
-{{#include ../../../crates/cats/mathematics/tests/linear_algebra/deserialize_matrix.rs:example}}
+{{#include ../../../crates/cats/mathematics/examples/linear_algebra/deserialize_matrix.rs:example}}
 ```
 
 {{#include refs.incl.md}}

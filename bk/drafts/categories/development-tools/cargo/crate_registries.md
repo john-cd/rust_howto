@@ -19,7 +19,7 @@ Alternative to [`crates.io`][crates.io-website]⮳{{hi:crates.io}}: [`lib.rs`][l
 Helpers for interacting with crates.io.
 
 ```rust,editable
-{{#include ../../../../crates/cats/development_tools/tests/crate_registries/crates_io.rs:example}}
+{{#include ../../../../crates/cats/development_tools/examples/crate_registries/crates_io.rs:example}}
 ```
 
 {{#include refs.incl.md}}

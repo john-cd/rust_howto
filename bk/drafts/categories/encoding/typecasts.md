@@ -53,7 +53,7 @@ Rust performs some implicit coercions, such as dereferencing and unsizing. These
 [`bytemuck`][c-bytemuck]⮳{{hi:bytemuck}}
 
 ```rust,editable
-{{#include ../../../crates/cats/encoding/tests/typecasts/bytemuck.rs:example}}
+{{#include ../../../crates/cats/encoding/examples/typecasts/bytemuck.rs:example}}
 ```
 
 ## `zerocopy` {#zerocopy}
@@ -78,7 +78,7 @@ Rust performs some implicit coercions, such as dereferencing and unsizing. These
 Zerocopy is often used in [network programming][p-network-programming], where high [performance][p-performance] and low memory overhead are critical, or image handling.
 
 ```rust,editable
-{{#include ../../../crates/cats/encoding/tests/typecasts/zerocopy.rs:example}}
+{{#include ../../../crates/cats/encoding/examples/typecasts/zerocopy.rs:example}}
 ```
 
 ## Key Differences from C/C++ {#skip7}

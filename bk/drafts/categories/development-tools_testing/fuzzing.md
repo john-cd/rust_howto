@@ -54,7 +54,7 @@ A [`cargo`][c-cargo]⮳{{hi:cargo}} subcommand for fuzzing with `libFuzzer`.
 Fuzz testing (or fuzzing) is a software [testing][p-testing] technique used to find security and stability issues by providing pseudo-random data as input to the software. AFLplusplus is a popular, effective, and modern fuzz [testing][p-testing] tool based on AFL. [`afl.rs`][c-afl]⮳{{hi:afl.rs}} allows one to run AFLplusplus on code written in the Rust programming [language][p-language].
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_testing/tests/fuzzing/afl.rs:example}}
+{{#include ../../../crates/cats/development_tools_testing/examples/fuzzing/afl.rs:example}}
 ```
 
 ## Related Topic: Property-Based Testing {#skip}

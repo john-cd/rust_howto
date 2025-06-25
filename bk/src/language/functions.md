@@ -11,7 +11,7 @@ Functions are fundamental building blocks in Rust, used to encapsulate reusable 
 Here are examples of functions with or without parameters or return value:
 
 ```rust,editable
-{{#include ../../crates/language/tests/functions/functions.rs:example}}
+{{#include ../../crates/language/examples/functions/functions.rs:example}}
 ```
 
 ## Write a Generic Function {#write-generic-functions}
@@ -21,19 +21,19 @@ Here are examples of functions with or without parameters or return value:
 Functions can be generic, meaning they can operate on parameters of various types without needing to be rewritten for each type:
 
 ```rust,editable
-{{#include ../../crates/language/tests/functions/generic_functions.rs:example}}
+{{#include ../../crates/language/examples/functions/generic_functions.rs:example}}
 ```
 
 Type parameters can be constrained to implement specified traits:
 
 ```rust,editable
-{{#include ../../crates/language/tests/functions/generic_functions2.rs:example}}
+{{#include ../../crates/language/examples/functions/generic_functions2.rs:example}}
 ```
 
 Functions can also include one or more explicit lifetime parameters, which are also written with < and >. Generic type parameters, lifetime parameters and `const` generic parameters can be intermixed, but with lifetime parameters first.
 
 ```rust,editable
-{{#include ../../crates/language/tests/functions/generic_functions3.rs:example}}
+{{#include ../../crates/language/examples/functions/generic_functions3.rs:example}}
 ```
 
 ## Work with Diverging Functions {#diverging-functions}
@@ -41,7 +41,7 @@ Functions can also include one or more explicit lifetime parameters, which are a
 Functions that are guaranteed never to return (e.g., they loop forever or exit the process) have the special return type `!` (the "never" type).{{hi:Diverging functions}}
 
 ```rust,editable,should_panic
-{{#include ../../crates/language/tests/functions/diverging_functions.rs:example}}
+{{#include ../../crates/language/examples/functions/diverging_functions.rs:example}}
 ```
 
 ## Work with Function Pointers {#function-pointers}
@@ -49,7 +49,7 @@ Functions that are guaranteed never to return (e.g., they loop forever or exit t
 Functions are first-class citizens in Rust. This means you can treat them like any other value: assign them to variables, pass them as arguments to other functions, etc. The type of a function pointer looks like `fn(i32) -> i32`.
 
 ```rust,editable
-{{#include ../../crates/language/tests/functions/function_pointers.rs:example}}
+{{#include ../../crates/language/examples/functions/function_pointers.rs:example}}
 ```
 
 ## Return a Reference from a Function {#return-reference}
@@ -82,7 +82,7 @@ Instead, you should typically:
 - Use a literal, a static or a constant: Since a `static` variable lives as long as the process runs, its references will be pointing to the same memory location both inside and outside the function.
 
 ```rust,editable
-{{#include ../../crates/language/tests/functions/return_reference.rs:example}}
+{{#include ../../crates/language/examples/functions/return_reference.rs:example}}
 ```
 
 You can also use `std::borrow::Cow` to generalize over owned data and unowned references. See the [[cow | COW]] chapter.

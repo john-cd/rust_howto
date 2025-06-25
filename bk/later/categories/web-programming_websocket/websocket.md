@@ -13,7 +13,7 @@
 [`tungstenite`][c-tungstenite]⮳{{hi:tungstenite}} is a low-level crate that others build on.
 
 ```rust,editable
-{{#include ../../../crates/cats/web_programming_websocket/tests/tungstenite.rs:example}}
+{{#include ../../../crates/cats/web_programming_websocket/examples/tungstenite.rs:example}}
 ```
 
 ## Implement Websocket While Using the `tokio` Async Runtime {#general-purpose}
@@ -30,7 +30,7 @@
 Use [`tokio-tungstenite`][c-tokio_tungstenite]⮳{{hi:tokio-tungstenite}} if you are using the [`tokio`][c-tokio]⮳{{hi:tokio}} async executor.
 
 ```rust,editable
-{{#include ../../../crates/cats/web_programming_websocket/tests/tokio_tungstenite.rs:example}}
+{{#include ../../../crates/cats/web_programming_websocket/examples/tokio_tungstenite.rs:example}}
 ```
 
 ## Implement Websocket While Using the `async-std` Async Runtime {#async-std}
@@ -40,7 +40,7 @@ Use [`tokio-tungstenite`][c-tokio_tungstenite]⮳{{hi:tokio-tungstenite}} if you
 Async binding for Tungstenite.
 
 ```rust,editable
-{{#include ../../../crates/cats/web_programming_websocket/tests/async_tungstenite.rs:example}}
+{{#include ../../../crates/cats/web_programming_websocket/examples/async_tungstenite.rs:example}}
 ```
 
 ## Related Topics {#skip}

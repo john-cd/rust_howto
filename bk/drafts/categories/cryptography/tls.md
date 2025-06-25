@@ -13,7 +13,7 @@ Transport Layer Security (TLS) is a cryptographic protocol designed to provide s
 Choose [`rustls`][c-rustls]⮳{{hi:rustls}} (i) for portability and consistent behavior across platforms; (ii) when you need fine-grained control over TLS settings; and (iii) when performance is critical.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/tls/rustls.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/tls/rustls.rs:example}}
 ```
 
 See also: [Rustls (Wikipedia)][c-rustls-wikipedia]⮳.
@@ -27,7 +27,7 @@ See also: [Rustls (Wikipedia)][c-rustls-wikipedia]⮳.
 Choose [`native-tls`][c-native_tls]⮳{{hi:native-tls}} when ease of use and automatic certificate management are preferred and when integration with the system's existing TLS infrastructure is important.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/tls/native_tls.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/tls/native_tls.rs:example}}
 ```
 
 {{#include refs.incl.md}}

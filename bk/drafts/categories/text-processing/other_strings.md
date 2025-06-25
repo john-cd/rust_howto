@@ -17,7 +17,7 @@ The need for this type arises from the fact that:
 [`std::ffi::OsStr`](https://doc.rust-lang.org/std/ffi/struct.OsStr.html)⮳ is a borrowed reference to an OS string. `&OsStr` is to `OsString` as `&str` is to `String`: the former in each pair are borrowed references; the latter are owned strings.
 
 ```rust,editable
-{{#include ../../../crates/cats/text_processing/tests/other_strings/osstring.rs:example}}
+{{#include ../../../crates/cats/text_processing/examples/other_strings/osstring.rs:example}}
 ```
 
 ## Work with C-style, NUL-terminated Strings with `CString` and `CStr` {#cstring}
@@ -38,7 +38,7 @@ Use `CString` and `CStr` when you need to convert Rust UTF-8 strings to and from
 `&CStr` is to `CString` as `&str` is to `String`: the former in each pair are borrowed references; the latter are owned strings.
 
 ```rust,editable
-{{#include ../../../crates/cats/text_processing/tests/other_strings/cstring.rs:example}}
+{{#include ../../../crates/cats/text_processing/examples/other_strings/cstring.rs:example}}
 ```
 
 ## Work with Non-UTF8 Strings with `bstr` {#bstr}
@@ -50,7 +50,7 @@ Use `CString` and `CStr` when you need to convert Rust UTF-8 strings to and from
 This crate provides extension traits for `&[u8]` and `Vec<u8>` that enable their use as byte strings, where byte strings are conventionally UTF-8. This differs from the standard library's `String` and `str` types in that they are *not* required to be valid UTF-8, but may be fully or partially valid UTF-8.
 
 ```rust,editable
-{{#include ../../../crates/cats/text_processing/tests/other_strings/bstr.rs:example}}
+{{#include ../../../crates/cats/text_processing/examples/other_strings/bstr.rs:example}}
 ```
 
 ## Intern Strings with `ustr` {#ustr}
@@ -66,7 +66,7 @@ The `ustr` crate implements string interning, i.e. storing only one copy of each
 - There is little character-by-character assembly of strings, string concatenation, or other string manipulation (other than equality testing).
 
 ```rust,editable
-{{#include ../../../crates/cats/text_processing/tests/other_strings/ustr.rs:example}}
+{{#include ../../../crates/cats/text_processing/examples/other_strings/ustr.rs:example}}
 ```
 
 You may also use the [string_cache](https://docs.rs/string_cache/latest/string_cache/)⮳ library for interning things that are `AsRef<str>`.

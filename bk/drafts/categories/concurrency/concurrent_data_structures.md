@@ -15,7 +15,7 @@ Refer to the [comparative benchmarks of concurrent HashMaps][conc-map-bench]⮳.
 It allows multiple threads to concurrently read and write to the map with minimal contention, using a technique called "shard-based" or "bucket-based" concurrency. This makes [`dashmap`][c-dashmap]⮳{{hi:dashmap}} a good choice when you need a hash map that can be accessed frequently by multiple threads without significant performance bottlenecks.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/concurrency/tests/concurrent_data_structures/dashmap.rs:example}}
+{{#include ../../../crates/cats/concurrency/examples/concurrent_data_structures/dashmap.rs:example}}
 ```
 
 ## Bounded Multi-producer Multi-consumer Queue {#crossbeam-queue}
@@ -25,7 +25,7 @@ It allows multiple threads to concurrently read and write to the map with minima
 [`crossbeam-queue`][c-crossbeam_queue]⮳{{hi:crossbeam-queue}} provides various concurrent queue implementations in Rust, designed for efficient and safe communication between threads. It offers different queue types optimized for various use cases, including single-producer/single-consumer, multi-producer/multi-consumer, and bounded/unbounded queues. These queues are essential for building concurrent data structures and message-passing systems, enabling threads to exchange data without race conditions or memory safety issues.
 
 ```rust,editable
-{{#include ../../../crates/cats/concurrency/tests/concurrent_data_structures/crossbeam_queue.rs:example}}
+{{#include ../../../crates/cats/concurrency/examples/concurrent_data_structures/crossbeam_queue.rs:example}}
 ```
 
 ## `flurry` {#flurry}
@@ -35,7 +35,7 @@ It allows multiple threads to concurrently read and write to the map with minima
 [`flurry`][c-flurry]⮳{{hi:flurry}} is a concurrent hash table designed for high performance. It allows fully concurrent reads and highly concurrent updates. Its main type is functionally very similar to [`std::collections::HashMap`][c-std::collections::HashMap]⮳{{hi:std::collections::HashMap}}. Its implementation is closely based on Java's `java.util.concurrent.ConcurrentHashMap`. Even though all operations on the map are thread-safe and operate on shared references, retrieval operations do not entail locking, and there is not any support for locking the entire table in a way that prevents all access ([doc][c-flurry]).
 
 ```rust,editable
-{{#include ../../../crates/cats/concurrency/tests/concurrent_data_structures/flurry.rs:example}}
+{{#include ../../../crates/cats/concurrency/examples/concurrent_data_structures/flurry.rs:example}}
 ```
 
 ## `papaya` {#papaya}
@@ -53,7 +53,7 @@ It allows multiple threads to concurrently read and write to the map with minima
 ([doc][c-papaya])
 
 ```rust,editable
-{{#include ../../../crates/cats/concurrency/tests/concurrent_data_structures/papaya.rs:example}}
+{{#include ../../../crates/cats/concurrency/examples/concurrent_data_structures/papaya.rs:example}}
 ```
 
 ## Related Topics {#skip}

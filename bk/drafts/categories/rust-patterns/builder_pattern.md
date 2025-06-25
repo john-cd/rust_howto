@@ -11,7 +11,7 @@ The builder pattern provides a clean and readable way to construct complex objec
 - Once the desired fields are set, you call a final method on the builder (commonly named `.build()` or `.finish()`). This method takes the configuration stored in the builder, performs any necessary validation (like checking if required fields were provided), and then constructs and returns the final, fully-formed object. If the validation can fail, the `build` method typically returns a `Result`.
 
 ```rust,editable
-{{#include ../../../crates/cats/rust_patterns/tests/builder_pattern/builder_pattern.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/examples/builder_pattern/builder_pattern.rs:example}}
 ```
 
 ## `typed-builder` {#typed-builder}

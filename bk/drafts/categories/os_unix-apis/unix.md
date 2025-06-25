@@ -16,7 +16,7 @@
 [`rustix`][c-rustix]⮳{{hi:rustix}} offers efficient and safe POSIX / *nix / Winsock syscall-like APIs. It uses idiomatic Rust types: refs, slices, Results instead of raw pointers, safe wrappers around raw file descriptors, [`bitflags`][c-bitflags]⮳{{hi:bitflags}} instead of bare integer flags, and several other conveniences.
 
 ```rust,editable
-{{#include ../../../crates/cats/os_unix_apis/tests/unix/rustix.rs:example}}
+{{#include ../../../crates/cats/os_unix_apis/examples/unix/rustix.rs:example}}
 ```
 
 ## Bind to Unix-specific APIs with `nix` {#nix}
@@ -30,7 +30,7 @@
 [`nix`][c-nix]⮳{{hi:nix}} provides bindings to the various *nix system [functions][p-functions] (Unix, Linux, MacOS, etc.).
 
 ```rust,editable
-{{#include ../../../crates/cats/os_unix_apis/tests/unix/nix.rs:example}}
+{{#include ../../../crates/cats/os_unix_apis/examples/unix/nix.rs:example}}
 ```
 
 {{#include refs.incl.md}}

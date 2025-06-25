@@ -25,7 +25,7 @@ This can be particularly useful for [embedded][p-embedded] systems or other envi
 - `heapless::spsc::Queue` – a statically allocated single-producer single-consumer lock-free queue.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/data_structures/tests/heapless.rs:example}}
+{{#include ../../../crates/cats/data_structures/examples/heapless.rs:example}}
 ```
 
 {{#include refs.incl.md}}

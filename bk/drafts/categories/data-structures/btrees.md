@@ -20,7 +20,7 @@ This ordering is the main difference between `BTreeMap` and the more common `Has
 - `last_key_value()` returns the largest (last) key-value pair.
 
 ```rust,editable
-{{#include ../../../crates/cats/data_structures/tests/btrees/btreemap.rs:example}}
+{{#include ../../../crates/cats/data_structures/examples/btrees/btreemap.rs:example}}
 ```
 
 ## `BTreeSet<T>` {#btreeset}
@@ -32,7 +32,7 @@ This ordering is the main difference between `BTreeMap` and the more common `Has
 B-Tree Set is similar to `HashSet`, but it keeps the elements sorted.
 
 ```rust,editable
-{{#include ../../../crates/cats/data_structures/tests/btrees/btreeset.rs:example}}
+{{#include ../../../crates/cats/data_structures/examples/btrees/btreeset.rs:example}}
 ```
 
 ## Related Topics

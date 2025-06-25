@@ -11,7 +11,7 @@
 [`dotenvy`][c-dotenvy]⮳{{hi:dotenvy}} is a Rust crate that loads environment variables from a .env file. It's commonly used during development to manage configuration settings without hardcoding them into the application. [`dotenvy`][c-dotenvy]⮳{{hi:dotenvy}} parses the .env file, sets the environment variables, and makes them accessible to the application through the standard std::env module. It's a simple but effective way to separate [configuration][p-configuration] from code and manage different environments (development, testing, production) with different .env files. It's important to note that .env files are typically not used in production environments, where environment variables are usually set directly.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/config/tests/env/dotenvy.rs:example}}
+{{#include ../../../crates/cats/config/examples/env/dotenvy.rs:example}}
 ```
 
 ## `std::env` {#env}
@@ -21,7 +21,7 @@
 Use [`std::env`][c-std::env::var]⮳{{hi:std::env}} to retrieve a single environment variable{{hi:Environment variables}}.
 
 ```rust,editable
-{{#include ../../../crates/cats/config/tests/env/env.rs:example}}
+{{#include ../../../crates/cats/config/examples/env/env.rs:example}}
 ```
 
 [Working with environment variables in Rust][blog-working-with-env-variables]⮳.
@@ -39,7 +39,7 @@ serde = { version = "1.0.217", features = ["derive"] }
 ```
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/config/tests/env/envy.rs:example}}
+{{#include ../../../crates/cats/config/examples/env/envy.rs:example}}
 ```
 
 ## See Also

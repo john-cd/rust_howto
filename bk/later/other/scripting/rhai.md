@@ -24,7 +24,7 @@ Features:
 - Robust error reporting.
 
 ```rust,editable
-{{#include ../../../crates/other/tests/scripting/rhai.rs:example}}
+{{#include ../../../crates/other/examples/scripting/rhai.rs:example}}
 ```
 
 ## Rhai Ecosystem {#skip}

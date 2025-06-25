@@ -9,7 +9,7 @@ Oracle [Database][p-database] is a multi-model [database][p-database] management
 [`diesel_oci`][c-diesel_oci]⮳{{hi:diesel}} is an OCI database adapter for [`diesel`][c-diesel]⮳{{hi:diesel}}. "Oracle Call Interface" is the comprehensive native C language interface to Oracle Database.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/database/tests/oracle/diesel_oci.rs:example}}
+{{#include ../../../crates/cats/database/examples/oracle/diesel_oci.rs:example}}
 ```
 
 ## Connect to an Oracle Database with `oracle` {#oracle}
@@ -19,7 +19,7 @@ Oracle [Database][p-database] is a multi-model [database][p-database] management
 [`oracle`][c-oracle]⮳{{hi:oracle}} provides Oracle DB bindings for Rust. This crate provides a safe and ergonomic interface to Oracle databases.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/database/tests/oracle/oracle.rs:example}}
+{{#include ../../../crates/cats/database/examples/oracle/oracle.rs:example}}
 ```
 
 ## `sibyl` {#sibyl}
@@ -29,7 +29,7 @@ Oracle [Database][p-database] is a multi-model [database][p-database] management
 [`sibyl`][c-sibyl]⮳{{hi:sibyl}} offers an OCI-based (synchronous or asynchronous) interface between Rust applications and Oracle databases.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/database/tests/oracle/sibyl.rs:example}}
+{{#include ../../../crates/cats/database/examples/oracle/sibyl.rs:example}}
 ```
 
 {{#include refs.incl.md}}

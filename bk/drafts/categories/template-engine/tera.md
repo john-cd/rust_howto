@@ -9,7 +9,7 @@
 [`tera`][c-tera]⮳{{hi:tera}} is a [template engine][p-template-engine] based on Jinja2/Django templates. It allows developers to embed dynamic content within text-based templates, supporting features like control flow (if/else, for loops), expressions, filters, and custom functions.  Tera excels at generating various text-based outputs, from HTML for web applications to configuration files.
 
 ```rust,editable
-{{#include ../../../crates/cats/template_engine/tests/tera/tera.rs:example}}
+{{#include ../../../crates/cats/template_engine/examples/tera/tera.rs:example}}
 ```
 
 {{#include refs.incl.md}}

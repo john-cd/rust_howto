@@ -23,7 +23,7 @@ Tracing refers to the process of capturing and recording information about the e
 A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting them as text and logging them to `stdout`.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_subscriber.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_subscriber.rs:example}}
 ```
 
 ## Change the Log Level {#tracing-change-log-level}
@@ -31,7 +31,7 @@ A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting t
 [![tracing_subscriber][c-tracing_subscriber-badge]][c-tracing_subscriber]{{hi:tracing_subscriber}} [![tracing_subscriber-crates.io][c-tracing_subscriber-crates.io-badge]][c-tracing_subscriber-crates.io]
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_subscriber1.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_subscriber1.rs:example}}
 ```
 
 ## Log in JSON Format {#tracing-log-json}
@@ -39,7 +39,7 @@ A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting t
 [![tracing_subscriber][c-tracing_subscriber-badge]][c-tracing_subscriber]{{hi:tracing_subscriber}} [![tracing_subscriber-crates.io][c-tracing_subscriber-crates.io-badge]][c-tracing_subscriber-crates.io]
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_subscriber1b.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_subscriber1b.rs:example}}
 ```
 
 ## Configure Tracing {#configure-tracing}
@@ -47,7 +47,7 @@ A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting t
 [![tracing_subscriber][c-tracing_subscriber-badge]][c-tracing_subscriber]{{hi:tracing_subscriber}} [![tracing_subscriber-crates.io][c-tracing_subscriber-crates.io-badge]][c-tracing_subscriber-crates.io]
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_subscriber2.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_subscriber2.rs:example}}
 ```
 
 ## Write Logs to Multiple Destinations Simultaneously {#tracing-multiple-destinations}
@@ -55,7 +55,7 @@ A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting t
 [![tracing_subscriber][c-tracing_subscriber-badge]][c-tracing_subscriber]{{hi:tracing_subscriber}} [![tracing_subscriber-crates.io][c-tracing_subscriber-crates.io-badge]][c-tracing_subscriber-crates.io]
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_subscriber2b.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_subscriber2b.rs:example}}
 ```
 
 ## Configure Tracing at Runtime {#tracing-config-runtime}
@@ -63,7 +63,7 @@ A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting t
 [![tracing_subscriber][c-tracing_subscriber-badge]][c-tracing_subscriber]{{hi:tracing_subscriber}} [![tracing_subscriber-crates.io][c-tracing_subscriber-crates.io-badge]][c-tracing_subscriber-crates.io]
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_subscriber3.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_subscriber3.rs:example}}
 ```
 
 ## Change the Tracing Configuration at Runtime {#tracing-change-runtime}
@@ -71,7 +71,7 @@ A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting t
 [![tracing_subscriber][c-tracing_subscriber-badge]][c-tracing_subscriber]{{hi:tracing_subscriber}} [![tracing_subscriber-crates.io][c-tracing_subscriber-crates.io-badge]][c-tracing_subscriber-crates.io]
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_subscriber3b.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_subscriber3b.rs:example}}
 ```
 
 ## Customize the Formatting of Log Lines {#custom-event-formatter}
@@ -79,7 +79,7 @@ A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting t
 [![tracing_subscriber][c-tracing_subscriber-badge]][c-tracing_subscriber]{{hi:tracing_subscriber}} [![tracing_subscriber-crates.io][c-tracing_subscriber-crates.io-badge]][c-tracing_subscriber-crates.io]{{hi:Custom event formatter}}
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_subscriber4.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_subscriber4.rs:example}}
 ```
 
 ## Log Events with `tracing` {#events}
@@ -89,7 +89,7 @@ A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting t
 An `Event` signifies something that happened at a moment in time. `tracing`'s `Events` are comparable to the log records emitted by unstructured logging code.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing.rs:example}}
 ```
 
 ## Create then Enter a Span {#spans}
@@ -97,7 +97,7 @@ An `Event` signifies something that happened at a moment in time. `tracing`'s `E
 [![tracing][c-tracing-badge]][c-tracing]{{hi:tracing}} [![tracing-github][c-tracing-github-badge]][c-tracing-github] [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}{{hi:Tracing}}
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_spans.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_spans.rs:example}}
 ```
 
 ## Create and Enter a Span in a One-liner Using `entered` {#span-entered}
@@ -105,7 +105,7 @@ An `Event` signifies something that happened at a moment in time. `tracing`'s `E
 [![tracing][c-tracing-badge]][c-tracing]{{hi:tracing}} [![tracing-github][c-tracing-github-badge]][c-tracing-github] [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}{{hi:Tracing}}
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_span_entered.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_span_entered.rs:example}}
 ```
 
 ## Use Spans to Instrument Synchronous and Asynchronous Code {#span-instrument}
@@ -113,7 +113,7 @@ An `Event` signifies something that happened at a moment in time. `tracing`'s `E
 Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.await` points will result in incorrect traces. Use [`tracing::span::Span::in_scope`][c-tracing::span::Span::in_scope]{{hi:tracing::span::Span::in_scope}}⮳ to make sure the span is exited before the `await` call. Alternatively, use `instrument` to make sure that the span is automatically exited and re-entered when a async function or block is awaited then resumed.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_span_in_scope.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_span_in_scope.rs:example}}
 ```
 
 ## Add Tracing Spans to Functions {#add-tracing-spans-to-fn}
@@ -121,7 +121,7 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.awai
 [![tracing][c-tracing-badge]][c-tracing]{{hi:tracing}} [![tracing-github][c-tracing-github-badge]][c-tracing-github] [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}{{hi:Tracing}}
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_instrument.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_instrument.rs:example}}
 ```
 
 ## See Also {#skip}

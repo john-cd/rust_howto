@@ -25,7 +25,7 @@ Note that [`hyper`][c-hyper]⮳{{hi:hyper}} developers need to bring their own a
 This said, we provide below an example of a HTTP server, following the recommendations of the [`hyper.rs`][c-hyper-website] guide:
 
 ```rust,editable
-{{#include ../../../crates/cats/web_programming_http_server/tests/hyper_server.rs:example}}
+{{#include ../../../crates/cats/web_programming_http_server/examples/hyper_server.rs:example}}
 ```
 
 ## `hyper` TLS Support {#skip}

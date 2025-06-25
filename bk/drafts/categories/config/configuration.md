@@ -14,7 +14,7 @@
 - Programmatic overrides.
 
 ```rust,editable
-{{#include ../../../crates/cats/config/tests/configuration/config_hierarchical.rs:example}}
+{{#include ../../../crates/cats/config/examples/configuration/config_hierarchical.rs:example}}
 ```
 
 ### Load Configuration Settings into a Singleton {#load_configuration_into_a_singleton}
@@ -22,7 +22,7 @@
 [![config][c-config-badge]][c-config] [![config-crates.io][c-config-crates.io-badge]][c-config-crates.io] [![config-github][c-config-github-badge]][c-config-github] [![config-lib.rs][c-config-lib.rs-badge]][c-config-lib.rs]{{hi:config}}{{hi:Environment}}{{hi:Env}}{{hi:Settings}}{{hi:config}}{{hi:Configuration}} [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
 
 ```rust,editable
-{{#include ../../../crates/cats/config/tests/configuration/config_singleton.rs:example}}
+{{#include ../../../crates/cats/config/examples/configuration/config_singleton.rs:example}}
 ```
 
 ### Test Configuration-loading Methods {#test_configuration_loading_methods}
@@ -30,7 +30,7 @@
 [![config][c-config-badge]][c-config] [![config-crates.io][c-config-crates.io-badge]][c-config-crates.io] [![config-github][c-config-github-badge]][c-config-github] [![config-lib.rs][c-config-lib.rs-badge]][c-config-lib.rs]{{hi:config}}{{hi:Environment}}{{hi:Env}}{{hi:Settings}}{{hi:config}}{{hi:Configuration}} [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
 
 ```rust,editable
-{{#include ../../../crates/cats/config/tests/configuration/config_testing.rs:example}}
+{{#include ../../../crates/cats/config/examples/configuration/config_testing.rs:example}}
 ```
 
 ## Load Configuration from TOML or YAML with `confy` {#confy}
@@ -40,7 +40,7 @@
 [`confy`][c-confy]⮳{{hi:confy}} is a Rust crate that simplifies reading and writing TOML or YAML configuration files. It uses [`serde`][c-serde]⮳{{hi:serde}} for easy serialization/deserialization of config structs, handles file I/O, and supports defaults and environment variable overrides.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/config/tests/configuration/confy.rs:example}}
+{{#include ../../../crates/cats/config/examples/configuration/confy.rs:example}}
 ```
 
 {{#include refs.incl.md}}

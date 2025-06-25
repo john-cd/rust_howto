@@ -33,7 +33,7 @@ The _scope_ of a variable is defined as follows: A variable is valid from the po
 Rules 1 and 3 ensures automatic memory cleanup (no leaks). Rule 2 ensures no "double free". The following example illustrates these rules:
 
 ```rust,editable
-{{#include ../../crates/language/tests/ownership_borrowing/scope.rs:example}}
+{{#include ../../crates/language/examples/ownership_borrowing/scope.rs:example}}
 ```
 
 ## Move Semantics {#move-semantics}
@@ -49,7 +49,7 @@ In contrast, Rust's move is like a shallow copy, but with the added rule of _inv
 The following example illustrates this concept:
 
 ```rust,editable
-{{#include ../../crates/language/tests/ownership_borrowing/move1.rs:example}}
+{{#include ../../crates/language/examples/ownership_borrowing/move1.rs:example}}
 ```
 
 Let's explain what happens behind the scene: The local variable `s1` (on the stack) contains a pointer to the string's heap-allocated data (here, the unicode characters of the String). During the assignment `let s2 = s1`, the pointer is copied into `s2` (also on the stack). The heap data is not touched.
@@ -59,7 +59,7 @@ Most importantly, the `s1` variable is made inaccessible. That means that, durin
 Assignment (of non-`Copy` values) is not the only event that triggers a move: passing a variable to a function does as well:
 
 ```rust,editable
-{{#include ../../crates/language/tests/ownership_borrowing/move_function.rs:example}}
+{{#include ../../crates/language/examples/ownership_borrowing/move_function.rs:example}}
 ```
 
 ## Clone (Deep Copy) {#clone}
@@ -69,7 +69,7 @@ Rust will never automatically create deep copies of your data, because, as descr
 Instead, you may explicitly request a deep copy by calling the `clone` method of the [`std::clone::Clone`][c-std::clone::Clone]{{hi:std::clone::Clone}}⮳ trait:
 
 ```rust,editable
-{{#include ../../crates/language/tests/ownership_borrowing/clone.rs:example}}
+{{#include ../../crates/language/examples/ownership_borrowing/clone.rs:example}}
 ```
 
 You can implement the `Clone` trait for your custom types (structs, enums...) to provide any type-specific behavior necessary to duplicate values safely.
@@ -86,7 +86,7 @@ When you assign a variable of a `Copy` type to another, a simple _bitwise copy_ 
 The `Copy` trait is a marker trait, meaning it doesn't have any methods. Types that implement `Copy` must also implement `Clone`. A type cannot implement `Copy` if it or any of its parts implement the `Drop` trait (since it is used for custom cleanup, like deallocating heap memory).
 
 ```rust,editable
-{{#include ../../crates/language/tests/ownership_borrowing/copy.rs:example}}
+{{#include ../../crates/language/examples/ownership_borrowing/copy.rs:example}}
 ```
 
 ## References and Borrowing {#references}
@@ -98,7 +98,7 @@ Crucially, references _do not own_ the value they point to. Creating a reference
 Immutable references (of type `&T` if `T` is the base type), also called shared references, provide read-only access to the underlying data:
 
 ```rust,editable
-{{#include ../../crates/language/tests/ownership_borrowing/borrowing_immutable.rs:example}}
+{{#include ../../crates/language/examples/ownership_borrowing/borrowing_immutable.rs:example}}
 ```
 
 Mutable references (of type `&mut T`), called exclusive references, allow you to borrow a value and modify it:
@@ -118,7 +118,7 @@ Note that **If you have a mutable reference to a value, you can have no other si
 In other words, you can have either one and only one mutable reference (`&mut T`) or any number of immutable references (`&T`) to a particular piece of data in a particular scope. In effect, references function like a read/write lock:{{hi:Read/write lock}}
 
 ```rust,editable
-{{#include ../../crates/language/tests/ownership_borrowing/read_write_lock.rs:example}}
+{{#include ../../crates/language/examples/ownership_borrowing/read_write_lock.rs:example}}
 ```
 
 This strict rule prevents data races, which occur when:
@@ -136,13 +136,13 @@ We discussed above that passing a variable to a function by value will move or c
 The following example shows a function that takes a sample `struct` by reference (`&T`), instead of by value (`T`). While that struct has move semantics, it is not consumed by the function when it is passed by reference. The function borrows, but does not gain ownership of, what it refers to, thus the referred value is _not_ dropped when the function returns:
 
 ```rust,editable
-{{#include ../../crates/language/tests/ownership_borrowing/borrowing_function.rs:example}}
+{{#include ../../crates/language/examples/ownership_borrowing/borrowing_function.rs:example}}
 ```
 
 The same applies to mutable references:
 
 ```rust,editable
-{{#include ../../crates/language/tests/ownership_borrowing/borrowing_function_mutable.rs:example}}
+{{#include ../../crates/language/examples/ownership_borrowing/borrowing_function_mutable.rs:example}}
 ```
 
 ## Related Topics {#skip}

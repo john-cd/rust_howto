@@ -9,7 +9,7 @@
 [`diff`][c-diff]⮳{{hi:diff}} is an LCS-based slice and string diffing implementation.
 
 ```rust,editable
-{{#include ../../../crates/cats/text_processing/tests/diffing/diff.rs:example}}
+{{#include ../../../crates/cats/text_processing/examples/diffing/diff.rs:example}}
 ```
 
 ## `similar` {#similar}
@@ -19,7 +19,7 @@
 [`similar`][c-similar]⮳{{hi:similar}} is a dependency-free crate for Rust that implements different diffing algorithms and high level interfaces for it.
 
 ```rust,editable
-{{#include ../../../crates/cats/text_processing/tests/diffing/similar.rs:example}}
+{{#include ../../../crates/cats/text_processing/examples/diffing/similar.rs:example}}
 ```
 
 ## Related Topics {#skip}

@@ -17,7 +17,7 @@ Use [`heed`][c-heed]⮳{{hi:heed}} for:
 Advantages include speed, minimal memory footprint, [embedded][p-embedded] use, memory mapping, and ACID (Atomicity, Consistency, Isolation, Durability) properties. It is not ideal for huge datasets, complex queries, or network access.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/database/tests/kv/heed.rs:example}}
+{{#include ../../../crates/cats/database/examples/kv/heed.rs:example}}
 ```
 
 ## `rocksdb` {#rocksdb}
@@ -35,7 +35,7 @@ Advantages include speed, minimal memory footprint, [embedded][p-embedded] use, 
 [`RocksDB`][c-rocksdb]⮳{{hi:RocksDB}} is great for performance, scalability, flexibility, embeddability. Avoid when dealing with complex SQL or distributed transactions.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/database/tests/kv/rocksdb.rs:example}}
+{{#include ../../../crates/cats/database/examples/kv/rocksdb.rs:example}}
 ```
 
 {{#include refs.incl.md}}

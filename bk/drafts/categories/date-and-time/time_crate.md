@@ -13,7 +13,7 @@
 [`time`][c-time]⮳{{hi:time}} is a [date and time][p-date-and-time] library that is fully interoperable with the [standard library][p-standard-library] and mostly compatible with `#![no_std]`.
 
 ```rust,editable
-{{#include ../../../crates/cats/date_and_time/tests/time.rs:example}}
+{{#include ../../../crates/cats/date_and_time/examples/time.rs:example}}
 ```
 
 {{#include refs.incl.md}}

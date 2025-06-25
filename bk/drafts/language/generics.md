@@ -15,7 +15,7 @@ Functions, type aliases (`type`), structs (`struct`), enumerations (`enum`), uni
 The following example demonstrates type parameters, the most common:
 
 ```rust,editable
-{{#include ../../crates/language/tests/generics/generics.rs:example}}
+{{#include ../../crates/language/examples/generics/generics.rs:example}}
 ```
 
 ## Lifetime Parameters {#lifetime-parameters}
@@ -23,7 +23,7 @@ The following example demonstrates type parameters, the most common:
 Lifetime parameters are used when a `struct` contains references. They are used to establish relationships between the lifetimes of the references in the `struct`. See [[lifetimes | Lifetimes]] for more details.
 
 ```rust,editable
-{{#include ../../crates/language/tests/generics/generic_lifetime.rs:example}}
+{{#include ../../crates/language/examples/generics/generic_lifetime.rs:example}}
 ```
 
 ## Const Generics {#const-generics}
@@ -31,7 +31,7 @@ Lifetime parameters are used when a `struct` contains references. They are used 
 "const generics" allow you to define generic parameters that are constant values rather than types. This is useful for working with arrays of fixed sizes (to parameterize their length):
 
 ```rust,editable
-{{#include ../../crates/language/tests/generics/const_generics.rs:example}}
+{{#include ../../crates/language/examples/generics/const_generics.rs:example}}
 ```
 
 ## Generics by Type {#skip}

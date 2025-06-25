@@ -9,7 +9,7 @@
 [`html5ever`][c-html5ever]⮳{{hi:html5ever}} is a high-performance browser-grade HTML5 parser.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/tests/html/html5ever.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/html/html5ever.rs:example}}
 ```
 
 ## Parse HTML with `tl` {#tl}
@@ -29,7 +29,7 @@ tl = { version = "0.7.8", features = ["simd"] }
 ```
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/tests/html/tl.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/html/tl.rs:example}}
 ```
 
 ## Parse CSS with `cssparser` {#css-rs}
@@ -39,7 +39,7 @@ tl = { version = "0.7.8", features = ["simd"] }
 [`cssparser`][c-cssparser]⮳{{hi:cssparser}} is a Rust implementation of CSS Syntax Level 3.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/tests/html/cssparser.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/html/cssparser.rs:example}}
 ```
 
 ## `scraper` {#scraper}

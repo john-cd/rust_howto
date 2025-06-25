@@ -13,7 +13,7 @@ The primary use case for `AsRef<T>` is generic programming, especially for funct
 For example, `Path`, `PathBuf`, `str`, `String`, `OsString`, `OsStr`, `Cow<'_, OsStr>`... all implement `AsRef<Path>`. The `std::path` standard library module therefore contains many functions that accepts `AsRef<Path>` and therefore any of the aforementioned types as a argument. Other common implementations include `AsRef<str>`, `AsRef<OsStr>`, `AsRef<[u8]>`, and `AsRef<[T]>`:
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/asref/asref.rs:example}}
+{{#include ../../crates/standard_library/examples/asref/asref.rs:example}}
 ```
 
 ## Use `as_ref` to Get a Reference to the Contained Value of a Smart Pointer {#asref-smart-pointer}
@@ -23,13 +23,13 @@ For example, `Path`, `PathBuf`, `str`, `String`, `OsString`, `OsStr`, `Cow<'_, O
 For smart pointers like `Box<T>`, `Rc<T>`, `Arc<T>`, etc., their `as_ref()` methods typically provide a `&T`, which is a reference to the contained value. This is distinct from simply using `&` on the smart pointer itself, which would give you a reference to the smart pointer (`&Box<T>`), not its contents.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/asref/smart_pointer_asref.rs:example}}
+{{#include ../../crates/standard_library/examples/asref/smart_pointer_asref.rs:example}}
 ```
 
 Note that `Option::as_ref()` and `Result::as_ref()` are inherent methods on `Option` and `Result` respectively, not implementations of the `std::convert::AsRef` trait. They transform an `Option<T>` into an `Option<&T>` (or `Result<T, E>` into `Result<&T, &E>`), which is useful for working with references inside these enums without consuming the original value.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/asref/option_asref.rs:example}}
+{{#include ../../crates/standard_library/examples/asref/option_asref.rs:example}}
 ```
 
 ## `AsRef` vs. `Deref` vs. `Borrow` {#asref-vs-deref-vs-borrow}

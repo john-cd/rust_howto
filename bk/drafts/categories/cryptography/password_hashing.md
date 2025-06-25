@@ -27,7 +27,7 @@ Popular password hashing algorithms include [`bcrypt`][c-bcrypt]⮳{{hi:bcrypt}}
 [`argon2`][c-argon2]⮳{{hi:argon2}} is a pure-Rust implementation of the ['Argon2'][argon2-wikipedia]⮳ key derivation function, which is commonly used for secure password hashing.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/password_hashing/argon2.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/password_hashing/argon2.rs:example}}
 ```
 
 ## `scrypt` {#scrypt}
@@ -43,7 +43,7 @@ Popular password hashing algorithms include [`bcrypt`][c-bcrypt]⮳{{hi:bcrypt}}
 The [`scrypt`][c-scrypt]⮳{{hi:scrypt}} key derivation function is designed to be far more secure against hardware brute-force attacks than alternative functions such as [`PBKDF2`][c-ring::pbkdf2]⮳{{hi:PBKDF2}} or ['bcrypt'](#bcrypt).
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/password_hashing/scrypt.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/password_hashing/scrypt.rs:example}}
 ```
 
 ## `bcrypt` {#bcrypt}
@@ -58,7 +58,7 @@ The [`scrypt`][c-scrypt]⮳{{hi:scrypt}} key derivation function is designed to 
 [`bcrypt`][c-bcrypt]⮳{{hi:bcrypt}}
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/password_hashing/bcrypt.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/password_hashing/bcrypt.rs:example}}
 ```
 
 ## Salt and Hash a Password with PBKDF2 {#pbkdf2}
@@ -70,7 +70,7 @@ Verifies the hash{{hi:Hashing}} is correct with [`ring::pbkdf2::verify`][c-ring:
 The salt is generated using [`ring::rand::SecureRandom::fill`][c-ring::rand::SecureRandom::fill]{{hi:ring::rand::SecureRandom::fill}}⮳ which fills the salt byte array with securely generated random numbers.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/password_hashing/pbkdf2.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/password_hashing/pbkdf2.rs:example}}
 ```
 
 For more [algorithms][p-algorithms], see [Rust Crypto Password Hashes][rustcrypto-password-hashes-github].

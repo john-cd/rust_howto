@@ -29,7 +29,7 @@ Attribute can take arguments with different syntaxes:
 The following is an example of `#[derive(...)]`:
 
 ```rust,editable
-{{#include ../../crates/language/tests/attributes/attributes_derive.rs:example}}
+{{#include ../../crates/language/examples/attributes/attributes_derive.rs:example}}
 ```
 
 Outer attributes `#[attr]` apply to the item below them. Inner attributes `#![attr]` apply to the item that the attribute is declared within. You often see these at the very top of a file (or inline module) to apply to the entire module, or at the very top of `lib.rs` or `main.rs` to apply to the entire crate:
@@ -45,7 +45,7 @@ Outer attributes `#[attr]` apply to the item below them. Inner attributes `#![at
 Apply the `#[must_use]` attribute to functions, methods, or entire types (like structs or enums) to signal that their return value is important and shouldn't be ignored.
 
 ```rust,editable
-{{#include ../../crates/language/tests/attributes/attributes_must_use.rs:example}}
+{{#include ../../crates/language/examples/attributes/attributes_must_use.rs:example}}
 ```
 
 Functions that return `Result<T, E>` are often `#[must_use]`. If you call such a function and ignore the `Result`, you're potentially ignoring an error that occurred and could be corrected or reported.
@@ -57,7 +57,7 @@ In the [[builder_pattern | builder pattern]], methods often return `Self` or a m
 When the Rust compiler sees code using an item marked as `#[deprecated]`, it will issue a warning during compilation:
 
 ```rust,editable
-{{#include ../../crates/language/tests/attributes/attributes_deprecated.rs:example}}
+{{#include ../../crates/language/examples/attributes/attributes_deprecated.rs:example}}
 ```
 
 ## Control Compilation Diagnostic Messages with Lint Check Attributes {#lint-attributes}
@@ -73,7 +73,7 @@ The Rust compiler runs a number of code lints (code diagnostics) when it compile
 You can apply these lint attributes to specific items ([functions][p-functions], structs, etc.) or to entire modules (by using an inner attribute):
 
 ```rust,editable
-{{#include ../../crates/language/tests/attributes/allow_dead_code.rs:example}}
+{{#include ../../crates/language/examples/attributes/allow_dead_code.rs:example}}
 ```
 
 Common lint attributes are:
@@ -95,7 +95,7 @@ There are also lints for other tools, such as "clippy" and "rustdoc". For exampl
 During early development, consider placing the following lint attributes at the top of your `main.rs` or `lib.rs` file, in order to temporarily ignore distracting warnings:
 
 ```rust,editable
-{{#include ../../crates/language/tests/attributes/attributes_early_development.rs:example}}
+{{#include ../../crates/language/examples/attributes/attributes_early_development.rs:example}}
 ```
 
 ### Enforce Good Practices and Catch Issues Early with Lint Attributes {#production-code-attributes}
@@ -103,7 +103,7 @@ During early development, consider placing the following lint attributes at the 
 For production-ready code{{hi:Production-ready code}}, replace the above by the following (or similar) to make linting stricter:
 
 ```rust,editable
-{{#include ../../crates/language/tests/attributes/attributes_production.rs:example}}
+{{#include ../../crates/language/examples/attributes/attributes_production.rs:example}}
 ```
 
 ## Compile Code Conditionally with `#[cfg(...)]` {#conditional-compilation}
@@ -112,7 +112,7 @@ Conditional compilation includes or excludes specific pieces of your code based 
 Use the `#[cfg(...)]` attribute to write code that only compiles for a specific operating system or architecture (like x86_64, ARM).
 
 ```rust,editable
-{{#include ../../crates/language/tests/attributes/conditional_compilation.rs:example}}
+{{#include ../../crates/language/examples/attributes/conditional_compilation.rs:example}}
 ```
 
 See also the [conditional compilation][book-rust-reference-conditional-compilation]⮳ chapter of the Rust Reference.
@@ -126,7 +126,7 @@ For complicated conditional compilation scenarios, consider using the `cfg-if` c
 `cfg-if` is a macro to ergonomically define an item depending on a large number of `#[cfg]` parameters. It is structured like an "if-else" chain. The first matching branch is the item that gets emitted.
 
 ```rust,editable
-{{#include ../../crates/language/tests/attributes/cfg_if.rs:example}}
+{{#include ../../crates/language/examples/attributes/cfg_if.rs:example}}
 ```
 
 ## Related Topics {#skip}

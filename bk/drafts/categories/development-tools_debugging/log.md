@@ -9,7 +9,7 @@
 The [`log`][c-log]{{hi:log}}⮳ crate provides logging utilities{{hi:Logging utilities}}. The [`env_logger`][c-env_logger]{{hi:env_logger}}⮳ crate configures logging via an environment variable. The [`log::debug`][c-log::debug]{{hi:log::debug}}⮳ macro works like other [`std::fmt`][c-std::fmt]{{hi:std::fmt}}⮳ formatted strings.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_debugging/tests/log/log_debug.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/examples/log/log_debug.rs:example}}
 ```
 
 No output prints when running this code. By default, the log level{{hi:Log levels}} is [`error`][c-std::error::Error]⮳{{hi:error}}, and any lower levels are dropped.
@@ -33,7 +33,7 @@ DEBUG:main: Executing query: DROP TABLE students
 Proper [error handling][p-error-handling]{{hi:Error handling}} considers exceptions exceptional. Here, an error logs to stderr with [`log`][c-log]{{hi:log}}'s convenience macro [`log::error`][c-log::error]{{hi:log::error}}⮳.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_debugging/tests/log/log_error.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/examples/log/log_error.rs:example}}
 ```
 
 ## Log to `stdout` Instead of `stderr` {#log-to-stdout}
@@ -47,7 +47,7 @@ Proper [error handling][p-error-handling]{{hi:Error handling}} considers excepti
 Creates a custom logger [configuration][p-configuration]{{hi:Custom logger configuration}} using the [`env_logger::Builder::target`][c-env_logger::Builder::target]{{hi:env_logger::Builder::target}}⮳ to set the target of the log output to [`env_logger::fmt::Target`][c-env_logger::fmt::Target]{{hi:env_logger::fmt::Target}}⮳.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_debugging/tests/log/log_stdout.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/examples/log/log_stdout.rs:example}}
 ```
 
 ## Log Messages with a Custom Logger {#custom-logger}
@@ -57,7 +57,7 @@ Creates a custom logger [configuration][p-configuration]{{hi:Custom logger confi
 Implements a custom logger `ConsoleLogger` which prints to stdout. In order to use the logging [macros][p-macros], `ConsoleLogger` implements the [`log::Log`][c-log::Log]{{hi:log::Log}}⮳ trait and [`log::Log`][c-log::Log]{{hi:log::Log}}⮳ installs it.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_debugging/tests/log/log_custom_logger.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/examples/log/log_custom_logger.rs:example}}
 ```
 
 ## Log to the Unix Syslog {#syslog}
@@ -69,7 +69,7 @@ Implements a custom logger `ConsoleLogger` which prints to stdout. In order to u
 Logs messages to [UNIX `syslog`][unix-syslog-website]⮳. Initializes logger backend with [`syslog::init`][c-syslog::init]{{hi:syslog::init}}⮳ [`syslog::init`][c-syslog::init]{{hi:syslog::init}}⮳ records the program submitting the log entry's classification, [`syslog::init`][c-syslog::init]{{hi:syslog::init}}⮳ denotes allowed log verbosity{{hi:Log verbosity}} and `Option<&str>` holds optional application name.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_debugging/tests/log/log_syslog.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/examples/log/log_syslog.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -9,7 +9,7 @@
 [`tinytemplate`][c-tinytemplate]⮳{{hi:tinytemplate}} is a simple, lightweight template engine. It focuses on basic string interpolation and variable substitution within templates.
 
 ```rust,editable
-{{#include ../../../crates/cats/template_engine/tests/tinytemplate/tinytemplate.rs:example}}
+{{#include ../../../crates/cats/template_engine/examples/tinytemplate/tinytemplate.rs:example}}
 ```
 
 {{#include refs.incl.md}}

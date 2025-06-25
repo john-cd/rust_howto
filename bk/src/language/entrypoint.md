@@ -8,7 +8,7 @@ In Rust, the main function is special. It serves as the mandatory entry point fo
 The following is the most basic form of a main function:
 
 ```rust,editable
-{{#include ../../crates/language/tests/entrypoint/main_fn.rs:example}}
+{{#include ../../crates/language/examples/entrypoint/main_fn.rs:example}}
 ```
 
 It's typically found in the `src/main.rs` file of a binary crate project. Note that library crates don't need one.
@@ -16,7 +16,7 @@ It's typically found in the `src/main.rs` file of a binary crate project. Note t
 You can also have the `main` function return a `Result<(), E>` (where `E` is a type that implements the `std::error::Error` trait).
 
 ```rust,editable
-{{#include ../../crates/language/tests/entrypoint/main_fn_with_result.rs:example}}
+{{#include ../../crates/language/examples/entrypoint/main_fn_with_result.rs:example}}
 ```
 
 It is also common to return a `Result` with a boxed error trait object, especially if multiple error types are possible:
@@ -37,7 +37,7 @@ More precisely, `main` should return a type that implements `std::process::Termi
 Rust also supports asynchronous main functions for writing concurrent applications using the `async` / `await` syntax. To use `async main`, you will need an async runtime like `tokio`, often enabled via an attribute macro.
 
 ```rust,editable
-{{#include ../../crates/language/tests/entrypoint/async_main.rs:example}}
+{{#include ../../crates/language/examples/entrypoint/async_main.rs:example}}
 ```
 
 ## Related Topics {#skip}

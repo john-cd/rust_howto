@@ -11,7 +11,7 @@ Consider the following Rust crates for your in-memory [caching][p-caching] needs
 [`lru`][c-lru]⮳{{hi:lru}} provides a fast Least Recently Used (LRU) cache for Rust. LRU is a common data structure used to limit the size of a cache by discarding the Least Recently Used (accessed) items when the cache reaches its capacity.
 
 ```rust,editable
-{{#include ../../../crates/cats/caching/tests/in_memory_cache/lru.rs:example}}
+{{#include ../../../crates/cats/caching/examples/in_memory_cache/lru.rs:example}}
 ```
 
 ## `moka` {#moka}
@@ -21,7 +21,7 @@ Consider the following Rust crates for your in-memory [caching][p-caching] needs
 [`moka`][c-moka]⮳{{hi:moka}} is a fast and concurrent cache library inspired by Java Caffeine.
 
 ```rust,editable
-{{#include ../../../crates/cats/caching/tests/in_memory_cache/moka.rs:example}}
+{{#include ../../../crates/cats/caching/examples/in_memory_cache/moka.rs:example}}
 ```
 
 ## `cached` {#cached}
@@ -31,7 +31,7 @@ Consider the following Rust crates for your in-memory [caching][p-caching] needs
 [`cached`][c-cached]⮳{{hi:cached}} provides generic cache implementations and simplified function memoization.
 
 ```rust,editable
-{{#include ../../../crates/cats/caching/tests/in_memory_cache/cached.rs:example}}
+{{#include ../../../crates/cats/caching/examples/in_memory_cache/cached.rs:example}}
 ```
 
 ## Related Topics {#skip}

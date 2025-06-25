@@ -36,7 +36,7 @@ Possible applications of actor frameworks:
 [`stakker`][c-stakker]⮳{{hi:stakker}} is a lightweight low-level single-threaded actor runtime. It simplifies the development of concurrent applications by promoting message-passing between isolated actors, ensuring data safety and preventing race conditions.
 
 ```rust,editable
-{{#include ../../../crates/cats/concurrency/tests/actors/stakker.rs:example}}
+{{#include ../../../crates/cats/concurrency/examples/actors/stakker.rs:example}}
 ```
 
 ## `riker` {#riker}
@@ -46,7 +46,7 @@ Possible applications of actor frameworks:
 [`riker`][c-riker]⮳{{hi:riker}} is an actor framework for Rust to build fast, highly concurrent, and resilient applications. Riker is an actor framework for Rust inspired by the actor model found in Erlang/OTP and Akka. It provides tools for creating, managing, and interacting with actors, which are lightweight, concurrent units of execution that communicate through message passing. Riker emphasizes fault tolerance and resilience, offering mechanisms for handling actor failures and ensuring the stability of concurrent applications.
 
 ```rust,editable
-{{#include ../../../crates/cats/concurrency/tests/actors/actors.rs:example}}
+{{#include ../../../crates/cats/concurrency/examples/actors/actors.rs:example}}
 ```
 
 ## `ractor` {#ractor}
@@ -61,7 +61,7 @@ Possible applications of actor frameworks:
 Ractor is a Rust crate providing a simple, lightweight actor framework. It facilitates concurrent programming by enabling the creation and management of actors, which communicate through [asynchronous][p-asynchronous] message passing. Ractor focuses on ease of use and aims to provide a minimal but functional actor system, suitable for applications where a full-fledged actor framework like Riker might be overkill. It provides tools for defining actor behavior, sending and receiving messages, and handling actor lifecycles.
 
 ```rust,editable
-{{#include ../../../crates/cats/concurrency/tests/actors/ractor.rs:example}}
+{{#include ../../../crates/cats/concurrency/examples/actors/ractor.rs:example}}
 ```
 
 ## `actix` {#actix}
@@ -74,7 +74,7 @@ Ractor is a Rust crate providing a simple, lightweight actor framework. It facil
 [`actix`][c-actix]⮳{{hi:actix}} is a performant actor framework for Rust, emphasizing message passing concurrency. It provides tools for creating, managing, and interacting with actors, which are isolated units of execution that communicate asynchronously via messages. Actix is widely used for building concurrent applications, particularly web services, due to its efficiency and support for asynchronous I/O. It offers features like message routing, supervision, and a variety of actor communication patterns.
 
 ```rust,editable
-{{#include ../../../crates/cats/concurrency/tests/actors/actix.rs:example}}
+{{#include ../../../crates/cats/concurrency/examples/actors/actix.rs:example}}
 ```
 
 ## Related Topics {#skip}

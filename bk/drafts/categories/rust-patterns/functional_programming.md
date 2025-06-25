@@ -28,7 +28,7 @@ The following explores some notable Rust crates that aid in functional programmi
 It offers a wide range of functions for combining, grouping, and manipulating iterators, for example `itertools::zip_longest`, `itertools::group_by`.
 
 ```rust,editable
-{{#include ../../../crates/cats/rust_patterns/tests/functional_programming/itertools.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/examples/functional_programming/itertools.rs:example}}
 ```
 
 ## Create Immutable Data Structures with `im` {#im}
@@ -38,7 +38,7 @@ It offers a wide range of functions for combining, grouping, and manipulating it
 [`im`][c-im]⮳{{hi:im}} provides immutable data structures, such as lists, [maps][p-maps], and sets. It facilitates functional programming by providing data structures that cannot be modified in place. Use it when you need to ensure that data does not change in unexpected ways.
 
 ```rust,editable
-{{#include ../../../crates/cats/rust_patterns/tests/functional_programming/im.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/examples/functional_programming/im.rs:example}}
 ```
 
 ## `rpds` {#rpds}
@@ -48,7 +48,7 @@ It offers a wide range of functions for combining, grouping, and manipulating it
 `rpds` provides persistent data structures with structural sharing.
 
 ```rust,editable
-{{#include ../../../crates/cats/rust_patterns/tests/functional_programming/rpds.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/examples/functional_programming/rpds.rs:example}}
 ```
 
 ## Use a general purpose sum type with `either` {#either}
@@ -60,7 +60,7 @@ The enum [`Either`][c-either]⮳{{hi:Either}} with variants `Left` and `Right` i
 Note that [`Either`][c-either]⮳{{hi:Either}} is general purpose. For describing success or error, use the regular `Result` enum.
 
 ```rust,editable
-{{#include ../../../crates/cats/rust_patterns/tests/functional_programming/either.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/examples/functional_programming/either.rs:example}}
 ```
 
 ## Use Functional Programming Data Structures and Type-level Programming Tools with `frunk` {#frunk}
@@ -70,7 +70,7 @@ Note that [`Either`][c-either]⮳{{hi:Either}} is general purpose. For describin
 Frunk is a functional programming toolbelt for Rust. It provides developers with a number of functional programming data structures and type-level programming tools like `HList` (heterogeneous lists), `Coproduct`, `Generic`, `LabelledGeneric`, `Validated`, `Monoid`, `Semigroup` and friends. It is useful for complex data transformations and metaprogramming.
 
 ```rust,editable
-{{#include ../../../crates/cats/rust_patterns/tests/functional_programming/frunk.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/examples/functional_programming/frunk.rs:example}}
 ```
 
 {{#include refs.incl.md}}

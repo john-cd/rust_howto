@@ -21,7 +21,7 @@ The type [`std::borrow::Cow`][c-std::borrow::Cow]{{hi:Cow}} is a smart pointer p
 Since `Cow` allows borrowing until mutation is needed, it's ideal for functions that take either borrowed or owned strings without unnecessary cloning.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/cow/cow_as_function_param.rs:example}}
+{{#include ../../crates/standard_library/examples/cow/cow_as_function_param.rs:example}}
 ```
 
 ## Modify a `Cow` In-place {#modify-cow-in-place}
@@ -29,7 +29,7 @@ Since `Cow` allows borrowing until mutation is needed, it's ideal for functions 
 You can of course pass a `&mut Cow<T>` to a function. Modify the underlying value in place with `to_mut`:
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/cow/modify_cow_in_place.rs:example}}
+{{#include ../../crates/standard_library/examples/cow/modify_cow_in_place.rs:example}}
 ```
 
 ## Return a `Cow` from a Function {#return-cow-from-function}
@@ -37,13 +37,13 @@ You can of course pass a `&mut Cow<T>` to a function. Modify the underlying valu
 It is common to return a `Cow` from a function, if the (borrowed) input is returned unmodified in most, but not all, cases.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/cow/function_returning_cow.rs:example}}
+{{#include ../../crates/standard_library/examples/cow/function_returning_cow.rs:example}}
 ```
 
 ## Efficiently Construct a `Cow` with `into` {#into-cow}
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/cow/into_cow.rs:example}}
+{{#include ../../crates/standard_library/examples/cow/into_cow.rs:example}}
 ```
 
 ## Convert a `Cow` to a borrowed or owned type {#convert-cow-to-str}
@@ -59,7 +59,7 @@ To convert to an owned type, use [`std::borrow::Cow::into_owned`][c-std::borrow:
 The following example demonstrates how to convert a `Cow<str>` to a `&str` or a `String`:
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/cow/cow_to_borrowed_owned.rs:example}}
+{{#include ../../crates/standard_library/examples/cow/cow_to_borrowed_owned.rs:example}}
 ```
 
 This example was adapted from a [StackOverflow discussion][stackoverflow-how-do-i-get-a-str-or-string-from-stdborrowcowstr]⮳.

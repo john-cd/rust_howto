@@ -9,7 +9,7 @@
 [`sqlx`][c-sqlx]⮳ is a low-level, [asynchronous][p-asynchronous] SQL library for Rust. It supports various [databases][p-databases] like PostgreSQL{{hi:PostgreSQL}}, MySQL{{hi:MySQL}}, SQLite{{hi:SQLite}}, and MSSQL{{hi:MSSQL}}, and both [`tokio`][c-tokio]⮳{{hi:tokio}} and [`async-std`][c-async_std]⮳{{hi:async-std}} async runtimes. It features compile-time checked queries without a DSL. SQLx is not an ORM.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/database/tests/query_builders_orms/sqlx.rs:example}}
+{{#include ../../../crates/cats/database/examples/query_builders_orms/sqlx.rs:example}}
 ```
 
 ## SeaORM {#sea-orm}
@@ -21,7 +21,7 @@
 Built on top of [`sqlx`][c-sqlx]⮳{{hi:sqlx}} (see above). There is also a related sea-query crate that provides a query builder without full ORM functionality.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/database/tests/query_builders_orms/sea_orm.rs:example}}
+{{#include ../../../crates/cats/database/examples/query_builders_orms/sea_orm.rs:example}}
 ```
 
 ## `diesel` {#diesel}
@@ -63,13 +63,13 @@ echo DATABASE_URL=mysql://<username>:<password>@localhost/<database> >> .env
 - Add the following SQL to the generated `up.sql` file:
 
 ```sql
-{{#include ../../../crates/cats/database/tests/query_builders_orms/migrations/2024-12-29-173417_create_users/up.sql}}
+{{#include ../../../crates/cats/database/examples/query_builders_orms/migrations/2024-12-29-173417_create_users/up.sql}}
 ```
 
 - Leave the `down.sql` file empty for simplicity.
 
 ```sql
-{{#include ../../../crates/cats/database/tests/query_builders_orms/migrations/2024-12-29-173417_create_users/down.sql}}
+{{#include ../../../crates/cats/database/examples/query_builders_orms/migrations/2024-12-29-173417_create_users/down.sql}}
 ```
 
 - Create a `schema.rs` file by running:
@@ -81,7 +81,7 @@ diesel print-schema > src/schema.rs
 - Write the Rust code to interact with the [database][p-database]:
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/database/tests/query_builders_orms/diesel1.rs:example}}
+{{#include ../../../crates/cats/database/examples/query_builders_orms/diesel1.rs:example}}
 ```
 
 ## `toasty` {#toasty}

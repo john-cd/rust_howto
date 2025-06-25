@@ -9,7 +9,7 @@
 [`aho-corasick`][c-aho_corasick]⮳{{hi:aho-corasick}} implements fast multiple substring searching.
 
 ```rust,editable
-{{#include ../../../crates/cats/text_processing/tests/string_search/aho_corasick.rs:example}}
+{{#include ../../../crates/cats/text_processing/examples/string_search/aho_corasick.rs:example}}
 ```
 
 ## `memchr` {#memchr}
@@ -19,7 +19,7 @@
 [`memchr`][c-memchr]⮳{{hi:memchr}} provides extremely fast routines for 1, 2 or 3 byte search and single substring search (that use SIMD on x86_64, aarch64 and wasm32).
 
 ```rust,editable
-{{#include ../../../crates/cats/text_processing/tests/string_search/memchr.rs:example}}
+{{#include ../../../crates/cats/text_processing/examples/string_search/memchr.rs:example}}
 ```
 
 ## `fuzzy-matcher` {#fuzzy-matcher}
@@ -29,7 +29,7 @@
 [`fuzzy-matcher`][c-fuzzy_matcher]⮳{{hi:fuzzy-matcher}} is a fuzzy matching library.
 
 ```rust,editable
-{{#include ../../../crates/cats/text_processing/tests/string_search/fuzzy_matcher.rs:example}}
+{{#include ../../../crates/cats/text_processing/examples/string_search/fuzzy_matcher.rs:example}}
 ```
 
 ## `strsim` {#strsim}
@@ -39,7 +39,7 @@
 [`strsim`][c-strsim]⮳{{hi:strsim}} implement string similarity metrics. That includes Hamming, Levenshtein, OSA, Damerau-Levenshtein, Jaro, Jaro-Winkler, and Sørensen-Dice.
 
 ```rust,editable
-{{#include ../../../crates/cats/text_processing/tests/string_search/strsim.rs:example}}
+{{#include ../../../crates/cats/text_processing/examples/string_search/strsim.rs:example}}
 ```
 
 ## Related Topics {#skip}

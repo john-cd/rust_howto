@@ -13,13 +13,13 @@
 It can be used with various I/O [streams][p-streams], making it versatile for different use cases, such as file [compression][p-compression], network protocols, and in-memory data manipulation. It also offers features like checksumming and [error handling][p-error-handling], making it suitable for production environments.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/compression/tests/compression/flate2.rs:example}}
+{{#include ../../../crates/cats/compression/examples/compression/flate2.rs:example}}
 ```
 
 The following demonstrates asynchronous compression:
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/compression/tests/compression/async_compression.rs:example}}
+{{#include ../../../crates/cats/compression/examples/compression/async_compression.rs:example}}
 ```
 
 ## Compress or Decompress Data with `zip` and `async-zip` {#zip}
@@ -33,7 +33,7 @@ The [`zip`][c-zip]⮳{{hi:zip}} crate allows you to create, open, and manipulate
 [`async-zip`][c-async_zip]⮳{{hi:async-zip}} is a Rust crate providing asynchronous support for reading and writing ZIP archives. Building upon the foundation of the `zip` crate, async-zip leverages asynchronous programming paradigms (using async/await) to enable non-blocking operations on ZIP files. This is particularly beneficial in I/O-bound contexts, such as network applications or when working with large archives, as it allows other tasks to proceed while ZIP operations are in progress. It integrates with the [`tokio`][c-tokio]⮳{{hi:tokio}} runtime (and other async runtimes). Like its synchronous counterpart, [`async-zip`][c-async_zip]⮳{{hi:async-zip}} supports various ZIP features, including compression, encryption, and metadata handling, but with the added advantage of non-blocking execution.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/compression/tests/compression/zip.rs:example}}
+{{#include ../../../crates/cats/compression/examples/compression/zip.rs:example}}
 ```
 
 ## Related Topics {#skip}

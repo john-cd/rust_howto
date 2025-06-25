@@ -9,7 +9,7 @@
 [`notify`][c-notify]⮳{{hi:notify}} is a cross-platform filesystem notification library.
 
 ```rust,editable
-{{#include ../../../crates/cats/filesystem/tests/file_watching/notify.rs:example}}
+{{#include ../../../crates/cats/filesystem/examples/file_watching/notify.rs:example}}
 ```
 
 {{#include refs.incl.md}}

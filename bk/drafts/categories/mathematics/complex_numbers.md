@@ -16,7 +16,7 @@
 Creates complex numbers of type [`num::complex::Complex`][c-num::complex::Complex]{{hi:num::complex::Complex}}⮳. Both the real and imaginary part of the complex number must be of the same type.
 
 ```rust,editable
-{{#include ../../../crates/cats/mathematics/tests/complex_numbers/create_complex.rs:example}}
+{{#include ../../../crates/cats/mathematics/examples/complex_numbers/create_complex.rs:example}}
 ```
 
 ## Add Complex Numbers {#adding-complex-numbers}
@@ -33,7 +33,7 @@ Creates complex numbers of type [`num::complex::Complex`][c-num::complex::Comple
 Performing mathematical operations on complex numbers is the same as on built-in types: the numbers in question must be of the same type (i.e. floats or integers).
 
 ```rust,editable
-{{#include ../../../crates/cats/mathematics/tests/complex_numbers/add_complex.rs:example}}
+{{#include ../../../crates/cats/mathematics/examples/complex_numbers/add_complex.rs:example}}
 ```
 
 ## Use Mathematical Functions on Complex Numbers {#mathematical-functions}
@@ -50,7 +50,7 @@ Performing mathematical operations on complex numbers is the same as on built-in
 Complex numbers have a range of interesting properties when it comes to how they interact with other mathematical functions, most notably the family of sine functions as well as the number e. To use these [functions][p-functions] with complex numbers, the Complex type has a few built-in [functions][p-functions], all of which can be found here: [`num::complex::Complex`][c-num::complex::Complex]{{hi:num::complex::Complex}}⮳.
 
 ```rust,editable
-{{#include ../../../crates/cats/mathematics/tests/complex_numbers/mathematical_functions.rs:example}}
+{{#include ../../../crates/cats/mathematics/examples/complex_numbers/mathematical_functions.rs:example}}
 ```
 
 {{#include refs.incl.md}}

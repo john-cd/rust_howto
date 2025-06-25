@@ -11,7 +11,7 @@
 `if`, `else`, and `else if` allow you to execute different blocks of code based on whether a boolean condition is true or false:
 
 ```rust,editable
-{{#include ../../crates/language/tests/control_flow/if_else.rs:example}}
+{{#include ../../crates/language/examples/control_flow/if_else.rs:example}}
 ```
 
 Refer to the [[match | match]] chapter for `if let` expressions.
@@ -24,7 +24,7 @@ Refer to the [[match | match]] chapter for `if let` expressions.
 Like `if`, `loop` is an expression, and `break` can return a value from the loop.
 
 ```rust,editable
-{{#include ../../crates/language/tests/control_flow/loop1.rs:example}}
+{{#include ../../crates/language/examples/control_flow/loop1.rs:example}}
 ```
 
 You can also use `continue` to skip the rest of the current iteration and start the next one. Loops can also have labels (`'label: loop { ... break 'label; }`) for breaking or continuing to outer loops from within nested loops.
@@ -37,7 +37,7 @@ You can also use `continue` to skip the rest of the current iteration and start 
 The condition is checked before each iteration.
 
 ```rust,editable
-{{#include ../../crates/language/tests/control_flow/while1.rs:example}}
+{{#include ../../crates/language/examples/control_flow/while1.rs:example}}
 ```
 
 `while` supports `break` expressions and loop labels. Refer to the [[match | match]] chapter for `while let` loops.
@@ -51,7 +51,7 @@ The condition is checked before each iteration.
 Many collection types (like ranges, arrays, vectors, strings) implement the `IntoIterator` trait, which provides a method `into_iter()` that returns an iterator. They may also provide additional methods such as `iter()` or `iter_mut()`.
 
 ```rust,editable
-{{#include ../../crates/language/tests/control_flow/for1.rs:example}}
+{{#include ../../crates/language/examples/control_flow/for1.rs:example}}
 ```
 
 `for` loops support `break` expressions and loop labels.
@@ -62,7 +62,7 @@ Labeled block expressions are like block expressions, except that they allow usi
 You may think of them as a `loop` that executes only once and allows exiting early.
 
 ```rust,editable
-{{#include ../../crates/language/tests/control_flow/labeled_block_expression.rs:example}}
+{{#include ../../crates/language/examples/control_flow/labeled_block_expression.rs:example}}
 ```
 
 ## References {#skip}

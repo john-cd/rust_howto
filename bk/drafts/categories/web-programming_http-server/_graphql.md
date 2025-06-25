@@ -16,7 +16,7 @@
 [`async-graphql`][c-async_graphql]⮳{{hi:async-graphql}} is a high-performance graphql server library that's fully specification compliant. It integrates with [`actix-web`][c-actix_web]⮳{{hi:actix-web}}, [`axum`][c-axum]⮳{{hi:axum}}, [`poem`][c-poem]⮳{{hi:poem}}, [`rocket`][c-rocket]⮳{{hi:rocket}}, [`tide`][c-tide]⮳{{hi:tide}}, and [`warp`][c-warp]⮳{{hi:warp}}.
 
 ```rust,editable
-{{#include ../../../crates/cats/web_programming_http_server/tests/async_graphql.rs:example}}
+{{#include ../../../crates/cats/web_programming_http_server/examples/async_graphql.rs:example}}
 ```
 
 ## Other Options {#skip}

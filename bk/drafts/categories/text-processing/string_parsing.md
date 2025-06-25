@@ -9,7 +9,7 @@
 Creates a custom struct `RGB` and implements the [`FromStr`][c-std::str::FromStr]⮳{{hi:FromStr}} trait to convert a provided color hex code into its RGB color code.
 
 ```rust,editable
-{{#include ../../../crates/cats/text_processing/tests/string_parsing/from_str.rs:example}}
+{{#include ../../../crates/cats/text_processing/examples/string_parsing/from_str.rs:example}}
 ```
 
 ## Related Topics

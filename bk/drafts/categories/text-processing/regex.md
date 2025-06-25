@@ -9,7 +9,7 @@
 Validates that an [email][p-email] address{{hi:Email address}} is formatted correctly, and extracts everything before the `@` symbol.
 
 ```rust,editable
-{{#include ../../../crates/cats/text_processing/tests/regex/email.rs:example}}
+{{#include ../../../crates/cats/text_processing/examples/regex/email.rs:example}}
 ```
 
 ## Extract a list of Unique #hashtags from a Text {#extract-a-list-of-unique-hashtags-from-a-text}
@@ -21,7 +21,7 @@ Extracts, sorts, and deduplicates list of hashtags{{hi:Hashtags}} from text.
 The hashtag regex given here only catches Latin hashtags that start with a letter. The complete [Twitter hashtag regex][twitter-hashtag-regex]⮳ [![twitter-hashtag-regex][twitter-hashtag-badge]][twitter-hashtag-regex] is much more complicated.
 
 ```rust,editable
-{{#include ../../../crates/cats/text_processing/tests/regex/hashtags.rs:example}}
+{{#include ../../../crates/cats/text_processing/examples/regex/hashtags.rs:example}}
 ```
 
 ## Extract Phone Numbers from Text {#extract-phone-numbers-from-text}
@@ -31,7 +31,7 @@ The hashtag regex given here only catches Latin hashtags that start with a lette
 Processes a string of text using [`regex::Regex::captures_iter`][c-regex::Regex::captures_iter]{{hi:regex::Regex::captures_iter}}⮳ to capture multiple phone numbers{{hi:Phone numbers}}. The example here is for US convention phone numbers.
 
 ```rust,editable
-{{#include ../../../crates/cats/text_processing/tests/regex/phone.rs:example}}
+{{#include ../../../crates/cats/text_processing/examples/regex/phone.rs:example}}
 ```
 
 ## Filter a log File by Matching Multiple Regular Expressions {#filter-a-log-file-by-matching-multiple-regular-expressions}
@@ -43,7 +43,7 @@ Reads a file named `application.log` and only outputs the lines containing “ve
 A [`regex::RegexSetBuilder`][c-regex::RegexSetBuilder]{{hi:regex::RegexSetBuilder}}⮳ composes a [`regex::RegexSetBuilder`][c-regex::RegexSetBuilder]{{hi:regex::RegexSetBuilder}}⮳ Since backslashes are very common in regular expressions{{hi:Regular expressions}}, using [raw string literals][book-rust-raw-string-literals]⮳ makes them more readable.
 
 ```rust,editable
-{{#include ../../../crates/cats/text_processing/tests/regex/filter_log.rs:example}}
+{{#include ../../../crates/cats/text_processing/examples/regex/filter_log.rs:example}}
 ```
 
 ## Replace all Occurrences of one text Pattern with Another Pattern {#replace-all-occurrences-of-one-text-pattern-with-another-pattern}
@@ -56,7 +56,7 @@ The method [`regex::Regex::replace_all`][c-regex::Regex::replace_all]{{hi:regex:
 `&str` implements the [`regex::Replacer`][c-regex::Replacer]{{hi:regex::Replacer}}⮳ trait which allows variables like `$abcde` to refer to corresponding named capture groups{{hi:Named capture groups}} `(?P<abcde>REGEX)` from the search regex. See the [`replacement string syntax`][c-regex::Regex-replacement-string-syntax]{{hi:Replacement string syntax}}⮳ for examples and escaping detail.
 
 ```rust,editable
-{{#include ../../../crates/cats/text_processing/tests/regex/replace.rs:example}}
+{{#include ../../../crates/cats/text_processing/examples/regex/replace.rs:example}}
 ```
 
 ## Use Regular Expressions with Back-references and Lookarounds {#fancy-regex}
@@ -66,7 +66,7 @@ The method [`regex::Regex::replace_all`][c-regex::Regex::replace_all]{{hi:regex:
 [`regex`][c-regex]⮳{{hi:regex}} is the de facto standard regex library. It is very fast, but does not support fancier features such as backtracking, backreferences, and look-arounds. Use [`fancy-regex`][c-fancy_regex]⮳{{hi:fancy-regex}} if you need features that [`regex`][c-regex]⮳{{hi:regex}} doesn't support.
 
 ```rust,editable
-{{#include ../../../crates/cats/text_processing/tests/regex/fancy_regex.rs:example}}
+{{#include ../../../crates/cats/text_processing/examples/regex/fancy_regex.rs:example}}
 ```
 
 ## Longer Regex Example {#longer-regex-example}
@@ -74,7 +74,7 @@ The method [`regex::Regex::replace_all`][c-regex::Regex::replace_all]{{hi:regex:
 [![regex][c-regex-badge]][c-regex]{{hi:regex}} [![regex-github][c-regex-github-badge]][c-regex-github] [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
 ```rust,editable
-{{#include ../../../crates/cats/text_processing/tests/regex/regex.rs:example}}
+{{#include ../../../crates/cats/text_processing/examples/regex/regex.rs:example}}
 ```
 
 ## Related Topics {#skip}

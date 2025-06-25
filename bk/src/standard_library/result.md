@@ -16,7 +16,7 @@ Functions should return `Result` when errors are expected and recoverable. Note 
 The following example show to return `Result` from a function, propagate it to the caller with the `?` operator, or process it with `match`. The `anyhow` and `thiserror` libraries can be used to significantly simplify error handling.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/result/result.rs:example}}
+{{#include ../../crates/standard_library/examples/result/result.rs:example}}
 ```
 
 ## Retrieve or Transform Values in `Result` {#result-methods}
@@ -42,7 +42,7 @@ In addition to working with pattern matching, `Result` provides a wide variety o
 The following example demonstrates a few of these methods:
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/result/result2.rs:example}}
+{{#include ../../crates/standard_library/examples/result/result2.rs:example}}
 ```
 
 ## Get Reference to Values Inside a `Result` {#result-references}
@@ -58,7 +58,7 @@ The following example demonstrates the usage of the `as_ref()`, `as_deref()`, an
 These methods are useful for working with references to the values inside a `Result` without consuming the `Result` itself.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/result/result3.rs:example}}
+{{#include ../../crates/standard_library/examples/result/result3.rs:example}}
 ```
 
 ## `Result` vs `Option` {#result-vs-option}

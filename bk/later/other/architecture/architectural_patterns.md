@@ -11,7 +11,7 @@
 - Often combined with ORM tools like [`diesel`][c-diesel]⮳{{hi:diesel}} or [`sea-orm`][c-sea_orm]⮳{{hi:sea-orm}}. See [[query_builders_orms | Query Builders & ORMs]].
 
 ```rust,editable
-{{#include ../../../crates/other/tests/architecture/repository.rs:example}}
+{{#include ../../../crates/other/examples/architecture/repository.rs:example}}
 ```
 
 ## State Machine Pattern {#skip1}
@@ -20,7 +20,7 @@
 - Useful for handling workflows or processes with clear states.
 
 ```rust,editable
-{{#include ../../../crates/other/tests/architecture/state_machine.rs:example}}
+{{#include ../../../crates/other/examples/architecture/state_machine.rs:example}}
 ```
 
 ## Dependency Injection {#skip2}
@@ -30,7 +30,7 @@
 - Rarer in Rust than in other languages like Java.
 
 ```rust,editable
-{{#include ../../../crates/other/tests/architecture/di.rs:example}}
+{{#include ../../../crates/other/examples/architecture/di.rs:example}}
 ```
 
 ## Related Topics {#skip3}

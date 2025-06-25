@@ -18,7 +18,7 @@ While it is common to deploy Rust applications to Cloud services like [AWS][p-aw
 It offers a free tier with access to essential features for individual developers and small projects.
 
 ```rust,editable
-{{#include ../../../crates/other/tests/cloud/shuttle.rs:example}}
+{{#include ../../../crates/other/examples/cloud/shuttle.rs:example}}
 ```
 
 ## References

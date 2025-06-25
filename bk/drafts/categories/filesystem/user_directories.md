@@ -11,7 +11,7 @@ Get platform-specific locations for [configuration][p-configuration], cache, and
 [`dirs`][c-dirs]⮳{{hi:dirs}} is a low-level library that provides platform-specific standard locations of directories for [config][p-config], cache and other data on Linux, Windows, macOS and Redox by leveraging the mechanisms defined by the XDG base/user directory specifications on Linux, the Known Folder API on [Windows][p-windows], and the Standard Directory guidelines on macOS.
 
 ```rust,editable
-{{#include ../../../crates/cats/filesystem/tests/user_directories/dirs.rs:example}}
+{{#include ../../../crates/cats/filesystem/examples/user_directories/dirs.rs:example}}
 ```
 
 ## `directories` {#directories}
@@ -23,7 +23,7 @@ Get platform-specific locations for [configuration][p-configuration], cache, and
 [`directories`][c-directories]⮳{{hi:directories}} is a higher-level library than [`dirs`][c-dirs]⮳{{hi:dirs}} and can also compute paths for applications.
 
 ```rust,editable
-{{#include ../../../crates/cats/filesystem/tests/user_directories/directories.rs:example}}
+{{#include ../../../crates/cats/filesystem/examples/user_directories/directories.rs:example}}
 ```
 
 ## Open a file or URL using the program configured on your System {#open}
@@ -33,7 +33,7 @@ Get platform-specific locations for [configuration][p-configuration], cache, and
 [`open`][c-open]⮳{{hi:open}} opens a path or [URL][p-url] using the program configured on the system.
 
 ```rust,editable
-{{#include ../../../crates/cats/filesystem/tests/open.rs:example}}
+{{#include ../../../crates/cats/filesystem/examples/open.rs:example}}
 ```
 
 {{#include refs.incl.md}}

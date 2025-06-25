@@ -5,13 +5,13 @@
 ## Implement a Factory {#factory}
 
 ```rust,editable
-{{#include ../../../crates/cats/rust_patterns/tests/creational_patterns/factory.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/examples/creational_patterns/factory.rs:example}}
 ```
 
 ## Implement an Abstract Factory {#abstract-factory}
 
 ```rust,editable
-{{#include ../../../crates/cats/rust_patterns/tests/creational_patterns/abstract_factory.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/examples/creational_patterns/abstract_factory.rs:example}}
 ```
 
 See also:
@@ -21,7 +21,7 @@ See also:
 ## Implement a Singleton {#singleton}
 
 ```rust,editable
-{{#include ../../../crates/cats/rust_patterns/tests/creational_patterns/singleton.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/examples/creational_patterns/singleton.rs:example}}
 ```
 
 {{#include refs.incl.md}}

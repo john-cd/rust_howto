@@ -22,7 +22,7 @@ The following example provides a template for a Lambda function written in Rust.
 You can also use the AWS SDK from within a Lambda function to interact with AWS services like S3 or CloudWatch (see the example below).
 
 ```rust,editable
-{{#include ../../../crates/other/tests/cloud/aws_lambda.rs:example}}
+{{#include ../../../crates/other/examples/cloud/aws_lambda.rs:example}}
 ```
 
 See also the ["Create Lambda functions with Rust"][aws-create-lambda-functions-with-rust]⮳ and ["AWS Lambda Rust runtime examples"][aws-lambda-rust-runtime-examples-github]⮳ webpages.
@@ -38,7 +38,7 @@ See, for example:
 - [AWS SDK examples][aws-doc-sdk-examples-github]⮳.
 
 ```rust,editable
-{{#include ../../../crates/other/tests/cloud/aws_sdk.rs:example}}
+{{#include ../../../crates/other/examples/cloud/aws_sdk.rs:example}}
 ```
 
 ## References {#skip}

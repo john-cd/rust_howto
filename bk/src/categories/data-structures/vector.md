@@ -16,7 +16,7 @@ The vector type `Vec<T>` is the go-to, general-purpose data structure, when you 
 The following example demonstrates common operations:
 
 ```rust,editable
-{{#include ../../../crates/cats/data_structures/tests/vector/vectors.rs:example}}
+{{#include ../../../crates/cats/data_structures/examples/vector/vectors.rs:example}}
 ```
 
 ## `Vec` Memory Allocation {#memory-allocation}

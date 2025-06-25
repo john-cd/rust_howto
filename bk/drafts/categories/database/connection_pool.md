@@ -9,13 +9,13 @@
 [`deadpool`][c-deadpool]⮳{{hi:deadpool}} is a simple async pool for connections and objects of any type.
 
 ```rust,editable
-{{#include ../../../crates/cats/database/tests/connection_pool/deadpool.rs:example}}
+{{#include ../../../crates/cats/database/examples/connection_pool/deadpool.rs:example}}
 ```
 
 Here is an example demonstrating the use of [`deadpool`][c-deadpool]⮳{{hi:deadpool}} to connect to a [Postgres][p-postgres] database:
 
 ```rust,editable
-{{#include ../../../crates/cats/database/tests/connection_pool/deadpool2.rs:example}}
+{{#include ../../../crates/cats/database/examples/connection_pool/deadpool2.rs:example}}
 ```
 
 {{#include refs.incl.md}}

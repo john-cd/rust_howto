@@ -11,7 +11,7 @@
 Fast floating point to string conversion.
 
 ```rust,editable
-{{#include ../../../crates/cats/value_formatting/tests/number_formatting/ryu.rs:example}}
+{{#include ../../../crates/cats/value_formatting/examples/number_formatting/ryu.rs:example}}
 ```
 
 ## Convert Integers to String Quickly with `itoa` {#itoa}

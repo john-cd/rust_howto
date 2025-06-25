@@ -11,7 +11,7 @@ Message passing in [`async`][book-rust-reference-async]{{hi:async}}⮳ programmi
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}{{hi:MPSC}}
 
 ```rust,editable
-{{#include ../../../crates/cats/concurrency/tests/message_passing/message_passing_mpsc.rs:example}}
+{{#include ../../../crates/cats/concurrency/examples/message_passing/message_passing_mpsc.rs:example}}
 ```
 
 ## `crossbeam-channel` {#crossbeam-channel}
@@ -21,13 +21,13 @@ Message passing in [`async`][book-rust-reference-async]{{hi:async}}⮳ programmi
 [`crossbeam-channel`][c-crossbeam_channel]⮳{{hi:crossbeam-channel}} offers multi-producer multi-consumer channels{{hi:Multi-consumer channels}} for message passing. The absolute fastest channel implementation available. Implements Go-like 'select' feature.
 
 ```rust,editable
-{{#include ../../../crates/cats/concurrency/tests/message_passing/message_passing_crossbeam_channel.rs:example}}
+{{#include ../../../crates/cats/concurrency/examples/message_passing/message_passing_crossbeam_channel.rs:example}}
 ```
 
 Example using specialized channels for [`tickers`][c-tickers]⮳{{hi:tickers}}{{hi:Tickers}} and [`timeout`][c-reqwest::ClientBuilder::timeout]⮳{{hi:Timeout}}
 
 ```rust,editable
-{{#include ../../../crates/cats/concurrency/tests/message_passing/message_passing_crossbeam_channel_after_tick.rs:example}}
+{{#include ../../../crates/cats/concurrency/examples/message_passing/message_passing_crossbeam_channel_after_tick.rs:example}}
 ```
 
 ### `flume` {#flume}
@@ -40,7 +40,7 @@ Example using specialized channels for [`tickers`][c-tickers]⮳{{hi:tickers}}{{
 The [`flume`][c-flume]⮳{{hi:flume}} crate is a library that provides multiple-producer, multiple-consumer (MPMC) channels. It is similar to the [`std::sync::mpsc`][c-std::sync::mpsc::channel]⮳{{hi:std::sync::mpsc}} module, but with additional features and improved performance. It is smaller and simpler than [`crossbeam-channel`][c-crossbeam_channel]⮳{{hi:crossbeam-channel}} and almost as fast.
 
 ```rust,editable
-{{#include ../../../crates/cats/concurrency/tests/message_passing/flume.rs:example}}
+{{#include ../../../crates/cats/concurrency/examples/message_passing/flume.rs:example}}
 ```
 
 ## See Also

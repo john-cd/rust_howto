@@ -13,7 +13,7 @@
 Kin in spirit to [Python][p-python]'s `scikit-learn`, [`linfa`][c-linfa]⮳{{hi:linfa}} focuses on common pre-processing tasks and classical ML algorithms for everyday ML tasks. Provides a convenient, bundled approach to many machine learning algorithms.
 
 ```rust,editable
-{{#include ../../../crates/cats/science/tests/ml/linfa.rs:example}}
+{{#include ../../../crates/cats/science/examples/ml/linfa.rs:example}}
 ```
 
 ### `smartcore` {#skip2}
@@ -23,7 +23,7 @@ Kin in spirit to [Python][p-python]'s `scikit-learn`, [`linfa`][c-linfa]⮳{{hi:
 [SmartCore][c-smartcore-website]{{hi:smartcore}}⮳ is a comprehensive library for machine learning and numerical computing. The library provides a set of tools for linear algebra, numerical computing, optimization, and enables a generic, powerful yet still efficient approach to machine learning.
 
 ```rust,editable
-{{#include ../../../crates/cats/science/tests/ml/smartcore.rs:example}}
+{{#include ../../../crates/cats/science/examples/ml/smartcore.rs:example}}
 ```
 
 ## See Also

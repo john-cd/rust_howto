@@ -9,7 +9,7 @@
 [`napi`][c-napi]⮳{{hi:napi}} provides N-API bindings for `Node.js`.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_ffi/tests/node/napi.rs:example}}
+{{#include ../../../crates/cats/development_tools_ffi/examples/node/napi.rs:example}}
 ```
 
 ## `neon` {#neon}
@@ -19,7 +19,7 @@
 [`neon`][c-neon]⮳{{hi:neon}} is a safe abstraction layer for Node.js.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_ffi/tests/node/neon.rs:example}}
+{{#include ../../../crates/cats/development_tools_ffi/examples/node/neon.rs:example}}
 ```
 
 {{#include refs.incl.md}}

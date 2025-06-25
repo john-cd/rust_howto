@@ -19,7 +19,7 @@
 [Rust + Rocket RealWorld framework implementation][rocket-realworld-example]⮳.
 
 ```rust,editable
-{{#include ../../../crates/cats/web_programming_http_server/tests/rocket.rs:example}}
+{{#include ../../../crates/cats/web_programming_http_server/examples/rocket.rs:example}}
 ```
 
 {{#include refs.incl.md}}

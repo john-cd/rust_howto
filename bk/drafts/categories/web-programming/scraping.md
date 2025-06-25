@@ -9,7 +9,7 @@
 Use [`reqwest::get`][c-reqwest::get]{{hi:reqwest::get}}⮳ to perform a HTTP GET request{{hi:HTTP GET request}} and then use [`select::document::Document::from_read`][c-select::document::Document::from_read]{{hi:select::document::Document::from_read}}⮳ to parse the response into a HTML document{{hi:HTML document}}. [`select::document::Document::find`][c-select::document::Document::find]{{hi:select::document::Document::find}}⮳ with the criteria of [`select::predicate::Name`][c-select::predicate::Name]{{hi:select::predicate::Name}}⮳ is "a" retrieves all links. Call [`std-core::iter::Iterator::filter_map`][c-std-core::iter::Iterator::filter_map]{{hi:std-core::iter::Iterator::filter_map}}⮳ on the [`select::selection::Selection`][c-select::selection::Selection]{{hi:select::selection::Selection}}⮳ retrieves URLs from links that have the "href" [`select::node::Node::attr`][c-select::node::Node::attr]{{hi:select::node::Node::attr}}⮳ (attribute).
 
 ```rust,editable
-{{#include ../../../crates/cats/web_programming/tests/scraping/extract_links.rs:example}}
+{{#include ../../../crates/cats/web_programming/examples/scraping/extract_links.rs:example}}
 ```
 
 ## Check a Webpage for Broken Links {#check-a-webpage-for-broken-links}
@@ -22,7 +22,7 @@ Iterates through links{{hi:Links}} in the document and creates a [`tokio::task::
 [`reqwest::StatusCode`][c-reqwest::StatusCode]{{hi:reqwest::StatusCode}}⮳. Then the tasks [`await`][book-rust-reference-await]{{hi:await}}⮳ completion before ending the program.
 
 ```rust,editable
-{{#include ../../../crates/cats/web_programming/tests/scraping/broken.rs:example}}
+{{#include ../../../crates/cats/web_programming/examples/scraping/broken.rs:example}}
 ```
 
 ## Extract all Unique Links from a MediaWiki Markup {#extract-all-unique-links-from-a-mediawiki-markup}
@@ -34,7 +34,7 @@ Pull the source of a MediaWiki page using [`reqwest::get`][c-reqwest::get]{{hi:r
 MediaWiki link syntax is described [here][mediawiki-link-syntax]⮳.
 
 ```rust,editable
-{{#include ../../../crates/cats/web_programming/tests/scraping/unique.rs:example}}
+{{#include ../../../crates/cats/web_programming/examples/scraping/unique.rs:example}}
 ```
 
 {{#include refs.incl.md}}

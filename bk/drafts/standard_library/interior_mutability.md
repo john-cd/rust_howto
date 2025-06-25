@@ -18,7 +18,7 @@ These types are used in scenarios involving [shared state][p-shared-state] withi
 Attempts to violate borrowing rules (like having multiple mutable borrows) will cause a _panic_ at runtime. Common methods include `borrow`, [`borrow_mut`][c-std::borrow::BorrowMut]⮳{{hi:borrow_mut}}, and [`try_borrow`][c-std::cell::RefCell::try_borrow].
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/smart_pointers/refcell.rs:example}}
+{{#include ../../crates/standard_library/examples/smart_pointers/refcell.rs:example}}
 ```
 
 ## `Cell` {#cell}
@@ -30,7 +30,7 @@ Attempts to violate borrowing rules (like having multiple mutable borrows) will 
 `Cell<T>` is used when you need to mutate a value without using a reference or a mutable reference. Common methods include `set`, `get`, and `replace`. It is most often used for types that implement the `Copy` trait, like integers and booleans.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/smart_pointers/cell.rs:example}}
+{{#include ../../crates/standard_library/examples/smart_pointers/cell.rs:example}}
 ```
 
 ## `OnceCell` {#oncecell}

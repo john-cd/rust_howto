@@ -26,7 +26,7 @@ Instead of e.g. `Cow<str>`, you can use:
 - `Box<str>` for heap-allocated string slices.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/cow/cow_alternatives.rs:example}}
+{{#include ../../crates/standard_library/examples/cow/cow_alternatives.rs:example}}
 ```
 
 ## Arc::make_mut {#arc_make_mut}
@@ -34,7 +34,7 @@ Instead of e.g. `Cow<str>`, you can use:
 If you need reference-counting, note that `Rc::make_mut` and `Arc::make_mut` can provide clone-on-write functionality as well.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/arc/arc_make_mut.rs:example}}
+{{#include ../../crates/standard_library/examples/arc/arc_make_mut.rs:example}}
 ```
 
 ---
@@ -96,7 +96,7 @@ impl HasArea for Shape {
 You may also implement the `AsRef` trait to retrieve the "base class":
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/  /asref2.rs:example}}
+{{#include ../../crates/standard_library/examples/  /asref2.rs:example}}
 ```
 
 Note that so-called "Deref polymorphism", meaning implementing `Deref` to emulate inheritance between structs, is considered an [antipattern](https://github.com/rust-unofficial/patterns/blob/main/src/anti_patterns/deref.md), especially since `Deref` is an _implicit_ conversion.

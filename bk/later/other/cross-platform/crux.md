@@ -15,7 +15,7 @@ The fundamental architectural concept is the strict separation of pure computati
 The user interface{{hi:User interface}} layer is built natively, with modern declarative UI frameworks such as Swift UI, Jetpack Compose, and React/Vue or a WASM{{hi:WASM}} based framework on the web (e.g. Yew).
 
 ```rust,editable
-{{#include ../../../crates/other/tests/cross_platform/crux.rs:example}}
+{{#include ../../../crates/other/examples/cross_platform/crux.rs:example}}
 ```
 
 {{#include refs.incl.md}}

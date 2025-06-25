@@ -43,7 +43,7 @@ For WebGPU development in Rust, [`wgpu`][c-wgpu]⮳{{hi:wgpu}} is the essential 
 - Debugging: WebGPU has built-in debugging capabilities that can be accessed through browser developer tools (if you're targeting the web) or through [debugging][p-debugging] tools specific to your platform (if you're targeting native).
 
 ```rust,editable
-{{#include ../../../crates/cats/rendering_graphics_api/tests/gpu_abstraction_layers/wgpu.rs:example}}
+{{#include ../../../crates/cats/rendering_graphics_api/examples/gpu_abstraction_layers/wgpu.rs:example}}
 ```
 
 ### See Also {#skip}

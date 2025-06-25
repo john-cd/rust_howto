@@ -9,7 +9,7 @@
 The [`panic!(...)`][c-std::panic] macro allows a program to terminate immediately and provide feedback to the caller of the program.
 
 ```rust,editable
-{{#include ../../../../crates/cats/rust_patterns/tests/error/panic.rs:example}}
+{{#include ../../../../crates/cats/rust_patterns/examples/error/panic.rs:example}}
 ```
 
 ## Generate and Handle Recoverable Errors with `Result` {#result}
@@ -61,7 +61,7 @@ fn main() {
 `panic!` is closely tied with the `unwrap` method of both `Option` and `Result` [enums][p-enums]. Both implementations call `panic!` when they are set to the `None` or `Err` variants. `expect` is frequently used instead of `unwrap`.
 
 ```rust,editable
-{{#include ../../../../crates/cats/rust_patterns/tests/error/unwrap.rs:example}}
+{{#include ../../../../crates/cats/rust_patterns/examples/error/unwrap.rs:example}}
 ```
 
 ## Provide a Fallback Value with `unwrap_or` or `unwrap_or_else` {#unwrap-or-else}
@@ -69,7 +69,7 @@ fn main() {
 [![std][c-std-badge]][c-std] [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
 ```rust,editable
-{{#include ../../../../crates/cats/rust_patterns/tests/error/unwrap_or_else.rs:example}}
+{{#include ../../../../crates/cats/rust_patterns/examples/error/unwrap_or_else.rs:example}}
 ```
 
 ## Chain operations with `and_then` {#and_then}
@@ -140,7 +140,7 @@ If the value of the `Result` is an `Ok`, the value inside the `Ok` will get retu
 Note that we're only allowed to use the `?` operator in a function that returns `Result`, `Option`, or another type that implements [`std::ops::FromResidual`][c-std::ops::FromResidual]{{hi:std::ops::FromResidual}}⮳.
 
 ```rust,editable
-{{#include ../../../../crates/cats/rust_patterns/tests/error/question_mark.rs:example}}
+{{#include ../../../../crates/cats/rust_patterns/examples/error/question_mark.rs:example}}
 ```
 
 Note that we could have used the common type alias `type Result<T> = std::result::Result<T, std::io::Error>;` as the return type of `read_username_from_file`.
@@ -148,7 +148,7 @@ Note that we could have used the common type alias `type Result<T> = std::result
 The following example highlights the need to return `Result<..., Box<dyn Error>>` (or a similar type) when multiple `?` operators are used in a given method and their error types are not the same:
 
 ```rust,editable
-{{#include ../../../../crates/cats/rust_patterns/tests/error/question_mark2.rs:example}}
+{{#include ../../../../crates/cats/rust_patterns/examples/error/question_mark2.rs:example}}
 ```
 
 ## Handle Errors in `main` {#handle-errors-in-main}
@@ -164,7 +164,7 @@ To handle a `Result` in the `main` function, you may:
 - return a `Result` from the `main` function.
 
 ```rust,editable
-{{#include ../../../../crates/cats/rust_patterns/tests/error/error_handling.rs:example}}
+{{#include ../../../../crates/cats/rust_patterns/examples/error/error_handling.rs:example}}
 ```
 
 ## Avoid Discarding Errors During Error Conversions {#avoid-discarding-errors-during-error-conversions}
@@ -174,7 +174,7 @@ To handle a `Result` in the `main` function, you may:
 Uses [`reqwest::blocking`][c-reqwest::blocking]⮳ to query a random integer generator web service. Converts the string response into an integer.
 
 ```rust,editable
-{{#include ../../../../crates/cats/rust_patterns/tests/error/retain.rs:example}}
+{{#include ../../../../crates/cats/rust_patterns/examples/error/retain.rs:example}}
 ```
 
 ## Obtain the Backtrace in Complex Error Scenarios {#obtain-backtrace}
@@ -186,7 +186,7 @@ This recipe shows how to handle a complex error scenario and then print a backtr
 The example attempts to deserialize the value `256` into a [`u8`][primitive-u8]{{hi:u8}}⮳. An error will bubble up from `serde` to [`csv`][c-csv]⮳{{hi:csv}} and finally up to the user code.
 
 ```rust,editable
-{{#include ../../../../crates/cats/rust_patterns/tests/error/backtrace.rs:example}}
+{{#include ../../../../crates/cats/rust_patterns/examples/error/backtrace.rs:example}}
 ```
 
 Backtrace error rendered:

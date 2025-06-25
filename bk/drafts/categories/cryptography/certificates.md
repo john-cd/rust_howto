@@ -18,7 +18,7 @@ For more formats, see Rust Crypto Formats.
 [`der`][c-der]⮳{{hi:der}} is a pure Rust embedded-friendly implementation of the Distinguished [Encoding][p-encoding] Rules (DER) for Abstract Syntax Notation One (ASN.1) as described in ITU X.690 with full support for heapless `no_std` targets. DER (Distinguished Encoding Rules) certificates are a binary format for X.509 digital certificates, commonly used for representing cryptographic keys and identities. X.509 certificates bind a public key to an identity (e.g., a name, an email address, or a domain name). This binding is validated by a trusted third party, known as a Certificate Authority (CA).
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/certs/der.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/certs/der.rs:example}}
 ```
 
 ## `pem-rfc7468` {#pem-rfc7468}
@@ -30,7 +30,7 @@ PEM (Privacy Enhanced Mail) is a text-based format (Base64 encoded DER) commonly
 [`pem-rfc7468`][c-pem_rfc7468]⮳{{hi:pem-rfc7468}} implements PEM Encoding (RFC 7468) for PKIX, PKCS, and CMS Structures, implementing a strict subset of the original Privacy-Enhanced Mail encoding intended specifically for use with cryptographic keys, certificates, and other messages. It provides a `no_std`-friendly, constant-time implementation suitable for use with cryptographic private keys.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/certs/pem_rfc7468.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/certs/pem_rfc7468.rs:example}}
 ```
 
 ## `pkcs8` {#pkcs8}
@@ -40,7 +40,7 @@ PEM (Privacy Enhanced Mail) is a text-based format (Base64 encoded DER) commonly
 PKCS#8 ("Public-Key Cryptography Standards (PKCS) #8": Private-Key Information Syntax Specification - RFC 5208) is a standard syntax for storing private key information, including both private keys and optional attributes, in a secure format. [`pkcs8`][c-pkcs8]⮳{{hi:pkcs8}} is a pure Rust implementation thereof, with additional support for PKCS#8v2 asymmetric key packages (RFC 5958).
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/certs/pkcs8.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/certs/pkcs8.rs:example}}
 ```
 
 ## `x509-cert` {#x509-cert}
@@ -50,7 +50,7 @@ PKCS#8 ("Public-Key Cryptography Standards (PKCS) #8": Private-Key Information S
 An X.509 certificate is a standardized format for public key certificates used in various internet protocols, including SSL/TLS, to secure communications over networks. These certificates contain information about the certificate holder (such as a website or individual), their public key, the issuing Certificate Authority (CA), and a digital [signature][p-signature] from the CA. They help verify the identity of entities and establish encrypted connections, ensuring the confidentiality and integrity of the data being exchanged. [`x509-cert`][c-x509_cert]⮳{{hi:x509-cert}} is a pure Rust implementation of the X.509 Public Key Infrastructure Certificate format as described in RFC 5280.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/certs/x509_cert.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/certs/x509_cert.rs:example}}
 ```
 
 ## Related Topics {#skip}

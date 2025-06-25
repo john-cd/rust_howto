@@ -14,7 +14,7 @@
 `cargo test -- --show-output` to show output (println!) that is otherwise captured during tests.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_testing/tests/test_runners/tests1.rs:example}}
+{{#include ../../../crates/cats/development_tools_testing/examples/test_runners/tests1.rs:example}}
 ```
 
 ## Test your code Faster with `cargo nextest` {#cargo-nextest}

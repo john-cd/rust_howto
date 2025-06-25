@@ -9,7 +9,7 @@
 Enums are custom data types that define a set of possible 'variants' or states that a value can be. A value of that enum type can only be one of those variants at any given time. Each variant can optionally hold associated data (fields) of different types like a `struct` or like a `tuple`:
 
 ```rust,editable
-{{#include ../../crates/language/tests/enums/enums.rs:example}}
+{{#include ../../crates/language/examples/enums/enums.rs:example}}
 ```
 
 If we make an enum{{hi:Enums}} public, all of its variants are then public. We only need [`pub`][book-rust-reference-visibility-and-privacy]{{hi:pub}}⮳ before the [`enum`][book-rust-reference-enum]⮳ keyword.
@@ -28,7 +28,7 @@ See:
 The [`strum`][c-strum]⮳{{hi:strum}} crate provides helpful macros for working with enums and strings. It also can convert from an integer to an enum, add custom properties to enum variants, etc.
 
 ```rust,editable
-{{#include ../../crates/language/tests/enums/strum.rs:example}}
+{{#include ../../crates/language/examples/enums/strum.rs:example}}
 ```
 
 ## Related Topics {#skip}

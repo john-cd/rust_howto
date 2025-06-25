@@ -19,7 +19,7 @@ The [`ed25519`][c-ed25519]⮳{{hi:ed25519}} crate is a support library for Edwar
 It doesn't contain an implementation of Ed25519, but instead contains an `ed25519::Signature` type which other [crates][p-crates] can use in conjunction with the signature::Signer and signature::Verifier [traits][p-traits].
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/sign/ed25519.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/sign/ed25519.rs:example}}
 ```
 
 ## `ed25519-dalek` {#ed25519-dalek}
@@ -35,7 +35,7 @@ The recipient uses the sender's public key to verify the signature. If the signa
 [`ed25519-dalek`][c-ed25519_dalek]⮳{{hi:ed25519-dalek}} is compatible with `no_std` environments, making it suitable for [embedded][p-embedded] systems or situations where the standard library is not available.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/sign/ed25519_dalek.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/sign/ed25519_dalek.rs:example}}
 ```
 
 ## `ecdsa` {#ecdsa}
@@ -47,7 +47,7 @@ ECDSA (Elliptic Curve Digital Signature Algorithm) is a widely used digital sign
 [`ecdsa`][c-ecdsa]⮳{{hi:ecdsa}} contains a pure Rust implementation of ECDSA, as specified in FIPS 186-4 (Digital Signature Standard), providing RFC6979 deterministic signatures as well as support for added entropy.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/sign/ecdsa.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/sign/ecdsa.rs:example}}
 ```
 
 ## `dsa` {#dsa}
@@ -60,7 +60,7 @@ DSA (Digital Signature Algorithm) is a Federal Information Processing Standard (
 signatures as well as support for added entropy.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/sign/dsa.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/sign/dsa.rs:example}}
 ```
 
 For more [algorithms][p-algorithms], see Rust Crypto Signatures:

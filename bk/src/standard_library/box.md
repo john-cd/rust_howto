@@ -9,13 +9,13 @@
 All values in Rust are stack-allocated by default. `Box<T>` allow you to store data on the heap{{hi:Heap}} rather than the stack{{hi:Stack}}. What remains on the stack is the pointer to the heap data. `Box<T>` owns its inner data and drop its contents when it goes out of scope:
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/box/box_basics.rs:example}}
+{{#include ../../crates/standard_library/examples/box/box_basics.rs:example}}
 ```
 
 The `Box<T>` type is a smart pointer{{hi:Smart pointers}}, because it implements the [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ trait, which allows `Box<T>` values to be treated just like a reference. You can use the de-reference operator{{hi:Dereference operator}} `*`{{hi:*}} or 'deref coercion' with the `.` operator to use its inner value:
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/box/box_deref.rs:example}}
+{{#include ../../crates/standard_library/examples/box/box_deref.rs:example}}
 ```
 
 ### `Box` Use Cases {#box-use-cases}
@@ -43,7 +43,7 @@ Dynamically Sized Types (DSTs), also known as "unsized types," are types whose s
 - Trait Objects: `dyn Trait` (e.g., `dyn std::io::Read`) - see the example below.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/box/box_dst.rs:example}}
+{{#include ../../crates/standard_library/examples/box/box_dst.rs:example}}
 ```
 
 ## Use `Box` as a Smart Pointer to Owned Trait Objects {#box-trait-objects}
@@ -55,7 +55,7 @@ Trait objects `dyn SomeTrait` are opaque values that implements a base trait `So
 Because their underlying concrete types are obscured, trait objects are dynamically sized types (DSTs). Like all DSTs, trait objects must be used behind some type of pointer, for example `&dyn SomeTrait` or `Box<dyn SomeTrait>`. If you want an owned trait object use `Box<dyn Trait>`, and if you want a borrowed trait object use `&dyn Trait`.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/box/box_trait_objects.rs:example}}
+{{#include ../../crates/standard_library/examples/box/box_trait_objects.rs:example}}
 ```
 
 ## Implement Recursive Data Structures with `Box` {#box-recursive-data-structures}
@@ -67,7 +67,7 @@ The Rust compiler needs to know the exact size of a type at compile time, but a 
 For example, in the following, we define a linked list that has an unknown number of nodes, thus its size is not fixed. It could not be stored directly on the stack. By using `Box`, which has a defined size on the stack, we can create a local variable. The actual `Node` data will be stored on the heap.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/box/box_recursive.rs:example}}
+{{#include ../../crates/standard_library/examples/box/box_recursive.rs:example}}
 ```
 
 ## Related Topics {#skip}

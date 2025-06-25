@@ -13,7 +13,7 @@
 [Candle: a minimalist machine learning framework for rust that focuses on performance including GPU support and ease of use][blog-candle]⮳.
 
 ```rust,editable
-{{#include ../../../crates/cats/science/tests/ml/candle.rs:example}}
+{{#include ../../../crates/cats/science/examples/ml/candle.rs:example}}
 ```
 
 ## `burn` {#skip4}

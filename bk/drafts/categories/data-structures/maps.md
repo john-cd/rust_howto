@@ -16,7 +16,7 @@ IndexMap is a data structure in Rust that combines the features of a hashmap and
 [`indexmap`][c-indexmap]⮳{{hi:indexmap}} offers a hash map that separately keeps track of insertion order and allows you to efficiently iterate over its elements in that order.
 
 ```rust,editable
-{{#include ../../../crates/cats/data_structures/tests/maps/indexmap.rs:example}}
+{{#include ../../../crates/cats/data_structures/examples/maps/indexmap.rs:example}}
 ```
 
 ## Store Data in a `multimap` {#multimap}
@@ -31,7 +31,7 @@ A MultiMap allows you to store multiple values for a single key, which can be us
 [`multimap`][c-multimap]⮳{{hi:multimap}} is implemented as a thin wrapper around [`std::collections::HashMap`][c-std::collections::HashMap]⮳{{hi:std::collections::HashMap}}.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/data_structures/tests/maps/multimap.rs:example}}
+{{#include ../../../crates/cats/data_structures/examples/maps/multimap.rs:example}}
 ```
 
 ## Store Collections of Objects that Need Stable, Safe References {#slotmap}
@@ -48,7 +48,7 @@ Use [`slotmap`][c-slotmap]⮳{{hi:slotmap}} to store collections of objects that
 [`slotmap`][c-slotmap]⮳{{hi:slotmap}} provides three containers with persistent unique keys to access stored values, [`SlotMap`][c-slotmap]⮳{{hi:SlotMap}}, `HopSlotMap` and `DenseSlotMap`. Two secondary maps, `SecondaryMap` and [`SparseSecondaryMap`][c-slotmap::SparseSecondaryMap]⮳{{hi:SparseSecondaryMap}} are also provided that map further objects to the keys created by one of the slot maps.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/data_structures/tests/maps/slotmap.rs:example}}
+{{#include ../../../crates/cats/data_structures/examples/maps/slotmap.rs:example}}
 ```
 
 {{#include refs.incl.md}}

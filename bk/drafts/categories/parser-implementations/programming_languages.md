@@ -12,7 +12,7 @@
 [swc_ecma_parser][c-swc_ecma_parser-crates.io]{{hi:swc_ecma_parser}}⮳ is a feature-complete ECMAScript / TypeScript parser written in Rust.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/tests/javascript/swc_ecma_parser.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/javascript/swc_ecma_parser.rs:example}}
 ```
 
 ## Parse SQL {#sql_parsing}
@@ -22,7 +22,7 @@
 [`sqlparser`][c-sqlparser]⮳{{hi:sqlparser}} is a general SQL lexer and parser with support for ANSI SQL:2011.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/tests/programming_languages/sqlparser.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/programming_languages/sqlparser.rs:example}}
 ```
 
 See also [`diesel`][c-diesel]⮳{{hi:diesel}}, an ORM that includes SQL parsing.

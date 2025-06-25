@@ -166,7 +166,7 @@ Modules provides encapsulation, meaning they hide items within from their parent
 The following example summarizes the visibility rules when it comes to modules. See the [[visibility | Visibility]] and [[use_keyword | `use` keyword]] chapters for complete details.
 
 ```rust,editable
-{{#include ../../crates/code_organization/tests/modules/module_visibility.rs:example}}
+{{#include ../../crates/code_organization/examples/modules/module_visibility.rs:example}}
 ```
 
 ## Related Topics {#skip}

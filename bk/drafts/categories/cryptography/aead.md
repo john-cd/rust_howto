@@ -20,7 +20,7 @@ AEAD is commonly used in secure communication protocols like [TLS][p-tls] (Trans
 AES-GCM-SIV (Advanced [Encryption][p-encryption] Standard - Galois/Counter Mode - Synthetic Initialization Vector) is a mode of operation for AES that provides nonce misuse resistance. This means it can securely handle situations where a cryptographic nonce (a number used only once) might be reused accidentally.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/aead/aes_gcm_siv.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/aead/aes_gcm_siv.rs:example}}
 ```
 
 ## `aes-gcm` {#aes-gcm}
@@ -30,7 +30,7 @@ AES-GCM-SIV (Advanced [Encryption][p-encryption] Standard - Galois/Counter Mode 
 [`aes-gcm`][c-aes_gcm]⮳{{hi:aes-gcm}} is a pure Rust implementation of the AES-GCM (Galois/Counter Mode) Authenticated Encryption with Associated Data (AEAD) Cipher with optional architecture-specific hardware acceleration.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/aead/aes_gcm.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/aead/aes_gcm.rs:example}}
 ```
 
 ## ChaCha20Poly1305 {#chacha20poly1305}
@@ -40,7 +40,7 @@ AES-GCM-SIV (Advanced [Encryption][p-encryption] Standard - Galois/Counter Mode 
 [`chacha20poly1305`][c-chacha20poly1305]⮳{{hi:chacha20poly1305}} is a pure Rust implementation of the ChaCha20Poly1305 Authenticated Encryption with Additional Data Cipher (RFC 8439) with optional architecture-specific hardware acceleration. Also contains implementations of the XChaCha20Poly1305 extended nonce variant of ChaCha20Poly1305, and the reduced-round ChaCha8Poly1305 and ChaCha12Poly1305 lightweight variants.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/aead/chacha20poly1305.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/aead/chacha20poly1305.rs:example}}
 ```
 
 For more [algorithms][p-algorithms], see Rust Crypto AEADs: aes-gcm-siv{{hi:aes-gcm-siv}}, aes-gcm{{hi:aes-gcm}}, chacha20poly1305{{hi:chacha20poly1305}}.

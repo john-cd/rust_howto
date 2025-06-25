@@ -32,7 +32,7 @@ The compiler infers most lifetimes, eliminating most boilerplate, but explicit l
 `'static` indicates that the data pointed to by the reference lives for the lifetime of the running program. It can still be coerced to a shorter lifetime. String literals are a common example of a string slice with `'static` lifetime.
 
 ```rust,editable
-{{#include ../../crates/language/tests/lifetimes/static_lifetime.rs:example}}
+{{#include ../../crates/language/examples/lifetimes/static_lifetime.rs:example}}
 ```
 
 ## Use Lifetime Parameters {#skip}
@@ -42,7 +42,7 @@ Lifetime parameters can be added to function or method signatures, struct defini
 Lifetime parameters are listed in angle brackets (e.g. `<'a>`), usually immediately after the name of the item. Lifetime parameters are a form of [[generics | generics]]. Lifetime parameters, type parameters, and const generics can be intermixed within `<...>`. Lifetime parameters should appear before any generic type and const parameters (e.g. `<'a, T, const N: usize>`):
 
 ```rust,editable
-{{#include ../../crates/language/tests/lifetimes/lifetime_parameters.rs:example}}
+{{#include ../../crates/language/examples/lifetimes/lifetime_parameters.rs:example}}
 ```
 
 ### Use Lifetime Parameters in Functions {#lifetimes-in-functions}
@@ -50,7 +50,7 @@ Lifetime parameters are listed in angle brackets (e.g. `<'a>`), usually immediat
 In the following example, we define a function with a lifetime parameter, which is then used to specify the relationships between the lifetimes of different references. In this case, the generic lifetime parameter will get the concrete lifetime that is equal to the smaller of the lifetimes of the function arguments `x` and `y`:
 
 ```rust,editable
-{{#include ../../crates/language/tests/lifetimes/lifetime_parameter_function.rs:example}}
+{{#include ../../crates/language/examples/lifetimes/lifetime_parameter_function.rs:example}}
 ```
 
 ## Use Lifetimes and Lifetime Parameters in Struct Definitions and Implementations {#lifetime-annotations}
@@ -59,7 +59,7 @@ The following example shows a `struct` with a lifetime parameter and multiple im
 This is a form of _conditional implementation_.
 
 ```rust,editable
-{{#include ../../crates/language/tests/lifetimes/lifetime_parameter_struct.rs:example}}
+{{#include ../../crates/language/examples/lifetimes/lifetime_parameter_struct.rs:example}}
 ```
 
 ### Avoid Self-referential Structs {#self-referential-structs}
@@ -76,7 +76,7 @@ Instead, you may:
 - Use arena-style allocation to enforce shared lifetimes.
 
 ```rust,editable
-{{#include ../../crates/language/tests/lifetimes/self_referential_struct.rs:example}}
+{{#include ../../crates/language/examples/lifetimes/self_referential_struct.rs:example}}
 ```
 
 ## References {#skip}

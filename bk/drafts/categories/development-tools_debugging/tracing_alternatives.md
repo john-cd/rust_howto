@@ -21,7 +21,7 @@
 Consider using [`tracing`][c-tracing]⮳{{hi:tracing}} instead, especially if you need `async` support. [`slog`][c-slog]⮳{{hi:slog}} remains a stable, featureful and battle-tested library, used in many important projects.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_debugging/tests/other/slog.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/examples/other/slog.rs:example}}
 ```
 
 ### `log4rs` {#log4rs}

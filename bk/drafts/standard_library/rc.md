@@ -17,7 +17,7 @@ The `Rc<T>` type (for "Reference Counted") enables _shared ownership_ of a value
 The following example demonstrates common operations with `Rc`:
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/smart_pointers/rc.rs:example}}
+{{#include ../../crates/standard_library/examples/smart_pointers/rc.rs:example}}
 ```
 
 Also of note: the `Weak` type, typically obtained via `Rc::downgrade`, allows for non-owning (weak) references to the data. This can help prevent reference cycles that could lead to memory leaks.

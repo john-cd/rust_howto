@@ -10,7 +10,7 @@ Closures are anonymous functions you can define inline, often right where you ne
 Here is a example of a short, inline closure with a simple expression as its body:
 
 ```rust,editable
-{{#include ../../crates/language/tests/closures/closures.rs:example}}
+{{#include ../../crates/language/examples/closures/closures.rs:example}}
 ```
 
 {{i:Closures}} can capture variables{{hi:Capture of variables}} from their surrounding scope:
@@ -22,7 +22,7 @@ Here is a example of a short, inline closure with a simple expression as its bod
 They preferentially capture variables by reference and only go lower when required.
 
 ```rust,editable
-{{#include ../../crates/language/tests/closures/closures_capture.rs:example}}
+{{#include ../../crates/language/examples/closures/closures_capture.rs:example}}
 ```
 
 ## Force Closure Capture by Value {#move-closures}
@@ -31,7 +31,7 @@ A closure can be forced to capture its environment by copying or moving values b
 This is often used to ensure that the closure's lifetime is `'static` and common when creating a new thread.
 
 ```rust,editable
-{{#include ../../crates/language/tests/closures/closures_move.rs:example}}
+{{#include ../../crates/language/examples/closures/closures_move.rs:example}}
 ```
 
 ## Annotate Closure Types {#closure-with-type-annotations}
@@ -39,7 +39,7 @@ This is often used to ensure that the closure's lifetime is `'static` and common
 Closures can often infer parameter and return-value types, but you can add them manually:
 
 ```rust,editable
-{{#include ../../crates/language/tests/closures/closures_with_type_annotations.rs:example}}
+{{#include ../../crates/language/examples/closures/closures_with_type_annotations.rs:example}}
 ```
 
 ## Use Closures as Function Arguments {#closures-as-input-parameters}
@@ -55,7 +55,7 @@ A closure automatically implements one of three special traits:
 When defining a function that accepts a closure, you use the `Fn`, `FnMut`, or `FnOnce` traits as bounds:
 
 ```rust,editable
-{{#include ../../crates/language/tests/closures/closures_as_input_parameters.rs:example}}
+{{#include ../../crates/language/examples/closures/closures_as_input_parameters.rs:example}}
 ```
 
 ## Related Topics {#skip}

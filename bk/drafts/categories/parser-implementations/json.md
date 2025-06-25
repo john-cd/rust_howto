@@ -11,7 +11,7 @@
 [`serde_json`][c-serde_json]⮳{{hi:serde_json}} offers a JSON serialization file format.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/tests/json/serde_json.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/json/serde_json.rs:example}}
 ```
 
 ## Parse JSON with `json5` {#json5}
@@ -21,7 +21,7 @@
 [`json5`][c-json5]⮳{{hi:json5}} is a Rust JSON5 serializer and deserializer which speaks [`serde`][c-serde]⮳{{hi:serde}}.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/tests/json/json5.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/json/json5.rs:example}}
 ```
 
 ## Parse JSON with `simd-json` {#simd-json}
@@ -31,7 +31,7 @@
 [`simd-json`][c-simd_json]⮳{{hi:simd-json}} is a high-performance JSON parser based on a port of `simdjson`.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/tests/json/simd_json.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/json/simd_json.rs:example}}
 ```
 
 {{#include refs.incl.md}}

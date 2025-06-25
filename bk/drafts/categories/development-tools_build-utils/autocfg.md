@@ -11,7 +11,7 @@ Automatic cfg for Rust compiler features
 A Rust library for build scripts to automatically configure code based on compiler support. Code snippets are dynamically tested to see if the rustc will accept them, rather than hard-coding specific version support.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_build_utils/tests/autocfg/autocfg.rs:example}}
+{{#include ../../../crates/cats/development_tools_build_utils/examples/autocfg/autocfg.rs:example}}
 ```
 
 {{#include refs.incl.md}}

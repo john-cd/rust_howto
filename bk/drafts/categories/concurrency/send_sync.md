@@ -32,7 +32,7 @@ A type is `Sync` if it is safe to be referenced from multiple threads _simultane
 ## Using `Arc` and `Mutex` for Safe Concurrent Access to Shared Data {#arc-mutex}
 
 ```rust,editable
-{{#include ../../../crates/cats/concurrency/tests/send_sync/send_sync.rs:example}}
+{{#include ../../../crates/cats/concurrency/examples/send_sync/send_sync.rs:example}}
 ```
 
 ## Implementing `Send` and `Sync` {#implementing-send-sync}
@@ -46,7 +46,7 @@ The following provides an example of such abstraction - a simplified implementat
 By implementing the unsafe marker [traits][p-traits] `Send` and `Sync` on `my::Arc`, we _guarantee_ that this struct can indeed be sent across threads safely. The usage of `my::Arc` must not cause data races or other thread safety issues. An incorrect implementation can cause Undefined Behavior. Caveat lector!
 
 ```rust,editable
-{{#include ../../../crates/cats/concurrency/tests/send_sync/send_sync_impl.rs:example}}
+{{#include ../../../crates/cats/concurrency/examples/send_sync/send_sync_impl.rs:example}}
 ```
 
 ## References {#skip}

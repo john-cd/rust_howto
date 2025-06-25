@@ -11,13 +11,13 @@ A trait consists of _associated items_: functions (including methods), types, an
 The following example demonstrates a trait with one method and its implementation on a type (here, a `struct`). Trait functions and methods typically omit the function body by replacing it with a semicolon. The trait implementation then must provide the function body:
 
 ```rust,editable
-{{#include ../../crates/language/tests/traits/traits.rs:example}}
+{{#include ../../crates/language/examples/traits/traits.rs:example}}
 ```
 
 A trait can be implemented by a struct, an enum, but also by a union, a primitive type, a sequence (slice or array), a tuple, a function pointer or a reference / pointer type:
 
 ```rust,editable
-{{#include ../../crates/language/tests/traits/trait_types.rs:example}}
+{{#include ../../crates/language/examples/traits/trait_types.rs:example}}
 ```
 
 ### Provide a Default Implementation for a Trait's Function or Method {#default-implementation}
@@ -25,7 +25,7 @@ A trait can be implemented by a struct, an enum, but also by a union, a primitiv
 Traits can provide default implementations for their functions or methods. This allows types that implement the trait to either use the default implementation or override it with their own custom implementation:
 
 ```rust,editable
-{{#include ../../crates/language/tests/traits/trait_default_implementation.rs:example}}
+{{#include ../../crates/language/examples/traits/trait_default_implementation.rs:example}}
 ```
 
 ### Define Associated Types in Traits {#associated-types}
@@ -33,7 +33,7 @@ Traits can provide default implementations for their functions or methods. This 
 Traits can have associated types, which are types that can be used in its functions and methods:
 
 ```rust,editable
-{{#include ../../crates/language/tests/traits/associated_types.rs:example}}
+{{#include ../../crates/language/examples/traits/associated_types.rs:example}}
 ```
 
 An associated type declaration can include generic parameters and trait bounds (see [[generics | Generics]] for more details):
@@ -79,7 +79,7 @@ trait Add<Rhs = Self> {
 Traits can also define constants that implementing types can use. Associated constants may omit the equals sign and expression to indicate implementations must define the constant value:
 
 ```rust,editable
-{{#include ../../crates/language/tests/traits/const_in_traits.rs:example}}
+{{#include ../../crates/language/examples/traits/const_in_traits.rs:example}}
 ```
 
 ## Require that a Type Implement Other Traits (with Supertraits) {#supertraits}
@@ -87,7 +87,7 @@ Traits can also define constants that implementing types can use. Associated con
 A trait can require that implementing types also implement other traits. These are called supertraits:
 
 ```rust,editable
-{{#include ../../crates/language/tests/traits/supertraits.rs:example}}
+{{#include ../../crates/language/examples/traits/supertraits.rs:example}}
 ```
 
 ## Implement a Local Trait for a Type Defined Elsewhere {#traits-types-elsewhere}
@@ -96,7 +96,7 @@ You can implement a trait defined in your crate {{hi:Traits}} on types defined o
 This is often used to extend the functionality of an external (e.g., standard library) type:
 
 ```rust,editable
-{{#include ../../crates/language/tests/traits/extend_external_type.rs:example}}
+{{#include ../../crates/language/examples/traits/extend_external_type.rs:example}}
 ```
 
 ## Implement a Trait on a Type, Both Defined Elsewhere, with the "Newtype" Pattern {#newtype-pattern}
@@ -106,7 +106,7 @@ One restriction to note is that you can implement a trait on a type only if at l
 The newtype pattern involves creating a new local type (typically, a tuple struct with a single field) to wrap an existing type. This allows you to implement traits on the wrapper type, even if you don't own the original type or the trait.
 
 ```rust,editable
-{{#include ../../crates/language/tests/traits/newtype.rs:example}}
+{{#include ../../crates/language/examples/traits/newtype.rs:example}}
 ```
 
 ## Prohibit Trait Implementation with the Sealed Trait Pattern {#sealed-trait-pattern}
@@ -116,7 +116,7 @@ The sealed trait pattern is a way to prevent crates from implementing a trait th
 This is typically achieved by defining a public trait that has a dependency on another "sealer" trait which is kept private to the crate. Because the sealer trait is not accessible outside of the crate, no downstream crate can satisfy the necessary trait bounds to implement the public-facing trait. More recently, the `#[sealed]` attribute has been introduced as a more direct and cleaner way to apply this pattern:
 
 ```rust,editable
-{{#include ../../crates/language/tests/traits/sealed_trait_pattern.rs:example}}
+{{#include ../../crates/language/examples/traits/sealed_trait_pattern.rs:example}}
 ```
 
 ## Provide a Blanket Implementation of a Trait {#blanket-implementations}
@@ -126,7 +126,7 @@ A "blanket implementation" implements a trait for any type that satisfies a give
 Beware that blanket `impl` apply globally and can lead to conflicts if overused.
 
 ```rust,editable
-{{#include ../../crates/language/tests/traits/blanket_implementations.rs:example}}
+{{#include ../../crates/language/examples/traits/blanket_implementations.rs:example}}
 ```
 
 ## Define Generic Traits {#generic-traits}

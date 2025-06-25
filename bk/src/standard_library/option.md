@@ -18,7 +18,7 @@ enum Option<T> {
 Every [`std::option::Option`][c-std::option::Option]{{hi:std::option::Option}}⮳ is either [`std::option::Option::Some`][c-std::option::Option::Some]{{hi:std::option::Option::Some}}⮳ and contains a value, or [`std::option::Option::None`][c-std::option::Option::None]{{hi:std::option::Option::None}}⮳, and does not.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/option/options1.rs:example}}
+{{#include ../../crates/standard_library/examples/option/options1.rs:example}}
 ```
 
 `Option<T>` is similar to the concept of "nullable" types in other languages, but with a crucial difference: the `Option` type forces you to explicitly handle both the "value present" and "value absent" cases, preventing common `null` pointer errors.
@@ -28,11 +28,11 @@ Every [`std::option::Option`][c-std::option::Option]{{hi:std::option::Option}}�
 `Option<T>` is often used with [`match`][book-rust-reference-match]{{hi:match}}⮳, [`if let`][book-rust-reference-if]{{hi:if let}}, or [`while let`][book-rust-reference-while-let]{{hi:while let}}:
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/option/options2.rs:example}}
+{{#include ../../crates/standard_library/examples/option/options2.rs:example}}
 ```
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/option/option_match.rs:example}}
+{{#include ../../crates/standard_library/examples/option/option_match.rs:example}}
 ```
 
 ## Implement the "Early Return" Pattern with the `?` Operator {#return-early-pattern}
@@ -58,7 +58,7 @@ In the example below, when `s.chars().next()?` encounters `None`, the function i
 This pattern removes the need for explicit, convoluted `match` or `if else` statements, making the "Happy Path" clearer to the reader.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/option/option_question_mark.rs:example}}
+{{#include ../../crates/standard_library/examples/option/option_question_mark.rs:example}}
 ```
 
 ## Common `Option` Methods {#option-methods}
@@ -96,7 +96,7 @@ The following methods extract the contained value in an [`std::option::Option`][
 - [`std::option::Option::unwrap_or_else`][c-std::option::Option::unwrap_or_else]{{hi:std::option::Option::unwrap_or_else}}⮳ returns the result of evaluating the provided closure.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/option/option_unwrap.rs:example}}
+{{#include ../../crates/standard_library/examples/option/option_unwrap.rs:example}}
 ```
 
 ### Transform Values Contained within an `Option` {#combinators}
@@ -107,7 +107,7 @@ The following example demonstrates the use of the `map`, `and_then` combinators 
 The `and_then` and `*or_else` methods take a closure as input, and only evaluate the closure when they need to produce a new value.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/option/option_combinators.rs:example}}
+{{#include ../../crates/standard_library/examples/option/option_combinators.rs:example}}
 ```
 
 ### Convert `&Option<T>` into `Option<&T>` or Similar {#adapters-for-working-with-references}
@@ -123,7 +123,7 @@ When working with references to `Option`, use:
 See also the [[asref | AsRef]] chapter.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/option/option_ref.rs:example}}
+{{#include ../../crates/standard_library/examples/option/option_ref.rs:example}}
 ```
 
 ## See Also {#skip}

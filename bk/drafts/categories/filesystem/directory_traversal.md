@@ -11,7 +11,7 @@ Gets the current working directory{{hi:Current working directory}} by calling [`
 [`std::fs::Metadata::modified`][c-std::fs::Metadata::modified]{{hi:std::fs::Metadata::modified}}⮳ returns the [`std::time::SystemTime::elapsed`][c-std::time::SystemTime::elapsed]{{hi:std::time::SystemTime::elapsed}}⮳ time since last modification{{hi:Time since last modification}}. [`std::time::Duration::as_secs`][c-std::time::Duration::as_secs]{{hi:std::time::Duration::as_secs}}⮳ converts the time to seconds and compared with 24 hours (24 *60* 60 seconds). [`std::fs::Metadata::is_file`][c-std::fs::Metadata::is_file]{{hi:std::fs::Metadata::is_file}}⮳ filters out directories.
 
 ```rust,editable
-{{#include ../../../crates/cats/filesystem/tests/directory_traversal/modified.rs:example}}
+{{#include ../../../crates/cats/filesystem/examples/directory_traversal/modified.rs:example}}
 ```
 
 ## Find Loops in a Given Path {#find-loop-in-path}
@@ -30,7 +30,7 @@ ln -s /tmp/foo/ /tmp/foo/bar/baz/qux
 The following would assert that a loop exists.
 
 ```rust,editable
-{{#include ../../../crates/cats/filesystem/tests/directory_traversal/loops.rs:example}}
+{{#include ../../../crates/cats/filesystem/examples/directory_traversal/loops.rs:example}}
 ```
 
 ## Recursively Find Duplicate File Names {#recursively-find-duplicate-file-names}
@@ -40,7 +40,7 @@ The following would assert that a loop exists.
 Find recursively in the current directory duplicate filenames{{hi:Duplicate filenames}}, printing them only once.
 
 ```rust,editable
-{{#include ../../../crates/cats/filesystem/tests/directory_traversal/duplicate_name.rs:example}}
+{{#include ../../../crates/cats/filesystem/examples/directory_traversal/duplicate_name.rs:example}}
 ```
 
 ## Recursively Find All Files with a Given Predicate {#recursively-find-all-files-with-given-predicate}
@@ -50,7 +50,7 @@ Find recursively in the current directory duplicate filenames{{hi:Duplicate file
 Find files modified within the last day in the current directory. Using [`walkdir::WalkDir::follow_links`][c-walkdir::WalkDir::follow_links]{{hi:walkdir::WalkDir::follow_links}}⮳ ensures symbolic links{{hi:Symbolic links}} are followed like they were normal directories and files.
 
 ```rust,editable
-{{#include ../../../crates/cats/filesystem/tests/directory_traversal/find_file.rs:example}}
+{{#include ../../../crates/cats/filesystem/examples/directory_traversal/find_file.rs:example}}
 ```
 
 ## Traverse Directories While Skipping Dotfiles {#traverse-directories-while-skipping-dotfiles}
@@ -62,7 +62,7 @@ Uses [`walkdir::IntoIter::filter_entry`][c-walkdir::IntoIter::filter_entry]{{hi:
 Root dir `"."` yields through [`walkdir::WalkDir::depth`][c-walkdir::WalkDir::depth]⮳{{hi:walkdir::WalkDir::depth}} usage in `is_not_hidden` predicate.
 
 ```rust,editable
-{{#include ../../../crates/cats/filesystem/tests/directory_traversal/skip_dot.rs:example}}
+{{#include ../../../crates/cats/filesystem/examples/directory_traversal/skip_dot.rs:example}}
 ```
 
 ## Walk the Filesystem While Respecting Ignore Files {#walk-the-filesystem-while-respecting-ignore-files}
@@ -74,7 +74,7 @@ Root dir `"."` yields through [`walkdir::WalkDir::depth`][c-walkdir::WalkDir::de
 Recursive [filesystem][p-filesystem] walking that respects ignore files (like .gitignore)
 
 ```rust,editable
-{{#include ../../../crates/cats/filesystem/tests/directory_traversal/ignore.rs:example}}
+{{#include ../../../crates/cats/filesystem/examples/directory_traversal/ignore.rs:example}}
 ```
 
 ## Recursively Calculate File Sizes at a Given Depth {#recursively-calculate-file-sizes-at-given-depth}
@@ -84,7 +84,7 @@ Recursive [filesystem][p-filesystem] walking that respects ignore files (like .g
 Recursion depth can be flexibly set by [`walkdir::Walkdir::min_depth`][c-walkdir::WalkDir::min_depth]{{hi:walkdir::WalkDir::min_depth}}⮳ & [`walkdir::WalkDir::max_depth`][c-walkdir::WalkDir::max_depth]{{hi:walkdir::WalkDir::max_depth}}⮳ methods. Calculates sum of all file sizes to 3 subfolders depth, ignoring files in the root folder.
 
 ```rust,editable
-{{#include ../../../crates/cats/filesystem/tests/directory_traversal/sizes.rs:example}}
+{{#include ../../../crates/cats/filesystem/examples/directory_traversal/sizes.rs:example}}
 ```
 
 ## Find All Files with a Given Extension Recursively {#find-all-png-files-recursively}
@@ -96,7 +96,7 @@ Recursively find all PNG files in the current directory. In this case, the `**` 
 Use the `**` pattern in any path portion. For example, `/media/**/*.png` matches all PNGs in `media` and it's subdirectories.
 
 ```rust,editable
-{{#include ../../../crates/cats/filesystem/tests/directory_traversal/png.rs:example}}
+{{#include ../../../crates/cats/filesystem/examples/directory_traversal/png.rs:example}}
 ```
 
 ## Find All Files with Given Pattern, Ignoring Filename Case {#find-all-files-with-given-pattern-ignoring-filename-case}
@@ -108,7 +108,7 @@ Find all image files in the `/media/` directory matching the `img_[0-9][0-9]*.pn
 A custom [`glob::MatchOptions`][c-glob::MatchOptions]{{hi:glob::MatchOptions}}⮳ struct is passed to the [`glob::glob_with`][c-glob::glob_with]{{hi:glob::glob_with}}⮳ function making the glob{{hi:glob}} pattern case insensitive while keeping the other options [`std::default::Default`][c-std::default::Default]{{hi:std::default::Default}}⮳.
 
 ```rust,editable
-{{#include ../../../crates/cats/filesystem/tests/directory_traversal/ignore_case.rs:example}}
+{{#include ../../../crates/cats/filesystem/examples/directory_traversal/ignore_case.rs:example}}
 ```
 
 ## `globset` {#globset}
@@ -118,7 +118,7 @@ A custom [`glob::MatchOptions`][c-glob::MatchOptions]{{hi:glob::MatchOptions}}�
 [`globset`][c-globset]⮳{{hi:globset}} allows multiple globs to be evaluated at once. Glob set matching is the process of matching one or more [`glob`][c-glob]⮳{{hi:glob}} patterns against a single candidate path simultaneously, and returning all of the globs that matched.
 
 ```rust,editable
-{{#include ../../../crates/cats/filesystem/tests/directory_traversal/globset.rs:example}}
+{{#include ../../../crates/cats/filesystem/examples/directory_traversal/globset.rs:example}}
 ```
 
 {{#include refs.incl.md}}

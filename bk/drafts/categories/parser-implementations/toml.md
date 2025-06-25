@@ -11,7 +11,7 @@
 [`toml`][c-toml]⮳{{hi:toml}} is a native Rust encoder and decoder of TOML-formatted files and [streams][p-streams]. Provides implementations of the standard Serialize/Deserialize [traits][p-traits] for TOML data to facilitate deserializing and serializing Rust structures.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/tests/toml/toml.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/toml/toml.rs:example}}
 ```
 
 ## `toml_edit` {#toml-edit}
@@ -21,7 +21,7 @@
 [`toml_edit`][c-toml_edit]⮳{{hi:toml_edit}} is a format-preserving TOML parser.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/tests/toml/toml_edit.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/toml/toml_edit.rs:example}}
 ```
 
 ## `basic_toml` {#basic-toml}
@@ -31,7 +31,7 @@
 [`basic_toml`][c-basic_toml]⮳{{hi:basic_toml}} is a minimal TOML library with few dependencies
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/tests/toml/basic_toml.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/toml/basic_toml.rs:example}}
 ```
 
 {{#include refs.incl.md}}

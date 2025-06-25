@@ -13,7 +13,7 @@ The tie between Ruby and Rust.
 The [`rutie`][c-rutie]⮳{{hi:rutie}} crate provides a high-level and safe interface to the Ruby C API. It's the most common and recommended approach for Ruby/Rust integration. It handles a lot of the boilerplate and memory management.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_ffi/tests/ruby/rutie.rs:example}}
+{{#include ../../../crates/cats/development_tools_ffi/examples/ruby/rutie.rs:example}}
 ```
 
 ## Write Ruby Extension gems in Rust, or call Ruby code from a Rust with `magnus` {#magnus}
@@ -23,7 +23,7 @@ The [`rutie`][c-rutie]⮳{{hi:rutie}} crate provides a high-level and safe inter
 High level Ruby bindings. Write Ruby extension gems in Rust, or call Ruby code from a Rust binary.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_ffi/tests/ruby/magnus.rs:example}}
+{{#include ../../../crates/cats/development_tools_ffi/examples/ruby/magnus.rs:example}}
 ```
 
 ## Other Less Common Options {#skip}

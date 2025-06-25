@@ -15,7 +15,7 @@ In most cases, you will use this crate directly only when writing [async][p-asyn
 [`futures::future::Select`][c-futures::future::Select]{{hi:futures::future::Select}}⮳ polls multiple futures and streams simultaneously, executing the branch for the future that finishes first. If multiple futures are ready, one will be pseudo-randomly selected at runtime.
 
 ```rust,editable
-{{#include ../../../crates/cats/asynchronous/tests/futures/futures1.rs:example}}
+{{#include ../../../crates/cats/asynchronous/examples/futures/futures1.rs:example}}
 ```
 
 ## Joining Futures {#joining-futures}
@@ -23,7 +23,7 @@ In most cases, you will use this crate directly only when writing [async][p-asyn
 [![futures-website][c-futures-website-badge]][c-futures-website] [![futures][c-futures-badge]][c-futures] [![futures-crates.io][c-futures-crates.io-badge]][c-futures-crates.io] [![futures-github][c-futures-github-badge]][c-futures-github] [![futures-lib.rs][c-futures-lib.rs-badge]][c-futures-lib.rs]{{hi:futures}}{{hi:Async}}{{hi:Future}}{{hi:futures}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
 ```rust,editable
-{{#include ../../../crates/cats/asynchronous/tests/futures/futures2.rs:example}}
+{{#include ../../../crates/cats/asynchronous/examples/futures/futures2.rs:example}}
 ```
 
 ## Map, `then`, `either`, `flatten` {#map-then-either-flatten}
@@ -33,7 +33,7 @@ In most cases, you will use this crate directly only when writing [async][p-asyn
 The [`futures`][c-futures]{{hi:futures}}⮳ crate provides an extension trait that provides a variety of convenient adapters.
 
 ```rust,editable
-{{#include ../../../crates/cats/asynchronous/tests/futures/futures3.rs:example}}
+{{#include ../../../crates/cats/asynchronous/examples/futures/futures3.rs:example}}
 ```
 
 ## `futures-util` {#futures-util}
@@ -43,7 +43,7 @@ The [`futures`][c-futures]{{hi:futures}}⮳ crate provides an extension trait th
 Common utilities and extension [traits][p-traits] for the [`futures-rs`][c-futures]⮳{{hi:futures-rs}} library. Extensions to Rust's `Future` and `Stream` traits. Combinators and utilities for working with [`Futures`][c-futures]⮳{{hi:Futures}}, `Streams`, `Sinks`, and the `AsyncRead` and `AsyncWrite` traits.
 
 ```rust,editable
-{{#include ../../../crates/cats/asynchronous/tests/futures/futures_util.rs:example}}
+{{#include ../../../crates/cats/asynchronous/examples/futures/futures_util.rs:example}}
 ```
 
 ## Related Topics {#skip}

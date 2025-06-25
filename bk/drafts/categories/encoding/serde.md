@@ -12,7 +12,7 @@
 [`serde`][c-serde]⮳{{hi:serde}} is the de facto standard serialization library. Use in conjunction with sub-crates like [`serde_json`][c-serde_json]⮳{{hi:serde_json}} for the specific format that you are using.
 
 ```rust,editable
-{{#include ../../../crates/cats/encoding/tests/serde/serde.rs:example}}
+{{#include ../../../crates/cats/encoding/examples/serde/serde.rs:example}}
 ```
 
 ## (De)serialize JSON {#serde-json2}
@@ -25,7 +25,7 @@
 [`serde-json`][c-serde_json]⮳{{hi:serde-json}}
 
 ```rust,editable
-{{#include ../../../crates/cats/encoding/tests/serde/serde_json.rs:example}}
+{{#include ../../../crates/cats/encoding/examples/serde/serde_json.rs:example}}
 ```
 
 ## Handle Unknown Fields When Deserializing, with `serde-ignored` {#serde-ignored}
@@ -38,7 +38,7 @@
 [`serde-ignored`][c-serde_ignored]⮳{{hi:serde-ignored}}
 
 ```rust,editable
-{{#include ../../../crates/cats/encoding/tests/serde/serde_ignored.rs:example}}
+{{#include ../../../crates/cats/encoding/examples/serde/serde_ignored.rs:example}}
 ```
 
 ## `monostate` {#monostate}
@@ -51,7 +51,7 @@
 The [`monostate`][c-monostate]⮳{{hi:monostate}} library implements a type macro for a zero-sized type that is Serde deserializable only from one specific value.
 
 ```rust,editable
-{{#include ../../../crates/cats/encoding/tests/serde/monostate.rs:example}}
+{{#include ../../../crates/cats/encoding/examples/serde/monostate.rs:example}}
 ```
 
 {{#include refs.incl.md}}

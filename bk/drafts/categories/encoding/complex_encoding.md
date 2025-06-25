@@ -13,7 +13,7 @@ Unstructured [JSON][p-json] can be parsed into a universal [`serde_json::Value`]
 The example below shows a `&str` of [JSON][p-json] being parsed. The expected value is declared using the [`serde_json::json`][c-serde_json::json]{{hi:serde_json::json}}⮳ macro.
 
 ```rust,editable
-{{#include ../../../crates/cats/encoding/tests/serde/json.rs:example}}
+{{#include ../../../crates/cats/encoding/examples/serde/json.rs:example}}
 ```
 
 ## Deserialize a TOML Configuration File {#toml}
@@ -24,13 +24,13 @@ TOML is a simple, ergonomic, and readable [configuration][p-configuration] forma
 The following parses some TOML into a universal [`toml::Value`][c-toml::Value]⮳{{hi:toml::Value}} that is able to represent any valid [TOML][p-toml] data.
 
 ```rust,editable
-{{#include ../../../crates/cats/encoding/tests/toml/toml.rs:example}}
+{{#include ../../../crates/cats/encoding/examples/toml/toml.rs:example}}
 ```
 
 Parse [TOML][p-toml] into your own [structs][p-structs] using [`serde`][c-serde]{{hi:serde}}⮳.
 
 ```rust,editable
-{{#include ../../../crates/cats/encoding/tests/toml/toml1.rs:example}}
+{{#include ../../../crates/cats/encoding/examples/toml/toml1.rs:example}}
 ```
 
 ## Read and Write Integers in Little-endian Byte Order {#byteorder}
@@ -40,7 +40,7 @@ Parse [TOML][p-toml] into your own [structs][p-structs] using [`serde`][c-serde]
 [`byteorder`][c-byteorder]⮳ is a library for reading/writing numbers in big-endian and little-endian. It can reverse the significant bytes of structured data. This may be necessary when receiving information over the network, when bytes received are from another system.
 
 ```rust,editable
-{{#include ../../../crates/cats/encoding/tests/endian_byte.rs:example}}
+{{#include ../../../crates/cats/encoding/examples/endian_byte.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -13,7 +13,7 @@ The Rust [standard library][p-standard-library] provides smart pointer types, su
 Declare global state using [`lazy static`][c-lazy_static]{{hi:lazy_static}}{{hi:Lazy static}}. [`lazy static`][c-lazy_static]{{hi:lazy_static}}⮳ creates a globally available `static ref` which requires a [`std::sync::Mutex`][c-std::sync::Mutex]{{hi:std::sync::Mutex}}⮳ to allow mutation (also see [`std::sync::RwLock`][c-std::sync::RwLock]{{hi:std::sync::RwLock}}⮳). The [`std::sync::Mutex`][c-std::sync::Mutex]{{hi:std::sync::Mutex}}⮳ wrap ensures the state cannot be simultaneously accessed by multiple threads, preventing race conditions. A [`std::sync::MutexGuard`][c-std::sync::MutexGuard]{{hi:std::sync::MutexGuard}}⮳ must be acquired to read or mutate the value stored in a [`std::sync::Mutex`][c-std::sync::Mutex]{{hi:std::sync::Mutex}}⮳.
 
 ```rust,editable
-{{#include ../../../crates/cats/concurrency/tests/shared_state/global_mut_state.rs:example}}
+{{#include ../../../crates/cats/concurrency/examples/shared_state/global_mut_state.rs:example}}
 ```
 
 ## Mutexes {#mutex}
@@ -23,7 +23,7 @@ Declare global state using [`lazy static`][c-lazy_static]{{hi:lazy_static}}{{hi:
 Allow access to data from one thread at a time.
 
 ```rust,editable
-{{#include ../../../crates/cats/concurrency/tests/shared_state/shared_state_mutex.rs:example}}
+{{#include ../../../crates/cats/concurrency/examples/shared_state/shared_state_mutex.rs:example}}
 ```
 
 ## `parking_lot` {#parking-lot}
@@ -37,11 +37,11 @@ Allow access to data from one thread at a time.
 [`std::sync::Mutex`][c-std::sync::Mutex]⮳{{hi:std::sync::Mutex}} {{hi:std::sync::Mutex}} works fine, but [`parking_lot`][c-parking_lot]⮳{{hi:parking_lot}} is faster.
 
 ```rust,editable
-{{#include ../../../crates/cats/concurrency/tests/shared_state/shared_state_parking_lot.rs:example}}
+{{#include ../../../crates/cats/concurrency/examples/shared_state/shared_state_parking_lot.rs:example}}
 ```
 
 ```rust,editable
-{{#include ../../../crates/cats/concurrency/tests/shared_state/shared_state_parking_lot2.rs:example}}
+{{#include ../../../crates/cats/concurrency/examples/shared_state/shared_state_parking_lot2.rs:example}}
 ```
 
 ## Related Topics

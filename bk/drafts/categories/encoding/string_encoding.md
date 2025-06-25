@@ -9,7 +9,7 @@
 Encode an input string with [percent_encoding][wikipedia-percent_encoding]⮳ using the [`percent_encoding`][c-percent_encoding]⮳{{hi:percent_encoding}} crate. Then decode using the [`percent_encoding::percent_decode`][c-percent_encoding::percent_decode]{{hi:percent_encoding::percent_decode}}⮳ function.
 
 ```rust,editable
-{{#include ../../../crates/cats/encoding/tests/strings/percent_encode.rs:example}}
+{{#include ../../../crates/cats/encoding/examples/strings/percent_encode.rs:example}}
 ```
 
 The encode set defines which bytes (in addition to non-ASCII and controls) need to be percent-encoded. The choice of this set depends on context. For example, [`url`][c-url]⮳{{hi:url}} encodes `?` in a [URL][p-url] path but not in a query string.
@@ -23,7 +23,7 @@ The return value of [encoding][p-encoding] is an iterator of `&str` [slices][p-s
 Encodes a string into [`application/x-www-form-urlencoded`][web-application/x-www-form-urlencoded]{{hi:application/x-www-form-urlencoded}} syntax using the [`form_urlencoded::byte_serialize`][c-form_urlencoded::byte_serialize]{{hi:form_urlencoded::byte_serialize}}⮳ and subsequently decodes it with [`form_urlencoded::parse`][c-form_urlencoded::parse]{{hi:form_urlencoded::parse}}⮳. Both functions return iterators that collect into a [`std::string::String`][c-std::string::String]{{hi:std::string::String}}⮳.
 
 ```rust,editable
-{{#include ../../../crates/cats/encoding/tests/strings/url_encode.rs:example}}
+{{#include ../../../crates/cats/encoding/examples/strings/url_encode.rs:example}}
 ```
 
 ## Encode and Decode Hexadecimal {#data-encoding}
@@ -37,7 +37,7 @@ Similarly, a `HEXUPPER::decode` method is provided which takes a `&[u8]` and ret
 The example below coverts `&[u8]` data to hexadecimal equivalent. Compares this value to the expected value.
 
 ```rust,editable
-{{#include ../../../crates/cats/encoding/tests/strings/hex.rs:example}}
+{{#include ../../../crates/cats/encoding/examples/strings/hex.rs:example}}
 ```
 
 ## Encode and Decode base64 {#base64}
@@ -47,7 +47,7 @@ The example below coverts `&[u8]` data to hexadecimal equivalent. Compares this 
 Encodes byte slice into [`base64`][c-base64]⮳{{hi:base64}} {{hi:base64}} String using [`base64::encode`][c-base64::encode]{{hi:base64::encode}} and decodes it with [`base64::decode`][c-base64::decode]{{hi:base64::decode}}.
 
 ```rust,editable
-{{#include ../../../crates/cats/encoding/tests/strings/base64.rs:example}}
+{{#include ../../../crates/cats/encoding/examples/strings/base64.rs:example}}
 ```
 
 ## URL Encoding {#percent-encoding}
@@ -57,7 +57,7 @@ Encodes byte slice into [`base64`][c-base64]⮳{{hi:base64}} {{hi:base64}} Strin
 [`percent-encoding`][c-percent_encoding]⮳{{hi:percent-encoding}} handles URL encoding and decoding.
 
 ```rust,editable
-{{#include ../../../crates/cats/encoding/tests/string_encoding/percent_encoding.rs:example}}
+{{#include ../../../crates/cats/encoding/examples/string_encoding/percent_encoding.rs:example}}
 ```
 
 {{#include refs.incl.md}}

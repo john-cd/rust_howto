@@ -29,7 +29,7 @@ Read and write data asynchronously with Tokio, using [streams][p-streams], codec
 equivalent to
 
 ```rust,editable
-{{#include ../../../crates/cats/asynchronous/tests/tokio/tokio2.rs:example}}
+{{#include ../../../crates/cats/asynchronous/examples/tokio/tokio2.rs:example}}
 ```
 
 [LocalSet][c-tokio::task::LocalSet]{{hi:tokio::task::LocalSet}}⮳.
@@ -37,7 +37,7 @@ equivalent to
 In some cases, it is necessary to run one or more [futures][p-futures] that do not implement Send{{hi:Send}} and thus are unsafe to send between threads. In these cases, a local task set may be used to schedule one or more `!Send` futures to run together on the same thread.
 
 ```rust,editable
-{{#include ../../../crates/cats/asynchronous/tests/tokio/tokio21.rs:example}}
+{{#include ../../../crates/cats/asynchronous/examples/tokio/tokio21.rs:example}}
 ```
 
 ## Graceful Shutdown {#graceful-shutdown}
@@ -47,7 +47,7 @@ In some cases, it is necessary to run one or more [futures][p-futures] that do n
 Example from [tokio_graceful_shutdown][c-tokio_graceful_shutdown]{{hi:tokio_graceful_shutdown}}⮳:
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/asynchronous/tests/tokio/tokio_graceful_shutdown.rs:example}}
+{{#include ../../../crates/cats/asynchronous/examples/tokio/tokio_graceful_shutdown.rs:example}}
 ```
 
 ## Useful Links

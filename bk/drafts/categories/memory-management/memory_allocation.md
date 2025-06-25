@@ -17,7 +17,7 @@
 `tikv-jemallocator` is a Rust allocator backed by 'jemalloc' (a well-known C library). It is a drop-in replacement for the standard Rust allocator (in `alloc::alloc`).
 
 ```rust,editable
-{{#include ../../../crates/cats/memory_management/tests/jemalloc.rs:example}}
+{{#include ../../../crates/cats/memory_management/examples/jemalloc.rs:example}}
 ```
 
 ### Use the `mimalloc` Memory Allocator {#mimalloc}
@@ -27,7 +27,7 @@
 Mimalloc is a general purpose, performance-oriented allocator built by Microsoft. It is also a drop-in replacement for the standard Rust allocator (in `alloc::alloc`).
 
 ```rust,editable
-{{#include ../../../crates/cats/memory_management/tests/mimalloc.rs:example}}
+{{#include ../../../crates/cats/memory_management/examples/mimalloc.rs:example}}
 ```
 
 ## Pre-allocated Storage for a Uniform Data Type {#skip}

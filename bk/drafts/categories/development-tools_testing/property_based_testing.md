@@ -23,7 +23,7 @@ proptest = "1.0.0"
 ```
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_testing/tests/property_based_testing/proptest.rs:example}}
+{{#include ../../../crates/cats/development_tools_testing/examples/property_based_testing/proptest.rs:example}}
 ```
 
 ## Test Data Generation with `fake` {#test_data_generation}
@@ -35,7 +35,7 @@ An easy to use library and command line for generating fake data like name, numb
 Often done with custom [functions][p-functions] or data structures, but crates like [`fake`][c-fake]⮳{{hi:fake}} can be useful for generating realistic test data.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_testing/tests/property_based_testing/fake.rs:example}}
+{{#include ../../../crates/cats/development_tools_testing/examples/property_based_testing/fake.rs:example}}
 ```
 
 {{#include refs.incl.md}}

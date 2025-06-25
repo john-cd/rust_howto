@@ -11,7 +11,7 @@
 "An ECS-based game engine, good for 3D but also capable of 2D."
 
 ```rust,editable
-{{#include ../../../crates/cats/game_engines/tests/game_engines/bevy.rs:example}}
+{{#include ../../../crates/cats/game_engines/examples/game_engines/bevy.rs:example}}
 ```
 
 ### Develop Games with `fyrox` {#fyrox}
@@ -23,7 +23,7 @@
 "An OOP-focused game engine with 3D and 2D support and a full [GUI][p-gui] scene editor."
 
 ```rust,editable
-{{#include ../../../crates/cats/game_engines/tests/game_engines/fyrox.rs:example}}
+{{#include ../../../crates/cats/game_engines/examples/game_engines/fyrox.rs:example}}
 ```
 
 ### Develop 2D Games with `ggez` {#ggez}
@@ -33,7 +33,7 @@
 [`ggez`][c-ggez]⮳{{hi:ggez}} is "a simpler [option][p-option] for 2d [games][p-games] only."
 
 ```rust,editable
-{{#include ../../../crates/cats/game_engines/tests/game_engines/ggez.rs:example}}
+{{#include ../../../crates/cats/game_engines/examples/game_engines/ggez.rs:example}}
 ```
 
 ### Develop 2D Games with `macroquad` {#macroquad}
@@ -43,7 +43,7 @@
 [`macroquad`][c-macroquad]⮳{{hi:macroquad}} is "a simple and easy to use 2D game library, great for beginners."
 
 ```rust,editable
-{{#include ../../../crates/cats/game_engines/tests/game_engines/macroquad.rs:example}}
+{{#include ../../../crates/cats/game_engines/examples/game_engines/macroquad.rs:example}}
 ```
 
 {{#include refs.incl.md}}

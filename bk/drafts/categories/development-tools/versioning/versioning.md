@@ -17,7 +17,7 @@
 Constructs a [`semver::Version`][c-semver::Version]{{hi:semver::Version}}⮳ from a string literal using [`semver::Version::parse`][c-semver::Version::parse]{{hi:semver::Version::parse}}⮳.
 
 ```rust,editable
-{{#include ../../../../crates/cats/development_tools/tests/semver/semver_parse.rs:example}}
+{{#include ../../../../crates/cats/development_tools/examples/semver/semver_parse.rs:example}}
 ```
 
 ## Parse a Complex Version String {#parse-a-complex-version-string}
@@ -29,7 +29,7 @@ Constructs a [`semver::Version`][c-semver::Version]{{hi:semver::Version}}⮳ fro
 Note that, in accordance with the SemVer Specification, build metadata is parsed but not considered when comparing versions. In other words, two versions may be equal even if their build strings differ.
 
 ```rust,editable
-{{#include ../../../../crates/cats/development_tools/tests/semver/semver_complex.rs:example}}
+{{#include ../../../../crates/cats/development_tools/examples/semver/semver_complex.rs:example}}
 ```
 
 ## Check if a Given Version is Pre-release {#check-if-pre-release}
@@ -39,7 +39,7 @@ Note that, in accordance with the SemVer Specification, build metadata is parsed
 Given two versions, [`semver::Version`][c-semver::Version]{{hi:semver::Version}}⮳ asserts that one is pre-release and the other is not.
 
 ```rust,editable
-{{#include ../../../../crates/cats/development_tools/tests/semver/semver_prerelease.rs:example}}
+{{#include ../../../../crates/cats/development_tools/examples/semver/semver_prerelease.rs:example}}
 ```
 
 ## Find the Latest Version Satisfying a Given Range {#find-latest-version-within-range}
@@ -50,7 +50,7 @@ Given a list of version &strs, finds the latest [`semver::Version`][c-semver::Ve
 [`semver::VersionReq`][c-semver::VersionReq]{{hi:semver::VersionReq}}⮳ filters the list with [`semver::VersionReq::matches`][c-semver::VersionReq::matches]{{hi:semver::VersionReq::matches}}⮳ Also demonstrates [`semver`][c-semver]{{hi:semver}}⮳ pre-release preferences.
 
 ```rust,editable
-{{#include ../../../../crates/cats/development_tools/tests/semver/semver_latest.rs:example}}
+{{#include ../../../../crates/cats/development_tools/examples/semver/semver_latest.rs:example}}
 ```
 
 ## Check External Command Version for Compatibility {#check-external-command-version-for-compat}
@@ -62,7 +62,7 @@ Runs `git --version` using [`std::process::Command`][c-std::process::Command]{{h
 [`semver::VersionReq`][c-semver::VersionReq]{{hi:semver::VersionReq}} to the parsed version. The command output resembles "git version x.y.z".
 
 ```rust,editable
-{{#include ../../../../crates/cats/development_tools/tests/semver/semver_command.rs:example}}
+{{#include ../../../../crates/cats/development_tools/examples/semver/semver_command.rs:example}}
 ```
 
 {{#include refs.incl.md}}

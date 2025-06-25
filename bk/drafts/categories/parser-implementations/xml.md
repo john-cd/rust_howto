@@ -9,7 +9,7 @@
 [`xml`][c-xml]⮳{{hi:xml}} is an XML library written in pure Rust.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/tests/xml/xml.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/xml/xml.rs:example}}
 ```
 
 ## `quick-xml` {#quick-xml}
@@ -19,7 +19,7 @@
 [`quick-xml`][c-quick_xml]⮳{{hi:quick-xml}} is a high-performance XML reader and writer. [`quick_xml`][c-quick_xml]⮳{{hi:quick_xml}} is fast for streaming.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/tests/xml/quick_xml.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/xml/quick_xml.rs:example}}
 ```
 
 ## `xmlparser` {#xmlparser}
@@ -29,7 +29,7 @@
 [`xmlparser`][c-xmlparser]⮳{{hi:xmlparser}} is a pull-based, zero-allocation XML parser.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/tests/xml/xmlparser.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/xml/xmlparser.rs:example}}
 ```
 
 ## `xml5ever` {#xml5ever}
@@ -39,7 +39,7 @@
 [`xml5ever`][c-xml5ever]⮳{{hi:xml5ever}} is a push-based streaming parser for XML.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/tests/xml/xml5ever.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/xml/xml5ever.rs:example}}
 ```
 
 ## Parse XML as a read-only tree with `roxmltree` {#roxmltree}
@@ -49,7 +49,7 @@
 [`roxmltree`][c-roxmltree]⮳{{hi:roxmltree}} represents an XML as a read-only tree. It is good for simple parsing.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/tests/xml/roxmltree.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/xml/roxmltree.rs:example}}
 ```
 
 ## Other Options {#skip}

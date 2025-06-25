@@ -21,7 +21,7 @@ See [Async: What is blocking? blog post][blog-async-what-is-blocking]⮳.
 Use [`tokio::task::spawn_blocking`][c-tokio::task::spawn_blocking]{{hi:tokio::task::spawn_blocking}}⮳ to run a _small portion_ of synchronous code{{hi:Synchronous code}}.
 
 ```rust,editable
-{{#include ../../../crates/cats/asynchronous/tests/call_blocking_from_async/call_blocking_from_async_spawn_blocking.rs:example}}
+{{#include ../../../crates/cats/asynchronous/examples/call_blocking_from_async/call_blocking_from_async_spawn_blocking.rs:example}}
 ```
 
 ## Use the `rayon` Crate {#rayon}
@@ -33,7 +33,7 @@ Use [`tokio::task::spawn_blocking`][c-tokio::task::spawn_blocking]{{hi:tokio::ta
 [`rayon`][c-rayon]⮳{{hi:rayon}}
 
 ```rust,editable
-{{#include ../../../crates/cats/asynchronous/tests/call_blocking_from_async/call_blocking_from_async_rayon.rs:example}}
+{{#include ../../../crates/cats/asynchronous/examples/call_blocking_from_async/call_blocking_from_async_rayon.rs:example}}
 ```
 
 ### Spawn a Dedicated Thread {#spawn-a-dedicated-thread}
@@ -47,7 +47,7 @@ Use [`tokio::task::spawn_blocking`][c-tokio::task::spawn_blocking]{{hi:tokio::ta
 If a blocking operation{{hi:Blocking operation}} keeps running forever, you should run it on a dedicated thread{{hi:Dedicated thread}}.
 
 ```rust,editable
-{{#include ../../../crates/cats/asynchronous/tests/call_blocking_from_async/call_blocking_from_async_spawn_dedicated_thread.rs:example}}
+{{#include ../../../crates/cats/asynchronous/examples/call_blocking_from_async/call_blocking_from_async_spawn_dedicated_thread.rs:example}}
 ```
 
 ## Call Async Code from Blocking Code {#call-async-from-blocking}
@@ -67,7 +67,7 @@ In other cases, it may be easier to structure the application as largely synchro
 [`futures_executor`][c-futures_executor]{{hi:futures_executor}}⮳ includes a minimal executor. The [`futures_executor::block_on`][c-futures_executor::block_on]{{hi:futures_executor::block_on}}⮳ function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
 
 ```rust,editable
-{{#include ../../../crates/cats/asynchronous/tests/call_async_from_blocking/call_async_from_blocking_futures_executor.rs:example}}
+{{#include ../../../crates/cats/asynchronous/examples/call_async_from_blocking/call_async_from_blocking_futures_executor.rs:example}}
 ```
 
 ### Use the Tokio Runtime Directly {#tokio-runtime}
@@ -76,7 +76,7 @@ In other cases, it may be easier to structure the application as largely synchro
 [![tokio-github][c-tokio-github-badge]][c-tokio-github] [![tokio-lib.rs][c-tokio-lib.rs-badge]][c-tokio-lib.rs] [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}{{hi:spawn_blocking}}
 
 ```rust,editable
-{{#include ../../../crates/cats/asynchronous/tests/call_async_from_blocking/call_async_from_blocking_tokio_runtime.rs:example}}
+{{#include ../../../crates/cats/asynchronous/examples/call_async_from_blocking/call_async_from_blocking_tokio_runtime.rs:example}}
 ```
 
 ## Related Topics {#skip}

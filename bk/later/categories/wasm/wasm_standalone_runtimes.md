@@ -57,7 +57,7 @@ wasmer run cowsay "hello world"
 You can embed the Wasmer runtime in your code with the Wasmer SDK:
 
 ```rust,editable
-{{#include ../../../crates/cats/wasm/tests/wasm_standalone_runtimes/wasmer.rs:example}}
+{{#include ../../../crates/cats/wasm/examples/wasm_standalone_runtimes/wasmer.rs:example}}
 ```
 
 ### `wasmtime` {#wasmtime}
@@ -89,7 +89,7 @@ wasmtime hello.wasm
 The [`wasmtime`][c-wasmtime-github]⮳ crate is a high-level API to expose the Wasmtime runtime. It is useful for embedding WebAssembly into your code and interacting with WebAssembly modules or WebAssembly components. For example, you can compile WebAssembly, create instances, and call functions.
 
 ```rust,editable
-{{#include ../../../crates/cats/wasm/tests/wasm_standalone_runtimes/wasmtime.rs:example}}
+{{#include ../../../crates/cats/wasm/examples/wasm_standalone_runtimes/wasmtime.rs:example}}
 ```
 
 ## WebAssembly System Interface (WASI) {#skip3}

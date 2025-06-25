@@ -11,19 +11,19 @@ These examples calculate measures of central tendency for a data set contained w
 The first example calculates the mean (the sum of all measurements divided by the number of measurements in the set) by producing an iterator of references over the data, and using [`std::iter::Iterator::sum`][c-std::iter::Iterator::sum]{{hi:std::iter::Iterator::sum}}⮳ and [`len`][primitive-slice::len]{{hi:len}}⮳ to determine the total value and count of values respectively.
 
 ```rust,editable
-{{#include ../../../crates/cats/mathematics/tests/stats/central_tendency.rs:example}}
+{{#include ../../../crates/cats/mathematics/examples/stats/central_tendency.rs:example}}
 ```
 
 The second example calculates the median using the quickselect algorithm, which avoids a full [`sort`][primitive-slice::sort]{{hi:sort}}⮳ by sorting only partitions of the data set known to possibly contain the median. This uses [`std::cmp::Ord::cmp`][c-std::cmp::Ord::cmp]{{hi:std::cmp::Ord::cmp}}⮳ and [`std::cmp::Ordering`][c-std::cmp::Ordering]{{hi:std::cmp::Ordering}}⮳ to succinctly decide the next partition to examine, and [`split_at`][primitive-slice::sort]{{hi:split_at}}⮳ to choose an arbitrary pivot for the next partition at each step.
 
 ```rust,editable
-{{#include ../../../crates/cats/mathematics/tests/stats/central_tendency1.rs:example}}
+{{#include ../../../crates/cats/mathematics/examples/stats/central_tendency1.rs:example}}
 ```
 
 The final example calculates the mode using a mutable [`std::collections::HashMap`][c-std::collections::HashMap]{{hi:std::collections::HashMap}}⮳ to collect counts of each distinct integer from the set, using a [`std::iter::Iterator::fold`][c-std::iter::Iterator::fold]{{hi:std::iter::Iterator::fold}}⮳ and the [`std::collections::hash_map::Entry`][c-std::collections::hash_map::Entry]{{hi:std::collections::hash_map::Entry}}⮳ API. The most frequent value in the [`std::collections::HashMap`][c-std::collections::HashMap]{{hi:std::collections::HashMap}}⮳ surfaces with [`std::iter::Iterator::max_by_key`][c-std::iter::Iterator::max_by_key]{{hi:std::iter::Iterator::max_by_key}}⮳.
 
 ```rust,editable
-{{#include ../../../crates/cats/mathematics/tests/stats/central_tendency2.rs:example}}
+{{#include ../../../crates/cats/mathematics/examples/stats/central_tendency2.rs:example}}
 ```
 
 ## Compute the Standard Deviation {#standard-deviation}
@@ -37,7 +37,7 @@ The standard deviation is defined as the square root of the variance (here calcu
 The z-score is the number of standard deviations a single measurement spans away from the `mean` of the data set.
 
 ```rust,editable
-{{#include ../../../crates/cats/mathematics/tests/stats/standard_deviation.rs:example}}
+{{#include ../../../crates/cats/mathematics/examples/stats/standard_deviation.rs:example}}
 ```
 
 {{#include refs.incl.md}}

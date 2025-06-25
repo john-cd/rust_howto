@@ -11,7 +11,7 @@
 The [`zeroize`][c-zeroize]⮳{{hi:zeroize}} crate securely clear secrets from memory. It guarantees that memory is zeroed, using an operation that will not be optimized away by the compiler. It is a portable pure-Rust implementation that works everywhere, even with WASM.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/utilities/zeroize.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/utilities/zeroize.rs:example}}
 ```
 
 ## `subtle` {#subtle}
@@ -25,7 +25,7 @@ It consists of a `Choice` type, and a collection of [traits][p-traits] using `Ch
 The [`subtle`][c-subtle]⮳{{hi:subtle}} crate is a low-level library and doesn't implement cryptographic algorithms itself. Instead, it provides the building blocks for developers to implement cryptographic algorithms in a way that minimizes the risk of timing attacks. It's typically used in low-level cryptographic libraries or when implementing custom cryptographic protocols.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/tests/utilities/subtle.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/utilities/subtle.rs:example}}
 ```
 
 ## Related Topics {#skip}

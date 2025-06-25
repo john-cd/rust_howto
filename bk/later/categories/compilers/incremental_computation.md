@@ -11,7 +11,7 @@
 [`salsa`][c-salsa]⮳{{hi:salsa}} is designed for situations where you have a large computation that can be broken down into smaller, interdependent pieces. Salsa automatically tracks dependencies between these pieces, and when a change occurs, it only recomputes the affected parts, rather than the entire computation. This is crucial for [performance][p-performance] in scenarios like compilers, build systems, and interactive tools where changes are frequent and full recomputation is expensive.
 
 ```rust,editable
-{{#include ../../../crates/cats/compilers/tests/incremental_computation/salsa.rs:example}}
+{{#include ../../../crates/cats/compilers/examples/incremental_computation/salsa.rs:example}}
 ```
 
 ## Implementing Incremental Computation with `comemo` {#comemo}
@@ -23,7 +23,7 @@
 [`comemo`][c-comemo]⮳{{hi:comemo}} provides memoization utilities, primarily focusing on compile-time memoization. It allows you to precompute the results of [functions][p-functions] at compile time and embed them directly into the binary. This can significantly improve runtime [performance][p-performance] for functions with expensive computations but fixed inputs. [`comemo`][c-comemo]⮳{{hi:comemo}} uses `const` generics and procedural macros to achieve this compile-time evaluation. It's particularly useful for lookups, precomputed tables, or any situation where the function's inputs are known at compile time. Unlike runtime memoization, [`comemo`][c-comemo]⮳{{hi:comemo}} avoids any runtime overhead associated with checking and storing cached values. However, it does increase compile time as the computations are performed during compilation.
 
 ```rust,editable
-{{#include ../../../crates/cats/compilers/tests/incremental_computation/comemo.rs:example}}
+{{#include ../../../crates/cats/compilers/examples/incremental_computation/comemo.rs:example}}
 ```
 
 ## Related Topics {#skip}

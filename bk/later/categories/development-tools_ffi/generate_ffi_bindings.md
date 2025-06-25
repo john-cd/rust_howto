@@ -14,7 +14,7 @@
 [`bindgen`][c-bindgen]⮳{{hi:bindgen}} automatically generates Rust FFI bindings to C and C++ libraries. It creates Rust code allowing you to call into a C library's functions and use its types.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_ffi/tests/c/bindgen.rs:example}}
+{{#include ../../../crates/cats/development_tools_ffi/examples/c/bindgen.rs:example}}
 ```
 
 ## Generates C Header Files from Rust code with `cbindgen` {#cbindgen}
@@ -29,7 +29,7 @@
 [`cbindgen`][c-cbindgen]⮳{{hi:cbindgen}} generates C bindings to Rust libraries, making Rust [functions][p-functions] callable from C/C++.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_ffi/tests/c/cbindgen.rs:example}}
+{{#include ../../../crates/cats/development_tools_ffi/examples/c/cbindgen.rs:example}}
 ```
 
 ## Interop Between C++ and Rust {#cxx}
@@ -47,7 +47,7 @@
 While tools like 'SWIG' exist, [`cxx`][c-cxx]⮳{{hi:cxx}} is generally preferred for modern C++ interop with Rust, because it's more idiomatic and safer.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_ffi/tests/cpp/cxx.rs:example}}
+{{#include ../../../crates/cats/development_tools_ffi/examples/cpp/cxx.rs:example}}
 ```
 
 ## `uniffi` {#uniffi}
@@ -57,7 +57,7 @@ While tools like 'SWIG' exist, [`cxx`][c-cxx]⮳{{hi:cxx}} is generally preferre
 [`uniffi`][c-uniffi]⮳{{hi:uniffi}} is a multi-language bindings generator for Rust.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_ffi/tests/uniffi.rs:example}}
+{{#include ../../../crates/cats/development_tools_ffi/examples/uniffi.rs:example}}
 ```
 
 ## FFI Caveats {#skip}

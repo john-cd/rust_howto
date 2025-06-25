@@ -9,7 +9,7 @@
 [`heck`][c-heck]⮳{{hi:heck}} is a case conversion library. This library exists to provide case conversion between common cases like `CamelCase` and `snake_case`.
 
 ```rust,editable
-{{#include ../../../crates/cats/text_processing/tests/string_manipulation/heck.rs:example}}
+{{#include ../../../crates/cats/text_processing/examples/string_manipulation/heck.rs:example}}
 ```
 
 ## `textwrap` {#textwrap}
@@ -19,7 +19,7 @@
 [`textwrap`][c-textwrap]⮳{{hi:textwrap}} provides word wrapping, indenting, and dedenting strings. It has optional support for Unicode and emojis, as well as machine hyphenation.
 
 ```rust,editable
-{{#include ../../../crates/cats/text_processing/tests/string_manipulation/textwrap.rs:example}}
+{{#include ../../../crates/cats/text_processing/examples/string_manipulation/textwrap.rs:example}}
 ```
 
 ## `indoc` {#indoc}
@@ -37,7 +37,7 @@ The [`indoc`][c-indoc]⮳{{hi:indoc}} crate exports five additional macros to su
 `concatdoc!(...)` — equivalent to `concat!(...)` with each string literal wrapped in `indoc!`
 
 ```rust,editable
-{{#include ../../../crates/cats/text_processing/tests/string_manipulation/indoc.rs:example}}
+{{#include ../../../crates/cats/text_processing/examples/string_manipulation/indoc.rs:example}}
 ```
 
 ## Related Topics

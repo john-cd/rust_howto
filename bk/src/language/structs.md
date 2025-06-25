@@ -9,7 +9,7 @@
 Structs are custom data types that allow you to group related data together. The following example demonstrates how to define a `struct` and create a instance of it:
 
 ```rust,editable
-{{#include ../../crates/language/tests/structs/structs.rs:example}}
+{{#include ../../crates/language/examples/structs/structs.rs:example}}
 ```
 
 Struct fields{{hi:Fields}} follow the general rule of everything being private by default,{{hi:Private by default}} unless annotated with [`pub`][book-rust-reference-visibility-and-privacy]{{hi:Visibility}}⮳. See the [[visibility | Visibility]] chapter.
@@ -17,7 +17,7 @@ Struct fields{{hi:Fields}} follow the general rule of everything being private b
 Struct fields may be a primitive type, a tuple, an array, an enum, another struct (for nested structs), a reference...
 
 ```rust,editable
-{{#include ../../crates/language/tests/structs/struct_fields.rs:example}}
+{{#include ../../crates/language/examples/structs/struct_fields.rs:example}}
 ```
 
 ### Declare Tuple Structs and Unit-like Structs {#tuple-structs}
@@ -25,7 +25,7 @@ Struct fields may be a primitive type, a tuple, an array, an enum, another struc
 You can also define tuple struct (no field names) and "Unit-like" structs (without fields). Unit-like structs are so named, because they behave similarly to `()`.
 
 ```rust,editable
-{{#include ../../crates/language/tests/structs/tuple_structs.rs:example}}
+{{#include ../../crates/language/examples/structs/tuple_structs.rs:example}}
 ```
 
 ### Design Structs for Ownership {#struct-ownership}
@@ -43,7 +43,7 @@ Note that self-referential structs, that is structs that hold a reference to the
 You may update a `struct` by using the `..previous_instance` to fill in the rest.
 
 ```rust,editable
-{{#include ../../crates/language/tests/structs/struct_update.rs:example}}
+{{#include ../../crates/language/examples/structs/struct_update.rs:example}}
 ```
 
 ## Implement and Use the Methods and Associated Functions of a Struct {#methods}
@@ -63,7 +63,7 @@ The first parameter of a method can also be `self: Box<Self>`, `self: Arc<Self>`
 Associated functions, in contrast, do not take `self` as a parameter. They are often constructor-like, returning `Self` (like `String::new`, `String::from`):
 
 ```rust,editable
-{{#include ../../crates/language/tests/structs/struct_impl.rs:example}}
+{{#include ../../crates/language/examples/structs/struct_impl.rs:example}}
 ```
 
 Each struct is allowed to have multiple `impl` blocks. Multiple `impl` blocks are useful when implementing generic types and traits - see below; also refer to the [[generics | Generics]] chapters.
@@ -80,7 +80,7 @@ p1.distance(&p2);
 It is common to define a function or an associated function to initialize the struct:
 
 ```rust,editable
-{{#include ../../crates/language/tests/structs/struct_init.rs:example}}
+{{#include ../../crates/language/examples/structs/struct_init.rs:example}}
 ```
 
 ## Define an Associated Constant for a Struct {#struct-constant}
@@ -88,7 +88,7 @@ It is common to define a function or an associated function to initialize the st
 You can also define associated constants in the implementation of a `struct`:
 
 ```rust,editable
-{{#include ../../crates/language/tests/structs/struct_constant.rs:example}}
+{{#include ../../crates/language/examples/structs/struct_constant.rs:example}}
 ```
 
 ## Implement a Trait for a Struct {#implement-trait-for-struct}
@@ -106,7 +106,7 @@ Trait implementations can also include the definition of associated types and co
 The following example demonstrates various implementations:
 
 ```rust,editable
-{{#include ../../crates/language/tests/structs/struct_trait.rs:example}}
+{{#include ../../crates/language/examples/structs/struct_trait.rs:example}}
 ```
 
 ### Implement Common Standard Library Traits {#common-traits}
@@ -114,7 +114,7 @@ The following example demonstrates various implementations:
 Rather then forcing you to implement very common traits repeatedly, Rust provides a `derive` attribute that can autoimplement them for you:
 
 ```rust,editable
-{{#include ../../crates/language/tests/structs/common_traits.rs:example}}
+{{#include ../../crates/language/examples/structs/common_traits.rs:example}}
 ```
 
 See the [[derive | Derive]] chapter for more details.
@@ -130,7 +130,7 @@ The following example demonstrates the declaration, implementation, and instance
 Note how multiple `impl` blocks are possible; they can implement associated functions and methods for all possible `T`s; for specific types only; or conditionally, only for types that implement certain traits. See [[generics | Generics]] for more details.
 
 ```rust,editable
-{{#include ../../crates/language/tests/structs/generic_structs.rs:example}}
+{{#include ../../crates/language/examples/structs/generic_structs.rs:example}}
 ```
 
 ## References {#skip}

@@ -15,7 +15,7 @@
 See also: the [nominomicon][c-nom-nominomicon]⮳ book.
 
 ```rust,editable
-{{#include ../../../crates/cats/parsing/tests/parsing/nom.rs:example}}
+{{#include ../../../crates/cats/parsing/examples/parsing/nom.rs:example}}
 ```
 
 ## Create a Parser with `pest` {#pest}
@@ -31,7 +31,7 @@ See also: the [nominomicon][c-nom-nominomicon]⮳ book.
 Grammars are saved in separate [`.pest`][c-pest]⮳{{hi:.pest}}  files which are never mixed with procedural code. This results in an always up-to-date formalization of a language that is easy to read and maintain.
 
 ```rust,editable
-{{#include ../../../crates/cats/parsing/tests/pest/pest.rs:example}}
+{{#include ../../../crates/cats/parsing/examples/pest/pest.rs:example}}
 ```
 
 ### Create a Parser with `tree-sitter` {#tree-sitter}
@@ -44,7 +44,7 @@ Grammars are saved in separate [`.pest`][c-pest]⮳{{hi:.pest}}  files which ar
 [`tree-sitter`][c-tree_sitter]⮳{{hi:tree-sitter}} provides Rust bindings to the Tree-sitter parsing library. [`tree-sitter`][tree-sitter-website]⮳ is a parser generator tool and an incremental parsing library. It can build a concrete syntax tree for a source file and efficiently update the syntax tree as the source file is edited.
 
 ```rust,editable
-{{#include ../../../crates/cats/parsing/tests/parsing/tree_sitter.rs:example}}
+{{#include ../../../crates/cats/parsing/examples/parsing/tree_sitter.rs:example}}
 ```
 
 ## Other Notable Crates {#skip}

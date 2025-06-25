@@ -15,7 +15,7 @@
 This is the officially supported MongoDB Rust driver, a client side library that can be used to interact with MongoDB deployments in Rust applications. It uses the bson crate for BSON support. The driver contains a fully [async][p-async] API that requires [tokio][p-tokio]. The driver also has a sync API that may be enabled via feature flags.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/database/tests/nosql/mongodb.rs:example}}
+{{#include ../../../crates/cats/database/examples/nosql/mongodb.rs:example}}
 ```
 
 ## Connect to Redis {#redis}
@@ -28,7 +28,7 @@ This is the officially supported MongoDB Rust driver, a client side library that
 Redis-rs is a high level `redis` library for Rust. It provides convenient access to all Redis functionality through a very flexible but low-level API. It uses a customizable type conversion trait so that any operation can return results in just the type you are expecting. This makes for a very pleasant development experience.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/database/tests/nosql/redis.rs:example}}
+{{#include ../../../crates/cats/database/examples/nosql/redis.rs:example}}
 ```
 
 ## Connect to Cassandra Using `cdrs_tokio` {#cdrs_tokio}
@@ -38,7 +38,7 @@ Redis-rs is a high level `redis` library for Rust. It provides convenient access
 [`cdrs_tokio`][c-cdrs_tokio]⮳{{hi:cdrs_tokio}} is an async Cassandra DB (or Scylla DB) driver. It uses the [`tokio`][c-tokio]⮳{{hi:tokio}} async runtime.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/database/tests/cassandra/cdrs_tokio.rs:example}}
+{{#include ../../../crates/cats/database/examples/cassandra/cdrs_tokio.rs:example}}
 ```
 
 ## Connect to Cassandra Using `cassandra_protocol` {#cassandra_protocol}
@@ -48,7 +48,7 @@ Redis-rs is a high level `redis` library for Rust. It provides convenient access
 [`cassandra-protocol`][c-cassandra_protocol]⮳{{hi:Cassandra}} provides a Cassandra protocol implementation in Rust. Prefer the [`cdrs_tokio`][c-cdrs_tokio]⮳{{hi:cdrs_tokio}} crate unless you need a low-level implementation.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/database/tests/cassandra/cassandra_protocol.rs:example}}
+{{#include ../../../crates/cats/database/examples/cassandra/cassandra_protocol.rs:example}}
 ```
 
 {{#include refs.incl.md}}

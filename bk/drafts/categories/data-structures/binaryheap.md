@@ -7,7 +7,7 @@
 [![std][c-std-badge]][c-std] [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]
 
 ```rust,editable
-{{#include ../../../crates/cats/data_structures/tests/binaryheap/binaryheap.rs:example}}
+{{#include ../../../crates/cats/data_structures/examples/binaryheap/binaryheap.rs:example}}
 ```
 
 ## `priority-queue` {#priority-queue}
@@ -17,7 +17,7 @@
 [`priority-queue`][c-priority_queue]⮳{{hi:priority-queue}} implements a Priority Queue implemented as a heap with a function to efficiently change the priority of an item. Priority and items are stored in an IndexMap and the queue is implemented as a Heap of indexes.
 
 ```rust,editable
-{{#include ../../../crates/cats/data_structures/tests/binaryheap/priority_queue.rs:example}}
+{{#include ../../../crates/cats/data_structures/examples/binaryheap/priority_queue.rs:example}}
 ```
 
 ## Related Topics

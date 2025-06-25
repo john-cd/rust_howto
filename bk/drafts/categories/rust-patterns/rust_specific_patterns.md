@@ -14,7 +14,7 @@
 The [`dyn-clone`][c-dyn_clone]⮳{{hi:dyn-clone}} crate provides a `DynClone` trait that can be used in trait objects, and a [`clone_box`][c-clone_box]⮳{{hi:clone_box}} function that can clone any sized or dynamically sized implementation of `DynClone`. Types that implement the standard library's [`std::clone::Clone`][c-std::clone::Clone]⮳{{hi:std::clone::Clone}} trait are automatically usable by a `DynClone` trait object.
 
 ```rust,editable
-{{#include ../../../crates/cats/rust_patterns/tests/rust_specific_patterns/dyn_clone.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/examples/rust_specific_patterns/dyn_clone.rs:example}}
 ```
 
 ## `pin-project` and `pin-project-lite` {#pin-project}
@@ -28,7 +28,7 @@ The [`dyn-clone`][c-dyn_clone]⮳{{hi:dyn-clone}} crate provides a `DynClone` tr
 `pin-project-lite` is a lightweight version of `pin-project` written with declarative macros. The `pin_project!` macro creates a projection type covering all the fields of struct.
 
 ```rust,editable
-{{#include ../../../crates/cats/rust_patterns/tests/rust_specific_patterns/pin_project.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/examples/rust_specific_patterns/pin_project.rs:example}}
 ```
 
 See also:

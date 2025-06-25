@@ -13,7 +13,7 @@
 [`leptos`][c-leptos-github]{{hi:leptos}}⮳ is a full-stack, isomorphic Rust web framework leveraging fine-grained reactivity to build declarative user interfaces.
 
 ```rust,editable
-{{#include ../../../crates/cats/web_programming_http_server/tests/leptos.rs:example}}
+{{#include ../../../crates/cats/web_programming_http_server/examples/leptos.rs:example}}
 ```
 
 {{#include refs.incl.md}}

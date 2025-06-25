@@ -30,13 +30,13 @@ You will see complex pattern matching most commonly in `match` expressions, but 
 The following code demonstrates pattern matching against an enumeration (`enum`):
 
 ```rust,editable
-{{#include ../../crates/language/tests/match/match1.rs:example}}
+{{#include ../../crates/language/examples/match/match1.rs:example}}
 ```
 
 The following example shows pattern matching using a `struct`:
 
 ```rust,editable
-{{#include ../../crates/language/tests/match/match2.rs:example}}
+{{#include ../../crates/language/examples/match/match2.rs:example}}
 ```
 
 ## Handle a Single Pattern with `if let` {#if-let}
@@ -46,7 +46,7 @@ The following example shows pattern matching using a `struct`:
 `if let` is a concise way to match a single pattern:
 
 ```rust,editable
-{{#include ../../crates/language/tests/match/if_let.rs:example}}
+{{#include ../../crates/language/examples/match/if_let.rs:example}}
 ```
 
 ## Loop as Long as a Pattern Matches with `while let` {#while-let}
@@ -54,7 +54,7 @@ The following example shows pattern matching using a `struct`:
 `while let` is similar to `if let`, but it allows you to loop as long as the pattern continues to match:
 
 ```rust,editable
-{{#include ../../crates/language/tests/match/while_let.rs:example}}
+{{#include ../../crates/language/examples/match/while_let.rs:example}}
 ```
 
 ## Destructure Elements from an Iterator within a `for` Loop {#destructure-for}
@@ -62,7 +62,7 @@ The following example shows pattern matching using a `struct`:
 `for` loops can destructure elements from an iterator:
 
 ```rust,editable
-{{#include ../../crates/language/tests/match/for1.rs:example}}
+{{#include ../../crates/language/examples/match/for1.rs:example}}
 ```
 
 ## Destructure during Assignment with `let` and `let else` {#let-else}
@@ -70,13 +70,13 @@ The following example shows pattern matching using a `struct`:
 `let`, beyond simple assignments of a value to a variable, can also destructure - provided that binding to the pattern can't fail:
 
 ```rust,editable
-{{#include ../../crates/language/tests/match/let1.rs:example}}
+{{#include ../../crates/language/examples/match/let1.rs:example}}
 ```
 
 With `let ... else ...`, a refutable pattern (a pattern that can fail) can match and bind variables in the surrounding scope like a normal `let`, or else diverge (e.g. `break`, `return`, `panic!`) when the pattern doesn't match:
 
 ```rust,editable
-{{#include ../../crates/language/tests/match/let_else.rs:example}}
+{{#include ../../crates/language/examples/match/let_else.rs:example}}
 ```
 
 ## Destructure Arguments of a Function or Closure {#destructure-function-or-closure}
@@ -84,7 +84,7 @@ With `let ... else ...`, a refutable pattern (a pattern that can fail) can match
 Destructuring in function or closure parameters lets you unpack complex data types right in their signature, making your code cleaner:
 
 ```rust,editable
-{{#include ../../crates/language/tests/match/fn_closure_arguments.rs:example}}
+{{#include ../../crates/language/examples/match/fn_closure_arguments.rs:example}}
 ```
 
 ## Pattern Syntax {#pattern-syntax}
@@ -108,7 +108,7 @@ The following table summarizes possible patterns, which, of course, can be combi
 You can match against literal values like `1`, "Rust", `true`, `(0, 0)`, `[1, 2]`, or `Some(42)` directly:
 
 ```rust,editable
-{{#include ../../crates/language/tests/match/literals.rs:example}}
+{{#include ../../crates/language/examples/match/literals.rs:example}}
 ```
 
 ### Match against a Range {#match-ranges}
@@ -116,7 +116,7 @@ You can match against literal values like `1`, "Rust", `true`, `(0, 0)`, `[1, 2]
 Ranges match a value between two numbers either inclusively (`start..=end`) or exclusively at the upper bound (`start_included..end_not_included`). Ranges work for both `char` and integer types:
 
 ```rust,editable
-{{#include ../../crates/language/tests/match/ranges.rs:example}}
+{{#include ../../crates/language/examples/match/ranges.rs:example}}
 ```
 
 ### Bind to Variables {#variable-bindings}
@@ -124,7 +124,7 @@ Ranges match a value between two numbers either inclusively (`start..=end`) or e
 Patterns can bind parts of a matched value to new variables:
 
 ```rust,editable
-{{#include ../../crates/language/tests/match/variable_binding.rs:example}}
+{{#include ../../crates/language/examples/match/variable_binding.rs:example}}
 ```
 
 ### Destructure {#skip}
@@ -136,7 +136,7 @@ Patterns can destructure structs, enums, tuples, and references.
 The pattern to destructure a struct is similar to the `struct` assignment syntax:
 
 ```rust,editable
-{{#include ../../crates/language/tests/match/destructure_struct.rs:example}}
+{{#include ../../crates/language/examples/match/destructure_struct.rs:example}}
 ```
 
 #### Destructure Enums {#destructure-enums}
@@ -144,7 +144,7 @@ The pattern to destructure a struct is similar to the `struct` assignment syntax
 You can destructure enums variant by variant and bind their fields, if any, to variables:
 
 ```rust,editable
-{{#include ../../crates/language/tests/match/destructure_enum.rs:example}}
+{{#include ../../crates/language/examples/match/destructure_enum.rs:example}}
 ```
 
 #### Destructure Tuples {#destructure-tuples}
@@ -152,7 +152,7 @@ You can destructure enums variant by variant and bind their fields, if any, to v
 Tuples can be destructured into their components:
 
 ```rust,editable
-{{#include ../../crates/language/tests/match/destructure_tuple.rs:example}}
+{{#include ../../crates/language/examples/match/destructure_tuple.rs:example}}
 ```
 
 #### Destructure References {#destructure-references}
@@ -160,7 +160,7 @@ Tuples can be destructured into their components:
 References can be destructured as well:
 
 ```rust,editable
-{{#include ../../crates/language/tests/match/destructure_reference.rs:example}}
+{{#include ../../crates/language/examples/match/destructure_reference.rs:example}}
 ```
 
 ### Ignore Values {#ignore-values}
@@ -170,7 +170,7 @@ References can be destructured as well:
 - `..` ignores remaining parts of a struct, tuple, or slice.
 
 ```rust,editable
-{{#include ../../crates/language/tests/match/ignore_values.rs:example}}
+{{#include ../../crates/language/examples/match/ignore_values.rs:example}}
 ```
 
 ### Use an Or (`|`) to Match Multiple Patterns {#or-patterns}
@@ -178,7 +178,7 @@ References can be destructured as well:
 A sequence of patterns separated by `|` match if any of the sub-patterns match. All sub-patterns must bind variables of the same name and type:
 
 ```rust,editable
-{{#include ../../crates/language/tests/match/or_patterns.rs:example}}
+{{#include ../../crates/language/examples/match/or_patterns.rs:example}}
 ```
 
 ### Bind a Variable with `@` Bindings (Bind to Subpatterns) {#at-bindings}
@@ -186,7 +186,7 @@ A sequence of patterns separated by `|` match if any of the sub-patterns match. 
 `variable @ pattern` binds a variable name to a value while also testing that value against a further pattern:
 
 ```rust,editable
-{{#include ../../crates/language/tests/match/at_bindings.rs:example}}
+{{#include ../../crates/language/examples/match/at_bindings.rs:example}}
 ```
 
 ### Match Guards (`if condition`) {#match-guards}
@@ -194,7 +194,7 @@ A sequence of patterns separated by `|` match if any of the sub-patterns match. 
 Match guards add an additional conditional check to a pattern:
 
 ```rust,editable
-{{#include ../../crates/language/tests/match/match_guards.rs:example}}
+{{#include ../../crates/language/examples/match/match_guards.rs:example}}
 ```
 
 ### Create References While Binding with `ref` and `ref mut` {#ref-and-ref-mut-bindings}
@@ -202,7 +202,7 @@ Match guards add an additional conditional check to a pattern:
 Variable binding moves or copies a matched value into the new variable. `ref` (or `ref mut`) create (mutable) references instead:
 
 ```rust,editable
-{{#include ../../crates/language/tests/match/ref_bindings.rs:example}}
+{{#include ../../crates/language/examples/match/ref_bindings.rs:example}}
 ```
 
 Note that Rust's "match ergonomics" often make explicit `ref` and `ref mut` unnecessary when matching on references.

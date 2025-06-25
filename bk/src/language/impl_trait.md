@@ -9,7 +9,7 @@
 `impl Trait` is essentially syntactic sugar for a generic type parameter with a trait bound, like `<T: Trait>`, except that, in argument position, the type is anonymous and doesn't appear in the generic parameter list of a function. In return position, unlike with a generic type parameter, the function, not the caller, chooses the return type:
 
 ```rust,editable
-{{#include ../../crates/language/tests/impl_trait/impl_trait.rs:example}}
+{{#include ../../crates/language/examples/impl_trait/impl_trait.rs:example}}
 ```
 
 Do not confuse `impl Trait` with `dyn Trait`. The [[trait_objects | Trait Objects]] chapter explains the difference.
@@ -21,7 +21,7 @@ As discussed above, you can use `impl Trait` in the return type of a function to
 This is useful when the exact type is complex, not relevant to the caller, or impossible to write explicitly, and especially for closures and iterators:
 
 ```rust,editable
-{{#include ../../crates/language/tests/impl_trait/rpit.rs:example}}
+{{#include ../../crates/language/examples/impl_trait/rpit.rs:example}}
 ```
 
 ## Related Topics {#skip}

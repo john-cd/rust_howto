@@ -27,7 +27,7 @@ The [`flutter_rust_bridge`][c-flutter_rust_bridge]⮳{{hi:flutter_rust_bridge}} 
 [`flutter_rust_bridge`][c-flutter_rust_bridge]⮳{{hi:flutter_rust_bridge}} helps generate the necessary boilerplate code (both Rust and Dart) to bridge the FFI gap.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_ffi/tests/flutter/flutter_rust_bridge.rs:example}}
+{{#include ../../../crates/cats/development_tools_ffi/examples/flutter/flutter_rust_bridge.rs:example}}
 ```
 
 ## Communication Between Rust and Dart {#skip3}

@@ -9,7 +9,7 @@
 ## Internationalize Your App {#internationalization}
 
 ```rust,editable
-{{#include ../../../crates/cats/internationalization/tests/internationalization/internationalization1.rs:example}}
+{{#include ../../../crates/cats/internationalization/examples/internationalization/internationalization1.rs:example}}
 ```
 
 {{#include refs.incl.md}}

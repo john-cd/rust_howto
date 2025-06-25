@@ -7,7 +7,7 @@
 A layered architecture is a traditional software design pattern that organizes an application into distinct horizontal layers, like Presentation, Business Logic, and Data Access. Each layer performs a specific role, and they are arranged in a hierarchical order. It encourages separation of concerns, modularity, and testability.
 
 ```rust,editable
-{{#include ../../../crates/other/tests/architecture/layered_architecture.rs:example}}
+{{#include ../../../crates/other/examples/architecture/layered_architecture.rs:example}}
 ```
 
 ## Microservices Architecture {#microservices}
@@ -108,7 +108,7 @@ See the [[_actors |  Actors]] chapter for more details.
 Command Query Responsibility Segregation (CQRS) is an architectural pattern that separates read and write operations. This separation allows for independent optimization of each operation, leading to improved performance, scalability, and security. It is useful for systems with high read/write demands or complex business rules.
 
 ```rust,editable
-{{#include ../../../crates/other/tests/architecture/cqrs.rs:example}}
+{{#include ../../../crates/other/examples/architecture/cqrs.rs:example}}
 ```
 
 ## Pipelines/Streams {#pipelines}

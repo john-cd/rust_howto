@@ -27,7 +27,7 @@ Stack allocation has several important characteristics:
 It offers a simple API but also dereferences to a `slice`, so that the full `slice` API is available.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/data_structures/tests/vec/arrayvec.rs:example}}
+{{#include ../../../crates/cats/data_structures/examples/vec/arrayvec.rs:example}}
 ```
 
 ## `smallvec` {#smallvec}
@@ -42,7 +42,7 @@ It offers a simple API but also dereferences to a `slice`, so that the full `sli
 Arrays that are stack-allocated will fallback to the heap if the fixed stack capacity is exceeded.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/data_structures/tests/vec/smallvec.rs:example}}
+{{#include ../../../crates/cats/data_structures/examples/vec/smallvec.rs:example}}
 ```
 
 ## `tinyvec` {#tinyvec}
@@ -59,7 +59,7 @@ It is in 100% safe Rust code. It is similar to [`smallvec`][c-smallvec]⮳{{hi:s
 [`tinyvec`][c-tinyvec]⮳{{hi:tinyvec}} requires items to implement the [`Default`][c-std::default::Default]⮳{{hi:Default}} trait.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/data_structures/tests/vec/tinyvec.rs:example}}
+{{#include ../../../crates/cats/data_structures/examples/vec/tinyvec.rs:example}}
 ```
 
 {{#include refs.incl.md}}

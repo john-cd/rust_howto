@@ -21,7 +21,7 @@ Rust has several categories of primitive scalar types: integers, floating-point 
 The following illustrates the various scalar data types:
 
 ```rust,editable
-{{#include ../../crates/language/tests/data_types/scalar_data_types.rs:example}}
+{{#include ../../crates/language/examples/data_types/scalar_data_types.rs:example}}
 ```
 
 ## Compound Data Types: Tuples and Arrays {#compound-types}
@@ -40,7 +40,7 @@ Both are fixed length. A [[vectors | Vector]] is a similar collection type provi
 The following provides examples of tuples and arrays:
 
 ```rust,editable
-{{#include ../../crates/language/tests/data_types/compound_data_types.rs:example}}
+{{#include ../../crates/language/examples/data_types/compound_data_types.rs:example}}
 ```
 
 ## String Types {#string-types}
@@ -52,7 +52,7 @@ Primitive type `str` is a string slice that represents a view into a string, all
 `&String` can be coerced to `&str`, which makes `&str` a candidate for function arguments, if mutability and ownership are not required. If mutation is needed, use `&mut String`.
 
 ```rust,editable
-{{#include ../../crates/language/tests/data_types/string_data_types.rs:example}}
+{{#include ../../crates/language/examples/data_types/string_data_types.rs:example}}
 ```
 
 Strings are covered in much more details in the [[strings | Strings]] and [[text-processing | Text Processing]] chapters.
@@ -67,7 +67,7 @@ Strings are covered in much more details in the [[strings | Strings]] and [[text
 See also the [[functions | Functions]] chapter.
 
 ```rust,editable
-{{#include ../../crates/language/tests/data_types/unit_never.rs:example}}
+{{#include ../../crates/language/examples/data_types/unit_never.rs:example}}
 ```
 
 ## Type Aliases {#type-aliases}
