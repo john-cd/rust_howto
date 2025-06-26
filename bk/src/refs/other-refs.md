@@ -857,3 +857,6 @@
 [zld-github-badge]: https://img.shields.io/badge/zld-steelblue?logo=github
 [zld-github]: https://github.com/michaeleisel/zld
 [zs-website]: https://www.zs.com
+[rust-howto-code-of-conduct]: https://github.com/john-cd/rust_howto/blob/main/CODE_OF_CONDUCT.md
+[licecap-website]: https://www.cockos.com/licecap
+[silentcast-website]: https://github.com/colinkeenan/silentcast
