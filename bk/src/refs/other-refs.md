@@ -287,7 +287,7 @@
 [book~rust~trait-objects]: https://doc.rust-lang.org/book/ch17-02-trait-objects.html
 [book~rust~trait-objects~badge]: https://img.shields.io/badge/Rust_Book-Trait_objects-blue?logo=mdbook
 [book~the-little-book-of-rust-books]: https://lborb.github.io/book/title-page.html#the-little-book-of-rust-books
-[book~writing-interpreters-in-rust~gihub]: https://github.com/rust-hosted-langs/book
+[book~writing-interpreters-in-rust~github]: https://github.com/rust-hosted-langs/book
 [book~zero-to-production]: https://www.lpalmieri.com/posts/2020-05-24-zero-to-production-0-foreword
 [book~zero-to-production~github]: https://github.com/LukeMathWalker/zero-to-production
 [book~zero-to-production~github~badge]: https://img.shields.io/badge/zero_to_production-steelblue?logo=github

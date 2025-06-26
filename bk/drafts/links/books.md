@@ -166,7 +166,7 @@ See also the [Awesome Embedded Rust](https://github.com/rust-embedded/awesome-em
 
 ### Interpreters {#interpreters}
 
-- [Writing Interpreters in Rust: a Guide][book~writing-interpreters-in-rust~gihub]{{hi:Interpreters}}⮳.
+- [Writing Interpreters in Rust: a Guide][book~writing-interpreters-in-rust~github]{{hi:Interpreters}}⮳.
 
 ### Machine Learning {#machine-learning}
 
@@ -238,6 +238,6 @@ https://lborb.github.io/book/applications.html
 [book~rustwasm]: https://rustwasm.github.io/docs/book
 [book~zero-to-production~github]: https://github.com/LukeMathWalker/zero-to-production
 [book~zero-to-production]: https://www.lpalmieri.com/posts/2020-05-24-zero-to-production-0-foreword
-[book~writing-interpreters-in-rust~gihub]: https://github.com/rust-hosted-langs/book
+[book~writing-interpreters-in-rust~github]: https://github.com/rust-hosted-langs/book
 [gtk4-rs~website]: https://gtk-rs.org/gtk4-rs/git/book/introduction.html
 </div>

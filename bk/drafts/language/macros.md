@@ -16,7 +16,7 @@ Unlike macros in C and other languages, Rust macros are expanded into abstract s
 
 There are two main types of macros in Rust:
 
-- Declarative Macros (aka "macros by example"). These are the most common and look like pattern-matching rules. You’ve probably used them already with `println!`, `vec!`, or `format!`.
+- Declarative Macros (aka "macros by example"). These are the most common and look like pattern-matching rules. You've probably used them already with `println!`, `vec!`, or `format!`.
 
 - Procedural Macros are more advanced and allow you to operate on the abstract syntax tree (AST) of Rust code. They come in three flavors:
   - Custom derive: e.g., `#[derive(Debug)]`.
@@ -73,9 +73,9 @@ TODO cover common macros in std lib: https://doc.rust-lang.org/std/#macros
 Here are some common pitfalls to watch out for:
 
 - Overusing Macros: Sometimes a regular function or trait does the job just fine. Macros can obscure logic and make code harder to read or debug if used unnecessarily.
-- Poor Macro Hygiene. If your macro introduces variables without care, it can clash with names in the surrounding scope. This can lead to confusing bugs. Rust tries to help with hygiene, but it’s not foolproof - especially in procedural macros.
-- Complex or Unreadable Macros. Macros that try to do too much can become cryptic. If you can’t understand what your macro expands to without a mental workout, it might be time to simplify or rethink the design.
-- Lack of Testing. Macros don’t get tested like functions do. If you don’t write tests that exercise all the macro’s patterns and edge cases, you might miss subtle bugs.
+- Poor Macro Hygiene. If your macro introduces variables without care, it can clash with names in the surrounding scope. This can lead to confusing bugs. Rust tries to help with hygiene, but it's not foolproof - especially in procedural macros.
+- Complex or Unreadable Macros. Macros that try to do too much can become cryptic. If you can't understand what your macro expands to without a mental workout, it might be time to simplify or rethink the design.
+- Lack of Testing. Macros don't get tested like functions do. If you don't write tests that exercise all the macro's patterns and edge cases, you might miss subtle bugs.
 - Unexpected Expansion Behavior. Macros expand before type checking, so they can produce code that compiles incorrectly or fails in surprising ways. Debugging macro expansion can be tricky.
 - Lifetime and Type Issues. Especially in procedural macros, forgetting to handle lifetimes or generic parameters properly can lead to compiler errors that are hard to trace.
 - Unclear Error Messages. When something goes wrong inside a macro, the compiler often points to the macro invocation site, not the actual problem. Using compile_error! can help provide clearer diagnostics.
