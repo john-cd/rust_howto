@@ -64,7 +64,7 @@ fn replace(text: &str) -> String {
         )
     }) {
         let suffix = match typ {
-            "crate" => "", // FIXME
+            "crate" => "~docs", // FIXME
             "docs" => "~docs",
             "github" => "~github",
             "lib.rs" => "~lib.rs",
