@@ -46,3 +46,10 @@ alias nta := nextestall
   echo "Test all code in the workspace in $(pwd) (incl. doctests) (all features)"
   -cargo test --doc --workspace --quiet # nextest does not handle doctests
   cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all --all-features
+
+# Build and display the `cargo doc` documentation
+@docall:
+  echo "Build and display the `cargo doc` documentation for $(pwd)"
+  cargo clean --doc
+  cargo doc --no-deps --locked --document-private-items
+  cd ../target/publish/doc/ ; python3 -m http.server 9000

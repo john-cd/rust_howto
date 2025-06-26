@@ -53,3 +53,10 @@ alias nta := nextestall
 [unix]
 @runall:
   ./scripts/runall.sh {{root}}
+
+# Build and display the `cargo doc` documentation
+@docall:
+  echo "Build and display the `cargo doc` documentation for $(pwd)"
+  cargo clean --doc
+  cargo doc --no-deps --workspace --locked --document-private-items
+  cd ../target/xmpl/doc/ ; python3 -m http.server 9000

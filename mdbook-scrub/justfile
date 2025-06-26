@@ -74,8 +74,8 @@ alias d := doc
 @doc:
   echo "Build and display the `cargo doc` documentation for $(pwd)"
   cargo clean --doc
-  cargo doc --no-deps --locked # --document-private-items
-  cd ./target/doc/ ; python3 -m http.server 9000
+  cargo doc --no-deps --locked --document-private-items
+  cd ../target/mdbook-scrub/doc/ ; python3 -m http.server 9000
 
 # Run all the steps required before pushing code to GitHub
 @prep: fmt clean build clippy nextest doc

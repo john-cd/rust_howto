@@ -47,6 +47,13 @@ alias nta := nextestall
   -cargo test --doc --workspace --quiet # nextest does not handle doctests
   cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all --all-features
 
+# Build and display the `cargo doc` documentation
+@docall:
+  echo "Build and display the `cargo doc` documentation for $(pwd)"
+  cargo clean --doc
+  cargo doc --no-deps --workspace --locked --document-private-items
+  cd ../target/tools/doc/ ; python3 -m http.server 9000
+
 @release:
   echo "Build the tools in $(pwd) in release mode and copy to {{root}}/../bin"
   cargo +nightly build --bins --locked --all-features --release -Z unstable-options --artifact-dir "{{root}}/../bin"
