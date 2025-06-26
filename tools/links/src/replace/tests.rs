@@ -42,7 +42,7 @@ fn test_replace_crates_io() {
 #[test]
 fn test_replace_web() {
     let text = "{{!web clap regex}}";
-    let expected = "[![clap][c-clap-website-badge]][c-clap-website]{{hi:clap}}[![regex][c-regex-website-badge]][c-regex-website]{{hi:regex}}";
+    let expected = "[![clap][c-clap-website-badge]][c-clap~website]{{hi:clap}}[![regex][c-regex-website-badge]][c-regex~website]{{hi:regex}}";
     assert_eq!(replace(text), expected);
 }
 
@@ -115,7 +115,7 @@ fn test_replace_single_crates_io() {
 #[test]
 fn test_replace_single_web() {
     let text = "{{!web clap}}";
-    let expected = "[![clap][c-clap-website-badge]][c-clap-website]{{hi:clap}}";
+    let expected = "[![clap][c-clap-website-badge]][c-clap~website]{{hi:clap}}";
     assert_eq!(replace(text), expected);
 }
 
