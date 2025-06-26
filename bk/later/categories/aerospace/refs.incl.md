@@ -1,1 +1,1 @@
-[ex-aerospace-aero]: aerospace.md#aero
+[ex~aerospace~aero]: aerospace.md#aero

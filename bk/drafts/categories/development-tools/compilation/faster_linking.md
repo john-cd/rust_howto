@@ -2,13 +2,13 @@
 
 {{#include faster_linking.incl.md}}
 
-[![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
+[![cat~compilers][cat~compilers~badge]][cat~compilers]{{hi:Compilers}}
 
 Optimizing Rust linking involves several strategies to reduce binary size and link time.
 
 - ThinLTO: A variant of LTO that can offer a better balance between compile time and link time.
-- Reducing Dependencies: Fewer dependencies mean less code for the linker to process. Analyze your dependencies with [cargo][p-cargo] tree.
-- Code Size Reduction: Smaller code size can lead to faster linking. Techniques like minimizing [generics][p-generics] and using more compact data structures can help.
+- Reducing Dependencies: Fewer dependencies mean less code for the linker to process. Analyze your dependencies with [cargo][p~cargo] tree.
+- Code Size Reduction: Smaller code size can lead to faster linking. Techniques like minimizing [generics][p~generics] and using more compact data structures can help.
 - Linker Flags: Experiment with linker flags, but be careful and measure the impact.
 - Profiling: Use profiling tools to identify bottlenecks in the linking process. This is less common than compile-time profiling.
 
@@ -18,7 +18,7 @@ Optimizing Rust linking involves several strategies to reduce binary size and li
 
 ### Link-Time Optimization (LTO) {#skip}
 
-Enabling LTO allows the compiler to perform optimizations across the entire program during the linking phase. This can significantly reduce code size and improve [performance][p-performance] by eliminating dead code and inlining functions more effectively. Use the `-C lto=fat` or `-C lto=thin` (faster but less aggressive) compiler flags. LTO typically requires more memory and time during compilation.
+Enabling LTO allows the compiler to perform optimizations across the entire program during the linking phase. This can significantly reduce code size and improve [performance][p~performance] by eliminating dead code and inlining functions more effectively. Use the `-C lto=fat` or `-C lto=thin` (faster but less aggressive) compiler flags. LTO typically requires more memory and time during compilation.
 
 Link-Time Optimization (LTO) is controlled via `Cargo.toml`. Can sometimes improve linking times, but often increases compile time. Experiment to see if it helps.
 
@@ -50,7 +50,7 @@ Ensure dependencies are also built with optimizations enabled. This can be achie
 
 ## Profile-Guided Optimization (PGO) {#skip}
 
-PGO uses runtime profiling data to guide compiler optimizations, potentially leading to better [performance][p-performance] and smaller binaries. This involves a more complex build process but can be beneficial for performance-critical applications.
+PGO uses runtime profiling data to guide compiler optimizations, potentially leading to better [performance][p~performance] and smaller binaries. This involves a more complex build process but can be beneficial for performance-critical applications.
 
 ## Linker Flags {#skip}
 
@@ -60,7 +60,7 @@ Using linker-specific flags (e.g., -Wl,--gc-sections for GCC/ld) can help remove
 
 While primarily focused on compile time, incremental compilation can also indirectly affect linking by reducing the amount of work the linker needs to do. Ensure it's enabled.
 
-Incremental Linking: [Cargo][p-cargo]'s incremental compilation can help, but sometimes changes can invalidate the cache and require a full relink.
+Incremental Linking: [Cargo][p~cargo]'s incremental compilation can help, but sometimes changes can invalidate the cache and require a full relink.
 
 - [[incremental_computation | Incremental Computation]].
 
@@ -74,10 +74,10 @@ The Rust compiler spends a lot of time in the "link" step. LLD is much faster at
 
 The default linker does a good job, but there are faster alternatives depending on the operating system you are using:
 
-- [`lld`][lld-website]{{hi:lld}}⮳ on Windows and Linux, a linker developed by the LLVM{{hi:LLVM}} project;
-- [`zld`][zld-github]{{hi:zld}}⮳ on MacOS. [![zld-github][zld-github-badge]][zld-github].
+- [`lld`][lld~website]{{hi:lld}}⮳ on Windows and Linux, a linker developed by the LLVM{{hi:LLVM}} project;
+- [`zld`][zld~github]{{hi:zld}}⮳ on MacOS. [![zld~github][zld~github~badge]][zld~github].
 
-To speed up the linking phase you have to install the alternative linker on your machine and add this [configuration][p-configuration] file to the project:
+To speed up the linking phase you have to install the alternative linker on your machine and add this [configuration][p~configuration] file to the project:
 
 ```toml
 # .cargo/config.toml
@@ -104,15 +104,15 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 ```
 
-[`cargo-binutils`][c-cargo_binutils]⮳{{hi:cargo-binutils}} packages Cargo subcommands to invoke the LLVM tools shipped with the Rust toolchain.
+[`cargo-binutils`][c~cargo_binutils~docs]⮳{{hi:cargo-binutils}} packages Cargo subcommands to invoke the LLVM tools shipped with the Rust toolchain.
 
 ### Alternative - `mold` Linker {#mold-linker}
 
-[![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
+[![cat~compilers][cat~compilers~badge]][cat~compilers]{{hi:Compilers}}
 
-[`mold`][mold-github]{{hi:mold}}⮳ is up to 5× faster than [`lld`][lld-website]{{hi:lld}}⮳, but with a few caveats like limited platform support and occasional stability issues. To install [`mold`][c-mold]⮳{{hi:mold}}, run `sudo apt-get install mold clang` in Ubuntu.
+[`mold`][mold~github]{{hi:mold}}⮳ is up to 5× faster than [`lld`][lld~website]{{hi:lld}}⮳, but with a few caveats like limited platform support and occasional stability issues. To install [`mold`][c~mold~docs]⮳{{hi:mold}}, run `sudo apt-get install mold clang` in Ubuntu.
 
-You will also need to add the following to your [`cargo`][c-cargo]{{hi:cargo}}⮳ config at `.cargo/config.toml`:
+You will also need to add the following to your [`cargo`][c~cargo~docs]{{hi:cargo}}⮳ config at `.cargo/config.toml`:
 
 ```toml
 [target.x86_64-unknown-linux-gnu]
@@ -133,7 +133,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
 
 ## References {#skip}
 
-- [Enable Fast Compiles (Bevy)][c-bevy-enable-fast-compiles]{{hi:bevy}}⮳.
+- [Enable Fast Compiles (Bevy)][c~bevy~enable-fast-compiles]{{hi:bevy}}⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

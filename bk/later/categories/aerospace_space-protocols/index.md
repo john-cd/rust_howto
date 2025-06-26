@@ -1,6 +1,6 @@
 # Space Protocols
 
-[![cat-aerospace::space-protocols][cat-aerospace::space-protocols-badge]][cat-aerospace::space-protocols]{{hi:Space protocols}}
+[![cat~aerospace::space-protocols][cat~aerospace::space-protocols~badge]][cat~aerospace::space-protocols]{{hi:Space protocols}}
 
 {{#include space_protocols.incl.md}}
 
@@ -32,7 +32,7 @@ PUS is a CCSDS standard for on-board data handling. You will likely needs a cust
 
 ## Parsing
 
-Use crates like [`nom`][c-nom]⮳{{hi:nom}} or `binascii` to parse binary data structures defined in the protocol specifications
+Use crates like [`nom`][c~nom~docs]⮳{{hi:nom}} or `binascii` to parse binary data structures defined in the protocol specifications
 
 See:
 

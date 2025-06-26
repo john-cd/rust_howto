@@ -4,7 +4,7 @@
 
 ## `String` and `&str` {#string}
 
-[![std][c-std-badge]][c-std]{{hi:std}}{{hi:Strings}}
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}}{{hi:Strings}}
 
 `str` (String Slice) is a primitive type representing a view into a sequence of UTF-8 encoded bytes:
 
@@ -29,9 +29,9 @@ The relationship between `String` and `&str` is similar to that between `Vec<T>`
 
 ## Print and Format Strings {#placeholders}
 
-[![std][c-std-badge]][c-std]
+[![std][c~std~docs~badge]][c~std~docs]
 
-`print!` and its siblings (like `println!` and `format!`) take a format string as its primary argument and prints it to the standard output (the terminal, usually). Format strings are string literals that can contain placeholders, indicated by curly braces `{}`. These placeholders tell `print!` where to insert values you provide as additional arguments or variables. Use `{:?}` placeholders for [`std::fmt::Debug`][c-std::fmt::Debug]{{hi:std::fmt::Debug}}⮳ output or `{:#?}` for pretty printing{{hi:Pretty printing}}.
+`print!` and its siblings (like `println!` and `format!`) take a format string as its primary argument and prints it to the standard output (the terminal, usually). Format strings are string literals that can contain placeholders, indicated by curly braces `{}`. These placeholders tell `print!` where to insert values you provide as additional arguments or variables. Use `{:?}` placeholders for [`std::fmt::Debug`][c~std::fmt::Debug~docs]{{hi:std::fmt::Debug}}⮳ output or `{:#?}` for pretty printing{{hi:Pretty printing}}.
 
 You may also use `dbg!` for debug output.{{hi:Debug output}} `dbg!` returns ownership of the expression's value, so it can be inserted almost anywhere.
 
@@ -41,7 +41,7 @@ You may also use `dbg!` for debug output.{{hi:Debug output}} `dbg!` returns owne
 
 ## Concatenate Strings {#string-concatenation}
 
-See the [[string_concat | String Concatenation]] chapter and the [Concatenation Benchmark][concatenation_benchmarks-github]⮳.
+See the [[string_concat | String Concatenation]] chapter and the [Concatenation Benchmark][concatenation_benchmarks~github]⮳.
 
 ## String Manipulation {#skip}
 

@@ -4,15 +4,15 @@
 
 ## Call `libc`, the C Standard Library {#call-libc}
 
-[![libc][c-libc-badge]][c-libc]{{hi:libc}}
-[![libc-crates.io][c-libc-crates.io-badge]][c-libc-crates.io]
-[![libc-github][c-libc-github-badge]][c-libc-github]
-[![libc-lib.rs][c-libc-lib.rs-badge]][c-libc-lib.rs]
-[![cat-external-ffi-bindings][cat-external-ffi-bindings-badge]][cat-external-ffi-bindings]{{hi:External FFI bindings}}
-[![cat-os][cat-os-badge]][cat-os]{{hi:Operating systems}}
-[![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
+[![libc][c~libc~docs~badge]][c~libc~docs]{{hi:libc}}
+[![libc~crates.io][c~libc~crates.io~badge]][c~libc~crates.io]
+[![libc~github][c~libc~github~badge]][c~libc~github]
+[![libc~lib.rs][c~libc~lib.rs~badge]][c~libc~lib.rs]
+[![cat~external-ffi-bindings][cat~external-ffi-bindings~badge]][cat~external-ffi-bindings]{{hi:External FFI bindings}}
+[![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}}
+[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-Bindings for directly calling [`libc`][c-libc]⮳{{hi:libc}} functions.
+Bindings for directly calling [`libc`][c~libc~docs]⮳{{hi:libc}} functions.
 
 ```rust,editable
 {{#include ../../../crates/cats/os/examples/low_level_system_calls/libc.rs:example}}

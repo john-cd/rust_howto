@@ -1,6 +1,6 @@
 # Rendering
 
-[![cat-rendering][cat-rendering-badge]][cat-rendering]{{hi:Rendering}}
+[![cat~rendering][cat~rendering~badge]][cat~rendering]{{hi:Rendering}}
 
 Real-time or offline rendering of 2D or 3D graphics, usually with the help of a graphics card.
 
@@ -64,12 +64,12 @@ See also:
 
 | Topic | Rust Crates | Notes |
 |---|---|---|
-| [[game_development | Game Development]] | [`bevy`][c-bevy]⮳{{hi:bevy}}, [`amethyst`][c-amethyst]⮳{{hi:amethyst}}, [`ggez`][c-ggez]⮳{{hi:ggez}}, [`piston`][c-piston]⮳{{hi:piston}} | [`bevy`][c-bevy]⮳{{hi:bevy}} is a data-driven game engine. [`amethyst`][c-amethyst]⮳{{hi:amethyst}} is another game engine. [`ggez`][c-ggez]⮳{{hi:ggez}} is a simple game framework. [`piston`][c-piston]⮳{{hi:piston}} is a modular game engine library. |
-| Graphical User Interfaces ([[gui | GUI]]) | [`iced`][c-iced]⮳{{hi:iced}}, [`egui`][c-egui]⮳{{hi:egui}}, [`tauri`][c-tauri]⮳{{hi:tauri}}, [`dioxus`][c-dioxus]⮳{{hi:dioxus}}, [`slint`][c-slint]⮳{{hi:slint}}, [`fltk-rs`][c-fltk]⮳{{hi:fltk-rs}} | [`iced`][c-iced]⮳{{hi:iced}} is a cross-platform UI framework focused on simplicity. [`egui`][c-egui]⮳{{hi:egui}} is an immediate mode GUI library. [`tauri`][c-tauri]⮳{{hi:tauri}} is for building desktop applications with web technologies. [`dioxus`][c-dioxus]⮳{{hi:dioxus}} is for building reactive UIs. [`slint`][c-slint]⮳{{hi:slint}} (formerly sixtyfps) for embedded and desktop. [`fltk-rs`][c-fltk]⮳{{hi:fltk-rs}} is a binding to the FLTK toolkit. |
-| [[multimedia_images | Image]] Manipulation | [`image`][c-image]⮳{{hi:image}}, [`imageproc`][c-imageproc]⮳{{hi:imageproc}} | [`image`][c-image]⮳{{hi:image}} is a general-purpose image processing library. [`imageproc`][c-imageproc]⮳{{hi:imageproc}} provides more advanced image processing algorithms. |
+| [[game_development | Game Development]] | [`bevy`][c~bevy~docs]⮳{{hi:bevy}}, [`amethyst`][c~amethyst~docs]⮳{{hi:amethyst}}, [`ggez`][c~ggez~docs]⮳{{hi:ggez}}, [`piston`][c~piston~docs]⮳{{hi:piston}} | [`bevy`][c~bevy~docs]⮳{{hi:bevy}} is a data-driven game engine. [`amethyst`][c~amethyst~docs]⮳{{hi:amethyst}} is another game engine. [`ggez`][c~ggez~docs]⮳{{hi:ggez}} is a simple game framework. [`piston`][c~piston~docs]⮳{{hi:piston}} is a modular game engine library. |
+| Graphical User Interfaces ([[gui | GUI]]) | [`iced`][c~iced~docs]⮳{{hi:iced}}, [`egui`][c~egui~docs]⮳{{hi:egui}}, [`tauri`][c~tauri~docs]⮳{{hi:tauri}}, [`dioxus`][c~dioxus~docs]⮳{{hi:dioxus}}, [`slint`][c~slint~docs]⮳{{hi:slint}}, [`fltk-rs`][c~fltk~docs]⮳{{hi:fltk-rs}} | [`iced`][c~iced~docs]⮳{{hi:iced}} is a cross-platform UI framework focused on simplicity. [`egui`][c~egui~docs]⮳{{hi:egui}} is an immediate mode GUI library. [`tauri`][c~tauri~docs]⮳{{hi:tauri}} is for building desktop applications with web technologies. [`dioxus`][c~dioxus~docs]⮳{{hi:dioxus}} is for building reactive UIs. [`slint`][c~slint~docs]⮳{{hi:slint}} (formerly sixtyfps) for embedded and desktop. [`fltk-rs`][c~fltk~docs]⮳{{hi:fltk-rs}} is a binding to the FLTK toolkit. |
+| [[multimedia_images | Image]] Manipulation | [`image`][c~image~docs]⮳{{hi:image}}, [`imageproc`][c~imageproc~docs]⮳{{hi:imageproc}} | [`image`][c~image~docs]⮳{{hi:image}} is a general-purpose image processing library. [`imageproc`][c~imageproc~docs]⮳{{hi:imageproc}} provides more advanced image processing algorithms. |
 | [[multimedia_video | Multimedia: Video]] | | |
-| [[visualization | Visualization]] | [`plotters`][c-plotters]⮳{{hi:plotters}} | [`plotters`][c-plotters]⮳{{hi:plotters}} is a plotting library. |
-| Windowing | [`winit`][c-winit]⮳{{hi:winit}}, [`glfw`][c-glfw]⮳{{hi:glfw}} | [`winit`][c-winit]⮳{{hi:winit}} is a cross-platform window creation and event handling library. [`glfw`][c-glfw]⮳{{hi:glfw}} provides bindings to the GLFW library. [`winit`][c-winit]⮳{{hi:winit}} is generally preferred now. |
+| [[visualization | Visualization]] | [`plotters`][c~plotters~docs]⮳{{hi:plotters}} | [`plotters`][c~plotters~docs]⮳{{hi:plotters}} is a plotting library. |
+| Windowing | [`winit`][c~winit~docs]⮳{{hi:winit}}, [`glfw`][c~glfw~docs]⮳{{hi:glfw}} | [`winit`][c~winit~docs]⮳{{hi:winit}} is a cross-platform window creation and event handling library. [`glfw`][c~glfw~docs]⮳{{hi:glfw}} provides bindings to the GLFW library. [`winit`][c~winit~docs]⮳{{hi:winit}} is generally preferred now. |
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

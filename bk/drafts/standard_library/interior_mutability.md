@@ -8,14 +8,14 @@ The core idea of interior mutability is to allow data to be mutated even when th
 
 ## `RefCell` {#refcell}
 
-[![std][c-std-badge]][c-std]{{hi:std}} [![book-rust-refcell][book-rust-refcell-badge]][book-rust-refcell]{{hi:RefCell}}
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![book~rust~refcell][book~rust~refcell~badge]][book~rust~refcell]{{hi:RefCell}}
 
 Rust memory safety allows (i) several immutable references (`&T`) to an object `T`; or (ii) _one_ mutable reference (`&mut T`). This is enforced _at compile time_. However, sometimes it is required to have multiple references to an object and yet mutate it. `RefCell<T>` (and related types `Cell<T>` and `OnceCell<T>`) have _interior mutability_, a pattern that allows you to mutate data even when there are immutable references to it.
 
-These types are used in scenarios involving [shared state][p-shared-state] within a single thread, like GUI applications or when creating complex [data structures][p-data-structures] like graphs.
+These types are used in scenarios involving [shared state][p~shared-state] within a single thread, like GUI applications or when creating complex [data structures][p~data-structures] like graphs.
 
 `RefCell` keeps track of borrowing rules _at runtime_ and ensures that only one mutable or multiple immutable borrows exist at a time.
-Attempts to violate borrowing rules (like having multiple mutable borrows) will cause a _panic_ at runtime. Common methods include `borrow`, [`borrow_mut`][c-std::borrow::BorrowMut]⮳{{hi:borrow_mut}}, and [`try_borrow`][c-std::cell::RefCell::try_borrow].
+Attempts to violate borrowing rules (like having multiple mutable borrows) will cause a _panic_ at runtime. Common methods include `borrow`, [`borrow_mut`][c~std::borrow::BorrowMut~docs]⮳{{hi:borrow_mut}}, and [`try_borrow`][c~std::cell::RefCell::try_borrow~docs].
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/smart_pointers/refcell.rs:example}}
@@ -23,7 +23,7 @@ Attempts to violate borrowing rules (like having multiple mutable borrows) will 
 
 ## `Cell` {#cell}
 
-[![std][c-std-badge]][c-std]{{hi:std}}
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
 `Cell<T>` is a type that provides simple, byte-wise copy-able mutability. `Cell<T>` implements interior mutability by moving values in and out of the cell. That is, an `&mut T` to the inner value can never be obtained, and the value itself cannot be directly obtained without replacing it with something else.
 
@@ -35,7 +35,7 @@ Attempts to violate borrowing rules (like having multiple mutable borrows) will 
 
 ## `OnceCell` {#oncecell}
 
-The `OnceCell` type provides a way to define a value that will be initialized at most once. It's useful for [lazy initialization][p-lazy-initialization] scenarios where you want to defer the creation of a value until it's actually needed, without the overhead of thread synchronization.
+The `OnceCell` type provides a way to define a value that will be initialized at most once. It's useful for [lazy initialization][p~lazy-initialization] scenarios where you want to defer the creation of a value until it's actually needed, without the overhead of thread synchronization.
 
 ## Related Topics {#skip}
 

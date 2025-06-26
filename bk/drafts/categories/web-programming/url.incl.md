@@ -1,10 +1,10 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Parse a URL from a String to a `Url` Type][ex-web-programming-parse-a-url-from-a-string-to-a-url-type] | [![url][c-url-badge]][c-url] | [![cat-network-programming][cat-network-programming-badge]][cat-network-programming] [![cat-web-programming][cat-web-programming-badge]][cat-web-programming] |
-| [Create a Base URL by Removing Path Segments][ex-web-programming-create-a-base-url-by-removing-path-segments] | [![url][c-url-badge]][c-url] | [![cat-network-programming][cat-network-programming-badge]][cat-network-programming] [![cat-web-programming][cat-web-programming-badge]][cat-web-programming] |
-| [Create new URLs from a Base URL][ex-web-programming-create-new-urls-from-a-base-url] | [![url][c-url-badge]][c-url] | [![cat-network-programming][cat-network-programming-badge]][cat-network-programming] [![cat-web-programming][cat-web-programming-badge]][cat-web-programming] |
-| [Extract the URL Origin (scheme / Host / port)][ex-web-programming-extract-the-url-origin] | [![url][c-url-badge]][c-url] | [![cat-network-programming][cat-network-programming-badge]][cat-network-programming] [![cat-web-programming][cat-web-programming-badge]][cat-web-programming] |
-| [Remove Fragment Identifiers and Query Pairs from a URL][ex-web-programming-remove-fragment-identifiers-and-query-pairs] | [![url][c-url-badge]][c-url] | [![cat-network-programming][cat-network-programming-badge]][cat-network-programming] [![cat-web-programming][cat-web-programming-badge]][cat-web-programming] |
+| [Parse a URL from a String to a `Url` Type][ex~web-programming-parse-a-url-from-a-string-to-a-url-type] | [![url][c~url~docs~badge]][c~url~docs] | [![cat~network-programming][cat~network-programming~badge]][cat~network-programming] [![cat~web-programming][cat~web-programming~badge]][cat~web-programming] |
+| [Create a Base URL by Removing Path Segments][ex~web-programming-create-a-base-url-by-removing-path-segments] | [![url][c~url~docs~badge]][c~url~docs] | [![cat~network-programming][cat~network-programming~badge]][cat~network-programming] [![cat~web-programming][cat~web-programming~badge]][cat~web-programming] |
+| [Create new URLs from a Base URL][ex~web-programming-create-new-urls-from-a-base-url] | [![url][c~url~docs~badge]][c~url~docs] | [![cat~network-programming][cat~network-programming~badge]][cat~network-programming] [![cat~web-programming][cat~web-programming~badge]][cat~web-programming] |
+| [Extract the URL Origin (scheme / Host / port)][ex~web-programming-extract-the-url-origin] | [![url][c~url~docs~badge]][c~url~docs] | [![cat~network-programming][cat~network-programming~badge]][cat~network-programming] [![cat~web-programming][cat~web-programming~badge]][cat~web-programming] |
+| [Remove Fragment Identifiers and Query Pairs from a URL][ex~web-programming-remove-fragment-identifiers-and-query-pairs] | [![url][c~url~docs~badge]][c~url~docs] | [![cat~network-programming][cat~network-programming~badge]][cat~network-programming] [![cat~web-programming][cat~web-programming~badge]][cat~web-programming] |
 
 <div class="hidden">
 </div>

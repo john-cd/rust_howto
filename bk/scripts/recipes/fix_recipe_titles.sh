@@ -13,16 +13,16 @@ do
     name=$(basename $file .md)
     dir=$(dirname $file)
     # Get title and anchor of all headings in the subchapter
-    titles_and_anchors=$(sed -En 's~^#+\s*([^\{]+)\{#([^\}]+)\}\s*$~\1@\2~p' $file)
+    titles_and_anchors=$(sed -En 's=^#+\s*([^\{]+)\{#([^\}]+)\}\s*$=\1@\2=p' $file)
     for taa in ${titles_and_anchors}
     do
       if [ -f "${dir}/${name}.incl.md" ]; then
-        title=$(echo "$taa" | cut -d"@" -f1 | sed -E -e 's/[[:space:]]*$//' -e 's/^[[:space:]]*//' -e 's~&~\&~g')
-        anchor=$(echo "$taa" | cut -d"@" -f2 | sed -E -e 's~&~\&~g')
+        title=$(echo "$taa" | cut -d"@" -f1 | sed -E -e 's/[[:space:]]*$//' -e 's/^[[:space:]]*//' -e 's=&=\&=g')
+        anchor=$(echo "$taa" | cut -d"@" -f2 | sed -E -e 's=&=\&=g')
         #echo "-->${title}< >${anchor}<"
-        sed -i -E 's~^\|\s*\[[^]]+\](\[ex-[^]]+'"${anchor}"'\].*)$~| ['"${title}"']\1~' "${dir}/${name}.incl.md"
+        sed -i -E 's=^\|\s*\[[^]]+\](\[ex~[^]]+'"${anchor}"'\].*)$=| ['"${title}"']\1=' "${dir}/${name}.incl.md"
         # -i = subsitute in place -E = extended regex
-        # matches [...][ex-...{anchor}]... and replaces the current label by the subchapter title
+        # matches [...][ex~...{anchor}]... and replaces the current label by the subchapter title
       fi
     done
 done

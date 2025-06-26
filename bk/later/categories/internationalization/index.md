@@ -1,10 +1,10 @@
 # Internationalization
 
-[![cat-internationalization][cat-internationalization-badge]][cat-internationalization]{{hi:Internationalization}}
+[![cat~internationalization][cat~internationalization~badge]][cat~internationalization]{{hi:Internationalization}}
 
 Tools to help develop software capable of adapting to various languages and regions.
 
-For most projects, [`fluent`][c-fluent]⮳{{hi:fluent}} is probably the best starting point due to its modern design and expressiveness. [`gettext`][c-gettext]⮳{{hi:gettext}} is a solid choice if you have existing `gettext` experience or requirements. For basic 'i18n' utilities (language tags, etc.), [`unic-langid`][c-unic_langid]⮳{{hi:unic-langid}} is helpful.
+For most projects, [`fluent`][c~fluent~docs]⮳{{hi:fluent}} is probably the best starting point due to its modern design and expressiveness. [`gettext`][c~gettext~docs]⮳{{hi:gettext}} is a solid choice if you have existing `gettext` experience or requirements. For basic 'i18n' utilities (language tags, etc.), [`unic-langid`][c~unic_langid~docs]⮳{{hi:unic-langid}} is helpful.
 
 ## Definitions
 
@@ -26,7 +26,7 @@ Locale may be detected using:
 
 Useful Rust crates for this purpose include:
 
-- [`unic-langid`][c-unic_langid]⮳{{hi:unic-langid}}: parsing and working with language tags (e.g., "en-US", "fr").
+- [`unic-langid`][c~unic_langid~docs]⮳{{hi:unic-langid}}: parsing and working with language tags (e.g., "en-US", "fr").
 - `unic-locale`: locale parsing and operations.
 
 ## Message Formatting, Dynamic Text Interpolation
@@ -39,9 +39,9 @@ Internationalization systems typically handle:
 
 Recommended crates include the following:
 
-- 'Fluent' is a modern, expressive localization system developed by Mozilla that handles complex localization needs well. The [`fluent-rs`][c-fluent]⮳{{hi:fluent-rs}} crate provides Rust bindings. It is often a preferred option for new projects.
-- 'Gettext' is a mature and widely used i18n system. [`gettext-rs`][c-gettext]⮳{{hi:gettext-rs}} or `rust-gettext` provides a Rust implementation. It is a good choice if you're already familiar with 'gettext' or need its specific features.
-- [`intl-rs`][c-intl_rs]⮳{{hi:intl-rs}} provides some internationalization utilities, but it's not a full localization solution on its own.
+- 'Fluent' is a modern, expressive localization system developed by Mozilla that handles complex localization needs well. The [`fluent-rs`][c~fluent~docs]⮳{{hi:fluent-rs}} crate provides Rust bindings. It is often a preferred option for new projects.
+- 'Gettext' is a mature and widely used i18n system. [`gettext-rs`][c~gettext~docs]⮳{{hi:gettext-rs}} or `rust-gettext` provides a Rust implementation. It is a good choice if you're already familiar with 'gettext' or need its specific features.
+- [`intl-rs`][c~intl_rs~docs]⮳{{hi:intl-rs}} provides some internationalization utilities, but it's not a full localization solution on its own.
 
 Note that string translation itself is usually done by human translators or using machine translation services.
 
@@ -49,14 +49,14 @@ Note that string translation itself is usually done by human translators or usin
 
 To generate locale-specific formats for dates and times, use:
 
-- [`chrono`][c-chrono]⮳{{hi:chrono}}.
-- [`time`][c-time]⮳{{hi:time}}.
+- [`chrono`][c~chrono~docs]⮳{{hi:chrono}}.
+- [`time`][c~time~docs]⮳{{hi:time}}.
 
 ## Formatting of Numbers and Currencies
 
-For number formatting, which also varies by locale, use [`num-format`][c-num_format]⮳{{hi:num-format}} for proper grouping and decimal separators.
+For number formatting, which also varies by locale, use [`num-format`][c~num_format~docs]⮳{{hi:num-format}} for proper grouping and decimal separators.
 
-The [`icu`][c-icu]⮳{{hi:icu}} crate family (named after 'International Components for Unicode') also provides a robust and comprehensive set of tools for internationalization, including number, date/time, and currency formatting. It's a powerful option but adds some complexity.
+The [`icu`][c~icu~docs]⮳{{hi:icu}} crate family (named after 'International Components for Unicode') also provides a robust and comprehensive set of tools for internationalization, including number, date/time, and currency formatting. It's a powerful option but adds some complexity.
 
 ## Code Examples
 

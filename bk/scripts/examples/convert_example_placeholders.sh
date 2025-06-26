@@ -61,7 +61,7 @@ do
       examplefilename=$(tr '-' '_' <<< ${examplename})
       examplefile="${exampledir}/${examplefilename}.rs"
       #echo "examplefile: $examplefile"
-      sed -Ei 's~\{\{#example\s*?'${examplename}'\s*?\}\}~```rust,editable\n\{\{#include '$examplefile':example\}\}\n```~g' $file
+      sed -Ei 's=\{\{#example\s*?'${examplename}'\s*?\}\}=```rust,editable\n\{\{#include '$examplefile':example\}\}\n```=g' $file
       # Create the folder for the test, if missing
       mkdir -p $absoluteexampledir
       # Create a GitHub ticket

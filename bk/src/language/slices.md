@@ -4,7 +4,7 @@
 
 ## Slice Basics {#slices}
 
-[![Rust by example - slices][book-rust-by-example-slices-badge]][book-rust-by-example-slices]
+[![Rust by example - slices][book~rust-by-example~slices~badge]][book~rust-by-example~slices]
 
 A slice is a view to a contiguous sequence of elements within a collection (array, vector, etc.).
 
@@ -21,8 +21,8 @@ A few important points:
 - They allow you to work with parts of a collection, enabling flexibility in data manipulation.
 - Slice references are "fat pointers", i.e. they store a pointer and the length of the sequence they refer to, thus they have twice the size of pointers to regular `Sized` types.
 - As a primitive type, `slice` implements a large number of methods, for example to `swap` two elements; `reverse` the order of elements in the slice in place; `iter`ate elements; create `chunks` or overlapping windows into the slice; figure out if the slice `contains` an element with the given value, etc. See also:
-  - [`slice::sort_by`][primitive-slice::sort_by]⮳,
-  - [`slice::split_at`][primitive-slice::split_at]⮳.
+  - [`slice::sort_by`][primitive~slice::sort_by]⮳,
+  - [`slice::split_at`][primitive~slice::split_at]⮳.
 
 Empty slices can be created:
 

@@ -10,11 +10,11 @@
 
 ### `glam` {#glam}
 
-[![glam][c-glam-badge]][c-glam] [![glam-crates.io][c-glam-crates.io-badge]][c-glam-crates.io] [![glam-github][c-glam-github-badge]][c-glam-github] [![glam-lib.rs][c-glam-lib.rs-badge]][c-glam-lib.rs]{{hi:glam}}{{hi:Gamedev}}{{hi:Math}}{{hi:Matrix}}{{hi:Quaternion}}{{hi:Vector}} [![cat-game-engines][cat-game-engines-badge]][cat-game-engines]{{hi:Game engines}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
+[![glam][c~glam~docs~badge]][c~glam~docs] [![glam~crates.io][c~glam~crates.io~badge]][c~glam~crates.io] [![glam~github][c~glam~github~badge]][c~glam~github] [![glam~lib.rs][c~glam~lib.rs~badge]][c~glam~lib.rs]{{hi:glam}}{{hi:Gamedev}}{{hi:Math}}{{hi:Matrix}}{{hi:Quaternion}}{{hi:Vector}} [![cat~game-engines][cat~game-engines~badge]][cat~game-engines]{{hi:Game engines}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-[`glam`][c-glam]⮳{{hi:glam}} is a 3D math library for [games][p-games] and [graphics][p-graphics].
+[`glam`][c~glam~docs]⮳{{hi:glam}} is a 3D math library for [games][p~games] and [graphics][p~graphics].
 
-"Fast math library optimized for [game development][p-game-development] use cases."
+"Fast math library optimized for [game development][p~game-development] use cases."
 
 ```rust,editable
 {{#include ../../../crates/cats/game_development/examples/game_development/glam.rs:example}}

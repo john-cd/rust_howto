@@ -2,11 +2,11 @@
 
 {{#include images.incl.md}}
 
-[`image`][c-image]⮳{{hi:image}}, [`imageproc`][c-imageproc]⮳{{hi:imageproc}} are essential for working with image data.
+[`image`][c~image~docs]⮳{{hi:image}}, [`imageproc`][c~imageproc~docs]⮳{{hi:imageproc}} are essential for working with image data.
 
 ## Image Loading and Saving {#image_loading_and_saving}
 
-[![image][c-image-badge]][c-image] [![image-crates.io][c-image-crates.io-badge]][c-image-crates.io] [![image-github][c-image-github-badge]][c-image-github] [![image-lib.rs][c-image-lib.rs-badge]][c-image-lib.rs]{{hi:image}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-multimedia::encoding][cat-multimedia::encoding-badge]][cat-multimedia::encoding]{{hi:Encoding}} [![cat-multimedia::images][cat-multimedia::images-badge]][cat-multimedia::images]{{hi:Images}}
+[![image][c~image~docs~badge]][c~image~docs] [![image~crates.io][c~image~crates.io~badge]][c~image~crates.io] [![image~github][c~image~github~badge]][c~image~github] [![image~lib.rs][c~image~lib.rs~badge]][c~image~lib.rs]{{hi:image}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~multimedia::encoding][cat~multimedia::encoding~badge]][cat~multimedia::encoding]{{hi:Encoding}} [![cat~multimedia::images][cat~multimedia::images~badge]][cat~multimedia::images]{{hi:Images}}
 
 Imaging library. Provides basic image processing and encoders/decoders for common image formats.
 
@@ -19,7 +19,7 @@ Imaging library. Provides basic image processing and encoders/decoders for commo
 
 ## Image Manipulation {#image_manipulation}
 
-[![image][c-image-badge]][c-image] [![image-crates.io][c-image-crates.io-badge]][c-image-crates.io] [![image-github][c-image-github-badge]][c-image-github] [![image-lib.rs][c-image-lib.rs-badge]][c-image-lib.rs]{{hi:image}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-multimedia::encoding][cat-multimedia::encoding-badge]][cat-multimedia::encoding]{{hi:Encoding}} [![cat-multimedia::images][cat-multimedia::images-badge]][cat-multimedia::images]{{hi:Images}}
+[![image][c~image~docs~badge]][c~image~docs] [![image~crates.io][c~image~crates.io~badge]][c~image~crates.io] [![image~github][c~image~github~badge]][c~image~github] [![image~lib.rs][c~image~lib.rs~badge]][c~image~lib.rs]{{hi:image}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~multimedia::encoding][cat~multimedia::encoding~badge]][cat~multimedia::encoding]{{hi:Encoding}} [![cat~multimedia::images][cat~multimedia::images~badge]][cat~multimedia::images]{{hi:Images}}
 
 - Image Filters and Transformations.
 
@@ -27,7 +27,7 @@ Imaging library. Provides basic image processing and encoders/decoders for commo
 
 ## Image Processing {#image_processing}
 
-[![imageproc-website][c-imageproc-website-badge]][c-imageproc-website] [![imageproc][c-imageproc-badge]][c-imageproc] [![imageproc-crates.io][c-imageproc-crates.io-badge]][c-imageproc-crates.io] [![imageproc-github][c-imageproc-github-badge]][c-imageproc-github] [![imageproc-lib.rs][c-imageproc-lib.rs-badge]][c-imageproc-lib.rs]{{hi:imageproc}}
+[![imageproc~website][c~imageproc~website~badge]][c~imageproc~website] [![imageproc][c~imageproc~docs~badge]][c~imageproc~docs] [![imageproc~crates.io][c~imageproc~crates.io~badge]][c~imageproc~crates.io] [![imageproc~github][c~imageproc~github~badge]][c~imageproc~github] [![imageproc~lib.rs][c~imageproc~lib.rs~badge]][c~imageproc~lib.rs]{{hi:imageproc}}
 
 Image processing operations.
 
@@ -44,7 +44,7 @@ Image Analysis
 
 ## GPU-accelerated Image Processing {#skip}
 
-Low-level [graphics][p-graphics] APIs like [`wgpu`][c-wgpu]⮳{{hi:wgpu}} are often used for displaying images or performing GPU-accelerated image processing.
+Low-level [graphics][p~graphics] APIs like [`wgpu`][c~wgpu~docs]⮳{{hi:wgpu}} are often used for displaying images or performing GPU-accelerated image processing.
 See [[rendering_graphics-api | Rendering: Graphics API]].
 
 {{#include refs.incl.md}}

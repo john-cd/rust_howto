@@ -4,7 +4,7 @@
 
 ## `rust-gpu` {#rust-gpu}
 
-[![rust_gpu-github][rust_gpu-github-badge]][rust_gpu-github]{{hi:rust_gpu}}
+[![rust_gpu~github][rust_gpu~github~badge]][rust_gpu~github]{{hi:rust_gpu}}
 
 [`rust-gpu`][rust-gpu]⮳{{hi:rust-gpu}} is still heavily in development and is at an early stage. Compiling and running simple shaders works, and a significant portion of the core library also compiles. However, many things aren't implemented yet. That means that while being technically usable, this project is not yet production-ready.
 
@@ -20,7 +20,7 @@
 <div class="hidden">
 [gpu: write](https://github.com/john-cd/rust_howto/issues/607)
 Review [Reddit blog][reddit]
-Reference [rust-gpu-github]
+Reference [rust-gpu~github][rust-gpu~github]
 
 Crates:
 https://github.com/Rust-GPU

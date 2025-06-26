@@ -1,3 +1,3 @@
 ||
 |---|
-| [Rust Links and Resources][ex-links-links] |
+| [Rust Links and Resources][ex~links~links] |

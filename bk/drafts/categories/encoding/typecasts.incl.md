@@ -1,7 +1,7 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [`bytemuck`][ex-encoding-bytemuck] | [![bytemuck][c-bytemuck-badge]][c-bytemuck] | [![cat-encoding][cat-encoding-badge]][cat-encoding] |
-| [`zerocopy`][ex-encoding-zerocopy] | [![zerocopy][c-zerocopy-badge]][c-zerocopy] | [![cat-encoding][cat-encoding-badge]][cat-encoding] |
+| [`bytemuck`][ex~encoding-bytemuck] | [![bytemuck][c~bytemuck~docs~badge]][c~bytemuck~docs] | [![cat~encoding][cat~encoding~badge]][cat~encoding] |
+| [`zerocopy`][ex~encoding-zerocopy] | [![zerocopy][c~zerocopy~docs~badge]][c~zerocopy~docs] | [![cat~encoding][cat~encoding~badge]][cat~encoding] |
 
 <div class="hidden">
 </div>

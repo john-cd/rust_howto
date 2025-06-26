@@ -4,7 +4,7 @@
 
 | Topic | Rust Crates |
 |---|---|
-| Debugging | [`gdb`][c-gdb]⮳{{hi:gdb}} or [`lldb`][c-lldb]⮳{{hi:lldb}} |
+| Debugging | [`gdb`][c~gdb~docs]⮳{{hi:gdb}} or [`lldb`][c~lldb~docs]⮳{{hi:lldb}} |
 
 ## Related Topics {#skip}
 

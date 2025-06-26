@@ -43,9 +43,9 @@ Use `CString` and `CStr` when you need to convert Rust UTF-8 strings to and from
 
 ## Work with Non-UTF8 Strings with `bstr` {#bstr}
 
-[![bstr][c-bstr-badge]][c-bstr] [![bstr-crates.io][c-bstr-crates.io-badge]][c-bstr-crates.io] [![bstr-github][c-bstr-github-badge]][c-bstr-github] [![bstr-lib.rs][c-bstr-lib.rs-badge]][c-bstr-lib.rs]{{hi:bstr}}{{hi:Text}}{{hi:String}}{{hi:Byte}}{{hi:Bytes}}{{hi:Str}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
+[![bstr][c~bstr~docs~badge]][c~bstr~docs] [![bstr~crates.io][c~bstr~crates.io~badge]][c~bstr~crates.io] [![bstr~github][c~bstr~github~badge]][c~bstr~github] [![bstr~lib.rs][c~bstr~lib.rs~badge]][c~bstr~lib.rs]{{hi:bstr}}{{hi:Text}}{{hi:String}}{{hi:Byte}}{{hi:Bytes}}{{hi:Str}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
-[`bstr`][c-bstr]⮳{{hi:bstr}} offers a string type that is not required to be valid UTF-8.
+[`bstr`][c~bstr~docs]⮳{{hi:bstr}} offers a string type that is not required to be valid UTF-8.
 
 This crate provides extension traits for `&[u8]` and `Vec<u8>` that enable their use as byte strings, where byte strings are conventionally UTF-8. This differs from the standard library's `String` and `str` types in that they are *not* required to be valid UTF-8, but may be fully or partially valid UTF-8.
 
@@ -55,7 +55,7 @@ This crate provides extension traits for `&[u8]` and `Vec<u8>` that enable their
 
 ## Intern Strings with `ustr` {#ustr}
 
-[![ustr][c-ustr-badge]][c-ustr] [![ustr-crates.io][c-ustr-crates.io-badge]][c-ustr-crates.io] [![ustr-github][c-ustr-github-badge]][c-ustr-github] [![ustr-lib.rs][c-ustr-lib.rs-badge]][c-ustr-lib.rs]{{hi:ustr}}{{hi:Ffi}}{{hi:Interning}}{{hi:String}} [![cat-caching][cat-caching-badge]][cat-caching]{{hi:Caching}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
+[![ustr][c~ustr~docs~badge]][c~ustr~docs] [![ustr~crates.io][c~ustr~crates.io~badge]][c~ustr~crates.io] [![ustr~github][c~ustr~github~badge]][c~ustr~github] [![ustr~lib.rs][c~ustr~lib.rs~badge]][c~ustr~lib.rs]{{hi:ustr}}{{hi:Ffi}}{{hi:Interning}}{{hi:String}} [![cat~caching][cat~caching~badge]][cat~caching]{{hi:Caching}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
 The `ustr` crate implements string interning, i.e. storing only one copy of each distinct string value (which must be immutable). String interning is useful in scenarios where:
 
@@ -73,7 +73,7 @@ You may also use the [string_cache](https://docs.rs/string_cache/latest/string_c
 
 ## Work with Small Formatted Strings with `compact_str` {#compact_str}
 
-[![compact_str][c-compact_str-badge]][c-compact_str] [![compact_str-crates.io][c-compact_str-crates.io-badge]][c-compact_str-crates.io] [![compact_str-github][c-compact_str-github-badge]][c-compact_str-github] [![compact_str-lib.rs][c-compact_str-lib.rs-badge]][c-compact_str-lib.rs]{{hi:compact_str}}{{hi:Compact}}{{hi:Memory}}{{hi:Mutable}}{{hi:Small}}{{hi:String}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}} [![cat-parsing][cat-parsing-badge]][cat-parsing]{{hi:Parsing tools}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
+[![compact_str][c~compact_str~docs~badge]][c~compact_str~docs] [![compact_str~crates.io][c~compact_str~crates.io~badge]][c~compact_str~crates.io] [![compact_str~github][c~compact_str~github~badge]][c~compact_str~github] [![compact_str~lib.rs][c~compact_str~lib.rs~badge]][c~compact_str~lib.rs]{{hi:compact_str}}{{hi:Compact}}{{hi:Memory}}{{hi:Mutable}}{{hi:Small}}{{hi:String}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
 If you need small formatted string, consider a string type implementing small-string optimization. For example, [compact_str](https://crates.io/crates/compact_str)⮳ implements `CompactString`, a memory efficient string type that can store smaller strings on the stack and transparently stores longer strings on the heap.
 

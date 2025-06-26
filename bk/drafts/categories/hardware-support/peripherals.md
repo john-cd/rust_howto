@@ -2,23 +2,23 @@
 
 ## USB {#skip}
 
-[`rusb`][c-rusb]⮳{{hi:rusb}} is a library for accessing USB devices.
+[`rusb`][c~rusb~docs]⮳{{hi:rusb}} is a library for accessing USB devices.
 
 ## Serial Communication {#skip}
 
-[`serialport`][c-serialport]⮳{{hi:serialport}} works with serial ports.
+[`serialport`][c~serialport~docs]⮳{{hi:serialport}} works with serial ports.
 
 ## Networking {#skip}
 
-Standard networking crates like `std::net` or crates like [`tokio`][c-tokio]⮳{{hi:tokio}} for asynchronous networking are used for network hardware interaction.
+Standard networking crates like `std::net` or crates like [`tokio`][c~tokio~docs]⮳{{hi:tokio}} for asynchronous networking are used for network hardware interaction.
 
 ## Graphics Cards (GPUs) {#skip}
 
-[`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}}, [`vulkano`][c-vulkano]⮳{{hi:vulkano}}: These crates are used for interacting with GPUs (see the [[graphics | Graphics]] section).
+[`wgpu`][c~wgpu~docs]⮳{{hi:wgpu}}, [`gfx-hal`][c~gfx_hal~docs]⮳{{hi:gfx-hal}}, [`vulkano`][c~vulkano~docs]⮳{{hi:vulkano}}: These crates are used for interacting with GPUs (see the [[graphics | Graphics]] section).
 
 ## General Hardware Interaction {#skip}
 
-[`ioctl`][c-ioctl]⮳{{hi:ioctl}}: A crate for performing 'ioctl' (input/output control) operations on file descriptors. Often used for interacting with device drivers or hardware.
+[`ioctl`][c~ioctl~docs]⮳{{hi:ioctl}}: A crate for performing 'ioctl' (input/output control) operations on file descriptors. Often used for interacting with device drivers or hardware.
 
 For specialized hardware, you'll often need to find or create crates that provide access to the device's API or protocol.
 

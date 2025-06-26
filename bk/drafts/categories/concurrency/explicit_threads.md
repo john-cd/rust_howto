@@ -4,7 +4,7 @@
 
 ## Use `spawn` & `join` {#spawn-join}
 
-[![std][c-std-badge]][c-std]{{hi:std}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}{{hi:Join}}
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}{{hi:Join}}
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/examples/explicit_threads/multithreading_spawn_join.rs:example}}
@@ -14,9 +14,9 @@ Note: when the main thread of a Rust program completes, all spawned threads{{hi:
 
 ## Use Scoped Threads {#scoped-threads}
 
-[![std][c-std-badge]][c-std]{{hi:std}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}
 
-[Scoped threads][c-std::thread::scope]⮳.
+[Scoped threads][c~std::thread::scope~docs]⮳.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/examples/explicit_threads/multithreading_scoped_threads.rs:example}}

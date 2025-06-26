@@ -4,7 +4,7 @@
 
 ## Iterator Trait {#iterator-trait}
 
-[![Rust by example - iterators][book-rust-by-example-iterators-badge]][book-rust-by-example-iterators]{{hi:Iterators}}
+[![Rust by example - iterators][book~rust-by-example~iterators~badge]][book~rust-by-example~iterators]{{hi:Iterators}}
 
 Iterators allow you to process a sequence of items. An iterator is any type that implements the `Iterator` trait. This trait requires only one required method: `next()`. Iterators are lazy, meaning they don't do any work until you ask for the next item (via `next()`).
 
@@ -91,7 +91,7 @@ One benefit of implementing `IntoIterator` is that your type will work with the 
 
 ## References {#skip}
 
-- [Iterators][book-rust-iterators]{{hi:iterators}}⮳.
+- [Iterators][book~rust~iterators]{{hi:iterators}}⮳.
 - [What is the correct way to return an Iterator (or any other trait)?](https://stackoverflow.com/questions/27535289/what-is-the-correct-way-to-return-an-iterator-or-any-other-trait)⮳.
 - [Implementing Iterator and IntoIterator in Rust](https://dev.to/wrongbyte/implementing-iterator-and-intoiterator-in-rust-3nio)⮳.
 

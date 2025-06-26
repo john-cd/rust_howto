@@ -1,6 +1,6 @@
 # Games
 
-[![cat-games][cat-games-badge]][cat-games]{{hi:Games}}
+[![cat~games][cat~games~badge]][cat~games]{{hi:Games}}
 
 Here are some notable games built with Rust:
 

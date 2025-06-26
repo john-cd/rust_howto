@@ -1,1 +1,1 @@
-[ex-{{recipe}}]: {{ subchapter | underscore }}.md#{{ recipe.title | slugify }}
+[ex~{{recipe}}]: {{ subchapter | underscore }}.md#{{ recipe.title | slugify }}

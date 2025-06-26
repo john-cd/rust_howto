@@ -4,7 +4,7 @@
 
 ## Write a Rust Function {#function}
 
-[![Rust by example - Functions][book-rust-by-example-fn-badge]][book-rust-by-example-fn]{{hi:fn}}{{hi:Functions}}
+[![Rust by example - Functions][book~rust-by-example~fn~badge]][book~rust-by-example~fn]{{hi:fn}}{{hi:Functions}}
 
 Functions are fundamental building blocks in Rust, used to encapsulate reusable blocks of code. Functions are defined with `fn`, followed by the function name, optional parameters between parentheses `(...)`, optional `->` followed by the return type, and curly braces `{ ... }` for the function body. Rust uses snake_case for function names by convention.
 
@@ -16,7 +16,7 @@ Here are examples of functions with or without parameters or return value:
 
 ## Write a Generic Function {#write-generic-functions}
 
-[![Rust by example - generic functions][book-rust-by-example-generic_functions-badge]][book-rust-by-example-generic_functions]
+[![Rust by example - generic functions][book~rust-by-example~generic_functions~badge]][book~rust-by-example~generic_functions]
 
 Functions can be generic, meaning they can operate on parameters of various types without needing to be rewritten for each type:
 

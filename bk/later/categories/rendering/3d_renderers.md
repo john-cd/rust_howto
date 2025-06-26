@@ -2,9 +2,9 @@
 
 {{#include 3d_renderers.incl.md}}
 
-Graphics APIs, wrappers for and backends to [Vulkan][p-vulkan] and OpenGL.
+Graphics APIs, wrappers for and backends to [Vulkan][p~vulkan] and OpenGL.
 
-3D [rendering][p-rendering] is the 3D computer graphics process of converting 3D models into 2D images.
+3D [rendering][p~rendering] is the 3D computer graphics process of converting 3D models into 2D images.
 
 ## Topics {#skip}
 
@@ -17,11 +17,11 @@ Graphics APIs, wrappers for and backends to [Vulkan][p-vulkan] and OpenGL.
 - Ambient Occlusion.
 - Level of Detail (LOD).
 
-Many algorithms are implemented within engines like [`rend3`][c-rend3]⮳{{hi:rend3}} or game engines like [`bevy`][c-bevy]⮳{{hi:bevy}}.
+Many algorithms are implemented within engines like [`rend3`][c~rend3~docs]⮳{{hi:rend3}} or game engines like [`bevy`][c~bevy~docs]⮳{{hi:bevy}}.
 
 ## `rend3` {#rend3}
 
-[`rend3`][c-rend3]⮳{{hi:rend3}} is a 3D rendering engine built on top of [`wgpu`][c-wgpu]⮳{{hi:wgpu}}.
+[`rend3`][c~rend3~docs]⮳{{hi:rend3}} is a 3D rendering engine built on top of [`wgpu`][c~wgpu~docs]⮳{{hi:wgpu}}.
 
 ## `three-d` {#threed}
 
@@ -33,13 +33,13 @@ Keep It Simple, Stupid 3d graphics engine.
 
 This library is born from the frustration that today's 3D graphics library are either:
 
-- Too low level: you have to write your own [shaders][p-shaders] and opening a window takes 8 hours, 300 lines of code and 10L of coffee.
+- Too low level: you have to write your own [shaders][p~shaders] and opening a window takes 8 hours, 300 lines of code and 10L of coffee.
 - High level, but too hard to understand/use: these libraries are made to create beautiful photoreal (or close to it) animations or games. They have many features; too many, in fact, if you just want to draw a few objects on the screen with as little friction as possible.
 kiss3d is not designed to be feature-complete or fast. It is designed to let you draw simple geometric figures and play with them with as little friction as possible.
 
 ## Hardware Acceleration {#skip1}
 
-Often depends on the 3D API or [rendering engine][p-rendering-engine] used. Libraries like [`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`vulkano`][c-vulkano]⮳{{hi:vulkano}}, and [`glium`][c-glium]⮳{{hi:glium}} provide access to hardware acceleration through graphics APIs like WebGPU, OpenGL, Vulkan, Metal, and DirectX.
+Often depends on the 3D API or [rendering engine][p~rendering-engine] used. Libraries like [`wgpu`][c~wgpu~docs]⮳{{hi:wgpu}}, [`vulkano`][c~vulkano~docs]⮳{{hi:vulkano}}, and [`glium`][c~glium~docs]⮳{{hi:glium}} provide access to hardware acceleration through graphics APIs like WebGPU, OpenGL, Vulkan, Metal, and DirectX.
 
 See:
 

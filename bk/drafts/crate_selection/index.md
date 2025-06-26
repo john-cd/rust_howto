@@ -2,25 +2,25 @@
 
 ## Crates Used in this Book {#crates-used}
 
-- [Crates by alphabetical order][p-crates-alphabetical].
-- [Crates by category][p-crates-categories].
+- [Crates by alphabetical order][p~crates-alphabetical].
+- [Crates by category][p~crates-categories].
 
 ## Select Crates for your Project {#select-crates}
 
 Use the following sites for crate recommendations:
 
-- [`blessed.rs`][blessed-rs-website]{{hi:blessed.rs}}⮳,
+- [`blessed.rs`][blessed-rs~website]{{hi:blessed.rs}}⮳,
 - [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳, and in particular,
-  - [Most popular Rust libraries][lib-rs-most-popular]⮳.
-  - High-quality crates [statistics][lib-rs-stats]⮳.
-- The Rust community's official crate registry: [`crates.io`][crates.io-website]{{hi:crates.io}}⮳,
-- [`crates.io`'s most (recent) downloads][crates.io-most-recent-downloads]⮳.
+  - [Most popular Rust libraries][lib-rs~most-popular]⮳.
+  - High-quality crates [statistics][lib-rs~stats]⮳.
+- The Rust community's official crate registry: [`crates.io`][crates.io~website]{{hi:crates.io}}⮳,
+- [`crates.io`'s most (recent) downloads][crates.io~most-recent-downloads]⮳.
 
 You may also consult older resources, such as:
 
-- [Rust starter pack][rust-starter-pack]{{hi:Rust starter pack}}⮳.
-- [![stdx][c-stdx-github-badge]][c-stdx-github]{{hi:stdx}}⮳.
-- [Best of Rust crates][best-of-rust-crates]⮳.
+- [Rust starter pack][rust-starter-pack~website]{{hi:Rust starter pack}}⮳.
+- [![stdx][c~stdx~github~badge]][c~stdx~github]{{hi:stdx}}⮳.
+- [Best of Rust crates][reddit~best-of-rust-crates]⮳.
 
 ## Additional Lists & Reviews {#lists-reviews}
 

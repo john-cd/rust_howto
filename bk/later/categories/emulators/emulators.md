@@ -17,7 +17,7 @@ https://medium.com/@OneBlockplus/in-depth-analysis-of-polkavm-a-perfect-path-to-
 
 ## ROM Loading {#skip}
 
-`ihex` is a Rust library for [parsing][p-parsing] and generating Intel HEX (or IHEX) objects. This format is commonly used for representing compiled program code and data to be loaded into a microcontroller, flash memory or ROM.
+`ihex` is a Rust library for [parsing][p~parsing] and generating Intel HEX (or IHEX) objects. This format is commonly used for representing compiled program code and data to be loaded into a microcontroller, flash memory or ROM.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -4,7 +4,7 @@
 
 ## Store Data on the Heap with `Box` {#box}
 
-[![book-rust-box][book-rust-box-badge]][book-rust-box]{{hi:Box}} [![Rust by example - box][book-rust-by-example-box-badge]][book-rust-by-example-box] [![std][c-std-badge]][c-std]{{hi:std}}
+[![book~rust~box][book~rust~box~badge]][book~rust~box]{{hi:Box}} [![Rust by example - box][book~rust-by-example~box~badge]][book~rust-by-example~box] [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
 All values in Rust are stack-allocated by default. `Box<T>` allow you to store data on the heap{{hi:Heap}} rather than the stack{{hi:Stack}}. What remains on the stack is the pointer to the heap data. `Box<T>` owns its inner data and drop its contents when it goes out of scope:
 
@@ -12,7 +12,7 @@ All values in Rust are stack-allocated by default. `Box<T>` allow you to store d
 {{#include ../../crates/standard_library/examples/box/box_basics.rs:example}}
 ```
 
-The `Box<T>` type is a smart pointer{{hi:Smart pointers}}, because it implements the [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ trait, which allows `Box<T>` values to be treated just like a reference. You can use the de-reference operator{{hi:Dereference operator}} `*`{{hi:*}} or 'deref coercion' with the `.` operator to use its inner value:
+The `Box<T>` type is a smart pointer{{hi:Smart pointers}}, because it implements the [`std::ops::Deref`][c~std::ops::Deref~docs]{{hi:std::ops::Deref}}⮳ trait, which allows `Box<T>` values to be treated just like a reference. You can use the de-reference operator{{hi:Dereference operator}} `*`{{hi:*}} or 'deref coercion' with the `.` operator to use its inner value:
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/box/box_deref.rs:example}}
@@ -20,7 +20,7 @@ The `Box<T>` type is a smart pointer{{hi:Smart pointers}}, because it implements
 
 ### `Box` Use Cases {#box-use-cases}
 
-[![std][c-std-badge]][c-std]{{hi:std}}
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
 Use `Box<T>` when
 
@@ -34,7 +34,7 @@ Do not use `Box` for small, fixed-size types, or when you only need a reference:
 
 ## Use `Box` to store Dynamically Sized Types {#box-dst}
 
-[![std][c-std-badge]][c-std]{{hi:std}}
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
 Dynamically Sized Types (DSTs), also known as "unsized types," are types whose size cannot be determined at compile time. The most common DSTs are:
 
@@ -48,7 +48,7 @@ Dynamically Sized Types (DSTs), also known as "unsized types," are types whose s
 
 ## Use `Box` as a Smart Pointer to Owned Trait Objects {#box-trait-objects}
 
-[![std][c-std-badge]][c-std]{{hi:std}}
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
 Trait objects `dyn SomeTrait` are opaque values that implements a base trait `SomeTrait`. The purpose of trait objects is to permit "late binding", a.k.a. virtual dispatch. When you call a function through a `dyn SomeTrait`, the compiler inserts code to lookup the function to call _at runtime_, allowing for polymorphism.
 
@@ -60,7 +60,7 @@ Because their underlying concrete types are obscured, trait objects are dynamica
 
 ## Implement Recursive Data Structures with `Box` {#box-recursive-data-structures}
 
-[![std][c-std-badge]][c-std]{{hi:std}}
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
 The Rust compiler needs to know the exact size of a type at compile time, but a recursive data structure's size is potentially unbounded.
 

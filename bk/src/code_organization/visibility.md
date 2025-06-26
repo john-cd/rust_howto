@@ -4,9 +4,9 @@
 
 ## Make your Code Items Public with the `pub` Keyword {#public}
 
-[![book-rust-by-example-visibility-rules][book-rust-by-example-visibility-rules-badge]][book-rust-by-example-visibility-rules]
+[![book~rust-by-example~visibility-rules][book~rust-by-example~visibility-rules~badge]][book~rust-by-example~visibility-rules]
 
-In Rust, all items (modules, [functions][p-functions], methods, [structs][p-structs], [enums][p-enums], constants...) are _private by default_.
+In Rust, all items (modules, [functions][p~functions], methods, [structs][p~structs], [enums][p~enums], constants...) are _private by default_.
 
 Use the `pub` keyword before an item's definition to make it public:
 

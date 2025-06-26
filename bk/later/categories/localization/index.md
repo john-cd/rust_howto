@@ -1,6 +1,6 @@
 # Localization
 
-[![cat-localization][cat-localization-badge]][cat-localization]{{hi:Localization}}
+[![cat~localization][cat~localization~badge]][cat~localization]{{hi:Localization}}
 
 Tooling to help adapting internationalized software to specific languages and regions.
 

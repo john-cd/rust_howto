@@ -139,7 +139,7 @@ This topic is covered in the [[impl_trait | Impl Trait]] chapter.
 
 ## Use Async with Traits {#async-and-traits}
 
-This topic is covered in the [Async][p-async]⮳ chapter.
+This topic is covered in the [Async][p~async]⮳ chapter.
 
 ## Related Topics {#skip}
 
@@ -152,7 +152,7 @@ This topic is covered in the [Async][p-async]⮳ chapter.
 
 ## References {#skip}
 
-- [Traits (blog)][blog-traits]⮳.
+- [Traits (blog)][blog~traits]⮳.
 - [What is the correct way to return an Iterator (or any other trait)?](https://stackoverflow.com/questions/27535289/what-is-the-correct-way-to-return-an-iterator-or-any-other-trait)⮳.
 
 {{#include refs.incl.md}}

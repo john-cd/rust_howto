@@ -15,7 +15,7 @@ do
     # Get parent directory
     parent=$(dirname $file | xargs basename)
     # Grab all headings with an anchor e.g. {#some_text} - substitute the anchor \1 into a refdef
-    link=$(sed -nE 's/^#.*\{#(.+?)\}\s*$/[ex-'${parent}'-\1]: '${base}'#\1/p' ${file})
+    link=$(sed -nE 's/^#.*\{#(.+?)\}\s*$/[ex~'${parent}'~\1]: '${base}'#\1/p' ${file})
     if [ -n "$link" ]; then
         echo "$link" >> "${file%/*}/refs.incl.md"
         # remove {#skip}, {#skip1}... and empty lines

@@ -125,7 +125,6 @@
     - [Cross-compilation](categories/development-tools/cross-compilation/cross_compilation.md)
     - [Code Verification](categories/development-tools/other/code_verification.md)
     - [`miri`](categories/development-tools/other/miri.md)
-    - [Reduce Compilation Duration](categories/development-tools/compilation/reduce_compilation_duration.md)
     - [Faster Linking](categories/development-tools/compilation/faster_linking.md)
     - [Transpilers](categories/development-tools/transcompilation/transpilers.md)
 

@@ -1,12 +1,12 @@
 # Development Tools: Procedural Macro Helpers
 
-[![cat-development-tools::procedural-macro-helpers][cat-development-tools::procedural-macro-helpers-badge]][cat-development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
+[![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
 
 Rust macros enable metaprogramming, allowing you to write code that generates other code at compile time.
 
 This capability allows for code reuse by reducing boilerplate and enhancing readability through more expressive syntax. Macros are expanded at compile time, so their output is checked syntactically and type checked. Macros are used for tasks like implementing common traits, creating domain-specific languages, and achieving performance optimizations through compile-time computation and code transformation.
 
-The term 'macro' [(book)][book-macro] refers to a family of features in rust: declarative macros (also known as "macros by example")
+The term 'macro' [(book)][book~macro] refers to a family of features in rust: declarative macros (also known as "macros by example")
  and three kinds of _procedural macros_, the focus of this section:
 
 - Custom #[derive] macros, used on structs and enums, which specify code to be added.
@@ -27,7 +27,7 @@ Declarative macros are defined using a `macro_rules!` syntax and work by pattern
 
 {{#include compile_macros.incl.md}}
 
-[book-macro]: https://doc.rust-lang.org/book/ch19-06-macros.html
+[book~macro]: https://doc.rust-lang.org/book/ch19-06-macros.html
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

@@ -1,21 +1,21 @@
 # Encoding
 
-[![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
+[![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
 
 Encoding and/or decoding{{hi:Decoding}} data from one data format to another.
 
-For general character encoding, [`encoding`][c-encoding]⮳{{hi:encoding}} is a good choice. For JSON, [`serde_json`][c-serde_json]⮳{{hi:serde_json}} is the standard. For other formats, look for crates that support them specifically. [`serde`][c-serde]⮳{{hi:serde}} is the underlying engine for many of these, providing a consistent way to work with serialization.
+For general character encoding, [`encoding`][c~encoding~docs]⮳{{hi:encoding}} is a good choice. For JSON, [`serde_json`][c~serde_json~docs]⮳{{hi:serde_json}} is the standard. For other formats, look for crates that support them specifically. [`serde`][c~serde~docs]⮳{{hi:serde}} is the underlying engine for many of these, providing a consistent way to work with serialization.
 
 ## Character Encoding
 
-- [`encoding`][c-encoding]⮳{{hi:encoding}}: A comprehensive crate for working with various character encodings (UTF-8, UTF-16, Latin-1, etc.). A good general-purpose choice.
-- [`base64`][c-base64]⮳{{hi:base64}}: A widely used crate for Base64 encoding and decoding.
+- [`encoding`][c~encoding~docs]⮳{{hi:encoding}}: A comprehensive crate for working with various character encodings (UTF-8, UTF-16, Latin-1, etc.). A good general-purpose choice.
+- [`base64`][c~base64~docs]⮳{{hi:base64}}: A widely used crate for Base64 encoding and decoding.
 
 {{#include string_encoding.incl.md}}
 
 ## Serialization / Deserialization (Serde)
 
-- [`serde`][c-serde]⮳{{hi:serde}}: The powerful and widely used serialization framework in Rust. Many of the encoding crates above rely on serde. See [[complex_encoding | Complex Encoding]].
+- [`serde`][c~serde~docs]⮳{{hi:serde}}: The powerful and widely used serialization framework in Rust. Many of the encoding crates above rely on serde. See [[complex_encoding | Complex Encoding]].
 
 {{#include serde.incl.md}}
 
@@ -29,33 +29,33 @@ For general character encoding, [`encoding`][c-encoding]⮳{{hi:encoding}} is a 
 
 ## JSON Serialization
 
-- [`serde_json`][c-serde_json]⮳{{hi:serde_json}}: A very popular crate for JSON serialization and deserialization.
+- [`serde_json`][c~serde_json~docs]⮳{{hi:serde_json}}: A very popular crate for JSON serialization and deserialization.
 See [[json | JSON]].
 
 ## BSON (Binary JSON) Serialization
 
-Use [`bson`][c-bson]⮳{{hi:bson}} for working with BSON, a binary representation of JSON-like documents.
+Use [`bson`][c~bson~docs]⮳{{hi:bson}} for working with BSON, a binary representation of JSON-like documents.
 
 ## TOML (Tom's Obvious, Minimal Language) Serialization
 
 Consider:
 
-- [`toml`][c-toml]⮳{{hi:toml}} for working with TOML files - see [[toml | TOML]].
+- [`toml`][c~toml~docs]⮳{{hi:toml}} for working with TOML files - see [[toml | TOML]].
 
 ## YAML (YAML Ain't Markup Language) Serialization
 
 Consider:
 
-- [`serde_yml`][c-serde_yml]⮳{{hi:serde_yml}} for YAML serialization and deserialization. Uses [`serde`][c-serde]⮳{{hi:serde}}.
+- [`serde_yml`][c~serde_yml~docs]⮳{{hi:serde_yml}} for YAML serialization and deserialization. Uses [`serde`][c~serde~docs]⮳{{hi:serde}}.
 See [[yaml | YAML]].
 
 ## XML Serialization
 
 Use:
 
-- [`quick-xml`][c-quick_xml]⮳{{hi:quick-xml}} : A fast XML parser.
-- [`serde_xml_rs`][c-serde_xml_rs]⮳{{hi:serde_xml_rs}}: For serializing and deserializing XML.
-- [`serde`][c-serde]⮳{{hi:serde}}.
+- [`quick-xml`][c~quick_xml~docs]⮳{{hi:quick-xml}} : A fast XML parser.
+- [`serde_xml_rs`][c~serde_xml_rs~docs]⮳{{hi:serde_xml_rs}}: For serializing and deserializing XML.
+- [`serde`][c~serde~docs]⮳{{hi:serde}}.
 
 See [[xml | XML]].
 
@@ -65,8 +65,8 @@ See [[xml | XML]].
 
 ## Binary Data Serialization (General)
 
-[`byteorder`][c-byteorder]⮳{{hi:byteorder}}: For reading and writing binary data in different endianness.
-[`bincode`][c-bincode]⮳{{hi:bincode}}: A crate for efficiently serializing and deserializing data in a compact binary format.
+[`byteorder`][c~byteorder~docs]⮳{{hi:byteorder}}: For reading and writing binary data in different endianness.
+[`bincode`][c~bincode~docs]⮳{{hi:bincode}}: A crate for efficiently serializing and deserializing data in a compact binary format.
 
 See [[_binary_encoders |  Binary Encoders]].
 
@@ -76,22 +76,22 @@ See [[_binary_encoders |  Binary Encoders]].
 
 ## MessagePack Serialization
 
-Consider using [`rmp-serde`][c-rmp_serde]⮳{{hi:rmp-serde}} for MessagePack serialization and deserialization.
+Consider using [`rmp-serde`][c~rmp_serde~docs]⮳{{hi:rmp-serde}} for MessagePack serialization and deserialization.
 See [[_binary_encoders |  Binary Encoders]].
 
 ## CBOR (Concise Binary Object Representation) Serialization
 
-Use [`serde_cbor`][c-serde_cbor]⮳{{hi:serde_cbor}} for CBOR encoding and decoding.
+Use [`serde_cbor`][c~serde_cbor~docs]⮳{{hi:serde_cbor}} for CBOR encoding and decoding.
 See [[_binary_encoders |  Binary Encoders]].
 
 ## Protocol Buffers
 
-Review [`protobuf`][c-protobuf]⮳{{hi:protobuf}}, [`prost`][c-prost]⮳{{hi:prost}}.
+Review [`protobuf`][c~protobuf~docs]⮳{{hi:protobuf}}, [`prost`][c~prost~docs]⮳{{hi:prost}}.
 See [[_binary_encoders | Binary Encoders]].
 
 ### gRPC
 
-Review [`tonic`][c-tonic]⮳{{hi:tonic}}, [`grpc`][c-grpc]⮳{{hi:grpc}}. See [[_grpc | gRPC]].
+Review [`tonic`][c~tonic~docs]⮳{{hi:tonic}}, [`grpc`][c~grpc~docs]⮳{{hi:grpc}}. See [[_grpc | gRPC]].
 
 ## Typecasts
 

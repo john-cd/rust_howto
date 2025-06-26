@@ -65,15 +65,15 @@ fn replace(text: &str) -> String {
     }) {
         let suffix = match typ {
             "crate" => "", // FIXME
-            "docs" => "",
-            "github" => "-github",
-            "lib.rs" => "-lib.rs",
-            "crates.io" => "-crates.io",
-            "web" => "-website",
+            "docs" => "~docs",
+            "github" => "~github",
+            "lib.rs" => "~lib.rs",
+            "crates.io" => "~crates.io",
+            "web" => "~website",
             _ => unreachable!(),
         };
         let replacement = crates.split_whitespace().map(|crate_name| { format!(
-                "[![{crate_name}][c-{crate_name}{suffix}-badge]][c-{crate_name}{suffix}]{{{{hi:{crate_name}}}}}"
+                "[![{crate_name}][c~{crate_name}{suffix}~badge]][c~{crate_name}{suffix}]{{{{hi:{crate_name}}}}}"
             ) }).collect::<Vec<_>>().join("");
         tracing::debug!("{} {} {} {}", matching, typ, crates, replacement);
         res = res.replace(matching, &replacement);

@@ -1,733 +1,259 @@
-[ex-algorithms-create-random-passwords-from-a-set-of-user-defined-characters]: # "categories/algorithms/randomness.md#create-random-passwords-from-a-set-of-user-defined-characters"
-[ex-algorithms-fastrand]: # "categories/algorithms/randomness.md#fastrand"
-[ex-algorithms-generate-random-numbers-within-a-given-distribution]: # "categories/algorithms/randomness.md#generate-random-numbers-within-a-given-distribution"
-[ex-algorithms-generate-random-numbers-within-a-range]: # "categories/algorithms/randomness.md#generate-random-numbers-within-a-range"
-[ex-algorithms-generate-random-numbers]: # "categories/algorithms/randomness.md#generate-random-numbers"
-[ex-algorithms-generate-random-values-custom-type]: # "categories/algorithms/randomness.md#generate-random-values-custom-type"
-[ex-algorithms-generate-random-values-from-set-alphanumeric]: # "categories/algorithms/randomness.md#generate-random-values-from-set-alphanumeric"
-[ex-algorithms-sort-vector-floats]: # "categories/algorithms/sorting.md#sort-vector-floats"
-[ex-algorithms-sort-vector-integers]: # "categories/algorithms/sorting.md#sort-vector-integers"
-[ex-algorithms-sort-vector-structs]: # "categories/algorithms/sorting.md#sort-vector-structs"
-[ex-asynchronous-async-runtimes]: # "categories/asynchronous/async.md#async-runtimes"
-[ex-asynchronous-async-traits]: # "categories/asynchronous/async_traits.md#async-traits"
-[ex-asynchronous-basic-example]: # "categories/asynchronous/async.md#basic-example"
-[ex-asynchronous-basics]: # "categories/asynchronous/tokio.md#basics"
-[ex-asynchronous-broadcast]: # "categories/asynchronous/async_channels.md#broadcast"
-[ex-asynchronous-call-async-from-blocking]: # "categories/asynchronous/async_and_blocking.md#call-async-from-blocking"
-[ex-asynchronous-calling-blocking-from-async]: # "categories/asynchronous/async_and_blocking.md#calling-blocking-from-async"
-[ex-asynchronous-diff-other-languages]: # "categories/asynchronous/async.md#diff-other-languages"
-[ex-asynchronous-futures-executor]: # "categories/asynchronous/async_and_blocking.md#futures-executor"
-[ex-asynchronous-futures-util]: # "categories/asynchronous/futures.md#futures-util"
-[ex-asynchronous-graceful-shutdown]: # "categories/asynchronous/tokio.md#graceful-shutdown"
-[ex-asynchronous-io]: # "categories/asynchronous/tokio.md#io"
-[ex-asynchronous-join]: # "categories/asynchronous/tokio.md#join"
-[ex-asynchronous-joining-futures]: # "categories/asynchronous/futures.md#joining-futures"
-[ex-asynchronous-kanal]: # "categories/asynchronous/async_channels.md#kanal"
-[ex-asynchronous-map-then-either-flatten]: # "categories/asynchronous/futures.md#map-then-either-flatten"
-[ex-asynchronous-mpmc]: # "categories/asynchronous/async_channels.md#mpmc"
-[ex-asynchronous-mpsc]: # "categories/asynchronous/async_channels.md#mpsc"
-[ex-asynchronous-oneshot]: # "categories/asynchronous/async_channels.md#oneshot"
-[ex-asynchronous-rayon]: # "categories/asynchronous/async_and_blocking.md#rayon"
-[ex-asynchronous-selecting-futures]: # "categories/asynchronous/futures.md#selecting-futures"
-[ex-asynchronous-spawn-a-dedicated-thread]: # "categories/asynchronous/async_and_blocking.md#spawn-a-dedicated-thread"
-[ex-asynchronous-spawn-blocking]: # "categories/asynchronous/async_and_blocking.md#spawn-blocking"
-[ex-asynchronous-spawning]: # "categories/asynchronous/tokio.md#spawning"
-[ex-asynchronous-streams]: # "categories/asynchronous/streams.md#streams"
-[ex-asynchronous-tokio-runtime]: # "categories/asynchronous/async_and_blocking.md#tokio-runtime"
-[ex-asynchronous-tokio]: # "categories/asynchronous/async_channels.md#tokio"
-[ex-asynchronous-utilities]: # "categories/asynchronous/async_utilities.md#utilities"
-[ex-asynchronous-which-crate-provides-what]: # "categories/asynchronous/async.md#which-crate-provides-what"
-[ex-authentication-basic-authentication]: # "categories/authentication/basic_authentication.md#basic-authentication"
-[ex-caching-cached]: # "categories/caching/in_memory_cache.md#cached"
-[ex-caching-lru-cache]: # "categories/caching/in_memory_cache.md#lru-cache"
-[ex-caching-moka]: # "categories/caching/in_memory_cache.md#moka"
-[ex-cargo-basic-cargo-usage]: # "categories/development-tools/cargo/cargo.md#basic-cargo-usage"
-[ex-cargo-cargo-toml]: # "categories/development-tools/cargo/cargo.md#cargo-toml"
-[ex-cargo-crate-registries]: # "categories/development-tools/cargo/crate_registries.md#crate-registries"
-[ex-cargo-crates_io]: # "categories/development-tools/cargo/crate_registries.md#crates_io"
-[ex-cargo-package-layout]: # "categories/development-tools/cargo/package_layout.md#package-layout"
-[ex-code_organization-binary-crate-organization]: code_organization/code_organization.md#binary-crate-organization
-[ex-code_organization-bring-function-in-scope]: code_organization/use_keyword.md#bring-function-in-scope
-[ex-code_organization-bring-item-from-external-crate-into-scope]: code_organization/use_keyword.md#bring-item-from-external-crate-into-scope
-[ex-code_organization-bring-struct-or-enum-in-scope]: code_organization/use_keyword.md#bring-struct-or-enum-in-scope
-[ex-code_organization-code-files]: code_organization/modules.md#code-files
-[ex-code_organization-complex-library-code-organization]: code_organization/code_organization.md#complex-library-code-organization
-[ex-code_organization-dependencies]: code_organization/dependencies.md#dependencies
-[ex-code_organization-flatten-module-hierarchy]: code_organization/code_organization.md#flatten-module-hierarchy
-[ex-code_organization-large-projects]: code_organization/code_organization.md#large-projects
-[ex-code_organization-less-common-code-organization]: code_organization/code_organization.md#less-common-code-organization
-[ex-code_organization-modules]: code_organization/modules.md#modules
-[ex-code_organization-paths]: code_organization/modules.md#paths
-[ex-code_organization-simple-library-code-organization]: code_organization/code_organization.md#simple-library-code-organization
-[ex-code_organization-use-keyword-for-dependencies]: code_organization/dependencies.md#use-keyword-for-dependencies
-[ex-code_organization-use-keyword]: code_organization/use_keyword.md#use-keyword
-[ex-code_organization-visibility-rules]: code_organization/modules.md#visibility-rules
-[ex-command-line-interface-ansi_term-basic]: # "categories/command-line-interface/ansi_terminal.md#ansi-terminal"
-[ex-command-line-interface-ansiterm]: # "categories/command-line-interface/ansi_terminal.md#ansiterm"
-[ex-command-line-interface-anstream]: # "categories/command-line-interface/ansi_terminal.md#anstream"
-[ex-command-line-interface-anstyle]: # "categories/command-line-interface/ansi_terminal.md#anstyle"
-[ex-command-line-interface-bold-colored-text]: # "categories/command-line-interface/ansi_terminal.md#bold-colored-text"
-[ex-command-line-interface-bold-text]: # "categories/command-line-interface/ansi_terminal.md#bold-text"
-[ex-command-line-interface-clap-builder]: # "categories/command-line-interface/argument_parsing.md#clap-builder"
-[ex-command-line-interface-clap-derive]: # "categories/command-line-interface/argument_parsing.md#clap-derive"
-[ex-command-line-interface-clap_complete]: # "categories/command-line-interface/argument_parsing.md#clap_complete"
-[ex-command-line-interface-colored-text]: # "categories/command-line-interface/ansi_terminal.md#colored-text"
-[ex-command-line-interface-colored]: # "categories/command-line-interface/ansi_terminal.md#colored"
-[ex-command-line-interface-console]: # "categories/command-line-interface/ansi_terminal.md#console"
-[ex-command-line-interface-crossterm]: # "categories/command-line-interface/ansi_terminal.md#crossterm"
-[ex-command-line-interface-indicatif]: # "categories/command-line-interface/user_interaction.md#indicatif"
-[ex-command-line-interface-inquire]: # "categories/command-line-interface/user_interaction.md#inquire"
-[ex-command-line-interface-lexopt]: # "categories/command-line-interface/argument_parsing.md#lexopt"
-[ex-command-line-interface-nu-ansi-term]: # "categories/command-line-interface/ansi_terminal.md#nu-ansi-term"
-[ex-command-line-interface-owo-colors]: # "categories/command-line-interface/ansi_terminal.md#owo-colors"
-[ex-command-line-interface-pico-args]: # "categories/command-line-interface/argument_parsing.md#pico-args"
-[ex-command-line-interface-ratatui]: # "categories/command-line-interface/tui.md#ratatui"
-[ex-command-line-interface-structopt]: # "categories/command-line-interface/argument_parsing.md#structopt"
-[ex-command-line-interface-stylish]: # "categories/command-line-interface/ansi_terminal.md#stylish"
-[ex-command-line-interface-termcolor]: # "categories/command-line-interface/ansi_terminal.md#termcolor"
-[ex-command-line-interface-termion]: # "categories/command-line-interface/ansi_terminal.md#termion"
-[ex-command-line-interface-yansi]: # "categories/command-line-interface/ansi_terminal.md#yansi"
-[ex-command-line-utilities-bat]: # "categories/command-line-utilities/filesystem_cli.md#bat"
-[ex-command-line-utilities-broot]: # "categories/command-line-utilities/filesystem_cli.md#broot"
-[ex-command-line-utilities-exa]: # "categories/command-line-utilities/filesystem_cli.md#exa"
-[ex-command-line-utilities-gping]: # "categories/command-line-utilities/networking_cli.md#gping"
-[ex-command-line-utilities-lsd]: # "categories/command-line-utilities/filesystem_cli.md#lsd"
-[ex-command-line-utilities-nushell]: # "categories/command-line-utilities/shells.md#nushell"
-[ex-command-line-utilities-open]: # "categories/command-line-utilities/filesystem_cli.md#open"
-[ex-command-line-utilities-starship]: # "categories/command-line-utilities/shells.md#starship"
-[ex-compilation-build-time]: # "categories/development-tools/compilation/reduce_compilation_duration.md#build-time"
-[ex-compilation-dynamic-linking]: # "categories/development-tools/compilation/reduce_compilation_duration.md#dynamic-linking"
-[ex-compilation-faster-linking]: # "categories/development-tools/compilation/faster_linking.md#faster-linking"
-[ex-compilation-incremental-compilation]: # "categories/development-tools/compilation/reduce_compilation_duration.md#incremental-compilation"
-[ex-compilation-mold-linker]: # "categories/development-tools/compilation/faster_linking.md#mold-linker"
-[ex-compilation-optimization-levels]: # "categories/development-tools/compilation/reduce_compilation_duration.md#optimization-levels"
-[ex-compression-compress-a-directory-into-a-tarball]: # "categories/compression/tar.md#compress-a-directory-into-a-tarball"
-[ex-compression-compress-decompress]: # "categories/compression/compression.md#compress-decompress"
-[ex-compression-decompress-a-tarball-removing-prefix]: # "categories/compression/tar.md#decompress-a-tarball-removing-prefix"
-[ex-compression-decompress-a-tarball]: # "categories/compression/tar.md#decompress-a-tarball"
-[ex-compression-zip]: # "categories/compression/compression.md#zip"
-[ex-concurrency-actix]: # "categories/concurrency/_actors.md#actix"
-[ex-concurrency-any-or-all-in-parallel]: # "categories/concurrency/data_parallelism.md#any-or-all-in-parallel"
-[ex-concurrency-arc-mutex]: # "categories/concurrency/send_sync.md#arc-mutex"
-[ex-concurrency-arc-swap]: # "categories/concurrency/atomics.md#arc-swap"
-[ex-concurrency-atomics]: # "categories/concurrency/atomics.md#atomics"
-[ex-concurrency-crossbeam-atomics]: # "categories/concurrency/atomics.md#crossbeam-atomics"
-[ex-concurrency-crossbeam-channel]: # "categories/concurrency/message_passing.md#crossbeam-channel"
-[ex-concurrency-crossbeam-queue]: # "categories/concurrency/concurrent_data_structures.md#crossbeam-queue"
-[ex-concurrency-custom-parallel-tasks]: # "categories/concurrency/data_parallelism.md#custom-parallel-tasks"
-[ex-concurrency-dashmap]: # "categories/concurrency/concurrent_data_structures.md#dashmap"
-[ex-concurrency-draw-fractal-threadpool]: # "categories/concurrency/threadpool.md#draw-fractal-threadpool"
-[ex-concurrency-existing-impl-send-sync]: # "categories/concurrency/send_sync.md#existing-impl-send-sync"
-[ex-concurrency-flume]: # "categories/concurrency/message_passing.md#flume"
-[ex-concurrency-flurry]: # "categories/concurrency/concurrent_data_structures.md#flurry"
-[ex-concurrency-global-mutable-state]: # "categories/concurrency/shared_state.md#global-mutable-state"
-[ex-concurrency-implementing-send-sync]: # "categories/concurrency/send_sync.md#implementing-send-sync"
-[ex-concurrency-map-reduce-in-parallel]: # "categories/concurrency/data_parallelism.md#map-reduce-in-parallel"
-[ex-concurrency-mpsc]: # "categories/concurrency/message_passing.md#mpsc"
-[ex-concurrency-mutate-array-in-parallel]: # "categories/concurrency/data_parallelism.md#mutate-array-in-parallel"
-[ex-concurrency-mutex]: # "categories/concurrency/shared_state.md#mutex"
-[ex-concurrency-papaya]: # "categories/concurrency/concurrent_data_structures.md#papaya"
-[ex-concurrency-par-iter]: # "categories/concurrency/data_parallelism.md#par-iter"
-[ex-concurrency-parallel-pipeline]: # "categories/concurrency/crossbeam.md#parallel-pipeline"
-[ex-concurrency-parallel-sorting]: # "categories/concurrency/data_parallelism.md#parallel-sorting"
-[ex-concurrency-parking-lot]: # "categories/concurrency/shared_state.md#parking-lot"
-[ex-concurrency-pass-data-between-two-threads]: # "categories/concurrency/crossbeam.md#pass-data-between-two-threads"
-[ex-concurrency-ractor]: # "categories/concurrency/_actors.md#ractor"
-[ex-concurrency-rayon]: # "categories/concurrency/data_parallelism.md#rayon"
-[ex-concurrency-riker]: # "categories/concurrency/_actors.md#riker"
-[ex-concurrency-scoped-threads]: # "categories/concurrency/explicit_threads.md#scoped-threads"
-[ex-concurrency-search-in-parallel]: # "categories/concurrency/data_parallelism.md#search-in-parallel"
-[ex-concurrency-send]: # "categories/concurrency/send_sync.md#send"
-[ex-concurrency-sha256-of-iso-files-concurrently]: # "categories/concurrency/threadpool.md#sha256-of-iso-files-concurrently"
-[ex-concurrency-sort-in-parallel]: # "categories/concurrency/data_parallelism.md#sort-in-parallel"
-[ex-concurrency-spawn-a-short-lived-thread]: # "categories/concurrency/crossbeam.md#spawn-a-short-lived-thread"
-[ex-concurrency-spawn-join]: # "categories/concurrency/explicit_threads.md#spawn-join"
-[ex-concurrency-stakker]: # "categories/concurrency/_actors.md#stakker"
-[ex-concurrency-sync]: # "categories/concurrency/send_sync.md#sync"
-[ex-concurrency-thumbnails-in-parallel]: # "categories/concurrency/data_parallelism.md#thumbnails-in-parallel"
-[ex-config-config]: # "categories/config/configuration.md#config"
-[ex-config-confy]: # "categories/config/configuration.md#confy"
-[ex-config-dotenvy]: # "categories/config/environment_variables.md#dotenvy"
-[ex-config-env]: # "categories/config/environment_variables.md#env"
-[ex-config-envy]: # "categories/config/environment_variables.md#envy"
-[ex-config-load_configuration_into_a_singleton]: # "categories/config/configuration.md#load_configuration_into_a_singleton"
-[ex-config-test_configuration_loading_methods]: # "categories/config/configuration.md#test_configuration_loading_methods"
-[ex-contributing-book-editing]: # "contributing/development_editing.md#book-editing"
-[ex-contributing-deployment-to-github-pages]: # "contributing/dev_container_docker.md#deployment-to-github-pages"
-[ex-contributing-dev-container-feature]: # "contributing/api_documentation.md#dev-container-feature"
-[ex-contributing-dev-env-setup]: # "contributing/dev_environment_setup.md#dev-env-setup"
-[ex-contributing-docker-compose]: # "contributing/dev_container_docker.md#docker-compose"
-[ex-contributing-examples-fully-tested]: # "contributing/repo_structure.md#examples-fully-tested"
-[ex-contributing-generate-the-documentation]: # "contributing/api_documentation.md#generate-the-documentation"
-[ex-contributing-optional-preprocessors]: # "contributing/optional_preprocessors.md#optional-preprocessors"
-[ex-contributing-other-methods-to-preview-the-documentation-html]: # "contributing/api_documentation.md#other-methods-to-preview-the-documentation-html"
-[ex-contributing-other]: # "contributing/dev_environment_setup.md#other"
-[ex-contributing-publish]: # "contributing/publication.md#publish"
-[ex-contributing-push-image-to-docker-hub]: # "contributing/dev_container_docker.md#push-image-to-docker-hub"
-[ex-contributing-repo-structure]: # "contributing/repo_structure.md#repo-structure"
-[ex-contributing-topics-of-interest]: # "contributing/topics_of_interest.md#topics-of-interest"
-[ex-contributing-using-vs-code]: # "contributing/dev_environment_setup.md#using-vs-code"
-[ex-cross-compilation-cross-compilation]: # "categories/development-tools/cross-compilation/cross_compilation.md#cross-compilation"
-[ex-cross-compilation-cross-compile-with-cargo]: # "categories/development-tools/cross-compilation/cross_compilation.md#cross-compile-with-cargo"
-[ex-cryptography-aes-gcm-siv]: # "categories/cryptography/aead.md#aes-gcm-siv"
-[ex-cryptography-aes-gcm]: # "categories/cryptography/aead.md#aes-gcm"
-[ex-cryptography-argon2]: # "categories/cryptography/password_hashing.md#argon2"
-[ex-cryptography-bcrypt]: # "categories/cryptography/password_hashing.md#bcrypt"
-[ex-cryptography-blake3]: # "categories/cryptography/hashing.md#blake3"
-[ex-cryptography-chacha20poly1305]: # "categories/cryptography/aead.md#chacha20poly1305"
-[ex-cryptography-der]: # "categories/cryptography/certificates.md#der"
-[ex-cryptography-dsa]: # "categories/cryptography/signature.md#dsa"
-[ex-cryptography-ecdsa]: # "categories/cryptography/signature.md#ecdsa"
-[ex-cryptography-ed25519-dalek]: # "categories/cryptography/signature.md#ed25519-dalek"
-[ex-cryptography-ed25519]: # "categories/cryptography/signature.md#ed25519"
-[ex-cryptography-hmac]: # "categories/cryptography/hmac.md#hmac"
-[ex-cryptography-md-5]: # "categories/cryptography/hashing.md#md-5"
-[ex-cryptography-native-tls]: # "categories/cryptography/tls.md#native-tls"
-[ex-cryptography-pbkdf2]: # "categories/cryptography/password_hashing.md#pbkdf2"
-[ex-cryptography-pem-rfc7468]: # "categories/cryptography/certificates.md#pem-rfc7468"
-[ex-cryptography-pkcs8]: # "categories/cryptography/certificates.md#pkcs8"
-[ex-cryptography-rsa]: # "categories/cryptography/encryption.md#rsa"
-[ex-cryptography-rustls]: # "categories/cryptography/tls.md#rustls"
-[ex-cryptography-scrypt]: # "categories/cryptography/password_hashing.md#scrypt"
-[ex-cryptography-sha1]: # "categories/cryptography/hashing.md#sha1"
-[ex-cryptography-sha256]: # "categories/cryptography/hashing.md#sha256"
-[ex-cryptography-sha2]: # "categories/cryptography/hashing.md#sha2"
-[ex-cryptography-sodiumoxide]: # "categories/cryptography/encryption.md#sodiumoxide"
-[ex-cryptography-subtle]: # "categories/cryptography/cryptography_utilities.md#subtle"
-[ex-cryptography-x509-cert]: # "categories/cryptography/certificates.md#x509-cert"
-[ex-cryptography-zeroize]: # "categories/cryptography/cryptography_utilities.md#zeroize"
-[ex-data-structures-arrayvec]: # "categories/data-structures/stack_allocated_arrays.md#arrayvec"
-[ex-data-structures-bitfield]: # "categories/data-structures/bitfield.md#bitfield"
-[ex-data-structures-bitvec]: # "categories/data-structures/bitfield.md#bitvec"
-[ex-data-structures-btreemap]: # "categories/data-structures/btrees.md#btreemap"
-[ex-data-structures-btreeset]: # "categories/data-structures/btrees.md#btreeset"
-[ex-data-structures-flagset]: # "categories/data-structures/bitfield.md#flagset"
-[ex-data-structures-generate-parse-uuid]: # "categories/data-structures/uuid.md#generate-parse-uuid"
-[ex-data-structures-heapless]: # "categories/data-structures/heapless.md#heapless"
-[ex-data-structures-indexmap]: # "categories/data-structures/maps.md#indexmap"
-[ex-data-structures-linkedlist]: # "categories/data-structures/linkedlist.md#linkedlist"
-[ex-data-structures-multimap]: # "categories/data-structures/maps.md#multimap"
-[ex-data-structures-petgraph]: # "categories/data-structures/graph.md#petgraph"
-[ex-data-structures-priority-queue]: # "categories/data-structures/binaryheap.md#priority-queue"
-[ex-data-structures-queue]: # "categories/data-structures/stack_and_queue.md#queue"
-[ex-data-structures-slotmap]: # "categories/data-structures/maps.md#slotmap"
-[ex-data-structures-smallvec]: # "categories/data-structures/stack_allocated_arrays.md#smallvec"
-[ex-data-structures-stack]: # "categories/data-structures/stack_and_queue.md#stack"
-[ex-data-structures-tinyvec]: # "categories/data-structures/stack_allocated_arrays.md#tinyvec"
-[ex-database-aggregate-data-postgres]: # "categories/database/postgres.md#aggregate-data-postgres"
-[ex-database-cassandra_protocol]: # "categories/database/nosql.md#cassandra_protocol"
-[ex-database-cdrs_tokio]: # "categories/database/nosql.md#cdrs_tokio"
-[ex-database-connection-pool]: # "categories/database/connection_pool.md#connection-pool"
-[ex-database-cornucopia]: # "categories/database/postgres.md#cornucopia"
-[ex-database-create-database-sqlite]: # "categories/database/sqlite.md#create-database-sqlite"
-[ex-database-create-tables-postgres]: # "categories/database/postgres.md#create-tables-postgres"
-[ex-database-diesel]: # "categories/database/query_builders_orms.md#diesel"
-[ex-database-diesel_oci]: # "categories/database/oracle.md#diesel_oci"
-[ex-database-elasticsearch]: # "categories/database/search.md#elasticsearch"
-[ex-database-heed]: # "categories/database/key_value_stores.md#heed"
-[ex-database-implementations-lapin]: # "categories/database-implementations/databases.md#lapin"
-[ex-database-implementations-meilisearch]: # "categories/database-implementations/rust_search_engines.md#meilisearch"
-[ex-database-implementations-sled]: # "categories/database-implementations/databases.md#sled"
-[ex-database-implementations-surrealdb]: # "categories/database-implementations/databases.md#surrealdb"
-[ex-database-implementations-tantivy]: # "categories/database-implementations/rust_search_engines.md#tantivy"
-[ex-database-insert-query-data-postgres]: # "categories/database/postgres.md#insert-query-data-postgres"
-[ex-database-insert-select-data]: # "categories/database/sqlite.md#insert-select-data"
-[ex-database-lapin]: # "categories/database/amqp.md#lapin"
-[ex-database-mongodb]: # "categories/database/nosql.md#mongodb"
-[ex-database-oracle]: # "categories/database/oracle.md#oracle"
-[ex-database-redis]: # "categories/database/nosql.md#redis"
-[ex-database-rocksdb]: # "categories/database/key_value_stores.md#rocksdb"
-[ex-database-sea-orm]: # "categories/database/query_builders_orms.md#sea-orm"
-[ex-database-sibyl]: # "categories/database/oracle.md#sibyl"
-[ex-database-sqlx]: # "categories/database/query_builders_orms.md#sqlx"
-[ex-database-tiberius]: # "categories/database/mssql.md#tiberius"
-[ex-database-tinysearch]: # "categories/database/search.md#tinysearch"
-[ex-database-toasty]: # "categories/database/query_builders_orms.md#toasty"
-[ex-database-tokio-postgres]: # "categories/database/postgres.md#tokio-postgres"
-[ex-database-transaction]: # "categories/database/sqlite.md#transaction"
-[ex-date-and-time-convert-local-time]: # "categories/date-and-time/duration.md#convert-local-time"
-[ex-date-and-time-display-formatted-date-time]: # "categories/date-and-time/parse.md#display-formatted-date-time"
-[ex-date-and-time-examine-date-and-time]: # "categories/date-and-time/parse.md#examine-date-and-time"
-[ex-date-and-time-humantime]: # "categories/date-and-time/parse.md#humantime"
-[ex-date-and-time-measure-elapsed-time]: # "categories/date-and-time/duration.md#measure-elapsed-time"
-[ex-date-and-time-parse-string-into-datetime-struct]: # "categories/date-and-time/parse.md#parse-string-into-datetime-struct"
-[ex-date-and-time-perform-checked-date-time-calc]: # "categories/date-and-time/duration.md#perform-checked-date-time-calc"
-[ex-date-and-time-time-crate]: # "categories/date-and-time/time_crate.md#time-crate"
-[ex-date-and-time-unix-timestamp]: # "categories/date-and-time/parse.md#unix-timestamp"
-[ex-development-tools_build-utils-autocfg]: # "categories/development-tools_build-utils/autocfg.md#autocfg"
-[ex-development-tools_build-utils-cc-custom-defines]: # "categories/development-tools_build-utils/build_time_tooling.md#cc-custom-defines"
-[ex-development-tools_build-utils-cc]: # "categories/development-tools_build-utils/build_time_tooling.md#cc"
-[ex-development-tools_build-utils-cpp]: # "categories/development-tools_build-utils/build_time_tooling.md#cpp"
-[ex-development-tools_build-utils-sccache]: # "categories/development-tools_build-utils/build_cache.md#sccache"
-[ex-development-tools_cargo-plugins-cargo-audit]: # "categories/development-tools_cargo-plugins/auditing.md#cargo-audit"
-[ex-development-tools_cargo-plugins-cargo-auditable]: # "categories/development-tools_cargo-plugins/auditing.md#cargo-auditable"
-[ex-development-tools_cargo-plugins-cargo-cache]: # "categories/development-tools_cargo-plugins/maintaining.md#cargo-cache"
-[ex-development-tools_cargo-plugins-cargo-clippy]: # "categories/development-tools_cargo-plugins/code_formatting_linting.md#cargo-clippy"
-[ex-development-tools_cargo-plugins-cargo-deny]: # "categories/development-tools_cargo-plugins/auditing.md#cargo-deny"
-[ex-development-tools_cargo-plugins-cargo-edit]: # "categories/development-tools_cargo-plugins/dependency_management.md#cargo-edit"
-[ex-development-tools_cargo-plugins-cargo-expand]: # "categories/development-tools_cargo-plugins/maintaining.md#cargo-expand"
-[ex-development-tools_cargo-plugins-cargo-generate]: # "categories/development-tools_cargo-plugins/code_writing.md#cargo-generate"
-[ex-development-tools_cargo-plugins-cargo-hack]: # "categories/development-tools_cargo-plugins/maintaining.md#cargo-hack"
-[ex-development-tools_cargo-plugins-cargo-hakari]: # "categories/development-tools_cargo-plugins/performance.md#cargo-hakari"
-[ex-development-tools_cargo-plugins-cargo-husky]: # "categories/development-tools_cargo-plugins/code_formatting_linting.md#cargo-husky"
-[ex-development-tools_cargo-plugins-cargo-license]: # "categories/development-tools_cargo-plugins/auditing.md#cargo-license"
-[ex-development-tools_cargo-plugins-cargo-limit]: # "categories/development-tools_cargo-plugins/watching_for_changes.md#cargo-limit"
-[ex-development-tools_cargo-plugins-cargo-make]: # "categories/development-tools_cargo-plugins/building.md#cargo-make"
-[ex-development-tools_cargo-plugins-cargo-open]: # "categories/development-tools_cargo-plugins/code_writing.md#cargo-open"
-[ex-development-tools_cargo-plugins-cargo-outdated]: # "categories/development-tools_cargo-plugins/dependency_management.md#cargo-outdated"
-[ex-development-tools_cargo-plugins-cargo-semver-checks]: # "categories/development-tools_cargo-plugins/maintaining.md#cargo-semver-checks"
-[ex-development-tools_cargo-plugins-cargo-watch]: # "categories/development-tools_cargo-plugins/watching_for_changes.md#cargo-watch"
-[ex-development-tools_cargo-plugins-cargo-wizard]: # "categories/development-tools_cargo-plugins/performance.md#cargo-wizard"
-[ex-development-tools_cargo-plugins-deps-rs]: # "categories/development-tools_cargo-plugins/dependency_management.md#deps-rs"
-[ex-development-tools_cargo-plugins-devx]: # "categories/development-tools_cargo-plugins/building.md#devx"
-[ex-development-tools_cargo-plugins-find-unused-dependencies]: # "categories/development-tools_cargo-plugins/dependency_management.md#find-unused-dependencies"
-[ex-development-tools_cargo-plugins-rust-digger]: # "categories/development-tools_cargo-plugins/dependency_management.md#rust-digger"
-[ex-development-tools_cargo-plugins-rustfix]: # "categories/development-tools_cargo-plugins/code_formatting_linting.md#rustfix"
-[ex-development-tools_cargo-plugins-rustfmt]: # "categories/development-tools_cargo-plugins/code_formatting_linting.md#rustfmt"
-[ex-development-tools_cargo-plugins-xshell]: # "categories/development-tools_cargo-plugins/building.md#xshell"
-[ex-development-tools_cargo-plugins-zig]: # "categories/development-tools_cargo-plugins/cross_compiling.md#zig"
-[ex-development-tools_debugging-add-tracing-spans-to-fn]: # "categories/development-tools_debugging/tracing.md#add-tracing-spans-to-fn"
-[ex-development-tools_debugging-configure-tracing]: # "categories/development-tools_debugging/tracing.md#configure-tracing"
-[ex-development-tools_debugging-custom-env-var-for-logging]: # "categories/development-tools_debugging/config_log.md#custom-env-var-for-logging"
-[ex-development-tools_debugging-custom-event-formatter]: # "categories/development-tools_debugging/tracing.md#custom-event-formatter"
-[ex-development-tools_debugging-custom-logger]: # "categories/development-tools_debugging/log.md#custom-logger"
-[ex-development-tools_debugging-enable-log-levels-per-module]: # "categories/development-tools_debugging/config_log.md#enable-log-levels-per-module"
-[ex-development-tools_debugging-env-logger]: # "categories/development-tools_debugging/tracing_alternatives.md#env-logger"
-[ex-development-tools_debugging-events]: # "categories/development-tools_debugging/tracing.md#events"
-[ex-development-tools_debugging-jaeger]: # "categories/development-tools_debugging/distributed_telemetry.md#jaeger"
-[ex-development-tools_debugging-log-error-message-to-console]: # "categories/development-tools_debugging/log.md#log-error-message-to-console"
-[ex-development-tools_debugging-log-to-console]: # "categories/development-tools_debugging/log.md#log-to-console"
-[ex-development-tools_debugging-log-to-custom-location]: # "categories/development-tools_debugging/config_log.md#log-to-custom-location"
-[ex-development-tools_debugging-log-to-stdout]: # "categories/development-tools_debugging/log.md#log-to-stdout"
-[ex-development-tools_debugging-log4rs]: # "categories/development-tools_debugging/tracing_alternatives.md#log4rs"
-[ex-development-tools_debugging-log]: # "categories/development-tools_debugging/tracing_alternatives.md#log"
-[ex-development-tools_debugging-open-observe]: # "categories/development-tools_debugging/distributed_telemetry.md#open-observe"
-[ex-development-tools_debugging-open-telemetry]: # "categories/development-tools_debugging/distributed_telemetry.md#open-telemetry"
-[ex-development-tools_debugging-prometheus]: # "categories/development-tools_debugging/distributed_telemetry.md#prometheus"
-[ex-development-tools_debugging-slog]: # "categories/development-tools_debugging/tracing_alternatives.md#slog"
-[ex-development-tools_debugging-span-entered]: # "categories/development-tools_debugging/tracing.md#span-entered"
-[ex-development-tools_debugging-span-instrument]: # "categories/development-tools_debugging/tracing.md#span-instrument"
-[ex-development-tools_debugging-spans]: # "categories/development-tools_debugging/tracing.md#spans"
-[ex-development-tools_debugging-syslog]: # "categories/development-tools_debugging/log.md#syslog"
-[ex-development-tools_debugging-timestamp-in-log-messages]: # "categories/development-tools_debugging/config_log.md#timestamp-in-log-messages"
-[ex-development-tools_debugging-tracing-basics]: # "categories/development-tools_debugging/tracing.md#tracing-basics"
-[ex-development-tools_debugging-tracing-change-log-level]: # "categories/development-tools_debugging/tracing.md#tracing-change-log-level"
-[ex-development-tools_debugging-tracing-change-runtime]: # "categories/development-tools_debugging/tracing.md#tracing-change-runtime"
-[ex-development-tools_debugging-tracing-config-runtime]: # "categories/development-tools_debugging/tracing.md#tracing-config-runtime"
-[ex-development-tools_debugging-tracing-log-json]: # "categories/development-tools_debugging/tracing.md#tracing-log-json"
-[ex-development-tools_debugging-tracing-multiple-destinations]: # "categories/development-tools_debugging/tracing.md#tracing-multiple-destinations"
-[ex-development-tools_debugging-type-name-of-val]: # "categories/development-tools_debugging/diagnostic_functions.md#type-name-of-val"
-[ex-development-tools_profiling-cargo-flamegraph]: # "categories/development-tools_profiling/benchmarking.md#cargo-flamegraph"
-[ex-development-tools_profiling-cargo-show-asm]: # "categories/development-tools_profiling/assembly.md#cargo-show-asm"
-[ex-development-tools_profiling-criterion]: # "categories/development-tools_profiling/benchmarking.md#criterion"
-[ex-development-tools_profiling-debugging]: # "categories/development-tools_profiling/memory_usage_analysis.md#debugging"
-[ex-development-tools_profiling-dhat]: # "categories/development-tools_profiling/memory_usage_analysis.md#dhat"
-[ex-development-tools_profiling-divan]: # "categories/development-tools_profiling/benchmarking.md#divan"
-[ex-development-tools_profiling-hyperfine]: # "categories/development-tools_profiling/benchmarking.md#hyperfine"
-[ex-development-tools_profiling-leaks]: # "categories/development-tools_profiling/memory_usage_analysis.md#leaks"
-[ex-development-tools_profiling-timing]: # "categories/development-tools_profiling/memory_usage_analysis.md#timing"
-[ex-development-tools_profiling-tracing]: # "categories/development-tools_profiling/memory_usage_analysis.md#tracing"
-[ex-development-tools_testing-afl]: # "categories/development-tools_testing/fuzzing.md#afl"
-[ex-development-tools_testing-approx]: # "categories/development-tools_testing/assertions.md#approx"
-[ex-development-tools_testing-assertion_libraries]: # "categories/development-tools_testing/assertions.md#assertion_libraries"
-[ex-development-tools_testing-async_testing]: # "categories/development-tools_testing/testing.md#async_testing"
-[ex-development-tools_testing-cargo-nextest]: # "categories/development-tools_testing/test_runners.md#cargo-nextest"
-[ex-development-tools_testing-cargo-test]: # "categories/development-tools_testing/test_runners.md#cargo-test"
-[ex-development-tools_testing-cargo_fuzz]: # "categories/development-tools_testing/fuzzing.md#cargo_fuzz"
-[ex-development-tools_testing-cargo_tarpaulin]: # "categories/development-tools_testing/code_coverage.md#cargo_tarpaulin"
-[ex-development-tools_testing-coverage_testing]: # "categories/development-tools_testing/code_coverage.md#coverage_testing"
-[ex-development-tools_testing-custom-message]: # "categories/development-tools_testing/assertions.md#custom-message"
-[ex-development-tools_testing-doc_testing]: # "categories/development-tools_testing/testing.md#doc_testing"
-[ex-development-tools_testing-faux]: # "categories/development-tools_testing/mocking.md#faux"
-[ex-development-tools_testing-insta]: # "categories/development-tools_testing/testing.md#insta"
-[ex-development-tools_testing-integration_testing]: # "categories/development-tools_testing/testing.md#integration_testing"
-[ex-development-tools_testing-mocking]: # "categories/development-tools_testing/mocking.md#mocking"
-[ex-development-tools_testing-proptesting]: # "categories/development-tools_testing/property_based_testing.md#proptesting"
-[ex-development-tools_testing-test_data_generation]: # "categories/development-tools_testing/property_based_testing.md#test_data_generation"
-[ex-development-tools_testing-unit_testing]: # "categories/development-tools_testing/testing.md#unit_testing"
-[ex-documentation-badges]: # "categories/development-tools/documentation/badges.md#badges"
-[ex-documentation-cd-ci]: # "categories/development-tools/documentation/mdbook.md#cd-ci"
-[ex-documentation-documenting-your-code]: # "categories/development-tools/documentation/documentation.md#documenting-your-code"
-[ex-documentation-mdbook-cmdrun]: # "categories/development-tools/documentation/mdbook.md#mdbook-cmdrun"
-[ex-documentation-mdbook-hide]: # "categories/development-tools/documentation/mdbook.md#mdbook-hide"
-[ex-documentation-mdbook-journal]: # "categories/development-tools/documentation/mdbook.md#mdbook-journal"
-[ex-documentation-mdbook-linkcheck]: # "categories/development-tools/documentation/mdbook.md#mdbook-linkcheck"
-[ex-documentation-mdbook-pagetoc]: # "categories/development-tools/documentation/mdbook.md#mdbook-pagetoc"
-[ex-documentation-mdbook-plugins]: # "categories/development-tools/documentation/mdbook.md#mdbook-plugins"
-[ex-documentation-mdbook-private]: # "categories/development-tools/documentation/mdbook.md#mdbook-private"
-[ex-documentation-mdbook-tera]: # "categories/development-tools/documentation/mdbook.md#mdbook-tera"
-[ex-documentation-mdbook-theme]: # "categories/development-tools/documentation/mdbook.md#mdbook-theme"
-[ex-documentation-mdbook-toc]: # "categories/development-tools/documentation/mdbook.md#mdbook-toc"
-[ex-documentation-mdbook]: # "categories/development-tools/documentation/mdbook.md#mdbook"
-[ex-documentation-module-or-crate-level-documentation]: # "categories/development-tools/documentation/documentation.md#module-or-crate-level-documentation"
-[ex-documentation-playground]: # "categories/development-tools/documentation/mdbook.md#playground"
-[ex-documentation-roxygen]: # "categories/development-tools/documentation/documentation.md#roxygen"
-[ex-documentation-termbook]: # "categories/development-tools/documentation/mdbook.md#termbook"
-[ex-documentation-yapp]: # "categories/development-tools/documentation/mdbook.md#yapp"
-[ex-encoding-base64]: # "categories/encoding/string_encoding.md#base64"
-[ex-encoding-bincode]: # "categories/encoding/_binary_encoders.md#bincode"
-[ex-encoding-bytemuck]: # "categories/encoding/typecasts.md#bytemuck"
-[ex-encoding-byteorder]: # "categories/encoding/complex_encoding.md#byteorder"
-[ex-encoding-capnp]: # "categories/encoding/_binary_encoders.md#capnp"
-[ex-encoding-ciborium]: # "categories/encoding/_binary_encoders.md#ciborium"
-[ex-encoding-data-encoding]: # "categories/encoding/string_encoding.md#data-encoding"
-[ex-encoding-filter-csv]: # "categories/encoding/csv.md#filter-csv"
-[ex-encoding-flatbuffers]: # "categories/encoding/_binary_encoders.md#flatbuffers"
-[ex-encoding-handle-invalid-csv]: # "categories/encoding/csv.md#handle-invalid-csv"
-[ex-encoding-monostate]: # "categories/encoding/serde.md#monostate"
-[ex-encoding-percent-encoding]: # "categories/encoding/string_encoding.md#percent-encoding"
-[ex-encoding-postcard]: # "categories/encoding/no_external_schema.md#postcard"
-[ex-encoding-prost]: # "categories/encoding/_binary_encoders.md#prost"
-[ex-encoding-protobuf]: # "categories/encoding/_binary_encoders.md#protobuf"
-[ex-encoding-read-csv-different-delimiter]: # "categories/encoding/csv.md#read-csv-different-delimiter"
-[ex-encoding-read-csv-records]: # "categories/encoding/csv.md#read-csv-records"
-[ex-encoding-rkyv]: # "categories/encoding/no_external_schema.md#rkyv"
-[ex-encoding-rmp-serde]: # "categories/encoding/_binary_encoders.md#rmp-serde"
-[ex-encoding-serde-ignored]: # "categories/encoding/serde.md#serde-ignored"
-[ex-encoding-serde-json2]: # "categories/encoding/serde.md#serde-json2"
-[ex-encoding-serde-json]: # "categories/encoding/complex_encoding.md#serde-json"
-[ex-encoding-serde]: # "categories/encoding/serde.md#serde"
-[ex-encoding-serialize-to-csv-using-serde]: # "categories/encoding/csv.md#serialize-to-csv-using-serde"
-[ex-encoding-serialize-to-csv]: # "categories/encoding/csv.md#serialize-to-csv"
-[ex-encoding-toml]: # "categories/encoding/complex_encoding.md#toml"
-[ex-encoding-transform-csv-column]: # "categories/encoding/csv.md#transform-csv-column"
-[ex-encoding-url]: # "categories/encoding/string_encoding.md#url"
-[ex-encoding-zerocopy]: # "categories/encoding/typecasts.md#zerocopy"
-[ex-error_handling-and_then]: # "categories/rust-patterns/error_handling/error_handling.md#and_then"
-[ex-error_handling-anyhow]: # "categories/rust-patterns/error_handling/error_customization.md#anyhow"
-[ex-error_handling-avoid-discarding-errors-during-error-conversions]: # "categories/rust-patterns/error_handling/error_handling.md#avoid-discarding-errors-during-error-conversions"
-[ex-error_handling-color-eyre]: # "categories/rust-patterns/error_handling/error_customization.md#color-eyre"
-[ex-error_handling-convert-result-or-option-into-panic]: # "categories/rust-patterns/error_handling/error_handling.md#convert-result-or-option-into-panic"
-[ex-error_handling-handle-errors-correctly-in-main]: # "categories/rust-patterns/error_handling/error_handling.md#handle-errors-correctly-in-main"
-[ex-error_handling-handle-errors-in-main]: # "categories/rust-patterns/error_handling/error_handling.md#handle-errors-in-main"
-[ex-error_handling-irrecoverable-panics]: # "categories/rust-patterns/error_handling/error_handling.md#irrecoverable-panics"
-[ex-error_handling-map]: # "categories/rust-patterns/error_handling/error_handling.md#map"
-[ex-error_handling-miette]: # "categories/rust-patterns/error_handling/error_customization.md#miette"
-[ex-error_handling-obtain-backtrace]: # "categories/rust-patterns/error_handling/error_handling.md#obtain-backtrace"
-[ex-error_handling-question-mark-operator]: # "categories/rust-patterns/error_handling/error_handling.md#question-mark-operator"
-[ex-error_handling-result]: # "categories/rust-patterns/error_handling/error_handling.md#result"
-[ex-error_handling-thiserror]: # "categories/rust-patterns/error_handling/error_customization.md#thiserror"
-[ex-error_handling-unwrap-or-else]: # "categories/rust-patterns/error_handling/error_handling.md#unwrap-or-else"
-[ex-filesystem-avoid-writing-and-reading-from-the-same-file]: # "categories/filesystem/read-write.md#avoid-writing-and-reading-from-the-same-file"
-[ex-filesystem-cwd]: # "categories/filesystem/directories.md#cwd"
-[ex-filesystem-directories]: # "categories/filesystem/user_directories.md#directories"
-[ex-filesystem-dirs]: # "categories/filesystem/user_directories.md#dirs"
-[ex-filesystem-find-all-files-with-given-pattern-ignoring-filename-case]: # "categories/filesystem/directory_traversal.md#find-all-files-with-given-pattern-ignoring-filename-case"
-[ex-filesystem-find-all-png-files-recursively]: # "categories/filesystem/directory_traversal.md#find-all-png-files-recursively"
-[ex-filesystem-find-files-modified-last-24-hours]: # "categories/filesystem/directory_traversal.md#find-files-modified-last-24-hours"
-[ex-filesystem-find-loop-in-path]: # "categories/filesystem/directory_traversal.md#find-loop-in-path"
-[ex-filesystem-globset]: # "categories/filesystem/directory_traversal.md#globset"
-[ex-filesystem-memory-map]: # "categories/filesystem/read-write.md#memory-map"
-[ex-filesystem-open]: # "categories/filesystem/user_directories.md#open"
-[ex-filesystem-read-lines-of-strings-from-a-file]: # "categories/filesystem/read-write.md#read-lines-of-strings-from-a-file"
-[ex-filesystem-recursively-calculate-file-sizes-at-given-depth]: # "categories/filesystem/directory_traversal.md#recursively-calculate-file-sizes-at-given-depth"
-[ex-filesystem-recursively-find-all-files-with-given-predicate]: # "categories/filesystem/directory_traversal.md#recursively-find-all-files-with-given-predicate"
-[ex-filesystem-recursively-find-duplicate-file-names]: # "categories/filesystem/directory_traversal.md#recursively-find-duplicate-file-names"
-[ex-filesystem-remove_dir_all]: # "categories/filesystem/directories.md#remove_dir_all"
-[ex-filesystem-temporary-files-or-directories]: # "categories/filesystem/tempfile.md#temporary-files-or-directories"
-[ex-filesystem-traverse-directories-while-skipping-dotfiles]: # "categories/filesystem/directory_traversal.md#traverse-directories-while-skipping-dotfiles"
-[ex-filesystem-walk-the-filesystem-while-respecting-ignore-files]: # "categories/filesystem/directory_traversal.md#walk-the-filesystem-while-respecting-ignore-files"
-[ex-filesystem-watch-files-or-dirs]: # "categories/filesystem/file_watching.md#watch-files-or-dirs"
-[ex-formatting-formatting-attributes]: # "categories/development-tools/formatting/formatting.md#formatting-attributes"
-[ex-formatting-rustfmt-config]: # "categories/development-tools/formatting/formatting.md#rustfmt-config"
-[ex-formatting-rustfmt]: # "categories/development-tools/formatting/formatting.md#rustfmt"
-[ex-hardware-support-check-number-of-logical-cpu-cores]: # "categories/hardware-support/processor.md#check-number-of-logical-cpu-cores"
-[ex-hardware-support-simd]: # "categories/hardware-support/processor.md#simd"
-[ex-installation-cargo-binstall]: # "categories/development-tools/installation/install.md#cargo-binstall"
-[ex-installation-cargo-install]: # "categories/development-tools/installation/install.md#cargo-install"
-[ex-installation-rustup]: # "categories/development-tools/installation/rustup.md#rustup"
-[ex-language-associated-types]: language/traits.md#associated-types
-[ex-language-async-and-traits]: language/traits.md#async-and-traits
-[ex-language-async-main-function]: language/entrypoint.md#async-main-function
-[ex-language-attributes]: language/attributes.md
-[ex-language-automatic-trait-derivation]: language/attributes.md#automatic-trait-derivation
-[ex-language-borrowing]: language/ownership_borrowing.md#borrowing
-[ex-language-cfg-if]: language/attributes.md#cfg-if
-[ex-language-closure-with-type-annotations]: language/closures.md#closure-with-type-annotations
-[ex-language-closures-as-input-parameters]: language/closures.md#closures-as-input-parameters
-[ex-language-closures]: language/closures.md
-[ex-language-compound-types]: language/data_types.md#compound-types
-[ex-language-conditional-compilation]: language/attributes.md#conditional-compilation
-[ex-language-constants-in-traits]: language/traits.md#constants-in-traits
-[ex-language-control-flow]: language/control_flow.md
-[ex-language-data_types]: language/data_types.md
-[ex-language-default-implementation]: language/traits.md#default-implementation
-[ex-language-deprecated]: language/attributes.md#deprecated
-[ex-language-destructuring]: language/variables_and_constants.md#destructuring
-[ex-language-diverging-functions]: language/functions.md#diverging-functions
-[ex-language-enums]: language/enums.md
-[ex-language-for]: language/control_flow.md#for
-[ex-language-function-pointers]: language/functions.md#function-pointers
-[ex-language-functions]: language/functions.md
-[ex-language-generic-functions]: language/functions.md#generic-functions
-[ex-language-generic-structs]: language/generics.md#generic-structs
-[ex-language-generic-traits]: language/traits.md#generic-traits
-[ex-language-generics]: language/generics.md
-[ex-language-if-else]: language/control_flow.md#if-else
-[ex-language-if-let]: language/match.md#if-let
-[ex-language-iterators]: language/iterators.md
-[ex-language-lifetime-annotations]: language/lifetimes.md#lifetime-annotations
-[ex-language-lifetimes]: language/lifetimes.md
-[ex-language-lint-attributes]: language/attributes.md#lint-attributes
-[ex-language-loop]: language/control_flow.md#loop
-[ex-language-macros]: language/macros.md
-[ex-language-main-function]: language/entrypoint.md
-[ex-language-match]: language/match.md
-[ex-language-multiple-traits]: language/traits.md#multiple-traits
-[ex-language-must-use]: language/attributes.md#must-use
-[ex-language-mutable-reference]: language/ownership_borrowing.md#mutable-reference
-[ex-language-newtype-pattern]: language/traits.md#newtype-pattern
-[ex-language-overflow-handling]: language/data_types.md#overflow-handling
-[ex-language-ownership]: language/ownership_borrowing.md#ownership
-[ex-language-ownership_borrowing]: language/ownership_borrowing.md
-[ex-language-return-position-impl-trait]: language/traits.md#return-position-impl-trait
-[ex-language-rust-install]: language/rust_install.md#rust-install
-[ex-language-scalar-data-types]: language/data_types.md#scalar-data-types
-[ex-language-shadowing]: language/variables_and_constants.md#shadowing
-[ex-language-slices]: language/slices.md#slices
-[ex-language-structs]: language/structs.md
-[ex-language-strum]: language/enums.md#strum
-[ex-language-supertraits]: language/traits.md#supertrait
-[ex-language-trait-bounds]: language/traits.md#trait-bounds
-[ex-language-trait-objects]: language/trait_objects.md#trait-objects
-[ex-language-traits-as-parameters]: language/traits.md#traits-as-parameters
-[ex-language-traits]: language/traits.md
-[ex-language-type-aliases]: language/data_types.md#type-aliases
-[ex-language-variables-and-constants]: language/variables_and_constants.md
-[ex-language-while-let]: language/match.md#while-let
-[ex-language-while]: language/control_flow.md#while
-[ex-links-books]: # "links/books.md#books"
-[ex-links-cheatsheets]: # "links/rust_cheatsheets.md#cheatsheets"
-[ex-links-companies]: # "links/companies.md#companies"
-[ex-links-comparison-to-other-languages]: # "links/rust_cheatsheets.md#comparison-to-other-languages"
-[ex-links-example-code]: # "links/example_code.md#example-code"
-[ex-links-ferrous-systems-training]: # "links/learning.md#ferrous-systems-training"
-[ex-links-jobs]: # "links/companies.md#jobs"
-[ex-links-key-websites]: # "links/links.md#key-websites"
-[ex-links-learning]: # "links/learning.md#learning"
-[ex-links-links]: # "links/links.md#links"
-[ex-links-meetups]: # "links/blogs_podcasts_meetups.md#meetups"
-[ex-links-newsletters]: # "links/blogs_podcasts_meetups.md#newsletters"
-[ex-links-podcasts-blogs]: # "links/blogs_podcasts_meetups.md#podcasts-blogs"
-[ex-links-realworld]: # "links/example_code.md#realworld"
-[ex-links-rust-book-source-code]: # "links/example_code.md#rust-book-source-code"
-[ex-mathematics-abstracting-over-number-types]: # "categories/mathematics/additional_numeric_types.md#abstracting-over-number-types"
-[ex-mathematics-adding-complex-numbers]: # "categories/mathematics/complex_numbers.md#adding-complex-numbers"
-[ex-mathematics-adding-matrices]: # "categories/mathematics/linear_algebra.md#adding-matrices"
-[ex-mathematics-big-decimal]: # "categories/mathematics/additional_numeric_types.md#big-decimal"
-[ex-mathematics-big-integers]: # "categories/mathematics/additional_numeric_types.md#big-integers"
-[ex-mathematics-calculating-the-side-length-of-a-triangle]: # "categories/mathematics/trigonometry.md#calculating-the-side-length-of-a-triangle"
-[ex-mathematics-creating-complex-numbers]: # "categories/mathematics/complex_numbers.md#creating-complex-numbers"
-[ex-mathematics-deserialize-a-matrix]: # "categories/mathematics/linear_algebra.md#deserialize-a-matrix"
-[ex-mathematics-distance-between-two-points-on-earth]: # "categories/mathematics/trigonometry.md#distance-between-two-points-on-earth"
-[ex-mathematics-invert-matrix]: # "categories/mathematics/linear_algebra.md#invert-matrix"
-[ex-mathematics-mathematical-functions]: # "categories/mathematics/complex_numbers.md#mathematical-functions"
-[ex-mathematics-measures-of-central-tendency]: # "categories/mathematics/statistics.md#measures-of-central-tendency"
-[ex-mathematics-multiply-a-scalar-with-a-vector-and-a-matrix]: # "categories/mathematics/linear_algebra.md#multiply-a-scalar-with-a-vector-and-a-matrix"
-[ex-mathematics-multiplying-matrices]: # "categories/mathematics/linear_algebra.md#multiplying-matrices"
-[ex-mathematics-num-bigint]: # "categories/mathematics/additional_numeric_types.md#num-bigint"
-[ex-mathematics-num]: # "categories/mathematics/additional_numeric_types.md#num"
-[ex-mathematics-rug]: # "categories/mathematics/additional_numeric_types.md#rug"
-[ex-mathematics-sortable-floats]: # "categories/mathematics/additional_numeric_types.md#sortable-floats"
-[ex-mathematics-standard-deviation]: # "categories/mathematics/statistics.md#standard-deviation"
-[ex-mathematics-typenum]: # "categories/mathematics/additional_numeric_types.md#typenum"
-[ex-mathematics-vector-comparison]: # "categories/mathematics/linear_algebra.md#vector-comparison"
-[ex-mathematics-vector-norm]: # "categories/mathematics/linear_algebra.md#vector-norm"
-[ex-mathematics-verifying-tan-is-equal-to-sin-divided-by-cos]: # "categories/mathematics/trigonometry.md#verifying-tan-is-equal-to-sin-divided-by-cos"
-[ex-memory-management-bumpalo]: # "categories/memory-management/memory_allocation.md#bumpalo"
-[ex-memory-management-declare-lazily-evaluated-constant]: # "categories/memory-management/lazy_initialization.md#declare-lazily-evaluated-constant"
-[ex-memory-management-lazy-static]: # "categories/memory-management/lazy_initialization.md#lazy-static"
-[ex-memory-management-mimalloc]: # "categories/memory-management/memory_allocation.md#mimalloc"
-[ex-memory-management-once-cell]: # "categories/memory-management/lazy_initialization.md#once-cell"
-[ex-memory-management-seize]: # "categories/memory-management/memory_allocation.md#seize"
-[ex-memory-management-slab]: # "categories/memory-management/memory_allocation.md#slab"
-[ex-memory-management-std]: # "categories/memory-management/lazy_initialization.md#std"
-[ex-memory-management-tikv-jemallocator]: # "categories/memory-management/memory_allocation.md#tikv-jemallocator"
-[ex-memory-management-wee_alloc]: # "categories/memory-management/memory_allocation.md#wee_alloc"
-[ex-network-programming-listen-on-unused-port]: # "categories/network-programming/server.md#listen-on-unused-port"
-[ex-network-programming-nginx]: # "categories/network-programming/reverse_proxy.md#nginx"
-[ex-network-programming-ngrok]: # "categories/network-programming/reverse_proxy.md#ngrok"
-[ex-network-programming-perform-asynchronous-io-operations-on-storage-devices]: # "categories/network-programming/server.md#perform-asynchronous-io-operations-on-storage-devices"
-[ex-network-programming-pingora]: # "categories/network-programming/reverse_proxy.md#pingora"
-[ex-network-programming-rathole]: # "categories/network-programming/reverse_proxy.md#rathole"
-[ex-os-bottlerocket]: # "categories/os/rust_os.md#bottlerocket"
-[ex-os-call-libc]: # "categories/os/low_level_system_calls.md#call-libc"
-[ex-os-continuously-process-child-process-outputs]: # "categories/os/external_commands.md#continuously-process-child-process-outputs"
-[ex-os-read-environment-variable]: # "categories/os/external_commands.md#read-environment-variable"
-[ex-os-redirect-both-stdout-and-stderr-of-child-process-to-the-same-file]: # "categories/os/external_commands.md#redirect-both-stdout-and-stderr-of-child-process-to-the-same-file"
-[ex-os-redox]: # "categories/os/rust_os.md#redox"
-[ex-os-run-an-external-command-and-process-stdout]: # "categories/os/external_commands.md#run-an-external-command-and-process-stdout"
-[ex-os-run-an-external-command-passing-stdin-and-check-for-error-code]: # "categories/os/external_commands.md#run-an-external-command-passing-stdin-and-check-for-error-code"
-[ex-os-run-child-processes-using-duct]: # "categories/os/external_commands.md#run-child-processes-using-duct"
-[ex-os-run-piped-external-commands]: # "categories/os/external_commands.md#run-piped-external-commands"
-[ex-os-which]: # "categories/os/external_commands.md#which"
-[ex-os_windows-apis-winapi]: # "categories/os_windows-apis/windows.md#winapi"
-[ex-os_windows-apis-windows]: # "categories/os_windows-apis/windows.md#windows"
-[ex-other-bacon]: # "categories/development-tools/other/code_build.md#bacon"
-[ex-other-binary-minimizer]: # "categories/development-tools/other/other.md#binary-minimizer"
-[ex-other-code-generators]: # "categories/development-tools/other/other.md#code-generators"
-[ex-other-code-verifiers]: # "categories/development-tools/other/code_verification.md#code-verifiers"
-[ex-other-concurrent-code-verification]: # "categories/development-tools/other/code_verification.md#concurrent-code-verification"
-[ex-other-just]: # "categories/development-tools/other/code_build.md#just"
-[ex-other-loom]: # "categories/development-tools/other/code_verification.md#loom"
-[ex-other-miri-installation]: # "categories/development-tools/other/miri.md#miri-installation"
-[ex-other-miri]: # "categories/development-tools/other/miri.md#miri"
-[ex-other-roogle]: # "categories/development-tools/other/other.md#roogle"
-[ex-other-shuttle-rs]: # "categories/development-tools/other/other.md#shuttle-rs"
-[ex-other-shuttle]: # "categories/development-tools/other/code_verification.md#shuttle"
-[ex-parser-implementations-basic-toml]: # "categories/parser-implementations/toml.md#basic-toml"
-[ex-parser-implementations-comrak]: # "categories/parser-implementations/markdown.md#comrak"
-[ex-parser-implementations-css-rs]: # "categories/parser-implementations/html.md#css-rs"
-[ex-parser-implementations-html5ever]: # "categories/parser-implementations/html.md#html5ever"
-[ex-parser-implementations-ini]: # "categories/parser-implementations/ini.md#ini"
-[ex-parser-implementations-javascript_parsing]: # "categories/parser-implementations/programming_languages.md#javascript_parsing"
-[ex-parser-implementations-json5]: # "categories/parser-implementations/json.md#json5"
-[ex-parser-implementations-markdown]: # "categories/parser-implementations/markdown.md#markdown"
-[ex-parser-implementations-pulldown-cmark]: # "categories/parser-implementations/markdown.md#pulldown-cmark"
-[ex-parser-implementations-quick-xml]: # "categories/parser-implementations/xml.md#quick-xml"
-[ex-parser-implementations-roxmltree]: # "categories/parser-implementations/xml.md#roxmltree"
-[ex-parser-implementations-rust_parsing]: # "categories/parser-implementations/programming_languages.md#rust_parsing"
-[ex-parser-implementations-scraper]: # "categories/parser-implementations/html.md#scraper"
-[ex-parser-implementations-serde-json]: # "categories/parser-implementations/json.md#serde-json"
-[ex-parser-implementations-serde_yml]: # "categories/parser-implementations/yaml.md#serde_yml"
-[ex-parser-implementations-simd-json]: # "categories/parser-implementations/json.md#simd-json"
-[ex-parser-implementations-sql_parsing]: # "categories/parser-implementations/programming_languages.md#sql_parsing"
-[ex-parser-implementations-tl]: # "categories/parser-implementations/html.md#tl"
-[ex-parser-implementations-toml-edit]: # "categories/parser-implementations/toml.md#toml-edit"
-[ex-parser-implementations-toml]: # "categories/parser-implementations/toml.md#toml"
-[ex-parser-implementations-wasm_parsing]: # "categories/parser-implementations/programming_languages.md#wasm_parsing"
-[ex-parser-implementations-xml-rs]: # "categories/parser-implementations/xml.md#xml-rs"
-[ex-parser-implementations-xml5ever]: # "categories/parser-implementations/xml.md#xml5ever"
-[ex-parser-implementations-xmlparser]: # "categories/parser-implementations/xml.md#xmlparser"
-[ex-rust-patterns-abstract-factory]: # "categories/rust-patterns/creational_patterns.md#abstract-factory"
-[ex-rust-patterns-basic-builder-pattern]: # "categories/rust-patterns/builder_pattern.md#basic-builder-pattern"
-[ex-rust-patterns-bon]: # "categories/rust-patterns/builder_pattern.md#bon"
-[ex-rust-patterns-compose-iterators-with-itertools]: # "categories/rust-patterns/functional_programming.md#compose-iterators-with-itertools"
-[ex-rust-patterns-derive_builder]: # "categories/rust-patterns/builder_pattern.md#derive_builder"
-[ex-rust-patterns-dyn-clone]: # "categories/rust-patterns/rust_specific_patterns.md#dyn-clone"
-[ex-rust-patterns-either]: # "categories/rust-patterns/functional_programming.md#either"
-[ex-rust-patterns-factory]: # "categories/rust-patterns/creational_patterns.md#factory"
-[ex-rust-patterns-frunk]: # "categories/rust-patterns/functional_programming.md#frunk"
-[ex-rust-patterns-im]: # "categories/rust-patterns/functional_programming.md#im"
-[ex-rust-patterns-pin-project]: # "categories/rust-patterns/rust_specific_patterns.md#pin-project"
-[ex-rust-patterns-rpds]: # "categories/rust-patterns/functional_programming.md#rpds"
-[ex-rust-patterns-singleton]: # "categories/rust-patterns/creational_patterns.md#singleton"
-[ex-rust-patterns-typed-builder]: # "categories/rust-patterns/builder_pattern.md#typed-builder"
-[ex-rust-patterns-typestate-pattern]: # "categories/rust-patterns/behavioral_patterns.md#typestate-pattern"
-[ex-standard-library-adapters-for-working-with-references]: standard_library/option.md#adapters-for-working-with-references
-[ex-standard-library-asref]: standard_library/asref.md#asref
-[ex-standard-library-box]: # "standard-library/box.md#box"
-[ex-standard-library-cell]: # "standard-library/smart_pointers.md#cell"
-[ex-standard-library-combinators]: # "standard_library/option.md#combinators"
-[ex-standard-library-convert-cow-to-str]: # "standard_library/cow.md#convert-cow-to-str"
-[ex-standard-library-convert-cow-to-string]: # "standard_library/cow.md#convert-cow-to-string"
-[ex-standard-library-custom-hash-function]: # "standard-library/hashmap.md#custom-hash-function"
-[ex-standard-library-custom-key-type]: # "standard-library/hashmap.md#custom-key-type"
-[ex-standard-library-derive-more]: # "standard_library/derive.md#derive-more"
-[ex-standard-library-derive]: # "standard_library/derive.md#automatic-trait-derivation"
-[ex-standard-library-extracting-the-value-contained-in-option]: # "standard_library/option.md#extracting-the-value-contained-in-option"
-[ex-standard-library-hashmap]: # "standard-library/hashmap.md#hashmap"
-[ex-standard-library-hashset]: # "standard-library/hashmap.md#hashset"
-[ex-standard-library-oncecell]: # "standard-library/smart_pointers.md#oncecell"
-[ex-standard-library-option]: # "standard_library/option.md#option"
-[ex-standard-library-placeholders]: # "standard-library/strings.md#placeholders"
-[ex-standard-library-rc]: # "standard-library/smart_pointers.md#rc"
-[ex-standard-library-refcell]: # "standard-library/smart_pointers.md#refcell"
-[ex-standard-library-result]: # "standard_library/result.md#result"
-[ex-standard-library-string-concatenation]: # "standard-library/strings.md#string-concatenation"
-[ex-standard-library-string]: # "standard-library/strings.md#string"
-[ex-standard-library-vec]: # "standard-library/vector.md#vec"
-[ex-template-engine-create-html-from-template]: # "categories/template-engine/tera.md#create-html-from-template"
-[ex-template-engine-tinytemplate]: # "categories/template-engine/tinytemplate.md#tinytemplate"
-[ex-text-editors-helix]: # "categories/text-editors/ides.md#helix"
-[ex-text-editors-neovim]: # "categories/text-editors/ides.md#neovim"
-[ex-text-editors-rustrover]: # "categories/text-editors/ides.md#rustrover"
-[ex-text-editors-vs-code]: # "categories/text-editors/ides.md#vs-code"
-[ex-text-editors-zed]: # "categories/text-editors/ides.md#zed"
-[ex-text-processing-aho-corasick]: # "categories/text-processing/string_search.md#aho-corasick"
-[ex-text-processing-bstr]: # "categories/text-processing/other_strings.md#bstr"
-[ex-text-processing-collect-unicode-graphemes]: # "categories/text-processing/unicode.md#collect-unicode-graphemes"
-[ex-text-processing-cstring]: # "categories/text-processing/other_strings.md#cstring"
-[ex-text-processing-diff]: # "categories/text-processing/diffing.md#diff"
-[ex-text-processing-extract-a-list-of-unique-hashtags-from-a-text]: # "categories/text-processing/regex.md#extract-a-list-of-unique-hashtags-from-a-text"
-[ex-text-processing-extract-phone-numbers-from-text]: # "categories/text-processing/regex.md#extract-phone-numbers-from-text"
-[ex-text-processing-fancy-regex]: # "categories/text-processing/regex.md#fancy-regex"
-[ex-text-processing-filter-a-log-file-by-matching-multiple-regular-expressions]: # "categories/text-processing/regex.md#filter-a-log-file-by-matching-multiple-regular-expressions"
-[ex-text-processing-fuzzy-matcher]: # "categories/text-processing/string_search.md#fuzzy-matcher"
-[ex-text-processing-heck]: # "categories/text-processing/string_manipulation.md#heck"
-[ex-text-processing-implement-the-fromstr-trait-for-a-custom-struct]: # "categories/text-processing/string_parsing.md#implement-the-fromstr-trait-for-a-custom-struct"
-[ex-text-processing-indoc]: # "categories/text-processing/string_manipulation.md#indoc"
-[ex-text-processing-longer-regex-example]: # "categories/text-processing/regex.md#longer-regex-example"
-[ex-text-processing-memchr]: # "categories/text-processing/string_search.md#memchr"
-[ex-text-processing-osstring]: # "categories/text-processing/other_strings.md#osstring"
-[ex-text-processing-replace-all-occurrences-of-one-text-pattern-with-another-pattern]: # "categories/text-processing/regex.md#replace-all-occurrences-of-one-text-pattern-with-another-pattern"
-[ex-text-processing-similar]: # "categories/text-processing/diffing.md#similar"
-[ex-text-processing-string-concat]: # "categories/text-processing/string_concat.md#string-concat"
-[ex-text-processing-strsim]: # "categories/text-processing/string_search.md#strsim"
-[ex-text-processing-textwrap]: # "categories/text-processing/string_manipulation.md#textwrap"
-[ex-text-processing-verify-and-extract-login-from-an-email-address]: # "categories/text-processing/regex.md#verify-and-extract-login-from-an-email-address"
-[ex-transcompilation-c2rust]: # "categories/development-tools/transcompilation/transpilers.md#c2rust"
-[ex-versioning-check-external-command-version-for-compat]: # "categories/development-tools/versioning/versioning.md#check-external-command-version-for-compat"
-[ex-versioning-check-if-pre-release]: # "categories/development-tools/versioning/versioning.md#check-if-pre-release"
-[ex-versioning-find-latest-version-within-range]: # "categories/development-tools/versioning/versioning.md#find-latest-version-within-range"
-[ex-versioning-parse-a-complex-version-string]: # "categories/development-tools/versioning/versioning.md#parse-a-complex-version-string"
-[ex-versioning-parse-a-version-string]: # "categories/development-tools/versioning/versioning.md#parse-a-version-string"
-[ex-web-programming-check-a-webpage-for-broken-links]: # "categories/web-programming/scraping.md#check-a-webpage-for-broken-links"
-[ex-web-programming-create-a-base-url-by-removing-path-segments]: # "categories/web-programming/url.md#create-a-base-url-by-removing-path-segments"
-[ex-web-programming-create-new-urls-from-a-base-url]: # "categories/web-programming/url.md#create-new-urls-from-a-base-url"
-[ex-web-programming-extract-all-links-from-a-webpage-html]: # "categories/web-programming/scraping.md#extract-all-links-from-a-webpage-html"
-[ex-web-programming-extract-all-unique-links-from-a-mediawiki-markup]: # "categories/web-programming/scraping.md#extract-all-unique-links-from-a-mediawiki-markup"
-[ex-web-programming-extract-the-url-origin]: # "categories/web-programming/url.md#extract-the-url-origin"
-[ex-web-programming-get-mime-type-from-string]: # "categories/web-programming/mime.md#get-mime-type-from-string"
-[ex-web-programming-get-mimetype-from-filename]: # "categories/web-programming/mime.md#get-mimetype-from-filename"
-[ex-web-programming-http-body-util]: # "categories/web-programming/http_types_and_interfaces.md#http-body-util"
-[ex-web-programming-http-body]: # "categories/web-programming/http_types_and_interfaces.md#http-body"
-[ex-web-programming-http]: # "categories/web-programming/http_types_and_interfaces.md#http"
-[ex-web-programming-parse-a-url-from-a-string-to-a-url-type]: # "categories/web-programming/url.md#parse-a-url-from-a-string-to-a-url-type"
-[ex-web-programming-parse-the-mime-type-of-a-http-response]: # "categories/web-programming/mime.md#parse-the-mime-type-of-a-http-response"
-[ex-web-programming-remove-fragment-identifiers-and-query-pairs]: # "categories/web-programming/url.md#remove-fragment-identifiers-and-query-pairs"
-[ex-web-programming_http-client-async]: # "categories/web-programming_http-client/requests.md#async"
-[ex-web-programming_http-client-check-if-an-api-resource-exists]: # "categories/web-programming_http-client/apis.md#check-if-an-api-resource-exists"
-[ex-web-programming_http-client-consume-a-paginated-restful-api]: # "categories/web-programming_http-client/apis.md#consume-a-paginated-restful-api"
-[ex-web-programming_http-client-create-and-delete-gist-with-github-api]: # "categories/web-programming_http-client/apis.md#create-and-delete-gist-with-github-api"
-[ex-web-programming_http-client-custom-headers-and-url-parameters]: # "categories/web-programming_http-client/requests.md#custom-headers-and-url-parameters"
-[ex-web-programming_http-client-download]: # "categories/web-programming_http-client/download.md#download"
-[ex-web-programming_http-client-handle-a-rate-limited-api]: # "categories/web-programming_http-client/apis.md#handle-a-rate-limited-api"
-[ex-web-programming_http-client-hyper]: # "categories/web-programming_http-client/http_clients.md#hyper"
-[ex-web-programming_http-client-make-a-http-get-request]: # "categories/web-programming_http-client/requests.md#make-a-http-get-request"
-[ex-web-programming_http-client-partial-download-with-http-range-headers]: # "categories/web-programming_http-client/download.md#partial-download-with-http-range-headers"
-[ex-web-programming_http-client-post-a-file-to-paste-rs]: # "categories/web-programming_http-client/download.md#post-a-file-to-paste-rs"
-[ex-web-programming_http-client-query-the-github-api]: # "categories/web-programming_http-client/apis.md#query-the-github-api"
-[ex-web-programming_http-client-reqwest]: # "categories/web-programming_http-client/http_clients.md#reqwest"
-[ex-web-programming_http-client-ureq]: # "categories/web-programming_http-client/http_clients.md#ureq"
-[ex-web-programming_http-server-actix]: # "categories/web-programming_http-server/_actix.md#actix"
-[ex-web-programming_http-server-alternatives]: # "categories/web-programming_http-server/middleware.md#alternatives"
-[ex-web-programming_http-server-async-graphql]: # "categories/web-programming_http-server/_graphql.md#async-graphql"
-[ex-web-programming_http-server-axum]: # "categories/web-programming_http-server/_axum.md#axum"
-[ex-web-programming_http-server-cors]: # "categories/web-programming_http-server/cors.md#cors"
-[ex-web-programming_http-server-hyper]: # "categories/web-programming_http-server/_hyper.md#hyper"
-[ex-web-programming_http-server-loco]: # "categories/web-programming_http-server/_batteries-included_frameworks.md#loco"
-[ex-web-programming_http-server-rocket]: # "categories/web-programming_http-server/other_frameworks.md#rocket"
-[ex-web-programming_http-server-rust-on-nails]: # "categories/web-programming_http-server/_batteries-included_frameworks.md#rust-on-nails"
-[ex-web-programming_http-server-tonic]: # "categories/web-programming_http-server/_grpc.md#tonic"
-[ex-web-programming_http-server-tower-http]: # "categories/web-programming_http-server/middleware.md#tower-http"
-[ex-web-programming_http-server-tower]: # "categories/web-programming_http-server/middleware.md#tower"
-[ex-web-programming_http-server-zola]: # "categories/web-programming_http-server/static_website_generators.md#zola"
-[p-asynchronous]: # "categories/asynchronous/index.md"
-[p-cli]: # "categories/command-line-interface/index.md"
-[p-concurrency]: # "categories/concurrency/index.md"
-[p-config]: # "categories/config/index.md"
-[p-contributing]: # "contributing/index.md"
-[p-crates-alphabetical]: # "crates/crates_alphabetical.md"
-[p-crates-# "categories]: # "crates/crates_by_category.md"
-[p-debugging]: # "categories/development-tools_debugging/index.md"
-[p-development-tools]: # "categories/development-tools/index.md"
-[p-error-customization]: # "categories/rust-patterns/error_handling/error_customization.md"
-[p-errors]: # "categories/rust-patterns/error_handling/error_handling.md"
-[p-index-examples]: # "examples_index.md"
-[p-index]: index.md
-[p-lang]: # "language/index.md"
-[p-links]: # "links/index.md"
-[p-standard-library]: # "standard-library/index.md"
-[p-web-programming]: # "categories/web-programming/index.md"
-[p-word-index]: word_index.md
+[ex-algorithms~create-random-passwords-from-a-set-of-user-defined-characters]: # "categories/algorithms/randomness.md#create-random-passwords-from-a-set-of-user-defined-characters"
+[ex-algorithms~fastrand]: # "categories/algorithms/randomness.md#fastrand"
+[ex-algorithms~generate-random-numbers-within-a-given-distribution]: # "categories/algorithms/randomness.md#generate-random-numbers-within-a-given-distribution"
+[ex-algorithms~generate-random-numbers-within-a-range]: # "categories/algorithms/randomness.md#generate-random-numbers-within-a-range"
+[ex-algorithms~generate-random-numbers]: # "categories/algorithms/randomness.md#generate-random-numbers"
+[ex-algorithms~generate-random-values-custom-type]: # "categories/algorithms/randomness.md#generate-random-values-custom-type"
+[ex-algorithms~generate-random-values-from-set-alphanumeric]: # "categories/algorithms/randomness.md#generate-random-values-from-set-alphanumeric"
+[ex-algorithms~sort-vector-floats]: # "categories/algorithms/sorting.md#sort-vector-floats"
+[ex-algorithms~sort-vector-integers]: # "categories/algorithms/sorting.md#sort-vector-integers"
+[ex-algorithms~sort-vector-structs]: # "categories/algorithms/sorting.md#sort-vector-structs"
+[ex~code_organization~binary-crate-organization]: code_organization/code_organization.md#binary-crate-organization
+[ex~code_organization~bring-function-in-scope]: code_organization/use_keyword.md#bring-function-in-scope
+[ex~code_organization~bring-item-from-external-crate-into-scope]: code_organization/use_keyword.md#bring-item-from-external-crate-into-scope
+[ex~code_organization~bring-struct-or-enum-in-scope]: code_organization/use_keyword.md#bring-struct-or-enum-in-scope
+[ex~code_organization~code-files]: code_organization/modules.md#code-files
+[ex~code_organization~complex-library-code-organization]: code_organization/code_organization.md#complex-library-code-organization
+[ex~code_organization~dependencies]: code_organization/dependencies.md#dependencies
+[ex~code_organization~flatten-module-hierarchy]: code_organization/code_organization.md#flatten-module-hierarchy
+[ex~code_organization~hide-implementation-details]: code_organization/modules.md#hide-implementation-details
+[ex~code_organization~large-projects]: code_organization/code_organization.md#large-projects
+[ex~code_organization~less-common-code-organization]: code_organization/code_organization.md#less-common-code-organization
+[ex~code_organization~modules]: code_organization/modules.md#modules
+[ex~code_organization~paths]: code_organization/modules.md#paths
+[ex~code_organization~prelude]: code_organization/code_organization.md#prelude
+[ex~code_organization~pub-use]: code_organization/use_keyword.md#pub-use
+[ex~code_organization~public]: code_organization/visibility.md#public
+[ex~code_organization~simple-library-code-organization]: code_organization/code_organization.md#simple-library-code-organization
+[ex~code_organization~use-declaration-shortcuts]: code_organization/use_keyword.md#use-declaration-shortcuts
+[ex~code_organization~use-keyword]: code_organization/use_keyword.md#use-keyword
+[ex~code_organization~visibility-rules]: code_organization/visibility.md#visibility-rules
+[ex~code_organization~visibility-scope]: code_organization/visibility.md#visibility-scope
+[ex~code_organization~visible-to-library-clients]: code_organization/visibility.md#visible-to-library-clients
+[ex~contributing~book-editing]: contributing/development_editing.md#book-editing
+[ex~contributing~deployment-to-github-pages]: contributing/dev_container_docker.md#deployment-to~github-pages
+[ex~contributing~dev-container-feature]: contributing/api_documentation.md#dev-container-feature
+[ex~contributing~dev-env-setup]: contributing/dev_environment_setup.md#dev-env-setup
+[ex~contributing~docker-compose]: contributing/dev_container_docker.md#docker-compose
+[ex~contributing~examples-fully-tested]: contributing/repo_structure.md#examples-fully-tested
+[ex~contributing~generate-the~documentation]: contributing/api_documentation.md#generate-the-documentation
+[ex~contributing~optional-preprocessors]: contributing/optional_preprocessors.md#optional-preprocessors
+[ex~contributing~other-methods-to-preview-the-documentation-html]: contributing/api_documentation.md#other-methods-to-preview-the-documentation-html
+[ex~contributing~other]: contributing/dev_environment_setup.md#other
+[ex~contributing~publish]: contributing/publication.md#publish
+[ex~contributing~push-image-to-docker-hub]: contributing/dev_container_docker.md#push-image-to-docker-hub
+[ex~contributing~repo-structure]: contributing/repo_structure.md#repo-structure
+[ex~contributing~topics-of-interest]: contributing/topics_of_interest.md#topics-of-interest
+[ex~contributing~using-vs-code]: contributing/dev_environment_setup.md#using-vs-code
+[ex~data-structures~arrayvec]: categories/data-structures/../../../drafts/categories/data-structures/stack_allocated_arrays.md#arrayvec
+[ex~data-structures~bitfield]: categories/data-structures/../../../drafts/categories/data-structures/bitfield.md#bitfield
+[ex~data-structures~bitvec]: categories/data-structures/../../../drafts/categories/data-structures/bitfield.md#bitvec
+[ex~data-structures~btreemap]: categories/data-structures/../../../drafts/categories/data-structures/btrees.md#btreemap
+[ex~data-structures~btreeset]: categories/data-structures/../../../drafts/categories/data-structures/btrees.md#btreeset
+[ex~data-structures~custom-hash-function]: categories/data-structures/hashmap.md#custom-hash-function
+[ex~data-structures~custom-key-type]: categories/data-structures/hashmap.md#custom-key-type
+[ex~data-structures~flagset]: categories/data-structures/../../../drafts/categories/data-structures/bitfield.md#flagset
+[ex~data-structures~generate-parse-uuid]: categories/data-structures/../../../drafts/categories/data-structures/uuid.md#generate-parse-uuid
+[ex~data-structures~hashmap]: categories/data-structures/hashmap.md#hashmap
+[ex~data-structures~hashset]: categories/data-structures/hashmap.md#hashset
+[ex~data-structures~heapless]: categories/data-structures/../../../drafts/categories/data-structures/heapless.md#heapless
+[ex~data-structures~indexmap]: categories/data-structures/../../../drafts/categories/data-structures/maps.md#indexmap
+[ex~data-structures~linkedlist]: categories/data-structures/../../../drafts/categories/data-structures/linkedlist.md#linkedlist
+[ex~data-structures~memory-allocation]: categories/data-structures/vector.md#memory-allocation
+[ex~data-structures~multimap]: categories/data-structures/../../../drafts/categories/data-structures/maps.md#multimap
+[ex~data-structures~petgraph]: categories/data-structures/../../../drafts/categories/data-structures/graph.md#petgraph
+[ex~data-structures~placeholders]: categories/data-structures/strings.md#placeholders
+[ex~data-structures~priority-queue]: categories/data-structures/../../../drafts/categories/data-structures/binaryheap.md#priority-queue
+[ex~data-structures~queue]: categories/data-structures/../../../drafts/categories/data-structures/stack_and_queue.md#queue
+[ex~data-structures~slotmap]: categories/data-structures/../../../drafts/categories/data-structures/maps.md#slotmap
+[ex~data-structures~smallvec]: categories/data-structures/../../../drafts/categories/data-structures/stack_allocated_arrays.md#smallvec
+[ex~data-structures~stack]: categories/data-structures/../../../drafts/categories/data-structures/stack_and_queue.md#stack
+[ex~data-structures~string-concatenation]: categories/data-structures/./strings.md#string-concatenation
+[ex~data-structures~string]: categories/data-structures/strings.md#string
+[ex~data-structures~tinyvec]: categories/data-structures/../../../drafts/categories/data-structures/stack_allocated_arrays.md#tinyvec
+[ex~data-structures~vec]: categories/data-structures/vector.md#vec
+[ex~language~accept-various-iterable-types]: language/iterators.md#accept-various-iterable-types
+[ex~language~adapters]: language/iterators.md#adapters
+[ex~language~associated-types]: language/traits.md#associated-types
+[ex~language~async-and-traits]: language/traits.md#async-and-traits
+[ex~language~async-main-function]: language/entrypoint.md#async-main-function
+[ex~language~at-bindings]: language/match.md#at-bindings
+[ex~language~attribute]: language/attributes.md#attribute
+[ex~language~attributes]: language/attributes.md#attribute
+[ex~language~blanket-implementations]: language/traits.md#blanket-implementations
+[ex~language~borrowing]: language/ownership_borrowing.md#borrowing
+[ex~language~cfg-if]: language/attributes.md#cfg-if
+[ex~language~clone]: language/ownership_borrowing.md#clone
+[ex~language~closure-with-type-annotations]: language/closures.md#closure-with-type-annotations
+[ex~language~closure]: language/closures.md#closure
+[ex~language~closures-as-input-parameters]: language/closures.md#closures-as-input-parameters
+[ex~language~common-enums]: language/enums.md#common-enums
+[ex~language~common-traits]: language/structs.md#common-traits
+[ex~language~compound-types]: language/data_types.md#compound-types
+[ex~language~conditional-compilation]: language/attributes.md#conditional-compilation
+[ex~language~constants-in-traits]: language/traits.md#constants-in-traits
+[ex~language~constants]: language/constants_and_statics.md#constants
+[ex~language~control-flow]: language/control_flow.md
+[ex~language~conversion-conventions]: language/naming_conventions.md#conversion-conventions
+[ex~language~copy-semantics]: language/ownership_borrowing.md#copy-semantics
+[ex~language~create-an-iterator]: language/iterators.md#create-an-iterator
+[ex~language~create-slices]: language/slices.md#create-slices
+[ex~language~data_types]: language/data_types.md
+[ex~language~default-implementation]: language/traits.md#default-implementation
+[ex~language~define-generic-structs]: language/structs.md#define-generic-structs
+[ex~language~deprecated]: language/attributes.md#deprecated
+[ex~language~destructure-enums]: language/match.md#destructure-enums
+[ex~language~destructure-for]: language/match.md#destructure-for
+[ex~language~destructure-function-or-closure]: language/match.md#destructure-function-or-closure
+[ex~language~destructure-references]: language/match.md#destructure-references
+[ex~language~destructure-structs]: language/match.md#destructure-structs
+[ex~language~destructure-tuples]: language/match.md#destructure-tuples
+[ex~language~destructuring]: language/variables.md#destructuring
+[ex~language~diverging-functions]: language/functions.md#diverging-functions
+[ex~language~dyn-compatibility]: language/trait_objects.md#dyn-compatibility
+[ex~language~early-development-attributes]: language/attributes.md#early-development-attributes
+[ex~language~enum]: language/enums.md#enum
+[ex~language~enums]: language/enums.md
+[ex~language~for]: language/control_flow.md#for
+[ex~language~function-pointers]: language/functions.md#function-pointers
+[ex~language~function]: language/functions.md#function
+[ex~language~generic-enums]: language/generics.md#generic-enums
+[ex~language~generic-functions]: language/generics.md#generic-functions
+[ex~language~generic-structs]: language/generics.md#generic-structs
+[ex~language~generic-traits]: language/traits.md#generic-traits
+[ex~language~generics]: language/generics.md
+[ex~language~getter-conventions]: language/naming_conventions.md#getter-conventions
+[ex~language~if-else]: language/control_flow.md#if-else
+[ex~language~if-let]: language/match.md#if-let
+[ex~language~ignore-values]: language/match.md#ignore-values
+[ex~language~immutability]: language/variables.md#immutability
+[ex~language~impl-trait-vs-dyn-trait]: language/trait_objects.md#impl-trait-vs-dyn-trait
+[ex~language~impl-trait]: language/impl_trait.md#impl-trait
+[ex~language~implement-intoiterator]: language/iterators.md#implement-intoiterator
+[ex~language~implement-trait-for-struct]: language/structs.md#implement-trait-for-struct
+[ex~language~iterator-conventions]: language/naming_conventions.md#iterator-conventions
+[ex~language~iterator-trait]: language/iterators.md#iterator-trait
+[ex~language~iterators]: language/iterators.md
+[ex~language~labeled-block-expressions]: language/control_flow.md#labeled-block-expressions
+[ex~language~let-else]: language/match.md#let-else
+[ex~language~lifetime-annotations]: language/lifetimes.md#lifetime-annotations
+[ex~language~lifetime]: language/lifetimes.md#lifetime
+[ex~language~lifetimes-in-functions]: language/lifetimes.md#lifetimes-in-functions
+[ex~language~lifetimes]: language/lifetimes.md
+[ex~language~lint-attributes]: language/attributes.md#lint-attributes
+[ex~language~loop]: language/control_flow.md#loop
+[ex~language~macro-uses]: language/macros.md#macro-uses
+[ex~language~macros-by~example]: language/macros.md#macros-by-example
+[ex~language~macros]: language/macros.md
+[ex~language~main-function]: language/entrypoint.md#main-function
+[ex~language~match-guards]: language/match.md#match-guards
+[ex~language~match-literals]: language/match.md#match-literals
+[ex~language~match-ranges]: language/match.md#match-ranges
+[ex~language~match]: language/match.md#match
+[ex~language~methods]: language/structs.md#methods
+[ex~language~move-closures]: language/closures.md#move-closures
+[ex~language~move-semantics]: language/ownership_borrowing.md#move-semantics
+[ex~language~multiple-traits]: language/traits.md#multiple-traits
+[ex~language~must-use]: language/attributes.md#must-use
+[ex~language~mutable-reference]: language/ownership_borrowing.md#mutable-reference
+[ex~language~naming-conventions]: language/naming_conventions.md#naming-conventions
+[ex~language~newtype-pattern]: language/traits.md#newtype-pattern
+[ex~language~only-one-base-trait]: language/trait_objects.md#only-one-base-trait
+[ex~language~or-patterns]: language/match.md#or-patterns
+[ex~language~overflow-handling]: language/data_types.md#overflow-handling
+[ex~language~ownership]: language/ownership_borrowing.md#ownership
+[ex~language~ownership_borrowing]: language/ownership_borrowing.md
+[ex~language~pattern-syntax]: language/match.md#pattern-syntax
+[ex~language~production-code-attributes]: language/attributes.md#production-code-attributes
+[ex~language~ref-and-ref-mut-bindings]: language/match.md#ref-and-ref-mut-bindings
+[ex~language~references]: language/ownership_borrowing.md#references
+[ex~language~return-an-iterator]: language/iterators.md#return-an-iterator
+[ex~language~return-position-impl-trait]: language/impl_trait.md#return-position-impl-trait
+[ex~language~return-reference]: language/functions.md#return-reference
+[ex~language~rust-install]: language/rust_install.md#rust-install
+[ex~language~scalar-data-types]: language/data_types.md#scalar-data-types
+[ex~language~sealed-trait-pattern]: language/traits.md#sealed-trait-pattern
+[ex~language~self-referential-structs]: language/lifetimes.md#self-referential-structs
+[ex~language~shadowing]: language/variables.md#shadowing
+[ex~language~slices]: language/slices.md#slices
+[ex~language~static-dispatch-vs-dynamic-dispatch]: language/trait_objects.md#static-dispatch-vs-dynamic-dispatch
+[ex~language~static-lifetime]: language/lifetimes.md#static-lifetime
+[ex~language~statics]: language/constants_and_statics.md#statics
+[ex~language~string-slices]: language/slices.md#string-slices
+[ex~language~struct-constant]: language/structs.md#struct-constant
+[ex~language~struct-init]: language/structs.md#struct-init
+[ex~language~struct-ownership]: language/structs.md#struct-ownership
+[ex~language~struct]: language/structs.md#struct
+[ex~language~structs]: language/structs.md
+[ex~language~strum]: language/enums.md#strum
+[ex~language~supertraits]: language/traits.md#supertraits
+[ex~language~trait-bounds]: language/traits.md#trait-bounds
+[ex~language~trait-objects-basics]: language/trait_objects.md#trait-objects-basics
+[ex~language~trait-objects]: language/trait_objects.md#trait-objects
+[ex~language~trait]: language/traits.md#trait
+[ex~language~traits-as-parameters]: language/traits.md#traits-as-parameters
+[ex~language~traits-types-elsewhere]: language/traits.md#traits-types-elsewhere
+[ex~language~traits]: language/traits.md
+[ex~language~tuple-structs]: language/structs.md#tuple-structs
+[ex~language~type-aliases]: language/data_types.md#type-aliases
+[ex~language~update-struct]: language/structs.md#update-struct
+[ex~language~use-iterators]: language/iterators.md#use-iterators
+[ex~language~use-match-to-branch-on-a-pattern]: language/match.md#use-match-to-branch-on-a-pattern
+[ex~language~use-slice-as-function-argument]: language/slices.md#use-slice-as-function-argument
+[ex~language~variable-bindings]: language/match.md#variable-bindings
+[ex~language~variables]: language/variables.md
+[ex~language~when-to-use-trait-objects]: language/trait_objects.md#when-to-use-trait-objects
+[ex~language~while-let]: language/match.md#while-let
+[ex~language~while]: language/control_flow.md#while
+[ex~language~write-generic-functions]: language/functions.md#write-generic-functions
+[ex~language~write-generic-traits]: language/traits.md#write-generic-traits
+[ex~links~cheatsheets]: links/rust_cheatsheets.md#cheatsheets
+[ex~links~comparison-to-other-languages]: links/rust_cheatsheets.md#comparison-to-other-languages
+[ex~links~conferences]: links/meetings.md#conferences
+[ex~links~meetups]: links/meetings.md#meetups
+[ex~links~podcasts]: links/videos.md#podcasts
+[ex~links~videos]: links/videos.md#videos
+[ex~standard_library~accept-either-owned-or-borrowed-values]: standard_library/cow.md#accept-either-owned-or-borrowed-values
+[ex~standard_library~adapters-for-working-with-references]: standard_library/option.md#adapters-for-working-with-references
+[ex~standard_library~asref-smart-pointer]: standard_library/asref.md#asref-smart-pointer
+[ex~standard_library~asref-vs-deref-vs-borrow]: standard_library/asref.md#asref-vs-deref-vs-borrow
+[ex~standard_library~asref]: standard_library/asref.md#asref
+[ex~standard_library~box-dst]: standard_library/box.md#box-dst
+[ex~standard_library~box-recursive-data-structures]: standard_library/box.md#box-recursive-data-structures
+[ex~standard_library~box-trait-objects]: standard_library/box.md#box-trait-objects
+[ex~standard_library~box-use-cases]: standard_library/box.md#box-use-cases
+[ex~standard_library~box]: standard_library/box.md#box
+[ex~standard_library~combinators]: standard_library/option.md#combinators
+[ex~standard_library~convert-cow-to-str]: standard_library/cow.md#convert-cow-to-str
+[ex~standard_library~derive-more]: standard_library/derive.md#derive-more
+[ex~standard_library~derive]: standard_library/derive.md#derive
+[ex~standard_library~extracting-the-value-contained-in-option]: standard_library/option.md#extracting-the-value-contained-in-option
+[ex~standard_library~into-cow]: standard_library/cow.md#into-cow
+[ex~standard_library~modify-cow-in-place]: standard_library/cow.md#modify-cow-in-place
+[ex~standard_library~option-match-if-let-while-let]: standard_library/option.md#option-match-if-let-while-let
+[ex~standard_library~option-methods]: standard_library/option.md#option-methods
+[ex~standard_library~option]: standard_library/option.md#option
+[ex~standard_library~result-methods]: standard_library/result.md#result-methods
+[ex~standard_library~result-references]: standard_library/result.md#result-references
+[ex~standard_library~result-vs-option]: standard_library/result.md#result-vs-option
+[ex~standard_library~result]: standard_library/result.md#result
+[ex~standard_library~return-cow-from-function]: standard_library/cow.md#return-cow-from-function
+[ex~standard_library~return-early-pattern]: standard_library/option.md#return-early-pattern
+[p~asynchronous]: # "categories/asynchronous/index.md"
+[p~cli]: # "categories/command-line-interface/index.md"
+[p~concurrency]: # "categories/concurrency/index.md"
+[p~config]: # "categories/config/index.md"
+[p~contributing]: # "contributing/index.md"
+[p~crates-categories]: # "crates/crates_by_category.md"
+[p~crates-alphabetical]: # "crates/crates_alphabetical.md"
+[p~debugging]: # "categories/development-tools_debugging/index.md"
+[p~development-tools]: # "categories/development-tools/index.md"
+[p~error-customization]: # "categories/rust-patterns/error_handling/error_customization.md"
+[p~errors]: # "categories/rust-patterns/error_handling/error_handling.md"
+[p~index]: index.md
+[p~index~examples]: # "examples_index.md"
+[p~lang]: # "language/index.md"
+[p~links]: # "links/index.md"
+[p~standard-library]: # "standard-library/index.md"
+[p~web-programming]: # "categories/web-programming/index.md"
+[p~word-index]: word_index.md

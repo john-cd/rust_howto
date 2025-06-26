@@ -4,7 +4,7 @@
 
 ## Closure Syntax {#closure}
 
-[![Rust by example - Closures][book-rust-by-example-closures-badge]][book-rust-by-example-closures]
+[![Rust by example - Closures][book~rust-by-example~closures~badge]][book~rust-by-example~closures]
 
 Closures are anonymous functions you can define inline, often right where you need to use them.
 Here is a example of a short, inline closure with a simple expression as its body:
@@ -48,9 +48,9 @@ Closures are frequently used as arguments to functions, especially higher-order 
 
 A closure automatically implements one of three special traits:
 
-- [`std::ops::Fn`][c-std::ops::Fn]{{hi:std::ops::Fn}}⮳ if the closure uses the captured value by reference (`&T`),
-- [`std::ops::FnMut`][c-std::ops::FnMut]{{hi:std::ops::FnMut}}⮳ if the closure uses the captured value by mutable reference (`&mut T`),
-- [`std::ops::FnOnce`][c-std::ops::FnOnce]{{hi:std::ops::FnOnce}}⮳ if the closure uses the captured value by value (`T`) e.g. moves it.
+- [`std::ops::Fn`][c~std::ops::Fn~docs]{{hi:std::ops::Fn}}⮳ if the closure uses the captured value by reference (`&T`),
+- [`std::ops::FnMut`][c~std::ops::FnMut~docs]{{hi:std::ops::FnMut}}⮳ if the closure uses the captured value by mutable reference (`&mut T`),
+- [`std::ops::FnOnce`][c~std::ops::FnOnce~docs]{{hi:std::ops::FnOnce}}⮳ if the closure uses the captured value by value (`T`) e.g. moves it.
 
 When defining a function that accepts a closure, you use the `Fn`, `FnMut`, or `FnOnce` traits as bounds:
 

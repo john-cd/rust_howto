@@ -1,6 +1,6 @@
 # Algorithms
 
-[![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}}
+[![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
 
 Rust implementations of core algorithms{{hi:Algorithms}}, such as hashing{{hi:Hashing}}, sorting{{hi:Sorting}} (e.g., merge sort, quicksort), searching{{hi:Searching}}, and more.
 
@@ -8,14 +8,14 @@ The following table denotes the most common crates used for each algorithm categ
 
 | Topic | Rust Crates | Notes |
 | --- | --- | --- |
-| Sorting | `std::cmp`, [`itertools`][c-itertools]⮳{{hi:itertools}}, [`rand`][c-rand]⮳{{hi:rand}} | `std::cmp` provides ordering traits, [`itertools`][c-itertools]⮳{{hi:itertools}} for iterators, [`rand`][c-rand]⮳{{hi:rand}} for generating test data. No single crate is the sorting crate, as `std::slice::sort` is often sufficient. |
+| Sorting | `std::cmp`, [`itertools`][c~itertools~docs]⮳{{hi:itertools}}, [`rand`][c~rand~docs]⮳{{hi:rand}} | `std::cmp` provides ordering traits, [`itertools`][c~itertools~docs]⮳{{hi:itertools}} for iterators, [`rand`][c~rand~docs]⮳{{hi:rand}} for generating test data. No single crate is the sorting crate, as `std::slice::sort` is often sufficient. |
 | Searching | `std::cmp` | Binary search is available in the standard library. |
-| Data Structures (General) | `std::collections`, [`im`][c-im]⮳{{hi:im}}, [`petgraph`][c-petgraph]⮳{{hi:petgraph}} | `std::collections` for common structures (Vec, HashMap, etc.), [`im`][c-im]⮳{{hi:im}} for immutable data structures, [`petgraph`][c-petgraph]⮳{{hi:petgraph}} for graphs. |
-| Graph Algorithms | [`petgraph`][c-petgraph]⮳{{hi:petgraph}}, [`pathfinding`][c-pathfinding]⮳{{hi:pathfinding}} | [`petgraph`][c-petgraph]⮳{{hi:petgraph}} is a popular graph library. [`pathfinding`][c-pathfinding]⮳{{hi:pathfinding}} provides pathfinding algorithms. |
+| Data Structures (General) | `std::collections`, [`im`][c~im~docs]⮳{{hi:im}}, [`petgraph`][c~petgraph~docs]⮳{{hi:petgraph}} | `std::collections` for common structures (Vec, HashMap, etc.), [`im`][c~im~docs]⮳{{hi:im}} for immutable data structures, [`petgraph`][c~petgraph~docs]⮳{{hi:petgraph}} for graphs. |
+| Graph Algorithms | [`petgraph`][c~petgraph~docs]⮳{{hi:petgraph}}, [`pathfinding`][c~pathfinding~docs]⮳{{hi:pathfinding}} | [`petgraph`][c~petgraph~docs]⮳{{hi:petgraph}} is a popular graph library. [`pathfinding`][c~pathfinding~docs]⮳{{hi:pathfinding}} provides pathfinding algorithms. |
 | Dynamic Programming | Often implemented without external crates | DP is often implemented using standard library features like vectors and iterators. |
-| String Algorithms | [`regex`][c-regex]⮳{{hi:regex}}, [`aho-corasick`][c-aho_corasick]⮳{{hi:aho-corasick}}, [`strsim`][c-strsim]⮳{{hi:strsim}} | [`regex`][c-regex]⮳{{hi:regex}} for regular expressions, [`aho-corasick`][c-aho_corasick]⮳{{hi:aho-corasick}} for multiple pattern searching, [`strsim`][c-strsim]⮳{{hi:strsim}} for string similarity. |
-| Numerical Algorithms | [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}}, [`ndarray`][c-ndarray]⮳{{hi:ndarray}}, [`num`][c-num]⮳{{hi:num}} | [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}} for linear algebra, [`ndarray`][c-ndarray]⮳{{hi:ndarray}} for N-dimensional arrays, [`num`][c-num]⮳{{hi:num}} for numeric traits. |
-| Cryptography | [`ring`][c-ring]⮳{{hi:ring}}, [`rust-crypto`][c-rust_crypto]⮳{{hi:rust-crypto}}, [`sha2`][c-sha2]⮳{{hi:sha2}} | Several crates exist; choose carefully based on security needs and audit history. |
+| String Algorithms | [`regex`][c~regex~docs]⮳{{hi:regex}}, [`aho-corasick`][c~aho_corasick~docs]⮳{{hi:aho-corasick}}, [`strsim`][c~strsim~docs]⮳{{hi:strsim}} | [`regex`][c~regex~docs]⮳{{hi:regex}} for regular expressions, [`aho-corasick`][c~aho_corasick~docs]⮳{{hi:aho-corasick}} for multiple pattern searching, [`strsim`][c~strsim~docs]⮳{{hi:strsim}} for string similarity. |
+| Numerical Algorithms | [`nalgebra`][c~nalgebra~docs]⮳{{hi:nalgebra}}, [`ndarray`][c~ndarray~docs]⮳{{hi:ndarray}}, [`num`][c~num~docs]⮳{{hi:num}} | [`nalgebra`][c~nalgebra~docs]⮳{{hi:nalgebra}} for linear algebra, [`ndarray`][c~ndarray~docs]⮳{{hi:ndarray}} for N-dimensional arrays, [`num`][c~num~docs]⮳{{hi:num}} for numeric traits. |
+| Cryptography | [`ring`][c~ring~docs]⮳{{hi:ring}}, [`rust-crypto`][c~rust_crypto~docs]⮳{{hi:rust-crypto}}, [`sha2`][c~sha2~docs]⮳{{hi:sha2}} | Several crates exist; choose carefully based on security needs and audit history. |
 
 ## Random Numbers
 

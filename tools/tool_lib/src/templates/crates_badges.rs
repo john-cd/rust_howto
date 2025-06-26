@@ -14,11 +14,11 @@ macro_rules! regex {
 /// linked to a website In this case, badges linked to docs.rs,
 /// crates.io, github, and lib.rs
 pub(super) static CRATE_BADGES: &str = concat!(
-    "{{ if homepage_defined }}[![{crate_name}~website][c-{crate_name | underscored}-website-badge]][c-{crate_name | underscored}~website] {{ endif }}",
-    "[![{crate_name}][c-{crate_name | underscored}-badge]][c-{crate_name | underscored}] ",
-    "[![{crate_name}-crates.io][c-{crate_name | underscored}-crates.io-badge]][c-{crate_name | underscored}-crates.io] ",
-    "[![{crate_name}-github][c-{crate_name | underscored}-github-badge]][c-{crate_name | underscored}-github] ",
-    r"[![{crate_name}-lib.rs][c-{crate_name | underscored}-lib.rs-badge]][c-{crate_name | underscored}-lib.rs]\{\{hi:{crate_name}}} "
+    "{{ if homepage_defined }}[![{crate_name}~website][c~{crate_name | underscored}~website~badge]][c~{crate_name | underscored}~website] {{ endif }}",
+    "[![{crate_name}][c~{crate_name | underscored}~docs~badge]][c~{crate_name | underscored}~docs] ",
+    "[![{crate_name}~crates.io][c~{crate_name | underscored}~crates.io~badge]][c~{crate_name | underscored}~crates.io] ",
+    "[![{crate_name}~github][c~{crate_name | underscored}~github~badge]][c~{crate_name | underscored}~github] ",
+    r"[![{crate_name}~lib.rs][c~{crate_name | underscored}~lib.rs~badge]][c~{crate_name | underscored}~lib.rs]\{\{hi:{crate_name}}} "
 );
 
 pub(super) static CRATE_DESCRIPTION: &str =
@@ -26,16 +26,16 @@ pub(super) static CRATE_DESCRIPTION: &str =
 
 /// Reference definitions for the badges above
 pub(super) static CRATE_REFDEFS: &str = "\
-[c-{crate_name | underscored}-badge]: https://img.shields.io/crates/v/{crate_name}?label={crate_name}
-[c-{crate_name | underscored}-crates.io-badge]: https://img.shields.io/badge/crates.io-{crate_name | shielded}-crimson
-[c-{crate_name | underscored}-crates.io]: https://crates.io/crates/{crate_name | underscored}
-[c-{crate_name | underscored}-github-badge]: https://img.shields.io/badge/{crate_name | shielded}-steelblue?logo=github
-{{ if repository_defined }}[c-{crate_name | underscored}-github]: {repository}{{ endif }}
-[c-{crate_name | underscored}-lib.rs-badge]: https://img.shields.io/badge/lib.rs-{crate_name | shielded}-yellow
-[c-{crate_name | underscored}-lib.rs]: https://lib.rs/crates/{crate_name}
-[c-{crate_name | underscored}]: {{ if documentation_defined }}{documentation}{{ else }}https://docs.rs/{crate_name}{{ endif }}
-{{ if homepage_defined }}[c-{crate_name | underscored}-website-badge]: https://img.shields.io/badge/{crate_name | shielded}-coral{{ endif }}
-{{ if homepage_defined }}[c-{crate_name | underscored}~website]: {homepage}{{ endif }}
+[c~{crate_name | underscored}~docs~badge]: https://img.shields.io/crates/v/{crate_name}?label={crate_name}
+[c~{crate_name | underscored}~crates.io~badge]: https://img.shields.io/badge/crates.io-{crate_name | shielded}-crimson
+[c~{crate_name | underscored}~crates.io]: https://crates.io/crates/{crate_name | underscored}
+[c~{crate_name | underscored}~github~badge]: https://img.shields.io/badge/{crate_name | shielded}-steelblue?logo=github
+{{ if repository_defined }}[c~{crate_name | underscored}~github]: {repository}{{ endif }}
+[c~{crate_name | underscored}~lib.rs~badge]: https://img.shields.io/badge/lib.rs-{crate_name | shielded}-yellow
+[c~{crate_name | underscored}~lib.rs]: https://lib.rs/crates/{crate_name}
+[c~{crate_name | underscored}~docs]: {{ if documentation_defined }}{documentation}{{ else }}https://docs.rs/{crate_name}{{ endif }}
+{{ if homepage_defined }}[c~{crate_name | underscored}~website~badge]: https://img.shields.io/badge/{crate_name | shielded}-coral{{ endif }}
+{{ if homepage_defined }}[c~{crate_name | underscored}~website]: {homepage}{{ endif }}
 ";
 
 /// The different modes for generating content related to a crate.

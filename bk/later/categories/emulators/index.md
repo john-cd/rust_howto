@@ -1,6 +1,6 @@
 # Emulators
 
-[![cat-emulators][cat-emulators-badge]][cat-emulators]{{hi:Emulators}}
+[![cat~emulators][cat~emulators~badge]][cat~emulators]{{hi:Emulators}}
 
 Emulators allow one computer to behave like another, often to allow running software that is not natively available on the host computer. Video game systems are commonly emulated.
 
@@ -33,19 +33,19 @@ See [[parser-implementations | Parser Implementations]].
 
 Consider using:
 
-- [`pixels`][c-pixels]⮳{{hi:pixels}}: A crate for working with pixel buffers, often used for rendering graphics.
-- [`sdl2`][c-sdl2]⮳{{hi:sdl2}}: Bindings to the SDL library, which can be used for window management, input, and graphics.
-- [`wgpu`][c-wgpu]⮳{{hi:wgpu}}: A crate for portable GPU compute.
+- [`pixels`][c~pixels~docs]⮳{{hi:pixels}}: A crate for working with pixel buffers, often used for rendering graphics.
+- [`sdl2`][c~sdl2~docs]⮳{{hi:sdl2}}: Bindings to the SDL library, which can be used for window management, input, and graphics.
+- [`wgpu`][c~wgpu~docs]⮳{{hi:wgpu}}: A crate for portable GPU compute.
 
 See [[graphics | Graphics]].
 
 ## Sound
 
-Consider [`cpal`][c-cpal]⮳{{hi:cpal}}, a crate for cross-platform audio input and output. See [[audio | Audio]].
+Consider [`cpal`][c~cpal~docs]⮳{{hi:cpal}}, a crate for cross-platform audio input and output. See [[audio | Audio]].
 
 ## Concurrency
 
-[`rayon`][c-rayon]⮳{{hi:rayon}} can be used for parallelizing parts of the emulation (for performance). See [[concurrency | Concurrency]].
+[`rayon`][c~rayon~docs]⮳{{hi:rayon}} can be used for parallelizing parts of the emulation (for performance). See [[concurrency | Concurrency]].
 
 ## Tooling
 

@@ -1,7 +1,7 @@
 use anyhow::Result;
 use serde::Serialize;
 
-pub(super) static CATEGORY_ROW: &str = r"| [![cat-{slug}][cat-{slug}-badge]][cat-{slug}]\{\{hi:{category}}} | {description} | {{ for name in crate_names }}[![{name}][c-{name | underscored}-badge]][c-{name | underscored}]\{\{hi:{name}}} {{ endfor }}|";
+pub(super) static CATEGORY_ROW: &str = r"| [![cat~{slug}][cat~{slug}~badge]][cat~{slug}]\{\{hi:{category}}} | {description} | {{ for name in crate_names }}[![{name}][c~{name | underscored}~docs~badge]][c~{name | underscored}~docs]\{\{hi:{name}}} {{ endfor }}|";
 
 /// Context for rendering a category row in the crates by category table.
 ///

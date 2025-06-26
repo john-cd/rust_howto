@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -u
 
-# Convert wiki-style links [[...|...]] to [...][p-...] and [p-...]: ...
+# Convert wiki-style links [[...|...]] to [...][p~...] and [p~...]: ...
 # BEWARE: modifies many files.
 #
 # Usage <script>.sh <root folder of book>
@@ -18,8 +18,8 @@ regex='\[\[(\S+)\s*(\|\s*(.+))?\]\]'
 for file in ${files}
 do
   echo -e ">> ${file}"
-  ## Replace [[...]] or [[...|...]] by [...][p-...]
-  sed -E -i "s~${regex}~[\3][p-\1]~g" "${file}" # -n p
+  ## Replace [[...]] or [[...|...]] by [...][p~...]
+  sed -E -i "s=${regex}=[\3][p~\1]=g" "${file}" # -n p
 
   dir=$(dirname ${file})
   for target_file_name in $( rg --no-line-number --no-filename --only-matching -r '$1' "${regex}" "${file}" )
@@ -31,6 +31,6 @@ do
     ## Get filename or directory name if [_]?index.md
     base=$(basename -s ".md" "${target_path%/*index\.md}")
     rel_path=$(realpath --relative-to=${dir} ${target_path})
-    echo "[p-${base}]: ${rel_path}" #>> "${dir}/refs.incl.md"
+    echo "[p~${base}]: ${rel_path}" #>> "${dir}/refs.incl.md"
   done
 done

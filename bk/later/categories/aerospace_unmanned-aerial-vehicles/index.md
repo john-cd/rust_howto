@@ -1,6 +1,6 @@
 # Aerospace - Unmanned Aerial Vehicles
 
-[![cat-aerospace::unmanned-aerial-vehicles][cat-aerospace::unmanned-aerial-vehicles-badge]][cat-aerospace::unmanned-aerial-vehicles]{{hi:Aerospace::Unmanned aerial vehicles}}
+[![cat~aerospace::unmanned-aerial-vehicles][cat~aerospace::unmanned-aerial-vehicles~badge]][cat~aerospace::unmanned-aerial-vehicles]{{hi:Aerospace::Unmanned aerial vehicles}}
 
 {{#include uavs.incl.md}}
 
@@ -10,11 +10,11 @@ MAVLink (Micro Air Vehicle Link) is the dominant protocol for communication betw
 
 Consider using:
 
-- [`mavlink`][c-mavlink]⮳{{hi:mavlink}} crate.
+- [`mavlink`][c~mavlink~docs]⮳{{hi:mavlink}} crate.
 - `DroneCAN`: A CAN-based protocol specifically designed for UAVs and robotics. It aims for reliability and real-time performance.
-- [`can-rs`][c-can]⮳{{hi:can-rs}} (general CAN crate) and socketcan (Linux-specific) are relevant. However, DroneCAN-specific higher-level crates might require custom work or FFI with existing C/C++ implementations.
-- [`sbus`][c-sbus]⮳{{hi:sbus}}/`s.bus`: A serial communication protocol often used for radio control (RC) receivers and servos.
-- Serial port crates ([`serialport`][c-serialport]⮳{{hi:serialport}}) and implement the sbus/s.bus decoding logic yourself.
+- [`can-rs`][c~can~docs]⮳{{hi:can-rs}} (general CAN crate) and socketcan (Linux-specific) are relevant. However, DroneCAN-specific higher-level crates might require custom work or FFI with existing C/C++ implementations.
+- [`sbus`][c~sbus~docs]⮳{{hi:sbus}}/`s.bus`: A serial communication protocol often used for radio control (RC) receivers and servos.
+- Serial port crates ([`serialport`][c~serialport~docs]⮳{{hi:serialport}}) and implement the sbus/s.bus decoding logic yourself.
 - Spektrum DSM/DSMX: Another common RC protocol.
 - FrSky SmartPort/FPort: A telemetry protocol used by FrSky RC systems.
 
@@ -22,13 +22,13 @@ Consider using:
 
 ### Parsing Binary Data
 
-Consider using crates like [`nom`][c-nom]⮳{{hi:nom}} or `binascii`.
+Consider using crates like [`nom`][c~nom~docs]⮳{{hi:nom}} or `binascii`.
 
 See [[parsing | Parsing]] and [[_binary_encoders |  Binary Encoders]].
 
 ### Data Structures and Serialization
 
-Define Rust structs to represent the message formats of the protocols. [`serde`][c-serde]⮳{{hi:serde}} can be used for serialization/deserialization.
+Define Rust structs to represent the message formats of the protocols. [`serde`][c~serde~docs]⮳{{hi:serde}} can be used for serialization/deserialization.
 
 See [[data-structures | Data Structures]] and [[encoding | Encoding]].
 

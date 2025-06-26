@@ -4,7 +4,7 @@
 
 ## Get the Type Name of the Pointed-to Value {#type-name-of-val}
 
-[![std][c-std-badge]][c-std]{{hi:std}}
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/examples/other/type_name_of_val.rs:example}}
@@ -17,6 +17,6 @@
 [review](https://github.com/john-cd/rust_howto/issues/926)
 
 - move to proper location.
-- cover [`std::any::type_name`][c-std::any::type_name].
+- cover [`std::any::type_name`][c~std::any::type_name~docs].
 
 </div>

@@ -2,7 +2,7 @@
 
 {{#include variables.incl.md}}
 
-[![Rust by example - Variable bindings][book-rust-by-example-variable_bindings-badge]][book-rust-by-example-variable_bindings]{{hi:Variables}} [![Rust by example - constants][book-rust-by-example-constants-badge]][book-rust-by-example-constants]{{hi:const}}
+[![Rust by example - Variable bindings][book~rust-by-example~variable_bindings~badge]][book~rust-by-example~variable_bindings]{{hi:Variables}} [![Rust by example - constants][book~rust-by-example~constants~badge]][book~rust-by-example~constants]{{hi:const}}
 
 Variables are declared with `let`, following by the variable's name and an (often optional) type annotation. Rust can often infer the type of a variable, but you can provide explicit type annotations.
 

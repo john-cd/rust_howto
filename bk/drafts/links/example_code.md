@@ -15,17 +15,17 @@ You can use the [Rust playground](https://play.rust-lang.org/?version=stable&mod
 
 Example codebases include:
 
-- A full template for a REST API written in Rust, engineered for maximum testability: [rust-rest][rust_rest-github]⮳.
+- A full template for a REST API written in Rust, engineered for maximum testability: [rust-rest][rust_rest~github]⮳.
 
 ## "RealWorld" Examples {#realworld}
 
-- ["Real World" Example Apps][realworld-example-apps]⮳: exemplary real world application implemented in many languages and frameworks.
-- A full-stack RealWorld implementation using Rust, [`axum`][c-axum]⮳{{hi:axum}}, [`sqlx`][c-sqlx]⮳{{hi:sqlx}}, and [`yew`][c-yew]⮳{{hi:yew}}: [realworld-rust-axum-sqlx][realworld-rust-axum-sqlx-github]⮳.
+- ["Real World" Example Apps][realworld~example-apps]⮳: exemplary real world application implemented in many languages and frameworks.
+- A full-stack RealWorld implementation using Rust, [`axum`][c~axum~docs]⮳{{hi:axum}}, [`sqlx`][c~sqlx~docs]⮳{{hi:sqlx}}, and [`yew`][c~yew~docs]⮳{{hi:yew}}: [realworld~rust-axum-sqlx][realworld~rust-axum-sqlx~github]⮳.
 
 ## Source Code for Rust Books {#rust-book-source-code}
 
-- [Code][book-zero-to-production-github]⮳ for [Zero To Production In Rust (book)][book-zero-to-production]⮳.
-- [Source Code][practical-rust-web-projects-github]⮳ for [Practical Rust Web Projects: Building Cloud and Web-Based Applications 1st ed.](https://www.amazon.com/Practical-Rust-Web-Projects-Applications/dp/1484265882)⮳ by Shing Lyu.
+- [Code][book~zero-to-production~github]⮳ for [Zero To Production In Rust (book)][book~zero-to-production]⮳.
+- [Source Code][practical-rust-web-projects~github]⮳ for [Practical Rust Web Projects: Building Cloud and Web-Based Applications 1st ed.](https://www.amazon.com/Practical-Rust-Web-Projects-Applications/dp/1484265882)⮳ by Shing Lyu.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

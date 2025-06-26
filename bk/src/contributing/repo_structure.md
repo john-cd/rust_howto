@@ -11,10 +11,10 @@ The book's [GitHub repository](https://github.com/john-cd/rust_howto) is structu
 - The `.vscode` folder contains the VS Code configuration (other editors can be used).
 - The `bin` folder stores executables used to generate parts of the book or used by the book building process. Generate these tools using `just tools release` or `just scrub release`. These commands build the code and copy the compiled executables into `bin`.
 - The `bk` folder contains the book itself:
-  - The [`mdbook`][c-mdbook]{{hi:mdbook}}⮳ configuration is in [`bk/book.toml`][c-mdbook-book.toml]⮳{{hi:book.toml}}.
-  - The [markdown][p-markdown] sources of the book are in the `bk/src` folder (work-in-progress chapters are in `bk/drafts`; stub chapters are in `bk/later`), the structure of which is described below.
-  - After the book is built using [`mdbook`][c-mdbook]{{hi:mdbook}}⮳, the resulting HTML and Javascript are found in `bk/book/html`.
-  - The templates and assets are in [`theme`][c-mdbook_theme]⮳{{hi:theme}} and [`static`][c-lazy_static]⮳{{hi:static}} respectively.
+  - The [`mdbook`][c~mdbook~docs]{{hi:mdbook}}⮳ configuration is in [`bk/book.toml`][c~mdbook~book.toml]⮳{{hi:book.toml}}.
+  - The [markdown][p~markdown] sources of the book are in the `bk/src` folder (work-in-progress chapters are in `bk/drafts`; stub chapters are in `bk/later`), the structure of which is described below.
+  - After the book is built using [`mdbook`][c~mdbook~docs]{{hi:mdbook}}⮳, the resulting HTML and Javascript are found in `bk/book/html`.
+  - The templates and assets are in [`theme`][c~mdbook_theme~docs]⮳{{hi:theme}} and [`static`][c~lazy_static~docs]⮳{{hi:static}} respectively.
   - The Rust examples embedded in the book are found below `bk/crates` (see below for details).
   - The `bk/master` folder contains the master list of crates used in the book (which is used by a few scripts to generate tables).
   - `bk/scripts` contains [just](https://just.systems)⮳ modules (`mod.just` files) and shell scripts (`*.sh` files) for building the code & book and managing references, links, recipe tables, examples, etc.
@@ -52,8 +52,8 @@ The `bk/drafts` and `bk/later` folders follow the same basic organization.
 
 The book's [GitHub repository](https://github.com/john-cd/rust_howto)⮳ is a "monorepo" with multiple independent projects:
 
-- The Rust examples embedded in the book use a very large number of dependencies, therefore their compile time is quite long. For that reason, they are in an isolated [`cargo`][c-cargo]{{hi:cargo}}⮳ workspace, which manifest is in `bk/crates/Cargo.toml`. The workspace consists of multiple crates below `bk/crates`, each named after sections of the book (e.g., `bk/crates/language`) or, within the `bk/crates/cats` folder, after `crates.io` categories (e.g., `bk/crates/cats/algorithms`).
-  - Each crate in the workspace contains a [`Cargo.toml`][book-cargo-cargo-toml]⮳{{hi:Cargo.toml}} file, which list the dependencies used by its code examples. Use `cargo add <crate>` or `cargo add <crate> -F <feature>` while in the appropriate crate folder, in order to add more as required.
+- The Rust examples embedded in the book use a very large number of dependencies, therefore their compile time is quite long. For that reason, they are in an isolated [`cargo`][c~cargo~docs]{{hi:cargo}}⮳ workspace, which manifest is in `bk/crates/Cargo.toml`. The workspace consists of multiple crates below `bk/crates`, each named after sections of the book (e.g., `bk/crates/language`) or, within the `bk/crates/cats` folder, after `crates.io` categories (e.g., `bk/crates/cats/algorithms`).
+  - Each crate in the workspace contains a [`Cargo.toml`][book~cargo~cargo-toml]⮳{{hi:Cargo.toml}} file, which list the dependencies used by its code examples. Use `cargo add <crate>` or `cargo add <crate> -F <feature>` while in the appropriate crate folder, in order to add more as required.
   - The examples themselves are stored within the crate's `tests` folder in a subfolder named after their chapter, e.g., `bk/crates/<section or cats/some_category>/examples/<chapter_name>/<example_name>.rs`. In a few cases, you may also find examples in the crate's `tests` or `src` folders or within its `build.rs` file.
   - Each example are in a separate `.rs` Rust file that is a module in a `main.rs` file. All examples of a given chapter are therefore compiled together.
   - The book's code examples, being in a `cargo` [workspace](https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html)⮳, share the same dependency versions (a single `Cargo.lock` file) and one shared `target` directory, avoid unnecessary dependency rebuilding.

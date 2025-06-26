@@ -1,6 +1,6 @@
 # External FFI Bindings
 
-[![cat-external-ffi-bindings][cat-external-ffi-bindings-badge]][cat-external-ffi-bindings]{{hi:External FFI bindings}}
+[![cat~external-ffi-bindings][cat~external-ffi-bindings~badge]][cat~external-ffi-bindings]{{hi:External FFI bindings}}
 
 Direct Rust FFI bindings to libraries written in other languages; often denoted by a `-sys` suffix. Safe and idiomatic wrappers are in the [[api-bindings | API Bindings]] category.
 
@@ -12,7 +12,7 @@ Direct Rust FFI bindings to libraries written in other languages; often denoted 
 | Graphics | `glfw-sys`: Bindings to the GLFW library. `vulkan-sys`: Bindings to the Vulkan API. | [[graphics | Graphics]] |
 | Networking | `libcurl-sys`: Bindings to the libcurl library. `libssh2-sys`: Bindings to the libssh2 library. | [[network-programming | Network Programming]] |
 | Parsing | `libxml2-sys`: Bindings to the libxml2 library. | [[parsing | Parsing]] |
-| System | [`libc`][c-libc]⮳{{hi:libc}}: Bindings to various C library functions and types. `windows-sys`: Bindings to Windows APIs. | [[os | OS]] [[os_windows-apis | OS Windows APIs]] |
+| System | [`libc`][c~libc~docs]⮳{{hi:libc}}: Bindings to various C library functions and types. `windows-sys`: Bindings to Windows APIs. | [[os | OS]] [[os_windows-apis | OS Windows APIs]] |
 | Miscellaneous | `libgit2-sys`: Bindings to the libgit2 library. |  |
 
 {{#include external_ffi_bindings.incl.md}}

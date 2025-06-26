@@ -2,10 +2,10 @@ use anyhow::Result;
 use serde::Serialize;
 
 pub(super) static RBE: &str = "
-[![Rust by example - {concept}][book-rust-by-example-{concept | underscored}-badge]][book-rust-by-example-{concept | underscored}]
+[![Rust by example - {concept}][book~rust-by-example~{concept | underscored}~badge]][book~rust-by-example~{concept | underscored}]
 
-[book-rust-by-example-{concept | underscored}-badge]: https://img.shields.io/badge/Rust_By_Example-{concept | shielded}-violet?logo=mdbook
-[book-rust-by-example-{concept | underscored}]: https://doc.rust-lang.org/rust-by-example/{concept | underscored}.html
+[book~rust-by-example~{concept | underscored}~badge]: https://img.shields.io/badge/Rust_By_Example-{concept | shielded}-violet?logo=mdbook
+[book~rust-by-example~{concept | underscored}]: https://doc.rust-lang.org/rust-by-example/{concept | underscored}.html
 ";
 
 /// Creates a badge that links to the Rust By Example book.

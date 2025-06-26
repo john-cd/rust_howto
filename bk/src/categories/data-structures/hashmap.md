@@ -4,7 +4,7 @@
 
 ## Store Key-Value Pairs into a HashMap {#hashmap}
 
-[![std][c-std-badge]][c-std]{{hi:std}}{{hi:Hashmap}}
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}}{{hi:Hashmap}}
 
 `HashMap` is a key-value data structure. It allows you to store data in an unordered collection, where each element is identified by a unique key. This makes `HashMap` an excellent choice for lookups, insertions, and deletions based on keys.
 
@@ -16,7 +16,7 @@ All hashmap keys{{hi:Keys}} must have the same type. All values{{hi:Values}} mus
 
 ## Store Unique Items in a HashSet {#hashset}
 
-[![std][c-std-badge]][c-std]{{hi:std}}
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
 `HashSet` is a common data structure that stores a collection of unique items, similar to the keys of a `HashMap` but without associated values.
 
@@ -26,7 +26,7 @@ All hashmap keys{{hi:Keys}} must have the same type. All values{{hi:Values}} mus
 
 ## Use a Custom Type as the Key of a HashMap {#custom-key-type}
 
-[![std][c-std-badge]][c-std]{{hi:std}}
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
 You can use a custom-defined type (typically a `struct`) as keys in a HashMap. It is useful when you need to associate data with complex, multi-component identifiers that don't fit naturally into a single primitive type like an integer or a string.
 
@@ -36,7 +36,7 @@ You can use a custom-defined type (typically a `struct`) as keys in a HashMap. I
 
 ## Use a Custom Hash Function with `HashMap` and `HashSet` {#custom-hash-function}
 
-[![fnv][c-fnv-badge]][c-fnv] [![fnv-crates.io][c-fnv-crates.io-badge]][c-fnv-crates.io] [![fnv-github][c-fnv-github-badge]][c-fnv-github] [![fnv-lib.rs][c-fnv-lib.rs-badge]][c-fnv-lib.rs]{{hi:fnv}}
+[![fnv][c~fnv~docs~badge]][c~fnv~docs] [![fnv~crates.io][c~fnv~crates.io~badge]][c~fnv~crates.io] [![fnv~github][c~fnv~github~badge]][c~fnv~github] [![fnv~lib.rs][c~fnv~lib.rs~badge]][c~fnv~lib.rs]{{hi:fnv}}
 
 You can use a custom hash function with `HashMap` and `HashSet`. In the following, the Fowler-Noll-Vo hash function is used for better performance with short keys.
 

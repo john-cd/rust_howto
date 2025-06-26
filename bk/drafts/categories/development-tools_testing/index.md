@@ -1,6 +1,6 @@
 # Development Tools - Tests
 
-[![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Development tools::Testing}}
+[![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Development tools::Testing}}
 
 Tools to help you verify the correctness{{hi:Correctness}} of your code.
 

@@ -1,6 +1,6 @@
 # Aerospace Simulation
 
-[![cat-aerospace::simulation][cat-aerospace::simulation-badge]][cat-aerospace::simulation]{{hi:Aerospace simulations}}
+[![cat~aerospace::simulation][cat~aerospace::simulation~badge]][cat~aerospace::simulation]{{hi:Aerospace simulations}}
 
 {{#include aerospace_simulation.incl.md}}
 
@@ -16,7 +16,7 @@
 There are few mature physics engines in pure Rust. Many robust physics engines are written in C/C++.
 
 - `rapier`: A 2D and 3D physics engine written in Rust. It might be suitable for some aerospace simulations, especially if you don't need highly specialized aerospace physics.
-- `bevy_rapier`: Integration between `rapier` and the [`bevy`][c-bevy]⮳{{hi:bevy}} game engine.
+- `bevy_rapier`: Integration between `rapier` and the [`bevy`][c~bevy~docs]⮳{{hi:bevy}} game engine.
 
 See also:
 
@@ -46,8 +46,8 @@ See [[mathematics | Mathematics]] and [[linear_algebra | Linear Algebra]].
 
 Consider using:
 
-- [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}}: Excellent for vector, matrix, and quaternion operations, which are fundamental to aerospace simulations.
-- [`ndarray`][c-ndarray]⮳{{hi:ndarray}}: Another good option for numerical array operations.
+- [`nalgebra`][c~nalgebra~docs]⮳{{hi:nalgebra}}: Excellent for vector, matrix, and quaternion operations, which are fundamental to aerospace simulations.
+- [`ndarray`][c~ndarray~docs]⮳{{hi:ndarray}}: Another good option for numerical array operations.
 
 ## Visualization
 
@@ -55,8 +55,8 @@ See [[visualization | Visualization]].
 
 Consider using:
 
-- [`bevy`][c-bevy]⮳{{hi:bevy}}, which is a data-driven game engine suitable for 3D visualization.
-- [`plotters`][c-plotters]⮳{{hi:plotters}} for creating plots and charts of simulation data.
+- [`bevy`][c~bevy~docs]⮳{{hi:bevy}}, which is a data-driven game engine suitable for 3D visualization.
+- [`plotters`][c~plotters~docs]⮳{{hi:plotters}} for creating plots and charts of simulation data.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -28,7 +28,7 @@
 
 ## Rust Podcasts {#podcasts}
 
-- [`rustacean-station.org`][rustacean-station]⮳ [(Apple podcasts)](https://podcasts.apple.com/us/podcast/rustacean-station/id1472535519)⮳.{{hi:Podcasts}}
+- [`rustacean-station.org`][rustacean-station~website]⮳ [(Apple podcasts)](https://podcasts.apple.com/us/podcast/rustacean-station/id1472535519)⮳.{{hi:Podcasts}}
 - [Rust in Production - The Podcast](https://corrode.dev/podcast/)⮳.
 - [RustShip - a RustLang podcast](https://creators.spotify.com/pod/profile/marco-ieni/)⮳.
 - [Chats with James](https://podcasts.apple.com/us/podcast/chats-with-james-podcast/id1548207257)⮳.

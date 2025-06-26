@@ -14,13 +14,13 @@ _default:
   ./insert_category_links.sh {{root}}
 # [insert preproc directive instead of link. replace link to crates.io category search page to link to category main page.](https://github.com/john-cd/rust_howto/issues/1281)
 
-# (BEWARE: modifies many files; manual editing required) Insert links to crate [`...`][c-<crate name>] into the book's Markdown
+# (BEWARE: modifies many files; manual editing required) Insert links to crate [`...`][c~<crate name>~docs] into the book's Markdown
 [unix]
 @insert_crate_links:
   ./insert_crate_links.sh {{root}}
 # [fix - one link only; should we have crate landing pages instead of linking to the docs](https://github.com/john-cd/rust_howto/issues/1240)?
 
-# (BEWARE: modifies many files; manual editing required) Insert cross-links (from page to page) [...][p-<page>] into the book's Markdown
+# (BEWARE: modifies many files; manual editing required) Insert cross-links (from page to page) [...][p~<page>] into the book's Markdown
 [unix]
 @cross_link:
   ./cross_link.sh {{root}}

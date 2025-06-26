@@ -64,12 +64,12 @@ do
     fi
     echo ">>> File with pattern: $file_with_pattern"
     with_dash=$( tr ' ' '-' <<< "${pattern}" )
-    # Insert [...][p-<page name>] link
-    sed -E -i "s~${start_line}(${pattern})${after}~\1[\2][p-${with_dash}]\3~gI" "${file_with_pattern}" # -n  p
-    # Add reference [p-<page name>]: <file path> to proper `refs.incl.md`
+    # Insert [...][p~<page name>] link
+    sed -E -i "s=${start_line}(${pattern})${after}=\1[\2][p~${with_dash}]\3=gI" "${file_with_pattern}" # -n  p
+    # Add reference [p~<page name>]: <file path> to proper `refs.incl.md`
     dir=$(dirname $file_with_pattern)
     #echo ">>>> Original file: ${original_files[$pattern]}"
-    echo "[p-${with_dash}]: $(realpath --relative-to=${dir} ${original_files[$pattern]})" >> "${dir}"'/refs.incl.md'
+    echo "[p~${with_dash}]: $(realpath --relative-to=${dir} ${original_files[$pattern]})" >> "${dir}"'/refs.incl.md'
     sort -u -o "${dir}"'/refs.incl.md' "${dir}"'/refs.incl.md'
   done
 done

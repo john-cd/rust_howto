@@ -12,7 +12,7 @@ Here are some key aspects of Robot Operating Systems:
 
 Message Passing: ROS facilitates communication between various components (nodes) of a robot system using a publish-subscribe messaging paradigm. For example, a sensor might publish data that a motion planner subscribes to.
 
-Hardware Abstraction: It enables developers to write code that works across different hardware platforms, like [sensors][p-sensors], cameras, and motors.
+Hardware Abstraction: It enables developers to write code that works across different hardware platforms, like [sensors][p~sensors], cameras, and motors.
 
 2. Modular Design
 
@@ -20,7 +20,7 @@ ROS systems are composed of small, independent units called nodes, each performi
 
 3. Development Tools
 
-Tools like `rviz` (for [visualization][p-visualization]) and `Gazebo` (for simulation) help developers test and debug their robotic systems without needing the actual hardware.
+Tools like `rviz` (for [visualization][p~visualization]) and `Gazebo` (for simulation) help developers test and debug their robotic systems without needing the actual hardware.
 
 4. Supported Platforms
 
@@ -32,21 +32,21 @@ ROS 1 was the original system, widely used in academia and industry. However, it
 
 6. Rust in ROS
 
-While ROS traditionally favored [Python][p-python] and C++, Rust is gradually gaining traction due to its strong memory safety, [concurrency][p-concurrency] features, and [performance][p-performance] benefits. Libraries like rosrust and r2r bring ROS functionality to Rust, enabling developers to create safe and efficient robotics applications.
+While ROS traditionally favored [Python][p~python] and C++, Rust is gradually gaining traction due to its strong memory safety, [concurrency][p~concurrency] features, and [performance][p~performance] benefits. Libraries like rosrust and r2r bring ROS functionality to Rust, enabling developers to create safe and efficient robotics applications.
 
-[`rosrust`][c-rosrust]⮳{{hi:rosrust}} provides a client library for interacting with ROS. `ros_control_rs` aims to provide Rust bindings for ROS Control.
+[`rosrust`][c~rosrust~docs]⮳{{hi:rosrust}} provides a client library for interacting with ROS. `ros_control_rs` aims to provide Rust bindings for ROS Control.
 
 ## `rosrust`: Pure Rust Implementation of a ROS Client Library {#rosrust}
 
-[![rosrust][c-rosrust-badge]][c-rosrust] [![rosrust-crates.io][c-rosrust-crates.io-badge]][c-rosrust-crates.io] [![rosrust-github][c-rosrust-github-badge]][c-rosrust-github] [![rosrust-lib.rs][c-rosrust-lib.rs-badge]][c-rosrust-lib.rs]{{hi:rosrust}}
+[![rosrust][c~rosrust~docs~badge]][c~rosrust~docs] [![rosrust~crates.io][c~rosrust~crates.io~badge]][c~rosrust~crates.io] [![rosrust~github][c~rosrust~github~badge]][c~rosrust~github] [![rosrust~lib.rs][c~rosrust~lib.rs~badge]][c~rosrust~lib.rs]{{hi:rosrust}}
 
-[`rosrust`][c-rosrust]⮳{{hi:rosrust}} is a pure Rust implementation of a ROS client library.
+[`rosrust`][c~rosrust~docs]⮳{{hi:rosrust}} is a pure Rust implementation of a ROS client library.
 
 ## `r2r`: Minimal ROS2 Rust Bindings {#r2r}
 
-[![r2r][c-r2r-badge]][c-r2r] [![r2r-crates.io][c-r2r-crates.io-badge]][c-r2r-crates.io] [![r2r-github][c-r2r-github-badge]][c-r2r-github] [![r2r-lib.rs][c-r2r-lib.rs-badge]][c-r2r-lib.rs]{{hi:r2r}}
+[![r2r][c~r2r~docs~badge]][c~r2r~docs] [![r2r~crates.io][c~r2r~crates.io~badge]][c~r2r~crates.io] [![r2r~github][c~r2r~github~badge]][c~r2r~github] [![r2r~lib.rs][c~r2r~lib.rs~badge]][c~r2r~lib.rs]{{hi:r2r}}
 
-[`r2r`][c-r2r]⮳{{hi:r2r}} offers minimal ROS2 Rust bindings. Easy to use, runtime-agnostic, async rust bindings for ROS2.
+[`r2r`][c~r2r~docs]⮳{{hi:r2r}} offers minimal ROS2 Rust bindings. Easy to use, runtime-agnostic, async rust bindings for ROS2.
 
 ```rust,editable
 {{#include ../../../crates/cats/science_robotics/examples/robot_operating_systems/robotics.rs:example}}

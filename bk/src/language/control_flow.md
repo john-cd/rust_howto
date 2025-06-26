@@ -6,7 +6,7 @@
 
 ## Execute Code based on a Condition using `if` and `else` {#if-else}
 
-[![Rust by example - if else][book-rust-by-example-if_else-badge]][book-rust-by-example-if_else]
+[![Rust by example - if else][book~rust-by-example~if_else~badge]][book~rust-by-example~if_else]
 
 `if`, `else`, and `else if` allow you to execute different blocks of code based on whether a boolean condition is true or false:
 
@@ -18,7 +18,7 @@ Refer to the [[match | match]] chapter for `if let` expressions.
 
 ## Create Loops using `loop` {#loop}
 
-[![Rust by example - loop][book-rust-by-example-loop-badge]][book-rust-by-example-loop]
+[![Rust by example - loop][book~rust-by-example~loop~badge]][book~rust-by-example~loop]
 
 `loop` creates an infinite loop that runs until explicitly stopped, usually with the `break` keyword.
 Like `if`, `loop` is an expression, and `break` can return a value from the loop.
@@ -31,7 +31,7 @@ You can also use `continue` to skip the rest of the current iteration and start 
 
 ## Execute Code Repeatedly While a Condition is True with `while` {#while}
 
-[![Rust by example - while][book-rust-by-example-while-badge]][book-rust-by-example-while]
+[![Rust by example - while][book~rust-by-example~while~badge]][book~rust-by-example~while]
 
 `while` executes a block of code repeatedly as long as a boolean condition remains true.
 The condition is checked before each iteration.
@@ -44,7 +44,7 @@ The condition is checked before each iteration.
 
 ## Iterate Through a Collection with `for` {#for}
 
-[![Rust by example - for][book-rust-by-example-for-badge]][book-rust-by-example-for]
+[![Rust by example - for][book~rust-by-example~for~badge]][book~rust-by-example~for]
 
 `for` is used to iterate over the items produced by an iterator.
 
@@ -67,7 +67,7 @@ You may think of them as a `loop` that executes only once and allows exiting ear
 
 ## References {#skip}
 
-- [Rust by example - Control flow][book-rust-by-example-flow_control]⮳.
+- [Rust by example - Control flow][book~rust-by-example~flow_control]⮳.
 
 ## Related Topics {#skip}
 

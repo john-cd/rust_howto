@@ -1,6 +1,6 @@
 # Cryptocurrencies
 
-[![cat-cryptography::cryptocurrencies][cat-cryptography::cryptocurrencies-badge]][cat-cryptography::cryptocurrencies]{{hi:Cryptocurrencies}}
+[![cat~cryptography::cryptocurrencies][cat~cryptography::cryptocurrencies~badge]][cat~cryptography::cryptocurrencies]{{hi:Cryptocurrencies}}
 
 Cryptocurrencies are digital or virtual currencies designed to work as a medium of exchange. They use cryptography to secure and verify transactions as well as to control the creation of new units of a particular cryptocurrency. Unlike traditional currencies issued by central banks, cryptocurrencies operate independently of any central authority, relying on a decentralized system.
 
@@ -25,7 +25,7 @@ BEWARE: Be wary of scams.
 - Ethereum: `web3` (for interacting with Ethereum), `ethers`.
 - Other Cryptocurrencies: many cryptocurrencies have their own Rust libraries.
 - Wallet Development: often involves a combination of the above crates and custom logic.
-- Smart Contracts: primarily a `Solidity` ecosystem, but Rust may be used for [testing][p-testing] or interacting with contracts via crates like `ethers`.
+- Smart Contracts: primarily a `Solidity` ecosystem, but Rust may be used for [testing][p~testing] or interacting with contracts via crates like `ethers`.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

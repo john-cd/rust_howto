@@ -6,17 +6,17 @@
 
 - Rust generally doesn't require direct CPU manipulation. The compiler and standard library provide good abstractions.
 - SIMD and atomic operations are important for performance.
-- Direct access to CPU features (like inline [assembly][p-assembly]) is usually only necessary for very specialized or performance-critical code. Avoid it if you can.
+- Direct access to CPU features (like inline [assembly][p~assembly]) is usually only necessary for very specialized or performance-critical code. Avoid it if you can.
 
 ## CPU Identification {#skip}
 
-[`cpuid`][c-cpuid]⮳{{hi:cpuid}}: A crate for getting CPU information (vendor, features, etc.)
+[`cpuid`][c~cpuid~docs]⮳{{hi:cpuid}}: A crate for getting CPU information (vendor, features, etc.)
 
 ### Check the Number of Logical cpu Cores {#check-number-of-logical-cpu-cores}
 
-[![num_cpus][c-num_cpus-badge]][c-num_cpus] [![num_cpus-crates.io][c-num_cpus-crates.io-badge]][c-num_cpus-crates.io] [![num_cpus-github][c-num_cpus-github-badge]][c-num_cpus-github] [![num_cpus-lib.rs][c-num_cpus-lib.rs-badge]][c-num_cpus-lib.rs]{{hi:num_cpus}}{{hi:Cpus}}{{hi:Cores}}{{hi:Cpu}} [![cat-hardware-support][cat-hardware-support-badge]][cat-hardware-support]{{hi:Hardware support}}{{hi:Logical cpu cores}}
+[![num_cpus][c~num_cpus~docs~badge]][c~num_cpus~docs] [![num_cpus~crates.io][c~num_cpus~crates.io~badge]][c~num_cpus~crates.io] [![num_cpus~github][c~num_cpus~github~badge]][c~num_cpus~github] [![num_cpus~lib.rs][c~num_cpus~lib.rs~badge]][c~num_cpus~lib.rs]{{hi:num_cpus}}{{hi:Cpus}}{{hi:Cores}}{{hi:Cpu}} [![cat~hardware-support][cat~hardware-support~badge]][cat~hardware-support]{{hi:Hardware support}}{{hi:Logical cpu cores}}
 
-Shows the number of logical CPU cores{{hi:CPU cores}} in the current machine using [`num_cpus::get`][c-num_cpus::get]{{hi:num_cpus::get}}⮳.
+Shows the number of logical CPU cores{{hi:CPU cores}} in the current machine using [`num_cpus::get`][c~num_cpus::get~docs]{{hi:num_cpus::get}}⮳.
 
 ```rust,editable
 {{#include ../../../crates/cats/hardware_support/examples/processor/cpu_count.rs:example}}
@@ -26,7 +26,7 @@ Shows the number of logical CPU cores{{hi:CPU cores}} in the current machine usi
 
 ### Inline Assembly {#skip}
 
-You can use inline [assembly][p-assembly] in Rust with the asm! macro, but it's generally discouraged unless absolutely necessary for performance reasons. It makes code less portable.
+You can use inline [assembly][p~assembly] in Rust with the asm! macro, but it's generally discouraged unless absolutely necessary for performance reasons. It makes code less portable.
 
 ### Compiler Intrinsics {#skip}
 
@@ -36,7 +36,7 @@ Compiler intrinsics are functions that map directly to CPU instructions. They're
 
 `std::arch`: (Standard library) Provides access to SIMD instructions if the target CPU supports them. This is essential for performance optimization.
 
-[`packed_simd`][c-packed_simd]⮳{{hi:packed_simd}}: A crate for portable SIMD.
+[`packed_simd`][c~packed_simd~docs]⮳{{hi:packed_simd}}: A crate for portable SIMD.
 
 ## Related Topics {#skip}
 
@@ -48,7 +48,7 @@ See [[atomics | Atomics]].
 
 Profiling tools help you identify CPU-related performance issues.
 
-`cargo flamegraph`, [`perf`][c-perf]⮳{{hi:perf}} (Linux) help you identify performance bottlenecks in your code, which can be related to CPU usage.
+`cargo flamegraph`, [`perf`][c~perf~docs]⮳{{hi:perf}} (Linux) help you identify performance bottlenecks in your code, which can be related to CPU usage.
 
 See [[development-tools_profiling | Development Tools Profiling]] and [[memory_usage_analysis | Memory Usage Analysis]].
 
@@ -57,8 +57,8 @@ See [[development-tools_profiling | Development Tools Profiling]] and [[memory_u
 Concurrency and multithreading allow you to utilize multiple CPU cores.
 
 `std::thread`: (Standard library) For creating and managing threads.
-[`rayon`][c-rayon]⮳{{hi:rayon}}: A [data parallelism][p-data-parallelism] library that makes it easy to parallelize computations.
-[`tokio`][c-tokio]⮳{{hi:tokio}}: An [asynchronous][p-asynchronous] runtime for writing concurrent applications.
+[`rayon`][c~rayon~docs]⮳{{hi:rayon}}: A [data parallelism][p~data-parallelism] library that makes it easy to parallelize computations.
+[`tokio`][c~tokio~docs]⮳{{hi:tokio}}: An [asynchronous][p~asynchronous] runtime for writing concurrent applications.
 
 See [[concurrency | Concurrency]].
 
@@ -72,7 +72,7 @@ System calls are used to interact with the operating system, which in turn inter
 
 ### Embedded Systems Programming {#skip}
 
-In embedded systems, you often have more direct access to CPU features and peripherals. See the [Embedded][p-embedded] Systems section for relevant crates.
+In embedded systems, you often have more direct access to CPU features and peripherals. See the [Embedded][p~embedded] Systems section for relevant crates.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

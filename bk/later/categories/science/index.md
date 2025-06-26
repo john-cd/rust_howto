@@ -1,6 +1,6 @@
 # Science
 
-[![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
+[![cat~science][cat~science~badge]][cat~science]{{hi:Science}}
 
 Solving problems involving physics, chemistry, biology, machine learning, geoscience, and other scientific fields.
 
@@ -10,11 +10,11 @@ The Rust ML ecosystem is relatively young compared to Python's. However, Rust's 
 
 | Topic | Rust Crate(s) | Notes |
 |---|---|---|
-| Classical Machine Learning Algorithms | [`linfa`][c-linfa]⮳{{hi:linfa}}, [`smartcore`][c-smartcore]⮳{{hi:smartcore}} | [`linfa`][c-linfa]⮳{{hi:linfa}} implements various ML algorithms. [`smartcore`][c-smartcore]⮳{{hi:smartcore}} is another option that provides implementations of common algorithms. |
-| Deep Learning | [`tch-rs`][c-tch]⮳{{hi:tch-rs}}, [`burn`][c-burn]⮳{{hi:burn}} | [`tch-rs`][c-tch]⮳{{hi:tch-rs}} provides access to PyTorch, enabling deep learning models. [`burn`][c-burn]⮳{{hi:burn}} is a new deep learning framework written in Rust. |
-| Natural Language Processing NLP | [`tokenizers`][c-tokenizers]⮳{{hi:tokenizers}}, [`rust-bert`][c-rust_bert]⮳{{hi:rust-bert}} | [`tokenizers`][c-tokenizers]⮳{{hi:tokenizers}} provides fast tokenization, and [`rust-bert`][c-rust_bert]⮳{{hi:rust-bert}} offers pre-trained BERT models. |
-| Reinforcement Learning | [`rl-rs`][c-rl]⮳{{hi:rl-rs}}, [`gym-rs`][c-gym]⮳{{hi:gym-rs}} | [`rl-rs`][c-rl]⮳{{hi:rl-rs}} is a reinforcement learning library, and [`gym-rs`][c-gym]⮳{{hi:gym-rs}} provides bindings to the OpenAI Gym environment. |
-| ONNX Runtime | [`onnxruntime`][c-onnxruntime]⮳{{hi:onnxruntime}} | Allows running models in the ONNX format. |
+| Classical Machine Learning Algorithms | [`linfa`][c~linfa~docs]⮳{{hi:linfa}}, [`smartcore`][c~smartcore~docs]⮳{{hi:smartcore}} | [`linfa`][c~linfa~docs]⮳{{hi:linfa}} implements various ML algorithms. [`smartcore`][c~smartcore~docs]⮳{{hi:smartcore}} is another option that provides implementations of common algorithms. |
+| Deep Learning | [`tch-rs`][c~tch~docs]⮳{{hi:tch-rs}}, [`burn`][c~burn~docs]⮳{{hi:burn}} | [`tch-rs`][c~tch~docs]⮳{{hi:tch-rs}} provides access to PyTorch, enabling deep learning models. [`burn`][c~burn~docs]⮳{{hi:burn}} is a new deep learning framework written in Rust. |
+| Natural Language Processing NLP | [`tokenizers`][c~tokenizers~docs]⮳{{hi:tokenizers}}, [`rust-bert`][c~rust_bert~docs]⮳{{hi:rust-bert}} | [`tokenizers`][c~tokenizers~docs]⮳{{hi:tokenizers}} provides fast tokenization, and [`rust-bert`][c~rust_bert~docs]⮳{{hi:rust-bert}} offers pre-trained BERT models. |
+| Reinforcement Learning | [`rl-rs`][c~rl~docs]⮳{{hi:rl-rs}}, [`gym-rs`][c~gym~docs]⮳{{hi:gym-rs}} | [`rl-rs`][c~rl~docs]⮳{{hi:rl-rs}} is a reinforcement learning library, and [`gym-rs`][c~gym~docs]⮳{{hi:gym-rs}} provides bindings to the OpenAI Gym environment. |
+| ONNX Runtime | [`onnxruntime`][c~onnxruntime~docs]⮳{{hi:onnxruntime}} | Allows running models in the ONNX format. |
 
 ## Classical Machine Learning
 
@@ -28,18 +28,18 @@ The Rust ML ecosystem is relatively young compared to Python's. However, Rust's 
 
 | Topic | Rust Crate(s) | Notes |
 |---|---|---|
-| [[computer-vision | Computer Vision]] | [`image`][c-image]⮳{{hi:image}}, [`opencv-rs`][c-opencv]⮳{{hi:opencv-rs}} bindings to OpenCV | [`image`][c-image]⮳{{hi:image}} is for image manipulation. [`opencv-rs`][c-opencv]⮳{{hi:opencv-rs}} provides bindings to the popular OpenCV library. |
-| Data Manipulation & [[data-processing | Processing]]  | [`polars`][c-polars]⮳{{hi:polars}}, [`dataframe`][c-dataframe]⮳{{hi:dataframe}} | [`polars`][c-polars]⮳{{hi:polars}} and [`dataframe`][c-dataframe]⮳{{hi:dataframe}} are designed for efficient data manipulation and analysis, similar to Pandas in Python. |
-| Data [[visualization | Visualization]] | [`plotters`][c-plotters]⮳{{hi:plotters}}, [`iced`][c-iced]⮳{{hi:iced}}, [`egui`][c-egui]⮳{{hi:egui}} | While not strictly ML-specific, these crates are essential for visualizing data and model performance. |
-| [[linear_algebra | Linear Algebra]] & Numerical Computation | [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}}, [`ndarray`][c-ndarray]⮳{{hi:ndarray}}, [`matrix`][c-matrix]⮳{{hi:matrix}} | These crates provide efficient array and matrix operations, essential for many ML algorithms. |
+| [[computer-vision | Computer Vision]] | [`image`][c~image~docs]⮳{{hi:image}}, [`opencv-rs`][c~opencv~docs]⮳{{hi:opencv-rs}} bindings to OpenCV | [`image`][c~image~docs]⮳{{hi:image}} is for image manipulation. [`opencv-rs`][c~opencv~docs]⮳{{hi:opencv-rs}} provides bindings to the popular OpenCV library. |
+| Data Manipulation & [[data-processing | Processing]]  | [`polars`][c~polars~docs]⮳{{hi:polars}}, [`dataframe`][c~dataframe~docs]⮳{{hi:dataframe}} | [`polars`][c~polars~docs]⮳{{hi:polars}} and [`dataframe`][c~dataframe~docs]⮳{{hi:dataframe}} are designed for efficient data manipulation and analysis, similar to Pandas in Python. |
+| Data [[visualization | Visualization]] | [`plotters`][c~plotters~docs]⮳{{hi:plotters}}, [`iced`][c~iced~docs]⮳{{hi:iced}}, [`egui`][c~egui~docs]⮳{{hi:egui}} | While not strictly ML-specific, these crates are essential for visualizing data and model performance. |
+| [[linear_algebra | Linear Algebra]] & Numerical Computation | [`nalgebra`][c~nalgebra~docs]⮳{{hi:nalgebra}}, [`ndarray`][c~ndarray~docs]⮳{{hi:ndarray}}, [`matrix`][c~matrix~docs]⮳{{hi:matrix}} | These crates provide efficient array and matrix operations, essential for many ML algorithms. |
 
 [[development-tools_ffi | FFI]] (Foreign Function Interface) can be used to integrate with ML frameworks written in other languages.
 
 ## References
 
 - [Why Rust is becoming a contender in AI development][why rust is becoming a contender in ai development]⮳.
-- [Choosing the Right Rust Machine Learning Framework][blog-choosing-the-right-machine-learning-framework]⮳.
-- [ML in Rust - Ranking][ml-in-rust-ossinsight-website]⮳.
+- [Choosing the Right Rust Machine Learning Framework][blog~choosing-the-right-machine-learning-framework]⮳.
+- [ML in Rust - Ranking][ml-in-rust-ossinsight~website]⮳.
 - [Data Processing](https://www.arewelearningyet.com/data-preprocessing/)⮳.
 - [Data Structures](https://www.arewelearningyet.com/data-structures/)⮳.
 - [GPU Computing](https://www.arewelearningyet.com/gpu-computing/)⮳.
@@ -58,7 +58,7 @@ The Rust ML ecosystem is relatively young compared to Python's. However, Rust's 
 Review tch-rs, burn, ort, rust-bert, TensorFlow/rust, tract, cudarc, DFDX.
 
 - [Awesome-Rust-Neural-Network: A curated collection of Rust projects related to neural networks, designed to complement "Are We Learning Yet?"](https://github.com/BurtonQin/Awesome-Rust-Neural-Network)⮳.
-- [autodiff in std::autodiff](https://doc.rust-lang.org/nightly/std/autodiff/attr.autodiff.html)⮳.
+- [autodiff in std::autodiff](https://doc.rust-lang.org/std/autodiff/attr.autodiff.html)⮳.
 
 [`burn.dev`](https://burn.dev)⮳.
 

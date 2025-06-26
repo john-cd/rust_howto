@@ -4,9 +4,9 @@
 
 ## Store Optional Values in `Option` {#option}
 
-[![std][c-std-badge]][c-std]{{hi:std}}{{hi:null}}
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}}{{hi:null}}
 
-Rust has no `null`. Instead, it represents the presence or absence of a value with the [`std::option::Option`][c-std::option::Option]{{hi:std::option::Option}}⮳ enum:
+Rust has no `null`. Instead, it represents the presence or absence of a value with the [`std::option::Option`][c~std::option::Option~docs]{{hi:std::option::Option}}⮳ enum:
 
 ```rust,editable,noplayground
 enum Option<T> {
@@ -15,7 +15,7 @@ enum Option<T> {
 }
 ```
 
-Every [`std::option::Option`][c-std::option::Option]{{hi:std::option::Option}}⮳ is either [`std::option::Option::Some`][c-std::option::Option::Some]{{hi:std::option::Option::Some}}⮳ and contains a value, or [`std::option::Option::None`][c-std::option::Option::None]{{hi:std::option::Option::None}}⮳, and does not.
+Every [`std::option::Option`][c~std::option::Option~docs]{{hi:std::option::Option}}⮳ is either [`std::option::Option::Some`][c~std::option::Option::Some~docs]{{hi:std::option::Option::Some}}⮳ and contains a value, or [`std::option::Option::None`][c~std::option::Option::None~docs]{{hi:std::option::Option::None}}⮳, and does not.
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/option/options1.rs:example}}
@@ -25,7 +25,7 @@ Every [`std::option::Option`][c-std::option::Option]{{hi:std::option::Option}}�
 
 ## Use `Option` with `match`, `if let`, or `while let` {#option-match-if-let-while-let}
 
-`Option<T>` is often used with [`match`][book-rust-reference-match]{{hi:match}}⮳, [`if let`][book-rust-reference-if]{{hi:if let}}, or [`while let`][book-rust-reference-while-let]{{hi:while let}}:
+`Option<T>` is often used with [`match`][book~rust-reference~match]{{hi:match}}⮳, [`if let`][book~rust-reference~if]{{hi:if let}}, or [`while let`][book~rust-reference~while-let]{{hi:while let}}:
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/option/options2.rs:example}}
@@ -37,7 +37,7 @@ Every [`std::option::Option`][c-std::option::Option]{{hi:std::option::Option}}�
 
 ## Implement the "Early Return" Pattern with the `?` Operator {#return-early-pattern}
 
-[![std][c-std-badge]][c-std]
+[![std][c~std~docs~badge]][c~std~docs]
 
 "Early Exit" (also called "Early Return") is the technique of immediately returning from a function (or exiting a loop) as soon as an invalid or exceptional condition is detected. For this purpose, Rust offers the `?` operator, which is essentially a shortcut for a `match` expression:
 
@@ -63,7 +63,7 @@ This pattern removes the need for explicit, convoluted `match` or `if else` stat
 
 ## Common `Option` Methods {#option-methods}
 
-[![std][c-std-badge]][c-std]
+[![std][c~std~docs~badge]][c~std~docs]
 
 The following table provides an overview of the most commonly used `Option` methods:
 
@@ -85,15 +85,15 @@ The following table provides an overview of the most commonly used `Option` meth
 
 ### Extract the Value Contained in an `Option` with `unwrap*` and `expect` {#extracting-the-value-contained-in-option}
 
-[![std][c-std-badge]][c-std]
+[![std][c~std~docs~badge]][c~std~docs]
 
-The following methods extract the contained value in an [`std::option::Option`][c-std::option::Option]{{hi:std::option::Option}} when it is the `Some` variant. If the [`std::option::Option`][c-std::option::Option]{{hi:std::option::Option}}⮳ is `None`:
+The following methods extract the contained value in an [`std::option::Option`][c~std::option::Option~docs]{{hi:std::option::Option}} when it is the `Some` variant. If the [`std::option::Option`][c~std::option::Option~docs]{{hi:std::option::Option}}⮳ is `None`:
 
-- [`std::option::Option::unwrap`][c-std::option::Option::unwrap]{{hi:std::option::Option::unwrap}}⮳ panics with a generic message.
-- [`std::option::Option::expect`][c-std::option::Option::expect]{{hi:std::option::Option::expect}}⮳ panics with a provided custom message.
-- [`std::option::Option::unwrap_or`][c-std::option::Option::unwrap_or]{{hi:std::option::Option::unwrap_or}}⮳ returns the provided default value.
-- [`std::option::Option::unwrap_or_default`][c-std::option::Option::unwrap_or_default]{{hi:std::option::Option::unwrap_or_default}}⮳ returns the default value of the type T (which must implement the [`std::default::Default`][c-std::default::Default]{{hi:std::default::Default}}⮳ trait).
-- [`std::option::Option::unwrap_or_else`][c-std::option::Option::unwrap_or_else]{{hi:std::option::Option::unwrap_or_else}}⮳ returns the result of evaluating the provided closure.
+- [`std::option::Option::unwrap`][c~std::option::Option::unwrap~docs]{{hi:std::option::Option::unwrap}}⮳ panics with a generic message.
+- [`std::option::Option::expect`][c~std::option::Option::expect~docs]{{hi:std::option::Option::expect}}⮳ panics with a provided custom message.
+- [`std::option::Option::unwrap_or`][c~std::option::Option::unwrap_or~docs]{{hi:std::option::Option::unwrap_or}}⮳ returns the provided default value.
+- [`std::option::Option::unwrap_or_default`][c~std::option::Option::unwrap_or_default~docs]{{hi:std::option::Option::unwrap_or_default}}⮳ returns the default value of the type T (which must implement the [`std::default::Default`][c~std::default::Default~docs]{{hi:std::default::Default}}⮳ trait).
+- [`std::option::Option::unwrap_or_else`][c~std::option::Option::unwrap_or_else~docs]{{hi:std::option::Option::unwrap_or_else}}⮳ returns the result of evaluating the provided closure.
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/option/option_unwrap.rs:example}}
@@ -101,7 +101,7 @@ The following methods extract the contained value in an [`std::option::Option`][
 
 ### Transform Values Contained within an `Option` {#combinators}
 
-[![std][c-std-badge]][c-std]
+[![std][c~std~docs~badge]][c~std~docs]
 
 The following example demonstrates the use of the `map`, `and_then` combinators and the `unwrap_or_else` method.
 The `and_then` and `*or_else` methods take a closure as input, and only evaluate the closure when they need to produce a new value.
@@ -112,13 +112,13 @@ The `and_then` and `*or_else` methods take a closure as input, and only evaluate
 
 ### Convert `&Option<T>` into `Option<&T>` or Similar {#adapters-for-working-with-references}
 
-[![std][c-std-badge]][c-std]
+[![std][c~std~docs~badge]][c~std~docs]
 
 When working with references to `Option`, use:
 
 - `std::option::Option::as_ref` and `std::option::Option::as_mut` to convert from `&Option<T>` to `Option<&T>` and `Option<&mut T>`.
-- [`std::option::Option::as_deref`][c-std::option::Option::as_deref]{{hi:std::option::Option::as_deref}}⮳ to convert from `&Option<T>` to `Option<&T::Target>`.
-- [`std::option::Option::as_deref_mut`][c-std::option::Option::as_deref_mut]{{hi:std::option::Option::as_deref_mut}}⮳ to convert from `&mut Option<T>` to `Option<&mut T::Target>`.
+- [`std::option::Option::as_deref`][c~std::option::Option::as_deref~docs]{{hi:std::option::Option::as_deref}}⮳ to convert from `&Option<T>` to `Option<&T::Target>`.
+- [`std::option::Option::as_deref_mut`][c~std::option::Option::as_deref_mut~docs]{{hi:std::option::Option::as_deref_mut}}⮳ to convert from `&mut Option<T>` to `Option<&mut T::Target>`.
 
 See also the [[asref | AsRef]] chapter.
 

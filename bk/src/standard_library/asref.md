@@ -4,11 +4,11 @@
 
 ## Accept Arguments of Multiple Types with `AsRef` {#asref}
 
-[![std][c-std-badge]][c-std]{{hi:std}}
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
-The [`AsRef`][c-std::convert::AsRef]⮳{{hi:AsRef}} trait is used for cheap reference-to-reference conversions (without allocating new memory). It provides a way to convert an object into a reference to another type.
+The [`AsRef`][c~std::convert::AsRef~docs]⮳{{hi:AsRef}} trait is used for cheap reference-to-reference conversions (without allocating new memory). It provides a way to convert an object into a reference to another type.
 
-The primary use case for `AsRef<T>` is generic programming, especially for function arguments, to provide ergonomics and flexibility to the caller. In other words, this trait is often used to allow [functions][p-functions] to accept arguments in multiple forms.
+The primary use case for `AsRef<T>` is generic programming, especially for function arguments, to provide ergonomics and flexibility to the caller. In other words, this trait is often used to allow [functions][p~functions] to accept arguments in multiple forms.
 
 For example, `Path`, `PathBuf`, `str`, `String`, `OsString`, `OsStr`, `Cow<'_, OsStr>`... all implement `AsRef<Path>`. The `std::path` standard library module therefore contains many functions that accepts `AsRef<Path>` and therefore any of the aforementioned types as a argument. Other common implementations include `AsRef<str>`, `AsRef<OsStr>`, `AsRef<[u8]>`, and `AsRef<[T]>`:
 
@@ -18,7 +18,7 @@ For example, `Path`, `PathBuf`, `str`, `String`, `OsString`, `OsStr`, `Cow<'_, O
 
 ## Use `as_ref` to Get a Reference to the Contained Value of a Smart Pointer {#asref-smart-pointer}
 
-[![std][c-std-badge]][c-std]{{hi:std}}
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
 For smart pointers like `Box<T>`, `Rc<T>`, `Arc<T>`, etc., their `as_ref()` methods typically provide a `&T`, which is a reference to the contained value. This is distinct from simply using `&` on the smart pointer itself, which would give you a reference to the smart pointer (`&Box<T>`), not its contents.
 
@@ -46,14 +46,14 @@ If you need to do a _costly_ conversion, it is better to implement `From` or wri
 
 ## References {#skip}
 
-- [When and why to use `AsRef<T>` instead of `&T`][stackoverflow-asref]⮳.
+- [When and why to use `AsRef<T>` instead of `&T`][stackoverflow~asref]⮳.
 - [Rust's `AsRef` Explained](https://oliverjumpertz.com/blog/rusts-asref-explained/)⮳.
 
 ## Related Topics {#skip}
 
 - [[smart_pointers | Smart Pointers]].
 
-Note that [`AsMut`][c-std::convert::AsMut]⮳{{hi:AsMut}} can be used for converting between mutable references.
+Note that [`AsMut`][c~std::convert::AsMut~docs]⮳{{hi:AsMut}} can be used for converting between mutable references.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

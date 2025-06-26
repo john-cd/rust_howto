@@ -6,9 +6,9 @@ Within a scope, the `use` keyword creates shortcuts to items to reduce repetitio
 
 ## Avoid Writing Full Paths with the `use` Keyword {#use-keyword}
 
-[![book-rust-by-example-use][book-rust-by-example-use-badge]][book-rust-by-example-use]
+[![book~rust-by-example~use][book~rust-by-example~use~badge]][book~rust-by-example~use]
 
-The [`use`][book-rust-reference-use]{{hi:use}}⮳ keyword creates a shortcut for a path. The shorter name can be used everywhere else in the scope.
+The [`use`][book~rust-reference~use]{{hi:use}}⮳ keyword creates a shortcut for a path. The shorter name can be used everywhere else in the scope.
 
 ```rust,editable
 {{#include ../../crates/code_organization/examples/use/use1.rs:example}}
@@ -32,7 +32,7 @@ It is idiomatic to bring the function's parent module into scope, not the functi
 
 ## Bring a Struct or Enum in Scope Idiomatically {#bring-struct-or-enum-in-scope}
 
-On the other hand, when bringing in [structs][p-structs], [enums][p-enums], and other items in scope, it is idiomatic to specify the full path in the `use` statement and refer to the type via its name.
+On the other hand, when bringing in [structs][p~structs], [enums][p~enums], and other items in scope, it is idiomatic to specify the full path in the `use` statement and refer to the type via its name.
 
 ```rust,editable
 {{#include ../../crates/code_organization/examples/use/use3.rs:example}}

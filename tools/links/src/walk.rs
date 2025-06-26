@@ -52,7 +52,7 @@ mod tests {
         let contents1 = std::fs::read_to_string(&file_path1)?;
         assert_eq!(
             contents1,
-            "This is test1 with [![clap][c-clap-badge]][c-clap]{{hi:clap}}.\n"
+            "This is test1 with [![clap][c~clap~docs~badge]][c~clap~docs]{{hi:clap}}.\n"
         );
 
         let contents2 = std::fs::read_to_string(&file_path2)?;

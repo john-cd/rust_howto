@@ -5,17 +5,17 @@
 | Topic | Rust Crates |
 |---|---|
 | File Watching and Rebuilding | `cargo watch` watches your project for changes and automatically rebuilds and reruns your code. This is the most common and generally recommended tool. |
-| Other [File Watching][p-file-watching] Tools | (Less common for Rust projects specifically, but might be used in more complex setups) `watchexec` is a general-purpose file watcher that can execute commands on file changes. You could use it to trigger Cargo commands, but [cargo][p-cargo] watch is usually simpler. |
+| Other [File Watching][p~file-watching] Tools | (Less common for Rust projects specifically, but might be used in more complex setups) `watchexec` is a general-purpose file watcher that can execute commands on file changes. You could use it to trigger Cargo commands, but [cargo][p~cargo] watch is usually simpler. |
 
-It's worth noting that some [IDEs][p-ides] also have built-in [file watching][p-file-watching] and automatic build features. If you're using an IDE, check its settings as you might not need a separate tool like `cargo watch`.
+It's worth noting that some [IDEs][p~ides] also have built-in [file watching][p~file-watching] and automatic build features. If you're using an IDE, check its settings as you might not need a separate tool like `cargo watch`.
 
 ## `cargo watch` {#cargo-watch}
 
-[![cargo-watch][c-cargo_watch-badge]][c-cargo_watch]{{hi:cargo-watch}}
-[![cargo-watch-crates.io][c-cargo_watch-crates.io-badge]][c-cargo_watch-crates.io]
-[![cargo-watch-github][c-cargo_watch-github-badge]][c-cargo_watch-github]
-[![cargo-watch-lib.rs][c-cargo_watch-lib.rs-badge]][c-cargo_watch-lib.rs]
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
+[![cargo-watch][c~cargo_watch~docs~badge]][c~cargo_watch~docs]{{hi:cargo-watch}}
+[![cargo-watch~crates.io][c~cargo_watch~crates.io~badge]][c~cargo_watch~crates.io]
+[![cargo-watch~github][c~cargo_watch~github~badge]][c~cargo_watch~github]
+[![cargo-watch~lib.rs][c~cargo_watch~lib.rs~badge]][c~cargo_watch~lib.rs]
+[![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
 `cargo watch`
 
@@ -33,12 +33,12 @@ cargo watch -x check -x test -x run
 
 ## `cargo limit` {#cargo-limit}
 
-[![cargo-limit][c-cargo_limit-badge]][c-cargo_limit]{{hi:cargo-limit}}
-[![cargo-limit-crates.io][c-cargo_limit-crates.io-badge]][c-cargo_limit-crates.io]
-[![cargo-limit-github][c-cargo_limit-github-badge]][c-cargo_limit-github]
-[![cargo-limit-lib.rs][c-cargo_limit-lib.rs-badge]][c-cargo_limit-lib.rs]
+[![cargo-limit][c~cargo_limit~docs~badge]][c~cargo_limit~docs]{{hi:cargo-limit}}
+[![cargo-limit~crates.io][c~cargo_limit~crates.io~badge]][c~cargo_limit~crates.io]
+[![cargo-limit~github][c~cargo_limit~github~badge]][c~cargo_limit~github]
+[![cargo-limit~lib.rs][c~cargo_limit~lib.rs~badge]][c~cargo_limit~lib.rs]
 
-[cargo-limit][c-cargo_limit-crates.io]⮳ is [Cargo][p-cargo] with less noise: warnings are skipped until errors are fixed, Neovim integration, etc.
+[cargo-limit][c~cargo_limit~crates.io]⮳ is [Cargo][p~cargo] with less noise: warnings are skipped until errors are fixed, Neovim integration, etc.
 
 - errors have highest priority.
 - they never appear in the middle of warnings.
@@ -50,7 +50,7 @@ cargo watch -x check -x test -x run
 - after encountering first error the rest of build time is limited by default.
 - files can be automatically opened in your text editor on affected lines.
 
-This tool is especially useful in combination with [`cargo-watch`][c-cargo_watch]⮳{{hi:cargo-watch}}.
+This tool is especially useful in combination with [`cargo-watch`][c~cargo_watch~docs]⮳{{hi:cargo-watch}}.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

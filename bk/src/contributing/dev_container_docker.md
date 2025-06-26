@@ -2,9 +2,9 @@
 
 {{#include dev_container_docker.incl.md}}
 
-The `development` target of the multi-stage `.devcontainer\Dockerfile` is used by `.devcontainer/devcontainer.json` to install [`mdbook`][c-mdbook]{{hi:mdbook}}⮳ and rust tooling{{hi:Rust tooling}}.
+The `development` target of the multi-stage `.devcontainer\Dockerfile` is used by `.devcontainer/devcontainer.json` to install [`mdbook`][c~mdbook~docs]{{hi:mdbook}}⮳ and rust tooling{{hi:Rust tooling}}.
 
-If you don't want to use Dev Container{{hi:Dev Container}}, use the following from the project's root directory to manually build the [`docker`][docker-website]{{hi:docker}}⮳ image and run it.
+If you don't want to use Dev Container{{hi:Dev Container}}, use the following from the project's root directory to manually build the [`docker`][docker~website]{{hi:docker}}⮳ image and run it.
 
 ```bash
 docker build --file .devcontainer/Dockerfile --target development --tag rust_howto_dev --build-arg RUST_IMAGE_LABEL=1.75.0-slim-bookworm --build-arg MDBOOK_VERSION=0.4.36 .
@@ -37,7 +37,7 @@ docker compose up -d
 docker compose up --build -d
 ```
 
-## Deployment to GitHub Pages {#deployment-to-github-pages}
+## Deployment to GitHub Pages {#deployment-to~github-pages}
 
 The continuous integration workflow{{hi:Continuous integration workflow}} is found under `.github`.
 
@@ -51,14 +51,14 @@ docker compose -f compose.yaml -f compose-ci.yaml run book # Or simply docker co
 
 It uses the `ci` target in `.devcontainer/Dockerfile`.
 
-To test the [`docker`][docker-website]{{hi:docker}}⮳ image manually, use
+To test the [`docker`][docker~website]{{hi:docker}}⮳ image manually, use
 
 ```bash
 docker build --file .devcontainer/Dockerfile --target ci --tag rust_howto_ci --build-arg RUST_IMAGE_LABEL=1.75.0-slim-bookworm --build-arg MDBOOK_VERSION=0.4.36 .
 docker run -it --rm --name rust_howto_ci1 --volume $(pwd)/book:/code/bk/book rust_howto_ci bash
 ```
 
-[Related Stackoverflow question][stackoverflow-use-local-dockerfile-in-a-github-action]⮳.
+[Related Stackoverflow question][stackoverflow~use-local-dockerfile-in-a~github-action]⮳.
 
 ### Push Image to Docker Hub {#push-image-to-docker-hub}
 

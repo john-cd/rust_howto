@@ -17,7 +17,7 @@
 
 Official blogs:
 
-- [Rust blog][rust-blog]⮳.
+- [Rust blog][rust-lang~blog]⮳.
 - ["Inside Rust" blog](https://blog.rust-lang.org/inside-rust)⮳.
 - [Rust release announcements](https://blog.rust-lang.org/releases)⮳.
 - [This Week in Rust](https://this-week-in-rust.org)⮳.
@@ -34,10 +34,10 @@ You may also the lists of Medium blogs tagged with ['Rust'](https://medium.com/t
 
 | Title (URL) | Description |
 |---|---|
-| [`codevoweb.com`][codevoweb-website]⮳ | Demonstrates how to build common applications using multiple languages, including Rust. |
-| [Rust magazine][rustmagazine-website]⮳ | A monthly magazine for the Rust community. |
-| A learning journal: [`lpalmieri.com`][lpalmieri-website]⮳ | Luca Palmieri's blog. |
-| Rust Atomics and Locks: [marabos.nl/atomics][book-rust-atomics]⮳ | A deep dive into atomics and locks by Mara Bos. |
+| [`codevoweb.com`][codevoweb~website]⮳ | Demonstrates how to build common applications using multiple languages, including Rust. |
+| [Rust magazine][rustmagazine~website]⮳ | A monthly magazine for the Rust community. |
+| A learning journal: [`lpalmieri.com`][lpalmieri~website]⮳ | Luca Palmieri's blog. |
+| Rust Atomics and Locks: [marabos.nl/atomics][book~rust-atomics]⮳ | A deep dive into atomics and locks by Mara Bos. |
 | [Mara Bos's Blog](https://blog.m-ou.se)⮳ | Thoughts and articles from a core Rust library team member. |
 | [Raph Levien's Blog](https://raphlinus.github.io)⮳ | Insights on Rust, GUIs, and high-performance code. |
 | [fasterthanli.me](https://fasterthanli.me)⮳ | In-depth articles on Rust, networking, and systems programming. |
@@ -46,7 +46,7 @@ You may also the lists of Medium blogs tagged with ['Rust'](https://medium.com/t
 | [lord.io](https://lord.io)⮳ | Articles on Rust, game development, and more. |
 | [PoignardAzur's Blog](https://poignardazur.github.io)⮳ | Blog covering various topics, including Rust. |
 | Sam Sartor's Blog: [samsartor.com](https://samsartor.com)⮳ | Posts on Rust, Nix, and software development. |
-| Matthew Brubeck's Blog: [limpet.net/mbrubeck][blog-rust-a-unique-perspective-html]⮳ | Writings on Rust, Servo, and web technologies. |
+| Matthew Brubeck's Blog: [limpet.net/mbrubeck][blog~rust-a-unique-perspective-html]⮳ | Writings on Rust, Servo, and web technologies. |
 | [`www.polymonster.co.uk`](https://www.polymonster.co.uk)⮳ | A blog about Rust, graphics, and game development. |
 | [`tavianator.com`](https://tavianator.com)⮳ | Technical articles on performance and low-level programming. |
 | [Nicholas Nethercote's Blog](https://nnethercote.github.io)⮳ | A blog focusing on Rust performance and memory usage. |
@@ -74,7 +74,7 @@ You may also consult [this list](https://users.rust-lang.org/t/fearless-rust-blo
 | [Quickwit Blog](https://quickwit.io/blog)⮳ | A distributed search engine for logs and traces. |
 | [Bevy Engine News](https://bevyengine.org/news)⮳ | News and updates for the Bevy game engine. |
 | [Bytecode Alliance Articles](https://bytecodealliance.org/articles)⮳ | WASM-focused articles and announcements. |
-| [`shuttle.dev` blog](https://www.shuttle.dev/blog/tags/all)⮳ and [`shuttle.dev` launchpad][launchpad-shuttle-dev-website]⮳ | A service to deploy Rust applications to the cloud. |
+| [`shuttle.dev` blog](https://www.shuttle.dev/blog/tags/all)⮳ and [`shuttle.dev` launchpad][launchpad-shuttle-dev~website]⮳ | A service to deploy Rust applications to the cloud. |
 | [rust-analyzer: this week](https://rust-analyzer.github.io/thisweek)⮳ | Weekly news about the rust-analyzer language server. |
 | [Meilisearch Blog](https://blog.meilisearch.com)⮳ | A fast, open-source search engine. |
 | [kellnr.io Blog](https://kellnr.io/blog)⮳ | A private crate registry for Rust. |

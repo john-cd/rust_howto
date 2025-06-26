@@ -5,12 +5,12 @@
 ## Rust Overviews, Starting Point {#overview}
 
 - [Rust (programming language) - Wikipedia](https://en.wikipedia.org/wiki/Rust_(programming_language))⮳.
-- Rust [language][p-language] main site: [rust-lang.org][rust]{{hi:Rust learning}}⮳.
+- Rust [language][p~language] main site: [rust-lang.org][rust-lang]{{hi:Rust learning}}⮳.
 
 ## Learning Roadmaps {#learning-roadmap}
 
 - [Learn to become a Rust developer](https://roadmap.sh/rust)⮳.
-- [Roadmap for Rust][roadmap-rust-website]⮳.
+- [Roadmap for Rust][roadmap-rust~website]⮳.
 
 ## Tutorials {#tutorials}
 
@@ -19,22 +19,22 @@
 
 ## Examples and Exercises {#examples}
 
-- [`Rust by Example`][rust-by-example]⮳.
+- [`Rust by Example`][rust-by~example]⮳.
 - [`Rust by Practice`][https://practice.course.rs]⮳.
 - [100 exercises to learn Rust: A self-paced course to learn Rust, one exercise at a time.](https://github.com/mainmatter/100-exercises-to-learn-rust)⮳.
 - [Rust mastery exercises][https://app.codecrafters.io/tracks/rust]⮳.
-- [Rust quizz][rust-quizz]⮳.
+- [Rust quizz][rust-quizz~website]⮳.
 
 ## Courses {#courses}
 
-- [`Comprehensive Rust`][comprehensive-rust]⮳, a free Rust course developed by the Android team at Google. The course covers the full spectrum of Rust, from basic syntax to advanced topics like [generics][p-generics] and [error handling][p-error-handling].
-- [`Rust for professionals`][rust-for-professionals-website]⮳.
-- [`A half-hour to learn Rust`][a-half-hour-to-learn-rust]⮳.
+- [`Comprehensive Rust`][book~comprehensive-rust]⮳, a free Rust course developed by the Android team at Google. The course covers the full spectrum of Rust, from basic syntax to advanced topics like [generics][p~generics] and [error handling][p~error-handling].
+- [`Rust for professionals`][rust-for-professionals~website]⮳.
+- [`A half-hour to learn Rust`][book~a-half-hour-to-learn-rust]⮳.
 - [rust-course-fei: Rust course](https://github.com/Kobzol/rust-course-fei/tree/main)⮳.
 - [Rust Development Classes](https://rust-classes.com/preface)⮳.
 - [Fast Track to Rust](https://freddiehaddad.github.io/fast-track-to-rust/)⮳.
 - [Yet Another Rust Resource (YARR!)](https://yarr.fyi/introduction)⮳.
-- Open source training courses about distributed database and distributed systems: [Talent plan][talent-plan-github]⮳.
+- Open source training courses about distributed database and distributed systems: [Talent plan][talent-plan~github]⮳.
 
 - [Tour of Rust](https://tourofrust.com)⮳.
 - [Rust: The Basics](https://stepik.org/lesson/9268/step/1)⮳.
@@ -57,10 +57,10 @@
 
 ## Ferrous Systems Training {#ferrous-systems-training}
 
-- [Why Rust?][ferrous-systems-why-rust-github]⮳.
-- [Rust training][ferrous-systems-rust-training-github]⮳.
-- [Rust exercises][ferrous-systems-rust-exercises-github]⮳.
-- [WASM training][ferrous-systems-wasm-training-github]⮳.
+- [Why Rust?][ferrous-systems~why-rust~github]⮳.
+- [Rust training][ferrous-systems~rust-training~github]⮳.
+- [Rust exercises][ferrous-systems~rust-exercises~github]⮳.
+- [WASM training][ferrous-systems~wasm-training~github]⮳.
 
 ## Rust Cheat Sheets {#cheat-sheets}
 
@@ -68,11 +68,11 @@ See [[rust_cheatsheets | Rust Cheatsheets]].
 
 ## Others {#skip}
 
-- [`rust.code-maven.com`][code-maven]⮳.
-- [Learning Rust With Entirely Too Many Linked Lists][rust-learning-linked-lists-website]⮳.
-- Learning Rust By Practice, narrowing the gap between beginner and skilled-dev through challenging examples, exercises and projects: [rust-by-practice][rust-by-practice-github]⮳.
-- [Rust Language Bible][rust-course-github]⮳.
-- [How to learn modern Rust][how_to_learn_modern_rust-github]⮳.
+- [`rust.code-maven.com`][code-maven~website]⮳.
+- [Learning Rust With Entirely Too Many Linked Lists][rust-learning-linked-lists~website]⮳.
+- Learning Rust By Practice, narrowing the gap between beginner and skilled-dev through challenging examples, exercises and projects: [rust-by-practice][rust-by-practice~github]⮳.
+- [Rust Language Bible][rust-course~github]⮳.
+- [How to learn modern Rust][how_to_learn_modern_rust~github]⮳.
 - [Learning Rust](https://quinedot.github.io/rust-learning/index.html)⮳.
 
 ## References {#references}

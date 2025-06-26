@@ -10,14 +10,14 @@ You can build simple Rust applications to automate repetitive tasks. The followi
 
 ## External Process Management {#skip1}
 
-- [`duct`][c-duct]⮳{{hi:duct}}.
+- [`duct`][c~duct~docs]⮳{{hi:duct}}.
 - `std::process` (standard library).
 
 See [[external_commands | External Commands]].
 
 ## Interact with Shells {#skip2}
 
-- `shell-words` process command line arguments according to the [parsing][p-parsing] rules of Unix shells.
+- `shell-words` process command line arguments according to the [parsing][p~parsing] rules of Unix shells.
 - `shellexpand` is a library for shell-like expansion in strings. For example, it expands variables like `$A` or `${B}` into their values and to expand `~` in the beginning of a string into the home directory (given some context).
 
 See also [[shells | Shells]].

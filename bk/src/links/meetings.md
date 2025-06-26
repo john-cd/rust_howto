@@ -31,7 +31,7 @@ The following are some of the largest and most active local user groups. They ho
 | [Rust DC](https://www.meetup.com/rustdc/)⮳ | Washington, DC, USA |
 | [Rust Dublin](https://www.meetup.com/rust-dublin)⮳ | Dublin, Ireland |
 | [Rust India](https://www.meetup.com/rustindia)⮳ | Bangalore, India |
-| [Rust Linz](https://www.meetup.com/Rust-Linz)⮳ [(website)][rust-linz-website]⮳ | Linz, Austria |
+| [Rust Linz](https://www.meetup.com/Rust-Linz)⮳ [(website)][rust-linz~website]⮳ | Linz, Austria |
 | [Rust London User Group](https://www.meetup.com/rust-london-user-group)⮳ | London, UK |
 | [Rust Munich](https://www.meetup.com/rust-munich)⮳ | Munchen, Germany |
 | [Rust Nigeria](https://www.meetup.com/rust-meetup-group)⮳ | Lagos, Nigeria |

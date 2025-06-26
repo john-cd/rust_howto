@@ -4,7 +4,7 @@
 
 Amazon Web Services (AWS) is a comprehensive and widely adopted cloud computing platform provided by Amazon.com.
 
-At AWS, Rust has quickly become critical to building infrastructure at scale. For example, `Firecracker`, written in majority in Rust, is an open source [virtualization][p-virtualization] technology that powers AWS Lambda and other serverless offerings.
+At AWS, Rust has quickly become critical to building infrastructure at scale. For example, `Firecracker`, written in majority in Rust, is an open source [virtualization][p~virtualization] technology that powers AWS Lambda and other serverless offerings.
 
 In addition, Rust is commonly used by AWS' clients to build cloud applications, from backends to complete web applications.
 
@@ -25,7 +25,7 @@ You can also use the AWS SDK from within a Lambda function to interact with AWS 
 {{#include ../../../crates/other/examples/cloud/aws_lambda.rs:example}}
 ```
 
-See also the ["Create Lambda functions with Rust"][aws-create-lambda-functions-with-rust]⮳ and ["AWS Lambda Rust runtime examples"][aws-lambda-rust-runtime-examples-github]⮳ webpages.
+See also the ["Create Lambda functions with Rust"][aws-create-lambda-functions-with-rust]⮳ and ["AWS Lambda Rust runtime examples"][aws-lambda-rust-runtime~examples~github]⮳ webpages.
 
 ## Interact with AWS Services with the AWS SDK for Rust {#aws-sdk-rust}
 
@@ -34,8 +34,8 @@ This SDK provides a set of libraries that simplify the use of services like Amaz
 
 See, for example:
 
-- [AWS Rust SDK][aws-rust-sdk-website]{{hi:AWS}}⮳.
-- [AWS SDK examples][aws-doc-sdk-examples-github]⮳.
+- [AWS Rust SDK][aws-rust-sdk~website]{{hi:AWS}}⮳.
+- [AWS SDK examples][aws-doc-sdk~examples~github]⮳.
 
 ```rust,editable
 {{#include ../../../crates/other/examples/cloud/aws_sdk.rs:example}}
@@ -43,9 +43,9 @@ See, for example:
 
 ## References {#skip}
 
-- [AWS and Rust][blog-sustainability-with-rust]⮳.
-- [AWS Rust SDK][aws-rust-sdk-website]{{hi:AWS}}⮳.
-- [Serverless rust][serverless-rust-website]{{hi:Serverless}}⮳ framework.
+- [AWS and Rust][blog~sustainability-with-rust]⮳.
+- [AWS Rust SDK][aws-rust-sdk~website]{{hi:AWS}}⮳.
+- [Serverless rust][serverless-rust~website]{{hi:Serverless}}⮳ framework.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

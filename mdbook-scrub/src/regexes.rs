@@ -92,12 +92,12 @@ pub fn get_regexes_and_replacements(
 //         });
 //     }
 //     if conf.process_category_directives {
-//         // {{c: parsing }} -> [parsing][cat-parsing]⮳{{hi:parsing}}
-//         // [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard
+//         // {{c: parsing }} -> [parsing][cat~parsing]⮳{{hi:parsing}}
+//         // [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard
 //         // library}}
 //         let re_string: String = r"\{\{cat:\s*(\S+)\s*\}\}".into();
 //         let re = Regex::new(&re_string).expect("Invalid regex");
-//         let replacement = "[$1][cat-$1]{{hi: $1}}";
+//         let replacement = "[$1][cat~$1]{{hi: $1}}";
 //         rr.push(RegexAndReplacement {
 //             re,
 //             replacement: None, Some(Box::new(|_| replacement.into())),
@@ -106,7 +106,7 @@ pub fn get_regexes_and_replacements(
 //     if conf.process_page_directives {
 //         let re_string: String = r"\s*(\S+)\s*".into();
 //         let re = Regex::new(&re_string).expect("Invalid regex");
-//         let replacement = "[$1][p-$1]{{hi:$1}}";
+//         let replacement = "[$1][p~$1]{{hi:$1}}";
 //         rr.push(RegexAndReplacement {
 //             re,
 //             replacement: Some(Box::new(|_| replacement.into())),

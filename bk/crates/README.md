@@ -30,12 +30,12 @@ bk
 - `cats` contains many crates, each containing the code examples for one `crates.io` category.
 - `code_organization` contains the code examples for the code organization section.
 - `language` contains the code examples for the Rust language _per se_.
-- `other` contains the code examples that can't be mapped to a [`crates.io`][crates.io-website]{{hi:crates.io}}⮳ category.
+- `other` contains the code examples that can't be mapped to a [`crates.io`][crates.io~website]{{hi:crates.io}}⮳ category.
 - `standard_library` contains the code examples for the Rust standard library.
 
 ## In Each Crate Folder
 
-- The `tests` folder (and sometimes the `examples` folder, or `build.rs`) contains the code examples.
+- The `examples` folder (and sometimes the `tests` folder, or `build.rs`) contains the code examples.
 - `temp` contains the (temporary) outputs of the tests.
 - `src` may contain a stub `lib.rs` file. However, most crates are configured as `autolib = false`.
 - `Cargo.toml` list all dependencies / libraries used by code examples in the crate.
@@ -70,3 +70,5 @@ cargo clippy --tests --examples
 
 cargo nextest run --status-level all --success-output final
 ```
+
+[crates.io~website]: https://crates.io/

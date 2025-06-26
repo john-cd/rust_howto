@@ -6,7 +6,7 @@ While Rust's standard library doesn't have dedicated `Stack` and `Queue` types i
 
 ## Implement a Stack Using `Vec` {#stack}
 
-[![std][c-std-badge]][c-std] [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]
+[![std][c~std~docs~badge]][c~std~docs] [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]
 
 A stack is a LIFO (Last-In, First-Out) data structure. You can use a `Vec` to mimic a stack, because `Vec` provides efficient `push` (add to the top) and `pop` (remove from the top) operations.
 
@@ -16,7 +16,7 @@ A stack is a LIFO (Last-In, First-Out) data structure. You can use a `Vec` to mi
 
 ## Implement a Queue Using `VecDeque` {#queue}
 
-[![std][c-std-badge]][c-std] [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]
+[![std][c~std~docs~badge]][c~std~docs] [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]
 
 A queue is a FIFO (First-In, First-Out) data structure. `VecDeque` (Vector Deque) is well-suited for implementing queues, because it provides efficient `push_back` (add to the rear) and `pop_front` (remove from the front) operations.
 

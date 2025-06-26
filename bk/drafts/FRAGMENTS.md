@@ -2,12 +2,12 @@
 
 ||
 |---|
-| [Handle Overflows][ex-language-overflow-handling] |
+| [Handle Overflows][ex~language~overflow-handling] |
 
 ## Handle Overflows {#overflow-handling}
 
-- Wrap in all modes with the `wrapping_*` methods, such as [`wrapping_add`][primitive-u32::wrapping_add]{{hi:wrapping_add}}⮳.
-- Return the [`std::option::Option::None`][c-std::option::Option::None]{{hi:std::option::Option::None}}⮳ value if there is overflow{{hi:Overflow}} with the `checked_*` methods.
+- Wrap in all modes with the `wrapping_*` methods, such as [`wrapping_add`][primitive~u32::wrapping_add]{{hi:wrapping_add}}⮳.
+- Return the [`std::option::Option::None`][c~std::option::Option::None~docs]{{hi:std::option::Option::None}}⮳ value if there is overflow{{hi:Overflow}} with the `checked_*` methods.
 - Return the value and a boolean indicating whether there was overflow with the `overflowing_*` methods.
 - Saturate at the value's minimum or maximum values with the `saturating_*` methods.
 
@@ -41,7 +41,7 @@ If you need reference-counting, note that `Rc::make_mut` and `Arc::make_mut` can
 
 ## Emulate Inheritance with `AsRef` {#inheritance-in-rust}
 
-[![std][c-std-badge]][c-std]{{hi:std}}
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
 Rust does not support traditional inheritance like object-oriented languages. Instead, it encourages using _traits_ and _composition_ to achieve similar functionality, allowing for shared behavior without the complexities and pitfalls of inheritance.
 

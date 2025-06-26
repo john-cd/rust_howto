@@ -4,7 +4,7 @@
 
 ## `BTreeMap<K, V>` {#btreemap}
 
-[![std][c-std-badge]][c-std] [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]
+[![std][c~std~docs~badge]][c~std~docs] [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]
 
 `BTreeMap<K, V>` is a sorted map data structure, similar to `HashMap`, but its keys are always kept in sorted order. This allows for efficient range queries (e.g., retrieving all values within a specific key range) and ordered iteration. Iterating over a BTreeMap will always yield the key-value pairs in ascending order of the keys.
 
@@ -25,7 +25,7 @@ This ordering is the main difference between `BTreeMap` and the more common `Has
 
 ## `BTreeSet<T>` {#btreeset}
 
-[![std][c-std-badge]][c-std] [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]
+[![std][c~std~docs~badge]][c~std~docs] [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]
 
 `BTreeSet` is a sorted set based on a self-balancing tree, specifically a B-Tree. BTreeSet allows you to store unique elements in a sorted order and provides efficient operations for insertion, deletion, and lookup, with average time complexity of O(log n).
 
@@ -42,7 +42,7 @@ B-Tree Set is similar to `HashSet`, but it keeps the elements sorted.
 - [[sorting | Sorting]].
 - [[vectors | Vectors]].
 
-Refer as well to the [`ordered_float`][c-ordered_float]⮳{{hi:ordered_float}} example in the [[additional_numeric_types | Additional Numeric Types]] chapter.
+Refer as well to the [`ordered_float`][c~ordered_float~docs]⮳{{hi:ordered_float}} example in the [[additional_numeric_types | Additional Numeric Types]] chapter.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

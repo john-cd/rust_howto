@@ -4,9 +4,9 @@
 
 ## Handle Recoverable Errors with `Result` {#result}
 
-[![std][c-std-badge]][c-std]
+[![std][c~std~docs~badge]][c~std~docs]
 
-[`Result<T, E>`][c-std::result::Result]⮳{{hi:Result}} is an enum used for error handling. It has two variants:
+[`Result<T, E>`][c~std::result::Result~docs]⮳{{hi:Result}} is an enum used for error handling. It has two variants:
 
 - `Ok(T)` represents success and contains a value of type `T`.
 - `Err(E)` represents an error and contains an error value of type `E`.
@@ -21,7 +21,7 @@ The following example show to return `Result` from a function, propagate it to t
 
 ## Retrieve or Transform Values in `Result` {#result-methods}
 
-[![std][c-std-badge]][c-std]
+[![std][c~std~docs~badge]][c~std~docs]
 
 In addition to working with pattern matching, `Result` provides a wide variety of convenience methods, the most common being:
 
@@ -47,7 +47,7 @@ The following example demonstrates a few of these methods:
 
 ## Get Reference to Values Inside a `Result` {#result-references}
 
-[![std][c-std-badge]][c-std]
+[![std][c~std~docs~badge]][c~std~docs]
 
 The following example demonstrates the usage of the `as_ref()`, `as_deref()`, and `as_mut()` methods on the `Result` type:
 
@@ -63,7 +63,7 @@ These methods are useful for working with references to the values inside a `Res
 
 ## `Result` vs `Option` {#result-vs-option}
 
-[![std][c-std-badge]][c-std]
+[![std][c~std~docs~badge]][c~std~docs]
 
 `Option<T>` represents an optional value. Use `Option` when a value might be missing but isn't necessarily an error (e.g., searching for an item in a list).
 
@@ -86,7 +86,7 @@ See also the [[option | Option]] chapter.
 
 ## References {#skip}
 
-- [What is the Rust equivalent to a `try catch` statement][stackoverflow-what-is-the-rust-equivalent-to-a-try-catch-statement]⮳.
+- [What is the Rust equivalent to a `try catch` statement][stackoverflow~what-is-the-rust-equivalent-to-a-try-catch-statement]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

@@ -42,7 +42,7 @@ do
         links=$( sed -E -e 's#(\\|~|&)#\\\1#g' <<< "$links" ) # Escape \ ~ &
         echo "Links: ${links}"
         # Replace `<word>` by the links, but only if the line does not start with # (heading) and not in a link / ```...``` region
-        sed -E -i 's~^([^#].*[^\[`])?`'"${in_backticks}"'`~\1'"${links}"'~g' "${file}" # -n   p
+        sed -E -i 's=^([^#].*[^\[`])?`'"${in_backticks}"'`=\1'"${links}"'=g' "${file}" # -n   p
       else
         # Add potentially missing crates to a file.
         echo "${in_backticks}" | sed -E -e 's/<T>//g' >> ${root}suggest.md

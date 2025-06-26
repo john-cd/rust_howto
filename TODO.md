@@ -113,7 +113,7 @@ consolidate CLIs
 ## Finish preproc directives in mdbook-scrub
 
 - Scrub any left-over {{#example ...}}, {{#crate ...}}... etc and warn. WIP
-- Scrub links to hidden pages instead of having to comment e.g. [p-cross-platform]: # "../../other/cross-platform/index.md"
+- Scrub links to hidden pages instead of having to comment e.g. [p~cross-platform]: # "../../other/cross-platform/index.md"
 
 ## Implement directives (in `link`?)
 

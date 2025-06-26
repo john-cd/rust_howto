@@ -4,7 +4,7 @@
 
 ## Structure your Code into Modules {#modules}
 
-[![Rust by example - Modules][book-rust-by-example-mod-badge]][book-rust-by-example-mod]{{hi:mod}}
+[![Rust by example - Modules][book~rust-by-example~mod~badge]][book~rust-by-example~mod]{{hi:mod}}
 
 Modules{{hi:Modules}} are Rust's way of organizing code within a crate (a binary or a library){{hi:Crate}}. Modules are containers that help:
 
@@ -177,7 +177,7 @@ The following example summarizes the visibility rules when it comes to modules. 
 
 - [Defining Modules to Control Scope and Privacy (Rust book)](https://doc.rust-lang.org/book/ch07-02-defining-modules-to-control-scope-and-privacy.html)⮳.
 - [Paths for Referring to an Item in the Module Tree (Rust book)](https://doc.rust-lang.org/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html)⮳.
-- A [clear explanation of Rust's module system][rust-module-system-website]⮳.
+- A [clear explanation of Rust's module system][rust-module-system~website]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

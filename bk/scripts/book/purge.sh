@@ -32,7 +32,7 @@ cat < /dev/stdin > $tempfile
 # Extract the book object from [context, book]
 # Remove includes that points to hidden files
 # Remove the hidden sections between <div class="hidden"> and </div>
-jq '.[1]' $tempfile | sed -E -e 's~\{\{#include _[^{}]+?\.incl\.md\}\}~~g' -e 's~(<div class=\\"hidden\\">)[^<]+?(</div>)~\1REMOVED\2~g'
+jq '.[1]' $tempfile | sed -E -e 's=\{\{#include _[^{}]+?\.incl\.md\}\}==g' -e 's=(<div class=\\"hidden\\">)[^<]+?(</div>)=\1REMOVED\2=g'
 # debug: | tee -a purge.log
 #echo "INFO: processed $tempfile" >> purge.log
 

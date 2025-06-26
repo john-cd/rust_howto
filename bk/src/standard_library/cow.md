@@ -4,9 +4,9 @@
 
 ## `Cow` Use Cases {#skip}
 
-[![std][c-std-badge]][c-std] {{hi:Clone-on-write}}
+[![std][c~std~docs~badge]][c~std~docs] {{hi:Clone-on-write}}
 
-The type [`std::borrow::Cow`][c-std::borrow::Cow]{{hi:Cow}} is a smart pointer providing clone-on-write functionality: it encloses and provides immutable access to borrowed data, and clone the data lazily when mutation or ownership is required.
+The type [`std::borrow::Cow`][c~std::borrow::Cow~docs]{{hi:Cow}} is a smart pointer providing clone-on-write functionality: it encloses and provides immutable access to borrowed data, and clone the data lazily when mutation or ownership is required.
 
 `Cow` optimizes memory usage by delaying cloning until mutation is required, if it is required. It is especially useful in cases where:
 
@@ -50,11 +50,11 @@ It is common to return a `Cow` from a function, if the (borrowed) input is retur
 
 To use as a borrowed type, call a method from one of the following traits:
 
-- [`std::borrow::Borrow`][c-std::borrow::Borrow]{{hi:std::borrow::Borrow}}⮳,
-- [`std::convert::AsRef`][c-std::convert::AsRef]{{hi:std::convert::AsRef}}⮳,
-- [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ explicitly or implicitly through a coercion{{hi:Coercion}}.
+- [`std::borrow::Borrow`][c~std::borrow::Borrow~docs]{{hi:std::borrow::Borrow}}⮳,
+- [`std::convert::AsRef`][c~std::convert::AsRef~docs]{{hi:std::convert::AsRef}}⮳,
+- [`std::ops::Deref`][c~std::ops::Deref~docs]{{hi:std::ops::Deref}}⮳ explicitly or implicitly through a coercion{{hi:Coercion}}.
 
-To convert to an owned type, use [`std::borrow::Cow::into_owned`][c-std::borrow::Cow::into_owned]{{hi:std::borrow::Cow::into_owned}}⮳, or [`std::string::ToString`][c-std::string::ToString]{{hi:std::string::ToString}}⮳ if a `Cow<str>`. Alternatively, use any method to get a reference and then call [`std::borrow::ToOwned`][c-std::borrow::ToOwned]{{hi:std::borrow::ToOwned}}⮳.
+To convert to an owned type, use [`std::borrow::Cow::into_owned`][c~std::borrow::Cow::into_owned~docs]{{hi:std::borrow::Cow::into_owned}}⮳, or [`std::string::ToString`][c~std::string::ToString~docs]{{hi:std::string::ToString}}⮳ if a `Cow<str>`. Alternatively, use any method to get a reference and then call [`std::borrow::ToOwned`][c~std::borrow::ToOwned~docs]{{hi:std::borrow::ToOwned}}⮳.
 
 The following example demonstrates how to convert a `Cow<str>` to a `&str` or a `String`:
 
@@ -62,7 +62,7 @@ The following example demonstrates how to convert a `Cow<str>` to a `&str` or a 
 {{#include ../../crates/standard_library/examples/cow/cow_to_borrowed_owned.rs:example}}
 ```
 
-This example was adapted from a [StackOverflow discussion][stackoverflow-how-do-i-get-a-str-or-string-from-stdborrowcowstr]⮳.
+This example was adapted from a [StackOverflow discussion][stackoverflow~how-do-i-get-a-str-or-string-from-stdborrowcowstr]⮳.
 
 ## References {#skip}
 

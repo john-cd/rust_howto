@@ -4,10 +4,10 @@
 
 ## Test your code with `cargo test` {#cargo-test}
 
-[![cargo][c-cargo-badge]][c-cargo]{{hi:cargo}}
-[![cargo-crates.io][c-cargo-crates.io-badge]][c-cargo-crates.io]
-[![cargo-github][c-cargo-github-badge]][c-cargo-github]
-[![cargo-lib.rs][c-cargo-lib.rs-badge]][c-cargo-lib.rs]
+[![cargo][c~cargo~docs~badge]][c~cargo~docs]{{hi:cargo}}
+[![cargo~crates.io][c~cargo~crates.io~badge]][c~cargo~crates.io]
+[![cargo~github][c~cargo~github~badge]][c~cargo~github]
+[![cargo~lib.rs][c~cargo~lib.rs~badge]][c~cargo~lib.rs]
 
 `cargo test` to run all tests.
 `cargo test test_prefix` to run all tests that start with the provided prefix.
@@ -19,13 +19,13 @@
 
 ## Test your code Faster with `cargo nextest` {#cargo-nextest}
 
-[![cargo-nextest][c-cargo_nextest-badge]][c-cargo_nextest]{{hi:cargo-nextest}}
-[![cargo-nextest-crates.io][c-cargo_nextest-crates.io-badge]][c-cargo_nextest-crates.io]
-[![cargo-nextest-github][c-cargo_nextest-github-badge]][c-cargo_nextest-github]
-[![cargo-nextest-lib.rs][c-cargo_nextest-lib.rs-badge]][c-cargo_nextest-lib.rs]
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[![cargo-nextest][c~cargo_nextest~docs~badge]][c~cargo_nextest~docs]{{hi:cargo-nextest}}
+[![cargo-nextest~crates.io][c~cargo_nextest~crates.io~badge]][c~cargo_nextest~crates.io]
+[![cargo-nextest~github][c~cargo_nextest~github~badge]][c~cargo_nextest~github]
+[![cargo-nextest~lib.rs][c~cargo_nextest~lib.rs~badge]][c~cargo_nextest~lib.rs]
+[![cat~development-tools][cat~development-tools~badge]][cat~development-tools]
 
-[`cargo-nextest`][c-cargo_nextest-website]⮳ is a new, faster test runner for Rust.
+[`cargo-nextest`][c~cargo_nextest~website]⮳ is a new, faster test runner for Rust.
 
 ```sh
 cargo nextest run

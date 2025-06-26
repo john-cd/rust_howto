@@ -1,6 +1,6 @@
 # Cryptography
 
-[![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}}
+[![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}}
 
 Cryptography protects data from unauthorized access, ensuring confidentiality, integrity, authenticity, and non-repudiation. Cryptography is used to secure emails, messages, and data transfers to protect them from eavesdropping. Data Integrity ensures that data has not been tampered with. Authentication means verifying the identity of users and devices.
 

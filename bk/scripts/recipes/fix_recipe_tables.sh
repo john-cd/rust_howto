@@ -18,18 +18,18 @@ base=$(basename $file)
 dir=$(dirname $file)
 if [ -f "${dir}/refs.incl.md" ]; then
     # Grab the labels of the refdefs pointing to the current file from the local references
-    labels=$(sed -En 's/^\[ex-(.*)\]:\s?'${base}'.*$/\1/p' ${dir}/refs.incl.md)
+    labels=$(sed -En 's/^\[ex~(.*)\]:\s?'${base}'.*$/\1/p' ${dir}/refs.incl.md)
     # If not empty...
     if [ -n "$labels" ]; then
         echo "> ${file}"
         for label in ${labels}
         do
         # If the destination (recipe table) file does not exist or label is not in it
-        if [ ! -f "${file%.md}.incl.md" ] || [ $(grep -Pc "\[ex-${label}\]" "${file%.md}.incl.md") -eq 0 ]
+        if [ ! -f "${file%.md}.incl.md" ] || [ $(grep -Pc "\[ex~${label}\]" "${file%.md}.incl.md") -eq 0 ]
         then
             title=$(echo ${label} | tr '-' ' ')
             # Add table row with link in the corresponding .incl.md
-            echo "| [${title}][ex-${label}] | | |" >> "${file%.md}.incl.md"
+            echo "| [${title}][ex~${label}] | | |" >> "${file%.md}.incl.md"
         fi
         done
     fi

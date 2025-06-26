@@ -1,1 +1,1 @@
-[ex-multimedia_encoding-encoding]: encoding.md#encoding
+[ex~multimedia_encoding~encoding]: encoding.md#encoding

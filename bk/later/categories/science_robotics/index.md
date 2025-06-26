@@ -1,6 +1,6 @@
 # Robotics
 
-[![cat-science::robotics][cat-science::robotics-badge]][cat-science::robotics]
+[![cat~science::robotics][cat~science::robotics~badge]][cat~science::robotics]
 
 Crates related to robotics.
 
@@ -18,7 +18,7 @@ While still developing, the Rust robotics ecosystem is gaining momentum. Rust's 
 
 {{#include hardware_integration.incl.md}}
 
-Consider [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}} and platform-specific crates. [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}} defines a standard trait interface for interacting with embedded hardware. [`linux-embedded-hal`][c-linux_embedded_hal]⮳{{hi:linux-embedded-hal}} provides implementations for Linux systems.
+Consider [`embedded-hal`][c~embedded_hal~docs]⮳{{hi:embedded-hal}} and platform-specific crates. [`embedded-hal`][c~embedded_hal~docs]⮳{{hi:embedded-hal}} defines a standard trait interface for interacting with embedded hardware. [`linux-embedded-hal`][c~linux_embedded_hal~docs]⮳{{hi:linux-embedded-hal}} provides implementations for Linux systems.
 
 See also
 
@@ -29,7 +29,7 @@ See also
 
 Import/Export various files related with Robotics
 
-[`assimp-rs`][c-assimp]⮳{{hi:assimp-rs}} (open-asset-importer) - Rust bindings for the Assimp library.
+[`assimp-rs`][c~assimp~docs]⮳{{hi:assimp-rs}} (open-asset-importer) - Rust bindings for the Assimp library.
 `mcap` - Rust library for reading and writing MCAP log files
 `urdf-rs` - URDF Loader for Rust
 `pcd-ros` - Read point cloud data from PCD file format
@@ -44,7 +44,7 @@ See also [[parser-implementations | Parser Implementations]].
 
 {{#include perception_and_sensors.incl.md}}
 
-See also the [[computer-vision | Computer Vision]] chapter: [`opencv-rs`][c-opencv]⮳{{hi:opencv-rs}}, for example, provides bindings to OpenCV for computer vision tasks.
+See also the [[computer-vision | Computer Vision]] chapter: [`opencv-rs`][c~opencv~docs]⮳{{hi:opencv-rs}}, for example, provides bindings to OpenCV for computer vision tasks.
 
 ## Artificial Intelligence and Decision-making for Robotics
 
@@ -56,16 +56,16 @@ See also the machine learning chapters: [[classical_machine_learning | Classical
 
 {{#include simulation_visualization.incl.md}}
 
-See also the [[simulation | Simulation]], [[aerospace_simulation | Aerospace Simulation]], and [[visualization | Visualization]] chapters. [[game-engines | Game Engines]] like [`bevy`][c-bevy]⮳{{hi:bevy}} can also be adapted for robotics simulation.
+See also the [[simulation | Simulation]], [[aerospace_simulation | Aerospace Simulation]], and [[visualization | Visualization]] chapters. [[game-engines | Game Engines]] like [`bevy`][c~bevy~docs]⮳{{hi:bevy}} can also be adapted for robotics simulation.
 
 ## Math and Geometry-related Libraries for Robotics
 
-- [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}} - Linear algebra library for Rust.
+- [`nalgebra`][c~nalgebra~docs]⮳{{hi:nalgebra}} - Linear algebra library for Rust.
 - `ncollide` - 2 and 3-dimensional collision detection library in Rust.
 - `kdtree` - K-dimensional tree in Rust for fast geospatial indexing.
 - `k` - Kinematics Library for rust-lang.
 - `static-math` - Safe and fast mathematical operations with static arrays in Rust programming language for robotics.
-- [`ndarray`][c-ndarray]⮳{{hi:ndarray}} - N-dimensional tensor arithmetic library, inspired by python's NumPy.
+- [`ndarray`][c~ndarray~docs]⮳{{hi:ndarray}} - N-dimensional tensor arithmetic library, inspired by python's NumPy.
 - `faer-rs` - Linear algebra foundation for the Rust programming language.
 
 See also the numerical computation ([[additional_numeric_types | Additional Numeric Types]], [[linear_algebra | Linear Algebra]]), [[data-processing | data]] analysis sections.
@@ -76,13 +76,13 @@ Leverage existing robotics libraries (often written in C++, Python, or other lan
 
 ## See Also
 
-[![robotics.rs][robotics-rs-website-badge]][robotics-rs-website] [robotics.rs][robotics-rs-website]⮳..
+[![robotics.rs][robotics-rs~website~badge]][robotics-rs~website] [robotics.rs][robotics-rs~website]⮳..
 
-[Robotics (lib.rs)][robotics-lib.rs]⮳ [![cat-science::robotics][cat-science::robotics-badge]][cat-science::robotics]{{hi:Robotics}}
+[Robotics (lib.rs)][robotics~lib.rs]⮳ [![cat~science::robotics][cat~science::robotics~badge]][cat~science::robotics]{{hi:Robotics}}
 
 [Why rust for robots][why-rust-for-robots]⮳.
 
-[Linux embracing Rust will boost robotics community][linux-embracing-rust-will-boost-robotics-community]⮳.
+[Linux embracing Rust will boost robotics community][blog~linux-embracing-rust-will-boost-robotics-community]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -1,1 +1,1 @@
-[ex-aerospace_simulation-aerospace_simulation]: aerospace_simulation.md#aerospace_simulation
+[ex~aerospace_simulation~aerospace_simulation]: aerospace_simulation.md#aerospace_simulation

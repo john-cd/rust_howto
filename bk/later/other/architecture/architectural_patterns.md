@@ -8,7 +8,7 @@
 - Makes it easier to test the business logic by using mock repositories.
 - Simplifies code maintenance by centralizing data access logic.
 - Allows you to easily switch between different data storage implementations.
-- Often combined with ORM tools like [`diesel`][c-diesel]⮳{{hi:diesel}} or [`sea-orm`][c-sea_orm]⮳{{hi:sea-orm}}. See [[query_builders_orms | Query Builders & ORMs]].
+- Often combined with ORM tools like [`diesel`][c~diesel~docs]⮳{{hi:diesel}} or [`sea-orm`][c~sea_orm~docs]⮳{{hi:sea-orm}}. See [[query_builders_orms | Query Builders & ORMs]].
 
 ```rust,editable
 {{#include ../../../crates/other/examples/architecture/repository.rs:example}}
@@ -35,8 +35,8 @@
 
 ## Related Topics {#skip3}
 
-- [[config | Configuration]] Management: Loading and managing settings with [`config`][c-config]⮳{{hi:config}} or [`dotenv`][c-dotenv]⮳{{hi:dotenv}}.
-- Logging and Monitoring: Structured logging with [`tracing`][c-tracing]⮳{{hi:tracing}} or [`log`][c-log]⮳{{hi:log}}. See [[development-tools_debugging | Development Tools: Debugging]].
+- [[config | Configuration]] Management: Loading and managing settings with [`config`][c~config~docs]⮳{{hi:config}} or [`dotenv`][c~dotenv~docs]⮳{{hi:dotenv}}.
+- Logging and Monitoring: Structured logging with [`tracing`][c~tracing~docs]⮳{{hi:tracing}} or [`log`][c~log~docs]⮳{{hi:log}}. See [[development-tools_debugging | Development Tools: Debugging]].
 - [[error_handling | Error Handling]].
 - [[testing | Testing]] and Quality Assurance.
 - [[performance | Performance]] Optimization.

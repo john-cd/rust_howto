@@ -23,9 +23,9 @@ With title:
 
 Examples of rendered directives:
 
-[Testing][cat-development-tools::testing]⮳{{hi:development-tools::testing}}
+[Testing][cat~development-tools::testing]⮳{{hi:development-tools::testing}}
 
-[Accessibility][cat-accessibility]⮳{{hi:accessibility}}
+[Accessibility][cat~accessibility]⮳{{hi:accessibility}}
 
 ## Category Badges
 
@@ -47,6 +47,6 @@ Multiple categories:
 
 Examples of rendered category badge blocks:
 
-[![cat-mathematics][cat-mathematics-badge]][cat-mathematics]{{hi:Mathematics}}
+[![cat~mathematics][cat~mathematics~badge]][cat~mathematics]{{hi:Mathematics}}
 
-[![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
+[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}

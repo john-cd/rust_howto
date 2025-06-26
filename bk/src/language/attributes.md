@@ -4,7 +4,7 @@
 
 ## Attribute Syntax {#attribute}
 
-[![Rust by example - attributes][book-rust-by-example-attributes-badge]][book-rust-by-example-attributes]{{hi:Attributes}}
+[![Rust by example - attributes][book~rust-by-example~attributes~badge]][book~rust-by-example~attributes]{{hi:Attributes}}
 
 Attributes are annotations you attach to your Rust code, like functions, structs, modules, or even entire crates. They provide extra information or instructions to the Rust compiler or other tools (like linters or documentation generators). They don't change the logic of the code directly, but they influence how it's compiled, checked, or processed.
 
@@ -70,7 +70,7 @@ The Rust compiler runs a number of code lints (code diagnostics) when it compile
 - `#[deny(...)]` signals an error after encountering a violation,
 - `#[forbid(...)]` is the same as `deny`, but also forbids changing the lint level afterwards.
 
-You can apply these lint attributes to specific items ([functions][p-functions], structs, etc.) or to entire modules (by using an inner attribute):
+You can apply these lint attributes to specific items ([functions][p~functions], structs, etc.) or to entire modules (by using an inner attribute):
 
 ```rust,editable
 {{#include ../../crates/language/examples/attributes/allow_dead_code.rs:example}}
@@ -115,11 +115,11 @@ Use the `#[cfg(...)]` attribute to write code that only compiles for a specific 
 {{#include ../../crates/language/examples/attributes/conditional_compilation.rs:example}}
 ```
 
-See also the [conditional compilation][book-rust-reference-conditional-compilation]⮳ chapter of the Rust Reference.
+See also the [conditional compilation][book~rust-reference~conditional-compilation]⮳ chapter of the Rust Reference.
 
 ### Conditionally Compile Code Blocks with `cfg-if` {#cfg-if}
 
-[![cfg-if][c-cfg_if-badge]][c-cfg_if] [![cfg-if-crates.io][c-cfg_if-crates.io-badge]][c-cfg_if-crates.io] [![cfg-if-github][c-cfg_if-github-badge]][c-cfg_if-github] [![cfg-if-lib.rs][c-cfg_if-lib.rs-badge]][c-cfg_if-lib.rs]{{hi:cfg-if}}
+[![cfg-if][c~cfg_if~docs~badge]][c~cfg_if~docs] [![cfg-if~crates.io][c~cfg_if~crates.io~badge]][c~cfg_if~crates.io] [![cfg-if~github][c~cfg_if~github~badge]][c~cfg_if~github] [![cfg-if~lib.rs][c~cfg_if~lib.rs~badge]][c~cfg_if~lib.rs]{{hi:cfg-if}}
 
 For complicated conditional compilation scenarios, consider using the `cfg-if` crate in addition to the `#[cfg(...)]` attribute.
 
@@ -138,7 +138,7 @@ For complicated conditional compilation scenarios, consider using the `cfg-if` c
 
 ## References {#skip1}
 
-- [Attributes reference][book-rust-reference-attributes]⮳.
+- [Attributes reference][book~rust-reference~attributes]⮳.
 - [The `#[doc]` attribute](https://doc.rust-lang.org/rustdoc/write-documentation/the-doc-attribute.html)⮳.
 
 {{#include refs.incl.md}}

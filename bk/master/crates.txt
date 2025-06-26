@@ -111,7 +111,7 @@ color-eyre
 colored
 comemo
 comrak
-concat-string
+concat~string
 concat_string
 concat_strs
 config

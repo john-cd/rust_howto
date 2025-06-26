@@ -13,14 +13,14 @@ Stack allocation has several important characteristics:
 
 ## `arrayvec` {#arrayvec}
 
-[![arrayvec][c-arrayvec-badge]][c-arrayvec]{{hi:arrayvec}}
-[![arrayvec-crates.io][c-arrayvec-crates.io-badge]][c-arrayvec-crates.io]
-[![arrayvec-github][c-arrayvec-github-badge]][c-arrayvec-github]
-[![arrayvec-lib.rs][c-arrayvec-lib.rs-badge]][c-arrayvec-lib.rs]
-[![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
-[![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
+[![arrayvec][c~arrayvec~docs~badge]][c~arrayvec~docs]{{hi:arrayvec}}
+[![arrayvec~crates.io][c~arrayvec~crates.io~badge]][c~arrayvec~crates.io]
+[![arrayvec~github][c~arrayvec~github~badge]][c~arrayvec~github]
+[![arrayvec~lib.rs][c~arrayvec~lib.rs~badge]][c~arrayvec~lib.rs]
+[![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-[`arrayvec`][c-arrayvec]⮳{{hi:arrayvec}} provides the types `ArrayVec` and `ArrayString`, which are stack-allocated, fixed size array-backed vector and string types.
+[`arrayvec`][c~arrayvec~docs]⮳{{hi:arrayvec}} provides the types `ArrayVec` and `ArrayString`, which are stack-allocated, fixed size array-backed vector and string types.
 
 `ArrayVec` is a vector-like collection with a fixed capacity that is determined at compile time.
 `ArrayVec` allocates its storage on the stack rather than on the heap, which can lead to better performance.
@@ -32,13 +32,13 @@ It offers a simple API but also dereferences to a `slice`, so that the full `sli
 
 ## `smallvec` {#smallvec}
 
-[![smallvec][c-smallvec-badge]][c-smallvec]{{hi:smallvec}}
-[![smallvec-crates.io][c-smallvec-crates.io-badge]][c-smallvec-crates.io]
-[![smallvec-github][c-smallvec-github-badge]][c-smallvec-github]
-[![smallvec-lib.rs][c-smallvec-lib.rs-badge]][c-smallvec-lib.rs]
-[![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
+[![smallvec][c~smallvec~docs~badge]][c~smallvec~docs]{{hi:smallvec}}
+[![smallvec~crates.io][c~smallvec~crates.io~badge]][c~smallvec~crates.io]
+[![smallvec~github][c~smallvec~github~badge]][c~smallvec~github]
+[![smallvec~lib.rs][c~smallvec~lib.rs~badge]][c~smallvec~lib.rs]
+[![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
-[`smallvec`][c-smallvec]⮳{{hi:smallvec}} provides a vector that can store a small number of elements on the stack.
+[`smallvec`][c~smallvec~docs]⮳{{hi:smallvec}} provides a vector that can store a small number of elements on the stack.
 Arrays that are stack-allocated will fallback to the heap if the fixed stack capacity is exceeded.
 
 ```rust,editable,noplayground
@@ -47,16 +47,16 @@ Arrays that are stack-allocated will fallback to the heap if the fixed stack cap
 
 ## `tinyvec` {#tinyvec}
 
-[![tinyvec][c-tinyvec-badge]][c-tinyvec]{{hi:tinyvec}}
-[![tinyvec-crates.io][c-tinyvec-crates.io-badge]][c-tinyvec-crates.io]
-[![tinyvec-github][c-tinyvec-github-badge]][c-tinyvec-github]
-[![tinyvec-lib.rs][c-tinyvec-lib.rs-badge]][c-tinyvec-lib.rs]
-[![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
-[![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
+[![tinyvec][c~tinyvec~docs~badge]][c~tinyvec~docs]{{hi:tinyvec}}
+[![tinyvec~crates.io][c~tinyvec~crates.io~badge]][c~tinyvec~crates.io]
+[![tinyvec~github][c~tinyvec~github~badge]][c~tinyvec~github]
+[![tinyvec~lib.rs][c~tinyvec~lib.rs~badge]][c~tinyvec~lib.rs]
+[![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-The [`tinyvec`][c-tinyvec]⮳{{hi:tinyvec}} crate provides a way to work with vectors that can store a small number of elements inline, without heap allocation, and dynamically grow to the heap if necessary.
-It is in 100% safe Rust code. It is similar to [`smallvec`][c-smallvec]⮳{{hi:smallvec}} but with a smaller feature set and no dependencies.
-[`tinyvec`][c-tinyvec]⮳{{hi:tinyvec}} requires items to implement the [`Default`][c-std::default::Default]⮳{{hi:Default}} trait.
+The [`tinyvec`][c~tinyvec~docs]⮳{{hi:tinyvec}} crate provides a way to work with vectors that can store a small number of elements inline, without heap allocation, and dynamically grow to the heap if necessary.
+It is in 100% safe Rust code. It is similar to [`smallvec`][c~smallvec~docs]⮳{{hi:smallvec}} but with a smaller feature set and no dependencies.
+[`tinyvec`][c~tinyvec~docs]⮳{{hi:tinyvec}} requires items to implement the [`Default`][c~std::default::Default~docs]⮳{{hi:Default}} trait.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/data_structures/examples/vec/tinyvec.rs:example}}

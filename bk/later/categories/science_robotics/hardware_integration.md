@@ -2,7 +2,7 @@
 
 {{#include hardware_integration.incl.md}}
 
-Low-level hardware access, [embedded][p-embedded] systems.
+Low-level hardware access, [embedded][p~embedded] systems.
 
 ## Device Drivers {#skip}
 

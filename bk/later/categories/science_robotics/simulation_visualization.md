@@ -2,7 +2,7 @@
 
 {{#include simulation_visualization.incl.md}}
 
-Physics [simulation][p-simulation], 3D [visualization][p-visualization], testing environments.
+Physics [simulation][p~simulation], 3D [visualization][p~visualization], testing environments.
 
 ## Physics Simulation for Robots {#skip}
 
@@ -11,15 +11,15 @@ Physics [simulation][p-simulation], 3D [visualization][p-visualization], testing
 
 ## Visualization {#skip}
 
-Graphics and [visualization][p-visualization] for Robotics.
+Graphics and [visualization][p~visualization] for Robotics.
 
-- `kiss3d` - Keep it simple, stupid 3D [graphics][p-graphics] engine for Rust.
+- `kiss3d` - Keep it simple, stupid 3D [graphics][p~graphics] engine for Rust.
 - `urdf-viz` - URDF visualizer
-- [`rerun`][c-rerun]⮳{{hi:rerun}} - A logging SDK and visualizer for computer vision and robotics
+- [`rerun`][c~rerun~docs]⮳{{hi:rerun}} - A logging SDK and visualizer for computer vision and robotics
 
 ### `kiss3d` {#kiss3d}
 
-Simple 3D [graphics][p-graphics] engine for visualization.
+Simple 3D [graphics][p~graphics] engine for visualization.
 
 ### `urdf-viz` {#urdf-viz}
 

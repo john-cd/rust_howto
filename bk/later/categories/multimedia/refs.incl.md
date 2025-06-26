@@ -1,1 +1,1 @@
-[ex-multimedia-multimedia]: multimedia.md#multimedia
+[ex~multimedia~multimedia]: multimedia.md#multimedia

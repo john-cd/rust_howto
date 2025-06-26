@@ -24,7 +24,7 @@ Unless you explicitly state otherwise, any contribution intentionally submitted 
 
 ## Acknowledgments
 
-This project incorporates most of the [Rust Cookbook][rust-cookbook-website]⮳, licensed under the Creative Commons Zero v1.0 Universal License. Thanks to its many [contributors][rust-cookbook-contributors-website]⮳.
+This project incorporates most of the [Rust Cookbook][rust-cookbook~website]⮳, licensed under the Creative Commons Zero v1.0 Universal License. Thanks to its many [contributors][rust-cookbook~contributors~website]⮳.
 
 This project, by its very nature, includes code examples for hundreds of Rust crates, and uses TODO
 
@@ -34,7 +34,7 @@ Copyright and permission notices for Rust crates are found TODO
 
 ## Acknowledgments: Rust Foundation
 
-This project is not affiliated with the [Rust Foundation][rust-foundation-website]⮳. The copyrights, registered trademarks and uses trademarks of the Rust Foundation are hereby acknowledged.
+This project is not affiliated with the [Rust Foundation][rust-foundation~website]⮳. The copyrights, registered trademarks and uses trademarks of the Rust Foundation are hereby acknowledged.
 
 ## Code of Conduct
 
@@ -45,7 +45,7 @@ This project operates under a [Code of Conduct][code-of-conduct], in the spirit 
 [code-of-conduct]: https://github.com/john-cd/rust_howto/blob/main/CODE_OF_CONDUCT.md
 [john-cd]: https://github.com/john-cd
 [MIT]: https://choosealicense.com/licenses/mit
-[rust-foundation-website]: https://foundation.rust-lang.org
+[rust-foundation~website]: https://foundation.rust-lang.org
 [rust-code-of-conduct]: https://rustfoundation.org/policy/code-of-conduct
-[rust-cookbook-website]: https://rust-lang-nursery.github.io/rust-cookbook
-[rust-cookbook-contributors-website]: https://github.com/rust-lang-nursery/rust-cookbook/graphs/contributors
+[rust-cookbook~website]: https://rust-lang-nursery.github.io/rust-cookbook
+[rust-cookbook~contributors~website]: https://github.com/rust-lang-nursery/rust-cookbook/graphs/contributors

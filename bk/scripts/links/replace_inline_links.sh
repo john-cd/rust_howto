@@ -28,16 +28,16 @@ do
   # Trick: '\'' to escape ' in bash
   sed -n -E -s '\~(^|[^"'\''(])https?://~ {
   # replace https::/github.com/.../...
-  s~([^"'\''(]?https?://github.com/)([^/ ]+/)([^/ ]+)(/[^"'\'')⮳]*)?~[`\3`][\3-github] [\3-github]: \1\2\3\4~gp;
+  s=([^"'\''(]?https?://github.com/)([^/ ]+/)([^/ ]+)(/[^"'\'')⮳]*)?=[`\3`][\3~github] [\3~github]: \1\2\3\4=gp;
   # skip to end if the above matched
   tx;
   # General case http://...
-  s~([^"'\''(]?https?://)([^/\s]+)(/[^"'\'')⮳]*)?~[\2][\2] [\2]: \1\2\3~gp ;
+  s=([^"'\''(]?https?://)([^/\s]+)(/[^"'\'')⮳]*)?=[\2][\2] [\2]: \1\2\3=gp ;
   :x
   }
   ' "${file}"
   # Replace [...](...)
-  #sed -E -n 's~\[(`)?([^`]+?)(`)?\]\((.+?)\)~[\1\2\3][\L\2] \n[\2]: \4\n~gp' "${file}" # use -i to replace in-place
+  #sed -E -n 's=\[(`)?([^`]+?)(`)?\]\((.+?)\)=[\1\2\3][\L\2] \n[\2]: \4\n=gp' "${file}" # use -i to replace in-place
 done
 
 echo "DONE"

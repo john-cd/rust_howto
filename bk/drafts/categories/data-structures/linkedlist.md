@@ -4,7 +4,7 @@
 
 ## Stored Data in a Linked List {#linkedlist}
 
-[![std][c-std-badge]][c-std] [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]
+[![std][c~std~docs~badge]][c~std~docs] [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]
 
 `LinkedList` represents a doubly linked list, where each element contains a reference to both the next and the previous elements. This allows for efficient insertions and deletions from both ends of the list.
 

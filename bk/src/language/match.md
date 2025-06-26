@@ -25,7 +25,7 @@ You will see complex pattern matching most commonly in `match` expressions, but 
 
 ## Use `match` to Branch on a Pattern {#use-match-to-branch-on-a-pattern}
 
-[![Rust by example - match][book-rust-by-example-match-badge]][book-rust-by-example-match]{{hi:match}}
+[![Rust by example - match][book~rust-by-example~match~badge]][book~rust-by-example~match]{{hi:match}}
 
 The following code demonstrates pattern matching against an enumeration (`enum`):
 
@@ -41,7 +41,7 @@ The following example shows pattern matching using a `struct`:
 
 ## Handle a Single Pattern with `if let` {#if-let}
 
-[![Rust by example - if let][book-rust-by-example-if_let-badge]][book-rust-by-example-if_let]
+[![Rust by example - if let][book~rust-by-example~if_let~badge]][book~rust-by-example~if_let]
 
 `if let` is a concise way to match a single pattern:
 
@@ -217,7 +217,7 @@ Note that Rust's "match ergonomics" often make explicit `ref` and `ref mut` unne
 
 ## References {#skip}
 
-- [Pattern matching][book-rust-pattern-matching]{{hi:Pattern matching}}⮳.
+- [Pattern matching][book~rust~pattern-matching]{{hi:Pattern matching}}⮳.
 - [Patterns Are Not Expressions](https://h2co3.github.io/pattern)⮳.
 
 {{#include refs.incl.md}}

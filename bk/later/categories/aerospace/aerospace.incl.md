@@ -1,6 +1,6 @@
 | Recipe | Crates | Categories |
 |---|---|---|
-| [Aerospace][ex-aerospace-aero] | {{!crate }} | [![cat-aerospace][cat-aerospace-badge]][cat-aerospace] |
+| [Aerospace][ex~aerospace~aero] | {{!crate }} | [![cat~aerospace][cat~aerospace~badge]][cat~aerospace] |
 
 <div class="hidden">
 FIXME

@@ -9,7 +9,7 @@ a. Extract all crates listed in `crates.md`
 
 ```sh
 cd bk
-grep -Po '(?<=\]\[c-)\w+?(?=\])' ./src/crates/crates_alphabetical.md >> ./master/crates.txt
+grep -Po '(?<=\]\[c~)\w+?(?=~docs\])' ./src/indices/crates_alphabetical.md >> ./master/crates.txt
 ```
 
 `(?<= )` and `(?= )` are non-capturing look-behind and look-ahead groups, respectively.

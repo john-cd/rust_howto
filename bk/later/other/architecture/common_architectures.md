@@ -17,22 +17,22 @@ Each microservice
 
 - is a self-contained unit that performs a specific business function;
 - can be developed, deployed, and scaled independently;
-- typically manages its own [database][p-database], promoting data independence;
+- typically manages its own [database][p~database], promoting data independence;
 - and can use different programming languages, frameworks, and databases, allowing teams to choose the best tools for each job.
 
 Microservices communicate with each other through well-defined APIs, promoting loose coupling.
 
-Crates like [`axum`][c-axum]⮳{{hi:axum}}, [`warp`][c-warp]⮳{{hi:warp}} or [`tonic`][c-tonic]⮳{{hi:tonic}} can help build such services.
+Crates like [`axum`][c~axum~docs]⮳{{hi:axum}}, [`warp`][c~warp~docs]⮳{{hi:warp}} or [`tonic`][c~tonic~docs]⮳{{hi:tonic}} can help build such services.
 
 ### Key Technologies {#skip2}
 
 - Communication: Microservices communicate over the network, commonly via REST or [[_grpc | gRPC]].
 - Service Discovery: Use a service registry (e.g., `Consul`, `etcd`) to dynamically discover microservice locations.
-- API Gateway: Use an API gateway (e.g., `Kong`) to handle routing, [authentication][p-authentication], and other cross-cutting concerns.
-- Message Queues: Use message queues (e.g., `RabbitMQ`, `Kafka`) for [asynchronous][p-asynchronous] communication.
-- [Containerization][p-containerization]: Use `Docker` and `Kubernetes` for [containerization][p-containerization] and orchestration.
-- Logging and Monitoring: Implement central logging and monitoring with `Fluentd`; [`Elasticsearch`][c-elasticsearch]⮳{{hi:Elasticsearch}}, `Logstash`, and `Kibana`; `Graylog`, `Splunk`, `Prometheus` and/or `Grafana`.
-- [Error Handling][p-error-handling] and Resilience: Implement retry mechanisms, circuit breakers, and other resilience patterns.
+- API Gateway: Use an API gateway (e.g., `Kong`) to handle routing, [authentication][p~authentication], and other cross-cutting concerns.
+- Message Queues: Use message queues (e.g., `RabbitMQ`, `Kafka`) for [asynchronous][p~asynchronous] communication.
+- [Containerization][p~containerization]: Use `Docker` and `Kubernetes` for [containerization][p~containerization] and orchestration.
+- Logging and Monitoring: Implement central logging and monitoring with `Fluentd`; [`Elasticsearch`][c~elasticsearch~docs]⮳{{hi:Elasticsearch}}, `Logstash`, and `Kibana`; `Graylog`, `Splunk`, `Prometheus` and/or `Grafana`.
+- [Error Handling][p~error-handling] and Resilience: Implement retry mechanisms, circuit breakers, and other resilience patterns.
 - Configuration Management: externalize configuration and secrets e.g. with `Vault`.
 - Authentication/Authorization: Implement security with `JWT` (JSON Web Tokens) or `OAuth 2.0` / `OpenID Connect` (OIDC), using the aforementioned API Gateway or a sidecar proxy (e.g. `Envoy`, `Istio`).
 - Tracing: Implement distributed tracing to track requests across microservices, using `OpenTelemetry`, `Jaeger`, or `Zipkin`.
@@ -49,13 +49,13 @@ The "Ports and Adapters" architecture divides the system into three main layers:
 
 - Core (Business Logic): The heart of the application, independent of external systems. It contains the domain model.
 - Ports: Interfaces that define how the core interacts with external systems.
-- Adapters: Implementations of ports to connect the core with specific external systems (e.g., [databases][p-databases], APIs, UIs).
+- Adapters: Implementations of ports to connect the core with specific external systems (e.g., [databases][p~databases], APIs, UIs).
 
-This [architecture][p-architecture] enables the core application to function independently of infrastructure and technology specifics.
+This [architecture][p~architecture] enables the core application to function independently of infrastructure and technology specifics.
 
 ### Advantages {#skip5}
 
-- Easy to swap out external systems (e.g., changing a [database][p-database] or UI framework) without affecting core logic.
+- Easy to swap out external systems (e.g., changing a [database][p~database] or UI framework) without affecting core logic.
 - Promotes clean and maintainable code.
 - Ideal for systems where clear boundaries and independence from external systems are important.
 
@@ -78,15 +78,15 @@ In an Event-driven architecture (EDA), applications communicate by producing and
 
 - Event Producers and Consumers: Systems or components communicate by emitting and responding to events.
 - Event Bus/Queue: Acts as a mediator for events, often using tools like `Kafka`, `RabbitMQ`, or other message brokers.
-- [Asynchronous][p-asynchronous] Communication: Components operate independently and interact via events.
-- Often implemented with libraries like [`tokio`][c-tokio]⮳{{hi:tokio}} or [`async-std`][c-async_std]⮳{{hi:async-std}}.
+- [Asynchronous][p~asynchronous] Communication: Components operate independently and interact via events.
+- Often implemented with libraries like [`tokio`][c~tokio~docs]⮳{{hi:tokio}} or [`async-std`][c~async_std~docs]⮳{{hi:async-std}}.
 
 See [[asynchronous | Asynchronous]] and [[amqp | AMQP]].
 
 ### Advantages {#skip9}
 
 - Highly scalable and responsive, as components can work independently.
-- Naturally supports [asynchronous][p-asynchronous] workflows and real-time data processing.
+- Naturally supports [asynchronous][p~asynchronous] workflows and real-time data processing.
 - Encourages microservices architecture by isolating components.
 
 ### Use Cases {#skip}
@@ -96,10 +96,10 @@ See [[asynchronous | Asynchronous]] and [[amqp | AMQP]].
 
 ## Actor Model {#actor-model}
 
-The actor model is a conceptual model of concurrent computation that treats "actors" as the universal primitives of [concurrency][p-concurrency].
-Actors encapsulate state, behavior, and a mailbox. [Actors][p-actors] communicate exclusively by sending and receiving [asynchronous][p-asynchronous] messages. They are like independent entities that can receive and process messages.
+The actor model is a conceptual model of concurrent computation that treats "actors" as the universal primitives of [concurrency][p~concurrency].
+Actors encapsulate state, behavior, and a mailbox. [Actors][p~actors] communicate exclusively by sending and receiving [asynchronous][p~asynchronous] messages. They are like independent entities that can receive and process messages.
 
-Libraries like [`actix`][c-actix]⮳{{hi:actix}} support actor-based designs.
+Libraries like [`actix`][c~actix~docs]⮳{{hi:actix}} support actor-based designs.
 
 See the [[_actors |  Actors]] chapter for more details.
 

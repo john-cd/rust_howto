@@ -1,3 +1,3 @@
 ||
 |--------|
-| [Publication Steps][ex-contributing-publish] |
+| [Publication Steps][ex~contributing~publish] |

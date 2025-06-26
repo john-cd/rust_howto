@@ -1,6 +1,6 @@
 # No-alloc
 
-[![cat-no-std::no-alloc][cat-no-std::no-alloc-badge]][cat-no-std::no-alloc]{{hi:No alloc}}
+[![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No alloc}}
 
 The term "no_alloc" refers to environments where *dynamic* memory allocation is not available or desirable (e.g., [[embedded | Embedded]] systems, kernel development, or performance-sensitive applications). The concept revolves around avoiding the use of the `alloc` crate and its associated functions.
 
@@ -35,19 +35,19 @@ Note the following:
 
 - `alloc`: It's the standard library's allocation crate. While you're avoiding it, understanding why you're avoiding it is important.
 
-- [`wee_alloc`][c-wee_alloc]⮳{{hi:wee_alloc}}: A small and efficient allocator often used in embedded systems or WebAssembly ([[wasm | WASM]]). It can be useful if you -do- need some allocation, but want a very small allocator. See [[embedded | Embedded]] Systems.
+- [`wee_alloc`][c~wee_alloc~docs]⮳{{hi:wee_alloc}}: A small and efficient allocator often used in embedded systems or WebAssembly ([[wasm | WASM]]). It can be useful if you -do- need some allocation, but want a very small allocator. See [[embedded | Embedded]] Systems.
 
-- [`panic-halt`][c-panic_halt]⮳{{hi:panic-halt}}, [`panic-abort`][c-panic_abort]⮳{{hi:panic-abort}}: Crates for defining panic behavior in `no_std` environments.
+- [`panic-halt`][c~panic_halt~docs]⮳{{hi:panic-halt}}, [`panic-abort`][c~panic_abort~docs]⮳{{hi:panic-abort}}: Crates for defining panic behavior in `no_std` environments.
 
-- [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}}: Essential for interacting with hardware in embedded systems, which are often `no_alloc` environments.
+- [`embedded-hal`][c~embedded_hal~docs]⮳{{hi:embedded-hal}}: Essential for interacting with hardware in embedded systems, which are often `no_alloc` environments.
 
 ## Code Examples
 
 {{#include no_alloc.incl.md}}
 
-## Crates Functioning Without the Rust [`alloc`][c-alloc]⮳{{hi:alloc}} Crate
+## Crates Functioning Without the Rust [`alloc`][c~alloc~docs]⮳{{hi:alloc}} Crate
 
-Consult the [`no_alloc`][cat-no-std::no-alloc] category on `crates.io`.
+Consult the [`no_alloc`][cat~no-std::no-alloc] category on `crates.io`.
 
 ## Related Topics
 

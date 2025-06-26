@@ -4,7 +4,7 @@
 
 ## Generics Syntax {#skip}
 
-[![Rust by example - Generics][book-rust-by-example-generics-badge]][book-rust-by-example-generics]{{hi:Generics}}
+[![Rust by example - Generics][book~rust-by-example~generics~badge]][book~rust-by-example~generics]{{hi:Generics}}
 
 Generics enable writing code that can work with different data types without having to write separate versions for each type. It is like creating a template, with placeholders that will be specified later.
 

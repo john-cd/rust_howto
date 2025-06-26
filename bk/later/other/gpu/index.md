@@ -20,7 +20,7 @@
 
 ## References
 
-- [Are we Learning yet? - GPU computing][are-we-learning-yet?-gpu-computing-website].
+- [Are we Learning yet? - GPU computing][are-we-learning-yet?~gpu-computing~website].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

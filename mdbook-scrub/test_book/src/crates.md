@@ -21,9 +21,9 @@ Website for the crate: {{web xyz}}
 
 Example of rendered links:
 
-[`diesel`][c-diesel]⮳{{hi:diesel}}
+[`diesel`][c~diesel~docs]⮳{{hi:diesel}}
 
-[`mdbook-linkcheck`][c-mdbook_linkcheck-github]{{hi:mdbook-linkcheck}}⮳.
+[`mdbook-linkcheck`][c~mdbook_linkcheck~github]{{hi:mdbook-linkcheck}}⮳.
 
 ## Crate Badges
 
@@ -45,4 +45,4 @@ Multiple badges:
 
 Example of rendered crate badge:
 
-[![num][c-num-badge]][c-num]{{hi:num}}
+[![num][c~num~docs~badge]][c~num~docs]{{hi:num}}
