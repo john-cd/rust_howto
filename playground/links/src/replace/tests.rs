@@ -5,16 +5,14 @@ use super::*;
 #[test]
 fn test_replace_crate() {
     let text = "{{!crate clap regex}}";
-    let expected =
-        "[![clap][c~clap~docs~badge]][c~clap~docs]{{hi:clap}}[![regex][c~regex~docs~badge]][c~regex~docs]{{hi:regex}}";
+    let expected = "[![clap][c~clap~docs~badge]][c~clap~docs]{{hi:clap}}[![regex][c~regex~docs~badge]][c~regex~docs]{{hi:regex}}";
     assert_eq!(replace(text), expected);
 }
 
 #[test]
 fn test_replace_docs() {
     let text = "{{!docs clap regex}}";
-    let expected =
-        "[![clap][c~clap~docs~badge]][c~clap~docs]{{hi:clap}}[![regex][c~regex~docs~badge]][c~regex~docs]{{hi:regex}}";
+    let expected = "[![clap][c~clap~docs~badge]][c~clap~docs]{{hi:clap}}[![regex][c~regex~docs~badge]][c~regex~docs]{{hi:regex}}";
     assert_eq!(replace(text), expected);
 }
 
@@ -49,8 +47,7 @@ fn test_replace_web() {
 #[test]
 fn test_replace_with_extra_spaces() {
     let text = "{{   !   crate   clap   regex   }}";
-    let expected =
-        "[![clap][c~clap~docs~badge]][c~clap~docs]{{hi:clap}}[![regex][c~regex~docs~badge]][c~regex~docs]{{hi:regex}}";
+    let expected = "[![clap][c~clap~docs~badge]][c~clap~docs]{{hi:clap}}[![regex][c~regex~docs~badge]][c~regex~docs]{{hi:regex}}";
     assert_eq!(replace(text), expected);
 }
 

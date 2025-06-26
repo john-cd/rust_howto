@@ -1,5 +1,5 @@
 [workspace]
-members = ["autogen", "examples_wip"]
+members = ["autogen", "examples_wip", "links"]
 resolver = "3"
 
 # Default values for packages in the workspace
