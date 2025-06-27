@@ -13,7 +13,7 @@ fn parse_number(input: &str) -> u32 {
 
 fn main() {
     let value = parse_number("42");
-    println!("Parsed value: {}", value);
+    println!("Parsed value: {value}");
 }
 // ANCHOR_END: example
 

@@ -24,7 +24,7 @@ fn main() {
         // as the fields in the given instance.
         ..user1
     };
-    println!("{:?}", user2);
+    println!("{user2:?}");
 }
 // ANCHOR_END: example
 

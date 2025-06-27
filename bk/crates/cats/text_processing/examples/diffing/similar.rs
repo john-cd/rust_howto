@@ -70,7 +70,7 @@ fn line_diff() {
     let mut unified = diff.unified_diff();
     let unified = unified.context_radius(2).header("old_file", "new_file");
 
-    print!("{}", unified);
+    print!("{unified}");
 }
 
 /// Performs a word-by-word diff between two text strings and prints the

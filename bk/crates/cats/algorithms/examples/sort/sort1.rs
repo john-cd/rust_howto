@@ -10,7 +10,7 @@ fn main() {
     vec.sort();
 
     assert_eq!(vec, vec![1, 2, 5, 10, 15]);
-    println!("{:?}", vec);
+    println!("{vec:?}");
 }
 // ANCHOR_END: example
 

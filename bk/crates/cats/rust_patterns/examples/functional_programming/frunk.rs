@@ -54,13 +54,13 @@
 //     let (int_users, str_users): (Vec<User<i32>>, Vec<User<String>>) =
 //         data_list.pluck();
 
-//     println!("Int ID Users: {:?}", int_users);
-//     println!("String ID Users: {:?}", str_users);
+//     println!("Int ID Users: {int_users:?}");
+//     println!("String ID Users: {str_users:?}");
 
 //     // Sculptor trait for transforming HLists.
 //     let shortened_list = data_list.sculpt::<(User<String>, User<i32>)>();
 
-//     println!("Transformed list: {:?}", shortened_list);
+//     println!("Transformed list: {shortened_list:?}");
 // }
 
 // #[test]

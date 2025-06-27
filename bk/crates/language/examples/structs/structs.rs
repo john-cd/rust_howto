@@ -24,7 +24,7 @@ fn main() {
         email: String::from("someone@example.com"),
         sign_in_count: 1,
     };
-    println!("{:?}", user1);
+    println!("{user1:?}");
 
     // Access fields with the `.` operator:
     let _ = user1.active;

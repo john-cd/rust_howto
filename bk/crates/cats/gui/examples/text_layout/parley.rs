@@ -82,7 +82,7 @@
 //         rendered_text.push_str(&row.iter().collect::<String>());
 //         rendered_text.push('\n');
 //     }
-//     println!("{}", rendered_text);
+//     println!("{rendered_text}");
 // }
 
 pub fn main() {}

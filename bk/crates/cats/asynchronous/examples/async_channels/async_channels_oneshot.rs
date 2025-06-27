@@ -4,7 +4,7 @@ use tokio::sync::oneshot;
 
 /// Simulate some computation that takes a `u32` and returns a `String`.
 async fn some_computation(input: u32) -> String {
-    format!("The result of computation is {}", input)
+    format!("The result of computation is {input}")
 }
 
 /// Demonstrates the use of a `oneshot` channel for single-value communication.
@@ -34,7 +34,7 @@ async fn one_shot() {
     // `unwrap()` is used here for simplicity, but in a real application,
     // you should handle the potential error (e.g., if the sender is dropped).
     let res = rx.await.unwrap();
-    println!("{}", res);
+    println!("{res}");
 }
 
 #[tokio::main]

@@ -45,7 +45,8 @@ fn main() {
     let _datetime: String = list.iter().copied().collect();
 
     // Using `format!` macro with positional arguments.
-    let _datetime = &format!("{}{}{}", DATE, T, TIME);
+    #[allow(clippy::uninlined_format_args)]
+    let _datetime = &format!("{0}{1}{2}", DATE, T, TIME);
 
     // Using `format!` macro with named arguments (Rust 1.58+).
     let _datetime = &format!("{DATE}{T}{TIME}");
@@ -91,7 +92,7 @@ fn main() {
     // Using the `concat_strs!` macro.
     let datetime = &concat_strs!(DATE, T, TIME);
 
-    println!("{}", datetime);
+    println!("{datetime}");
 }
 // ANCHOR_END: example
 

@@ -59,47 +59,47 @@ fn main() {
     let mut state_machine = StateMachine::new();
 
     let st = state_machine.get_state();
-    println!("Initial state: {:?}", st);
+    println!("Initial state: {st:?}");
     assert_eq!(st, &State::Idle);
 
     state_machine.transition(Event::Start);
     let st = state_machine.get_state();
-    println!("After Start: {:?}", st);
+    println!("After Start: {st:?}");
     assert_eq!(st, &State::Processing);
 
     state_machine.transition(Event::Finish);
     let st = state_machine.get_state();
-    println!("After Finish: {:?}", st);
+    println!("After Finish: {st:?}");
     assert_eq!(st, &State::Completed);
 
     state_machine.transition(Event::Reset);
     let st = state_machine.get_state();
-    println!("After Reset: {:?}", st);
+    println!("After Reset: {st:?}");
     assert_eq!(st, &State::Idle);
 
     state_machine.transition(Event::Start);
     let st = state_machine.get_state();
-    println!("After Start: {:?}", st);
+    println!("After Start: {st:?}");
     assert_eq!(st, &State::Processing);
 
     state_machine.transition(Event::Fail);
     let st = state_machine.get_state();
-    println!("After Fail: {:?}", st);
+    println!("After Fail: {st:?}");
     assert_eq!(st, &State::Error);
 
     state_machine.transition(Event::Reset);
     let st = state_machine.get_state();
-    println!("After Reset: {:?}", st);
+    println!("After Reset: {st:?}");
     assert_eq!(st, &State::Idle);
 
     state_machine.transition(Event::Start);
     let st = state_machine.get_state();
-    println!("After Start: {:?}", st);
+    println!("After Start: {st:?}");
     assert_eq!(st, &State::Processing);
 
     state_machine.transition(Event::Start);
     let st = state_machine.get_state();
-    println!("After double start: {:?}", st);
+    println!("After double start: {st:?}");
     assert_eq!(st, &State::Error);
 }
 // ANCHOR_END: example

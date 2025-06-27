@@ -5,12 +5,12 @@
 
 // This function consumes its String parameter...
 fn consume(x: String) {
-    println!("{}", x);
+    println!("{x}");
 } // ...then, when `x` goes out of scope, its value is dropped.
 
 // This function consumes, processes, then returns its `String` parameter.
 fn consume_and_return(x: String) -> String {
-    println!("{}", x);
+    println!("{x}");
     x
 }
 
@@ -19,7 +19,7 @@ fn main() {
     // s1 is moved into the `consume` function:
     consume(s1);
     // `s1` is no longer available:
-    // println!("{}", s1); // ERROR: borrow of moved value: `s1`.
+    // println!("{s1}"); // ERROR: borrow of moved value: `s1`.
 
     // You can return the value that has been consumed,
     // if you still need it.
@@ -27,7 +27,7 @@ fn main() {
     // using references (see below).
     let s2 = String::from("Rust");
     let s3 = consume_and_return(s2);
-    println!("{}", s3);
+    println!("{s3}");
 }
 // ANCHOR_END: example
 

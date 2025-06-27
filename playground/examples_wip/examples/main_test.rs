@@ -30,8 +30,8 @@ fn read_uptime() -> Result<u64> {
 
 // The first method to handle
 // match read_uptime() {
-//     Ok(uptime) => println!("uptime: {} seconds", uptime),
-//     Err(err) => eprintln!("error: {}", err),
+//     Ok(uptime) => println!("uptime: {uptime} seconds"),
+//     Err(err) => eprintln!("error: {err}"),
 // };
 
 /// The main function of the program.

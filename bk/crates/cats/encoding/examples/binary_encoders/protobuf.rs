@@ -36,14 +36,14 @@
 //     let serialized_person = person.write_to_bytes().unwrap();
 
 //     // Print the serialized data
-//     println!("Serialized data: {:?}", serialized_person);
+//     println!("Serialized data: {serialized_person:?}");
 
 //     // Deserialize the byte array back into a Person message
 //     let deserialized_person =
 // Person::parse_from_bytes(&serialized_person).unwrap();
 
 //     // Print the deserialized Person message
-//     println!("Deserialized person: {:?}", deserialized_person);
+//     println!("Deserialized person: {deserialized_person:?}");
 // }
 // // ANCHOR_END: example
 

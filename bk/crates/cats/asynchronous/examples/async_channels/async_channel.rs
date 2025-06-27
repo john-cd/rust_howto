@@ -17,14 +17,14 @@ use tokio::time::Duration;
 /// * `id` - The ID of the producer.
 async fn producer(id: usize, tx: Sender<String>) {
     for i in 0..5 {
-        let msg = format!("Producer {}: Message {}", id, i);
+        let msg = format!("Producer {id}: Message {i}");
         // Sends messages to the channel.
         // It creates messages in a loop, sends them to the channel.
         // If the channel is full, this method awaits until there is space for a
         // message.
         if let Err(err) = tx.send(msg).await {
             // The channel is closed.
-            eprintln!("Failed to send message: {}", err);
+            eprintln!("Failed to send message: {err}");
             break;
         }
         // Simulate work
@@ -46,7 +46,7 @@ async fn consumer(id: usize, rx: Receiver<String>) {
     // If the channel is closed, receives a message or returns an error if there
     // are no more messages.
     while let Ok(msg) = rx.recv().await {
-        println!("Consumer {}: Received {}", id, msg);
+        println!("Consumer {id}: Received {msg}");
         // Simulate processing
         let sleep_duration = rand::rng().random_range(30..100);
         time::sleep(Duration::from_millis(sleep_duration)).await;

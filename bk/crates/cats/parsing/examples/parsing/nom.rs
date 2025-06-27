@@ -38,10 +38,10 @@ fn main() {
     let input = "1,2,3,4,5";
     match parse_comma_separated_numbers(input) {
         Ok((remaining, result)) => {
-            println!("Parsed numbers: {:?}", result);
-            println!("Remaining input: {:?}", remaining);
+            println!("Parsed numbers: {result:?}");
+            println!("Remaining input: {remaining:?}");
         }
-        Err(err) => println!("Error: {:?}", err),
+        Err(err) => println!("Error: {err:?}"),
     }
 }
 // ANCHOR_END: example

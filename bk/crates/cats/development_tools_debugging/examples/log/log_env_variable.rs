@@ -9,7 +9,7 @@ fn main() {
     log::error!("this is an error {}", "message");
     if log::log_enabled!(log::Level::Info) {
         let x = 3 * 4; // "Expensive" computation
-        log::trace!("the answer was: {}", x);
+        log::trace!("the answer was: {x}");
     }
 }
 

@@ -54,9 +54,9 @@ async fn main() -> Result<()> {
     for link in links {
         tasks.push(tokio::spawn(async move {
             if check_link(&link).await.unwrap() {
-                println!("{} is OK", link);
+                println!("{link} is OK");
             } else {
-                println!("{} is Broken", link);
+                println!("{link} is Broken");
             }
         }));
     }

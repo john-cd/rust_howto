@@ -6,8 +6,7 @@
 fn check_name(name: &str) {
     assert!(
         name.contains("Carol"),
-        "Name did not contain 'Carol', value was `{}`",
-        name
+        "Name did not contain 'Carol', value was `{name}`"
     );
 }
 

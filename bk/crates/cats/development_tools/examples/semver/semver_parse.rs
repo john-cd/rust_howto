@@ -20,7 +20,7 @@ fn main() -> Result<()> {
             build: semver::BuildMetadata::EMPTY,
         }
     );
-    println!("{:?}", parsed_version);
+    println!("{parsed_version:?}");
     Ok(())
 }
 // ANCHOR_END: example

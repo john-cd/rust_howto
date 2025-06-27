@@ -33,7 +33,7 @@ fn main() -> anyhow::Result<()> {
 
         // Write to the file:
         let bytes_written = write(fd, data)?;
-        println!("Wrote {} bytes to the file.", bytes_written);
+        println!("Wrote {bytes_written} bytes to the file.");
 
         // Close the file.
     }
@@ -59,11 +59,11 @@ fn main() -> anyhow::Result<()> {
     let path = "example2.txt";
     let new_file_path = "my_renamed_file";
     rename(path, new_file_path)?;
-    println!("File renamed to: {}", new_file_path);
+    println!("File renamed to: {new_file_path}");
 
     // Unlink (delete) the file:
     unlink(new_file_path)?;
-    println!("File deleted: {}", new_file_path);
+    println!("File deleted: {new_file_path}");
     Ok(())
 }
 // ANCHOR_END: example

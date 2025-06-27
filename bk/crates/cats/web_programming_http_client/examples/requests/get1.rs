@@ -12,7 +12,7 @@ async fn main() -> Result<()> {
     println!("Headers:\n{:#?}", res.headers());
 
     let body = res.text().await?;
-    println!("Body:\n{}", body);
+    println!("Body:\n{body}");
     Ok(())
 }
 // ANCHOR_END: example

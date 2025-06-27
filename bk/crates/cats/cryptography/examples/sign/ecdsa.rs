@@ -41,7 +41,7 @@
 // a Base64 representation.     let private_key_pem = private_key_der.to_pem()?;
 //     // In a real world application, never print or store private keys in
 // plain     // text!
-//     println!("Private Key (PEM):\n{}\n", private_key_pem);
+//     println!("Private Key (PEM):\n{private_key_pem}\n");
 
 //     // 4. Create a message to sign
 //     let message = b"Hello, world!";

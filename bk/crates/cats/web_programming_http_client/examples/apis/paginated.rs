@@ -101,7 +101,7 @@
 //             "https://crates.io/api/v1/crates/{}/reverse_dependencies?page={}&per_page={}",
 //             self.crate_id, self.page, self.per_page
 //         );
-//         // println!("Calling {}", url);
+//         // println!("Calling {url}");
 //         let resp = self.client.get(url).send()?;
 //         let json = resp.json::<ApiResponse>()?;
 
@@ -140,7 +140,7 @@
 // #[test]
 // fn require_network() -> anyhow::Result<()> {
 //     let res = main();
-//     println!("{:?}", res);
+//     println!("{res:?}");
 //     res?;
 //     Ok(())
 // }

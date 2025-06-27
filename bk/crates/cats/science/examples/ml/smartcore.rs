@@ -38,8 +38,8 @@
 //     // Calculate the mean squared error.
 //     let mse = mean_squared_error(&y, &y_hat);
 
-//     println!("Predictions: {:?}", y_hat);
-//     println!("Mean Squared Error: {}", mse);
+//     println!("Predictions: {y_hat:?}");
+//     println!("Mean Squared Error: {mse}");
 // }
 
 // /// The `make_blobs` function generates random samples around the specified

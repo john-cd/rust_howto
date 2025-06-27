@@ -39,7 +39,7 @@ fn main() -> Result<()> {
 
     // Or iterate over all keys and the key's vector:
     for (cat, names) in m.iter_all() {
-        println!("Category: {:?}, names: {:?}", cat, names);
+        println!("Category: {cat:?}, names: {names:?}");
     }
     Ok(())
 }

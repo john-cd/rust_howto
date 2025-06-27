@@ -10,7 +10,7 @@ fn main() {
     // to use join, scope, or parallel iterators will then operate
     // within that threadpool.
     let n = pool.install(|| fib(20));
-    println!("{}", n);
+    println!("{n}");
 }
 
 /// Calculates the nth fibonacci number

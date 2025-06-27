@@ -26,6 +26,6 @@ fn main() -> anyhow::Result<()> {
 #[test]
 fn test() {
     let res = main();
-    println!("{:?}", res);
+    println!("{res:?}");
     assert!(res.is_err())
 }

@@ -47,7 +47,7 @@ fn main() {
     // but it's considered the same key if the IDs match.
     let lookup_student = Student { id: 2 };
     if let Some(grade) = grades.get(&lookup_student) {
-        println!("Student with ID 2 got grade: {}", grade);
+        println!("Student with ID 2 got grade: {grade}");
     }
 }
 

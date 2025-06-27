@@ -25,11 +25,11 @@
 
 //     let inserted_post = Post::insert(new_post).exec(&db).await?;
 
-//     println!("Inserted post: {:?}", inserted_post);
+//     println!("Inserted post: {inserted_post:?}");
 
 //     // Read records
 //     let posts: Vec<post::Model> = Post::find().all(&db).await?;
-//     println!("All posts: {:?}", posts);
+//     println!("All posts: {posts:?}");
 
 //     // Update a record
 //     let mut post_to_update: post::ActiveModel =
@@ -37,11 +37,11 @@
 // content = Set(Some("Updated content".to_owned()));
 
 //     let updated_post = post_to_update.update(&db).await?;
-//     println!("Updated post: {:?}", updated_post);
+//     println!("Updated post: {updated_post:?}");
 
 //     // Delete a record
 //     let result = Post::delete_by_id(1).exec(&db).await?;
-//     println!("Deleted post: {:?}", result);
+//     println!("Deleted post: {result:?}");
 
 //     Ok(())
 // }

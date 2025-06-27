@@ -33,7 +33,7 @@ fn main() -> Result<(), aes_gcm_siv::Error> {
             aad: associated_data, // AD stays unencrypted...
         },
     )?;
-    println!("Ciphertext: {:?}", ciphertext);
+    println!("Ciphertext: {ciphertext:?}");
 
     // Decrypt.
     // Failure to pass the same AD that was used during encryption will cause

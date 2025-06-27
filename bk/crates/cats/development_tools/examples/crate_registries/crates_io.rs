@@ -64,12 +64,12 @@ fn main() -> Result<()> {
     // Search for crates that mention "signature verification"
     println!("Search:\n");
     let result = search_for_crates("signature verification")?;
-    println!("{:#?}", result);
+    println!("{result:#?}");
 
     // Display information for a crate
     println!("\n\nInfo:\n");
     let info = get_info_for_crate("wgsldoc")?;
-    println!("{:#?}", info);
+    println!("{info:#?}");
 
     println!("\n\nTop dependencies for the most downloaded crates:\n");
     list_top_dependencies()?;

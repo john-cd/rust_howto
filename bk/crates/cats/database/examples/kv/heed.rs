@@ -42,7 +42,7 @@ fn main() -> anyhow::Result<()> {
     let rtxn = env.read_txn()?;
     // Read data from the database
     let value = db.get(&rtxn, &1)?.unwrap();
-    println!("Value: {}", value);
+    println!("Value: {value}");
     assert_eq!(value, "Hello, world!");
 
     Ok(())

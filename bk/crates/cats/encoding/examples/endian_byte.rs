@@ -37,14 +37,14 @@ fn main() -> Result<(), Error> {
 
     // Encode the payload into a byte vector.
     let encoded_bytes = encode(&original_payload)?;
-    println!("{:?}", encoded_bytes);
+    println!("{encoded_bytes:?}");
 
     // Decode the byte vector back into a `Payload` instance.
     let decoded_payload = decode(&encoded_bytes)?;
 
     // Assert that the original and decoded payloads are equal.
     assert_eq!(original_payload, decoded_payload);
-    println!("{:?}", decoded_payload);
+    println!("{decoded_payload:?}");
     Ok(())
 }
 // ANCHOR_END: example

@@ -11,7 +11,7 @@ fn main() {
         .take(30)
         .map(char::from)
         .collect();
-    println!("{}", rand_string);
+    println!("{rand_string}");
 }
 // ANCHOR_END: example
 

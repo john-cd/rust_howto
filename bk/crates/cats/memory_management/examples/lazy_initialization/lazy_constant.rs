@@ -18,12 +18,12 @@ lazy_static! {
 fn show_access(name: &str) {
     // Access the global static:
     let access = PRIVILEGES.get(name);
-    println!("{}: {:?}", name, access);
+    println!("{name}: {access:?}");
 }
 
 fn main() {
     let access = PRIVILEGES.get("James");
-    println!("James: {:?}", access);
+    println!("James: {access:?}");
 
     show_access("Jim");
 }

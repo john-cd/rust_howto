@@ -25,7 +25,7 @@ fn main() -> anyhow::Result<()> {
     // `read` runs the command and return its `stdout` as a string.
     // You can also use `run`.
     let output = cmd!(sh, "echo Hello, xshell!").read()?;
-    println!("Output: {}", output);
+    println!("Output: {output}");
 
     // Run a command with arguments:
     // You don't have to worry about escaping the arguments.
@@ -74,7 +74,7 @@ fn main() -> anyhow::Result<()> {
     if sh.path_exists(&file_path) {
         // Read the entire contents of a file into a string.
         if let Ok(file_content) = sh.read_file(&file_path) {
-            println!("File content: {}", file_content);
+            println!("File content: {file_content}");
         }
         // Remove the file.
         sh.remove_path(file_path)?;
@@ -85,10 +85,10 @@ fn main() -> anyhow::Result<()> {
 
     // Checking command status:
     let status = cmd!(sh, "true").run();
-    println!("Command status: {:?}", status);
+    println!("Command status: {status:?}");
 
     let failed_status = cmd!(sh, "false").run();
-    println!("Failed command status: {:?}", failed_status);
+    println!("Failed command status: {failed_status:?}");
     // Capture `stderr` with `read_stderr`:
     let err_result = cmd!(sh, "cat nonexistent_file").read_stderr();
     println!("Standard error: {}", err_result.unwrap_err());
@@ -98,7 +98,7 @@ fn main() -> anyhow::Result<()> {
     sh.set_var("MY_VAR", "my_value");
     println!("Set MY_VAR to {}", sh.var("MY_VAR")?);
     let env_var = cmd!(sh, "echo $MY_VAR").read()?;
-    println!("MY_VAR environment variable: {}", env_var);
+    println!("MY_VAR environment variable: {env_var}");
 
     // Change the working directory permanently:
     let temp_dir = tempfile::tempdir()?;

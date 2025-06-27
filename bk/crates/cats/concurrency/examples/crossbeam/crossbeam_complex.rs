@@ -22,7 +22,7 @@ fn main() {
         s.spawn(|_| {
             for i in 0..n_msgs {
                 snd1.send(i).unwrap();
-                println!("Source sent {}", i);
+                println!("Source sent {i}");
             }
             // Close the channel - this is necessary to exit
             // the for-loop in the worker.
@@ -56,7 +56,7 @@ fn main() {
 
         // Sink: receives and processes messages from the workers.
         for msg in rcv2.iter() {
-            println!("Sink received {}", msg);
+            println!("Sink received {msg}");
         }
     })
     .unwrap();

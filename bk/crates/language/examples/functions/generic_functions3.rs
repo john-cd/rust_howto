@@ -13,7 +13,7 @@ fn main() {
     // The compiler infers the concrete lifetime for `'a` at the call site,
     // choosing the shorter of the two input lifetimes.
     let result = longest("abcd", "xyz");
-    println!("The longest string is {}", result);
+    println!("The longest string is {result}");
 }
 // ANCHOR_END: example
 

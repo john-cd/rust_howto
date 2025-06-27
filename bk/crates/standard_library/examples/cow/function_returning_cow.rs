@@ -24,8 +24,8 @@ fn main() {
     let modified_string = remove_whitespaces(original_string);
 
     match modified_string {
-        Cow::Borrowed(s) => println!("No spaces, no allocation: {}", s),
-        Cow::Owned(s) => println!("Spaces removed, allocated `String`: {}", s),
+        Cow::Borrowed(s) => println!("No spaces, no allocation: {s}"),
+        Cow::Owned(s) => println!("Spaces removed, allocated `String`: {s}"),
     }
 
     let original_string_no_spaces = "HelloWorld!";
@@ -33,8 +33,8 @@ fn main() {
         remove_whitespaces(original_string_no_spaces);
 
     match modified_string_no_spaces {
-        Cow::Borrowed(s) => println!("No spaces, no allocation: {}", s),
-        Cow::Owned(s) => println!("Spaces removed, allocated String: {}", s),
+        Cow::Borrowed(s) => println!("No spaces, no allocation: {s}"),
+        Cow::Owned(s) => println!("Spaces removed, allocated String: {s}"),
     }
 }
 // ANCHOR_END: example

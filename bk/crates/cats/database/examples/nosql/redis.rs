@@ -27,7 +27,7 @@ fn connect() -> Result<Connection> {
         Err(_) => "redis",
     };
     let redis_conn_url =
-        format!("{}://:{}@{}", uri_scheme, redis_password, redis_host_name);
+        format!("{uri_scheme}://:{redis_password}@{redis_host_name}");
     // `open` does not actually open a connection yet, but it does perform some
     // basic checks on the URL that might make the operation fail.
     Ok(redis::Client::open(redis_conn_url)?.get_connection()?)
@@ -54,7 +54,7 @@ fn fetch_an_integer() -> Result<isize> {
 
 fn main() -> Result<()> {
     let my_int = fetch_an_integer()?;
-    println!("{}", my_int);
+    println!("{my_int}");
     Ok(())
 }
 // ANCHOR_END: example

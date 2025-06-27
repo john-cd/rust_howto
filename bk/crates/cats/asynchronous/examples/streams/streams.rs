@@ -15,7 +15,7 @@ async fn main() {
     // `for` loops are not usable with Streams, but for imperative-style
     // code, `while let` and the `next`/`try_next` functions can be used:
     while let Some(num) = stream.next().await {
-        println!("{}", num);
+        println!("{num}");
     }
 }
 // ANCHOR_END: example

@@ -29,7 +29,7 @@ fn main() -> anyhow::Result<()> {
         Cmd::Badges(b) => {
             for name in b.args {
                 let (badges, refdefs) = create_crate_badge_with_categories(name.trim())?;
-                println!("{}", badges);
+                println!("{badges}");
                 // -a FILE (or simply -a) was passed as an argument
                 if let Some(ref pathbuf) = b.file {
                     tool_lib::merge(pathbuf, refdefs)?;
@@ -40,7 +40,7 @@ fn main() -> anyhow::Result<()> {
         Cmd::Rbe(r) => {
             for concept in r.args {
                 let badge = create_rbe_badge(&concept)?;
-                println!("{}", badge);
+                println!("{badge}");
             }
         }
         // Generate category badges for a given crate.
@@ -49,7 +49,7 @@ fn main() -> anyhow::Result<()> {
                 let name = n.trim();
                 for cat in tool_lib::get_categories_for_crate(name)? {
                     let markdown = create_category_badge(&cat.category, &cat.slug)?;
-                    println!("{}", markdown);
+                    println!("{markdown}");
                 }
             }
         }
@@ -72,18 +72,18 @@ fn main() -> anyhow::Result<()> {
                 }
                 for cat in matches {
                     let markdown = create_category_badge(&cat.category, &cat.slug)?;
-                    println!("{}", markdown);
+                    println!("{markdown}");
                 }
                 println!();
             }
-            // all_categories.iter().for_each( |c| println!("{:?}", c) )
+            // all_categories.iter().for_each( |c| println!("{c:?}") )
         }
         // Returns crate information from the crates.io API for one or more crates.
         //
         Cmd::Info(i) => {
             for name in i.args {
                 let info = get_info_for_crate(&name)?;
-                println!("{:#?}", info);
+                println!("{info:#?}");
             }
         }
         _ => return Err(anyhow!("You did not enter a command!")),

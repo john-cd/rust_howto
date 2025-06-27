@@ -105,7 +105,7 @@ fn main() -> Result<()> {
             } else {
                 println!("Read just one...");
             }
-            println!("{:?}", file);
+            println!("{file:?}");
         }
         Some(Commands::Tell) => {
             println!("{}", 42);

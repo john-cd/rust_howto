@@ -42,25 +42,25 @@
 //             Ok(XmlEvent::StartElement {
 //                 name, attributes, ..
 //             }) => {
-//                 print!("Start: {}", name);
+//                 print!("Start: {name}");
 //                 if !attributes.is_empty() {
 //                     print!(" with attributes: ");
 //                     for attr in attributes {
-//                         print!("{}=\"{}\" ", attr.name, attr.value);
+//                         print!("{attr.name, attr.value}=\"{}\" ");
 //                     }
 //                 }
 //                 println!();
 //             }
 //             Ok(XmlEvent::EndElement { name }) => {
-//                 println!("End: {}", name);
+//                 println!("End: {name}");
 //             }
 //             Ok(XmlEvent::Characters(text)) => {
 //                 if !text.trim().is_empty() {
-//                     println!("  Text: {}", text);
+//                     println!("  Text: {text}");
 //                 }
 //             }
 //             Err(e) => {
-//                 eprintln!("Error: {}", e);
+//                 eprintln!("Error: {e}");
 //                 break;
 //             }
 //             _ => {}
@@ -146,7 +146,7 @@
 
 //     // Get the resulting XML.
 //     let result = writer.into_inner();
-//     println!("{}", String::from_utf8(result)?);
+//     println!("{String::from_utf8(result}")?);
 
 //     Ok(())
 // }

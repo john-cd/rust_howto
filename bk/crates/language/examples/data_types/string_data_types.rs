@@ -5,8 +5,8 @@ fn main() {
     let u: &str = "Hello"; // String slice.
     let v: String = String::from("World"); // Owned string.
 
-    println!("String slice: {}", u);
-    println!("Owned string: {}", v);
+    println!("String slice: {u}");
+    println!("Owned string: {v}");
 
     println!(
         "String concatenation: {} + {} = {}",

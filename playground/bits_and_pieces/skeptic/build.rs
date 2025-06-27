@@ -32,7 +32,7 @@ fn main() -> Result<()> {
     let markdown_path = root_path.join("src/");
     if !Path::new(&markdown_path).exists() {
         let msg = format!("The folder {:?} does not exist.", markdown_path);
-        println!("cargo:warning=ERROR: {}", msg);
+        println!("cargo:warning=ERROR: {msg}");
         bail!("{}", msg);
     }
 

@@ -8,7 +8,7 @@ use anyhow::Result;
 
 fn prompt(s: &str) -> Result<String> {
     use std::io::Write;
-    print!("{}", s);
+    print!("{s}");
     std::io::stdout().flush()?;
     let mut input = String::new();
     std::io::stdin().read_line(&mut input)?;

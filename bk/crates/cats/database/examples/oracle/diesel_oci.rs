@@ -87,8 +87,7 @@ fn establish_connection(
     // Example: "oracle://user:secret@127.0.0.1/MY_DB".
     // The connection string format is:
     // "oracle://<username>:<password>@<db_url>"
-    let connection_string =
-        format!("oracle://{}:{}@{}", username, password, db_url);
+    let connection_string = format!("oracle://{username}:{password}@{db_url}");
 
     // Create and return the connection
     OciConnection::establish(&connection_string)

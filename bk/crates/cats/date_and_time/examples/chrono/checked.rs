@@ -14,7 +14,7 @@ fn day_earlier(date_time: DateTime<Utc>) -> Option<DateTime<Utc>> {
 /// Demonstrates checked arithmetic with `DateTime` and `Duration`.
 fn main() {
     let now = Utc::now();
-    println!("{}", now);
+    println!("{now}");
 
     let almost_three_weeks_from_now = now
         .checked_add_signed(Duration::try_weeks(2).unwrap())
@@ -24,12 +24,12 @@ fn main() {
         .and_then(day_earlier);
 
     match almost_three_weeks_from_now {
-        Some(x) => println!("{}", x),
+        Some(x) => println!("{x}"),
         None => eprintln!("Almost three weeks from now overflows!"),
     }
 
     match now.checked_add_signed(TimeDelta::MAX) {
-        Some(x) => println!("{}", x),
+        Some(x) => println!("{x}"),
         None => eprintln!(
             "We can't use chrono to tell the time for the Solar System to complete more than one full orbit around the galactic center."
         ),

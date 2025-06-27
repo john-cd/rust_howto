@@ -53,10 +53,10 @@ fn main() {
     let data = [3, 1, 6, 1, 5, 8, 1, 8, 10, 11];
 
     let data_mean = mean(&data);
-    println!("Mean is {:?}", data_mean);
+    println!("Mean is {data_mean:?}");
 
     let data_std_deviation = std_deviation(&data);
-    println!("Standard deviation is {:?}", data_std_deviation);
+    println!("Standard deviation is {data_std_deviation:?}");
 
     let zscore = match (data_mean, data_std_deviation) {
         (Some(mean), Some(std_deviation)) => {

@@ -7,7 +7,7 @@ fn main() {
     // Spawn a new thread and store its handle in `thread_one`.
     let thread_one = thread::spawn(|| {
         for i in 1..10 {
-            println!("hi number {} from the spawned thread!", i);
+            println!("hi number {i} from the spawned thread!");
             thread::sleep(Duration::from_millis(1));
         }
     });

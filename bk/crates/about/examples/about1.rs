@@ -17,7 +17,7 @@ fn main() -> Result<()> {
     // Parse the String to an IP address.
     let addr: IpAddr = s.parse()?;
 
-    println!("{:?}", addr);
+    println!("{addr:?}");
     Ok(())
 }
 // ANCHOR_END: example

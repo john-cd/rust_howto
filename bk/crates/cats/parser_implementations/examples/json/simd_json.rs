@@ -39,33 +39,33 @@ fn main() {
     // copying, making it very fast.
     match simd_json::to_borrowed_value(&mut json_string) {
         Ok(json) => {
-            println!("Parsed JSON: {:?}", json);
+            println!("Parsed JSON: {json:?}");
 
             // Access values using `ValueAccess` traits.
             if let Some(name) = json.get_str("name") {
-                println!("Name: {}", name);
+                println!("Name: {name}");
             }
 
             if let Some(age) = json.get_u64("age") {
-                println!("Age: {}", age);
+                println!("Age: {age}");
             }
 
             if let Some(city) = json.get_str("city") {
-                println!("City: {}", city);
+                println!("City: {city}");
             }
 
             if let Some(numbers) = json.get_array("numbers") {
-                println!("Numbers: {:?}", numbers);
+                println!("Numbers: {numbers:?}");
             }
 
             if let Some(nested) = json.get("nested") {
                 if let Some(nested_value) = nested.get_bool("value") {
-                    println!("Nested Value: {}", nested_value);
+                    println!("Nested Value: {nested_value}");
                 }
             }
         }
         Err(e) => {
-            eprintln!("Error parsing JSON: {}", e);
+            eprintln!("Error parsing JSON: {e}");
         }
     }
 
@@ -79,7 +79,7 @@ fn main() {
         *name = OwnedValue::from("Bob");
     }
 
-    println!("Modified Owned JSON: {}", owned_json);
+    println!("Modified Owned JSON: {owned_json}");
 }
 // ANCHOR_END: example
 #[test]

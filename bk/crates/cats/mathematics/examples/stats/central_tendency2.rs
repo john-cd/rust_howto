@@ -19,7 +19,7 @@ fn main() {
         .max_by_key(|&(_, count)| count)
         .map(|(value, _)| *value);
 
-    println!("Mode of the data is {:?}", mode);
+    println!("Mode of the data is {mode:?}");
 }
 // ANCHOR_END: example
 

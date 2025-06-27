@@ -34,7 +34,7 @@ fn main() {
 
     #[allow(clippy::single_match)]
     match robot_name {
-        Some(ref name) => println!("Name (immutable ref): {}", name), /* `name` is `&String` */
+        Some(ref name) => println!("Name (immutable ref): {name}"), /* `name` is `&String` */
         None => (),
     }
 
@@ -43,7 +43,7 @@ fn main() {
         name_mut.push_str(" Rodriguez"); /* `name_mut` is `&mut String` */
     }
     // `robot_name` remains available, since we did not move its contents.
-    println!("Full name: {:?}", robot_name); // Some("Bender Rodriguez")
+    println!("Full name: {robot_name:?}"); // Some("Bender Rodriguez")
 
     // Note that `ref` works in `let` bindings as well, but its use is
     // discouraged:

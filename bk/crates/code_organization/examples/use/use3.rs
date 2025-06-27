@@ -14,7 +14,7 @@ fn main() {
 
     // Let's add something to it then print...
     mymap.entry(42).or_insert("my favorite number".into());
-    println!("{:?}", mymap);
+    println!("{mymap:?}");
 }
 // ANCHOR_END: example
 

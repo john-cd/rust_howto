@@ -26,7 +26,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     // Print the hashed password
     let password_hash = password_hash.to_string();
-    println!("Hashed password: {}", password_hash);
+    println!("Hashed password: {password_hash}");
 
     // 2) Later, in order to verify a password, the hash is retrieved from the
     // database, and the password is checked against it.
@@ -35,7 +35,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     let is_valid = Scrypt.verify_password(password, &parsed_hash).is_ok();
 
     // Print the verification result
-    println!("Password is valid: {}", is_valid);
+    println!("Password is valid: {is_valid}");
 
     Ok(())
 }

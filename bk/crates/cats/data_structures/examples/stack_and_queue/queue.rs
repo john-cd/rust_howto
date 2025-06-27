@@ -14,7 +14,7 @@ fn main() {
 
     while let Some(front) = queue.pop_front() {
         // Dequeue elements until the queue is empty.
-        println!("Dequeued: {}", front);
+        println!("Dequeued: {front}");
     }
 
     println!("Queue is empty: {}", queue.is_empty());

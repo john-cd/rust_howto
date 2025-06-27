@@ -12,7 +12,7 @@ struct S(i32);
 
 fn simple_tests() {
     let zero = S::default(); // Courtesy of `Default`.
-    println!("Debug formatting: {:?}", zero); // Courtesy of `Debug`.
+    println!("Debug formatting: {zero:?}"); // Courtesy of `Debug`.
     dbg!(&zero);
     let one = S(1);
     let also_one = one; // Courtesy of `Clone`, `Copy`.
@@ -37,7 +37,7 @@ fn hash() {
 
     // Retrieve a value using an `S` key:
     if let Some(value) = map.get(&S(10)) {
-        println!("Found: {}", value); // Output: Found: Value for S(10).
+        println!("Found: {value}"); // Output: Found: Value for S(10).
     }
 }
 

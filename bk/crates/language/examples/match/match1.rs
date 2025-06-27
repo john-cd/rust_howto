@@ -35,7 +35,7 @@ fn value_in_cents(coin: Coin) -> u8 {
         // If the coin is a Quarter, which contains a String,
         // the `state` identifier is assigned the value of the field in the `enum` variant.
         Coin::Quarter(state) => {
-            println!("State quarter from {:?}!", state);
+            println!("State quarter from {state:?}!");
             25
         } // Rust's match expressions are exhaustive. This means that you must cover all possible cases.
           // When needed, you can add a catchall via the `_` pattern.

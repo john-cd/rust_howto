@@ -30,13 +30,13 @@ fn defer() {
 /// Use `scopeguard::guard` if the scope guard closure needs to access an outer
 /// value that is also mutated outside of the scope guard.
 fn process_file(filename: &str) -> Result<(), Error> {
-    println!("Create file: {}", filename);
+    println!("Create file: {filename}");
     let file = File::create(filename)?;
 
     let mut file_guard = scopeguard::guard(file, |f| {
         // Ensure that all in-memory file data reaches the filesystem.
         let _ = f.sync_all();
-        println!("Closing file: {}", filename);
+        println!("Closing file: {filename}");
     });
 
     println!("Write to file.");

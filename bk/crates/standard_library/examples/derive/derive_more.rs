@@ -68,7 +68,7 @@ fn main() {
 
     // Using `Constructor`.
     let user = User::new(UserId(12345), "Alice".to_string(), true);
-    println!("{:?}", user); // User { id: UserId(12345), name: "Alice", active: true }.
+    println!("{user:?}"); // User { id: UserId(12345), name: "Alice", active: true }.
 
     // Using `Deref` and `DerefMut`.
     let mut stack = Stack {

@@ -23,26 +23,26 @@ fn main() {
     let mut small_vec: SmallVec<i32, 4> = smallvec![1, 2, 3, 4];
 
     // Print the current state of the SmallVec.
-    println!("SmallVec (inline): {:?}", small_vec);
+    println!("SmallVec (inline): {small_vec:?}");
 
     // Push beyond the inline capacity, causing a heap allocation.
     small_vec.push(5);
 
     // Print the state of the SmallVec after pushing beyond capacity.
-    println!("SmallVec (heap-allocated): {:?}", small_vec);
+    println!("SmallVec (heap-allocated): {small_vec:?}");
 
     // Access elements using indexing.
     for i in 0..small_vec.len() {
-        println!("Element at index {}: {}", i, small_vec[i]);
+        println!("Element at index {i}: {}", small_vec[i]);
     }
 
     // Pop an element from the SmallVec.
     if let Some(value) = small_vec.pop() {
-        println!("Popped value: {}", value);
+        println!("Popped value: {value}");
     }
 
     // Print the state of the SmallVec after popping.
-    println!("SmallVec after popping: {:?}", small_vec);
+    println!("SmallVec after popping: {small_vec:?}");
 
     // Split off the SmallVec.
     // `split_off` splits the vector into two at the given index.

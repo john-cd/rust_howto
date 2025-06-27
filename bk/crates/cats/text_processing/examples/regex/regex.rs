@@ -83,7 +83,7 @@ fn extract_inline_links(contents: &str) {
 fn search_with_all_regexes(contents: &str) {
     // Try to match all reggular expressions
     for (key, re) in GLOBAL_REGEX.iter() {
-        println!("----------------------\nLooking for {}:\n", key);
+        println!("----------------------\nLooking for {key}:\n");
         for caps in re.0.captures_iter(contents) {
             // Print the whole match.
             print!("{} -> ", &caps[0]);

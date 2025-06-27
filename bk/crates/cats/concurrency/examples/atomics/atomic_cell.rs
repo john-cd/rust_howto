@@ -20,7 +20,7 @@ fn main() {
     // Consumes the atomic and returns the contained value.
     let v = a.into_inner();
     assert_eq!(v, 9);
-    println!("{}", v);
+    println!("{v}");
 }
 // ANCHOR_END: example
 

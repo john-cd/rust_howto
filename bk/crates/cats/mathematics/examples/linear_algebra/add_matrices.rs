@@ -12,11 +12,11 @@ fn main() {
 
     let sum = &a + &b;
 
-    println!("{}", a);
+    println!("{a}");
     println!("+");
-    println!("{}", b);
+    println!("{b}");
     println!("=");
-    println!("{}", sum);
+    println!("{sum}");
 }
 // ANCHOR_END: example
 

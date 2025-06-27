@@ -8,7 +8,7 @@ fn main() {
     // at each iteration, until the vector is empty and `pop` returns `None`,
     // which stops the loop.
     while let Some(top) = stack.pop() {
-        println!("{}", top);
+        println!("{top}");
     }
 }
 // ANCHOR_END: example

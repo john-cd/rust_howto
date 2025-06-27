@@ -119,12 +119,11 @@ fn main() {
         let handle = thread::spawn(move || {
             // Acquire the lock - this call spins until successful.
             let mut num = counter_clone.lock();
-            // Lock acquired, `num` is the SpinlockGuard.
+            // Lock acquired, `num` is the `SpinlockGuard`.
 
             let current_val = *num;
             println!(
-                "Thread {} acquired lock, value = {}. Incrementing...",
-                i, current_val
+                "Thread {i} acquired lock, value = {current_val}. Incrementing..."
             );
 
             // Access and modify the data through the guard.
@@ -148,7 +147,7 @@ fn main() {
 
     // Access the final value in the main thread.
     let final_value = *counter.lock(); // Lock, dereference, unlock.
-    println!("\nFinal counter value: {}", final_value);
+    println!("\nFinal counter value: {final_value}");
 
     assert_eq!(final_value, 5);
 }

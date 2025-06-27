@@ -15,7 +15,7 @@ fn main() -> Result<()> {
 
     println!("Status: {}", res.status());
     println!("Headers:\n{:#?}", res.headers());
-    println!("Body:\n{}", body);
+    println!("Body:\n{body}");
 
     Ok(())
 }

@@ -27,11 +27,11 @@ fn main() {
 
     // Serialize the struct to a JSON string.
     let json = serde_json::to_string(&person).unwrap();
-    println!("Serialized: {}", json);
+    println!("Serialized: {json}");
 
     // Deserialize the JSON string back to a struct.
     let deserialized_person: Person = serde_json::from_str(&json).unwrap();
-    println!("Deserialized: {:?}", deserialized_person);
+    println!("Deserialized: {deserialized_person:?}");
 }
 // ANCHOR_END: example
 

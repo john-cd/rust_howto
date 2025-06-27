@@ -33,7 +33,7 @@ fn main() {
     let ciphertext = cipher
         .encrypt(nonce, plaintext.as_ref())
         .expect("encryption failure!");
-    println!("Ciphertext: {:?}", ciphertext);
+    println!("Ciphertext: {ciphertext:?}");
 
     let decrypted_ciphertext = cipher
         .decrypt(nonce, ciphertext.as_ref())

@@ -43,7 +43,7 @@
 //     let code = r#"
 //         fn main() {
 //             let x = 10;
-//             println!("x = {}", x);
+//             println!("x = {x}");
 //         }
 //     "#;
 
@@ -81,7 +81,7 @@
 //                 let start = node.start_byte();
 //                 let end = node.end_byte();
 //                 let variable_name = &code[start..end];
-//                 println!("- {}", variable_name);
+//                 println!("- {variable_name}");
 //             }
 //         }
 //     }
@@ -108,7 +108,7 @@
 //         let start = node.start_byte();
 //         let end = node.end_byte();
 //         let function_name = &code[start..end];
-//         println!("- {}", function_name);
+//         println!("- {function_name}");
 //     }
 
 //     // Example of using predicates:

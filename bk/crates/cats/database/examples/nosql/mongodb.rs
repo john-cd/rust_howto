@@ -42,7 +42,7 @@ async fn main() -> anyhow::Result<()> {
 
     let filter = doc! { "name": "Alice" };
     if let Some(user) = collection.find_one(filter).await? {
-        println!("Found user: {:?}", user);
+        println!("Found user: {user:?}");
     } else {
         println!("User not found");
     }

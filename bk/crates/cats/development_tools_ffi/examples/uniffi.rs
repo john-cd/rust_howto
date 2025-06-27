@@ -9,7 +9,7 @@
 
 // #[uniffi::export]
 // pub fn greet(name: String) -> String {
-//     format!("Hello, {}!", name)
+//     format!("Hello, {name}!")
 // }
 
 // #[uniffi::export] // marks as available for FFI.

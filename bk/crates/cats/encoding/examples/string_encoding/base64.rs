@@ -13,7 +13,7 @@ fn main() -> Result<()> {
     let decoded: Vec<u8> = BASE64_STANDARD.decode(&encoded)?;
 
     println!("origin: {}", str::from_utf8(hello)?);
-    println!("base64 encoded: {}", encoded);
+    println!("base64 encoded: {encoded}");
     println!("back to origin: {}", str::from_utf8(&decoded)?);
 
     Ok(())

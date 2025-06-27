@@ -45,7 +45,7 @@ fn main() {
         .expect("Failed to render template");
 
     // Print the rendered template:
-    println!("{}", rendered);
+    println!("{rendered}");
 }
 // ANCHOR_END: example
 

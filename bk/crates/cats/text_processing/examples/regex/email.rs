@@ -20,11 +20,11 @@ fn extract_login(input: &str) -> Option<&str> {
 
 fn main() {
     let login = extract_login(r"I❤email@example.com");
-    println!("{:?}", login);
+    println!("{login:?}");
     assert_eq!(login, Some(r"I❤email"));
 
     let login = extract_login(r"sdf+sdsfsd.as.sdsd@jhkk.d.rl");
-    println!("{:?}", login);
+    println!("{login:?}");
     assert_eq!(login, Some(r"sdf+sdsfsd.as.sdsd"));
 
     assert_eq!(extract_login(r"More@Than@One@at.com"), None);

@@ -34,11 +34,11 @@ async fn my_bg_task(i: u64) {
     // By subtracting, the tasks with larger values of i sleep for a
     // shorter duration.
     let millis = 1000 - 50 * i;
-    println!("Task {} sleeping for {} ms.", i, millis);
+    println!("Task {i} sleeping for {millis} ms.");
 
     tokio::time::sleep(tokio::time::Duration::from_millis(millis)).await;
 
-    println!("Task {} stopping.", i);
+    println!("Task {i} stopping.");
 }
 // ANCHOR_END: example
 

@@ -26,9 +26,9 @@ fn main() -> anyhow::Result<()> {
     // Print the diff:
     for chunk in changeset {
         match chunk {
-            Result::Both(s, _) => println!(" {}", s),
-            Result::Left(s) => println!("-{}", s),
-            Result::Right(s) => println!("+{}", s),
+            Result::Both(s, _) => println!(" {s}"),
+            Result::Left(s) => println!("-{s}"),
+            Result::Right(s) => println!("+{s}"),
         }
     }
 

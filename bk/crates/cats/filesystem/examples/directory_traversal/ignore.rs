@@ -28,13 +28,13 @@ fn main() {
             Ok(entry) => {
                 let path = entry.path();
                 if path.is_file() {
-                    println!("File: {:?}", path);
+                    println!("File: {path:?}");
                 } else if path.is_dir() {
-                    println!("Directory: {:?}", path);
+                    println!("Directory: {path:?}");
                 }
             }
             Err(err) => {
-                eprintln!("Error: {}", err);
+                eprintln!("Error: {err}");
             }
         }
     }

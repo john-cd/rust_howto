@@ -29,7 +29,7 @@ fn fibonacci(n: u64) -> u64 {
  )]
 fn fetch_data(key: usize) -> String {
     println!("Expensive data fetching simulated here.");
-    format!("Data for key {}", key)
+    format!("Data for key {key}")
 }
 // You can also specify the cache name and type, the way it is created, the key
 // type, execution synchronization options, handling of `Result` and `Option`

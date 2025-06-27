@@ -15,7 +15,7 @@ fn main() -> anyhow::Result<()> {
         .body_mut()
         .read_to_string()?;
 
-    println!("Response: {}", response);
+    println!("Response: {response}");
     Ok(())
 }
 // ANCHOR_END: example

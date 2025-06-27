@@ -37,7 +37,7 @@ fn main() {
     "#;
 
     let parsed_toml: Config = toml::from_str(toml_string).unwrap();
-    println!("{:#?}", parsed_toml);
+    println!("{parsed_toml:#?}");
 }
 // ANCHOR_END: example
 

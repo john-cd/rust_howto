@@ -26,21 +26,21 @@
 //                 event: WindowEvent::Resized(physical_size),
 //                 ..
 //             } => {
-//                 println!("Resized to: {:?}", physical_size);
+//                 println!("Resized to: {physical_size:?}");
 //                 // Handle resize event here (e.g., redraw graphics)
 //             }
 //             Event::WindowEvent {
 //                 event: WindowEvent::Moved(position),
 //                 ..
 //             } => {
-//                 println!("Moved to: {:?}", position);
+//                 println!("Moved to: {position:?}");
 //             }
 //             Event::WindowEvent {
 //                 event: WindowEvent::KeyboardInput { input, .. },
 //                 ..
 //             } => {
 //                 if let Some(keycode) = input.virtual_keycode {
-//                     println!("Key pressed: {:?}", keycode);
+//                     println!("Key pressed: {keycode:?}");
 //                     // Handle keyboard input here
 //                 }
 //             }

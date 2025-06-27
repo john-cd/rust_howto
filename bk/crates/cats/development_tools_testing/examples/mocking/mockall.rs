@@ -50,7 +50,7 @@ impl<T: UserRepository> UserService<T> {
     fn get_user(&self, id: u64) -> Result<User, String> {
         self.repository
             .find_by_id(id)
-            .ok_or_else(|| format!("User with id {} not found", id))
+            .ok_or_else(|| format!("User with id {id} not found"))
     }
 
     /// Updates a user's email.

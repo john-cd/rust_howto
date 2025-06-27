@@ -36,7 +36,7 @@ fn main() -> Result<()> {
         .trim(); // Remove any extraneous newlines.
     // Parse the version string into a `semver::Version`.
     let parsed_version =
-        Version::parse(version).context(format!("version: {}", version))?;
+        Version::parse(version).context(format!("version: {version}"))?;
 
     // Check if the parsed version meets the required version constraint.
     if !version_test.matches(&parsed_version) {
@@ -46,7 +46,7 @@ fn main() -> Result<()> {
             version_constraint
         );
     }
-    println!("{:?}", parsed_version);
+    println!("{parsed_version:?}");
     Ok(())
 }
 // ANCHOR_END: example

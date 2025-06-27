@@ -17,7 +17,7 @@ fn main() {
     // Print the set (elements are printed in sorted order).
     println!("Names in the set:");
     for name in &names {
-        println!("{}", name);
+        println!("{name}");
     }
 
     // Check if a name is in the set.
@@ -31,7 +31,7 @@ fn main() {
     // Iterate over a range of names.
     println!("\nNames starting with 'B' and beyond:");
     for name in names.range("B"..) {
-        println!("{}", name);
+        println!("{name}");
     }
 
     // Find the first and last elements.
@@ -50,21 +50,21 @@ fn main() {
     let difference = names.difference(&other_names);
     println!("\nNames in the set but not in other_names:");
     for name in difference {
-        println!("{}", name);
+        println!("{name}");
     }
 
     // Example of using the union method to combine two sets.
     let union = names.union(&other_names);
     println!("\nUnion of both sets:");
     for name in union {
-        println!("{}", name);
+        println!("{name}");
     }
 
     // Example of using the intersection method to find common elements.
     let intersection = names.intersection(&other_names);
     println!("\nIntersection of both sets:");
     for name in intersection {
-        println!("{}", name);
+        println!("{name}");
     }
 
     // Example of using the symmetric_difference method to find elements in
@@ -72,7 +72,7 @@ fn main() {
     let symmetric_difference = names.symmetric_difference(&other_names);
     println!("\nSymmetric difference of both sets:");
     for name in symmetric_difference {
-        println!("{}", name);
+        println!("{name}");
     }
 
     // Clear the set.

@@ -23,25 +23,25 @@ fn main() -> anyhow::Result<()> {
 
     // Print the parsed arguments:
     if let Some(name) = name {
-        println!("Name: {}", name);
+        println!("Name: {name}.");
     }
 
     if let Some(age) = age {
-        println!("Age: {}", age);
+        println!("Age: {age}.");
     }
 
     if verbose {
-        println!("Verbose mode is on");
+        println!("Verbose mode is on.");
     }
 
     if let Some(file) = file {
-        println!("File: {}", file);
+        println!("File: {file}.");
     }
 
     // Check for unused arguments:
     let remaining_args = args.finish();
     if !remaining_args.is_empty() {
-        eprintln!("Warning: unused arguments! {:?}", remaining_args);
+        eprintln!("Warning: unused arguments! {remaining_args:?}.");
     }
 
     Ok(())

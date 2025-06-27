@@ -36,28 +36,26 @@ fn main() {
     println!("--- Displaying Enum Variants ---");
     let dir = Direction::North;
     // Using the `Display` trait.
-    println!("Current direction: {}", dir);
+    println!("Current direction: {dir}");
 
     println!("\n--- Parsing Strings into Enums ---");
     let input_string_south = "South";
     let input_string_invalid = "Up";
 
-    // Using the EnumString trait:
+    // Using the `EnumString` trait:
     match input_string_south.parse::<Direction>() {
         Ok(direction) => println!(
-            "Parsed '{}' successfully: {:?}.",
-            input_string_south, direction
+            "Parsed '{input_string_south}' successfully: {direction:?}.",
         ),
-        Err(e) => println!("Failed to parse '{}': {}.", input_string_south, e),
+        Err(e) => println!("Failed to parse '{input_string_south}': {e}."),
     }
 
     match input_string_invalid.parse::<Direction>() {
         Ok(direction) => println!(
-            "Parsed '{}' successfully: {:?}.",
-            input_string_invalid, direction
+            "Parsed '{input_string_invalid}' successfully: {direction:?}.",
         ),
         Err(e) => {
-            println!("Failed to parse '{}': {}.", input_string_invalid, e)
+            println!("Failed to parse '{input_string_invalid}': {e}.")
         }
     }
 
@@ -65,7 +63,7 @@ fn main() {
     // Using the `EnumIter` trait:
     println!("All possible directions:");
     for direction in Direction::iter() {
-        println!("- {:?}", direction);
+        println!("- {direction:?}");
     }
 }
 // ANCHOR_END: example

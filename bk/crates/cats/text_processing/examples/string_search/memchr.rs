@@ -13,7 +13,7 @@ fn main() {
 
     // Find first occurrence of 'o'.
     match memchr(b'o', haystack) {
-        Some(index) => println!("Found 'o' at index: {}", index),
+        Some(index) => println!("Found 'o' at index: {index}"),
         None => println!("Character not found"),
     }
 
@@ -37,7 +37,7 @@ fn main() {
 
     // Find all occurrences of 'l'
     let all_l_positions = find_all_occurrences(b'l', haystack);
-    println!("All 'l' positions: {:?}", all_l_positions);
+    println!("All 'l' positions: {all_l_positions:?}");
 }
 // ANCHOR_END: example
 

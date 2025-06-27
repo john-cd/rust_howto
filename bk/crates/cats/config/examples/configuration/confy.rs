@@ -24,7 +24,7 @@ impl ::std::default::Default for MyConfig {
 fn main() -> Result<(), confy::ConfyError> {
     let cfg: MyConfig = confy::load("my-app-name", None)?;
     // confy::store("my-app-name", None, cfg)?;
-    println!("{:?}", cfg);
+    println!("{cfg:?}");
     Ok(())
 }
 // ANCHOR_END: example

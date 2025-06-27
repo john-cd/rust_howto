@@ -26,9 +26,9 @@ async fn main() -> Result<()> {
             .and_then(|name| if name.is_empty() { None } else { Some(name) })
             .unwrap_or("tmp.bin");
 
-        println!("file to download: '{}'", fname);
+        println!("file to download: '{fname}'");
         let fname = tmp_dir.path().join(fname);
-        println!("will be located under: '{:?}'", fname);
+        println!("will be located under: '{fname:?}'");
         File::create(fname)?
     };
     let content = response.text().await?;

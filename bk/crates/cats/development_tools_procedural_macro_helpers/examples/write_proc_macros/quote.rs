@@ -20,7 +20,7 @@ fn main() {
     };
 
     // Print the generated code (for demonstration purposes).
-    println!("{}", tokens);
+    println!("{tokens}");
 }
 // ANCHOR_END: example
 

@@ -215,7 +215,7 @@ fn main() -> anyhow::Result<()> {
     // 1. Retrieve command-line arguments - in this example, default run_mode
     //    ("development"), no custom config file, and port value overriden.
     let cli_args = cli::parse_command_line_args(Some(vec!["myapp", "-p8888"]));
-    println!("Command-line arguments: {:?}\n", cli_args);
+    println!("Command-line arguments: {cli_args:?}\n");
 
     // 2. Read all setting sources:
     let settings = cfg::read_settings(cli_args)?;

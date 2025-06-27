@@ -52,12 +52,12 @@ fn main() {
     let mut v2 = v1.clone();
     v2.push_back(4);
 
-    println!("Original vector: {:?}", v1);
-    println!("Modified vector: {:?}", v2);
+    println!("Original vector: {v1:?}");
+    println!("Modified vector: {v2:?}");
 
     // Create a new vector with the value at index index updated.
     let v3 = v2.update(1, 10);
-    println!("Updated vector: {:?}", v3);
+    println!("Updated vector: {v3:?}");
 
     // Simpler: use the `vector!` macro.
     assert_eq!(5, vector![1, 2, 3, 4, 5].len());
@@ -95,8 +95,8 @@ fn main() {
     let mut map2 = map1.clone();
     map2.insert("key3", 300);
 
-    println!("Original map: {:?}", map1);
-    println!("Modified map: {:?}", map2);
+    println!("Original map: {map1:?}");
+    println!("Modified map: {map2:?}");
 
     // Immutable HashSet
     let mut set1 = HashSet::new();
@@ -107,8 +107,8 @@ fn main() {
     let mut set2 = set1.clone();
     set2.insert(3);
 
-    println!("Original set: {:?}", set1);
-    println!("Modified set: {:?}", set2);
+    println!("Original set: {set1:?}");
+    println!("Modified set: {set2:?}");
 }
 // ANCHOR_END: example
 

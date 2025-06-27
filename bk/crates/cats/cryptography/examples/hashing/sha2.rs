@@ -16,7 +16,7 @@ fn main() -> anyhow::Result<()> {
     // `Digest::digest` method:
     let hash1 = Sha256::digest(b"my message");
     // Print the hash as a hexadecimal string
-    println!("SHA-256 hash #1: {:x}", hash1);
+    println!("SHA-256 hash #1: {hash1:x}");
 
     // Otherwise, create a Sha256 hasher
     let mut hasher = Sha256::new();
@@ -30,7 +30,7 @@ fn main() -> anyhow::Result<()> {
 
     // Read hash digest and consume hasher
     let hash2 = hasher.finalize();
-    println!("SHA-256 hash #2: {:x}", hash2);
+    println!("SHA-256 hash #2: {hash2:x}");
 
     // Same exercise, but using `Sha512` and `chain_update`:
     let hash3 = Sha512::new()
@@ -40,7 +40,7 @@ fn main() -> anyhow::Result<()> {
         .finalize();
 
     let base64_hash = Base64::encode_string(&hash3);
-    println!("Base64-encoded hash #3: {}", base64_hash);
+    println!("Base64-encoded hash #3: {base64_hash}");
 
     // Hash the contents of a file:
     // First, we will create a file inside of `env::temp_dir()`.
@@ -57,7 +57,7 @@ fn main() -> anyhow::Result<()> {
     let hash4 = hasher.finalize();
     // Constant-time conversion to hexadecimal
     let hex_hash = base16ct::lower::encode_string(&hash4);
-    println!("Hex-encoded hash #4: {}", hex_hash);
+    println!("Hex-encoded hash #4: {hex_hash}");
 
     Ok(())
 }

@@ -29,7 +29,7 @@ fn describe_status(status: &HttpStatus) -> Cow<'static, str> {
         HttpStatus::Custom(code, message) => {
             // Convert a `String`, which is dynamically built by `format!`, into
             // a `Cow`.
-            format!("Status: {} {}", code, message).into()
+            format!("Status: {code} {message}").into()
         }
     }
 }

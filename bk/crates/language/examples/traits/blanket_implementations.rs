@@ -10,7 +10,7 @@ mod my {
     // Blanket implementation for ALL types that implement `Display`:
     impl<T: Display> VeryUsefulTrait for T {
         fn my_method(&self) -> String {
-            format!("{}", self)
+            format!("{self}")
         }
     }
 }

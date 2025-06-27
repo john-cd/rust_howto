@@ -17,7 +17,7 @@ fn main() {
             // See <https://doc.rust-lang.org/book/ch03-05-control-flow.html>
         }
     };
-    println!("{}", result);
+    println!("{result}");
 }
 // ANCHOR_END: example
 

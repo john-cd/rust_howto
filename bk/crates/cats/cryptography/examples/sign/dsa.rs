@@ -28,7 +28,7 @@ fn main() {
     println!("Message signature verified successfully");
 
     // Print the signature in hex format:
-    println!("Signature: {:x?}", signature);
+    println!("Signature: {signature:x?}");
 }
 // ANCHOR_END: example
 

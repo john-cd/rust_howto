@@ -23,12 +23,12 @@ fn main() {
 
     // Encode the struct to DER
     let der_encoded = my_struct.to_der().expect("Failed to encode");
-    println!("DER Encoded: {:?}", der_encoded);
+    println!("DER Encoded: {der_encoded:?}");
 
     // Decode the DER back to MyStruct
     let decoded_struct =
         MyStruct::from_der(&der_encoded).expect("Failed to decode");
-    println!("Decoded Struct: {:?}", decoded_struct);
+    println!("Decoded Struct: {decoded_struct:?}");
 
     // Verify that the decoded struct matches the original
     assert_eq!(my_struct, decoded_struct);

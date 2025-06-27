@@ -35,27 +35,27 @@
 //     println!("Public Key: {:?}", public_key.to_bytes());
 //     println!("Secret Key: (Keep this SECRET!)"); // Seriously, don't print
 // this in real code!     println!("Signature: {:?}", signature.to_bytes());
-//     println!("Signature is valid: {}", is_valid);
+//     println!("Signature is valid: {is_valid}");
 
 //     // 7. Demonstrate an invalid signature (for testing)
 //     let different_message: &[u8] = b"A different message.";
 //     let invalid_signature: Signature = secret_key.sign(different_message);
 //     let is_invalid: bool = public_key.verify(message, &invalid_signature);
-//     println!("Invalid signature test: {}", is_invalid);
+//     println!("Invalid signature test: {is_invalid}");
 
 //     // Example of using from_bytes (error handling included):
 //     let public_key_bytes = public_key.to_bytes();
 //     let recovered_public_key = PublicKey::from_bytes(&public_key_bytes);
 //     match recovered_public_key {
 //         Ok(pk) => println!("Recovered public key: {:?}", pk.to_bytes()),
-//         Err(e) => println!("Error recovering public key: {}", e),
+//         Err(e) => println!("Error recovering public key: {e}"),
 //     }
 
 //     let signature_bytes = signature.to_bytes();
 //     let recovered_signature = Signature::from_bytes(&signature_bytes);
 //     match recovered_signature {
 //         Ok(sig) => println!("Recovered signature: {:?}", sig.to_bytes()),
-//         Err(e) => println!("Error recovering signature: {}", e),
+//         Err(e) => println!("Error recovering signature: {e}"),
 //     }
 // }
 

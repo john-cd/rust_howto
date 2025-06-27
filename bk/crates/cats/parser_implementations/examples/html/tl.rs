@@ -49,7 +49,7 @@ fn main() -> anyhow::Result<()> {
             .get(parser)
             .ok_or(anyhow::anyhow!("Failed to retrieve node."))?;
         let title_text = node.inner_text(parser);
-        println!("Title: {}", title_text);
+        println!("Title: {title_text}");
     }
 
     Ok(())

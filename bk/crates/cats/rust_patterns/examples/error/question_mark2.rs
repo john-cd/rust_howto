@@ -20,7 +20,7 @@ fn parse_port(s: &str) -> Result<u16, Box<dyn Error>> {
     // handles the complexity for you.
     let port: u16 = s.parse()?;
     if port == 0 {
-        Err(Box::from(format!("Invalid port: {}", port)))
+        Err(Box::from(format!("Invalid port: {port}")))
     } else {
         Ok(port)
     }
@@ -28,12 +28,12 @@ fn parse_port(s: &str) -> Result<u16, Box<dyn Error>> {
 
 fn main() {
     match parse_port("123") {
-        Ok(port) => println!("Port: {}", port),
+        Ok(port) => println!("Port: {port}"),
         Err(err) => panic!("{}", err),
     }
     // Test with an invalid port number (zero).
     // match parse_port("0") {
-    //     Ok(port) => println!("Port: {}", port),
+    //     Ok(port) => println!("Port: {port}"),
     //     Err(err) => panic!("{}", err),
     // }
 }

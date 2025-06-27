@@ -49,7 +49,7 @@ fn main() {
             println!("Got OK");
         }
         Err(err) => {
-            println!("Got {}", err);
+            println!("Got {err}");
         }
     }
 }

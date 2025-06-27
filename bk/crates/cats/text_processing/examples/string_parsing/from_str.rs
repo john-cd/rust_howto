@@ -35,7 +35,7 @@ fn main() {
             );
         }
         Err(_) => {
-            println!("{} is not a valid color hex code!", code);
+            println!("{code} is not a valid color hex code!");
         }
     }
 

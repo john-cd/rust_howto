@@ -30,7 +30,7 @@ async fn main() -> anyhow::Result<()> {
     println!("Response HTTP code: {}", response.status());
     println!("Response contains the following headers:");
     for (ref header, _value) in response.headers() {
-        println!("* {}", header);
+        println!("* {header}");
     }
 
     let (mut write, mut read) = ws_stream.split();
@@ -42,7 +42,7 @@ async fn main() -> anyhow::Result<()> {
     // Read a message from the server.
     if let Some(msg) = read.next().await {
         let msg = msg?;
-        println!("Received: {}", msg);
+        println!("Received: {msg}");
     }
 
     Ok(())

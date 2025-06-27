@@ -19,11 +19,11 @@ fn modify_string(input: &mut Cow<str>) {
 fn main() {
     let mut borrowed = Cow::Borrowed("Hello");
     modify_string(&mut borrowed);
-    println!("{}", borrowed);
+    println!("{borrowed}");
 
     let mut borrowed_to_owned = Cow::Borrowed("Rust");
     modify_string(&mut borrowed_to_owned);
-    println!("{}", borrowed_to_owned);
+    println!("{borrowed_to_owned}");
 }
 // ANCHOR_END: example
 

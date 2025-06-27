@@ -17,7 +17,7 @@ async fn main() -> Result<()> {
     let client = reqwest::Client::new();
     let res = client.post(paste_api).body(contents).send().await?;
     let response_text = res.text().await?;
-    println!("Your paste is located at: {}", response_text);
+    println!("Your paste is located at: {response_text}");
     Ok(())
 }
 // ANCHOR_END: example

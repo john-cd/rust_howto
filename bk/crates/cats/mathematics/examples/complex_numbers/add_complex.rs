@@ -10,7 +10,7 @@ fn main() {
     // Add the two complex numbers.
     let sum = complex_num1 + complex_num2;
 
-    println!("Sum: {}", sum);
+    println!("Sum: {sum}");
 }
 // ANCHOR_END: example
 

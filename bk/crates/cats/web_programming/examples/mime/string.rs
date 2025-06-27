@@ -12,8 +12,7 @@ fn main() {
         .unwrap_or(APPLICATION_OCTET_STREAM);
 
     println!(
-        "MIME for {:?} used default value {:?}",
-        invalid_mime_type, default_mime
+        "MIME for {invalid_mime_type:?} used default value {default_mime:?}"
     );
 
     let valid_mime_type = "TEXT/PLAIN";
@@ -21,10 +20,7 @@ fn main() {
         .parse::<Mime>()
         .unwrap_or(APPLICATION_OCTET_STREAM);
 
-    println!(
-        "MIME for {:?} was parsed as {:?}",
-        valid_mime_type, parsed_mime
-    );
+    println!("MIME for {valid_mime_type:?} was parsed as {parsed_mime:?}");
 }
 // ANCHOR_END: example
 

@@ -105,13 +105,13 @@ fn main() {
     let data = [3, 1, 6, 1, 5, 8, 1, 8, 10, 11];
 
     let part = partition(&data);
-    println!("Partition is {:?}", part);
+    println!("Partition is {part:?}");
 
     let sel = select(&data, 5);
-    println!("Selection at ordered index {} is {:?}", 5, sel);
+    println!("Selection at ordered index 5 is {sel:?}");
 
     let med = median(&data);
-    println!("Median is {:?}", med);
+    println!("Median is {med:?}");
 }
 // ANCHOR_END: example
 

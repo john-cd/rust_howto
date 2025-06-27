@@ -26,36 +26,36 @@ fn main() {
     // Parse the JSON5 string into a `serde_json::Value`.
     match json5::from_str::<Value>(json5_str) {
         Ok(value) => {
-            println!("Parsed JSON5: {:#?}", value);
+            println!("Parsed JSON5: {value:#?}");
 
             if let Some(nested) = value.get("nested") {
                 if let Some(pi) = nested.get("pi") {
-                    println!("Pi: {}", pi);
+                    println!("Pi: {pi}");
                 }
             }
 
             if let Some(hex) = value.get("hexadecimal") {
-                println!("Hex: {}", hex);
+                println!("Hex: {hex}");
             }
 
             if let Some(inf) = value.get("infinity") {
-                println!("Infinity: {}", inf);
+                println!("Infinity: {inf}");
             }
 
             if let Some(nan) = value.get("nan") {
-                println!("NaN: {}", nan);
+                println!("NaN: {nan}");
             }
 
             if let Some(unquoted) = value.get("unquoted") {
-                println!("Unquoted: {}", unquoted);
+                println!("Unquoted: {unquoted}");
             }
 
             if let Some(quoted_key) = value.get("quoted key") {
-                println!("Quoted Key: {}", quoted_key);
+                println!("Quoted Key: {quoted_key}");
             }
         }
         Err(e) => {
-            eprintln!("Error parsing JSON5: {}", e);
+            eprintln!("Error parsing JSON5: {e}");
         }
     }
 }

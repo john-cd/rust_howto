@@ -15,7 +15,7 @@ fn main() {
         .filter(|metadata| metadata.is_file())
         .fold(0, |acc, m| acc + m.len());
 
-    println!("Total size: {} bytes.", total_size);
+    println!("Total size: {total_size} bytes.");
 }
 // ANCHOR_END: example
 

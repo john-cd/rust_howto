@@ -18,7 +18,7 @@ fn bake_cake(sprinkles: Option<&str>) -> String {
     if let Some(sprinkle_choice) = sprinkles {
         cake.push_str(
             // `sprinkle_choice` is never "null" / unassigned.
-            format!(" with a sprinkle of {}", sprinkle_choice).as_str(),
+            format!(" with a sprinkle of {sprinkle_choice}").as_str(),
         );
     } else {
         // Optional fallback behavior if `sprinkles` is `None`.

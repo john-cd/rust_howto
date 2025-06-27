@@ -14,10 +14,7 @@ use anyhow::anyhow;
 fn main() -> Result<()> {
     // Get the current directory.
     let current_dir = env::current_dir()?;
-    println!(
-        "Entries modified in the last 24 hours in {:?}:",
-        current_dir
-    );
+    println!("Entries modified in the last 24 hours in {current_dir:?}:");
 
     // Iterate over the entries within a directory.
     for entry in fs::read_dir(current_dir)? {

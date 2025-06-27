@@ -76,8 +76,8 @@ fn env() {
     // need to call a special deallocation function on the string.
 
     match unsafe { cstr_to_rust_string(path_value) } {
-        Ok(value) => println!("PATH: {}", value),
-        Err(err) => eprintln!("Error getting PATH: {}", err),
+        Ok(value) => println!("PATH: {value}"),
+        Err(err) => eprintln!("Error getting PATH: {err}"),
     }
 }
 
@@ -89,8 +89,8 @@ fn strerror() {
     let err_msg_ptr = unsafe { libc::strerror(errnum) };
 
     match unsafe { cstr_to_rust_string(err_msg_ptr) } {
-        Ok(msg) => println!("\nError {}: {}", errnum, msg),
-        Err(err) => eprintln!("Error getting error message: {}", err),
+        Ok(msg) => println!("\nError {errnum}: {msg}"),
+        Err(err) => eprintln!("Error getting error message: {err}"),
     }
 }
 
@@ -100,7 +100,7 @@ fn null_pointer() {
     assert!(null_ptr.is_null());
     match unsafe { cstr_to_rust_string(null_ptr) } {
         Ok(_) => println!("This should not be printed"),
-        Err(e) => println!("\nCaught expected error: {}", e),
+        Err(e) => println!("\nCaught expected error: {e}"),
     }
 }
 

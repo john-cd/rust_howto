@@ -91,7 +91,7 @@ fn main() {
         .pool_size(20)
         .build();
 
-    println!("Database Configuration: {:?}", config);
+    println!("Database Configuration: {config:?}");
 }
 // ANCHOR_END: example
 

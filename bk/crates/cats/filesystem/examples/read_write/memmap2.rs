@@ -19,7 +19,7 @@ fn main() -> Result<(), Error> {
     // file not being modified externally.
     let map = unsafe { Mmap::map(&file)? };
     // Print the memory map (for debugging purposes).
-    println!("{:?}", map);
+    println!("{map:?}");
     // Define some random indexes into the memory map.
     let random_indexes = [0, 1, 2, 19, 22, 10, 11, 29];
     // Assert that a slice of the memory map matches the expected bytes.

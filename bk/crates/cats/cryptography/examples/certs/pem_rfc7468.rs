@@ -18,7 +18,7 @@
 //         encode_string(type_label, LineEnding::default(), &der_data)?;
 //     // Specifies the line ending for PEM encoding (default is \r\n).
 
-//     println!("PEM-encoded data:\n{}", pem_encoded);
+//     println!("PEM-encoded data:\n{pem_encoded}");
 
 //     // Decode PEM data back to DER
 //     let (decoded_type_label, decoded_data) =

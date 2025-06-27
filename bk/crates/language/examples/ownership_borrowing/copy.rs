@@ -7,7 +7,7 @@ fn main() {
     let y = x; // y is a copy of x.
 
     // Both x and y remain valid:
-    println!("x = {}, y = {}", x, y);
+    println!("x = {x}, y = {y}");
 
     // It is possible to make a custom type `Copy` by using the `derive`
     // attribute:
@@ -24,7 +24,7 @@ fn main() {
     let a = S(5); // `a` is a struct that implements `Copy`.
     let b = a; // `b` is a copy of `a`.
     // Both `a` and `b` remain valid:
-    println!("a = {:?}, b = {:?}", a, b);
+    println!("a = {a:?}, b = {b:?}");
 }
 // ANCHOR_END: example
 

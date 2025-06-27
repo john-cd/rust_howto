@@ -19,12 +19,12 @@ fn main() {
     // Iterate in insertion order:
     println!("Iterating over IndexMap in insertion order:");
     for (key, value) in &map {
-        println!("{}: {}", key, value);
+        println!("{key}: {value}");
     }
 
     // Access elements by index:
     if let Some((key, value)) = map.get_index(1) {
-        println!("Element at index 1: {}: {}", key, value);
+        println!("Element at index 1: {key}: {value}");
     }
 
     // Use the `entry` API:
@@ -32,7 +32,7 @@ fn main() {
     map.entry("a").or_insert(10); // This won't change "a" because it already exists.
     println!("IndexMap after using entry API:");
     for (key, value) in &map {
-        println!("{}: {}", key, value);
+        println!("{key}: {value}");
     }
 }
 // ANCHOR_END: example

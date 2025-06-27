@@ -66,7 +66,7 @@ fn main() {
         // Iterate over the map (read-only).
         println!("Iterating over the map:");
         for (key, value) in mref.iter() {
-            println!("{}: {}", key, value);
+            println!("{key}: {value}");
         }
 
         // Aggregate status methods like `len` are typically useful only when a
@@ -77,7 +77,7 @@ fn main() {
     let m = map.clone();
     let writer_thread = thread::spawn(move || {
         for i in 4..=5 {
-            m.pin().insert(format!("key{}", i), i);
+            m.pin().insert(format!("key{i}"), i);
             // Simulate some work
             thread::sleep(std::time::Duration::from_millis(10));
         }
@@ -89,7 +89,7 @@ fn main() {
             // Read multiple times
             println!("Reading from concurrent reader:");
             for (key, value) in m2.pin().iter() {
-                println!("{}: {}", key, value);
+                println!("{key}: {value}");
             }
             thread::sleep(std::time::Duration::from_millis(10));
         }
@@ -101,7 +101,7 @@ fn main() {
     // Final state of the map.
     println!("\nFinal state of the map:");
     for (key, value) in map.pin().iter() {
-        println!("{}: {}", key, value);
+        println!("{key}: {value}");
     }
 }
 // ANCHOR_END: example

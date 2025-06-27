@@ -57,7 +57,7 @@ pub fn main() -> Result<()> {
     })?;
 
     for cat in cats {
-        println!("Found cat {:?}", cat);
+        println!("Found cat {cat:?}");
     }
 
     Ok(())

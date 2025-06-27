@@ -2,7 +2,7 @@
 // ANCHOR: example
 /// Executes a database query and logs it at the debug level.
 fn execute_query(query: &str) {
-    log::debug!("Executing query: {}", query);
+    log::debug!("Executing query: {query}");
 }
 
 fn main() {

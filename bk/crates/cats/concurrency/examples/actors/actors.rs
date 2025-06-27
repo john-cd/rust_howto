@@ -13,7 +13,7 @@
 //     type Msg = String;
 
 //     fn recv(&mut self, ctx: &Context<String>, msg: String, sender: Sender) {
-//         println!("received {}", msg);
+//         println!("received {msg}");
 //     }
 // }
 

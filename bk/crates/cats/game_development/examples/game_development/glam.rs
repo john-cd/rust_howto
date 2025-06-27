@@ -15,17 +15,17 @@ fn main() {
 
     // Vector addition.
     let v3 = v1 + v2;
-    println!("v1 + v2 = {:?}", v3);
+    println!("v1 + v2 = {v3:?}");
 
     // Dot product.
     let dot_product = v1.dot(v2);
-    println!("v1 . v2 = {:?}", dot_product);
+    println!("v1 . v2 = {dot_product:?}");
 
     // Cross product in 3D space.
     let v4 = Vec3::new(1.0, 2.0, 3.0);
     let v5 = Vec3::new(4.0, 5.0, 6.0);
     let cross_product = v4.cross(v5);
-    println!("v4 x v5 = {:?}", cross_product);
+    println!("v4 x v5 = {cross_product:?}");
 
     // Create a 4x4 matrix.
     let mat = Mat4::from_scale_rotation_translation(
@@ -36,7 +36,7 @@ fn main() {
 
     // Transform a vector using the matrix.
     let transformed_vector = mat.transform_point3(Vec3::new(1.0, 0.0, 0.0));
-    println!("Transformed vector: {:?}", transformed_vector);
+    println!("Transformed vector: {transformed_vector:?}");
 }
 // ANCHOR_END: example
 

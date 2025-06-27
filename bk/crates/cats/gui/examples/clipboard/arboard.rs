@@ -19,7 +19,7 @@ pub fn main() {
 
     // Get the text from the clipboard.
     let clipboard_text = clipboard.get_text().unwrap();
-    println!("Text from clipboard: {}", clipboard_text);
+    println!("Text from clipboard: {clipboard_text}");
 }
 // You may also use:  get/set_html/image...
 

@@ -24,8 +24,8 @@ fn main() {
     let china_timezone = FixedOffset::east_opt(8 * 3600).unwrap();
     let rio_timezone = FixedOffset::west_opt(2 * 3600).unwrap();
     // Print the time in different timezones.
-    println!("Local time now is {}", local_time);
-    println!("UTC time now is {}", utc_time);
+    println!("Local time now is {local_time}");
+    println!("UTC time now is {utc_time}");
     println!(
         "Time in Hong Kong now is {}",
         china_timezone.from_utc_datetime(&utc_time)

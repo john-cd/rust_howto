@@ -32,8 +32,8 @@ fn read_username_from_file() -> Result<String, io::Error> {
 /// error message if an error occurs.
 fn main() {
     match read_username_from_file() {
-        Ok(name) => println!("User name: {}", name),
-        Err(err) => println!("Error: {}", err),
+        Ok(name) => println!("User name: {name}"),
+        Err(err) => println!("Error: {err}"),
     }
 }
 // ANCHOR_END: example

@@ -41,7 +41,7 @@ impl Container {
 fn main() {
     let container = Container::new(FlagsA::Foo | FlagsA::Bar);
     assert_eq!(container.0.bits(), 0b011);
-    println!("{:?}", container);
+    println!("{container:?}");
 
     assert_eq!(Container::new(None).0.bits(), 0b000);
 }

@@ -29,7 +29,7 @@ fn string_slice() {
 ///  although it is more common to use `&[T]` than `AsRef<T>`.
 fn print_vec<T: AsRef<[i32]>>(input: T) {
     let input = input.as_ref(); // Convert to a slice.
-    println!("{:?}", input);
+    println!("{input:?}");
 }
 
 // `Vec<T>` and `[T; N]` implement `AsRef<[T]>`.

@@ -58,7 +58,7 @@ async fn main() -> anyhow::Result<()> {
     //                 .serve_connection(io, service_fn(hello))
     //                 .await
     //             {
-    //                 eprintln!("Error serving connection: {:?}", err);
+    //                 eprintln!("Error serving connection: {err:?}");
     //             }
     //         });
     //     }

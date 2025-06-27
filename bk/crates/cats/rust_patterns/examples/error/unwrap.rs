@@ -20,7 +20,7 @@ fn main() {
     // - If the parsing fails, the program panics with an error message.
     let number: u32 = result.unwrap();
 
-    println!("The number is: {}", number);
+    println!("The number is: {number}");
 
     // 2. `expect` is similar (and often preferred) to `unwrap`.
     // If `Result` is an `Err` value, it panics and displays the message

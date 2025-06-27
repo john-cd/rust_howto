@@ -35,10 +35,7 @@ fn print_alloc() -> anyhow::Result<()> {
     epoch::advance().unwrap();
     let allocated = stats::allocated::read().unwrap();
     let resident = stats::resident::read().unwrap();
-    println!(
-        "{} bytes allocated / {} bytes resident",
-        allocated, resident
-    );
+    println!("{allocated} bytes allocated / {resident} bytes resident");
 
     // Full allocator statistics:
     // tikv_jemalloc_ctl::stats_print::stats_print(std::io::stdout(),

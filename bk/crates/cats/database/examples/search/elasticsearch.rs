@@ -33,13 +33,13 @@ async fn main() -> anyhow::Result<()> {
     // OR: let client = Elasticsearch::default();
 
     let response: Response = index_document(&client).await?;
-    println!("Index response: {:?}", response);
+    println!("Index response: {response:?}");
 
     let search_result: serde_json::Value = search_document(&client).await?;
-    println!("Search result: {:?}", search_result);
+    println!("Search result: {search_result:?}");
 
     let bulk_response: bool = bulk_documents(&client).await?;
-    println!("Bulk response: {:?}", bulk_response);
+    println!("Bulk response: {bulk_response:?}");
 
     cat_indices(client).await?;
 

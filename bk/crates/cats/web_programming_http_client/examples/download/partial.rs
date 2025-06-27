@@ -89,7 +89,7 @@ fn main() -> Result<()> {
 
     println!("starting download...");
     for range in PartialRangeIter::new(0, length - 1, CHUNK_SIZE)? {
-        println!("range {:?}", range);
+        println!("range {range:?}");
         let mut response = client.get(url).header(RANGE, range).send()?;
 
         let status = response.status();

@@ -10,13 +10,13 @@ fn main() {
         let s = String::from("hello");
         // `s` is valid from this point forward.
 
-        println!("{}", s);
+        println!("{s}");
     }
     // The scope is now over, and `s` is no longer valid.
     // Rust automatically returns this memory to the allocator.
     // This prevents memory leaks.
 
-    // ERROR: println!("{}", s);
+    // ERROR: println!("{s}");
 }
 // ANCHOR_END: example
 

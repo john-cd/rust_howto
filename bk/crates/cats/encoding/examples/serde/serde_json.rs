@@ -23,12 +23,12 @@ fn main() {
 
     // Serialize the `Person` instance to a JSON string.
     let json_string = serde_json::to_string(&person).unwrap();
-    println!("Serialized JSON: {}", json_string);
+    println!("Serialized JSON: {json_string}");
 
     // Deserialize the JSON string back into a `Person` instance.
     let deserialized_person: Person =
         serde_json::from_str(&json_string).unwrap();
-    println!("Deserialized person: {:?}", deserialized_person);
+    println!("Deserialized person: {deserialized_person:?}");
 }
 // ANCHOR_END: example
 

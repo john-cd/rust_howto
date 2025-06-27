@@ -33,7 +33,7 @@ fn main() -> Result<()> {
             .map_err(|_| anyhow!("Failed to acquire MutexGuard"))?;
 
         db.iter().enumerate().for_each(|(i, item)| {
-            println!("{}: {}", i, item);
+            println!("{i}: {item}");
         });
     }
     insert("grape")?;

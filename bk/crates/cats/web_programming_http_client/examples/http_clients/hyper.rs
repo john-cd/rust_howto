@@ -29,7 +29,7 @@ use tokio::net::TcpStream;
 async fn fetch_url(url: hyper::Uri) -> anyhow::Result<()> {
     let host = url.host().context("uri has no host")?;
     let port = url.port_u16().unwrap_or(80);
-    let addr = format!("{}:{}", host, port);
+    let addr = format!("{host}:{port}");
 
     let stream = TcpStream::connect(addr).await?;
     let io = TokioIo::new(stream);
@@ -37,7 +37,7 @@ async fn fetch_url(url: hyper::Uri) -> anyhow::Result<()> {
     let (mut sender, conn) = hyper::client::conn::http1::handshake(io).await?;
     tokio::task::spawn(async move {
         if let Err(err) = conn.await {
-            println!("Connection failed: {:?}", err);
+            println!("Connection failed: {err:?}");
         }
     });
 

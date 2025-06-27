@@ -13,7 +13,7 @@ fn main() {
         String::from("example"),
         String::from("example@example.com"),
     ]) {
-        println!("{}", s);
+        println!("{s}");
     }
 }
 // ANCHOR_END: example

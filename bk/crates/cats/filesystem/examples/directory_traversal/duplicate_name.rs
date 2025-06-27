@@ -18,7 +18,7 @@ fn main() {
         *counter += 1;
 
         if *counter == 2 {
-            println!("{}", f_name);
+            println!("{f_name}");
         }
     }
 }

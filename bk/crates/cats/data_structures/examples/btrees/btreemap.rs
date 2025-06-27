@@ -16,12 +16,12 @@ fn main() {
     // Print the map (elements are printed in sorted key order).
     println!("Book ratings:");
     for (book, rating) in &book_ratings {
-        println!("{}: {}", book, rating);
+        println!("{book}: {rating}");
     }
 
     // Get the rating for a specific book.
     if let Some(rating) = book_ratings.get("1984") {
-        println!("Rating for 1984: {}", rating);
+        println!("Rating for 1984: {rating}");
     }
 
     // Check if a book is in the map.
@@ -31,13 +31,13 @@ fn main() {
 
     // Remove a book and its rating.
     if let Some(rating) = book_ratings.remove("Dune") {
-        println!("Removed Dune, rating was {}", rating);
+        println!("Removed Dune, rating was {rating}");
     }
 
     // Iterate over a range of books (lexicographically between "P" and "T").
     println!("\nRatings between 'P' and 'T':");
     for (book, rating) in book_ratings.range("P".."T") {
-        println!("{}: {}", book, rating);
+        println!("{book}: {rating}");
     }
 
     // Find the first and last entries.
@@ -52,20 +52,19 @@ fn main() {
         std::collections::btree_map::Entry::Occupied(mut occupied) => {
             let old_rating = occupied.get();
             println!(
-                "Book '{}' already exists with rating {}",
-                book_title, old_rating
+                "Book '{book_title}' already exists with rating {old_rating}",
             );
             *occupied.get_mut() = new_rating; // Update in place.
-            println!("Updated rating for '{}' to {}", book_title, new_rating);
+            println!("Updated rating for '{book_title}' to {new_rating}");
         }
         std::collections::btree_map::Entry::Vacant(vacant) => {
             vacant.insert(new_rating); // Insert if it doesn't exist.
-            println!("Inserted '{}' with rating {}", book_title, new_rating);
+            println!("Inserted '{book_title}' with rating {new_rating}");
         }
     }
     println!("Updated book ratings:");
     for (book, rating) in &book_ratings {
-        println!("{}: {}", book, rating);
+        println!("{book}: {rating}");
     }
 
     // Clear the map.

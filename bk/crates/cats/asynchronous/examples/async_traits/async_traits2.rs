@@ -29,7 +29,7 @@ fn main() {
         items: vec![1, 2, 3],
     };
     for i in c.items {
-        println!("{}", i);
+        println!("{i}");
     }
 }
 // ANCHOR_END: example

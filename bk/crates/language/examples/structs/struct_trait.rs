@@ -7,7 +7,7 @@ trait SomeBehavior {
 
     // Method with default implementation:
     fn another_action(&self, value: i32) {
-        println!("The default implementation received the value: {}", value);
+        println!("The default implementation received the value: {value}");
     }
 
     // Associated function. In this case, it references the associated type

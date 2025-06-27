@@ -18,7 +18,7 @@ fn main() -> anyhow::Result<()> {
     println!("Response HTTP code: {}", response.status());
     println!("Response contains the following headers:");
     for (ref header, value) in response.headers() {
-        println!("* {} {:?}", header, value);
+        println!("* {header} {value:?}");
     }
 
     // Send a message to the server:
@@ -28,7 +28,7 @@ fn main() -> anyhow::Result<()> {
 
     // Read a message from the server.
     let msg = socket.read()?;
-    println!("Received: {}", msg);
+    println!("Received: {msg}");
 
     Ok(())
 }

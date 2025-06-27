@@ -33,44 +33,39 @@ fn main() {
 
     // Print all values.
     println!("Integers:");
-    println!("i8: {}", a);
-    println!("u8: {}", b);
-    println!("i16: {}", c);
-    println!("u16: {}", d);
-    println!("i32: {}", e);
-    println!("u32: {}", f);
-    println!("i64: {}", g);
-    println!("u64: {}", h);
-    println!("i128: {}", i);
-    println!("u128: {}", j);
-    println!("isize: {}", k);
-    println!("usize: {}", l);
-    println!("inferred i32: {}", m);
+    println!("i8: {a}");
+    println!("u8: {b}");
+    println!("i16: {c}");
+    println!("u16: {d}");
+    println!("i32: {e}");
+    println!("u32: {f}");
+    println!("i64: {g}");
+    println!("u64: {h}");
+    println!("i128: {i}");
+    println!("u128: {j}");
+    println!("isize: {k}");
+    println!("usize: {l}");
+    println!("inferred i32: {m}");
 
     println!("\nFloating-point:");
-    println!("f32: {}", n);
-    println!("f64: {}", o);
+    println!("f32: {n}");
+    println!("f64: {o}");
 
     println!("\nBooleans:");
-    println!("true: {}", p);
-    println!("false: {}", q);
+    println!("true: {p}");
+    println!("false: {q}");
 
     println!("\nCharacters:");
-    println!("ASCII: {}", r);
-    println!("Emoji: {}", s);
-    println!("Symbol: {}", t);
+    println!("ASCII: {r}");
+    println!("Emoji: {s}");
+    println!("Symbol: {t}");
 
     // Type operations:
     println!("\nType operations:");
-    println!(
-        "Integer addition: {} + {} = {}",
-        a,
-        100,
-        a.wrapping_add(100)
-    ); // Using `wrapping_add` to avoid overflow panic.
-    println!("Float multiplication: {} * {} = {}", n, o, (n as f64) * o);
-    println!("Boolean AND: {} && {} = {}", p, q, p && q);
-    println!("Boolean OR: {} || {} = {}", p, q, p || q);
+    println!("Integer addition: {a} + {} = {}", 100, a.wrapping_add(100)); // Using `wrapping_add` to avoid overflow panic.
+    println!("Float multiplication: {n} * {o} = {}", (n as f64) * o);
+    println!("Boolean AND: {p} && {q} = {}", p && q);
+    println!("Boolean OR: {p} || {q} = {}", p || q);
 }
 // ANCHOR_END: example
 

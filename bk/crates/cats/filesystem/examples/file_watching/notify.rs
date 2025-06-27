@@ -26,8 +26,8 @@ impl EventHandler for EventPrinter {
     /// directory.
     fn handle_event(&mut self, res_event: Result<Event>) {
         match res_event {
-            Ok(event) => println!("event: {:?}", event),
-            Err(e) => println!("watch error: {:?}", e),
+            Ok(event) => println!("event: {event:?}"),
+            Err(e) => println!("watch error: {e:?}"),
         }
     }
 }

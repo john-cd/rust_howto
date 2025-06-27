@@ -10,10 +10,10 @@ const LEN: usize = 5;
 fn main() {
     // Constants are essentially inlined wherever they are used, meaning that
     // they are bitwise copied wherever they are used.
-    println!("The length is: {}", LEN);
+    println!("The length is: {LEN}");
 
     // The above is equivalent to:
-    // println!("The maximum points allowed is: {}", 10usize);
+    // println!("The maximum points allowed is: {10usize}");
 
     // Constants are always immutable.
     // ERROR: LEN += 1;
@@ -21,7 +21,7 @@ fn main() {
     // Constants can be used in array definitions; in patterns; initializers of
     // statics & consts; enum discriminants; etc.
     let arr: [i32; LEN] = [0; LEN];
-    println!("arr: {:?}", arr);
+    println!("arr: {arr:?}");
 
     let x = 5;
     match x {
@@ -57,7 +57,7 @@ fn main() {
     // promotion / lifetime extension). Note that multiple references to the
     // same constant are _not_ guaranteed to refer to the same memory address.
     let refer: &'static usize = &LEN;
-    println!("The length again: {}", refer);
+    println!("The length again: {refer}");
 
     // Let's create a struct that implements a `Drop` destructor:
     struct PrintOnDrop(&'static str);
@@ -65,7 +65,7 @@ fn main() {
     impl Drop for PrintOnDrop {
         fn drop(&mut self) {
             // Print the inner string slice.
-            println!("{}", self.0);
+            println!("{0}", self.0);
         }
     }
 

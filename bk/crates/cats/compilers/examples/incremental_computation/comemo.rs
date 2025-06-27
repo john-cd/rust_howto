@@ -33,10 +33,7 @@ fn compute_derived_value(config: Tracked<Config>) -> i32 {
     // implementation block or trait for T annotated with `#[track]`. See below.
     let base_value = config.get_value();
 
-    println!(
-        "`compute_derived_value` called; base_value = {}",
-        base_value
-    );
+    println!("`compute_derived_value` called; base_value = {base_value}");
     // In real-life, this would be an expensive computation.
     base_value * 2 + 10
 }
@@ -68,7 +65,7 @@ fn main() {
 
     // Note the call to `track`.
     let result = compute_derived_value(config.track());
-    println!("First Call - Cache Miss. Result: {}", result);
+    println!("First Call - Cache Miss. Result: {result}");
 
     println!(
         "Second Call - Cache Hit. We called the memoized function with the exact same argument. Result: {}",

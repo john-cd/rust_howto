@@ -47,7 +47,7 @@ fn main() -> anyhow::Result<()> {
                     &cat.description,
                     crate_names.iter().map(AsRef::as_ref).collect(), /* convert Vec<String> into Vec<&str> */
                 )?;
-                println!("{}", markdown);
+                println!("{markdown}");
             }
         }
         cli::Cmd::AlphabeticalCratePage(crates) => {
@@ -67,14 +67,14 @@ fn main() -> anyhow::Result<()> {
                     first_letter,
                     crates.iter().map(AsRef::as_ref).collect(),
                 )?;
-                println!("{}", markdown);
+                println!("{markdown}");
             }
         }
         cli::Cmd::ListCrates(dircmdargs) => {
             let book_root = dircmdargs.dirpathbuf;
             let list = tool_lib::get_dependencies(book_root)?;
             for crt in list {
-                println!("{}", crt);
+                println!("{crt}");
             }
         }
         cli::Cmd::UpdateRefDefs(cmdargs) => {

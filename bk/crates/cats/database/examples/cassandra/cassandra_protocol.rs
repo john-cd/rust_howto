@@ -61,7 +61,7 @@
 //             match result {
 //                 cassandra_protocol::frame::Result::Rows(rows) => {
 //                     for row in rows.rows_content {
-//                         println!("Row: {:?}", row); // Process each row
+//                         println!("Row: {row:?}"); // Process each row
 // (Vec<Value>)                         for val in row {
 //                             match val {
 //                                 Value::Text(t) => println!("Text Value: {}",

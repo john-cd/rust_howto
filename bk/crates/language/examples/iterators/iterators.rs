@@ -21,7 +21,7 @@ fn main() {
     let vec2 = vec![10, 20, 30];
     for x in vec2 {
         // Equivalent to vec2.into_iter()
-        print!("{:?} ", x);
+        print!("{x:?} ");
     }
     println!();
 
@@ -33,7 +33,7 @@ fn main() {
     // so they can be used again.
     for x in &vec3 {
         // Calls `iter()` under the covers.
-        print!("{:?} ", x);
+        print!("{x:?} ");
     }
     println!();
 
@@ -44,7 +44,7 @@ fn main() {
     for x in vec4.iter_mut() {
         *x *= 2;
     }
-    println!("The modified vector is: {:?}", vec4);
+    println!("The modified vector is: {vec4:?}");
 }
 // ANCHOR_END: example
 

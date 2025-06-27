@@ -37,13 +37,13 @@ fn main() {
     // We create an instance of the struct by calling a function:
     let user1: User = build_user("user@example.com".into(), "user".to_string());
 
-    println!("user1: {:?}", user1);
+    println!("user1: {user1:?}");
 
     // Or with an associated function. Note the path syntax
     // `<Type>::<function>`.
     let user2: User = User::new("user@example.com".into(), "user".to_string());
 
-    println!("user2: {:?}", user2);
+    println!("user2: {user2:?}");
 }
 // ANCHOR_END: example
 

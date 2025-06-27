@@ -30,7 +30,7 @@
 // database,     // so spawn it off to run on its own.
 //     tokio::spawn(async move {
 //         if let Err(e) = connection.await {
-//             eprintln!("connection error: {}", e);
+//             eprintln!("connection error: {e}");
 //         }
 //     });
 
@@ -41,7 +41,7 @@
 
 //     for row in rows {
 //         let message: &str = row.get(0);
-//         println!("{}", message);
+//         println!("{message}");
 //     }
 
 //     Ok(())

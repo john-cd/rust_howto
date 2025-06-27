@@ -40,11 +40,11 @@ fn main() {
     match ArithmeticParser::parse(Rule::expression, input) {
         Ok(pairs) => {
             for pair in pairs {
-                println!("{:?}", pair);
+                println!("{pair:?}");
             }
         }
         Err(e) => {
-            eprintln!("Error: {:?}", e);
+            eprintln!("Error: {e:?}");
         }
     }
 }

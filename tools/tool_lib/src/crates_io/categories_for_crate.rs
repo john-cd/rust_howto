@@ -70,7 +70,7 @@ mod tests {
         Crate {
             id: name.to_string(),
             name: name.to_string(),
-            description: Some(format!("Description for {}", name)),
+            description: Some(format!("Description for {name}")),
             license: None,
             documentation: None,
             homepage: None,

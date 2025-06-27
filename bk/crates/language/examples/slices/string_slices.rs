@@ -12,8 +12,8 @@ fn main() {
     // String slices from the `String`:
     let hello: &str = &s[0..5]; // or &s[..5];
     let world: &str = &s[6..11]; // or &s[6..];
-    println!("{}", hello);
-    println!("{}", world);
+    println!("{hello}");
+    println!("{world}");
 
     // Take a slice of the entire `String`:
     let whole_slice = &s[..];

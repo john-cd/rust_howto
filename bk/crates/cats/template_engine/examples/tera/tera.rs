@@ -65,7 +65,7 @@ fn main() -> anyhow::Result<()> {
     let rendered = tera.render("index.html", &context)?;
 
     // Print the rendered template:
-    println!("{}", rendered);
+    println!("{rendered}");
 
     Ok(())
 }

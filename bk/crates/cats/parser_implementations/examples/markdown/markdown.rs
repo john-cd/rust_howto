@@ -26,7 +26,7 @@ This is a simple paragraph with **bold** and *italic* text.
     let html_output = to_html(markdown_text);
     // Also consider using: `markdown::file_to_html`, `markdown::tokenize`.
 
-    println!("{}", html_output);
+    println!("{html_output}");
 }
 // ANCHOR_END: example
 

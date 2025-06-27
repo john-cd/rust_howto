@@ -61,10 +61,10 @@ fn main() -> anyhow::Result<()> {
     // You can also implement a custom `Visitor`.
     let mut visited = vec![];
     let _ = sqlparser::ast::visit_statements(&statements, |stmt| {
-        visited.push(format!("Statement: {}", stmt));
+        visited.push(format!("Statement: {stmt}"));
         ControlFlow::<()>::Continue(())
     });
-    println!("{:?}", visited);
+    println!("{visited:?}");
 
     Ok(())
 }

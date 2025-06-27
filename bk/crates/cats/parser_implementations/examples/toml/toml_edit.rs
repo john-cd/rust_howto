@@ -70,7 +70,7 @@ path = "src/main.rs"
     }
 
     // Print the modified document - calls `to_string()`.
-    println!("{}", doc);
+    println!("{doc}");
 
     Ok(())
 }

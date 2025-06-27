@@ -32,7 +32,7 @@ fn main() -> anyhow::Result<()> {
     // Using with replacement
     let ac = AhoCorasick::new(patterns)?;
     let result = ac.replace_all(text, &["APPLE", "BANANA", "ORANGE"]);
-    println!("\nReplaced text: {}", result);
+    println!("\nReplaced text: {result}");
 
     // Finding all matches with overlapping patterns
     let patterns = &["abc", "bc", "c"];
@@ -85,7 +85,7 @@ fn main() -> anyhow::Result<()> {
 
     println!("\nWord counts:");
     for (pattern, count) in counts {
-        println!("{}: {}", pattern, count);
+        println!("{pattern}: {count}");
     }
 
     Ok(())

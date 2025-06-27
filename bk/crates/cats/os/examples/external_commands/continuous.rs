@@ -33,7 +33,7 @@ fn main() -> Result<(), Error> {
         .map_while(Result::ok)
         // Filter lines that contain the substring "usb".
         .filter(|line| line.contains("usb"))
-        .for_each(|line| println!("{}", line));
+        .for_each(|line| println!("{line}"));
 
     Ok(())
 }

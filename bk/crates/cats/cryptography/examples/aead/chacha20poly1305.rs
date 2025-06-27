@@ -57,8 +57,8 @@ fn encrypt_then_decrypt() {
             .encrypt_in_place_detached(&nonce, b"", &mut ciphertext)
             .unwrap();
 
-        println!("Ciphertext: {:x?}", ciphertext);
-        println!("Tag: {:x?}", tag);
+        println!("Ciphertext: {ciphertext:x?}");
+        println!("Tag: {tag:x?}");
     }
     // --- Decryption ---
     {
@@ -84,7 +84,7 @@ fn encrypt_then_decrypt() {
                 );
             }
             Err(e) => {
-                eprintln!("Decryption error: {}", e);
+                eprintln!("Decryption error: {e}");
             }
         }
 
@@ -113,7 +113,7 @@ fn encrypt_then_decrypt() {
                 );
             }
             Err(e) => {
-                println!("Decryption with bad tag failed as expected: {}", e);
+                println!("Decryption with bad tag failed as expected: {e}");
                 // This is the expected behavior
             }
         }
@@ -142,8 +142,8 @@ fn aad() {
         .encrypt_in_place_detached(&nonce, aad, &mut ciphertext_aad)
         .unwrap();
 
-    println!("Ciphertext with AAD: {:x?}", ciphertext_aad);
-    println!("Tag with AAD: {:x?}", tag_aad);
+    println!("Ciphertext with AAD: {ciphertext_aad:x?}");
+    println!("Tag with AAD: {tag_aad:x?}");
 
     let mut decrypted_plaintext_aad = ciphertext_aad.clone();
     let decrypted_result_aad = cipher_aad.decrypt_in_place_detached(
@@ -161,7 +161,7 @@ fn aad() {
             );
         }
         Err(e) => {
-            eprintln!("Decryption error with AAD: {}", e);
+            eprintln!("Decryption error with AAD: {e}");
         }
     }
 

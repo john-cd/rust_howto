@@ -24,7 +24,7 @@ fn main() -> io::Result<()> {
     // (if it doesn't exist already).
     let path = "temp/example_dir/sub_dir";
     if let Err(e) = std::fs::create_dir_all(path) {
-        println!("Error: {}", e);
+        println!("Error: {e}");
     }
     std::fs::write("temp/example_dir/file1.txt", "Hello, world!")?;
     std::fs::write("temp/example_dir/sub_dir/file2.txt", "Rust is awesome!")?;
@@ -34,7 +34,7 @@ fn main() -> io::Result<()> {
         Ok(_) => println!(
             "Directory 'sub_dir' and all contents removed successfully!"
         ),
-        Err(e) => eprintln!("Failed to remove directory: {}", e),
+        Err(e) => eprintln!("Failed to remove directory: {e}"),
     }
     // Beware:
     // - Calling this on a non-directory (e.g. a symlink to a directory)

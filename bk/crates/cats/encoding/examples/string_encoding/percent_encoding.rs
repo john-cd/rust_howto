@@ -49,16 +49,16 @@ fn main() -> Result<()> {
     let encoded = encode_url_component(original);
     let decoded = decode_url_component(&encoded)?;
 
-    println!("Original:  {}", original);
-    println!("Encoded:   {}", encoded);
-    println!("Decoded:   {}", decoded);
+    println!("Original:  {original}");
+    println!("Encoded:   {encoded}");
+    println!("Decoded:   {decoded}");
 
     // Demonstrate custom encoding
     let custom_input = "special chars: %+";
     let custom_encoded = custom_encode(custom_input);
     println!("\nCustom Encoding:");
-    println!("Original:  {}", custom_input);
-    println!("Encoded:   {}", custom_encoded);
+    println!("Original:  {custom_input}");
+    println!("Encoded:   {custom_encoded}");
 
     Ok(())
 }

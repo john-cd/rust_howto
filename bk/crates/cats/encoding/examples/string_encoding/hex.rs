@@ -12,11 +12,11 @@ fn main() -> Result<(), DecodeError> {
         657220746865206C617A7920646F672E";
 
     let encoded = HEXUPPER.encode(original);
-    println!("{}", encoded);
+    println!("{encoded}");
     assert_eq!(encoded, expected);
 
     let decoded = HEXUPPER.decode(&encoded.into_bytes())?;
-    println!("{:?}", decoded);
+    println!("{decoded:?}");
     assert_eq!(&decoded[..], &original[..]);
 
     Ok(())

@@ -8,13 +8,13 @@ fn say_hello() {
 
 /// Function with one parameter called `name` of type `&str` (string slice).
 fn greet(name: &str) {
-    println!("Hello, {}!", name);
+    println!("Hello, {name}!");
 }
 
 // Function with two parameters: `a` and `b`, both of type `i32`.
 fn add_and_display(a: i32, b: i32) {
     let sum = a + b;
-    println!("{} + {} = {}", a, b, sum);
+    println!("{a} + {b} = {sum}");
 }
 
 /// Function that takes two `i32` values and returns their sum as an `i32`.
@@ -35,7 +35,7 @@ fn foo(x: i32) -> i32 {
 /// Function that implicitly returns the unit type `()`.
 /// This is equivalent to `fn print_coordinates(x: i32, y: i32) -> ()`.
 fn print_coordinates(x: i32, y: i32) {
-    println!("Coordinates: ({}, {})", x, y); // Note the semicolon.
+    println!("Coordinates: ({x}, {y})"); // Note the semicolon.
     // Implicitly return `()`.
 }
 

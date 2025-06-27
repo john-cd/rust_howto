@@ -29,7 +29,7 @@ fn main() {
 
     // Call a C function with the raw pointer. Note the unsafe block.
     let len = unsafe { strlen(raw_ptr) };
-    println!("String length according to C: {}", len);
+    println!("String length according to C: {len}");
 
     // 2. Work with null-terminated strings from C.
 
@@ -44,11 +44,11 @@ fn main() {
 
     // Convert to Rust `&str`.
     let rust_str: &str = borrowed.to_str().expect("Invalid UTF-8");
-    println!("From C: {}", rust_str);
+    println!("From C: {rust_str}");
 
     // Create owned version of the C-style String.
     let owned: CString = CString::from(borrowed);
-    println!("Owned: {:?}", owned);
+    println!("Owned: {owned:?}");
 }
 // ANCHOR_END: example
 

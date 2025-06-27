@@ -64,7 +64,7 @@ fn main() { println!("hello world!"); }
         .await?;
 
     let gist: Gist = response.json().await?;
-    println!("Created {:?}", gist);
+    println!("Created {gist:?}");
 
     let request_url = format!("{}/{}", request_url, gist.id);
     let response = Client::new()

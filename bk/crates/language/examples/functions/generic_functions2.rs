@@ -9,7 +9,7 @@ use std::fmt::Display;
 // meaning `T` must implement the `Debug` trait, so that it can be printed using
 // the `{:?}` format specifier.
 fn print_value<T: Debug>(value: T) {
-    println!("The value is: {:?}", value); // `{:?}` can be used, because `value` implements `Debug`.
+    println!("The value is: {value:?}"); // `{:?}` can be used, because `value` implements `Debug`.
 }
 
 /// Type constraints can be written in a separate `where` clause for clarity.
@@ -18,7 +18,7 @@ fn print_value2<T>(value: T)
 where
     T: Debug + Display,
 {
-    println!("Compare {} and {:?}", value, value);
+    println!("Compare {value} and {value:?}");
 }
 
 /// All type parameters have an implicit bound of `Sized`.
@@ -28,7 +28,7 @@ where
 /// This function can work with types that may not have a known size at compile
 /// time.
 fn generic<T: ?Sized + Display>(t: &T) {
-    println!("{}", t);
+    println!("{t}");
 }
 
 fn main() {

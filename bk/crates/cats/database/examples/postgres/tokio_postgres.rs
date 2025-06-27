@@ -25,7 +25,7 @@ async fn main() -> Result<(), tokio_postgres::Error> {
     // database.
     tokio::spawn(async move {
         if let Err(e) = connection.await {
-            eprintln!("Connection error: {}", e);
+            eprintln!("Connection error: {e}");
         }
     });
 
@@ -59,7 +59,7 @@ async fn main() -> Result<(), tokio_postgres::Error> {
         let name: &str = row.get(1);
         let data: Option<Vec<u8>> = row.get(2);
 
-        println!("Found person: {} with id: {}", name, id);
+        println!("Found person: {name} with id: {id}");
         if let Some(data) = data {
             println!("Data: {:?}", String::from_utf8(data));
         }

@@ -5,15 +5,15 @@ fn concatenate_with_plus() {
     let b = " ";
     let c = String::from("world");
     let result: String = a + b + &c;
-    // Note that `a` is moved here and can no longer be used
-    println!("{}", result);
+    // Note that `a` is moved here and can no longer be used.
+    println!("{result}");
 }
 
 fn concatenate_with_format() {
     let a = String::from("hello");
     let b = String::from("world");
-    let result: String = format!("{} {}", a, b); // or format!("{a} {b}");
-    println!("{}", result);
+    let result: String = format!("{a} {b}");
+    println!("{result}");
 }
 
 fn concatenate_with_push_str() {
@@ -22,23 +22,23 @@ fn concatenate_with_push_str() {
     let c = "world";
     a.push_str(b);
     a.push_str(c);
-    println!("{}", a);
+    println!("{a}");
 }
 
 fn concatenate_with_join() {
     let words = ["hello", "world"];
     let result: String = words.join(" ");
-    println!("{}", result);
+    println!("{result}");
 }
 
 fn concatenate_with_concat_macro() {
     let result: &str = concat!("hello", " ", "world");
-    println!("{}", result);
+    println!("{result}");
 }
 
 fn concatenate_with_concat() {
     let result: String = ["hello", " ", "world"].concat();
-    println!("{}", result);
+    println!("{result}");
 }
 
 use concat_string::concat_string;
@@ -57,7 +57,7 @@ fn concatenate_with_push() {
     // Appends the given `char` to the end of the `String`.
     a.push(b);
     a.push(c);
-    println!("{}", a);
+    println!("{a}");
 }
 
 #[allow(clippy::string_extend_chars)]
@@ -65,19 +65,19 @@ fn concatenate_with_extend() {
     let mut a = String::from("hello");
     let b = " world";
     a.extend(b.chars());
-    println!("{}", a);
+    println!("{a}");
 }
 
 fn concatenate_with_collect() {
     let words = ["hello", " ", "world"];
     let result: String = words.into_iter().collect();
-    println!("{}", result);
+    println!("{result}");
 }
 
 fn concatenate_with_collect_iter() {
     let words = ["hello", " world"];
     let result: String = words.iter().copied().collect();
-    println!("{}", result);
+    println!("{result}");
 }
 
 use joinery::JoinableIterator;
@@ -85,10 +85,10 @@ use joinery::JoinableIterator;
 fn concatenate_with_joinery() {
     let words = ["hello", "world"];
 
-    // Join the words with a space separator
+    // Join the words with a space separator.
     let result = words.iter().join_with(" ").to_string();
 
-    println!("{}", result);
+    println!("{result}");
 }
 
 use std::fmt::Write;
@@ -97,15 +97,15 @@ fn concatenate_with_write_macro() {
     let part1 = "hello";
     let part2 = " world";
     let mut result = String::new();
-    write!(&mut result, "{} {}", part1, part2).unwrap();
-    println!("{}", result);
+    write!(&mut result, "{part1} {part2}").unwrap();
+    println!("{result}");
 }
 
 fn concatenate_with_chain() {
     let part1 = "hello";
     let part2 = " world";
     let result: String = part1.chars().chain(part2.chars()).collect();
-    println!("{}", result);
+    println!("{result}");
 }
 
 fn main() {

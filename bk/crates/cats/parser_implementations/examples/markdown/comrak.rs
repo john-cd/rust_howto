@@ -16,7 +16,7 @@ fn to_html() {
     let html_output =
         markdown_to_html(markdown_input, &ComrakOptions::default());
 
-    println!("{}", html_output);
+    println!("{html_output}");
 }
 
 /// Replaces all instances of `orig_string` with `replacement` in the
@@ -59,7 +59,7 @@ fn main() {
     let repl = "your";
     let html = replace_text(doc, orig, repl);
 
-    println!("{}", html);
+    println!("{html}");
 }
 // ANCHOR_END: example
 

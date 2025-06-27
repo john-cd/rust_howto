@@ -52,11 +52,11 @@ fn main() -> anyhow::Result<()> {
 
     // Parse the TOML string into our `Config` struct.
     let config: Config = basic_toml::from_str(toml_str)?;
-    println!("Parsed config: {:#?}", config);
+    println!("Parsed config: {config:#?}");
 
     // 2. Convert back to TOML string.
     let modified_toml = basic_toml::to_string(&config)?;
-    println!("\nModified TOML:\n{}", modified_toml);
+    println!("\nModified TOML:\n{modified_toml}");
 
     // 3. Write TOML to file.
     fs::write("temp/config.toml", &modified_toml)?;
@@ -64,7 +64,7 @@ fn main() -> anyhow::Result<()> {
     // 4. Read TOML from file.
     let file_content = fs::read_to_string("temp/config.toml")?;
     let file_config: Config = basic_toml::from_str(&file_content)?;
-    println!("\nConfig from file: {:#?}", file_config);
+    println!("\nConfig from file: {file_config:#?}");
 
     // 5. Error handling.
     let invalid_toml = r#"
@@ -75,8 +75,8 @@ fn main() -> anyhow::Result<()> {
     "#;
 
     match basic_toml::from_str::<Config>(invalid_toml) {
-        Ok(config) => println!("Successfully parsed: {:?}", config),
-        Err(e) => println!("Parse error: {}", e),
+        Ok(config) => println!("Successfully parsed: {config:?}"),
+        Err(e) => println!("Parse error: {e}"),
     }
 
     Ok(())

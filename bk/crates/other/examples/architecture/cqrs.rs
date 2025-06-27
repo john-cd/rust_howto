@@ -354,7 +354,7 @@
 //     read_store.rebuild_read_model(events);
 
 //     if let Some(product) = query_handler.get_product(1) {
-//         println!("Product: {:?}", product);
+//         println!("Product: {product:?}");
 //     } else {
 //         println!("Product not found");
 //     }
@@ -369,7 +369,7 @@
 
 //     // read_store.rebuild_read_model(events);
 //     // if let Some(product) = query_handler.get_product(2) {
-//     //     println!("Product: {:?}", product);
+//     //     println!("Product: {product:?}");
 //     // } else {
 //     //     println!("Product not found");
 //     // }

@@ -43,7 +43,7 @@ fn main() -> Result<()> {
             message: cap[2].trim().to_string(),
         })
         .take(5)
-        .for_each(|x| println!("{:?}", x));
+        .for_each(|x| println!("{x:?}"));
 
     Ok(())
 }

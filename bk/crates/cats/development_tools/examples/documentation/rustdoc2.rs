@@ -27,7 +27,7 @@ struct Person {
 
 fn main() {
     let john = new("John");
-    println!("{:?}", john);
+    println!("{john:?}");
 }
 // ANCHOR_END: example
 

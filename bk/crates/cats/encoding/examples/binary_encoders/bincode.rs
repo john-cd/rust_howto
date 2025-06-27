@@ -42,8 +42,8 @@
 //     let deserialized_data_from_buf: MyData = deserialize_from(&mut cursor)?;
 
 //     // Print the deserialized data
-//     println!("{:?}", deserialized_data);
-//     println!("{:?}", deserialized_data_from_buf);
+//     println!("{deserialized_data:?}");
+//     println!("{deserialized_data_from_buf:?}");
 
 //     Ok(())
 // }

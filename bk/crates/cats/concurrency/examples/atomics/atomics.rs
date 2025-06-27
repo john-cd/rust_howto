@@ -35,7 +35,7 @@ fn main() {
 
     // Get the final thread count.
     let final_thread_count = GLOBAL_THREAD_COUNT.load(Ordering::SeqCst);
-    println!("Final threads: {}", final_thread_count);
+    println!("Final threads: {final_thread_count}");
     assert_eq!(final_thread_count, 6);
 }
 // ANCHOR_END: example

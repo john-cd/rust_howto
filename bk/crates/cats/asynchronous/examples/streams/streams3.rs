@@ -19,9 +19,9 @@ async fn fetch_data(id: u32) -> Result<String, String> {
     // Simulate network delay
     time::sleep(Duration::from_millis(100)).await;
     if id % 3 == 0 {
-        Err(format!("Error fetching data for id {}", id))
+        Err(format!("Error fetching data for id {id}"))
     } else {
-        Ok(format!("Data for id {}", id))
+        Ok(format!("Data for id {id}"))
     }
 }
 
@@ -42,8 +42,8 @@ async fn main() {
     stream
         .for_each_concurrent(2, |future| async {
             match future.await {
-                Ok(data) => println!("Processed concurrently: {}", data),
-                Err(e) => println!("Error: {}", e),
+                Ok(data) => println!("Processed concurrently: {data}"),
+                Err(e) => println!("Error: {e}"),
             }
         })
         .await;
@@ -65,14 +65,14 @@ async fn main() {
     let filtered: Vec<_> = stream
         .filter_map(|res| async move {
             match res {
-                Ok(item) => Some(format!("Filtered: {}", item)),
+                Ok(item) => Some(format!("Filtered: {item}")),
                 Err(_) => None, // Filter out errors
             }
         })
         .collect()
         .await;
 
-    println!("Filtered stream results: {:?}", filtered);
+    println!("Filtered stream results: {filtered:?}");
 }
 // ANCHOR_END: example
 

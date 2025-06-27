@@ -11,7 +11,7 @@ fn main() {
 
     let response = execute_query("DROP TABLE students");
     if let Err(err) = response {
-        log::error!("Failed to execute query: {}", err);
+        log::error!("Failed to execute query: {err}");
     }
 }
 // ANCHOR_END: example

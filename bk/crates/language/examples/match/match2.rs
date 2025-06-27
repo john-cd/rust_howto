@@ -20,14 +20,14 @@ fn main() {
         // Match against all Points with x = 0.
         // The values of `y` and `z` are bound to variables `b` and `c`.
         Point { x: 0, y: b, z: c } => {
-            println!("x: 0, y: {}, z: {}", b, c)
+            println!("x: 0, y: {b}, z: {c}")
         } // Note the use of a block after `=>`.
 
         // The following pattern matches any `Point` struct not caught earlier.
         // It binds the value of the x field to a variable named `x`.
         // The `..` syntax means "ignore the other fields".
         // In this case, `y` and `z` are ignored.
-        Point { x, .. } => println!("x is {}", x),
+        Point { x, .. } => println!("x is {x}"),
     }
     // Note that the expressions after `=>` return `()`.
 }

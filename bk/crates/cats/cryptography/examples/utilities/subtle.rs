@@ -32,11 +32,11 @@ fn main() {
 
     let condition = Choice::from(1); // 1 means true
     let selected: u32 = u32::conditional_select(&x, &y, condition);
-    println!("Selected (condition true): {}", selected); // Output: 10
+    println!("Selected (condition true): {selected}"); // Output: 10
 
     let condition = Choice::from(0); // 0 means false
     let selected: u32 = u32::conditional_select(&x, &y, condition);
-    println!("Selected (condition false): {}", selected); // Output: 5
+    println!("Selected (condition false): {selected}"); // Output: 5
 
     // Example 3: CtOption for handling potential failures in constant time:
     // The `CtOption<T>` type represents an optional value similar to the
@@ -65,11 +65,11 @@ fn main() {
     // `Some`, otherwise it returns the provided default value.
     let opt: CtOption<u8> = CtOption::new(10u8, Choice::from(1));
     let val: u8 = opt.unwrap_or(0);
-    println!("Unwrapped value: {}", val);
+    println!("Unwrapped value: {val}");
 
     let none_opt: CtOption<u8> = CtOption::new(5u8, Choice::from(0));
     let default_val = none_opt.unwrap_or(0);
-    println!("Unwrapped default value: {}", default_val);
+    println!("Unwrapped default value: {default_val}");
 }
 // ANCHOR_END: example
 

@@ -39,7 +39,7 @@ pub(crate) struct S;
 /// for the main function.
 pub(crate) fn main() {
     let s = S;
-    println!("{:?}", s);
+    println!("{s:?}");
 }
 // ANCHOR_END: example
 

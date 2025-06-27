@@ -99,10 +99,10 @@ fn main() {
     {
         let repo = repository.lock().unwrap();
         let retrieved_user = repo.get_user(1);
-        println!("Retrieved user: {:?}", retrieved_user);
+        println!("Retrieved user: {retrieved_user:?}");
 
         let all_users = repo.get_all_users();
-        println!("All users: {:?}", all_users);
+        println!("All users: {all_users:?}");
 
         let updated_user = User {
             id: 1,
@@ -112,12 +112,12 @@ fn main() {
         repo.update_user(updated_user.clone());
 
         let retrieved_updated_user = repo.get_user(1);
-        println!("Retrieved updated user: {:?}", retrieved_updated_user);
+        println!("Retrieved updated user: {retrieved_updated_user:?}");
 
         repo.delete_user(2);
 
         let remaining_users = repo.get_all_users();
-        println!("Remaining users: {:?}", remaining_users);
+        println!("Remaining users: {remaining_users:?}");
     }
 }
 // ANCHOR_END: example

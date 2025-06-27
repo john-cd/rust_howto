@@ -76,7 +76,7 @@
 
 //     // Print the results.
 //     for batch in results {
-//         println!("{:?}", batch);
+//         println!("{batch:?}");
 //     }
 
 //     Ok(())

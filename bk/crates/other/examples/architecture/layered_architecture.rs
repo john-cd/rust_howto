@@ -119,12 +119,12 @@ mod presentation {
         user_service.create_user(new_user).await?;
 
         match user_service.get_user(1).await? {
-            Some(user) => println!("Found user: {:?}", user),
+            Some(user) => println!("Found user: {user:?}"),
             None => println!("User not found"),
         }
 
         match user_service.get_user(2).await? {
-            Some(user) => println!("Found user: {:?}", user),
+            Some(user) => println!("Found user: {user:?}"),
             None => println!("User not found"),
         }
 

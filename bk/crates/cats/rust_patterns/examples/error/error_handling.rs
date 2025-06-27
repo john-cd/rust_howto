@@ -21,7 +21,9 @@ fn main() {
     match result {
         Ok(0) => println!("End of file reached."),
         Ok(n) => println!("The total number of bytes read is {n}."),
-        Err(ref e) => eprintln!("Error: {}", e), /* We could also retry `read_line` to attempt to recover from the error. */
+        Err(ref e) => eprintln!("Error: {e}"), /* We could also retry
+                                                * `read_line` to attempt to
+                                                * recover from the error. */
     }
     assert_eq!(my_string, "foo\n");
 }

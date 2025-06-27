@@ -17,7 +17,7 @@ fn main() -> Result<(), Error> {
         .basic_auth(user_name, password)
         .send();
 
-    println!("{:?}", response);
+    println!("{response:?}");
 
     Ok(())
 }

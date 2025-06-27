@@ -24,12 +24,12 @@ fn main() -> Result<(), Error> {
     let socket = SocketAddrV4::new(loopback, 0); // 0 means any available port.
     let listener = TcpListener::bind(socket)?; // Bind to the socket.
     let port = listener.local_addr()?;
-    println!("Listening on {}, access this port to end the program", port);
+    println!("Listening on {port}, access this port to end the program");
     let (mut tcp_stream, addr) = listener.accept()?; // Block until requested.
-    println!("Connection received! {:?} is sending data.", addr);
+    println!("Connection received! {addr:?} is sending data.");
     let mut input = String::new();
     let _ = tcp_stream.read_to_string(&mut input)?;
-    println!("{:?} says {}", addr, input);
+    println!("{addr:?} says {input}");
     Ok(())
 }
 // ANCHOR_END: example

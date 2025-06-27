@@ -38,7 +38,7 @@ fn main() {
     // Receive all remaining messages currently in the channel
     // (non-blocking).
     let v: Vec<_> = r1.try_iter().collect();
-    println!("{:?}", v);
+    println!("{v:?}");
 
     // When all senders or all receivers associated with a channel get
     // dropped, the channel becomes disconnected.

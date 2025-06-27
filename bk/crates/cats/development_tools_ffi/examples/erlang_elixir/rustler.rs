@@ -14,7 +14,7 @@
 // // `Env` represents the current execution environment in Elixir.
 // #[rustler::nif]
 // fn greet(env: Env, name: String) -> NifResult<String> {
-//     Ok(format!("Hello, {}!", name))
+//     Ok(format!("Hello, {name}!"))
 // }
 
 // // `add` is a NIF that takes two integers and returns their sum.

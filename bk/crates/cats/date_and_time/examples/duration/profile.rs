@@ -20,7 +20,7 @@ fn main() {
     expensive_function();
     let duration = start.elapsed();
 
-    println!("Time elapsed in expensive_function() is: {:?}", duration);
+    println!("Time elapsed in expensive_function() is: {duration:?}");
 }
 // ANCHOR_END: example
 

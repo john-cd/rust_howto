@@ -40,7 +40,7 @@ fn main() {
     let result: Result<MyStruct, _> = serde_ignored::deserialize(
         &mut serde_json::Deserializer::from_str(json_data),
         |path: serde_ignored::Path| {
-            println!("Ignored field found: {}", path);
+            println!("Ignored field found: {path}");
             ignored_fields.push(path.to_string());
         },
     );
@@ -48,11 +48,11 @@ fn main() {
     // Check the result of deserialization.
     match result {
         Ok(my_struct) => {
-            println!("Deserialized struct: {:?}", my_struct);
-            println!("All ignored fields: {:?}", ignored_fields);
+            println!("Deserialized struct: {my_struct:?}");
+            println!("All ignored fields: {ignored_fields:?}");
         }
         Err(e) => {
-            println!("Error deserializing: {}", e);
+            println!("Error deserializing: {e}");
         }
     }
 }

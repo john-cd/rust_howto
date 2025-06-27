@@ -49,7 +49,7 @@ fn main() {
 
     let mut v = Vec::default();
     use_mut_ref(&mut v);
-    println!("{:?}", v);
+    println!("{v:?}");
     assert_eq!(v, vec![0; 3]);
 
     let m = &mut v;

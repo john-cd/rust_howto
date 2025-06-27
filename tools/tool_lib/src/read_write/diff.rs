@@ -40,7 +40,7 @@ pub fn print_diffs(s1: &str, s2: &str) {
             ChangeTag::Insert => "+",
             ChangeTag::Equal => " ",
         };
-        print!("{}{}", sign, change);
+        print!("{sign}{change}");
     }
 }
 

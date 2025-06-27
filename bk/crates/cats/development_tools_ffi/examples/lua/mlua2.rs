@@ -27,7 +27,7 @@
 // /// * `_` - The Lua context.
 // /// * `name` - The name to greet.
 // fn hello(_: &Lua, name: String) -> LuaResult<()> {
-//     println!("hello, {}!", name);
+//     println!("hello, {name}!");
 //     Ok(())
 // }
 

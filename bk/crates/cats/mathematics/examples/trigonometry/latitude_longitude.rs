@@ -37,8 +37,7 @@ fn main() {
     let distance = earth_radius_kilometer * central_angle;
 
     println!(
-        "Distance between Paris and London on the surface of Earth is {:.1} kilometers",
-        distance
+        "Distance between Paris and London on the surface of Earth is {distance:.1} kilometers"
     );
 }
 // ANCHOR_END: example

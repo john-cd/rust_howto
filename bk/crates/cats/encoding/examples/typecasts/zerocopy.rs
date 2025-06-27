@@ -67,7 +67,7 @@ fn manipulate_zero_bytes() {
     assert_eq!(my_struct.field, [0; 8]);
 
     let mut my_struct2 = MyZeroableStruct { field: [1; 8] };
-    println!("{:?}", my_struct2);
+    println!("{my_struct2:?}");
 
     // Sets every byte in self to 0. While this is similar to doing
     // *self = Self::new_zeroed(), it differs in that zero does not semantically

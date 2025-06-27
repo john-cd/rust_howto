@@ -21,7 +21,7 @@ fn main() {
         .from_env::<Configuration>()
         .expect("Please provide MY_APP__PORT env variable");
 
-    println!("c: {:?} c2: {:?}", c, c2);
+    println!("c: {c:?} c2: {c2:?}");
 }
 // ANCHOR_END: example
 

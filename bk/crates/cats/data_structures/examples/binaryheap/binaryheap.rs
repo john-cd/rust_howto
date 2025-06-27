@@ -28,7 +28,7 @@ fn main() {
 
     // Pop elements from the `BinaryHeap`.
     while let Some(value) = heap.pop() {
-        println!("{}", value);
+        println!("{value}");
     }
     // Since `BinaryHeap` is a max-heap by default, the elements are printed in
     // descending order: 9, 5, 4, 3, 1, 1.
@@ -44,7 +44,7 @@ fn main() {
     heap.push(Reverse(4));
     // Pop elements from the `BinaryHeap`.
     while let Some(Reverse(value)) = heap.pop() {
-        println!("{}", value);
+        println!("{value}");
     }
 }
 // ANCHOR_END: example

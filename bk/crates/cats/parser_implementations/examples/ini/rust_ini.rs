@@ -29,8 +29,8 @@ key4 = value4
     let value1 = ini.get_from(Some("section1"), "key1");
     let value3 = ini.get_from(Some("section2"), "key3");
 
-    println!("Value for key1: {:?}", value1);
-    println!("Value for key3: {:?}", value3);
+    println!("Value for key1: {value1:?}");
+    println!("Value for key3: {value3:?}");
 
     // Or get a section, then retrieve the key.
     let section = ini.section(Some("section2")).unwrap();
@@ -38,9 +38,9 @@ key4 = value4
 
     // Or iterate through key value pairs.
     for (sec, prop) in &ini {
-        println!("Section: {:?}", sec);
+        println!("Section: {sec:?}");
         for (key, value) in prop.iter() {
-            println!("{:?}:{:?}", key, value);
+            println!("{key:?}:{value:?}");
         }
     }
 

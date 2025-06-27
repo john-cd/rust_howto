@@ -43,7 +43,7 @@ fn main() {
     let program: Program = parser.parse_program().expect("Failed to parse");
 
     // Print the parsed program.
-    println!("{:#?}", program);
+    println!("{program:#?}");
 }
 // ANCHOR_END: example
 

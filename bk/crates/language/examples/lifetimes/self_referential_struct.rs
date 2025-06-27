@@ -86,7 +86,7 @@ fn rc() {
 fn main() {
     let s = "Joe,Doe,1994-01-01".to_string();
     let c = load_record(&s);
-    println!("{:?}", c);
+    println!("{c:?}");
 
     rc();
     self_ref();

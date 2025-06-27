@@ -46,7 +46,7 @@
 //         Deserializer::from_reader(&mut cursor)?.deserialize()?;
 
 //     // Print the deserialized data.
-//     println!("{:?}", deserialized_data);
+//     println!("{deserialized_data:?}");
 
 //     Ok(())
 // }

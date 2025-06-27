@@ -16,7 +16,7 @@ fn main() {
     // Borrow the data immutably.
     {
         let borrowed_data = data.borrow();
-        println!("Borrowed (immutable): {:?}", borrowed_data);
+        println!("Borrowed (immutable): {borrowed_data:?}");
 
         // Multiple immutable borrows are allowed.
         // We can borrow the data immutably again here.
@@ -29,7 +29,7 @@ fn main() {
     {
         let mut borrowed_data = data.borrow_mut();
         borrowed_data.push(6);
-        println!("Borrowed (mutable): {:?}", borrowed_data);
+        println!("Borrowed (mutable): {borrowed_data:?}");
 
         // Only one mutable borrow is allowed at a time.
         // We can't borrow the data again while it's borrowed mutably. This
@@ -42,7 +42,7 @@ fn main() {
     // Borrow the data immutably again to check the modification.
     {
         if let Ok(borrowed_data) = data.try_borrow() {
-            println!("Borrowed (immutable again): {:?}", borrowed_data);
+            println!("Borrowed (immutable again): {borrowed_data:?}");
         }
         // `try_borrow` returns a `Result` to handle the case where the data is
         // already borrowed mutably.

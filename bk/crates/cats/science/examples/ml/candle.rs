@@ -95,7 +95,7 @@
 //     let x_test = Tensor::of_slice(&[4.0f32], (1, 1), DEVICE)?;
 //     let y_pred = model.forward(&x_test)?;
 
-//     println!("Prediction: {:?}", y_pred);
+//     println!("Prediction: {y_pred:?}");
 
 //     Ok(())
 // }

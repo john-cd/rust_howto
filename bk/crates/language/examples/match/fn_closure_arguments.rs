@@ -2,7 +2,7 @@
 // ANCHOR: example
 // Destructure a tuple passed as an argument:
 fn print_coordinates((x, y): (i32, i32)) {
-    println!("x: {}, y: {}", x, y);
+    println!("x: {x}, y: {y}");
 }
 
 fn main() {

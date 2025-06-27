@@ -48,7 +48,7 @@ fn example() {
     let mut html_output = String::new();
     html::push_html(&mut html_output, parser);
 
-    println!("{}", html_output);
+    println!("{html_output}");
 }
 // ANCHOR_END: example
 

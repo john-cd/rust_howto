@@ -51,11 +51,11 @@ async fn main() -> Result<()> {
         })
         .await?;
 
-    println!("Created person: {:?}", created);
+    println!("Created person: {created:?}");
 
     // Select all person records.
     let people: Vec<Person> = db.select("person").await?;
-    println!("All people: {:?}", people);
+    println!("All people: {people:?}");
 
     // Find a specific person by name using a WHERE clause.
     // Demonstrates how to use `query()` with bindings to prevent SQL injection
@@ -67,7 +67,7 @@ async fn main() -> Result<()> {
         .await?;
 
     let people: Vec<Person> = result.take(0)?;
-    println!("Specific person: {:?}", people);
+    println!("Specific person: {people:?}");
 
     // Update a person's age.
     let _updated: Option<Person> = db.update(("person", "John Doe"))
@@ -80,11 +80,11 @@ async fn main() -> Result<()> {
 
     // Delete a person.
     let deleted: Option<Person> = db.delete(("person", "John Doe")).await?;
-    println!("Deleted person: {:?}", deleted);
+    println!("Deleted person: {deleted:?}");
 
     // Check if the person exists after deletion.
     let people_after_delete: Vec<Person> = db.select("person").await?;
-    println!("People after delete: {:?}", people_after_delete);
+    println!("People after delete: {people_after_delete:?}");
 
     Ok(())
 }

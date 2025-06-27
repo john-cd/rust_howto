@@ -31,7 +31,7 @@ fn main() -> Result<(), std::io::Error> {
     // Print contents of the file.
     std::fs::read_to_string(path)?
         .lines()
-        .for_each(|line| println!("{}", line));
+        .for_each(|line| println!("{line}"));
 
     Ok(())
 }

@@ -41,7 +41,7 @@ fn main() {
         .encrypt(&mut rng, Pkcs1v15Encrypt, &message[..])
         .expect("failed to encrypt");
 
-    println!("Encrypted message: {:?}", encrypted_message);
+    println!("Encrypted message: {encrypted_message:?}");
 
     // Decrypt the message using the private key
     let decrypted_message = private_key

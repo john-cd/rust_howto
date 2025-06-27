@@ -9,10 +9,10 @@ fn process_optional_string(maybe_name: Option<String>) {
     // let consumed_name = maybe_name.unwrap();
 
     if let Some(name_ref) = borrowed_name {
-        println!("The name is: {}", name_ref);
+        println!("The name is: {name_ref}");
         // We can still use `maybe_name` here,
         // because `as_ref()` didn't consume it.
-        println!("Original option (still valid): {:?}", maybe_name);
+        println!("Original option (still valid): {maybe_name:?}");
     } else {
         println!("No name provided.");
     }
@@ -23,7 +23,7 @@ fn process_optional_string(maybe_name: Option<String>) {
     let borrowed_str: Option<&str> = maybe_name.as_deref();
 
     if let Some(name_str) = borrowed_str {
-        println!("The name as &str: {}", name_str);
+        println!("The name as &str: {name_str}");
     } else {
         println!("Still no name as &str.");
     }

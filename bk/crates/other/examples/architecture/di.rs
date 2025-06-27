@@ -34,7 +34,7 @@ struct EnglishGreeter;
 
 impl Greeter for EnglishGreeter {
     fn greet(&self, name: &str) -> String {
-        format!("Hello, {}!", name)
+        format!("Hello, {name}!")
     }
 }
 
@@ -84,7 +84,7 @@ fn main() {
     let greeter: &dyn Greeter = module.resolve_ref();
     // Use the resolved component.
     let greeting = greeter.greet("World");
-    println!("{}", greeting);
+    println!("{greeting}");
 
     let module = MyModule::builder()
         .with_component_parameters::<EnglishConversation>(

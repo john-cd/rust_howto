@@ -78,7 +78,7 @@ magenta,#ff00ff"
     }
     let written = String::from_utf8(out.into_inner()?)?;
     assert_eq!(Some("magenta,255,0,255"), written.lines().last());
-    println!("{}", written);
+    println!("{written}");
     Ok(())
 }
 // ANCHOR_END: example

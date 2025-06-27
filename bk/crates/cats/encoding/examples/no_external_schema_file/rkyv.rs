@@ -28,12 +28,12 @@ fn main() -> anyhow::Result<()> {
     let buffer = rkyv::to_bytes::<Error>(&data)?;
 
     // Print the serialized data.
-    println!("Serialized data: {:?}", buffer);
+    println!("Serialized data: {buffer:?}");
 
     // Deserialize the data from the byte array.
     let deserialized_data = rkyv::from_bytes::<MyStruct, Error>(&buffer[..])?;
 
-    println!("{:?}", deserialized_data);
+    println!("{deserialized_data:?}");
 
     Ok(())
 }

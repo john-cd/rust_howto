@@ -14,7 +14,7 @@ fn main() -> Result<()> {
     color_eyre::install()?;
 
     let result = divide(10, 0)?;
-    println!("Result: {}", result);
+    println!("Result: {result}");
 
     Ok(())
 }

@@ -13,23 +13,23 @@ fn main() {
 
     // Add.
     let sum = &a + &b;
-    println!("Sum: {}", sum);
+    println!("Sum: {sum}");
 
     // Subtract.
     let difference = &b - &a;
-    println!("Difference: {}", difference);
+    println!("Difference: {difference}");
 
     // Multiply.
     let product = &a * &b;
-    println!("Product: {}", product);
+    println!("Product: {product}");
 
     // Divide.
     let quotient = &b / &a;
-    println!("Quotient: {}", quotient);
+    println!("Quotient: {quotient}");
 
     // Create a big integer with value 1.
     let one = BigInt::one();
-    println!("One: {}", one);
+    println!("One: {one}");
 }
 // ANCHOR_END: example
 

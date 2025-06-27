@@ -11,7 +11,7 @@ fn main() {
         .with_default(false)
         .prompt()
         .expect("Failed to read input");
-    println!("You answered: {:?}", ans);
+    println!("You answered: {ans:?}");
 
     // Prompt the user for their name.
     let name = Text::new("What's your name?")
@@ -28,11 +28,8 @@ fn main() {
             .expect("Failed to read input");
 
     // Display the collected information to the user.
-    println!("Hello, {}!", name);
-    println!(
-        "Your favorite programming language is {}.",
-        favorite_language
-    );
+    println!("Hello, {name}!");
+    println!("Your favorite programming language is {favorite_language}.");
 }
 // ANCHOR_END: example
 

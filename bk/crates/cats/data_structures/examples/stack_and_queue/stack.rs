@@ -13,7 +13,7 @@ fn main() {
     // empty.
     while let Some(top) = stack.pop() {
         // Pop elements until the stack is empty.
-        println!("Popped: {}", top);
+        println!("Popped: {top}");
     }
 
     println!("Stack is empty: {}", stack.is_empty());

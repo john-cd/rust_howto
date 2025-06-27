@@ -9,7 +9,7 @@ fn main() {
         which makes it harder to read in source code
         when you want to format your code nicely.
     ";
-    println!("Regular string:\n{}", regular_string);
+    println!("Regular string:\n{regular_string}");
 
     // With indoc, leading whitespace is automatically stripped
     let indoc_string = indoc! {"
@@ -21,7 +21,7 @@ fn main() {
           Additional indentation beyond the common prefix
           is also preserved.
     "};
-    println!("\nIndoc string:\n{}", indoc_string);
+    println!("\nIndoc string:\n{indoc_string}");
 
     // indoc also works with raw strings
     let raw_indoc = indoc! {r#"
@@ -29,7 +29,7 @@ fn main() {
         It also handles special characters like \n \t without interpreting them.
         All while still removing the common leading whitespace.
     "#};
-    println!("\nRaw indoc string:\n{}", raw_indoc);
+    println!("\nRaw indoc string:\n{raw_indoc}");
 
     // Practical example: SQL queries
     let sql_query = indoc! {"
@@ -42,7 +42,7 @@ fn main() {
         ORDER BY order_count DESC
         LIMIT 10
     "};
-    println!("\nSQL query:\n{}", sql_query);
+    println!("\nSQL query:\n{sql_query}");
 }
 // ANCHOR_END: example
 

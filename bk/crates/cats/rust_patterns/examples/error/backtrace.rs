@@ -40,7 +40,7 @@ impl fmt::UpperHex for Rgb {
         let hexa = (u32::from(self.red) << 16)
             | (u32::from(self.blue) << 8)
             | u32::from(self.green);
-        write!(f, "{:X}", hexa)
+        write!(f, "{hexa:X}")
     }
 }
 
@@ -50,7 +50,7 @@ fn main() -> Result<()> {
 102,256,204"; // Note the invalid value.
 
     let rgb = Rgb::from_csv(csv.as_bytes())?;
-    println!("{:?} to hexadecimal #{:X}", rgb, rgb);
+    println!("{rgb:?} to hexadecimal #{rgb:X}");
 
     Ok(())
 }
@@ -62,7 +62,7 @@ fn test() {
         std::env::set_var("RUST_BACKTRACE", "1");
     }
     let res = main();
-    println!("{:?}", res);
+    println!("{res:?}");
     unsafe {
         std::env::set_var("RUST_BACKTRACE", "");
     }

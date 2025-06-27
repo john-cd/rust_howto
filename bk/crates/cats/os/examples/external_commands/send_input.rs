@@ -52,7 +52,7 @@ fn main() -> Result<()> {
             .map(|s| s.to_lowercase())
             .collect::<HashSet<_>>();
         println!("Found {} unique words:", words.len());
-        println!("{:#?}", words);
+        println!("{words:#?}");
     } else {
         let err = String::from_utf8(output.stderr)?;
         bail!("External command failed:\n {}", err);

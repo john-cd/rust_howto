@@ -22,20 +22,20 @@ fn main() {
     let quotient = number1 / number2;
 
     // Printing the results
-    println!("Number 1: {}", number1);
-    println!("Number 2: {}", number2);
-    println!("Sum: {}", sum);
-    println!("Difference: {}", difference);
-    println!("Product: {}", product);
-    println!("Quotient: {}", quotient);
+    println!("Number 1: {number1}");
+    println!("Number 2: {number2}");
+    println!("Sum: {sum}");
+    println!("Difference: {difference}");
+    println!("Product: {product}");
+    println!("Quotient: {quotient}");
 
     // 3. Converting to and from strings
     let number_str = "98.76";
     let number_from_str = Decimal::from_str(number_str).unwrap();
-    println!("Number from string: {}", number_from_str);
+    println!("Number from string: {number_from_str}");
 
     let number_to_str = number_from_str.to_string();
-    println!("Number to string: {}", number_to_str);
+    println!("Number to string: {number_to_str}");
 }
 // ANCHOR_END: example
 

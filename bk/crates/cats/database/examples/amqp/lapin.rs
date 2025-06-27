@@ -65,7 +65,7 @@ async fn main() -> anyhow::Result<()> {
         .await?
         .await?; // Wait for confirmation
 
-    println!("Sent message: {}", message);
+    println!("Sent message: {message}");
 
     // Consume messages from the queue.
     //

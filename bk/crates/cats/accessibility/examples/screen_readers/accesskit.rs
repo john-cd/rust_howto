@@ -137,14 +137,14 @@
 // //     struct MyActionHandler;
 // //     impl ActionHandler for MyActionHandler {
 // //         fn do_action(&self, node_id: NodeId, action: &str) {
-// //             println!("Action: {} on Node: {:?}", action, node_id);
+// //             println!("Action: {action} on Node: {node_id:?}");
 // //         }
 // //     }
 
 // //     let handler = MyActionHandler;
 
 // //     // Print the tree structure and handle actions
-// //     println!("Tree structure: {:?}", tree);
+// //     println!("Tree structure: {tree:?}" );
 // //     handler.do_action(button_id, "activate");
 // // }
 

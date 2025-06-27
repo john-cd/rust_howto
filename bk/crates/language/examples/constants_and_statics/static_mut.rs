@@ -67,7 +67,7 @@ fn do_instead() {
     handle2.join().unwrap();
 
     let final_count = COUNTER.load(Ordering::Relaxed);
-    println!("Final COUNTER value: {}", final_count);
+    println!("Final COUNTER value: {final_count}");
     assert_eq!(final_count, 20_001);
 }
 
@@ -103,7 +103,7 @@ fn or_do_that() {
     safe_handle2.join().unwrap();
 
     let final_count = *SAFE_COUNTER.lock().unwrap();
-    println!("Final SAFE_COUNTER value: {}", final_count);
+    println!("Final SAFE_COUNTER value: {final_count}");
     assert_eq!(final_count, 20_000);
 }
 

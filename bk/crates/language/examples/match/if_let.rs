@@ -8,13 +8,13 @@ fn main() {
     // If `config_max` is `Some`, bind the inner value to `max`
     if let Some(max) = config_max {
         // `max` is available here.
-        println!("The maximum is configured to be {}.", max);
+        println!("The maximum is configured to be {max}.");
     }
 
     // This is equivalent to the following `match` expression:
     #[allow(clippy::single_match)]
     match config_max {
-        Some(max) => println!("The maximum is configured to be {}.", max),
+        Some(max) => println!("The maximum is configured to be {max}."),
         _ => {} // Required because `match` is exhaustive.
     };
 

@@ -59,7 +59,7 @@ fn main() -> Result<(), Error> {
     drop(tx);
     for t in rx.iter() {
         let (sha, path) = t?;
-        println!("{:?} {:?}", sha, path);
+        println!("{sha:?} {path:?}");
     }
     Ok(())
 }

@@ -143,7 +143,7 @@
 //     };
 
 //     let serialized = quick_xml::se::to_string(&jane)?;
-//     println!("{}", serialized);
+//     println!("{serialized}");
 
 //     Ok(())
 // }

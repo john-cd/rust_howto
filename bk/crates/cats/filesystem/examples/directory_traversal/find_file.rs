@@ -26,7 +26,7 @@ fn main() -> Result<()> {
                 // (86400 seconds).
                 if elapsed.as_secs() < 86400 {
                     // Print the file name if it was modified recently.
-                    println!("{}", f_name);
+                    println!("{f_name}");
                 }
             }
         }

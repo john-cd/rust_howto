@@ -83,7 +83,7 @@
 // #[test]
 // fn require_network() -> anyhow::Result<()> {
 //     let res = main();
-//     println!("{:?}", res);
+//     println!("{res:?}");
 //     res?;
 //     Ok(())
 // }

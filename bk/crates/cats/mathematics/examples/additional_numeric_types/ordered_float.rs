@@ -25,7 +25,7 @@ fn main() {
 
     // Iterate over the map and print the values
     for (key, value) in &map {
-        println!("{:.3}: {}", key, value);
+        println!("{key:.3}: {value}");
     }
 
     // Check if a value exists in the map

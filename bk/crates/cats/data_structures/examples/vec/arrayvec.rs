@@ -29,7 +29,7 @@ fn main() {
     let mut array2: ArrayVec<i32, 3> = ArrayVec::from([1, 2, 3]);
     // Pop an element from the `ArrayVec`:
     if let Some(value) = array2.pop() {
-        println!("Popped value: {}", value);
+        println!("Popped value: {value}");
     }
     assert_eq!(array2.len(), 2);
     assert!(!array2.is_empty());

@@ -12,7 +12,7 @@ fn main() {
     let result1 = divide(10.0, 2.0);
     match result1 {
         // Handles the `Some` case.
-        Some(value) => println!("Result: {}", value),
+        Some(value) => println!("Result: {value}"),
         // Handles the `None` case.
         None => println!("Cannot divide by zero!"),
     }

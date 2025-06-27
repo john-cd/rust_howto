@@ -27,7 +27,7 @@ struct TupleStruct<T>(T);
 // Implementing the trait for the tuple struct.
 impl<T: Debug> Processor<T> for TupleStruct<T> {
     fn process(&self, item: T) -> String {
-        format!("Processed: {:?}", item)
+        format!("Processed: {item:?}")
     }
 }
 

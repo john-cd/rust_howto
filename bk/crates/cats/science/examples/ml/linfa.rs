@@ -28,7 +28,7 @@ fn main() {
     let test_data = ndarray::array![[6.0], [7.0]];
     let predictions = model.predict(&test_data);
 
-    println!("Predictions: {:?}", predictions);
+    println!("Predictions: {predictions:?}");
 }
 // ANCHOR_END: example
 

@@ -16,7 +16,7 @@ fn process_input(value: i32) -> Either<String, i32> {
     if value > 0 {
         Either::Right(value * 2)
     } else {
-        Either::Left(format!("Invalid input: {}", value))
+        Either::Left(format!("Invalid input: {value}"))
     }
 }
 
@@ -25,13 +25,13 @@ fn main() {
     let result2 = process_input(-3);
 
     match result1 {
-        Either::Left(ref err) => println!("Error: {}", err),
-        Either::Right(val) => println!("Processed value: {}", val),
+        Either::Left(ref err) => println!("Error: {err}"),
+        Either::Right(val) => println!("Processed value: {val}"),
     }
 
     match result2 {
-        Either::Left(err) => println!("Error: {}", err),
-        Either::Right(val) => println!("Processed value: {}", val),
+        Either::Left(err) => println!("Error: {err}"),
+        Either::Right(val) => println!("Processed value: {val}"),
     }
 
     // Transforming `Either` values:

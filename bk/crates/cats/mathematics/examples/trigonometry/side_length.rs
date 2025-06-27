@@ -11,7 +11,7 @@ fn main() {
     // Calculate the hypotenuse using the sine function.
     let hypotenuse = side_length / angle.sin();
 
-    println!("Hypotenuse: {}", hypotenuse);
+    println!("Hypotenuse: {hypotenuse}");
 }
 // ANCHOR_END: example
 

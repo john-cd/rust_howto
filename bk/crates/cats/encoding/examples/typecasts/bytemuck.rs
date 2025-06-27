@@ -29,13 +29,13 @@ use bytemuck::NoUninit;
 /// Cast type A into type B, here an array into another.
 fn cast() {
     let sixteens: [u16; 4] = [1, 2, 3, 4];
-    println!("Sixteens: {:?}", sixteens);
+    println!("Sixteens: {sixteens:?}");
 
     // `cast` is purely changing the type, thus have no run-time cost.
     // - It does not reorder bytes to a specific endianness.
     // - It will panic on a size mismatch.
     let eights: [u8; 2 * 4] = bytemuck::cast(sixteens);
-    println!("Eights: {:?}", eights);
+    println!("Eights: {eights:?}");
 }
 
 /// You can also cast complex types, like a `struct`, provided that it has been
@@ -59,10 +59,10 @@ fn cast_complex_type() {
         x: 42,
         y: [1, 2, 3, 4],
     };
-    println!("\n{:?}", my_struct);
+    println!("\n{my_struct:?}");
     let my_ref = &my_struct;
     let r: Result<&[i32; 2], _> = bytemuck::try_cast_ref(my_ref);
-    println!("{:?}", r);
+    println!("{r:?}");
 }
 
 /// You can also re-interpret `&T` as `&[u8]` and vice-versa.
@@ -77,12 +77,12 @@ fn to_from_bytes() {
     // bytes.
     let bytes: &[u8] = bytemuck::bytes_of(&my_struct);
     // Print the bytes: [42, 0, 0, 0, 1, 2, 3, 4] (on a little-endian machine).
-    println!("Bytes: {:?}", bytes);
+    println!("Bytes: {bytes:?}");
 
     // Re-interprets `&[u8]` as `&T`, but only if `T` is `AnyBitPattern`, i.e.
     // "plain old data" types that are valid for any bit pattern.
     let recovered: &MyStruct = bytemuck::from_bytes(bytes);
-    println!("Recovered: {:?}", recovered);
+    println!("Recovered: {recovered:?}");
 }
 
 fn main() {

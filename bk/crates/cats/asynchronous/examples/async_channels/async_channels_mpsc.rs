@@ -4,7 +4,7 @@ use tokio::sync::mpsc;
 
 /// Simulates some computation that takes a `u32` and returns a `String`.
 async fn some_computation(input: u32) -> String {
-    format!("The result of computation is {}", input)
+    format!("The result of computation is {input}")
 }
 
 /// Demonstrates a multi-producer, single-consumer (MPSC) channel.
@@ -20,7 +20,7 @@ pub async fn multi_producer_single_receiver() {
     });
 
     while let Some(res) = rx.recv().await {
-        println!("{}", res);
+        println!("{res}");
     }
 }
 

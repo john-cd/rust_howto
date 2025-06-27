@@ -21,9 +21,9 @@ fn main() {
     println!("u32: {} ", rng.u32(..100));
     // Generate a random `Vec` or `String`:
     let mut v: Vec<i32> = repeat_with(|| rng.i32(..)).take(5).collect();
-    println!("Vector: {:?}", v);
+    println!("Vector: {v:?}");
     let s: String = repeat_with(fastrand::alphanumeric).take(10).collect();
-    println!("String: {}", s);
+    println!("String: {s}");
     // Sample values from an array:
     println!(
         "Two samples from the 0..20 interval: {:?}",
@@ -32,10 +32,10 @@ fn main() {
     // Choose a random element in a vector or array:
     let i = fastrand::usize(..v.len());
     let elem = v[i];
-    println!("Random element: {}", elem);
+    println!("Random element: {elem}");
     // Shuffle an array:
     fastrand::shuffle(&mut v);
-    println!("Shuffled vector: {:?}", v);
+    println!("Shuffled vector: {v:?}");
 }
 // ANCHOR_END: example
 

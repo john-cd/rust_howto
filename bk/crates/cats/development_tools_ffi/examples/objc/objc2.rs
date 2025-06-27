@@ -22,7 +22,7 @@
 //         // Send the length message to the initialized string object, which
 //         // returns its length.
 //         let length = msg_send![string, length];
-//         println!("String length: {}", length);
+//         println!("String length: {length}");
 //     }
 // }
 // // ANCHOR_END: example

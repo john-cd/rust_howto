@@ -17,7 +17,7 @@
 //     let env = this.env();
 //     let name = args.get(0)?.as_string()?.into_owned();
 
-//     let greeting = format!("Hello, {}!", name);
+//     let greeting = format!("Hello, {name}!");
 //     env.create_string(&greeting)
 // }
 

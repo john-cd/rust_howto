@@ -29,7 +29,7 @@ fn main() {
 
     // Retrieve a value.
     match cache.get("key1") {
-        Some(value) => println!("Retrieved value: {}", value),
+        Some(value) => println!("Retrieved value: {value}"),
         None => println!("Value not found"),
     }
     // Note: Every time get is called for an existing key, it creates a clone of

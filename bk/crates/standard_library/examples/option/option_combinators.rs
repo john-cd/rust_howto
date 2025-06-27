@@ -20,7 +20,7 @@ fn main() {
     let contents_maybe = read_file("temp/poem.txt");
     // Provide a default with `unwrap_or_else` or `unwrap_or_default`.
     let contents = contents_maybe.unwrap_or_else(String::new);
-    println!("{}", contents);
+    println!("{contents}");
 }
 // ANCHOR_END: example
 

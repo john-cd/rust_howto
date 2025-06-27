@@ -5,7 +5,7 @@
 
 /// This is a sample function that formats user details.
 pub fn format_user(name: &str, age: u32) -> String {
-    format!("Name: {}, Age: {}", name, age)
+    format!("Name: {name}, Age: {age}")
 }
 
 /// The following is a test that uses `insta` to snapshot the output.

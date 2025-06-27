@@ -7,7 +7,7 @@ fn main() {
     // Iterate through the `Vec`. Each element is deconstructed in turn into
     // variables `x` and `y`.
     for (x, y) in points {
-        println!("x: {}, y: {}", x, y);
+        println!("x: {x}, y: {y}");
     }
 }
 // ANCHOR_END: example

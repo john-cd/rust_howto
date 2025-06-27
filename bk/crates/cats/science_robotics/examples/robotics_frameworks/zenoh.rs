@@ -37,7 +37,7 @@
 //     let value = Value::from("Hello, Zenoh!");
 //     session.put(&key, &value).await?;
 //     // or: session.put("key/expression", "value").await?;
-//     println!("Published: {}", value);
+//     println!("Published: {value}");
 
 //     // Subscribe to a topic:
 //     let key_expr = KeyExpr::from("my/topic");
@@ -47,10 +47,10 @@
 //     loop {
 //         match subscriber.recv_async().await {
 //             Ok(sample) => {
-//                 println!("Received: {:?}", sample);
+//                 println!("Received: {sample:?}");
 //             }
 //             Err(e) => {
-//                 eprintln!("Error: {}", e);
+//                 eprintln!("Error: {e}");
 //                 break;
 //             }
 //         }

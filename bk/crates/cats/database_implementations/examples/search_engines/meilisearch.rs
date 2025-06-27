@@ -57,11 +57,11 @@ async fn main() -> anyhow::Result<()> {
     // If the index does not exist, Meilisearch creates it when you first add
     // the documents.
     let task: TaskInfo = index.add_documents(&docs, Some("id")).await?;
-    println!("Indexing task: {:?}", task);
+    println!("Indexing task: {task:?}");
 
     // Wait for the indexing task to complete.
     let status = index.wait_for_task(task, None, None).await?;
-    println!("Indexing status: {:?}", status);
+    println!("Indexing status: {status:?}");
     assert!(matches!(status, Task::Succeeded { .. }));
 
     // Perform a search query.
@@ -73,7 +73,7 @@ async fn main() -> anyhow::Result<()> {
         .await?;
 
     // Print the search results.
-    println!("Search results for '{}':", query);
+    println!("Search results for '{query}':");
     for hit in search_results.hits {
         println!("{:?}", hit.result);
     }

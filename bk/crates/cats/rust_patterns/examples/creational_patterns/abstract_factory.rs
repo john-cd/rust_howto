@@ -45,7 +45,7 @@ mod light {
 
     impl TextBox for LightTextBox {
         fn display_text(&self, text: &str) {
-            println!("Displaying '{}' in a light text box.", text);
+            println!("Displaying '{text}' in a light text box.");
         }
     }
 
@@ -81,7 +81,7 @@ mod dark {
 
     impl TextBox for DarkTextBox {
         fn display_text(&self, text: &str) {
-            println!("Displaying '{}' in a dark text box.", text);
+            println!("Displaying '{text}' in a dark text box.");
         }
     }
 

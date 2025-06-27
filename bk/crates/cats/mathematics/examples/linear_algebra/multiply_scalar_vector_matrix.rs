@@ -15,10 +15,10 @@ fn main() {
     let matrix = arr2(&[[4, 5, 6], [7, 8, 9]]);
 
     let new_vector: Array1<_> = scalar * vector;
-    println!("{}", new_vector);
+    println!("{new_vector}");
 
     let new_matrix = matrix.dot(&new_vector);
-    println!("{}", new_matrix);
+    println!("{new_matrix}");
 }
 // ANCHOR_END: example
 

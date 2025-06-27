@@ -9,12 +9,12 @@ fn main() {
 
     // Use `..` to ignore e.g. the middle elements:
     let (first, .., last) = numbers;
-    println!("Some numbers: first = {}, last = {}", first, last);
+    println!("Some numbers: first = {first}, last = {last}");
 
     // Use `_` to ignore a value completely:
     fn foo(_: i32, y: i32) {
         // The first parameter is ignored.
-        println!("y is: {}", y);
+        println!("y is: {y}");
     }
 
     foo(42, 43);

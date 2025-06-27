@@ -28,7 +28,7 @@ fn main() {
     let s2: Ustr = ustr("world");
 
     // Getting the string content:
-    println!("s1 content: {}", s1);
+    println!("s1 content: {s1}");
 
     // Comparing `Ustr` instances (cheap operation):
     println!("s1 == s2: {}", s1 == s2); // Output: s1 == s2: false.
@@ -55,9 +55,9 @@ fn main() {
     // creates a new interned string easily for arbitrary combinations.
     // You'd typically convert to `String` or `&str` for complex manipulations
     // and then re-ustr if needed.
-    let combined_str = format!("{} {}", s1, s2);
+    let combined_str = format!("{s1} {s2}");
     let s4: Ustr = ustr(&combined_str);
-    println!("s4 content: {}", s4);
+    println!("s4 content: {s4}");
 
     // You can a `Ustr` pass straight to FFI.
     // `as_char_ptr` gets the cached string as a C nul-terminated `char*`.

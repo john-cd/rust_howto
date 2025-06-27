@@ -56,7 +56,7 @@ async fn main() -> anyhow::Result<()> {
                 let db_name: &str = row
                     .get(0)
                     .ok_or_else(|| anyhow::anyhow!("row.get error"))?;
-                println!("Database name: {}", db_name);
+                println!("Database name: {db_name}");
             }
         }
         // Or use `into_row_stream(self)` to get a stream of rows directly.

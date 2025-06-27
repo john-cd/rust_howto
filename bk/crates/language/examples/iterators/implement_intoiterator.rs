@@ -75,7 +75,7 @@ fn main() {
     // Our custom collection can now be used in a `for` loop.
     // The `for` loop calls `into_iter()` under the covers.
     for element in my_vec {
-        println!("Element: {}", element);
+        println!("Element: {element}");
     }
 }
 // ANCHOR_END: example

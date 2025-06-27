@@ -43,11 +43,11 @@ async fn main() -> Result {
         |fut| async move {
             match fut.await {
                 Err(e) => {
-                    println!("Error: {}", e);
+                    println!("Error: {e}");
                     match e.source() {
                         // Print the source of the error if available
                         Some(source) => {
-                            println!("  Caused by: {}", source);
+                            println!("  Caused by: {source}");
                         }
                         _ => {}
                     }

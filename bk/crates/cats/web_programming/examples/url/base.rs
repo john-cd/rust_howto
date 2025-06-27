@@ -48,7 +48,7 @@ fn main() -> Result<()> {
     let base = base_url(url)?;
 
     assert_eq!(base.as_str(), "https://github.com/");
-    println!("The base of the URL is: {}", base);
+    println!("The base of the URL is: {base}");
 
     Ok(())
 }

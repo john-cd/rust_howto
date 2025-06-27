@@ -15,7 +15,7 @@ fn main() {
     let my_iterator = count_up_to(5);
 
     for number in my_iterator {
-        println!("{}", number);
+        println!("{number}");
     }
 }
 // ANCHOR_END: example

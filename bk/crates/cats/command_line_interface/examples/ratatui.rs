@@ -39,7 +39,7 @@ fn main() {
     // Restore the terminal to its original state.
     ratatui::restore();
     if let Err(err) = app_result {
-        println!("{:?}", err);
+        println!("{err:?}");
     }
 }
 

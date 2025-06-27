@@ -15,13 +15,13 @@ fn main() {
     // Create a new vector with index 1 set to 20:
     let v2 = v1.set(1, 20).unwrap();
 
-    println!("Original v1: {}", v1); // [1, 2, 3]
-    println!("Modified v2: {}", v2); // [1, 20, 3]
-    println!("v1 is unchanged: {}", v1); // [1, 2, 3]
+    println!("Original v1: {v1}"); // [1, 2, 3]
+    println!("Modified v2: {v2}"); // [1, 20, 3]
+    println!("v1 is unchanged: {v1}"); // [1, 2, 3]
 
     // Iterating:
     for item in v2.iter() {
-        println!("Item: {}", item);
+        println!("Item: {item}");
     }
 
     // Persistent map implemented with a hash array mapped trie:
@@ -37,8 +37,8 @@ fn main() {
 
     // Removal (creates a new map):
     let m4 = m3.remove(&"one".to_string());
-    println!("m4 after removal: {}", m4);
-    println!("m3 is unchanged: {}", m3);
+    println!("m4 after removal: {m4}");
+    println!("m3 is unchanged: {m3}");
 }
 // ANCHOR_END: example
 

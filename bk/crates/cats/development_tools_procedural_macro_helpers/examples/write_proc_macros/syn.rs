@@ -21,7 +21,7 @@ use syn::Result;
 fn simple() -> Result<()> {
     let code = "assert_eq!(u8::max_value(), 255)";
     let expr = syn::parse_str::<Expr>(code)?;
-    println!("{:#?}", expr);
+    println!("{expr:#?}");
     Ok(())
 }
 
@@ -40,7 +40,7 @@ fn m() -> anyhow::Result<()> {
     // Manipulate the syntax tree (e.g., change the function body).
     let new_body = quote! {
         {
-            println!("Function called with: {}", x);
+            println!("Function called with: {x}");
             x + 2
         }
     };
@@ -58,7 +58,7 @@ fn m() -> anyhow::Result<()> {
     };
 
     // Print the generated code.
-    println!("{}", generated_code);
+    println!("{generated_code}");
 
     Ok(())
 }

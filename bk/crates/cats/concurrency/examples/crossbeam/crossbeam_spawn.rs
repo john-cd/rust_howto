@@ -7,7 +7,7 @@ fn main() {
     // Find the maximum value.
     let max = find_max(arr);
     assert_eq!(max, Some(25));
-    println!("The maximum is {:?}", max);
+    println!("The maximum is {max:?}");
 }
 
 fn find_max(arr: &[i32]) -> Option<i32> {

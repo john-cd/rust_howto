@@ -48,8 +48,8 @@ fn main() {
 
     // Here, we just print the status.
     match result {
-        Ok(value) => println!("Success: {}", value),
-        Err(error) => eprintln!("Error: {}", error),
+        Ok(value) => println!("Success: {value}"),
+        Err(error) => eprintln!("Error: {error}"),
     }
 }
 ```
@@ -100,8 +100,8 @@ fn main() {
         .and_then(divide_by_three); // Chain the second operation
 
     match result {
-        Ok(value) => println!("Success: {}", value),
-        Err(error) => println!("Error: {}", error),
+        Ok(value) => println!("Success: {value}"),
+        Err(error) => println!("Error: {error}"),
     }
 }
 ```
@@ -117,10 +117,10 @@ fn main() {
     let result: Result<i32, &str> = Ok(10);
 
     let doubled = result.map(|value| value * 2); // Applies a function to the `Ok` value
-    println!("Doubled: {:?}", doubled);
+    println!("Doubled: {doubled:?}");
 
     let error_mapped = result.map_err(|err| format!("Error: {}", err)); // Maps the `Err` value
-    println!("Mapped error: {:?}", error_mapped);
+    println!("Mapped error: {error_mapped:?}");
 }
 
 #[test]

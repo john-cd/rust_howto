@@ -12,13 +12,13 @@ async fn download_file() -> Result<String, std::io::Error> {
     // Simulate downloading a file.
     let filename = "data.txt";
     tokio::time::sleep(Duration::from_secs(2)).await;
-    println!("Downloaded file: {}", filename);
+    println!("Downloaded file: {filename}");
     Ok(filename.to_owned())
 }
 
 async fn process_file(filename: String) {
     // Simulate processing the downloaded file.
-    println!("Processing file: {}", filename);
+    println!("Processing file: {filename}");
     tokio::time::sleep(Duration::from_secs(1)).await;
     println!("Finished processing file.");
 }

@@ -55,7 +55,7 @@ fn main() -> Result<()> {
     );
     assert_eq!(out.headers["User-Agent"], "Rust-test");
     assert_eq!(out.headers["X-My-Header"], "value");
-    println!("{:?}", out);
+    println!("{out:?}");
     Ok(())
 }
 // ANCHOR_END: example

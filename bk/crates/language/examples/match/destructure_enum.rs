@@ -10,8 +10,8 @@ fn main() {
     let msg = Message::Write(String::from("hello"));
 
     match msg {
-        Message::Write(text) => println!("Text message: {}", text),
-        Message::Move { x, y } => println!("Move to x: {}, y: {}", x, y),
+        Message::Write(text) => println!("Text message: {text}"),
+        Message::Move { x, y } => println!("Move to x: {x}, y: {y}"),
         Message::Quit => println!("Quit"),
         // Must be exhaustive.
     }

@@ -8,7 +8,7 @@ static APPLICATION_NAME: &str = "My Awesome App";
 static VERSION: u32 = 1;
 
 fn main() {
-    println!("Welcome to {} v{}", APPLICATION_NAME, VERSION);
+    println!("Welcome to {APPLICATION_NAME} v{VERSION}");
 
     // Statics do not `Drop`.
     static POD: PrintOnDrop = PrintOnDrop("This message does not appear.");

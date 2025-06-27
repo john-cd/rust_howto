@@ -13,7 +13,7 @@ trait MyTrait: DynClone {
 // Implement `MyTrait` for `String``.
 impl MyTrait for String {
     fn recite(&self) {
-        println!("{} ♫", self);
+        println!("{self} ♫");
     }
 }
 

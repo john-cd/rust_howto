@@ -16,7 +16,7 @@ fn main() {
     let digest = md5::compute(data);
 
     // Print the hash as a hexadecimal string
-    println!("MD5 hash of '{}': {:x}", data, digest);
+    println!("MD5 hash of '{data}': {digest:x}");
 }
 // ANCHOR_END: example
 

@@ -66,13 +66,13 @@ struct Address {
 fn main() {
     // Use `Faker` to generate default fake value of given type.
     let tuple = Faker.fake::<(u8, u32, f32)>();
-    println!("Tuple: {:?}", tuple);
+    println!("Tuple: {tuple:?}");
     println!("String: {}", Faker.fake::<String>());
     assert_eq!(10.fake::<String>().len(), 10);
     let a: [[u8; 2]; 3] = (1..10).fake();
-    println!("{:?}", a);
+    println!("{a:?}");
     let b: Option<usize> = (1..10).fake();
-    println!("{:?}", b);
+    println!("{b:?}");
 
     // Generate a random user.
     let user = User {
@@ -83,7 +83,7 @@ fn main() {
         age: (18..65).fake(),
         active: Faker.fake(),
     };
-    println!("Generated User: {:#?}", user);
+    println!("Generated User: {user:#?}");
 
     // Generate multiple random users.
     let users: Vec<User> = (0..5)
@@ -96,13 +96,13 @@ fn main() {
             active: Faker.fake(),
         })
         .collect();
-    println!("Generated Users: {:#?}", users);
+    println!("Generated Users: {users:#?}");
 
     // Generate a random order with random items.
 
     // type derived Dummy
     // let f: Foo = Faker.fake();
-    // println!("{:?}", f);
+    // println!("{f:?}");
     let order = Order {
         id: Faker.fake(),
         user_id: user.id,
@@ -119,16 +119,16 @@ fn main() {
             (1..28).fake::<u8>()
         ),
     };
-    println!("Generated Order: {:#?}", order);
+    println!("Generated Order: {order:#?}");
 
     // Generate random sentences:
     let sentences: Vec<String> =
         (0..3).map(|_| Sentence(3..10).fake()).collect();
-    println!("Random Sentences: {:#?}", sentences);
+    println!("Random Sentences: {sentences:#?}");
 
     // Generate random user agents:
     let user_agents: Vec<String> = (0..3).map(|_| UserAgent().fake()).collect();
-    println!("User Agents: {:#?}", user_agents);
+    println!("User Agents: {user_agents:#?}");
 }
 
 #[test]

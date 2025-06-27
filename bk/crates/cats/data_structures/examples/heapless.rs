@@ -25,27 +25,27 @@ fn main() -> anyhow::Result<()> {
     vec.push(2).unwrap();
     vec.push(3).unwrap();
 
-    println!("Vector: {:?}", vec);
+    println!("Vector: {vec:?}");
     println!("Vector length: {}", vec.len());
     println!("Vector capacity: {}", vec.capacity());
 
     if let Some(last) = vec.pop() {
-        println!("Popped: {}", last);
+        println!("Popped: {last}");
     }
 
     // Fixed-size string with capacity of 16:
-    let mut string: String<16> = String::try_from("Hello").unwrap();
+    let mut string: String<16> = String::from("Hello");
 
     assert!(string.push_str(", world!").is_ok());
 
-    println!("String: {}", string);
+    println!("String: {string}");
     println!("String length: {}", string.len());
     println!("String capacity: {}", string.capacity());
 
     // Error if we exceed the capacity:
     let result = string.push_str(" It is too much!");
     if let Err(err) = result {
-        println!("Error pushing to string: {:?}", err); // err is ()
+        println!("Error pushing to string: {err:?}"); // err is ()
     }
 
     // Fixed-size map (using Fnv hash for performance)
@@ -56,20 +56,20 @@ fn main() -> anyhow::Result<()> {
     map.insert("three", 3).unwrap();
     map.insert("four", 4).unwrap();
 
-    println!("Map: {:?}", map);
+    println!("Map: {map:?}");
 
     if let Some(value) = map.get("two") {
-        println!("Value for 'two': {}", value);
+        println!("Value for 'two': {value}");
     }
 
     let result = map.insert("five", 5);
     if let Err(err) = result {
-        println!("Error inserting to map: {:?}", err);
+        println!("Error inserting to map: {err:?}");
     }
 
     // Iterating over the map:
     for (key, value) in &map {
-        println!("Key: {}, Value: {}", key, value);
+        println!("Key: {key}, Value: {value}");
     }
 
     // Clearing the map:

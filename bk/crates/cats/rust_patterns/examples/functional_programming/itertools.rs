@@ -24,7 +24,7 @@ fn main() {
     for element in chain(&[1, 2, 3], &[4]) {
         result.push(*element);
     }
-    println!("Result: {:?}", result);
+    println!("Result: {result:?}");
     assert_eq!(result, vec![1, 2, 3, 4]);
 
     // `cloned` creates an iterator that clones the elements of the original

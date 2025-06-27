@@ -17,7 +17,7 @@ fn main() {
         *p = (0..5).map(|_| rng.sample(Alphanumeric) as char).collect();
     });
     vec.par_sort_unstable();
-    println!("{:?}", vec);
+    println!("{vec:?}");
 }
 // ANCHOR_END: example
 

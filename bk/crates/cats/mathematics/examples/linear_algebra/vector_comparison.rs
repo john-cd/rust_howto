@@ -18,7 +18,7 @@ fn main() {
     // Check that the sum of the vectors is correct.
     assert_abs_diff_eq!(z, Array::from(vec![6., 6., 6., 6., 6.]));
 
-    println!("c = {}", c);
+    println!("c = {c}");
 
     // Modify the vectors.
     c[0] = 10.;

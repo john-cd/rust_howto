@@ -139,7 +139,7 @@
 //     let ptr = pinned_self_ref.as_ref().get_pointer();
 //     // let value = pinned_self_ref.as_ref().get_value();
 
-//     // println!("Value: {}", value);
+//     // println!("Value: {value}");
 //     println!("Pointer points to value: {}", unsafe { &*ptr });
 // }
 

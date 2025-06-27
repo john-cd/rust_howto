@@ -53,7 +53,7 @@ fn main() -> std::io::Result<()> {
     std::io::Read::read_to_string(&mut file, &mut content)?;
 
     // Print the content of the named temporary file
-    println!("Content of temporary file: {}", content);
+    println!("Content of temporary file: {content}");
 
     Ok(())
 }

@@ -43,17 +43,17 @@ fn main() {
     assert_eq!((e1 - e2), MyFlags::FLAG_A);
     assert_eq!(!e2, MyFlags::FLAG_A);
     // Use the fmt::Display implementation above
-    println!("e1: {} e2: {}", e1, e2);
+    println!("e1: {e1} e2: {e2}");
 
     // Demonstrate formatting options for the bitflags.
     let flags = MyFlags::FLAG_ABC;
-    assert_eq!(format!("{}", flags), "00000000000000000000000000000111");
+    assert_eq!(format!("{flags}"), "00000000000000000000000000000111");
     assert_eq!(format!("{:?}", MyFlags::FLAG_B), "MyFlags(FLAG_B)");
     assert_eq!(
         format!("{:?}", MyFlags::FLAG_A | MyFlags::FLAG_B),
         "MyFlags(FLAG_A | FLAG_B)"
     );
-    println!("{:?}", flags);
+    println!("{flags:?}");
 }
 // ANCHOR_END: example
 

@@ -41,7 +41,7 @@ fn main() -> Result<()> {
         .filter_map(|x| x.err())
         .collect();
 
-    image_failures.iter().for_each(|x| println!("{}", x));
+    image_failures.iter().for_each(|x| println!("{x}"));
 
     println!(
         "{} thumbnails saved successfully",
@@ -78,7 +78,7 @@ fn create_test_files() -> Result<()> {
 
     // Create a few dummy .jpg files.
     for i in 0..3 {
-        let file_path = test_dir.join(format!("test_{}.jpg", i));
+        let file_path = test_dir.join(format!("test_{i}.jpg"));
         let mut file = File::create(&file_path)?;
         // Write some dummy data to the file (not a real image).
         file.write_all(b"dummy image data")?;

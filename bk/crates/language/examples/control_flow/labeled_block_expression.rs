@@ -17,7 +17,7 @@ fn main() {
         println!("About to return with value 3");
         3
     };
-    println!("Result: {}", result);
+    println!("Result: {result}");
 }
 
 fn condition() -> bool {

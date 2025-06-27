@@ -79,7 +79,7 @@
 //                 // Optional: Handle window resize events if needed.
 //                 // Vello's `render_to_window` handles surface reconfiguration
 //                 // automatically based on the render params width/height.
-//                 println!("Window resized to: {:?}", physical_size);
+//                 println!("Window resized to: {physical_size:?}");
 //                 // Request a redraw to render the scene with the new size.
 //                 window.request_redraw();
 //             }
@@ -163,7 +163,7 @@
 //                     Ok(_) => {} // Render successful.
 //                     Err(e) => {
 //                         // Handle rendering errors (e.g., surface lost).
-//                         eprintln!("Error rendering to window: {}", e);
+//                         eprintln!("Error rendering to window: {e}");
 //                         // You might want to recreate the renderer or exit
 //                         // here depending on the error.
 //                         *control_flow = ControlFlow::Exit;

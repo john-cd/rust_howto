@@ -43,12 +43,12 @@ fn main() {
     // environments.
     let shared_string: Rc<str> = Rc::from("Hello, Rust!");
     let shared_string_clone = Rc::clone(&shared_string);
-    println!("{}", shared_string_clone);
+    println!("{shared_string_clone}");
 
     // For heap-allocated, owned, and immutable data, `Box<str>` can be
     // more efficient than `String`.
     let boxed_string: Box<str> = "Hello, Rust!".into();
-    println!("{}", boxed_string);
+    println!("{boxed_string}");
 }
 // ANCHOR_END: example
 

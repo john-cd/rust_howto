@@ -30,10 +30,10 @@ fn main() {
                 println!("Command: none");
             }
             cli::Cmd::Open(files) => {
-                println!("Command: open {:?}", files);
+                println!("Command: open {files:?}");
             }
             cli::Cmd::Query(query) => {
-                println!("Command: query {:?}", query);
+                println!("Command: query {query:?}");
             }
             cli::Cmd::Test => {
                 println!("Command: test");

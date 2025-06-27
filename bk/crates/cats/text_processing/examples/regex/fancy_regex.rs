@@ -12,7 +12,7 @@ fn match_two_identical_words(s: &str) {
     match re.is_match(s) {
         Ok(true) => println!("Match found."),
         Ok(false) => println!("No match found."),
-        Err(err) => eprintln!("Regex error: {}", err),
+        Err(err) => eprintln!("Regex error: {err}"),
     }
 }
 
@@ -42,7 +42,7 @@ fn capture_groups() {
             }
         }
         Ok(None) => println!("No match found."),
-        Err(err) => eprintln!("Regex error: {}", err),
+        Err(err) => eprintln!("Regex error: {err}"),
     }
 }
 

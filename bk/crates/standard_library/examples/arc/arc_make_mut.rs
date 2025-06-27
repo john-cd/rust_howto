@@ -46,13 +46,9 @@ mod cfg {
             let mutable_config: &mut Configuration = Arc::make_mut(self);
             mutable_config.server_address = server_address;
             mutable_config.max_connections = max_connections;
+            println!("Admin task: Configuration updated to {mutable_config:?}");
             println!(
-                "Admin task: Configuration updated to {:?}",
-                mutable_config
-            );
-            println!(
-                "Original config after update (should be unchanged for readers): {:?}",
-                self
+                "Original config after update (should be unchanged for readers): {self:?}"
             );
         }
     }
@@ -70,8 +66,7 @@ fn main() {
         let handle = thread::spawn(move || {
             thread::sleep(Duration::from_millis(50 * i));
             println!(
-                "Reader {} - Server Address: {}",
-                i,
+                "Reader {i} - Server Address: {}",
                 config_clone.server_address()
             );
         });
@@ -89,13 +84,11 @@ fn main() {
         let config_clone = Arc::clone(&config);
         let handle = thread::spawn(move || {
             println!(
-                "Reader {} - Server Address: {}",
-                i,
+                "Reader {i} - Server Address: {}",
                 config_clone.server_address()
             );
             println!(
-                "Reader {} - Max Connections: {}",
-                i,
+                "Reader {i} - Max Connections: {}",
                 config_clone.max_connections()
             );
             thread::sleep(Duration::from_millis(50));

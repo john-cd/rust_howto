@@ -13,7 +13,7 @@ fn main() -> Result<(), Error> {
     let password_to_hash = b"super_secret_password"; // Bad password; don't actually use!
 
     let phc_string = password_hashing(password_to_hash)?;
-    println!("Hashed password: {}", phc_string);
+    println!("Hashed password: {phc_string}");
 
     // In a real application, save the PHC string to a secure database or file.
     // The PHC string contains the (one-way) hashed password and the salt, not

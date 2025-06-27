@@ -28,18 +28,18 @@ fn main() {
             match thread_id {
                 0 => {
                     map_clone.insert("key1", thread_id);
-                    println!("Thread {} inserted key1", thread_id);
+                    println!("Thread {thread_id} inserted key1");
                 }
                 1 => {
                     map_clone.insert("key2", thread_id);
-                    println!("Thread {} inserted key2", thread_id);
+                    println!("Thread {thread_id} inserted key2");
                 }
                 2 => match map_clone.get("key1") {
                     Some(value) => {
                         println!("Thread {} read key1: {}", thread_id, *value);
                     }
                     _ => {
-                        println!("Thread {} couldn't find key1", thread_id);
+                        println!("Thread {thread_id} couldn't find key1");
                     }
                 },
                 3 => match map_clone.get_mut("key2") {
@@ -51,7 +51,7 @@ fn main() {
                         );
                     }
                     _ => {
-                        println!("Thread {} couldn't find key2", thread_id);
+                        println!("Thread {thread_id} couldn't find key2");
                     }
                 },
                 _ => panic!("Unknown thread ID"),

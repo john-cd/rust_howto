@@ -22,13 +22,13 @@ fn main() -> Result<(), Box<dyn Error>> {
     // The salt is generated randomly using OS-derived randomness:
     let hashed_password: String = hash(password, DEFAULT_COST)?;
 
-    println!("Hashed password: {}", hashed_password);
+    println!("Hashed password: {hashed_password}");
 
     // 2) Later, in order to verify a password, the hash is retrieved from the
     // database, and the password is checked against it:
 
     let is_valid = verify(password, &hashed_password)?;
-    println!("Password is valid: {}", is_valid);
+    println!("Password is valid: {is_valid}");
 
     Ok(())
 }

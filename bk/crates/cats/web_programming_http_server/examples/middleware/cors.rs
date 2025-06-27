@@ -41,7 +41,7 @@ async fn main() -> Result<()> {
         .unwrap();
 
     let response = service.ready().await?.call(request).await?;
-    println!("{:?}", response);
+    println!("{response:?}");
     assert_eq!(
         response
             .headers()

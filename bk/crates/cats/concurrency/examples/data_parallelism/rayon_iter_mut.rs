@@ -11,7 +11,7 @@ fn main() {
     // element by 1. The order of execution is not guaranteed, but all
     // elements will be processed.
     arr.par_iter_mut().for_each(|p| *p -= 1);
-    println!("{:?}", arr);
+    println!("{arr:?}");
 }
 // ANCHOR_END: example
 

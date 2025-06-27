@@ -29,7 +29,7 @@ fn main() {
         reference_field: "Hello, world!",
     };
 
-    println!("{:?}", complex);
+    println!("{complex:?}");
 }
 // ANCHOR_END: example
 

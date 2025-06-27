@@ -45,7 +45,7 @@ fn main() -> anyhow::Result<()> {
     let deserialized_data: MyData = from_reader(&mut cursor)?;
 
     // Print the deserialized data.
-    println!("{:?}", deserialized_data);
+    println!("{deserialized_data:?}");
 
     Ok(())
 }

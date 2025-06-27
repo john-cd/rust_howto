@@ -32,12 +32,12 @@ fn main() {
             // `Sender::send` will block
             // (unblocking once a receiver has made space).
             tx2.send(i).expect("All receivers have been dropped");
-            println!("Produced: {}", i);
+            println!("Produced: {i}");
             // Send a value into the channel, returning an error if all
             // receivers have been dropped or the timeout has expired.
             match tx2.send_timeout(i + 10, Duration::from_millis(5)) {
                 Ok(_) => println!("Produced: {}", i + 10),
-                Err(e) => eprintln!("{}", e),
+                Err(e) => eprintln!("{e}"),
             }
         }
     });
@@ -48,9 +48,9 @@ fn main() {
         // Receive values from the channel in a loop.
         loop {
             match rx2.recv_timeout(Duration::from_millis(10)) {
-                Ok(value) => println!("Consumed: {}", value),
+                Ok(value) => println!("Consumed: {value}"),
                 e @ Err(RecvTimeoutError::Timeout) => {
-                    eprintln!("The timeout has expired: {:?}.", e)
+                    eprintln!("The timeout has expired: {e:?}.")
                 }
                 Err(RecvTimeoutError::Disconnected) => {
                     eprintln!(
@@ -66,7 +66,7 @@ fn main() {
     // Wait for producer thread to finish
     match producer_handle.join() {
         Ok(_) => println!("Producer thread finished."),
-        Err(e) => eprintln!("Producer thread error: {:?}", e),
+        Err(e) => eprintln!("Producer thread error: {e:?}"),
     }
     // Drop the original sender as well to signal to the consumer
     // that no more values will be sent.
@@ -76,7 +76,7 @@ fn main() {
 
     match consumer_handle.join() {
         Ok(_) => println!("Consumer thread finished."),
-        Err(e) => eprintln!("Consumer thread error: {:?}", e),
+        Err(e) => eprintln!("Consumer thread error: {e:?}"),
     }
 
     select();
@@ -95,8 +95,8 @@ fn select() {
     // `Selector` allows a thread to wait
     // upon the result of more than one operation at once.
     flume::Selector::new()
-        .recv(&rx0, |b| println!("Received {:?}", b))
-        .recv(&rx1, |n| println!("Received {:?}", n))
+        .recv(&rx0, |b| println!("Received {b:?}"))
+        .recv(&rx1, |n| println!("Received {n:?}"))
         .wait();
 }
 // ANCHOR_END: example

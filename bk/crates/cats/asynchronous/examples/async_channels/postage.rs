@@ -11,14 +11,14 @@ use tokio::time::Duration;
 /// and then sleeps for a short duration.
 async fn broadcaster(id: usize, mut tx: broadcast::Sender<String>) {
     for i in 0..2 {
-        let msg = format!("Broadcaster {}'s message {}", id, i);
+        let msg = format!("Broadcaster {id}'s message {i}");
         if let Err(err) = tx.send(msg.clone()).await {
             // `send` returns Err(SendError(value))
             // if the sink rejected the message.
-            eprintln!("Failed to send message: {}", err);
+            eprintln!("Failed to send message: {err}");
             break;
         }
-        println!("Sent: {}", msg);
+        println!("Sent: {msg}");
         // Simulate work
         tokio::time::sleep(Duration::from_millis(10)).await;
     }
@@ -29,7 +29,7 @@ async fn broadcaster(id: usize, mut tx: broadcast::Sender<String>) {
 /// the channel is closed.
 async fn receiver(name: &'static str, mut rx: broadcast::Receiver<String>) {
     while let Some(msg) = rx.recv().await {
-        println!("{} receive {}", name, msg);
+        println!("{name} receive {msg}");
     }
 }
 

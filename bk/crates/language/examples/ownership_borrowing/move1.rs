@@ -13,8 +13,8 @@ fn main() {
     // This is NOT a shallow copy or a deep copy.
     let s2 = s1;
 
-    println!("{}, world!", s2);
-    // ERROR: println!("{}, world!", s1); // `s1` is invalid.
+    println!("{s2}, world!");
+    // ERROR: println!("{s1}, world!"); // `s1` is invalid.
 }
 // `s2` gets out of scope here, therefore the String it owns is dropped
 // (deallocated). `s1` invalidation earlier prevents a "double free" error,

@@ -58,7 +58,7 @@ async fn main() -> anyhow::Result<()> {
 
     for row in rows {
         let version: &str = row.get(0);
-        println!("PostgreSQL version: {}", version);
+        println!("PostgreSQL version: {version}");
     }
 
     Ok(())

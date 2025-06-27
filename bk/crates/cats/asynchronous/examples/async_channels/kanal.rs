@@ -36,7 +36,7 @@ async fn main() -> anyhow::Result<()> {
 async fn producer(tx: AsyncSender<i32>, id: i32) -> anyhow::Result<()> {
     for i in 0..5 {
         tx.send(i).await?;
-        println!("Producer {} sent: {}", id, i);
+        println!("Producer {id} sent: {i}");
     }
     Ok(())
 }
@@ -45,7 +45,7 @@ async fn producer(tx: AsyncSender<i32>, id: i32) -> anyhow::Result<()> {
 /// It continues to receive messages until the channel is closed.
 async fn consumer(rx: AsyncReceiver<i32>) -> anyhow::Result<()> {
     while let Ok(value) = rx.recv().await {
-        println!("Consumer received: {}", value);
+        println!("Consumer received: {value}");
     }
     Ok(())
 }

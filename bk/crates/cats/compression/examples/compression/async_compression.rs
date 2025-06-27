@@ -28,7 +28,7 @@
 //     input_file.write_all(b"It has multiple lines.\n").await?;
 //     drop(input_file);
 
-//     println!("Created '{}'", input_filename);
+//     println!("Created '{input_filename}'");
 
 //     // 2. Asynchronously compress the file.
 //     println!(

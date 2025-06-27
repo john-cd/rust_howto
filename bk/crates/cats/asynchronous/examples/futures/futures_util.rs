@@ -22,9 +22,9 @@ async fn fetch_data(id: u32) -> Result<String, String> {
     // Simulate network delay
     time::sleep(Duration::from_millis(100)).await;
     if id % 3 == 0 {
-        Err(format!("Error fetching data for id {}", id))
+        Err(format!("Error fetching data for id {id}"))
     } else {
-        Ok(format!("Data for id {}", id))
+        Ok(format!("Data for id {id}"))
     }
 }
 
@@ -49,10 +49,10 @@ async fn main() {
     // Select between multiple futures:
     match future::select(future1, future2).await {
         future::Either::Left((val, _)) => {
-            println!("Future 1 completed first with: {}", val)
+            println!("Future 1 completed first with: {val}")
         }
         future::Either::Right((val, _)) => {
-            println!("Future 2 completed first with: {}", val)
+            println!("Future 2 completed first with: {val}")
         }
     }
 
@@ -62,14 +62,14 @@ async fn main() {
     // underlying futures, collecting the results into a destination Vec<T>
     // in the same order as they were provided.
     let results: Vec<Result<String, String>> = future::join_all(futures).await;
-    println!("Join results: {:?}", results);
+    println!("Join results: {results:?}");
 
     // `try_join`:
     // If successful, the returned future will finish with a tuple of both
     // results. If unsuccessful, it will complete with the first error
     // encountered.
     let results = future::try_join(fetch_data(1), fetch_data(4)).await;
-    println!("try_join results: {:?}", results);
+    println!("try_join results: {results:?}");
 
     println!("===== Future Extensions =====");
     // Demonstrates:
@@ -79,7 +79,7 @@ async fn main() {
 
     // Use `map` to transform the output of a Future
     let future = fetch_data(1).map(|result| match result {
-        Ok(data) => Ok(format!("Processed: {}", data)),
+        Ok(data) => Ok(format!("Processed: {data}")),
         Err(e) => Err(e),
     });
     println!("Map result: {:?}", future.await);
@@ -88,13 +88,13 @@ async fn main() {
     let future = fetch_data(2).and_then(|data| async move {
         // Simulate additional processing
         time::sleep(Duration::from_millis(50)).await;
-        Ok(format!("Enhanced: {}", data))
+        Ok(format!("Enhanced: {data}"))
     });
     println!("AndThen result: {:?}", future.await);
 
     // Use `or_else` for error handling:
     let future = fetch_data(3).or_else(|err| async move {
-        println!("Recovering from error: {}", err);
+        println!("Recovering from error: {err}");
         // Return a fallback value
         Ok::<_, String>(String::from("Fallback data"))
     });

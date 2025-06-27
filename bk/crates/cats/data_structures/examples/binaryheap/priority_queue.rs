@@ -43,7 +43,7 @@ fn main() {
 
     // Pop elements in order of priority
     while let Some((task, priority)) = pq.pop() {
-        println!("Task: {}, Priority: {}", task, priority);
+        println!("Task: {task}, Priority: {priority}");
     }
 
     println!("\n===== Min Priority Queue (using Reverse) =====");
@@ -57,7 +57,7 @@ fn main() {
     min_pq.push("low urgency task", Reverse(10));
 
     while let Some((task, Reverse(priority))) = min_pq.pop() {
-        println!("Task: {}, Priority: {}", task, priority);
+        println!("Task: {task}, Priority: {priority}");
     }
 
     println!("\n===== Priority Queue with Custom Types =====");
@@ -76,10 +76,7 @@ fn main() {
 
     // Get highest priority task without removing it
     if let Some((task, priority)) = task_queue.peek() {
-        println!(
-            "Highest priority task: {:?} with priority {}",
-            task, priority
-        );
+        println!("Highest priority task: {task:?} with priority {priority}",);
     }
 
     // Change priority of a task
@@ -87,15 +84,14 @@ fn main() {
     if let Some(old_priority) = task_queue.change_priority(&task_to_change, 75)
     {
         println!(
-            "Changed priority of task {:?} from {} to 75",
-            task_to_change, old_priority
+            "Changed priority of task {task_to_change:?} from {old_priority} to 75",
         );
     }
 
     // Process all tasks
     println!("\nProcessing tasks in priority order:");
     while let Some((task, priority)) = task_queue.pop() {
-        println!("Processing: {:?} (Priority: {})", task, priority);
+        println!("Processing: {task:?} (Priority: {priority})");
     }
 
     println!("\n===== Advanced Usage =====");
@@ -109,25 +105,25 @@ fn main() {
 
     // Get priority of an item
     if let Some(priority) = advanced_pq.get_priority(&"Task B") {
-        println!("Priority of Task B: {}", priority);
+        println!("Priority of Task B: {priority}");
     }
 
     // Increase the priority of an item
     if let Some(old_priority) = advanced_pq.push_increase("Task B", 8) {
-        println!("Increased priority from {} to 8", old_priority);
+        println!("Increased priority from {old_priority} to 8");
     }
 
     // Iterate through the queue without consuming it (not sorted)
     println!("\nAll items in queue:");
     for (item, priority) in advanced_pq.iter() {
-        println!("{}: {}", item, priority);
+        println!("{item}: {priority}");
     }
 
     // Convert to a vector and sort by priority
     let items_vec: Vec<_> = advanced_pq.into_sorted_vec();
     println!("\nSorted items:");
     for item in items_vec {
-        println!("{}", item);
+        println!("{item}");
     }
 }
 // ANCHOR_END: example

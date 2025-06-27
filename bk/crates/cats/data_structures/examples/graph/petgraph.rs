@@ -37,7 +37,7 @@ fn main() {
 
     // Find the shortest path from `b` using `1` as the cost for every edge.
     let node_map = dijkstra(&graph, b, Some(d), |_| 1);
-    println!("{:?}", node_map);
+    println!("{node_map:?}");
 
     // Print the graph in DOT format.
     println!("{:?}", Dot::with_config(&graph, &[Config::EdgeNoLabel]));

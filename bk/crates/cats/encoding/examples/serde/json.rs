@@ -27,7 +27,7 @@ fn main() -> Result<(), Error> {
             "admin"
         ]
     });
-    println!("{}", expected);
+    println!("{expected}");
     assert_eq!(parsed, expected);
 
     Ok(())

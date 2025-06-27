@@ -22,7 +22,7 @@ fn main() {
     let filenames = vec!["foobar.jpg", "foo.bar", "foobar.png"];
     for file in filenames {
         let mime = find_mimetype(file);
-        println!("MIME for {}: {}", file, mime);
+        println!("MIME for {file}: {mime}");
     }
 }
 // ANCHOR_END: example

@@ -33,8 +33,8 @@ fn main() {
     // Another way to access values using pattern matching:
     let score = scores.get(&team_name);
     match score {
-        Some(s) => println!("Team {} score: {}", team_name, s),
-        None => println!("Team {} not found", team_name),
+        Some(s) => println!("Team {team_name} score: {s}"),
+        None => println!("Team {team_name} not found"),
     }
 
     // Iterate over and print the key-value pairs in the `HashMap`
@@ -58,7 +58,7 @@ fn main() {
 
     // Remove a key and return its value if present.
     if let Some(removed_value) = scores.remove(&String::from("Blue")) {
-        println!("Removed Blue team with score: {}", removed_value);
+        println!("Removed Blue team with score: {removed_value}");
     }
 
     // Clear the HashMap.

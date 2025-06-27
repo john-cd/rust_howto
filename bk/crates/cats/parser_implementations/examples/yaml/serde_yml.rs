@@ -58,7 +58,7 @@ fn main() -> anyhow::Result<()> {
 
     // Serialize to YAML:
     let yaml = serde_yml::to_string(&person)?;
-    println!("Serialized YAML:\n{}", yaml);
+    println!("Serialized YAML:\n{yaml}");
 
     // Write to file:
     let mut file = File::create("temp/person.yaml")?;
@@ -71,7 +71,7 @@ fn main() -> anyhow::Result<()> {
 
     // Deserialize from YAML:
     let deserialized: Person = serde_yml::from_str(&contents)?;
-    println!("\nDeserialized person: {:?}", deserialized);
+    println!("\nDeserialized person: {deserialized:?}");
 
     Ok(())
 }

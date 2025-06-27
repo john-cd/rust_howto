@@ -21,7 +21,7 @@
 //                 println!("Response status: {}", response.status());
 //             }
 //             Err(e) => {
-//                 eprintln!("Error: {}", e);
+//                 eprintln!("Error: {e}");
 //             }
 //         }
 //     });

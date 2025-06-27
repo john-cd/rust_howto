@@ -8,12 +8,12 @@ fn main() {
     // appropriate application. If an error occurs during the opening
     // process, it will be printed to the standard error stream.
     if let Err(e) = open::that("example.txt") {
-        eprintln!("Failed to open file: {}", e);
+        eprintln!("Failed to open file: {e}");
     }
 
     // Open a URL using the default web browser.
     if let Err(e) = open::that("https://www.rust-lang.org") {
-        eprintln!("Failed to open URL: {}", e);
+        eprintln!("Failed to open URL: {e}");
     }
     // OR: open::with("http://rust-lang.org", "firefox")?;
 
@@ -25,9 +25,7 @@ fn main() {
     // This is useful for understanding how the `open` crate would handle a
     // given path. The commands are printed to the standard output stream.
     let path = "http://rust-lang.org";
-    open::commands(path)
-        .iter()
-        .for_each(|x| println!("{:?}", x));
+    open::commands(path).iter().for_each(|x| println!("{x:?}"));
 }
 // ANCHOR_END: example
 

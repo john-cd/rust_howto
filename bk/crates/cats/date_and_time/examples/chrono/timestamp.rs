@@ -25,9 +25,7 @@ fn main() {
         // from_timestamp returns an Option, so we unwrap it.
         DateTime::from_timestamp(1_000_000_000, 0).unwrap();
     println!(
-        "Date after a billion seconds since 1970-01-01 00:00:00 was
-    {}.",
-        date_time_after_a_billion_seconds
+        "Date after a billion seconds since 1970-01-01 00:00:00 was {date_time_after_a_billion_seconds}."
     );
 }
 // ANCHOR_END: example

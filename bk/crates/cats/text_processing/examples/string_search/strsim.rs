@@ -38,8 +38,8 @@ fn main() {
     let s3 = "karolin";
     let s4 = "kathrin";
     match hamming(s3, s4) {
-        Ok(distance) => println!("Hamming: {}", distance),
-        Err(e) => println!("Error calculating Hamming distance: {}", e),
+        Ok(distance) => println!("Hamming: {distance}"),
+        Err(e) => println!("Error calculating Hamming distance: {e}"),
     }
 
     // Example: Finding closest match

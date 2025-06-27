@@ -14,12 +14,12 @@ fn main() {
     // Use `unwrap_or` to provide a default value if `maybe_value` is `None`:
     let maybe_value: Option<i32> = None;
     let value: i32 = maybe_value.unwrap_or(0);
-    println!("Value: {}", value); // Prints zero.
+    println!("Value: {value}"); // Prints zero.
 
     // Use `unwrap_or` to provide a default value if a `Result` is `Err`.
     let result: Result<i32, &str> = Err("Something went wrong");
     let value: i32 = result.unwrap_or(42);
-    println!("Value: {}", value); // Prints 42.
+    println!("Value: {value}"); // Prints 42.
 
     // Use `unwrap_or_else` to compute a default value (within a closure)
     // when an `Option` is `None` or `Result` an `Err`.
@@ -28,17 +28,17 @@ fn main() {
         println!("Option was None. Providing default value.");
         "default_value"
     });
-    println!("Value: {}", value);
+    println!("Value: {value}");
 
     // Fallback example: try to open a file; if the file was not found, try to
     // create the file. Otherwise, panic.
     let _greeting_file = File::open("temp/hello.txt").unwrap_or_else(|error| {
         if error.kind() == ErrorKind::NotFound {
             File::create("temp/hello.txt").unwrap_or_else(|error| {
-                panic!("Problem creating the file: {:?}", error);
+                panic!("Problem creating the file: {error:?}");
             })
         } else {
-            panic!("Problem opening the file: {:?}", error);
+            panic!("Problem opening the file: {error:?}");
         }
     });
 }

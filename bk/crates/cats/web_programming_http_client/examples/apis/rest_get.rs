@@ -24,7 +24,7 @@ async fn main() -> Result<(), Error> {
         owner = "john-cd",
         repo = "rust_howto"
     );
-    println!("{}", request_url);
+    println!("{request_url}");
 
     // Create a new HTTP client with a custom User-Agent header.
     let client = reqwest::Client::builder().user_agent("Rust-test").build()?;
@@ -34,7 +34,7 @@ async fn main() -> Result<(), Error> {
 
     // Deserialize the JSON response into a vector of `User` structs.
     let users: Vec<User> = response.json().await?;
-    println!("{:?}", users);
+    println!("{users:?}");
     Ok(())
 }
 // ANCHOR_END: example

@@ -27,7 +27,7 @@ alisha,colombo,xyz";
     let mut rdr = csv::Reader::from_reader(data.as_bytes());
     for result in rdr.deserialize() {
         let record: Record = result?;
-        println!("{:?}", record);
+        println!("{record:?}");
     }
 
     Ok(())

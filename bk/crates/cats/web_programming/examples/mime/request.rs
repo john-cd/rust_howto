@@ -35,7 +35,7 @@ async fn main() -> Result<()> {
                     _ => "neither text nor image",
                 };
 
-            println!("The reponse contains {}.", media_type);
+            println!("The reponse contains {media_type}.");
         }
     };
 

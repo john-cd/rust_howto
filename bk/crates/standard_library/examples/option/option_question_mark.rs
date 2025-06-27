@@ -29,14 +29,14 @@ fn main() {
     // `Option` contains a `String` and it's not empty.
     let s1 = Some("hello".to_string());
     match get_first_char_uppercase(s1) {
-        Some(c) => println!("First uppercase char: {}", c), // Output: H.
+        Some(c) => println!("First uppercase char: {c}"), // Output: H.
         None => println!("Could not process string."),
     }
 
     // `Option` contains an empty `String` (or is `None`).
     let s2 = Some("".to_string());
     match get_first_char_uppercase(s2) {
-        Some(c) => println!("First uppercase char: {}", c),
+        Some(c) => println!("First uppercase char: {c}"),
         None => println!("Could not process string."), /* Output: Could not
                                                         * process string. */
     }

@@ -12,7 +12,7 @@ fn main() {
     // Generate a random value using the thread-local random number generator.
     // `random()` is a shorthand for `rng().random()`
     let n1: u8 = rand::random();
-    println!("Random u8: {}", n1);
+    println!("Random u8: {n1}");
     // With the "turbofish" notation:
     println!("Random u16: {}", rand::random::<u16>());
     println!("Random u32: {}", rand::random::<u32>());

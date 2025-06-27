@@ -21,7 +21,7 @@ use heck::ToTitleCase;
 fn main() {
     let input = "hello_world example-string";
 
-    println!("Original: {}", input);
+    println!("Original: {input}");
     println!("Snake case: {}", input.to_snake_case()); // hello_world_example_string
     println!("Kebab case: {}", input.to_kebab_case()); // hello-world-example-string
     println!("Pascal case: {}", input.to_pascal_case()); // HelloWorldExampleString

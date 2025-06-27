@@ -27,7 +27,7 @@ async fn main() -> Result<()> {
     // result of the future to the provided closure f.
     let future_of_7 = new_future.then(|x| async move { x + 3 });
     let seven = future_of_7.await;
-    println!("{}", seven);
+    println!("{seven}");
     assert_eq!(seven, 7);
 
     // Conditional `Either` future

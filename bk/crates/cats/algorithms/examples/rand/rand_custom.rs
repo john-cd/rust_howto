@@ -29,11 +29,11 @@ fn main() {
     let mut rng = rand::rng();
     // Generate a random tuple of (i32, bool, f64).
     let rand_tuple = rng.random::<(i32, bool, f64)>();
-    println!("Random tuple: {:?}", rand_tuple);
+    println!("Random tuple: {rand_tuple:?}");
 
     // Generate a random Point using the custom distribution.
     let rand_point: Point = rng.random();
-    println!("Random Point: {:?}", rand_point);
+    println!("Random Point: {rand_point:?}");
 }
 // ANCHOR_END: example
 

@@ -39,7 +39,7 @@ fn main() {
     println!("hello from the main thread");
 
     for received in rx {
-        println!("Got: {:?}", received);
+        println!("Got: {received:?}");
     }
 }
 // ANCHOR_END: example

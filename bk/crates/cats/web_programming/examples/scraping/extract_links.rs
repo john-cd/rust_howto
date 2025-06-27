@@ -19,7 +19,7 @@ async fn main() -> Result<()> {
     Document::from(res.as_str())
         .find(Name("a"))
         .filter_map(|n| n.attr("href"))
-        .for_each(|x| println!("{}", x));
+        .for_each(|x| println!("{x}"));
 
     Ok(())
 }

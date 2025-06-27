@@ -27,7 +27,7 @@ fn main() -> anyhow::Result<()> {
     println!("Response status: {}", response.status());
     // Parse the returned `Response` into an integer.
     let random_value: u32 = parse_response(response)?;
-    println!("A random number between 0 and 10: {}", random_value);
+    println!("A random number between 0 and 10: {random_value}");
     Ok(())
 }
 // ANCHOR_END: example
@@ -36,7 +36,7 @@ fn main() -> anyhow::Result<()> {
 fn require_network() {
     match main() {
         Ok(()) => println!("Success."),
-        Err(e) => eprintln!("Error: {}", e),
+        Err(e) => eprintln!("Error: {e}"),
     }
 }
 // TODO flaky service. rethink this example.

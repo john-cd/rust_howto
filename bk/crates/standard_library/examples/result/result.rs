@@ -19,8 +19,8 @@ fn open_file(file_path: &str) {
     let open_result: Result<File, io::Error> = File::open(file_path);
     // You could handle their `Result` there and then...
     match open_result {
-        Err(e) => eprintln!("An error occurred while opening the file: {}", e),
-        Ok(file) => println!("Opened {:?}", file),
+        Err(e) => eprintln!("An error occurred while opening the file: {e}"),
+        Ok(file) => println!("Opened {file:?}"),
     }
 }
 

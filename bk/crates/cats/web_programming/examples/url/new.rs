@@ -26,7 +26,7 @@ fn main() -> Result<(), ParseError> {
     let path = "/rust-lang/cargo";
 
     let gh = build_github_url(path)?;
-    println!("The joined URL is: {}", gh);
+    println!("The joined URL is: {gh}");
     assert_eq!(gh.as_str(), "https://github.com/rust-lang/cargo");
 
     Ok(())

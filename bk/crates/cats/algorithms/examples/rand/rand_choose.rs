@@ -18,7 +18,7 @@ fn main() {
         })
         .collect();
 
-    println!("{:?}", password);
+    println!("{password:?}");
 }
 // ANCHOR_END: example
 

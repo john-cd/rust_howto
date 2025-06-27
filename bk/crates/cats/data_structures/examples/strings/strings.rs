@@ -24,7 +24,7 @@ fn string() {
     // the `Display` trait.
     s1 = "contents".to_string();
 
-    println!("String: {}", s1);
+    println!("String: {s1}");
 }
 
 // The `str` type, also called a 'string slice', is the most primitive string
@@ -34,7 +34,7 @@ fn string_slices() {
 
     // Create a string slice pointing to the entire `String`:
     let slice1 = &my_string[..]; // Using `Index<RangeFull, Output = str>`.
-    println!("Slice of an entire `String`: '{}'", slice1);
+    println!("Slice of an entire `String`: '{slice1}'");
 
     // The following works as well:
     let _slice2 = &*my_string; // Using `Deref<Target = str>`.
@@ -42,14 +42,14 @@ fn string_slices() {
 
     // Create a string slice pointing to a part of the `String`:
     let slice4: &str = &my_string[0..4]; // "Rust"
-    println!("Slice of part of a `String`: '{}'", slice4);
+    println!("Slice of part of a `String`: '{slice4}'");
     // Caution: If we were to try to slice only part of a unicode
     // character's bytes, Rust would panic at runtime.
     // String slices must always be valid UTF-8!
 
     // Convert a `String` to `&str` explicitly using `as_str()`.
     fn print_slice(s: &str) {
-        println!("Printing a slice: '{}'", s);
+        println!("Printing a slice: '{s}'");
     }
     print_slice(my_string.as_str());
 
@@ -63,14 +63,14 @@ fn string_slices() {
 fn string_literals() {
     // String literals are string slices of type `&'static str`.
     let literal: &'static str = "Hello, world!";
-    println!("String literal: '{}'", literal);
+    println!("String literal: '{literal}'");
 
     // You can't directly modify a string literal.
     // ERROR: literal.push_str("!");
 
     // String literals can be used to create a `String`.
     let string_from_literal: String = literal.to_string();
-    println!("String from literal: '{}'", string_from_literal);
+    println!("String from literal: '{string_from_literal}'");
 }
 
 fn common_operations() {

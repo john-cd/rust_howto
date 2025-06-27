@@ -24,7 +24,7 @@ fn main() {
         // in the executed block.
         6
     }; // Semicolon here, because `let` is a statement.
-    println!("{}", result);
+    println!("{result}");
 }
 // All branches of an `if/else` expression must evaluate to the same type.
 // ANCHOR_END: example

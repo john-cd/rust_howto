@@ -59,10 +59,10 @@
 //             Token::TagToken(tag) => match tag.kind {
 //                 TagKind::StartTag => {
 //                     self.print_indent();
-//                     print!("<{}", tag.name.local);
+//                     print!("<{tag.name.local}");
 
 //                     for attr in tag.attrs {
-//                         print!(" {}=\"{}\"", attr.name.local, attr.value);
+//                         print!(" {attr.name.local, attr.value}=\"{}\"");
 //                     }
 
 //                     if tag.self_closing {
@@ -75,7 +75,7 @@
 //                 TagKind::EndTag => {
 //                     self.indent -= 1;
 //                     self.print_indent();
-//                     println!("</{}>", tag.name.local);
+//                     println!("</{tag.name.local}>");
 //                 }
 //                 _ => {}
 //             },
@@ -83,19 +83,19 @@
 //                 let text = text.trim();
 //                 if !text.is_empty() {
 //                     self.print_indent();
-//                     println!("\"{}\"", text);
+//                     println!("\"{text}\"");
 //                 }
 //             }
 //             Token::DoctypeToken(doctype) => {
-//                 println!("<!DOCTYPE {}>", doctype.name);
+//                 println!("<!DOCTYPE {doctype.name}>");
 //             }
 //             Token::CommentToken(text) => {
 //                 self.print_indent();
-//                 println!("<!-- {} -->", text);
+//                 println!("<!-- {text} -->");
 //             }
 //             Token::PIToken(pi) => {
 //                 self.print_indent();
-//                 println!("<?{} {}>", pi.target, pi.data);
+//                 println!("<?{pi.target, pi.data} {}>");
 //             }
 //             _ => {}
 //         }
@@ -254,7 +254,7 @@
 //     let indent = "  ".repeat(depth);
 
 //     if let Some(name) = &node.name {
-//         print!("{}Element: {}", indent, name.local);
+//         print!("{indent, name.local}Element: {}");
 
 //         if !node.attrs.is_empty() {
 //             print!(" [");
@@ -262,7 +262,7 @@
 //                 if i > 0 {
 //                     print!(", ");
 //                 }
-//                 print!("{}=\"{}\"", attr.name.local, attr.value);
+//                 print!("{attr.name.local, attr.value}=\"{}\"");
 //             }
 //             print!("]");
 //         }
@@ -270,7 +270,7 @@
 //     } else if let Some(text) = &node.text {
 //         let trimmed = text.trim();
 //         if !trimmed.is_empty() {
-//             println!("{}Text: \"{}\"", indent, trimmed);
+//             println!("{indent, trimmed}Text: \"{}\"");
 //         }
 //     }
 

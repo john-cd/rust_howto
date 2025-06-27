@@ -43,14 +43,14 @@ fn main() -> Result<()> {
     let age = parsed["age"].as_i64().unwrap();
     let phones = parsed["phones"].as_array().unwrap();
 
-    println!("Name: {}", name);
-    println!("Age: {}", age);
-    println!("Phones: {:?}", phones);
+    println!("Name: {name}");
+    println!("Age: {age}");
+    println!("Phones: {phones:?}");
 
     // 3. Parse the JSON string into a custom `User` struct.
     // The `User` struct must implement the `Deserialize` trait.
     let user: User = serde_json::from_str(json_str)?;
-    println!("{:?}", user);
+    println!("{user:?}");
 
     // 4. Serialize the `User` struct back into a JSON string.
     let u = serde_json::to_string(&user)?;

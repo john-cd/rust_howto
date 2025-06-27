@@ -54,21 +54,21 @@ fn main() {
     let p = Point2D { x: 1, y: 1 };
 
     // Use the `Debug` implementation:
-    println!("{:?}", p);
+    println!("{p:?}");
 
     // Use the `Display` implementation:
-    println!("{}", p);
+    println!("{p}");
 
     // Clone the point.
     // Since the type is `Copy`, you can and should just assign.
     #[allow(clippy::clone_on_copy)]
     let p2 = p.clone();
-    println!("{:?}", p2);
+    println!("{p2:?}");
 
     // Since `Point2D` is `Copy`, p2 remains valid after an assignment.
     let p3 = p2;
-    println!("{:?}", p2);
-    println!("{:?}", p3);
+    println!("{p2:?}");
+    println!("{p3:?}");
 
     // Equality:
     assert_eq!(p2, p3);
@@ -80,7 +80,7 @@ fn main() {
 
     // Use the `Default` implementation:
     let p4 = Point2D::default();
-    println!("{:?}", p4);
+    println!("{p4:?}");
 }
 // ANCHOR_END: example
 

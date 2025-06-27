@@ -40,7 +40,7 @@ fn main() {
     // when you just want to read its elements without modifying them.
     let mut c = vec![10, 20, 30];
     for num in c.iter() {
-        println!("Element: {}", num); // `num` is an immutable reference.
+        println!("Element: {num}"); // `num` is an immutable reference.
     }
 
     // If you need to modify the elements of a collection during iteration, you
@@ -48,24 +48,24 @@ fn main() {
     for num in c.iter_mut() {
         *num *= 2; // Dereference the mutable reference to modify the value
     }
-    println!("Modified numbers: {:?}", c);
+    println!("Modified numbers: {c:?}");
 
     // Strings in Rust are UTF-8.
     let s = "Hello👋";
     // They can be iterated over Unicode scalar values (characters):
     for c in s.chars() {
-        println!("Character: {}", c);
+        println!("Character: {c}");
     }
     // Or over the raw UTF-8 bytes of the string:
     for b in s.bytes() {
-        println!("Byte: {}", b);
+        println!("Byte: {b}");
     }
 
     // You can use `enumerate` to produce both the index and the value
     // while iterating.
     let fruits = ["apple", "banana", "cherry"];
     for (index, fruit) in fruits.iter().enumerate() {
-        println!("Fruit at index {}: {}", index, fruit);
+        println!("Fruit at index {index}: {fruit}");
     }
     // Note that (index, value) above is a pattern that destructures elements as
     // you iterate.

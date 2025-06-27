@@ -14,7 +14,7 @@ fn main() {
     // Because we derived `Debug`, we can print the struct using the `{:?}`
     // format specifier. Without `#[derive(Debug)]`, this line would cause a
     // compile-time error.
-    println!("The point is: {:?}", p1);
+    println!("The point is: {p1:?}");
 }
 // ANCHOR_END: example
 

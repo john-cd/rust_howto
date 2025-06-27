@@ -18,7 +18,7 @@ fn main() {
     // Print the list (elements are printed in the order they were added).
     println!("List elements:");
     for element in &list {
-        println!("{}", element);
+        println!("{element}");
     }
 
     // Get the first and last elements (without removing them).
@@ -28,7 +28,7 @@ fn main() {
     // Pop elements from the front of the list.
     println!("\nPopping from front:");
     while let Some(element) = list.pop_front() {
-        println!("Popped: {}", element);
+        println!("Popped: {element}");
     }
 
     // Add some more elements.
@@ -38,7 +38,7 @@ fn main() {
     // Pop elements from the back of the list.
     println!("\nPopping from back:");
     while let Some(element) = list.pop_back() {
-        println!("Popped: {}", element);
+        println!("Popped: {element}");
     }
 
     // Add some more elements.
@@ -52,7 +52,7 @@ fn main() {
     }
 
     for element in &list {
-        println!("{}", element);
+        println!("{element}");
     }
 
     // Get the length of the list.

@@ -21,7 +21,7 @@ fn main() {
     .unwrap();
     for _ in 0..n_msgs {
         let msg = rcv.recv().unwrap();
-        println!("Received {}", msg);
+        println!("Received {msg}");
     }
 }
 // ANCHOR_END: example

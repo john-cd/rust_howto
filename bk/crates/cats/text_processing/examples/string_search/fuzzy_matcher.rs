@@ -15,7 +15,7 @@ fn main() {
     // The pattern to search for
     let pattern = "fuzzy";
 
-    println!("Searching for pattern: '{}'", pattern);
+    println!("Searching for pattern: '{pattern}'");
 
     // Find all matches and their scores
     let mut matches: Vec<(i64, &str)> = items
@@ -33,7 +33,7 @@ fn main() {
     // Display results
     println!("\nResults (sorted by match score):");
     for (score, item) in matches.clone() {
-        println!("Score: {}, Item: '{}'", score, item);
+        println!("Score: {score}, Item: '{item}'");
     }
 
     // Example of highlighting matches
@@ -57,7 +57,7 @@ fn main() {
 
             // Add remaining text
             highlighted.push_str(&item[last_idx..]);
-            println!("Score: {}, Highlighted: '{}'", score, highlighted);
+            println!("Score: {score}, Highlighted: '{highlighted}'");
         }
     }
 }

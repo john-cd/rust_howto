@@ -61,12 +61,12 @@
 // fn main() -> anyhow::Result<()> {
 //     let raw_bytes = b"Hello";
 //     let compressed_bytes = compress_bytes(raw_bytes)?;
-//     println!("{:?}", compressed_bytes);
+//     println!("{compressed_bytes:?}");
 
 //     let decompressed_string = decompress_bytes(compressed_bytes)?;
 
 //     let compressed = compress_file("temp/hello_world.txt")?;
-//     println!("{:?}", compressed);
+//     println!("{compressed:?}");
 
 //     Ok(())
 // }

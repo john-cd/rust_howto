@@ -9,7 +9,7 @@ fn main() {
 
     assert_eq!(vec, vec![1.1, 1.123, 1.15, 2.0, 5.5]);
 
-    println!("{:?}", vec);
+    println!("{vec:?}");
 }
 // ANCHOR_END: example
 

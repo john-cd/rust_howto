@@ -61,7 +61,7 @@ async fn main() -> anyhow::Result<()> {
     })?;
     let answer = conn.get_answer().await;
     assert_eq!(answer, 42);
-    println!("The answer is {}", answer);
+    println!("The answer is {answer}");
     Ok(())
 }
 // ANCHOR_END: example

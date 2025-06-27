@@ -71,9 +71,9 @@
 //     let child2_layout = taffy.layout(child2).unwrap();
 
 //     // Print the layout information
-//     println!("Root Layout: {:?}", root_layout);
-//     println!("Child 1 Layout: {:?}", child1_layout);
-//     println!("Child 2 Layout: {:?}", child2_layout);
+//     println!("Root Layout: {root_layout:?}");
+//     println!("Child 1 Layout: {child1_layout:?}");
+//     println!("Child 2 Layout: {child2_layout:?}");
 
 //     // Example with FlexGrow
 //     let mut taffy_flex_grow = Taffy::new();
@@ -122,8 +122,8 @@
 //     let child_flex_grow_2_layout =
 //         taffy_flex_grow.layout(child_flex_grow_2).unwrap();
 
-//     println!("Flex Grow Child 1 Layout: {:?}", child_flex_grow_1_layout);
-//     println!("Flex Grow Child 2 Layout: {:?}", child_flex_grow_2_layout);
+//     println!("Flex Grow Child 1 Layout: {child_flex_grow_1_layout:?}");
+//     println!("Flex Grow Child 2 Layout: {child_flex_grow_2_layout:?}");
 // }
 
 pub fn main() {}

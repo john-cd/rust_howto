@@ -37,7 +37,7 @@ where
 fn main() -> Result<()> {
     let max_matching_version =
         find_max_matching_version("<= 1.0.0", vec!["0.9.0", "1.0.0", "1.0.1"])?;
-    println!("Maximum matching version: {:?}", max_matching_version);
+    println!("Maximum matching version: {max_matching_version:?}");
     assert_eq!(max_matching_version, Some(Version::parse("1.0.0")?));
 
     assert_eq!(
