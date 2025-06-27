@@ -26,7 +26,7 @@ fn main() {
     let cm: Lrc<swc_common::SourceMap> = Default::default();
     let fm = cm.new_source_file(
         FileName::Custom("example.js".into()).into(),
-        "const a = 1;".into(),
+        "const a = 1;",
     );
 
     let lexer = Lexer::new(

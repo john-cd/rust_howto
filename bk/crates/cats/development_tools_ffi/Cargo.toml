@@ -35,11 +35,11 @@ uniffi = "0.29"
 serde = { version = "1.0.217", features = ["derive"] }
 
 [target.'cfg(target_os = "linux")'.dependencies]
-pyo3 = "0.24.1" # was pinned to 0.21 to avoid conflict with `polars`
+pyo3 = "0.25.1" # was pinned to 0.21 to avoid conflict with `polars`
 
 [build-dependencies]
-bindgen = "0.71.1"
-cbindgen = "0.28.0"
+bindgen = "0.72.0"
+cbindgen = "0.29.0"
 cc = "1.2"
 cxx-build = "1.0.136"
 uniffi = "0.29"

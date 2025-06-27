@@ -19,7 +19,7 @@ ansi_term = "0.12.1"                                 # NOTE: unmaintained
 clap = { version = "4.5.31", features = ["derive"] }
 clap_complete = "4.5.46"
 # FIXME clap-verbosity-flag = "3.0.0"
-console = "0.15.10"
+console = "0.16.0"
 crossterm = "0.29.0"
 indicatif = "0.17.9"
 inquire = "0.7.5"

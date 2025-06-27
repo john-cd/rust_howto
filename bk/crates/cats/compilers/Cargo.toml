@@ -17,7 +17,7 @@ autolib = false
 [dependencies]
 comemo = "0.4.0"
 cross = "0.2.5"
-salsa = "0.21.1"
+salsa = "0.23.0"
 
 ## General
 anyhow = "1.0.95"

@@ -18,15 +18,15 @@ autolib = false
 actix-web = "4.9.0"
 async-graphql = "7.0.17"
 async-graphql-axum = "7.0.17"
-axum = "0.7.9" # pinned because of tonic
+axum = "0.8.4" # was pinned because of tonic
 http = "1.2.0"
 http-body-util = "0.1.2"
 hyper = { version = "1.6.0", features = ["full"] }
 hyper-util = { version = "0.1", features = ["full"] }
 leptos = "0.8.2"
-loco-rs = "0.15.0"
+loco-rs = "0.16.0"
 mime = "0.3.17"
-prost = "0.13.4"
+prost = "0.13.5"
 tonic = "0.13.0"
 tower = { version = "0.5.1", features = ["util"] }
 tower-http = { version = "0.6.1", features = ["full", "auth"] }

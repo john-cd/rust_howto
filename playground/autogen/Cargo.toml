@@ -14,8 +14,8 @@ categories = ["development-tools", "command-line-utilities", "text-processing"]
 publish = false
 
 [dependencies]
-pest = "2.7.15"
-pest_derive = "2.7.15"
+pest = "2.8.1"
+pest_derive = "2.8.1"
 anyhow = "1.0.95"
 #pgp = "0.14.2"
 #serde = { version = "1.0.217", features = ["derive"] }

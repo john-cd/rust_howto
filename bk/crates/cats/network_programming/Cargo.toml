@@ -21,7 +21,7 @@ pingora = { version = "0.5.0", features = [ "lb" ] }  # NOTE: requires `sfv` pat
 ## General
 anyhow = "1.0.95"
 async-trait = "0.1.85"
-axum = { version = "0.8.1", features = ["tokio"] }
+axum = { version = "0.8.4", features = ["tokio"] }
 tokio = { version = "1.44.2", features = ["full"] }
 url = "2.5.4"
 

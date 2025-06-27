@@ -35,19 +35,19 @@ r3bl_tuify = "0.2.0"
 # # FIXME https://gtk-rs.org/gtk4-rs/git/book/installation_linux.html
 # # FIXME https://gtk-rs.org/gtk4-rs/git/book/installation_windows.html
 rfd = "0.15.2"
-skia-safe = { version = "0.82.0", features = [
+skia-safe = { version = "0.86.0", features = [
     "gl",
 ], optional = true } # pinned for slint
 slint = "1.10.0"
 taffy = "0.8.0"
-tao = "0.33.0"
+tao = "0.34.0"
 tauri = "2.0.6" # Requires multiple libraries. See Dockerfile
-vello = { version = "0.4.0", optional = true }
+vello = { version = "0.5.0", optional = true }
 vger = { version = "0.4.0", optional = true }
 # vizia = { version = "0.2.0", optional = true } # FIXME conflict with skia-safe
 # webrender = { version = "0.61.0", optional = true } # FIXME conflicts with RustQuant - native library `freetype`
 winit = "0.30.8"                               # for vello, winit examples
-xilem = { version = "0.1.0", optional = true }
+xilem = { version = "0.3.0", optional = true }
 
 ## General
 anyhow = "1.0.95"

@@ -14,7 +14,7 @@ categories = [ "development_tools_profiling" ]
 publish.workspace = true
 
 [dependencies]
-criterion = "0.5.1"
+criterion = "0.6.0"
 dhat = "0.3.3"
 
 ## Config for `divan` example below:
