@@ -27,8 +27,3 @@ empty := ''
 @templ cmd=help *subcmd=empty:
   if ( -Not (Test-Path -Path {{root}}\..\bin\templ.exe )) { just -f {{root}}\..\tools\justfile release }
   cd root; {{root}}\..\bin\templ.exe {{cmd}} {{subcmd}}
-
-# Autogenerate a chapter (from template)
-#@autogen:
-#  {{root}}/../bin/autogen
-# [finish](https://github.com/john-cd/rust_howto/issues/1256)
