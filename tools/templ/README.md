@@ -75,7 +75,7 @@ Random number generators and other randomness functionality.
 [book~rust-by-example~attribute]: https://doc.rust-lang.org/rust-by-example/attribute.html
 ```
 
-`info` returns a JSON object from the crates.io API:
+`info` returns a JSON object from the `crates.io` API:
 
 - categories
 - crate_data
