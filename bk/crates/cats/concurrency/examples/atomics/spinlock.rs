@@ -133,7 +133,7 @@ fn main() {
             // If this work were longer, a `Mutex` would be better.
             thread::sleep(Duration::from_micros(5));
 
-            println!("Thread {} releasing lock, value = {}", i, *num);
+            println!("Thread {i} releasing lock, value = {}", *num);
             // `num` (the guard) goes out of scope here, automatically calling
             // `drop()`, which releases the lock.
         });

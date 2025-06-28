@@ -87,7 +87,7 @@
 
 //         // Print progress (optional)
 //         if epoch % 10 == 0 {
-//             println!("Epoch: {}, Loss: {}", epoch, loss);
+//             println!("Epoch: {epoch}, Loss: {loss}");
 //         }
 //     }
 

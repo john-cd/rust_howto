@@ -29,7 +29,7 @@ fn main() -> Result<()> {
     let thumb_dir = "thumbnails";
     create_dir_all(thumb_dir)?;
 
-    println!("Saving {} thumbnails into '{}'...", files.len(), thumb_dir);
+    println!("Saving {} thumbnails into '{thumb_dir}'...", files.len());
 
     let image_failures: Vec<_> = files
         .par_iter()

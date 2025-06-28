@@ -108,7 +108,7 @@ fn main() -> Result<()> {
             println!("{file:?}");
         }
         Some(Commands::Tell) => {
-            println!("{}", 42);
+            println!("42");
         }
         None => {}
     }

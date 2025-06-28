@@ -117,7 +117,7 @@ mod tests {
     //     // Use one of these addresses to configure your client.
     //     let host = server.host_with_port();
     //     let url = server.url();
-    //     println!("host: {}; url: {}", host, url);
+    //     println!("host: {host}; url: {url}");
 
     //     let crate_name = "test-crate";
 

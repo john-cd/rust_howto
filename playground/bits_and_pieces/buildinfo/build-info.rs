@@ -37,7 +37,7 @@
 // fn list_deps() {
 //     println!("Dependencies:");
 //     for (name, version) in get_dependencies() {
-//         println!("{} {}", name, version);
+//         println!("{name} {version}");
 //     }
 // }
 

@@ -42,7 +42,7 @@
 //     // Call the bound function:
 //     let result = unsafe { add(a, b) };
 
-//     println!("The result of adding {} and {} is {}", a, b, result);
+//     println!("The result of adding {a} and {b} is {result}");
 // }
 // // ANCHOR_END: example
 

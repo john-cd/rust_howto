@@ -98,7 +98,7 @@
 //     // Example 2: Using `serde` for deserialization.
 //     println!("\nExample 2: Deserializing XML");
 //     let person: Person = from_str(xml)?;
-//     println!("Deserialized: {:#?}", person);
+//     println!("Deserialized: {person:#?}");
 
 //     // Example 3: Creating XML with `Writer`.
 //     println!("\nExample 3: Creating XML");

@@ -72,7 +72,7 @@
 //                         }
 //                     }
 //                 }
-//                 _ => println!("Other Result type: {:?}", result),
+//                 _ => println!("Other Result type: {result:?}"),
 //             }
 //         }
 //         Opcode::Error => {

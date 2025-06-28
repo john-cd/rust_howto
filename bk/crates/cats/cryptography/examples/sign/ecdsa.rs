@@ -49,7 +49,7 @@
 //     // 5. Sign the message using the secret key
 //     let signature: Signature = secret_key.ecdsa_sign(message);
 //     // Print the signature in hex format
-//     println!("Signature: {:x?}", signature);
+//     println!("Signature: {signature:x?}");
 
 //     // 6. Verify the signature using the public key
 //     assert!(public_key.verify(message, &signature).is_ok());

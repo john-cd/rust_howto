@@ -48,7 +48,7 @@
 //                 event: WindowEvent::MouseInput { state, button, .. },
 //                 ..
 //             } => {
-//                 println!("Mouse {:?} pressed: {:?}", button, state);
+//                 println!("Mouse {button:?} pressed: {state:?}");
 //             }
 //             Event::MainEventsCleared => {
 //                 // Application update logic goes here.

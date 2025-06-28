@@ -149,7 +149,7 @@ let mut todos = user.todos().all(&db).await.unwrap();
 
 while let Some(todo) = todos.next().await {
   let todo = todo.unwrap();
-  println!("{:#?}", todo);
+  println!("{todo:#?}");
 }
 ```
 

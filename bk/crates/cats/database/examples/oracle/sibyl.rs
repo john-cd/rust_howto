@@ -73,7 +73,7 @@
 //         let last_name: Option<&str> = row.get(1)?;
 
 //         if let (Some(first), Some(last)) = (first_name, last_name) {
-//             println!("{} {}", first, last);
+//             println!("{first} {last}");
 //         }
 //     }
 

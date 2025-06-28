@@ -28,7 +28,7 @@ fn main() {
     let x: u32 = 7;
     // `x` is copied, `y` owns a new `i32` on the heap.
     let y: Box<u32> = Box::new(x);
-    println!("x: {}, *y: {}", x, *y);
+    println!("x: {x}, *y: {}", *y);
 
     // `Box` owns its value.
     // When `my_boxed_string` goes out of scope (is dropped),

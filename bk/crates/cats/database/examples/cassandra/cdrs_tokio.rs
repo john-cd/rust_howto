@@ -111,7 +111,7 @@
 //     // Display the result of the query
 //     for row in rows {
 //         let (id, name, age): (Uuid, String, i32) = row.try_into()?;
-//         println!("Found user: {} (ID: {}, Age: {})", name, id, age);
+//         println!("Found user: {name} (ID: {id}, Age: {age})");
 //     }
 
 //     Ok(())

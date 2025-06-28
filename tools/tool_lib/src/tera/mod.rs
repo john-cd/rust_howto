@@ -32,7 +32,7 @@ static TEMPLATES: LazyLock<Result<Tera, tera::Error>> = LazyLock::new(|| {
 pub fn render(r: impl Renderable) -> Result<()> {
     let templ: &Result<Tera, tera::Error> = &TEMPLATES;
     if let Err(e) = templ {
-        bail!("The Tera template engine failed to initialize: {}", e);
+        bail!("The Tera template engine failed to initialize: {e}");
     }
     let context = Context::from_serialize(&r)?;
     render_one(r, &context)?;

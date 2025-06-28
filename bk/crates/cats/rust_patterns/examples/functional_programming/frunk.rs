@@ -32,7 +32,7 @@
 //     // Pattern matching on HList.
 //     match data {
 //         HCons(num, HCons(text, HCons(float, HNil))) => {
-//             println!("Number: {}, Text: {}, Float: {}", num, text, float);
+//             println!("Number: {num}, Text: {text}, Float: {float}");
 //         }
 //         _ => println!("Unexpected list structure"),
 //     }
