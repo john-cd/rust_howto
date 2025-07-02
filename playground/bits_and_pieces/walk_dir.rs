@@ -1,9 +1,25 @@
-use std::path::Path;
+// [dependencies]
+// anyhow = "1.0.95"
+// clap = { version = "4.5.31", features = ["derive"] }
+// regex = "1.11.1"
+// tempfile = "3.20.0"
+// tracing = "0.1.41"
+// tracing-subscriber = {version = "0.3.19", features = ["env-filter"] }
+// walkdir = "2.5.0"
 
 use anyhow::Result;
+use clap::Parser;
+use clap::Parser;
+use std::path::PathBuf;
+use std::path::Path;
 use walkdir::WalkDir;
 
-use super::replace::replace_in_file;
+#[derive(Parser, Debug)]
+#[clap(version)]
+pub(crate) struct Args {
+    #[clap(help = "Path to directory to process")]
+    pub directory: PathBuf,
+}
 
 /// Walks through a directory and processes all markdown files.
 ///
@@ -14,10 +30,20 @@ pub fn walk_directory(dir: &Path) -> Result<()> {
     for entry in WalkDir::new(dir).into_iter().filter_map(|e| e.ok()) {
         let f_name = entry.file_name().to_string_lossy();
         if f_name.ends_with(".md") {
-            let path = entry.path();
-            replace_in_file(path)?;
+            let _path = entry.path();
+            // TODO replace_in_file(path)?;
         }
     }
+    Ok(())
+}
+
+
+fn main() -> Result<()> {
+    // Install a global tracing subscriber that listens for events and filters based on the value of the RUST_LOG environment variable.
+    tracing_subscriber::fmt::init();
+
+    let args = cli::Args::parse();
+    walk::walk_directory(args.directory.as_path())?;
     Ok(())
 }
 
