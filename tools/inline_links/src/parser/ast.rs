@@ -50,6 +50,14 @@ pub enum Element<'a> {
         title: Option<&'a str>,
     },
 
+    /// Wikilink: `[[target_page]]` or `[[target_page | display]]`, with or without spaces.
+    /// <https://en.wikipedia.org/wiki/Help:Link#Wikilinks_(internal_links)>
+    WikiLink {
+        target: &'a str, // Target page.
+        display: Option<&'a str>,
+        immediately_after: Option<&'a str>,
+    },
+
     /// CodeSpan enclosed between ` and `.
     /// <https://spec.commonmark.org/0.31.2/#code-spans>
     CodeSpan(&'a str),

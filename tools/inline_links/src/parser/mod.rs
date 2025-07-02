@@ -42,7 +42,7 @@
 // parser, to which we can pass the input.
 
 // TODO
-// mod ast;
+mod ast;
 // mod autolink;
 // mod code;
 // mod hidden;
@@ -52,3 +52,4 @@
 // mod refdefs;
 // mod url;
 // mod whitespace;
+// mod wikilinks;
