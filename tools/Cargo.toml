@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = ["clean", "crate_indices",  "inline_links", "templ", "tool_lib"]
+members = ["clean", "crate_indices", "templ", "tool_lib"]
 
 # Default values for packages in the workspace
 [workspace.package]

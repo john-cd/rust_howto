@@ -1,6 +1,6 @@
 [workspace]
-members = ["examples_wip"]
 resolver = "3"
+members = ["directives", "inline_links", "parse_lib"]
 
 # Default values for packages in the workspace
 [workspace.package]
@@ -11,7 +11,7 @@ rust-version = "1.85"
 description = ""
 documentation = "https://docs.rs/rust_howto/"
 homepage = "https://john-cd.com/rust_howto/"
-repository = "https://github.com/john-cd/rust_howto/tools/"
+repository = "https://github.com/john-cd/rust_howto/wip/"
 keywords = []
 categories = []
 publish = false
