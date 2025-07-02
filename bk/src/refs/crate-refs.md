@@ -767,9 +767,8 @@
 [c~capnp~github~badge]: https://img.shields.io/badge/capnp-steelblue?logo=github
 [c~capnp~lib.rs]: https://lib.rs/crates/capnp
 [c~capnp~lib.rs~badge]: https://img.shields.io/badge/lib.rs-capnp-yellow
-[c~cargo-binutils~github]: https://github.com/rust-embedded/cargo-binutils
-[c~cargo-clippy~docs]: https://doc.rust-lang.org/stable/clippy/usage.html
-[c~cargo-quickinstall~github]: https://github.com/cargo-bins/cargo-quickinstall
+[c~clippy~book]: https://doc.rust-lang.org/stable/clippy/usage.html
+[c~cargo_quickinstall~github]: https://github.com/cargo-bins/cargo-quickinstall
 [c~cargo_about~crates.io]: https://crates.io/crates/cargo_about
 [c~cargo_about~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--about-crimson
 [c~cargo_about~docs]: https://docs.rs/cargo-about
@@ -1921,7 +1920,7 @@
 [c~dicom~github~badge]: https://img.shields.io/badge/dicom-steelblue?logo=github
 [c~dicom~lib.rs]: https://lib.rs/crates/dicom
 [c~dicom~lib.rs~badge]: https://img.shields.io/badge/lib.rs-dicom-yellow
-[c~diesel-async~docs]: https://docs.rs/diesel-async/latest/diesel_async
+[c~diesel_async~docs]: https://docs.rs/diesel-async/latest/diesel_async
 [c~diesel_migrations~crates.io]: https://crates.io/crates/diesel_migrations
 [c~diesel_migrations~crates.io~badge]: https://img.shields.io/badge/crates.io-diesel__migrations-crimson
 [c~diesel_migrations~docs]: https://docs.rs/diesel_migrations
@@ -2241,7 +2240,6 @@
 [c~envy~crates.io]: https://crates.io/crates/envy
 [c~envy~crates.io~badge]: https://img.shields.io/badge/crates.io-envy-crimson
 [c~envy~docs]: https://docs.rs/envy
-[c~envy~docs]: https://softprops.github.io/envy
 [c~envy~docs~badge]: https://img.shields.io/crates/v/envy?label=envy
 [c~envy~github]: https://github.com/softprops/envy
 [c~envy~github~badge]: https://img.shields.io/badge/envy-steelblue?logo=github
@@ -3399,7 +3397,6 @@
 [c~kani~crates.io]: https://crates.io/crates/kani
 [c~kani~crates.io~badge]: https://img.shields.io/badge/crates.io-kani-crimson
 [c~kani~docs]: https://docs.rs/kani
-[c~kani~docs]: https://model-checking.github.io/kani
 [c~kani~docs~badge]: https://img.shields.io/crates/v/kani?label=kani
 [c~kani~github]: https://github.com/model-checking/kani
 [c~kani~github~badge]: https://img.shields.io/badge/kani-steelblue?logo=github
@@ -3935,7 +3932,7 @@
 [c~mdbook~book.toml]: https://rust-lang.github.io/mdBook/format/configuration/index.html
 [c~mdbook~crates.io]: https://crates.io/crates/mdbook
 [c~mdbook~crates.io~badge]: https://img.shields.io/badge/crates.io-mdbook-crimson
-[c~mdbook~docs]: https://docs.rs/mdbook
+[c~mdbook~api~docs]: https://docs.rs/mdbook
 [c~mdbook~docs]: https://rust-lang.github.io/mdBook/index.html
 [c~mdbook~docs~badge]: https://img.shields.io/crates/v/mdbook?label=mdbook
 [c~mdbook~github]: https://github.com/rust-lang/mdBook
@@ -4931,11 +4928,11 @@
 [c~poem~github~badge]: https://img.shields.io/badge/poem-steelblue?logo=github
 [c~poem~lib.rs]: https://lib.rs/crates/poem
 [c~poem~lib.rs~badge]: https://img.shields.io/badge/lib.rs-poem-yellow
-[c~polars-book~docs~badge]: https://img.shields.io/badge/polars_book-coral
+[c~polars~book~badge]: https://img.shields.io/badge/polars_book-coral
 [c~polars~book]: https://pola-rs.github.io/polars-book
 [c~polars~crates.io]: https://crates.io/crates/polars
 [c~polars~crates.io~badge]: https://img.shields.io/badge/crates.io-polars-crimson
-[c~polars~docs]: https://docs.pola.rs
+[c~polars~more-docs~website]: https://docs.pola.rs
 [c~polars~docs]: https://docs.rs/polars
 [c~polars~docs~badge]: https://img.shields.io/crates/v/polars?label=polars
 [c~polars~github]: https://github.com/pola-rs/polars
@@ -6446,8 +6443,8 @@
 [c~statrs~github~badge]: https://img.shields.io/badge/statrs-steelblue?logo=github
 [c~statrs~lib.rs]: https://lib.rs/crates/statrs
 [c~statrs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-statrs-yellow
-[c~std-core::cell::OnceCell~docs]: https://doc.rust-lang.org/core/cell/struct.OnceCell.html
-[c~std-core::iter::Iterator::filter_map~docs]: https://doc.rust-lang.org/core/iter/trait.Iterator.html#method.filter_map
+[c~core::cell::OnceCell~docs]: https://doc.rust-lang.org/core/cell/struct.OnceCell.html
+[c~core::iter::Iterator::filter_map~docs]: https://doc.rust-lang.org/core/iter/trait.Iterator.html#method.filter_map
 [c~std::any::type_name~docs]: https://doc.rust-lang.org/std/any/fn.type_name.html
 [c~std::arch~docs]: https://doc.rust-lang.org/std/arch/index.html
 [c~std::arch~docs~badge]: https://img.shields.io/badge/std-firebrick?logo=rust
@@ -7043,11 +7040,11 @@
 [c~tokenizer~github~badge]: https://img.shields.io/badge/tokenizer-steelblue?logo=github
 [c~tokenizer~lib.rs]: https://lib.rs/crates/tokenizer
 [c~tokenizer~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tokenizer-yellow
-[c~tokio-sync~crates.io]: https://crates.io/crates/tokio-sync
-[c~tokio-sync~docs]: https://docs.rs/tokio/latest/tokio/sync
-[c~tokio-sync~lib.rs]: https://lib.rs/crates/tokio-sync
-[c~tokio-sync~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tokio--sync-yellow
-[c~tokio::main::current-thread-runtime~docs]: https://docs.rs/tokio/latest/tokio/attr.main.html#current-thread-runtime
+[c~tokio_sync~crates.io]: https://crates.io/crates/tokio-sync
+[c~tokio_sync~docs]: https://docs.rs/tokio/latest/tokio/sync
+[c~tokio_sync~lib.rs]: https://lib.rs/crates/tokio-sync
+[c~tokio_sync~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tokio--sync-yellow
+[c~tokio::main~current-thread-runtime~docs]: https://docs.rs/tokio/latest/tokio/attr.main.html#current-thread-runtime
 [c~tokio::sync::oneshot~docs]: https://docs.rs/tokio/latest/tokio/sync/oneshot/index.html
 [c~tokio::task::LocalSet~docs]: https://docs.rs/tokio/latest/tokio/task/struct.LocalSet.html
 [c~tokio::task::spawn_blocking~docs]: https://docs.rs/tokio/latest/tokio/task/fn.spawn_blocking.html

@@ -24,7 +24,7 @@ By running all [async][p~async]{{hi:async}} expressions on the current task, the
 
 Read and write data asynchronously with Tokio, using [streams][p~streams], codecs, and [futures][p~futures]. It also shows how to handle errors and timeouts.
 
-[Current thread runtime][c~tokio::main::current-thread-runtime~docs]{{hi:tokio::main::current-thread-runtime}}⮳.
+[Current thread runtime][c~tokio::main~current-thread-runtime~docs]{{hi:tokio::main}}⮳.
 
 equivalent to
 

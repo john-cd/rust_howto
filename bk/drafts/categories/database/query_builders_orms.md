@@ -30,7 +30,7 @@ Built on top of [`sqlx`][c~sqlx~docs]⮳{{hi:sqlx}} (see above). There is also a
 
 The [`diesel`][c~diesel~docs]⮳{{hi:diesel}} crate is a powerful ORM (object-relational mapper) and query builder for Rust. It allows you to interact with databases in a type-safe and efficient manner. ORMs help object-oriented programmers abstract the details of relational databases, and do not require writing raw SQL queries.
 
-[`diesel`][c~diesel~docs]⮳{{hi:diesel}} supports PostgreSQL, MySQL, and SQLite. [`diesel`][c~diesel~docs]⮳{{hi:diesel}} has excellent performance and takes an approach of strict compile time guarantees. The main crate is synchronous only, but [`diesel-async`][c~diesel-async~docs]⮳{{hi:diesel-async}} provides an async connection implementation.
+[`diesel`][c~diesel~docs]⮳{{hi:diesel}} supports PostgreSQL, MySQL, and SQLite. [`diesel`][c~diesel~docs]⮳{{hi:diesel}} has excellent performance and takes an approach of strict compile time guarantees. The main crate is synchronous only, but [`diesel-async`][c~diesel_async~docs]⮳{{hi:diesel-async}} provides an async connection implementation.
 
 To create a new [`diesel`][c~diesel~docs]⮳{{hi:diesel}} project targeting [`sqlite`][c~sqlite~docs]⮳{{hi:sqlite}}, follow these steps:
 

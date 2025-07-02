@@ -22,7 +22,7 @@ The core functionality of [`once_cell`][c~once_cell~docs]⮳{{hi:once_cell}} is 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
 
-[`OnceCell`][c~std-core::cell::OnceCell~docs]{{hi:OnceCell}}⮳ is a cell which can be written to only once.
+[`OnceCell`][c~core::cell::OnceCell~docs]{{hi:OnceCell}}⮳ is a cell which can be written to only once.
 
 The corresponding `Sync` version of `OnceCell<T>` is `OnceLock<T>`.
 

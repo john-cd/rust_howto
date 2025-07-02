@@ -8,7 +8,7 @@ The most common form of synchronization{{hi:Synchronization}} in an async{{hi:as
 
 [![tokio~website][c~tokio~website~badge]][c~tokio~website] [![tokio][c~tokio~docs~badge]][c~tokio~docs] [![tokio~crates.io][c~tokio~crates.io~badge]][c~tokio~crates.io] [![tokio~github][c~tokio~github~badge]][c~tokio~github] [![tokio~lib.rs][c~tokio~lib.rs~badge]][c~tokio~lib.rs]{{hi:tokio}}{{hi:Io}}{{hi:Async}}{{hi:Non-blocking}}{{hi:Futures}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
-Tokio's [`sync`][c~tokio-sync~docs]⮳ module provides channels{{hi:Channels}} that work well with async code.
+Tokio's [`sync`][c~tokio_sync~docs]⮳ module provides channels{{hi:Channels}} that work well with async code.
 
 ### OneShot {#oneshot}
 

@@ -36,7 +36,7 @@ cargo fmt -- --check
 [![clippy~lib.rs][c~clippy~lib.rs~badge]][c~clippy~lib.rs]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[`cargo-clippy`][c~cargo-clippy~docs]⮳{{hi:cargo-clippy}} is the official Rust linter. It catches common mistakes and improves your Rust code.
+[`cargo-clippy`][c~clippy~book]⮳{{hi:cargo-clippy}} is the official Rust linter. It catches common mistakes and improves your Rust code.
 
 ```sh
 rustup component add clippy # install if needed
