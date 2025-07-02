@@ -8,6 +8,8 @@
 
 // use super::ast::Element;
 
+// TODO finish: add reference-style image parsing
+
 // /// Parses an image: `![desc](url "title")`.
 // pub fn parse_inline_image<'a>(input: &'a str) -> IResult<&'a str, Element<'a>> {
 //     map(

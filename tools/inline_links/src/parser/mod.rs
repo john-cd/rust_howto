@@ -41,10 +41,11 @@
 // `nom` combinators like `take_while` return a function. That function is a
 // parser, to which we can pass the input.
 
-// TODO
+// TODO 
 mod ast;
 // mod autolink;
 // mod code;
+// mod headings;
 // mod hidden;
 // mod images;
 // mod link_destination;

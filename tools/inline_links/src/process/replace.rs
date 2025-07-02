@@ -7,6 +7,8 @@ use std::sync::LazyLock;
 use anyhow::Result;
 use regex::Regex;
 
+// TODO finish
+
 static RE: LazyLock<Regex> =
     LazyLock::new(|| Regex::new(r#"^|[^"'](https?://)([^/\s]+)(/[^"'\[\])⮳]*)?"#).unwrap());
 

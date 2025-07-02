@@ -1,3 +1,5 @@
+// TODO finish reorg
+
 // /// Parses any characters until the next recognized element or end of input.
 // /// This acts as a "fallback" for plain text.
 // fn parse_plain_text<'a>(input: &'a str) -> IResult<&'a str, Element<'a>> {

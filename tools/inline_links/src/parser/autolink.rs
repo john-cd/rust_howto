@@ -9,6 +9,13 @@ use nom::sequence::delimited;
 
 use super::ast::Element;
 
+// TODO finish
+//
+// Valid chars in URLs are A-Z, a-z, 0-9, -, ., _, ~, :, /, ?, #, [, ], @, !, $, &, ', (, ), *, +, ,, ;, %, and =
+// ":" | "/" | "@" | "?" | "#" have special meaning in URLs
+// url_char = _{ ASCII_ALPHANUMERIC | "-" | "." | "_" | "~" | "[" | "]" | "!" | "$" | "&" | "'" | "(" | ")" | "*" | "+" | "," | ";" | "%" | "=" | ":" | "/" | "@" | "?" | "#" }
+
+
 /// Recognize a URL
 fn recognize_naked_url(input: &str) -> IResult<&str, &str> {
     // If the child parser was successful, return the consumed input as produced value.

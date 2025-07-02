@@ -12,6 +12,8 @@ use nom::combinator::opt;
 use nom::combinator::recognize;
 use nom::sequence::delimited;
 
+// TODO finish
+
 /// Represents a parsed Link Reference Definition.
 #[derive(Debug, PartialEq)]
 pub struct LinkReference<'a> {
