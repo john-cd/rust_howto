@@ -17,13 +17,14 @@ pub struct PreprocConfig {
     pub do_not_include_hidden_chapters: bool,
     // Define the prefix for hidden chapters (default = '_').
     pub hidden_chapter_prefix: String,
-    // Remove any left-over {{#example }} directives and log a warning (default = true).
-    // {{#example }} is a custom directive for this book.
+    // Remove any left-over {{#example }} directives and log a warning (default
+    // = true). {{#example }} is a custom directive for this book.
     pub scrub_example_directives: bool,
-    // Remove any left-over {{#crate }} directives and log a warning (default = true).
-    // {{#crate }} is a custom directive for this book.
+    // Remove any left-over {{#crate }} directives and log a warning (default =
+    // true). {{#crate }} is a custom directive for this book.
     pub scrub_crate_directives: bool,
-    // Remove any left-over [[file | title]] wikilinks and log a warning (default = true).
+    // Remove any left-over [[file | title]] wikilinks and log a warning
+    // (default = true).
     pub scrub_wikilinks: bool,
 }
 
