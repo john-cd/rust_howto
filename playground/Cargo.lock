@@ -176,6 +176,7 @@ dependencies = [
  "clap",
  "nom",
  "regex",
+ "serde",
  "tempfile",
  "tracing",
  "tracing-subscriber",
