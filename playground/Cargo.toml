@@ -1,5 +1,5 @@
 [workspace]
-members = ["examples_wip", "links"]
+members = [ "directives","examples_wip"]
 resolver = "3"
 
 # Default values for packages in the workspace
