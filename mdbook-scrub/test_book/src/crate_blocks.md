@@ -11,6 +11,6 @@ configuration toggle is set (which is the default).
 
 {{#crate: x_y-z}}
 
-With additional categories:
+## Crate Blocks with Additional Categories
 
 {{#crate: crt cat1 cat-2 cat-2-2 cat3::sub-cat-3 }}

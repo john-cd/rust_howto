@@ -1,4 +1,4 @@
-# Examples
+# Example Directive
 
 The `rust_howto` book uses custom directives to insert examples.
 

@@ -44,6 +44,8 @@ pub fn get_regexes_and_replacements(
             replacement: None,
         });
     }
+    // Remove any left-over {{#example }} directives and log a warning.
+    // {{#example }} is a custom directive for this book.
     if conf.scrub_example_directives {
         let re = Regex::new(r#"[{]{2} *#example *[^}]*?[}]{2}"#)
             .expect("Invalid regex");
@@ -52,6 +54,8 @@ pub fn get_regexes_and_replacements(
             replacement: None,
         });
     }
+    // Remove any left-over {{#crate }} directives and log a warning.
+    // {{#crate }} is a custom directive for this book.
     if conf.scrub_crate_directives {
         let re = Regex::new(r#"[{]{2} *#crate *[^}]*?[}]{2}"#)
             .expect("Invalid regex");
@@ -60,6 +64,7 @@ pub fn get_regexes_and_replacements(
             replacement: None,
         });
     }
+    // Remove any left-over [[file | title]] wikilinks and log a warning.
     if conf.scrub_wikilinks {
         // Replace `[[file | title]]` by `title`
         let re = Regex::new(r#"\[\[ *[^|\]]*?(?:\| *([^\]]+)?)?\]\]"#)
