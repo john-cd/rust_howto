@@ -36,18 +36,7 @@ pub struct PreprocConfig {
     // // Convert {{crate: <crate name> <extra categories> }} into Markdown
     // // links to the crate and its categories
     // pub process_crate_block_directives: bool,
-    // // FUTURE
-    // // Check internal URLs (and external URLs if check_external_urls = true)
-    // // (default = true)
-    // pub check_urls: bool,
-    // // Check whether external URLs (e.g. to http://... or https://...) are valid; default: false.
-    // // Has no effect if check_urls = false
-    // // Beware of the performance penalty when true.
-    // pub check_external_urls: bool,
-    // // If true (default), detect e.g. [ref]: http://example.com without a corresponding [some_text][ref]
-    // pub detect_unused_reference_definitions: bool,
-    // // Remove unused ref defs from the markdown, if true (default)
-    // pub delete_unused_reference_definitions: bool,
+
 }
 
 impl Default for PreprocConfig {
@@ -63,10 +52,6 @@ impl Default for PreprocConfig {
             process_crate_directives: true,
             process_category_directives: true,
             process_page_directives: true,
-            // check_urls: true,
-            // check_external_urls: false,
-            // detect_unused_reference_definitions: true,
-            // delete_unused_reference_definitions: true,
         }
     }
 }
