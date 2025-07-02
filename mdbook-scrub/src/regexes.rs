@@ -72,45 +72,5 @@ pub fn get_regexes_and_replacements(
             })),
         });
     }
-    // rr.append(&mut directives(conf));  // FIXME
     rr
 }
-
-// [finish NOW](https://github.com/john-cd/rust_howto/issues/1265)
-// #[allow(dead_code)]
-// fn directives(conf: &PreprocConfig) -> Vec<RegexAndReplacement> {
-//     let mut rr = vec![];
-
-//     if conf.process_crate_directives {
-//         // {{c: xyz }}
-//         let re_string: String = r"\{\{c:\s*(\S+)\s*\}\}".into();
-//         let re = Regex::new(&re_string).expect("Invalid regex");
-//         //let replacement = "";
-//         rr.push(RegexAndReplacement {
-//             re,
-//             replacement: None,
-//         });
-//     }
-//     if conf.process_category_directives {
-//         // {{c: parsing }} -> [parsing][cat~parsing]⮳{{hi:parsing}}
-//         // [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard
-//         // library}}
-//         let re_string: String = r"\{\{cat:\s*(\S+)\s*\}\}".into();
-//         let re = Regex::new(&re_string).expect("Invalid regex");
-//         let replacement = "[$1][cat~$1]{{hi: $1}}";
-//         rr.push(RegexAndReplacement {
-//             re,
-//             replacement: None, Some(Box::new(|_| replacement.into())),
-//         });
-//     }
-//     if conf.process_page_directives {
-//         let re_string: String = r"\s*(\S+)\s*".into();
-//         let re = Regex::new(&re_string).expect("Invalid regex");
-//         let replacement = "[$1][p~$1]{{hi:$1}}";
-//         rr.push(RegexAndReplacement {
-//             re,
-//             replacement: Some(Box::new(|_| replacement.into())),
-//         });
-//     }
-//     rr
-// }
