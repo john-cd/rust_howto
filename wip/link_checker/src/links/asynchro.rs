@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 // use reqwest::Result;
 use std::time::Duration;
 
@@ -5,13 +7,14 @@ use anyhow::Result;
 // Use the asynchronous cache.
 use moka::future::Cache;
 use reqwest::ClientBuilder;
-use reqwest::IntoUrl;
-use reqwest::Request;
-use tracing::debug;
-use tracing::error;
-use tracing::info;
-use tracing::trace;
-use tracing::warn;
+// TODO
+// use reqwest::IntoUrl;
+// use reqwest::Request;
+// use tracing::debug;
+// use tracing::error;
+// use tracing::info;
+// use tracing::trace;
+// use tracing::warn;
 use url::Url;
 
 pub fn launch() -> Result<()> {

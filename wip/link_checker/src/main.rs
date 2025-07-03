@@ -1,20 +1,14 @@
 // TODO
-#![allow(dead_code)]
 #![allow(unused)]
 
-mod category_links_badges;
 mod cli;
-mod common;
 mod conf;
-mod crate_blocks;
-mod crate_links_badges;
-mod examples;
-mod wikilinks;
+mod links;
+mod refdefs;
 
 use clap::Parser;
-use core_lib::walk_directory_and_process_files;
 // use conf::Config;
-use crate_links_badges::*;
+use core_lib::walk_directory_and_process_files;
 
 fn main() -> anyhow::Result<()> {
     // Install a global tracing subscriber that listens for events
@@ -26,8 +20,7 @@ fn main() -> anyhow::Result<()> {
     for directory in &args.directories {
         let dir = directory.as_path().canonicalize()?;
         println!("Processing {}", dir.display());
-        // TODO
-        walk_directory_and_process_files(&dir, process_crate_badge_directives_in_file)?;
+        // TODO walk_directory_and_process_files(&dir, check_links_in_file)?;
     }
     println!("DONE");
     Ok(())

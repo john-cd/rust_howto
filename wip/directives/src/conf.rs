@@ -4,18 +4,16 @@ use serde::Deserialize;
 use serde::Serialize;
 
 // TODO
-
-// Configuration struct
+// Configuration struct.
 // When deserializing, any missing fields are filled in from the struct's
-// implementation of Default. Only allowed on structs.
+// implementation of `Default`.
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 #[serde(default, rename_all = "kebab-case")]
 pub struct Config {
-    // FIXME
-    // Convert {{c: <crate name> }} into links
+    //
     pub process_crate_directives: bool,
     // Convert category directive {{cat: <category> <optional categories>.. }}
-    // into links
+    // into links or badges
     pub process_category_directives: bool,
     // Convert page directive {{p: <page/chapter_name>}} into a link
     pub process_page_directives: bool,
