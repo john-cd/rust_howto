@@ -1,7 +1,5 @@
 # Summary
 
-- [Scrub hidden sections and don't include hidden files](./hidden.md)
-
 ## Links
 
 - [Scrub wikilinks](./wikilinks.md)
@@ -26,7 +24,7 @@
 
 ## Scrub Hidden Sections
 
-- [Hidden sections](./hidden.md)
+- [Scrub hidden sections and don't include hidden files](./hidden.md)
 
 ## Wikilinks
 
