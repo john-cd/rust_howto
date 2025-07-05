@@ -24,9 +24,14 @@
 
 - [Scrub crate blocks](./crate_blocks.md)
 
-## Other
+## Scrub Hidden Sections
 
-- [Example directives](./examples.md)
 - [Hidden sections](./hidden.md)
+
+## Wikilinks
+
 - [Wikilinks](./wikilinks.md)
+
+## Others
+
 - [Others](./others.md)
