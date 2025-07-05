@@ -35,8 +35,8 @@
 //             replacement: None,
 //         });
 
-use std::sync::LazyLock;
 use std::borrow::Cow;
+use std::sync::LazyLock;
 
 use regex::Regex;
 
@@ -254,9 +254,12 @@ mod tests {
             },
         ];
 
+        let scope = core_lib::Scope::default();
+        
         test_with(&test_cases, |temp_dir_path| {
             walk_directory_and_process_files(
                 temp_dir_path,
+                &scope,
                 process_crate_badge_directives_in_file,
             )?;
             Ok(())

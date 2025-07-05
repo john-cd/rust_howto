@@ -1,8 +1,9 @@
+use std::borrow::Cow;
+
 use core_lib::walk_directory_and_process_files;
 use regex::Captures;
 use regex::Regex;
 use regex::Replacer;
-use std::borrow::Cow;
 
 use super::conf::*;
 
@@ -27,12 +28,17 @@ where
     I: IntoIterator<Item = std::path::PathBuf>,
 {
     // Compile the replacement Regex(es) only once.
-    let regexes_and_replacements = get_regexes_and_replacements(&conf);
+    let regexes_and_replacements = get_regexes_and_replacements(conf);
+
+    // Extensions to process and excluded files.
+    let scope = core_lib::Scope::default();
 
     for directory in directories.into_iter() {
         let dir = directory.as_path().canonicalize()?;
         tracing::info!("Processing directory {}", dir.display());
-        walk_directory_and_process_files(&dir, |f| process_all_directives_in_file(f, &regexes_and_replacements))?;
+        walk_directory_and_process_files(&dir, &scope, |f| {
+            process_all_directives_in_file(f, &regexes_and_replacements)
+        }, )?;
     }
     Ok(())
 }
@@ -40,9 +46,9 @@ where
 fn get_regexes_and_replacements(conf: &Config) -> Vec<RegexAndReplacement> {
     let rr = vec![];
     // TODO
-    if conf.process_crate_directives {}
-    if conf.process_category_directives {}
-    if conf.process_page_directives {}
+    // if conf.process_crate_directives {}
+    // if conf.process_category_directives {}
+    // if conf.process_page_directives {}
     rr
 }
 
@@ -89,11 +95,11 @@ fn process<'a>(content: &'a str, regexes_and_replacements: &[RegexAndReplacement
     if !regexes_and_replacements.is_empty() {
         for rr in regexes_and_replacements.iter() {
             result = if let Some(ref repl) = rr.replacement {
-                rr.re.replace_all(&content, repl)
+                rr.re.replace_all(content, repl)
             } else {
                 // If replacement is `None`,
                 // just delete the matching text.
-                rr.re.replace_all(&content, "")
+                rr.re.replace_all(content, "")
             };
             // tracing::debug!("Content: {content}");
         }

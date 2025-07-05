@@ -1,10 +1,10 @@
+use std::borrow::Cow;
 use std::fs::File;
 use std::io::Read;
 use std::io::Write;
 use std::path::Path;
 
 use anyhow::Result;
-use std::borrow::Cow;
 
 /// Read a text file in memory, test if its contents should be processed, and if , update its contents.
 ///
@@ -30,7 +30,7 @@ where
         let updated: Cow<'_, str> = update_contents(&original);
         // TODO
         // if  updated.is_empty() {
-        //     std::fs::remove_file(filepath)?;
+        //
         //     return Ok(());
         // }
         if updated != original {
