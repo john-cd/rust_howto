@@ -3,6 +3,8 @@ use regex::Regex;
 
 use super::conf::PreprocConfig;
 
+// TODO share RegexAndReplacement code with CLIs (core_lib)
+
 // Replacement closure
 type Replacement = Box<dyn Fn(&Captures) -> String>;
 
@@ -56,7 +58,7 @@ pub fn get_regexes_and_replacements(
     }
     // Remove any left-over {{#crate }} directives and log a warning.
     // {{#crate }} is a custom directive for this book.
-    if conf.scrub_crate_directives {
+    if conf.scrub_crate_block_directives {
         let re = Regex::new(r#"[{]{2} *#crate *[^}]*?[}]{2}"#)
             .expect("Invalid regex");
         rr.push(RegexAndReplacement {

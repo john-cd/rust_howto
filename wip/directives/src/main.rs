@@ -23,11 +23,14 @@ fn main() -> anyhow::Result<()> {
 
     // Process command-line arguments to retrieve the directory to process:
     let args = cli::Args::parse();
+    let scope = core_lib::Scope::default();
+
     for directory in &args.directories {
         let dir = directory.as_path().canonicalize()?;
         println!("Processing {}", dir.display());
+
         // TODO
-        walk_directory_and_process_files(&dir, process_crate_badge_directives_in_file)?;
+        walk_directory_and_process_files(&dir, &scope, process_crate_badge_directives_in_file)?;
     }
     println!("DONE");
     Ok(())

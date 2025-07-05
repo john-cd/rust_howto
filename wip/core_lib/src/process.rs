@@ -1,3 +1,4 @@
+use std::borrow::Cow;
 use std::fs::File;
 use std::io::Read;
 use std::io::Write;
@@ -16,22 +17,29 @@ use anyhow::Result;
 pub fn process_file<P, F>(filepath: &Path, should_process: P, update_contents: F) -> Result<()>
 where
     P: Fn(&str) -> bool,
-    F: Fn(&str) -> String,
+    F: Fn(&str) -> Cow<str>,
 {
     // Read the file into memory.
     let mut file = File::open(filepath)?;
     let size = file.metadata()?.len() as usize;
-    let mut buffer = String::with_capacity(size);
-    file.read_to_string(&mut buffer)?;
+    let mut original = String::with_capacity(size);
+    file.read_to_string(&mut original)?;
     drop(file); // Close the file early.
 
-    if should_process(&buffer) {
-        let temp_filepath = filepath.with_extension(".tmp");
-        let mut temp_file = File::create(&temp_filepath)?;
-        buffer = update_contents(&buffer);
-        temp_file.write_all(buffer.as_bytes())?;
-        // Renames a file or directory to a new name, replacing the original file if it already exists.
-        std::fs::rename(&temp_filepath, filepath)?;
+    if !original.is_empty() && should_process(&original) {
+        let updated: Cow<'_, str> = update_contents(&original);
+        // TODO
+        // if  updated.is_empty() {
+        //
+        //     return Ok(());
+        // }
+        if updated != original {
+            let temp_filepath = filepath.with_extension(".tmp");
+            let mut temp_file = File::create(&temp_filepath)?;
+            temp_file.write_all(updated.as_bytes())?;
+            // Renames a file or directory to a new name, replacing the original file if it already exists.
+            std::fs::rename(&temp_filepath, filepath)?;
+        }
     }
     Ok(())
 }

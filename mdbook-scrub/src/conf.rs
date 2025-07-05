@@ -22,7 +22,7 @@ pub struct PreprocConfig {
     pub scrub_example_directives: bool,
     // Remove any left-over {{#crate }} directives and log a warning (default =
     // true). {{#crate }} is a custom directive for this book.
-    pub scrub_crate_directives: bool,
+    pub scrub_crate_block_directives: bool,
     // Remove any left-over [[file | title]] wikilinks and log a warning
     // (default = true).
     pub scrub_wikilinks: bool,
@@ -35,7 +35,7 @@ impl Default for PreprocConfig {
             do_not_include_hidden_chapters: true,
             hidden_chapter_prefix: "_".into(),
             scrub_example_directives: true,
-            scrub_crate_directives: true,
+            scrub_crate_block_directives: true,
             scrub_wikilinks: true,
         }
     }
