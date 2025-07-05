@@ -2,11 +2,11 @@ mod conf;
 mod regexes;
 
 use conf::PreprocConfig;
-use mdbook::BookItem;
 use mdbook::book::Book;
 use mdbook::errors::Error;
 use mdbook::preprocess::Preprocessor;
 use mdbook::preprocess::PreprocessorContext;
+use mdbook::BookItem;
 use regexes::*;
 use tracing::info;
 use tracing::warn;
@@ -35,11 +35,7 @@ impl Preprocessor for Preproc {
         Self::NAME
     }
 
-    fn run(
-        &self,
-        ctx: &PreprocessorContext,
-        mut book: Book,
-    ) -> Result<Book, Error> {
+    fn run(&self, ctx: &PreprocessorContext, mut book: Book) -> Result<Book, Error> {
         info!("Running `mdbook-scrub` preprocessor");
 
         let conf: PreprocConfig = self.retrieve_config(&ctx.config);
