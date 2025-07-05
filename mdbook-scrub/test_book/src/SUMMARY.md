@@ -26,4 +26,7 @@
 
 ## Other
 
+- [Example directives](./examples.md)
+- [Hidden sections](./hidden.md)
+- [Wikilinks](./wikilinks.md)
 - [Others](./others.md)
