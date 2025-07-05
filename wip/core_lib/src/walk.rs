@@ -28,7 +28,7 @@ where
         .collect::<Vec<_>>();
 
     for file in files {
-        println!("Processing {}.", file.display());
+        tracing::info!("Processing {}.", file.display());
         f(&file)?;
     }
     Ok(())

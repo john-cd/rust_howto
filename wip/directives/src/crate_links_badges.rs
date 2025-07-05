@@ -36,8 +36,12 @@
 //         });
 
 use std::sync::LazyLock;
+use std::borrow::Cow;
 
 use regex::Regex;
+
+// TODO use common.rs
+// use Regex::replace_all
 
 static CRATE_BADGE_REGEX: LazyLock<Regex> = LazyLock::new(|| {
     Regex::new(r"\{\{\s*!\s*(docs|github|lib\.rs|crates\.io|web|crate)\s*:?\s+([^}]+)\s*\}\}")
@@ -56,9 +60,9 @@ fn has_crate_badge(s: &str) -> bool {
 /// * `text` - The text to process.
 ///
 /// # Returns the updated content as a `String`.
-fn process_crate_badge_directives(text: &str) -> String {
-    let mut res = text.to_string();
-    res.reserve(250);
+fn process_crate_badge_directives(text: &str) -> Cow<str> {
+    let mut res = Cow::Borrowed(text);
+    // Yields successive non-overlapping matches in `text`.
     for (whole_matching_string, badge_kind, crates) in
         CRATE_BADGE_REGEX.captures_iter(text).map(|caps| {
             (
@@ -83,7 +87,7 @@ fn process_crate_badge_directives(text: &str) -> String {
         tracing::debug!(
             "match: {whole_matching_string}, kind: {badge_kind}, crates: {crates}, replacement: {replacement}"
         );
-        res = res.replace(whole_matching_string, &replacement);
+        res = Cow::Owned(res.replace(whole_matching_string, &replacement));
     }
     res
 }
