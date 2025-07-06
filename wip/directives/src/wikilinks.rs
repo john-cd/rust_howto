@@ -20,9 +20,8 @@
 //! [[| title10 ]]
 
 // TODO
+use core_lib::RegexAndReplacement;
 use regex::Regex;
-
-use super::common::RegexAndReplacement;
 
 //         let re_string: String = r"\s*(\S+)\s*".into();
 //         let re = Regex::new(&re_string).expect("Invalid regex");

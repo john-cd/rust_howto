@@ -6,10 +6,9 @@
 // ## Crate Blocks with Additional Categories
 // {{#crate: crt cat1 cat-2 cat-2-2 cat3::sub-cat-3 }}
 
+use core_lib::RegexAndReplacement;
 use regex::Regex;
 use regex::bytes::Captures;
-
-use super::common::RegexAndReplacement;
 
 // // TODO
 

@@ -32,9 +32,8 @@
 //!
 //! {{!cat mathematics science }}
 
+use core_lib::RegexAndReplacement;
 use regex::Regex;
-
-use super::common::RegexAndReplacement;
 
 ///
 /// {{cat parsing }} -> [parsing][cat~parsing]⮳{{hi:parsing}}

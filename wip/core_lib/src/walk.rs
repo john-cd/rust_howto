@@ -1,20 +1,23 @@
+use std::ffi::OsString;
 use std::path::Path;
 
 use anyhow::Result;
 use walkdir::WalkDir;
-use std::ffi::OsString;
 
+/// Defines what files should be processed.
 #[derive(Debug)]
 pub struct Scope {
+    /// Extensions to process.
     pub included_extensions: Vec<OsString>,
+    /// File names (i.e. final component of a `Path`) to exclude.
     pub excluded_filenames: Vec<OsString>,
 }
 
 impl Default for Scope {
     fn default() -> Self {
         Self {
-            included_extensions: vec![ OsString::from("md") ],
-            excluded_filenames: vec![ OsString::from("refs.incl.md"), OsString::from("SUMMARY.md")],
+            included_extensions: vec![OsString::from("md")],
+            excluded_filenames: vec![OsString::from("refs.incl.md"), OsString::from("SUMMARY.md")],
         }
     }
 }
@@ -26,7 +29,7 @@ impl Default for Scope {
 /// * `root` - The directory to walk through.
 /// * `scope` - The scope.
 /// * `f` - A function that processes one file at the time.
-pub fn walk_directory_and_process_files<F>(root: &Path,  scope: &Scope, f: F) -> Result<()>
+pub fn walk_directory_and_process_files<F>(root: &Path, scope: &Scope, f: F) -> Result<()>
 where
     F: Fn(&Path) -> Result<()>,
 {
@@ -39,7 +42,8 @@ where
             let ext = p.extension();
 
             p.is_file()
-                && file_name.is_some_and(|f_n| !scope.excluded_filenames.contains(&f_n.to_os_string()))
+                && file_name
+                    .is_some_and(|f_n| !scope.excluded_filenames.contains(&f_n.to_os_string()))
                 && ext.is_some_and(|ext| scope.included_extensions.contains(&ext.to_os_string()))
         })
         .map(|e| e.path().to_path_buf())
@@ -86,7 +90,7 @@ mod tests {
         ];
 
         // Extensions to process and excluded files.
-    let scope = Scope::default();
+        let scope = Scope::default();
 
         test_with(&test_cases, |dir_path| {
             walk_directory_and_process_files(dir_path, &scope, |_| Ok(()))?;

@@ -255,7 +255,7 @@ mod tests {
         ];
 
         let scope = core_lib::Scope::default();
-        
+
         test_with(&test_cases, |temp_dir_path| {
             walk_directory_and_process_files(
                 temp_dir_path,

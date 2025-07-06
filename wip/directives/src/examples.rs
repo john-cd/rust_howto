@@ -10,9 +10,8 @@
 
 // TODO
 
+use core_lib::RegexAndReplacement;
 use regex::Regex;
-
-use super::common::RegexAndReplacement;
 
 /// Example: {{#example some_example}}
 ///

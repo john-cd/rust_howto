@@ -235,6 +235,7 @@ name = "core_lib"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "regex",
  "tempfile",
  "tracing",
  "walkdir",
