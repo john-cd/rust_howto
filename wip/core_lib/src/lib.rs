@@ -4,8 +4,8 @@ pub use process::*;
 mod walk;
 pub use walk::*;
 
-mod test_utils;
-pub use test_utils::*;
+mod utils;
+pub use utils::*;
 
 mod cow_map_ext;
 
