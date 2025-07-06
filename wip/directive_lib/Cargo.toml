@@ -1,5 +1,5 @@
 [package]
-name = "parse_lib"
+name = "directive_lib"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
@@ -15,7 +15,7 @@ license.workspace = true
 
 [dependencies]
 anyhow = "1.0.95"
+core_lib = { path = "../core_lib" }
+regex = "1.11.1"
+serde = { version = "1.0.219", features = ["derive"] }
 tracing = "0.1.41"
-nom = "8.0.0"
-url = "2.5.4"
-directive_lib = { path = "../directive_lib" }

@@ -266,16 +266,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d0a5c400df2834b80a4c3327b3aad3a4c4cd4de0629063962b03235697506a28"
 
 [[package]]
-name = "directives"
+name = "directive_lib"
 version = "0.1.2"
 dependencies = [
  "anyhow",
- "clap",
  "core_lib",
  "regex",
  "serde",
  "tracing",
- "tracing-subscriber",
 ]
 
 [[package]]
@@ -755,6 +753,7 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "clap",
+ "core_lib",
  "parse_lib",
  "regex",
  "tempfile",
@@ -1070,6 +1069,7 @@ name = "parse_lib"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "directive_lib",
  "nom",
  "tracing",
  "url",
@@ -1121,6 +1121,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "02b3e5e68a3a1a02aad3ec490a98007cbc13c37cbe84a3cd7b8e406d76e7f778"
 dependencies = [
  "unicode-ident",
+]
+
+[[package]]
+name = "process_directives"
+version = "0.1.2"
+dependencies = [
+ "anyhow",
+ "clap",
+ "core_lib",
+ "directive_lib",
+ "tracing",
+ "tracing-subscriber",
 ]
 
 [[package]]

@@ -22,7 +22,7 @@ impl Default for Scope {
     }
 }
 
-/// Walks through a directory and processes all (Markdown) files.
+/// Walks through a directory and processes all files.
 ///
 /// # Arguments
 ///

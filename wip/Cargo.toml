@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = [ "core_lib", "directives", "link_checker", "inline_links", "parse_lib"]
+members = [ "core_lib", "process_directives", "link_checker", "inline_links", "parse_lib", "directive_lib"]
 
 # Default values for packages in the workspace
 [workspace.package]

@@ -5,15 +5,16 @@ use nom::IResult;
 use nom::Parser;
 use nom::branch::alt;
 use nom::bytes::tag;
+use nom::bytes::take_till;
 use nom::bytes::take_until;
 use nom::character::char;
 use nom::character::complete::space0;
 use nom::character::complete::space1;
 use nom::combinator::map;
+use nom::combinator::map_res;
 use nom::combinator::opt;
 use nom::combinator::value;
-
-use super::model::*;
+use nom::sequence::delimited;
 
 // Matches the fixed prefix "{{" and optional spaces.
 fn parse_prefix(input: &str) -> IResult<&str, ()> {
@@ -21,27 +22,9 @@ fn parse_prefix(input: &str) -> IResult<&str, ()> {
     Ok((input, ()))
 }
 
-//
-fn optional_colon(input: &str) -> IResult<&str, ()> {
-    value((), opt((space0, char(':')))).parse(input)
-}
-
-//
-fn get_value(input: &str) -> IResult<&str, &str> {
-    map(
-        (
-            space1::<&str, _>, // Matches at least one space after the keyword
-            take_until("}}"),  // Takes all characters until the "}}" sequence is found
-            tag("}}"),         // Consumes the closing "}}"
-        ),
-        |(_, value, _)| value.trim(),
-    )
-    .parse(input)
-}
-
 // Parses the keyword part of the directive (e.g., "crate", "docs").
 // It uses `alt` to try matching against a list of known keywords.
-fn kinds(input: &str) -> IResult<&str, &str> {
+fn parse_kinds(input: &str) -> IResult<&str, &str> {
     alt((
         tag("cat"),
         tag("crate"),
@@ -54,19 +37,54 @@ fn kinds(input: &str) -> IResult<&str, &str> {
     .parse(input)
 }
 
-// TODO
-fn get_link_kind(input: &str) -> LinkKind {
+// Matches an optional colon, optionally preceded by spaces.
+fn parse_optional_colon(input: &str) -> IResult<&str, ()> {
+    value((), opt((space0, char(':')))).parse(input)
+}
+
+// Parses text before }} after at least one space.
+// Returns trimmed text split at whitespaces.
+fn parse_value(input: &str) -> IResult<&str, &str> {
+    map(
+        delimited(
+            space1::<&str, _>, // Matches at least one space.
+            take_until("}}"),  // Takes all characters until the "}}" sequence is found.
+            tag("}}"),         // Consumes the closing "}}".
+        ),
+        |value| value.trim(),
+    )
+    .parse(input)
+}
+
+use nom::multi::separated_list1;
+
+fn parse_values(input: &str) -> IResult<&str, Vec<&str>> {
+    let word = take_till(|c: char| c.is_whitespace() || c == '}');
+    delimited(
+        space1,                        // Starts with a space.
+        separated_list1(space0, word), // List of at least one word separated by space or tab.
+        tag("}}"),                     // Ends with "}}".
+    )
+    .parse(input)
+}
+
+use directive_lib::DestinationKind;
+
+fn to_destination_kind(input: &str) -> DestinationKind {
+    use directive_lib::DestinationKind::*;
     match input {
-        "cat" => LinkKind::Category,
-        "crate" => LinkKind::Crate,
-        "docs" => LinkKind::Docs,
-        "github" => LinkKind::GithubRepo,
-        "lib.rs" => LinkKind::LibRs,
-        "crates.io" => LinkKind::CratesIo,
-        "web" => LinkKind::Web,
+        "cat" => Category,
+        "crate" => Crate,
+        "docs" => Docs,
+        "github" => GithubRepo,
+        "lib.rs" => LibRs,
+        "crates.io" => CratesIo,
+        "web" => Web,
         _ => todo!(), // TODO
     }
 }
+
+use directive_lib::Directive;
 
 // Parses
 // - the type sigil # or ! or nothing,
@@ -82,27 +100,50 @@ fn get_link_kind(input: &str) -> LinkKind {
 fn parse_directive(input: &str) -> IResult<&str, Directive> {
     let (input, _) = parse_prefix(input)?;
 
-    let insert_link = (kinds, optional_colon, get_value);
+    let insert_link = (parse_kinds, parse_optional_colon, parse_value);
 
-    let insert_badge = (char('!'), space0, kinds, optional_colon, get_value);
+    let insert_badge = (
+        char('!'),
+        space0,
+        parse_kinds,
+        parse_optional_colon,
+        parse_value,
+    );
 
-    let insert_crate_block = (char('#'), space0, tag("crate"), get_value);
+    let insert_crate_block = (
+        char('#'),
+        space0,
+        tag("crate"),
+        parse_optional_colon,
+        parse_values,
+    );
 
-    let insert_example_block_prefix = (char('#'), space0, tag("crate"), get_value);
+    let insert_example_block_prefix = (
+        char('#'),
+        space0,
+        tag("example"),
+        parse_optional_colon,
+        parse_value,
+    );
 
     let mut directives = alt((
         map(insert_link, |(kind, _, value)| Directive::Link {
-            kind: get_link_kind(kind),
+            kind: to_destination_kind(kind),
             name: value,
         }),
         map(insert_badge, |(_, _, kind, _, value)| Directive::Badge {
-            kind: get_link_kind(kind),
+            kind: to_destination_kind(kind),
             name: value,
         }),
-        map(insert_crate_block, |(_, _, _, value)| {
-            Directive::CrateBlock { crate_name: value }
+        map(insert_crate_block, |(_, _, _, _, value)| {
+            Directive::CrateBlock {
+                crate_name: value
+                    .get(0)
+                    .expect("There must be at least one word because of `separated_list1`."),
+                additional_categories: value.get(1..).unwrap_or(&[]).to_vec(),
+            }
         }),
-        map(insert_example_block_prefix, |(_, _, _, value)| {
+        map(insert_example_block_prefix, |(_, _, _, _, value)| {
             Directive::ExampleBlock { name: value }
         }),
     ));

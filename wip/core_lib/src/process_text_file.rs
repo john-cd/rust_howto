@@ -6,7 +6,7 @@ use std::path::Path;
 
 use anyhow::Result;
 
-/// Read a text file in memory, test if its contents should be processed, and if , update its contents.
+/// Read a text file in memory, and, if its contents should be processed, update its contents on disk.
 ///
 /// # Arguments
 ///
@@ -14,7 +14,7 @@ use anyhow::Result;
 /// * `should_process` - a function that returns true if the file should be processed, given its contents.
 /// * `update_contents` - a function that returns the updated contents of the file, given its contents.
 ///
-pub fn process_file<P, F>(filepath: &Path, should_process: P, update_contents: F) -> Result<()>
+pub fn process_text_file<P, F>(filepath: &Path, should_process: P, update_contents: F) -> Result<()>
 where
     P: Fn(&str) -> bool,
     F: Fn(&str) -> Cow<str>,

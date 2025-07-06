@@ -1,13 +1,14 @@
-mod process;
-pub use process::*;
+mod process_text_file;
+pub use process_text_file::*;
 
-mod walk;
-pub use walk::*;
+mod walk_directory;
+pub use walk_directory::*;
 
 mod utils;
 pub use utils::*;
 
-mod cow_map_ext;
-
 mod replace;
 pub use replace::*;
+
+mod templates;
+// TODO pub use templates::*;
