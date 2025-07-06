@@ -1,4 +1,3 @@
-// use anyhow::anyhow;
 use anyhow::Context;
 use anyhow::Result;
 use tool_lib::create_crate_badges_or_refdefs;
@@ -17,7 +16,7 @@ pub(super) fn create_crate_badge_with_categories(name: &str) -> Result<(String, 
         create_crate_badges_or_refdefs(&info.crate_data, tool_lib::GenerationMode::CrateBadges)?;
     s.push_str(&badges);
 
-    // Add index entries for keywords
+    // Add index entries for keywords.
     let keywords: Vec<_> = info
         .keywords
         .into_iter()
@@ -27,7 +26,7 @@ pub(super) fn create_crate_badge_with_categories(name: &str) -> Result<(String, 
     let markdown = tool_lib::create_index_anchors(kws)?;
     s.push_str(&markdown);
 
-    // Print category badges
+    // Print category badges.
     for cat in info.categories {
         let markdown = tool_lib::create_category_badge(&cat.category, &cat.slug)?;
         s.push_str(&markdown);

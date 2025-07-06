@@ -6,7 +6,7 @@ pub(crate) use config_cmd::*;
 mod create_badge;
 use create_badge::*;
 
-/// The main function of the templ tool.
+/// The main function of the `templ` tool.
 ///
 /// This function parses command-line arguments, sets up logging, and dispatches
 /// to the appropriate command handler based on the user's input.
@@ -25,12 +25,12 @@ fn main() -> anyhow::Result<()> {
     match cmd {
         // Generate badges for one or more crates.
         //
-        // Include keywords, categories, description, refdefs
+        // Include keywords, categories, description, refdefs.
         Cmd::Badges(b) => {
             for name in b.args {
                 let (badges, refdefs) = create_crate_badge_with_categories(name.trim())?;
                 println!("{badges}");
-                // -a FILE (or simply -a) was passed as an argument
+                // -a FILE (or simply -a) was passed as an argument.
                 if let Some(ref pathbuf) = b.file {
                     tool_lib::merge(pathbuf, refdefs)?;
                 }
