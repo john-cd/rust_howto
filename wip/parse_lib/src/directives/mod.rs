@@ -11,95 +11,87 @@
 //!
 //! See `directive_model.rs`.
 
-use nom::IResult;
-use nom::Parser;
-use nom::branch::alt;
-use nom::bytes::tag;
-use nom::bytes::take_till;
-use nom::bytes::take_until;
-use nom::character::char;
-use nom::character::complete::space0;
-use nom::character::complete::space1;
-use nom::combinator::map;
-use nom::combinator::map_res;
-use nom::combinator::opt;
-use nom::combinator::value;
-use nom::combinator::verify;
-use nom::multi::separated_list1;
-use nom::sequence::delimited;
+use winnow::prelude::*;
+use winnow::Parser;
+use winnow::Result;
+use winnow::ascii::space0;
+use winnow::ascii::space1;
+use winnow::combinator::alt;
+use winnow::combinator::delimited;
+use winnow::combinator::opt;
+use winnow::combinator::separated;
+use winnow::token::literal;
+use winnow::token::one_of;
+use winnow::token::take_till;
+use winnow::token::take_until;
 
 // TODO
-// use nom::error::ParseError;
-// use nom::Input;
-// use nom::AsChar;
+// use winnow::error::ParseError;
+// use winnow::Input;
+// use winnow::AsChar;
 //
 // pub fn wrap<'a, I, E: ParseError<I>, F>(
 //     parser: F,
 // ) -> impl Parser<I, Output = <F as Parser<I>>::Output, Error = E>
 // where
-//     I: Input + nom::Compare<&'a str>,
+//     I: Input + winnow::Compare<&'a str>,
 //     <I as Input>::Item: AsChar,
 //     F: Parser<I, Error = E>,
 //     {
-//         delimited((tag("{{"), space0),
+//         delimited(("{{", space0),
 //         parser,
-//         (space0, tag("}}")),
+//         (space0, "}}"),
 //         )
 //     }
 
 /// Matches the fixed prefix "{{" and optional spaces.
-fn parse_prefix(input: &str) -> IResult<&str, ()> {
-    let (input, _) = (tag("{{"), space0).parse(input)?;
-    Ok((input, ()))
+fn parse_prefix<'s>(input: &mut &'s str) -> Result<()> {
+    ("{{", space0).value(()).parse_next(input)
 }
 
 /// Parses the keyword part of the directive (e.g., "crate", "docs").
 /// It uses `alt` to try matching against a list of known keywords.
-fn parse_kinds(input: &str) -> IResult<&str, &str> {
+fn parse_kinds<'s>(input: &mut &'s str) -> Result<&'s str> {
     alt((
-        tag("cat"),
-        tag("crate"),
-        tag("docs"),
-        tag("github"),
-        tag("lib.rs"),
-        tag("crates.io"),
-        tag("web"),
+        "cat",
+        "crate",
+        "docs",
+        "github",
+        "lib.rs",
+        "crates.io",
+        "web",
     ))
-    .parse(input)
+    .parse_next(input)
 }
 
 /// Matches an optional colon, optionally preceded by spaces.
-fn parse_optional_colon(input: &str) -> IResult<&str, ()> {
-    value((), opt((space0, char(':')))).parse(input)
+fn parse_optional_colon<'s>(input: &mut &'s str) -> Result<()> {
+    opt((space0, ":")).value(()).parse_next(input)
 }
 
 /// Parses text before }} after at least one space.
 /// Returns trimmed text. Errors if it is empty.
-fn parse_value(input: &str) -> IResult<&str, &str> {
-    verify(
-        map(
-            delimited(
-                space1::<&str, _>, // Matches at least one space.
-                take_until("}}"),  // Takes all characters until the "}}" sequence is found.
-                tag("}}"),         // Consumes the closing "}}".
-            ),
-            |value| value.trim(),
-        ),
-        |s: &str| !s.is_empty(), // `value` (after trim) can't be empty.
+fn parse_value<'s>(input: &mut &'s str) -> Result<&'s str> {
+    delimited(
+        space1,                // Matches at least one space.
+        take_until(1.., "}}"), // Takes all characters until the "}}" sequence is found.
+        "}}",         // Consumes the closing "}}".
     )
-    .parse(input)
+    .map(|value: &str| value.trim())
+    .verify(|s: &str| !s.is_empty()) // `value` (after trim) can't be empty.
+    .parse_next(input)
 }
 
 /// Parses text before }} after at least one space.
 /// Split the text at whitespaces.
-fn parse_values(input: &str) -> IResult<&str, Vec<&str>> {
-    let word = take_till(|c: char| c.is_whitespace() || c == '}');
+fn parse_values<'s>(input: &mut &'s str) -> Result<Vec<&'s str>> {
+    let word = take_till(1.., |c: char| c.is_whitespace() || c == '}');
     delimited(
-        space1,                        // Starts with a space.
-        separated_list1(space0, word), // List of at least one word separated by space or tab.
-        tag("}}"),                     // Ends with "}}".
+        space1,                       // Starts with a space.
+        separated(1.., word, space0), // List of at least one word separated by space or tab.
+        "}}",                // Ends with "}}".
     )
-    .parse(input)
+    .parse_next(input)
 }
 
 use directive_lib::DestinationKind;
@@ -128,13 +120,12 @@ use directive_lib::Directive;
 ///
 /// The `value` part can contain spaces and can be optionally followed
 /// by whitespace before the final "}}",
-pub fn parse_directive(input: &str) -> IResult<&str, Directive> {
-    let (input, _) = parse_prefix(input)?;
-
-    let insert_link = (parse_kinds, parse_optional_colon, parse_value);
+pub fn parse_directive<'s>(input: &mut &'s str) -> Result<Directive<'s>> {
+    let insert_link = (parse_prefix, parse_kinds, parse_optional_colon, parse_value);
 
     let insert_badge = (
-        char('!'),
+        parse_prefix,
+        "!",
         space0,
         parse_kinds,
         parse_optional_colon,
@@ -142,49 +133,68 @@ pub fn parse_directive(input: &str) -> IResult<&str, Directive> {
     );
 
     let insert_crate_block = (
-        char('#'),
+        parse_prefix,
+        "#",
         space0,
-        tag("crate"),
+        "crate",
         parse_optional_colon,
         parse_values,
     );
 
     let insert_example_block_prefix = (
-        char('#'),
+        parse_prefix,
+        "#",
         space0,
-        tag("example"),
+        "example",
         parse_optional_colon,
         parse_value,
     );
 
     let mut directives = alt((
-        map(insert_link, |(kind, _, value)| Directive::Link {
+        insert_link.map(|(_, kind, _, value)| Directive::Link {
             kind: to_destination_kind(kind),
             name: value,
         }),
-        map(insert_badge, |(_, _, kind, _, value)| Directive::Badge {
+        insert_badge.map(|(_, _, _, kind, _, value)| Directive::Badge {
             kind: to_destination_kind(kind),
             name: value,
         }),
-        map(insert_crate_block, |(_, _, _, _, value)| {
-            Directive::CrateBlock {
-                crate_name: value
-                    .get(0)
-                    .expect("There must be at least one word because of `separated_list1`."),
-                additional_categories: value.get(1..).unwrap_or(&[]).to_vec(),
-            }
+        insert_crate_block.map(|(_, _, _, _, _, value)| Directive::CrateBlock {
+            crate_name: value
+                .get(0)
+                .expect("There must be at least one word because of `separated_list1`."),
+            additional_categories: value.get(1..).unwrap_or(&[]).to_vec(),
         }),
-        map(insert_example_block_prefix, |(_, _, _, _, value)| {
-            Directive::ExampleBlock { name: value }
-        }),
+        insert_example_block_prefix
+            .map(|(_, _, _, _, _, value)| Directive::ExampleBlock { name: value }),
     ));
 
-    directives.parse(input)
+    directives.parse_next(input)
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    // TODO fix failing unit tests below
+    // fn insert_crate_block<'s>(input: &mut &'s str) -> Result< (char, &'s str, &'s str, (), Vec<&'s str>)> {
+    //     (
+    //         "#",
+    //         space0,
+    //         "crate",
+    //         parse_optional_colon,
+    //         parse_values,
+    //     )
+    //         .parse_next(input)
+    // }
+    //
+    // #[test]
+    // fn test() {
+    //     assert_eq!(
+    //         insert_crate_block.parse_peek("{{#crate xyz}}"),
+    //         Ok(("", ('#', "", "crate", (), vec!["xyz"])))
+    //     );
+    // }
 
     // * Category links:
     //
@@ -206,8 +216,8 @@ mod tests {
             "{{cat: xyz}}",
             "{{cat  :  xyz}}",
         ];
-        for &input in examples.iter() {
-            let parsed = parse_directive(input);
+        for input in examples.into_iter() {
+            let parsed = parse_directive.parse_peek(&mut input);
             let expected = Ok((
                 "",
                 Directive::Link {
@@ -218,7 +228,7 @@ mod tests {
             assert_eq!(parsed, expected);
         }
 
-        let parsed = parse_directive("{{cat x-y_z::a-b_c }}");
+        let parsed = parse_directive.parse_peek(&mut "{{cat x-y_z::a-b_c }}");
         let expected = Ok((
             "",
             Directive::Link {
@@ -228,13 +238,13 @@ mod tests {
         ));
         assert_eq!(parsed, expected);
 
-        let parsed = parse_directive("{{cat}}");
+        let parsed = parse_directive(&mut "{{cat}}");
         assert!(parsed.is_err());
 
-        let parsed = parse_directive("{{cat }}");
+        let parsed = parse_directive(&mut "{{cat }}");
         assert!(parsed.is_err());
 
-        let parsed = parse_directive("{{cat_missing_space}}");
+        let parsed = parse_directive(&mut "{{cat_missing_space}}");
         assert!(parsed.is_err());
     }
 
@@ -257,35 +267,29 @@ mod tests {
             "{{!cat: xyz}}",
             "{{!cat  :  xyz}}",
         ];
-        for &input in examples.iter() {
-            let parsed = parse_directive(input);
-            let expected = Ok((
-                "",
-                Directive::Badge {
-                    kind: DestinationKind::Category,
-                    name: "xyz",
-                },
-            ));
+        for mut input in examples.into_iter() {
+            let parsed = parse_directive(&mut input);
+            let expected = Ok(Directive::Badge {
+                kind: DestinationKind::Category,
+                name: "xyz",
+            });
             assert_eq!(parsed, expected);
         }
 
-        let parsed = parse_directive("{{!cat x-y_z::a-b_c }}");
-        let expected = Ok((
-            "",
-            Directive::Badge {
-                kind: DestinationKind::Category,
-                name: "x-y_z::a-b_c",
-            },
-        ));
+        let parsed = parse_directive(&mut "{{!cat x-y_z::a-b_c }}");
+        let expected = Ok(Directive::Badge {
+            kind: DestinationKind::Category,
+            name: "x-y_z::a-b_c",
+        });
         assert_eq!(parsed, expected);
 
-        let parsed = parse_directive("{{!cat}}");
+        let parsed = parse_directive(&mut "{{!cat}}");
         assert!(parsed.is_err());
 
-        let parsed = parse_directive("{{!cat }}");
+        let parsed = parse_directive(&mut "{{!cat }}");
         assert!(parsed.is_err());
 
-        let parsed = parse_directive("{{!cat_no_spaces}}");
+        let parsed = parse_directive(&mut "{{!cat_no_spaces}}");
         assert!(parsed.is_err());
     }
 
@@ -319,23 +323,20 @@ mod tests {
             DestinationKind::Web,
         ];
 
-        for (i, &input) in examples.iter().enumerate() {
-            let parsed = parse_directive(input);
-            let expected = Ok((
-                "",
-                Directive::Link {
-                    kind: expected_kinds[i].clone(),
-                    name: "xyz",
-                },
-            ));
+        for (i, mut input) in examples.into_iter().enumerate() {
+            let parsed = parse_directive(&mut input);
+            let expected = Ok(Directive::Link {
+                kind: expected_kinds[i].clone(),
+                name: "xyz",
+            });
             assert_eq!(parsed, expected);
         }
 
-        assert!(parse_directive("{{docs}}").is_err());
+        assert!(parse_directive(&mut "{{docs}}").is_err());
 
-        assert!(parse_directive("{{lib.rs }}").is_err());
+        assert!(parse_directive(&mut "{{lib.rs }}").is_err());
 
-        assert!(parse_directive("{{crates.io_missing_space}}").is_err());
+        assert!(parse_directive(&mut "{{crates.io_missing_space}}").is_err());
     }
 
     // ----------------------------
@@ -372,23 +373,20 @@ mod tests {
             DestinationKind::Web,
         ];
 
-        for (i, &input) in examples.iter().enumerate() {
-            let parsed = parse_directive(input);
-            let expected = Ok((
-                "",
-                Directive::Badge {
-                    kind: expected_kinds[i].clone(),
-                    name: "xyz",
-                },
-            ));
+        for (i, mut input) in examples.into_iter().enumerate() {
+            let parsed = parse_directive(&mut input);
+            let expected = Ok(Directive::Badge {
+                kind: expected_kinds[i].clone(),
+                name: "xyz",
+            });
             assert_eq!(parsed, expected);
         }
 
-        assert!(parse_directive("{{!crate}}").is_err());
+        assert!(parse_directive(&mut "{{!crate}}").is_err());
 
-        assert!(parse_directive("{{!crate }}").is_err());
+        assert!(parse_directive(&mut "{{!crate }}").is_err());
 
-        assert!(parse_directive("{{!crate_missing_space}}").is_err());
+        assert!(parse_directive(&mut "{{!crate_missing_space}}").is_err());
     }
 
     // ----------------------------
@@ -417,45 +415,36 @@ mod tests {
             "{{#crate: crt}}",
             "{{#crate : crt}}",
         ];
-        for &input in examples.iter() {
-            let parsed = parse_directive(input);
-            let expected = Ok((
-                "",
-                Directive::CrateBlock {
-                    crate_name: "crt",
-                    additional_categories: vec![],
-                },
-            ));
+        for mut input in examples.into_iter() {
+            let parsed = parse_directive(&mut input);
+            let expected = Ok(Directive::CrateBlock {
+                crate_name: "crt",
+                additional_categories: vec![],
+            });
             assert_eq!(parsed, expected);
         }
 
-        let parsed = parse_directive("{{#crate x_y-z}}");
-        let expected = Ok((
-            "",
-            Directive::CrateBlock {
-                crate_name: "x_y-z",
-                additional_categories: vec![],
-            },
-        ));
+        let parsed = parse_directive(&mut "{{#crate x_y-z}}");
+        let expected = Ok(Directive::CrateBlock {
+            crate_name: "x_y-z",
+            additional_categories: vec![],
+        });
         assert_eq!(parsed, expected);
 
-        let parsed = parse_directive("{{#crate: crt cat1 cat-2 cat-2-2 cat3::sub-cat-3 }}");
-        let expected = Ok((
-            "",
-            Directive::CrateBlock {
-                crate_name: "crt",
-                additional_categories: vec!["cat1", "cat-2", "cat-2-2", "cat3::sub-cat-3"],
-            },
-        ));
+        let parsed = parse_directive(&mut "{{#crate: crt cat1 cat-2 cat-2-2 cat3::sub-cat-3 }}");
+        let expected = Ok(Directive::CrateBlock {
+            crate_name: "crt",
+            additional_categories: vec!["cat1", "cat-2", "cat-2-2", "cat3::sub-cat-3"],
+        });
         assert_eq!(parsed, expected);
 
-        let parsed = parse_directive("{{#crate}}");
+        let parsed = parse_directive(&mut "{{#crate}}");
         assert!(parsed.is_err());
 
-        let parsed = parse_directive("{{#crate }}");
+        let parsed = parse_directive(&mut "{{#crate }}");
         assert!(parsed.is_err());
 
-        let parsed = parse_directive("{{#crate_no_spaces}}");
+        let parsed = parse_directive(&mut "{{#crate_no_spaces}}");
         assert!(parsed.is_err());
     }
 
@@ -484,21 +473,18 @@ mod tests {
             "{{# example some_example}}",
             "{{ #example some_example}}",
         ];
-        for &input in examples.iter() {
-            let parsed = parse_directive(input);
-            let expected = Ok((
-                "",
-                Directive::ExampleBlock {
-                    name: "some_example",
-                },
-            ));
+        for mut input in examples.into_iter() {
+            let parsed = parse_directive(&mut input);
+            let expected = Ok(Directive::ExampleBlock {
+                name: "some_example",
+            });
             assert_eq!(parsed, expected);
         }
 
-        assert!(parse_directive("{{#example}}").is_err());
+        assert!(parse_directive(&mut "{{#example}}").is_err());
 
-        assert!(parse_directive("{{#example }}").is_err());
+        assert!(parse_directive(&mut "{{#example }}").is_err());
 
-        assert!(parse_directive("{{#example_no_space}}").is_err());
+        assert!(parse_directive(&mut "{{#example_no_space}}").is_err());
     }
 }

@@ -1,25 +1,26 @@
-use nom::IResult;
-use nom::Parser;
-use nom::branch::alt;
-use nom::bytes::complete::tag;
-use nom::combinator::cut;
-use nom::combinator::map;
-use nom::combinator::recognize;
-use nom::sequence::delimited;
+use winnow::prelude::*;
+use winnow::Result;
+use winnow::Parser;
+use winnow::branch::alt;
+use winnow::token::literal;
+use winnow::combinator::cut;
+use winnow::combinator::map;
+use winnow::combinator::recognize;
+use winnow::combinator::delimited;
 
 use super::super::ast::Element;
 
 /// Parses a naked URL or autolink (`<url>`).
 /// <https://www.w3schools.com/tags//ref_urlencode.asp>
-pub fn parse_autolink<'a>(input: &'a str) -> IResult<&'a str, Element<'a>> {
+pub fn parse_autolink<'a>(input: &mut &'a str) -> Result< Element<'a>> {
     map(
         alt((
-            delimited(tag("<"), recognize_naked_url, cut(tag(">"))),
+            delimited("<", recognize_naked_url, cut(">")),
             recognize_naked_url,
         )),
         Element::Autolink,
     )
-    .parse(input)
+    .parse_next(input)
 }
 
 #[cfg(test)]
@@ -38,7 +39,7 @@ mod tests {
     #[test]
     fn test_recognize_naked_url_https_simple() {
         assert_eq!(
-            recognize_naked_url("https://example.org"),
+            recognize_naked_url.parse_peek("https://example.org"),
             Ok(("", "https://example.org"))
         );
     }
@@ -46,7 +47,7 @@ mod tests {
     #[test]
     fn test_recognize_naked_url_with_path() {
         assert_eq!(
-            recognize_naked_url("http://example.com/path/to/page"),
+            recognize_naked_url.parse_peek("http://example.com/path/to/page"),
             Ok(("", "http://example.com/path/to/page"))
         );
     }
@@ -54,7 +55,7 @@ mod tests {
     #[test]
     fn test_recognize_naked_url_with_query() {
         assert_eq!(
-            recognize_naked_url("https://example.com?key=value&id=123"),
+            recognize_naked_url.parse_peek("https://example.com?key=value&id=123"),
             Ok(("", "https://example.com?key=value&id=123"))
         );
     }
@@ -62,7 +63,7 @@ mod tests {
     #[test]
     fn test_recognize_naked_url_with_fragment() {
         assert_eq!(
-            recognize_naked_url("http://example.com/page#section"),
+            recognize_naked_url.parse_peek("http://example.com/page#section"),
             Ok(("", "http://example.com/page#section"))
         );
     }
@@ -70,7 +71,7 @@ mod tests {
     #[test]
     fn test_recognize_naked_url_with_port() {
         assert_eq!(
-            recognize_naked_url("http://localhost:8080/"),
+            recognize_naked_url.parse_peek("http://localhost:8080/"),
             Ok(("", "http://localhost:8080/"))
         );
     }
@@ -78,7 +79,7 @@ mod tests {
     #[test]
     fn test_recognize_naked_url_with_username_password() {
         assert_eq!(
-            recognize_naked_url("http://user:pass@host.com"),
+            recognize_naked_url.parse_peek("http://user:pass@host.com"),
             Ok(("", "http://user:pass@host.com"))
         );
     }
@@ -86,7 +87,7 @@ mod tests {
     #[test]
     fn test_recognize_naked_url_with_hyphen_underscore_dot() {
         assert_eq!(
-            recognize_naked_url("https://sub-domain_name.example.com"),
+            recognize_naked_url.parse_peek("https://sub-domain_name.example.com"),
             Ok(("", "https://sub-domain_name.example.com"))
         );
     }
@@ -94,7 +95,7 @@ mod tests {
     #[test]
     fn test_recognize_naked_url_with_percentage_encoding() {
         assert_eq!(
-            recognize_naked_url("http://example.com/file%20name.txt"),
+            recognize_naked_url.parse_peek("http://example.com/file%20name.txt"),
             Ok(("", "http://example.com/file%20name.txt"))
         );
     }
@@ -102,7 +103,7 @@ mod tests {
     #[test]
     fn test_recognize_naked_url_partial_match() {
         assert_eq!(
-            recognize_naked_url("http://example.com/foo bar"),
+            recognize_naked_url.parse_peek("http://example.com/foo bar"),
             Ok((" bar", "http://example.com/foo"))
         );
     }
@@ -129,7 +130,7 @@ mod tests {
     #[test]
     fn test_parse_autolink_naked_http() {
         assert_eq!(
-            parse_autolink("http://example.com/path"),
+            parse_autolink.parse_peek("http://example.com/path"),
             Ok(("", Element::Autolink("http://example.com/path")))
         );
     }
@@ -137,7 +138,7 @@ mod tests {
     #[test]
     fn test_parse_autolink_naked_https() {
         assert_eq!(
-            parse_autolink("https://example.org/path"),
+            parse_autolink.parse_peek("https://example.org/path"),
             Ok(("", Element::Autolink("https://example.org/path")))
         );
     }
@@ -145,7 +146,7 @@ mod tests {
     #[test]
     fn test_parse_autolink_delimited_http() {
         assert_eq!(
-            parse_autolink("<http://example.com>"),
+            parse_autolink.parse_peek("<http://example.com>"),
             Ok(("", Element::Autolink("http://example.com")))
         );
     }
@@ -153,7 +154,7 @@ mod tests {
     #[test]
     fn test_parse_autolink_delimited_https() {
         assert_eq!(
-            parse_autolink("<https://example.org/path>"),
+            parse_autolink.parse_peek("<https://example.org/path>"),
             Ok(("", Element::Autolink("https://example.org/path")))
         );
     }
@@ -161,7 +162,7 @@ mod tests {
     #[test]
     fn test_parse_autolink_delimited_with_extra_text_after() {
         assert_eq!(
-            parse_autolink("<https://example.org/path> and some text"),
+            parse_autolink.parse_peek("<https://example.org/path> and some text"),
             Ok((
                 " and some text",
                 Element::Autolink("https://example.org/path")
@@ -172,20 +173,20 @@ mod tests {
     #[test]
     fn test_parse_autolink_naked_with_extra_text_after() {
         assert_eq!(
-            parse_autolink("http://example.com/foo bar"),
+            parse_autolink.parse_peek("http://example.com/foo bar"),
             Ok((" bar", Element::Autolink("http://example.com/foo")))
         );
     }
 
     #[test]
     fn test_parse_autolink_invalid_delimited_missing_closing_tag() {
-        assert!(parse_autolink("<http://example.com").is_err());
+        assert!(parse_autolink.parse_peek("<http://example.com").is_err());
     }
 
     #[test]
     fn test_parse_autolink_invalid_delimited_missing_opening_tag() {
         assert_eq!(
-            parse_autolink("http://example.com>"),
+            parse_autolink.parse_peek("http://example.com>"),
             Ok((">", Element::Autolink("http://example.com")))
         );
     }
@@ -215,11 +216,11 @@ mod tests {
         // This parser will only match the first one if it's a naked URL,
         // or the first delimited one.
         assert_eq!(
-            parse_autolink("http://one.com https://two.org"),
+            parse_autolink.parse_peek("http://one.com https://two.org"),
             Ok((" https://two.org", Element::Autolink("http://one.com")))
         );
         assert_eq!(
-            parse_autolink("<http://one.com> <https://two.org>"),
+            parse_autolink.parse_peek("<http://one.com> <https://two.org>"),
             Ok((" <https://two.org>", Element::Autolink("http://one.com")))
         );
     }
