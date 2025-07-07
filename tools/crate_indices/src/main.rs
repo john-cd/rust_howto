@@ -82,9 +82,9 @@ fn main() -> anyhow::Result<()> {
             for name in cmdargs.crate_names.iter().filter(|n| *n != "std") {
                 let info = tool_lib::get_info_for_crate(name)
                     .with_context(|| format!("Unknown crate: {name}"))?;
-                let refdefs = tool_lib::create_crate_badges_or_refdefs(
+                let refdefs = tool_lib::create_crate_block_badges_or_refdefs(
                     &info.crate_data,
-                    tool_lib::GenerationMode::CrateRefdefs,
+                    tool_lib::GenerationMode::CrateBlockRefdefs,
                 )?
                 .split('\n')
                 .map(|st| st.to_string())

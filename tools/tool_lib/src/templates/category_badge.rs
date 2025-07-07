@@ -5,7 +5,7 @@ use serde::Serialize;
 pub(super) static CAT_BADGE: &str =
     r"[![cat~{slug}][cat~{slug}~badge]][cat~{slug}]\{\{hi:{category}}} ";
 
-/// create_category_badge
+/// Create a category badge.
 ///
 /// category: category name e.g. Encoding
 /// slug: category slug used by the crates.io website e.g. encoding

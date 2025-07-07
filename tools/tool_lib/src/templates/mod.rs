@@ -1,20 +1,22 @@
-//! Build badges, index of the book, etc... using a template engine
+//! Build badges, index of the book, etc... using a template engine.
 
 use tinytemplate::TinyTemplate;
 use tracing::info;
 
 mod category_badge;
+mod crate_block_badges_or_refdefs;
 mod crates_alphabetical;
-mod crates_badges;
 mod crates_by_category;
 mod index_anchors;
+mod normalize_url;
 mod rbe;
 
 pub use category_badge::*;
+pub use crate_block_badges_or_refdefs::*;
 pub use crates_alphabetical::*;
-pub use crates_badges::*;
 pub use crates_by_category::*;
 pub use index_anchors::*;
+pub use normalize_url::*;
 pub use rbe::*;
 
 /// Build a template engine with the custom formatters:
@@ -43,15 +45,15 @@ fn get_template_engine() -> anyhow::Result<TinyTemplate<'static>> {
     tt.add_template("ALPHABETICAL_ROW", ALPHABETICAL_ROW)?;
     tt.add_template("CAT_BADGE", CAT_BADGE)?;
     tt.add_template("CATEGORY_ROW", CATEGORY_ROW)?;
-    tt.add_template("CRATE_BADGES", CRATE_BADGES)?;
+    tt.add_template("CRATE_BLOCK_BADGES", CRATE_BLOCK_BADGES)?;
     tt.add_template("CRATE_DESCRIPTION", CRATE_DESCRIPTION)?;
-    tt.add_template("CRATE_REFDEFS", CRATE_REFDEFS)?;
+    tt.add_template("CRATE_BLOCK_REFDEFS", CRATE_BLOCK_REFDEFS)?;
     tt.add_template("RBE", RBE)?;
     tt.add_template("INDEX_ANCHORS", INDEX_ANCHORS)?;
     Ok(tt)
 }
 
-// problem: TinyTemplate is nor Sync + Send
+// problem: TinyTemplate is not Sync + Send
 // can't do
 // use std::sync::OnceLock;
 // fn get_template_engine() -> &'static TinyTemplate<'static> {

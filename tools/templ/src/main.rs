@@ -3,8 +3,6 @@ use tool_lib::*;
 mod cli;
 mod config_cmd;
 pub(crate) use config_cmd::*;
-mod create_badge;
-use create_badge::*;
 
 /// The main function of the `templ` tool.
 ///
@@ -28,7 +26,7 @@ fn main() -> anyhow::Result<()> {
         // Include keywords, categories, description, refdefs.
         Cmd::Badges(b) => {
             for name in b.args {
-                let (badges, refdefs) = create_crate_badge_with_categories(name.trim())?;
+                let (badges, refdefs) = create_crate_block(name.trim())?;
                 println!("{badges}");
                 // -a FILE (or simply -a) was passed as an argument.
                 if let Some(ref pathbuf) = b.file {
