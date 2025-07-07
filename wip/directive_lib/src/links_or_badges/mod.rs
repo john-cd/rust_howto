@@ -42,8 +42,11 @@
 mod category_links_badges_tests;
 
 use core_lib::RegexAndReplacement;
+use regex::Captures;
 use regex::Regex;
+use super::Directive;
 
+/// Build the Regex for link or badge directives (both for categories and crates).
 pub(super) fn link_or_badge_regexes() -> Vec<RegexAndReplacement> {
     let re_string: String =
         r"\{\{\s*(!?)\s*(cat|docs|github|lib\.rs|crates\.io|web|crate)\s*:?\s+([^}]+)\s*\}\}"
@@ -55,10 +58,6 @@ pub(super) fn link_or_badge_regexes() -> Vec<RegexAndReplacement> {
         replacement: Some(Box::new(|_| replacement.into())),
     }]
 }
-
-use regex::Captures;
-
-use super::Directive;
 
 /// Extract directive from the Regex captures.
 pub fn extract_directive<'a>(caps: &'a Captures<'a>) -> Directive<'a> {
@@ -86,8 +85,8 @@ pub fn extract_directive<'a>(caps: &'a Captures<'a>) -> Directive<'a> {
     };
 
     if is_badge {
-        Directive::Badge { kind, name }
+        Directive::Badge { kind, name: name.trim() }
     } else {
-        Directive::Link { kind, name }
+        Directive::Link { kind, name: name.trim() }
     }
 }

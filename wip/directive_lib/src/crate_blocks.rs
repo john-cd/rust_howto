@@ -18,12 +18,7 @@ pub(super) fn crate_block_regexes() -> Vec<RegexAndReplacement> {
     }]
 }
 
-// TODO
-// fn replace<'a, 'b>(caps: &'a Captures<'b>) -> String {
-//     format!("{} {}", &caps[2], &caps[1])
-// }
-
-// // The followimg variations should be accepted:
+// // The following variations should be accepted:
 // // {{#crate crt}}
 // // {{#crate crt }}
 // // {{#crate: crt}}

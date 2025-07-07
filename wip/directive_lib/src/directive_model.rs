@@ -1,6 +1,5 @@
-//!
+//! The model for link / badge / crate block / example block directives.
 
-///
 #[derive(Debug, PartialEq, Eq)]
 pub enum Directive<'a> {
     /// Insert a Markdown link.

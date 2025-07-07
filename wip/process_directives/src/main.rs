@@ -14,7 +14,7 @@ fn main() -> anyhow::Result<()> {
     let scope = core_lib::Scope::default();
 
     // TODO
-    // core_lib::process_all_directives(args.directories, &conf::Config::default())?;
+    // directive_lib::process_all_directives(args.directories, &conf::Config::default())?;
     println!("DONE");
     Ok(())
 }
