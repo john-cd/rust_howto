@@ -97,3 +97,8 @@ pub fn extract_directive<'a>(caps: &'a Captures<'a>) -> Directive<'a> {
         }
     }
 }
+
+// TODO
+// impl From<&str> for Directive<'_> {
+//    fn from(i: &str) -> Self {}
+// }
