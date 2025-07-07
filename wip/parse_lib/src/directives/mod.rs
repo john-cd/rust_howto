@@ -216,7 +216,7 @@ mod tests {
             "{{cat: xyz}}",
             "{{cat  :  xyz}}",
         ];
-        for input in examples.into_iter() {
+        for mut input in examples.into_iter() {
             let parsed = parse_directive.parse_peek(&mut input);
             let expected = Ok((
                 "",

@@ -1,10 +1,11 @@
 // //! Parsing Utilities
-// use nom::Parser;
-// use nom::character::complete::multispace0;
-// use nom::error::ParseError;
-// use nom::sequence::delimited;
-// use nom::character::char;use nom::IResult;
-// use nom::bytes::complete::is_not;
+// use winnow::Parser;
+// use winnow::character::multispace0;
+// use winnow::error::ParseError;
+// use winnow::combinator::delimited;
+// use winnow::character::char;
+// use winnow::Result;
+// use winnow::bytes::complete::is_not;
 
 // /// A combinator that takes a parser `inner` and produces a parser that also consumes both leading and
 // /// trailing whitespace, returning the output of `inner`.
@@ -16,6 +17,6 @@
 // }
 
 // /// Parses a simple quoted string (between " and ").
-// pub fn parse_quoted_string(input: &str) -> IResult<&str, &str> {
-//     delimited(char('"'), is_not(r#"""#), char('"')).parse(input)
+// pub fn parse_quoted_string<'s>(input: &mut &'s str) -> Result< &'s str> {
+//     delimited(""", is_not(r#"""#), """).parse_next(input)
 // }

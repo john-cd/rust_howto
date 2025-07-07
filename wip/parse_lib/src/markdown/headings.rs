@@ -47,34 +47,35 @@
 //! }
 //! ```
 
-use nom::{
+use winnow::prelude::*;
+use winnow::{
     IResult,
     bytes::complete::{tag, take_while, take_while1},
     character::complete::{char, line_ending},
     combinator::opt,
     sequence::{delimited, preceded},
 };
-use nom::Parser;
-use nom::character::multispace0;
-use nom::sequence::pair;
-use nom::branch::alt;
-use nom::bytes::take_while_m_n;
-use nom::multi::many1_count;
+use winnow::Parser;
+use winnow::character::multispace0;
+use winnow::sequence::pair;
+use winnow::branch::alt;
+use winnow::bytes::take_while_m_n;
+use winnow::multi::many1_count;
 
 use super::super::ast::Element;
 
 
 /// Parse indentation. Up to three spaces of indentation are allowed.
-fn parse_indent(input: &str) -> IResult<&str, &str> {
-    take_while_m_n(0, 3, |c| c == ' ').parse(input)
+fn parse_indent<'s>(input: &mut &'s str) -> Result< &'s str> {
+    take_while_m_n(0, 3, |c| c == ' ').parse_next(input)
 }
 
 // Identation followed by opening sequence of 1–6 unescaped # characters
-fn parse_opening_hashes(input: &str) -> IResult<&str, u8> {
+fn parse_opening_hashes<'s>(input: &mut &'s str) -> Result< u8> {
     let (input, _) = parse_indent(input)?;
-    let (input, count) = many1_count(char('#')).parse(input)?;
+    let (input, count) = many1_count("#").parse_next(input)?;
     if count > 6 {
-        return Err(nom::Err::Error(nom::error::Error::new(input, nom::error::ErrorKind::TooLarge)));
+        return Err(winnow::Err::Error(winnow::error::Error::new(input, winnow::error::ErrorKind::TooLarge)));
     }
     Ok((input, count as u8))
 }
@@ -85,7 +86,7 @@ fn is_non_newline_whitespace(c: char) -> bool {
 }
 
 // Helper to parse content that doesn't contain a closing hash sequence or attribute block start.
-fn parse_heading_raw_content(input: &str) -> IResult<&str, &str> {
+fn parse_heading_raw_content<'s>(input: &mut &'s str) -> Result< &'s str> {
 
     // The opening sequence of # characters must be followed by spaces or tabs, or by the end of line.
     let (input, _) = take_while(is_non_newline_whitespace)(input)?;
@@ -101,30 +102,30 @@ fn parse_heading_raw_content(input: &str) -> IResult<&str, &str> {
 
 // Optional closing sequence of any number of unescaped # characters.
 // The optional closing sequence of #s must be preceded by spaces or tabs and may be followed by spaces or tabs only.
-fn parse_closing_hashes(input: &str) -> IResult<&str, &str> {
+fn parse_closing_hashes<'s>(input: &mut &'s str) -> Result< &'s str> {
     let mut p = delimited(multispace0, take_while(|c| c == '#'), multispace0);
-    p.parse(input)
+    p.parse_next(input)
 }
 
 /// Parse Attribute Block.
 /// This is a simplified parser for attributes focusing on the ID.
 /// <https://rust-lang.github.io/mdBook/format/markdown.html#heading-attributes>
-fn parse_attribute_block(input: &str) -> IResult<&str, Option<&str>> {
+fn parse_attribute_block<'s>(input: &mut &'s str) -> Result< Option<&'s str>> {
     let parse_attributes_content = take_while(|c: char| {
         c != '{' && c != '}' && c != '<' && c != '>' && c != '\\' && c != '\n' && c != '\r'
     });
 
-    let (input, content) = delimited(char('{'), parse_attributes_content, char('}')).parse(input)?;
+    let (input, content) = delimited("{", parse_attributes_content, "}").parse_next(input)?;
 
-    let parse_id = preceded(char('#'), take_while1(|c: char| c.is_ascii_alphanumeric() || c == '-'));
+    let parse_id = preceded("#", take_while1(|c: char| c.is_ascii_alphanumeric() || c == '-'));
 
-    let (_, id_fragment) = opt(parse_id).parse(content)?;
+    let (_, id_fragment) = opt(parse_id).parse_next(content)?;
 
     Ok((input, id_fragment))
 }
 
 /// Parses a Markdown ATX heading.
-pub fn parse_atx_heading(input: &str) -> IResult<&str, Element> {
+pub fn parse_atx_heading<'s>(input: &mut &'s str) -> Result< Element> {
 
     let (input, level) = parse_opening_hashes(input)?;
 
@@ -137,10 +138,10 @@ pub fn parse_atx_heading(input: &str) -> IResult<&str, Element> {
     let (remaining_content, closing_hashes_and_attr) = opt(pair(
         opt(parse_closing_hashes), // Optional closing hashes
         opt(preceded(multispace0, parse_attribute_block)) // Optional attribute block
-    )).parse(raw_content)?;
+    )).parse_next(raw_content)?;
 
     let mut actual_content = remaining_content;
-    let mut id_fragment: Option<&str> = None;
+    let mut id_fragment: Option<&'s str> = None;
 
     if let Some((_closing_hashes, attr_block)) = closing_hashes_and_attr {
         if let Some(id) = attr_block.flatten() {
@@ -151,8 +152,8 @@ pub fn parse_atx_heading(input: &str) -> IResult<&str, Element> {
     // Now, strip leading/trailing spaces from the *actual* content.
     let final_content = actual_content.trim_matches(is_non_newline_whitespace);
 
-    let (input, _) = multispace0.parse(input); // Consume any remaining whitespace before EOL
-    let (input, _) = alt((line_ending, tag(""))).parse(input)?; // Headings end with a newline, or EOF
+    let (input, _) = multispace0.parse_next(input); // Consume any remaining whitespace before EOL
+    let (input, _) = alt((line_ending, literal(""))).parse_next(input)?; // Headings end with a newline, or EOF
 
     Ok((
         input,
@@ -171,34 +172,34 @@ mod tests {
 
     #[test]
     fn test_parse_indent() {
-        assert_eq!(parse_indent("   # hello"), Ok(("# hello", "   ")));
-        assert_eq!(parse_indent("# hello"), Ok(("# hello", "")));
-        assert_eq!(parse_indent("    # hello"), Ok((" # hello", "    "))); // Only takes up to 3 for markdown spec, but our parse_indent takes all. This is fine.
+        assert_eq!(parse_indent.parse_peek("   # hello"), Ok(("# hello", "   ")));
+        assert_eq!(parse_indent.parse_peek("# hello"), Ok(("# hello", "")));
+        assert_eq!(parse_indent.parse_peek("    # hello"), Ok((" # hello", "    "))); // Only takes up to 3 for markdown spec, but our parse_indent takes all. This is fine.
     }
 
     #[test]
     fn test_parse_opening_hashes() {
-        assert_eq!(parse_opening_hashes("# hello"), Ok(("hello", 1)));
-        assert_eq!(parse_opening_hashes("##  world"), Ok(("world", 2)));
-        assert_eq!(parse_opening_hashes("###### test"), Ok(("test", 6)));
-        assert!(parse_opening_hashes("####### too many").is_err());
-        assert!(parse_opening_hashes("no hash").is_err());
+        assert_eq!(parse_opening_hashes.parse_peek("# hello"), Ok(("hello", 1)));
+        assert_eq!(parse_opening_hashes.parse_peek("##  world"), Ok(("world", 2)));
+        assert_eq!(parse_opening_hashes.parse_peek("###### test"), Ok(("test", 6)));
+        assert!(parse_opening_hashes.parse_peek("####### too many").is_err());
+        assert!(parse_opening_hashes.parse_peek("no hash").is_err());
     }
 
     #[test]
     fn test_parse_attribute_block() {
-        assert_eq!(parse_attribute_block("{#my-id}"), Ok(("", Some("my-id"))));
-        assert_eq!(parse_attribute_block("{ #another-id }"), Ok(("", Some("another-id"))));
-        assert_eq!(parse_attribute_block("{}"), Ok(("", None)));
-        assert_eq!(parse_attribute_block("{.class}"), Ok(("", None))); // Our current parser only extracts ID
-        assert!(parse_attribute_block("{ #broken{ }").is_err()); // Nested braces
-        assert!(parse_attribute_block("{ #broken< }").is_err()); // Invalid char
+        assert_eq!(parse_attribute_block.parse_peek("{#my-id}"), Ok(("", Some("my-id"))));
+        assert_eq!(parse_attribute_block.parse_peek("{ #another-id }"), Ok(("", Some("another-id"))));
+        assert_eq!(parse_attribute_block.parse_peek("{}"), Ok(("", None)));
+        assert_eq!(parse_attribute_block.parse_peek("{.class}"), Ok(("", None))); // Our current parser only extracts ID
+        assert!(parse_attribute_block.parse_peek("{ #broken{ }").is_err()); // Nested braces
+        assert!(parse_attribute_block.parse_peek("{ #broken< }").is_err()); // Invalid char
     }
 
     #[test]
     fn test_parse_atx_heading_simple() {
         assert_eq!(
-            parse_atx_heading("# Hello, world!\n"),
+            parse_atx_heading.parse_peek("# Hello, world!\n"),
             Ok((
                 "",
                 Element::Heading {
@@ -209,7 +210,7 @@ mod tests {
             ))
         );
         assert_eq!(
-            parse_atx_heading("##  Another heading  \n"),
+            parse_atx_heading.parse_peek("##  Another heading  \n"),
             Ok((
                 "",
                 Element::Heading {
@@ -220,7 +221,7 @@ mod tests {
             ))
         );
         assert_eq!(
-            parse_atx_heading("   ### Third heading ### \n"),
+            parse_atx_heading.parse_peek("   ### Third heading ### \n"),
             Ok((
                 "",
                 Element::Heading {
@@ -235,7 +236,7 @@ mod tests {
     #[test]
     fn test_parse_atx_heading_with_id() {
         assert_eq!(
-            parse_atx_heading("# My Heading {#my-heading}\n"),
+            parse_atx_heading.parse_peek("# My Heading {#my-heading}\n"),
             Ok((
                 "",
                 Element::Heading {
@@ -246,7 +247,7 @@ mod tests {
             ))
         );
         assert_eq!(
-            parse_atx_heading("## Heading with ID ## {#an-id}\n"),
+            parse_atx_heading.parse_peek("## Heading with ID ## {#an-id}\n"),
             Ok((
                 "",
                 Element::Heading {
@@ -257,7 +258,7 @@ mod tests {
             ))
         );
         assert_eq!(
-            parse_atx_heading("### No ID Here {#}\n"),
+            parse_atx_heading.parse_peek("### No ID Here {#}\n"),
             Ok((
                 "",
                 Element::Heading {
@@ -268,7 +269,7 @@ mod tests {
             ))
         );
          assert_eq!(
-            parse_atx_heading("### Another {#id-42}     \n"),
+            parse_atx_heading.parse_peek("### Another {#id-42}     \n"),
             Ok((
                 "",
                 Element::Heading {
@@ -284,7 +285,7 @@ mod tests {
     fn test_parse_atx_heading_edge_cases() {
         // Only hashes
         assert_eq!(
-            parse_atx_heading("# \n"),
+            parse_atx_heading.parse_peek("# \n"),
             Ok((
                 "",
                 Element::Heading {
@@ -296,7 +297,7 @@ mod tests {
         );
         // Trailing spaces after closing hashes
         assert_eq!(
-            parse_atx_heading("##  Content  ##   \n"),
+            parse_atx_heading.parse_peek("##  Content  ##   \n"),
             Ok((
                 "",
                 Element::Heading {
@@ -308,7 +309,7 @@ mod tests {
         );
         // No newline (EOF)
         assert_eq!(
-            parse_atx_heading("### Hello"),
+            parse_atx_heading.parse_peek("### Hello"),
             Ok((
                 "",
                 Element::Heading {

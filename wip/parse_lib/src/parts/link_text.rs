@@ -8,7 +8,7 @@
 //! Backtick code spans, autolinks, and raw HTML tags bind more tightly than the brackets in link text. Thus, for example, [foo`]` could not be a link text, since the second ] is part of a code span.
 //! The brackets in link text bind more tightly than markers for emphasis and strong emphasis. Thus, for example, `*[foo*](url)` is a link.
 
-use nom::{
+use winnow::{
     branch::alt,
     bytes::complete::{escaped, tag, take_till},
     character::complete::{char, none_of},
@@ -17,8 +17,8 @@ use nom::{
     sequence::{delimited, pair, preceded, terminated},
     IResult,
 };
-use nom::Parser;
-use nom::{
+use winnow::Parser;
+use winnow::{
     bytes::complete::{ is_not,take_till1, take_until, take_while},
     character::complete::{one_of},
     combinator::value,
@@ -27,27 +27,27 @@ use nom::{
 use super::super::ast::Element;
 
 // // Parses plain text without square brackets or '!' (to avoid images).
-// fn plain_text(input: &str) -> IResult<&str, Element> {
-//     map(is_not("[]!"), Element::Text).parse(input)
+// fn plain_text<'s>(input: &mut &'s str) -> Result< Element> {
+//     map(is_not("[]!"), Element::Text).parse_next(input)
 // }
 
 // // Recursively parses content within link text brackets.
-// fn link_text(input: &str) -> IResult<&str, Vec<Element>> {
+// fn link_text<'s>(input: &mut &'s str) -> Result< Vec<Element>> {
 //     delimited(
-//         char('['),
+//         "[",
 //         many0(alt((image, plain_text))),
-//         char(']')
-//     ).parse(input)
+//         "]"
+//     ).parse_next(input)
 // }
 
 // --- Main Link Text Parser ---
 
-// pub fn parse_link_text<'a>(input: &'a str) -> IResult<&'a str, &str> {
+// pub fn parse_link_text<'a>(input: &mut &'a str) -> Result< &'s str> {
 //     delimited(
-//         char('['),
+//         "[",
 //         parse_link_text_inline_content,
-//         cut(char(']')), // `cut` means if we see `[` but no matching `]`, it's a failure.
-//     ).parse(input)
+//         cut("]"), // `cut` means if we see `[` but no matching `]`, it's a failure.
+//     ).parse_next(input)
 // }
 
 
@@ -72,25 +72,25 @@ pub enum Element<'a> {
 // --- Helper Parsers ---
 
 /// Parses a plain text segment. It stops at any character that might start a new inline element.
-fn parse_plain_text(input: &str) -> IResult<&str, &str> {
+fn parse_plain_text<'s>(input: &mut &'s str) -> Result< &'s str> {
     // Characters that could start another inline element or are special to link text:
     // ` (code), ! (image), [ (nested bracket/link), \ (escape), ] (end of link text)
-    recognize(many1(none_of(r"`![\]"))).parse(input)
+    recognize(many1(none_of(r"`![\]"))).parse_next(input)
 }
 
 /// Parses an escaped character (e.g., `\[`, `\]`, ``\` ``).
-fn parse_escaped_char(input: &str) -> IResult<&str, char> {
-    preceded(char('\\'), one_of(r"`![]\")).parse(input)
+fn parse_escaped_char<'s>(input: &mut &'s str) -> Result< char> {
+    preceded(one_of('\\'), one_of(r"`![]\")).parse_next(input)
 }
 
 /// Parses a backtick code span.
-fn parse_code_span(input: &str) -> IResult<&str, &str> {
-    delimited(char('`'), take_till1(|c| c == '`'), cut(char('`'))).parse(input)
+fn parse_code_span<'s>(input: &mut &'s str) -> Result< &'s str> {
+    delimited("`", take_till1(|c| c == '`'), cut("`")).parse_next(input)
 }
 
 /// Parses the URL part of a link or image.
 /// Handles simple URLs, potentially with spaces if quoted.
-fn parse_url(input: &str) -> IResult<&str, &str> {
+fn parse_url<'s>(input: &mut &'s str) -> Result< &'s str> {
     // A URL can be anything until the next ')' or '"' (if a title is present)
     // We'll simplify and just take characters until the closing parenthesis or a space.
     // In a real parser, this would be more robust to handle angle brackets for URLs.
@@ -98,8 +98,8 @@ fn parse_url(input: &str) -> IResult<&str, &str> {
 }
 
 /// Parses the optional title part of a link or image (e.g., "This is a title").
-fn parse_title(input: &str) -> IResult<&str, &str> {
-    delimited(char('"'), is_not("\""), char('"')).parse(input)
+fn parse_title<'s>(input: &mut &'s str) -> Result< &'s str> {
+    delimited(r#"""#, is_not("\""), r#"""#).parse_next(input)
 }
 
 
@@ -114,8 +114,8 @@ fn parse_title(input: &str) -> IResult<&str, &str> {
 /// - Brackets are allowed if escaped or matched.
 /// - Backtick code spans and images bind more tightly (parsed first).
 pub fn parse_link_text_inline_content<'a>(
-    input: &'a str,
-) -> IResult<&'a str, Vec<Element<'a>>> {
+    input: &mut &'a str,
+) -> Result< Vec<Element<'a>>> {
     many0(alt((
         // 1. Elements that bind tighter (Code Spans, Images)
         map(parse_code_span, Element::Code),
@@ -129,14 +129,14 @@ pub fn parse_link_text_inline_content<'a>(
         // Crucially, this inner content *cannot* contain full links or images that are themselves links.
         map(
             delimited(
-                char('['),
+                "[",
                 // Recursively call this same function to parse content within nested brackets.
                 // This ensures balanced brackets are handled.
                 // We pass a 'context' (e.g., a flag) in a real parser to prevent
                 // parsing full links/images that are links here. For this example,
                 // the `parse_link_text_inline_content` itself doesn't try to parse a full link.
                 parse_link_text_inline_content,
-                cut(char(']')), // `cut` ensures a matching `]` must be found
+                cut_err("]"), // `cut` ensures a matching `]` must be found
             ),
             Element::NestedBalancedBrackets,
         ),
@@ -150,11 +150,11 @@ pub fn parse_link_text_inline_content<'a>(
 
 /// Parses the entire link text part of a Markdown link `[link text]`.
 /// This is the entry point for parsing the content between the square brackets.
-pub fn parse_link_text<'a>(input: &'a str) -> IResult<&'a str, Vec<Element<'a>>> {
+pub fn parse_link_text<'a>(input: &mut &'a str) -> Result< Vec<Element<'a>>> {
     delimited(
-        char('['),
+        "[",
         parse_link_text_inline_content, // Use the recursive inline content parser
-        cut(char(']')),                 // `cut` ensures a matching closing bracket is found
+        cut("]"),                 // `cut` ensures a matching closing bracket is found
     )(input)
 }
 
@@ -165,13 +165,13 @@ mod tests {
 
     #[test]
     fn test_empty_link_text() {
-        assert_eq!(parse_link_text("[]").unwrap().1, vec![]);
+        assert_eq!(parse_link_text(&mut "[]").unwrap().1, vec![]);
     }
 
     #[test]
     fn test_plain_text_link_text() {
         assert_eq!(
-            parse_link_text("[Hello world]").unwrap().1,
+            parse_link_text(&mut "[Hello world]").unwrap().1,
             vec![Element::Text("Hello world")]
         );
     }
@@ -179,7 +179,7 @@ mod tests {
     #[test]
     fn test_link_text_with_code_span() {
         assert_eq!(
-            parse_link_text("[This is `code` here]").unwrap().1,
+            parse_link_text(&mut "[This is `code` here]").unwrap().1,
             vec![
                 Element::Text("This is "),
                 Element::Code("code"),
@@ -191,7 +191,7 @@ mod tests {
     #[test]
     fn test_link_text_with_escaped_brackets() {
         assert_eq!(
-            parse_link_text("[A \\[bracket\\] test]").unwrap().1,
+            parse_link_text(&mut "[A \\[bracket\\] test]").unwrap().1,
             vec![
                 Element::Text("A "),
                 Element::EscapedChar('['),
@@ -205,7 +205,7 @@ mod tests {
     #[test]
     fn test_link_text_with_nested_balanced_brackets() {
         assert_eq!(
-            parse_link_text("[Outer [inner] text]").unwrap().1,
+            parse_link_text(&mut "[Outer [inner] text]").unwrap().1,
             vec![
                 Element::Text("Outer "),
                 Element::NestedBalancedBrackets(vec![Element::Text("inner")]),
@@ -217,7 +217,7 @@ mod tests {
     #[test]
     fn test_link_text_with_nested_balanced_brackets_and_code() {
         assert_eq!(
-            parse_link_text("[Outer [`code`] text]").unwrap().1,
+            parse_link_text(&mut "[Outer [`code`] text]").unwrap().1,
             vec![
                 Element::Text("Outer "),
                 Element::NestedBalancedBrackets(vec![Element::Code("code")]),
@@ -234,7 +234,7 @@ mod tests {
             title: None,
         };
         assert_eq!(
-            parse_link_text("[Look at this ![An image](http://example.com/img.png) cool image!]")
+            parse_link_text(&mut "[Look at this ![An image](http://example.com/img.png) cool image!]")
                 .unwrap()
                 .1,
             vec![

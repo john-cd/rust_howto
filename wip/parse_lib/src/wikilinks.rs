@@ -1,15 +1,15 @@
-use nom::IResult;
-use nom::Parser;
-use nom::branch::alt;
-use nom::bytes::tag;
-use nom::bytes::take_until;
-use nom::bytes::take_while;
-use nom::combinator::map;
-use nom::combinator::map_res;
-use nom::combinator::opt;
-use nom::error::context;
-use nom::sequence::delimited;
-use nom::sequence::separated_pair;
+use winnow::Result;
+use winnow::Parser;
+use winnow::branch::alt;
+use winnow::token::literal;
+use winnow::bytes::take_until;
+use winnow::bytes::take_while;
+use winnow::combinator::map;
+use winnow::combinator::map_res;
+use winnow::combinator::opt;
+use winnow::error::context;
+use winnow::combinator::delimited;
+use winnow::sequence::separated_pair;
 
 use super::ast::Element;
 
@@ -24,29 +24,29 @@ use super::ast::Element;
 /// - `Target|Display]]` -> `("Target", Some("Display"))`
 /// - `  Target |  Display ]]` -> `("Target", Some("Display"))`
 /// - `Target| ]]` -> `("Target", None)` (empty display text)
-/// - `|Display]]` -> `("", Some("Display"))` (empty target)
-/// - `]]` -> `("", None)` (empty target and display)
-fn parse_wikilink_inner(input: &str) -> IResult<&str, (&str, Option<&str>)> {
+/// - `|Display]]` -> `Some("Display"))` (empty target)
+/// - `]]` -> `None)` (empty target and display)
+fn parse_wikilink_inner<'s>(input: &mut &'s str) -> Result< (&'s str, Option<&'s str>)> {
     let piped_inner = context("piped_inner error", map(
-        separated_pair(take_until("|"), tag("|"), take_until("]]")),
-        |(target, display): (&str, &str)| {
+        separated_pair(take_until("|"), "|", take_until("]]")),
+        |(target, display): (&'s str, &'s str)| {
             (
                 target.trim(),
                 Some(display.trim()).filter(|s| !s.is_empty()),
             )
         },
     ));
-    let simple_inner = context("simple_inner error", map(take_until("]]"), |target: &str| (target.trim(), None)));
-    alt((piped_inner, simple_inner)).parse(input)
+    let simple_inner = context("simple_inner error", map(take_until("]]"), |target: &'s str| (target.trim(), None)));
+    alt((piped_inner, simple_inner)).parse_next(input)
 }
 
-pub fn parse_wikilink(input: &str) -> IResult<&str, Element> {
+pub fn parse_wikilink<'s>(input: &mut &'s str) -> Result< Element> {
     // Letters and other non-punctuation characters immediately after a wikilink's closing brackets,
     // with no intervening space, become part of its displayed link text. The target is unchanged.
     let immediately_after = context("immediately_after error", opt(take_while(|c: char| c.is_alphanumeric())));
 
     let wikilink = (
-        delimited(tag("[["), parse_wikilink_inner, tag("]]")),
+        delimited("[[", parse_wikilink_inner, "]]"),
         immediately_after,
     );
 
@@ -63,37 +63,37 @@ pub fn parse_wikilink(input: &str) -> IResult<&str, Element> {
         }
     });
 
-    parser.parse(input)
+    parser.parse_next(input)
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
-    use nom::error::ErrorKind;
-    use nom::Err;
+    use winnow::error::ErrorKind;
+    use winnow::Err;
 
     // TODO fix failing tests below
     //
-    // fn simple_inner(input: &str) -> IResult<&str, (&str, Option<&str>)> {
-    //     context("simple_inner error", map(take_until("]]"), |target: &str| (target.trim(), None))).parse(input)
+    // fn simple_inner<'s>(input: &mut &'s str) -> Result< (&'s str, Option<&'s str>)> {
+    //     context("simple_inner error", map(take_until("]]"), |target: &'s str| (target.trim(), None))).parse_next(input)
     // }
     //
-    // fn piped_inner(input: &str) -> IResult<&str, (&str, Option<&str>)> {
+    // fn piped_inner<'s>(input: &mut &'s str) -> Result< (&'s str, Option<&'s str>)> {
     //     let mut piped_inner = context("piped_inner error", map(
-    //         separated_pair(take_until("|"), tag("|"), take_until("]]")),
-    //         |(target, display): (&str, &str)| {
+    //         separated_pair(take_until("|"), "|", take_until("]]")),
+    //         |(target, display): (&'s str, &'s str)| {
     //             (
     //                 target.trim(),
     //                 Some(display.trim()).filter(|s| !s.is_empty()),
     //             )
     //         },
     //     ));
-    //     piped_inner.parse(input)
+    //     piped_inner.parse_next(input)
     // }
     //
     // // Parse wikilinks `[[target_page]]` or `[[target_page | display]]`, with or without spaces.
-    // fn parse(input: &str) -> IResult<&str, (&str, Option<&str>)> {
-    //     delimited(tag("[["), parse_wikilink_inner, tag("]]")).parse(input)
+    // fn parse<'s>(input: &mut &'s str) -> Result< (&'s str, Option<&'s str>)> {
+    //     delimited("[[", parse_wikilink_inner, "]]").parse_next(input)
     // }
     //
     // #[test]
@@ -102,7 +102,7 @@ mod tests {
     // }
 
     // Helper to easily check successful parsing.
-    fn assert_parsed_ok<'a>(input: &'a str, expected_target: &'a str, expected_display: Option<&'a str>) {
+    fn assert_parsed_ok<'a>(input: &mut &'a str, expected_target: &'a str, expected_display: Option<&'a str>) {
         match parse_wikilink_inner(input) {
             Ok((remaining, (target, display))) => {
                 assert_eq!(remaining, "", "Remaining input should be empty");
@@ -114,7 +114,7 @@ mod tests {
     }
 
     // Helper to easily check parsing errors.
-    fn assert_parsed_err(input: &str, expected_error_kind: ErrorKind) {
+    fn assert_parsed_err(input: &mut &'s str, expected_error_kind: ErrorKind) {
         match parse_wikilink_inner(input) {
             Ok((_, (target, display))) => panic!("Parsing unexpectedly succeeded: target='{target}', display='{display:?}'"),
             Err(Err::Error(e)) | Err(Err::Failure(e)) => {
@@ -200,7 +200,7 @@ mod tests {
     #[test]
     fn test_simple_wikilink_with_spaces() {
         assert_eq!(
-            parse_wikilink("[[ file ]]"),
+            parse_wikilink.parse_peek("[[ file ]]"),
             Ok((
                 "",
                 Element::WikiLink {
@@ -216,7 +216,7 @@ mod tests {
     #[test]
     fn test_piped_wikilink_with_display_text() {
         assert_eq!(
-            parse_wikilink("[[file|display text]]"),
+            parse_wikilink.parse_peek("[[file|display text]]"),
             Ok((
                 "",
                 Element::WikiLink {
@@ -236,7 +236,7 @@ mod tests {
     #[test]
     fn test_piped_wikilink_with_spaces() {
         assert_eq!(
-            parse_wikilink("[[  file  |  display text  ]]"),
+            parse_wikilink.parse_peek("[[  file  |  display text  ]]"),
             Ok((
                 "",
                 Element::WikiLink {
@@ -255,7 +255,7 @@ mod tests {
     #[test]
     fn test_piped_wikilink_without_display() {
         assert_eq!(
-            parse_wikilink("[[file |    ]]"),
+            parse_wikilink.parse_peek("[[file |    ]]"),
             Ok((
                 "",
                 Element::WikiLink {
@@ -271,7 +271,7 @@ mod tests {
 
     #[test]
     fn fails_on_invalid_format() {
-        let input = "[[Incomplete";
+        let mut input = "[[Incomplete";
         let result = parse_wikilink(input);
         assert!(result.is_err());
     }
@@ -279,7 +279,7 @@ mod tests {
     // [[]]
     #[test]
     fn fails_on_empty() {
-        let input = "[[]]";
+        let mut input = "[[]]";
         let result = parse_wikilink(input);
         assert!(result.is_err());
     }
@@ -290,7 +290,7 @@ mod tests {
     // [[| title10 ]]
     #[test]
     fn fails_on_no_target() {
-        let input = "[[| title ]]";
+        let mut input = "[[| title ]]";
         let result = parse_wikilink(input);
         assert!(result.is_err());
     }
@@ -301,7 +301,7 @@ mod tests {
     #[test]
     fn test_simple_wikilink_with_text_after() {
         assert_eq!(
-            parse_wikilink("[[file]]s"),
+            parse_wikilink.parse_peek("[[file]]s"),
             Ok((
                 "",
                 Element::WikiLink {
@@ -317,7 +317,7 @@ mod tests {
     #[test]
     fn test_piped_wikilink_with_text_after() {
         assert_eq!(
-            parse_wikilink("[[file | display text]]s"),
+            parse_wikilink.parse_peek("[[file | display text]]s"),
             Ok((
                 "",
                 Element::WikiLink {

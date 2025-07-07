@@ -2,19 +2,19 @@
 
 // /// Parses any characters until the next recognized element or end of input.
 // /// This acts as a "fallback" for plain text.
-// fn parse_plain_text<'a>(input: &'a str) -> IResult<&'a str, Element<'a>> {
+// fn parse_plain_text<'a>(input: &mut &'a str) -> Result< Element<'a>> {
 //     // Recognize text until the start of a known pattern or end of input.
 //     // This is a bit tricky as we want to consume as much as possible,
 //     // but stop before the *next* possible recognized element.
 //     // For simplicity, this will just take until a newline or a common delimiter.
 //     // A more robust solution would involve a `take_while` that looks ahead.
 
-//     let (remaining, content) = recognize(many1(none_of("<[hf \n\r")))(input)?;
+//     let content = many1(none_of("<[hf \n\r"))).take().parse_next(input)?;
 
 //     // If the content is empty (e.g., we start immediately with a special tag),
 //     // then it's not a plain text element.
 //     if content.is_empty() {
-//         return Err(nom::Err::Error(nom::error::Error::new(
+//         return Err(winnow::Err::Error(winnow::error::Error::new(
 //             input,
 //             ErrorKind::Many1,
 //         )));
@@ -25,7 +25,7 @@
 
 // /// Parses a sequence of text elements.
 // /// It tries to parse specific elements first, then falls back to plain text.
-// pub fn parse_text_document<'a>(input: &'a str) -> IResult<&'a str, Vec<Element<'a>>> {
+// pub fn parse_text_document<'a>(input: &mut &'a str) -> Result< Vec<Element<'a>>> {
 //     many0(alt((
 //         parse_hidden_html_div,
 //         parse_fenced_code_block,
@@ -36,7 +36,7 @@
 //         parse_plain_text,
 //         // Handle whitespace explicitly if it's not part of an element
 //         map(multispace0, Element::Text),
-//     ))).parse(input)
+//     ))).parse_next(input)
 // }
 
 

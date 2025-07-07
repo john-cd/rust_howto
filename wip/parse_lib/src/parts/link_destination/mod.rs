@@ -15,30 +15,30 @@
 //!
 //! <https://spec.commonmark.org/0.31.2/#link-destination>
 
-use nom::IResult;
-// use nom::Parser;
-// use nom::branch::alt;
-// use nom::bytes::complete::take_while1;
-// use nom::bytes::is_not;
-// use nom::character::complete::char;
-// use nom::character::complete::none_of;
-// use nom::combinator::cut;
-// use nom::combinator::recognize;
-// use nom::multi::many0;
-// use nom::sequence::delimited;
-// use nom::sequence::preceded;
+use winnow::Result;
+// use winnow::Parser;
+// use winnow::branch::alt;
+// use winnow::token::take_while1;
+// use winnow::bytes::is_not;
+// use winnow::bytes::one_of;
+// use winnow::character::complete::none_of;
+// use winnow::combinator::cut;
+// use winnow::combinator::recognize;
+// use winnow::multi::many0;
+// use winnow::combinator::delimited;
+// use winnow::sequence::preceded;
 
 mod angle_brackets;
 mod nonempty_sequence;
 
 use angle_brackets::*;
-use nom::Parser;
-use nom::branch::alt;
+use winnow::Parser;
+use winnow::branch::alt;
 use nonempty_sequence::*;
 
 /// Parses a link destination.
 ///
 /// <https://spec.commonmark.org/0.31.2/#link-destination>
-pub fn parse_link_destination(input: &str) -> IResult<&str, &str> {
-    alt((parse_angle_brackets, parse_non_empty_sequence)).parse(input)
+pub fn parse_link_destination<'s>(input: &mut &'s str) -> Result< &'s str> {
+    alt((parse_angle_brackets, parse_non_empty_sequence)).parse_next(input)
 }
