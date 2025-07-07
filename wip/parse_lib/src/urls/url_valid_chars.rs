@@ -41,55 +41,53 @@ mod tests {
 
     #[test]
     fn test_parse_url_chars_basic() {
-        assert_eq!(parse_url_chars("abcdefg12345"), Ok(("", "abcdefg12345")));
-        assert_eq!(
-            parse_url_chars("foo-bar.baz_qux~"),
-            Ok(("", "foo-bar.baz_qux~"))
-        );
-        assert_eq!(parse_url_chars("hello world"), Ok((" world", "hello"))); // Stops at space
-        assert_eq!(
-            parse_url_chars(""),
-            Err(nom::Err::Error(nom::error::Error::new(
-                "",
-                nom::error::ErrorKind::TakeWhile1
-            )))
-        );
+        // Stops at `|`, which is not a reserved char. Otherwise we would get an `Incomplete`.
+        assert_eq!(parse_url_chars("abcdefg12345|"), Ok(("|", "abcdefg12345")));
+        // Stops at space.
+        assert_eq!(parse_url_chars("hello world"), Ok((" world", "hello")));
+        assert!(parse_url_chars("").is_err());
     }
 
     #[test]
     fn test_parse_url_chars_reserved() {
         assert_eq!(
-            parse_url_chars(":/?#[]@!$&'()*+,,;%+="),
-            Ok(("", ":/?#[]@!$&'()*+,,;%+="))
+            // Stops at `|`.
+            parse_url_chars(":/?#[]@!$&'()*+,,;%+=|"),
+            Ok(("|", ":/?#[]@!$&'()*+,,;%+="))
         );
+        // Mixed.
         assert_eq!(
-            parse_url_chars("some/path?query#fragment"),
-            Ok(("", "some/path?query#fragment"))
-        );
-        assert_eq!(
-            parse_url_chars("user:pass@host.com"),
-            Ok(("", "user:pass@host.com"))
-        );
-        assert_eq!(
-            parse_url_chars("item;param=value"),
-            Ok(("", "item;param=value"))
+            parse_url_chars("foo-bar.baz_qux~ "),
+            Ok((" ", "foo-bar.baz_qux~"))
         );
     }
 
     #[test]
-    fn test_parse_url_chars_mixed() {
+    fn test_parse_url_chars_url_like() {
         assert_eq!(
-            parse_url_chars("http://example.com/path/to/resource?id=123&name=test#section"),
+            parse_url_chars("some/path?query#fragment "),
+            Ok((" ", "some/path?query#fragment"))
+        );
+        assert_eq!(
+            parse_url_chars("user:pass@host.com "),
+            Ok((" ", "user:pass@host.com"))
+        );
+        assert_eq!(
+            parse_url_chars("item;param=value "),
+            Ok((" ", "item;param=value"))
+        );
+        assert_eq!(
+            parse_url_chars("http://example.com/path/to/resource?id=123&name=test#section "),
             Ok((
-                "",
+                " ",
                 "http://example.com/path/to/resource?id=123&name=test#section"
             ))
         );
         assert_eq!(
-            parse_url_chars("weird_file!.txt"),
-            Ok(("", "weird_file!.txt"))
+            parse_url_chars("weird_file!.txt "),
+            Ok((" ", "weird_file!.txt"))
         );
-        assert_eq!(parse_url_chars("foo%20bar"), Ok(("", "foo%20bar"))); // Includes '%'
+        assert_eq!(parse_url_chars("foo%20bar "), Ok((" ", "foo%20bar"))); // Includes '%'.
     }
 
     #[test]
