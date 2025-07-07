@@ -74,7 +74,7 @@ pub enum IndexAnchorKind {
 
 /// Represents the kind of directive being parsed.
 /// For link or badge directives only.
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Clone)]
 pub enum DestinationKind {
     Category,   // Link to or badge for a `crates.io` category page.
     Crate,      // Link to or badge for an internal crate page.

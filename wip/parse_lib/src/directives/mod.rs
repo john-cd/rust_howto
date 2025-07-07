@@ -1,8 +1,15 @@
 #![allow(dead_code)]
 #![allow(unused_imports)]
-//! Parse various directives within text / Markdown.
+//! Parse various directives within text / Markdown:
 //!
-//! See `directive_model.rs`
+//! {{cat xyz}}
+//! {{!cat xyz}}
+//! {{#crate my_crate}}
+//! {{#crate my_crate cat1 cat-2 cat-2-2 cat3::sub-cat-3 }}
+//! {{#example some_example}}
+//! ...
+//!
+//! See `directive_model.rs`.
 
 use nom::IResult;
 use nom::Parser;
@@ -17,8 +24,28 @@ use nom::combinator::map;
 use nom::combinator::map_res;
 use nom::combinator::opt;
 use nom::combinator::value;
+use nom::combinator::verify;
 use nom::multi::separated_list1;
 use nom::sequence::delimited;
+
+// TODO
+// use nom::error::ParseError;
+// use nom::Input;
+// use nom::AsChar;
+//
+// pub fn wrap<'a, I, E: ParseError<I>, F>(
+//     parser: F,
+// ) -> impl Parser<I, Output = <F as Parser<I>>::Output, Error = E>
+// where
+//     I: Input + nom::Compare<&'a str>,
+//     <I as Input>::Item: AsChar,
+//     F: Parser<I, Error = E>,
+//     {
+//         delimited((tag("{{"), space0),
+//         parser,
+//         (space0, tag("}}")),
+//         )
+//     }
 
 /// Matches the fixed prefix "{{" and optional spaces.
 fn parse_prefix(input: &str) -> IResult<&str, ()> {
@@ -47,15 +74,18 @@ fn parse_optional_colon(input: &str) -> IResult<&str, ()> {
 }
 
 /// Parses text before }} after at least one space.
-/// Returns trimmed text.
+/// Returns trimmed text. Errors if it is empty.
 fn parse_value(input: &str) -> IResult<&str, &str> {
-    map(
-        delimited(
-            space1::<&str, _>, // Matches at least one space.
-            take_until("}}"),  // Takes all characters until the "}}" sequence is found.
-            tag("}}"),         // Consumes the closing "}}".
+    verify(
+        map(
+            delimited(
+                space1::<&str, _>, // Matches at least one space.
+                take_until("}}"),  // Takes all characters until the "}}" sequence is found.
+                tag("}}"),         // Consumes the closing "}}".
+            ),
+            |value| value.trim(),
         ),
-        |value| value.trim(),
+        |s: &str| !s.is_empty(), // `value` (after trim) can't be empty.
     )
     .parse(input)
 }
@@ -167,68 +197,206 @@ mod tests {
     // {{cat: xyz}}
     // {{cat  :  xyz}}
     // {{cat x-y_z::a-b_c }}
+    #[test]
+    fn test_parse_directive_category_link() {
+        let examples = [
+            "{{cat xyz}}",
+            "{{cat xyz  }}",
+            "{{  cat xyz}}",
+            "{{cat: xyz}}",
+            "{{cat  :  xyz}}",
+        ];
+        for &input in examples.iter() {
+            let parsed = parse_directive(input);
+            let expected = Ok((
+                "",
+                Directive::Link {
+                    kind: DestinationKind::Category,
+                    name: "xyz",
+                },
+            ));
+            assert_eq!(parsed, expected);
+        }
 
+        let parsed = parse_directive("{{cat x-y_z::a-b_c }}");
+        let expected = Ok((
+            "",
+            Directive::Link {
+                kind: DestinationKind::Category,
+                name: "x-y_z::a-b_c",
+            },
+        ));
+        assert_eq!(parsed, expected);
+
+        let parsed = parse_directive("{{cat}}");
+        assert!(parsed.is_err());
+
+        let parsed = parse_directive("{{cat }}");
+        assert!(parsed.is_err());
+
+        let parsed = parse_directive("{{cat_missing_space}}");
+        assert!(parsed.is_err());
+    }
+
+    // ----------------------------
 
     // * Category badges:
     //
-    // {{!cat no_std}}
+    // {{!cat mathematics}}
     // {{!cat mathematics }}
     // {{ !cat mathematics}}
     // {{!cat: mathematics}}
     // {{!cat : mathematics}}
-
+    // {{!cat no_std}}
     #[test]
-    fn test_parse_crate_badge_directives() {
+    fn test_parse_directive_category_badge() {
         let examples = [
-            "{{!crate my_awesome_crate}}",
-            "{{!docs my_crate}}",
-            "{{!github  my_crate}}",
-            "{{!lib.rs another_lib_rs_link}}",
-            "{{!crates.io some_crate_name}}",
-            "{{!web project_website.com}}",
-            // Example with trailing whitespace
-            // TODO
-            // Example with leading and trailing whitespace
-            // TODO
-            "{{!crate   }}", // Example with an empty value (after trimming)
-            "{{!crate}}",
+            "{{!cat xyz}}",
+            "{{!cat xyz  }}",
+            "{{ !cat xyz}}",
+            "{{!cat: xyz}}",
+            "{{!cat  :  xyz}}",
+        ];
+        for &input in examples.iter() {
+            let parsed = parse_directive(input);
+            let expected = Ok((
+                "",
+                Directive::Badge {
+                    kind: DestinationKind::Category,
+                    name: "xyz",
+                },
+            ));
+            assert_eq!(parsed, expected);
+        }
+
+        let parsed = parse_directive("{{!cat x-y_z::a-b_c }}");
+        let expected = Ok((
+            "",
+            Directive::Badge {
+                kind: DestinationKind::Category,
+                name: "x-y_z::a-b_c",
+            },
+        ));
+        assert_eq!(parsed, expected);
+
+        let parsed = parse_directive("{{!cat}}");
+        assert!(parsed.is_err());
+
+        let parsed = parse_directive("{{!cat }}");
+        assert!(parsed.is_err());
+
+        let parsed = parse_directive("{{!cat_no_spaces}}");
+        assert!(parsed.is_err());
+    }
+
+    // ----------------------------
+
+    // * Crate Links
+    //
+    // - internal page: {{crate xyz}}
+    // - `docs.rs` link: {{docs xyz}}
+    // - Github link: {{github xyz}}
+    // - `lib.rs` link: {{lib.rs xyz}}
+    // - `crates.io` link: {{crates.io xyz}}
+    // - Website for the crate: {{web xyz}}
+    #[test]
+    fn test_parse_directive_crate_links() {
+        let examples = [
+            "{{crate xyz}}",
+            "{{docs xyz}}",
+            "{{github xyz}}",
+            "{{lib.rs xyz}}",
+            "{{crates.io xyz}}",
+            "{{web xyz}}",
+        ];
+
+        let expected_kinds = [
+            DestinationKind::Crate,
+            DestinationKind::Docs,
+            DestinationKind::GithubRepo,
+            DestinationKind::LibRs,
+            DestinationKind::CratesIo,
+            DestinationKind::Web,
         ];
 
         for (i, &input) in examples.iter().enumerate() {
-            println!("--- Example {} ---", i + 1);
-            println!("Input: \"{input}\"");
-            match parse_directive(input) {
-                Ok((remaining, parsed_link)) => {
-                    println!("Success! Parsed Link: {parsed_link:?}");
-                    // In this case, `remaining` should be an empty string if the whole line was parsed.
-                    if !remaining.is_empty() {
-                        println!("Remaining input: \"{remaining}\"");
-                    }
-                }
-                Err(e) => {
-                    eprintln!("Error parsing input: {e:?}");
-                }
-            }
-            println!();
+            let parsed = parse_directive(input);
+            let expected = Ok((
+                "",
+                Directive::Link {
+                    kind: expected_kinds[i].clone(),
+                    name: "xyz",
+                },
+            ));
+            assert_eq!(parsed, expected);
         }
 
-        println!("--- Malformed Example ---");
-        // Example of a malformed string.
-        let malformed_input = "{{!crate_missing_space_xyz}}";
-        println!("Input: \"{malformed_input}\"");
-        match parse_directive(malformed_input) {
-            Ok((_, parsed_link)) => {
-                println!("Unexpected success: {parsed_link:?}");
-            }
-            Err(e) => {
-                eprintln!("Correctly failed to parse: {e:?}");
-            }
-        }
+        assert!(parse_directive("{{docs}}").is_err());
+
+        assert!(parse_directive("{{lib.rs }}").is_err());
+
+        assert!(parse_directive("{{crates.io_missing_space}}").is_err());
     }
+
+    // ----------------------------
+
+    // * Crate badges:
+    // Internal crate page: {{!crate xyz}}
+    //   - {{!crate xyz}}
+    //   - {{!crate xyz }}
+    //   - {{ ! crate xyz }}
+    //   - {{!crate: x_y-z}}
+    //   - {{!crate : x_y-z}}
+    // {{!docs xyz}}
+    // {{!github xyz}}
+    // {{!lib.rs xyz}}
+    // {{!crates.io xyz}}
+    // {{!web xyz}}
+    #[test]
+    fn test_parse_directive_crate_badges() {
+        let examples = [
+            "{{!crate xyz}}",
+            "{{!docs xyz}}",
+            "{{!github xyz}}",
+            "{{!lib.rs xyz}}",
+            "{{!crates.io xyz}}",
+            "{{!web xyz}}",
+        ];
+
+        let expected_kinds = [
+            DestinationKind::Crate,
+            DestinationKind::Docs,
+            DestinationKind::GithubRepo,
+            DestinationKind::LibRs,
+            DestinationKind::CratesIo,
+            DestinationKind::Web,
+        ];
+
+        for (i, &input) in examples.iter().enumerate() {
+            let parsed = parse_directive(input);
+            let expected = Ok((
+                "",
+                Directive::Badge {
+                    kind: expected_kinds[i].clone(),
+                    name: "xyz",
+                },
+            ));
+            assert_eq!(parsed, expected);
+        }
+
+        assert!(parse_directive("{{!crate}}").is_err());
+
+        assert!(parse_directive("{{!crate }}").is_err());
+
+        assert!(parse_directive("{{!crate_missing_space}}").is_err());
+    }
+
+    // ----------------------------
 
     // * Crate blocks
     //
     // The following variations should be accepted:
+    //
     // {{#crate crt}}
     // {{ # crate crt}}
     // {{#crate crt }}
@@ -239,6 +407,59 @@ mod tests {
     // * Crate Blocks with Additional Categories
     //
     // {{#crate: crt cat1 cat-2 cat-2-2 cat3::sub-cat-3 }}
+
+    #[test]
+    fn test_parse_directive_crate_block() {
+        let examples = [
+            "{{#crate crt}}",
+            "{{ # crate crt}}",
+            "{{#crate crt }}",
+            "{{#crate: crt}}",
+            "{{#crate : crt}}",
+        ];
+        for &input in examples.iter() {
+            let parsed = parse_directive(input);
+            let expected = Ok((
+                "",
+                Directive::CrateBlock {
+                    crate_name: "crt",
+                    additional_categories: vec![],
+                },
+            ));
+            assert_eq!(parsed, expected);
+        }
+
+        let parsed = parse_directive("{{#crate x_y-z}}");
+        let expected = Ok((
+            "",
+            Directive::CrateBlock {
+                crate_name: "x_y-z",
+                additional_categories: vec![],
+            },
+        ));
+        assert_eq!(parsed, expected);
+
+        let parsed = parse_directive("{{#crate: crt cat1 cat-2 cat-2-2 cat3::sub-cat-3 }}");
+        let expected = Ok((
+            "",
+            Directive::CrateBlock {
+                crate_name: "crt",
+                additional_categories: vec!["cat1", "cat-2", "cat-2-2", "cat3::sub-cat-3"],
+            },
+        ));
+        assert_eq!(parsed, expected);
+
+        let parsed = parse_directive("{{#crate}}");
+        assert!(parsed.is_err());
+
+        let parsed = parse_directive("{{#crate }}");
+        assert!(parsed.is_err());
+
+        let parsed = parse_directive("{{#crate_no_spaces}}");
+        assert!(parsed.is_err());
+    }
+
+    // ----------------------------
 
     // Example blocks:
     //
@@ -254,4 +475,30 @@ mod tests {
     // {{#example}}
     // {{#example }}
     // {{#example_no_space}}
+
+    #[test]
+    fn test_parse_directive_example_block() {
+        let examples = [
+            "{{#example some_example}}",
+            "{{#example some_example }}",
+            "{{# example some_example}}",
+            "{{ #example some_example}}",
+        ];
+        for &input in examples.iter() {
+            let parsed = parse_directive(input);
+            let expected = Ok((
+                "",
+                Directive::ExampleBlock {
+                    name: "some_example",
+                },
+            ));
+            assert_eq!(parsed, expected);
+        }
+
+        assert!(parse_directive("{{#example}}").is_err());
+
+        assert!(parse_directive("{{#example }}").is_err());
+
+        assert!(parse_directive("{{#example_no_space}}").is_err());
+    }
 }
