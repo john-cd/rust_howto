@@ -1,7 +1,4 @@
 [ex~compilers~comemo]: incremental_computation.md#comemo
-[ex~compilers~cross-compilation]: ../../../src/categories/development-tools/cross-compilation/cross_compilation.md#cross-compilation
-[ex~compilers~faster-linking]: ../../../src/categories/development-tools/compilation/faster_linking.md#faster-linking
-[ex~compilers~mold-linker]: ../../../src/categories/development-tools/compilation/faster_linking.md#mold-linker
 [ex~compilers~salsa]: incremental_computation.md#salsa
 [p~alternatives]: ../development-tools_debugging/tracing_alternatives.md
 [p~attributes]: ../../language/attributes.md

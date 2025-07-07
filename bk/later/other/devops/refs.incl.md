@@ -4,7 +4,6 @@
 [ex~devops~cdci]: cd_ci.md#cdci
 [ex~devops~check-your-code-before-committing]: version_control.md#check-your-code-before-committing
 [ex~devops~compilation-caching]: github_actions.md#compilation-caching
-[ex~devops~daytona]: devops.md#daytona
 [ex~devops~github-actions]: cd_ci.md#github-actions
 [ex~devops~installation-of-development-tools]: github_actions.md#installation-of-development-tools
 [ex~devops~pre-commit]: version_control.md#pre-commit

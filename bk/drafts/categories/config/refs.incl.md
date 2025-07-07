@@ -1,10 +1,10 @@
-[ex~config-config]: configuration.md#config
-[ex~config-confy]: configuration.md#confy
-[ex~config-dotenvy]: environment_variables.md#dotenvy
-[ex~config-env]: environment_variables.md#env
-[ex~config-envy]: environment_variables.md#envy
-[ex~config-load_configuration_into_a_singleton]: configuration.md#load_configuration_into_a_singleton
-[ex~config-test_configuration_loading_methods]: configuration.md#test_configuration_loading_methods
+[ex~config~config]: configuration.md#config
+[ex~config~confy]: configuration.md#confy
+[ex~config~dotenvy]: environment_variables.md#dotenvy
+[ex~config~env]: environment_variables.md#env
+[ex~config~envy]: environment_variables.md#envy
+[ex~config~load_configuration_into_a_singleton]: configuration.md#load_configuration_into_a_singleton
+[ex~config~test_configuration_loading_methods]: configuration.md#test_configuration_loading_methods
 [p~config]: index.md
 [p~configuration]: configuration.md
 [p~json]: ../parser-implementations/json.md

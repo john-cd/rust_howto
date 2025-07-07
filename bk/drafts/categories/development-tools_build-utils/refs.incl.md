@@ -1,8 +1,8 @@
-[ex~development-tools_build-utils-autocfg]: autocfg.md#autocfg
-[ex~development-tools_build-utils-cc-custom-defines]: build_time_tooling.md#cc-custom-defines
-[ex~development-tools_build-utils-cc]: build_time_tooling.md#cc
-[ex~development-tools_build-utils-cpp]: build_time_tooling.md#cpp
-[ex~development-tools_build-utils-sccache]: build_cache.md#sccache
+[ex~development-tools_build-utils~autocfg]: autocfg.md#autocfg
+[ex~development-tools_build-utils~cc-custom-defines]: build_time_tooling.md#cc-custom-defines
+[ex~development-tools_build-utils~cc]: build_time_tooling.md#cc
+[ex~development-tools_build-utils~cpp]: build_time_tooling.md#cpp
+[ex~development-tools_build-utils~sccache]: build_cache.md#sccache
 [p~assembly]: ../development-tools_profiling/assembly.md
 [p~caching]: ../caching/index.md
 [p~cargo]: ../development-tools/cargo/cargo.md

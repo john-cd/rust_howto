@@ -1,6 +1,5 @@
 [ex~written-in-rust~build-tools]: development_tools.md#build-tools
 [ex~written-in-rust~code-editors]: development_tools.md#code-editors
-[ex~written-in-rust~compilers]: development_tools.md#compilers
 [ex~written-in-rust~email-applications]: other_tools.md#email-applications
 [ex~written-in-rust~file-managers]: other_tools.md#file-managers
 [ex~written-in-rust~javascript-tooling]: development_tools.md#javascript-tooling
@@ -13,7 +12,6 @@
 [ex~written-in-rust~rustpython]: python_tools.md#rustpython
 [ex~written-in-rust~social-media]: other_tools.md#social-media
 [ex~written-in-rust~swc]: development_tools.md#swc
-[ex~written-in-rust~television]: other_tools.md#television
 [ex~written-in-rust~utilities]: development_tools.md#utilities
 [ex~written-in-rust~uv]: python_tools.md#uv
 [ex~written-in-rust~zed]: development_tools.md#zed

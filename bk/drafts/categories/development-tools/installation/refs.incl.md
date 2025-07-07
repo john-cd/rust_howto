@@ -1,6 +1,6 @@
-[ex~installation-cargo-binstall]: install.md#cargo-binstall
-[ex~installation-cargo-install]: install.md#cargo-install
-[ex~installation-rustup]: rustup.md#rustup
+[ex~installation~cargo-binstall]: install.md#cargo-binstall
+[ex~installation~cargo-install]: install.md#cargo-install
+[ex~installation~rustup]: rustup.md#rustup
 [p~cargo]: ../cargo/cargo.md
 [p~crates]: ../../../crate_selection/index.md
 [p~documentation]: ../documentation/documentation.md
