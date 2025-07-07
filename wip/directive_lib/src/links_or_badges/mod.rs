@@ -44,6 +44,7 @@ mod category_links_badges_tests;
 use core_lib::RegexAndReplacement;
 use regex::Captures;
 use regex::Regex;
+
 use super::Directive;
 
 /// Build the Regex for link or badge directives (both for categories and crates).
@@ -85,8 +86,14 @@ pub fn extract_directive<'a>(caps: &'a Captures<'a>) -> Directive<'a> {
     };
 
     if is_badge {
-        Directive::Badge { kind, name: name.trim() }
+        Directive::Badge {
+            kind,
+            name: name.trim(),
+        }
     } else {
-        Directive::Link { kind, name: name.trim() }
+        Directive::Link {
+            kind,
+            name: name.trim(),
+        }
     }
 }
