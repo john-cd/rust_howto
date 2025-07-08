@@ -33,7 +33,10 @@ mod tests {
 
     #[test]
     fn test_valid_label() {
-        assert_eq!(parse_link_label.parse_peek("[my label]"), Ok(("", "my label")));
+        assert_eq!(
+            parse_link_label.parse_peek("[my label]"),
+            Ok(("", "my label"))
+        );
     }
 
     #[test]
@@ -46,14 +49,20 @@ mod tests {
 
     #[test]
     fn test_label_with_internal_whitespace() {
-        assert_eq!(parse_link_label.parse_peek("[  my label  ]"), Ok(("", "  my label  ")));
+        assert_eq!(
+            parse_link_label.parse_peek("[  my label  ]"),
+            Ok(("", "  my label  "))
+        );
     }
 
     #[test]
     fn test_label_max_length() {
         let max_label = "a".repeat(999);
         let input = format!("[{max_label}]");
-        assert_eq!(parse_link_label.parse_peek(&input), Ok(("", max_label.as_str())));
+        assert_eq!(
+            parse_link_label.parse_peek(&input),
+            Ok(("", max_label.as_str()))
+        );
     }
 
     #[test]

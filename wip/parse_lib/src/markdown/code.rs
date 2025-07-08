@@ -9,9 +9,9 @@ use super::super::ast::Element;
 /// Simplified from <https://spec.commonmark.org/0.31.2/#code-spans>
 pub fn parse_code_span<'a>(input: &mut &'a str) -> Result<Element<'a>> {
     delimited(
-        "`",         // Opening backtick.
+        "`",                  // Opening backtick.
         take_until(0.., "`"), // Content.
-        "`",         // Closing backtick.
+        "`",                  // Closing backtick.
     )
     .map(Element::CodeSpan)
     .parse_next(input)
@@ -21,9 +21,9 @@ pub fn parse_code_span<'a>(input: &mut &'a str) -> Result<Element<'a>> {
 /// Simplified from <https://spec.commonmark.org/0.31.2/#fenced-code-blocks>
 pub fn parse_fenced_code_block<'a>(input: &mut &'a str) -> Result<Element<'a>> {
     delimited(
-        "```",         // Opening triple backticks.
+        "```",                  // Opening triple backticks.
         take_until(0.., "```"), // Content.
-        "```",         // Closing triple backticks.
+        "```",                  // Closing triple backticks.
     )
     .map(Element::FencedCodeBlock)
     .parse_next(input)
@@ -45,7 +45,10 @@ mod tests {
 
     #[test]
     fn test_parse_code_span_empty_content() {
-        assert_eq!(parse_code_span.parse_peek(&mut "``"), Ok(("", Element::CodeSpan(""))));
+        assert_eq!(
+            parse_code_span.parse_peek(&mut "``"),
+            Ok(("", Element::CodeSpan("")))
+        );
     }
 
     #[test]
@@ -82,7 +85,10 @@ mod tests {
     fn test_parse_fenced_code_block_basic() {
         let input = "```fn main() {\n    println!(\"Hello\");\n}```";
         let expected = Element::FencedCodeBlock("fn main() {\n    println!(\"Hello\");\n}");
-        assert_eq!(parse_fenced_code_block.parse_peek(input), Ok(("", expected)));
+        assert_eq!(
+            parse_fenced_code_block.parse_peek(input),
+            Ok(("", expected))
+        );
     }
 
     #[test]
@@ -97,7 +103,10 @@ mod tests {
     fn test_parse_fenced_code_block_with_trailing_text() {
         let input = "```rust,editable\nprintln!(\"hi\");\n``` more text";
         let expected = Element::FencedCodeBlock("rust,editable\nprintln!(\"hi\");\n");
-        assert_eq!(parse_fenced_code_block.parse_peek(input), Ok((" more text", expected)));
+        assert_eq!(
+            parse_fenced_code_block.parse_peek(input),
+            Ok((" more text", expected))
+        );
     }
 
     #[test]
@@ -133,6 +142,9 @@ mod tests {
     fn test_parse_fenced_code_block_contains_single_backticks() {
         let input = "```code with `single` backticks```";
         let expected = Element::FencedCodeBlock("code with `single` backticks");
-        assert_eq!(parse_fenced_code_block.parse_peek(input), Ok(("", expected)));
+        assert_eq!(
+            parse_fenced_code_block.parse_peek(input),
+            Ok(("", expected))
+        );
     }
 }

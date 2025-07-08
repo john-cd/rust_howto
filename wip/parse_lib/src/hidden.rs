@@ -1,5 +1,4 @@
 use winnow::Parser;
-
 use winnow::Result;
 use winnow::ascii::Caseless;
 use winnow::ascii::space0;
@@ -29,9 +28,9 @@ fn parse_hidden_div_open_tag<'s>(input: &mut &'s str) -> Result<&'s str> {
         literal(Caseless("class")),
         space0, // Optional whitespace before '='
         "=",
-        space0, // Optional whitespace after '='
+        space0,                           // Optional whitespace after '='
         literal(Caseless(r#""hidden""#)), // Case-insensitive for "hidden"
-        space0, // Optional whitespace before '>'
+        space0,                           // Optional whitespace before '>'
         ">",
     )
         .take()

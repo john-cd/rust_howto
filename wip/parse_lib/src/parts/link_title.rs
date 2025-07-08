@@ -45,7 +45,10 @@ mod tests {
 
     #[test]
     fn test_double_quoted_title() {
-        assert_eq!(parse_link_title.parse_peek(r#""My Title""#), Ok(("", "My Title")));
+        assert_eq!(
+            parse_link_title.parse_peek(r#""My Title""#),
+            Ok(("", "My Title"))
+        );
     }
 
     #[test]

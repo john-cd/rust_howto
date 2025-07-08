@@ -42,9 +42,15 @@ mod tests {
     #[test]
     fn test_parse_url_chars_basic() {
         // Stops at `|`, which is not a reserved char. Otherwise we would get an `Incomplete`.
-        assert_eq!(parse_url_chars.parse_peek("abcdefg12345|"), Ok(("|", "abcdefg12345")));
+        assert_eq!(
+            parse_url_chars.parse_peek("abcdefg12345|"),
+            Ok(("|", "abcdefg12345"))
+        );
         // Stops at space.
-        assert_eq!(parse_url_chars.parse_peek("hello world"), Ok((" world", "hello")));
+        assert_eq!(
+            parse_url_chars.parse_peek("hello world"),
+            Ok((" world", "hello"))
+        );
         assert!(parse_url_chars.parse_peek("").is_err());
     }
 
@@ -77,7 +83,8 @@ mod tests {
             Ok((" ", "item;param=value"))
         );
         assert_eq!(
-            parse_url_chars.parse_peek("http://example.com/path/to/resource?id=123&name=test#section "),
+            parse_url_chars
+                .parse_peek("http://example.com/path/to/resource?id=123&name=test#section "),
             Ok((
                 " ",
                 "http://example.com/path/to/resource?id=123&name=test#section"
@@ -92,8 +99,17 @@ mod tests {
 
     #[test]
     fn test_parse_url_chars_invalid() {
-        assert_eq!(parse_url_chars.parse_peek("invalid<char"), Ok(("<char", "invalid")));
-        assert_eq!(parse_url_chars.parse_peek("newline\nchar"), Ok(("\nchar", "newline")));
-        assert_eq!(parse_url_chars.parse_peek("back\\slash"), Ok(("\\slash", "back")));
+        assert_eq!(
+            parse_url_chars.parse_peek("invalid<char"),
+            Ok(("<char", "invalid"))
+        );
+        assert_eq!(
+            parse_url_chars.parse_peek("newline\nchar"),
+            Ok(("\nchar", "newline"))
+        );
+        assert_eq!(
+            parse_url_chars.parse_peek("back\\slash"),
+            Ok(("\\slash", "back"))
+        );
     }
 }

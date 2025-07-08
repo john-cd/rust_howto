@@ -11,7 +11,6 @@
 //!
 //! See `directive_model.rs`.
 
-use winnow::prelude::*;
 use winnow::Parser;
 use winnow::Result;
 use winnow::ascii::space0;
@@ -20,6 +19,7 @@ use winnow::combinator::alt;
 use winnow::combinator::delimited;
 use winnow::combinator::opt;
 use winnow::combinator::separated;
+use winnow::prelude::*;
 use winnow::token::literal;
 use winnow::token::one_of;
 use winnow::token::take_till;
@@ -75,7 +75,7 @@ fn parse_value<'s>(input: &mut &'s str) -> Result<&'s str> {
     delimited(
         space1,                // Matches at least one space.
         take_until(1.., "}}"), // Takes all characters until the "}}" sequence is found.
-        "}}",         // Consumes the closing "}}".
+        "}}",                  // Consumes the closing "}}".
     )
     .map(|value: &str| value.trim())
     .verify(|s: &str| !s.is_empty()) // `value` (after trim) can't be empty.
@@ -89,7 +89,7 @@ fn parse_values<'s>(input: &mut &'s str) -> Result<Vec<&'s str>> {
     delimited(
         space1,                       // Starts with a space.
         separated(1.., word, space0), // List of at least one word separated by space or tab.
-        "}}",                // Ends with "}}".
+        "}}",                         // Ends with "}}".
     )
     .parse_next(input)
 }
