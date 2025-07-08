@@ -3,7 +3,10 @@ use winnow::Result;
 use winnow::ascii::Caseless;
 use winnow::ascii::space0;
 use winnow::ascii::space1;
+use winnow::combinator::cut_err;
 use winnow::combinator::delimited;
+use winnow::error::StrContext::*;
+use winnow::error::StrContextValue::*;
 use winnow::token::literal;
 use winnow::token::take_until;
 
@@ -19,21 +22,23 @@ use super::ast::Element;
 /// `<div   class="hidden"  >`
 ///
 /// Simplification: partially case-insensitive.
-fn parse_hidden_div_open_tag<'s>(input: &mut &'s str) -> Result<&'s str> {
+fn parse_hidden_div_open_tag<'s>(input: &mut &'s str) -> Result<()> {
     (
         "<",
         space0,
         "div",
         space1, // At least one whitespace after "div"
-        literal(Caseless("class")),
+        Caseless("class"),
         space0, // Optional whitespace before '='
         "=",
-        space0,                           // Optional whitespace after '='
-        literal(Caseless(r#""hidden""#)), // Case-insensitive for "hidden"
-        space0,                           // Optional whitespace before '>'
+        space0,                  // Optional whitespace after '='
+        Caseless(r#""hidden""#), // Case-insensitive for "hidden"
+        space0,                  // Optional whitespace before '>'
         ">",
     )
-        .take()
+        .void()
+        .context(Label("div"))
+        .context(Expected(Description(r#"<div class="hidden">"#)))
         .parse_next(input)
 }
 
@@ -42,10 +47,12 @@ fn parse_hidden_div_open_tag<'s>(input: &mut &'s str) -> Result<&'s str> {
 pub fn parse_hidden_html_div<'s>(input: &mut &'s str) -> Result<Element<'s>> {
     delimited(
         parse_hidden_div_open_tag,
-        take_until(0.., "</div>"), // Content of the div.
+        take_until(0.., "</div>"), // Content of the div. Can be empty.
         "</div>",
     )
     .map(Element::HiddenHtmlDiv)
+    .context(Label("hidden HTML div block"))
+    .context(Expected(Description(r#"<div class="hidden">...</div>"#)))
     .parse_next(input)
 }
 
@@ -109,7 +116,7 @@ mod tests {
     fn test_parse_hidden_div_open_tag_basic() {
         assert_eq!(
             parse_hidden_div_open_tag.parse_peek(r#"<div class="hidden">hello"#),
-            Ok(("hello", r#"<div class="hidden">"#))
+            Ok(("hello", ()))
         );
     }
 
@@ -117,15 +124,15 @@ mod tests {
     fn test_parse_hidden_div_open_tag_flexible_whitespace() {
         assert_eq!(
             parse_hidden_div_open_tag.parse_peek(r#"<div   class="hidden"  >content"#),
-            Ok(("content", r#"<div   class="hidden"  >"#))
+            Ok(("content", ()))
         );
         assert_eq!(
             parse_hidden_div_open_tag.parse_peek(r#"<div class = "hidden" >data"#),
-            Ok(("data", r#"<div class = "hidden" >"#))
+            Ok(("data", ()))
         );
         assert_eq!(
             parse_hidden_div_open_tag.parse_peek(r#"<div class="hidden">"#),
-            Ok(("", r#"<div class="hidden">"#))
+            Ok(("", ()))
         );
     }
 
@@ -133,11 +140,11 @@ mod tests {
     fn test_parse_hidden_div_open_tag_case_insensitivity() {
         assert_eq!(
             parse_hidden_div_open_tag.parse_peek(r#"<div CLASS="HIDDEN">"#),
-            Ok(("", r#"<div CLASS="HIDDEN">"#))
+            Ok(("", ()))
         );
         assert_eq!(
             parse_hidden_div_open_tag.parse_peek(r#"<div cLaSs="hIdDeN">"#),
-            Ok(("", r#"<div cLaSs="hIdDeN">"#))
+            Ok(("", ()))
         );
     }
 

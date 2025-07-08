@@ -1,5 +1,9 @@
 // TODO finish reorg
 
+// use winnow::combinator::fail;
+// use winnow::error::StrContext::*;
+// use winnow::error::StrContextValue::*;
+
 // /// Parses any characters until the next recognized element or end of input.
 // /// This acts as a "fallback" for plain text.
 // fn parse_plain_text<'a>(input: &mut &'a str) -> Result< Element<'a>> {
@@ -36,6 +40,8 @@
 //         parse_plain_text,
 //         // Handle whitespace explicitly if it's not part of an element
 //         map(multispace0, Element::Text),
+// fail     .context(Label("TODO"))
+//    .context(Expected(Description("")))
 //     ))).parse_next(input)
 // }
 

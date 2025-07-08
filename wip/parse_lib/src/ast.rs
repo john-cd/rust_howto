@@ -10,7 +10,7 @@
 
 // TODO finish
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Eq)]
 pub enum Element<'a> {
     /// A standalone URL: `http://...` or `https://...`
     /// optionally between < and > (i.e., an autolink).
@@ -83,4 +83,17 @@ pub enum Element<'a> {
 
     /// Plain text that doesn't match other elements.
     Text(&'a str),
+}
+
+use super::errors::ParsingError;
+
+impl std::str::FromStr for Element<'_> {
+    type Err = ParsingError;
+
+    fn from_str(_input: &str) -> Result<Self, Self::Err> {
+        // TODO
+        // .parse(input)
+        // .map_err(|e| ParsingError::from_parse(e))
+        todo!();
+    }
 }

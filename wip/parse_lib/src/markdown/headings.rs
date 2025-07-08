@@ -61,6 +61,7 @@ use winnow::sequence::pair;
 use winnow::branch::alt;
 use winnow::bytes::take_while_m_n;
 use winnow::multi::many1_count;
+use winnow::combinator::fail;
 
 use super::super::ast::Element;
 
@@ -153,7 +154,8 @@ pub fn parse_atx_heading<'s>(input: &mut &'s str) -> Result< Element> {
     let final_content = actual_content.trim_matches(is_non_newline_whitespace);
 
     let (input, _) = multispace0.parse_next(input); // Consume any remaining whitespace before EOL
-    let (input, _) = alt((line_ending, literal(""))).parse_next(input)?; // Headings end with a newline, or EOF
+    let (input, _) = alt((line_ending,"", fail    .context(Label(""))
+    .context(Expected(Description(""))))).parse_next(input)?; // Headings end with a newline, or EOF
 
     Ok((
         input,

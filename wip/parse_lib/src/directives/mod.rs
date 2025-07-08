@@ -16,37 +16,32 @@ use winnow::Result;
 use winnow::ascii::space0;
 use winnow::ascii::space1;
 use winnow::combinator::alt;
+use winnow::combinator::cut_err;
 use winnow::combinator::delimited;
+use winnow::combinator::fail;
 use winnow::combinator::opt;
+use winnow::combinator::preceded;
+use winnow::combinator::repeat;
+use winnow::combinator::repeat_till;
 use winnow::combinator::separated;
+use winnow::combinator::seq;
+use winnow::combinator::terminated;
+use winnow::error::StrContext::*;
+use winnow::error::StrContextValue::*;
 use winnow::prelude::*;
 use winnow::token::literal;
+use winnow::token::none_of;
 use winnow::token::one_of;
 use winnow::token::take_till;
 use winnow::token::take_until;
 
-// TODO
-// use winnow::error::ParseError;
-// use winnow::Input;
-// use winnow::AsChar;
-//
-// pub fn wrap<'a, I, E: ParseError<I>, F>(
-//     parser: F,
-// ) -> impl Parser<I, Output = <F as Parser<I>>::Output, Error = E>
-// where
-//     I: Input + winnow::Compare<&'a str>,
-//     <I as Input>::Item: AsChar,
-//     F: Parser<I, Error = E>,
-//     {
-//         delimited(("{{", space0),
-//         parser,
-//         (space0, "}}"),
-//         )
-//     }
-
 /// Matches the fixed prefix "{{" and optional spaces.
 fn parse_prefix<'s>(input: &mut &'s str) -> Result<()> {
-    ("{{", space0).value(()).parse_next(input)
+    terminated("{{", space0)
+        .void()
+        .context(Label("directive prefix"))
+        .context(Expected(Description("{{ and optional whitespace")))
+        .parse_next(input)
 }
 
 /// Parses the keyword part of the directive (e.g., "crate", "docs").
@@ -54,19 +49,33 @@ fn parse_prefix<'s>(input: &mut &'s str) -> Result<()> {
 fn parse_kinds<'s>(input: &mut &'s str) -> Result<&'s str> {
     alt((
         "cat",
+        "crates.io", // Must be before "crate".
         "crate",
         "docs",
         "github",
         "lib.rs",
-        "crates.io",
         "web",
+        fail.context(Label("directive keyword"))
+            .context(Expected(StringLiteral("cat")))
+            .context(Expected(StringLiteral("crate")))
+            .context(Expected(StringLiteral("docs")))
+            .context(Expected(StringLiteral("github")))
+            .context(Expected(StringLiteral("lib.rs")))
+            .context(Expected(StringLiteral("crates.io")))
+            .context(Expected(StringLiteral("web"))),
     ))
     .parse_next(input)
 }
 
 /// Matches an optional colon, optionally preceded by spaces.
 fn parse_optional_colon<'s>(input: &mut &'s str) -> Result<()> {
-    opt((space0, ":")).value(()).parse_next(input)
+    opt(preceded(space0, ":"))
+        .void()
+        .context(Label("optional colon"))
+        .context(Expected(Description(
+            "colon preceded by optional whitespace",
+        )))
+        .parse_next(input)
 }
 
 /// Parses text before }} after at least one space.
@@ -79,18 +88,37 @@ fn parse_value<'s>(input: &mut &'s str) -> Result<&'s str> {
     )
     .map(|value: &str| value.trim())
     .verify(|s: &str| !s.is_empty()) // `value` (after trim) can't be empty.
+    .context(Label("value"))
+    .context(Expected(Description(
+        "text followed by }}. Should not be empty or only whitespace.",
+    )))
     .parse_next(input)
 }
 
 /// Parses text before }} after at least one space.
 /// Split the text at whitespaces.
 fn parse_values<'s>(input: &mut &'s str) -> Result<Vec<&'s str>> {
-    let word = take_till(1.., |c: char| c.is_whitespace() || c == '}');
+    let word = take_till(1.., [' ', '\t', '}'])
+        .context(Label("word"))
+        .context(Expected(Description(
+            "characters before a space or tab or }",
+        )));
+
+    let words = separated(1.., word, alt((" ", "\t")))
+        .context(Label("words"))
+        .context(Expected(Description(
+            "one or more words separated by a space or tab",
+        )));
+
     delimited(
-        space1,                       // Starts with a space.
-        separated(1.., word, space0), // List of at least one word separated by space or tab.
-        "}}",                         // Ends with "}}".
+        space1, // Starts with a space.
+        words,
+        preceded(space0, "}}"),
     )
+    .context(Label("values"))
+    .context(Expected(Description(
+        "whitespace-separated words, followed by }}",
+    )))
     .parse_next(input)
 }
 
@@ -101,13 +129,13 @@ fn to_destination_kind(input: &str) -> DestinationKind {
     use directive_lib::DestinationKind::*;
     match input {
         "cat" => Category,
+        "crates.io" => CratesIo,
         "crate" => Crate,
         "docs" => Docs,
         "github" => GithubRepo,
         "lib.rs" => LibRs,
-        "crates.io" => CratesIo,
         "web" => Web,
-        _ => todo!(), // TODO
+        _ => unreachable!(),
     }
 }
 
@@ -121,52 +149,61 @@ use directive_lib::Directive;
 /// The `value` part can contain spaces and can be optionally followed
 /// by whitespace before the final "}}",
 pub fn parse_directive<'s>(input: &mut &'s str) -> Result<Directive<'s>> {
-    let insert_link = (parse_prefix, parse_kinds, parse_optional_colon, parse_value);
+    let insert_link = seq!(_: parse_prefix, parse_kinds, _: parse_optional_colon, parse_value);
 
-    let insert_badge = (
-        parse_prefix,
-        "!",
-        space0,
+    let insert_badge = seq!(
+        _: (parse_prefix, "!", space0),
         parse_kinds,
-        parse_optional_colon,
+        _: parse_optional_colon,
         parse_value,
     );
 
-    let insert_crate_block = (
-        parse_prefix,
-        "#",
-        space0,
-        "crate",
-        parse_optional_colon,
+    let insert_crate_block = seq!(
+        _: (parse_prefix, "#", space0, "crate", parse_optional_colon),
         parse_values,
     );
 
-    let insert_example_block_prefix = (
-        parse_prefix,
-        "#",
-        space0,
-        "example",
-        parse_optional_colon,
+    let insert_example_block = seq!(
+        _: (parse_prefix, "#", space0, "example", parse_optional_colon),
         parse_value,
     );
 
     let mut directives = alt((
-        insert_link.map(|(_, kind, _, value)| Directive::Link {
-            kind: to_destination_kind(kind),
-            name: value,
-        }),
-        insert_badge.map(|(_, _, _, kind, _, value)| Directive::Badge {
-            kind: to_destination_kind(kind),
-            name: value,
-        }),
-        insert_crate_block.map(|(_, _, _, _, _, value)| Directive::CrateBlock {
-            crate_name: value
-                .get(0)
-                .expect("There must be at least one word because of `separated_list1`."),
-            additional_categories: value.get(1..).unwrap_or(&[]).to_vec(),
-        }),
-        insert_example_block_prefix
-            .map(|(_, _, _, _, _, value)| Directive::ExampleBlock { name: value }),
+        insert_link
+            .map(|(kind, value)| Directive::Link {
+                kind: to_destination_kind(kind),
+                name: value,
+            })
+            .context(Label("link directive"))
+            .context(Expected(Description(
+                "{{cat|crate|docs|github|lib.rs|crates.io|web xyz}}",
+            ))),
+        insert_badge
+            .map(|(kind, value)| Directive::Badge {
+                kind: to_destination_kind(kind),
+                name: value,
+            })
+            .context(Label("badge directive"))
+            .context(Expected(Description(
+                "{{ ! cat|crate|docs|github|lib.rs|crates.io|web xyz}}",
+            ))),
+        insert_crate_block
+            .map(|(values,)| Directive::CrateBlock {
+                crate_name: values
+                    .get(0)
+                    .expect("There must be at least one word because of `separated_list1`."),
+                additional_categories: values.get(1..).unwrap_or(&[]).to_vec(),
+            })
+            .context(Label("crate block"))
+            .context(Expected(Description("{{#crate xyz}}"))),
+        insert_example_block
+            .map(|(value,)| Directive::ExampleBlock { name: value })
+            .context(Label("example block"))
+            .context(Expected(Description("{{#example xyz}}"))),
+        fail.context(Label("directive"))
+            .context(Expected(Description(
+                "one of a crate link, a !crate badge, a #crate block or an #example block",
+            ))),
     ));
 
     directives.parse_next(input)
@@ -176,25 +213,28 @@ pub fn parse_directive<'s>(input: &mut &'s str) -> Result<Directive<'s>> {
 mod tests {
     use super::*;
 
-    // TODO fix failing unit tests below
-    // fn insert_crate_block<'s>(input: &mut &'s str) -> Result< (char, &'s str, &'s str, (), Vec<&'s str>)> {
-    //     (
-    //         "#",
-    //         space0,
-    //         "crate",
-    //         parse_optional_colon,
+    // // Debugging:
+    // // Run tests with `--features winnow/debug` to display the whole parser trace, e.g.
+    // // `cargo nextest run --features winnow/debug insert_crate_block`
+    // // and write smaller test parsers e.g.
+    //
+    // fn insert_crate_block<'s>(input: &mut &'s str) -> Result<Vec<&'s str>> {
+    //     let mut p = seq!(
+    //         _: (parse_prefix, "#", space0, "crate", parse_optional_colon),
     //         parse_values,
-    //     )
-    //         .parse_next(input)
+    //     ).map(|(values,)| values);
+    //
+    //     p.parse_next(input)
     // }
     //
     // #[test]
-    // fn test() {
+    // fn test_insert_crate_block() {
     //     assert_eq!(
-    //         insert_crate_block.parse_peek("{{#crate xyz}}"),
-    //         Ok(("", ('#', "", "crate", (), vec!["xyz"])))
-    //     );
+    //         insert_crate_block.parse_peek("{{ # crate : xyz }}"),
+    //         Ok(("", vec!["xyz"])));
     // }
+
+    // ----------------------
 
     // * Category links:
     //

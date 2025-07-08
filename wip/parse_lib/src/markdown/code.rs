@@ -9,9 +9,9 @@ use super::super::ast::Element;
 /// Simplified from <https://spec.commonmark.org/0.31.2/#code-spans>
 pub fn parse_code_span<'a>(input: &mut &'a str) -> Result<Element<'a>> {
     delimited(
-        "`",                  // Opening backtick.
-        take_until(0.., "`"), // Content.
-        "`",                  // Closing backtick.
+        '`',                  // Opening backtick.
+        take_until(0.., '`'), // Content.
+        '`',                  // Closing backtick.
     )
     .map(Element::CodeSpan)
     .parse_next(input)

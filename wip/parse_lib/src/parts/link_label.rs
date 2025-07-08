@@ -10,6 +10,8 @@
 use winnow::Parser;
 use winnow::Result;
 use winnow::combinator::delimited;
+use winnow::error::StrContext::*;
+use winnow::error::StrContextValue::*;
 use winnow::token::take_while;
 
 /// Parses link label.
@@ -17,12 +19,14 @@ use winnow::token::take_while;
 /// Example: "[my label]" -> "my label".
 /// Does not handle escaped brackets.
 pub fn parse_link_label<'s>(input: &mut &'s str) -> Result<&'s str> {
-    let label_content = take_while(1..999, |c: char| {
+    let label_content = take_while(1..=999, |c: char| {
         c != '[' && c != ']' && c != '\n' && c != '\r'
     })
     .verify(|s: &str| !s.trim().is_empty());
 
-    let mut parser = delimited("[", label_content, "]");
+    let mut parser = delimited("[", label_content, "]")
+        .context(Label("link label"))
+        .context(Expected(Description("[my label]. No newline allowed.")));
 
     parser.parse_next(input)
 }

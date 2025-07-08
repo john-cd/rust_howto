@@ -6,8 +6,10 @@ use winnow::Parser;
 use winnow::Result;
 use winnow::combinator::alt;
 use winnow::combinator::delimited;
+use winnow::combinator::fail;
+use winnow::error::StrContext::*;
+use winnow::error::StrContextValue::*;
 use winnow::token::take_while;
-// TODO use winnow::combinator::cut_err;
 
 /// Parses an optional link title.
 /// The title can be enclosed in double quotes `""`, single quotes `''`, or parentheses `()`.
@@ -19,22 +21,26 @@ pub fn parse_link_title<'s>(input: &mut &'s str) -> Result<&'s str> {
     alt((
         // Double quotes.
         delimited(
-            r#"""#,
+            '"',
             take_while(0.., |c: char| c != '"' && c != '\n' && c != '\r'),
-            r#"""#,
+            '"',
         ),
-        // Single quotes
+        // Single quotes.
         delimited(
             '\'',
             take_while(0.., |c: char| c != '\'' && c != '\n' && c != '\r'),
             '\'',
         ),
-        // Parentheses
+        // Parentheses.
         delimited(
             "(",
             take_while(0.., |c: char| c != ')' && c != '\n' && c != '\r'),
             ")",
         ),
+        fail.context(Label("link title"))
+            .context(Expected(Description(
+                r#"enclosed in double quotes `""`, single quotes `''`, or parentheses"#,
+            ))),
     ))
     .parse_next(input)
 }

@@ -10,6 +10,10 @@ use winnow::combinator::opt;
 use winnow::error::context;
 use winnow::combinator::delimited;
 use winnow::sequence::separated_pair;
+use winnow::error::StrContext::*;
+use winnow::error::StrContextValue::*;
+use winnow::combinator::cut_err;
+use winnow::combinator::fail;
 
 use super::ast::Element;
 
@@ -37,7 +41,8 @@ fn parse_wikilink_inner<'s>(input: &mut &'s str) -> Result< (&'s str, Option<&'s
         },
     ));
     let simple_inner = context("simple_inner error", map(take_until("]]"), |target: &'s str| (target.trim(), None)));
-    alt((piped_inner, simple_inner)).parse_next(input)
+    alt((piped_inner, simple_inner, fail    .context(Label("wikilink"))
+    .context(Expected(Description(""))))).parse_next(input)
 }
 
 pub fn parse_wikilink<'s>(input: &mut &'s str) -> Result< Element> {
@@ -61,7 +66,11 @@ pub fn parse_wikilink<'s>(input: &mut &'s str) -> Result< Element> {
                 immediately_after,
             })
         }
-    });
+    })
+    .context(Label("wiki link"))
+    .context(Expected(Description(
+        r#"[[page | display_text]]"#
+    )));
 
     parser.parse_next(input)
 }

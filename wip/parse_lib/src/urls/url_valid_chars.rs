@@ -4,6 +4,8 @@ use winnow::Parser;
 use winnow::Result;
 use winnow::combinator::alt;
 use winnow::combinator::seq;
+use winnow::error::StrContext::*;
+use winnow::error::StrContextValue::*;
 use winnow::token::take_while;
 
 /// Predicate function to check if a character is one of the valid URL characters.
@@ -19,6 +21,8 @@ fn is_valid_url_char(c: char) -> bool {
     )
 }
 
+// TODO use one_of(('0'..='9', 'a'..='z', 'A'..='Z'))
+
 /// Parses one or more valid URL characters.
 fn parse_url_chars<'s>(input: &mut &'s str) -> Result<&'s str> {
     take_while(1.., is_valid_url_char).parse_next(input)
@@ -32,6 +36,8 @@ pub fn recognize_naked_url<'s>(input: &mut &'s str) -> Result<&'s str> {
         parse_url_chars,
     )
     .take()
+    .context(Label("TODO"))
+    .context(Expected(Description("")))
     .parse_next(input)
 }
 

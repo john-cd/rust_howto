@@ -7,16 +7,20 @@ use winnow::combinator::cut;
 use winnow::combinator::map;
 use winnow::combinator::recognize;
 use winnow::combinator::delimited;
-
+use winnow::combinator::fail;
 use super::super::ast::Element;
+use winnow::combinator::cut_err;
 
 /// Parses a naked URL or autolink (`<url>`).
 /// <https://www.w3schools.com/tags//ref_urlencode.asp>
-pub fn parse_autolink<'a>(input: &mut &'a str) -> Result< Element<'a>> {
+pub fn parse_autolink<'a>(input: &mut &'a str) -> ModalResult< Element<'a>> {
     map(
         alt((
-            delimited("<", recognize_naked_url, cut(">")),
+            delimited("<", recognize_naked_url, cut_err(">")),
             recognize_naked_url,
+            fail
+            .context(Label("autolink"))
+            .context(Expected(Description("TODO")))
         )),
         Element::Autolink,
     )
