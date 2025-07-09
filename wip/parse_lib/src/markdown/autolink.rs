@@ -12,6 +12,7 @@ use super::super::ast::Element;
 use winnow::combinator::cut_err;
 
 /// Parses a naked URL or autolink (`<url>`).
+/// 
 /// <https://www.w3schools.com/tags//ref_urlencode.asp>
 pub fn parse_autolink<'a>(input: &mut &'a str) -> ModalResult< Element<'a>> {
     map(

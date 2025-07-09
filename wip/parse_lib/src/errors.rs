@@ -35,7 +35,7 @@ impl std::fmt::Display for ParsingError {
 
 impl ParsingError {
     // Avoiding `From` so `winnow` types don't become part of our public API
-    fn from_parse(error: ParseError<&str, ContextError>) -> Self {
+    pub fn from_parse(error: ParseError<&str, ContextError>) -> Self {
         // The default renderer for `ContextError` is still used but that can be
         // customized as well to better fit your needs.
         let message = error.inner().to_string();

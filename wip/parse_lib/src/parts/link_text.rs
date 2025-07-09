@@ -9,7 +9,6 @@
 //! - The brackets in link text bind more tightly than markers for emphasis and strong emphasis. Thus, for example, `*[foo*](url)` is a link.
 
 use winnow::Parser;
-use winnow::Result;
 use winnow::ascii::alphanumeric0;
 use winnow::ascii::space0;
 use winnow::ascii::take_escaped;
@@ -22,13 +21,7 @@ use winnow::error::ErrMode;
 use winnow::error::ModalResult;
 use winnow::error::StrContext::*;
 use winnow::error::StrContextValue::*;
-use winnow::prelude::*;
-use winnow::token::any;
 use winnow::token::one_of;
-use winnow::token::take_until;
-use winnow::token::take_while;
-
-use super::super::ast::Element;
 
 /// Parses text that may contain escaped brackets or backslashes: \[ or \] or \\.
 fn parse_text_with_escapes<'s>(input: &mut &'s str) -> ModalResult<&'s str> {

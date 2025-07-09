@@ -3,11 +3,9 @@ use winnow::Result;
 use winnow::ascii::Caseless;
 use winnow::ascii::space0;
 use winnow::ascii::space1;
-use winnow::combinator::cut_err;
 use winnow::combinator::delimited;
 use winnow::error::StrContext::*;
 use winnow::error::StrContextValue::*;
-use winnow::token::literal;
 use winnow::token::take_until;
 
 use super::ast::Element;

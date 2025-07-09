@@ -17,6 +17,8 @@ use winnow::combinator::cut_err;
 use winnow::combinator::delimited;
 use winnow::combinator::fail;
 use winnow::combinator::repeat;
+use winnow::error::ContextError;
+use winnow::error::ErrMode;
 use winnow::error::StrContext::*;
 use winnow::error::StrContextValue::*;
 use winnow::prelude::*;
@@ -24,7 +26,7 @@ use winnow::token::any;
 use winnow::token::one_of;
 use winnow::token::take_while;
 
-/// Returns true if a character that is not control, space, '<', '(', or ')'.
+/// Returns true if a character that is not control, space, < ( or ).
 fn is_allowed_char(c: char) -> bool {
     !(c.is_ascii_control() || c == ' ' || c == '<' || c == '(' || c == ')')
 }
@@ -39,15 +41,12 @@ fn parse_allowed_chars<'s>(input: &mut &'s str) -> Result<&'s str> {
         .parse_next(input)
 }
 
-use winnow::error::ContextError;
-use winnow::error::ErrMode;
-
 /// Parses text that may contain escaped parentheses, e.g., "\(" or "\)".
 fn parse_text_with_escapes<'s>(input: &mut &'s str) -> ModalResult<&'s str> {
     let mut p = take_escaped(parse_allowed_chars, '\\', one_of(['(', ')', '\\']))
         .context(Label("text"))
         .context(Expected(Description(
-            r"text that may contain escaped parentheses, e.g., \( or \)",
+            r"text that may contain escaped parentheses or backslashes, e.g., \( or \) or \\",
         )));
 
     p.parse_next(input)
@@ -96,12 +95,12 @@ pub(super) fn parse_non_empty_sequence<'s>(input: &mut &'s str) -> ModalResult<&
         alt((
             parse_text_with_escapes,
             parse_balanced_parentheses,
-            fail.context(Label("")).context(Expected(Description(""))),
+            fail
+              .context(Label("link destination not between < and >"))
+              .context(Expected(Description("a non-empty sequence of characters not starting by < without ASCII control characters or space"))),
         )),
     )
     .take()
-    .context(Label(""))
-    .context(Expected(Description("")))
     .parse_next(input)
 }
 

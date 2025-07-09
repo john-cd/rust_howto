@@ -9,7 +9,6 @@ use winnow::combinator::alt;
 use winnow::combinator::cut_err;
 use winnow::combinator::delimited;
 use winnow::combinator::fail;
-use winnow::combinator::preceded;
 use winnow::combinator::repeat;
 use winnow::error::ContextError;
 use winnow::error::ErrMode;
@@ -54,7 +53,7 @@ fn parse_content_chars<'s>(input: &mut &'s str) -> ModalResult<&'s str> {
     )
     .take()
     .parse_next(input)
-    .map_err(|e : ContextError| ErrMode::Backtrack(e))
+    .map_err(|e: ContextError| ErrMode::Backtrack(e))
 }
 
 /// Parse link destination between angle brackets: '<' followed by zero or more `parse_content_char` sequences, followed by '>'.
@@ -86,26 +85,17 @@ mod tests {
 
     #[test]
     fn test_parse_content_chars_basic() {
-        assert_eq!(
-            parse_content_chars.parse_peek("abc123"),
-            Ok(("", "abc123"))
-        );
+        assert_eq!(parse_content_chars.parse_peek("abc123"), Ok(("", "abc123")));
     }
 
     #[test]
     fn test_parse_content_chars_with_escaped_lt() {
-        assert_eq!(
-            parse_content_chars.parse_peek(r"\<foo"),
-            Ok(("", r"\<foo"))
-        );
+        assert_eq!(parse_content_chars.parse_peek(r"\<foo"), Ok(("", r"\<foo")));
     }
 
     #[test]
     fn test_parse_content_chars_with_escaped_gt() {
-        assert_eq!(
-            parse_content_chars.parse_peek(r"\>bar"),
-            Ok(("", r"\>bar"))
-        );
+        assert_eq!(parse_content_chars.parse_peek(r"\>bar"), Ok(("", r"\>bar")));
     }
 
     #[test]
@@ -118,10 +108,7 @@ mod tests {
 
     #[test]
     fn test_parse_content_chars_empty() {
-        assert_eq!(
-            parse_content_chars.parse_peek(""),
-            Ok(("", ""))
-        );
+        assert_eq!(parse_content_chars.parse_peek(""), Ok(("", "")));
     }
 
     #[test]
@@ -145,10 +132,7 @@ mod tests {
     #[test]
     fn test_parse_content_chars_only_special_char() {
         // Should fail to parse any content.
-        assert_eq!(
-            parse_content_chars.parse_peek("<"),
-            Ok(("<", ""))
-        );
+        assert_eq!(parse_content_chars.parse_peek("<"), Ok(("<", "")));
     }
 
     // parse_angle_brackets -----------
