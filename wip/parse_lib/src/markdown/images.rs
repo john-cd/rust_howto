@@ -2,6 +2,8 @@ use winnow::ModalResult;
 use winnow::Parser;
 use winnow::combinator::opt;
 use winnow::combinator::seq;
+use winnow::error::StrContext::*;
+use winnow::error::StrContextValue::*;
 
 use super::super::ast::Element;
 use super::super::parts::parse_link_destination;
@@ -9,7 +11,7 @@ use super::super::parts::parse_link_label;
 use super::super::parts::parse_link_text;
 use super::super::parts::parse_link_title;
 
-/// Parses an image: `![desc](url "title")`.
+/// Parses an inline image: `![desc](url "title")`.
 pub fn parse_inline_image<'s>(input: &mut &'s str) -> ModalResult<Element<'s>> {
     seq!(
         _: '!',
@@ -24,10 +26,12 @@ pub fn parse_inline_image<'s>(input: &mut &'s str) -> ModalResult<Element<'s>> {
         url,
         title,
     })
+    .context(Label("inline image"))
+    .context(Expected(Description(r#"![desc](url "title")"#)))
     .parse_next(input)
 }
 
-/// Parses an image: `![desc][label]`.
+/// Parses a reference-style image: `![desc][label]`.
 pub fn parse_reference_style_image<'s>(input: &mut &'s str) -> ModalResult<Element<'s>> {
     seq!(
         _: "!",
@@ -38,6 +42,8 @@ pub fn parse_reference_style_image<'s>(input: &mut &'s str) -> ModalResult<Eleme
         image_description,
         label,
     })
+    .context(Label("reference-style image"))
+    .context(Expected(Description("![desc][label]")))
     .parse_next(input)
 }
 
@@ -61,7 +67,10 @@ mod tests {
             url: "http://example.com/image.png",
             title: None,
         };
-        assert_eq!(parse_inline_image.parse(input_with_desc).unwrap(), expected_with_desc);
+        assert_eq!(
+            parse_inline_image.parse(input_with_desc).unwrap(),
+            expected_with_desc
+        );
 
         let input_without_desc = r#"![](http://example.com/image.png "No description")"#;
         let expected_without_desc = Element::InlineImage {
@@ -69,7 +78,10 @@ mod tests {
             url: "http://example.com/image.png",
             title: Some("No description"),
         };
-        assert_eq!(parse_inline_image.parse(input_without_desc).unwrap(), expected_without_desc);
+        assert_eq!(
+            parse_inline_image.parse(input_without_desc).unwrap(),
+            expected_without_desc
+        );
     }
 
     #[test]
@@ -86,13 +98,21 @@ mod tests {
             image_description: "img with spaces",
             label: "label",
         };
-        assert_eq!(parse_reference_style_image.parse(input_with_desc).unwrap(), expected_with_desc);
+        assert_eq!(
+            parse_reference_style_image.parse(input_with_desc).unwrap(),
+            expected_with_desc
+        );
         let input_without_desc = r#"![][label]"#;
         let expected_without_desc = Element::ReferenceStyleImage {
             image_description: "",
             label: "label",
         };
-        assert_eq!(parse_reference_style_image.parse(input_without_desc).unwrap(), expected_without_desc);
+        assert_eq!(
+            parse_reference_style_image
+                .parse(input_without_desc)
+                .unwrap(),
+            expected_without_desc
+        );
     }
 
     #[test]
@@ -101,18 +121,38 @@ mod tests {
         assert!(parse_inline_image.parse(invalid_input).is_err());
 
         let invalid_input_no_closing_paren = r#"![img](http://example.com/image.png"#;
-        assert!(parse_inline_image.parse(invalid_input_no_closing_paren).is_err());
+        assert!(
+            parse_inline_image
+                .parse(invalid_input_no_closing_paren)
+                .is_err()
+        );
 
         let invalid_input_no_destination = r#"![img]()"#;
-        assert!(parse_inline_image.parse(invalid_input_no_destination).is_err());
+        assert!(
+            parse_inline_image
+                .parse(invalid_input_no_destination)
+                .is_err()
+        );
 
         let invalid_input_no_label = r#"![img]["#;
-        assert!(parse_reference_style_image.parse(invalid_input_no_label).is_err());
+        assert!(
+            parse_reference_style_image
+                .parse(invalid_input_no_label)
+                .is_err()
+        );
 
         let invalid_input_no_closing_bracket = r#"![img][label"#;
-        assert!(parse_reference_style_image.parse(invalid_input_no_closing_bracket).is_err());
-        
+        assert!(
+            parse_reference_style_image
+                .parse(invalid_input_no_closing_bracket)
+                .is_err()
+        );
+
         let invalid_input_no_label_content = r#"![img][]"#;
-        assert!(parse_reference_style_image.parse(invalid_input_no_label_content).is_err());
+        assert!(
+            parse_reference_style_image
+                .parse(invalid_input_no_label_content)
+                .is_err()
+        );
     }
 }

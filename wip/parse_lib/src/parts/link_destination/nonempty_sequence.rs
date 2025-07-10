@@ -81,12 +81,11 @@ fn parse_balanced_parentheses<'s>(input: &mut &'s str) -> ModalResult<&'s str> {
     )
     .take()
     .context(Label("balanced pair of unescaped parentheses"))
-    //.context(Expected(Description("")))
     .parse_next(input)
 }
 
 /// The main parser for a non-empty sequence of characters not starting by `<`.
-pub(super) fn parse_non_empty_sequence<'s>(input: &mut &'s str) -> ModalResult<&'s str> {
+pub(crate) fn parse_non_empty_sequence<'s>(input: &mut &'s str) -> ModalResult<&'s str> {
     // Ensure the first character is not '<'.
     any.verify(|c| *c != '<').parse_next(input)?;
 
@@ -146,8 +145,8 @@ mod tests_parse_non_empty_sequence {
         assert_eq!(
             parse_non_empty_sequence.parse_peek(r"a(b\(c\)d)e"),
             Ok(("", r"a(b\(c\)d)e"))
-        ); // Nested with escaped
-        // Contains space
+        ); // Nested with escaped.
+        // Contains space.
         assert_eq!(
             parse_non_empty_sequence.parse_peek("hello world"),
             Ok((" world", "hello",),)
@@ -161,7 +160,7 @@ mod tests_parse_non_empty_sequence {
 
     #[test]
     fn test_invalid_sequences() {
-        // Empty string
+        // Empty string.
         assert!(parse_non_empty_sequence(&mut "").is_err());
         // Starts with '<'.
         assert!(parse_non_empty_sequence(&mut "<hello").is_err());

@@ -4,7 +4,6 @@
 
 use winnow::ModalResult;
 use winnow::Parser;
-use winnow::Result;
 use winnow::combinator::alt;
 use winnow::combinator::delimited;
 use winnow::combinator::fail;

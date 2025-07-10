@@ -18,7 +18,7 @@
 mod angle_brackets;
 mod nonempty_sequence;
 
-use angle_brackets::*;
+pub(crate) use angle_brackets::*;
 use nonempty_sequence::*;
 use winnow::combinator::alt;
 use winnow::combinator::fail;

@@ -58,7 +58,7 @@ fn parse_content_chars<'s>(input: &mut &'s str) -> ModalResult<&'s str> {
 
 /// Parse link destination between angle brackets: '<' followed by zero or more `parse_content_char` sequences, followed by '>'.
 /// Returns the content between the angle brackets.
-pub(super) fn parse_angle_brackets<'s>(input: &mut &'s str) -> ModalResult<&'s str> {
+pub(crate) fn parse_angle_brackets<'s>(input: &mut &'s str) -> ModalResult<&'s str> {
     delimited("<", parse_content_chars, cut_err(">"))
         .context(Label("link destination between angle brackets"))
         .context(Expected(Description(

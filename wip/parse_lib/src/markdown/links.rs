@@ -1,48 +1,36 @@
-use winnow::Result;
+use winnow::ModalResult;
 use winnow::Parser;
-use winnow::bytes::complete::is_not;
-use winnow::bytes::one_of;
-use winnow::combinator::map;
 use winnow::combinator::opt;
-use winnow::combinator::delimited;
+use winnow::combinator::seq;
+use winnow::error::StrContext::*;
+use winnow::error::StrContextValue::*;
 
 use super::super::ast::Element;
-use winnow::prelude::*;
-
-// /// Parses
-// fn parse_url_and_title<'s>(input: &mut &'s str) -> Result< (&'s str, Option<&'s str>)> {
-//     alt((
-//         delimited("(", is_not(")"), ")"),
-//         delimited("(", is_not(r#")""#), ")"),
-// fail
-//     .context(Label(""))
-// .context(Expected(Description("")))
-//     ))
-//     .parse_next(input)
-// }
+use super::super::parts::parse_link_destination;
+use super::super::parts::parse_link_label;
+use super::super::parts::parse_link_text;
+use super::super::parts::parse_link_title;
 
 /// Parses a Markdown-style inline link: `[text](url)`.
-fn parse_inline_link<'a>(input: &mut &'a str) -> Result< Element<'a>> {
-    map(
-        (
-            delimited("[", is_not("]"), "]"), // Link text.
-            // Link URL and title
-            delimited("(", is_not(")"), ")"),
-            opt(parse_quoted_string),
-        ), // Link title.
-        |(text, url, title): (&'s str, &'s str, Option<&'s str>)| Element::InlineLink { text, url, title },
+pub fn parse_inline_link<'s>(input: &mut &'s str) -> ModalResult<Element<'s>> {
+    seq!(
+        parse_link_text,
+        _: '(',
+        parse_link_destination,
+        opt(parse_link_title),
+        _: ')',
     )
+    .map(|(text, url, title)| Element::InlineLink { text, url, title })
+    .context(Label("inline link"))
+    .context(Expected(Description("[text](url)")))
     .parse_next(input)
 }
 
 /// Parses a reference-style link: `[text][label]`.
-fn parse_reference_style_link<'a>(input: &mut &'a str) -> Result< Element<'a>> {
-    map(
-        (
-            delimited("[", is_not("]"), "]"), // Link text.
-            delimited("[", is_not("]"), "]"), // Link label.
-        ),
-        |(text, label): (&'s str, &'s str)| Element::ReferenceStyleLink { text, label },
-    )
-    .parse_next(input)
+pub fn parse_reference_style_link<'s>(input: &mut &'s str) -> ModalResult<Element<'s>> {
+    seq!(parse_link_text, parse_link_label,)
+        .map(|(text, label)| Element::ReferenceStyleLink { text, label })
+        .context(Label("reference style link"))
+        .context(Expected(Description("[text][label]")))
+        .parse_next(input)
 }
