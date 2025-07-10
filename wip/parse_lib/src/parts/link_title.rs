@@ -2,6 +2,7 @@
 //!
 //! Simplified from <https://spec.commonmark.org/0.31.2/#link-title>.
 
+use winnow::ModalResult;
 use winnow::Parser;
 use winnow::Result;
 use winnow::combinator::alt;
@@ -17,7 +18,7 @@ use winnow::token::take_while;
 /// Example: "\"My Title\"" -> "My Title"
 /// Example: "'Another Title'" -> "Another Title"
 /// Example: "(Yet Another Title)" -> "Yet Another Title"
-pub fn parse_link_title<'s>(input: &mut &'s str) -> Result<&'s str> {
+pub(crate) fn parse_link_title<'s>(input: &mut &'s str) -> ModalResult<&'s str> {
     alt((
         // Double quotes.
         delimited(

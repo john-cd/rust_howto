@@ -1,75 +1,118 @@
-use winnow::Result;
+use winnow::ModalResult;
 use winnow::Parser;
-use winnow::bytes::complete::is_not;
-use winnow::token::literal;
-use winnow::bytes::one_of;
-use winnow::combinator::map;
-use winnow::combinator::delimited;
+use winnow::combinator::opt;
+use winnow::combinator::seq;
 
 use super::super::ast::Element;
-use winnow::prelude::*;
+use super::super::parts::parse_link_destination;
+use super::super::parts::parse_link_label;
+use super::super::parts::parse_link_text;
+use super::super::parts::parse_link_title;
 
 /// Parses an image: `![desc](url "title")`.
-pub fn parse_inline_image<'a>(input: &mut &'a str) -> Result< Element<'a>> {
-    map(
-        (
-            delimited("![", is_not("]"), "]"), // Link text.
-            delimited("(", is_not(")"), ")"), // Link label.
-
-        ),
-        |(image_description, url, title): (&'s str, &'s str, Option<&'s str>)| Element::InlineImage { image_description, url, title }
+pub fn parse_inline_image<'s>(input: &mut &'s str) -> ModalResult<Element<'s>> {
+    seq!(
+        _: '!',
+        parse_link_text,
+        _: '(',
+        parse_link_destination,
+        opt(parse_link_title),
+        _: ')',
     )
+    .map(|(image_description, url, title)| Element::InlineImage {
+        image_description,
+        url,
+        title,
+    })
     .parse_next(input)
 }
-
 
 /// Parses an image: `![desc][label]`.
-pub fn parse_reference_style_image<'a>(input: &mut &'a str) -> Result< Element<'a>> {
-    map(
-        (
-            delimited("![", is_not("]"), "]"), // Link text.
-            delimited("[", is_not("]"), "]"), // Link label.
-
-        ),
-        |(image_description, url, title): (&'s str, &'s str, Option<&'s str>)| Element::InlineImage { image_description, url, title }
+pub fn parse_reference_style_image<'s>(input: &mut &'s str) -> ModalResult<Element<'s>> {
+    seq!(
+        _: "!",
+        parse_link_text,
+        parse_link_label,
     )
+    .map(|(image_description, label)| Element::ReferenceStyleImage {
+        image_description,
+        label,
+    })
     .parse_next(input)
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-// --- Image Parser ---
+    #[test]
+    fn test_parse_inline_image() {
+        let input = r#"![img](http://example.com/image.png "An example image")"#;
+        let expected = Element::InlineImage {
+            image_description: "img",
+            url: "http://example.com/image.png",
+            title: Some("An example image"),
+        };
+        assert_eq!(parse_inline_image.parse(input).unwrap(), expected);
 
-// /// Parses the content inside an image's alt text `![alt text]`.
-// /// This content can contain other inline elements, but *not* nested images or links
-// /// to prevent infinite recursion and adhere to markdown spec (alt text is usually simpler).
-// fn parse_image_alt_text_content<'a>(
-//     input: &mut &'a str,
-// ) -> Result< Vec<Element<'a>>> {
-//     many0(alt((
-//         map(parse_code_span, Element::Code),
-//         map(parse_escaped_char, Element::EscapedChar),
-//         // For simplicity, we're not allowing deeply nested balanced brackets in alt text
-//         // or other images. A robust parser would need a context flag here.
-//         map(parse_plain_text, Element::Text),
-//     ))).parse_next(input)
-// }
+        let input_with_desc = r#"![img](http://example.com/image.png)"#;
+        let expected_with_desc = Element::InlineImage {
+            image_description: "img",
+            url: "http://example.com/image.png",
+            title: None,
+        };
+        assert_eq!(parse_inline_image.parse(input_with_desc).unwrap(), expected_with_desc);
 
-// /// Parses a full Markdown image `![alt text](url "optional title")`.
-// fn parse_image<'a>(input: &mut &'a str) -> Result< Element<'a>> {
-//     map(
-//         (
-//             "![", // Starts with ![
-//             parse_image_alt_text_content, // Parse alt text content
-//             cut("]"), // Must have closing ]
-//             cut("("), // Must have opening ( for URL
-//             parse_url,      // Parse the URL
-//             opt(preceded(many0(" "), parse_title)), // Optional title
-//             cut(")"), // Must have closing )
-//         ),
-//         |(_, alt_text_content, _, _, url, title, _)| Element::Image {
-//             alt_text: alt_text_content,
-//             url,
-//             title,
-//         },
-//     ).parse_next(input)
-// }
+        let input_without_desc = r#"![](http://example.com/image.png "No description")"#;
+        let expected_without_desc = Element::InlineImage {
+            image_description: "",
+            url: "http://example.com/image.png",
+            title: Some("No description"),
+        };
+        assert_eq!(parse_inline_image.parse(input_without_desc).unwrap(), expected_without_desc);
+    }
+
+    #[test]
+    fn test_parse_reference_style_image() {
+        let input = r#"![img][label]"#;
+        let expected = Element::ReferenceStyleImage {
+            image_description: "img",
+            label: "label",
+        };
+        assert_eq!(parse_reference_style_image.parse(input).unwrap(), expected);
+
+        let input_with_desc = r#"![img with spaces][label]"#;
+        let expected_with_desc = Element::ReferenceStyleImage {
+            image_description: "img with spaces",
+            label: "label",
+        };
+        assert_eq!(parse_reference_style_image.parse(input_with_desc).unwrap(), expected_with_desc);
+        let input_without_desc = r#"![][label]"#;
+        let expected_without_desc = Element::ReferenceStyleImage {
+            image_description: "",
+            label: "label",
+        };
+        assert_eq!(parse_reference_style_image.parse(input_without_desc).unwrap(), expected_without_desc);
+    }
+
+    #[test]
+    fn test_parse_inline_image_with_invalid_input() {
+        let invalid_input = r#"![img](http://example.com/image.png "An example image"#;
+        assert!(parse_inline_image.parse(invalid_input).is_err());
+
+        let invalid_input_no_closing_paren = r#"![img](http://example.com/image.png"#;
+        assert!(parse_inline_image.parse(invalid_input_no_closing_paren).is_err());
+
+        let invalid_input_no_destination = r#"![img]()"#;
+        assert!(parse_inline_image.parse(invalid_input_no_destination).is_err());
+
+        let invalid_input_no_label = r#"![img]["#;
+        assert!(parse_reference_style_image.parse(invalid_input_no_label).is_err());
+
+        let invalid_input_no_closing_bracket = r#"![img][label"#;
+        assert!(parse_reference_style_image.parse(invalid_input_no_closing_bracket).is_err());
+        
+        let invalid_input_no_label_content = r#"![img][]"#;
+        assert!(parse_reference_style_image.parse(invalid_input_no_label_content).is_err());
+    }
+}

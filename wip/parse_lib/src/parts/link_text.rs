@@ -110,7 +110,7 @@ fn parse_link_text_content<'s>(input: &mut &'s str) -> ModalResult<&'s str> {
 /// assert_eq!(parse_link_text.parse("[Link with \\[bracket\\]]").unwrap(), "Link with [bracket]");
 /// assert_eq!(parse_link_text.parse("[]").unwrap(), "");
 /// ```
-pub fn parse_link_text<'s>(input: &mut &'s str) -> ModalResult<&'s str> {
+pub(crate) fn parse_link_text<'s>(input: &mut &'s str) -> ModalResult<&'s str> {
     // The entire link text is delimited by `[` and `]`.
     delimited('[', parse_link_text_content, cut_err(']'))
         .context(Label("link text"))

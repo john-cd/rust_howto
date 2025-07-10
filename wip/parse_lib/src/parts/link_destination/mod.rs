@@ -29,7 +29,7 @@ use winnow::prelude::*;
 /// Parses a link destination.
 ///
 /// <https://spec.commonmark.org/0.31.2/#link-destination>
-pub fn parse_link_destination<'s>(input: &mut &'s str) -> ModalResult<&'s str> {
+pub(crate) fn parse_link_destination<'s>(input: &mut &'s str) -> ModalResult<&'s str> {
     alt((
         parse_angle_brackets,
         parse_non_empty_sequence,
