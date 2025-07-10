@@ -105,7 +105,7 @@ fn parse_link_text_content<'s>(input: &mut &'s str) -> ModalResult<&'s str> {
 /// ```rust
 /// use winnow::Parser;
 /// use parse_lib::parts::parse_link_text;
-/// 
+///
 /// assert_eq!(parse_link_text.parse("[Hello World]").unwrap(), "Hello World");
 /// assert_eq!(parse_link_text.parse("[Link with \\[bracket\\]]").unwrap(), "Link with [bracket]");
 /// assert_eq!(parse_link_text.parse("[]").unwrap(), "");
