@@ -59,8 +59,8 @@ fn parse_balanced_parentheses_content<'s>(input: &mut &'s str) -> ModalResult<&'
     repeat::<_, _, String, _, _>(
         0..,
         alt((
-            parse_text_with_escapes,
             parse_balanced_parentheses, // Recursively parse.
+            parse_text_with_escapes,
             fail.context(Label("balanced parentheses content"))
                 .context(Expected(Description(
                     "content within balanced parentheses.",
@@ -81,7 +81,7 @@ fn parse_balanced_parentheses<'s>(input: &mut &'s str) -> ModalResult<&'s str> {
     )
     .take()
     .context(Label("balanced pair of unescaped parentheses"))
-    .context(Expected(Description("")))
+    //.context(Expected(Description("")))
     .parse_next(input)
 }
 
@@ -93,8 +93,8 @@ pub(super) fn parse_non_empty_sequence<'s>(input: &mut &'s str) -> ModalResult<&
     repeat::<_, _, String, _, _>(
         0..,
         alt((
-            parse_text_with_escapes,
             parse_balanced_parentheses,
+            parse_text_with_escapes,
             fail
               .context(Label("link destination not between < and >"))
               .context(Expected(Description("a non-empty sequence of characters not starting by < without ASCII control characters or space"))),
@@ -105,7 +105,7 @@ pub(super) fn parse_non_empty_sequence<'s>(input: &mut &'s str) -> ModalResult<&
 }
 
 #[cfg(test)]
-mod tests {
+mod tests_parse_non_empty_sequence {
     use super::*;
 
     #[test]
@@ -169,5 +169,78 @@ mod tests {
         assert!(parse_non_empty_sequence(&mut "foo(bar").is_err());
         assert!(parse_non_empty_sequence(&mut "(foo").is_err());
         assert!(parse_non_empty_sequence(&mut "(a(b)c").is_err());
+    }
+}
+
+#[cfg(test)]
+mod text_with_escapes_tests {
+    use super::*;
+
+    #[test]
+    fn test_text_with_escapes_basic() {
+        // Simple allowed chars.
+        assert_eq!(
+            parse_text_with_escapes.parse_peek("hello"),
+            Ok(("", "hello"))
+        );
+        // Escaped parenthesis.
+        assert_eq!(parse_text_with_escapes.parse_peek(r"\("), Ok(("", r"\(")));
+        assert_eq!(parse_text_with_escapes.parse_peek(r"\)"), Ok(("", r"\)")));
+        // Escaped backslash.
+        assert_eq!(
+            parse_text_with_escapes.parse_peek(r"foo\\bar"),
+            Ok(("", r"foo\\bar"))
+        );
+        // Mixed escapes.
+        assert_eq!(
+            parse_text_with_escapes.parse_peek(r"foo\)bar\("),
+            Ok(("", r"foo\)bar\("))
+        );
+        // Escaped parenthesis in the middle.
+        assert_eq!(
+            parse_text_with_escapes.parse_peek(r"abc\)def"),
+            Ok(("", r"abc\)def"))
+        );
+        // Escaped parenthesis at the start.
+        assert_eq!(
+            parse_text_with_escapes.parse_peek(r"\)abc"),
+            Ok(("", r"\)abc"))
+        );
+        // Escaped parenthesis at the end.
+        assert_eq!(
+            parse_text_with_escapes.parse_peek(r"abc\("),
+            Ok(("", r"abc\("))
+        );
+    }
+
+    #[test]
+    fn test_text_with_escapes_partial() {
+        // Stops at unescaped parenthesis.
+        assert_eq!(
+            parse_text_with_escapes.parse_peek("foo(bar"),
+            Ok(("(", "foo"))
+        );
+        // Stops at unescaped parenthesis after escapes.
+        assert_eq!(
+            parse_text_with_escapes.parse_peek(r"foo\)bar(baz"),
+            Ok(("(", r"foo\)bar"))
+        );
+        // Stops at unescaped parenthesis after escaped.
+        assert_eq!(
+            parse_text_with_escapes.parse_peek(r"\(foo)bar"),
+            Ok((")", r"\(foo"))
+        );
+    }
+
+    #[test]
+    fn test_text_with_escapes_invalid() {
+        // Starts with forbidden char.
+        assert!(parse_text_with_escapes(&mut "(").is_err());
+        assert!(parse_text_with_escapes(&mut ")").is_err());
+        assert!(parse_text_with_escapes(&mut "<").is_err());
+        assert!(parse_text_with_escapes(&mut " ").is_err());
+        assert!(parse_text_with_escapes(&mut "\0").is_err());
+        // Lone backslash at end.
+        assert!(parse_text_with_escapes(&mut r"foo\").is_err());
     }
 }
