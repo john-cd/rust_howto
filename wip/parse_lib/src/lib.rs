@@ -7,6 +7,6 @@ pub mod directives;
 pub mod errors;
 pub mod hidden;
 pub mod markdown;
-pub mod parts;
+mod parts;
 pub mod urls;
 // pub mod wikilinks;
