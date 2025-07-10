@@ -77,7 +77,7 @@ pub enum Element<'a> {
     /// <https://rust-lang.github.io/mdBook/format/markdown.html#heading-attributes>
     Heading {
         level: u8,
-        content: &'a str,
+        content: Option<&'a str>,
         id: Option<&'a str>,
     },
 
