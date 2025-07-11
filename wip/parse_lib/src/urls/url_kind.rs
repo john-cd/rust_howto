@@ -12,26 +12,33 @@ use url::Url;
 
 #[derive(Debug, PartialEq, Eq)]
 pub enum UrlKind<'a> {
-    // https://github.com/john-cd/rust_howto/issues/123
+    /// GitHub issue for the book repo, e.g.
+    /// https://github.com/john-cd/rust_howto/issues/123
     GitHubBookIssue { url_text: &'a str },
-    // https://github.com/OWNER/REPOSITORY
+    /// GitHub repository, e.g.
+    /// https://github.com/OWNER/REPOSITORY
     GitHubRepo { owner: &'a str, repository: &'a str },
-    // https://crates.io/crates/ab_glyph
-    // https://crates.io/crates/data-encoding
+    /// Crate on `crates.io`, e.g.
+    /// https://crates.io/crates/ab_glyph
+    /// https://crates.io/crates/data-encoding
     Crate { crate_name: &'a str },
-    // https://docs.rs/ab_glyph
+    /// Documentation for a crate on `docs.rs`, e.g.
+    /// https://docs.rs/ab_glyph
     CrateDoc { crate_name: &'a str },
-    // https://docs.rs/ansi_term/latest/ansi_term/type.ANSIString.html
-    // https://docs.rs/data-encoding/latest/data_encoding/struct.Encoding.html#method.encode
+    /// Item documentation on `docs.rs`, e.g.
+    /// https://docs.rs/ansi_term/latest/ansi_term/type.ANSIString.html
+    /// https://docs.rs/data-encoding/latest/data_encoding/struct.Encoding.html#method.encode
     ItemDoc { crate_name: &'a str, page: &'a str },
-    // https://lib.rs/crates/ab_glyph
-    // https://lib.rs/crates/data-encoding
+    /// Crate on `lib.rs`, e.g.
+    /// https://lib.rs/crates/ab_glyph
+    /// https://lib.rs/crates/data-encoding
     LibRsCrate { crate_name: &'a str },
-    // None of the above, e.g. https://actix.rs https://lib.rs/
+    /// None of the above, e.g.
+    /// https://actix.rs, https://lib.rs/
     Other { url_text: &'a str },
 }
 
-pub fn parse_url_host_and_path(url_text: &str) -> anyhow::Result<UrlKind> {
+pub fn url_kind(url_text: &str) -> Result<UrlKind, url::ParseError> {
     let url = Url::parse(url_text)?;
 
     // Hack: `UrlKind` contains references to parts of the URL text,
@@ -85,7 +92,7 @@ mod tests {
     #[test]
     fn test_parse_url_host_and_path() -> anyhow::Result<()> {
         let url_text = "https://github.com/john-cd/rust_howto/issues/123";
-        let kind = parse_url_host_and_path(url_text)?;
+        let kind = url_kind(url_text)?;
         assert_eq!(kind, UrlKind::GitHubBookIssue { url_text });
         Ok(())
     }
@@ -93,7 +100,7 @@ mod tests {
     #[test]
     fn test_parse_url_host_and_path2() -> anyhow::Result<()> {
         let url_text = "https://github.com/rust-unofficial/awesome-rust";
-        let kind = parse_url_host_and_path(url_text)?;
+        let kind = url_kind(url_text)?;
         assert_eq!(
             kind,
             UrlKind::GitHubRepo {
@@ -107,7 +114,7 @@ mod tests {
     #[test]
     fn test_parse_url_host_and_path3() -> anyhow::Result<()> {
         let url_text = "https://crates.io/crates/data-encoding";
-        let kind = parse_url_host_and_path(url_text)?;
+        let kind = url_kind(url_text)?;
         assert_eq!(
             kind,
             UrlKind::Crate {
@@ -121,7 +128,7 @@ mod tests {
     fn test_parse_url_host_and_path4() -> anyhow::Result<()> {
         let url_text =
             "https://docs.rs/data-encoding/latest/data_encoding/struct.Encoding.html#method.encode";
-        let kind = parse_url_host_and_path(url_text)?;
+        let kind = url_kind(url_text)?;
         assert_eq!(
             kind,
             UrlKind::ItemDoc {
@@ -135,7 +142,7 @@ mod tests {
     #[test]
     fn test_parse_url_host_and_path5() -> anyhow::Result<()> {
         let url_text = "https://docs.rs/ab_glyph";
-        let kind = parse_url_host_and_path(url_text)?;
+        let kind = url_kind(url_text)?;
         assert_eq!(
             kind,
             UrlKind::CrateDoc {
@@ -148,7 +155,7 @@ mod tests {
     #[test]
     fn test_parse_url_host_and_path6() -> anyhow::Result<()> {
         let url_text = "https://lib.rs/crates/data-encoding";
-        let kind = parse_url_host_and_path(url_text)?;
+        let kind = url_kind(url_text)?;
         assert_eq!(
             kind,
             UrlKind::LibRsCrate {
@@ -161,7 +168,7 @@ mod tests {
     #[test]
     fn test_parse_url_host_and_path7() -> anyhow::Result<()> {
         let url_text = "https://docs.rs/";
-        let kind = parse_url_host_and_path(url_text)?;
+        let kind = url_kind(url_text)?;
         assert_eq!(
             kind,
             UrlKind::Other {
@@ -174,7 +181,7 @@ mod tests {
     #[test]
     fn test_parse_url_host_and_path8() -> anyhow::Result<()> {
         let url_text = "https://docs.rs";
-        let kind = parse_url_host_and_path(url_text)?;
+        let kind = url_kind(url_text)?;
         assert_eq!(
             kind,
             UrlKind::Other {

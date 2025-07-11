@@ -1,5 +1,5 @@
+use winnow::ModalResult;
 use winnow::Parser;
-use winnow::Result;
 use winnow::combinator::delimited;
 use winnow::token::take_until;
 
@@ -7,7 +7,7 @@ use super::super::ast::Element;
 
 /// Parses text enclosed in backticks (`).
 /// Simplified from <https://spec.commonmark.org/0.31.2/#code-spans>
-pub fn parse_code_span<'a>(input: &mut &'a str) -> Result<Element<'a>> {
+pub fn parse_code_span<'a>(input: &mut &'a str) -> ModalResult<Element<'a>> {
     delimited(
         '`',                  // Opening backtick.
         take_until(0.., '`'), // Content.
@@ -19,7 +19,7 @@ pub fn parse_code_span<'a>(input: &mut &'a str) -> Result<Element<'a>> {
 
 /// Parses text enclosed in triple backticks (```).
 /// Simplified from <https://spec.commonmark.org/0.31.2/#fenced-code-blocks>
-pub fn parse_fenced_code_block<'a>(input: &mut &'a str) -> Result<Element<'a>> {
+pub fn parse_fenced_code_block<'a>(input: &mut &'a str) -> ModalResult<Element<'a>> {
     delimited(
         "```",                  // Opening triple backticks.
         take_until(0.., "```"), // Content.

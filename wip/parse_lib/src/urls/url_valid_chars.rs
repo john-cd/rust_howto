@@ -1,9 +1,5 @@
-// TODO validate the URL? Url::parse("https://example.net")?;
-
 use winnow::Parser;
 use winnow::Result;
-use winnow::combinator::alt;
-use winnow::combinator::seq;
 use winnow::error::StrContext::*;
 use winnow::error::StrContextValue::*;
 use winnow::token::take_while;
@@ -21,24 +17,15 @@ fn is_valid_url_char(c: char) -> bool {
     )
 }
 
-// TODO use one_of(('0'..='9', 'a'..='z', 'A'..='Z'))
-
 /// Parses one or more valid URL characters.
-fn parse_url_chars<'s>(input: &mut &'s str) -> Result<&'s str> {
-    take_while(1.., is_valid_url_char).parse_next(input)
-}
-
-/// Recognize an absolute HTTP / HTTPS URL.
-pub fn recognize_naked_url<'s>(input: &mut &'s str) -> Result<&'s str> {
-    // If the child parser was successful, return the consumed input as produced value.
-    seq!(
-        alt(("http://", "https://")), // Protocols.
-        parse_url_chars,
-    )
-    .take()
-    .context(Label("TODO"))
-    .context(Expected(Description("")))
-    .parse_next(input)
+pub(super) fn parse_url_chars<'s>(input: &mut &'s str) -> Result<&'s str> {
+    take_while(1.., is_valid_url_char)
+        .verify(|s: &str| !s.is_empty())
+        .context(Label("valid URL characters"))
+        .context(Expected(Description(
+            "alphanumeric, -, ., _, ~, :, /, ?, #, [, ], @, !, $, &, ', (, ), *, +, ,, ;, %, =",
+        )))
+        .parse_next(input)
 }
 
 #[cfg(test)]

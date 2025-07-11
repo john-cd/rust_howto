@@ -122,11 +122,11 @@ fn parse_values<'s>(input: &mut &'s str) -> Result<Vec<&'s str>> {
     .parse_next(input)
 }
 
-use directive_lib::DestinationKind;
+use super::ast::DestinationKind;
 
 /// Convert keywords to `DestinationKind` enum.
 fn to_destination_kind(input: &str) -> DestinationKind {
-    use directive_lib::DestinationKind::*;
+    use super::ast::DestinationKind::*;
     match input {
         "cat" => Category,
         "crates.io" => CratesIo,
@@ -139,7 +139,7 @@ fn to_destination_kind(input: &str) -> DestinationKind {
     }
 }
 
-use directive_lib::Directive;
+use super::ast::Directive;
 
 /// Parses a complete directive line, extracting the directive type () / kind and its value (e.g., crate name).
 ///

@@ -1071,7 +1071,6 @@ version = "0.1.2"
 dependencies = [
  "annotate-snippets",
  "anyhow",
- "directive_lib",
  "tracing",
  "url",
  "winnow",

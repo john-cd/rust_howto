@@ -1,9 +1,11 @@
+use winnow::ModalResult;
 use winnow::Parser;
 use winnow::Result;
 use winnow::ascii::Caseless;
 use winnow::ascii::space0;
 use winnow::ascii::space1;
 use winnow::combinator::delimited;
+use winnow::error::ErrMode;
 use winnow::error::StrContext::*;
 use winnow::error::StrContextValue::*;
 use winnow::token::take_until;
@@ -42,7 +44,7 @@ fn parse_hidden_div_open_tag<'s>(input: &mut &'s str) -> Result<()> {
 
 /// Parses a hidden HTML div block: `<div class="hidden">...</div>`.
 /// This is a simplified parser and does not handle nested divs properly.
-pub fn parse_hidden_html_div<'s>(input: &mut &'s str) -> Result<Element<'s>> {
+pub fn parse_hidden_html_div<'s>(input: &mut &'s str) -> ModalResult<Element<'s>> {
     delimited(
         parse_hidden_div_open_tag,
         take_until(0.., "</div>"), // Content of the div. Can be empty.
@@ -52,6 +54,7 @@ pub fn parse_hidden_html_div<'s>(input: &mut &'s str) -> Result<Element<'s>> {
     .context(Label("hidden HTML div block"))
     .context(Expected(Description(r#"<div class="hidden">...</div>"#)))
     .parse_next(input)
+    .map_err(|e| ErrMode::Backtrack(e))
 }
 
 #[cfg(test)]
