@@ -4,7 +4,7 @@ use winnow::error::StrContextValue::*;
 use winnow::prelude::*;
 
 use super::super::ast::Element;
-use super::super::parts::parse_angle_brackets;
+use super::super::parse_parts::parse_angle_brackets;
 
 /// Parses an autolink (`<url>`).
 ///

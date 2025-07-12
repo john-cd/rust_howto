@@ -21,9 +21,9 @@ use winnow::error::StrContextValue::*;
 use winnow::token::take_while;
 
 use super::super::ast::Element;
-use super::super::parts::parse_link_destination;
-use super::super::parts::parse_link_label;
-use super::super::parts::parse_link_title;
+use super::super::parse_parts::parse_link_destination;
+use super::super::parse_parts::parse_link_label;
+use super::super::parse_parts::parse_link_title;
 
 /// Parses up to three spaces of indentation.
 ///

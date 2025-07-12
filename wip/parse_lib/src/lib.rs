@@ -3,15 +3,15 @@
 //! The parsers do not cover all corner cases of the CommonMark spec, just what we need.
 
 mod ast;
-mod directives;
+mod parse_directives;
 mod errors;
-mod hidden;
+mod parse_hidden;
 mod markdown;
-mod parts;
-mod urls;
+mod parse_parts;
+mod parse_urls;
 // mod wikilinks;
-mod document;
+mod parse_document;
 
 pub use ast::*;
-pub use document::parse_document;
+pub use parse_document::parse_document;
 pub use errors::*;

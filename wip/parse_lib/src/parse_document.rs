@@ -7,8 +7,9 @@ use winnow::combinator::repeat;
 use winnow::error::StrContext::*;
 use winnow::error::StrContextValue::*;
 
+use crate::Document;
 use crate::ast::Element;
-use crate::hidden::parse_hidden_html_div;
+use crate::parse_hidden::parse_hidden_html_div;
 // TODO
 // use crate::urls::parse_naked_url;
 // use crate::directives::parse_directive;
@@ -41,18 +42,16 @@ pub fn parse_document<'a>(input: &mut &'a str) -> ModalResult<Vec<Element<'a>>> 
     .parse_next(input)
 }
 
-// TODO
-//
-// impl<'s> std::str::FromStr for Document<'s> {
-//     type Err = anyhow::Error; //  ParsingError;
+impl<'s> std::str::FromStr for Document<'s> {
+    type Err = anyhow::Error; //  ParsingError;
 
-//     fn from_str(input: &str) -> Result<Self, Self::Err> {
-//         parse_document
-//             .map(Document::new)
-//             .parse(input)
-//             .map_err(move |e| anyhow::format_err!("{e}")) // ParsingError::from_parse(e))
-//     }
-// }
+    fn from_str(input: &str) -> Result<Self, Self::Err> {
+        parse_document
+            .map(Document::new)
+            .parse(input)
+            .map_err(move |e| anyhow::format_err!("{e}")) // ParsingError::from_parse(e))
+    }
+}
 
 #[cfg(test)]
 mod tests {

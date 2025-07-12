@@ -6,10 +6,10 @@ use winnow::error::StrContext::*;
 use winnow::error::StrContextValue::*;
 
 use super::super::ast::Element;
-use super::super::parts::parse_link_destination;
-use super::super::parts::parse_link_label;
-use super::super::parts::parse_link_text;
-use super::super::parts::parse_link_title;
+use super::super::parse_parts::parse_link_destination;
+use super::super::parse_parts::parse_link_label;
+use super::super::parse_parts::parse_link_text;
+use super::super::parse_parts::parse_link_title;
 
 /// Parses an inline image: `![desc](url "title")`.
 pub fn parse_inline_image<'s>(input: &mut &'s str) -> ModalResult<Element<'s>> {
