@@ -1,4 +1,3 @@
-// TODO use crate::wikilinks::parse_wikilink;
 use winnow::ModalResult;
 use winnow::Parser;
 use winnow::combinator::alt;
@@ -9,15 +8,16 @@ use winnow::error::StrContextValue::*;
 
 use crate::Document;
 use crate::ast::Element;
-use crate::parse_hidden::parse_hidden_html_div;
 // TODO
 // use crate::urls::parse_naked_url;
 // use crate::directives::parse_directive;
 use crate::markdown::*;
+use crate::parse_hidden::parse_hidden_html_div;
+use crate::parse_wikilinks::parse_wikilink;
 
 /// Parse a sequence of text elements.
 /// It tries to parse specific elements first, then falls back to plain text.
-pub fn parse_document<'a>(input: &mut &'a str) -> ModalResult<Vec<Element<'a>>> {
+fn parse_elements<'a>(input: &mut &'a str) -> ModalResult<Vec<Element<'a>>> {
     repeat(
         0..,
         alt((
@@ -27,7 +27,7 @@ pub fn parse_document<'a>(input: &mut &'a str) -> ModalResult<Vec<Element<'a>>> 
             // parse_directive,
             parse_atx_heading,
             parse_link_reference_definition,
-            // parse_wikilink,
+            parse_wikilink,
             parse_reference_style_image,
             parse_inline_image,
             parse_reference_style_link,
@@ -42,15 +42,11 @@ pub fn parse_document<'a>(input: &mut &'a str) -> ModalResult<Vec<Element<'a>>> 
     .parse_next(input)
 }
 
-impl<'s> std::str::FromStr for Document<'s> {
-    type Err = anyhow::Error; //  ParsingError;
-
-    fn from_str(input: &str) -> Result<Self, Self::Err> {
-        parse_document
-            .map(Document::new)
-            .parse(input)
-            .map_err(move |e| anyhow::format_err!("{e}")) // ParsingError::from_parse(e))
-    }
+pub fn parse_document<'s>(input: &'s str) -> anyhow::Result<Document<'s>> {
+    parse_elements
+        .map(Document::new)
+        .parse(input)
+        .map_err(move |e| anyhow::anyhow!("{e}")) // ParsingError::from_parse(e))
 }
 
 #[cfg(test)]
@@ -82,7 +78,7 @@ and retain its formatting.
 
         println!("Parsing Text Input:\n---\n{}\n---\n", text_input.trim());
 
-        match parse_document.parse_peek(text_input.trim()) {
+        match parse_elements.parse_peek(text_input.trim()) {
             Ok((remaining, elements)) => {
                 if remaining.is_empty() {
                     println!("Successfully parsed entire document:");

@@ -29,10 +29,10 @@ impl<'s> Document<'s> {
 
     /// Returns an iterator over all reference definitions in the document.
     pub fn refdefs(&self) -> impl Iterator<Item = &Element<'s>> {
-        self.elements.iter()
+        self.elements
+            .iter()
             .filter(|e| matches!(e, Element::ReferenceDefinition { .. }))
     }
-
 }
 
 impl Display for Document<'_> {
