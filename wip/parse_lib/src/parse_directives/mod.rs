@@ -148,7 +148,7 @@ use super::ast::Directive;
 ///
 /// The `value` part can contain spaces and can be optionally followed
 /// by whitespace before the final "}}",
-pub fn parse_directive<'s>(input: &mut &'s str) -> Result<Directive<'s>> {
+fn parse_directive<'s>(input: &mut &'s str) -> Result<Directive<'s>> {
     let insert_link = seq!(_: parse_prefix, parse_kinds, _: parse_optional_colon, parse_value);
 
     let insert_badge = seq!(
@@ -207,6 +207,17 @@ pub fn parse_directive<'s>(input: &mut &'s str) -> Result<Directive<'s>> {
     ));
 
     directives.parse_next(input)
+}
+
+use crate::Element;
+
+pub fn parse_directive_element<'s>(input: &mut &'s str) -> ModalResult<Element<'s>> {
+    parse_directive
+        .map(Element::CustomDirective)
+        .context(Label("directive element"))
+        .context(Expected(Description("{{ optional ! cat|crate|docs|github|lib.rs|crates.io|web xyz}} or {{#crate xyz}} or {{#example xyz}}")))
+        .parse_next(input)
+        .map_err(|e| winnow::error::ErrMode::Backtrack(e))
 }
 
 #[cfg(test)]

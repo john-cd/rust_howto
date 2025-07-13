@@ -12,6 +12,7 @@ use crate::ast::Element;
 // use crate::urls::parse_naked_url;
 // use crate::directives::parse_directive;
 use crate::markdown::*;
+use crate::parse_directives::parse_directive_element;
 use crate::parse_hidden::parse_hidden_html_div;
 use crate::parse_wikilinks::parse_wikilink;
 
@@ -24,7 +25,7 @@ fn parse_elements<'a>(input: &mut &'a str) -> ModalResult<Vec<Element<'a>>> {
             parse_hidden_html_div,
             parse_fenced_code_block,
             parse_code_span,
-            // parse_directive,
+            parse_directive_element,
             parse_atx_heading,
             parse_link_reference_definition,
             parse_wikilink,
