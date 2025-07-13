@@ -3,7 +3,7 @@
 use std::fmt::Display;
 
 #[derive(Debug, PartialEq, Eq)]
-pub enum Directive<'a> {
+pub enum DirectiveData<'a> {
     /// Insert a Markdown link.
     ///
     /// - category: {{cat xyz}}
@@ -57,12 +57,12 @@ pub enum Directive<'a> {
     // },
 }
 
-impl Display for Directive<'_> {
+impl Display for DirectiveData<'_> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Directive::Link { kind, name } => write!(f, "{{{kind} {name}}}"),
-            Directive::Badge { kind, name } => write!(f, "{{!{kind} {name}}}"),
-            Directive::CrateBlock {
+            DirectiveData::Link { kind, name } => write!(f, "{{{kind} {name}}}"),
+            DirectiveData::Badge { kind, name } => write!(f, "{{!{kind} {name}}}"),
+            DirectiveData::CrateBlock {
                 crate_name,
                 additional_categories,
             } => {
@@ -73,7 +73,7 @@ impl Display for Directive<'_> {
                     write!(f, "{{#crate {crate_name} {categories}}}")
                 }
             }
-            Directive::ExampleBlock { name } => write!(f, "{{#example {name}}}"),
+            DirectiveData::ExampleBlock { name } => write!(f, "{{#example {name}}}"),
         }
     }
 }

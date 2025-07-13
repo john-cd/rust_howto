@@ -66,7 +66,8 @@ use winnow::error::StrContext::*;
 use winnow::error::StrContextValue::*;
 use winnow::token::take_while;
 
-use super::super::ast::Element;
+use crate::HeadingData;
+use crate::ast::*;
 
 // Identation followed by opening sequence of 1–6 unescaped # characters
 fn parse_opening_hashes<'s>(input: &mut &'s str) -> ModalResult<u8> {
@@ -153,7 +154,7 @@ pub fn parse_atx_heading<'s>(input: &mut &'s str) -> ModalResult<Element<'s>> {
     );
 
     sequence
-        .map(|(level, (content, id))| Element::Heading { level, content, id })
+        .map(|(level, (content, id))| Element::Heading(HeadingData { level, content, id }))
         .parse_next(input)
 }
 
@@ -212,33 +213,33 @@ mod tests {
             parse_atx_heading.parse_peek("# Hello, world!\n"),
             Ok((
                 "",
-                Element::Heading {
+                Element::Heading(HeadingData {
                     level: 1,
                     content: Some("Hello, world!"),
                     id: None
-                }
+                })
             ))
         );
         assert_eq!(
             parse_atx_heading.parse_peek("  ##  Another heading  \n"),
             Ok((
                 "",
-                Element::Heading {
+                Element::Heading(HeadingData {
                     level: 2,
                     content: Some("Another heading"),
                     id: None
-                }
+                })
             ))
         );
         assert_eq!(
             parse_atx_heading.parse_peek("   ### Third heading ### \n"),
             Ok((
                 "",
-                Element::Heading {
+                Element::Heading(HeadingData {
                     level: 3,
                     content: Some("Third heading"),
                     id: None
-                }
+                })
             ))
         );
     }
@@ -249,22 +250,22 @@ mod tests {
             parse_atx_heading.parse_peek("# My Heading {#my-heading}\n"),
             Ok((
                 "",
-                Element::Heading {
+                Element::Heading(HeadingData {
                     level: 1,
                     content: Some("My Heading"),
                     id: Some("my-heading")
-                }
+                })
             ))
         );
         assert_eq!(
             parse_atx_heading.parse_peek("## Heading with closing hashes ## {#an-id}\n"),
             Ok((
                 "",
-                Element::Heading {
+                Element::Heading(HeadingData {
                     level: 2,
                     content: Some("Heading with closing hashes"),
                     id: Some("an-id")
-                }
+                })
             ))
         );
         assert!(
@@ -276,11 +277,11 @@ mod tests {
             parse_atx_heading.parse_peek("  ### Another with ident {#id-42}     \n"),
             Ok((
                 "",
-                Element::Heading {
+                Element::Heading(HeadingData {
                     level: 3,
                     content: Some("Another with ident"),
                     id: Some("id-42")
-                }
+                })
             ))
         );
     }
@@ -292,11 +293,11 @@ mod tests {
             parse_atx_heading.parse_peek("  # \n"),
             Ok((
                 "",
-                Element::Heading {
+                Element::Heading(HeadingData {
                     level: 1,
                     content: None,
                     id: None
-                }
+                })
             ))
         );
         // Trailing spaces after closing hashes.
@@ -304,11 +305,11 @@ mod tests {
             parse_atx_heading.parse_peek("##  Content  ##   \n"),
             Ok((
                 "",
-                Element::Heading {
+                Element::Heading(HeadingData {
                     level: 2,
                     content: Some("Content"),
                     id: None
-                }
+                })
             ))
         );
         // No newline (EOF).

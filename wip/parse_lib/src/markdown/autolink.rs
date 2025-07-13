@@ -3,15 +3,15 @@ use winnow::error::StrContext::*;
 use winnow::error::StrContextValue::*;
 use winnow::prelude::*;
 
-use super::super::ast::Element;
 use super::super::parse_parts::parse_angle_brackets;
+use crate::ast::*;
 
 /// Parses an autolink (`<url>`).
 ///
 /// <https://www.w3schools.com/tags//ref_urlencode.asp>
 pub fn parse_autolink<'a>(input: &mut &'a str) -> ModalResult<Element<'a>> {
     parse_angle_brackets
-        .map(Element::Autolink)
+        .map(|url| Element::Autolink(AutolinkData { url }))
         .context(Label("autolink"))
         .context(Expected(Description(
             "an autolink starting with < and ending with >",
@@ -27,7 +27,12 @@ mod tests {
     fn test_parse_autolink_naked_http() {
         assert_eq!(
             parse_autolink.parse_peek("http://example.com/path"),
-            Ok(("", Element::Autolink("http://example.com/path")))
+            Ok((
+                "",
+                Element::Autolink(AutolinkData {
+                    url: "http://example.com/path"
+                })
+            ))
         );
     }
 
@@ -35,7 +40,12 @@ mod tests {
     fn test_parse_autolink_naked_https() {
         assert_eq!(
             parse_autolink.parse_peek("https://example.org/path"),
-            Ok(("", Element::Autolink("https://example.org/path")))
+            Ok((
+                "",
+                Element::Autolink(AutolinkData {
+                    url: "https://example.org/path"
+                })
+            ))
         );
     }
 
@@ -43,7 +53,12 @@ mod tests {
     fn test_parse_autolink_delimited_http() {
         assert_eq!(
             parse_autolink.parse_peek("<http://example.com>"),
-            Ok(("", Element::Autolink("http://example.com")))
+            Ok((
+                "",
+                Element::Autolink(AutolinkData {
+                    url: "http://example.com"
+                })
+            ))
         );
     }
 
@@ -51,7 +66,12 @@ mod tests {
     fn test_parse_autolink_delimited_https() {
         assert_eq!(
             parse_autolink.parse_peek("<https://example.org/path>"),
-            Ok(("", Element::Autolink("https://example.org/path")))
+            Ok((
+                "",
+                Element::Autolink(AutolinkData {
+                    url: "https://example.org/path"
+                })
+            ))
         );
     }
 
@@ -61,7 +81,9 @@ mod tests {
             parse_autolink.parse_peek("<https://example.org/path> and some text"),
             Ok((
                 " and some text",
-                Element::Autolink("https://example.org/path")
+                Element::Autolink(AutolinkData {
+                    url: "https://example.org/path"
+                })
             ))
         );
     }
@@ -70,7 +92,12 @@ mod tests {
     fn test_parse_autolink_naked_with_extra_text_after() {
         assert_eq!(
             parse_autolink.parse_peek("http://example.com/foo bar"),
-            Ok((" bar", Element::Autolink("http://example.com/foo")))
+            Ok((
+                " bar",
+                Element::Autolink(AutolinkData {
+                    url: "http://example.com/foo"
+                })
+            ))
         );
     }
 
@@ -83,7 +110,12 @@ mod tests {
     fn test_parse_autolink_invalid_delimited_missing_opening_tag() {
         assert_eq!(
             parse_autolink.parse_peek("http://example.com>"),
-            Ok((">", Element::Autolink("http://example.com")))
+            Ok((
+                ">",
+                Element::Autolink(AutolinkData {
+                    url: "http://example.com"
+                })
+            ))
         );
     }
 
@@ -113,11 +145,21 @@ mod tests {
         // or the first delimited one.
         assert_eq!(
             parse_autolink.parse_peek("http://one.com https://two.org"),
-            Ok((" https://two.org", Element::Autolink("http://one.com")))
+            Ok((
+                " https://two.org",
+                Element::Autolink(AutolinkData {
+                    url: "http://one.com"
+                })
+            ))
         );
         assert_eq!(
             parse_autolink.parse_peek("<http://one.com> <https://two.org>"),
-            Ok((" <https://two.org>", Element::Autolink("http://one.com")))
+            Ok((
+                " <https://two.org>",
+                Element::Autolink(AutolinkData {
+                    url: "http://one.com"
+                })
+            ))
         );
     }
 }

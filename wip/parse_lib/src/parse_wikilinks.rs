@@ -12,7 +12,7 @@ use winnow::error::StrContextValue::*;
 use winnow::token::take_until;
 use winnow::token::take_while;
 
-use super::ast::Element;
+use crate::ast::*;
 
 /// Parses the inner content of a wikilink, which can be either a simple target
 /// or a target and a display text separated by a pipe.
@@ -77,10 +77,12 @@ fn parse_wikilink_to_strings<'s>(
 /// which become part of the displayed link text.
 pub fn parse_wikilink<'s>(input: &mut &'s str) -> ModalResult<Element<'s>> {
     parse_wikilink_to_strings
-        .map(|((target, display), immediately_after)| Element::WikiLink {
-            target,
-            display,
-            immediately_after,
+        .map(|((target, display), immediately_after)| {
+            Element::WikiLink(WikiLinkData {
+                target,
+                display,
+                immediately_after,
+            })
         })
         .context(Label("wiki link"))
         .context(Expected(Description(r#"[[page | display_text]]"#)))
@@ -182,11 +184,11 @@ mod tests {
             parse_wikilink.parse_peek("[[file]],"),
             Ok((
                 ",",
-                Element::WikiLink {
+                Element::WikiLink(WikiLinkData {
                     target: "file",
                     display: None,
                     immediately_after: None
-                }
+                })
             ))
         );
     }
@@ -198,11 +200,11 @@ mod tests {
             parse_wikilink.parse_peek("[[ file ]]"),
             Ok((
                 "",
-                Element::WikiLink {
+                Element::WikiLink(WikiLinkData {
                     target: "file",
                     display: None,
                     immediately_after: None
-                }
+                })
             ))
         );
     }
@@ -214,11 +216,11 @@ mod tests {
             parse_wikilink.parse_peek("[[file|display text]]"),
             Ok((
                 "",
-                Element::WikiLink {
+                Element::WikiLink(WikiLinkData {
                     target: "file",
                     display: Some("display text"),
                     immediately_after: None
-                }
+                })
             ))
         );
     }
@@ -234,11 +236,11 @@ mod tests {
             parse_wikilink.parse_peek("[[  file  |  display text  ]]"),
             Ok((
                 "",
-                Element::WikiLink {
+                Element::WikiLink(WikiLinkData {
                     target: "file",
                     display: Some("display text"),
                     immediately_after: None
-                }
+                })
             ))
         );
     }
@@ -253,11 +255,11 @@ mod tests {
             parse_wikilink.parse_peek("[[file |    ]]"),
             Ok((
                 "",
-                Element::WikiLink {
+                Element::WikiLink(WikiLinkData {
                     target: "file",
                     display: None,
                     immediately_after: None
-                }
+                })
             ))
         );
     }
@@ -299,11 +301,11 @@ mod tests {
             parse_wikilink.parse_peek("[[file]]s"),
             Ok((
                 "",
-                Element::WikiLink {
+                Element::WikiLink(WikiLinkData {
                     target: "file",
                     display: None,
                     immediately_after: Some("s")
-                }
+                })
             ))
         );
     }
@@ -315,11 +317,11 @@ mod tests {
             parse_wikilink.parse_peek("[[file | display text]]s"),
             Ok((
                 "",
-                Element::WikiLink {
+                Element::WikiLink(WikiLinkData {
                     target: "file",
                     display: Some("display text"),
                     immediately_after: Some("s")
-                }
+                })
             ))
         );
     }

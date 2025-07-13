@@ -3,7 +3,9 @@ use winnow::Parser;
 use winnow::combinator::delimited;
 use winnow::token::take_until;
 
-use super::super::ast::Element;
+use crate::CodeSpanData;
+use crate::FencedCodeBlockData;
+use crate::ast::*;
 
 /// Parses text enclosed in backticks (`).
 /// Simplified from <https://spec.commonmark.org/0.31.2/#code-spans>
@@ -13,7 +15,7 @@ pub fn parse_code_span<'a>(input: &mut &'a str) -> ModalResult<Element<'a>> {
         take_until(0.., '`'), // Content.
         '`',                  // Closing backtick.
     )
-    .map(Element::CodeSpan)
+    .map(|content| Element::CodeSpan(CodeSpanData { content }))
     .parse_next(input)
 }
 
@@ -25,7 +27,7 @@ pub fn parse_fenced_code_block<'a>(input: &mut &'a str) -> ModalResult<Element<'
         take_until(0.., "```"), // Content.
         "```",                  // Closing triple backticks.
     )
-    .map(Element::FencedCodeBlock)
+    .map(|content| Element::FencedCodeBlock(FencedCodeBlockData { content }))
     .parse_next(input)
 }
 
@@ -39,7 +41,12 @@ mod tests {
     fn test_parse_code_span_basic() {
         assert_eq!(
             parse_code_span.parse_peek("`hello world`"),
-            Ok(("", Element::CodeSpan("hello world")))
+            Ok((
+                "",
+                Element::CodeSpan(CodeSpanData {
+                    content: "hello world"
+                })
+            ))
         );
     }
 
@@ -47,7 +54,7 @@ mod tests {
     fn test_parse_code_span_empty_content() {
         assert_eq!(
             parse_code_span.parse_peek(&mut "``"),
-            Ok(("", Element::CodeSpan("")))
+            Ok(("", Element::CodeSpan(CodeSpanData { content: "" })))
         );
     }
 
@@ -55,7 +62,12 @@ mod tests {
     fn test_parse_code_span_with_trailing_text() {
         assert_eq!(
             parse_code_span.parse_peek("`code here` more text"),
-            Ok((" more text", Element::CodeSpan("code here")))
+            Ok((
+                " more text",
+                Element::CodeSpan(CodeSpanData {
+                    content: "code here"
+                })
+            ))
         );
     }
 
@@ -84,7 +96,9 @@ mod tests {
     #[test]
     fn test_parse_fenced_code_block_basic() {
         let input = "```fn main() {\n    println!(\"Hello\");\n}```";
-        let expected = Element::FencedCodeBlock("fn main() {\n    println!(\"Hello\");\n}");
+        let expected = Element::FencedCodeBlock(FencedCodeBlockData {
+            content: "fn main() {\n    println!(\"Hello\");\n}",
+        });
         assert_eq!(
             parse_fenced_code_block.parse_peek(input),
             Ok(("", expected))
@@ -95,14 +109,19 @@ mod tests {
     fn test_parse_fenced_code_block_empty_content() {
         assert_eq!(
             parse_fenced_code_block.parse_peek("``````"),
-            Ok(("", Element::FencedCodeBlock("")))
+            Ok((
+                "",
+                Element::FencedCodeBlock(FencedCodeBlockData { content: "" })
+            ))
         );
     }
 
     #[test]
     fn test_parse_fenced_code_block_with_trailing_text() {
         let input = "```rust,editable\nprintln!(\"hi\");\n``` more text";
-        let expected = Element::FencedCodeBlock("rust,editable\nprintln!(\"hi\");\n");
+        let expected = Element::FencedCodeBlock(FencedCodeBlockData {
+            content: "rust,editable\nprintln!(\"hi\");\n",
+        });
         assert_eq!(
             parse_fenced_code_block.parse_peek(input),
             Ok((" more text", expected))
@@ -124,7 +143,10 @@ mod tests {
         // `take_until` stops at the *first* closing delimiter.
         assert_eq!(
             parse_fenced_code_block.parse_peek("```foo ``` bar```"),
-            Ok((" bar```", Element::FencedCodeBlock("foo ")))
+            Ok((
+                " bar```",
+                Element::FencedCodeBlock(FencedCodeBlockData { content: "foo " })
+            ))
         );
     }
 
@@ -141,7 +163,9 @@ mod tests {
     #[test]
     fn test_parse_fenced_code_block_contains_single_backticks() {
         let input = "```code with `single` backticks```";
-        let expected = Element::FencedCodeBlock("code with `single` backticks");
+        let expected = Element::FencedCodeBlock(FencedCodeBlockData {
+            content: "code with `single` backticks",
+        });
         assert_eq!(
             parse_fenced_code_block.parse_peek(input),
             Ok(("", expected))

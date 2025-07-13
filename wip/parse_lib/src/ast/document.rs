@@ -26,13 +26,6 @@ impl<'s> Document<'s> {
     pub fn is_empty(&self) -> bool {
         self.elements.is_empty()
     }
-
-    /// Returns an iterator over all reference definitions in the document.
-    pub fn refdefs(&self) -> impl Iterator<Item = &Element<'s>> {
-        self.elements
-            .iter()
-            .filter(|e| matches!(e, Element::ReferenceDefinition { .. }))
-    }
 }
 
 impl Display for Document<'_> {

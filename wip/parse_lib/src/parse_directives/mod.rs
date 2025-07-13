@@ -139,7 +139,7 @@ fn to_destination_kind(input: &str) -> DestinationKind {
     }
 }
 
-use super::ast::Directive;
+use super::ast::DirectiveData;
 
 /// Parses a complete directive line, extracting the directive type () / kind and its value (e.g., crate name).
 ///
@@ -148,7 +148,7 @@ use super::ast::Directive;
 ///
 /// The `value` part can contain spaces and can be optionally followed
 /// by whitespace before the final "}}",
-fn parse_directive<'s>(input: &mut &'s str) -> Result<Directive<'s>> {
+fn parse_directive<'s>(input: &mut &'s str) -> Result<DirectiveData<'s>> {
     let insert_link = seq!(_: parse_prefix, parse_kinds, _: parse_optional_colon, parse_value);
 
     let insert_badge = seq!(
@@ -170,7 +170,7 @@ fn parse_directive<'s>(input: &mut &'s str) -> Result<Directive<'s>> {
 
     let mut directives = alt((
         insert_link
-            .map(|(kind, value)| Directive::Link {
+            .map(|(kind, value)| DirectiveData::Link {
                 kind: to_destination_kind(kind),
                 name: value,
             })
@@ -179,7 +179,7 @@ fn parse_directive<'s>(input: &mut &'s str) -> Result<Directive<'s>> {
                 "{{cat|crate|docs|github|lib.rs|crates.io|web xyz}}",
             ))),
         insert_badge
-            .map(|(kind, value)| Directive::Badge {
+            .map(|(kind, value)| DirectiveData::Badge {
                 kind: to_destination_kind(kind),
                 name: value,
             })
@@ -188,7 +188,7 @@ fn parse_directive<'s>(input: &mut &'s str) -> Result<Directive<'s>> {
                 "{{ ! cat|crate|docs|github|lib.rs|crates.io|web xyz}}",
             ))),
         insert_crate_block
-            .map(|(values,)| Directive::CrateBlock {
+            .map(|(values,)| DirectiveData::CrateBlock {
                 crate_name: values
                     .get(0)
                     .expect("There must be at least one word because of `separated_list1`."),
@@ -197,7 +197,7 @@ fn parse_directive<'s>(input: &mut &'s str) -> Result<Directive<'s>> {
             .context(Label("crate block"))
             .context(Expected(Description("{{#crate xyz}}"))),
         insert_example_block
-            .map(|(value,)| Directive::ExampleBlock { name: value })
+            .map(|(value,)| DirectiveData::ExampleBlock { name: value })
             .context(Label("example block"))
             .context(Expected(Description("{{#example xyz}}"))),
         fail.context(Label("directive"))
@@ -271,7 +271,7 @@ mod tests {
             let parsed = parse_directive.parse_peek(&mut input);
             let expected = Ok((
                 "",
-                Directive::Link {
+                DirectiveData::Link {
                     kind: DestinationKind::Category,
                     name: "xyz",
                 },
@@ -282,7 +282,7 @@ mod tests {
         let parsed = parse_directive.parse_peek(&mut "{{cat x-y_z::a-b_c }}");
         let expected = Ok((
             "",
-            Directive::Link {
+            DirectiveData::Link {
                 kind: DestinationKind::Category,
                 name: "x-y_z::a-b_c",
             },
@@ -320,7 +320,7 @@ mod tests {
         ];
         for mut input in examples.into_iter() {
             let parsed = parse_directive(&mut input);
-            let expected = Ok(Directive::Badge {
+            let expected = Ok(DirectiveData::Badge {
                 kind: DestinationKind::Category,
                 name: "xyz",
             });
@@ -328,7 +328,7 @@ mod tests {
         }
 
         let parsed = parse_directive(&mut "{{!cat x-y_z::a-b_c }}");
-        let expected = Ok(Directive::Badge {
+        let expected = Ok(DirectiveData::Badge {
             kind: DestinationKind::Category,
             name: "x-y_z::a-b_c",
         });
@@ -376,7 +376,7 @@ mod tests {
 
         for (i, mut input) in examples.into_iter().enumerate() {
             let parsed = parse_directive(&mut input);
-            let expected = Ok(Directive::Link {
+            let expected = Ok(DirectiveData::Link {
                 kind: expected_kinds[i].clone(),
                 name: "xyz",
             });
@@ -426,7 +426,7 @@ mod tests {
 
         for (i, mut input) in examples.into_iter().enumerate() {
             let parsed = parse_directive(&mut input);
-            let expected = Ok(Directive::Badge {
+            let expected = Ok(DirectiveData::Badge {
                 kind: expected_kinds[i].clone(),
                 name: "xyz",
             });
@@ -468,7 +468,7 @@ mod tests {
         ];
         for mut input in examples.into_iter() {
             let parsed = parse_directive(&mut input);
-            let expected = Ok(Directive::CrateBlock {
+            let expected = Ok(DirectiveData::CrateBlock {
                 crate_name: "crt",
                 additional_categories: vec![],
             });
@@ -476,14 +476,14 @@ mod tests {
         }
 
         let parsed = parse_directive(&mut "{{#crate x_y-z}}");
-        let expected = Ok(Directive::CrateBlock {
+        let expected = Ok(DirectiveData::CrateBlock {
             crate_name: "x_y-z",
             additional_categories: vec![],
         });
         assert_eq!(parsed, expected);
 
         let parsed = parse_directive(&mut "{{#crate: crt cat1 cat-2 cat-2-2 cat3::sub-cat-3 }}");
-        let expected = Ok(Directive::CrateBlock {
+        let expected = Ok(DirectiveData::CrateBlock {
             crate_name: "crt",
             additional_categories: vec!["cat1", "cat-2", "cat-2-2", "cat3::sub-cat-3"],
         });
@@ -526,7 +526,7 @@ mod tests {
         ];
         for mut input in examples.into_iter() {
             let parsed = parse_directive(&mut input);
-            let expected = Ok(Directive::ExampleBlock {
+            let expected = Ok(DirectiveData::ExampleBlock {
                 name: "some_example",
             });
             assert_eq!(parsed, expected);

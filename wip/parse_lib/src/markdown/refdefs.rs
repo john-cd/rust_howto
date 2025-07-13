@@ -20,10 +20,8 @@ use winnow::error::StrContext::*;
 use winnow::error::StrContextValue::*;
 use winnow::token::take_while;
 
-use super::super::ast::Element;
-use super::super::parse_parts::parse_link_destination;
-use super::super::parse_parts::parse_link_label;
-use super::super::parse_parts::parse_link_title;
+use crate::ast::*;
+use crate::parse_parts::*;
 
 /// Parses up to three spaces of indentation.
 ///
@@ -65,7 +63,9 @@ pub fn parse_link_reference_definition<'s>(input: &mut &'s str) -> ModalResult<E
         opt(preceded(space1, parse_link_title)),
         _: line_ending,
     )
-    .map(|(label, url, title)| Element::ReferenceDefinition { label, url, title })
+    .map(|(label, url, title)| {
+        Element::ReferenceDefinition(ReferenceDefinitionData { label, url, title })
+    })
     .context(Label(""))
     .context(Expected(Description("")))
     .parse_next(input)
@@ -131,11 +131,11 @@ mod tests {
     #[test]
     fn test_parse_link_reference_definition_simple() {
         let input = "[foo]: /url";
-        let expected = Element::ReferenceDefinition {
+        let expected = Element::ReferenceDefinition(ReferenceDefinitionData {
             label: "foo",
             url: "/url",
             title: None,
-        };
+        });
         assert_eq!(
             parse_link_reference_definition.parse_peek(input),
             Ok(("", expected))
@@ -145,11 +145,11 @@ mod tests {
     #[test]
     fn test_parse_link_reference_definition_with_title() {
         let input = "[foo]: /url \"My Title\"";
-        let expected = Element::ReferenceDefinition {
+        let expected = Element::ReferenceDefinition(ReferenceDefinitionData {
             label: "foo",
             url: "/url",
             title: Some("My Title"),
-        };
+        });
         assert_eq!(
             parse_link_reference_definition.parse_peek(input),
             Ok(("", expected))
@@ -159,11 +159,11 @@ mod tests {
     #[test]
     fn test_parse_link_reference_definition_with_single_quoted_title() {
         let input = "[bar]: /some/path 'Another Title'";
-        let expected = Element::ReferenceDefinition {
+        let expected = Element::ReferenceDefinition(ReferenceDefinitionData {
             label: "bar",
             url: "/some/path",
             title: Some("Another Title"),
-        };
+        });
         assert_eq!(
             parse_link_reference_definition.parse_peek(input),
             Ok(("", expected))
@@ -173,11 +173,11 @@ mod tests {
     #[test]
     fn test_parse_link_reference_definition_with_parenthesized_title() {
         let input = "[baz]: /dest (Title with Parens)";
-        let expected = Element::ReferenceDefinition {
+        let expected = Element::ReferenceDefinition(ReferenceDefinitionData {
             label: "baz",
             url: "/dest",
             title: Some("Title with Parens"),
-        };
+        });
         assert_eq!(
             parse_link_reference_definition.parse_peek(input),
             Ok(("", expected))
@@ -187,11 +187,11 @@ mod tests {
     #[test]
     fn test_parse_link_reference_definition_with_indentation() {
         let input = " [qux]: /url";
-        let expected = Element::ReferenceDefinition {
+        let expected = Element::ReferenceDefinition(ReferenceDefinitionData {
             label: "qux",
             url: "/url",
             title: None,
-        };
+        });
         assert_eq!(
             parse_link_reference_definition.parse_peek(input),
             Ok(("", expected))
@@ -201,11 +201,11 @@ mod tests {
     #[test]
     fn test_parse_link_reference_definition_with_max_indentation() {
         let input = "   [qux]: /url";
-        let expected = Element::ReferenceDefinition {
+        let expected = Element::ReferenceDefinition(ReferenceDefinitionData {
             label: "qux",
             url: "/url",
             title: None,
-        };
+        });
         assert_eq!(
             parse_link_reference_definition.parse_peek(input),
             Ok(("", expected))
@@ -221,11 +221,11 @@ mod tests {
     #[test]
     fn test_parse_link_reference_definition_with_newline_after_colon() {
         let input = "[foo]:\n/url";
-        let expected = Element::ReferenceDefinition {
+        let expected = Element::ReferenceDefinition(ReferenceDefinitionData {
             label: "foo",
             url: "/url",
             title: None,
-        };
+        });
         assert_eq!(
             parse_link_reference_definition.parse_peek(input),
             Ok(("", expected))
@@ -235,11 +235,11 @@ mod tests {
     #[test]
     fn test_parse_link_reference_definition_with_newline_before_title() {
         let input = "[foo]: /url\n\"My Title\"";
-        let expected = Element::ReferenceDefinition {
+        let expected = Element::ReferenceDefinition(ReferenceDefinitionData {
             label: "foo",
             url: "/url",
             title: Some("My Title"),
-        };
+        });
         assert_eq!(
             parse_link_reference_definition.parse_peek(input),
             Ok(("", expected))
@@ -249,11 +249,11 @@ mod tests {
     #[test]
     fn test_parse_link_reference_definition_with_angle_bracket_destination() {
         let input = "[foo]: <http://example.com/long/path?query=1> \"A long title\"";
-        let expected = Element::ReferenceDefinition {
+        let expected = Element::ReferenceDefinition(ReferenceDefinitionData {
             label: "foo",
             url: "http://example.com/long/path?query=1",
             title: Some("A long title"),
-        };
+        });
         assert_eq!(
             parse_link_reference_definition.parse_peek(input),
             Ok(("", expected))
@@ -263,11 +263,11 @@ mod tests {
     #[test]
     fn test_parse_link_reference_definition_complex_whitespace() {
         let input = " [test]:  \t\n  <http://example.org/a/b> \t\n  'Complex Title' ";
-        let expected = Element::ReferenceDefinition {
+        let expected = Element::ReferenceDefinition(ReferenceDefinitionData {
             label: "test",
             url: "http://example.org/a/b",
             title: Some("Complex Title"),
-        };
+        });
         assert_eq!(
             parse_link_reference_definition.parse_peek(input),
             Ok((" ", expected))
@@ -277,11 +277,11 @@ mod tests {
     #[test]
     fn test_parse_link_reference_definition_no_title_with_trailing_whitespace() {
         let input = "[foo]: /url ";
-        let expected = Element::ReferenceDefinition {
+        let expected = Element::ReferenceDefinition(ReferenceDefinitionData {
             label: "foo",
             url: "/url",
             title: None,
-        };
+        });
         assert_eq!(
             parse_link_reference_definition.parse_peek(input),
             Ok((" ", expected))

@@ -8,7 +8,79 @@
 
 use std::fmt::Display;
 
-use super::Directive;
+use super::DirectiveData;
+
+#[derive(Debug, PartialEq, Eq)]
+pub struct AutolinkData<'a> {
+    pub url: &'a str, // The URL of the autolink.
+}
+
+#[derive(Debug, PartialEq, Eq)]
+pub struct InlineLinkData<'a> {
+    pub text: &'a str,
+    pub url: &'a str,
+    pub title: Option<&'a str>,
+}
+
+#[derive(Debug, PartialEq, Eq)]
+pub struct ReferenceStyleLinkData<'a> {
+    pub text: &'a str,
+    pub label: &'a str,
+}
+
+#[derive(Debug, PartialEq, Eq)]
+pub struct InlineImageData<'a> {
+    pub image_description: &'a str,
+    pub url: &'a str,
+    pub title: Option<&'a str>,
+}
+
+#[derive(Debug, PartialEq, Eq)]
+pub struct ReferenceStyleImageData<'a> {
+    pub image_description: &'a str,
+    pub label: &'a str,
+}
+
+#[derive(Debug, PartialEq, Eq)]
+pub struct ReferenceDefinitionData<'a> {
+    pub label: &'a str,
+    pub url: &'a str,
+    pub title: Option<&'a str>,
+}
+
+#[derive(Debug, PartialEq, Eq)]
+pub struct WikiLinkData<'a> {
+    pub target: &'a str, // Target page.
+    pub display: Option<&'a str>,
+    pub immediately_after: Option<&'a str>,
+}
+
+#[derive(Debug, PartialEq, Eq)]
+pub struct CodeSpanData<'a> {
+    pub content: &'a str,
+}
+
+#[derive(Debug, PartialEq, Eq)]
+pub struct FencedCodeBlockData<'a> {
+    pub content: &'a str,
+}
+
+#[derive(Debug, PartialEq, Eq)]
+pub struct HiddenHtmlDivData<'a> {
+    pub content: &'a str,
+}
+
+#[derive(Debug, PartialEq, Eq)]
+pub struct HeadingData<'a> {
+    pub level: u8,
+    pub content: Option<&'a str>,
+    pub id: Option<&'a str>,
+}
+
+#[derive(Debug, PartialEq, Eq)]
+pub struct TextData<'a> {
+    pub content: &'a str,
+}
 
 #[derive(Debug, PartialEq, Eq)]
 pub enum Element<'a> {
@@ -16,144 +88,58 @@ pub enum Element<'a> {
     /// optionally between < and > (i.e., an autolink).
     /// By design, more permissive than the CommonMark spec:
     /// <https://spec.commonmark.org/0.31.2/#autolinks>
-    Autolink(&'a str),
+    Autolink(AutolinkData<'a>),
 
     /// A Markdown-style inline link: `[text](url)`.
     /// <https://spec.commonmark.org/0.31.2/#inline-link>
-    InlineLink {
-        text: &'a str,
-        url: &'a str,
-        title: Option<&'a str>,
-    },
+    InlineLink(InlineLinkData<'a>),
 
     /// Reference-style link: `[...][...]`.
     /// <https://spec.commonmark.org/0.31.2/#reference-link>
-    ReferenceStyleLink { text: &'a str, label: &'a str },
+    ReferenceStyleLink(ReferenceStyleLinkData<'a>),
 
     /// Images: `![foo](/url "title")`.
     /// <https://spec.commonmark.org/0.31.2/#images>
-    InlineImage {
-        image_description: &'a str,
-        url: &'a str,
-        title: Option<&'a str>,
-    },
+    InlineImage(InlineImageData<'a>),
 
     /// Reference-style image: `![foo][bar]`.
-    ReferenceStyleImage {
-        image_description: &'a str,
-        label: &'a str,
-    },
+    ReferenceStyleImage(ReferenceStyleImageData<'a>),
 
     /// Reference definition: `[...]: http://... "title"`.
     /// <https://spec.commonmark.org/0.31.2/#link-reference-definitions>
-    ReferenceDefinition {
-        label: &'a str,
-        url: &'a str,
-        title: Option<&'a str>,
-    },
+    ReferenceDefinition(ReferenceDefinitionData<'a>),
 
     /// Wikilink: `[[target_page]]` or `[[target_page | display]]`, with or without spaces.
     /// <https://en.wikipedia.org/wiki/Help:Link#Wikilinks_(internal_links)>
-    WikiLink {
-        target: &'a str, // Target page.
-        display: Option<&'a str>,
-        immediately_after: Option<&'a str>,
-    },
+    WikiLink(WikiLinkData<'a>),
 
     /// CodeSpan enclosed between ` and `.
     /// <https://spec.commonmark.org/0.31.2/#code-spans>
-    CodeSpan(&'a str),
+    CodeSpan(CodeSpanData<'a>),
 
     /// Fenced Code Block enclosed in e.g. triple backticks (```).
     /// <https://spec.commonmark.org/0.31.2/#fenced-code-blocks>
-    FencedCodeBlock(&'a str),
+    FencedCodeBlock(FencedCodeBlockData<'a>),
 
     /// An HTML div block, storing its raw content between `<div class="hidden"> </div>`.
     /// <https://rust-lang.github.io/mdBook/format/mdbook.html#html-classes-provided-by-mdbook>
-    HiddenHtmlDiv(&'a str),
+    HiddenHtmlDiv(HiddenHtmlDivData<'a>),
 
     /// A Markdown ATX heading: `# Some Text {#an-anchor}`.
     /// <https://spec.commonmark.org/0.31.2/#atx-headings>
     /// <https://rust-lang.github.io/mdBook/format/markdown.html#heading-attributes>
-    Heading {
-        level: u8,
-        content: Option<&'a str>,
-        id: Option<&'a str>,
-    },
+    Heading(HeadingData<'a>),
 
     /// Plain text that doesn't match other elements.
-    Text(&'a str),
+    Text(TextData<'a>),
 
     /// Custom directive, e.g., `{{#crate my_crate}}`.
-    CustomDirective(Directive<'a>),
+    CustomDirective(DirectiveData<'a>),
 }
 
 impl Display for Element<'_> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        match self {
-            Element::Autolink(url) => write!(f, "<{url}>"),
-            Element::InlineLink { text, url, title } => {
-                if let Some(title) = title {
-                    write!(f, "[{text}]({url} \"{title}\")")
-                } else {
-                    write!(f, "[{text}]({url})")
-                }
-            }
-            Element::ReferenceStyleLink { text, label } => {
-                write!(f, "[{text}][{label}]")
-            }
-            Element::InlineImage {
-                image_description,
-                url,
-                title,
-            } => {
-                if let Some(title) = title {
-                    write!(f, "![{image_description}]({url} \"{title}\")")
-                } else {
-                    write!(f, "![{image_description}]({url})")
-                }
-            }
-            Element::ReferenceStyleImage {
-                image_description,
-                label,
-            } => {
-                write!(f, "![{image_description}][{label}]")
-            }
-            Element::ReferenceDefinition { label, url, title } => {
-                if let Some(title) = title {
-                    write!(f, "[{label}]: {url} \"{title}\"")
-                } else {
-                    write!(f, "[{label}]: {url}")
-                }
-            }
-            Element::WikiLink {
-                target,
-                display,
-                immediately_after,
-            } => {
-                let immediately_after = immediately_after.unwrap_or("");
-                if let Some(display) = display {
-                    write!(f, "[[{target} | {display}]]{immediately_after}")
-                } else {
-                    write!(f, "[[{target}]]{immediately_after}")
-                }
-            }
-            Element::CodeSpan(content) => write!(f, "`{content}`"),
-            Element::FencedCodeBlock(content) => write!(f, "```\n{content}\n```"),
-            Element::HiddenHtmlDiv(content) => {
-                write!(f, "<div class=\"hidden\">\n{content}\n</div>")
-            }
-            Element::Heading { level, content, id } => {
-                let hashes = "#".repeat(*level as usize);
-                let content = content.map(|c| format!(" {c}")).unwrap_or("".into());
-                if let Some(id) = id {
-                    write!(f, "{hashes}{content} {{#{id}}}")
-                } else {
-                    write!(f, "{hashes}{content}")
-                }
-            }
-            Element::Text(content) => write!(f, "{content}"),
-            Element::CustomDirective(directive) => write!(f, "{directive}"),
-        }
+        // TODO
+        Ok(())
     }
 }

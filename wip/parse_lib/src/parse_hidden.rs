@@ -10,7 +10,7 @@ use winnow::error::StrContext::*;
 use winnow::error::StrContextValue::*;
 use winnow::token::take_until;
 
-use super::ast::Element;
+use crate::ast::*;
 
 /// Parses an HTML opening `<div>` tag with `class="hidden"`.
 ///
@@ -50,7 +50,7 @@ pub fn parse_hidden_html_div<'s>(input: &mut &'s str) -> ModalResult<Element<'s>
         take_until(0.., "</div>"), // Content of the div. Can be empty.
         "</div>",
     )
-    .map(Element::HiddenHtmlDiv)
+    .map(|content| Element::HiddenHtmlDiv(HiddenHtmlDivData { content }))
     .context(Label("hidden HTML div block"))
     .context(Expected(Description(r#"<div class="hidden">...</div>"#)))
     .parse_next(input)
@@ -64,28 +64,56 @@ mod tests {
     fn test_parse_simple_hidden_div() {
         let input = r#"<div class="hidden">some content</div>"#;
         let result = parse_hidden_html_div.parse_peek(input);
-        assert_eq!(result, Ok(("", Element::HiddenHtmlDiv("some content"))));
+        assert_eq!(
+            result,
+            Ok((
+                "",
+                Element::HiddenHtmlDiv(HiddenHtmlDivData {
+                    content: "some content"
+                })
+            ))
+        );
     }
 
     #[test]
     fn test_parse_hidden_div_with_trailing_text() {
         let input = r#"<div class="hidden">content</div> and more"#;
         let result = parse_hidden_html_div.parse_peek(input);
-        assert_eq!(result, Ok((" and more", Element::HiddenHtmlDiv("content"))));
+        assert_eq!(
+            result,
+            Ok((
+                " and more",
+                Element::HiddenHtmlDiv(HiddenHtmlDivData { content: "content" })
+            ))
+        );
     }
 
     #[test]
     fn test_parse_empty_hidden_div() {
         let input = r#"<div class="hidden"></div>"#;
         let result = parse_hidden_html_div.parse_peek(input);
-        assert_eq!(result, Ok(("", Element::HiddenHtmlDiv(""))));
+        assert_eq!(
+            result,
+            Ok((
+                "",
+                Element::HiddenHtmlDiv(HiddenHtmlDivData { content: "" })
+            ))
+        );
     }
 
     #[test]
     fn test_parse_multiline_hidden_div() {
         let input = "<div class=\"hidden\">line 1\nline 2</div>";
         let result = parse_hidden_html_div.parse_peek(input);
-        assert_eq!(result, Ok(("", Element::HiddenHtmlDiv("line 1\nline 2"))));
+        assert_eq!(
+            result,
+            Ok((
+                "",
+                Element::HiddenHtmlDiv(HiddenHtmlDivData {
+                    content: "line 1\nline 2"
+                })
+            ))
+        );
     }
 
     #[test]
@@ -107,7 +135,12 @@ mod tests {
         let result = parse_hidden_html_div.parse_peek(input);
         assert_eq!(
             result,
-            Ok(("</div>", Element::HiddenHtmlDiv("outer<div>inner")))
+            Ok((
+                "</div>",
+                Element::HiddenHtmlDiv(HiddenHtmlDivData {
+                    content: "outer<div>inner"
+                })
+            ))
         );
     }
 

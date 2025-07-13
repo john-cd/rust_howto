@@ -14,6 +14,8 @@ use winnow::error::ErrMode;
 use winnow::error::StrContext::*;
 use winnow::error::StrContextValue::*;
 
+use crate::ast::*;
+
 /// Recognize an absolute HTTP / HTTPS URL.
 pub fn parse_naked_url<'s>(input: &mut &'s str) -> ModalResult<UrlKind<'s>> {
     // If the child parser was successful, return the consumed input as produced value.
