@@ -11,7 +11,9 @@ mod parse_hidden;
 mod parse_parts;
 mod parse_urls;
 mod parse_wikilinks;
+mod visit;
 
 pub use ast::*;
 pub use errors::*;
 pub use parse_document::parse_document;
+pub use visit::*;
