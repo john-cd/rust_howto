@@ -1,5 +1,8 @@
 //! AST (Abstract Syntax Tree)
 
+mod documents;
+pub use documents::*;
+
 mod document;
 pub use document::*;
 

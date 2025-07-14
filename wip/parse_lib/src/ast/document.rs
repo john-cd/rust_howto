@@ -1,9 +1,12 @@
 use std::fmt::Display;
 
+// use std::path::Path;
 use super::Element;
 
 #[derive(Debug, PartialEq, Eq)]
 pub struct Document<'s> {
+    // name: &'s str,
+    // path: Option<&'s Path>,
     elements: Vec<Element<'s>>,
 }
 
