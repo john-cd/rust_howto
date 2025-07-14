@@ -53,12 +53,12 @@ fn parse_wikilink_inner<'s>(input: &mut &'s str) -> Result<(&'s str, Option<&'s 
     .parse_next(input)
 }
 
+type RawWikilink<'s> = ((&'s str, Option<&'s str>), Option<&'s str>);
+
 /// Parses a wikilink in the format `[[target]]` or `[[target | display]]`.
 /// It also captures any alphanumeric characters immediately after the closing brackets,
 /// which become part of the displayed link text.
-fn parse_wikilink_to_strings<'s>(
-    input: &mut &'s str,
-) -> Result<((&'s str, Option<&'s str>), Option<&'s str>)> {
+fn parse_wikilink_to_strings<'s>(input: &mut &'s str) -> Result<RawWikilink<'s>> {
     // Letters and other non-punctuation characters immediately after a wikilink's closing brackets,
     // with no intervening space, become part of its displayed link text. The target is unchanged.
     let immediately_after = opt(take_while(0.., |c: char| c.is_alphanumeric()))
@@ -87,7 +87,7 @@ pub fn parse_wikilink<'s>(input: &mut &'s str) -> ModalResult<Element<'s>> {
         .context(Label("wiki link"))
         .context(Expected(Description(r#"[[page | display_text]]"#)))
         .parse_next(input)
-        .map_err(|e| ErrMode::Backtrack(e))
+        .map_err(ErrMode::Backtrack)
 }
 
 #[cfg(test)]
@@ -110,7 +110,7 @@ mod tests {
         }
     }
 
-    fn assert_parse_wikilink_inner_err<'s>(input: &'s str) {
+    fn assert_parse_wikilink_inner_err(input: &str) {
         match parse_wikilink_inner.parse_peek(input) {
             Ok((_, (target, display))) => {
                 panic!("Parsing unexpectedly succeeded: target='{target}', display='{display:?}'")

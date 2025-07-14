@@ -26,7 +26,7 @@ use crate::parse_parts::*;
 /// Parses up to three spaces of indentation.
 ///
 /// Example: "   " -> ()
-fn parse_indentation<'s>(input: &mut &'s str) -> ModalResult<()> {
+fn parse_indentation(input: &mut &str) -> ModalResult<()> {
     take_while(0..=3, |c| c == ' ').void().parse_next(input)
 }
 
@@ -34,7 +34,7 @@ fn parse_indentation<'s>(input: &mut &'s str) -> ModalResult<()> {
 /// This is used for the whitespace around the colon and destination.
 ///
 /// Example: " \t\n " -> ()
-fn parse_optional_whitespace_with_one_newline<'s>(input: &mut &'s str) -> ModalResult<()> {
+fn parse_optional_whitespace_with_one_newline(input: &mut &str) -> ModalResult<()> {
     (
         space0,           // Zero or more spaces/tabs
         opt(line_ending), // Optional single line ending

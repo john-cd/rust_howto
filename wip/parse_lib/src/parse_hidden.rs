@@ -22,7 +22,7 @@ use crate::ast::*;
 /// `<div   class="hidden"  >`
 ///
 /// Simplification: partially case-insensitive.
-fn parse_hidden_div_open_tag<'s>(input: &mut &'s str) -> Result<()> {
+fn parse_hidden_div_open_tag(input: &mut &str) -> Result<()> {
     (
         "<",
         space0,
@@ -54,7 +54,7 @@ pub fn parse_hidden_html_div<'s>(input: &mut &'s str) -> ModalResult<Element<'s>
     .context(Label("hidden HTML div block"))
     .context(Expected(Description(r#"<div class="hidden">...</div>"#)))
     .parse_next(input)
-    .map_err(|e| ErrMode::Backtrack(e))
+    .map_err(ErrMode::Backtrack)
 }
 
 #[cfg(test)]

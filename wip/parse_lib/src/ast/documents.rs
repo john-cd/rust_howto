@@ -4,7 +4,7 @@ use super::Document;
 
 #[derive(Debug, PartialEq, Eq)]
 pub struct Documents<'s> {
-    documents: Vec<Document<'s>>,
+    pub documents: Vec<Document<'s>>,
 }
 
 impl<'s> Documents<'s> {
@@ -13,11 +13,11 @@ impl<'s> Documents<'s> {
     }
 }
 
-impl Display for Documents<'_> {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        for doc in &self.documents {
-            write!(f, "{doc}")?;
-        }
-        Ok(())
-    }
-}
+// impl Display for Documents<'_> {
+//     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+//         for doc in &self.documents {
+//             write!(f, "{doc}")?;
+//         }
+//         Ok(())
+//     }
+// }

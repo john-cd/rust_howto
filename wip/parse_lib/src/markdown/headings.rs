@@ -5,7 +5,6 @@
 //! Example:
 //!
 //! ```rust
-//! fn main() {
 //!     let heading1 = "# My first heading {#first}\n";
 //!     match parse_atx_heading.parse_peek(heading1) {
 //!         Ok((rest, heading)) => {
@@ -45,9 +44,6 @@
 //!             eprintln!("Error parsing: {:?}", e);
 //!         }
 //!     }
-//!
-
-//! }
 //! ```
 
 use winnow::ModalResult;
@@ -70,7 +66,7 @@ use crate::HeadingData;
 use crate::ast::*;
 
 // Identation followed by opening sequence of 1–6 unescaped # characters
-fn parse_opening_hashes<'s>(input: &mut &'s str) -> ModalResult<u8> {
+fn parse_opening_hashes(input: &mut &str) -> ModalResult<u8> {
     preceded(
         // Parse indentation. Up to three spaces of indentation are allowed.
         take_while(0..=3, ' '),

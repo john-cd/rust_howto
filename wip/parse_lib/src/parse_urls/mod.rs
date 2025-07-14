@@ -14,7 +14,7 @@ use winnow::error::ErrMode;
 use winnow::error::StrContext::*;
 use winnow::error::StrContextValue::*;
 
-use crate::ast::*;
+// use crate::ast::*;
 
 /// Recognize an absolute HTTP / HTTPS URL.
 pub fn parse_naked_url<'s>(input: &mut &'s str) -> ModalResult<UrlKind<'s>> {
@@ -24,11 +24,27 @@ pub fn parse_naked_url<'s>(input: &mut &'s str) -> ModalResult<UrlKind<'s>> {
         parse_url_chars,
     )
     .take()
-    .map_err(|e| ErrMode::Backtrack(e))
-    .try_map(|url| url_kind(url)) // .map_err(|e| ContextError::from_external_error(input, e)))
+    .map_err(ErrMode::Backtrack)
+    .try_map(url_kind) // .map_err(|e| ContextError::from_external_error(input, e)))
     .context(Label("naked URL"))
     .context(Expected(Description(
         "http:// or https:// followed by valid URL characters",
     )))
     .parse_next(input)
 }
+
+// pub fn parse_naked_url_element<'s>(input: &mut &'s str) -> ModalResult<Element<'s>> {
+//     // If the child parser was successful, return the consumed input as produced value.
+//     seq!(
+//         alt(("http://", "https://")), // Protocols.
+//         parse_url_chars,
+//     )
+//     .take()
+//     .map_err(|e| ErrMode::Backtrack(e))
+//     .try_map(|url| url_kind(url)) // .map_err(|e| ContextError::from_external_error(input, e)))
+//     .context(Label("naked URL"))
+//     .context(Expected(Description(
+//         "http:// or https:// followed by valid URL characters",
+//     )))
+//     .parse_next(input)
+// }

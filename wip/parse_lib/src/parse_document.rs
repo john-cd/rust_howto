@@ -1,3 +1,5 @@
+use std::path::Path;
+
 use winnow::ModalResult;
 use winnow::Parser;
 use winnow::combinator::alt;
@@ -44,9 +46,13 @@ fn parse_elements<'a>(input: &mut &'a str) -> ModalResult<Vec<Element<'a>>> {
     .parse_next(input)
 }
 
-pub fn parse_document<'s>(input: &'s str) -> anyhow::Result<Document<'s>> {
+pub fn parse_document<'s>(
+    name: &'s str,
+    path: Option<&'s Path>,
+    input: &'s str,
+) -> anyhow::Result<Document<'s>> {
     parse_elements
-        .map(Document::new)
+        .map(|elements| Document::new(name, path, elements))
         .parse(input)
         .map_err(move |e| anyhow::anyhow!("{e}")) // ParsingError::from_parse(e))
 }
@@ -88,14 +94,14 @@ and retain its formatting.
                     println!(
                         "Parsed document with remaining input (may indicate unhandled parts):"
                     );
-                    println!("Remaining: \"{}\"", remaining);
+                    println!("Remaining: \"{remaining}\"");
                 }
                 for element in elements {
-                    println!("{:?}", element);
+                    println!("{element:?}");
                 }
             }
             Err(e) => {
-                eprintln!("Error parsing text: {:?}", e);
+                eprintln!("Error parsing text: {e:?}");
             }
         }
     }

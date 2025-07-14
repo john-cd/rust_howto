@@ -36,7 +36,7 @@ use winnow::token::take_till;
 use winnow::token::take_until;
 
 /// Matches the fixed prefix "{{" and optional spaces.
-fn parse_prefix<'s>(input: &mut &'s str) -> Result<()> {
+fn parse_prefix(input: &mut &str) -> Result<()> {
     terminated("{{", space0)
         .void()
         .context(Label("directive prefix"))
@@ -68,7 +68,7 @@ fn parse_kinds<'s>(input: &mut &'s str) -> Result<&'s str> {
 }
 
 /// Matches an optional colon, optionally preceded by spaces.
-fn parse_optional_colon<'s>(input: &mut &'s str) -> Result<()> {
+fn parse_optional_colon(input: &mut &str) -> Result<()> {
     opt(preceded(space0, ":"))
         .void()
         .context(Label("optional colon"))
@@ -190,7 +190,7 @@ fn parse_directive<'s>(input: &mut &'s str) -> Result<DirectiveData<'s>> {
         insert_crate_block
             .map(|(values,)| DirectiveData::CrateBlock {
                 crate_name: values
-                    .get(0)
+                    .first()
                     .expect("There must be at least one word because of `separated_list1`."),
                 additional_categories: values.get(1..).unwrap_or(&[]).to_vec(),
             })
@@ -217,7 +217,7 @@ pub fn parse_directive_element<'s>(input: &mut &'s str) -> ModalResult<Element<'
         .context(Label("directive element"))
         .context(Expected(Description("{{ optional ! cat|crate|docs|github|lib.rs|crates.io|web xyz}} or {{#crate xyz}} or {{#example xyz}}")))
         .parse_next(input)
-        .map_err(|e| winnow::error::ErrMode::Backtrack(e))
+        .map_err(winnow::error::ErrMode::Backtrack)
 }
 
 #[cfg(test)]
@@ -267,8 +267,8 @@ mod tests {
             "{{cat: xyz}}",
             "{{cat  :  xyz}}",
         ];
-        for mut input in examples.into_iter() {
-            let parsed = parse_directive.parse_peek(&mut input);
+        for input in examples.into_iter() {
+            let parsed = parse_directive.parse_peek(input);
             let expected = Ok((
                 "",
                 DirectiveData::Link {
@@ -279,7 +279,7 @@ mod tests {
             assert_eq!(parsed, expected);
         }
 
-        let parsed = parse_directive.parse_peek(&mut "{{cat x-y_z::a-b_c }}");
+        let parsed = parse_directive.parse_peek("{{cat x-y_z::a-b_c }}");
         let expected = Ok((
             "",
             DirectiveData::Link {

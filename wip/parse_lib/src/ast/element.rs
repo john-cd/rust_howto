@@ -6,8 +6,6 @@
 //! - Code spans and triple quoted text between ``` and ```.
 //! - Hidden sections: <div class="hidden"> </div>
 
-use std::fmt::Display;
-
 use super::DirectiveData;
 
 #[derive(Debug, PartialEq, Eq)]
@@ -41,7 +39,7 @@ pub struct ReferenceStyleImageData<'a> {
     pub label: &'a str,
 }
 
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, PartialOrd, Ord)]
 pub struct ReferenceDefinitionData<'a> {
     pub label: &'a str,
     pub url: &'a str,
@@ -135,11 +133,4 @@ pub enum Element<'a> {
 
     /// Custom directive, e.g., `{{#crate my_crate}}`.
     CustomDirective(DirectiveData<'a>),
-}
-
-impl Display for Element<'_> {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        // TODO
-        Ok(())
-    }
 }

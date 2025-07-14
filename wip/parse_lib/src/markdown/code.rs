@@ -53,7 +53,7 @@ mod tests {
     #[test]
     fn test_parse_code_span_empty_content() {
         assert_eq!(
-            parse_code_span.parse_peek(&mut "``"),
+            parse_code_span.parse_peek("``"),
             Ok(("", Element::CodeSpan(CodeSpanData { content: "" })))
         );
     }

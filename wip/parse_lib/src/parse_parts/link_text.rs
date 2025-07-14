@@ -33,7 +33,7 @@ fn parse_text_with_escapes<'s>(input: &mut &'s str) -> ModalResult<&'s str> {
             r"alphanumeric characters, spaces, or tabs. May contain \-escaped [ or ] or \",
         )))
         .parse_next(input)
-        .map_err(|e| ErrMode::Backtrack(e))
+        .map_err(ErrMode::Backtrack)
 }
 
 /// Parses content within balanced brackets.
