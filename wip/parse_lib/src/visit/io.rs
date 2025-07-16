@@ -2,10 +2,8 @@
 //!
 //! Provides utilities to adapt `fmt::Write` interfaces to `io::Write` streams.
 
-use std::fmt;
 use std::io;
 use std::io::BufWriter;
-use std::ops::DerefMut;
 
 use fmt2io::Writer;
 
@@ -39,7 +37,7 @@ impl<'d> Document<'d> {
     pub fn with_buffer<'v, IO, F, V>(
         &'d self,
         capacity: usize,
-        mut inner_io_writer: IO,
+        inner_io_writer: IO,
         f: F,
     ) -> io::Result<()>
     where
@@ -68,7 +66,7 @@ impl<'d> Document<'d> {
         V: Visitor<'v>,
         F: FnOnce(&mut Writer<&mut io::Stdout>) -> V,
     {
-        let mut io_writer = io::stdout();
+        let io_writer = io::stdout();
         self.to_io(io_writer, f)
     }
 }

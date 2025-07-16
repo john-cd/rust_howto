@@ -1,5 +1,3 @@
-use std::fmt::Display;
-
 use super::Document;
 
 #[derive(Debug, PartialEq, Eq)]
@@ -13,7 +11,7 @@ impl<'s> Documents<'s> {
     }
 }
 
-// impl Display for Documents<'_> {
+// impl std::fmt::Display for Documents<'_> {
 //     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
 //         for doc in &self.documents {
 //             write!(f, "{doc}")?;
