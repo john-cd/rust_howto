@@ -21,6 +21,7 @@ anyhow = "1.0.95"
 cfg-if = "1.0.0"
 strum = { version = "0.27", features = ["derive"] }
 tokio = { version = "1.44.2", features = ["full"] }
+proc_macros = { path = "../proc_macros" }
 
 [features]
 full = []

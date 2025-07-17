@@ -6,6 +6,7 @@ members = [
     "code_organization",
     "language",
     "other",
+    "proc_macros",
     "standard_library",
 ]
 exclude = []
