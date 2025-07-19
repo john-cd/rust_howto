@@ -51,16 +51,16 @@ alias bb := buildbook
   echo "Generate the sitemap"
   cd {{root}} && mdbook-utils sitemap
 
-# Build / release the mdbook-scrub preprocessor, if needed
+# Build / release the tools, incl. mdbook-scrub preprocessor, if needed
 [unix]
 @_release_mbdbook-scrub:
   echo "Build mdbook-scrub, if needed"
-  if [ ! -f {{root}}/../bin/mdbook-scrub ]; then just -f {{root}}/../mdbook-scrub/justfile release; fi
+  if [ ! -f {{root}}/../bin/mdbook-scrub ]; then just -f {{root}}/../tools/justfile release; fi
 
 [windows]
 @_release_mbdbook-scrub:
   echo "Build mdbook-scrub, if needed"
-  if (-Not (Test-Path -Path {{root}}\..\bin\mdbook-scrub.exe )) { just -f {{root}}\..\mdbook-scrub\justfile release }
+  if (-Not (Test-Path -Path {{root}}\..\bin\mdbook-scrub.exe )) { just -f {{root}}\..\tools\justfile release }
 
 ## ---- BOOK SERVING -----------------------------------
 

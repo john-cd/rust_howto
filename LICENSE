@@ -12,7 +12,7 @@ Copyright (C) 2024, 2025, and later John CD <https://github.com/john-cd> - All R
 
 ## License: Code Examples and Software
 
-Notwithstanding the above, all code examples included in or linked from the book, under the `bk/crates` and `xmpl` folders, are licensed under the Creative Commons Zero v1.0 Universal License [LICENSE-CC0][CC0]⮳. All other code (e.g., under the `tools`, `mdbook-scrub`, `publish` folders) is licensed under either of the Apache License Version 2.0 or the MIT license at your option, per the Rust community custom.
+Notwithstanding the above, all code examples included in or linked from the book, under the `bk/crates` and `xmpl` folders, are licensed under the Creative Commons Zero v1.0 Universal License [LICENSE-CC0][CC0]⮳. All other code (e.g., under the `tools`, `publish` folders) is licensed under either of the Apache License Version 2.0 or the MIT license at your option, per the Rust community custom.
 
 TODO issue of using CC0 for software??
 

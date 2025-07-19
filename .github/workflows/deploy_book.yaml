@@ -43,9 +43,9 @@ jobs:
           rustup default stable
           rustup toolchain install nightly
           rustup show
-      - name: Build & release mdbook-scrub
+      - name: Build & release the tools, incl. mdbook-scrub
         run: cargo +nightly build --bins --locked --release -Z unstable-options --artifact-dir "../bin"
-        working-directory: './mdbook-scrub'
+        working-directory: './tools'
       - name: Build the book
         run: |
           mdbook build
