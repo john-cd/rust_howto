@@ -1,11 +1,25 @@
 # TODOs
 
+## Now
+
 - language section: write / finish
   - finish to add RBE link #29
 
 - polish std_lib
 
 - polish contributing
+
+- polish links
+
+- finish new tools in wip folder
+  - parser_lib
+  - inline_links
+  - process_directives
+  - link_checker
+
+- Close NOW tickets: WIP
+- Go trough VS Code bookmarks (WSL): WIP
+- Go trough VS Code bookmarks (dev container): WIP
 
 - crate_selection - solo or part of indices?
 
@@ -46,7 +60,7 @@
 
 - `other` section - move what's ready
 
-- polish links
+
 
 - polish thanks
   - License / legal rethink
@@ -56,19 +70,12 @@
   - rethink crates_alpha and categories
   - categories.md
 
-- clean playground
-  - move WIP examples from playground
+- move WIP examples from playground
 
 - finish
   - auth
 
 - move rest of links from TOREVIEW.md
-
-## Now
-
-- Close NOW tickets: WIP
-- Go trough VS Code bookmarks (WSL): WIP
-- Go trough VS Code bookmarks (dev container): WIP
 
 ## Finish examples
 
@@ -84,7 +91,7 @@
 
 ## Finish pandoc setup; generate PDF version of book WIP
 
-- pandoc
+- pandoc / typst
 - kindle create
 
 <https://gumroad.com>
