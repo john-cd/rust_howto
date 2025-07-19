@@ -17,7 +17,7 @@
 [p~enums]: ../../../language/enums.md
 [p~functions]: ../../../language/functions.md
 [p~language]: ../../../language/index.md
-[p~macros]: ../../../language/macros.md
+[p~macros]: ../../../../src/language/macros.md
 [p~maps]: ../../data-structures/maps.md
 [p~parse]: ../../date-and-time/parse.md
 [p~unix]: # "../../os_unix-apis/unix.md"

@@ -39,7 +39,7 @@
 [p~language]: ../../language/index.md
 [p~links]: ../../../drafts/links/links.md
 [p~macos]: ../os_macos-apis/macos.md
-[p~macros]: ../../language/macros.md
+[p~macros]: ../../../src/language/macros.md
 [p~maintaining]: maintaining.md
 [p~regex]: ../text-processing/regex.md
 [p~testing]: ../development-tools_testing/testing.md

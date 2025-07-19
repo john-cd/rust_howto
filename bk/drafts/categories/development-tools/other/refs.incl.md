@@ -17,7 +17,7 @@
 [p~functions]: ../../../language/functions.md
 [p~fuzzing]: ../../development-tools_testing/fuzzing.md
 [p~linux]: # "../../os_linux-apis/linux.md"
-[p~macros]: ../../../language/macros.md
+[p~macros]: ../../../../src/language/macros.md
 [p~main]: ../../../language/entrypoint.md
 [p~memory]: ../../development-tools_profiling/memory_usage_analysis.md
 [p~option]: # "../../../standard_library/option.md"

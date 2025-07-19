@@ -32,7 +32,7 @@
 [p~functions]: ../../language/functions.md
 [p~futures]: futures.md
 [p~language]: ../../language/index.md
-[p~macros]: ../../language/macros.md
+[p~macros]: ../../../src/language/macros.md
 [p~main]: ../../language/entrypoint.md
 [p~node]: ../development-tools_ffi/node.md
 [p~standard-library]: ../../../drafts/standard-library/index.md

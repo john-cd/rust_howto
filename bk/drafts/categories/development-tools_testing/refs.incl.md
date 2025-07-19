@@ -24,7 +24,7 @@
 [p~functions]: ../../language/functions.md
 [p~install]: ../development-tools/installation/install.md
 [p~language]: ../../language/index.md
-[p~macros]: ../../language/macros.md
+[p~macros]: ../../../src/language/macros.md
 [p~modules]: ../../code_organization/modules.md
 [p~requests]: ../web-programming_http-client/requests.md
 [p~scripting]: # "../../other/scripting/index.md"

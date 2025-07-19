@@ -7,7 +7,6 @@
 
 - [Language](language/index.md)
   - [Generics](language/generics.md)
-  - [Macros](language/macros.md)
 
 - [Smart Pointers](standard_library/smart_pointers.md)
 

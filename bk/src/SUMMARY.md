@@ -31,6 +31,7 @@
   - [Traits](../src/language/traits.md)
   - [`impl Trait`](language/impl_trait.md)
   - [Trait Objects](language/trait_objects.md)
+  - [Macros](language/macros.md)
 
 - [Standard Library](standard_library/index.md)
   - [Option](standard_library/option.md)

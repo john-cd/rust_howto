@@ -36,7 +36,7 @@
 [p~error-handling]: ../rust-patterns/error_handling/error_handling.md
 [p~formatting]: ../development-tools/formatting/formatting.md
 [p~log]: log.md
-[p~macros]: ../../language/macros.md
+[p~macros]: ../../../src/language/macros.md
 [p~main]: ../../language/entrypoint.md
 [p~modules]: ../../code_organization/modules.md
 [p~parse]: ../date-and-time/parse.md

@@ -21,7 +21,7 @@
 [p~images]: # "../../multimedia_images/images.md"
 [p~linux]: # "../../os_linux-apis/linux.md"
 [p~macos]: # "../../os_macos-apis/macos.md"
-[p~macros]: ../../language/macros.md
+[p~macros]: ../../../src/language/macros.md
 [p~main]: ../../language/entrypoint.md
 [p~memory]: ../development-tools_profiling/memory_usage_analysis.md
 [p~modules]: ../../code_organization/modules.md
