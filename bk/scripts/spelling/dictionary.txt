@@ -3238,3 +3238,13 @@ TypeAlias
 monorepo
 docall
 ietf
+ItemStruct
+DSLs
+MyCustomDeriveMacro
+FnArg
+metavariable
+metavariables
+stmt
+variadic
+param
+matchers
