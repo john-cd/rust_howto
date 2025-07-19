@@ -4,6 +4,10 @@ Rust is a modern programming language that offers high performance, reliability,
 
 This section of the book is a summary of the Rust language documentation.
 
+[Rust book][book~rust]
+
+
+
 {{#include index.incl.md}}
 
 {{#include refs.incl.md}}

@@ -23,7 +23,7 @@
 [p~crates]: ../../crate_selection/index.md
 [p~functions]: ../../language/functions.md
 [p~install]: ../development-tools/installation/install.md
-[p~language]: ../../language/index.md
+[p~language]: ../../../src/language/index.md
 [p~macros]: ../../../src/language/macros.md
 [p~modules]: ../../code_organization/modules.md
 [p~requests]: ../web-programming_http-client/requests.md

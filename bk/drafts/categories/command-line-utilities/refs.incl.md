@@ -9,6 +9,6 @@
 [p~configuration]: ../config/configuration.md
 [p~filesystem]: ../filesystem/index.md
 [p~install]: ../development-tools/installation/install.md
-[p~language]: ../../language/index.md
+[p~language]: ../../../src/language/index.md
 [p~rustup]: ../development-tools/installation/rustup.md
 [p~url]: ../web-programming/url.md

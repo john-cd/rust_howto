@@ -31,7 +31,7 @@
 [p~csv]: # "../../other/data-processing/csv.md"
 [p~encoding]: index.md
 [p~json]: ../parser-implementations/json.md
-[p~language]: ../../language/index.md
+[p~language]: ../../../src/language/index.md
 [p~memory]: ../development-tools_profiling/memory_usage_analysis.md
 [p~network-programming]: ../network-programming/index.md
 [p~parsing]: # "../parsing/index.md"

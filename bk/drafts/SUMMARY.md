@@ -5,8 +5,7 @@
 
 # Language, Standard Library, and Code Organization
 
-- [Language](language/index.md)
-  - [Generics](language/generics.md)
+- [Generics](language/generics.md)
 
 - [Smart Pointers](standard_library/smart_pointers.md)
 

@@ -31,7 +31,7 @@
 [p~crates]: ../../crate_selection/index.md
 [p~functions]: ../../language/functions.md
 [p~futures]: futures.md
-[p~language]: ../../language/index.md
+[p~language]: ../../../src/language/index.md
 [p~macros]: ../../../src/language/macros.md
 [p~main]: ../../language/entrypoint.md
 [p~node]: ../development-tools_ffi/node.md

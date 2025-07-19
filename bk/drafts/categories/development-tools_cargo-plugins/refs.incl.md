@@ -36,7 +36,7 @@
 [p~formatting]: ../development-tools/formatting/formatting.md
 [p~ides]: ../text-editors/ides.md
 [p~json]: ../parser-implementations/json.md
-[p~language]: ../../language/index.md
+[p~language]: ../../../src/language/index.md
 [p~links]: ../../../drafts/links/links.md
 [p~macos]: ../os_macos-apis/macos.md
 [p~macros]: ../../../src/language/macros.md
