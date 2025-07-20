@@ -6,6 +6,8 @@ This book is going through HEAVY EDITS. Pardon the dust.
 A large number of chapters, pages, and examples are currently hidden, as we are reorganizing the book.
 </div>
 
+Rust is a modern programming language that offers high performance, reliability, and productivity. It is designed to prevent common errors such as memory leaks{{hi:Memory leaks}}, data races{{hi:Data races}}, and null pointer dereferences{{hi:Null pointer dereferences}}, by enforcing strict rules at compile time. Rust supports powerful features such as generics{{hi:Generics}}, traits{{hi:Traits}}, macros{{hi:Macros}}, and concurrency{{hi:Concurrency}}, making it suitable for a wide range of applications.
+
 ## What You Will Find Here
 
 This book is **a compendium of Rust ecosystem examples and resources**. It is intended to be **everything you need for day-to-day Rust coding, in one place**. It demonstrates good practices to accomplish common programming tasks, using the crates of the Rust ecosystem. It summarizes the language and key features of the standard library. It includes numerous links to Rust resources.

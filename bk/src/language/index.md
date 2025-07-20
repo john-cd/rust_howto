@@ -1,12 +1,8 @@
 # Rust Language
 
-Rust is a modern programming language that offers high performance, reliability, and productivity. It is designed to prevent common errors such as memory leaks{{hi:Memory leaks}}, data races{{hi:Data races}}, and null pointer dereferences{{hi:Null pointer dereferences}}, by enforcing strict rules at compile time. Rust also supports powerful features such as generics{{hi:Generics}}, traits{{hi:Traits}}, macros{{hi:Macros}}, and concurrency{{hi:Concurrency}}, making it suitable for a wide range of applications.
+This section is designed to provide a quick reference for Rust's language features, syntax, and best practices.
 
-This section of the book is a summary of the Rust language documentation.
-
-[Rust book][book~rust]
-
-
+It is not intended to be a beginner's book nor a comprehensive guide, but rather a tool for those who are looking to refresh their knowledge. The [`Rust book`][book~rust]{{hi:Rust book}}⮳ is an excellent resource for complete beginners to get started with. Refer as well to the [[books | books]] chapter for a list of relevant books.
 
 {{#include index.incl.md}}
 
@@ -14,5 +10,4 @@ This section of the book is a summary of the Rust language documentation.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[review NOW](https://github.com/john-cd/rust_howto/issues/986)
 </div>
