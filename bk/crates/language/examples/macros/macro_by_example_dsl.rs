@@ -145,16 +145,16 @@ fn main() {
         }
     };
 
-    println!("{:#?}", app_config);
+    println!("{app_config:#?}");
 
     // You can now access values like this:
     if let Some(ConfigValue::Boolean(debug)) = app_config.get("debug_mode") {
-        println!("Debug mode: {}", debug);
+        println!("Debug mode: {debug}");
     }
 
     if let Some(ConfigValue::Map(db_config)) = app_config.get("database") {
         if let Some(ConfigValue::Number(port)) = db_config.get("port") {
-            println!("Database port: {}", port);
+            println!("Database port: {port}");
         }
     }
 }
