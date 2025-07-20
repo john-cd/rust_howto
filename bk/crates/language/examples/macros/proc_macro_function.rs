@@ -1,3 +1,4 @@
+#![allow(unused)]
 // ANCHOR: example
 // Import our custom function-like macro.
 use proc_macros::sql;

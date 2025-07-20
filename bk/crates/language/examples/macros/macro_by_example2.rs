@@ -1,3 +1,4 @@
+#![allow(unused)]
 // ANCHOR: example
 macro_rules! print_args {
     // Rule 1: Matches one expression.

@@ -1,3 +1,4 @@
+#![allow(unused)]
 // ANCHOR: example
 // Import our custom attribute macro.
 use proc_macros::log_calls;

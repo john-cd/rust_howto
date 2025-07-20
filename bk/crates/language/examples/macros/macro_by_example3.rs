@@ -1,3 +1,4 @@
+#![allow(unused)]
 // ANCHOR: example
 macro_rules! sum {
     // `$x:expr` matches an expression.

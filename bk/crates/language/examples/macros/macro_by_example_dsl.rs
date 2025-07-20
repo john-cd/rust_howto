@@ -1,3 +1,4 @@
+#![allow(unused)]
 // ANCHOR: example
 //! This macro provides a domain-specific language (DSL) for defining
 //! configuration for an application. Instead of using a HashMap, or a struct
@@ -18,7 +19,7 @@ pub enum ConfigValue {
 // Our DSL Macro.
 //
 // The `#[macro_export]` attribute makes the `config!` macro available to other
-// crates.
+// crates. See <https://doc.rust-lang.org/reference/macros-by-example.html#path-based-scope>.
 #[macro_export]
 macro_rules! config {
     // Base case: no more tokens, return an empty HashMap.

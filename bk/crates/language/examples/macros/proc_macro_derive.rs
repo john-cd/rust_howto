@@ -1,3 +1,4 @@
+#![allow(unused)]
 // ANCHOR: example
 use proc_macros::DebugPrint;
 

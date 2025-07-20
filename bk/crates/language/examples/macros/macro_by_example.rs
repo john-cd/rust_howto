@@ -1,3 +1,4 @@
+#![allow(unused)]
 // ANCHOR: example
 /// A basic macro-by-example (from the Rust By Example book).
 macro_rules! say_hello {
