@@ -15,7 +15,7 @@ Here is a example of a short, inline closure with a simple expression as its bod
 
 {{i:Closures}} can capture variables{{hi:Capture of variables}} from their surrounding scope:
 
-- by reference: `&T`,
+- by reference: `&T`, where `T` is a type,
 - by mutable reference: `&mut T`, or
 - by value: `T`.
 
