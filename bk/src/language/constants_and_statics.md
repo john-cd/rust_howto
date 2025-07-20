@@ -4,7 +4,7 @@
 
 Both `const` (constants) and `static` (static variables) are used to declare values that live for the entire duration of a program.
 
-## Constants {#constants}
+## Declare Constants {#constants}
 
 Constants, declared using the `const` keyword, are values that are inlined directly into the code wherever they are used. Think of them as symbolic names for literal values that are known at compile time.
 
@@ -27,7 +27,7 @@ Constants are primarily used for values that truly never change throughout the l
 - [Constants (Rust book)](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html#constants)⮳.
 - [Constant evaluation (Rust reference)](https://doc.rust-lang.org/reference/const_eval.html)⮳.
 
-## Statics {#statics}
+## Declare Statics {#statics}
 
 Static variables (declared with `static`) represent a single, fixed location in memory for the entire duration of the program. They are effectively global variables.
 

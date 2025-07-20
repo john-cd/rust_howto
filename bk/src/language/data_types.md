@@ -2,7 +2,7 @@
 
 {{#include data_types.incl.md}}
 
-## Scalar Data Types {#scalar-data-types}
+## Use Scalar Data Types {#scalar-data-types}
 
 [![Rust by example - Primitives][book~rust-by-example~primitives~badge]][book~rust-by-example~primitives]{{hi:Primitives}}
 
@@ -24,7 +24,7 @@ The following illustrates the various scalar data types:
 {{#include ../../crates/language/examples/data_types/scalar_data_types.rs:example}}
 ```
 
-## Compound Data Types: Tuples and Arrays {#compound-types}
+## Declare and Use Compound Data Types: Tuples and Arrays {#compound-types}
 
 [![Rust by example - tuples][book~rust-by-example~tuples~badge]][book~rust-by-example~tuples] [![Rust by example - array][book~rust-by-example~array~badge]][book~rust-by-example~array]
 
@@ -43,7 +43,7 @@ The following provides examples of tuples and arrays:
 {{#include ../../crates/language/examples/data_types/compound_data_types.rs:example}}
 ```
 
-## String Types {#string-types}
+## Declare Strings {#string-types}
 
 Primitive type `str` is a string slice that represents a view into a string, allowing you to access a portion of a string without owning it. It is immutable and typically used as a reference type, denoted as `&str`, which allows for efficient borrowing of string data. Its memory can be on the heap, stack, or static. String slices must always be valid UTF-8. `&'static str` is the type of string literals.
 
@@ -57,7 +57,7 @@ Primitive type `str` is a string slice that represents a view into a string, all
 
 Strings are covered in much more details in the [[strings | Strings]] and [[text-processing | Text Processing]] chapters.
 
-## Special Types {#special-types}
+## Use the Unit and Never Special Types {#special-types}
 
 | Type Family | Types | Examples |
 |---|---|---|
@@ -70,7 +70,7 @@ See also the [[functions | Functions]] chapter.
 {{#include ../../crates/language/examples/data_types/unit_never.rs:example}}
 ```
 
-## Type Aliases {#type-aliases}
+## Declare a Type Alias {#type-aliases}
 
 A type alias is a way to give a new name to an existing type, making code easier to read and write. It does not create a new type, meaning the original type's properties still apply.
 
