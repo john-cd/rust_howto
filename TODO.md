@@ -60,8 +60,6 @@
 
 - `other` section - move what's ready
 
-
-
 - polish thanks
   - License / legal rethink
 
