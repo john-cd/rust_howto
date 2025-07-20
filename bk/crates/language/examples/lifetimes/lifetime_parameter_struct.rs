@@ -13,7 +13,7 @@ impl Excerpt<'static> {
 
 /// An implementation block for the struct.
 /// The `'_` notation indicates that the struct takes a lifetime parameter,
-/// but it does not matter which, and the lifetime is not referenced in the
+/// but it does not matter which, because the lifetime is not referenced in the
 /// block.
 impl Excerpt<'_> {
     fn level(&self) -> i32 {

@@ -14,7 +14,19 @@ Enums are custom data types that define a set of possible 'variants' or states t
 
 If we make an enum{{hi:Enums}} public, all of its variants are then public. We only need [`pub`][book~rust-reference~visibility-and-privacy]{{hi:pub}}⮳ before the [`enum`][book~rust-reference~enum]⮳ keyword.
 
-### Common `enums` {#common-enums}
+## Define Generic Enums {#generic-enums}
+
+Generic enums are declared similarly to generic structs, with type parameters between `<` and `>` after the enum name.
+The most common example is the `Result` enum.{{hi:Result}} It can either hold a value of type `T` (in the `Ok` variant) or an error value of type `E` (in the `Err` variant):
+
+```rust,noplayground
+enum Result<T, E> {
+    Ok(T),
+    Err(E),
+}
+```
+
+## Common `enums` {#common-enums}
 
 See:
 

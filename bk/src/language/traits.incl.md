@@ -14,4 +14,6 @@
 | [Provide a Blanket Implementation of a Trait][ex~language~blanket-implementations] |
 | [Prohibit Trait Implementation with the Sealed Trait Pattern][ex~language~sealed-trait-pattern] |
 | [Implement a Local Trait for a Type Defined Elsewhere][ex~language~traits-types-elsewhere] |
-| [Define Generic Traits][ex~language~write-generic-traits] |
+| [Define Traits that Work with Multiple Types (Generic Traits)][ex~language~write-generic-traits] |
+| [Implement Trait Bounds for Multiple Traits][ex~language~multiple-traits] |
+| [Trait Bounds][ex~language~trait-bounds] |

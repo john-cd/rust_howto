@@ -16,7 +16,7 @@
 [p~embedded]: # "../../embedded/index.md"
 [p~functions]: ../../language/functions.md
 [p~fuzzing]: ../development-tools_testing/fuzzing.md
-[p~generics]: ../../language/generics.md
+[p~generics]: ../../../src/language/generics.md
 [p~ides]: ../text-editors/ides.md
 [p~images]: # "../../multimedia_images/images.md"
 [p~linux]: # "../../os_linux-apis/linux.md"

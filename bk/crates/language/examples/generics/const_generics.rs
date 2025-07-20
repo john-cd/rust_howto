@@ -6,10 +6,22 @@
 /// which must be followed by a type declaration.
 struct InnerArray<T, const N: usize>([T; N]);
 
+impl<T: std::marker::Copy, const N: usize> InnerArray<T, N> {
+    fn new(val: T) -> Self {
+        InnerArray([val; N])
+    }
+
+    fn len(&self) -> usize {
+        N // The size N is known at compile time.
+    }
+}
+
 fn main() {
     // Use a type with a const generic.
-    // The `N` constant is 3, since the array is `[i32; 3]`.
-    let _inner_array: InnerArray<i32, 3> = InnerArray([1, 2, 3]);
+    let array: InnerArray<i32, 3> = InnerArray::new(42);
+    let len = array.len();
+    println!("Array length: {len}");
+    assert_eq!(len, 3);
 }
 // ANCHOR_END: example
 

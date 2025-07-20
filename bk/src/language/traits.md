@@ -129,13 +129,35 @@ Beware that blanket `impl` apply globally and can lead to conflicts if overused.
 {{#include ../../crates/language/examples/traits/blanket_implementations.rs:example}}
 ```
 
-## Define Generic Traits {#generic-traits}
+## Define Generic Traits that Work with Multiple Types {#generic-traits}
 
-This topic is covered in the [[generics | Generics]] chapter.
+Generic traits allow you to define a shared set of behaviors that can be implemented by multiple types, enabling code reuse and polymorphism:
 
-## Pass or Return Anonymous Types to Functions with `impl Trait` {#skip}
+```rust,editable
+{{#include ../../crates/language/examples/traits/generic_traits.rs:example}}
+```
 
-This topic is covered in the [[impl_trait | Impl Trait]] chapter.
+## Use a Trait Bound to Guarantee that a Generic Type Implements a Trait {#trait-bounds}
+
+Trait bounds are often used with generics to specify that a generic type must implement a particular trait. Traits bounds can be applied to generic parameters of a function, allowing the function to accept any type that implements the specified trait, or used in a type definition or `impl` block:
+
+```rust,editable
+{{#include ../../crates/language/examples/traits/trait_bounds.rs:example}}
+```
+
+Trait bounds are specified using the `TypeParameter: Trait` syntax, where `TypeParameter` is a generic type parameter and `Trait` is the trait that the type must implement. There are written within `< >` or in a separate `where` clause, which can be more readable. The `impl Trait` syntax may also used:
+
+```rust,editable
+{{#include ../../crates/language/examples/traits/trait_bounds2.rs:example}}
+```
+
+Bounds with multiple traits are possible:
+
+```rust,editable
+{{#include ../../crates/language/examples/traits/trait_bounds_multiple_traits.rs:example}}
+```
+
+For more details on trait bounds, see the [[generics | Generics]] and [[impl_trait | Impl Trait]] chapters.
 
 ## Use Async with Traits {#async-and-traits}
 

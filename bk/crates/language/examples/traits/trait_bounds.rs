@@ -4,6 +4,7 @@ use std::collections::hash_map::DefaultHasher;
 use std::hash::Hash;
 use std::hash::Hasher;
 
+/// `GenericTypeParameter: Trait` is called the "trait bound" syntax.
 /// Trait bounds allow you to specify that a generic type must implement a
 /// certain trait.
 ///
@@ -24,9 +25,8 @@ struct Pair<A, B> {
     second: B,
 }
 
-// Generics make it possible to implement a trait conditionally.
-// Here, the `Pair` type implements `Hash` if, and only if,
-// its components do.
+// Generics and trait bounds make it possible to implement a trait
+// conditionally. Here, the `Pair` type implements `Hash` if its components do.
 impl<A: Hash, B: Hash> Hash for Pair<A, B> {
     fn hash<H: Hasher>(&self, state: &mut H) {
         self.first.hash(state);
