@@ -33,6 +33,7 @@
   - [Trait Objects](language/trait_objects.md)
   - [Generics](language/generics.md)
   - [Macros](language/macros.md)
+  - [Naming Conventions](language/naming_conventions.md)
 
 - [Standard Library](standard_library/index.md)
   - [Option](standard_library/option.md)
@@ -53,11 +54,13 @@
 
 - [Links]()
   - [Cheat Sheets](links/rust_cheatsheets.md)
+  - [Meetings](links/meetings.md)
+  - [Videos](links/videos.md)
 
 - [Contributing](contributing/index.md)
   - [Topics of Interest](contributing/topics_of_interest.md)
   - [Repository Structure](contributing/repo_structure.md)
-  - [Environment Setup](contributing/dev_environment_setup.md)
+  - [Development Environment Setup](contributing/dev_environment_setup.md)
   - [Editing](contributing/development_editing.md)
   - [Book Preprocessors](contributing/preprocessors.md)
   - [Dev Containers and Docker](contributing/dev_container_docker.md)
