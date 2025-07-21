@@ -1,4 +1,4 @@
 ||
 |--------|
-| [Constants][ex~language~constants] |
-| [Statics][ex~language~statics] |
+| [Declare Constants][ex~language~constants] |
+| [Declare Statics][ex~language~statics] |
