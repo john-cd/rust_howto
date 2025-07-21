@@ -21,7 +21,6 @@
 [ex~language~const-generics]: generics.md#const-generics
 [ex~language~constants-in-traits]: traits.md#constants-in-traits
 [ex~language~constants]: constants_and_statics.md#constants
-[ex~language~conversion-conventions]: naming_conventions.md#conversion-conventions
 [ex~language~copy-semantics]: ownership_borrowing.md#copy-semantics
 [ex~language~create-an-iterator]: iterators.md#create-an-iterator
 [ex~language~create-slices]: slices.md#create-slices
@@ -47,7 +46,6 @@
 [ex~language~function]: functions.md#function
 [ex~language~generic-enums]: enums.md#generic-enums
 [ex~language~generic-traits]: traits.md#generic-traits
-[ex~language~getter-conventions]: naming_conventions.md#getter-conventions
 [ex~language~if-else]: control_flow.md#if-else
 [ex~language~if-let]: match.md#if-let
 [ex~language~ignore-values]: match.md#ignore-values
@@ -56,7 +54,6 @@
 [ex~language~impl-trait]: impl_trait.md#impl-trait
 [ex~language~implement-intoiterator]: iterators.md#implement-intoiterator
 [ex~language~implement-trait-for-struct]: structs.md#implement-trait-for-struct
-[ex~language~iterator-conventions]: naming_conventions.md#iterator-conventions
 [ex~language~iterator-trait]: iterators.md#iterator-trait
 [ex~language~labeled-block-expressions]: control_flow.md#labeled-block-expressions
 [ex~language~let-else]: match.md#let-else
@@ -77,7 +74,6 @@
 [ex~language~move-closures]: closures.md#move-closures
 [ex~language~move-semantics]: ownership_borrowing.md#move-semantics
 [ex~language~must-use]: attributes.md#must-use
-[ex~language~naming-conventions]: naming_conventions.md#naming-conventions
 [ex~language~newtype-pattern]: traits.md#newtype-pattern
 [ex~language~only-one-base-trait]: trait_objects.md#only-one-base-trait
 [ex~language~or-patterns]: match.md#or-patterns
@@ -139,7 +135,6 @@
 [ex~language~constants_and_statics]: constants_and_statics.md
 [ex~language~entrypoint]: entrypoint.md
 [ex~language~rust_install]: rust_install.md
-[ex~language~naming_conventions]: naming_conventions.md
 [ex~language~control-flow]: control_flow.md
 [ex~language~attributes]: attributes.md
 [ex~language~enums]: enums.md
@@ -152,9 +147,9 @@
 [p~documentation]: # "../categories/development-tools/documentation/documentation.md"
 [p~enums]: enums.md
 [p~functions]: functions.md
-[p~option]: # "../standard-library/option.md"
+[p~option]: ../standard_library/option.md
 [p~rustup]: # "../categories/development-tools/installation/rustup.md"
-[p~standard-library]: # "../standard-library/index.md"
+[p~standard-library]: ../standard_library/index.md
 [p~structs]: structs.md
 [p~traits]: traits.md
 [p~unix]: # "../categories/os_unix-apis/unix.md"

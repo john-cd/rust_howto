@@ -21,4 +21,3 @@
 | [Attributes][ex~language~attributes] |
 | [Generics][ex~language~generics] |
 | [Macros][ex~language~macros] |
-| [Naming conventions][ex~language~naming-conventions] |

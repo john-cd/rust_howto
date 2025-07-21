@@ -20,6 +20,11 @@
 [ex~code_organization~visibility-rules]: visibility.md#visibility-rules
 [ex~code_organization~visibility-scope]: visibility.md#visibility-scope
 [ex~code_organization~visible-to-library-clients]: visibility.md#visible-to-library-clients
+[ex~language~conversion-conventions]: naming_conventions.md#conversion-conventions
+[ex~language~naming-conventions]: naming_conventions.md#naming-conventions
+[ex~language~iterator-conventions]: naming_conventions.md#iterator-conventions
+[ex~language~naming_conventions]: naming_conventions.md
+[ex~language~getter-conventions]: naming_conventions.md#getter-conventions
 [p~enums]: # "../language/enums.md"
 [p~functions]: # "../language/functions.md"
 [p~option]: # "../standard-library/option.md"

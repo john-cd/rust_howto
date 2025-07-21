@@ -30,6 +30,10 @@ Rust's "module system" helps structure your projects effectively. It gives you f
 
 {{#include code_organization.incl.md}}
 
+## Naming Conventions
+
+{{#include naming_conventions.incl.md}}
+
 ## Related Topics
 
 - [[package_layout | Package Layout]].

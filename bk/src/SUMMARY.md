@@ -4,13 +4,6 @@
 
 ## Language, Standard Library, and Code Organization
 
-- [Code Organization](code_organization/index.md)
-  - [Modules and Paths](code_organization/modules.md)
-  - [Visibility](code_organization/visibility.md)
-  - [`use` Keyword](code_organization/use_keyword.md)
-  - [Dependencies](code_organization/dependencies.md)
-  - [Code Organization by Project Type and Size](code_organization/code_organization.md)
-
 - [Language](language/index.md)
   - [Rust Installation and First Steps](language/rust_install.md)
   - [Entrypoint](language/entrypoint.md)
@@ -33,7 +26,6 @@
   - [Trait Objects](language/trait_objects.md)
   - [Generics](language/generics.md)
   - [Macros](language/macros.md)
-  - [Naming Conventions](language/naming_conventions.md)
 
 - [Standard Library](standard_library/index.md)
   - [Option](standard_library/option.md)
@@ -45,6 +37,14 @@
     - [Clone-on-Write (Cow)](standard_library/cow.md)
   - [AsRef](standard_library/asref.md)
   - [Automatic Trait Derivation (Derive)](standard_library/derive.md)
+
+- [Code Organization](code_organization/index.md)
+  - [Modules and Paths](code_organization/modules.md)
+  - [Visibility](code_organization/visibility.md)
+  - [`use` Keyword](code_organization/use_keyword.md)
+  - [Dependencies](code_organization/dependencies.md)
+  - [Code Organization by Project Type and Size](code_organization/code_organization.md)
+  - [Naming Conventions](code_organization/naming_conventions.md)
 
 ## Categories
 
