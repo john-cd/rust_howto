@@ -111,7 +111,7 @@ See also [[cross_compiling | Cross Compiling (Cargo Plugins)]].
 - [assertables](https://docs.rs/assertables/latest/assertables/)
 - [proptest: Hypothesis-like property testing for Rust](https://github.com/proptest-rs/proptest)
 
-## Cargo plugins
+## Cargo Plugins
 
 - [cargo-semver-checks](https://crates.io/crates/cargo-semver-checks)
 - [cargo-c](https://crates.io/crates/cargo-c)

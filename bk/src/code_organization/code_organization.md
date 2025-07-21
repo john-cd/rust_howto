@@ -120,7 +120,7 @@ mod module1 {
 }
 ```
 
-## Flatten the Module Hierarchy using Reexports {#flatten-module-hierarchy}
+## Flatten the Module Hierarchy Using Reexports {#flatten-module-hierarchy}
 
 Instead of working with deeply-nested modules, it is convenient to keep submodules private and reexport items of interest instead.
 
@@ -147,7 +147,7 @@ use module1::Struct1;
 
 See the [[use_keyword | `use` keyword]] chapter.
 
-## Create a Prelude for Commonly Used Items of your Library {#prelude}
+## Create a Prelude for Commonly Used Items of Your Library {#prelude}
 
 Library crates with complex public APIs or deeply nested modules often define a "prelude", a public module that reexports their most commonly used items.
 
@@ -229,7 +229,7 @@ fn main() {
 }
 ```
 
-## Organize Large Projects using a Workspace {#large-projects}
+## Organize Large Projects Using a Workspace {#large-projects}
 
 If your project is large, you may want to split it into several crates, which you then depend on in your main project. For example, you may create a `xyz-core` crate, a `xyz-derive` crate for procedural macros that let you `#[derive(...)]` traits defined in your core crate, a `xyz-utils` crate, and a `xyz` main crate that binds all subcrates together.
 
@@ -240,7 +240,7 @@ You will most often create a 'Cargo workspace' to tie together your project's cr
 A typical organization may look as follows:
 
 ```txt
-# The root folder of your workspace.
+# The root folder of your Workspace.
 - lib1/ # First package subfolder (a library crate).
   - src/
     - lib.rs

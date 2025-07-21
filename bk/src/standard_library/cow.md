@@ -46,7 +46,7 @@ It is common to return a `Cow` from a function, if the (borrowed) input is retur
 {{#include ../../crates/standard_library/examples/cow/into_cow.rs:example}}
 ```
 
-## Convert a `Cow` to a borrowed or owned type {#convert-cow-to-str}
+## Convert a `Cow` to a Borrowed or Owned Type {#convert-cow-to-str}
 
 To use as a borrowed type, call a method from one of the following traits:
 

@@ -32,7 +32,7 @@ Use `Box<T>` when
 
 Do not use `Box` for small, fixed-size types, or when you only need a reference: If you just need to borrow a value, use `&T` (immutable reference) or `&mut T` (mutable reference).
 
-## Use `Box` to store Dynamically Sized Types {#box-dst}
+## Use `Box` to Store Dynamically Sized Types {#box-dst}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 

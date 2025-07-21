@@ -4,7 +4,7 @@
 
 {{i:Control flow}} constructs allow you to run code conditionally or repeatedly, directing the "flow" of your program's execution. Rust provides several familiar ways to do this.
 
-## Execute Code based on a Condition using `if` and `else` {#if-else}
+## Execute Code based on a Condition Using `if` and `else` {#if-else}
 
 [![Rust by example - if else][book~rust-by-example~if_else~badge]][book~rust-by-example~if_else]
 
@@ -16,7 +16,7 @@
 
 Refer to the [[match | match]] chapter for `if let` expressions.
 
-## Create Loops using `loop` {#loop}
+## Create Loops Using `loop` {#loop}
 
 [![Rust by example - loop][book~rust-by-example~loop~badge]][book~rust-by-example~loop]
 

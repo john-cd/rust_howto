@@ -99,7 +99,7 @@ The following methods extract the contained value in an [`std::option::Option`][
 {{#include ../../crates/standard_library/examples/option/option_unwrap.rs:example}}
 ```
 
-### Transform Values Contained within an `Option` {#combinators}
+### Transform Values Contained Within an `Option` {#combinators}
 
 [![std][c~std~docs~badge]][c~std~docs]
 

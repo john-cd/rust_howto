@@ -13,7 +13,7 @@
 
 - [Pake: Turn any webpage into a desktop app with Rust](https://github.com/tw93/Pake)
 
-## markdown {#skip}
+## Markdown {#skip}
 
 - [`mdbook-pdf`](https://crates.io/crates/mdbook-pdf)
 
@@ -63,7 +63,7 @@
 
 - [Other reprs - The Rustonomicon](https://doc.rust-lang.org/nomicon/other-reprs.html)
 
-## List of crates available in the Rust Playground {#skip}
+## List of crates Available in the Rust Playground {#skip}
 
 - [rust-lang/rust-playground](https://github.com/rust-lang/rust-playground/blob/main/compiler/base/Cargo.toml)
 
@@ -89,7 +89,7 @@
 
 - [hello-world.rs: Memory safe, blazing fast, configurable, minimal hello world written in rust() in a few lines of code with few(1092) dependencies](https://github.com/mTvare6/hello-world.rs)
 
-## Rust links to sort {#skip}
+## Rust links to Sort {#skip}
 
 - [`geckodriver`: WebDriver for Firefox](https://github.com/mozilla/geckodriver)
 

@@ -26,7 +26,7 @@ Get platform-specific locations for [configuration][p~configuration], cache, and
 {{#include ../../../crates/cats/filesystem/examples/user_directories/directories.rs:example}}
 ```
 
-## Open a file or URL using the program configured on your System {#open}
+## Open a File or URL using the Program Configured on your System {#open}
 
 [![open][c~open~docs~badge]][c~open~docs] [![open~crates.io][c~open~crates.io~badge]][c~open~crates.io] [![open~github][c~open~github~badge]][c~open~github] [![open~lib.rs][c~open~lib.rs~badge]][c~open~lib.rs]{{hi:open}}{{hi:open}}{{hi:Xdg-open}}{{hi:Start}}{{hi:Launch}}
 
