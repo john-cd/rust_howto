@@ -32,7 +32,7 @@ Note the following:
 
 ## Lifetime Elision Rules {#lifetime-elision-rules}
 
-As discussed above, Rust's compiler infers most lifetimes. More specifically, it has "lifetime elision rules" that allow you to omit them in common, unambiguous cases. This reduces boilerplate.
+As discussed above, Rust's compiler infers most lifetimes. More specifically, it has "lifetime elision rules" that allow you to omit them in common, unambiguous cases. This reduces boilerplate.{{hi:Lifetime elision rules}}
 
 - Each input lifetime parameter gets its own lifetime parameter. `fn foo(x: &str)` is automatically treated as `fn foo<'a>(x: &'a str)`.
 - If there is exactly one input lifetime parameter, that lifetime is assigned to all output lifetime parameters. `fn foo(x: &str) -> &str` is treated as `fn foo<'a>(x: &'a str) -> &'a str`.
@@ -97,7 +97,8 @@ Instead, you may:
 
 ## References {#skip}
 
-[Self-referential Structs](https://ksnll.github.io/rust-self-referential-structs)⮳.
+- [Lifetime elision rules (Rust reference)](https://doc.rust-lang.org/reference/lifetime-elision.html)⮳.
+- [Self-referential Structs](https://ksnll.github.io/rust-self-referential-structs)⮳.
 
 ## Related Topics {#skip}
 
