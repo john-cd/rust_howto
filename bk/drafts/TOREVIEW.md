@@ -16,6 +16,8 @@
 ## Markdown {#skip}
 
 - [`mdbook-pdf`](https://crates.io/crates/mdbook-pdf)
+- [`mdbook-tools`](https://lib.rs/crates/mdbook-tools)
+- [Environment Variables - mdBook Documentation](https://rust-lang.github.io/mdBook/format/configuration/environment-variables.html)
 
 ## ML / Search {#skip}
 
@@ -44,12 +46,6 @@
 ## Dev {#skip}
 
 - [Sonatype supports secure development in Rust | Security Info Watch](https://www.securityinfowatch.com/cybersecurity/press-release/55277880/sonatype-supports-secure-development-in-rust)
-
-## Markdown {#skip}
-
-- [`mdbook-tools`](https://lib.rs/crates/mdbook-tools)
-
-- [Environment Variables - mdBook Documentation](https://rust-lang.github.io/mdBook/format/configuration/environment-variables.html)
 
 ## Cloud {#skip}
 
