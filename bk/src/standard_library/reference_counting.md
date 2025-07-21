@@ -17,7 +17,7 @@ The `Rc<T>` type (for "Reference Counted") enables _shared ownership_ of a value
 The following example demonstrates common operations with `Rc`:
 
 ```rust,editable
-{{#include ../../crates/standard_library/examples/smart_pointers/rc.rs:example}}
+{{#include ../../crates/standard_library/examples/reference_counting/rc.rs:example}}
 ```
 
 Also of note: the `Weak` type, typically obtained via `Rc::downgrade`, allows for non-owning (weak) references to the data. This can help prevent reference cycles that could lead to memory leaks.
@@ -26,9 +26,21 @@ Also of note: the `Weak` type, typically obtained via `Rc::downgrade`, allows fo
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
-`Rc<T>` allows you to share data between multiple parts of your program but it doesn't allow _mutability_ by itself. If `Rc<T>` allowed multiple mutable references, it may violate Rust's borrowing rules: multiple mutable borrows to the same place can cause data races and inconsistencies.
+`Rc<T>` allows you to share data between multiple parts of your program but it doesn't allow unrestricted _mutability_ by itself. If `Rc<T>` allowed multiple mutable references, it may violate Rust's borrowing rules: multiple mutable borrows to the same place can cause data races and inconsistencies.
 
 If you need mutability inside an `Rc`, you can use `RefCell<T>`, which offers _interior mutability_: `RefCell<T>` enforces borrowing rules at runtime instead of compile-time. It allows mutable borrows to the inner data at runtime, but panics if borrowing rules are violated (again, only one mutable borrow is allowed at a time).
+
+See [[interior_mutability | Interior Mutability]] for more details.
+
+## Related Topics {#skip}
+
+- [[box | Box]].
+- [[concurrency | Concurrency]].
+- [[cow | Copy on Write]].
+- [[data-structures | Data Structures]].
+- [[interior_mutability | Interior Mutability]].
+- [[lifetimes | Lifetimes]].
+- [[ownership_borrowing | Ownership and Borrowing]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

@@ -8,7 +8,7 @@ use std::rc::Rc;
 
 fn main() {
     let a = Rc::new(vec![1.0, 2.0, 3.0]);
-    // The two syntaxes below are equivalent for cloning an `Rc`.
+    // The two syntaxes below are equivalent for cloning an `Rc`:
     let b = a.clone();
     let c = Rc::clone(&a); // Preferred syntax.
     // `b` and `c` now both point to the same memory location as `a`.
@@ -26,7 +26,7 @@ fn main() {
     // The `.` operator lets you call methods on the underlying vector.
     b.iter().for_each(|x| print!("{x} "));
 
-    // We can get a mutable reference to the inner value, if there are no other
+    // We can get a mutable reference to the inner value, if there are NO OTHER
     // `Rc` (or `Weak`) pointers to the same allocation. Returns `None`
     // otherwise. Consider also `make_mut`, which will clone the inner value
     // when there are other `Rc` pointers.
