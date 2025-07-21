@@ -23,7 +23,7 @@ The return value of [encoding][p~encoding] is an iterator of `&str` [slices][p~s
 Encodes a string into [`application/x-www-form-urlencoded`][web-application/x-www-form-urlencoded]{{hi:application/x-www-form-urlencoded}} syntax using the [`form_urlencoded::byte_serialize`][c~form_urlencoded::byte_serialize~docs]{{hi:form_urlencoded::byte_serialize}}⮳ and subsequently decodes it with [`form_urlencoded::parse`][c~form_urlencoded::parse~docs]{{hi:form_urlencoded::parse}}⮳. Both functions return iterators that collect into a [`std::string::String`][c~std::string::String~docs]{{hi:std::string::String}}⮳.
 
 ```rust,editable
-{{#include ../../../crates/cats/encoding/examples//url_encode.rs:example}}
+{{#include ../../../crates/cats/encoding/examples/string_encoding/url_encode.rs:example}}
 ```
 
 ## Encode and Decode Hexadecimal {#data-encoding}
@@ -37,7 +37,7 @@ Similarly, a `HEXUPPER::decode` method is provided which takes a `&[u8]` and ret
 The example below coverts `&[u8]` data to hexadecimal equivalent. Compares this value to the expected value.
 
 ```rust,editable
-{{#include ../../../crates/cats/encoding/examples//hex.rs:example}}
+{{#include ../../../crates/cats/encoding/examples/string_encoding/hex.rs:example}}
 ```
 
 ## Encode and Decode base64 {#base64}
