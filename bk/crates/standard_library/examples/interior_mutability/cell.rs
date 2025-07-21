@@ -1,9 +1,12 @@
 #![allow(dead_code)]
 // ANCHOR: example
+//! `Cell<T>` provides a way to mutate data, even when the `Cell` itself is
+// accessed through an immutable reference. It is most often used for types that implement
+// the `Copy` trait, allowing for simple value replacement without needing to
+// use references or mutable references.
 use std::cell::Cell;
 
 struct MyStruct<T> {
-    // The `Cell` type allows for interior mutability.
     value: Cell<T>,
 }
 
@@ -59,7 +62,8 @@ fn main() {
 
     assert_eq!(my_string_ref.take_value(), "");
 
-    // Replace the current interior value and returns the replaced value.
+    // You may also use `replace` or `swap`.
+    // Replace the current interior value and returns the replaced value:
     assert_eq!(my_string_struct.value.replace("example2".into()), "");
 
     // `into_inner` consumes the `Cell<T>` and returns the interior value.

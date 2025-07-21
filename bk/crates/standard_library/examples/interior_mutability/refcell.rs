@@ -2,7 +2,7 @@
 // ANCHOR: example
 //! `RefCell<T>` is a smart pointer that provides interior mutability.
 //! It allows you to mutate data even when there are immutable references to it.
-//! It enforces borrowing rules at runtime, panicking if they are violated.
+//! It enforces borrowing rules _at runtime_, panicking if they are violated.
 //!
 //! `RefCell<T>` is useful when you need to modify data that is behind an
 //! immutable reference.

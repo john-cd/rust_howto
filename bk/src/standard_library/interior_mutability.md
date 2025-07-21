@@ -18,19 +18,19 @@ These types are used in scenarios involving [shared state][p~shared-state] withi
 Attempts to violate borrowing rules (like having multiple mutable borrows) will cause a _panic_ at runtime. Common methods include `borrow`, [`borrow_mut`][c~std::borrow::BorrowMut~docs]⮳{{hi:borrow_mut}}, and [`try_borrow`][c~std::cell::RefCell::try_borrow~docs].
 
 ```rust,editable
-{{#include ../../crates/standard_library/examples/smart_pointers/refcell.rs:example}}
+{{#include ../../crates/standard_library/examples/interior_mutability/refcell.rs:example}}
 ```
 
 ## `Cell` {#cell}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
-`Cell<T>` is a type that provides simple, byte-wise copy-able mutability. `Cell<T>` implements interior mutability by moving values in and out of the cell. That is, an `&mut T` to the inner value can never be obtained, and the value itself cannot be directly obtained without replacing it with something else.
+`Cell<T>` is a type that provides simple, byte-wise copy-able mutability. `Cell<T>` implements interior mutability by _moving values_ in and out of the cell. An `&mut T` to the inner value can never be obtained (unless `Cell` itself is mutable), and the value itself cannot be directly obtained without replacing it with something else.
 
 `Cell<T>` is used when you need to mutate a value without using a reference or a mutable reference. Common methods include `set`, `get`, and `replace`. It is most often used for types that implement the `Copy` trait, like integers and booleans.
 
 ```rust,editable
-{{#include ../../crates/standard_library/examples/smart_pointers/cell.rs:example}}
+{{#include ../../crates/standard_library/examples/interior_mutability/cell.rs:example}}
 ```
 
 ## `OnceCell` {#oncecell}
@@ -40,8 +40,10 @@ The `OnceCell` type provides a way to define a value that will be initialized at
 ## Related Topics {#skip}
 
 - [[concurrency | Concurrency]].
+- [[data-structures | Data Structures]].
 - [[memory-management | Memory Management]].
 - [[memory_usage_analysis | Memory Usage Analysis]].
+- [[reference_counting | Reference Counting]].
 - [[rust-patterns | Rust Patterns]].
 - [[shared_state | Shared State]].
 - [[smart_pointers | Smart Pointers]].
@@ -52,7 +54,7 @@ The `OnceCell` type provides a way to define a value that will be initialized at
 <div class="hidden">
 TODO
 
-- finish to rewrite Cell, OnceCell.
+- finish to rewrite OnceCell.
 - example: RefCell inside of Rc.
 - link to Mutex / RwLock
 
