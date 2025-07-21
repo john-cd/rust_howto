@@ -13,7 +13,7 @@ fn main() {
     let c = Rc::clone(&a); // Preferred syntax.
     // `b` and `c` now both point to the same memory location as `a`.
 
-    // Gets the number of (Rc) pointers to this allocation.
+    // Gets the number of (`Rc`) pointers to this allocation.
     assert_eq!(3, Rc::strong_count(&a));
     // Dropping one of the pointers decrements the (strong) reference count.
     drop(c);

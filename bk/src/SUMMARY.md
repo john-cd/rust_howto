@@ -38,8 +38,11 @@
 - [Standard Library](standard_library/index.md)
   - [Option](standard_library/option.md)
   - [Result](standard_library/result.md)
-  - [Box](standard_library/box.md)
-  - [Clone-on-Write (Cow)](standard_library/cow.md)
+  - [Smart Pointers](standard_library/smart_pointers.md)
+    - [Box](standard_library/box.md)
+    - [Reference Counting](standard_library/reference_counting.md)
+    - [Interior Mutability](standard_library/interior_mutability.md)
+    - [Clone-on-Write (Cow)](standard_library/cow.md)
   - [AsRef](standard_library/asref.md)
   - [Automatic Trait Derivation (Derive)](standard_library/derive.md)
 

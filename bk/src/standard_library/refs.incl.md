@@ -24,6 +24,11 @@
 [ex~standard_library~result]: result.md#result
 [ex~standard_library~return-cow-from-function]: cow.md#return-cow-from-function
 [ex~standard_library~return-early-pattern]: option.md#return-early-pattern
+[ex~standard_library~cell]: interior_mutability.md#cell
+[ex~standard_library~oncecell]: interior_mutability.md#oncecell
+[ex~standard_library~rc-refcell]: reference_counting.md#rc-refcell
+[ex~standard_library~rc]: reference_counting.md#rc
+[ex~standard_library~refcell]: interior_mutability.md#refcell
 [p~asref]: asref.md
 [p~crates]: # "../crates/index.md"
 [p~data-structures]: # "../categories/data-structures/index.md"

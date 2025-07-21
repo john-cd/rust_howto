@@ -22,7 +22,7 @@ The following example demonstrates common operations with `Rc`:
 
 Also of note: the `Weak` type, typically obtained via `Rc::downgrade`, allows for non-owning (weak) references to the data. This can help prevent reference cycles that could lead to memory leaks.
 
-## Interior Mutability with `Rc` and `RefCell` {#rc-refcell}
+## Share Ownership of a Value with Interior Mutability via `Rc` and `RefCell` {#rc-refcell}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 

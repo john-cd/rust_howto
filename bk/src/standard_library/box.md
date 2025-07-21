@@ -28,7 +28,7 @@ Use `Box<T>` when
 - you have a large amount of data and you want to avoid copying it on the stack: If you have a very large struct, you might want to allocate it on the heap using `Box` to avoid stack overflow.
 - you have a dynamically sized type, whose size can't be known at compile time. This is common with recursive data structures like linked lists, trees, or enums where one variant contains another instance of the same enum.
 - you want to own a value and you care only that it's a type that implements a particular trait rather than being of a specific type.
-- When you need to transfer ownership of data between functions where you need a stable address - although `Arc<T>` or `Rc<T>` might be more appropriate for shared ownership.
+- When you need to transfer ownership of data between functions - although `Arc<T>` or `Rc<T>` might be more appropriate for shared ownership.
 
 Do not use `Box` for small, fixed-size types, or when you only need a reference: If you just need to borrow a value, use `&T` (immutable reference) or `&mut T` (mutable reference).
 
@@ -40,7 +40,9 @@ Dynamically Sized Types (DSTs), also known as "unsized types," are types whose s
 
 - Slices: `[T]` (e.g., `[i32]`, `[u8]`),
 - `str`: The string slice type,
-- Trait Objects: `dyn Trait` (e.g., `dyn std::io::Read`) - see the example below.
+- Trait Objects: `dyn Trait` (e.g., `dyn std::io::Read`).
+
+The following demonstrates boxes containing slices and string slices:
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/box/box_dst.rs:example}}

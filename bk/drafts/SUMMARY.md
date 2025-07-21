@@ -3,8 +3,6 @@
 [Crates (Alphabetic)](indices/crates_alphabetical.md)
 [Crates (by Category)](indices/crates_by_category.md)
 
-- [Smart Pointers](standard_library/smart_pointers.md)
-
 # Categories
 
 - [Algorithms](categories/algorithms/index.md)
