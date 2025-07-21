@@ -1,4 +1,4 @@
-# Book Editing and Example Code Development {#book-editing}
+# Book Editing and Example Code Development
 
 {{#include development_editing.incl.md}}
 

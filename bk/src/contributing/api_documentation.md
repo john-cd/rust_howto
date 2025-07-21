@@ -1,4 +1,4 @@
-# Generate the `docs.rs` Documentation {#generate-the-documentation}
+# Generate the `docs.rs` Documentation
 
 {{#include api_documentation.incl.md}}
 

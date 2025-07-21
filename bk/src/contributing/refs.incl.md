@@ -13,9 +13,10 @@
 [ex~contributing~preprocessors]: preprocessors.md#preprocessors
 [ex~contributing~publish]: publication.md#publish
 [ex~contributing~push-image-to-docker-hub]: dev_container_docker.md#push-image-to-docker-hub
-[ex~contributing~repo-structure]: repo_structure.md#repo-structure
-[ex~contributing~topics-of-interest]: topics_of_interest.md#topics-of-interest
+[ex~contributing~repo-structure]: repo_structure.md
+[ex~contributing~topics-of-interest]: topics_of_interest.md
 [ex~contributing~using-vs-code]: dev_environment_setup.md#using-vs-code
+[ex~contributing~dev-env-setup]: dev_environment_setup.md#dev-env-setup
 [p~authentication]: # "../categories/authentication/index.md"
 [p~aws]: # "../other/cloud/aws.md"
 [p~cargo]: # "../categories/development-tools/cargo/cargo.md"

@@ -1,4 +1,4 @@
-# Repo Structure {#repo-structure}
+# Repo Structure
 
 {{#include repo_structure.incl.md}}
 
