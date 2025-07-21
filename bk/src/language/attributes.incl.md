@@ -8,4 +8,3 @@
 | [Enforce Good Practices and Catch Issues Early with Lint Attributes][ex~language~production-code-attributes] |
 | [Compile Code Conditionally with `#[cfg(...)]`][ex~language~conditional-compilation] |
 | [Conditionally Compile Code Blocks with `cfg-if`][ex~language~cfg-if] |
-| [Automatically Derive Common Traits][ex~language~automatic-trait-derivation] |
