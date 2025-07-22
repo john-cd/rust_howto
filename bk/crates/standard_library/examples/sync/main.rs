@@ -1,0 +1,3 @@
+mod sync;
+
+fn main() {}
