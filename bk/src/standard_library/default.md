@@ -1,6 +1,10 @@
 # Default Trait
 
+{{#include default.incl.md}}
+
 ## Define Default Values for a Struct with `Default` {#default}
+
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
 The [`Default`](https://doc.rust-lang.org/std/default/trait.Default.html)⮳ trait provides a way to create a default value for a type. This is useful when you want to initialize a variable with a default value without having to specify it explicitly.
 
