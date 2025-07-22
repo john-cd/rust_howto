@@ -1,9 +1,9 @@
 #![allow(dead_code)]
 // ANCHOR: example
 //! `Cell<T>` provides a way to mutate data, even when the `Cell` itself is
-// accessed through an immutable reference. It is most often used for types that implement
-// the `Copy` trait, allowing for simple value replacement without needing to
-// use references or mutable references.
+// accessed through an immutable reference. It is most often used for types that
+// implement the `Copy` trait, allowing for simple value replacement without
+// needing to use references or mutable references.
 use std::cell::Cell;
 
 struct MyStruct<T> {
