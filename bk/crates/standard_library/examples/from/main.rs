@@ -1,0 +1,3 @@
+mod from;
+
+fn main() {}
