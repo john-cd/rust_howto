@@ -10,7 +10,7 @@ use winnow::error::StrContextValue::*;
 
 use crate::Document;
 use crate::ast::Element;
-// TODO
+// TODO finish URL parsing
 // use crate::urls::parse_naked_url;
 // use crate::directives::parse_directive;
 use crate::markdown::*;

@@ -13,7 +13,7 @@ fn main() -> anyhow::Result<()> {
     let args = cli::Args::parse();
     let scope = core_lib::Scope::default();
 
-    // TODO
+    // TODO finish
     println!("DONE");
     Ok(())
 }

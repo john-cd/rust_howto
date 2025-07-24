@@ -36,7 +36,7 @@ fn convert_links(filepath: &std::path::Path) -> anyhow::Result<()> {
     // Read a text file in memory, test if its contents should be processed, and if true, update its contents.
     core_lib::process_text_file(
         filepath,
-        |_s: &str| true, // TODO
+        |_s: &str| true, // FIXME
         |_s: &str| Cow::Borrowed(""),
     )?;
     Ok(())

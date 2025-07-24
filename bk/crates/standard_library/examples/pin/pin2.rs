@@ -52,7 +52,7 @@ mod selfref {
             boxed
         }
 
-        // TODO explain
+        // FIXME explain
         // <https://doc.rust-lang.org/std/pin/index.html#assigning-pinned-data>
         // Copies the contents of `src` into `self`, fixing up the self-pointer
         // in the process.
@@ -73,7 +73,7 @@ mod selfref {
         }
     }
 
-    // TODO explain
+    // FIXME explain
     // <https://doc.rust-lang.org/std/pin/index.html#implementing-drop-for-types-with-address-sensitive-states>
     impl Drop for SelfRef {
         fn drop(&mut self) {

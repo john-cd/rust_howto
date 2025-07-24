@@ -26,7 +26,8 @@ fn main() {
     println!("Final value: {}", result.unwrap_or(-1)); // Provide a default value if `Err`.
     // You could also write: .or_else(|_| Ok(-1));
 
-    // TODO Ok("").expect("failed to write message"); // Panic with a provided
+    // TODO fix
+    // Ok("").expect("failed to write message"); // Panic with a provided
     // custom message if `Err`.
 }
 // ANCHOR_END: example

@@ -12,7 +12,7 @@
 // // {{cat  :  xyz}}
 // // {{cat x-y_z::a-b_c }}
 
-// // TODO
+// // TODO finish tests
 // #[test]
 // fn test_category_link_regexes() {
 //     let text = "{{cat xyz}}";
@@ -32,7 +32,6 @@
 // // {{!cat: mathematics}}
 // // {{!cat : mathematics}}
 
-// // TODO
 // #[test]
 // fn test_category_badge_regexes() {
 //     let text = "{{cat xyz}}";

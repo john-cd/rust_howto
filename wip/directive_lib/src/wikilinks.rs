@@ -36,7 +36,7 @@ pub(super) fn wikilink_regexes() -> Vec<RegexAndReplacement> {
 mod tests {
     // use super::*;
     //
-    // // TODO
+    // // TODO finish tests
     // #[test]
     // fn test_replace_wikilinks() {
     //     let text = "[[file | title]]";

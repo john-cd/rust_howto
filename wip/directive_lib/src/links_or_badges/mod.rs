@@ -53,7 +53,7 @@ pub(super) fn link_or_badge_regexes() -> Vec<RegexAndReplacement> {
         r"\{\{\s*(!?)\s*(cat|docs|github|lib\.rs|crates\.io|web|crate)\s*:?\s+([^}]+)\s*\}\}"
             .into();
     let re = Regex::new(&re_string).expect("Invalid regex");
-    let replacement = "$1"; // TODO call function in template.
+    let replacement = "$1"; // FIXME call function in template.
     vec![RegexAndReplacement {
         re,
         replacement: Some(Box::new(|_| replacement.into())),
@@ -98,7 +98,7 @@ pub fn extract_directive<'a>(caps: &'a Captures<'a>) -> Directive<'a> {
     }
 }
 
-// TODO
+// TODO impl From?
 // impl From<&str> for Directive<'_> {
 //    fn from(i: &str) -> Self {}
 // }

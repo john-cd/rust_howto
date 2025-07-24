@@ -14,5 +14,5 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO create script to generate
+TODO create script to generate crate pages
 </div>

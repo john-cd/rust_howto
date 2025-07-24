@@ -8,7 +8,7 @@ use regex::Regex;
 pub(super) fn example_regexes() -> Vec<RegexAndReplacement> {
     let re_string: String = r"\{\{\s*#\s*example\s*:?\s+([^}]+)\s*\}\}".into();
     let re = Regex::new(&re_string).expect("Invalid regex");
-    let replacement = "$1"; // TODO
+    let replacement = "$1"; // FIXME
     vec![RegexAndReplacement {
         re,
         replacement: Some(Box::new(|_| replacement.into())),
@@ -30,7 +30,7 @@ pub(super) fn example_regexes() -> Vec<RegexAndReplacement> {
 mod tests {
     // use super::*;
 
-    // // TODO
+    // // TODO finish  tests
     // #[test]
     // fn test_replace_example() {
     //     let text = "{{#example some_example}}";

@@ -25,5 +25,6 @@ fn prost() {
 fn main() {
     #[cfg(target_os = "linux")]
     capnp();
-    // prost(); // TODO
+    // prost();
 }
+// TODO fix prost

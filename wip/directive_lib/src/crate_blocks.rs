@@ -5,16 +5,16 @@
 use core_lib::RegexAndReplacement;
 use regex::Regex;
 
-// TODO
+// TODO finish
 
 /// {{cat parsing }} -> [parsing][cat~parsing]⮳{{hi:parsing}}
 pub(super) fn crate_block_regexes() -> Vec<RegexAndReplacement> {
     let re_string: String = r"\{\{\s*#crate\s*:?\s+([^}]+)\s*\}\}".into();
     let re = Regex::new(&re_string).expect("Invalid regex");
-    let replacement = "$1"; // TODO call create_crate_badges_or_refdefs
+    let replacement = "$1"; // FIXME call create_crate_badges_or_refdefs
     vec![RegexAndReplacement {
         re,
-        replacement: Some(Box::new(|_| replacement.into())), // TODO
+        replacement: Some(Box::new(|_| replacement.into())), // FIXME
     }]
 }
 
@@ -33,7 +33,7 @@ pub(super) fn crate_block_regexes() -> Vec<RegexAndReplacement> {
 // mod tests {
 //     use super::*;
 
-//     // TODO
+//     // FIXME
 //     #[test]
 //     fn test_crate_block_regexes()() {
 //         let text = "{{#crate crt}}";
