@@ -19,11 +19,11 @@ This is an advanced topic.
 - The [`Unpin`](https://doc.rust-lang.org/std/pin/trait.Unpin.html)⮳ trait is used to indicate that a type can be safely moved even if it is pinned. Most types in Rust implement `Unpin` by default.
 - Builtin types that are Unpin include all of the primitive types, like bool, i32, and f32, references (&T and &mut T), etc., as well as many core and standard library types like Box<T>, String, and more.
 - Types that must never move should not implement `Unpin` (written `!Unpin`).
-- Rely on `Unpin` and regular pointers (`&mut T`, `Box<T>`) for types that don’t care about their address stability, enjoying zero-cost moves and simple APIs.
+- Rely on `Unpin` and regular pointers (`&mut T`, `Box<T>`) for types that don't care about their address stability, enjoying zero-cost moves and simple APIs.
 
 Common smart-pointer types such as Box<T> and &mut T also allow moving the underlying value they point at: you can move out of a Box<T>, or you can use mem::replace to move a T out of a &mut T.
 
-Notice that the thing wrapped by Pin is not the value which we want to pin itself, but rather a pointer to that value! A Pin<Ptr> does not pin the Ptr; instead, it pins the pointer’s pointee value.
+Notice that the thing wrapped by Pin is not the value which we want to pin itself, but rather a pointer to that value! A Pin<Ptr> does not pin the Ptr; instead, it pins the pointer's pointee value.
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/pin/pin.rs:example}}

@@ -9,7 +9,7 @@ fn main() {
     // forming a promise that the _pointee_ will not be moved or otherwise
     // invalidated.
 
-    // **Trivial case:** the pointee value’s type implements `Unpin`, which
+    // **Trivial case:** the pointee value's type implements `Unpin`, which
     // cancels the effect of `Pin`. We can wrap any pointer to that value in
     // `Pin` directly via `Pin::new`. Here, we are safely pinning a mutable
     // reference to a `i32` on the stack.

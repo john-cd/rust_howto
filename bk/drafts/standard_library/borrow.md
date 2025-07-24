@@ -66,8 +66,8 @@ These patterns scale to any type `T` and borrowed form `&U` as long as you imple
 
 The Borrow and AsRef traits are very similar, but different.
 
-- Use `Borrow` when you want to abstract over different kinds of borrowing, or when you’re building a data structure that treats owned and borrowed values in equivalent ways, such as hashing and comparison.
-- Use `AsRef` when you want to convert something to a reference directly, and you’re writing generic code.
+- Use `Borrow` when you want to abstract over different kinds of borrowing, or when you're building a data structure that treats owned and borrowed values in equivalent ways, such as hashing and comparison.
+- Use `AsRef` when you want to convert something to a reference directly, and you're writing generic code.
 
 ## Use Borrow in combination with custom hashing or comparison logic {#borrow-and-custom-hashing}
 
