@@ -36,4 +36,3 @@ impl RenderInfo {
         }
     }
 }
-// [finish; unit tests](https://github.com/john-cd/rust_howto/issues/1367)
