@@ -11,7 +11,7 @@ The [`Default`](https://doc.rust-lang.org/std/default/trait.Default.html)⮳ tra
 The `Default` trait has a single method, `default()`, which returns the default value for the type. You can implement this trait for your own types to provide a default value. Alternatively, the `#[derive(Default)]` attribute automatically implement the trait for a type.
 
 ```rust,editable
-{{#include ../../crates/cats/standard_library/examples/default/default.rs:example}}
+{{#include ../../crates/standard_library/examples/default/default.rs:example}}
 ```
 
 ## Related Topics {#related-topics}

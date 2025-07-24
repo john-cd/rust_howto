@@ -26,7 +26,7 @@ Common smart-pointer types such as Box<T> and &mut T also allow moving the under
 Notice that the thing wrapped by Pin is not the value which we want to pin itself, but rather a pointer to that value! A Pin<Ptr> does not pin the Ptr; instead, it pins the pointer’s pointee value.
 
 ```rust,editable
-{{#include ../../crates/cats/standard_library/examples/pin/pin.rs:example}}
+{{#include ../../crates/standard_library/examples/pin/pin.rs:example}}
 ```
 
 ## Create a Self-Referential Type using `Pin` {#self-referential-type}
@@ -36,7 +36,7 @@ Notice that the thing wrapped by Pin is not the value which we want to pin itsel
 This is an advanced topic.
 
 ```rust,editable
-{{#include ../../crates/cats/standard_library/examples/pin/pin2.rs:example}}
+{{#include ../../crates/standard_library/examples/pin/pin2.rs:example}}
 ```
 
 ## Related Topics {#related-topics}

@@ -3,6 +3,14 @@
 [Crates (Alphabetic)](indices/crates_alphabetical.md)
 [Crates (by Category)](indices/crates_by_category.md)
 
+- [Equality and Comparisons](standard_library/cmp.md)
+- [Sync](standard_library/sync.md)
+- [Pin](standard_library/pin.md)
+- [From](standard_library/from.md)
+- [Borrow](standard_library/borrow.md)
+- [Dynamic Typing](standard_library/any.md)
+- [Sync](standard_library/sync.md)
+
 # Categories
 
 - [Algorithms](categories/algorithms/index.md)

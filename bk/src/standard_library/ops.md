@@ -14,7 +14,7 @@ Common overloaded operators include [`Add`](https://doc.rust-lang.org/std/ops/tr
 For example, to overload the `+` operator for a custom type, you would implement the `Add` trait:
 
 ```rust,editable
-{{#include ../../crates/cats/standard_library/examples/ops/add.rs:example}}
+{{#include ../../crates/standard_library/examples/ops/ops.rs:example}}
 ```
 
 ## Add Function-like Behavior to a Custom Type {#function-like-behavior}

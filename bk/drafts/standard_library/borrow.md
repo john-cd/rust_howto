@@ -37,7 +37,7 @@ BEWARE: `Borrow` is different from `AsRef<U>` in that `Borrow` is intended for _
 In particular, `Eq`, `Ord` and `Hash` must be equivalent for borrowed and owned values: `x.borrow() == y.borrow()` should give the same result as `x == y`.
 
 ```rust,editable
-{{#include ../../crates/cats/standard_library/examples/borrow/borrow.rs:example}}
+{{#include ../../crates/standard_library/examples/borrow/borrow.rs:example}}
 ```
 
 ## Write a Generic Function over `Borrow` {#generic-function-over-borrow}
@@ -47,7 +47,7 @@ In particular, `Eq`, `Ord` and `Hash` must be equivalent for borrowed and owned 
 You can write a function that accepts any type that can borrow a string, be it `String`, `&String`, or `&str`, and use it in lookups seamlessly:
 
 ```rust,editable
-{{#include ../../crates/cats/standard_library/examples/borrow/borrow2.rs:example}}
+{{#include ../../crates/standard_library/examples/borrow/borrow2.rs:example}}
 ```
 
 ## Implement `Borrow` for a Custom Type {#implement-borrow}
@@ -57,7 +57,7 @@ You can write a function that accepts any type that can borrow a string, be it `
 You can implement `Borrow` on your own types to integrate them into APIs expecting a particular key type.
 
 ```rust,editable
-{{#include ../../crates/cats/standard_library/examples/borrow/borrow3.rs:example}}
+{{#include ../../crates/standard_library/examples/borrow/borrow3.rs:example}}
 ```
 
 These patterns scale to any type `T` and borrowed form `&U` as long as you implement `Borrow<U>`.

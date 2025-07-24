@@ -1,6 +1,6 @@
 # Reference Counting
 
-{{#include rc.incl.md}}
+{{#include reference_counting.incl.md}}
 
 ## Share Ownership of a Value with `Rc` {#rc}
 

@@ -16,7 +16,7 @@ The `cmp` module provides traits for comparing values, which are essential for i
 [`PartialEq`](https://doc.rust-lang.org/std/cmp/trait.PartialEq.html)⮳, [`Eq`](https://doc.rust-lang.org/std/cmp/trait.Eq.html)⮳
 
 ```rust,editable
-{{#include ../../crates/cats/standard_library/examples/cmp/eq.rs:example}}
+{{#include ../../crates/standard_library/examples/cmp/eq.rs:example}}
 ```
 
 ## Compare and Sort Values with `PartialOrd` and `Ord` {#ord}
@@ -26,7 +26,7 @@ The `cmp` module provides traits for comparing values, which are essential for i
 [`PartialOrd`](https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html)⮳, [`Ord`](https://doc.rust-lang.org/std/cmp/trait.Ord.html)⮳
 
 ```rust,editable
-{{#include ../../crates/cats/standard_library/examples/cmp/ord.rs:example}}
+{{#include ../../crates/standard_library/examples/cmp/ord.rs:example}}
 ```
 
 Sorting algorithms often rely on the `PartialOrd` and `Ord` trait to determine the order of elements. The standard library provides several sorting functions that use these traits, such as `sort()` and `sort_by()` on slices.
