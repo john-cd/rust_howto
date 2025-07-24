@@ -1,3 +1,4 @@
-mod cmp;
+mod eq;
+mod ord;
 
 fn main() {}
