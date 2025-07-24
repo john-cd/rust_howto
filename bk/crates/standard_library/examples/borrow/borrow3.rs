@@ -21,7 +21,7 @@ fn main() {
     let uid = UserId(42);
     // Thanks to `Borrow<u64>`, this works:
     if let Some(time) = login_times.get(uid.borrow()) {
-        println!("User 42 logged in at {}", time);
+        println!("User 42 logged in at {time}");
     }
 }
 // ANCHOR_END: example
