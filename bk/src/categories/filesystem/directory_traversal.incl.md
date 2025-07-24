@@ -10,7 +10,3 @@
 | [Find All Files with a Given Extension Recursively][ex~filesystem-find-all-png-files-recursively] | [![glob][c~glob~docs~badge]][c~glob~docs] | [![cat~filesystem][cat~filesystem~badge]][cat~filesystem] |
 | [Find All Files with Given Pattern, Ignoring Filename Case][ex~filesystem-find-all-files-with-given-pattern-ignoring-filename-case] | [![glob][c~glob~docs~badge]][c~glob~docs] | [![cat~filesystem][cat~filesystem~badge]][cat~filesystem] |
 | [`globset`][ex~filesystem-globset] | [![globset][c~globset~docs~badge]][c~globset~docs] | [![cat~filesystem][cat~filesystem~badge]][cat~filesystem] |
-
-<div class="hidden">
-FIXME
-</div>
