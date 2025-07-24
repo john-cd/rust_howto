@@ -11,7 +11,8 @@
 //     fn execute(&self, context: &mut dyn PluginContext);
 // }
 
-// /// Trait that the host implements, allowing plugins to interact with the host.
+// /// Trait that the host implements, allowing plugins to interact with the
+// /// host.
 // /// Plugins can request host services or data through this context.
 // pub trait PluginContext: Any + Send + Sync + 'static {
 //     // Methods for plugins to get data from the host.
@@ -48,11 +49,11 @@
 // use std::{any::Any, sync::{Arc, Mutex}}; // For AppState
 
 // // --- Re-declare AppState from host (struct definitions must match) ---
-// // In a real scenario, if AppState were part of the shared `plugin_interface`,
-// // you wouldn't need to re-declare it. If it's truly host-internal,
-// // then plugins access it via a service that wraps it.
-// // For this example, we assume AppState is a concrete type known to the plugin.
-// struct AppState {
+// // In a real scenario, if AppState were part of the shared
+// `plugin_interface`, // you wouldn't need to re-declare it. If it's truly
+// host-internal, // then plugins access it via a service that wraps it.
+// // For this example, we assume AppState is a concrete type known to the
+// plugin. struct AppState {
 //     counter: u32,
 //     messages: Vec<String>,
 // }
@@ -68,11 +69,11 @@
 //         context.log("MyCounterPlugin: Executing...");
 
 //         // Try to get mutable access to the host's AppState
-//         if let Some(app_state_mutex) = context.get_data_mut::<Arc<Mutex<AppState>>>() {
-//             let mut app_state = app_state_mutex.lock().unwrap();
-//             app_state.counter += 10;
-//             context.log(&format!("MyCounterPlugin: Increased counter to {}", app_state.counter));
-//         } else {
+//         if let Some(app_state_mutex) =
+// context.get_data_mut::<Arc<Mutex<AppState>>>() {             let mut
+// app_state = app_state_mutex.lock().unwrap();             app_state.counter +=
+// 10;             context.log(&format!("MyCounterPlugin: Increased counter to
+// {}", app_state.counter));         } else {
 //             context.log("MyCounterPlugin: Could not access AppState!");
 //         }
 //     }
@@ -96,17 +97,17 @@
 
 //         // Try to get an i32 from the host
 //         if let Some(value) = context.get_data::<i32>() {
-//             context.log(&format!("MyStringPlugin: Retrieved i32 from host: {}", value));
-//         } else {
+//             context.log(&format!("MyStringPlugin: Retrieved i32 from host:
+// {}", value));         } else {
 //             context.log("MyStringPlugin: Could not retrieve i32 from host.");
 //         }
 
 //         // Try to get a String from the host
 //         if let Some(s) = context.get_data::<String>() {
-//             context.log(&format!("MyStringPlugin: Retrieved String from host: \"{}\"", s));
-//         } else {
-//             context.log("MyStringPlugin: Could not retrieve String from host.");
-//         }
+//             context.log(&format!("MyStringPlugin: Retrieved String from host:
+// \"{}\"", s));         } else {
+//             context.log("MyStringPlugin: Could not retrieve String from
+// host.");         }
 
 //         // Register a new String service provided by this plugin
 //         let plugin_message = "Plugin Says Hello!".to_string();
@@ -139,12 +140,12 @@
 //         // This plugin registers its own service first
 //         context.register_service(CustomPluginService { value: 12345 });
 
-//         // Then, it tries to get a String service, potentially from another plugin
-//         if let Some(s) = context.get_data::<String>() {
-//             context.log(&format!("MyServiceConsumerPlugin: Retrieved String from context: \"{}\"", s));
-//         } else {
-//             context.log("MyServiceConsumerPlugin: String service not found.");
-//         }
+//         // Then, it tries to get a String service, potentially from another
+// plugin         if let Some(s) = context.get_data::<String>() {
+//             context.log(&format!("MyServiceConsumerPlugin: Retrieved String
+// from context: \"{}\"", s));         } else {
+//             context.log("MyServiceConsumerPlugin: String service not
+// found.");         }
 //     }
 // }
 // }
@@ -165,9 +166,9 @@
 
 // // --- Host's implementation of `PluginContext` ---
 // struct HostPluginContext {
-//     // Allow mutable access to host-owned data that plugins might want to access/modify.
-//     // The key is `TypeId`, and the value is a `Box<dyn Any + Send + Sync>`.
-//     shared_data: HashMap<TypeId, Box<dyn Any + Send + Sync>>,
+//     // Allow mutable access to host-owned data that plugins might want to
+// access/modify.     // The key is `TypeId`, and the value is a `Box<dyn Any +
+// Send + Sync>`.     shared_data: HashMap<TypeId, Box<dyn Any + Send + Sync>>,
 //     // We can also have direct fields for host-specific services
 //     // that don't need to be dynamically discovered with `Any`.
 //     app_state: Arc<Mutex<AppState>>,
@@ -198,8 +199,8 @@
 //     fn register_service<T: Any + Send + Sync>(&mut self, service: T) {
 //         let type_id = TypeId::of::<T>();
 //         self.shared_data.insert(type_id, Box::new(service));
-//         println!("Host: Registered service of type {:?}", std::any::type_name::<T>());
-//     }
+//         println!("Host: Registered service of type {:?}",
+// std::any::type_name::<T>());     }
 
 //     fn log(&mut self, message: &str) {
 //         println!("Host Log: {}", message);
@@ -235,13 +236,13 @@
 //     }
 
 //     // Example of a host service that can be accessed by plugins.
-//     fn register_host_service<T: Any + Send + Sync + 'static>(&mut self, service: T) {
-//         self.plugin_context.register_service(service);
+//     fn register_host_service<T: Any + Send + Sync + 'static>(&mut self,
+// service: T) {         self.plugin_context.register_service(service);
 //     }
 
-//     // Host can also access services registered by plugins, if it knows their type.
-//     fn get_registered_service<T: Any + Send + Sync + 'static>(&self) -> Option<&T> {
-//         self.plugin_context.get_data::<T>()
+//     // Host can also access services registered by plugins, if it knows their
+// type.     fn get_registered_service<T: Any + Send + Sync + 'static>(&self) ->
+// Option<&T> {         self.plugin_context.get_data::<T>()
 //     }
 // }
 
@@ -256,12 +257,14 @@
 //     // --- Register host services ---
 //     let initial_value = 100;
 //     plugin_manager.register_host_service(initial_value); // Register an i32.
-//     plugin_manager.register_host_service("Host Greeting".to_string()); // Register a String.
+//     plugin_manager.register_host_service("Host Greeting".to_string()); //
+// Register a String.
 
 //     // --- Load plugins ---
-//     // For this example, we'll manually create instances of our "simulated" plugins.
-//     // In a real system, you'd use `libloading` to open a `.so` or `.dll`
-//     // and then call an `extern "C"` function to get a `Box<dyn Plugin>`.
+//     // For this example, we'll manually create instances of our "simulated"
+// plugins.     // In a real system, you'd use `libloading` to open a `.so` or
+// `.dll`     // and then call an `extern "C"` function to get a `Box<dyn
+// Plugin>`.
 
 //     // Plugin 1: Increases a counter and logs
 //     plugin_manager.add_plugin(Box::new(MyCounterPlugin {}));
@@ -284,16 +287,17 @@
 //     println!("App messages: {:?}", messages);
 
 //     // Host tries to get a service registered by MyStringPlugin
-//     if let Some(plugin_message) = plugin_manager.get_registered_service::<String>() {
-//         // This will actually get "Host Greeting" not "Plugin Says Hello"
-//         // because we registered "Host Greeting" *after* initializing HostPluginContext
-//         // and before any plugins ran.
-//         // To get "Plugin Says Hello", the host would need to know to look for it
-//         // *after* MyStringPlugin has registered it.
-//         println!("Host retrieved String from context: \"{}\"", plugin_message);
-//     }
+//     if let Some(plugin_message) =
+// plugin_manager.get_registered_service::<String>() {         // This will
+// actually get "Host Greeting" not "Plugin Says Hello"         // because we
+// registered "Host Greeting" *after* initializing HostPluginContext         //
+// and before any plugins ran.         // To get "Plugin Says Hello", the host
+// would need to know to look for it         // *after* MyStringPlugin has
+// registered it.         println!("Host retrieved String from context: \"{}\"",
+// plugin_message);     }
 
-//     if let Some(other_plugin_message) = plugin_manager.get_registered_service::<CustomPluginService>() {
-//         println!("Host retrieved CustomPluginService from context: {}", other_plugin_message.value);
-//     }
+//     if let Some(other_plugin_message) =
+// plugin_manager.get_registered_service::<CustomPluginService>() {
+//         println!("Host retrieved CustomPluginService from context: {}",
+// other_plugin_message.value);     }
 // }
