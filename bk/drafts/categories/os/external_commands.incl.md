@@ -8,6 +8,3 @@
 | [Continuously Process the Outputs of a Child Process][ex~os-continuously-process-child-process-outputs] | [![std][c~std~docs~badge]][c~std~docs] | [![cat~os][cat~os~badge]][cat~os] [![cat~text-processing][cat~text-processing~badge]][cat~text-processing] |
 | [Run Child Processes Using `duct`][ex~os-run-child-processes-using-duct] | [![duct][c~duct~docs~badge]][c~duct~docs] | [![cat~os][cat~os~badge]][cat~os] |
 | [Locate Installed Executables with `which`][ex~os-which] | [![which][c~which~docs~badge]][c~which~docs]{{hi:which}} | [![cat~os][cat~os~badge]][cat~os] |
-
-<div class="hidden">
-</div>

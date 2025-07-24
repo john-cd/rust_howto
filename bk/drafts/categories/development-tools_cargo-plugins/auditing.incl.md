@@ -4,6 +4,3 @@
 | [Embed the Exact Crate Versions in Your Rust Executable for Auditability][ex~development-tools_cargo-plugins-cargo-auditable] | [![cargo-auditable][c~cargo_auditable~docs~badge]][c~cargo_auditable~docs] | [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins] |
 | [List the license(s) of Dependencies][ex~development-tools_cargo-plugins-cargo-license] | [![cargo-license][c~cargo_license~docs~badge]][c~cargo_license~docs] | [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins] |
 | [`cargo deny`][ex~development-tools_cargo-plugins-cargo-deny] | [![cargo-deny][c~cargo_deny~docs~badge]][c~cargo_deny~docs] | [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins] |
-
-<div class="hidden">
-</div>

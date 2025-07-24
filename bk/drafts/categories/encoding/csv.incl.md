@@ -7,6 +7,3 @@
 | [Serialize Records to CSV][ex~encoding-serialize-to-csv] | [![csv][c~csv~docs~badge]][c~csv~docs] | [![cat~encoding][cat~encoding~badge]][cat~encoding] |
 | [Serialize Records to CSV Using `serde`][ex~encoding-serialize-to-csv-using-serde] | [![csv][c~csv~docs~badge]][c~csv~docs] [![serde][c~serde~docs~badge]][c~serde~docs] | [![cat~encoding][cat~encoding~badge]][cat~encoding] |
 | [Transform a CSV Column][ex~encoding-transform-csv-column] | [![csv][c~csv~docs~badge]][c~csv~docs] [![serde][c~serde~docs~badge]][c~serde~docs] | [![cat~encoding][cat~encoding~badge]][cat~encoding] |
-
-<div class="hidden">
-</div>

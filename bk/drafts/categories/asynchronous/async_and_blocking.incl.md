@@ -7,6 +7,3 @@
 | [Call Async Code from Blocking Code][ex~asynchronous-call-async-from-blocking] | [![tokio][c~tokio~docs~badge]][c~tokio~docs] | [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous] |
 | [Use the `futures` Executor][ex~asynchronous-futures-executor] | [![futures_executor][c~futures_executor~docs~badge]][c~futures_executor~docs] | [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous] |
 | [Use the Tokio Runtime Directly][ex~asynchronous-tokio-runtime] | [![tokio][c~tokio~docs~badge]][c~tokio~docs] | [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous] |
-
-<div class="hidden">
-</div>

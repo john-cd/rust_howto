@@ -5,6 +5,3 @@
 | [`sha1`][ex~cryptography-sha1] | [![sha1][c~sha1~docs~badge]][c~sha1~docs] | [![cat~cryptography][cat~cryptography~badge]][cat~cryptography] |
 | [`md-5`][ex~cryptography-md-5] | [![md-5][c~md_5~docs~badge]][c~md_5~docs] | [![cat~cryptography][cat~cryptography~badge]][cat~cryptography] |
 | [`blake3`][ex~cryptography-blake3] | [![blake3][c~blake3~docs~badge]][c~blake3~docs] | [![cat~cryptography][cat~cryptography~badge]][cat~cryptography] |
-
-<div class="hidden">
-</div>

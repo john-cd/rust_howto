@@ -6,6 +6,3 @@
 | [`env_logger`][ex~development-tools_debugging-env-logger] | [![env_logger][c~env_logger~docs~badge]][c~env_logger~docs] | [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging] |
 | [`OpenTelemetry`][ex~development-tools_debugging-open-telemetry] | [OpenTelemetry Rust documentation][opentelemetry~rust]⮳ | [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging] |
 | [`OpenObserve`][ex~development-tools_debugging-open-observe] | [OpenObserve][openobserve~github]⮳ | [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging] |
-
-<div class="hidden">
-</div>

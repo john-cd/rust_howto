@@ -5,6 +5,3 @@
 | [Create new URLs from a Base URL][ex~web-programming-create-new-urls-from-a-base-url] | [![url][c~url~docs~badge]][c~url~docs] | [![cat~network-programming][cat~network-programming~badge]][cat~network-programming] [![cat~web-programming][cat~web-programming~badge]][cat~web-programming] |
 | [Extract the URL Origin (scheme / Host / port)][ex~web-programming-extract-the-url-origin] | [![url][c~url~docs~badge]][c~url~docs] | [![cat~network-programming][cat~network-programming~badge]][cat~network-programming] [![cat~web-programming][cat~web-programming~badge]][cat~web-programming] |
 | [Remove Fragment Identifiers and Query Pairs from a URL][ex~web-programming-remove-fragment-identifiers-and-query-pairs] | [![url][c~url~docs~badge]][c~url~docs] | [![cat~network-programming][cat~network-programming~badge]][cat~network-programming] [![cat~web-programming][cat~web-programming~badge]][cat~web-programming] |
-
-<div class="hidden">
-</div>
