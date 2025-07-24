@@ -88,8 +88,9 @@ mod selfref {
 }
 
 fn main() {
-    use selfref::*;
     use std::pin::Pin;
+
+    use selfref::*;
 
     let pinned: Pin<Box<SelfRef>> =
         SelfRef::new("I am a self-referentail struct.");

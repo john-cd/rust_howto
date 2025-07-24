@@ -16,7 +16,8 @@ fn main() {
     let mut x = 42;
     let pinned_x: Pin<&mut i32> = Pin::new(&mut x);
 
-    // Conversely, we can unwrap the pin to get the underlying mutable reference to the value.
+    // Conversely, we can unwrap the pin to get the underlying mutable reference
+    // to the value.
     let r = Pin::into_inner(pinned_x);
     assert_eq!(*r, 42);
 
@@ -48,8 +49,8 @@ fn main() {
 
     // **`pin!` Macro**:
     // `pin!` constructs a `Pin<&mut T>`.
-    // Unlike `Box::pin`, this does not systematically create a new heap allocation.
-    // <https://doc.rust-lang.org/std/pin/macro.pin.html>
+    // Unlike `Box::pin`, this does not systematically create a new heap
+    // allocation. <https://doc.rust-lang.org/std/pin/macro.pin.html>
     use core::pin::pin;
 
     struct Foo;
