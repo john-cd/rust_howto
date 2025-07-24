@@ -8,7 +8,3 @@
 | [Layered Architecture][ex~architecture~layered-architecture] |
 | [Microservices Architecture][ex~architecture~microservices] |
 | [Pipelines/Streams][ex~architecture~pipelines] |
-
-<div class="hidden">
-FIXME
-</div>

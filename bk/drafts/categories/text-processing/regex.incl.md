@@ -8,7 +8,3 @@
 | [Longer Regex Example][ex~text-processing-longer-regex~example] | [![regex][c~regex~docs~badge]][c~regex~docs] | [![cat~text-processing][cat~text-processing~badge]][cat~text-processing] |
 | [Use Regular Expressions with Back-references and Lookarounds][ex~text-processing-fancy-regex] | [![fancy-regex][c~fancy_regex~docs~badge]][c~fancy_regex~docs] | [![cat~text-processing][cat~text-processing~badge]][cat~text-processing] |
 | [Longer Regex Example][ex~text-processing-longer-regex~example] | [![regex][c~regex~docs~badge]][c~regex~docs] | [![cat~text-processing][cat~text-processing~badge]][cat~text-processing] |
-
-<div class="hidden">
-FIXME
-</div>

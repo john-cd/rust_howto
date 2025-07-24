@@ -5,7 +5,3 @@
 | [Write Rust Code with the Helix Editor][ex~text-editors-helix] | [Helix editor][helix-editor~website]⮳ | [![cat~text-editors][cat~text-editors~badge]][cat~text-editors] |
 | [Write Rust Code with RustRover][ex~text-editors-rustrover] | [`RustRover`][rustrover~website]⮳ | [![cat~text-editors][cat~text-editors~badge]][cat~text-editors] |
 | [Write Rust Code with `neovim`][ex~text-editors-neovim] | [Neovim][nvim~website]⮳ | [![cat~text-editors][cat~text-editors~badge]][cat~text-editors] |
-
-<div class="hidden">
-FIXME
-</div>

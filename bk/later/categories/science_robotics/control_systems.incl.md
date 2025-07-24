@@ -6,7 +6,3 @@
 | [Pathfinding Algorithms for Navigation with `pathfinding`][ex~science_robotics~pathfinding] |  | [![cat~science::robotics][cat~science::robotics~badge]][cat~science::robotics] |
 | [`rrt`][ex~science_robotics~rrt] | [![rrt][c~rrt~docs~badge]][c~rrt~docs]{{hi:rrt}} | [![cat~science::robotics][cat~science::robotics~badge]][cat~science::robotics] |
 | [`rs-opw-kinematics`][ex~science_robotics~rs-opw-kinematics] | [![rs-opw-kinematics][c~rs-opw-kinematics~docs~badge]][c~rs-opw-kinematics~docs]{{hi:rs-opw-kinematics}} | [![cat~science::robotics][cat~science::robotics~badge]][cat~science::robotics] |
-
-<div class="hidden">
-FIXME
-</div>

@@ -6,7 +6,3 @@
 | [`slab`][ex~memory-management-slab] | [![slab][c~slab~docs~badge]][c~slab~docs]{{hi:slab}} | [![cat~memory-management][cat~memory-management~badge]][cat~memory-management] |
 | [`bumpalo`][ex~memory-management-bumpalo] | [![bumpalo][c~bumpalo~docs~badge]][c~bumpalo~docs]{{hi:bumpalo}} | [![cat~memory-management][cat~memory-management~badge]][cat~memory-management] |
 | [Garbage Collection with `seize`][ex~memory-management-seize] | [![seize][c~seize~docs~badge]][c~seize~docs]{{hi:seize}} | [![cat~memory-management][cat~memory-management~badge]][cat~memory-management] |
-
-<div class="hidden">
-FIXME
-</div>

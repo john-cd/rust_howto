@@ -8,7 +8,3 @@
 | [GPUI][ex~gui~gpui] | [![gpui][c~gpui~docs~badge]][c~gpui~docs] | [![cat~gui][cat~gui~badge]][cat~gui] |
 | [`druid`][ex~gui~druid] | [![druid][c~druid~docs~badge]][c~druid~docs] | [![cat~gui][cat~gui~badge]][cat~gui] |
 | [Azul][ex~gui~azul] | [![azul][c~azul~docs~badge]][c~azul~docs]{{hi:azul}} | [![cat~gui][cat~gui~badge]][cat~gui] |
-
-<div class="hidden">
-FIXME
-</div>

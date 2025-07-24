@@ -23,7 +23,3 @@ Notable crypto projects using Rust include:
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-FIXME
-</div>

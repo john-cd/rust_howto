@@ -4,7 +4,3 @@
 | [`bon`][ex~rust-patterns-bon] | [![bon][c~bon~docs~badge]][c~bon~docs] | [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns] |
 | [`derive_builder`][ex~rust-patterns-derive_builder] | [![derive_builder][c~derive_builder~docs~badge]][c~derive_builder~docs] | [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns] |
 | [`typed-builder`][ex~rust-patterns-typed-builder] | [![typed-builder][c~typed_builder~docs~badge]][c~typed_builder~docs] | [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns] |
-
-<div class="hidden">
-FIXME
-</div>

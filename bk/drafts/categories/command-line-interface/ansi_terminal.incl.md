@@ -16,7 +16,3 @@
 | [`termion`][ex~command-line-interface-termion] | [![termion][c~termion~docs~badge]][c~termion~docs] | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |
 | [`nu-ansi-term`][ex~command-line-interface-nu-ansi-term] | [![nu-ansi-term][c~nu_ansi_term~docs~badge]][c~nu_ansi_term~docs]{{hi:nu-ansi-term}} | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |
 | [`colored`][ex~command-line-interface-colored] | [![colored][c~colored~docs~badge]][c~colored~docs]{{hi:colored}} | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |
-
-<div class="hidden">
-FIXME
-</div>
