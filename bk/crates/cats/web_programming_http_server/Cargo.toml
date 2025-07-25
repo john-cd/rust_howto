@@ -24,7 +24,7 @@ http-body-util = "0.1.2"
 hyper = { version = "1.6.0", features = ["full"] }
 hyper-util = { version = "0.1", features = ["full"] }
 leptos = "0.8.2"
-loco-rs = "0.16.0"
+loco-rs = "0.16.2"
 mime = "0.3.17"
 prost = "0.13.5"
 tonic = "0.13.0"
