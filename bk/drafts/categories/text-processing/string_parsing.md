@@ -27,4 +27,6 @@ Creates a custom struct `RGB` and implements the [`FromStr`][c~std::str::FromStr
 
 - [validator](https://lib.rs/crates/validator)
 
+[`FromStr`](https://doc.rust-lang.org/std/str/trait.FromStr.html)⮳ provides _string parsing_ with idiomatic error handling, and it's typically implemented for types like `u32`, `Url`, and `enum`s. It powers `.parse::<T>()`. It can only parse types that do not contain a lifetime parameter.
+
 </div>
