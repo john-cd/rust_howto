@@ -1,5 +1,6 @@
 /book/
 doctest_cache/
+just-*
 
 # URL verification cache
 .lycheecache
