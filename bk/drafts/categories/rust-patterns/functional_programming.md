@@ -81,7 +81,7 @@ Frunk is a functional programming toolbelt for Rust. It provides developers with
 review https://geo-ant.github.io/blog/2023/rust-type-level-programming/
 https://nota-lang.org/examples/blog-post/standalone/
 review https://crates.io/crates/tap
-ADD Working with Iterators: Creating custom iterators, using iterator adapters, and understanding iterator traits. Here or in std lib?
+ADD Working with Iterators: Creating custom iterators, using iterator adapters, and understanding iterator traits. Here or in `std` lib?
 
 - [Type-level Programming in Rust](https://willcrichton.net/notes/type-level-programming/)
 

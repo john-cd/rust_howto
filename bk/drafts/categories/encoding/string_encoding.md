@@ -40,7 +40,7 @@ The example below coverts `&[u8]` data to hexadecimal equivalent. Compares this 
 {{#include ../../../crates/cats/encoding/examples/string_encoding/hex.rs:example}}
 ```
 
-## Encode and Decode base64 {#base64}
+## Encode and Decode with `base64` {#base64}
 
 [![base64][c~base64~docs~badge]][c~base64~docs]{{hi:base64}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
 
