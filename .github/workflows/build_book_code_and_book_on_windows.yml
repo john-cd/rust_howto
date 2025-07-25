@@ -49,7 +49,7 @@ jobs:
             /usr/local/cargo/registry/cache/
             /usr/local/cargo/git/db/
             target/
-            bk/target/
+            bk/crates/target/
           key: rust_howto-book-${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: |
             rust_howto-book-${{ runner.os }}-cargo-
@@ -98,25 +98,25 @@ jobs:
 
       - name: Format
         run: cargo +nightly fmt --all --check
-        working-directory: '.\bk'
+        working-directory: '.\bk\crates'
 
       - name: Fetch
         run: cargo fetch
-        working-directory: '.\bk'
+        working-directory: '.\bk\crates'
 
       - name: Build
         run: cargo build --workspace --all-targets --locked --profile ci
-        working-directory: '.\bk'
+        working-directory: '.\bk\crates'
 
       - name: Clippy
         run: cargo clippy --workspace --all-targets --locked --profile ci -- --deny warnings
-        working-directory: '.\bk'
+        working-directory: '.\bk\crates'
 
       - name: Run tests
         run: |
           cargo nextest run --workspace --all-targets --locked --cargo-profile ci --profile ci --hide-progress-bar
           cargo test --workspace --doc --locked --profile ci -- --show-output
-        working-directory: '.\bk'
+        working-directory: '.\bk\crates'
 
       - name: Build / release the tools, incl. mdbook-scrub
         run: cargo +nightly build --bins --locked --release -Z unstable-options --artifact-dir "..\bin"
