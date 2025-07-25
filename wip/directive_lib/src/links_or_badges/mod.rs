@@ -98,7 +98,7 @@ pub fn extract_directive<'a>(caps: &'a Captures<'a>) -> Directive<'a> {
     }
 }
 
-// TODO impl From?
+// [impl From?](https://github.com/john-cd/rust_howto/issues/1436)
 // impl From<&str> for Directive<'_> {
 //    fn from(i: &str) -> Self {}
 // }

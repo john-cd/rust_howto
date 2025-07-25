@@ -1,4 +1,4 @@
-// TODO do we need?
+// [do we need?](https://github.com/john-cd/rust_howto/issues/1429)
 
 // use std::borrow::Borrow;
 // use std::borrow::Cow;

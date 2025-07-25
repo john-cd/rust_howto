@@ -3,7 +3,7 @@ use regex::Regex;
 
 use super::conf::PreprocConfig;
 
-// TODO share RegexAndReplacement code with CLIs (core_lib)
+// [share RegexAndReplacement code with CLIs (core_lib)](https://github.com/john-cd/rust_howto/issues/1420)
 
 // Replacement closure
 type Replacement = Box<dyn Fn(&Captures) -> String>;

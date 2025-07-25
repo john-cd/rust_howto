@@ -42,7 +42,7 @@ fn convert_links(filepath: &std::path::Path) -> anyhow::Result<()> {
     Ok(())
 }
 
-// TODO reuse fragments below if needed.
+// [reuse fragments below if needed.](https://github.com/john-cd/rust_howto/issues/1432)
 
 // # replace https::/github.com/.../...
 // s=([^"'\''(]?https?://github.com/)([^/ ]+/)([^/ ]+)(/[^"'\'')⮳]*)?=[`\3`][\3~github] [\3~github]: \1\2\3\4=gp;

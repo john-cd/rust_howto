@@ -39,4 +39,4 @@ fn require_network() {
         Err(e) => eprintln!("Error: {e}"),
     }
 }
-// TODO flaky service. rethink this example.
+// [flaky service. rethink this example.](https://github.com/john-cd/rust_howto/issues/1418)

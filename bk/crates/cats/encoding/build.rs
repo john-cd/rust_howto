@@ -27,4 +27,4 @@ fn main() {
     capnp();
     // prost();
 }
-// TODO fix prost
+// [fix prost](https://github.com/john-cd/rust_howto/issues/1417)

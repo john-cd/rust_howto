@@ -46,7 +46,7 @@ pub enum DirectiveData<'a> {
     /// Insert a fenced code block with an `include` directive pointing to a new code example (.rs) file:
     /// {{#example some_example}} -> ```rust,editable\n{{#include ...}}```
     ExampleBlock { name: &'a str },
-    // TODO finish
+    // [finish](https://github.com/john-cd/rust_howto/issues/1426)
     // /// Word Index Anchor:
     // /// {{i:<text>}}
     // /// {{ii:<text>}}

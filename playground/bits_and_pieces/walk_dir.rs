@@ -31,7 +31,7 @@ pub fn walk_directory(dir: &Path) -> Result<()> {
         let f_name = entry.file_name().to_string_lossy();
         if f_name.ends_with(".md") {
             let _path = entry.path();
-            // TODO replace_in_file(path)?;
+            // [replace_in_file(path)?;](https://github.com/john-cd/rust_howto/issues/1439)
         }
     }
     Ok(())

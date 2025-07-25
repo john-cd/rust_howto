@@ -30,7 +30,7 @@ pub(super) fn example_regexes() -> Vec<RegexAndReplacement> {
 mod tests {
     // use super::*;
 
-    // // TODO finish  tests
+    // // [finish  tests](https://github.com/john-cd/rust_howto/issues/1434)
     // #[test]
     // fn test_replace_example() {
     //     let text = "{{#example some_example}}";

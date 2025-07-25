@@ -107,4 +107,4 @@ fn main() {
 fn test() {
     main();
 }
-// TODO test; insert
+// [test; insert](https://github.com/john-cd/rust_howto/issues/1413)

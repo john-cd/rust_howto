@@ -1,4 +1,4 @@
-// TODO clean up / shorten
+// [clean up / shorten](https://github.com/john-cd/rust_howto/issues/1412)
 
 // mod plugin_interface {
 

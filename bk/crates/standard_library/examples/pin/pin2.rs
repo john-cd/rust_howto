@@ -111,4 +111,4 @@ fn test() {
     main();
 }
 
-// TODO cover <https://doc.rust-lang.org/std/pin/index.html#projections-and-structural-pinning>
+// [cover <https://doc.rust-lang.org/std/pin/index.html#projections-and-structural-pinning>](https://github.com/john-cd/rust_howto/issues/1407)

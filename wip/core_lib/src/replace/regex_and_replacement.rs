@@ -58,7 +58,7 @@ impl MatchAndReplace for &[RegexAndReplacement] {
     }
 }
 
-// TODO use Box<dyn Replacer> instead of Box<dyn Fn(&Captures) -> String> ??
+// [use Box<dyn Replacer> instead of Box<dyn Fn(TODO use Box<dyn Replacer> instead of Box<dyn Fn(&Captures) -> String> ??Captures) -> String> ??](https://github.com/john-cd/rust_howto/issues/1430)
 
 // use regex::Replacer;
 //

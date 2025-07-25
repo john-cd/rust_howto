@@ -1,4 +1,4 @@
-// TODO finish
+// [finish](https://github.com/john-cd/rust_howto/issues/1422)
 #![allow(unused)]
 
 mod cli;

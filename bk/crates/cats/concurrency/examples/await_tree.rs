@@ -112,4 +112,4 @@ async fn baz(n: i32) {
 fn test() {
     main();
 }
-// TODO clean up
+// [clean up](https://github.com/john-cd/rust_howto/issues/1416)

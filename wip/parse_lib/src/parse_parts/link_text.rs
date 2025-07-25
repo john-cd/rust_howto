@@ -77,7 +77,7 @@ fn parse_link_text_content<'s>(input: &mut &'s str) -> ModalResult<&'s str> {
     repeat::<_, _, String, _, _>(
         0..,
         alt((
-            // TODO parse image
+            // [parse image](https://github.com/john-cd/rust_howto/issues/1424)
             parse_balanced_brackets,
             parse_text_with_escapes,
             fail.context(Label("link text content"))

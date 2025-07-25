@@ -7,4 +7,4 @@ fn main() {}
 fn test() {
     main();
 }
-// TODO write
+// [write](https://github.com/john-cd/rust_howto/issues/1403)

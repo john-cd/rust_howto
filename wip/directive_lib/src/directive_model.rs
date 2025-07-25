@@ -87,7 +87,7 @@ pub enum DestinationKind {
 
 // ------------------------------
 
-// TODO finish
+// [finish](https://github.com/john-cd/rust_howto/issues/1435)
 
 // pub fn process_directive(directive: &Directive) {
 //     use Directive::*;

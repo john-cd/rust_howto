@@ -45,4 +45,4 @@ fn main() {}
 fn test_main() {
     main();
 }
-// TODO clean up / split example?
+// [clean up / split example?](https://github.com/john-cd/rust_howto/issues/1440)

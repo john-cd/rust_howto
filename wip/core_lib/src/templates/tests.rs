@@ -1,4 +1,4 @@
-// TODO test new templating
+// [test new templating](https://github.com/john-cd/rust_howto/issues/1431)
 
 // /// Replaces the following directives by the corresponding markdown, in a given file:
 // ///

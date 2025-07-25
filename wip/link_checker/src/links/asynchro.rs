@@ -7,7 +7,7 @@ use anyhow::Result;
 // Use the asynchronous cache.
 use moka::future::Cache;
 use reqwest::ClientBuilder;
-// TODO finish
+// [finish](https://github.com/john-cd/rust_howto/issues/1421)
 // use reqwest::IntoUrl;
 // use reqwest::Request;
 // use tracing::debug;

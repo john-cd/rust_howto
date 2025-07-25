@@ -13,7 +13,7 @@ fn main() -> anyhow::Result<()> {
     let args = cli::Args::parse();
     let scope = core_lib::Scope::default();
 
-    // TODO finish
+    // [finish](https://github.com/john-cd/rust_howto/issues/1423)
     println!("DONE");
     Ok(())
 }

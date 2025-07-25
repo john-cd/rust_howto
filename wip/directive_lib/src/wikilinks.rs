@@ -36,7 +36,7 @@ pub(super) fn wikilink_regexes() -> Vec<RegexAndReplacement> {
 mod tests {
     // use super::*;
     //
-    // // TODO finish tests
+    // // [finish tests](https://github.com/john-cd/rust_howto/issues/1433)
     // #[test]
     // fn test_replace_wikilinks() {
     //     let text = "[[file | title]]";

@@ -66,13 +66,13 @@ RUN apt-get update \
     llvm \
     m4 \
     make \
-    # TODO huge pandoc \
+    # pandoc \ huge https://github.com/john-cd/rust_howto/issues/1442
     pkg-config \
     protobuf-compiler \
     python3 \
     python3.11-dev \
     systemd \
-    # TODO huge texlive-full \
+    # texlive-full \ huge
     wget \
     xorg-dev \
     && apt-get clean -y \

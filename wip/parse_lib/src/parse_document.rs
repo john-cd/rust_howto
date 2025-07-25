@@ -10,7 +10,7 @@ use winnow::error::StrContextValue::*;
 
 use crate::Document;
 use crate::ast::Element;
-// TODO finish URL parsing
+// [finish URL parsing](https://github.com/john-cd/rust_howto/issues/1427)
 // use crate::urls::parse_naked_url;
 // use crate::directives::parse_directive;
 use crate::markdown::*;

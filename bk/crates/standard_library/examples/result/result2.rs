@@ -26,7 +26,7 @@ fn main() {
     println!("Final value: {}", result.unwrap_or(-1)); // Provide a default value if `Err`.
     // You could also write: .or_else(|_| Ok(-1));
 
-    // TODO fix
+    // [fix](https://github.com/john-cd/rust_howto/issues/1409)
     // Ok("").expect("failed to write message"); // Panic with a provided
     // custom message if `Err`.
 }

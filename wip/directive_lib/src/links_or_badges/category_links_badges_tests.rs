@@ -12,7 +12,7 @@
 // // {{cat  :  xyz}}
 // // {{cat x-y_z::a-b_c }}
 
-// // TODO finish tests
+// // [finish tests](https://github.com/john-cd/rust_howto/issues/1437)
 // #[test]
 // fn test_category_link_regexes() {
 //     let text = "{{cat xyz}}";

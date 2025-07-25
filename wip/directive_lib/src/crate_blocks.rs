@@ -5,7 +5,7 @@
 use core_lib::RegexAndReplacement;
 use regex::Regex;
 
-// TODO finish
+// [finish](https://github.com/john-cd/rust_howto/issues/1438)
 
 /// {{cat parsing }} -> [parsing][cat~parsing]⮳{{hi:parsing}}
 pub(super) fn crate_block_regexes() -> Vec<RegexAndReplacement> {
