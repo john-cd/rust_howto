@@ -42,7 +42,7 @@ Rust's "module system" helps structure your projects effectively. It gives you f
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO incorporate
+[incorporate](https://github.com/john-cd/rust_howto/issues/1387)
 
 - [Rust Project Primer](https://rustprojectprimer.com/title.html)
 

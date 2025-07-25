@@ -55,7 +55,7 @@ Books found on [`rust-lang.org`][rust-lang]⮳ and friends:
 - [Rust Crash Course: Build High-Performance, Efficient and Productive Software with the Power of Next-Generation Programming Skills](https://www.amazon.com/dp/9355510950) by Abhishek Kumar. [978-9355510952](https://en.wikipedia.org/wiki/Special:BookSources/978-9355510952)⮳.
 - [Rust Essentials 2nd ed.](https://www.amazon.com/Rust-Essentials-writing-concurrent-applications-dp-1788390016/dp/1788390016)⮳. [978-1788390019](https://en.wikipedia.org/wiki/Special:BookSources/978-1788390019)⮳.
 
-TODO verify links below
+[verify links below](https://github.com/john-cd/rust_howto/issues/1397)
 
 - [Rust for Rustaceans: Idiomatic Programming for Experienced Developers](https://www.amazon.com/Rust-Rustaceans-Programming-Experienced-Developers/dp/1718501854)⮳ by Jon Gjengset. [978-1718501850](https://en.wikipedia.org/wiki/Special:BookSources/978-1718501850)⮳.
 

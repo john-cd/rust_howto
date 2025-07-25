@@ -100,5 +100,5 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO link to category pages. edit descriptions
+[link to category pages. edit descriptions](https://github.com/john-cd/rust_howto/issues/1394)
 </div>

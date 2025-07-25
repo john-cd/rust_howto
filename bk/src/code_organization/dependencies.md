@@ -49,5 +49,5 @@ fn main() -> Result<()> {
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO review against dev tools > cargo chapters.
+[review against dev tools > cargo chapters.](https://github.com/john-cd/rust_howto/issues/1388)
 </div>

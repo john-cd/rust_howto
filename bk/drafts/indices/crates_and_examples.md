@@ -14,5 +14,5 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO create script to generate crate pages
+[create script to generate crate pages](https://github.com/john-cd/rust_howto/issues/1395)
 </div>

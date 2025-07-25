@@ -83,5 +83,5 @@ You may also consult [this list](https://users.rust-lang.org/t/fearless-rust-blo
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO curate further; reorder links
+[curate further; reorder links](https://github.com/john-cd/rust_howto/issues/1398)
 </div>

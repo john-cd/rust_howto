@@ -254,5 +254,5 @@ Here are some common pitfalls to watch out for:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO final review
+[final review](https://github.com/john-cd/rust_howto/issues/1382)
 </div>

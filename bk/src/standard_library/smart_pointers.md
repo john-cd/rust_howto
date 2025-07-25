@@ -45,6 +45,6 @@ Here's a table of common smart pointers in Rust, outlining their primary use cas
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO add cow
+[add cow](https://github.com/john-cd/rust_howto/issues/1384)
 add oncecell, std::sync::OnceLock, lazylock
 </div>

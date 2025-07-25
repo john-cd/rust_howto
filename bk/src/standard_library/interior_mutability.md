@@ -52,5 +52,5 @@ The `OnceCell` type provides a way to define a value that will be initialized at
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO finish to rewrite OnceCell / example: RefCell inside of Rc / link to Mutex / RwLock
+[finish to rewrite OnceCell / example: RefCell inside of Rc / link to Mutex / RwLock](https://github.com/john-cd/rust_howto/issues/1385)
 </div>

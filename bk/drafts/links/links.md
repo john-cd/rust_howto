@@ -48,5 +48,5 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO review all links; dedupe with index; what moves to other pages?
+[review all links; dedupe with index; what moves to other pages?](https://github.com/john-cd/rust_howto/issues/1399)
 </div>
