@@ -18,9 +18,10 @@ fn main() {
     println!("{mm:?}");
     assert_eq!(mm.0, 2000);
     // OR
+    let m = Meters(4);
     let mm = Millimeters::from(m);
     println!("{mm:?}");
-    assert_eq!(mm.0, 2000);
+    assert_eq!(mm.0, 4000);
 }
 // ANCHOR_END: example
 

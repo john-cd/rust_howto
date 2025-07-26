@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 // ANCHOR: example
 //! Parsing from raw bytes.
 
@@ -12,7 +13,7 @@ impl From<&[u8]> for Message {
 }
 
 fn main() {
-    let raw = b"Hello world";
+    let raw: &[u8] = b"Hello world";
     let msg: Message = raw.into(); // Use `From<&[u8]>`.
     println!("{msg:?}");
 }

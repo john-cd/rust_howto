@@ -1,6 +1,6 @@
+#![allow(unused)]
 // ANCHOR: example
 //! Converting Custom Errors.
-use std::fmt;
 use std::io;
 
 #[derive(Debug)]
@@ -30,5 +30,5 @@ fn main() -> Result<(), MyError> {
 
 #[test]
 fn test() {
-    main();
+    assert!(main().is_err());
 }
