@@ -3,8 +3,8 @@
 use std::collections::HashMap;
 
 // This is the most common use of `Borrow`.
-// A `HashMap<String, V>` can be queried with a `&str` because `String:
-// Borrow<str>`.
+// A `HashMap<String, V>` can be queried with a `&str`,
+// because `String: Borrow<str>`.
 fn main() {
     let mut scores: HashMap<String, u32> = HashMap::new();
     scores.insert("alice".to_string(), 10);
@@ -20,4 +20,3 @@ fn main() {
 fn test() {
     main();
 }
-// [review](https://github.com/john-cd/rust_howto/issues/1404)

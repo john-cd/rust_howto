@@ -18,7 +18,7 @@ fn main() {
     // 2. Using `my_box.as_ref()` - reference *to the contained value*
     let ref_to_contained_string: &String = my_box.as_ref();
     println!("Content via `as_ref()`: {ref_to_contained_string}");
-    
+
     println!(
         "Content as `&str` via `Deref`: {}",
         &**ref_to_contained_string
