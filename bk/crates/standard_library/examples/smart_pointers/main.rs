@@ -1,0 +1,3 @@
+mod deref;
+
+fn main() {}

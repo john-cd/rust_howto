@@ -29,12 +29,37 @@ Here's a table of common smart pointers in Rust, outlining their primary use cas
 - `Rc<T>`{{hi:Rc<T>}} enables multiple owners{{hi:Multiple owners}} of the same data; `Box<T>` and `RefCell<T>` have single owners.
 - `Box<T>` allows immutable or mutable borrows checked at compile time; `Rc<T>` allows only immutable borrows checked at compile time; `RefCell<T>` allows immutable or mutable borrows checked at runtime{{hi:Borrowing}}.
 
-## Related Data Structures {#skip}
+## Implement a Smart Pointer with `Deref` {#deref}
 
-- [[cow | COW]] (Copy-on-Write).
+[![std][c~std~docs~badge]][c~std~docs]
+
+The [`Deref`](https://doc.rust-lang.org/std/ops/trait.Deref.html)⮳ trait enables types to _behave like references_, providing access to the data they wrap.
+
+`Deref` enables the `*` operator and _implicit_, _automatic dereferencing_ in many circumstances, especially in method calls (`.` operator), meaning users can call methods on the inner type as if they were working directly with it. This mechanism is called "Deref coercion".
+
+Method resolution with `Deref` kicks in when a type doesn't have a method directly defined on it, but it implements the `Deref` trait. The compiler will follow the `Deref` chain to find the method on the inner type. For example, if you have a `Box<String>`, and you call `.len()` on it, the compiler dereferences first from `Box` to `String`, then to `str`, and ultimately finds and calls `str::len`.
+
+Types that implement `Deref` or `DerefMut` are called "smart pointers". Often, the purpose of such a type is to change the ownership semantics of a contained value (for example, `Rc` or `Cow`) or the storage semantics of a contained value (for example, `Box`).
+
+BEWARE: The compiler will silently insert calls to `Deref::deref`. For this reason, one should be careful about implementing `Deref` and only do so when deref coercion is desirable.
+
+In mutable contexts, [`DerefMut`](https://doc.rust-lang.org/std/ops/trait.DerefMut.html)⮳ is used and mutable deref coercion similarly occurs.
+
+The `AsRef` and `Borrow` traits have very similar signatures to `Deref`. It may be desirable to implement either or both of these, whether in addition to or rather than `Deref` traits. See [[asref | AsRef]] and [[borrow | Borrow]].
+
+Read the [Treating Smart Pointers Like Regular References with Deref](https://doc.rust-lang.org/book/ch15-02-deref.html)⮳ and the [dereference operator](https://doc.rust-lang.org/reference/expressions/operator-expr.html#the-dereference-operator)⮳ for more details.
+
+The following example demonstrates the implementation of a basic smart pointer:
+
+```rust,editable
+{{#include ../../crates/standard_library/examples/smart_pointers/deref.rs:example}}
+```
 
 ## Related Topics {#skip}
 
+- [[asref | AsRef]].
+- [[borrow | Borrow]].
+- [[cow | COW]] (Clone-on-Write).
 - [[concurrency | Concurrency]].
 - [[memory-management | Memory Management]].
 - [[memory_usage_analysis | Memory Usage Analysis]].
