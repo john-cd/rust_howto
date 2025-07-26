@@ -1,6 +1,6 @@
 # Conversion Traits
 
-{{#include from.incl.md}}
+{{#include conversion_traits.incl.md}}
 
 Conversion traits like [`From`](https://doc.rust-lang.org/std/convert/trait.From.html)⮳, `Into`, `TryFrom`, and `TryInto` enable type-safe transformations between types. `From` is the most common trait for defining conversions - it is implemented on the destination type and lets you create an instance from another type. `Into` is automatically implemented when `From` is, allowing values to be converted with `.into()`. For fallible conversions,`TryFrom` and `TryInto` return a `Result`, adding error handling when the conversion might fail.
 
@@ -13,22 +13,24 @@ The [`From`](https://doc.rust-lang.org/std/convert/trait.From.html)⮳{{hi:std::
 Since `From` is infallible by design, conversions must never fail. `From` enables automatic [`Into`](https://doc.rust-lang.org/std/convert/trait.Into.html)⮳{{hi:std::convert::Into}} implementations, so types implementing `From` can be seamlessly used with `.into()`:
 
 ```rust,editable
-{{#include ../../crates/standard_library/examples/from/from.rs:example}}
+{{#include ../../crates/standard_library/examples/conversion_traits/from.rs:example}}
 ```
 
 `From` is often used to convert custom errors. You may also use the `anyhow` and `thiserror` crates.
 
 ```rust,editable
-{{#include ../../crates/standard_library/examples/from/from2.rs:example}}
+{{#include ../../crates/standard_library/examples/conversion_traits/from2.rs:example}}
 ```
 
 `From` may also be used when parsing. To parse strings, implement [`std::str::FromStr`](https://doc.rust-lang.org/std/str/trait.FromStr.html)⮳ instead.
 
 ```rust,editable
-{{#include ../../crates/standard_library/examples/from/from3.rs:example}}
+{{#include ../../crates/standard_library/examples/conversion_traits/from3.rs:example}}
 ```
 
 ## Choose the Right Trait for a Conversion {#choose-conversion-trait}
+
+[![std][c~std~docs~badge]][c~std~docs]
 
 Paraphrasing the [`std::convert`](https://doc.rust-lang.org/std/convert/index.html)⮳ module documentation, you should:
 

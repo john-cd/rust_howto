@@ -88,7 +88,9 @@ The following covers portions of the Rust Standard Library that are not otherwis
 
 {{#include cow.incl.md}}
 
-## Conversion
+## Conversion Traits
+
+{{#include conversion_traits.incl.md}}
 
 ### `AsRef`
 

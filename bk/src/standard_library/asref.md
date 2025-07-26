@@ -52,8 +52,9 @@ If you need to do a _costly_ conversion, it is better to implement `From` or wri
 ## Related Topics {#skip}
 
 - [[box | `Box`]].
-- [[reference_counting | `Rc` and `Arc`]].
 - [[borrow | `Borrow`]].
+- [[conversion_traits | Conversion Traits]].
+- [[reference_counting | `Rc` and `Arc`]].
 - [[smart_pointers | Smart Pointers]].
 
 Note that [`AsMut`][c~std::convert::AsMut~docs]⮳{{hi:AsMut}} can be used for converting between mutable references.
