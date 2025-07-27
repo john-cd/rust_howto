@@ -76,25 +76,29 @@ The following covers portions of the Rust Standard Library that are not otherwis
 
 {{#include box.incl.md}}
 
-### Reference Counting
+### Reference Counting: `Rc`, `Arc`
 
 {{#include reference_counting.incl.md}}
 
-### Interior Mutability
+### Interior Mutability: `RefCell`, `Cell`
 
 {{#include interior_mutability.incl.md}}
 
-### Copy-On-Write (Cow)
+### Copy-On-Write: `Cow`
 
 {{#include cow.incl.md}}
 
-## Conversion Traits
+## Conversion Traits: `From`, `Into`, `TryFrom`, `TryInto`
 
 {{#include conversion_traits.incl.md}}
 
-### `AsRef`
+## `AsRef`
 
 {{#include asref.incl.md}}
+
+## `Borrow`
+
+{{#include borrow.incl.md}}
 
 ## Derive: Automatic Trait Derivation
 

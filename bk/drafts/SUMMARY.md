@@ -6,7 +6,6 @@
 - [Equality and Comparisons](standard_library/cmp.md)
 - [Sync](standard_library/sync.md)
 - [Pin](standard_library/pin.md)
-- [Borrow](standard_library/borrow.md)
 - [Dynamic Typing](standard_library/any.md)
 - [Sync](standard_library/sync.md)
 

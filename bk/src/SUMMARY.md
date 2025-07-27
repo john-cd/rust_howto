@@ -38,7 +38,8 @@
     - [Clone-on-Write (Cow)](standard_library/cow.md)
   - [Drop](standard_library/drop.md)
   - [Conversion Traits](standard_library/conversion_traits.md)
-    - [AsRef](standard_library/asref.md)
+  - [AsRef](standard_library/asref.md)
+  - [Borrow](standard_library/borrow.md)
   - [Automatic Trait Derivation (Derive)](standard_library/derive.md)
   - [Overloading Operators](standard_library/ops.md)
 

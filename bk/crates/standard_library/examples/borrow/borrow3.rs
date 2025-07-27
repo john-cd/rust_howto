@@ -2,8 +2,8 @@
 // ANCHOR: example
 mod cis {
     use std::borrow::Borrow;
+    use std::convert::From;
     use std::hash::Hash;
-use std::convert::From;
 
     // Case-insensitive string.
     // Implement `Eq`, `PartialEq`, `Hash` (used by `HashMap`).
