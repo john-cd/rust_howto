@@ -83,7 +83,7 @@ fn main() {
 
     // Lookup with a (lowercase) `&str` thanks to `Borrow<str>`.
     if let Some(value) = map.get("hello") {
-        println!("Found: {}", value);
+        println!("Found: {value}");
     } else {
         panic!("Not found.");
     }
