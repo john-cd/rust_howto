@@ -66,7 +66,7 @@ See [[asref | AsRef]], [[conversion_traits | Conversion Traits]] and [[smart_poi
 ## Related Topics {#skip}
 
 - [[asref | AsRef]].
-- [[converion_traits | Conversion Traits]].
+- [[conversion_traits | Conversion Traits]].
 - [[ownership_borrowing | Ownership and Borrowing]].
 
 {{#include refs.incl.md}}
