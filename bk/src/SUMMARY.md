@@ -31,6 +31,7 @@
   - [Option](standard_library/option.md)
   - [Result](standard_library/result.md)
   - [Default](standard_library/default.md)
+  - [Equality and Ordering](standard_library/cmp.md)
   - [Smart Pointers](standard_library/smart_pointers.md)
     - [Box](standard_library/box.md)
     - [Reference Counting](standard_library/reference_counting.md)
