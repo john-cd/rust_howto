@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-
 fn main() {
     use std::pin::Pin;
 
@@ -9,10 +8,11 @@ fn main() {
     // forming a promise that the _pointee_ will not be moved or otherwise
     // invalidated.
 
-    // **Trivial case:** the pointee value's type implements `Unpin`, which
-    // cancels the effect of `Pin`. We can wrap any pointer to that value in
-    // `Pin` directly via `Pin::new`. Here, we are safely pinning a mutable
-    // reference to a `i32` on the stack.
+    // 1. **Trivial case:** If the pointee value's type implements `Unpin`,
+    //    which
+    // cancels the effect of `Pin`, we can wrap any pointer to that value in
+    // `Pin` directly via `Pin::new`.
+    // That allows `x` to participate in `Pin`-bound APIs.
     let mut x = 42;
     let pinned_x: Pin<&mut i32> = Pin::new(&mut x);
 
@@ -21,36 +21,51 @@ fn main() {
     let r = Pin::into_inner(pinned_x);
     assert_eq!(*r, 42);
 
+    // 2. **General case:**
     // If the pointee value's type does not implement `Unpin`, then Rust will
-    // not let us use the `Pin::new` function directly and we'll need to
-    // construct a `Pin`-wrapped pointer.
-
-    // **General case:** Unsafely pinning any pointer without checking the
-    // `Unpin` bound. The caller MUST guarantee the underlying data truly
-    // does not move. Here, we have exclusive control of the `String`.
+    // not let us use the `Pin::new` function and we'll need to
+    // use specialized ways, here unsafe code, to manipulate the inner value.
+    //
+    // The programmer MUST guarantee the underlying data truly
+    // does not move in the `unsafe` code. Here, we have exclusive control of
+    // the `String`.
     {
-        let mut y = String::from("hello");
+        use std::marker::PhantomPinned;
+        pub struct Unpinned {
+            // The `PhantomPinned` field makes the struct as `!Unpin`.
+            _pin: PhantomPinned,
+        }
+
+        let mut y = Unpinned {
+            _pin: PhantomPinned,
+        };
         let _pinned_y = unsafe { Pin::new_unchecked(&mut y) };
     }
 
-    // **Pinned Box**: The simplest way to pin a value that
+    // 3. **Pinned Box**: The simplest way to pin a value that
     // does not implement `Unpin` is to put that value inside a `Box` and
-    // then turn that `Box` into a "pinning Box" by wrapping it in a `Pin`.
-    // <https://doc.rust-lang.org/std/pin/struct.Pin.html#pinning-a-value-inside-a-box>
+    // then wrapping it in a `Pin`.
+    // Example fom <https://doc.rust-lang.org/std/pin/struct.Pin.html#pinning-a-value-inside-a-box>.
     async fn add_one(x: u32) -> u32 {
         x + 1
     }
 
     // Call the async function to get a future back.
-    let fut = add_one(42);
+    let fut = add_one(42); // `impl Future<Output = u32>`.
 
-    // Pin the future inside a pinning box.
-    let _pinned_fut: Pin<Box<_>> = Box::pin(fut);
+    // Pin the future inside a box.
+    let pinned_box_fut: Pin<Box<_>> = Box::pin(fut);
 
-    // **`pin!` Macro**:
-    // `pin!` constructs a `Pin<&mut T>`.
-    // Unlike `Box::pin`, this does not systematically create a new heap
-    // allocation. <https://doc.rust-lang.org/std/pin/macro.pin.html>
+    // Gets a shared reference to the pinned value this `Pin` points to.
+    // This is a generic method to go from `&Pin<Pointer<T>>` to `Pin<&T>`.
+    let _pinned_fut = pinned_box_fut.as_ref(); // `Pin<&(impl Future<Output = u32>)>`.
+
+    // 4. **`pin!` Macro**:
+    // There are some situations where it is desirable or even required (e.g.,
+    // in a `#[no_std]` context) to pin a value which does not implement `Unpin`
+    // to its location _on the stack_. Doing so is possible using the `pin!` macro.
+    // Unlike `Box::pin`, this does not systematically create a new heap allocation.
+    // <https://doc.rust-lang.org/std/pin/macro.pin.html>
     use core::pin::pin;
 
     struct Foo;
@@ -68,4 +83,3 @@ fn main() {
 fn test() {
     main();
 }
-// [review](https://github.com/john-cd/rust_howto/issues/1408)
