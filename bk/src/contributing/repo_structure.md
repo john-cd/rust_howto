@@ -4,7 +4,7 @@
 
 ## Folders and Key Files {#folders}
 
-The book's [GitHub repository](https://github.com/john-cd/rust_howto) is structured as follows:
+The book's [GitHub repository](https://github.com/john-cd/rust_howto)⮳ is structured as follows:
 
 - The Dev Container and Docker (Compose) configuration files are found in [`.devcontainer`][dev-containers-devcontainer.json]⮳{{hi:.devcontainer}}. Review the [[dev_container_docker | Dev Container and Docker]] page for usage.
 - The `.github` folder contains the GitHub configuration, including the CD/CI workflows that build the code & book and deploy the book to Github Pages.
@@ -14,15 +14,15 @@ The book's [GitHub repository](https://github.com/john-cd/rust_howto) is structu
   - The [`mdbook`][c~mdbook~docs]{{hi:mdbook}}⮳ configuration is in [`bk/book.toml`][c~mdbook~book.toml]⮳{{hi:book.toml}}.
   - The [markdown][p~markdown] sources of the book are in the `bk/src` folder (work-in-progress chapters are in `bk/drafts`; stub chapters are in `bk/later`), the structure of which is described below.
   - After the book is built using [`mdbook`][c~mdbook~docs]{{hi:mdbook}}⮳, the resulting HTML and Javascript are found in `bk/book/html`.
-  - The templates and assets are in [`theme`][c~mdbook_theme~docs]⮳{{hi:theme}} and [`static`][c~lazy_static~docs]⮳{{hi:static}} respectively.
+  - The templates and assets are in [`bk/theme`](https://github.com/john-cd/rust_howto/tree/main/bk/theme)⮳ and [`bk/static`](https://github.com/john-cd/rust_howto/tree/main/bk/static)⮳ respectively.
   - The Rust examples embedded in the book are found below `bk/crates` (see below for details).
   - The `bk/master` folder contains the master list of crates used in the book (which is used by a few scripts to generate tables).
   - `bk/scripts` contains [just](https://just.systems)⮳ modules (`mod.just` files) and shell scripts (`*.sh` files) for building the code & book and managing references, links, recipe tables, examples, etc.
-- Additional code and tools is found in the `mdbook-scrub`, `playground`, `publish`, `tools` and `xmpl` folders.
-  - `mdbook-scrub` is a custom `mdbook` preprocessor used by the book.
+- Additional code and tools is found in the `playground`, `publish`, `tools` and `xmpl` folders.
   - The `playground` folder contains bits and pieces of code for testing and exploration. Use it to develop new code examples.
   - The `publish` folder contains a placeholder crate that is published to `crates.io`, so that the links to the book could be found there.
   - `tools` contains several command-line utilities to build specific sections of the book, for example book indices.
+    - `mdbook-scrub` is a custom `mdbook` preprocessor used by the book.
   - Additional examples that are too long or complex to be inserted in the book itself are in folders under `xmpl`.
 
 ## Book Organization {#book-organization}
