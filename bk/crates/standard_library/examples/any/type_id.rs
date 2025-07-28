@@ -19,7 +19,8 @@ fn main() {
     // The `Any` trait can be used to get a `TypeId`:
     let value: &dyn Any = &"hello";
     let tid = value.type_id();
-    // `TypeId` implements `Debug`:
+    // `TypeId` implements `Debug` but its value is just an opaque number.
+    // See below to get a type name.
     println!("TypeId of value: {tid:?}");
 
     // However, given a smart pointer containing `dyn Any`,
@@ -34,6 +35,11 @@ fn main() {
 
     assert_eq!(actual_id, TypeId::of::<i32>());
     assert_eq!(boxed_id, TypeId::of::<Box<dyn Any>>());
+
+    // To get a type _name_ for diagnostics purposes, use `std::any::type_name`
+    // or `type_name_of_val`. Note: the returned name may vary with compiler
+    // versions.
+    println!("{}", std::any::type_name::<String>());
 }
 // ANCHOR_END: example
 

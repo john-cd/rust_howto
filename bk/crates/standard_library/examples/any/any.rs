@@ -19,6 +19,7 @@ fn is_string(s: &dyn Any) -> bool {
     } else {
         println!("Not a string...");
     }
+    // Get access to the `&String` if `s` is of the right type:
     if let Some(string) = s.downcast_ref::<String>() {
         println!("{string}");
     }
@@ -35,18 +36,10 @@ fn print_if_string(value: Box<dyn Any>) {
     }
 }
 
-// Get type name for diagnostics purposes.
-// Note: the returned name may vary with compiler versions.
-fn get_type_name<T>(_: &T) -> String {
-    std::any::type_name::<T>().to_string()
-}
-
 fn main() {
     assert!(!is_string(&42));
     let s = "a string".to_string();
     assert!(is_string(&s));
-
-    println!("{}", get_type_name(&s));
 
     print_if_string(Box::new(s));
 }
