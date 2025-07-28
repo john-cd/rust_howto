@@ -29,6 +29,45 @@ Here's a table of common smart pointers in Rust, outlining their primary use cas
 - `Rc<T>`{{hi:Rc<T>}} enables multiple owners{{hi:Multiple owners}} of the same data; `Box<T>` and `RefCell<T>` have single owners.
 - `Box<T>` allows immutable or mutable borrows checked at compile time; `Rc<T>` allows only immutable borrows checked at compile time; `RefCell<T>` allows immutable or mutable borrows checked at runtime{{hi:Borrowing}}.
 
+## Multiple Ownership with Reference Counting {#rc}
+
+[![std][c~std~docs~badge]][c~std~docs]
+
+`Rc<T>` and `Arc<T>` allow multiple owners of the same data with . See [[reference_counting | Reference Counting]].
+
+## Interior Mutability {#interior_mutability}
+
+[![std][c~std~docs~badge]][c~std~docs]
+
+`RefCell<T>` provides interior mutability (mutability inside an immutable reference) for data that is owned by `Rc<T>` (or other single-owner types). Enforces borrowing rules at runtime.
+
+See [[interior_mutability | Interior Mutability]].
+
+## Lazy Initialization {#lazy-initialization}
+
+[![std][c~std~docs~badge]][c~std~docs]
+
+The standard library provides several types for lazy initialization: [`LazyCell<T>`](https://doc.rust-lang.org/std/cell/struct.LazyCell.html)⮳, [`LazyLock`](https://doc.rust-lang.org/std/sync/struct.LazyLock.html)⮳, [`OnceLock<T>`](https://doc.rust-lang.org/std/sync/struct.OnceLock.html)⮳.
+
+See details in the [[lazy_initialization | Lazy Initialization]] chapter.
+
+## Synchronization Primitives {#sync-primitives}
+
+[![std][c~std~docs~badge]][c~std~docs]
+
+The [`std::sync`](https://doc.rust-lang.org/std/sync/index.html)⮳{{hi:sync}} module provides synchronization primitives for concurrent programming. These primitives allow safe sharing of data between threads, ensuring that data is accessed in a thread-safe manner. The most commonly used synchronization primitives include:
+
+- [`Arc<T>`](https://doc.rust-lang.org/std/sync/struct.Arc.html)⮳ is a thread-safe, reference-counted pointer that allows multiple threads to share ownership of a value. It is similar to `Rc<T>`, but designed for concurrent use.
+- [`Mutex<T>`](https://doc.rust-lang.org/std/sync/struct.Mutex.html)⮳ is a mutual exclusion primitive that provides safe access to data by allowing only one thread to access the data at a time. It ensures that data is not accessed concurrently.
+- `RwLock<T>` is a read-write lock that allows multiple readers or a single writer to access the data. It is useful when reads are more frequent than writes, as it allows concurrent reads while ensuring exclusive access for writes.
+
+Less common primitives include:
+
+- [`Barrier`](https://doc.rust-lang.org/std/sync/struct.Barrier.html) is a synchronization primitive that allows multiple threads to wait for each other at a certain point in their execution. It is useful for coordinating the execution of multiple threads that need to reach a certain point before proceeding.
+- [`Condvar`](https://doc.rust-lang.org/std/sync/struct.Condvar.html) is a condition variable that allows threads to wait for a condition to be met before proceeding. It is often used in conjunction with [`Mutex<T>`](https://doc.rust-lang.org/std/sync/struct.Mutex.html) to signal when a condition changes, allowing threads to wake up and continue execution.
+
+See the [[concurrency | Concurrency]] chapter.
+
 ## Implement a Smart Pointer with `Deref` {#deref}
 
 [![std][c~std~docs~badge]][c~std~docs]

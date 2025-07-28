@@ -17,14 +17,18 @@ Prefer [`once_cell`][c~once_cell~docs]⮳{{hi:once_cell}} over lazy_static. Use 
 
 The core functionality of [`once_cell`][c~once_cell~docs]⮳{{hi:once_cell}} is now included in the standard library with the remaining parts on track to be stabilized in future.
 
-## `std` {#std}
+## Lazy Initialize Variables {#std}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
 
-[`OnceCell`][c~core::cell::OnceCell~docs]{{hi:OnceCell}}⮳ is a cell which can be written to only once.
+For lazy initialization scenarios where you want to defer the creation of a value until it's actually needed, without the overhead of thread synchronization, use one of the following:
 
-The corresponding `Sync` version of `OnceCell<T>` is `OnceLock<T>`.
+- The [`OnceCell`][c~core::cell::OnceCell~docs]{{hi:OnceCell}}⮳ type provides a way to define a value that will be initialized at most once.
+- The corresponding thread-safe version of `OnceCell<T>` is `OnceLock<T>`. [`OnceLock<T>`](https://doc.rust-lang.org/std/sync/struct.OnceLock.html)⮳ is a lock that allows a value to be initialized exactly once, ensuring that the initialization code is executed only once, even in the presence of multiple threads.
+- [`LazyCell<T>`](https://doc.rust-lang.org/std/cell/struct.LazyCell.html) is a value which is initialized on the first access. It is not thread-safe.
+- [`LazyLock`](https://doc.rust-lang.org/std/sync/struct.LazyLock.html)⮳ is a lazily initialized value that is initialized on first access, ensuring that the initialization code is executed only once, even in the presence of multiple threads. This type is a thread-safe `LazyCell`, and can be used in statics. Since initialization may be called from multiple threads, any dereferencing call will block the calling thread if another initialization routine is currently running.
+- [`Once`](https://doc.rust-lang.org/std/sync/struct.Once.html)⮳ is a low-level primitive that allows initialization of a value exactly once, ensuring that the initialization code is executed only once, even in the presence of multiple threads.
 
 ```rust,editable
 {{#include ../../../crates/cats/memory_management/examples/lazy_initialization/once_cell.rs:example}}
@@ -82,4 +86,6 @@ Declares a lazily evaluated constant [`std::collections::HashMap`][c~std::collec
 
 <div class="hidden">
 [lazy_initialization: write / fix NOW](https://github.com/john-cd/rust_howto/issues/411)
+cover / link to Once OnceCell OnceLock Lazylock
+
 </div>

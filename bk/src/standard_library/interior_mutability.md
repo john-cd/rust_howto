@@ -35,7 +35,7 @@ Attempts to violate borrowing rules (like having multiple mutable borrows) will 
 
 ## `OnceCell` {#oncecell}
 
-The `OnceCell` type provides a way to define a value that will be initialized at most once. It's useful for [lazy initialization][p~lazy-initialization] scenarios where you want to defer the creation of a value until it's actually needed, without the overhead of thread synchronization.
+See [lazy initialization][p~lazy-initialization].
 
 ## Related Topics {#skip}
 
