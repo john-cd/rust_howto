@@ -3261,3 +3261,4 @@ Downcasting
 invariants
 pointee
 LazyCell
+PhantomPinned

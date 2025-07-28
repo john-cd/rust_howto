@@ -23,7 +23,7 @@ The main type in `std::pin` is [`Pin<Ptr>`](https://doc.rust-lang.org/std/pin/st
 
 Note that the pointer wrapped by `Pin` is not the value which we want to pin itself, but rather a _pointer_ to that value. A `Pin<Ptr>` does not pin the `Ptr`; instead, it pins the pointer's pointee value.
 
-It is important to note that pinning does not make use of any compiler "magic". It _does not change the way the compiler behaves_ towards the inner value (it still considers the inner value fundamentally moveable). Instead, `Pin<Ptr>` is a wrapper that prohibits calling code that would perform a move on the pinned value and enforces the use of `unsafe` code for dangerous operations. BEWARE: It is the responsibility of the programmer to implement that `unsafe` code correctly to satisfy the `Pin` invariants.
+It is important to note that pinning does not make use of any compiler "magic". It _does not change the way the compiler behaves_ towards the inner value (it still considers the inner value fundamentally movable). Instead, `Pin<Ptr>` is a wrapper that prohibits calling code that would perform a move on the pinned value and enforces the use of `unsafe` code for dangerous operations. BEWARE: It is the responsibility of the programmer to implement that `unsafe` code correctly to satisfy the `Pin` invariants.
 
 Because `Pin` has a restrictive API, Rust provide an "escape hatch" for the vast majority of Rust types, which have no address-sensitive states.
 
