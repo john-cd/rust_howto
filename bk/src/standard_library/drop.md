@@ -19,7 +19,7 @@ Common use cases include:
 - Releasing memory or resources: While Rust typically handles memory automatically, `Drop` is implemented by types that manage external resources, like file handles, network connections, mutex locks, or graphics contexts. When the `Drop` implementation runs, it can close the files, disconnect sockets, unlock mutexes, etc.
 - Notifying external systems when an object is discarded.
 - Logging.
-- Implementing smart pointers: Types like `Box<T>`, `Rc<T>`, `String` and `Vec`, rely heavily on the `Drop` trait to manage their memory and resource deallocation. For instance, `Rc<T>` uses `Drop` to decrement its reference count and deallocate the data when the count reaches zero.
+- Implementing [[smart_pointers | smart pointers]]: Types like `Box<T>`, `Rc<T>`, `String` and `Vec<T>`, rely heavily on the `Drop` trait to manage their memory and resource deallocation. For instance, `Rc<T>` uses `Drop` to decrement its reference count and deallocate the data when the count reaches zero.
 
 To implement `Drop` for a custom type, you would do something like this:
 
