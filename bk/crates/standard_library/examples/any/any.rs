@@ -46,9 +46,9 @@ fn main() {
     let s = "a string".to_string();
     assert!(is_string(&s));
 
-    print_if_string(Box::new(s));
-
     println!("{}", get_type_name(&s));
+
+    print_if_string(Box::new(s));
 }
 // ANCHOR_END: example
 
