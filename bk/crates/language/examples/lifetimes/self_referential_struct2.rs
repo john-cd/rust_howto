@@ -7,7 +7,8 @@ mod selfref {
     use std::marker::PhantomPinned;
     use std::pin::Pin;
 
-    // Self-referential struct example.
+    // Self-referential struct.
+    //
     // To create a `!Unpin` type on stable Rust,
     // embed `std::marker::PhantomPinned`.
     // This marker tells the compiler your type must never move once pinned.
@@ -46,27 +47,30 @@ mod selfref {
                 //   inside of the `Pin`.
                 let mut_ref: &mut SelfRef =
                     Pin::get_unchecked_mut(boxed.as_mut());
-                // Assign the right address
+                // Assign the right address.
                 mut_ref.ptr = self_ptr;
             }
             boxed
         }
 
         // FIXME explain
-        // <https://doc.rust-lang.org/std/pin/index.html#assigning-pinned-data>
+
         // Copies the contents of `src` into `self`, fixing up the self-pointer
         // in the process.
+        // <https://doc.rust-lang.org/std/pin/index.html#assigning-pinned-data>
         pub fn assign(self: Pin<&mut Self>, src: Pin<&mut Self>) {
             unsafe {
                 // Unwraps the `Pin<Ptr>`, returning the underlying `Ptr`.
                 let unpinned_self = Pin::into_inner_unchecked(self);
                 let unpinned_src = Pin::into_inner_unchecked(src);
+
                 *unpinned_self = Self {
                     data: unpinned_src.data.clone(),
                     ptr: std::ptr::null(),
                     _pin: PhantomPinned,
                 };
 
+                // Adjust the self-pointer:
                 let new_ptr = unpinned_src.data.as_ptr() as *const String;
                 unpinned_self.ptr = new_ptr;
             }
@@ -80,6 +84,7 @@ mod selfref {
             // `new_unchecked` is okay because we know this value is never used
             // again after being dropped.
             inner_drop(unsafe { Pin::new_unchecked(self) });
+            
             fn inner_drop(_this: Pin<&mut SelfRef>) {
                 // Actual drop code goes here.
             }
@@ -93,7 +98,7 @@ fn main() {
     use selfref::*;
 
     let pinned: Pin<Box<SelfRef>> =
-        SelfRef::new("I am a self-referentail struct.");
+        SelfRef::new("I am a self-referential struct.");
 
     assert!(std::ptr::addr_eq(&pinned.data, pinned.ptr));
 
@@ -101,7 +106,7 @@ fn main() {
     println!("{pinned:?}");
 
     // The inner pointee `SelfRef` struct will now never be allowed to move.
-    // Meanwhile, we are free to move the pointer around.
+    // Meanwhile, we are free to move the smart pointer around.
     let mut _still_unmoved = pinned;
 }
 // ANCHOR_END: example

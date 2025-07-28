@@ -29,16 +29,6 @@ Notice that the thing wrapped by Pin is not the value which we want to pin itsel
 {{#include ../../crates/standard_library/examples/pin/pin.rs:example}}
 ```
 
-## Create a Self-Referential Type using `Pin` {#self-referential-type}
-
-[![std][c~std~docs~badge]][c~std~docs]
-
-This is an advanced topic.
-
-```rust,editable
-{{#include ../../crates/standard_library/examples/pin/pin2.rs:example}}
-```
-
 ## Related Topics {#related-topics}
 
 - [[async_programming | Async Programming]]

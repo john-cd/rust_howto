@@ -80,6 +80,8 @@ The following example shows a `struct` with a lifetime parameter and multiple im
 
 ### Avoid Self-referential Structs {#self-referential-structs}
 
+[![std][c~std~docs~badge]][c~std~docs]
+
 Self-referential structs, that is structs that hold a reference to their own fields, can be tricky due to Rust's ownership and borrowing rules. You can easily run into issues when they are moved, as the references might become invalid. There is also no way to tie the lifetime of a reference to the lifetime of the struct that contains it.
 
 Instead, you may:
@@ -88,8 +90,8 @@ Instead, you may:
 - Store the owned data outside the struct and let the struct hold only references,
 - Store ranges rather than references, if the pointed-to type is a sequence (array, string, vector...),
 - Use `Rc` or `Arc`.
-- Use raw pointers,
 - Use arena-style allocation to enforce shared lifetimes.
+- Use raw pointers (Requires `unsafe` code).
 
 ```rust,editable
 {{#include ../../crates/language/examples/lifetimes/self_referential_struct.rs:example}}

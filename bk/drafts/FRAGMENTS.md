@@ -39,6 +39,18 @@ If you need reference-counting, note that `Rc::make_mut` and `Arc::make_mut` can
 
 ---
 
+## Create a Self-Referential Type using `Pin` {#self-referential-type}
+
+[![std][c~std~docs~badge]][c~std~docs]
+
+This is an advanced topic.
+
+```rust,editable
+{{#include ../../crates/language/examples/lifetimes/self_referential_struct2.rs:example}}
+```
+
+---
+
 ## Emulate Inheritance with `AsRef` {#inheritance-in-rust}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
