@@ -3,8 +3,6 @@
 [Crates (Alphabetic)](indices/crates_alphabetical.md)
 [Crates (by Category)](indices/crates_by_category.md)
 
-- [Dynamic Typing](standard_library/any.md)
-
 # Categories
 
 - [Algorithms](categories/algorithms/index.md)

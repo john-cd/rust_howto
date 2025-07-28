@@ -44,6 +44,7 @@
   - [Borrow](standard_library/borrow.md)
   - [Automatic Trait Derivation (Derive)](standard_library/derive.md)
   - [Overloading Operators](standard_library/ops.md)
+  - [Dynamic Typing](standard_library/dynamic_typing.md)
 
 - [Code Organization](code_organization/index.md)
   - [Modules and Paths](code_organization/modules.md)

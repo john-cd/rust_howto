@@ -124,6 +124,10 @@ The following covers portions of the Rust Standard Library that are not otherwis
 
 {{#include ops.incl.md}}
 
+## Dynamic Typing
+
+{{#include dynamic_typing.incl.md}}
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 

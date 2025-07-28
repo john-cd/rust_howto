@@ -1,6 +1,6 @@
 # Dynamic Typing
 
-{{#include any.incl.md}}
+{{#include dynamic_typing.incl.md}}
 
 ## Determine the Type of an Object at Runtime and Downcast it with the `Any` Trait {#any-trait}
 
@@ -35,7 +35,7 @@ Note a few caveats with `Any`:
 - Loss of Compile-Time Guarantees: When you put something into `Box<dyn Any>` or similar, you lose type information at compile time. This makes it harder for the compiler to catch errors for you.
 - If there's a way to achieve your goal using generics with trait bounds, enums, or other more type-safe Rust patterns, those are generally preferred over `Any`. `Any` should be used when you genuinely need runtime type introspection for heterogeneous collections.
 
-## Related Topics {#related-topics}
+## Related Topics {#skip}
 
 - [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]].
 - [[scripting | Scripting]].
