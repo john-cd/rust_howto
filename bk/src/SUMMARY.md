@@ -37,6 +37,7 @@
     - [Reference Counting](standard_library/reference_counting.md)
     - [Interior Mutability](standard_library/interior_mutability.md)
     - [Clone-on-Write (Cow)](standard_library/cow.md)
+    - [Pin](standard_library/pin.md)
   - [Drop](standard_library/drop.md)
   - [Conversion Traits](standard_library/conversion_traits.md)
   - [AsRef](standard_library/asref.md)

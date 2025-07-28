@@ -3,10 +3,7 @@
 [Crates (Alphabetic)](indices/crates_alphabetical.md)
 [Crates (by Category)](indices/crates_by_category.md)
 
-- [Sync](standard_library/sync.md)
-- [Pin](standard_library/pin.md)
 - [Dynamic Typing](standard_library/any.md)
-- [Sync](standard_library/sync.md)
 
 # Categories
 

@@ -60,15 +60,15 @@ We listed below the (stable) modules of the Standard Library, highlighted the mo
 
 The following covers portions of the Rust Standard Library that are not otherwise covered by another chapter: core types like `Option`, `Result`; smart pointers; and traits for conversions.
 
-## Option
+## `Option`
 
 {{#include option.incl.md}}
 
-## Result
+## `Result`
 
 {{#include result.incl.md}}
 
-## Default
+## `Default`
 
 {{#include default.incl.md}}
 
@@ -96,7 +96,11 @@ The following covers portions of the Rust Standard Library that are not otherwis
 
 {{#include cow.incl.md}}
 
-## Drop
+### `Pin`
+
+{{#include pin.incl.md}}
+
+## `Drop`
 
 {{#include drop.incl.md}}
 
@@ -112,7 +116,7 @@ The following covers portions of the Rust Standard Library that are not otherwis
 
 {{#include borrow.incl.md}}
 
-## Derive: Automatic Trait Derivation
+## Automatic Trait Derivation
 
 {{#include derive.incl.md}}
 
