@@ -287,6 +287,4 @@
   - [Companies](links/companies.md)
   - [Learning](links/learning.md)
 
-[Thanks](thanks.md)
-
 ---
