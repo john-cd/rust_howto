@@ -4,21 +4,21 @@
 
 The following includes books and other long-form writings about Rust.
 
-## Book Lists {#book-lists}
+## Lists of Books {#book-lists}
 
 - [Little Book of Rust Books][book~the-little-book-of-rust-books]{{hi:Rust Books}}⮳.
 - [Awesome Rust Books](https://github.com/sger/RustBooks)⮳.
-- [LearnRust](https://github.com/ImplFerris/LearnRust)⮳. "List of resources to learn Rust - Roadmap from beginner to advanced level". Includes a book section.
-- [Rust-learning](https://github.com/ctjhoa/rust-learning)⮳. A bunch of links to books, blog posts, articles, videos, etc for learning Rust.
+- [LearnRust](https://github.com/ImplFerris/LearnRust)⮳: a "list of resources to learn Rust - Roadmap from beginner to advanced level". Includes a book section.
+- [Rust-learning](https://github.com/ctjhoa/rust-learning)⮳. A bunch of links to books, blog posts, articles, videos, etc. for learning Rust.
 
-## Essential Books {#official-books}
+## Essential and Official Books {#official-books}
 
 Books found on [`rust-lang.org`][rust-lang]⮳ and friends:
 
 - "The Book": [The Rust Programming Language][book~rust]⮳.
   - The [Rust Programming Language](https://rust-book.cs.brown.edu)⮳: An experimental version of the Rust Book enhanced with interactive quizzes, highlighting, and visualizations.
   - [The Rust Programming Language, 2nd Edition](https://nostarch.com/rust-programming-language-2nd-edition)⮳ by Steve Klabnik, Carol Nichols [978-1718503106](https://en.wikipedia.org/wiki/Special:BookSources/978-1718503106)⮳: The official Rust Book, in paper format.
-- [Rust by Example][book~rust-by-example~book]⮳: A collection of runnable examples that illustrate various Rust concepts and standard libraries.
+- [Rust by Example][book~rust-by-example]⮳: A collection of runnable examples that illustrate various Rust concepts and standard libraries.
 - The [Rust Cookbook (old)][book~rust-cookbook]⮳.{{hi:Cookbook}}
   - The [Rust Cookbook (fork)][book~rust-cookbook-fork]⮳.
 - The [Rust Standard Library](https://doc.rust-lang.org/std/index.html)⮳: Comprehensive guide to the Rust standard library APIs.{{hi:Standard library}}
@@ -59,25 +59,25 @@ Books found on [`rust-lang.org`][rust-lang]⮳ and friends:
 
 - [Rust for Rustaceans: Idiomatic Programming for Experienced Developers](https://www.amazon.com/Rust-Rustaceans-Programming-Experienced-Developers/dp/1718501854)⮳ by Jon Gjengset. [978-1718501850](https://en.wikipedia.org/wiki/Special:BookSources/978-1718501850)⮳.
 
-- [Rust From the Ground Up](https://leanpub.com/rust-from-the-ground-up)⮳. It teaches Rust by implementing a classic Unix CLI utility in each chapter (cat, head, wc, …).
+- [Rust from the Ground Up](https://leanpub.com/rust-from-the-ground-up)⮳. It teaches Rust by implementing a classic Unix CLI utility in each chapter (cat, head, wc, …).
 
-- [Rust in Action: Systems programming concepts and techniques](https://www.amazon.com/Rust-Action-Tim-McNamara/dp/1617294551)⮳ by Tim McNamara. [978-1617294556](https://en.wikipedia.org/wiki/Special:BookSources/978-1617294556)⮳.
+- [Rust in Action: Systems Programming Concepts and Techniques](https://www.amazon.com/Rust-Action-Tim-McNamara/dp/1617294551)⮳ by Tim McNamara. [978-1617294556](https://en.wikipedia.org/wiki/Special:BookSources/978-1617294556)⮳.
 
-- [Rust Programming By Example: Enter the world of Rust by building engaging, concurrent, reactive, and robust applications](https://www.amazon.com/dp/1788390636)⮳ by Guillaume Gomez, Antoni Boucher (Packt). [978-1788390637](https://en.wikipedia.org/wiki/Special:BookSources/978-1788390637)⮳.
+- [Rust Programming By Example](https://www.amazon.com/dp/1788390636)⮳: Enter the world of Rust by building engaging, concurrent, reactive, and robust application,s by Guillaume Gomez, Antoni Boucher (Packt). [978-1788390637](https://en.wikipedia.org/wiki/Special:BookSources/978-1788390637)⮳.
 
 - The [Rust Programming Language, 2nd Edition][book~rust-programming-language]⮳.
 
-- [Rust Under the Hood: A deep dive into Rust internals and generated assembly](https://www.amazon.com/dp/B0D7FQB3DH) by Sandeep Ahluwalia, Deepa Ahluwalia. [979-8320364469](https://en.wikipedia.org/wiki/Special:BookSources/979-8320364469)⮳.
+- [Rust Under the Hood](https://www.amazon.com/dp/B0D7FQB3DH): A deep dive into Rust internals and generated assemblyby Sandeep Ahluwalia, Deepa Ahluwalia. [979-8320364469](https://en.wikipedia.org/wiki/Special:BookSources/979-8320364469)⮳.
 
 - [The Secrets of Rust: Tools](https://bitfieldconsulting.com/books/rust-tools)⮳.
 
 - [Step Ahead with Rust: Systems Programming in Rust](https://www.amazon.com/Step-Ahead-Rust-Systems-Programming-ebook/dp/B079B735B1)⮳ by Jonathan Creekmore, James Miller (Kindle).
 
-- [Why Rust? Trustworthy, concurrent systems programming](https://www.oreilly.com/content/why-rust)⮳ by Jim Blandy (O'Reilly).
+- [Why Rust? Trustworthy, Concurrent Systems Programming](https://www.oreilly.com/content/why-rust)⮳ by Jim Blandy (O'Reilly).
 
 - [Zero To Production In Rust](https://www.zero2prod.com/index.html?country_code=US)⮳: "An opinionated introduction to backend development in Rust".
-- [Zero To Production In Rust: An introduction to backend development](https://www.amazon.com/Zero-Production-Rust-introduction-development/dp/B0BHLDMFDQ)⮳ by Luca Palmieri. [979-8847211437](https://en.wikipedia.org/wiki/Special:BookSources/979-8847211437)⮳.
-- [LukeMathWalker/zero-to-production: Code for "Zero To Production In Rust", a book on API development using Rust][book~zero-to-production]⮳
+- [Zero To Production In Rust: An Introduction to Backend Development](https://www.amazon.com/Zero-Production-Rust-introduction-development/dp/B0BHLDMFDQ)⮳ by Luca Palmieri. [979-8847211437](https://en.wikipedia.org/wiki/Special:BookSources/979-8847211437)⮳.
+- [LukeMathWalker/zero-to-production][book~zero-to-production]⮳: Code for "Zero To Production In Rust", a book on API development using Rust
 
 [(GitHub)][book~zero-to-production~github]⮳.
 
@@ -105,7 +105,7 @@ Books found on [`rust-lang.org`][rust-lang]⮳ and friends:
 
 ### Command Line Interfaces {#cli}
 
-- [Command line apps in Rust](https://rust-cli.github.io/book/index.html)⮳.{{hi:CLI}}{{hi:Command Line Interfaces}}
+- [Command-line Apps in Rust](https://rust-cli.github.io/book/index.html)⮳.{{hi:CLI}}{{hi:Command Line Interfaces}}
 
 - [Command-Line Rust](https://www.oreilly.com/library/view/command-line-rust/9781098109424)⮳ by Ken Youens-Clark (O'Reilly).
 - [Command-Line Rust: A Project-Based Primer for Writing Rust CLIs](https://www.amazon.com/Command-Line-Rust-Project-Based-Primer-Writing/dp/1098109430)⮳: A Project-Based Primer for Writing Rust CLIs by Ken Youens-Clark. [978-1098109431](https://en.wikipedia.org/wiki/Special:BookSources/978-1098109431)⮳.
@@ -114,7 +114,7 @@ Books found on [`rust-lang.org`][rust-lang]⮳ and friends:
 
 ### Compiler & Tools {#compiler-tools}
 
-- The [rustc book](https://doc.rust-lang.org/rustc/index.html)⮳.{{hi:Compiler}}
+- The [`rustc` Book](https://doc.rust-lang.org/rustc/index.html)⮳.{{hi:Compiler}}
 - [Rust Compiler Development Guide](https://rustc-dev-guide.rust-lang.org/getting-started.html)⮳.
 - The [Cargo Book](https://doc.rust-lang.org/cargo/index.html)⮳. Cargo is the Rust package manager.{{hi:Tools}}{{hi:Cargo}}
 - The [`rustdoc` book][book~rustdoc]⮳.{{hi:rustdoc}}
@@ -125,7 +125,7 @@ Books found on [`rust-lang.org`][rust-lang]⮳ and friends:
 ### Concurrency & Parallelism {#concurrency-parallelism}
 
 - [Rust Atomics and Locks][book~rust-atomics]⮳. [9781098119447](https://en.wikipedia.org/wiki/Special:BookSources/9781098119447)⮳.{{hi:Atomics}}{{hi:Locks}}
-- [Rust Concurrency: Master the art of building safe, scalable, and effective software](https://www.amazon.com/dp/1788399978)⮳ by Brian Troutwine (Packt). [978-1788399975](https://en.wikipedia.org/wiki/Special:BookSources/978-1788399975)⮳.{{hi:Concurrency}}{{hi:Parallelism}}
+- [Rust Concurrency](https://www.amazon.com/dp/1788399978)⮳: Master the art of building safe, scalable, and effective software, by Brian Troutwine (Packt). [978-1788399975](https://en.wikipedia.org/wiki/Special:BookSources/978-1788399975)⮳.{{hi:Concurrency}}{{hi:Parallelism}}
 
 ### Data Analysis {#data-analysis}
 
@@ -207,7 +207,7 @@ See also the [Awesome Embedded Rust](https://github.com/rust-embedded/awesome-em
 
 ### Web {#web}
 
-[Rust Web Development with warp, tokio, and reqwest](https://www.amazon.com/Rust-Web-Development-Bastian-Gruber/dp/1617299006) by Bastian Gruber. [9781617299001](https://en.wikipedia.org/wiki/Special:BookSources/9781617299001)⮳.
+[Rust Web Development with `warp`, `tokio`, and `reqwest`](https://www.amazon.com/Rust-Web-Development-Bastian-Gruber/dp/1617299006) by Bastian Gruber. [9781617299001](https://en.wikipedia.org/wiki/Special:BookSources/9781617299001)⮳.
 
 ### Webassembly (WASM) {#wasm}
 
@@ -221,6 +221,9 @@ This page includes a number of links to the websites of publishers and book merc
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+- Rust Atomics and Locks: [marabos.nl/atomics][book~rust-atomics]⮳: A deep dive into atomics and locks by Mara Bos. |
+
 review https://lborb.github.io/book/unofficial.html
 https://lborb.github.io/book/applications.html
 

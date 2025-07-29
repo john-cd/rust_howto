@@ -60,7 +60,7 @@ The [`monostate`][c~monostate~docs]⮳{{hi:monostate}} library implements a type
 <div class="hidden">
 [serde: write](https://github.com/john-cd/rust_howto/issues/352)
 dedupe [JSON][p~json] with complex.md
-[Supported formats][c~serde~supported-formats]
+[Supported Formats][c~serde~supported-formats]
 
 - [eserde: Don't stop at the first deserialization error | Mainmatter](https://mainmatter.com/blog/2025/02/13/eserde/)
 - [serde_with — Rust data encoding library](https://lib.rs/crates/serde_with)

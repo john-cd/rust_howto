@@ -24,8 +24,8 @@ It offers a free tier with access to essential features for individual developer
 ## References
 
 - [`shuttle.dev`][shuttle-dev~website]⮳{{hi:shuttle}}
-- [docs.shuttle.dev][shuttle-dev~docs]{{hi:shuttle.dev}}
-- [Shuttle examples][shuttle~examples~github]
+- [`docs.shuttle.dev`][shuttle-dev~docs]{{hi:shuttle.dev}}
+- [Shuttle Examples][shuttle~examples~github]
 
 ## Related Topics
 

@@ -19,7 +19,7 @@ This book is intended for
 - new Rust programmers, to get an overview of the capabilities of the Rust ecosystem and pointers to other resources.
 - experienced programmers, to find code examples and review best practices for common programming tasks.
 
-Readers should have already some basic familiarity with [`Rust`][rust-lang]{{hi:Rust}}⮳ concepts. The [`Rust book`][book~rust]{{hi:Rust book}}⮳ is an excellent resource for complete beginners to get started with. This said, key features of the language are summarized in this book's [language][p~lang] section.
+Readers should have already some basic familiarity with [Rust][rust-lang]{{hi:Rust}}⮳ concepts. The [Rust Book][book~rust]{{hi:Rust book}}⮳ is an excellent resource for complete beginners to get started with. This said, key features of the language are summarized in this book's [language][p~lang] section.
 
 ## Why This Book
 
@@ -46,8 +46,8 @@ If you are simply looking for the solution to a given task, the easiest ways to 
 
 - use the search button (in the top toolbar),
 - scan the left-side bar for categories you are interested in,
-- scan the [Index of examples][p~index~examples], and from there, click on the name of the recipe to view it,
-- look up into the [Word index][p~word-index] lists concepts, crates (in lower case), and Rust items (using their full path e.g. [`parking_lot::ReentrantMutex`][c~parking_lot::ReentrantMutex~docs]⮳{{hi:parking_lot::ReentrantMutex}}),
+- scan the [index of examples][p~index~examples], and from there, click on the name of the recipe to view it,
+- look up into the [word index][p~word-index] lists concepts, crates (in lower case), and Rust items (using their full path e.g. [`parking_lot::ReentrantMutex`][c~parking_lot::ReentrantMutex~docs]⮳{{hi:parking_lot::ReentrantMutex}}),
 - consult the [[crates_alphabetical | alphabetical]] and [[crates_by_category | categorical]] crates indices.
 
 The [links][p~links] section provides pointers to notable Rust websites, [[learning | learning]] resources, cheat sheets, [[books | books]], and [[example_code | code examples]]...

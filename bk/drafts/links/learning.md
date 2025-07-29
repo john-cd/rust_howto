@@ -4,20 +4,22 @@
 
 ## Rust Overviews, Starting Point {#overview}
 
-- [Rust (programming language) - Wikipedia](https://en.wikipedia.org/wiki/Rust_(programming_language))⮳.
+- [Rust (programming language)](https://en.wikipedia.org/wiki/Rust_(programming_language))⮳ on Wikipedia.
 - Rust [language][p~language] main site: [rust-lang.org][rust-lang]{{hi:Rust learning}}⮳.
 
 ## Learning Roadmaps {#learning-roadmap}
 
-- [Learn to become a Rust developer](https://roadmap.sh/rust)⮳.
+- [Learn to Become a Rust Developer](https://roadmap.sh/rust)⮳.
 - [Roadmap for Rust][roadmap-rust~website]⮳.
 
 ## Tutorials {#tutorials}
 
-- [Rust tutorial that actually teaches Rust][rust_tutorial_that_actually_teaches_rust]⮳.
-- [Rust gentle introduction][rust-gentle-intro]⮳.
+- [Rust Tutorial that Actually Teaches Rust][rust_tutorial_that_actually_teaches_rust]⮳.
+- [Rust Gentle Introduction][rust-gentle-intro]⮳.
+- [Workshop](https://rust-tutorials.com/RustConf17)⮳ slides and exercises from RustConf 2017.
+- Jonathan Pallant's [Rust on the Raspberry Pi](https://github.com/thejpster/pi-workshop-rs)⮳ tutorial.
 
-## Examples and Exercises {#examples}
+## Examples and Exercises {#examples-exercises}
 
 - [`Rust by Example`][rust-by~example]⮳.
 - [`Rust by Practice`][https://practice.course.rs]⮳.
@@ -30,12 +32,11 @@
 - [`Comprehensive Rust`][book~comprehensive-rust]⮳, a free Rust course developed by the Android team at Google. The course covers the full spectrum of Rust, from basic syntax to advanced topics like [generics][p~generics] and [error handling][p~error-handling].
 - [`Rust for professionals`][rust-for-professionals~website]⮳.
 - [`A half-hour to learn Rust`][book~a-half-hour-to-learn-rust]⮳.
-- [rust-course-fei: Rust course](https://github.com/Kobzol/rust-course-fei/tree/main)⮳.
+- [Rust Course (taught at FEI VŠB-TUO)](https://github.com/Kobzol/rust-course-fei/tree/main)⮳.
 - [Rust Development Classes](https://rust-classes.com/preface)⮳.
 - [Fast Track to Rust](https://freddiehaddad.github.io/fast-track-to-rust/)⮳.
 - [Yet Another Rust Resource (YARR!)](https://yarr.fyi/introduction)⮳.
-- Open source training courses about distributed database and distributed systems: [Talent plan][talent-plan~github]⮳.
-
+- Open source training courses about distributed database and distributed systems: [Talent Plan][talent-plan~github]⮳.
 - [Tour of Rust](https://tourofrust.com)⮳.
 - [Rust: The Basics](https://stepik.org/lesson/9268/step/1)⮳.
 
@@ -58,9 +59,9 @@
 ## Ferrous Systems Training {#ferrous-systems-training}
 
 - [Why Rust?][ferrous-systems~why-rust~github]⮳.
-- [Rust training][ferrous-systems~rust-training~github]⮳.
-- [Rust exercises][ferrous-systems~rust-exercises~github]⮳.
-- [WASM training][ferrous-systems~wasm-training~github]⮳.
+- [Rust Training][ferrous-systems~rust-training~github]⮳.
+- [Rust Exercises][ferrous-systems~rust-exercises~github]⮳.
+- [WASM Training][ferrous-systems~wasm-training~github]⮳.
 
 ## Rust Cheat Sheets {#cheat-sheets}
 
@@ -70,9 +71,9 @@ See [[rust_cheatsheets | Rust Cheatsheets]].
 
 - [`rust.code-maven.com`][code-maven~website]⮳.
 - [Learning Rust With Entirely Too Many Linked Lists][rust-learning-linked-lists~website]⮳.
-- Learning Rust By Practice, narrowing the gap between beginner and skilled-dev through challenging examples, exercises and projects: [rust-by-practice][rust-by-practice~github]⮳.
+- [Rust by Practice][rust-by-practice~github]⮳. Learning Rust By Practice, narrowing the gap between beginner and skilled-dev through challenging examples, exercises and projects:
 - [Rust Language Bible][rust-course~github]⮳.
-- [How to learn modern Rust][how_to_learn_modern_rust~github]⮳.
+- [How to Learn Modern Rust][how_to_learn_modern_rust~github]⮳.
 - [Learning Rust](https://quinedot.github.io/rust-learning/index.html)⮳.
 
 ## References {#references}

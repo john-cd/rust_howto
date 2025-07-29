@@ -2,7 +2,7 @@
 
 [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
-Common data structures include [[data_types | arrays]] and [[vectors | vectors]], which are contiguous block of memory that stores elements of the same data type; [[linkedlist |linked lists]] (sequences of nodes, where each node contains data and a pointer to the next node); [[stack_and_queue |stacks]] ("last-in, first-out" (LIFO) data structures); [[stack_and_queue | queues]] ("first-in, first-out" (FIFO) data structures); [[btrees |trees]] (hierarchical data structures consisting of nodes with parent-child relationships); sets (collections of unique elements); and [[hashmaps |maps]] (aka dictionaries, which store key-value pairs).
+Common data structures include [[data_types | arrays]] and [[vectors | vectors]], which are contiguous block of memory that stores elements of the same data type; [[linkedlist |linked lists]] (sequences of nodes, where each node contains data and a pointer to the next node); [[stack_and_queue | stacks]] ("last-in, first-out" (LIFO) data structures); [[stack_and_queue | queues]] ("first-in, first-out" (FIFO) data structures); [[btrees | trees]] (hierarchical data structures consisting of nodes with parent-child relationships); sets (collections of unique elements); and [[hashmaps | maps]] (aka dictionaries, which store key-value pairs).
 
 Standard library collections (in `std::collections`) include:
 
@@ -13,7 +13,7 @@ Standard library collections (in `std::collections`) include:
 - [[hashmaps | `HashSet<T>`]] (Hash Set) stores a collection of unique elements. Used for efficiently checking membership and ensuring uniqueness.
 - [[btrees | `BTreeSet<T>`]] (B-Tree Set) is similar to `HashSet`, but it keeps the elements sorted.
 - [[linkedlist | `LinkedList<T>`]] is a doubly linked list. Useful for frequent insertions and deletions at arbitrary positions, but less efficient for random access.
-- [[stack_and_queue |`VecDeque<T>`]] (Vector Deque) is a double-ended queue. Allows efficient insertion and deletion at both ends.
+- [[stack_and_queue | `VecDeque<T>`]] (Vector Deque) is a double-ended queue. Allows efficient insertion and deletion at both ends.
 - [[binaryheap | `BinaryHeap<T>`]] is a binary heap, often used to implement a priority queue.
 
 Refer to the [[language | Language]] and [[standard-library | Standard Library]] sections for examples of use.

@@ -25,7 +25,7 @@ You can also use the AWS SDK from within a Lambda function to interact with AWS 
 {{#include ../../../crates/other/examples/cloud/aws_lambda.rs:example}}
 ```
 
-See also the ["Create Lambda functions with Rust"][aws-create-lambda-functions-with-rust]⮳ and ["AWS Lambda Rust runtime examples"][aws-lambda-rust-runtime~examples~github]⮳ webpages.
+See also the ["Create Lambda Functions with Rust"][aws-create-lambda-functions-with-rust]⮳ and ["AWS Lambda Rust Runtime Examples"][aws-lambda-rust-runtime~examples~github]⮳ webpages.
 
 ## Interact with AWS Services with the AWS SDK for Rust {#aws-sdk-rust}
 
@@ -45,7 +45,7 @@ See, for example:
 
 - [AWS and Rust][blog~sustainability-with-rust]⮳.
 - [AWS Rust SDK][aws-rust-sdk~website]{{hi:AWS}}⮳.
-- [Serverless rust][serverless-rust~website]{{hi:Serverless}}⮳ framework.
+- [Serverless Rust][serverless-rust~website]{{hi:Serverless}}⮳ framework.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
@@ -58,6 +58,6 @@ Deploy Rust Applications to Elastic Beanstalk
 Deploy Rust Applications to App Runner
 Deploy Rust Applications to EC2 machines
 
-- [aws-config](https://lib.rs/crates/aws-config)
+- [`aws-config`](https://lib.rs/crates/aws-config)
 
 </div>

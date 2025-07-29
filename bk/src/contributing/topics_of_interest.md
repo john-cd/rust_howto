@@ -5,14 +5,14 @@
 The following are topics that deserve (additional) coverage and examples:
 
 - Rust [[gui | GUI]].
-- [[rust-patterns | Rust patterns]].
-- Rust [[macros | macros]].
-- [[data-structures | Data structures]].
+- [[rust-patterns | Rust Patterns]].
+- Rust [[macros | Macros]].
+- [[data-structures | Data Structures]].
 - [[testing | Testing]].
 - [GPU][p~gpu] processing, CUDA.
-- [Machine learning][p~machine-learning], Tensorflow.
+- [Machine Learning][p~machine-learning], Tensorflow.
 - [[email | Email]].
-- [[template-engine | Template engines]].
+- [[template-engine | Template Engines]].
 - [[caching | Caching]].
 - [[compilers | Compilers]].
 - [[wasm | WASM]].
@@ -34,9 +34,9 @@ The following are topics that deserve (additional) coverage and examples:
 - Reverse proxies.
 - [[web-programming | Web programming]].
 - [[virtualization | Virtualization]].
-- [Version control][p~version-control]: libgit2: clone, change branches, create commits, push, pull.
+- [Version Control][p~version-control]: libgit2: clone, change branches, create commits, push, pull.
 - [[cryptography | Cryptography]], SSL, SSH, other public key [encryption][p~encryption], X.509, RusTLS.
-- [[network-programming | Network programming]]: Basic and advanced TCP/IP networking.
+- [[network-programming | Network Programming]]: Basic and advanced TCP/IP networking.
 - Interfacing with FLTK (Fast Light Tool Kit).
 - Raft Consensus library.
 - Network file systems.
@@ -52,14 +52,14 @@ The following are topics that deserve (additional) coverage and examples:
 - Personal file sharing: OwnCloud, etc.
 - [[emulators | Emulators]].
 - [[accessibility | Accessibility]].
-- [[internationalization | Internationalization]] and [[localization | localization]].
+- [[internationalization | Internationalization]] and [[localization | Localization]].
 - [[multimedia | Multimedia]].
 - [[computer-vision | Computer Vision]].
 - [[science_robotics | Robotics]].
 - [[simulation | Simulation]].
-- [Science][p~science] ([[geo | geo]], [[neuroscience | neuro]]).
+- [Science][p~science] ([[geo | Geo]], [[neuroscience | Neuro]]).
 - [[finance | Finance]].
-- [[aerospace | Aerospace]]-related crates: [drones][p~drones], UAVs, [space protocols][p~space-protocols], simulation...
+- [[aerospace | Aerospace]]-related crates: [Drones][p~drones], UAVs, [Space Protocols][p~space-protocols], simulation...
 - [[cryptocurrencies | Cryptocurrencies]].
 
 Please also consult the [`TODO.md`][rust-howto~todo~github] file and the [`drafts`][rust-howto~drafts~github] and `later` folders.

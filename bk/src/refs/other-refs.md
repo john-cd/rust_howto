@@ -456,7 +456,6 @@
 [how_to_learn_modern_rust~github]: https://github.com/joaocarvalhoopen/How_to_learn_modern_Rust
 [httpbin.org~headers]: http://httpbin.org/headers
 [huawei~website]: https://www.huawei.com/en
-[hugging face~website]: https://huggingface.co
 [huggingface~github]: https://github.com/huggingface
 [huggingface~website]: http://www.huggingface.co
 [hyperswitch~github]: https://github.com/juspay/hyperswitch/tree/main
@@ -662,7 +661,7 @@
 [rust-analyzer~visual-studio~website]: https://rust-analyzer.github.io/manual.html#visual-studio-2022
 [rust-analyzer~website]: https://rust-analyzer.github.io
 [rust-analyzer~website~badge]: https://img.shields.io/badge/rust_analyzer-coral
-[rust-by-example]: https://doc.rust-lang.org/rust-by-example/index.html
+[book~rust-by-example]: https://doc.rust-lang.org/rust-by-example/index.html
 [rust-by-practice~github]: https://github.com/sunface/rust-by-practice
 [rust-cache~github]: https://github.com/Swatinem/rust-cache
 [rust-ci-tooling~website]: https://rodneylab.com/rust-ci-tooling

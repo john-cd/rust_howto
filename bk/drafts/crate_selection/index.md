@@ -2,8 +2,8 @@
 
 ## Crates Used in this Book {#crates-used}
 
-- [Crates by alphabetical order][p~crates-alphabetical].
-- [Crates by category][p~crates-categories].
+- [Crates by Alphabetical Order][p~crates-alphabetical].
+- [Crates by Category][p~crates-categories].
 
 ## Select Crates for your Project {#select-crates}
 
@@ -11,45 +11,45 @@ Use the following sites for crate recommendations:
 
 - [`blessed.rs`][blessed-rs~website]{{hi:blessed.rs}}⮳,
 - [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳, and in particular,
-  - [Most popular Rust libraries][lib-rs~most-popular]⮳.
+  - [Most Popular Rust Libraries][lib-rs~most-popular]⮳.
   - High-quality crates [statistics][lib-rs~stats]⮳.
 - The Rust community's official crate registry: [`crates.io`][crates.io~website]{{hi:crates.io}}⮳,
-- [`crates.io`'s most (recent) downloads][crates.io~most-recent-downloads]⮳.
+- [`crates.io`'s Most (Recent) Downloads][crates.io~most-recent-downloads]⮳.
 
 You may also consult older resources, such as:
 
-- [Rust starter pack][rust-starter-pack~website]{{hi:Rust starter pack}}⮳.
+- [Rust Starter Pack][rust-starter-pack~website]{{hi:Rust starter pack}}⮳.
 - [![stdx][c~stdx~github~badge]][c~stdx~github]{{hi:stdx}}⮳.
-- [Best of Rust crates][reddit~best-of-rust-crates]⮳.
+- [Best of Rust Crates][reddit~best-of-rust-crates]⮳.
 
 ## Additional Lists & Reviews {#lists-reviews}
 
 - [Awesome Rust (libhunt.com)](https://rust.libhunt.com)⮳.
 - [Top Rust Libraries 2025](https://libs.tech/rust)⮳.
 - [State of the Crates 2025](https://ohadravid.github.io/posts/2024-12-state-of-the-crates/)⮳.
-- [What are some less popular but well-made crates you'd like others to know about? : r/rust](https://www.reddit.com/r/rust/comments/106w4ao/what_are_some_less_popular_but_wellmade_crates/)⮳.
-- ["Must know" Rust crates](https://gitlab.com/samuel_schuepbach/must_know_rust_crates)⮳.
-- [Discover useful Rust development resources | RustRepo](https://rustrepo.com/)⮳.
+- [r/rust: "What are some less popular but well-made crates you'd like others to know about?"](https://www.reddit.com/r/rust/comments/106w4ao/what_are_some_less_popular_but_wellmade_crates/)⮳.
+- ["Must know" Rust Crates](https://gitlab.com/samuel_schuepbach/must_know_rust_crates)⮳.
+- [RustRepo](https://rustrepo.com/)⮳.
 
 ## Understand the State of the Rust Ecosystem {#understand-the-rust-ecosystem}
 
 You will find below links to "Are we ... yet?" websites and similar. They list key libraries and tools and provide an idea of the current state of the art in a given domain. Note that several are quite out-of-date.
 
 - General
-  - [Are we Rust yet?](https://github.com/UgurcanAkkok/AreWeRustYet)⮳: Awesome list of "Are We *thing* Yet" for Rust.
-  - [Are We ... yet? (Mozilla Wiki)](https://wiki.mozilla.org/Areweyet)⮳.
-  - [Not yet awesome Rust](https://github.com/not-yet-awesome-rust/not-yet-awesome-rust)⮳.
+  - [Are We Rust Yet?](https://github.com/UgurcanAkkok/AreWeRustYet)⮳: Awesome list of "Are We *thing* Yet" for Rust.
+  - [Are We ... Yet? (Mozilla Wiki)](https://wiki.mozilla.org/Areweyet)⮳.
+  - [Not Yet Awesome Rust](https://github.com/not-yet-awesome-rust/not-yet-awesome-rust)⮳.
 - By Topic
-  - [Are we web yet?][are-we-web-yet?~website]⮳.
-  - [Are we async yet?][are-we-async-yet?~website]⮳.
-  - [Are we GUI yet?][are-we-gui-yet?~website]⮳.
-  - [Are we IDE yet?](https://areweideyet.com)⮳.
-  - [Are we game yet?][are-we-game-yet?~engines~website]⮳.
-  - [Are we learning yet?][are-we-learning-yet?~website]⮳.
-  - [Are we bio yet?](https://rust4bio.github.io/arewebioyet)⮳.
-  - [Are we VFX yet?](https://arewevfxyet.rs)⮳.
-  - [Are we quantum yet?](https://arewequantumyet.github.io)⮳.
-  - [Are we in space yet?](https://aerorust.org/catalogue)⮳.
+  - [Are We Web Yet?][are-we-web-yet?~website]⮳.
+  - [Are We Async Yet?][are-we-async-yet?~website]⮳.
+  - [Are We GUI Yet?][are-we-gui-yet?~website]⮳.
+  - [Are We IDE Yet?](https://areweideyet.com)⮳.
+  - [Are We Game Yet?][are-we-game-yet?~engines~website]⮳.
+  - [Are We Learning Yet?][are-we-learning-yet?~website]⮳.
+  - [Are We Bio Yet?](https://rust4bio.github.io/arewebioyet)⮳.
+  - [Are We VFX Yet?](https://arewevfxyet.rs)⮳.
+  - [Are We Quantum Yet?](https://arewequantumyet.github.io)⮳.
+  - [Are We in Space Yet?](https://aerorust.org/catalogue)⮳.
   - [Rust Audio](https://rust.audio)⮳.
   - [Awesome Geo-Rust](https://github.com/pka/awesome-georust)⮳: geospatial software, libraries, tools and resources, written in Rust.
 

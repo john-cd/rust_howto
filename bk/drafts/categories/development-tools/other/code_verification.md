@@ -97,7 +97,7 @@ Loom attempts to check all possible interleavings, while Shuttle chooses interle
 
 ## References {#skip}
 
-- [Model checking][wikipedia~model-checking]⮳.
+- [Model Checking][wikipedia~model-checking]⮳.
 - [Kani Rust Verifier][c~kani~website]⮳.
 - [Announcing the Kani Rust Verifier Project][c~kani~announcing-the-kani-rust-verifier-project~blog]⮳.
 - [Using the Kani Rust Verifier on a Firecracker Example][c~kani~using-the-kani-rust-verifier-on-a-firecracker~example~blog]⮳.

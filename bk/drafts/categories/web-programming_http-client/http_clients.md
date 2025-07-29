@@ -41,7 +41,7 @@ Multiple examples using `reqwest` are found in [[apis | APIs]], [[download | Dow
 
 ## References
 
-- [`hyper` examples][c~hyper~examples~github]⮳.
+- [`hyper` Examples][c~hyper~examples~github]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
