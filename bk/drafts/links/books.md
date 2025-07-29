@@ -67,7 +67,7 @@ Books found on [`rust-lang.org`][rust-lang]⮳ and friends:
 
 - The [Rust Programming Language, 2nd Edition][book~rust-programming-language]⮳.
 
-- [Rust Under the Hood](https://www.amazon.com/dp/B0D7FQB3DH): A deep dive into Rust internals and generated assemblyby Sandeep Ahluwalia, Deepa Ahluwalia. [979-8320364469](https://en.wikipedia.org/wiki/Special:BookSources/979-8320364469)⮳.
+- [Rust Under the Hood](https://www.amazon.com/dp/B0D7FQB3DH): A deep dive into Rust internals and generated assembly, by Sandeep Ahluwalia, Deepa Ahluwalia. [979-8320364469](https://en.wikipedia.org/wiki/Special:BookSources/979-8320364469)⮳.
 
 - [The Secrets of Rust: Tools](https://bitfieldconsulting.com/books/rust-tools)⮳.
 

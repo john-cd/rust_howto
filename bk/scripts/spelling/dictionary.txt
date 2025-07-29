@@ -3262,3 +3262,8 @@ invariants
 pointee
 LazyCell
 PhantomPinned
+Séguret's
+Denys
+Kerkour's
+Cancelable
+Udemy
