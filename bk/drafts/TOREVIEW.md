@@ -92,3 +92,5 @@
 - [`rust-shed`: Repository containing Rust crates common between other Facebook open source projects (like Mononoke or Eden).](https://github.com/facebookexperimental/rust-shed)
 
 - [foreverVM: The sessionless code interpreter](https://forevervm.com/)
+
+- [Cancelable background task](https://dystroy.org/blog/cancelable-background-task)
