@@ -1,4 +1,4 @@
-# Example Code {#example-code}
+# Example Code and Templates {#example-code}
 
 {{#include example_code.incl.md}}{{hi:Example code}}
 

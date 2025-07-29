@@ -1,4 +1,4 @@
-# Videos
+# Videos and Podcasts
 
 {{#include videos.incl.md}}
 
