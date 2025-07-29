@@ -20,7 +20,7 @@ This section provides a large number of links to Rust resources:
 ## Lists of Rust Links and Resources {#lists-of-rust-links-and-resources}
 
 - [`Awesome Rust`][awesome-rust~github]⮳: a curated list of Rust code and resources.
-- [Rust Learning][rust-learning~github]⮳: a bunch of links to blog posts, articles, videos, etc for learning Rust [![rust-learning][rust-learning~github~badge]][rust-learning~github].
+- [Rust Learning][rust-learning~github]⮳: a bunch of links to blog posts, articles, videos, etc. for learning Rust.
 - [Learning Resources - Blessed.rs](https://blessed.rs/learning-resources)⮳.
 - [Idiomatic Rust](https://github.com/mre/idiomatic-rust)⮳: a peer-reviewed collection of articles/talks/repos which teach concise, idiomatic Rust.
 - [LearnRust](https://github.com/ImplFerris/LearnRust)⮳.
