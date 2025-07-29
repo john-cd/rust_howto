@@ -280,6 +280,5 @@
 ---
 
 - [Books](links/books.md)
-- [Companies](links/companies.md)
 
 ---

@@ -205,28 +205,17 @@ Please also consult the [list of companies using Rust][theirstack-rust~website] 
 | [Zama][zama~website]⮳[(github)][zama-ai~github]⮳ | Open source cryptographic tools that make protecting privacy easy. |
 | [Zeplin][zeplin~website]⮳ | |
 
+## Rust Jobs {#jobs}
+
+- [`rustjobs.dev`](https://rustjobs.dev)⮳.
+- [`rustjobs.com`](https://www.rustjobs.com)⮳.
+- [Rust Jobs for Rustaceans](https://jobs.letsgetrusty.com)⮳.
+
+See also the [Rust Jobs Report](https://filtra.io/rust)⮳ (Filtra).
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[finish NOW](https://github.com/john-cd/rust_howto/issues/987)
-
-## Companies {#skip}
-
-- [rust-companies](https://github.com/omarabid/rust-companies/activity)
-- [Volvo][volvo].
-
-[volvo]: https://tweedegolf.nl/en/blog/137/rust-is-rolling-off-the-volvo-assembly-line
-
-## Jobs {#jobs}
-
-- [RustJobs.dev](https://rustjobs.dev)⮳.
-- [RustJobs.com](https://www.rustjobs.com)⮳.
-- [Rust Jobs for Rustaceans](https://jobs.letsgetrusty.com)⮳.
-
-- [Rust jobs-report (Sep. 2024)][rust-jobs-report]⮳.
-- [AWS will pay devs to verify Rust standard library because of 7,500 unsafe functions and enormity of task](https://devclass.com/2024/11/21/aws-will-pay-devs-to-verify-rust-standard-library-because-of-7500-unsafe-functions-and-enormity-of-task/)
-
-[rust-jobs-report]: https://filtra.io/rust/jobs-report/sep-24
-
+TODO review links
 </div>

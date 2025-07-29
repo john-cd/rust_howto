@@ -70,6 +70,7 @@
   - [Example Code](links/example_code.md)
   - [Meetings](links/meetings.md)
   - [Videos](links/videos.md)
+  - [Companies](links/companies.md)
 
 - [Contributing](contributing/index.md)
   - [Topics of Interest](contributing/topics_of_interest.md)
