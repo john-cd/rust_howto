@@ -227,20 +227,5 @@ This page includes a number of links to the websites of publishers and book merc
 review https://lborb.github.io/book/unofficial.html
 https://lborb.github.io/book/applications.html
 
-[book~embedded~no_std]: https://docs.rust-embedded.org/book/intro/no-std.html
-[book~programming-rust-2nd-edition]: https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586
-[book~rust-atomics]: https://marabos.nl/atomics
-[book~rust-cli]: https://rust-cli.github.io/book/index.html
 [book~rust~code-block-attributes]: https://rust-lang.github.io/mdBook/format/mdbook.html#rust-code-block-attributes
-[book~rust-design-patterns]: https://rust-unofficial.github.io/patterns
-[book~rust-for-C#-developers]: https://microsoft.github.io/rust-for-dotnet-devs/latest
-[book~rust-macros]: https://veykril.github.io/tlborm
-[book~rust-performance]: https://nnethercote.github.io/perf-book
-[book~rust-programming-language]: https://www.oreilly.com/library/view/the-rust-programming/9781098156817
-[book~rustdoc]: https://doc.rust-lang.org/rustdoc/index.html
-[book~rustwasm]: https://rustwasm.github.io/docs/book
-[book~zero-to-production~github]: https://github.com/LukeMathWalker/zero-to-production
-[book~zero-to-production]: https://www.lpalmieri.com/posts/2020-05-24-zero-to-production-0-foreword
-[book~writing-interpreters-in-rust~github]: https://github.com/rust-hosted-langs/book
-[gtk4-rs~website]: https://gtk-rs.org/gtk4-rs/git/book/introduction.html
 </div>

@@ -138,6 +138,7 @@
 [book~programming-rust-2nd-edition~badge]: https://img.shields.io/badge/Programming_rust_2nd_edition-peru?logo=mdbook
 [book~rust-atomics]: https://marabos.nl/atomics
 [book~rust-attributes~badge]: https://img.shields.io/badge/Rust_Book-Attributes-blue?logo=mdbook
+[book~rust-by-example]: https://doc.rust-lang.org/rust-by-example/index.html
 [book~rust-by-example~array]: https://doc.rust-lang.org/rust-by-example/primitives/array.html
 [book~rust-by-example~array~badge]: https://img.shields.io/badge/Rust_By_Example-array-violet?logo=mdbook
 [book~rust-by-example~attributes]: https://doc.rust-lang.org/rust-by-example/attribute.html
@@ -661,7 +662,6 @@
 [rust-analyzer~visual-studio~website]: https://rust-analyzer.github.io/manual.html#visual-studio-2022
 [rust-analyzer~website]: https://rust-analyzer.github.io
 [rust-analyzer~website~badge]: https://img.shields.io/badge/rust_analyzer-coral
-[book~rust-by-example]: https://doc.rust-lang.org/rust-by-example/index.html
 [rust-by-practice~github]: https://github.com/sunface/rust-by-practice
 [rust-cache~github]: https://github.com/Swatinem/rust-cache
 [rust-ci-tooling~website]: https://rodneylab.com/rust-ci-tooling

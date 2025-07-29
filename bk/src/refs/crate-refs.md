@@ -767,8 +767,6 @@
 [c~capnp~github~badge]: https://img.shields.io/badge/capnp-steelblue?logo=github
 [c~capnp~lib.rs]: https://lib.rs/crates/capnp
 [c~capnp~lib.rs~badge]: https://img.shields.io/badge/lib.rs-capnp-yellow
-[c~clippy~book]: https://doc.rust-lang.org/stable/clippy/usage.html
-[c~cargo_quickinstall~github]: https://github.com/cargo-bins/cargo-quickinstall
 [c~cargo_about~crates.io]: https://crates.io/crates/cargo_about
 [c~cargo_about~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--about-crimson
 [c~cargo_about~docs]: https://docs.rs/cargo-about
@@ -1052,6 +1050,7 @@
 [c~cargo_prune~github~badge]: https://img.shields.io/badge/cargo--prune-steelblue?logo=github
 [c~cargo_prune~lib.rs]: https://lib.rs/crates/cargo-prune
 [c~cargo_prune~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--prune-yellow
+[c~cargo_quickinstall~github]: https://github.com/cargo-bins/cargo-quickinstall
 [c~cargo_release~crates.io]: https://crates.io/crates/cargo_release
 [c~cargo_release~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--release-crimson
 [c~cargo_release~docs]: https://docs.rs/cargo_release
@@ -1368,6 +1367,7 @@
 [c~clipboard~github~badge]: https://img.shields.io/badge/clipboard-steelblue?logo=github
 [c~clipboard~lib.rs]: https://lib.rs/crates/clipboard
 [c~clipboard~lib.rs~badge]: https://img.shields.io/badge/lib.rs-clipboard-yellow
+[c~clippy~book]: https://doc.rust-lang.org/stable/clippy/usage.html
 [c~clippy~crates.io]: https://crates.io/crates/clippy
 [c~clippy~crates.io~badge]: https://img.shields.io/badge/crates.io-clippy-crimson
 [c~clippy~docs]: https://docs.rs/clippy
@@ -1506,6 +1506,8 @@
 [c~console~github~badge]: https://img.shields.io/badge/console-steelblue?logo=github
 [c~console~lib.rs]: https://lib.rs/crates/console
 [c~console~lib.rs~badge]: https://img.shields.io/badge/lib.rs-console-yellow
+[c~core::cell::OnceCell~docs]: https://doc.rust-lang.org/core/cell/struct.OnceCell.html
+[c~core::iter::Iterator::filter_map~docs]: https://doc.rust-lang.org/core/iter/trait.Iterator.html#method.filter_map
 [c~cornucopia~crates.io]: https://crates.io/crates/cornucopia
 [c~cornucopia~crates.io~badge]: https://img.shields.io/badge/crates.io-cornucopia-crimson
 [c~cornucopia~docs]: https://docs.rs/cornucopia
@@ -3929,10 +3931,10 @@
 [c~mdbook_yapp~github~badge]: https://img.shields.io/badge/mdbook--yapp-steelblue?logo=github
 [c~mdbook_yapp~lib.rs]: https://lib.rs/crates/mdbook-yapp
 [c~mdbook_yapp~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mdbook--yapp-yellow
+[c~mdbook~api~docs]: https://docs.rs/mdbook
 [c~mdbook~book.toml]: https://rust-lang.github.io/mdBook/format/configuration/index.html
 [c~mdbook~crates.io]: https://crates.io/crates/mdbook
 [c~mdbook~crates.io~badge]: https://img.shields.io/badge/crates.io-mdbook-crimson
-[c~mdbook~api~docs]: https://docs.rs/mdbook
 [c~mdbook~docs]: https://rust-lang.github.io/mdBook/index.html
 [c~mdbook~docs~badge]: https://img.shields.io/crates/v/mdbook?label=mdbook
 [c~mdbook~github]: https://github.com/rust-lang/mdBook
@@ -4928,17 +4930,17 @@
 [c~poem~github~badge]: https://img.shields.io/badge/poem-steelblue?logo=github
 [c~poem~lib.rs]: https://lib.rs/crates/poem
 [c~poem~lib.rs~badge]: https://img.shields.io/badge/lib.rs-poem-yellow
-[c~polars~book~badge]: https://img.shields.io/badge/polars_book-coral
 [c~polars~book]: https://pola-rs.github.io/polars-book
+[c~polars~book~badge]: https://img.shields.io/badge/polars_book-coral
 [c~polars~crates.io]: https://crates.io/crates/polars
 [c~polars~crates.io~badge]: https://img.shields.io/badge/crates.io-polars-crimson
-[c~polars~more-docs~website]: https://docs.pola.rs
 [c~polars~docs]: https://docs.rs/polars
 [c~polars~docs~badge]: https://img.shields.io/crates/v/polars?label=polars
 [c~polars~github]: https://github.com/pola-rs/polars
 [c~polars~github~badge]: https://img.shields.io/badge/polars-steelblue?logo=github
 [c~polars~lib.rs]: https://lib.rs/crates/polars
 [c~polars~lib.rs~badge]: https://img.shields.io/badge/lib.rs-polars-yellow
+[c~polars~more-docs~website]: https://docs.pola.rs
 [c~polars~website]: https://www.pola.rs
 [c~polars~website~badge]: https://img.shields.io/badge/polars-coral
 [c~pollster~crates.io]: https://crates.io/crates/pollster
@@ -6443,8 +6445,6 @@
 [c~statrs~github~badge]: https://img.shields.io/badge/statrs-steelblue?logo=github
 [c~statrs~lib.rs]: https://lib.rs/crates/statrs
 [c~statrs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-statrs-yellow
-[c~core::cell::OnceCell~docs]: https://doc.rust-lang.org/core/cell/struct.OnceCell.html
-[c~core::iter::Iterator::filter_map~docs]: https://doc.rust-lang.org/core/iter/trait.Iterator.html#method.filter_map
 [c~std::any::type_name~docs]: https://doc.rust-lang.org/std/any/fn.type_name.html
 [c~std::arch~docs]: https://doc.rust-lang.org/std/arch/index.html
 [c~std::arch~docs~badge]: https://img.shields.io/badge/std-firebrick?logo=rust
@@ -7040,10 +7040,6 @@
 [c~tokenizer~github~badge]: https://img.shields.io/badge/tokenizer-steelblue?logo=github
 [c~tokenizer~lib.rs]: https://lib.rs/crates/tokenizer
 [c~tokenizer~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tokenizer-yellow
-[c~tokio_sync~crates.io]: https://crates.io/crates/tokio-sync
-[c~tokio_sync~docs]: https://docs.rs/tokio/latest/tokio/sync
-[c~tokio_sync~lib.rs]: https://lib.rs/crates/tokio-sync
-[c~tokio_sync~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tokio--sync-yellow
 [c~tokio::main~current-thread-runtime~docs]: https://docs.rs/tokio/latest/tokio/attr.main.html#current-thread-runtime
 [c~tokio::sync::oneshot~docs]: https://docs.rs/tokio/latest/tokio/sync/oneshot/index.html
 [c~tokio::task::LocalSet~docs]: https://docs.rs/tokio/latest/tokio/task/struct.LocalSet.html
@@ -7089,6 +7085,10 @@
 [c~tokio_stream~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tokio--stream-yellow
 [c~tokio_stream~website]: https://tokio.rs
 [c~tokio_stream~website~badge]: https://img.shields.io/badge/tokio--stream-coral
+[c~tokio_sync~crates.io]: https://crates.io/crates/tokio-sync
+[c~tokio_sync~docs]: https://docs.rs/tokio/latest/tokio/sync
+[c~tokio_sync~lib.rs]: https://lib.rs/crates/tokio-sync
+[c~tokio_sync~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tokio--sync-yellow
 [c~tokio_tungstenite~crates.io]: https://crates.io/crates/tokio_tungstenite
 [c~tokio_tungstenite~crates.io~badge]: https://img.shields.io/badge/crates.io-tokio--tungstenite-crimson
 [c~tokio_tungstenite~docs]: https://docs.rs/tokio-tungstenite
