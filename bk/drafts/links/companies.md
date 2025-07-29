@@ -4,10 +4,10 @@
 
 The following is an (incomplete) list of companies and organizations that use Rust. It combines information from the following sources, among others:
 
-- [`rust-companies` (github)][rust-companies~github].
-- the member list of the [Rust Foundation][rust-foundation~website].
+- [`rust-companies` (github)][rust-companies~github]⮳.
+- the member list of the [Rust Foundation][rust-foundation~website]⮳.
 
-Please also consult the `theirstack.com`'s [list of companies using Rust][theirstack-rust~website].
+Please also consult the [list of companies using Rust][theirstack-rust~website] on `theirstack.com`.
 
 |||
 |---|---|
