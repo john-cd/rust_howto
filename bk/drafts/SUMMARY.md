@@ -279,10 +279,8 @@
 
 ---
 
-- [Links](links/index.md)
-  - [Links](links/links.md)
-  - [Books](links/books.md)
-  - [Companies](links/companies.md)
-  - [Learning](links/learning.md)
+- [Books](links/books.md)
+- [Companies](links/companies.md)
+- [Learning](links/learning.md)
 
 ---

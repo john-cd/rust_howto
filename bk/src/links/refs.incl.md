@@ -68,7 +68,7 @@
 [p~benchmarking]: # "../categories/development-tools_profiling/benchmarking.md"
 [p~building]: # "../categories/development-tools_cargo-plugins/building.md"
 [p~cloud]: # "../other/cloud/index.md"
-[p~crates]: ../../drafts/crate_selection/index.md
+[p~crates]: # "..//crate_selection/index.md"
 [p~cross-platform]: # "../other/cross-platform/index.md"
 [p~cryptography]: # "../categories/cryptography/index.md"
 [p~database]: # "../categories/database/index.md"
