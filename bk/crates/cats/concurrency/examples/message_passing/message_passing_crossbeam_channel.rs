@@ -31,7 +31,7 @@ fn main() {
     assert_eq!(r1.recv(), Ok("Hi!"));
 
     // Try receiving a message without blocking.
-    // The channel is now empty
+    // The channel is now empty:
     assert_eq!(r1.try_recv(), Err(TryRecvError::Empty));
 
     s1.send("0").unwrap();

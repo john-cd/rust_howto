@@ -15,11 +15,11 @@ fn read_contents<T: AsRef<Path>>(
 }
 
 fn main() {
-    // To share state between threads, consider using a channel
+    // To share state between threads, consider using a channel.
     let (tx, rx) = mpsc::channel();
 
     thread::scope(|scope| {
-        // Creates a “fork-join” scope
+        // Creates a “fork-join” scope.
         let tx2 = tx.clone();
         scope.spawn(move || {
             println!("hello from the first scoped thread");
@@ -35,7 +35,7 @@ fn main() {
     // No join.
     // Spawned threads get joined automatically once the scope ends!
 
-    // Receive messages from the channel
+    // Receive messages from the channel.
     println!("hello from the main thread");
 
     for received in rx {
