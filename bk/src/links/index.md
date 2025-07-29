@@ -13,7 +13,7 @@ This section provides a large number of links to Rust resources:
 | [`lib.rs`][lib-rs]⮳ | Curated, unofficial alternative to [`crates.io`][crates.io~website]{{hi:crates.io}}⮳. |
 | [`docs.rs`][docs.rs~website]⮳ | The central documentation website for Rust crates. |
 | [`blessed.rs`][blessed-rs~website]⮳ | Unofficial guide to (the best of) the Rust ecosystem. |
-| [`Awesome Rust`][awesome-rust~github]⮳ [(GitHub)][awesome-rust~github]⮳ | A curated list of Rust code and resources. |
+| [Awesome Rust][awesome-rust~github]⮳ [(GitHub)][awesome-rust~github]⮳ | A curated list of Rust code and resources. |
 | [`github.com`][github~website]⮳ | The home of most Rust code repositories. |
 | The [Rust Foundation](https://rustfoundation.org)⮳ | The non-profit stewarding the Rust programming language. |
 

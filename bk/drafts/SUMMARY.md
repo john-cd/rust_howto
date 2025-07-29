@@ -281,6 +281,5 @@
 
 - [Books](links/books.md)
 - [Companies](links/companies.md)
-- [Learning](links/learning.md)
 
 ---

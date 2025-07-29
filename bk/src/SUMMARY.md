@@ -64,7 +64,8 @@
 ---
 
 - [Links](links/index.md)
-  - [Cheat Sheets](links/rust_cheatsheets.md)
+  - [Rust Cheat Sheets](links/rust_cheatsheets.md)
+  - [Learning](links/learning.md)
   - [Blogs and Forums](links/blogs.md)
   - [Example Code](links/example_code.md)
   - [Meetings](links/meetings.md)

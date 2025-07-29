@@ -57,6 +57,7 @@
 - Open source training courses about distributed database and distributed systems: [Talent Plan][talent-plan~github]⮳.
 - [Tour of Rust](https://tourofrust.com)⮳.
 - [Rust: The Basics](https://stepik.org/lesson/9268/step/1)⮳.
+- [Learn Rust Programming - Complete Course (YouTube)](https://www.youtube.com/watch?v=BpPEoZW5IiY&ab_channel=freeCodeCamp.org)⮳.
 
 ### University Courses {#university-courses}
 
@@ -74,15 +75,15 @@
 
 ### Paid Courses {#paid-courses}
 
-- [Rust In Motion](https://www.manning.com/livevideo/rust-in-motion)⮳.
-- Pluralsight - [Rust Fundamentals](https://www.pluralsight.com/courses/rust-fundamentals)⮳.
-- [Dmitri Nesteruk - The Rust Programming Language](https://www.udemy.com/course/rust-lang)⮳.
+- [Dmitri Nesteruk - The Rust Programming Language](https://www.udemy.com/course/rust-lang)⮳ (Udemy).
+- [Rust Fundamentals](https://www.pluralsight.com/courses/rust-fundamentals)⮳ (Pluralsight).
+- [Rust in Motion](https://www.manning.com/livevideo/rust-in-motion)⮳ (Manning).
 
 ## Others {#skip}
 
 - [`rust.code-maven.com`][code-maven~website]⮳.
 - [Learning Rust With Entirely Too Many Linked Lists][rust-learning-linked-lists~website]⮳.
-- [Rust by Practice][rust-by-practice~github]⮳. Learning Rust By Practice, narrowing the gap between beginner and skilled-dev through challenging examples, exercises and projects:
+- [Rust by Practice][rust-by-practice~github]⮳. Learning Rust By Practice, narrowing the gap between beginner and skilled-dev through challenging examples, exercises and projects.
 - [Rust Language Bible][rust-course~github]⮳.
 - [How to Learn Modern Rust][how_to_learn_modern_rust~github]⮳.
 - [Learning Rust](https://quinedot.github.io/rust-learning/index.html)⮳.
