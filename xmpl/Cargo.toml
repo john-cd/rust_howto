@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = ["clap_builder_xmpl"]
+members = [ "cancelable","clap_builder_xmpl"]
 
 # Default values for packages in the workspace
 [workspace.package]
