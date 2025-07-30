@@ -2,14 +2,9 @@
 
 ## Now
 
-- language section: write / finish
-  - finish to add RBE link #29
-
-- polish std_lib
+- finish to add RBE link #29
 
 - polish contributing
-
-- polish links
 
 - finish new tools in wip folder
   - parser_lib
@@ -26,42 +21,41 @@
 - move categories back to src, after final review
   - algos
   - data structures
-  - api bindings
-  - memory
-  - caching
-  - config
-  - date and time
-  - cli
-  - command-line utils ~ dedupe with written_in_rust
-  - compression
-  - email
+  - api bindings ?
+  - memory ?
+  - caching ?
+  - config ?
+  - date and time ?
+  - cli ?
+  - command-line utils ~ dedupe with written_in_rust ?
+  - compression ?
+  - email ?
   - math
-  - ML
-  - database impl
-  - encoding
+  - ML ?
+  - database impl ?
+  - encoding ?
   - filesystem
-  - template
+  - template ?
   - text processing
-  - HTTP client
-  - build utils
-  - dev tools
-  - async
-  - concurrency
-  - database
-  - os
-  - parser impl
-  - parsing
-  - rust patterns
-  - crypto
-  - auth
+  - HTTP client ?
+  - build utils ?
+  - dev tools ?
+  - async ?
+  - concurrency ?
+  - database ?
+  - os ?
+  - parser impl ?
+  - parsing ?
+  - rust patterns ?
+  - crypto ?
+  - auth ?
 
 - polish intro
   - review `about` examples
 
 - `other` section - move what's ready
 
-- polish thanks
-  - License / legal rethink
+- License / legal rethink
 
 - indices
   - script for crates_and_examples
@@ -131,8 +125,6 @@ consolidate CLIs
 
 ## Replace inline links and naked URLs by ref-style links
 
-- fix inline_link script and/or finish pest parser (currently in playground)
-
 ## Update recipe tables
 
 - improve scripts that generate links / update recipe tables
@@ -160,15 +152,9 @@ consolidate CLIs
 
 ## Add text
 
-- language - WIP
-- standard library WIP
-- links
 - key crates
-- contributing
 
 ## Manually insert rest of cross-links WIP
-
-- src: WIP
 
 ## Replace ⮳ by ↗ ?
 
