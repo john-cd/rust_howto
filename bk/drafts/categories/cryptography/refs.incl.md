@@ -25,7 +25,7 @@
 [ex~cryptography~subtle]: cryptography_utilities.md#subtle
 [ex~cryptography~x509-cert]: certificates.md#x509-cert
 [ex~cryptography~zeroize]: cryptography_utilities.md#zeroize
-[p~algorithms]: ../algorithms/index.md
+[p~algorithms]: ../../../src/categories/algorithms/index.md
 [p~authentication]: ../authentication/index.md
 [p~crates]: ../../crate_selection/index.md
 [p~database]: ../database/index.md

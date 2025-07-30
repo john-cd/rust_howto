@@ -5,10 +5,6 @@
 
 # Categories
 
-- [Algorithms](categories/algorithms/index.md)
-  - [Generate Random Values](categories/algorithms/randomness.md)
-  - [Sort a Vector](categories/algorithms/sorting.md)
-
 - [Asynchronous](categories/asynchronous/index.md)
   - [Async](categories/asynchronous/async.md)
   - [Async and Traits](categories/asynchronous/async_traits.md)

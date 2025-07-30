@@ -1,4 +1,4 @@
-[p~algorithms]: ../algorithms/index.md
+[p~algorithms]: ../../../src/categories/algorithms/index.md
 [p~gpu]: # "../../other/gpu/gpu.md"
 [p~learning]: ../../../src/links/learning.md
 [p~performance]: ../development-tools_cargo-plugins/performance.md

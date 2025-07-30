@@ -56,6 +56,10 @@
 
 ## Categories
 
+- [Algorithms](categories/algorithms/index.md)
+  - [Generate Random Values](categories/algorithms/randomness.md)
+  - [Sort a Vector](categories/algorithms/sorting.md)
+
 - [Data Structures]()
   - [HashMap](categories/data-structures/hashmap.md)
   - [Strings](categories/data-structures/strings.md)

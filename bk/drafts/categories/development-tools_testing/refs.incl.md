@@ -29,7 +29,7 @@
 [p~requests]: ../web-programming_http-client/requests.md
 [p~scripting]: # "../../other/scripting/index.md"
 [p~search]: ../database/search.md
-[p~sorting]: ../algorithms/sorting.md
+[p~sorting]: ../../../src/categories/algorithms/sorting.md
 [p~testing]: testing.md
 [p~time]: ../date-and-time/time_crate.md
 [p~tokio]: ../asynchronous/tokio.md
