@@ -264,7 +264,7 @@
 [book~rust~badge]: https://img.shields.io/badge/Rust_Book-blue?logo=mdbook
 [book~rust~box]: https://doc.rust-lang.org/book/ch15-01-box.html
 [book~rust~box~badge]: https://img.shields.io/badge/Rust_Book-Box-blue?logo=mdbook
-[book~rust~code-block-attributes]: https://rust-lang.github.io/mdBook/format/mdbook.html#rust-code-block-attributes
+[book~mdbook~code-block-attributes]: https://rust-lang.github.io/mdBook/format/mdbook.html#rust-code-block-attributes
 [book~rust~concurrency]: https://doc.rust-lang.org/book/ch16-00-concurrency.html
 [book~rust~concurrency~badge]: https://img.shields.io/badge/Rust_Book-Concurrency-blue?logo=mdbook
 [book~rust~derivable-traits]: https://doc.rust-lang.org/book/appendix-03-derivable-traits.html
