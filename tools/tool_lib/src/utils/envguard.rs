@@ -5,7 +5,7 @@ pub struct EnvGuard {
 }
 
 impl EnvGuard {
-    // Set an environment variable.
+    /// Sets an environment variable.
     pub fn set(key: &str, value: &str) -> Self {
         let key = key.to_string();
         let original_value = std::env::var(&key).ok();

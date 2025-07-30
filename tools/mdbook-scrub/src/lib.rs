@@ -13,12 +13,13 @@ use tracing::warn;
 
 // Inspired from <https://github.com/rust-lang/mdBook/blob/master/examples/nop-preprocessor.rs>
 
-// The main preprocessor struct.
+/// The main preprocessor struct.
 pub struct Preproc;
 
 impl Preproc {
     pub(crate) const NAME: &'static str = "scrub";
 
+    /// Create a new `Preproc` object.
     pub fn new() -> Self {
         Self
     }

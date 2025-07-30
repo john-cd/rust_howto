@@ -211,6 +211,7 @@ fn parse_directive<'s>(input: &mut &'s str) -> Result<DirectiveData<'s>> {
 
 use crate::Element;
 
+/// Parses a directive element.
 pub fn parse_directive_element<'s>(input: &mut &'s str) -> ModalResult<Element<'s>> {
     parse_directive
         .map(Element::CustomDirective)

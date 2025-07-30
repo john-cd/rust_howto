@@ -46,6 +46,7 @@ fn parse_elements<'a>(input: &mut &'a str) -> ModalResult<Vec<Element<'a>>> {
     .parse_next(input)
 }
 
+/// Parse a Markdown document.
 pub fn parse_document<'s>(
     name: &'s str,
     path: Option<&'s Path>,

@@ -24,6 +24,7 @@ impl<'s> Document<'s> {
     //     &self.elements
     // }
 
+    // /// Returns a mutable reference to the elements in the document.
     // pub fn elements_mut(&mut self) -> &mut Vec<Element<'s>> {
     //     &mut self.elements
     // }

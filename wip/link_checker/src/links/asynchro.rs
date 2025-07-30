@@ -17,8 +17,8 @@ use reqwest::ClientBuilder;
 // use tracing::warn;
 use url::Url;
 
+/// Launch the Tokio runtime the web link checking will run on.
 pub fn launch() -> Result<()> {
-    // Launch the tokio runtime the web link checking will run on
     // <https://tokio.rs/tokio/topics/bridging>
     let runtime = tokio::runtime::Builder::new_multi_thread()
         .enable_all() // Enables both I/O and time drivers.

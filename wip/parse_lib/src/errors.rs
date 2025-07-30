@@ -5,6 +5,7 @@
 use winnow::error::ContextError;
 use winnow::error::ParseError;
 
+/// Custom parsing error.
 #[derive(Debug)]
 pub struct ParsingError {
     message: String,
@@ -34,7 +35,9 @@ impl std::fmt::Display for ParsingError {
 }
 
 impl ParsingError {
-    // Avoiding `From` so `winnow` types don't become part of our public API
+    /// Convert from `winnow::error::ParseError`.
+    ///
+    /// Avoiding `From`, so `winnow` types don't become part of our public API.
     pub fn from_parse(error: ParseError<&str, ContextError>) -> Self {
         // The default renderer for `ContextError` is still used but that can be
         // customized as well to better fit your needs.

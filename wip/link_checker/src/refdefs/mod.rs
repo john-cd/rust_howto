@@ -16,9 +16,11 @@
 // mod fs;
 
 // // FIXME
+// /// Detect unused references.
 // pub fn detect_unused_reference_definitions(content: &str) {}
 
 // // FIXME
+// /// Delete unused reference definitions.
 // pub fn delete_unused_reference_definitions(
 //     content: &str,
 //     unused_refs: Vec<BrokenLink<'static>>,

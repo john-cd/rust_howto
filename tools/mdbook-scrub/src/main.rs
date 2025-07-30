@@ -13,7 +13,8 @@ use semver::VersionReq;
 
 // Adapted from<<https://github.com/rust-lang/mdBook/blob/master/examples/nop-preprocessor.rs>>
 
-pub fn make_app() -> Command {
+/// Create CLI commands.
+fn make_app() -> Command {
     Command::new(crate_name!())
         .about("A mdbook preprocessor which removes hidden sections and stops the inclusion of hidden chapters")
         .subcommand(

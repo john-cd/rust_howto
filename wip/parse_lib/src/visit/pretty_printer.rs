@@ -33,6 +33,7 @@ where
 }
 
 impl<W: fmt::Write> PrettyPrinter<W> {
+    /// Construct a new `PrettyPrinter`.
     pub fn new(w: W) -> Self {
         Self { w }
     }

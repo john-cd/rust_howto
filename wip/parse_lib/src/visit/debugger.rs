@@ -7,6 +7,7 @@ use crate::ast::*;
 pub struct Debugger;
 
 impl Debugger {
+    /// Construct a new Debugger.
     pub fn new() -> Self {
         Self
     }

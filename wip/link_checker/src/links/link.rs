@@ -9,6 +9,7 @@
 // }
 
 // // FIXME
+// /// Check links.
 // pub fn check_links(content: &str, check_external_links: bool) -> Vec<Link> {
 //     // if check_external_links {}
 //     Vec::new()

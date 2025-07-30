@@ -43,7 +43,7 @@ impl RefDefManager<'_> {
         labels
     }
 
-    // Return urls used more than once.
+    /// Return urls used more than once.
     pub fn dupe_urls(&mut self) -> Vec<&str> {
         let mm: MultiMap<&str, &ReferenceDefinitionData<'_>> =
             self.refdefs.iter().map(|&rd| (rd.url, rd)).collect();
@@ -52,6 +52,7 @@ impl RefDefManager<'_> {
         urls
     }
 
+    /// Get a sorted, deduplicated list of reference definitions.
     pub fn get_sorted_dedupe_refdefs(&self) -> Vec<&ReferenceDefinitionData<'_>> {
         let mut refdefs = self.refdefs.clone();
         refdefs.sort();
