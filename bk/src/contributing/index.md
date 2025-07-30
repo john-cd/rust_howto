@@ -126,7 +126,7 @@ Enhancement suggestions are tracked as [GitHub issues][rust-howto~issues].
 - [TODO list][rust-howto~todo~github]⮳.
 - [LICENSE][rust-howto~license~github]⮳.
 
-[link to issues and project boards on GH](https://github.com/john-cd/rust_howto/issues/1389)
+- [Existing Issues (GitHub)](https://github.com/john-cd/rust_howto/issues)
 
 ## Attribution {#attribution}
 
