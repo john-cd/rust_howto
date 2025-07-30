@@ -78,6 +78,7 @@
 - [Dmitri Nesteruk - The Rust Programming Language](https://www.udemy.com/course/rust-lang)⮳ (Udemy).
 - [Rust Fundamentals](https://www.pluralsight.com/courses/rust-fundamentals)⮳ (Pluralsight).
 - [Rust in Motion](https://www.manning.com/livevideo/rust-in-motion)⮳ (Manning).
+- [Why Rust? Trustworthy, Concurrent Systems Programming](https://www.oreilly.com/content/why-rust)⮳ (O'Reilly).
 
 ## Others {#skip}
 
