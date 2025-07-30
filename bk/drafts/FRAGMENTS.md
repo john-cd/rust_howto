@@ -137,3 +137,7 @@ Note that so-called "Deref polymorphism", meaning implementing `Deref` to emulat
 - [Rust's `AsRef` Explained](https://oliverjumpertz.com/blog/rusts-asref-explained/)⮳.
 - [Rust Is Beyond Object-Oriented, Part 3: Inheritance](https://www.thecodedmessage.com/posts/oop-3-inheritance)⮳.
 - [How to implement inheritance-like feature for Rust?](https://users.rust-lang.org/t/how-to-implement-inheritance-like-feature-for-rust/31159/21)⮳.
+
+---
+
+- [predicates](https://lib.rs/crates/predicates) boolean-valued predicate functions.

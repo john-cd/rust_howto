@@ -2,7 +2,7 @@
 
 [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
 
-This category covers Rust implementations of core algorithms{{hi:Algorithms}}, such as hashing{{hi:Hashing}}, sorting{{hi:Sorting}} (e.g., merge sort, quicksort), searching{{hi:Searching}}, and more.
+This category covers Rust implementations of core algorithms{{hi:Algorithms}}, such as sorting{{hi:Sorting}} (e.g., merge sort, quicksort), searching{{hi:Searching}}, hashing{{hi:Hashing}}, and more.
 
 The following table denotes the most common crates used for each algorithm category.
 
@@ -38,13 +38,14 @@ The following table denotes the most common crates used for each algorithm categ
 | [[search | Search]] | [[rust_search_engines | Search Engines]] |
 | [[strings | Strings]] | [[string_concat | String Concat]], [[string_encoding | String Encoding]], [[string_parsing | String Parsing]], [[text-processing | Text Processing]] |
 
+## References
+
+- [`rust-algorithms`: Common data structures and algorithms in Rust](https://github.com/EbTech/rust-algorithms)⮳.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [review; add graph examples](https://github.com/john-cd/rust_howto/issues/1165)
-
-- [`rust-algorithms`: Common data structures and algorithms in Rust](https://github.com/EbTech/rust-algorithms)
-- [predicates](https://lib.rs/crates/predicates) boolean-valued predicate functions.
 
 </div>
