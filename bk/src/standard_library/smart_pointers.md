@@ -29,7 +29,7 @@ Here's a table of common smart pointers in Rust, outlining their primary use cas
 - `Rc<T>`{{hi:Rc<T>}} enables multiple owners{{hi:Multiple owners}} of the same data; `Box<T>` and `RefCell<T>` have single owners.
 - `Box<T>` allows immutable or mutable borrows checked at compile time; `Rc<T>` allows only immutable borrows checked at compile time; `RefCell<T>` allows immutable or mutable borrows checked at runtime{{hi:Borrowing}}.
 
-## Multiple Ownership with Reference Counting {#eference-counting}
+## Multiple Ownership with Reference Counting {#reference-counting}
 
 [![std][c~std~docs~badge]][c~std~docs]
 

@@ -64,6 +64,7 @@
 [ex~language~lifetimes-in-functions]: lifetimes.md#lifetimes-in-functions
 [ex~language~lint-attributes]: attributes.md#lint-attributes
 [ex~language~loop]: control_flow.md#loop
+[ex~language~macros]: macros.md
 [ex~language~macro-pitfalls]: macros.md#macro-pitfalls
 [ex~language~macros-by-example]: macros.md#macros-by-example
 [ex~language~main-function]: entrypoint.md#main-function
@@ -82,6 +83,7 @@
 [ex~language~procedural-macros]: macros.md#procedural-macros
 [ex~language~production-code-attributes]: attributes.md#production-code-attributes
 [ex~language~ref-and-ref-mut-bindings]: match.md#ref-and-ref-mut-bindings
+[ex~language~references-borrowing]: ownership_borrowing.md#references-borrowing
 [ex~language~return-an-iterator]: iterators.md#return-an-iterator
 [ex~language~return-position-impl-trait]: impl_trait.md#return-position-impl-trait
 [ex~language~return-reference]: functions.md#return-reference

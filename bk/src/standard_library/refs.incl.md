@@ -20,7 +20,7 @@
 [ex~standard_library~derive]: derive.md#derive
 [ex~standard_library~differences-borrow-deref-asref]: borrow.md#differences-borrow-deref-asref
 [ex~standard_library~drop]: drop.md#drop
-[ex~standard_library~eference-counting]: smart_pointers.md#eference-counting
+[ex~standard_library~reference-counting]: smart_pointers.md#reference-counting
 [ex~standard_library~eq]: cmp.md#eq
 [ex~standard_library~extracting-the-value-contained-in-option]: option.md#extracting-the-value-contained-in-option
 [ex~standard_library~from]: conversion_traits.md#from
