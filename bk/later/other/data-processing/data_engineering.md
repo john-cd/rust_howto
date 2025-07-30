@@ -50,7 +50,7 @@ Log images, point clouds, etc, and visualize them effortlessly.
 
 - Big [Data Processing][p~data-processing] for the AI Era: [LakeSail][lakesail~website]⮳.
 
-## References {#skip1}
+## References {#references}
 
 - Rust Data Engineering course By Alfredo Deza et al., O'Reilly{{hi:Data engineering}}.
 

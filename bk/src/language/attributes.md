@@ -136,7 +136,7 @@ For complicated conditional compilation scenarios, consider using the `cfg-if` c
 - [[testing | Testing]] for the `#[test]` attribute.
 - [[documentation | Documentation]] for the `#[doc(...)]` attribute.
 
-## References {#skip1}
+## References {#references}
 
 - [Attributes reference][book~rust-reference~attributes]⮳.
 - [The `#[doc]` attribute](https://doc.rust-lang.org/rustdoc/write-documentation/the-doc-attribute.html)⮳.

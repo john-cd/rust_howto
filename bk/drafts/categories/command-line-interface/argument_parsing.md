@@ -108,11 +108,11 @@ The [`pico-args`][c~pico_args~docs]⮳{{hi:pico-args}} crate is a small and fast
 
 [`structopt`][c~structopt~docs]⮳{{hi:structopt}} (now superseded by [`clap`][c~clap~docs]⮳{{hi:clap}}) simplifies command-line argument parsing by automatically generating parsers from struct definitions. It leverages a derive macro to reduce boilerplate and provides a declarative way to define CLI options, arguments, and subcommands, making it easier to create complex and well-documented command-line interfaces.
 
-## References {#skip1}
+## References {#references}
 
 - [Parsing arguments in Rust, without using dependencies][blog~parsing-arguments-rust-no-dep]⮳.
 
-## Related Topics {#skip2}
+## Related Topics {#related-topics}
 
 - [[parse | Parse]].
 - [[parser-implementations | Parser Implementations]].
