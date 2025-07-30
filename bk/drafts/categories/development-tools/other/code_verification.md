@@ -84,7 +84,7 @@ Loom attempts to check all possible interleavings, while Shuttle chooses interle
 - [Creusot][creusot~github]⮳ helps you prove your code is correct in an automated fashion.
 - `crucible` (symbolic execution).
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 | Topic | Rust Crates |
 |---|---|
@@ -95,7 +95,7 @@ Loom attempts to check all possible interleavings, while Shuttle chooses interle
 | Fuzzing | `cargo fuzz`, [`afl.rs`][c~afl~docs]⮳{{hi:afl.rs}} (bindings to AFL) |
 | Code Review Tools: Not Rust-specific, but used in conjunction with Rust code. Examples: GitHub, GitLab, etc. | |
 
-## References {#skip}
+## References {#references}
 
 - [Model Checking][wikipedia~model-checking]⮳.
 - [Kani Rust Verifier][c~kani~website]⮳.

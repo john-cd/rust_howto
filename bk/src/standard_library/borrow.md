@@ -63,7 +63,7 @@ The `Borrow` and `AsRef` traits are very similar, but different in purposes.
 
 See [[asref | AsRef]], [[conversion_traits | Conversion Traits]] and [[smart_pointers | Smart Pointers]] for more details.
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[asref | AsRef]].
 - [[conversion_traits | Conversion Traits]].

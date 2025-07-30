@@ -37,7 +37,7 @@ It offers a range of built-in prompts for various data types, including text inp
 {{#include ../../../crates/cats/command_line_interface/examples/user_interaction/indicatif2.rs:example}}
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[ansi_terminal | ANSI Terminals]].
 - [[user_directories | User Directories]].

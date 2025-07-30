@@ -62,7 +62,7 @@ Prometheus instrumentation library for Rust applications. Prometheus is an open-
 - [Nagios](https://www.nagios.org).
 - [New Relic](https://newrelic.com).
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[metrics | Metrics]].
 - [[tracing | Tracing]].

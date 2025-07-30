@@ -73,7 +73,7 @@ The following are the typical steps to release a crate to `crates.io`:
 
 ## Create Debian and RPM Packages with `cargo-deb` and `cargo-rpm` {#cargo-deb}
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [Testing][p~testing] Automation
   - Code [[code_formatting_linting | linting]] .

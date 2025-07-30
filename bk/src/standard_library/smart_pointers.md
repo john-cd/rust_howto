@@ -24,18 +24,18 @@ Here's a table of common smart pointers in Rust, outlining their primary use cas
 | `RwLock<T>` | Provides a multiple-reader, single-writer lock. Allows multiple readers or one writer at a time. Thread-safe, provides interior mutability across threads. More permissive than `Mutex` for read operations. | When you have data that is frequently read but infrequently written to by multiple threads. | `let lock = Arc::new(RwLock::new(vec![1, 2, 3])); let read_guard = lock.read().unwrap();` |
 | `Weak<T>` | A non-owning, "weak" reference to data managed by `Rc<T>` or `Arc<T>`. Does not prevent the data from being dropped. | Does not increase the reference count. Can be upgraded to `Rc<T>` or `Arc<T>` if the data still exists. Used to break reference cycles. | Preventing memory leaks in cyclic data structures when using `Rc<T>` or `Arc<T>`. Implementing caches or observers. | `let five = Rc::new(5); let weak_five = Rc::downgrade(&five);` |
 
-## Smart Pointer Comparison {#comparison}
+## Smart Pointer Comparison {#smart-pointer-comparison}
 
 - `Rc<T>`{{hi:Rc<T>}} enables multiple owners{{hi:Multiple owners}} of the same data; `Box<T>` and `RefCell<T>` have single owners.
 - `Box<T>` allows immutable or mutable borrows checked at compile time; `Rc<T>` allows only immutable borrows checked at compile time; `RefCell<T>` allows immutable or mutable borrows checked at runtime{{hi:Borrowing}}.
 
-## Multiple Ownership with Reference Counting {#rc}
+## Multiple Ownership with Reference Counting {#eference-counting}
 
 [![std][c~std~docs~badge]][c~std~docs]
 
 `Rc<T>` and `Arc<T>` allow multiple owners of the same data with . See [[reference_counting | Reference Counting]].
 
-## Interior Mutability {#interior_mutability}
+## Interior Mutability {#interior-mutability}
 
 [![std][c~std~docs~badge]][c~std~docs]
 
@@ -94,7 +94,7 @@ The following example demonstrates the implementation of a basic smart pointer:
 {{#include ../../crates/standard_library/examples/smart_pointers/deref.rs:example}}
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[asref | AsRef]].
 - [[borrow | Borrow]].

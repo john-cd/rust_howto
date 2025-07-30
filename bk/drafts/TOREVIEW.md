@@ -82,7 +82,7 @@
 
 - [Fixing Rust memory allocation slowdown in VS Code on Windows](https://zaynar.co.uk/posts/vs-code-debug-heap)
 
-## Web
+## Web {#skip}
 
 - [`geckodriver`: WebDriver for Firefox](https://github.com/mozilla/geckodriver)
 - [Pake: Turn any webpage into a desktop app with Rust](https://github.com/tw93/Pake)

@@ -38,7 +38,7 @@ Compiler intrinsics are functions that map directly to CPU instructions. They're
 
 [`packed_simd`][c~packed_simd~docs]⮳{{hi:packed_simd}}: A crate for portable SIMD.
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 ### Atomic Operations {#skip}
 

@@ -56,7 +56,7 @@ It allows multiple threads to concurrently read and write to the map with minima
 {{#include ../../../crates/cats/concurrency/examples/concurrent_data_structures/papaya.rs:example}}
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[async | Async]].
 - [[async_channels | Async Channels]].

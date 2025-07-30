@@ -7,7 +7,7 @@
 - Dapr SDK for Rust: [![dapr-rust-sdk~github][dapr-rust-sdk~github~badge]][dapr-rust-sdk~github]
 - Dapr Rust SDK example: [![dapr-rust~examples][dapr-rust~examples~badge]][dapr-rust~examples]
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

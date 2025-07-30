@@ -78,7 +78,7 @@ When writing a library or in contexts where the public API must remain stable, `
 {{#include ../../crates/code_organization/examples/visibility/visibility_pub_crate.rs:example}}
 ```
 
-## References {#skip}
+## References {#references}
 
 - [Visibility and Privacy (Rust reference)](https://doc.rust-lang.org/reference/visibility-and-privacy.html?highlight=pub#visibility-and-privacy)⮳.
 

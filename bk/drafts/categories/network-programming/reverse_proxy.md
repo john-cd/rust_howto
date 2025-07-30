@@ -83,7 +83,7 @@ local_addr = "127.0.0.1:22" # The address of the service that needs to be forwar
 {{#include ../../../crates/cats/network_programming/examples/reverse_proxy/pingora.rs:example}}
 ```
 
-### See Also {#skip}
+### Related Topics {#related-topics}
 
 - [Pingora quick start][c~pingora~quick-start~github]⮳.
 

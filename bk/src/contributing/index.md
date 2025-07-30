@@ -121,7 +121,7 @@ Enhancement suggestions are tracked as [GitHub issues][rust-howto~issues].
 
 ### Commit Messages {#commit-messages}
 
-## See Also {#see-also}
+## Related Topics {#related-topics}
 
 - [TODO list][rust-howto~todo~github]⮳.
 - [LICENSE][rust-howto~license~github]⮳.

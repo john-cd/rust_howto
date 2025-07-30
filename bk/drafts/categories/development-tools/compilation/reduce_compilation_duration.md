@@ -98,13 +98,13 @@ Build your code with the right machine:
 
 Consider using remote build servers or a separate build machine for large projects.
 
-## References {#skip}
+## References {#references}
 
 - [Eight solutions for troubleshooting your Rust build times][blog~rust-build-times]⮳.
 - [How I improved my Rust compile times by seventy-five percent][blog~how-i-improved-my-rust-compile-times-by-seventy-five-percent]⮳.
 - [Rust compilation time][blog~rust-compilation-time]⮳.
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[benchmarking | Benchmarking]].
 - [[build_utils | Build Utils]].

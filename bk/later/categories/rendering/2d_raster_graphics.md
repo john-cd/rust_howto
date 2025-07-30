@@ -18,7 +18,7 @@
 
 [`tiny-skia`][c~tiny_skia~docs]⮳{{hi:tiny-skia}} is a small, fast, and portable 2D [graphics][p~graphics] library that can render to bitmaps. Supports paths, gradients, and text. Excellent for when you need something lightweight and performant.
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[color_handling | Color Handling]].
 - Image Loading and Manipulation: see [[multimedia_images | Multimedia: Images]].

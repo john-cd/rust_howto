@@ -130,7 +130,7 @@ See also the [[asref | AsRef]] chapter.
 
 - The [ShowOption](https://lib.rs/crates/show-option)⮳ crate provides extension methods and macros for formatting Options.
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[iterators | Iterators]].
 - [[match | Match]].

@@ -42,7 +42,7 @@ Rustls + `hyper` integration for pure rust HTTPS.
 
 Hyper TLS support via OpenSSL.
 
-## References {#skip}
+## References {#references}
 
 - [`hyper` examples][c~hyper~examples~github]⮳.
 

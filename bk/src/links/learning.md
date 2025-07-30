@@ -96,7 +96,7 @@
 - The [Rustonomicon](https://doc.rust-lang.org/nomicon)⮳: A high-level companion to the reference and a guide to correctly writing unsafe code in Rust.
 - The [Ferrocene Language Spec](https://rust-lang.github.io/fls/general.html)⮳: An high quality specification for the Rust language, initially developed by Ferrous Systems.
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[blogs | Blogs]].
 - [[books | Books]].

@@ -20,7 +20,7 @@ Sensor integration often requires specialized crates that interact with specific
 
 See [[simulation_visualization | Simulation Visualization]].
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[computer-vision | Computer Vision]].
 

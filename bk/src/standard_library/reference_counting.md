@@ -32,7 +32,7 @@ If you need mutability inside an `Rc`, you can use `RefCell<T>`, which offers _i
 
 See [[interior_mutability | Interior Mutability]] for more details.
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[box | Box]].
 - [[concurrency | Concurrency]].

@@ -34,7 +34,7 @@ Consider the following Rust crates for your in-memory [caching][p~caching] needs
 {{#include ../../../crates/cats/caching/examples/in_memory_cache/cached.rs:example}}
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[database | Database]].
 - [[database-implementations | Database Implementations]].

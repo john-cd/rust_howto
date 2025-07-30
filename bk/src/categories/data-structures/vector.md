@@ -58,7 +58,7 @@ Read [Implementing Vec](https://doc.rust-lang.org/nomicon/vec/vec.html)⮳ for m
 - [[stack_and_queue | Stacks and Queues]].
 - [[strings | Strings]].
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[algorithms | Algorithms]].
 - [[encoding | Encoding]].

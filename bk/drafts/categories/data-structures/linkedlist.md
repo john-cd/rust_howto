@@ -16,7 +16,7 @@
 {{#include ../../../crates/cats/data_structures/examples/linkedlist/linkedlist.rs:example}}
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[vectors | Vectors]].
 - [[stack_and_queue | Stacks and Queues]].

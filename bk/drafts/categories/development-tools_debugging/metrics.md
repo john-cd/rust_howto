@@ -13,7 +13,7 @@ Examples of common metrics include CPU and memory usage; cache hit ratios; respo
 - [`cadence`](https://crates.io/crates/cadence) is an extensible `statsd` client for Rust.
 - [`sentry`](https://crates.io/crates/sentry) is a ['Sentry'](https://getsentry.com) client for Rust.
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[distributed_telemetry | Distributed Telemetry]].
 - [[tracing | Tracing]].

@@ -51,7 +51,7 @@ Document configuration: Provide clear documentation of all configuration options
 [`serde`][c~serde~docs]⮳{{hi:serde}}: (Not a config crate itself, but essential for serializing and deserializing configuration - data in most cases).
 - Environment Variables: `std::env` (for accessing environment variables directly).
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - Command-Line Arguments (often used in conjunction with [`config`][c~config~docs]⮳{{hi:config}}): [`clap`][c~clap~docs]⮳{{hi:clap}}, [`structopt`][c~structopt~docs]⮳{{hi:structopt}}, [`argh`][c~argh~docs]⮳{{hi:argh}}
 

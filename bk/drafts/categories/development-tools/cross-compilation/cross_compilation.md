@@ -41,7 +41,7 @@ cross run --target aarch64-unknown-linux-gnu
 
 Examples: [![cross-toml~example][c~cross-toml~example~badge]][c~cross-toml~example]
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[autocfg | Autocfg]].
 - [[build_time_tooling | Build Time Tooling]].

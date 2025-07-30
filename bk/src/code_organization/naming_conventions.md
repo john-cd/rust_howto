@@ -77,7 +77,7 @@ fn iter_mut(&mut self) -> IterMut  // `IterMut` implements `Iterator<Item = &mut
 fn into_iter(self) -> IntoIter     // `IntoIter` implements `Iterator<Item = U>`.
 ```
 
-## References {#skip}
+## References {#references}
 
 The above is adapted from:
 

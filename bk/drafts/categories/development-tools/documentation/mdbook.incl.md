@@ -13,9 +13,8 @@
 | [Create Pages from a Template with `mdbook-tera`][ex~documentation-mdbook-tera] | [![mdbook-tera][c~mdbook_tera~docs~badge]][c~mdbook_tera~docs] | [![cat~development-tools][cat~development-tools~badge]][cat~development-tools] |
 | [`mdbook-theme`][ex~documentation-mdbook-theme] | [![mdbook-theme][c~mdbook_theme~docs~badge]][c~mdbook_theme~docs] | [![cat~development-tools][cat~development-tools~badge]][cat~development-tools] |
 | [`mdbook-toc`][ex~documentation-mdbook-toc] | [![mdbook-toc][c~mdbook_toc~docs~badge]][c~mdbook_toc~docs] | [![cat~development-tools][cat~development-tools~badge]][cat~development-tools] |
-| [Test Code in your `mdbook`][ex~documentation-termbook] | [Byron-termbook][c~termbook~github] | [![cat~development-tools][cat~development-tools~badge]][cat~development-tools] |
+| [Test Code in Your `mdbook`][ex~documentation-termbook] | [Byron-termbook][c~termbook~github] | [![cat~development-tools][cat~development-tools~badge]][cat~development-tools] |
 | [Replace Text in Chapters with `yapp`][ex~documentation-yapp] | [![mdbook-yapp][c~mdbook_yapp~docs~badge]][c~mdbook_yapp~docs] | [![cat~development-tools][cat~development-tools~badge]][cat~development-tools] |
 
 <div class="hidden">
-[fix; titles](https://github.com/john-cd/rust_howto/issues/298)
 </div>

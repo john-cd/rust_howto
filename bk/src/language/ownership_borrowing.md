@@ -145,12 +145,12 @@ The same applies to mutable references:
 {{#include ../../crates/language/examples/ownership_borrowing/borrowing_function_mutable.rs:example}}
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[lifetimes | Lifetimes]].
 - [[rust-patterns | Rust Patterns]].
 
-## References {#skip}
+## References {#references}
 
 - [Rust re-borrowing and memory safety][blog~rust-re-borrowing-and-memory-safety]⮳.
 

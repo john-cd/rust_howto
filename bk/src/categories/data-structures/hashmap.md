@@ -49,7 +49,7 @@ You can use a custom hash function with `HashMap` and `HashSet`. In the followin
 - [[btrees | B-trees]].
 - [[maps | Other Maps]].
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[concurrent_data_structures | Concurrent Data Structures]].
 - [[data-structures | Data Structures]].

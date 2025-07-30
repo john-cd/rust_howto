@@ -77,7 +77,7 @@ You may also use the [string_cache](https://docs.rs/string_cache/latest/string_c
 
 If you need small formatted string, consider a string type implementing small-string optimization. For example, [compact_str](https://crates.io/crates/compact_str)⮳ implements `CompactString`, a memory efficient string type that can store smaller strings on the stack and transparently stores longer strings on the heap.
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[development-tools_ffi | Development Tools: FFI]].
 - [[strings | Strings]].

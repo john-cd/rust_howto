@@ -28,7 +28,7 @@ A simple `no_std` font parser and rasterizer.
 
 [`opentype`][c~opentype~docs]⮳{{hi:opentype}}
 
-## See Also {#skip}
+## Related Topics {#related-topics}
 
 - [`sdl2`][c~sdl2~docs]⮳{{hi:sdl2}}: SDL2 bindings for Rust.
 

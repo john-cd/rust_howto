@@ -120,7 +120,7 @@ linker = "clang"
 rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[development-tools | Development Tools]].
 - [[development-tools_build-utils | Development Tools: Build Utils]].
@@ -131,7 +131,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
 - [[development-tools_testing | Development Tools Testing]].
 - [[performance | Performance]].
 
-## References {#skip}
+## References {#references}
 
 - [Enable Fast Compiles (Bevy)][c~bevy~enable-fast-compiles]{{hi:bevy}}⮳.
 

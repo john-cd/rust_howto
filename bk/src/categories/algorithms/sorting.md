@@ -32,11 +32,11 @@ Sorts a vector{{hi:Vector}} of `Person` structs with properties `name` and `age`
 {{#include ../../../crates/cats/algorithms/examples/sort/sort_struct.rs:example}}
 ```
 
-## See Also {#skip}
+## Related Topics {#related-topics}
 
 - [glidesort][c~glidesort~github]⮳ is a Rust implementation of Glidesort, a stable adaptive quicksort/mergesort hybrid sorting algorithm.
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[data-structures | Data Structures]].
 - [[btrees | B-trees]].

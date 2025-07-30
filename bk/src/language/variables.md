@@ -36,7 +36,7 @@ Destructuring allows you to unpack values from compound types like tuples, array
 {{#include ../../crates/language/examples/variables/destructuring.rs:example}}
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[constants_and_statics | Constants and Statics]].
 - [[match | Match and Patterns]].

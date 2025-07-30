@@ -20,7 +20,7 @@ String concatenation is the operation of joining two or more strings together en
 
 - [String concatenation benchmark][concat~benchmark~github]⮳.
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[strings | Strings]].
 

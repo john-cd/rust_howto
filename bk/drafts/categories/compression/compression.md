@@ -36,7 +36,7 @@ The [`zip`][c~zip~docs]⮳{{hi:zip}} crate allows you to create, open, and manip
 {{#include ../../../crates/cats/compression/examples/compression/zip.rs:example}}
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[filesystem | Filesystem]].
 - [[compression | Compression]].

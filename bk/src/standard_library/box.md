@@ -72,7 +72,7 @@ For example, in the following, we define a linked list that has an unknown numbe
 {{#include ../../crates/standard_library/examples/box/box_recursive.rs:example}}
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[memory-management | Memory Management]].
 - [[ownership_borrowing | Ownership & Borrowing]].

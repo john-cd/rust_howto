@@ -14,7 +14,7 @@ Unicode segmentation is the process of dividing a string of Unicode text into me
 {{#include ../../../crates/cats/text_processing/examples/unicode/graphemes.rs:example}}
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[strings | Strings]].
 - [[string_encoding | String Encoding]].

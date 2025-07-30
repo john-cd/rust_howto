@@ -26,7 +26,7 @@
 {{#include ../../../crates/cats/compilers/examples/incremental_computation/comemo.rs:example}}
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[development-tools | Development Tools]].
 - [[development-tools_build-utils | Development Tools: Build Utils]].

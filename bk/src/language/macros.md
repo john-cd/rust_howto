@@ -235,14 +235,14 @@ Here are some common pitfalls to watch out for:
 - Lifetime and Type Issues: Especially in procedural macros, forgetting to handle lifetimes or generic parameters properly can lead to compiler errors that are hard to trace.
 - Unclear Error Messages: When something goes wrong inside a macro, the compiler often points to the macro invocation site, not the actual problem. Using the `compile_error!` macro can help provide clearer diagnostics.
 
-## References {#skip}
+## References {#references}
 
 - [Rust Reference - Macros][book~rust-reference~macros]⮳.
 - [Rust by Example - Macros][book~rust-by-example~macros]⮳.
 - The [Little Book of Rust Macros][book~rust-macros]⮳.
 - [Macros in Rust: A tutorial with examples](https://blog.logrocket.com/macros-in-rust-a-tutorial-with-examples)⮳.
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[development-tools_procedural-macro-helpers | Development Tools: Procedural Macro Helpers]].
   - [[compile_macros | Compile Macros]].

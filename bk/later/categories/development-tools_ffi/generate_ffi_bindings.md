@@ -66,7 +66,7 @@ While tools like 'SWIG' exist, [`cxx`][c~cxx~docs]⮳{{hi:cxx}} is generally pre
 - Memory Management across FFI boundaries requires careful consideration. It often involves using `Box::into_raw` and `Box::from_raw` to transfer ownership of memory between Rust and C.
 - [Error Handling][p~error-handling] across FFI boundaries often involves returning error codes or using `Result` types and converting them to C-compatible representations.
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 ### C / C++ Build Integration {#skip1}
 

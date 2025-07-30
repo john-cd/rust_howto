@@ -44,12 +44,12 @@ For non-generic contexts or when `Deref` coercion suffices, `&T` remains the sim
 
 If you need to do a _costly_ conversion, it is better to implement `From` or write a custom function.
 
-## References {#skip}
+## References {#references}
 
 - [When and why to use `AsRef<T>` instead of `&T`][stackoverflow~asref]⮳.
 - [Rust's `AsRef` Explained](https://oliverjumpertz.com/blog/rusts-asref-explained/)⮳.
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[box | `Box`]].
 - [[borrow | `Borrow`]].

@@ -132,7 +132,7 @@ You may also implement the `AsRef` trait to retrieve the "base class":
 
 Note that so-called "Deref polymorphism", meaning implementing `Deref` to emulate inheritance between structs, is considered an [antipattern](https://github.com/rust-unofficial/patterns/blob/main/src/anti_patterns/deref.md), especially since `Deref` is an _implicit_ conversion.
 
-### References {#skip}
+### References {#references}
 
 - [Rust's `AsRef` Explained](https://oliverjumpertz.com/blog/rusts-asref-explained/)⮳.
 - [Rust Is Beyond Object-Oriented, Part 3: Inheritance](https://www.thecodedmessage.com/posts/oop-3-inheritance)⮳.

@@ -18,7 +18,7 @@ The [`await-tree`][c~await_tree~docs]⮳{{hi:await-tree}} crate provides a conve
 {{#include ../../../crates/cats/concurrency/examples/await_tree.rs:example}}
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[concurrency | Concurrency]].
 - [[development_tools | Development Tools]].

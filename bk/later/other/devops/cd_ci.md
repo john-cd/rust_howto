@@ -23,7 +23,7 @@ Popular tooling include:
 
 See [[github_actions | Github Actions]].
 
-## See Also {#skip}
+## Related Topics {#related-topics}
 
 [Continuous Integration (cargo book)][book~cargo~continuous-integration]⮳.
 

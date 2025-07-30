@@ -77,7 +77,7 @@ The method [`regex::Regex::replace_all`][c~regex::Regex::replace_all~docs]{{hi:r
 {{#include ../../../crates/cats/text_processing/examples/regex/regex.rs:example}}
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[rust_search_engines | Rust Search Engines]].
 - [[search | Search]].

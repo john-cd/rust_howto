@@ -30,7 +30,7 @@ do
     if [ -n "$link" ]; then
         echo "$link" >> "${ref_file}"
         # Remove {#skip}, {#skip1}... and empty lines.
-        sed -E -i '/(.+?~skip[0-9]*\].*)/d; /^\s*$/d' "${ref_file}"
+        sed -E -i '/(.+?~skip[0-9]*\].*)/d; /(.+?~related-topics\].*)/d; /(.+?~references\].*)/d; /^\s*$/d' "${ref_file}"
         # Sort and dedupe refdefs.
         sort -u -o "${dir}/refs.incl.md" "${ref_file}"
     fi

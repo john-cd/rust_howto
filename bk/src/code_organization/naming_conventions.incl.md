@@ -1,6 +1,6 @@
 ||
-|--------|
-| [Name your Functions, Types, etc. (Naming Conventions)][ex~language~naming-conventions] |
-| [Decide Between `as_*` vs `to_*` vs `into_*` for Conversion Methods][ex~language~conversion-conventions] |
-| [Name Getters][ex~language~getter-conventions] |
-| [Name Iterators][ex~language~iterator-conventions] |
+|---|
+| [Name your Functions, Types, etc. (Naming Conventions)][ex~code_organization~naming-conventions] |
+| [Decide Between `as_*` vs `to_*` vs `into_*` for Conversion Methods][ex~code_organization~conversion-conventions] |
+| [Name Getters][ex~code_organization~getter-conventions] |
+| [Name Iterators][ex~code_organization~iterator-conventions] |

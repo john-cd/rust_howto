@@ -129,7 +129,7 @@ For complicated conditional compilation scenarios, consider using the `cfg-if` c
 {{#include ../../crates/language/examples/attributes/cfg_if.rs:example}}
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[derive | Derive]] for the `#[derive(...)]` attribute used to automatically derive common traits.
 - [[rust-patterns | Rust Patterns]].

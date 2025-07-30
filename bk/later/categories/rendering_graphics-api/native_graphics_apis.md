@@ -34,7 +34,7 @@ Metal access is provided by the [`metal`][c~metal~docs]⮳{{hi:metal}} crate or 
 
 See also [`metal-rs`][c~metal~docs]⮳{{hi:metal-rs}}: 'Metal' bindings.
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[gpu | GPU]].
 - [[gpu_abstraction_layers | GPU Abstraction Layers]].

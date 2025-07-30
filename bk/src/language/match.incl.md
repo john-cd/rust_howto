@@ -16,5 +16,6 @@
 | [Destructure References][ex~language~destructure-references] |
 | [Ignore Values][ex~language~ignore-values] |
 | [Use an Or (`\|`) to Match Multiple Patterns][ex~language~or-patterns] |
+| [Bind a Variable with `@` Bindings (Bind to Subpatterns)][ex~language~at-bindings] |
 | [Match Guards (`if condition`)][ex~language~match-guards] |
 | [Create References While Binding with `ref` and `ref mut`][ex~language~ref-and-ref-mut-bindings] |

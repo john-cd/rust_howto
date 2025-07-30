@@ -32,7 +32,7 @@ It's useful for creating the geometry for vector graphics, but you'd typically u
 {{#include ../../../crates/cats/gui/examples/2d_renderers/vger.rs:example}}
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[2d_renderers | 2D Renderers]].
 - [[2d_raster_graphics | 2D Raster Graphics]].

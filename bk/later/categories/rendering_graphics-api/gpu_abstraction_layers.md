@@ -46,11 +46,11 @@ For WebGPU development in Rust, [`wgpu`][c~wgpu~docs]⮳{{hi:wgpu}} is the essen
 {{#include ../../../crates/cats/rendering_graphics_api/examples/gpu_abstraction_layers/wgpu.rs:example}}
 ```
 
-### See Also {#skip}
+### Related Topics {#related-topics}
 
 - `web-sys`: Web bindings, used for WebGPU in the browser.
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[graphics | Graphics]].
 - [[mathematics | Mathematics]].

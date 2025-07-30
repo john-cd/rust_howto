@@ -77,14 +77,14 @@ The following table lists common methods that convert `Result<T, E>` to `Option`
 
 See also the [[option | Option]] chapter.
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[error_handling | Error Handling]].
 - [[error_customization | Error Customization]].
 - [[iterators | Iterators]].
 - [[rust-patterns | Rust Patterns]].
 
-## References {#skip}
+## References {#references}
 
 - [What is the Rust equivalent to a `try catch` statement][stackoverflow~what-is-the-rust-equivalent-to-a-try-catch-statement]⮳.
 

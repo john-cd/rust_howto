@@ -27,7 +27,7 @@ To implement `Drop` for a custom type, you would do something like this:
 {{#include ../../crates/standard_library/examples/drop/drop.rs:example}}
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[data_structures | Data Structures]].
 - [[generics | Generics]].

@@ -37,7 +37,7 @@ Attempts to violate borrowing rules (like having multiple mutable borrows) will 
 
 See [lazy initialization][p~lazy-initialization].
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[concurrency | Concurrency]].
 - [[data-structures | Data Structures]].

@@ -58,7 +58,7 @@ See:
 - [[vectors | Vectors]].
 - [[cow | COW]].
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[algorithms | Algorithms]].
 - [[encoding | Encoding]].

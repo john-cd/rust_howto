@@ -43,7 +43,7 @@ Async binding for Tungstenite.
 {{#include ../../../crates/cats/web_programming_websocket/examples/async_tungstenite.rs:example}}
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[web-programming | Web Programming]].
 - [[web-programming_http-client | Web Programming: HTTP Client]].

@@ -49,7 +49,7 @@ By implementing the unsafe marker [traits][p~traits] `Send` and `Sync` on `my::A
 {{#include ../../../crates/cats/concurrency/examples/send_sync/send_sync_impl.rs:example}}
 ```
 
-## References {#skip}
+## References {#references}
 
 - [Understanding the `Send` trait][stackoverflow~understanding-the-send-trait]⮳.
 - [The Rustonomicon: `Send` and `Sync`][book~rustonomicon~send-and-sync]⮳.

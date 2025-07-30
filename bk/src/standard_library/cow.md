@@ -64,12 +64,12 @@ The following example demonstrates how to convert a `Cow<str>` to a `&str` or a 
 
 This example was adapted from a [StackOverflow discussion][stackoverflow~how-do-i-get-a-str-or-string-from-stdborrowcowstr]⮳.
 
-## References {#skip}
+## References {#references}
 
 - [Using Cow in Rust for efficient memory utilization](https://blog.logrocket.com/using-cow-rust-efficient-memory-utilization)⮳.
 - [The Secret Life of Cows](https://deterministic.space/secret-life-of-cows.html)⮳.
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[lifetimes | Lifetimes]].
 - [[memory-management | Memory Management]].

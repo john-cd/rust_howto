@@ -167,7 +167,7 @@ In addition,
 {{#include ../../crates/language/examples/trait_objects/dyn_compat.rs:example}}
 ```
 
-## See Also {#skip}
+## Related Topics {#related-topics}
 
 - [Trait Objects (docs)][book~rust~trait-objects]{{hi:Trait objects}}⮳.
 

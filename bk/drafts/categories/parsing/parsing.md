@@ -53,7 +53,7 @@ Grammars are saved in separate [`.pest`][c~pest~docs]⮳{{hi:.pest}}  files whi
 - `peg`.
 - [`chumsky`][c~chumsky~docs]⮳{{hi:chumsky}}.
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[parser-implementations | Parser Implementations]].
 - [[text-processing | Text Processing]].

@@ -46,7 +46,7 @@ Common utilities and extension [traits][p~traits] for the [`futures-rs`][c~futur
 {{#include ../../../crates/cats/asynchronous/examples/futures/futures_util.rs:example}}
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[tokio | Tokio]].
 

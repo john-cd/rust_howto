@@ -82,7 +82,6 @@
 [ex~language~procedural-macros]: macros.md#procedural-macros
 [ex~language~production-code-attributes]: attributes.md#production-code-attributes
 [ex~language~ref-and-ref-mut-bindings]: match.md#ref-and-ref-mut-bindings
-[ex~language~references]: ownership_borrowing.md#references
 [ex~language~return-an-iterator]: iterators.md#return-an-iterator
 [ex~language~return-position-impl-trait]: impl_trait.md#return-position-impl-trait
 [ex~language~return-reference]: functions.md#return-reference
@@ -122,27 +121,6 @@
 [ex~language~while]: control_flow.md#while
 [ex~language~write-generic-functions]: functions.md#write-generic-functions
 [ex~language~write-macros]: macros.md#write-macros
-[ex~language~macros]: macros.md
-[ex~language~generics]: generics.md
-[ex~language~iterators]: iterators.md
-[ex~language~lifetimes]: lifetimes.md
-[ex~language~match]: match.md
-[ex~language~ownership_borrowing]: ownership_borrowing.md
-[ex~language~structs]: structs.md
-[ex~language~traits]: traits.md
-[ex~language~variables]: variables.md
-[ex~language~data_types]: data_types.md
-[ex~language~constants_and_statics]: constants_and_statics.md
-[ex~language~entrypoint]: entrypoint.md
-[ex~language~rust_install]: rust_install.md
-[ex~language~control-flow]: control_flow.md
-[ex~language~attributes]: attributes.md
-[ex~language~enums]: enums.md
-[ex~language~impl_trait]: impl_trait.md
-[ex~language~trait_objects]: trait_objects.md
-[ex~language~closures]: closures.md
-[ex~language~functions]: functions.md
-[ex~language~trait-objects]: trait_objects.md
 [p~async]: # "../categories/asynchronous/index.md"
 [p~documentation]: # "../categories/development-tools/documentation/documentation.md"
 [p~enums]: enums.md

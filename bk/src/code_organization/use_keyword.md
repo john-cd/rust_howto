@@ -58,7 +58,7 @@ Use declarations support a number of convenient shortcuts. You may use globs, de
 
 Note that, while these shortcuts make your code more compact and readable, they can be inconvenient during early development, when you need to add or remove `use` statements frequently. Consider adding a [`rustfmt.toml`](https://rust-lang.github.io/rustfmt) configuration file to your project and adding `imports_granularity = "Item"` to flatten imports, so that each has its own `use` statement.
 
-## References {#skip}
+## References {#references}
 
 - [Bringing Paths into Scope with the use Keyword (Rust book)](https://doc.rust-lang.org/book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.html)⮳.
 - [Use declarations (Rust reference)](https://doc.rust-lang.org/reference/items/use-declarations.html)⮳.

@@ -60,12 +60,12 @@ For inspecting SPIR-V shaders
 
 Compute Shaders are often handled through the low-level graphics [APIs][p~apis] like [`wgpu`][c~wgpu~docs]⮳{{hi:wgpu}} or [`vulkano`][c~vulkano~docs]⮳{{hi:vulkano}}.
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[gpu | GPU]].
 - [[gpu_abstraction_layers | GPU Abstraction Layers]].
 
-## See Also {#skip}
+## Related Topics {#related-topics}
 
 - [[typecasts | Typecasts]] and especially [`bytemuck`][c~bytemuck~docs]⮳{{hi:bytemuck}} - A crate for mucking around with piles of bytes.
 - [Are we Game yet? - Shaders](https://arewegameyet.rs/ecosystem/shader/).

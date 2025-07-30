@@ -19,7 +19,7 @@ Consider [`bonsai-bt`][c~bonsai_bt~docs]⮳{{hi:bonsai-bt}} (Behavior Tree imple
 {{#include ../../../crates/cats/science_robotics/examples/artificial_intelligence/bonsai_bt.rs:example}}
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics}
 
 - [[computer-vision | Computer Vision]].
 - [[classical_machine_learning | Classical Machine Learning]].
