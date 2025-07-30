@@ -90,19 +90,24 @@ fn heap_usage_testing() {
     let v2: Vec<u8> = vec![5, 6, 7, 8];
     drop(v2);
 
-    let stats = dhat::HeapStats::get();
+    let _stats = dhat::HeapStats::get();
 
-    // Total allocations and number of bytes:
+    // Now you may assert allocations and number of bytes.
+    // The exact numbers may depend on the compiler version and the platform.
+
+    // For example,
+    // - Total allocations and number of bytes:
     // dhat::assert_eq!(stats.total_blocks, 2);
-    dhat::assert_eq!(stats.total_bytes, 20);
+    // dhat::assert_eq!(stats.total_bytes, 20);
 
-    // Allocations and number of bytes at the point of peak heap size:
+    // - Allocations and number of bytes at the point of peak heap size:
     // dhat::assert_eq!(stats.max_blocks, 2);
-    dhat::assert_eq!(stats.max_bytes, 20);
+    // dhat::assert_eq!(stats.max_bytes, 20);
 
-    // Now a single allocation remains alive.
+    // - Current allocations and number of bytes.
+    // Now a single allocation remains alive:
     // dhat::assert_eq!(stats.curr_blocks, 1);
-    dhat::assert_eq!(stats.curr_bytes, 16);
+    // dhat::assert_eq!(stats.curr_bytes, 16);
 }
 // Example adapted from <https://docs.rs/dhat/latest/dhat/>
 // ANCHOR_END: example
@@ -111,4 +116,4 @@ fn heap_usage_testing() {
 fn test() {
     main();
 }
-// [finish; can be flaky](https://github.com/john-cd/rust_howto/issues/746) automate: cargo run --features dhat-heap / cargo run --features dhat-ad-hoc
+// TODO automate: cargo run --features dhat-heap / cargo run --features dhat-ad-hoc
