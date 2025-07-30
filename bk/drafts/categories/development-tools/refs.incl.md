@@ -1,6 +1,6 @@
 [p~apis]: ../web-programming_http-client/apis.md
 [p~attributes]: ../../language/attributes.md
-[p~books]: ../../links/books.md
+[p~books]: ../../../src/links/books.md
 [p~building]: ../development-tools_cargo-plugins/building.md
 [p~caching]: ../caching/index.md
 [p~cargo]: cargo/cargo.md

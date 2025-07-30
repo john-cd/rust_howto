@@ -200,7 +200,5 @@ This page includes a number of links to the websites of publishers and book merc
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO review
-review https://lborb.github.io/book/unofficial.html
-https://lborb.github.io/book/applications.html
+TODO review; review https://lborb.github.io/book/unofficial.html; review https://lborb.github.io/book/applications.html
 </div>

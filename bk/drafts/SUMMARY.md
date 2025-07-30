@@ -276,9 +276,3 @@
   - [GraphQL](categories/web-programming_http-server/_graphql.md)
   - [gRPC](categories/web-programming_http-server/_grpc.md)
   - [`hyper`](categories/web-programming_http-server/_hyper.md)
-
----
-
-- [Books](links/books.md)
-
----
