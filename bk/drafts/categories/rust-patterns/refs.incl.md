@@ -19,6 +19,6 @@
 [p~functions]: ../../language/functions.md
 [p~language]: ../../../src/language/index.md
 [p~macros]: ../../../src/language/macros.md
-[p~maps]: ../data-structures/maps.md
+[p~maps]: ../../../src/categories/data-structures/maps.md
 [p~parse]: ../date-and-time/parse.md
 [p~unix]: # "../os_unix-apis/unix.md"

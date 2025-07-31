@@ -7,11 +7,29 @@
 [ex~data-structures~string-concatenation]: strings.md#string-concatenation
 [ex~data-structures~string]: strings.md#string
 [ex~data-structures~vec]: vector.md#vec
-[p~containers]: ../../../drafts/other/containers/containers.md
-[p~databases]: ../../../drafts/categories/database-implementations/databases.md
+[ex~data-structures~arrayvec]: stack_allocated_arrays.md#arrayvec
+[ex~data-structures~bitfield]: bitfield.md#bitfield
+[ex~data-structures~bitvec]: bitfield.md#bitvec
+[ex~data-structures~btreemap]: btrees.md#btreemap
+[ex~data-structures~btreeset]: btrees.md#btreeset
+[ex~data-structures~flagset]: bitfield.md#flagset
+[ex~data-structures~generate-parse-uuid]: uuid.md#generate-parse-uuid
+[ex~data-structures~heapless]: heapless.md#heapless
+[ex~data-structures~indexmap]: maps.md#indexmap
+[ex~data-structures~linkedlist]: linkedlist.md#linkedlist
+[ex~data-structures~multimap]: maps.md#multimap
+[ex~data-structures~petgraph]: graph.md#petgraph
+[ex~data-structures~priority-queue]: binaryheap.md#priority-queue
+[ex~data-structures~queue]: stack_and_queue.md#queue
+[ex~data-structures~slotmap]: maps.md#slotmap
+[ex~data-structures~smallvec]: stack_allocated_arrays.md#smallvec
+[ex~data-structures~stack]: stack_and_queue.md#stack
+[ex~data-structures~tinyvec]: stack_allocated_arrays.md#tinyvec
+[p~containers]: # "../../other/containers/containers.md"
+[p~databases]: # "../database-implementations/databases.md"
 [p~embedded]: # "../embedded/index.md"
-[p~functions]: ../../../drafts/language/functions.md
-[p~links]: ../../../drafts/links/links.md
-[p~log]: ../../../drafts/categories/development-tools_debugging/log.md
-[p~protocols]: ../../../drafts/categories/aerospace_protocols/aerospace_protocols.md
-[p~search]: ../../../drafts/categories/database/search.md
+[p~functions]: # "../../language/functions.md"
+[p~links]: ../../links/index.md
+[p~log]: # "../development-tools_debugging/log.md"
+[p~protocols]: # "../aerospace_protocols/aerospace_protocols.md"
+[p~search]: # "../drafts/categories/database/search.md"

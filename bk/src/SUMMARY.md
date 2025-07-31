@@ -60,10 +60,20 @@
   - [Generate Random Values](categories/algorithms/randomness.md)
   - [Sort a Vector](categories/algorithms/sorting.md)
 
-- [Data Structures]()
-  - [HashMap](categories/data-structures/hashmap.md)
+- [Data Structures](categories/data-structures/index.md)
   - [Strings](categories/data-structures/strings.md)
   - [Vector](categories/data-structures/vector.md)
+  - [HashMap](categories/data-structures/hashmap.md)
+  - [Other Maps](categories/data-structures/maps.md)
+  - [B-Trees](categories/data-structures/btrees.md)
+  - [Stacks and Queues](categories/data-structures/stack_and_queue.md)
+  - [Binary Heaps](categories/data-structures/binaryheap.md)
+  - [Linked Lists](categories/data-structures/linkedlist.md)
+  - [Bitfields](categories/data-structures/bitfield.md)
+  - [Graph](categories/data-structures/graph.md)
+  - [Heapless Data Structures](categories/data-structures/heapless.md)
+  - [Stack-allocated Arrays](categories/data-structures/stack_allocated_arrays.md)
+  - [UUIDs](categories/data-structures/uuid.md)
 
 ---
 
