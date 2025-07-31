@@ -1,6 +1,6 @@
 # Vectors
 
-{{#include vectors.incl.md}}
+{{#include vector.incl.md}}
 
 ## Store Homogeneous Data in a Contiguous, Growable Array: `Vec` {#vec}
 
@@ -67,7 +67,7 @@ Read [Implementing Vec](https://doc.rust-lang.org/nomicon/vec/vec.html)⮳ for m
 - [[typecasts | Typecasts]].
 
 {{#include refs.incl.md}}
-{{#include ../refs/link-refs.md}}
+{{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 </div>

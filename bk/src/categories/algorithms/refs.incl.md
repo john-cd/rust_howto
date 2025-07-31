@@ -5,6 +5,7 @@
 [ex~algorithms~generate-random-numbers]: randomness.md#generate-random-numbers
 [ex~algorithms~generate-random-values-custom-type]: randomness.md#generate-random-values-custom-type
 [ex~algorithms~generate-random-values-from-set-alphanumeric]: randomness.md#generate-random-values-from-set-alphanumeric
+[ex~algorithms~see-also]: sorting.md#see-also
 [ex~algorithms~sort-vector-floats]: sorting.md#sort-vector-floats
 [ex~algorithms~sort-vector-integers]: sorting.md#sort-vector-integers
 [ex~algorithms~sort-vector-structs]: sorting.md#sort-vector-structs

@@ -24,7 +24,7 @@ String literals (e.g., "hello") are of type `&'static str`, meaning they exist f
 The relationship between `String` and `&str` is similar to that between `Vec<T>` and `&[T]` (a vector and a slice, respectively). `String` owns the underlying buffer, while `&str` is a reference to a portion of that buffer or some other string data.
 
 ```rust,editable
-{{#include ../../crates/cats/data_structures/examples/strings/strings.rs:example}}
+{{#include ../../../crates/cats/data_structures/examples/strings/strings.rs:example}}
 ```
 
 ## Print and Format Strings {#placeholders}
@@ -36,7 +36,7 @@ The relationship between `String` and `&str` is similar to that between `Vec<T>`
 You may also use `dbg!` for debug output.{{hi:Debug output}} `dbg!` returns ownership of the expression's value, so it can be inserted almost anywhere.
 
 ```rust,editable
-{{#include ../../crates/cats/data_structures/examples/strings/string_format.rs:example}}
+{{#include ../../../crates/cats/data_structures/examples/strings/string_format.rs:example}}
 ```
 
 ## Concatenate Strings {#string-concatenation}
@@ -73,7 +73,7 @@ See:
 - Working with [[other_strings | Other Strings]] (CString, OsString).
 
 {{#include refs.incl.md}}
-{{#include ../refs/link-refs.md}}
+{{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 </div>

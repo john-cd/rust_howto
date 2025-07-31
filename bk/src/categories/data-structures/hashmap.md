@@ -58,7 +58,7 @@ You can use a custom hash function with `HashMap` and `HashSet`. In the followin
 - [[key_value_stores | Key-Value Stores]].
 
 {{#include refs.incl.md}}
-{{#include ../refs/link-refs.md}}
+{{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 </div>

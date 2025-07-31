@@ -64,7 +64,6 @@
 [ex~language~lifetimes-in-functions]: lifetimes.md#lifetimes-in-functions
 [ex~language~lint-attributes]: attributes.md#lint-attributes
 [ex~language~loop]: control_flow.md#loop
-[ex~language~macros]: macros.md
 [ex~language~macro-pitfalls]: macros.md#macro-pitfalls
 [ex~language~macros-by-example]: macros.md#macros-by-example
 [ex~language~main-function]: entrypoint.md#main-function

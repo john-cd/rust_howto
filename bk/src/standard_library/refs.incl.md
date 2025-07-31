@@ -20,7 +20,6 @@
 [ex~standard_library~derive]: derive.md#derive
 [ex~standard_library~differences-borrow-deref-asref]: borrow.md#differences-borrow-deref-asref
 [ex~standard_library~drop]: drop.md#drop
-[ex~standard_library~reference-counting]: smart_pointers.md#reference-counting
 [ex~standard_library~eq]: cmp.md#eq
 [ex~standard_library~extracting-the-value-contained-in-option]: option.md#extracting-the-value-contained-in-option
 [ex~standard_library~from]: conversion_traits.md#from
@@ -40,6 +39,7 @@
 [ex~standard_library~rc-refcell]: reference_counting.md#rc-refcell
 [ex~standard_library~rc]: reference_counting.md#rc
 [ex~standard_library~refcell]: interior_mutability.md#refcell
+[ex~standard_library~reference-counting]: smart_pointers.md#reference-counting
 [ex~standard_library~related-data-structures]: pin.md#related-data-structures
 [ex~standard_library~result-methods]: result.md#result-methods
 [ex~standard_library~result-references]: result.md#result-references

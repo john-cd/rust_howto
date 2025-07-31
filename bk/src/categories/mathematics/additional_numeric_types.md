@@ -14,7 +14,7 @@ Numeric [traits][p~traits] for generic [mathematics][p~mathematics]. [Traits][p~
 
 ## Use Big Integers {#big-integers}
 
-### `num` {#skip1}
+### `num` {#num}
 
 [![num][c~num~docs~badge]][c~num~docs] [![num~crates.io][c~num~crates.io~badge]][c~num~crates.io] [![num~github][c~num~github~badge]][c~num~github] [![num~lib.rs][c~num~lib.rs~badge]][c~num~lib.rs]{{hi:num}}{{hi:Numerics}}{{hi:Bignum}}{{hi:Mathematics}} [![cat~science][cat~science~badge]][cat~science]{{hi:Science}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
@@ -24,7 +24,7 @@ Numeric [traits][p~traits] for generic [mathematics][p~mathematics]. [Traits][p~
 {{#include ../../../crates/cats/mathematics/examples/additional_numeric_types/big_integers.rs:example}}
 ```
 
-### `num-bigint` {#skip2}
+### `num-bigint` {#num-bigint}
 
 [![num-bigint][c~num_bigint~docs~badge]][c~num_bigint~docs] [![num-bigint~crates.io][c~num_bigint~crates.io~badge]][c~num_bigint~crates.io] [![num-bigint~github][c~num_bigint~github~badge]][c~num_bigint~github] [![num-bigint~lib.rs][c~num_bigint~lib.rs~badge]][c~num_bigint~lib.rs]{{hi:num-bigint}}{{hi:Bignum}}{{hi:Mathematics}}{{hi:Numerics}} [![cat~science][cat~science~badge]][cat~science]{{hi:Science}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
@@ -34,7 +34,7 @@ Numeric [traits][p~traits] for generic [mathematics][p~mathematics]. [Traits][p~
 {{#include ../../../crates/cats/mathematics/examples/additional_numeric_types/num_bigint.rs:example}}
 ```
 
-### `rug` {#skip3}
+### `rug` {#rug}
 
 [![rug][c~rug~docs~badge]][c~rug~docs] [![rug~crates.io][c~rug~crates.io~badge]][c~rug~crates.io] [![rug~github][c~rug~github~badge]][c~rug~github] [![rug~lib.rs][c~rug~lib.rs~badge]][c~rug~lib.rs]{{hi:rug}}{{hi:Bignum}}{{hi:Gmp}}{{hi:Math}}{{hi:Numerics}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~mathematics][cat~mathematics~badge]][cat~mathematics]{{hi:Mathematics}}
 
