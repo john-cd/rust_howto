@@ -159,13 +159,13 @@
 - [Error Handling](categories/rust-patterns/error_handling/error_handling.md)
   - [Error Customization](categories/rust-patterns/error_handling/error_customization.md)
 
-- [File System](categories/filesystem/index.md)
-  - [File Reading & Writing](categories/filesystem/read-write.md)
-  - [Directories](categories/filesystem/directories.md)
-  - [Directory Traversal](categories/filesystem/directory_traversal.md)
-  - [File Watching](categories/filesystem/file_watching.md)
-  - [Temporary Files and Directories](categories/filesystem/tempfile.md)
-  - [User Directories](categories/filesystem/user_directories.md)
+- [File System](../src/categories/filesystem/index.md)
+  - [File Reading & Writing](../src/categories/filesystem/read-write.md)
+  - [Directories](../src/categories/filesystem/directories.md)
+  - [Directory Traversal](../src/categories/filesystem/directory_traversal.md)
+  - [File Watching](../src/categories/filesystem/file_watching.md)
+  - [Temporary Files and Directories](../src/categories/filesystem/tempfile.md)
+  - [User Directories](../src/categories/filesystem/user_directories.md)
 
 - [Graphics](categories/graphics/index.md)
 

@@ -32,7 +32,7 @@
 [p~cross-platform]: # "../../other/cross-platform/index.md"
 [p~databases]: ../database-implementations/databases.md
 [p~documentation]: ../development-tools/documentation/documentation.md
-[p~file-watching]: ../filesystem/file_watching.md
+[p~file-watching]: ../../../src/categories/filesystem/file_watching.md
 [p~formatting]: ../development-tools/formatting/formatting.md
 [p~ides]: ../text-editors/ides.md
 [p~json]: ../parser-implementations/json.md
