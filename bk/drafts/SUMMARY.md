@@ -173,13 +173,6 @@
   - [Processor](categories/hardware-support/processor.md)
   - [Peripherals](categories/hardware-support/peripherals.md)
 
-- [Mathematics](categories/mathematics/index.md)
-  - [Linear Algebra](categories/mathematics/linear_algebra.md)
-  - [Trigonometry](categories/mathematics/trigonometry.md)
-  - [Complex Numbers](categories/mathematics/complex_numbers.md)
-  - [Statistics](categories/mathematics/statistics.md)
-  - [Additional Numeric Types](categories/mathematics/additional_numeric_types.md)
-
 - [Memory Management](categories/memory-management/index.md)
   - [Lazy Initialization](categories/memory-management/lazy_initialization.md)
   - [Memory Allocation](categories/memory-management/memory_allocation.md)

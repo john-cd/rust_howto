@@ -75,6 +75,13 @@
   - [Stack-allocated Arrays](categories/data-structures/stack_allocated_arrays.md)
   - [UUIDs](categories/data-structures/uuid.md)
 
+- [Mathematics](categories/mathematics/index.md)
+  - [Linear Algebra](categories/mathematics/linear_algebra.md)
+  - [Trigonometry](categories/mathematics/trigonometry.md)
+  - [Complex Numbers](categories/mathematics/complex_numbers.md)
+  - [Statistics](categories/mathematics/statistics.md)
+  - [Additional Numeric Types](categories/mathematics/additional_numeric_types.md)
+
 ---
 
 - [Links](links/index.md)
