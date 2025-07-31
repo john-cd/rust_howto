@@ -48,7 +48,7 @@ Shows up to the 10<sup>th</sup> biggest files and subdirectories in the current 
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~os][cat~os~badge]][cat~os]{{hi:OS}}
 
-Spawns a child process and redirects [`std::io::Stdout`][c~std::io::Stdout~docs]{{hi:std::io::Stdout}}⮳ and [`std::io::Stderr`][c~std::io::Stderr~docs]{{hi:std::io::Stderr}}⮳ to the same file. It follows the same idea as [run piped external commands][ex~os-run-piped-external-commands], however [`std::process::Stdio`][c~std::process::Stdio~docs]{{hi:std::process::Stdio}}⮳ writes to a specified file. [`std::fs::File::try_clone`][c~std::fs::File::try_clone~docs]{{hi:std::fs::File::try_clone}}⮳ references the same file handle for [`std::io::Stdout`][c~std::io::Stdout~docs]{{hi:std::io::Stdout}}⮳ and [`std::io::Stderr`][c~std::io::Stderr~docs]{{hi:std::io::Stderr}}⮳. It will ensure that both handles write with the same cursor position.
+Spawns a child process and redirects [`std::io::Stdout`][c~std::io::Stdout~docs]{{hi:std::io::Stdout}}⮳ and [`std::io::Stderr`][c~std::io::Stderr~docs]{{hi:std::io::Stderr}}⮳ to the same file. It follows the same idea as [run piped external commands][ex~os~run-piped-external-commands], however [`std::process::Stdio`][c~std::process::Stdio~docs]{{hi:std::process::Stdio}}⮳ writes to a specified file. [`std::fs::File::try_clone`][c~std::fs::File::try_clone~docs]{{hi:std::fs::File::try_clone}}⮳ references the same file handle for [`std::io::Stdout`][c~std::io::Stdout~docs]{{hi:std::io::Stdout}}⮳ and [`std::io::Stderr`][c~std::io::Stderr~docs]{{hi:std::io::Stderr}}⮳. It will ensure that both handles write with the same cursor position.
 
 The below recipe is equivalent to run the [Unix][p~unix] shell command `ls . oops >out.txt 2>&1`.
 
@@ -60,7 +60,7 @@ The below recipe is equivalent to run the [Unix][p~unix] shell command `ls . oop
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~os][cat~os~badge]][cat~os]{{hi:OS}}
 
-In [Run an external command and process its `stdout`][ex~os-run-an-external-command-and-process-stdout], processing doesn't start until the external [`std::process::Command`][c~std::process::Command~docs]{{hi:std::process::Command}} is finished. The recipe below calls [`std::process::Stdio::piped`][c~std::process::Stdio::piped~docs]⮳{{hi:std::process::Stdio::piped}} to create a pipe, and reads
+In [Run an external command and process its `stdout`][ex~os~run-an-external-command-and-process-stdout], processing doesn't start until the external [`std::process::Command`][c~std::process::Command~docs]{{hi:std::process::Command}} is finished. The recipe below calls [`std::process::Stdio::piped`][c~std::process::Stdio::piped~docs]⮳{{hi:std::process::Stdio::piped}} to create a pipe, and reads
 [`std::io::Stdout`][c~std::io::Stdout~docs]{{hi:std::io::Stdout}}⮳ continuously as soon as the [`std::io::BufReader`][c~std::io::BufReader~docs]{{hi:std::io::BufReader}}⮳ is updated.
 
 The below recipe is equivalent to the Unix shell command `journalctl | grep usb`.
