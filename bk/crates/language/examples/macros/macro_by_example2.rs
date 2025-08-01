@@ -12,7 +12,7 @@ macro_rules! print_args {
 }
 
 fn main() {
-    // Note how macros can be overloaded to accept different combinations of
+    // Note how macros can accept different combinations of
     // arguments by having multiple rules:
     print_args!(10);
     print_args!("hello", true);
