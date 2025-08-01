@@ -1,7 +1,6 @@
 #![allow(dead_code)]
 #![allow(clippy::useless_vec)]
 // ANCHOR: example
-
 use std::cell::RefCell;
 
 fn examples() {

@@ -3,7 +3,6 @@
 #![allow(clippy::useless_vec)]
 #![allow(clippy::unnecessary_fold)]
 // ANCHOR: example
-
 fn main() {
     // Vectors are resizable arrays.
 

@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-
 use std::sync::Mutex;
 use std::sync::OnceLock;
 
