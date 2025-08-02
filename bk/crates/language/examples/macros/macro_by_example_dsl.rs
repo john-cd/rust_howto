@@ -25,37 +25,19 @@ macro_rules! config {
     // Once the parser begins consuming tokens for a metavariable, it cannot stop or backtrack.
     // You should therefore write macro rules in order from most-specific to least-specific.
 
-    // Base case: no more tokens, return an empty `HashMap`.
+    // Base case: no (more) tokens e.g., `config! {}`. Returns an empty `HashMap`.
     // Note that the outer delimiters `()` for the matcher will match any pair of delimiters e.g. `{}`, `[]`.
     () => {
         std::collections::HashMap::new()
     };
 
-    // Rule for a boolean value (e.g., `key: true`).
+    // Rules for a single boolean value (e.g., `config! { key: true }`).
     // - `:` and `true` or `false` are literals in the macro-by-example pattern and transcribed literally.
-    // - Note the use of _recursive_ macro calls.
-    //   Each rule inserts the current key-value pair
-    //   in the `HashMap` returned by the recursive call to `config!`.
-    //   See <https://lukaswirth.dev/tlborm/decl-macros/patterns/tt-muncher.html>.
     // - `stringify!` is used to convert a metavariable or expression into a string slice:
     //   `stringify!(1 + 1) == "1 + 1"`.
     // - The special metavariable `$crate` refers to the crate defining the macro;
     //   It is used to refer to items or macros that are not in scope at the invocation site, here the `enum` defined above.
     //   See <https://doc.rust-lang.org/reference/macros-by-example.html#r-macro.decl.hygiene.crate>.
-    ($key:ident : true, $($rest:tt)*) => {
-        {
-            let mut map = config!($($rest)*);
-            map.insert(stringify!($key).to_string(), $crate::macro_by_example_dsl::ConfigValue::Boolean(true));
-            map
-        }
-    };
-    ($key:ident : false, $($rest:tt)*) => {
-        {
-            let mut map = config!($($rest)*);
-            map.insert(stringify!($key).to_string(), $crate::macro_by_example_dsl::ConfigValue::Boolean(false));
-            map
-        }
-    };
     ($key:ident : true) => {
         {
             let mut map = std::collections::HashMap::new();
@@ -71,14 +53,7 @@ macro_rules! config {
         }
     };
 
-    // Rule for a string literal value (e.g., `key: "value"`).
-    ($key:ident : $value:literal, $($rest:tt)*) => {
-        {
-            let mut map = config!($($rest)*);
-            map.insert(stringify!($key).to_string(), $crate::macro_by_example_dsl::ConfigValue::String($value.to_string()));
-            map
-        }
-    };
+    // Rule for a string literal value (e.g., `config!{ key: "value" }`).
     ($key:ident : $value:literal) => {
         {
             let mut map = std::collections::HashMap::new();
@@ -87,19 +62,48 @@ macro_rules! config {
         }
     };
 
-    // Rule for a nested section (identifier followed by block), followed by a comma.
-    ($key:ident { $($inner_config:tt)* }, $($rest:tt)*) => {
+    // Rule for a boolean value followed by a comma and additional tokens.
+    // - Note the use of _recursive_ macro calls on the additional tokens.
+    //   Each rule inserts the current key-value pair
+    //   in the `HashMap` returned by the recursive call to `config!`.
+    //   See <https://lukaswirth.dev/tlborm/decl-macros/patterns/tt-muncher.html>.
+    ($key:ident : true, $($rest:tt)*) => {
         {
             let mut map = config!($($rest)*);
+            map.insert(stringify!($key).to_string(), $crate::macro_by_example_dsl::ConfigValue::Boolean(true));
+            map
+        }
+    };
+    ($key:ident : false, $($rest:tt)*) => {
+        {
+            let mut map = config!($($rest)*);
+            map.insert(stringify!($key).to_string(), $crate::macro_by_example_dsl::ConfigValue::Boolean(false));
+            map
+        }
+    };
+
+    // Rule for a string literal value followed by a comma and additional tokens.
+    ($key:ident : $value:literal, $($rest:tt)*) => {
+        {
+            let mut map = config!($($rest)*);
+            map.insert(stringify!($key).to_string(), $crate::macro_by_example_dsl::ConfigValue::String($value.to_string()));
+            map
+        }
+    };
+
+    // Rule for a nested section (identifier followed by a block) without a trailing comma.
+    ($key:ident { $($inner_config:tt)* }) => {
+        {
+            let mut map = std::collections::HashMap::new();
             map.insert(stringify!($key).to_string(), $crate::macro_by_example_dsl::ConfigValue::Map(config!($($inner_config)*)));
             map
         }
     };
 
-    // Rule for a nested section without a trailing comma (last item).
-    ($key:ident { $($inner_config:tt)* }) => {
+    // Rule for a nested section, followed by a comma and additional tokens.
+    ($key:ident { $($inner_config:tt)* }, $($rest:tt)*) => {
         {
-            let mut map = std::collections::HashMap::new();
+            let mut map = config!($($rest)*);
             map.insert(stringify!($key).to_string(), $crate::macro_by_example_dsl::ConfigValue::Map(config!($($inner_config)*)));
             map
         }
