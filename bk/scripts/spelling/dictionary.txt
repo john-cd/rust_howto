@@ -3268,3 +3268,7 @@ Kerkour's
 Cancelable
 Udemy
 guret's
+MyCustomTrait
+designators
+b'bin
+function's

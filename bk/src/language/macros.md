@@ -2,23 +2,25 @@
 
 {{#include macros.incl.md}}
 
-Rust macros enable metaprogramming, allowing you to write code that generates other code. This capability allows for code reuse by reducing boilerplate and enhancing readability through more expressive syntax:
+Rust macros enable metaprogramming, allowing you to write code that generates other code. This capability allows for code reuse by reducing boilerplate:
 
-- Macros are commonly used as variadic interfaces: They can handle a variable number of arguments and therefore are more flexible than functions. `println!`, for example, can take any number of arguments, as required by its format string.
+- Macros are commonly used as variadic interfaces: They can handle a variable number of arguments and therefore are more flexible than functions. `println!`, for example, can take any number of arguments.
 - Macros can implement common traits automatically or create domain-specific languages.
-- Macros run at compile time, so any errors in the generated code are caught early. Macros can also achieve performance optimizations through compile-time computation and code transformation.
+- Macros can achieve performance optimizations through compile-time computation and code transformation.
+
+Unlike C or C++ macros, which rely on simple text substitution via the preprocessor and can introduce subtle bugs, Rust macros are part of the language's syntax system and are expanded during _compilation_, so any errors in the generated code are caught early.
 
 ## Use Macros {#use-macros}
 
 Macros comes in three forms:
 
 - Function-like macros, e.g. `println!("Hello, world!");`,
-- Attribute-like macros e.g. `#[foo="bar"]`,
+- Attribute-like macros e.g. `#[foo = "bar"]`,
 - Custom [derive macros](https://doc.rust-lang.org/reference/attributes/derive.html)↗ e.g., `#[derive(MyTrait)]`.
 
 ### Use Function-like Macros {#function-like-macros}
 
-"Function-like" macros are called most frequently, well, like a [[function | function]] would be, with a list of parameters and within a parent functions's body:
+"Function-like" macros are called most frequently, well, like a [[function | function]] would be, with a list of parameters and within a parent function's body:
 
 ```rust,editable
 fn main() {
@@ -29,13 +31,13 @@ fn main() {
 ```
 
 - Note the `!` suffix after the macro's name.
-- Macros may accept a variable number of arguments, in contrast with functions.
-- Square or curly bracket may be used as outer delimiters instead of parentheses e.g., `println!{ "Curly" };`. This is most often used with `vec!` to give it an array-like syntax: `let _ = vec![1, 2, 3];`.
-- When a function-like macro is used as an item or a statement and is not using curly braces, a semicolon is required at the end.
+- Square or curly brackets (`[]` or `{}`)  may be used as outer delimiters instead of parentheses e.g., `println!{ "Curly" };`. This is most often used with `vec!` to give it an array-like syntax: `let _ = vec![1, 2, 3];`.
+- When a function-like macro is used as an item or a statement (see below) and is not using curly braces, a semicolon is required at the end.
 
 This said, function-like macros are more general and powerful than function calls:
 
-- The macro argument, that is the contents within its `()` (or `[]` or `{}`) delimiters, are not restricted to a list of expressions. In fact, it _does not need to be valid Rust_, which can be exploited to create a _domain specific language_ within Rust code (see section below).
+- Macros may accept a variable number of arguments.
+- The macro arguments are not restricted to be a comma-separated list of expressions. In fact, it _does not need to be valid Rust_, which can be exploited to create a _domain specific language_ within Rust code (see section below).
 - What a macro generates is not limited to an expression or statement.
 - Some macros may be called in places where a function could not, for example outside of a function's body.
 
@@ -135,7 +137,7 @@ Macros-by-example are expanded at compile-time, meaning they incur no runtime pe
 
 Read the sections below; the [macro](https://doc.rust-lang.org/book/ch20-05-macros.html)↗ chapter of the Rust book; and the ["Little Book of Rust Macros"](https://lukaswirth.dev/tlborm)↗ for more details.
 
-### Write Macros-by-example {#macros-by-example}
+### Write Macros-by-Example {#macros-by-example}
 
 [![Rust by example - macros][book~rust-by-example~macros~badge]][book~rust-by-example~macros]{{hi:Macros}}{{hi:Metaprogramming}}
 
@@ -150,12 +152,14 @@ The transcriber can be an expression, a pattern, a type, zero or more items, or 
 For example, the following defines a basic `say_hello` macro (with one rule without arguments), then calls it:
 
 ```rust,editable
-{{#include ../../crates/language/examples/macros/macro_by_example.rs:example}}
+{{#include ../../crates/language/examples/macros/macro_by_example_basic.rs:example}}
 ```
 
 Note: To be more precise, `macro_rules!` interchangeably accepts `{}`, `()` and `[]` as outer delimiters for rule groups, matchers, and transcribers, but what is described above is conventional.
 
-You can use _metavariables_ to capture parts of the input. They are prefixed with a dollar sign (`$`). Inside matchers, `$name:fragment-specifier` matches a Rust syntax fragment of the kind specified and binds it to the metavariable `$name`, which can then be used in the transcriber. Valid [syntax fragment specifiers](https://doc.rust-lang.org/reference/macros-by-example.html#r-macro.decl.meta.specifier)↗, also called designators, are:
+#### Capture the Arguments of a Macro-by-Example with Metavariables {#metavariables}
+
+You can use _metavariables_ to capture parts of a macro's input. They are prefixed with a dollar sign (`$`). Inside matchers, `$name:fragment-specifier` matches a Rust syntax fragment of the kind specified and binds it to the metavariable `$name`, which can then be used in the transcriber. Valid [syntax fragment specifiers](https://doc.rust-lang.org/reference/macros-by-example.html#r-macro.decl.meta.specifier)↗, also called designators, are:
 
 - `block`: a block expression e.g. `{ let x = 1; x + 2 }`,
 - `expr`: an expression that produces a value, e.g. `a + 2` or `some_function()` or even `"a literal"`,
@@ -172,13 +176,21 @@ You can use _metavariables_ to capture parts of the input. They are prefixed wit
 - `ty`: a type, e.g. `bool`, `[(i32, i32); 3]`, `impl Trait`, `dyn Trait + Send + Sync`...
 - `vis`: a possibly empty visibility qualifier, e.g. `pub`, `pub(crate)`...
 
-In the following example, `$e:expr`, `$e1:expr`, `$e2:expr` each capture a (complete, valid) Rust expression:
+In the transcriber (code within `{}` after `=>`), metavariables are referred to simply by `$name`. Metavariables are replaced with the syntax element that matched them.
+
+The special metavariable `$crate` can be used to refer to the crate defining the macro.
+
+In the following example, `$e:expr`, `$e1:expr`, `$e2:expr` each capture a Rust expression, which must be complete and valid:
 
 ```rust,editable
-{{#include ../../crates/language/examples/macros/macro_by_example2.rs:example}}
+{{#include ../../crates/language/examples/macros/macro_by_example_metavariables.rs:example}}
 ```
 
-Repetitions are indicated by placing the tokens to be repeated inside `$( )`, followed by a repetition operator ( `*`, `+`, or `?`, similar to regular expressions), optionally with a separator token inbetween.
+More complex [metavariable expressions](https://lukaswirth.dev/tlborm/decl-macros/macros-methodical.html#metavariable-expressions)↗ support is available in nightly Rust.
+
+#### Use Repetitions in Macros-by-Example {#repetitions}
+
+In a macro _matcher_, a pattern within `()` describing the syntax that it matches, repetitions are indicated by placing the tokens to be repeated inside `$( )`, followed by a repetition operator ( `*`, `+`, or `?`, similar to regular expressions), optionally with a separator token in-between.
 
 In the example below, `$($x:expr),*` is read as follows:
 
@@ -187,21 +199,37 @@ In the example below, `$($x:expr),*` is read as follows:
 - `,` is the literal comma that separates the expressions.
 - `*` is a repetition operator, meaning "zero or more" occurrences of the preceding pattern. Other operators include `+` (one or more) and `?` (zero or one).
 
+Repetition in the transcriber is also possible: the `$(...)*` syntax repeats the `temp += $x;` statement for each captured expression `$x`:
+
 ```rust,editable
-{{#include ../../crates/language/examples/macros/macro_by_example3.rs:example}}
+{{#include ../../crates/language/examples/macros/macro_by_example_repetitions.rs:example}}
 ```
 
-In the transcriber (code witin `{}` after `=>`), metavariables are referred to simply by `$name`. Metavariables are replaced with the syntax element that matched them.
+#### Understand the Hygiene of Macros-by-Example {#hygiene}
 
-The special metavariable `$crate` can be used to refer to the crate defining the macro.
+Macros-by-example have "mixed-site hygiene". This means that loop labels, block labels, and local variables are looked up at the _macro definition site_, while other symbols are looked up at the _macro invocation site_. Refer to the [Rust Reference - Macros][book~rust-reference~macros]↗ for full details.
 
-Repetition in the transcriber is also possible: In the example above, the `$(...)*` syntax repeats the `temp += $x;` statement for each captured expression `$x`.
+The following example demonstrates how to use a local variable; and how to define an item in a macro and use it at the invocation site:
 
-More complex [Metavariable expressions](https://lukaswirth.dev/tlborm/decl-macros/macros-methodical.html#metavariable-expressions)↗ support is available in nightly Rust.
+```rust,editable
+{{#include ../../crates/language/examples/macros/macro_by_example_hygiene.rs:example}}
+```
 
-Note that macros-by-example have "mixed-site hygiene". This means that loop labels, block labels, and local variables are looked up at the macro definition site, while other symbols are looked up at the macro invocation site. Refer to the [Rust Reference - Macros][book~rust-reference~macros]↗ for full details.
+####  Macros-by-Example {#macros-by-example-limitations}
 
-To see what a declarative macro expands to and debug it, use the [`cargo-expand`](https://crates.io/crates/cargo-expand)↗ cargo plugin. See also the [debugging](https://lukaswirth.dev/tlborm/decl-macros/minutiae/debugging.html)↗ section of the little book of macros for more suggestions.
+Macros operate on syntax, not types. As a result, you can't specify the type of an argument in the matcher (the pattern before `=>`) of a rule of a macro-by-example.
+
+While there is no type checking during macro expansion, there is _after_. Your code won't compile if there is a type error:
+
+```rust,editable
+{{#include ../../crates/language/examples/macros/macro_by_example_type_checking.rs:example}}
+```
+
+You may therefore use compile-time type checking to ensure that a macro argument is of a specific type:
+
+```rust,editable
+{{#include ../../crates/language/examples/macros/macro_by_example_type_checking2.rs:example}}
+```
 
 ### Create a Domain-Specific Language (DSL) with Macros {#dsl-macros}
 
@@ -221,13 +249,7 @@ The following example demonstrates how to create a simple configuration DSL:
 
 The caveat of DSLs, of course, is that an unfamiliar syntax embedded within Rust code may be confusing to the reader.
 
-To parse Rust-like syntax, see the [relevant section](https://lukaswirth.dev/tlborm/decl-macros/building-blocks/parsing.html) of the little book of macros.
-
-### TODO
-
-```rust,editable
-{{#include ../../crates/language/examples/macros/macro_by_example4.rs:example}}
-```
+To parse Rust-like syntax, refer to the [relevant section](https://lukaswirth.dev/tlborm/decl-macros/building-blocks/parsing.html)↗ of the little book of macros or use the [`syn`](https://docs.rs/syn/latest/syn)↗ crate.
 
 ### Write Procedural Macros {#procedural-macros}
 
@@ -256,20 +278,16 @@ Note the following before writing procedural macros:
 
 While you could manually parse and generate token streams, it is highly recommended to use helper crates (found on [`crates.io`](https://crates.io)↗):
 
-- `syn` is a parser for Rust syntax. It allows you to parse a `proc_macro::TokenStream` into an Abstract Syntax Tree (AST) that's easy to work with (e.g., `syn::ItemStruct`, `syn::FnArg`).
+- [`syn`](https://crates.io/crates/syn)↗ is a parser for Rust syntax. It allows you to parse a `proc_macro::TokenStream` into an Abstract Syntax Tree (AST) that's easy to work with (e.g., [`syn::ItemStruct`](https://docs.rs/syn/2.0.104/syn/struct.ItemStruct.html)↗, [`syn::FnArg`](https://docs.rs/syn/latest/syn/enum.FnArg.html)↗).
 - `quote` is a quasi-quoting library that makes it easy to generate Rust code from the parsed AST. It allows you to write Rust code directly and "splice in" variables.
 
 Procedural macros are "unhygienic." They behave as if the output token stream was simply written inline to the code it's next to. This means that they are affected by external items and also affects external imports. Use full absolute paths to items in libraries (for example, `::std::option::Option` instead of `Option`) and make sure that generated functions have names that are unlikely to clash with other functions (like `__internal_foo` instead of `foo`) [(Rust reference)](https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.hygiene)↗.
 
-While `syn` and `proc_macro::Span` help, providing clear and precise error messages from a macro can be tricky: Procedural macros have two ways of reporting errors. The first is to `panic!`. The second is to invoke the `compile_error!` macro.
-
-Debugging (procedural) macros can be challenging. `cargo expand` is your best friend for seeing the generated code. IDE support for macros is limited.
-
 Procedural macros can increase compilation times, especially for large projects or complex macros.
 
-### Derive Custom Traits with Procedural Macros {#derive-macros}
+#### Derive Custom Traits with Procedural Macros {#derive-macros}
 
-Derive macros define new inputs for the `derive` attribute. These macros can create new items, when applied to a struct, enum, or union.
+[Derive macros](https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.derive)↗ define new inputs for the `derive` attribute. These macros can create new items, when applied to a struct, enum, or union.
 
 - Create a separate crate and add the following to its `Cargo.toml`:
 
@@ -279,7 +297,7 @@ proc-macro = true
 
 # Typical dependencies for procedural macros:
 [dependencies]
-syn = { version = "2.0", features = ["full"] } # "full" feature is often needed for parsing various Rust constructs.
+syn = { version = "2.0", features = ["full"] } # The "full" feature is often needed for parsing various Rust constructs.
 quote = "1.0"
 proc-macro2 = "1.0" # TokenStream manipulation.
 ```
@@ -303,7 +321,7 @@ proc-macros = { path = "../proc_macros" } # Adjust the path as necessary.
 {{#include ../../crates/language/examples/macros/proc_macro_derive.rs:example}}
 ```
 
-Derive macros can also add additional attributes ("derive macro helper attributes") into the scope of the item they are on [(Rust reference)](https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.derive.attributes)↗. This is useful for adding metadata or additional functionality to the item being derived:
+Note that derive macros can add additional attributes ("derive macro helper attributes") into the scope of the item they are on [(Rust reference)](https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.derive.attributes)↗. This is useful for adding metadata or additional functionality to the item being derived:
 
 ```rust,editable
 # [derive(MyCustomDeriveMacro)]
@@ -314,9 +332,9 @@ struct MyStruct {
 }
 ```
 
-### Create Custom Attributes with Procedural Macros {#attribute-macros}
+#### Create Custom Attributes with Procedural Macros {#attribute-macros}
 
-Attribute procedural macros define new outer attributes.
+[Attribute procedural macros](https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.attribute)↗ define new outer attributes.
 
 - Create a separate crate and add it to your main crate's `Cargo.toml`, as above.
 - Add the following to `lib.rs`, the root of the new crate:
@@ -331,17 +349,18 @@ Attribute procedural macros define new outer attributes.
 {{#include ../../crates/language/examples/macros/proc_macro_attribute.rs:example}}
 ```
 
-### Create Function-like Procedural Macros {#function-like-procedural-macros}
+#### Create Function-like Procedural Macros {#function-like-procedural-macros}
+
+[Function-like procedural macros](https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.attribute)↗ are invoked using the macro invocation operator (!).
 
 - Create a separate crate and add it to your main crate's `Cargo.toml`, as above.
-
 - Add the following to `lib.rs`, the root of the new crate:
 
 ```rust,editable
 {{#include ../../crates/proc_macros/src/lib.rs:function_macro}}
 ```
 
-- Then, in your main crate, use the macro like this:
+Then, in your main crate, use the macro like this:
 
 ```rust,editable
 {{#include ../../crates/language/examples/macros/proc_macro_function.rs:example}}
@@ -352,12 +371,39 @@ Attribute procedural macros define new outer attributes.
 Watch out for the following common macro pitfalls:
 
 - Overusing Macros: Macros can obscure logic and make code harder to read or debug, if used unnecessarily.
-- Poor Macro Hygiene: If your macro introduces variables without care, it can clash with names in the surrounding scope. This can lead to confusing bugs. Rust tries to help with hygiene, but it's not foolproof - especially in procedural macros.
-- Complex or Unreadable Macros: Macros that try to do too much can become cryptic. If you can't understand what your macro expands to without a mental workout, it might be time to simplify or rethink the design.
-- Lack of Testing: Macros don't get tested like functions do. If you don't write tests that exercise all the macro's patterns and edge cases, you might miss subtle bugs.
-- Unexpected Expansion Behavior: Macros expand before type checking, so they can produce code that compiles incorrectly or fails in surprising ways. Debugging macro expansion can be tricky.
+- Poor Macro Hygiene: If your (procedural) macro introduces variables without care, it can clash with names in the surrounding scope. This can lead to confusing bugs.
+- Lack of Testing: If you don't write tests that exercise all of the macro's patterns and edge cases, you might miss subtle bugs.
+- Unexpected Expansion Behavior: Macros expand before type checking, so they can produce code that compiles incorrectly or fails in surprising ways.
 - Lifetime and Type Issues: Especially in procedural macros, forgetting to handle lifetimes or generic parameters properly can lead to compiler errors that are hard to trace.
-- Unclear Error Messages: When something goes wrong inside a macro, the compiler often points to the macro invocation site, not the actual problem. Using the [`compile_error!`](https://doc.rust-lang.org/core/macro.compile_error.html)↗ macro can help provide clearer diagnostics.
+- Unclear Error Messages.
+
+### Report Errors From and Debug Macros {#debug-macros}
+
+Macros have two ways of reporting errors. The first is to `panic!`. The second is to invoke the `compile_error!` macro.
+
+When something goes wrong inside a macro, the compiler often points to the macro invocation site, not the actual problem. Using the [`compile_error!`](https://doc.rust-lang.org/core/macro.compile_error.html)↗ macro provides clearer diagnostics:
+
+```rust,editable
+macro_rules! must_be_an_identifier {
+    ($x:ident) => {
+        // Your code goes here.
+    };
+    ($_:tt) => {
+        // Causes compilation to fail with the given error message.
+        // It is the compiler-level form of `panic!`,
+        // but emits an error during compilation rather than at runtime.
+        compile_error!("This macro only accepts an identifier.");
+    };
+}
+
+fn main() {
+
+    must_be_an_identifier!(foo);
+    // must_be_an_identifier!(42);
+}
+```
+
+Debugging macros can be challenging. To see what a macro expands to and debug it, use the [`cargo-expand`](https://crates.io/crates/cargo-expand)↗ cargo plugin. See also the [debugging](https://lukaswirth.dev/tlborm/decl-macros/minutiae/debugging.html)↗ section of the little book of macros for more suggestions.
 
 ## References {#references}
 

@@ -90,12 +90,20 @@ Debugging procedural [macros][p~macros] can be tricky. Often involves printing t
 
 Good documentation is essential for any procedural macro. Document your macro's usage, attributes, and any potential pitfalls.
 
+## Related Topics {#related-topics}
+
+- [[macros | Macros]].
+- [[development-tools_procedural-macro-helpers | Development Tools: Procedural Macro Helpers]].
+  - [[compile_macros | Compile Macros]].
+  - [[macro_tools | Macro Tools]].
+- [[rust-patterns | Rust Patterns]].
+
 [(reference)]:  https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.proc_macro.token-stream
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write_proc_macros: write](https://github.com/john-cd/rust_howto/issues/331)
+[write_proc_macros: write; compare with macros.md - what should be in here?](https://github.com/john-cd/rust_howto/issues/331)
 
 - [syn examples](https://github.com/dtolnay/syn/tree/master/examples)
 
