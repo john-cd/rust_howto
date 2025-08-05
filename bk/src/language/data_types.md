@@ -45,6 +45,8 @@ The following provides examples of tuples and arrays:
 
 ## Declare Strings {#string-types}
 
+[![Rust by example - string][book~rust-by-example~string~badge]][book~rust-by-example~string]
+
 Primitive type `str` is a string slice that represents a view into a string, allowing you to access a portion of a string without owning it. It is immutable and typically used as a reference type, denoted as `&str`, which allows for efficient borrowing of string data. Its memory can be on the heap, stack, or static. String slices must always be valid UTF-8. `&'static str` is the type of string literals.
 
 `String` is a growable, mutable, owned string allocated on the heap. It is not a primitive type, but is rather part of the standard library.

@@ -139,6 +139,8 @@
 [book~rust-atomics]: https://marabos.nl/atomics
 [book~rust-attributes~badge]: https://img.shields.io/badge/Rust_Book-Attributes-blue?logo=mdbook
 [book~rust-by-example]: https://doc.rust-lang.org/rust-by-example/index.html
+[book~rust-by-example~string~badge]: https://img.shields.io/badge/Rust_By_Example-string-violet?logo=mdbook
+[book~rust-by-example~string]: https://doc.rust-lang.org/rust-by-example/std/str.html
 [book~rust-by-example~array]: https://doc.rust-lang.org/rust-by-example/primitives/array.html
 [book~rust-by-example~array~badge]: https://img.shields.io/badge/Rust_By_Example-array-violet?logo=mdbook
 [book~rust-by-example~attributes]: https://doc.rust-lang.org/rust-by-example/attribute.html
