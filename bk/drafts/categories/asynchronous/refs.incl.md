@@ -28,7 +28,7 @@
 [ex~asynchronous~utilities]: async_utilities.md#utilities
 [ex~asynchronous~which-crate-provides-what]: async.md#which-crate-provides-what
 [p~async]: async.md
-[p~crates]: ../../crate_selection/index.md
+[p~crates]: ../../../src/crate_selection/index.md
 [p~functions]: ../../language/functions.md
 [p~futures]: futures.md
 [p~language]: ../../../src/language/index.md

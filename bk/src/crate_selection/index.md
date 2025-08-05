@@ -1,28 +1,37 @@
-# Key Crates
+# Crate Selection
 
-## Crates Used in this Book {#crates-used}
+## Choose Dependencies for your Project {#choose-dependencies}
+
+The Rust standard library is (on purpose) fairly minimal. Besides providing basic data types, the standard library is largely concerned with abstracting over differences in common platforms, e.g., Windows and Unix derivatives.
+
+Instead, major functionality like regular expressions, random numbers, cryptography, serialization, async, and logging, are found in separate Rust crates that are available on [`crates.io`][crates.io~website]{{hi:crates.io}}↗. Rusteaceans add these crates to their projects via the [`Cargo`][c~cargo~docs]↗{{hi:Cargo}} package manager.
+
+A common complaint from new Rust developers is that they don't know which crates they ought to use. It is the main purpose of this book to provide expansive coverage of "key" or "foundational" crates - those crates that make up the most common programming tasks.
+
+### Use this Book to Select Crates {#crates}
+
+1. Browse the left sidebar for a relevant category.
+1. Search by keyword for recipes for your specific problem.
+1. Consult the [[word index | word_index]].
+1. Consult the following crate lists:
 
 - [Crates by Alphabetical Order][p~crates-alphabetical].
 - [Crates by Category][p~crates-categories].
 
-## Select Crates for your Project {#select-crates}
+### Crate Recommendations {#crate-recommendations}
 
-Use the following sites for crate recommendations:
+You may also use the following sites for crate recommendations:
 
 - [`blessed.rs`][blessed-rs~website]{{hi:blessed.rs}}↗,
 - [`lib.rs`][lib-rs]{{hi:lib.rs}}↗, and in particular,
-  - [Most Popular Rust Libraries][lib-rs~most-popular]↗.
-  - High-quality crates [statistics][lib-rs~stats]↗.
+  - [Most Popular Rust Libraries][lib-rs~most-popular]↗,
+  - Crates [statistics][lib-rs~stats]↗,
 - The Rust community's official crate registry: [`crates.io`][crates.io~website]{{hi:crates.io}}↗,
-- [`crates.io`'s Most (Recent) Downloads][crates.io~most-recent-downloads]↗.
+  - [`crates.io`'s Most (Recent) Downloads][crates.io~most-recent-downloads]↗.
 
-You may also consult older resources, such as:
+You should search for crates by category and by keywords.
 
-- [Rust Starter Pack][rust-starter-pack~website]{{hi:Rust starter pack}}↗.
-- [![stdx][c~stdx~github~badge]][c~stdx~github]{{hi:stdx}}↗.
-- [Best of Rust Crates][reddit~best-of-rust-crates]↗.
-
-## Additional Lists & Reviews {#lists-reviews}
+### Additional Lists & Reviews {#lists-reviews}
 
 - [Awesome Rust (libhunt.com)](https://rust.libhunt.com)↗.
 - [Top Rust Libraries 2025](https://libs.tech/rust)↗.
@@ -53,9 +62,16 @@ You will find below links to "Are we ... yet?" websites and similar. They list k
   - [Rust Audio](https://rust.audio)↗.
   - [Awesome Geo-Rust](https://github.com/pka/awesome-georust)↗: geospatial software, libraries, tools and resources, written in Rust.
 
+## Older Resources
+
+You may also consult older resources, such as:
+
+- [Best of Rust Crates][reddit~best-of-rust-crates]↗.
+- [Rust Starter Pack][rust-starter-pack~website]{{hi:Rust starter pack}}↗.
+- [![stdx][c~stdx~github~badge]][c~stdx~github]{{hi:stdx}}↗.
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[crates/index: organize NOW](https://github.com/john-cd/rust_howto/issues/535)
 </div>
