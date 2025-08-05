@@ -44,6 +44,7 @@ The books found on [`rust-lang.org`][rust-lang]⮳ and friends are listed below:
 - [Rust-101](https://www.ralfj.de/projects/rust-101/main.html)⮳.
 - [Rust by Practice](https://practice.course.rs)⮳.
 - [Rust Development Classes](https://rust-classes.com)⮳.
+- [Rust Project Primer](https://rustprojectprimer.com/title.html)⮳.
 
 ## General {#general}
 
