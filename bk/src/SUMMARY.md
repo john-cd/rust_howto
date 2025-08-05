@@ -51,7 +51,7 @@
   - [Visibility](code_organization/visibility.md)
   - [`use` Keyword](code_organization/use_keyword.md)
   - [Dependencies](code_organization/dependencies.md)
-  - [Code Organization by Project Type and Size](code_organization/code_organization.md)
+  - [Code Organization by Project Type and Size](code_organization/code_organization_by_project_type.md)
   - [Naming Conventions](code_organization/naming_conventions.md)
 
 ## Categories

@@ -28,7 +28,7 @@ Rust's "module system" helps structure your projects effectively. It gives you f
 
 ## Code Organization by Project Type and Size
 
-{{#include code_organization.incl.md}}
+{{#include code_organization_by_project_type.incl.md}}
 
 ## Naming Conventions
 

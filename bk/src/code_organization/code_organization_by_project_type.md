@@ -1,9 +1,9 @@
 
 # Code Organization by Project Type and Size
 
-{{#include code_organization.incl.md}}
+{{#include code_organization_by_project_type.incl.md}}
 
-## Code Organization for a Simple Library {#simple-library-code-organization}
+## Organize the Code of a Simple Library {#simple-library-code-organization}
 
 A simple library crate may consist of its crate root (e.g. the `lib.rs` file) and several modules in separate files.
 
@@ -25,7 +25,7 @@ pub mod module2;
 // ...
 ```
 
-You may also keep the modules private and reexport specific items (or modules) with a `pub use` statement:
+You may also keep the modules private and reexport specific items with a `pub use` statement:
 
 ```rust,noplayground
 mod module1;
@@ -41,7 +41,7 @@ In Rust, there are no requirements to store a single `struct` or `enum` and asso
 
 On the contrary, it is idiomatic for a module to contain multiple functions, `struct` or `enum` declarations, and `impl` blocks with related functionality. For example, you may write all configuration-related items in the `config` module.
 
-## Code Organization for a Complex Library {#complex-library-code-organization}
+## Organize the Code of a Complex Library {#complex-library-code-organization}
 
 As needs grow, you may create nest modules:
 
@@ -185,7 +185,7 @@ pub use std::option::Option::{self, Some, None};
 pub use std::fmt::{self, Debug, Display};
 ```
 
-## Code Organization for Binary Crates {#binary-crate-organization}
+## Organize the Code of a Binary Crate {#binary-crate-organization}
 
 Similarly, a simple binary crate may consist of a crate root (e.g. `main.rs`) and several modules in separate files and/or folders.
 
