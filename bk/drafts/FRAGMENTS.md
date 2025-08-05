@@ -6,8 +6,8 @@
 
 ## Handle Overflows {#overflow-handling}
 
-- Wrap in all modes with the `wrapping_*` methods, such as [`wrapping_add`][primitive~u32::wrapping_add]{{hi:wrapping_add}}⮳.
-- Return the [`std::option::Option::None`][c~std::option::Option::None~docs]{{hi:std::option::Option::None}}⮳ value if there is overflow{{hi:Overflow}} with the `checked_*` methods.
+- Wrap in all modes with the `wrapping_*` methods, such as [`wrapping_add`][primitive~u32::wrapping_add]{{hi:wrapping_add}}↗.
+- Return the [`std::option::Option::None`][c~std::option::Option::None~docs]{{hi:std::option::Option::None}}↗ value if there is overflow{{hi:Overflow}} with the `checked_*` methods.
 - Return the value and a boolean indicating whether there was overflow with the `overflowing_*` methods.
 - Saturate at the value's minimum or maximum values with the `saturating_*` methods.
 
@@ -134,9 +134,9 @@ Note that so-called "Deref polymorphism", meaning implementing `Deref` to emulat
 
 ### References {#references}
 
-- [Rust's `AsRef` Explained](https://oliverjumpertz.com/blog/rusts-asref-explained/)⮳.
-- [Rust Is Beyond Object-Oriented, Part 3: Inheritance](https://www.thecodedmessage.com/posts/oop-3-inheritance)⮳.
-- [How to implement inheritance-like feature for Rust?](https://users.rust-lang.org/t/how-to-implement-inheritance-like-feature-for-rust/31159/21)⮳.
+- [Rust's `AsRef` Explained](https://oliverjumpertz.com/blog/rusts-asref-explained/)↗.
+- [Rust Is Beyond Object-Oriented, Part 3: Inheritance](https://www.thecodedmessage.com/posts/oop-3-inheritance)↗.
+- [How to implement inheritance-like feature for Rust?](https://users.rust-lang.org/t/how-to-implement-inheritance-like-feature-for-rust/31159/21)↗.
 
 ---
 

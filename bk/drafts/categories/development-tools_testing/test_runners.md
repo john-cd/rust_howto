@@ -25,7 +25,7 @@
 [![cargo-nextest~lib.rs][c~cargo_nextest~lib.rs~badge]][c~cargo_nextest~lib.rs]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]
 
-[`cargo-nextest`][c~cargo_nextest~website]⮳ is a new, faster test runner for Rust.
+[`cargo-nextest`][c~cargo_nextest~website]↗ is a new, faster test runner for Rust.
 
 ```sh
 cargo nextest run

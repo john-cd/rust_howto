@@ -9,7 +9,7 @@
 [![http~github][c~http~github~badge]][c~http~github]
 [![http~lib.rs][c~http~lib.rs~badge]][c~http~lib.rs]
 
-The [`http`][c~http~docs]⮳{{hi:http}} crate doesn't actually contain an HTTP implementation. Just types and interfaces to help interoperability.
+The [`http`][c~http~docs]↗{{hi:http}} crate doesn't actually contain an HTTP implementation. Just types and interfaces to help interoperability.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming/examples/http_types_and_interfaces/http.rs:example}}

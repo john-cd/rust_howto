@@ -11,9 +11,9 @@ High-level robotics frameworks in pure Rust are still emerging.
 [![zenoh~github][c~zenoh~github~badge]][c~zenoh~github]
 [![zenoh~lib.rs][c~zenoh~lib.rs~badge]][c~zenoh~lib.rs]
 
-[`Zenoh`][c~zenoh~docs]⮳{{hi:Zenoh}} - A high performance and extremely low overhead Pub/Sub/Query protocol. Quickly becoming the protocol of choice for Robot-to-Anything communication.
+[`Zenoh`][c~zenoh~docs]↗{{hi:Zenoh}} - A high performance and extremely low overhead Pub/Sub/Query protocol. Quickly becoming the protocol of choice for Robot-to-Anything communication.
 
-[Zenoh][c~zenoh~website]{{hi:zenoh}}⮳ is a zero-overhead Pub/Sub/Query protocol. Zenoh (pronounced as /zeno/) unifies data in motion, data at rest and computations. It blends traditional pub/sub with geo-distributed storages, queries and computations, while retaining time and space efficiency.
+[Zenoh][c~zenoh~website]{{hi:zenoh}}↗ is a zero-overhead Pub/Sub/Query protocol. Zenoh (pronounced as /zeno/) unifies data in motion, data at rest and computations. It blends traditional pub/sub with geo-distributed storages, queries and computations, while retaining time and space efficiency.
 
 Zenoh is a great tool for data storage, query, and computations over geographically distributed systems.
 
@@ -30,7 +30,7 @@ Zenoh deals with keys/values where each key is a path and is associated to a val
 [![openrr~github][c~openrr~github~badge]][c~openrr~github]
 [![openrr~lib.rs][c~openrr~lib.rs~badge]][c~openrr~lib.rs]
 
-[`openrr`][c~openrr~docs]⮳{{hi:openrr}} (Open Rust Robotics)
+[`openrr`][c~openrr~docs]↗{{hi:openrr}} (Open Rust Robotics)
 
 ```rust,editable
 {{#include ../../../crates/cats/science_robotics/examples/robotics_frameworks/openrr.rs:example}}

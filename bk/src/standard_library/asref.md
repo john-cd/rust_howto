@@ -6,7 +6,7 @@
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
-The [`AsRef`][c~std::convert::AsRef~docs]⮳{{hi:AsRef}} trait is used for _cheap reference-to-reference conversions_ (without allocating new memory). It provides a way to convert an object into a reference to another type.
+The [`AsRef`][c~std::convert::AsRef~docs]↗{{hi:AsRef}} trait is used for _cheap reference-to-reference conversions_ (without allocating new memory). It provides a way to convert an object into a reference to another type.
 
 The primary use case for `AsRef<T>` is generic programming, especially for function arguments, to provide ergonomics and flexibility to the caller. In other words, this trait is often used to allow [functions][p~functions] to accept arguments in multiple forms.
 
@@ -46,8 +46,8 @@ If you need to do a _costly_ conversion, it is better to implement `From` or wri
 
 ## References {#references}
 
-- [When and why to use `AsRef<T>` instead of `&T`][stackoverflow~asref]⮳.
-- [Rust's `AsRef` Explained](https://oliverjumpertz.com/blog/rusts-asref-explained/)⮳.
+- [When and why to use `AsRef<T>` instead of `&T`][stackoverflow~asref]↗.
+- [Rust's `AsRef` Explained](https://oliverjumpertz.com/blog/rusts-asref-explained/)↗.
 
 ## Related Topics {#related-topics}
 
@@ -57,7 +57,7 @@ If you need to do a _costly_ conversion, it is better to implement `From` or wri
 - [[reference_counting | `Rc` and `Arc`]].
 - [[smart_pointers | Smart Pointers]].
 
-Note that [`AsMut`][c~std::convert::AsMut~docs]⮳{{hi:AsMut}} can be used for converting between mutable references.
+Note that [`AsMut`][c~std::convert::AsMut~docs]↗{{hi:AsMut}} can be used for converting between mutable references.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

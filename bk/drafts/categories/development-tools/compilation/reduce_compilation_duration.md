@@ -7,7 +7,7 @@ Rust compile times{{hi:Compile times}} can be long. Reducing Rust compilation [d
 | Methods | Description |
 |---|---|
 | Incremental Compilation | Leverage [Cargo][p~cargo]'s [caching][p~caching], be mindful of changes that invalidate the cache. |
-| Dependency Management | Use `cargo tree` to analyze dependencies. [`cargo-bloat`][c~cargo_bloat~docs]⮳{{hi:cargo-bloat}} can help you identify large dependencies contributing to compile times. |
+| Dependency Management | Use `cargo tree` to analyze dependencies. [`cargo-bloat`][c~cargo_bloat~docs]↗{{hi:cargo-bloat}} can help you identify large dependencies contributing to compile times. |
 | Compiler Flags | Experiment with compiler flags, but be careful and measure the impact. |
 | Build Profiles | Optimize release builds with appropriate flags in `config.toml`. |
 | Link-Time Optimization (LTO) | Controlled via `Cargo.toml` and `config.toml`. |
@@ -86,7 +86,7 @@ cargo add-dynamic polars --features csv-file,lazy,list,describe,rows,fmt,strings
 cargo build
 ```
 
-See also: [Speeding up incremental Rust compilation with dylibs][blog~speeding-up-incremental-rust-compilation]⮳.
+See also: [Speeding up incremental Rust compilation with dylibs][blog~speeding-up-incremental-rust-compilation]↗.
 
 ## Build Machine Hardware Considerations {#skip}
 
@@ -100,9 +100,9 @@ Consider using remote build servers or a separate build machine for large projec
 
 ## References {#references}
 
-- [Eight solutions for troubleshooting your Rust build times][blog~rust-build-times]⮳.
-- [How I improved my Rust compile times by seventy-five percent][blog~how-i-improved-my-rust-compile-times-by-seventy-five-percent]⮳.
-- [Rust compilation time][blog~rust-compilation-time]⮳.
+- [Eight solutions for troubleshooting your Rust build times][blog~rust-build-times]↗.
+- [How I improved my Rust compile times by seventy-five percent][blog~how-i-improved-my-rust-compile-times-by-seventy-five-percent]↗.
+- [Rust compilation time][blog~rust-compilation-time]↗.
 
 ## Related Topics {#related-topics}
 

@@ -8,7 +8,7 @@ Suppose you have a [sorting][p~sorting] function. A property you could test is t
 
 Consider using:
 
-- [`proptest`][c~proptest~docs]⮳{{hi:proptest}}: A powerful crate for property-based testing, where you define properties that your code should satisfy, and `proptest` generates many random inputs to verify those properties.
+- [`proptest`][c~proptest~docs]↗{{hi:proptest}}: A powerful crate for property-based testing, where you define properties that your code should satisfy, and `proptest` generates many random inputs to verify those properties.
 - `quickcheck`: Another property-based testing crate. `proptest` is often preferred for its flexibility.
 
 ## `proptest` {#proptesting}
@@ -32,7 +32,7 @@ proptest = "1.0.0"
 
 An easy to use library and command line for generating fake data like name, number, address, lorem, dates, etc.
 
-Often done with custom [functions][p~functions] or data structures, but crates like [`fake`][c~fake~docs]⮳{{hi:fake}} can be useful for generating realistic test data.
+Often done with custom [functions][p~functions] or data structures, but crates like [`fake`][c~fake~docs]↗{{hi:fake}} can be useful for generating realistic test data.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_testing/examples/property_based_testing/fake.rs:example}}

@@ -8,8 +8,8 @@ High-level solutions for rendering on the screen.
 
 Consider:
 
-- [`rend3`][c~rend3~docs]⮳{{hi:rend3}}: A 3D rendering engine built on top of [`wgpu`][c~wgpu~docs]⮳{{hi:wgpu}}. Provides higher-level abstractions for rendering.
-- [`bevy_render`][c~bevy_render~docs]⮳{{hi:bevy_render}}: Bevy's rendering system (part of the [`bevy`][c~bevy~docs]⮳{{hi:bevy}} game engine).
+- [`rend3`][c~rend3~docs]↗{{hi:rend3}}: A 3D rendering engine built on top of [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}. Provides higher-level abstractions for rendering.
+- [`bevy_render`][c~bevy_render~docs]↗{{hi:bevy_render}}: Bevy's rendering system (part of the [`bevy`][c~bevy~docs]↗{{hi:bevy}} game engine).
 - `three-rs`.
 
 {{#include rendering_engines.incl.md}}

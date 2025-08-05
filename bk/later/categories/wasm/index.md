@@ -29,7 +29,7 @@ See [[interfacing_with_javascript | Interfacing with Javascript]].
 
 ## Build an Entire Web Application in Rust Using WASM-based Web Frameworks
 
-The [`yew`][c~yew~docs]⮳{{hi:yew}}, [`seed`][c~seed~docs]⮳{{hi:seed}}, [`leptos`][c~leptos~docs]⮳{{hi:leptos}} frameworks enable building complex web applications with Rust/WASM.
+The [`yew`][c~yew~docs]↗{{hi:yew}}, [`seed`][c~seed~docs]↗{{hi:seed}}, [`leptos`][c~leptos~docs]↗{{hi:leptos}} frameworks enable building complex web applications with Rust/WASM.
 
 {{#include yew.incl.md}}
 
@@ -37,7 +37,7 @@ The [`yew`][c~yew~docs]⮳{{hi:yew}}, [`seed`][c~seed~docs]⮳{{hi:seed}}, [`lep
 
 ## See Also
 
-[Rust and WebAssembly (book)][book~rustwasm]{{hi:WASM}}⮳.
+[Rust and WebAssembly (book)][book~rustwasm]{{hi:WASM}}↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
@@ -46,7 +46,7 @@ The [`yew`][c~yew~docs]⮳{{hi:yew}}, [`seed`][c~seed~docs]⮳{{hi:seed}}, [`lep
 [write](https://github.com/john-cd/rust_howto/issues/970)
 Browser-based Execution.
 Node.js with WASM.
-Cover [`wat`][c~wat~docs]⮳{{hi:wat}}, [`parity-wasm`][c~parity_wasm~docs]⮳{{hi:parity-wasm}}
+Cover [`wat`][c~wat~docs]↗{{hi:wat}}, [`parity-wasm`][c~parity_wasm~docs]↗{{hi:parity-wasm}}
 
 - [WASIX - The Superset of WASI](https://wasix.org/)
 - [wasmtime: A fast and secure runtime for WebAssembly](https://github.com/bytecodealliance/wasmtime)

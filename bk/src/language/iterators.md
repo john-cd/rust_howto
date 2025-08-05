@@ -91,9 +91,9 @@ One benefit of implementing `IntoIterator` is that your type will work with the 
 
 ## References {#references}
 
-- [Iterators][book~rust~iterators]{{hi:iterators}}⮳.
-- [What is the correct way to return an Iterator (or any other trait)?](https://stackoverflow.com/questions/27535289/what-is-the-correct-way-to-return-an-iterator-or-any-other-trait)⮳.
-- [Implementing Iterator and IntoIterator in Rust](https://dev.to/wrongbyte/implementing-iterator-and-intoiterator-in-rust-3nio)⮳.
+- [Iterators][book~rust~iterators]{{hi:iterators}}↗.
+- [What is the correct way to return an Iterator (or any other trait)?](https://stackoverflow.com/questions/27535289/what-is-the-correct-way-to-return-an-iterator-or-any-other-trait)↗.
+- [Implementing Iterator and IntoIterator in Rust](https://dev.to/wrongbyte/implementing-iterator-and-intoiterator-in-rust-3nio)↗.
 
 ## Related Topics {#related-topics}
 

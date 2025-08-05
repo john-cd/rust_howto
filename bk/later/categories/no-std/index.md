@@ -2,7 +2,7 @@
 
 [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No std}}
 
-The term "no_std" refers to environments where you don't have access to the standard library ([`std`][c~std~docs]⮳{{hi:std}}), which means no file I/O, dynamic memory allocation (unless you provide it), threading, or other OS-dependent features.
+The term "no_std" refers to environments where you don't have access to the standard library ([`std`][c~std~docs]↗{{hi:std}}), which means no file I/O, dynamic memory allocation (unless you provide it), threading, or other OS-dependent features.
 
 - You'll need to provide your own runtime environment, including a panic handler.
 - You'll typically interact directly with hardware peripherals.
@@ -11,7 +11,7 @@ The term "no_std" refers to environments where you don't have access to the stan
 
 When working in `no_std`, you'll almost always use the `core` crate. If you need dynamic allocation, you'll also use the `alloc` crate and provide an allocator. For [[embedded | Embedded]] Systems, you'll need to choose the appropriate HAL and PAC crates for your target microcontroller.
 
-Remember to handle panics appropriately. Consider other useful crates like [`nb`][c~nb~docs]⮳{{hi:nb}}, [`defmt`][c~defmt~docs]⮳{{hi:defmt}}, and [`wee_alloc`][c~wee_alloc~docs]⮳{{hi:wee_alloc}} as needed.
+Remember to handle panics appropriately. Consider other useful crates like [`nb`][c~nb~docs]↗{{hi:nb}}, [`defmt`][c~defmt~docs]↗{{hi:defmt}}, and [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}} as needed.
 
 ## Key Crates
 
@@ -19,14 +19,14 @@ Remember to handle panics appropriately. Consider other useful crates like [`nb`
 
 - Allocation (`alloc`) library: If you need dynamic memory allocation in `no_std`, the `alloc` crate provides the necessary APIs. It's important to note that you'll need to provide your own allocator implementation. See also the [[no-std_no-alloc | No Alloc]] chapter.
 
-- In `no_std` environments, you can't rely on the standard library's panic handling mechanisms. You'll need to define your own panic handler. Crates like [`panic-halt`][c~panic_halt~docs]⮳{{hi:panic-halt}} (halts execution) or [`panic-abort`][c~panic_abort~docs]⮳{{hi:panic-abort}} (aborts execution) can be helpful. You might also implement custom panic behavior.
+- In `no_std` environments, you can't rely on the standard library's panic handling mechanisms. You'll need to define your own panic handler. Crates like [`panic-halt`][c~panic_halt~docs]↗{{hi:panic-halt}} (halts execution) or [`panic-abort`][c~panic_abort~docs]↗{{hi:panic-abort}} (aborts execution) can be helpful. You might also implement custom panic behavior.
 
 ## Other Useful Crates for `no_std`
 
-- [`nb`][c~nb~docs]⮳{{hi:nb}}: Non-blocking I/O helpers.
-- [`defmt`][c~defmt~docs]⮳{{hi:defmt}}: A logging framework designed for embedded systems.
-- [`wee_alloc`][c~wee_alloc~docs]⮳{{hi:wee_alloc}}: A small and efficient allocator for embedded systems or WebAssembly.
-- [`atomic`][c~atomic~docs]⮳{{hi:atomic}}: Provides atomic types for safe concurrency in embedded systems.
+- [`nb`][c~nb~docs]↗{{hi:nb}}: Non-blocking I/O helpers.
+- [`defmt`][c~defmt~docs]↗{{hi:defmt}}: A logging framework designed for embedded systems.
+- [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}}: A small and efficient allocator for embedded systems or WebAssembly.
+- [`atomic`][c~atomic~docs]↗{{hi:atomic}}: Provides atomic types for safe concurrency in embedded systems.
 
 ## Code Examples
 

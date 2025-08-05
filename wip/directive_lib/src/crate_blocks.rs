@@ -7,7 +7,7 @@ use regex::Regex;
 
 // [finish](https://github.com/john-cd/rust_howto/issues/1438)
 
-/// {{cat parsing }} -> [parsing][cat~parsing]⮳{{hi:parsing}}
+/// {{cat parsing }} -> [parsing][cat~parsing]↗{{hi:parsing}}
 pub(super) fn crate_block_regexes() -> Vec<RegexAndReplacement> {
     let re_string: String = r"\{\{\s*#crate\s*:?\s+([^}]+)\s*\}\}".into();
     let re = Regex::new(&re_string).expect("Invalid regex");

@@ -17,11 +17,11 @@ Graphics APIs, wrappers for and backends to [Vulkan][p~vulkan] and OpenGL.
 - Ambient Occlusion.
 - Level of Detail (LOD).
 
-Many algorithms are implemented within engines like [`rend3`][c~rend3~docs]⮳{{hi:rend3}} or game engines like [`bevy`][c~bevy~docs]⮳{{hi:bevy}}.
+Many algorithms are implemented within engines like [`rend3`][c~rend3~docs]↗{{hi:rend3}} or game engines like [`bevy`][c~bevy~docs]↗{{hi:bevy}}.
 
 ## `rend3` {#rend3}
 
-[`rend3`][c~rend3~docs]⮳{{hi:rend3}} is a 3D rendering engine built on top of [`wgpu`][c~wgpu~docs]⮳{{hi:wgpu}}.
+[`rend3`][c~rend3~docs]↗{{hi:rend3}} is a 3D rendering engine built on top of [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}.
 
 ## `three-d` {#threed}
 
@@ -39,7 +39,7 @@ kiss3d is not designed to be feature-complete or fast. It is designed to let you
 
 ## Hardware Acceleration {#skip1}
 
-Often depends on the 3D API or [rendering engine][p~rendering-engine] used. Libraries like [`wgpu`][c~wgpu~docs]⮳{{hi:wgpu}}, [`vulkano`][c~vulkano~docs]⮳{{hi:vulkano}}, and [`glium`][c~glium~docs]⮳{{hi:glium}} provide access to hardware acceleration through graphics APIs like WebGPU, OpenGL, Vulkan, Metal, and DirectX.
+Often depends on the 3D API or [rendering engine][p~rendering-engine] used. Libraries like [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`vulkano`][c~vulkano~docs]↗{{hi:vulkano}}, and [`glium`][c~glium~docs]↗{{hi:glium}} provide access to hardware acceleration through graphics APIs like WebGPU, OpenGL, Vulkan, Metal, and DirectX.
 
 See:
 

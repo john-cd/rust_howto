@@ -45,10 +45,10 @@ fn convert_links(filepath: &std::path::Path) -> anyhow::Result<()> {
 // [reuse fragments below if needed.](https://github.com/john-cd/rust_howto/issues/1432)
 
 // # replace https::/github.com/.../...
-// s=([^"'\''(]?https?://github.com/)([^/ ]+/)([^/ ]+)(/[^"'\'')⮳]*)?=[`\3`][\3~github] [\3~github]: \1\2\3\4=gp;
+// s=([^"'\''(]?https?://github.com/)([^/ ]+/)([^/ ]+)(/[^"'\'')↗]*)?=[`\3`][\3~github] [\3~github]: \1\2\3\4=gp;
 
 // # General case http://...
-// s=([^"'\''(]?https?://)([^/\s]+)(/[^"'\'')⮳]*)?=[\2][\2] [\2]: \1\2\3=gp ;
+// s=([^"'\''(]?https?://)([^/\s]+)(/[^"'\'')↗]*)?=[\2][\2] [\2]: \1\2\3=gp ;
 
 // echo "${contents}" | rg --pcre2 --only-matching -r '[`$2`][$2~website] [$2~website]: $1$2$3' '(?<!: |["`([])(http(?:s)?://(?:www\d?\.)?)([^./]+)(\S+)?'
 // echo "${contents}" | rg --pcre2 --only-matching -r '[`$2`][$2~github] [$2~github]: $1$2$3' '(?<!: |["`([])(http(?:s)?://(?:github\.com/)?)([^./]+)(\S+)?'
@@ -58,10 +58,10 @@ fn convert_links(filepath: &std::path::Path) -> anyhow::Result<()> {
 // use std::sync::LazyLock;
 // use regex::Regex;
 // static RE: LazyLock<Regex> =
-//     LazyLock::new(|| Regex::new(r#"^|[^"'](https?://)([^/\s]+)(/[^"'\[\])⮳]*)?"#).unwrap());
+//     LazyLock::new(|| Regex::new(r#"^|[^"'](https?://)([^/\s]+)(/[^"'\[\])↗]*)?"#).unwrap());
 
 // static GITHUB: LazyLock<Regex> = LazyLock::new(|| {
-//     Regex::new(r#"^|[^"'](https?://github.com/)([^/ ]+/)([^/ ]+)(/[^"'\[\])⮳]*)?"#).unwrap()
+//     Regex::new(r#"^|[^"'](https?://github.com/)([^/ ]+/)([^/ ]+)(/[^"'\[\])↗]*)?"#).unwrap()
 // });
 
 //

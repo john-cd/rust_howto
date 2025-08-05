@@ -137,7 +137,7 @@ Use the `?` operator to propagate errors from a function call 'up the stack'.
 
 If the value of the `Result` is an `Ok`, the value inside the `Ok` will get returned, and the program will continue. If the value is an `Err`, the `Err` will be returned from the whole function, as if we had used the `return` keyword, so the error value gets propagated to the calling code.
 
-Note that we're only allowed to use the `?` operator in a function that returns `Result`, `Option`, or another type that implements [`std::ops::FromResidual`][c~std::ops::FromResidual~docs]{{hi:std::ops::FromResidual}}⮳.
+Note that we're only allowed to use the `?` operator in a function that returns `Result`, `Option`, or another type that implements [`std::ops::FromResidual`][c~std::ops::FromResidual~docs]{{hi:std::ops::FromResidual}}↗.
 
 ```rust,editable
 {{#include ../../../../crates/cats/rust_patterns/examples/error/question_mark.rs:example}}
@@ -171,7 +171,7 @@ To handle a `Result` in the `main` function, you may:
 
 [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs] [![reqwest~crates.io][c~reqwest~crates.io~badge]][c~reqwest~crates.io] [![reqwest~github][c~reqwest~github~badge]][c~reqwest~github] [![reqwest~lib.rs][c~reqwest~lib.rs~badge]][c~reqwest~lib.rs]{{hi:reqwest}}{{hi:Client}}{{hi:Http}}{{hi:Request}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}} [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client]{{hi:HTTP client}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-Uses [`reqwest::blocking`][c~reqwest::blocking~docs]⮳ to query a random integer generator web service. Converts the string response into an integer.
+Uses [`reqwest::blocking`][c~reqwest::blocking~docs]↗ to query a random integer generator web service. Converts the string response into an integer.
 
 ```rust,editable
 {{#include ../../../../crates/cats/rust_patterns/examples/error/retain.rs:example}}
@@ -183,7 +183,7 @@ Uses [`reqwest::blocking`][c~reqwest::blocking~docs]⮳ to query a random intege
 
 This recipe shows how to handle a complex error scenario and then print a backtrace.
 
-The example attempts to deserialize the value `256` into a [`u8`][primitive~u8]{{hi:u8}}⮳. An error will bubble up from `serde` to [`csv`][c~csv~docs]⮳{{hi:csv}} and finally up to the user code.
+The example attempts to deserialize the value `256` into a [`u8`][primitive~u8]{{hi:u8}}↗. An error will bubble up from `serde` to [`csv`][c~csv~docs]↗{{hi:csv}} and finally up to the user code.
 
 ```rust,editable
 {{#include ../../../../crates/cats/rust_patterns/examples/error/backtrace.rs:example}}
@@ -210,7 +210,7 @@ review https://doc.rust-lang.org/rust-by-example/error.html
 FIXME rename examples; move example above to separate file
 credit https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html
 
-[`std::io::Error`][c~std::io::Error~docs]{{hi:std::io::Error}}⮳ defined type implementing the [`std::error::Error`][c~std::error::Error~docs]{{hi:std::error::Error}}⮳ trait.
+[`std::io::Error`][c~std::io::Error~docs]{{hi:std::io::Error}}↗ defined type implementing the [`std::error::Error`][c~std::error::Error~docs]{{hi:std::error::Error}}↗ trait.
 
 - [human-panic: Panic messages for humans.](https://github.com/rust-cli/human-panic)
 

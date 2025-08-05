@@ -2,7 +2,7 @@
 
 This book is at its core an open source project. Contributions, from small edits to whole chapters, are most welcome.
 
-Feel free to submit an issue or a pull request{{hi:Pull request}} to the [repo][rust-howto~github]⮳.
+Feel free to submit an issue or a pull request{{hi:Pull request}} to the [repo][rust-howto~github]↗.
 
 All types of contributions are encouraged and valued. See the [Table of Contents][ex~contributing~table-of-contents] for different ways to help and details about how this project handles them. Please make sure to read the relevant section before making your contribution. It will make it a lot easier for us maintainers and smooth out the experience for all involved. The community looks forward to your contributions.
 
@@ -25,20 +25,20 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 
 ## Code of Conduct {#code-of-conduct}
 
-This project and everyone participating in it is governed by the [Code of Conduct][rust-howto~code-of-conduct~github]⮳. By participating, you are expected to uphold this code. Please report unacceptable behavior to the repo owner.
+This project and everyone participating in it is governed by the [Code of Conduct][rust-howto~code-of-conduct~github]↗. By participating, you are expected to uphold this code. Please report unacceptable behavior to the repo owner.
 
 ## Book Goals {#goals}
 
 We are writing a "bible" for the Rust ecosystem, providing examples for common programming tasks with Rust crates.
 
-This book's long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [`blessed.rs`][blessed-rs~website]{{hi:blessed.rs}}⮳, the most (recently) downloaded libraries in [`crates.io`][crates.io~website]{{hi:crates.io}}⮳, as well as popular crates per [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳ and its [statistics][lib-rs~stats]⮳ page - overall, by keyword and by category.
+This book's long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [`blessed.rs`][blessed-rs~website]{{hi:blessed.rs}}↗, the most (recently) downloaded libraries in [`crates.io`][crates.io~website]{{hi:crates.io}}↗, as well as popular crates per [`lib.rs`][lib-rs]{{hi:lib.rs}}↗ and its [statistics][lib-rs~stats]↗ page - overall, by keyword and by category.
 
-Review [key crates][p~crates]⮳{{hi:Key crates}} for topic ideas.
-An informal (and very long) list of subjects we would like to cover is kept in the [topics of interest][p~topics-of-interest]⮳ page.
+Review [key crates][p~crates]↗{{hi:Key crates}} for topic ideas.
+An informal (and very long) list of subjects we would like to cover is kept in the [topics of interest][p~topics-of-interest]↗ page.
 
-Draft chapters are kept in [this folder][rust-howto~drafts~github]⮳ and in the `bk/later` directory.
+Draft chapters are kept in [this folder][rust-howto~drafts~github]↗ and in the `bk/later` directory.
 
-Embedded examples should be ideally _runnable_ on the [Rust playground][rust-playground~website]⮳ or at least directly copy-pasteable into Rust code.
+Embedded examples should be ideally _runnable_ on the [Rust playground][rust-playground~website]↗ or at least directly copy-pasteable into Rust code.
 
 ## I Have a Question {#i-have-a-question}
 
@@ -123,8 +123,8 @@ Enhancement suggestions are tracked as [GitHub issues][rust-howto~issues].
 
 ## Related Topics {#related-topics}
 
-- [TODO list][rust-howto~todo~github]⮳.
-- [LICENSE][rust-howto~license~github]⮳.
+- [TODO list][rust-howto~todo~github]↗.
+- [LICENSE][rust-howto~license~github]↗.
 
 - [Existing Issues (GitHub)](https://github.com/john-cd/rust_howto/issues)
 

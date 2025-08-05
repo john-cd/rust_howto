@@ -14,7 +14,7 @@ WebAssembly was created primarily to address the limitations of JavaScript (perf
 - [WASM][p~wasm] is designed to be platform-independent, running consistently across different browsers and operating systems.
 - [WASM][p~wasm] operates within a secure sand-boxed environment, mitigating security risks.
 
-WebAssembly binaries typically have a [`.wasm`][book~rustwasm]⮳{{hi:.wasm}} file extension. The textual representation of WebAssembly has a `.wat` file extension.
+WebAssembly binaries typically have a [`.wasm`][book~rustwasm]↗{{hi:.wasm}} file extension. The textual representation of WebAssembly has a `.wat` file extension.
 
 In essence, WebAssembly bridges the gap between high-level programming languages and the Web, enabling developers to create powerful and performant web applications.
 
@@ -51,7 +51,7 @@ See [webassembly.org](https://webassembly.org) and [madewithwebassembly.com](htt
 
 ### Example: Game Development Using WASM {#skip}
 
-Rust can be used for [game development][p~game-development] targeting the web via WASM. [`winit`][c~winit~docs]⮳{{hi:winit}} handles window creation, [`wgpu`][c~wgpu~docs]⮳{{hi:wgpu}} provides access to WebGPU, and [`bevy`][c~bevy~docs]⮳{{hi:bevy}} is a Rust game engine that can compile to WASM.
+Rust can be used for [game development][p~game-development] targeting the web via WASM. [`winit`][c~winit~docs]↗{{hi:winit}} handles window creation, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} provides access to WebGPU, and [`bevy`][c~bevy~docs]↗{{hi:bevy}} is a Rust game engine that can compile to WASM.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

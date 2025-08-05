@@ -6,7 +6,7 @@
 
 [![jni][c~jni~docs~badge]][c~jni~docs] [![jni~crates.io][c~jni~crates.io~badge]][c~jni~crates.io] [![jni~github][c~jni~github~badge]][c~jni~github] [![jni~lib.rs][c~jni~lib.rs~badge]][c~jni~lib.rs]{{hi:jni}}{{hi:Ffi}}{{hi:Java}}{{hi:jni}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}}
 
-[`jni`][c~jni~docs]⮳{{hi:jni}} provides Rust bindings to the `Java` JNI API.
+[`jni`][c~jni~docs]↗{{hi:jni}} provides Rust bindings to the `Java` JNI API.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/examples/java/jni.rs:example}}
@@ -44,7 +44,7 @@ Data Marshaling: You'll need to convert data between Rust and Java types (e.g., 
 Class Loading: You'll need to ensure that the Java classes your Rust code interacts with are loaded correctly.
 Exception Handling: You'll need to handle Java exceptions in your Rust code.
 
-The [`jni`][c~jni~docs]⮳{{hi:jni}} crate is the core crate for JNI interaction. jni-rs is highly recommended to simplify development. Code generation is often a necessary step, and the exact approach can vary. Be prepared for some manual work and boilerplate code when working with JNI.
+The [`jni`][c~jni~docs]↗{{hi:jni}} crate is the core crate for JNI interaction. jni-rs is highly recommended to simplify development. Code generation is often a necessary step, and the exact approach can vary. Be prepared for some manual work and boilerplate code when working with JNI.
 
 - [jnix](https://lib.rs/crates/jnix)
 

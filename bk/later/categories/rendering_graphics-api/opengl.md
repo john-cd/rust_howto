@@ -12,7 +12,7 @@ GL on Whatever: a set of bindings to run GL (Open GL, OpenGL ES, and WebGL) anyw
 
 ## `glium` {#glium}
 
-[`glium`][c~glium~docs]⮳{{hi:glium}} is an older, but simpler OpenGL wrapper.
+[`glium`][c~glium~docs]↗{{hi:glium}} is an older, but simpler OpenGL wrapper.
 
 Elegant and safe OpenGL wrapper. Glium is an intermediate layer between OpenGL and your application. You still need to manually handle the graphics pipeline, but without having to use OpenGL's old and error-prone API. Its objectives:
 

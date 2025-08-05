@@ -14,7 +14,7 @@
 
 [![assert_matches][c~assert_matches~docs~badge]][c~assert_matches~docs] [![assert_matches~crates.io][c~assert_matches~crates.io~badge]][c~assert_matches~crates.io] [![assert_matches~github][c~assert_matches~github~badge]][c~assert_matches~github] [![assert_matches~lib.rs][c~assert_matches~lib.rs~badge]][c~assert_matches~lib.rs]{{hi:assert_matches}}{{hi:Pattern}}{{hi:Assert}}{{hi:Match}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-[`assert_matches`][c~assert_matches~docs]⮳{{hi:assert_matches}}: A crate for matching on patterns in assertions.
+[`assert_matches`][c~assert_matches~docs]↗{{hi:assert_matches}}: A crate for matching on patterns in assertions.
 
 ## `approx` {#approx}
 
@@ -24,7 +24,7 @@
 [![approx~lib.rs][c~approx~lib.rs~badge]][c~approx~lib.rs]
 [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
 
-[`approx`][c~approx~docs]{{hi:approx}}⮳ allows approximate floating point equality comparisons and assertions.
+[`approx`][c~approx~docs]{{hi:approx}}↗ allows approximate floating point equality comparisons and assertions.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_testing/examples/assertions/approx.rs:example}}

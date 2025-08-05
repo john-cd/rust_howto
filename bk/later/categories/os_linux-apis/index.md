@@ -4,13 +4,13 @@
 
 Bindings to Linux-specific APIs.
 
-Most standard Rust code will work on Linux without modification. For general system programming tasks, the standard library is often sufficient. For Linux-specific features, you might need to use [`nix`][c~nix~docs]⮳{{hi:nix}}, [[development-tools_ffi | FFI]], or find crates that provide bindings to the specific interface you're working with. Be careful with `unsafe` code and consult the Linux documentation.
+Most standard Rust code will work on Linux without modification. For general system programming tasks, the standard library is often sufficient. For Linux-specific features, you might need to use [`nix`][c~nix~docs]↗{{hi:nix}}, [[development-tools_ffi | FFI]], or find crates that provide bindings to the specific interface you're working with. Be careful with `unsafe` code and consult the Linux documentation.
 
 ## System Calls (Low-Level OS Interaction)
 
 - `std::os::unix`: This module provides access to a large number of Unix system calls, which are generally the same or very similar across Linux and other Unix-like systems. This is your primary way to interact with the Linux kernel directly.
 
-- [`nix`][c~nix~docs]⮳{{hi:nix}} provides more comprehensive access to Unix-like system calls, including many Linux-specific ones. It is often preferred over using `std::os::unix` directly for better type safety and error handling.
+- [`nix`][c~nix~docs]↗{{hi:nix}} provides more comprehensive access to Unix-like system calls, including many Linux-specific ones. It is often preferred over using `std::os::unix` directly for better type safety and error handling.
 
 ## File System Interaction
 
@@ -24,7 +24,7 @@ Most standard Rust code will work on Linux without modification. For general sys
 ## Networking
 
 - `std::net`: basic networking (TCP, UDP). Works well on Linux.
-- [`tokio`][c~tokio~docs]⮳{{hi:tokio}}: asynchronous networking.
+- [`tokio`][c~tokio~docs]↗{{hi:tokio}}: asynchronous networking.
 
 ## Threads
 
@@ -32,8 +32,8 @@ Most standard Rust code will work on Linux without modification. For general sys
 
 ## Time
 
-- [`std::time`][c~std::time~docs]⮳{{hi:std::time}}: working with time and durations. Works well on Linux.
-- Also use [`chrono`][c~chrono~docs]⮳{{hi:chrono}} or [`time`][c~time~docs]⮳{{hi:time}} for date and time calculations.
+- [`std::time`][c~std::time~docs]↗{{hi:std::time}}: working with time and durations. Works well on Linux.
+- Also use [`chrono`][c~chrono~docs]↗{{hi:chrono}} or [`time`][c~time~docs]↗{{hi:time}} for date and time calculations.
 
 ## Linux-Specific Features (e.g., `systemd`, Specific Kernel interfaces)
 

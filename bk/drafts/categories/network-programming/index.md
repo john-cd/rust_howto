@@ -7,7 +7,7 @@ Deal with higher-level network protocols{{hi:Network protocols}} such as FTP{{hi
 | Topic | Rust Crates |
 |---|---|
 | Basic networking, Network Sockets (Low-Level) | Use `std::net` (in the standard library) for simple TCP/UDP communication, including TCP and UDP sockets. |
-| High-performance, asynchronous networking | [`tokio`][c~tokio~docs]⮳{{hi:tokio}} is a powerful and widely used asynchronous runtime, and essential for building high-performance network applications. It provides abstractions for working with sockets, streams, and other network primitives asynchronously.  Consider [`smol`][c~smol~docs]⮳{{hi:smol}} as well. [`mio`][c~mio~docs]⮳{{hi:mio}} is a lower-level I/O library used by [`tokio`][c~tokio~docs]⮳{{hi:tokio}}. You'll rarely use [`mio`][c~mio~docs]⮳{{hi:mio}} directly unless you have very specific performance needs. |
+| High-performance, asynchronous networking | [`tokio`][c~tokio~docs]↗{{hi:tokio}} is a powerful and widely used asynchronous runtime, and essential for building high-performance network applications. It provides abstractions for working with sockets, streams, and other network primitives asynchronously.  Consider [`smol`][c~smol~docs]↗{{hi:smol}} as well. [`mio`][c~mio~docs]↗{{hi:mio}} is a lower-level I/O library used by [`tokio`][c~tokio~docs]↗{{hi:tokio}}. You'll rarely use [`mio`][c~mio~docs]↗{{hi:mio}} directly unless you have very specific performance needs. |
 
 Many crates exist for specific protocols (e.g., SMTP, IMAP, SSH).
 
@@ -23,10 +23,10 @@ Many crates exist for specific protocols (e.g., SMTP, IMAP, SSH).
 
 | Topic | Rust Crates |
 |---|---|
-| HTTP client | Use [`reqwest`][c~reqwest~docs]⮳{{hi:reqwest}}. |
-| HTTP server / web framework | For building web servers, [`axum`][c~axum~docs]⮳{{hi:axum}} or [`actix-web`][c~actix_web~docs]⮳{{hi:actix-web}} are popular options. [`actix-web`][c~actix_web~docs]⮳{{hi:actix-web}} is a powerful and ergonomic web framework built on top of [`hyper`][c~hyper~docs]⮳{{hi:hyper}}. [`warp`][c~warp~docs]⮳{{hi:warp}} is a lightweight and composable web framework. [`axum`][c~axum~docs]⮳{{hi:axum}} is a newer web framework with a focus on type safety and developer experience. [`hyper`][c~hyper~docs]⮳{{hi:hyper}} is a low-level HTTP library, often used to build custom HTTP clients or servers. |
-| WebSockets | Use [`tokio-tungstenite`][c~tokio_tungstenite~docs]⮳{{hi:tokio-tungstenite}}, a WebSocket library built on [`tokio`][c~tokio~docs]⮳{{hi:tokio}}, for bidirectional communication between a client and server. [`tungstenite`][c~tungstenite~docs]⮳{{hi:tungstenite}} is a lower-level WebSocket library. |
-| Serialization/Deserialization | [`serde`][c~serde~docs]⮳{{hi:serde}} is a widely used serialization framework, often used to serialize data before sending it over the network and deserialize it after receiving it. |
+| HTTP client | Use [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}}. |
+| HTTP server / web framework | For building web servers, [`axum`][c~axum~docs]↗{{hi:axum}} or [`actix-web`][c~actix_web~docs]↗{{hi:actix-web}} are popular options. [`actix-web`][c~actix_web~docs]↗{{hi:actix-web}} is a powerful and ergonomic web framework built on top of [`hyper`][c~hyper~docs]↗{{hi:hyper}}. [`warp`][c~warp~docs]↗{{hi:warp}} is a lightweight and composable web framework. [`axum`][c~axum~docs]↗{{hi:axum}} is a newer web framework with a focus on type safety and developer experience. [`hyper`][c~hyper~docs]↗{{hi:hyper}} is a low-level HTTP library, often used to build custom HTTP clients or servers. |
+| WebSockets | Use [`tokio-tungstenite`][c~tokio_tungstenite~docs]↗{{hi:tokio-tungstenite}}, a WebSocket library built on [`tokio`][c~tokio~docs]↗{{hi:tokio}}, for bidirectional communication between a client and server. [`tungstenite`][c~tungstenite~docs]↗{{hi:tungstenite}} is a lower-level WebSocket library. |
+| Serialization/Deserialization | [`serde`][c~serde~docs]↗{{hi:serde}} is a widely used serialization framework, often used to serialize data before sending it over the network and deserialize it after receiving it. |
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -9,13 +9,13 @@
 [![ratatui~github][c~ratatui~github~badge]][c~ratatui~github]
 [![ratatui~lib.rs][c~ratatui~lib.rs~badge]][c~ratatui~lib.rs]
 
-[`ratatui`][c~ratatui~website]⮳ is a lightweight, high-level library that provides a set of widgets, layouts, and utilities to build complex Rust TUIs.
+[`ratatui`][c~ratatui~website]↗ is a lightweight, high-level library that provides a set of widgets, layouts, and utilities to build complex Rust TUIs.
 
 ```rust,editable
 {{#include ../../../crates/cats/command_line_interface/examples/ratatui.rs:example}}
 ```
 
-[`ratatui`][c~ratatui~docs]⮳{{hi:ratatui}} offers templates to get started. For example, to use the simple template, run the following commands:
+[`ratatui`][c~ratatui~docs]↗{{hi:ratatui}} offers templates to get started. For example, to use the simple template, run the following commands:
 
 ```bash
 cargo install cargo-generate
@@ -28,7 +28,7 @@ cargo generate ratatui/templates simple
 
 A library to build rich terminal user interfaces or dashboards
 
-[![r3bl_tuify][c~r3bl_tuify~docs~badge]][c~r3bl_tuify~docs]{{hi:r3bl_tuify}} [![r3bl_tuify~crates.io][c~r3bl_tuify~crates.io~badge]][c~r3bl_tuify~crates.io]⮳ [![blog~tuify][blog~tuify~badge]][blog~tuify]⮳
+[![r3bl_tuify][c~r3bl_tuify~docs~badge]][c~r3bl_tuify~docs]{{hi:r3bl_tuify}} [![r3bl_tuify~crates.io][c~r3bl_tuify~crates.io~badge]][c~r3bl_tuify~crates.io]↗ [![blog~tuify][blog~tuify~badge]][blog~tuify]↗
 
 ## Related Topics {#related-topics}
 

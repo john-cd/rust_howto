@@ -6,43 +6,43 @@ This section provides a few examples of software written in Rust, organized by t
 
 - Operating System Components:
   - Kernel modules (Parts of the Linux kernel are now being written in Rust.)
-    - [Rust-for-Linux: Adding support for the Rust language to the Linux kernel.](https://github.com/Rust-for-Linux/linux)⮳.
+    - [Rust-for-Linux: Adding support for the Rust language to the Linux kernel.](https://github.com/Rust-for-Linux/linux)↗.
   - Bootloaders.
   - Virtual machine monitors. See [[virtualization | Virtualization]].
   - Examples:
     - `Redox OS`: A microkernel operating system written in Rust, aiming for safety and security.
     - `Stratis`: A local storage management system for Linux.
-    - `youki` [(GitHub)](https://github.com/youki-dev/youki)⮳: a container runtime.
-    - `Kata Containers` [(GitHub)](https://github.com/kata-containers/kata-containers)⮳: lightweight Virtual Machines (VMs) that feel and perform like containers, but provide the workload isolation and security advantages of VMs.
+    - `youki` [(GitHub)](https://github.com/youki-dev/youki)↗: a container runtime.
+    - `Kata Containers` [(GitHub)](https://github.com/kata-containers/kata-containers)↗: lightweight Virtual Machines (VMs) that feel and perform like containers, but provide the workload isolation and security advantages of VMs.
     - `firecracker` [(GitHub)](https://github.com/firecracker-microvm/firecracker): microVMs for serverless computing.
 - Embedded Systems:
   - Firmware for microcontrollers.
   - Real-time operating systems (RTOS).
   - Examples:
     - `Tock OS`: An embedded operating system designed for low-power IoT devices.
-    - [esp-rs (GitHub)](https://github.com/esp-rs)⮳: Rust on Espressif microcontrollers.
+    - [esp-rs (GitHub)](https://github.com/esp-rs)↗: Rust on Espressif microcontrollers.
 - Command-Line Tools:
   - Utilities for system administration.
   - Performance monitoring tools.
   - File manipulation tools - see [[filesystem_cli | Filesystem CLI]].
   - Examples:
-    - [`ripgrep`][c~ripgrep~docs] [(crates.io)](https://crates.io/crates/ripgrep)⮳: a line-oriented search tool that recursively searches the current directory for a regex pattern.
-    - [`exa`][c~exa~docs]⮳{{hi:exa}}: a modern replacement for `ls`.
+    - [`ripgrep`][c~ripgrep~docs] [(crates.io)](https://crates.io/crates/ripgrep)↗: a line-oriented search tool that recursively searches the current directory for a regex pattern.
+    - [`exa`][c~exa~docs]↗{{hi:exa}}: a modern replacement for `ls`.
     - [`eza`](https://github.com/eza-community/eza): another alternative to `ls`.
-    - [`lsd`][c~lsd~docs] [(GitHub)](https://github.com/lsd-rs/lsd)⮳{{hi:lsd}}: next-gen `ls` command.
-    - [`bat`][c~bat~docs] [(GitHub)][c~bat~github]⮳{{hi:bat}}: a `cat` clone with syntax highlighting and Git integration.
-    - [`fd`][c~fd~docs] [(GitHub)][c~fd_find~github]⮳: an alternative to 'find'.
+    - [`lsd`][c~lsd~docs] [(GitHub)](https://github.com/lsd-rs/lsd)↗{{hi:lsd}}: next-gen `ls` command.
+    - [`bat`][c~bat~docs] [(GitHub)][c~bat~github]↗{{hi:bat}}: a `cat` clone with syntax highlighting and Git integration.
+    - [`fd`][c~fd~docs] [(GitHub)][c~fd_find~github]↗: an alternative to 'find'.
     - [`fish`](https://github.com/fish-shell/fish-shell): a command-line shell.
-    - [`nushell`][c~nushell~docs]⮳ [(GitHub)](https://github.com/nushell/nushell): a new type of shell.
-    - [`zoxide`][c~zoxide~docs]⮳{{hi:zoxide}}: a smarter `cd` command.
-    - [`dust`][c~dust~docs] [(GitHub)](https://github.com/bootandy/dust)⮳: a more intuitive version of `du`.
-    - [`bottom`][c~bottom~docs] [(GitHub)][c~bottom~github]⮳: a cross-platform graphical process/system monitor.
-    - [`sd`][c~sd~docs]⮳{{hi:sd}}: an intuitive find & replace CLI.
-    - [`starship`][c~starship~docs] [(GitHub)][c~starship~github]⮳{{hi:starship}} - a customizable prompt for any shell. See [[shells | Shells]].
-    - [`broot`][c~broot~docs] [(GitHub)][c~broot~github]⮳: a tool to navigate directories.
-    - [`television`][c~television~docs] [(GitHub)](https://github.com/alexpasmantier/television){{hi:television}}⮳: a cross-platform and extensible general purpose fuzzy finder TUI.
-    - [`sd`][c~sd~docs] [(crates.io)](https://crates.io/crates/sd)⮳: an intuitive find & replace CLI.
-    - `uutils` [(GitHub)](https://github.com/uutils/coreutils)⮳: cross-platform Rust rewrite of the GNU coreutils.
+    - [`nushell`][c~nushell~docs]↗ [(GitHub)](https://github.com/nushell/nushell): a new type of shell.
+    - [`zoxide`][c~zoxide~docs]↗{{hi:zoxide}}: a smarter `cd` command.
+    - [`dust`][c~dust~docs] [(GitHub)](https://github.com/bootandy/dust)↗: a more intuitive version of `du`.
+    - [`bottom`][c~bottom~docs] [(GitHub)][c~bottom~github]↗: a cross-platform graphical process/system monitor.
+    - [`sd`][c~sd~docs]↗{{hi:sd}}: an intuitive find & replace CLI.
+    - [`starship`][c~starship~docs] [(GitHub)][c~starship~github]↗{{hi:starship}} - a customizable prompt for any shell. See [[shells | Shells]].
+    - [`broot`][c~broot~docs] [(GitHub)][c~broot~github]↗: a tool to navigate directories.
+    - [`television`][c~television~docs] [(GitHub)](https://github.com/alexpasmantier/television){{hi:television}}↗: a cross-platform and extensible general purpose fuzzy finder TUI.
+    - [`sd`][c~sd~docs] [(crates.io)](https://crates.io/crates/sd)↗: an intuitive find & replace CLI.
+    - `uutils` [(GitHub)](https://github.com/uutils/coreutils)↗: cross-platform Rust rewrite of the GNU coreutils.
 
 ## Web Development and Networking
 
@@ -51,13 +51,13 @@ This section provides a few examples of software written in Rust, organized by t
   - API servers.
   - Examples: Cloudflare uses Rust for performance critical services.
 - Search Engines:
-  - [`tantivy`][c~tantivy~docs] [(GitHub)](https://github.com/quickwit-oss/tantivy)⮳: a full-text search engine library inspired by Apache Lucene.
-  - [`meilisearch`][c~meilisearch~docs] [(GitHub)](https://github.com/meilisearch/MeiliSearch)⮳: a fast search engine API bringing AI-powered hybrid search to sites and applications.
+  - [`tantivy`][c~tantivy~docs] [(GitHub)](https://github.com/quickwit-oss/tantivy)↗: a full-text search engine library inspired by Apache Lucene.
+  - [`meilisearch`][c~meilisearch~docs] [(GitHub)](https://github.com/meilisearch/MeiliSearch)↗: a fast search engine API bringing AI-powered hybrid search to sites and applications.
 - WebAssembly ([[wasm | WASM]]):
   - Front-end web applications.
   - Portable code for web browsers.
-    - Libraries like [`yew`][c~yew~docs]⮳{{hi:yew}} and [`leptos`][c~leptos~docs]⮳{{hi:leptos}} enable building complex front-end web applications with Rust.
-    - [`wasmer`][c~wasmer~docs] [(GitHub)][c~wasmer~github]⮳: lightweight containers based on WebAssembly.
+    - Libraries like [`yew`][c~yew~docs]↗{{hi:yew}} and [`leptos`][c~leptos~docs]↗{{hi:leptos}} enable building complex front-end web applications with Rust.
+    - [`wasmer`][c~wasmer~docs] [(GitHub)][c~wasmer~github]↗: lightweight containers based on WebAssembly.
 - Networking:
   - Network protocols.
   - VPN software.
@@ -65,7 +65,7 @@ This section provides a few examples of software written in Rust, organized by t
   - Examples:
     - [`boringtun`](https://github.com/cloudflare/boringtun): a `Wireguard` VPN implementations.
     - [`Hickory DNS`](https://github.com/hickory-dns/hickory-dns): a DNS client, server, and resolver.
-    - [`pingora`][c~pingora~docs] [(GitHub)](https://github.com/cloudflare/pingora)⮳: a library for building fast, reliable and evolvable network services.
+    - [`pingora`][c~pingora~docs] [(GitHub)](https://github.com/cloudflare/pingora)↗: a library for building fast, reliable and evolvable network services.
 - Tools:
   - [`imager`](https://github.com/imager-io/imager): automated image compression for efficiently distributing images on the web.
 
@@ -79,13 +79,13 @@ This section provides a few examples of software written in Rust, organized by t
   - Database drivers.
   - Examples:
     - [`TiKV`](https://github.com/tikv/tikv): an open-source, distributed, and transactional key-value database.
-    - [`neon`][c~neon~docs] [(GitHub)](https://github.com/neondatabase/neon)⮳: Serverless Postgres. Separated storage and compute to offer autoscaling, code-like database branching, and scale to zero.
+    - [`neon`][c~neon~docs] [(GitHub)](https://github.com/neondatabase/neon)↗: Serverless Postgres. Separated storage and compute to offer autoscaling, code-like database branching, and scale to zero.
     - [`ArangoDB`](https://arangodb.com): a graph database.
 - Analytics:
   - [`databend`](https://github.com/databendlabs/databend) - alternative to Snowflake.
-  - [`rerun`][c~rerun~docs][(GitHub)](https://github.com/rerun-io/rerun)⮳{{hi:rerun}} visualizes streams of multimodal data.
-  - [`polars`][c~polars~docs] [(GitHub)](https://github.com/pola-rs/polars)⮳: dataframes powered by a multithreaded, vectorized query engine.
-  - [`datafusion`][c~datafusion~docs] [(GitHub)](https://github.com/apache/datafusion)⮳: Apache DataFusion SQL Query Engine.
+  - [`rerun`][c~rerun~docs][(GitHub)](https://github.com/rerun-io/rerun)↗{{hi:rerun}} visualizes streams of multimodal data.
+  - [`polars`][c~polars~docs] [(GitHub)](https://github.com/pola-rs/polars)↗: dataframes powered by a multithreaded, vectorized query engine.
+  - [`datafusion`][c~datafusion~docs] [(GitHub)](https://github.com/apache/datafusion)↗: Apache DataFusion SQL Query Engine.
 - Distributed Systems:
   - Blockchain technology.
   - Cloud computing tools.
@@ -94,36 +94,36 @@ This section provides a few examples of software written in Rust, organized by t
   - [`Veloren`](https://gitlab.com/veloren/veloren): a multiplayer voxel RPG written in Rust.
 - Other:
   - [`hyperswitch`](https://github.com/juspay/hyperswitch): an open-source payments switch to make payments fast, reliable and affordable.
-  - [`rustdesk`][c~rustdesk~docs] [(GitHub)](https://github.com/rustdesk/rustdesk)⮳{{hi:rustdesk}}: an open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.
+  - [`rustdesk`][c~rustdesk~docs] [(GitHub)](https://github.com/rustdesk/rustdesk)↗{{hi:rustdesk}}: an open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.
 
 ## Development Tools
 
 - Terminal Emulators:
-  - [`alacritty`](https://github.com/alacritty/alacritty)⮳: a fast, cross-platform, OpenGL terminal emulator.
+  - [`alacritty`](https://github.com/alacritty/alacritty)↗: a fast, cross-platform, OpenGL terminal emulator.
 - Editors:
-  - `lapce` [(GitHub)](https://github.com/lapce/lapce)⮳: a code editor.
-  - `Zed` [(GitHub)](https://github.com/zed-industries/zed)⮳: a multiplayer code editor from the creators of Atom and Tree-sitter.
-  - `helix` [(GitHub)](https://github.com/helix-editor/helix)⮳: a post-modern modal text editor.
+  - `lapce` [(GitHub)](https://github.com/lapce/lapce)↗: a code editor.
+  - `Zed` [(GitHub)](https://github.com/zed-industries/zed)↗: a multiplayer code editor from the creators of Atom and Tree-sitter.
+  - `helix` [(GitHub)](https://github.com/helix-editor/helix)↗: a post-modern modal text editor.
 - Compilers, Interpreters, Runtimes:
   - Language compilers.
   - Language interpreters.
   - Examples:
-    - [`SWC`][c~swc~docs]⮳{{hi:SWC}}: a very fast Typescript/Javascript compiler.
-    - [`Deno`][c~deno~docs] [(GitHub)][c~deno~github]⮳{{hi:Deno}}: a JavaScript, TypeScript, and WebAssembly runtime.
-    - `starlark-rust` [(GitHub)](https://github.com/facebook/starlark-rust)⮳: a Rust implementation of the Starlark language. Starlark is a deterministic language inspired by Python3, used for configuration in the build systems `Bazel`, `Buck` and `Buck2`.
+    - [`SWC`][c~swc~docs]↗{{hi:SWC}}: a very fast Typescript/Javascript compiler.
+    - [`Deno`][c~deno~docs] [(GitHub)][c~deno~github]↗{{hi:Deno}}: a JavaScript, TypeScript, and WebAssembly runtime.
+    - `starlark-rust` [(GitHub)](https://github.com/facebook/starlark-rust)↗: a Rust implementation of the Starlark language. Starlark is a deterministic language inspired by Python3, used for configuration in the build systems `Bazel`, `Buck` and `Buck2`.
 - Package Managers:
   - Software distribution tools.
   - Example: [`habitat`](https://github.com/habitat-sh/habitat): open-source software that creates platform-independent build artifacts and provides built-in deployment and management capabilities.
 - Linters and Formatters:
-  - [`ruff`][c~ruff~docs] [(GitHub)](https://github.com/astral-sh/ruff)⮳: an extremely fast Python linter and code formatter.
+  - [`ruff`][c~ruff~docs] [(GitHub)](https://github.com/astral-sh/ruff)↗: an extremely fast Python linter and code formatter.
 - Cache Cleaning Utilities:
-  - [`kondo`](https://github.com/tbillington/kondo)⮳ cleans dependencies and build artifacts from your projects.
+  - [`kondo`](https://github.com/tbillington/kondo)↗ cleans dependencies and build artifacts from your projects.
 - Desktop Frameworks
-  - [`tauri`][c~tauri~docs][(GitHub)][c~tauri~github]⮳: build desktop and mobile applications with a web frontend.
+  - [`tauri`][c~tauri~docs][(GitHub)][c~tauri~github]↗: build desktop and mobile applications with a web frontend.
 - Game Development:
   - Game engines.
   - Game tools.
-  - Example: [`Bevy`][c~bevy~docs]⮳{{hi:Bevy}} game engine.
+  - Example: [`Bevy`][c~bevy~docs]↗{{hi:Bevy}} game engine.
 - Observability:
   - [`openobserve`](https://github.com/openobserve/openobserve): petabyte scale Elasticsearch/Splunk/Datadog alternative for logs, metrics, traces, RUM, Error tracking, Session replay.
   - [`opentelemetry-rust`](https://github.com/open-telemetry/opentelemetry-rust): the Rust OpenTelemetry implementation.

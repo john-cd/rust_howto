@@ -8,7 +8,7 @@ pattern="$2"
 # Look for [c~...pattern...~docs] or [...pattern...] in the global reference definitions
 # excluding suffixes like ~github, ~badge, etc...
 rg -INi  '\[(c~)?([^]]*'${pattern}')(~docs)?\]:\s?(.*)' \
-   -r'[`$2`][$1$2~docs]⮳  [![$2][$1$2~docs~badge]][$1$2~docs]  [$1$2~docs]: $4' ${root}src/refs
+   -r'[`$2`][$1$2~docs]↗  [![$2][$1$2~docs~badge]][$1$2~docs]  [$1$2~docs]: $4' ${root}src/refs
 #  -N = --no-line-number; -I = --no-filename -r = replace -i = ignore case
 # To only avoid matching lines that contain ~badge use (?:(?!~badge)[^]])* with the --pcre2 flag
 

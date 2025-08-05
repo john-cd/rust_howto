@@ -4,7 +4,7 @@
 
 Audio, video, and image processing or rendering engines.
 
-While there aren't dominant, all-encompassing multimedia frameworks in Rust yet, game engines or graphics libraries provide multimedia-related functionality. For most multimedia tasks, you'll need to combine several crates. For example, you might use [`image`][c~image~docs]⮳{{hi:image}} to load images, [`cpal`][c~cpal~docs]⮳{{hi:cpal}} to play audio, and [`wgpu`][c~wgpu~docs]⮳{{hi:wgpu}} to render video.
+While there aren't dominant, all-encompassing multimedia frameworks in Rust yet, game engines or graphics libraries provide multimedia-related functionality. For most multimedia tasks, you'll need to combine several crates. For example, you might use [`image`][c~image~docs]↗{{hi:image}} to load images, [`cpal`][c~cpal~docs]↗{{hi:cpal}} to play audio, and [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} to render video.
 
 {{#include multimedia.incl.md}}
 

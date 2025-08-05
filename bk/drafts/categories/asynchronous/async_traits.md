@@ -4,13 +4,13 @@
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 
-As of Rust 1.75, it is possible to have [`async`][book~rust-reference~async]{{hi:async}}⮳ functions in traits:
+As of Rust 1.75, it is possible to have [`async`][book~rust-reference~async]{{hi:async}}↗ functions in traits:
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/examples/async_traits/async_traits.rs:example}}
 ```
 
-[Stabilizing [async][p~async] fn in traits in 2023][blog~stabilizing-async-fn-in-traits]⮳.
+[Stabilizing [async][p~async] fn in traits in 2023][blog~stabilizing-async-fn-in-traits]↗.
 
 This is in turn enabled by return-position `impl Trait` in [traits][p~traits]{{hi:Return-position `impl Trait` in traits}}, since `async fn`{{hi:async fn}} is sugar for functions that return `-> impl Future`.
 
@@ -18,9 +18,9 @@ This is in turn enabled by return-position `impl Trait` in [traits][p~traits]{{h
 {{#include ../../../crates/cats/asynchronous/examples/async_traits/async_traits2.rs:example}}
 ```
 
-Note that there are still caveats for public [traits][p~traits] - see [Announcing `[async][p~async] fn` and return-position `impl Trait` in [traits][p~traits]][blog~announcing-async-fn]⮳.
+Note that there are still caveats for public [traits][p~traits] - see [Announcing `[async][p~async] fn` and return-position `impl Trait` in [traits][p~traits]][blog~announcing-async-fn]↗.
 
-In addition, [traits][p~traits] that use `-> impl Trait` and `[async][p~async] fn` are not object-safe{{hi:Object-safe traits}}, which means they lack support for dynamic dispatch. In the meanwhile, use the [`async-trait`][c~async_trait~docs]⮳{{hi:async-trait}} crate.
+In addition, [traits][p~traits] that use `-> impl Trait` and `[async][p~async] fn` are not object-safe{{hi:Object-safe traits}}, which means they lack support for dynamic dispatch. In the meanwhile, use the [`async-trait`][c~async_trait~docs]↗{{hi:async-trait}} crate.
 
 [![async-trait][c~async_trait~docs~badge]][c~async_trait~docs]{{hi:async-trait}} [![async_trait~github][c~async_trait~github~badge]][c~async_trait~github] [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 

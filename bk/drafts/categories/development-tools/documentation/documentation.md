@@ -19,7 +19,7 @@
 {{#include ../../../../crates/cats/development_tools/examples/documentation/rustdoc.rs:example}}
 ```
 
-[`rustdoc`][book~rustdoc]{{hi:rustdoc}}⮳ uses the CommonMark Markdown specification.
+[`rustdoc`][book~rustdoc]{{hi:rustdoc}}↗ uses the CommonMark Markdown specification.
 
 ```rust,editable
 {{#include ../../../../crates/cats/development_tools/examples/documentation/rustdoc2.rs:example}}
@@ -49,12 +49,12 @@ To add a "run" button on your documentation (allowing its execution in the rust 
 
 [![roxygen][c~roxygen~docs~badge]][c~roxygen~docs] [![roxygen~crates.io][c~roxygen~crates.io~badge]][c~roxygen~crates.io] [![roxygen~github][c~roxygen~github~badge]][c~roxygen~github] [![roxygen~lib.rs][c~roxygen~lib.rs~badge]][c~roxygen~lib.rs]{{hi:roxygen}}{{hi:Arguments}}{{hi:Document}}{{hi:Doxygen}}{{hi:Function}}{{hi:Parameters}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-[`roxygen`][c~roxygen~docs]⮳{{hi:roxygen}} helps seamlessly document function parameters with [`rustdoc`][book~rustdoc]⮳{{hi:rustdoc}}.
+[`roxygen`][c~roxygen~docs]↗{{hi:roxygen}} helps seamlessly document function parameters with [`rustdoc`][book~rustdoc]↗{{hi:rustdoc}}.
 
 ## References
 
-- [The rustdoc book][book~rustdoc]{{hi:rustdoc}}⮳.
-- [`docs.rs`][docs.rs~website]{{hi:docs.rs}}⮳: open-source documentation{{hi:Documentation}} host for Rust crates.
+- [The rustdoc book][book~rustdoc]{{hi:rustdoc}}↗.
+- [`docs.rs`][docs.rs~website]{{hi:docs.rs}}↗: open-source documentation{{hi:Documentation}} host for Rust crates.
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

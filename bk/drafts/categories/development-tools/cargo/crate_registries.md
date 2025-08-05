@@ -2,15 +2,15 @@
 
 {{#include crate_registries.incl.md}}
 
-In Rust, a library or executable program is called a crate{{hi:Crate}}. Crates are compiled using the Rust compiler, [![`rustc`][book~rustc~badge]][book~rustc] [`rustc`][book~rustc]{{hi:rustc}}⮳.
+In Rust, a library or executable program is called a crate{{hi:Crate}}. Crates are compiled using the Rust compiler, [![`rustc`][book~rustc~badge]][book~rustc] [`rustc`][book~rustc]{{hi:rustc}}↗.
 
 ## Crate Registries {#crate-registries}
 
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]
 
-The Rust community's crate registry: [`crates.io`][crates.io~website]{{hi:crates.io}}⮳.
+The Rust community's crate registry: [`crates.io`][crates.io~website]{{hi:crates.io}}↗.
 
-Alternative to [`crates.io`][crates.io~website]⮳{{hi:crates.io}}: [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳.
+Alternative to [`crates.io`][crates.io~website]↗{{hi:crates.io}}: [`lib.rs`][lib-rs]{{hi:lib.rs}}↗.
 
 ## Access crates.io APIs with `crates_io` {#crates_io}
 

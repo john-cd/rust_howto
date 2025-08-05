@@ -11,7 +11,7 @@ Shaders are programs that run on the [GPU][p~gpu] (Graphics Processing Unit). Th
 - Geometry Shaders: These shaders work with entire primitives (points, lines, or triangles) and can generate new geometry or modify existing geometry before it is rasterized.
 - Compute Shaders: These shaders are used for general-purpose computing tasks that are not directly related to rendering. They can perform complex calculations and data processing on the GPU.
 
-Shaders are written in specialized [programming languages][p~programming-languages] like GLSL (OpenGL Shading Language), HLSL (High-Level Shading Language for DirectX), and Metal Shading Language (for Apple's Metal API). [`wgpu`][c~wgpu~docs]⮳{{hi:wgpu}} uses WGSL.
+Shaders are written in specialized [programming languages][p~programming-languages] like GLSL (OpenGL Shading Language), HLSL (High-Level Shading Language for DirectX), and Metal Shading Language (for Apple's Metal API). [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} uses WGSL.
 
 ## Topics {#skip}
 
@@ -22,9 +22,9 @@ Shaders are written in specialized [programming languages][p~programming-languag
 
 ## `naga` {#naga}
 
-[`naga`][c~naga~docs]⮳{{hi:naga}} is a general-purpose shader translation and analysis tool.
+[`naga`][c~naga~docs]↗{{hi:naga}} is a general-purpose shader translation and analysis tool.
 
-Shader translator and validator. Part of the [`wgpu`][c~wgpu~docs]⮳{{hi:wgpu}} project.
+Shader translator and validator. Part of the [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} project.
 
 ## `rust-gpu` {#rust-gpu}
 
@@ -42,7 +42,7 @@ FIXME
 
 ### `glsl-to-spirv` {#skip}
 
-[`glsl-to-spirv`][c~glsl_to_spirv~docs]⮳{{hi:glsl-to-spirv}} compiles GLSL to SPIR-V.
+[`glsl-to-spirv`][c~glsl_to_spirv~docs]↗{{hi:glsl-to-spirv}} compiles GLSL to SPIR-V.
 
 ### `spirv-builder` {#skip}
 
@@ -54,15 +54,15 @@ For inspecting SPIR-V shaders
 
 ### `shaderc` {#shaderc}
 
-[`shaderc`][c~shaderc~docs]⮳{{hi:shaderc}} is a Rust wrapper for the shaderc library (compiles GLSL/HLSL to SPIR-V).
+[`shaderc`][c~shaderc~docs]↗{{hi:shaderc}} is a Rust wrapper for the shaderc library (compiles GLSL/HLSL to SPIR-V).
 
 ## Compute Shaders and GPU Compute (GPGPU) {#skip}
 
-Compute Shaders are often handled through the low-level graphics [APIs][p~apis] like [`wgpu`][c~wgpu~docs]⮳{{hi:wgpu}} or [`vulkano`][c~vulkano~docs]⮳{{hi:vulkano}}.
+Compute Shaders are often handled through the low-level graphics [APIs][p~apis] like [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} or [`vulkano`][c~vulkano~docs]↗{{hi:vulkano}}.
 
 ## References {#references}
 
-- [[typecasts | Typecasts]] and especially [`bytemuck`][c~bytemuck~docs]⮳{{hi:bytemuck}} - A crate for mucking around with piles of bytes.
+- [[typecasts | Typecasts]] and especially [`bytemuck`][c~bytemuck~docs]↗{{hi:bytemuck}} - A crate for mucking around with piles of bytes.
 - [Are we Game yet? - Shaders](https://arewegameyet.rs/ecosystem/shader/).
 
 ## Related Topics {#related-topics}

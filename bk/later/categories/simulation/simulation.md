@@ -4,7 +4,7 @@
 
 ## Simulate {#simul}
 
-[Asynchronics][asynchronics~github]⮳ is a high-performance [asynchronous][p~asynchronous] computation framework for system simulation.
+[Asynchronics][asynchronics~github]↗ is a high-performance [asynchronous][p~asynchronous] computation framework for system simulation.
 
 ```rust,editable
 {{#include ../../../crates/cats/simulation/examples/simulation/simulation1.rs:example}}

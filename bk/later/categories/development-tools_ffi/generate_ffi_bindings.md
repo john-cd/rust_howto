@@ -11,7 +11,7 @@
 [![cat~development-tools::ffi][cat~development-tools::ffi~badge]][cat~development-tools::ffi]{{hi:FFI}}
 [![cat~external-ffi-bindings][cat~external-ffi-bindings~badge]][cat~external-ffi-bindings]{{hi:External FFI bindings}}
 
-[`bindgen`][c~bindgen~docs]⮳{{hi:bindgen}} automatically generates Rust FFI bindings to C and C++ libraries. It creates Rust code allowing you to call into a C library's functions and use its types.
+[`bindgen`][c~bindgen~docs]↗{{hi:bindgen}} automatically generates Rust FFI bindings to C and C++ libraries. It creates Rust code allowing you to call into a C library's functions and use its types.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/examples/c/bindgen.rs:example}}
@@ -26,7 +26,7 @@
 [![cat~development-tools::ffi][cat~development-tools::ffi~badge]][cat~development-tools::ffi]{{hi:FFI}}
 [![cat~external-ffi-bindings][cat~external-ffi-bindings~badge]][cat~external-ffi-bindings]{{hi:External FFI bindings}}
 
-[`cbindgen`][c~cbindgen~docs]⮳{{hi:cbindgen}} generates C bindings to Rust libraries, making Rust [functions][p~functions] callable from C/C++.
+[`cbindgen`][c~cbindgen~docs]↗{{hi:cbindgen}} generates C bindings to Rust libraries, making Rust [functions][p~functions] callable from C/C++.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/examples/c/cbindgen.rs:example}}
@@ -42,9 +42,9 @@
 [![cat~development-tools::ffi][cat~development-tools::ffi~badge]][cat~development-tools::ffi]{{hi:FFI}}
 [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-[`cxx`][c~cxx~docs]⮳{{hi:cxx}} provides safe C++ <-> Rust interop by generating code for both sides. [`cxx`][c~cxx~docs]⮳{{hi:cxx}} handles a lot of the boilerplate and memory management. Strongly recommended for C++ interop.
+[`cxx`][c~cxx~docs]↗{{hi:cxx}} provides safe C++ <-> Rust interop by generating code for both sides. [`cxx`][c~cxx~docs]↗{{hi:cxx}} handles a lot of the boilerplate and memory management. Strongly recommended for C++ interop.
 
-While tools like 'SWIG' exist, [`cxx`][c~cxx~docs]⮳{{hi:cxx}} is generally preferred for modern C++ interop with Rust, because it's more idiomatic and safer.
+While tools like 'SWIG' exist, [`cxx`][c~cxx~docs]↗{{hi:cxx}} is generally preferred for modern C++ interop with Rust, because it's more idiomatic and safer.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/examples/cpp/cxx.rs:example}}
@@ -54,7 +54,7 @@ While tools like 'SWIG' exist, [`cxx`][c~cxx~docs]⮳{{hi:cxx}} is generally pre
 
 [![uniffi~website][c~uniffi~website~badge]][c~uniffi~website] [![uniffi][c~uniffi~docs~badge]][c~uniffi~docs] [![uniffi~crates.io][c~uniffi~crates.io~badge]][c~uniffi~crates.io] [![uniffi~github][c~uniffi~github~badge]][c~uniffi~github] [![uniffi~lib.rs][c~uniffi~lib.rs~badge]][c~uniffi~lib.rs]{{hi:uniffi}}{{hi:Ffi}}{{hi:Bindgen}}
 
-[`uniffi`][c~uniffi~docs]⮳{{hi:uniffi}} is a multi-language bindings generator for Rust.
+[`uniffi`][c~uniffi~docs]↗{{hi:uniffi}} is a multi-language bindings generator for Rust.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/examples/uniffi.rs:example}}
@@ -70,13 +70,13 @@ While tools like 'SWIG' exist, [`cxx`][c~cxx~docs]⮳{{hi:cxx}} is generally pre
 
 ### C / C++ Build Integration {#skip1}
 
-[`cc`][c~cc~docs]⮳{{hi:cc}} helps with compiling C/C++ code within your Rust build script (`build.rs`). This is often necessary when working with FFI or C++ bindings. See [[build_time_tooling | Build Time Tooling]].
+[`cc`][c~cc~docs]↗{{hi:cc}} helps with compiling C/C++ code within your Rust build script (`build.rs`). This is often necessary when working with FFI or C++ bindings. See [[build_time_tooling | Build Time Tooling]].
 
 ### Utilities {#skip2}
 
 - `std::ffi` provides types for interacting with C code, like `CString`, `CStr`, `c_char`, etc.
   - Use `std::ffi::CString`, `std::ffi::CStr` for converting between Rust [strings][p~strings] and C strings.
-- [`libc`][c~libc~docs]⮳{{hi:libc}} provides access to the standard C library.
+- [`libc`][c~libc~docs]↗{{hi:libc}} provides access to the standard C library.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

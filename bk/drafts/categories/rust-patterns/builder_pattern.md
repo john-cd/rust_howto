@@ -18,19 +18,19 @@ The builder pattern provides a clean and readable way to construct complex objec
 
 [![typed-builder][c~typed_builder~docs~badge]][c~typed_builder~docs] [![typed-builder~crates.io][c~typed_builder~crates.io~badge]][c~typed_builder~crates.io] [![typed-builder~github][c~typed_builder~github~badge]][c~typed_builder~github] [![typed-builder~lib.rs][c~typed_builder~lib.rs~badge]][c~typed_builder~lib.rs]{{hi:typed-builder}}{{hi:Builder}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-[`typed-builder`][c~typed_builder~docs]⮳{{hi:typed-builder}} lets you derive compile-time type-checked builders. It uses a derive macro and leverages Rust's type system to ensure that all required fields are set. If you forget a required field, your code won't even compile.
+[`typed-builder`][c~typed_builder~docs]↗{{hi:typed-builder}} lets you derive compile-time type-checked builders. It uses a derive macro and leverages Rust's type system to ensure that all required fields are set. If you forget a required field, your code won't even compile.
 
 ## `derive_builder` {#derive_builder}
 
 [![derive_builder][c~derive_builder~docs~badge]][c~derive_builder~docs] [![derive_builder~crates.io][c~derive_builder~crates.io~badge]][c~derive_builder~crates.io] [![derive_builder~github][c~derive_builder~github~badge]][c~derive_builder~github] [![derive_builder~lib.rs][c~derive_builder~lib.rs~badge]][c~derive_builder~lib.rs]{{hi:derive_builder}}{{hi:Builder}}{{hi:Derive}}{{hi:Macro}}{{hi:Setter}}{{hi:Struct}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-[`derive_builder`][c~derive_builder~docs]⮳{{hi:derive_builder}} provides a `#[derive(Builder)]` macro to automatically implement the builder pattern for arbitrary structs. It performs checks at runtime within the `.build()` method.
+[`derive_builder`][c~derive_builder~docs]↗{{hi:derive_builder}} provides a `#[derive(Builder)]` macro to automatically implement the builder pattern for arbitrary structs. It performs checks at runtime within the `.build()` method.
 
 ## `bon` {#bon}
 
 [![bon~website][c~bon~website~badge]][c~bon~website] [![bon][c~bon~docs~badge]][c~bon~docs] [![bon~crates.io][c~bon~crates.io~badge]][c~bon~crates.io] [![bon~github][c~bon~github~badge]][c~bon~github] [![bon~lib.rs][c~bon~lib.rs~badge]][c~bon~lib.rs]{{hi:bon}}{{hi:Builder}}{{hi:Constructor}}{{hi:Derive}}{{hi:Macro}}{{hi:Setter}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-[`bon`][c~bon~docs]⮳{{hi:bon}} is a compile-time-checked builder generator with additional features like support for fallible/async builders and named function arguments via the builder pattern.
+[`bon`][c~bon~docs]↗{{hi:bon}} is a compile-time-checked builder generator with additional features like support for fallible/async builders and named function arguments via the builder pattern.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

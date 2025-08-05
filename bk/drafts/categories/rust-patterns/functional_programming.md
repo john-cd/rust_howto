@@ -8,9 +8,9 @@ Rust is not a purely functional language, but incorporates many features from fu
 
 The following explores some notable Rust crates that aid in functional programming:
 
-- [`itertools`][c~itertools~docs]⮳{{hi:itertools}} is often used with iterator chains, enhancing the standard iterator functions.
-- [`im`][c~im~docs]⮳{{hi:im}} replaces standard collections when immutability is required.
-- [`frunk`][c~frunk~docs]⮳{{hi:frunk}} is used for complex functional programming needs, especially those involving type-level programming.
+- [`itertools`][c~itertools~docs]↗{{hi:itertools}} is often used with iterator chains, enhancing the standard iterator functions.
+- [`im`][c~im~docs]↗{{hi:im}} replaces standard collections when immutability is required.
+- [`frunk`][c~frunk~docs]↗{{hi:frunk}} is used for complex functional programming needs, especially those involving type-level programming.
 
 ## Compose Iterators {#compose-iterators-with-itertools}
 
@@ -23,7 +23,7 @@ The following explores some notable Rust crates that aid in functional programmi
 [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 [![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}}
 
-[`itertools`][c~itertools~docs]⮳{{hi:itertools}} includes extra iterator adapters, functions and macros.
+[`itertools`][c~itertools~docs]↗{{hi:itertools}} includes extra iterator adapters, functions and macros.
 
 It offers a wide range of functions for combining, grouping, and manipulating iterators, for example `itertools::zip_longest`, `itertools::group_by`.
 
@@ -35,7 +35,7 @@ It offers a wide range of functions for combining, grouping, and manipulating it
 
 [![im~website][c~im~website~badge]][c~im~website] [![im][c~im~docs~badge]][c~im~docs] [![im~crates.io][c~im~crates.io~badge]][c~im~crates.io] [![im~github][c~im~github~badge]][c~im~github] [![im~lib.rs][c~im~lib.rs~badge]][c~im~lib.rs]{{hi:im}}{{hi:Persistent}}{{hi:Hamt}}{{hi:Immutable}}{{hi:B-tree}}{{hi:Rrb-tree}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
-[`im`][c~im~docs]⮳{{hi:im}} provides immutable data structures, such as lists, [maps][p~maps], and sets. It facilitates functional programming by providing data structures that cannot be modified in place. Use it when you need to ensure that data does not change in unexpected ways.
+[`im`][c~im~docs]↗{{hi:im}} provides immutable data structures, such as lists, [maps][p~maps], and sets. It facilitates functional programming by providing data structures that cannot be modified in place. Use it when you need to ensure that data does not change in unexpected ways.
 
 ```rust,editable
 {{#include ../../../crates/cats/rust_patterns/examples/functional_programming/im.rs:example}}
@@ -55,9 +55,9 @@ It offers a wide range of functions for combining, grouping, and manipulating it
 
 [![either][c~either~docs~badge]][c~either~docs] [![either~crates.io][c~either~crates.io~badge]][c~either~crates.io] [![either~github][c~either~github~badge]][c~either~github] [![either~lib.rs][c~either~lib.rs~badge]][c~either~lib.rs]{{hi:either}}{{hi:Data-structure}}{{hi:No_std}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-The enum [`Either`][c~either~docs]⮳{{hi:Either}} with variants `Left` and `Right` is a general purpose sum type with two cases. This is useful for representing values that can take on one of two different forms, which is a common pattern in functional programming. [`Either`][c~either~docs]⮳{{hi:Either}} has methods that are similar to `Option` and `Result`, and it also implements traits like `Iterator`. This crate also includes [macros][p~macros] `try_left!()` and `try_right!()` to use for short-circuiting logic, similar to how the `?` operator is used with `Result`.
+The enum [`Either`][c~either~docs]↗{{hi:Either}} with variants `Left` and `Right` is a general purpose sum type with two cases. This is useful for representing values that can take on one of two different forms, which is a common pattern in functional programming. [`Either`][c~either~docs]↗{{hi:Either}} has methods that are similar to `Option` and `Result`, and it also implements traits like `Iterator`. This crate also includes [macros][p~macros] `try_left!()` and `try_right!()` to use for short-circuiting logic, similar to how the `?` operator is used with `Result`.
 
-Note that [`Either`][c~either~docs]⮳{{hi:Either}} is general purpose. For describing success or error, use the regular `Result` enum.
+Note that [`Either`][c~either~docs]↗{{hi:Either}} is general purpose. For describing success or error, use the regular `Result` enum.
 
 ```rust,editable
 {{#include ../../../crates/cats/rust_patterns/examples/functional_programming/either.rs:example}}

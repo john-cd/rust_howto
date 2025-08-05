@@ -4,7 +4,7 @@
 
 Dealing with files{{hi:Files}} and file systems{{hi:File systems}}.
 
-For most common file system tasks, `std::fs` and `std::path` will be sufficient. [`fs_extra`][c~fs_extra~docs]⮳{{hi:fs_extra}} is useful for more advanced operations. [`tempfile`][c~tempfile~docs]⮳{{hi:tempfile}} is great for working with temporary files. [`glob`][c~glob~docs]⮳{{hi:glob}} simplifies file pattern matching. Use [`notify`][c~notify~docs]⮳{{hi:notify}} for file watching.
+For most common file system tasks, `std::fs` and `std::path` will be sufficient. [`fs_extra`][c~fs_extra~docs]↗{{hi:fs_extra}} is useful for more advanced operations. [`tempfile`][c~tempfile~docs]↗{{hi:tempfile}} is great for working with temporary files. [`glob`][c~glob~docs]↗{{hi:glob}} simplifies file pattern matching. Use [`notify`][c~notify~docs]↗{{hi:notify}} for file watching.
 
 | Topic | Rust Crates or Modules |
 |---|---|
@@ -12,11 +12,11 @@ For most common file system tasks, `std::fs` and `std::path` will be sufficient.
 | Paths | `std::path` (standard library) provides types and functions for working with file paths (`Path`, `PathBuf`), extracting file names, extensions, and other path components. |
 | Directories | `std::fs` (standard library) includes functions for creating, listing, and traversing directories. |
 | File Metadata | `std::fs` (standard library) allows you to retrieve information about files (size, modification time, permissions, etc.). |
-| File System Operations | [`fs_extra`][c~fs_extra~docs]⮳{{hi:fs_extra}} provides additional file system operations, such as copying directories recursively, setting file permissions, etc. |
-| Temporary Files and Directories | [`tempfile`][c~tempfile~docs]⮳{{hi:tempfile}} creates temporary files and directories. |
-| Globbing (Matching File Patterns) | [`glob`][c~glob~docs]⮳{{hi:glob}} matches file paths using 'glob' patterns. |
+| File System Operations | [`fs_extra`][c~fs_extra~docs]↗{{hi:fs_extra}} provides additional file system operations, such as copying directories recursively, setting file permissions, etc. |
+| Temporary Files and Directories | [`tempfile`][c~tempfile~docs]↗{{hi:tempfile}} creates temporary files and directories. |
+| Globbing (Matching File Patterns) | [`glob`][c~glob~docs]↗{{hi:glob}} matches file paths using 'glob' patterns. |
 | Symbolic Links | `std::fs` (Standard library) supports working with symbolic links (though this is platform-dependent). |
-| File Watching | [`notify`][c~notify~docs]⮳{{hi:notify}} watches files and directories for changes. |
+| File Watching | [`notify`][c~notify~docs]↗{{hi:notify}} watches files and directories for changes. |
 
 ## Paths
 
@@ -72,9 +72,9 @@ FIXME
 
 | Topic | Rust Crates or Modules |
 |---|---|
-| [[serde | Serialization/Deserialization]] | [`serde`][c~serde~docs]⮳{{hi:serde}} is often used with file I/O to read and write structured data (JSON, YAML, TOML, etc.) to files. |
-| [[compression | Compression/Decompression]] | [`flate2`][c~flate2~docs]⮳{{hi:flate2}}, [`gzip`][c~gzip~docs]⮳{{hi:gzip}}, [`bzip2`][c~bzip2~docs]⮳{{hi:bzip2}}, [`xz2`][c~xz2~docs]⮳{{hi:xz2}} work with various compression formats (often used when dealing with files). |
-| [[tar | Archive Files]] (tar, zip, etc.) | [`tar`][c~tar~docs]⮳{{hi:tar}}, [`zip`][c~zip~docs]⮳{{hi:zip}} can be used for working with tar and zip archives. |
+| [[serde | Serialization/Deserialization]] | [`serde`][c~serde~docs]↗{{hi:serde}} is often used with file I/O to read and write structured data (JSON, YAML, TOML, etc.) to files. |
+| [[compression | Compression/Decompression]] | [`flate2`][c~flate2~docs]↗{{hi:flate2}}, [`gzip`][c~gzip~docs]↗{{hi:gzip}}, [`bzip2`][c~bzip2~docs]↗{{hi:bzip2}}, [`xz2`][c~xz2~docs]↗{{hi:xz2}} work with various compression formats (often used when dealing with files). |
+| [[tar | Archive Files]] (tar, zip, etc.) | [`tar`][c~tar~docs]↗{{hi:tar}}, [`zip`][c~zip~docs]↗{{hi:zip}} can be used for working with tar and zip archives. |
 
 See also [[network-programming | Network Programming]].
 

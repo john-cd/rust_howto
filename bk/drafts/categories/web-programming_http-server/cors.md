@@ -12,7 +12,7 @@
 
 ## See Also
 
-- [CORS (Mozilla)][mozilla~cors]⮳.
+- [CORS (Mozilla)][mozilla~cors]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

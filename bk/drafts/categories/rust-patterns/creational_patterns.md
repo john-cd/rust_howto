@@ -16,7 +16,7 @@
 
 See also:
 
-- [abstract-factory in rust][abstract-factory-in-rust~website]⮳.
+- [abstract-factory in rust][abstract-factory-in-rust~website]↗.
 
 ## Implement a Singleton {#singleton}
 

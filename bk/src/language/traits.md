@@ -161,7 +161,7 @@ For more details on trait bounds, see the [[generics | Generics]] and [[impl_tra
 
 ## Use Async with Traits {#async-and-traits}
 
-This topic is covered in the [Async][p~async]⮳ chapter.
+This topic is covered in the [Async][p~async]↗ chapter.
 
 ## Related Topics {#related-topics}
 
@@ -174,8 +174,8 @@ This topic is covered in the [Async][p~async]⮳ chapter.
 
 ## References {#references}
 
-- [Traits (blog)][blog~traits]⮳.
-- [What is the correct way to return an Iterator (or any other trait)?](https://stackoverflow.com/questions/27535289/what-is-the-correct-way-to-return-an-iterator-or-any-other-trait)⮳.
+- [Traits (blog)][blog~traits]↗.
+- [What is the correct way to return an Iterator (or any other trait)?](https://stackoverflow.com/questions/27535289/what-is-the-correct-way-to-return-an-iterator-or-any-other-trait)↗.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

@@ -50,7 +50,7 @@ Rust performs some implicit coercions, such as dereferencing and unsizing. These
 [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
 
-[`bytemuck`][c~bytemuck~docs]⮳{{hi:bytemuck}}
+[`bytemuck`][c~bytemuck~docs]↗{{hi:bytemuck}}
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/examples/typecasts/bytemuck.rs:example}}
@@ -69,11 +69,11 @@ Rust performs some implicit coercions, such as dereferencing and unsizing. These
 [![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}}
 [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
 
-[`zerocopy`][c~zerocopy~docs]⮳{{hi:zerocopy}} makes zero-cost memory manipulation safe. It provides a set of traits and utilities to work with types that can be safely interpreted as byte slices.
+[`zerocopy`][c~zerocopy~docs]↗{{hi:zerocopy}} makes zero-cost memory manipulation safe. It provides a set of traits and utilities to work with types that can be safely interpreted as byte slices.
 
 - No data copying: Zero-copy avoids unnecessary data copying by directly interpreting the memory of one data structure as another.
 - [Performance][p~performance]: Eliminating data copying can significantly improve [performance][p~performance], especially in scenarios involving frequent data transfers between different memory regions (e.g., network I/O, inter-process communication).
-- Safety: The [`zerocopy`][c~zerocopy~docs]⮳{{hi:zerocopy}} crate provides mechanisms to ensure safe and correct zero-copy operations.
+- Safety: The [`zerocopy`][c~zerocopy~docs]↗{{hi:zerocopy}} crate provides mechanisms to ensure safe and correct zero-copy operations.
 
 Zerocopy is often used in [network programming][p~network-programming], where high [performance][p~performance] and low memory overhead are critical, or image handling.
 

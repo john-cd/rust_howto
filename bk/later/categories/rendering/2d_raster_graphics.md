@@ -4,7 +4,7 @@
 
 ## `pixels` {#pixels}
 
-[`pixels`][c~pixels~docs]⮳{{hi:pixels}} is a crate for working with pixel buffers directly. Provides low-level access to pixel data, allowing you to draw primitives by manipulating the buffer. Good for simple 2D [graphics][p~graphics] or when you need fine-grained control.
+[`pixels`][c~pixels~docs]↗{{hi:pixels}} is a crate for working with pixel buffers directly. Provides low-level access to pixel data, allowing you to draw primitives by manipulating the buffer. Good for simple 2D [graphics][p~graphics] or when you need fine-grained control.
 
 ```rust,editable
 {{#include ../../../crates/cats/rendering/examples/2d_raster_graphics/render.rs:example}}
@@ -12,11 +12,11 @@
 
 ## `raqote` {#raqote}
 
-[`raqote`][c~raqote~docs]⮳{{hi:raqote}} is a fast 2D [graphics][p~graphics] library focused on rasterization. Provides a canvas-like API for drawing shapes, text, and images. A good choice for general-purpose 2D rendering.
+[`raqote`][c~raqote~docs]↗{{hi:raqote}} is a fast 2D [graphics][p~graphics] library focused on rasterization. Provides a canvas-like API for drawing shapes, text, and images. A good choice for general-purpose 2D rendering.
 
 ## `tiny-skia` {#tiny-skia}
 
-[`tiny-skia`][c~tiny_skia~docs]⮳{{hi:tiny-skia}} is a small, fast, and portable 2D [graphics][p~graphics] library that can render to bitmaps. Supports paths, gradients, and text. Excellent for when you need something lightweight and performant.
+[`tiny-skia`][c~tiny_skia~docs]↗{{hi:tiny-skia}} is a small, fast, and portable 2D [graphics][p~graphics] library that can render to bitmaps. Supports paths, gradients, and text. Excellent for when you need something lightweight and performant.
 
 ## Related Topics {#related-topics}
 

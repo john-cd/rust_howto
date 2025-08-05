@@ -15,7 +15,7 @@ Rust memory safety allows (i) several immutable references (`&T`) to an object `
 These types are used in scenarios involving [shared state][p~shared-state] within a single thread, like GUI applications or when creating complex [data structures][p~data-structures] like graphs.
 
 `RefCell` keeps track of borrowing rules _at runtime_ and ensures that only one mutable or multiple immutable borrows exist at a time.
-Attempts to violate borrowing rules (like having multiple mutable borrows) will cause a _panic_ at runtime. Common methods include `borrow`, [`borrow_mut`][c~std::borrow::BorrowMut~docs]⮳{{hi:borrow_mut}}, and [`try_borrow`][c~std::cell::RefCell::try_borrow~docs].
+Attempts to violate borrowing rules (like having multiple mutable borrows) will cause a _panic_ at runtime. Common methods include `borrow`, [`borrow_mut`][c~std::borrow::BorrowMut~docs]↗{{hi:borrow_mut}}, and [`try_borrow`][c~std::cell::RefCell::try_borrow~docs].
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/interior_mutability/refcell.rs:example}}

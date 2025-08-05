@@ -40,7 +40,7 @@ Rust's "module system" helps structure your projects effectively. It gives you f
 
 ## References {#references}
 
-- [Rust Project Primer](https://rustprojectprimer.com/title.html)⮳.
+- [Rust Project Primer](https://rustprojectprimer.com/title.html)↗.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

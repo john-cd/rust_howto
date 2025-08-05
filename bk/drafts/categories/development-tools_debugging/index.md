@@ -8,7 +8,7 @@ Help you figure out what is going on with your code such as logging{{hi:Logging}
 
 | Topic | Rust Crates |
 |---|---|
-| Debugging | [`gdb`][c~gdb~docs]⮳{{hi:gdb}} or [`lldb`][c~lldb~docs]⮳{{hi:lldb}} |
+| Debugging | [`gdb`][c~gdb~docs]↗{{hi:gdb}} or [`lldb`][c~lldb~docs]↗{{hi:lldb}} |
 
 {{#include debugging.incl.md}}
 
@@ -16,9 +16,9 @@ Help you figure out what is going on with your code such as logging{{hi:Logging}
 
 ### `tracing`
 
-[`tracing`][c~tracing~docs]⮳{{hi:tracing}} is a newer, more structured logging library with support for spans and context. Supports asynchronous logging. Often used with [`tracing-subscriber`][c~tracing_subscriber~docs]⮳{{hi:tracing-subscriber}} for [formatting][p~formatting] and output.
+[`tracing`][c~tracing~docs]↗{{hi:tracing}} is a newer, more structured logging library with support for spans and context. Supports asynchronous logging. Often used with [`tracing-subscriber`][c~tracing_subscriber~docs]↗{{hi:tracing-subscriber}} for [formatting][p~formatting] and output.
 
-[`tracing-subscriber`][c~tracing_subscriber~docs]⮳{{hi:tracing-subscriber}} is used with [tracing][p~tracing] to format log output, often to JSON or other structured formats. Can also be used for filtering.
+[`tracing-subscriber`][c~tracing_subscriber~docs]↗{{hi:tracing-subscriber}} is used with [tracing][p~tracing] to format log output, often to JSON or other structured formats. Can also be used for filtering.
 
 {{#include tracing.incl.md}}
 
@@ -30,9 +30,9 @@ Help you figure out what is going on with your code such as logging{{hi:Logging}
 
 | Topic | Rust Crates |
 |---|---|
-| Logging Framework | [`log`][c~log~docs]⮳{{hi:log}} is an older crate providing logging macros and facade. |
-| Log Implementations (Loggers) | [`env_logger`][c~env_logger~docs]⮳{{hi:env_logger}}: A simple logger that configures logging based on environment variables. [`log4rs`][c~log4rs~docs]⮳{{hi:log4rs}} is a more flexible logger that supports  [configuration][p~configuration] files (YAML, TOML, JSON). |
-| Log Filtering | Can be done with [`env_logger`][c~env_logger~docs]⮳{{hi:env_logger}}, [`log4rs`][c~log4rs~docs]⮳{{hi:log4rs}}. |
+| Logging Framework | [`log`][c~log~docs]↗{{hi:log}} is an older crate providing logging macros and facade. |
+| Log Implementations (Loggers) | [`env_logger`][c~env_logger~docs]↗{{hi:env_logger}}: A simple logger that configures logging based on environment variables. [`log4rs`][c~log4rs~docs]↗{{hi:log4rs}} is a more flexible logger that supports  [configuration][p~configuration] files (YAML, TOML, JSON). |
+| Log Filtering | Can be done with [`env_logger`][c~env_logger~docs]↗{{hi:env_logger}}, [`log4rs`][c~log4rs~docs]↗{{hi:log4rs}}. |
 
 {{#include log.incl.md}}
 
@@ -40,7 +40,7 @@ Help you figure out what is going on with your code such as logging{{hi:Logging}
 
 ## Panics & Logging
 
-[`log-panics`][c~log_panics~docs]⮳{{hi:log-panics}} logs panics with backtraces.
+[`log-panics`][c~log_panics~docs]↗{{hi:log-panics}} logs panics with backtraces.
 
 ## Diagnostic Functions
 

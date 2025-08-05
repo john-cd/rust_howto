@@ -2,7 +2,7 @@
 
 {{#include images.incl.md}}
 
-[`image`][c~image~docs]⮳{{hi:image}}, [`imageproc`][c~imageproc~docs]⮳{{hi:imageproc}} are essential for working with image data.
+[`image`][c~image~docs]↗{{hi:image}}, [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} are essential for working with image data.
 
 ## Image Loading and Saving {#image_loading_and_saving}
 
@@ -44,7 +44,7 @@ Image Analysis
 
 ## GPU-accelerated Image Processing {#skip}
 
-Low-level [graphics][p~graphics] APIs like [`wgpu`][c~wgpu~docs]⮳{{hi:wgpu}} are often used for displaying images or performing GPU-accelerated image processing.
+Low-level [graphics][p~graphics] APIs like [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} are often used for displaying images or performing GPU-accelerated image processing.
 See [[rendering_graphics-api | Rendering: Graphics API]].
 
 {{#include refs.incl.md}}

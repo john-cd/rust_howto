@@ -6,13 +6,13 @@ Tracing refers to the process of capturing and recording information about the e
 
 | Topic | Rust Crates |
 |---|---|
-| Tracing Framework | [`tracing`][c~tracing~docs]⮳{{hi:tracing}} provides the core tracing functionality: spans, events, etc. |
+| Tracing Framework | [`tracing`][c~tracing~docs]↗{{hi:tracing}} provides the core tracing functionality: spans, events, etc. |
 | Event Logging | Handled by `tracing` using [macros][p~macros] like `event!` and `debug!`, `info!`, `warn!`, `error!`. |
-| Span Management | Also handled by [`tracing`][c~tracing~docs]⮳{{hi:tracing}} through its span API. Context propagation is built into tracing's span system. |
-| Asynchronous Tracing | Supported by [`tracing`][c~tracing~docs]⮳{{hi:tracing}} through its [asynchronous][p~asynchronous] span management. |
-| Output and [Formatting][p~formatting] | [`tracing-subscriber`][c~tracing_subscriber~docs]⮳{{hi:tracing-subscriber}} formats and outputs traces to various destinations. |
-| Filtering | [`tracing-subscriber`][c~tracing_subscriber~docs]⮳{{hi:tracing-subscriber}} allows filtering of traces based on level, target, etc. |
-| Integration with other tools | [`tracing`][c~tracing~docs]⮳{{hi:tracing}} is often used with other tools like `Jaeger` or `Zipkin` for distributed tracing. |
+| Span Management | Also handled by [`tracing`][c~tracing~docs]↗{{hi:tracing}} through its span API. Context propagation is built into tracing's span system. |
+| Asynchronous Tracing | Supported by [`tracing`][c~tracing~docs]↗{{hi:tracing}} through its [asynchronous][p~asynchronous] span management. |
+| Output and [Formatting][p~formatting] | [`tracing-subscriber`][c~tracing_subscriber~docs]↗{{hi:tracing-subscriber}} formats and outputs traces to various destinations. |
+| Filtering | [`tracing-subscriber`][c~tracing_subscriber~docs]↗{{hi:tracing-subscriber}} allows filtering of traces based on level, target, etc. |
+| Integration with other tools | [`tracing`][c~tracing~docs]↗{{hi:tracing}} is often used with other tools like `Jaeger` or `Zipkin` for distributed tracing. |
 
 ## Log Trace Data to `stdout` {#tracing-basics}
 
@@ -110,7 +110,7 @@ An `Event` signifies something that happened at a moment in time. `tracing`'s `E
 
 ## Use Spans to Instrument Synchronous and Asynchronous Code {#span-instrument}
 
-Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.await` points will result in incorrect traces. Use [`tracing::span::Span::in_scope`][c~tracing::span::Span::in_scope~docs]{{hi:tracing::span::Span::in_scope}}⮳ to make sure the span is exited before the `await` call. Alternatively, use `instrument` to make sure that the span is automatically exited and re-entered when a async function or block is awaited then resumed.
+Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.await` points will result in incorrect traces. Use [`tracing::span::Span::in_scope`][c~tracing::span::Span::in_scope~docs]{{hi:tracing::span::Span::in_scope}}↗ to make sure the span is exited before the `await` call. Alternatively, use `instrument` to make sure that the span is automatically exited and re-entered when a async function or block is awaited then resumed.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_span_in_scope.rs:example}}
@@ -131,11 +131,11 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.awai
 - [![tracing_journald~github][c~tracing_journald~github~badge]][c~tracing_journald~github]
 - [![tracing_journald~lib.rs][c~tracing_journald~lib.rs~badge]][c~tracing_journald~lib.rs]
 
-[tracing_journald][c~tracing_journald~docs]⮳ provides support for logging [`tracing`][c~tracing~crates.io]⮳ events natively to [journald][journald]⮳, preserving any structured information.
+[tracing_journald][c~tracing_journald~docs]↗ provides support for logging [`tracing`][c~tracing~crates.io]↗ events natively to [journald][journald]↗, preserving any structured information.
 
 ## References {#references}
 
-- [Next steps with Tracing][c~tracing-next-steps~docs]⮳.
+- [Next steps with Tracing][c~tracing-next-steps~docs]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

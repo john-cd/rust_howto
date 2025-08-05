@@ -10,10 +10,10 @@ The `Send` and `Sync` [traits][p~traits] are fundamental to Rust's [concurrency]
 
 | Traits | Types |
 |---|---|
-| `Send` and `Sync` | primitives; `(T1, T2)`, `[T; N]`, `&[T]`, `struct { x: T }`, `Arc`, `Vec`, `Box`, [`Option`][c~std::option::Option~docs]⮳{{hi:Option}} (depending on underlying types); [`String`][c~std::string::ToString~docs]⮳{{hi:String}}, `&str`; `Mutex`, `Atomic*`... |
+| `Send` and `Sync` | primitives; `(T1, T2)`, `[T; N]`, `&[T]`, `struct { x: T }`, `Arc`, `Vec`, `Box`, [`Option`][c~std::option::Option~docs]↗{{hi:Option}} (depending on underlying types); [`String`][c~std::string::ToString~docs]↗{{hi:String}}, `&str`; `Mutex`, `Atomic*`... |
 | `!Send` and `!Sync` | `Rc`, raw pointers `*const T`,`*mut T`, types from external libraries or the operating system that are not thread safe. |
 | `Send` and `!Sync` | `mpsc::Receiver<T>`; `UnsafeCell`, `Cell`, `RefCell`: when a type has interior mutability, we must be sure that we mutate it from one place only, but this place can be everywhere as long as it is singular. |
-| `!Send` and `Sync` (rare) | `RwLockReadGuard`, `RwWriteGuard` and [`MutexGuard`][c~std::sync::MutexGuard~docs]⮳{{hi:MutexGuard}}; `&mut T` if `T` is `!Send`; structs which use thread-local storage and accesses that info in `Drop`. |
+| `!Send` and `Sync` (rare) | `RwLockReadGuard`, `RwWriteGuard` and [`MutexGuard`][c~std::sync::MutexGuard~docs]↗{{hi:MutexGuard}}; `&mut T` if `T` is `!Send`; structs which use thread-local storage and accesses that info in `Drop`. |
 
 ## `Send` Trait {#send}
 
@@ -51,12 +51,12 @@ By implementing the unsafe marker [traits][p~traits] `Send` and `Sync` on `my::A
 
 ## References {#references}
 
-- [Understanding the `Send` trait][stackoverflow~understanding-the-send-trait]⮳.
-- [The Rustonomicon: `Send` and `Sync`][book~rustonomicon~send-and-sync]⮳.
-- [The Rustonomicon: Implementing `Vec`][book~rustonomicon~implementing-vec]⮳.
-- [An unsafe tour of Rust's `Send` and `Sync`][blog~nyanpasu64-an-unsafe-tour-of-rust-s-send-and-sync]⮳.
-- [Extensible Concurrency with the `Sync` and `Send` Traits][book~rust-extensible-concurrency-sync-and-send]⮳.
-- [Rust: A unique perspective][blog~rust-a-unique-perspective-html]⮳.
+- [Understanding the `Send` trait][stackoverflow~understanding-the-send-trait]↗.
+- [The Rustonomicon: `Send` and `Sync`][book~rustonomicon~send-and-sync]↗.
+- [The Rustonomicon: Implementing `Vec`][book~rustonomicon~implementing-vec]↗.
+- [An unsafe tour of Rust's `Send` and `Sync`][blog~nyanpasu64-an-unsafe-tour-of-rust-s-send-and-sync]↗.
+- [Extensible Concurrency with the `Sync` and `Send` Traits][book~rust-extensible-concurrency-sync-and-send]↗.
+- [Rust: A unique perspective][blog~rust-a-unique-perspective-html]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

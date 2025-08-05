@@ -6,7 +6,7 @@
 
 [![objc2][c~objc2~docs~badge]][c~objc2~docs] [![objc2~crates.io][c~objc2~crates.io~badge]][c~objc2~crates.io] [![objc2~github][c~objc2~github~badge]][c~objc2~github] [![objc2~lib.rs][c~objc2~lib.rs~badge]][c~objc2~lib.rs]{{hi:objc2}}{{hi:Ios}}{{hi:Objective-c}}{{hi:Macos}}{{hi:Objc}}{{hi:Objc_msgsend}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~development-tools::ffi][cat~development-tools::ffi~badge]][cat~development-tools::ffi]{{hi:FFI}} [![cat~external-ffi-bindings][cat~external-ffi-bindings~badge]][cat~external-ffi-bindings]{{hi:External FFI bindings}} [![cat~os::macos-apis][cat~os::macos-apis~badge]][cat~os::macos-apis]{{hi:macOS APIs}}
 
-[`objc2`][c~objc2~docs]⮳{{hi:objc2}} provides an Objective-C interface and runtime bindings.
+[`objc2`][c~objc2~docs]↗{{hi:objc2}} provides an Objective-C interface and runtime bindings.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/examples/objc/objc2.rs:example}}

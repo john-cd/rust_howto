@@ -8,11 +8,11 @@ Rust's memory management is a core strength: you won't often need to manually ma
 
 | Topic | Rust Crates or Features |
 |---|---|
-| Smart Pointers | Use [`std::boxed::Box`][c~std::boxed::Box~docs]⮳{{hi:std::boxed::Box}} for heap allocation; [`std::rc::Rc`][c~std::rc::Rc~docs]⮳{{hi:std::rc::Rc}} for reference-counted shared ownership; [`std::sync::Arc`][c~std::sync::Arc~docs]⮳{{hi:std::sync::Arc}} for atomically reference-counted shared ownership (thread-safe); [`std::cell::RefCell`][c~std::cell::RefCell~docs]⮳{{hi:std::cell::RefCell}} for interior mutability; and [`std::sync::Mutex`][c~std::sync::Mutex~docs]⮳{{hi:std::sync::Mutex}} for safe mutable access from multiple threads. |
+| Smart Pointers | Use [`std::boxed::Box`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}} for heap allocation; [`std::rc::Rc`][c~std::rc::Rc~docs]↗{{hi:std::rc::Rc}} for reference-counted shared ownership; [`std::sync::Arc`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} for atomically reference-counted shared ownership (thread-safe); [`std::cell::RefCell`][c~std::cell::RefCell~docs]↗{{hi:std::cell::RefCell}} for interior mutability; and [`std::sync::Mutex`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}} for safe mutable access from multiple threads. |
 | Global Statics and Lazy Initialization | FIXME |
 | Core Allocation (Rarely Used Directly) | `alloc` (Standard library) provides the fundamental allocation APIs. Most other memory management tools are built on top of it. |
-| Specialized Allocators | [`wee_alloc`][c~wee_alloc~docs]⮳{{hi:wee_alloc}} is a small and efficient allocator, often used in embedded systems or WebAssembly. |
-| Memory Profiling | [`valgrind`][c~valgrind~docs]⮳{{hi:valgrind}} (with `massif` or `memcheck`): External tool. Powerful memory profiler. [`heaptrack`][c~heaptrack~docs]⮳{{hi:heaptrack}}: External tool. Heap profiler. |
+| Specialized Allocators | [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}} is a small and efficient allocator, often used in embedded systems or WebAssembly. |
+| Memory Profiling | [`valgrind`][c~valgrind~docs]↗{{hi:valgrind}} (with `massif` or `memcheck`): External tool. Powerful memory profiler. [`heaptrack`][c~heaptrack~docs]↗{{hi:heaptrack}}: External tool. Heap profiler. |
 
 ## Memory Management Beyond Basic Ownership with Smart Pointers
 
@@ -41,9 +41,9 @@ Use `unsafe` code and raw pointers (`*const T`, `*mut T`) only when necessary fo
 
 ## Custom Memory Allocation, Garbage Collection
 
-The core `alloc` crate provides the core allocation APIs. You'll rarely use this directly, but it's what the other memory management tools are built on. Custom allocators are rarely needed in typical Rust development. If needed, reach for the Rust wrappers for the well-known 'jemalloc' and 'mimalloc' memory allocation libraries. In addition, [`wee_alloc`][c~wee_alloc~docs]⮳{{hi:wee_alloc}} is a small and efficient allocator often used in embedded systems or WebAssembly.
+The core `alloc` crate provides the core allocation APIs. You'll rarely use this directly, but it's what the other memory management tools are built on. Custom allocators are rarely needed in typical Rust development. If needed, reach for the Rust wrappers for the well-known 'jemalloc' and 'mimalloc' memory allocation libraries. In addition, [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}} is a small and efficient allocator often used in embedded systems or WebAssembly.
 
-Rust does not have a garbage collector in the traditional sense. It uses ownership and borrowing to manage memory automatically and deterministically. If you need garbage collection for specific reasons, you'd have to look for specialized crates, but this is rare in Rust. For example, the [`seize`][c~seize~docs]⮳{{hi:seize}} crate allows for memory reclamation in concurrent data structures.
+Rust does not have a garbage collector in the traditional sense. It uses ownership and borrowing to manage memory automatically and deterministically. If you need garbage collection for specific reasons, you'd have to look for specialized crates, but this is rare in Rust. For example, the [`seize`][c~seize~docs]↗{{hi:seize}} crate allows for memory reclamation in concurrent data structures.
 
 {{#include memory_allocation.incl.md}}
 
@@ -51,10 +51,10 @@ Rust does not have a garbage collector in the traditional sense. It uses ownersh
 
 ### Memory Safety Tools
 
-Memory profiling tools like [`Valgrind`][c~valgrind~docs]⮳{{hi:Valgrind}} are useful for optimizing memory usage.
+Memory profiling tools like [`Valgrind`][c~valgrind~docs]↗{{hi:Valgrind}} are useful for optimizing memory usage.
 
-- [`valgrind`][c~valgrind~docs]⮳{{hi:valgrind}} (with `massif` or `memcheck`): While not Rust-specific, Valgrind is a very common and powerful memory profiler. You'd run your Rust program under Valgrind.
-- [`heaptrack`][c~heaptrack~docs]⮳{{hi:heaptrack}}: A heap profiler that can track memory allocations.
+- [`valgrind`][c~valgrind~docs]↗{{hi:valgrind}} (with `massif` or `memcheck`): While not Rust-specific, Valgrind is a very common and powerful memory profiler. You'd run your Rust program under Valgrind.
+- [`heaptrack`][c~heaptrack~docs]↗{{hi:heaptrack}}: A heap profiler that can track memory allocations.
 
 Address Sanitizer (`ASan`, a compiler feature) detects memory errors. Enable with compiler flags (e.g., `-fsanitize=address`). Memory Sanitizer (`MSan`, another compiler feature) detects uninitialized memory usage.
 

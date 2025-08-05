@@ -10,13 +10,13 @@
 
 ## CPU Identification {#skip}
 
-[`cpuid`][c~cpuid~docs]⮳{{hi:cpuid}}: A crate for getting CPU information (vendor, features, etc.)
+[`cpuid`][c~cpuid~docs]↗{{hi:cpuid}}: A crate for getting CPU information (vendor, features, etc.)
 
 ### Check the Number of Logical cpu Cores {#check-number-of-logical-cpu-cores}
 
 [![num_cpus][c~num_cpus~docs~badge]][c~num_cpus~docs] [![num_cpus~crates.io][c~num_cpus~crates.io~badge]][c~num_cpus~crates.io] [![num_cpus~github][c~num_cpus~github~badge]][c~num_cpus~github] [![num_cpus~lib.rs][c~num_cpus~lib.rs~badge]][c~num_cpus~lib.rs]{{hi:num_cpus}}{{hi:Cpus}}{{hi:Cores}}{{hi:Cpu}} [![cat~hardware-support][cat~hardware-support~badge]][cat~hardware-support]{{hi:Hardware support}}{{hi:Logical cpu cores}}
 
-Shows the number of logical CPU cores{{hi:CPU cores}} in the current machine using [`num_cpus::get`][c~num_cpus::get~docs]{{hi:num_cpus::get}}⮳.
+Shows the number of logical CPU cores{{hi:CPU cores}} in the current machine using [`num_cpus::get`][c~num_cpus::get~docs]{{hi:num_cpus::get}}↗.
 
 ```rust,editable
 {{#include ../../../crates/cats/hardware_support/examples/processor/cpu_count.rs:example}}
@@ -36,7 +36,7 @@ Compiler intrinsics are functions that map directly to CPU instructions. They're
 
 `std::arch`: (Standard library) Provides access to SIMD instructions if the target CPU supports them. This is essential for performance optimization.
 
-[`packed_simd`][c~packed_simd~docs]⮳{{hi:packed_simd}}: A crate for portable SIMD.
+[`packed_simd`][c~packed_simd~docs]↗{{hi:packed_simd}}: A crate for portable SIMD.
 
 ## Related Topics {#related-topics}
 
@@ -48,7 +48,7 @@ See [[atomics | Atomics]].
 
 Profiling tools help you identify CPU-related performance issues.
 
-`cargo flamegraph`, [`perf`][c~perf~docs]⮳{{hi:perf}} (Linux) help you identify performance bottlenecks in your code, which can be related to CPU usage.
+`cargo flamegraph`, [`perf`][c~perf~docs]↗{{hi:perf}} (Linux) help you identify performance bottlenecks in your code, which can be related to CPU usage.
 
 See [[development-tools_profiling | Development Tools Profiling]] and [[memory_usage_analysis | Memory Usage Analysis]].
 
@@ -57,8 +57,8 @@ See [[development-tools_profiling | Development Tools Profiling]] and [[memory_u
 Concurrency and multithreading allow you to utilize multiple CPU cores.
 
 `std::thread`: (Standard library) For creating and managing threads.
-[`rayon`][c~rayon~docs]⮳{{hi:rayon}}: A [data parallelism][p~data-parallelism] library that makes it easy to parallelize computations.
-[`tokio`][c~tokio~docs]⮳{{hi:tokio}}: An [asynchronous][p~asynchronous] runtime for writing concurrent applications.
+[`rayon`][c~rayon~docs]↗{{hi:rayon}}: A [data parallelism][p~data-parallelism] library that makes it easy to parallelize computations.
+[`tokio`][c~tokio~docs]↗{{hi:tokio}}: An [asynchronous][p~asynchronous] runtime for writing concurrent applications.
 
 See [[concurrency | Concurrency]].
 

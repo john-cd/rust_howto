@@ -38,7 +38,7 @@ cargo watch -x check -x test -x run
 [![cargo-limit~github][c~cargo_limit~github~badge]][c~cargo_limit~github]
 [![cargo-limit~lib.rs][c~cargo_limit~lib.rs~badge]][c~cargo_limit~lib.rs]
 
-[cargo-limit][c~cargo_limit~crates.io]⮳ is [Cargo][p~cargo] with less noise: warnings are skipped until errors are fixed, Neovim integration, etc.
+[cargo-limit][c~cargo_limit~crates.io]↗ is [Cargo][p~cargo] with less noise: warnings are skipped until errors are fixed, Neovim integration, etc.
 
 - errors have highest priority.
 - they never appear in the middle of warnings.
@@ -50,7 +50,7 @@ cargo watch -x check -x test -x run
 - after encountering first error the rest of build time is limited by default.
 - files can be automatically opened in your text editor on affected lines.
 
-This tool is especially useful in combination with [`cargo-watch`][c~cargo_watch~docs]⮳{{hi:cargo-watch}}.
+This tool is especially useful in combination with [`cargo-watch`][c~cargo_watch~docs]↗{{hi:cargo-watch}}.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -50,11 +50,11 @@ It is common to return a `Cow` from a function, if the (borrowed) input is retur
 
 To use as a borrowed type, call a method from one of the following traits:
 
-- [`std::borrow::Borrow`][c~std::borrow::Borrow~docs]{{hi:std::borrow::Borrow}}⮳,
-- [`std::convert::AsRef`][c~std::convert::AsRef~docs]{{hi:std::convert::AsRef}}⮳,
-- [`std::ops::Deref`][c~std::ops::Deref~docs]{{hi:std::ops::Deref}}⮳ explicitly or implicitly through a coercion{{hi:Coercion}}.
+- [`std::borrow::Borrow`][c~std::borrow::Borrow~docs]{{hi:std::borrow::Borrow}}↗,
+- [`std::convert::AsRef`][c~std::convert::AsRef~docs]{{hi:std::convert::AsRef}}↗,
+- [`std::ops::Deref`][c~std::ops::Deref~docs]{{hi:std::ops::Deref}}↗ explicitly or implicitly through a coercion{{hi:Coercion}}.
 
-To convert to an owned type, use [`std::borrow::Cow::into_owned`][c~std::borrow::Cow::into_owned~docs]{{hi:std::borrow::Cow::into_owned}}⮳, or [`std::string::ToString`][c~std::string::ToString~docs]{{hi:std::string::ToString}}⮳ if a `Cow<str>`. Alternatively, use any method to get a reference and then call [`std::borrow::ToOwned`][c~std::borrow::ToOwned~docs]{{hi:std::borrow::ToOwned}}⮳.
+To convert to an owned type, use [`std::borrow::Cow::into_owned`][c~std::borrow::Cow::into_owned~docs]{{hi:std::borrow::Cow::into_owned}}↗, or [`std::string::ToString`][c~std::string::ToString~docs]{{hi:std::string::ToString}}↗ if a `Cow<str>`. Alternatively, use any method to get a reference and then call [`std::borrow::ToOwned`][c~std::borrow::ToOwned~docs]{{hi:std::borrow::ToOwned}}↗.
 
 The following example demonstrates how to convert a `Cow<str>` to a `&str` or a `String`:
 
@@ -62,12 +62,12 @@ The following example demonstrates how to convert a `Cow<str>` to a `&str` or a 
 {{#include ../../crates/standard_library/examples/cow/cow_to_borrowed_owned.rs:example}}
 ```
 
-This example was adapted from a [StackOverflow discussion][stackoverflow~how-do-i-get-a-str-or-string-from-stdborrowcowstr]⮳.
+This example was adapted from a [StackOverflow discussion][stackoverflow~how-do-i-get-a-str-or-string-from-stdborrowcowstr]↗.
 
 ## References {#references}
 
-- [Using Cow in Rust for efficient memory utilization](https://blog.logrocket.com/using-cow-rust-efficient-memory-utilization)⮳.
-- [The Secret Life of Cows](https://deterministic.space/secret-life-of-cows.html)⮳.
+- [Using Cow in Rust for efficient memory utilization](https://blog.logrocket.com/using-cow-rust-efficient-memory-utilization)↗.
+- [The Secret Life of Cows](https://deterministic.space/secret-life-of-cows.html)↗.
 
 ## Related Topics {#related-topics}
 

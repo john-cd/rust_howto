@@ -13,8 +13,8 @@
 
 Consider using:
 
-- [`mavlink`][c~mavlink~docs]⮳{{hi:mavlink}} for MAVLink encoding/decoding.
-- [`embedded-hal`][c~embedded_hal~docs]⮳{{hi:embedded-hal}} for hardware abstraction (if working with embedded systems).
+- [`mavlink`][c~mavlink~docs]↗{{hi:mavlink}} for MAVLink encoding/decoding.
+- [`embedded-hal`][c~embedded_hal~docs]↗{{hi:embedded-hal}} for hardware abstraction (if working with embedded systems).
 - `pid` for PID controller implementation.
 
 ## Sensor Integration
@@ -26,8 +26,8 @@ Consider using:
 
 Consider using:
 
-- `i2cdev`, [`spidev`][c~spidev~docs]⮳{{hi:spidev}}, [`serialport`][c~serialport~docs]⮳{{hi:serialport}} for low-level hardware communication.
-- [`gpsd-client`][c~gpsd_client~docs]⮳{{hi:gpsd-client}} for interacting with the gpsd daemon (if using a GPS receiver that works with gpsd).
+- `i2cdev`, [`spidev`][c~spidev~docs]↗{{hi:spidev}}, [`serialport`][c~serialport~docs]↗{{hi:serialport}} for low-level hardware communication.
+- [`gpsd-client`][c~gpsd_client~docs]↗{{hi:gpsd-client}} for interacting with the gpsd daemon (if using a GPS receiver that works with gpsd).
 
 Sensor-specific crates are common: Often, you'll use crates provided by the sensor manufacturer or community-developed drivers.
 
@@ -39,9 +39,9 @@ Sensor-specific crates are common: Often, you'll use crates provided by the sens
 
 Consider using:
 
-- [`opencv`][c~opencv~docs]⮳{{hi:opencv}}: Bindings for the OpenCV library (powerful for computer vision).
-- [`image`][c~image~docs]⮳{{hi:image}} for image loading and manipulation.
-- [`ndarray`][c~ndarray~docs]⮳{{hi:ndarray}} for efficient array operations (often used in image processing).
+- [`opencv`][c~opencv~docs]↗{{hi:opencv}}: Bindings for the OpenCV library (powerful for computer vision).
+- [`image`][c~image~docs]↗{{hi:image}} for image loading and manipulation.
+- [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} for efficient array operations (often used in image processing).
 
 ## See Also
 
@@ -57,8 +57,8 @@ Consider using:
 
 Consider using:
 
-- [`nalgebra`][c~nalgebra~docs]⮳{{hi:nalgebra}} for linear algebra and control algorithms.
-- [`num-traits`][c~num_traits~docs]⮳{{hi:num-traits}} & [`num-complex`][c~num_complex~docs]⮳{{hi:num-complex}} for numerical and complex number operations.
+- [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} for linear algebra and control algorithms.
+- [`num-traits`][c~num_traits~docs]↗{{hi:num-traits}} & [`num-complex`][c~num_complex~docs]↗{{hi:num-complex}} for numerical and complex number operations.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

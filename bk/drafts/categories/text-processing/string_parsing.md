@@ -6,7 +6,7 @@
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
-Creates a custom struct `RGB` and implements the [`FromStr`][c~std::str::FromStr~docs]⮳{{hi:FromStr}} trait to convert a provided color hex code into its RGB color code.
+Creates a custom struct `RGB` and implements the [`FromStr`][c~std::str::FromStr~docs]↗{{hi:FromStr}} trait to convert a provided color hex code into its RGB color code.
 
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/examples/string_parsing/from_str.rs:example}}
@@ -27,6 +27,6 @@ Creates a custom struct `RGB` and implements the [`FromStr`][c~std::str::FromStr
 
 - [validator](https://lib.rs/crates/validator)
 
-[`FromStr`](https://doc.rust-lang.org/std/str/trait.FromStr.html)⮳ provides _string parsing_ with idiomatic error handling, and it's typically implemented for types like `u32`, `Url`, and `enum`s. It powers `.parse::<T>()`. It can only parse types that do not contain a lifetime parameter.
+[`FromStr`](https://doc.rust-lang.org/std/str/trait.FromStr.html)↗ provides _string parsing_ with idiomatic error handling, and it's typically implemented for types like `u32`, `Url`, and `enum`s. It powers `.parse::<T>()`. It can only parse types that do not contain a lifetime parameter.
 
 </div>

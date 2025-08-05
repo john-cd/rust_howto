@@ -99,8 +99,8 @@ Instead, you may:
 
 ## References {#references}
 
-- [Lifetime elision rules (Rust reference)](https://doc.rust-lang.org/reference/lifetime-elision.html)⮳.
-- [Self-referential Structs](https://ksnll.github.io/rust-self-referential-structs)⮳.
+- [Lifetime elision rules (Rust reference)](https://doc.rust-lang.org/reference/lifetime-elision.html)↗.
+- [Self-referential Structs](https://ksnll.github.io/rust-self-referential-structs)↗.
 
 ## Related Topics {#related-topics}
 

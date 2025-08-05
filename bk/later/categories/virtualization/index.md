@@ -43,9 +43,9 @@ These crates provide low-level interfaces for interacting with hypervisors like 
 
 - `net_util`: Utilities for network device emulation.
 - `vhost-user-backend`: A library for implementing vhost-user backends.
-- `slirp` (bindings), [`tun-tap`][c~tun_tap~docs]⮳{{hi:tun-tap}}.
+- `slirp` (bindings), [`tun-tap`][c~tun_tap~docs]↗{{hi:tun-tap}}.
 
-`slirp` provides a user-mode network stack. [`tun-tap`][c~tun_tap~docs]⮳{{hi:tun-tap}} allows creating virtual network interfaces.
+`slirp` provides a user-mode network stack. [`tun-tap`][c~tun_tap~docs]↗{{hi:tun-tap}} allows creating virtual network interfaces.
 
 ## Virtual Storage
 
@@ -73,14 +73,14 @@ Working with virtual disk image formats (e.g., qcow2, vmdk) often involves using
 - Rust's performance, safety, and concurrency features make it well-suited for virtualization.
 - Virtualization requires in-depth security and Rust's memory safety is a significant advantage.
 - Rust is also relevant for virtualization on embedded systems.
-- Integrating with existing virtualization technologies (e.g., [`KVM`][c~kvm~docs]⮳{{hi:KVM}}, [`QEMU`][c~qemu~docs]⮳{{hi:QEMU}}) is a common approach.
+- Integrating with existing virtualization technologies (e.g., [`KVM`][c~kvm~docs]↗{{hi:KVM}}, [`QEMU`][c~qemu~docs]↗{{hi:QEMU}}) is a common approach.
 
 ## Related Topics
 
 | Topic | Rust Crates | Notes |
 |---|---|---|
-| Sandboxing with [[wasm | WASM]] | [`wasmi`][c~wasmi~docs]⮳{{hi:wasmi}}, [`wasi-rs`][c~wasi~docs]⮳{{hi:wasi-rs}} | [`wasmi`][c~wasmi~docs]⮳{{hi:wasmi}} is a WebAssembly interpreter, useful for sandboxing untrusted code. [`wasi-rs`][c~wasi~docs]⮳{{hi:wasi-rs}} provides bindings for the WebAssembly System Interface (WASI). |
-| [[emulators | Emulators]] | [`qemu-rs`][c~qemu~docs]⮳{{hi:qemu-rs}} (bindings) | [`qemu-rs`][c~qemu~docs]⮳{{hi:qemu-rs}} provides bindings to QEMU, a powerful emulator that can be used for virtualization. |
+| Sandboxing with [[wasm | WASM]] | [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}}, [`wasi-rs`][c~wasi~docs]↗{{hi:wasi-rs}} | [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}} is a WebAssembly interpreter, useful for sandboxing untrusted code. [`wasi-rs`][c~wasi~docs]↗{{hi:wasi-rs}} provides bindings for the WebAssembly System Interface (WASI). |
+| [[emulators | Emulators]] | [`qemu-rs`][c~qemu~docs]↗{{hi:qemu-rs}} (bindings) | [`qemu-rs`][c~qemu~docs]↗{{hi:qemu-rs}} provides bindings to QEMU, a powerful emulator that can be used for virtualization. |
 | FFI | | See [[development-tools_ffi | Development Tools: FFI]], [[external-ffi-bindings | External FFI Bindings]]. |
 
 {{#include refs.incl.md}}

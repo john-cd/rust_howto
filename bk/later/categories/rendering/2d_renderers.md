@@ -8,15 +8,15 @@ Two essential components of 2D [rendering][p~rendering] are rasterization and an
 
 ## Choosing the Right Library {#skip}
 
-[`raqote`][c~raqote~docs]⮳{{hi:raqote}} is a fast, pure Rust 2D graphics library. [`tiny-skia`][c~tiny_skia~docs]⮳{{hi:tiny-skia}} is another good option. [`cairo-rs`][c~cairo~docs]⮳{{hi:cairo-rs}} provides bindings to the Cairo library. |
+[`raqote`][c~raqote~docs]↗{{hi:raqote}} is a fast, pure Rust 2D graphics library. [`tiny-skia`][c~tiny_skia~docs]↗{{hi:tiny-skia}} is another good option. [`cairo-rs`][c~cairo~docs]↗{{hi:cairo-rs}} provides bindings to the Cairo library. |
 
-Most 2D projects will find [`raqote`][c~raqote~docs]⮳{{hi:raqote}} or [`tiny-skia`][c~tiny_skia~docs]⮳{{hi:tiny-skia}} to be a good balance of features and performance. If you need very low-level control or are working with GPU-accelerated [graphics][p~graphics], [`wgpu`][c~wgpu~docs]⮳{{hi:wgpu}} is the way to go. If you're making a game, one of the [[game_engines | game]] frameworks will likely be the easiest option.
+Most 2D projects will find [`raqote`][c~raqote~docs]↗{{hi:raqote}} or [`tiny-skia`][c~tiny_skia~docs]↗{{hi:tiny-skia}} to be a good balance of features and performance. If you need very low-level control or are working with GPU-accelerated [graphics][p~graphics], [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is the way to go. If you're making a game, one of the [[game_engines | game]] frameworks will likely be the easiest option.
 
-- Simple 2D, Direct Pixel Manipulation: [`pixels`][c~pixels~docs]⮳{{hi:pixels}}.
-- General-Purpose 2D, Canvas-Like API: [`raqote`][c~raqote~docs]⮳{{hi:raqote}}.
-- Lightweight, Performant 2D: [`tiny-skia`][c~tiny_skia~docs]⮳{{hi:tiny-skia}}.
-- Vector Path Generation: [`lyon`][c~lyon~docs]⮳{{hi:lyon}}.
-- High Performance 2D/3D (using GPU): [`wgpu`][c~wgpu~docs]⮳{{hi:wgpu}} (but more complex).
+- Simple 2D, Direct Pixel Manipulation: [`pixels`][c~pixels~docs]↗{{hi:pixels}}.
+- General-Purpose 2D, Canvas-Like API: [`raqote`][c~raqote~docs]↗{{hi:raqote}}.
+- Lightweight, Performant 2D: [`tiny-skia`][c~tiny_skia~docs]↗{{hi:tiny-skia}}.
+- Vector Path Generation: [`lyon`][c~lyon~docs]↗{{hi:lyon}}.
+- High Performance 2D/3D (using GPU): [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} (but more complex).
 
 ## Topics {#skip1}
 
@@ -35,7 +35,7 @@ See [[2d_vector_graphics | 2D Vector Graphics]].
 
 ## Hybrid (Raster and Vector) {#skip4}
 
-While primarily a low-level, [cross-platform][p~cross-platform] GPU API, [`wgpu`][c~wgpu~docs]⮳{{hi:wgpu}} is capable of rasterization and can be used to draw both raster and vector graphics. It's very powerful and performant but requires more setup and code compared to the higher-level libraries. You'd use [`lyon`][c~lyon~docs]⮳{{hi:lyon}} to generate vector paths and then [`wgpu`][c~wgpu~docs]⮳{{hi:wgpu}} to render them.
+While primarily a low-level, [cross-platform][p~cross-platform] GPU API, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is capable of rasterization and can be used to draw both raster and vector graphics. It's very powerful and performant but requires more setup and code compared to the higher-level libraries. You'd use [`lyon`][c~lyon~docs]↗{{hi:lyon}} to generate vector paths and then [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} to render them.
 
 See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 
@@ -43,7 +43,7 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 
 [![skia-safe][c~skia_safe~docs~badge]][c~skia_safe~docs] [![skia-safe~crates.io][c~skia_safe~crates.io~badge]][c~skia_safe~crates.io] [![skia-safe~github][c~skia_safe~github~badge]][c~skia_safe~github] [![skia-safe~lib.rs][c~skia_safe~lib.rs~badge]][c~skia_safe~lib.rs]{{hi:skia-safe}}{{hi:OpenGL}}{{hi:Pdf}}{{hi:Rust-bindings}}{{hi:Skia}}{{hi:Vulkan}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}} [![cat~multimedia::images][cat~multimedia::images~badge]][cat~multimedia::images]{{hi:Images}} [![cat~rendering::graphics-api][cat~rendering::graphics-api~badge]][cat~rendering::graphics-api]{{hi:Graphics APIs}} [![cat~visualization][cat~visualization~badge]][cat~visualization]{{hi:Visualization}}
 
-[`skia-safe`][c~skia_safe~docs]⮳{{hi:skia-safe}} offers "Bindings to the Skia C++ library. The most complete option with excellent performance. However, it can be difficult to get it to compile." ([blessed.rs](https://blessed.rs/crates#section-graphics)).
+[`skia-safe`][c~skia_safe~docs]↗{{hi:skia-safe}} offers "Bindings to the Skia C++ library. The most complete option with excellent performance. However, it can be difficult to get it to compile." ([blessed.rs](https://blessed.rs/crates#section-graphics)).
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/2d_renderers/skia_safe.rs:example}}
@@ -53,7 +53,7 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 
 [![webrender][c~webrender~docs~badge]][c~webrender~docs] [![webrender~crates.io][c~webrender~crates.io~badge]][c~webrender~crates.io] [![webrender~github][c~webrender~github~badge]][c~webrender~github] [![webrender~lib.rs][c~webrender~lib.rs~badge]][c~webrender~lib.rs]{{hi:webrender}}
 
-[`webrender`][c~webrender~docs]⮳{{hi:webrender}} is a GPU-accelerated 2D renderer for web content. "OpenGL-based. Mature with production usage in `Firefox` but documentation and OSS maintenance are lacking." ([blessed.rs](https://blessed.rs/crates#section-graphics)).
+[`webrender`][c~webrender~docs]↗{{hi:webrender}} is a GPU-accelerated 2D renderer for web content. "OpenGL-based. Mature with production usage in `Firefox` but documentation and OSS maintenance are lacking." ([blessed.rs](https://blessed.rs/crates#section-graphics)).
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/2d_renderers/webrender.rs:example}}
@@ -65,7 +65,7 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 
 [![vello][c~vello~docs~badge]][c~vello~docs] [![vello~crates.io][c~vello~crates.io~badge]][c~vello~crates.io] [![vello~github][c~vello~github~badge]][c~vello~github] [![vello~lib.rs][c~vello~lib.rs~badge]][c~vello~lib.rs]{{hi:vello}}{{hi:2d}}{{hi:Vector-graphics}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}} [![cat~rendering][cat~rendering~badge]][cat~rendering]{{hi:Rendering}}
 
-[`vello`][c~vello~docs]⮳{{hi:vello}} is a GPU compute-centric 2D renderer. "WGPU-based and uses cutting edge techniques to render vector paths using the GPU. Still somewhat immature and hasn't yet put out a stable release." ([blessed.rs](https://blessed.rs/crates#section-graphics)).
+[`vello`][c~vello~docs]↗{{hi:vello}} is a GPU compute-centric 2D renderer. "WGPU-based and uses cutting edge techniques to render vector paths using the GPU. Still somewhat immature and hasn't yet put out a stable release." ([blessed.rs](https://blessed.rs/crates#section-graphics)).
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/2d_renderers/vello.rs:example}}

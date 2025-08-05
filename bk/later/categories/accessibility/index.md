@@ -12,7 +12,7 @@ Assistive technology that helps overcome disabilities and impairments to make so
 
 ## Accessible Web
 
-[`html5ever`][c~html5ever~docs]⮳{{hi:html5ever}} / [`tl`][c~tl~docs]⮳{{hi:tl}} (HTML parsing), [`css-rs`][c~css~docs]⮳{{hi:css-rs}} (CSS parsing), [`url`][c~url~docs]⮳{{hi:url}} (URLs).
+[`html5ever`][c~html5ever~docs]↗{{hi:html5ever}} / [`tl`][c~tl~docs]↗{{hi:tl}} (HTML parsing), [`css-rs`][c~css~docs]↗{{hi:css-rs}} (CSS parsing), [`url`][c~url~docs]↗{{hi:url}} (URLs).
 
 - Semantic HTML: Use elements like <article>, <nav>. [[html | HTML]].
 - Image Alt Text: Good and bad examples, decorative images.
@@ -31,14 +31,14 @@ See:
 
 Clear output, screen reader support. See [[command-line-interface | Command Line Interface]].
 
-- [`termcolor`][c~termcolor~docs]⮳{{hi:termcolor}} (terminal styling), [`crossterm`][c~crossterm~docs]⮳{{hi:crossterm}} (terminal manipulation).
+- [`termcolor`][c~termcolor~docs]↗{{hi:termcolor}} (terminal styling), [`crossterm`][c~crossterm~docs]↗{{hi:crossterm}} (terminal manipulation).
 
 See [[command-line-interface | Command Line Interface]].
 
 ## Accessible Components (GUI)
 
 Focus, keyboard, ARIA.
-GUI crate itself (e.g., [`iced`][c~iced~docs]⮳{{hi:iced}}, [`egui`][c~egui~docs]⮳{{hi:egui}}).
+GUI crate itself (e.g., [`iced`][c~iced~docs]↗{{hi:iced}}, [`egui`][c~egui~docs]↗{{hi:egui}}).
 
 Consult the following sections:
 

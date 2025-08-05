@@ -9,18 +9,18 @@
 [![hyper~github][c~hyper~github~badge]][c~hyper~github]
 [![hyper~lib.rs][c~hyper~lib.rs~badge]][c~hyper~lib.rs]
 
-[`hyper`][c~hyper~docs]⮳{{hi:hyper}} is a low-level asynchronous HTTP implementation (both client and server). It implements HTTP/1 and HTTP/2. It works best with the [`tokio`][c~tokio~docs]⮳{{hi:tokio}} async runtime, but can support other runtimes.
+[`hyper`][c~hyper~docs]↗{{hi:hyper}} is a low-level asynchronous HTTP implementation (both client and server). It implements HTTP/1 and HTTP/2. It works best with the [`tokio`][c~tokio~docs]↗{{hi:tokio}} async runtime, but can support other runtimes.
 
-[`hyper`][c~hyper~docs]⮳{{hi:hyper}} is meant to be a building block for libraries and applications, for uses cases including:
+[`hyper`][c~hyper~docs]↗{{hi:hyper}} is meant to be a building block for libraries and applications, for uses cases including:
 
-- Low-level client libraries (e.g. [`curl`][c~curl~docs]⮳{{hi:curl}}, [`reqwest`][c~reqwest~docs]⮳{{hi:reqwest}}, `aws-sdk`).
-- Web server frameworks (e.g. [`deno`][c~deno~docs]⮳{{hi:deno}}, [`axum`][c~axum~docs]⮳{{hi:axum}}).
-- Services and Proxies (e.g. `linkerd`, [`cloudflare`][c~cloudflare~docs]⮳{{hi:cloudflare}}, [`fastly`][fastly]⮳{{hi:fastly}} ).
+- Low-level client libraries (e.g. [`curl`][c~curl~docs]↗{{hi:curl}}, [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}}, `aws-sdk`).
+- Web server frameworks (e.g. [`deno`][c~deno~docs]↗{{hi:deno}}, [`axum`][c~axum~docs]↗{{hi:axum}}).
+- Services and Proxies (e.g. `linkerd`, [`cloudflare`][c~cloudflare~docs]↗{{hi:cloudflare}}, [`fastly`][fastly]↗{{hi:fastly}} ).
 - Use of bleeding-edge protocols e.g HTTP/3.
 
-For other server use cases, please consider higher-level, easier libraries (like [`axum`][c~axum~docs]⮳{{hi:axum}}). Reach for the [`reqwest`][c~reqwest~docs]⮳{{hi:reqwest}} crate, if looking for a convenient HTTP client.
+For other server use cases, please consider higher-level, easier libraries (like [`axum`][c~axum~docs]↗{{hi:axum}}). Reach for the [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} crate, if looking for a convenient HTTP client.
 
-Note that [`hyper`][c~hyper~docs]⮳{{hi:hyper}} developers need to bring their own async runtime (e.g. Tokio), IO, and optionally TLS. Look at the [`hyper-tls`](https://crates.io/crates/hyper-tls), [`hyper-rustls`](https://crates.io/crates/hyper-rustls) and [`hyper-openssl`][hyper-openssl] crates for the latter. Routing, cookies, and non-HTTP protocols are out of scope. In particular, consider the family of [`tungstenite`][c~tungstenite~docs]⮳{{hi:tungstenite}} crates for WebSockets.
+Note that [`hyper`][c~hyper~docs]↗{{hi:hyper}} developers need to bring their own async runtime (e.g. Tokio), IO, and optionally TLS. Look at the [`hyper-tls`](https://crates.io/crates/hyper-tls), [`hyper-rustls`](https://crates.io/crates/hyper-rustls) and [`hyper-openssl`][hyper-openssl] crates for the latter. Routing, cookies, and non-HTTP protocols are out of scope. In particular, consider the family of [`tungstenite`][c~tungstenite~docs]↗{{hi:tungstenite}} crates for WebSockets.
 
 This said, we provide below an example of a HTTP server, following the recommendations of the [`hyper.rs`][c~hyper~website] guide:
 
@@ -44,7 +44,7 @@ Hyper TLS support via OpenSSL.
 
 ## References {#references}
 
-- [`hyper` examples][c~hyper~examples~github]⮳.
+- [`hyper` examples][c~hyper~examples~github]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

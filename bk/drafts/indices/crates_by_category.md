@@ -69,7 +69,7 @@
 | [![cat~web-programming::websocket][cat~web-programming::websocket~badge]][cat~web-programming::websocket]{{hi:WebSocket}} | Crates to communicate over the WebSocket protocol. | [![actix-web][c~actix_web~docs~badge]][c~actix_web~docs]{{hi:actix-web}} [![actix_web][c~actix_web~docs~badge]][c~actix_web~docs]{{hi:actix_web}} [![async-tungstenite][c~async_tungstenite~docs~badge]][c~async_tungstenite~docs]{{hi:async-tungstenite}} [![tokio-tungstenite][c~tokio_tungstenite~docs~badge]][c~tokio_tungstenite~docs]{{hi:tokio-tungstenite}} [![tungstenite][c~tungstenite~docs~badge]][c~tungstenite~docs]{{hi:tungstenite}} |
 | [![cat~os::windows-apis][cat~os::windows-apis~badge]][cat~os::windows-apis]{{hi:Windows APIs}} | Bindings to Windows-specific APIs. | [![winapi][c~winapi~docs~badge]][c~winapi~docs]{{hi:winapi}} [![windows][c~windows~docs~badge]][c~windows~docs]{{hi:windows}} |
 
-[All Valid Categories][crates.io~category_slugs]⮳.
+[All Valid Categories][crates.io~category_slugs]↗.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

@@ -44,7 +44,7 @@ v.clear();
 
 For fixed-size collections, use arrays. For small collections, using stack-allocated vectors may be more efficient by avoiding heap allocation altogether.
 
-Read [Implementing Vec](https://doc.rust-lang.org/nomicon/vec/vec.html)⮳ for more details about `Vec` memory management.
+Read [Implementing Vec](https://doc.rust-lang.org/nomicon/vec/vec.html)↗ for more details about `Vec` memory management.
 
 ## Other Data Structures {#skip}
 

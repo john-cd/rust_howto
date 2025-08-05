@@ -4,8 +4,8 @@
 
 Consider using:
 
-- [`mockall`][c~mockall~docs]⮳{{hi:mockall}}: A popular crate for creating mock objects for testing.
-- [`faux`][c~faux~docs]⮳{{hi:faux}}: Another mocking library.
+- [`mockall`][c~mockall~docs]↗{{hi:mockall}}: A popular crate for creating mock objects for testing.
+- [`faux`][c~faux~docs]↗{{hi:faux}}: Another mocking library.
 
 ## Mock with `mockall` {#mocking}
 

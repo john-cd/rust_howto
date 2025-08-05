@@ -156,12 +156,6 @@ consolidate CLIs
 
 ## Manually insert rest of cross-links WIP
 
-## Replace ⮳ by ↗ ?
-
-<https://fontawesome.com/icons/external-link?f=classic&s=light>
-
-<https://gist.github.com/miguelmota/322c89234d60de578f37d3c6d30f7e41#file-external_link_arrow-txt>
-
 ## Chrome Bookmarks
 
 - finish to review chrome bookmarks and include in text

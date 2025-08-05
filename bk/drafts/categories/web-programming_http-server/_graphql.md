@@ -13,7 +13,7 @@
 [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
-[`async-graphql`][c~async_graphql~docs]⮳{{hi:async-graphql}} is a high-performance graphql server library that's fully specification compliant. It integrates with [`actix-web`][c~actix_web~docs]⮳{{hi:actix-web}}, [`axum`][c~axum~docs]⮳{{hi:axum}}, [`poem`][c~poem~docs]⮳{{hi:poem}}, [`rocket`][c~rocket~docs]⮳{{hi:rocket}}, [`tide`][c~tide~docs]⮳{{hi:tide}}, and [`warp`][c~warp~docs]⮳{{hi:warp}}.
+[`async-graphql`][c~async_graphql~docs]↗{{hi:async-graphql}} is a high-performance graphql server library that's fully specification compliant. It integrates with [`actix-web`][c~actix_web~docs]↗{{hi:actix-web}}, [`axum`][c~axum~docs]↗{{hi:axum}}, [`poem`][c~poem~docs]↗{{hi:poem}}, [`rocket`][c~rocket~docs]↗{{hi:rocket}}, [`tide`][c~tide~docs]↗{{hi:tide}}, and [`warp`][c~warp~docs]↗{{hi:warp}}.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_server/examples/async_graphql.rs:example}}
@@ -23,7 +23,7 @@
 
 [![juniper~website][c~juniper~website~badge]][c~juniper~website] [![juniper][c~juniper~docs~badge]][c~juniper~docs] [![juniper~crates.io][c~juniper~crates.io~badge]][c~juniper~crates.io] [![juniper~github][c~juniper~github~badge]][c~juniper~github] [![juniper~lib.rs][c~juniper~lib.rs~badge]][c~juniper~lib.rs]{{hi:juniper}}{{hi:Apollo}}{{hi:Server}}{{hi:Graphql}}{{hi:Web}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}
 
-The [`juniper`][c~juniper~docs]⮳{{hi:juniper}} crate is another Rust implementation of GraphQL, facilitating the creation of GraphQL APIs with strong typing and schema definition. It allows Rust developers to define their API's data structure and query capabilities in a declarative way.
+The [`juniper`][c~juniper~docs]↗{{hi:juniper}} crate is another Rust implementation of GraphQL, facilitating the creation of GraphQL APIs with strong typing and schema definition. It allows Rust developers to define their API's data structure and query capabilities in a declarative way.
 
 Juniper doesn't include a web server. Instead, it provides building blocks to make integration with existing servers straightforward, including embedded GraphiQL and/or GraphQL Playground for easy debugging.
 

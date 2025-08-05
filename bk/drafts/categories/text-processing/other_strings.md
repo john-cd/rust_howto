@@ -4,7 +4,7 @@
 
 ## Work with Platform-specific Strings with `OsString` and `OsStr` {#osstring}
 
-[`std::ffi::OsString`](https://doc.rust-lang.org/std/ffi/struct.OsString.html)⮳ is a type that can represent owned, mutable platform-native strings, but is cheaply inter-convertible with Rust strings.
+[`std::ffi::OsString`](https://doc.rust-lang.org/std/ffi/struct.OsString.html)↗ is a type that can represent owned, mutable platform-native strings, but is cheaply inter-convertible with Rust strings.
 
 The need for this type arises from the fact that:
 
@@ -14,7 +14,7 @@ The need for this type arises from the fact that:
 
 `OsString` and `OsStr` bridge this gap by simultaneously representing Rust and platform-native string values, and in particular allowing a Rust string to be converted into an “OS” string with no cost if possible. A consequence of this is that `OsString` instances are not NUL terminated; in order to pass to e.g., Unix system call, you should create a `CStr`.
 
-[`std::ffi::OsStr`](https://doc.rust-lang.org/std/ffi/struct.OsStr.html)⮳ is a borrowed reference to an OS string. `&OsStr` is to `OsString` as `&str` is to `String`: the former in each pair are borrowed references; the latter are owned strings.
+[`std::ffi::OsStr`](https://doc.rust-lang.org/std/ffi/struct.OsStr.html)↗ is a borrowed reference to an OS string. `&OsStr` is to `OsString` as `&str` is to `String`: the former in each pair are borrowed references; the latter are owned strings.
 
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/examples/other_strings/osstring.rs:example}}
@@ -31,7 +31,7 @@ C strings are different from Rust strings:
 
 Use `CString` and `CStr` when you need to convert Rust UTF-8 strings to and from C-style strings. Their primary use case is **FFI**, Foreign Function Interface, the mechanism by which Rust interacts with code written in other languages with a C ABI, like C and Python.
 
-[`std::ffi::CString`](https://doc.rust-lang.org/std/ffi/struct.CString.html)⮳ represents an owned, C-compatible, nul-terminated string with no nul bytes in the middle. A `CString` can be created from either a byte slice or a byte vector, or anything that implements `Into<Vec<u8>>` (for example, you can build a `CString` straight out of a `String` or a `&str`, since both implement that trait).
+[`std::ffi::CString`](https://doc.rust-lang.org/std/ffi/struct.CString.html)↗ represents an owned, C-compatible, nul-terminated string with no nul bytes in the middle. A `CString` can be created from either a byte slice or a byte vector, or anything that implements `Into<Vec<u8>>` (for example, you can build a `CString` straight out of a `String` or a `&str`, since both implement that trait).
 
 `std::ffi::CStr` represents a borrowed reference to a nul-terminated array of bytes. It can be constructed safely from a `&[u8]` slice, or unsafely from a raw `*const c_char`. It can be expressed as a literal in the form `c"Hello world"`. Note that this structure does not have a guaranteed layout (the `repr(transparent)` notwithstanding) and should not be directly placed in the signatures of FFI functions. Instead, safe wrappers of FFI functions may leverage `CStr::as_ptr` and the unsafe `CStr::from_ptr` constructor to provide a safe interface to other consumers.
 
@@ -45,7 +45,7 @@ Use `CString` and `CStr` when you need to convert Rust UTF-8 strings to and from
 
 [![bstr][c~bstr~docs~badge]][c~bstr~docs] [![bstr~crates.io][c~bstr~crates.io~badge]][c~bstr~crates.io] [![bstr~github][c~bstr~github~badge]][c~bstr~github] [![bstr~lib.rs][c~bstr~lib.rs~badge]][c~bstr~lib.rs]{{hi:bstr}}{{hi:Text}}{{hi:String}}{{hi:Byte}}{{hi:Bytes}}{{hi:Str}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
-[`bstr`][c~bstr~docs]⮳{{hi:bstr}} offers a string type that is not required to be valid UTF-8.
+[`bstr`][c~bstr~docs]↗{{hi:bstr}} offers a string type that is not required to be valid UTF-8.
 
 This crate provides extension traits for `&[u8]` and `Vec<u8>` that enable their use as byte strings, where byte strings are conventionally UTF-8. This differs from the standard library's `String` and `str` types in that they are *not* required to be valid UTF-8, but may be fully or partially valid UTF-8.
 
@@ -69,13 +69,13 @@ The `ustr` crate implements string interning, i.e. storing only one copy of each
 {{#include ../../../crates/cats/text_processing/examples/other_strings/ustr.rs:example}}
 ```
 
-You may also use the [string_cache](https://docs.rs/string_cache/latest/string_cache/)⮳ library for interning things that are `AsRef<str>`.
+You may also use the [string_cache](https://docs.rs/string_cache/latest/string_cache/)↗ library for interning things that are `AsRef<str>`.
 
 ## Work with Small Formatted Strings with `compact_str` {#compact_str}
 
 [![compact_str][c~compact_str~docs~badge]][c~compact_str~docs] [![compact_str~crates.io][c~compact_str~crates.io~badge]][c~compact_str~crates.io] [![compact_str~github][c~compact_str~github~badge]][c~compact_str~github] [![compact_str~lib.rs][c~compact_str~lib.rs~badge]][c~compact_str~lib.rs]{{hi:compact_str}}{{hi:Compact}}{{hi:Memory}}{{hi:Mutable}}{{hi:Small}}{{hi:String}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
-If you need small formatted string, consider a string type implementing small-string optimization. For example, [compact_str](https://crates.io/crates/compact_str)⮳ implements `CompactString`, a memory efficient string type that can store smaller strings on the stack and transparently stores longer strings on the heap.
+If you need small formatted string, consider a string type implementing small-string optimization. For example, [compact_str](https://crates.io/crates/compact_str)↗ implements `CompactString`, a memory efficient string type that can store smaller strings on the stack and transparently stores longer strings on the heap.
 
 ## Related Topics {#related-topics}
 

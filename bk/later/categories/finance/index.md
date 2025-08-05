@@ -7,8 +7,8 @@ Date/time handling is essential. Data access depends on your data source. Tradin
 ## Working with Currencies
 
 `iso_currency`
-[`iso4217`][c~iso4217~docs]⮳{{hi:iso4217}} provides ISO 4217 currency codes.
-[`rust-money`][c~rust_money~docs]⮳{{hi:rust-money}} for working with monetary values and currencies.
+[`iso4217`][c~iso4217~docs]↗{{hi:iso4217}} provides ISO 4217 currency codes.
+[`rust-money`][c~rust_money~docs]↗{{hi:rust-money}} for working with monetary values and currencies.
 
 ## Quantitative Analysis
 
@@ -22,7 +22,7 @@ Building models to analyze financial data.
 
 ## Financial Calculations
 
-[`financial`][c~financial~docs]⮳{{hi:financial}}: Provides a range of financial calculations (present value, future value, interest rates, etc.). A good starting point.
+[`financial`][c~financial~docs]↗{{hi:financial}}: Provides a range of financial calculations (present value, future value, interest rates, etc.). A good starting point.
 
 - Time value of money: Present value, future value, etc.
 - Interest rates: Simple, compound, APR, APY.
@@ -36,16 +36,16 @@ See [[additional_numeric_types | Additional Numeric Types]].
 
 ### Date and Time Handling
 
-[`chrono`][c~chrono~docs]⮳{{hi:chrono}}: A widely used crate for date and time calculations.
-[`time`][c~time~docs]⮳{{hi:time}}: A newer crate, often preferred.
+[`chrono`][c~chrono~docs]↗{{hi:chrono}}: A widely used crate for date and time calculations.
+[`time`][c~time~docs]↗{{hi:time}}: A newer crate, often preferred.
 
 See [[date-and-time | Date and Time]].
 
 ### Data Analysis and Statistics
 
-[`statrs`][c~statrs~docs]⮳{{hi:statrs}}: A comprehensive statistics library.
-[`nalgebra`][c~nalgebra~docs]⮳{{hi:nalgebra}}: Linear algebra crate, often used in financial modeling.
-[`ndarray`][c~ndarray~docs]⮳{{hi:ndarray}}: N-dimensional arrays, useful for handling financial data.
+[`statrs`][c~statrs~docs]↗{{hi:statrs}}: A comprehensive statistics library.
+[`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}}: Linear algebra crate, often used in financial modeling.
+[`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}: N-dimensional arrays, useful for handling financial data.
 
 See [[mathematics | Mathematics]], [[linear_algebra | Linear Algebra]], and [[statistics | Statistics]].
 
@@ -53,14 +53,14 @@ See [[mathematics | Mathematics]], [[linear_algebra | Linear Algebra]], and [[st
 
 There are many options depending on your data source.
 
-Examples include [`reqwest`][c~reqwest~docs]⮳{{hi:reqwest}} for making HTTP requests to financial APIs,
-[`csv`][c~csv~docs]⮳{{hi:csv}} for reading and writing CSV files (common for financial data), and [`serde`][c~serde~docs]⮳{{hi:serde}} for serializing and deserializing financial data.
+Examples include [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} for making HTTP requests to financial APIs,
+[`csv`][c~csv~docs]↗{{hi:csv}} for reading and writing CSV files (common for financial data), and [`serde`][c~serde~docs]↗{{hi:serde}} for serializing and deserializing financial data.
 
 See [[encoding | Encoding]], [[serde | Serde]], [[csv | CSV]], [[json | JSON]], [[web-programming_http-client | Web Programming: HTTP Client]].
 
 ## Charting and Visualization
 
-[`plotters`][c~plotters~docs]⮳{{hi:plotters}} is a plotting library that can create charts and graphs of financial data.
+[`plotters`][c~plotters~docs]↗{{hi:plotters}} is a plotting library that can create charts and graphs of financial data.
 
 See [[visualization | Visualization]].
 
@@ -87,12 +87,12 @@ Needs in-depth review.
 
 Review / incorporate:
 
-- [`rust_decimal`][c~rust_decimal~docs]⮳{{hi:rust_decimal}} - ~2M downloads.
+- [`rust_decimal`][c~rust_decimal~docs]↗{{hi:rust_decimal}} - ~2M downloads.
 - `iso_currency` - ~19k downloads.
-- [`RustQuant`][c~rustquant~docs]⮳{{hi:RustQuant}} ~4.1k.
+- [`RustQuant`][c~rustquant~docs]↗{{hi:RustQuant}} ~4.1k.
 - `apca` mentioned in Awesome Rust.
 - `stochastic-rs` mentioned in Awesome Rust.
-- Mention [`financial`][c~financial~docs]⮳{{hi:financial}} a collection of finance calculations mimicking some of Excel Financial Functions interface.
+- Mention [`financial`][c~financial~docs]↗{{hi:financial}} a collection of finance calculations mimicking some of Excel Financial Functions interface.
 - Mention `black_scholes`.
 
 Cover Excel data import, yahoo finance, databento, alpaca.

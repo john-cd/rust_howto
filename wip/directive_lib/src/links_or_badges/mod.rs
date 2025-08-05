@@ -17,7 +17,7 @@
 //!
 //! * Category links:
 //!
-//! {{cat: accessibility}} -> [Accessibility][cat~accessibility]⮳{{hi:accessibility}}
+//! {{cat: accessibility}} -> [Accessibility][cat~accessibility]↗{{hi:accessibility}}
 //!
 //! * Crate badges:
 //!

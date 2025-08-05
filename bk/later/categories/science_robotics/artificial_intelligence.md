@@ -4,7 +4,7 @@
 
 Behavior trees, decision-making, machine learning.
 
-Consider [`bonsai-bt`][c~bonsai_bt~docs]⮳{{hi:bonsai-bt}} (Behavior Tree implementation) and `optimization-engine`, a pure Rust framework for embedded nonconvex optimization.
+Consider [`bonsai-bt`][c~bonsai_bt~docs]↗{{hi:bonsai-bt}} (Behavior Tree implementation) and `optimization-engine`, a pure Rust framework for embedded nonconvex optimization.
 
 ## Create a Behavior Tree with `bonsai-bt` {#bonsai-bt}
 
@@ -13,7 +13,7 @@ Consider [`bonsai-bt`][c~bonsai_bt~docs]⮳{{hi:bonsai-bt}} (Behavior Tree imple
 [![bonsai-bt~github][c~bonsai_bt~github~badge]][c~bonsai_bt~github]
 [![bonsai-bt~lib.rs][c~bonsai_bt~lib.rs~badge]][c~bonsai_bt~lib.rs]
 
-[`bonsai-bt`][c~bonsai_bt~docs]⮳{{hi:bonsai-bt}} is a Rust implementation of behavior trees. A [Behavior Tree (Wikipedia)][behavior-tree~wikipedia] (BT) is a data structure in which we can set the rules of how certain behavior's can occur, and the order in which they would execute. BTs are a very efficient way of creating complex systems that are both modular and reactive. These properties are crucial in many applications, which has led to the spread of BT from computer game programming to many branches of AI and Robotics.
+[`bonsai-bt`][c~bonsai_bt~docs]↗{{hi:bonsai-bt}} is a Rust implementation of behavior trees. A [Behavior Tree (Wikipedia)][behavior-tree~wikipedia] (BT) is a data structure in which we can set the rules of how certain behavior's can occur, and the order in which they would execute. BTs are a very efficient way of creating complex systems that are both modular and reactive. These properties are crucial in many applications, which has led to the spread of BT from computer game programming to many branches of AI and Robotics.
 
 ```rust,editable
 {{#include ../../../crates/cats/science_robotics/examples/artificial_intelligence/bonsai_bt.rs:example}}

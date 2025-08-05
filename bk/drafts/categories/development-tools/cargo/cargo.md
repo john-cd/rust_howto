@@ -4,9 +4,9 @@
 
 ## Basic `cargo` Usage {#basic-cargo-usage}
 
-[The Cargo book][c~cargo~book]⮳ [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}{{hi:cargo}}
+[The Cargo book][c~cargo~book]↗ [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}{{hi:cargo}}
 
-[`cargo`][c~cargo~docs]⮳{{hi:cargo}}
+[`cargo`][c~cargo~docs]↗{{hi:cargo}}
 
 `cargo help` or `cargo <command> --help`
 
@@ -82,11 +82,11 @@ Examples of version requirements{{hi:Version requirements}} and the versions tha
 0      :=  >=0.0.0, <1.0.0
 ```
 
-Details in [Specifying Dependencies][book~cargo~specifying-dependencies]⮳.
+Details in [Specifying Dependencies][book~cargo~specifying-dependencies]↗.
 
 If you're [building][p~building] a non-end product, such as a rust library that other rust packages will depend on, put `Cargo.lock` in your `.gitignore`.
 
-If you're [building][p~building] an end product, which are executable like command-line tool or an application, or a system library with crate-type of [`staticlib`][book~rust-reference~linkage]{{hi:staticlib}}⮳ or [`cdylib`][book~rust-reference~linkage]{{hi:cdylib}}⮳, check `Cargo.lock`{{hi:Cargo.lock}} into git.
+If you're [building][p~building] an end product, which are executable like command-line tool or an application, or a system library with crate-type of [`staticlib`][book~rust-reference~linkage]{{hi:staticlib}}↗ or [`cdylib`][book~rust-reference~linkage]{{hi:cdylib}}↗, check `Cargo.lock`{{hi:Cargo.lock}} into git.
 
 ```sh
 # Add dependencies to Cargo.toml from the command line

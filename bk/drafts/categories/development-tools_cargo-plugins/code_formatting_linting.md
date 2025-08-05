@@ -16,7 +16,7 @@
 [![rustfmt-nightly~lib.rs][c~rustfmt_nightly~lib.rs~badge]][c~rustfmt_nightly~lib.rs]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[`rustfmt`][c~rustfmt~docs]⮳{{hi:rustfmt}}
+[`rustfmt`][c~rustfmt~docs]↗{{hi:rustfmt}}
 
 ```sh
 # Install `rustfmt` if needed
@@ -36,7 +36,7 @@ cargo fmt -- --check
 [![clippy~lib.rs][c~clippy~lib.rs~badge]][c~clippy~lib.rs]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[`cargo-clippy`][c~clippy~book]⮳{{hi:cargo-clippy}} is the official Rust linter. It catches common mistakes and improves your Rust code.
+[`cargo-clippy`][c~clippy~book]↗{{hi:cargo-clippy}} is the official Rust linter. It catches common mistakes and improves your Rust code.
 
 ```sh
 rustup component add clippy # install if needed
@@ -67,11 +67,11 @@ cargo fix
 [![cargo-husky~lib.rs][c~cargo_husky~lib.rs~badge]][c~cargo_husky~lib.rs]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 
-[cargo-husky][c~cargo_husky~github]{{hi:cargo-husky}}⮳ setup Git hooks automatically for [`cargo`][c~cargo~docs]⮳{{hi:cargo}} projects with 🐶
+[cargo-husky][c~cargo_husky~github]{{hi:cargo-husky}}↗ setup Git hooks automatically for [`cargo`][c~cargo~docs]↗{{hi:cargo}} projects with 🐶
 
 Git hook scripts are useful for identifying simple issues (failing tests, trailing white spaces, [formatting][p~formatting] of the code, of [JSON][p~json], and YAML files...) before committing code, prior to submission to code review.
 
-Add the [`cargo-husky`][c~cargo_husky~docs]⮳{{hi:cargo-husky}} crate to the `[dev-dependencies]` section of your project's [`Cargo.toml`][book~cargo~cargo-toml]⮳{{hi:Cargo.toml}}.
+Add the [`cargo-husky`][c~cargo_husky~docs]↗{{hi:cargo-husky}} crate to the `[dev-dependencies]` section of your project's [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}.
 
 ```toml
 [dev-dependencies]
@@ -84,7 +84,7 @@ Then run tests in your project directory.
 cargo test
 ```
 
-See also [`pre-commit`][pre-commit.com~website]⮳, which is a Python framework for managing and [maintaining][p~maintaining] multi-language pre-commit hooks.
+See also [`pre-commit`][pre-commit.com~website]↗, which is a Python framework for managing and [maintaining][p~maintaining] multi-language pre-commit hooks.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -14,9 +14,9 @@ configuration toggle is set (which is the default).
 - {{cat : xyz}}
 - {{cat x-y_z::a-b_c }}
 
-{{cat: accessibility}} -> [Accessibility][cat~accessibility]⮳{{hi:accessibility}}
+{{cat: accessibility}} -> [Accessibility][cat~accessibility]↗{{hi:accessibility}}
 
 ## Category Links with Title
 
 - {{cat xyz | XYZ }}
-- {{cat development-tools::testing | Testing }} -> [Testing][cat~development-tools::testing]⮳{{hi:development-tools::testing}}
+- {{cat development-tools::testing | Testing }} -> [Testing][cat~development-tools::testing]↗{{hi:development-tools::testing}}

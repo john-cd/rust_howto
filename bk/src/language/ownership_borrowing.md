@@ -66,7 +66,7 @@ Assignment (of non-`Copy` values) is not the only event that triggers a move: pa
 
 Rust will never automatically create deep copies of your data, because, as described above, it can be expensive.
 
-Instead, you may explicitly request a deep copy by calling the `clone` method of the [`std::clone::Clone`][c~std::clone::Clone~docs]{{hi:std::clone::Clone}}⮳ trait:
+Instead, you may explicitly request a deep copy by calling the `clone` method of the [`std::clone::Clone`][c~std::clone::Clone~docs]{{hi:std::clone::Clone}}↗ trait:
 
 ```rust,editable
 {{#include ../../crates/language/examples/ownership_borrowing/clone.rs:example}}
@@ -79,7 +79,7 @@ However, you will often simply add the `#[derive(Clone)]` attribute to have the 
 
 For stack-only, fixed-size variables (which include integers, floats, bools, chars, tuples thereof, and immutable references), there's no need for "move" semantics, because there's no heap data or requirements for special deallocation logic.
 
-Such stack-only values, and more precisely all types that implement the [`std::marker::Copy`][c~std::marker::Copy~docs]{{hi:std::marker::Copy}}⮳ trait, use "Copy Semantics" instead:
+Such stack-only values, and more precisely all types that implement the [`std::marker::Copy`][c~std::marker::Copy~docs]{{hi:std::marker::Copy}}↗ trait, use "Copy Semantics" instead:
 
 When you assign a variable of a `Copy` type to another, a simple _bitwise copy_ of the value is made, and _the original variable remains valid_.
 
@@ -152,7 +152,7 @@ The same applies to mutable references:
 
 ## References {#references}
 
-- [Rust re-borrowing and memory safety][blog~rust-re-borrowing-and-memory-safety]⮳.
+- [Rust re-borrowing and memory safety][blog~rust-re-borrowing-and-memory-safety]↗.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

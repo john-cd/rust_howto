@@ -80,7 +80,7 @@ When writing a library or in contexts where the public API must remain stable, `
 
 ## References {#references}
 
-- [Visibility and Privacy (Rust reference)](https://doc.rust-lang.org/reference/visibility-and-privacy.html?highlight=pub#visibility-and-privacy)⮳.
+- [Visibility and Privacy (Rust reference)](https://doc.rust-lang.org/reference/visibility-and-privacy.html?highlight=pub#visibility-and-privacy)↗.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

@@ -13,7 +13,7 @@
 [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 [![cat~os::unix-apis][cat~os::unix-apis~badge]][cat~os::unix-apis]{{hi:Unix APIs}}
 
-[`rustix`][c~rustix~docs]⮳{{hi:rustix}} offers efficient and safe POSIX / *nix / Winsock syscall-like APIs. It uses idiomatic Rust types: refs, slices, Results instead of raw pointers, safe wrappers around raw file descriptors, [`bitflags`][c~bitflags~docs]⮳{{hi:bitflags}} instead of bare integer flags, and several other conveniences.
+[`rustix`][c~rustix~docs]↗{{hi:rustix}} offers efficient and safe POSIX / *nix / Winsock syscall-like APIs. It uses idiomatic Rust types: refs, slices, Results instead of raw pointers, safe wrappers around raw file descriptors, [`bitflags`][c~bitflags~docs]↗{{hi:bitflags}} instead of bare integer flags, and several other conveniences.
 
 ```rust,editable
 {{#include ../../../crates/cats/os_unix_apis/examples/unix/rustix.rs:example}}
@@ -27,7 +27,7 @@
 [![nix~lib.rs][c~nix~lib.rs~badge]][c~nix~lib.rs]
 [![cat~os::unix-apis][cat~os::unix-apis~badge]][cat~os::unix-apis]{{hi:Unix APIs}}
 
-[`nix`][c~nix~docs]⮳{{hi:nix}} provides bindings to the various *nix system [functions][p~functions] (Unix, Linux, MacOS, etc.).
+[`nix`][c~nix~docs]↗{{hi:nix}} provides bindings to the various *nix system [functions][p~functions] (Unix, Linux, MacOS, etc.).
 
 ```rust,editable
 {{#include ../../../crates/cats/os_unix_apis/examples/unix/nix.rs:example}}

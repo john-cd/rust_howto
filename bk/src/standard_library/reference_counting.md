@@ -8,9 +8,9 @@
 
 The `Rc<T>` type (for "Reference Counted") enables _shared ownership_ of a value.
 
-- `Rc` maintains a reference count of the number of owners. You can create additional references to the data using the [`clone`][c~std::clone::Clone~docs]⮳{{hi:clone}} method. Cloning an `Rc` only increments the reference count without duplicating the data. When the last owner goes out of scope, the data is automatically cleaned up (dropped).
+- `Rc` maintains a reference count of the number of owners. You can create additional references to the data using the [`clone`][c~std::clone::Clone~docs]↗{{hi:clone}} method. Cloning an `Rc` only increments the reference count without duplicating the data. When the last owner goes out of scope, the data is automatically cleaned up (dropped).
 - If you need mutability, put a `Cell` or `RefCell` inside the `Rc`.
-- `Rc` automatically dereferences to `T` (via the [`Deref`][c~std::ops::Deref~docs]⮳{{hi:Deref}} trait), so you can call `T`'s methods on a value of type `Rc<T>`.
+- `Rc` automatically dereferences to `T` (via the [`Deref`][c~std::ops::Deref~docs]↗{{hi:Deref}} trait), so you can call `T`'s methods on a value of type `Rc<T>`.
 - `Rc` is commonly used in [data structures][p~data-structures], such as graphs and linked lists, where multiple nodes might need to share ownership of certain nodes or data.
 - Keep in mind that `Rc` is not thread-safe. For concurrent scenarios, you should use `Arc` (Atomic Reference Counted), which provides similar functionality with thread safety.
 

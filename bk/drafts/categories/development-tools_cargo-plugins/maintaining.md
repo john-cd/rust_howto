@@ -11,7 +11,7 @@
 | [[testing | Testing]] | `cargo test` runs your unit and integration tests. |
 | [[benchmarking | Benchmarking]] | `cargo bench` runs your benchmarks. |
 | [[code_coverage | Code Coverage]] | `cargo tarpaulin` runs code coverage analysis. |
-| Refactoring | Refactoring is often IDE-driven, but some tools exist: [`cargo-expand`][c~cargo_expand~docs]⮳{{hi:cargo-expand}} expands [macros][p~macros], for example. |
+| Refactoring | Refactoring is often IDE-driven, but some tools exist: [`cargo-expand`][c~cargo_expand~docs]↗{{hi:cargo-expand}} expands [macros][p~macros], for example. |
 | [[versioning | Version Management]] | `cargo-bump` helps to automate version updates in your Cargo.toml. |
 
 ## Lint Your Crate API Changes for Semver Violations {#cargo-semver-checks}
@@ -23,7 +23,7 @@
 [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}}
 [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[`cargo-semver-checks`][c~cargo_semver_checks~docs]⮳{{hi:cargo-semver-checks}} scans your Rust crate for [`semver`][c~semver~docs]⮳{{hi:semver}} violations.
+[`cargo-semver-checks`][c~cargo_semver_checks~docs]↗{{hi:cargo-semver-checks}} scans your Rust crate for [`semver`][c~semver~docs]↗{{hi:semver}} violations.
 
 ```sh
 # If you Already Use `cargo-binstall` for Faster Tool installations:
@@ -46,7 +46,7 @@ $ cargo semver-checks
 [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}}
 [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[`cargo cache`][c~cargo_cache~github]{{hi:cargo-cache}}⮳ manages the [`cargo`][c~cargo~docs]⮳{{hi:cargo}} cache ($CARGO_HOME or ~/.cargo/), shows sizes and removes directories selectively.
+[`cargo cache`][c~cargo_cache~github]{{hi:cargo-cache}}↗ manages the [`cargo`][c~cargo~docs]↗{{hi:cargo}} cache ($CARGO_HOME or ~/.cargo/), shows sizes and removes directories selectively.
 
 ## `cargo expand` {#cargo-expand}
 
@@ -58,7 +58,7 @@ $ cargo semver-checks
 
 [![cargo-hack][c~cargo_hack~docs~badge]][c~cargo_hack~docs] [![cargo-hack~crates.io][c~cargo_hack~crates.io~badge]][c~cargo_hack~crates.io] [![cargo-hack~github][c~cargo_hack~github~badge]][c~cargo_hack~github] [![cargo-hack~lib.rs][c~cargo_hack~lib.rs~badge]][c~cargo_hack~lib.rs]{{hi:cargo-hack}}{{hi:Cargo}}{{hi:Subcommand}}{{hi:Testing}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
 
-`cargo hack` is a [`cargo`][c~cargo~docs]⮳{{hi:cargo}} subcommand to provide various options useful for [testing][p~testing] and continuous integration.
+`cargo hack` is a [`cargo`][c~cargo~docs]↗{{hi:cargo}} subcommand to provide various options useful for [testing][p~testing] and continuous integration.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

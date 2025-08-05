@@ -2,7 +2,7 @@
 
 {{#include send_emails.incl.md}}
 
-[`lettre`][c~lettre~docs]⮳{{hi:lettre}} is a widely used crate for sending emails and is generally the recommended choice. It supports various transports (SMTP, sendmail, etc.). [`mail-send`][c~mail_send~docs]⮳{{hi:mail-send}} is another option for sending emails.
+[`lettre`][c~lettre~docs]↗{{hi:lettre}} is a widely used crate for sending emails and is generally the recommended choice. It supports various transports (SMTP, sendmail, etc.). [`mail-send`][c~mail_send~docs]↗{{hi:mail-send}} is another option for sending emails.
 
 ## Build Email Messages {#build_email_messages}
 
@@ -13,7 +13,7 @@
 [![cat~email][cat~email~badge]][cat~email]{{hi:Email}}
 [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
-[`lettre`][c~lettre~docs]⮳{{hi:lettre}} provides convenient builders.
+[`lettre`][c~lettre~docs]↗{{hi:lettre}} provides convenient builders.
 
 {{example build_email_messages}}
 
@@ -32,13 +32,13 @@
 
 ### Send Emails Asynchronously {#skip}
 
-[`lettre`][c~lettre~docs]⮳{{hi:lettre}} supports asynchronous sending.
+[`lettre`][c~lettre~docs]↗{{hi:lettre}} supports asynchronous sending.
 
 ### Send Emails Securely {#skip}
 
-[`lettre`][c~lettre~docs]⮳{{hi:lettre}} integrates with TLS (Transport Layer Security) for secure email transmission.
+[`lettre`][c~lettre~docs]↗{{hi:lettre}} integrates with TLS (Transport Layer Security) for secure email transmission.
 
-[`lettre`][c~lettre~docs]⮳{{hi:lettre}} also supports various authentication mechanisms for SMTP.
+[`lettre`][c~lettre~docs]↗{{hi:lettre}} also supports various authentication mechanisms for SMTP.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

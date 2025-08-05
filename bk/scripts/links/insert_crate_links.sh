@@ -37,7 +37,7 @@ do
       echo "Pattern: ${pattern}"
       # Find the reference, if any, and create the link(s), separated by spaces if multiple. Trim last space.
       # -I = no filename; -N = no line number; -o = only-matching; -i = ignore case
-      links=$(rg -INio --null-data '\[(c-'"${pattern}"')\]:' -r '[`'"${in_backticks}"'`][$1]⮳{{hi:'"${in_backticks}"'}}' ${root}src/refs/crate-refs.md | tr '\0' ' ' | sed -E -e 's/ +$//' )
+      links=$(rg -INio --null-data '\[(c-'"${pattern}"')\]:' -r '[`'"${in_backticks}"'`][$1]↗{{hi:'"${in_backticks}"'}}' ${root}src/refs/crate-refs.md | tr '\0' ' ' | sed -E -e 's/ +$//' )
       if [ -n "${links}" ]; then
         links=$( sed -E -e 's#(\\|~|&)#\\\1#g' <<< "$links" ) # Escape \ ~ &
         echo "Links: ${links}"

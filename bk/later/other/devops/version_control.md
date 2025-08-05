@@ -16,9 +16,9 @@ The following describes tools that make
 
 Git hook scripts are useful for automatically identifying simple issues, such as missing semicolons, trailing whitespace, poor [[code_formatting_linting | formatting]] of the code or [configuration][p~configuration] files, when committing in `git`, prior to submission to code review or start of a CI workflow.
 
-[cargo-husky][c~cargo_husky~github]{{hi:cargo-husky}}⮳ setup Git hooks automatically for [`cargo`][c~cargo~docs]⮳{{hi:cargo}} projects with 🐶.
+[cargo-husky][c~cargo_husky~github]{{hi:cargo-husky}}↗ setup Git hooks automatically for [`cargo`][c~cargo~docs]↗{{hi:cargo}} projects with 🐶.
 
-Add the [`cargo-husky`][c~cargo_husky~docs]⮳{{hi:cargo-husky}} crate to the `[dev-dependencies]` section of your project's [`Cargo.toml`][book~cargo~cargo-toml]⮳{{hi:Cargo.toml}}.
+Add the [`cargo-husky`][c~cargo_husky~docs]↗{{hi:cargo-husky}} crate to the `[dev-dependencies]` section of your project's [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}.
 
 ```toml
 [dev-dependencies]
@@ -33,11 +33,11 @@ cargo test
 
 ## `pre-commit` {#pre-commit}
 
-[`pre-commit`][pre-commit.com~website]⮳ is a Python framework for managing and maintaining multi-language pre-commit hooks.
+[`pre-commit`][pre-commit.com~website]↗ is a Python framework for managing and maintaining multi-language pre-commit hooks.
 
 - [`pre-commit` hooks][pre-commit.com~hooks~website].
 
-`pre-commit` is written in Python. Include the following into your [`Dockerfile`][dockerfile]⮳{{hi:Dockerfile}} or run the commands by hand to install `pre-commit`:
+`pre-commit` is written in Python. Include the following into your [`Dockerfile`][dockerfile]↗{{hi:Dockerfile}} or run the commands by hand to install `pre-commit`:
 
 ```sh
 # Install `python3`, `pipx`, `pre-commit` (Ubuntu & friends)

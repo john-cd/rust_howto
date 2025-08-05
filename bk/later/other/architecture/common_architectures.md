@@ -22,7 +22,7 @@ Each microservice
 
 Microservices communicate with each other through well-defined APIs, promoting loose coupling.
 
-Crates like [`axum`][c~axum~docs]⮳{{hi:axum}}, [`warp`][c~warp~docs]⮳{{hi:warp}} or [`tonic`][c~tonic~docs]⮳{{hi:tonic}} can help build such services.
+Crates like [`axum`][c~axum~docs]↗{{hi:axum}}, [`warp`][c~warp~docs]↗{{hi:warp}} or [`tonic`][c~tonic~docs]↗{{hi:tonic}} can help build such services.
 
 ### Key Technologies {#skip2}
 
@@ -31,7 +31,7 @@ Crates like [`axum`][c~axum~docs]⮳{{hi:axum}}, [`warp`][c~warp~docs]⮳{{hi:wa
 - API Gateway: Use an API gateway (e.g., `Kong`) to handle routing, [authentication][p~authentication], and other cross-cutting concerns.
 - Message Queues: Use message queues (e.g., `RabbitMQ`, `Kafka`) for [asynchronous][p~asynchronous] communication.
 - [Containerization][p~containerization]: Use `Docker` and `Kubernetes` for [containerization][p~containerization] and orchestration.
-- Logging and Monitoring: Implement central logging and monitoring with `Fluentd`; [`Elasticsearch`][c~elasticsearch~docs]⮳{{hi:Elasticsearch}}, `Logstash`, and `Kibana`; `Graylog`, `Splunk`, `Prometheus` and/or `Grafana`.
+- Logging and Monitoring: Implement central logging and monitoring with `Fluentd`; [`Elasticsearch`][c~elasticsearch~docs]↗{{hi:Elasticsearch}}, `Logstash`, and `Kibana`; `Graylog`, `Splunk`, `Prometheus` and/or `Grafana`.
 - [Error Handling][p~error-handling] and Resilience: Implement retry mechanisms, circuit breakers, and other resilience patterns.
 - Configuration Management: externalize configuration and secrets e.g. with `Vault`.
 - Authentication/Authorization: Implement security with `JWT` (JSON Web Tokens) or `OAuth 2.0` / `OpenID Connect` (OIDC), using the aforementioned API Gateway or a sidecar proxy (e.g. `Envoy`, `Istio`).
@@ -79,7 +79,7 @@ In an Event-driven architecture (EDA), applications communicate by producing and
 - Event Producers and Consumers: Systems or components communicate by emitting and responding to events.
 - Event Bus/Queue: Acts as a mediator for events, often using tools like `Kafka`, `RabbitMQ`, or other message brokers.
 - [Asynchronous][p~asynchronous] Communication: Components operate independently and interact via events.
-- Often implemented with libraries like [`tokio`][c~tokio~docs]⮳{{hi:tokio}} or [`async-std`][c~async_std~docs]⮳{{hi:async-std}}.
+- Often implemented with libraries like [`tokio`][c~tokio~docs]↗{{hi:tokio}} or [`async-std`][c~async_std~docs]↗{{hi:async-std}}.
 
 See [[asynchronous | Asynchronous]] and [[amqp | AMQP]].
 
@@ -99,7 +99,7 @@ See [[asynchronous | Asynchronous]] and [[amqp | AMQP]].
 The actor model is a conceptual model of concurrent computation that treats "actors" as the universal primitives of [concurrency][p~concurrency].
 Actors encapsulate state, behavior, and a mailbox. [Actors][p~actors] communicate exclusively by sending and receiving [asynchronous][p~asynchronous] messages. They are like independent entities that can receive and process messages.
 
-Libraries like [`actix`][c~actix~docs]⮳{{hi:actix}} support actor-based designs.
+Libraries like [`actix`][c~actix~docs]↗{{hi:actix}} support actor-based designs.
 
 See the [[_actors |  Actors]] chapter for more details.
 

@@ -8,11 +8,11 @@ The most common form of synchronization{{hi:Synchronization}} in an async{{hi:as
 
 [![tokio~website][c~tokio~website~badge]][c~tokio~website] [![tokio][c~tokio~docs~badge]][c~tokio~docs] [![tokio~crates.io][c~tokio~crates.io~badge]][c~tokio~crates.io] [![tokio~github][c~tokio~github~badge]][c~tokio~github] [![tokio~lib.rs][c~tokio~lib.rs~badge]][c~tokio~lib.rs]{{hi:tokio}}{{hi:Io}}{{hi:Async}}{{hi:Non-blocking}}{{hi:Futures}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
-Tokio's [`sync`][c~tokio_sync~docs]⮳ module provides channels{{hi:Channels}} that work well with async code.
+Tokio's [`sync`][c~tokio_sync~docs]↗ module provides channels{{hi:Channels}} that work well with async code.
 
 ### OneShot {#oneshot}
 
-[`tokio::sync::oneshot`][c~tokio::sync::oneshot~docs]{{hi:tokio::sync::oneshot}}⮳ sends a single value from a single producer{{hi:Producer}} to a single consumer{{hi:Consumer}}. This channel{{hi:Channels}} is usually used to send the result of a computation to a waiter.
+[`tokio::sync::oneshot`][c~tokio::sync::oneshot~docs]{{hi:tokio::sync::oneshot}}↗ sends a single value from a single producer{{hi:Producer}} to a single consumer{{hi:Consumer}}. This channel{{hi:Channels}} is usually used to send the result of a computation to a waiter.
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/examples/async_channels/async_channels_oneshot.rs:example}}
@@ -28,7 +28,7 @@ Another example:
 
 [![tokio][c~tokio~docs~badge]][c~tokio~docs]{{hi:tokio}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 
-[`tokio`][c~tokio~docs]⮳{{hi:tokio}}
+[`tokio`][c~tokio~docs]↗{{hi:tokio}}
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/examples/async_channels/async_channels_mpsc.rs:example}}
@@ -38,7 +38,7 @@ Another example:
 
 [![async-channel][c~async_channel~docs~badge]][c~async_channel~docs] [![async-channel~crates.io][c~async_channel~crates.io~badge]][c~async_channel~crates.io] [![async-channel~github][c~async_channel~github~badge]][c~async_channel~github] [![async-channel~lib.rs][c~async_channel~lib.rs~badge]][c~async_channel~lib.rs]{{hi:async-channel}}{{hi:Chan}}{{hi:Futures}}{{hi:Mpsc}}{{hi:Spmc}}{{hi:Mpmc}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}
 
-[`async-channel`][c~async_channel~docs]⮳{{hi:async-channel}} offers two kinds of async multi-producer multi-consumer channel, where each message can be received by only one of all existing consumers.
+[`async-channel`][c~async_channel~docs]↗{{hi:async-channel}} offers two kinds of async multi-producer multi-consumer channel, where each message can be received by only one of all existing consumers.
 
 - Bounded channel with limited capacity,
 - Unbounded channel with unlimited capacity.
@@ -58,7 +58,7 @@ When all Senders or all Receivers are dropped, the channel becomes closed. When 
 [![postage~github][c~postage~github~badge]][c~postage~github]
 [![postage~lib.rs][c~postage~lib.rs~badge]][c~postage~lib.rs]
 
-[`postage`][c~postage::broadcast~docs]⮳{{hi:postage}} [`postage`][c~postage~docs]⮳{{hi:postage}} is a feature-rich, portable [async][p~async] channel library, with different options than [Tokio][p~tokio]. [`postage::broadcast`][c~postage::broadcast~docs]⮳{{hi:postage::broadcast}} provides a lossless MPMC channel, which all receivers are guaranteed to receive each message.
+[`postage`][c~postage::broadcast~docs]↗{{hi:postage}} [`postage`][c~postage~docs]↗{{hi:postage}} is a feature-rich, portable [async][p~async] channel library, with different options than [Tokio][p~tokio]. [`postage::broadcast`][c~postage::broadcast~docs]↗{{hi:postage::broadcast}} provides a lossless MPMC channel, which all receivers are guaranteed to receive each message.
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/examples/async_channels/postage.rs:example}}
@@ -71,7 +71,7 @@ When all Senders or all Receivers are dropped, the channel becomes closed. When 
 [![kanal~github][c~kanal~github~badge]][c~kanal~github]
 [![kanal~lib.rs][c~kanal~lib.rs~badge]][c~kanal~lib.rs]
 
-[`kanal`][c~kanal~docs]⮳{{hi:kanal}} offers fast sync and async channels:
+[`kanal`][c~kanal~docs]↗{{hi:kanal}} offers fast sync and async channels:
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/examples/async_channels/kanal.rs:example}}
@@ -86,5 +86,5 @@ When all Senders or all Receivers are dropped, the channel becomes closed. When 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[async_channels: review](https://github.com/john-cd/rust_howto/issues/215) add other [`postage`][c~postage~docs]⮳{{hi:postage}} channels?
+[async_channels: review](https://github.com/john-cd/rust_howto/issues/215) add other [`postage`][c~postage~docs]↗{{hi:postage}} channels?
 </div>

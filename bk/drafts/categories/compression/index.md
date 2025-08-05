@@ -4,9 +4,9 @@ This section covers algorithms for making data smaller.
 
 | Purpose | Rust Crate(s) |
 |---|---|
-| General Compression | [`flate2`][c~flate2~docs]⮳{{hi:flate2}} ([`zlib`][c~zlib~docs]⮳{{hi:zlib}}, [`gzip`][c~gzip~docs]⮳{{hi:gzip}}, [`deflate`][c~deflate~docs]⮳{{hi:deflate}}), [`miniz_oxide`][c~miniz_oxide~docs]⮳{{hi:miniz_oxide}} (zlib), [`zstd`][c~zstd~docs]⮳{{hi:zstd}} (Zstandard), [`lz4`][c~lz4~docs]⮳{{hi:lz4}} |
-| Specialized Compression | [`brotli`][c~brotli~docs]⮳{{hi:brotli}} (Brotli), [`snap`][c~snap~docs]⮳{{hi:snap}} (Snappy) |
-| Archiving | [`tar`][c~tar~docs]⮳{{hi:tar}}, [`zip`][c~zip~docs]⮳{{hi:zip}} |
+| General Compression | [`flate2`][c~flate2~docs]↗{{hi:flate2}} ([`zlib`][c~zlib~docs]↗{{hi:zlib}}, [`gzip`][c~gzip~docs]↗{{hi:gzip}}, [`deflate`][c~deflate~docs]↗{{hi:deflate}}), [`miniz_oxide`][c~miniz_oxide~docs]↗{{hi:miniz_oxide}} (zlib), [`zstd`][c~zstd~docs]↗{{hi:zstd}} (Zstandard), [`lz4`][c~lz4~docs]↗{{hi:lz4}} |
+| Specialized Compression | [`brotli`][c~brotli~docs]↗{{hi:brotli}} (Brotli), [`snap`][c~snap~docs]↗{{hi:snap}} (Snappy) |
+| Archiving | [`tar`][c~tar~docs]↗{{hi:tar}}, [`zip`][c~zip~docs]↗{{hi:zip}} |
 
 ## Working with Tarballs
 

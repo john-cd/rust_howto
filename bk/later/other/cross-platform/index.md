@@ -8,8 +8,8 @@ Cross-platform development refers to the practice of creating software applicati
 
 For applications that do not require a graphical user interface (e.g., CLI tools, servers), simple cross-compilation may be sufficient.
 
-- [`cargo`][c~cargo~docs]⮳{{hi:cargo}} and [`rustup`][c~rustup~docs]⮳{{hi:rustup}} natively allow developers to build applications for different target platforms from a single development environment.
-- [`cross`][c~cross~docs]⮳{{hi:cross}} is a tool for cross-compiling Rust projects.
+- [`cargo`][c~cargo~docs]↗{{hi:cargo}} and [`rustup`][c~rustup~docs]↗{{hi:rustup}} natively allow developers to build applications for different target platforms from a single development environment.
+- [`cross`][c~cross~docs]↗{{hi:cross}} is a tool for cross-compiling Rust projects.
 
 See [[cross_compilation | Cross Compilation]] and [[cross_compiling | Cross Compiling]].
 
@@ -29,11 +29,11 @@ Rust can be used to build high-performance desktop applications for Windows, mac
 
 ### `tauri` {#tauri}
 
-[`tauri`][c~tauri~docs]⮳{{hi:tauri}} allows you to build cross-platform desktop applications for major operating systems (Windows, macOS, Linux) using web technologies for the frontend and Rust for the backend.
+[`tauri`][c~tauri~docs]↗{{hi:tauri}} allows you to build cross-platform desktop applications for major operating systems (Windows, macOS, Linux) using web technologies for the frontend and Rust for the backend.
 
 ### `wry` {#wry}
 
-Wry is a cross-platform WebView rendering library. It provides a way to create cross-platform desktop applications with a focus on simplicity and performance. It is often used in conjunction with [`tauri`][c~tauri~docs]⮳{{hi:tauri}}.
+Wry is a cross-platform WebView rendering library. It provides a way to create cross-platform desktop applications with a focus on simplicity and performance. It is often used in conjunction with [`tauri`][c~tauri~docs]↗{{hi:tauri}}.
 
 FIXME
 

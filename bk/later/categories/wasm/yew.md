@@ -6,7 +6,7 @@
 
 [![yew~website][c~yew~website~badge]][c~yew~website] [![yew][c~yew~docs~badge]][c~yew~docs] [![yew~crates.io][c~yew~crates.io~badge]][c~yew~crates.io] [![yew~github][c~yew~github~badge]][c~yew~github] [![yew~lib.rs][c~yew~lib.rs~badge]][c~yew~lib.rs]{{hi:yew}}{{hi:Javascript}}{{hi:Webasm}}{{hi:Web}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
 
-[`yew`][c~yew~docs]⮳{{hi:yew}} is a Rust framework for building multi-threaded front-end web applications with WebAssembly.
+[`yew`][c~yew~docs]↗{{hi:yew}} is a Rust framework for building multi-threaded front-end web applications with WebAssembly.
 
 Key Features:
 
@@ -20,9 +20,9 @@ Key Features:
 
 ### See Also
 
-- [What is Yew?][c~yew~website]⮳.
+- [What is Yew?][c~yew~website]↗.
 
-- [Example "Real World" app built with Rust + Yew + WebAssembly][c~yew~realworld~example]⮳ [![yew~realworld~example][c~yew~realworld~example~badge]][c~yew~realworld~example].
+- [Example "Real World" app built with Rust + Yew + WebAssembly][c~yew~realworld~example]↗ [![yew~realworld~example][c~yew~realworld~example~badge]][c~yew~realworld~example].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

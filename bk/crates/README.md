@@ -31,7 +31,7 @@ bk
 - `cats` contains many crates, each containing the code examples for one `crates.io` category.
 - `code_organization` contains the code examples for the code organization section.
 - `language` contains the code examples for the Rust language _per se_.
-- `other` contains the code examples that can't be mapped to a [`crates.io`][crates.io~website]{{hi:crates.io}}⮳ category.
+- `other` contains the code examples that can't be mapped to a [`crates.io`][crates.io~website]{{hi:crates.io}}↗ category.
 - `proc_macros` contains procedural macro examples used in the "language" section of the book.
 - `standard_library` contains the code examples for the Rust standard library.
 
@@ -46,7 +46,7 @@ bk
 
 In the `tests` folder, you will typically find multi-file integration tests, meaning folders, each named after a chapter (a `*.md` file below `bk/src`), containing a `main.rs` file along several modules (`.rs` files), each a code example.
 
-See [Cargo package layout](https://doc.rust-lang.org/cargo/guide/project-layout.html) for more details.
+See [Cargo package layout](https://doc.rust-lang.org/cargo/guide/project-layout.html)↗ for more details.
 
 ## Common Commands
 

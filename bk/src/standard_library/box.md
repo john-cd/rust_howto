@@ -12,7 +12,7 @@ All values in Rust are stack-allocated by default. `Box<T>` allow you to store d
 {{#include ../../crates/standard_library/examples/box/box_basics.rs:example}}
 ```
 
-The `Box<T>` type is a smart pointer{{hi:Smart pointers}}, because it implements the [`std::ops::Deref`][c~std::ops::Deref~docs]{{hi:std::ops::Deref}}⮳ trait, which allows `Box<T>` values to be treated just like a reference. You can use the de-reference operator{{hi:Dereference operator}} `*`{{hi:*}} or 'deref coercion' with the `.` operator to use its inner value:
+The `Box<T>` type is a smart pointer{{hi:Smart pointers}}, because it implements the [`std::ops::Deref`][c~std::ops::Deref~docs]{{hi:std::ops::Deref}}↗ trait, which allows `Box<T>` values to be treated just like a reference. You can use the de-reference operator{{hi:Dereference operator}} `*`{{hi:*}} or 'deref coercion' with the `.` operator to use its inner value:
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/box/box_deref.rs:example}}

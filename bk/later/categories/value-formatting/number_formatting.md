@@ -31,5 +31,5 @@ Fast integer primitive to string conversion.
 
 <div class="hidden">
 [value-formatting: choose crates, write](https://github.com/john-cd/rust_howto/issues/490)
-cover [`num-format`][c~num_format~docs]⮳{{hi:num-format}}, [`icu`][c~icu~docs]⮳{{hi:icu}}, [`fluent`][c~fluent~docs]⮳{{hi:fluent}}
+cover [`num-format`][c~num_format~docs]↗{{hi:num-format}}, [`icu`][c~icu~docs]↗{{hi:icu}}, [`fluent`][c~fluent~docs]↗{{hi:fluent}}
 </div>

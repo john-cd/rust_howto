@@ -6,7 +6,7 @@
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}{{hi:null}}
 
-Rust has no `null`. Instead, it represents the presence or absence of a value with the [`std::option::Option`][c~std::option::Option~docs]{{hi:std::option::Option}}⮳ enum:
+Rust has no `null`. Instead, it represents the presence or absence of a value with the [`std::option::Option`][c~std::option::Option~docs]{{hi:std::option::Option}}↗ enum:
 
 ```rust,editable,noplayground
 enum Option<T> {
@@ -15,7 +15,7 @@ enum Option<T> {
 }
 ```
 
-Every [`std::option::Option`][c~std::option::Option~docs]{{hi:std::option::Option}}⮳ is either [`std::option::Option::Some`][c~std::option::Option::Some~docs]{{hi:std::option::Option::Some}}⮳ and contains a value, or [`std::option::Option::None`][c~std::option::Option::None~docs]{{hi:std::option::Option::None}}⮳, and does not.
+Every [`std::option::Option`][c~std::option::Option~docs]{{hi:std::option::Option}}↗ is either [`std::option::Option::Some`][c~std::option::Option::Some~docs]{{hi:std::option::Option::Some}}↗ and contains a value, or [`std::option::Option::None`][c~std::option::Option::None~docs]{{hi:std::option::Option::None}}↗, and does not.
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/option/options1.rs:example}}
@@ -25,7 +25,7 @@ Every [`std::option::Option`][c~std::option::Option~docs]{{hi:std::option::Optio
 
 ## Use `Option` with `match`, `if let`, or `while let` {#option-match-if-let-while-let}
 
-`Option<T>` is often used with [`match`][book~rust-reference~match]{{hi:match}}⮳, [`if let`][book~rust-reference~if]{{hi:if let}}, or [`while let`][book~rust-reference~while-let]{{hi:while let}}:
+`Option<T>` is often used with [`match`][book~rust-reference~match]{{hi:match}}↗, [`if let`][book~rust-reference~if]{{hi:if let}}, or [`while let`][book~rust-reference~while-let]{{hi:while let}}:
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/option/options2.rs:example}}
@@ -87,13 +87,13 @@ The following table provides an overview of the most commonly used `Option` meth
 
 [![std][c~std~docs~badge]][c~std~docs]
 
-The following methods extract the contained value in an [`std::option::Option`][c~std::option::Option~docs]{{hi:std::option::Option}} when it is the `Some` variant. If the [`std::option::Option`][c~std::option::Option~docs]{{hi:std::option::Option}}⮳ is `None`:
+The following methods extract the contained value in an [`std::option::Option`][c~std::option::Option~docs]{{hi:std::option::Option}} when it is the `Some` variant. If the [`std::option::Option`][c~std::option::Option~docs]{{hi:std::option::Option}}↗ is `None`:
 
-- [`std::option::Option::unwrap`][c~std::option::Option::unwrap~docs]{{hi:std::option::Option::unwrap}}⮳ panics with a generic message.
-- [`std::option::Option::expect`][c~std::option::Option::expect~docs]{{hi:std::option::Option::expect}}⮳ panics with a provided custom message.
-- [`std::option::Option::unwrap_or`][c~std::option::Option::unwrap_or~docs]{{hi:std::option::Option::unwrap_or}}⮳ returns the provided default value.
-- [`std::option::Option::unwrap_or_default`][c~std::option::Option::unwrap_or_default~docs]{{hi:std::option::Option::unwrap_or_default}}⮳ returns the default value of the type T (which must implement the [`std::default::Default`][c~std::default::Default~docs]{{hi:std::default::Default}}⮳ trait).
-- [`std::option::Option::unwrap_or_else`][c~std::option::Option::unwrap_or_else~docs]{{hi:std::option::Option::unwrap_or_else}}⮳ returns the result of evaluating the provided closure.
+- [`std::option::Option::unwrap`][c~std::option::Option::unwrap~docs]{{hi:std::option::Option::unwrap}}↗ panics with a generic message.
+- [`std::option::Option::expect`][c~std::option::Option::expect~docs]{{hi:std::option::Option::expect}}↗ panics with a provided custom message.
+- [`std::option::Option::unwrap_or`][c~std::option::Option::unwrap_or~docs]{{hi:std::option::Option::unwrap_or}}↗ returns the provided default value.
+- [`std::option::Option::unwrap_or_default`][c~std::option::Option::unwrap_or_default~docs]{{hi:std::option::Option::unwrap_or_default}}↗ returns the default value of the type T (which must implement the [`std::default::Default`][c~std::default::Default~docs]{{hi:std::default::Default}}↗ trait).
+- [`std::option::Option::unwrap_or_else`][c~std::option::Option::unwrap_or_else~docs]{{hi:std::option::Option::unwrap_or_else}}↗ returns the result of evaluating the provided closure.
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/option/option_unwrap.rs:example}}
@@ -117,8 +117,8 @@ The `and_then` and `*or_else` methods take a closure as input, and only evaluate
 When working with references to `Option`, use:
 
 - `std::option::Option::as_ref` and `std::option::Option::as_mut` to convert from `&Option<T>` to `Option<&T>` and `Option<&mut T>`.
-- [`std::option::Option::as_deref`][c~std::option::Option::as_deref~docs]{{hi:std::option::Option::as_deref}}⮳ to convert from `&Option<T>` to `Option<&T::Target>`.
-- [`std::option::Option::as_deref_mut`][c~std::option::Option::as_deref_mut~docs]{{hi:std::option::Option::as_deref_mut}}⮳ to convert from `&mut Option<T>` to `Option<&mut T::Target>`.
+- [`std::option::Option::as_deref`][c~std::option::Option::as_deref~docs]{{hi:std::option::Option::as_deref}}↗ to convert from `&Option<T>` to `Option<&T::Target>`.
+- [`std::option::Option::as_deref_mut`][c~std::option::Option::as_deref_mut~docs]{{hi:std::option::Option::as_deref_mut}}↗ to convert from `&mut Option<T>` to `Option<&mut T::Target>`.
 
 See also the [[asref | AsRef]] chapter.
 
@@ -128,7 +128,7 @@ See also the [[asref | AsRef]] chapter.
 
 ## See Also {#skip}
 
-- The [ShowOption](https://lib.rs/crates/show-option)⮳ crate provides extension methods and macros for formatting Options.
+- The [ShowOption](https://lib.rs/crates/show-option)↗ crate provides extension methods and macros for formatting Options.
 
 ## Related Topics {#related-topics}
 

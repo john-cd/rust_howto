@@ -2,15 +2,15 @@
 
 {{#include deep_learning.incl.md}}
 
-`candle` is more focused on inference and provides more pre-trained models, while [`burn`][c~burn~docs]⮳{{hi:burn}} is more focused on supporting the whole workflow from training to inference. `candle` relies on the underlying cuTENSOR and cuDNNv8 libraries, enabling efficient execution on NVIDIA GPUs.
+`candle` is more focused on inference and provides more pre-trained models, while [`burn`][c~burn~docs]↗{{hi:burn}} is more focused on supporting the whole workflow from training to inference. `candle` relies on the underlying cuTENSOR and cuDNNv8 libraries, enabling efficient execution on NVIDIA GPUs.
 
 ## `candle` {#deep-learning}
 
 [![candle-core][c~candle_core~docs~badge]][c~candle_core~docs] [![candle-core~crates.io][c~candle_core~crates.io~badge]][c~candle_core~crates.io] [![candle-core~github][c~candle_core~github~badge]][c~candle_core~github] [![candle-core~lib.rs][c~candle_core~lib.rs~badge]][c~candle_core~lib.rs]{{hi:candle}}{{hi:candle-core}}{{hi:BLAS}}{{hi:Machine-learning}}{{hi:Tensor}}[![cat~science][cat~science~badge]][cat~science]{{hi:Science}}
 
-[`candle`][c~candle_core~docs]⮳{{hi:candle}} is a minimalist ML framework for Rust with a focus on performance (including GPU support) and ease of use. Candle is like PyTorch written in Rust and focuses on neural network.
+[`candle`][c~candle_core~docs]↗{{hi:candle}} is a minimalist ML framework for Rust with a focus on performance (including GPU support) and ease of use. Candle is like PyTorch written in Rust and focuses on neural network.
 
-[Candle: a minimalist machine learning framework for rust that focuses on performance including GPU support and ease of use][blog~candle]⮳.
+[Candle: a minimalist machine learning framework for rust that focuses on performance including GPU support and ease of use][blog~candle]↗.
 
 ```rust,editable
 {{#include ../../../crates/cats/science/examples/ml/candle.rs:example}}

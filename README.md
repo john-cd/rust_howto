@@ -5,7 +5,7 @@
 **A documentation summary and a compendium of recipes for the Rust language and ecosystem.**
 **Everything you need for day-to-day Rust coding, all in one place.**
 
-Point your browser to [`https://john-cd.com/rust_howto`][rust-howto~website]⮳ to read the [Rust How-to][rust-howto~website]⮳ book.
+Point your browser to [`https://john-cd.com/rust_howto`][rust-howto~website]↗ to read the [Rust How-to][rust-howto~website]↗ book.
 
 ## Work In Progress
 
@@ -13,7 +13,7 @@ This book is going through _heavy edits_. Pardon the dust.
 
 ## Contributing
 
-Contributions are most welcome! Please review the [contributing][rust-howto~contributing~website]⮳ section of the book and peruse the book's [GitHub repo][rust-howto~github]⮳.
+Contributions are most welcome! Please review the [contributing][rust-howto~contributing~website]↗ section of the book and peruse the book's [GitHub repo][rust-howto~github]↗.
 
 ## Companion Tools
 

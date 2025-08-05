@@ -66,7 +66,7 @@ Note the following:
 - Adding `.rs` files to your source code folder does not automatically incorporate the code in your crate. You must add explicit `mod` statements. Editors like 'VS Code' will not analyze your code or display hints while typing if you forget to do so!
 - The `mod` statement must be added to the _parent_ file, not to the file that contains the module itself.
 - Modules (and items within) are private by default. Use the `pub` keyword - see [[visibility | visibility rules]].
-- It is possible (but confusing) to override the name and path of the file where a module is stored, using the [path attribute](https://doc.rust-lang.org/reference/items/modules.html#the-path-attribute)⮳.
+- It is possible (but confusing) to override the name and path of the file where a module is stored, using the [path attribute](https://doc.rust-lang.org/reference/items/modules.html#the-path-attribute)↗.
 
 ## Access Items Within Modules via Paths {#paths}
 
@@ -175,9 +175,9 @@ The following example summarizes the visibility rules when it comes to modules. 
 
 ## References {#references}
 
-- [Defining Modules to Control Scope and Privacy (Rust book)](https://doc.rust-lang.org/book/ch07-02-defining-modules-to-control-scope-and-privacy.html)⮳.
-- [Paths for Referring to an Item in the Module Tree (Rust book)](https://doc.rust-lang.org/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html)⮳.
-- A [clear explanation of Rust's module system][rust-module-system~website]⮳.
+- [Defining Modules to Control Scope and Privacy (Rust book)](https://doc.rust-lang.org/book/ch07-02-defining-modules-to-control-scope-and-privacy.html)↗.
+- [Paths for Referring to an Item in the Module Tree (Rust book)](https://doc.rust-lang.org/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html)↗.
+- A [clear explanation of Rust's module system][rust-module-system~website]↗.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

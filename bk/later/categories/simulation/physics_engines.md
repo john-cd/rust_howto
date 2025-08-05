@@ -8,7 +8,7 @@
 
 ## `nphysics` {#nphysics}
 
-[`nphysics`][c~nphysics~docs]⮳{{hi:nphysics}} is another physics engine.
+[`nphysics`][c~nphysics~docs]↗{{hi:nphysics}} is another physics engine.
 
 ## See Also
 
@@ -19,5 +19,5 @@
 
 <div class="hidden">
 [write / decide what to cover](https://github.com/john-cd/rust_howto/issues/1206)
-`bevy_rapier` integrates `rapier` with the [`bevy`][c~bevy~docs]⮳{{hi:bevy}} game engine.
+`bevy_rapier` integrates `rapier` with the [`bevy`][c~bevy~docs]↗{{hi:bevy}} game engine.
 </div>

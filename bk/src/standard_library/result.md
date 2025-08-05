@@ -6,7 +6,7 @@
 
 [![std][c~std~docs~badge]][c~std~docs]
 
-[`Result<T, E>`][c~std::result::Result~docs]⮳{{hi:Result}} is an enum used for error handling. It has two variants:
+[`Result<T, E>`][c~std::result::Result~docs]↗{{hi:Result}} is an enum used for error handling. It has two variants:
 
 - `Ok(T)` represents success and contains a value of type `T`.
 - `Err(E)` represents an error and contains an error value of type `E`.
@@ -86,7 +86,7 @@ See also the [[option | Option]] chapter.
 
 ## References {#references}
 
-- [What is the Rust equivalent to a `try catch` statement][stackoverflow~what-is-the-rust-equivalent-to-a-try-catch-statement]⮳.
+- [What is the Rust equivalent to a `try catch` statement][stackoverflow~what-is-the-rust-equivalent-to-a-try-catch-statement]↗.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

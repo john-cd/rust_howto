@@ -10,7 +10,7 @@
 
 MAVLink is a very widely-used protocol for communication between drones (and other unmanned vehicles) and ground control stations. It's message-based and defines a standard set of messages for various purposes (e.g., flight control, telemetry, sensor data).
 
-[`mavlink`][c~mavlink~docs]⮳{{hi:mavlink}} is the primary crate for MAVLink. It provides encoding and decoding of MAVLink messages.
+[`mavlink`][c~mavlink~docs]↗{{hi:mavlink}} is the primary crate for MAVLink. It provides encoding and decoding of MAVLink messages.
 
 ### CAN (Controller Area Network)
 
@@ -18,10 +18,10 @@ CAN is a robust and reliable serial communication protocol often used in aerospa
 
 Consider using:
 
-- [`socketcan`][c~socketcan~docs]⮳{{hi:socketcan}} for interacting with CAN buses on Linux systems (often used with USB-CAN adapters).
-- [`can-rs`][c~can~docs]⮳{{hi:can-rs}}, which is a general CAN crate.
+- [`socketcan`][c~socketcan~docs]↗{{hi:socketcan}} for interacting with CAN buses on Linux systems (often used with USB-CAN adapters).
+- [`can-rs`][c~can~docs]↗{{hi:can-rs}}, which is a general CAN crate.
 
-For embedded systems, you might use crates like [`embedded-hal`][c~embedded_hal~docs]⮳{{hi:embedded-hal}} and implement CAN communication using the microcontroller's peripherals.
+For embedded systems, you might use crates like [`embedded-hal`][c~embedded_hal~docs]↗{{hi:embedded-hal}} and implement CAN communication using the microcontroller's peripherals.
 
 ### ARINC 429
 

@@ -6,9 +6,9 @@
 
 [![dotenvy][c~dotenvy~docs~badge]][c~dotenvy~docs] [![dotenvy~crates.io][c~dotenvy~crates.io~badge]][c~dotenvy~crates.io] [![dotenvy~github][c~dotenvy~github~badge]][c~dotenvy~github] [![dotenvy~lib.rs][c~dotenvy~lib.rs~badge]][c~dotenvy~lib.rs]{{hi:dotenvy}}{{hi:Environment}}{{hi:Env}}{{hi:Dotenv}}{{hi:Settings}}{{hi:Config}}
 
-[`dotenvy`][c~dotenvy~docs]{{hi:dotenvy}}⮳ forks and supersedes [`dotenv`][c~dotenv~docs]{{hi:dotenv}}⮳.
+[`dotenvy`][c~dotenvy~docs]{{hi:dotenvy}}↗ forks and supersedes [`dotenv`][c~dotenv~docs]{{hi:dotenv}}↗.
 
-[`dotenvy`][c~dotenvy~docs]⮳{{hi:dotenvy}} is a Rust crate that loads environment variables from a .env file. It's commonly used during development to manage configuration settings without hardcoding them into the application. [`dotenvy`][c~dotenvy~docs]⮳{{hi:dotenvy}} parses the .env file, sets the environment variables, and makes them accessible to the application through the standard std::env module. It's a simple but effective way to separate [configuration][p~configuration] from code and manage different environments (development, testing, production) with different .env files. It's important to note that .env files are typically not used in production environments, where environment variables are usually set directly.
+[`dotenvy`][c~dotenvy~docs]↗{{hi:dotenvy}} is a Rust crate that loads environment variables from a .env file. It's commonly used during development to manage configuration settings without hardcoding them into the application. [`dotenvy`][c~dotenvy~docs]↗{{hi:dotenvy}} parses the .env file, sets the environment variables, and makes them accessible to the application through the standard std::env module. It's a simple but effective way to separate [configuration][p~configuration] from code and manage different environments (development, testing, production) with different .env files. It's important to note that .env files are typically not used in production environments, where environment variables are usually set directly.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/config/examples/env/dotenvy.rs:example}}
@@ -18,19 +18,19 @@
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~config][cat~config~badge]][cat~config]{{hi:Configuration}}
 
-Use [`std::env`][c~std::env::var~docs]⮳{{hi:std::env}} to retrieve a single environment variable{{hi:Environment variables}}.
+Use [`std::env`][c~std::env::var~docs]↗{{hi:std::env}} to retrieve a single environment variable{{hi:Environment variables}}.
 
 ```rust,editable
 {{#include ../../../crates/cats/config/examples/env/env.rs:example}}
 ```
 
-[Working with environment variables in Rust][blog~working-with-env-variables]⮳.
+[Working with environment variables in Rust][blog~working-with-env-variables]↗.
 
 ## `envy` {#envy}
 
 [![envy][c~envy~docs~badge]][c~envy~docs] [![envy~crates.io][c~envy~crates.io~badge]][c~envy~crates.io] [![envy~github][c~envy~github~badge]][c~envy~github] [![envy~lib.rs][c~envy~lib.rs~badge]][c~envy~lib.rs]{{hi:envy}}{{hi:Env}}{{hi:Serde}} [![cat~config][cat~config~badge]][cat~config]{{hi:Configuration}}
 
-[`envy`][c~envy~docs]⮳{{hi:envy}} can deserialize environment variables into type-safe [structs][p~structs].
+[`envy`][c~envy~docs]↗{{hi:envy}} can deserialize environment variables into type-safe [structs][p~structs].
 
 ```toml
 [dependencies]

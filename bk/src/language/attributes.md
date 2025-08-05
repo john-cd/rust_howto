@@ -86,7 +86,7 @@ Common lint attributes are:
 #![deny(unsafe_code)]      // Prevent the use of unsafe blocks.
 ```
 
-To print the list of compiler 'lint' options and default settings, enter `rustc -W help` at the command prompt, or refer to the [lints chapter (`rustc` book)](https://doc.rust-lang.org/rustc/lints/index.html)⮳.{{hi:Lint checks}}
+To print the list of compiler 'lint' options and default settings, enter `rustc -W help` at the command prompt, or refer to the [lints chapter (`rustc` book)](https://doc.rust-lang.org/rustc/lints/index.html)↗.{{hi:Lint checks}}
 
 There are also lints for other tools, such as "clippy" and "rustdoc". For example, `#![deny(clippy::all)]` is a very common attribute to make all Clippy lints that are "warn" by default into hard errors. This makes Clippy much stricter. You may also use `#![warn(clippy::pedantic)]` for even more pedantic Clippy lints.
 
@@ -115,7 +115,7 @@ Use the `#[cfg(...)]` attribute to write code that only compiles for a specific 
 {{#include ../../crates/language/examples/attributes/conditional_compilation.rs:example}}
 ```
 
-See also the [conditional compilation][book~rust-reference~conditional-compilation]⮳ chapter of the Rust Reference.
+See also the [conditional compilation][book~rust-reference~conditional-compilation]↗ chapter of the Rust Reference.
 
 ### Conditionally Compile Code Blocks with `cfg-if` {#cfg-if}
 
@@ -138,8 +138,8 @@ For complicated conditional compilation scenarios, consider using the `cfg-if` c
 
 ## References {#references}
 
-- [Attributes reference][book~rust-reference~attributes]⮳.
-- [The `#[doc]` attribute](https://doc.rust-lang.org/rustdoc/write-documentation/the-doc-attribute.html)⮳.
+- [Attributes reference][book~rust-reference~attributes]↗.
+- [The `#[doc]` attribute](https://doc.rust-lang.org/rustdoc/write-documentation/the-doc-attribute.html)↗.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

@@ -8,7 +8,7 @@ A bitfield is a data structure that efficiently stores a sequence of bits. It is
 
 [![bitflags][c~bitflags~docs~badge]][c~bitflags~docs] [![bitflags~crates.io][c~bitflags~crates.io~badge]][c~bitflags~crates.io] [![bitflags~github][c~bitflags~github~badge]][c~bitflags~github] [![bitflags~lib.rs][c~bitflags~lib.rs~badge]][c~bitflags~lib.rs]{{hi:bitflags}}{{hi:Bit}}{{hi:bitflags}}{{hi:Bitmask}}{{hi:Flags}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-[`bitflags`][c~bitflags~docs]⮳{{hi:bitflags}} offers a macro to generate structures which behave like bitflags. It creates type-safe bitfield{{hi:bitfield}} type `MyFlags` with help of [`bitflags::bitflags`][c~bitflags::bitflags~docs]{{hi:bitflags::bitflags}}⮳ macro and implements elementary [`clear`][c~clear~docs]⮳{{hi:clear}}{{hi:clear}} operation as well as [`std::fmt::Display`][c~std::fmt::Display~docs]{{hi:std::fmt::Display}}⮳ trait for it. Subsequently, shows basic bitwise operations{{hi:Bitwise operations}} and formatting.
+[`bitflags`][c~bitflags~docs]↗{{hi:bitflags}} offers a macro to generate structures which behave like bitflags. It creates type-safe bitfield{{hi:bitfield}} type `MyFlags` with help of [`bitflags::bitflags`][c~bitflags::bitflags~docs]{{hi:bitflags::bitflags}}↗ macro and implements elementary [`clear`][c~clear~docs]↗{{hi:clear}}{{hi:clear}} operation as well as [`std::fmt::Display`][c~std::fmt::Display~docs]{{hi:std::fmt::Display}}↗ trait for it. Subsequently, shows basic bitwise operations{{hi:Bitwise operations}} and formatting.
 
 ```rust,editable
 {{#include ../../../crates/cats/data_structures/examples/bitfield/bitfield.rs:example}}
@@ -23,7 +23,7 @@ A bitfield is a data structure that efficiently stores a sequence of bits. It is
 
 A `flagset` refers to a bitfield used to represent a set of boolean flags or options, where each bit has a specific meaning.
 
-[`flagset`][c~flagset~docs]⮳{{hi:flagset}} is a ergonomic approach to handling flags that combines the best of existing crates like [`bitflags`][c~bitflags~docs]⮳{{hi:bitflags}} and [`enumflags`][c~enumflags~docs]⮳{{hi:enumflags}} without their downsides.
+[`flagset`][c~flagset~docs]↗{{hi:flagset}} is a ergonomic approach to handling flags that combines the best of existing crates like [`bitflags`][c~bitflags~docs]↗{{hi:bitflags}} and [`enumflags`][c~enumflags~docs]↗{{hi:enumflags}} without their downsides.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/data_structures/examples/bitfield/flagset.rs:example}}
@@ -33,7 +33,7 @@ A `flagset` refers to a bitfield used to represent a set of boolean flags or opt
 
 [![bitvec~website][c~bitvec~website~badge]][c~bitvec~website] [![bitvec][c~bitvec~docs~badge]][c~bitvec~docs] [![bitvec~crates.io][c~bitvec~crates.io~badge]][c~bitvec~crates.io] [![bitvec~github][c~bitvec~github~badge]][c~bitvec~github] [![bitvec~lib.rs][c~bitvec~lib.rs~badge]][c~bitvec~lib.rs]{{hi:bitvec}}{{hi:Bitstream}}{{hi:Bitvector}}{{hi:Bitmap}}{{hi:Bitfields}}{{hi:bitvec}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-[`bitvec`][c~bitvec~docs]⮳{{hi:bitvec}} provides efficient storage and manipulation of bit vectors. It addresses memory by bits, for packed collections and bitfields
+[`bitvec`][c~bitvec~docs]↗{{hi:bitvec}} provides efficient storage and manipulation of bit vectors. It addresses memory by bits, for packed collections and bitfields
 
 ```rust,editable
 {{#include ../../../crates/cats/data_structures/examples/bitfield/bitvec.rs:example}}

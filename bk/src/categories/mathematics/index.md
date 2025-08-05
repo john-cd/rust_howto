@@ -4,7 +4,7 @@
 
 Crates with a mathematical aspect.
 
-For most general-purpose math needs, [`nalgebra`][c~nalgebra~docs]⮳{{hi:nalgebra}} (linear algebra) and [`rand`][c~rand~docs]⮳{{hi:rand}} (random numbers) are excellent starting points. For graphics or game development, [`glam`][c~glam~docs]⮳{{hi:glam}} is often preferred. For statistics, [`statrs`][c~statrs~docs]⮳{{hi:statrs}} is comprehensive.If you're doing numerical computing, [`ndarray`][c~ndarray~docs]⮳{{hi:ndarray}}. There are also specific crates available for specialized areas like number theory or units of measurement.
+For most general-purpose math needs, [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} (linear algebra) and [`rand`][c~rand~docs]↗{{hi:rand}} (random numbers) are excellent starting points. For graphics or game development, [`glam`][c~glam~docs]↗{{hi:glam}} is often preferred. For statistics, [`statrs`][c~statrs~docs]↗{{hi:statrs}} is comprehensive.If you're doing numerical computing, [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}. There are also specific crates available for specialized areas like number theory or units of measurement.
 
 ## Trigonometry
 
@@ -14,11 +14,11 @@ For most general-purpose math needs, [`nalgebra`][c~nalgebra~docs]⮳{{hi:nalgeb
 
 Vectors, matrices, eigenvalues, and eigenvectors. Key crates include:
 
-- [`nalgebra`][c~nalgebra~docs]⮳{{hi:nalgebra}}: A widely used and mature linear algebra library. Excellent for general-purpose linear algebra.
-- [`glam`][c~glam~docs]⮳{{hi:glam}}: A fast and ergonomic linear algebra library designed for graphics and games. Often preferred in those contexts.
-- [`ultraviolet`][c~ultraviolet~docs]⮳{{hi:ultraviolet}}: Another linear algebra library, with a focus on graphics.
-- [`ndarray`][c~ndarray~docs]⮳{{hi:ndarray}}: For N-dimensional arrays.Essential for numerical computation and data analysis.
-- [`nalgebra-lapack`][c~nalgebra_lapack~docs]⮳{{hi:nalgebra-lapack}} provides LAPACK bindings for linear algebra operations.
+- [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}}: A widely used and mature linear algebra library. Excellent for general-purpose linear algebra.
+- [`glam`][c~glam~docs]↗{{hi:glam}}: A fast and ergonomic linear algebra library designed for graphics and games. Often preferred in those contexts.
+- [`ultraviolet`][c~ultraviolet~docs]↗{{hi:ultraviolet}}: Another linear algebra library, with a focus on graphics.
+- [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}: For N-dimensional arrays.Essential for numerical computation and data analysis.
+- [`nalgebra-lapack`][c~nalgebra_lapack~docs]↗{{hi:nalgebra-lapack}} provides LAPACK bindings for linear algebra operations.
 
 {{#include linear_algebra.incl.md}}
 
@@ -26,8 +26,8 @@ Vectors, matrices, eigenvalues, and eigenvectors. Key crates include:
 
 Random variables, distributions, and hypothesis testing. Probabilistic models, stochastic processes, and statistical inference.
 
-- [`statrs`][c~statrs~docs]⮳{{hi:statrs}}: A comprehensive statistics library.
-- [`rand`][c~rand~docs]⮳{{hi:rand}}: While primarily for random number generation, [`rand`][c~rand~docs]⮳{{hi:rand}} also provides some statistical distributions and functions.
+- [`statrs`][c~statrs~docs]↗{{hi:statrs}}: A comprehensive statistics library.
+- [`rand`][c~rand~docs]↗{{hi:rand}}: While primarily for random number generation, [`rand`][c~rand~docs]↗{{hi:rand}} also provides some statistical distributions and functions.
 
 {{#include statistics.incl.md}}
 
@@ -35,19 +35,19 @@ Random variables, distributions, and hypothesis testing. Probabilistic models, s
 
 Generating random numbers for simulations, cryptography, etc.
 
-- [`rand`][c~rand~docs]⮳{{hi:rand}}: A popular and widely used random number generator crate.
+- [`rand`][c~rand~docs]↗{{hi:rand}}: A popular and widely used random number generator crate.
 
 ## Additional Numeric Types
 
-- [`num-bigint`][c~num_bigint~docs]⮳{{hi:num-bigint}} for arbitrary-precision integers.
-- [`num-rational`][c~num_rational~docs]⮳{{hi:num-rational}} for rational numbers.
-- [`num`][c~num~docs]⮳{{hi:num}}: A crate that provides numeric traits and other utilities.
+- [`num-bigint`][c~num_bigint~docs]↗{{hi:num-bigint}} for arbitrary-precision integers.
+- [`num-rational`][c~num_rational~docs]↗{{hi:num-rational}} for rational numbers.
+- [`num`][c~num~docs]↗{{hi:num}}: A crate that provides numeric traits and other utilities.
 
 {{#include additional_numeric_types.incl.md}}
 
 ### Complex Numbers
 
-- [`num-complex`][c~num_complex~docs]⮳{{hi:num-complex}} for working with complex numbers.
+- [`num-complex`][c~num_complex~docs]↗{{hi:num-complex}} for working with complex numbers.
 
 {{#include complex_numbers.incl.md}}
 
@@ -56,7 +56,7 @@ Generating random numbers for simulations, cryptography, etc.
 Numerical integration, differentiation, and root-finding.
 
 - `rust-num`: numerical traits and operations.
-- [`ndarray`][c~ndarray~docs]⮳{{hi:ndarray}}: numerical computations.
+- [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}: numerical computations.
 
 ## Optimization
 
@@ -76,17 +76,17 @@ Stability analysis, chaos theory, and control systems.
 
 Graphs, networks, and shortest paths.
 
-- [`petgraph`][c~petgraph~docs]⮳{{hi:petgraph}} (graph data structures and algorithms).
+- [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} (graph data structures and algorithms).
 
 ## Discrete Mathematics
 
 Combinatorics, set theory, and logic.
 
-- `bit-set` (bit manipulation), [`regex`][c~regex~docs]⮳{{hi:regex}} (pattern matching).
+- `bit-set` (bit manipulation), [`regex`][c~regex~docs]↗{{hi:regex}} (pattern matching).
 
 ## Units of Measurement
 
-- [`uom`][c~uom~docs]⮳{{hi:uom}}: A type-safe dimensional analysis library.
+- [`uom`][c~uom~docs]↗{{hi:uom}}: A type-safe dimensional analysis library.
 
 ## Related Topics
 

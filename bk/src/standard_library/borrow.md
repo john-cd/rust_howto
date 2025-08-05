@@ -19,11 +19,11 @@ Rust data types often have multiple representations to suit different needs. For
 | `&T` | `Box<T>` |
 | `&T` | `Arc<T>` |
 
-Types express that they can be _borrowed as_ some type `T` by implementing [`Borrow<T>`](https://doc.rust-lang.org/std/borrow/trait.Borrow.html)⮳{{hi:std::borrow::Borrow}}. Use the trait's `borrow` method to return a reference `&T`. For instance, a `Box<T>` can be borrowed as `&T`, while a `String` can be borrowed as `&str`.
+Types express that they can be _borrowed as_ some type `T` by implementing [`Borrow<T>`](https://doc.rust-lang.org/std/borrow/trait.Borrow.html)↗{{hi:std::borrow::Borrow}}. Use the trait's `borrow` method to return a reference `&T`. For instance, a `Box<T>` can be borrowed as `&T`, while a `String` can be borrowed as `&str`.
 
 A type is free to borrow as several different types.
 
-If a type wishes to mutably borrow as another type, allowing the underlying data to be modified, it can additionally implement the [`BorrowMut`](https://doc.rust-lang.org/std/borrow/trait.BorrowMut.html)⮳{{hi:std::borrow::BorrowMut}} trait.
+If a type wishes to mutably borrow as another type, allowing the underlying data to be modified, it can additionally implement the [`BorrowMut`](https://doc.rust-lang.org/std/borrow/trait.BorrowMut.html)↗{{hi:std::borrow::BorrowMut}} trait.
 
 With `Borrow<T>` and `BorrowMut<T>`, it is possible to write generic code that accept `&T`, and therefore works with both such owned and borrowed data. It is a form of trait-based polymorphism, which enables flexible APIs that accept multiple forms of a type.
 

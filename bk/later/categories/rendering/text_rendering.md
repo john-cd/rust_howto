@@ -4,7 +4,7 @@
 
 Libraries and tools for loading and [rendering][p~rendering] fonts.
 
-[`fontdue`][c~fontdue~docs]⮳{{hi:fontdue}} is a fast font rasterizer. [`ttf-parser`][c~ttf_parser~docs]⮳{{hi:ttf-parser}} and [`opentype`][c~opentype~docs]⮳{{hi:opentype}} provide lower-level font parsing capabilities. [`ab_glyph`][c~ab_glyph~docs]⮳{{hi:ab_glyph}} is another font rendering option.
+[`fontdue`][c~fontdue~docs]↗{{hi:fontdue}} is a fast font rasterizer. [`ttf-parser`][c~ttf_parser~docs]↗{{hi:ttf-parser}} and [`opentype`][c~opentype~docs]↗{{hi:opentype}} provide lower-level font parsing capabilities. [`ab_glyph`][c~ab_glyph~docs]↗{{hi:ab_glyph}} is another font rendering option.
 
 ## `ab_glyph` {#ab_glyph}
 
@@ -16,21 +16,21 @@ API for loading, scaling, positioning and rasterizing OpenType font glyphs.
 
 ## `fontdue` {#fontdue}
 
-[`fontdue`][c~fontdue~docs]⮳{{hi:fontdue}} is a fast, pure Rust font loading and rasterization library. [`glyph_brush`][c~glyph_brush~docs]⮳{{hi:glyph_brush}} is for efficient text layout and caching.
+[`fontdue`][c~fontdue~docs]↗{{hi:fontdue}} is a fast, pure Rust font loading and rasterization library. [`glyph_brush`][c~glyph_brush~docs]↗{{hi:glyph_brush}} is for efficient text layout and caching.
 
 A simple `no_std` font parser and rasterizer.
 
 ## `ttf-parser` and  `opentype` {#ttf-parser}
 
-[`ttf-parser`][c~ttf_parser~docs]⮳{{hi:ttf-parser}} and [`opentype`][c~opentype~docs]⮳{{hi:opentype}} provide lower-level font parsing capabilities.
+[`ttf-parser`][c~ttf_parser~docs]↗{{hi:ttf-parser}} and [`opentype`][c~opentype~docs]↗{{hi:opentype}} provide lower-level font parsing capabilities.
 
-[`ttf-parser`][c~ttf_parser~docs]⮳{{hi:ttf-parser}}
+[`ttf-parser`][c~ttf_parser~docs]↗{{hi:ttf-parser}}
 
-[`opentype`][c~opentype~docs]⮳{{hi:opentype}}
+[`opentype`][c~opentype~docs]↗{{hi:opentype}}
 
 ## Related Topics {#related-topics}
 
-- [`sdl2`][c~sdl2~docs]⮳{{hi:sdl2}}: SDL2 bindings for Rust.
+- [`sdl2`][c~sdl2~docs]↗{{hi:sdl2}}: SDL2 bindings for Rust.
 
 ## Related Topics {#related-topics}
 

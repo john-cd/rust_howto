@@ -4,7 +4,7 @@
 
 ## C Bindings {#ffi}
 
-[`libc`][c~libc~docs]⮳{{hi:libc}} provides definitions for C standard library functions and types.
+[`libc`][c~libc~docs]↗{{hi:libc}} provides definitions for C standard library functions and types.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

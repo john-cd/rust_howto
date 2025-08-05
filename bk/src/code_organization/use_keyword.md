@@ -8,7 +8,7 @@ Within a scope, the `use` keyword creates shortcuts to items to reduce repetitio
 
 [![book~rust-by-example~use][book~rust-by-example~use~badge]][book~rust-by-example~use]
 
-The [`use`][book~rust-reference~use]{{hi:use}}⮳ keyword creates a shortcut for a path. The shorter name can be used everywhere else in the scope.
+The [`use`][book~rust-reference~use]{{hi:use}}↗ keyword creates a shortcut for a path. The shorter name can be used everywhere else in the scope.
 
 ```rust,editable
 {{#include ../../crates/code_organization/examples/use/use1.rs:example}}
@@ -60,8 +60,8 @@ Note that, while these shortcuts make your code more compact and readable, they 
 
 ## References {#references}
 
-- [Bringing Paths into Scope with the use Keyword (Rust book)](https://doc.rust-lang.org/book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.html)⮳.
-- [Use declarations (Rust reference)](https://doc.rust-lang.org/reference/items/use-declarations.html)⮳.
+- [Bringing Paths into Scope with the use Keyword (Rust book)](https://doc.rust-lang.org/book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.html)↗.
+- [Use declarations (Rust reference)](https://doc.rust-lang.org/reference/items/use-declarations.html)↗.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

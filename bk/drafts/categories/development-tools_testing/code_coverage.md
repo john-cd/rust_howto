@@ -2,10 +2,10 @@
 
 {{#include code_coverage.incl.md}}
 
-[`grcov`][c~grcov~docs]⮳{{hi:grcov}} or [`tarpaulin`][c~tarpaulin~docs]⮳{{hi:tarpaulin}} can be used for ensuring your tests cover a good portion of your code.
+[`grcov`][c~grcov~docs]↗{{hi:grcov}} or [`tarpaulin`][c~tarpaulin~docs]↗{{hi:tarpaulin}} can be used for ensuring your tests cover a good portion of your code.
 
-[`grcov`][c~grcov~docs]⮳{{hi:grcov}}: A code coverage tool.
-[`cargo tarpaulin`][c~cargo_tarpaulin~docs]⮳{{hi:cargo tarpaulin}}: Another code coverage tool.
+[`grcov`][c~grcov~docs]↗{{hi:grcov}}: A code coverage tool.
+[`cargo tarpaulin`][c~cargo_tarpaulin~docs]↗{{hi:cargo tarpaulin}}: Another code coverage tool.
 
 ## Coverage Testing with `grcov` {#coverage_testing}
 

@@ -78,17 +78,17 @@ The following examples cover less commonly-used data structures:
 
 - [[data_types | Data Types]].
 - [[smart_pointers | Smart Pointers]].
-- Immutable Data Structures: [`im`][c~im~docs]⮳{{hi:im}}, [`rpds`][c~rpds~docs]⮳{{hi:rpds}}. See [[functional_programming | Functional Programming]].
+- Immutable Data Structures: [`im`][c~im~docs]↗{{hi:im}}, [`rpds`][c~rpds~docs]↗{{hi:rpds}}. See [[functional_programming | Functional Programming]].
 - Specialized Data Structures:
-  - Graphs: [`petgraph`][c~petgraph~docs]⮳{{hi:petgraph}}, [`graph_rs`][c~graph_rs~docs]⮳{{hi:graph_rs}}.
-  - Trees and Tries: [`indextree`][c~indextree~docs]⮳{{hi:indextree}}.
-  - Bloom Filters: [`bloomfilter`][c~bloomfilter~docs]⮳{{hi:bloomfilter}}.
-  - Skip Lists: [`skiplist`][c~skiplist~docs]⮳{{hi:skiplist}}.
-  - Ranges as keys: [`rangemap`][c~rangemap~docs]⮳{{hi:rangemap}} stores key-value pairs where keys are ranges.
-  - Matrices and Tensors: [`ndarray`][c~ndarray~docs]⮳{{hi:ndarray}} provides an n-dimensional array for numerical computation.
+  - Graphs: [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}}, [`graph_rs`][c~graph_rs~docs]↗{{hi:graph_rs}}.
+  - Trees and Tries: [`indextree`][c~indextree~docs]↗{{hi:indextree}}.
+  - Bloom Filters: [`bloomfilter`][c~bloomfilter~docs]↗{{hi:bloomfilter}}.
+  - Skip Lists: [`skiplist`][c~skiplist~docs]↗{{hi:skiplist}}.
+  - Ranges as keys: [`rangemap`][c~rangemap~docs]↗{{hi:rangemap}} stores key-value pairs where keys are ranges.
+  - Matrices and Tensors: [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} provides an n-dimensional array for numerical computation.
   - [[dataframes | Dataframes]].
   - [[concurrent_data_structures | Concurrent Data Structures]].
-  - Bitsets: [`roaring`][c~roaring~docs]⮳{{hi:roaring}} implements compressed bitsets.
+  - Bitsets: [`roaring`][c~roaring~docs]↗{{hi:roaring}} implements compressed bitsets.
 
 ## Related Topics
 

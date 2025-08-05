@@ -36,9 +36,9 @@ Mimalloc is a general purpose, performance-oriented allocator built by Microsoft
 
 [![slab][c~slab~docs~badge]][c~slab~docs] [![slab~crates.io][c~slab~crates.io~badge]][c~slab~crates.io] [![slab~github][c~slab~github~badge]][c~slab~github] [![slab~lib.rs][c~slab~lib.rs~badge]][c~slab~lib.rs]{{hi:slab}}{{hi:slab}}{{hi:Allocator}}{{hi:No_std}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-[`slab`][c~slab~docs]⮳{{hi:slab}} provides pre-allocated storage for a single data type. If many values of a single type are being allocated, it can be more efficient to pre-allocate the necessary storage. Since the size of the type is uniform, memory fragmentation can be avoided. Storing, clearing, and lookup operations become very cheap.
+[`slab`][c~slab~docs]↗{{hi:slab}} provides pre-allocated storage for a single data type. If many values of a single type are being allocated, it can be more efficient to pre-allocate the necessary storage. Since the size of the type is uniform, memory fragmentation can be avoided. Storing, clearing, and lookup operations become very cheap.
 
-While `slab` may look like other Rust collections, it is not intended to be used as a general purpose collection. The primary difference between `slab` and `Vec` is that [`slab`][c~slab~docs]⮳{{hi:slab}} returns the key when storing the value.
+While `slab` may look like other Rust collections, it is not intended to be used as a general purpose collection. The primary difference between `slab` and `Vec` is that [`slab`][c~slab~docs]↗{{hi:slab}} returns the key when storing the value.
 
 It is important to note that keys may be reused. In other words, once a value associated with a given key is removed from a slab, that key may be returned from future calls to insert.
 
@@ -52,7 +52,7 @@ It is important to note that keys may be reused. In other words, once a value as
 
 [![seize][c~seize~docs~badge]][c~seize~docs] [![seize~crates.io][c~seize~crates.io~badge]][c~seize~crates.io] [![seize~github][c~seize~github~badge]][c~seize~github] [![seize~lib.rs][c~seize~lib.rs~badge]][c~seize~lib.rs]{{hi:seize}}{{hi:Garbage}}{{hi:Concurrency}}{{hi:Rcu}}{{hi:Atomic}}{{hi:Lock-free}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
 
-[`seize`][c~seize~docs]⮳{{hi:seize}} allows fast, efficient, and predictable memory reclamation for concurrent data structures.
+[`seize`][c~seize~docs]↗{{hi:seize}} allows fast, efficient, and predictable memory reclamation for concurrent data structures.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

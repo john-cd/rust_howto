@@ -4,9 +4,9 @@ Motion control, feedback loops, PID controllers.
 
 {{#include control_systems.incl.md}}
 
-- Motor Control: Often uses [`embedded-hal`][c~embedded_hal~docs]⮳{{hi:embedded-hal}} and specific hardware crates. Motor control often involves low-level hardware interaction using crates based on [`embedded-hal`][c~embedded_hal~docs]⮳{{hi:embedded-hal}}.
-- Actuator Control: Often uses [`embedded-hal`][c~embedded_hal~docs]⮳{{hi:embedded-hal}} and specific hardware crates.
-- Motion Planning: [Linear algebra][p~linear-algebra] crates like [`nalgebra`][c~nalgebra~docs]⮳{{hi:nalgebra}} and [`alga`][c~alga~docs]⮳{{hi:alga}} are foundational.
+- Motor Control: Often uses [`embedded-hal`][c~embedded_hal~docs]↗{{hi:embedded-hal}} and specific hardware crates. Motor control often involves low-level hardware interaction using crates based on [`embedded-hal`][c~embedded_hal~docs]↗{{hi:embedded-hal}}.
+- Actuator Control: Often uses [`embedded-hal`][c~embedded_hal~docs]↗{{hi:embedded-hal}} and specific hardware crates.
+- Motion Planning: [Linear algebra][p~linear-algebra] crates like [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} and [`alga`][c~alga~docs]↗{{hi:alga}} are foundational.
 - [[path_planning | Path Planning]]: Path planning algorithms are often implemented using graph algorithms and search techniques.
 
 ## `nalgebra`: Linear Algebra Library for Control Algorithms {#nalgebra}
@@ -29,7 +29,7 @@ Collision avoidance, trajectory optimization.
 
 [![pathfinding~website][c~pathfinding~website~badge]][c~pathfinding~website] [![pathfinding][c~pathfinding~docs~badge]][c~pathfinding~docs] [![pathfinding~crates.io][c~pathfinding~crates.io~badge]][c~pathfinding~crates.io] [![pathfinding~github][c~pathfinding~github~badge]][c~pathfinding~github] [![pathfinding~lib.rs][c~pathfinding~lib.rs~badge]][c~pathfinding~lib.rs]{{hi:pathfinding}}{{hi:Astar}}{{hi:Graph}}{{hi:Flow}}{{hi:Dijkstra}}{{hi:Shortest-path}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
 
-[`pathfinding`][c~pathfinding~docs]⮳{{hi:pathfinding}} offers pathfinding, flow, and graph algorithms.
+[`pathfinding`][c~pathfinding~docs]↗{{hi:pathfinding}} offers pathfinding, flow, and graph algorithms.
 
 {{#example pathfinding}}
 
@@ -37,7 +37,7 @@ Collision avoidance, trajectory optimization.
 
 [![rrt][c~rrt~docs~badge]][c~rrt~docs] [![rrt~crates.io][c~rrt~crates.io~badge]][c~rrt~crates.io] [![rrt~github][c~rrt~github~badge]][c~rrt~github] [![rrt~lib.rs][c~rrt~lib.rs~badge]][c~rrt~lib.rs]{{hi:rrt}}{{hi:Search}}{{hi:Path-finding}}{{hi:Robotics}}{{hi:rrt}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
 
-[`rrt`][c~rrt~docs]⮳{{hi:rrt}} stands for Rapidly-exploring Random Tree library. Path finding using dual-RRT connect.
+[`rrt`][c~rrt~docs]↗{{hi:rrt}} stands for Rapidly-exploring Random Tree library. Path finding using dual-RRT connect.
 
 ## `openrr-planner` {#openrr-planner}
 

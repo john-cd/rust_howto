@@ -11,7 +11,7 @@ task queues, background job processing, and publish-subscribe (pub-sub).
 
 [![lapin][c~lapin~docs~badge]][c~lapin~docs] [![lapin~crates.io][c~lapin~crates.io~badge]][c~lapin~crates.io] [![lapin~github][c~lapin~github~badge]][c~lapin~github] [![lapin~lib.rs][c~lapin~lib.rs~badge]][c~lapin~lib.rs]{{hi:lapin}}{{hi:RabbitMQ}}{{hi:AMQP}}{{hi:Mio}}{{hi:Futures}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
 
-[`lapin`][c~lapin~docs]⮳{{hi:lapin}} is a AMQP client library. It is a pure Rust AMQP 0.9.1 client implementation, that is feature complete, fast, and easy to use.
+[`lapin`][c~lapin~docs]↗{{hi:lapin}} is a AMQP client library. It is a pure Rust AMQP 0.9.1 client implementation, that is feature complete, fast, and easy to use.
 
 ```rust,editable
 {{#include ../../../crates/cats/database/examples/amqp/lapin.rs:example}}

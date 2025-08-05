@@ -12,7 +12,7 @@
 
 See [[code_verification | Code Verification]].
 
-- How tools like [`kani`][c~kani~docs]⮳{{hi:kani}} might be used to prove properties of Rust code.
+- How tools like [`kani`][c~kani~docs]↗{{hi:kani}} might be used to prove properties of Rust code.
 
 ### Concurrency
 
@@ -27,10 +27,10 @@ See [[code_verification | Code Verification]].
 
 See [[science_geo | Geoscience]].
 
-Consider using crates like [`geo`][c~geo~docs]⮳{{hi:geo}} or [`proj`][c~proj~docs]⮳{{hi:proj}} for tasks such as:
+Consider using crates like [`geo`][c~geo~docs]↗{{hi:geo}} or [`proj`][c~proj~docs]↗{{hi:proj}} for tasks such as:
 
-- Calculating distances and bearings between locations. [`geo`][c~geo~docs]⮳{{hi:geo}}.
-- Converting between coordinate systems (e.g., latitude/longitude to UTM). [`proj`][c~proj~docs]⮳{{hi:proj}}.
+- Calculating distances and bearings between locations. [`geo`][c~geo~docs]↗{{hi:geo}}.
+- Converting between coordinate systems (e.g., latitude/longitude to UTM). [`proj`][c~proj~docs]↗{{hi:proj}}.
 - Working with geometric shapes (points, lines, polygons).
 
 ### Hardware
@@ -40,14 +40,14 @@ See [[hardware-support | Hardware Support]].
 ### Mathematics
 
 - Kalman Filters.
-- Matrix Operations: [`nalgebra`][c~nalgebra~docs]⮳{{hi:nalgebra}} (rotations).
+- Matrix Operations: [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} (rotations).
 - Numerical Integration: Trapezoidal rule example.
 - Quaternion: Rotation representation.
 
 ### Testing
 
 - Unit Test.
-- Property Testing: [`proptest`][c~proptest~docs]⮳{{hi:proptest}} for a specific property.
+- Property Testing: [`proptest`][c~proptest~docs]↗{{hi:proptest}} for a specific property.
 
 See [[testing | Testing]].
 

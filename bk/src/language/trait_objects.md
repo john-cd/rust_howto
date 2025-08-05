@@ -10,7 +10,7 @@ Recall that a [trait][p~traits]{{hi:Traits}} (also called contract or interface 
 
 A "trait object", denoted `dyn SomeTrait` where [`dyn`][keyword~dyn]{{hi:dyn}} is a keyword and `SomeTrait` is a trait (or a set thereof, see below), is an object that implements that specific trait, but which underlying concrete type is _not known at compile time_. In the example below, `dyn Draw` may be either a `Button` or a `Text` instance, since both types implement the `Draw` trait.
 
-Because it can host different concrete types at runtime, a trait object is "unsized"{{hi:Unsized}}, a.k.a. dynamically sized, which implies that it is only allowed to show up behind a reference or a smart pointer like [`std::boxed::Box`][c~std::boxed::Box~docs]{{hi:std::boxed::Box}}⮳:
+Because it can host different concrete types at runtime, a trait object is "unsized"{{hi:Unsized}}, a.k.a. dynamically sized, which implies that it is only allowed to show up behind a reference or a smart pointer like [`std::boxed::Box`][c~std::boxed::Box~docs]{{hi:std::boxed::Box}}↗:
 
 - `&dyn MyTrait` is a reference to a trait object (which can be anywhere, stack or heap),
 - `Box<dyn MyTrait>` is a heap-allocated trait object,
@@ -127,7 +127,7 @@ Note, however, two exceptions:
 
 - Trait objects can include "auto traits".{{hi:Autotraits}}{{hi:Auto traits}}
 
-Auto traits are [special traits][book~rust-reference~special-traits]⮳, one of [`std::marker::Send`][c~std::marker::Send~docs]{{hi:std::marker::Send}}⮳, [`std::marker::Sync`][c~std::marker::Sync~docs]{{hi:std::marker::Sync}}⮳, [`std::marker::Unpin`][c~std::marker::Unpin~docs]{{hi:std::marker::Unpin}}⮳, [`std::panic::UnwindSafe`][c~std::panic::UnwindSafe~docs]{{hi:std::panic::UnwindSafe}}⮳, and [`std::panic::RefUnwindSafe`][c~std::panic::RefUnwindSafe~docs]{{hi:std::panic::RefUnwindSafe}}⮳. The compiler automatically implements these autotraits for types if certain conditions are met.
+Auto traits are [special traits][book~rust-reference~special-traits]↗, one of [`std::marker::Send`][c~std::marker::Send~docs]{{hi:std::marker::Send}}↗, [`std::marker::Sync`][c~std::marker::Sync~docs]{{hi:std::marker::Sync}}↗, [`std::marker::Unpin`][c~std::marker::Unpin~docs]{{hi:std::marker::Unpin}}↗, [`std::panic::UnwindSafe`][c~std::panic::UnwindSafe~docs]{{hi:std::panic::UnwindSafe}}↗, and [`std::panic::RefUnwindSafe`][c~std::panic::RefUnwindSafe~docs]{{hi:std::panic::RefUnwindSafe}}↗. The compiler automatically implements these autotraits for types if certain conditions are met.
 
 For example, the following are valid trait objects:
 
@@ -149,7 +149,7 @@ Common examples include `Send` and `Sync` for thread safety. A type is `Send` if
 
 ### Dyn Compatibility / Object Safety {#dyn-compatibility}
 
-Only a trait that is "dyn-compatible" (or "object-safe") can be made into a trait object. The rules for dyn compatibility are rather complicated, constraining both the trait and the methods within, and (as of June 2025) not consistently documented in the [Rust reference][book~rust-reference~object-safe]⮳. When designing a trait for use in a trait object, let the compiler's error messages guide you.
+Only a trait that is "dyn-compatible" (or "object-safe") can be made into a trait object. The rules for dyn compatibility are rather complicated, constraining both the trait and the methods within, and (as of June 2025) not consistently documented in the [Rust reference][book~rust-reference~object-safe]↗. When designing a trait for use in a trait object, let the compiler's error messages guide you.
 
 The dyn compatibility restrictions stem from the fact that trait objects are inherently `!Sized` (dynamically sized types), because their concrete type (`Self`) isn't known at compile time:
 
@@ -169,7 +169,7 @@ In addition,
 
 ## Related Topics {#related-topics}
 
-- [Trait Objects (docs)][book~rust~trait-objects]{{hi:Trait objects}}⮳.
+- [Trait Objects (docs)][book~rust~trait-objects]{{hi:Trait objects}}↗.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
