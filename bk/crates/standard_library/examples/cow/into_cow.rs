@@ -1,15 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-//! Use the `Into` trait to construct `Cow`.
-//!
-//! The `Into` trait is the dual of `From` and is implemented for all types that
-//! implement `From`. Since `impl<'a> From<&'a str> for Cow<'a, str>` and
-//! `impl<'a> From<String> for Cow<'a, str>` are in the standard library, we can
-//! simply call `into()` to convert a `&str` or a String into `Cow`.
-//!
-//! `Cow` implements `From` for a number of other common types as well:
-//! (references to) `Vec`, `Path`, `PathBuf`, `OsStr`, `OsString`, etc.
-
 use std::borrow::Cow;
 
 enum HttpStatus {
@@ -18,7 +8,7 @@ enum HttpStatus {
     Custom(u16, String),
 }
 
-/// Call `into` to convert a string slice or a String into a `Cow` with minimum
+/// Call `into` to convert a string slice or a `String` into a `Cow` with minimum
 /// fuss.
 fn describe_status(status: &HttpStatus) -> Cow<'static, str> {
     // Note the return type.
