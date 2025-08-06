@@ -54,7 +54,7 @@
   - [Code Organization by Project Type and Size](code_organization/code_organization_by_project_type.md)
   - [Naming Conventions](code_organization/naming_conventions.md)
 
-# Categories
+# Recipes by Category
 
 - [Crate Selection](crate_selection/index.md)
 
@@ -84,17 +84,19 @@
   - [Statistics](categories/mathematics/statistics.md)
   - [Additional Numeric Types](categories/mathematics/additional_numeric_types.md)
 
----
+# Links and Resources
 
 - [Links](links/index.md)
-  - [Rust Cheat Sheets](links/rust_cheatsheets.md)
-  - [Learning](links/learning.md)
-  - [Books](links/books.md)
-  - [Blogs and Forums](links/blogs.md)
-  - [Example Code](links/example_code.md)
-  - [Meetings](links/meetings.md)
-  - [Videos](links/videos.md)
-  - [Companies](links/companies.md)
+- [Rust Cheat Sheets](links/rust_cheatsheets.md)
+- [Learning](links/learning.md)
+- [Books](links/books.md)
+- [Blogs and Forums](links/blogs.md)
+- [Example Code](links/example_code.md)
+- [Meetings](links/meetings.md)
+- [Videos](links/videos.md)
+- [Companies](links/companies.md)
+
+# Contributing
 
 - [Contributing](contributing/index.md)
   - [Topics of Interest](contributing/topics_of_interest.md)
