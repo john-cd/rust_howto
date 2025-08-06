@@ -6,18 +6,18 @@ Rust prefers snake case for variables and functions, so a function or method wou
 
 ## Name your Functions, Types, etc. (Naming Conventions) {#naming-conventions}
 
-Rust follows specific naming conventions to maintain consistency and readability in code. Here are some key guidelines:
+Rust follows specific naming conventions to maintain consistency and readability in code.{{hi:Naming conventions}} Here are some key guidelines:
 
-- Crates: Use lowercase with underscores (`snake_case`), avoiding `-rs` or `-rust` suffixes. Prefer a single word.
+- Crates: Use lowercase with underscores (`snake_case`), avoiding `-rs` or `-rust` suffixes. Prefer a single word.{{hi:snake_case}}
 - Modules: Use `snake_case` for module names.
-- Types & Traits: Use `UpperCamelCase` (e.g., `MyStruct`, `MyTrait`).
+- Types & Traits: Use `UpperCamelCase` (e.g., `MyStruct`, `MyTrait`).{{hi:UpperCamelCase}}
 - Enum Variants: Use `UpperCamelCase` (e.g., `MyEnum::VariantName`).
 - Functions & Methods: Use `snake_case` (e.g., `my_function()`).
   - General constructors: Use `new` or `with_more_details`.
   - Conversion constructors: Use `from_some_other_type`.
 - Local Variables: Use `snake_case` (e.g., `my_variable`).
 - Macros: Use `snake_case!`.
-- Constants & Statics: Use `SCREAMING_SNAKE_CASE` (e.g., `MY_CONSTANT`).
+- Constants & Statics: Use `SCREAMING_SNAKE_CASE` (e.g., `MY_CONSTANT`).{{hi:SCREAMING_SNAKE_CASE}}
 - Type Parameters: Use concise `UpperCamelCase`, usually a single uppercase letter (`T`, `U`, etc.). Use more descriptive names like `ItemType` only when clarity is needed.
 - Lifetimes: Use short `lowercase` names, usually a single letter (`'a`, `'b`, `'de`, `'src`).
 
@@ -45,7 +45,7 @@ When a type wraps a single value to associate it with higher-level semantics, ac
 
 ## Name Getters {#getter-conventions}
 
-With a few exceptions, the `get_` prefix is not used for getters in Rust code. Follow the field name by `_mut` for mutating getters.
+With a few exceptions, the `get_` prefix is not used for getters in Rust code.{{hi:Getters}} Follow the field name by `_mut` for mutating getters.
 
 ```rust,noplayground
 pub struct S {
@@ -69,7 +69,7 @@ For getters that do runtime validation such as bounds checking, consider adding 
 
 ## Name Iterators {#iterator-conventions}
 
-For a container with elements of type `U`, iterator methods should be named:
+For a container with elements of type `U`, iterator methods should be named:{{hi:Iterator methods}}
 
 ```rust,noplayground
 fn iter(&self) -> Iter             // The `Iter` struct implements `Iterator<Item = &U>`.

@@ -4,7 +4,7 @@
 
 ## Use Items from External Crates (Dependencies) in your Code {#dependencies}
 
-To use a (public) item (structs, enums, traits, functions, etc.) of an external crate, first make sure to include the external crate as a dependency in your crate's `Cargo.toml` file, for example:
+To use a (public) item (structs, enums, traits, functions, etc.) of an external crate, first make sure to include the external crate as a dependency{{hi:Dependency}} in your crate's `Cargo.toml` file, for example:
 
 ```toml
 [dependencies]

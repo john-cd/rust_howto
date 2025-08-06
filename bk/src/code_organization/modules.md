@@ -8,8 +8,8 @@
 
 Modules{{hi:Modules}} are Rust's way of organizing code within a crate (a binary or a library){{hi:Crate}}. Modules are containers that help:
 
-- Group related code - keep functions, structs, enums, etc., that work together in one place.
-- Control visibility - decide which parts of your code are public (usable outside the module) and which are private implementation details.
+- Group related code - keep functions, structs, enums, etc., that work together in one place,
+- Control visibility - decide which parts of your code are public (usable outside the module) and which are private implementation details,
 - Create namespaces - avoid naming conflicts by putting items into distinct scopes.
 
 Modules form a tree that originates in the "crate root file" (usually `src/lib.rs` for a library crate or `src/main.rs` for a binary crate). In the crate root file, you can declare modules. In turn, in each module, you can nest other modules, and so on.
@@ -70,7 +70,7 @@ Note the following:
 
 ## Access Items Within Modules via Paths {#paths}
 
-Paths let you use items (like functions, structs, enums, modules, etc.) within your Rust code, when those items are defined in different modules. Paths consist of a sequence of one or more segments separated by `::`, where each segment is an item (often a module), an alias, or a keyword like `super`, `self`, or `crate`:
+Paths{{hi:Path}} let you use items (like functions, structs, enums, modules, etc.) within your Rust code, when those items are defined in different modules. Paths consist of a sequence of one or more segments separated by `::`, where each segment is an item (often a module), an alias, or a keyword like `super`, `self`, or `crate`:{{hi:super}}{{hi:self}}{{hi:crate}}
 
 ```rust,noplayground
 a_module                          // Path to a module.
@@ -86,7 +86,7 @@ super::brother_module             // Path to another module declared in the pare
 crate::first_level::second_level  // Path to a nested module, starting from the crate root.
 ```
 
-Note that [[visibility | visibility]] rules apply. A path is valid only if all of its segments are accessible from the location of use. See the section below. Aliases are covered in [[use_keyword | `use` keyword]] chapter.
+Note that [[visibility | visibility]] rules apply. A path is valid only if all of its segments are accessible from the location of use. See the section below. Aliases are covered in [[use_keyword | `use` keyword]] chapter.{{hi:use}}
 
 Going into more details, there are two main kinds of paths: relative and absolute paths. Relative paths start from the current module you are writing code in:
 
@@ -142,7 +142,7 @@ mod module_a {
 crate::module_a::submodule_b::some_function();
 ```
 
-Absolute paths are infrequently seen but useful for disambiguation, when a module name is the same than an external dependency.
+{{i:Absolute paths}} are infrequently seen but useful for disambiguation, when a module name is the same than an external dependency.
 
 Paths can be used to refer to elements within containers other than modules: structs, enums, traits, etc.
 
@@ -155,10 +155,10 @@ TypeName::CONSTANT_NAME           // Path to an associated constant within a typ
 
 ## Use Modules to Hide Implementation Details {#hide-implementation-details}
 
-Modules provides encapsulation, meaning they hide items within from their parent, unless the items are explicitly made public.
+{{i:Modules}} provides encapsulation, meaning they hide items within from their parent, unless the items are explicitly made public.
 
-- Most items, including modules and items within, are private by default.
-- Use the `pub` keyword to make them public.
+- Most items, including modules and items within, are private by default.{{hi:Private by default}}
+- Use the `pub` keyword to make them public.{{hi:pub}}
 - All items, public or private, can be accessed from within the _same_ module or child modules.
 - Items cannot be accessed from their parent, unless they are public.
 - Items cannot be accessed from another module, unless all items in the path from that module to the item are accessible (public, if traversed in the parent -> child direction; private or public, if traversed in the child -> parent direction or in the same module).
