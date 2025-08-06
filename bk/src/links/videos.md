@@ -36,7 +36,7 @@
 - [RustShip](https://creators.spotify.com/pod/profile/marco-ieni)↗.
 - [The Rust Workshop Podcast](https://podcasts.apple.com/us/podcast/the-rust-workshop-podcast/id1644007146)↗.
 
-### Older Podcasts {#skip}
+### Older Podcasts {#older-podcasts}
 
 - [Are We Podcast Yet?](https://podcasts.apple.com/us/podcast/are-we-podcast-yet/id1484368019)↗.
 - [Building With Rust](https://podcasts.apple.com/us/podcast/building-with-rust/id1553513574)↗.
