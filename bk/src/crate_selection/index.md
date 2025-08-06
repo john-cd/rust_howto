@@ -4,7 +4,7 @@
 
 The Rust standard library is (on purpose) fairly minimal. Besides providing basic data types, the standard library is largely concerned with abstracting over differences in common platforms, e.g., Windows and Unix derivatives.
 
-Instead, major functionality like regular expressions, random numbers, cryptography, serialization, async, and logging, are found in separate Rust crates that are available on [`crates.io`][crates.io~website]{{hi:crates.io}}↗. Rusteaceans add these crates to their projects via the [`Cargo`][c~cargo~docs]↗{{hi:Cargo}} package manager.
+Instead, major functionality like regular expressions, random numbers, cryptography, serialization, async, and logging, are found in separate Rust crates that are available on [`crates.io`][crates.io~website]{{hi:crates.io}}↗. Rustaceans add these crates to their projects via the [`Cargo`][c~cargo~docs]↗{{hi:Cargo}} package manager.
 
 A common complaint from new Rust developers is that they don't know which crates they ought to use. It is the main purpose of this book to provide expansive coverage of "key" or "foundational" crates - those crates that make up the most common programming tasks.
 
