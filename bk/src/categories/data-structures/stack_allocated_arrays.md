@@ -56,7 +56,7 @@ Arrays that are stack-allocated will fallback to the heap if the fixed stack cap
 
 The [`tinyvec`][c~tinyvec~docs]↗{{hi:tinyvec}} crate provides a way to work with vectors that can store a small number of elements inline, without heap allocation, and dynamically grow to the heap if necessary.
 It is in 100% safe Rust code. It is similar to [`smallvec`][c~smallvec~docs]↗{{hi:smallvec}} but with a smaller feature set and no dependencies.
-[`tinyvec`][c~tinyvec~docs]↗{{hi:tinyvec}} requires items to implement the [`Default`][c~std::default::Default~docs]↗{{hi:Default}} trait.
+[`tinyvec`][c~tinyvec~docs]↗{{hi:tinyvec}} requires items to implement the [`Default`][c~std::default::Default~docs]↗{{hi:std::default::Default}} trait.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/data_structures/examples/vec/tinyvec.rs:example}}

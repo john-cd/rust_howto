@@ -19,11 +19,11 @@ This book is intended for
 - new Rust programmers, to get an overview of the capabilities of the Rust ecosystem and pointers to other resources.
 - experienced programmers, to find code examples and review best practices for common programming tasks.
 
-Readers should have already some basic familiarity with [Rust][rust-lang]{{hi:Rust}}↗ concepts. The [Rust Book][book~rust]{{hi:Rust book}}↗ is an excellent resource for complete beginners to get started with. This said, key features of the language are summarized in this book's [language][p~lang] section.
+Readers should have already some basic familiarity with [Rust][rust-lang]↗ concepts. The [Rust Book][book~rust]{{hi:Rust book}}↗ is an excellent resource for complete beginners to get started with. This said, key features of the language are summarized in this book's [language][p~lang] section.
 
 ## Why This Book
 
-Per the curated list of Rust crates [`blessed.rs`][blessed-rs~website]↗, "the standard library in Rust is much smaller than in Python or Go, for example. Those languages come with "batteries included" support ... Rust, on the other hand, gets things like that from the [`crates.io`][crates.io~website]{{hi:crates.io}}↗ ecosystem and the [`Cargo`][c~cargo~docs]↗{{hi:Cargo}} package manager. But with _more than 180 thousand crates_ (libraries) to choose from, a common complaint from new Rust developers is that they don't know where to start, which crates they ought to use, and which crates they ought to trust." There are no dominant frameworks or platforms akin to `Rails`, `Django`, `Spring` or `Node` in the Rust world at this time.
+Per the curated list of Rust crates [`blessed.rs`][blessed-rs~website]↗, "the standard library in Rust is much smaller than in Python or Go, for example. Those languages come with "batteries included" support ... Rust, on the other hand, gets things like that from the [`crates.io`][crates.io~website]{{hi:crates.io}}↗ ecosystem and the [`cargo`][c~cargo~docs]↗{{hi:cargo}} package manager. But with _more than 180 thousand crates_ (libraries) to choose from, a common complaint from new Rust developers is that they don't know where to start, which crates they ought to use, and which crates they ought to trust." There are no dominant frameworks or platforms akin to `Rails`, `Django`, `Spring` or `Node` in the Rust world at this time.
 
 This book therefore intends to provide EXAMPLES to demonstrate the uses of KEY CRATES, that is libraries necessary for day-to-day Rust coding - examples which are absent from or scattered in the [reference documentation][docs.rs~website]↗ of hundreds of crates. It hopes to become a "cheat sheet on steroid" for the Rust ECOSYSTEM (_not just_ for the Rust language).
 
@@ -105,9 +105,9 @@ Since this book's recipes are intended to be reused as-is and encourage best pra
 {{#include ../crates/about/examples/about2.rs:example}}
 ```
 
-In most examples, we have chosen to use [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}}'s [`Result`][c~anyhow::Result~docs] as the return type of any fallible function, instead of writing `std::result::Result<_, Box<dyn std::error::Error>>` or using custom [`Result`][c~std::result::Result~docs]↗{{hi:Result}} / [`Error`][c~std::error::Error~docs]↗{{hi:Error}} types.
+In most examples, we have chosen to use [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}}'s [`Result`][c~anyhow::Result~docs] as the return type of any fallible function, instead of writing `std::result::Result<_, Box<dyn std::error::Error>>` or using custom [`Result`][c~std::result::Result~docs]↗{{hi:Result}} / [`Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} types.
 
-Within the code, we use the `?` operator to easily propagate any error that implements the [`std::error::Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} trait.
+Within the code, we use the `?` operator to easily propagate any error that implements the [`std::error::Error`][c~std::error::Error~docs]↗ trait.
 
 For more background on error handling in Rust, read [this page][book~rust~error-handling]↗ of the 'Rust book'.
 

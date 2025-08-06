@@ -4,7 +4,7 @@
 
 ## Folders and Key Files {#folders}
 
-The book's [GitHub repository](https://github.com/john-cd/rust_howto)↗ is structured as follows:
+This book's [GitHub repository](https://github.com/john-cd/rust_howto)↗ is structured as follows:
 
 - The Dev Container and Docker (Compose) configuration files are found in [`.devcontainer`][dev-containers-devcontainer.json]↗{{hi:.devcontainer}}. Review the [[dev_container_docker | Dev Container and Docker]] page for usage.
 - The `.github` folder contains the GitHub configuration, including the CD/CI workflows that build the code & book and deploy the book to Github Pages.

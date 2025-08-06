@@ -80,7 +80,7 @@ The following examples cover less commonly-used data structures:
 - [[smart_pointers | Smart Pointers]].
 - Immutable Data Structures: [`im`][c~im~docs]↗{{hi:im}}, [`rpds`][c~rpds~docs]↗{{hi:rpds}}. See [[functional_programming | Functional Programming]].
 - Specialized Data Structures:
-  - Graphs: [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}}, [`graph_rs`][c~graph_rs~docs]↗{{hi:graph_rs}}.
+  - Graphs: [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}}, [`graph-rs`][c~graph_rs~docs]↗{{hi:graph-rs}}.
   - Trees and Tries: [`indextree`][c~indextree~docs]↗{{hi:indextree}}.
   - Bloom Filters: [`bloomfilter`][c~bloomfilter~docs]↗{{hi:bloomfilter}}.
   - Skip Lists: [`skiplist`][c~skiplist~docs]↗{{hi:skiplist}}.
@@ -100,10 +100,10 @@ The following examples cover less commonly-used data structures:
 <div class="hidden">
 [data-structures: expand](https://github.com/john-cd/rust_howto/issues/280)
 
-- [rust-algorithms: Common data structures and algorithms in Rust](https://github.com/EbTech/rust-algorithms)
-- [PHF — data structures in Rust](https://lib.rs/crates/phf) Runtime support for perfect hash function data structures
-- [PriorityQueue — data structures in Rust](https://lib.rs/crates/priority-queue)
-- [elsa — data structures in Rust](https://lib.rs/crates/elsa)
-- [Equivalent — data structures in Rust](https://lib.rs/crates/equivalent)
+- [`rust-algorithms`: Common data structures and algorithms in Rust](https://github.com/EbTech/rust-algorithms)
+- [PHF - data structures in Rust](https://lib.rs/crates/phf) Runtime support for perfect hash function data structures
+- [`PriorityQueue` - data structures in Rust](https://lib.rs/crates/priority-queue)
+- [`elsa` - data structures in Rust](https://lib.rs/crates/elsa)
+- [`Equivalent` - data structures in Rust](https://lib.rs/crates/equivalent)
 
 </div>

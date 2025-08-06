@@ -4,7 +4,7 @@
 
 ## YouTube Channels and Videos {#videos}
 
-- Official [Rust YouTube Channel](https://www.youtube.com/@RustVideos)↗.{{hi:YouTube Videos}}
+- Official [Rust YouTube Channel](https://www.youtube.com/@RustVideos)↗.{{hi:YouTube videos}}
 - The [Rust Foundation](https://www.youtube.com/@rustfoundation)↗ channel.
 - Playlists:
   - [50 Projects](https://youtube.com/playlist?list=PL5dTjWUk_cPYuhHm9_QImW7_u4lr5d6zO)↗.

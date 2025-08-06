@@ -35,7 +35,7 @@ See:
 
 ## Convert between Strings and Enum Variants with `strum` {#strum}
 
-[![strum][c~strum~docs~badge]][c~strum~docs] [![strum~crates.io][c~strum~crates.io~badge]][c~strum~crates.io] [![strum~github][c~strum~github~badge]][c~strum~github] [![strum~lib.rs][c~strum~lib.rs~badge]][c~strum~lib.rs]{{hi:strum}}{{hi:Enum}}{{hi:Macros}}{{hi:Proc-macros}}{{hi:String}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}} [![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
+[![strum][c~strum~docs~badge]][c~strum~docs] [![strum~crates.io][c~strum~crates.io~badge]][c~strum~crates.io] [![strum~github][c~strum~github~badge]][c~strum~github] [![strum~lib.rs][c~strum~lib.rs~badge]][c~strum~lib.rs]{{hi:strum}}{{hi:Enums}}{{hi:Macros}}{{hi:Proc-macros}}{{hi:Strings}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}} [![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
 
 The [`strum`][c~strum~docs]↗{{hi:strum}} crate provides helpful macros for working with enums and strings. It also can convert from an integer to an enum, add custom properties to enum variants, etc.
 

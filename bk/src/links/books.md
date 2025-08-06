@@ -6,7 +6,7 @@ The following includes books and other long-form writings about Rust.
 
 ## Lists of Books {#book-lists}
 
-- [Little Book of Rust Books][book~the-little-book-of-rust-books]{{hi:Rust Books}}↗.
+- [Little Book of Rust Books][book~the-little-book-of-rust-books]{{hi:Rust books}}↗.
 - [Awesome Rust Books](https://github.com/sger/RustBooks)↗.
 - [LearnRust](https://github.com/ImplFerris/LearnRust)↗: A "list of resources to learn Rust - Roadmap from beginner to advanced level". Includes a book section.
 - [`rust-learning`](https://github.com/ctjhoa/rust-learning)↗: A bunch of links to books, blog posts, articles, videos, etc. for learning Rust.
@@ -97,11 +97,11 @@ The books found on [`rust-lang.org`][rust-lang]↗ and friends are listed below:
 
 - The [`rustc` Book](https://doc.rust-lang.org/rustc/index.html)↗.{{hi:Compiler}}
 - [Rust Compiler Development Guide](https://rustc-dev-guide.rust-lang.org/getting-started.html)↗.
-- The [Cargo Book](https://doc.rust-lang.org/cargo/index.html)↗. Cargo is the Rust package manager.{{hi:Tools}}{{hi:Cargo}}
+- The [Cargo Book](https://doc.rust-lang.org/cargo/index.html)↗. Cargo is the Rust package manager.{{hi:Tools}}{{hi:cargo}}
 - The [`rustdoc` book][book~rustdoc]↗.{{hi:rustdoc}}
 - [Configuring `rustfmt`](https://rust-lang.github.io/rustfmt)↗.{{hi:rustfmt}}
-- [Clippy Documentation](https://doc.rust-lang.org/clippy)↗.{{hi:Clippy}}
-- [mdBook Documentation](https://rust-lang.github.io/mdBook)↗.{{hi:mdBook}}
+- [Clippy Documentation](https://doc.rust-lang.org/clippy)↗.{{hi:clippy}}
+- [mdBook Documentation](https://rust-lang.github.io/mdBook)↗.{{hi:mdbook}}
 
 ### Concurrency & Parallelism {#concurrency-parallelism}
 
@@ -114,11 +114,11 @@ The books found on [`rust-lang.org`][rust-lang]↗ and friends are listed below:
 
 ### Design Patterns {#design-patterns}
 
-- [Rust Design Patterns][book~rust-design-patterns]↗.{{hi:Design Patterns}}
+- [Rust Design Patterns][book~rust-design-patterns]↗.{{hi:Design patterns}}
 
 ### Embedded Systems {#embedded}
 
-- The [Embedded Rust Book](https://docs.rust-embedded.org/book/intro/index.html)↗.{{hi:Embedded}}
+- The [Embedded Rust Book](https://docs.rust-embedded.org/book/intro/index.html)↗.{{hi:Embedded development}}
 - The [Discovery Book](https://docs.rust-embedded.org/discovery)↗: Introduction to microcontrollers and how to use Rust with them.{{hi:Microcontrollers}}
 - The [Rust on ESP Book](https://docs.esp-rs.org/book)↗ for Espressif devices.
   - [Embedded Rust (no_std) on Espressif](https://docs.esp-rs.org/no_std-training)↗.

@@ -4,7 +4,7 @@
 
 The Rust standard library is fairly minimal (on purpose). Besides providing basic data types, the standard library is largely concerned with abstracting over differences in common platforms, e.g., Windows and Unix derivatives.
 
-Instead, major functionality like regular expressions, random numbers, cryptography, serialization, async, and logging, are found in separate Rust crates that are available on [`crates.io`][crates.io~website]{{hi:crates.io}}↗. Rustaceans add these crates to their projects via the [`Cargo`][c~cargo~docs]↗{{hi:Cargo}} package manager.
+Instead, major functionality like regular expressions, random numbers, cryptography, serialization, async, and logging, are found in separate Rust crates that are available on [`crates.io`][crates.io~website]{{hi:crates.io}}↗. Rustaceans add these crates to their projects via the [`cargo`][c~cargo~docs]↗{{hi:cargo}} package manager.
 
 A common complaint from new Rust developers is that they don't know which crates they ought to use.
 
@@ -30,7 +30,7 @@ You may also use the following sites for crate recommendations:
   - Crates [statistics][lib-rs~stats]↗,
 - The Rust community's official crate registry: [`crates.io`][crates.io~website]{{hi:crates.io}}↗,
   - [`crates.io`'s Most (Recent) Downloads][crates.io~most-recent-downloads]↗.
-  - You should search for crates by [category](https://crates.io/categories) and by [keywords](https://crates.io/keywords)↗.
+  - You should search for crates by [category](https://crates.io/categories)↗ and by [keywords](https://crates.io/keywords)↗.
 
 You can also search or post on Rust chat servers and forums - see [[blogs | Blogs and Forums]].
 

@@ -4,7 +4,7 @@
 
 ## Calculate the Side Length of a Triangle {#calculating-the-side-length-of-a-triangle}
 
-[![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~science][cat~science~badge]][cat~science]{{hi:Science}}
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~science][cat~science~badge]][cat~science]{{hi:Trigonometry}}
 
 Calculates the length of the hypotenuse of a right-angle triangle with an angle of 2 radians and opposite side length of 80.
 
@@ -14,7 +14,7 @@ Calculates the length of the hypotenuse of a right-angle triangle with an angle 
 
 ## Verify that `tan` is Equal to `sin` Divided by `cos` {#verifying-tan-is-equal-to-sin-divided-by-cos}
 
-[![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~science][cat~science~badge]][cat~science]{{hi:Science}}
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~science][cat~science~badge]][cat~science]
 
 Verifies `tan(x)` is equal to `sin(x)/cos(x)` for x = 6.
 

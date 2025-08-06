@@ -8,7 +8,7 @@
 [![num~crates.io][c~num~crates.io~badge]][c~num~crates.io]
 [![num~github][c~num~github~badge]][c~num~github]
 [![num~lib.rs][c~num~lib.rs~badge]][c~num~lib.rs]
-[![cat~science][cat~science~badge]][cat~science]{{hi:Science}}
+[![cat~science][cat~science~badge]][cat~science]
 [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
 [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
@@ -25,7 +25,7 @@ Creates complex numbers of type [`num::complex::Complex`][c~num::complex::Comple
 [![num~crates.io][c~num~crates.io~badge]][c~num~crates.io]
 [![num~github][c~num~github~badge]][c~num~github]
 [![num~lib.rs][c~num~lib.rs~badge]][c~num~lib.rs]
-[![cat~science][cat~science~badge]][cat~science]{{hi:Science}}
+[![cat~science][cat~science~badge]][cat~science]
 [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
 [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
@@ -42,7 +42,7 @@ Performing mathematical operations on complex numbers is the same as on built-in
 [![num~crates.io][c~num~crates.io~badge]][c~num~crates.io]
 [![num~github][c~num~github~badge]][c~num~github]
 [![num~lib.rs][c~num~lib.rs~badge]][c~num~lib.rs]
-[![cat~science][cat~science~badge]][cat~science]{{hi:Science}}
+[![cat~science][cat~science~badge]][cat~science]
 [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
 [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}

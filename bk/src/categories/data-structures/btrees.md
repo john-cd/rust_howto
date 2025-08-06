@@ -42,7 +42,7 @@ B-Tree Set is similar to `HashSet`, but it keeps the elements sorted.
 - [[sorting | Sorting]].
 - [[vectors | Vectors]].
 
-Refer as well to the [`ordered_float`][c~ordered_float~docs]↗{{hi:ordered_float}} example in the [[additional_numeric_types | Additional Numeric Types]] chapter.
+Refer as well to the [`ordered-float`][c~ordered_float~docs]↗{{hi:ordered-float}} example in the [[additional_numeric_types | Additional Numeric Types]] chapter.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

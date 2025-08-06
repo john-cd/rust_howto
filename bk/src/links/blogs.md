@@ -1,6 +1,6 @@
 # Blogs and Forums
 
-{{#include blogs.incl.md}}{{hi:Blogs}}{{hi:Newsletters}}{{hi:Chat}}{{hi:Forums}}{{hi:Social Media}}
+{{#include blogs.incl.md}}{{hi:Blogs}}{{hi:Newsletters}}{{hi:Chat server}}{{hi:Forums}}{{hi:Social media}}
 
 ## Chat Platforms, Forums, and Social Media {#chat}
 

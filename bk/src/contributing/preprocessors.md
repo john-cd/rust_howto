@@ -1,4 +1,4 @@
-# MdBook pre-processors
+# 'mdBook' pre-processors
 
 {{#include preprocessors.incl.md}}
 
@@ -10,7 +10,7 @@ The [`bk/book.toml`](https://github.com/john-cd/rust_howto/blob/main/bk/book.tom
 
 - [`mdbook-private`][c~mdbook_private~github]↗ hides private sections and chapters in the book.
 - `mdbook-scrub` is a custom preprocessor written specifically for this book. See below.
-- [`mdbook-indexing`](https://github.com/daviddrysdale/mdbook-indexing/tree/main)↗ builds a word index via `{{i:<text>}}`, `{{hi:<text>}}` annotations in the book's Markdown.
+- [`mdbook-indexing`](https://github.com/daviddrysdale/mdbook-indexing/tree/main)↗ builds a word index via annotations in the book's Markdown.
 - [`mdbook-linkcheck`][c~mdbook_linkcheck~github]{{hi:mdbook-linkcheck}}↗ is a [backend](https://rust-lang.github.io/mdBook/for_developers/backends.html)↗ that checks (internal) links. Install with `cargo install mdbook-linkcheck`. Un-comment the related section in [`book.toml`][c~mdbook~book.toml]↗{{hi:book.toml}}.
 - The default `html` backend is used to generate the HTML for deployment on GitHub Pages.
 

@@ -4,9 +4,9 @@
 
 ## `Cow` Use Cases {#skip}
 
-[![std][c~std~docs~badge]][c~std~docs] {{hi:Clone-on-write}}
+[![std][c~std~docs~badge]][c~std~docs]{{hi:Clone-on-write}}
 
-The type [`std::borrow::Cow`][c~std::borrow::Cow~docs]{{hi:Cow}} is a smart pointer providing clone-on-write functionality: it encloses and provides immutable access to borrowed data, and clone the data lazily when mutation or ownership is required.
+The type [`std::borrow::Cow`][c~std::borrow::Cow~docs]{{hi:std::borrow::Cow}} is a smart pointer providing clone-on-write functionality: it encloses and provides immutable access to borrowed data, and clone the data lazily when mutation or ownership is required.
 
 `Cow` optimizes memory usage by delaying cloning until mutation is required, if it is required. It is especially useful in cases where:
 
@@ -14,11 +14,11 @@ The type [`std::borrow::Cow`][c~std::borrow::Cow~docs]{{hi:Cow}} is a smart poin
 - Needing to modify the underlying value is rare,
 - The stored value is mostly used for read-only purposes.
 
-`Cow`, as a smart pointer, implements `Deref`, which means that you can call non-mutating methods directly on the data it encloses. If mutation is desired, `to_mut` will obtain a mutable reference to an owned value, cloning if necessary.
+`Cow`, as a smart pointer, implements [`Deref`](https://doc.rust-lang.org/std/ops/trait.Deref.html)↗{{hi:std::ops::Deref}}, which means that you can call non-mutating methods directly on the data it encloses. If mutation is desired, `to_mut` will obtain a mutable reference to an owned value, cloning if necessary.
 
 ## Accept Either a Owned or Borrowed Value as the Input of a Function {#accept-either-owned-or-borrowed-values}
 
-Since `Cow` allows borrowing until mutation is needed, it's ideal for functions that take either borrowed or owned strings without unnecessary cloning.
+Since [`Cow`][c~std::borrow::Cow~docs]{{hi:std::borrow::Cow}} allows borrowing until mutation is needed, it's ideal for functions that take either borrowed or owned strings without unnecessary cloning.
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/cow/cow_as_function_param.rs:example}}
@@ -34,7 +34,7 @@ You can of course pass a `&mut Cow<T>` to a function. Modify the underlying valu
 
 ## Return a `Cow` from a Function {#return-cow-from-function}
 
-It is common to return a `Cow` from a function, if the (borrowed) input is returned unmodified in most, but not all, cases.
+It is common to return a [`Cow`][c~std::borrow::Cow~docs]{{hi:std::borrow::Cow}} from a function, if the (borrowed) input is returned unmodified in most, but not all, cases.
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/cow/function_returning_cow.rs:example}}

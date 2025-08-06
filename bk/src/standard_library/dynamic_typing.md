@@ -6,9 +6,9 @@
 
 [![std][c~std~docs~badge]][c~std~docs]
 
-Dynamic typing in Rust is limited compared to other languages, but the [`std::any`](https://doc.rust-lang.org/std/any/index.html)↗{{hi:any}} module provides ways to obtain type information at runtime.
+Dynamic typing in Rust is limited compared to other languages, but the [`std::any`](https://doc.rust-lang.org/std/any/index.html)↗{{hi:std::any}} module provides ways to obtain type information at runtime.
 
-`std::any` is primarily used in scenarios where you need to store and retrieve data of various, unknown concrete types within a collection or context that uses trait objects (specifically `dyn Any`). This often comes up in:
+`std::any` is primarily used in scenarios where you need to store and retrieve data of various, unknown concrete types within a collection or context that uses trait objects (specifically `dyn Any`{{hi:dyn Any}}). This often comes up in:
 
 - Plugins: If you're building a system where users can register custom data or components, and you need to store them polymorphically, `Any` allows you to later retrieve them and process them based on their original concrete type.
 - Generic Event Systems: In an event system where different types of events might be processed by a single handler, `Any` can help identify and process specific event types.
@@ -22,7 +22,7 @@ You can use `TypeId` to check if two types are the same or as a key to store typ
 {{#include ../../crates/standard_library/examples/any/type_id.rs:example}}
 ```
 
-The [`std::any::Any`](https://doc.rust-lang.org/std/any/trait.Any.html)↗ trait is the core of the `std::any` module. It is a special built-in trait that determines the concrete type of a trait object _at runtime_ and provides the ability to _downcast_ a trait object to a concrete type, when the concrete type is known ("downcasting" converts a reference of a general type (here `dyn Any` and related types) to a reference of a more specific type, if the value is of that type). The `Any` trait provides a few methods:
+The [`std::any::Any`](https://doc.rust-lang.org/std/any/trait.Any.html)↗{{hi:std::any::Any}} trait is the core of the `std::any` module. It is a special built-in trait that determines the concrete type of a trait object _at runtime_ and provides the ability to _downcast_ a trait object to a concrete type, when the concrete type is known ("downcasting" converts a reference of a general type (here `dyn Any` and related types) to a reference of a more specific type, if the value is of that type). The `Any` trait provides a few methods:
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/any/any.rs:example}}

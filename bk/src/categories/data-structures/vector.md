@@ -4,7 +4,7 @@
 
 ## Store Homogeneous Data in a Contiguous, Growable Array: `Vec` {#vec}
 
-[![std][c~std~docs~badge]][c~std~docs]{{hi:std}}{{hi:Vec}}{{hi:Vectors}}
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}}{{hi:std::vec::Vec}}{{hi:Vector}}
 
 The vector type `Vec<T>` is the go-to, general-purpose data structure, when you need a collection of elements that can change in size.
 

@@ -4,9 +4,9 @@
 
 ## Using VS Code {#using-vs-code}
 
-Clone the [repo][rust-howto~github]↗ and open the folder in [VS Code][rust-in-vs-code]↗. Edit `.devcontainer/.env` if needed. VS Code{{hi:VS code}} should prompt you to open the code in a [`docker`][docker~website]{{hi:docker}}↗ container, which installs [`mdbook`][c~mdbook~docs]{{hi:mdbook}}↗ and rust tooling{{hi:Rust tooling}} automatically. Make sure you have previously installed
+Clone the [repo][rust-howto~github]↗ and open the folder in [VS Code][rust-in-vs-code]↗. Edit `.devcontainer/.env` if needed. VS Code{{hi:VS Code}} should prompt you to open the code in a [`docker`][docker~website]{{hi:docker}}↗ container, which installs [`mdbook`][c~mdbook~docs]{{hi:mdbook}}↗ and rust tooling{{hi:Rust tooling}} automatically. Make sure you have previously installed
 
-- [Dev Container extension][dev-container-extension]{{hi:Dev Containers}}↗.
+- [Dev Container extension][dev-container-extension]{{hi:Dev Container}}↗.
 - [Docker Desktop][docker~desktop~website]↗ (or at least the Docker engine).
 
 Note that opening the code folder in VS Code may take a little while the first time around.

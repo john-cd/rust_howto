@@ -125,7 +125,7 @@ Note, however, two exceptions:
 {{#include ../../crates/language/examples/trait_objects/dyn_supertraits.rs:example}}
 ```
 
-- Trait objects can include "auto traits".{{hi:Autotraits}}{{hi:Auto traits}}
+- Trait objects can include "auto traits".{{hi:Auto traits}}
 
 Auto traits are [special traits][book~rust-reference~special-traits]↗, one of [`std::marker::Send`][c~std::marker::Send~docs]{{hi:std::marker::Send}}↗, [`std::marker::Sync`][c~std::marker::Sync~docs]{{hi:std::marker::Sync}}↗, [`std::marker::Unpin`][c~std::marker::Unpin~docs]{{hi:std::marker::Unpin}}↗, [`std::panic::UnwindSafe`][c~std::panic::UnwindSafe~docs]{{hi:std::panic::UnwindSafe}}↗, and [`std::panic::RefUnwindSafe`][c~std::panic::RefUnwindSafe~docs]{{hi:std::panic::RefUnwindSafe}}↗. The compiler automatically implements these autotraits for types if certain conditions are met.
 
