@@ -2,21 +2,23 @@
 
 ## Choose Dependencies for your Project {#choose-dependencies}
 
-The Rust standard library is (on purpose) fairly minimal. Besides providing basic data types, the standard library is largely concerned with abstracting over differences in common platforms, e.g., Windows and Unix derivatives.
+The Rust standard library is fairly minimal (on purpose). Besides providing basic data types, the standard library is largely concerned with abstracting over differences in common platforms, e.g., Windows and Unix derivatives.
 
 Instead, major functionality like regular expressions, random numbers, cryptography, serialization, async, and logging, are found in separate Rust crates that are available on [`crates.io`][crates.io~website]{{hi:crates.io}}↗. Rustaceans add these crates to their projects via the [`Cargo`][c~cargo~docs]↗{{hi:Cargo}} package manager.
 
-A common complaint from new Rust developers is that they don't know which crates they ought to use. It is the main purpose of this book to provide expansive coverage of "key" or "foundational" crates - those crates that make up the most common programming tasks.
+A common complaint from new Rust developers is that they don't know which crates they ought to use.
 
-### Use this Book to Select Crates {#crates}
+### Use this Book to Select Crates for your Project {#crates}
+
+It is the main purpose of this book to provide expansive coverage of "key" or "foundational" crates - those crates that make up the most common programming tasks.
 
 1. Browse the left sidebar for a relevant category.
 1. Search by keyword for recipes for your specific problem.
+1. Consult the index of examples.
 1. Consult the [[word index | word_index]].
-1. Consult the following crate lists:
-
-- [Crates by Alphabetical Order][p~crates-alphabetical].
-- [Crates by Category][p~crates-categories].
+1. Consult [Crates by Alphabetical Order][p~crates-alphabetical] and [Crates by Category][p~crates-categories].
+1. Use this book's [[links | links]] to Rust documentation, books, videos, cheatsheets, etc.
+1. The [[example_code | Example Code and Templates]] chapter provides lists of popular Rust repositories.
 
 ### Crate Recommendations {#crate-recommendations}
 
@@ -28,8 +30,9 @@ You may also use the following sites for crate recommendations:
   - Crates [statistics][lib-rs~stats]↗,
 - The Rust community's official crate registry: [`crates.io`][crates.io~website]{{hi:crates.io}}↗,
   - [`crates.io`'s Most (Recent) Downloads][crates.io~most-recent-downloads]↗.
+  - You should search for crates by [category](https://crates.io/categories) and by [keywords](https://crates.io/keywords)↗.
 
-You should search for crates by category and by keywords.
+You can also search or post on Rust chat servers and forums - see [[blogs | Blogs and Forums]].
 
 ### Additional Lists & Reviews {#lists-reviews}
 
@@ -40,14 +43,20 @@ You should search for crates by category and by keywords.
 - ["Must know" Rust Crates](https://gitlab.com/samuel_schuepbach/must_know_rust_crates)↗.
 - [RustRepo](https://rustrepo.com/)↗.
 
+You may also consult older resources, such as:
+
+- [Best of Rust Crates][reddit~best-of-rust-crates]↗.
+- [Rust Starter Pack][rust-starter-pack~website]{{hi:Rust starter pack}}↗.
+- [![stdx][c~stdx~github~badge]][c~stdx~github]{{hi:stdx}}↗.
+
 ## Understand the State of the Rust Ecosystem {#understand-the-rust-ecosystem}
 
-You will find below links to "Are we ... yet?" websites and similar. They list key libraries and tools and provide an idea of the current state of the art in a given domain. Note that several are quite out-of-date.
+You will find below links to "Are we ... yet?" websites and similar. They list key libraries and tools and provide an idea of the current state of the art in a given domain.
 
 - General
   - [Are We Rust Yet?](https://github.com/UgurcanAkkok/AreWeRustYet)↗: Awesome list of "Are We *thing* Yet" for Rust.
-  - [Are We ... Yet? (Mozilla Wiki)](https://wiki.mozilla.org/Areweyet)↗.
-  - [Not Yet Awesome Rust](https://github.com/not-yet-awesome-rust/not-yet-awesome-rust)↗.
+    - [Are We ... Yet? (Mozilla Wiki)](https://wiki.mozilla.org/Areweyet)↗.
+  - [Not Yet Awesome Rust](https://github.com/not-yet-awesome-rust/not-yet-awesome-rust)↗: a list of Rust code and resources that do NOT exist yet.
 - By Topic
   - [Are We Web Yet?][are-we-web-yet?~website]↗.
   - [Are We Async Yet?][are-we-async-yet?~website]↗.
@@ -62,13 +71,7 @@ You will find below links to "Are we ... yet?" websites and similar. They list k
   - [Rust Audio](https://rust.audio)↗.
   - [Awesome Geo-Rust](https://github.com/pka/awesome-georust)↗: geospatial software, libraries, tools and resources, written in Rust.
 
-## Older Resources
-
-You may also consult older resources, such as:
-
-- [Best of Rust Crates][reddit~best-of-rust-crates]↗.
-- [Rust Starter Pack][rust-starter-pack~website]{{hi:Rust starter pack}}↗.
-- [![stdx][c~stdx~github~badge]][c~stdx~github]{{hi:stdx}}↗.
+Note that several of these websites are out-of-date. [Are We Rust Yet?](https://github.com/UgurcanAkkok/AreWeRustYet)↗ list their last commit date and update frequency.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

@@ -33,7 +33,6 @@ We are writing a "bible" for the Rust ecosystem, providing examples for common p
 
 This book's long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [`blessed.rs`][blessed-rs~website]{{hi:blessed.rs}}↗, the most (recently) downloaded libraries in [`crates.io`][crates.io~website]{{hi:crates.io}}↗, as well as popular crates per [`lib.rs`][lib-rs]{{hi:lib.rs}}↗ and its [statistics][lib-rs~stats]↗ page - overall, by keyword and by category.
 
-Review [key crates][p~crates]↗{{hi:Key crates}} for topic ideas.
 An informal (and very long) list of subjects we would like to cover is kept in the [topics of interest][p~topics-of-interest]↗ page.
 
 Draft chapters are kept in [this folder][rust-howto~drafts~github]↗ and in the `bk/later` directory.

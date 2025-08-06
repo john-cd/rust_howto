@@ -36,7 +36,7 @@ The "Rust How-to" project started as a set of notes kept while the author was le
 The left sidebar is organized by topic. Click on a topic in the sidebar to navigate to the page for that section of the book.
 
 - The book first summarizes the basics of the [language][p~lang] and often-used elements of the [standard library][p~standard-library]. The [[code_organization | code organization]] section explains how Rust code should be structured.
-- The [[crates | key crates]] section provides pointers on how to locate key crates and provides [[crates_alphabetical | alphabetical]] and [[crates_by_category | categorical]] indices of crates used in the book.
+- The [[crate_selection | crate selection]] chapter provides pointers on how to locate crates suitable for your project and provides [[crates_alphabetical | alphabetical]] and [[crates_by_category | categorical]] indices of crates used in the book.
 - The bulk of the book is divided in sections named after the [`crates.io`][crates.io~website]{{hi:crates.io}}↗ [categories][crates.io~category_slugs]↗, whenever possible.
 - Each section contains a list of recipes. The recipes are simple statements of a task to accomplish, like "generate random numbers in a range"; and each recipe is tagged with badges indicating which _crates_ they use, like [![rand][c~rand~docs~badge]][c~rand~docs], and which categories on [`crates.io`][crates.io~website]{{hi:crates.io}} those crates belong to, like [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}.
 

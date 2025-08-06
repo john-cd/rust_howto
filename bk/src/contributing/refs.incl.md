@@ -18,7 +18,6 @@
 [p~cloud]: # "../other/cloud/index.md"
 [p~compression]: # "../categories/compression/index.md"
 [p~configuration]: # "../categories/config/configuration.md"
-[p~crates]: # "../crate_selection/index.md"
 [p~database]: # "../categories/database/index.md"
 [p~databases]: # "../categories/database-implementations/databases.md"
 [p~documentation]: # "../categories/development-tools/documentation/documentation.md"
