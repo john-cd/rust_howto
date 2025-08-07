@@ -20,7 +20,7 @@ The [`zeroize`][c~zeroize~docs]↗{{hi:zeroize}} crate securely clear secrets fr
 
 [`subtle`][c~subtle~docs]↗{{hi:subtle}} provides pure-Rust traits and utilities for writing constant-time cryptographic code. In cryptography, timing attacks exploit variations in execution time to infer secret information. Constant-time code aims to eliminate these variations, ensuring that the execution time of an operation is independent of the secret data.
 
-It consists of a `Choice` type, and a collection of [traits][p~traits] using `Choice` instead of bool, which are intended to execute in constant-time. The Choice type is a wrapper around a u8 that holds a 0 or 1.
+It consists of a [`Choice`](https://docs.rs/subtle/latest/subtle/struct.Choice.html)↗{{hi:subtle::Choice}} type, and a collection of [traits][p~traits] using `Choice` instead of bool, which are intended to execute in constant-time. The Choice type is a wrapper around a u8 that holds a 0 or 1.
 
 The [`subtle`][c~subtle~docs]↗{{hi:subtle}} crate is a low-level library and doesn't implement cryptographic algorithms itself. Instead, it provides the building blocks for developers to implement cryptographic algorithms in a way that minimizes the risk of timing attacks. It's typically used in low-level cryptographic libraries or when implementing custom cryptographic protocols.
 

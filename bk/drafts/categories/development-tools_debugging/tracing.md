@@ -110,7 +110,7 @@ An `Event` signifies something that happened at a moment in time. `tracing`'s `E
 
 ## Use Spans to Instrument Synchronous and Asynchronous Code {#span-instrument}
 
-Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.await` points will result in incorrect traces. Use [`tracing::span::Span::in_scope`][c~tracing::span::Span::in_scope~docs]{{hi:tracing::span::Span::in_scope}}↗ to make sure the span is exited before the `await` call. Alternatively, use `instrument` to make sure that the span is automatically exited and re-entered when a async function or block is awaited then resumed.
+Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across [`await`](https://doc.rust-lang.org/stable/std/keyword.await.html)↗{{hi:await}} points will result in incorrect traces. Use [`tracing::span::Span::in_scope`][c~tracing::span::Span::in_scope~docs]{{hi:tracing::span::Span::in_scope}}↗ to make sure the span is exited before the `await` call. Alternatively, use `instrument` to make sure that the span is automatically exited and re-entered when a async function or block is awaited then resumed.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_span_in_scope.rs:example}}

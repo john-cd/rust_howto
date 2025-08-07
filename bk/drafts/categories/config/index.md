@@ -10,14 +10,14 @@ Configuration management {{hi:Configuration management}} is the practice of hand
 
 ## Common Approaches
 
-- [[environment_variables | Environment Variables]] are suitable for simple configurations. The `std::env` module provides access to environment variables.
-- [[configuration | Configuration]] files like [[toml | TOML]], [[ini | INI]], [[yaml | YAML]], [[json | JSON]], or RON provide structured and organized configuration. Popular Rust crates for parsing these formats include: [`toml`][c~toml~docs]↗{{hi:toml}}, [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}}, `ron`, [`serde`][c~serde~docs]↗{{hi:serde}}.
+- [[environment_variables | Environment Variables]] are suitable for simple configurations. The [`std::env`](https://doc.rust-lang.org/std/env/index.html)↗{{hi:std::env}} module provides access to environment variables.
+- [[configuration | Configuration]] files like [[toml | TOML]], [[ini | INI]], [[yaml | YAML]], [[json | JSON]], or RON provide structured and organized configuration. Popular Rust crates for parsing these formats include: [`toml`][c~toml~docs]↗{{hi:toml}}, [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}}, [`ron`](https://docs.rs/ron/latest/ron)↗{{hi:ron}}, [`serde`][c~serde~docs]↗{{hi:serde}}.
 
 FIXME Configuration crates like [`config-rs`][c~config~docs]↗{{hi:config-rs}}, a powerful and flexible crate for layered configuration. It supports merging configurations from various sources, including files, environment variables, and in-memory data.
 Excellent for 12-factor applications.
 
 Command-Line Arguments:
-Using crates like `clap` to parse command-line arguments.
+Using crates like [`clap`](https://docs.rs/clap/latest/clap)↗{{hi:clap}} to parse command-line arguments.
 Suitable for passing simple configuration options.
 
 ## Best Practices
