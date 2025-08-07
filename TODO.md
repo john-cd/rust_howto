@@ -2,9 +2,22 @@
 
 ## Now
 
-- finish to add RBE link #29
+- add index entries and links WIP
+
+- polish crate_selection
 
 - polish contributing
+
+- finish to add RBE link #29
+
+- polish intro
+  - review `about` examples
+
+- Close NOW tickets: WIP
+- Go trough VS Code bookmarks (WSL): WIP
+- Go trough VS Code bookmarks (dev container): WIP
+
+- Manually insert rest of cross-links between pages?
 
 - finish new tools in wip folder
   - parser_lib
@@ -12,48 +25,7 @@
   - process_directives
   - link_checker
 
-- Close NOW tickets: WIP
-- Go trough VS Code bookmarks (WSL): WIP
-- Go trough VS Code bookmarks (dev container): WIP
-
-- crate_selection - solo or part of indices?
-
-- move categories back to src, after final review
-  - algos
-  - data structures
-  - api bindings ?
-  - memory ?
-  - caching ?
-  - config ?
-  - date and time ?
-  - cli ?
-  - command-line utils ~ dedupe with written_in_rust ?
-  - compression ?
-  - email ?
-  - math
-  - ML ?
-  - database impl ?
-  - encoding ?
-  - filesystem
-  - template ?
-  - text processing
-  - HTTP client ?
-  - build utils ?
-  - dev tools ?
-  - async ?
-  - concurrency ?
-  - database ?
-  - os ?
-  - parser impl ?
-  - parsing ?
-  - rust patterns ?
-  - crypto ?
-  - auth ?
-
-- polish intro
-  - review `about` examples
-
-- `other` section - move what's ready
+- Replace inline links and naked URLs by ref-style links
 
 - License / legal rethink
 
@@ -62,26 +34,16 @@
   - rethink crates_alpha and categories
   - categories.md
 
-- move WIP examples from playground
+## Update recipe tables
 
-- finish
-  - auth
+- improve scripts that generate links / update recipe tables
+
+## Additional Links / Contents
 
 - move rest of links from TOREVIEW.md
+- finish to review chrome bookmarks and include in text
 
-## Finish examples
-
-- fake
-- tracing_subscriber
-- flate2
-- salsa
-- crux
-- cssparser
-- quickxml
-
----
-
-## Finish pandoc setup; generate PDF version of book WIP
+## Finish pandoc / typst setup; generate PDF version of book
 
 - pandoc / typst
 - kindle create
@@ -91,11 +53,19 @@
 <https://pdworkman.com/write-book-with-obsidian/#getting-it-out-of-obsidian>
 <https://medium.com/@sydasif78/book-creation-with-pandoc-and-markdown-893c7d72cb35>
 
----
+### Finish preproc directives in mdbook-scrub
 
-## sccache for dev container setup?
+- Scrub any left-over {{#example ...}}, {{#crate ...}}... etc and warn. WIP
+- Scrub links to hidden pages instead of having to comment e.g. [p~cross-platform]: # "../../other/cross-platform/index.md"
 
----
+### Implement directives
+
+- Crate link
+- Crate badge - WIP link tool
+- Category link?
+- Category badges
+- Crate blocks
+- Recipe table
 
 ## Review tools and consolidate WIP
 
@@ -109,31 +79,27 @@ document WIP
 add tests WIP
 consolidate CLIs
 
-## Finish preproc directives in mdbook-scrub
+-------------------------
 
-- Scrub any left-over {{#example ...}}, {{#crate ...}}... etc and warn. WIP
-- Scrub links to hidden pages instead of having to comment e.g. [p~cross-platform]: # "../../other/cross-platform/index.md"
+## Finish COMING SOON examples
 
-## Implement directives (in `link`?)
+- parser impl
+- crypto
+- database
+- proc macros
+- pyo3, ractor, polars, datafusion, aws_lambda, aws_sdk
 
-- Crate link
-- Crate badge - WIP link tool
-- Category link?
-- Category badges
-- Crate blocks
-- Recipe table
+- fake
+- tracing_subscriber
+- flate2
+- salsa
+- crux
+- cssparser
+- quickxml
 
-## Replace inline links and naked URLs by ref-style links
+- review cancelable example in xmpl
 
-## Update recipe tables
-
-- improve scripts that generate links / update recipe tables
-
----
-
-## Incoporate the added text in src WIP
-
-- src: reorg added text WIP
+- move WIP examples from playground
 
 ## Incoporate the added text in drafts
 
@@ -150,23 +116,40 @@ consolidate CLIs
 
 - review drafts section for what I missed
 
-## Add text
+## Additional Categories
 
-- key crates
+- move categories back to src, after final review
+  - api bindings ?
+  - memory ?
+  - caching ?
+  - config ?
+  - date and time ?
+  - cli ?
+  - command-line utils ~ dedupe with written_in_rust ?
+  - compression ?
+  - email ?
+  - math
+  - ML ?
+  - database impl ?
+  - encoding ?
+  - template ?
+  - text processing
+  - HTTP client ?
+  - build utils ?
+  - dev tools ?
+  - async ?
+  - concurrency ?
+  - database ?
+  - os ?
+  - parser impl ?
+  - parsing ?
+  - rust patterns ?
+  - crypto ?
+  - auth ?
 
-## Manually insert rest of cross-links WIP
+- `other` section - move what's ready
 
-## Chrome Bookmarks
-
-- finish to review chrome bookmarks and include in text
-
-## Finish COMING SOON examples
-
-- parser impl
-- crypto
-- database
-- proc macros
-- pyo3, ractor, polars, datafusion, aws_lambda, aws_sdk
+## sccache for dev container setup?
 
 ## Clean up playground crate
 
@@ -188,8 +171,6 @@ You need to prepare all hooks in .cargo-husky/hooks directory
 See [cargo-husky](https://lib.rs/crates/cargo-husky)
 
 See scripts/precommit folder
-
----
 
 ## Increase speed of CI build (Linux)
 
