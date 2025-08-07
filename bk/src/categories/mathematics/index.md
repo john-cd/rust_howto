@@ -55,22 +55,19 @@ Generating random numbers for simulations, cryptography, etc.
 
 Numerical integration, differentiation, and root-finding.
 
-- `rust-num`: numerical traits and operations.
+- `rust-num`{{hi:rust-num}}: numerical traits and operations.
 - [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}: numerical computations.
 
 ## Optimization
 
 Linear, nonlinear, and integer programming. Convex analysis. Game theory and decision-making models.
 
-- `argmin`: A pure Rust optimization library.
-- `rust-lp`: linear programming.
+- [`argmin`](https://docs.rs/argmin/latest/argmin)↗{{hi:argmin}}: A pure Rust optimization library.
 
 ## Differential Equations
 
 Ordinary and partial differential equations and dynamical systems.
 Stability analysis, chaos theory, and control systems.
-
-- `ode` (solvers for ordinary differential equations).
 
 ## Graph Theory
 
@@ -82,7 +79,7 @@ Graphs, networks, and shortest paths.
 
 Combinatorics, set theory, and logic.
 
-- `bit-set` (bit manipulation), [`regex`][c~regex~docs]↗{{hi:regex}} (pattern matching).
+- [`bit-set`](https://docs.rs/bit-set/latest/bit_set)↗{{hi:bit-set}} (bit manipulation), [`regex`][c~regex~docs]↗{{hi:regex}} (pattern matching).
 
 ## Units of Measurement
 

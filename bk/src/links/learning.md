@@ -91,7 +91,7 @@
 
 ## Reference Documentation {#references}
 
-- The [Standard Library](https://doc.rust-lang.org/std/#the-rust-standard-library)↗ documentation for the built-in `std`, `core`, and `alloc` crates.
+- The [Standard Library](https://doc.rust-lang.org/std/#the-rust-standard-library)↗ documentation for the built-in [`std`](https://doc.rust-lang.org/std/index.html)↗{{hi:std}}, [`core`](https://doc.rust-lang.org/core/index.html)↗{{hi:core}}, and [`alloc`](https://doc.rust-lang.org/alloc/index.html)↗{{hi:alloc}} crates.
 - The [Rust Reference](https://doc.rust-lang.org/stable/reference)↗: Details of the language semantics.
 - The [Rustonomicon](https://doc.rust-lang.org/nomicon)↗: A high-level companion to the reference and a guide to correctly writing unsafe code in Rust.
 - The [Ferrocene Language Spec](https://rust-lang.github.io/fls/general.html)↗: An high quality specification for the Rust language, initially developed by Ferrous Systems.

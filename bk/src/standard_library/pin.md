@@ -14,12 +14,12 @@ It is sometimes useful to be able to rely upon memory addresses not changing, es
 
 The [`std::pin`](https://doc.rust-lang.org/std/pin/index.html)↗{{hi:std::pin}} module enables pinning data - preventing it from being moved in memory, and, more generally, guaranteeing it remains valid at that same memory location.
 
-Pinning is typically used for self-referential types, compiler-generated generators for `async fn`, and intrusive data structure, where moving would break safety invariants:
+Pinning is typically used for self-referential types, compiler-generated generators for [`async fn`](https://doc.rust-lang.org/std/keyword.async.html)↗{{hi:async fn}}, and intrusive data structure, where moving would break safety invariants:
 
 - In _asynchronous programming_, you may have futures that need to maintain a stable memory address, as they may need to reference themselves or other data that should not be moved.
 - Pinning a value is an useful building block for _unsafe code_ to be able to reason about whether a raw pointer to the pinned value is still valid.
 
-The main type in `std::pin` is [`Pin<Ptr>`](https://doc.rust-lang.org/std/pin/struct.Pin.html)↗{{hi:std::pin::Pin}}, a smart pointer wrapper that flags that the data behind the pointer `Ptr` should not be moved in memory, even if it is mutable, _unless it implements `Unpin`_(see below).
+The main type in [`std::pin`](https://doc.rust-lang.org/std/pin/index.html)↗{{hi:std::pin}} is [`Pin<Ptr>`](https://doc.rust-lang.org/std/pin/struct.Pin.html)↗{{hi:std::pin::Pin}}, a smart pointer wrapper that flags that the data behind the pointer `Ptr` should not be moved in memory, even if it is mutable, _unless it implements `Unpin`_(see below).
 
 Note that the pointer wrapped by `Pin` is not the value which we want to pin itself, but rather a _pointer_ to that value. A `Pin<Ptr>` does not pin the `Ptr`; instead, it pins the pointer's pointee value.
 

@@ -5,7 +5,7 @@
 
 ## Organize the Code of a Simple Library {#simple-library-code-organization}
 
-A simple library crate may consist of its crate root (e.g. the `lib.rs` file) and several modules in separate files.
+A simple library crate may consist of its crate root (e.g. the [`lib.rs`](https://doc.rust-lang.org/book/ch07-01-packages-and-crates.html)↗{{hi:lib.rs}} file) and several modules in separate files.
 
 ```txt
 - src
@@ -16,7 +16,7 @@ A simple library crate may consist of its crate root (e.g. the `lib.rs` file) an
 Cargo.toml
 ```
 
-where `lib.rs` includes the modules with `mod` statements:
+where `lib.rs` includes the modules with [`mod`](https://doc.rust-lang.org/reference/items/modules.html)↗{{hi:mod}} statements:
 
 ```rust,noplayground
 pub mod module1; // Public modules, so that the contents may be accessible from outside the crate.
@@ -25,7 +25,7 @@ pub mod module2;
 // ...
 ```
 
-You may also keep the modules private and reexport specific items with a `pub use` statement:
+You may also keep the modules private and reexport specific items with a [`pub use`](https://doc.rust-lang.org/reference/items/use-declarations.html#r-items.use.visibility)↗{{hi:pub use}} declaration:
 
 ```rust,noplayground
 mod module1;
@@ -37,7 +37,7 @@ pub use module2::Struct1;
 
 It is common for `lib.rs` to only contain `mod` and `pub use` statements, and nothing else.
 
-In Rust, there are no requirements to store a single `struct` or `enum` and associated code per file.
+In Rust, there are no requirements to store a single [`struct`](https://doc.rust-lang.org/reference/items/structs.html)↗{{hi:struct}} or [`enum`](https://doc.rust-lang.org/reference/items/enumerations.html)↗{{hi:enum}} and associated code per file.
 
 On the contrary, it is idiomatic for a module to contain multiple functions, `struct` or `enum` declarations, and `impl` blocks with related functionality. For example, you may write all configuration-related items in the `config` module.
 
@@ -57,7 +57,7 @@ As needs grow, you may create nest modules:
 Cargo.toml
 ```
 
-where `mod.rs` contains:
+where [`mod.rs`](https://doc.rust-lang.org/reference/items/modules.html#r-items.mod.outlined.search-mod)↗{{hi:mod.rs}} contains:
 
 ```rust,noplayground
 pub mod submodule1;
@@ -178,7 +178,7 @@ use crate_name::prelude::*;
 
 The standard library includes a number of preludes. For example, adding `use std::io::prelude::*;` at the top of I/O heavy modules imports common I/O traits in one line.
 
-There is also a "Rust prelude", things that Rust automatically imports into every Rust program without even the need for an explicit `use` statement. Here is an excerpt:
+There is also a "Rust prelude", things that Rust automatically imports into every Rust program without even the need for an explicit `use` declaration. Here is an excerpt:
 
 ```rust,noplayground
 pub use std::option::Option::{self, Some, None};
@@ -187,7 +187,7 @@ pub use std::fmt::{self, Debug, Display};
 
 ## Organize the Code of a Binary Crate {#binary-crate-organization}
 
-Similarly, a simple binary crate may consist of a crate root (e.g. `main.rs`) and several modules in separate files and/or folders.
+Similarly, a simple binary crate may consist of a crate root (e.g. `main.rs`{{hi:main.rs}}) and several modules in separate files and/or folders.
 
 ```txt
 - src
@@ -215,7 +215,7 @@ Cargo.toml
 
 In that case, `main.rs` imports the public contents of the library crate via `use crate_name::module_name;` and only contain a short `main()` function.
 
-This code organization exposes a public library crate API, which has the advantages of being reusable and more easily testable (via integration tests in the `tests` folder). However, if the crate is published on `crates.io`, you must make sure to update your crate version according to Cargo's SemVer (semantic versioning) rules, every time you change the (now public) API. Your code will also break if you decide to rename your crate.
+This code organization exposes a public library crate API, which has the advantages of being reusable and more easily testable (via integration tests in the [`tests`](https://doc.rust-lang.org/book/ch11-03-test-organization.html?highlight=tests#the-tests-directory)↗{{hi:tests directory}} folder). However, if the crate is published on [`crates.io`](https://crates.io)↗{{hi:crates.io}}, you must make sure to update your crate version according to Cargo's SemVer (semantic versioning) rules, every time you change the (now public) API. Your code will also break if you decide to rename your crate.
 
 A variation of this code organization puts the command-line argument parsing (or UI) code in modules under `main.rs` and keeps the non-user-interface code in the associated library crate.
 
@@ -235,7 +235,7 @@ If your project is large, you may want to split it into several crates, which yo
 
 Each crate, of course, should be further split into modules and submodules as needed.
 
-You will most often create a 'Cargo workspace' to tie together your project's crates. A 'workspace' is a set of 'packages' developed in tandem that share the same `Cargo.lock` and output (e.g. `target`) directory - and therefore share the same dependencies. A package is a bundle of one or more crates with `Cargo.toml` file that describes how to build those crates. A package include at least one crate, as many binary crates as you like, but at most only one library crate. Note that the concept of a 'package' is often conflated with that of a 'crate' and the latter word is often used to describe the former. Practically, a package is a subfolder of your workspace that contains a `Cargo.toml` file.
+You will most often create a 'Cargo workspace' to tie together your project's crates. A 'workspace' is a set of 'packages' developed in tandem that share the same [`Cargo.lock`](https://doc.rust-lang.org/cargo/guide/cargo-toml-vs-cargo-lock.html)↗{{hi:Cargo.lock}} and output (e.g. [`target`](https://doc.rust-lang.org/cargo/reference/build-cache.html)↗) directory - and therefore share the same dependencies. A package is a bundle of one or more crates with `Cargo.toml`{{hi:Cargo.toml}} file that describes how to build those crates. A package include at least one crate, as many binary crates as you like, but at most only one library crate. Note that the concept of a 'package' is often conflated with that of a 'crate' and the latter word is often used to describe the former. Practically, a package is a subfolder of your workspace that contains a `Cargo.toml` file.
 
 A typical organization may look as follows:
 
@@ -267,7 +267,7 @@ A typical organization may look as follows:
 - Cargo.lock # Shared lock file (and dependencies).
 ```
 
-You may use feature flags in the main library crate's `Cargo.toml` to selectively build subcrates and their dependencies:
+You may use feature flags in the main library crate's [`Cargo.toml`](https://doc.rust-lang.org/cargo/reference/manifest.html)↗{{hi:Cargo.toml}} to selectively build subcrates and their dependencies:
 
 ```toml
 [dependencies]
@@ -278,7 +278,7 @@ lib2 = { path = "../lib2", optional = true }
 feature2 = ["dep:lib2"]
 ```
 
-In projects that mix multiple technologies (a web project or a `mdbook` that combines markdown and Rust code, like this book), it is common to create a "crates" subdirectory that contains all Rust packages.
+In projects that mix multiple technologies (a web project or a [`mdbook`](https://rust-lang.github.io/mdBook)↗{{hi:mdbook}} that combines markdown and Rust code, like this book), it is common to create a "crates" subdirectory that contains all Rust packages.
 
 The main `Cargo.toml` file in the root of the workspace should contain a 'workspace' section that references its packages:
 
@@ -287,7 +287,7 @@ The main `Cargo.toml` file in the root of the workspace should contain a 'worksp
 members = [ "lib1", "lib2", "main_lib" ]
 ```
 
-Confusingly, a workspace `Cargo.toml` can also include a 'root package' in addition to member crates. That lets you place the code of the main library or executable in e.g. a `src` folder directly under the workspace root.
+Confusingly, a workspace `Cargo.toml` can also include a 'root package' in addition to member crates. That lets you place the code of the main library or executable in e.g. a [`src`](https://doc.rust-lang.org/cargo/guide/project-layout.html)↗{{hi:src folder}} folder directly under the workspace root.
 
 ## Related Topics {#related-topics}
 

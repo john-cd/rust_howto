@@ -50,7 +50,7 @@ Your favorite number must be 256.
 
 [![clap][c~clap~docs~badge]][c~clap~docs]{{hi:clap}} [(tutorial)][c~clap~tutorial] [(cookbook)][c~clap~cookbook] [![clap examples][c~clap~examples~badge]][c~clap~examples] [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
 
-[`clap_derive`][c~clap_derive~docs]↗{{hi:clap_derive}} simplifies CLI creation in Rust via a [`derive`][c~derive~docs]↗{{hi:derive}} macro, automatically generating command-line argument parsing logic from `struct` definitions.
+[`clap_derive`][c~clap_derive~docs]↗{{hi:clap_derive}} simplifies CLI creation in Rust via a [`derive`][c~derive~docs]↗{{hi:derive}} macro, automatically generating command-line argument parsing logic from [`struct`](https://doc.rust-lang.org/std/keyword.struct.html)↗{{hi:struct}} definitions.
 
 ```rust,editable
 {{#include ../../../crates/cats/command_line_interface/examples/arguments/clap.rs:example}}
@@ -104,7 +104,7 @@ The [`pico-args`][c~pico_args~docs]↗{{hi:pico-args}} crate is a small and fast
 
 [![structopt][c~structopt~docs~badge]][c~structopt~docs] [![structopt~crates.io][c~structopt~crates.io~badge]][c~structopt~crates.io] [![structopt~github][c~structopt~github~badge]][c~structopt~github] [![structopt~lib.rs][c~structopt~lib.rs~badge]][c~structopt~lib.rs]{{hi:structopt}}{{hi:Docopt}}{{hi:Clap}}{{hi:Derive}}{{hi:Cli}} [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
 
-[`structopt`][c~structopt~docs]↗{{hi:structopt}} parses command line arguments by defining a `struct`.
+[`structopt`][c~structopt~docs]↗{{hi:structopt}} parses command line arguments by defining a [`struct`](https://doc.rust-lang.org/std/keyword.struct.html)↗{{hi:struct}}.
 
 [`structopt`][c~structopt~docs]↗{{hi:structopt}} (now superseded by [`clap`][c~clap~docs]↗{{hi:clap}}) simplifies command-line argument parsing by automatically generating parsers from struct definitions. It leverages a derive macro to reduce boilerplate and provides a declarative way to define CLI options, arguments, and subcommands, making it easier to create complex and well-documented command-line interfaces.
 

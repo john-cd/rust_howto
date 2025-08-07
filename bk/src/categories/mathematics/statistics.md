@@ -32,9 +32,9 @@ The final example calculates the mode using a mutable [`std::collections::HashMa
 
 This example calculates the standard deviation and z-score of a set of measurements.
 
-The standard deviation is defined as the square root of the variance (here calculated with f32's [`sqrt`][primitive~f32::sqrt]{{hi:f32::sqrt}}↗ where the variance is the [`std::iter::Iterator::sum`][c~std::iter::Iterator::sum~docs]{{hi:std::iter::Iterator::sum}}↗ of the squared difference between each measurement and the `mean` divided by the number of measurements).
+The standard deviation is defined as the square root of the variance (here calculated with f32's [`sqrt`][primitive~f32::sqrt]{{hi:f32::sqrt}}↗ where the variance is the [`std::iter::Iterator::sum`][c~std::iter::Iterator::sum~docs]{{hi:std::iter::Iterator::sum}}↗ of the squared difference between each measurement and the mean divided by the number of measurements).
 
-The z-score is the number of standard deviations a single measurement spans away from the `mean` of the data set.
+The z-score is the number of standard deviations a single measurement spans away from the mean of the data set.
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/examples/stats/standard_deviation.rs:example}}

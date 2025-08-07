@@ -8,9 +8,9 @@
 
 The [`AsRef`][c~std::convert::AsRef~docs]↗{{hi:std::convert::AsRef}} trait is used for _cheap reference-to-reference conversions_ (without allocating new memory). It provides a way to convert an object into a reference to another type.
 
-The primary use case for `AsRef<T>` is generic programming, especially for function arguments, to provide ergonomics and flexibility to the caller. In other words, this trait is often used to allow [functions][p~functions] to accept arguments in multiple forms.
+The primary use case for [`AsRef<T>`](https://doc.rust-lang.org/std/convert/trait.AsRef.html)↗{{hi:std::convert::AsRef}} is generic programming, especially for function arguments, to provide ergonomics and flexibility to the caller. In other words, this trait is often used to allow [functions][p~functions] to accept arguments in multiple forms.
 
-For example, `Path`, `PathBuf`, `str`, `String`, `OsString`, `OsStr`, `Cow<'_, OsStr>`... all implement `AsRef<Path>`. The `std::path`{{hi:std::path}} standard library module therefore contains many functions that accepts `AsRef<Path>` and therefore any of the aforementioned types as a argument. Other common implementations include `AsRef<str>`, `AsRef<OsStr>`, `AsRef<[u8]>`, and `AsRef<[T]>`:
+For example, [`Path`](https://doc.rust-lang.org/std/path/struct.Path.html)↗{{hi:std::path::Path}}, [`PathBuf`](https://doc.rust-lang.org/std/path/struct.PathBuf.html)↗{{hi:std::path::PathBuf}}, [`str`](https://doc.rust-lang.org/std/primitive.str.html)↗{{hi:str}}, [`String`](https://doc.rust-lang.org/std/string/struct.String.html)↗{{hi:std::string::String}}, [`OsString`](https://doc.rust-lang.org/std/ffi/struct.OsString.html)↗{{hi:std::ffi::OsString}}, [`OsStr`](https://doc.rust-lang.org/std/ffi/struct.OsStr.html)↗{{hi:std::ffi::OsStr}}, `Cow<'_, OsStr>`... all implement `AsRef<Path>`. The `std::path`{{hi:std::path}} standard library module therefore contains many functions that accepts `AsRef<Path>` and therefore any of the aforementioned types as a argument. Other common implementations include `AsRef<str>`, `AsRef<OsStr>`, `AsRef<[u8]>`, and `AsRef<[T]>`:
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/asref/asref.rs:example}}
@@ -36,9 +36,9 @@ Note that `Option::as_ref()` and `Result::as_ref()` are inherent methods on the 
 
 These traits are related but have distinct purposes:
 
-- `AsRef` enables _explicit_ (via `.as_ref()`) cheap reference-to-reference conversions, often used in generic bounds for flexibility.
-- [`Deref`](https://doc.rust-lang.org/std/ops/trait.Deref.html)↗{{hi:std::ops::Deref}} enables _implicit_ coercions (e.g., `String` to `&str`).
-- [`Borrow`](https://doc.rust-lang.org/std/borrow/trait.Borrow.html)↗{{hi:std::borrow::Borrow}} is similar to `AsRef` but imposes additional constraints (e.g., `Hash`, `Eq`, `Ord` must be equivalent for the borrowed value and the owned value). It's commonly used for keys in collections like `HashMap`.
+- [`AsRef`](https://doc.rust-lang.org/std/convert/trait.AsRef.html)↗{{hi:std::convert::AsRef}} enables _explicit_ (via `.as_ref()`) cheap reference-to-reference conversions, often used in generic bounds for flexibility.
+- [`Deref`](https://doc.rust-lang.org/std/ops/trait.Deref.html)↗{{hi:std::ops::Deref}} enables _implicit_ coercions (e.g., [`String`](https://doc.rust-lang.org/std/string/struct.String.html)↗{{hi:std::string::String}} to [`&str`](https://doc.rust-lang.org/std/primitive.str.html)↗{{hi:&str}}).
+- [`Borrow`](https://doc.rust-lang.org/std/borrow/trait.Borrow.html)↗{{hi:std::borrow::Borrow}} is similar to `AsRef` but imposes additional constraints (e.g., [`Hash`](https://doc.rust-lang.org/std/hash/trait.Hash.html)↗{{hi:std::hash::Hash}}, [`Eq`](https://doc.rust-lang.org/std/cmp/trait.Eq.html)↗{{hi:std::cmp::Eq}}, [`Ord`](https://doc.rust-lang.org/std/cmp/trait.Ord.html)↗{{hi:std::cmp::Ord}} must be equivalent for the borrowed value and the owned value). It's commonly used for keys in collections like [`HashMap`](https://doc.rust-lang.org/std/collections/struct.HashMap.html)↗{{hi:std::collections::HashMap}}.
 
 For non-generic contexts or when `Deref` coercion suffices, `&T` remains the simpler and often preferred choice.
 

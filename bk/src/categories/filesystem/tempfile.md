@@ -14,7 +14,7 @@
 
 ### Other Options {#skip}
 
-- The `tempdir` crate is being merged into [`tempfile`][c~tempfile~docs]↗{{hi:tempfile}}.
+- The [`tempdir`](https://docs.rs/tempdir/latest/tempdir/index.html)↗{{hi:tempdir}} crate is being merged into [`tempfile`][c~tempfile~docs]↗{{hi:tempfile}}.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

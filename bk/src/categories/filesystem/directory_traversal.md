@@ -69,7 +69,7 @@ Root dir `"."` yields through [`walkdir::WalkDir::depth`][c~walkdir::WalkDir::de
 
 [![ignore][c~ignore~docs~badge]][c~ignore~docs] [![ignore~crates.io][c~ignore~crates.io~badge]][c~ignore~crates.io] [![ignore~github][c~ignore~github~badge]][c~ignore~github] [![ignore~lib.rs][c~ignore~lib.rs~badge]][c~ignore~lib.rs]{{hi:ignore}}{{hi:File}}{{hi:Gitignore}}{{hi:Glob}}{{hi:ignore}}{{hi:Pattern}}
 
-[`ignore`][c~ignore~docs]↗{{hi:ignore}} [`ignore`][c~serde_ignored~docs]↗{{hi:ignore}} is a library for efficiently matching ignore files such as `.gitignore` against file paths.
+[`ignore`][c~ignore~docs]↗{{hi:ignore}} [`ignore`][c~serde_ignored~docs]↗{{hi:ignore}} is a library for efficiently matching ignore files such as [`.gitignore`](https://git-scm.com/docs/gitignore)↗{{hi:.gitignore}} against file paths.
 
 Recursive [filesystem][p~filesystem] walking that respects ignore files (like .gitignore)
 

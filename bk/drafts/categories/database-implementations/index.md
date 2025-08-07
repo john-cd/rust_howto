@@ -6,7 +6,7 @@ Databases allow clients to store and query large amounts of data in an efficient
 
 | Database Type | Rust crates |
 |---|---|
-| Embedded Databases | [`sled`][c~sled~docs]↗{{hi:sled}}: A high-performance embedded database. [`lmdb-rs`][c~lmdb_rs~docs]↗{{hi:lmdb-rs}}: Bindings to the LMDB embedded database. [`rocksdb`][c~rocksdb~docs]↗{{hi:rocksdb}}: Bindings to the RocksDB embedded database. `tikv`: A distributed transactional key-value database (used in TiDB). While not strictly embedded, it's often used in similar ways. |
+| Embedded Databases | [`sled`][c~sled~docs]↗{{hi:sled}}: A high-performance embedded database. [`lmdb-rs`][c~lmdb_rs~docs]↗{{hi:lmdb-rs}}: Bindings to the LMDB embedded database. [`rocksdb`][c~rocksdb~docs]↗{{hi:rocksdb}}: Bindings to the RocksDB embedded database. [`tikv`](https://tikv.org)↗{{hi:tikv}}: A distributed transactional key-value database (used in TiDB). While not strictly embedded, it's often used in similar ways. |
 | Key-Value Stores | [`sled`][c~sled~docs]↗{{hi:sled}} and [`lmdb-rs`][c~lmdb_rs~docs]↗{{hi:lmdb-rs}} above can also be used as key-value stores. |
 | Other Databases | [`tantivy`][c~tantivy~docs]↗{{hi:tantivy}}: A full-text search engine library. [`qdrant`][c~qdrant~docs]↗{{hi:qdrant}}: A vector similarity search engine. |
 

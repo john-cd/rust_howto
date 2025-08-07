@@ -6,7 +6,7 @@ Use `just docs docall` to generate the code [documentation][p~documentation] in 
 
 Note that `cargo doc --open` does not seem to work when running from a Dev Container{{hi:Dev Container}} in VS Code{{hi:VS Code}}; the script that opens URLs into an external browser (see `$ echo $BROWSER`) does not handle raw HTML. Use `python3 -m http.server 9000` (or live server) to serve the files instead.
 
-Read the `justfile` or the [just module][c~just~programmer-manual]↗ in `bk/scripts/docs`{{hi:just}} for more details.
+Read the `justfile`{{hi:justfile}} or the [just module][c~just~programmer-manual]↗ in `bk/scripts/docs`{{hi:just}} for more details.
 
 ## Using a Dev Container Feature {#dev-container-feature}
 

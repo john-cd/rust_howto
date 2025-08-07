@@ -15,7 +15,7 @@ You can use the [Rust Playground](https://play.rust-lang.org/?version=stable&mod
 
 ## "RealWorld" Examples {#realworld}
 
-The ["Real World" Example App][realworld~example-apps]↗ [(website)](https://docs.realworld.build)↗, dubbed "the mother of all demo apps", is a fullstack `medium.com` clone implemented in many languages and frameworks. A list of Rust examples is [found here](https://codebase.show/projects/realworld?language=rust)↗.
+The ["Real World" Example App][realworld~example-apps]↗ [(website)](https://docs.realworld.build)↗, dubbed "the mother of all demo apps", is a fullstack [`medium.com`](https://medium.com)↗ clone implemented in many languages and frameworks. A list of Rust examples is [found here](https://codebase.show/projects/realworld?language=rust)↗.
 
 For example, [`realworld-rust-axum-sqlx`][realworld~rust-axum-sqlx~github]↗ is a full-stack RealWorld implementation using [`axum`][c~axum~docs]↗{{hi:axum}}, [`sqlx`][c~sqlx~docs]↗{{hi:sqlx}}, and [`yew`][c~yew~docs]↗{{hi:yew}}.
 

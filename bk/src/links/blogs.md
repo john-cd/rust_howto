@@ -35,11 +35,11 @@ You may also consult the lists of [Medium blogs tagged with 'Rust'](https://medi
 | Title (URL) | Description |
 |---|---|
 | A learning journal: [`lpalmieri.com`][lpalmieri~website]↗ | Luca Palmieri's blog. |
-| Andrew Gallant's [blog](https://burntsushi.net)↗ | Blogs covering `regex`, `ripgrep`, etc. |
+| Andrew Gallant's [blog](https://burntsushi.net)↗ | Blogs covering [`regex`](https://docs.rs/regex/latest/regex)↗{{hi:regex}}, [`ripgrep`](https://github.com/BurntSushi/ripgrep)↗{{hi:ripgrep}}, etc. |
 | [Billy DM's blog](https://billydm.github.io/blog)↗ | Posts on programming, including Rust. |
 | Brian Anderson' [blog](https://brson.github.io/blog/index.html)↗ | LLVM, blockchain, Rust. |
 | [`codevoweb.com`][codevoweb~website]↗ | Demonstrates how to build common applications using multiple languages, including Rust. |
-| [Denys Séguret's website](https://dystroy.org)↗ | From the author of `broot`, `bacon`, etc. |
+| [Denys Séguret's website](https://dystroy.org)↗ | From the author of [`broot`](https://dystroy.org/broot)↗{{hi:broot}}, [`bacon`](https://dystroy.org/bacon)↗{{hi:bacon}}, etc. |
 | The [Embedded Rustacean](https://blog.theembeddedrustacean.com)↗ | Tutorial-style articles on embedded Rust. |
 | [`fasterthanli.me`](https://fasterthanli.me)↗ | In-depth articles on Rust, networking, and systems programming. |
 | [`faultlore.com`](https://faultlore.com/blah)↗ | Posts on systems programming and Rust. |
@@ -54,7 +54,7 @@ You may also consult the lists of [Medium blogs tagged with 'Rust'](https://medi
 | [Raph Levien's blog](https://raphlinus.github.io)↗ | Insights on Rust, GUIs, and high-performance code. |
 | [Rust magazine][rustmagazine~website]↗ | A monthly magazine for the Rust community. |
 | Sam Sartor's blog: [`samsartor.com`](https://samsartor.com)↗ | Posts on Rust, Nix, and software development. |
-| Sean McArthur's blog: [`seanmonstar.com`](https://seanmonstar.com)↗ | Focused on `hyper`, `tokio`, and web development in Rust. |
+| Sean McArthur's blog: [`seanmonstar.com`](https://seanmonstar.com)↗ | Focused on [`hyper`](https://hyper.rs)↗{{hi:hyper}}, [`tokio`](https://tokio.rs)↗{{hi:tokio}}, and web development in Rust. |
 | [`readrust.net`](https://readrust.net)↗ | Interesting posts related to the Rust programming language. |
 | [`rust-osdev.com`](https://rust-osdev.com)↗ | Monthly news on OS and bootloader development in Rust. |
 | [Rust Trends](https://rust-trends.com/)↗ | Biweekly newsletter on all things Rust. |
@@ -71,9 +71,9 @@ You may also consult [this list](https://users.rust-lang.org/t/fearless-rust-blo
 
 | Project (URL) | Description |
 |---|---|
-| [Bevy Engine News](https://bevyengine.org/news)↗ | News and updates for the `bevy` game engine. |
+| [Bevy Engine News](https://bevyengine.org/news)↗ | News and updates for the [`bevy`](https://bevy.org)↗{{hi:bevy}} game engine. |
 | [Bytecode Alliance Articles](https://bytecodealliance.org/articles)↗ | WASM-focused articles and announcements. |
-| [Kani Verifier Blog](https://model-checking.github.io/kani-verifier-blog)↗ | News and updates for the `kani` formal verification tool. |
+| [Kani Verifier Blog](https://model-checking.github.io/kani-verifier-blog)↗ | News and updates for the [`kani`](https://model-checking.github.io/kani)↗{{hi:kani}} formal verification tool. |
 | [`kellnr.io` Blog](https://kellnr.io/blog)↗ | A private crate registry for Rust. |
 | [Meilisearch blog](https://blog.meilisearch.com)↗ | Updates regarding a fast, open-source search engine. |
 | [Quickwit Blog](https://quickwit.io/blog)↗ | A distributed search engine for logs and traces. |

@@ -7,7 +7,7 @@ Rust compile times{{hi:Compile times}} can be long. Reducing Rust compilation [d
 | Methods | Description |
 |---|---|
 | Incremental Compilation | Leverage [Cargo][p~cargo]'s [caching][p~caching], be mindful of changes that invalidate the cache. |
-| Dependency Management | Use `cargo tree` to analyze dependencies. [`cargo-bloat`][c~cargo_bloat~docs]↗{{hi:cargo-bloat}} can help you identify large dependencies contributing to compile times. |
+| Dependency Management | Use [`cargo tree`](https://doc.rust-lang.org/cargo/commands/cargo-tree.html)↗{{hi:cargo tree}} to analyze dependencies. [`cargo-bloat`][c~cargo_bloat~docs]↗{{hi:cargo-bloat}} can help you identify large dependencies contributing to compile times. |
 | Compiler Flags | Experiment with compiler flags, but be careful and measure the impact. |
 | Build Profiles | Optimize release builds with appropriate flags in `config.toml`. |
 | Link-Time Optimization (LTO) | Controlled via `Cargo.toml` and `config.toml`. |
@@ -36,20 +36,20 @@ Keeping in mind how the incremental compiler works is key to maximizing its bene
 
 - Keeping dependencies stable,
 - Structuring code to minimize changes that trigger recompilation (see below),
-- Avoid actions that invalidate the cache, such as changing dependencies (modifying `Cargo.toml`) or build scripts unnecessarily.
+- Avoid actions that invalidate the cache, such as changing dependencies (modifying [`Cargo.toml`](https://doc.rust-lang.org/cargo/reference/manifest.html)↗{{hi:Cargo.toml}}) or build scripts unnecessarily.
 - Being mindful of how [generics][p~generics] and macros can affect recompilation.
 
 From-scratch builds with incremental compilation{{hi:Incremental compilation}} enabled adds about 15–20% overhead compared to disabled. The initial build needs to write out more intermediate state in order for later incremental builds to take advantage of it. In a CI{{hi:CI}} situation, it would be unusual for there to be a later incremental build within the same job. Thus consider disabling incremental compilation in that context.However, CI workflows that cache the target directory across runs may be benefiting from incremental compilation.
 
 ## Project Structure and Dependencies {#skip}
 
-- _Reduce the number of dependencies_. Analyze your `Cargo.toml` and eliminate unused or redundant dependencies. Consider alternatives if a dependency is excessively large or slow to compile.
+- _Reduce the number of dependencies_. Analyze your [`Cargo.toml`](https://doc.rust-lang.org/cargo/reference/manifest.html)↗{{hi:Cargo.toml}} and eliminate unused or redundant dependencies. Consider alternatives if a dependency is excessively large or slow to compile.
 - For multi-crate projects, use a _workspace_ to share dependencies and enable workspace-level optimizations. This can reduce redundant compilation.
 - Use feature flags to conditionally compile your code and dependencies. This allows you to exclude unnecessary code during development, reducing compilation time.
 - For large, infrequently changing dependencies, consider using precompiled versions if available.
 - Organizing your code into smaller, independent [modules][p~modules] and crates can improve incremental compilation by reducing the scope of changes.
 
-`cargo tree` is a useful tool for dependency analysis.
+[`cargo tree`](https://doc.rust-lang.org/cargo/commands/cargo-tree.html)↗{{hi:cargo tree}} is a useful tool for dependency analysis.
 
 ## Compiler-Level Optimizations {#skip}
 

@@ -49,7 +49,7 @@ Document configuration: Provide clear documentation of all configuration options
 
 - [`config`][c~config~docs]↗{{hi:config}}: A popular crate that supports multiple formats and merging configurations from different sources (files, environment variables, etc.).
 [`serde`][c~serde~docs]↗{{hi:serde}}: (Not a config crate itself, but essential for serializing and deserializing configuration - data in most cases).
-- Environment Variables: `std::env` (for accessing environment variables directly).
+- Environment Variables: [`std::env`](https://doc.rust-lang.org/std/env/index.html)↗{{hi:std::env}} (for accessing environment variables directly).
 
 ## Related Topics {#related-topics}
 

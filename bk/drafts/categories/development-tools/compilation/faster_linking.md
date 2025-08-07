@@ -18,9 +18,9 @@ Optimizing Rust linking involves several strategies to reduce binary size and li
 
 ### Link-Time Optimization (LTO) {#skip}
 
-Enabling LTO allows the compiler to perform optimizations across the entire program during the linking phase. This can significantly reduce code size and improve [performance][p~performance] by eliminating dead code and inlining functions more effectively. Use the `-C lto=fat` or `-C lto=thin` (faster but less aggressive) compiler flags. LTO typically requires more memory and time during compilation.
+Enabling LTO allows the compiler to perform optimizations across the entire program during the linking phase. This can significantly reduce code size and improve [performance][p~performance] by eliminating dead code and inlining functions more effectively. Use the [`-C lto=fat`](https://doc.rust-lang.org/rustc/codegen-options/index.html#lto)↗{{hi:-C lto=fat}} or `-C lto=thin`{{hi:-C lto=thin}} (faster but less aggressive) compiler flags. LTO typically requires more memory and time during compilation.
 
-Link-Time Optimization (LTO) is controlled via `Cargo.toml`. Can sometimes improve linking times, but often increases compile time. Experiment to see if it helps.
+Link-Time Optimization (LTO) is controlled via [`Cargo.toml`](https://doc.rust-lang.org/cargo/reference/manifest.html)↗{{hi:Cargo.toml}}. Can sometimes improve linking times, but often increases compile time. Experiment to see if it helps.
 
 ## Codegen Units {#skip}
 
@@ -46,7 +46,7 @@ Generally faster than dynamic linking. Often the default in Rust.
 
 ## Optimize Dependencies {#skip}
 
-Ensure dependencies are also built with optimizations enabled. This can be achieved by setting appropriate build profiles for dependencies in your `Cargo.toml`.
+Ensure dependencies are also built with optimizations enabled. This can be achieved by setting appropriate build profiles for dependencies in your [`Cargo.toml`](https://doc.rust-lang.org/cargo/reference/manifest.html)↗{{hi:Cargo.toml}}.
 
 ## Profile-Guided Optimization (PGO) {#skip}
 

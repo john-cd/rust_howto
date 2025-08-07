@@ -10,7 +10,7 @@ Dynamic typing in Rust is limited compared to other languages, but the [`std::an
 
 `std::any` is primarily used in scenarios where you need to store and retrieve data of various, unknown concrete types within a collection or context that uses trait objects (specifically `dyn Any`{{hi:dyn Any}}). This often comes up in:
 
-- Plugins: If you're building a system where users can register custom data or components, and you need to store them polymorphically, `Any` allows you to later retrieve them and process them based on their original concrete type.
+- Plugins: If you're building a system where users can register custom data or components, and you need to store them polymorphically, [`Any`](https://doc.rust-lang.org/std/any/trait.Any.html)↗{{hi:std::any::Any}} allows you to later retrieve them and process them based on their original concrete type.
 - Generic Event Systems: In an event system where different types of events might be processed by a single handler, `Any` can help identify and process specific event types.
 - Reflection-like capabilities: While Rust doesn't have full reflection like some other languages, `Any` provides a limited form of runtime type inspection.
 
@@ -31,7 +31,7 @@ The [`std::any::Any`](https://doc.rust-lang.org/std/any/trait.Any.html)↗{{hi:s
 Note a few caveats with `Any`:
 
 - The `Any` trait can only be used with types that have a `'static` lifetime. This means they must not contain any non-`'static` references.
-- Runtime Overhead: Downcasting involves runtime checks (`is::<T>`). While not excessively slow, it's less performant than static dispatch.
+- Runtime Overhead: Downcasting involves runtime checks ([`is::<T>`](https://doc.rust-lang.org/std/any/trait.Any.html#method.is-1)↗{{hi:std::any::Any::is}}). While not excessively slow, it's less performant than static dispatch.
 - Loss of Compile-Time Guarantees: When you put something into `Box<dyn Any>` or similar, you lose type information at compile time. This makes it harder for the compiler to catch errors for you.
 - If there's a way to achieve your goal using generics with trait bounds, enums, or other more type-safe Rust patterns, those are generally preferred over `Any`. `Any` should be used when you genuinely need runtime type introspection for heterogeneous collections.
 

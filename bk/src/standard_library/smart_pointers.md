@@ -4,10 +4,10 @@
 
 Smart pointers{{hi:Smart pointers}} are special data structures that act as pointers / references to data, while including additional functionality, such as:
 
-- _Ownership and Borrowing_ allowing for shared ownership (`Rc`, `Arc`) or unique ownership (`Box`), while also providing borrowing capabilities.
+- _Ownership and Borrowing_ allowing for shared ownership ([`Rc`](https://doc.rust-lang.org/std/rc/struct.Rc.html)↗{{hi:std::rc::Rc}}, [`Arc`](https://doc.rust-lang.org/std/sync/struct.Arc.html)↗{{hi:std::sync::Arc}}) or unique ownership ([`Box`](https://doc.rust-lang.org/std/boxed/struct.Box.html)↗{{hi:std::boxed::Box}}), while also providing borrowing capabilities.
 - _Automatic memory management_, such as allocation and deallocation of heap memory.
 - _Reference counting_, allowing multiple parts of a program to share ownership of data. Reference Counting is a mechanism where a count is kept of how many references point to a piece of data. When the count drops to zero, the data is deallocated.
-- _Interior Mutability_ is the ability to mutate data even when you only have an immutable reference to it. This is typically achieved through smart pointers that enforce borrowing rules at runtime (e.g., `RefCell`, `Mutex`).
+- _Interior Mutability_ is the ability to mutate data even when you only have an immutable reference to it. This is typically achieved through smart pointers that enforce borrowing rules at runtime (e.g., [`RefCell`](https://doc.rust-lang.org/std/cell/struct.RefCell.html)↗{{hi:std::cell::RefCell}}, [`Mutex`](https://doc.rust-lang.org/std/sync/struct.Mutex.html)↗{{hi:std::sync::Mutex}}).
 - _Thread Safety_ ensures that data is accessed and modified correctly when multiple threads are involved, preventing race conditions and other concurrency bugs.
 
 Smart pointers are used to manage memory and data access in a way that is safe, efficient, and idiomatic in Rust.
@@ -26,7 +26,7 @@ Here's a table of common smart pointers in Rust, outlining their primary use cas
 
 ## Smart Pointer Comparison {#smart-pointer-comparison}
 
-- `Rc<T>`{{hi:std::rc::Rc}} and `Arc<T>`{{hi:std::sync::Arc}} are enables multiple owners{{hi:Multiple owners}} of the same data; `Box<T>` and `RefCell<T>` have single owners.
+- `Rc<T>`{{hi:std::rc::Rc}} and `Arc<T>`{{hi:std::sync::Arc}} are enables multiple owners{{hi:Multiple owners}} of the same data; [`Box<T>`](https://doc.rust-lang.org/std/boxed/struct.Box.html)↗{{hi:std::boxed::Box}} and `RefCell<T>` have single owners.
 - `Box<T>` allows immutable or mutable borrows checked at compile time; `Rc<T>` allows only immutable borrows checked at compile time; `RefCell<T>` allows immutable or mutable borrows checked at runtime{{hi:Borrowing}}.
 
 ## Multiple Ownership with Reference Counting {#reference-counting}
@@ -57,14 +57,14 @@ See details in the [[lazy_initialization | Lazy Initialization]] chapter.
 
 The [`std::sync`](https://doc.rust-lang.org/std/sync/index.html)↗{{hi:std::sync}} module provides synchronization primitives for concurrent programming. These primitives allow safe sharing of data between threads, ensuring that data is accessed in a thread-safe manner. The most commonly used synchronization primitives include:
 
-- [`Arc<T>`](https://doc.rust-lang.org/std/sync/struct.Arc.html)↗ is a thread-safe, reference-counted pointer that allows multiple threads to share ownership of a value. It is similar to `Rc<T>`, but designed for concurrent use.
-- [`Mutex<T>`](https://doc.rust-lang.org/std/sync/struct.Mutex.html)↗ is a mutual exclusion primitive that provides safe access to data by allowing only one thread to access the data at a time. It ensures that data is not accessed concurrently.
-- `RwLock<T>` is a read-write lock that allows multiple readers or a single writer to access the data. It is useful when reads are more frequent than writes, as it allows concurrent reads while ensuring exclusive access for writes.
+- [`Arc`](https://doc.rust-lang.org/std/sync/struct.Arc.html)↗{{hi:std::sync::Arc}} is a thread-safe, reference-counted pointer that allows multiple threads to share ownership of a value. It is similar to [`Rc`](https://doc.rust-lang.org/std/rc/struct.Rc.html)↗{{hi:std::rc::Rc}}, but designed for concurrent use.
+- [`Mutex`](https://doc.rust-lang.org/std/sync/struct.Mutex.html)↗{{hi:std::sync::Mutex}} is a mutual exclusion primitive that provides safe access to data by allowing only one thread to access the data at a time. It ensures that data is not accessed concurrently.
+- [`RwLock`](https://doc.rust-lang.org/std/sync/struct.RwLock.html)↗{{hi:std::sync::RwLock}} is a read-write lock that allows multiple readers or a single writer to access the data. It is useful when reads are more frequent than writes, as it allows concurrent reads while ensuring exclusive access for writes.
 
 Less common primitives include:
 
-- [`Barrier`](https://doc.rust-lang.org/std/sync/struct.Barrier.html)↗ is a synchronization primitive that allows multiple threads to wait for each other at a certain point in their execution. It is useful for coordinating the execution of multiple threads that need to reach a certain point before proceeding.
-- [`Condvar`](https://doc.rust-lang.org/std/sync/struct.Condvar.html)↗ is a condition variable that allows threads to wait for a condition to be met before proceeding. It is often used in conjunction with [`Mutex<T>`](https://doc.rust-lang.org/std/sync/struct.Mutex.html)↗ to signal when a condition changes, allowing threads to wake up and continue execution.
+- [`Barrier`](https://doc.rust-lang.org/std/sync/struct.Barrier.html)↗{{hi:std::sync::Barrier}} is a synchronization primitive that allows multiple threads to wait for each other at a certain point in their execution. It is useful for coordinating the execution of multiple threads that need to reach a certain point before proceeding.
+- [`Condvar`](https://doc.rust-lang.org/std/sync/struct.Condvar.html)↗{{hi:std::sync::Condvar}} is a condition variable that allows threads to wait for a condition to be met before proceeding. It is often used in conjunction with [`Mutex`](https://doc.rust-lang.org/std/sync/struct.Mutex.html)↗{{hi:std::sync::Mutex}} to signal when a condition changes, allowing threads to wake up and continue execution.
 
 See the [[concurrency | Concurrency]] chapter.
 
@@ -76,15 +76,15 @@ The [`Deref`](https://doc.rust-lang.org/std/ops/trait.Deref.html)↗{{hi:std::op
 
 `Deref` enables the `*` operator and _implicit_, _automatic dereferencing_ in many circumstances, especially in method calls (`.` operator), meaning users can call methods on the inner type as if they were working directly with it. This mechanism is called "Deref coercion".
 
-Method resolution with `Deref` kicks in when a type doesn't have a method directly defined on it, but it implements the `Deref` trait. The compiler will follow the `Deref` chain to find the method on the inner type. For example, if you have a `Box<String>`, and you call `.len()` on it, the compiler dereferences first from `Box` to `String`, then to `str`, and ultimately finds and calls `str::len`.
+Method resolution with [`Deref`](https://doc.rust-lang.org/std/ops/trait.Deref.html)↗{{hi:std::ops::Deref}} kicks in when a type doesn't have a method directly defined on it, but it implements the `Deref` trait. The compiler will follow the `Deref` chain to find the method on the inner type. For example, if you have a `Box<String>`, and you call `.len()` on it, the compiler dereferences first from `Box` to `String`, then to `str`, and ultimately finds and calls `str::len`.
 
-Types that implement `Deref` or `DerefMut` are called "smart pointers". Often, the purpose of such a type is to change the ownership semantics of a contained value (for example, `Rc` or `Cow`) or the storage semantics of a contained value (for example, `Box`).
+Types that implement [`Deref`](https://doc.rust-lang.org/std/ops/trait.Deref.html)↗{{hi:std::ops::Deref}} or [`DerefMut`](https://doc.rust-lang.org/std/ops/trait.DerefMut.html)↗{{hi:std::ops::DerefMut}} are called "smart pointers". Often, the purpose of such a type is to change the ownership semantics of a contained value (for example, [`Rc`](https://doc.rust-lang.org/std/rc/struct.Rc.html)↗{{hi:std::rc::Rc}} or [`Cow`](https://doc.rust-lang.org/std/borrow/enum.Cow.html)↗{{hi:std::borrow::Cow}}) or the storage semantics of a contained value (for example, [`Box`](https://doc.rust-lang.org/std/boxed/struct.Box.html)↗{{hi:std::boxed::Box}}).
 
-BEWARE: The compiler will silently insert calls to `Deref::deref`. For this reason, one should be careful about implementing `Deref` and only do so when deref coercion is desirable.
+BEWARE: The compiler will silently insert calls to `Deref::deref`. For this reason, one should be careful about implementing [`Deref`](https://doc.rust-lang.org/std/ops/trait.Deref.html)↗{{hi:std::ops::Deref}} and only do so when deref coercion is desirable.
 
 In mutable contexts, [`DerefMut`](https://doc.rust-lang.org/std/ops/trait.DerefMut.html)↗{{hi:std::ops::DerefMut}} is used and mutable deref coercion similarly occurs.
 
-The `AsRef` and `Borrow` traits have very similar signatures to `Deref`. It may be desirable to implement either or both of these, whether in addition to or rather than `Deref` traits. See [[asref | AsRef]] and [[borrow | Borrow]].
+The [`AsRef`](https://doc.rust-lang.org/std/convert/trait.AsRef.html)↗{{hi:std::convert::AsRef}} and `Borrow` traits have very similar signatures to `Deref`. It may be desirable to implement either or both of these, whether in addition to or rather than `Deref` traits. See [[asref | AsRef]] and [[borrow | Borrow]].
 
 Read the [Treating Smart Pointers Like Regular References with Deref](https://doc.rust-lang.org/book/ch15-02-deref.html)↗ and the [dereference operator](https://doc.rust-lang.org/reference/expressions/operator-expr.html#the-dereference-operator)↗ for more details.
 
