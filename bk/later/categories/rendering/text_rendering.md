@@ -32,8 +32,6 @@ A simple `no_std` font parser and rasterizer.
 
 - [`sdl2`][c~sdl2~docs]↗{{hi:sdl2}}: SDL2 bindings for Rust.
 
-## Related Topics {#related-topics}
-
 - [Are we Game yet? Text Rendering][are we game yet? text rendering].
 - [[text_layout | Text Layout]].
 

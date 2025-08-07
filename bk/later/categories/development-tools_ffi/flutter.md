@@ -10,7 +10,7 @@ The [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_brid
 
 [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_bridge}}: This crate aims to simplify the FFI interaction between Dart and Rust. It handles a lot of the boilerplate and code generation. This is the strongly recommended approach.
 
-`std::ffi`, [`libc`][c~libc~docs]↗{{hi:libc}}: These are standard library [modules][p~modules] for lower-level FFI interaction. You'll likely use these indirectly via [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_bridge}}, or if you're implementing the FFI manually.
+[`std::ffi`](https://doc.rust-lang.org/std/ffi/index.html)↗{{hi:std::ffi}}, [`libc`][c~libc~docs]↗{{hi:libc}}: These are standard library [modules][p~modules] for lower-level FFI interaction. You'll likely use these indirectly via [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_bridge}}, or if you're implementing the FFI manually.
 
 [`cbindgen`][c~cbindgen~docs]↗{{hi:cbindgen}}: Useful if you're working with C code as an intermediary, although [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_bridge}} generally handles this for you.
 

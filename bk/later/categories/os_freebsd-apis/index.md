@@ -4,7 +4,7 @@
 
 Bindings to FreeBSD-specific APIs.
 
-Most standard Rust code that runs on other Unix-like systems (Linux, macOS) will work on FreeBSD without modification. For general system programming tasks (file I/O, networking, processes), the standard library is usually sufficient. If you need to use FreeBSD-specific system calls, FFI will be necessary. Be careful with `unsafe` code and consult the FreeBSD documentation.
+Most standard Rust code that runs on other Unix-like systems (Linux, macOS) will work on FreeBSD without modification. For general system programming tasks (file I/O, networking, processes), the standard library is usually sufficient. If you need to use FreeBSD-specific system calls, FFI will be necessary. Be careful with [`unsafe`](https://doc.rust-lang.org/std/keyword.unsafe.html)↗{{hi:unsafe}} code and consult the FreeBSD documentation.
 
 ## General and Unix-like System Calls
 

@@ -6,7 +6,7 @@
 
 [![tauri~website][c~tauri~website~badge]][c~tauri~website] [![tauri][c~tauri~docs~badge]][c~tauri~docs] [![tauri~crates.io][c~tauri~crates.io~badge]][c~tauri~crates.io] [![tauri~github][c~tauri~github~badge]][c~tauri~github] [![tauri~lib.rs][c~tauri~lib.rs~badge]][c~tauri~lib.rs]{{hi:tauri}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
 
-[`tauri`][c~tauri~docs]↗{{hi:tauri}} makes tiny, secure apps for all desktop platforms. [`tauri`][c~tauri~docs]↗ is an app construction toolkit that lets you build software for all major desktop operating systems using web technologies. Electron-like web-based UI, except it uses system webviews rather than shipping chromium, and non-UI code is written in Rust rather than `node.js`.
+[`tauri`][c~tauri~docs]↗{{hi:tauri}} makes tiny, secure apps for all desktop platforms. [`tauri`][c~tauri~docs]↗ is an app construction toolkit that lets you build software for all major desktop operating systems using web technologies. Electron-like web-based UI, except it uses system webviews rather than shipping chromium, and non-UI code is written in Rust rather than [`node.js`](https://nodejs.org)↗{{hi:node.js}}.
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/web/tauri/mod.rs:example}}

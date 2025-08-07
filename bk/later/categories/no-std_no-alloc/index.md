@@ -2,7 +2,7 @@
 
 [![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No alloc}}
 
-The term "no_alloc" refers to environments where *dynamic* memory allocation is not available or desirable (e.g., [[embedded | Embedded]] systems, kernel development, or performance-sensitive applications). The concept revolves around avoiding the use of the `alloc` crate and its associated functions.
+The term "no_alloc" refers to environments where *dynamic* memory allocation is not available or desirable (e.g., [[embedded | Embedded]] systems, kernel development, or performance-sensitive applications). The concept revolves around avoiding the use of the [`alloc`](https://doc.rust-lang.org/alloc/index.html)↗{{hi:alloc}} crate and its associated functions.
 
 `no_alloc` memory allocation can be made deterministic, which is important for real-time systems or other applications where predictable performance is crucial.
 
@@ -33,7 +33,7 @@ Note the following:
 
 - `core`: it provides the foundation for `no_std` programming, which is often a prerequisite for `no_alloc`.
 
-- `alloc`: It's the standard library's allocation crate. While you're avoiding it, understanding why you're avoiding it is important.
+- [`alloc`](https://doc.rust-lang.org/alloc/index.html)↗{{hi:alloc}}: It's the standard library's allocation crate. While you're avoiding it, understanding why you're avoiding it is important.
 
 - [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}}: A small and efficient allocator often used in embedded systems or WebAssembly ([[wasm | WASM]]). It can be useful if you -do- need some allocation, but want a very small allocator. See [[embedded | Embedded]] Systems.
 
@@ -47,7 +47,7 @@ Note the following:
 
 ## Crates Functioning Without the Rust [`alloc`][c~alloc~docs]↗{{hi:alloc}} Crate
 
-Consult the [`no_alloc`][cat~no-std::no-alloc] category on `crates.io`.
+Consult the [`no_alloc`][cat~no-std::no-alloc] category on [`crates.io`](https://crates.io)↗{{hi:crates.io}}.
 
 ## Related Topics
 

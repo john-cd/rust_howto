@@ -2,7 +2,7 @@
 
 {{#include write_proc_macros.incl.md}}
 
-You'll almost always use `proc-macro`, [`syn`][c~syn~docs]↗{{hi:syn}}, and [`quote`][c~quote~docs]↗{{hi:quote}} when writing procedural macros. [`trybuild`][c~trybuild~docs]↗{{hi:trybuild}} is highly recommended for testing.
+You'll almost always use [`proc-macro`](https://doc.rust-lang.org/proc_macro/index.html)↗{{hi:proc-macro}}, [`syn`][c~syn~docs]↗{{hi:syn}}, and [`quote`][c~quote~docs]↗{{hi:quote}} when writing procedural macros. [`trybuild`][c~trybuild~docs]↗{{hi:trybuild}} is highly recommended for testing.
 
 ## `proc-macro` {#proc_macro}
 

@@ -2,7 +2,7 @@
 
 {{#include version_control.incl.md}}
 
-Rust projects use version control (typically `Git`) like any other software. `Git` tracks changes to your code, enables collaboration, and allows you to revert to previous versions. Cargo's `Cargo.lock` file specifically ensures reproducible builds by pinning exact dependency versions, which can also be version controlled.
+Rust projects use version control (typically [`git`](https://git-scm.com)↗{{hi:git}}) like any other software. `git` tracks changes to your code, enables collaboration, and allows you to revert to previous versions. Cargo's [`Cargo.lock`](https://doc.rust-lang.org/cargo/guide/cargo-toml-vs-cargo-lock.html)↗{{hi:Cargo.lock}} file specifically ensures reproducible builds by pinning exact dependency versions, which can also be version controlled.
 
 The following describes tools that make
 
@@ -14,7 +14,7 @@ The following describes tools that make
 [![cargo-husky~lib.rs][c~cargo_husky~lib.rs~badge]][c~cargo_husky~lib.rs]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 
-Git hook scripts are useful for automatically identifying simple issues, such as missing semicolons, trailing whitespace, poor [[code_formatting_linting | formatting]] of the code or [configuration][p~configuration] files, when committing in `git`, prior to submission to code review or start of a CI workflow.
+Git hook scripts are useful for automatically identifying simple issues, such as missing semicolons, trailing whitespace, poor [[code_formatting_linting | formatting]] of the code or [configuration][p~configuration] files, when committing in [`git`](https://git-scm.com)↗{{hi:git}}, prior to submission to code review or start of a CI workflow.
 
 [cargo-husky][c~cargo_husky~github]{{hi:cargo-husky}}↗ setup Git hooks automatically for [`cargo`][c~cargo~docs]↗{{hi:cargo}} projects with 🐶.
 
@@ -69,8 +69,8 @@ pre-commit run --all-files
 
 FIXME
 
-- `cargo fmt`.
-- `cargo check`, clippy, test...
+- [`cargo fmt`](https://doc.rust-lang.org/stable/cargo/commands/cargo-fmt.html)↗{{hi:cargo fmt}}.
+- [`cargo check`](https://doc.rust-lang.org/stable/cargo/commands/cargo-check.html)↗{{hi:cargo check}}, clippy, test...
 - spell checks.
 
 ## Related Topics

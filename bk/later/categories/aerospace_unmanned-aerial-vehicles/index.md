@@ -45,7 +45,7 @@ See:
 
 ### `no_std` (for Embedded systems)
 
-If your target is a flight controller running on an embedded system, `no_std` is essential.
+If your target is a flight controller running on an embedded system, [`no_std`](https://doc.rust-lang.org/reference/names/preludes.html#r-names.preludes.extern.no_std)↗{{hi:no_std}} is essential.
 
 See [[no_std | No Std]] and [[no_alloc | No Alloc]].
 

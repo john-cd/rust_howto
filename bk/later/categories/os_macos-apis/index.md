@@ -6,7 +6,7 @@ Bindings to macOS-specific APIs.
 
 Most standard Rust code will work on macOS without modification. For general system programming tasks (file I/O, networking, processes), the standard library is often sufficient. In fact, if you want your code to be portable across different operating systems, stick to the standard library and avoid macOS-specific APIs unless absolutely necessary.
 
-For macOS-specific features, you'll need to use the [`objc`][c~objc~docs]↗{{hi:objc}} crate and potentially FFI. Be careful with `unsafe` code and consult the Apple documentation.
+For macOS-specific features, you'll need to use the [`objc`][c~objc~docs]↗{{hi:objc}} crate and potentially FFI. Be careful with [`unsafe`](https://doc.rust-lang.org/std/keyword.unsafe.html)↗{{hi:unsafe}} code and consult the Apple documentation.
 
 ## System Calls (Low-Level OS Interaction)
 
@@ -15,8 +15,8 @@ For macOS-specific features, you'll need to use the [`objc`][c~objc~docs]↗{{hi
 
 ## File System Interaction
 
-- `std::fs` works well on macOS.
-- `std::path` works well on macOS.
+- [`std::fs`](https://doc.rust-lang.org/std/fs/index.html)↗{{hi:std::fs}} works well on macOS.
+- [`std::path`](https://doc.rust-lang.org/std/path/index.html)↗{{hi:std::path}} works well on macOS.
 
 ## Process Management
 
