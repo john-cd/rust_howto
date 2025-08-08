@@ -11,16 +11,16 @@ Shared solutions for particular situations specific to programming in Rust.
 | Pattern | Description | Resources |
 |---|---|---|
 | Ownership & Borrowing | Ownership ensure automatic memory clean up when a variable that owns data goes out of scope. This prevents memory leaks. Borrowing allows using a value without taking ownership of it. The borrowing rules prevent data races by ensuring that either multiple parts of the code can read the data, or one part can modify it, but not both at the same time. These are fundamental language features. | Rust Book, "Understanding Ownership". |
-| RAII: Resource Acquisition Is Initialization | Manage resources memory, files, network connections by tying them to the lifetime of an object. Automatic cleanup via `Drop` trait. | Rust Book, "Understanding Ownership". |
-| Interior Mutability | Allow mutation of data even when there are immutable references. Use `RefCell`, `Rc<RefCell<T>>`, `Cell` types. | `std::cell`, [`std::sync::atomic`][c~std::sync::atomic~docs]↗{{hi:std::sync::atomic}} documentation. The Rust Book, "Interior Mutability". |
+| RAII: Resource Acquisition Is Initialization | Manage resources memory, files, network connections by tying them to the lifetime of an object. Automatic cleanup via [`Drop`](https://doc.rust-lang.org/std/ops/trait.Drop.html)↗{{hi:Drop}} trait. | Rust Book, "Understanding Ownership". |
+| Interior Mutability | Allow mutation of data even when there are immutable references. Use [`RefCell`](https://doc.rust-lang.org/std/cell/struct.RefCell.html)↗{{hi:std::cell::RefCell}}, `Rc<RefCell<T>>`, `Cell` types. | `std::cell`, [`std::sync::atomic`][c~std::sync::atomic~docs]↗{{hi:std::sync::atomic}} documentation. The Rust Book, "Interior Mutability". |
 
 ### Error Handling & Customization
 
 | Pattern | Description | Example/Resources |
 |---|---|---|
-| Error Handling | Represent the possibility of failure via `Result` or absence via `Option`. `Result` and `Option` are part of the prelude. Use `match`, `unwrap`, `expect`, and `?` operator. Crates like [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} and [`thiserror`][c~thiserror~docs]↗{{hi:thiserror}} can help with error management. | The Rust Book, "Error Handling". |
-| `?` Operator | Propagate errors concisely. | The Rust Book, "Error Handling". |
-| `From` Trait | Define conversions between types with `From`, often used for error handling. | Standard library documentation. |
+| Error Handling | Represent the possibility of failure via [`Result`](https://doc.rust-lang.org/std/result/enum.Result.html)↗{{hi:std::result::Result}} or absence via [`Option`](https://doc.rust-lang.org/std/option/enum.Option.html)↗{{hi:std::option::Option}}. `Result` and `Option` are part of the prelude. Use [`match`](https://doc.rust-lang.org/std/keyword.match.html)↗{{hi:match}}, `unwrap`{{hi:unwrap}}, `expect`{{hi:expect}}, and `?`{{hi:?}} operator. Crates like [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} and [`thiserror`][c~thiserror~docs]↗{{hi:thiserror}} can help with error management. | The Rust Book, "Error Handling". |
+| `?`{{hi:?}} Operator | Propagate errors concisely. | The Rust Book, "Error Handling". |
+| [`From`](https://doc.rust-lang.org/std/convert/trait.From.html)↗{{hi:std::convert::From}} Trait | Define conversions between types with [`From`](https://doc.rust-lang.org/std/convert/trait.From.html)↗{{hi:std::convert::From}}, often used for error handling. | Standard library documentation. |
 
 #### Error Handling
 
@@ -44,9 +44,9 @@ Shared solutions for particular situations specific to programming in Rust.
 | Pattern | Description | Example/Resources |
 |---|---|---|
 | Threading | FIXME | `std::thread` and `std::sync` provide basic threading and synchronization primitives. |
-| Atomically Reference Counting | Use `Arc` to share data safely between threads. Combine with `Mutex` or `RwLock` for mutable access. | The Rust Book, "Shared-State Concurrency". |
-| Mutual Exclusion Lock | Use `Mutex` for protecting shared data from concurrent access. | The Rust Book, "Shared-State Concurrency". |
-| Read-Write Lock | `RwLock` allows multiple readers or exclusive writers to access shared data. | Standard library documentation. |
+| Atomically Reference Counting | Use [`Arc`](https://doc.rust-lang.org/std/sync/struct.Arc.html)↗{{hi:std::sync::Arc}} to share data safely between threads. Combine with [`Mutex`](https://doc.rust-lang.org/std/sync/struct.Mutex.html)↗{{hi:std::sync::Mutex}} or [`RwLock`](https://doc.rust-lang.org/std/sync/struct.RwLock.html)↗{{hi:RwLock}} for mutable access. | The Rust Book, "Shared-State Concurrency". |
+| Mutual Exclusion Lock | Use [`Mutex`](https://doc.rust-lang.org/std/sync/struct.Mutex.html)↗{{hi:std::sync::Mutex}} for protecting shared data from concurrent access. | The Rust Book, "Shared-State Concurrency". |
+| Read-Write Lock | [`RwLock`](https://doc.rust-lang.org/std/sync/struct.RwLock.html)↗{{hi:RwLock}} allows multiple readers or exclusive writers to access shared data. | Standard library documentation. |
 | Channels | Communicate between threads using message passing. | The Rust Book, "Message Passing Concurrency". |
 | Concurrent Data Structures | | [`crossbeam`][c~crossbeam~docs]↗{{hi:crossbeam}} offers advanced concurrent data structures. |
 | Asynchronous Programming | Build asynchronous applications using e.g. the [`tokio`][c~tokio~docs]↗{{hi:tokio}} asynchronous runtime, futures, tasks, and actors. | [`tokio`][c~tokio~docs]↗{{hi:tokio}} crate documentation. |
@@ -97,7 +97,7 @@ Design patterns are well-proven blueprints or best practices for solving recurri
 | Composite | Representing hierarchical tree-like structures. | Often implemented directly using structs and enums. | |
 | Decorator | Adding behavior to objects dynamically. | Often implemented directly using traits. | Traits are commonly used for decorators. |
 | Facade | Providing a simplified interface to a complex system. |  | Usually a matter of structuring your code. |
-| Flyweight | Sharing objects to reduce memory usage. | Often implemented directly using `Rc` or `Arc`. | `Rc` and `Arc` are used for shared ownership. |
+| Flyweight | Sharing objects to reduce memory usage. | Often implemented directly using [`Rc`](https://doc.rust-lang.org/std/rc/struct.Rc.html)↗{{hi:std::rc::Rc}} or [`Arc`](https://doc.rust-lang.org/std/sync/struct.Arc.html)↗{{hi:std::sync::Arc}}. | [`Rc`](https://doc.rust-lang.org/std/rc/struct.Rc.html)↗{{hi:std::rc::Rc}} and [`Arc`](https://doc.rust-lang.org/std/sync/struct.Arc.html)↗{{hi:std::sync::Arc}} are used for shared ownership. |
 | Proxy | Controlling access to another object. | Often implemented directly. | Can be implemented with custom types and dereferencing. |
 
 {{#include structural_patterns.incl.md}}
@@ -117,7 +117,7 @@ Design patterns are well-proven blueprints or best practices for solving recurri
 | Strategy | Choosing an algorithm at runtime. | Often implemented directly using trait objects or enums. | Trait objects or enums are commonly used. |
 | Template Method | Defining the skeleton of an algorithm and letting subclasses define specific steps. | Often implemented directly using traits | Traits are helpful for defining the template. |
 | Visitor | Adding new operations to objects without changing their classes. | Often implemented directly using traits | Traits are usually used for visitor implementations. |
-| Dependency Injection | Providing dependencies to components. | Dependency injection frameworks (`shaku`) exist, but it's often handled manually, especially in smaller projects. [`yew`][c~yew~docs]↗{{hi:yew}} uses dependency injection for its component system. |
+| Dependency Injection | Providing dependencies to components. | Dependency injection frameworks ([`shaku`][c~shaku~docs]↗{{hi:shaku}}) exist, but it's often handled manually, especially in smaller projects. [`yew`][c~yew~docs]↗{{hi:yew}} uses dependency injection for its component system. |
 
 {{#include behavioral_patterns.incl.md}}
 

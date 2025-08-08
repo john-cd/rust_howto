@@ -4,10 +4,10 @@
 
 | Topic | Rust Crates |
 |---|---|
-| Documentation Generator | `cargo doc` (built-in) |
+| Documentation Generator | [`cargo doc`](https://doc.rust-lang.org/cargo/commands/cargo-doc.html)↗{{hi:cargo doc}} (built-in) |
 | Doc Comments | Use /// or //! in your code. |
 | Testing with Documentation Examples | Use `#[doc = "```"]` in doc comments |
-| Markdown Processing (for docs) | pulldown-cmark, `comrak` |
+| Markdown Processing (for docs) | `pulldown-cmark`, [`comrak`][c~comrak~docs]↗{{hi:comrak}} |
 | Generating Documentation from Tests | Often done with custom scripts or build tools. |
 | API Documentation Generators (for REST [APIs][p~apis], etc.) | Often tied to web frameworks; no single dominant crate. |
 
@@ -31,7 +31,7 @@ Run `rustdoc src/lib.rs --crate-name <name>` or `cargo doc --open` to create a n
 
 ## Create Module- or Crate-level Documentation {#module-or-crate-level-documentation}
 
-Use `//!` at the top of the file (instead of `///`) for module-level documentation.
+Use [`//!`](https://doc.rust-lang.org/reference/comments.html#r-comments.doc)↗{{hi://!}} at the top of the file (instead of `///`{{hi:///}}) for module-level documentation.
 
 The first lines within `lib.rs` will compose the crate-level documentation front-page.
 

@@ -50,7 +50,7 @@ Grammars are saved in separate [`.pest`][c~pest~docs]↗{{hi:.pest}}  files whi
 ## Other Notable Crates {#skip}
 
 - [`combine`][c~combine~docs]↗{{hi:combine}}.
-- `peg`.
+- [`peg`][c~peg~docs]↗{{hi:peg}}.
 - [`chumsky`][c~chumsky~docs]↗{{hi:chumsky}}.
 
 ## Related Topics {#related-topics}

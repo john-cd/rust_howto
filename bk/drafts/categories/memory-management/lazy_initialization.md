@@ -2,9 +2,9 @@
 
 {{#include lazy_initialization.incl.md}}
 
-- Immutable Global: use the `static` keyword (compile-time init, limited).
+- Immutable Global: use the [`static`](https://doc.rust-lang.org/std/keyword.static.html)↗{{hi:static}} keyword (compile-time init, limited).
 - Lazy Init: [`lazy_static`][c~lazy_static~docs]↗{{hi:lazy_static}} (runtime init, simple), [`once_cell`][c~once_cell~docs]↗{{hi:once_cell}} (runtime init, more control).
-- Mutable Global: [`parking_lot::Mutex`][c~parking_lot::Mutex~docs]↗{{hi:parking_lot::Mutex}}/`RwLock` (thread-safe).
+- Mutable Global: [`parking_lot::Mutex`][c~parking_lot::Mutex~docs]↗{{hi:parking_lot::Mutex}}/[`RwLock`](https://doc.rust-lang.org/std/sync/struct.RwLock.html)↗{{hi:RwLock}} (thread-safe).
 - Thread-Local: `std::thread_local`.
 - Atomics: [`std::sync::atomic`][c~std::sync::atomic~docs]↗{{hi:std::sync::atomic}}.
 
@@ -27,7 +27,7 @@ For lazy initialization scenarios where you want to defer the creation of a valu
 - The [`OnceCell`][c~core::cell::OnceCell~docs]{{hi:OnceCell}}↗ type provides a way to define a value that will be initialized at most once.
 - The corresponding thread-safe version of `OnceCell<T>` is `OnceLock<T>`. [`OnceLock<T>`](https://doc.rust-lang.org/std/sync/struct.OnceLock.html)↗ is a lock that allows a value to be initialized exactly once, ensuring that the initialization code is executed only once, even in the presence of multiple threads.
 - [`LazyCell<T>`](https://doc.rust-lang.org/std/cell/struct.LazyCell.html) is a value which is initialized on the first access. It is not thread-safe.
-- [`LazyLock`](https://doc.rust-lang.org/std/sync/struct.LazyLock.html)↗ is a lazily initialized value that is initialized on first access, ensuring that the initialization code is executed only once, even in the presence of multiple threads. This type is a thread-safe `LazyCell`, and can be used in statics. Since initialization may be called from multiple threads, any dereferencing call will block the calling thread if another initialization routine is currently running.
+- [`LazyLock`](https://doc.rust-lang.org/std/sync/struct.LazyLock.html)↗ is a lazily initialized value that is initialized on first access, ensuring that the initialization code is executed only once, even in the presence of multiple threads. This type is a thread-safe [`LazyCell`](https://doc.rust-lang.org/std/cell/struct.LazyCell.html)↗{{hi:LazyCell}}, and can be used in statics. Since initialization may be called from multiple threads, any dereferencing call will block the calling thread if another initialization routine is currently running.
 - [`Once`](https://doc.rust-lang.org/std/sync/struct.Once.html)↗ is a low-level primitive that allows initialization of a value exactly once, ensuring that the initialization code is executed only once, even in the presence of multiple threads.
 
 ```rust,editable

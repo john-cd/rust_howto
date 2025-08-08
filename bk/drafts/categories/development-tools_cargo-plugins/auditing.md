@@ -78,7 +78,7 @@ cargo deny check licenses
 ## Related Topics
 
 - Dependency Analysis: Useful for understanding your supply chain and potential risks
-  - `cargo tree` displays your dependency tree, showing all transitive dependencies.
+  - [`cargo tree`](https://doc.rust-lang.org/cargo/commands/cargo-tree.html)↗{{hi:cargo tree}} displays your dependency tree, showing all transitive dependencies.
   - `cargo outdated` checks for outdated dependencies, which might have security fixes available.
 - Linting/Style: `cargo clippy` lints your code for stylistic issues and potential bugs.
 

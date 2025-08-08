@@ -40,7 +40,7 @@ The [`rutie`][c~rutie~docs]↗{{hi:rutie}} crate handles much of the data marsha
 Use:
 
 - [`cargo`][c~cargo~docs]↗{{hi:cargo}} for building the Rust library.
-- `rake` or `bundler` for managing the Ruby side and integrating with the Rust library.
+- [`rake`][c~rake~docs]↗{{hi:rake}} or `bundler` for managing the Ruby side and integrating with the Rust library.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

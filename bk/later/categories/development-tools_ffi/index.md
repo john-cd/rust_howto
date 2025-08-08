@@ -64,7 +64,7 @@ Many languages have their own FFI mechanisms. You'll often need to find or creat
 
 ### General Binding Generators (Less Common with Rust)
 
-While widely used with other languages, `SWIG` (Simplified Wrapper and Interface Generator) is less frequently used with Rust due to the effectiveness of crates like [`pyo3`][c~pyo3~docs]↗{{hi:pyo3}} and [`wasm-bindgen`][c~wasm_bindgen~docs]↗{{hi:wasm-bindgen}}.
+While widely used with other languages, [`SWIG`](https://www.swig.org)↗{{hi:SWIG}} (Simplified Wrapper and Interface Generator) is less frequently used with Rust due to the effectiveness of crates like [`pyo3`][c~pyo3~docs]↗{{hi:pyo3}} and [`wasm-bindgen`][c~wasm_bindgen~docs]↗{{hi:wasm-bindgen}}.
 
 ## Related Topics
 
@@ -75,7 +75,7 @@ While widely used with other languages, `SWIG` (Simplified Wrapper and Interface
 
 ## Build System Integration (for FFI)
 
-Usually handled with build scripts (`build.rs`) and the [`cc`][c~cc~docs]↗{{hi:cc}} crate for compiling C/C++ code, if necessary.
+Usually handled with build scripts ([`build.rs`](https://doc.rust-lang.org/cargo/reference/build-scripts.html)↗{{hi:build.rs}}) and the [`cc`][c~cc~docs]↗{{hi:cc}} crate for compiling C/C++ code, if necessary.
 
 - [[build_utils | Build Utils]].
 - [[code_build | Code Build]].

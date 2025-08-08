@@ -51,8 +51,8 @@ See [[os_freebsd-apis | FreeBSD APIs]], [[os_linux-apis | Linux APIs]], [[os_mac
 
 ### `no_std` Environments
 
-- `core` provides the bare minimum for writing code without the standard library.
-- `alloc` provides memory allocation APIs for `no-std` environments.
+- [`core`](https://doc.rust-lang.org/core/index.html)↗{{hi:core}} provides the bare minimum for writing code without the standard library.
+- [`alloc`](https://doc.rust-lang.org/alloc/index.html)↗{{hi:alloc}} provides memory allocation APIs for `no-std`{{hi:no-std}} environments.
 
 See [[no_std | no `std`]].
 

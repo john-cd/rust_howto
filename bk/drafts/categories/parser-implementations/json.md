@@ -28,7 +28,7 @@
 
 [![simd-json][c~simd_json~docs~badge]][c~simd_json~docs] [![simd-json~crates.io][c~simd_json~crates.io~badge]][c~simd_json~crates.io] [![simd-json~github][c~simd_json~github~badge]][c~simd_json~github] [![simd-json~lib.rs][c~simd_json~lib.rs~badge]][c~simd_json~lib.rs]{{hi:simd-json}}
 
-[`simd-json`][c~simd_json~docs]↗{{hi:simd-json}} is a high-performance JSON parser based on a port of `simdjson`.
+[`simd-json`][c~simd_json~docs]↗{{hi:simd-json}} is a high-performance JSON parser based on a port of [`simdjson`](https://github.com/simdjson/simdjson)↗{{hi:simdjson}}.
 
 ```rust,editable
 {{#include ../../../crates/cats/parser_implementations/examples/json/simd_json.rs:example}}

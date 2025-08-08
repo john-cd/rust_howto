@@ -23,7 +23,7 @@ Most standard Rust code will work on Linux without modification. For general sys
 
 ## Networking
 
-- `std::net`: basic networking (TCP, UDP). Works well on Linux.
+- [`std::net`](https://doc.rust-lang.org/std/net/index.html)↗{{hi:std::net}}: basic networking (TCP, UDP). Works well on Linux.
 - [`tokio`][c~tokio~docs]↗{{hi:tokio}}: asynchronous networking.
 
 ## Threads

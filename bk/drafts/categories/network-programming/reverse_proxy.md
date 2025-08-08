@@ -9,7 +9,7 @@
 [![rathole~github][c~rathole~github~badge]][c~rathole~github]
 [![rathole~lib.rs][c~rathole~lib.rs~badge]][c~rathole~lib.rs]
 
-[Rathole][c~rathole~github]↗ is a lightweight and high-performance reverse proxy for NAT traversal, written in Rust. [`rathole`][c~rathole~docs]↗{{hi:rathole}} is similar to tools like `frp` and [`ngrok`][c~ngrok~docs]↗{{hi:ngrok}}.
+[Rathole][c~rathole~github]↗ is a lightweight and high-performance reverse proxy for NAT traversal, written in Rust. [`rathole`][c~rathole~docs]↗{{hi:rathole}} is similar to tools like [`frp`][c~frp~docs]↗{{hi:frp}} and [`ngrok`][c~ngrok~docs]↗{{hi:ngrok}}.
 
 NAT (Network Address Translation) can make it challenging to expose services on devices behind a NAT to the internet. Rathole helps to overcome this by allowing these services to be accessible via a [server][p~server] with a public IP.
 

@@ -35,7 +35,7 @@ Kani offers an easy installation [option][p~option] on three platforms:
 - x86_64-apple-darwin (Intel Mac OS).
 - aarch64-apple-darwin (Apple Silicon Mac OS).
 
-Python version 3.7 or newer and the package installer `pip` must be installed.
+Python version 3.7 or newer and the package installer [`pip`](https://pypi.org/project/pip)↗{{hi:pip}} must be installed.
 
 Install with:
 
@@ -55,7 +55,7 @@ Run kani:
 cargo kani [OPTIONS]
 ```
 
-Kani works like `cargo test` except that it will analyze "proof harnesses" instead of running test harnesses.
+Kani works like [`cargo test`](https://doc.rust-lang.org/cargo/commands/cargo-test.html)↗{{hi:cargo test}} except that it will analyze "proof harnesses" instead of running test harnesses.
 
 ```rust,editable
 {{#include ../../../../crates/cats/development_tools/src/kani.rs:example}}
@@ -82,17 +82,17 @@ Loom attempts to check all possible interleavings, while Shuttle chooses interle
 - [MIRAI][mirai~github]↗.
 - [`prusti`][prusti~website]↗ is an automated program verifier for Rust, based on the Viper infrastructure. It leverages Rust's strong type guarantees to simplify the specification and verification of Rust programs.
 - [Creusot][creusot~github]↗ helps you prove your code is correct in an automated fashion.
-- `crucible` (symbolic execution).
+- [`crucible`][c~crucible~docs]↗{{hi:crucible}} (symbolic execution).
 
 ## Related Topics {#related-topics}
 
 | Topic | Rust Crates |
 |---|---|
 | Static Analysis/Linting | [`clippy`][c~clippy~docs]↗{{hi:clippy}} (for catching common code errors and style issues) |
-| Property-Based Testing | [`proptest`][c~proptest~docs]↗{{hi:proptest}}, `quickcheck` |
-| Unit [Testing][p~testing] | Use `cargo test` (built-in testing framework) |
-| Integration Testing | Often uses`cargo test`. Focuses on testing interactions between modules or components. |
-| Fuzzing | `cargo fuzz`, [`afl.rs`][c~afl~docs]↗{{hi:afl.rs}} (bindings to AFL) |
+| Property-Based Testing | [`proptest`][c~proptest~docs]↗{{hi:proptest}}, [`quickcheck`][c~quickcheck~docs]↗{{hi:quickcheck}} |
+| Unit [Testing][p~testing] | Use [`cargo test`](https://doc.rust-lang.org/cargo/commands/cargo-test.html)↗{{hi:cargo test}} (built-in testing framework) |
+| Integration Testing | Often uses `cargo test`. Focuses on testing interactions between modules or components. |
+| Fuzzing | [`cargo fuzz`](https://rust-fuzz.github.io/book/cargo-fuzz.html)↗{{hi:cargo fuzz}}, [`afl.rs`][c~afl~docs]↗{{hi:afl.rs}} (bindings to AFL) |
 | Code Review Tools: Not Rust-specific, but used in conjunction with Rust code. Examples: GitHub, GitLab, etc. | |
 
 ## References {#references}

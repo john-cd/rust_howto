@@ -10,10 +10,10 @@ Fuzzers generally get their power through a kind of evolutionary algorithm that 
 
 ## Fuzzing Engines {#skip}
 
-- `cargo fuzz`: The most common and recommended way to perform fuzzing in Rust. It integrates well with [Cargo][p~cargo] and uses libFuzzer under the hood.
+- [`cargo fuzz`](https://github.com/rust-fuzz/cargo-fuzz)↗{{hi:cargo fuzz}}: The most common and recommended way to perform fuzzing in Rust. It integrates well with [Cargo][p~cargo] and uses libFuzzer under the hood.
 - [`afl.rs`][c~afl~docs]↗{{hi:afl.rs}}: Bindings to the American Fuzzy Lop (AFL) fuzzer. AFL is a powerful fuzzer, but [cargo][p~cargo] fuzz with libFuzzer is often sufficient and easier to set up.
 
-In almost all cases, `cargo fuzz` will be your primary tool for fuzzing Rust code. It uses `libFuzzer`, a powerful and modern fuzzing engine, and simplifies the fuzzing process significantly. Make sure you define good fuzz targets and use sanitizers to detect errors effectively.
+In almost all cases, `cargo fuzz` will be your primary tool for fuzzing Rust code. It uses [`libFuzzer`](https://llvm.org/docs/LibFuzzer.html)↗{{hi:libFuzzer}}, a powerful and modern fuzzing engine, and simplifies the fuzzing process significantly. Make sure you define good fuzz targets and use sanitizers to detect errors effectively.
 
 ### Target Definition {#skip}
 
@@ -23,13 +23,13 @@ You'll need to define a fuzz target - a function in your code that the fuzzer wi
 
 (Important for effective fuzzing)
 
-A corpus is a set of initial inputs that the fuzzer uses as a starting point. `cargo fuzz` helps manage corpora.
+A corpus is a set of initial inputs that the fuzzer uses as a starting point. [`cargo fuzz`](https://github.com/rust-fuzz/cargo-fuzz)↗{{hi:cargo fuzz}} helps manage corpora.
 
 ### Coverage-Guided Fuzzing {#skip}
 
 (Most effective)
 
-`libFuzzer` (used by `cargo fuzz`): libFuzzer is a coverage-guided fuzzer, meaning it uses [code coverage][p~code-coverage] information to guide its search for bugs.
+[`libFuzzer`](https://llvm.org/docs/LibFuzzer.html)↗{{hi:libFuzzer}} (used by `cargo fuzz`): libFuzzer is a coverage-guided fuzzer, meaning it uses [code coverage][p~code-coverage] information to guide its search for bugs.
 AFL: Also a coverage-guided fuzzer.
 
 ### Sanitizers (for Detecting errors) {#skip}
@@ -45,7 +45,7 @@ This is a more advanced technique and often involves custom [scripting][p~script
 
 [![cargo-fuzz][c~cargo_fuzz~docs~badge]][c~cargo_fuzz~docs] [![cargo-fuzz~crates.io][c~cargo_fuzz~crates.io~badge]][c~cargo_fuzz~crates.io] [![cargo-fuzz~github][c~cargo_fuzz~github~badge]][c~cargo_fuzz~github] [![cargo-fuzz~lib.rs][c~cargo_fuzz~lib.rs~badge]][c~cargo_fuzz~lib.rs]{{hi:cargo-fuzz}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
 
-A [`cargo`][c~cargo~docs]↗{{hi:cargo}} subcommand for fuzzing with `libFuzzer`.
+A [`cargo`][c~cargo~docs]↗{{hi:cargo}} subcommand for fuzzing with [`libFuzzer`](https://llvm.org/docs/LibFuzzer.html)↗{{hi:libFuzzer}}.
 
 ## `afl` {#afl}
 
@@ -59,7 +59,7 @@ Fuzz testing (or fuzzing) is a software [testing][p~testing] technique used to f
 
 ## Related Topic: Property-Based Testing {#skip}
 
-The [`proptest`][c~proptest~docs]↗{{hi:proptest}}, `quickcheck` crates are used for property-based testing, which is a different but complementary technique to fuzzing. Property-based testing generates many random inputs to verify properties of your code.
+The [`proptest`][c~proptest~docs]↗{{hi:proptest}}, [`quickcheck`][c~quickcheck~docs]↗{{hi:quickcheck}} crates are used for property-based testing, which is a different but complementary technique to fuzzing. Property-based testing generates many random inputs to verify properties of your code.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

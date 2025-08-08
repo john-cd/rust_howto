@@ -8,8 +8,8 @@ Suppose you have a [sorting][p~sorting] function. A property you could test is t
 
 Consider using:
 
-- [`proptest`][c~proptest~docs]↗{{hi:proptest}}: A powerful crate for property-based testing, where you define properties that your code should satisfy, and `proptest` generates many random inputs to verify those properties.
-- `quickcheck`: Another property-based testing crate. `proptest` is often preferred for its flexibility.
+- [`proptest`][c~proptest~docs]↗{{hi:proptest}}: A powerful crate for property-based testing, where you define properties that your code should satisfy, and [`proptest`][c~proptest~docs]↗{{hi:proptest}} generates many random inputs to verify those properties.
+- [`quickcheck`][c~quickcheck~docs]↗{{hi:quickcheck}}: Another property-based testing crate. `proptest` is often preferred for its flexibility.
 
 ## `proptest` {#proptesting}
 

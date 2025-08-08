@@ -9,10 +9,10 @@ Tools that provide developer-facing features such as testing, debugging, linting
 | Build System/Package Manager | [`cargo`][c~cargo~docs]↗{{hi:cargo}} |
 | Formatter | [`rustfmt`][c~rustfmt~docs]↗{{hi:rustfmt}} |
 | Linter | [`clippy`][c~clippy~docs]↗{{hi:clippy}} |
-| Testing Framework | `cargo test` (built-in), [`rstest`][c~rstest~docs]↗{{hi:rstest}} (for data-driven tests) |
+| Testing Framework | [`cargo test`](https://doc.rust-lang.org/cargo/commands/cargo-test.html)↗{{hi:cargo test}} (built-in), [`rstest`][c~rstest~docs]↗{{hi:rstest}} (for data-driven tests) |
 | Debugging | [`gdb`][c~gdb~docs]↗{{hi:gdb}}, [`lldb`][c~lldb~docs]↗{{hi:lldb}} (often used via IDE integration), `cargo-debug` |
 | Profiling | `cargo flamegraph`, [`perf`][c~perf~docs]↗{{hi:perf}} (system profiler) |
-| Documentation Generator | `cargo doc` |
+| Documentation Generator | [`cargo doc`](https://doc.rust-lang.org/cargo/commands/cargo-doc.html)↗{{hi:cargo doc}} |
 | Code Coverage | [`grcov`][c~grcov~docs]↗{{hi:grcov}}, [`tarpaulin`][c~tarpaulin~docs]↗{{hi:tarpaulin}} |
 | Continuous Integration | often uses CI platforms directly; no specific Rust crates needed, but [`xtask`][c~xtask~docs]↗{{hi:xtask}} can help manage CI tasks |
 | Code Analysis | `cargo clippy`, `rust-analyzer` (for Language Server Protocol support in IDEs) |
@@ -79,12 +79,12 @@ See also [[cross_compiling | Cross Compiling (Cargo Plugins)]].
 
 | Utilities |
 |---|
-| [`fd-find`][c~fd_find~docs]↗{{hi:fd-find}} as a more human-friendly alternative to [`find`][c~find~docs]↗{{hi:find}} which, by default, ignores paths listed in things like `.gitignore` and mimics Vim's smartcase option. |
+| [`fd-find`][c~fd_find~docs]↗{{hi:fd-find}} as a more human-friendly alternative to [`find`][c~find~docs]↗{{hi:find}} which, by default, ignores paths listed in things like [`.gitignore`](https://git-scm.com/docs/gitignore)↗{{hi:.gitignore}} and mimics Vim's smartcase option. |
 | [`hyperfine`][c~hyperfine~docs]↗{{hi:hyperfine}} as an analogue to the UNIX time command which can do warm-up runs, run the command multiple times to do statistical outlier detection, display a progress bar for the multiple runs, export results to CSV/JSON/etc., parameterize the runs, etc. |
 | [`miniserve`][c~miniserve~docs]↗{{hi:miniserve}} as a simple, easy way to serve up some files or accept some uploads over HTTP. |
 | [`ripgrep`][c~ripgrep~docs]↗{{hi:ripgrep}} is excellent for fast searching of file contents. |
 | [`rust-script`][c~rust_script~docs]↗{{hi:rust-script}} as a way to quickly write little single-file programs in Rust without having to spin up a whole project. |
-| [`skim`][c~skim~docs]↗{{hi:skim}} is a Rust clone of `fzf` with some additional features. |
+| [`skim`][c~skim~docs]↗{{hi:skim}} is a Rust clone of [`fzf`](https://github.com/junegunn/fzf)↗{{hi:fzf}} with some additional features. |
 | [`tokei`][c~tokei~docs]↗{{hi:tokei}} gathers statistics about a codebase (i.e. number of files, lines, lines of code, lines of comments, and lines of blanks, per language). |
 | [`xd`][c~xd~docs]↗{{hi:xd}} as an alternative to 'xxd' that doesn't have as many features, but renders un-printable characters in a reversible "codepage 437 plus a symbol for NULL" mapping to ensure that all patterns in the visualization of binary files are visible... not just ones that occur in printable characters. |
 

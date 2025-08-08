@@ -10,6 +10,8 @@ Interfacing with Erlang/Elixir from Rust typically involves using ports or NIFs 
 
 ## NIFs (Native Implemented Functions) {#skip}
 
+TODO find proper crate
+
 The `erlang_nif` crate allows you to write NIFs in Rust. NIFs run within the Erlang VM, so they are more performant than ports, but also more complex and require extra care to avoid crashing the VM.
 
 ## `rustler` {#rustler}
@@ -33,7 +35,7 @@ Use the following crates:
 ## Build Tools {#skip}
 
 - [[cargo | `cargo`]] builds the Rust side of the integration.
-- `rebar3` or `mix` build the Erlang/Elixir side and manage dependencies.
+- [`rebar3`]()↗{{hi:rebar3}} or [`mix`]()↗{{hi:mix}} build the Erlang/Elixir side and manage dependencies.
 
 ## Other Considerations {#skip}
 

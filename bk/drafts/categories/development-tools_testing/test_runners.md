@@ -9,7 +9,7 @@
 [![cargo~github][c~cargo~github~badge]][c~cargo~github]
 [![cargo~lib.rs][c~cargo~lib.rs~badge]][c~cargo~lib.rs]
 
-`cargo test` to run all tests.
+[`cargo test`](https://doc.rust-lang.org/cargo/commands/cargo-test.html)↗{{hi:cargo test}} to run all tests.
 `cargo test test_prefix` to run all tests that start with the provided prefix.
 `cargo test -- --show-output` to show output (println!) that is otherwise captured during tests.
 

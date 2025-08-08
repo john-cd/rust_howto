@@ -6,7 +6,7 @@ Release automation involves automating the process of building, [testing][p~test
 
 How you distribute your application depends on the target platform:
 
-- Libraries: publish (open-source) Rust libraries to `crates.io`.
+- Libraries: publish (open-source) Rust libraries to [`crates.io`](https://crates.io)↗{{hi:crates.io}}.
 - Executables: publish binaries to a service where they can be downloaded from (e.g., `GitHub Releases`).
 - [Containers][p~containers]: Use `Docker` to create the container image, push it to a private or public registry (e.g. `DockerHub`, `GitHub Packages`); optionally pull the image to deploy it to an orchestrator (e.g. `Kubernetes`) or a Cloud service like [`AWS`][c~aws~docs]↗{{hi:AWS}} or `Azure`.
 - Packages: Create (`.deb`, `.rpm`...) packages for package management systems (e.g., Debian `dpkg`/`apt`, RPM, Flatpak, HomeBrew...) using [cargo][p~cargo] plugins like [`cargo-deb`][c~cargo_deb~docs]↗{{hi:cargo-deb}}, [`cargo-rpm`][c~cargo_rpm~docs]↗{{hi:cargo-rpm}}...
@@ -21,7 +21,7 @@ Cargo handles building the release binaries or packaging your Rust code in `.cra
 
 ## Publish a Crate to `crates.io` {#skip}
 
-The following are the typical steps to release a crate to `crates.io`:
+The following are the typical steps to release a crate to [`crates.io`](https://crates.io)↗{{hi:crates.io}}:
 
 - `cargo update`, if desired.
 - Update the changelog.
@@ -30,10 +30,10 @@ The following are the typical steps to release a crate to `crates.io`:
   - `cargo doc` to inspect the documentation.
   - `cargo clean` to build from a clean slate.
   - `cargo clippy`.
-  - `cargo test` or `cargo nextest run` to run unit and integration tests.
+  - [`cargo test`](https://doc.rust-lang.org/cargo/commands/cargo-test.html)↗{{hi:cargo test}} or `cargo nextest run` to run unit and integration tests.
   - `cargo build --locked --release` to build the production binaries.
   - `cargo run --release` to manually exercise the application, if relevant.
-- Increase the application's version number in `Cargo.toml`.
+- Increase the application's version number in [`Cargo.toml`](https://doc.rust-lang.org/cargo/reference/manifest.html)↗{{hi:Cargo.toml}}.
 - Make sure all code is committed and pushed to its repository.
 - Create and push a git tag.
 - Publish the package in the [cargo][p~cargo] registry (for example, crates.io).
@@ -52,7 +52,7 @@ The following are the typical steps to release a crate to `crates.io`:
 [![cargo-release~lib.rs][c~cargo_release~lib.rs~badge]][c~cargo_release~lib.rs]
 [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[`cargo-release`][c~cargo_release~docs]↗{{hi:cargo-release}} automates the release process, including version bumping and publishing to `crates.io`. It extends `cargo publish` with common release practices like validation, version management, tagging, and pushing. The process is customizable but with defaults that should help you get up and running quickly.
+[`cargo-release`][c~cargo_release~docs]↗{{hi:cargo-release}} automates the release process, including version bumping and publishing to [`crates.io`](https://crates.io)↗{{hi:crates.io}}. It extends `cargo publish` with common release practices like validation, version management, tagging, and pushing. The process is customizable but with defaults that should help you get up and running quickly.
 
 ## `release-plz` {#release-plz}
 

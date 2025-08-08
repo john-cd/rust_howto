@@ -15,7 +15,7 @@ Consider using:
 
 - [`mavlink`][c~mavlink~docs]↗{{hi:mavlink}} for MAVLink encoding/decoding.
 - [`embedded-hal`][c~embedded_hal~docs]↗{{hi:embedded-hal}} for hardware abstraction (if working with embedded systems).
-- `pid` for PID controller implementation.
+- [`pid`][c~pid~docs]↗{{hi:pid}} for PID controller implementation.
 
 ## Sensor Integration
 
@@ -26,7 +26,7 @@ Consider using:
 
 Consider using:
 
-- `i2cdev`, [`spidev`][c~spidev~docs]↗{{hi:spidev}}, [`serialport`][c~serialport~docs]↗{{hi:serialport}} for low-level hardware communication.
+- [`i2cdev`][c~i2cdev~docs]↗{{hi:i2cdev}}, [`spidev`][c~spidev~docs]↗{{hi:spidev}}, [`serialport`][c~serialport~docs]↗{{hi:serialport}} for low-level hardware communication.
 - [`gpsd-client`][c~gpsd_client~docs]↗{{hi:gpsd-client}} for interacting with the gpsd daemon (if using a GPS receiver that works with gpsd).
 
 Sensor-specific crates are common: Often, you'll use crates provided by the sensor manufacturer or community-developed drivers.

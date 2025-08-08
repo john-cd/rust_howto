@@ -2,15 +2,15 @@
 
 {{#include testing.incl.md}}
 
-For most basic code testing needs, using `cargo test` will be sufficient. For more advanced testing, especially property-based testing, [`proptest`][c~proptest~docs]↗{{hi:proptest}} is highly recommended. [`mockall`][c~mockall~docs]↗{{hi:mockall}} or [`faux`][c~faux~docs]↗{{hi:faux}} will help when you need to mock dependencies. [`rstest`][c~rstest~docs]↗{{hi:rstest}} is great for parameterized tests. And for ensuring your tests cover a good portion of your code, [`grcov`][c~grcov~docs]↗{{hi:grcov}} or [`tarpaulin`][c~tarpaulin~docs]↗{{hi:tarpaulin}} can be used.
+For most basic code testing needs, using [`cargo test`](https://doc.rust-lang.org/cargo/commands/cargo-test.html)↗{{hi:cargo test}} will be sufficient. For more advanced testing, especially property-based testing, [`proptest`][c~proptest~docs]↗{{hi:proptest}} is highly recommended. [`mockall`][c~mockall~docs]↗{{hi:mockall}} or [`faux`][c~faux~docs]↗{{hi:faux}} will help when you need to mock dependencies. [`rstest`][c~rstest~docs]↗{{hi:rstest}} is great for parameterized tests. And for ensuring your tests cover a good portion of your code, [`grcov`][c~grcov~docs]↗{{hi:grcov}} or [`tarpaulin`][c~tarpaulin~docs]↗{{hi:tarpaulin}} can be used.
 
 ## Unit Testing {#unit_testing}
 
-`cargo test` (built-in) is the standard Rust testing framework for writing unit tests. Uses `#[test]` attribute.
+[`cargo test`](https://doc.rust-lang.org/cargo/commands/cargo-test.html)↗{{hi:cargo test}} (built-in) is the standard Rust testing framework for writing unit tests. Uses `#[test]` attribute.
 
 ## Integration Testing {#integration_testing}
 
-Often uses `cargo test` as well, but integration tests are placed in a separate tests directory and focus on testing interactions between [modules][p~modules] or components.
+Often uses [`cargo test`](https://doc.rust-lang.org/cargo/commands/cargo-test.html)↗{{hi:cargo test}} as well, but integration tests are placed in a separate tests directory and focus on testing interactions between [modules][p~modules] or components.
 
 [`rstest`][c~rstest~docs]↗{{hi:rstest}} is a resource-based test framework for writing data-driven tests.
 
@@ -37,7 +37,7 @@ Uses `#[doc = "```"]` in doc comments to embed testable examples in your documen
 
 Snapshots tests (also sometimes called approval tests) are tests that assert values against a reference value (the snapshot). Think of it as a supercharged version of [`assert_eq!`][c~std::assert_eq~docs]↗{{hi:assert_eq!}}. [`insta`][insta~website] lets you compare the result of a test against a reference value but, unlike simple assertions, the reference value is managed by [`insta`][c~insta~docs]↗{{hi:insta}} for you.
 
-First, install the CLI with `cargo install cargo-insta`. Second, create a test, run it a first time with `cargo test`. This creates a snapshot file (ending with `.snap`). Use `cargo insta review` to review and accept the snapshot. Running `cargo test` again now succeeds, until the value returned by the function under test changes.
+First, install the CLI with `cargo install cargo-insta`. Second, create a test, run it a first time with [`cargo test`](https://doc.rust-lang.org/cargo/commands/cargo-test.html)↗{{hi:cargo test}}. This creates a snapshot file (ending with `.snap`). Use `cargo insta review` to review and accept the snapshot. Running `cargo test` again now succeeds, until the value returned by the function under test changes.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_testing/examples/testing/insta.rs:example}}

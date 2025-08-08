@@ -7,8 +7,8 @@
 | Build Systems | Use [cargo][p~cargo], xtask (for managing complex builds) |
 | Target Specification | Handled by [cargo][p~cargo] through target triples |
 | C/C++ Dependencies | Often a source of complexity; [`cc`][c~cc~docs]↗{{hi:cc}} crate can help |
-| Platform-Specific Code | Use conditional compilation [attributes][p~attributes] like `cfg` to manage platform-specific code |
-| Foreign Function Interface (FFI) | Use `std::ffi` (for interacting with C code, which might require cross-compilation) |
+| Platform-Specific Code | Use conditional compilation [attributes][p~attributes] like [`cfg`](https://doc.rust-lang.org/reference/conditional-compilation.html#the-cfg-attribute)↗{{hi:cfg}} to manage platform-specific code |
+| Foreign Function Interface (FFI) | Use [`std::ffi`](https://doc.rust-lang.org/std/ffi/index.html)↗{{hi:std::ffi}} (for interacting with C code, which might require cross-compilation) |
 
 ## Cross-compile with `cargo` {#cross-compile-with-cargo}
 

@@ -9,10 +9,10 @@ Flame graphs are excellent for visualizing CPU usage and identifying hot spots. 
 | Topic | Rust Crates |
 |---|---|
 | Flame Graphs | `cargo flamegraph` generates flame graphs from Rust programs. |
-| System Profilers (In-depth Analysis) | [`perf`][c~perf~docs]↗{{hi:perf}} is a powerful system profiler for Linux. `cargo flamegraph` often uses perf under the hood. [`dtrace`][c~dtrace~docs]↗{{hi:dtrace}} is another system profiler for macOS, BSD. `VTune` (Intel) is a commercial profiler. |
+| System Profilers (In-depth Analysis) | [`perf`][c~perf~docs]↗{{hi:perf}} is a powerful system profiler for Linux. `cargo flamegraph` often uses perf under the hood. [`dtrace`][c~dtrace~docs]↗{{hi:dtrace}} is another system profiler for macOS, BSD. [`VTune`](https://www.intel.com/content/www/us/en/developer/tools/oneapi/vtune-profiler.html)↗{{hi:VTune}} (Intel) is a commercial profiler. |
 | Benchmarking | Built-in `cargo bench` allows you to write benchmarks directly in your Rust code. |
 | In-Code Profiling (Specific Code Regions) | [`measure_time`][c~measure_time~docs]↗{{hi:measure_time}} is a simple crate for measuring the execution time of code blocks. |
-| Memory Profiling | [`valgrind`][c~valgrind~docs]↗{{hi:valgrind}} (with `massif` or `memcheck`): While not Rust-specific, Valgrind is a powerful tool for memory profiling and leak detection. You'd run your Rust program under Valgrind. |
+| Memory Profiling | [`valgrind`][c~valgrind~docs]↗{{hi:valgrind}} (with [`massif`](https://valgrind.org/docs/manual/ms-manual.html)↗{{hi:massif}} or [`memcheck`](https://valgrind.org/info/tools.html#memcheck)↗{{hi:memcheck}}): While not Rust-specific, Valgrind is a powerful tool for memory profiling and leak detection. You'd run your Rust program under Valgrind. |
 | Tracing - Understanding Program Flow | [`tracing`][c~tracing~docs]↗{{hi:tracing}}: While not strictly a profiler in the performance sense, [`tracing`][c~tracing~docs]↗{{hi:tracing}} allows you to instrument your code with spans and events, which can be invaluable for understanding the flow of execution and identifying bottlenecks. Often used in combination with other profiling tools. |
 | Sampling Profilers (CPU Usage) | [`samply`][c~samply~docs]↗{{hi:samply}} is a native sampling profiler focusing on ease of use. [`callgrind`][c~callgrind~docs]↗{{hi:callgrind}} is a performance analysis tool often used with `kcachegrind` for visualization. |
 

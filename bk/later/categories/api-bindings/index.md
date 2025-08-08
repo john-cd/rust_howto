@@ -24,7 +24,7 @@ See [[email | Email]].
 
 ## Filesystem APIs
 
-Bindings for filesystem operations and libraries, including `inotify` (bindings to the inotify API for monitoring filesystem events on Linux). See [[filesystem | Filesystem]].
+Bindings for filesystem operations and libraries, including [`inotify`][c~inotify~docs]↗{{hi:inotify}} (bindings to the 'inotify' API for monitoring filesystem events on Linux). See [[filesystem | Filesystem]].
 
 ## Graphics APIs
 
@@ -32,7 +32,7 @@ Bindings for graphics libraries such as Vulkan and OpenGL: see [[graphics | Grap
 
 ## Machine Learning APIs
 
-Bindings for machine learning frameworks like `TensorFlow` and `PyTorch` (e.g. [`tch-rs`][c~tch~docs]↗{{hi:tch-rs}}): see [[machine-learning | Machine Learning]].
+Bindings for machine learning frameworks like [`TensorFlow`](https://www.tensorflow.org)↗{{hi:TensorFlow}} and `PyTorch` (e.g. [`tch-rs`][c~tch~docs]↗{{hi:tch-rs}}): see [[machine-learning | Machine Learning]].
 
 ## Multimedia APIs
 
@@ -48,7 +48,7 @@ See [[os | OS]].
 
 ## Operating System-specific APIs
 
-Bindings for OS-specific functionality and system calls: you will often use `std::os` or crates like [`nix`][c~nix~docs]↗{{hi:nix}} (Unix-like API bindings) or `users` (a library to query user and group information on Unix-like systems). Refer to:
+Bindings for OS-specific functionality and system calls: you will often use [`std::os`](https://doc.rust-lang.org/std/os/index.html)↗{{hi:std::os}} or crates like [`nix`][c~nix~docs]↗{{hi:nix}} (Unix-like API bindings) or `users`{{hi:users}} (a library to query user and group information on Unix-like systems). Refer to:
 
 - [[os_freebsd-apis | OS Freebsd APIs]].
 - [[os_linux-apis | OS Linux APIs]].
@@ -60,7 +60,7 @@ Use the [`sysinfo`][c~sysinfo~docs]↗{{hi:sysinfo}} cross-platform library to f
 
 ## Parsing APIs
 
-Consider `libxml2` (bindings to the libxml2 library) for XML parsing. See [[parsing | Parsing]] and [[parser-implementations | Parser Implementations]].
+Consider [`libxml`][c~libxml~docs]↗{{hi:libxml2}} (bindings to the libxml2 library) for XML parsing. See [[parsing | Parsing]] and [[parser-implementations | Parser Implementations]].
 
 ## Programming Language Bindings
 
@@ -100,7 +100,7 @@ Bindings for WebAssembly and related technologies - refer to [[wasm | WASM]].
 
 ## GUI APIs
 
-Bindings to Graphical User Interfaces, such as `gtk-rs` (bindings to the GTK library) - see [[gui | GUI]].
+Bindings to Graphical User Interfaces, such as bindings to the GTK library - see [[gui | GUI]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

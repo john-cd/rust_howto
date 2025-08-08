@@ -27,11 +27,11 @@ Crates like [`axum`][c~axum~docs]↗{{hi:axum}}, [`warp`][c~warp~docs]↗{{hi:wa
 ### Key Technologies {#skip2}
 
 - Communication: Microservices communicate over the network, commonly via REST or [[_grpc | gRPC]].
-- Service Discovery: Use a service registry (e.g., `Consul`, `etcd`) to dynamically discover microservice locations.
-- API Gateway: Use an API gateway (e.g., `Kong`) to handle routing, [authentication][p~authentication], and other cross-cutting concerns.
-- Message Queues: Use message queues (e.g., `RabbitMQ`, `Kafka`) for [asynchronous][p~asynchronous] communication.
-- [Containerization][p~containerization]: Use `Docker` and `Kubernetes` for [containerization][p~containerization] and orchestration.
-- Logging and Monitoring: Implement central logging and monitoring with `Fluentd`; [`Elasticsearch`][c~elasticsearch~docs]↗{{hi:Elasticsearch}}, `Logstash`, and `Kibana`; `Graylog`, `Splunk`, `Prometheus` and/or `Grafana`.
+- Service Discovery: Use a service registry (e.g., [`Consul`]()↗{{hi:Consul}}, [`etcd`]()↗{{hi:etcd}}) to dynamically discover microservice locations.
+- API Gateway: Use an API gateway (e.g., [`Kong`]()↗{{hi:Kong}}) to handle routing, [authentication][p~authentication], and other cross-cutting concerns.
+- Message Queues: Use message queues (e.g., [`RabbitMQ`]()↗{{hi:RabbitMQ}}, [`Kafka`](https://kafka.apache.org)↗{{hi:Kafka}}) for [asynchronous][p~asynchronous] communication.
+- [Containerization][p~containerization]: Use [`Docker`](https://www.docker.com)↗{{hi:Docker}} and [`Kubernetes`](https://kubernetes.io)↗{{hi:Kubernetes}} for [containerization][p~containerization] and orchestration.
+- Logging and Monitoring: Implement central logging and monitoring with [`Fluentd`]()↗{{hi:Fluentd}}; [`Elasticsearch`][c~elasticsearch~docs]↗{{hi:Elasticsearch}}, [`Logstash`]()↗{{hi:Logstash}}, and [`Kibana`]()↗{{hi:Kibana}}; [`Graylog`]()↗{{hi:Graylog}}, [`Splunk`]()↗{{hi:Splunk}}, [`Prometheus`]()↗{{hi:Prometheus}} and/or [`Grafana`]()↗{{hi:Grafana}}.
 - [Error Handling][p~error-handling] and Resilience: Implement retry mechanisms, circuit breakers, and other resilience patterns.
 - Configuration Management: externalize configuration and secrets e.g. with `Vault`.
 - Authentication/Authorization: Implement security with `JWT` (JSON Web Tokens) or `OAuth 2.0` / `OpenID Connect` (OIDC), using the aforementioned API Gateway or a sidecar proxy (e.g. `Envoy`, `Istio`).

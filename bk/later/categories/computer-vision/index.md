@@ -15,7 +15,7 @@ Several other pure-Rust crates cater to various aspects of computer vision:
 
 ## Related Topics
 
-For image I/O and manipulation, [`image`][c~image~docs]↗{{hi:image}} and [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} are essential. For more specialized tasks, machine learning-focused crates like [`tch`][c~tch~docs]↗{{hi:tch}}, [`tract`][c~tract~docs]↗{{hi:tract}}, or `candle` are appropriate.
+For image I/O and manipulation, [`image`][c~image~docs]↗{{hi:image}} and [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} are essential. For more specialized tasks, machine learning-focused crates like [`tch`][c~tch~docs]↗{{hi:tch}}, [`tract`][c~tract~docs]↗{{hi:tract}}, or [`candle`](https://github.com/huggingface/candle)↗{{hi:candle}} are appropriate.
 
 ## Multimedia
 
@@ -43,7 +43,7 @@ See [[mathematics | Mathematics]] and [[linear_algebra | Linear Algebra]].
 
 - [`tch`][c~tch~docs]↗{{hi:tch}} provides bindings to the PyTorch machine learning framework, enabling the use of PyTorch models in Rust. While not strictly a computer vision crate, it is useful for deep learning-based computer vision tasks.
 - [`tract`][c~tract~docs]↗{{hi:tract}} provides a framework for running and training neural networks, including those used in computer vision.
-- `candle` provides a minimal and efficient tensor library for machine learning.
+- [`candle`](https://github.com/huggingface/candle)↗{{hi:candle}} provides a minimal and efficient tensor library for machine learning.
 
 See [[_machine_learning |  Machine Learning]].
 

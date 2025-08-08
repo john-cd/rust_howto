@@ -8,7 +8,7 @@
 
 [![wee_alloc][c~wee_alloc~docs~badge]][c~wee_alloc~docs] [![wee_alloc~crates.io][c~wee_alloc~crates.io~badge]][c~wee_alloc~crates.io] [![wee_alloc~github][c~wee_alloc~github~badge]][c~wee_alloc~github] [![wee_alloc~lib.rs][c~wee_alloc~lib.rs~badge]][c~wee_alloc~lib.rs]{{hi:wee_alloc}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}}
 
-`wee_alloc` is a Wasm-enabled allocator.
+[`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}} is a WASM-enabled allocator.
 
 ### Use a Custom Allocator with `tikv-jemallocator` {#tikv-jemallocator}
 
@@ -46,7 +46,7 @@ It is important to note that keys may be reused. In other words, once a value as
 
 [![bumpalo][c~bumpalo~docs~badge]][c~bumpalo~docs] [![bumpalo~crates.io][c~bumpalo~crates.io~badge]][c~bumpalo~crates.io] [![bumpalo~github][c~bumpalo~github~badge]][c~bumpalo~github] [![bumpalo~lib.rs][c~bumpalo~lib.rs~badge]][c~bumpalo~lib.rs]{{hi:bumpalo}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-`bumpalo` is a fast bump allocation arena for Rust.
+[`bumpalo`][c~bumpalo~docs]↗{{hi:bumpalo}} is a fast bump allocation arena for Rust.
 
 ## Garbage Collection with `seize` {#seize}
 

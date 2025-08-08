@@ -32,7 +32,7 @@ Game development in Rust is a vibrant area, and the crates you'll need depend on
 | [[mathematics | Mathematics]] and [[linear_algebra | Linear Algebra]] | | [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}}: A popular linear algebra library. [`glam`][c~glam~docs]↗{{hi:glam}}: Another linear algebra library, often used in game development. |
 | Asset Loading and Management | See [3D Format Loaders](https://arewegameyet.rs/ecosystem/3dformatloaders) for FBX, OBJ and more. Crates like [`image`][c~image~docs]↗{{hi:image}} are often used for image loading. | |
 | Serialization/Deserialization | For game state, assets, etc. | [`serde`][c~serde~docs]↗{{hi:serde}}: Widely used serialization framework (saving game state, loading assets, etc.). |
-| Scripting | See [Scripting Languages](https://arewegameyet.rs/ecosystem/scripting) for scripting languages embeddable in a Rust game. | [`rhai`][c~rhai~docs]↗{{hi:rhai}}: An embeddable scripting language. `lua`: Lua bindings. |
+| Scripting | See [Scripting Languages](https://arewegameyet.rs/ecosystem/scripting) for scripting languages embeddable in a Rust game. | [`rhai`][c~rhai~docs]↗{{hi:rhai}}: An embeddable scripting language. [`lua`][c~lua~docs]↗{{hi:lua}}: Lua bindings. |
 | Other Useful Crates | | [`rand`][c~rand~docs]↗{{hi:rand}}: For random number generation. |
 
 See also:

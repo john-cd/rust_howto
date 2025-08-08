@@ -34,7 +34,11 @@ Consider [`bonsai-bt`][c~bonsai_bt~docs]↗{{hi:bonsai-bt}} (Behavior Tree imple
 
 Rust Crates:
 
-- `dora-rs`: Robotics framework for AI applications. Low usage.
+- [`dora-rs`][c~dora_rs~docs]↗{{hi:dora-rs}}: Robotics framework for AI applications. Low usage.
 - `optimization-engine`: [Embedded][p~embedded] optimization for robotics.
+
+[![dora-rs][c~dora_rs~docs~badge]][c~dora_rs~docs] [![dora-rs~crates.io][c~dora_rs~crates.io~badge]][c~dora_rs~crates.io] [![dora-rs~github][c~dora_rs~github~badge]][c~dora_rs~github] [![dora-rs~lib.rs][c~dora_rs~lib.rs~badge]][c~dora_rs~lib.rs]{{hi:dora-rs}}
+
+Dataflow Oriented Robotic Architecture
 
 </div>

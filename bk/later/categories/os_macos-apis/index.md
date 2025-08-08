@@ -24,7 +24,7 @@ For macOS-specific features, you'll need to use the [`objc`][c~objc~docs]↗{{hi
 
 ## Networking
 
-- `std::net` works well on macOS.
+- [`std::net`](https://doc.rust-lang.org/std/net/index.html)↗{{hi:std::net}} works well on macOS.
 - For asynchronous networking, use [`tokio`][c~tokio~docs]↗{{hi:tokio}}.
 
 ## Threads

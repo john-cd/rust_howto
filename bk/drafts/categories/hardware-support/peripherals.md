@@ -10,7 +10,7 @@
 
 ## Networking {#skip}
 
-Standard networking crates like `std::net` or crates like [`tokio`][c~tokio~docs]↗{{hi:tokio}} for asynchronous networking are used for network hardware interaction.
+Standard networking like [`std::net`](https://doc.rust-lang.org/std/net/index.html)↗{{hi:std::net}} or crates like [`tokio`][c~tokio~docs]↗{{hi:tokio}} for asynchronous networking are used for network hardware interaction.
 
 ## Graphics Cards (GPUs) {#skip}
 

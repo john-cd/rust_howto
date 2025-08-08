@@ -18,7 +18,7 @@
 
 [`tl`][c~tl~docs]↗{{hi:tl}} is a fast HTML parser written in pure Rust.
 
-Add the following to your `Cargo.toml`:
+Add the following to your [`Cargo.toml`](https://doc.rust-lang.org/cargo/reference/manifest.html)↗{{hi:Cargo.toml}}:
 
 ```toml
 [dependencies]

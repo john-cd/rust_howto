@@ -6,10 +6,10 @@ Direct Rust FFI bindings to libraries written in other languages; often denoted 
 
 | Topic | Example(s) | Related Chapter(s) |
 | --- | --- | --- |
-| Audio | `alsa-sys`: Bindings to the ALSA library. `portaudio-sys`: Bindings to the PortAudio library. | [[multimedia_audio | Multimedia: Audio]] |
+| Audio | [`alsa-sys`][c~alsa_sys~docs]↗{{hi:alsa-sys}}: Bindings to the ALSA library. `portaudio-sys`: Bindings to the PortAudio library. | [[multimedia_audio | Multimedia: Audio]] |
 | Cryptography | `openssl-sys`: Bindings to OpenSSL. `libsodium-sys`: Bindings to the libsodium library. | [[cryptography | Cryptography]] |
-| Database | `libsqlite3-sys`: Bindings to the SQLite library. `pq-sys`: Bindings to the PostgreSQL library. | [[database | Database]] |
-| Graphics | `glfw-sys`: Bindings to the GLFW library. `vulkan-sys`: Bindings to the Vulkan API. | [[graphics | Graphics]] |
+| Database | `libsqlite3-sys`: Bindings to the SQLite library. `pq-sys`{{hi:pq-sys}}: Bindings to the PostgreSQL library. | [[database | Database]] |
+| Graphics | [`glfw-sys`][c~glfw_sys~docs]↗{{hi:glfw-sys}}: Bindings to the GLFW library. [`vulkan-sys`][c~vulkan_sys~docs]↗{{hi:vulkan-sys}}: Bindings to the Vulkan API. | [[graphics | Graphics]] |
 | Networking | `libcurl-sys`: Bindings to the libcurl library. `libssh2-sys`: Bindings to the libssh2 library. | [[network-programming | Network Programming]] |
 | Parsing | `libxml2-sys`: Bindings to the libxml2 library. | [[parsing | Parsing]] |
 | System | [`libc`][c~libc~docs]↗{{hi:libc}}: Bindings to various C library functions and types. `windows-sys`: Bindings to Windows APIs. | [[os | OS]] [[os_windows-apis | OS Windows APIs]] |

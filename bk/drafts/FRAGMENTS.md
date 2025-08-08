@@ -6,8 +6,8 @@
 
 ## Handle Overflows {#overflow-handling}
 
-- Wrap in all modes with the `wrapping_*` methods, such as [`wrapping_add`][primitive~u32::wrapping_add]{{hi:wrapping_add}}↗.
-- Return the [`std::option::Option::None`][c~std::option::Option::None~docs]{{hi:std::option::Option::None}}↗ value if there is overflow{{hi:Overflow}} with the `checked_*` methods.
+- Wrap in all modes with the `wrapping_*`{{hi:wrapping_*}} methods, such as [`wrapping_add`][primitive~u32::wrapping_add]{{hi:wrapping_add}}↗.
+- Return the [`std::option::Option::None`][c~std::option::Option::None~docs]↗{{hi:std::option::Option::None}} value if there is overflow{{hi:Overflow}} with the `checked_*`{{hi:checked_*}} methods.
 - Return the value and a boolean indicating whether there was overflow with the `overflowing_*` methods.
 - Saturate at the value's minimum or maximum values with the `saturating_*` methods.
 
@@ -63,10 +63,10 @@ TODO
 
 For a true plugin architecture where plugins are compiled as separate shared libraries (`.so` on Linux, `.dll` on Windows, `.dylib` on macOS) and loaded at runtime, you would typically:
 
-- Use the `libloading` crate, which provides safe FFI (Foreign Function Interface) wrappers to dynamically load shared libraries and resolve symbols (functions).
-- Define a C-compatible ABI: Because Rust's internal ABI is not stable across different compiler versions or even minor changes, you should define your plugin interface using `#[repr(C)]` structs and `extern "C"` functions.
-- Define an entry point: Each plugin `.so`/`.dll` would export a specific `extern "C"` function that the host calls to get a `Box<dyn Plugin>`.
-- Version Management: Even with `extern "C"`, you need robust versioning for your common plugin interface crate to prevent issues if host and plugins are compiled with different versions of the interface. Crates like `abi_stable` can help with this by providing more robust ABI compatibility checks.
+- Use the [`libloading`]()↗{{hi:libloading}} crate, which provides safe FFI (Foreign Function Interface) wrappers to dynamically load shared libraries and resolve symbols (functions).
+- Define a C-compatible ABI: Because Rust's internal ABI is not stable across different compiler versions or even minor changes, you should define your plugin interface using `#[repr(C)]` structs and [`extern "C"`](https://doc.rust-lang.org/std/keyword.extern.html)↗{{hi:extern "C"}} functions.
+- Define an entry point: Each plugin [`.so`]()↗{{hi:.so}}/[`.dll`]()↗{{hi:.dll}} would export a specific [`extern "C"`](https://doc.rust-lang.org/std/keyword.extern.html)↗{{hi:extern "C"}} function that the host calls to get a `Box<dyn Plugin>`.
+- Version Management: Even with [`extern "C"`](https://doc.rust-lang.org/std/keyword.extern.html)↗{{hi:extern "C"}}, you need robust versioning for your common plugin interface crate to prevent issues if host and plugins are compiled with different versions of the interface. Crates like [`abi_stable`]()↗{{hi:abi_stable}} can help with this by providing more robust ABI compatibility checks.
 
 ---
 

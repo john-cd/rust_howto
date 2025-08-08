@@ -28,37 +28,34 @@ See also [[transpilers | Transpilers]].
 
 ## Code Generation
 
-`typify`: JSON schema to rust type code generator.
+[`typify`][c~typify~docs]↗{{hi:typify}}: JSON schema to rust type code generator.
 
 ## Compiler Implementations, Including Interpreters and Transpilers
 
 ### Cucumber
 
-- `gherkin` is a pure Rust implementation of Gherkin language (`.feature` file) for Cucumber testing framework.
+- [`gherkin`][c~gherkin~docs]↗{{hi:gherkin}} is a pure Rust implementation of Gherkin language (`.feature` file) for Cucumber testing framework.
 - `cucumber-expressions`: Cucumber Expressions AST and parser.
 
 ### Protobuf
 
-- `protox` is a rust implementation of the protobuf compiler.
+- [`protox`][c~protox~docs]↗{{hi:protox}} is a rust implementation of the protobuf compiler.
 
 ### Rust
 
-- `polonius-engine`: Core definition for the Rust borrow checker.
+- [`polonius-engine`][c~polonius_engine~docs]↗{{hi:}}: Core definition for the Rust borrow checker.
 
 ### C
 
-- `clang`: A somewhat idiomatic Rust wrapper for `libclang`.
+- [`clang`][c~clang~docs]↗{{hi:clang}}: A somewhat idiomatic Rust wrapper for `libclang` [(clang website)](https://clang.llvm.org)↗{{hi:libclang}}.
 
 ### Swift
 
-- `swift-rs`:  Call Swift from Rust with ease!
+- [`swift-rs`][c~swift_rs~docs]↗{{hi:swift-rs}}:  Call Swift from Rust with ease!
 
 ### JavaScript
 
-- `oxc`
-
-[oxc.rs/][oxc.rs/]
-[oxc.rs/]: https://oxc.rs
+- [`oxc`][c~oxc~docs]↗{{hi:oxc}}
 
 See also: [[interfacing_with_javascript | Interfacing With Javascript]].
 

@@ -4,15 +4,15 @@
 
 | Topic | Rust Crates |
 |---|---|
-| [[code_formatting_linting | Code Formatting]] | `cargo fmt` formats your code to a consistent style. |
+| [[code_formatting_linting | Code Formatting]] | [`cargo fmt`](https://doc.rust-lang.org/cargo/commands/cargo-fmt.html)↗{{hi:cargo fmt}} formats your code to a consistent style. |
 | [[code_formatting_linting | Linting]] | `cargo clippy` catches common code errors and style issues. |
-| [[dependency_management | Dependency Management]] | `cargo tree` displays your dependency tree to help you understand your project's dependencies. `cargo outdated` checks for outdated dependencies. `cargo audit` checks for crates with known security vulnerabilities. |
-| Documentation Generation | `cargo doc` generates [documentation][p~documentation] from your code. `cargo deadlinks` finds broken links in your documentation. |
-| [[testing | Testing]] | `cargo test` runs your unit and integration tests. |
+| [[dependency_management | Dependency Management]] | [`cargo tree`](https://doc.rust-lang.org/cargo/commands/cargo-tree.html)↗{{hi:cargo tree}} displays your dependency tree to help you understand your project's dependencies. `cargo outdated` checks for outdated dependencies. `cargo audit` checks for crates with known security vulnerabilities. |
+| Documentation Generation | [`cargo doc`](https://doc.rust-lang.org/cargo/commands/cargo-doc.html)↗{{hi:cargo doc}} generates [documentation][p~documentation] from your code. `cargo deadlinks` finds broken links in your documentation. |
+| [[testing | Testing]] | [`cargo test`](https://doc.rust-lang.org/cargo/commands/cargo-test.html)↗{{hi:cargo test}} runs your unit and integration tests. |
 | [[benchmarking | Benchmarking]] | `cargo bench` runs your benchmarks. |
 | [[code_coverage | Code Coverage]] | `cargo tarpaulin` runs code coverage analysis. |
 | Refactoring | Refactoring is often IDE-driven, but some tools exist: [`cargo-expand`][c~cargo_expand~docs]↗{{hi:cargo-expand}} expands [macros][p~macros], for example. |
-| [[versioning | Version Management]] | `cargo-bump` helps to automate version updates in your Cargo.toml. |
+| [[versioning | Version Management]] | [`cargo-bump`][c~cargo_bump~docs]↗{{hi:cargo-bump}} helps to automate version updates in your Cargo.toml. |
 
 ## Lint Your Crate API Changes for Semver Violations {#cargo-semver-checks}
 
@@ -58,7 +58,7 @@ $ cargo semver-checks
 
 [![cargo-hack][c~cargo_hack~docs~badge]][c~cargo_hack~docs] [![cargo-hack~crates.io][c~cargo_hack~crates.io~badge]][c~cargo_hack~crates.io] [![cargo-hack~github][c~cargo_hack~github~badge]][c~cargo_hack~github] [![cargo-hack~lib.rs][c~cargo_hack~lib.rs~badge]][c~cargo_hack~lib.rs]{{hi:cargo-hack}}{{hi:Cargo}}{{hi:Subcommand}}{{hi:Testing}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
 
-`cargo hack` is a [`cargo`][c~cargo~docs]↗{{hi:cargo}} subcommand to provide various options useful for [testing][p~testing] and continuous integration.
+[`cargo hack`][c~cargo_hack~docs]↗{{hi:cargo hack}} is a [`cargo`][c~cargo~docs]↗{{hi:cargo}} subcommand to provide various options useful for [testing][p~testing] and continuous integration.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
