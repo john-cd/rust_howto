@@ -20,3 +20,12 @@ backtick:
      find {{book_root}}/src {{book_root}}/drafts  {{book_root}}/later -type f -name '*.md' -not -name '*.incl.md' -not -name '*refs.md' \
         -exec sed -E -i 's~(\s)('"${crate}"')(\s)~\1`\2`\3~g' {} \;
    done
+
+# Check the master list of crates and print invalid names.
+check:
+    #! /usr/bin/env bash
+    set -uo pipefail
+    for crate in $( cat {{book_root}}/master/crates.txt )
+    do
+      cargo info ${crate} > /dev/null 2>&1 || echo "$crate"
+    done
