@@ -2,7 +2,7 @@
 
 {{#include wasm_runtimes.incl.md}}
 
-A typical Rust/WASM development workflow involves writing Rust code, using [`wasm-bindgen`][c~wasm_bindgen~docs]↗{{hi:wasm-bindgen}} to create bindings to JavaScript, compiling the Rust code to WASM, and then using JavaScript to load and interact with the WASM module in a web page.
+A typical Rust/WASM development workflow involves writing Rust code, using [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} to create bindings to JavaScript, compiling the Rust code to WASM, and then using JavaScript to load and interact with the WASM module in a web page.
 
 ## Compiling Rust to WASM (wasm32-unknown-unknown Compilation target) {#skip}
 
@@ -37,17 +37,17 @@ pub fn greet(name: &str) {
 }
 ```
 
-`wasm-pack` uses [`wasm-bindgen`][c~wasm_bindgen~docs]↗{{hi:wasm-bindgen}} to provide a bridge between the types of JavaScript and Rust. It allows JavaScript to call a Rust API with a string, or a Rust function to catch a JavaScript exception.
+`wasm-pack` uses [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} to provide a bridge between the types of JavaScript and Rust. It allows JavaScript to call a Rust API with a string, or a Rust function to catch a JavaScript exception.
 
 ### Memory Management in WASM (e.g., `std::alloc`) {#skip2}
 
-[`wasm-bindgen`][c~wasm_bindgen~docs]↗{{hi:wasm-bindgen}} helps manage WASM memory. [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}} is a memory allocator designed for WASM.
+[`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} helps manage WASM memory. [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}} is a memory allocator designed for WASM.
 
 ### Testing and Debugging {#skip3}
 
 #### Unit Testing WASM Modules {#skip4}
 
-[`wasm-bindgen-test`][c~wasm_bindgen_test~docs]↗{{hi:wasm-bindgen-test}} provides utilities for testing your Rust/WASM code.
+[`wasm-bindgen-test`][c~wasm-bindgen-test~docs]↗{{hi:wasm-bindgen-test}} provides utilities for testing your Rust/WASM code.
 
 #### Integration Testing with JavaScript {#skip5}
 
@@ -59,11 +59,11 @@ Browser developer tools can be used to debug WASM.
 
 ### Performance Optimization {#skip7}
 
-[`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}} can help reduce WASM binary size. [`twiggy`][c~twiggy~docs]↗{{hi:twiggy}} is a tool for analyzing WASM binaries. [`wasm-opt`][c~wasm_opt~docs]↗{{hi:wasm-opt}} is a tool for optimizing WASM code.
+[`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}} can help reduce WASM binary size. [`twiggy`][c~twiggy~docs]↗{{hi:twiggy}} is a tool for analyzing WASM binaries. [`wasm-opt`][c~wasm-opt~docs]↗{{hi:wasm-opt}} is a tool for optimizing WASM code.
 
 #### Reducing WASM Binary Size {#skip8}
 
-WASM binary size is important for web performance. Use tools like [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}}, [`twiggy`][c~twiggy~docs]↗{{hi:twiggy}}, and [`wasm-opt`][c~wasm_opt~docs]↗{{hi:wasm-opt}} to reduce size.
+WASM binary size is important for web performance. Use tools like [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}}, [`twiggy`][c~twiggy~docs]↗{{hi:twiggy}}, and [`wasm-opt`][c~wasm-opt~docs]↗{{hi:wasm-opt}} to reduce size.
 
 #### Improving Execution Speed {#skip9}
 

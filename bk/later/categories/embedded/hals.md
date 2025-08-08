@@ -2,23 +2,23 @@
 
 {{#include hals.incl.md}}
 
-The [`embedded-hal`][c~embedded_hal~docs]↗{{hi:embedded-hal}} crate is the most important for writing portable embedded code. You'll then choose a HAL crate specific to your microcontroller family (e.g., `stm32fxxx-hal`). PACs give you direct register access, but you'll usually work with a HAL. RTOSs are used for more complex embedded applications. [`defmt`][c~defmt~docs]↗{{hi:defmt}} is a very useful logging crate.
+The [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} crate is the most important for writing portable embedded code. You'll then choose a HAL crate specific to your microcontroller family (e.g., `stm32fxxx-hal`). PACs give you direct register access, but you'll usually work with a HAL. RTOSs are used for more complex embedded applications. [`defmt`][c~defmt~docs]↗{{hi:defmt}} is a very useful logging crate.
 
 ## Key Crates {#skip}
 
-- [`embedded-hal`][c~embedded_hal~docs]↗{{hi:embedded-hal}}: A crucial crate that defines common traits for interacting with peripherals (GPIO, SPI, I2C, UART, etc.). This crate is essential for writing portable embedded code.
-- [`cortex-m`][c~cortex_m~docs]↗{{hi:cortex-m}}: Provides access to Cortex-M microcontroller peripherals.
+- [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}}: A crucial crate that defines common traits for interacting with peripherals (GPIO, SPI, I2C, UART, etc.). This crate is essential for writing portable embedded code.
+- [`cortex-m`][c~cortex-m~docs]↗{{hi:cortex-m}}: Provides access to Cortex-M microcontroller peripherals.
 - `stm32fxxx-hal`: HALs for specific STM32 microcontrollers. (Many microcontroller families have their own HAL crates.)
-- [`nrf52-hal`][c~nrf52_hal~docs]↗{{hi:nrf52-hal}}: HALs for Nordic Semiconductor nRF52 microcontrollers.
-- [`esp-hal`][c~esp_hal~docs]↗{{hi:esp-hal}}: HAL for Espressif chips.
+- [`nrf52-hal`][c~nrf52-hal~docs]↗{{hi:nrf52-hal}}: HALs for Nordic Semiconductor nRF52 microcontrollers.
+- [`esp-hal`][c~esp-hal~docs]↗{{hi:esp-hal}}: HAL for Espressif chips.
 
 Many other microcontroller families have their own HAL crates.
 
 ## `embedded-hal` {#embedded-hal}
 
-[![embedded-hal][c~embedded_hal~docs~badge]][c~embedded_hal~docs] [![embedded-hal~crates.io][c~embedded_hal~crates.io~badge]][c~embedded_hal~crates.io] [![embedded-hal~github][c~embedded_hal~github~badge]][c~embedded_hal~github] [![embedded-hal~lib.rs][c~embedded_hal~lib.rs~badge]][c~embedded_hal~lib.rs]{{hi:embedded-hal}}{{hi:Hal}}{{hi:Io}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~hardware-support][cat~hardware-support~badge]][cat~hardware-support]{{hi:Hardware support}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![embedded-hal][c~embedded-hal~docs~badge]][c~embedded-hal~docs] [![embedded-hal~crates.io][c~embedded-hal~crates.io~badge]][c~embedded-hal~crates.io] [![embedded-hal~github][c~embedded-hal~github~badge]][c~embedded-hal~github] [![embedded-hal~lib.rs][c~embedded-hal~lib.rs~badge]][c~embedded-hal~lib.rs]{{hi:embedded-hal}}{{hi:Hal}}{{hi:Io}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~hardware-support][cat~hardware-support~badge]][cat~hardware-support]{{hi:Hardware support}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-[`embedded-hal`][c~embedded_hal~docs]↗{{hi:embedded-hal}} is a Hardware Abstraction Layer (HAL) for embedded systems.
+[`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} is a Hardware Abstraction Layer (HAL) for embedded systems.
 
 {{#example embedded-hal}}
 

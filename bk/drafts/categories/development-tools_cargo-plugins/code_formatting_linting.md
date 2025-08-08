@@ -10,10 +10,10 @@
 
 ## Format Your Code {#rustfmt}
 
-[![rustfmt-nightly][c~rustfmt_nightly~docs~badge]][c~rustfmt_nightly~docs]{{hi:rustfmt-nightly}}
-[![rustfmt-nightly~crates.io][c~rustfmt_nightly~crates.io~badge]][c~rustfmt_nightly~crates.io]
-[![rustfmt-nightly~github][c~rustfmt_nightly~github~badge]][c~rustfmt_nightly~github]
-[![rustfmt-nightly~lib.rs][c~rustfmt_nightly~lib.rs~badge]][c~rustfmt_nightly~lib.rs]
+[![rustfmt-nightly][c~rustfmt-nightly~docs~badge]][c~rustfmt-nightly~docs]{{hi:rustfmt-nightly}}
+[![rustfmt-nightly~crates.io][c~rustfmt-nightly~crates.io~badge]][c~rustfmt-nightly~crates.io]
+[![rustfmt-nightly~github][c~rustfmt-nightly~github~badge]][c~rustfmt-nightly~github]
+[![rustfmt-nightly~lib.rs][c~rustfmt-nightly~lib.rs~badge]][c~rustfmt-nightly~lib.rs]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
 [`rustfmt`][c~rustfmt~docs]↗{{hi:rustfmt}}
@@ -61,17 +61,17 @@ cargo fix
 
 ## Format or Lint Your Code Before Committing it {#cargo-husky}
 
-[![cargo-husky][c~cargo_husky~docs~badge]][c~cargo_husky~docs]{{hi:cargo-husky}}
-[![cargo-husky~crates.io][c~cargo_husky~crates.io~badge]][c~cargo_husky~crates.io]
-[![cargo-husky~github][c~cargo_husky~github~badge]][c~cargo_husky~github]
-[![cargo-husky~lib.rs][c~cargo_husky~lib.rs~badge]][c~cargo_husky~lib.rs]
+[![cargo-husky][c~cargo-husky~docs~badge]][c~cargo-husky~docs]{{hi:cargo-husky}}
+[![cargo-husky~crates.io][c~cargo-husky~crates.io~badge]][c~cargo-husky~crates.io]
+[![cargo-husky~github][c~cargo-husky~github~badge]][c~cargo-husky~github]
+[![cargo-husky~lib.rs][c~cargo-husky~lib.rs~badge]][c~cargo-husky~lib.rs]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 
-[cargo-husky][c~cargo_husky~github]{{hi:cargo-husky}}↗ setup Git hooks automatically for [`cargo`][c~cargo~docs]↗{{hi:cargo}} projects with 🐶
+[cargo-husky][c~cargo-husky~github]{{hi:cargo-husky}}↗ setup Git hooks automatically for [`cargo`][c~cargo~docs]↗{{hi:cargo}} projects with 🐶
 
 Git hook scripts are useful for identifying simple issues (failing tests, trailing white spaces, [formatting][p~formatting] of the code, of [JSON][p~json], and YAML files...) before committing code, prior to submission to code review.
 
-Add the [`cargo-husky`][c~cargo_husky~docs]↗{{hi:cargo-husky}} crate to the `[dev-dependencies]` section of your project's [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}.
+Add the [`cargo-husky`][c~cargo-husky~docs]↗{{hi:cargo-husky}} crate to the `[dev-dependencies]` section of your project's [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}.
 
 ```toml
 [dev-dependencies]

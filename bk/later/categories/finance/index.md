@@ -8,7 +8,7 @@ Date/time handling is essential. Data access depends on your data source. Tradin
 
 `iso_currency`
 [`iso4217`][c~iso4217~docs]↗{{hi:iso4217}} provides ISO 4217 currency codes.
-[`rust-money`][c~rust_money~docs]↗{{hi:rust-money}} for working with monetary values and currencies.
+[`rust-money`][c~rust-money~docs]↗{{hi:rust-money}} for working with monetary values and currencies.
 
 ## Quantitative Analysis
 

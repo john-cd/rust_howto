@@ -14,7 +14,7 @@ There is no clear answer as to which is best between [`time`][c~time~docs]↗{{h
 | Topic | Rust Crates |
 |---|---|
 | Date and Time Types | [`chrono`][c~chrono~docs]↗{{hi:chrono}}, [`time`][c~time~docs]↗{{hi:time}} (newer crate, often preferred) |
-| Time Zones | [`chrono-tz`][c~chrono_tz~docs]↗{{hi:chrono-tz}}, [`time`][c~time~docs]↗{{hi:time}} (built-in support) |
+| Time Zones | [`chrono-tz`][c~chrono-tz~docs]↗{{hi:chrono-tz}}, [`time`][c~time~docs]↗{{hi:time}} (built-in support) |
 | Formatting and Parsing | [`chrono`][c~chrono~docs]↗{{hi:chrono}}, [`time`][c~time~docs]↗{{hi:time}} |
 | Durations and Time Intervals | [`chrono`][c~chrono~docs]↗{{hi:chrono}}, [`time`][c~time~docs]↗{{hi:time}} |
 | Clock and Time Measurement | [`std::time`][c~std::time~docs]↗{{hi:std::time}} (for basic timekeeping), [`measure_time`][c~measure_time~docs]↗{{hi:measure_time}} (for convenient benchmarking) |

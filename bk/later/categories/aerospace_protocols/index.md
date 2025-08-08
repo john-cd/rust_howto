@@ -21,7 +21,7 @@ Consider using:
 - [`socketcan`][c~socketcan~docs]↗{{hi:socketcan}} for interacting with CAN buses on Linux systems (often used with USB-CAN adapters).
 - [`can-rs`][c~can~docs]↗{{hi:can-rs}}, which is a general CAN crate.
 
-For embedded systems, you might use crates like [`embedded-hal`][c~embedded_hal~docs]↗{{hi:embedded-hal}} and implement CAN communication using the microcontroller's peripherals.
+For embedded systems, you might use crates like [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} and implement CAN communication using the microcontroller's peripherals.
 
 ### ARINC 429
 

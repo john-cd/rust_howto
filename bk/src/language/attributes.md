@@ -119,7 +119,7 @@ See also the [conditional compilation][book~rust-reference~conditional-compilati
 
 ### Conditionally Compile Code Blocks with `cfg-if` {#cfg-if}
 
-[![cfg-if][c~cfg_if~docs~badge]][c~cfg_if~docs] [![cfg-if~crates.io][c~cfg_if~crates.io~badge]][c~cfg_if~crates.io] [![cfg-if~github][c~cfg_if~github~badge]][c~cfg_if~github] [![cfg-if~lib.rs][c~cfg_if~lib.rs~badge]][c~cfg_if~lib.rs]{{hi:cfg-if}}
+[![cfg-if][c~cfg-if~docs~badge]][c~cfg-if~docs] [![cfg-if~crates.io][c~cfg-if~crates.io~badge]][c~cfg-if~crates.io] [![cfg-if~github][c~cfg-if~github~badge]][c~cfg-if~github] [![cfg-if~lib.rs][c~cfg-if~lib.rs~badge]][c~cfg-if~lib.rs]{{hi:cfg-if}}
 
 For complicated conditional compilation scenarios, consider using the `cfg-if` crate in addition to the `#[cfg(...)]` attribute.
 

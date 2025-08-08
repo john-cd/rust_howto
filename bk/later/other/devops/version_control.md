@@ -8,17 +8,17 @@ The following describes tools that make
 
 ## Check Your Code Before Committing it {#check-your-code-before-committing}
 
-[![cargo-husky][c~cargo_husky~docs~badge]][c~cargo_husky~docs]{{hi:cargo-husky}}
-[![cargo-husky~crates.io][c~cargo_husky~crates.io~badge]][c~cargo_husky~crates.io]
-[![cargo-husky~github][c~cargo_husky~github~badge]][c~cargo_husky~github]
-[![cargo-husky~lib.rs][c~cargo_husky~lib.rs~badge]][c~cargo_husky~lib.rs]
+[![cargo-husky][c~cargo-husky~docs~badge]][c~cargo-husky~docs]{{hi:cargo-husky}}
+[![cargo-husky~crates.io][c~cargo-husky~crates.io~badge]][c~cargo-husky~crates.io]
+[![cargo-husky~github][c~cargo-husky~github~badge]][c~cargo-husky~github]
+[![cargo-husky~lib.rs][c~cargo-husky~lib.rs~badge]][c~cargo-husky~lib.rs]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 
 Git hook scripts are useful for automatically identifying simple issues, such as missing semicolons, trailing whitespace, poor [[code_formatting_linting | formatting]] of the code or [configuration][p~configuration] files, when committing in [`git`](https://git-scm.com)↗{{hi:git}}, prior to submission to code review or start of a CI workflow.
 
-[cargo-husky][c~cargo_husky~github]{{hi:cargo-husky}}↗ setup Git hooks automatically for [`cargo`][c~cargo~docs]↗{{hi:cargo}} projects with 🐶.
+[cargo-husky][c~cargo-husky~github]{{hi:cargo-husky}}↗ setup Git hooks automatically for [`cargo`][c~cargo~docs]↗{{hi:cargo}} projects with 🐶.
 
-Add the [`cargo-husky`][c~cargo_husky~docs]↗{{hi:cargo-husky}} crate to the `[dev-dependencies]` section of your project's [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}.
+Add the [`cargo-husky`][c~cargo-husky~docs]↗{{hi:cargo-husky}} crate to the `[dev-dependencies]` section of your project's [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}.
 
 ```toml
 [dev-dependencies]

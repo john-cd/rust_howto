@@ -5,7 +5,7 @@
 | Topic | Rust Crates |
 |---|---|
 | Version Parsing and Comparison | [`semver`][c~semver~docs]↗{{hi:semver}} parses, compares, and manipulates SemVer (Semantic Versioning) strings. |
-| Version Bumping | [`cargo-bump`][c~cargo_bump~docs]↗{{hi:cargo-bump}} is a tool to automate bumping versions in your [`Cargo.toml`](https://doc.rust-lang.org/cargo/reference/manifest.html)↗{{hi:Cargo.toml}} file according to SemVer rules. See [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]]. |
+| Version Bumping | [`cargo-bump`][c~cargo-bump~docs]↗{{hi:cargo-bump}} is a tool to automate bumping versions in your [`Cargo.toml`](https://doc.rust-lang.org/cargo/reference/manifest.html)↗{{hi:Cargo.toml}} file according to SemVer rules. See [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]]. |
 | Dependency Management (with version constraints) | [cargo][p~cargo] uses SemVer for specifying dependencies in `Cargo.toml`. See the [[cargo | Cargo]] chapter for more details. |
 | Release Management | Often involves tagging [`git`](https://git-scm.com)↗{{hi:git}} releases. |
 | Changelog Generation | Often handled with tools outside of the Rust ecosystem, but some crates might assist with [parsing][p~parsing] commit messages, etc. |

@@ -12,7 +12,7 @@
 
 ## Format your Rust code with `rustfmt` {#rustfmt}
 
-[![rustfmt_nightly~github][c~rustfmt_nightly~github~badge]][c~rustfmt_nightly~github]{{hi:rustfmt}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
+[![rustfmt-nightly~github][c~rustfmt-nightly~github~badge]][c~rustfmt-nightly~github]{{hi:rustfmt}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 
 Install [`rustfmt`][c~rustfmt~docs]↗{{hi:rustfmt}} with `rustup component add rustfmt`
 
@@ -77,7 +77,7 @@ rustfmt --help=config
 
 ### Use Attributes to Skip Code Formatting in Your Code {#formatting-attributes}
 
-[![rustfmt_nightly~github][c~rustfmt_nightly~github~badge]][c~rustfmt_nightly~github]{{hi:rustfmt}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
+[![rustfmt-nightly~github][c~rustfmt-nightly~github~badge]][c~rustfmt-nightly~github]{{hi:rustfmt}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 
 For things you do not want [`rustfmt`][c~rustfmt~docs]↗{{hi:rustfmt}} to mangle, use `#[rustfmt::skip]`{{hi:rustfmt::skip}} , `#[rustfmt::skip::macros(macro_name)]`{{hi:rustfmt::skip::macros(macro_name)}} , or `#![rustfmt::skip::attributes(custom_attribute)]`{{hi:rustfmt::skip::attributes(custom_attribute)}}
 

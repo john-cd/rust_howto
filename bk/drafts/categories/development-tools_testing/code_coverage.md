@@ -5,7 +5,7 @@
 [`grcov`][c~grcov~docs]↗{{hi:grcov}} or [`tarpaulin`][c~tarpaulin~docs]↗{{hi:tarpaulin}} can be used for ensuring your tests cover a good portion of your code.
 
 [`grcov`][c~grcov~docs]↗{{hi:grcov}}: A code coverage tool.
-[`cargo tarpaulin`][c~cargo_tarpaulin~docs]↗{{hi:cargo tarpaulin}}: Another code coverage tool.
+[`cargo tarpaulin`][c~cargo-tarpaulin~docs]↗{{hi:cargo tarpaulin}}: Another code coverage tool.
 
 ## Coverage Testing with `grcov` {#coverage_testing}
 
@@ -13,9 +13,9 @@
 
 Rust tool to collect and aggregate code coverage data for multiple source files.
 
-## Measure your Code Coverage with `cargo_tarpaulin` {#cargo_tarpaulin}
+## Measure your Code Coverage with `cargo-tarpaulin` {#cargo-tarpaulin}
 
-[![cargo_tarpaulin~github][c~cargo_tarpaulin~github~badge]][c~cargo_tarpaulin~github]{{hi:cargo-tarpaulin}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
+[![cargo-tarpaulin~github][c~cargo-tarpaulin~github~badge]][c~cargo-tarpaulin~github]{{hi:cargo-tarpaulin}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
 `cargo tarpaulin` is a tool to determine code coverage achieved via tests.
 

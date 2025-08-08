@@ -14,12 +14,12 @@
 
 ## `quick-xml` {#quick-xml}
 
-[![quick-xml][c~quick_xml~docs~badge]][c~quick_xml~docs] [![quick-xml~crates.io][c~quick_xml~crates.io~badge]][c~quick_xml~crates.io] [![quick-xml~github][c~quick_xml~github~badge]][c~quick_xml~github] [![quick-xml~lib.rs][c~quick_xml~lib.rs~badge]][c~quick_xml~lib.rs]{{hi:quick-xml}}{{hi:Html}}{{hi:Parser}}{{hi:Serde}}{{hi:Writer}}{{hi:Xml}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
+[![quick-xml][c~quick-xml~docs~badge]][c~quick-xml~docs] [![quick-xml~crates.io][c~quick-xml~crates.io~badge]][c~quick-xml~crates.io] [![quick-xml~github][c~quick-xml~github~badge]][c~quick-xml~github] [![quick-xml~lib.rs][c~quick-xml~lib.rs~badge]][c~quick-xml~lib.rs]{{hi:quick-xml}}{{hi:Html}}{{hi:Parser}}{{hi:Serde}}{{hi:Writer}}{{hi:Xml}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
 
-[`quick-xml`][c~quick_xml~docs]↗{{hi:quick-xml}} is a high-performance XML reader and writer. [`quick_xml`][c~quick_xml~docs]↗{{hi:quick_xml}} is fast for streaming.
+[`quick-xml`][c~quick-xml~docs]↗{{hi:quick-xml}} is a high-performance XML reader and writer. [`quick-xml`][c~quick-xml~docs]↗{{hi:quick-xml}} is fast for streaming.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/examples/xml/quick_xml.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/xml/quick-xml.rs:example}}
 ```
 
 ## `xmlparser` {#xmlparser}

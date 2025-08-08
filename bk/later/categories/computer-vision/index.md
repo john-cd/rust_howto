@@ -10,7 +10,7 @@ For general-purpose computer vision, the [`opencv`][c~opencv~docs]↗{{hi:opencv
 
 Several other pure-Rust crates cater to various aspects of computer vision:
 
-- [`rust-cv`][c~rust_cv~docs]↗{{hi:rust-cv}} aims to provide a pure Rust computer vision library, offering an alternative to using OpenCV bindings. It's still under development.
+- [`rust-cv`][c~rust-cv~docs]↗{{hi:rust-cv}} aims to provide a pure Rust computer vision library, offering an alternative to using OpenCV bindings. It's still under development.
 - [`vision`][c~vision~docs]↗{{hi:vision}} provides some higher-level computer vision algorithms, including feature detection and matching.
 
 ## Related Topics

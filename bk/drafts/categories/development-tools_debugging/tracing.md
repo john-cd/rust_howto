@@ -10,13 +10,13 @@ Tracing refers to the process of capturing and recording information about the e
 | Event Logging | Handled by `tracing` using [macros][p~macros] like `event!` and `debug!`, `info!`, `warn!`, `error!`. |
 | Span Management | Also handled by [`tracing`][c~tracing~docs]↗{{hi:tracing}} through its span API. Context propagation is built into tracing's span system. |
 | Asynchronous Tracing | Supported by [`tracing`][c~tracing~docs]↗{{hi:tracing}} through its [asynchronous][p~asynchronous] span management. |
-| Output and [Formatting][p~formatting] | [`tracing-subscriber`][c~tracing_subscriber~docs]↗{{hi:tracing-subscriber}} formats and outputs traces to various destinations. |
-| Filtering | [`tracing-subscriber`][c~tracing_subscriber~docs]↗{{hi:tracing-subscriber}} allows filtering of traces based on level, target, etc. |
+| Output and [Formatting][p~formatting] | [`tracing-subscriber`][c~tracing-subscriber~docs]↗{{hi:tracing-subscriber}} formats and outputs traces to various destinations. |
+| Filtering | [`tracing-subscriber`][c~tracing-subscriber~docs]↗{{hi:tracing-subscriber}} allows filtering of traces based on level, target, etc. |
 | Integration with other tools | [`tracing`][c~tracing~docs]↗{{hi:tracing}} is often used with other tools like [`Jaeger`](https://www.jaegertracing.io)↗{{hi:Jaeger}} or [`Zipkin`](https://zipkin.io)↗{{hi:Zipkin}} for distributed tracing. |
 
 ## Log Trace Data to `stdout` {#tracing-basics}
 
-[![tracing_subscriber][c~tracing_subscriber~docs~badge]][c~tracing_subscriber~docs]{{hi:tracing_subscriber}} [![tracing_subscriber~crates.io][c~tracing_subscriber~crates.io~badge]][c~tracing_subscriber~crates.io]
+[![tracing-subscriber][c~tracing-subscriber~docs~badge]][c~tracing-subscriber~docs]{{hi:tracing-subscriber}} [![tracing-subscriber~crates.io][c~tracing-subscriber~crates.io~badge]][c~tracing-subscriber~crates.io]
 
 [![tracing][c~tracing~docs~badge]][c~tracing~docs]{{hi:tracing}} [![tracing~github][c~tracing~github~badge]][c~tracing~github] [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}{{hi:Tracing}}
 
@@ -28,7 +28,7 @@ A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting t
 
 ## Change the Log Level {#tracing-change-log-level}
 
-[![tracing_subscriber][c~tracing_subscriber~docs~badge]][c~tracing_subscriber~docs]{{hi:tracing_subscriber}} [![tracing_subscriber~crates.io][c~tracing_subscriber~crates.io~badge]][c~tracing_subscriber~crates.io]
+[![tracing-subscriber][c~tracing-subscriber~docs~badge]][c~tracing-subscriber~docs]{{hi:tracing-subscriber}} [![tracing-subscriber~crates.io][c~tracing-subscriber~crates.io~badge]][c~tracing-subscriber~crates.io]
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_subscriber1.rs:example}}
@@ -36,7 +36,7 @@ A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting t
 
 ## Log in JSON Format {#tracing-log-json}
 
-[![tracing_subscriber][c~tracing_subscriber~docs~badge]][c~tracing_subscriber~docs]{{hi:tracing_subscriber}} [![tracing_subscriber~crates.io][c~tracing_subscriber~crates.io~badge]][c~tracing_subscriber~crates.io]
+[![tracing-subscriber][c~tracing-subscriber~docs~badge]][c~tracing-subscriber~docs]{{hi:tracing-subscriber}} [![tracing-subscriber~crates.io][c~tracing-subscriber~crates.io~badge]][c~tracing-subscriber~crates.io]
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_subscriber1b.rs:example}}
@@ -44,7 +44,7 @@ A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting t
 
 ## Configure Tracing {#configure-tracing}
 
-[![tracing_subscriber][c~tracing_subscriber~docs~badge]][c~tracing_subscriber~docs]{{hi:tracing_subscriber}} [![tracing_subscriber~crates.io][c~tracing_subscriber~crates.io~badge]][c~tracing_subscriber~crates.io]
+[![tracing-subscriber][c~tracing-subscriber~docs~badge]][c~tracing-subscriber~docs]{{hi:tracing-subscriber}} [![tracing-subscriber~crates.io][c~tracing-subscriber~crates.io~badge]][c~tracing-subscriber~crates.io]
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_subscriber2.rs:example}}
@@ -52,7 +52,7 @@ A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting t
 
 ## Write Logs to Multiple Destinations Simultaneously {#tracing-multiple-destinations}
 
-[![tracing_subscriber][c~tracing_subscriber~docs~badge]][c~tracing_subscriber~docs]{{hi:tracing_subscriber}} [![tracing_subscriber~crates.io][c~tracing_subscriber~crates.io~badge]][c~tracing_subscriber~crates.io]
+[![tracing-subscriber][c~tracing-subscriber~docs~badge]][c~tracing-subscriber~docs]{{hi:tracing-subscriber}} [![tracing-subscriber~crates.io][c~tracing-subscriber~crates.io~badge]][c~tracing-subscriber~crates.io]
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_subscriber2b.rs:example}}
@@ -60,7 +60,7 @@ A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting t
 
 ## Configure Tracing at Runtime {#tracing-config-runtime}
 
-[![tracing_subscriber][c~tracing_subscriber~docs~badge]][c~tracing_subscriber~docs]{{hi:tracing_subscriber}} [![tracing_subscriber~crates.io][c~tracing_subscriber~crates.io~badge]][c~tracing_subscriber~crates.io]
+[![tracing-subscriber][c~tracing-subscriber~docs~badge]][c~tracing-subscriber~docs]{{hi:tracing-subscriber}} [![tracing-subscriber~crates.io][c~tracing-subscriber~crates.io~badge]][c~tracing-subscriber~crates.io]
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_subscriber3.rs:example}}
@@ -68,7 +68,7 @@ A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting t
 
 ## Change the Tracing Configuration at Runtime {#tracing-change-runtime}
 
-[![tracing_subscriber][c~tracing_subscriber~docs~badge]][c~tracing_subscriber~docs]{{hi:tracing_subscriber}} [![tracing_subscriber~crates.io][c~tracing_subscriber~crates.io~badge]][c~tracing_subscriber~crates.io]
+[![tracing-subscriber][c~tracing-subscriber~docs~badge]][c~tracing-subscriber~docs]{{hi:tracing-subscriber}} [![tracing-subscriber~crates.io][c~tracing-subscriber~crates.io~badge]][c~tracing-subscriber~crates.io]
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_subscriber3b.rs:example}}
@@ -76,7 +76,7 @@ A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting t
 
 ## Customize the Formatting of Log Lines {#custom-event-formatter}
 
-[![tracing_subscriber][c~tracing_subscriber~docs~badge]][c~tracing_subscriber~docs]{{hi:tracing_subscriber}} [![tracing_subscriber~crates.io][c~tracing_subscriber~crates.io~badge]][c~tracing_subscriber~crates.io]{{hi:Custom event formatter}}
+[![tracing-subscriber][c~tracing-subscriber~docs~badge]][c~tracing-subscriber~docs]{{hi:tracing-subscriber}} [![tracing-subscriber~crates.io][c~tracing-subscriber~crates.io~badge]][c~tracing-subscriber~crates.io]{{hi:Custom event formatter}}
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_subscriber4.rs:example}}
@@ -126,12 +126,12 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across [`awai
 
 ## Related Topics {#related-topics}
 
-- [![tracing_journald][c~tracing_journald~docs~badge]][c~tracing_journald~docs]{{hi:tracing_journald}}
-- [![tracing_journald~crates.io][c~tracing_journald~crates.io~badge]][c~tracing_journald~crates.io]
-- [![tracing_journald~github][c~tracing_journald~github~badge]][c~tracing_journald~github]
-- [![tracing_journald~lib.rs][c~tracing_journald~lib.rs~badge]][c~tracing_journald~lib.rs]
+- [![tracing-journald][c~tracing-journald~docs~badge]][c~tracing-journald~docs]{{hi:tracing-journald}}
+- [![tracing-journald~crates.io][c~tracing-journald~crates.io~badge]][c~tracing-journald~crates.io]
+- [![tracing-journald~github][c~tracing-journald~github~badge]][c~tracing-journald~github]
+- [![tracing-journald~lib.rs][c~tracing-journald~lib.rs~badge]][c~tracing-journald~lib.rs]
 
-[tracing_journald][c~tracing_journald~docs]↗ provides support for logging [`tracing`][c~tracing~crates.io]↗ events natively to [journald][journald]↗, preserving any structured information.
+[tracing-journald][c~tracing-journald~docs]↗ provides support for logging [`tracing`][c~tracing~crates.io]↗ events natively to [journald][journald]↗, preserving any structured information.
 
 ## References {#references}
 

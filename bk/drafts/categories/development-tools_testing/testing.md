@@ -29,10 +29,10 @@ Uses `#[doc = "```"]` in doc comments to embed testable examples in your documen
 [![insta~lib.rs][c~insta~lib.rs~badge]][c~insta~lib.rs]
 [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
 
-[![cargo-insta][c~cargo_insta~docs~badge]][c~cargo_insta~docs]
-[![cargo-insta~crates.io][c~cargo_insta~crates.io~badge]][c~cargo_insta~crates.io]
-[![cargo-insta~github][c~cargo_insta~github~badge]][c~cargo_insta~github]
-[![cargo-insta~lib.rs][c~cargo_insta~lib.rs~badge]][c~cargo_insta~lib.rs]
+[![cargo-insta][c~cargo-insta~docs~badge]][c~cargo-insta~docs]
+[![cargo-insta~crates.io][c~cargo-insta~crates.io~badge]][c~cargo-insta~crates.io]
+[![cargo-insta~github][c~cargo-insta~github~badge]][c~cargo-insta~github]
+[![cargo-insta~lib.rs][c~cargo-insta~lib.rs~badge]][c~cargo-insta~lib.rs]
 [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
 Snapshots tests (also sometimes called approval tests) are tests that assert values against a reference value (the snapshot). Think of it as a supercharged version of [`assert_eq!`][c~std::assert_eq~docs]↗{{hi:assert_eq!}}. [`insta`][insta~website] lets you compare the result of a test against a reference value but, unlike simple assertions, the reference value is managed by [`insta`][c~insta~docs]↗{{hi:insta}} for you.

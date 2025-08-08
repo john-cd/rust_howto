@@ -4,10 +4,10 @@
 
 ## `loco` {#loco}
 
-[![loco_rs][c~loco_rs~docs~badge]][c~loco_rs~docs]{{hi:loco_rs}}{{hi:HTTP server}}
-[![loco_rs~crates.io][c~loco_rs~crates.io~badge]][c~loco_rs~crates.io]
-[![loco_rs~github][c~loco_rs~github~badge]][c~loco_rs~github]
-[![loco_rs~lib.rs][c~loco_rs~lib.rs~badge]][c~loco_rs~lib.rs]
+[![loco-rs][c~loco-rs~docs~badge]][c~loco-rs~docs]{{hi:loco-rs}}{{hi:HTTP server}}
+[![loco-rs~crates.io][c~loco-rs~crates.io~badge]][c~loco-rs~crates.io]
+[![loco-rs~github][c~loco-rs~github~badge]][c~loco-rs~github]
+[![loco-rs~lib.rs][c~loco-rs~lib.rs~badge]][c~loco-rs~lib.rs]
 [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}
 
 `loco`

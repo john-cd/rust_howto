@@ -4,8 +4,8 @@
 [ex~development-tools_testing~async_testing]: testing.md#async_testing
 [ex~development-tools_testing~cargo-nextest]: test_runners.md#cargo-nextest
 [ex~development-tools_testing~cargo-test]: test_runners.md#cargo-test
-[ex~development-tools_testing~cargo_fuzz]: fuzzing.md#cargo_fuzz
-[ex~development-tools_testing~cargo_tarpaulin]: code_coverage.md#cargo_tarpaulin
+[ex~development-tools_testing~cargo-fuzz]: fuzzing.md#cargo-fuzz
+[ex~development-tools_testing~cargo-tarpaulin]: code_coverage.md#cargo-tarpaulin
 [ex~development-tools_testing~coverage_testing]: code_coverage.md#coverage_testing
 [ex~development-tools_testing~custom-message]: assertions.md#custom-message
 [ex~development-tools_testing~doc_testing]: testing.md#doc_testing

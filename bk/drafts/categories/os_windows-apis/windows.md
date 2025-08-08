@@ -34,9 +34,9 @@
 
 ## See Also
 
-Native Windows [GUI][p~gui]: [![native_windows_gui~github][c~native_windows_gui~github~badge]][c~native_windows_gui~github]{{hi:native-windows-gui}}
+Native Windows [GUI][p~gui]: [![native-windows-gui~github][c~native-windows-gui~github~badge]][c~native-windows-gui~github]{{hi:native-windows-gui}}
 
-[`native_windows_gui`][c~native_windows_gui~docs]↗{{hi:native_windows_gui}}
+[`native-windows-gui`][c~native-windows-gui~docs]↗{{hi:native-windows-gui}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

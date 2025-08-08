@@ -12,14 +12,14 @@ The Rust community's crate registry: [`crates.io`][crates.io~website]{{hi:crates
 
 Alternative to [`crates.io`][crates.io~website]↗{{hi:crates.io}}: [`lib.rs`][lib-rs]{{hi:lib.rs}}↗.
 
-## Access crates.io APIs with `crates_io` {#crates_io}
+## Access crates.io APIs with `crates-io` {#crates-io}
 
-[![crates-io][c~crates_io~docs~badge]][c~crates_io~docs] [![crates-io~crates.io][c~crates_io~crates.io~badge]][c~crates_io~crates.io] [![crates-io~github][c~crates_io~github~badge]][c~crates_io~github] [![crates-io~lib.rs][c~crates_io~lib.rs~badge]][c~crates_io~lib.rs]{{hi:crates-io}}
+[![crates-io][c~crates-io~docs~badge]][c~crates-io~docs] [![crates-io~crates.io][c~crates-io~crates.io~badge]][c~crates-io~crates.io] [![crates-io~github][c~crates-io~github~badge]][c~crates-io~github] [![crates-io~lib.rs][c~crates-io~lib.rs~badge]][c~crates-io~lib.rs]{{hi:crates-io}}
 
 Helpers for interacting with crates.io.
 
 ```rust,editable
-{{#include ../../../../crates/cats/development_tools/examples/crate_registries/crates_io.rs:example}}
+{{#include ../../../../crates/cats/development_tools/examples/crate_registries/crates-io.rs:example}}
 ```
 
 {{#include refs.incl.md}}

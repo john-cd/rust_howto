@@ -18,15 +18,15 @@
 
 ## `portable-atomic` {#portable-atomic}
 
-[![portable-atomic][c~portable_atomic~docs~badge]][c~portable_atomic~docs] [![portable-atomic~crates.io][c~portable_atomic~crates.io~badge]][c~portable_atomic~crates.io] [![portable-atomic~github][c~portable_atomic~github~badge]][c~portable_atomic~github] [![portable-atomic~lib.rs][c~portable_atomic~lib.rs~badge]][c~portable_atomic~lib.rs]{{hi:portable-atomic}}{{hi:Atomic}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~hardware-support][cat~hardware-support~badge]][cat~hardware-support]{{hi:Hardware support}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}}
+[![portable-atomic][c~portable-atomic~docs~badge]][c~portable-atomic~docs] [![portable-atomic~crates.io][c~portable-atomic~crates.io~badge]][c~portable-atomic~crates.io] [![portable-atomic~github][c~portable-atomic~github~badge]][c~portable-atomic~github] [![portable-atomic~lib.rs][c~portable-atomic~lib.rs~badge]][c~portable-atomic~lib.rs]{{hi:portable-atomic}}{{hi:Atomic}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~hardware-support][cat~hardware-support~badge]][cat~hardware-support]{{hi:Hardware support}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}}
 
-[`portable-atomic`][c~portable_atomic~docs]↗{{hi:portable-atomic}} provides portable atomic types, including support for 128-bit atomics, atomic float, etc.
+[`portable-atomic`][c~portable-atomic~docs]↗{{hi:portable-atomic}} provides portable atomic types, including support for 128-bit atomics, atomic float, etc.
 
 ## Other Useful Crates {#skip}
 
 - [`nb`][c~nb~docs]↗{{hi:nb}}: Non-blocking I/O helpers.
 - [`defmt`][c~defmt~docs]↗{{hi:defmt}}: A logging framework designed for embedded systems.
-- [`panic-halt`][c~panic_halt~docs]↗{{hi:panic-halt}}: Halts the microcontroller on panic.
+- [`panic-halt`][c~panic-halt~docs]↗{{hi:panic-halt}}: Halts the microcontroller on panic.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

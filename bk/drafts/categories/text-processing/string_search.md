@@ -4,9 +4,9 @@
 
 ## `aho-corasick` {#aho-corasick}
 
-[![aho-corasick][c~aho_corasick~docs~badge]][c~aho_corasick~docs] [![aho-corasick~crates.io][c~aho_corasick~crates.io~badge]][c~aho_corasick~crates.io] [![aho-corasick~github][c~aho_corasick~github~badge]][c~aho_corasick~github] [![aho-corasick~lib.rs][c~aho_corasick~lib.rs~badge]][c~aho_corasick~lib.rs]{{hi:aho-corasick}}{{hi:Multi}}{{hi:Text}}{{hi:String}}{{hi:Pattern}}{{hi:Search}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+[![aho-corasick][c~aho-corasick~docs~badge]][c~aho-corasick~docs] [![aho-corasick~crates.io][c~aho-corasick~crates.io~badge]][c~aho-corasick~crates.io] [![aho-corasick~github][c~aho-corasick~github~badge]][c~aho-corasick~github] [![aho-corasick~lib.rs][c~aho-corasick~lib.rs~badge]][c~aho-corasick~lib.rs]{{hi:aho-corasick}}{{hi:Multi}}{{hi:Text}}{{hi:String}}{{hi:Pattern}}{{hi:Search}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
-[`aho-corasick`][c~aho_corasick~docs]↗{{hi:aho-corasick}} implements fast multiple substring searching.
+[`aho-corasick`][c~aho-corasick~docs]↗{{hi:aho-corasick}} implements fast multiple substring searching.
 
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/examples/string_search/aho_corasick.rs:example}}
@@ -24,9 +24,9 @@
 
 ## `fuzzy-matcher` {#fuzzy-matcher}
 
-[![fuzzy-matcher][c~fuzzy_matcher~docs~badge]][c~fuzzy_matcher~docs] [![fuzzy-matcher~crates.io][c~fuzzy_matcher~crates.io~badge]][c~fuzzy_matcher~crates.io] [![fuzzy-matcher~github][c~fuzzy_matcher~github~badge]][c~fuzzy_matcher~github] [![fuzzy-matcher~lib.rs][c~fuzzy_matcher~lib.rs~badge]][c~fuzzy_matcher~lib.rs]{{hi:fuzzy-matcher}}{{hi:Match}}{{hi:Search}}{{hi:Fuzzy}}{{hi:Text}}
+[![fuzzy-matcher][c~fuzzy-matcher~docs~badge]][c~fuzzy-matcher~docs] [![fuzzy-matcher~crates.io][c~fuzzy-matcher~crates.io~badge]][c~fuzzy-matcher~crates.io] [![fuzzy-matcher~github][c~fuzzy-matcher~github~badge]][c~fuzzy-matcher~github] [![fuzzy-matcher~lib.rs][c~fuzzy-matcher~lib.rs~badge]][c~fuzzy-matcher~lib.rs]{{hi:fuzzy-matcher}}{{hi:Match}}{{hi:Search}}{{hi:Fuzzy}}{{hi:Text}}
 
-[`fuzzy-matcher`][c~fuzzy_matcher~docs]↗{{hi:fuzzy-matcher}} is a fuzzy matching library.
+[`fuzzy-matcher`][c~fuzzy-matcher~docs]↗{{hi:fuzzy-matcher}} is a fuzzy matching library.
 
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/examples/string_search/fuzzy_matcher.rs:example}}

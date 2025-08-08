@@ -8,9 +8,9 @@ Encode or decode binary data in multimedia formats.
 
 ## Video Encoding
 
-Crates are available for most common codecs: [`rav1e`][c~rav1e~docs]↗{{hi:rav1e}}, [`x264`][c~x264~docs]↗{{hi:x264}}, [`x265`][c~x265~docs]↗{{hi:x265}}, [`vpx`][c~vpx~docs]↗{{hi:vpx}}.
+Crates are available for most common codecs: [`rav1e`][c~rav1e~docs]↗{{hi:rav1e}}, [`x264`][c~x264~docs]↗{{hi:x264}}, [`vpx`][c~vpx~docs]↗{{hi:vpx}}.
 
-If you need to work with a wide range of codecs (MP4, AVI, MKV, H.264, VP9, Opus...), [`ffmpeg-next`][c~ffmpeg_next~docs]↗{{hi:ffmpeg-next}} is a powerful but more complex option.
+If you need to work with a wide range of codecs (MP4, AVI, MKV, H.264, VP9, Opus...), [`ffmpeg-next`][c~ffmpeg-next~docs]↗{{hi:ffmpeg-next}} is a powerful but more complex option.
 
 See [[multimedia_video | Multimedia: Video]].
 
@@ -25,7 +25,7 @@ See [[multimedia_images | Multimedia: Image]].
 
 ## Transcoding
 
-[`ffmpeg-next`][c~ffmpeg_next~docs]↗{{hi:ffmpeg-next}} is a powerful tool for transcoding (converting from one format to another).
+[`ffmpeg-next`][c~ffmpeg-next~docs]↗{{hi:ffmpeg-next}} is a powerful tool for transcoding (converting from one format to another).
 
 ## Related Topics
 

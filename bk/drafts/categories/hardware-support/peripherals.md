@@ -14,7 +14,7 @@ Standard networking like [`std::net`](https://doc.rust-lang.org/std/net/index.ht
 
 ## Graphics Cards (GPUs) {#skip}
 
-[`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`gfx-hal`][c~gfx_hal~docs]↗{{hi:gfx-hal}}, [`vulkano`][c~vulkano~docs]↗{{hi:vulkano}}: These crates are used for interacting with GPUs (see the [[graphics | Graphics]] section).
+[`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}}, [`vulkano`][c~vulkano~docs]↗{{hi:vulkano}}: These crates are used for interacting with GPUs (see the [[graphics | Graphics]] section).
 
 ## General Hardware Interaction {#skip}
 

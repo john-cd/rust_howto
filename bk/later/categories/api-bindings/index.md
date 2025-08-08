@@ -6,7 +6,7 @@ Idiomatic wrappers of specific APIs{{hi:APIs}} for convenient access from Rust. 
 
 ## Database Bindings
 
-Bindings for popular databases like PostgreSQL, MySQL, and SQLite. Numerous crates exist, including [`tokio-postgres`][c~tokio_postgres~docs]↗{{hi:tokio-postgres}}, [`rusqlite`][c~rusqlite~docs]↗{{hi:rusqlite}}, [`mongodb`][c~mongodb~docs]↗{{hi:mongodb}}, etc.
+Bindings for popular databases like PostgreSQL, MySQL, and SQLite. Numerous crates exist, including [`tokio-postgres`][c~tokio-postgres~docs]↗{{hi:tokio-postgres}}, [`rusqlite`][c~rusqlite~docs]↗{{hi:rusqlite}}, [`mongodb`][c~mongodb~docs]↗{{hi:mongodb}}, etc.
 
 Refer to [[database | Database]] and [[database-implementations | Database Implementations]].
 
@@ -75,7 +75,7 @@ Consider using [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} (or [`isahc`][c~isah
 
 ## Web APIs (Server)
 
-Commonly used crates include [`axum`][c~axum~docs]↗{{hi:axum}}, [`actix-web`][c~actix_web~docs]↗{{hi:actix-web}}, [`warp`][c~warp~docs]↗{{hi:warp}}, and [`rocket`][c~rocket~docs]↗{{hi:rocket}}. See:
+Commonly used crates include [`axum`][c~axum~docs]↗{{hi:axum}}, [`actix-web`][c~actix-web~docs]↗{{hi:actix-web}}, [`warp`][c~warp~docs]↗{{hi:warp}}, and [`rocket`][c~rocket~docs]↗{{hi:rocket}}. See:
 
 - [[web-programming_http-server | Web Programming HTTP Server]].
 - [[apis | APIs]].

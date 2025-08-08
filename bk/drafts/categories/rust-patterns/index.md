@@ -112,7 +112,7 @@ Design patterns are well-proven blueprints or best practices for solving recurri
 | Iterator | Providing a way to access elements of a sequence. | | Iterators are a core language feature. [`itertools`][c~itertools~docs]↗{{hi:itertools}} provides additional iterator adaptors. |
 | Mediator | Defining an object that controls how other objects interact. | Often implemented directly | |
 | Memento | Capturing and externalizing an object's internal state. | Often implemented directly using structs and serialization | [`serde`][c~serde~docs]↗{{hi:serde}} can be useful for serialization. |
-| Observer | Notifying interested parties when a state changes. | [`event-listener`][c~event_listener~docs]↗{{hi:event-listener}} | Helps with implementing the observer pattern. |
+| Observer | Notifying interested parties when a state changes. | [`event-listener`][c~event-listener~docs]↗{{hi:event-listener}} | Helps with implementing the observer pattern. |
 | State | Altering an object's behavior when its internal state changes. | Often implemented directly using enums. | Enums are often used to represent states. |
 | Strategy | Choosing an algorithm at runtime. | Often implemented directly using trait objects or enums. | Trait objects or enums are commonly used. |
 | Template Method | Defining the skeleton of an algorithm and letting subclasses define specific steps. | Often implemented directly using traits | Traits are helpful for defining the template. |
@@ -130,7 +130,7 @@ Design patterns are well-proven blueprints or best practices for solving recurri
 | CLI Argument Parsing | [`clap`][c~clap~docs]↗{{hi:clap}}, [`structopt`][c~structopt~docs]↗{{hi:structopt}} | These crates help with parsing command-line arguments. |
 | Logging | [`log`][c~log~docs]↗{{hi:log}}, [`env_logger`][c~env_logger~docs]↗{{hi:env_logger}}, [`tracing`][c~tracing~docs]↗{{hi:tracing}} | [`log`][c~log~docs]↗{{hi:log}} is a logging facade, and [`env_logger`][c~env_logger~docs]↗{{hi:env_logger}} and [`tracing`][c~tracing~docs]↗{{hi:tracing}} are logging implementations. |
 | Testing | Built-in | Rust has built-in support for unit and integration testing. Crates like [`rstest`][c~rstest~docs]↗{{hi:rstest}} can help with testing. |
-| Asynchronous Programming | [`tokio`][c~tokio~docs]↗{{hi:tokio}}, [`async-std`][c~async_std~docs]↗{{hi:async-std}}, [`futures`][c~futures~docs]↗{{hi:futures}} | [`tokio`][c~tokio~docs]↗{{hi:tokio}} and [`async-std`][c~async_std~docs]↗{{hi:async-std}} are asynchronous runtimes. [`futures`][c~futures~docs]↗{{hi:futures}} provides utilities for working with futures. |
+| Asynchronous Programming | [`tokio`][c~tokio~docs]↗{{hi:tokio}}, [`async-std`][c~async-std~docs]↗{{hi:async-std}}, [`futures`][c~futures~docs]↗{{hi:futures}} | [`tokio`][c~tokio~docs]↗{{hi:tokio}} and [`async-std`][c~async-std~docs]↗{{hi:async-std}} are asynchronous runtimes. [`futures`][c~futures~docs]↗{{hi:futures}} provides utilities for working with futures. |
 
 ## References
 

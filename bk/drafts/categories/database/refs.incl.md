@@ -1,12 +1,12 @@
 [ex~database~aggregate-data-postgres]: postgres.md#aggregate-data-postgres
-[ex~database~cassandra_protocol]: nosql.md#cassandra_protocol
-[ex~database~cdrs_tokio]: nosql.md#cdrs_tokio
+[ex~database~cassandra-protocol]: nosql.md#cassandra-protocol
+[ex~database~cdrs-tokio]: nosql.md#cdrs-tokio
 [ex~database~connection-pool]: connection_pool.md#connection-pool
 [ex~database~cornucopia]: postgres.md#cornucopia
 [ex~database~create-database-sqlite]: sqlite.md#create-database-sqlite
 [ex~database~create-tables-postgres]: postgres.md#create-tables-postgres
 [ex~database~diesel]: query_builders_orms.md#diesel
-[ex~database~diesel_oci]: oracle.md#diesel_oci
+[ex~database~diesel-oci]: oracle.md#diesel-oci
 [ex~database~elasticsearch]: search.md#elasticsearch
 [ex~database~heed]: key_value_stores.md#heed
 [ex~database~insert-query-data-postgres]: postgres.md#insert-query-data-postgres

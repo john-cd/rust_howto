@@ -2,7 +2,7 @@
 
 {{#include send_emails.incl.md}}
 
-[`lettre`][c~lettre~docs]↗{{hi:lettre}} is a widely used crate for sending emails and is generally the recommended choice. It supports various transports (SMTP, sendmail, etc.). [`mail-send`][c~mail_send~docs]↗{{hi:mail-send}} is another option for sending emails.
+[`lettre`][c~lettre~docs]↗{{hi:lettre}} is a widely used crate for sending emails and is generally the recommended choice. It supports various transports (SMTP, sendmail, etc.). [`mail-send`][c~mail-send~docs]↗{{hi:mail-send}} is another option for sending emails.
 
 ## Build Email Messages {#build_email_messages}
 

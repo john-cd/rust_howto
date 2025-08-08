@@ -12,7 +12,7 @@ For most common image tasks, the [`image`][c~image~docs]↗{{hi:image}} crate wi
 
 [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} provides more advanced image processing algorithms.
 
-Specialized crates exist for specific formats like PNG, JPEG, GIF, WebP: [`lodepng`][c~lodepng~docs]↗{{hi:lodepng}}, [`jpeg-decoder`][c~jpeg_decoder~docs]↗{{hi:jpeg-decoder}}, [`gif`][c~gif~docs]↗{{hi:gif}}, [`webp`][c~webp~docs]↗{{hi:webp}}.
+Specialized crates exist for specific formats like PNG, JPEG, GIF, WebP: [`lodepng`][c~lodepng~docs]↗{{hi:lodepng}}, [`jpeg-decoder`][c~jpeg-decoder~docs]↗{{hi:jpeg-decoder}}, [`gif`][c~gif~docs]↗{{hi:gif}}, [`webp`][c~webp~docs]↗{{hi:webp}}.
 
 {{#include images.incl.md}}
 
@@ -39,7 +39,7 @@ See
 
 ## GPU-accelerated Image Processing
 
-The [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`gfx-hal`][c~gfx_hal~docs]↗{{hi:gfx-hal}} low-level graphics APIs are often used for displaying images or performing GPU-accelerated image processing. See [[gpu_abstraction_layers | GPU Abstraction Layers]], [[native_graphics_apis | Native Graphics APIs]], and [[shaders | Shaders]].
+The [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}} low-level graphics APIs are often used for displaying images or performing GPU-accelerated image processing. See [[gpu_abstraction_layers | GPU Abstraction Layers]], [[native_graphics_apis | Native Graphics APIs]], and [[shaders | Shaders]].
 
 ## Related Topics
 

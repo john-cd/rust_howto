@@ -38,7 +38,7 @@ The [`futures`][c~futures~docs]{{hi:futures}}↗ crate provides an extension tra
 
 ## `futures-util` {#futures-util}
 
-[![future-utils][c~future_utils~docs~badge]][c~future_utils~docs] [![future-utils~crates.io][c~future_utils~crates.io~badge]][c~future_utils~crates.io] [![future-utils~github][c~future_utils~github~badge]][c~future_utils~github] [![future-utils~lib.rs][c~future_utils~lib.rs~badge]][c~future_utils~lib.rs]{{hi:future-utils}}{{hi:Async}}{{hi:Futures}}{{hi:Tokio}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
+[![future-utils][c~future-utils~docs~badge]][c~future-utils~docs] [![future-utils~crates.io][c~future-utils~crates.io~badge]][c~future-utils~crates.io] [![future-utils~github][c~future-utils~github~badge]][c~future-utils~github] [![future-utils~lib.rs][c~future-utils~lib.rs~badge]][c~future-utils~lib.rs]{{hi:future-utils}}{{hi:Async}}{{hi:Futures}}{{hi:Tokio}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
 Common utilities and extension [traits][p~traits] for the [`futures-rs`][c~futures~docs]↗{{hi:futures-rs}} library. Extensions to Rust's [`Future`](https://doc.rust-lang.org/std/future/trait.Future.html)↗{{hi:std::future::Future}} and [`Stream`](https://docs.rs/futures/latest/futures/prelude/trait.Stream.html)↗{{hi:futures::prelude::Stream}} traits. Combinators and utilities for working with [`Future`][c~futures~docs]↗{{hi:Futures}}, `Stream`, [`Sink`](https://docs.rs/futures/latest/futures/prelude/trait.Sink.html)↗{{hi:futures::prelude::Sink}}, and the [`AsyncRead`](https://docs.rs/futures/latest/futures/prelude/trait.AsyncRead.html)↗ and [`AsyncWrite`](https://docs.rs/futures/latest/futures/prelude/trait.AsyncWrite.html)↗ traits.
 
@@ -52,7 +52,7 @@ Common utilities and extension [traits][p~traits] for the [`futures-rs`][c~futur
 
 ## See Also
 
-[![futures_executor][c~futures_executor~docs~badge]][c~futures_executor~docs]{{hi:futures_executor}}
+[![futures-executor][c~futures-executor~docs~badge]][c~futures-executor~docs]{{hi:futures-executor}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

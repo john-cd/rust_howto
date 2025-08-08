@@ -43,7 +43,7 @@ See also [[transpilers | Transpilers]].
 
 ### Rust
 
-- [`polonius-engine`][c~polonius_engine~docs]↗{{hi:}}: Core definition for the Rust borrow checker.
+- [`polonius-engine`][c~polonius-engine~docs]↗{{hi:}}: Core definition for the Rust borrow checker.
 
 ### C
 
@@ -51,7 +51,7 @@ See also [[transpilers | Transpilers]].
 
 ### Swift
 
-- [`swift-rs`][c~swift_rs~docs]↗{{hi:swift-rs}}:  Call Swift from Rust with ease!
+- [`swift-rs`][c~swift-rs~docs]↗{{hi:swift-rs}}:  Call Swift from Rust with ease!
 
 ### JavaScript
 

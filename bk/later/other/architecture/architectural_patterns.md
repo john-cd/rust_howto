@@ -8,7 +8,7 @@
 - Makes it easier to test the business logic by using mock repositories.
 - Simplifies code maintenance by centralizing data access logic.
 - Allows you to easily switch between different data storage implementations.
-- Often combined with ORM tools like [`diesel`][c~diesel~docs]↗{{hi:diesel}} or [`sea-orm`][c~sea_orm~docs]↗{{hi:sea-orm}}. See [[query_builders_orms | Query Builders & ORMs]].
+- Often combined with ORM tools like [`diesel`][c~diesel~docs]↗{{hi:diesel}} or [`sea-orm`][c~sea-orm~docs]↗{{hi:sea-orm}}. See [[query_builders_orms | Query Builders & ORMs]].
 
 ```rust,editable
 {{#include ../../../crates/other/examples/architecture/repository.rs:example}}
@@ -26,7 +26,7 @@
 ## Dependency Injection {#skip2}
 
 - Promotes modularity by injecting dependencies at runtime or compile time.
-- Achievable using crates like `shaku`.
+- Achievable using crates like [`shaku`]()↗{{hi:shaku}}.
 - Rarer in Rust than in other languages like Java.
 
 ```rust,editable

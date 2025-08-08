@@ -10,21 +10,21 @@
 
 ## Generate a Rust Project from a Template {#cargo-generate}
 
-[![cargo-generate][c~cargo_generate~docs~badge]][c~cargo_generate~docs]{{hi:cargo-generate}}
-[![cargo-generate~crates.io][c~cargo_generate~crates.io~badge]][c~cargo_generate~crates.io]
-[![cargo-generate~github][c~cargo_generate~github~badge]][c~cargo_generate~github]
-[![cargo-generate~lib.rs][c~cargo_generate~lib.rs~badge]][c~cargo_generate~lib.rs]
+[![cargo-generate][c~cargo-generate~docs~badge]][c~cargo-generate~docs]{{hi:cargo-generate}}
+[![cargo-generate~crates.io][c~cargo-generate~crates.io~badge]][c~cargo-generate~crates.io]
+[![cargo-generate~github][c~cargo-generate~github~badge]][c~cargo-generate~github]
+[![cargo-generate~lib.rs][c~cargo-generate~lib.rs~badge]][c~cargo-generate~lib.rs]
 
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:cargo plugins}}
 
-[Cargo Generate][c~cargo_generate~crates.io]{{hi:cargo-generate}}↗ is a developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
+[Cargo Generate][c~cargo-generate~crates.io]{{hi:cargo-generate}}↗ is a developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
 
 ## Quickly Open the `crates.io` or `docs.rs` Page for the Latest Version of a Crate {#cargo-open}
 
-[![cargo-crates][c~cargo_crates~docs~badge]][c~cargo_crates~docs]{{hi:cargo-crates}}
-[![cargo-crates~crates.io][c~cargo_crates~crates.io~badge]][c~cargo_crates~crates.io]
-[![cargo-crates~github][c~cargo_crates~github~badge]][c~cargo_crates~github]
-[![cargo-crates~lib.rs][c~cargo_crates~lib.rs~badge]][c~cargo_crates~lib.rs]
+[![cargo-crates][c~cargo-crates~docs~badge]][c~cargo-crates~docs]{{hi:cargo-crates}}
+[![cargo-crates~crates.io][c~cargo-crates~crates.io~badge]][c~cargo-crates~crates.io]
+[![cargo-crates~github][c~cargo-crates~github~badge]][c~cargo-crates~github]
+[![cargo-crates~lib.rs][c~cargo-crates~lib.rs~badge]][c~cargo-crates~lib.rs]
 
 `cargo crates` is a [cargo][p~cargo] command to quickly open the [`crates.io`][crates.io~website]{{hi:crates.io}}↗ or[`docs.rs`][docs.rs~website]{{hi:docs.rs}}↗ page for the latest version of a crate.
 

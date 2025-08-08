@@ -61,9 +61,9 @@ The method [`regex::Regex::replace_all`][c~regex::Regex::replace_all~docs]{{hi:r
 
 ## Use Regular Expressions with Back-references and Lookarounds {#fancy-regex}
 
-[![fancy-regex][c~fancy_regex~docs~badge]][c~fancy_regex~docs] [![fancy-regex~crates.io][c~fancy_regex~crates.io~badge]][c~fancy_regex~crates.io] [![fancy-regex~github][c~fancy_regex~github~badge]][c~fancy_regex~github] [![fancy-regex~lib.rs][c~fancy_regex~lib.rs~badge]][c~fancy_regex~lib.rs]{{hi:fancy-regex}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+[![fancy-regex][c~fancy-regex~docs~badge]][c~fancy-regex~docs] [![fancy-regex~crates.io][c~fancy-regex~crates.io~badge]][c~fancy-regex~crates.io] [![fancy-regex~github][c~fancy-regex~github~badge]][c~fancy-regex~github] [![fancy-regex~lib.rs][c~fancy-regex~lib.rs~badge]][c~fancy-regex~lib.rs]{{hi:fancy-regex}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
-[`regex`][c~regex~docs]↗{{hi:regex}} is the de facto standard regex library. It is very fast, but does not support fancier features such as backtracking, backreferences, and look-arounds. Use [`fancy-regex`][c~fancy_regex~docs]↗{{hi:fancy-regex}} if you need features that [`regex`][c~regex~docs]↗{{hi:regex}} doesn't support.
+[`regex`][c~regex~docs]↗{{hi:regex}} is the de facto standard regex library. It is very fast, but does not support fancier features such as backtracking, backreferences, and look-arounds. Use [`fancy-regex`][c~fancy-regex~docs]↗{{hi:fancy-regex}} if you need features that [`regex`][c~regex~docs]↗{{hi:regex}} doesn't support.
 
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/examples/regex/fancy_regex.rs:example}}

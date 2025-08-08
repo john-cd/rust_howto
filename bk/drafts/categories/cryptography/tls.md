@@ -20,11 +20,11 @@ See also: [Rustls (Wikipedia)][c~rustls~wikipedia]↗.
 
 ## `native-tls` {#native-tls}
 
-[![native-tls][c~native_tls~docs~badge]][c~native_tls~docs] [![native-tls~crates.io][c~native_tls~crates.io~badge]][c~native_tls~crates.io] [![native-tls~github][c~native_tls~github~badge]][c~native_tls~github] [![native-tls~lib.rs][c~native_tls~lib.rs~badge]][c~native_tls~lib.rs]{{hi:native-tls}}
+[![native-tls][c~native-tls~docs~badge]][c~native-tls~docs] [![native-tls~crates.io][c~native-tls~crates.io~badge]][c~native-tls~crates.io] [![native-tls~github][c~native-tls~github~badge]][c~native-tls~github] [![native-tls~lib.rs][c~native-tls~lib.rs~badge]][c~native-tls~lib.rs]{{hi:native-tls}}
 
-[`native-tls`][c~native_tls~docs]↗{{hi:native-tls}} is a wrapper over a platform's native TLS implementation and provides a cross-platform API for TLS/SSL communication.It abstracts over platform-specific TLS implementations, using SChannel on Windows, Secure Transport on macOS, and OpenSSL on other platforms
+[`native-tls`][c~native-tls~docs]↗{{hi:native-tls}} is a wrapper over a platform's native TLS implementation and provides a cross-platform API for TLS/SSL communication.It abstracts over platform-specific TLS implementations, using SChannel on Windows, Secure Transport on macOS, and OpenSSL on other platforms
 
-Choose [`native-tls`][c~native_tls~docs]↗{{hi:native-tls}} when ease of use and automatic certificate management are preferred and when integration with the system's existing TLS infrastructure is important.
+Choose [`native-tls`][c~native-tls~docs]↗{{hi:native-tls}} when ease of use and automatic certificate management are preferred and when integration with the system's existing TLS infrastructure is important.
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/examples/tls/native_tls.rs:example}}

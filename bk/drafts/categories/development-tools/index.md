@@ -79,11 +79,11 @@ See also [[cross_compiling | Cross Compiling (Cargo Plugins)]].
 
 | Utilities |
 |---|
-| [`fd-find`][c~fd_find~docs]↗{{hi:fd-find}} as a more human-friendly alternative to [`find`][c~find~docs]↗{{hi:find}} which, by default, ignores paths listed in things like [`.gitignore`](https://git-scm.com/docs/gitignore)↗{{hi:.gitignore}} and mimics Vim's smartcase option. |
+| [`fd-find`][c~fd-find~docs]↗{{hi:fd-find}} as a more human-friendly alternative to [`find`][c~find~docs]↗{{hi:find}} which, by default, ignores paths listed in things like [`.gitignore`](https://git-scm.com/docs/gitignore)↗{{hi:.gitignore}} and mimics Vim's smartcase option. |
 | [`hyperfine`][c~hyperfine~docs]↗{{hi:hyperfine}} as an analogue to the UNIX time command which can do warm-up runs, run the command multiple times to do statistical outlier detection, display a progress bar for the multiple runs, export results to CSV/JSON/etc., parameterize the runs, etc. |
 | [`miniserve`][c~miniserve~docs]↗{{hi:miniserve}} as a simple, easy way to serve up some files or accept some uploads over HTTP. |
 | [`ripgrep`][c~ripgrep~docs]↗{{hi:ripgrep}} is excellent for fast searching of file contents. |
-| [`rust-script`][c~rust_script~docs]↗{{hi:rust-script}} as a way to quickly write little single-file programs in Rust without having to spin up a whole project. |
+| [`rust-script`][c~rust-script~docs]↗{{hi:rust-script}} as a way to quickly write little single-file programs in Rust without having to spin up a whole project. |
 | [`skim`][c~skim~docs]↗{{hi:skim}} is a Rust clone of [`fzf`](https://github.com/junegunn/fzf)↗{{hi:fzf}} with some additional features. |
 | [`tokei`][c~tokei~docs]↗{{hi:tokei}} gathers statistics about a codebase (i.e. number of files, lines, lines of code, lines of comments, and lines of blanks, per language). |
 | [`xd`][c~xd~docs]↗{{hi:xd}} as an alternative to 'xxd' that doesn't have as many features, but renders un-printable characters in a reversible "codepage 437 plus a symbol for NULL" mapping to ensure that all patterns in the visualization of binary files are visible... not just ones that occur in printable characters. |

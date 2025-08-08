@@ -59,9 +59,9 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 ## Create Colorful and User-friendly Error Reports with `color-eyre` {#color-eyre}
 
-[![color-eyre][c~color_eyre~docs~badge]][c~color_eyre~docs] [![color-eyre~crates.io][c~color_eyre~crates.io~badge]][c~color_eyre~crates.io] [![color-eyre~github][c~color_eyre~github~badge]][c~color_eyre~github] [![color-eyre~lib.rs][c~color_eyre~lib.rs~badge]][c~color_eyre~lib.rs]{{hi:color-eyre}}
+[![color-eyre][c~color-eyre~docs~badge]][c~color-eyre~docs] [![color-eyre~crates.io][c~color-eyre~crates.io~badge]][c~color-eyre~crates.io] [![color-eyre~github][c~color-eyre~github~badge]][c~color-eyre~github] [![color-eyre~lib.rs][c~color-eyre~lib.rs~badge]][c~color-eyre~lib.rs]{{hi:color-eyre}}
 
-[`color-eyre`][c~color_eyre~docs]↗{{hi:color-eyre}} is an error report handler for panics and `eyre::Reports` for colorful, consistent, and well formatted error reports for all kinds of errors.
+[`color-eyre`][c~color-eyre~docs]↗{{hi:color-eyre}} is an error report handler for panics and `eyre::Reports` for colorful, consistent, and well formatted error reports for all kinds of errors.
 
 It is a fork of [`anyhow`][c~anyhow::Result~docs]↗{{hi:anyhow}} [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} that gives you more control over the format of the generated error messages. It is recommended if you intend to present error messages to end users. Otherwise [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} is simpler.
 
@@ -73,7 +73,7 @@ It is a fork of [`anyhow`][c~anyhow::Result~docs]↗{{hi:anyhow}} [`anyhow`][c~a
 
 [![eyre][c~eyre~docs~badge]][c~eyre~docs]{{hi:eyre}}
 
-Do not use [Error Chain][c~error_chain~docs]{{hi:error_chain}}↗, which is deprecated.
+Do not use [Error Chain][c~error-chain~docs]{{hi:error-chain}}↗, which is deprecated.
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

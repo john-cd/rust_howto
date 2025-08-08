@@ -2,16 +2,16 @@
 
 {{#include markdown.incl.md}}
 
-[`pulldown-cmark`][c~pulldown_cmark~docs]↗{{hi:pulldown-cmark}} is CommonMark compliant. [`comrak`][c~comrak~docs]↗{{hi:comrak}} is another popular choice.
+[`pulldown-cmark`][c~pulldown-cmark~docs]↗{{hi:pulldown-cmark}} is CommonMark compliant. [`comrak`][c~comrak~docs]↗{{hi:comrak}} is another popular choice.
 
 ## `pulldown-cmark` {#pulldown-cmark}
 
-[![pulldown-cmark][c~pulldown_cmark~docs~badge]][c~pulldown_cmark~docs] [![pulldown-cmark~crates.io][c~pulldown_cmark~crates.io~badge]][c~pulldown_cmark~crates.io] [![pulldown-cmark~github][c~pulldown_cmark~github~badge]][c~pulldown_cmark~github] [![pulldown-cmark~lib.rs][c~pulldown_cmark~lib.rs~badge]][c~pulldown_cmark~lib.rs]{{hi:pulldown-cmark}}{{hi:CommonMark}}{{hi:Markdown}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+[![pulldown-cmark][c~pulldown-cmark~docs~badge]][c~pulldown-cmark~docs] [![pulldown-cmark~crates.io][c~pulldown-cmark~crates.io~badge]][c~pulldown-cmark~crates.io] [![pulldown-cmark~github][c~pulldown-cmark~github~badge]][c~pulldown-cmark~github] [![pulldown-cmark~lib.rs][c~pulldown-cmark~lib.rs~badge]][c~pulldown-cmark~lib.rs]{{hi:pulldown-cmark}}{{hi:CommonMark}}{{hi:Markdown}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
-[`pulldown-cmark`][c~pulldown_cmark~docs]↗{{hi:pulldown-cmark}} is a pull parser for CommonMark.
+[`pulldown-cmark`][c~pulldown-cmark~docs]↗{{hi:pulldown-cmark}} is a pull parser for CommonMark.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/examples/markdown/pulldown_cmark.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/markdown/pulldown-cmark.rs:example}}
 ```
 
 ## `markdown` {#markdown}

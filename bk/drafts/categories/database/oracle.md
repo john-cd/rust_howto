@@ -2,11 +2,11 @@
 
 Oracle [Database][p~database] is a multi-model [database][p~database] management system produced and marketed by Oracle Corporation.
 
-## `diesel_oci` {#diesel_oci}
+## `diesel-oci` {#diesel-oci}
 
-[![diesel-oci][c~diesel_oci~docs~badge]][c~diesel_oci~docs] [![diesel-oci~crates.io][c~diesel_oci~crates.io~badge]][c~diesel_oci~crates.io] [![diesel-oci~github][c~diesel_oci~github~badge]][c~diesel_oci~github] [![diesel-oci~lib.rs][c~diesel_oci~lib.rs~badge]][c~diesel_oci~lib.rs]{{hi:diesel-oci}}{{hi:Sql}}{{hi:Oci}}{{hi:Diesel}}{{hi:Oracle}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
+[![diesel-oci][c~diesel-oci~docs~badge]][c~diesel-oci~docs] [![diesel-oci~crates.io][c~diesel-oci~crates.io~badge]][c~diesel-oci~crates.io] [![diesel-oci~github][c~diesel-oci~github~badge]][c~diesel-oci~github] [![diesel-oci~lib.rs][c~diesel-oci~lib.rs~badge]][c~diesel-oci~lib.rs]{{hi:diesel-oci}}{{hi:Sql}}{{hi:Oci}}{{hi:Diesel}}{{hi:Oracle}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
 
-[`diesel_oci`][c~diesel_oci~docs]↗{{hi:diesel}} is an OCI database adapter for [`diesel`][c~diesel~docs]↗{{hi:diesel}}. "Oracle Call Interface" is the comprehensive native C language interface to Oracle Database.
+[`diesel-oci`][c~diesel-oci~docs]↗{{hi:diesel}} is an OCI database adapter for [`diesel`][c~diesel~docs]↗{{hi:diesel}}. "Oracle Call Interface" is the comprehensive native C language interface to Oracle Database.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/examples/oracle/diesel_oci.rs:example}}

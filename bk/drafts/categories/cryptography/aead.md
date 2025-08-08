@@ -13,21 +13,21 @@ AEAD is commonly used in secure communication protocols like [TLS][p~tls] (Trans
 
 ## `aes-gcm-siv` {#aes-gcm-siv}
 
-[![aes-gcm-siv][c~aes_gcm_siv~docs~badge]][c~aes_gcm_siv~docs] [![aes-gcm-siv~crates.io][c~aes_gcm_siv~crates.io~badge]][c~aes_gcm_siv~crates.io] [![aes-gcm-siv~github][c~aes_gcm_siv~github~badge]][c~aes_gcm_siv~github] [![aes-gcm-siv~lib.rs][c~aes_gcm_siv~lib.rs~badge]][c~aes_gcm_siv~lib.rs]{{hi:aes-gcm-siv}}{{hi:Aes}}{{hi:Encryption}}{{hi:AEAD}}{{hi:Siv}}{{hi:Aes-gcm}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![aes-gcm-siv][c~aes-gcm-siv~docs~badge]][c~aes-gcm-siv~docs] [![aes-gcm-siv~crates.io][c~aes-gcm-siv~crates.io~badge]][c~aes-gcm-siv~crates.io] [![aes-gcm-siv~github][c~aes-gcm-siv~github~badge]][c~aes-gcm-siv~github] [![aes-gcm-siv~lib.rs][c~aes-gcm-siv~lib.rs~badge]][c~aes-gcm-siv~lib.rs]{{hi:aes-gcm-siv}}{{hi:Aes}}{{hi:Encryption}}{{hi:AEAD}}{{hi:Siv}}{{hi:Aes-gcm}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-[`aes-gcm-siv`][c~aes_gcm_siv~docs]↗{{hi:aes-gcm-siv}} is a pure Rust implementation of the AES-GCM-SIV Misuse-Resistant Authenticated Encryption Cipher (RFC 8452) with optional architecture-specific hardware acceleration.
+[`aes-gcm-siv`][c~aes-gcm-siv~docs]↗{{hi:aes-gcm-siv}} is a pure Rust implementation of the AES-GCM-SIV Misuse-Resistant Authenticated Encryption Cipher (RFC 8452) with optional architecture-specific hardware acceleration.
 
 AES-GCM-SIV (Advanced [Encryption][p~encryption] Standard - Galois/Counter Mode - Synthetic Initialization Vector) is a mode of operation for AES that provides nonce misuse resistance. This means it can securely handle situations where a cryptographic nonce (a number used only once) might be reused accidentally.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/examples/aead/aes_gcm_siv.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/aead/aes-gcm_siv.rs:example}}
 ```
 
 ## `aes-gcm` {#aes-gcm}
 
-[![aes-gcm][c~aes_gcm~docs~badge]][c~aes_gcm~docs] [![aes-gcm~crates.io][c~aes_gcm~crates.io~badge]][c~aes_gcm~crates.io] [![aes-gcm~github][c~aes_gcm~github~badge]][c~aes_gcm~github] [![aes-gcm~lib.rs][c~aes_gcm~lib.rs~badge]][c~aes_gcm~lib.rs]{{hi:aes-gcm}}{{hi:Aes}}{{hi:Encryption}}{{hi:GCM}}{{hi:AEAD}}{{hi:Ghash}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![aes-gcm][c~aes-gcm~docs~badge]][c~aes-gcm~docs] [![aes-gcm~crates.io][c~aes-gcm~crates.io~badge]][c~aes-gcm~crates.io] [![aes-gcm~github][c~aes-gcm~github~badge]][c~aes-gcm~github] [![aes-gcm~lib.rs][c~aes-gcm~lib.rs~badge]][c~aes-gcm~lib.rs]{{hi:aes-gcm}}{{hi:Aes}}{{hi:Encryption}}{{hi:GCM}}{{hi:AEAD}}{{hi:Ghash}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-[`aes-gcm`][c~aes_gcm~docs]↗{{hi:aes-gcm}} is a pure Rust implementation of the AES-GCM (Galois/Counter Mode) Authenticated Encryption with Associated Data (AEAD) Cipher with optional architecture-specific hardware acceleration.
+[`aes-gcm`][c~aes-gcm~docs]↗{{hi:aes-gcm}} is a pure Rust implementation of the AES-GCM (Galois/Counter Mode) Authenticated Encryption with Associated Data (AEAD) Cipher with optional architecture-specific hardware acceleration.
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/examples/aead/aes_gcm.rs:example}}

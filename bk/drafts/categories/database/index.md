@@ -7,13 +7,13 @@ This section describes interfaces with database management systems{{hi:Database 
 | Database | Rust crates |
 |---|---|
 | SQL Databases | [`sqlx`][c~sqlx~docs]↗{{hi:sqlx}} (supports multiple databases) |
-| PostgreSQL | [`tokio-postgres`][c~tokio_postgres~docs]↗{{hi:tokio-postgres}}, [`postgres`][c~postgres~docs]↗{{hi:postgres}} |
+| PostgreSQL | [`tokio-postgres`][c~tokio-postgres~docs]↗{{hi:tokio-postgres}}, [`postgres`][c~postgres~docs]↗{{hi:postgres}} |
 | MySQL | [`mysql_async`][c~mysql_async~docs]↗{{hi:mysql_async}}, [`sqlx`][c~sqlx~docs]↗{{hi:sqlx}} (with MySQL support) |
 | SQLite | [`rusqlite`][c~rusqlite~docs]↗{{hi:rusqlite}} |
 | MongoDB | [`mongodb`][c~mongodb~docs]↗{{hi:mongodb}} |
 | Redis | [`redis`][c~redis~docs]↗{{hi:redis}} |
-| Object-Relational Mappers (ORMs) | [`diesel`][c~diesel~docs]↗{{hi:diesel}}, [`sea-orm`][c~sea_orm~docs]↗{{hi:sea-orm}} |
-| Database Migrations | [`sea-orm-cli`][c~sea_orm_cli~docs]↗{{hi:sea-orm-cli}} (for SeaORM), [`diesel_cli`](https://docs.rs/crate/diesel_cli/latest)↗{{hi:diesel_cli}} (for Diesel), [`migrate`][c~migrate~docs]↗{{hi:migrate}} |
+| Object-Relational Mappers (ORMs) | [`diesel`][c~diesel~docs]↗{{hi:diesel}}, [`sea-orm`][c~sea-orm~docs]↗{{hi:sea-orm}} |
+| Database Migrations | [`sea-orm-cli`][c~sea-orm_cli~docs]↗{{hi:sea-orm-cli}} (for SeaORM), [`diesel_cli`](https://docs.rs/crate/diesel_cli/latest)↗{{hi:diesel_cli}} (for Diesel), [`migrate`][c~migrate~docs]↗{{hi:migrate}} |
 | Connection Pooling | [`bb8`][c~bb8~docs]↗{{hi:bb8}}, [`deadpool`][c~deadpool~docs]↗{{hi:deadpool}} |
 
 ## Code Examples

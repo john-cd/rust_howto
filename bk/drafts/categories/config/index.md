@@ -41,7 +41,7 @@ Document configuration: Provide clear documentation of all configuration options
 ### Configuration File Formats
 
 - TOML: [`toml`][c~toml~docs]↗{{hi:toml}}
-- YAML: [`serde_yml`][c~serde_yml~docs]↗{{hi:serde_yml}}, [`yaml-rust`][c~yaml_rust~docs]↗{{hi:yaml-rust}}
+- YAML: [`serde_yml`][c~serde_yml~docs]↗{{hi:serde_yml}}, [`yaml-rust`][c~yaml-rust~docs]↗{{hi:yaml-rust}}
 - JSON: [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}}
 - INI: [`ini`][c~ini~docs]↗{{hi:ini}}
 

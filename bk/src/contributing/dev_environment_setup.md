@@ -24,7 +24,7 @@ rustup component add clippy
 cargo install cargo-nextest
 cargo install mdbook
 cargo install just
-cargo install mdbook_linkcheck
+cargo install mdbook-linkcheck
 cargo install mdbook-utils
 # for `cargo +nightly fmt`
 rustup toolchain install nightly

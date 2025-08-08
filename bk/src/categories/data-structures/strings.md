@@ -66,10 +66,10 @@ See:
 - [[localization | Localization]].
 - [[search | Search]].
 - [[rust_search_engines | Rust Search Engines]].
-- [[template-engine | Template Engine]].
+- [[template_engine | Template Engine]].
 - [[text_layout | Text Layout]].
 - [[unicode | Unicode]] handling.
-- [[value-formatting | Value Formatting]].
+- [[value_formatting | Value Formatting]].
 - Working with [[other_strings | Other Strings]] (CString, OsString).
 
 {{#include refs.incl.md}}

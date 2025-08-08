@@ -6,14 +6,14 @@
 
 ## Create a GraphQL Endpoint {#async-graphql}
 
-[![async-graphql][c~async_graphql~docs~badge]][c~async_graphql~docs]{{hi:async-graphql}}
-[![async-graphql~crates.io][c~async_graphql~crates.io~badge]][c~async_graphql~crates.io]
-[![async-graphql~github][c~async_graphql~github~badge]][c~async_graphql~github]
-[![async-graphql~lib.rs][c~async_graphql~lib.rs~badge]][c~async_graphql~lib.rs]
+[![async-graphql][c~async-graphql~docs~badge]][c~async-graphql~docs]{{hi:async-graphql}}
+[![async-graphql~crates.io][c~async-graphql~crates.io~badge]][c~async-graphql~crates.io]
+[![async-graphql~github][c~async-graphql~github~badge]][c~async-graphql~github]
+[![async-graphql~lib.rs][c~async-graphql~lib.rs~badge]][c~async-graphql~lib.rs]
 [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
-[`async-graphql`][c~async_graphql~docs]↗{{hi:async-graphql}} is a high-performance graphql server library that's fully specification compliant. It integrates with [`actix-web`][c~actix_web~docs]↗{{hi:actix-web}}, [`axum`][c~axum~docs]↗{{hi:axum}}, [`poem`][c~poem~docs]↗{{hi:poem}}, [`rocket`][c~rocket~docs]↗{{hi:rocket}}, [`tide`][c~tide~docs]↗{{hi:tide}}, and [`warp`][c~warp~docs]↗{{hi:warp}}.
+[`async-graphql`][c~async-graphql~docs]↗{{hi:async-graphql}} is a high-performance graphql server library that's fully specification compliant. It integrates with [`actix-web`][c~actix-web~docs]↗{{hi:actix-web}}, [`axum`][c~axum~docs]↗{{hi:axum}}, [`poem`][c~poem~docs]↗{{hi:poem}}, [`rocket`][c~rocket~docs]↗{{hi:rocket}}, [`tide`][c~tide~docs]↗{{hi:tide}}, and [`warp`][c~warp~docs]↗{{hi:warp}}.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_server/examples/async_graphql.rs:example}}

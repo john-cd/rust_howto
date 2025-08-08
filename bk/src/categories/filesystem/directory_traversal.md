@@ -16,9 +16,9 @@ Gets the current working directory{{hi:Current working directory}} by calling [`
 
 ## Find Loops in a Given Path {#find-loop-in-path}
 
-[![same-file][c~same_file~docs~badge]][c~same_file~docs] [![same-file~crates.io][c~same_file~crates.io~badge]][c~same_file~crates.io] [![same-file~github][c~same_file~github~badge]][c~same_file~github] [![same-file~lib.rs][c~same_file~lib.rs~badge]][c~same_file~lib.rs]{{hi:same-file}}{{hi:Same}}{{hi:Equal}}{{hi:Inode}}{{hi:File}}
+[![same-file][c~same-file~docs~badge]][c~same-file~docs] [![same-file~crates.io][c~same-file~crates.io~badge]][c~same-file~crates.io] [![same-file~github][c~same-file~github~badge]][c~same-file~github] [![same-file~lib.rs][c~same-file~lib.rs~badge]][c~same-file~lib.rs]{{hi:same-file}}{{hi:Same}}{{hi:Equal}}{{hi:Inode}}{{hi:File}}
 
-[`same-file`][c~same_file~docs]↗{{hi:same-file}} is a simple crate for determining whether two file paths point to the same file.
+[`same-file`][c~same-file~docs]↗{{hi:same-file}} is a simple crate for determining whether two file paths point to the same file.
 
 Use [`same_file::is_same_file`][c~same_file::is_same_file~docs]{{hi:same_file::is_same_file}}↗ to detect loops for a given path{{hi:Detect loops for a given path}}. For example, a loop could be created on a Unix system via symlinks:
 

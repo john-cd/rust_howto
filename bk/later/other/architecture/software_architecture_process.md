@@ -63,7 +63,7 @@ See:
 ## Ensure Security {#skip}
 
 - Safe [[concurrency | Concurrency]]: Avoiding data races with Rust's ownership model.
-- [[cryptography | Cryptography]]: Using crates like [`ring`][c~ring~docs]↗{{hi:ring}} or the [`rust-crypto`][c~rust_crypto~docs]↗{{hi:rust-crypto}} suite.
+- [[cryptography | Cryptography]]: Using crates like [`ring`][c~ring~docs]↗{{hi:ring}} or the [`rust-crypto`][c~rust-crypto~docs]↗{{hi:rust-crypto}} suite.
 - [[authentication | Authentication]].
 
 ## Ensure Test Coverage {#skip}

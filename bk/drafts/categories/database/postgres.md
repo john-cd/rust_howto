@@ -36,12 +36,12 @@ This recipe lists the nationalities of the first 7999 artists in the [database][
 
 ## Connect to and Query Postgres Asynchronously with `tokio-postgres` {#tokio-postgres}
 
-[![tokio-postgres][c~tokio_postgres~docs~badge]][c~tokio_postgres~docs]{{hi:tokio-postgres}}
-[![tokio-postgres~crates.io][c~tokio_postgres~crates.io~badge]][c~tokio_postgres~crates.io]
-[![tokio-postgres~github][c~tokio_postgres~github~badge]][c~tokio_postgres~github]
-[![tokio-postgres~lib.rs][c~tokio_postgres~lib.rs~badge]][c~tokio_postgres~lib.rs]
+[![tokio-postgres][c~tokio-postgres~docs~badge]][c~tokio-postgres~docs]{{hi:tokio-postgres}}
+[![tokio-postgres~crates.io][c~tokio-postgres~crates.io~badge]][c~tokio-postgres~crates.io]
+[![tokio-postgres~github][c~tokio-postgres~github~badge]][c~tokio-postgres~github]
+[![tokio-postgres~lib.rs][c~tokio-postgres~lib.rs~badge]][c~tokio-postgres~lib.rs]
 
-[`tokio-postgres`][c~tokio_postgres~docs]↗{{hi:tokio-postgres}} provides an asynchronous PostgreSQL client. It is built on top of the [`tokio`][c~tokio~docs]↗{{hi:tokio}} runtime and thus supports non-blocking interactions with PostgreSQL databases. This crate offers connection pooling, prepared statements, transactions, and support for various PostgreSQL data types. It performs better than [`SQLx`][c~sqlx~docs]↗{{hi:SQLx}}.
+[`tokio-postgres`][c~tokio-postgres~docs]↗{{hi:tokio-postgres}} provides an asynchronous PostgreSQL client. It is built on top of the [`tokio`][c~tokio~docs]↗{{hi:tokio}} runtime and thus supports non-blocking interactions with PostgreSQL databases. This crate offers connection pooling, prepared statements, transactions, and support for various PostgreSQL data types. It performs better than [`SQLx`][c~sqlx~docs]↗{{hi:SQLx}}.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/examples/postgres/tokio_postgres.rs:example}}

@@ -77,9 +77,9 @@ It supports all [UNIX][p~unix] and [Windows][p~windows] terminals down to [Windo
 
 ## `nu-ansi-term` {#nu-ansi-term}
 
-[![nu-ansi-term][c~nu_ansi_term~docs~badge]][c~nu_ansi_term~docs] [![nu-ansi-term~crates.io][c~nu_ansi_term~crates.io~badge]][c~nu_ansi_term~crates.io] [![nu-ansi-term~github][c~nu_ansi_term~github~badge]][c~nu_ansi_term~github] [![nu-ansi-term~lib.rs][c~nu_ansi_term~lib.rs~badge]][c~nu_ansi_term~lib.rs]{{hi:nu-ansi-term}}
+[![nu-ansi-term][c~nu-ansi-term~docs~badge]][c~nu-ansi-term~docs] [![nu-ansi-term~crates.io][c~nu-ansi-term~crates.io~badge]][c~nu-ansi-term~crates.io] [![nu-ansi-term~github][c~nu-ansi-term~github~badge]][c~nu-ansi-term~github] [![nu-ansi-term~lib.rs][c~nu-ansi-term~lib.rs~badge]][c~nu-ansi-term~lib.rs]{{hi:nu-ansi-term}}
 
-[`nu-ansi-term`][c~nu_ansi_term~docs] is a library for ANSI terminal colors and styles (e.g. bold, underline). [`nu-ansi-term`][c~nu_ansi_term~docs]↗{{hi:nu-ansi-term}} provides ANSI terminal coloring and styling capabilities, particularly focused on supporting the styling needs of the [`NuShell`][c~nushell~docs]↗{{hi:NuShell}} project. When used independently, it offers a convenient and familiar API for those already working within the Nu ecosystem, enabling styled terminal output with support for common formatting options.
+[`nu-ansi-term`][c~nu-ansi-term~docs] is a library for ANSI terminal colors and styles (e.g. bold, underline). [`nu-ansi-term`][c~nu-ansi-term~docs]↗{{hi:nu-ansi-term}} provides ANSI terminal coloring and styling capabilities, particularly focused on supporting the styling needs of the [`NuShell`][c~nushell~docs]↗{{hi:NuShell}} project. When used independently, it offers a convenient and familiar API for those already working within the Nu ecosystem, enabling styled terminal output with support for common formatting options.
 
 ## `ansiterm` {#ansiterm}
 
@@ -95,9 +95,9 @@ It supports all [UNIX][p~unix] and [Windows][p~windows] terminals down to [Windo
 
 ## `owo-colors` {#owo-colors}
 
-[![owo-colors][c~owo_colors~docs~badge]][c~owo_colors~docs] [![owo-colors~crates.io][c~owo_colors~crates.io~badge]][c~owo_colors~crates.io] [![owo-colors~github][c~owo_colors~github~badge]][c~owo_colors~github] [![owo-colors~lib.rs][c~owo_colors~lib.rs~badge]][c~owo_colors~lib.rs]{{hi:owo-colors}}{{hi:Ansi_term}}{{hi:Cli}}{{hi:Color}}{{hi:No-std}}{{hi:Terminal}}[![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
+[![owo-colors][c~owo-colors~docs~badge]][c~owo-colors~docs] [![owo-colors~crates.io][c~owo-colors~crates.io~badge]][c~owo-colors~crates.io] [![owo-colors~github][c~owo-colors~github~badge]][c~owo-colors~github] [![owo-colors~lib.rs][c~owo-colors~lib.rs~badge]][c~owo-colors~lib.rs]{{hi:owo-colors}}{{hi:Ansi_term}}{{hi:Cli}}{{hi:Color}}{{hi:No-std}}{{hi:Terminal}}[![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
 
-[`owo-colors`][c~owo_colors~docs] is a zero-allocation terminal colors that will make people go 'owo'. It provides a simple and fast way to add color to terminal output. It leverages ANSI escape codes for styling and focuses on a concise API for common use cases, prioritizing speed and ease of use over more complex styling features. It's designed to be lightweight and efficient, minimizing overhead for applications where basic terminal coloring is sufficient.
+[`owo-colors`][c~owo-colors~docs] is a zero-allocation terminal colors that will make people go 'owo'. It provides a simple and fast way to add color to terminal output. It leverages ANSI escape codes for styling and focuses on a concise API for common use cases, prioritizing speed and ease of use over more complex styling features. It's designed to be lightweight and efficient, minimizing overhead for applications where basic terminal coloring is sufficient.
 
 ## `stylish` {#stylish}
 

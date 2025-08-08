@@ -4,8 +4,8 @@ Motion control, feedback loops, PID controllers.
 
 {{#include control_systems.incl.md}}
 
-- Motor Control: Often uses [`embedded-hal`][c~embedded_hal~docs]↗{{hi:embedded-hal}} and specific hardware crates. Motor control often involves low-level hardware interaction using crates based on [`embedded-hal`][c~embedded_hal~docs]↗{{hi:embedded-hal}}.
-- Actuator Control: Often uses [`embedded-hal`][c~embedded_hal~docs]↗{{hi:embedded-hal}} and specific hardware crates.
+- Motor Control: Often uses [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} and specific hardware crates. Motor control often involves low-level hardware interaction using crates based on [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}}.
+- Actuator Control: Often uses [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} and specific hardware crates.
 - Motion Planning: [Linear algebra][p~linear-algebra] crates like [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} and [`alga`][c~alga~docs]↗{{hi:alga}} are foundational.
 - [[path_planning | Path Planning]]: Path planning algorithms are often implemented using graph algorithms and search techniques.
 
@@ -41,13 +41,13 @@ Collision avoidance, trajectory optimization.
 
 ## `openrr-planner` {#openrr-planner}
 
-[![openrr-planner][c~openrr_planner~docs~badge]][c~openrr_planner~docs] [![openrr-planner~crates.io][c~openrr_planner~crates.io~badge]][c~openrr_planner~crates.io] [![openrr-planner~github][c~openrr_planner~github~badge]][c~openrr_planner~github] [![openrr-planner~lib.rs][c~openrr_planner~lib.rs~badge]][c~openrr_planner~lib.rs]{{hi:openrr-planner}}{{hi:Robot}}{{hi:Robotics}}{{hi:Pathplanning}} [![cat~science::robotics][cat~science::robotics~badge]][cat~science::robotics]{{hi:Robotics}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
+[![openrr-planner][c~openrr-planner~docs~badge]][c~openrr-planner~docs] [![openrr-planner~crates.io][c~openrr-planner~crates.io~badge]][c~openrr-planner~crates.io] [![openrr-planner~github][c~openrr-planner~github~badge]][c~openrr-planner~github] [![openrr-planner~lib.rs][c~openrr-planner~lib.rs~badge]][c~openrr-planner~lib.rs]{{hi:openrr-planner}}{{hi:Robot}}{{hi:Robotics}}{{hi:Pathplanning}} [![cat~science::robotics][cat~science::robotics~badge]][cat~science::robotics]{{hi:Robotics}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
 
 Collision avoidance path planning for robotics.
 
 ## `rs-opw-kinematics` {#rs-opw-kinematics}
 
-[![rs-opw-kinematics][c~rs_opw_kinematics~docs~badge]][c~rs_opw_kinematics~docs] [![rs-opw-kinematics~crates.io][c~rs_opw_kinematics~crates.io~badge]][c~rs_opw_kinematics~crates.io] [![rs-opw-kinematics~github][c~rs_opw_kinematics~github~badge]][c~rs_opw_kinematics~github] [![rs-opw-kinematics~lib.rs][c~rs_opw_kinematics~lib.rs~badge]][c~rs_opw_kinematics~lib.rs]{{hi:rs-opw-kinematics}}{{hi:Collisions}}{{hi:Robotics}}{{hi:Kinematics}}{{hi:Path-planning}}{{hi:Opw}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~science::robotics][cat~science::robotics~badge]][cat~science::robotics]{{hi:Robotics}}
+[![rs-opw-kinematics][c~rs-opw-kinematics~docs~badge]][c~rs-opw-kinematics~docs] [![rs-opw-kinematics~crates.io][c~rs-opw-kinematics~crates.io~badge]][c~rs-opw-kinematics~crates.io] [![rs-opw-kinematics~github][c~rs-opw-kinematics~github~badge]][c~rs-opw-kinematics~github] [![rs-opw-kinematics~lib.rs][c~rs-opw-kinematics~lib.rs~badge]][c~rs-opw-kinematics~lib.rs]{{hi:rs-opw-kinematics}}{{hi:Collisions}}{{hi:Robotics}}{{hi:Kinematics}}{{hi:Path-planning}}{{hi:Opw}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~science::robotics][cat~science::robotics~badge]][cat~science::robotics]{{hi:Robotics}}
 
 Inverse and forward kinematics for 6-axis robots with a parallel base and spherical wrist.
 

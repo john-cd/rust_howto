@@ -124,9 +124,9 @@ FIXME
 
 ## Related Topics {#related-topics}
 
-[![gh-workflow][c~gh_workflow~docs~badge]][c~gh_workflow~docs] [![gh-workflow~crates.io][c~gh_workflow~crates.io~badge]][c~gh_workflow~crates.io] [![gh-workflow~github][c~gh_workflow~github~badge]][c~gh_workflow~github] [![gh-workflow~lib.rs][c~gh_workflow~lib.rs~badge]][c~gh_workflow~lib.rs]{{hi:gh-workflow}}{{hi:Actions}}{{hi:Generator}}{{hi:Github}}{{hi:Workflow}}
+[![gh-workflow][c~gh-workflow~docs~badge]][c~gh-workflow~docs] [![gh-workflow~crates.io][c~gh-workflow~crates.io~badge]][c~gh-workflow~crates.io] [![gh-workflow~github][c~gh-workflow~github~badge]][c~gh-workflow~github] [![gh-workflow~lib.rs][c~gh-workflow~lib.rs~badge]][c~gh-workflow~lib.rs]{{hi:gh-workflow}}{{hi:Actions}}{{hi:Generator}}{{hi:Github}}{{hi:Workflow}}
 
-A type-safe GitHub Actions workflow generator: [`gh-workflow`][c~gh_workflow~docs].
+A type-safe GitHub Actions workflow generator: [`gh-workflow`][c~gh-workflow~docs].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

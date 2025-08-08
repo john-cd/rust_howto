@@ -42,7 +42,7 @@ FIXME
 
 ### `glsl-to-spirv` {#skip}
 
-[`glsl-to-spirv`][c~glsl_to_spirv~docs]↗{{hi:glsl-to-spirv}} compiles GLSL to SPIR-V.
+[`glsl-to-spirv`][c~glsl-to-spirv~docs]↗{{hi:glsl-to-spirv}} compiles GLSL to SPIR-V.
 
 ### `spirv-builder` {#skip}
 

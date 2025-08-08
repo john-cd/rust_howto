@@ -6,9 +6,9 @@ Crates to help you deal with events independently of the main program flow, usin
 
 ## Useful Crates
 
-- Runtimes: [`tokio`][c~tokio~docs]↗{{hi:tokio}}, [`async-std`][c~async_std~docs]↗{{hi:async-std}}, [`smol`][c~smol~docs]↗{{hi:smol}}.
-- Futures/Streams: [`futures`][c~futures~docs]↗{{hi:futures}}, [`tokio-stream`][c~tokio_stream~docs]↗{{hi:tokio-stream}}.
-- Async I/O: [`tokio`][c~tokio~docs]↗{{hi:tokio}}, [`async-std`][c~async_std~docs]↗{{hi:async-std}}.
+- Runtimes: [`tokio`][c~tokio~docs]↗{{hi:tokio}}, [`async-std`][c~async-std~docs]↗{{hi:async-std}}, [`smol`][c~smol~docs]↗{{hi:smol}}.
+- Futures/Streams: [`futures`][c~futures~docs]↗{{hi:futures}}, [`tokio-stream`][c~tokio-stream~docs]↗{{hi:tokio-stream}}.
+- Async I/O: [`tokio`][c~tokio~docs]↗{{hi:tokio}}, [`async-std`][c~async-std~docs]↗{{hi:async-std}}.
 
 ## Async Basics
 
@@ -24,11 +24,11 @@ Crates to help you deal with events independently of the main program flow, usin
 
 ## Async Channels
 
-{{#include async_channels.incl.md}}
+{{#include async-channels.incl.md}}
 
 ## Async Traits
 
-{{#include async_traits.incl.md}}
+{{#include async-traits.incl.md}}
 
 ## Streams
 
@@ -46,14 +46,14 @@ Crates to help you deal with events independently of the main program flow, usin
 
 ### Networking / Websocket / HTTP
 
-[`tokio-tungstenite`][c~tokio_tungstenite~docs]↗{{hi:tokio-tungstenite}}, [`hyper`][c~hyper~docs]↗{{hi:hyper}}, [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}}.
+[`tokio-tungstenite`][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}}, [`hyper`][c~hyper~docs]↗{{hi:hyper}}, [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}}.
 
 - [[network-programming | Network Programming]].
 - [[web-programming_http-client | Web Programming HTTP Client]].
 - [[web-programming_http-server | Web Programming HTTP Server]].
 - [[web-programming_websocket | Web Programming Websocket]].
 
-### Concurrency: `tokio::sync`, [`async-channel`][c~async_channel~docs]↗{{hi:async-channel}}
+### Concurrency: `tokio::sync`, [`async-channel`][c~async-channel~docs]↗{{hi:async-channel}}
 
 - [[concurrency | Concurrency]].
 - [[concurrent_data_structures | Concurrent Data Structures]].

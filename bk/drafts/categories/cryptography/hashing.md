@@ -14,7 +14,7 @@ Hashes are widely used in various applications such as:
 
 [![ring][c~ring~docs~badge]][c~ring~docs] [![ring~crates.io][c~ring~crates.io~badge]][c~ring~crates.io] [![ring~github][c~ring~github~badge]][c~ring~github] [![ring~lib.rs][c~ring~lib.rs~badge]][c~ring~lib.rs]{{hi:ring}}{{hi:Crypto}}{{hi:Cryptography}}{{hi:Rand}}{{hi:Rsa}}{{hi:ECC}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-[![data-encoding][c~data_encoding~docs~badge]][c~data_encoding~docs] [![data-encoding~crates.io][c~data_encoding~crates.io~badge]][c~data_encoding~crates.io] [![data-encoding~github][c~data_encoding~github~badge]][c~data_encoding~github] [![data-encoding~lib.rs][c~data_encoding~lib.rs~badge]][c~data_encoding~lib.rs]{{hi:data-encoding}}{{hi:Hex}}{{hi:No_std}}{{hi:Base64}}{{hi:Base32}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![data-encoding][c~data-encoding~docs~badge]][c~data-encoding~docs] [![data-encoding~crates.io][c~data-encoding~crates.io~badge]][c~data-encoding~crates.io] [![data-encoding~github][c~data-encoding~github~badge]][c~data-encoding~github] [![data-encoding~lib.rs][c~data-encoding~lib.rs~badge]][c~data-encoding~lib.rs]{{hi:data-encoding}}{{hi:Hex}}{{hi:No_std}}{{hi:Base64}}{{hi:Base32}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
 SHA-256 (Secure Hash Algorithm 256-bit) is part of the SHA-2 family of cryptographic hash functions. It produces a fixed-size 256-bit hash value (64 characters) from input data of any size. SHA-256 is widely used in applications such as digital signatures, certificate generation, and data integrity verification.
 
@@ -62,12 +62,12 @@ SHA-2 (Secure Hash Algorithm 2) is a family of cryptographic hash functions desi
 
 ### `md-5` {#md-5}
 
-[![md-5][c~md_5~docs~badge]][c~md_5~docs] [![md-5~crates.io][c~md_5~crates.io~badge]][c~md_5~crates.io] [![md-5~github][c~md_5~github~badge]][c~md_5~github] [![md-5~lib.rs][c~md_5~lib.rs~badge]][c~md_5~lib.rs]{{hi:md-5}}{{hi:Hash}}{{hi:Md5}}{{hi:Crypto}}{{hi:Digest}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![md-5][c~md-5~docs~badge]][c~md-5~docs] [![md-5~crates.io][c~md-5~crates.io~badge]][c~md-5~crates.io] [![md-5~github][c~md-5~github~badge]][c~md-5~github] [![md-5~lib.rs][c~md-5~lib.rs~badge]][c~md-5~lib.rs]{{hi:md-5}}{{hi:Hash}}{{hi:Md5}}{{hi:Crypto}}{{hi:Digest}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-[`md-5`][c~md_5~docs]↗{{hi:md-5}} implements the MD5 hash function.
+[`md-5`][c~md-5~docs]↗{{hi:md-5}} implements the MD5 hash function.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/examples/hashing/md_5.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/hashing/md-5.rs:example}}
 ```
 
 {{#include refs.incl.md}}

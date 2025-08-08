@@ -50,12 +50,12 @@ In `build.rs`:
 
 ## MessagePack with `rmp-serde` {#rmp-serde}
 
-[![rmp-serde][c~rmp_serde~docs~badge]][c~rmp_serde~docs] [![rmp-serde~crates.io][c~rmp_serde~crates.io~badge]][c~rmp_serde~crates.io] [![rmp-serde~github][c~rmp_serde~github~badge]][c~rmp_serde~github] [![rmp-serde~lib.rs][c~rmp_serde~lib.rs~badge]][c~rmp_serde~lib.rs]{{hi:rmp-serde}}{{hi:MessagePack}}{{hi:MessagePack}}{{hi:Serialization}}{{hi:Serde}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
+[![rmp-serde][c~rmp-serde~docs~badge]][c~rmp-serde~docs] [![rmp-serde~crates.io][c~rmp-serde~crates.io~badge]][c~rmp-serde~crates.io] [![rmp-serde~github][c~rmp-serde~github~badge]][c~rmp-serde~github] [![rmp-serde~lib.rs][c~rmp-serde~lib.rs~badge]][c~rmp-serde~lib.rs]{{hi:rmp-serde}}{{hi:MessagePack}}{{hi:MessagePack}}{{hi:Serialization}}{{hi:Serde}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
 
-[`rmp-serde`][c~rmp_serde~docs]↗{{hi:rmp-serde}} connects the `MessagePack` library with [`serde`][c~serde~docs]↗{{hi:serde}}, providing the ability to easily serialize and deserialize Rust built-in types, types from the standard library, and custom data structures.
+[`rmp-serde`][c~rmp-serde~docs]↗{{hi:rmp-serde}} connects the `MessagePack` library with [`serde`][c~serde~docs]↗{{hi:serde}}, providing the ability to easily serialize and deserialize Rust built-in types, types from the standard library, and custom data structures.
 
 ```rust,editable
-{{#include ../../../crates/cats/encoding/examples/binary_encoders/rmp_serde.rs:example}}
+{{#include ../../../crates/cats/encoding/examples/binary_encoders/rmp-serde.rs:example}}
 ```
 
 ## CBOR with `ciborium` {#ciborium}

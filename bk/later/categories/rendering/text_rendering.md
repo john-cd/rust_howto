@@ -4,7 +4,7 @@
 
 Libraries and tools for loading and [rendering][p~rendering] fonts.
 
-[`fontdue`][c~fontdue~docs]↗{{hi:fontdue}} is a fast font rasterizer. [`ttf-parser`][c~ttf_parser~docs]↗{{hi:ttf-parser}} and [`opentype`][c~opentype~docs]↗{{hi:opentype}} provide lower-level font parsing capabilities. [`ab_glyph`][c~ab_glyph~docs]↗{{hi:ab_glyph}} is another font rendering option.
+[`fontdue`][c~fontdue~docs]↗{{hi:fontdue}} is a fast font rasterizer. [`ttf-parser`][c~ttf-parser~docs]↗{{hi:ttf-parser}} and [`opentype`][c~opentype~docs]↗{{hi:opentype}} provide lower-level font parsing capabilities. [`ab_glyph`][c~ab_glyph~docs]↗{{hi:ab_glyph}} is another font rendering option.
 
 ## `ab_glyph` {#ab_glyph}
 
@@ -26,11 +26,11 @@ A simple `no_std` font parser and rasterizer.
 
 ## `ttf-parser` and  `opentype` {#ttf-parser}
 
-[![ttf-parser][c~ttf_parser~docs~badge]][c~ttf_parser~docs] [![ttf-parser~crates.io][c~ttf_parser~crates.io~badge]][c~ttf_parser~crates.io] [![ttf-parser~github][c~ttf_parser~github~badge]][c~ttf_parser~github] [![ttf-parser~lib.rs][c~ttf_parser~lib.rs~badge]][c~ttf_parser~lib.rs]{{hi:ttf-parser}}{{hi:Opentype}}{{hi:Truetype}}{{hi:Ttf}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}}
+[![ttf-parser][c~ttf-parser~docs~badge]][c~ttf-parser~docs] [![ttf-parser~crates.io][c~ttf-parser~crates.io~badge]][c~ttf-parser~crates.io] [![ttf-parser~github][c~ttf-parser~github~badge]][c~ttf-parser~github] [![ttf-parser~lib.rs][c~ttf-parser~lib.rs~badge]][c~ttf-parser~lib.rs]{{hi:ttf-parser}}{{hi:Opentype}}{{hi:Truetype}}{{hi:Ttf}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}}
 
-[`ttf-parser`][c~ttf_parser~docs]↗{{hi:ttf-parser}} and [`opentype`][c~opentype~docs]↗{{hi:opentype}} provide lower-level font parsing capabilities.
+[`ttf-parser`][c~ttf-parser~docs]↗{{hi:ttf-parser}} and [`opentype`][c~opentype~docs]↗{{hi:opentype}} provide lower-level font parsing capabilities.
 
-[`ttf-parser`][c~ttf_parser~docs]↗{{hi:ttf-parser}}
+[`ttf-parser`][c~ttf-parser~docs]↗{{hi:ttf-parser}}
 
 [`opentype`][c~opentype~docs]↗{{hi:opentype}}
 

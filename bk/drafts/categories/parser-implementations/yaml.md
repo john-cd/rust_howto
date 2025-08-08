@@ -14,7 +14,7 @@
 
 ## Other Options {#skip}
 
-Consider [`yaml-rust`][c~yaml_rust~docs]↗{{hi:yaml-rust}}. 'serde_yaml' is deprecated.
+Consider [`yaml-rust`][c~yaml-rust~docs]↗{{hi:yaml-rust}}. 'serde_yaml' is deprecated.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

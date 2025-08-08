@@ -7,11 +7,11 @@ Techniques to help create command line interfaces{{hi:Command-line interface}}, 
 | [[argument_parsing | Argument Parsing]] | [`clap`][c~clap~docs]↗{{hi:clap}}, [`structopt`][c~structopt~docs]↗{{hi:structopt}}, [`argh`][c~argh~docs]↗{{hi:argh}} |
 | Interactive Prompts | [`dialoguer`][c~dialoguer~docs]↗{{hi:dialoguer}}, [`console`][c~console~docs]↗{{hi:console}} | See [[user_interaction | User Interaction]]. |
 | Progress Bars | [`indicatif`][c~indicatif~docs]↗{{hi:indicatif}}, [`pbr`][c~pbr~docs]↗{{hi:pbr}} | See [[command-line-interface | Command Line Interface]]. |
-| Table Formatting | [`prettytable`][c~prettytable~docs]↗{{hi:prettytable}}, [`term-table`][c~term_table~docs]↗{{hi:term-table}} | |
-| Color Output | [`ansi_term`][c~ansi_term~docs]↗{{hi:ansi_term}}, [`owo-colors`][c~owo_colors~docs]↗{{hi:owo-colors}} | |
+| Table Formatting | [`prettytable`][c~prettytable~docs]↗{{hi:prettytable}}, [`term-table`][c~term-table~docs]↗{{hi:term-table}} | |
+| Color Output | [`ansi_term`][c~ansi_term~docs]↗{{hi:ansi_term}}, [`owo-colors`][c~owo-colors~docs]↗{{hi:owo-colors}} | |
 | File System Operations | Use `std::fs`, [`pathdiff`][c~pathdiff~docs]↗{{hi:pathdiff}}. | See [[filesystem | Filesystem]]. |
 | Process Management | `std::process` | See [[external_commands | External Commands]]. |
-| Text Manipulation | [`regex`][c~regex~docs]↗{{hi:regex}}, [`grep-cli`][c~grep_cli~docs]↗{{hi:grep-cli}}, [`bat`][c~bat~docs]↗{{hi:bat}} (for `cat` like functionality) | See [[text-processing | Text Processing]]. |
+| Text Manipulation | [`regex`][c~regex~docs]↗{{hi:regex}}, [`grep-cli`][c~grep-cli~docs]↗{{hi:grep-cli}}, [`bat`][c~bat~docs]↗{{hi:bat}} (for `cat` like functionality) | See [[text-processing | Text Processing]]. |
 | Configuration | [`config`][c~config~docs]↗{{hi:config}}, [`serde`][c~serde~docs]↗{{hi:serde}} (for serialization) | See [[config | Config]] and [[configuration | Configuration]]. |
 | Logging | [`log`][c~log~docs]↗{{hi:log}}, [`env_logger`][c~env_logger~docs]↗{{hi:env_logger}} | See [[log | Log]], [[tracing | Tracing]] and [[tracing_alternatives | Tracing Alternatives]]. |
 

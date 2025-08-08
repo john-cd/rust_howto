@@ -4,10 +4,10 @@
 
 ## `cargo flamegraph` {#cargo-flamegraph}
 
-[![cargo-flamegraph][c~cargo_flamegraph~docs~badge]][c~cargo_flamegraph~docs]{{hi:cargo-flamegraph}}
-[![cargo-flamegraph~crates.io][c~cargo_flamegraph~crates.io~badge]][c~cargo_flamegraph~crates.io]
-[![cargo-flamegraph~github][c~cargo_flamegraph~github~badge]][c~cargo_flamegraph~github]
-[![cargo-flamegraph~lib.rs][c~cargo_flamegraph~lib.rs~badge]][c~cargo_flamegraph~lib.rs]
+[![cargo-flamegraph][c~cargo-flamegraph~docs~badge]][c~cargo-flamegraph~docs]{{hi:cargo-flamegraph}}
+[![cargo-flamegraph~crates.io][c~cargo-flamegraph~crates.io~badge]][c~cargo-flamegraph~crates.io]
+[![cargo-flamegraph~github][c~cargo-flamegraph~github~badge]][c~cargo-flamegraph~github]
+[![cargo-flamegraph~lib.rs][c~cargo-flamegraph~lib.rs~badge]][c~cargo-flamegraph~lib.rs]
 
 `cargo flamegraph` generates execution flamegraphs.
 

@@ -4,9 +4,9 @@
 
 ## `cosmic-text` {#cosmic-text}
 
-[![cosmic-text][c~cosmic_text~docs~badge]][c~cosmic_text~docs] [![cosmic-text~crates.io][c~cosmic_text~crates.io~badge]][c~cosmic_text~crates.io] [![cosmic-text~github][c~cosmic_text~github~badge]][c~cosmic_text~github] [![cosmic-text~lib.rs][c~cosmic_text~lib.rs~badge]][c~cosmic_text~lib.rs]{{hi:cosmic-text}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
+[![cosmic-text][c~cosmic-text~docs~badge]][c~cosmic-text~docs] [![cosmic-text~crates.io][c~cosmic-text~crates.io~badge]][c~cosmic-text~crates.io] [![cosmic-text~github][c~cosmic-text~github~badge]][c~cosmic-text~github] [![cosmic-text~lib.rs][c~cosmic-text~lib.rs~badge]][c~cosmic-text~lib.rs]{{hi:cosmic-text}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
 
-[`cosmic-text`][c~cosmic_text~docs]↗{{hi:cosmic-text}} provides pure Rust multi-line text handling. "Full text layout including rich text and support for BiDi and non-Latin scripts. The best option for now."
+[`cosmic-text`][c~cosmic-text~docs]↗{{hi:cosmic-text}} provides pure Rust multi-line text handling. "Full text layout including rich text and support for BiDi and non-Latin scripts. The best option for now."
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/text_layout/cosmic_text.rs:example}}

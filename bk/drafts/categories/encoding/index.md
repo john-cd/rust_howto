@@ -53,8 +53,8 @@ See [[yaml | YAML]].
 
 Use:
 
-- [`quick-xml`][c~quick_xml~docs]↗{{hi:quick-xml}} : A fast XML parser.
-- [`serde_xml_rs`][c~serde_xml_rs~docs]↗{{hi:serde_xml_rs}}: For serializing and deserializing XML.
+- [`quick-xml`][c~quick-xml~docs]↗{{hi:quick-xml}} : A fast XML parser.
+- [`serde-xml-rs`][c~serde-xml-rs~docs]↗{{hi:serde-xml-rs}}: For serializing and deserializing XML.
 - [`serde`][c~serde~docs]↗{{hi:serde}}.
 
 See [[xml | XML]].
@@ -76,7 +76,7 @@ See [[_binary_encoders |  Binary Encoders]].
 
 ## MessagePack Serialization
 
-Consider using [`rmp-serde`][c~rmp_serde~docs]↗{{hi:rmp-serde}} for MessagePack serialization and deserialization.
+Consider using [`rmp-serde`][c~rmp-serde~docs]↗{{hi:rmp-serde}} for MessagePack serialization and deserialization.
 See [[_binary_encoders |  Binary Encoders]].
 
 ## CBOR (Concise Binary Object Representation) Serialization

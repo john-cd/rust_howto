@@ -4,7 +4,7 @@
 
 Crates for graphics libraries and applications, including raster and vector graphics primitives such as geometry, curves, and color.
 
-For most 2D graphics projects, [`raqote`][c~raqote~docs]↗{{hi:raqote}}, [`tiny-skia`][c~tiny_skia~docs]↗{{hi:tiny-skia}}, or a combination of [`pixels`][c~pixels~docs]↗{{hi:pixels}} and [`lyon`][c~lyon~docs]↗{{hi:lyon}} will be a good starting point. For 3D or performance-critical 2D, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is the way to go.
+For most 2D graphics projects, [`raqote`][c~raqote~docs]↗{{hi:raqote}}, [`tiny-skia`][c~tiny-skia~docs]↗{{hi:tiny-skia}}, or a combination of [`pixels`][c~pixels~docs]↗{{hi:pixels}} and [`lyon`][c~lyon~docs]↗{{hi:lyon}} will be a good starting point. For 3D or performance-critical 2D, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is the way to go.
 
 If you're using a [[gui | GUI]] framework or [[game-engines | Game Engine]], it will handle a lot of the low-level graphics details for you.
 

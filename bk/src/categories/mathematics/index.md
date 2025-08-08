@@ -18,7 +18,7 @@ Vectors, matrices, eigenvalues, and eigenvectors. Key crates include:
 - [`glam`][c~glam~docs]↗{{hi:glam}}: A fast and ergonomic linear algebra library designed for graphics and games. Often preferred in those contexts.
 - [`ultraviolet`][c~ultraviolet~docs]↗{{hi:ultraviolet}}: Another linear algebra library, with a focus on graphics.
 - [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}: For N-dimensional arrays.Essential for numerical computation and data analysis.
-- [`nalgebra-lapack`][c~nalgebra_lapack~docs]↗{{hi:nalgebra-lapack}} provides LAPACK bindings for linear algebra operations.
+- [`nalgebra-lapack`][c~nalgebra-lapack~docs]↗{{hi:nalgebra-lapack}} provides LAPACK bindings for linear algebra operations.
 
 {{#include linear_algebra.incl.md}}
 
@@ -39,15 +39,15 @@ Generating random numbers for simulations, cryptography, etc.
 
 ## Additional Numeric Types
 
-- [`num-bigint`][c~num_bigint~docs]↗{{hi:num-bigint}} for arbitrary-precision integers.
-- [`num-rational`][c~num_rational~docs]↗{{hi:num-rational}} for rational numbers.
+- [`num-bigint`][c~num-bigint~docs]↗{{hi:num-bigint}} for arbitrary-precision integers.
+- [`num-rational`][c~num-rational~docs]↗{{hi:num-rational}} for rational numbers.
 - [`num`][c~num~docs]↗{{hi:num}}: A crate that provides numeric traits and other utilities.
 
 {{#include additional_numeric_types.incl.md}}
 
 ### Complex Numbers
 
-- [`num-complex`][c~num_complex~docs]↗{{hi:num-complex}} for working with complex numbers.
+- [`num-complex`][c~num-complex~docs]↗{{hi:num-complex}} for working with complex numbers.
 
 {{#include complex_numbers.incl.md}}
 

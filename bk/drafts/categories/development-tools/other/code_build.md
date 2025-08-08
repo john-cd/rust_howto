@@ -109,7 +109,7 @@ bacon clippy
 
 ## Related Topics
 
-Consider [`cargo-make`][c~cargo_make~docs]↗{{hi:cargo-make}} if you want something with a bulkier syntax but more cross-platform portability.
+Consider [`cargo-make`][c~cargo-make~docs]↗{{hi:cargo-make}} if you want something with a bulkier syntax but more cross-platform portability.
 
 See [[building | Building]].
 

@@ -8,13 +8,13 @@ Two essential components of 2D [rendering][p~rendering] are rasterization and an
 
 ## Choosing the Right Library {#skip}
 
-[`raqote`][c~raqote~docs]↗{{hi:raqote}} is a fast, pure Rust 2D graphics library. [`tiny-skia`][c~tiny_skia~docs]↗{{hi:tiny-skia}} is another good option. [`cairo-rs`][c~cairo~docs]↗{{hi:cairo-rs}} provides bindings to the Cairo library. |
+[`raqote`][c~raqote~docs]↗{{hi:raqote}} is a fast, pure Rust 2D graphics library. [`tiny-skia`][c~tiny-skia~docs]↗{{hi:tiny-skia}} is another good option. [`cairo-rs`][c~cairo~docs]↗{{hi:cairo-rs}} provides bindings to the Cairo library. |
 
-Most 2D projects will find [`raqote`][c~raqote~docs]↗{{hi:raqote}} or [`tiny-skia`][c~tiny_skia~docs]↗{{hi:tiny-skia}} to be a good balance of features and performance. If you need very low-level control or are working with GPU-accelerated [graphics][p~graphics], [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is the way to go. If you're making a game, one of the [[game_engines | game]] frameworks will likely be the easiest option.
+Most 2D projects will find [`raqote`][c~raqote~docs]↗{{hi:raqote}} or [`tiny-skia`][c~tiny-skia~docs]↗{{hi:tiny-skia}} to be a good balance of features and performance. If you need very low-level control or are working with GPU-accelerated [graphics][p~graphics], [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is the way to go. If you're making a game, one of the [[game_engines | game]] frameworks will likely be the easiest option.
 
 - Simple 2D, Direct Pixel Manipulation: [`pixels`][c~pixels~docs]↗{{hi:pixels}}.
 - General-Purpose 2D, Canvas-Like API: [`raqote`][c~raqote~docs]↗{{hi:raqote}}.
-- Lightweight, Performant 2D: [`tiny-skia`][c~tiny_skia~docs]↗{{hi:tiny-skia}}.
+- Lightweight, Performant 2D: [`tiny-skia`][c~tiny-skia~docs]↗{{hi:tiny-skia}}.
 - Vector Path Generation: [`lyon`][c~lyon~docs]↗{{hi:lyon}}.
 - High Performance 2D/3D (using GPU): [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} (but more complex).
 
@@ -41,9 +41,9 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 
 ## `skia-safe` {#skia-safe}
 
-[![skia-safe][c~skia_safe~docs~badge]][c~skia_safe~docs] [![skia-safe~crates.io][c~skia_safe~crates.io~badge]][c~skia_safe~crates.io] [![skia-safe~github][c~skia_safe~github~badge]][c~skia_safe~github] [![skia-safe~lib.rs][c~skia_safe~lib.rs~badge]][c~skia_safe~lib.rs]{{hi:skia-safe}}{{hi:OpenGL}}{{hi:Pdf}}{{hi:Rust-bindings}}{{hi:Skia}}{{hi:Vulkan}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}} [![cat~multimedia::images][cat~multimedia::images~badge]][cat~multimedia::images]{{hi:Images}} [![cat~rendering::graphics-api][cat~rendering::graphics-api~badge]][cat~rendering::graphics-api]{{hi:Graphics APIs}} [![cat~visualization][cat~visualization~badge]][cat~visualization]{{hi:Visualization}}
+[![skia-safe][c~skia-safe~docs~badge]][c~skia-safe~docs] [![skia-safe~crates.io][c~skia-safe~crates.io~badge]][c~skia-safe~crates.io] [![skia-safe~github][c~skia-safe~github~badge]][c~skia-safe~github] [![skia-safe~lib.rs][c~skia-safe~lib.rs~badge]][c~skia-safe~lib.rs]{{hi:skia-safe}}{{hi:OpenGL}}{{hi:Pdf}}{{hi:Rust-bindings}}{{hi:Skia}}{{hi:Vulkan}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}} [![cat~multimedia::images][cat~multimedia::images~badge]][cat~multimedia::images]{{hi:Images}} [![cat~rendering::graphics-api][cat~rendering::graphics-api~badge]][cat~rendering::graphics-api]{{hi:Graphics APIs}} [![cat~visualization][cat~visualization~badge]][cat~visualization]{{hi:Visualization}}
 
-[`skia-safe`][c~skia_safe~docs]↗{{hi:skia-safe}} offers "Bindings to the Skia C++ library. The most complete option with excellent performance. However, it can be difficult to get it to compile." ([blessed.rs](https://blessed.rs/crates#section-graphics)).
+[`skia-safe`][c~skia-safe~docs]↗{{hi:skia-safe}} offers "Bindings to the Skia C++ library. The most complete option with excellent performance. However, it can be difficult to get it to compile." ([blessed.rs](https://blessed.rs/crates#section-graphics)).
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/2d_renderers/skia_safe.rs:example}}

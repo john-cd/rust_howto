@@ -14,7 +14,7 @@
 Consider using:
 
 - [`mavlink`][c~mavlink~docs]↗{{hi:mavlink}} for MAVLink encoding/decoding.
-- [`embedded-hal`][c~embedded_hal~docs]↗{{hi:embedded-hal}} for hardware abstraction (if working with embedded systems).
+- [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} for hardware abstraction (if working with embedded systems).
 - [`pid`][c~pid~docs]↗{{hi:pid}} for PID controller implementation.
 
 ## Sensor Integration
@@ -58,7 +58,7 @@ Consider using:
 Consider using:
 
 - [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} for linear algebra and control algorithms.
-- [`num-traits`][c~num_traits~docs]↗{{hi:num-traits}} & [`num-complex`][c~num_complex~docs]↗{{hi:num-complex}} for numerical and complex number operations.
+- [`num-traits`][c~num-traits~docs]↗{{hi:num-traits}} & [`num-complex`][c~num-complex~docs]↗{{hi:num-complex}} for numerical and complex number operations.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

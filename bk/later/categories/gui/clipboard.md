@@ -20,7 +20,7 @@ Some [GUI][p~gui] frameworks, like [`iced`][c~iced~docs]↗{{hi:iced}} or [`egui
 
 ## WebAssembly (WASM) Considerations {#skip}
 
-Clipboard access in [WASM][p~wasm] is restricted due to security reasons. You'll typically need to use JavaScript APIs to interact with the clipboard in a WASM context. Crates like [`wasm-bindgen`][c~wasm_bindgen~docs]↗{{hi:wasm-bindgen}} would be used for this JavaScript interop.
+Clipboard access in [WASM][p~wasm] is restricted due to security reasons. You'll typically need to use JavaScript APIs to interact with the clipboard in a WASM context. Crates like [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} would be used for this JavaScript interop.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

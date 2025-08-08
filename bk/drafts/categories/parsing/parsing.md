@@ -36,12 +36,12 @@ Grammars are saved in separate [`.pest`][c~pest~docs]↗{{hi:.pest}}  files whi
 
 ### Create a Parser with `tree-sitter` {#tree-sitter}
 
-[![tree-sitter][c~tree_sitter~docs~badge]][c~tree_sitter~docs]{{hi:tree-sitter}}
-[![tree-sitter~crates.io][c~tree_sitter~crates.io~badge]][c~tree_sitter~crates.io]
-[![tree-sitter~github][c~tree_sitter~github~badge]][c~tree_sitter~github]
-[![tree-sitter~lib.rs][c~tree_sitter~lib.rs~badge]][c~tree_sitter~lib.rs]
+[![tree-sitter][c~tree-sitter~docs~badge]][c~tree-sitter~docs]{{hi:tree-sitter}}
+[![tree-sitter~crates.io][c~tree-sitter~crates.io~badge]][c~tree-sitter~crates.io]
+[![tree-sitter~github][c~tree-sitter~github~badge]][c~tree-sitter~github]
+[![tree-sitter~lib.rs][c~tree-sitter~lib.rs~badge]][c~tree-sitter~lib.rs]
 
-[`tree-sitter`][c~tree_sitter~docs]↗{{hi:tree-sitter}} provides Rust bindings to the Tree-sitter parsing library. [`tree-sitter`][tree-sitter~website]↗ is a parser generator tool and an incremental parsing library. It can build a concrete syntax tree for a source file and efficiently update the syntax tree as the source file is edited.
+[`tree-sitter`][c~tree-sitter~docs]↗{{hi:tree-sitter}} provides Rust bindings to the Tree-sitter parsing library. [`tree-sitter`][tree-sitter~website]↗ is a parser generator tool and an incremental parsing library. It can build a concrete syntax tree for a source file and efficiently update the syntax tree as the source file is edited.
 
 ```rust,editable
 {{#include ../../../crates/cats/parsing/examples/parsing/tree_sitter.rs:example}}

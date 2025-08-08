@@ -15,9 +15,9 @@ Writes a three-line message to a file, then reads it back a line at a time with 
 
 ## Avoid Writing and Reading from the Same File {#avoid-writing-and-reading-from-the-same-file}
 
-[![same-file][c~same_file~docs~badge]][c~same_file~docs]{{hi:same-file}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
+[![same-file][c~same-file~docs~badge]][c~same-file~docs]{{hi:same-file}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-Use [`same_file::Handle`][c~same_file::Handle~docs]{{hi:same_file::Handle}}↗ to a file that can be tested for equality with other handles. In this example, the handles of file to be read from and to be written to are tested for equality.
+Use [`same-file::Handle`][c~same-file::Handle~docs]{{hi:same-file::Handle}}↗ to a file that can be tested for equality with other handles. In this example, the handles of file to be read from and to be written to are tested for equality.
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/examples/read_write/same_file.rs:example}}

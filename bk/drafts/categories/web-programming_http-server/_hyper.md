@@ -30,15 +30,15 @@ This said, we provide below an example of a HTTP server, following the recommend
 
 ## `hyper` TLS Support {#skip}
 
-[![hyper-tls~website][c~hyper_tls~website~badge]][c~hyper_tls~website] [![hyper-tls][c~hyper_tls~docs~badge]][c~hyper_tls~docs] [![hyper-tls~crates.io][c~hyper_tls~crates.io~badge]][c~hyper_tls~crates.io] [![hyper-tls~github][c~hyper_tls~github~badge]][c~hyper_tls~github] [![hyper-tls~lib.rs][c~hyper_tls~lib.rs~badge]][c~hyper_tls~lib.rs]{{hi:hyper-tls}}{{hi:Http}}{{hi:Https}}{{hi:Hyper}}{{hi:Ssl}}{{hi:Tls}}
+[![hyper-tls~website][c~hyper-tls~website~badge]][c~hyper-tls~website] [![hyper-tls][c~hyper-tls~docs~badge]][c~hyper-tls~docs] [![hyper-tls~crates.io][c~hyper-tls~crates.io~badge]][c~hyper-tls~crates.io] [![hyper-tls~github][c~hyper-tls~github~badge]][c~hyper-tls~github] [![hyper-tls~lib.rs][c~hyper-tls~lib.rs~badge]][c~hyper-tls~lib.rs]{{hi:hyper-tls}}{{hi:Http}}{{hi:Https}}{{hi:Hyper}}{{hi:Ssl}}{{hi:Tls}}
 
 Default TLS implementation for use with `hyper`.
 
-[![hyper-rustls][c~hyper_rustls~docs~badge]][c~hyper_rustls~docs] [![hyper-rustls~crates.io][c~hyper_rustls~crates.io~badge]][c~hyper_rustls~crates.io] [![hyper-rustls~github][c~hyper_rustls~github~badge]][c~hyper_rustls~github] [![hyper-rustls~lib.rs][c~hyper_rustls~lib.rs~badge]][c~hyper_rustls~lib.rs]{{hi:hyper-rustls}}
+[![hyper-rustls][c~hyper-rustls~docs~badge]][c~hyper-rustls~docs] [![hyper-rustls~crates.io][c~hyper-rustls~crates.io~badge]][c~hyper-rustls~crates.io] [![hyper-rustls~github][c~hyper-rustls~github~badge]][c~hyper-rustls~github] [![hyper-rustls~lib.rs][c~hyper-rustls~lib.rs~badge]][c~hyper-rustls~lib.rs]{{hi:hyper-rustls}}
 
 Rustls + `hyper` integration for pure rust HTTPS.
 
-[![hyper-openssl][c~hyper_openssl~docs~badge]][c~hyper_openssl~docs] [![hyper-openssl~crates.io][c~hyper_openssl~crates.io~badge]][c~hyper_openssl~crates.io] [![hyper-openssl~github][c~hyper_openssl~github~badge]][c~hyper_openssl~github] [![hyper-openssl~lib.rs][c~hyper_openssl~lib.rs~badge]][c~hyper_openssl~lib.rs]{{hi:hyper-openssl}}
+[![hyper-openssl][c~hyper-openssl~docs~badge]][c~hyper-openssl~docs] [![hyper-openssl~crates.io][c~hyper-openssl~crates.io~badge]][c~hyper-openssl~crates.io] [![hyper-openssl~github][c~hyper-openssl~github~badge]][c~hyper-openssl~github] [![hyper-openssl~lib.rs][c~hyper-openssl~lib.rs~badge]][c~hyper-openssl~lib.rs]{{hi:hyper-openssl}}
 
 Hyper TLS support via OpenSSL.
 

@@ -13,8 +13,8 @@ The process of confirming identities.
 | [[password_hashing | Password Hashing]] | [`bcrypt`][c~bcrypt~docs]↗{{hi:bcrypt}}, [`argon2`][c~argon2~docs]↗{{hi:argon2}}, [`scrypt`][c~scrypt~docs]↗{{hi:scrypt}}| [[hashing | Hashing]] |
 | JWT (JSON Web Tokens) | [`jsonwebtoken`][c~jsonwebtoken~docs]↗{{hi:jsonwebtoken}} | |
 | OAuth 2.0 | [`oauth2`][c~oauth2~docs]↗{{hi:oauth2}} | |
-| Web Authentication | Often tied to web frameworks like [`actix-web`][c~actix_web~docs]↗{{hi:actix-web}}, [`warp`][c~warp~docs]↗{{hi:warp}}, etc. No single dominant crate. | See [[web-programming | Web Programming]] and [[web-programming_http-server | Web Programming HTTP Server]]. |
-| [[cryptography | Cryptographic]] Primitives | [`ring`][c~ring~docs]↗{{hi:ring}}, [`rust-crypto`][c~rust_crypto~docs]↗{{hi:rust-crypto}} (often abstracted by higher-level crates). | See [[encryption | Encryption]], [[signature | Signatures]], [[certificates | Certificates]] and [[cryptography_utilities | Cryptography Utilities]] |
+| Web Authentication | Often tied to web frameworks like [`actix-web`][c~actix-web~docs]↗{{hi:actix-web}}, [`warp`][c~warp~docs]↗{{hi:warp}}, etc. No single dominant crate. | See [[web-programming | Web Programming]] and [[web-programming_http-server | Web Programming HTTP Server]]. |
+| [[cryptography | Cryptographic]] Primitives | [`ring`][c~ring~docs]↗{{hi:ring}}, [`rust-crypto`][c~rust-crypto~docs]↗{{hi:rust-crypto}} (often abstracted by higher-level crates). | See [[encryption | Encryption]], [[signature | Signatures]], [[certificates | Certificates]] and [[cryptography_utilities | Cryptography Utilities]] |
 
 ## References
 

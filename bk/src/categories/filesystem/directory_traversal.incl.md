@@ -1,7 +1,7 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Find Files Modified in the Last 24 Hours][ex~filesystem~find-files-modified-last-24-hours] | [![std][c~std~docs~badge]][c~std~docs] | [![cat~filesystem][cat~filesystem~badge]][cat~filesystem] [![cat~os][cat~os~badge]][cat~os] |
-| [Find Loops in a Given Path][ex~filesystem~find-loop-in-path] | [![same-file][c~same_file~docs~badge]][c~same_file~docs] | [![cat~filesystem][cat~filesystem~badge]][cat~filesystem] |
+| [Find Loops in a Given Path][ex~filesystem~find-loop-in-path] | [![same-file][c~same-file~docs~badge]][c~same-file~docs] | [![cat~filesystem][cat~filesystem~badge]][cat~filesystem] |
 | [Recursively Find Duplicate File Names][ex~filesystem~recursively-find-duplicate-file-names] | [![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] | [![cat~filesystem][cat~filesystem~badge]][cat~filesystem] |
 | [Recursively Find All Files with a Given Predicate][ex~filesystem~recursively-find-all-files-with-given-predicate] | [![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] | [![cat~filesystem][cat~filesystem~badge]][cat~filesystem] |
 | [Traverse Directories While Skipping Dotfiles][ex~filesystem~traverse-directories-while-skipping-dotfiles] | [![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] | [![cat~filesystem][cat~filesystem~badge]][cat~filesystem] |

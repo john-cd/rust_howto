@@ -12,7 +12,7 @@
 
 ### Use a Custom Allocator with `tikv-jemallocator` {#tikv-jemallocator}
 
-[![tikv-jemallocator][c~tikv_jemallocator~docs~badge]][c~tikv_jemallocator~docs] [![tikv-jemallocator~crates.io][c~tikv_jemallocator~crates.io~badge]][c~tikv_jemallocator~crates.io] [![tikv-jemallocator~github][c~tikv_jemallocator~github~badge]][c~tikv_jemallocator~github] [![tikv-jemallocator~lib.rs][c~tikv_jemallocator~lib.rs~badge]][c~tikv_jemallocator~lib.rs]{{hi:tikv-jemallocator}}{{hi:Allocator}}{{hi:Jemalloc}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}}
+[![tikv-jemallocator][c~tikv-jemallocator~docs~badge]][c~tikv-jemallocator~docs] [![tikv-jemallocator~crates.io][c~tikv-jemallocator~crates.io~badge]][c~tikv-jemallocator~crates.io] [![tikv-jemallocator~github][c~tikv-jemallocator~github~badge]][c~tikv-jemallocator~github] [![tikv-jemallocator~lib.rs][c~tikv-jemallocator~lib.rs~badge]][c~tikv-jemallocator~lib.rs]{{hi:tikv-jemallocator}}{{hi:Allocator}}{{hi:Jemalloc}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}}
 
 `tikv-jemallocator` is a Rust allocator backed by 'jemalloc' (a well-known C library). It is a drop-in replacement for the standard Rust allocator (in `alloc::alloc`).
 

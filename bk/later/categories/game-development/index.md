@@ -10,7 +10,7 @@ Game development in Rust is a vibrant area, and the crates you'll need depend on
 |---|---|
 | Simple 2D Games | [`ggez`][c~ggez~docs]↗{{hi:ggez}}, [`macroquad`][c~macroquad~docs]↗{{hi:macroquad}}, or a combination of [`winit`][c~winit~docs]↗{{hi:winit}} , [`pixels`][c~pixels~docs]↗{{hi:pixels}}, and [`cpal`][c~cpal~docs]↗{{hi:cpal}} |
 | More Complex 2D/3D Games | [`Bevy`][c~bevy~docs]↗{{hi:Bevy}} or [`Amethyst`][c~amethyst~docs]↗{{hi:Amethyst}} |
-| Custom Engines or Low-Level Graphics | [`winit`][c~winit~docs]↗{{hi:winit}} , [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`gfx-hal`][c~gfx_hal~docs]↗{{hi:gfx-hal}} |
+| Custom Engines or Low-Level Graphics | [`winit`][c~winit~docs]↗{{hi:winit}} , [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}} |
 | Data-Driven Design | ECS libraries like [`bevy_ecs`][c~bevy_ecs~docs]↗{{hi:bevy_ecs}}, [`specs`][c~specs~docs]↗{{hi:specs}}, or [`hecs`][c~hecs~docs]↗{{hi:hecs}} |
 
 ## Code Examples
@@ -21,7 +21,7 @@ Game development in Rust is a vibrant area, and the crates you'll need depend on
 
 | Topic | Description | Relevant Rust crate(s) |
 |---|---|---|
-| [[graphics | Graphics]] | | [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}: A cross-platform, safe, and portable GPU API. Often used with [`winit`][c~winit~docs]↗{{hi:winit}} or game engines. [`rend3`][c~rend3~docs]↗{{hi:rend3}}: A 3D rendering engine built on top of wgpu. [`gfx-hal`][c~gfx_hal~docs]↗{{hi:gfx-hal}}: A low-level graphics API abstraction layer. [`image`][c~image~docs]↗{{hi:image}} for image loading and manipulation. |
+| [[graphics | Graphics]] | | [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}: A cross-platform, safe, and portable GPU API. Often used with [`winit`][c~winit~docs]↗{{hi:winit}} or game engines. [`rend3`][c~rend3~docs]↗{{hi:rend3}}: A 3D rendering engine built on top of wgpu. [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}}: A low-level graphics API abstraction layer. [`image`][c~image~docs]↗{{hi:image}} for image loading and manipulation. |
 | [[multimedia_audio | Audio]] | | [`cpal`][c~cpal~docs]↗{{hi:cpal}}: Cross-platform audio I/O. [`sdl2`][c~sdl2~docs]↗{{hi:sdl2}}: Can also be used for audio |
 | Inputs | See also [[gui | GUI]]. | [`winit`][c~winit~docs]↗{{hi:winit}} : Handles window events, including input. [`sdl2`][c~sdl2~docs]↗{{hi:sdl2}}: Can also be used for input. |
 | Game Logic / State Management | Often handled directly or with ECS libraries. See below. | |

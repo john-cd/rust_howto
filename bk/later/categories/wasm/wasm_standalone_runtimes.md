@@ -96,7 +96,7 @@ The [`wasmtime`][c~wasmtime~github]↗ crate is a high-level API to expose the W
 
 [`wasi-rs`][c~wasi~docs]↗{{hi:wasi-rs}} provides bindings for the WASI API, enabling your WASM code to interact with the host environment (file system, networking, etc.). In particular, WASI allows you to run WASM code on servers or other environments outside the browser. Used by [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}} and [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}.
 
-[`cargo-wasi`][c~cargo_wasi~docs]↗{{hi:cargo-wasi}} is used for compiling to WASI (WebAssembly System Interface), which is useful for running WASM outside of the browser (e.g., on servers or embedded devices).
+[`cargo-wasi`][c~cargo-wasi~docs]↗{{hi:cargo-wasi}} is used for compiling to WASI (WebAssembly System Interface), which is useful for running WASM outside of the browser (e.g., on servers or embedded devices).
 
 ## See Also
 

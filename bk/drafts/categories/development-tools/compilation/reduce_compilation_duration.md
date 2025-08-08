@@ -7,7 +7,7 @@ Rust compile times{{hi:Compile times}} can be long. Reducing Rust compilation [d
 | Methods | Description |
 |---|---|
 | Incremental Compilation | Leverage [Cargo][p~cargo]'s [caching][p~caching], be mindful of changes that invalidate the cache. |
-| Dependency Management | Use [`cargo tree`](https://doc.rust-lang.org/cargo/commands/cargo-tree.html)↗{{hi:cargo tree}} to analyze dependencies. [`cargo-bloat`][c~cargo_bloat~docs]↗{{hi:cargo-bloat}} can help you identify large dependencies contributing to compile times. |
+| Dependency Management | Use [`cargo tree`](https://doc.rust-lang.org/cargo/commands/cargo-tree.html)↗{{hi:cargo tree}} to analyze dependencies. [`cargo-bloat`][c~cargo-bloat~docs]↗{{hi:cargo-bloat}} can help you identify large dependencies contributing to compile times. |
 | Compiler Flags | Experiment with compiler flags, but be careful and measure the impact. |
 | Build Profiles | Optimize release builds with appropriate flags in `config.toml`. |
 | Link-Time Optimization (LTO) | Controlled via [`Cargo.toml`](https://doc.rust-lang.org/cargo/reference/manifest.html)↗{{hi:Cargo.toml}} and `config.toml`. |
@@ -78,7 +78,7 @@ opt-level = 3
 
 ## Use Dynamic Linking {#dynamic-linking}
 
-[![cargo-add-dynamic][c~cargo_add_dynamic~docs~badge]][c~cargo_add_dynamic~docs] [![cargo-add-dynamic~crates.io][c~cargo_add_dynamic~crates.io~badge]][c~cargo_add_dynamic~crates.io] [![cargo-add-dynamic~github][c~cargo_add_dynamic~github~badge]][c~cargo_add_dynamic~github] [![cargo-add-dynamic~lib.rs][c~cargo_add_dynamic~lib.rs~badge]][c~cargo_add_dynamic~lib.rs]{{hi:cargo-add-dynamic}}{{hi:Cargo}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~compilers][cat~compilers~badge]][cat~compilers]{{hi:Compilers}}
+[![cargo-add-dynamic][c~cargo-add-dynamic~docs~badge]][c~cargo-add-dynamic~docs] [![cargo-add-dynamic~crates.io][c~cargo-add-dynamic~crates.io~badge]][c~cargo-add-dynamic~crates.io] [![cargo-add-dynamic~github][c~cargo-add-dynamic~github~badge]][c~cargo-add-dynamic~github] [![cargo-add-dynamic~lib.rs][c~cargo-add-dynamic~lib.rs~badge]][c~cargo-add-dynamic~lib.rs]{{hi:cargo-add-dynamic}}{{hi:Cargo}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~compilers][cat~compilers~badge]][cat~compilers]{{hi:Compilers}}
 
 ```sh
 cargo install cargo-add-dynamic

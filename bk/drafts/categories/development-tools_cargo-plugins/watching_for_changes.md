@@ -11,10 +11,10 @@ It's worth noting that some [IDEs][p~ides] also have built-in [file watching][p~
 
 ## `cargo watch` {#cargo-watch}
 
-[![cargo-watch][c~cargo_watch~docs~badge]][c~cargo_watch~docs]{{hi:cargo-watch}}
-[![cargo-watch~crates.io][c~cargo_watch~crates.io~badge]][c~cargo_watch~crates.io]
-[![cargo-watch~github][c~cargo_watch~github~badge]][c~cargo_watch~github]
-[![cargo-watch~lib.rs][c~cargo_watch~lib.rs~badge]][c~cargo_watch~lib.rs]
+[![cargo-watch][c~cargo-watch~docs~badge]][c~cargo-watch~docs]{{hi:cargo-watch}}
+[![cargo-watch~crates.io][c~cargo-watch~crates.io~badge]][c~cargo-watch~crates.io]
+[![cargo-watch~github][c~cargo-watch~github~badge]][c~cargo-watch~github]
+[![cargo-watch~lib.rs][c~cargo-watch~lib.rs~badge]][c~cargo-watch~lib.rs]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
 `cargo watch`
@@ -33,12 +33,12 @@ cargo watch -x check -x test -x run
 
 ## `cargo limit` {#cargo-limit}
 
-[![cargo-limit][c~cargo_limit~docs~badge]][c~cargo_limit~docs]{{hi:cargo-limit}}
-[![cargo-limit~crates.io][c~cargo_limit~crates.io~badge]][c~cargo_limit~crates.io]
-[![cargo-limit~github][c~cargo_limit~github~badge]][c~cargo_limit~github]
-[![cargo-limit~lib.rs][c~cargo_limit~lib.rs~badge]][c~cargo_limit~lib.rs]
+[![cargo-limit][c~cargo-limit~docs~badge]][c~cargo-limit~docs]{{hi:cargo-limit}}
+[![cargo-limit~crates.io][c~cargo-limit~crates.io~badge]][c~cargo-limit~crates.io]
+[![cargo-limit~github][c~cargo-limit~github~badge]][c~cargo-limit~github]
+[![cargo-limit~lib.rs][c~cargo-limit~lib.rs~badge]][c~cargo-limit~lib.rs]
 
-[cargo-limit][c~cargo_limit~crates.io]↗ is [Cargo][p~cargo] with less noise: warnings are skipped until errors are fixed, Neovim integration, etc.
+[cargo-limit][c~cargo-limit~crates.io]↗ is [Cargo][p~cargo] with less noise: warnings are skipped until errors are fixed, Neovim integration, etc.
 
 - errors have highest priority.
 - they never appear in the middle of warnings.
@@ -50,7 +50,7 @@ cargo watch -x check -x test -x run
 - after encountering first error the rest of build time is limited by default.
 - files can be automatically opened in your text editor on affected lines.
 
-This tool is especially useful in combination with [`cargo-watch`][c~cargo_watch~docs]↗{{hi:cargo-watch}}.
+This tool is especially useful in combination with [`cargo-watch`][c~cargo-watch~docs]↗{{hi:cargo-watch}}.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

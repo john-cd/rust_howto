@@ -18,7 +18,7 @@ While still developing, the Rust robotics ecosystem is gaining momentum. Rust's 
 
 {{#include hardware_integration.incl.md}}
 
-Consider [`embedded-hal`][c~embedded_hal~docs]↗{{hi:embedded-hal}} and platform-specific crates. [`embedded-hal`][c~embedded_hal~docs]↗{{hi:embedded-hal}} defines a standard trait interface for interacting with embedded hardware. [`linux-embedded-hal`][c~linux_embedded_hal~docs]↗{{hi:linux-embedded-hal}} provides implementations for Linux systems.
+Consider [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} and platform-specific crates. [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} defines a standard trait interface for interacting with embedded hardware. [`linux-embedded-hal`][c~linux-embedded-hal~docs]↗{{hi:linux-embedded-hal}} provides implementations for Linux systems.
 
 See also
 
@@ -30,9 +30,9 @@ See also
 Import/Export various files related with Robotics
 
 [`assimp-rs`][c~assimp~docs]↗{{hi:assimp-rs}} (open-asset-importer) - Rust bindings for the Assimp library.
-`mcap` - Rust library for reading and writing MCAP log files
-`urdf-rs` - URDF Loader for Rust
-`pcd-ros` - Read point cloud data from PCD file format
+[`mcap`]()↗{{hi:mcap}} - Rust library for reading and writing MCAP log files
+[`urdf-rs`]()↗{{hi:urdf-rs}} - URDF Loader for Rust
+[`pcd-ros`]()↗{{hi:pcd-ros}} - Read point cloud data from PCD file format
 
 See also [[parser-implementations | Parser Implementations]].
 
@@ -61,12 +61,12 @@ See also the [[simulation | Simulation]], [[aerospace_simulation | Aerospace Sim
 ## Math and Geometry-related Libraries for Robotics
 
 - [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} - Linear algebra library for Rust.
-- `ncollide` - 2 and 3-dimensional collision detection library in Rust.
-- `kdtree` - K-dimensional tree in Rust for fast geospatial indexing.
-- `k` - Kinematics Library for rust-lang.
+- [`ncollide`]()↗{{hi:ncollide}} - 2 and 3-dimensional collision detection library in Rust.
+- [`kdtree`]()↗{{hi:kdtree}} - K-dimensional tree in Rust for fast geospatial indexing.
+- [`k`]()↗{{hi:k}} - Kinematics Library for rust-lang.
 - `static-math` - Safe and fast mathematical operations with static arrays in Rust programming language for robotics.
 - [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} - N-dimensional tensor arithmetic library, inspired by python's NumPy.
-- `faer-rs` - Linear algebra foundation for the Rust programming language.
+- [`faer-rs`]()↗{{hi:faer-rs}} - Linear algebra foundation for the Rust programming language.
 
 See also the numerical computation ([[additional_numeric_types | Additional Numeric Types]], [[linear_algebra | Linear Algebra]]), [[data-processing | data]] analysis sections.
 

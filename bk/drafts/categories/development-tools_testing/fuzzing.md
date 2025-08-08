@@ -41,9 +41,9 @@ Undefined Behavior Sanitizer (UBSan): Detects undefined behavior (e.g., integer 
 
 This is a more advanced technique and often involves custom [scripting][p~scripting] or tools. There aren't specific crates for it.
 
-## `cargo fuzz` {#cargo_fuzz}
+## `cargo fuzz` {#cargo-fuzz}
 
-[![cargo-fuzz][c~cargo_fuzz~docs~badge]][c~cargo_fuzz~docs] [![cargo-fuzz~crates.io][c~cargo_fuzz~crates.io~badge]][c~cargo_fuzz~crates.io] [![cargo-fuzz~github][c~cargo_fuzz~github~badge]][c~cargo_fuzz~github] [![cargo-fuzz~lib.rs][c~cargo_fuzz~lib.rs~badge]][c~cargo_fuzz~lib.rs]{{hi:cargo-fuzz}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
+[![cargo-fuzz][c~cargo-fuzz~docs~badge]][c~cargo-fuzz~docs] [![cargo-fuzz~crates.io][c~cargo-fuzz~crates.io~badge]][c~cargo-fuzz~crates.io] [![cargo-fuzz~github][c~cargo-fuzz~github~badge]][c~cargo-fuzz~github] [![cargo-fuzz~lib.rs][c~cargo-fuzz~lib.rs~badge]][c~cargo-fuzz~lib.rs]{{hi:cargo-fuzz}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
 
 A [`cargo`][c~cargo~docs]↗{{hi:cargo}} subcommand for fuzzing with [`libFuzzer`](https://llvm.org/docs/LibFuzzer.html)↗{{hi:libFuzzer}}.
 

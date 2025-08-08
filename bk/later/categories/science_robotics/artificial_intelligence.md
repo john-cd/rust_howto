@@ -4,16 +4,16 @@
 
 Behavior trees, decision-making, machine learning.
 
-Consider [`bonsai-bt`][c~bonsai_bt~docs]↗{{hi:bonsai-bt}} (Behavior Tree implementation) and `optimization-engine`, a pure Rust framework for embedded nonconvex optimization.
+Consider [`bonsai-bt`][c~bonsai-bt~docs]↗{{hi:bonsai-bt}} (Behavior Tree implementation) and `optimization-engine`, a pure Rust framework for embedded nonconvex optimization.
 
 ## Create a Behavior Tree with `bonsai-bt` {#bonsai-bt}
 
-[![bonsai-bt][c~bonsai_bt~docs~badge]][c~bonsai_bt~docs]{{hi:bonsai-bt}}
-[![bonsai-bt~crates.io][c~bonsai_bt~crates.io~badge]][c~bonsai_bt~crates.io]
-[![bonsai-bt~github][c~bonsai_bt~github~badge]][c~bonsai_bt~github]
-[![bonsai-bt~lib.rs][c~bonsai_bt~lib.rs~badge]][c~bonsai_bt~lib.rs]
+[![bonsai-bt][c~bonsai-bt~docs~badge]][c~bonsai-bt~docs]{{hi:bonsai-bt}}
+[![bonsai-bt~crates.io][c~bonsai-bt~crates.io~badge]][c~bonsai-bt~crates.io]
+[![bonsai-bt~github][c~bonsai-bt~github~badge]][c~bonsai-bt~github]
+[![bonsai-bt~lib.rs][c~bonsai-bt~lib.rs~badge]][c~bonsai-bt~lib.rs]
 
-[`bonsai-bt`][c~bonsai_bt~docs]↗{{hi:bonsai-bt}} is a Rust implementation of behavior trees. A [Behavior Tree (Wikipedia)][behavior-tree~wikipedia] (BT) is a data structure in which we can set the rules of how certain behavior's can occur, and the order in which they would execute. BTs are a very efficient way of creating complex systems that are both modular and reactive. These properties are crucial in many applications, which has led to the spread of BT from computer game programming to many branches of AI and Robotics.
+[`bonsai-bt`][c~bonsai-bt~docs]↗{{hi:bonsai-bt}} is a Rust implementation of behavior trees. A [Behavior Tree (Wikipedia)][behavior-tree~wikipedia] (BT) is a data structure in which we can set the rules of how certain behavior's can occur, and the order in which they would execute. BTs are a very efficient way of creating complex systems that are both modular and reactive. These properties are crucial in many applications, which has led to the spread of BT from computer game programming to many branches of AI and Robotics.
 
 ```rust,editable
 {{#include ../../../crates/cats/science_robotics/examples/artificial_intelligence/bonsai_bt.rs:example}}
@@ -34,10 +34,10 @@ Consider [`bonsai-bt`][c~bonsai_bt~docs]↗{{hi:bonsai-bt}} (Behavior Tree imple
 
 Rust Crates:
 
-- [`dora-rs`][c~dora_rs~docs]↗{{hi:dora-rs}}: Robotics framework for AI applications. Low usage.
+- [`dora-rs`][c~dora-rs~docs]↗{{hi:dora-rs}}: Robotics framework for AI applications. Low usage.
 - `optimization-engine`: [Embedded][p~embedded] optimization for robotics.
 
-[![dora-rs][c~dora_rs~docs~badge]][c~dora_rs~docs] [![dora-rs~crates.io][c~dora_rs~crates.io~badge]][c~dora_rs~crates.io] [![dora-rs~github][c~dora_rs~github~badge]][c~dora_rs~github] [![dora-rs~lib.rs][c~dora_rs~lib.rs~badge]][c~dora_rs~lib.rs]{{hi:dora-rs}}
+[![dora-rs][c~dora-rs~docs~badge]][c~dora-rs~docs] [![dora-rs~crates.io][c~dora-rs~crates.io~badge]][c~dora-rs~crates.io] [![dora-rs~github][c~dora-rs~github~badge]][c~dora-rs~github] [![dora-rs~lib.rs][c~dora-rs~lib.rs~badge]][c~dora-rs~lib.rs]{{hi:dora-rs}}
 
 Dataflow Oriented Robotic Architecture
 

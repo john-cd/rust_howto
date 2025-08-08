@@ -838,7 +838,7 @@
 [wikipedia~julia-set]: https://en.wikipedia.org/wiki/Julia_set
 [wikipedia~model-checking]: https://en.wikipedia.org/wiki/Model_checking
 [wikipedia~parsing-expression-grammars]: https://en.wikipedia.org/wiki/Parsing_expression_grammar
-[wikipedia~percent_encoding]: https://en.wikipedia.org/wiki/percent-encoding
+[wikipedia~percent-encoding]: https://en.wikipedia.org/wiki/percent-encoding
 [wikipedia~race-condition]: https://en.wikipedia.org/wiki/Race_condition#File_systems
 [wikipedia~splay-tree]: https://en.wikipedia.org/wiki/Splay_tree
 [wikipedia~uniform-distribution]: https://en.wikipedia.org/wiki/Uniform_distribution_(continuous)

@@ -46,7 +46,7 @@ The [`yew`][c~yew~docs]↗{{hi:yew}}, [`seed`][c~seed~docs]↗{{hi:seed}}, [`lep
 [write](https://github.com/john-cd/rust_howto/issues/970)
 Browser-based Execution.
 Node.js with WASM.
-Cover [`wat`][c~wat~docs]↗{{hi:wat}}, [`parity-wasm`][c~parity_wasm~docs]↗{{hi:parity-wasm}}
+Cover [`wat`][c~wat~docs]↗{{hi:wat}}, [`parity-wasm`][c~parity-wasm~docs]↗{{hi:parity-wasm}}
 
 - [WASIX - The Superset of WASI](https://wasix.org/)
 - [wasmtime: A fast and secure runtime for WebAssembly](https://github.com/bytecodealliance/wasmtime)

@@ -22,7 +22,7 @@ Some [GUI][p~gui] frameworks, like [`iced`][c~iced~docs]↗{{hi:iced}} or [`egui
 
 ## WebAssembly (WASM) Considerations {#skip}
 
-File dialogs in [WASM][p~wasm] are restricted due to security reasons. You'll typically need to use JavaScript APIs to interact with file systems in a WASM context. Crates like [`wasm-bindgen`][c~wasm_bindgen~docs]↗{{hi:wasm-bindgen}} can be used for this purpose.
+File dialogs in [WASM][p~wasm] are restricted due to security reasons. You'll typically need to use JavaScript APIs to interact with file systems in a WASM context. Crates like [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} can be used for this purpose.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

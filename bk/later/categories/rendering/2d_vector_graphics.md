@@ -4,11 +4,11 @@
 
 ## `lyon` {#lyon}
 
-[`lyon`][c~lyon~docs]↗{{hi:lyon}} is a library for generating vector paths and shapes. It's useful for creating the geometry for vector [graphics][p~graphics], but you'd typically use a [rendering][p~rendering] library like [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`raqote`][c~raqote~docs]↗{{hi:raqote}}, or [`tiny-skia`][c~tiny_skia~docs]↗{{hi:tiny-skia}} to actually draw them. [`lyon`][c~lyon~docs]↗{{hi:lyon}} handles the math and path calculations.
+[`lyon`][c~lyon~docs]↗{{hi:lyon}} is a library for generating vector paths and shapes. It's useful for creating the geometry for vector [graphics][p~graphics], but you'd typically use a [rendering][p~rendering] library like [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`raqote`][c~raqote~docs]↗{{hi:raqote}}, or [`tiny-skia`][c~tiny-skia~docs]↗{{hi:tiny-skia}} to actually draw them. [`lyon`][c~lyon~docs]↗{{hi:lyon}} handles the math and path calculations.
 
 [`lyon`][c~lyon~docs]↗{{hi:lyon}} generates vector paths and shapes. Often used with a rendering library. For basic geometry, you might just use structs and functions within your own code. [`lyon`][c~lyon~docs]↗{{hi:lyon}} can also generate various types of curves (Bézier curves, etc.).
 
-It's useful for creating the geometry for vector graphics, but you'd typically use a [rendering][p~rendering] library like [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`raqote`][c~raqote~docs]↗{{hi:raqote}}, or [`tiny-skia`][c~tiny_skia~docs]↗{{hi:tiny-skia}} to actually draw them.
+It's useful for creating the geometry for vector graphics, but you'd typically use a [rendering][p~rendering] library like [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`raqote`][c~raqote~docs]↗{{hi:raqote}}, or [`tiny-skia`][c~tiny-skia~docs]↗{{hi:tiny-skia}} to actually draw them.
 
 ## `femtovg` {#femtovg}
 

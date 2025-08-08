@@ -21,7 +21,7 @@ For example, [`realworld-rust-axum-sqlx`][realworld~rust-axum-sqlx~github]↗ is
 
 ## Templates {#rust-templates}
 
-[![cargo-generate][c~cargo_generate~docs~badge]][c~cargo_generate~docs] [![cargo-generate~crates.io][c~cargo_generate~crates.io~badge]][c~cargo_generate~crates.io] [![cargo-generate~github][c~cargo_generate~github~badge]][c~cargo_generate~github] [![cargo-generate~lib.rs][c~cargo_generate~lib.rs~badge]][c~cargo_generate~lib.rs]{{hi:cargo-generate}}
+[![cargo-generate][c~cargo-generate~docs~badge]][c~cargo-generate~docs] [![cargo-generate~crates.io][c~cargo-generate~crates.io~badge]][c~cargo-generate~crates.io] [![cargo-generate~github][c~cargo-generate~github~badge]][c~cargo-generate~github] [![cargo-generate~lib.rs][c~cargo-generate~lib.rs~badge]][c~cargo-generate~lib.rs]{{hi:cargo-generate}}
 
 [`cargo-generate`](https://github.com/cargo-generate/cargo-generate)↗ helps you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
 

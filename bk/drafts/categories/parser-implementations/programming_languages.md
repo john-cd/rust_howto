@@ -35,7 +35,7 @@ See [[write_proc_macros | Write Proc Macros]].
 
 ## Parse WebAssembly (WAT/WASM) {#wasm_parsing}
 
-[`wat`][c~wat~docs]↗{{hi:wat}} parses WAT (WebAssembly Text Format). [`parity-wasm`][c~parity_wasm~docs]↗{{hi:parity-wasm}} is a more general WebAssembly tooling library.
+[`wat`][c~wat~docs]↗{{hi:wat}} parses WAT (WebAssembly Text Format). [`parity-wasm`][c~parity-wasm~docs]↗{{hi:parity-wasm}} is a more general WebAssembly tooling library.
 
 Refer to the [[wasm | WASM]] chapter.
 

@@ -8,7 +8,7 @@ The most common form of synchronization{{hi:Synchronization}} in an async{{hi:as
 
 [![tokio~website][c~tokio~website~badge]][c~tokio~website] [![tokio][c~tokio~docs~badge]][c~tokio~docs] [![tokio~crates.io][c~tokio~crates.io~badge]][c~tokio~crates.io] [![tokio~github][c~tokio~github~badge]][c~tokio~github] [![tokio~lib.rs][c~tokio~lib.rs~badge]][c~tokio~lib.rs]{{hi:tokio}}{{hi:Io}}{{hi:Async}}{{hi:Non-blocking}}{{hi:Futures}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
-Tokio's [`sync`][c~tokio_sync~docs]↗ module provides channels{{hi:Channels}} that work well with async code.
+Tokio's [`sync`][c~tokio::sync~docs]↗ module provides channels{{hi:Channels}} that work well with async code.
 
 ### OneShot {#oneshot}
 
@@ -38,7 +38,7 @@ Another example:
 
 [![async-channel][c~async_channel~docs~badge]][c~async_channel~docs] [![async-channel~crates.io][c~async_channel~crates.io~badge]][c~async_channel~crates.io] [![async-channel~github][c~async_channel~github~badge]][c~async_channel~github] [![async-channel~lib.rs][c~async_channel~lib.rs~badge]][c~async_channel~lib.rs]{{hi:async-channel}}{{hi:Chan}}{{hi:Futures}}{{hi:Mpsc}}{{hi:Spmc}}{{hi:Mpmc}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}
 
-[`async-channel`][c~async_channel~docs]↗{{hi:async-channel}} offers two kinds of async multi-producer multi-consumer channel, where each message can be received by only one of all existing consumers.
+[`async-channel`][c~async-channel~docs]↗{{hi:async-channel}} offers two kinds of async multi-producer multi-consumer channel, where each message can be received by only one of all existing consumers.
 
 - Bounded channel with limited capacity,
 - Unbounded channel with unlimited capacity.

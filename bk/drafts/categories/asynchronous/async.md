@@ -50,17 +50,17 @@ Rust's implementation of [`async`][book~rust-reference~async]{{hi:async}}↗ dif
 - The [`async`][book~rust-reference~async]{{hi:async}}↗ / [`await`][book~rust-reference~await]{{hi:await}}↗ syntactic sugar is supported directly by the Rust compiler.
 - The most fundamental [traits][p~traits], types, and [functions][p~functions], such as the [`std::future::Future`][c~std::future::Future~docs]{{hi:std::future::Future}}↗ trait, are provided by the standard library.
 - Many utility types, [macros][p~macros] and [functions][p~functions] are provided by the [`[futures`][c~futures~docs]{{hi:futures}}↗ crate. They can be used in any async Rust application.
-- Execution of async code, IO and task spawning are provided by "async runtimes", such as [`tokio`][c~tokio~docs]{{hi:tokio}}↗ and [`async_std`][c~async_std~docs]{{hi:async-std}}↗. Most async applications, and some async crates, depend on a specific runtime.
+- Execution of async code, IO and task spawning are provided by "async runtimes", such as [`tokio`][c~tokio~docs]{{hi:tokio}}↗ and [`async-std`][c~async-std~docs]{{hi:async-std}}↗. Most async applications, and some async crates, depend on a specific runtime.
 
 ## Async Runtimes {#async-runtimes}
 
-[![async-std][c~async_std~docs~badge]][c~async_std~docs]{{hi:async-std}} [![smol][c~smol~docs~badge]][c~smol~docs]{{hi:smol}} [![embassy][c~embassy~docs~badge]][c~embassy~docs]{{hi:embassy}} [![mio][c~mio~docs~badge]][c~mio~docs]{{hi:mio}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
+[![async-std][c~async-std~docs~badge]][c~async-std~docs]{{hi:async-std}} [![smol][c~smol~docs~badge]][c~smol~docs]{{hi:smol}} [![embassy][c~embassy~docs~badge]][c~embassy~docs]{{hi:embassy}} [![mio][c~mio~docs~badge]][c~mio~docs]{{hi:mio}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 
 In most cases, prefer the [`tokio`][p~tokio]{{hi:tokio}} runtime - see [The State of Async Rust: Runtimes][blog~state-of-async-rust]↗.
 
 Alternatives to the [Tokio][p~tokio] async ecosystem include:
 
-- [![async-std][c~async_std~docs~badge]][c~async_std~docs]{{hi:async-std}} [![async_std~crates.io][c~async_std~crates.io~badge]][c~async_std~crates.io]↗: async version of the Rust standard library. No longer maintained?
+- [![async-std][c~async-std~docs~badge]][c~async-std~docs]{{hi:async-std}} [![async-std~crates.io][c~async-std~crates.io~badge]][c~async-std~crates.io]↗: async version of the Rust standard library. No longer maintained?
 - [![smol][c~smol~docs~badge]][c~smol~docs]{{hi:smol}} [Smol][c~smol~crates.io]↗.
 - [![embassy][c~embassy~docs~badge]][c~embassy~docs]{{hi:embassy}} [Embassy][c~embassy~website]↗ [![embassy~github][c~embassy~github~badge]][c~embassy~github] for embedded systems.
 - [![mio][c~mio~docs~badge]][c~mio~docs]{{hi:mio}} [Mio][c~mio~crates.io]↗ is a fast, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS abstractions. It is part of the Tokio ecosystem.

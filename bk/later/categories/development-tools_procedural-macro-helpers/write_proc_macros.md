@@ -4,7 +4,7 @@
 
 You'll almost always use [`proc-macro`](https://doc.rust-lang.org/proc_macro/index.html)↗{{hi:proc-macro}}, [`syn`][c~syn~docs]↗{{hi:syn}}, and [`quote`][c~quote~docs]↗{{hi:quote}} when writing procedural macros. [`trybuild`][c~trybuild~docs]↗{{hi:trybuild}} is highly recommended for testing.
 
-## `proc-macro` {#proc_macro}
+## `proc_macro` {#proc-macro}
 
 Procedural macro [crates][p~crates] almost always will link to the compiler-provided [`proc_macro`][c~proc_macro~docs]↗{{hi:proc_macro}} crate. The proc_macro crate provides types required for writing procedural macros and facilities to make it easier.
 
@@ -46,17 +46,17 @@ The [`syn`][c~syn~docs]{{hi:syn}}↗ crate in Rust is a fundamental library for 
 
 ## `proc-macro2` {#proc-macro2}
 
-[![proc-macro2][c~proc_macro2~docs~badge]][c~proc_macro2~docs] [![proc-macro2~crates.io][c~proc_macro2~crates.io~badge]][c~proc_macro2~crates.io] [![proc-macro2~github][c~proc_macro2~github~badge]][c~proc_macro2~github] [![proc-macro2~lib.rs][c~proc_macro2~lib.rs~badge]][c~proc_macro2~lib.rs]{{hi:proc-macro2}}{{hi:Macros}}{{hi:Syn}}[![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
+[![proc-macro2][c~proc-macro2~docs~badge]][c~proc-macro2~docs] [![proc-macro2~crates.io][c~proc-macro2~crates.io~badge]][c~proc-macro2~crates.io] [![proc-macro2~github][c~proc-macro2~github~badge]][c~proc-macro2~github] [![proc-macro2~lib.rs][c~proc-macro2~lib.rs~badge]][c~proc-macro2~lib.rs]{{hi:proc-macro2}}{{hi:Macros}}{{hi:Syn}}[![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
 
-[`proc_macro2`][c~proc_macro2~docs]{{hi:proc-macro2}}↗ [![proc_macro2~github][c~proc_macro2~github~badge]][c~proc_macro2~github] bring proc-macro-like functionality to other contexts like build.rs and main.rs and makes procedural macros unit testable.
+[`proc-macro2`][c~proc-macro2~docs]{{hi:proc-macro2}}↗ [![proc-macro2~github][c~proc-macro2~github~badge]][c~proc-macro2~github] bring proc-macro-like functionality to other contexts like build.rs and main.rs and makes procedural macros unit testable.
 
 A substitute implementation of the compiler's [`proc_macro`][c~proc_macro~docs]↗{{hi:proc_macro}} API to decouple token-based libraries from the procedural macro use case.
 
-A wrapper around the procedural macro API of the compiler's proc_macro crate. This library serves two purposes:
+A wrapper around the procedural macro API of the compiler's `proc_macro` crate. This library serves two purposes:
 
-Bring proc-macro-like functionality to other contexts like build.rs and main.rs. Types from proc_macro are entirely specific to procedural [macros][p~macros] and cannot ever exist in code outside of a procedural macro. Meanwhile [`proc_macro2`][c~proc_macro2~docs]↗{{hi:proc_macro2}} types may exist anywhere including non-macro code. By developing foundational libraries like [`syn`][c~syn~docs]↗{{hi:syn}} and [`quote`][c~quote~docs]↗{{hi:quote}} against [`proc_macro2`][c~proc_macro2~docs]↗{{hi:proc_macro2}} rather than proc_macro, the procedural macro ecosystem becomes easily applicable to many other use cases and we avoid re-implementing non-macro equivalents of those libraries.
+Bring proc-macro-like functionality to other contexts like build.rs and main.rs. Types from proc-macro are entirely specific to procedural [macros][p~macros] and cannot ever exist in code outside of a procedural macro. Meanwhile [`proc-macro2`][c~proc-macro2~docs]↗{{hi:proc-macro2}} types may exist anywhere including non-macro code. By developing foundational libraries like [`syn`][c~syn~docs]↗{{hi:syn}} and [`quote`][c~quote~docs]↗{{hi:quote}} against [`proc-macro2`][c~proc-macro2~docs]↗{{hi:proc-macro2}} rather than proc-macro, the procedural macro ecosystem becomes easily applicable to many other use cases and we avoid re-implementing non-macro equivalents of those libraries.
 
-Make procedural [macros][p~macros] unit testable. As a consequence of being specific to procedural [macros][p~macros], nothing that uses proc_macro can be executed from a unit test. In order for helper libraries or components of a macro to be testable in isolation, they must be implemented using proc_macro2.
+Make procedural [macros][p~macros] unit testable. As a consequence of being specific to procedural [macros][p~macros], nothing that uses `proc_macro` can be executed from a unit test. In order for helper libraries or components of a macro to be testable in isolation, they must be implemented using `proc-macro2`.
 
 [![proc-macro-workshop~github][proc-macro-workshop~github~badge]][proc-macro-workshop~github]
 

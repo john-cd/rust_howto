@@ -18,9 +18,9 @@ A number of third-party libraries support [`tower`][c~tower~docs]{{hi:tower}}↗
 
 ## `tower-http` {#tower-http}
 
-[![tower_http][c~tower_http~docs~badge]][c~tower_http~docs]{{hi:tower_http}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}} [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}
+[![tower-http][c~tower-http~docs~badge]][c~tower-http~docs]{{hi:tower-http}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}} [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}
 
-[`Tower HTTP`][c~tower_http~docs]{{hi:tower_http}}↗ contains HTTP specific Tower utilities.
+[`Tower HTTP`][c~tower-http~docs]{{hi:tower-http}}↗ contains HTTP specific Tower utilities.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/web_programming_http_server/examples/middleware/tower_http.rs:example}}

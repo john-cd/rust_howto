@@ -2,7 +2,7 @@
 
 {{#include json.incl.md}}
 
-[`serde_json`][c~serde_json~docs]↗{{hi:serde_json}} is the most commonly used crate for JSON Parsing. [`simd_json`][c~simd_json~docs]↗{{hi:simd_json}} is optimized for performance.
+[`serde_json`][c~serde_json~docs]↗{{hi:serde_json}} is the most commonly used crate for JSON Parsing. [`simd-json`][c~simd-json~docs]↗{{hi:simd-json}} is optimized for performance.
 
 ## Parse JSON with `serde_json` {#serde-json}
 
@@ -26,12 +26,12 @@
 
 ## Parse JSON with `simd-json` {#simd-json}
 
-[![simd-json][c~simd_json~docs~badge]][c~simd_json~docs] [![simd-json~crates.io][c~simd_json~crates.io~badge]][c~simd_json~crates.io] [![simd-json~github][c~simd_json~github~badge]][c~simd_json~github] [![simd-json~lib.rs][c~simd_json~lib.rs~badge]][c~simd_json~lib.rs]{{hi:simd-json}}
+[![simd-json][c~simd-json~docs~badge]][c~simd-json~docs] [![simd-json~crates.io][c~simd-json~crates.io~badge]][c~simd-json~crates.io] [![simd-json~github][c~simd-json~github~badge]][c~simd-json~github] [![simd-json~lib.rs][c~simd-json~lib.rs~badge]][c~simd-json~lib.rs]{{hi:simd-json}}
 
-[`simd-json`][c~simd_json~docs]↗{{hi:simd-json}} is a high-performance JSON parser based on a port of [`simdjson`](https://github.com/simdjson/simdjson)↗{{hi:simdjson}}.
+[`simd-json`][c~simd-json~docs]↗{{hi:simd-json}} is a high-performance JSON parser based on a port of [`simdjson`](https://github.com/simdjson/simdjson)↗{{hi:simdjson}}.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/examples/json/simd_json.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/json/simd-json.rs:example}}
 ```
 
 {{#include refs.incl.md}}

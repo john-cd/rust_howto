@@ -3,7 +3,7 @@
 {{#include rtos.incl.md}}
 
 [`rtic`][c~rtic~docs]↗{{hi:rtic}}: A framework for building real-time applications.
-[`bare-metal`][c~bare_metal~docs]↗{{hi:bare-metal}}: A minimal RTOS.
+[`bare-metal`][c~bare-metal~docs]↗{{hi:bare-metal}}: A minimal RTOS.
 [`freertos-rs`][c~freertos~docs]↗{{hi:freertos-rs}}: Bindings to FreeRTOS.
 
 {{#include refs.incl.md}}

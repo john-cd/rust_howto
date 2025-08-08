@@ -12,7 +12,7 @@ The Rust ML ecosystem is relatively young compared to Python's. However, Rust's 
 |---|---|---|
 | Classical Machine Learning Algorithms | [`linfa`][c~linfa~docs]↗{{hi:linfa}}, [`smartcore`][c~smartcore~docs]↗{{hi:smartcore}} | [`linfa`][c~linfa~docs]↗{{hi:linfa}} implements various ML algorithms. [`smartcore`][c~smartcore~docs]↗{{hi:smartcore}} is another option that provides implementations of common algorithms. |
 | Deep Learning | [`tch-rs`][c~tch~docs]↗{{hi:tch-rs}}, [`burn`][c~burn~docs]↗{{hi:burn}} | [`tch-rs`][c~tch~docs]↗{{hi:tch-rs}} provides access to PyTorch, enabling deep learning models. [`burn`][c~burn~docs]↗{{hi:burn}} is a new deep learning framework written in Rust. |
-| Natural Language Processing NLP | [`tokenizers`][c~tokenizers~docs]↗{{hi:tokenizers}}, [`rust-bert`][c~rust_bert~docs]↗{{hi:rust-bert}} | [`tokenizers`][c~tokenizers~docs]↗{{hi:tokenizers}} provides fast tokenization, and [`rust-bert`][c~rust_bert~docs]↗{{hi:rust-bert}} offers pre-trained BERT models. |
+| Natural Language Processing NLP | [`tokenizers`][c~tokenizers~docs]↗{{hi:tokenizers}}, [`rust-bert`][c~rust-bert~docs]↗{{hi:rust-bert}} | [`tokenizers`][c~tokenizers~docs]↗{{hi:tokenizers}} provides fast tokenization, and [`rust-bert`][c~rust-bert~docs]↗{{hi:rust-bert}} offers pre-trained BERT models. |
 | Reinforcement Learning | [`rl-rs`][c~rl~docs]↗{{hi:rl-rs}}, [`gym-rs`][c~gym~docs]↗{{hi:gym-rs}} | [`rl-rs`][c~rl~docs]↗{{hi:rl-rs}} is a reinforcement learning library, and [`gym-rs`][c~gym~docs]↗{{hi:gym-rs}} provides bindings to the OpenAI Gym environment. |
 | ONNX Runtime | [`onnxruntime`][c~onnxruntime~docs]↗{{hi:onnxruntime}} | Allows running models in the ONNX format. |
 

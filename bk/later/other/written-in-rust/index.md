@@ -31,7 +31,7 @@ This section provides a few examples of software written in Rust, organized by t
     - [`eza`](https://github.com/eza-community/eza): another alternative to `ls`.
     - [`lsd`][c~lsd~docs] [(GitHub)](https://github.com/lsd-rs/lsd)↗{{hi:lsd}}: next-gen `ls` command.
     - [`bat`][c~bat~docs] [(GitHub)][c~bat~github]↗{{hi:bat}}: a `cat` clone with syntax highlighting and Git integration.
-    - [`fd`][c~fd~docs] [(GitHub)][c~fd_find~github]↗: an alternative to 'find'.
+    - [`fd`][c~fd~docs] [(GitHub)][c~fd-find~github]↗: an alternative to 'find'.
     - [`fish`](https://github.com/fish-shell/fish-shell): a command-line shell.
     - [`nushell`][c~nushell~docs]↗ [(GitHub)](https://github.com/nushell/nushell): a new type of shell.
     - [`zoxide`][c~zoxide~docs]↗{{hi:zoxide}}: a smarter `cd` command.

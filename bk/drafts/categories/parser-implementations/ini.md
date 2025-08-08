@@ -4,12 +4,12 @@
 
 ## Parse INI Configuration Files with `rust-ini` {#ini}
 
-[![rust-ini][c~rust_ini~docs~badge]][c~rust_ini~docs] [![rust-ini~crates.io][c~rust_ini~crates.io~badge]][c~rust_ini~crates.io] [![rust-ini~github][c~rust_ini~github~badge]][c~rust_ini~github] [![rust-ini~lib.rs][c~rust_ini~lib.rs~badge]][c~rust_ini~lib.rs]{{hi:rust-ini}}{{hi:INI}}{{hi:Configuration}}
+[![rust-ini][c~rust-ini~docs~badge]][c~rust-ini~docs] [![rust-ini~crates.io][c~rust-ini~crates.io~badge]][c~rust-ini~crates.io] [![rust-ini~github][c~rust-ini~github~badge]][c~rust-ini~github] [![rust-ini~lib.rs][c~rust-ini~lib.rs~badge]][c~rust-ini~lib.rs]{{hi:rust-ini}}{{hi:INI}}{{hi:Configuration}}
 
-[`rust-ini`][c~rust_ini~docs]↗{{hi:rust-ini}} is an INI configuration file parsing library.
+[`rust-ini`][c~rust-ini~docs]↗{{hi:rust-ini}} is an INI configuration file parsing library.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/examples/ini/rust_ini.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/ini/rust-ini.rs:example}}
 ```
 
 ## Other Options {#skip}

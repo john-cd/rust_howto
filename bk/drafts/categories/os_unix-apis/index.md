@@ -34,7 +34,7 @@ Bindings to Unix-specific APIs.{{hi:UNIX-specific APIs}}.
 
 ## Handling POSIX Signals
 
-- [`nix`][c~nix~docs]↗{{hi:nix}}, [`signal-hook`][c~signal_hook~docs]↗{{hi:signal-hook}}.
+- [`nix`][c~nix~docs]↗{{hi:nix}}, [`signal-hook`][c~signal-hook~docs]↗{{hi:signal-hook}}.
 
 ## Code Examples
 

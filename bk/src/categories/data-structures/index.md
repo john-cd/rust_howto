@@ -80,7 +80,7 @@ The following examples cover less commonly-used data structures:
 - [[smart_pointers | Smart Pointers]].
 - Immutable Data Structures: [`im`][c~im~docs]↗{{hi:im}}, [`rpds`][c~rpds~docs]↗{{hi:rpds}}. See [[functional_programming | Functional Programming]].
 - Specialized Data Structures:
-  - Graphs: [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}}, [`graph-rs`][c~graph_rs~docs]↗{{hi:graph-rs}}.
+  - Graphs: [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}}, [`graph-rs`][c~graph-rs~docs]↗{{hi:graph-rs}}.
   - Trees and Tries: [`indextree`][c~indextree~docs]↗{{hi:indextree}}.
   - Bloom Filters: [`bloomfilter`][c~bloomfilter~docs]↗{{hi:bloomfilter}}.
   - Skip Lists: [`skiplist`][c~skiplist~docs]↗{{hi:skiplist}}.
