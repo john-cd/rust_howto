@@ -25,9 +25,9 @@ It is the main purpose of this book to provide expansive coverage of "key" or "f
 You may also use the following sites for crate recommendations:
 
 - [`blessed.rs`][blessed-rs~website]{{hi:blessed.rs}}↗,
-- [`lib.rs`][lib-rs]{{hi:lib.rs}}↗, and in particular,
-  - [Most Popular Rust Libraries][lib-rs~most-popular]↗,
-  - Crates [statistics][lib-rs~stats]↗,
+- [`lib.rs`][lib.rs~website]{{hi:lib.rs}}↗, and in particular,
+  - [Most Popular Rust Libraries][lib.rs~most-popular~website]↗,
+  - Crates [statistics][lib.rs~stats~website]↗,
 - The Rust community's official crate registry: [`crates.io`][crates.io~website]{{hi:crates.io}}↗,
   - [`crates.io`'s Most (Recent) Downloads][crates.io~most-recent-downloads]↗.
   - You should search for crates by [category](https://crates.io/categories)↗ and by [keywords](https://crates.io/keywords)↗.

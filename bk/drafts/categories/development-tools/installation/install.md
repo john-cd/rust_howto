@@ -8,7 +8,7 @@
 | Installer Generators | [`cargo-deb`][c~cargo-deb~docs]↗{{hi:cargo-deb}}, [`cargo-rpm`][c~cargo-rpm~docs]↗{{hi:cargo-rpm}}, [`create-dmg`](https://github.com/create-dmg/create-dmg)↗{{hi:create-dmg}} (for creating Debian packages, RPM packages, and [macOS][p~macos] disk [images][p~images], respectively) |
 | Cross-Platform Installers | `tauri-bundler` (for bundling desktop applications) |
 | Self-Updating | `self_update` |
-| Build Systems (for installation scripts) | xtask (for managing complex builds and installation-related tasks) |
+| Build Systems (for installation scripts) | `xtask` (for managing complex builds and installation-related tasks) |
 
 ## Build and Install a Rust Binary with `cargo install` {#cargo-install}
 

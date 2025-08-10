@@ -1,3 +1,3 @@
 | Recipe | Crates | Categories |
 |---|---|---|
-| [`RustQuant`][ex~finance~rustquant] | [![rustquant][c~rustquant~docs~badge]][c~rustquant~docs] | [![cat~finance][cat~finance~badge]][cat~finance] |
+| [`RustQuant`][ex~finance~rustquant] | [![rustquant][c~RustQuant~docs~badge]][c~RustQuant~docs] | [![cat~finance][cat~finance~badge]][cat~finance] |

@@ -79,7 +79,7 @@ It supports all [UNIX][p~unix] and [Windows][p~windows] terminals down to [Windo
 
 [![nu-ansi-term][c~nu-ansi-term~docs~badge]][c~nu-ansi-term~docs] [![nu-ansi-term~crates.io][c~nu-ansi-term~crates.io~badge]][c~nu-ansi-term~crates.io] [![nu-ansi-term~github][c~nu-ansi-term~github~badge]][c~nu-ansi-term~github] [![nu-ansi-term~lib.rs][c~nu-ansi-term~lib.rs~badge]][c~nu-ansi-term~lib.rs]{{hi:nu-ansi-term}}
 
-[`nu-ansi-term`][c~nu-ansi-term~docs] is a library for ANSI terminal colors and styles (e.g. bold, underline). [`nu-ansi-term`][c~nu-ansi-term~docs]↗{{hi:nu-ansi-term}} provides ANSI terminal coloring and styling capabilities, particularly focused on supporting the styling needs of the [`NuShell`][c~nushell~docs]↗{{hi:NuShell}} project. When used independently, it offers a convenient and familiar API for those already working within the Nu ecosystem, enabling styled terminal output with support for common formatting options.
+[`nu-ansi-term`][c~nu-ansi-term~docs] is a library for ANSI terminal colors and styles (e.g. bold, underline). [`nu-ansi-term`][c~nu-ansi-term~docs]↗{{hi:nu-ansi-term}} provides ANSI terminal coloring and styling capabilities, particularly focused on supporting the styling needs of the [`NuShell`][nushell~website]↗{{hi:NuShell}} project. When used independently, it offers a convenient and familiar API for those already working within the Nu ecosystem, enabling styled terminal output with support for common formatting options.
 
 ## `ansiterm` {#ansiterm}
 

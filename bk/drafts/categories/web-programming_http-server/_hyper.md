@@ -36,7 +36,7 @@ Default TLS implementation for use with `hyper`.
 
 [![hyper-rustls][c~hyper-rustls~docs~badge]][c~hyper-rustls~docs] [![hyper-rustls~crates.io][c~hyper-rustls~crates.io~badge]][c~hyper-rustls~crates.io] [![hyper-rustls~github][c~hyper-rustls~github~badge]][c~hyper-rustls~github] [![hyper-rustls~lib.rs][c~hyper-rustls~lib.rs~badge]][c~hyper-rustls~lib.rs]{{hi:hyper-rustls}}
 
-Rustls + `hyper` integration for pure rust HTTPS.
+Rustls + [`hyper`][c~hyper~docs]↗{{hi:hyper}} integration for pure rust HTTPS.
 
 [![hyper-openssl][c~hyper-openssl~docs~badge]][c~hyper-openssl~docs] [![hyper-openssl~crates.io][c~hyper-openssl~crates.io~badge]][c~hyper-openssl~crates.io] [![hyper-openssl~github][c~hyper-openssl~github~badge]][c~hyper-openssl~github] [![hyper-openssl~lib.rs][c~hyper-openssl~lib.rs~badge]][c~hyper-openssl~lib.rs]{{hi:hyper-openssl}}
 

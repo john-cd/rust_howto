@@ -13,7 +13,7 @@ The Rust ecosystem offers several options for building simulations, ranging from
 
 | Topic | Rust Crate(s) | Notes |
 |---|---|---|
-| Physics Engines | `rapier`, `bevy_rapier` (Bevy integration), [`nphysics`][c~nphysics~docs]↗{{hi:nphysics}} | `rapier` is a physics engine focused on performance. `bevy_rapier` integrates `rapier` with the [`bevy`][c~bevy~docs]↗{{hi:bevy}} game engine. [`nphysics`][c~nphysics~docs]↗{{hi:nphysics}} is another physics engine. |
+| Physics Engines | `rapier`, `bevy_rapier` (Bevy integration) | `rapier` is a physics engine focused on performance. `bevy_rapier` integrates `rapier` with the [`bevy`][c~bevy~docs]↗{{hi:bevy}} game engine. `nphysics2d` is another physics engine. |
 | Discrete Event Simulation (DES) | | This area is still developing in pure Rust. General-purpose crates might be used to implement DES logic. |
 | Agent-Based Modeling (ABM) | | Similar to DES, ABM libraries are emerging. General-purpose crates and custom logic are often used. |
 | Computational Fluid Dynamics (CFD) |  | CFD often involves complex numerical computations. Rust's numerical libraries can be used, but dedicated CFD crates are less common. |

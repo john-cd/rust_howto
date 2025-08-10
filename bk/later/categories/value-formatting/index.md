@@ -12,9 +12,9 @@ This table covers Rust crates relevant for formatting values for display.
 
 | Topic | Rust Crate(s) | Notes |
 |---|---|---|
-| [[number_formatting | Number Formatting]] | [`num-format`][c~num-format~docs]↗{{hi:num-format}}, [`icu_number`]()↗{{hi:icu_number}} (part of [`icu`][c~icu~docs]↗{{hi:icu}}) | [`num-format`][c~num-format~docs]↗{{hi:num-format}} provides flexible number formatting. [`icu_number`]()↗{{hi:icu_number}} (from the [`icu`][c~icu~docs]↗{{hi:icu}} crate family) offers more advanced number formatting with internationalization support. |
+| [[number_formatting | Number Formatting]] | [`num-format`][c~num-format~docs]↗{{hi:num-format}}, `icu_number` (part of [`icu`][c~icu~docs]↗{{hi:icu}}) | [`num-format`][c~num-format~docs]↗{{hi:num-format}} provides flexible number formatting. `icu_number` (from the [`icu`][c~icu~docs]↗{{hi:icu}} crate family) offers more advanced number formatting with internationalization support. |
 | [[date-and-time | Date and Time]] Formatting | [`chrono`][c~chrono~docs]↗{{hi:chrono}}, [`time`][c~time~docs]↗{{hi:time}}, [`icu_datetime`][c~icu_datetime~docs]↗{{hi:icu_datetime}} (part of [`icu`][c~icu~docs]↗{{hi:icu}}) | [`chrono`][c~chrono~docs]↗{{hi:chrono}} and [`time`][c~time~docs]↗{{hi:time}} are popular date and time libraries. [`icu_datetime`][c~icu_datetime~docs]↗{{hi:icu_datetime}} (from [`icu`][c~icu~docs]↗{{hi:icu}}) is part of the International Components for Unicode library and provides advanced date and time formatting with i18n support. |
-| Currency Formatting | `icu_number` (part of [`icu`][c~icu~docs]↗{{hi:icu}}) | `icu_number` handles currency formatting according to locale. |
+| Currency Formatting | `icu_number`{{hi:icu_number}} (part of [`icu`][c~icu~docs]↗{{hi:icu}}) | `icu_number`{{hi:icu_number}} handles currency formatting according to locale. |
 | Message Formatting (Pluralization, etc.) | [`fluent`][c~fluent~docs]↗{{hi:fluent}} | [`fluent`][c~fluent~docs]↗{{hi:fluent}} is a popular message formatting system that handles pluralization, gender, and other language-specific variations. |
 
 ## Code Examples
@@ -36,7 +36,7 @@ This table covers Rust crates relevant for formatting values for display.
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/967)
 need in-depth review
-Mention `rtu`, [`itoa`][c~itoa~docs]↗{{hi:itoa}} in this page
+Mention [`itoa`][c~itoa~docs]↗{{hi:itoa}} in this page
 cover  `Inflector`
 
 - [ShowOption](https://lib.rs/crates/show-option)

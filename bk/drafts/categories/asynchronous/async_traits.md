@@ -7,7 +7,7 @@
 As of Rust 1.75, it is possible to have [`async`][book~rust-reference~async]{{hi:async}}↗ functions in traits:
 
 ```rust,editable
-{{#include ../../../crates/cats/asynchronous/examples/async-traits/async_traits.rs:example}}
+{{#include ../../../crates/cats/asynchronous/examples/async_traits/async_traits.rs:example}}
 ```
 
 [Stabilizing [async][p~async] fn in traits in 2023][blog~stabilizing-async-fn-in-traits]↗.
@@ -15,7 +15,7 @@ As of Rust 1.75, it is possible to have [`async`][book~rust-reference~async]{{hi
 This is in turn enabled by return-position `impl Trait` in [traits][p~traits]{{hi:Return-position `impl Trait` in traits}}, since `async fn`{{hi:async fn}} is sugar for functions that return `-> impl Future`.
 
 ```rust,editable
-{{#include ../../../crates/cats/asynchronous/examples/async-traits/async_traits2.rs:example}}
+{{#include ../../../crates/cats/asynchronous/examples/async_traits/async_traits2.rs:example}}
 ```
 
 Note that there are still caveats for public [traits][p~traits] - see [Announcing `[async][p~async] fn` and return-position `impl Trait` in [traits][p~traits]][blog~announcing-async-fn]↗.
@@ -25,7 +25,7 @@ In addition, [traits][p~traits] that use `-> impl Trait` and `[async][p~async] f
 [![async-trait][c~async-trait~docs~badge]][c~async-trait~docs]{{hi:async-trait}} [![async-trait~github][c~async-trait~github~badge]][c~async-trait~github] [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 
 ```rust,editable
-{{#include ../../../crates/cats/asynchronous/examples/async-traits/async_traits3.rs:example}}
+{{#include ../../../crates/cats/asynchronous/examples/async_traits/async_traits3.rs:example}}
 ```
 
 ## Related Topics {#related-topics}

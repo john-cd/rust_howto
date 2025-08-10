@@ -4,9 +4,9 @@
 
 ## `RustQuant` {#rustquant}
 
-[![rustquant][c~rustquant~docs~badge]][c~rustquant~docs] [![rustquant~crates.io][c~rustquant~crates.io~badge]][c~rustquant~crates.io] [![rustquant~github][c~rustquant~github~badge]][c~rustquant~github] [![rustquant~lib.rs][c~rustquant~lib.rs~badge]][c~rustquant~lib.rs]{{hi:rustquant}}{{hi:Finance}}{{hi:Monte-Carlo}}{{hi:Option-pricing}}{{hi:Quantitative}}{{hi:Quantlib}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~science][cat~science~badge]][cat~science]{{hi:Science}} [![cat~simulation][cat~simulation~badge]][cat~simulation]{{hi:Simulation}} [![cat~mathematics][cat~mathematics~badge]][cat~mathematics]{{hi:Mathematics}} [![cat~finance][cat~finance~badge]][cat~finance]
+[![rustquant][c~RustQuant~docs~badge]][c~RustQuant~docs] [![rustquant~crates.io][c~RustQuant~crates.io~badge]][c~RustQuant~crates.io] [![rustquant~github][c~RustQuant~github~badge]][c~RustQuant~github] [![rustquant~lib.rs][c~RustQuant~lib.rs~badge]][c~RustQuant~lib.rs]{{hi:rustquant}}{{hi:Finance}}{{hi:Monte-Carlo}}{{hi:Option-pricing}}{{hi:Quantitative}}{{hi:Quantlib}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~science][cat~science~badge]][cat~science]{{hi:Science}} [![cat~simulation][cat~simulation~badge]][cat~simulation]{{hi:Simulation}} [![cat~mathematics][cat~mathematics~badge]][cat~mathematics]{{hi:Mathematics}} [![cat~finance][cat~finance~badge]][cat~finance]
 
-[`RustQuant`][c~rustquant~lib.rs]↗ is a Rust library for quantitative [finance][p~finance].
+[`RustQuant`][c~RustQuant~lib.rs]↗ is a Rust library for quantitative [finance][p~finance].
 
 ```rust,editable
 {{#include ../../../crates/cats/finance/examples/quant/rustquant.rs:example}}

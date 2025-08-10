@@ -86,7 +86,7 @@ Microcontrollers respond to events via interrupts.
 
 ## Panic Handling {#skip}
 
-- [better-panic: A Python-inspired panic handler for rust](https://github.com/mitsuhiko/better-panic)
+- [better-panic: A Python-inspired `panic` handler for rust](https://github.com/mitsuhiko/better-panic)
 - [No-Panic Rust: A Nice Technique for Systems Programming](https://blog.reverberate.org/2025/02/03/no-panic-rust.html)
 - [no-panics-whatsoever (crates.io)](https://crates.io/crates/no-panics-whatsoever)
 

@@ -36,7 +36,7 @@ Another example:
 
 ## Send Messages from Multiple Producers to One of Multiple Consumers {#mpmc}
 
-[![async-channel][c~async_channel~docs~badge]][c~async_channel~docs] [![async-channel~crates.io][c~async_channel~crates.io~badge]][c~async_channel~crates.io] [![async-channel~github][c~async_channel~github~badge]][c~async_channel~github] [![async-channel~lib.rs][c~async_channel~lib.rs~badge]][c~async_channel~lib.rs]{{hi:async-channel}}{{hi:Chan}}{{hi:Futures}}{{hi:Mpsc}}{{hi:Spmc}}{{hi:Mpmc}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}
+[![async-channel][c~async-channel~docs~badge]][c~async-channel~docs] [![async-channel~crates.io][c~async-channel~crates.io~badge]][c~async-channel~crates.io] [![async-channel~github][c~async-channel~github~badge]][c~async-channel~github] [![async-channel~lib.rs][c~async-channel~lib.rs~badge]][c~async-channel~lib.rs]{{hi:async-channel}}{{hi:Chan}}{{hi:Futures}}{{hi:Mpsc}}{{hi:Spmc}}{{hi:Mpmc}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}
 
 [`async-channel`][c~async-channel~docs]↗{{hi:async-channel}} offers two kinds of async multi-producer multi-consumer channel, where each message can be received by only one of all existing consumers.
 

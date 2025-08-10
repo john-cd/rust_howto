@@ -12,17 +12,17 @@ The Rust visualization ecosystem offers a variety of options, from general-purpo
 |---|---|---|
 | 2D Plotting | [`plotters`][c~plotters~docs]↗{{hi:plotters}} | [`plotters`][c~plotters~docs]↗{{hi:plotters}} is a versatile plotting library. |
 | 3D Plotting | [`plotters`][c~plotters~docs]↗{{hi:plotters}} (with extensions), [`glium`][c~glium~docs]↗{{hi:glium}} (graphics library - used to build upon), [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} (WebGPU bindings - useful for cross-platform 3D) | [`plotters`][c~plotters~docs]↗{{hi:plotters}} can be used for basic 3D plots, but for more advanced 3D visualization, you'll likely need to work with a graphics library like [`glium`][c~glium~docs]↗{{hi:glium}} or [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}. |
-| Graph Visualization | [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}}, [`dot`][c~dot~docs]↗{{hi:dot}} (for graph description language) | [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} is a graph library that can be used with visualization tools. [`dot`][c~dot~docs]↗{{hi:dot}} can be used to generate graph descriptions in the DOT language, which can then be rendered by `Graphviz`. |
+| Graph Visualization | [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}}, [`dot`][c~dot~docs]↗{{hi:dot}} (for graph description language) | [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} is a graph library that can be used with visualization tools. [`dot`][c~dot~docs]↗{{hi:dot}} can be used to generate graph descriptions in the DOT language, which can then be rendered by [`Graphviz`](https://graphviz.org/)↗{{hi:Graphviz}}. |
 
 {{#include visualization.incl.md}}
 
 ## Web Visualization
 
-- Rust (compiled to WASM) can use the Canvas API via `web-sys` to draw 2D graphics directly in the browser. This is suitable for simpler visualizations and interactive graphics.
-- For 3D visualizations and high-performance graphics, Rust can leverage WebGL through `web-sys`.
-- Libraries like [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} and `three-d` simplify WebGL development in Rust.
+- Rust (compiled to WASM) can use the Canvas API via [`web-sys`](https://crates.io/crates/web-sys)↗{{hi:web-sys}} to draw 2D graphics directly in the browser. This is suitable for simpler visualizations and interactive graphics.
+- For 3D visualizations and high-performance graphics, Rust can leverage WebGL through [`web-sys`](https://crates.io/crates/web-sys)↗{{hi:web-sys}}.
+- Libraries like [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} and [`three-d`](https://crates.io/crates/three-d)↗{{hi:three-d}} simplify WebGL development in Rust.
   - [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is a WebGPU implementation that allows you to write portable graphics code that can run on WebGL, Vulkan, Metal, and DirectX 12. It provides a efficient way to perform GPU accelerated computations and rendering. This is important for complex 3D rendering and large datasets.
-  - `three-d` is a Rust 3D graphics library built on top of [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}. It simplifies 3D rendering and provides a high-level API for creating interactive 3D visualizations.
+  - [`three-d`](https://crates.io/crates/three-d)↗{{hi:three-d}} is a Rust 3D graphics library built on top of [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}. It simplifies 3D rendering and provides a high-level API for creating interactive 3D visualizations.
 
 [`yew`][c~yew~docs]↗{{hi:yew}} (a front-end framework) and [`egui`][c~egui~docs]↗{{hi:egui}} (an immediate mode GUI) may also be useful.
 

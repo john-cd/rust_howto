@@ -48,7 +48,7 @@
 [autumnai~github]: https://github.com/autumnai
 [awesome-rust~github]: https://github.com/rust-unofficial/awesome-rust
 [awesome-rust~github~badge]: https://img.shields.io/badge/awesome--rust-steelblue?logo=github
-[aws-create-lambda-functions-with-rust]: https://docs.aws.amazon.com/sdk-for-rust/latest/dg/lambda.html
+[aws-create-lambda-functions-with-rust~website]: https://docs.aws.amazon.com/sdk-for-rust/latest/dg/lambda.html
 [aws-doc-sdk~examples~github]: https://github.com/awsdocs/aws-doc-sdk~examples
 [aws-lambda-rust-runtime~examples~github]: https://github.com/awslabs/aws-lambda-rust-runtime/tree/main/examples
 [aws-rust-sdk~website]: https://aws.amazon.com/sdk-for-rust
@@ -104,6 +104,7 @@
 [blog~state-of-async-rust]: https://corrode.dev/blog/async
 [blog~state-of-async-rust~badge]: https://img.shields.io/badge/blog-state_of_async_rust-beige
 [blog~sustainability-with-rust]: https://aws.amazon.com/blogs/opensource/sustainability-with-rust
+[blog~why-rust-is-becoming-a-contender-in-ai-development]: https://www.analyticsinsight.net/artificial-intelligence/why-rust-is-becoming-a-contender-in-ai-development
 [blog~traits]: https://blog.rust-lang.org/2015/05/11/traits.html
 [blog~traits~badge]: https://img.shields.io/badge/blog-traits-beige
 [blog~tuify]: https://developerlife.com/2023/09/17/tuify-clap
@@ -374,7 +375,7 @@
 [deps.rs~website]: https://deps.rs
 [desktop-lite~github]: https://github.com/devcontainers/features/tree/main/src/desktop-lite
 [dev-container-cli~github]: https://github.com/devcontainers/cli
-[dev-container-extension]: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
+[dev-container-extension~website]: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
 [dev-containers-devcontainer.json]: https://code.visualstudio.com/docs/devcontainers/create-dev-container
 [devolutions~website]: https://devolutions.net
 [devx~github]: https://github.com/elastio/devx
@@ -386,7 +387,7 @@
 [distil-networks~website]: https://www.distilnetworks.com
 [django~website]: https://www.djangoproject.com
 [docker-cache~github]: https://github.com/ScribeMD/docker-cache
-[dockerfile]: https://docs.docker.com/reference/dockerfile
+[dockerfile~website]: https://docs.docker.com/reference/dockerfile
 [docker~cache-storage-backends]: https://docs.docker.com/build/cache/backends
 [docker~compose~website]: https://docs.docker.com/compose
 [docker~desktop~website]: https://www.docker.com/products/docker-desktop
@@ -499,9 +500,9 @@
 [lechevspace~github]: https://github.com/LechevSpace
 [lechevspace~website]: https://lechev.space
 [lemmy~github]: https://github.com/LemmyNet/lemmy
-[lib-rs]: https://lib.rs
-[lib-rs~most-popular]: https://lib.rs/std
-[lib-rs~stats]: https://lib.rs/stats
+[lib.rs~website]: https://lib.rs
+[lib.rs~most-popular~website]: https://lib.rs/std
+[lib.rs~stats~website]: https://lib.rs/stats
 [libra~website]: https://libra.org
 [libsodium~website]: https://doc.libsodium.org
 [licecap~website]: https://www.cockos.com/licecap
@@ -509,7 +510,7 @@
 [linkerd~website]: https://linkerd.io
 [lld~website]: https://lld.llvm.org
 [lld~website~badge]: https://img.shields.io/badge/lld-coral
-[locahost:6080]: http://localhost:6080
+[locahost:6080~website]: http://localhost:6080
 [localhost:3000]: http://localhost:3000
 [lpalmieri~website]: https://www.lpalmieri.com
 [lpalmieri~website~badge]: https://img.shields.io/badge/lpalmieri-coral
@@ -668,14 +669,14 @@
 [rust-cache~github]: https://github.com/Swatinem/rust-cache
 [rust-ci-tooling~website]: https://rodneylab.com/rust-ci-tooling
 [rust-companies~github]: https://github.com/omarabid/rust-companies
-[rust-cookbook-contributors]: https://github.com/rust-lang-nursery/rust-cookbook/graphs/contributors
+[rust-cookbook-contributors~github]: https://github.com/rust-lang-nursery/rust-cookbook/graphs/contributors
 [rust-course~github]: https://github.com/sunface/rust-course
 [rust-digger~website]: https://rust-digger.code-maven.com
 [rust-for-linux~github]: https://github.com/Rust-for-Linux
 [rust-for-professionals~website]: https://overexact.com/rust-for-professionals
 [rust-formal-methods~website]: https://rust-formal-methods.github.io
 [rust-foundation~website]: https://foundation.rust-lang.org
-[rust-gentle-intro]: https://stevedonovan.github.io/rust-gentle-intro
+[rust-gentle-intro~website]: https://stevedonovan.github.io/rust-gentle-intro
 [rust-gpu~github]: https://github.com/Rust-GPU/rust-gpu
 [rust-howto~code-examples~github]: https://github.com/john-cd/rust_howto/tree/main/bk/crates
 [rust-howto~code-of-conduct~github]: https://github.com/john-cd/rust_howto/blob/main/CODE_OF_CONDUCT.md
@@ -691,8 +692,8 @@
 [rust-howto~todo~github]: https://github.com/john-cd/rust_howto/blob/main/TODO.md
 [rust-howto~todo~github~badge]: https://img.shields.io/badge/rust__howto_TODO-steelblue?logo=github
 [rust-howto~xmpl~github]: https://github.com/john-cd/rust_howto/tree/main/xmpl
-[rust-in-vs-code]: https://code.visualstudio.com/docs/languages/rust
-[rust-lang]: https://www.rust-lang.org
+[rust-in-vs-code~website]: https://code.visualstudio.com/docs/languages/rust
+[rust-lang~website]: https://www.rust-lang.org
 [rust-lang~badge]:https://img.shields.io/badge/Rust-tan
 [rust-lang~blog]: https://blog.rust-lang.org
 [rust-lang~embedded-devices-working-group]: https://www.rust-lang.org/governance/wgs/embedded
@@ -706,7 +707,7 @@
 [rust-on-nails~website~badge]: https://img.shields.io/badge/rust_on_nails-coral
 [rust-playground~website]: https://play.rust-lang.org
 [rust-playground~website~badge]: https://img.shields.io/badge/rust_playground-coral
-[rust-practice-projects]: https://zerotomastery.io/blog/rust-practice-projects
+[blog~rust-practice-projects]: https://zerotomastery.io/blog/rust-practice-projects
 [rust-quizz~website]: https://dtolnay.github.io/rust-quiz
 [rust-quizz~website~badge]: https://img.shields.io/badge/Rust_quizz-tan
 [rust-raspberrypi-OS-tutorials~github]: https://github.com/rust-embedded/rust-raspberrypi-OS-tutorials
@@ -724,7 +725,7 @@
 [rust_gpu~github~badge]: https://img.shields.io/badge/rust--gpu-steelblue?logo=github
 [rust_rest~github]: https://github.com/emanguy/rust-rest
 [rust_rest~github~badge]: https://img.shields.io/badge/rust--rest-steelblue?logo=github
-[rust_tutorial_that_actually_teaches_rust]: https://www.reddit.com/r/rust/comments/15b9rl5/rust_tutorial_that_actually_teaches_rust
+[rust_tutorial_that_actually_teaches_rust~website]: https://www.reddit.com/r/rust/comments/15b9rl5/rust_tutorial_that_actually_teaches_rust
 [rustacean-station~website]: https://rustacean-station.org
 [rustcrypto-password-hashes~github]: https://github.com/RustCrypto/password-hashes#rustcrypto-password-hashes
 [rustdesk~github]: https://github.com/rustdesk
@@ -833,7 +834,7 @@
 [watchful~website]: https://www.watchful.io
 [web-application/x-www-form-urlencoded]: https://url.spec.whatwg.org/#application/x-www-form-urlencoded
 [webgpu~website]: https://gpuweb.github.io/gpuweb
-[why-rust-for-robots]: https://www.tangramvision.com/blog/why-rust-for-robots
+[why-rust-for-robots~website]: https://www.tangramvision.com/blog/why-rust-for-robots
 [wikipedia~haversine-formula]: https://en.wikipedia.org/wiki/Haversine_formula
 [wikipedia~julia-set]: https://en.wikipedia.org/wiki/Julia_set
 [wikipedia~model-checking]: https://en.wikipedia.org/wiki/Model_checking

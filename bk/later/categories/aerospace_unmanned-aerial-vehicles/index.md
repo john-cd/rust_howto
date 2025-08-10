@@ -12,7 +12,7 @@ Consider using:
 
 - [`mavlink`][c~mavlink~docs]↗{{hi:mavlink}} crate.
 - [`DroneCAN`](https://dronecan.github.io)↗{{hi:DroneCAN}}: A CAN-based protocol specifically designed for UAVs and robotics. It aims for reliability and real-time performance.
-- [`can-rs`][c~can~docs]↗{{hi:can-rs}} (general CAN crate) and socketcan (Linux-specific) are relevant. However, DroneCAN-specific higher-level crates might require custom work or FFI with existing C/C++ implementations.
+- [`can-rs`][c~can~docs]↗{{hi:can-rs}} (general CAN crate) and `socketcan` (Linux-specific) are relevant. However, DroneCAN-specific higher-level crates might require custom work or FFI with existing C/C++ implementations.
 - [`sbus`][c~sbus~docs]↗{{hi:sbus}}/`s.bus`{{hi:s.bus}}: A serial communication protocol often used for radio control (RC) receivers and servos.
 - Serial port crates ([`serialport`][c~serialport~docs]↗{{hi:serialport}}) and implement the sbus/s.bus decoding logic yourself.
 - Spektrum DSM/DSMX: Another common RC protocol.

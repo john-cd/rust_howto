@@ -54,7 +54,7 @@ For inspecting SPIR-V shaders
 
 ### `shaderc` {#shaderc}
 
-[`shaderc`][c~shaderc~docs]↗{{hi:shaderc}} is a Rust wrapper for the shaderc library (compiles GLSL/HLSL to SPIR-V).
+[`shaderc`][c~shaderc~docs]↗{{hi:shaderc}} is a Rust wrapper for the `shaderc` library (compiles GLSL/HLSL to SPIR-V).
 
 ## Compute Shaders and GPU Compute (GPGPU) {#skip}
 

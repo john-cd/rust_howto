@@ -15,7 +15,7 @@ _Program verification_ is the process of formally proving the correctness of a p
 
 There are two main approaches to Rust program verification:
 
-1. Static verification: This involves analyzing the code at compile time to identify potential errors and prove the correctness of certain properties. Rust's type system and ownership model already provide a strong foundation for static verification. Additionally, tools like [`miri`][c~miri~docs]↗{{hi:miri}} and [`kani`][c~kani~docs]↗{{hi:kani}} can be used to perform more advanced static analysis.
+1. Static verification: This involves analyzing the code at compile time to identify potential errors and prove the correctness of certain properties. Rust's type system and ownership model already provide a strong foundation for static verification. Additionally, tools like [`miri`][miri]↗{{hi:miri}} and [`kani`][c~kani~docs]↗{{hi:kani}} can be used to perform more advanced static analysis.
 
 2. Dynamic verification: This involves running the program with different inputs and checking its behavior against expected results. Techniques like fuzz [testing][p~testing] can be used to identify potential issues.
 

@@ -8,7 +8,7 @@ Cross-platform development refers to the practice of creating software applicati
 
 For applications that do not require a graphical user interface (e.g., CLI tools, servers), simple cross-compilation may be sufficient.
 
-- [`cargo`][c~cargo~docs]↗{{hi:cargo}} and [`rustup`][c~rustup~docs]↗{{hi:rustup}} natively allow developers to build applications for different target platforms from a single development environment.
+- [`cargo`][c~cargo~docs]↗{{hi:cargo}} and [`rustup`][rustup~website]↗{{hi:rustup}} natively allow developers to build applications for different target platforms from a single development environment.
 - [`cross`][c~cross~docs]↗{{hi:cross}} is a tool for cross-compiling Rust projects.
 
 See [[cross_compilation | Cross Compilation]] and [[cross_compiling | Cross Compiling]].
@@ -39,11 +39,11 @@ FIXME
 
 ### GTK
 
-`GTK-rs` is a Rust binding for the GTK (GIMP Toolkit) library, which is widely used for creating graphical user interfaces on Linux and other platforms.
+[`GTK-rs`](https://crates.io/crates/gtk4)↗{{hi:GTK-rs}} is a Rust binding for the GTK (GIMP Toolkit) library, which is widely used for creating graphical user interfaces on Linux and other platforms.
 
 ## Mobile Development
 
-While native mobile development with Rust is nascent, Rust can be combined with frameworks like `Flutter` to create cross-platform mobile apps. Rust can provide the backend logic, and Flutter handles the UI.
+While native mobile development with Rust is nascent, Rust `can` be combined with frameworks like [`Flutter`](https://docs.flutter.dev)↗{{hi:Flutter}} to create cross-platform mobile apps. Rust can provide the backend logic, and Flutter handles the UI.
 
 FIXME
 

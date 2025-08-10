@@ -97,7 +97,7 @@ mod tests {
 
     #[test]
     fn test_fail_on_nested_brackets() {
-        // Fails because `[` and `]` are not allowed in the label content.
+        // TODO Fails because `[` and `]` are not allowed in the label content.
         assert!(parse_link_label(&mut "[a[b]c]").is_err());
     }
 

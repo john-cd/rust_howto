@@ -59,7 +59,7 @@
 | [![multimedia::video][cat~multimedia::video~badge]][cat~multimedia::video] | Crates that record, output, or process video. |
 | [![network-programming][cat~network-programming~badge]][cat~network-programming] | Crates dealing with higher-level network protocols such as FTP, HTTP, or SSH, or lower-level network protocols such as TCP or UDP. |
 | [![no-std][cat~no-std~badge]][cat~no-std] | Crates that are able to function without the Rust standard library. |
-| [![no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc] | Crates that are able to function without the Rust alloc crate. |
+| [![no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc] | Crates that are able to function without the Rust `alloc` crate. |
 | [![os][cat~os~badge]][cat~os] | Bindings to operating system-specific APIs. |
 | [![os::android-apis][cat~os::android-apis~badge]][cat~os::android-apis] | Bindings to Android-specific APIs. |
 | [![os::freebsd-apis][cat~os::freebsd-apis~badge]][cat~os::freebsd-apis] | Bindings to FreeBSD-specific APIs. |

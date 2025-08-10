@@ -19,7 +19,7 @@ This book is intended for
 - new Rust programmers, to get an overview of the capabilities of the Rust ecosystem and pointers to other resources.
 - experienced programmers, to find code examples and review best practices for common programming tasks.
 
-Readers should have already some basic familiarity with [Rust][rust-lang]↗ concepts. The [Rust Book][book~rust]{{hi:Rust book}}↗ is an excellent resource for complete beginners to get started with. This said, key features of the language are summarized in this book's [language][p~lang] section.
+Readers should have already some basic familiarity with [Rust][rust-lang~website]↗ concepts. The [Rust Book][book~rust]{{hi:Rust book}}↗ is an excellent resource for complete beginners to get started with. This said, key features of the language are summarized in this book's [language][p~lang] section.
 
 ## Why This Book
 
@@ -123,8 +123,8 @@ Key crates are identified by cross-referencing:
 
 - [`blessed.rs`][blessed-rs~website]{{hi:blessed.rs}}↗ and similar resources,
 - Most downloaded crates (overall and per category) in [`crates.io`][crates.io~website]{{hi:crates.io}}↗,
-- [Most popular Rust libraries][lib-rs~most-popular],
-- High-quality crates per [`lib.rs`][lib-rs]{{hi:lib.rs}}↗ [statistics][lib-rs~stats]↗.
+- [Most popular Rust libraries][lib.rs~most-popular~website],
+- High-quality crates per [`lib.rs`][lib.rs~website]{{hi:lib.rs}}↗ [statistics][lib.rs~stats~website]↗.
 
 The selection process is necessarily opinionated. Feel free to offer suggestions (or submit a PR), if the author missed an important, widely used crate.
 

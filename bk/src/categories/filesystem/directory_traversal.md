@@ -20,7 +20,7 @@ Gets the current working directory{{hi:Current working directory}} by calling [`
 
 [`same-file`][c~same-file~docs]↗{{hi:same-file}} is a simple crate for determining whether two file paths point to the same file.
 
-Use [`same_file::is_same_file`][c~same_file::is_same_file~docs]{{hi:same_file::is_same_file}}↗ to detect loops for a given path{{hi:Detect loops for a given path}}. For example, a loop could be created on a Unix system via symlinks:
+Use [`same-file::is_same-file`][c~same-file::is_same-file~docs]{{hi:same-file::is_same-file}}↗ to detect loops for a given path{{hi:Detect loops for a given path}}. For example, a loop could be created on a Unix system via symlinks:
 
 ```bash
 mkdir -p /tmp/foo/bar/baz

@@ -23,7 +23,6 @@ Use:
 
 - [`ogg`][c~ogg~docs]↗{{hi:ogg}} for Ogg Vorbis files.
 - [`flac`][c~flac~docs]↗{{hi:flac}} for FLAC files.
-- [`mp3`][c~mp3~docs]↗{{hi:mp3}} for MP3 files (often requires external dependencies).
 - [`wav`][c~wav~docs]↗{{hi:wav}} for WAV files.
 
 ## Audio Effects, Filters, and Compression

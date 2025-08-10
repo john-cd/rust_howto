@@ -308,7 +308,7 @@ proc-macro2 = "1.0" # TokenStream manipulation.
 {{#include ../../crates/proc_macros/src/lib.rs:derive_macro}}
 ```
 
-- To use the derive macro, add it to your main crate's `Cargo.toml`:
+- To use the `derive` macro, add it to your main crate's `Cargo.toml`:
 
 ```toml
 [dependencies]
@@ -321,7 +321,7 @@ proc-macros = { path = "../proc_macros" } # Adjust the path as necessary.
 {{#include ../../crates/language/examples/macros/proc_macro_derive.rs:example}}
 ```
 
-Note that derive macros can add additional attributes ("derive macro helper attributes") into the scope of the item they are on [(Rust reference)](https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.derive.attributes)↗. This is useful for adding metadata or additional functionality to the item being derived:
+Note that `derive` macros can add additional attributes ("derive macro helper attributes") into the scope of the item they are on [(Rust reference)](https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.derive.attributes)↗. This is useful for adding metadata or additional functionality to the item being derived:
 
 ```rust,editable
 # [derive(MyCustomDeriveMacro)]

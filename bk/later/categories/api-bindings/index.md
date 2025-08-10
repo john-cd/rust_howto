@@ -12,7 +12,7 @@ Refer to [[database | Database]] and [[database-implementations | Database Imple
 
 ## Compression APIs
 
-Bindings to data compression libraries - for example [`zlib`][c~zlib~docs]↗{{hi:zlib}} bindings to the zlib library: see [[compression | Compression]].
+Bindings to data compression libraries: see [[compression | Compression]].
 
 ## Computer Vision APIs
 

@@ -19,7 +19,7 @@ The following table outlines common web development tasks and relevant Rust crat
 | Web Authentication & Authorization | [`actix-web-httpauth`][c~actix-web-httpauth~docs]↗{{hi:actix-web-httpauth}} (for Actix Web), [`tower-http`][c~tower-http~docs]↗{{hi:tower-http}} (generic middleware) | Authentication and authorization are often handled through middleware or dedicated crates. |
 | WebSockets | [`tokio-tungstenite`][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}}, [`async-tungstenite`][c~async-tungstenite~docs]↗{{hi:async-tungstenite}} | These crates provide WebSocket support. |
 | GraphQL | [`async-graphql`][c~async-graphql~docs]↗{{hi:async-graphql}}, [`juniper`][c~juniper~docs]↗{{hi:juniper}} | These crates enable building GraphQL APIs. |
-| Static Site Generation (SSG) | [`perseus`][c~perseus~docs]↗{{hi:perseus}} (based on [`sycamore`]()↗{{hi:sycamore}}), [`zola`][c~zola~website]↗{{hi:zola}} | These tools generate static websites from templates and content. |
+| Static Site Generation (SSG) | [`perseus`][c~perseus~docs]↗{{hi:perseus}} (based on [`sycamore`]()↗{{hi:sycamore}}), [`zola`][zola~website]↗{{hi:zola}} | These tools generate static websites from templates and content. |
 
 ## Choosing the Right Crates
 
@@ -27,7 +27,7 @@ The following table outlines common web development tasks and relevant Rust crat
 - Front-end Web App (WASM): [`yew`][c~yew~docs]↗{{hi:yew}}, [`seed`][c~seed~docs]↗{{hi:seed}}, [`leptos`][c~leptos~docs]↗{{hi:leptos}}.
 - REST API: Web framework + [`serde`][c~serde~docs]↗{{hi:serde}}.
 - GraphQL API: [`async-graphql`][c~async-graphql~docs]↗{{hi:async-graphql}}.
-- Static Site Generation: [`perseus`][c~perseus~docs]↗{{hi:perseus}}, [`zola`][c~zola~website]↗{{hi:zola}}.
+- Static Site Generation: [`perseus`][c~perseus~docs]↗{{hi:perseus}}, [`zola`][zola~website]↗{{hi:zola}}.
 
 ## Code Examples
 
@@ -73,7 +73,7 @@ See [[web-programming_websocket | Web Programming: Websocket]].
 |---|---|---|
 | [[asynchronous | Asynchronous]] Programming (Essential for Web) | [`tokio`][c~tokio~docs]↗{{hi:tokio}}, [`async-std`][c~async-std~docs]↗{{hi:async-std}} | These are asynchronous runtimes that are fundamental for writing efficient and scalable web applications in Rust. |
 | [[databases | Databases]] | [`sqlx`][c~sqlx~docs]↗{{hi:sqlx}}, [`diesel`][c~diesel~docs]↗{{hi:diesel}}, [`mongodb`][c~mongodb~docs]↗{{hi:mongodb}} (drivers) | These crates provide database access for various database systems. |
-| [[network-programming | Networking]] (Low-Level) | `tokio::net`, `std::net` | These modules provide low-level networking primitives. Often used by higher-level frameworks. |
+| [[network-programming | Networking]] (Low-Level) | [`tokio::net`]()↗{{hi:tokio::net}}, [`std::net`](https://doc.rust-lang.org/std/net/index.html)↗{{hi:std::net}} | These modules provide low-level networking primitives. Often used by higher-level frameworks. |
 | [[serde | Serialization/Deserialization]] (JSON, etc.) | [`serde`][c~serde~docs]↗{{hi:serde}}, [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}}, [`serde_yml`][c~serde_yml~docs]↗{{hi:serde_yml}} | [`serde`][c~serde~docs]↗{{hi:serde}} is a powerful framework for serializing and deserializing data, often used with JSON and other formats. |
 | [[development-tools_testing | Testing]] | Built-in testing framework, [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} for integration testing | Rust has a built-in testing framework, and [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} can be used for integration testing of web services. |
 

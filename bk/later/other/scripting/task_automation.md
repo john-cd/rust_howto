@@ -6,7 +6,7 @@ You can build simple Rust applications to automate repetitive tasks. The followi
 
 ## Scheduling {#skip}
 
-- `cron` (cron-like scheduling).
+- [`cron`][c~cron~docs]↗{{hi:cron}} (cron-like scheduling).
 
 ## External Process Management {#skip1}
 

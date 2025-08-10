@@ -10,7 +10,7 @@ In Rust, a library or executable program is called a crate{{hi:Crate}}. Crates a
 
 The Rust community's crate registry: [`crates.io`][crates.io~website]{{hi:crates.io}}↗.
 
-Alternative to [`crates.io`][crates.io~website]↗{{hi:crates.io}}: [`lib.rs`][lib-rs]{{hi:lib.rs}}↗.
+Alternative to [`crates.io`][crates.io~website]↗{{hi:crates.io}}: [`lib.rs`][lib.rs~website]{{hi:lib.rs}}↗.
 
 ## Access crates.io APIs with `crates-io` {#crates-io}
 

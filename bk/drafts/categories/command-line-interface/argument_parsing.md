@@ -8,7 +8,7 @@
 
 This application describes the structure of its command-line interface using [`clap`][c~clap~docs]{{hi:clap}}↗'s builder style. The [documentation][c~clap~docs]{{hi:clap}}↗ gives two other possible ways to instantiate an application.
 
-In the builder style, `with_name` is the unique identifier that `value_of` will use to retrieve the value passed. The [`clap::Arg::short`][c~clap::Arg::short~docs]{{hi:clap::Arg::short}}↗ and [`clap::Arg::long`][c~clap::Arg::long~docs]{{hi:clap::Arg::long}}↗ options control the flag{{hi:Flag}} the user will be expected to type; short flags look like `-f` and long flags look like `--file`.
+In the builder style, `with_name`{{hi:with_name}} is the unique identifier that `value_of`{{hi:value_of}} will use to retrieve the value passed. The [`clap::Arg::short`][c~clap::Arg::short~docs]{{hi:clap::Arg::short}}↗ and [`clap::Arg::long`][c~clap::Arg::long~docs]{{hi:clap::Arg::long}}↗ options control the flag{{hi:Flag}} the user will be expected to type; short flags look like `-f` and long flags look like `--file`.
 
 ```rust,editable
 {{#include ../../../crates/cats/command_line_interface/examples/arguments/clap_basic.rs:example}}
@@ -79,14 +79,14 @@ Your favorite number must be 256.
 
 ### Parse Command-line Arguments with `pico-args` {#pico-args}
 
-[![pico-args][c~pico_args~docs~badge]][c~pico_args~docs]{{hi:pico-args}}
-[![pico-args~crates.io][c~pico_args~crates.io~badge]][c~pico_args~crates.io]
-[![pico-args~github][c~pico_args~github~badge]][c~pico_args~github]
-[![pico-args~lib.rs][c~pico_args~lib.rs~badge]][c~pico_args~lib.rs]
+[![pico-args][c~pico-args~docs~badge]][c~pico-args~docs]{{hi:pico-args}}
+[![pico-args~crates.io][c~pico-args~crates.io~badge]][c~pico-args~crates.io]
+[![pico-args~github][c~pico-args~github~badge]][c~pico-args~github]
+[![pico-args~lib.rs][c~pico-args~lib.rs~badge]][c~pico-args~lib.rs]
 
-The [`pico-args`][c~pico_args~docs]↗{{hi:pico-args}} crate is a small and fast library for parsing command-line arguments in Rust.
+The [`pico-args`][c~pico-args~docs]↗{{hi:pico-args}} crate is a small and fast library for parsing command-line arguments in Rust.
 
-[`pico-args`][c~pico_args~docs]↗{{hi:pico-args}} is tiny, dependency-free, and designed for extremely fast and minimal command-line argument parsing. It focuses on speed and small binary size, making it suitable for resource-constrained environments or applications where performance is critical. It offers a simple API for basic argument parsing but may not be as feature-rich as larger crates. Note the following:
+[`pico-args`][c~pico-args~docs]↗{{hi:pico-args}} is tiny, dependency-free, and designed for extremely fast and minimal command-line argument parsing. It focuses on speed and small binary size, making it suitable for resource-constrained environments or applications where performance is critical. It offers a simple API for basic argument parsing but may not be as feature-rich as larger crates. Note the following:
 
 - No help generation.
 - Only flags, options, free arguments and subcommands are supported.
@@ -106,7 +106,7 @@ The [`pico-args`][c~pico_args~docs]↗{{hi:pico-args}} crate is a small and fast
 
 [`structopt`][c~structopt~docs]↗{{hi:structopt}} parses command line arguments by defining a [`struct`](https://doc.rust-lang.org/std/keyword.struct.html)↗{{hi:struct}}.
 
-[`structopt`][c~structopt~docs]↗{{hi:structopt}} (now superseded by [`clap`][c~clap~docs]↗{{hi:clap}}) simplifies command-line argument parsing by automatically generating parsers from struct definitions. It leverages a derive macro to reduce boilerplate and provides a declarative way to define CLI options, arguments, and subcommands, making it easier to create complex and well-documented command-line interfaces.
+[`structopt`][c~structopt~docs]↗{{hi:structopt}} (now superseded by [`clap`][c~clap~docs]↗{{hi:clap}}) simplifies command-line argument parsing by automatically generating parsers from struct definitions. It leverages a `derive` macro to reduce boilerplate and provides a declarative way to define CLI options, arguments, and subcommands, making it easier to create complex and well-documented command-line interfaces.
 
 ## References {#references}
 

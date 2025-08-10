@@ -26,7 +26,7 @@
 ## Dependency Injection {#skip2}
 
 - Promotes modularity by injecting dependencies at runtime or compile time.
-- Achievable using crates like [`shaku`]()↗{{hi:shaku}}.
+- Achievable using crates like [`shaku`][c~shaku~docs]↗{{hi:shaku}}.
 - Rarer in Rust than in other languages like Java.
 
 ```rust,editable

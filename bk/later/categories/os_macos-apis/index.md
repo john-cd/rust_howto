@@ -59,5 +59,5 @@ See [[development-tools_ffi | Development Tools: FFI]] and [[external-ffi-bindin
 [review](https://github.com/john-cd/rust_howto/issues/949)
 review in depth
 interface with `Cocoa`
-`Swift` bindings
+[`Swift`](https://www.swift.org)↗{{hi:Swift}} bindings
 </div>

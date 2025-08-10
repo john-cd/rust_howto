@@ -74,7 +74,7 @@ FIXME
 |---|---|
 | [[serde | Serialization/Deserialization]] | [`serde`][c~serde~docs]↗{{hi:serde}} is often used with file I/O to read and write structured data (JSON, YAML, TOML, etc.) to files. |
 | [[compression | Compression/Decompression]] | [`flate2`][c~flate2~docs]↗{{hi:flate2}}, [`gzip`][c~gzip~docs]↗{{hi:gzip}}, [`bzip2`][c~bzip2~docs]↗{{hi:bzip2}}, [`xz2`][c~xz2~docs]↗{{hi:xz2}} work with various compression formats (often used when dealing with files). |
-| [[tar | Archive Files]] (tar, zip, etc.) | [`tar`][c~tar~docs]↗{{hi:tar}}, [`zip`][c~zip~docs]↗{{hi:zip}} can be used for working with tar and zip archives. |
+| [[tar | Archive Files]] (tar, zip, etc.) | [`tar`][c~tar~docs]↗{{hi:tar}}, [`zip`][c~zip~docs]↗{{hi:zip}} can be used for working with `tar` and `zip` archives. |
 
 See also [[network-programming | Network Programming]].
 

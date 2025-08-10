@@ -8,8 +8,8 @@ Popular tooling include:
 
 - `GitHub Actions`.
 - `GitLab CI/CD`.
-- `Jenkins`.
-- `CircleCI`.
+- [`Jenkins`](https://www.jenkins.io)↗{{hi:Jenkins}}.
+- [`CircleCI`](https://circleci.com/)↗{{hi:CircleCI}}.
 
 ## Workflow Example (GitHub Actions) {#github-actions}
 

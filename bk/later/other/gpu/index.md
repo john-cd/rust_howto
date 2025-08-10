@@ -33,9 +33,9 @@ decide what to cover.
 
 ## Repos
 
-- [rust-gpu: Making Rust a first-class language and ecosystem for GPU shaders](https://github.com/rust-gpu/rust-gpu)
-- [wgpu-template: A template repository to get started with WGPU and Winit](https://github.com/Foxicution/wgpu-template)
+- [rust-gpu](https://github.com/rust-gpu/rust-gpu): Making Rust a first-class language and ecosystem for GPU shaders
+- [wgpu-template](https://github.com/Foxicution/wgpu-template): A template repository to get started with WGPU and Winit
 
-- [cubecl: Multi-platform high-performance compute language extension for Rust.](https://github.com/tracel-ai/cubecl)
+- [cubecl](https://github.com/tracel-ai/cubecl): Multi-platform high-performance compute language extension for Rust.
 
 </div>

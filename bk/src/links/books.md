@@ -13,7 +13,7 @@ The following includes books and other long-form writings about Rust.
 
 ## Essential and Official Books {#official-books}
 
-The books found on [`rust-lang.org`][rust-lang]↗ and friends are listed below:
+The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are listed below:
 
 - "The Book": [The Rust Programming Language][book~rust]↗.
   - The [Rust Programming Language](https://rust-book.cs.brown.edu)↗: An experimental version of the Rust Book enhanced with interactive quizzes, highlighting, and visualizations.

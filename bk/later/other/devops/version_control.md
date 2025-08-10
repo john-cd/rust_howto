@@ -37,7 +37,7 @@ cargo test
 
 - [`pre-commit` hooks][pre-commit.com~hooks~website].
 
-`pre-commit` is written in Python. Include the following into your [`Dockerfile`][dockerfile]↗{{hi:Dockerfile}} or run the commands by hand to install `pre-commit`:
+`pre-commit` is written in Python. Include the following into your [`Dockerfile`][dockerfile~website]↗{{hi:Dockerfile}} or run the commands by hand to install `pre-commit`:
 
 ```sh
 # Install `python3`, `pipx`, `pre-commit` (Ubuntu & friends)

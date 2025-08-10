@@ -7,9 +7,9 @@ Release automation involves automating the process of building, [testing][p~test
 How you distribute your application depends on the target platform:
 
 - Libraries: publish (open-source) Rust libraries to [`crates.io`](https://crates.io)↗{{hi:crates.io}}.
-- Executables: publish binaries to a service where they can be downloaded from (e.g., `GitHub Releases`).
-- [Containers][p~containers]: Use `Docker` to create the container image, push it to a private or public registry (e.g. `DockerHub`, `GitHub Packages`); optionally pull the image to deploy it to an orchestrator (e.g. `Kubernetes`) or a Cloud service like [`AWS`][c~aws~docs]↗{{hi:AWS}} or `Azure`.
-- Packages: Create (`.deb`, `.rpm`...) packages for package management systems (e.g., Debian `dpkg`/`apt`, RPM, Flatpak, HomeBrew...) using [cargo][p~cargo] plugins like [`cargo-deb`][c~cargo_deb~docs]↗{{hi:cargo-deb}}, [`cargo-rpm`][c~cargo_rpm~docs]↗{{hi:cargo-rpm}}...
+- Executables: publish binaries to a service where they `can` be downloaded from (e.g., `GitHub Releases`).
+- [Containers][p~containers]: Use [`Docker`](https://www.docker.com)↗{{hi:Docker}} to create the container image, push it to a private or public registry (e.g. [`DockerHub`](https://hub.docker.com)↗{{hi:DockerHub}}, `GitHub Packages`); optionally pull the image to deploy it to an orchestrator (e.g. [`Kubernetes`](https://kubernetes.io)↗{{hi:Kubernetes}}) or a Cloud service like [`AWS`][c~aws~docs]↗{{hi:AWS}} or [`Azure`](https://portal.azure.com)↗{{hi:Azure}}.
+- Packages: Create (`.deb`, `.rpm`...) packages for package management systems (e.g., Debian `dpkg`/`apt`, RPM, Flatpak, HomeBrew...) using [cargo][p~cargo] plugins like [`cargo-deb`][c~cargo-deb~docs]↗{{hi:cargo-deb}}, [`cargo-rpm`][c~cargo-rpm~docs]↗{{hi:cargo-rpm}}...
 
 ## Cargo {#skip}
 
@@ -27,7 +27,7 @@ The following are the typical steps to release a crate to [`crates.io`](https://
 - Update the changelog.
 - Make sure everything works as advertised:
   - `cargo fmt --check`.
-  - `cargo doc` to inspect the documentation.
+  - [`cargo doc`](https://doc.rust-lang.org/cargo/commands/cargo-doc.html)↗{{hi:cargo doc}} to inspect the documentation.
   - `cargo clean` to build from a clean slate.
   - `cargo clippy`.
   - [`cargo test`](https://doc.rust-lang.org/cargo/commands/cargo-test.html)↗{{hi:cargo test}} or `cargo nextest run` to run unit and integration tests.
@@ -90,7 +90,7 @@ See also [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]].
 
 <div class="hidden">
 [release_automation: write](https://github.com/john-cd/rust_howto/issues/604)
-cover `cargo-bump` for simple version number increments.
+cover [`cargo-bump`](https://github.com/wraithan/cargo-bump)↗{{hi:cargo-bump}} for simple version number increments.
 Link
 https://doc.rust-lang.org/cargo/commands/cargo-login.html
 https://doc.rust-lang.org/cargo/commands/cargo-package.html

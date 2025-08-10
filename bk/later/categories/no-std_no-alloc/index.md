@@ -37,7 +37,7 @@ Note the following:
 
 - [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}}: A small and efficient allocator often used in embedded systems or WebAssembly ([[wasm | WASM]]). It can be useful if you -do- need some allocation, but want a very small allocator. See [[embedded | Embedded]] Systems.
 
-- [`panic-halt`][c~panic-halt~docs]↗{{hi:panic-halt}}, [`panic-abort`][c~panic-abort~docs]↗{{hi:panic-abort}}: Crates for defining panic behavior in `no_std` environments.
+- [`panic-halt`][c~panic-halt~docs]↗{{hi:panic-halt}}, [`panic-abort`][c~panic-abort~docs]↗{{hi:panic-abort}}: Crates for defining `panic` behavior in `no_std` environments.
 
 - [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}}: Essential for interacting with hardware in embedded systems, which are often `no_alloc` environments.
 
@@ -60,5 +60,5 @@ Consult the [`no_alloc`][cat~no-std::no-alloc] category on [`crates.io`](https:/
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review; cover use of no_std attribute to remove alloc crate](https://github.com/john-cd/rust_howto/issues/945)
+[review; cover use of no_std attribute to remove `alloc` crate](https://github.com/john-cd/rust_howto/issues/945)
 </div>

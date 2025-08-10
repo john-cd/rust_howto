@@ -52,7 +52,7 @@ If a blocking operation{{hi:Blocking operation}} keeps running forever, you shou
 
 ## Call Async Code from Blocking Code {#call-async-from-blocking}
 
-[Bridging with sync code][c~tokio-bridging-with-sync-code~website]↗ [![tokio][c~tokio~docs~badge]][c~tokio~docs]{{hi:tokio}} [![tokio~crates.io][c~tokio~crates.io~badge]][c~tokio~crates.io]
+[Bridging with sync code][c~tokio~bridging-with-sync-code~website]↗ [![tokio][c~tokio~docs~badge]][c~tokio~docs]{{hi:tokio}} [![tokio~crates.io][c~tokio~crates.io~badge]][c~tokio~crates.io]
 [![tokio~github][c~tokio~github~badge]][c~tokio~github] [![tokio~lib.rs][c~tokio~lib.rs~badge]][c~tokio~lib.rs] [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}{{hi:spawn_blocking}}
 
 In other cases, it may be easier to structure the application as largely synchronous{{hi:Synchronous code}}, with smaller or logically distinct asynchronous{{hi:Asynchronous}} portions. For instance, a GUI{{hi:GUI}} application might want to run the GUI code on the main thread and run a Tokio runtime next to it on another thread.

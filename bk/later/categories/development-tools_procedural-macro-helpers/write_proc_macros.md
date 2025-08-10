@@ -6,7 +6,7 @@ You'll almost always use [`proc-macro`](https://doc.rust-lang.org/proc_macro/ind
 
 ## `proc_macro` {#proc-macro}
 
-Procedural macro [crates][p~crates] almost always will link to the compiler-provided [`proc_macro`][c~proc_macro~docs]↗{{hi:proc_macro}} crate. The proc_macro crate provides types required for writing procedural macros and facilities to make it easier.
+Procedural macro [crates][p~crates] almost always will link to the compiler-provided [`proc_macro`][c~proc_macro~docs]↗{{hi:proc_macro}} crate. The `proc_macro` crate provides types required for writing procedural macros and facilities to make it easier.
 
 This crate primarily contains a TokenStream type. Procedural [macros][p~macros] operate over token [streams][p~streams] instead of AST nodes, which is a far more stable interface over time for both the compiler and for procedural [macros][p~macros] to target. A token stream is roughly equivalent to `Vec<TokenTree>` where a `TokenTree` can roughly be thought of as lexical token. For example `foo` is an `Ident` token, `.` is a `Punct` token, and `1.2` is a `Literal` token. The `TokenStream` type, unlike `Vec<TokenTree>`, is cheap to clone [(reference)][(reference)].
 
@@ -70,7 +70,7 @@ Make procedural [macros][p~macros] unit testable. As a consequence of being spec
 
 [![darling][c~darling~docs~badge]][c~darling~docs] [![darling~crates.io][c~darling~crates.io~badge]][c~darling~crates.io] [![darling~github][c~darling~github~badge]][c~darling~github] [![darling~lib.rs][c~darling~lib.rs~badge]][c~darling~lib.rs]{{hi:darling}}
 
-[`darling`][c~darling~docs]↗{{hi:darling}} provides derive macros to easily parse derive macro inputs.
+[`darling`][c~darling~docs]↗{{hi:darling}} provides `derive` macros to easily parse `derive` macro inputs.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_procedural_macro_helpers/examples/write_proc_macros/darling.rs:example}}

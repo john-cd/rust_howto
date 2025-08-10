@@ -8,7 +8,7 @@ In most cases, the [`arboard`][c~arboard~docs]↗ crate will be all you need for
 
 [![arboard][c~arboard~docs~badge]][c~arboard~docs] [![arboard~crates.io][c~arboard~crates.io~badge]][c~arboard~crates.io] [![arboard~github][c~arboard~github~badge]][c~arboard~github] [![arboard~lib.rs][c~arboard~lib.rs~badge]][c~arboard~lib.rs]{{hi:arboard}}{{hi:Clipboard}}{{hi:Image}}
 
-[`arboard`][c~arboard~docs]↗{{hi:arboard}} helps with image and text handling for the OS clipboard. A fork of [`rust-clipboard`][rust-clipboard]↗{{hi:rust-clipboard}} that supports copy and pasting of both text and images on Linux (X11/Wayland), MacOS and Windows.
+[`arboard`][c~arboard~docs]↗{{hi:arboard}} helps with image and text handling for the OS clipboard. Supports copy and pasting of both text and images on Linux (X11/Wayland), MacOS and Windows.
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/clipboard/arboard.rs:example}}

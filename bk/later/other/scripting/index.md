@@ -30,16 +30,16 @@ Rhai is a lightweight scripting language similar to Rust that integrates well wi
 
 ### Lua
 
-The Lua scripting language has a robust, widely used, mature ecosystem. Use `rlua` or [`mlua`][c~mlua~docs]↗{{hi:mlua}} to interact with or embed Lua.
+The Lua scripting language has a robust, widely used, mature ecosystem. Use [`rlua`][c~rlua~docs]↗{{hi:rlua}} or [`mlua`][c~mlua~docs]↗{{hi:mlua}} to interact with or embed Lua.
 See [[lua | Lua]].
 
 ## JavaScript
 
 Embedding a JavaScript runtime gives you full JavaScript language support:
 
-- `v8`: bindings to Google's V8 engine.
-- `deno_core`: The core runtime of Deno, a modern JavaScript/TypeScript runtime built with V8, Rust, and Tokio.
-- `quickjs-rs`: bindings to the QuickJS engine.
+- [`v8`][c~v8~docs]↗{{hi:v8}}: bindings to Google's V8 engine.
+- [`deno_core`][c~deno_core~docs]↗{{hi:deno_core}}: The core runtime of Deno, a modern JavaScript/TypeScript runtime built with V8, Rust, and Tokio.
+- [`quickjs-rs`](c~quickjs~docs)↗{{hi:quickjs-rs}}: bindings to the QuickJS engine.
 
 See also [[node | Node]].
 
@@ -71,7 +71,7 @@ See [[text-processing | Text Processing]], [[parsing | Parsing]], and for exampl
 
 Abstract Syntax Tree (AST) manipulation is usually custom-built. [`syn`][c~syn~docs]↗{{hi:syn}}, a library for parsing Rust code, and [`quote`][c~quote~docs]↗{{hi:quote}} may be good examples - see [[development-tools_procedural-macro-helpers | Development Tools: Procedural Macro Helpers]].
 
-If your scripting language compiles to an executable, use the `object` crate. It supports reading relocatable object files and executable files, and writing COFF/ELF/Mach-O/XCOFF relocatable object files and ELF/PE executable files.
+If your scripting language compiles to an executable, use the [`object`][c~object~docs]↗{{hi:object}} crate. It supports reading relocatable object files and executable files, and writing COFF/ELF/Mach-O/XCOFF relocatable object files and ELF/PE executable files.
 
 - Handle errors with [`thiserror`][c~thiserror~docs]↗{{hi:thiserror}}, [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}}, and `codespan-reporting`, a library for generating human-readable error messages with source code snippets. See [[error_handling | Error Handling]], [[error_customization | Error Customization]].
 

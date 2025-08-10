@@ -18,7 +18,7 @@ The builder pattern provides a clean and readable way to construct complex objec
 
 [![typed-builder][c~typed-builder~docs~badge]][c~typed-builder~docs] [![typed-builder~crates.io][c~typed-builder~crates.io~badge]][c~typed-builder~crates.io] [![typed-builder~github][c~typed-builder~github~badge]][c~typed-builder~github] [![typed-builder~lib.rs][c~typed-builder~lib.rs~badge]][c~typed-builder~lib.rs]{{hi:typed-builder}}{{hi:Builder}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-[`typed-builder`][c~typed-builder~docs]↗{{hi:typed-builder}} lets you derive compile-time type-checked builders. It uses a derive macro and leverages Rust's type system to ensure that all required fields are set. If you forget a required field, your code won't even compile.
+[`typed-builder`][c~typed-builder~docs]↗{{hi:typed-builder}} lets you derive compile-time type-checked builders. It uses a 'derive' macro and leverages Rust's type system to ensure that all required fields are set. If you forget a required field, your code won't even compile.
 
 ## `derive_builder` {#derive_builder}
 

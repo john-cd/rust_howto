@@ -5,7 +5,7 @@
 ## Rust Overviews and Starting Points {#overview}
 
 - [Rust (programming language)](https://en.wikipedia.org/wiki/Rust_(programming_language))↗ on Wikipedia.
-- Rust [language][p~language] main site: [rust-lang.org][rust-lang]{{hi:Rust learning}}↗.
+- Rust [language][p~language] main site: [rust-lang.org][rust-lang~website]{{hi:Rust learning}}↗.
 
 ## Learning Roadmaps {#learning-roadmap}
 
@@ -14,8 +14,8 @@
 
 ## Tutorials & Workshop Materials {#tutorials-and-workshop-materials}
 
-- [Rust Tutorial that Actually Teaches Rust][rust_tutorial_that_actually_teaches_rust]↗.
-- [Rust Gentle Introduction][rust-gentle-intro]↗.
+- [Rust Tutorial that Actually Teaches Rust][rust_tutorial_that_actually_teaches_rust~website]↗.
+- [Rust Gentle Introduction][rust-gentle-intro~website]↗.
 - [Workshop](https://rust-tutorials.com/RustConf17)↗ slides and exercises from RustConf 2017.
 - [Learn Rust](https://hackr.io/tutorials/learn-rust)↗.
 - Jonathan Pallant's [Rust on the Raspberry Pi](https://github.com/thejpster/pi-workshop-rs)↗ tutorial.
@@ -44,7 +44,7 @@
 - [Advent of Code](https://adventofcode.com)↗: Language-agnostic programming challenges that can be done in Rust.
 - [Project Euler](https://projecteuler.net)↗: Language-agnostic programming challenges focused mostly on math problems.
 - [Rust Practice Questions](https://github.com/rust-unofficial/rust-practise-questions)↗.
-- Top 15 Rust projects to elevate your skills: [Rust Practice Projects][rust-practice-projects]↗.
+- Top 15 Rust projects to elevate your skills: [Rust Practice Projects][blog~rust-practice-projects]↗.
 
 ## Courses {#courses}
 

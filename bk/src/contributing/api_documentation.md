@@ -26,7 +26,7 @@ Alternatively, use the ["Desktop lite" Dev Container feature][desktop-lite~githu
 },
 ```
 
-and the following to the [`Dockerfile`][dockerfile]{{hi:Dockerfile}}↗.
+and the following to the [`Dockerfile`][dockerfile~website]{{hi:Dockerfile}}↗.
 
 ```Dockerfile
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y firefox-esr
@@ -43,7 +43,7 @@ xdg-settings --list
 xdg-settings get default-web-browser
 ```
 
-Point your browser to [http://localhost:6080][locahost:6080] and use [`vscode`][vscode~website]↗{{hi:VS Code}} as the password. Open the HTML file of your choice with:
+Point your browser to [http://localhost:6080][locahost:6080~website] and use [`vscode`][vscode~website]↗{{hi:VS Code}} as the password. Open the HTML file of your choice with:
 
 ```bash
 xdg-open /code/target/bk/doc/deps/index.html

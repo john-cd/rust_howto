@@ -2,7 +2,7 @@
 
 {{#include testing.incl.md}}
 
-For most basic code testing needs, using [`cargo test`](https://doc.rust-lang.org/cargo/commands/cargo-test.html)↗{{hi:cargo test}} will be sufficient. For more advanced testing, especially property-based testing, [`proptest`][c~proptest~docs]↗{{hi:proptest}} is highly recommended. [`mockall`][c~mockall~docs]↗{{hi:mockall}} or [`faux`][c~faux~docs]↗{{hi:faux}} will help when you need to mock dependencies. [`rstest`][c~rstest~docs]↗{{hi:rstest}} is great for parameterized tests. And for ensuring your tests cover a good portion of your code, [`grcov`][c~grcov~docs]↗{{hi:grcov}} or [`tarpaulin`][c~tarpaulin~docs]↗{{hi:tarpaulin}} can be used.
+For most basic code testing needs, using [`cargo test`](https://doc.rust-lang.org/cargo/commands/cargo-test.html)↗{{hi:cargo test}} will be sufficient. For more advanced testing, especially property-based testing, [`proptest`][c~proptest~docs]↗{{hi:proptest}} is highly recommended. [`mockall`][c~mockall~docs]↗{{hi:mockall}} or [`faux`][c~faux~docs]↗{{hi:faux}} will help when you need to mock dependencies. [`rstest`][c~rstest~docs]↗{{hi:rstest}} is great for parameterized tests. And for ensuring your tests cover a good portion of your code, [`grcov`][c~grcov~docs]↗{{hi:grcov}} or [`tarpaulin`][c~cargo-tarpaulin~docs]↗{{hi:tarpaulin}} can be used.
 
 ## Unit Testing {#unit_testing}
 

@@ -30,9 +30,8 @@ See also
 Import/Export various files related with Robotics
 
 [`assimp-rs`][c~assimp~docs]↗{{hi:assimp-rs}} (open-asset-importer) - Rust bindings for the Assimp library.
-[`mcap`]()↗{{hi:mcap}} - Rust library for reading and writing MCAP log files
-[`urdf-rs`]()↗{{hi:urdf-rs}} - URDF Loader for Rust
-[`pcd-ros`]()↗{{hi:pcd-ros}} - Read point cloud data from PCD file format
+[`mcap`](https://crates.io/crates/mcap)↗{{hi:mcap}} - Rust library for reading and writing MCAP log files
+[`urdf-rs`](https://crates.io/crates/urdf-rs)↗{{hi:urdf-rs}} - URDF Loader for Rust
 
 See also [[parser-implementations | Parser Implementations]].
 
@@ -61,12 +60,12 @@ See also the [[simulation | Simulation]], [[aerospace_simulation | Aerospace Sim
 ## Math and Geometry-related Libraries for Robotics
 
 - [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} - Linear algebra library for Rust.
-- [`ncollide`]()↗{{hi:ncollide}} - 2 and 3-dimensional collision detection library in Rust.
-- [`kdtree`]()↗{{hi:kdtree}} - K-dimensional tree in Rust for fast geospatial indexing.
-- [`k`]()↗{{hi:k}} - Kinematics Library for rust-lang.
+- `ncollide2d`, `ncollide3d` - 2 and 3-dimensional collision detection library in Rust.
+- [`kdtree`](https://crates.io/crates/kdtree)↗{{hi:kdtree}} - K-dimensional tree in Rust for fast geospatial indexing.
+- [`k`](https://crates.io/crates/k)↗{{hi:k}} - Kinematics Library for rust-lang.
 - `static-math` - Safe and fast mathematical operations with static arrays in Rust programming language for robotics.
 - [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} - N-dimensional tensor arithmetic library, inspired by python's NumPy.
-- [`faer-rs`]()↗{{hi:faer-rs}} - Linear algebra foundation for the Rust programming language.
+- [`faer-rs`](https://github.com/sarah-quinones/faer-rs)↗{{hi:faer-rs}} - Linear algebra foundation for the Rust programming language.
 
 See also the numerical computation ([[additional_numeric_types | Additional Numeric Types]], [[linear_algebra | Linear Algebra]]), [[data-processing | data]] analysis sections.
 
@@ -80,7 +79,7 @@ Leverage existing robotics libraries (often written in C++, Python, or other lan
 
 [Robotics (lib.rs)][robotics~lib.rs]↗ [![cat~science::robotics][cat~science::robotics~badge]][cat~science::robotics]{{hi:Robotics}}
 
-[Why rust for robots][why-rust-for-robots]↗.
+[Why rust for robots][why-rust-for-robots~website]↗.
 
 [Linux embracing Rust will boost robotics community][blog~linux-embracing-rust-will-boost-robotics-community]↗.
 

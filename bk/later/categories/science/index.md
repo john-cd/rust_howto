@@ -37,7 +37,7 @@ The Rust ML ecosystem is relatively young compared to Python's. However, Rust's 
 
 ## References
 
-- [Why Rust is becoming a contender in AI development][why rust is becoming a contender in ai development]↗.
+- [Why Rust is becoming a contender in AI development][blog~why-rust-is-becoming-a-contender-in-ai-development]↗.
 - [Choosing the Right Rust Machine Learning Framework][blog~choosing-the-right-machine-learning-framework]↗.
 - [ML in Rust - Ranking][ml-in-rust-ossinsight~website]↗.
 - [Data Processing](https://www.arewelearningyet.com/data-preprocessing/)↗.
@@ -49,7 +49,6 @@ The Rust ML ecosystem is relatively young compared to Python's. However, Rust's 
 - [Reinforcement learning](https://www.arewelearningyet.com/reinforcement/)↗.
 - [Scientific Computing](https://www.arewelearningyet.com/scientific-computing/)↗.
 
-[why rust is becoming a contender in ai development]: https://www.analyticsinsight.net/artificial-intelligence/why-rust-is-becoming-a-contender-in-ai-development
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

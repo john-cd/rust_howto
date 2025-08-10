@@ -85,5 +85,5 @@ Randomly generates a string of given length ASCII characters with custom user-de
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/1390)
+[review; fix title](https://github.com/john-cd/rust_howto/issues/1390)
 </div>

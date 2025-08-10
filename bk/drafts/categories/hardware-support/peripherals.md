@@ -18,7 +18,9 @@ Standard networking like [`std::net`](https://doc.rust-lang.org/std/net/index.ht
 
 ## General Hardware Interaction {#skip}
 
-[`ioctl`][c~ioctl~docs]↗{{hi:ioctl}}: A crate for performing 'ioctl' (input/output control) operations on file descriptors. Often used for interacting with device drivers or hardware.
+`ioctl`: A crate for performing 'ioctl' (input/output control) operations on file descriptors. Often used for interacting with device drivers or hardware.
+
+TODO replace by nix
 
 For specialized hardware, you'll often need to find or create crates that provide access to the device's API or protocol.
 

@@ -16,7 +16,7 @@ Sensor integration often requires specialized crates that interact with specific
 
 ## Simulate Sensor Interactions {#skip}
 
-`rapier`: Physics engine
+[`rapier`](https://rapier.rs)↗{{hi:rapier}}: Physics engine
 
 See [[simulation_visualization | Simulation Visualization]].
 

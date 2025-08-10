@@ -8,7 +8,7 @@
 
 [`flate2`][c~flate2~docs]↗{{hi:flate2}} provides DEFLATE compression and decompression, exposed as Read / BufRead / Write streams. It supports zlib, gzip, and raw deflate streams.
 
-[`flate2`][c~flate2~docs]↗{{hi:flate2}} uses a pure-Rust implementation by default. Use feature flags to opt in to system [`zlib`][c~zlib~docs]↗{{hi:zlib}}.
+[`flate2`][c~flate2~docs]↗{{hi:flate2}} uses a pure-Rust implementation by default. Use feature flags to opt in to system [`zlib`][zlib]↗{{hi:zlib}}.
 
 It can be used with various I/O [streams][p~streams], making it versatile for different use cases, such as file [compression][p~compression], network protocols, and in-memory data manipulation. It also offers features like checksumming and [error handling][p~error-handling], making it suitable for production environments.
 

@@ -13,7 +13,7 @@ Tools that provide developer-facing features such as testing, debugging, linting
 | Debugging | [`gdb`][c~gdb~docs]↗{{hi:gdb}}, [`lldb`][c~lldb~docs]↗{{hi:lldb}} (often used via IDE integration), `cargo-debug` |
 | Profiling | `cargo flamegraph`, [`perf`][c~perf~docs]↗{{hi:perf}} (system profiler) |
 | Documentation Generator | [`cargo doc`](https://doc.rust-lang.org/cargo/commands/cargo-doc.html)↗{{hi:cargo doc}} |
-| Code Coverage | [`grcov`][c~grcov~docs]↗{{hi:grcov}}, [`tarpaulin`][c~tarpaulin~docs]↗{{hi:tarpaulin}} |
+| Code Coverage | [`grcov`][c~grcov~docs]↗{{hi:grcov}}, [`tarpaulin`][c~cargo-tarpaulin~docs]↗{{hi:tarpaulin}} |
 | Continuous Integration | often uses CI platforms directly; no specific Rust crates needed, but [`xtask`][c~xtask~docs]↗{{hi:xtask}} can help manage CI tasks |
 | Code Analysis | `cargo clippy`, `rust-analyzer` (for Language Server Protocol support in IDEs) |
 
@@ -121,7 +121,7 @@ See also [[cross_compiling | Cross Compiling (Cargo Plugins)]].
 - [`cargo-xtask`](https://github.com/matklad/cargo-xtask)
 - [`cargo-script`](https://crates.io/crates/cargo-script)
 - [`cargo-play`](https://crates.io/crates/cargo-play)
-- [`sccache-action`: sccache github action](https://github.com/Mozilla-Actions/sccache-action)
+- [`sccache-action`: `sccache` github action](https://github.com/Mozilla-Actions/sccache-action)
 - [`cargo-spellcheck`: Checks all your documentation for spelling and grammar mistakes with hunspell and a nlprule based checker for grammar](https://github.com/drahnr/cargo-spellcheck)
 - [`cargo-limit`: Productivity improvements for Rust ecosystem: warnings are skipped until errors are fixed, LSP-independent Neovim integration, etc.](https://github.com/cargo-limit/cargo-limit)
 - [`cargo-bloat`: Find out what takes most of the space in your executable.](https://github.com/RazrFalcon/cargo-bloat)

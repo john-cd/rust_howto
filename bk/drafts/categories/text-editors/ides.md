@@ -6,7 +6,7 @@
 
 [![cat~text-editors][cat~text-editors~badge]][cat~text-editors]
 
-- [VS Code][rust-in-vs-code]↗.
+- [VS Code][rust-in-vs-code~website]↗.
 - [Rust plugin for VS Code][rust-analyzer~plugin]{{hi:Rust analyzer}}↗.
 - [`rust-analyzer`][rust-analyzer~website]↗.
 

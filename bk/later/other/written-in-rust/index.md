@@ -33,7 +33,7 @@ This section provides a few examples of software written in Rust, organized by t
     - [`bat`][c~bat~docs] [(GitHub)][c~bat~github]↗{{hi:bat}}: a `cat` clone with syntax highlighting and Git integration.
     - [`fd`][c~fd~docs] [(GitHub)][c~fd-find~github]↗: an alternative to 'find'.
     - [`fish`](https://github.com/fish-shell/fish-shell): a command-line shell.
-    - [`nushell`][c~nushell~docs]↗ [(GitHub)](https://github.com/nushell/nushell): a new type of shell.
+    - [`nushell`][nushell~website]↗ [(GitHub)](https://github.com/nushell/nushell): a new type of shell.
     - [`zoxide`][c~zoxide~docs]↗{{hi:zoxide}}: a smarter `cd` command.
     - [`dust`][c~dust~docs] [(GitHub)](https://github.com/bootandy/dust)↗: a more intuitive version of `du`.
     - [`bottom`][c~bottom~docs] [(GitHub)][c~bottom~github]↗: a cross-platform graphical process/system monitor.
@@ -150,28 +150,28 @@ This section provides a few examples of software written in Rust, organized by t
 
 - [RustDesk](https://rustdesk.com/docs/en/)
 - [OxidOS Automotive](https://oxidos.io/)
-- [ripgrep: ripgrep recursively searches directories for a regex pattern while respecting your gitignore](https://github.com/BurntSushi/ripgrep)
+- [ripgrep: `ripgrep` recursively searches directories for a regex pattern while respecting your gitignore](https://github.com/BurntSushi/ripgrep)
 - [zola: A fast static site generator in a single binary with everything built-in. https://www.getzola.org](https://github.com/getzola/zola)
 - [solana: Web-Scale Blockchain for fast, secure, scalable, decentralized apps and marketplaces.](https://github.com/solana-labs/solana)
 - [linkerd2: Ultralight, security-first service mesh for Kubernetes. Main repo for Linkerd 2.x.](https://github.com/linkerd/linkerd2)
 - [bottlerocket: An operating system designed for hosting containers](https://github.com/bottlerocket-os/bottlerocket)
-- [databend: 𝗗𝗮𝘁𝗮, 𝗔𝗻𝗮𝗹𝘆𝘁𝗶𝗰𝘀 & 𝗔𝗜. Modern alternative to Snowflake. Cost-effective and simple for massive-scale analytics. https://databend.com](https://github.com/databendlabs/databend)
-- [rerun: Visualize streams of multimodal data. Free, fast, easy to use, and simple to integrate. Built in Rust.](https://github.com/rerun-io/rerun)
-- [tock: A secure embedded operating system for microcontrollers](https://github.com/tock/tock)
-- [mail-server: Secure & Modern All-in-One Mail Server (IMAP, JMAP, POP3, SMTP)](https://github.com/stalwartlabs/mail-server)
-- [hickory-dns: A Rust based DNS client, server, and resolver](https://github.com/hickory-dns/hickory-dns)
-- [sniffnet: Comfortably monitor your Internet traffic](https://github.com/GyulyVGC/sniffnet)
-- [Ratatui: App Showcase](https://ratatui.rs/showcase/apps/)
-- [habitat: Modern applications with built-in automation](https://github.com/habitat-sh/habitat)
-- [cargo-binstall: Binary installation for rust projects](https://github.com/cargo-bins/cargo-binstall)
-- [cargo-update](https://crates.io/crates/cargo-update)
-- [alacritty: A cross-platform, OpenGL terminal emulator.](https://github.com/alacritty/alacritty)
-- [cargo-hakari](https://crates.io/crates/cargo-hakari)
-- [spacedrive: Spacedrive is an open source cross-platform file explorer, powered by a virtual distributed filesystem written in Rust.](https://github.com/spacedriveapp/spacedrive)
-- [swc: Rust-based platform for the Web](https://github.com/swc-project/swc)
-- [influxdb: Scalable datastore for metrics, events, and real-time analytics](https://github.com/influxdata/influxdb)
-- [firecracker: Secure and fast microVMs for serverless computing.](https://github.com/firecracker-microvm/firecracker)
-- [Warp: Warp is a modern, Rust-based terminal with AI built in so you and your team can build great software, faster.](https://github.com/warpdotdev/Warp)
+- [`databend`: 𝗗𝗮𝘁𝗮, 𝗔𝗻𝗮𝗹𝘆𝘁𝗶𝗰𝘀 & 𝗔𝗜. Modern alternative to Snowflake. Cost-effective and simple for massive-scale analytics. https://databend.com](https://github.com/databendlabs/databend)
+- [`rerun`: Visualize streams of multimodal data. Free, fast, easy to use, and simple to integrate. Built in Rust.](https://github.com/rerun-io/rerun)
+- [`tock`: A secure embedded operating system for microcontrollers](https://github.com/tock/tock)
+- [`mail-server`: Secure & Modern All-in-One Mail Server (IMAP, JMAP, POP3, SMTP)](https://github.com/stalwartlabs/mail-server)
+- [`hickory-dns`: A Rust based DNS client, server, and resolver](https://github.com/hickory-dns/hickory-dns)
+- [`sniffnet`: Comfortably monitor your Internet traffic](https://github.com/GyulyVGC/sniffnet)
+- [`ratatui`: App Showcase](https://ratatui.rs/showcase/apps/)
+- [`habitat`: Modern applications with built-in automation](https://github.com/habitat-sh/habitat)
+- [`cargo-binstall`: Binary installation for rust projects](https://github.com/cargo-bins/cargo-binstall)
+- [`cargo-update`](https://crates.io/crates/cargo-update)
+- [`alacritty`: A cross-platform, OpenGL terminal emulator.](https://github.com/alacritty/alacritty)
+- [`cargo-hakari`](https://crates.io/crates/cargo-hakari)
+- [`spacedrive`: Spacedrive is an open source cross-platform file explorer, powered by a virtual distributed filesystem written in Rust.](https://github.com/spacedriveapp/spacedrive)
+- [`swc`: Rust-based platform for the Web](https://github.com/swc-project/swc)
+- [`influxdb`: Scalable datastore for metrics, events, and real-time analytics](https://github.com/influxdata/influxdb)
+- [`firecracker`: Secure and fast microVMs for serverless computing.](https://github.com/firecracker-microvm/firecracker)
+- [`Warp`: Warp is a modern, Rust-based terminal with AI built in so you and your team can build great software, faster.](https://github.com/warpdotdev/Warp)
 - [RustPython: A Python Interpreter written in Rust](https://github.com/RustPython/RustPython)
 - [wezterm: A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust](https://github.com/wez/wezterm)
 - [redox-os: Mirror of https://gitlab.redox-os.org/redox-os/redox](https://github.com/redox-os/redox)

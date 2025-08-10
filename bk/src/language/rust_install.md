@@ -10,7 +10,7 @@ First, install [Rustup][rustup~website]{{hi:rustup}}↗. On Linux, macOS, or oth
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-This command downloads a script and starts the rustup installation. Follow the on-screen prompts.
+This command downloads a script and starts the `rustup` installation. Follow the on-screen prompts.
 
 All tools are installed to the `~/.cargo/bin` directory by default. After installation, `rustup` might ask you to configure your current shell (to update your `PATH`). You can either restart your terminal or run the command provided by the installer (usually something like `source $HOME/.cargo/env` on Unix-like systems).
 

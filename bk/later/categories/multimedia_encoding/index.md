@@ -16,7 +16,7 @@ See [[multimedia_video | Multimedia: Video]].
 
 ## Audio Encoding
 
-Many crates exist for specific audio codecs (MP3, WAV, OGG): [`ogg`][c~ogg~docs]↗{{hi:ogg}}, [`flac`][c~flac~docs]↗{{hi:flac}}, [`mp3`][c~mp3~docs]↗{{hi:mp3}}, [`wav`][c~wav~docs]↗{{hi:wav}}... See [[multimedia_audio | Multimedia: Audio]].
+Many crates exist for specific audio codecs (WAV, OGG): [`ogg`][c~ogg~docs]↗{{hi:ogg}}, [`flac`][c~flac~docs]↗{{hi:flac}}, [`wav`][c~wav~docs]↗{{hi:wav}}... See [[multimedia_audio | Multimedia: Audio]].
 
 ## Image Encoding
 

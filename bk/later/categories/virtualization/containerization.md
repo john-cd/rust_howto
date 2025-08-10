@@ -14,7 +14,7 @@
 
 ## Container Internals {#skip}
 
-While [`runc`][c~runc~docs]↗{{hi:runc}} itself is written in Go, Rust crates like `oci-spec` are used for working with OCI (Open Container Initiative) specifications, which are fundamental to containerization. Many container-related tools are being developed in Rust.
+While [`runc`][c~runc~docs]↗{{hi:runc}} itself is written in Go, Rust crates like [`oci-spec`](https://crates.io/crates/oci-spec)↗{{hi:oci-spec}} are used for working with OCI (Open Container Initiative) specifications, which are fundamental to containerization. Many container-related tools are being developed in Rust.
 
 ### Container Runtime {#skip}
 

@@ -53,12 +53,12 @@ Example from [tokio-graceful-shutdown][c~tokio-graceful-shutdown~docs]{{hi:tokio
 ## Useful Links
 
 - [`tokio.rs`][c~tokio~website].
-- [![tokio examples][c~tokio-examples~docs~badge]][c~tokio-examples~docs]{{hi:Tokio examples}}.
+- [![tokio examples][c~tokio~examples~docs~badge]][c~tokio~examples~docs]{{hi:Tokio examples}}.
 - [tokio-rs `async-stream`][c~async-stream~github].
 - [tokio-rs `mio`][c~mio~github].
-- [`tokio` glossary][c~tokio-glossary~website]↗.
-- [`tokio` tutorial][c~tokio-tutorial~docs]{{hi:tokio}}↗.
-- Tokio "mini-Redis" example: [![tokio-mini-redis][c~tokio-mini-redis~github~badge]][c~tokio-mini-redis~github].
+- [`tokio` glossary][c~tokio~glossary~website]↗.
+- [`tokio` tutorial][c~tokio~tutorial~docs]{{hi:tokio}}↗.
+- Tokio "mini-Redis" example: [![tokio~mini-redis][c~tokio~mini-redis~github~badge]][c~tokio~mini-redis~github].
 - Template for a tokio-rs app with logging & command line argument parser: [![rust-tokio-template~github][rust-tokio-template~github~badge]][rust-tokio-template~github].
 
 {{#include refs.incl.md}}

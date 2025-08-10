@@ -6,11 +6,11 @@ This section provides a large number of links to Rust resources:
 
 |||
 |---|---|
-| [`rust-lang.org`][rust-lang]↗ | Official website for the Rust programming language. |
+| [`rust-lang.org`][rust-lang~website]↗ | Official website for the Rust programming language. |
 | [The Rust Programming Language][book~rust]↗ | "The Rust Book". |
 | [`crates.io`][crates.io~website]↗ | The official crate (library) registry. |
 | [`crates.io`'s categories][crates.io~category_slugs]↗ | List of categories on [`crates.io`][crates.io~website]{{hi:crates.io}}↗ - search with `category:<category-slug>`. |
-| [`lib.rs`][lib-rs]↗ | Curated, unofficial alternative to [`crates.io`][crates.io~website]{{hi:crates.io}}↗. |
+| [`lib.rs`][lib.rs~website]↗ | Curated, unofficial alternative to [`crates.io`][crates.io~website]{{hi:crates.io}}↗. |
 | [`docs.rs`][docs.rs~website]↗ | The central documentation website for Rust crates. |
 | [`blessed.rs`][blessed-rs~website]↗ | Unofficial guide to (the best of) the Rust ecosystem. |
 | [Awesome Rust][awesome-rust~github]↗ [(GitHub)][awesome-rust~github]↗ | A curated list of Rust code and resources. |

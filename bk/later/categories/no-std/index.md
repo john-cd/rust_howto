@@ -19,7 +19,7 @@ Remember to handle panics appropriately. Consider other useful crates like [`nb`
 
 - Allocation ([`alloc`](https://doc.rust-lang.org/alloc/index.html)↗{{hi:alloc}}) library: If you need dynamic memory allocation in [`no_std`](https://doc.rust-lang.org/reference/names/preludes.html#r-names.preludes.extern.no_std)↗{{hi:no_std}}, the `alloc` crate provides the necessary APIs. It's important to note that you'll need to provide your own allocator implementation. See also the [[no-std_no-alloc | No Alloc]] chapter.
 
-- In [`no_std`](https://doc.rust-lang.org/reference/names/preludes.html#r-names.preludes.extern.no_std)↗{{hi:no_std}} environments, you can't rely on the standard library's panic handling mechanisms. You'll need to define your own panic handler. Crates like [`panic-halt`][c~panic-halt~docs]↗{{hi:panic-halt}} (halts execution) or [`panic-abort`][c~panic-abort~docs]↗{{hi:panic-abort}} (aborts execution) can be helpful. You might also implement custom panic behavior.
+- In [`no_std`](https://doc.rust-lang.org/reference/names/preludes.html#r-names.preludes.extern.no_std)↗{{hi:no_std}} environments, you can't rely on the standard library's `panic` handling mechanisms. You'll need to define your own `panic` handler. Crates like [`panic-halt`][c~panic-halt~docs]↗{{hi:panic-halt}} (halts execution) or [`panic-abort`][c~panic-abort~docs]↗{{hi:panic-abort}} (aborts execution) can be helpful. You might also implement custom `panic` behavior.
 
 ## Other Useful Crates for `no_std`
 

@@ -6,7 +6,7 @@
 
 - [Volta][volta~website]↗[(github)][volta~github]↗.
 - [Deno][deno~website]↗ uses Rust for its JavaScript and TypeScript runtime.
-- `Bun`.
+- [`Bun`](https://bun.sh)↗{{hi:Bun}}.
 
 ### `swc` Compiler {#swc}
 
@@ -23,11 +23,9 @@ See also [[programming_languages | Programming Language]] parsers.
 
 ### `lapce` {#lapce}
 
-[![lapce~website][c~lapce~website~badge]][c~lapce~website]{{hi:lapce}}
-[![lapce~github][c~lapce~github~badge]][c~lapce~github]
-[![lapce~lib.rs][c~lapce~lib.rs~badge]][c~lapce~lib.rs]
+[![lapce~website][lapce~website~badge]][lapce~website]{{hi:lapce}}
 
-[`lapce`][c~lapce~website]{{hi:lapce}}↗ is a lightning-fast and Powerful Code Editor written in Rust.
+[`lapce`][lapce~website]{{hi:lapce}}↗ is a lightning-fast and Powerful Code Editor written in Rust.
 
 ### `zed` {#zed}
 

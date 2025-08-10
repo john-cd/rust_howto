@@ -27,15 +27,15 @@ Crates like [`axum`][c~axum~docs]↗{{hi:axum}}, [`warp`][c~warp~docs]↗{{hi:wa
 ### Key Technologies {#skip2}
 
 - Communication: Microservices communicate over the network, commonly via REST or [[_grpc | gRPC]].
-- Service Discovery: Use a service registry (e.g., [`Consul`]()↗{{hi:Consul}}, [`etcd`]()↗{{hi:etcd}}) to dynamically discover microservice locations.
-- API Gateway: Use an API gateway (e.g., [`Kong`]()↗{{hi:Kong}}) to handle routing, [authentication][p~authentication], and other cross-cutting concerns.
-- Message Queues: Use message queues (e.g., [`RabbitMQ`]()↗{{hi:RabbitMQ}}, [`Kafka`](https://kafka.apache.org)↗{{hi:Kafka}}) for [asynchronous][p~asynchronous] communication.
+- Service Discovery: Use a service registry (e.g., [`Consul`](https://developer.hashicorp.com/consul)↗{{hi:Consul}}, [`etcd`](https://etcd.io)↗{{hi:etcd}}) to dynamically discover microservice locations.
+- API Gateway: Use an API gateway (e.g., [`Kong`](https://konghq.com)↗{{hi:Kong}}) to handle routing, [authentication][p~authentication], and other cross-cutting concerns.
+- Message Queues: Use message queues (e.g., [`RabbitMQ`](https://www.rabbitmq.com/)↗{{hi:RabbitMQ}}, [`Kafka`](https://kafka.apache.org)↗{{hi:Kafka}}) for [asynchronous][p~asynchronous] communication.
 - [Containerization][p~containerization]: Use [`Docker`](https://www.docker.com)↗{{hi:Docker}} and [`Kubernetes`](https://kubernetes.io)↗{{hi:Kubernetes}} for [containerization][p~containerization] and orchestration.
-- Logging and Monitoring: Implement central logging and monitoring with [`Fluentd`]()↗{{hi:Fluentd}}; [`Elasticsearch`][c~elasticsearch~docs]↗{{hi:Elasticsearch}}, [`Logstash`]()↗{{hi:Logstash}}, and [`Kibana`]()↗{{hi:Kibana}}; [`Graylog`]()↗{{hi:Graylog}}, [`Splunk`]()↗{{hi:Splunk}}, [`Prometheus`]()↗{{hi:Prometheus}} and/or [`Grafana`]()↗{{hi:Grafana}}.
+- Logging and Monitoring: Implement central logging and monitoring with [`Fluentd`](https://www.fluentd.org)↗{{hi:Fluentd}}; [`Elasticsearch`][c~elasticsearch~docs]↗{{hi:Elasticsearch}}, [`Logstash`](https://www.elastic.co/logstash)↗{{hi:Logstash}}, and [`Kibana`](https://www.elastic.co/kibana)↗{{hi:Kibana}}; [`Graylog`](https://graylog.org)↗{{hi:Graylog}}, [`Splunk`](https://www.splunk.com)↗{{hi:Splunk}}, [`Prometheus`](https://prometheus.io)↗{{hi:Prometheus}} and/or [`Grafana`](https://grafana.com/grafana/dashboards)↗{{hi:Grafana}}.
 - [Error Handling][p~error-handling] and Resilience: Implement retry mechanisms, circuit breakers, and other resilience patterns.
-- Configuration Management: externalize configuration and secrets e.g. with `Vault`.
-- Authentication/Authorization: Implement security with `JWT` (JSON Web Tokens) or `OAuth 2.0` / `OpenID Connect` (OIDC), using the aforementioned API Gateway or a sidecar proxy (e.g. `Envoy`, `Istio`).
-- Tracing: Implement distributed tracing to track requests across microservices, using `OpenTelemetry`, `Jaeger`, or `Zipkin`.
+- Configuration Management: externalize configuration and secrets e.g. with [`Vault`](https://www.hashicorp.com/en/products/vault)↗{{hi:Vault}}.
+- Authentication/Authorization: Implement security with [`JWT`](https://www.jwt.io)↗{{hi:JWT}} (JSON Web Tokens) or [`OAuth 2.0`](https://en.wikipedia.org/wiki/OAuth)↗{{hi:OAuth 2.0}} / `OpenID Connect` (OIDC), using the aforementioned API Gateway or a sidecar proxy (e.g. [`Envoy`](https://www.envoyproxy.io/)↗{{hi:Envoy}}, [`Istio`](https://istio.io)↗{{hi:Istio}}).
+- Tracing: Implement distributed tracing to track requests across microservices, using [`OpenTelemetry`](https://opentelemetry.io/)↗{{hi:OpenTelemetry}}, [`Jaeger`](https://www.jaegertracing.io)↗{{hi:Jaeger}}, or [`Zipkin`](https://zipkin.io)↗{{hi:Zipkin}}.
 
 See [[web-programming | Web Programming]], [[web-programming_http-server | Web Programming: HTTP Server]], [[apis | APIs]], and [[amqp | AMQP]].
 
@@ -77,9 +77,9 @@ In an Event-driven architecture (EDA), applications communicate by producing and
 ### Core Concepts {#skip8}
 
 - Event Producers and Consumers: Systems or components communicate by emitting and responding to events.
-- Event Bus/Queue: Acts as a mediator for events, often using tools like `Kafka`, `RabbitMQ`, or other message brokers.
+- Event Bus/Queue: Acts as a mediator for events, often using tools like [`Kafka`](https://kafka.apache.org)↗{{hi:Kafka}}, [`RabbitMQ`](https://www.rabbitmq.com)↗{{hi:RabbitMQ}}, or other message brokers.
 - [Asynchronous][p~asynchronous] Communication: Components operate independently and interact via events.
-- Often implemented with libraries like [`tokio`][c~tokio~docs]↗{{hi:tokio}} or [`async-std`][c~async_std~docs]↗{{hi:async-std}}.
+- Often implemented with libraries like [`tokio`][c~tokio~docs]↗{{hi:tokio}} or [`async-std`][c~async-std~docs]↗{{hi:async-std}}.
 
 See [[asynchronous | Asynchronous]] and [[amqp | AMQP]].
 
@@ -91,7 +91,7 @@ See [[asynchronous | Asynchronous]] and [[amqp | AMQP]].
 
 ### Use Cases {#skip}
 
-- Systems with high throughput or real-time requirements (e.g., financial systems, IoT platforms, social media apps).
+- Systems with high throughput or real-time requirements (e.g., `financial` systems, IoT platforms, social media apps).
 - Large-scale distributed systems where scalability and availability are key.
 
 ## Actor Model {#actor-model}

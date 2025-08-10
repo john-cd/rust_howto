@@ -22,8 +22,8 @@ All major Cloud platforms offer a Rust SDK:
 
 Rust is commonly used to develop reliable and efficient cloud infrastructure components, such as [[virtualization | Virtualization]], [[network-programming | networking]] services and storage systems. That includes core cloud-native technologies, such as:
 
-- Container runtimes (e.g., `Youki`),
-- Service meshes (e.g., `Linkerd`),
+- Container runtimes (e.g., [`Youki`](https://github.com/youki-dev/youki)↗{{hi:Youki}}),
+- Service meshes (e.g., [`Linkerd`](https://linkerd.io/)↗{{hi:Linkerd}}),
 - MicroVMs (e.g., `Firecracker`),
 - Operating systems optimized for containers (e.g., [`Bottlerocket`][c~bottlerocket~docs]↗{{hi:Bottlerocket}}).
 
