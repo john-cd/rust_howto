@@ -8,7 +8,7 @@ _default:
 
 ## ---- URL MANAGEMENT -----------------------------------
 
-# Check that URLs (to external websites) are valid and working
+# Check that URLs (to external websites) are valid and working.
 [unix]
 @check:
   ./check_urls.sh {{root}}

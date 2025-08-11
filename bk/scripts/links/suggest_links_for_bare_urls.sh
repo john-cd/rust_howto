@@ -6,7 +6,7 @@ set -u
 # Manual review necessary
 # Requires ripgrep
 #
-# Usage: ./scripts/urls/list_bare_urls.sh <root folder>
+# Usage: ./scripts/urls/<script_name>.sh <root folder>
 
 root="$(realpath $1)/"
 

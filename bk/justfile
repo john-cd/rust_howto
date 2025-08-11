@@ -161,6 +161,9 @@ mod gh 'scripts/gh'
 # Manage pre-commit
 mod? precommit 'scripts/precommit'
 
+# Manage wikilinks
+mod wikilinks 'scripts/wikilinks'
+
 ## ---- CLEAN ------------------------------------------
 
 # Clean Cargo's `target` and mdbook's `book` directories

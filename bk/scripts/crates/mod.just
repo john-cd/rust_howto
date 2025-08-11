@@ -10,7 +10,7 @@ _default:
 
 ## ---- CRATE MANAGEMENT -----------------------------------
 
-# (BEWARE: modifies many files; manual review required) put all crate names in the book's Markdown between ` `
+# (BEWARE: modifies many files; manual review required) Put all crate names in the book's Markdown between ` `
 backtick:
    #! /usr/bin/env bash
    set -euo pipefail
@@ -31,7 +31,7 @@ check:
     done
     echo "DONE"
 
-# Extract crate names from  [c~<name>::optional::path~suffix] link labels in all Markdown files in `src` (except refdef files) and compare with the master list.
+# Extract crate names from [c~<name>::optional::path~suffix] link labels in all Markdown files in `src` (except refdef files) and compare with the master list.
 compare_with_markdown:
     #! /usr/bin/env bash
     set -euo pipefail
