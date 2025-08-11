@@ -9,9 +9,9 @@ Examples of common metrics include CPU and memory usage; cache hit ratios; respo
 ## Useful Crates {#skip}
 
 - [`metrics`](https://metrics.rs) is a batteries-included instrumentation ecosystem for Rust, allowing you to quickly and easily instrument your libraries and applications. It supports three fundamental metric types: counters, gauges, and histograms.
-- [`tokio-metrics`](https://crates.io/crates/tokio-metrics) provides utilities for collecting metrics from a Tokio application, including runtime and per-task metrics.
-- [`cadence`](https://crates.io/crates/cadence) is an extensible [`statsd`](https://github.com/statsd/statsd)↗{{hi:statsd}} client for Rust.
-- [`sentry`](https://crates.io/crates/sentry) is a ['Sentry'](https://getsentry.com) client for Rust.
+- [`tokio-metrics`][c~tokio-metrics~crates.io] provides utilities for collecting metrics from a Tokio application, including runtime and per-task metrics.
+- [`cadence`][c~cadence~crates.io] is an extensible [`statsd`][statsd~github]↗{{hi:statsd}} client for Rust.
+- [`sentry`][c~sentry~crates.io] is a ['Sentry'](https://getsentry.com) client for Rust.
 
 ## Related Topics {#related-topics}
 

@@ -29,7 +29,7 @@
 
 ## Rust Podcasts {#podcasts}
 
-- [`rustacean-station.org`][rustacean-station~website]↗ [(Apple podcasts)](https://podcasts.apple.com/us/podcast/rustacean-station/id1472535519)↗.{{hi:Podcasts}}
+- [`rustacean-station.org`][rustacean-station~website]↗ [(Apple podcasts)][podcast~rustacean-station]↗.{{hi:Podcasts}}
 - [Chats with James][podcast~chats-with-james-podcast]↗.
 - [Rust in Production][podcast~corrode.dev]↗.
 - [Rust Review][podcast~rust-review]↗.

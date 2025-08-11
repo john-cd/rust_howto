@@ -20,7 +20,7 @@ Consult [Rust Foundation: Events][rustfoundation-events~website]↗ and [dev.eve
 
 [Rust Community Calendar](https://calendar.google.com/calendar/u/0/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com&pli=1)↗.{{hi:Meetups}}
 
-The following are some of the largest and most active local user groups. They hold regular meetings, talks, and workshops. You can find many more local meetups on platforms like [meetup.com][meetup~website]↗, the [Rust Foundation's list](https://prev.rust-lang.org/en-US/user-groups.html)↗ and [this list (code-maven.com)](https://rust.code-maven.com/user-groups)↗.
+The following are some of the largest and most active local user groups. They hold regular meetings, talks, and workshops. You can find many more local meetups on platforms like [meetup.com][meetup~website]↗, the [Rust Foundation's list][rust-lang-user-groups~website]↗ and [this list (code-maven.com)][rust.code-maven.com-user-groups~website]↗.
 
 | Meetup Name | Location |
 |---|---|
@@ -42,7 +42,7 @@ The following are some of the largest and most active local user groups. They ho
 | [Seattle Rust User Group][meetup~seattle-rust-user-group]↗ | Redmond, WA |
 | [Vancouver Rust][meetup~vancouver-rust]↗ | Vancouver, BC, Canada |
 
-See also [Rust Community Talks](https://github.com/rust-community/talks)↗.
+See also [Rust Community Talks][talks~github]↗.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

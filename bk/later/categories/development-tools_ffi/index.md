@@ -75,7 +75,7 @@ While widely used with other languages, [`SWIG`](https://www.swig.org)↗{{hi:SW
 
 ## Build System Integration (for FFI)
 
-Usually handled with build scripts ([`build.rs`](https://doc.rust-lang.org/cargo/reference/build-scripts.html)↗{{hi:build.rs}}) and the [`cc`][c~cc~docs]↗{{hi:cc}} crate for compiling C/C++ code, if necessary.
+Usually handled with build scripts ([`build.rs`][book~cargo~build-script]↗{{hi:build.rs}}) and the [`cc`][c~cc~docs]↗{{hi:cc}} crate for compiling C/C++ code, if necessary.
 
 - [[build_utils | Build Utils]].
 - [[code_build | Code Build]].

@@ -35,7 +35,7 @@ Kani offers an easy installation [option][p~option] on three platforms:
 - x86_64-apple-darwin (Intel Mac OS).
 - aarch64-apple-darwin (Apple Silicon Mac OS).
 
-Python version 3.7 or newer and the package installer [`pip`](https://pypi.org/project/pip)↗{{hi:pip}} must be installed.
+Python version 3.7 or newer and the package installer [`pip`][pypi~pip]↗{{hi:pip}} must be installed.
 
 Install with:
 
@@ -92,7 +92,7 @@ Loom attempts to check all possible interleavings, while Shuttle chooses interle
 | Property-Based Testing | [`proptest`][c~proptest~docs]↗{{hi:proptest}}, [`quickcheck`][c~quickcheck~docs]↗{{hi:quickcheck}} |
 | Unit [Testing][p~testing] | Use [`cargo test`](https://doc.rust-lang.org/cargo/commands/cargo-test.html)↗{{hi:cargo test}} (built-in testing framework) |
 | Integration Testing | Often uses `cargo test`. Focuses on testing interactions between modules or components. |
-| Fuzzing | [`cargo fuzz`](https://rust-fuzz.github.io/book/cargo-fuzz.html)↗{{hi:cargo fuzz}}, [`afl.rs`][c~afl~docs]↗{{hi:afl.rs}} (bindings to AFL) |
+| Fuzzing | [`cargo fuzz`][book~rust-fuzz]↗{{hi:cargo fuzz}}, [`afl.rs`][c~afl~docs]↗{{hi:afl.rs}} (bindings to AFL) |
 | Code Review Tools: Not Rust-specific, but used in conjunction with Rust code. Examples: GitHub, GitLab, etc. | |
 
 ## References {#references}

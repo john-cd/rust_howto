@@ -5,11 +5,11 @@
 ## Chat Platforms, Forums, and Social Media {#chat}
 
 - Official [`rust-lang.org`](https://rust-lang.org) chat servers and forums:
-  - [Rust Zulip chat](https://rust-lang.zulipchat.com/)↗.
-  - [Rust programming language users forum](https://users.rust-lang.org)↗.
+  - [Rust Zulip chat][forum~rust-lang.zulipchat]↗.
+  - [Rust programming language users forum][forum~users.rust-lang]↗.
   - [Rust programming language internals forum][forum~internals.rust-lang]↗.
-- [Reddit: r/rust](https://www.reddit.com/r/rust)↗.
-- [Reddit: r/learnrust](https://www.reddit.com/r/learnrust)↗.
+- [Reddit: r/rust][reddit~rust]↗.
+- [Reddit: r/learnrust][reddit~learnrust]↗.
 - [Mastodon: #rustlang](https://hachyderm.io/tags/rustlang)↗.
 - [Stack Overflow][blog~stackoverflow~rust]↗.
 
@@ -35,11 +35,11 @@ You may also consult the lists of [Medium blogs tagged with 'Rust'][blog~medium~
 | Title (URL) | Description |
 |---|---|
 | A learning journal: [`lpalmieri.com`][lpalmieri~website]↗ | Luca Palmieri's blog. |
-| Andrew Gallant's [blog](https://burntsushi.net)↗ | Blogs covering [`regex`](https://docs.rs/regex/latest/regex)↗{{hi:regex}}, [`ripgrep`](https://github.com/BurntSushi/ripgrep)↗{{hi:ripgrep}}, etc. |
+| Andrew Gallant's [blog](https://burntsushi.net)↗ | Blogs covering [`regex`](https://docs.rs/regex/latest/regex)↗{{hi:regex}}, [`ripgrep`][c~ripgrep~github]↗{{hi:ripgrep}}, etc. |
 | [Billy DM's blog][blog~billydm]↗ | Posts on programming, including Rust. |
 | Brian Anderson' [blog][blog~brson]↗ | LLVM, blockchain, Rust. |
 | [`codevoweb.com`][codevoweb~website]↗ | Demonstrates how to build common applications using multiple languages, including Rust. |
-| [Denys Séguret's website](https://dystroy.org)↗ | From the author of [`broot`](https://dystroy.org/broot)↗{{hi:broot}}, [`bacon`](https://dystroy.org/bacon)↗{{hi:bacon}}, etc. |
+| [Denys Séguret's website](https://dystroy.org)↗ | From the author of [`broot`][c~broot~website]↗{{hi:broot}}, [`bacon`](https://dystroy.org/bacon)↗{{hi:bacon}}, etc. |
 | The [Embedded Rustacean][blog~theembeddedrustacean]↗ | Tutorial-style articles on embedded Rust. |
 | [`fasterthanli.me`](https://fasterthanli.me)↗ | In-depth articles on Rust, networking, and systems programming. |
 | [`faultlore.com`](https://faultlore.com/blah)↗ | Posts on systems programming and Rust. |
@@ -63,7 +63,7 @@ You may also consult the lists of [Medium blogs tagged with 'Rust'][blog~medium~
 | [Sylvain Kerkour's website][kerkour~website]↗ | Black Hat Rust. |
 | [`tavianator.com`](https://tavianator.com)↗ | Technical articles on performance and low-level programming. |
 | Tedinski's archive: [`www.tedinski.com/archive`](https://www.tedinski.com/archive)↗ | An archive of posts on various programming topics. |
-| Writing an OS in Rust: [`os.phil-opp.com`](https://os.phil-opp.com)↗ | A classic blog series on building a basic OS in Rust. |
+| Writing an OS in Rust: [`os.phil-opp.com`][blog~writing-an-OS-in-rust]↗ | A classic blog series on building a basic OS in Rust. |
 
 You may also consult [this list](https://users.rust-lang.org/t/fearless-rust-bloggers/16770)↗ (somewhat outdated).
 
@@ -73,11 +73,11 @@ You may also consult [this list](https://users.rust-lang.org/t/fearless-rust-blo
 |---|---|
 | [Bevy Engine News](https://bevyengine.org/news)↗ | News and updates for the [`bevy`](https://bevy.org)↗{{hi:bevy}} game engine. |
 | [Bytecode Alliance Articles][blog~bytecodealliance-wasm]↗ | WASM-focused articles and announcements. |
-| [Kani Verifier Blog](https://model-checking.github.io/kani-verifier-blog)↗ | News and updates for the [`kani`](https://model-checking.github.io/kani)↗{{hi:kani}} formal verification tool. |
+| [Kani Verifier Blog][blog~model-checking]↗ | News and updates for the [`kani`][book~model-checking]↗{{hi:kani}} formal verification tool. |
 | [`kellnr.io` Blog](https://kellnr.io/blog)↗ | A private crate registry for Rust. |
 | [Meilisearch blog][blog.meilisearch~website]↗ | Updates regarding a fast, open-source search engine. |
 | [Quickwit Blog][blog~quickwit]↗ | A distributed search engine for logs and traces. |
-| [rust-analyzer: this week](https://rust-analyzer.github.io/thisweek)↗ | Weekly news about the `rust-analyzer` language server. |
+| [rust-analyzer: this week][blog~rust-analyzer-this-week]↗ | Weekly news about the `rust-analyzer` language server. |
 | [`shuttle.dev` blog](https://www.shuttle.dev/blog/tags/all)↗ and [`shuttle.dev` launchpad][launchpad-shuttle-dev~website]↗ | A service to deploy Rust applications to the Cloud. |
 
 {{#include refs.incl.md}}

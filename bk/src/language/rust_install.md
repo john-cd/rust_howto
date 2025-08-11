@@ -14,7 +14,7 @@ This command downloads a script and starts the `rustup` installation. Follow the
 
 All tools are installed to the `~/.cargo/bin` directory by default. After installation, `rustup` might ask you to configure your current shell (to update your `PATH`). You can either restart your terminal or run the command provided by the installer (usually something like `source $HOME/.cargo/env` on Unix-like systems).
 
-On Windows, it's recommended to visit the official Rust website's [installation page](https://www.rust-lang.org/tools/install)↗ and download the `rustup-init.exe` installer. Running this executable will guide you through the installation. You may also need the C++ build tools for Visual Studio, which the installer can help you set up.
+On Windows, it's recommended to visit the official Rust website's [installation page][rust-lang~install-rust]↗ and download the `rustup-init.exe` installer. Running this executable will guide you through the installation. You may also need the C++ build tools for Visual Studio, which the installer can help you set up.
 
 If you've installed `rustup` in the past, you can update your installation by running `rustup update`.
 

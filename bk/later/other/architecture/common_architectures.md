@@ -28,14 +28,14 @@ Crates like [`axum`][c~axum~docs]↗{{hi:axum}}, [`warp`][c~warp~docs]↗{{hi:wa
 
 - Communication: Microservices communicate over the network, commonly via REST or [[_grpc | gRPC]].
 - Service Discovery: Use a service registry (e.g., [`Consul`](https://developer.hashicorp.com/consul)↗{{hi:Consul}}, [`etcd`](https://etcd.io)↗{{hi:etcd}}) to dynamically discover microservice locations.
-- API Gateway: Use an API gateway (e.g., [`Kong`](https://konghq.com)↗{{hi:Kong}}) to handle routing, [authentication][p~authentication], and other cross-cutting concerns.
+- API Gateway: Use an API gateway (e.g., [`Kong`][kong~website]↗{{hi:Kong}}) to handle routing, [authentication][p~authentication], and other cross-cutting concerns.
 - Message Queues: Use message queues (e.g., [`RabbitMQ`](https://www.rabbitmq.com/)↗{{hi:RabbitMQ}}, [`Kafka`](https://kafka.apache.org)↗{{hi:Kafka}}) for [asynchronous][p~asynchronous] communication.
-- [Containerization][p~containerization]: Use [`Docker`](https://www.docker.com)↗{{hi:Docker}} and [`Kubernetes`](https://kubernetes.io)↗{{hi:Kubernetes}} for [containerization][p~containerization] and orchestration.
-- Logging and Monitoring: Implement central logging and monitoring with [`Fluentd`](https://www.fluentd.org)↗{{hi:Fluentd}}; [`Elasticsearch`][c~elasticsearch~docs]↗{{hi:Elasticsearch}}, [`Logstash`](https://www.elastic.co/logstash)↗{{hi:Logstash}}, and [`Kibana`](https://www.elastic.co/kibana)↗{{hi:Kibana}}; [`Graylog`](https://graylog.org)↗{{hi:Graylog}}, [`Splunk`](https://www.splunk.com)↗{{hi:Splunk}}, [`Prometheus`](https://prometheus.io)↗{{hi:Prometheus}} and/or [`Grafana`](https://grafana.com/grafana/dashboards)↗{{hi:Grafana}}.
+- [Containerization][p~containerization]: Use [`Docker`][docker~website]↗{{hi:Docker}} and [`Kubernetes`](https://kubernetes.io)↗{{hi:Kubernetes}} for [containerization][p~containerization] and orchestration.
+- Logging and Monitoring: Implement central logging and monitoring with [`Fluentd`](https://www.fluentd.org)↗{{hi:Fluentd}}; [`Elasticsearch`][c~elasticsearch~docs]↗{{hi:Elasticsearch}}, [`Logstash`](https://www.elastic.co/logstash)↗{{hi:Logstash}}, and [`Kibana`](https://www.elastic.co/kibana)↗{{hi:Kibana}}; [`Graylog`](https://graylog.org)↗{{hi:Graylog}}, [`Splunk`][splunk~website]↗{{hi:Splunk}}, [`Prometheus`](https://prometheus.io)↗{{hi:Prometheus}} and/or [`Grafana`](https://grafana.com/grafana/dashboards)↗{{hi:Grafana}}.
 - [Error Handling][p~error-handling] and Resilience: Implement retry mechanisms, circuit breakers, and other resilience patterns.
 - Configuration Management: externalize configuration and secrets e.g. with [`Vault`](https://www.hashicorp.com/en/products/vault)↗{{hi:Vault}}.
 - Authentication/Authorization: Implement security with [`JWT`](https://www.jwt.io)↗{{hi:JWT}} (JSON Web Tokens) or [`OAuth 2.0`](https://en.wikipedia.org/wiki/OAuth)↗{{hi:OAuth 2.0}} / `OpenID Connect` (OIDC), using the aforementioned API Gateway or a sidecar proxy (e.g. [`Envoy`](https://www.envoyproxy.io/)↗{{hi:Envoy}}, [`Istio`](https://istio.io)↗{{hi:Istio}}).
-- Tracing: Implement distributed tracing to track requests across microservices, using [`OpenTelemetry`](https://opentelemetry.io/)↗{{hi:OpenTelemetry}}, [`Jaeger`](https://www.jaegertracing.io)↗{{hi:Jaeger}}, or [`Zipkin`](https://zipkin.io)↗{{hi:Zipkin}}.
+- Tracing: Implement distributed tracing to track requests across microservices, using [`OpenTelemetry`](https://opentelemetry.io/)↗{{hi:OpenTelemetry}}, [`Jaeger`](https://www.jaegertracing.io)↗{{hi:Jaeger}}, or [`Zipkin`][zipkin~website]↗{{hi:Zipkin}}.
 
 See [[web-programming | Web Programming]], [[web-programming_http-server | Web Programming: HTTP Server]], [[apis | APIs]], and [[amqp | AMQP]].
 

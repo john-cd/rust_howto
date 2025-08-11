@@ -13,8 +13,8 @@ Physics [simulation][p~simulation], 3D [visualization][p~visualization], testing
 
 Graphics and [visualization][p~visualization] for Robotics.
 
-- [`kiss3d`](https://crates.io/crates/kiss3d)↗{{hi:kiss3d}} - Keep it simple, stupid 3D [graphics][p~graphics] engine for Rust.
-- [`urdf-viz`](https://crates.io/crates/urdf-viz)↗{{hi:urdf-viz}} - URDF visualizer
+- [`kiss3d`][c~kiss3d~crates.io]↗{{hi:kiss3d}} - Keep it simple, stupid 3D [graphics][p~graphics] engine for Rust.
+- [`urdf-viz`][c~urdf-viz~crates.io]↗{{hi:urdf-viz}} - URDF visualizer
 - [`rerun`][c~rerun~docs]↗{{hi:rerun}} - A logging SDK and visualizer for computer vision and robotics
 
 ### `kiss3d` {#kiss3d}

@@ -14,7 +14,7 @@
 [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 [![cat~development-tools::build-utils][cat~development-tools::build-utils~badge]][cat~development-tools::build-utils]{{hi:Build Utils}}
 
-[`cargo make`](https://github.com/sagiegurari/cargo-make)↗{{hi:cargo make}} is a Rust task runner and build tool. The [`cargo-make`][c~cargo-make~docs]↗{{hi:cargo-make}} task runner enables to define and configure sets of tasks and run them as a flow. A task is a command, script, rust code, or other sub tasks to execute. Tasks can have dependencies which are also tasks that will be executed before the task itself.
+[`cargo make`][c~cargo-make~github]↗{{hi:cargo make}} is a Rust task runner and build tool. The [`cargo-make`][c~cargo-make~docs]↗{{hi:cargo-make}} task runner enables to define and configure sets of tasks and run them as a flow. A task is a command, script, rust code, or other sub tasks to execute. Tasks can have dependencies which are also tasks that will be executed before the task itself.
 With a simple [toml][p~toml] based [configuration][p~configuration] file, you can define a multi platform build script that can run build, test, generate [documentation][p~documentation], run bench tests, run security validations and more, executed by running a single command.
 
 Install with
@@ -33,7 +33,7 @@ cargo make --version
 [![cargo-xtask~github][c~cargo-xtask~github~badge]][c~cargo-xtask~github]
 [![cargo-xtask~lib.rs][c~cargo-xtask~lib.rs~badge]][c~cargo-xtask~lib.rs]
 
-[cargo-xtask][c~cargo-xtask~github]{{hi:cargo-xtask}}↗ adds free-form automation to a Rust project, a-la [`make`](https://www.gnu.org/software/make)↗{{hi:make}}, [`npm run`](https://www.npmjs.com)↗{{hi:npm run}} or bespoke bash scripts.
+[cargo-xtask][c~cargo-xtask~github]{{hi:cargo-xtask}}↗ adds free-form automation to a Rust project, a-la [`make`][make~website]↗{{hi:make}}, [`npm run`][npm~website]↗{{hi:npm run}} or bespoke bash scripts.
 
 The two distinguishing features of [`xtask`][c~cargo-xtask~docs]↗{{hi:xtask}} are the following:
 
@@ -79,7 +79,7 @@ The following example executes shell commands and interacts with the file system
 |---|---|
 | General Build Tools | [`cargo build`]( ){{hi: }} (built-in) compiles your project. `cargo check` checks your code for errors without compiling. |
 | Cross-Compilation | [`cross`][c~cross~docs]↗{{hi:cross}} simplifies cross-compilation. |
-| Packaging, Distribution | [`cargo-deb`][c~cargo-deb~docs]↗{{hi:cargo-deb}} creates Debian packages. [`cargo-rpm`][c~cargo-rpm~docs]↗{{hi:cargo-rpm}} creates RPM packages. [`create-dmg`](https://github.com/create-dmg/create-dmg)↗{{hi:create-dmg}} creates macOS disk images. |
+| Packaging, Distribution | [`cargo-deb`][c~cargo-deb~docs]↗{{hi:cargo-deb}} creates Debian packages. [`cargo-rpm`][c~cargo-rpm~docs]↗{{hi:cargo-rpm}} creates RPM packages. [`create-dmg`][create-dmg~github]↗{{hi:create-dmg}} creates macOS disk images. |
 | Build Script Helpers | [`cc`][c~cc~docs]↗{{hi:cc}} helps with compiling C/C++ code in build scripts. [`pkg-config`][c~pkg-config~docs]↗{{hi:pkg-config}} finds system libraries. |
 | Code Generation | Use build scripts. |
 | Link-Time Optimization (LTO) Configuration | Configured in Cargo.toml |

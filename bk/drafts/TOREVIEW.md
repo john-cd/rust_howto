@@ -8,8 +8,8 @@
 
 ## Markdown {#skip}
 
-- [`mdbook-pdf`](https://crates.io/crates/mdbook-pdf)
-- [`mdbook-tools`](https://lib.rs/crates/mdbook-tools)
+- [`mdbook-pdf`][c~mdbook-pdf~crates.io]
+- [`mdbook-tools`][c~mdbook-tools~lib.rs]
 - [Environment Variables - mdBook Documentation][book~mdbook~environment-variables]
 
 ## AI {#skip}
@@ -30,7 +30,7 @@
 
 ## Dataflow Graphs {#skip}
 
-- [`fractalide`: Reusable Reproducible Composable Software](https://github.com/fractalide/fractalide)
+- [`fractalide`: Reusable Reproducible Composable Software][fractalide~github]
 
 ## Data Structures {#skip}
 
@@ -43,7 +43,7 @@
 
 ## Example Code {#skip}
 
-- [`rust-shed`: Repository containing Rust crates common between other Facebook open source projects (like Mononoke or Eden).](https://github.com/facebookexperimental/rust-shed)
+- [`rust-shed`: Repository containing Rust crates common between other Facebook open source projects (like Mononoke or Eden).][rust-shed~github]
 
 ## Jobs {#skip}
 
@@ -55,7 +55,7 @@
 
 ## Layouts {#skip}
 
-- [Other reprs - The Rustonomicon](https://doc.rust-lang.org/nomicon/other-reprs.html)
+- [Other reprs - The Rustonomicon][book~nomicon~other-reprs]
 
 ## List of crates Available in the Rust Playground {#skip}
 
@@ -63,7 +63,7 @@
 
 ## ML / Search {#skip}
 
-- [`hora`: efficient approximate nearest neighbor search algorithm collections library written in Rust.](https://github.com/hora-search/hora)
+- [`hora`: efficient approximate nearest neighbor search algorithm collections library written in Rust.][hora~github]
 
 ## Reviews / Evolution of Rust {#skip}
 
@@ -84,7 +84,7 @@
 
 ## Web {#skip}
 
-- [`geckodriver`: WebDriver for Firefox](https://github.com/mozilla/geckodriver)
+- [`geckodriver`: WebDriver for Firefox][geckodriver~github]
 - [Pake: Turn any webpage into a desktop app with Rust][pake~github]
 
 ## Zed {#skip}

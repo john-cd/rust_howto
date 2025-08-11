@@ -25,7 +25,7 @@ Constants are primarily used for values that truly never change throughout the l
 ### References {#references}
 
 - [Constants (Rust book)][book~rust~ch03-01-variables-and-mutability-constants]↗.
-- [Constant evaluation (Rust reference)](https://doc.rust-lang.org/reference/const_eval.html)↗.
+- [Constant evaluation (Rust reference)][book~rust-reference~const_eval]↗.
 
 ## Declare Statics {#statics}
 

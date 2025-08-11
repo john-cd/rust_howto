@@ -37,9 +37,9 @@ You can also search or post on Rust chat servers and forums - see [[blogs | Blog
 ### Additional Lists & Reviews {#lists-reviews}
 
 - [Awesome Rust (libhunt.com)][rust-libhunt~website]↗.
-- [Top Rust Libraries 2025](https://libs.tech/rust)↗.
+- [Top Rust Libraries 2025][libs.tech-rust~website]↗.
 - [State of the Crates 2025][blog~state-of-the-crates]↗.
-- [r/rust: "What are some less popular but well-made crates you'd like others to know about?"](https://www.reddit.com/r/rust/comments/106w4ao/what_are_some_less_popular_but_wellmade_crates/)↗.
+- [r/rust: "What are some less popular but well-made crates you'd like others to know about?"][reddit~what_are_some_less_popular_but_wellmade_crates]↗.
 - ["Must know" Rust Crates](https://gitlab.com/samuel_schuepbach/must_know_rust_crates)↗.
 - [RustRepo][rustrepo~website]↗.
 
@@ -68,7 +68,7 @@ You will find below links to "Are we ... yet?" websites and similar. They list k
   - [Are We VFX Yet?][arewevfxyet~website]↗.
   - [Are We Quantum Yet?][blog~arewequantumyet]↗.
   - [Are We in Space Yet?][aerorust~website]↗.
-  - [Rust Audio](https://rust.audio)↗.
+  - [Rust Audio][rust.audio~website]↗.
   - [Awesome Geo-Rust][awesome-georust~github]↗: geospatial software, libraries, tools and resources, written in Rust.
 
 Note that several of these websites are out-of-date. [Are We Rust Yet?][are-we-rust-yet~github]↗ list their last commit date and update frequency.

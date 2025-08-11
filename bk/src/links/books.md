@@ -9,7 +9,7 @@ The following includes books and other long-form writings about Rust.
 - [Little Book of Rust Books][book~the-little-book-of-rust-books]{{hi:Rust books}}↗.
 - [Awesome Rust Books][rustbooks~github]↗.
 - [LearnRust][learnrust~github]↗: A "list of resources to learn Rust - Roadmap from beginner to advanced level". Includes a book section.
-- [`rust-learning`](https://github.com/ctjhoa/rust-learning)↗: A bunch of links to books, blog posts, articles, videos, etc. for learning Rust.
+- [`rust-learning`][rust-learning~github]↗: A bunch of links to books, blog posts, articles, videos, etc. for learning Rust.
 
 ## Essential and Official Books {#official-books}
 
@@ -21,15 +21,15 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 - [Rust by Example][book~rust-by-example]↗: A collection of runnable examples that illustrate various Rust concepts and standard libraries.
 - The [Rust Cookbook (old)][book~rust-cookbook]↗.{{hi:Cookbook}}
   - The [Rust Cookbook (fork)][book~rust-cookbook-fork]↗.
-- The [Rust Standard Library](https://doc.rust-lang.org/std/index.html)↗: Comprehensive guide to the Rust standard library APIs.{{hi:Standard library}}
+- The [Rust Standard Library][c~std~docs]↗: Comprehensive guide to the Rust standard library APIs.{{hi:Standard library}}
 - The [Rust Reference][book~rust-reference]↗: The primary reference for the Rust programming language.
-- The [Rustonomicon][book~rustonomicon]↗ [(nightly version)](https://doc.rust-lang.org/nightly/nomicon)↗.{{hi:Rustonomicon}}{{hi:Unsafe code}}
+- The [Rustonomicon][book~rustonomicon]↗ [(nightly version)][book~nightly-nomicon]↗.{{hi:Rustonomicon}}{{hi:Unsafe code}}
 
 ### Official Reference & Documentation {#reference-documentation}
 
 - The [Rust Edition Guide][book~edition-guide]↗. Editions are Rust's way of introducing changes into the language that would not otherwise be backwards compatible.{{hi:Editions}}
 - [Rust Error Codes Index][book~error_codes]↗.{{hi:Error codes}}
-- The [Rust Unstable Book](https://doc.rust-lang.org/nightly/unstable-book/index.html)↗.{{hi:Unstable Rust}}
+- The [Rust Unstable Book][book~nightly-unstable-book]↗.{{hi:Unstable Rust}}
 - The [Rust RFC Book][book~rust-lang-rfcs]↗.{{hi:RFCs}}
 - [Rust Forge][forge.rust-lang.org~website]↗ serves as a repository of supplementary documentation useful for contributors to the Rust programming language repos.
 
@@ -70,7 +70,7 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 - [Rust Under the Hood](https://www.amazon.com/dp/B0D7FQB3DH): A deep dive into Rust internals and generated assembly, by Sandeep Ahluwalia, Deepa Ahluwalia. [979-8320364469][ISBN~979-8320364469]↗.
 - The [Secrets of Rust: Tools](https://bitfieldconsulting.com/books/rust-tools)↗.
 - [Step Ahead with Rust: Systems Programming in Rust][book~Step-Ahead-Rust-Systems-Programming-ebook]↗ by Jonathan Creekmore, James Miller (Kindle).
-- [Zero To Production In Rust: An Introduction to Backend Development][book~Zero-Production-Rust-introduction-development]↗ by Luca Palmieri. [979-8847211437][ISBN~979-8847211437]↗: "An opinionated introduction to backend development in Rust". [(website and sample)](https://www.zero2prod.com/index.html)↗ [(Blog)][book~zero-to-production]↗ [Code for the book (GitHub)][book~zero-to-production~github]↗.
+- [Zero To Production In Rust: An Introduction to Backend Development][book~Zero-Production-Rust-introduction-development]↗ by Luca Palmieri. [979-8847211437][ISBN~979-8847211437]↗: "An opinionated introduction to backend development in Rust". [(website and sample)][zero2prod~website]↗ [(Blog)][book~zero-to-production]↗ [Code for the book (GitHub)][book~zero-to-production~github]↗.
 
 ## By Topic {#skip}
 
@@ -95,11 +95,11 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 
 ### Compiler & Tools {#compiler-tools}
 
-- The [`rustc` Book](https://doc.rust-lang.org/rustc/index.html)↗.{{hi:Compiler}}
+- The [`rustc` Book][book~rustc]↗.{{hi:Compiler}}
 - [Rust Compiler Development Guide](https://rustc-dev-guide.rust-lang.org/getting-started.html)↗.
 - The [Cargo Book][c~cargo~website]↗. Cargo is the Rust package manager.{{hi:Tools}}{{hi:cargo}}
 - The [`rustdoc` book][book~rustdoc]↗.{{hi:rustdoc}}
-- [Configuring `rustfmt`](https://rust-lang.github.io/rustfmt)↗.{{hi:rustfmt}}
+- [Configuring `rustfmt`][rustfmt.toml]↗.{{hi:rustfmt}}
 - [Clippy Documentation][book~clippy]↗.{{hi:clippy}}
 - [mdBook Documentation][book~mdbook]↗.{{hi:mdbook}}
 
@@ -133,8 +133,8 @@ See also the [Awesome Embedded Rust][awesome-embedded-rust~github]↗, a curated
 
 ### Foreign Function Interfaces (FFI) {#ffi}
 
-- The [`bindgen` User Guide](https://rust-lang.github.io/rust-bindgen)↗.{{hi:bindgen}}
-- The [Rust FFI Omnibus](https://jakegoulding.com/rust-ffi-omnibus)↗.{{hi:FFI}}
+- The [`bindgen` User Guide][c~bindgen~website]↗.{{hi:bindgen}}
+- The [Rust FFI Omnibus][jakegoulding-rust-ffi-omnibus~website]↗.{{hi:FFI}}
 
 ### Functional Programming {#functional-programming}
 
@@ -178,7 +178,7 @@ See also the [Awesome Embedded Rust][awesome-embedded-rust~github]↗, a curated
 
 ### Standard Library {#standard-library}
 
-- The [Rust Standard Library](https://doc.rust-lang.org/std/index.html)↗: The official, comprehensive guide to the Rust standard library APIs.{{hi:Standard library}}
+- The [Rust Standard Library][c~std~docs]↗: The official, comprehensive guide to the Rust standard library APIs.{{hi:Standard library}}
 - [Rust Standard Library Cookbook][book~Rust-Standard-Library-Cookbook-leverage-ebook]↗: Over 75 recipes to leverage the power of Rust. [978-1788629652][ISBN~978-1788629652]↗.
 
 ### Unsafe Code {#unsafe}
@@ -187,7 +187,7 @@ See also the [Awesome Embedded Rust][awesome-embedded-rust~github]↗, a curated
 
 ### Web {#web}
 
-[Rust Web Development with `warp`, `tokio`, and `reqwest`](https://www.amazon.com/Rust-Web-Development-Bastian-Gruber/dp/1617299006) by Bastian Gruber. [9781617299001](https://en.wikipedia.org/wiki/Special:BookSources/9781617299001)↗.
+[Rust Web Development with `warp`, `tokio`, and `reqwest`][book~rust-web-development-bastian-gruber] by Bastian Gruber. [9781617299001][ISBN~9781617299001]↗.
 
 ### Webassembly (WASM) {#wasm}
 

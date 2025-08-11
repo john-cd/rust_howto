@@ -40,7 +40,7 @@ Dynamically Sized Types (DSTs), also known as "unsized types," are types whose s
 
 - Slices: [`[T]`](https://doc.rust-lang.org/std/primitive.slice.html)↗ (e.g., `[i32]`, `[u8]`),
 - [`str`](https://doc.rust-lang.org/std/primitive.str.html)↗{{hi:str}}: The string slice type,
-- Trait Objects: [`dyn Trait`](https://doc.rust-lang.org/std/keyword.dyn.html)↗{{hi:dyn}} (e.g., `dyn std::io::Read`).
+- Trait Objects: [`dyn Trait`][keyword~dyn]↗{{hi:dyn}} (e.g., `dyn std::io::Read`).
 
 The following demonstrates boxes containing slices and string slices:
 

@@ -39,7 +39,7 @@ Every [`std::option::Option`][c~std::option::Option~docs]↗{{hi:std::option::Op
 
 [![std][c~std~docs~badge]][c~std~docs]
 
-"Early Exit" (also called "Early Return") is the technique of immediately returning from a function (or exiting a loop) as soon as an invalid or exceptional condition is detected. For this purpose, Rust offers the [`?`](https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html#a-shortcut-for-propagating-errors-the--operator)↗{{hi:?}} operator, which is essentially a shortcut for a [`match`](https://doc.rust-lang.org/std/keyword.match.html)↗ expression:
+"Early Exit" (also called "Early Return") is the technique of immediately returning from a function (or exiting a loop) as soon as an invalid or exceptional condition is detected. For this purpose, Rust offers the [`?`][book~rust~ch09-02-recoverable-errors-with-result-?]↗{{hi:?}} operator, which is essentially a shortcut for a [`match`](https://doc.rust-lang.org/std/keyword.match.html)↗ expression:
 
 ```rust,noplayground
 fn func() -> Option<...> {

@@ -5,7 +5,7 @@
 | Topic | Tools |
 |---|---|
 | Build System | [cargo][p~cargo] is the primary build system for Rust. |
-| Build Scripts | Use [`build.rs`](https://doc.rust-lang.org/cargo/reference/build-scripts.html)↗{{hi:build.rs}} files in your project. |
+| Build Scripts | Use [`build.rs`][book~cargo~build-script]↗{{hi:build.rs}} files in your project. |
 | Build Profiles | Configure build options in [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} for debug, release, etc. |
 | Cross-Compilation | [`cross`][c~cross~docs]↗{{hi:cross}} simplifies cross-compilation, target specifications in `Cargo.toml`. |
 | Link-Time Optimization (LTO) | Controlled via `Cargo.toml`. |
@@ -19,7 +19,7 @@
 
 [![just][c~just~docs~badge]][c~just~docs] [![just~crates.io][c~just~crates.io~badge]][c~just~crates.io] [![just~github][c~just~github~badge]][c~just~github] [![just~lib.rs][c~just~lib.rs~badge]][c~just~lib.rs]{{hi:just}}{{hi:Command-line}}{{hi:Development}}{{hi:Runner}}{{hi:Task}}{{hi:Utility}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}}
 
-[`just`][c~just~docs]↗{{hi:just}}{{hi:just}} is a command runner{{hi:Command runner}}. It is a Rust-based equivalent to [`make`](https://www.gnu.org/software/make)↗{{hi:make}} without the ability to detect file changes, but with significantly fewer syntactic warts.
+[`just`][c~just~docs]↗{{hi:just}}{{hi:just}} is a command runner{{hi:Command runner}}. It is a Rust-based equivalent to [`make`][make~website]↗{{hi:make}} without the ability to detect file changes, but with significantly fewer syntactic warts.
 
 Consult the [Just programmer's manual][c~just~programmer-manual]↗.
 

@@ -75,7 +75,7 @@ You may also use the [string_cache](https://docs.rs/string_cache/latest/string_c
 
 [![compact_str][c~compact_str~docs~badge]][c~compact_str~docs] [![compact_str~crates.io][c~compact_str~crates.io~badge]][c~compact_str~crates.io] [![compact_str~github][c~compact_str~github~badge]][c~compact_str~github] [![compact_str~lib.rs][c~compact_str~lib.rs~badge]][c~compact_str~lib.rs]{{hi:compact_str}}{{hi:Compact}}{{hi:Memory}}{{hi:Mutable}}{{hi:Small}}{{hi:String}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
-If you need small formatted string, consider a string type implementing small-string optimization. For example, [compact_str](https://crates.io/crates/compact_str)↗ implements `CompactString`, a memory efficient string type that can store smaller strings on the stack and transparently stores longer strings on the heap.
+If you need small formatted string, consider a string type implementing small-string optimization. For example, [compact_str][c~compact_str~crates.io]↗ implements `CompactString`, a memory efficient string type that can store smaller strings on the stack and transparently stores longer strings on the heap.
 
 ## Related Topics {#related-topics}
 

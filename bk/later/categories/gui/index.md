@@ -23,7 +23,7 @@ See also
 - [Are we GUI yet?][are-we-gui-yet?~website]↗.
 - the relevant section in [blessed.rs][blessed-rs~website]↗.
 - [The State of Rust GUI libraries][blog~state-rust-gui-libraries].
-- [LibHunt](https://www.libhunt.com/l/rust/topic/gui).
+- [LibHunt][libhunt-rust-gui~website].
 - [simplifycpp.org](https://simplifycpp.org/?id=a0507).
 
 ## GUI Frameworks

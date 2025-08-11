@@ -20,7 +20,7 @@ This does not include any Web, [Node][p~node], or any other JS environment APIs.
 
 ## Accessing DOM and Web APIs via Rust {#skip}
 
-The [`web-sys`](https://crates.io/crates/web-sys)↗{{hi:web-sys}} crate provides Rust bindings to the Web's APIs, allowing you to interact with the DOM, Canvas, WebGL, and other browser features.
+The [`web-sys`][c~web-sys~crates.io]↗{{hi:web-sys}} crate provides Rust bindings to the Web's APIs, allowing you to interact with the DOM, Canvas, WebGL, and other browser features.
 Essentially, [`web-sys`]( ){{hi: }} is the bridge that lets your Rust code talk to the browser.
 
 ## Calling Rust/WASM Functions from JavaScript {#skip1}

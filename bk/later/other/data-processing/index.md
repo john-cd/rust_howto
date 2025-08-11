@@ -21,31 +21,31 @@
 - [Neon Serverless Postgres][neon~website]
 
 - [ClickHouse][clickhouse~github], a real-time analytics DBMS.
-- [`vector`: A high-performance observability data pipeline.](https://github.com/vectordotdev/vector)
+- [`vector`: A high-performance observability data pipeline.][vector~github]
 
-- [`cube-js`: Cube — The Semantic Layer for Building Data Applications](https://github.com/cube-js/cube)
+- [`cube-js`: Cube — The Semantic Layer for Building Data Applications][cube~github]
 - [Apache OpenDAL][opendal~website]
 
-- ["Could you recommend any projects that utilize Rust for data engineering?"](https://www.reddit.com/r/rust/comments/1hx2i98/comment/m67j6dq)
+- ["Could you recommend any projects that utilize Rust for data engineering?"][reddit~data-engineering]
 
 - [Data with Rust][datawithrust~website]
 
 - [Big Data Processing for the AI Era - LakeSail][lakesail~website]
-- [`lance`](https://github.com/lancedb/lance): Modern columnar data format for ML and LLMs implemented in Rust. Convert from parquet in 2 lines of code for 100x faster random access, vector index, and data versioning. Compatible with Pandas, DuckDB, Polars, Pyarrow, and PyTorch with more integrations coming..
-- [`fluvio`](https://github.com/infinyon/fluvio): Lean and mean distributed stream processing system written in rust and web assembly. Alternative to Kafka + Flink in one.
+- [`lance`][lance~github]: Modern columnar data format for ML and LLMs implemented in Rust. Convert from parquet in 2 lines of code for 100x faster random access, vector index, and data versioning. Compatible with Pandas, DuckDB, Polars, Pyarrow, and PyTorch with more integrations coming..
+- [`fluvio`][fluvio~github]: Lean and mean distributed stream processing system written in rust and web assembly. Alternative to Kafka + Flink in one.
 - [Seq — centralized structured logs][datalust~website]
 
 - [AWS Lambda + DuckDB (and Delta Lake) - by Daniel Beach][blog~aws-lambda-duckdb-and-delta-lake]
 
 - [Elusion][c~elusion~lib.rs] - Rust utility
 
-- [`risingwave`](https://github.com/risingwavelabs/risingwave): Best-in-class stream processing, analytics, and management. Perform continuous analytics, or build event-driven applications, real-time ETL pipelines, and feature stores in minutes. Unified streaming and batch. PostgreSQL compatible.
+- [`risingwave`][risingwave~github]: Best-in-class stream processing, analytics, and management. Perform continuous analytics, or build event-driven applications, real-time ETL pipelines, and feature stores in minutes. Unified streaming and batch. PostgreSQL compatible.
 
-- [`materialize`](https://github.com/MaterializeInc/materialize): The Cloud Operational Data Store: use SQL to transform, deliver, and act on fast-changing data.
+- [`materialize`][materialize~github]: The Cloud Operational Data Store: use SQL to transform, deliver, and act on fast-changing data.
 
-- [`pathway`: Python ETL framework for stream processing, real-time analytics, LLM pipelines, and RAG.](https://github.com/pathwaycom/pathway)
+- [`pathway`: Python ETL framework for stream processing, real-time analytics, LLM pipelines, and RAG.][pathway~github]
 
-- [`recurring-tasks`: Rust crate to build an app that runs recurring, periodic tasks](https://github.com/rogusdev/recurring-tasks)
+- [`recurring-tasks`: Rust crate to build an app that runs recurring, periodic tasks][recurring-tasks~github]
 
 - [Hydro][hydro~website]
 

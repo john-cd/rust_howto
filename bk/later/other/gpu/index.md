@@ -29,11 +29,11 @@
 [write](https://github.com/john-cd/rust_howto/issues/608)
 decide what to cover.
 
-[Rust GPU: The future of GPU programming](https://www.reddit.com/r/rust/comments/1fyown4/rust_gpu_the_future_of_gpu_programming)
+[Rust GPU: The future of GPU programming][reddit~rust_gpu_the_future_of_gpu_programming]
 
 ## Repos
 
-- [rust-gpu](https://github.com/rust-gpu/rust-gpu): Making Rust a first-class language and ecosystem for GPU shaders
+- [rust-gpu][rust-gpu~github]: Making Rust a first-class language and ecosystem for GPU shaders
 - [wgpu-template][wgpu-template~github]: A template repository to get started with WGPU and Winit
 
 - [cubecl][c~cubecl~github]: Multi-platform high-performance compute language extension for Rust.

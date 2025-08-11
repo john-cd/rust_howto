@@ -2,7 +2,7 @@
 
 {{#include version_control.incl.md}}
 
-Rust projects use version control (typically [`git`](https://git-scm.com)↗{{hi:git}}) like any other software. `git` tracks changes to your code, enables collaboration, and allows you to revert to previous versions. Cargo's [`Cargo.lock`](https://doc.rust-lang.org/cargo/guide/cargo-toml-vs-cargo-lock.html)↗{{hi:Cargo.lock}} file specifically ensures reproducible builds by pinning exact dependency versions, which can also be version controlled.
+Rust projects use version control (typically [`git`](https://git-scm.com)↗{{hi:git}}) like any other software. `git` tracks changes to your code, enables collaboration, and allows you to revert to previous versions. Cargo's [`Cargo.lock`][c~cargo~cargo.lock]↗{{hi:Cargo.lock}} file specifically ensures reproducible builds by pinning exact dependency versions, which can also be version controlled.
 
 The following describes tools that make
 
@@ -69,8 +69,8 @@ pre-commit run --all-files
 
 FIXME
 
-- [`cargo fmt`](https://doc.rust-lang.org/stable/cargo/commands/cargo-fmt.html)↗{{hi:cargo fmt}}.
-- [`cargo check`](https://doc.rust-lang.org/stable/cargo/commands/cargo-check.html)↗{{hi:cargo check}}, clippy, test...
+- [`cargo fmt`][book~cargo~cargo-fmt]↗{{hi:cargo fmt}}.
+- [`cargo check`][book~cargo~cargo-check]↗{{hi:cargo check}}, clippy, test...
 - spell checks.
 
 ## Related Topics

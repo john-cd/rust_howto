@@ -47,7 +47,7 @@ Note the following:
 
 ## Crates Functioning Without the Rust [`alloc`][c~alloc~docs]↗{{hi:alloc}} Crate
 
-Consult the [`no_alloc`][cat~no-std::no-alloc] category on [`crates.io`](https://crates.io)↗{{hi:crates.io}}.
+Consult the [`no_alloc`][cat~no-std::no-alloc] category on [`crates.io`][crates.io~website]↗{{hi:crates.io}}.
 
 ## Related Topics
 

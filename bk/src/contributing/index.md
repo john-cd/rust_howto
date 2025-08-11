@@ -125,7 +125,7 @@ Enhancement suggestions are tracked as [GitHub issues][rust-howto~issues].
 - [TODO list][rust-howto~todo~github]↗.
 - [LICENSE][rust-howto~license~github]↗.
 
-- [Existing Issues (GitHub)](https://github.com/john-cd/rust_howto/issues)
+- [Existing Issues (GitHub)][rust-howto~issues]
 
 ## Attribution {#attribution}
 
@@ -145,8 +145,4 @@ This guide is based on the **contributing.md**. [Make your own][contributing.md~
 [ex~contributing~reporting-bugs]: index.md#reporting-bugs
 [ex~contributing~suggesting-enhancements]: index.md#suggesting-enhancements
 [ex~contributing~table-of-contents]: index.md#table-of-contents
-[rust-howto~readme~github]: https://github.com/john-cd/rust_howto/blob/main/README.md
-[rust-howto~issues]: https://github.com/john-cd/rust_howto/issues
-[contributing.md~make-your-own]: https://contributing.md
-[rust-howto~new-issue]: https://github.com/john-cd/rust_howto/issues/new
 [ex~contributing~styleguides]: index.md#styleguides

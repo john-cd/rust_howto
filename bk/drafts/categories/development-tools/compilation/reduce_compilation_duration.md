@@ -30,7 +30,7 @@ You may also use [`hyperfine`][c~hyperfine~docs]↗{{hi:hyperfine}}. See [[bench
 
 ## Incremental Compilation {#incremental-compilation}
 
-Incremental compilation in Rust is built into [Cargo][p~cargo] and [`rustc`](https://doc.rust-lang.org/rustc/index.html)↗{{hi:rustc}}, and generally "just works" automatically. It reuses previously compiled code, significantly speeding up subsequent builds after changes.
+Incremental compilation in Rust is built into [Cargo][p~cargo] and [`rustc`][book~rustc]↗{{hi:rustc}}, and generally "just works" automatically. It reuses previously compiled code, significantly speeding up subsequent builds after changes.
 
 Keeping in mind how the incremental compiler works is key to maximizing its benefits. Changes to dependencies or function signatures can invalidate the cache. Strategies to minimizing cache invalidation include:
 
