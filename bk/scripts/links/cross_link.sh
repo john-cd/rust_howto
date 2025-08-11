@@ -14,7 +14,7 @@ files=$(find ${root}src ${root}drafts -type f \( -name "*.md" -not -name "SUMMAR
 # Search for potential page-to-page cross-links
 
 # Create an array of regex patterns from file names
-# Create an associative array base -> orginal filepath
+# Create an associative array: base -> orginal filepath
 patterns=()
 declare -A original_files
 for file in ${files}

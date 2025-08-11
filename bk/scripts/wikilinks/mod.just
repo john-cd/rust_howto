@@ -8,11 +8,15 @@ _default:
 
 ## ---- WIKILINK MANAGEMENT -----------------------------------
 
-# List, in Wikilink format, chapters (pages) containing a keyword (or list all if none provided).
+# Get Wikilinks for chapters (pages) containing a given keyword
 [unix]
-@list keyword='':
+@for keyword:
   ./list_chapters.sh {{root}} {{keyword}}
 
+# List all chapters in Wikilink format
+[unix]
+@list:
+  ./list_chapters.sh {{root}}
 
 # (BEWARE: modifies many files) Convert wiki-style links [[...|...]] to [...][p~...] and [p~...]: ...
 [unix]
