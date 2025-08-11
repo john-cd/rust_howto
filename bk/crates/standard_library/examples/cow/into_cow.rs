@@ -8,8 +8,8 @@ enum HttpStatus {
     Custom(u16, String),
 }
 
-/// Call `into` to convert a string slice or a `String` into a `Cow` with minimum
-/// fuss.
+/// Call `into` to convert a string slice or a `String` into a `Cow` with
+/// minimum fuss.
 fn describe_status(status: &HttpStatus) -> Cow<'static, str> {
     // Note the return type.
     match status {

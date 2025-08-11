@@ -40,7 +40,7 @@ pub enum UrlKind<'a> {
 
 /// Recognize specific URLs.
 /// Parses a url and returns the specific kind of URL it is.
-pub fn url_kind(url_text: &str) -> Result<UrlKind, url::ParseError> {
+pub fn url_kind(url_text: &str) -> Result<UrlKind<'_>, url::ParseError> {
     let url = Url::parse(url_text)?;
 
     // Hack: `UrlKind` contains references to parts of the URL text,

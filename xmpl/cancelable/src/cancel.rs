@@ -56,6 +56,12 @@ impl CancelTokenSource {
     }
 }
 
+impl Default for CancelTokenSource {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 pub struct CancelToken {
     id: u64,
     r_cancel: Receiver<Cancel>,

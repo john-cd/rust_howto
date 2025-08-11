@@ -28,14 +28,13 @@ pub fn main() -> Result<(), Error> {
  FROM artists GROUP BY nationality ORDER BY count DESC",
         &[],
     )? {
-        let (nationality, count): (Option<String>, Option<i64>) =
+        let (nat, cnt): (Option<String>, Option<i64>) =
             (row.get(0), row.get(1));
 
-        if nationality.is_some() && count.is_some() {
-            let nation = Nation {
-                nationality: nationality.unwrap(),
-                count: count.unwrap(),
-            };
+        if let Some(nationality) = nat
+            && let Some(count) = cnt
+        {
+            let nation = Nation { nationality, count };
             println!("{} {}", nation.nationality, nation.count);
         }
     }

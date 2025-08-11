@@ -25,6 +25,12 @@ pub struct Worker {
     r_taskresponse: Receiver<TaskResponse>,
 }
 
+impl Default for Worker {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Worker {
     pub fn new() -> Self {
         let (s_task, r_task) = channel::bounded::<Task>(MAX_QUEUED_TASKS);
