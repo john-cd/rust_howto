@@ -16,7 +16,7 @@ The [`panic!(...)`][c~std::panic~docs] macro allows a program to terminate immed
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-[`Result`](https://doc.rust-lang.org/std/result/enum.Result.html)↗{{hi:std::result::Result}} is an enum used to represent the outcome of operations that might fail. It is a flexible way to handle errors in a type-safe manner. The enum has two variants: `Ok`{{hi:Ok}} and `Err`{{hi:Err}}.
+[`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} is an enum used to represent the outcome of operations that might fail. It is a flexible way to handle errors in a type-safe manner. The enum has two variants: `Ok`{{hi:Ok}} and `Err`{{hi:Err}}.
 
 ```rust,editable
 enum Result<T, E> {
@@ -26,7 +26,7 @@ enum Result<T, E> {
 // T and E are generic.
 ```
 
-Simply return one of the two variants as needed. Note that [`Result`](https://doc.rust-lang.org/std/result/enum.Result.html)↗{{hi:std::result::Result}} is in the prelude.
+Simply return one of the two variants as needed. Note that [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} is in the prelude.
 
 ```rust,editable
 fn divide_numbers(x: i32, y: i32) -> Result<i32, &'static str> {
@@ -38,7 +38,7 @@ fn divide_numbers(x: i32, y: i32) -> Result<i32, &'static str> {
 }
 ```
 
-You can handle the [`Result`](https://doc.rust-lang.org/std/result/enum.Result.html)↗{{hi:std::result::Result}} via a simple [`match`](https://doc.rust-lang.org/std/keyword.match.html)↗{{hi:match}} or [`if let`](https://doc.rust-lang.org/book/ch19-01-all-the-places-for-patterns.html#conditional-if-let-expressions)↗{{hi:if let}} expression:
+You can handle the [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} via a simple [`match`][keyword~match]↗{{hi:match}} or [`if let`](https://doc.rust-lang.org/book/ch19-01-all-the-places-for-patterns.html#conditional-if-let-expressions)↗{{hi:if let}} expression:
 
 ```rust,editable
 fn main() {
@@ -58,7 +58,7 @@ fn main() {
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-[`panic!`](https://doc.rust-lang.org/std/macro.panic.html)↗{{hi:panic!}} is closely tied with the `unwrap`{{hi:unwrap}} method of both [`Option`](https://doc.rust-lang.org/std/option/enum.Option.html)↗{{hi:std::option::Option}} and [`Result`](https://doc.rust-lang.org/std/result/enum.Result.html)↗{{hi:std::result::Result}} [enums][p~enums]. Both implementations call `panic!` when they are set to the `None` or `Err` variants. `expect` is frequently used instead of `unwrap`.
+[`panic!`][c~std::panic::panic~docs]↗{{hi:panic!}} is closely tied with the `unwrap`{{hi:unwrap}} method of both [`Option`][c~std::option::Option~docs]↗{{hi:std::option::Option}} and [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} [enums][p~enums]. Both implementations call `panic!` when they are set to the `None` or `Err` variants. `expect` is frequently used instead of `unwrap`.
 
 ```rust,editable
 {{#include ../../../../crates/cats/rust_patterns/examples/error/unwrap.rs:example}}
@@ -76,7 +76,7 @@ fn main() {
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-[`and_then`](https://doc.rust-lang.org/std/result/enum.Result.html#method.and_then)↗{{hi:and_then}} is used to chain the operations. It runs the next function only if the previous `Result` is `Ok`. If any step produces an `Err`, the chain stops, and the `Err` is returned.
+[`and_then`][c~std::result::Result::and_then~docs]↗{{hi:and_then}} is used to chain the operations. It runs the next function only if the previous `Result` is `Ok`. If any step produces an `Err`, the chain stops, and the `Err` is returned.
 
 ```rust,editable
 fn divide_by_two(x: i32) -> Result<i32, &'static str> {
@@ -110,7 +110,7 @@ fn main() {
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-The [`map`](https://doc.rust-lang.org/std/result/enum.Result.html#method.map)↗{{hi:map}} and [`map_err`](https://doc.rust-lang.org/std/result/enum.Result.html#method.map_err)↗{{hi:map_err}} methods let you transform the contents of `Ok` and `Err` respectively.
+The [`map`][c~std::result::Result::map~docs]↗{{hi:map}} and [`map_err`][c~std::result::Result::map_err~docs]↗{{hi:map_err}} methods let you transform the contents of `Ok` and `Err` respectively.
 
 ```rust,editable
 fn main() {
@@ -135,9 +135,9 @@ fn test() {
 
 Use the [`?`][book~rust~ch09-02-recoverable-errors-with-result-?]↗{{hi:?}} operator to propagate errors from a function call 'up the stack'.
 
-If the value of the [`Result`](https://doc.rust-lang.org/std/result/enum.Result.html)↗{{hi:std::result::Result}} is an `Ok`, the value inside the `Ok` will get returned, and the program will continue. If the value is an `Err`, the `Err` will be returned from the whole function, as if we had used the `return` keyword, so the error value gets propagated to the calling code.
+If the value of the [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} is an `Ok`, the value inside the `Ok` will get returned, and the program will continue. If the value is an `Err`, the `Err` will be returned from the whole function, as if we had used the `return` keyword, so the error value gets propagated to the calling code.
 
-Note that we're only allowed to use the `?`{{hi:?}} operator in a function that returns [`Result`](https://doc.rust-lang.org/std/result/enum.Result.html)↗{{hi:std::result::Result}}, [`Option`](https://doc.rust-lang.org/std/option/enum.Option.html)↗{{hi:std::option::Option}}, or another type that implements [`std::ops::FromResidual`][c~std::ops::FromResidual~docs]{{hi:std::ops::FromResidual}}↗.
+Note that we're only allowed to use the `?`{{hi:?}} operator in a function that returns [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}}, [`Option`][c~std::option::Option~docs]↗{{hi:std::option::Option}}, or another type that implements [`std::ops::FromResidual`][c~std::ops::FromResidual~docs]{{hi:std::ops::FromResidual}}↗.
 
 ```rust,editable
 {{#include ../../../../crates/cats/rust_patterns/examples/error/question_mark.rs:example}}
@@ -155,13 +155,13 @@ The following example highlights the need to return `Result<..., Box<dyn Error>>
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-To handle a [`Result`](https://doc.rust-lang.org/std/result/enum.Result.html)↗{{hi:std::result::Result}} in the `main` function, you may:
+To handle a [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} in the `main` function, you may:
 
-- use a [`match`](https://doc.rust-lang.org/std/keyword.match.html)↗{{hi:match}}, `if let`{{hi:if let}}, or `while let`{{hi:while let}} expression
+- use a [`match`][keyword~match]↗{{hi:match}}, `if let`{{hi:if let}}, or `while let`{{hi:while let}} expression
   - to display or log the error, as described above,
   - to attempt to recover from the error (for example by retrying the last operation).
-- ignore the [`Result`](https://doc.rust-lang.org/std/result/enum.Result.html)↗{{hi:std::result::Result}} by assigning it to `let _ = ...` (rarely the right solution),
-- return a [`Result`](https://doc.rust-lang.org/std/result/enum.Result.html)↗{{hi:std::result::Result}} from the `main` function.
+- ignore the [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} by assigning it to `let _ = ...` (rarely the right solution),
+- return a [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} from the `main` function.
 
 ```rust,editable
 {{#include ../../../../crates/cats/rust_patterns/examples/error/error_handling.rs:example}}

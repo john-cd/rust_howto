@@ -6,7 +6,7 @@ Bindings to Unix-specific APIs.{{hi:UNIX-specific APIs}}.
 
 ## File System Operations: Working with Files, Directories, Permissions, etc
 
-- [`std::fs`](https://doc.rust-lang.org/std/fs/index.html)↗{{hi:std::fs}}, [`std::path`](https://doc.rust-lang.org/std/path/index.html)↗{{hi:std::path}}.
+- [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}}, [`std::path`][c~std::path~docs]↗{{hi:std::path}}.
 
 ## Process Management: Forking, Spawning Processes, Signals, Pipes
 
@@ -14,7 +14,7 @@ Bindings to Unix-specific APIs.{{hi:UNIX-specific APIs}}.
 
 ## Networking (Sockets): TCP/IP, UDP, low-level Socket Programming
 
-- [`std::net`](https://doc.rust-lang.org/std/net/index.html)↗{{hi:std::net}}, [`socket2`][c~socket2~docs]↗{{hi:socket2}}.
+- [`std::net`][c~std::net~docs]↗{{hi:std::net}}, [`socket2`][c~socket2~docs]↗{{hi:socket2}}.
 
 ## System Calls: Directly Interacting with the Operating System
 

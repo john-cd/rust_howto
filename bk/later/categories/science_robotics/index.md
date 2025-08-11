@@ -88,6 +88,6 @@ Leverage existing robotics libraries (often written in C++, Python, or other lan
 
 <div class="hidden">
 [organize](https://github.com/john-cd/rust_howto/issues/480)
-review in depth; review https://robotics.rs/
-review https://github.com/rust-embedded/wg/
+review in depth; review https://robotics.rs
+review https://github.com/rust-embedded/wg
 </div>

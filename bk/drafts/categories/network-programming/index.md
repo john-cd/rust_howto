@@ -6,7 +6,7 @@ Deal with higher-level network protocols{{hi:Network protocols}} such as FTP{{hi
 
 | Topic | Rust Crates |
 |---|---|
-| Basic networking, Network Sockets (Low-Level) | Use [`std::net`](https://doc.rust-lang.org/std/net/index.html)↗{{hi:std::net}} (in the standard library) for simple TCP/UDP communication, including TCP and UDP sockets. |
+| Basic networking, Network Sockets (Low-Level) | Use [`std::net`][c~std::net~docs]↗{{hi:std::net}} (in the standard library) for simple TCP/UDP communication, including TCP and UDP sockets. |
 | High-performance, asynchronous networking | [`tokio`][c~tokio~docs]↗{{hi:tokio}} is a powerful and widely used asynchronous runtime, and essential for building high-performance network applications. It provides abstractions for working with sockets, streams, and other network primitives asynchronously.  Consider [`smol`][c~smol~docs]↗{{hi:smol}} as well. [`mio`][c~mio~docs]↗{{hi:mio}} is a lower-level I/O library used by [`tokio`][c~tokio~docs]↗{{hi:tokio}}. You'll rarely use [`mio`][c~mio~docs]↗{{hi:mio}} directly unless you have very specific performance needs. |
 
 Many crates exist for specific protocols (e.g., SMTP, IMAP, SSH).

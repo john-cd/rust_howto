@@ -32,7 +32,7 @@ See also
 
 {{#include gtk.incl.md}}
 
-Alternatively, look at [`fltk-rs`][c~fltk~docs]↗{{hi:fltk-rs}}, which offers Rust bindings for the [`FLTK`](https://www.fltk.org) 1.4 Graphical User Interface library.
+Alternatively, look at [`fltk-rs`][c~fltk~docs]↗{{hi:fltk-rs}}, which offers Rust bindings for the [`FLTK`][fltk~website] 1.4 Graphical User Interface library.
 
 ### Immediate-mode GUIs
 

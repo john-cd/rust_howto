@@ -51,7 +51,7 @@ Framework for creating fast and reliable robots.
 
 gRPC A high performance, open source universal RPC framework.
 
-[`CleanIt`](https://github.com/Sollimann/CleanIt)↗{{hi:CleanIt}} - Open-source Autonomy Software in Rust-lang with [gRPC][p~grpc] for the Roomba series robot vacuum cleaners.
+[`CleanIt`][cleanit~github]↗{{hi:CleanIt}} - Open-source Autonomy Software in Rust-lang with [gRPC][p~grpc] for the Roomba series robot vacuum cleaners.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

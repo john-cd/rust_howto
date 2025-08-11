@@ -6,30 +6,30 @@
 
 [![std][c~std~docs~badge]][c~std~docs]
 
-Rust data types often have multiple representations to suit different needs. For example, smart pointer types like [`Box<T>`](https://doc.rust-lang.org/std/boxed/struct.Box.html)↗ or [`Arc<T>`](https://doc.rust-lang.org/std/sync/struct.Arc.html)↗ allow you to choose how a value is stored and managed. Some types, such as [`String`](https://doc.rust-lang.org/std/string/struct.String.html)↗, extend a more basic type ([`str`](https://doc.rust-lang.org/std/primitive.str.html)↗{{hi:str}}) by adding features like mutability and dynamic growth, which require extra metadata. This design lets you use lightweight, immutable, borrowed types when possible, and switch to more flexible, feature-rich, memory-owning types when necessary. Common type pairs include:
+Rust data types often have multiple representations to suit different needs. For example, smart pointer types like [`Box<T>`][c~std::boxed::Box~docs]↗ or [`Arc<T>`][c~std::sync::Arc~docs]↗ allow you to choose how a value is stored and managed. Some types, such as [`String`][c~std::string::String~docs]↗, extend a more basic type ([`str`][primitive~str]↗{{hi:str}}) by adding features like mutability and dynamic growth, which require extra metadata. This design lets you use lightweight, immutable, borrowed types when possible, and switch to more flexible, feature-rich, memory-owning types when necessary. Common type pairs include:
 
 | Borrowed Type | Owned Type |
 |---|---|
-| [`&str`](https://doc.rust-lang.org/std/primitive.str.html)↗{{hi:&str}} | [`String`](https://doc.rust-lang.org/std/string/struct.String.html)↗ |
-| [`&CStr`](https://doc.rust-lang.org/std/ffi/struct.CStr.html)↗{{hi:std::ffi::CStr}} | [`CString`](https://doc.rust-lang.org/std/ffi/struct.CString.html)↗{{hi:std::ffi::CString}} |
-| [`&OsStr`](https://doc.rust-lang.org/std/ffi/struct.OsStr.html)↗{{hi:std::ffi::OsStr}} | [`OsString`](https://doc.rust-lang.org/std/ffi/struct.OsString.html)↗{{hi:std::ffi::OsString}} |
-| [`&Path`](https://doc.rust-lang.org/std/path/struct.Path.html)↗{{hi:std::path::Path}} | [`PathBuf`](https://doc.rust-lang.org/std/path/struct.PathBuf.html)↗{{hi:std::path::PathBuf}} |
-| [`&[T]`](https://doc.rust-lang.org/std/primitive.slice.html)↗{{hi:slice}} | [`Vec<T>`](https://doc.rust-lang.org/std/vec/struct.Vec.html)↗{{hi:std::vec::Vec}} |
+| [`&str`][primitive~str]↗{{hi:&str}} | [`String`][c~std::string::String~docs]↗ |
+| [`&CStr`][c~std::ffi::CStr~docs]↗{{hi:std::ffi::CStr}} | [`CString`][c~std::ffi::CString~docs]↗{{hi:std::ffi::CString}} |
+| [`&OsStr`][c~std::ffi::OsStr~docs]↗{{hi:std::ffi::OsStr}} | [`OsString`][c~std::ffi::OsString~docs]↗{{hi:std::ffi::OsString}} |
+| [`&Path`][c~std::path::Path~docs]↗{{hi:std::path::Path}} | [`PathBuf`][c~std::path::PathBuf~docs]↗{{hi:std::path::PathBuf}} |
+| [`&[T]`](https://doc.rust-lang.org/std/primitive.slice.html)↗{{hi:slice}} | [`Vec<T>`][c~std::vec::Vec~docs]↗{{hi:std::vec::Vec}} |
 | `&[T]` | [`[T; N]`](https://doc.rust-lang.org/std/primitive.array.html)↗{{hi:array}} |
-| [`&T`](https://doc.rust-lang.org/std/primitive.reference.html)↗{{hi:reference}} | [`Box<T>`](https://doc.rust-lang.org/std/boxed/struct.Box.html)↗{{hi:std::boxed::Box}} |
-| `&T` | [`Arc<T>`](https://doc.rust-lang.org/std/sync/struct.Arc.html)↗{{hi:std::sync::Arc}} |
+| [`&T`][primitive~reference]↗{{hi:reference}} | [`Box<T>`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}} |
+| `&T` | [`Arc<T>`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} |
 
-Types express that they can be _borrowed as_ some type `T` by implementing [`Borrow<T>`](https://doc.rust-lang.org/std/borrow/trait.Borrow.html)↗{{hi:std::borrow::Borrow}}. Use the trait's `borrow` method to return a reference `&T`. For instance, a `Box<T>` can be borrowed as `&T`, while a `String` can be borrowed as `&str`.
+Types express that they can be _borrowed as_ some type `T` by implementing [`Borrow<T>`][c~std::borrow::Borrow~docs]↗{{hi:std::borrow::Borrow}}. Use the trait's `borrow` method to return a reference `&T`. For instance, a `Box<T>` can be borrowed as `&T`, while a `String` can be borrowed as `&str`.
 
 A type is free to borrow as several different types.
 
-If a type wishes to mutably borrow as another type, allowing the underlying data to be modified, it can additionally implement the [`BorrowMut`](https://doc.rust-lang.org/std/borrow/trait.BorrowMut.html)↗{{hi:std::borrow::BorrowMut}} trait.
+If a type wishes to mutably borrow as another type, allowing the underlying data to be modified, it can additionally implement the [`BorrowMut`][c~std::borrow::BorrowMut~docs]↗{{hi:std::borrow::BorrowMut}} trait.
 
 With `Borrow<T>` and `BorrowMut<T>`, it is possible to write generic code that accept `&T`, and therefore works with both such owned and borrowed data. It is a form of trait-based polymorphism, which enables flexible APIs that accept multiple forms of a type.
 
 `Borrow` is particularly useful when you are using (or implementing) a data structure, and you want to use either an owned or borrowed type as _synonymous_.
 
-For example, as a data collection, `HashMap<K, V>` owns both keys and values. If the key's actual data is wrapped in a managing type of some kind, it should, however, still be possible to search for a value using a reference to the key's data. For instance, if the key is a string, then it is likely stored with the hash map as a [`String`](https://doc.rust-lang.org/std/string/struct.String.html)↗, while it should be possible to search using a [`&str`](https://doc.rust-lang.org/std/primitive.str.html)↗. The `Borrow` trait enables this: you can insert with a `String`, but retrieve values using a `&str` reference, allowing for flexible and efficient key access without unnecessary allocations or conversions. Specifically, `HashMap<K, V>` functions like `get` accept `&Q` where `K: Borrow<Q>` and `String` is `Borrow<str>`:
+For example, as a data collection, `HashMap<K, V>` owns both keys and values. If the key's actual data is wrapped in a managing type of some kind, it should, however, still be possible to search for a value using a reference to the key's data. For instance, if the key is a string, then it is likely stored with the hash map as a [`String`][c~std::string::String~docs]↗, while it should be possible to search using a [`&str`][primitive~str]↗. The `Borrow` trait enables this: you can insert with a `String`, but retrieve values using a `&str` reference, allowing for flexible and efficient key access without unnecessary allocations or conversions. Specifically, `HashMap<K, V>` functions like `get` accept `&Q` where `K: Borrow<Q>` and `String` is `Borrow<str>`:
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/borrow/borrow.rs:example}}
@@ -45,7 +45,7 @@ You can, of course, write a generic function that accepts any type that can borr
 
 [![std][c~std~docs~badge]][c~std~docs]
 
-You can implement [`Borrow`](https://doc.rust-lang.org/std/borrow/trait.Borrow.html)↗{{hi:std::borrow::Borrow}} on your own types.
+You can implement [`Borrow`][c~std::borrow::Borrow~docs]↗{{hi:std::borrow::Borrow}} on your own types.
 
 This said, BEWARE: `Borrow` is different from `AsRef<T>` in that `Borrow` is intended for _equivalence_ - meaning the borrowed value should behave identically to the owned one. In particular, `Eq`, `Ord` and `Hash` must be equivalent for borrowed and owned values: `x.borrow() == y.borrow()` should give the same result as `x == y`:
 
@@ -55,11 +55,11 @@ This said, BEWARE: `Borrow` is different from `AsRef<T>` in that `Borrow` is int
 
 ## Differences between `Borrow`, `Deref`, and `AsRef` in Generic Code {#differences-borrow-deref-asref}
 
-The [`Borrow`](https://doc.rust-lang.org/std/borrow/trait.Borrow.html)↗{{hi:std::borrow::Borrow}} and [`AsRef`](https://doc.rust-lang.org/std/convert/trait.AsRef.html)↗ traits are very similar, but different in purposes.
+The [`Borrow`][c~std::borrow::Borrow~docs]↗{{hi:std::borrow::Borrow}} and [`AsRef`][c~std::convert::AsRef~docs]↗ traits are very similar, but different in purposes.
 
 - Use `Borrow` when you want to abstract over different kinds of borrowing, or when you're building a data structure that treats owned and borrowed values in _equivalent_ ways, such as hashing and comparison.
 - Use `AsRef` when you want to convert something to a reference directly or you're writing generic code.
-- [`Deref`](https://doc.rust-lang.org/std/ops/trait.Deref.html)↗ should be implemented by smart pointers only.
+- [`Deref`][c~std::ops::Deref~docs]↗ should be implemented by smart pointers only.
 
 See [[asref | AsRef]], [[conversion_traits | Conversion Traits]] and [[smart_pointers | Smart Pointers]] for more details.
 

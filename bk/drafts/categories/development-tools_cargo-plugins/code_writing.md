@@ -6,7 +6,7 @@
 |---|---|
 | Code Generation (Procedural Macros) | Procedural [macros][p~macros] are the primary way to do code generation in Rust. There aren't specific [cargo][p~cargo] plugins for writing proc [macros][p~macros], but they are often used within projects that might also have other build-related plugins. |
 | Code Snippets/Templates | No single dominant crate or plugin. Often handled with IDE features or custom scripts. |
-| Scaffolding/Project Generation | Tools like [`cargo new`](https://doc.rust-lang.org/nightly/cargo/commands/cargo-new.html)↗{{hi:cargo new}} are built-in. Other project templates might be managed separately or integrated into build tools. |
+| Scaffolding/Project Generation | Tools like [`cargo new`](https://doc.rust-lang.org/cargo/commands/cargo-new.html)↗{{hi:cargo new}} are built-in. Other project templates might be managed separately or integrated into build tools. |
 
 ## Generate a Rust Project from a Template {#cargo-generate}
 
@@ -32,7 +32,7 @@
 
 | Topic | Rust Crates |
 |---|---|
-| Documentation Generation | [`cargo doc`](https://doc.rust-lang.org/nightly/cargo/commands/cargo-doc.html)↗{{hi:cargo doc}} (while primarily for documentation output, it does involve processing and "generating" [documentation][p~documentation] from your code). |
+| Documentation Generation | [`cargo doc`][book~cargo~cargo-doc]↗{{hi:cargo doc}} (while primarily for documentation output, it does involve processing and "generating" [documentation][p~documentation] from your code). |
 | API [Documentation][p~documentation] Generators (for REST APIs, etc.) | Often tied to web frameworks; no single dominant crate. |
 | String Manipulation / Text Processing (Often used in code generation) | [regex][p~regex], [`itertools`][c~itertools~docs]↗{{hi:itertools}} (not [`cargo`][c~cargo~docs]↗{{hi:cargo}} plugins, but commonly used crates). |
 

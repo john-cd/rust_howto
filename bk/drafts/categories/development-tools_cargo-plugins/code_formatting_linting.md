@@ -5,7 +5,7 @@
 | Topic | Rust Crates |
 |---|---|
 | Linting | [`cargo clippy`]( ){{hi: }} is the primary linter for Rust code, catching stylistic issues and potential bugs. `rust-analyzer`: While primarily an LSP (Language Server Protocol) implementation for IDEs, it also performs code analysis checks. |
-| Formatting | [`cargo fmt`](https://doc.rust-lang.org/nightly/cargo/commands/cargo-fmt.html)↗{{hi:cargo fmt}} is the standard Rust code formatter. |
+| Formatting | [`cargo fmt`][book~cargo~cargo-fmt]↗{{hi:cargo fmt}} is the standard Rust code formatter. |
 | Dead Link Detection | [`cargo deadlinks`]( ){{hi: }} finds broken links in your documentation. |
 
 ## Format Your Code {#rustfmt}

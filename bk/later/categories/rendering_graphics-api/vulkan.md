@@ -2,7 +2,7 @@
 
 {{#include vulkan.incl.md}}
 
-[`Vulkan`](https://www.vulkan.org)↗{{hi:Vulkan}} is a low-level, low-overhead cross-platform API and open standard for 3D graphics and computing. It was intended to address the shortcomings of `OpenGL`, and allow developers more control over the GPU.
+[`Vulkan`][vulkan~website]↗{{hi:Vulkan}} is a low-level, low-overhead cross-platform API and open standard for 3D graphics and computing. It was intended to address the shortcomings of `OpenGL`, and allow developers more control over the GPU.
 
 [`ash`][c~ash~docs]↗{{hi:ash}} is a lower-level, direct binding to Vulkan. [`vulkano`][c~vulkano~docs]↗{{hi:vulkano}} provides a safer, higher-level abstraction. These are closer to the metal than many other graphics API options.
 

@@ -69,7 +69,7 @@ https://community.chef.io/tools/chef-habitat
 https://github.com/habitat-sh/habitat
 
 https://github.com/kcl-lang/kcl
-https://www.kcl-lang.io/docs/user_docs/getting-started/
+https://www.kcl-lang.io/docs/user_docs/getting-started
 
 [`docker-api`][c~docker-api~docs]↗{{hi:docker-api}}: a Rust interface to Docker containers
 

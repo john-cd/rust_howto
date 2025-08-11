@@ -6,11 +6,11 @@
 
 [![std][c~std~docs~badge]][c~std~docs]
 
-The [`std::cmp`](https://doc.rust-lang.org/std/cmp/index.html)↗{{hi:std::cmp}} module provides traits for comparing values and implementing algorithms that require ordering or equality checks.
+The [`std::cmp`][c~std::cmp~docs]↗{{hi:std::cmp}} module provides traits for comparing values and implementing algorithms that require ordering or equality checks.
 
-- [`PartialEq`](https://doc.rust-lang.org/std/cmp/trait.PartialEq.html)↗{{hi:std::cmp::PartialEq}} is used for types that can be checked for equality (using `==`{{hi:==}} and `!=`{{hi:!=}}).
-- [`Eq`](https://doc.rust-lang.org/std/cmp/trait.Eq.html)↗{{hi:std::cmp::Eq}} is a marker trait that indicates a type has a reflexive equality relation, meaning `a == a` is always true. It requires `PartialEq` to be implemented first.
-- Floats (like [`f32`][primitive~f32]↗{{hi:f32}} and [`f64`][primitive~f64]↗{{hi:f64}}) do not implement `Eq`, because [`NaN`](https://doc.rust-lang.org/std/primitive.f64.html#associatedconstant.NAN)↗{{hi:NaN}} != `NaN`. Beware when implementing equality on structs with a field of float type.
+- [`PartialEq`][c~std::cmp::PartialEq~docs]↗{{hi:std::cmp::PartialEq}} is used for types that can be checked for equality (using `==`{{hi:==}} and `!=`{{hi:!=}}).
+- [`Eq`][c~std::cmp::Eq~docs]↗{{hi:std::cmp::Eq}} is a marker trait that indicates a type has a reflexive equality relation, meaning `a == a` is always true. It requires `PartialEq` to be implemented first.
+- Floats (like [`f32`][primitive~f32]↗{{hi:f32}} and [`f64`][primitive~f64]↗{{hi:f64}}) do not implement `Eq`, because [`NaN`][f64::NAN~docs]↗{{hi:NaN}} != `NaN`. Beware when implementing equality on structs with a field of float type.
 
 `PartialEq` and `Eq` are most often automatically derived using `#[derive(PartialEq, Eq)]` - see [[derive | Derive]]. You can however provide a custom implementation, if so desired:
 
@@ -22,13 +22,13 @@ The [`std::cmp`](https://doc.rust-lang.org/std/cmp/index.html)↗{{hi:std::cmp}}
 
 [![std][c~std~docs~badge]][c~std~docs]
 
-[`PartialOrd`](https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html)↗ is used for types that can be compared for ordering, but may not have a total order.
+[`PartialOrd`][c~std::cmp::PartialOrd~docs]↗ is used for types that can be compared for ordering, but may not have a total order.
 
-[`Ord`](https://doc.rust-lang.org/std/cmp/trait.Ord.html)↗ is used for types that have a _total_ order, meaning every pair of values can be compared. `Ord` requires that the implementing type also be `PartialOrd`, [`PartialEq`](https://doc.rust-lang.org/std/cmp/trait.PartialEq.html)↗{{hi:std::cmp::PartialEq}}, and [`Eq`](https://doc.rust-lang.org/std/cmp/trait.Eq.html)↗{{hi:std::cmp::Eq}}.
+[`Ord`][c~std::cmp::Ord~docs]↗ is used for types that have a _total_ order, meaning every pair of values can be compared. `Ord` requires that the implementing type also be `PartialOrd`, [`PartialEq`][c~std::cmp::PartialEq~docs]↗{{hi:std::cmp::PartialEq}}, and [`Eq`][c~std::cmp::Eq~docs]↗{{hi:std::cmp::Eq}}.
 
 Both traits can be automatically implemented with `#[derive(...)]`. When writing a custom implementation, it is recommended to read the documentation for `Ord` and `PartialOrd` to avoid logic errors: `Ord` must be consistent with the `PartialOrd` implementation, and `PartialOrd` with `PartialEq`.
 
-Sorting algorithms often rely on the `PartialOrd` and `Ord` trait to determine the order of elements. The standard library provides several sorting functions that use these traits, such as [`sort()`](https://doc.rust-lang.org/std/primitive.slice.html#method.sort)↗{{hi:slice::sort}} and [`sort_by()`](https://doc.rust-lang.org/std/primitive.slice.html#method.sort_by)↗{{hi:slice::sort_by}} on slices.
+Sorting algorithms often rely on the `PartialOrd` and `Ord` trait to determine the order of elements. The standard library provides several sorting functions that use these traits, such as [`sort()`][primitive~slice::sort]↗{{hi:slice::sort}} and [`sort_by()`][primitive~slice::sort_by]↗{{hi:slice::sort_by}} on slices.
 
 The following example implements a custom order for software versions:
 

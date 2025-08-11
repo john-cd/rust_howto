@@ -85,7 +85,7 @@ If your scripting language compiles to an executable, use the [`object`][c~objec
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/991)
 
-- [rust-script | Run Rust files and expressions as scripts without any setup or compilation step.](https://rust-script.org/)
+- [rust-script | Run Rust files and expressions as scripts without any setup or compilation step.](https://rust-script.org)
 - [rust-script: Run Rust files and expressions as scripts without any setup or compilation step.][c~rust-script~github]
 - [shell2batch: Coverts simple basic shell scripts to windows batch scripts.][c~shell2batch~github]
 - [cargo-scripter][c~cargo-scripter~lib.rs]

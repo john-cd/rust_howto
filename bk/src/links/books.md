@@ -29,7 +29,7 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 
 - The [Rust Edition Guide][book~edition-guide]↗. Editions are Rust's way of introducing changes into the language that would not otherwise be backwards compatible.{{hi:Editions}}
 - [Rust Error Codes Index][book~error_codes]↗.{{hi:Error codes}}
-- The [Rust Unstable Book][book~nightly-unstable-book]↗.{{hi:Unstable Rust}}
+- The [Rust Unstable Book][book~unstable-book]↗.{{hi:Unstable Rust}}
 - The [Rust RFC Book][book~rust-lang-rfcs]↗.{{hi:RFCs}}
 - [Rust Forge][forge.rust-lang.org~website]↗ serves as a repository of supplementary documentation useful for contributors to the Rust programming language repos.
 
@@ -53,10 +53,10 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 - [Code Like a Pro in Rust][book~Code-Like-Rust-Brenden-Matthews-ebook] by Brenden Matthews. [978-1638354543][ISBN~978-1638354543]↗.
 - The [Complete Rust Programming Reference Guide](https://www.amazon.com/dp/1838828109)↗: Design, develop, and deploy effective software systems using the advanced constructs of Rust, by Rahul Sharma, Vesa Kaihlavirta, Claus Matzinger. [978-1838828103][ISBN~978-1838828103]↗.
 - [Effective Rust: 35 Specific Ways to Improve Your Rust Code](https://www.amazon.com/dp/1098151402)↗ [(O'Reilly)][book~effective-rust]↗ by David Drysdale.  [978-1098151409][ISBN~978-1098151409]↗ [(online version)][effective-rust~website]↗.
-- [Fullstack Rust][book~Fullstack-Rust-Complete-Building-Programming-ebook]↗ by Andy Weiss ([Newline](https://www.newline.co/fullstack-rust)↗ or Kindle).
+- [Fullstack Rust][book~Fullstack-Rust-Complete-Building-Programming-ebook]↗ by Andy Weiss ([Newline][book~fullstack-rust]↗ or Kindle).
 - [Hands-on Rust: Effective Learning Through 2D Game Development and Play][book~Hands-Rust-Effective-Learning-Development]↗ by Herbert Wolverson. [978-1680508161][ISBN~978-1680508161]↗.
 - [Idiomatic Rust: Code like a Rustacean][book~Idiomatic-Rust-Code-like-Rustacean]↗ by Brenden Matthews [9781633437463][ISBN~9781633437463]↗.
-- [Learn Rust in a Month of Lunches](https://www.amazon.com/dp/1633438236)↗ by David MacLeod [(Manning)](https://www.manning.com/books/learn-rust-in-a-month-of-lunches)↗ [978-1633438231][ISBN~978-1633438231]↗.
+- [Learn Rust in a Month of Lunches](https://www.amazon.com/dp/1633438236)↗ by David MacLeod [(Manning)][book~learn-rust-in-a-month-of-lunches]↗ [978-1633438231][ISBN~978-1633438231]↗.
 - [Programming Rust: Fast, Safe Systems Development][book~Programming-Rust-Fast-Systems-Development-dp-1492052590]↗ by Jim Blandy, Jason Orendorff [(O'Reilly)][book~programming-rust-2nd-edition]↗. [9781491927281][ISBN~9781491927281]↗.
 - [Programming Rust: Fast, Safe Systems Development][book~Programming-Rust-Fast-Systems-Development]↗ by Jim Blandy, Leonora Tindall. [978-1492052593][ISBN~978-1492052593]↗.
 - [Refactoring to Rust][book~Refactoring-Rust-Lily-Mara]↗ by Lily Mara, Joel Holmes. [9781617299018][ISBN~9781617299018]↗.
@@ -77,7 +77,7 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 ### APIs and Microservices {#apis}
 
 - [Rust API Guidelines][book~api-guidelines]↗.{{hi:APIs}}
-- [`rust-api.dev`](https://rust-api.dev)↗.
+- [`rust-api.dev`][rust-api~website]↗.
 - [Hands-On Microservices with Rust: Build, test, and deploy scalable and reactive microservices with Rust 2018][book~Hands-Microservices-Rust-scalable-microservices-ebook]↗. [978-1789341980][ISBN~978-1789341980]↗.
 
 ### Async {#async}
@@ -88,7 +88,7 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 
 - [Command-line Apps in Rust][book~rust-cli]↗.{{hi:CLI}}{{hi:Command Line Interfaces}}
 
-- [Command-Line Rust](https://www.oreilly.com/library/view/command-line-rust/9781098109424)↗ by Ken Youens-Clark (O'Reilly).
+- [Command-Line Rust][book~command-line-rust]↗ by Ken Youens-Clark (O'Reilly).
 - [Command-Line Rust: A Project-Based Primer for Writing Rust CLIs][book~Command-Line-Rust-Project-Based-Primer-Writing]↗: A Project-Based Primer for Writing Rust CLIs by Ken Youens-Clark. [978-1098109431][ISBN~978-1098109431]↗.
 
 - [Command-Line Rust: A Project-Based Primer for Writing Rust CLIs 1st Edition][book~Command-Line-Rust-Project-Based-Primer-Writing]↗. [978-1098109431][ISBN~978-1098109431]↗.
@@ -118,7 +118,7 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 
 ### Embedded Systems {#embedded}
 
-- The [Embedded Rust Book](https://docs.rust-embedded.org/book/intro/index.html)↗.{{hi:Embedded development}}
+- The [Embedded Rust Book](https://docs.rust-embedded.org/book/intro)↗.{{hi:Embedded development}}
 - The [Discovery Book][book~rust-embedded-discovery]↗: Introduction to microcontrollers and how to use Rust with them.{{hi:Microcontrollers}}
 - The [Rust on ESP Book][book~rust-on-esp]↗ for Espressif devices.
   - [Embedded Rust (no_std) on Espressif](https://docs.esp-rs.org/no_std-training)↗.

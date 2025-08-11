@@ -18,7 +18,7 @@ fn main() {}
 
 ## Reference Definitions
 
-[ref]: https://rust-cli.github.io/book/index.html
+[ref]: https://rust-cli.github.io/book
 [github]: https://github.com/john-cd
 [shortcut]: https://rust-cli.github.io/book/in-depth/human-communication.html
 [collapsed]: https://rust-cli.github.io/book/in-depth/signals.html

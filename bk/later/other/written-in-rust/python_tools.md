@@ -40,13 +40,13 @@ conda install rustpython -c conda-forge
 
 ## `uv` {#uv}
 
-"uv" is a relatively new and fast Python package installer and resolver, designed as a drop-in replacement for [`pip`][pypi~pip]↗{{hi:pip}}, [`pip-tools`][pypi~pip-tools]↗{{hi:pip-tools}}, [`pipx`][pypi~pipx]↗{{hi:pipx}}, [`poetry`](https://python-poetry.org)↗{{hi:poetry}}, [`pyenv`][pyenv~github]↗{{hi:pyenv}}, [`twine`][pypi~twine]↗{{hi:twine}}, [`virtualenv`][pypi~virtualenv]↗{{hi:virtualenv}}, and more. It's gaining popularity for its speed and efficiency.
+"uv" is a relatively new and fast Python package installer and resolver, designed as a drop-in replacement for [`pip`][pypi~pip]↗{{hi:pip}}, [`pip-tools`][pypi~pip-tools]↗{{hi:pip-tools}}, [`pipx`][pypi~pipx]↗{{hi:pipx}}, [`poetry`][python-poetry~website]↗{{hi:poetry}}, [`pyenv`][pyenv~github]↗{{hi:pyenv}}, [`twine`][pypi~twine]↗{{hi:twine}}, [`virtualenv`][pypi~virtualenv]↗{{hi:virtualenv}}, and more. It's gaining popularity for its speed and efficiency.
 
 Key features include:
 
 - Installing and managing Python versions.
 - Running and installing tools published as Python packages.
-- Installing packages from [`PyPI`](https://pypi.org)↗{{hi:PyPI}}.
+- Installing packages from [`PyPI`][pypi~website]↗{{hi:PyPI}}.
 - Resolving dependencies and generating lock files (like `pip-compile`).
 - Working with virtual environments.
 - Supports [`Cargo`][c~cargo~docs]↗{{hi:Cargo}}-style workspaces for scalable projects.

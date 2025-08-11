@@ -15,8 +15,8 @@
 
 There are few mature physics engines in pure Rust. Many robust physics engines are written in C/C++.
 
-- [`rapier`](https://rapier.rs)↗{{hi:rapier}}: A 2D and 3D physics engine written in Rust. It might be suitable for some aerospace simulations, especially if you don't need highly specialized aerospace physics.
-- `bevy_rapier`: Integration between [`rapier`](https://rapier.rs)↗{{hi:rapier}} and the [`bevy`][c~bevy~docs]↗{{hi:bevy}} game engine.
+- [`rapier`][rapier.rs~website]↗{{hi:rapier}}: A 2D and 3D physics engine written in Rust. It might be suitable for some aerospace simulations, especially if you don't need highly specialized aerospace physics.
+- `bevy_rapier`: Integration between [`rapier`][rapier.rs~website]↗{{hi:rapier}} and the [`bevy`][c~bevy~docs]↗{{hi:bevy}} game engine.
 
 See also:
 
@@ -31,7 +31,7 @@ See also:
 For more advanced aerospace simulations, you'll likely need to use FFI to interact with existing C/C++ physics engines like:
 
 - [`Bullet`](https://en.wikipedia.org/wiki/Bullet_%28software%29)↗{{hi:Bullet}}: A popular open-source physics engine.
-- [`ODE`](https://www.ode.org)↗{{hi:ODE}} (Open Dynamics Engine): Another open-source option.
+- [`ODE`][ode~website]↗{{hi:ODE}} (Open Dynamics Engine): Another open-source option.
 - [`Simbody`][simbody~github]↗{{hi:Simbody}}: A high-performance library for multibody dynamics (often used in robotics and aerospace).
 
 See:

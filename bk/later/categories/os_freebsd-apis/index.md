@@ -4,13 +4,13 @@
 
 Bindings to FreeBSD-specific APIs.
 
-Most standard Rust code that runs on other Unix-like systems (Linux, macOS) will work on FreeBSD without modification. For general system programming tasks (file I/O, networking, processes), the standard library is usually sufficient. If you need to use FreeBSD-specific system calls, FFI will be necessary. Be careful with [`unsafe`](https://doc.rust-lang.org/std/keyword.unsafe.html)↗{{hi:unsafe}} code and consult the FreeBSD documentation.
+Most standard Rust code that runs on other Unix-like systems (Linux, macOS) will work on FreeBSD without modification. For general system programming tasks (file I/O, networking, processes), the standard library is usually sufficient. If you need to use FreeBSD-specific system calls, FFI will be necessary. Be careful with [`unsafe`][keyword~unsafe]↗{{hi:unsafe}} code and consult the FreeBSD documentation.
 
 ## General and Unix-like System Calls
 
-- File System: The standard library's [`std::fs`](https://doc.rust-lang.org/std/fs/index.html)↗{{hi:std::fs}} and [`std::path`](https://doc.rust-lang.org/std/path/index.html)↗{{hi:std::path}} modules work well on FreeBSD.
-- Networking: The standard library's [`std::net`](https://doc.rust-lang.org/std/net/index.html)↗{{hi:std::net}} and crates like [`tokio`][c~tokio~docs]↗{{hi:tokio}} are compatible with FreeBSD.
-- Processes and Threads: The standard library's [`std::process`](https://doc.rust-lang.org/std/process/index.html)↗{{hi:std::process}} and [`std::thread`](https://doc.rust-lang.org/std/thread/index.html)↗{{hi:std::thread}} work on FreeBSD.
+- File System: The standard library's [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}} and [`std::path`][c~std::path~docs]↗{{hi:std::path}} modules work well on FreeBSD.
+- Networking: The standard library's [`std::net`][c~std::net~docs]↗{{hi:std::net}} and crates like [`tokio`][c~tokio~docs]↗{{hi:tokio}} are compatible with FreeBSD.
+- Processes and Threads: The standard library's [`std::process`][c~std::process~docs]↗{{hi:std::process}} and [`std::thread`][c~std::thread~docs]↗{{hi:std::thread}} work on FreeBSD.
 - [`std::os::unix`]( ){{hi: }} provides access to many common Unix system calls. A large portion of these will work on FreeBSD.
 
 ## FreeBSD-Specific System Calls or Features

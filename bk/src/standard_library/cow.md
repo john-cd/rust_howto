@@ -14,7 +14,7 @@ The type [`std::borrow::Cow`][c~std::borrow::Cow~docs]{{hi:std::borrow::Cow}} is
 - Needing to modify the underlying value is rare,
 - The stored value is mostly used for read-only purposes.
 
-`Cow`, as a smart pointer, implements [`Deref`](https://doc.rust-lang.org/std/ops/trait.Deref.html)↗{{hi:std::ops::Deref}}, which means that you can call non-mutating methods directly on the data it encloses. If mutation is desired, [`to_mut`](https://doc.rust-lang.org/std/borrow/enum.Cow.html#method.to_mut)↗{{hi:std::borrow::Cow::to_mut}} will obtain a mutable reference to an owned value, cloning if necessary.
+`Cow`, as a smart pointer, implements [`Deref`][c~std::ops::Deref~docs]↗{{hi:std::ops::Deref}}, which means that you can call non-mutating methods directly on the data it encloses. If mutation is desired, [`to_mut`][c~std::borrow::Cow::to_mut~docs]↗{{hi:std::borrow::Cow::to_mut}} will obtain a mutable reference to an owned value, cloning if necessary.
 
 ## Accept Either a Owned or Borrowed Value as the Input of a Function {#accept-either-owned-or-borrowed-values}
 
@@ -26,7 +26,7 @@ Since [`Cow`][c~std::borrow::Cow~docs]{{hi:std::borrow::Cow}} allows borrowing u
 
 ## Modify a `Cow` In-place {#modify-cow-in-place}
 
-You can of course pass a `&mut Cow<T>` to a function. Modify the underlying value in place with [`to_mut`](https://doc.rust-lang.org/std/borrow/enum.Cow.html#method.to_mut)↗{{hi:std::borrow::Cow::to_mut}}:
+You can of course pass a `&mut Cow<T>` to a function. Modify the underlying value in place with [`to_mut`][c~std::borrow::Cow::to_mut~docs]↗{{hi:std::borrow::Cow::to_mut}}:
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/cow/modify_cow_in_place.rs:example}}
@@ -42,11 +42,11 @@ It is common to return a [`Cow`][c~std::borrow::Cow~docs]{{hi:std::borrow::Cow}}
 
 ## Efficiently Construct a `Cow` with `into` {#into-cow}
 
-Use the [`Into`](https://doc.rust-lang.org/std/convert/trait.Into.html)↗{{hi:std::convert::Into}} trait to construct `Cow`.
+Use the [`Into`][c~std::convert::Into~docs]↗{{hi:std::convert::Into}} trait to construct `Cow`.
 
-The `Into` trait is the dual of [`From`](https://doc.rust-lang.org/std/convert/trait.From.html)↗{{hi:std::convert::From}} and is implemented for all types that implement `From`. Since `impl<'a> From<&'a str> for Cow<'a, str>` and `impl<'a> From<String> for Cow<'a, str>` are in the standard library, we can simply call `into()` to convert a `&str` or a `String` into `Cow`.
+The `Into` trait is the dual of [`From`][c~std::convert::From~docs]↗{{hi:std::convert::From}} and is implemented for all types that implement `From`. Since `impl<'a> From<&'a str> for Cow<'a, str>` and `impl<'a> From<String> for Cow<'a, str>` are in the standard library, we can simply call `into()` to convert a `&str` or a `String` into `Cow`.
 
-[`Cow`](https://doc.rust-lang.org/std/borrow/enum.Cow.html)↗{{hi:std::borrow::Cow}} implements `From` for a number of other common types as well: (references to) `Vec`, `Path`, `PathBuf`, `OsStr`, `OsString`, etc.
+[`Cow`][c~std::borrow::Cow~docs]↗{{hi:std::borrow::Cow}} implements `From` for a number of other common types as well: (references to) `Vec`, `Path`, `PathBuf`, `OsStr`, `OsString`, etc.
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/cow/into_cow.rs:example}}

@@ -3,8 +3,8 @@
 ## Std {#skip}
 
 - [black_box in `core::hint`](https://doc.rust-lang.org/core/hint/fn.black_box.html)
-- [`std::pin`](https://doc.rust-lang.org/std/pin/index.html#projections-and-structural-pinning)
-- [`core::iter`](https://doc.rust-lang.org/stable/core/iter/index.html#for-loops-and-intoiterator)
+- [`std::pin`][c~std::pin~projections-and-structural-pinning~docs]
+- [`core::iter`](https://doc.rust-lang.org/stable/core/iter#for-loops-and-intoiterator)
 
 ## Markdown {#skip}
 
@@ -51,7 +51,7 @@
 
 ## Language Features {#skip}
 
-- [Converting between different collection types: from `Vec` to `HashSet` or `HashMap`](https://www.slingacademy.com/article/converting-between-different-collection-types-from-vec-t-to-hashset-t-or-hashmap-t-u/)
+- [Converting between different collection types: from `Vec` to `HashSet` or `HashMap`](https://www.slingacademy.com/article/converting-between-different-collection-types-from-vec-t-to-hashset-t-or-hashmap-t-u)
 
 ## Layouts {#skip}
 
@@ -67,16 +67,16 @@
 
 ## Reviews / Evolution of Rust {#skip}
 
-- [A Review of Rust in 2024: What Next? - Barrett's Club](https://barretts.club/posts/rust_review_2024/)
+- [A Review of Rust in 2024: What Next? - Barrett's Club](https://barretts.club/posts/rust_review_2024)
 
 - [Why Rust is Becoming a Contender in AI Development][blog~why-rust-is-becoming-a-contender-in-ai-development]
 
-- [Rust in 2025: Language interop and the extensible compiler](https://smallcultfollowing.com/babysteps/blog/2025/03/18/lang-interop-extensibility/)
+- [Rust in 2025: Language interop and the extensible compiler](https://smallcultfollowing.com/babysteps/blog/2025/03/18/lang-interop-extensibility)
 
 ## Unstable Features {#skip}
 
-- [Coroutine in `std::ops`](https://doc.rust-lang.org/std/ops/trait.Coroutine.html)
-- [Unstable Features - The Cargo Book][book~nightly~cargo-script]
+- [Coroutine in `std::ops`][c~std::ops::Coroutine~docs]
+- [Unstable Features - The Cargo Book][book~cargo~unstable]
 
 ## VS Code {#skip}
 

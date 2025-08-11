@@ -7,7 +7,7 @@ Rust compile times{{hi:Compile times}} can be long. Reducing Rust compilation [d
 | Methods | Description |
 |---|---|
 | Incremental Compilation | Leverage [Cargo][p~cargo]'s [caching][p~caching], be mindful of changes that invalidate the cache. |
-| Dependency Management | Use [`cargo tree`](https://doc.rust-lang.org/cargo/commands/cargo-tree.html)↗{{hi:cargo tree}} to analyze dependencies. [`cargo-bloat`][c~cargo-bloat~docs]↗{{hi:cargo-bloat}} can help you identify large dependencies contributing to compile times. |
+| Dependency Management | Use [`cargo tree`][book~cargo~cargo-tree]↗{{hi:cargo tree}} to analyze dependencies. [`cargo-bloat`][c~cargo-bloat~docs]↗{{hi:cargo-bloat}} can help you identify large dependencies contributing to compile times. |
 | Compiler Flags | Experiment with compiler flags, but be careful and measure the impact. |
 | Build Profiles | Optimize release builds with appropriate flags in `config.toml`. |
 | Link-Time Optimization (LTO) | Controlled via [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} and `config.toml`. |
@@ -49,7 +49,7 @@ From-scratch builds with incremental compilation{{hi:Incremental compilation}} e
 - For large, infrequently changing dependencies, consider using precompiled versions if available.
 - Organizing your code into smaller, independent [modules][p~modules] and crates can improve incremental compilation by reducing the scope of changes.
 
-[`cargo tree`](https://doc.rust-lang.org/cargo/commands/cargo-tree.html)↗{{hi:cargo tree}} is a useful tool for dependency analysis.
+[`cargo tree`][book~cargo~cargo-tree]↗{{hi:cargo tree}} is a useful tool for dependency analysis.
 
 ## Compiler-Level Optimizations {#skip}
 

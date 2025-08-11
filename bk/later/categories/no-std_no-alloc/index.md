@@ -2,11 +2,11 @@
 
 [![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No alloc}}
 
-The term "no_alloc" refers to environments where *dynamic* memory allocation is not available or desirable (e.g., [[embedded | Embedded]] systems, kernel development, or performance-sensitive applications). The concept revolves around avoiding the use of the [`alloc`](https://doc.rust-lang.org/alloc/index.html)↗{{hi:alloc}} crate and its associated functions.
+The term "no_alloc" refers to environments where *dynamic* memory allocation is not available or desirable (e.g., [[embedded | Embedded]] systems, kernel development, or performance-sensitive applications). The concept revolves around avoiding the use of the [`alloc`](https://doc.rust-lang.org/alloc)↗{{hi:alloc}} crate and its associated functions.
 
 `no_alloc`{{hi:no_alloc}} memory allocation can be made deterministic, which is important for real-time systems or other applications where predictable performance is crucial.
 
-When working in a `no_alloc`{{hi:no_alloc}} environment, you'll primarily rely on stack allocation and static allocation. You'll avoid using crates or data structures that depend on the [`alloc`](https://doc.rust-lang.org/alloc/index.html)↗{{hi:alloc}} crate. Understanding memory management techniques like bump allocation or memory pooling can be helpful if you need more complex allocation strategies.
+When working in a `no_alloc`{{hi:no_alloc}} environment, you'll primarily rely on stack allocation and static allocation. You'll avoid using crates or data structures that depend on the [`alloc`](https://doc.rust-lang.org/alloc)↗{{hi:alloc}} crate. Understanding memory management techniques like bump allocation or memory pooling can be helpful if you need more complex allocation strategies.
 
 Note the following:
 
@@ -17,11 +17,11 @@ Note the following:
 
 - Stack Allocation: The primary way to manage memory in `no_alloc`{{hi:no_alloc}} environments is through stack allocation. This is done by declaring variables directly within functions. Stack allocation is fast and deterministic, but it's limited by the stack size.
 
-- Avoiding Dynamic Data Structures: In `no_alloc`{{hi:no_alloc}}, you'll avoid dynamic data structures like [`Vec`](https://doc.rust-lang.org/alloc/vec/struct.Vec.html)↗, [`String`](https://doc.rust-lang.org/alloc/string/struct.String.html)↗, [`Box`](https://doc.rust-lang.org/std/boxed/struct.Box.html)↗{{hi:std::boxed::Box}}, [`Rc`](https://doc.rust-lang.org/std/rc/struct.Rc.html)↗{{hi:std::rc::Rc}}, [`Arc`](https://doc.rust-lang.org/std/sync/struct.Arc.html)↗{{hi:std::sync::Arc}}, etc., as these rely on heap allocation. Instead, you'll use fixed-size arrays, structs, and other data structures that can be allocated on the stack or statically.
+- Avoiding Dynamic Data Structures: In `no_alloc`{{hi:no_alloc}}, you'll avoid dynamic data structures like [`Vec`](https://doc.rust-lang.org/alloc/vec/struct.Vec.html)↗, [`String`](https://doc.rust-lang.org/alloc/string/struct.String.html)↗, [`Box`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}}, [`Rc`][c~std::rc::Rc~docs]↗{{hi:std::rc::Rc}}, [`Arc`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}}, etc., as these rely on heap allocation. Instead, you'll use fixed-size arrays, structs, and other data structures that can be allocated on the stack or statically.
 
 - [[Const Generics]] are very useful for working with fixed-size data structures in [`no_alloc`]( ){{hi: }} contexts.
 
-- Static Allocation: You can also use [[static allocation]] for data that is known at compile time. This is done using the [`static`](https://doc.rust-lang.org/std/keyword.static.html)↗{{hi:static}} keyword. Static variables have a fixed memory location and a lifetime that lasts for the entire duration of the program. See [[global_static | Global Static]].
+- Static Allocation: You can also use [[static allocation]] for data that is known at compile time. This is done using the [`static`][keyword~static]↗{{hi:static}} keyword. Static variables have a fixed memory location and a lifetime that lasts for the entire duration of the program. See [[global_static | Global Static]].
 
 - Bump Allocators: A simple and fast allocation strategy often used in `no_alloc`{{hi:no_alloc}} environments. A bump allocator simply increments a pointer to allocate memory. It's very efficient but doesn't support deallocation. See [[memory-management | Memory Management]].
 
@@ -31,9 +31,9 @@ Note the following:
 
 ## Relevant Crates and Features
 
-- [`core`](https://doc.rust-lang.org/core/index.html)↗{{hi:core}}: it provides the foundation for [`no_std`](https://doc.rust-lang.org/reference/names/preludes.html#r-names.preludes.extern.no_std)↗{{hi:no_std}} programming, which is often a prerequisite for `no_alloc`{{hi:no_alloc}}.
+- [`core`](https://doc.rust-lang.org/core)↗{{hi:core}}: it provides the foundation for [`no_std`](https://doc.rust-lang.org/reference/names/preludes.html#r-names.preludes.extern.no_std)↗{{hi:no_std}} programming, which is often a prerequisite for `no_alloc`{{hi:no_alloc}}.
 
-- [`alloc`](https://doc.rust-lang.org/alloc/index.html)↗{{hi:alloc}}: It's the standard library's allocation crate. While you're avoiding it, understanding why you're avoiding it is important.
+- [`alloc`](https://doc.rust-lang.org/alloc)↗{{hi:alloc}}: It's the standard library's allocation crate. While you're avoiding it, understanding why you're avoiding it is important.
 
 - [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}}: A small and efficient allocator often used in embedded systems or WebAssembly ([[wasm | WASM]]). It can be useful if you -do- need some allocation, but want a very small allocator. See [[embedded | Embedded]] Systems.
 

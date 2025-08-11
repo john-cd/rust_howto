@@ -90,7 +90,7 @@
 
 ## Reference Documentation {#references}
 
-- The [Standard Library](https://doc.rust-lang.org/std/#the-rust-standard-library)↗ documentation for the built-in [`std`][c~std~docs]↗{{hi:std}}, [`core`](https://doc.rust-lang.org/core/index.html)↗{{hi:core}}, and [`alloc`](https://doc.rust-lang.org/alloc/index.html)↗{{hi:alloc}} crates.
+- The [Standard Library][c~std~docs]↗ documentation for the built-in [`std`][c~std~docs]↗{{hi:std}}, [`core`](https://doc.rust-lang.org/core)↗{{hi:core}}, and [`alloc`](https://doc.rust-lang.org/alloc)↗{{hi:alloc}} crates.
 - The [Rust Reference][book~rust-reference]↗: Details of the language semantics.
 - The [Rustonomicon][book~rustonomicon]↗: A high-level companion to the reference and a guide to correctly writing unsafe code in Rust.
 - The [Ferrocene Language Spec][spec~rust-lang]↗: An high quality specification for the Rust language, initially developed by Ferrous Systems.

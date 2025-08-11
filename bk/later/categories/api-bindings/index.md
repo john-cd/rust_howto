@@ -32,7 +32,7 @@ Bindings for graphics libraries such as Vulkan and OpenGL: see [[graphics | Grap
 
 ## Machine Learning APIs
 
-Bindings for machine learning frameworks like [`TensorFlow`](https://www.tensorflow.org)↗{{hi:TensorFlow}} and `PyTorch` (e.g. [`tch-rs`][c~tch~docs]↗{{hi:tch-rs}}): see [[machine-learning | Machine Learning]].
+Bindings for machine learning frameworks like [`TensorFlow`][tensorflow~website]↗{{hi:TensorFlow}} and `PyTorch` (e.g. [`tch-rs`][c~tch~docs]↗{{hi:tch-rs}}): see [[machine-learning | Machine Learning]].
 
 ## Multimedia APIs
 
@@ -48,7 +48,7 @@ See [[os | OS]].
 
 ## Operating System-specific APIs
 
-Bindings for OS-specific functionality and system calls: you will often use [`std::os`](https://doc.rust-lang.org/std/os/index.html)↗{{hi:std::os}} or crates like [`nix`][c~nix~docs]↗{{hi:nix}} (Unix-like API bindings) or `users`{{hi:users}} (a library to query user and group information on Unix-like systems). Refer to:
+Bindings for OS-specific functionality and system calls: you will often use [`std::os`][c~std::os~docs]↗{{hi:std::os}} or crates like [`nix`][c~nix~docs]↗{{hi:nix}} (Unix-like API bindings) or `users`{{hi:users}} (a library to query user and group information on Unix-like systems). Refer to:
 
 - [[os_freebsd-apis | OS Freebsd APIs]].
 - [[os_linux-apis | OS Linux APIs]].

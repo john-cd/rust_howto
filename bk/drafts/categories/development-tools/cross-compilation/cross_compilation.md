@@ -8,7 +8,7 @@
 | Target Specification | Handled by [cargo][p~cargo] through target triples |
 | C/C++ Dependencies | Often a source of complexity; [`cc`][c~cc~docs]↗{{hi:cc}} crate can help |
 | Platform-Specific Code | Use conditional compilation [attributes][p~attributes] like [`cfg`][book~rust-reference~conditional-compilation]↗{{hi:cfg}} to manage platform-specific code |
-| Foreign Function Interface (FFI) | Use [`std::ffi`](https://doc.rust-lang.org/std/ffi/index.html)↗{{hi:std::ffi}} (for interacting with C code, which might require cross-compilation) |
+| Foreign Function Interface (FFI) | Use [`std::ffi`][c~std::ffi~docs]↗{{hi:std::ffi}} (for interacting with C code, which might require cross-compilation) |
 
 ## Cross-compile with `cargo` {#cross-compile-with-cargo}
 

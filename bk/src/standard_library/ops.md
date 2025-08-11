@@ -9,7 +9,7 @@
 
 Operator overloading allows you to define how operators like `+`, `-`, `*`, and `/` behave for your custom types. This is done by implementing the corresponding traits from the `std::ops` module.
 
-Common overloaded operators include [`Add`](https://doc.rust-lang.org/std/ops/trait.Add.html)↗, [`Mul`](https://doc.rust-lang.org/std/ops/trait.Mul.html)↗ and [`Index`](https://doc.rust-lang.org/std/ops/trait.Index.html)↗.
+Common overloaded operators include [`Add`][c~std::ops::Add~docs]↗, [`Mul`][c~std::ops::Mul~docs]↗ and [`Index`][c~std::ops::Index~docs]↗.
 
 For example, to overload the `+` operator for a custom type, you would implement the `Add` trait:
 

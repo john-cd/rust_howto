@@ -14,7 +14,7 @@
 
 [`tonic`][c~tonic~docs]↗{{hi:tonic}} implements gRPC over HTTP/2 with full support for asynchronous code. It works with [`tokio`][c~tokio~docs]↗{{hi:tokio}}.
 
-[`gRPC`](https://grpc.io)↗{{hi:gRPC}} is an open-source high [performance][p~performance] Remote Procedure Call (RPC) framework that can run in any environment. It can efficiently connect services in and across data centers with pluggable support for load balancing, [tracing][p~tracing], health checking and [authentication][p~authentication]. It is also applicable in the "last mile" of distributed computing to connect devices, mobile applications and browsers to backend services.
+[`gRPC`][grpc~website]↗{{hi:gRPC}} is an open-source high [performance][p~performance] Remote Procedure Call (RPC) framework that can run in any environment. It can efficiently connect services in and across data centers with pluggable support for load balancing, [tracing][p~tracing], health checking and [authentication][p~authentication]. It is also applicable in the "last mile" of distributed computing to connect devices, mobile applications and browsers to backend services.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_server/examples/grpc/tonic.rs:example}}

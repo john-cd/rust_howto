@@ -4,7 +4,7 @@
 
 Bindings to Linux-specific APIs.
 
-Most standard Rust code will work on Linux without modification. For general system programming tasks, the standard library is often sufficient. For Linux-specific features, you might need to use [`nix`][c~nix~docs]↗{{hi:nix}}, [[development-tools_ffi | FFI]], or find crates that provide bindings to the specific interface you're working with. Be careful with [`unsafe`](https://doc.rust-lang.org/std/keyword.unsafe.html)↗{{hi:unsafe}} code and consult the Linux documentation.
+Most standard Rust code will work on Linux without modification. For general system programming tasks, the standard library is often sufficient. For Linux-specific features, you might need to use [`nix`][c~nix~docs]↗{{hi:nix}}, [[development-tools_ffi | FFI]], or find crates that provide bindings to the specific interface you're working with. Be careful with [`unsafe`][keyword~unsafe]↗{{hi:unsafe}} code and consult the Linux documentation.
 
 ## System Calls (Low-Level OS Interaction)
 
@@ -14,8 +14,8 @@ Most standard Rust code will work on Linux without modification. For general sys
 
 ## File System Interaction
 
-- [`std::fs`](https://doc.rust-lang.org/std/fs/index.html)↗{{hi:std::fs}}: (Standard library) For working with files and directories. Works well on Linux.
-- [`std::path`](https://doc.rust-lang.org/std/path/index.html)↗{{hi:std::path}}: (Standard library) For working with file paths. Works well on Linux.
+- [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}}: (Standard library) For working with files and directories. Works well on Linux.
+- [`std::path`][c~std::path~docs]↗{{hi:std::path}}: (Standard library) For working with file paths. Works well on Linux.
 
 ## Process Management
 
@@ -23,7 +23,7 @@ Most standard Rust code will work on Linux without modification. For general sys
 
 ## Networking
 
-- [`std::net`](https://doc.rust-lang.org/std/net/index.html)↗{{hi:std::net}}: basic networking (TCP, UDP). Works well on Linux.
+- [`std::net`][c~std::net~docs]↗{{hi:std::net}}: basic networking (TCP, UDP). Works well on Linux.
 - [`tokio`][c~tokio~docs]↗{{hi:tokio}}: asynchronous networking.
 
 ## Threads

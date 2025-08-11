@@ -97,8 +97,8 @@ https://github.com/rust-vmm/kvm
 https://crates.io/crates/kvm-bindings
 https://github.com/rust-vmm/kvm/tree/main/kvm-ioctls
 
-https://github.com/firecracker-microvm/firecracker/
-https://firecracker-microvm.github.io/
+https://github.com/firecracker-microvm/firecracker
+https://firecracker-microvm.github.io
 https://lib.rs/gh/firecracker-microvm/firecracker/jailer
 
 https://github.com/google/crosvm

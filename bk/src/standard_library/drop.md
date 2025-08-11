@@ -6,11 +6,11 @@
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:Drop}}
 
-The [`Drop`](https://doc.rust-lang.org/std/ops/trait.Drop.html)↗{{hi:std::ops::Drop}} trait allows you to define custom behavior when your types go out of scope, such as releasing resources or performing cleanup tasks.
+The [`Drop`][c~std::ops::Drop~docs]↗{{hi:std::ops::Drop}} trait allows you to define custom behavior when your types go out of scope, such as releasing resources or performing cleanup tasks.
 
 Its `drop` method is called automatically by Rust when:
 
-- A value goes out of scope (e.g., at the end of a function, a [`let`](https://doc.rust-lang.org/std/keyword.let.html)↗{{hi:let}} binding's scope, or a block).
+- A value goes out of scope (e.g., at the end of a function, a [`let`][keyword~let]↗{{hi:let}} binding's scope, or a block).
 - A variable is re-assigned (and the old value is dropped).
 - A collection (like a Vec) is dropped, its elements are also dropped.
 
@@ -19,7 +19,7 @@ Common use cases include:
 - Releasing memory or resources: While Rust typically handles memory automatically, `Drop` is implemented by types that manage external resources, like file handles, network connections, mutex locks, or graphics contexts. When the `Drop` implementation runs, it can close the files, disconnect sockets, unlock mutexes, etc.
 - Notifying external systems when an object is discarded.
 - Logging.
-- Implementing [[smart_pointers | smart pointers]]: Types like [`Box<T>`](https://doc.rust-lang.org/std/boxed/struct.Box.html)↗{{hi:std::boxed::Box}}, `Rc<T>`, `String` and `Vec<T>`, rely heavily on the `Drop` trait to manage their memory and resource deallocation. For instance, `Rc<T>` uses `Drop` to decrement its reference count and deallocate the data when the count reaches zero.
+- Implementing [[smart_pointers | smart pointers]]: Types like [`Box<T>`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}}, `Rc<T>`, `String` and `Vec<T>`, rely heavily on the `Drop` trait to manage their memory and resource deallocation. For instance, `Rc<T>` uses `Drop` to decrement its reference count and deallocate the data when the count reaches zero.
 
 To implement `Drop` for a custom type, you would do something like this:
 

@@ -11,7 +11,7 @@ This is a **Work In Progress**. The API are subject to change.
 
 Make sure that
 
-- [`Rust`](https://www.rust-lang.org/)
+- [`Rust`](https://www.rust-lang.org)
 - [`mdbook`](https://github.com/rust-lang/mdBook)
 
 are set up correctly, then install the pre-processor:

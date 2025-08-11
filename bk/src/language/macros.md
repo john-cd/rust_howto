@@ -80,47 +80,47 @@ Read the [procedural macros](#procedural-macros) sections below for more details
 
 ### Print Messages to the Console with `println!` and friends {#print-macros}
 
-[`println!`](https://doc.rust-lang.org/std/macro.println.html)↗, [`eprintln!`](https://doc.rust-lang.org/std/macro.eprintln.html)↗, [`print!`](https://doc.rust-lang.org/std/macro.print.html)↗, and [`eprint!`](https://doc.rust-lang.org/std/macro.eprint.html)↗ handle formatted output to standard output (`println!`, `print!`) or standard error (`eprintln!`, `eprint!`). They work similarly to `C`'s `printf` and support various formatting specifiers. `println!` and `eprintln!` automatically add a newline at the end.
+[`println!`][c~std::println~docs]↗, [`eprintln!`][c~std::eprintln~docs]↗, [`print!`][c~std::print~docs]↗, and [`eprint!`][c~std::eprint~docs]↗ handle formatted output to standard output (`println!`, `print!`) or standard error (`eprintln!`, `eprint!`). They work similarly to `C`'s `printf` and support various formatting specifiers. `println!` and `eprintln!` automatically add a newline at the end.
 
-[`format!`](https://doc.rust-lang.org/std/macro.format.html)↗ is similar to `print!`, but instead of printing to the console, it constructs and returns a `String` with the formatted content.
+[`format!`][c~std::format~docs]↗ is similar to `print!`, but instead of printing to the console, it constructs and returns a `String` with the formatted content.
 
-[`dbg!`](https://doc.rust-lang.org/std/macro.dbg.html)↗ is a debugging macro. It prints the value of an expression to standard error along with its file, line number, and the expression itself, and then returns the expression's value. This is useful for quickly inspecting values during development.
+[`dbg!`][c~std::dbg~docs]↗ is a debugging macro. It prints the value of an expression to standard error along with its file, line number, and the expression itself, and then returns the expression's value. This is useful for quickly inspecting values during development.
 
 ### Concatenate String Literals with `concat!` {#concat-macro}
 
-[`concat!`](https://doc.rust-lang.org/std/macro.concat.html)↗ concatenates literals into a static string slice.
+[`concat!`][c~std::concat~docs]↗ concatenates literals into a static string slice.
 
 See [[string_concat | String Concatenation]] for more details.
 
 ### Create a Vector with `vec!` {#vec-macro}
 
-[`vec!`](https://doc.rust-lang.org/std/macro.vec.html)↗ allows for convenient creation and initialization of vectors (`Vec<T>`). For example, `vec![1, 2, 3]` creates a vector with integers `1`, `2`, and `3`.
+[`vec!`][c~std::vec!~docs]↗ allows for convenient creation and initialization of vectors (`Vec<T>`). For example, `vec![1, 2, 3]` creates a vector with integers `1`, `2`, and `3`.
 
 See [[vector | Vector]] for more details.
 
 ### Immediately Terminate the Current Thread with `panic!` {#panic-macro}
 
-[`panic!`](https://doc.rust-lang.org/std/macro.panic.html)↗ immediately terminates the current thread. It is used for unrecoverable errors. You can provide a custom message that will be displayed when the panic occurs.
+[`panic!`][c~std::panic::panic~docs]↗ immediately terminates the current thread. It is used for unrecoverable errors. You can provide a custom message that will be displayed when the panic occurs.
 
 ### Assert Conditions in your Tests with `assert!`, `assert_eq!`, and `assert_ne!` {#assert-macros}
 
-[`assert!`](https://doc.rust-lang.org/std/macro.assert.html)↗, [`assert_eq!`](https://doc.rust-lang.org/std/macro.assert_eq.html)↗, [`assert_ne!`](https://doc.rust-lang.org/std/macro.assert_ne.html)↗ are used for assertions, primarily in testing.
+[`assert!`][c~std::assert~docs]↗, [`assert_eq!`][c~std::assert_eq~docs]↗, [`assert_ne!`][c~std::assert_ne~docs]↗ are used for assertions, primarily in testing.
 
 - `assert!(condition)` panics if the condition is false.
 - `assert_eq!(left, right)` panics if `left` is not equal to `right`, providing a helpful message showing both values.
 - `assert_ne!(left, right)` panics if `left` is equal to `right`.
 
-There are also [`debug_assert`](https://doc.rust-lang.org/std/macro.debug_assert.html)↗, [`debug_assert_eq`](https://doc.rust-lang.org/std/macro.debug_assert_eq.html)↗, and [`debug_assert_ne`](https://doc.rust-lang.org/std/macro.debug_assert_ne.html)↗ macros that are only enabled in non-optimized builds (i.e. disabled in release builds) by default.
+There are also [`debug_assert`][c~std::debug_assert~docs]↗, [`debug_assert_eq`][c~std::debug_assert_eq~docs]↗, and [`debug_assert_ne`][c~std::debug_assert_ne~docs]↗ macros that are only enabled in non-optimized builds (i.e. disabled in release builds) by default.
 
 ### Mark Sections of your Code as Unreachable or Unimplemented {#unreachable-macros}
 
-[`unreachable!`](https://doc.rust-lang.org/std/macro.unreachable.html)↗ is used to mark code paths that should logically never be reached. If the code reaches an `unreachable!` macro, it will cause a panic, indicating a logical error in the program.
+[`unreachable!`][c~std::unreachable~docs]↗ is used to mark code paths that should logically never be reached. If the code reaches an `unreachable!` macro, it will cause a panic, indicating a logical error in the program.
 
-[`todo!`](https://doc.rust-lang.org/std/macro.todo.html)↗ is a placeholder for not-yet-implemented code. If executed, it will cause a panic with a message indicating that the functionality is "not yet implemented." It's useful during development to mark areas that still need attention. You may also use the similar [`unimplemented!`](https://doc.rust-lang.org/std/macro.unimplemented.html)↗.
+[`todo!`][c~std::todo~docs]↗ is a placeholder for not-yet-implemented code. If executed, it will cause a panic with a message indicating that the functionality is "not yet implemented." It's useful during development to mark areas that still need attention. You may also use the similar [`unimplemented!`][c~std::unimplemented~docs]↗.
 
 ### Conditionally Compile Code with `cfg!` {#cfg-macro}
 
-[`cfg!`](https://doc.rust-lang.org/std/macro.cfg.html)↗ evaluates boolean combinations of configuration flags at compile-time. It is often used with or instead of the [`#[cfg]`][book~rust-reference~conditional-compilation]↗ attribute. Both use the same [syntax][book~rust-reference~conditional-compilation]↗.
+[`cfg!`][c~std::cfg~docs]↗ evaluates boolean combinations of configuration flags at compile-time. It is often used with or instead of the [`#[cfg]`][book~rust-reference~conditional-compilation]↗ attribute. Both use the same [syntax][book~rust-reference~conditional-compilation]↗.
 
 ## Write Macros {#write-macros}
 
@@ -215,7 +215,7 @@ The following example demonstrates how to use a local variable; and how to defin
 {{#include ../../crates/language/examples/macros/macro_by_example_hygiene.rs:example}}
 ```
 
-####  Macros-by-Example {#macros-by-example-limitations}
+#### Macros-by-Example {#macros-by-example-limitations}
 
 Macros operate on syntax, not types. As a result, you can't specify the type of an argument in the matcher (the pattern before `=>`) of a rule of a macro-by-example.
 
@@ -272,7 +272,7 @@ Note the following before writing procedural macros:
   ```
 
 - Procedural macros must be defined in the root of that crate (in `lib.rs`).
-- You will always use types from the [`proc_macro`](https://doc.rust-lang.org/proc_macro/index.html)↗ crate (provided by the compiler) to interact with token streams [(Rust reference)][book~rust-reference~procedural-macros-macro.proc.proc_macro]↗.
+- You will always use types from the [`proc_macro`](https://doc.rust-lang.org/proc_macro)↗ crate (provided by the compiler) to interact with token streams [(Rust reference)][book~rust-reference~procedural-macros-macro.proc.proc_macro]↗.
   - All procedural macros take one or two [`proc_macro::TokenStream`](https://doc.rust-lang.org/proc_macro/struct.TokenStream.html)↗ as input and return a `proc_macro::TokenStream`.
   - A token stream is roughly equivalent to `Vec<TokenTree>` where a [`TokenTree`](https://doc.rust-lang.org/proc_macro/enum.TokenTree.html)↗ can roughly be thought of as a lexical token or a group of tokens within `()`, `[]`, or `{}` delimiters. For example `foo` is an `Ident` token, `.` is a `Punct` token, and `1.2` is a `Literal` token [(Rust reference)][book~rust-reference~procedural-macros-macro.proc.token]↗.
 

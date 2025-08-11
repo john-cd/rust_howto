@@ -4,7 +4,7 @@
 
 | Topic | Rust Crates |
 |---|---|
-| Documentation Generator | [`cargo doc`](https://doc.rust-lang.org/cargo/commands/cargo-doc.html)↗{{hi:cargo doc}} (built-in) |
+| Documentation Generator | [`cargo doc`][book~cargo~cargo-doc]↗{{hi:cargo doc}} (built-in) |
 | Doc Comments | Use /// or //! in your code. |
 | Testing with Documentation Examples | Use `#[doc = "```"]` in doc comments |
 | Markdown Processing (for docs) | `pulldown-cmark`, [`comrak`][c~comrak~docs]↗{{hi:comrak}} |

@@ -35,7 +35,7 @@ This book's long-term goal is the coverage of the 'most commonly used' Rust crat
 
 An informal (and very long) list of subjects we would like to cover is kept in the [topics of interest][p~topics-of-interest]↗ page.
 
-Draft chapters are kept in the [`bk/drafts`][rust-howto~drafts~github]↗ and [`bk/later`](https://github.com/john-cd/rust_howto/tree/main/bk/later)↗ directories.
+Draft chapters are kept in the [`bk/drafts`][rust-howto~drafts~github]↗ and [`bk/later`][rust-howto~bk-later~github]↗ directories.
 
 Embedded examples should be ideally _runnable_ on the [Rust playground][rust-playground~website]↗ or at least directly copy-pasteable into Rust code.
 

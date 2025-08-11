@@ -8,7 +8,7 @@ How you distribute your application depends on the target platform:
 
 - Libraries: publish (open-source) Rust libraries to [`crates.io`][crates.io~website]↗{{hi:crates.io}}.
 - Executables: publish binaries to a service where they `can` be downloaded from (e.g., `GitHub Releases`).
-- [Containers][p~containers]: Use [`Docker`][docker~website]↗{{hi:Docker}} to create the container image, push it to a private or public registry (e.g. [`DockerHub`](https://hub.docker.com)↗{{hi:DockerHub}}, `GitHub Packages`); optionally pull the image to deploy it to an orchestrator (e.g. [`Kubernetes`](https://kubernetes.io)↗{{hi:Kubernetes}}) or a Cloud service like [`AWS`][c~aws~docs]↗{{hi:AWS}} or [`Azure`](https://portal.azure.com)↗{{hi:Azure}}.
+- [Containers][p~containers]: Use [`Docker`][docker~website]↗{{hi:Docker}} to create the container image, push it to a private or public registry (e.g. [`DockerHub`][dockerhub~website]↗{{hi:DockerHub}}, `GitHub Packages`); optionally pull the image to deploy it to an orchestrator (e.g. [`Kubernetes`][kubernetes~website]↗{{hi:Kubernetes}}) or a Cloud service like [`AWS`][c~aws~docs]↗{{hi:AWS}} or [`Azure`][azure~website]↗{{hi:Azure}}.
 - Packages: Create (`.deb`, `.rpm`...) packages for package management systems (e.g., Debian `dpkg`/`apt`, RPM, Flatpak, HomeBrew...) using [cargo][p~cargo] plugins like [`cargo-deb`][c~cargo-deb~docs]↗{{hi:cargo-deb}}, [`cargo-rpm`][c~cargo-rpm~docs]↗{{hi:cargo-rpm}}...
 
 ## Cargo {#skip}
@@ -27,10 +27,10 @@ The following are the typical steps to release a crate to [`crates.io`][crates.i
 - Update the changelog.
 - Make sure everything works as advertised:
   - `cargo fmt --check`.
-  - [`cargo doc`](https://doc.rust-lang.org/cargo/commands/cargo-doc.html)↗{{hi:cargo doc}} to inspect the documentation.
+  - [`cargo doc`][book~cargo~cargo-doc]↗{{hi:cargo doc}} to inspect the documentation.
   - [`cargo clean`]( ){{hi: }} to build from a clean slate.
   - `cargo clippy`.
-  - [`cargo test`](https://doc.rust-lang.org/cargo/commands/cargo-test.html)↗{{hi:cargo test}} or `cargo nextest run` to run unit and integration tests.
+  - [`cargo test`][book~cargo~cargo-test]↗{{hi:cargo test}} or `cargo nextest run` to run unit and integration tests.
   - [`cargo build --locked --release`]( ){{hi: }} to build the production binaries.
   - [`cargo run --release`]( ){{hi: }} to manually exercise the application, if relevant.
 - Increase the application's version number in [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}.
@@ -96,7 +96,7 @@ https://doc.rust-lang.org/cargo/commands/cargo-login.html
 https://doc.rust-lang.org/cargo/commands/cargo-package.html
 https://doc.rust-lang.org/cargo/commands/cargo-publish.html
 Review
-https://release-plz.ieni.dev/
+https://release-plz.ieni.dev
 https://dev.to/mbayoun95/comprehensive-guide-to-generating-deb-and-rpm-packages-for-rust-applications-41h7
 https://en.wikipedia.org/wiki/List_of_software_package_management_systems
 https://medium.com/rust-programming-language/simplifying-debian-packaging-for-rust-a-step-by-step-guide-for-rust-developers-0457cdb3c81d

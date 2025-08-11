@@ -17,7 +17,7 @@
 
 ## `Cow` Alternatives {#cow-alternatives}
 
-While [`Cow`](https://doc.rust-lang.org/std/borrow/enum.Cow.html)↗{{hi:std::borrow::Cow}} is a great choice for optimizing memory usage when dealing with a mix of borrowed and owned data, there are alternatives.
+While [`Cow`][c~std::borrow::Cow~docs]↗{{hi:std::borrow::Cow}} is a great choice for optimizing memory usage when dealing with a mix of borrowed and owned data, there are alternatives.
 
 Instead of e.g. `Cow<str>`, you can use:
 
@@ -31,7 +31,7 @@ Instead of e.g. `Cow<str>`, you can use:
 
 ## Arc::make_mut {#arc_make_mut}
 
-If you need reference-counting, note that [`Rc::make_mut`](https://doc.rust-lang.org/std/rc/struct.Rc.html#method.make_mut)↗{{hi:std::rc::Rc::make_mut}} and [`Arc::make_mut`](https://doc.rust-lang.org/std/sync/struct.Arc.html#method.make_mut)↗{{hi:std::rc::Arc::make_mut}} can provide clone-on-write functionality as well.
+If you need reference-counting, note that [`Rc::make_mut`][c~std::rc::Rc::make_mut~docs]↗{{hi:std::rc::Rc::make_mut}} and [`Arc::make_mut`][c~std::sync::Arc::make_mut~docs]↗{{hi:std::rc::Arc::make_mut}} can provide clone-on-write functionality as well.
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/arc/arc_make_mut.rs:example}}
@@ -64,9 +64,9 @@ TODO
 For a true plugin architecture where plugins are compiled as separate shared libraries (`.so` on Linux, `.dll` on Windows, `.dylib` on macOS) and loaded at runtime, you would typically:
 
 - Use the [`libloading`][c~libloading~crates.io]↗{{hi:libloading}} crate, which provides safe FFI (Foreign Function Interface) wrappers to dynamically load shared libraries and resolve symbols (functions).
-- Define a C-compatible ABI: Because Rust's internal ABI is not stable across different compiler versions or even minor changes, you should define your plugin interface using [`#[repr(C)]`]( ){{hi: }} structs and [`extern "C"`](https://doc.rust-lang.org/std/keyword.extern.html)↗{{hi:extern "C"}} functions.
-- Define an entry point: Each plugin [`.so`](https://fileinfo.com/extension/so)↗{{hi:.so}}/[`.dll`](https://fileinfo.com/extension/dll)↗{{hi:.dll}} would export a specific [`extern "C"`](https://doc.rust-lang.org/std/keyword.extern.html)↗{{hi:extern "C"}} function that the host calls to get a `Box<dyn Plugin>`.
-- Version Management: Even with [`extern "C"`](https://doc.rust-lang.org/std/keyword.extern.html)↗{{hi:extern "C"}}, you need robust versioning for your common plugin interface crate to prevent issues if host and plugins are compiled with different versions of the interface. Crates like [`abi_stable`][c~abi_stable~docs]↗{{hi:abi_stable}} can help with this by providing more robust ABI compatibility checks.
+- Define a C-compatible ABI: Because Rust's internal ABI is not stable across different compiler versions or even minor changes, you should define your plugin interface using [`#[repr(C)]`]( ){{hi: }} structs and [`extern "C"`][keyword~extern]↗{{hi:extern "C"}} functions.
+- Define an entry point: Each plugin [`.so`](https://fileinfo.com/extension/so)↗{{hi:.so}}/[`.dll`](https://fileinfo.com/extension/dll)↗{{hi:.dll}} would export a specific [`extern "C"`][keyword~extern]↗{{hi:extern "C"}} function that the host calls to get a `Box<dyn Plugin>`.
+- Version Management: Even with [`extern "C"`][keyword~extern]↗{{hi:extern "C"}}, you need robust versioning for your common plugin interface crate to prevent issues if host and plugins are compiled with different versions of the interface. Crates like [`abi_stable`][c~abi_stable~docs]↗{{hi:abi_stable}} can help with this by providing more robust ABI compatibility checks.
 
 ---
 
@@ -76,7 +76,7 @@ For a true plugin architecture where plugins are compiled as separate shared lib
 
 Rust does not support traditional inheritance like object-oriented languages. Instead, it encourages using _traits_ and _composition_ to achieve similar functionality, allowing for shared behavior without the complexities and pitfalls of inheritance.
 
-More precisely, Rust tends to model things with 'has-a' relationships (composition) instead of 'is-a' relationships (inheritance). Instead of inheritance, consider using an [`enum`](https://doc.rust-lang.org/std/keyword.enum.html)↗{{hi:enum}} (or a [`struct`](https://doc.rust-lang.org/std/keyword.struct.html)↗{{hi:struct}} type that contains fields that are always the same, plus a field with an `enum` type).
+More precisely, Rust tends to model things with 'has-a' relationships (composition) instead of 'is-a' relationships (inheritance). Instead of inheritance, consider using an [`enum`][keyword~enum]↗{{hi:enum}} (or a [`struct`][keyword~struct]↗{{hi:struct}} type that contains fields that are always the same, plus a field with an `enum` type).
 
 ```rust,noplayground
 // The base class becomes an enum.
@@ -124,17 +124,17 @@ impl HasArea for Shape {
 }
 ```
 
-You may also implement the [`AsRef`](https://doc.rust-lang.org/std/convert/trait.AsRef.html)↗{{hi:std::convert::AsRef}} trait to retrieve the "base class":
+You may also implement the [`AsRef`][c~std::convert::AsRef~docs]↗{{hi:std::convert::AsRef}} trait to retrieve the "base class":
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/  /asref2.rs:example}}
 ```
 
-Note that so-called "Deref polymorphism", meaning implementing [`Deref`](https://doc.rust-lang.org/std/ops/trait.Deref.html)↗{{hi:std::ops::Deref}} to emulate inheritance between structs, is considered an [antipattern](https://github.com/rust-unofficial/patterns/blob/main/src/anti_patterns/deref.md), especially since `Deref` is an _implicit_ conversion.
+Note that so-called "Deref polymorphism", meaning implementing [`Deref`][c~std::ops::Deref~docs]↗{{hi:std::ops::Deref}} to emulate inheritance between structs, is considered an [antipattern](https://github.com/rust-unofficial/patterns/blob/main/src/anti_patterns/deref.md), especially since `Deref` is an _implicit_ conversion.
 
 ### References {#references}
 
-- [Rust's `AsRef` Explained](https://oliverjumpertz.com/blog/rusts-asref-explained/)↗.
+- [Rust's `AsRef` Explained](https://oliverjumpertz.com/blog/rusts-asref-explained)↗.
 - [Rust Is Beyond Object-Oriented, Part 3: Inheritance][blog~thecodedmessage-posts-oop-3-inheritance]↗.
 - [How to implement inheritance-like feature for Rust?](https://users.rust-lang.org/t/how-to-implement-inheritance-like-feature-for-rust/31159/21)↗.
 

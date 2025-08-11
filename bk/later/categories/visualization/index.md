@@ -12,7 +12,7 @@ The Rust visualization ecosystem offers a variety of options, from general-purpo
 |---|---|---|
 | 2D Plotting | [`plotters`][c~plotters~docs]↗{{hi:plotters}} | [`plotters`][c~plotters~docs]↗{{hi:plotters}} is a versatile plotting library. |
 | 3D Plotting | [`plotters`][c~plotters~docs]↗{{hi:plotters}} (with extensions), [`glium`][c~glium~docs]↗{{hi:glium}} (graphics library - used to build upon), [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} (WebGPU bindings - useful for cross-platform 3D) | [`plotters`][c~plotters~docs]↗{{hi:plotters}} can be used for basic 3D plots, but for more advanced 3D visualization, you'll likely need to work with a graphics library like [`glium`][c~glium~docs]↗{{hi:glium}} or [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}. |
-| Graph Visualization | [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}}, [`dot`][c~dot~docs]↗{{hi:dot}} (for graph description language) | [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} is a graph library that can be used with visualization tools. [`dot`][c~dot~docs]↗{{hi:dot}} can be used to generate graph descriptions in the DOT language, which can then be rendered by [`Graphviz`](https://graphviz.org/)↗{{hi:Graphviz}}. |
+| Graph Visualization | [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}}, [`dot`][c~dot~docs]↗{{hi:dot}} (for graph description language) | [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} is a graph library that can be used with visualization tools. [`dot`][c~dot~docs]↗{{hi:dot}} can be used to generate graph descriptions in the DOT language, which can then be rendered by [`Graphviz`][graphviz~website]↗{{hi:Graphviz}}. |
 
 {{#include visualization.incl.md}}
 

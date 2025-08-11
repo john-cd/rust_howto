@@ -40,7 +40,7 @@
 
 - [Are We Podcast Yet?][podcast~are-we-podcast-yet]↗.
 - [Building With Rust][podcast~building-with-rust]↗.
-- [`newrustacean.com`](https://newrustacean.com)↗.
+- [`newrustacean.com`][newrustacean.com~website]↗.
 - [The Way of the Crab][wayofthecrab~website]↗.
 - [Rust Game Dev][podcast~rust-game-dev]↗.
 

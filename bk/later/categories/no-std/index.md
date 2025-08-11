@@ -9,15 +9,15 @@ The term "no_std" refers to environments where you don't have access to the stan
 - You may need to manage memory manually, especially if you need dynamic allocation.
 - If you're working with multiple tasks or interrupts, you'll need to consider [[concurrency | Concurrency]] carefully.
 
-When working in [`no_std`](https://doc.rust-lang.org/reference/names/preludes.html#r-names.preludes.extern.no_std)↗{{hi:no_std}}, you'll almost always use the [`core`](https://doc.rust-lang.org/core/index.html)↗{{hi:core}} crate. If you need dynamic allocation, you'll also use the [`alloc`](https://doc.rust-lang.org/alloc/index.html)↗{{hi:alloc}} crate and provide an allocator. For [[embedded | Embedded]] Systems, you'll need to choose the appropriate HAL and PAC crates for your target microcontroller.
+When working in [`no_std`](https://doc.rust-lang.org/reference/names/preludes.html#r-names.preludes.extern.no_std)↗{{hi:no_std}}, you'll almost always use the [`core`](https://doc.rust-lang.org/core)↗{{hi:core}} crate. If you need dynamic allocation, you'll also use the [`alloc`](https://doc.rust-lang.org/alloc)↗{{hi:alloc}} crate and provide an allocator. For [[embedded | Embedded]] Systems, you'll need to choose the appropriate HAL and PAC crates for your target microcontroller.
 
 Remember to handle panics appropriately. Consider other useful crates like [`nb`][c~nb~docs]↗{{hi:nb}}, [`defmt`][c~defmt~docs]↗{{hi:defmt}}, and [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}} as needed.
 
 ## Key Crates
 
-- The Core library ([`core`](https://doc.rust-lang.org/core/index.html)↗{{hi:core}}) is the foundation of [`no_std`](https://doc.rust-lang.org/reference/names/preludes.html#r-names.preludes.extern.no_std)↗{{hi:no_std}} programming. It provides the bare minimum functionality required for Rust code, including basic types, traits, and memory management primitives. It's always used in `no_std` environments.
+- The Core library ([`core`](https://doc.rust-lang.org/core)↗{{hi:core}}) is the foundation of [`no_std`](https://doc.rust-lang.org/reference/names/preludes.html#r-names.preludes.extern.no_std)↗{{hi:no_std}} programming. It provides the bare minimum functionality required for Rust code, including basic types, traits, and memory management primitives. It's always used in `no_std` environments.
 
-- Allocation ([`alloc`](https://doc.rust-lang.org/alloc/index.html)↗{{hi:alloc}}) library: If you need dynamic memory allocation in [`no_std`](https://doc.rust-lang.org/reference/names/preludes.html#r-names.preludes.extern.no_std)↗{{hi:no_std}}, the `alloc` crate provides the necessary APIs. It's important to note that you'll need to provide your own allocator implementation. See also the [[no-std_no-alloc | No Alloc]] chapter.
+- Allocation ([`alloc`](https://doc.rust-lang.org/alloc)↗{{hi:alloc}}) library: If you need dynamic memory allocation in [`no_std`](https://doc.rust-lang.org/reference/names/preludes.html#r-names.preludes.extern.no_std)↗{{hi:no_std}}, the `alloc` crate provides the necessary APIs. It's important to note that you'll need to provide your own allocator implementation. See also the [[no-std_no-alloc | No Alloc]] chapter.
 
 - In [`no_std`](https://doc.rust-lang.org/reference/names/preludes.html#r-names.preludes.extern.no_std)↗{{hi:no_std}} environments, you can't rely on the standard library's `panic` handling mechanisms. You'll need to define your own `panic` handler. Crates like [`panic-halt`][c~panic-halt~docs]↗{{hi:panic-halt}} (halts execution) or [`panic-abort`][c~panic-abort~docs]↗{{hi:panic-abort}} (aborts execution) can be helpful. You might also implement custom `panic` behavior.
 

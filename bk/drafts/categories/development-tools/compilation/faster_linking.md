@@ -18,7 +18,7 @@ Optimizing Rust linking involves several strategies to reduce binary size and li
 
 ### Link-Time Optimization (LTO) {#skip}
 
-Enabling LTO allows the compiler to perform optimizations across the entire program during the linking phase. This can significantly reduce code size and improve [performance][p~performance] by eliminating dead code and inlining functions more effectively. Use the [`-C lto=fat`](https://doc.rust-lang.org/rustc/codegen-options/index.html#lto)↗{{hi:-C lto=fat}} or `-C lto=thin`{{hi:-C lto=thin}} (faster but less aggressive) compiler flags. LTO typically requires more memory and time during compilation.
+Enabling LTO allows the compiler to perform optimizations across the entire program during the linking phase. This can significantly reduce code size and improve [performance][p~performance] by eliminating dead code and inlining functions more effectively. Use the [`-C lto=fat`](https://doc.rust-lang.org/rustc/codegen-options#lto)↗{{hi:-C lto=fat}} or `-C lto=thin`{{hi:-C lto=thin}} (faster but less aggressive) compiler flags. LTO typically requires more memory and time during compilation.
 
 Link-Time Optimization (LTO) is controlled via [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}. Can sometimes improve linking times, but often increases compile time. Experiment to see if it helps.
 

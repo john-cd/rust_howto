@@ -6,7 +6,7 @@
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
-[`HashMap`](https://doc.rust-lang.org/std/collections/struct.HashMap.html)↗{{hi:std::collections::HashMap}} is a key-value data structure. It allows you to store data in an unordered collection, where each element is identified by a unique key. This makes `HashMap` an excellent choice for lookups, insertions, and deletions based on keys.
+[`HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}} is a key-value data structure. It allows you to store data in an unordered collection, where each element is identified by a unique key. This makes `HashMap` an excellent choice for lookups, insertions, and deletions based on keys.
 
 All hashmap keys{{hi:Keys}} must have the same type. All values{{hi:Values}} must have the same type.
 
@@ -18,7 +18,7 @@ All hashmap keys{{hi:Keys}} must have the same type. All values{{hi:Values}} mus
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
-[`HashSet`](https://doc.rust-lang.org/std/collections/struct.HashSet.html)↗{{hi:std::collections::HashSet}} is a common data structure that stores a collection of unique items, similar to the keys of a `HashMap` but without associated values.
+[`HashSet`][c~std::collections::HashSet~docs]↗{{hi:std::collections::HashSet}} is a common data structure that stores a collection of unique items, similar to the keys of a `HashMap` but without associated values.
 
 ```rust,editable
 {{#include ../../../crates/cats/data_structures/examples/hashmap/hashset.rs:example}}
@@ -38,7 +38,7 @@ You can use a custom-defined type (typically a `struct`) as keys in a HashMap. I
 
 [![fnv][c~fnv~docs~badge]][c~fnv~docs] [![fnv~crates.io][c~fnv~crates.io~badge]][c~fnv~crates.io] [![fnv~github][c~fnv~github~badge]][c~fnv~github] [![fnv~lib.rs][c~fnv~lib.rs~badge]][c~fnv~lib.rs]{{hi:fnv}}
 
-You can use a custom hash function with [`HashMap`](https://doc.rust-lang.org/std/collections/struct.HashMap.html)↗ and [`HashSet`](https://doc.rust-lang.org/std/collections/struct.HashSet.html)↗. In the following, the {{i:Fowler-Noll-Vo hash function}} is used for better performance with short keys.
+You can use a custom hash function with [`HashMap`][c~std::collections::HashMap~docs]↗ and [`HashSet`][c~std::collections::HashSet~docs]↗. In the following, the {{i:Fowler-Noll-Vo hash function}} is used for better performance with short keys.
 
 ```rust,editable
 {{#include ../../../crates/cats/data_structures/examples/hashmap/custom_hash_function.rs:example}}

@@ -52,7 +52,7 @@ This section provides a few examples of software written in Rust, organized by t
   - Examples: Cloudflare uses Rust for performance critical services.
 - Search Engines:
   - [`tantivy`][c~tantivy~docs] [(GitHub)][c~tantivy~github]↗: a full-text search engine library inspired by Apache Lucene.
-  - [`meilisearch`][c~meilisearch~docs] [(GitHub)](https://github.com/meilisearch/MeiliSearch)↗: a fast search engine API bringing AI-powered hybrid search to sites and applications.
+  - [`meilisearch`][c~meilisearch~docs] [(GitHub)][meiliSearch~github]↗: a fast search engine API bringing AI-powered hybrid search to sites and applications.
 - WebAssembly ([[wasm | WASM]]):
   - Front-end web applications.
   - Portable code for web browsers.
@@ -80,7 +80,7 @@ This section provides a few examples of software written in Rust, organized by t
   - Examples:
     - [`TiKV`][tikv~github]: an open-source, distributed, and transactional key-value database.
     - [`neon`][c~neon~docs] [(GitHub)][neon~github]↗: Serverless Postgres. Separated storage and compute to offer autoscaling, code-like database branching, and scale to zero.
-    - [`ArangoDB`](https://arangodb.com): a graph database.
+    - [`ArangoDB`][arangodb.com~website]: a graph database.
 - Analytics:
   - [`databend`][databend~github] - alternative to Snowflake.
   - [`rerun`][c~rerun~docs][(GitHub)][c~rerun~github]↗{{hi:rerun}} visualizes streams of multimodal data.
@@ -91,7 +91,7 @@ This section provides a few examples of software written in Rust, organized by t
   - Cloud computing tools.
   - Example: `Substrate`, a framework for building blockchains.
 - Games:
-  - [`Veloren`](https://gitlab.com/veloren/veloren): a multiplayer voxel RPG written in Rust.
+  - [`Veloren`][veloren~github]: a multiplayer voxel RPG written in Rust.
 - Other:
   - [`hyperswitch`][hyperswitch~github]: an open-source payments switch to make payments fast, reliable and affordable.
   - [`rustdesk`][c~rustdesk~docs] [(GitHub)][c~rustdesk~github]↗{{hi:rustdesk}}: an open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.
@@ -99,7 +99,7 @@ This section provides a few examples of software written in Rust, organized by t
 ## Development Tools
 
 - Terminal Emulators:
-  - [`alacritty`](https://github.com/alacritty/alacritty)↗: a fast, cross-platform, OpenGL terminal emulator.
+  - [`alacritty`][alacritty~github]↗: a fast, cross-platform, OpenGL terminal emulator.
 - Editors:
   - `lapce` [(GitHub)][lapce~github]↗: a code editor.
   - `Zed` [(GitHub)][c~zed~github]↗: a multiplayer code editor from the creators of Atom and Tree-sitter.
@@ -161,17 +161,17 @@ This section provides a few examples of software written in Rust, organized by t
 - [`mail-server`: Secure & Modern All-in-One Mail Server (IMAP, JMAP, POP3, SMTP)][mail-server~github]
 - [`hickory-dns`: A Rust based DNS client, server, and resolver][hickory-dns~github]
 - [`sniffnet`: Comfortably monitor your Internet traffic][sniffnet~github]
-- [`ratatui`: App Showcase](https://ratatui.rs/showcase/apps/)
+- [`ratatui`: App Showcase][ratatui-showcase-apps~website]
 - [`habitat`: Modern applications with built-in automation][habitat~github]
 - [`cargo-binstall`: Binary installation for rust projects][c~cargo-binstall~github]
 - [`cargo-update`][c~cargo-update~crates.io]
-- [`alacritty`: A cross-platform, OpenGL terminal emulator.](https://github.com/alacritty/alacritty)
+- [`alacritty`: A cross-platform, OpenGL terminal emulator.][alacritty~github]
 - [`cargo-hakari`][c~cargo-hakari~crates.io]
 - [`spacedrive`: Spacedrive is an open source cross-platform file explorer, powered by a virtual distributed filesystem written in Rust.][spacedrive~github]
 - [`swc`: Rust-based platform for the Web](https://github.com/swc-project/swc)
 - [`influxdb`: Scalable datastore for metrics, events, and real-time analytics][influxdb~github]
 - [`firecracker`: Secure and fast microVMs for serverless computing.][firecracker~github]
-- [`Warp`: Warp is a modern, Rust-based terminal with AI built in so you and your team can build great software, faster.](https://github.com/warpdotdev/Warp)
+- [`Warp`: Warp is a modern, Rust-based terminal with AI built in so you and your team can build great software, faster.][warp~github]
 - [RustPython: A Python Interpreter written in Rust][rustpython~github]
 - [wezterm: A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust][wezterm~github]
 - [redox-os: Mirror of https://gitlab.redox-os.org/redox-os/redox][redox~github]

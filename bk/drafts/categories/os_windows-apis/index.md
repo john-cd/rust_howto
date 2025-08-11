@@ -6,9 +6,9 @@ Bindings to Windows-specific APIs.
 
 | Topic | Rust Crates|
 | --- | --- |
-| File System Operations | Use the standard [`std::fs`](https://doc.rust-lang.org/std/fs/index.html)↗{{hi:std::fs}}, [`path`](https://doc.rust-lang.org/std/path/index.html)↗{{hi:std::path}}, but also the [`windows`][c~windows~docs]↗{{hi:windows}} crate. |
+| File System Operations | Use the standard [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}}, [`std::path`][c~std::path~docs]↗{{hi:std::path}}, but also the [`windows`][c~windows~docs]↗{{hi:windows}} crate. |
 | Process Management | Use `std::process`, [`windows`][c~windows~docs]↗{{hi:windows}}. |
-| Networking (Sockets) | Use [`std::net`](https://doc.rust-lang.org/std/net/index.html)↗{{hi:std::net}}, [`tokio`][c~tokio~docs]↗{{hi:tokio}} as usual. |
+| Networking (Sockets) | Use [`std::net`][c~std::net~docs]↗{{hi:std::net}}, [`tokio`][c~tokio~docs]↗{{hi:tokio}} as usual. |
 | Windows API Interaction | [`windows`][c~windows~docs]↗{{hi:windows}}, [`winapi`][c~winapi~docs]↗{{hi:winapi}} |
 | Registry Access | [`winreg`][c~winreg~docs]↗{{hi:winreg}} |
 | Services | [`windows`][c~windows~docs]↗{{hi:windows}} |

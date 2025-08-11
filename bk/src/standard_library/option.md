@@ -39,7 +39,7 @@ Every [`std::option::Option`][c~std::option::Option~docs]↗{{hi:std::option::Op
 
 [![std][c~std~docs~badge]][c~std~docs]
 
-"Early Exit" (also called "Early Return") is the technique of immediately returning from a function (or exiting a loop) as soon as an invalid or exceptional condition is detected. For this purpose, Rust offers the [`?`][book~rust~ch09-02-recoverable-errors-with-result-?]↗{{hi:?}} operator, which is essentially a shortcut for a [`match`](https://doc.rust-lang.org/std/keyword.match.html)↗ expression:
+"Early Exit" (also called "Early Return") is the technique of immediately returning from a function (or exiting a loop) as soon as an invalid or exceptional condition is detected. For this purpose, Rust offers the [`?`][book~rust~ch09-02-recoverable-errors-with-result-?]↗{{hi:?}} operator, which is essentially a shortcut for a [`match`][keyword~match]↗ expression:
 
 ```rust,noplayground
 fn func() -> Option<...> {
@@ -55,7 +55,7 @@ fn func() -> Option<...> {
 
 In the example below, when `s.chars().next()?` encounters [`None`][c~std::option::Option::None~docs]↗{{hi:std::option::Option::None}}, the function is exited early (returning `None`), guarding the subsequent uppercase conversion logic from operating on an empty string.
 
-This pattern removes the need for explicit, convoluted [`match`](https://doc.rust-lang.org/std/keyword.match.html)↗{{hi:match}} or [`if else`](https://doc.rust-lang.org/std/keyword.if.html)↗{{hi:if else}} statements, making the "Happy Path" clearer to the reader.
+This pattern removes the need for explicit, convoluted [`match`][keyword~match]↗{{hi:match}} or [`if else`][keyword~if]↗{{hi:if else}} statements, making the "Happy Path" clearer to the reader.
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/option/option_question_mark.rs:example}}
@@ -69,19 +69,19 @@ The following table provides an overview of the most commonly used [`Option`][c~
 
 | Combinator | Description | Example Use Case |
 | :--- | :--- | :--- |
-| [`is_some`](https://doc.rust-lang.org/std/option/enum.Option.html#method.is_some)↗{{hi:std::option::Option::is_some}} | Returns `true` if the `Option` is `Some`, `false` otherwise. | Checking if a value exists without unwrapping it. |
-| [`is_none`](https://doc.rust-lang.org/std/option/enum.Option.html#method.is_none)↗{{hi:std::option::Option::is_none}} | Returns `true` if the `Option` is `None`, `false` otherwise. | Checking if a value is absent. |
-| [`map`](https://doc.rust-lang.org/std/option/enum.Option.html#method.map)↗{{hi:std::option::Option::map}} | Transforms the `Some` value into a new `Option` containing the result of applying a function `f`. If `self` is `None`, it remains `None`. | Converting a `Some(String)` to `Some(usize)` (e.g., length). |
-| [`and_then`](https://doc.rust-lang.org/std/option/enum.Option.html#method.and_then)↗{{hi:std::option::Option::and_then}} | Chains operations that *themselves* return an `Option`. If `self` is `Some(v)`, applies `f` to `v` and returns the resulting `Option`. If `self` is `None`, returns `None`. Prevents `Option<Option<T>>` (nesting). | Chaining database lookups where each step might return `None` (e.g., `get_user_id.and_then(get_user_profile)`). |
-| [`or`](https://doc.rust-lang.org/std/option/enum.Option.html#method.or)↗{{hi:std::option::Option::or}} | Returns `self` if it is `Some`. Otherwise, returns `other`. Useful for providing a fallback `Option`. | Providing a default configuration if the primary configuration is missing. |
-| [`or_else`](https://doc.rust-lang.org/std/option/enum.Option.html#method.or_else)↗{{hi:std::option::Option::or_else}} | Similar to `or`, but the fallback `Option` is computed by a closure `f` *only if* `self` is `None`. Useful for expensive fallback computations. | Fetching data from a backup source only if the primary source is unavailable. |
-| [`unwrap_or`](https://doc.rust-lang.org/std/option/enum.Option.html#method.unwrap_or)↗{{hi:std::option::Option::unwrap_or}} | Returns the contained `Some` value, or a provided `default` value if `self` is `None`. | Getting a user-provided name or defaulting to "Guest". |
+| [`is_some`][c~std::option::Option::is_some~docs]↗{{hi:std::option::Option::is_some}} | Returns `true` if the `Option` is `Some`, `false` otherwise. | Checking if a value exists without unwrapping it. |
+| [`is_none`][c~std::option::Option::is_none~docs]↗{{hi:std::option::Option::is_none}} | Returns `true` if the `Option` is `None`, `false` otherwise. | Checking if a value is absent. |
+| [`map`][c~std::option::Option::map~docs]↗{{hi:std::option::Option::map}} | Transforms the `Some` value into a new `Option` containing the result of applying a function `f`. If `self` is `None`, it remains `None`. | Converting a `Some(String)` to `Some(usize)` (e.g., length). |
+| [`and_then`][c~std::option::Option::and_then~docs]↗{{hi:std::option::Option::and_then}} | Chains operations that *themselves* return an `Option`. If `self` is `Some(v)`, applies `f` to `v` and returns the resulting `Option`. If `self` is `None`, returns `None`. Prevents `Option<Option<T>>` (nesting). | Chaining database lookups where each step might return `None` (e.g., `get_user_id.and_then(get_user_profile)`). |
+| [`or`][c~std::option::Option::or~docs]↗{{hi:std::option::Option::or}} | Returns `self` if it is `Some`. Otherwise, returns `other`. Useful for providing a fallback `Option`. | Providing a default configuration if the primary configuration is missing. |
+| [`or_else`][c~std::option::Option::or_else~docs]↗{{hi:std::option::Option::or_else}} | Similar to `or`, but the fallback `Option` is computed by a closure `f` *only if* `self` is `None`. Useful for expensive fallback computations. | Fetching data from a backup source only if the primary source is unavailable. |
+| [`unwrap_or`][c~std::option::Option::unwrap_or~docs]↗{{hi:std::option::Option::unwrap_or}} | Returns the contained `Some` value, or a provided `default` value if `self` is `None`. | Getting a user-provided name or defaulting to "Guest". |
 | `unwrap_or_else` | Returns the contained `Some` value, or computes it from a closure `f` if `self` is `None`. Useful when the default value is expensive to compute. | Generating a new unique ID only if an existing one isn't found. |
-| [`ok_or`](https://doc.rust-lang.org/std/option/enum.Option.html#method.ok_or)↗{{hi:std::option::Option::ok_or}} | Converts `Option<T>` into a `Result<T, E>`. If `self` is `Some(v)`, returns `Ok(v)`. If `self` is `None`, returns `Err(err)`. | Converting an `Option` of a parsed number to a `Result` indicating success or a parsing error. |
-| [`ok_or_else`](https://doc.rust-lang.org/std/option/enum.Option.html#method.ok_or_else)↗{{hi:std::option::Option::ok_or_else}} | Similar to `ok_or`, but the error value `E` is computed by a closure `err_fn` *only if* `self` is `None`. | Converting `None` to a detailed error message that needs to be generated.  |
-| [`flatten`](https://doc.rust-lang.org/std/option/enum.Option.html#method.flatten)↗{{hi:std::option::Option::flatten}} | Removes one level of nesting from an `Option` of an `Option` (i.e., `Option<Option<T>>` becomes `Option<T>`). | After a `map` operation that returns an `Option`, use `flatten` to simplify the result. |
-| [`filter`](https://doc.rust-lang.org/std/option/enum.Option.html#method.filter)↗{{hi:std::option::Option::filter}} | Returns `Some(t)` if `self` is `Some(t)` AND the `predicate` function returns `true`. Otherwise, returns `None`. | Checking if a `Some(age)` is old enough to vote (`age.filter(|&a| a >= 18)`). |
-| [`zip`](https://doc.rust-lang.org/std/option/enum.Option.html#method.zip)↗{{hi:std::option::Option::zip}} | If both `self` and `other` are `Some`, returns a `Some` containing a tuple of their values. Otherwise, returns `None`. | Combining `Option<FirstName>` and `Option<LastName>` into `Option<(String, String)>`. |
+| [`ok_or`][c~std::option::Option::ok_or~docs]↗{{hi:std::option::Option::ok_or}} | Converts `Option<T>` into a `Result<T, E>`. If `self` is `Some(v)`, returns `Ok(v)`. If `self` is `None`, returns `Err(err)`. | Converting an `Option` of a parsed number to a `Result` indicating success or a parsing error. |
+| [`ok_or_else`][c~std::option::Option::ok_or_else~docs]↗{{hi:std::option::Option::ok_or_else}} | Similar to `ok_or`, but the error value `E` is computed by a closure `err_fn` *only if* `self` is `None`. | Converting `None` to a detailed error message that needs to be generated.  |
+| [`flatten`][c~std::option::Option::flatten~docs]↗{{hi:std::option::Option::flatten}} | Removes one level of nesting from an `Option` of an `Option` (i.e., `Option<Option<T>>` becomes `Option<T>`). | After a `map` operation that returns an `Option`, use `flatten` to simplify the result. |
+| [`filter`][c~std::option::Option::filter~docs]↗{{hi:std::option::Option::filter}} | Returns `Some(t)` if `self` is `Some(t)` AND the `predicate` function returns `true`. Otherwise, returns `None`. | Checking if a `Some(age)` is old enough to vote (`age.filter(|&a| a >= 18)`). |
+| [`zip`][c~std::option::Option::zip~docs]↗{{hi:std::option::Option::zip}} | If both `self` and `other` are `Some`, returns a `Some` containing a tuple of their values. Otherwise, returns `None`. | Combining `Option<FirstName>` and `Option<LastName>` into `Option<(String, String)>`. |
 
 ### Extract the Value Contained in an `Option` with `unwrap*` and `expect` {#extracting-the-value-contained-in-option}
 
@@ -103,7 +103,7 @@ The following methods extract the contained value in an [`std::option::Option`][
 
 [![std][c~std~docs~badge]][c~std~docs]
 
-The following example demonstrates the use of the [`map`](https://doc.rust-lang.org/std/option/enum.Option.html#method.map)↗{{hi:std::option::Option::map}}, [`and_then`](https://doc.rust-lang.org/std/option/enum.Option.html#method.and_then)↗{{hi:std::option::Option::and_then}} combinators and the [`unwrap_or_else`](https://doc.rust-lang.org/std/option/enum.Option.html#method.unwrap_or_else)↗{{hi:std::option::Option::unwrap_or_else}} method.
+The following example demonstrates the use of the [`map`][c~std::option::Option::map~docs]↗{{hi:std::option::Option::map}}, [`and_then`][c~std::option::Option::and_then~docs]↗{{hi:std::option::Option::and_then}} combinators and the [`unwrap_or_else`][c~std::option::Option::unwrap_or_else~docs]↗{{hi:std::option::Option::unwrap_or_else}} method.
 The `and_then` and `*or_else` methods take a closure as input, and only evaluate the closure when they need to produce a new value.
 
 ```rust,editable

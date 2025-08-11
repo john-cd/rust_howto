@@ -8,18 +8,18 @@ Popular tooling include:
 
 - `GitHub Actions`.
 - `GitLab CI/CD`.
-- [`Jenkins`](https://www.jenkins.io)↗{{hi:Jenkins}}.
-- [`CircleCI`](https://circleci.com/)↗{{hi:CircleCI}}.
+- [`Jenkins`][jenkins~website]↗{{hi:Jenkins}}.
+- [`CircleCI`][circleci~website]↗{{hi:CircleCI}}.
 
 ## Workflow Example (GitHub Actions) {#github-actions}
 
 - Developers push code changes to a Git repository.
-- [`GitHub Actions`](https://docs.github.com/en/actions){{hi:GitHub Actions}} is triggered by the push or pull request.
+- [`GitHub Actions`][github-actions~website]{{hi:GitHub Actions}} is triggered by the push or pull request.
 - Within the workflow, [`cargo`][c~cargo~docs]↗{{hi:cargo}} builds the Rust application in release mode.
 - [`cargo`][c~cargo~docs]↗{{hi:cargo}} runs all (unit, integration, and end-to-end) tests.
 - The built binary is packaged (e.g., zipped).
-- [`GitHub Actions`](https://docs.github.com/en/actions){{hi:GitHub Actions}} creates a new release on GitHub, attaching the packaged binary.
-- Deployment (Optional): [`GitHub Actions`](https://docs.github.com/en/actions){{hi:GitHub Actions}} deploys the application to a target environment.
+- [`GitHub Actions`][github-actions~website]{{hi:GitHub Actions}} creates a new release on GitHub, attaching the packaged binary.
+- Deployment (Optional): [`GitHub Actions`][github-actions~website]{{hi:GitHub Actions}} deploys the application to a target environment.
 
 See [[github_actions | Github Actions]].
 

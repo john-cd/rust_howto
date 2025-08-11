@@ -22,7 +22,7 @@ You can use [`anyhow`]( ){{hi: }} to:
 {{#include ../../../../crates/cats/rust_patterns/examples/error/anyhow.rs:example}}
 ```
 
-[`anyhow`](https://docs.rs/anyhow/latest/anyhow)↗{{hi:anyhow}} works with any error type that has an impl of [`std::error::Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}}, including ones defined in your crate e.g. using [`thiserror`][c~thiserror~docs]{{hi:thiserror}}↗.
+[`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} works with any error type that has an impl of [`std::error::Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}}, including ones defined in your crate e.g. using [`thiserror`][c~thiserror~docs]{{hi:thiserror}}↗.
 
 ## Create Custom Error Types Declaratively with `thisError` {#thiserror}
 

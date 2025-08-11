@@ -77,7 +77,7 @@ cargo new my-example --bin
 cd my-example
 ```
 
-Now, we also need to add the necessary crates to [Cargo.toml][book~cargo~cargo-toml]↗, as indicated by the crate badges, in this case just "rand". To do so, we'll use the [`cargo add`](https://doc.rust-lang.org/cargo/commands/cargo-add.html)↗{{hi:cargo add}} command.
+Now, we also need to add the necessary crates to [Cargo.toml][book~cargo~cargo-toml]↗, as indicated by the crate badges, in this case just "rand". To do so, we'll use the [`cargo add`][book~cargo~cargo-add]↗{{hi:cargo add}} command.
 
 ```sh
 cargo add rand

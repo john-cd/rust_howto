@@ -25,7 +25,7 @@ Libraries that provide a cross-platform abstraction over native graphics APIs.
 Note the following:
 
 - Direct hardware access is often platform-specific. Crates like [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}} and [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} provide cross-platform abstractions, but they still rely on platform-specific backends.
-- Working directly with low-level graphics APIs is complex. Consider using a higher-level [[gui | GUI]] framework or game engine (e.g., [`Bevy`][c~bevy~docs]↗{{hi:Bevy}}, [`Amethyst`][c~amethyst~docs]↗{{hi:Amethyst}}, or even [`Unreal Engine`](https://www.unrealengine.com)↗{{hi:Unreal Engine}} or [`Unity`](https://unity.com)↗{{hi:Unity}} via Rust bindings) if your needs allow.
+- Working directly with low-level graphics APIs is complex. Consider using a higher-level [[gui | GUI]] framework or game engine (e.g., [`Bevy`][c~bevy~docs]↗{{hi:Bevy}}, [`Amethyst`][c~amethyst~docs]↗{{hi:Amethyst}}, or even [`Unreal Engine`][unrealengine~website]↗{{hi:Unreal Engine}} or [`Unity`][unity~website]↗{{hi:Unity}} via Rust bindings) if your needs allow.
 
 {{#include native_graphics_apis.incl.md}}
 

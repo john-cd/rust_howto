@@ -4,7 +4,7 @@
 
 Functional programming is a programming paradigm that treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data.
 
-Rust is not a purely functional language, but incorporates many features from functional programming. By default, variables in Rust are immutable. Rust treats functions as first-class citizens, meaning they can be passed as arguments to other functions, returned from functions, and assigned to variables. Closures, which are anonymous functions that can capture their environment, are also a powerful tool for functional programming in Rust. Other functional features include pattern matching, algebraic data types, and higher-order functions, such as [`map`](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.map)↗{{hi:map}}, `filter`, and `fold`.
+Rust is not a purely functional language, but incorporates many features from functional programming. By default, variables in Rust are immutable. Rust treats functions as first-class citizens, meaning they can be passed as arguments to other functions, returned from functions, and assigned to variables. Closures, which are anonymous functions that can capture their environment, are also a powerful tool for functional programming in Rust. Other functional features include pattern matching, algebraic data types, and higher-order functions, such as [`map`][c~std::iter::Iterator::map~docs]↗{{hi:map}}, `filter`, and `fold`.
 
 The following explores some notable Rust crates that aid in functional programming:
 
@@ -57,7 +57,7 @@ It offers a wide range of functions for combining, grouping, and manipulating it
 
 The enum [`Either`][c~either~docs]↗{{hi:Either}} with variants `Left` and `Right` is a general purpose sum type with two cases. This is useful for representing values that can take on one of two different forms, which is a common pattern in functional programming. [`Either`][c~either~docs]↗{{hi:Either}} has methods that are similar to `Option` and `Result`, and it also implements traits like `Iterator`. This crate also includes [macros][p~macros] `try_left!()` and `try_right!()` to use for short-circuiting logic, similar to how the `?` operator is used with `Result`.
 
-Note that [`Either`][c~either~docs]↗{{hi:Either}} is general purpose. For describing success or error, use the regular [`Result`](https://doc.rust-lang.org/std/result/enum.Result.html)↗{{hi:std::result::Result}} enum.
+Note that [`Either`][c~either~docs]↗{{hi:Either}} is general purpose. For describing success or error, use the regular [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} enum.
 
 ```rust,editable
 {{#include ../../../crates/cats/rust_patterns/examples/functional_programming/either.rs:example}}
@@ -78,8 +78,8 @@ Frunk is a functional programming toolbelt for Rust. It provides developers with
 
 <div class="hidden">
 [functional_programming: organize / align intro and sections / add examples NOW](https://github.com/john-cd/rust_howto/issues/467)
-review https://geo-ant.github.io/blog/2023/rust-type-level-programming/
-https://nota-lang.org/examples/blog-post/standalone/
+review https://geo-ant.github.io/blog/2023/rust-type-level-programming
+https://nota-lang.org/examples/blog-post/standalone
 review https://crates.io/crates/tap
 ADD Working with Iterators: Creating custom iterators, using iterator adapters, and understanding iterator traits. Here or in `std` lib?
 

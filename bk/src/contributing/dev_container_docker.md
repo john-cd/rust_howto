@@ -39,7 +39,7 @@ docker compose up --build -d
 
 ## Deployment to GitHub Pages {#deployment-to-github-pages}
 
-The continuous integration workflow{{hi:Continuous integration workflow}} is found under `.github`{{hi:.github}}. See the [GitHub Actions documentation](https://docs.github.com/en/actions)↗ for details.
+The continuous integration workflow{{hi:Continuous integration workflow}} is found under `.github`{{hi:.github}}. See the [GitHub Actions documentation][github-actions~website]↗ for details.
 
 Test the docker compose setup used during CI using:
 

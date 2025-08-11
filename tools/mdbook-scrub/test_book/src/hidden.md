@@ -73,4 +73,4 @@ THIS SHOULD NOT BE SEEN.
 The links in the first section should work.
 
 {{#include refs.md}}
-[ref]: https://rust-cli.github.io/book/index.html
+[ref]: https://rust-cli.github.io/book

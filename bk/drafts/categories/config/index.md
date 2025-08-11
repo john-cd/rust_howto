@@ -10,7 +10,7 @@ Configuration management {{hi:Configuration management}} is the practice of hand
 
 ## Common Approaches
 
-- [[environment_variables | Environment Variables]] are suitable for simple configurations. The [`std::env`](https://doc.rust-lang.org/std/env/index.html)↗{{hi:std::env}} module provides access to environment variables.
+- [[environment_variables | Environment Variables]] are suitable for simple configurations. The [`std::env`][c~std::env~docs]↗{{hi:std::env}} module provides access to environment variables.
 - [[configuration | Configuration]] files like [[toml | TOML]], [[ini | INI]], [[yaml | YAML]], [[json | JSON]], or RON provide structured and organized configuration. Popular Rust crates for parsing these formats include: [`toml`][c~toml~docs]↗{{hi:toml}}, [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}}, [`ron`](https://docs.rs/ron/latest/ron)↗{{hi:ron}}, [`serde`][c~serde~docs]↗{{hi:serde}}.
 
 FIXME Configuration crates like [`config-rs`][c~config~docs]↗{{hi:config-rs}}, a powerful and flexible crate for layered configuration. It supports merging configurations from various sources, including files, environment variables, and in-memory data.
@@ -49,7 +49,7 @@ Document configuration: Provide clear documentation of all configuration options
 
 - [`config`][c~config~docs]↗{{hi:config}}: A popular crate that supports multiple formats and merging configurations from different sources (files, environment variables, etc.).
 [`serde`][c~serde~docs]↗{{hi:serde}}: (Not a config crate itself, but essential for serializing and deserializing configuration - data in most cases).
-- Environment Variables: [`std::env`](https://doc.rust-lang.org/std/env/index.html)↗{{hi:std::env}} (for accessing environment variables directly).
+- Environment Variables: [`std::env`][c~std::env~docs]↗{{hi:std::env}} (for accessing environment variables directly).
 
 ## Related Topics {#related-topics}
 

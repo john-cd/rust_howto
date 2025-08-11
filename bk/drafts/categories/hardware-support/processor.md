@@ -30,11 +30,11 @@ You can use inline [assembly][p~assembly] in Rust with the asm! macro, but it's 
 
 ### Compiler Intrinsics {#skip}
 
-Compiler intrinsics are functions that map directly to CPU instructions. They're often used for low-level optimization. Access to intrinsics is usually through [`std::arch`](https://doc.rust-lang.org/std/arch/index.html)↗{{hi:std::arch}}.
+Compiler intrinsics are functions that map directly to CPU instructions. They're often used for low-level optimization. Access to intrinsics is usually through [`std::arch`][c~std::arch~docs]↗{{hi:std::arch}}.
 
 ## SIMD (Single Instruction, Multiple Data) Operations {#simd}
 
-[`std::arch`](https://doc.rust-lang.org/std/arch/index.html)↗{{hi:std::arch}}: (Standard library) Provides access to SIMD instructions if the target CPU supports them. This is essential for performance optimization.
+[`std::arch`][c~std::arch~docs]↗{{hi:std::arch}}: (Standard library) Provides access to SIMD instructions if the target CPU supports them. This is essential for performance optimization.
 
 [`packed_simd`][c~packed_simd~docs]↗{{hi:packed_simd}}: A crate for portable SIMD.
 

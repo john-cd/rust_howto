@@ -199,7 +199,7 @@ Writes are fast when writing to container FS, volume, but slow on bind mount (to
 
 Try local / inline caching as well
 
-[optimize-docker-builds-github-actions-cache](https://cicube.io/blog/optimize-docker-builds-github-actions-cache/)
+[optimize-docker-builds-github-actions-cache](https://cicube.io/blog/optimize-docker-builds-github-actions-cache)
 
 ### Try to build directly on the host, not in a container?
 

@@ -33,8 +33,8 @@ The [`dyn-clone`][c~dyn-clone~docs]↗{{hi:dyn-clone}} crate provides a [`DynClo
 
 See also:
 
-- [Projections and Structural Pinning](https://doc.rust-lang.org/std/pin/index.html#projections-and-structural-pinning)↗.
-- [`std::pin::Pin`](https://doc.rust-lang.org/std/pin/struct.Pin.html)↗.
+- [Projections and Structural Pinning][c~std::pin~projections-and-structural-pinning~docs]↗.
+- [`std::pin::Pin`][c~std::pin::Pin~docs]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

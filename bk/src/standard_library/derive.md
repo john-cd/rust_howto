@@ -12,12 +12,12 @@ Instead of manually writing large amounts of repetitive code, you can apply the 
 
 As described by [Derivable traits][book~rust~derivable-traits]{{hi:Derivable traits}}↗, the following traits are derivable "out of the box":
 
-- Comparison traits [`Eq`](https://doc.rust-lang.org/std/cmp/trait.Eq.html)↗{{hi:std::cmp::Eq}}, [`PartialEq`](https://doc.rust-lang.org/std/cmp/trait.PartialEq.html)↗{{hi:std::cmp::PartialEq}}, [`Ord`](https://doc.rust-lang.org/std/cmp/trait.Ord.html)↗{{hi:std::cmp::Ord}}, and [`PartialOrd`](https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html)↗{{hi:std::cmp::PartialOrd}},
-- [`Clone`](https://doc.rust-lang.org/std/clone/trait.Clone.html)↗{{hi:std::clone::Clone}}, which explicitly creates a deep copy of a value,
-- [`Copy`](https://doc.rust-lang.org/std/marker/trait.Copy.html)↗{{hi:std::marker::Copy}}, which gives a type 'copy semantics' instead of 'move semantics' (less common),
-- [`Hash`](https://doc.rust-lang.org/std/hash/trait.Hash.html)↗{{hi:std::hash::Hash}}, to compute a hash of the item,
-- [`Default`](https://doc.rust-lang.org/std/default/trait.Default.html)↗{{hi:std::default::Default}}, to provide a default instance of the type,
-- [`Debug`](https://doc.rust-lang.org/std/fmt/trait.Debug.html)↗{{hi:std::fmt::Debug}} to format the type for debug purposes.
+- Comparison traits [`Eq`][c~std::cmp::Eq~docs]↗{{hi:std::cmp::Eq}}, [`PartialEq`][c~std::cmp::PartialEq~docs]↗{{hi:std::cmp::PartialEq}}, [`Ord`][c~std::cmp::Ord~docs]↗{{hi:std::cmp::Ord}}, and [`PartialOrd`][c~std::cmp::PartialOrd~docs]↗{{hi:std::cmp::PartialOrd}},
+- [`Clone`][c~std::clone::Clone~docs]↗{{hi:std::clone::Clone}}, which explicitly creates a deep copy of a value,
+- [`Copy`][c~std::marker::Copy~docs]↗{{hi:std::marker::Copy}}, which gives a type 'copy semantics' instead of 'move semantics' (less common),
+- [`Hash`][c~std::hash::Hash~docs]↗{{hi:std::hash::Hash}}, to compute a hash of the item,
+- [`Default`][c~std::default::Default~docs]↗{{hi:std::default::Default}}, to provide a default instance of the type,
+- [`Debug`][c~std::fmt::Debug~docs]↗{{hi:std::fmt::Debug}} to format the type for debug purposes.
 
 The `PartialEq` trait allows checking for equality and enables use of the `==` and `!=` operators. The `Eq` trait signals that for _every_ value of a type, the value is equal to itself. The `PartialOrd` trait allows comparisons for sorting purposes. The `Ord` trait guarantees that, for _any_ two values of a type, a valid ordering will exist. Certain primitive types, namely floats, implement `PartialEq` and `PartialOrd` but cannot implement `Eq` and `Ord`.
 
@@ -27,7 +27,7 @@ The `Debug` trait enables debug formatting, which you request by adding `:?` wit
 
 The `Default` trait provides the default value - the equivalent of an empty string or zero - for your type.
 
-The `Hash` trait takes an instance of a type of arbitrary size and map that instance to a value of fixed size (a hash code, usually an integer) using a hash function. It is commonly required to use a type as a key in a [`HashMap`](https://doc.rust-lang.org/std/collections/struct.HashMap.html)↗{{hi:std::collections::HashMap}} or [`HashSet`](https://doc.rust-lang.org/std/collections/struct.HashSet.html)↗{{hi:std::collections::HashSet}}.
+The `Hash` trait takes an instance of a type of arbitrary size and map that instance to a value of fixed size (a hash code, usually an integer) using a hash function. It is commonly required to use a type as a key in a [`HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}} or [`HashSet`][c~std::collections::HashSet~docs]↗{{hi:std::collections::HashSet}}.
 
 Note that the above traits can still be manually implemented, if a more complex behavior than what `derive` provides is required.
 
@@ -45,12 +45,12 @@ It is possible to implement `derive` for your own custom traits through procedur
 
 The [derive_more][c~derive_more~crates.io]↗ crate derive lots of additional, commonly used traits and static methods for both structs{{hi:Structs}} and enums{{hi:Enums}}:
 
-- Arithmetic Traits: [`Add`](https://doc.rust-lang.org/std/ops/trait.Add.html)↗{{hi:std::ops::Add}}, [`Sub`](https://doc.rust-lang.org/std/ops/trait.Sub.html)↗{{hi:std::ops::Sub}}, [`Mul`](https://doc.rust-lang.org/std/ops/trait.Mul.html)↗{{hi:std::ops::Mul}}, [`Div`](https://doc.rust-lang.org/std/ops/trait.Div.html)↗{{hi:std::ops::Div}}, `AddAssign`, `SubAssign`, `MulAssign`, etc. for custom numeric types,
-- Conversion Traits: [`From`](https://doc.rust-lang.org/std/convert/trait.From.html)↗{{hi:std::convert::From}}, [`Into`](https://doc.rust-lang.org/std/convert/trait.Into.html)↗{{hi:std::convert::Into}}, [`TryFrom`](https://doc.rust-lang.org/std/convert/trait.TryFrom.html)↗{{hi:std::convert::TryFrom}}, [`TryInto`](https://doc.rust-lang.org/std/convert/trait.TryInto.html)↗{{hi:std::convert::TryInto}} for easy type conversions,
-- Smart Pointer Traits: [`Deref`](https://doc.rust-lang.org/std/ops/trait.Deref.html)↗{{hi:std::ops::Deref}}, [`DerefMut`](https://doc.rust-lang.org/std/ops/trait.DerefMut.html)↗{{hi:std::ops::DerefMut}} for implementing container types,
-- [`Display`](https://doc.rust-lang.org/std/fmt/trait.Display.html)↗{{hi:std::fmt::Display}} and [`Error`](https://doc.rust-lang.org/std/error/trait.Error.html)↗{{hi:std::error::Error}} for better formatting and error handling,
+- Arithmetic Traits: [`Add`][c~std::ops::Add~docs]↗{{hi:std::ops::Add}}, [`Sub`][c~std::ops::Sub~docs]↗{{hi:std::ops::Sub}}, [`Mul`][c~std::ops::Mul~docs]↗{{hi:std::ops::Mul}}, [`Div`][c~std::ops::Div~docs]↗{{hi:std::ops::Div}}, `AddAssign`, `SubAssign`, `MulAssign`, etc. for custom numeric types,
+- Conversion Traits: [`From`][c~std::convert::From~docs]↗{{hi:std::convert::From}}, [`Into`][c~std::convert::Into~docs]↗{{hi:std::convert::Into}}, [`TryFrom`][c~std::convert::TryFrom~docs]↗{{hi:std::convert::TryFrom}}, [`TryInto`][c~std::convert::TryInto~docs]↗{{hi:std::convert::TryInto}} for easy type conversions,
+- Smart Pointer Traits: [`Deref`][c~std::ops::Deref~docs]↗{{hi:std::ops::Deref}}, [`DerefMut`][c~std::ops::DerefMut~docs]↗{{hi:std::ops::DerefMut}} for implementing container types,
+- [`Display`][c~std::fmt::Display~docs]↗{{hi:std::fmt::Display}} and [`Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} for better formatting and error handling,
 - `Constructor` to auto-generate constructors for structs,
-- Boolean Operators [`Not`](https://doc.rust-lang.org/std/ops/trait.Not.html)↗{{hi:std::ops::Not}}, [`BitAnd`](https://doc.rust-lang.org/std/ops/trait.BitAnd.html)↗{{hi:std::ops::BitAnd}}, [`BitOr`](https://doc.rust-lang.org/std/ops/trait.BitOr.html)↗{{hi:std::ops::BitOr}}, etc.
+- Boolean Operators [`Not`][c~std::ops::Not~docs]↗{{hi:std::ops::Not}}, [`BitAnd`][c~std::ops::BitAnd~docs]↗{{hi:std::ops::BitAnd}}, [`BitOr`][c~std::ops::BitOr~docs]↗{{hi:std::ops::BitOr}}, etc.
 
 You can also implement `derive` for your own traits through procedural [[macros | macros]].
 

@@ -6,7 +6,7 @@
 
 - [Volta][volta~website]↗[(github)][volta~github]↗.
 - [Deno][deno~website]↗ uses Rust for its JavaScript and TypeScript runtime.
-- [`Bun`](https://bun.sh)↗{{hi:Bun}}.
+- [`Bun`][bun.sh~website]↗{{hi:Bun}}.
 
 ### `swc` Compiler {#swc}
 

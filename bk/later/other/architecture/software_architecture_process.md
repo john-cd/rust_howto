@@ -52,7 +52,7 @@ Cross-cutting concerns:
 
 ## Handle Error Management {#skip}
 
-- Use Rust's [`Result`](https://doc.rust-lang.org/std/result/enum.Result.html)↗{{hi:std::result::Result}} and [`Option`](https://doc.rust-lang.org/std/option/enum.Option.html)↗{{hi:std::option::Option}} types to handle errors gracefully.
+- Use Rust's [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} and [`Option`][c~std::option::Option~docs]↗{{hi:std::option::Option}} types to handle errors gracefully.
 - Create custom error types using [`thiserror`][c~thiserror~docs]↗{{hi:thiserror}} and use [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} for descriptive error messages.
 
 See:

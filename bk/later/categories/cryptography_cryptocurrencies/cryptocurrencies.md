@@ -6,7 +6,7 @@ Notable crypto projects using Rust include:
 
 - Parity Technologies allows building blockchain infrastructure like [`Polkadot`](https://en.wikipedia.org/wiki/Polkadot_(blockchain_platform))↗{{hi:Polkadot}} and [`Substrate`](https://github.com/paritytech/polkadot-sdk/tree/master/substrate)↗{{hi:Substrate}}.
 - [`Solana`][c~solana~docs]↗{{hi:Solana}} is a high-performance blockchain platform with smart contract functionality.
-- The [`NEAR`](https://www.near.org)↗{{hi:NEAR}} Protocol is a user-friendly and scalable blockchain platform.
+- The [`NEAR`][near~website]↗{{hi:NEAR}} Protocol is a user-friendly and scalable blockchain platform.
 - [`Grin`][c~grin~docs]↗{{hi:Grin}} is a privacy-focused cryptocurrency implementing the Mimblewimble protocol.
 - [`Rust-Bitcoin`]( ){{hi: }} is a library providing support for Bitcoin's core functionalities.
 

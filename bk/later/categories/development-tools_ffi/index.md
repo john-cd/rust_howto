@@ -64,7 +64,7 @@ Many languages have their own FFI mechanisms. You'll often need to find or creat
 
 ### General Binding Generators (Less Common with Rust)
 
-While widely used with other languages, [`SWIG`](https://www.swig.org)↗{{hi:SWIG}} (Simplified Wrapper and Interface Generator) is less frequently used with Rust due to the effectiveness of crates like [`pyo3`][c~pyo3~docs]↗{{hi:pyo3}} and [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}}.
+While widely used with other languages, [`SWIG`][swig~website]↗{{hi:SWIG}} (Simplified Wrapper and Interface Generator) is less frequently used with Rust due to the effectiveness of crates like [`pyo3`][c~pyo3~docs]↗{{hi:pyo3}} and [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}}.
 
 ## Related Topics
 

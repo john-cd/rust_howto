@@ -4,7 +4,7 @@
 
 ## Publication Steps {#publish}
 
-The [`publish`](https://github.com/john-cd/rust_howto/tree/main/publish)↗ folder contains a placeholder crate, so that the book could be located when searching on [`crates.io`][crates.io~website]{{hi:crates.io}}↗.
+The [`publish`][rust-howto~publish~github]↗ folder contains a placeholder crate, so that the book could be located when searching on [`crates.io`][crates.io~website]{{hi:crates.io}}↗.
 
 To publish the crate to `crates.io`, use the following steps:
 

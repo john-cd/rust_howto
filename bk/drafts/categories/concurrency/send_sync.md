@@ -65,7 +65,7 @@ By implementing the unsafe marker [traits][p~traits] [`Send`]( ){{hi: }} and `Sy
 [write; add links?](https://github.com/john-cd/rust_howto/issues/909)
 
 - Implementing Vec: <https://doc.rust-lang.org/nomicon/vec/vec.html>
-- https://nyanpasu64.gitlab.io/blog/an-unsafe-tour-of-rust-s-send-and-sync/
+- https://nyanpasu64.gitlab.io/blog/an-unsafe-tour-of-rust-s-send-and-sync
 - https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html
 
 REFERENCES:
@@ -75,7 +75,7 @@ REFERENCES:
 POINTERS:
 
 - https://doc.rust-lang.org/reference/types/pointer.html
-- https://doc.rust-lang.org/std/ptr/index.html#functions
+- https://doc.rust-lang.org/std/ptr#functions
 - https://doc.rust-lang.org/std/ptr/struct.NonNull.html
 - https://doc.rust-lang.org/std/fmt/trait.Pointer.html
 

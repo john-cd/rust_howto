@@ -6,7 +6,7 @@
 
 [![Rust by example - iterators][book~rust-by-example~iterators~badge]][book~rust-by-example~iterators]{{hi:Iterators}}
 
-Iterators allow you to process a sequence of items. An iterator is any type that implements the [`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html)↗{{hi:std::iter::Iterator}} trait. This trait requires only one required method: `next()`. Iterators are lazy, meaning they don't do any work until you ask for the next item (via `next()`).
+Iterators allow you to process a sequence of items. An iterator is any type that implements the [`Iterator`][c~std::iter::Iterator~docs]↗{{hi:std::iter::Iterator}} trait. This trait requires only one required method: `next()`. Iterators are lazy, meaning they don't do any work until you ask for the next item (via `next()`).
 
 ```rust,noplayground
 pub trait Iterator {
@@ -40,7 +40,7 @@ Use `iter()` when you need to iterate over the elements of a collection without 
 
 ## Create Basic Iterators from Values and Closures {#create-an-iterator}
 
-The [`std::iter`](https://doc.rust-lang.org/std/iter/index.html)↗{{hi:std::iter}} module in the standard library provide a number of functions to create basic iterators from values or closures:
+The [`std::iter`][c~std::iter~docs]↗{{hi:std::iter}} module in the standard library provide a number of functions to create basic iterators from values or closures:
 
 ```rust,editable
 {{#include ../../crates/language/examples/iterators/simple_iterators.rs:example}}
@@ -50,7 +50,7 @@ The [`std::iter`](https://doc.rust-lang.org/std/iter/index.html)↗{{hi:std::ite
 
 Iterators are composable: it's very common to chain them together to do more complex forms of processing.
 
-Functions which take an [`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html)↗{{hi:std::iter::Iterator}} as input and return another `Iterator` are often called "iterator adapters". Common iterator adapters include `map`, `take`, and `filter`:
+Functions which take an [`Iterator`][c~std::iter::Iterator~docs]↗{{hi:std::iter::Iterator}} as input and return another `Iterator` are often called "iterator adapters". Common iterator adapters include `map`, `take`, and `filter`:
 
 ```rust,editable
 {{#include ../../crates/language/examples/iterators/iterator_adapters.rs:example}}
@@ -71,7 +71,7 @@ Advantageously, this also allows changing the implementation of the iterator wit
 
 ## Accept Various Iterable Types as the Input of a Function or Method {#accept-various-iterable-types}
 
-Many collection types in Rust implement [`IntoIterator`](https://doc.rust-lang.org/std/iter/trait.IntoIterator.html)↗{{hi:std::iter::IntoIterator}}, which provides a method `into_iter()` that returns an iterator.
+Many collection types in Rust implement [`IntoIterator`][c~std::iter::IntoIterator~docs]↗{{hi:std::iter::IntoIterator}}, which provides a method `into_iter()` that returns an iterator.
 
 It is common to use `IntoIterator` as a trait bound for function parameters. This allows the input collection type to change.
 

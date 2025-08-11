@@ -9,10 +9,10 @@ Tools that provide developer-facing features such as testing, debugging, linting
 | Build System/Package Manager | [`cargo`][c~cargo~docs]↗{{hi:cargo}} |
 | Formatter | [`rustfmt`][c~rustfmt~docs]↗{{hi:rustfmt}} |
 | Linter | [`clippy`][c~clippy~docs]↗{{hi:clippy}} |
-| Testing Framework | [`cargo test`](https://doc.rust-lang.org/cargo/commands/cargo-test.html)↗{{hi:cargo test}} (built-in), [`rstest`][c~rstest~docs]↗{{hi:rstest}} (for data-driven tests) |
+| Testing Framework | [`cargo test`][book~cargo~cargo-test]↗{{hi:cargo test}} (built-in), [`rstest`][c~rstest~docs]↗{{hi:rstest}} (for data-driven tests) |
 | Debugging | [`gdb`][c~gdb~docs]↗{{hi:gdb}}, [`lldb`][c~lldb~docs]↗{{hi:lldb}} (often used via IDE integration), `cargo-debug` |
 | Profiling | `cargo flamegraph`, [`perf`][c~perf~docs]↗{{hi:perf}} (system profiler) |
-| Documentation Generator | [`cargo doc`](https://doc.rust-lang.org/cargo/commands/cargo-doc.html)↗{{hi:cargo doc}} |
+| Documentation Generator | [`cargo doc`][book~cargo~cargo-doc]↗{{hi:cargo doc}} |
 | Code Coverage | [`grcov`][c~grcov~docs]↗{{hi:grcov}}, [`tarpaulin`][c~cargo-tarpaulin~docs]↗{{hi:tarpaulin}} |
 | Continuous Integration | often uses CI platforms directly; no specific Rust crates needed, but [`xtask`][c~xtask~docs]↗{{hi:xtask}} can help manage CI tasks |
 | Code Analysis | `cargo clippy`, `rust-analyzer` (for Language Server Protocol support in IDEs) |
@@ -108,7 +108,7 @@ See also [[cross_compiling | Cross Compiling (Cargo Plugins)]].
 
 ## Tests
 
-- [`assertables`](https://docs.rs/assertables/latest/assertables/)
+- [`assertables`](https://docs.rs/assertables/latest/assertables)
 - [`proptest`][c~proptest~github]: Hypothesis-like property testing for Rust
 
 ## Cargo Plugins
@@ -144,7 +144,7 @@ See also [[cross_compiling | Cross Compiling (Cargo Plugins)]].
 
 ## CD / CI
 
-- [`act`: Run your GitHub Actions locally](https://github.com/nektos/act)
+- [`act`: Run your GitHub Actions locally][act~github]
 
 ## Others
 

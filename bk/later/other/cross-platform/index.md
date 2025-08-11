@@ -43,7 +43,7 @@ FIXME
 
 ## Mobile Development
 
-While native mobile development with Rust is nascent, Rust `can` be combined with frameworks like [`Flutter`](https://docs.flutter.dev)↗{{hi:Flutter}} to create cross-platform mobile apps. Rust can provide the backend logic, and Flutter handles the UI.
+While native mobile development with Rust is nascent, Rust `can` be combined with frameworks like [`Flutter`][docs.flutter.dev~website]↗{{hi:Flutter}} to create cross-platform mobile apps. Rust can provide the backend logic, and Flutter handles the UI.
 
 FIXME
 

@@ -14,7 +14,7 @@ This table outlines common text processing tasks and relevant Rust crates.
 | String Search | [`aho-corasick`][c~aho-corasick~docs]↗{{hi:aho-corasick}}, [`memchr`][c~memchr~docs]↗{{hi:memchr}} | String search can be done with regular expressions or with algorithms like Aho-Corasick. |
 | Fuzzy Matching | [`fuzzy-matcher`][c~fuzzy-matcher~docs]↗{{hi:fuzzy-matcher}}, [`strsim`][c~strsim~docs]↗{{hi:strsim}} | [`fuzzy-matcher`][c~fuzzy-matcher~docs]↗{{hi:fuzzy-matcher}} provides fuzzy string matching. [`strsim`][c~strsim~docs]↗{{hi:strsim}} implement string similarity metrics. |
 | Diffing & Patching | [`diff`][c~diff~docs]↗{{hi:diff}}, [`similar`][c~similar~docs]↗{{hi:similar}} | These crates calculate differences between text files. |
-| OS, C, and other strings | [`std::ffi`](https://doc.rust-lang.org/std/ffi/index.html)↗{{hi:std::ffi}}, [`bstr`][c~bstr~docs]↗{{hi:bstr}} | [`std::ffi`](https://doc.rust-lang.org/std/ffi/index.html)↗ provides types for platform-native strings and C-style, NUL-terminated strings. [`bstr`][c~bstr~docs]↗ offers a string type that is not required to be valid UTF-8. |
+| OS, C, and other strings | [`std::ffi`][c~std::ffi~docs]↗{{hi:std::ffi}}, [`bstr`][c~bstr~docs]↗{{hi:bstr}} | [`std::ffi`][c~std::ffi~docs]↗ provides types for platform-native strings and C-style, NUL-terminated strings. [`bstr`][c~bstr~docs]↗ offers a string type that is not required to be valid UTF-8. |
 | Unicode handling | [`unicode-segmentation`][c~unicode-segmentation~docs]↗{{hi:unicode-segmentation}} | [`unicode-segmentation`][c~unicode-segmentation~docs]↗{{hi:unicode-segmentation}} correctly handles Unicode graphemes and word boundaries. |
 
 ## Key Considerations

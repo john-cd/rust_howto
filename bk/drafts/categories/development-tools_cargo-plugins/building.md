@@ -54,7 +54,7 @@ The two distinguishing features of [`xtask`][c~cargo-xtask~docs]↗{{hi:xtask}} 
 
 "[`xshell`][c~xshell~github]↗{{hi:xshell}} is a swiss-army knife for writing cross-platform 'bash' scripts in Rust.
 
-It doesn't use the shell directly, but rather re-implements parts of its scripting environment in Rust. The intended use-case is various bits of glue code, which could be written in [`bash`](https://www.gnu.org/software/bash)↗{{hi:bash}} or [`python`](https://www.python.org/)↗{{hi:python}}. The original motivation is `xtask`{{hi:xtask}} development" [(docs.rs)][c~xshell~docs].
+It doesn't use the shell directly, but rather re-implements parts of its scripting environment in Rust. The intended use-case is various bits of glue code, which could be written in [`bash`][bash~website]↗{{hi:bash}} or [`python`][python~website]↗{{hi:python}}. The original motivation is `xtask`{{hi:xtask}} development" [(docs.rs)][c~xshell~docs].
 
 The following example executes shell commands and interacts with the file system. It showcases:
 

@@ -47,7 +47,7 @@ See also [[transpilers | Transpilers]].
 
 ### C
 
-- [`clang`][c~clang~docs]↗{{hi:clang}}: A somewhat idiomatic Rust wrapper for `libclang` [(clang website)](https://clang.llvm.org)↗{{hi:libclang}}.
+- [`clang`][c~clang~docs]↗{{hi:clang}}: A somewhat idiomatic Rust wrapper for `libclang` [(clang website)][clang.llvm~website]↗{{hi:libclang}}.
 
 ### Swift
 

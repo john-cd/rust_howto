@@ -155,7 +155,7 @@ jobs:
 
 ```toml
 # Adds support for hidden chapters. The hidden chapters can be marked by adding a special Markdown comment: <!--hidden-->
-# https://github.com/ankitrgadiya/mdbook-hide/
+# https://github.com/ankitrgadiya/mdbook-hide
 [preprocessor.hide]
 hide = true
 ```

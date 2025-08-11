@@ -64,7 +64,7 @@ While tools like 'SWIG' exist, [`cxx`][c~cxx~docs]↗{{hi:cxx}} is generally pre
 
 - FFI code often requires _unsafe_ blocks because the Rust compiler cannot guarantee the safety of interactions with foreign code.
 - Memory Management across FFI boundaries requires careful consideration. It often involves using [`Box::into_raw`]( ){{hi: }} and `Box::from_raw` to transfer ownership of memory between Rust and C.
-- [Error Handling][p~error-handling] across FFI boundaries often involves returning error codes or using [`Result`](https://doc.rust-lang.org/std/result/enum.Result.html)↗{{hi:std::result::Result}} types and converting them to C-compatible representations.
+- [Error Handling][p~error-handling] across FFI boundaries often involves returning error codes or using [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} types and converting them to C-compatible representations.
 
 ## Related Topics {#related-topics}
 
@@ -74,7 +74,7 @@ While tools like 'SWIG' exist, [`cxx`][c~cxx~docs]↗{{hi:cxx}} is generally pre
 
 ### Utilities {#skip2}
 
-- [`std::ffi`](https://doc.rust-lang.org/std/ffi/index.html)↗{{hi:std::ffi}} provides types for interacting with C code, like `CString`, `CStr`, `c_char`, etc.
+- [`std::ffi`][c~std::ffi~docs]↗{{hi:std::ffi}} provides types for interacting with C code, like `CString`, `CStr`, `c_char`, etc.
   - Use `std::ffi::CString`, `std::ffi::CStr` for converting between Rust [strings][p~strings] and C strings.
 - [`libc`][c~libc~docs]↗{{hi:libc}} provides access to the standard C library.
 
