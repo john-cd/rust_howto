@@ -94,6 +94,7 @@
 [blog~rust-build-times]: https://jondot.medium.com/8-steps-for-troubleshooting-your-rust-build-times-2ffc965fd13e
 [blog~rust-build-times~badge]: https://img.shields.io/badge/blog-Rust_build_times-beige
 [blog~rust-compilation-time]: https://www.williballenthin.com/post/rust-compilation-time
+[blog~rust-practice-projects]: https://zerotomastery.io/blog/rust-practice-projects
 [blog~rust-re-borrowing-and-memory-safety]: https://felipemeriga.hashnode.dev/rust-re-borrowing-and-memory-safety?source=weekly
 [blog~rusty-terminal]: https://dev.to/22mahmoud/my-terminal-became-more-rusty-4g8l
 [blog~rusty-terminal~badge]: https://img.shields.io/badge/blog-rusty_terminal-beige
@@ -104,13 +105,13 @@
 [blog~state-of-async-rust]: https://corrode.dev/blog/async
 [blog~state-of-async-rust~badge]: https://img.shields.io/badge/blog-state_of_async_rust-beige
 [blog~sustainability-with-rust]: https://aws.amazon.com/blogs/opensource/sustainability-with-rust
-[blog~why-rust-is-becoming-a-contender-in-ai-development]: https://www.analyticsinsight.net/artificial-intelligence/why-rust-is-becoming-a-contender-in-ai-development
 [blog~traits]: https://blog.rust-lang.org/2015/05/11/traits.html
 [blog~traits~badge]: https://img.shields.io/badge/blog-traits-beige
 [blog~tuify]: https://developerlife.com/2023/09/17/tuify-clap
 [blog~tuify~badge]: https://img.shields.io/badge/blog-tuify-beige
 [blog~typestate-pattern]: https://cliffle.com/blog/rust-typestate
 [blog~what-is-blocking~badge]: https://img.shields.io/badge/blog-what_is_blocking-beige
+[blog~why-rust-is-becoming-a-contender-in-ai-development]: https://www.analyticsinsight.net/artificial-intelligence/why-rust-is-becoming-a-contender-in-ai-development
 [blog~working-with-env-variables]: https://www.thorsten-hans.com/working-with-environment-variables-in-rust
 [blog~working-with-env-variables~badge]: https://img.shields.io/badge/blog-working_with_env_variables-beige
 [book~a-half-hour-to-learn-rust]: https://fasterthanli.me/articles/a-half-hour-to-learn-rust
@@ -135,13 +136,12 @@
 [book~effective-rust~badge]: https://img.shields.io/badge/Effective_rust-peru?logo=mdbook
 [book~embedded~no_std]: https://docs.rust-embedded.org/book/intro/no-std.html
 [book~mdbook~badge]: https://img.shields.io/badge/mdBook-peru?logo=mdbook
+[book~mdbook~code-block-attributes]: https://rust-lang.github.io/mdBook/format/mdbook.html#rust-code-block-attributes
 [book~programming-rust-2nd-edition]: https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586
 [book~programming-rust-2nd-edition~badge]: https://img.shields.io/badge/Programming_rust_2nd_edition-peru?logo=mdbook
 [book~rust-atomics]: https://marabos.nl/atomics
 [book~rust-attributes~badge]: https://img.shields.io/badge/Rust_Book-Attributes-blue?logo=mdbook
 [book~rust-by-example]: https://doc.rust-lang.org/rust-by-example/index.html
-[book~rust-by-example~string~badge]: https://img.shields.io/badge/Rust_By_Example-string-violet?logo=mdbook
-[book~rust-by-example~string]: https://doc.rust-lang.org/rust-by-example/std/str.html
 [book~rust-by-example~array]: https://doc.rust-lang.org/rust-by-example/primitives/array.html
 [book~rust-by-example~array~badge]: https://img.shields.io/badge/Rust_By_Example-array-violet?logo=mdbook
 [book~rust-by-example~attributes]: https://doc.rust-lang.org/rust-by-example/attribute.html
@@ -190,6 +190,8 @@
 [book~rust-by-example~primitives~badge]: https://img.shields.io/badge/Rust_By_Example-Primitives-violet?logo=mdbook
 [book~rust-by-example~slices]: https://doc.rust-lang.org/rust-by-example/primitives/array.html
 [book~rust-by-example~slices~badge]: https://img.shields.io/badge/Rust_By_Example-slices-violet?logo=mdbook
+[book~rust-by-example~string]: https://doc.rust-lang.org/rust-by-example/std/str.html
+[book~rust-by-example~string~badge]: https://img.shields.io/badge/Rust_By_Example-string-violet?logo=mdbook
 [book~rust-by-example~structs]: https://doc.rust-lang.org/rust-by-example/custom_types/structs.html
 [book~rust-by-example~structs~badge]: https://img.shields.io/badge/Rust_By_Example-Structs-violet?logo=mdbook
 [book~rust-by-example~tuples]: https://doc.rust-lang.org/rust-by-example/primitives/tuples.html
@@ -267,7 +269,6 @@
 [book~rust~badge]: https://img.shields.io/badge/Rust_Book-blue?logo=mdbook
 [book~rust~box]: https://doc.rust-lang.org/book/ch15-01-box.html
 [book~rust~box~badge]: https://img.shields.io/badge/Rust_Book-Box-blue?logo=mdbook
-[book~mdbook~code-block-attributes]: https://rust-lang.github.io/mdBook/format/mdbook.html#rust-code-block-attributes
 [book~rust~concurrency]: https://doc.rust-lang.org/book/ch16-00-concurrency.html
 [book~rust~concurrency~badge]: https://img.shields.io/badge/Rust_Book-Concurrency-blue?logo=mdbook
 [book~rust~derivable-traits]: https://doc.rust-lang.org/book/appendix-03-derivable-traits.html
@@ -500,9 +501,9 @@
 [lechevspace~github]: https://github.com/LechevSpace
 [lechevspace~website]: https://lechev.space
 [lemmy~github]: https://github.com/LemmyNet/lemmy
-[lib.rs~website]: https://lib.rs
 [lib.rs~most-popular~website]: https://lib.rs/std
 [lib.rs~stats~website]: https://lib.rs/stats
+[lib.rs~website]: https://lib.rs
 [libra~website]: https://libra.org
 [libsodium~website]: https://doc.libsodium.org
 [licecap~website]: https://www.cockos.com/licecap
@@ -693,11 +694,11 @@
 [rust-howto~todo~github~badge]: https://img.shields.io/badge/rust__howto_TODO-steelblue?logo=github
 [rust-howto~xmpl~github]: https://github.com/john-cd/rust_howto/tree/main/xmpl
 [rust-in-vs-code~website]: https://code.visualstudio.com/docs/languages/rust
-[rust-lang~website]: https://www.rust-lang.org
 [rust-lang~badge]:https://img.shields.io/badge/Rust-tan
 [rust-lang~blog]: https://blog.rust-lang.org
 [rust-lang~embedded-devices-working-group]: https://www.rust-lang.org/governance/wgs/embedded
 [rust-lang~install-rust]: https://www.rust-lang.org/tools/install
+[rust-lang~website]: https://www.rust-lang.org
 [rust-learning-linked-lists~website]: https://rust-unofficial.github.io/too-many-lists/index.html
 [rust-learning~github]: https://github.com/ctjhoa/rust-learning
 [rust-learning~github~badge]: https://img.shields.io/badge/rust_learning-steelblue?logo=github
@@ -707,7 +708,6 @@
 [rust-on-nails~website~badge]: https://img.shields.io/badge/rust_on_nails-coral
 [rust-playground~website]: https://play.rust-lang.org
 [rust-playground~website~badge]: https://img.shields.io/badge/rust_playground-coral
-[blog~rust-practice-projects]: https://zerotomastery.io/blog/rust-practice-projects
 [rust-quizz~website]: https://dtolnay.github.io/rust-quiz
 [rust-quizz~website~badge]: https://img.shields.io/badge/Rust_quizz-tan
 [rust-raspberrypi-OS-tutorials~github]: https://github.com/rust-embedded/rust-raspberrypi-OS-tutorials
