@@ -46,6 +46,6 @@ Exception Handling: You'll need to handle Java exceptions in your Rust code.
 
 The [`jni`][c~jni~docs]↗{{hi:jni}} crate is the core crate for JNI interaction. jni-rs is highly recommended to simplify development. Code generation is often a necessary step, and the exact approach can vary. Be prepared for some manual work and boilerplate code when working with JNI.
 
-- [jnix](https://lib.rs/crates/jnix)
+- [jnix][c~jnix~lib.rs]
 
 </div>

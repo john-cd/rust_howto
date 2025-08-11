@@ -53,6 +53,6 @@ Cover [`wat`][c~wat~docs]↗{{hi:wat}}, [`parity-wasm`][c~parity-wasm~docs]↗{{
 - [WASI.dev](https://wasi.dev/)
 
 - [Sycamore](https://sycamore.dev/)
-- [sycamore: A library for creating reactive web apps in Rust and WebAssembly](https://github.com/sycamore-rs/sycamore)
+- [sycamore: A library for creating reactive web apps in Rust and WebAssembly][c~sycamore~github]
 
 </div>

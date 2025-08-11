@@ -39,6 +39,6 @@ need in-depth review
 Mention [`itoa`][c~itoa~docs]↗{{hi:itoa}} in this page
 cover  `Inflector`
 
-- [ShowOption](https://lib.rs/crates/show-option)
+- [ShowOption][c~show-option~lib.rs]
 
 </div>

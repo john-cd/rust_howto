@@ -37,7 +37,7 @@
 
 - [AWS Lambda + DuckDB (and Delta Lake) - by Daniel Beach](https://dataengineeringcentral.substack.com/p/aws-lambda-duckdb-and-delta-lake)
 
-- [Elusion - Rust utility](https://lib.rs/crates/elusion)
+- [Elusion][c~elusion~lib.rs] - Rust utility
 
 - [`risingwave`](https://github.com/risingwavelabs/risingwave): Best-in-class stream processing, analytics, and management. Perform continuous analytics, or build event-driven applications, real-time ETL pipelines, and feature stores in minutes. Unified streaming and batch. PostgreSQL compatible.
 

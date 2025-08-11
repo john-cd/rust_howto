@@ -30,6 +30,6 @@ Tools to help you verify the correctness{{hi:Correctness}} of your code.
 <div class="hidden">
 [expand](https://github.com/john-cd/rust_howto/issues/341)
 
-- [trybuild: Test harness for ui tests of compiler diagnostics](https://github.com/dtolnay/trybuild)
+- [trybuild: Test harness for ui tests of compiler diagnostics][c~trybuild~github]
 
 </div>

@@ -4,10 +4,10 @@
 
 ## YouTube Channels and Videos {#videos}
 
-- Official [Rust YouTube Channel](https://www.youtube.com/@RustVideos)↗.{{hi:YouTube videos}}
-- The [Rust Foundation](https://www.youtube.com/@rustfoundation)↗ channel.
+- Official [Rust YouTube Channel][youtube~@RustVideos]↗.{{hi:YouTube videos}}
+- The [Rust Foundation][youtube~@rustfoundation]↗ channel.
 - Playlists:
-  - [50 Projects](https://youtube.com/playlist?list=PL5dTjWUk_cPYuhHm9_QImW7_u4lr5d6zO)↗.
+  - [50 Projects](https://www.youtube.com/playlist?list=PL5dTjWUk_cPYuhHm9_QImW7_u4lr5d6zO)↗.
   - [Crust of Rust](https://www.youtube.com/playlist?list=PLqbS7AVVErFiWDOAVrPt7aYmnuuOLYvOa)↗.
   - [Engineer Man](https://www.youtube.com/playlist?list=PLlcnQQJK8SUjApd95LIcd3K9XXmE-IeCS)↗.
   - [Rust Tutorial](https://www.youtube.com/playlist?list=PLLqEtX6ql2EyPAZ1M2_C0GgVd4A-_L4_5)↗.
@@ -15,16 +15,16 @@
   - [Tensor Programming](https://www.youtube.com/playlist?list=PLJbE2Yu2zumDD5vy2BuSHvFZU0a6RDmgb)↗.
   - [YouCodeThings](https://www.youtube.com/playlist?list=PLVT0QN6kDrbd3KZr4EkBNvjSDTaZyxwhM)↗.
 - Channels:
-  - [Code to the Moon](https://www.youtube.com/@codetothemoon)↗.
-  - [Jeremy Chone's Channel](https://www.youtube.com/@JeremyChone)↗.
-  - [Jon Gjengset's Channel](https://www.youtube.com/@jonhoo)↗.
-  - [Learning Rust](https://www.youtube.com/@learning_rust)↗.
-  - [Let's Get Rusty](https://www.youtube.com/@letsgetrusty)↗.
-  - [Logan Smith's Channel](https://www.youtube.com/@_noisecode)↗.
-  - [Michael Mullin's Channel](https://www.youtube.com/@masmullin)↗.
-  - [No Boilerplate](https://www.youtube.com/@NoBoilerplate)↗.
-  - [Rust Nation UK (conference)](https://www.youtube.com/@rustnationuk)↗.
-  - [Ryan Levick's Channel](https://www.youtube.com/@RyanLevicksVideos)↗.
+  - [Code to the Moon][youtube~@codetothemoon]↗.
+  - [Jeremy Chone's Channel][youtube~@JeremyChone]↗.
+  - [Jon Gjengset's Channel][youtube~@jonhoo]↗.
+  - [Learning Rust][youtube~@learning_rust]↗.
+  - [Let's Get Rusty][youtube~@letsgetrusty]↗.
+  - [Logan Smith's Channel][youtube~@_noisecode]↗.
+  - [Michael Mullin's Channel][youtube~@masmullin]↗.
+  - [No Boilerplate][youtube~@NoBoilerplate]↗.
+  - [Rust Nation UK (conference)][youtube~@rustnationuk]↗.
+  - [Ryan Levick's Channel][youtube~@RyanLevicksVideos]↗.
 - [`intorust.com`](http://intorust.com)↗ screencasts.
 
 ## Rust Podcasts {#podcasts}

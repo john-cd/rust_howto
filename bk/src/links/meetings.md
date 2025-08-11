@@ -24,23 +24,23 @@ The following are some of the largest and most active local user groups. They ho
 
 | Meetup Name | Location |
 |---|---|
-| [Rust and Friends](https://www.meetup.com/rust-and-friends)↗ | Edinburgh, Scotland |
-| [Rust Bay Area](https://www.meetup.com/Rust-Bay-Area)↗ | San Francisco, USA |
-| [Rust Berlin](https://www.meetup.com/Rust-Berlin)↗ | Berlin, Germany |
-| [Rust Boston](https://www.meetup.com/bostonrust/)↗ | Boston, USA |
-| [Rust DC](https://www.meetup.com/rustdc/)↗ | Washington, DC, USA |
-| [Rust Dublin](https://www.meetup.com/rust-dublin)↗ | Dublin, Ireland |
-| [Rust India](https://www.meetup.com/rustindia)↗ | Bangalore, India |
-| [Rust Linz](https://www.meetup.com/Rust-Linz)↗ [(website)][rust-linz~website]↗ | Linz, Austria |
-| [Rust London User Group](https://www.meetup.com/rust-london-user-group)↗ | London, UK |
-| [Rust Munich](https://www.meetup.com/rust-munich)↗ | Munchen, Germany |
-| [Rust Nigeria](https://www.meetup.com/rust-meetup-group)↗ | Lagos, Nigeria |
-| [Rust NYC](https://www.meetup.com/rust-nyc)↗ | New York, USA |
-| [Rust Paris](https://www.meetup.com/Rust-Paris)↗ | Paris, France |
-| [Rust South Africa](https://www.meetup.com/Johannesburg-Rust-Meetup)↗ | Johannesburg, SA |
-| [Rust Zürisee](https://www.meetup.com/rust-zurich)↗ | Zürich, Switzerland |
-| [Seattle Rust User Group](https://www.meetup.com/seattle-rust-user-group)↗ | Redmond, WA |
-| [Vancouver Rust](https://www.meetup.com/vancouver-rust)↗ | Vancouver, BC, Canada |
+| [Rust and Friends][meetup~rust-and-friends]↗ | Edinburgh, Scotland |
+| [Rust Bay Area][meetup~Rust-Bay-Area]↗ | San Francisco, USA |
+| [Rust Berlin][meetup~Rust-Berlin]↗ | Berlin, Germany |
+| [Rust Boston][meetup~bostonrust]↗ | Boston, USA |
+| [Rust DC][meetup~rustdc]↗ | Washington, DC, USA |
+| [Rust Dublin][meetup~rust-dublin]↗ | Dublin, Ireland |
+| [Rust India][meetup~rustindia]↗ | Bangalore, India |
+| [Rust Linz][meetup~Rust-Linz]↗ [(website)][rust-linz~website]↗ | Linz, Austria |
+| [Rust London User Group][meetup~rust-london-user-group]↗ | London, UK |
+| [Rust Munich][meetup~rust-munich]↗ | Munchen, Germany |
+| [Rust Nigeria][meetup~rust-meetup-group]↗ | Lagos, Nigeria |
+| [Rust NYC][meetup~rust-nyc]↗ | New York, USA |
+| [Rust Paris][meetup~Rust-Paris]↗ | Paris, France |
+| [Rust South Africa][meetup~Johannesburg-Rust-Meetup]↗ | Johannesburg, SA |
+| [Rust Zürisee][meetup~rust-zurich]↗ | Zürich, Switzerland |
+| [Seattle Rust User Group][meetup~seattle-rust-user-group]↗ | Redmond, WA |
+| [Vancouver Rust][meetup~vancouver-rust]↗ | Vancouver, BC, Canada |
 
 See also [Rust Community Talks](https://github.com/rust-community/talks)↗.
 

@@ -101,15 +101,15 @@ See also [[cross_compiling | Cross Compiling (Cargo Plugins)]].
 
 ## Registries {#skip}
 
-- [alexandrie: An alternative crate registry, implemented in Rust.](https://github.com/Hirevo/alexandrie)
+- [alexandrie: An alternative crate registry, implemented in Rust.][c~alexandrie~github]
 - [meuse: A private Cargo crate registry, for Rust](https://github.com/mcorbin/meuse)
 - [kellnr: The registry for Rust crates](https://github.com/kellnr/kellnr)
-- [panamax: Mirror rustup and crates.io repositories, for offline Rust and cargo usage.](https://github.com/panamax-rs/panamax)
+- [panamax: Mirror rustup and crates.io repositories, for offline Rust and cargo usage.][c~panamax~github]
 
 ## Tests
 
 - [assertables](https://docs.rs/assertables/latest/assertables/)
-- [proptest: Hypothesis-like property testing for Rust](https://github.com/proptest-rs/proptest)
+- [proptest][c~proptest~github]: Hypothesis-like property testing for Rust
 
 ## Cargo Plugins
 
@@ -130,7 +130,7 @@ See also [[cross_compiling | Cross Compiling (Cargo Plugins)]].
 
 ## Linkers
 
-- [Mold: A Modern Linker](https://github.com/rui314/mold)
+- [Mold: A Modern Linker][mold~github]
 
 ## Cross Compilation
 

@@ -114,6 +114,6 @@ In `foo.capnp`:
 [binary_encoders: write; add anchors; add examples; add table; add to index / SUMMARY](https://github.com/john-cd/rust_howto/issues/349)
 
 - [pot](https://docs.rs/crate/pot)
-- [bytes](https://lib.rs/crates/bytes)
+- [bytes][c~bytes~lib.rs]
 
 </div>

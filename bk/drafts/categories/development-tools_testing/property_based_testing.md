@@ -42,5 +42,5 @@ Often done with custom [functions][p~functions] or data structures, but crates l
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-cover property [testing][p~testing] [proptest](https://github.com/proptest-rs/proptest)
+cover property [testing][p~testing] [proptest][c~proptest~github]
 </div>

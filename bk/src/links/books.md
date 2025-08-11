@@ -17,7 +17,7 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 
 - "The Book": [The Rust Programming Language][book~rust]↗.
   - The [Rust Programming Language](https://rust-book.cs.brown.edu)↗: An experimental version of the Rust Book enhanced with interactive quizzes, highlighting, and visualizations.
-  - [The Rust Programming Language, 2nd Edition](https://nostarch.com/rust-programming-language-2nd-edition)↗ by Steve Klabnik, Carol Nichols [978-1718503106](https://en.wikipedia.org/wiki/Special:BookSources/978-1718503106)↗: The official Rust Book, in paper format.
+  - [The Rust Programming Language, 2nd Edition](https://nostarch.com/rust-programming-language-2nd-edition)↗ by Steve Klabnik, Carol Nichols [978-1718503106][ISBN~978-1718503106]↗: The official Rust Book, in paper format.
 - [Rust by Example][book~rust-by-example]↗: A collection of runnable examples that illustrate various Rust concepts and standard libraries.
 - The [Rust Cookbook (old)][book~rust-cookbook]↗.{{hi:Cookbook}}
   - The [Rust Cookbook (fork)][book~rust-cookbook-fork]↗.
@@ -35,11 +35,11 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 
 ## Free eBooks {#free}
 
-- [Comprehensive Rust](https://google.github.io/comprehensive-rust)↗: Free Rust course developed by the Android team at Google.
+- [Comprehensive Rust][book~comprehensive-rust]↗: Free Rust course developed by the Android team at Google.
 - [Easy Rust](https://dhghomon.github.io/easy_rust/Chapter_1.html)↗ [Easy Rust (alternate)][book~easy-rust]↗.
 - [Effective Rust](https://www.lurklurk.org/effective-rust)↗.
 - [Fast Track to Rust](https://freddiehaddad.github.io/fast-track-to-rust)↗.
-- A [Gentle Introduction to Rust](https://stevedonovan.github.io/rust-gentle-intro)↗.
+- A [Gentle Introduction to Rust][rust-gentle-intro~website]↗.
 - [Learn Rust by writing Entirely Too Many Linked Lists](https://rust-unofficial.github.io/too-many-lists)↗.
 - [Rust-101](https://www.ralfj.de/projects/rust-101/main.html)↗.
 - [Rust by Practice](https://practice.course.rs)↗.
@@ -48,29 +48,29 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 
 ## General {#general}
 
-- [Beginning Rust: Get Started with Rust 2021 Edition](https://www.amazon.com/Beginning-Rust-Get-Started-2021/dp/1484272072) by Carlo Milanesi (Apress). [978-1484272077](https://en.wikipedia.org/wiki/Special:BookSources/978-1484272077)↗.
-- [Creative Projects for Rust Programmers](https://www.amazon.com/Creative-Projects-Rust-Programmers-WebAssembly/dp/1789346223)↗: Build exciting projects on domains such as web apps, WebAssembly, games, and parsing, by Carlo Milanesi. [978-1789346220](https://en.wikipedia.org/wiki/Special:BookSources/978-1789346220)↗.
-- [Code Like a Pro in Rust](https://www.amazon.com/Code-Like-Rust-Brenden-Matthews-ebook/dp/B0CW1D8J28) by Brenden Matthews. [978-1638354543](https://en.wikipedia.org/wiki/Special:BookSources/978-1638354543)↗.
-- The [Complete Rust Programming Reference Guide](https://www.amazon.com/dp/1838828109)↗: Design, develop, and deploy effective software systems using the advanced constructs of Rust, by Rahul Sharma, Vesa Kaihlavirta, Claus Matzinger. [978-1838828103](https://en.wikipedia.org/wiki/Special:BookSources/978-1838828103)↗.
-- [Effective Rust: 35 Specific Ways to Improve Your Rust Code](https://www.amazon.com/dp/1098151402)↗ [(O'Reilly)][book~effective-rust]↗ by David Drysdale.  [978-1098151409](https://en.wikipedia.org/wiki/Special:BookSources/978-1098151409)↗ [(online version)](https://www.lurklurk.org/effective-rust)↗.
-- [Fullstack Rust](https://www.amazon.com/Fullstack-Rust-Complete-Building-Programming-ebook/dp/B086G767TP)↗ by Andy Weiss ([Newline](https://www.newline.co/fullstack-rust)↗ or Kindle).
-- [Hands-on Rust: Effective Learning Through 2D Game Development and Play](https://www.amazon.com/Hands-Rust-Effective-Learning-Development/dp/1680508164)↗ by Herbert Wolverson. [978-1680508161](https://en.wikipedia.org/wiki/Special:BookSources/978-1680508161)↗.
-- [Idiomatic Rust: Code like a Rustacean](https://www.amazon.com/Idiomatic-Rust-Code-like-Rustacean/dp/1633437469)↗ by Brenden Matthews [9781633437463](https://en.wikipedia.org/wiki/Special:BookSources/9781633437463)↗.
-- [Learn Rust in a Month of Lunches](https://www.amazon.com/dp/1633438236)↗ by David MacLeod [(Manning)](https://www.manning.com/books/learn-rust-in-a-month-of-lunches)↗ [978-1633438231](https://en.wikipedia.org/wiki/Special:BookSources/978-1633438231)↗.
-- [Programming Rust: Fast, Safe Systems Development](https://www.amazon.com/Programming-Rust-Fast-Systems-Development-dp-1492052590/dp/1492052590)↗ by Jim Blandy, Jason Orendorff [(O'Reilly)][book~programming-rust-2nd-edition]↗. [9781491927281](https://en.wikipedia.org/wiki/Special:BookSources/9781491927281)↗.
-- [Programming Rust: Fast, Safe Systems Development](https://www.amazon.com/Programming-Rust-Fast-Systems-Development/dp/1492052590)↗ by Jim Blandy, Leonora Tindall. [978-1492052593](https://en.wikipedia.org/wiki/Special:BookSources/978-1492052593)↗.
-- [Refactoring to Rust](https://www.amazon.com/Refactoring-Rust-Lily-Mara/dp/1617299014)↗ by Lily Mara, Joel Holmes. [9781617299018](https://en.wikipedia.org/wiki/Special:BookSources/9781617299018)↗.
-- [Rust Crash Course](https://www.amazon.com/dp/9355510950)↗: Build High-Performance, Efficient and Productive Software with the Power of Next-Generation Programming Skills, by Abhishek Kumar. [978-9355510952](https://en.wikipedia.org/wiki/Special:BookSources/978-9355510952)↗.
-- [Rust Essentials 2nd ed.](https://www.amazon.com/Rust-Essentials-writing-concurrent-applications-dp-1788390016/dp/1788390016)↗. [978-1788390019](https://en.wikipedia.org/wiki/Special:BookSources/978-1788390019)↗.
-- [Rust for Rustaceans](https://www.amazon.com/Rust-Rustaceans-Programming-Experienced-Developers/dp/1718501854)↗: Idiomatic Programming for Experienced Developers, by Jon Gjengset. [978-1718501850](https://en.wikipedia.org/wiki/Special:BookSources/978-1718501850)↗.
+- [Beginning Rust: Get Started with Rust 2021 Edition][book~Beginning-Rust-Get-Started-2021] by Carlo Milanesi (Apress). [978-1484272077][ISBN~978-1484272077]↗.
+- [Creative Projects for Rust Programmers][book~Creative-Projects-Rust-Programmers-WebAssembly]↗: Build exciting projects on domains such as web apps, WebAssembly, games, and parsing, by Carlo Milanesi. [978-1789346220][ISBN~978-1789346220]↗.
+- [Code Like a Pro in Rust][book~Code-Like-Rust-Brenden-Matthews-ebook] by Brenden Matthews. [978-1638354543][ISBN~978-1638354543]↗.
+- The [Complete Rust Programming Reference Guide](https://www.amazon.com/dp/1838828109)↗: Design, develop, and deploy effective software systems using the advanced constructs of Rust, by Rahul Sharma, Vesa Kaihlavirta, Claus Matzinger. [978-1838828103][ISBN~978-1838828103]↗.
+- [Effective Rust: 35 Specific Ways to Improve Your Rust Code](https://www.amazon.com/dp/1098151402)↗ [(O'Reilly)][book~effective-rust]↗ by David Drysdale.  [978-1098151409][ISBN~978-1098151409]↗ [(online version)](https://www.lurklurk.org/effective-rust)↗.
+- [Fullstack Rust][book~Fullstack-Rust-Complete-Building-Programming-ebook]↗ by Andy Weiss ([Newline](https://www.newline.co/fullstack-rust)↗ or Kindle).
+- [Hands-on Rust: Effective Learning Through 2D Game Development and Play][book~Hands-Rust-Effective-Learning-Development]↗ by Herbert Wolverson. [978-1680508161][ISBN~978-1680508161]↗.
+- [Idiomatic Rust: Code like a Rustacean][book~Idiomatic-Rust-Code-like-Rustacean]↗ by Brenden Matthews [9781633437463][ISBN~9781633437463]↗.
+- [Learn Rust in a Month of Lunches](https://www.amazon.com/dp/1633438236)↗ by David MacLeod [(Manning)](https://www.manning.com/books/learn-rust-in-a-month-of-lunches)↗ [978-1633438231][ISBN~978-1633438231]↗.
+- [Programming Rust: Fast, Safe Systems Development][book~Programming-Rust-Fast-Systems-Development-dp-1492052590]↗ by Jim Blandy, Jason Orendorff [(O'Reilly)][book~programming-rust-2nd-edition]↗. [9781491927281][ISBN~9781491927281]↗.
+- [Programming Rust: Fast, Safe Systems Development][book~Programming-Rust-Fast-Systems-Development]↗ by Jim Blandy, Leonora Tindall. [978-1492052593][ISBN~978-1492052593]↗.
+- [Refactoring to Rust][book~Refactoring-Rust-Lily-Mara]↗ by Lily Mara, Joel Holmes. [9781617299018][ISBN~9781617299018]↗.
+- [Rust Crash Course](https://www.amazon.com/dp/9355510950)↗: Build High-Performance, Efficient and Productive Software with the Power of Next-Generation Programming Skills, by Abhishek Kumar. [978-9355510952][ISBN~978-9355510952]↗.
+- [Rust Essentials 2nd ed.][book~Rust-Essentials-writing-concurrent-applications-dp-1788390016]↗. [978-1788390019][ISBN~978-1788390019]↗.
+- [Rust for Rustaceans][book~Rust-Rustaceans-Programming-Experienced-Developers]↗: Idiomatic Programming for Experienced Developers, by Jon Gjengset. [978-1718501850][ISBN~978-1718501850]↗.
 - [Rust from the Ground Up](https://leanpub.com/rust-from-the-ground-up)↗. It teaches Rust by implementing a classic Unix CLI utility in each chapter (`cat`, `head`, `wc`...).
-- [Rust in Action: Systems Programming Concepts and Techniques](https://www.amazon.com/Rust-Action-Tim-McNamara/dp/1617294551)↗ by Tim McNamara. [978-1617294556](https://en.wikipedia.org/wiki/Special:BookSources/978-1617294556)↗.
-- [Rust Programming By Example](https://www.amazon.com/dp/1788390636)↗: Enter the world of Rust by building engaging, concurrent, reactive, and robust applications, by Guillaume Gomez, Antoni Boucher (Packt). [978-1788390637](https://en.wikipedia.org/wiki/Special:BookSources/978-1788390637)↗.
+- [Rust in Action: Systems Programming Concepts and Techniques][book~Rust-Action-Tim-McNamara]↗ by Tim McNamara. [978-1617294556][ISBN~978-1617294556]↗.
+- [Rust Programming By Example](https://www.amazon.com/dp/1788390636)↗: Enter the world of Rust by building engaging, concurrent, reactive, and robust applications, by Guillaume Gomez, Antoni Boucher (Packt). [978-1788390637][ISBN~978-1788390637]↗.
 - The [Rust Programming Language, 2nd Edition][book~rust-programming-language]↗.
-- [Rust Under the Hood](https://www.amazon.com/dp/B0D7FQB3DH): A deep dive into Rust internals and generated assembly, by Sandeep Ahluwalia, Deepa Ahluwalia. [979-8320364469](https://en.wikipedia.org/wiki/Special:BookSources/979-8320364469)↗.
+- [Rust Under the Hood](https://www.amazon.com/dp/B0D7FQB3DH): A deep dive into Rust internals and generated assembly, by Sandeep Ahluwalia, Deepa Ahluwalia. [979-8320364469][ISBN~979-8320364469]↗.
 - The [Secrets of Rust: Tools](https://bitfieldconsulting.com/books/rust-tools)↗.
-- [Step Ahead with Rust: Systems Programming in Rust](https://www.amazon.com/Step-Ahead-Rust-Systems-Programming-ebook/dp/B079B735B1)↗ by Jonathan Creekmore, James Miller (Kindle).
-- [Zero To Production In Rust: An Introduction to Backend Development](https://www.amazon.com/Zero-Production-Rust-introduction-development/dp/B0BHLDMFDQ)↗ by Luca Palmieri. [979-8847211437](https://en.wikipedia.org/wiki/Special:BookSources/979-8847211437)↗: "An opinionated introduction to backend development in Rust". [(website and sample)](https://www.zero2prod.com/index.html)↗ [(Blog)][book~zero-to-production]↗ [Code for the book (GitHub)][book~zero-to-production~github]↗.
+- [Step Ahead with Rust: Systems Programming in Rust][book~Step-Ahead-Rust-Systems-Programming-ebook]↗ by Jonathan Creekmore, James Miller (Kindle).
+- [Zero To Production In Rust: An Introduction to Backend Development][book~Zero-Production-Rust-introduction-development]↗ by Luca Palmieri. [979-8847211437][ISBN~979-8847211437]↗: "An opinionated introduction to backend development in Rust". [(website and sample)](https://www.zero2prod.com/index.html)↗ [(Blog)][book~zero-to-production]↗ [Code for the book (GitHub)][book~zero-to-production~github]↗.
 
 ## By Topic {#skip}
 
@@ -78,7 +78,7 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 
 - [Rust API Guidelines](https://rust-lang.github.io/api-guidelines)↗.{{hi:APIs}}
 - [`rust-api.dev`](https://rust-api.dev)↗.
-- [Hands-On Microservices with Rust: Build, test, and deploy scalable and reactive microservices with Rust 2018](https://www.amazon.com/Hands-Microservices-Rust-scalable-microservices-ebook/dp/B07GVNZL4G)↗. [978-1789341980](https://en.wikipedia.org/wiki/Special:BookSources/978-1789341980)↗.
+- [Hands-On Microservices with Rust: Build, test, and deploy scalable and reactive microservices with Rust 2018][book~Hands-Microservices-Rust-scalable-microservices-ebook]↗. [978-1789341980][ISBN~978-1789341980]↗.
 
 ### Async {#async}
 
@@ -86,18 +86,18 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 
 ### Command Line Interfaces {#cli}
 
-- [Command-line Apps in Rust](https://rust-cli.github.io/book/index.html)↗.{{hi:CLI}}{{hi:Command Line Interfaces}}
+- [Command-line Apps in Rust][book~rust-cli]↗.{{hi:CLI}}{{hi:Command Line Interfaces}}
 
 - [Command-Line Rust](https://www.oreilly.com/library/view/command-line-rust/9781098109424)↗ by Ken Youens-Clark (O'Reilly).
-- [Command-Line Rust: A Project-Based Primer for Writing Rust CLIs](https://www.amazon.com/Command-Line-Rust-Project-Based-Primer-Writing/dp/1098109430)↗: A Project-Based Primer for Writing Rust CLIs by Ken Youens-Clark. [978-1098109431](https://en.wikipedia.org/wiki/Special:BookSources/978-1098109431)↗.
+- [Command-Line Rust: A Project-Based Primer for Writing Rust CLIs][book~Command-Line-Rust-Project-Based-Primer-Writing]↗: A Project-Based Primer for Writing Rust CLIs by Ken Youens-Clark. [978-1098109431][ISBN~978-1098109431]↗.
 
-- [Command-Line Rust: A Project-Based Primer for Writing Rust CLIs 1st Edition](https://www.amazon.com/Command-Line-Rust-Project-Based-Primer-Writing/dp/1098109430)↗. [978-1098109431](https://en.wikipedia.org/wiki/Special:BookSources/978-1098109431)↗.
+- [Command-Line Rust: A Project-Based Primer for Writing Rust CLIs 1st Edition][book~Command-Line-Rust-Project-Based-Primer-Writing]↗. [978-1098109431][ISBN~978-1098109431]↗.
 
 ### Compiler & Tools {#compiler-tools}
 
 - The [`rustc` Book](https://doc.rust-lang.org/rustc/index.html)↗.{{hi:Compiler}}
 - [Rust Compiler Development Guide](https://rustc-dev-guide.rust-lang.org/getting-started.html)↗.
-- The [Cargo Book](https://doc.rust-lang.org/cargo/index.html)↗. Cargo is the Rust package manager.{{hi:Tools}}{{hi:cargo}}
+- The [Cargo Book][c~cargo~website]↗. Cargo is the Rust package manager.{{hi:Tools}}{{hi:cargo}}
 - The [`rustdoc` book][book~rustdoc]↗.{{hi:rustdoc}}
 - [Configuring `rustfmt`](https://rust-lang.github.io/rustfmt)↗.{{hi:rustfmt}}
 - [Clippy Documentation](https://doc.rust-lang.org/clippy)↗.{{hi:clippy}}
@@ -105,12 +105,12 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 
 ### Concurrency & Parallelism {#concurrency-parallelism}
 
-- [Rust Atomics and Locks][book~rust-atomics]↗. [9781098119447](https://en.wikipedia.org/wiki/Special:BookSources/9781098119447)↗: A deep dive into atomics and locks by Mara Bos.{{hi:Atomics}}{{hi:Locks}}
-- [Rust Concurrency](https://www.amazon.com/dp/1788399978)↗: Master the art of building safe, scalable, and effective software, by Brian Troutwine (Packt). [978-1788399975](https://en.wikipedia.org/wiki/Special:BookSources/978-1788399975)↗.{{hi:Concurrency}}{{hi:Parallelism}}
+- [Rust Atomics and Locks][book~rust-atomics]↗. [9781098119447][ISBN~9781098119447]↗: A deep dive into atomics and locks by Mara Bos.{{hi:Atomics}}{{hi:Locks}}
+- [Rust Concurrency](https://www.amazon.com/dp/1788399978)↗: Master the art of building safe, scalable, and effective software, by Brian Troutwine (Packt). [978-1788399975][ISBN~978-1788399975]↗.{{hi:Concurrency}}{{hi:Parallelism}}
 
 ### Data Analysis {#data-analysis}
 
-- [Data Analysis with Rust Notebooks](https://datacrayon.com/shop/product/data-analysis-with-rust-notebooks)↗. [978-1-915907-10-3](https://en.wikipedia.org/wiki/Special:BookSources/978-1-915907103)↗.{{hi:Data analysis}}
+- [Data Analysis with Rust Notebooks](https://datacrayon.com/shop/product/data-analysis-with-rust-notebooks)↗. [978-1-915907-10-3][ISBN~978-1-915907103]↗.{{hi:Data analysis}}
 
 ### Design Patterns {#design-patterns}
 
@@ -138,7 +138,7 @@ See also the [Awesome Embedded Rust](https://github.com/rust-embedded/awesome-em
 
 ### Functional Programming {#functional-programming}
 
-- [Hands-On Functional Programming in Rust](https://www.amazon.com/Hands-Functional-Programming-Rust-applications/dp/1788839358)↗: Create modular, reusable, and testable applications, by Andrew Johnson. [978-1788839358](https://en.wikipedia.org/wiki/Special:BookSources/978-1788839358)↗.
+- [Hands-On Functional Programming in Rust][book~Hands-Functional-Programming-Rust-applications]↗: Create modular, reusable, and testable applications, by Andrew Johnson. [978-1788839358][ISBN~978-1788839358]↗.
 
 ### Idioms {#idioms}
 
@@ -150,25 +150,25 @@ See also the [Awesome Embedded Rust](https://github.com/rust-embedded/awesome-em
 
 ### Machine Learning {#machine-learning}
 
-- [Practical Machine Learning with Rust](https://www.amazon.com/Practical-Machine-Learning-Rust-Applications/dp/1484251202)↗: Creating Intelligent Applications in Rust [978-1484251201](https://en.wikipedia.org/wiki/Special:BookSources/978-1484251201)↗.{{hi:Machine learning}}
+- [Practical Machine Learning with Rust][book~Practical-Machine-Learning-Rust-Applications]↗: Creating Intelligent Applications in Rust [978-1484251201][ISBN~978-1484251201]↗.{{hi:Machine learning}}
 
 ### Macros {#macros}
 
 - The [Little Book of Rust Macros](https://lukaswirth.dev/tlborm)↗.{{hi:Macros}}
-- [Write Powerful Rust Macros](https://www.amazon.com/Write-Powerful-Rust-Macros-Overmeire-ebook/dp/B0D5BR4Z3P) by Sam Van Overmeire. [9781633437494](https://en.wikipedia.org/wiki/Special:BookSources/9781633437494)↗.
+- [Write Powerful Rust Macros][book~Write-Powerful-Rust-Macros-Overmeire-ebook] by Sam Van Overmeire. [9781633437494][ISBN~9781633437494]↗.
 
 ### Network Programming {#network-programming}
 
-- [Network Programming with Rust](https://www.amazon.com/Network-Programming-Rust-memory-safety-concurrency/dp/1788624890)↗ by Abhishek Chanda. [9781788624893](https://en.wikipedia.org/wiki/Special:BookSources/9781788624893)↗.{{hi:Network programming}}
+- [Network Programming with Rust][book~Network-Programming-Rust-memory-safety-concurrency]↗ by Abhishek Chanda. [9781788624893][ISBN~9781788624893]↗.{{hi:Network programming}}
 
 ### Performance {#performance}
 
-- [Rust High Performance](https://www.amazon.com/Rust-High-Performance-performance-applications/dp/178839948X)↗ by Iban Eguia Moraza. [978-1788399487](https://en.wikipedia.org/wiki/Special:BookSources/978-1788399487)↗.{{hi:Performance}}
+- [Rust High Performance][book~Rust-High-Performance-performance-applications]↗ by Iban Eguia Moraza. [978-1788399487][ISBN~978-1788399487]↗.{{hi:Performance}}
 - The [Rust Performance Book](https://nnethercote.github.io/perf-book/title-page.html)↗.
 
 ### Random Numbers {#random}
 
-- The [Rust Rand Book](https://rust-random.github.io/book)↗.{{hi:Random numbers}}
+- The [Rust Rand Book][c~rand~website]↗.{{hi:Random numbers}}
 
 ## Security {#security}
 
@@ -179,7 +179,7 @@ See also the [Awesome Embedded Rust](https://github.com/rust-embedded/awesome-em
 ### Standard Library {#standard-library}
 
 - The [Rust Standard Library](https://doc.rust-lang.org/std/index.html)↗: The official, comprehensive guide to the Rust standard library APIs.{{hi:Standard library}}
-- [Rust Standard Library Cookbook](https://www.amazon.com/Rust-Standard-Library-Cookbook-leverage-ebook/dp/B07B8RJ8VJ)↗: Over 75 recipes to leverage the power of Rust. [978-1788629652](https://en.wikipedia.org/wiki/Special:BookSources/978-1788629652)↗.
+- [Rust Standard Library Cookbook][book~Rust-Standard-Library-Cookbook-leverage-ebook]↗: Over 75 recipes to leverage the power of Rust. [978-1788629652][ISBN~978-1788629652]↗.
 
 ### Unsafe Code {#unsafe}
 
@@ -191,9 +191,9 @@ See also the [Awesome Embedded Rust](https://github.com/rust-embedded/awesome-em
 
 ### Webassembly (WASM) {#wasm}
 
-- [Rust and Webassembly](https://rustwasm.github.io/docs/book)↗: "This small book describes how to use Rust and WebAssembly together."{{hi:WASM}}
+- [Rust and Webassembly][book~rustwasm]↗: "This small book describes how to use Rust and WebAssembly together."{{hi:WASM}}
 
-- [Programming WebAssembly with Rust](https://www.amazon.com/Programming-WebAssembly-Rust-Development-Applications/dp/1680506366)↗: Unified Development for Web, Mobile, and Embedded Applications 1st Edition by Kevin Hoffman. [978-1680506365](https://en.wikipedia.org/wiki/Special:BookSources/978-1680506365)↗.
+- [Programming WebAssembly with Rust][book~Programming-WebAssembly-Rust-Development-Applications]↗: Unified Development for Web, Mobile, and Embedded Applications 1st Edition by Kevin Hoffman. [978-1680506365][ISBN~978-1680506365]↗.
 
 This page includes a number of links to the websites of publishers and book merchants for convenience purposes only. It is not an endorsement of these particular retailers or publishers. Click on the ISBN number to gain access to a Wikipedia page with links to a variety of catalogs, ebook databases, and book sellers to choose from.
 

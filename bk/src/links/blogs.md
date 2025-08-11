@@ -11,7 +11,7 @@
 - [Reddit: r/rust](https://www.reddit.com/r/rust)↗.
 - [Reddit: r/learnrust](https://www.reddit.com/r/learnrust)↗.
 - [Mastodon: #rustlang](https://hachyderm.io/tags/rustlang)↗.
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/rust)↗.
+- [Stack Overflow][blog~stackoverflow~rust]↗.
 
 ## Rust Blogs and Newsletters {#blogs}
 
@@ -28,7 +28,7 @@ Lists of popular Rust blogs can be found in:
 - [Rust blogs (rustmeup.com)](https://rustmeup.com/resources/rust-blogs)↗,
 - [Rust Anthology Master List](https://github.com/brson/rust-anthology/blob/master/master-list.md)↗.
 
-You may also consult the lists of [Medium blogs tagged with 'Rust'](https://medium.com/tag/rust)↗, ['Rust Programming Language'](https://medium.com/tag/rust-programming-language)↗ and ['Rustlang'](https://medium.com/tag/rustlang)↗.
+You may also consult the lists of [Medium blogs tagged with 'Rust'][blog~medium~rust]↗, ['Rust Programming Language'][blog~medium~rust-programming-language]↗ and ['Rustlang'][blog~medium~rustlang]↗.
 
 ### Personal Blogs {#personal-blogs}
 

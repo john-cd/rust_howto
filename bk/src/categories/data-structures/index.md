@@ -101,7 +101,7 @@ The following examples cover less commonly-used data structures:
 [data-structures: expand](https://github.com/john-cd/rust_howto/issues/280)
 
 - [`rust-algorithms`: Common data structures and algorithms in Rust](https://github.com/EbTech/rust-algorithms)
-- [PHF - data structures in Rust](https://lib.rs/crates/phf) Runtime support for perfect hash function data structures
+- [PHF - data structures in Rust][c~phf~lib.rs] Runtime support for perfect hash function data structures
 - [`PriorityQueue` - data structures in Rust](https://lib.rs/crates/priority-queue)
 - [`elsa` - data structures in Rust](https://lib.rs/crates/elsa)
 - [`Equivalent` - data structures in Rust](https://lib.rs/crates/equivalent)

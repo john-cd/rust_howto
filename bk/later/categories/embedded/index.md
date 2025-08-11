@@ -82,12 +82,12 @@ Microcontrollers respond to events via interrupts.
 - [embassy: Modern embedded framework, using Rust and async.](https://github.com/embassy-rs/embassy)
 - [rust-iot-platform: A high-performance IoT development platform built with Rust, designed for multi-protocol support and real-time data processing. This platform supports MQTT, WebSockets (WS), TCP, and CoAP protocols, making it highly flexible for diverse IoT applications.](https://github.com/iot-ecology/rust-iot-platform)
 - [stm32-rs: Embedded Rust device crates for STM32 microcontrollers](https://github.com/stm32-rs/stm32-rs)
-- [rtic: Real-Time Interrupt-driven Concurrency (RTIC) framework for ARM Cortex-M microcontrollers](https://github.com/rtic-rs/rtic)
+- [rtic: Real-Time Interrupt-driven Concurrency (RTIC) framework for ARM Cortex-M microcontrollers][c~rtic~github]
 
 ## Panic Handling {#skip}
 
 - [better-panic: A Python-inspired `panic` handler for rust](https://github.com/mitsuhiko/better-panic)
 - [No-Panic Rust: A Nice Technique for Systems Programming](https://blog.reverberate.org/2025/02/03/no-panic-rust.html)
-- [no-panics-whatsoever (crates.io)](https://crates.io/crates/no-panics-whatsoever)
+- [no-panics-whatsoever (crates.io)][c~no-panics-whatsoever~crates.io]
 
 </div>

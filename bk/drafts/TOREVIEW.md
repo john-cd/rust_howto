@@ -22,7 +22,7 @@
 
 ## Cloud {#skip}
 
-- [Deploy app servers close to your users](https://fly.io)
+- [Deploy app servers close to your users][fly~website]
 
 ## Crates.io {#skip}
 
@@ -34,8 +34,8 @@
 
 ## Data Structures {#skip}
 
-- [reactive_stores — data structures in Rust](https://lib.rs/crates/reactive_stores)
-- [reactive_graph](https://lib.rs/crates/reactive_graph)
+- [reactive_stores — data structures in Rust][c~reactive_stores~lib.rs]
+- [reactive_graph][c~reactive_graph~lib.rs]
 
 ## Dev {#skip}
 
@@ -69,7 +69,7 @@
 
 - [A Review of Rust in 2024: What Next? - Barrett's Club](https://barretts.club/posts/rust_review_2024/)
 
-- [Why Rust is Becoming a Contender in AI Development](https://www.analyticsinsight.net/artificial-intelligence/why-rust-is-becoming-a-contender-in-ai-development)
+- [Why Rust is Becoming a Contender in AI Development][blog~why-rust-is-becoming-a-contender-in-ai-development]
 
 - [Rust in 2025: Language interop and the extensible compiler](https://smallcultfollowing.com/babysteps/blog/2025/03/18/lang-interop-extensibility/)
 
@@ -85,7 +85,7 @@
 ## Web {#skip}
 
 - [`geckodriver`: WebDriver for Firefox](https://github.com/mozilla/geckodriver)
-- [Pake: Turn any webpage into a desktop app with Rust](https://github.com/tw93/Pake)
+- [Pake: Turn any webpage into a desktop app with Rust][pake~github]
 
 ## Zed {#skip}
 

@@ -11,7 +11,7 @@
 - Return the value and a boolean indicating whether there was overflow with the [`overflowing_*`]( ){{hi: }} methods.
 - Saturate at the value's minimum or maximum values with the [`saturating_*`]( ){{hi: }} methods.
 
-- [half — data structures in Rust](https://lib.rs/crates/half)
+- [half — data structures in Rust][c~half~lib.rs]
 
 ---
 
@@ -140,4 +140,4 @@ Note that so-called "Deref polymorphism", meaning implementing [`Deref`](https:/
 
 ---
 
-- [predicates](https://lib.rs/crates/predicates) boolean-valued predicate functions.
+- [predicates][c~predicates~lib.rs] boolean-valued predicate functions.

@@ -128,7 +128,7 @@ See also the [[asref | AsRef]] chapter.
 
 ## See Also {#skip}
 
-- The [ShowOption](https://lib.rs/crates/show-option)↗ crate provides extension methods and macros for formatting Options.
+- The [ShowOption][c~show-option~lib.rs]↗ crate provides extension methods and macros for formatting Options.
 
 ## Related Topics {#related-topics}
 

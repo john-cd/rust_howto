@@ -26,9 +26,9 @@ The [Copenhagen Book][book~copenhagen] provides a general guideline on implement
 <div class="hidden">
 [add Oauth](https://github.com/john-cd/rust_howto/issues/636)
 
-- [jsonwebtoken — Rust auth library](https://lib.rs/crates/jsonwebtoken)
+- [jsonwebtoken][c~jsonwebtoken~lib.rs] - Rust auth library
 - [rauthy: OpenID Connect Single Sign-On Identity & Access Management](https://github.com/sebadob/rauthy)
 
-- [Passwords](https://lib.rs/crates/passwords)
+- [Passwords][c~passwords~lib.rs]
 
 </div>

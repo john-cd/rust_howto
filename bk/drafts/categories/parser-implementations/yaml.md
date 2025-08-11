@@ -22,6 +22,6 @@ Consider [`yaml-rust`][c~yaml-rust~docs]↗{{hi:yaml-rust}}. 'serde_yaml' is dep
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/1186)
 
-- [saphyr: A set of crates dedicated to parsing YAML.](https://github.com/saphyr-rs/saphyr)
+- [saphyr: A set of crates dedicated to parsing YAML.][c~saphyr~github]
 
 </div>

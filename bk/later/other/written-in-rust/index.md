@@ -20,7 +20,7 @@ This section provides a few examples of software written in Rust, organized by t
   - Real-time operating systems (RTOS).
   - Examples:
     - `Tock OS`: An embedded operating system designed for low-power IoT devices.
-    - [esp-rs (GitHub)](https://github.com/esp-rs)↗: Rust on Espressif microcontrollers.
+    - [esp-rs (GitHub)][espressif~github]↗: Rust on Espressif microcontrollers.
 - Command-Line Tools:
   - Utilities for system administration.
   - Performance monitoring tools.
@@ -152,9 +152,9 @@ This section provides a few examples of software written in Rust, organized by t
 - [OxidOS Automotive](https://oxidos.io/)
 - [ripgrep: `ripgrep` recursively searches directories for a regex pattern while respecting your gitignore](https://github.com/BurntSushi/ripgrep)
 - [zola: A fast static site generator in a single binary with everything built-in. https://www.getzola.org](https://github.com/getzola/zola)
-- [solana: Web-Scale Blockchain for fast, secure, scalable, decentralized apps and marketplaces.](https://github.com/solana-labs/solana)
+- [solana: Web-Scale Blockchain for fast, secure, scalable, decentralized apps and marketplaces.][c~solana~github]
 - [linkerd2: Ultralight, security-first service mesh for Kubernetes. Main repo for Linkerd 2.x.](https://github.com/linkerd/linkerd2)
-- [bottlerocket: An operating system designed for hosting containers](https://github.com/bottlerocket-os/bottlerocket)
+- [bottlerocket: An operating system designed for hosting containers][c~bottlerocket~github]
 - [`databend`: 𝗗𝗮𝘁𝗮, 𝗔𝗻𝗮𝗹𝘆𝘁𝗶𝗰𝘀 & 𝗔𝗜. Modern alternative to Snowflake. Cost-effective and simple for massive-scale analytics. https://databend.com](https://github.com/databendlabs/databend)
 - [`rerun`: Visualize streams of multimodal data. Free, fast, easy to use, and simple to integrate. Built in Rust.](https://github.com/rerun-io/rerun)
 - [`tock`: A secure embedded operating system for microcontrollers](https://github.com/tock/tock)
@@ -172,28 +172,28 @@ This section provides a few examples of software written in Rust, organized by t
 - [`influxdb`: Scalable datastore for metrics, events, and real-time analytics](https://github.com/influxdata/influxdb)
 - [`firecracker`: Secure and fast microVMs for serverless computing.](https://github.com/firecracker-microvm/firecracker)
 - [`Warp`: Warp is a modern, Rust-based terminal with AI built in so you and your team can build great software, faster.](https://github.com/warpdotdev/Warp)
-- [RustPython: A Python Interpreter written in Rust](https://github.com/RustPython/RustPython)
+- [RustPython: A Python Interpreter written in Rust][rustpython~github]
 - [wezterm: A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust](https://github.com/wez/wezterm)
-- [redox-os: Mirror of https://gitlab.redox-os.org/redox-os/redox](https://github.com/redox-os/redox)
+- [redox-os: Mirror of https://gitlab.redox-os.org/redox-os/redox][redox~github]
 - [Neon: Serverless Postgres. We separated storage and compute to offer autoscaling, code-like database branching, and scale to zero.](https://github.com/neondatabase/neon)
 - [navi: An interactive cheatsheet tool for the command-line](https://github.com/denisidoro/navi)
 - [RustScan: The Modern Port Scanner](https://github.com/RustScan/RustScan)
 - [workers-rs: Write Cloudflare Workers in 100% Rust via WebAssembly](https://github.com/cloudflare/workers-rs)
-- [Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdrant.io/](https://github.com/qdrant/qdrant)
-- [Hyperlight is a lightweight Virtual Machine Manager (VMM) designed to be embedded within applications. It enables safe execution of untrusted code within micro virtual machines with very low latency and minimal overhead.](https://github.com/hyperlight-dev/hyperlight)
+- [Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdrant.io/][c~qdrant~github]
+- [Hyperlight is a lightweight Virtual Machine Manager (VMM) designed to be embedded within applications. It enables safe execution of untrusted code within micro virtual machines with very low latency and minimal overhead.][c~hyperlight~github]
 - [Perseus](https://framesurge.sh/perseus/en-US/)
 - [DORA (Dataflow-Oriented Robotic Architecture) is middleware designed to streamline and simplify the creation of AI-based robotic applications. It offers low latency, composable, and distributed dataflow capabilities. Applications are modeled as directed graphs, also referred to as pipelines.](https://github.com/dora-rs/dora)
-- [television](https://crates.io/crates/television)
+- [television][c~television~crates.io]
 
 - [Fish 4.0: The Fish Of Theseus](https://fishshell.com/blog/rustport/)
 
-- [shoes: A multi-protocol proxy server written in Rust (HTTP, SOCKS5, Vmess, Vless, Shadowsocks, Trojan, Snell, Hysteria2, TUIC v5)](https://github.com/cfal/shoes)
+- [shoes: A multi-protocol proxy server written in Rust (HTTP, SOCKS5, Vmess, Vless, Shadowsocks, Trojan, Snell, Hysteria2, TUIC v5)][c~shoes~github]
 
 - [Jujutsu (docs)](https://jj-vcs.github.io/jj/latest/)
 - [Steve's Jujutsu Tutorial](https://steveklabnik.github.io/jujutsu-tutorial/)
 
 - [Codename Goose](https://block.github.io/goose/docs/quickstart)
-- [grex: A command-line tool and Rust library with Python bindings for generating regular expressions from user-provided test cases](https://github.com/pemistahl/grex)
+- [grex: A command-line tool and Rust library with Python bindings for generating regular expressions from user-provided test cases][c~grex~github]
 - [youki: A container runtime written in Rust](https://github.com/youki-dev/youki)
 
 </div>

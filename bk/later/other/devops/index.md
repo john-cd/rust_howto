@@ -77,7 +77,7 @@ https://dev.to/mark_mwendia_0298dd9c0aad/optimizing-devops-pipelines-for-rust-pr
 
 CD/CI
 
-- [gh-workflow](https://crates.io/crates/gh-workflow)
+- [gh-workflow][c~gh-workflow~crates.io]
 - [GitHub Actions best practices for Rust projects](https://www.infinyon.com/blog/2021/04/github-actions-best-practices/)
 - [GitHub - pipelight: Tiny automation pipelines. Bring CI/CD to the smallest projects. Self-hosted, Lightweight, CLI only.](https://github.com/pipelight/pipelight)
 

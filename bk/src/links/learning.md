@@ -9,7 +9,7 @@
 
 ## Learning Roadmaps {#learning-roadmap}
 
-- [Learn to Become a Rust Developer](https://roadmap.sh/rust)↗.
+- [Learn to Become a Rust Developer][roadmap-rust~website]↗.
 - [Roadmap for Rust][roadmap-rust~website]↗.
 
 ## Tutorials & Workshop Materials {#tutorials-and-workshop-materials}
@@ -35,10 +35,10 @@
 
 - [Rust by Example][book~rust-by-example]↗: Learn rust features with small, targeted examples. Starting with "hello world" and moving up to more complex features like traits and generics.
 - [Rust by Practice](https://practice.course.rs)↗.
-- The [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook)↗: A collection of simple examples that demonstrate good practices to accomplish common programming tasks, using the crates of the Rust ecosystem.
-- [Rustlings](https://github.com/rust-lang/rustlings)↗: Small exercises to get you used to reading and writing Rust code, including reading and responding to compiler error messages.
+- The [Rust Cookbook][book~rust-cookbook]↗: A collection of simple examples that demonstrate good practices to accomplish common programming tasks, using the crates of the Rust ecosystem.
+- [Rustlings][c~rustlings~github]↗: Small exercises to get you used to reading and writing Rust code, including reading and responding to compiler error messages.
 - [100 Exercises to Learn Rust](https://github.com/mainmatter/100-exercises-to-learn-rust)↗.
-- [Rust Mastery Exercises](https://app.codecrafters.io/tracks/rust)↗.
+- [Rust Mastery Exercises][app.codecrafters.io~rust]↗.
 - [Rust Quizz][rust-quizz~website]↗.
 - [Exercism](https://exercism.org/tracks/rust)↗.
 - [Advent of Code](https://adventofcode.com)↗: Language-agnostic programming challenges that can be done in Rust.
@@ -93,7 +93,7 @@
 
 - The [Standard Library](https://doc.rust-lang.org/std/#the-rust-standard-library)↗ documentation for the built-in [`std`](https://doc.rust-lang.org/std/index.html)↗{{hi:std}}, [`core`](https://doc.rust-lang.org/core/index.html)↗{{hi:core}}, and [`alloc`](https://doc.rust-lang.org/alloc/index.html)↗{{hi:alloc}} crates.
 - The [Rust Reference](https://doc.rust-lang.org/stable/reference)↗: Details of the language semantics.
-- The [Rustonomicon](https://doc.rust-lang.org/nomicon)↗: A high-level companion to the reference and a guide to correctly writing unsafe code in Rust.
+- The [Rustonomicon][book~rustonomicon]↗: A high-level companion to the reference and a guide to correctly writing unsafe code in Rust.
 - The [Ferrocene Language Spec](https://rust-lang.github.io/fls/general.html)↗: An high quality specification for the Rust language, initially developed by Ferrous Systems.
 
 ## Related Topics {#related-topics}

@@ -143,7 +143,7 @@ Design patterns are well-proven blueprints or best practices for solving recurri
 <div class="hidden">
 [index: organize / write / add cross links](https://github.com/john-cd/rust_howto/issues/469)
 
-- [patterns: A catalog of Rust design patterns, anti-patterns and idioms](https://github.com/rust-unofficial/patterns)
+- [patterns: A catalog of Rust design patterns, anti-patterns and idioms][rust-unofficial-patterns~github]
 
 ```rust,editable
 {{#include ../../../crates/cats/rust_patterns/examples/scopeguard.rs:example}}

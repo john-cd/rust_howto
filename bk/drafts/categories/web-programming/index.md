@@ -94,23 +94,23 @@ Frameworks
 
 QUIC
 
-- [quiche: Savory implementation of the QUIC transport protocol and HTTP/3](https://github.com/cloudflare/quiche)
-- [Quinn — Rust network library](https://lib.rs/crates/quinn)
-- [msquic: Cross-platform, C implementation of the IETF QUIC protocol, exposed to C, C++, C# and Rust.](https://github.com/microsoft/msquic)
+- [quiche: Savory implementation of the QUIC transport protocol and HTTP/3][c~quiche~github]
+- [Quinn — Rust network library][c~quinn~lib.rs]
+- [msquic: Cross-platform, C implementation of the IETF QUIC protocol, exposed to C, C++, C# and Rust.][c~msquic~github]
 
-- [Mockito — Rust web dev library](https://lib.rs/crates/mockito)
+- [Mockito — Rust web dev library][c~mockito~lib.rs]
 
 HTTP
 
-- [H2 — Rust web dev library](https://lib.rs/crates/h2)
+- [H2 — Rust web dev library][c~h2~lib.rs]
 
 OTHER
 
-- [webbrowser — Rust web dev library](https://lib.rs/crates/webbrowser)  open URLs and local files in the web browsers available on a platform
+- [webbrowser — Rust web dev library][c~webbrowser~lib.rs]  open URLs and local files in the web browsers available on a platform
 
-- [webpki-root-certs — Rust crypto library](https://lib.rs/crates/webpki-root-certs)
+- [webpki-root-certs — Rust crypto library][c~webpki-root-certs~lib.rs]
 
 - [Sycamore](https://sycamore.dev/)
-- [sycamore: A library for creating reactive web apps in Rust and WebAssembly](https://github.com/sycamore-rs/sycamore)
+- [sycamore: A library for creating reactive web apps in Rust and WebAssembly][c~sycamore~github]
 
 </div>

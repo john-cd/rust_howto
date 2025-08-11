@@ -8,7 +8,7 @@ You can use the [Rust Playground](https://play.rust-lang.org/?version=stable&mod
 
 - [GitHub Topic: "Rust" topic](https://github.com/topics/rust)↗: popular repositories on GitHub.
 - [Trending GitHub repos](https://github.com/trending/rust)↗.
-- [Awesome Rust](https://github.com/rust-unofficial/awesome-rust)↗: a large curated list of Rust resources, including code examples.
+- [Awesome Rust][awesome-rust~github]↗: a large curated list of Rust resources, including code examples.
 - [Open-source Projects Categorized as "Rust" (libhunt.com)](https://www.libhunt.com/topic/rust)↗.
 - [`rustrepo.com`](https://rustrepo.com)↗: A curated list of awesome Rust resources.
 - [Top 100 Best GitHub Repositories for Rust](https://bestofgit.codes/repositories/languages/rust)↗.
@@ -35,7 +35,7 @@ For example, you will find a full template for a REST API written in Rust, engin
 You may also consult the code examples from various Rust books:
 
 - [Code][book~zero-to-production~github]↗ for the ["Zero To Production In Rust"][book~zero-to-production]↗ book.
-- [Source Code][practical-rust-web-projects~github]↗ for ["Practical Rust Web Projects: Building Cloud and Web-Based Applications", 1st ed.](https://www.amazon.com/Practical-Rust-Web-Projects-Applications/dp/1484265882)↗ by Shing Lyu.
+- [Source Code][practical-rust-web-projects~github]↗ for ["Practical Rust Web Projects: Building Cloud and Web-Based Applications", 1st ed.][book~Practical-Rust-Web-Projects-Applications]↗ by Shing Lyu.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

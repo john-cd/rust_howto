@@ -4,7 +4,7 @@
 
 ## Folders and Key Files {#folders}
 
-This book's [GitHub repository](https://github.com/john-cd/rust_howto)↗ is structured as follows:
+This book's [GitHub repository][rust-howto~github]↗ is structured as follows:
 
 - The Dev Container and Docker (Compose) configuration files are found in [`.devcontainer`][dev-containers-devcontainer.json]↗{{hi:.devcontainer}}. Review the [[dev_container_docker | Dev Container and Docker]] page for usage.
 - The [`.github`](https://github.com/john-cd/rust_howto/tree/main/.github)↗ folder contains the GitHub configuration, including the CD/CI workflows that build the code & book and deploy the book to Github Pages.
@@ -50,7 +50,7 @@ The [`bk/drafts`](https://github.com/john-cd/rust_howto/tree/main/bk/drafts)↗ 
 
 ## Code Organization {#code-organization}
 
-The book's [GitHub repository](https://github.com/john-cd/rust_howto)↗ is a "monorepo" with multiple independent projects:
+The book's [GitHub repository][rust-howto~github]↗ is a "monorepo" with multiple independent projects:
 
 - The Rust examples embedded in the book use a very large number of dependencies, therefore their compile time is quite long. For that reason, they are in an isolated [`cargo`][c~cargo~docs]{{hi:cargo}}↗ workspace, which manifest is in `bk/crates/Cargo.toml`. The workspace consists of multiple crates below [`bk/crates`](https://github.com/john-cd/rust_howto/tree/main/bk/crates)↗, each named after sections of the book (e.g., `bk/crates/language`) or, within the `bk/crates/cats` folder, after `crates.io` categories (e.g., `bk/crates/cats/algorithms`).
   - Each crate in the workspace contains a [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} file, which list the dependencies used by its code examples. Use `cargo add <crate>` or `cargo add <crate> -F <feature>` while in the appropriate crate folder, in order to add more as required.

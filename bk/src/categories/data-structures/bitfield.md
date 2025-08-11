@@ -45,6 +45,6 @@ A [`flagset`]( ){{hi: }} refers to a bitfield used to represent a set of boolean
 <div class="hidden">
 [bitfield: edit / review](https://github.com/john-cd/rust_howto/issues/279)
 
-- [roaring](https://crates.io/crates/roaring)
+- [roaring][c~roaring~crates.io]
 
 </div>
