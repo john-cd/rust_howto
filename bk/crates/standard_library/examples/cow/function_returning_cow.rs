@@ -9,7 +9,7 @@ use std::borrow::Cow;
 /// spaces removed. Otherwise, it returns a borrowed `&str` pointing to the
 /// original string slice. This avoids unnecessary allocation when no spaces are
 /// present.
-fn remove_whitespaces(s: &str) -> Cow<str> {
+fn remove_whitespaces(s: &str) -> Cow<'_, str> {
     if s.contains(' ') {
         // Allocate, since we need to modify the string.
         Cow::Owned(s.to_string().replace(' ', ""))

@@ -28,7 +28,7 @@ impl<T> Spinlock<T> {
     /// Returns a guard that allows access to the data and releases the
     /// lock when dropped.
     #[inline]
-    pub fn lock(&self) -> SpinlockGuard<T> {
+    pub fn lock(&self) -> SpinlockGuard<'_, T> {
         // Spin until we successfully acquire the lock.
         // `compare_exchange_weak` is often preferred in loops, as it can be
         // more performant on some platforms, even if it spuriously fails.
