@@ -30,18 +30,18 @@ You may also use the following sites for crate recommendations:
   - Crates [statistics][lib.rs~stats~website]↗,
 - The Rust community's official crate registry: [`crates.io`][crates.io~website]{{hi:crates.io}}↗,
   - [`crates.io`'s Most (Recent) Downloads][crates.io~most-recent-downloads]↗.
-  - You should search for crates by [category](https://crates.io/categories)↗ and by [keywords](https://crates.io/keywords)↗.
+  - You should search for crates by [category][crates.io-categories~website]↗ and by [keywords][crates.io-keywords~website]↗.
 
 You can also search or post on Rust chat servers and forums - see [[blogs | Blogs and Forums]].
 
 ### Additional Lists & Reviews {#lists-reviews}
 
-- [Awesome Rust (libhunt.com)](https://rust.libhunt.com)↗.
+- [Awesome Rust (libhunt.com)][rust-libhunt~website]↗.
 - [Top Rust Libraries 2025](https://libs.tech/rust)↗.
-- [State of the Crates 2025](https://ohadravid.github.io/posts/2024-12-state-of-the-crates/)↗.
+- [State of the Crates 2025][blog~state-of-the-crates]↗.
 - [r/rust: "What are some less popular but well-made crates you'd like others to know about?"](https://www.reddit.com/r/rust/comments/106w4ao/what_are_some_less_popular_but_wellmade_crates/)↗.
 - ["Must know" Rust Crates](https://gitlab.com/samuel_schuepbach/must_know_rust_crates)↗.
-- [RustRepo](https://rustrepo.com/)↗.
+- [RustRepo][rustrepo~website]↗.
 
 You may also consult older resources, such as:
 
@@ -54,24 +54,24 @@ You may also consult older resources, such as:
 You will find below links to "Are we ... yet?" websites and similar. They list key libraries and tools and provide an idea of the current state of the art in a given domain.
 
 - General
-  - [Are We Rust Yet?](https://github.com/UgurcanAkkok/AreWeRustYet)↗: Awesome list of "Are We *thing* Yet" for Rust.
-    - [Are We ... Yet? (Mozilla Wiki)](https://wiki.mozilla.org/Areweyet)↗.
-  - [Not Yet Awesome Rust](https://github.com/not-yet-awesome-rust/not-yet-awesome-rust)↗: a list of Rust code and resources that do NOT exist yet.
+  - [Are We Rust Yet?][are-we-rust-yet~github]↗: Awesome list of "Are We *thing* Yet" for Rust.
+    - [Are We ... Yet? (Mozilla Wiki)][areweyet~website]↗.
+  - [Not Yet Awesome Rust][not-yet-awesome-rust~github]↗: a list of Rust code and resources that do NOT exist yet.
 - By Topic
   - [Are We Web Yet?][are-we-web-yet?~website]↗.
   - [Are We Async Yet?][are-we-async-yet?~website]↗.
   - [Are We GUI Yet?][are-we-gui-yet?~website]↗.
-  - [Are We IDE Yet?](https://areweideyet.com)↗.
+  - [Are We IDE Yet?][areweideyet~website]↗.
   - [Are We Game Yet?][are-we-game-yet?~engines~website]↗.
   - [Are We Learning Yet?][are-we-learning-yet?~website]↗.
-  - [Are We Bio Yet?](https://rust4bio.github.io/arewebioyet)↗.
-  - [Are We VFX Yet?](https://arewevfxyet.rs)↗.
-  - [Are We Quantum Yet?](https://arewequantumyet.github.io)↗.
-  - [Are We in Space Yet?](https://aerorust.org/catalogue)↗.
+  - [Are We Bio Yet?][blog~rust4bio]↗.
+  - [Are We VFX Yet?][arewevfxyet~website]↗.
+  - [Are We Quantum Yet?][blog~arewequantumyet]↗.
+  - [Are We in Space Yet?][aerorust~website]↗.
   - [Rust Audio](https://rust.audio)↗.
-  - [Awesome Geo-Rust](https://github.com/pka/awesome-georust)↗: geospatial software, libraries, tools and resources, written in Rust.
+  - [Awesome Geo-Rust][awesome-georust~github]↗: geospatial software, libraries, tools and resources, written in Rust.
 
-Note that several of these websites are out-of-date. [Are We Rust Yet?](https://github.com/UgurcanAkkok/AreWeRustYet)↗ list their last commit date and update frequency.
+Note that several of these websites are out-of-date. [Are We Rust Yet?][are-we-rust-yet~github]↗ list their last commit date and update frequency.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

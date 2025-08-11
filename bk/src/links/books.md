@@ -7,8 +7,8 @@ The following includes books and other long-form writings about Rust.
 ## Lists of Books {#book-lists}
 
 - [Little Book of Rust Books][book~the-little-book-of-rust-books]{{hi:Rust books}}↗.
-- [Awesome Rust Books](https://github.com/sger/RustBooks)↗.
-- [LearnRust](https://github.com/ImplFerris/LearnRust)↗: A "list of resources to learn Rust - Roadmap from beginner to advanced level". Includes a book section.
+- [Awesome Rust Books][rustbooks~github]↗.
+- [LearnRust][learnrust~github]↗: A "list of resources to learn Rust - Roadmap from beginner to advanced level". Includes a book section.
 - [`rust-learning`](https://github.com/ctjhoa/rust-learning)↗: A bunch of links to books, blog posts, articles, videos, etc. for learning Rust.
 
 ## Essential and Official Books {#official-books}
@@ -16,35 +16,35 @@ The following includes books and other long-form writings about Rust.
 The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are listed below:
 
 - "The Book": [The Rust Programming Language][book~rust]↗.
-  - The [Rust Programming Language](https://rust-book.cs.brown.edu)↗: An experimental version of the Rust Book enhanced with interactive quizzes, highlighting, and visualizations.
-  - [The Rust Programming Language, 2nd Edition](https://nostarch.com/rust-programming-language-2nd-edition)↗ by Steve Klabnik, Carol Nichols [978-1718503106][ISBN~978-1718503106]↗: The official Rust Book, in paper format.
+  - The [Rust Programming Language][rust-book.cs.brown.edu~website]↗: An experimental version of the Rust Book enhanced with interactive quizzes, highlighting, and visualizations.
+  - [The Rust Programming Language, 2nd Edition][book~rust-programming-language-2nd-edition]↗ by Steve Klabnik, Carol Nichols [978-1718503106][ISBN~978-1718503106]↗: The official Rust Book, in paper format.
 - [Rust by Example][book~rust-by-example]↗: A collection of runnable examples that illustrate various Rust concepts and standard libraries.
 - The [Rust Cookbook (old)][book~rust-cookbook]↗.{{hi:Cookbook}}
   - The [Rust Cookbook (fork)][book~rust-cookbook-fork]↗.
 - The [Rust Standard Library](https://doc.rust-lang.org/std/index.html)↗: Comprehensive guide to the Rust standard library APIs.{{hi:Standard library}}
-- The [Rust Reference](https://doc.rust-lang.org/reference/index.html)↗: The primary reference for the Rust programming language.
+- The [Rust Reference][book~rust-reference]↗: The primary reference for the Rust programming language.
 - The [Rustonomicon][book~rustonomicon]↗ [(nightly version)](https://doc.rust-lang.org/nightly/nomicon)↗.{{hi:Rustonomicon}}{{hi:Unsafe code}}
 
 ### Official Reference & Documentation {#reference-documentation}
 
-- The [Rust Edition Guide](https://doc.rust-lang.org/edition-guide/index.html)↗. Editions are Rust's way of introducing changes into the language that would not otherwise be backwards compatible.{{hi:Editions}}
-- [Rust Error Codes Index](https://doc.rust-lang.org/error_codes/error-index.html)↗.{{hi:Error codes}}
+- The [Rust Edition Guide][book~edition-guide]↗. Editions are Rust's way of introducing changes into the language that would not otherwise be backwards compatible.{{hi:Editions}}
+- [Rust Error Codes Index][book~error_codes]↗.{{hi:Error codes}}
 - The [Rust Unstable Book](https://doc.rust-lang.org/nightly/unstable-book/index.html)↗.{{hi:Unstable Rust}}
-- The [Rust RFC Book](https://rust-lang.github.io/rfcs)↗.{{hi:RFCs}}
-- [Rust Forge](https://forge.rust-lang.org)↗ serves as a repository of supplementary documentation useful for contributors to the Rust programming language repos.
+- The [Rust RFC Book][book~rust-lang-rfcs]↗.{{hi:RFCs}}
+- [Rust Forge][forge.rust-lang.org~website]↗ serves as a repository of supplementary documentation useful for contributors to the Rust programming language repos.
 
 ## Free eBooks {#free}
 
 - [Comprehensive Rust][book~comprehensive-rust]↗: Free Rust course developed by the Android team at Google.
-- [Easy Rust](https://dhghomon.github.io/easy_rust/Chapter_1.html)↗ [Easy Rust (alternate)][book~easy-rust]↗.
-- [Effective Rust](https://www.lurklurk.org/effective-rust)↗.
-- [Fast Track to Rust](https://freddiehaddad.github.io/fast-track-to-rust)↗.
+- [Easy Rust][book~dhghomon]↗ [Easy Rust (alternate)][book~easy-rust]↗.
+- [Effective Rust][effective-rust~website]↗.
+- [Fast Track to Rust][book~easy_rust]↗.
 - A [Gentle Introduction to Rust][rust-gentle-intro~website]↗.
-- [Learn Rust by writing Entirely Too Many Linked Lists](https://rust-unofficial.github.io/too-many-lists)↗.
+- [Learn Rust by writing Entirely Too Many Linked Lists][book~rust-unofficial-too-many-lists]↗.
 - [Rust-101](https://www.ralfj.de/projects/rust-101/main.html)↗.
-- [Rust by Practice](https://practice.course.rs)↗.
-- [Rust Development Classes](https://rust-classes.com)↗.
-- [Rust Project Primer](https://rustprojectprimer.com/title.html)↗.
+- [Rust by Practice][practice.course.rs~website]↗.
+- [Rust Development Classes][rust-classes~website]↗.
+- [Rust Project Primer][rustprojectprimer~website]↗.
 
 ## General {#general}
 
@@ -52,7 +52,7 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 - [Creative Projects for Rust Programmers][book~Creative-Projects-Rust-Programmers-WebAssembly]↗: Build exciting projects on domains such as web apps, WebAssembly, games, and parsing, by Carlo Milanesi. [978-1789346220][ISBN~978-1789346220]↗.
 - [Code Like a Pro in Rust][book~Code-Like-Rust-Brenden-Matthews-ebook] by Brenden Matthews. [978-1638354543][ISBN~978-1638354543]↗.
 - The [Complete Rust Programming Reference Guide](https://www.amazon.com/dp/1838828109)↗: Design, develop, and deploy effective software systems using the advanced constructs of Rust, by Rahul Sharma, Vesa Kaihlavirta, Claus Matzinger. [978-1838828103][ISBN~978-1838828103]↗.
-- [Effective Rust: 35 Specific Ways to Improve Your Rust Code](https://www.amazon.com/dp/1098151402)↗ [(O'Reilly)][book~effective-rust]↗ by David Drysdale.  [978-1098151409][ISBN~978-1098151409]↗ [(online version)](https://www.lurklurk.org/effective-rust)↗.
+- [Effective Rust: 35 Specific Ways to Improve Your Rust Code](https://www.amazon.com/dp/1098151402)↗ [(O'Reilly)][book~effective-rust]↗ by David Drysdale.  [978-1098151409][ISBN~978-1098151409]↗ [(online version)][effective-rust~website]↗.
 - [Fullstack Rust][book~Fullstack-Rust-Complete-Building-Programming-ebook]↗ by Andy Weiss ([Newline](https://www.newline.co/fullstack-rust)↗ or Kindle).
 - [Hands-on Rust: Effective Learning Through 2D Game Development and Play][book~Hands-Rust-Effective-Learning-Development]↗ by Herbert Wolverson. [978-1680508161][ISBN~978-1680508161]↗.
 - [Idiomatic Rust: Code like a Rustacean][book~Idiomatic-Rust-Code-like-Rustacean]↗ by Brenden Matthews [9781633437463][ISBN~9781633437463]↗.
@@ -76,7 +76,7 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 
 ### APIs and Microservices {#apis}
 
-- [Rust API Guidelines](https://rust-lang.github.io/api-guidelines)↗.{{hi:APIs}}
+- [Rust API Guidelines][book~api-guidelines]↗.{{hi:APIs}}
 - [`rust-api.dev`](https://rust-api.dev)↗.
 - [Hands-On Microservices with Rust: Build, test, and deploy scalable and reactive microservices with Rust 2018][book~Hands-Microservices-Rust-scalable-microservices-ebook]↗. [978-1789341980][ISBN~978-1789341980]↗.
 
@@ -100,8 +100,8 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 - The [Cargo Book][c~cargo~website]↗. Cargo is the Rust package manager.{{hi:Tools}}{{hi:cargo}}
 - The [`rustdoc` book][book~rustdoc]↗.{{hi:rustdoc}}
 - [Configuring `rustfmt`](https://rust-lang.github.io/rustfmt)↗.{{hi:rustfmt}}
-- [Clippy Documentation](https://doc.rust-lang.org/clippy)↗.{{hi:clippy}}
-- [mdBook Documentation](https://rust-lang.github.io/mdBook)↗.{{hi:mdbook}}
+- [Clippy Documentation][book~clippy]↗.{{hi:clippy}}
+- [mdBook Documentation][book~mdbook]↗.{{hi:mdbook}}
 
 ### Concurrency & Parallelism {#concurrency-parallelism}
 
@@ -119,17 +119,17 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 ### Embedded Systems {#embedded}
 
 - The [Embedded Rust Book](https://docs.rust-embedded.org/book/intro/index.html)↗.{{hi:Embedded development}}
-- The [Discovery Book](https://docs.rust-embedded.org/discovery)↗: Introduction to microcontrollers and how to use Rust with them.{{hi:Microcontrollers}}
-- The [Rust on ESP Book](https://docs.esp-rs.org/book)↗ for Espressif devices.
+- The [Discovery Book][book~rust-embedded-discovery]↗: Introduction to microcontrollers and how to use Rust with them.{{hi:Microcontrollers}}
+- The [Rust on ESP Book][book~rust-on-esp]↗ for Espressif devices.
   - [Embedded Rust (no_std) on Espressif](https://docs.esp-rs.org/no_std-training)↗.
   - [Embedded Rust on Espressif](https://docs.esp-rs.org/std-training)↗.
-- The [Embedonomicon](https://docs.rust-embedded.org/embedonomicon)↗.
+- The [Embedonomicon][book~embedonomicon]↗.
 
-See also the [Awesome Embedded Rust](https://github.com/rust-embedded/awesome-embedded-rust)↗, a curated list of resources for embedded and low-level development.
+See also the [Awesome Embedded Rust][awesome-embedded-rust~github]↗, a curated list of resources for embedded and low-level development.
 
 ### Error Handling {#error-handling}
 
-- [Error Handling in Rust](https://nrc.github.io/error-docs)↗.{{hi:Error handling}}
+- [Error Handling in Rust][book~error-docs]↗.{{hi:Error handling}}
 
 ### Foreign Function Interfaces (FFI) {#ffi}
 
@@ -146,7 +146,7 @@ See also the [Awesome Embedded Rust](https://github.com/rust-embedded/awesome-em
 
 ### Interpreters {#interpreters}
 
-- [Writing Interpreters in Rust: a Guide](https://rust-hosted-langs.github.io/book)↗ [(GitHub)][book~writing-interpreters-in-rust~github]↗.{{hi:Interpreters}}
+- [Writing Interpreters in Rust: a Guide][book~writing-interpreters-in-rust]↗ [(GitHub)][book~writing-interpreters-in-rust~github]↗.{{hi:Interpreters}}
 
 ### Machine Learning {#machine-learning}
 
@@ -154,7 +154,7 @@ See also the [Awesome Embedded Rust](https://github.com/rust-embedded/awesome-em
 
 ### Macros {#macros}
 
-- The [Little Book of Rust Macros](https://lukaswirth.dev/tlborm)↗.{{hi:Macros}}
+- The [Little Book of Rust Macros][book~little-book-of-rust-macros]↗.{{hi:Macros}}
 - [Write Powerful Rust Macros][book~Write-Powerful-Rust-Macros-Overmeire-ebook] by Sam Van Overmeire. [9781633437494][ISBN~9781633437494]↗.
 
 ### Network Programming {#network-programming}
@@ -164,7 +164,7 @@ See also the [Awesome Embedded Rust](https://github.com/rust-embedded/awesome-em
 ### Performance {#performance}
 
 - [Rust High Performance][book~Rust-High-Performance-performance-applications]↗ by Iban Eguia Moraza. [978-1788399487][ISBN~978-1788399487]↗.{{hi:Performance}}
-- The [Rust Performance Book](https://nnethercote.github.io/perf-book/title-page.html)↗.
+- The [Rust Performance Book][book~perf-book]↗.
 
 ### Random Numbers {#random}
 
@@ -172,9 +172,9 @@ See also the [Awesome Embedded Rust](https://github.com/rust-embedded/awesome-em
 
 ## Security {#security}
 
-- [Black Hat Rust: Applied offensive security with the Rust programming language](https://kerkour.com/black-hat-rust)↗ by Sylvain Kerkour.{{hi:Security}}
+- [Black Hat Rust: Applied offensive security with the Rust programming language][black-hat-rust~website]↗ by Sylvain Kerkour.{{hi:Security}}
 - The [Copenhagen Book][book~copenhagen]↗: General guideline on implementing auth in web applications. Not Rust-specific.
-- [High Assurance Rust](https://highassurance.rs)↗: Developing Secure and Robust Software.
+- [High Assurance Rust][highassurance~website]↗: Developing Secure and Robust Software.
 
 ### Standard Library {#standard-library}
 
@@ -183,7 +183,7 @@ See also the [Awesome Embedded Rust](https://github.com/rust-embedded/awesome-em
 
 ### Unsafe Code {#unsafe}
 
-- The [Unsafe Code Guidelines Reference](https://rust-lang.github.io/unsafe-code-guidelines)↗.{{hi:Unsafe code}}
+- The [Unsafe Code Guidelines Reference][book~unsafe-code-guidelines]↗.{{hi:Unsafe code}}
 
 ### Web {#web}
 

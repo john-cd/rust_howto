@@ -10,7 +10,7 @@ For most projects, [`fluent`][c~fluent~docs]↗{{hi:fluent}} is probably the bes
 
 [[localization | Localization]] (l10n) refers to the *adaptation* of an application to meet the language, cultural, and other requirements of a specific target market (a locale) - by translating text, adjusting formats, etc.
 
-Internationalization (i18n) is the design and development of a product, application or document content that *enables* easy localization for target audiences that vary in culture, region, or language - without major changes to the codebase. ([w3.org](https://www.w3.org/International/questions/qa-i18n)).
+Internationalization (i18n) is the design and development of a product, application or document content that *enables* easy localization for target audiences that vary in culture, region, or language - without major changes to the codebase. ([w3.org][qa-i18n~website]).
 
 The following will address both.
 

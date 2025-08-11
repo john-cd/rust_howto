@@ -23,7 +23,7 @@ The [[mdbook | `mdbook`]] chapter describes these preprocessors and backends in 
 - removes the hidden sections between <div class="hidden"> and </div> from the markdown before rendering. By default, [`mdbook`](https://rust-lang.github.io/mdBook)↗{{hi:mdbook}} hides <div class="hidden"></div> sections, but they remain searchable.
 - removes [`{{#includes }}`]( ){{hi: }} that points to hidden files (files that start with `_`), if any. This feature fixes a gap of `mdbook-private`.
 
-Consult the project's [README](https://github.com/john-cd/rust_howto/blob/main/mdbook-scrub/README.md)↗ for more details.
+Consult the project's [README][mdbook-scrub-readme~github]↗ for more details.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

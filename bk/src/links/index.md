@@ -15,15 +15,15 @@ This section provides a large number of links to Rust resources:
 | [`blessed.rs`][blessed-rs~website]↗ | Unofficial guide to (the best of) the Rust ecosystem. |
 | [Awesome Rust][awesome-rust~github]↗ [(GitHub)][awesome-rust~github]↗ | A curated list of Rust code and resources. |
 | [`github.com`][github~website]↗ | The home of most Rust code repositories. |
-| The [Rust Foundation](https://rustfoundation.org)↗ | The non-profit stewarding the Rust programming language. |
+| The [Rust Foundation][rustfoundation.org~website]↗ | The non-profit stewarding the Rust programming language. |
 
 ## Lists of Rust Links and Resources {#lists-of-rust-links-and-resources}
 
 - [`Awesome Rust`][awesome-rust~github]↗: a curated list of Rust code and resources.
 - [Rust Learning][rust-learning~github]↗: a bunch of links to blog posts, articles, videos, etc. for learning Rust.
-- [Learning Resources - Blessed.rs](https://blessed.rs/learning-resources)↗.
-- [Idiomatic Rust](https://github.com/mre/idiomatic-rust)↗: a peer-reviewed collection of articles/talks/repos which teach concise, idiomatic Rust.
-- [LearnRust](https://github.com/ImplFerris/LearnRust)↗.
+- [Learning Resources - Blessed.rs][blessed.rs-learning-resources~website]↗.
+- [Idiomatic Rust][idiomatic-rust~github]↗: a peer-reviewed collection of articles/talks/repos which teach concise, idiomatic Rust.
+- [LearnRust][learnrust~github]↗.
 - [The Rust Starter Pack][rust-starter-pack~website]↗.
 
 ## Rust Cheatsheets {#rust-cheatsheets}

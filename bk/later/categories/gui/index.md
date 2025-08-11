@@ -22,7 +22,7 @@ See also
 
 - [Are we GUI yet?][are-we-gui-yet?~website]↗.
 - the relevant section in [blessed.rs][blessed-rs~website]↗.
-- [The State of Rust GUI libraries](https://blog.logrocket.com/state-rust-gui-libraries/).
+- [The State of Rust GUI libraries][blog~state-rust-gui-libraries].
 - [LibHunt](https://www.libhunt.com/l/rust/topic/gui).
 - [simplifycpp.org](https://simplifycpp.org/?id=a0507).
 
@@ -110,6 +110,6 @@ While primarily for window creation, [`winit`][c~winit~docs]↗{{hi:winit}} is o
 review which GUI framework should be recommended - make a table; review links in Choosing the right framework section again
 cover [`perseus`]( ){{hi: }} / zola?
 
-- [Are we (I)DE yet?](https://areweideyet.com/)
+- [Are we (I)DE yet?][are-we-ide-yet?~website]
 
 </div>

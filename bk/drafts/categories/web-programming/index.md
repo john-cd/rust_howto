@@ -90,7 +90,7 @@ See [[web-programming_websocket | Web Programming: Websocket]].
 
 Frameworks
 
-- [Which Rust web framework to choose in 2022 (with code examples)](https://kerkour.com/rust-web-framework-2022)
+- [Which Rust web framework to choose in 2022 (with code examples)][blog~kerkour-rust-web-framework-2022]
 
 QUIC
 
@@ -110,7 +110,7 @@ OTHER
 
 - [webpki-root-certs — Rust crypto library][c~webpki-root-certs~lib.rs]
 
-- [Sycamore](https://sycamore.dev/)
+- [Sycamore][sycamore~website]
 - [sycamore: A library for creating reactive web apps in Rust and WebAssembly][c~sycamore~github]
 
 </div>

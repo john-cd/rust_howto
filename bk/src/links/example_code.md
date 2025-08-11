@@ -6,10 +6,10 @@ You can use the [Rust Playground](https://play.rust-lang.org/?version=stable&mod
 
 ## Lists of Popular Rust Repositories {#repositories}
 
-- [GitHub Topic: "Rust" topic](https://github.com/topics/rust)↗: popular repositories on GitHub.
-- [Trending GitHub repos](https://github.com/trending/rust)↗.
+- [GitHub Topic: "Rust" topic][topics-rust~github]↗: popular repositories on GitHub.
+- [Trending GitHub repos][trending-rust~github]↗.
 - [Awesome Rust][awesome-rust~github]↗: a large curated list of Rust resources, including code examples.
-- [Open-source Projects Categorized as "Rust" (libhunt.com)](https://www.libhunt.com/topic/rust)↗.
+- [Open-source Projects Categorized as "Rust" (libhunt.com)][libhunt-topic-rust~website]↗.
 - [`rustrepo.com`](https://rustrepo.com)↗: A curated list of awesome Rust resources.
 - [Top 100 Best GitHub Repositories for Rust](https://bestofgit.codes/repositories/languages/rust)↗.
 

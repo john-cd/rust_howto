@@ -86,7 +86,7 @@ In mutable contexts, [`DerefMut`](https://doc.rust-lang.org/std/ops/trait.DerefM
 
 The [`AsRef`](https://doc.rust-lang.org/std/convert/trait.AsRef.html)↗{{hi:std::convert::AsRef}} and `Borrow` traits have very similar signatures to `Deref`. It may be desirable to implement either or both of these, whether in addition to or rather than `Deref` traits. See [[asref | AsRef]] and [[borrow | Borrow]].
 
-Read the [Treating Smart Pointers Like Regular References with Deref](https://doc.rust-lang.org/book/ch15-02-deref.html)↗ and the [dereference operator](https://doc.rust-lang.org/reference/expressions/operator-expr.html#the-dereference-operator)↗ for more details.
+Read the [Treating Smart Pointers Like Regular References with Deref][book~rust~ch15-02-deref]↗ and the [dereference operator][book~rust-reference~dereference-operator]↗ for more details.
 
 The following example demonstrates the implementation of a basic smart pointer:
 

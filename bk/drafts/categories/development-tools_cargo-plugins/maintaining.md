@@ -67,6 +67,6 @@ $ cargo semver-checks
 [maintaining: fix; titles; decide what goes where](https://github.com/john-cd/rust_howto/issues/313)
 
 - [SemVer parser][c~semver~lib.rs]
-- [SemVer Compatibility - The Cargo Book](https://doc.rust-lang.org/cargo/reference/semver.html)
+- [SemVer Compatibility - The Cargo Book][book~cargo~reference-semver]
 
 </div>

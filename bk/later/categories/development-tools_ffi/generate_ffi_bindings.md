@@ -84,6 +84,6 @@ While tools like 'SWIG' exist, [`cxx`][c~cxx~docs]↗{{hi:cxx}} is generally pre
 <div class="hidden">
 [generate_ffi_bindings: write](https://github.com/john-cd/rust_howto/issues/324)
 
-- [Rust ❤️ pre-existing C++ ♡ Existing C++](https://google.github.io/autocxx/)
+- [Rust ❤️ pre-existing C++ ♡ Existing C++][book~autocxx]
 
 </div>

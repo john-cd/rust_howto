@@ -16,7 +16,7 @@ The [`use`][book~rust-reference~use]{{hi:use}}↗ keyword creates a shortcut for
 
 ## Bring an Item from an External Crate into Scope {#bring-item-from-external-crate-into-scope}
 
-To bring items from an external crate into scope, without having to write their full paths every time, write a [`use`](https://doc.rust-lang.org/reference/items/use-declarations.html)↗{{hi:use}} declaration with a path that begins with the external crate name. See also the [[dependencies | Dependencies]] chapter.
+To bring items from an external crate into scope, without having to write their full paths every time, write a [`use`][book~rust-reference~use-declarations]↗{{hi:use}} declaration with a path that begins with the external crate name. See also the [[dependencies | Dependencies]] chapter.
 
 ```rust,editable
 {{#include ../../crates/code_organization/examples/use/use_external_crate.rs:example}}
@@ -42,7 +42,7 @@ Note: Rust doesn't allow importing two items with the same name into one scope. 
 
 ## Reexport Items with `pub use` {#pub-use}
 
-[`use`](https://doc.rust-lang.org/reference/items/use-declarations.html)↗{{hi:use}} declarations are private to their containing module by default. A `use` declaration can be made public by the `pub` keyword. Such a declaration re-exports a name. See also the [[visibility | Visibility]] chapter.
+[`use`][book~rust-reference~use-declarations]↗{{hi:use}} declarations are private to their containing module by default. A `use` declaration can be made public by the `pub` keyword. Such a declaration re-exports a name. See also the [[visibility | Visibility]] chapter.
 
 ```rust,editable
 {{#include ../../crates/code_organization/examples/use/pub_use.rs:example}}
@@ -60,8 +60,8 @@ Note that, while these shortcuts make your code more compact and readable, they 
 
 ## References {#references}
 
-- [Bringing Paths into Scope with the use Keyword (Rust book)](https://doc.rust-lang.org/book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.html)↗.
-- [Use declarations (Rust reference)](https://doc.rust-lang.org/reference/items/use-declarations.html)↗.
+- [Bringing Paths into Scope with the use Keyword (Rust book)][book~rust~ch07-04-bringing-paths-into-scope-with-the-use-keyword]↗.
+- [Use declarations (Rust reference)][book~rust-reference~use-declarations]↗.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

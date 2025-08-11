@@ -10,11 +10,11 @@
 
 - [`mdbook-pdf`](https://crates.io/crates/mdbook-pdf)
 - [`mdbook-tools`](https://lib.rs/crates/mdbook-tools)
-- [Environment Variables - mdBook Documentation](https://rust-lang.github.io/mdBook/format/configuration/environment-variables.html)
+- [Environment Variables - mdBook Documentation][book~mdbook~environment-variables]
 
 ## AI {#skip}
 
-- [foreverVM: The sessionless code interpreter](https://forevervm.com) ForeverVM is a code execution API that allows you to securely run arbitrary Python code in a remote sandbox and get back results.
+- [foreverVM][forevervm~website]: The sessionless code interpreter. ForeverVM is a code execution API that allows you to securely run arbitrary Python code in a remote sandbox and get back results.
 
 ## CD / CI {#skip}
 
@@ -47,7 +47,7 @@
 
 ## Jobs {#skip}
 
-- [filtra](https://filtra.io/rust-sep-24)
+- [filtra][filtra.io-rust-sep-24~website]
 
 ## Language Features {#skip}
 
@@ -59,7 +59,7 @@
 
 ## List of crates Available in the Rust Playground {#skip}
 
-- [rust-lang/rust-playground](https://github.com/rust-lang/rust-playground/blob/main/compiler/base/Cargo.toml)
+- [rust-lang/rust-playground][rust-playground-cargo.toml~github]
 
 ## ML / Search {#skip}
 
@@ -76,7 +76,7 @@
 ## Unstable Features {#skip}
 
 - [Coroutine in `std::ops`](https://doc.rust-lang.org/std/ops/trait.Coroutine.html)
-- [Unstable Features - The Cargo Book](https://doc.rust-lang.org/nightly/cargo/reference/unstable.html#script)
+- [Unstable Features - The Cargo Book][book~nightly~cargo-script]
 
 ## VS Code {#skip}
 
@@ -89,11 +89,11 @@
 
 ## Zed {#skip}
 
-- [zed hanging on startup because of 'unsupportedversion' · Issue #14126 · zed-industries/zed](https://github.com/zed-industries/zed/issues/14126#issuecomment-2230014829)
-- [zed hanging on startup because of 'unsupportedversion' · Issue #14126 · zed-industries/zed](https://github.com/zed-industries/zed/issues/14126)
+- [zed hanging on startup because of 'unsupportedversion' · Issue #14126 · zed-industries/zed][zed-issue-14126-comment~github]
+- [zed hanging on startup because of 'unsupportedversion' · Issue #14126 · zed-industries/zed][zed-issue-14126~github]
 
 ## Satire {#skip}
 
-- [hello-world.rs: Memory safe, blazing fast, configurable, minimal hello world written in rust() in a few lines of code with few(1092) dependencies](https://github.com/mTvare6/hello-world.rs)
+- [hello-world.rs: Memory safe, blazing fast, configurable, minimal hello world written in rust() in a few lines of code with few(1092) dependencies][hello-world.rs~github]
 
 ## TO SORT {#skip}

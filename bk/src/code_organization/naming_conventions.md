@@ -81,9 +81,9 @@ fn into_iter(self) -> IntoIter     // `IntoIter` implements `Iterator<Item = U>`
 
 The above is adapted from:
 
-- [Rust API Guidelines: Naming](https://rust-lang.github.io/api-guidelines/naming.html)
-- [RFC430](https://github.com/rust-lang/rfcs/blob/master/text/0430-finalizing-naming-conventions.md)
-- [RFC199](https://github.com/rust-lang/rfcs/blob/master/text/0199-ownership-variants.md)
+- [Rust API Guidelines: Naming][book~api-guidelines-naming]
+- [RFC430][finalizing-naming-conventions.md~github]
+- [RFC199][ownership-variants~github]
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

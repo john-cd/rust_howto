@@ -71,7 +71,7 @@ Often requires specialized libraries or custom implementations using compute [[s
 
 ## See Also
 
-- [gfx-rs.github.io](https://gfx-rs.github.io).
+- [gfx-rs.github.io][blog~gfx-rs].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

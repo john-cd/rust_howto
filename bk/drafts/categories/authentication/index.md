@@ -27,7 +27,7 @@ The [Copenhagen Book][book~copenhagen] provides a general guideline on implement
 [add Oauth](https://github.com/john-cd/rust_howto/issues/636)
 
 - [jsonwebtoken][c~jsonwebtoken~lib.rs] - Rust auth library
-- [rauthy: OpenID Connect Single Sign-On Identity & Access Management](https://github.com/sebadob/rauthy)
+- [rauthy: OpenID Connect Single Sign-On Identity & Access Management][rauthy~github]
 
 - [Passwords][c~passwords~lib.rs]
 

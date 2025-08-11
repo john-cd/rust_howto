@@ -209,9 +209,9 @@ Please also consult the [list of companies using Rust][theirstack-rust~website] 
 
 - [`rustjobs.dev`](https://rustjobs.dev)↗.
 - [`rustjobs.com`](https://www.rustjobs.com)↗.
-- [Rust Jobs for Rustaceans](https://jobs.letsgetrusty.com)↗.
+- [Rust Jobs for Rustaceans][jobs.letsgetrusty~website]↗.
 
-See also the [Rust Jobs Report](https://filtra.io/rust)↗ (Filtra).
+See also the [Rust Jobs Report][filtra.io-rust~website]↗ (Filtra).
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

@@ -8,7 +8,7 @@
 
 ## See Also
 
-- [Physics](https://arewegameyet.rs/ecosystem/physics).
+- [Physics][are-we-game-yet?-physics~website].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

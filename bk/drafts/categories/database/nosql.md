@@ -25,7 +25,7 @@ This is the officially supported MongoDB Rust driver, a client side library that
 [![redis~github][c~redis~github~badge]][c~redis~github]
 [![redis~lib.rs][c~redis~lib.rs~badge]][c~redis~lib.rs]
 
-Redis-rs is a high level [Redis](https://redis.io)↗{{hi:redis}} library for Rust. It provides convenient access to all Redis functionality through a very flexible but low-level API. It uses a customizable type conversion trait so that any operation can return results in just the type you are expecting. This makes for a very pleasant development experience.
+Redis-rs is a high level [Redis][redis~website]↗{{hi:redis}} library for Rust. It provides convenient access to all Redis functionality through a very flexible but low-level API. It uses a customizable type conversion trait so that any operation can return results in just the type you are expecting. This makes for a very pleasant development experience.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/examples/nosql/redis.rs:example}}

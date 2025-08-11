@@ -72,8 +72,8 @@ This example was adapted from a [StackOverflow discussion][stackoverflow~how-do-
 
 ## References {#references}
 
-- [Using Cow in Rust for efficient memory utilization](https://blog.logrocket.com/using-cow-rust-efficient-memory-utilization)↗.
-- [The Secret Life of Cows](https://deterministic.space/secret-life-of-cows.html)↗.
+- [Using Cow in Rust for efficient memory utilization][blog~using-cow-rust-efficient-memory-utilization]↗.
+- [The Secret Life of Cows][blog~secret-life-of-cows]↗.
 
 ## Related Topics {#related-topics}
 

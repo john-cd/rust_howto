@@ -29,7 +29,7 @@ Burn is a comprehensive dynamic Deep Learning Framework built using Rust with fl
 
 ## References
 
-- [Neural Networks](https://www.arewelearningyet.com/neural-networks/)🔗.
+- [Neural Networks][are-we-learning-yet?-neural-networks~website].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
@@ -38,6 +38,6 @@ Burn is a comprehensive dynamic Deep Learning Framework built using Rust with fl
 [write](https://github.com/john-cd/rust_howto/issues/1205)
 
 - [burn: Burn is a new comprehensive dynamic Deep Learning Framework built using Rust with extreme flexibility, compute efficiency and portability as its primary goals.][c~burn~github]
-- [tensorflow: Rust language bindings for TensorFlow](https://github.com/tensorflow/rust)
+- [tensorflow: Rust language bindings for TensorFlow][tensorflow-rust~github]
 
 </div>

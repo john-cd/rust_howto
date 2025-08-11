@@ -40,14 +40,14 @@ The Rust ML ecosystem is relatively young compared to Python's. However, Rust's 
 - [Why Rust is becoming a contender in AI development][blog~why-rust-is-becoming-a-contender-in-ai-development]↗.
 - [Choosing the Right Rust Machine Learning Framework][blog~choosing-the-right-machine-learning-framework]↗.
 - [ML in Rust - Ranking][ml-in-rust-ossinsight~website]↗.
-- [Data Processing](https://www.arewelearningyet.com/data-preprocessing/)↗.
-- [Data Structures](https://www.arewelearningyet.com/data-structures/)↗.
-- [GPU Computing](https://www.arewelearningyet.com/gpu-computing/)↗.
-- [Metaheuristics](https://www.arewelearningyet.com/metaheuristics/)↗.
-- [MLOps](https://www.arewelearningyet.com/mlops/)↗.
-- [Natural Language Processing](https://www.arewelearningyet.com/nlp/)↗.
-- [Reinforcement learning](https://www.arewelearningyet.com/reinforcement/)↗.
-- [Scientific Computing](https://www.arewelearningyet.com/scientific-computing/)↗.
+- [Data Processing][are-we-learning-yet?-data-preprocessing~website]↗.
+- [Data Structures][are-we-learning-yet?-data-structures~website]↗.
+- [GPU Computing][are-we-learning-yet?-gpu-computing~website]↗.
+- [Metaheuristics][are-we-learning-yet?-metaheuristics~website]↗.
+- [MLOps][are-we-learning-yet?-mlops~website]↗.
+- [Natural Language Processing][are-we-learning-yet?-nlp~website]↗.
+- [Reinforcement learning][are-we-learning-yet?-reinforcement~website]↗.
+- [Scientific Computing][are-we-learning-yet?-scientific-computing~website]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
@@ -56,7 +56,7 @@ The Rust ML ecosystem is relatively young compared to Python's. However, Rust's 
 [write](https://github.com/john-cd/rust_howto/issues/472)
 Review tch-rs, burn, ort, rust-bert, TensorFlow/rust, tract, cudarc, DFDX.
 
-- [Awesome-Rust-Neural-Network: A curated collection of Rust projects related to neural networks, designed to complement "Are We Learning Yet?"](https://github.com/BurtonQin/Awesome-Rust-Neural-Network)↗.
+- [Awesome-Rust-Neural-Network: A curated collection of Rust projects related to neural networks, designed to complement "Are We Learning Yet?"][awesome-rust-neural-network~github]↗.
 - [autodiff in std::autodiff](https://doc.rust-lang.org/std/autodiff/attr.autodiff.html)↗.
 
 [`burn.dev`](https://burn.dev)↗.

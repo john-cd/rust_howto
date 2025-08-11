@@ -83,7 +83,7 @@ For things you do not want [`rustfmt`][c~rustfmt~docs]↗{{hi:rustfmt}} to mangl
 
 ## References {#references}
 
-- [The Rust Style Guide](https://doc.rust-lang.org/stable/style-guide)↗.
+- [The Rust Style Guide][style-guide~website]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

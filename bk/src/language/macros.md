@@ -135,7 +135,7 @@ Macros-by-example are expanded at compile-time, meaning they incur no runtime pe
   - Attribute-like macros (outer attribute `#[route(GET, "/")]`, where `route` is a custom name; or inner attribute `#![foo="bar"]`) modify the behavior of items (e.g., functions or modules) they are applied to.
   - Function-like procedural macros (`my_proc_macro!(...)`) have the same call syntax as macros-by-example.
 
-Read the sections below; the [macro](https://doc.rust-lang.org/book/ch20-05-macros.html)↗ chapter of the Rust book; and the ["Little Book of Rust Macros"](https://lukaswirth.dev/tlborm)↗ for more details.
+Read the sections below; the [macro][book~rust~ch20-05-macros]↗ chapter of the Rust book; and the ["Little Book of Rust Macros"][book~little-book-of-rust-macros]↗ for more details.
 
 ### Write Macros-by-Example {#macros-by-example}
 
@@ -172,7 +172,7 @@ You can use _metavariables_ to capture parts of a macro's input. They are prefix
 - `pat_param`: (part of) a pattern without `|`,
 - `path`: a type path, e.g. `std::future::Future` or `::std::ops::FnOnce(isize) -> isize`,
 - `stmt`: a statement without the trailing semicolon (except for item statements that require semicolons) , e.g. `let x = 5;`,
-- `tt`: a [token tree](https://lukaswirth.dev/tlborm/syntax-extensions/source-analysis.html#token-trees)↗, i.e. a single token (identifier, Rust keyword, operator, or literal) or multiple tokens within matching delimiters `()`, `[]`, or `{}`,
+- `tt`: a [token tree][book~little-book-of-rust-macros~token-trees]↗, i.e. a single token (identifier, Rust keyword, operator, or literal) or multiple tokens within matching delimiters `()`, `[]`, or `{}`,
 - `ty`: a type, e.g. `bool`, `[(i32, i32); 3]`, `impl Trait`, `dyn Trait + Send + Sync`...
 - `vis`: a possibly empty visibility qualifier, e.g. `pub`, `pub(crate)`...
 
@@ -186,7 +186,7 @@ In the following example, `$e:expr`, `$e1:expr`, `$e2:expr` each capture a Rust 
 {{#include ../../crates/language/examples/macros/macro_by_example_metavariables.rs:example}}
 ```
 
-More complex [metavariable expressions](https://lukaswirth.dev/tlborm/decl-macros/macros-methodical.html#metavariable-expressions)↗ support is available in nightly Rust.
+More complex [metavariable expressions][book~little-book-of-rust-macros~metavariable-expressions]↗ support is available in nightly Rust.
 
 #### Use Repetitions in Macros-by-Example {#repetitions}
 
@@ -235,7 +235,7 @@ You may therefore use compile-time type checking to ensure that a macro argument
 
 Macros can be used to create domain-specific languages (DSLs) within Rust code. A DSL is a specialized language tailored to a specific problem domain, making the code easier to write - it may be JSON-like; `printf`-like; SQL-like; or whatever fits your needs.
 
-Indeed, what is passed to a macro does not need to be valid Rust. Macros-by-example, for example, can accept arbitrary sequences of tokens by matching multiple [token trees](https://lukaswirth.dev/tlborm/syntax-extensions/source-analysis.html#token-trees)↗:
+Indeed, what is passed to a macro does not need to be valid Rust. Macros-by-example, for example, can accept arbitrary sequences of tokens by matching multiple [token trees][book~little-book-of-rust-macros~token-trees]↗:
 
 ```rust,editable
 {{#include ../../crates/language/examples/macros/token_tree.rs:example}}
@@ -334,7 +334,7 @@ struct MyStruct {
 
 #### Create Custom Attributes with Procedural Macros {#attribute-macros}
 
-[Attribute procedural macros](https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.attribute)↗ define new outer attributes.
+[Attribute procedural macros][book~rust-reference~procedural-macros-attribute]↗ define new outer attributes.
 
 - Create a separate crate and add it to your main crate's `Cargo.toml`, as above.
 - Add the following to `lib.rs`, the root of the new crate:
@@ -351,7 +351,7 @@ struct MyStruct {
 
 #### Create Function-like Procedural Macros {#function-like-procedural-macros}
 
-[Function-like procedural macros](https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.attribute)↗ are invoked using the macro invocation operator (!).
+[Function-like procedural macros][book~rust-reference~procedural-macros-attribute]↗ are invoked using the macro invocation operator (!).
 
 - Create a separate crate and add it to your main crate's `Cargo.toml`, as above.
 - Add the following to `lib.rs`, the root of the new crate:
@@ -410,7 +410,7 @@ Debugging macros can be challenging. To see what a macro expands to and debug it
 - [Rust Reference - Macros][book~rust-reference~macros]↗.
 - [Rust by Example - Macros][book~rust-by-example~macros]↗.
 - The [Little Book of Rust Macros][book~rust-macros]↗.
-- [Macros in Rust: A tutorial with examples](https://blog.logrocket.com/macros-in-rust-a-tutorial-with-examples)↗.
+- [Macros in Rust: A tutorial with examples][blog~macros-in-rust-a-tutorial-with-examples]↗.
 
 ## Related Topics {#related-topics}
 

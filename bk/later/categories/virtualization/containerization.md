@@ -38,9 +38,9 @@ Mention https://github.com/moby/buildkit
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/1225)
 need in-depth review
-cover [podman](https://github.com/containers/podman)
+cover [podman][podman~github]
 cover [containerd-rust-extensions][c~runc~github] A collection of Rust crates to extend containerd.
 
-- [cgroups-rs](https://crates.io/crates/cgroups-rs)
+- [cgroups-rs][c~cgroups~crates.io]
 
 </div>

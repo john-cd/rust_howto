@@ -18,24 +18,24 @@
 <div class="hidden">
 [organize / edit](https://github.com/john-cd/rust_howto/issues/594)
 
-- [Neon Serverless Postgres](https://neon.tech)
+- [Neon Serverless Postgres][neon~website]
 
-- [ClickHouse](https://github.com/ClickHouse/ClickHouse), a real-time analytics DBMS.
+- [ClickHouse][clickhouse~github], a real-time analytics DBMS.
 - [`vector`: A high-performance observability data pipeline.](https://github.com/vectordotdev/vector)
 
 - [`cube-js`: Cube — The Semantic Layer for Building Data Applications](https://github.com/cube-js/cube)
-- [Apache OpenDAL](https://opendal.apache.org)
+- [Apache OpenDAL][opendal~website]
 
 - ["Could you recommend any projects that utilize Rust for data engineering?"](https://www.reddit.com/r/rust/comments/1hx2i98/comment/m67j6dq)
 
-- [Data with Rust](https://datawithrust.com/)
+- [Data with Rust][datawithrust~website]
 
-- [Big Data Processing for the AI Era - LakeSail](https://lakesail.com/)
+- [Big Data Processing for the AI Era - LakeSail][lakesail~website]
 - [`lance`](https://github.com/lancedb/lance): Modern columnar data format for ML and LLMs implemented in Rust. Convert from parquet in 2 lines of code for 100x faster random access, vector index, and data versioning. Compatible with Pandas, DuckDB, Polars, Pyarrow, and PyTorch with more integrations coming..
 - [`fluvio`](https://github.com/infinyon/fluvio): Lean and mean distributed stream processing system written in rust and web assembly. Alternative to Kafka + Flink in one.
-- [Seq — centralized structured logs](https://datalust.co/)
+- [Seq — centralized structured logs][datalust~website]
 
-- [AWS Lambda + DuckDB (and Delta Lake) - by Daniel Beach](https://dataengineeringcentral.substack.com/p/aws-lambda-duckdb-and-delta-lake)
+- [AWS Lambda + DuckDB (and Delta Lake) - by Daniel Beach][blog~aws-lambda-duckdb-and-delta-lake]
 
 - [Elusion][c~elusion~lib.rs] - Rust utility
 
@@ -47,6 +47,6 @@
 
 - [`recurring-tasks`: Rust crate to build an app that runs recurring, periodic tasks](https://github.com/rogusdev/recurring-tasks)
 
-- [Hydro](https://hydro.run/docs/hydro)
+- [Hydro][hydro~website]
 
 </div>

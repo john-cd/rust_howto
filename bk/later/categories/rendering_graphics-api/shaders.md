@@ -63,7 +63,7 @@ Compute Shaders are often handled through the low-level graphics [APIs][p~apis] 
 ## References {#references}
 
 - [[typecasts | Typecasts]] and especially [`bytemuck`][c~bytemuck~docs]↗{{hi:bytemuck}} - A crate for mucking around with piles of bytes.
-- [Are we Game yet? - Shaders](https://arewegameyet.rs/ecosystem/shader/).
+- [Are we Game yet? - Shaders][are-we-game-yet?-shader~website].
 
 ## Related Topics {#related-topics}
 

@@ -6,13 +6,13 @@ This section provides a few examples of software written in Rust, organized by t
 
 - Operating System Components:
   - Kernel modules (Parts of the Linux kernel are now being written in Rust.)
-    - [Rust-for-Linux: Adding support for the Rust language to the Linux kernel.](https://github.com/Rust-for-Linux/linux)↗.
+    - [Rust-for-Linux: Adding support for the Rust language to the Linux kernel.][rust-for-linux~github]↗.
   - Bootloaders.
   - Virtual machine monitors. See [[virtualization | Virtualization]].
   - Examples:
     - `Redox OS`: A microkernel operating system written in Rust, aiming for safety and security.
     - `Stratis`: A local storage management system for Linux.
-    - `youki` [(GitHub)](https://github.com/youki-dev/youki)↗: a container runtime.
+    - `youki` [(GitHub)][youki~github]↗: a container runtime.
     - `Kata Containers` [(GitHub)](https://github.com/kata-containers/kata-containers)↗: lightweight Virtual Machines (VMs) that feel and perform like containers, but provide the workload isolation and security advantages of VMs.
     - `firecracker` [(GitHub)](https://github.com/firecracker-microvm/firecracker): microVMs for serverless computing.
 - Embedded Systems:
@@ -79,7 +79,7 @@ This section provides a few examples of software written in Rust, organized by t
   - Database drivers.
   - Examples:
     - [`TiKV`](https://github.com/tikv/tikv): an open-source, distributed, and transactional key-value database.
-    - [`neon`][c~neon~docs] [(GitHub)](https://github.com/neondatabase/neon)↗: Serverless Postgres. Separated storage and compute to offer autoscaling, code-like database branching, and scale to zero.
+    - [`neon`][c~neon~docs] [(GitHub)][neon~github]↗: Serverless Postgres. Separated storage and compute to offer autoscaling, code-like database branching, and scale to zero.
     - [`ArangoDB`](https://arangodb.com): a graph database.
 - Analytics:
   - [`databend`](https://github.com/databendlabs/databend) - alternative to Snowflake.
@@ -145,15 +145,15 @@ This section provides a few examples of software written in Rust, organized by t
 <div class="hidden">
 [organize; decide if we need other pages or if we consolidate here; table?](https://github.com/john-cd/rust_howto/issues/993)
 
-- [awesome-rust-tools: Harness the power of Rust. Those fast productivity tools based on Rust.](https://github.com/unpluggedcoder/awesome-rust-tools)
-- [awesome-alternatives-in-rust: A curated list of replacements for existing software written in Rust](https://github.com/TaKO8Ki/awesome-alternatives-in-rust)
+- [awesome-rust-tools: Harness the power of Rust. Those fast productivity tools based on Rust.][awesome-rust-tools~github]
+- [awesome-alternatives-in-rust: A curated list of replacements for existing software written in Rust][awesome-alternatives-in-rust~github]
 
-- [RustDesk](https://rustdesk.com/docs/en/)
-- [OxidOS Automotive](https://oxidos.io/)
+- [RustDesk][rustdesk~website]
+- [OxidOS Automotive][oxidos~website]
 - [ripgrep: `ripgrep` recursively searches directories for a regex pattern while respecting your gitignore](https://github.com/BurntSushi/ripgrep)
-- [zola: A fast static site generator in a single binary with everything built-in. https://www.getzola.org](https://github.com/getzola/zola)
+- [zola: A fast static site generator in a single binary with everything built-in. https://www.getzola.org][zola~github]
 - [solana: Web-Scale Blockchain for fast, secure, scalable, decentralized apps and marketplaces.][c~solana~github]
-- [linkerd2: Ultralight, security-first service mesh for Kubernetes. Main repo for Linkerd 2.x.](https://github.com/linkerd/linkerd2)
+- [linkerd2: Ultralight, security-first service mesh for Kubernetes. Main repo for Linkerd 2.x.][linkerd2~github]
 - [bottlerocket: An operating system designed for hosting containers][c~bottlerocket~github]
 - [`databend`: 𝗗𝗮𝘁𝗮, 𝗔𝗻𝗮𝗹𝘆𝘁𝗶𝗰𝘀 & 𝗔𝗜. Modern alternative to Snowflake. Cost-effective and simple for massive-scale analytics. https://databend.com](https://github.com/databendlabs/databend)
 - [`rerun`: Visualize streams of multimodal data. Free, fast, easy to use, and simple to integrate. Built in Rust.](https://github.com/rerun-io/rerun)
@@ -173,27 +173,27 @@ This section provides a few examples of software written in Rust, organized by t
 - [`firecracker`: Secure and fast microVMs for serverless computing.](https://github.com/firecracker-microvm/firecracker)
 - [`Warp`: Warp is a modern, Rust-based terminal with AI built in so you and your team can build great software, faster.](https://github.com/warpdotdev/Warp)
 - [RustPython: A Python Interpreter written in Rust][rustpython~github]
-- [wezterm: A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust](https://github.com/wez/wezterm)
+- [wezterm: A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust][wezterm~github]
 - [redox-os: Mirror of https://gitlab.redox-os.org/redox-os/redox][redox~github]
-- [Neon: Serverless Postgres. We separated storage and compute to offer autoscaling, code-like database branching, and scale to zero.](https://github.com/neondatabase/neon)
+- [Neon: Serverless Postgres. We separated storage and compute to offer autoscaling, code-like database branching, and scale to zero.][neon~github]
 - [navi: An interactive cheatsheet tool for the command-line](https://github.com/denisidoro/navi)
-- [RustScan: The Modern Port Scanner](https://github.com/RustScan/RustScan)
-- [workers-rs: Write Cloudflare Workers in 100% Rust via WebAssembly](https://github.com/cloudflare/workers-rs)
+- [RustScan: The Modern Port Scanner][rustscan~github]
+- [workers-rs: Write Cloudflare Workers in 100% Rust via WebAssembly][workers-rs~github]
 - [Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdrant.io/][c~qdrant~github]
 - [Hyperlight is a lightweight Virtual Machine Manager (VMM) designed to be embedded within applications. It enables safe execution of untrusted code within micro virtual machines with very low latency and minimal overhead.][c~hyperlight~github]
-- [Perseus](https://framesurge.sh/perseus/en-US/)
-- [DORA (Dataflow-Oriented Robotic Architecture) is middleware designed to streamline and simplify the creation of AI-based robotic applications. It offers low latency, composable, and distributed dataflow capabilities. Applications are modeled as directed graphs, also referred to as pipelines.](https://github.com/dora-rs/dora)
+- [Perseus][perseus~website]
+- [DORA (Dataflow-Oriented Robotic Architecture) is middleware designed to streamline and simplify the creation of AI-based robotic applications. It offers low latency, composable, and distributed dataflow capabilities. Applications are modeled as directed graphs, also referred to as pipelines.][dora~github]
 - [television][c~television~crates.io]
 
-- [Fish 4.0: The Fish Of Theseus](https://fishshell.com/blog/rustport/)
+- [Fish 4.0: The Fish Of Theseus][blog~fishshell-rustport]
 
 - [shoes: A multi-protocol proxy server written in Rust (HTTP, SOCKS5, Vmess, Vless, Shadowsocks, Trojan, Snell, Hysteria2, TUIC v5)][c~shoes~github]
 
-- [Jujutsu (docs)](https://jj-vcs.github.io/jj/latest/)
-- [Steve's Jujutsu Tutorial](https://steveklabnik.github.io/jujutsu-tutorial/)
+- [Jujutsu (docs)][doc~jujutsu]
+- [Steve's Jujutsu Tutorial][blog~steveklabnik-jujutsu-tutorial]
 
-- [Codename Goose](https://block.github.io/goose/docs/quickstart)
+- [Codename Goose][doc~block-goose]
 - [grex: A command-line tool and Rust library with Python bindings for generating regular expressions from user-provided test cases][c~grex~github]
-- [youki: A container runtime written in Rust](https://github.com/youki-dev/youki)
+- [youki: A container runtime written in Rust][youki~github]
 
 </div>

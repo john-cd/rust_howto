@@ -29,9 +29,9 @@ Kin in spirit to [Python][p~python]'s `scikit-learn`, [`linfa`][c~linfa~docs]↗
 ## See Also
 
 - [Are we learning yet?][are-we-learning-yet?~website]↗.
-- [Clustering](https://www.arewelearningyet.com/clustering/)↗.
-- [Decision Trees](https://www.arewelearningyet.com/decision-trees/)↗.
-- [Linear Classifiers](https://www.arewelearningyet.com/linear-classifiers/)↗.
+- [Clustering][are-we-learning-yet?-clustering~website]↗.
+- [Decision Trees][are-we-learning-yet?-decision-trees~website]↗.
+- [Linear Classifiers][are-we-learning-yet?-linear-classifiers~website]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

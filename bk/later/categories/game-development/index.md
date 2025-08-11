@@ -47,18 +47,18 @@ See also:
 
 Are we Game yet?
 
-- [AI](https://arewegameyet.rs/ecosystem/ai/): AI libraries, steering, behaviour trees, planners, etc.
-- [Animation](https://arewegameyet.rs/ecosystem/animation/): rigging, tweening, anything related to animation.
-- [Audio](https://arewegameyet.rs/ecosystem/audio/): Wrappers for FMOD, OpenAL, MIDI and similar, and higher level APIs.
-- [ECS](https://arewegameyet.rs/ecosystem/ecs/): Entity Component System implementations.
-- [Input](https://arewegameyet.rs/ecosystem/input/): Libraries to handle controllers, gamepads, keyboards, etc.
-- [Math](https://arewegameyet.rs/ecosystem/math/): Linear algebra libraries, quaternions, color conversion and more.
-- [Mesh Tools](https://arewegameyet.rs/ecosystem/mesh/): Tools for optimising and processing meshes.
-- [Networking](https://arewegameyet.rs/ecosystem/networking/): Multiplayer, Protocols, and more.
-- [Tools](https://arewegameyet.rs/ecosystem/tools/): Tools & other game-dev related libraries.
-- [UI](https://arewegameyet.rs/ecosystem/ui/): Immediate mode UI libraries and more.
-- [VR](https://arewegameyet.rs/ecosystem/vr/): VR engines and libraries.
-- [Windowing](https://arewegameyet.rs/ecosystem/windowing/) Windowing and Context Creation crates.
+- [AI][are-we-game-yet?-ai~website]: AI libraries, steering, behaviour trees, planners, etc.
+- [Animation][are-we-game-yet?-animation~website]: rigging, tweening, anything related to animation.
+- [Audio][are-we-game-yet?-audio~website]: Wrappers for FMOD, OpenAL, MIDI and similar, and higher level APIs.
+- [ECS][are-we-game-yet?-ecs~website]: Entity Component System implementations.
+- [Input][are-we-game-yet?-input~website]: Libraries to handle controllers, gamepads, keyboards, etc.
+- [Math][are-we-game-yet?-math~website]: Linear algebra libraries, quaternions, color conversion and more.
+- [Mesh Tools][are-we-game-yet?-mesh~website]: Tools for optimising and processing meshes.
+- [Networking][are-we-game-yet?-networking~website]: Multiplayer, Protocols, and more.
+- [Tools][are-we-game-yet?-tools~website]: Tools & other game-dev related libraries.
+- [UI][are-we-game-yet?-ui~website]: Immediate mode UI libraries and more.
+- [VR][are-we-game-yet?-vr~website]: VR engines and libraries.
+- [Windowing][are-we-game-yet?-windowing~website] Windowing and Context Creation crates.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

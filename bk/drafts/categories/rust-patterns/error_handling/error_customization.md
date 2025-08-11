@@ -82,6 +82,6 @@ Do not use [Error Chain][c~error-chain~docs]{{hi:error-chain}}↗, which is depr
 [error_customization: write / organize](https://github.com/john-cd/rust_howto/issues/463)
 color-eyre is archived -> eyre
 
-- [eyre-rs](https://github.com/eyre-rs)
+- [eyre-rs][c~eyre~github]
 
 </div>

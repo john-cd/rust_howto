@@ -74,20 +74,20 @@ Microcontrollers respond to events via interrupts.
 <div class="hidden">
 [write; cover](https://github.com/john-cd/rust_howto/issues/346)
 
-- [awesome-embedded-rust: Curated list of resources for Embedded and Low-level development in the Rust programming language](https://github.com/rust-embedded/awesome-embedded-rust)
-- [Are We RTOS Yet?](https://arewertosyet.com/)
+- [awesome-embedded-rust: Curated list of resources for Embedded and Low-level development in the Rust programming language][awesome-embedded-rust~github]
+- [Are We RTOS Yet?][arewertosyet~website]
 
 ## Libs
 
-- [embassy: Modern embedded framework, using Rust and async.](https://github.com/embassy-rs/embassy)
-- [rust-iot-platform: A high-performance IoT development platform built with Rust, designed for multi-protocol support and real-time data processing. This platform supports MQTT, WebSockets (WS), TCP, and CoAP protocols, making it highly flexible for diverse IoT applications.](https://github.com/iot-ecology/rust-iot-platform)
-- [stm32-rs: Embedded Rust device crates for STM32 microcontrollers](https://github.com/stm32-rs/stm32-rs)
+- [embassy: Modern embedded framework, using Rust and async.][embassy~github]
+- [rust-iot-platform: A high-performance IoT development platform built with Rust, designed for multi-protocol support and real-time data processing. This platform supports MQTT, WebSockets (WS), TCP, and CoAP protocols, making it highly flexible for diverse IoT applications.][rust-iot-platform~github]
+- [stm32-rs: Embedded Rust device crates for STM32 microcontrollers][stm32-rs~github]
 - [rtic: Real-Time Interrupt-driven Concurrency (RTIC) framework for ARM Cortex-M microcontrollers][c~rtic~github]
 
 ## Panic Handling {#skip}
 
 - [better-panic: A Python-inspired `panic` handler for rust](https://github.com/mitsuhiko/better-panic)
-- [No-Panic Rust: A Nice Technique for Systems Programming](https://blog.reverberate.org/2025/02/03/no-panic-rust.html)
+- [No-Panic Rust: A Nice Technique for Systems Programming][blog~no-panic]
 - [no-panics-whatsoever (crates.io)][c~no-panics-whatsoever~crates.io]
 
 </div>

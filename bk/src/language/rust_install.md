@@ -59,7 +59,7 @@ cargo run   # Run the executable.
 
 `cargo run` builds the code if `cargo build` has not been invoked before or if the code has changed.
 
-For more details, peruse the [Getting Started](https://doc.rust-lang.org/book/ch01-00-getting-started.html)↗ chapter of the Rust book.
+For more details, peruse the [Getting Started][book~rust~ch01-00-getting-started]↗ chapter of the Rust book.
 
 Fifth, consider adding your project to source control. If you use `git`, you can initialize it using the `git init` command and add a `.gitignore` file to skip the folder where `cargo` stores its cache and outputs:
 
@@ -74,7 +74,7 @@ git add .
 git commit
 ```
 
-Review the [git](https://git-scm.com/docs/user-manual.html) manual for more commands.
+Review the [git][git~website] manual for more commands.
 
 ## References {#references}
 

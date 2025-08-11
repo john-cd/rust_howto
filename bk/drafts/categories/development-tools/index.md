@@ -96,14 +96,14 @@ See also [[cross_compiling | Cross Compiling (Cargo Plugins)]].
 
 ## Editors
 
-- [lapce: Lightning-fast and Powerful Code Editor written in Rust](https://github.com/lapce/lapce)
-- [intellij-rust: Rust plugin for the IntelliJ Platform](https://github.com/intellij-rust/intellij-rust)
+- [lapce: Lightning-fast and Powerful Code Editor written in Rust][lapce~github]
+- [intellij-rust: Rust plugin for the IntelliJ Platform][intellij-rust~github]
 
 ## Registries {#skip}
 
 - [alexandrie: An alternative crate registry, implemented in Rust.][c~alexandrie~github]
-- [meuse: A private Cargo crate registry, for Rust](https://github.com/mcorbin/meuse)
-- [kellnr: The registry for Rust crates](https://github.com/kellnr/kellnr)
+- [meuse][meuse~github]: A private Cargo crate registry, for Rust
+- [kellnr][kellnr~github]: The registry for Rust crates
 - [panamax: Mirror rustup and crates.io repositories, for offline Rust and cargo usage.][c~panamax~github]
 
 ## Tests
@@ -134,12 +134,12 @@ See also [[cross_compiling | Cross Compiling (Cargo Plugins)]].
 
 ## Cross Compilation
 
-- [Cross-Platform Development](https://rustmeup.com/tutorials/cross-platform-development)
-- [Cross-compilation in Rust](https://kerkour.com/rust-cross-compilation)
+- [Cross-Platform Development][rustmeup-tutorials-cross-platform-development~website]
+- [Cross-compilation in Rust][blog~kerkour-rust-cross-compilation]
 
 ## Live Reload
 
-- [So you want to live-reload Rust](https://fasterthanli.me/articles/so-you-want-to-live-reload-rust)
+- [So you want to live-reload Rust][blog~fasterthanli.me-so-you-want-to-live-reload-rust]
 - [`watchexec`: Executes commands in response to file modifications](https://github.com/watchexec/watchexec)
 
 ## CD / CI
@@ -152,16 +152,16 @@ See also [[cross_compiling | Cross Compiling (Cargo Plugins)]].
 
 - [`dotbot`: A tool that bootstraps your dotfiles](https://github.com/anishathalye/dotbot)
 
-- [Bazel at Enterprise Scale | BuildBuddy](https://www.buildbuddy.io/)
+- [Bazel at Enterprise Scale | BuildBuddy][buildbuddy~website]
 
-- [The Pants Build System](https://github.com/pantsbuild/pants)
+- [The Pants Build System][pants~github]
 
 - [`mini-docker-rust`: Very small rust docker image](https://github.com/kpcyrd/mini-docker-rust)
 
 - [`contracts`](https://crates.io/crates/contracts)
 
-- [Vagrant by HashiCorp](https://www.vagrantup.com/)
+- [Vagrant by HashiCorp][vagrantup~website]
 
-- [`include_dir` - Rust dev tool](https://lib.rs/crates/include_dir) An evolution of the include_str!() and include_bytes!() macros for embedding an entire directory tree into your binary.
+- [`include_dir` - Rust dev tool](https://lib.rs/crates/include_dir) An evolution of the `include_str!()` and `include_bytes!()` macros for embedding an entire directory tree into your binary.
 
 </div>

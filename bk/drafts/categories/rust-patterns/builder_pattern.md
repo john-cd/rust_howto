@@ -38,6 +38,6 @@ The builder pattern provides a clean and readable way to construct complex objec
 <div class="hidden">
 [write and add to index and SUMMARY](https://github.com/john-cd/rust_howto/issues/648)
 
-- [Next-gen builder macro Bon Revolutional typestate design](https://bon-rs.com/blog/bon-v3-release)
+- [Next-gen builder macro Bon Revolutional typestate design][blog~bon-v3-release]
 
 </div>

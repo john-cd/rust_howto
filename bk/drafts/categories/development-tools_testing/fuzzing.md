@@ -66,7 +66,7 @@ The [`proptest`][c~proptest~docs]↗{{hi:proptest}}, [`quickcheck`][c~quickcheck
 
 <div class="hidden">
 [fuzzing: review fuzzing crates](https://github.com/john-cd/rust_howto/issues/339)
-cover [bolero](https://github.com/camshaft/bolero/)
+cover [bolero][bolero~github]
 [`bolero`][c~bolero~docs]↗{{hi:bolero}}
 cover valgrind
 [`valgrind`][c~valgrind~docs]↗{{hi:valgrind}}

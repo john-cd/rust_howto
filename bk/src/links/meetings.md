@@ -6,21 +6,21 @@
 
 | Conference | Location / Region | Description |
 |---|---|---|
-| [RustConf](https://rustconf.com)↗ | North America | The official annual conference of the Rust language, organized by the Rust Foundation. It's the largest and one of the longest-running Rust events. |
-| [EuroRust](https://eurorust.eu/)↗ | Europe (Paris, France) and online | Rust conference in Europe, covering a wide range of topics from systems programming to web development. |
-| [Rust Nation UK](https://www.rustnationuk.com)↗ | United Kingdom | A large, community-driven conference in the UK. |
-| [Oxidize](https://oxidizeconf.com)↗ | Berlin, Germany | An annual conference focusing on the use of Rust in embedded and safety-critical systems. |
-| [RustLab](https://rustlab.it)↗ | Florence, Italy | The annual Italian conference on Rust. |
-| [Rust Forge](https://rustforgeconf.com)↗ | Wellington, New Zealand | The first major Rust conference in the Asia-Pacific region. |
-| [RustFest](https://rustfest.global)↗ | Various (Europe, LATAM) | Last scheduled in 2021. |
+| [RustConf][rustconf.com~website]↗ | North America | The official annual conference of the Rust language, organized by the Rust Foundation. It's the largest and one of the longest-running Rust events. |
+| [EuroRust][eurorust.eu~website]↗ | Europe (Paris, France) and online | Rust conference in Europe, covering a wide range of topics from systems programming to web development. |
+| [Rust Nation UK][rustnationuk~website]↗ | United Kingdom | A large, community-driven conference in the UK. |
+| [Oxidize][oxidizeconf~website]↗ | Berlin, Germany | An annual conference focusing on the use of Rust in embedded and safety-critical systems. |
+| [RustLab][rustlab.it~website]↗ | Florence, Italy | The annual Italian conference on Rust. |
+| [Rust Forge][rustforgeconf~website]↗ | Wellington, New Zealand | The first major Rust conference in the Asia-Pacific region. |
+| [RustFest][rustfest.global~website]↗ | Various (Europe, LATAM) | Last scheduled in 2021. |
 
-Consult [Rust Foundation: Events](https://rustfoundation.org/event)↗ and [dev.events](https://dev.events/rust)↗ for additional events.{{hi:Conferences}}
+Consult [Rust Foundation: Events][rustfoundation-events~website]↗ and [dev.events][dev.events-rust~website]↗ for additional events.{{hi:Conferences}}
 
 ## Prominent Local Meetups {#meetups}
 
 [Rust Community Calendar](https://calendar.google.com/calendar/u/0/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com&pli=1)↗.{{hi:Meetups}}
 
-The following are some of the largest and most active local user groups. They hold regular meetings, talks, and workshops. You can find many more local meetups on platforms like [meetup.com](https://meetup.com)↗, the [Rust Foundation's list](https://prev.rust-lang.org/en-US/user-groups.html)↗ and [this list (code-maven.com)](https://rust.code-maven.com/user-groups)↗.
+The following are some of the largest and most active local user groups. They hold regular meetings, talks, and workshops. You can find many more local meetups on platforms like [meetup.com][meetup~website]↗, the [Rust Foundation's list](https://prev.rust-lang.org/en-US/user-groups.html)↗ and [this list (code-maven.com)](https://rust.code-maven.com/user-groups)↗.
 
 | Meetup Name | Location |
 |---|---|

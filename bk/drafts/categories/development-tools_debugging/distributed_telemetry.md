@@ -22,7 +22,7 @@ The [`opentelemetry`]( ){{hi: }} crate is an OpenTelemetry API for Rust.
 - [OpenTelemetry with Rust - documentation][opentelemetry~rust]↗.
 - [OpenTelemetry Examples with Rust](https://tirslo.medium.com/opentelemetry~examples-with-rust-67f77ccb025f)↗.
 - [`Jaeger`](https://github.com/jaegertracing/jaeger)↗ is a Cloud Native Computing Foundation (CNCF) open-source, end-to-end distributed tracing system built for monitoring and troubleshooting microservices-based architectures. Usually incorporated as an OpenTelemetry backend, it is used to track and visualize user request behavior across the distributed components of complex systems.
-- [Zipkin](https://zipkin.io)↗ is a distributed tracing system.
+- [Zipkin][zipkin~website]↗ is a distributed tracing system.
 
 ## Metrics with Prometheus {#prometheus}
 
@@ -40,9 +40,9 @@ Prometheus instrumentation library for Rust applications. Prometheus is an open-
 
 ### Useful Links {#skip}
 
-- [Grafana](https://grafana.com).
-- [Prometheus](https://github.com/prometheus/prometheus) monitoring system and time series database.
-- [Thanos](https://thanos.io): open source, highly available Prometheus setup with long term storage capabilities.
+- [Grafana][grafana~website].
+- [Prometheus][prometheus~github] monitoring system and time series database.
+- [Thanos][thanos~website]: open source, highly available Prometheus setup with long term storage capabilities.
 
 ## `OpenObserve` {#open-observe}
 
@@ -54,13 +54,13 @@ Prometheus instrumentation library for Rust applications. Prometheus is an open-
 
 ## Other Common Observability Tools & Platforms {#skip}
 
-- [Fluentd](https://github.com/fluent/fluentd) open-source log collector.
-- [Splunk](https://www.splunk.com) is a unified security and observability platform.
-- [DataDog](https://www.datadoghq.com).
-- [Graphite](https://graphite.readthedocs.io/en/latest).
-- [InfluxDB](https://www.influxdata.com).
-- [Nagios](https://www.nagios.org).
-- [New Relic](https://newrelic.com).
+- [Fluentd][fluentd~github] open-source log collector.
+- [Splunk][splunk~website] is a unified security and observability platform.
+- [DataDog][datadoghq~website].
+- [Graphite][graphite-docs~website].
+- [InfluxDB][influxdata~website].
+- [Nagios][nagios~website].
+- [New Relic][newrelic~website].
 
 ## Related Topics {#related-topics}
 
@@ -73,6 +73,6 @@ Prometheus instrumentation library for Rust applications. Prometheus is an open-
 <div class="hidden">
 [write / expand / organize. what to cover?](https://github.com/john-cd/rust_howto/issues/1343)
 
-- [quickwit: Cloud-native search engine for observability. An open-source alternative to Datadog, Elasticsearch, Loki, and Tempo.](https://github.com/quickwit-oss/quickwit)
+- [quickwit: Cloud-native search engine for observability. An open-source alternative to Datadog, Elasticsearch, Loki, and Tempo.][quickwit~github]
 
 </div>

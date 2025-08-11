@@ -56,7 +56,7 @@ See [[python | Python]].
 
 Alternatively, you may embed a WebAssembly runtime like [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}, or a WebAssembly interpreter (e.g. [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}}), into your Rust application.
 
-WASM offers portable bytecode and sandboxed execution. Many languages (C, C++, Rust, Go, C#...) compile to or have their VMs in WASM. A list is found in [Awesome WebAssembly Languages](https://github.com/appcypher/awesome-wasm-langs#typescript)↗.
+WASM offers portable bytecode and sandboxed execution. Many languages (C, C++, Rust, Go, C#...) compile to or have their VMs in WASM. A list is found in [Awesome WebAssembly Languages][awesome-wasm-langs-typescript~github]↗.
 
 See [[wasm | WASM]] and [[wasm_standalone_runtimes | WASM Standalone Runtimes]].
 
@@ -89,7 +89,7 @@ If your scripting language compiles to an executable, use the [`object`][c~objec
 - [rust-script: Run Rust files and expressions as scripts without any setup or compilation step.][c~rust-script~github]
 - [shell2batch: Coverts simple basic shell scripts to windows batch scripts.][c~shell2batch~github]
 - [cargo-scripter][c~cargo-scripter~lib.rs]
-- [rust-script | Run Rust files and expressions as scripts without any setup or compilation step.](https://rust-script.org/?ref=niccoloforlini.com)
+- [rust-script | Run Rust files and expressions as scripts without any setup or compilation step.](https://rust-script.org)
 
 [Pre-RFC: `cargo-script` for everyone - tools and infrastructure / cargo - Rust Internals](https://internals.rust-lang.org/t/pre-rfc-cargo-script-for-everyone/18639)
 

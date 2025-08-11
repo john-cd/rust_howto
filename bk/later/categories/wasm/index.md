@@ -48,11 +48,11 @@ Browser-based Execution.
 Node.js with WASM.
 Cover [`wat`][c~wat~docs]↗{{hi:wat}}, [`parity-wasm`][c~parity-wasm~docs]↗{{hi:parity-wasm}}
 
-- [WASIX - The Superset of WASI](https://wasix.org/)
+- [WASIX - The Superset of WASI][wasix~website]
 - [wasmtime: A fast and secure runtime for WebAssembly](https://github.com/bytecodealliance/wasmtime)
-- [WASI.dev](https://wasi.dev/)
+- [WASI.dev][wasi~website]
 
-- [Sycamore](https://sycamore.dev/)
+- [Sycamore][sycamore~website]
 - [sycamore: A library for creating reactive web apps in Rust and WebAssembly][c~sycamore~github]
 
 </div>
