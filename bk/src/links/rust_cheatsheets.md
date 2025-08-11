@@ -11,7 +11,7 @@
 - [Rust Cheatsheet (programming-idioms.org)](https://www.programming-idioms.org/cheatsheet/Rust)↗.
 - [Rust Cheatsheet (zerotomastery.io)][zerotomastery-rust-cheat-sheet~website]↗.
 - [The Complete(ish) Rust Cheat Sheet](https://dev.to/moekatib/the-completesh-rust-cheat-sheet-4fnn)↗.
-- [Rust Speedsheet](https://speedsheet.io/s/rust)↗.
+- [Rust Speedsheet][speedsheet~website]↗.
 - [Idiomatic Rust Snippets](https://idiomatic-rust-snippets.org/intro.html)↗.
 
 ## Comparison to Other Languages {#comparison-to-other-languages}

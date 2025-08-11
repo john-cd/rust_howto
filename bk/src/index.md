@@ -107,7 +107,7 @@ Since this book's recipes are intended to be reused as-is and encourage best pra
 
 In most examples, we have chosen to use [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}}'s [`Result`][c~anyhow::Result~docs] as the return type of any fallible function, instead of writing `std::result::Result<_, Box<dyn std::error::Error>>` or using custom [`Result`][c~std::result::Result~docs]↗{{hi:Result}} / [`Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} types.
 
-Within the code, we use the [`?`](https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html#a-shortcut-for-propagating-errors-the--operator)↗{{hi:?}} operator to easily propagate any error that implements the [`std::error::Error`][c~std::error::Error~docs]↗ trait.
+Within the code, we use the [`?`][book~rust~ch09-02-recoverable-errors-with-result-?]↗{{hi:?}} operator to easily propagate any error that implements the [`std::error::Error`][c~std::error::Error~docs]↗ trait.
 
 For more background on error handling in Rust, read [this page][book~rust~error-handling]↗ of the 'Rust book'.
 

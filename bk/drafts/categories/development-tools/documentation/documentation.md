@@ -31,7 +31,7 @@ Run `rustdoc src/lib.rs --crate-name <name>` or `cargo doc --open` to create a n
 
 ## Create Module- or Crate-level Documentation {#module-or-crate-level-documentation}
 
-Use [`//!`](https://doc.rust-lang.org/reference/comments.html#r-comments.doc)↗{{hi://!}} at the top of the file (instead of `///`{{hi:///}}) for module-level documentation.
+Use [`//!`][book~rust-reference~doc-comments]↗{{hi://!}} at the top of the file (instead of `///`{{hi:///}}) for module-level documentation.
 
 The first lines within `lib.rs` will compose the crate-level documentation front-page.
 

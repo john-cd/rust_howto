@@ -12,7 +12,7 @@ Tracing refers to the process of capturing and recording information about the e
 | Asynchronous Tracing | Supported by [`tracing`][c~tracing~docs]↗{{hi:tracing}} through its [asynchronous][p~asynchronous] span management. |
 | Output and [Formatting][p~formatting] | [`tracing-subscriber`][c~tracing-subscriber~docs]↗{{hi:tracing-subscriber}} formats and outputs traces to various destinations. |
 | Filtering | [`tracing-subscriber`][c~tracing-subscriber~docs]↗{{hi:tracing-subscriber}} allows filtering of traces based on level, target, etc. |
-| Integration with other tools | [`tracing`][c~tracing~docs]↗{{hi:tracing}} is often used with other tools like [`Jaeger`](https://www.jaegertracing.io)↗{{hi:Jaeger}} or [`Zipkin`](https://zipkin.io)↗{{hi:Zipkin}} for distributed tracing. |
+| Integration with other tools | [`tracing`][c~tracing~docs]↗{{hi:tracing}} is often used with other tools like [`Jaeger`](https://www.jaegertracing.io)↗{{hi:Jaeger}} or [`Zipkin`][zipkin~website]↗{{hi:Zipkin}} for distributed tracing. |
 
 ## Log Trace Data to `stdout` {#tracing-basics}
 

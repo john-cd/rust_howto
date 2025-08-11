@@ -46,7 +46,7 @@ bk
 
 In the `tests` folder, you will typically find multi-file integration tests, meaning folders, each named after a chapter (a `*.md` file below `bk/src`), containing a `main.rs` file along several modules (`.rs` files), each a code example.
 
-See [Cargo package layout](https://doc.rust-lang.org/cargo/guide/project-layout.html)↗ for more details.
+See [Cargo package layout][cargo-package-layout]↗ for more details.
 
 ## Common Commands
 
@@ -73,4 +73,5 @@ cargo clippy --tests --examples
 cargo nextest run --status-level all --success-output final
 ```
 
-[crates.io~website]: https://crates.io/
+[crates.io~website]: https://crates.io
+[cargo-package-layout]: https://doc.rust-lang.org/cargo/guide/project-layout.html

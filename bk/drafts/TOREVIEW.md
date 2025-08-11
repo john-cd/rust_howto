@@ -8,8 +8,8 @@
 
 ## Markdown {#skip}
 
-- [`mdbook-pdf`](https://crates.io/crates/mdbook-pdf)
-- [`mdbook-tools`](https://lib.rs/crates/mdbook-tools)
+- [`mdbook-pdf`][c~mdbook-pdf~crates.io]
+- [`mdbook-tools`][c~mdbook-tools~lib.rs]
 - [Environment Variables - mdBook Documentation][book~mdbook~environment-variables]
 
 ## AI {#skip}
@@ -55,7 +55,7 @@
 
 ## Layouts {#skip}
 
-- [Other reprs - The Rustonomicon](https://doc.rust-lang.org/nomicon/other-reprs.html)
+- [Other reprs - The Rustonomicon][book~nomicon~other-reprs]
 
 ## List of crates Available in the Rust Playground {#skip}
 

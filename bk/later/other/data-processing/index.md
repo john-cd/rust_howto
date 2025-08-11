@@ -41,7 +41,7 @@
 
 - [`risingwave`](https://github.com/risingwavelabs/risingwave): Best-in-class stream processing, analytics, and management. Perform continuous analytics, or build event-driven applications, real-time ETL pipelines, and feature stores in minutes. Unified streaming and batch. PostgreSQL compatible.
 
-- [`materialize`](https://github.com/MaterializeInc/materialize): The Cloud Operational Data Store: use SQL to transform, deliver, and act on fast-changing data.
+- [`materialize`][materialize~github]: The Cloud Operational Data Store: use SQL to transform, deliver, and act on fast-changing data.
 
 - [`pathway`: Python ETL framework for stream processing, real-time analytics, LLM pipelines, and RAG.](https://github.com/pathwaycom/pathway)
 

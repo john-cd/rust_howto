@@ -20,7 +20,7 @@ ROS systems are composed of small, independent units called nodes, each performi
 
 - Development Tools
 
-Tools like [`rviz`](https://crates.io/crates/rviz)↗{{hi:rviz}} (for [visualization][p~visualization]) and `Gazebo`{{hi:Gazebo}} (for simulation) help developers test and debug their robotic systems without needing the actual hardware.
+Tools like [`rviz`][c~rviz~crates.io]↗{{hi:rviz}} (for [visualization][p~visualization]) and `Gazebo`{{hi:Gazebo}} (for simulation) help developers test and debug their robotic systems without needing the actual hardware.
 
 - Supported Platforms
 
@@ -59,14 +59,14 @@ Formally specified Rust bindings for ROS2.
 ## Other Crates {#skip}
 
 - [`ros2_rust`](https://github.com/ros2-rust/ros2_rust)↗{{hi:ros2_rust}} - Rust bindings for ROS2.
-- [`roslibrust`](https://crates.io/crates/roslibrust)↗{{hi:roslibrust}} - Pure Rust implementation of a rosbridge client.
-- [`rclrust`](https://crates.io/crates/rclrust)↗{{hi:rclrust}} - Yet another ROS2 Rust client.
-- [`RustDDS`](https://crates.io/crates/rustdds)↗{{hi:RustDDS}} - Rust implementation of Data Distribution Service.
-- [`rosbag`](https://crates.io/crates/rosbag)↗{{hi:rosbag}} - Reading rosbag files in pure Rust.
-- [`rustros_tf`](https://crates.io/crates/rustros_tf)↗{{hi:rustros_tf}} - A rust implementation of the Tf library.
+- [`roslibrust`][c~roslibrust~crates.io]↗{{hi:roslibrust}} - Pure Rust implementation of a rosbridge client.
+- [`rclrust`][c~rclrust~crates.io]↗{{hi:rclrust}} - Yet another ROS2 Rust client.
+- [`RustDDS`][c~rustdds~crates.io]↗{{hi:RustDDS}} - Rust implementation of Data Distribution Service.
+- [`rosbag`][c~rosbag~crates.io]↗{{hi:rosbag}} - Reading rosbag files in pure Rust.
+- [`rustros_tf`][c~rustros_tf~crates.io]↗{{hi:rustros_tf}} - A rust implementation of the Tf library.
 - [`ros_pointcloud2`]( ){{hi: }} - The safe way of using PointCloud2 messages in ROS1 and ROS2.
 - [`optimization-engine`]( ){{hi: }} - Fast & Accurate Embedded Optimization for next-generation Robotics and Autonomous Systems.
-- [`transforms`](https://crates.io/crates/transforms)↗{{hi:transforms}} - A minimal and stand-alone crate inspired by the ROS2 tf library, but not dependent on ROS or middleware.
+- [`transforms`][c~transforms~crates.io]↗{{hi:transforms}} - A minimal and stand-alone crate inspired by the ROS2 tf library, but not dependent on ROS or middleware.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

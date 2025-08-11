@@ -56,7 +56,7 @@ Use declarations support a number of convenient shortcuts. You may use globs, de
 {{#include ../../crates/code_organization/examples/use/use_shortcuts.rs:example}}
 ```
 
-Note that, while these shortcuts make your code more compact and readable, they can be inconvenient during early development, when you need to add or remove [`use`]( ){{hi: }} statements frequently. Consider adding a [`rustfmt.toml`](https://rust-lang.github.io/rustfmt) configuration file to your project and adding `imports_granularity = "Item"` to flatten imports, so that each has its own `use` statement.
+Note that, while these shortcuts make your code more compact and readable, they can be inconvenient during early development, when you need to add or remove [`use`]( ){{hi: }} statements frequently. Consider adding a [`rustfmt.toml`][rustfmt.toml] configuration file to your project and adding `imports_granularity = "Item"` to flatten imports, so that each has its own `use` statement.
 
 ## References {#references}
 

@@ -6,9 +6,9 @@ Release automation involves automating the process of building, [testing][p~test
 
 How you distribute your application depends on the target platform:
 
-- Libraries: publish (open-source) Rust libraries to [`crates.io`](https://crates.io)↗{{hi:crates.io}}.
+- Libraries: publish (open-source) Rust libraries to [`crates.io`][crates.io~website]↗{{hi:crates.io}}.
 - Executables: publish binaries to a service where they `can` be downloaded from (e.g., `GitHub Releases`).
-- [Containers][p~containers]: Use [`Docker`](https://www.docker.com)↗{{hi:Docker}} to create the container image, push it to a private or public registry (e.g. [`DockerHub`](https://hub.docker.com)↗{{hi:DockerHub}}, `GitHub Packages`); optionally pull the image to deploy it to an orchestrator (e.g. [`Kubernetes`](https://kubernetes.io)↗{{hi:Kubernetes}}) or a Cloud service like [`AWS`][c~aws~docs]↗{{hi:AWS}} or [`Azure`](https://portal.azure.com)↗{{hi:Azure}}.
+- [Containers][p~containers]: Use [`Docker`][docker~website]↗{{hi:Docker}} to create the container image, push it to a private or public registry (e.g. [`DockerHub`](https://hub.docker.com)↗{{hi:DockerHub}}, `GitHub Packages`); optionally pull the image to deploy it to an orchestrator (e.g. [`Kubernetes`](https://kubernetes.io)↗{{hi:Kubernetes}}) or a Cloud service like [`AWS`][c~aws~docs]↗{{hi:AWS}} or [`Azure`](https://portal.azure.com)↗{{hi:Azure}}.
 - Packages: Create (`.deb`, `.rpm`...) packages for package management systems (e.g., Debian `dpkg`/`apt`, RPM, Flatpak, HomeBrew...) using [cargo][p~cargo] plugins like [`cargo-deb`][c~cargo-deb~docs]↗{{hi:cargo-deb}}, [`cargo-rpm`][c~cargo-rpm~docs]↗{{hi:cargo-rpm}}...
 
 ## Cargo {#skip}
@@ -21,7 +21,7 @@ Cargo handles building the release binaries or packaging your Rust code in `.cra
 
 ## Publish a Crate to `crates.io` {#skip}
 
-The following are the typical steps to release a crate to [`crates.io`](https://crates.io)↗{{hi:crates.io}}:
+The following are the typical steps to release a crate to [`crates.io`][crates.io~website]↗{{hi:crates.io}}:
 
 - `cargo update`, if desired.
 - Update the changelog.
@@ -52,7 +52,7 @@ The following are the typical steps to release a crate to [`crates.io`](https://
 [![cargo-release~lib.rs][c~cargo-release~lib.rs~badge]][c~cargo-release~lib.rs]
 [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[`cargo-release`][c~cargo-release~docs]↗{{hi:cargo-release}} automates the release process, including version bumping and publishing to [`crates.io`](https://crates.io)↗{{hi:crates.io}}. It extends `cargo publish` with common release practices like validation, version management, tagging, and pushing. The process is customizable but with defaults that should help you get up and running quickly.
+[`cargo-release`][c~cargo-release~docs]↗{{hi:cargo-release}} automates the release process, including version bumping and publishing to [`crates.io`][crates.io~website]↗{{hi:crates.io}}. It extends `cargo publish` with common release practices like validation, version management, tagging, and pushing. The process is customizable but with defaults that should help you get up and running quickly.
 
 ## `release-plz` {#release-plz}
 
@@ -90,7 +90,7 @@ See also [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]].
 
 <div class="hidden">
 [release_automation: write](https://github.com/john-cd/rust_howto/issues/604)
-cover [`cargo-bump`](https://github.com/wraithan/cargo-bump)↗{{hi:cargo-bump}} for simple version number increments.
+cover [`cargo-bump`][c~cargo-bump~github]↗{{hi:cargo-bump}} for simple version number increments.
 Link
 https://doc.rust-lang.org/cargo/commands/cargo-login.html
 https://doc.rust-lang.org/cargo/commands/cargo-package.html

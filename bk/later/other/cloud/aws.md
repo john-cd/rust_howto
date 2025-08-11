@@ -58,6 +58,6 @@ Deploy Rust Applications to Elastic Beanstalk
 Deploy Rust Applications to App Runner
 Deploy Rust Applications to EC2 machines
 
-- [`aws-config`](https://lib.rs/crates/aws-config)
+- [`aws-config`][c~aws-config~lib.rs]
 
 </div>

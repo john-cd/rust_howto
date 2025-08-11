@@ -19,7 +19,7 @@ Libraries that provide a cross-platform abstraction over native graphics APIs.
 | Topic/Area | Rust Crates (Examples) | Notes |
 |---|---|---|
 | Low-Level Graphics (Vulkan) | | |
-| Low-Level Graphics (Direct3D 12 - Windows) | [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}} (with a D3D12 backend), [`d3d12`](https://crates.io/crates/d3d12)↗{{hi:d3d12}} (more raw bindings) | Direct3D 12 access is usually through [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}}'s backend or lower level bindings like [`d3d12`](https://crates.io/crates/d3d12)↗{{hi:d3d12}}. Windows-specific. |
+| Low-Level Graphics (Direct3D 12 - Windows) | [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}} (with a D3D12 backend), [`d3d12`][c~d3d12~crates.io]↗{{hi:d3d12}} (more raw bindings) | Direct3D 12 access is usually through [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}}'s backend or lower level bindings like [`d3d12`][c~d3d12~crates.io]↗{{hi:d3d12}}. Windows-specific. |
 | Low-Level Graphics (Metal - macOS/iOS) | [`metal`][c~metal~docs]↗{{hi:metal}}, [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}} (with a Metal backend) | Metal access is provided by the [`metal`][c~metal~docs]↗{{hi:metal}} crate or through [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}}. macOS/iOS specific. |
 
 Note the following:

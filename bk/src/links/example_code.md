@@ -10,7 +10,7 @@ You can use the [Rust Playground](https://play.rust-lang.org/?version=stable&mod
 - [Trending GitHub repos][trending-rust~github]↗.
 - [Awesome Rust][awesome-rust~github]↗: a large curated list of Rust resources, including code examples.
 - [Open-source Projects Categorized as "Rust" (libhunt.com)][libhunt-topic-rust~website]↗.
-- [`rustrepo.com`](https://rustrepo.com)↗: A curated list of awesome Rust resources.
+- [`rustrepo.com`][rustrepo~website]↗: A curated list of awesome Rust resources.
 - [Top 100 Best GitHub Repositories for Rust](https://bestofgit.codes/repositories/languages/rust)↗.
 
 ## "RealWorld" Examples {#realworld}
@@ -23,7 +23,7 @@ For example, [`realworld-rust-axum-sqlx`][realworld~rust-axum-sqlx~github]↗ is
 
 [![cargo-generate][c~cargo-generate~docs~badge]][c~cargo-generate~docs] [![cargo-generate~crates.io][c~cargo-generate~crates.io~badge]][c~cargo-generate~crates.io] [![cargo-generate~github][c~cargo-generate~github~badge]][c~cargo-generate~github] [![cargo-generate~lib.rs][c~cargo-generate~lib.rs~badge]][c~cargo-generate~lib.rs]{{hi:cargo-generate}}
 
-[`cargo-generate`](https://github.com/cargo-generate/cargo-generate)↗ helps you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
+[`cargo-generate`][c~cargo-generate~github]↗ helps you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
 
 You will find `cargo-generate`-ready templates in [this list](https://github.com/topics/cargo-generate)↗.
 

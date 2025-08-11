@@ -39,7 +39,7 @@ FIXME
 
 ### GTK
 
-[`GTK-rs`](https://crates.io/crates/gtk4)↗{{hi:GTK-rs}} is a Rust binding for the GTK (GIMP Toolkit) library, which is widely used for creating graphical user interfaces on Linux and other platforms.
+[`GTK-rs`][c~gtk4~crates.io]↗{{hi:GTK-rs}} is a Rust binding for the GTK (GIMP Toolkit) library, which is widely used for creating graphical user interfaces on Linux and other platforms.
 
 ## Mobile Development
 

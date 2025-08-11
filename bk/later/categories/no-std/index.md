@@ -34,7 +34,7 @@ Remember to handle panics appropriately. Consider other useful crates like [`nb`
 
 ## Crates Functioning Without the Rust Standard Library
 
-Consult the [`no-std`][cat~no-std] category on [`crates.io`](https://crates.io)↗{{hi:crates.io}}.
+Consult the [`no-std`][cat~no-std] category on [`crates.io`][crates.io~website]↗{{hi:crates.io}}.
 
 ## Related Topics
 

@@ -40,11 +40,11 @@ Zenoh deals with keys/values where each key is a path and is associated to a val
 
 Framework for creating fast and reliable robots.
 
-[`copper`](https://crates.io/crates/copper)↗{{hi:copper}} is a user-friendly robotics framework designed for creating fast and reliable robots. Copper is to robots what a game engine is to games.
+[`copper`][c~copper~crates.io]↗{{hi:copper}} is a user-friendly robotics framework designed for creating fast and reliable robots. Copper is to robots what a game engine is to games.
 
 ## Frameworks {#skip}
 
-[`dora-rs`](https://github.com/dora-rs/dora)↗{{hi:dora-rs}} - A fast and simple robotics frameworks for AI.
+[`dora-rs`][dora~github]↗{{hi:dora-rs}} - A fast and simple robotics frameworks for AI.
 `Peng`{{hi:Peng}} - A minimal quadrotor autonomy framework
 
 ## gRPC {#skip}

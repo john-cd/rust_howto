@@ -18,7 +18,7 @@
 
 [`floem`][c~floem~docs]↗{{hi:floem}} is a native Rust UI library with fine-grained reactivity, and inspired by [`xilem`][c~xilem~github]{{hi:xilem}}↗, [`leptos`][c~leptos~github]{{hi:leptos}}↗ and [`rui`][c~rui~github]{{hi:rui}}↗. [`floem`][c~floem~docs]↗{{hi:floem}} aims to be a high performance declarative UI library requiring minimal user effort.
 
-[`floem`][c~floem~docs]↗{{hi:floem}} is currently more complete than any of them for native UI. Used by the [`lapce`](https://lap.dev/lapce)↗{{hi:lapce}} text editor.
+[`floem`][c~floem~docs]↗{{hi:floem}} is currently more complete than any of them for native UI. Used by the [`lapce`][lapce~website]↗{{hi:lapce}} text editor.
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/retained_mode_gui/floem.rs:example}}

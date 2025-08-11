@@ -16,7 +16,7 @@ Macros comes in three forms:
 
 - Function-like macros, e.g. `println!("Hello, world!");`,
 - Attribute-like macros e.g. `#[foo = "bar"]`,
-- Custom [derive macros](https://doc.rust-lang.org/reference/attributes/derive.html)↗ e.g., `#[derive(MyTrait)]`.
+- Custom [derive macros][book~rust-reference~derive]↗ e.g., `#[derive(MyTrait)]`.
 
 ### Use Function-like Macros {#function-like-macros}
 
@@ -120,7 +120,7 @@ There are also [`debug_assert`](https://doc.rust-lang.org/std/macro.debug_assert
 
 ### Conditionally Compile Code with `cfg!` {#cfg-macro}
 
-[`cfg!`](https://doc.rust-lang.org/std/macro.cfg.html)↗ evaluates boolean combinations of configuration flags at compile-time. It is often used with or instead of the [`#[cfg]`](https://doc.rust-lang.org/reference/conditional-compilation.html#the-cfg-attribute)↗ attribute. Both use the same [syntax](https://doc.rust-lang.org/reference/conditional-compilation.html#the-cfg-attribute)↗.
+[`cfg!`](https://doc.rust-lang.org/std/macro.cfg.html)↗ evaluates boolean combinations of configuration flags at compile-time. It is often used with or instead of the [`#[cfg]`][book~rust-reference~conditional-compilation]↗ attribute. Both use the same [syntax][book~rust-reference~conditional-compilation]↗.
 
 ## Write Macros {#write-macros}
 
@@ -131,7 +131,7 @@ There are two main types of macros in Rust:
 Macros-by-example are expanded at compile-time, meaning they incur no runtime performance cost, and their output is checked syntactically and type-checked.
 
 - _Procedural Macros_ are more advanced and allow you to operate on one or more [`TokenStream`](https://doc.rust-lang.org/proc_macro/struct.TokenStream.html)↗ (representing the source code). They are compiled before the main program and can perform more complex code generation. They come in three flavors:
-  - Custom [derive macros](https://doc.rust-lang.org/reference/attributes/derive.html)↗ (e.g., `#[derive(MyTrait)]`) automatically generate trait implementations for structs and enums.
+  - Custom [derive macros][book~rust-reference~derive]↗ (e.g., `#[derive(MyTrait)]`) automatically generate trait implementations for structs and enums.
   - Attribute-like macros (outer attribute `#[route(GET, "/")]`, where `route` is a custom name; or inner attribute `#![foo="bar"]`) modify the behavior of items (e.g., functions or modules) they are applied to.
   - Function-like procedural macros (`my_proc_macro!(...)`) have the same call syntax as macros-by-example.
 
@@ -143,7 +143,7 @@ Read the sections below; the [macro][book~rust~ch20-05-macros]↗ chapter of the
 
 Macros-by-example allow you to define reusable code snippets. They are excellent for simple syntactic transformations and reducing boilerplate based on structural patterns.
 
-Macros-by-example are defined using the [`macro_rules!`](https://doc.rust-lang.org/reference/macros-by-example.html#r-macro.decl.intro)↗ syntax and work by pattern matching, where you provide patterns and corresponding code templates. They are expanded into source code that gets compiled with the rest of the program.
+Macros-by-example are defined using the [`macro_rules!`][book~rust-reference~macros-by-example-macro.decl.intro]↗ syntax and work by pattern matching, where you provide patterns and corresponding code templates. They are expanded into source code that gets compiled with the rest of the program.
 
 The `macro_rules!` syntax, which resembles a `match` expression, consists of a name for the macro (e.g., `say_hello`), followed by a set of rules enclosed in curly braces and separated by semicolons: `{ <rule1>; <rule2> }`. Each rule has a _matcher_, a pattern within `()` describing the syntax that it matches, followed by `=>` and a _transcriber_, code within `{}` that will be substituted when the macro is invoked: `( matcher ) => { transcriber };`.
 
@@ -159,7 +159,7 @@ Note: To be more precise, `macro_rules!` interchangeably accepts `{}`, `()` and 
 
 #### Capture the Arguments of a Macro-by-Example with Metavariables {#metavariables}
 
-You can use _metavariables_ to capture parts of a macro's input. They are prefixed with a dollar sign (`$`). Inside matchers, `$name:fragment-specifier` matches a Rust syntax fragment of the kind specified and binds it to the metavariable `$name`, which can then be used in the transcriber. Valid [syntax fragment specifiers](https://doc.rust-lang.org/reference/macros-by-example.html#r-macro.decl.meta.specifier)↗, also called designators, are:
+You can use _metavariables_ to capture parts of a macro's input. They are prefixed with a dollar sign (`$`). Inside matchers, `$name:fragment-specifier` matches a Rust syntax fragment of the kind specified and binds it to the metavariable `$name`, which can then be used in the transcriber. Valid [syntax fragment specifiers][book~rust-reference~macros-by-example-macro.decl.meta.specifier]↗, also called designators, are:
 
 - `block`: a block expression e.g. `{ let x = 1; x + 2 }`,
 - `expr`: an expression that produces a value, e.g. `a + 2` or `some_function()` or even `"a literal"`,
@@ -272,22 +272,22 @@ Note the following before writing procedural macros:
   ```
 
 - Procedural macros must be defined in the root of that crate (in `lib.rs`).
-- You will always use types from the [`proc_macro`](https://doc.rust-lang.org/proc_macro/index.html)↗ crate (provided by the compiler) to interact with token streams [(Rust reference)](https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.proc_macro)↗.
+- You will always use types from the [`proc_macro`](https://doc.rust-lang.org/proc_macro/index.html)↗ crate (provided by the compiler) to interact with token streams [(Rust reference)][book~rust-reference~procedural-macros-macro.proc.proc_macro]↗.
   - All procedural macros take one or two [`proc_macro::TokenStream`](https://doc.rust-lang.org/proc_macro/struct.TokenStream.html)↗ as input and return a `proc_macro::TokenStream`.
-  - A token stream is roughly equivalent to `Vec<TokenTree>` where a [`TokenTree`](https://doc.rust-lang.org/proc_macro/enum.TokenTree.html)↗ can roughly be thought of as a lexical token or a group of tokens within `()`, `[]`, or `{}` delimiters. For example `foo` is an `Ident` token, `.` is a `Punct` token, and `1.2` is a `Literal` token [(Rust reference)](https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.token)↗.
+  - A token stream is roughly equivalent to `Vec<TokenTree>` where a [`TokenTree`](https://doc.rust-lang.org/proc_macro/enum.TokenTree.html)↗ can roughly be thought of as a lexical token or a group of tokens within `()`, `[]`, or `{}` delimiters. For example `foo` is an `Ident` token, `.` is a `Punct` token, and `1.2` is a `Literal` token [(Rust reference)][book~rust-reference~procedural-macros-macro.proc.token]↗.
 
-While you could manually parse and generate token streams, it is highly recommended to use helper crates (found on [`crates.io`](https://crates.io)↗):
+While you could manually parse and generate token streams, it is highly recommended to use helper crates (found on [`crates.io`][crates.io~website]↗):
 
-- [`syn`](https://crates.io/crates/syn)↗ is a parser for Rust syntax. It allows you to parse a `proc_macro::TokenStream` into an Abstract Syntax Tree (AST) that's easy to work with (e.g., [`syn::ItemStruct`](https://docs.rs/syn/2.0.104/syn/struct.ItemStruct.html)↗, [`syn::FnArg`](https://docs.rs/syn/latest/syn/enum.FnArg.html)↗).
+- [`syn`][c~syn~crates.io]↗ is a parser for Rust syntax. It allows you to parse a `proc_macro::TokenStream` into an Abstract Syntax Tree (AST) that's easy to work with (e.g., [`syn::ItemStruct`](https://docs.rs/syn/2.0.104/syn/struct.ItemStruct.html)↗, [`syn::FnArg`](https://docs.rs/syn/latest/syn/enum.FnArg.html)↗).
 - `quote` is a quasi-quoting library that makes it easy to generate Rust code from the parsed AST. It allows you to write Rust code directly and "splice in" variables.
 
-Procedural macros are "unhygienic." They behave as if the output token stream was simply written inline to the code it's next to. This means that they are affected by external items and also affects external imports. Use full absolute paths to items in libraries (for example, `::std::option::Option` instead of `Option`) and make sure that generated functions have names that are unlikely to clash with other functions (like `__internal_foo` instead of `foo`) [(Rust reference)](https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.hygiene)↗.
+Procedural macros are "unhygienic." They behave as if the output token stream was simply written inline to the code it's next to. This means that they are affected by external items and also affects external imports. Use full absolute paths to items in libraries (for example, `::std::option::Option` instead of `Option`) and make sure that generated functions have names that are unlikely to clash with other functions (like `__internal_foo` instead of `foo`) [(Rust reference)][book~rust-reference~procedural-macros-macro.proc.hygiene]↗.
 
 Procedural macros can increase compilation times, especially for large projects or complex macros.
 
 #### Derive Custom Traits with Procedural Macros {#derive-macros}
 
-[Derive macros](https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.derive)↗ define new inputs for the `derive` attribute. These macros can create new items, when applied to a struct, enum, or union.
+[Derive macros][book~rust-reference~procedural-macros-macro.proc.derive]↗ define new inputs for the `derive` attribute. These macros can create new items, when applied to a struct, enum, or union.
 
 - Create a separate crate and add the following to its `Cargo.toml`:
 
@@ -321,7 +321,7 @@ proc-macros = { path = "../proc_macros" } # Adjust the path as necessary.
 {{#include ../../crates/language/examples/macros/proc_macro_derive.rs:example}}
 ```
 
-Note that `derive` macros can add additional attributes ("derive macro helper attributes") into the scope of the item they are on [(Rust reference)](https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.derive.attributes)↗. This is useful for adding metadata or additional functionality to the item being derived:
+Note that `derive` macros can add additional attributes ("derive macro helper attributes") into the scope of the item they are on [(Rust reference)][book~rust-reference~procedural-macros-macro.proc.derive.attributes]↗. This is useful for adding metadata or additional functionality to the item being derived:
 
 ```rust,editable
 # [derive(MyCustomDeriveMacro)]
@@ -403,7 +403,7 @@ fn main() {
 }
 ```
 
-Debugging macros can be challenging. To see what a macro expands to and debug it, use the [`cargo-expand`](https://crates.io/crates/cargo-expand)↗ cargo plugin. See also the [debugging](https://lukaswirth.dev/tlborm/decl-macros/minutiae/debugging.html)↗ section of the little book of macros for more suggestions.
+Debugging macros can be challenging. To see what a macro expands to and debug it, use the [`cargo-expand`][c~cargo-expand~crates.io]↗ cargo plugin. See also the [debugging](https://lukaswirth.dev/tlborm/decl-macros/minutiae/debugging.html)↗ section of the little book of macros for more suggestions.
 
 ## References {#references}
 

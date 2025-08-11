@@ -2,7 +2,7 @@
 
 {{#include version_control.incl.md}}
 
-Rust projects use version control (typically [`git`](https://git-scm.com)↗{{hi:git}}) like any other software. `git` tracks changes to your code, enables collaboration, and allows you to revert to previous versions. Cargo's [`Cargo.lock`](https://doc.rust-lang.org/cargo/guide/cargo-toml-vs-cargo-lock.html)↗{{hi:Cargo.lock}} file specifically ensures reproducible builds by pinning exact dependency versions, which can also be version controlled.
+Rust projects use version control (typically [`git`](https://git-scm.com)↗{{hi:git}}) like any other software. `git` tracks changes to your code, enables collaboration, and allows you to revert to previous versions. Cargo's [`Cargo.lock`][c~cargo~cargo.lock]↗{{hi:Cargo.lock}} file specifically ensures reproducible builds by pinning exact dependency versions, which can also be version controlled.
 
 The following describes tools that make
 

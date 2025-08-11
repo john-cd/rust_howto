@@ -70,7 +70,7 @@ While tools like 'SWIG' exist, [`cxx`][c~cxx~docs]↗{{hi:cxx}} is generally pre
 
 ### C / C++ Build Integration {#skip1}
 
-[`cc`][c~cc~docs]↗{{hi:cc}} helps with compiling C/C++ code within your Rust build script ([`build.rs`](https://doc.rust-lang.org/cargo/reference/build-scripts.html)↗{{hi:build.rs}}). This is often necessary when working with FFI or C++ bindings. See [[build_time_tooling | Build Time Tooling]].
+[`cc`][c~cc~docs]↗{{hi:cc}} helps with compiling C/C++ code within your Rust build script ([`build.rs`][book~cargo~build-script]↗{{hi:build.rs}}). This is often necessary when working with FFI or C++ bindings. See [[build_time_tooling | Build Time Tooling]].
 
 ### Utilities {#skip2}
 

@@ -17,19 +17,19 @@ This book's [GitHub repository][rust-howto~github]↗ is structured as follows:
   - The templates and assets are in [`bk/theme`](https://github.com/john-cd/rust_howto/tree/main/bk/theme)↗ and [`bk/static`](https://github.com/john-cd/rust_howto/tree/main/bk/static)↗ respectively.
   - The Rust examples embedded in the book are found below `bk/crates` (see below for details).
   - The [`bk/master`](https://github.com/john-cd/rust_howto/tree/main/bk/master)↗ folder contains the master list of crates used in the book (which is used by a few scripts to generate tables).
-  - [`bk/scripts`](https://github.com/john-cd/rust_howto/tree/main/bk/scripts)↗ contains [just](https://just.systems)↗ modules (`mod.just` files) and shell scripts (`*.sh` files) for building the code & book and managing references, links, recipe tables, examples, etc.
+  - [`bk/scripts`](https://github.com/john-cd/rust_howto/tree/main/bk/scripts)↗ contains [just][c~just~website]↗ modules (`mod.just` files) and shell scripts (`*.sh` files) for building the code & book and managing references, links, recipe tables, examples, etc.
 - Additional code and tools is found in the `playground`, `publish`, `tools` and `xmpl` folders.
   - The [`playground`](https://github.com/john-cd/rust_howto/tree/main/playground)↗ folder contains bits and pieces of code for testing and exploration. Use it to develop new code examples.
   - The [`publish`](https://github.com/john-cd/rust_howto/tree/main/publish)↗ folder contains a placeholder crate that is published to `crates.io`, so that the links to the book could be found there.
   - [`tools`](https://github.com/john-cd/rust_howto/tree/main/tools)↗ contains several command-line utilities to build specific sections of the book, for example book indices.
     - `mdbook-scrub` is a custom `mdbook` preprocessor used by the book.
-  - Additional examples that are too long or complex to be inserted in the book itself are in folders under [`xmpl`](https://github.com/john-cd/rust_howto/tree/main/xmpl)↗.
+  - Additional examples that are too long or complex to be inserted in the book itself are in folders under [`xmpl`][rust-howto~xmpl~github]↗.
 
 ## Book Organization {#book-organization}
 
-Within the [`bk/src`](https://github.com/john-cd/rust_howto/tree/main/bk/src)↗ folder,
+Within the [`bk/src`][rust-howto~src~github]↗ folder,
 
-- The main table of contents (`SUMMARY.md`) points to the book chapters, which are grouped by section (`language`, `links`...) and, below the `categories` directory, by `crates.io` [categories](https://crates.io/category_slugs)↗.
+- The main table of contents (`SUMMARY.md`) points to the book chapters, which are grouped by section (`language`, `links`...) and, below the `categories` directory, by `crates.io` [categories][crates.io~category_slugs]↗.
   - The `code_organization` section describes how to structure your Rust code using modules, crates, packages and workspaces.
   - The `contributing` section contains information on how to contribute to the book or its examples (including this file).
   - The `crate_selection` section lists the crates used in this book and provide recommendations on how to select external Rust crates for your project.
@@ -44,15 +44,15 @@ Each recipe in a given chapter contains a short description of the crates used, 
 
 Each book section or category has an introductory `index.md` file that lists its recipes by topic / chapter.
 
-In the `bk/src/refs` folder, you will find `category-refs.md` for link references to the `crates.io` [category pages](https://crates.io/categories)↗; `crate-refs.md` for links to [`crates.io`](https://crates.io)↗, [`lib.rs`](https://lib.rs)↗ and GitHub for each crate used in the book; and `other-refs.md` for links to blogs, books, company websites related to Rust.
+In the `bk/src/refs` folder, you will find `category-refs.md` for link references to the `crates.io` [category pages][crates.io-categories~website]↗; `crate-refs.md` for links to [`crates.io`][crates.io~website]↗, [`lib.rs`][lib.rs~website]↗ and GitHub for each crate used in the book; and `other-refs.md` for links to blogs, books, company websites related to Rust.
 
-The [`bk/drafts`](https://github.com/john-cd/rust_howto/tree/main/bk/drafts)↗ and [`bk/later`](https://github.com/john-cd/rust_howto/tree/main/bk/later)↗ folders follow the same basic organization.
+The [`bk/drafts`][rust-howto~drafts~github]↗ and [`bk/later`](https://github.com/john-cd/rust_howto/tree/main/bk/later)↗ folders follow the same basic organization.
 
 ## Code Organization {#code-organization}
 
 The book's [GitHub repository][rust-howto~github]↗ is a "monorepo" with multiple independent projects:
 
-- The Rust examples embedded in the book use a very large number of dependencies, therefore their compile time is quite long. For that reason, they are in an isolated [`cargo`][c~cargo~docs]{{hi:cargo}}↗ workspace, which manifest is in `bk/crates/Cargo.toml`. The workspace consists of multiple crates below [`bk/crates`](https://github.com/john-cd/rust_howto/tree/main/bk/crates)↗, each named after sections of the book (e.g., `bk/crates/language`) or, within the `bk/crates/cats` folder, after `crates.io` categories (e.g., `bk/crates/cats/algorithms`).
+- The Rust examples embedded in the book use a very large number of dependencies, therefore their compile time is quite long. For that reason, they are in an isolated [`cargo`][c~cargo~docs]{{hi:cargo}}↗ workspace, which manifest is in `bk/crates/Cargo.toml`. The workspace consists of multiple crates below [`bk/crates`][rust-howto~code-examples~github]↗, each named after sections of the book (e.g., `bk/crates/language`) or, within the `bk/crates/cats` folder, after `crates.io` categories (e.g., `bk/crates/cats/algorithms`).
   - Each crate in the workspace contains a [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} file, which list the dependencies used by its code examples. Use `cargo add <crate>` or `cargo add <crate> -F <feature>` while in the appropriate crate folder, in order to add more as required.
   - The examples themselves are stored within the crate's `tests` folder in a subfolder named after their chapter, e.g., `bk/crates/<section or cats/some_category>/examples/<chapter_name>/<example_name>.rs`. In a few cases, you may also find examples in the crate's `tests` or `src` folders or within its `build.rs` file.
   - Each example are in a separate `.rs` Rust file that is a module in a `main.rs` file. All examples of a given chapter are therefore compiled together.

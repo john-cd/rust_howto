@@ -80,7 +80,7 @@ In embedded systems, you often have more direct access to CPU features and perip
 <div class="hidden">
 [processor: expand NOW](https://github.com/john-cd/rust_howto/issues/399)
 
-- [Nine Rules for SIMD Acceleration of Your Rust Code (Part 1) | Towards Data Science](https://towardsdatascience.com/nine-rules-for-simd-acceleration-of-your-rust-code-part-1-c16fe639ce21/)
+- [Nine Rules for SIMD Acceleration of Your Rust Code (Part 1) | Towards Data Science][blog~towardsdatascience-nine-rules-for-simd-acceleration-of-your-rust-code-part-1]
 - [Towards fearless SIMD, 7 years later - Linebender][blog~towards-fearless-simd]
 
 </div>

@@ -10,7 +10,7 @@ The [`std::cmp`](https://doc.rust-lang.org/std/cmp/index.html)↗{{hi:std::cmp}}
 
 - [`PartialEq`](https://doc.rust-lang.org/std/cmp/trait.PartialEq.html)↗{{hi:std::cmp::PartialEq}} is used for types that can be checked for equality (using `==`{{hi:==}} and `!=`{{hi:!=}}).
 - [`Eq`](https://doc.rust-lang.org/std/cmp/trait.Eq.html)↗{{hi:std::cmp::Eq}} is a marker trait that indicates a type has a reflexive equality relation, meaning `a == a` is always true. It requires `PartialEq` to be implemented first.
-- Floats (like [`f32`](https://doc.rust-lang.org/std/primitive.f32.html)↗{{hi:f32}} and [`f64`](https://doc.rust-lang.org/std/primitive.f64.html)↗{{hi:f64}}) do not implement `Eq`, because [`NaN`](https://doc.rust-lang.org/std/primitive.f64.html#associatedconstant.NAN)↗{{hi:NaN}} != `NaN`. Beware when implementing equality on structs with a field of float type.
+- Floats (like [`f32`][primitive~f32]↗{{hi:f32}} and [`f64`][primitive~f64]↗{{hi:f64}}) do not implement `Eq`, because [`NaN`](https://doc.rust-lang.org/std/primitive.f64.html#associatedconstant.NAN)↗{{hi:NaN}} != `NaN`. Beware when implementing equality on structs with a field of float type.
 
 `PartialEq` and `Eq` are most often automatically derived using `#[derive(PartialEq, Eq)]` - see [[derive | Derive]]. You can however provide a custom implementation, if so desired:
 

@@ -20,7 +20,7 @@ See [[opengl | OpenGL]].
 
 ## Low-Level Graphics (Direct3D 12 - Windows) {#d3d12}
 
-Direct3D 12 access is usually through [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}}'s backend or lower level bindings like [`d3d12`](https://crates.io/crates/d3d12)↗{{hi:d3d12}}. Windows-specific.
+Direct3D 12 access is usually through [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}}'s backend or lower level bindings like [`d3d12`][c~d3d12~crates.io]↗{{hi:d3d12}}. Windows-specific.
 
 [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}} (with a D3D12 backend), `d3d12` (more raw bindings)
 

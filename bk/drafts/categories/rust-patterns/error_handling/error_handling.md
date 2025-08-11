@@ -133,7 +133,7 @@ fn test() {
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-Use the [`?`](https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html#a-shortcut-for-propagating-errors-the--operator)↗{{hi:?}} operator to propagate errors from a function call 'up the stack'.
+Use the [`?`][book~rust~ch09-02-recoverable-errors-with-result-?]↗{{hi:?}} operator to propagate errors from a function call 'up the stack'.
 
 If the value of the [`Result`](https://doc.rust-lang.org/std/result/enum.Result.html)↗{{hi:std::result::Result}} is an `Ok`, the value inside the `Ok` will get returned, and the program will continue. If the value is an `Err`, the `Err` will be returned from the whole function, as if we had used the `return` keyword, so the error value gets propagated to the calling code.
 

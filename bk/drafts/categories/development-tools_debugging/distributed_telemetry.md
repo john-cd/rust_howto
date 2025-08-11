@@ -8,7 +8,7 @@ Prometheus and OpenTelemetry are two prominent open-source observability project
 
 [![opentelemetry][c~opentelemetry~docs~badge]][c~opentelemetry~docs] [![opentelemetry~crates.io][c~opentelemetry~crates.io~badge]][c~opentelemetry~crates.io] [![opentelemetry~github][c~opentelemetry~github~badge]][c~opentelemetry~github] [![opentelemetry~lib.rs][c~opentelemetry~lib.rs~badge]][c~opentelemetry~lib.rs]{{hi:opentelemetry}}{{hi:Logging}}{{hi:Metrics}}{{hi:opentelemetry}}{{hi:Tracing}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}} [![cat~development-tools::profiling][cat~development-tools::profiling~badge]][cat~development-tools::profiling]{{hi:Profiling}}
 
-[OpenTelemetry](https://opentelemetry.io)[(GitHub)](https://github.com/open-telemetry)↗ is a complete observability framework suitable for monitoring microservices and "cloud-native", modern, distributed systems. It is compatible with most major OSS and commercial backends. [`OpenTelemetry`]( ){{hi: }} is a collection of APIs, SDKs, and tools to instrument, generate, collect, and export metrics, logs, and traces to help analyze your software's performance and behavior. Distributed tracing, a key aspect of observability, enables developers to track and analyze requests spanning multiple services.
+[OpenTelemetry][opentelemetry~website][(GitHub)](https://github.com/open-telemetry)↗ is a complete observability framework suitable for monitoring microservices and "cloud-native", modern, distributed systems. It is compatible with most major OSS and commercial backends. [`OpenTelemetry`]( ){{hi: }} is a collection of APIs, SDKs, and tools to instrument, generate, collect, and export metrics, logs, and traces to help analyze your software's performance and behavior. Distributed tracing, a key aspect of observability, enables developers to track and analyze requests spanning multiple services.
 
 The [`opentelemetry`]( ){{hi: }} crate is an OpenTelemetry API for Rust.
 
@@ -20,7 +20,7 @@ The [`opentelemetry`]( ){{hi: }} crate is an OpenTelemetry API for Rust.
 
 - [`axum-tracing-opentelemetry` crate (GitHub)](https://github.com/davidB/tracing-opentelemetry-instrumentation-sdk/tree/main/axum-tracing-opentelemetry)↗.
 - [OpenTelemetry with Rust - documentation][opentelemetry~rust]↗.
-- [OpenTelemetry Examples with Rust](https://tirslo.medium.com/opentelemetry~examples-with-rust-67f77ccb025f)↗.
+- [OpenTelemetry Examples with Rust][blog~tirslo.medium.com-opentelemetry~examples-with-rust]↗.
 - [`Jaeger`](https://github.com/jaegertracing/jaeger)↗ is a Cloud Native Computing Foundation (CNCF) open-source, end-to-end distributed tracing system built for monitoring and troubleshooting microservices-based architectures. Usually incorporated as an OpenTelemetry backend, it is used to track and visualize user request behavior across the distributed components of complex systems.
 - [Zipkin][zipkin~website]↗ is a distributed tracing system.
 

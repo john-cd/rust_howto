@@ -26,7 +26,7 @@
 - [Curated Rust][curatedrust~github]↗: "This is a guided walkthrough of the resources that I used to learn Rust."
 - [A Gentle Introduction to Rust][rust-gentle-intro~website]↗.
 - [Learning Rust in 2020][rust-blog/blob/master/posts/learning-rust-in-2020.md~github]↗.
-- [`py2rs`: "From Python into Rust"](https://rochacbruno.github.io/py2rs/index.html)↗.
+- [`py2rs`: "From Python into Rust"][book~py2rs]↗.
 - [24 Days of Rust][blog~24daysofrust]↗.
 - [Writing an OS in Rust][blog~writing-an-OS-in-rust]↗.
 - [Hecto][hecto~website]↗: Build your own text editor in Rust.
@@ -53,10 +53,9 @@
 - [`A half-hour to learn Rust`][book~a-half-hour-to-learn-rust]↗.
 - [Rust Development Classes][rust-classes~website]↗.
 - [Fast Track to Rust][course~fast-track-to-rust]↗.
-- [Yet Another Rust Resource (YARR!)](https://yarr.fyi/introduction)↗.
+- [Yet Another Rust Resource (YARR!)][book~yarr.fyi]↗.
 - Open source training courses about distributed database and distributed systems: [Talent Plan][talent-plan~github]↗.
 - [Tour of Rust][tourofrust~website]↗.
-- [Rust: The Basics](https://stepik.org/lesson/9268/step/1)↗.
 - [Learn Rust Programming - Complete Course (YouTube)](https://www.youtube.com/watch?v=BpPEoZW5IiY&ab_channel=freeCodeCamp.org)↗.
 
 ### University Courses {#university-courses}
@@ -91,7 +90,7 @@
 
 ## Reference Documentation {#references}
 
-- The [Standard Library](https://doc.rust-lang.org/std/#the-rust-standard-library)↗ documentation for the built-in [`std`](https://doc.rust-lang.org/std/index.html)↗{{hi:std}}, [`core`](https://doc.rust-lang.org/core/index.html)↗{{hi:core}}, and [`alloc`](https://doc.rust-lang.org/alloc/index.html)↗{{hi:alloc}} crates.
+- The [Standard Library](https://doc.rust-lang.org/std/#the-rust-standard-library)↗ documentation for the built-in [`std`][c~std~docs]↗{{hi:std}}, [`core`](https://doc.rust-lang.org/core/index.html)↗{{hi:core}}, and [`alloc`](https://doc.rust-lang.org/alloc/index.html)↗{{hi:alloc}} crates.
 - The [Rust Reference][book~rust-reference]↗: Details of the language semantics.
 - The [Rustonomicon][book~rustonomicon]↗: A high-level companion to the reference and a guide to correctly writing unsafe code in Rust.
 - The [Ferrocene Language Spec][spec~rust-lang]↗: An high quality specification for the Rust language, initially developed by Ferrous Systems.
