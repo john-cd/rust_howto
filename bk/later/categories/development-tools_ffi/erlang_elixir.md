@@ -35,7 +35,7 @@ Use the following crates:
 ## Build Tools {#skip}
 
 - [[cargo | `cargo`]] builds the Rust side of the integration.
-- [`mix`]()↗{{hi:mix}} build the Erlang/Elixir side and manage dependencies.
+- [`mix`](https://hexdocs.pm/mix/1.18.4/Mix.html)↗{{hi:mix}} build the Erlang/Elixir side and manage dependencies.
 
 ## Other Considerations {#skip}
 

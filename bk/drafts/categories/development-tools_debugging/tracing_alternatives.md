@@ -50,9 +50,9 @@ fn main() {
 [`env_logger`][c~env_logger~docs]↗{{hi:env_logger}} is a logging implementation for [`log`][c~log~docs]↗{{hi:log}} which is configured via an environment variable. [`env_logger`][c~env_logger~docs]↗{{hi:env_logger}} makes sense when used in executables (binary projects). Libraries should use the [`log`][c~log~docs]↗{{hi:log}} crate instead.
 
 ```rust,editable
-use [log][p~log]::info;
+use log::info;
 
-fn [main][p~main]() {
+fn main() {
     env_logger::init();
 
     info!("starting up");

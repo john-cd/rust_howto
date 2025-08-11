@@ -9,7 +9,7 @@ The [`publish`](https://github.com/john-cd/rust_howto/tree/main/publish)↗ fold
 To publish the crate to `crates.io`, use the following steps:
 
 - `cd publish`
-- Review [`Cargo.toml`](https://doc.rust-lang.org/cargo/reference/manifest.html)↗{{hi:Cargo.toml}}, update the metadata as needed. Keep the version in sync with that of the main workspace in [`bk/crates`](https://github.com/john-cd/rust_howto/tree/main/bk/crates)↗.
+- Review [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}, update the metadata as needed. Keep the version in sync with that of the main workspace in [`bk/crates`](https://github.com/john-cd/rust_howto/tree/main/bk/crates)↗.
 - `cargo update` if necessary.
 - Go to [`crates.io`][crates.io~website]{{hi:crates.io}}↗, sign in, and create an API token in `Account Settings` > `API Tokens`.
 - Use `cargo login` to save the token in `$CARGO_HOME/credentials.toml`.

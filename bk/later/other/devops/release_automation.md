@@ -33,7 +33,7 @@ The following are the typical steps to release a crate to [`crates.io`](https://
   - [`cargo test`](https://doc.rust-lang.org/cargo/commands/cargo-test.html)↗{{hi:cargo test}} or `cargo nextest run` to run unit and integration tests.
   - `cargo build --locked --release` to build the production binaries.
   - `cargo run --release` to manually exercise the application, if relevant.
-- Increase the application's version number in [`Cargo.toml`](https://doc.rust-lang.org/cargo/reference/manifest.html)↗{{hi:Cargo.toml}}.
+- Increase the application's version number in [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}.
 - Make sure all code is committed and pushed to its repository.
 - Create and push a git tag.
 - Publish the package in the [cargo][p~cargo] registry (for example, crates.io).

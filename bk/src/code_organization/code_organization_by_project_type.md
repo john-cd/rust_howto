@@ -267,7 +267,7 @@ A typical organization may look as follows:
 - Cargo.lock # Shared lock file (and dependencies).
 ```
 
-You may use feature flags in the main library crate's [`Cargo.toml`](https://doc.rust-lang.org/cargo/reference/manifest.html)↗{{hi:Cargo.toml}} to selectively build subcrates and their dependencies:
+You may use feature flags in the main library crate's [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} to selectively build subcrates and their dependencies:
 
 ```toml
 [dependencies]

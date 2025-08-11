@@ -6,7 +6,7 @@
 |---|---|
 | Build System | [cargo][p~cargo] is the primary build system for Rust. |
 | Build Scripts | Use [`build.rs`](https://doc.rust-lang.org/cargo/reference/build-scripts.html)↗{{hi:build.rs}} files in your project. |
-| Build Profiles | Configure build options in [`Cargo.toml`](https://doc.rust-lang.org/cargo/reference/manifest.html)↗{{hi:Cargo.toml}} for debug, release, etc. |
+| Build Profiles | Configure build options in [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} for debug, release, etc. |
 | Cross-Compilation | [`cross`][c~cross~docs]↗{{hi:cross}} simplifies cross-compilation, target specifications in `Cargo.toml`. |
 | Link-Time Optimization (LTO) | Controlled via `Cargo.toml`. |
 | Build Dependencies | Managed by [cargo][p~cargo] |
