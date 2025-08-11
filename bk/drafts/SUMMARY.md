@@ -1,7 +1,5 @@
 
 [Index of Examples](indices/examples_index.md)
-[Crates (Alphabetic)](indices/crates_alphabetical.md)
-[Crates (by Category)](indices/crates_by_category.md)
 
 # Categories
 

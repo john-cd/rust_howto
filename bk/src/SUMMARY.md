@@ -57,6 +57,8 @@
 # Recipes by Category
 
 - [Crate Selection](crate_selection/index.md)
+  - [Crates (Alphabetic)](crate_selection/crates_alphabetical.md)
+  - [Crates (by Category)](crate_selection/crates_by_category.md)
 
 - [Algorithms](categories/algorithms/index.md)
   - [Generate Random Values](categories/algorithms/randomness.md)
