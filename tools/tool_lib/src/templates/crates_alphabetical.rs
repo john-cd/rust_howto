@@ -3,7 +3,7 @@ use serde::Serialize;
 
 pub(super) static ALPHABETICAL_ROW: &str = r"## {first_letter}
 
-{{ for name in crate_names }}[![{name}][c~{name | underscored}~docs~badge]][c~{name | underscored}~docs] {{ endfor }}
+{{ for name in crate_names }}[![{name}][c~{name}~docs~badge]][c~{name}~docs] {{ endfor }}
 ";
 
 /// The context for rendering a section of the "crates by alphabetic order" page.
