@@ -6,7 +6,7 @@
 
 [![sled][c~sled~docs~badge]][c~sled~docs] [![sled~crates.io][c~sled~crates.io~badge]][c~sled~crates.io] [![sled~github][c~sled~github~badge]][c~sled~github] [![sled~lib.rs][c~sled~lib.rs~badge]][c~sled~lib.rs]{{hi:sled}}{{hi:Sqlite}}{{hi:Redis}}{{hi:LMDB}}{{hi:Mongo}}{{hi:Rocksdb}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~caching][cat~caching~badge]][cat~caching]{{hi:Caching}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~database-implementations][cat~database-implementations~badge]][cat~database-implementations]{{hi:Database implementations}}
 
-[`sled`][c~sled~github]↗ is a high-performance, fairly low-level, embedded [database][p~database]. It can be thought of as a `BTreeMap<[u8], [u8]>` that stores its data on disk.
+[`sled`][c~sled~github]↗ is a high-performance, fairly low-level, embedded [database][p~database]. It can be thought of as a [`BTreeMap<[u8], [u8]>`](https://doc.rust-lang.org/std/collections/struct.BTreeMap.html)↗ that stores its data on disk.
 
 - Storage on disk, without dealing with files.
 - No external database.

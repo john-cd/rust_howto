@@ -20,7 +20,7 @@ For macOS-specific features, you'll need to use the [`objc`][c~objc~docs]↗{{hi
 
 ## Process Management
 
-- `std::process` works well on macOS.
+- [`std::process`]( ){{hi: }} works well on macOS.
 
 ## Networking
 
@@ -29,7 +29,7 @@ For macOS-specific features, you'll need to use the [`objc`][c~objc~docs]↗{{hi
 
 ## Threads
 
-- `std::thread` works well on macOS.
+- [`std::thread`]( ){{hi: }} works well on macOS.
 
 ## Time
 

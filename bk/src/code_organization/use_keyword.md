@@ -2,7 +2,7 @@
 
 {{#include use_keyword.incl.md}}
 
-Within a scope, the `use` keyword creates shortcuts to items to reduce repetition of long paths.
+Within a scope, the [`use`]( ){{hi: }} keyword creates shortcuts to items to reduce repetition of long paths.
 
 ## Avoid Writing Full Paths with the `use` Keyword {#use-keyword}
 
@@ -32,7 +32,7 @@ It is idiomatic to bring the function's parent module into scope, not the functi
 
 ## Bring a Struct or Enum in Scope Idiomatically {#bring-struct-or-enum-in-scope}
 
-On the other hand, when bringing in [structs][p~structs], [enums][p~enums], and other items in scope, it is idiomatic to specify the full path in the `use` statement and refer to the type via its name.
+On the other hand, when bringing in [structs][p~structs], [enums][p~enums], and other items in scope, it is idiomatic to specify the full path in the [`use`]( ){{hi: }} statement and refer to the type via its name.
 
 ```rust,editable
 {{#include ../../crates/code_organization/examples/use/use3.rs:example}}
@@ -50,13 +50,13 @@ Note: Rust doesn't allow importing two items with the same name into one scope. 
 
 ## Make `use` Declarations More Compact {#use-declaration-shortcuts}
 
-Use declarations support a number of convenient shortcuts. You may use globs, define aliases, and combine multiple `use` statements.
+Use declarations support a number of convenient shortcuts. You may use globs, define aliases, and combine multiple [`use`]( ){{hi: }} statements.
 
 ```rust,editable
 {{#include ../../crates/code_organization/examples/use/use_shortcuts.rs:example}}
 ```
 
-Note that, while these shortcuts make your code more compact and readable, they can be inconvenient during early development, when you need to add or remove `use` statements frequently. Consider adding a [`rustfmt.toml`](https://rust-lang.github.io/rustfmt) configuration file to your project and adding `imports_granularity = "Item"` to flatten imports, so that each has its own `use` statement.
+Note that, while these shortcuts make your code more compact and readable, they can be inconvenient during early development, when you need to add or remove [`use`]( ){{hi: }} statements frequently. Consider adding a [`rustfmt.toml`](https://rust-lang.github.io/rustfmt) configuration file to your project and adding `imports_granularity = "Item"` to flatten imports, so that each has its own `use` statement.
 
 ## References {#references}
 

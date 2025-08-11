@@ -73,7 +73,7 @@ This section provides a few examples of software written in Rust, organized by t
 
 - Browsers:
   - Components of web browsers.
-  - Example: `Mozilla Firefox` uses Rust in its `Servo` rendering engine.
+  - Example: [`Mozilla Firefox`]( ){{hi: }} uses Rust in its `Servo` rendering engine.
 - Databases:
   - Database engines.
   - Database drivers.
@@ -127,7 +127,7 @@ This section provides a few examples of software written in Rust, organized by t
 - Observability:
   - [`openobserve`](https://github.com/openobserve/openobserve): petabyte scale Elasticsearch/Splunk/Datadog alternative for logs, metrics, traces, RUM, Error tracking, Session replay.
   - [`opentelemetry-rust`](https://github.com/open-telemetry/opentelemetry-rust): the Rust OpenTelemetry implementation.
-  - `influxdb` [(GitHub)](https://github.com/influxdata/influxdb): a scalable datastore for metrics, events, and real-time analytics.
+  - [`influxdb`]( ){{hi: }} [(GitHub)](https://github.com/influxdata/influxdb): a scalable datastore for metrics, events, and real-time analytics.
 
 {{#include development_tools.incl.md}}
 

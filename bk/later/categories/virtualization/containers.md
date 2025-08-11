@@ -17,7 +17,7 @@
 
 [Docker Compose][docker~compose~website]↗.
 
-An easy way to get started is to run `docker init` in a new folder, select `Rust` as the project type, then edit the provided `compose.yaml` and [`Dockerfile`][dockerfile~website]↗{{hi:Dockerfile}}.{{hi:docker compose}}
+An easy way to get started is to run [`docker init`]( ){{hi: }} in a new folder, select `Rust` as the project type, then edit the provided `compose.yaml` and [`Dockerfile`][dockerfile~website]↗{{hi:Dockerfile}}.{{hi:docker compose}}
 
 ```bash
 cargo init .

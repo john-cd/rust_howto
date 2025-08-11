@@ -14,7 +14,7 @@ For most common GUI needs, [`egui`][c~egui~docs]↗{{hi:egui}} and [`iced`][c~ic
 |---|---|
 | Simple GUIs, Tools, Games | [`egui`][c~egui~docs]↗{{hi:egui}} is an excellent choice. |
 | More Complex Applications, Declarative UI | [`iced`][c~iced~docs]↗{{hi:iced}} or [`slint`][c~slint~docs]↗{{hi:slint}}. |
-| Native Look and Feel | `gtk-rs` or [`qt-rs`][c~qt~docs]↗{{hi:qt-rs}} (but require more setup and native dependencies) |
+| Native Look and Feel | [`gtk-rs`]( ){{hi: }} or [`qt-rs`][c~qt~docs]↗{{hi:qt-rs}} (but require more setup and native dependencies) |
 | Web Technologies for Desktop | [`tauri`][c~tauri~docs]↗{{hi:tauri}}. |
 | Web-Based GUIs | [`yew`][c~yew~docs]↗{{hi:yew}} or [`seed`][c~seed~docs]↗{{hi:seed}}. See [[web-programming | Web Programming]] and [[web-programming_http-server | Web Programming: HTTP Server]] |
 
@@ -108,7 +108,7 @@ While primarily for window creation, [`winit`][c~winit~docs]↗{{hi:winit}} is o
 <div class="hidden">
 [organize](https://github.com/john-cd/rust_howto/issues/397)
 review which GUI framework should be recommended - make a table; review links in Choosing the right framework section again
-cover `perseus` / zola?
+cover [`perseus`]( ){{hi: }} / zola?
 
 - [Are we (I)DE yet?](https://areweideyet.com/)
 

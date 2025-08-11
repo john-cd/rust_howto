@@ -32,7 +32,7 @@ Encodes a string into [`application/x-www-form-urlencoded`][web-application/x-ww
 
 The [`data-encoding`][c~data-encoding~docs]{{hi:data-encoding}}↗ crate provides a `HEXUPPER::encode` method which takes a `&[u8]` and returns a [`std::string::String`][c~std::string::String~docs]{{hi:std::string::String}}↗ containing the hexadecimal representation{{hi:Hexadecimal representation}} of the data.
 
-Similarly, a `HEXUPPER::decode` method is provided which takes a `&[u8]` and returns a `Vec<u8>` if the input data is successfully decoded.
+Similarly, a [`HEXUPPER::decode`]( ){{hi: }} method is provided which takes a `&[u8]` and returns a `Vec<u8>` if the input data is successfully decoded.
 
 The example below coverts `&[u8]` data to hexadecimal equivalent. Compares this value to the expected value.
 

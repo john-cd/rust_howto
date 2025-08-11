@@ -22,7 +22,7 @@ API for loading, scaling, positioning and rasterizing OpenType font glyphs.
 
 [`fontdue`][c~fontdue~docs]↗{{hi:fontdue}} is a fast, pure Rust font loading and rasterization library. [`glyph_brush`][c~glyph_brush~docs]↗{{hi:glyph_brush}} is for efficient text layout and caching.
 
-A simple `no_std` font parser and rasterizer.
+A simple [`no_std`]( ){{hi: }} font parser and rasterizer.
 
 ## `ttf-parser` and  `opentype` {#ttf-parser}
 

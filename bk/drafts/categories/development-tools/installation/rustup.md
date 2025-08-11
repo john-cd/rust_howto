@@ -55,12 +55,12 @@ Rustup is used to install and manage Rust toolchains. Toolchains are complete in
 
 | Command | Description |
 |---|---|
-| `rustup show` | Show currently installed & active toolchains. |
-| `rustup update` | Update all toolchains. |
-| `rustup default TOOLCHAIN` | Set the default toolchain. |
-| `rustup component list` | List available components. |
-| `rustup component add NAME` | Add a component (e.g., clippy, rustfmt). |
-| `rustup target list` | List available compilation targets. |
-| `rustup target add NAME` | Add a compilation target. |
+| [`rustup show`]( ){{hi: }} | Show currently installed & active toolchains. |
+| [`rustup update`]( ){{hi: }} | Update all toolchains. |
+| [`rustup default TOOLCHAIN`]( ){{hi: }} | Set the default toolchain. |
+| [`rustup component list`]( ){{hi: }} | List available components. |
+| [`rustup component add NAME`]( ){{hi: }} | Add a component (e.g., clippy, rustfmt). |
+| [`rustup target list`]( ){{hi: }} | List available compilation targets. |
+| [`rustup target add NAME`]( ){{hi: }} | Add a compilation target. |
 
 </div>

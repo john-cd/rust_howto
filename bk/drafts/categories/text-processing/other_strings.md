@@ -57,7 +57,7 @@ This crate provides extension traits for `&[u8]` and `Vec<u8>` that enable their
 
 [![ustr][c~ustr~docs~badge]][c~ustr~docs] [![ustr~crates.io][c~ustr~crates.io~badge]][c~ustr~crates.io] [![ustr~github][c~ustr~github~badge]][c~ustr~github] [![ustr~lib.rs][c~ustr~lib.rs~badge]][c~ustr~lib.rs]{{hi:ustr}}{{hi:Ffi}}{{hi:Interning}}{{hi:String}} [![cat~caching][cat~caching~badge]][cat~caching]{{hi:Caching}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
-The `ustr` crate implements string interning, i.e. storing only one copy of each distinct string value (which must be immutable). String interning is useful in scenarios where:
+The [`ustr`]( ){{hi: }} crate implements string interning, i.e. storing only one copy of each distinct string value (which must be immutable). String interning is useful in scenarios where:
 
 - You use a large number of identical strings (e.g., keywords, hashmap keys, enum variants represented as strings, common configuration values),
 - You frequently assign or compare strings for equality,

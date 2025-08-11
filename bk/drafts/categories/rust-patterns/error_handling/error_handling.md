@@ -199,7 +199,7 @@ Error level - description
 └> 3 - field 1: number too large to fit in target type
 ```
 
-Run the recipe with `RUST_BACKTRACE=1` to display a detailed backtrace associated with this error.
+Run the recipe with [`RUST_BACKTRACE=1`]( ){{hi: }} to display a detailed backtrace associated with this error.
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

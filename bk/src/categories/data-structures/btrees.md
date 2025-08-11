@@ -8,16 +8,16 @@
 
 `BTreeMap<K, V>` is a sorted map data structure, similar to `HashMap`, but its keys are always kept in sorted order. This allows for efficient range queries (e.g., retrieving all values within a specific key range) and ordered iteration. Iterating over a BTreeMap will always yield the key-value pairs in ascending order of the keys.
 
-This ordering is the main difference between `BTreeMap` and the more common `HashMap`. `BTreeMap` is implemented as a B-tree, a self-balancing tree structure that guarantees logarithmic time complexity for most operations.
+This ordering is the main difference between [`BTreeMap`]( ){{hi: }} and the more common `HashMap`. `BTreeMap` is implemented as a B-tree, a self-balancing tree structure that guarantees logarithmic time complexity for most operations.
 
-- `insert(key, value)` inserts a new key-value pair. If the key already exists, the old value is replaced and returned.
-- `get(key)` returns a reference to the value associated with the given key, or `None` if the key is not present.
-- `remove(key)` removes the key-value pair associated with the given key. Returns the removed value, or None if the key was not present.
-- `contains_key(key)` returns true if the map contains the given key.
-- `iter()` returns an iterator over the key-value pairs in sorted order.
-- `range(range)` returns an iterator over a specified range of keys.
-- `first_key_value()` returns the smallest (first) key-value pair.
-- `last_key_value()` returns the largest (last) key-value pair.
+- [`insert(key, value)`]( ){{hi: }} inserts a new key-value pair. If the key already exists, the old value is replaced and returned.
+- [`get(key)`]( ){{hi: }} returns a reference to the value associated with the given key, or `None` if the key is not present.
+- [`remove(key)`]( ){{hi: }} removes the key-value pair associated with the given key. Returns the removed value, or None if the key was not present.
+- [`contains_key(key)`]( ){{hi: }} returns true if the map contains the given key.
+- [`iter()`]( ){{hi: }} returns an iterator over the key-value pairs in sorted order.
+- [`range(range)`]( ){{hi: }} returns an iterator over a specified range of keys.
+- [`first_key_value()`]( ){{hi: }} returns the smallest (first) key-value pair.
+- [`last_key_value()`]( ){{hi: }} returns the largest (last) key-value pair.
 
 ```rust,editable
 {{#include ../../../crates/cats/data_structures/examples/btrees/btreemap.rs:example}}

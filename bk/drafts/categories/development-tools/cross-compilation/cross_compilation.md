@@ -4,7 +4,7 @@
 
 |  |  |
 |---|---|
-| Build Systems | Use [cargo][p~cargo], `xtask` (for managing complex builds) |
+| Build Systems | Use [cargo][p~cargo], [`xtask`]( ){{hi: }} (for managing complex builds) |
 | Target Specification | Handled by [cargo][p~cargo] through target triples |
 | C/C++ Dependencies | Often a source of complexity; [`cc`][c~cc~docs]↗{{hi:cc}} crate can help |
 | Platform-Specific Code | Use conditional compilation [attributes][p~attributes] like [`cfg`](https://doc.rust-lang.org/reference/conditional-compilation.html#the-cfg-attribute)↗{{hi:cfg}} to manage platform-specific code |

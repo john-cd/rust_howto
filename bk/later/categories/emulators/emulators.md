@@ -10,7 +10,7 @@
 
 ## Virtual Machines / CPU Emulators {#skip}
 
-Mention `polkavm` (used in smart contracts, etc.) - ~500k downloads.
+Mention [`polkavm`]( ){{hi: }} (used in smart contracts, etc.) - ~500k downloads.
 PolkaVM is a general purpose user-level RISC-V based virtual machine. This project is still unfinished and is a very heavy work-in-progress.
 
 https://medium.com/@OneBlockplus/in-depth-analysis-of-polkavm-a-perfect-path-to-understanding-polkadot-2-0-6ac347a296ba

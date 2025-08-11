@@ -66,5 +66,5 @@ See:
 
 <div class="hidden">
 [write. decide what to cover](https://github.com/john-cd/rust_howto/issues/1213)
-See also `fast-poisson-disk` for generating point distributions.
+See also [`fast-poisson-disk`]( ){{hi: }} for generating point distributions.
 </div>

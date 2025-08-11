@@ -91,7 +91,7 @@ See [[asynchronous | Asynchronous]] and [[amqp | AMQP]].
 
 ### Use Cases {#skip}
 
-- Systems with high throughput or real-time requirements (e.g., `financial` systems, IoT platforms, social media apps).
+- Systems with high throughput or real-time requirements (e.g., [`financial`]( ){{hi: }} systems, IoT platforms, social media apps).
 - Large-scale distributed systems where scalability and availability are key.
 
 ## Actor Model {#actor-model}

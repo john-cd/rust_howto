@@ -14,14 +14,14 @@ The [`wasm-bindgen`](https://rustwasm.github.io/docs/wasm-bindgen) guide covers 
 
 [![js-sys~website][c~js-sys~website~badge]][c~js-sys~website] [![js-sys][c~js-sys~docs~badge]][c~js-sys~docs] [![js-sys~crates.io][c~js-sys~crates.io~badge]][c~js-sys~crates.io] [![js-sys~github][c~js-sys~github~badge]][c~js-sys~github] [![js-sys~lib.rs][c~js-sys~lib.rs~badge]][c~js-sys~lib.rs]{{hi:js-sys}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
 
-Bindings for all JS global objects and functions found in all JS environments like Node.js and browsers, built on `#[wasm_bindgen]` using the [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} crate.
+Bindings for all JS global objects and functions found in all JS environments like Node.js and browsers, built on [`#[wasm_bindgen]`]( ){{hi: }} using the [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} crate.
 
 This does not include any Web, [Node][p~node], or any other JS environment APIs. Only the things that are guaranteed to exist in the global scope by the ECMAScript standard.
 
 ## Accessing DOM and Web APIs via Rust {#skip}
 
 The [`web-sys`](https://crates.io/crates/web-sys)↗{{hi:web-sys}} crate provides Rust bindings to the Web's APIs, allowing you to interact with the DOM, Canvas, WebGL, and other browser features.
-Essentially, `web-sys` is the bridge that lets your Rust code talk to the browser.
+Essentially, [`web-sys`]( ){{hi: }} is the bridge that lets your Rust code talk to the browser.
 
 ## Calling Rust/WASM Functions from JavaScript {#skip1}
 

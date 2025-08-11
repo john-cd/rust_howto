@@ -45,7 +45,7 @@ Another example:
 
 The Sender and Receiver sides are cloneable and can be shared among multiple threads.
 
-When all Senders or all Receivers are dropped, the channel becomes closed. When a channel is closed, no more messages can be sent, but remaining messages can still be received. The channel can also be closed manually by calling `Sender::close()` or `Receiver::close()`.
+When all Senders or all Receivers are dropped, the channel becomes closed. When a channel is closed, no more messages can be sent, but remaining messages can still be received. The channel can also be closed manually by calling [`Sender::close()`]( ){{hi: }} or `Receiver::close()`.
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/examples/async_channels/async_channel.rs:example}}

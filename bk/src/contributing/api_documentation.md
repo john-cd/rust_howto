@@ -4,7 +4,7 @@
 
 Use `just docs docall` to generate the code [documentation][p~documentation] in the [`docs.rs`][docs.rs~website]{{hi:docs.rs}}↗{{hi:docs.rs}} format.
 
-Note that `cargo doc --open` does not seem to work when running from a Dev Container{{hi:Dev Container}} in VS Code{{hi:VS Code}}; the script that opens URLs into an external browser (see `$ echo $BROWSER`) does not handle raw HTML. Use `python3 -m http.server 9000` (or live server) to serve the files instead.
+Note that [`cargo doc --open`]( ){{hi: }} does not seem to work when running from a Dev Container{{hi:Dev Container}} in VS Code{{hi:VS Code}}; the script that opens URLs into an external browser (see `$ echo $BROWSER`) does not handle raw HTML. Use `python3 -m http.server 9000` (or live server) to serve the files instead.
 
 Read the `justfile`{{hi:justfile}} or the [just module][c~just~programmer-manual]↗ in `bk/scripts/docs`{{hi:just}} for more details.
 
@@ -32,7 +32,7 @@ and the following to the [`Dockerfile`][dockerfile~website]{{hi:Dockerfile}}↗.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y firefox-esr
 ```
 
-Optionally `apt-get install xdg-utils` to check that Firefox{{hi:Firefox}} is the default for `text/html`:
+Optionally [`apt-get install xdg-utils`]( ){{hi: }} to check that Firefox{{hi:Firefox}} is the default for `text/html`:
 
 ```bash
 xdg-mime query default text/html
@@ -52,7 +52,7 @@ xdg-open /code/target/bk/doc/deps/index.html
 ### Other Methods to Preview the Documentation HTML {#other-methods-to-preview-the-documentation-html}
 
 - Right-click the `/code/target/bk/doc` folder in the VS Code Explorer view and select `Download...` or use VS Code's built-in `Simple Browser` command.
-- Or install the `Live Server` or MS `Live Preview` VS Code extensions.
+- Or install the [`Live Server`]( ){{hi: }} or MS `Live Preview` VS Code extensions.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
