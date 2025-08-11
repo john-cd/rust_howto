@@ -39,7 +39,7 @@ Embedding a JavaScript runtime gives you full JavaScript language support:
 
 - [`v8`][c~v8~docs]↗{{hi:v8}}: bindings to Google's V8 engine.
 - [`deno_core`][c~deno_core~docs]↗{{hi:deno_core}}: The core runtime of Deno, a modern JavaScript/TypeScript runtime built with V8, Rust, and Tokio.
-- [`quickjs-rs`](c~quickjs~docs)↗{{hi:quickjs-rs}}: bindings to the QuickJS engine.
+- [`quickjs-rs`][c~quickjs~docs]↗{{hi:quickjs-rs}}: bindings to the QuickJS engine.
 
 See also [[node | Node]].
 
