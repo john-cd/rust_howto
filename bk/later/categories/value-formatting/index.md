@@ -35,9 +35,9 @@ This table covers Rust crates relevant for formatting values for display.
 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/967)
-need in-depth review
-Mention [`itoa`][c~itoa~docs]↗{{hi:itoa}} in this page
-cover  `Inflector`
+need in-depth review.
+Mention [`itoa`][c~itoa~docs]↗{{hi:itoa}} in this page.
+cover `Inflector`.
 
 - [ShowOption][c~show-option~lib.rs]↗.
 

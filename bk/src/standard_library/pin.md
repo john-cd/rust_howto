@@ -42,7 +42,7 @@ The following example demonstrates the basic usage of `Pin`, `Unpin`, `PhantomPi
 
 ## Related Topics {#related-topics}
 
-- [[async_programming | Async Programming]]
+- [[async_programming | Async Programming]].
 - [[futures | Futures]].
 - [[traits | Traits]].
 

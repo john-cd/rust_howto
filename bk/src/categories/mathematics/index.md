@@ -98,7 +98,7 @@ Combinatorics, set theory, and logic.
 - [[classical_machine_learning | Classical Machine Learning]].
 - [[deep_learning | Deep Learning]].
 - [[science | Science]].
-  - [[science_geo | Geoscience]]
+  - [[science_geo | Geoscience]].
   - [[science_neuroscience | Neuroscience]].
 - [[science_robotics | Robotics]].
 - [[search | Search]].

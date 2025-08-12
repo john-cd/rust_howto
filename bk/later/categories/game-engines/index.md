@@ -39,8 +39,8 @@ Code examples are found below:
 
 <div class="hidden">
 [expand](https://github.com/john-cd/rust_howto/issues/370)
-Needs full review
+Needs full review.
 
-- [pyxel][pyxel~github]: A retro game engine for Python
+- [pyxel][pyxel~github]↗: A retro game engine for Python.
 
 </div>

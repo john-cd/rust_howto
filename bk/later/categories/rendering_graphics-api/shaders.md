@@ -36,7 +36,7 @@ Multi-platform high-performance compute language extension for Rust.
 
 ## GLSL/HLSL Compilation {#skip}
 
-FIXME
+FIXME.
 
 ## SPIR-V {#skip}
 
@@ -50,7 +50,7 @@ For building spirv modules.
 
 ### `spirv-reflect` {#spirv-reflect}
 
-For inspecting SPIR-V shaders
+For inspecting SPIR-V shaders.
 
 ### `shaderc` {#shaderc}
 

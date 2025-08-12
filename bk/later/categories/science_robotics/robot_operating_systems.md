@@ -8,29 +8,29 @@ A Robot Operating System (ROS) is a middleware framework designed to help build 
 
 Here are some key aspects of Robot Operating Systems:
 
-- Core Functionality
+- Core Functionality:
 
 Message Passing: ROS facilitates communication between various components (nodes) of a robot system using a publish-subscribe messaging paradigm. For example, a sensor might publish data that a motion planner subscribes to.
 
 Hardware Abstraction: It enables developers to write code that works across different hardware platforms, like [sensors][p~sensors], cameras, and motors.
 
-- Modular Design
+- Modular Design:
 
 ROS systems are composed of small, independent units called nodes, each performing a specific task. For instance, one node could be responsible for navigation, another for path planning, and another for sensor integration. This modularity promotes flexibility and scalability.
 
-- Development Tools
+- Development Tools:
 
 Tools like [`rviz`][c~rviz~crates.io]↗{{hi:rviz}} (for [visualization][p~visualization]) and `Gazebo`{{hi:Gazebo}} (for simulation) help developers test and debug their robotic systems without needing the actual hardware.
 
-- Supported Platforms
+- Supported Platforms:
 
 ROS supports various programming languages, such as Python, C++, and now Rust. Developers can choose the language that best fits their project.
 
-- Versioning
+- Versioning:
 
 ROS 1 was the original system, widely used in academia and industry. However, it had some limitations with real-time performance.ROS 2 is the newer version designed to address these limitations. It emphasizes performance, security, and support for multi-robot systems.
 
-- Rust in ROS
+- Rust in ROS:
 
 While ROS traditionally favored [Python][p~python] and C++, Rust is gradually gaining traction due to its strong memory safety, [concurrency][p~concurrency] features, and [performance][p~performance] benefits. Libraries like [`rosrust`]( ){{hi: }} and `r2r` bring ROS functionality to Rust, enabling developers to create safe and efficient robotics applications.
 
@@ -73,6 +73,6 @@ Formally specified Rust bindings for ROS2.
 
 <div class="hidden">
 [robotics: organize](https://github.com/john-cd/rust_howto/issues/477)
-review in depth
-review ROS related libraries
+review in depth.
+review ROS related libraries.
 </div>

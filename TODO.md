@@ -2,51 +2,51 @@
 
 ## Now
 
-- add index entries and links WIP
+- add index entries and links WIP.
 
-- polish crate_selection
+- polish crate_selection.
 
-- polish contributing
+- polish contributing.
 
-- finish to add RBE link #29
+- finish to add RBE link #29.
 
-- polish intro
-  - review `about` examples
+- polish intro.
+  - review `about` examples.
 
-- Close NOW tickets: WIP
-- Go trough VS Code bookmarks (WSL): WIP
-- Go trough VS Code bookmarks (dev container): WIP
+- Close NOW tickets: WIP.
+- Go trough VS Code bookmarks (WSL): WIP.
+- Go trough VS Code bookmarks (dev container): WIP.
 
 - Manually insert rest of cross-links between pages?
 
-- finish new tools in wip folder
-  - parser_lib
-  - inline_links
-  - process_directives
-  - link_checker
+- finish new tools in wip folder.
+  - parser_lib.
+  - inline_links.
+  - process_directives.
+  - link_checker.
 
-- Replace inline links and naked URLs by ref-style links
+- Replace inline links and naked URLs by ref-style links.
 
-- License / legal rethink
+- License / legal rethink.
 
-- indices
-  - script for crates_and_examples
-  - rethink crates_alpha and categories
-  - categories.md
+- indices.
+  - script for crates_and_examples.
+  - rethink crates_alpha and categories.
+  - categories.md.
 
 ## Update recipe tables
 
-- improve scripts that generate links / update recipe tables
+- improve scripts that generate links / update recipe tables.
 
 ## Additional Links / Contents
 
-- move rest of links from TOREVIEW.md
-- finish to review chrome bookmarks and include in text
+- move rest of links from TOREVIEW.md.
+- finish to review chrome bookmarks and include in text.
 
 ## Finish pandoc / typst setup; generate PDF version of book
 
-- pandoc / typst
-- kindle create
+- pandoc / typst.
+- kindle create.
 
 <https://gumroad.com>
 <https://pianomanfrazier.com/post/write-a-book-with-markdown/#bookdown-https-bookdown-org-yihui-bookdown>
@@ -55,70 +55,70 @@
 
 ### Finish preproc directives in mdbook-scrub
 
-- Scrub any left-over {{#example ...}}, {{#crate ...}}... etc and warn. WIP
-- Scrub links to hidden pages instead of having to comment e.g. [p~cross-platform]: # "../../other/cross-platform/index.md"
+- Scrub any left-over {{#example ...}}, {{#crate ...}}... etc and warn. WIP.
+- Scrub links to hidden pages instead of having to comment e.g. [p~cross-platform]: # "../../other/cross-platform/index.md".
 
 ### Implement directives
 
-- Crate link
-- Crate badge - WIP link tool
+- Crate link.
+- Crate badge - WIP link tool.
 - Category link?
-- Category badges
-- Crate blocks
-- Recipe table
+- Category badges.
+- Crate blocks.
+- Recipe table.
 
 ## Review tools and consolidate WIP
 
-- crate-indices WIP
-- autogen - in playground
-- links
-- templ
-- tool_lib
+- crate-indices WIP.
+- autogen - in playground.
+- links.
+- templ.
+- tool_lib.
 
-document WIP
-add tests WIP
-consolidate CLIs
+document WIP.
+add tests WIP.
+consolidate CLIs.
 
 -------------------------
 
 ## Finish COMING SOON examples
 
-- parser impl
-- crypto
-- database
-- proc macros
-- pyo3, ractor, polars, datafusion, aws_lambda, aws_sdk
+- parser impl.
+- crypto.
+- database.
+- proc macros.
+- pyo3, ractor, polars, datafusion, aws_lambda, aws_sdk.
 
-- fake
-- tracing_subscriber
-- flate2
-- salsa
-- crux
-- cssparser
-- quickxml
+- fake.
+- tracing_subscriber.
+- flate2.
+- salsa.
+- crux.
+- cssparser.
+- quickxml.
 
-- review cancelable example in xmpl
+- review cancelable example in xmpl.
 
-- move WIP examples from playground
+- move WIP examples from playground.
 
 ## Incoporate the added text in drafts
 
-- drafts: Finish
-  - Containers
-  - development tools: FFI - reorg. with other FFI topics
+- drafts: Finish.
+  - Containers.
+  - development tools: FFI - reorg. with other FFI topics.
 
 - other:
-  - cross-platform (partially done)
+  - cross-platform (partially done).
   - data proc,
   - gpu,
-  - scripting (partially done)
-  - written in rust (partially done)
+  - scripting (partially done).
+  - written in rust (partially done).
 
-- review drafts section for what I missed
+- review drafts section for what I missed.
 
 ## Additional Categories
 
-- move categories back to src, after final review
+- move categories back to src, after final review.
   - api bindings ?
   - memory ?
   - caching ?
@@ -128,12 +128,12 @@ consolidate CLIs
   - command-line utils ~ dedupe with written_in_rust ?
   - compression ?
   - email ?
-  - math
+  - math.
   - ML ?
   - database impl ?
   - encoding ?
   - template ?
-  - text processing
+  - text processing.
   - HTTP client ?
   - build utils ?
   - dev tools ?
@@ -147,7 +147,7 @@ consolidate CLIs
   - crypto ?
   - auth ?
 
-- `other` section - move what's ready
+- `other` section - move what's ready.
 
 ## sccache for dev container setup?
 
@@ -162,60 +162,60 @@ consolidate CLIs
 Try `cargo-husky`
 
 [dev-dependencies.cargo-husky]
-version = "1.5.0"
-default-features = false
-features = ["user-hooks"]
+version = "1.5.0".
+default-features = false.
+features = ["user-hooks"].
 
 Note that, when user-hooks feature is enabled, other all features are disabled.
-You need to prepare all hooks in .cargo-husky/hooks directory
-See [cargo-husky](https://lib.rs/crates/cargo-husky)
+You need to prepare all hooks in .cargo-husky/hooks directory.
+See [cargo-husky](https://lib.rs/crates/cargo-husky).
 
-See scripts/precommit folder
+See scripts/precommit folder.
 
 ## Increase speed of CI build (Linux)
 
 ### Parallelism
 
 Split ci.sh?
-Run cargo build / clippy / nextest in separate CI steps or jobs for coarse parallelism
+Run cargo build / clippy / nextest in separate CI steps or jobs for coarse parallelism.
 
 ### Try to move target and/or /usr/local/cargo to a docker volume instead of docker container FS
 
 Metric:
 
 ```sh
-time dd if=/dev/zero of=test.dat bs=1024 count=100000
+time dd if=/dev/zero of=test.dat bs=1024 count=100000.
 ```
 
-Writes are fast when writing to container FS, volume, but slow on bind mount (to Windows). Need to test on Linux
+Writes are fast when writing to container FS, volume, but slow on bind mount (to Windows). Need to test on Linux.
 
 ### Try to store target and/or /usr/local/cargo in a tmpfs?
 
-/usr/local/cargo is small enough to fit in memory (16GB max)
+/usr/local/cargo is small enough to fit in memory (16GB max).
 
 [how-to-use-tmpfs-and-its-functions-in-docker](https://linuxhaxor.net/code/how-to-use-tmpfs-and-its-functions-in-docker.html)
 
 ### Make gha caching work on CI
 
-Try local / inline caching as well
+Try local / inline caching as well.
 
 [optimize-docker-builds-github-actions-cache](https://cicube.io/blog/optimize-docker-builds-github-actions-cache)
 
 ### Try to build directly on the host, not in a container?
 
-Write a .yml build workflow file for Linux
+Write a .yml build workflow file for Linux.
 
 ---
 
 ## Free further space on CI runner
 
-Already using the `free-disk-space-ubuntu` action
+Already using the `free-disk-space-ubuntu` action.
 
 [2875](https://github.com/actions/runner-images/issues/2875)
 
 [free-disk-space-ubuntu](https://github.com/marketplace/actions/free-disk-space-ubuntu)
 
-See splitting into separate CI steps or jobs above
+See splitting into separate CI steps or jobs above.
 
 ---
 
@@ -230,16 +230,16 @@ Use cross?
 
 ## Make `just` commands fully work on Windows
 
-- make `just` commands fully work on Windows
+- make `just` commands fully work on Windows.
   - use [script]?
-  - make cygwin bash work on Windows
+  - make cygwin bash work on Windows.
 - consider cargo make / xtask?
 
 ---
 
 ## Review the need for rusty_fork
 
-since we use nextest exclusively
+since we use nextest exclusively.
 See nextest execution model: <https://nexte.st/docs/design/how-it-works/>
 
 ---
@@ -247,7 +247,7 @@ See nextest execution model: <https://nexte.st/docs/design/how-it-works/>
 ## CI build on MacOS too?
 
 Create a .yml file for MacOS build on GitHub runner?
-Add build job to main workflow
+Add build job to main workflow.
 
 ---
 
@@ -257,6 +257,6 @@ Add build job to main workflow
 
 ## Build rust_rate tool
 
-- retrieve most downloaded / recently downloaded / most relevant crates from crates.io / lib.rs
-- collect other sources of ranking: r/rust, awesome-rust, etc
-- generate a list of crates that should be included in the book
+- retrieve most downloaded / recently downloaded / most relevant crates from crates.io / lib.rs.
+- collect other sources of ranking: r/rust, awesome-rust, etc.
+- generate a list of crates that should be included in the book.

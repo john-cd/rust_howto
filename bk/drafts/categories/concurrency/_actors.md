@@ -8,7 +8,7 @@
 - create a finite number of new Actors;
 - designate the behavior to be used for the next message it receives."
 
-- Carl Hewitt 1973
+- Carl Hewitt 1973.
 
 An actor is a lightweight, independent unit of computation that encapsulates state and behavior. Actors communicate with each other asynchronously by exchanging messages, which are placed in the recipient's mailbox (a queue). An actor processes messages sequentially, one at a time, from its mailbox. This message-passing paradigm simplifies concurrent programming by avoiding shared mutable state and complex locking mechanisms, enabling actors to run concurrently and potentially be distributed across multiple machines, making them well-suited for building scalable and resilient systems.
 

@@ -45,5 +45,5 @@ Make sure the [`gtk`]( ){{hi: }} crate version you're using is compatible with t
 
 <div class="hidden">
 [gtk: write](https://github.com/john-cd/rust_howto/issues/383)
-review in depth
+review in depth.
 </div>

@@ -33,5 +33,5 @@ The Rust geoscience ecosystem is developing, and while not as mature as Python's
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/958)
-review in depth
+review in depth.
 </div>

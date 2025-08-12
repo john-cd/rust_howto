@@ -96,6 +96,6 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 
 <div class="hidden">
 [2d_renderers: write; titles](https://github.com/john-cd/rust_howto/issues/377)
-decide what to cover
+decide what to cover.
 what goes into 2D raster / vector / this page?
 </div>

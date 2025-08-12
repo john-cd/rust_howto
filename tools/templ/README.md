@@ -77,7 +77,7 @@ Random number generators and other randomness functionality.
 
 `info` returns a JSON object from the `crates.io` API:
 
-- categories
-- crate_data
-- keywords
-- versions
+- categories,
+- crate_data,
+- keywords,
+- versions.

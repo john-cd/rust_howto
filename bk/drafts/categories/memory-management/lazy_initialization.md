@@ -86,6 +86,6 @@ Declares a lazily evaluated constant [`std::collections::HashMap`][c~std::collec
 
 <div class="hidden">
 [lazy_initialization: write / fix NOW](https://github.com/john-cd/rust_howto/issues/411)
-cover / link to Once OnceCell OnceLock Lazylock
+cover / link to Once OnceCell OnceLock Lazylock.
 
 </div>

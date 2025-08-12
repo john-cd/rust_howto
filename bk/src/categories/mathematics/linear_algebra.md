@@ -47,13 +47,11 @@ In [`ndarray`][c~ndarray~docs]↗, 1-D arrays can be interpreted as either row o
 
 [![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~github][c~ndarray~github~badge]][c~ndarray~github] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
 
-The [`ndarray`][c~ndarray~docs]↗ crate supports a number of ways to create arrays -- this recipe creates
-[`ndarray::Array`][c~ndarray::Array~docs]{{hi:ndarray::Array}}↗ from [`std::vec::Vec`][c~std::vec::Vec~docs]↗{{hi:std::vec::Vec}} using [`std::convert::From`][c~std::convert::From~docs]{{hi:std::convert::From}}↗. Then, it sums the arrays element-wise.
+The [`ndarray`][c~ndarray~docs]↗ crate supports a number of ways to create arrays -- this recipe create [`ndarray::Array`][c~ndarray::Array~docs]{{hi:ndarray::Array}}↗ from [`std::vec::Vec`][c~std::vec::Vec~docs]↗{{hi:std::vec::Vec}} using [`std::convert::From`][c~std::convert::From~docs]{{hi:std::convert::From}}↗. Then, it sums the arrays element-wise.
 
 This recipe contains an example of comparing two floating-point [vectors][p~vectors] element-wise. Floating-point numbers are often stored inexactly, making exact comparisons difficult. However, the [`approx::assert_abs_diff_eq`][c~approx::assert_abs_diff_eq~docs]{{hi:approx::assert_abs_diff_eq}}↗ macro from the [`approx`][c~approx~docs]{{hi:approx}}↗ crate allows for convenient element-wise comparisons. To use the [`approx`][c~approx~docs]↗ crate with [`ndarray`][c~ndarray~docs]↗, the [`approx`][c~approx~docs]{{hi:approx}}↗ feature must be added to the [`ndarray`][c~ndarray~docs]↗ dependency in [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}. For example, `ndarray = { version = "0.15.6", features = [ "approx" ] }`.
 
-This recipe also contains additional ownership examples. Here, `let z = a + b` consumes
-`a` and `b`, updates `a` with the result, then moves ownership to `z`. Alternatively,
+This recipe also contains additional ownership examples. Here, `let z = a + b` consumes `a` and `b`, updates `a` with the result, then moves ownership to `z`. Alternatively,
 `let w = &c + &d` creates a new vector without consuming `c` or `d`, allowing their modification later. See [Binary Operators With Two Arrays][c~ndarray::ArrayBase~docs]↗ for additional detail.
 
 ```rust,editable

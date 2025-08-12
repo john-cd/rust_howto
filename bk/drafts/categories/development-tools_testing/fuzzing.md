@@ -21,13 +21,13 @@ You'll need to define a fuzz target - a function in your code that the fuzzer wi
 
 ### Corpus Management {#skip}
 
-(Important for effective fuzzing)
+Important for effective fuzzing.
 
 A corpus is a set of initial inputs that the fuzzer uses as a starting point. [`cargo fuzz`][c~cargo-fuzz~github]↗{{hi:cargo fuzz}} helps manage corpora.
 
 ### Coverage-Guided Fuzzing {#skip}
 
-(Most effective)
+Most effective.
 
 [`libFuzzer`](https://llvm.org/docs/LibFuzzer.html)↗{{hi:libFuzzer}} (used by `cargo fuzz`): libFuzzer is a coverage-guided fuzzer, meaning it uses [code coverage][p~code-coverage] information to guide its search for bugs.
 AFL: Also a coverage-guided fuzzer.
@@ -68,6 +68,6 @@ The [`proptest`][c~proptest~docs]↗{{hi:proptest}}, [`quickcheck`][c~quickcheck
 [fuzzing: review fuzzing crates](https://github.com/john-cd/rust_howto/issues/339)
 cover [bolero][bolero~github]↗.
 [`bolero`][c~bolero~docs]↗{{hi:bolero}}
-cover valgrind
+cover valgrind.
 [`valgrind`][c~valgrind~docs]↗{{hi:valgrind}}.
 </div>

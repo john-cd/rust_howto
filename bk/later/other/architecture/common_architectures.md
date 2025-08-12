@@ -13,7 +13,7 @@ A layered architecture is a traditional software design pattern that organizes a
 ## Microservices Architecture {#microservices}
 
 A microservices architecture structures an application as a collection of small, independent services, built around business capabilities.
-Each microservice
+Each microservice:
 
 - is a self-contained unit that performs a specific business function;
 - can be developed, deployed, and scaled independently;

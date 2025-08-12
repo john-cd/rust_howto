@@ -80,9 +80,9 @@ WASM binary size is important for web performance. Use tools like [`wee_alloc`][
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/1217)
-Improving Execution Speed
-Integration Testing with JavaScript
-Compiling Rust to WASM
-Leveraging SIMD in WASM
-Profiling Rust-WASM Applications
+Improving Execution Speed.
+Integration Testing with JavaScript.
+Compiling Rust to WASM.
+Leveraging SIMD in WASM.
+Profiling Rust-WASM Applications.
 </div>

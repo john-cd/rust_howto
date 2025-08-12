@@ -22,8 +22,7 @@ Calculates and displays the [date and time][p~date-and-time]{{hi:Date and time}}
 
 The methods return None if the [date and time][p~date-and-time] cannot be calculated.
 
-Escape sequences that are available for the
-[`chrono::DateTime::format`][c~chrono::DateTime::format~docs]{{hi:chrono::DateTime::format}}↗ can be found at [`chrono::format::strftime`][c~chrono::format::strftime~docs]{{hi:chrono::format::strftime}}↗.
+Escape sequences that are available for the[`chrono::DateTime::format`][c~chrono::DateTime::format~docs]{{hi:chrono::DateTime::format}}↗ can be found at [`chrono::format::strftime`][c~chrono::format::strftime~docs]{{hi:chrono::format::strftime}}↗.
 
 ```rust,editable
 {{#include ../../../crates/cats/date_and_time/examples/chrono/checked.rs:example}}

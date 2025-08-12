@@ -89,7 +89,7 @@ Working with virtual disk image formats (e.g., qcow2, vmdk) often involves using
 <div class="hidden">
 [write; need in-depth review](https://github.com/john-cd/rust_howto/issues/968)
 
-cover
+cover:
 
 https://github.com/rust-vmm/community
 https://github.com/rust-vmm/vmm-sys-util

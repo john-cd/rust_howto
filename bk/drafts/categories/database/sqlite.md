@@ -8,8 +8,7 @@
 
 [![rusqlite][c~rusqlite~docs~badge]][c~rusqlite~docs]{{hi:rusqlite}} [![rusqlite~documentation][c~rusqlite~documentation~badge]][c~rusqlite~documentation] [![cat~database][cat~database~badge]][cat~database]{{hi:Databases}}
 
-Use the [`rusqlite`][c~rusqlite~docs]{{hi:rusqlite}}↗ crate to open SQLite databases. See
-the [documentation][c~rusqlite~documentation]↗ for compiling on [Windows][p~windows].
+Use the [`rusqlite`][c~rusqlite~docs]{{hi:rusqlite}}↗ crate to open SQLite databases. See the [documentation][c~rusqlite~documentation]↗ for compiling on [Windows][p~windows].
 
 [`rusqlite::Connection::open`][c~rusqlite::Connection::open~docs]{{hi:rusqlite::Connection::open}}↗ will create the database if it doesn't already exist.
 

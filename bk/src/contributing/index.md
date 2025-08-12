@@ -15,13 +15,13 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 
 ## Table of Contents {#table-of-contents}
 
-- [Code of Conduct][ex~contributing~code-of-conduct]
-- [I Have a Question][ex~contributing~i-have-a-question]
-- [I Want To Contribute][ex~contributing~i-want-to-contribute]
-- [Reporting Bugs][ex~contributing~reporting-bugs]
-- [Suggesting Enhancements][ex~contributing~suggesting-enhancements]
-- [Styleguides][ex~contributing~styleguides]
-- [Commit Messages][ex~contributing~commit-messages]
+- [Code of Conduct][ex~contributing~code-of-conduct].
+- [I Have a Question][ex~contributing~i-have-a-question].
+- [I Want To Contribute][ex~contributing~i-want-to-contribute].
+- [Reporting Bugs][ex~contributing~reporting-bugs].
+- [Suggesting Enhancements][ex~contributing~suggesting-enhancements].
+- [Styleguides][ex~contributing~styleguides].
+- [Commit Messages][ex~contributing~commit-messages].
 
 ## Code of Conduct {#code-of-conduct}
 

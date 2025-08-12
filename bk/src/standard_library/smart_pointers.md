@@ -110,5 +110,5 @@ The following example demonstrates the implementation of a basic smart pointer:
 
 <div class="hidden">
 [add cow](https://github.com/john-cd/rust_howto/issues/1384)
-add oncecell, std::sync::OnceLock, lazylock
+add oncecell, std::sync::OnceLock, lazylock.
 </div>

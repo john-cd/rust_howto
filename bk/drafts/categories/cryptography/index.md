@@ -4,7 +4,7 @@
 
 Cryptography protects data from unauthorized access, ensuring confidentiality, integrity, authenticity, and non-repudiation. Cryptography is used to secure emails, messages, and data transfers to protect them from eavesdropping. Data Integrity ensures that data has not been tampered with. Authentication means verifying the identity of users and devices.
 
-This section covers
+This section covers:
 
 - Encryption: The process of converting plaintext into ciphertext using an algorithm and a key. Only someone with the correct key can decrypt the ciphertext back into plaintext.
 - Hashing: A method of transforming data into a fixed-size value, which is unique to the original data. Hashes are used for verifying data integrity.

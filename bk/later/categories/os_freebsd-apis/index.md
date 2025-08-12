@@ -33,5 +33,5 @@ If you need to interact with FreeBSD-specific libraries or APIs that are written
 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/947)
-link to API bindings / External FFI cats in crates.io
+link to API bindings / External FFI cats in `crates.io`.
 </div>

@@ -30,7 +30,7 @@ Specialized crates exist for specific formats like PNG, JPEG, GIF, WebP: [`lodep
 
 ## Image Rendering
 
-See
+See:
 
 - [[rendering | Rendering]].
 - [[rendering_data-formats | Rendering Data Formats]].

@@ -50,7 +50,7 @@ The [`indoc`][c~indoc~docs]↗{{hi:indoc}} crate exports five additional macros 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/1190)
 
-cover inflector
+cover inflector.
 
 ```rust,noplayground
 use inflector::Inflector;

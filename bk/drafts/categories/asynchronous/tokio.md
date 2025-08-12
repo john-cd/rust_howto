@@ -26,7 +26,7 @@ Read and write data asynchronously with Tokio, using [streams][p~streams], codec
 
 [Current thread runtime][c~tokio::main~current-thread-runtime~docs]{{hi:tokio::main}}↗.
 
-equivalent to
+equivalent to:
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/examples/tokio/tokio2.rs:example}}

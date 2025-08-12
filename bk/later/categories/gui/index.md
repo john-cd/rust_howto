@@ -18,7 +18,7 @@ For most common GUI needs, [`egui`][c~egui~docs]↗{{hi:egui}} and [`iced`][c~ic
 | Web Technologies for Desktop | [`tauri`][c~tauri~docs]↗{{hi:tauri}}. |
 | Web-Based GUIs | [`yew`][c~yew~docs]↗{{hi:yew}} or [`seed`][c~seed~docs]↗{{hi:seed}}. See [[web-programming | Web Programming]] and [[web-programming_http-server | Web Programming: HTTP Server]] |
 
-See also
+See also:
 
 - [Are we GUI yet?][are-we-gui-yet?~website]↗.
 - the relevant section in [blessed.rs][blessed-rs~website]↗.
@@ -107,7 +107,7 @@ While primarily for window creation, [`winit`][c~winit~docs]↗{{hi:winit}} is o
 
 <div class="hidden">
 [organize](https://github.com/john-cd/rust_howto/issues/397)
-review which GUI framework should be recommended - make a table; review links in Choosing the right framework section again
+review which GUI framework should be recommended - make a table; review links in Choosing the right framework section again.
 cover [`perseus`]( ){{hi: }} / zola?
 
 - [Are we (I)DE yet?][are-we-ide-yet?~website]↗.

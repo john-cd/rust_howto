@@ -30,13 +30,13 @@ The [`opentelemetry`]( ){{hi: }} crate is an OpenTelemetry API for Rust.
 
 Prometheus instrumentation library for Rust applications. Prometheus is an open-source systems monitoring and alerting toolkit. Prometheus's main features are:
 
-- a multi-dimensional data model with time series data identified by metric name and key/value pairs
-- PromQL, a flexible query language to leverage this dimensionality
-- no reliance on distributed storage; single server nodes are autonomous
-- time series collection happens via a pull model over HTTP
-- pushing time series is supported via an intermediary gateway
-- targets are discovered via service discovery or static configuration
-- multiple modes of graphing and dashboarding support
+- a multi-dimensional data model with time series data identified by metric name and key/value pairs,
+- "PromQL", a flexible query language to leverage this dimensionality,
+- no reliance on distributed storage; single server nodes are autonomous,
+- time series collection happens via a pull model over HTTP.
+- pushing time series is supported via an intermediary gateway,
+- targets are discovered via service discovery or static configuration,
+- multiple modes of graphing and dashboarding support.
 
 ### Useful Links {#skip}
 
@@ -73,6 +73,6 @@ Prometheus instrumentation library for Rust applications. Prometheus is an open-
 <div class="hidden">
 [write / expand / organize. what to cover?](https://github.com/john-cd/rust_howto/issues/1343)
 
-- [quickwit: Cloud-native search engine for observability. An open-source alternative to Datadog, Elasticsearch, Loki, and Tempo.][quickwit~github]
+- [quickwit: Cloud-native search engine for observability. An open-source alternative to Datadog, Elasticsearch, Loki, and Tempo.][quickwit~github].
 
 </div>

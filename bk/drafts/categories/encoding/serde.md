@@ -59,7 +59,7 @@ The [`monostate`][c~monostate~docs]↗{{hi:monostate}} library implements a type
 
 <div class="hidden">
 [serde: write](https://github.com/john-cd/rust_howto/issues/352)
-dedupe [JSON][p~json] with complex.md
+dedupe [JSON][p~json] with complex.md.
 [Supported Formats][c~serde~supported-formats]↗.
 
 - [`eserde`: Don't stop at the first deserialization error | Mainmatter][blog~mainmatter-eserde]↗.

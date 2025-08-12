@@ -11,7 +11,7 @@
 - Return the value and a boolean indicating whether there was overflow with the [`overflowing_*`]( ){{hi: }} methods.
 - Saturate at the value's minimum or maximum values with the [`saturating_*`]( ){{hi: }} methods.
 
-- [half — data structures in Rust][c~half~lib.rs]
+- [half — data structures in Rust][c~half~lib.rs].
 
 ---
 

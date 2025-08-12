@@ -13,5 +13,5 @@
 | [Handle Errors Correctly in `main`][ex~error_handling~handle-errors-correctly-in-main] | [![std][c~std~docs~badge]][c~std~docs] | [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns] |
 
 <div class="hidden">
-FIXME review
+FIXME review.
 </div>

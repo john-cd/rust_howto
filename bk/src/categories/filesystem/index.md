@@ -20,7 +20,7 @@ For most common file system tasks, [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}} 
 
 ## Paths
 
-FIXME
+FIXME.
 
 ## Reading & Writing Files
 
@@ -30,15 +30,15 @@ FIXME
 
 Reading from stdin, writing to stdout/stderr, and handling command-line arguments.
 
-FIXME
+FIXME.
 
 ### Symbolic Links
 
-FIXME
+FIXME.
 
 ### File Metadata
 
-FIXME
+FIXME.
 
 ## Directories
 
@@ -62,7 +62,7 @@ FIXME
 
 ## Globbing
 
-FIXME
+FIXME.
 
 ## File Watching
 

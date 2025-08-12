@@ -20,7 +20,7 @@ Direct, comprehensive CCSDS crate support is limited. You'll likely find fragmen
 
 SCOS-2000 is an European Space Agency (ESA) standard for spacecraft control.
 
-Use FFI with existing ESA libraries. See [[development-tools_ffi | Development Tools: FFI]]
+Use FFI with existing ESA libraries. See [[development-tools_ffi | Development Tools: FFI]].
 
 ## COP-1 (Command Operating Procedure-1)
 
@@ -32,7 +32,7 @@ PUS is a CCSDS standard for on-board data handling. You will likely needs a cust
 
 ## Parsing
 
-Use crates like [`nom`][c~nom~docs]↗{{hi:nom}} or [`binascii`][c~binascii~docs]↗{{hi:binascii}} to parse binary data structures defined in the protocol specifications
+Use crates like [`nom`][c~nom~docs]↗{{hi:nom}} or [`binascii`][c~binascii~docs]↗{{hi:binascii}} to parse binary data structures defined in the protocol specifications.
 
 See:
 

@@ -75,13 +75,13 @@ The following are the typical steps to release a crate to [`crates.io`][crates.i
 
 ## Related Topics {#related-topics}
 
-- [Testing][p~testing] Automation
+- [Testing][p~testing] Automation:
   - Code [[code_formatting_linting | linting]] .
   - Unit, integration, and end-to-end [[testing | tests]].
-- Deployment
-  - [[cloud | Cloud]] platforms ([[aws | AWS]], Azure, GCP)
-  - Servers
-  - [[containers | Container]] orchestration systems (Kubernetes)
+- Deployment:
+  - [[cloud | Cloud]] platforms ([[aws | AWS]], Azure, GCP).
+  - Servers.
+  - [[containers | Container]] orchestration systems (Kubernetes).
 
 See also [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]].
 
@@ -91,11 +91,11 @@ See also [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]].
 <div class="hidden">
 [release_automation: write](https://github.com/john-cd/rust_howto/issues/604)
 cover [`cargo-bump`][c~cargo-bump~github]↗{{hi:cargo-bump}} for simple version number increments.
-Link
+Link:
 https://doc.rust-lang.org/cargo/commands/cargo-login.html
 https://doc.rust-lang.org/cargo/commands/cargo-package.html
 https://doc.rust-lang.org/cargo/commands/cargo-publish.html
-Review
+Review:
 https://release-plz.ieni.dev
 https://dev.to/mbayoun95/comprehensive-guide-to-generating-deb-and-rpm-packages-for-rust-applications-41h7
 https://en.wikipedia.org/wiki/List_of_software_package_management_systems

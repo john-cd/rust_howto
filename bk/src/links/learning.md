@@ -22,7 +22,7 @@
 
 ## Guides {#guides}
 
-- [Rusty CS][rusty-cs~github]↗: "A Computer Science Curriculum with Rust flavor!"
+- [Rusty CS][rusty-cs~github]↗: "A Computer Science Curriculum with Rust flavor!".
 - [Curated Rust][curatedrust~github]↗: "This is a guided walkthrough of the resources that I used to learn Rust."
 - [A Gentle Introduction to Rust][rust-gentle-intro~website]↗.
 - [Learning Rust in 2020][rust-blog/blob/master/posts/learning-rust-in-2020.md~github]↗.
@@ -108,5 +108,5 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO organize further
+TODO organize further.
 </div>

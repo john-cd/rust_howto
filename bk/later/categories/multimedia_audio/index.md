@@ -27,11 +27,11 @@ Use:
 
 ## Audio Effects, Filters, and Compression
 
-FIXME
+FIXME.
 
 ## Audio Streaming
 
-FIXME
+FIXME.
 
 ## Audio Synthesis
 
@@ -54,6 +54,6 @@ Use [`synth-rs`][c~synth~docs]↗{{hi:synth-rs}} for audio synthesis.
 
 <div class="hidden">
 [fix](https://github.com/john-cd/rust_howto/issues/941)
-review in depth
-synth is old
+review in depth.
+synth is old.
 </div>

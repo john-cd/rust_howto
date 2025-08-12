@@ -20,18 +20,18 @@ While still developing, the Rust robotics ecosystem is gaining momentum. Rust's 
 
 Consider [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} and platform-specific crates. [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} defines a standard trait interface for interacting with embedded hardware. [`linux-embedded-hal`][c~linux-embedded-hal~docs]↗{{hi:linux-embedded-hal}} provides implementations for Linux systems.
 
-See also
+See also:
 
 - [[embedded | Embedded Systems]] Development.
 - [[hardware-support | Hardware]] Abstraction.
 
 ## File Loading
 
-Import/Export various files related with Robotics
+Import/Export various files related with Robotics:
 
 [`assimp-rs`][c~assimp~docs]↗{{hi:assimp-rs}} (open-asset-importer) - Rust bindings for the Assimp library.
-[`mcap`][c~mcap~crates.io]↗{{hi:mcap}} - Rust library for reading and writing MCAP log files
-[`urdf-rs`][c~urdf-rs~crates.io]↗{{hi:urdf-rs}} - URDF Loader for Rust
+[`mcap`][c~mcap~crates.io]↗{{hi:mcap}} - Rust library for reading and writing MCAP log files.
+[`urdf-rs`][c~urdf-rs~crates.io]↗{{hi:urdf-rs}} - URDF Loader for Rust.
 
 See also [[parser-implementations | Parser Implementations]].
 

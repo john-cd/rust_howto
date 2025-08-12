@@ -118,7 +118,7 @@ This section provides a few examples of software written in Rust, organized by t
   - [`ruff`][c~ruff~docs]↗ [(GitHub)][c~ruff~github]↗: an extremely fast Python linter and code formatter.
 - Cache Cleaning Utilities:
   - [`kondo`][kondo~github]↗ cleans dependencies and build artifacts from your projects.
-- Desktop Frameworks
+- Desktop Frameworks:
   - [`tauri`][c~tauri~docs][(GitHub)][c~tauri~github]↗: build desktop and mobile applications with a web frontend.
 - Game Development:
   - Game engines.
@@ -145,55 +145,55 @@ This section provides a few examples of software written in Rust, organized by t
 <div class="hidden">
 [organize; decide if we need other pages or if we consolidate here; table?](https://github.com/john-cd/rust_howto/issues/993)
 
-- [awesome-rust-tools: Harness the power of Rust. Those fast productivity tools based on Rust.][awesome-rust-tools~github]↗
-- [awesome-alternatives-in-rust: A curated list of replacements for existing software written in Rust][awesome-alternatives-in-rust~github]↗
+- [awesome-rust-tools: Harness the power of Rust. Those fast productivity tools based on Rust.][awesome-rust-tools~github]↗.
+- [awesome-alternatives-in-rust: A curated list of replacements for existing software written in Rust][awesome-alternatives-in-rust~github]↗.
 
-- [RustDesk][rustdesk~website]↗
-- [OxidOS Automotive][oxidos~website]↗
-- [ripgrep: `ripgrep` recursively searches directories for a regex pattern while respecting your gitignore][c~ripgrep~github]↗
-- [zola: A fast static site generator in a single binary with everything built-in. https://www.getzola.org][zola~github]↗
-- [solana: Web-Scale Blockchain for fast, secure, scalable, decentralized apps and marketplaces.][c~solana~github]↗
-- [linkerd2: Ultralight, security-first service mesh for Kubernetes. Main repo for Linkerd 2.x.][linkerd2~github]↗
-- [bottlerocket: An operating system designed for hosting containers][c~bottlerocket~github]↗
-- [`databend`: 𝗗𝗮𝘁𝗮, 𝗔𝗻𝗮𝗹𝘆𝘁𝗶𝗰𝘀 & 𝗔𝗜. Modern alternative to Snowflake. Cost-effective and simple for massive-scale analytics. https://databend.com][databend~github]↗
-- [`rerun`: Visualize streams of multimodal data. Free, fast, easy to use, and simple to integrate. Built in Rust.][c~rerun~github]↗
-- [`tock`: A secure embedded operating system for microcontrollers][tock~github]↗
-- [`mail-server`: Secure & Modern All-in-One Mail Server (IMAP, JMAP, POP3, SMTP)][mail-server~github]↗
-- [`hickory-dns`: A Rust based DNS client, server, and resolver][hickory-dns~github]↗
-- [`sniffnet`: Comfortably monitor your Internet traffic][sniffnet~github]↗
-- [`ratatui`: App Showcase][ratatui-showcase-apps~website]↗
-- [`habitat`: Modern applications with built-in automation][habitat~github]↗
-- [`cargo-binstall`: Binary installation for rust projects][c~cargo-binstall~github]↗
-- [`cargo-update`][c~cargo-update~crates.io]↗
-- [`alacritty`: A cross-platform, OpenGL terminal emulator.][alacritty~github]↗
-- [`cargo-hakari`][c~cargo-hakari~crates.io]↗
-- [`spacedrive`: Spacedrive is an open source cross-platform file explorer, powered by a virtual distributed filesystem written in Rust.][spacedrive~github]↗
+- [RustDesk][rustdesk~website]↗.
+- [OxidOS Automotive][oxidos~website]↗.
+- [ripgrep: `ripgrep` recursively searches directories for a regex pattern while respecting your gitignore][c~ripgrep~github]↗.
+- [zola: A fast static site generator in a single binary with everything built-in. https://www.getzola.org][zola~github]↗.
+- [solana: Web-Scale Blockchain for fast, secure, scalable, decentralized apps and marketplaces.][c~solana~github]↗.
+- [linkerd2: Ultralight, security-first service mesh for Kubernetes. Main repo for Linkerd 2.x.][linkerd2~github]↗.
+- [bottlerocket: An operating system designed for hosting containers][c~bottlerocket~github]↗.
+- [`databend`: 𝗗𝗮𝘁𝗮, 𝗔𝗻𝗮𝗹𝘆𝘁𝗶𝗰𝘀 & 𝗔𝗜. Modern alternative to Snowflake. Cost-effective and simple for massive-scale analytics. https://databend.com][databend~github]↗.
+- [`rerun`: Visualize streams of multimodal data. Free, fast, easy to use, and simple to integrate. Built in Rust.][c~rerun~github]↗.
+- [`tock`: A secure embedded operating system for microcontrollers][tock~github]↗.
+- [`mail-server`: Secure & Modern All-in-One Mail Server (IMAP, JMAP, POP3, SMTP)][mail-server~github]↗.
+- [`hickory-dns`: A Rust based DNS client, server, and resolver][hickory-dns~github]↗.
+- [`sniffnet`: Comfortably monitor your Internet traffic][sniffnet~github]↗.
+- [`ratatui`: App Showcase][ratatui-showcase-apps~website]↗.
+- [`habitat`: Modern applications with built-in automation][habitat~github]↗.
+- [`cargo-binstall`: Binary installation for rust projects][c~cargo-binstall~github]↗.
+- [`cargo-update`][c~cargo-update~crates.io]↗.
+- [`alacritty`: A cross-platform, OpenGL terminal emulator.][alacritty~github]↗.
+- [`cargo-hakari`][c~cargo-hakari~crates.io]↗.
+- [`spacedrive`: Spacedrive is an open source cross-platform file explorer, powered by a virtual distributed filesystem written in Rust.][spacedrive~github]↗.
 - [`swc`: Rust-based platform for the Web](https://github.com/swc-project/swc)↗.
-- [`influxdb`: Scalable datastore for metrics, events, and real-time analytics][influxdb~github]↗
-- [`firecracker`: Secure and fast microVMs for serverless computing.][firecracker~github]↗
-- [`Warp`: Warp is a modern, Rust-based terminal with AI built in so you and your team can build great software, faster.][warp~github]↗
-- [RustPython: A Python Interpreter written in Rust][rustpython~github]↗
-- [wezterm: A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust][wezterm~github]↗
-- [redox-os: Mirror of https://gitlab.redox-os.org/redox-os/redox][redox~github]↗
-- [Neon: Serverless Postgres. We separated storage and compute to offer autoscaling, code-like database branching, and scale to zero.][neon~github]↗
-- [navi: An interactive cheatsheet tool for the command-line](https://github.com/denisidoro/navi)↗
-- [RustScan: The Modern Port Scanner][rustscan~github]↗
-- [workers-rs: Write Cloudflare Workers in 100% Rust via WebAssembly][workers-rs~github]↗
-- [Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdrant.io/][c~qdrant~github]↗
-- [Hyperlight is a lightweight Virtual Machine Manager (VMM) designed to be embedded within applications. It enables safe execution of untrusted code within micro virtual machines with very low latency and minimal overhead.][c~hyperlight~github]↗
-- [Perseus][perseus~website]↗
-- [DORA (Dataflow-Oriented Robotic Architecture) is middleware designed to streamline and simplify the creation of AI-based robotic applications. It offers low latency, composable, and distributed dataflow capabilities. Applications are modeled as directed graphs, also referred to as pipelines.][dora~github]↗
-- [television][c~television~crates.io]↗
+- [`influxdb`: Scalable datastore for metrics, events, and real-time analytics][influxdb~github]↗.
+- [`firecracker`: Secure and fast microVMs for serverless computing.][firecracker~github]↗.
+- [`Warp`: Warp is a modern, Rust-based terminal with AI built in so you and your team can build great software, faster.][warp~github]↗.
+- [RustPython: A Python Interpreter written in Rust][rustpython~github]↗.
+- [wezterm: A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust][wezterm~github]↗.
+- [redox-os: Mirror of https://gitlab.redox-os.org/redox-os/redox][redox~github]↗.
+- [Neon: Serverless Postgres. We separated storage and compute to offer autoscaling, code-like database branching, and scale to zero.][neon~github]↗.
+- [navi: An interactive cheatsheet tool for the command-line](https://github.com/denisidoro/navi)↗.
+- [RustScan: The Modern Port Scanner][rustscan~github]↗.
+- [workers-rs: Write Cloudflare Workers in 100% Rust via WebAssembly][workers-rs~github]↗.
+- [Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdrant.io/][c~qdrant~github]↗.
+- [Hyperlight is a lightweight Virtual Machine Manager (VMM) designed to be embedded within applications. It enables safe execution of untrusted code within micro virtual machines with very low latency and minimal overhead.][c~hyperlight~github]↗.
+- [Perseus][perseus~website]↗.
+- [DORA (Dataflow-Oriented Robotic Architecture) is middleware designed to streamline and simplify the creation of AI-based robotic applications. It offers low latency, composable, and distributed dataflow capabilities. Applications are modeled as directed graphs, also referred to as pipelines.][dora~github]↗.
+- [television][c~television~crates.io]↗.
 
-- [Fish 4.0: The Fish Of Theseus][blog~fishshell-rustport]↗
+- [Fish 4.0: The Fish Of Theseus][blog~fishshell-rustport]↗.
 
-- [shoes: A multi-protocol proxy server written in Rust (HTTP, SOCKS5, Vmess, Vless, Shadowsocks, Trojan, Snell, Hysteria2, TUIC v5)][c~shoes~github]↗
+- [shoes: A multi-protocol proxy server written in Rust (HTTP, SOCKS5, Vmess, Vless, Shadowsocks, Trojan, Snell, Hysteria2, TUIC v5)][c~shoes~github]↗.
 
-- [Jujutsu (docs)][doc~jujutsu]↗
-- [Steve's Jujutsu Tutorial][blog~steveklabnik-jujutsu-tutorial]↗
+- [Jujutsu (docs)][doc~jujutsu]↗.
+- [Steve's Jujutsu Tutorial][blog~steveklabnik-jujutsu-tutorial]↗.
 
-- [Codename Goose][doc~block-goose]↗
-- [grex: A command-line tool and Rust library with Python bindings for generating regular expressions from user-provided test cases][c~grex~github]↗
-- [youki: A container runtime written in Rust][youki~github]↗
+- [Codename Goose][doc~block-goose]↗.
+- [grex: A command-line tool and Rust library with Python bindings for generating regular expressions from user-provided test cases][c~grex~github]↗.
+- [youki: A container runtime written in Rust][youki~github]↗.
 
 </div>

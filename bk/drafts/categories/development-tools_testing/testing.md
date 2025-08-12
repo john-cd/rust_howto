@@ -53,6 +53,6 @@ Often involves using [`tokio::test`]( ){{hi: }} or similar runtime-specific [att
 <div class="hidden">
 [testing: write](https://github.com/john-cd/rust_howto/issues/340)
 
-- [serial_test](https://docs.rs/serial_test/latest/serial_test) serial_test allows for the creation of serialized Rust tests using the serial attribute
+- [serial_test](https://docs.rs/serial_test/latest/serial_test) serial_test allows for the creation of serialized Rust tests using the serial attribute.
 
 </div>

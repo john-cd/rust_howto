@@ -62,5 +62,5 @@ For WebGPU development in Rust, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is the essen
 <div class="hidden">
 [webgpu: write](https://github.com/john-cd/rust_howto/issues/375)
 review [rust-gpu-ecosystem~website]: https://rust-gpu.github.io/ecosystem
-review in depth
+review in depth.
 </div>

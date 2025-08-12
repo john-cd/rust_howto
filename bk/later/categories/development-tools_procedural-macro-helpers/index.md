@@ -26,7 +26,7 @@ The term 'macro' [(book)][book~macro]↗ refers to a family of features in Rust:
 
 <div class="hidden">
 [fix](https://github.com/john-cd/rust_howto/issues/332)
-explain
+explain:
 - token streams.
 - ASTs.
 </div>

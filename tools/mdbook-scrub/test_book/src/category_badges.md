@@ -1,11 +1,10 @@
 # Category Badges
 
-TODO: NOT IMPLEMENTED
+TODO: NOT IMPLEMENTED.
 
 The `rust_howto` book uses custom directives to insert category badges.
 
-Any left-over directives should be scrubbed by `mdbook-scrub` if the corresponding
-configuration toggle is set (which is the default).
+Any left-over directives should be scrubbed by `mdbook-scrub` if the corresponding configuration toggle is set (which is the default).
 
 
 - {{!cat mathematics}} -> [![cat~mathematics][cat~mathematics~badge]][cat~mathematics]{{hi:Mathematics}}

@@ -88,11 +88,11 @@ See [[web-programming_websocket | Web Programming: Websocket]].
 <div class="hidden">
 [web-programming/index: organize; need full review; further cross link NOW](https://github.com/john-cd/rust_howto/issues/500)
 
-Frameworks
+Frameworks:
 
 - [Which Rust web framework to choose in 2022 (with code examples)][blog~kerkour-rust-web-framework-2022]↗.
 
-QUIC
+QUIC:
 
 - [quiche: Savory implementation of the QUIC transport protocol and HTTP/3][c~quiche~github]↗.
 - [Quinn — Rust network library][c~quinn~lib.rs]↗.
@@ -100,17 +100,17 @@ QUIC
 
 - [Mockito — Rust web dev library][c~mockito~lib.rs]↗.
 
-HTTP
+HTTP:
 
 - [H2 — Rust web dev library][c~h2~lib.rs]↗.
 
-OTHER
+OTHER:
 
 - [webbrowser — Rust web dev library][c~webbrowser~lib.rs]↗ open URLs and local files in the web browsers available on a platform.
 
 - [webpki-root-certs — Rust crypto library][c~webpki-root-certs~lib.rs]↗.
 
-- [Sycamore][sycamore~website]
+- [Sycamore][sycamore~website]↗.
 - [sycamore: A library for creating reactive web apps in Rust and WebAssembly][c~sycamore~github]↗.
 
 </div>

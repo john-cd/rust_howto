@@ -48,5 +48,5 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO curate
+TODO curate.
 </div>

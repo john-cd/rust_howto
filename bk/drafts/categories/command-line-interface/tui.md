@@ -26,7 +26,7 @@ cargo generate ratatui/templates simple
 
 [![tui][c~tui~docs~badge]][c~tui~docs] [![tui~crates.io][c~tui~crates.io~badge]][c~tui~crates.io] [![tui~github][c~tui~github~badge]][c~tui~github] [![tui~lib.rs][c~tui~lib.rs~badge]][c~tui~lib.rs]{{hi:tui}}{{hi:Terminal}}{{hi:Dashboard}}{{hi:tui}}
 
-A library to build rich terminal user interfaces or dashboards
+A library to build rich terminal user interfaces or dashboards.
 
 [![r3bl_tuify][c~r3bl_tuify~docs~badge]][c~r3bl_tuify~docs]{{hi:r3bl_tuify}} [![r3bl_tuify~crates.io][c~r3bl_tuify~crates.io~badge]][c~r3bl_tuify~crates.io]↗ [![blog~tuify][blog~tuify~badge]][blog~tuify]↗
 

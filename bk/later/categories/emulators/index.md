@@ -14,8 +14,7 @@ Building an emulator is a substantial project. You'll likely spend a lot of time
 
 ## CPU Emulation and Instruction Decoding
 
-See [[hardware-support | Hardware Support]], [[parsing | Parsing]], [[parser-implementations | Parser Implementations]], and
-[[_binary_encoders |  Binary Encoders]].
+See [[hardware-support | Hardware Support]], [[parsing | Parsing]], [[parser-implementations | Parser Implementations]], and [[_binary_encoders |  Binary Encoders]].
 
 ## Input/Output (I/O) Handling
 

@@ -18,13 +18,13 @@ For operating system interaction, you'll often use system calls. For external pe
 
 Interact with hardware registers in embedded systems.
 
-FIXME
+FIXME.
 
 ## Interrupts
 
 Hardware signals the CPU through interrupts.
 
-FIXME
+FIXME.
 
 ## Device Drivers
 
@@ -32,7 +32,7 @@ Software that interfaces between the operating system and hardware.
 
 ## Hardware Protocols
 
-FIXME how devices communicate with each other
+FIXME how devices communicate with each other.
 
 ## Related Topics
 

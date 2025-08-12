@@ -50,7 +50,7 @@ It allows multiple threads to concurrently read and write to the map with minima
 - Extremely scalable, low-latency reads (see [performance][p~performance]).
 - Predictable latency across all operations.
 - Efficient memory usage, with garbage collection powered by [`seize`][c~seize~docs]↗{{hi:seize}}.
-([doc][c~papaya~docs]↗)
+([doc][c~papaya~docs]↗).
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/examples/concurrent_data_structures/papaya.rs:example}}

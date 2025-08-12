@@ -61,10 +61,11 @@ Refer to the [[written-in-rust | "Written in Rust"]] chapter as well.
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/605)
-- Infrastructure as Code
-- Configuration Management Tools
-- Containerization and Orchestration
-Review
+- Infrastructure as Code.
+- Configuration Management Tools.
+- Containerization and Orchestration.
+
+Review:
 https://community.chef.io/tools/chef-habitat
 https://github.com/habitat-sh/habitat
 
@@ -75,7 +76,7 @@ https://www.kcl-lang.io/docs/user_docs/getting-started
 
 https://dev.to/mark_mwendia_0298dd9c0aad/optimizing-devops-pipelines-for-rust-projects-leveraging-cargo-and-cicd-474d
 
-CD/CI
+CD/CI:
 
 - [gh-workflow][c~gh-workflow~crates.io]↗.
 - [GitHub Actions best practices for Rust projects][blog~github-actions-best-practices]↗.

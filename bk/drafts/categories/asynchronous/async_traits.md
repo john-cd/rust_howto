@@ -38,5 +38,5 @@ In addition, [traits][p~traits] that use `-> impl Trait` and `[async][p~async] f
 
 <div class="hidden">
 [async-traits: review new Rust features](https://github.com/john-cd/rust_howto/issues/216)
-async-trait = Provides a workaround for the lack of [language][p~language] support for [async][p~async] [functions][p~functions] in traits
+async-trait = Provides a workaround for the lack of [language][p~language] support for [async][p~async] [functions][p~functions] in traits.
 </div>

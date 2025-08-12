@@ -38,7 +38,7 @@ Image Processing Fundamentals:
 - Image Compression.
 - Color Space Conversion.
 
-Image Analysis
+Image Analysis:
 
 {{#example imageproc}}
 

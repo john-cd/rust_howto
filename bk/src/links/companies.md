@@ -217,5 +217,5 @@ See also the [Rust Jobs Report][filtra.io-rust~website]↗ (Filtra).
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO review links
+TODO review links.
 </div>

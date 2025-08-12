@@ -14,7 +14,7 @@ This book is **a compendium of Rust ecosystem examples and resources**. It is in
 
 ## Who Should Read This Book
 
-This book is intended for
+This book is intended for:
 
 - new Rust programmers, to get an overview of the capabilities of the Rust ecosystem and pointers to other resources.
 - experienced programmers, to find code examples and review best practices for common programming tasks.
@@ -42,7 +42,7 @@ The left sidebar is organized by topic. Click on a topic in the sidebar to navig
 
 The [contributing][p~contributing] section details how to contribute to the book itself.
 
-If you are simply looking for the solution to a given task, the easiest ways to find a specific recipe are to
+If you are simply looking for the solution to a given task, the easiest ways to find a specific recipe are to:
 
 - use the search button (in the top toolbar),
 - scan the left-side bar for categories you are interested in,

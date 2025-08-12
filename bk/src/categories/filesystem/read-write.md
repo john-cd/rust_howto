@@ -6,8 +6,7 @@
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-Writes a three-line message to a file, then reads it back a line at a time with the [`std::io::Lines`][c~std::io::Lines~docs]{{hi:std::io::Lines}}↗ iterator created by
-[`std::io::BufRead::lines`][c~std::io::BufRead::lines~docs]{{hi:std::io::BufRead::lines}}↗ [`std::fs::File`][c~std::fs::File~docs]{{hi:std::fs::File}}↗ implements [`std::io::Read`][c~std::io::Read~docs]{{hi:std::io::Read}}↗ which provides [`std::io::BufReader`][c~std::io::BufReader~docs]{{hi:std::io::BufReader}}↗ trait. [`std::fs::File::create`][c~std::fs::File::create~docs]{{hi:std::fs::File::create}}↗ opens a [`std::fs::File`][c~std::fs::File~docs]{{hi:std::fs::File}}↗ for writing, [`std::fs::File::open`][c~std::fs::File::open~docs]{{hi:std::fs::File::open}}↗ for reading.
+Writes a three-line message to a file, then reads it back a line at a time with the [`std::io::Lines`][c~std::io::Lines~docs]{{hi:std::io::Lines}}↗ iterator created by [`std::io::BufRead::lines`][c~std::io::BufRead::lines~docs]{{hi:std::io::BufRead::lines}}↗ [`std::fs::File`][c~std::fs::File~docs]{{hi:std::fs::File}}↗ implements [`std::io::Read`][c~std::io::Read~docs]{{hi:std::io::Read}}↗ which provides [`std::io::BufReader`][c~std::io::BufReader~docs]{{hi:std::io::BufReader}}↗ trait. [`std::fs::File::create`][c~std::fs::File::create~docs]{{hi:std::fs::File::create}}↗ opens a [`std::fs::File`][c~std::fs::File~docs]{{hi:std::fs::File}}↗ for writing, [`std::fs::File::open`][c~std::fs::File::open~docs]{{hi:std::fs::File::open}}↗ for reading.
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/examples/read_write/read_file.rs:example}}

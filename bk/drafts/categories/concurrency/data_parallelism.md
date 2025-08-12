@@ -81,7 +81,7 @@ Also note that the argument to the closure is a reference to a reference (`&&x`)
 
 This example will sort in parallel{{hi:Parallel sort}} a vector of Strings.
 
-Allocate a vector of empty [Strings][p~strings]. [`par_iter_mut().for_each`]( ){{hi: }} populates random values in parallel. Although [multiple options][c~rayon::slice::ParallelSliceMut~docs]↗
+Allocate a vector of empty [Strings][p~strings]. [`par_iter_mut().for_each`]( ){{hi: }} populates random values in parallel. Although [multiple options][c~rayon::slice::ParallelSliceMut~docs]↗.
 exist to sort an enumerable data type, [`rayon::slice::ParallelSliceMut::par_sort_unstable`][c~rayon::slice::ParallelSliceMut::par_sort_unstable~docs]{{hi:rayon::slice::ParallelSliceMut::par_sort_unstable}}↗ is usually faster than [stable sort][c~rayon::slice::ParallelSliceMut::par_sort~docs]↗ algorithms.
 
 ```rust,editable

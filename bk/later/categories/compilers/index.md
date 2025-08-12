@@ -12,11 +12,11 @@ Tools for programming languages: compilers, interpreters, transpilers, and virtu
 
 ## Compiler Implementations
 
-FIXME
+FIXME.
 
 ### Interpreters
 
-FIXME
+FIXME.
 
 ### Transpilers
 
@@ -76,5 +76,5 @@ See also: [[interfacing_with_javascript | Interfacing With Javascript]].
 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/908)
-decide what to cover
+decide what to cover.
 </div>

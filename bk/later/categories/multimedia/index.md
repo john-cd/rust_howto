@@ -64,5 +64,5 @@ See [[network-programming | Network Programming]].
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/940)
-cover areas without links above
+cover areas without links above.
 </div>
