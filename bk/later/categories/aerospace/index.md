@@ -17,7 +17,7 @@ See [[code_verification | Code Verification]].
 ### Concurrency
 
 - Safe [[concurrency | Concurrency]]: Message passing example.
-- [`no_std`](https://doc.rust-lang.org/reference/names/preludes.html#the-no_std-attribute)↗{{hi:no_std}} Memory Safety: Example with unsafe blocks.
+- [`#![no_std]`][book~rust-reference~no_std]↗{{hi:no_std}} Memory Safety: Example with unsafe blocks.
 
 ### Data
 

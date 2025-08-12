@@ -40,8 +40,11 @@ The [`futures`][c~futures~docs]{{hi:futures}}↗ crate provides an extension tra
 
 [![future-utils][c~future-utils~docs~badge]][c~future-utils~docs] [![future-utils~crates.io][c~future-utils~crates.io~badge]][c~future-utils~crates.io] [![future-utils~github][c~future-utils~github~badge]][c~future-utils~github] [![future-utils~lib.rs][c~future-utils~lib.rs~badge]][c~future-utils~lib.rs]{{hi:future-utils}}{{hi:Async}}{{hi:Futures}}{{hi:Tokio}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
-Common utilities and extension [traits][p~traits] for the [`futures-rs`][c~futures~docs]↗{{hi:futures-rs}} library. Extensions to Rust's [`Future`][c~std::future::Future~docs]↗{{hi:std::future::Future}} and [`Stream`][c~futures::prelude::Stream~docs]↗{{hi:futures::prelude::Stream}} traits. Combinators and utilities for working with [`Future`][c~futures~docs]↗{{hi:Futures}}, `Stream`, [`Sink`](https://docs.rs/futures/latest/futures/prelude/trait.Sink.html)↗{{hi:futures::prelude::Sink}}, and the [`AsyncRead`](https://docs.rs/futures/latest/futures/prelude/trait.AsyncRead.html)↗ and [`AsyncWrite`](https://docs.rs/futures/latest/futures/prelude/trait.AsyncWrite.html)↗ traits.
+Common utilities and extension [traits][p~traits] for the [`futures-rs`][c~futures~docs]↗{{hi:futures-rs}} library. Extensions to Rust's [`Future`][c~std::future::Future~docs]↗{{hi:std::future::Future}} and [`Stream`][c~futures::prelude::Stream~docs]↗{{hi:futures::prelude::Stream}} traits. Combinators and utilities for working with [`Future`][c~futures~docs]↗{{hi:Futures}}, `Stream`, [`Sink`][c~futures::prelude::Sink~docs]↗{{hi:futures::prelude::Sink}}, and the [`AsyncRead`][c~futures::prelude::AsyncRead~docs]:↗ and [`AsyncWrite`][c~futures::prelude::AsyncWrite~docs]↗ traits.
 [c~futures::prelude::Stream~docs]: https://docs.rs/futures/latest/futures/prelude/trait.Stream.html
+[c~futures::prelude::Sink~docs]: https://docs.rs/futures/latest/futures/prelude/trait.Sink.html
+[c~futures::prelude::AsyncRead~docs]: https://docs.rs/futures/latest/futures/prelude/trait.AsyncRead.html
+[c~futures::prelude::AsyncWrite~docs]: https://docs.rs/futures/latest/futures/prelude/trait.AsyncWrite.html
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/examples/futures/futures_util.rs:example}}

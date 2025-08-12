@@ -12,7 +12,7 @@ This is a **Work In Progress**. The API are subject to change.
 Make sure that:
 
 - [`Rust`](https://www.rust-lang.org)
-- [`mdbook`](https://github.com/rust-lang/mdBook)
+- [`mdbook`][mdbook]
 
 are set up correctly, then install the pre-processor:
 
@@ -90,3 +90,5 @@ For example, the following would be removed:
 ```markdown
 {{#include _hiddenfile.rs}}
 ```
+
+[mdbook]: https://github.com/rust-lang/mdBook

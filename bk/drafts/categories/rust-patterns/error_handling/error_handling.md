@@ -38,7 +38,8 @@ fn divide_numbers(x: i32, y: i32) -> Result<i32, &'static str> {
 }
 ```
 
-You can handle the [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} via a simple [`match`][keyword~match]↗{{hi:match}} or [`if let`](https://doc.rust-lang.org/book/ch19-01-all-the-places-for-patterns.html#conditional-if-let-expressions)↗{{hi:if let}} expression:
+You can handle the [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} via a simple [`match`][keyword~match]↗{{hi:match}} or [`if let`][book~rust~if-let]↗{{hi:if let}} expression:
+[book~rust~if-let]: https://doc.rust-lang.org/book/ch19-01-all-the-places-for-patterns.html#conditional-if-let-expressions
 
 ```rust,editable
 fn main() {
@@ -199,7 +200,8 @@ Error level - description
 └> 3 - field 1: number too large to fit in target type
 ```
 
-Run the recipe with [`RUST_BACKTRACE=1`]( )↗{{hi: }} to display a detailed backtrace associated with this error.
+Run the recipe with [`RUST_BACKTRACE=1`][c~std::backtrace~docs]{{hi:RUST_BACKTRACE}} to display a detailed backtrace associated with this error.
+[c~std::backtrace~docs]: https://doc.rust-lang.org/std/backtrace/index.html
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

@@ -4,7 +4,7 @@
 
 ## Profile Memory and Track Allocations {profiling}
 
-- While not Rust-specific, [`valgrind`][c~valgrind~docs]↗{{hi:valgrind}} (with [`massif`](https://valgrind.org/docs/manual/ms-manual.html)↗{{hi:massif}} or [`memcheck`](https://valgrind.org/info/tools.html#memcheck)↗{{hi:memcheck}}) is a very common and powerful memory profiler. You'd run your Rust program under Valgrind.
+- While not Rust-specific, [`valgrind`][c~valgrind~docs]↗{{hi:valgrind}} (with [`massif`][valgrind~massif~website]↗{{hi:massif}} or [`memcheck`][valgrind~memcheck~website]↗{{hi:memcheck}}) is a very common and powerful memory profiler. You'd run your Rust program under Valgrind.
 - [`heaptrack`][c~heaptrack~docs]↗{{hi:heaptrack}} is a heap profiler that can track memory allocations.
 
 ## Profile Heap Memory with `dhat` {#dhat}

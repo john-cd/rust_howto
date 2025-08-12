@@ -6,7 +6,8 @@
 
 [![heed][c~heed~docs~badge]][c~heed~docs] [![heed~crates.io][c~heed~crates.io~badge]][c~heed~crates.io] [![heed~github][c~heed~github~badge]][c~heed~github] [![heed~lib.rs][c~heed~lib.rs~badge]][c~heed~lib.rs]{{hi:heed}}{{hi:Database}}{{hi:LMDB}}{{hi:Storage}}{{hi:Typed}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
 
-[`heed`][c~heed~docs]↗{{hi:heed}} is a fully-typed [`LMDB`](https://en.wikipedia.org/wiki/Lightning_Memory-Mapped_Database)↗{{hi:LMDB}} wrapper. `LMDB` (Lightning Memory-Mapped Database) is a fast and efficient embedded [database][p~database] library that provides key/value storage.
+[`heed`][c~heed~docs]↗{{hi:heed}} is a fully-typed [`LMDB`][LMDB~wikipedia]↗{{hi:LMDB}} wrapper. `LMDB` (Lightning Memory-Mapped Database) is a fast and efficient embedded [database][p~database] library that provides key/value storage.
+[LMDB~wikipedia]: https://en.wikipedia.org/wiki/Lightning_Memory-Mapped_Database
 Use [`heed`][c~heed~docs]↗{{hi:heed}} for:
 
 - [Caching][p~caching]: App data, web pages or images.

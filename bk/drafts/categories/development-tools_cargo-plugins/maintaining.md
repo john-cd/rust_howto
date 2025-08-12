@@ -9,7 +9,8 @@
 | [[dependency_management | Dependency Management]] | [`cargo tree`][book~cargo~cargo-tree]↗{{hi:cargo tree}} displays your dependency tree to help you understand your project's dependencies. `cargo outdated` checks for outdated dependencies. `cargo audit` checks for crates with known security vulnerabilities. |
 | Documentation Generation | [`cargo doc`][book~cargo~cargo-doc]↗{{hi:cargo doc}} generates [documentation][p~documentation] from your code. `cargo deadlinks` finds broken links in your documentation. |
 | [[testing | Testing]] | [`cargo test`][book~cargo~cargo-test]↗{{hi:cargo test}} runs your unit and integration tests. |
-| [[benchmarking | Benchmarking]] | [`cargo bench`]( )↗{{hi: }} runs your benchmarks. |
+| [[benchmarking | Benchmarking]] | [`cargo bench`][book~cargo~cargo-bench]{{hi:cargo bench}} runs your benchmarks. |
+[book~cargo~cargo-bench]: https://doc.rust-lang.org/cargo/commands/cargo-bench.html
 | [[code_coverage | Code Coverage]] | [`cargo-tarpaulin`][c~cargo-tarpaulin~docs]↗{{hi:cargo-tarpaulin}} runs code coverage analysis. |
 | Refactoring | Refactoring is often IDE-driven, but some tools exist: [`cargo-expand`][c~cargo-expand~docs]↗{{hi:cargo-expand}} expands [macros][p~macros], for example. |
 | [[versioning | Version Management]] | [`cargo-bump`][c~cargo-bump~docs]↗{{hi:cargo-bump}} helps to automate version updates in your Cargo.toml. |

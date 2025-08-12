@@ -26,15 +26,15 @@
 
 [![indoc][c~indoc~docs~badge]][c~indoc~docs] [![indoc~crates.io][c~indoc~crates.io~badge]][c~indoc~crates.io] [![indoc~github][c~indoc~github~badge]][c~indoc~github] [![indoc~lib.rs][c~indoc~lib.rs~badge]][c~indoc~lib.rs]{{hi:indoc}}{{hi:String}}{{hi:Literal}}{{hi:Heredoc}}{{hi:Nowdoc}}{{hi:Multiline}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
-The [`indoc!()`](https://docs.rs/indoc/latest/indoc/macro.indoc.html)↗{{hi:indoc::indoc!}} macro takes a multiline string literal and un-indents it at compile time so the leftmost non-space character is in the first column.
-
+The [`indoc!()`][c~indoc::indoc~docs]↗{{hi:indoc::indoc!}} macro takes a multiline string literal and un-indents it at compile time so the leftmost non-space character is in the first column.
+[c~indoc::indoc~docs]: https://docs.rs/indoc/latest/indoc/macro.indoc.html
 The [`indoc`][c~indoc~docs]↗{{hi:indoc}} crate exports five additional macros to substitute conveniently for the standard library's formatting macros:
 
-`formatdoc!($fmt, ...)` — equivalent to `format!(indoc!($fmt), ...)`
-`printdoc!($fmt, ...)` — equivalent to `print!(indoc!($fmt), ...)`
-`eprintdoc!($fmt, ...)` — equivalent to `eprint!(indoc!($fmt), ...)`
-`writedoc!($dest, $fmt, ...)` — equivalent to `write!($dest, indoc!($fmt), ...)`
-`concatdoc!(...)` — equivalent to `concat!(...)` with each string literal wrapped in `indoc!`
+`formatdoc!($fmt, ...)` equivalent to `format!(indoc!($fmt), ...)`
+`printdoc!($fmt, ...)` equivalent to `print!(indoc!($fmt), ...)`
+`eprintdoc!($fmt, ...)` equivalent to `eprint!(indoc!($fmt), ...)`
+`writedoc!($dest, $fmt, ...)` equivalent to `write!($dest, indoc!($fmt), ...)`
+`concatdoc!(...)` equivalent to `concat!(...)` with each string literal wrapped in `indoc!`
 
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/examples/string_manipulation/indoc.rs:example}}
@@ -50,7 +50,7 @@ The [`indoc`][c~indoc~docs]↗{{hi:indoc}} crate exports five additional macros 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/1190)
 
-cover inflector.
+cover `inflector`.
 
 ```rust,noplayground
 use inflector::Inflector;
@@ -60,6 +60,6 @@ fn main() {
 }
 ```
 
-- [Why is capitalizing the first letter of a string so convoluted in Rust? - Stack Overflow][blog~stackoverflow~why-is-capitalizing-the-first-letter-of-a-string-so-convoluted-in-rust]↗.
+- [Why is capitalizing the first letter of a string so convoluted in Rust?][blog~stackoverflow~why-is-capitalizing-the-first-letter-of-a-string-so-convoluted-in-rust]↗ - Stack Overflow.
 
 </div>

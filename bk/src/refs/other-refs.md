@@ -1507,3 +1507,13 @@
 [c~std::unimplemented~docs]: https://doc.rust-lang.org/std/macro.unimplemented.html
 [c~std::unreachable~docs]: https://doc.rust-lang.org/std/macro.unreachable.html
 [c~std::vec!~docs]: https://doc.rust-lang.org/std/macro.vec.html
+[book~rustup]: https://rust-lang.github.io/rustup
+[book~rustup~examples]: https://rust-lang.github.io/rustup/examples.html
+[book~rustup~basics]: https://rust-lang.github.io/rustup/basics.html
+[book~rustup~toolchains]: https://rust-lang.github.io/rustup/concepts/toolchains.html
+[book~rustup~components]: https://rust-lang.github.io/rustup/concepts/components.html
+[book~rustup~cross-compilation]: https://rust-lang.github.io/rustup/cross-compilation.html
+[book~cargo~cargo-install]: https://doc.rust-lang.org/cargo/commands/cargo-install.html
+[book~cargo~cargo-new]: https://doc.rust-lang.org/cargo/commands/cargo-new.html
+[book~cargo~cargo edit`]: https://docs.rs/crate/cargo-edit
+[blog~sonatype-supports-secure-development-in-rust]: https://www.securityinfowatch.com/cybersecurity/press-release/55277880/sonatype-supports-secure-development-in-rust

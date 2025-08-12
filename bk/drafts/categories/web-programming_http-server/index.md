@@ -77,7 +77,7 @@ Middleware is a powerful way to add functionality to your web server.
 | Topic | Rust Crates (Examples) | Notes |
 |---|---|---|
 | Asynchronous Programming (Essential for Web Servers) | [`tokio`][c~tokio~docs]↗{{hi:tokio}}, [`smol`][c~smol~docs]↗{{hi:smol}} | These asynchronous runtimes are fundamental for building efficient and scalable web servers in Rust. [`tokio`][c~tokio~docs]↗{{hi:tokio}} is the most widely used. |
-| Networking (Low-Level) | [`tokio::net`]( )↗{{hi:tokio::net}}, [`std::net`][c~std::net~docs]↗{{hi:std::net}} | These modules provide low-level networking primitives. Often used by higher-level frameworks. |
+| Networking (Low-Level) | [`tokio::net`][c~tokio::net~docs]↗{{hi:tokio::net}}, [`std::net`][c~std::net~docs]↗{{hi:std::net}} | These modules provide low-level networking primitives. Often used by higher-level frameworks. |
 | Templating | [`minijinja`][c~minijinja~docs]↗{{hi:minijinja}}, [`tera`][c~tera~docs]↗{{hi:tera}}, [`handlebars`][c~handlebars~docs]↗{{hi:handlebars}}, [`askama`][c~askama~docs]↗{{hi:askama}} | Templating engines are used to generate HTML dynamically. |
 | Serialization/Deserialization (JSON, etc.) | [`serde`][c~serde~docs]↗{{hi:serde}}, [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}}, [`serde_yml`][c~serde_yml~docs]↗{{hi:serde_yml}} | [`serde`][c~serde~docs]↗{{hi:serde}} is a powerful framework for serializing and deserializing data, often used with JSON and other formats. |
 | Databases | [`sqlx`][c~sqlx~docs]↗{{hi:sqlx}}, [`diesel`][c~diesel~docs]↗{{hi:diesel}}, [`mongodb`][c~mongodb~docs]↗{{hi:mongodb}} (drivers) | These crates provide database access for various database systems. |

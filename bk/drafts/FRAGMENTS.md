@@ -64,8 +64,11 @@ TODO
 For a true plugin architecture where plugins are compiled as separate shared libraries (`.so` on Linux, `.dll` on Windows, `.dylib` on macOS) and loaded at runtime, you would typically:
 
 - Use the [`libloading`][c~libloading~crates.io]↗{{hi:libloading}} crate, which provides safe FFI (Foreign Function Interface) wrappers to dynamically load shared libraries and resolve symbols (functions).
-- Define a C-compatible ABI: Because Rust's internal ABI is not stable across different compiler versions or even minor changes, you should define your plugin interface using [`#[repr(C)]`]( )↗{{hi: }} structs and [`extern "C"`][keyword~extern]↗{{hi:extern "C"}} functions.
-- Define an entry point: Each plugin [`.so`](https://fileinfo.com/extension/so)↗{{hi:.so}}/[`.dll`](https://fileinfo.com/extension/dll)↗{{hi:.dll}} would export a specific [`extern "C"`][keyword~extern]↗{{hi:extern "C"}} function that the host calls to get a `Box<dyn Plugin>`.
+- Define a C-compatible ABI: Because Rust's internal ABI is not stable across different compiler versions or even minor changes, you should define your plugin interface using [`#[repr(C)]`][book~rust-reference~c-representation]↗{{hi:repr}} structs and [`extern "C"`][keyword~extern]↗{{hi:extern "C"}} functions.
+- Define an entry point: Each plugin [`.so`][.so-files]↗{{hi:.so}}/[`.dll`][.dll-files]↗{{hi:.dll}} would export a specific [`extern "C"`][keyword~extern]↗{{hi:extern "C"}} function that the host calls to get a `Box<dyn Plugin>`.
+[.so-files]: https://fileinfo.com/extension/so
+[.dll-files]: https://fileinfo.com/extension/dll
+[book~rust-reference~c-representation]: https://doc.rust-lang.org/reference/type-layout.html#the-c-representation
 - Version Management: Even with [`extern "C"`][keyword~extern]↗{{hi:extern "C"}}, you need robust versioning for your common plugin interface crate to prevent issues if host and plugins are compiled with different versions of the interface. Crates like [`abi_stable`][c~abi_stable~docs]↗{{hi:abi_stable}} can help with this by providing more robust ABI compatibility checks.
 
 ---
@@ -130,13 +133,16 @@ You may also implement the [`AsRef`][c~std::convert::AsRef~docs]↗{{hi:std::con
 {{#include ../../crates/standard_library/examples/  /asref2.rs:example}}
 ```
 
-Note that so-called "Deref polymorphism", meaning implementing [`Deref`][c~std::ops::Deref~docs]↗{{hi:std::ops::Deref}} to emulate inheritance between structs, is considered an [antipattern](https://github.com/rust-unofficial/patterns/blob/main/src/anti_patterns/deref.md)↗, especially since `Deref` is an _implicit_ conversion.
+Note that so-called "Deref polymorphism", meaning implementing [`Deref`][c~std::ops::Deref~docs]↗{{hi:std::ops::Deref}} to emulate inheritance between structs, is considered an [antipattern][deref-anti-pattern~github]↗, especially since `Deref` is an *implicit* conversion.
+[deref-anti-pattern~github]: https://github.com/rust-unofficial/patterns/blob/main/src/anti_patterns/deref.md
 
 ### References {#references}
 
-- [Rust's `AsRef` Explained](https://oliverjumpertz.com/blog/rusts-asref-explained)↗.
+- [Rust's `AsRef` Explained][blog~rusts-asref-explained]↗.
+[blog~rusts-asref-explained]: https://oliverjumpertz.com/blog/rusts-asref-explained
 - [Rust Is Beyond Object-Oriented, Part 3: Inheritance][blog~thecodedmessage-posts-oop-3-inheritance]↗.
-- [How to implement inheritance-like feature for Rust?](https://users.rust-lang.org/t/how-to-implement-inheritance-like-feature-for-rust/31159/21)↗.
+- [How to implement inheritance-like feature for Rust?][forum~how-to-implement-inheritance-like-feature-for-rust]↗.
+[forum~how-to-implement-inheritance-like-feature-for-rust]: https://users.rust-lang.org/t/how-to-implement-inheritance-like-feature-for-rust/31159/21
 
 ---
 

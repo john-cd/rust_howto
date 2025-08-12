@@ -6,7 +6,8 @@
 |---|---|
 | Code Generation (Procedural Macros) | Procedural [macros][p~macros] are the primary way to do code generation in Rust. There aren't specific [cargo][p~cargo] plugins for writing proc [macros][p~macros], but they are often used within projects that might also have other build-related plugins. |
 | Code Snippets/Templates | No single dominant crate or plugin. Often handled with IDE features or custom scripts. |
-| Scaffolding/Project Generation | Tools like [`cargo new`](https://doc.rust-lang.org/cargo/commands/cargo-new.html)↗{{hi:cargo new}} are built-in. Other project templates might be managed separately or integrated into build tools. |
+| Scaffolding/Project Generation | Tools like [`cargo new`][book~cargo~cargo-new]↗{{hi:cargo new}} are built-in. Other project templates might be managed separately or integrated into build tools. |
+[book~cargo~cargo-new]: https://doc.rust-lang.org/cargo/commands/cargo-new.html
 
 ## Generate a Rust Project from a Template {#cargo-generate}
 

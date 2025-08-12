@@ -2,7 +2,8 @@
 
 {{#include amqp.incl.md}}
 
-[`AMQP`](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol)↗{{hi:AMQP}} stands for `Advanced Message Queuing Protocol`. It is an open standard messaging protocol that is used to reliably exchange messages between applications or systems, even if they are written in different [programming languages][p~programming-languages] and running on different platforms. `AMQP` ensures that messages are delivered reliably, even if there are network issues or system failures. It offers different levels of delivery guarantees, from "at-most-once" to "exactly-once" delivery.
+[`AMQP`][AMQP~wikipedia]↗{{hi:AMQP}} stands for `Advanced Message Queuing Protocol`. It is an open standard messaging protocol that is used to reliably exchange messages between applications or systems, even if they are written in different [programming languages][p~programming-languages] and running on different platforms. `AMQP` ensures that messages are delivered reliably, even if there are network issues or system failures. It offers different levels of delivery guarantees, from "at-most-once" to "exactly-once" delivery.
+[AMQP~wikipedia]: https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol
 
 [`RabbitMQ`][rabbitmq~website]↗{{hi:RabbitMQ}} is an example of a popular message broker that implements the Advanced Message Queuing Protocol. It use cases include microservices communication,
 task queues, background job processing, and publish-subscribe (pub-sub).

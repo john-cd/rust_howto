@@ -51,7 +51,7 @@ User-space programs request services from the operating system kernel via system
 
 See [[os_freebsd-apis | FreeBSD APIs]], [[os_linux-apis | Linux APIs]], [[os_macos-apis | macOS APIs]], [[os_unix-apis | Unix APIs]], [[os_windows-apis | Windows APIs]] and [[rust_os | Rust OSes]].
 
-### `no_std` Environments
+### `#![no_std]` Environments
 
 - [`core`][c~core~docs]↗{{hi:core}} provides the bare minimum for writing code without the standard library.
 - [`alloc`][c~alloc~docs]↗{{hi:alloc}} provides memory allocation APIs for `no-std`{{hi:no-std}} environments.

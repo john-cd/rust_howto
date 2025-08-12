@@ -17,7 +17,8 @@ Subcommands that extend the capabilities of Cargo.
 | Security | [`cargo-audit`][c~cargo-audit~docs]↗{{hi:cargo-audit}} checks whether any of your dependencies are of a version that has a security advisory out against them. [`cargo-geiger`][c~cargo-geiger~docs]↗{{hi:cargo-geiger}} identifies dependencies with unsafe code, so you can either audit them or find alternatives. |
 | Licensing | Use [`cargo-about`][c~cargo-about~docs]↗{{hi:cargo-about}}, [`cargo-deny`][c~cargo-deny~docs]↗{{hi:cargo-deny}}, [`cargo-license`][c~cargo-license~docs]↗{{hi:cargo-license}}, or [`cargo-lichking`][c~cargo-lichking~docs]↗{{hi:cargo-lichking}} for license compliance management. |
 | Binary Size Optimization | [`cargo-bloat`][c~cargo-bloat~docs]↗{{hi:cargo-bloat}} identifies what's contributing to your binary's size (eg. modules with generic functions or macros not designed with size-efficiency in mind). |
-| Publishing, Distribution | [`cargo publish`]( )↗{{hi: }} publishes your crate to crates.io (built-in). [`cargo-deb`][c~cargo-deb~docs]↗{{hi:cargo-deb}} creates Debian packages. [`cargo-rpm`][c~cargo-rpm~docs]↗{{hi:cargo-rpm}} creates RPM packages. |
+| Publishing, Distribution | [`cargo publish`][book~cargo~cargo-publish]{{hi:cargo publish}} publishes your crate to crates.io (built-in). [`cargo-deb`][c~cargo-deb~docs]↗{{hi:cargo-deb}} creates Debian packages. [`cargo-rpm`][c~cargo-rpm~docs]↗{{hi:cargo-rpm}} creates RPM packages. |
+[book~cargo~cargo-publish]: https://doc.rust-lang.org/cargo/commands/cargo-publish.html
 | Change Watching | [`cargo-watch`][c~cargo-watch~docs]↗{{hi:cargo-watch}} watches your project for changes and rebuilds / re-run a command every time the source changes (e.g. [`cargo test`][book~cargo~cargo-test]↗{{hi:cargo test}}). |
 
 ## Writing Code
@@ -65,7 +66,7 @@ Cargo plugins are essentially just executables that follow a certain naming conv
 | [[argument_parsing | Argument Parsing]] | Use [`clap`][c~clap~docs]↗{{hi:clap}}, [`structopt`][c~structopt~docs]↗{{hi:structopt}}, [`argh`][c~argh~docs]↗{{hi:argh}} for parsing command-line arguments passed to the plugin. |
 | Working with [[cargo | Cargo]] | Interact with [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} or other Cargo metadata. [`serde`][c~serde~docs]↗{{hi:serde}} is often used for parsing TOML or JSON. |
 | [[filesystem | Filesystem]] Operations | Use [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}}, [`pathdiff`][c~pathdiff~docs]↗{{hi:pathdiff}}. |
-| Process Management | Use [`std::process`]( )↗{{hi: }} for running [[external_commands | External Commands]]. |
+| Process Management | Use [`std::process`][c~std::process~docs]{{hi:std::process}} for running [[external_commands | External Commands]]. |
 | Networking, [[web-programming_http-client | HTTP Client]] (if needed) | Use [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}}, [`hyper`][c~hyper~docs]↗{{hi:hyper}}. |
 | [[serde | Serialization/Deserialization]] | Use [`serde`][c~serde~docs]↗{{hi:serde}} for handling configuration or data. |
 | [[log | Logging]] | Use [`tracing`][c~tracing~docs]↗{{hi:tracing}}, or[`log`][c~log~docs]↗{{hi:log}} and [`env_logger`][c~env_logger~docs]↗{{hi:env_logger}}. |

@@ -7,7 +7,12 @@ Tracing refers to the process of capturing and recording information about the e
 | Topic | Rust Crates |
 |---|---|
 | Tracing Framework | [`tracing`][c~tracing~docs]↗{{hi:tracing}} provides the `core` tracing functionality: spans, events, etc. |
-| Event Logging | Handled by [`tracing`][c~tracing~docs]↗{{hi:tracing}} using [macros][p~macros] like [`event!`](https://docs.rs/tracing/latest/tracing/macro.event.html)↗{{hi:event!}} and [`debug!`](https://docs.rs/tracing/latest/tracing/macro.debug.html)↗{{hi:debug!}}, [`info!`](https://docs.rs/tracing/latest/tracing/macro.info.html)↗{{hi:info!}}, [`warn!`](https://docs.rs/tracing/latest/tracing/macro.warn.html)↗{{hi:warn!}}, [`error!`](https://docs.rs/tracing/latest/tracing/macro.error.html)↗{{hi:error!}}. |
+| Event Logging | Handled by [`tracing`][c~tracing~docs]↗{{hi:tracing}} using [macros][p~macros] like [`event!`][c~tracing~event~docs]↗{{hi:event!}} and [`debug!`][c~tracing~debug~docs]↗{{hi:debug!}}, [`info!`][c~tracing~info~docs]↗{{hi:info!}}, [`warn!`][c~tracing~warn~docs]↗{{hi:warn!}}, [`error!`][c~tracing~error~docs]↗{{hi:error!}}. |
+[c~tracing~debug~docs]: https://docs.rs/tracing/latest/tracing/macro.debug.html
+[c~tracing~event~docs]: https://docs.rs/tracing/latest/tracing/macro.event.html
+[c~tracing~info~docs]: https://docs.rs/tracing/latest/tracing/macro.info.html
+[c~tracing~warn~docs]: https://docs.rs/tracing/latest/tracing/macro.warn.html
+[c~tracing~error~docs]: https://docs.rs/tracing/latest/tracing/macro.error.html
 | Span Management | Also handled by [`tracing`][c~tracing~docs]↗{{hi:tracing}} through its span API. Context propagation is built into tracing's span system. |
 | Asynchronous Tracing | Supported by [`tracing`][c~tracing~docs]↗{{hi:tracing}} through its [asynchronous][p~asynchronous] span management. |
 | Output and [Formatting][p~formatting] | [`tracing-subscriber`][c~tracing-subscriber~docs]↗{{hi:tracing-subscriber}} formats and outputs traces to various destinations. |
@@ -86,7 +91,8 @@ A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting t
 
 [![tracing][c~tracing~docs~badge]][c~tracing~docs]{{hi:tracing}} [![tracing~github][c~tracing~github~badge]][c~tracing~github] [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}{{hi:Tracing}}
 
-An [`Event`]( )↗{{hi: }} signifies something that happened at a moment in time. `tracing`'s `Events` are comparable to the log records emitted by unstructured logging code.
+An [`Event`][c~tracing::Event~docs]{{hi:Event}} signifies something that happened at a moment in time. `tracing`'s events are comparable to the log records emitted by unstructured logging code.
+[c~tracing::Event~docs]: https://docs.rs/tracing/latest/tracing/struct.Event.html
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing.rs:example}}
@@ -110,7 +116,8 @@ An [`Event`]( )↗{{hi: }} signifies something that happened at a moment in time
 
 ## Use Spans to Instrument Synchronous and Asynchronous Code {#span-instrument}
 
-Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across [`await`](https://doc.rust-lang.org/stable/std/keyword.await.html)↗{{hi:await}} points will result in incorrect traces. Use [`tracing::span::Span::in_scope`][c~tracing::span::Span::in_scope~docs]{{hi:tracing::span::Span::in_scope}}↗ to make sure the span is exited before the `await` call. Alternatively, use `instrument` to make sure that the span is automatically exited and re-entered when a async function or block is awaited then resumed.
+Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across [`await`][keyword~await]↗{{hi:await}} points will result in incorrect traces. Use [`tracing::span::Span::in_scope`][c~tracing::span::Span::in_scope~docs]{{hi:tracing::span::Span::in_scope}}↗ to make sure the span is exited before the `await` call. Alternatively, use `instrument` to make sure that the span is automatically exited and re-entered when a async function or block is awaited then resumed.
+[keyword~await]: https://doc.rust-lang.org/stable/std/keyword.await.html
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_span_in_scope.rs:example}}

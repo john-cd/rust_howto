@@ -118,9 +118,13 @@ text_font = "libertinus serif"
 
 ## References
 
-[Exploring Typst, a new typesetting system similar to LaTeX](https://blog.jreyesr.com/posts/typst)
+[Exploring Typst, a new typesetting system similar to LaTeX][typst]
 
-[typst examplesbook](https://sitandr.github.io/typst-examples-book/book/basics/tutorial/functions.html)
+[typst]: https://blog.jreyesr.com/posts/typst
+
+[typst examplesbook][typstexamplesbook]
+
+[typstexamplesbook]: https://sitandr.github.io/typst-examples-book/book/basics/tutorial/functions.html
 
 See also:
 

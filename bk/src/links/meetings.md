@@ -18,7 +18,8 @@ Consult [Rust Foundation: Events][rustfoundation-events~website]↗ and [dev.eve
 
 ## Prominent Local Meetups {#meetups}
 
-[Rust Community Calendar](https://calendar.google.com/calendar/u/0/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com&pli=1)↗.{{hi:Meetups}}
+[Rust Community Calendar][rust-community-calendar~website]↗.{{hi:Meetups}}
+[rust-community-calendar~website]: https://calendar.google.com/calendar/u/0/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com&pli=1
 
 The following are some of the largest and most active local user groups. They hold regular meetings, talks, and workshops. You can find many more local meetups on platforms like [meetup.com][meetup~website]↗, the [Rust Foundation's list][rust-lang-user-groups~website]↗ and [this list (code-maven.com)][rust.code-maven.com-user-groups~website]↗.
 

@@ -15,7 +15,7 @@ See the [[cargo | Cargo]] and [[development-tools_cargo-plugins | Development To
 
 [![cargo-edit][c~cargo-edit~docs~badge]][c~cargo-edit~docs] [![cargo-edit~crates.io][c~cargo-edit~crates.io~badge]][c~cargo-edit~crates.io] [![cargo-edit~github][c~cargo-edit~github~badge]][c~cargo-edit~github] [![cargo-edit~lib.rs][c~cargo-edit~lib.rs~badge]][c~cargo-edit~lib.rs]{{hi:cargo-edit}}{{hi:Cargo}}{{hi:Cargo-subcommand}}{{hi:Cli}}{{hi:Crates}}{{hi:Dependencies}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[`cargo edit`](https://docs.rs/crate/cargo-edit)↗{{hi:cargo edit}} provides commands for modifying a [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} file. It allows you to add, remove, and upgrade dependencies by modifying your `Cargo.toml` file from the command line.
+[`cargo edit`][c~cargo-edit~docs]↗{{hi:cargo edit}} provides commands for modifying a [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} file. It allows you to add, remove, and upgrade dependencies by modifying your `Cargo.toml` file from the command line.
 
 Currently available subcommands:
 
@@ -62,7 +62,8 @@ cargo machete
 
 [`cargo-outdated`][c~cargo-outdated~docs]↗{{hi:cargo-outdated}} is a [`cargo`][c~cargo~docs]↗{{hi:cargo}} subcommand for displaying when dependencies are out of date.
 
-If you are using VS Code, also look into the [`Dependi`](https://marketplace.visualstudio.com/items?itemName=fill-labs.dependi)↗{{hi:Dependi}} VS Code plugin.
+If you are using VS Code, also look into the [`Dependi`][dependi~vscode~website]↗{{hi:Dependi}} VS Code plugin.
+[dependi~vscode~website]: https://marketplace.visualstudio.com/items?itemName=fill-labs.dependi
 
 ## `deps.rs` {#deps-rs}
 

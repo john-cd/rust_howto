@@ -38,6 +38,7 @@ Many crates exist for specific protocols (e.g., SMTP, IMAP, SSH).
 
 ## Peer2peer
 
-- [Iroh (blog)](https://www.iroh.computer/blog/iroh-0-33-0-browsers-and-discovery-and-0-RTT-oh-my)↗.
+- [Iroh (blog)][blog~iroh]↗.
+[blog~iroh]: https://www.iroh.computer/blog/iroh-0-33-0-browsers-and-discovery-and-0-RTT-oh-my
 
 </div>

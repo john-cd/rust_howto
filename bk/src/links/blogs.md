@@ -35,14 +35,15 @@ You may also consult the lists of [Medium blogs tagged with 'Rust'][blog~medium~
 | Title (URL) | Description |
 |---|---|
 | A learning journal: [`lpalmieri.com`][lpalmieri~website]↗ | Luca Palmieri's blog. |
-| Andrew Gallant's [blog][burntsushi.net~website]↗ | Blogs covering [`regex`](https://docs.rs/regex/latest/regex)↗{{hi:regex}}, [`ripgrep`][c~ripgrep~github]↗{{hi:ripgrep}}, etc. |
+| Andrew Gallant's [blog][burntsushi.net~website]↗ | Blogs covering [`regex`][c~regex~docs]↗{{hi:regex}}, [`ripgrep`][c~ripgrep~github]↗{{hi:ripgrep}}, etc. |
 | [Billy DM's blog][blog~billydm]↗ | Posts on programming, including Rust. |
 | Brian Anderson' [blog][blog~brson]↗ | LLVM, blockchain, Rust. |
 | [`codevoweb.com`][codevoweb~website]↗ | Demonstrates how to build common applications using multiple languages, including Rust. |
 | [Denys Séguret's website][dystroy~website]↗ | From the author of [`broot`][c~broot~website]↗{{hi:broot}}, [`bacon`][bacon~website]↗{{hi:bacon}}, etc. |
 | The [Embedded Rustacean][blog~theembeddedrustacean]↗ | Tutorial-style articles on embedded Rust. |
 | [`fasterthanli.me`][fasterthanli.me~website]↗ | In-depth articles on Rust, networking, and systems programming. |
-| [`faultlore.com`](https://faultlore.com/blah)↗ | Posts on systems programming and Rust. |
+| [`faultlore.com`][faultlore~website]↗ | Posts on systems programming and Rust. |
+[faultlore~website]: https://faultlore.com/blah
 | Llogiq's [blog][blog~llogiq]↗ | Rust and Clippy. |
 | [`lord.io`][lord.io~website]↗ | Articles on Rust, game development, and more. |
 | [Mara Bos's blog][blog~m-ou.se]↗ | Thoughts and articles from a core Rust library team member. |
@@ -54,18 +55,21 @@ You may also consult the lists of [Medium blogs tagged with 'Rust'][blog~medium~
 | [Raph Levien's blog][blog~raphlinus]↗ | Insights on Rust, GUIs, and high-performance code. |
 | [Rust magazine][rustmagazine~website]↗ | A monthly magazine for the Rust community. |
 | Sam Sartor's blog: [`samsartor.com`][samsartor~website]↗ | Posts on Rust, Nix, and software development. |
-| Sean McArthur's blog: [`seanmonstar.com`][seanmonstar~website]↗ | Focused on [`hyper`](https://hyper.rs)↗{{hi:hyper}}, [`tokio`](https://tokio.rs)↗{{hi:tokio}}, and web development in Rust. |
+| Sean McArthur's blog: [`seanmonstar.com`][seanmonstar~website]↗ | Focused on [`hyper`][c~hyper~website]↗{{hi:hyper}}, [`tokio`](https://tokio.rs)↗{{hi:tokio}}, and web development in Rust. |
 | [`readrust.net`][readrust.net~website]↗ | Interesting posts related to the Rust programming language. |
 | [`rust-osdev.com`][rust-osdev~website]↗ | Monthly news on OS and bootloader development in Rust. |
 | [Rust Trends][rust-trends~website]↗ | Biweekly newsletter on all things Rust. |
-| [`smallcultfollowing.com/babysteps`](https://smallcultfollowing.com/babysteps)↗ | General thoughts about Rust by Niko Matsakis. |
+| [`smallcultfollowing.com/babysteps`][smallcultfollowing.com~website]↗ | General thoughts about Rust by Niko Matsakis. |
+[smallcultfollowing.com~website]: https://smallcultfollowing.com/babysteps
 | Steve Klabnik's [blog][steveklabnik~website]↗ | Rust, Ruby on Rails. |
 | [Sylvain Kerkour's website][kerkour~website]↗ | Black Hat Rust. |
 | [`tavianator.com`][tavianator~website]↗ | Technical articles on performance and low-level programming. |
-| Tedinski's archive: [`www.tedinski.com/archive`](https://www.tedinski.com/archive)↗ | An archive of posts on various programming topics. |
+| Tedinski's archive: [`www.tedinski.com/archive`][tedinski~website]↗ | An archive of posts on various programming topics. |
+[tedinski~website]: https://www.tedinski.com/archive
 | Writing an OS in Rust: [`os.phil-opp.com`][blog~writing-an-OS-in-rust]↗ | A classic blog series on building a basic OS in Rust. |
 
-You may also consult [this list](https://users.rust-lang.org/t/fearless-rust-bloggers/16770)↗ (somewhat outdated).
+You may also consult [this list][forum~fearless-rust-bloggers]↗ (somewhat outdated).
+[forum~fearless-rust-bloggers]: https://users.rust-lang.org/t/fearless-rust-bloggers/16770
 
 ### Project & Organization Blogs {#project-blogs}
 

@@ -41,7 +41,8 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 - [Fast Track to Rust][book~easy_rust]↗.
 - A [Gentle Introduction to Rust][rust-gentle-intro~website]↗.
 - [Learn Rust by writing Entirely Too Many Linked Lists][book~rust-unofficial-too-many-lists]↗.
-- [Rust-101](https://www.ralfj.de/projects/rust-101/main.html)↗.
+- [Rust-101][book~rust-101]↗.
+[book~rust-101]: https://www.ralfj.de/projects/rust-101/main.html
 - [Rust by Practice][practice.course.rs~website]↗.
 - [Rust Development Classes][rust-classes~website]↗.
 - [Rust Project Primer][rustprojectprimer~website]↗.
@@ -122,7 +123,8 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 - The [Discovery Book][book~rust-embedded-discovery]↗: Introduction to microcontrollers and how to use Rust with them.{{hi:Microcontrollers}}
 - The [Rust on ESP Book][book~rust-on-esp]↗ for Espressif devices.
   - [Embedded Rust (no_std) on Espressif](https://docs.esp-rs.org/no_std-training)↗.
-  - [Embedded Rust on Espressif](https://docs.esp-rs.org/std-training)↗.
+  - [Embedded Rust on Espressif][book~embedded-rust-on-espressif]↗.
+[book~embedded-rust-on-espressif]: https://docs.esp-rs.org/std-training)↗.
 - The [Embedonomicon][book~embedonomicon]↗.
 
 See also the [Awesome Embedded Rust][awesome-embedded-rust~github]↗, a curated list of resources for embedded and low-level development.
@@ -142,7 +144,8 @@ See also the [Awesome Embedded Rust][awesome-embedded-rust~github]↗, a curated
 
 ### Idioms {#idioms}
 
-- [Idiomatic Rust Snippets](https://idiomatic-rust-snippets.org/intro.html)↗.{{hi:Idiomatic Rust}}
+- [Idiomatic Rust Snippets][book~idiomatic-rust-snippets]↗.{{hi:Idiomatic Rust}}
+[book~idiomatic-rust-snippets]: https://idiomatic-rust-snippets.org/intro.html
 
 ### Interpreters {#interpreters}
 

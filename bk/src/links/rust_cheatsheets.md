@@ -12,7 +12,8 @@
 - [Rust Cheatsheet (zerotomastery.io)][zerotomastery-rust-cheat-sheet~website]↗.
 - [The Complete(ish) Rust Cheat Sheet](https://dev.to/moekatib/the-completesh-rust-cheat-sheet-4fnn)↗.
 - [Rust Speedsheet][speedsheet~website]↗.
-- [Idiomatic Rust Snippets](https://idiomatic-rust-snippets.org/intro.html)↗.
+- [Idiomatic Rust Snippets][idiomatic-rust-snippets]↗.
+[idiomatic-rust-snippets]: https://idiomatic-rust-snippets.org/intro.html
 
 ## Comparison to Other Languages {#comparison-to-other-languages}
 

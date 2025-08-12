@@ -33,7 +33,8 @@
 - [Chats with James][podcast~chats-with-james-podcast]↗.
 - [Rust in Production][podcast~corrode.dev]↗.
 - [Rust Review][podcast~rust-review]↗.
-- [RustShip](https://creators.spotify.com/pod/profile/marco-ieni)↗.
+- [RustShip][podcast~rustship]↗.
+[podcast~rustship]: https://creators.spotify.com/pod/profile/marco-ieni
 - [The Rust Workshop Podcast][podcast~the-rust-workshop-podcast]↗.
 
 ### Older Podcasts {#older-podcasts}

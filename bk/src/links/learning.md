@@ -17,7 +17,8 @@
 - [Rust Tutorial that Actually Teaches Rust][rust_tutorial_that_actually_teaches_rust~website]↗.
 - [Rust Gentle Introduction][rust-gentle-intro~website]↗.
 - [Workshop][rust-tutorials-RustConf17~website]↗ slides and exercises from RustConf 2017.
-- [Learn Rust](https://hackr.io/tutorials/learn-rust)↗.
+- [Learn Rust][learn-rust~website]↗.
+[learn-rust~website]: https://hackr.io/tutorials/learn-rust
 - Jonathan Pallant's [Rust on the Raspberry Pi][pi-workshop-rs~github]↗ tutorial.
 
 ## Guides {#guides}
@@ -90,7 +91,8 @@
 
 ## Reference Documentation {#references}
 
-- The [Standard Library][c~std~docs]↗ documentation for the built-in [`std`][c~std~docs]↗{{hi:std}}, [`core`](https://doc.rust-lang.org/core)↗{{hi:core}}, and [`alloc`](https://doc.rust-lang.org/alloc)↗{{hi:alloc}} crates.
+- The [Standard Library][c~std~docs]↗ documentation for the built-in [`std`][c~std~docs]↗{{hi:std}}, [`core`][c~core~docs]↗{{hi:core}}, and [`alloc`][c~alloc~docs]↗{{hi:alloc}} crates.
+[c~core~docs]: https://doc.rust-lang.org/core
 - The [Rust Reference][book~rust-reference]↗: Details of the language semantics.
 - The [Rustonomicon][book~rustonomicon]↗: A high-level companion to the reference and a guide to correctly writing unsafe code in Rust.
 - The [Ferrocene Language Spec][spec~rust-lang]↗: An high quality specification for the Rust language, initially developed by Ferrous Systems.

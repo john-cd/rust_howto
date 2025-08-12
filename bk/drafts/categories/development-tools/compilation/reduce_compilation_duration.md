@@ -53,10 +53,13 @@ From-scratch builds with incremental compilation{{hi:Incremental compilation}} e
 
 ## Compiler-Level Optimizations {#skip}
 
-- Use the [`dev`](https://doc.rust-lang.org/cargo/reference/profiles.html#dev)↗{{hi:dev}} profile for development, which prioritizes fast compilation over optimizations. Switch to the [`release`](https://doc.rust-lang.org/cargo/reference/profiles.html#release)↗{{hi:release}} profile only for final builds.
+- Use the [`dev`][book~cargo~dev-profile]↗{{hi:dev}} profile for development, which prioritizes fast compilation over optimizations. Switch to the [`release`][book~cargo~release-profile]↗{{hi:release}} profile only for final builds.
+[book~cargo~dev-profile]: https://doc.rust-lang.org/cargo/reference/profiles.html#dev
+[book~cargo~release-profile]: https://doc.rust-lang.org/cargo/reference/profiles.html#release
 - Increasing the number of codegen units ([`rustc`][book~rustc~docs]↗{{hi:book~rustc}} flag: `-C codegen-units=N`) allows the compiler to parallelize code generation. Experiment to find the optimal value; too many can hinder Link-Time Optimization (LTO).
 - Tune Link-Time Optimization (LTO). While LTO can improve runtime [performance][p~performance], it increases compile time, especially "fat" LTO.
-Consider using "thin" LTO (`-C lto=thin`) for a faster, though less aggressive, approach. For debug builds, disable LTO entirely ([`-C lto=no`](https://doc.rust-lang.org/cargo/reference/profiles.html#lto)↗{{hi:LTO}}).
+Consider using "thin" LTO (`-C lto=thin`) for a faster, though less aggressive, approach. For debug builds, disable LTO entirely ([`-C lto=no`][book~cargo~profiles-lto]↗{{hi:LTO}}).
+[book~cargo~profiles-lto]: https://doc.rust-lang.org/cargo/reference/profiles.html#lto
 - Profile-Guided Optimization (PGO): PGO can improve runtime performance but requires additional compilation and profiling steps, thus increasing overall build time. Use PGO only for release builds where runtime [performance][p~performance] is critical, and not for general development.
 - Using [`sccache`][c~sccache~docs]↗{{hi:sccache}} can dramatically speed up compilation by [caching][p~caching] compiled objects. It's particularly effective when recompiling similar code across multiple projects or branches.
 

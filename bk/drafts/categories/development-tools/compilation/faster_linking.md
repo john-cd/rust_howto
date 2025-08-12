@@ -18,7 +18,7 @@ Optimizing Rust linking involves several strategies to reduce binary size and li
 
 ### Link-Time Optimization (LTO) {#skip}
 
-Enabling LTO allows the compiler to perform optimizations across the entire program during the linking phase. This can significantly reduce code size and improve [performance][p~performance] by eliminating dead code and inlining functions more effectively. Use the [`-C lto=fat`][]↗{{hi:LTO}} or `-C lto=thin` (faster but less aggressive) compiler flags. LTO typically requires more memory and time during compilation.
+Enabling LTO allows the compiler to perform optimizations across the entire program during the linking phase. This can significantly reduce code size and improve [performance][p~performance] by eliminating dead code and inlining functions more effectively. Use the [`-C lto=fat`][book~cargo~profiles-lto]↗{{hi:LTO}} or `-C lto=thin` (faster but less aggressive) compiler flags. LTO typically requires more memory and time during compilation.
 
 Link-Time Optimization (LTO) is controlled via [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}. Can sometimes improve linking times, but often increases compile time. Experiment to see if it helps.
 
@@ -32,7 +32,8 @@ The default panic strategy (unwind) includes unwinding information, which increa
 
 ## Strip Symbols {#skip}
 
-Stripping debug symbols from the final binary using compiler flags like [`-C strip=debuginfo`]( )↗{{hi: }} significantly reduces binary size. This is essential for release builds.
+Stripping debug symbols from the final binary using compiler flags like [`-C strip=debuginfo`][book~cargo~profiles-strip]{{hi:strip}} significantly reduces binary size. This is essential for release builds.
+[book~cargo~profiles-strip]: https://doc.rust-lang.org/cargo/reference/profiles.html#strip
 
 ## Minimize Dependencies {#skip}
 
