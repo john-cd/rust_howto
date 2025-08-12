@@ -10,7 +10,7 @@ The [`serde_json`][c~serde_json~docs]{{hi:serde_json}}↗ crate provides a [`ser
 
 Unstructured [JSON][p~json] can be parsed into a universal [`serde_json::Value`][c~serde_json::Value~docs]{{hi:serde_json::Value}}↗ type that is able to represent any valid JSON data.
 
-The example below shows a [`&str`]( )↗{{hi: }} of [JSON][p~json] being parsed. The expected value is declared using the [`serde_json::json`][c~serde_json::json~docs]{{hi:serde_json::json}}↗ macro.
+The example below shows a [`&str`][primitive~str]{{hi:&str}} of [JSON][p~json] being parsed. The expected value is declared using the [`serde_json::json`][c~serde_json::json~docs]{{hi:serde_json::json}}↗ macro.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/examples/serde/json.rs:example}}

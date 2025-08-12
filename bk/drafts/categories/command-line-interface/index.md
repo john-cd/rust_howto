@@ -47,7 +47,7 @@ Techniques to help create command line interfaces{{hi:Command-line interface}}, 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/907)
 
-- [rustyline](https://docs.rs/rustyline/latest/rustyline/#example)↗.
+- [rustyline][c~rustyline~docs]↗.
 - [termimad][c~termimad~github]↗: A library to display rich (Markdown) snippets and texts in a rust terminal application.
 - [rust-terminfo][rust-terminfo~github]↗: Terminal information for Rust.
 

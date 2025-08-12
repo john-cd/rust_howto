@@ -108,7 +108,7 @@ See also [[cross_compiling | Cross Compiling (Cargo Plugins)]].
 
 ## Tests
 
-- [`assertables`](https://docs.rs/assertables/latest/assertables)↗.
+- [`assertables`][c~assertables~docs]↗.
 - [`proptest`][c~proptest~github]↗: Hypothesis-like property testing for Rust.
 
 ## Cargo Plugins
@@ -123,7 +123,7 @@ See also [[cross_compiling | Cross Compiling (Cargo Plugins)]].
 - [`cargo-play`][c~cargo-play~crates.io]↗.
 - [`sccache-action`][sccache-action~github]↗: `sccache` github action.
 - [`cargo-spellcheck`](https://github.com/drahnr/cargo-spellcheck)↗: Checks all your documentation for spelling and grammar mistakes with hunspell and a nlprule based checker for grammar.
-- [`cargo-limit`: Productivity improvements for Rust ecosystem: warnings are skipped until errors are fixed, LSP-independent Neovim integration, etc.][cargo-limit~github]↗.
+- [`cargo-limit`][cargo-limit~github]↗: Productivity improvements for Rust ecosystem: warnings are skipped until errors are fixed, LSP-independent Neovim integration, etc.
 - [`cargo-bloat`][c~cargo-bloat~github]↗: Find out what takes most of the space in your executable.
 - [`cargo-generate`][c~cargo-generate~crates.io]↗.
 - [`cargo-workspaces`][c~cargo-workspaces~crates.io]↗.

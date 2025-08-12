@@ -69,7 +69,7 @@ The [`ustr`][c~ustr~docs]↗{{hi:ustr}} crate implements string interning, i.e. 
 {{#include ../../../crates/cats/text_processing/examples/other_strings/ustr.rs:example}}
 ```
 
-You may also use the [string_cache](https://docs.rs/string_cache/latest/string_cache)↗ library for interning things that are `AsRef<str>`.
+You may also use the [string_cache][c~string_cache~docs]↗ library for interning things that are `AsRef<str>`.
 
 ## Work with Small Formatted Strings with `compact_str` {#compact_str}
 

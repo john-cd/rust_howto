@@ -13,7 +13,8 @@ Fuzzers generally get their power through a kind of evolutionary algorithm that 
 - [`cargo fuzz`][c~cargo-fuzz~github]↗{{hi:cargo fuzz}}: The most common and recommended way to perform fuzzing in Rust. It integrates well with [Cargo][p~cargo] and uses libFuzzer under the hood.
 - [`afl.rs`][c~afl~docs]↗{{hi:afl.rs}}: Bindings to the American Fuzzy Lop (AFL) fuzzer. AFL is a powerful fuzzer, but [cargo][p~cargo] fuzz with libFuzzer is often sufficient and easier to set up.
 
-In almost all cases, [`cargo-fuzz`][c~cargo-fuzz~docs]↗{{hi:cargo-fuzz}} will be your primary tool for fuzzing Rust code. It uses [`libFuzzer`](https://llvm.org/docs/LibFuzzer.html)↗{{hi:libFuzzer}}, a powerful and modern fuzzing engine, and simplifies the fuzzing process significantly. Make sure you define good fuzz targets and use sanitizers to detect errors effectively.
+In almost all cases, [`cargo-fuzz`][c~cargo-fuzz~docs]↗{{hi:cargo-fuzz}} will be your primary tool for fuzzing Rust code. It uses [`libFuzzer`][libFuzzer~website]↗{{hi:libFuzzer}}, a powerful and modern fuzzing engine, and simplifies the fuzzing process significantly. Make sure you define good fuzz targets and use sanitizers to detect errors effectively.
+[libFuzzer~website]: https://llvm.org/docs/LibFuzzer.html
 
 ### Target Definition {#skip}
 
@@ -29,7 +30,7 @@ A corpus is a set of initial inputs that the fuzzer uses as a starting point. [`
 
 Most effective.
 
-[`libFuzzer`](https://llvm.org/docs/LibFuzzer.html)↗{{hi:libFuzzer}} (used by `cargo fuzz`): libFuzzer is a coverage-guided fuzzer, meaning it uses [code coverage][p~code-coverage] information to guide its search for bugs.
+[`libFuzzer`][libFuzzer~website]↗{{hi:libFuzzer}} (used by `cargo fuzz`): libFuzzer is a coverage-guided fuzzer, meaning it uses [code coverage][p~code-coverage] information to guide its search for bugs.
 AFL: Also a coverage-guided fuzzer.
 
 ### Sanitizers (for Detecting errors) {#skip}
@@ -45,7 +46,7 @@ This is a more advanced technique and often involves custom [scripting][p~script
 
 [![cargo-fuzz][c~cargo-fuzz~docs~badge]][c~cargo-fuzz~docs] [![cargo-fuzz~crates.io][c~cargo-fuzz~crates.io~badge]][c~cargo-fuzz~crates.io] [![cargo-fuzz~github][c~cargo-fuzz~github~badge]][c~cargo-fuzz~github] [![cargo-fuzz~lib.rs][c~cargo-fuzz~lib.rs~badge]][c~cargo-fuzz~lib.rs]{{hi:cargo-fuzz}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
 
-A [`cargo`][c~cargo~docs]↗{{hi:cargo}} subcommand for fuzzing with [`libFuzzer`](https://llvm.org/docs/LibFuzzer.html)↗{{hi:libFuzzer}}.
+A [`cargo`][c~cargo~docs]↗{{hi:cargo}} subcommand for fuzzing with [`libFuzzer`][libFuzzer~website]↗{{hi:libFuzzer}}.
 
 ## `afl` {#afl}
 

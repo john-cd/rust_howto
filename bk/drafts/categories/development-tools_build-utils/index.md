@@ -19,7 +19,7 @@ Utilities for build scripts and other build time steps.
 
 | | |
 |---|---|
-| Benchmarking | [`cargo bench`]( )↗{{hi: }} (also part of the build/verification process) |
+| Benchmarking | [`cargo bench`][book~cargo~cargo-bench]↗{{hi:cargo bench}} (also part of the build/verification process) |
 | Code Generation | Often done with procedural macros or build scripts |
 | Cross-Compilation Tools | [`cross`][c~cross~docs]↗{{hi:cross}} simplifies cross-compilation using Docker |
 | Dependency Management | [`cargo`][c~cargo~docs]↗{{hi:cargo}} though primarily a package manager, it also handles build dependencies |
@@ -32,4 +32,6 @@ Utilities for build scripts and other build time steps.
 {{#include ../../refs/link-refs.md}}
 <div class="hidden">
 [development-tools_build-utils/index: add](https://github.com/john-cd/rust_howto/issues/306)
+
+[book~cargo~cargo-bench]: https://doc.rust-lang.org/cargo/commands/cargo-bench.html
 </div>

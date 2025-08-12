@@ -44,15 +44,19 @@ See [[memory-management | Memory Management]].
 
 User-space programs request services from the operating system kernel via system calls.
 
-- [`std::os::unix`]( )↗{{hi: }} provides access to Unix-specific system calls.
-- [`std::os::windows`]( )↗{{hi: }} provides access to Windows-specific system calls.
+- [`std::os::unix`][c~std::os::unix~docs]{{hi:std::os::unix}} provides access to Unix-specific system calls.
+[c~std::os::unix~docs]: https://doc.rust-lang.org/std/os/unix/index.html
+- [`std::os::windows`][c~std::os::windows~docs]{{hi:std::os::windows}} provides access to Windows-specific system calls.
+[c~std::os::windows~docs]: https://doc.rust-lang.org/std/os/windows/index.html
 
 See [[os_freebsd-apis | FreeBSD APIs]], [[os_linux-apis | Linux APIs]], [[os_macos-apis | macOS APIs]], [[os_unix-apis | Unix APIs]], [[os_windows-apis | Windows APIs]] and [[rust_os | Rust OSes]].
 
 ### `no_std` Environments
 
-- [`core`](https://doc.rust-lang.org/core)↗{{hi:core}} provides the bare minimum for writing code without the standard library.
-- [`alloc`](https://doc.rust-lang.org/alloc)↗{{hi:alloc}} provides memory allocation APIs for `no-std`{{hi:no-std}} environments.
+- [`core`][c~core~docs]↗{{hi:core}} provides the bare minimum for writing code without the standard library.
+- [`alloc`][c~alloc~docs]↗{{hi:alloc}} provides memory allocation APIs for `no-std`{{hi:no-std}} environments.
+[c~core~docs]: https://doc.rust-lang.org/core
+[c~alloc~docs]: https://doc.rust-lang.org/alloc
 
 See [[no_std | no `std`]].
 

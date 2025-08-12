@@ -67,6 +67,6 @@ Grammars are saved in separate [`.pest`][c~pest~docs]↗{{hi:.pest}}  files whi
 
 - [awesome-pest][awesome-pest~github]↗: A curated list of resources, projects, and tools using or for the `pest` parser generator in Rust.
 - [abnf_to_pest][c~abnf_to_pest~crates.io]↗.
-- [winnow](https://docs.rs/winnow/latest/winnow)↗.
+- [winnow][c~winnow~docs]↗.
 
 </div>

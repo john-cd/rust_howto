@@ -13,7 +13,7 @@ This section describes interfaces with database management systems{{hi:Database 
 | MongoDB | [`mongodb`][c~mongodb~docs]↗{{hi:mongodb}} |
 | Redis | [`redis`][c~redis~docs]↗{{hi:redis}} |
 | Object-Relational Mappers (ORMs) | [`diesel`][c~diesel~docs]↗{{hi:diesel}}, [`sea-orm`][c~sea-orm~docs]↗{{hi:sea-orm}} |
-| Database Migrations | [`sea-orm-cli`][c~sea-orm-cli~docs]↗{{hi:sea-orm-cli}} (for SeaORM), [`diesel_cli`](https://docs.rs/crate/diesel_cli)↗{{hi:diesel_cli}} (for Diesel), [`migrate`][c~migrate~docs]↗{{hi:migrate}} |
+| Database Migrations | [`sea-orm-cli`][c~sea-orm-cli~docs]↗{{hi:sea-orm-cli}} (for SeaORM), [`diesel_cli`][c~diesel_cli~docs]↗{{hi:diesel_cli}} (for Diesel), [`migrate`][c~migrate~docs]↗{{hi:migrate}} |
 | Connection Pooling | [`bb8`][c~bb8~docs]↗{{hi:bb8}}, [`deadpool`][c~deadpool~docs]↗{{hi:deadpool}} |
 
 ## Code Examples

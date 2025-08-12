@@ -77,7 +77,8 @@ The following example executes shell commands and interacts with the file system
 
 | Topic | Rust Crates |
 |---|---|
-| General Build Tools | [`cargo build`]( )↗{{hi: }} (built-in) compiles your project. `cargo check` checks your code for errors without compiling. |
+| General Build Tools | [`cargo build`][book~cargo~cargo-build]{{hi:cargo build}} (built-in) compiles your project. `cargo check` checks your code for errors without compiling. |
+[book~cargo~cargo-build]: https://doc.rust-lang.org/cargo/commands/cargo-build.html
 | Cross-Compilation | [`cross`][c~cross~docs]↗{{hi:cross}} simplifies cross-compilation. |
 | Packaging, Distribution | [`cargo-deb`][c~cargo-deb~docs]↗{{hi:cargo-deb}} creates Debian packages. [`cargo-rpm`][c~cargo-rpm~docs]↗{{hi:cargo-rpm}} creates RPM packages. [`create-dmg`][create-dmg~github]↗{{hi:create-dmg}} creates macOS disk images. |
 | Build Script Helpers | [`cc`][c~cc~docs]↗{{hi:cc}} helps with compiling C/C++ code in build scripts. [`pkg-config`][c~pkg-config~docs]↗{{hi:pkg-config}} finds system libraries. |
