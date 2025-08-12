@@ -126,7 +126,7 @@ FIXME
 
 [![gh-workflow][c~gh-workflow~docs~badge]][c~gh-workflow~docs] [![gh-workflow~crates.io][c~gh-workflow~crates.io~badge]][c~gh-workflow~crates.io] [![gh-workflow~github][c~gh-workflow~github~badge]][c~gh-workflow~github] [![gh-workflow~lib.rs][c~gh-workflow~lib.rs~badge]][c~gh-workflow~lib.rs]{{hi:gh-workflow}}{{hi:Actions}}{{hi:Generator}}{{hi:Github}}{{hi:Workflow}}
 
-A type-safe GitHub Actions workflow generator: [`gh-workflow`][c~gh-workflow~docs].
+A type-safe GitHub Actions workflow generator: [`gh-workflow`][c~gh-workflow~docs]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
@@ -139,6 +139,6 @@ rust-toolchain (github action): Github action to install Rust components via rus
 rust-cache (github action): Github action to cache compilation artifacts and speed up subsequent runs.
 install-action (github action): GitHub Action for installing [development tools][p~development-tools] (mainly from GitHub Releases).
 
-- [Octocrab][c~octocrab~lib.rs]
+- [Octocrab][c~octocrab~lib.rs]↗.
 
 </div>

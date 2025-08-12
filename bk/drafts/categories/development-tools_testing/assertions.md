@@ -36,6 +36,6 @@
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/1174)
 
-- [pretty_assertions — Rust dev tool][c~pretty_assertions~lib.rs]
+- [pretty_assertions — Rust dev tool][c~pretty_assertions~lib.rs]↗.
 
 </div>

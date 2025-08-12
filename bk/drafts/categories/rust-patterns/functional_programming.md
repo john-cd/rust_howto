@@ -83,6 +83,6 @@ https://nota-lang.org/examples/blog-post/standalone
 review https://crates.io/crates/tap
 ADD Working with Iterators: Creating custom iterators, using iterator adapters, and understanding iterator traits. Here or in `std` lib?
 
-- [Type-level Programming in Rust][blog~willcrichton-type-level-programming]
+- [Type-level Programming in Rust][blog~willcrichton-type-level-programming]↗.
 
 </div>

@@ -71,14 +71,14 @@ https://github.com/habitat-sh/habitat
 https://github.com/kcl-lang/kcl
 https://www.kcl-lang.io/docs/user_docs/getting-started
 
-[`docker-api`][c~docker-api~docs]↗{{hi:docker-api}}: a Rust interface to Docker containers
+[`docker-api`][c~docker-api~docs]↗{{hi:docker-api}}: a Rust interface to Docker containers.
 
 https://dev.to/mark_mwendia_0298dd9c0aad/optimizing-devops-pipelines-for-rust-projects-leveraging-cargo-and-cicd-474d
 
 CD/CI
 
-- [gh-workflow][c~gh-workflow~crates.io]
-- [GitHub Actions best practices for Rust projects][blog~github-actions-best-practices]
-- [GitHub - pipelight: Tiny automation pipelines. Bring CI/CD to the smallest projects. Self-hosted, Lightweight, CLI only.][pipelight~github]
+- [gh-workflow][c~gh-workflow~crates.io]↗.
+- [GitHub Actions best practices for Rust projects][blog~github-actions-best-practices]↗.
+- [GitHub - pipelight][pipelight~github]↗: Tiny automation pipelines. Bring CI/CD to the smallest projects. Self-hosted, Lightweight, CLI only.
 
 </div>

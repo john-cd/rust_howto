@@ -22,7 +22,7 @@
 [![tinysearch~github][c~tinysearch~github~badge]][c~tinysearch~github]
 [![tinysearch~lib.rs][c~tinysearch~lib.rs~badge]][c~tinysearch~lib.rs]
 
-[`tinysearch`][c~tinysearch~website] is a lightweight, fast, full-text search engine. It is designed for static websites.
+[`tinysearch`][c~tinysearch~website]↗ is a lightweight, fast, full-text search engine. It is designed for static websites.
 
 [`tinysearch`][c~tinysearch~docs]↗{{hi:tinysearch}} is compiled to WebAssembly to run in a browser. It can be used together with static site generators such as `Jekyll`, `Hugo`, [`Zola`][zola~website]↗{{hi:Zola}}, [`Cobalt`][cobalt~website]↗{{hi:Cobalt}}, or `Pelican`.
 

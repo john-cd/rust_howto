@@ -4,11 +4,11 @@
 
 ## `rapier` {#rapier}
 
-[`rapier`][rapier.rs~website] is a physics engine (2D and 3D).
+[`rapier`][rapier.rs~website]↗ is a physics engine (2D and 3D).
 
 ## See Also
 
-- [Physics][are-we-game-yet?-physics~website].
+- [Physics][are-we-game-yet?-physics~website]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

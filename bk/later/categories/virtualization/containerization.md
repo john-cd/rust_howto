@@ -4,13 +4,13 @@
 
 ## Docker Container Integration {#skip}
 
-- [Shiplift][c~shiplift~crates.io]: A high-level API for interacting with the Docker daemon, managing containers, images, and networks.
-- [Bollard][c~bollard~crates.io]: An asynchronous Rust client library for the Docker API, offering extensive features for container management.
-- [Dockworker][c~dockworker~crates.io]: A Docker client library for managing containers and images.
+- [Shiplift][c~shiplift~crates.io]↗: A high-level API for interacting with the Docker daemon, managing containers, images, and networks.
+- [Bollard][c~bollard~crates.io]↗: An asynchronous Rust client library for the Docker API, offering extensive features for container management.
+- [Dockworker][c~dockworker~crates.io]↗: A Docker client library for managing containers and images.
 
 ## Kubernetes and Orchestration {#skip}
 
-- [Kube][c~kube~crates.io]: A Kubernetes client for managing containerized applications in Kubernetes clusters.
+- [Kube][c~kube~crates.io]↗: A Kubernetes client for managing containerized applications in Kubernetes clusters.
 
 ## Container Internals {#skip}
 
@@ -22,11 +22,11 @@ While [`runc`][c~runc~docs]↗{{hi:runc}} itself is written in Go, Rust crates l
 
 ### Container Image Management {#skip}
 
-- [OCI Spec][c~oci-spec~crates.io]: A crate for working with the Open Container Initiative (OCI) specifications.
+- [OCI Spec][c~oci-spec~crates.io]↗: A crate for working with the Open Container Initiative (OCI) specifications.
 
 ### Networking for Containers {#skip}
 
-- [Netavark][c~netavark~crates.io]: A container network stack written in Rust, designed for Podman.
+- [Netavark][c~netavark~crates.io]↗: A container network stack written in Rust, designed for Podman.
 
 ### Container Build Tools {#skip}
 
@@ -39,8 +39,8 @@ Mention https://github.com/moby/buildkit
 [write](https://github.com/john-cd/rust_howto/issues/1225)
 need in-depth review
 cover [podman][podman~github]
-cover [containerd-rust-extensions][c~runc~github] A collection of Rust crates to extend containerd.
+cover [containerd-rust-extensions][c~runc~github]↗: A collection of Rust crates to extend containerd.
 
-- [cgroups-rs][c~cgroups~crates.io]
+- [cgroups-rs][c~cgroups~crates.io]↗.
 
 </div>

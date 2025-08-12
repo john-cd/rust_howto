@@ -52,10 +52,10 @@ Example from [tokio-graceful-shutdown][c~tokio-graceful-shutdown~docs]{{hi:tokio
 
 ## Useful Links
 
-- [`tokio.rs`][c~tokio~website].
+- [`tokio.rs`][c~tokio~website]↗.
 - [![tokio examples][c~tokio~examples~docs~badge]][c~tokio~examples~docs]{{hi:Tokio examples}}.
-- [tokio-rs `async-stream`][c~async-stream~github].
-- [tokio-rs `mio`][c~mio~github].
+- [tokio-rs `async-stream`][c~async-stream~github]↗.
+- [tokio-rs `mio`][c~mio~github]↗.
 - [`tokio` glossary][c~tokio~glossary~website]↗.
 - [`tokio` tutorial][c~tokio~tutorial~docs]{{hi:tokio}}↗.
 - Tokio "mini-Redis" example: [![tokio~mini-redis][c~tokio~mini-redis~github~badge]][c~tokio~mini-redis~github].

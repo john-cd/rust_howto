@@ -63,7 +63,7 @@ Compute Shaders are often handled through the low-level graphics [APIs][p~apis] 
 ## References {#references}
 
 - [[typecasts | Typecasts]] and especially [`bytemuck`][c~bytemuck~docs]↗{{hi:bytemuck}} - A crate for mucking around with piles of bytes.
-- [Are we Game yet? - Shaders][are-we-game-yet?-shader~website].
+- [Are we Game yet? - Shaders][are-we-game-yet?-shader~website]↗.
 
 ## Related Topics {#related-topics}
 
@@ -77,6 +77,6 @@ Compute Shaders are often handled through the low-level graphics [APIs][p~apis] 
 [decide what to cover, write](https://github.com/john-cd/rust_howto/issues/1228)
 review `gpu-allocator`
 
-- [rust-gpu: Making Rust a first-class language and ecosystem for GPU shaders][rust_gpu~github]
+- [rust-gpu: Making Rust a first-class language and ecosystem for GPU shaders][rust_gpu~github]↗.
 
 </div>

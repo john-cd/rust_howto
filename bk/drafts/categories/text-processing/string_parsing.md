@@ -25,7 +25,7 @@ Creates a custom struct `RGB` and implements the [`FromStr`][c~std::str::FromStr
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/965)
 
-- [validator][c~validator~lib.rs]
+- [validator][c~validator~lib.rs]↗.
 
 [`FromStr`][c~std::str::FromStr~docs]↗ provides _string parsing_ with idiomatic error handling, and it's typically implemented for types like [`u32`](https://doc.rust-lang.org/stable/std/primitive.u32.html)↗{{hi:u32}}, [`Url`][c~url::Url~docs]↗{{hi:url::Url}}, and [`enum`][keyword~enum]↗{{hi:enum}}s. It powers `.parse::<T>()`. It can only parse types that do not contain a lifetime parameter.
 

@@ -8,7 +8,7 @@
 
 [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} is essential for bridging between Rust and JavaScript, allowing you to interact with the browser's APIs from your Rust/WASM code.
 
-The [`wasm-bindgen`][book~wasm-bindgen] guide covers the `wasm-bindgen` tool and crate. [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} is a Rust library and CLI tool that facilitate high-level interactions between WASM modules and JavaScript.
+The [`wasm-bindgen`][book~wasm-bindgen]↗ guide covers the `wasm-bindgen` tool and crate. [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} is a Rust library and CLI tool that facilitate high-level interactions between WASM modules and JavaScript.
 
 ## Bind to JS Global Objects and Functions Found in All JS Environments with `js-sys` {#js-sys}
 

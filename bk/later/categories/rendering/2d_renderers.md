@@ -89,7 +89,7 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 
 ## See Also {#skip8}
 
-- [Are we Game yet? 2D Rendering][are-we-game-yet?-2drendering~website]: Sprites, vectors, splines, hex grids and more.
+- [Are we Game yet? 2D Rendering][are-we-game-yet?-2drendering~website]↗: Sprites, vectors, splines, hex grids and more.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

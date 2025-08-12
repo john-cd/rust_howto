@@ -100,10 +100,10 @@ The following examples cover less commonly-used data structures:
 <div class="hidden">
 [data-structures: expand](https://github.com/john-cd/rust_howto/issues/280)
 
-- [`rust-algorithms`: Common data structures and algorithms in Rust][rust-algorithms~github]
-- [PHF - data structures in Rust][c~phf~lib.rs] Runtime support for perfect hash function data structures
-- [`PriorityQueue` - data structures in Rust][c~priority-queue~lib.rs]
-- [`elsa` - data structures in Rust][c~elsa~lib.rs]
-- [`Equivalent` - data structures in Rust][c~equivalent~lib.rs]
+$1↗$2 [`rust-algorithms`: Common data structures and algorithms in Rust][rust-algorithms~github]↗.
+- [PHF - data structures in Rust][c~phf~lib.rs]↗: Runtime support for perfect hash function data structures.
+- [`PriorityQueue` - data structures in Rust][c~priority-queue~lib.rs]↗.
+- [`elsa` - data structures in Rust][c~elsa~lib.rs]↗.
+- [`Equivalent` - data structures in Rust][c~equivalent~lib.rs]↗.
 
 </div>

@@ -20,9 +20,9 @@
 
 For other server use cases, please consider higher-level, easier libraries (like [`axum`][c~axum~docs]↗{{hi:axum}}). Reach for the [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} crate, if looking for a convenient HTTP client.
 
-Note that [`hyper`][c~hyper~docs]↗{{hi:hyper}} developers need to bring their own async runtime (e.g. Tokio), IO, and optionally TLS. Look at the [`hyper-tls`][c~hyper-tls~crates.io], [`hyper-rustls`][c~hyper-rustls~crates.io] and [`hyper-openssl`][hyper-openssl] crates for the latter. Routing, cookies, and non-HTTP protocols are out of scope. In particular, consider the family of [`tungstenite`][c~tungstenite~docs]↗{{hi:tungstenite}} crates for WebSockets.
+Note that [`hyper`][c~hyper~docs]↗{{hi:hyper}} developers need to bring their own async runtime (e.g. Tokio), IO, and optionally TLS. Look at the [`hyper-tls`][c~hyper-tls~crates.io]↗, [`hyper-rustls`][c~hyper-rustls~crates.io]↗ and [`hyper-openssl`][hyper-openssl]↗ crates for the latter. Routing, cookies, and non-HTTP protocols are out of scope. In particular, consider the family of [`tungstenite`][c~tungstenite~docs]↗{{hi:tungstenite}} crates for WebSockets.
 
-This said, we provide below an example of a HTTP server, following the recommendations of the [`hyper.rs`][c~hyper~website] guide:
+This said, we provide below an example of a HTTP server, following the recommendations of the [`hyper.rs`][c~hyper~website]↗ guide:
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_server/examples/hyper_server.rs:example}}

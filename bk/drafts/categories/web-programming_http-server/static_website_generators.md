@@ -45,7 +45,7 @@ You can further customize your site by editing the templates in the templates di
 
 ### Themes for `zola` {#skip1}
 
-[AdiDoks][adidoks~website] is a modern documentation theme.
+[AdiDoks][adidoks~website]↗ is a modern documentation theme.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

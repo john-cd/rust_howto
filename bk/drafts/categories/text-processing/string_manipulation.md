@@ -60,6 +60,6 @@ fn main() {
 }
 ```
 
-- [Why is capitalizing the first letter of a string so convoluted in Rust? - Stack Overflow][blog~stackoverflow~why-is-capitalizing-the-first-letter-of-a-string-so-convoluted-in-rust]
+- [Why is capitalizing the first letter of a string so convoluted in Rust? - Stack Overflow][blog~stackoverflow~why-is-capitalizing-the-first-letter-of-a-string-so-convoluted-in-rust]↗.
 
 </div>

@@ -3,9 +3,9 @@
 **A documentation summary and a compendium of snippets and recipes for the Rust language and ecosystem.**
 **Everything you need for day-to-day Rust coding, all in one place.**
 
-The "Rust How-To" book is deployed on [john-cd.com/rust_howto][rust-howto]
+The "Rust How-To" book is deployed on [john-cd.com/rust_howto][rust-howto]↗.
 
-GitHub repo: [github.com/john-cd/rust_howto][rust-howto~github]
+GitHub repo: [github.com/john-cd/rust_howto][rust-howto~github]↗.
 
 ## Note
 

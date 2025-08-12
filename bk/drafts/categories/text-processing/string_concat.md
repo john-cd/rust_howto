@@ -30,7 +30,7 @@ String concatenation is the operation of joining two or more strings together en
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/964)
 
-- [constcat][c~constcat~crates.io]
+- [constcat][c~constcat~crates.io]↗.
 
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/examples/string_concat/string_concat2.rs:example}}

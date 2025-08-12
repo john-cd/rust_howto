@@ -17,6 +17,6 @@
 [review](https://github.com/john-cd/rust_howto/issues/926)
 
 - move to proper location.
-- cover [`std::any::type_name`][c~std::any::type_name~docs].
+- cover [`std::any::type_name`][c~std::any::type_name~docs]↗.
 
 </div>

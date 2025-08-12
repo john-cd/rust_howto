@@ -9,7 +9,7 @@ This chapter covers the use of the Rust language in Cloud computing.
 It is similarly possible to use Azure, GCP (Google Cloud Platform), and other cloud providers.
 All major Cloud platforms offer a Rust SDK:
 
-- [Azure SDK for Rust][azure-sdk-for-rust~github].
+- [Azure SDK for Rust][azure-sdk-for-rust~github]↗.
 - [Google Cloud Platform Rust [Experimental] Client Libraries](https://github.com/googleapis/google-cloud-rust).
 
 ## Rust-native Cloud Platforms that Offer First-class Support for Rust
@@ -30,7 +30,7 @@ Rust is commonly used to develop reliable and efficient cloud infrastructure com
 Refer to:
 
 - [[written-in-rust | Written in Rust]].
-- [rust-cloud-native.github.io][rust-cloud-native~website]
+- [rust-cloud-native.github.io][rust-cloud-native~website]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

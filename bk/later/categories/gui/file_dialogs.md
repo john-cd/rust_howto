@@ -8,7 +8,7 @@ For most common file dialog needs, [`rfd`][c~rfd~docs]↗{{hi:rfd}} is the recom
 
 [![rfd][c~rfd~docs~badge]][c~rfd~docs] [![rfd~crates.io][c~rfd~crates.io~badge]][c~rfd~crates.io] [![rfd~github][c~rfd~github~badge]][c~rfd~github] [![rfd~lib.rs][c~rfd~lib.rs~badge]][c~rfd~lib.rs]{{hi:rfd}}{{hi:Dialog}}{{hi:File}}{{hi:Ui}}
 
-[`rfd`][c~rfd~docs]↗{{hi:rfd}} stands for Rusty File Dialog. "Platform-native open/save file dialogs. Can be used in conjunction with other UI libraries." ([blessed.rs][blessed-rs~website]).
+[`rfd`][c~rfd~docs]↗{{hi:rfd}} stands for Rusty File Dialog. "Platform-native open/save file dialogs. Can be used in conjunction with other UI libraries." ([blessed.rs][blessed-rs~website]↗).
 
 [`rfd`][c~rfd~docs]↗{{hi:rfd}} is the most popular and generally recommended crate for creating cross-platform file dialogs (open file, save file, open directory). It provides a simple and consistent API across different operating systems. It's actively maintained and a good choice for most projects. [`rfd`][c~rfd~docs]↗{{hi:rfd}} supports [asynchronous][p~asynchronous] file dialogs.
 

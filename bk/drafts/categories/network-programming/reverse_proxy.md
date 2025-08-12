@@ -92,5 +92,5 @@ local_addr = "127.0.0.1:22" # The address of the service that needs to be forwar
 
 <div class="hidden">
 [reverse_proxy: write](https://github.com/john-cd/rust_howto/issues/424)
-[River][river~github]
+[River][river~github]↗.
 </div>

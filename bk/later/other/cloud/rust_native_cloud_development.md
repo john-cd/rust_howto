@@ -25,7 +25,7 @@ It offers a free tier with access to essential features for individual developer
 
 - [`shuttle.dev`][shuttle-dev~website]↗{{hi:shuttle}}
 - [`docs.shuttle.dev`][shuttle-dev~docs]{{hi:shuttle.dev}}
-- [Shuttle Examples][shuttle~examples~github]
+- [Shuttle Examples][shuttle~examples~github]↗.
 
 ## Related Topics
 

@@ -47,7 +47,7 @@ While WebAssembly was initially designed for the web, its benefits like portabil
 
 WASM can be used to build virtual machines or [emulators][p~emulators] for other architectures, enabling execution of legacy software or providing sand-boxed environments.
 
-See [webassembly.org][webassembly~website] and [madewithwebassembly.com][madewithwebassembly~website].
+See [webassembly.org][webassembly~website] and [madewithwebassembly.com][madewithwebassembly~website]↗.
 
 ### Example: Game Development Using WASM {#skip}
 

@@ -4,7 +4,7 @@
 
 ## Chat Platforms, Forums, and Social Media {#chat}
 
-- Official [`rust-lang.org`][rust-lang~website] chat servers and forums:
+- Official [`rust-lang.org`][rust-lang~website]↗ chat servers and forums:
   - [Rust Zulip chat][forum~rust-lang.zulipchat]↗.
   - [Rust programming language users forum][forum~users.rust-lang]↗.
   - [Rust programming language internals forum][forum~internals.rust-lang]↗.

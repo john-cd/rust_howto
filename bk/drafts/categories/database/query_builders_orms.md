@@ -95,7 +95,7 @@ diesel print-schema > src/schema.rs
 
 It is currently in active development and not yet published to crates.io. You can try using it directly from Github.
 
-Using the example in the [Toasty announcement blog][c~toasty~blog], projects that use Toasty start by creating a schema file to define the application's data model.
+Using the example in the [Toasty announcement blog][c~toasty~blog]↗, projects that use Toasty start by creating a schema file to define the application's data model.
 
 ```text
 model User {

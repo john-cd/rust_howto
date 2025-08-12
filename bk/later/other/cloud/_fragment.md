@@ -14,5 +14,5 @@
 
 <div class="hidden">
 [decide where that goes](https://github.com/john-cd/rust_howto/issues/578)
-| [Use the `dapr` distributed runtime][ex~cloud~dapr] | [![dapr-rust-sdk~github][dapr-rust-sdk~github~badge]][dapr-rust-sdk~github] |
+| [Use the `dapr` distributed runtime][ex~cloud~dapr]↗ | [![dapr-rust-sdk~github][dapr-rust-sdk~github~badge]][dapr-rust-sdk~github] |
 </div>

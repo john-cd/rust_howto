@@ -134,6 +134,6 @@ Event sourcing focuses on storing a sequence of events that represent changes to
 <div class="hidden">
 [write / detail every architecture](https://github.com/john-cd/rust_howto/issues/1230)
 
-- [Hydro][hydro~website]
+- [Hydro][hydro~website]↗.
 
 </div>

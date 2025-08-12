@@ -14,7 +14,7 @@
 
 ## AI {#skip}
 
-- [foreverVM][forevervm~website]: The sessionless code interpreter. ForeverVM is a code execution API that allows you to securely run arbitrary Python code in a remote sandbox and get back results.
+- [foreverVM][forevervm~website]↗: The sessionless code interpreter. ForeverVM is a code execution API that allows you to securely run arbitrary Python code in a remote sandbox and get back results.
 
 ## CD / CI {#skip}
 
@@ -76,7 +76,7 @@
 ## Unstable Features {#skip}
 
 - [Coroutine in `std::ops`][c~std::ops::Coroutine~docs]
-- [Unstable Features - The Cargo Book][book~cargo~unstable]
+- [Unstable Features][book~cargo~unstable]↗ - The Cargo Book.
 
 ## VS Code {#skip}
 

@@ -60,6 +60,6 @@ It is important to note that keys may be reused. In other words, once a value as
 <div class="hidden">
 [write NOW](https://github.com/john-cd/rust_howto/issues/1341)
 
-- [Jemalloc][c~jemalloc~lib.rs]
+- [Jemalloc][c~jemalloc~lib.rs]↗.
 
 </div>

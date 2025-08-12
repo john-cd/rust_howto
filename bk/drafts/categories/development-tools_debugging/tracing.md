@@ -145,6 +145,6 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across [`awai
 FIXME tracing_subscriber2
 rename files
 
-- [tracing-appender][c~tracing-appender~crates.io]
+- [tracing-appender][c~tracing-appender~crates.io]↗.
 
 </div>

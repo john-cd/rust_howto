@@ -57,9 +57,9 @@ See:
 
 ## See Also {#skip3}
 
-- [Are we Game yet? 3D Rendering][are we game yet? 3d rendering]
+- [Are we Game yet? 3D Rendering][are we game yet? 3d rendering]↗.
+
 [are we game yet? 3d rendering]: https://arewegameyet.rs/ecosystem/3drendering
-.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

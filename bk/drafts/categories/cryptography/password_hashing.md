@@ -73,7 +73,7 @@ The salt is generated using [`ring::rand::SecureRandom::fill`][c~ring::rand::Sec
 {{#include ../../../crates/cats/cryptography/examples/password_hashing/pbkdf2.rs:example}}
 ```
 
-For more [algorithms][p~algorithms], see [Rust Crypto Password Hashes][rustcrypto-password-hashes~github].
+For more [algorithms][p~algorithms], see [Rust Crypto Password Hashes][rustcrypto-password-hashes~github]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

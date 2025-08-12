@@ -32,7 +32,7 @@ It allows multiple threads to concurrently read and write to the map with minima
 
 [![flurry][c~flurry~docs~badge]][c~flurry~docs] [![flurry~crates.io][c~flurry~crates.io~badge]][c~flurry~crates.io] [![flurry~github][c~flurry~github~badge]][c~flurry~github] [![flurry~lib.rs][c~flurry~lib.rs~badge]][c~flurry~lib.rs]{{hi:flurry}}{{hi:Map}}{{hi:Concurrent}}{{hi:Hashmap}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
-[`flurry`][c~flurry~docs]↗{{hi:flurry}} is a concurrent hash table designed for high performance. It allows fully concurrent reads and highly concurrent updates. Its main type is functionally very similar to [`std::collections::HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}}. Its implementation is closely based on Java's `java.util.concurrent.ConcurrentHashMap`. Even though all operations on the map are thread-safe and operate on shared references, retrieval operations do not entail locking, and there is not any support for locking the entire table in a way that prevents all access ([doc][c~flurry~docs]).
+[`flurry`][c~flurry~docs]↗{{hi:flurry}} is a concurrent hash table designed for high performance. It allows fully concurrent reads and highly concurrent updates. Its main type is functionally very similar to [`std::collections::HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}}. Its implementation is closely based on Java's `java.util.concurrent.ConcurrentHashMap`. Even though all operations on the map are thread-safe and operate on shared references, retrieval operations do not entail locking, and there is not any support for locking the entire table in a way that prevents all access ([doc][c~flurry~docs]↗).
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/examples/concurrent_data_structures/flurry.rs:example}}
@@ -50,7 +50,7 @@ It allows multiple threads to concurrently read and write to the map with minima
 - Extremely scalable, low-latency reads (see [performance][p~performance]).
 - Predictable latency across all operations.
 - Efficient memory usage, with garbage collection powered by [`seize`][c~seize~docs]↗{{hi:seize}}.
-([doc][c~papaya~docs])
+([doc][c~papaya~docs]↗)
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/examples/concurrent_data_structures/papaya.rs:example}}

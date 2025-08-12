@@ -6,7 +6,7 @@
 
 [![winit][c~winit~docs~badge]][c~winit~docs] [![winit~crates.io][c~winit~crates.io~badge]][c~winit~crates.io] [![winit~github][c~winit~github~badge]][c~winit~github] [![winit~lib.rs][c~winit~lib.rs~badge]][c~winit~lib.rs]{{hi:winit}}{{hi:Windowing}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
 
-[`winit`][c~winit~docs]↗{{hi:winit}} is a cross-platform window creation and event handling library. "The defacto standard option. Uses an event loop based architecture. Widely used and should probably be the default choice." ([blessed.rs][blessed-rs~website]).
+[`winit`][c~winit~docs]↗{{hi:winit}} is a cross-platform window creation and event handling library. "The defacto standard option. Uses an event loop based architecture. Widely used and should probably be the default choice." ([blessed.rs][blessed-rs~website]↗).
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/window_creation/winit.rs:example}}
@@ -18,7 +18,7 @@
 
 [`tao`][c~tao~docs]↗{{hi:tao}} is a cross-platform window manager library. The TAO of cross-platform windowing. A library in Rust built for [`tauri`][c~tauri~docs]↗{{hi:tauri}}.
 
-"A fork of [`winit`][c~winit~docs]↗{{hi:winit}} by the Tauri project, which adds support for things like system menus that desktop apps need." ([blessed.rs][blessed-rs~website]).
+"A fork of [`winit`][c~winit~docs]↗{{hi:winit}} by the Tauri project, which adds support for things like system menus that desktop apps need." ([blessed.rs][blessed-rs~website]↗).
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/window_creation/tao.rs:example}}

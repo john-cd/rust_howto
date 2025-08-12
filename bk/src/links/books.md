@@ -48,9 +48,9 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 
 ## General {#general}
 
-- [Beginning Rust: Get Started with Rust 2021 Edition][book~Beginning-Rust-Get-Started-2021] by Carlo Milanesi (Apress). [978-1484272077][ISBN~978-1484272077]↗.
+- [Beginning Rust: Get Started with Rust 2021 Edition][book~Beginning-Rust-Get-Started-2021]↗ by Carlo Milanesi (Apress). [978-1484272077][ISBN~978-1484272077]↗.
 - [Creative Projects for Rust Programmers][book~Creative-Projects-Rust-Programmers-WebAssembly]↗: Build exciting projects on domains such as web apps, WebAssembly, games, and parsing, by Carlo Milanesi. [978-1789346220][ISBN~978-1789346220]↗.
-- [Code Like a Pro in Rust][book~Code-Like-Rust-Brenden-Matthews-ebook] by Brenden Matthews. [978-1638354543][ISBN~978-1638354543]↗.
+- [Code Like a Pro in Rust][book~Code-Like-Rust-Brenden-Matthews-ebook]↗ by Brenden Matthews. [978-1638354543][ISBN~978-1638354543]↗.
 - The [Complete Rust Programming Reference Guide](https://www.amazon.com/dp/1838828109)↗: Design, develop, and deploy effective software systems using the advanced constructs of Rust, by Rahul Sharma, Vesa Kaihlavirta, Claus Matzinger. [978-1838828103][ISBN~978-1838828103]↗.
 - [Effective Rust: 35 Specific Ways to Improve Your Rust Code](https://www.amazon.com/dp/1098151402)↗ [(O'Reilly)][book~effective-rust]↗ by David Drysdale.  [978-1098151409][ISBN~978-1098151409]↗ [(online version)][effective-rust~website]↗.
 - [Fullstack Rust][book~Fullstack-Rust-Complete-Building-Programming-ebook]↗ by Andy Weiss ([Newline][book~fullstack-rust]↗ or Kindle).
@@ -155,7 +155,7 @@ See also the [Awesome Embedded Rust][awesome-embedded-rust~github]↗, a curated
 ### Macros {#macros}
 
 - The [Little Book of Rust Macros][book~little-book-of-rust-macros]↗.{{hi:Macros}}
-- [Write Powerful Rust Macros][book~Write-Powerful-Rust-Macros-Overmeire-ebook] by Sam Van Overmeire. [9781633437494][ISBN~9781633437494]↗.
+- [Write Powerful Rust Macros][book~Write-Powerful-Rust-Macros-Overmeire-ebook]↗ by Sam Van Overmeire. [9781633437494][ISBN~9781633437494]↗.
 
 ### Network Programming {#network-programming}
 
@@ -187,7 +187,7 @@ See also the [Awesome Embedded Rust][awesome-embedded-rust~github]↗, a curated
 
 ### Web {#web}
 
-[Rust Web Development with `warp`, `tokio`, and `reqwest`][book~rust-web-development-bastian-gruber] by Bastian Gruber. [9781617299001][ISBN~9781617299001]↗.
+[Rust Web Development with `warp`, `tokio`, and `reqwest`][book~rust-web-development-bastian-gruber]↗ by Bastian Gruber. [9781617299001][ISBN~9781617299001]↗.
 
 ### Webassembly (WASM) {#wasm}
 

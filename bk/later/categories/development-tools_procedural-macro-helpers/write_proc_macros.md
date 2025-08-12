@@ -8,7 +8,7 @@ You'll almost always use [`proc-macro`](https://doc.rust-lang.org/proc_macro)↗
 
 Procedural macro [crates][p~crates] almost always will link to the compiler-provided [`proc_macro`][c~proc_macro~docs]↗{{hi:proc_macro}} crate. The `proc_macro` crate provides types required for writing procedural macros and facilities to make it easier.
 
-This crate primarily contains a TokenStream type. Procedural [macros][p~macros] operate over token [streams][p~streams] instead of AST nodes, which is a far more stable interface over time for both the compiler and for procedural [macros][p~macros] to target. A token stream is roughly equivalent to [`Vec<TokenTree>`]( ){{hi: }} where a `TokenTree` can roughly be thought of as lexical token. For example `foo` is an `Ident` token, `.` is a `Punct` token, and `1.2` is a `Literal` token. The `TokenStream` type, unlike `Vec<TokenTree>`, is cheap to clone [(reference)][(reference)].
+This crate primarily contains a TokenStream type. Procedural [macros][p~macros] operate over token [streams][p~streams] instead of AST nodes, which is a far more stable interface over time for both the compiler and for procedural [macros][p~macros] to target. A token stream is roughly equivalent to [`Vec<TokenTree>`]( ){{hi: }} where a `TokenTree` can roughly be thought of as lexical token. For example `foo` is an `Ident` token, `.` is a `Punct` token, and `1.2` is a `Literal` token. The `TokenStream` type, unlike `Vec<TokenTree>`, is cheap to clone [(reference)][(reference)]↗.
 
 ## Parse Rust Source Code into an Abstract Syntax Tree {#syn}
 
@@ -105,6 +105,6 @@ Good documentation is essential for any procedural macro. Document your macro's 
 <div class="hidden">
 [write_proc_macros: write; compare with macros.md - what should be in here?](https://github.com/john-cd/rust_howto/issues/331)
 
-- [syn examples][syn-examples~github]
+- [syn examples][syn-examples~github]↗.
 
 </div>

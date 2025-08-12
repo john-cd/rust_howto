@@ -18,6 +18,6 @@
 <div class="hidden">
 [tera: write; add sample from tools code](https://github.com/john-cd/rust_howto/issues/483)
 
-- [Tera Built-in Filters][doc~tera-built-in-filters]
+- [Tera Built-in Filters][doc~tera-built-in-filters]↗.
 
 </div>

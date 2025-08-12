@@ -32,7 +32,7 @@ Code examples are found below:
 
 ## References
 
-- [Are we Game yet? - Engines][are-we-game-yet?~engines~website].
+- [Are we Game yet? - Engines][are-we-game-yet?~engines~website]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

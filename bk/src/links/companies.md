@@ -7,7 +7,7 @@ The following is an (incomplete) list of companies and organizations that use Ru
 - [`rust-companies` (GitHub)][rust-companies~github]↗.
 - the member list of the [Rust Foundation][rust-foundation~website]↗.
 
-Please also consult the [list of companies using Rust][theirstack-rust~website] on `theirstack.com`.
+Please also consult the [list of companies using Rust][theirstack-rust~website]↗ on `theirstack.com`.
 
 |||
 |---|---|
@@ -66,7 +66,7 @@ Please also consult the [list of companies using Rust][theirstack-rust~website] 
 | [Dioxus Labs][dioxuslabs~website]↗[(github)][c~dioxus~github]↗ | |
 | [Discord][discord~website]↗ | Uses Rust for both the client and server sides of its codebase, including their real-time communication services. |
 | [Disney][disney~website]↗ | |
-| [Distil Networks][distil-networks~website] | Uses Rust in their low-latency bot detection and mitigation platform. |
+| [Distil Networks][distil-networks~website]↗ | Uses Rust in their low-latency bot detection and mitigation platform. |
 | [Dropbox][dropbox~website]↗ | Uses Rust for its file-syncing engine. See, for example, [Capture][dropbox-capture~website]↗. |
 | [DungeonFog][dungeonfog~website]↗[(github)][dungeonfog~github]↗ | Uses Rust in their game engine and map-making tool for RPGs. New "Project Deios" map maker tool is written completely in Rust. |
 | [EVO][evo~website]↗ | Develops marketplaces for online shopping, fintech, and logistics. [Development tools][p~development-tools], containerization, monitoring and orchestration systems written in Rust. |
@@ -149,7 +149,7 @@ Please also consult the [list of companies using Rust][theirstack-rust~website] 
 | [RedJack][redjack~website]↗ | |
 | [Red Sift][redsift~website]↗[(github)][redsift~github]↗ | Container monitoring with eBPF. |
 | [Renault][renault~website]↗ | French automotive manufacturer. |
-| [Routific][routific~website] | High [performance][p~performance] route optimization software. |
+| [Routific][routific~website]↗ | High [performance][p~performance] route optimization software. |
 | [RustNL][rustnl~website]↗ | |
 | [Rustdesk][rustdesk~website]↗[(github)][rustdesk~github]↗ | |
 | [Salesforce][salesforce~website]↗ | Uses Rust & WASM for MuleSoft's Flex Gateway, a new gateway running on Envoy. |

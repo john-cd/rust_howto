@@ -26,7 +26,7 @@ Game development in Rust is a vibrant area, and the crates you'll need depend on
 | Inputs | See also [[gui | GUI]]. | [`winit`][c~winit~docs]↗{{hi:winit}} : Handles window events, including input. [`sdl2`][c~sdl2~docs]↗{{hi:sdl2}}: Can also be used for input. |
 | Game Logic / State Management | Often handled directly or with ECS libraries. See below. | |
 | Entity Component System (ECS) | For Data-Driven Design. | [`bevy_ecs`][c~bevy_ecs~docs]↗{{hi:bevy_ecs}} is Bevy's built-in ECS. [`specs`][c~specs~docs]↗{{hi:specs}} is a popular and mature ECS library. [`hecs`][c~hecs~docs]↗{{hi:hecs}} is another ECS implementation. |
-| Physics Engine | See [Physics][are-we-game-yet?-physics~website] for 2D and 3D physics engines, collision detection libraries. | [`rapier`][rapier.rs~website]: A physics engine (2D and 3D). `nphysics2d`{{hi:nphysics2d}}: Another physics engine. |
+| Physics Engine | See [Physics][are-we-game-yet?-physics~website]↗ for 2D and 3D physics engines, collision detection libraries. | [`rapier`][rapier.rs~website]↗: A physics engine (2D and 3D). `nphysics2d`{{hi:nphysics2d}}: Another physics engine. |
 | Networking | | [`ggrs`][c~ggrs~docs]↗{{hi:ggrs}}: A P2P networking library for games. [`tokio`][c~tokio~docs]↗{{hi:tokio}}: (For asynchronous networking in general). [`mio`][c~mio~docs]↗{{hi:mio}}: Lower-level networking. |
 | UI (User Interface) | See [[gui | GUI]]. | [`egui`][c~egui~docs]↗{{hi:egui}}: An immediate mode GUI library. [`iced`][c~iced~docs]↗{{hi:iced}}: A cross-platform GUI library focused on simplicity and type safety. [`conrod`][c~conrod~docs]↗{{hi:conrod}}: An older UI library. |
 | [[mathematics | Mathematics]] and [[linear_algebra | Linear Algebra]] | | [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}}: A popular linear algebra library. [`glam`][c~glam~docs]↗{{hi:glam}}: Another linear algebra library, often used in game development. |
@@ -47,18 +47,18 @@ See also:
 
 Are we Game yet?
 
-- [AI][are-we-game-yet?-ai~website]: AI libraries, steering, behaviour trees, planners, etc.
-- [Animation][are-we-game-yet?-animation~website]: rigging, tweening, anything related to animation.
-- [Audio][are-we-game-yet?-audio~website]: Wrappers for FMOD, OpenAL, MIDI and similar, and higher level APIs.
-- [ECS][are-we-game-yet?-ecs~website]: Entity Component System implementations.
-- [Input][are-we-game-yet?-input~website]: Libraries to handle controllers, gamepads, keyboards, etc.
-- [Math][are-we-game-yet?-math~website]: Linear algebra libraries, quaternions, color conversion and more.
-- [Mesh Tools][are-we-game-yet?-mesh~website]: Tools for optimising and processing meshes.
-- [Networking][are-we-game-yet?-networking~website]: Multiplayer, Protocols, and more.
-- [Tools][are-we-game-yet?-tools~website]: Tools & other game-dev related libraries.
-- [UI][are-we-game-yet?-ui~website]: Immediate mode UI libraries and more.
-- [VR][are-we-game-yet?-vr~website]: VR engines and libraries.
-- [Windowing][are-we-game-yet?-windowing~website] Windowing and Context Creation crates.
+- [AI][are-we-game-yet?-ai~website]↗: AI libraries, steering, behaviour trees, planners, etc.
+- [Animation][are-we-game-yet?-animation~website]↗: rigging, tweening, anything related to animation.
+- [Audio][are-we-game-yet?-audio~website]↗: Wrappers for FMOD, OpenAL, MIDI and similar, and higher level APIs.
+- [ECS][are-we-game-yet?-ecs~website]↗: Entity Component System implementations.
+- [Input][are-we-game-yet?-input~website]↗: Libraries to handle controllers, gamepads, keyboards, etc.
+- [Math][are-we-game-yet?-math~website]↗: Linear algebra libraries, quaternions, color conversion and more.
+- [Mesh Tools][are-we-game-yet?-mesh~website]↗: Tools for optimising and processing meshes.
+- [Networking][are-we-game-yet?-networking~website]↗: Multiplayer, Protocols, and more.
+- [Tools][are-we-game-yet?-tools~website]↗: Tools & other game-dev related libraries.
+- [UI][are-we-game-yet?-ui~website]↗: Immediate mode UI libraries and more.
+- [VR][are-we-game-yet?-vr~website]↗: VR engines and libraries.
+- [Windowing][are-we-game-yet?-windowing~website]↗ Windowing and Context Creation crates.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

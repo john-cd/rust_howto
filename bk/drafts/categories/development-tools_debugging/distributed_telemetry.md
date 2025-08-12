@@ -40,9 +40,9 @@ Prometheus instrumentation library for Rust applications. Prometheus is an open-
 
 ### Useful Links {#skip}
 
-- [Grafana][grafana~website].
+- [Grafana][grafana~website]↗.
 - [Prometheus][prometheus~github] monitoring system and time series database.
-- [Thanos][thanos~website]: open source, highly available Prometheus setup with long term storage capabilities.
+- [Thanos][thanos~website]↗: open source, highly available Prometheus setup with long term storage capabilities.
 
 ## `OpenObserve` {#open-observe}
 
@@ -54,13 +54,13 @@ Prometheus instrumentation library for Rust applications. Prometheus is an open-
 
 ## Other Common Observability Tools & Platforms {#skip}
 
-- [Fluentd][fluentd~github] open-source log collector.
-- [Splunk][splunk~website] is a unified security and observability platform.
-- [DataDog][datadoghq~website].
-- [Graphite][graphite-docs~website].
-- [InfluxDB][influxdata~website].
-- [Nagios][nagios~website].
-- [New Relic][newrelic~website].
+- [Fluentd][fluentd~github]↗ open-source log collector.
+- [Splunk][splunk~website]↗ is a unified security and observability platform.
+- [DataDog][datadoghq~website]↗.
+- [Graphite][graphite-docs~website]↗.
+- [InfluxDB][influxdata~website]↗.
+- [Nagios][nagios~website]↗.
+- [New Relic][newrelic~website]↗.
 
 ## Related Topics {#related-topics}
 

@@ -22,8 +22,8 @@ See also
 
 - [Are we GUI yet?][are-we-gui-yet?~website]↗.
 - the relevant section in [blessed.rs][blessed-rs~website]↗.
-- [The State of Rust GUI libraries][blog~state-rust-gui-libraries].
-- [LibHunt][libhunt-rust-gui~website].
+- [The State of Rust GUI libraries][blog~state-rust-gui-libraries]↗.
+- [LibHunt][libhunt-rust-gui~website]↗.
 - [simplifycpp.org](https://simplifycpp.org/?id=a0507).
 
 ## GUI Frameworks
@@ -32,7 +32,7 @@ See also
 
 {{#include gtk.incl.md}}
 
-Alternatively, look at [`fltk-rs`][c~fltk~docs]↗{{hi:fltk-rs}}, which offers Rust bindings for the [`FLTK`][fltk~website] 1.4 Graphical User Interface library.
+Alternatively, look at [`fltk-rs`][c~fltk~docs]↗{{hi:fltk-rs}}, which offers Rust bindings for the [`FLTK`][fltk~website]↗ 1.4 Graphical User Interface library.
 
 ### Immediate-mode GUIs
 
@@ -110,6 +110,6 @@ While primarily for window creation, [`winit`][c~winit~docs]↗{{hi:winit}} is o
 review which GUI framework should be recommended - make a table; review links in Choosing the right framework section again
 cover [`perseus`]( ){{hi: }} / zola?
 
-- [Are we (I)DE yet?][are-we-ide-yet?~website]
+- [Are we (I)DE yet?][are-we-ide-yet?~website]↗.
 
 </div>

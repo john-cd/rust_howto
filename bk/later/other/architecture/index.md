@@ -30,6 +30,6 @@ See [[architectural_patterns | Architectural Patterns]].
 
 PLUGINS
 
-- [INVENTORY][c~inventory~lib.rs]
+- [INVENTORY][c~inventory~lib.rs]↗.
 
 </div>

@@ -140,4 +140,4 @@ Note that so-called "Deref polymorphism", meaning implementing [`Deref`][c~std::
 
 ---
 
-- [predicates][c~predicates~lib.rs] boolean-valued predicate functions.
+- [predicates][c~predicates~lib.rs]↗ boolean-valued predicate functions.

@@ -44,7 +44,7 @@ It's useful for creating the geometry for vector graphics, but you'd typically u
 
 ## See Also
 
-[2D Rendering][are-we-game-yet?-2drendering~website]: Sprites, vectors, splines, hex grids and more
+[2D Rendering][are-we-game-yet?-2drendering~website]↗: Sprites, vectors, splines, hex grids and more.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

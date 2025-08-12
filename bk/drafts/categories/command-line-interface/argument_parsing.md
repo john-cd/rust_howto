@@ -48,7 +48,7 @@ Your favorite number must be 256.
 
 ## Using `clap`'s Derive API {#clap-derive}
 
-[![clap][c~clap~docs~badge]][c~clap~docs]{{hi:clap}} [(tutorial)][c~clap~tutorial] [(cookbook)][c~clap~cookbook] [![clap examples][c~clap~examples~badge]][c~clap~examples] [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
+[![clap][c~clap~docs~badge]][c~clap~docs]{{hi:clap}} [(tutorial)][c~clap~tutorial]↗ [(cookbook)][c~clap~cookbook]↗ [![clap examples][c~clap~examples~badge]][c~clap~examples] [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
 
 [`clap_derive`][c~clap_derive~docs]↗{{hi:clap_derive}} simplifies CLI creation in Rust via a [`derive`][c~derive~docs]↗{{hi:derive}} macro, automatically generating command-line argument parsing logic from [`struct`][keyword~struct]↗{{hi:struct}} definitions.
 
@@ -125,6 +125,6 @@ The [`pico-args`][c~pico-args~docs]↗{{hi:pico-args}} crate is a small and fast
 <div class="hidden">
 [arguments: review](https://github.com/john-cd/rust_howto/issues/233)
 
-[Parsing arguments in Rust with no dependencies][blog~parsing-arguments-rust-no-dep].
+[Parsing arguments in Rust with no dependencies][blog~parsing-arguments-rust-no-dep]↗.
 
 </div>

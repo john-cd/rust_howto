@@ -34,7 +34,7 @@ Remember to handle panics appropriately. Consider other useful crates like [`nb`
 
 ## Crates Functioning Without the Rust Standard Library
 
-Consult the [`no-std`][cat~no-std] category on [`crates.io`][crates.io~website]↗{{hi:crates.io}}.
+Consult the [`no-std`][cat~no-std]↗ category on [`crates.io`][crates.io~website]↗{{hi:crates.io}}.
 
 ## Related Topics
 
@@ -50,6 +50,6 @@ Consult the [`no-std`][cat~no-std] category on [`crates.io`][crates.io~website]�
 [write](https://github.com/john-cd/rust_howto/issues/427)
 review in depth
 
-- [micromath: Embedded Rust arithmetic, 2D/3D vector, and statistics library][c~micromath~github]
+- [micromath: Embedded Rust arithmetic, 2D/3D vector, and statistics library][c~micromath~github]↗.
 
 </div>

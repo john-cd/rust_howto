@@ -18,7 +18,7 @@ The process of confirming identities.
 
 ## References
 
-The [Copenhagen Book][book~copenhagen] provides a general guideline on implementing Auth in web applications.
+The [Copenhagen Book][book~copenhagen]↗ provides a general guideline on implementing Auth in web applications.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
@@ -26,9 +26,9 @@ The [Copenhagen Book][book~copenhagen] provides a general guideline on implement
 <div class="hidden">
 [add Oauth](https://github.com/john-cd/rust_howto/issues/636)
 
-- [jsonwebtoken][c~jsonwebtoken~lib.rs] - Rust auth library
-- [rauthy: OpenID Connect Single Sign-On Identity & Access Management][rauthy~github]
+- [jsonwebtoken][c~jsonwebtoken~lib.rs]↗ - Rust auth library.
+- [rauthy][rauthy~github]↗: OpenID Connect Single Sign-On Identity & Access Management.
 
-- [Passwords][c~passwords~lib.rs]
+- [Passwords][c~passwords~lib.rs]↗.
 
 </div>

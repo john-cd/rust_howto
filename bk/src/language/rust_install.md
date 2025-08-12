@@ -74,7 +74,7 @@ git add .
 git commit
 ```
 
-Review the [git][git~website] manual for more commands.
+Review the [git][git~website]↗ manual for more commands.
 
 ## References {#references}
 

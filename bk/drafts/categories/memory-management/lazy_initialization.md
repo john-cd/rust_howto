@@ -26,7 +26,7 @@ For lazy initialization scenarios where you want to defer the creation of a valu
 
 - The [`OnceCell`][c~core::cell::OnceCell~docs]{{hi:OnceCell}}↗ type provides a way to define a value that will be initialized at most once.
 - The corresponding thread-safe version of `OnceCell<T>` is `OnceLock<T>`. [`OnceLock<T>`][c~std::sync::OnceLock~docs]↗ is a lock that allows a value to be initialized exactly once, ensuring that the initialization code is executed only once, even in the presence of multiple threads.
-- [`LazyCell<T>`][c~std::cell::LazyCell~docs] is a value which is initialized on the first access. It is not thread-safe.
+- [`LazyCell<T>`][c~std::cell::LazyCell~docs]↗ is a value which is initialized on the first access. It is not thread-safe.
 - [`LazyLock`][c~std::sync::LazyLock~docs]↗ is a lazily initialized value that is initialized on first access, ensuring that the initialization code is executed only once, even in the presence of multiple threads. This type is a thread-safe [`LazyCell`][c~std::cell::LazyCell~docs]↗{{hi:LazyCell}}, and can be used in statics. Since initialization may be called from multiple threads, any dereferencing call will block the calling thread if another initialization routine is currently running.
 - [`Once`][c~std::sync::Once~docs]↗ is a low-level primitive that allows initialization of a value exactly once, ensuring that the initialization code is executed only once, even in the presence of multiple threads.
 

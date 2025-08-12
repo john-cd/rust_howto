@@ -2,7 +2,7 @@
 
 The Standard Library provides essential functionality for Rust programs and includes modules for memory management, concurrency, collections, and more. The Standard Library is automatically included in every Rust project.
 
-We listed below the (stable) modules of the Standard Library, highlighted the most important modules, and listed key types. Consult the complete documentation for the [Standard Library][c~std~docs] as well.
+We listed below the (stable) modules of the Standard Library, highlighted the most important modules, and listed key types. Consult the complete documentation for the [Standard Library][c~std~docs]↗ as well.
 
 | Modules | Description | See Also |
 | --- | --- | --- |
@@ -19,7 +19,7 @@ We listed below the (stable) modules of the Standard Library, highlighted the mo
 | [`std::clone`][c~std::clone~docs]↗{{hi:std::clone}} | The [`Clone`][c~std::clone::Clone~docs]↗ trait for types that cannot be implicitly copied. | [`ToOwned`][c~std::borrow::ToOwned~docs]↗, [[cow | Cow]] |
 | [**`std::cmp`**][c~std::cmp~docs]↗{{hi:std::cmp}} | Utilities for comparing and ordering values. Home of [`PartialEq`][c~std::cmp::PartialEq~docs]↗, [`Eq`][c~std::cmp::Eq~docs]↗, [`PartialOrd`][c~std::cmp::PartialOrd~docs]↗, [`Ord`][c~std::cmp::Ord~docs]↗. | [[cmp | Equality and Ordering]], [[algorithms | Algorithms]], [[sorting | Sorting]] |
 | [**`std::collections`**][c~std::collections~docs]↗{{hi:std::collections}} | Collection types. Home of [`HashMap`][c~std::collections::HashMap~docs]↗, [`HashSet`][c~std::collections::HashSet~docs]↗ and others. | [[hashmap | HashMap]], [[data-structures | Data Structures]] |
-| [**`std::convert`**][c~std::convert~docs]↗{{hi:std::convert}} | Traits for conversions between types: [`AsRef`][c~std::convert::AsRef~docs], [`From`][c~std::convert::From~docs]↗ and others. | [[asref | AsRef]] |
+| [**`std::convert`**][c~std::convert~docs]↗{{hi:std::convert}} | Traits for conversions between types: [`AsRef`][c~std::convert::AsRef~docs]↗, [`From`][c~std::convert::From~docs]↗ and others. | [[asref | AsRef]] |
 | [**`std::default`**][c~std::default~docs]↗{{hi:std::default}} | The [`Default`][c~std::default::Default~docs]↗ trait for types with a default value. | [[conversion_traits | Conversion Traits]], |[[derive | Derive]] |
 | [`std::env`][c~std::env~docs]↗{{hi:std::env}} | Inspection and manipulation of the process's environment. | [[environment_variables | Environment Variables]] |
 | [**`std::error`**][c~std::error~docs]↗{{hi:std::error}} | [`Error`][c~std::error::Error~docs]↗ Interfaces. | [[error_handling | Error Handling]] |

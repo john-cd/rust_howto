@@ -105,7 +105,7 @@ Since this book's recipes are intended to be reused as-is and encourage best pra
 {{#include ../crates/about/examples/about2.rs:example}}
 ```
 
-In most examples, we have chosen to use [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}}'s [`Result`][c~anyhow::Result~docs] as the return type of any fallible function, instead of writing `std::result::Result<_, Box<dyn std::error::Error>>` or using custom [`Result`][c~std::result::Result~docs]↗{{hi:Result}} / [`Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} types.
+In most examples, we have chosen to use [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}}'s [`Result`][c~anyhow::Result~docs]↗ as the return type of any fallible function, instead of writing `std::result::Result<_, Box<dyn std::error::Error>>` or using custom [`Result`][c~std::result::Result~docs]↗{{hi:Result}} / [`Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} types.
 
 Within the code, we use the [`?`][book~rust~ch09-02-recoverable-errors-with-result-?]↗{{hi:?}} operator to easily propagate any error that implements the [`std::error::Error`][c~std::error::Error~docs]↗ trait.
 
@@ -113,7 +113,7 @@ For more background on error handling in Rust, read [this page][book~rust~error-
 
 ## Additional Examples
 
-The [`xmpl`][rust-howto~xmpl~github] folder in the book's GitHub repo contains additional examples that can't be embedded into the book, due to their length.
+The [`xmpl`][rust-howto~xmpl~github]↗ folder in the book's GitHub repo contains additional examples that can't be embedded into the book, due to their length.
 
 ## A Note about Crate Representation
 
@@ -123,7 +123,7 @@ Key crates are identified by cross-referencing:
 
 - [`blessed.rs`][blessed-rs~website]{{hi:blessed.rs}}↗ and similar resources,
 - Most downloaded crates (overall and per category) in [`crates.io`][crates.io~website]{{hi:crates.io}}↗,
-- [Most popular Rust libraries][lib.rs~most-popular~website],
+- [Most popular Rust libraries][lib.rs~most-popular~website]↗,
 - High-quality crates per [`lib.rs`][lib.rs~website]{{hi:lib.rs}}↗ [statistics][lib.rs~stats~website]↗.
 
 The selection process is necessarily opinionated. Feel free to offer suggestions (or submit a PR), if the author missed an important, widely used crate.

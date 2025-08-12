@@ -49,7 +49,7 @@ The [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-
 - [[multimedia_encoding | Multimedia: Encoding]].
 - [[multimedia_video | Multimedia: Video]].
 
-Refer as well to [image-rs (GitHub)][image-rs~github].
+Refer as well to [image-rs (GitHub)][image-rs~github]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
