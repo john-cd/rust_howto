@@ -9,7 +9,7 @@
 - Flight Control Algorithms: PID controllers, sensor fusion (IMU, GPS, barometer), state estimation, path planning, trajectory generation.
 - Communication Protocols: MAVLink (Micro Air Vehicle Link), other custom protocols. Serial communication (UART, I2C, SPI).
 - Real-time Systems: Handling sensor data and control loops within strict timing constraints.
-- Embedded Systems: Interfacing with hardware, memory management, [`no-std`]( ){{hi: }} programming (if applicable).
+- Embedded Systems: Interfacing with hardware, memory management, [`no-std`]( )↗{{hi: }} programming (if applicable).
 
 Consider using:
 

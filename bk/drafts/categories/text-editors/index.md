@@ -4,7 +4,7 @@
 
 Applications for editing text.
 
-For the most comprehensive and user-friendly experience, VS Code (with the [`rust-analyzer`]( ){{hi: }} extension), IntelliJ IDEA (with the Rust plugin) or CLion (with the Rust plugin) are highly recommended. VS Code, in particular, has become popular due to its performance and the quality of the `rust-analyzer` extension.
+For the most comprehensive and user-friendly experience, VS Code (with the [`rust-analyzer`]( )↗{{hi: }} extension)↗, IntelliJ IDEA (with the Rust plugin)↗ or CLion (with the Rust plugin)↗ are highly recommended. VS Code, in particular, has become popular due to its performance and the quality of the `rust-analyzer` extension.
 
 Vim, Emacs, and Neovim offer great flexibility and power, but they require a higher initial configuration investment. Sublime Text and Atom can also be configured for decent Rust support, but VS Code has largely taken over in popularity.
 
@@ -12,7 +12,7 @@ Vim, Emacs, and Neovim offer great flexibility and power, but they require a hig
 
 | IDE/Editor | Rust Support Level | Key Features/Notes |
 |---|---|---|
-| [VS Code][rust-in-vs-code~website]{{hi:VS code}}↗ (with [`rust-analyzer`]( ){{hi: }} extension) | Excellent | [`rust-analyzer`][rust-analyzer~website]↗{{hi:rust-analyzer}} provides excellent language server support, offering code completion, diagnostics, refactoring, and more. Also consider the "CodeLLDB", "Dependi" and "Even Better TOML" extensions. |
+| [VS Code][rust-in-vs-code~website]{{hi:VS code}}↗ (with [`rust-analyzer`]( )↗{{hi: }} extension)↗ | Excellent | [`rust-analyzer`][rust-analyzer~website]↗{{hi:rust-analyzer}} provides excellent language server support, offering code completion, diagnostics, refactoring, and more. Also consider the "CodeLLDB", "Dependi" and "Even Better TOML" extensions. |
 | [RustRover][rustrover~website]↗ | Excellent | It is available for free for non-commercial use. |
 | IntelliJ IDEA (with Rust plugin) | Excellent | Comprehensive support including code completion, refactoring, debugging, navigation, and integration with Cargo. The official Rust plugin provides the most complete IDE experience. |
 | CLion JetBrains IDE (with Rust plugin) | Excellent | CLion, JetBrains' C/C++ IDE, also has a Rust plugin that leverages `rust-analyzer`. Provides a robust IDE experience similar to IntelliJ IDEA.  If you have a JetBrains license, CLion is your go-to editor for Rust in JetBrains' IDE suite. |

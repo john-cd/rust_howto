@@ -25,7 +25,7 @@
 {{#include ../../../../crates/cats/development_tools/examples/documentation/rustdoc2.rs:example}}
 ```
 
-Any item annotated with [`#[doc(hidden)]`]( ){{hi: }} will not appear in the documentation.
+Any item annotated with [`#[doc(hidden)]`]( )↗{{hi: }} will not appear in the documentation.
 
 Run `rustdoc src/lib.rs --crate-name <name>` or `cargo doc --open` to create a new directory, `doc` (or `target/doc` when using [cargo][p~cargo]), with a website inside.
 

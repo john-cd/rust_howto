@@ -11,7 +11,7 @@
 
 [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} is a full-fat HTTP client. It can be used in both synchronous and asynchronous code. It requires the [`tokio`][c~tokio~docs]↗{{hi:tokio}} runtime.
 
-Multiple examples using [`reqwest`]( ){{hi: }} are found in [[apis | APIs]], [[download | Download]], [[requests | Requests]].
+Multiple examples using [`reqwest`]( )↗{{hi: }} are found in [[apis | APIs]], [[download | Download]], [[requests | Requests]].
 
 ## `ureq` {#ureq}
 

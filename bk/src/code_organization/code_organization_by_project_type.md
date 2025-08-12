@@ -176,9 +176,9 @@ use crate_name::prelude::*;
 // No need to import common items individually.
 ```
 
-The standard library includes a number of preludes. For example, adding [`use std::io::prelude::*;`]( ){{hi: }} at the top of I/O heavy modules imports common I/O traits in one line.
+The standard library includes a number of preludes. For example, adding [`use std::io::prelude::*;`]( )↗{{hi: }} at the top of I/O heavy modules imports common I/O traits in one line.
 
-There is also a "Rust prelude", things that Rust automatically imports into every Rust program without even the need for an explicit [`use`]( ){{hi: }} declaration. Here is an excerpt:
+There is also a "Rust prelude", things that Rust automatically imports into every Rust program without even the need for an explicit [`use`]( )↗{{hi: }} declaration. Here is an excerpt:
 
 ```rust,noplayground
 pub use std::option::Option::{self, Some, None};
@@ -280,14 +280,14 @@ feature2 = ["dep:lib2"]
 
 In projects that mix multiple technologies (a web project or a [`mdbook`][book~mdbook]↗{{hi:mdbook}} that combines markdown and Rust code, like this book), it is common to create a "crates" subdirectory that contains all Rust packages.
 
-The main [`Cargo.toml`]( ){{hi: }} file in the root of the workspace should contain a 'workspace' section that references its packages:
+The main [`Cargo.toml`]( )↗{{hi: }} file in the root of the workspace should contain a 'workspace' section that references its packages:
 
 ```toml
 [workspace]
 members = [ "lib1", "lib2", "main_lib" ]
 ```
 
-Confusingly, a workspace [`Cargo.toml`]( ){{hi: }} can also include a 'root package' in addition to member crates. That lets you place the code of the main library or executable in e.g. a [`src`](https://doc.rust-lang.org/cargo/guide/project-layout.html)↗{{hi:src folder}} folder directly under the workspace root.
+Confusingly, a workspace [`Cargo.toml`]( )↗{{hi: }} can also include a 'root package' in addition to member crates. That lets you place the code of the main library or executable in e.g. a [`src`](https://doc.rust-lang.org/cargo/guide/project-layout.html)↗{{hi:src folder}} folder directly under the workspace root.
 
 ## Related Topics {#related-topics}
 

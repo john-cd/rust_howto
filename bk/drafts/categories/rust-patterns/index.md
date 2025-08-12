@@ -43,7 +43,7 @@ Shared solutions for particular situations specific to programming in Rust.
 
 | Pattern | Description | Example/Resources |
 |---|---|---|
-| Threading | FIXME | [`std::thread`]( ){{hi: }} and `std::sync` provide basic threading and synchronization primitives. |
+| Threading | FIXME | [`std::thread`]( )↗{{hi: }} and `std::sync` provide basic threading and synchronization primitives. |
 | Atomically Reference Counting | Use [`Arc`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} to share data safely between threads. Combine with [`Mutex`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}} or [`RwLock`][c~std::sync::RwLock~docs]↗{{hi:RwLock}} for mutable access. | The Rust Book, "Shared-State Concurrency". |
 | Mutual Exclusion Lock | Use [`Mutex`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}} for protecting shared data from concurrent access. | The Rust Book, "Shared-State Concurrency". |
 | Read-Write Lock | [`RwLock`][c~std::sync::RwLock~docs]↗{{hi:RwLock}} allows multiple readers or exclusive writers to access shared data. | Standard library documentation. |

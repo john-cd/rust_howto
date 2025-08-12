@@ -82,7 +82,7 @@ Inserting runnable Rust files:
 
 The path to the file is relative from the current source file.
 
-[`mdbook-private`](https://github.com/RealAtix/mdbook-private) is a preprocessor for defining and optionally removing private sections and chapters in a mdbook. However, it does not remove included hidden files.
+[`mdbook-private`](https://github.com/RealAtix/mdbook-private)↗ is a preprocessor for defining and optionally removing private sections and chapters in a mdbook. However, it does not remove included hidden files.
 
 When your `book.toml` uses this preprocessor and `do-not-include-hidden-chapters` is set to `true`, any `include`, `playground`, or `rustdoc_include` statements that refer to a file starting with `hidden-chapter-prefix` (typically `_`) are removed from the Markdown.
 For example, the following would be removed:

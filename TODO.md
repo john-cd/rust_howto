@@ -168,7 +168,7 @@ features = ["user-hooks"].
 
 Note that, when user-hooks feature is enabled, other all features are disabled.
 You need to prepare all hooks in .cargo-husky/hooks directory.
-See [cargo-husky](https://lib.rs/crates/cargo-husky).
+See [cargo-husky](https://lib.rs/crates/cargo-husky)↗.
 
 See scripts/precommit folder.
 

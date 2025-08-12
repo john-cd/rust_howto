@@ -14,7 +14,7 @@ See [[containerization | Containerization]].
 
 - `Firecracker`: A lightweight VMM designed for running microVMs.
 - `CrosVM`: A VMM for Chrome OS, focusing on security and simplicity.
-- Cloud Hypervisor: [`cloud-hypervisor`]( ){{hi: }} is a VMM specifically designed for cloud workloads.
+- Cloud Hypervisor: [`cloud-hypervisor`]( )↗{{hi: }} is a VMM specifically designed for cloud workloads.
 
 ## Virtualization Frameworks
 
@@ -43,7 +43,7 @@ These crates provide low-level interfaces for interacting with hypervisors like 
 
 - `net_util`: Utilities for network device emulation.
 - `vhost-user-backend`: A library for implementing vhost-user backends.
-- [`slirp`]( ){{hi: }} (bindings), [`tun-tap`][c~tun-tap~docs]↗{{hi:tun-tap}}.
+- [`slirp`]( )↗{{hi: }} (bindings)↗, [`tun-tap`][c~tun-tap~docs]↗{{hi:tun-tap}}.
 
 `slirp` provides a user-mode network stack. [`tun-tap`][c~tun-tap~docs]↗{{hi:tun-tap}} allows creating virtual network interfaces.
 
@@ -109,5 +109,5 @@ https://en.wikipedia.org/wiki/QEMU
 
 Mention https://crates.io/crates/polkavm (in Emulators) (smart contracts)
 
-Mention [`virt`]( ){{hi: }} / `libvirt` C lib?
+Mention [`virt`]( )↗{{hi: }} / `libvirt` C lib?
 </div>

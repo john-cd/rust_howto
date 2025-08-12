@@ -57,7 +57,7 @@ Given a list of version &strs, finds the latest [`semver::Version`][c~semver::Ve
 
 [![semver][c~semver~docs~badge]][c~semver~docs]{{hi:semver}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}} [![cat~os][cat~os~badge]][cat~os]{{hi:OS}}
 
-Runs [`git --version`]( ){{hi: }} using [`std::process::Command`][c~std::process::Command~docs]{{hi:std::process::Command}}↗ then parses the version number{{hi:Version number}} into a
+Runs [`git --version`]( )↗{{hi: }} using [`std::process::Command`][c~std::process::Command~docs]{{hi:std::process::Command}}↗ then parses the version number{{hi:Version number}} into a
 [`semver::Version`][c~semver::Version~docs]{{hi:semver::Version}}↗ using [`semver::Version::parse`][c~semver::Version::parse~docs]{{hi:semver::Version::parse}}↗ [`semver::VersionReq::matches`][c~semver::VersionReq::matches~docs]{{hi:semver::VersionReq::matches}}↗ compares
 [`semver::VersionReq`][c~semver::VersionReq~docs]{{hi:semver::VersionReq}} to the parsed version. The command output resembles "git version x.y.z".
 

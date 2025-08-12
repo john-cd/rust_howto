@@ -54,7 +54,7 @@ From-scratch builds with incremental compilation{{hi:Incremental compilation}} e
 ## Compiler-Level Optimizations {#skip}
 
 - Use the [`dev`](https://doc.rust-lang.org/cargo/reference/profiles.html#dev)↗{{hi:dev}} profile for development, which prioritizes fast compilation over optimizations. Switch to the [`release`](https://doc.rust-lang.org/cargo/reference/profiles.html#release)↗{{hi:release}} profile only for final builds.
-- Increasing the number of codegen units ([`rustc`]( ){{hi: }} flag: `-C codegen-units=N`) allows the compiler to parallelize code generation. Experiment to find the optimal value; too many can hinder Link-Time Optimization (LTO).
+- Increasing the number of codegen units ([`rustc`]( )↗{{hi: }} flag: `-C codegen-units=N`) allows the compiler to parallelize code generation. Experiment to find the optimal value; too many can hinder Link-Time Optimization (LTO).
 - Tune Link-Time Optimization (LTO). While LTO can improve runtime [performance][p~performance], it increases compile time, especially "fat" LTO.
 Consider using "thin" LTO (`-C lto=thin`) for a faster, though less aggressive, approach. For debug builds, disable LTO entirely ([`-C lto=no`](https://doc.rust-lang.org/cargo/reference/profiles.html#lto)↗{{hi:LTO}}).
 - Profile-Guided Optimization (PGO): PGO can improve runtime performance but requires additional compilation and profiling steps, thus increasing overall build time. Use PGO only for release builds where runtime [performance][p~performance] is critical, and not for general development.

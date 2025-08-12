@@ -18,10 +18,10 @@ String literals (e.g., "hello") are of type `&'static str`, meaning they exist f
 `String` is a growable, mutable, owned string allocated on the heap:
 
 - It is similar to a `Vec<u8>` that is guaranteed to hold valid UTF-8.
-- [`String`]( ){{hi: }} owns its data, meaning when a `String` goes out of scope, the memory it occupies on the heap is automatically deallocated.
-- Use [`String`]( ){{hi: }} when you need to modify a string, own string data (e.g., to pass it to another thread or store it in a struct that owns it), or create a new string at runtime.
+- [`String`]( )↗{{hi: }} owns its data, meaning when a `String` goes out of scope, the memory it occupies on the heap is automatically deallocated.
+- Use [`String`]( )↗{{hi: }} when you need to modify a string, own string data (e.g., to pass it to another thread or store it in a struct that owns it), or create a new string at runtime.
 
-The relationship between [`String`]( ){{hi: }} and `&str` is similar to that between `Vec<T>` and `&[T]` (a vector and a slice, respectively). `String` owns the underlying buffer, while `&str` is a reference to a portion of that buffer or some other string data.
+The relationship between [`String`]( )↗{{hi: }} and `&str` is similar to that between `Vec<T>` and `&[T]` (a vector and a slice, respectively). `String` owns the underlying buffer, while `&str` is a reference to a portion of that buffer or some other string data.
 
 ```rust,editable
 {{#include ../../../crates/cats/data_structures/examples/strings/strings.rs:example}}
@@ -33,7 +33,7 @@ The relationship between [`String`]( ){{hi: }} and `&str` is similar to that bet
 
 `print!` and its siblings (like `println!` and `format!`) take a format string as its primary argument and prints it to the standard output (the terminal, usually). Format strings are string literals that can contain placeholders, indicated by curly braces `{}`. These placeholders tell `print!` where to insert values you provide as additional arguments or variables. Use `{:?}` placeholders for [`std::fmt::Debug`][c~std::fmt::Debug~docs]{{hi:std::fmt::Debug}}↗ output or `{:#?}` for pretty printing{{hi:Pretty printing}}.
 
-You may also use [`dbg!`]( ){{hi: }} for debug output.{{hi:Debug output}} `dbg!` returns ownership of the expression's value, so it can be inserted almost anywhere.
+You may also use [`dbg!`]( )↗{{hi: }} for debug output.{{hi:Debug output}} `dbg!` returns ownership of the expression's value, so it can be inserted almost anywhere.
 
 ```rust,editable
 {{#include ../../../crates/cats/data_structures/examples/strings/string_format.rs:example}}

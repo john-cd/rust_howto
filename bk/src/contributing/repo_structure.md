@@ -56,12 +56,12 @@ The book's [GitHub repository][rust-howto~github]↗ is a "monorepo" with multip
   - Each crate in the workspace contains a [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} file, which list the dependencies used by its code examples. Use `cargo add <crate>` or `cargo add <crate> -F <feature>` while in the appropriate crate folder, in order to add more as required.
   - The examples themselves are stored within the crate's `tests` folder in a subfolder named after their chapter, e.g., `bk/crates/<section or cats/some_category>/examples/<chapter_name>/<example_name>.rs`. In a few cases, you may also find examples in the crate's `tests` or `src` folders or within its `build.rs` file.
   - Each example are in a separate `.rs` Rust file that is a module in a `main.rs` file. All examples of a given chapter are therefore compiled together.
-  - The book's code examples, being in a [`cargo`]( ){{hi: }} [workspace][book~rust~ch14-03-cargo-workspaces]↗, share the same dependency versions (a single `Cargo.lock` file) and one shared `target` directory, avoid unnecessary dependency rebuilding.
+  - The book's code examples, being in a [`cargo`]( )↗{{hi: }} [workspace][book~rust~ch14-03-cargo-workspaces]↗, share the same dependency versions (a single `Cargo.lock` file) and one shared `target` directory, avoid unnecessary dependency rebuilding.
 - The rest of the code is either in standalone crates (`publish`) or independent workspaces (`playground`,`tools` and `xmpl`).
   - The [`tools`][rust-howto~tools~github]↗ workspace builds a few CLI binaries that share a common `tool_lib` library.
-  - In the base folder of each project, type [`just`]( ){{hi: }} at the shell prompt for a list of commands you can use to format, check, build, lint and test the code. `just release` builds tools in release mode and copies the binaries into the `bin` folder (in the repo root).
+  - In the base folder of each project, type [`just`]( )↗{{hi: }} at the shell prompt for a list of commands you can use to format, check, build, lint and test the code. `just release` builds tools in release mode and copies the binaries into the `bin` folder (in the repo root).
 
-Note that, instead of storing the [`cargo`]( ){{hi: }} cache and compiler outputs in a separate `target` folder for each workspace or standalone crate, there is a common `target` folder in the repository root. For example, the compiled examples for the book are in `target/bk`. This is configured in `.cargo/config.toml` files.
+Note that, instead of storing the [`cargo`]( )↗{{hi: }} cache and compiler outputs in a separate `target` folder for each workspace or standalone crate, there is a common `target` folder in the repository root. For example, the compiled examples for the book are in `target/bk`. This is configured in `.cargo/config.toml` files.
 
 Consult the `README.md` files of each crate for more details.
 

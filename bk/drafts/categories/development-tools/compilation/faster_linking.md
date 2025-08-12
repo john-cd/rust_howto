@@ -32,7 +32,7 @@ The default panic strategy (unwind) includes unwinding information, which increa
 
 ## Strip Symbols {#skip}
 
-Stripping debug symbols from the final binary using compiler flags like [`-C strip=debuginfo`]( ){{hi: }} significantly reduces binary size. This is essential for release builds.
+Stripping debug symbols from the final binary using compiler flags like [`-C strip=debuginfo`]( )↗{{hi: }} significantly reduces binary size. This is essential for release builds.
 
 ## Minimize Dependencies {#skip}
 

@@ -18,7 +18,7 @@
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/1075)
 
-Interfacing with Objective-C from Rust is primarily done using the [`objc`]( ){{hi: }} crate and related tools. Here's a breakdown:
+Interfacing with Objective-C from Rust is primarily done using the [`objc`]( )↗{{hi: }} crate and related tools. Here's a breakdown:
 
 ## Objective-C Runtime Bindings {#skip}
 
@@ -39,12 +39,12 @@ Xcode: (For building the Objective-C/Swift side and integrating with the Rust li
 
 ## Key Concepts and Workflow {#skip2}
 
-Objective-C Runtime: You'll use the [`objc`]( ){{hi: }} crate to interact with the Objective-C runtime.
-Messaging: You'll send messages to Objective-C objects using the [`objc`]( ){{hi: }} crate.
+Objective-C Runtime: You'll use the [`objc`]( )↗{{hi: }} crate to interact with the Objective-C runtime.
+Messaging: You'll send messages to Objective-C objects using the [`objc`]( )↗{{hi: }} crate.
 Data Marshaling: You'll need to convert data between Rust types and Objective-C types (e.g., converting Rust [strings][p~strings] to NSStrings, and vice-versa).
-Memory Management: Objective-C uses manual reference counting (ARC). You'll need to be mindful of memory management to avoid leaks or crashes. The [`objc`]( ){{hi: }} crate provides tools to help with this.
+Memory Management: Objective-C uses manual reference counting (ARC). You'll need to be mindful of memory management to avoid leaks or crashes. The [`objc`]( )↗{{hi: }} crate provides tools to help with this.
 Error Handling: You'll need to handle Objective-C exceptions in your Rust code.
 Swift Interop (Important Note): If you're working with Swift, you'll likely interact with Objective-C as an intermediary, as Swift has excellent Objective-C interoperability. So, the workflow is often: Rust -> Objective-C -> Swift.
 
-The [`objc`]( ){{hi: }} crate is the most important crate for Objective-C interaction. Be prepared for some manual work and glue code, especially when dealing with data marshaling and memory management. Objective-C interoperability with Rust is more complex than some other language bindings due to the nature of the Objective-C runtime and ARC.
+The [`objc`]( )↗{{hi: }} crate is the most important crate for Objective-C interaction. Be prepared for some manual work and glue code, especially when dealing with data marshaling and memory management. Objective-C interoperability with Rust is more complex than some other language bindings due to the nature of the Objective-C runtime and ARC.
 </div>

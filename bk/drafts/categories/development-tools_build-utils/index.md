@@ -19,7 +19,7 @@ Utilities for build scripts and other build time steps.
 
 | | |
 |---|---|
-| Benchmarking | [`cargo bench`]( ){{hi: }} (also part of the build/verification process) |
+| Benchmarking | [`cargo bench`]( )↗{{hi: }} (also part of the build/verification process) |
 | Code Generation | Often done with procedural macros or build scripts |
 | Cross-Compilation Tools | [`cross`][c~cross~docs]↗{{hi:cross}} simplifies cross-compilation using Docker |
 | Dependency Management | [`cargo`][c~cargo~docs]↗{{hi:cargo}} though primarily a package manager, it also handles build dependencies |

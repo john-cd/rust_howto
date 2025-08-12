@@ -63,7 +63,7 @@ While tools like 'SWIG' exist, [`cxx`][c~cxx~docs]↗{{hi:cxx}} is generally pre
 ## FFI Caveats {#skip}
 
 - FFI code often requires _unsafe_ blocks because the Rust compiler cannot guarantee the safety of interactions with foreign code.
-- Memory Management across FFI boundaries requires careful consideration. It often involves using [`Box::into_raw`]( ){{hi: }} and `Box::from_raw` to transfer ownership of memory between Rust and C.
+- Memory Management across FFI boundaries requires careful consideration. It often involves using [`Box::into_raw`]( )↗{{hi: }} and `Box::from_raw` to transfer ownership of memory between Rust and C.
 - [Error Handling][p~error-handling] across FFI boundaries often involves returning error codes or using [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} types and converting them to C-compatible representations.
 
 ## Related Topics {#related-topics}

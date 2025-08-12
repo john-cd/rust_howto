@@ -8,7 +8,7 @@ A [key derivation function][key_derivation_function]↗ (KDF) is a cryptographic
 
 The original use for a KDF is key derivation, the generation of multiple keys from secret passwords or passphrases.
 
-Despite their original use for key derivation, KDFs are possibly better known for their use in password [hashing][p~hashing] (password verification by hash comparison), as used by the [`passwd`]( ){{hi: }} file or `shadow` password file. Password hash [functions][p~functions] should be relatively expensive to calculate in case of brute-force attacks, and the key stretching of KDFs happen to provide this characteristic.
+Despite their original use for key derivation, KDFs are possibly better known for their use in password [hashing][p~hashing] (password verification by hash comparison), as used by the [`passwd`]( )↗{{hi: }} file or `shadow` password file. Password hash [functions][p~functions] should be relatively expensive to calculate in case of brute-force attacks, and the key stretching of KDFs happen to provide this characteristic.
 
 In that role, key derivation [functions][p~functions] take a password, a salt, (and sometimes a cost factor) as inputs, then generate a password hash - deliberately slowly. Their purpose is to make each password guessing trial by an attacker who has obtained a password hash file expensive and therefore the cost of a guessing attack high or prohibitive. In cryptography, "salt" refers to non-secret, random data added to input data before hashing it.
 

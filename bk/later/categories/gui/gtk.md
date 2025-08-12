@@ -2,7 +2,7 @@
 
 {{#include gtk.incl.md}}
 
-For GTK development in Rust, use the [`gtk`]( ){{hi: }} crate. You'll use it to create widgets, handle events, manage layouts, and interact with the GTK library. The [`gdk`][c~gdk~docs]↗{{hi:gdk}}, [`gio`][c~gio~docs]↗{{hi:gio}}, and [`glib`][c~glib~docs]↗{{hi:glib}} crates are used indirectly through `gtk`. You will need to understand GTK concepts and consult the official GTK documentation for effective development.
+For GTK development in Rust, use the [`gtk`]( )↗{{hi: }} crate. You'll use it to create widgets, handle events, manage layouts, and interact with the GTK library. The [`gdk`][c~gdk~docs]↗{{hi:gdk}}, [`gio`][c~gio~docs]↗{{hi:gio}}, and [`glib`][c~glib~docs]↗{{hi:glib}} crates are used indirectly through `gtk`. You will need to understand GTK concepts and consult the official GTK documentation for effective development.
 
 ## Key Concepts {#skip}
 
@@ -18,7 +18,7 @@ For GTK development in Rust, use the [`gtk`]( ){{hi: }} crate. You'll use it to 
 
 [`gtk4`][c~gtk4~docs]↗{{hi:gtk4}} offers Rust bindings of the GTK 4 library. These are quite well supported, although you'll often need to use the C documentation.
 
-Make sure the [`gtk`]( ){{hi: }} crate version you're using is compatible with the GTK version installed on your system.
+Make sure the [`gtk`]( )↗{{hi: }} crate version you're using is compatible with the GTK version installed on your system.
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/gtk/gtk4.rs:example}}

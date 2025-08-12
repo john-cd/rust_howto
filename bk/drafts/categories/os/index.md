@@ -24,10 +24,10 @@ Rust offers various ways to interact with the operating system, depending on you
 |---|---|
 | Basic OS interaction (files, processes, environment) | Use [`std`][c~std~docs]↗{{hi:std}}, the standard library. |
 | File System Interaction | [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}} provides the core functionality for working with files and directories (opening, reading, writing, creating, deleting, etc.). [`std::path`][c~std::path~docs]↗{{hi:std::path}} provides types and functions for working with file paths (`Path`{{hi:Path}}, `PathBuf`{{hi:PathBuf}}). [`fs_extra`][c~fs_extra~docs]↗{{hi:fs_extra}} is a crate that provides additional file system operations. Use [`tempfile`][c~tempfile~docs]↗{{hi:tempfile}} for creating temporary files and directories. |
-| Process Management | Use [`std::process`]( ){{hi: }} for spawning and managing child processes. |
+| Process Management | Use [`std::process`]( )↗{{hi: }} for spawning and managing child processes. |
 | Environment Variables | Use [`std::env`][c~std::env~docs]↗{{hi:std::env}} for accessing and manipulating environment variables. |
 | Networking | [`std::net`][c~std::net~docs]↗{{hi:std::net}} provides basic networking functionality (TCP, UDP). [`tokio`][c~tokio~docs]↗{{hi:tokio}} is a powerful asynchronous runtime, essential for high-performance networking applications. |
-| Threading | Use [`std::thread`]( ){{hi: }} for creating and managing threads. |
+| Threading | Use [`std::thread`]( )↗{{hi: }} for creating and managing threads. |
 | Date and time | Use [`std::time`][c~std::time~docs]↗{{hi:std::time}} for working with time and durations. [`chrono`][c~chrono~docs]↗{{hi:chrono}} is widely used crate for date and time calculations. [`time`][c~time~docs]↗{{hi:time}} is a newer crate for date and time. |
 | Operating System Information | Use [`sysinfo`][c~sysinfo~docs]↗{{hi:sysinfo}} to retrieve system information (CPU, memory, etc.). |
 | Low-level OS interaction or access to specific OS features | Use system calls directly (via [`std::os::unix`](https://doc.rust-lang.org/std/os/unix)↗{{hi:std::os::unix}} or [`std::os::windows`](https://doc.rust-lang.org/std/os/windows)↗{{hi:std::os::windows}}) or FFI. `std::os::unix` provides access to Unix-specific system calls. `std::os::windows` provides access to Windows-specific system calls. |

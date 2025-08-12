@@ -8,7 +8,7 @@ Instead of "casting," you'll usually implement or use [traits][p~traits] like [`
 
 ## Type Conversion Using `as` {#skip}
 
-The [`as`]( ){{hi: }} keyword is used for basic type conversions, but it's important to be aware of potential issues like truncation or overflow. This is the closest equivalent to C-style casting, but it should be used with caution.
+The [`as`]( )↗{{hi: }} keyword is used for basic type conversions, but it's important to be aware of potential issues like truncation or overflow. This is the closest equivalent to C-style casting, but it should be used with caution.
 
 ## Conversion Traits: `From`, `Into`, `TryFrom` and `TryInto` {#skip1}
 
@@ -18,7 +18,7 @@ The [`TryFrom`][c~std::convert::TryFrom~docs]↗{{hi:std::convert::TryFrom}} and
 
 ## Parsing Strings with the `FromStr` Trait {#skip2}
 
-The [`FromStr`]( ){{hi: }} trait is used for [parsing][p~parsing] strings into other types. Many standard types implement [`FromStr`][c~std::str::FromStr~docs]↗{{hi:FromStr}}.
+The [`FromStr`]( )↗{{hi: }} trait is used for [parsing][p~parsing] strings into other types. Many standard types implement [`FromStr`][c~std::str::FromStr~docs]↗{{hi:FromStr}}.
 
 ```rust,editable
 let num: i32 = "123".parse().unwrap();

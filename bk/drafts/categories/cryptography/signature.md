@@ -16,7 +16,7 @@ A cryptographic signature, or digital signature, is a mathematical scheme used t
 
 The [`ed25519`][c~ed25519~docs]↗{{hi:ed25519}} crate is a support library for Edwards Digital Signature Algorithm (EdDSA) over Curve25519 (as specified in RFC 8032), providing signature type definitions and PKCS#8 private key decoding/encoding support.
 
-It doesn't contain an implementation of Ed25519, but instead contains an [`ed25519::Signature`]( ){{hi: }} type which other [crates][p~crates] can use in conjunction with the signature::Signer and signature::Verifier [traits][p~traits].
+It doesn't contain an implementation of Ed25519, but instead contains an [`ed25519::Signature`]( )↗{{hi: }} type which other [crates][p~crates] can use in conjunction with the signature::Signer and signature::Verifier [traits][p~traits].
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/examples/sign/ed25519.rs:example}}

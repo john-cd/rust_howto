@@ -67,7 +67,7 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 - [Rust in Action: Systems Programming Concepts and Techniques][book~Rust-Action-Tim-McNamara]↗ by Tim McNamara. [978-1617294556][ISBN~978-1617294556]↗.
 - [Rust Programming By Example](https://www.amazon.com/dp/1788390636)↗: Enter the world of Rust by building engaging, concurrent, reactive, and robust applications, by Guillaume Gomez, Antoni Boucher (Packt). [978-1788390637][ISBN~978-1788390637]↗.
 - The [Rust Programming Language, 2nd Edition][book~rust-programming-language]↗.
-- [Rust Under the Hood](https://www.amazon.com/dp/B0D7FQB3DH): A deep dive into Rust internals and generated assembly, by Sandeep Ahluwalia, Deepa Ahluwalia. [979-8320364469][ISBN~979-8320364469]↗.
+- [Rust Under the Hood](https://www.amazon.com/dp/B0D7FQB3DH)↗: A deep dive into Rust internals and generated assembly, by Sandeep Ahluwalia, Deepa Ahluwalia. [979-8320364469][ISBN~979-8320364469]↗.
 - The [Secrets of Rust: Tools](https://bitfieldconsulting.com/books/rust-tools)↗.
 - [Step Ahead with Rust: Systems Programming in Rust][book~Step-Ahead-Rust-Systems-Programming-ebook]↗ by Jonathan Creekmore, James Miller (Kindle).
 - [Zero To Production In Rust: An Introduction to Backend Development][book~Zero-Production-Rust-introduction-development]↗ by Luca Palmieri. [979-8847211437][ISBN~979-8847211437]↗: "An opinionated introduction to backend development in Rust". [(website and sample)][zero2prod~website]↗ [(Blog)][book~zero-to-production]↗ [Code for the book (GitHub)][book~zero-to-production~github]↗.

@@ -79,8 +79,8 @@ cargo deny check licenses
 
 - Dependency Analysis: Useful for understanding your supply chain and potential risks
   - [`cargo tree`][book~cargo~cargo-tree]↗{{hi:cargo tree}} displays your dependency tree, showing all transitive dependencies.
-  - [`cargo outdated`]( ){{hi: }} checks for outdated dependencies, which might have security fixes available.
-- Linting/Style: [`cargo clippy`]( ){{hi: }} lints your code for stylistic issues and potential bugs.
+  - [`cargo outdated`]( )↗{{hi: }} checks for outdated dependencies, which might have security fixes available.
+- Linting/Style: [`cargo clippy`]( )↗{{hi: }} lints your code for stylistic issues and potential bugs.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

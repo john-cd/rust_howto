@@ -12,17 +12,17 @@ This can be particularly useful for [embedded][p~embedded] systems or other envi
 
 [`heapless`][c~heapless~docs]↗{{hi:heapless}} includes:
 
-- [`heapless::pool::arc::Arc`]( ){{hi: }} - like [`std::sync::Arc`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} but backed by a lock-free memory pool rather than `#[global_allocator]`.
-- [`heapless::pool::boxed::Box`]( ){{hi: }} - like [`std::boxed::Box`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}} but backed by a lock-free memory pool rather than `#[global_allocator]`.
-- [`heapless::binary_heap::BinaryHeap`]( ){{hi: }} - priority queue.
-- [`heapless::IndexMap`]( ){{hi: }} - like [`IndexMap`][c~indexmap~docs]↗{{hi:indexmap}}.
-- [`heapless::IndexSet`]( ){{hi: }} and `FnvIndexSet` - like [`indexmap::set::IndexSet`][c~indexmap::set::IndexSet~docs]↗{{hi:indexmap::set::IndexSet}}, hash set where the iteration order of the values is independent of their hash values.
-- [`heapless::LinearMap`]( ){{hi: }} - a fixed capacity map / dictionary that performs lookups via linear search.
-- [`heapless::pool::object::Object`]( ){{hi: }} - objects managed by an object pool.
-- [`heapless::String`]( ){{hi: }} - a fixed capacity [`String`][c~std::string::String~docs]↗.
-- [`heapless::Vec`]( ){{hi: }} - a fixed capacity `Vec`.
-- [`heapless::mpmc::Q*`]( ){{hi: }} - fixed-capacity multiple-producer multiple-consumer lock-free queues.
-- [`heapless::spsc::Queue`]( ){{hi: }} - a statically allocated single-producer single-consumer lock-free queue.
+- [`heapless::pool::arc::Arc`]( )↗{{hi: }} - like [`std::sync::Arc`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} but backed by a lock-free memory pool rather than `#[global_allocator]`.
+- [`heapless::pool::boxed::Box`]( )↗{{hi: }} - like [`std::boxed::Box`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}} but backed by a lock-free memory pool rather than `#[global_allocator]`.
+- [`heapless::binary_heap::BinaryHeap`]( )↗{{hi: }} - priority queue.
+- [`heapless::IndexMap`]( )↗{{hi: }} - like [`IndexMap`][c~indexmap~docs]↗{{hi:indexmap}}.
+- [`heapless::IndexSet`]( )↗{{hi: }} and `FnvIndexSet` - like [`indexmap::set::IndexSet`][c~indexmap::set::IndexSet~docs]↗{{hi:indexmap::set::IndexSet}}, hash set where the iteration order of the values is independent of their hash values.
+- [`heapless::LinearMap`]( )↗{{hi: }} - a fixed capacity map / dictionary that performs lookups via linear search.
+- [`heapless::pool::object::Object`]( )↗{{hi: }} - objects managed by an object pool.
+- [`heapless::String`]( )↗{{hi: }} - a fixed capacity [`String`][c~std::string::String~docs]↗.
+- [`heapless::Vec`]( )↗{{hi: }} - a fixed capacity `Vec`.
+- [`heapless::mpmc::Q*`]( )↗{{hi: }} - fixed-capacity multiple-producer multiple-consumer lock-free queues.
+- [`heapless::spsc::Queue`]( )↗{{hi: }} - a statically allocated single-producer single-consumer lock-free queue.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/data_structures/examples/heapless.rs:example}}

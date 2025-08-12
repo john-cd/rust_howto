@@ -12,7 +12,7 @@
 | Build Dependencies | Managed by [cargo][p~cargo] |
 | Incremental Compilation | Handled by [cargo][p~cargo]. |
 | Build Automation (for complex builds) | [`xtask`][c~xtask~docs]↗{{hi:xtask}} |
-| Compiler Flags | Configurable in [`Cargo.toml`]( ){{hi: }} |
+| Compiler Flags | Configurable in [`Cargo.toml`]( )↗{{hi: }} |
 | Code Generation | Often done with procedural [macros][p~macros] or build scripts. |
 
 ## Save and run project-specific Commands with the `just` Command Runner {#just}

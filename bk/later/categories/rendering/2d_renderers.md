@@ -43,7 +43,7 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 
 [![skia-safe][c~skia-safe~docs~badge]][c~skia-safe~docs] [![skia-safe~crates.io][c~skia-safe~crates.io~badge]][c~skia-safe~crates.io] [![skia-safe~github][c~skia-safe~github~badge]][c~skia-safe~github] [![skia-safe~lib.rs][c~skia-safe~lib.rs~badge]][c~skia-safe~lib.rs]{{hi:skia-safe}}{{hi:OpenGL}}{{hi:Pdf}}{{hi:Rust-bindings}}{{hi:Skia}}{{hi:Vulkan}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}} [![cat~multimedia::images][cat~multimedia::images~badge]][cat~multimedia::images]{{hi:Images}} [![cat~rendering::graphics-api][cat~rendering::graphics-api~badge]][cat~rendering::graphics-api]{{hi:Graphics APIs}} [![cat~visualization][cat~visualization~badge]][cat~visualization]{{hi:Visualization}}
 
-[`skia-safe`][c~skia-safe~docs]↗{{hi:skia-safe}} offers "Bindings to the Skia C++ library. The most complete option with excellent performance. However, it can be difficult to get it to compile." ([blessed.rs](https://blessed.rs/crates#section-graphics)).
+[`skia-safe`][c~skia-safe~docs]↗{{hi:skia-safe}} offers "Bindings to the Skia C++ library. The most complete option with excellent performance. However, it can be difficult to get it to compile." ([blessed.rs](https://blessed.rs/crates#section-graphics)↗).
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/2d_renderers/skia_safe.rs:example}}
@@ -53,7 +53,7 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 
 [![webrender][c~webrender~docs~badge]][c~webrender~docs] [![webrender~crates.io][c~webrender~crates.io~badge]][c~webrender~crates.io] [![webrender~github][c~webrender~github~badge]][c~webrender~github] [![webrender~lib.rs][c~webrender~lib.rs~badge]][c~webrender~lib.rs]{{hi:webrender}}
 
-[`webrender`][c~webrender~docs]↗{{hi:webrender}} is a GPU-accelerated 2D renderer for web content. "OpenGL-based. Mature with production usage in `Firefox` but documentation and OSS maintenance are lacking." ([blessed.rs](https://blessed.rs/crates#section-graphics)).
+[`webrender`][c~webrender~docs]↗{{hi:webrender}} is a GPU-accelerated 2D renderer for web content. "OpenGL-based. Mature with production usage in `Firefox` but documentation and OSS maintenance are lacking." ([blessed.rs](https://blessed.rs/crates#section-graphics)↗).
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/2d_renderers/webrender.rs:example}}
@@ -65,7 +65,7 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 
 [![vello][c~vello~docs~badge]][c~vello~docs] [![vello~crates.io][c~vello~crates.io~badge]][c~vello~crates.io] [![vello~github][c~vello~github~badge]][c~vello~github] [![vello~lib.rs][c~vello~lib.rs~badge]][c~vello~lib.rs]{{hi:vello}}{{hi:2d}}{{hi:Vector-graphics}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}} [![cat~rendering][cat~rendering~badge]][cat~rendering]{{hi:Rendering}}
 
-[`vello`][c~vello~docs]↗{{hi:vello}} is a GPU compute-centric 2D renderer. "WGPU-based and uses cutting edge techniques to render vector paths using the GPU. Still somewhat immature and hasn't yet put out a stable release." ([blessed.rs](https://blessed.rs/crates#section-graphics)).
+[`vello`][c~vello~docs]↗{{hi:vello}} is a GPU compute-centric 2D renderer. "WGPU-based and uses cutting edge techniques to render vector paths using the GPU. Still somewhat immature and hasn't yet put out a stable release." ([blessed.rs](https://blessed.rs/crates#section-graphics)↗).
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/2d_renderers/vello.rs:example}}

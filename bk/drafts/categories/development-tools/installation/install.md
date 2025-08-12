@@ -6,15 +6,15 @@
 |---|---|
 | Package Managers | [cargo][p~cargo] |
 | Installer Generators | [`cargo-deb`][c~cargo-deb~docs]↗{{hi:cargo-deb}}, [`cargo-rpm`][c~cargo-rpm~docs]↗{{hi:cargo-rpm}}, [`create-dmg`][create-dmg~github]↗{{hi:create-dmg}} (for creating Debian packages, RPM packages, and [macOS][p~macos] disk [images][p~images], respectively) |
-| Cross-Platform Installers | [`tauri-bundler`]( ){{hi: }} (for bundling desktop applications) |
-| Self-Updating | [`self_update`]( ){{hi: }} |
-| Build Systems (for installation scripts) | [`xtask`]( ){{hi: }} (for managing complex builds and installation-related tasks) |
+| Cross-Platform Installers | [`tauri-bundler`]( )↗{{hi: }} (for bundling desktop applications)↗ |
+| Self-Updating | [`self_update`]( )↗{{hi: }} |
+| Build Systems (for installation scripts) | [`xtask`]( )↗{{hi: }} (for managing complex builds and installation-related tasks) |
 
 ## Build and Install a Rust Binary with `cargo install` {#cargo-install}
 
 [![cargo~website][c~cargo~website~badge]][c~cargo~website] [![cargo][c~cargo~docs~badge]][c~cargo~docs] [![cargo~crates.io][c~cargo~crates.io~badge]][c~cargo~crates.io] [![cargo~github][c~cargo~github~badge]][c~cargo~github] [![cargo~lib.rs][c~cargo~lib.rs~badge]][c~cargo~lib.rs]{{hi:cargo}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 
-The [`cargo install`]( ){{hi: }} command manages [`cargo`][c~cargo~docs]↗{{hi:cargo}}'s local set of installed binary [crates][p~crates]. Only packages which have executable{{hi:Executables}} `[[bin]]` or `[[example]]` targets can be installed, and all executables are installed into the installation root's bin folder. By default only binaries, not examples, are installed. There are multiple sources from which a crate can be installed. The default source location is [`crates.io`][crates.io~website]{{hi:crates.io}}↗, but the --git, --path, and --registry flags can change this source. This command operates on system or user level, not project level.
+The [`cargo install`]( )↗{{hi: }} command manages [`cargo`][c~cargo~docs]↗{{hi:cargo}}'s local set of installed binary [crates][p~crates]. Only packages which have executable{{hi:Executables}} `[[bin]]` or `[[example]]` targets can be installed, and all executables are installed into the installation root's bin folder. By default only binaries, not examples, are installed. There are multiple sources from which a crate can be installed. The default source location is [`crates.io`][crates.io~website]{{hi:crates.io}}↗, but the --git, --path, and --registry flags can change this source. This command operates on system or user level, not project level.
 
 ## Install a Rust Binary with `cargo binstall` {#cargo-binstall}
 

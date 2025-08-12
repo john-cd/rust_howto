@@ -19,7 +19,7 @@ Note the following:
 
 - Avoiding Dynamic Data Structures: In `no_alloc`{{hi:no_alloc}}, you'll avoid dynamic data structures like [`Vec`](https://doc.rust-lang.org/alloc/vec/struct.Vec.html)↗, [`String`](https://doc.rust-lang.org/alloc/string/struct.String.html)↗, [`Box`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}}, [`Rc`][c~std::rc::Rc~docs]↗{{hi:std::rc::Rc}}, [`Arc`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}}, etc., as these rely on heap allocation. Instead, you'll use fixed-size arrays, structs, and other data structures that can be allocated on the stack or statically.
 
-- [[Const Generics]] are very useful for working with fixed-size data structures in [`no_alloc`]( ){{hi: }} contexts.
+- [[Const Generics]] are very useful for working with fixed-size data structures in [`no_alloc`]( )↗{{hi: }} contexts.
 
 - Static Allocation: You can also use [[static allocation]] for data that is known at compile time. This is done using the [`static`][keyword~static]↗{{hi:static}} keyword. Static variables have a fixed memory location and a lifetime that lasts for the entire duration of the program. See [[global_static | Global Static]].
 
@@ -60,5 +60,5 @@ Consult the [`no_alloc`][cat~no-std::no-alloc]↗ category on [`crates.io`][crat
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review; cover use of no_std attribute to remove [`alloc`]( ){{hi: }} crate](https://github.com/john-cd/rust_howto/issues/945)
+[review; cover use of no_std attribute to remove [`alloc`]( )↗{{hi: }} crate](https://github.com/john-cd/rust_howto/issues/945)
 </div>

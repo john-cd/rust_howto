@@ -88,10 +88,10 @@ Needs in-depth review.
 Review / incorporate:
 
 - [`rust_decimal`][c~rust_decimal~docs]↗{{hi:rust_decimal}} - ~2M downloads.
-- [`iso_currency`]( ){{hi: }} - ~19k downloads.
+- [`iso_currency`]( )↗{{hi: }} - ~19k downloads.
 - [`RustQuant`][c~RustQuant~docs]↗{{hi:RustQuant}} ~4.1k.
 - [`apca`][c~apca~docs]↗{{hi:apca}} mentioned in Awesome Rust.
-- [`stochastic-rs`]( ){{hi: }} mentioned in Awesome Rust.
+- [`stochastic-rs`]( )↗{{hi: }} mentioned in Awesome Rust.
 - Mention [`financial`][c~financial~docs]↗{{hi:financial}} a collection of finance calculations mimicking some of Excel Financial Functions interface.
 - Mention `black_scholes`.
 

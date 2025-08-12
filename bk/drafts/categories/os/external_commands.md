@@ -16,7 +16,7 @@
 
 [![std][c~std~docs~badge]][c~std~docs] [![regex][c~regex~docs~badge]][c~regex~docs]{{hi:regex}} [![cat~os][cat~os~badge]][cat~os]{{hi:OS}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}{{hi:External command}}{{hi:stdout}}
 
-Runs [`git log --oneline`]( ){{hi: }} as an external [`std::process::Command`][c~std::process::Command~docs]{{hi:std::process::Command}}↗ and inspects its [`std::process::Output`][c~std::process::Output~docs]{{hi:std::process::Output}}↗ using [`regex::Regex`][c~regex::Regex~docs]{{hi:regex::Regex}}↗ to get the hash and message of the last 5 commits.
+Runs [`git log --oneline`]( )↗{{hi: }} as an external [`std::process::Command`][c~std::process::Command~docs]{{hi:std::process::Command}}↗ and inspects its [`std::process::Output`][c~std::process::Output~docs]{{hi:std::process::Output}}↗ using [`regex::Regex`][c~regex::Regex~docs]{{hi:regex::Regex}}↗ to get the hash and message of the last 5 commits.
 
 ```rust,editable
 {{#include ../../../crates/cats/os/examples/external_commands/process_output.rs:example}}

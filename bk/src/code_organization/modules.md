@@ -14,7 +14,7 @@ Modules{{hi:Modules}} are Rust's way of organizing code within a crate (a binary
 
 Modules form a tree that originates in the "crate root file" (usually `src/lib.rs` for a library crate or `src/main.rs` for a binary crate). In the crate root file, you can declare modules. In turn, in each module, you can nest other modules, and so on.
 
-To declare a module, use the [`mod`]( ){{hi: }} keyword. A module can be written inline, in the same file than its parent, by using curly brackets: `mod <module_name> { ... }` or it may be defined in a separate file or folder, by inserting a semicolon after its declaration: `mod <module_name>;`:
+To declare a module, use the [`mod`]( )↗{{hi: }} keyword. A module can be written inline, in the same file than its parent, by using curly brackets: `mod <module_name> { ... }` or it may be defined in a separate file or folder, by inserting a semicolon after its declaration: `mod <module_name>;`:
 
 ```rust,noplayground
 // Module in separate file: `a_file.rs` or `a_file/mod.rs` - see below.
@@ -63,9 +63,9 @@ The "older style" conveniently groups all files for a module and its submodules 
 
 Note the following:
 
-- Adding [`.rs`]( ){{hi: }} files to your source code folder does not automatically incorporate the code in your crate. You must add explicit `mod` statements. Editors like 'VS Code' will not analyze your code or display hints while typing if you forget to do so!
-- The [`mod`]( ){{hi: }} statement must be added to the _parent_ file, not to the file that contains the module itself.
-- Modules (and items within) are private by default. Use the [`pub`]( ){{hi: }} keyword - see [[visibility | visibility rules]].
+- Adding [`.rs`]( )↗{{hi: }} files to your source code folder does not automatically incorporate the code in your crate. You must add explicit `mod` statements. Editors like 'VS Code' will not analyze your code or display hints while typing if you forget to do so!
+- The [`mod`]( )↗{{hi: }} statement must be added to the _parent_ file, not to the file that contains the module itself.
+- Modules (and items within) are private by default. Use the [`pub`]( )↗{{hi: }} keyword - see [[visibility | visibility rules]].
 - It is possible (but confusing) to override the name and path of the file where a module is stored, using the [path attribute][book~rust-reference~path-attribute]↗.
 
 ## Access Items Within Modules via Paths {#paths}
@@ -86,7 +86,7 @@ super::brother_module             // Path to another module declared in the pare
 crate::first_level::second_level  // Path to a nested module, starting from the crate root.
 ```
 
-Note that [[visibility | visibility]] rules apply. A path is valid only if all of its segments are accessible from the location of use. See the section below. Aliases are covered in [[use_keyword | [`use`]( ){{hi: }} keyword]] chapter.{{hi:use}}
+Note that [[visibility | visibility]] rules apply. A path is valid only if all of its segments are accessible from the location of use. See the section below. Aliases are covered in [[use_keyword | [`use`]( )↗{{hi: }} keyword]] chapter.{{hi:use}}
 
 Going into more details, there are two main kinds of paths: relative and absolute paths. Relative paths start from the current module you are writing code in:
 
@@ -111,7 +111,7 @@ fn call_something_in_a_module() {
 // so that it could be accessed. See visibility rules below.
 ```
 
-The [`super`]( ){{hi: }} keyword is used to refer to the parent module:
+The [`super`]( )↗{{hi: }} keyword is used to refer to the parent module:
 
 ```rust,noplayground
 mod a {
@@ -158,7 +158,7 @@ TypeName::CONSTANT_NAME           // Path to an associated constant within a typ
 {{i:Modules}} provides encapsulation, meaning they hide items within from their parent, unless the items are explicitly made public.
 
 - Most items, including modules and items within, are private by default.{{hi:Private by default}}
-- Use the [`pub`]( ){{hi: }} keyword to make them public.{{hi:pub}}
+- Use the [`pub`]( )↗{{hi: }} keyword to make them public.{{hi:pub}}
 - All items, public or private, can be accessed from within the _same_ module or child modules.
 - Items cannot be accessed from their parent, unless they are public.
 - Items cannot be accessed from another module, unless all items in the path from that module to the item are accessible (public, if traversed in the parent -> child direction; private or public, if traversed in the child -> parent direction or in the same module).
