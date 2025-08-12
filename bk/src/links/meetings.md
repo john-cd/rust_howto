@@ -38,7 +38,7 @@ The following are some of the largest and most active local user groups. They ho
 | [Rust NYC][meetup~rust-nyc]↗ | New York, USA |
 | [Rust Paris][meetup~Rust-Paris]↗ | Paris, France |
 | [Rust South Africa][meetup~Johannesburg-Rust-Meetup]↗ | Johannesburg, SA |
-| [Rust Zürisee][meetup~rust-zurich]↗ | Zürich, Switzerland |
+| [Rust Zurisee][meetup~rust-zurich]↗ | Zürich, Switzerland |
 | [Seattle Rust User Group][meetup~seattle-rust-user-group]↗ | Redmond, WA |
 | [Vancouver Rust][meetup~vancouver-rust]↗ | Vancouver, BC, Canada |
 
