@@ -913,7 +913,6 @@
 [meetup~seattle-rust-user-group]: https://www.meetup.com/seattle-rust-user-group
 [meetup~vancouver-rust]: https://www.meetup.com/vancouver-rust
 [meetup~website]: https://meetup.com
-[meiliSearch~github]: https://github.com/meilisearch/MeiliSearch
 [meilisearch~github]: https://github.com/meilisearch
 [meilisearch~website]: https://www.meilisearch.com
 [memfault~website]: https://memfault.com

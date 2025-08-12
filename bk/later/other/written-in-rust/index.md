@@ -52,7 +52,7 @@ This section provides a few examples of software written in Rust, organized by t
   - Examples: Cloudflare uses Rust for performance critical services.
 - Search Engines:
   - [`tantivy`][c~tantivy~docs]↗ [(GitHub)][c~tantivy~github]↗: a full-text search engine library inspired by Apache Lucene.
-  - [`meilisearch`][c~meilisearch~docs]↗ [(GitHub)][meiliSearch~github]↗: a fast search engine API bringing AI-powered hybrid search to sites and applications.
+  - [`meilisearch`][c~meilisearch~docs]↗ [(GitHub)][meilisearch~github]↗: a fast search engine API bringing AI-powered hybrid search to sites and applications.
 - WebAssembly ([[wasm | WASM]]):
   - Front-end web applications.
   - Portable code for web browsers.
