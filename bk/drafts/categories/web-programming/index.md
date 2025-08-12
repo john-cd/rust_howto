@@ -80,7 +80,7 @@ See [[web-programming_websocket | Web Programming: Websocket]].
 ## References
 
 - [Are we Web yet?][are-we-web-yet?~website]↗.
-- [Building a crawler in Rust: design and associated types][blog~building-a-crawler-in-rust]↗.
+- [Building a crawler in Rust][blog~building-a-crawler-in-rust]↗: design and associated types.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
@@ -94,9 +94,9 @@ Frameworks:
 
 QUIC:
 
-- [quiche: Savory implementation of the QUIC transport protocol and HTTP/3][c~quiche~github]↗.
+- [quiche][c~quiche~github]↗: Savory implementation of the QUIC transport protocol and HTTP/3.
 - [Quinn — Rust network library][c~quinn~lib.rs]↗.
-- [msquic: Cross-platform, C implementation of the IETF QUIC protocol, exposed to C, C++, C# and Rust.][c~msquic~github]↗.
+- [msquic][c~msquic~github]↗: Cross-platform, C implementation of the IETF QUIC protocol, exposed to C, C++, C# and Rust..
 
 - [Mockito — Rust web dev library][c~mockito~lib.rs]↗.
 
@@ -111,6 +111,6 @@ OTHER:
 - [webpki-root-certs — Rust crypto library][c~webpki-root-certs~lib.rs]↗.
 
 - [Sycamore][sycamore~website]↗.
-- [sycamore: A library for creating reactive web apps in Rust and WebAssembly][c~sycamore~github]↗.
+- [sycamore][c~sycamore~github]↗: A library for creating reactive web apps in Rust and WebAssembly.
 
 </div>

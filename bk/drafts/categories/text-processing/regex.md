@@ -89,7 +89,7 @@ The method [`regex::Regex::replace_all`][c~regex::Regex::replace_all~docs]{{hi:r
 <div class="hidden">
 [regex: write](https://github.com/john-cd/rust_howto/issues/488)
 
-- [grex: A command-line tool and Rust library with Python bindings for generating regular expressions from user-provided test cases][c~grex~github]↗.
+- [grex][c~grex~github]↗: A command-line tool and Rust library with Python bindings for generating regular expressions from user-provided test cases.
 
 - [regex_automata](https://docs.rs/regex-automata/0.4.9/regex_automata/#should-i-be-using-this-crate)↗: Multi-pattern searches with capture groups.
 

@@ -410,7 +410,7 @@ Debugging macros can be challenging. To see what a macro expands to and debug it
 - [Rust Reference - Macros][book~rust-reference~macros]↗.
 - [Rust by Example - Macros][book~rust-by-example~macros]↗.
 - The [Little Book of Rust Macros][book~rust-macros]↗.
-- [Macros in Rust: A tutorial with examples][blog~macros-in-rust-a-tutorial-with-examples]↗.
+- [Macros in Rust][blog~macros-in-rust-a-tutorial-with-examples]↗: A tutorial with examples.
 
 ## Related Topics {#related-topics}
 

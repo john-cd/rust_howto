@@ -74,19 +74,19 @@ Microcontrollers respond to events via interrupts.
 <div class="hidden">
 [write; cover](https://github.com/john-cd/rust_howto/issues/346)
 
-- [awesome-embedded-rust: Curated list of resources for Embedded and Low-level development in the Rust programming language][awesome-embedded-rust~github]↗,
+- [awesome-embedded-rust][awesome-embedded-rust~github]↗: Curated list of resources for Embedded and Low-level development in the Rust programming language,
 - [Are We RTOS Yet?][arewertosyet~website]↗.
 
 ## Libs
 
-- [embassy: Modern embedded framework, using Rust and async.][embassy~github]↗.
-- [rust-iot-platform: A high-performance IoT development platform built with Rust, designed for multi-protocol support and real-time data processing. This platform supports MQTT, WebSockets (WS), TCP, and CoAP protocols, making it highly flexible for diverse IoT applications.][rust-iot-platform~github]↗.
-- [stm32-rs: Embedded Rust device crates for STM32 microcontrollers][stm32-rs~github]↗.
-- [rtic: Real-Time Interrupt-driven Concurrency (RTIC) framework for ARM Cortex-M microcontrollers][c~rtic~github]↗.
+- [embassy][embassy~github]↗: Modern embedded framework, using Rust and async.
+- [rust-iot-platform][rust-iot-platform~github]↗: A high-performance IoT development platform built with Rust, designed for multi-protocol support and real-time data processing. This platform supports MQTT, WebSockets (WS), TCP, and CoAP protocols, making it highly flexible for diverse IoT applications.
+- [stm32-rs][stm32-rs~github]↗: Embedded Rust device crates for STM32 microcontrollers.
+- [rtic][c~rtic~github]↗: Real-Time Interrupt-driven Concurrency (RTIC) framework for ARM Cortex-M microcontrollers.
 
 ## Panic Handling {#skip}
 
-- [better-panic: A Python-inspired `panic` handler for rust][better-panic~github]↗.
-- [No-Panic Rust: A Nice Technique for Systems Programming][blog~no-panic]↗.
+- [better-panic][better-panic~github]↗: A Python-inspired `panic` handler for rust.
+- [No-Panic Rust][blog~no-panic]↗: A Nice Technique for Systems Programming.
 - [no-panics-whatsoever (crates.io)][c~no-panics-whatsoever~crates.io]↗.
 </div>

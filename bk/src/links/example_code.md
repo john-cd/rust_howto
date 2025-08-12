@@ -35,7 +35,7 @@ For example, you will find a full template for a REST API written in Rust, engin
 You may also consult the code examples from various Rust books:
 
 - [Code][book~zero-to-production~github]↗ for the ["Zero To Production In Rust"][book~zero-to-production]↗ book.
-- [Source Code][practical-rust-web-projects~github]↗ for ["Practical Rust Web Projects: Building Cloud and Web-Based Applications", 1st ed.][book~Practical-Rust-Web-Projects-Applications]↗ by Shing Lyu.
+- [Source Code][practical-rust-web-projects~github]↗ for ["Practical Rust Web Projects][book~Practical-Rust-Web-Projects-Applications]↗: Building Cloud and Web-Based Applications", 1st ed., by Shing Lyu.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

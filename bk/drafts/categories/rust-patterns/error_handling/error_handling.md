@@ -212,6 +212,6 @@ credit https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.htm
 
 [`std::io::Error`][c~std::io::Error~docs]{{hi:std::io::Error}}↗ defined type implementing the [`std::error::Error`][c~std::error::Error~docs]{{hi:std::error::Error}}↗ trait.
 
-- [human-panic: Panic messages for humans.][c~human-panic~github]↗.
+- [human-panic][c~human-panic~github]↗: Panic messages for humans.
 
 </div>

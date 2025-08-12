@@ -92,6 +92,6 @@ See also [`pre-commit`][pre-commit.com~website]↗, which is a Python framework 
 <div class="hidden">
 [code_formatting_linting: expand](https://github.com/john-cd/rust_howto/issues/310)
 
-- [overcommit: A fully configurable and extendable Git hook manager][overcommit~github]↗.
+- [overcommit][overcommit~github]↗: A fully configurable and extendable Git hook manager.
 
 </div>

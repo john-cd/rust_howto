@@ -11,7 +11,7 @@
 - Don't carelessly mix [async][p~async]{{hi:async}} code and synchronous, blocking calls like `std::thread::sleep(Duration::from_secs(N));`.
 - If you have to block the thread because of expensive CPU-bound{{hi:CPU bound}} computation, call to a synchronous IO API{{hi:Synchronous IO}}, use the [`tokio::task::spawn_blocking`][c~tokio::task::spawn_blocking~docs]{{hi:tokio::task::spawn_blocking}}↗ function, use [`rayon`][c~rayon~docs]{{hi:rayon}}↗, or spawn a dedicated thread{{hi:Dedicated thread}}.
 
-See [Async: What is blocking? blog post][blog~async-what-is-blocking]↗.
+See the [Async: What is blocking?][blog~async-what-is-blocking] blog post↗.
 
 ## Use `spawn_blocking` {#spawn-blocking}
 

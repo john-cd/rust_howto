@@ -63,6 +63,6 @@ To add a "run" button on your documentation (allowing its execution in the rust 
 [documentation: add; review](https://github.com/john-cd/rust_howto/issues/297)
 Mermaid.js for documentation: `aquamarine`
 
-- [roxygen: Add documentation to function arguments in Rust][c~roxygen~github]↗.
+- [roxygen][c~roxygen~github]↗: Add documentation to function arguments in Rust.
 
 </div>

@@ -135,7 +135,7 @@ Note how multiple `impl` blocks are possible; they can implement associated func
 
 ## References {#references}
 
-[Creating Structs In Rust: Builder Pattern, Fluent Interfaces, And More][blog~rust-struct-guide]↗.
+[Creating Structs In Rust][blog~rust-struct-guide]↗: Builder Pattern, Fluent Interfaces, And More.
 
 ## Related Topics {#related-topics}
 

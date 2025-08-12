@@ -46,7 +46,7 @@
 <div class="hidden">
 [search: expand](https://github.com/john-cd/rust_howto/issues/291)
 
-- [Meilisearch vs Qdrant: Tradeoffs, Strengths and Weaknesses][blog~meilisearch-vs-qdrant-tradeoffs-strengths-and-weaknesses]↗.
+- [Meilisearch vs Qdrant][blog~meilisearch-vs-qdrant-tradeoffs-strengths-and-weaknesses]↗: Tradeoffs, Strengths and Weaknesses.
 - [Algolia vs Elasticsearch vs Meilisearch vs Typesense Comparison][blog~typesense-vs-algolia-vs-elasticsearch-vs-meilisearch]↗.
 - [sonic][sonic~github]↗: Fast, lightweight & schema-less search backend. An alternative to Elasticsearch that runs on a few MBs of RAM. not a lot of activity in GitHub.
 

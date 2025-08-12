@@ -21,9 +21,9 @@
 - [Neon Serverless Postgres][neon~website]↗.
 
 - [ClickHouse][clickhouse~github]↗, a real-time analytics DBMS.
-- [`vector`: A high-performance observability data pipeline.][vector~github]↗.
+- [`vector`][vector~github]↗: A high-performance observability data pipeline.
 
-- [`cube-js`: Cube — The Semantic Layer for Building Data Applications][cube~github]↗.
+- [`cube-js`][cube~github]↗: Cube — The Semantic Layer for Building Data Applications.
 - [Apache OpenDAL][opendal~website]↗.
 
 - ["Could you recommend any projects that utilize Rust for data engineering?"][reddit~data-engineering]↗.
@@ -43,9 +43,9 @@
 
 - [`materialize`][materialize~github]↗: The Cloud Operational Data Store: use SQL to transform, deliver, and act on fast-changing data.
 
-- [`pathway`: Python ETL framework for stream processing, real-time analytics, LLM pipelines, and RAG.][pathway~github]↗.
+- [`pathway`][pathway~github]↗: Python ETL framework for stream processing, real-time analytics, LLM pipelines, and RAG..
 
-- [`recurring-tasks`: Rust crate to build an app that runs recurring, periodic tasks][recurring-tasks~github]↗.
+- [`recurring-tasks`][recurring-tasks~github]↗: Rust crate to build an app that runs recurring, periodic tasks.
 
 - [Hydro][hydro~website]↗.
 

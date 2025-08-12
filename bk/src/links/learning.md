@@ -26,7 +26,7 @@
 - [Curated Rust][curatedrust~github]↗: "This is a guided walkthrough of the resources that I used to learn Rust."
 - [A Gentle Introduction to Rust][rust-gentle-intro~website]↗.
 - [Learning Rust in 2020][rust-blog/blob/master/posts/learning-rust-in-2020.md~github]↗.
-- [`py2rs`: "From Python into Rust"][book~py2rs]↗.
+- [`py2rs`][book~py2rs]↗: "From Python into Rust".
 - [24 Days of Rust][blog~24daysofrust]↗.
 - [Writing an OS in Rust][blog~writing-an-OS-in-rust]↗.
 - [Hecto][hecto~website]↗: Build your own text editor in Rust.
@@ -60,9 +60,9 @@
 
 ### University Courses {#university-courses}
 
-- [CS 110L: Safety in Systems Programming][stanford-cs110l~website]↗.
-- [CIS 198: Rust Programming][course~cis198-2016s]↗.
-- [CS4414: Operating Systems][rust-class~website]↗.
+- [CS 110L][stanford-cs110l~website]↗: Safety in Systems Programming.
+- [CIS 198][course~cis198-2016s]↗: Rust Programming.
+- [CS4414][rust-class~website]↗: Operating Systems.
 - [Rust Course (taught at FEI VŠB-TUO)][rust-course-fei~github]↗.
 
 ### Ferrous Systems Training {#ferrous-systems-training}

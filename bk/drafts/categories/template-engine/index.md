@@ -57,6 +57,6 @@ The best template engine for your project depends on your specific requirements:
 <div class="hidden">
 [template-engine/index: write](https://github.com/john-cd/rust_howto/issues/482)
 
-[askama: Type-safe, compiled Jinja-like templates for Rust][c~askama~github]↗.
+[askama][c~askama~github]↗: Type-safe, compiled Jinja-like templates for Rust.
 
 </div>

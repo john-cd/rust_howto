@@ -83,7 +83,7 @@ FIXME.
 
 ## See Also
 
-- [Rust CI Tooling: Clippy, commitlint, pre-commit][rust-ci-tooling~website]↗.
+- [Rust CI Tooling][rust-ci-tooling~website]↗: Clippy, commitlint, pre-commit.
 - [`pre-commit-rust`][pre-commit-rust~github].
 - [A pre-commit hook for commitlint][commitlint-pre-commit-hook~github]↗.
 
@@ -94,6 +94,6 @@ FIXME.
 [git_hooks: write](https://github.com/john-cd/rust_howto/issues/602)
 dedupe  with code_formatting_linting.
 
-- [overcommit: A fully configurable and extendable Git hook manager][overcommit~github]↗.
+- [overcommit][overcommit~github]↗: A fully configurable and extendable Git hook manager.
 
 </div>

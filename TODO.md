@@ -48,7 +48,8 @@
 - pandoc / typst.
 - kindle create.
 
-<https://gumroad.com>
+[gumroad~website]: https://gumroad.com
+
 <https://pianomanfrazier.com/post/write-a-book-with-markdown/#bookdown-https-bookdown-org-yihui-bookdown>
 <https://pdworkman.com/write-book-with-obsidian/#getting-it-out-of-obsidian>
 <https://medium.com/@sydasif78/book-creation-with-pandoc-and-markdown-893c7d72cb35>
@@ -161,14 +162,16 @@ consolidate CLIs.
 
 Try `cargo-husky`
 
+```toml
 [dev-dependencies.cargo-husky]
 version = "1.5.0".
 default-features = false.
 features = ["user-hooks"].
+```
 
 Note that, when user-hooks feature is enabled, other all features are disabled.
-You need to prepare all hooks in .cargo-husky/hooks directory.
-See [cargo-husky](https://lib.rs/crates/cargo-husky)↗.
+You need to prepare all hooks in `.cargo-husky/hooks` directory.
+See [`cargo-husky`][c~cargo-husky~docs]↗{{hi:cargo-husky}}.
 
 See scripts/precommit folder.
 
@@ -191,7 +194,7 @@ Writes are fast when writing to container FS, volume, but slow on bind mount (to
 
 ### Try to store target and/or /usr/local/cargo in a tmpfs?
 
-/usr/local/cargo is small enough to fit in memory (16GB max).
+`/usr/local/cargo` is small enough to fit in memory (16GB max).
 
 [how-to-use-tmpfs-and-its-functions-in-docker](https://linuxhaxor.net/code/how-to-use-tmpfs-and-its-functions-in-docker.html)
 
@@ -199,25 +202,25 @@ Writes are fast when writing to container FS, volume, but slow on bind mount (to
 
 Try local / inline caching as well.
 
-[optimize-docker-builds-github-actions-cache](https://cicube.io/blog/optimize-docker-builds-github-actions-cache)
+[optimize-docker-builds-github-actions-cache]: https://cicube.io/blog/optimize-docker-builds-github-actions-cache
 
 ### Try to build directly on the host, not in a container?
 
-Write a .yml build workflow file for Linux.
+Write a `.yml` build workflow file for Linux.
 
----
+-------------------------
 
 ## Free further space on CI runner
 
 Already using the `free-disk-space-ubuntu` action.
 
-[2875](https://github.com/actions/runner-images/issues/2875)
+[2875]: https://github.com/actions/runner-images/issues/2875
 
-[free-disk-space-ubuntu](https://github.com/marketplace/actions/free-disk-space-ubuntu)
+[free-disk-space-ubuntu]: https://github.com/marketplace/actions/free-disk-space-ubuntu
 
 See splitting into separate CI steps or jobs above.
 
----
+-------------------------
 
 ## Create CI build / tests on Windows
 
@@ -226,7 +229,7 @@ Add Windows build job to main workflow?
 Should we build in Docker via `cargo build --target [<TRIPLE>]` ?
 Use cross?
 
----
+-------------------------
 
 ## Make `just` commands fully work on Windows
 
@@ -235,25 +238,25 @@ Use cross?
   - make cygwin bash work on Windows.
 - consider cargo make / xtask?
 
----
+-------------------------
 
 ## Review the need for rusty_fork
 
 since we use nextest exclusively.
 See nextest execution model: <https://nexte.st/docs/design/how-it-works/>
 
----
+-------------------------
 
 ## CI build on MacOS too?
 
 Create a .yml file for MacOS build on GitHub runner?
 Add build job to main workflow.
 
----
+-------------------------
 
 ## Fix .github issue templates
 
----
+-------------------------
 
 ## Build rust_rate tool
 

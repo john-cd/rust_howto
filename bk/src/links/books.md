@@ -48,29 +48,29 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 
 ## General {#general}
 
-- [Beginning Rust: Get Started with Rust 2021 Edition][book~Beginning-Rust-Get-Started-2021]↗ by Carlo Milanesi (Apress). [978-1484272077][ISBN~978-1484272077]↗.
+- [Beginning Rust][book~Beginning-Rust-Get-Started-2021]↗: Get Started with Rust 2021 Edition, by Carlo Milanesi (Apress). [978-1484272077][ISBN~978-1484272077]↗.
 - [Creative Projects for Rust Programmers][book~Creative-Projects-Rust-Programmers-WebAssembly]↗: Build exciting projects on domains such as web apps, WebAssembly, games, and parsing, by Carlo Milanesi. [978-1789346220][ISBN~978-1789346220]↗.
 - [Code Like a Pro in Rust][book~Code-Like-Rust-Brenden-Matthews-ebook]↗ by Brenden Matthews. [978-1638354543][ISBN~978-1638354543]↗.
 - The [Complete Rust Programming Reference Guide](https://www.amazon.com/dp/1838828109)↗: Design, develop, and deploy effective software systems using the advanced constructs of Rust, by Rahul Sharma, Vesa Kaihlavirta, Claus Matzinger. [978-1838828103][ISBN~978-1838828103]↗.
-- [Effective Rust: 35 Specific Ways to Improve Your Rust Code](https://www.amazon.com/dp/1098151402)↗ [(O'Reilly)][book~effective-rust]↗ by David Drysdale.  [978-1098151409][ISBN~978-1098151409]↗ [(online version)][effective-rust~website]↗.
+- [Effective Rust](https://www.amazon.com/dp/1098151402)↗: 35 Specific Ways to Improve Your Rust Code, by David Drysdale. [(O'Reilly)][book~effective-rust]↗ [978-1098151409][ISBN~978-1098151409]↗ [(online version)][effective-rust~website]↗.
 - [Fullstack Rust][book~Fullstack-Rust-Complete-Building-Programming-ebook]↗ by Andy Weiss ([Newline][book~fullstack-rust]↗ or Kindle).
-- [Hands-on Rust: Effective Learning Through 2D Game Development and Play][book~Hands-Rust-Effective-Learning-Development]↗ by Herbert Wolverson. [978-1680508161][ISBN~978-1680508161]↗.
-- [Idiomatic Rust: Code like a Rustacean][book~Idiomatic-Rust-Code-like-Rustacean]↗ by Brenden Matthews [9781633437463][ISBN~9781633437463]↗.
+- [Hands-on Rust][book~Hands-Rust-Effective-Learning-Development]↗: Effective Learning Through 2D Game Development and Play, by Herbert Wolverson. [978-1680508161][ISBN~978-1680508161]↗.
+- [Idiomatic Rust][book~Idiomatic-Rust-Code-like-Rustacean]↗: Code like a Rustacean, by Brenden Matthews [9781633437463][ISBN~9781633437463]↗.
 - [Learn Rust in a Month of Lunches](https://www.amazon.com/dp/1633438236)↗ by David MacLeod [(Manning)][book~learn-rust-in-a-month-of-lunches]↗ [978-1633438231][ISBN~978-1633438231]↗.
-- [Programming Rust: Fast, Safe Systems Development][book~Programming-Rust-Fast-Systems-Development-dp-1492052590]↗ by Jim Blandy, Jason Orendorff [(O'Reilly)][book~programming-rust-2nd-edition]↗. [9781491927281][ISBN~9781491927281]↗.
-- [Programming Rust: Fast, Safe Systems Development][book~Programming-Rust-Fast-Systems-Development]↗ by Jim Blandy, Leonora Tindall. [978-1492052593][ISBN~978-1492052593]↗.
+- [Programming Rust][book~Programming-Rust-Fast-Systems-Development-dp-1492052590]↗: Fast, Safe Systems Development, by Jim Blandy, Jason Orendorff [(O'Reilly)][book~programming-rust-2nd-edition]↗. [9781491927281][ISBN~9781491927281]↗.
+- [Programming Rust][book~Programming-Rust-Fast-Systems-Development]↗: Fast, Safe Systems Development, by Jim Blandy, Leonora Tindall. [978-1492052593][ISBN~978-1492052593]↗.
 - [Refactoring to Rust][book~Refactoring-Rust-Lily-Mara]↗ by Lily Mara, Joel Holmes. [9781617299018][ISBN~9781617299018]↗.
 - [Rust Crash Course](https://www.amazon.com/dp/9355510950)↗: Build High-Performance, Efficient and Productive Software with the Power of Next-Generation Programming Skills, by Abhishek Kumar. [978-9355510952][ISBN~978-9355510952]↗.
 - [Rust Essentials 2nd ed.][book~Rust-Essentials-writing-concurrent-applications-dp-1788390016]↗. [978-1788390019][ISBN~978-1788390019]↗.
 - [Rust for Rustaceans][book~Rust-Rustaceans-Programming-Experienced-Developers]↗: Idiomatic Programming for Experienced Developers, by Jon Gjengset. [978-1718501850][ISBN~978-1718501850]↗.
 - [Rust from the Ground Up](https://leanpub.com/rust-from-the-ground-up)↗. It teaches Rust by implementing a classic Unix CLI utility in each chapter (`cat`, `head`, `wc`...).
-- [Rust in Action: Systems Programming Concepts and Techniques][book~Rust-Action-Tim-McNamara]↗ by Tim McNamara. [978-1617294556][ISBN~978-1617294556]↗.
+- [Rust in Action][book~Rust-Action-Tim-McNamara]↗: Systems Programming Concepts and Techniques, by Tim McNamara. [978-1617294556][ISBN~978-1617294556]↗.
 - [Rust Programming By Example](https://www.amazon.com/dp/1788390636)↗: Enter the world of Rust by building engaging, concurrent, reactive, and robust applications, by Guillaume Gomez, Antoni Boucher (Packt). [978-1788390637][ISBN~978-1788390637]↗.
 - The [Rust Programming Language, 2nd Edition][book~rust-programming-language]↗.
 - [Rust Under the Hood](https://www.amazon.com/dp/B0D7FQB3DH)↗: A deep dive into Rust internals and generated assembly, by Sandeep Ahluwalia, Deepa Ahluwalia. [979-8320364469][ISBN~979-8320364469]↗.
 - The [Secrets of Rust: Tools](https://bitfieldconsulting.com/books/rust-tools)↗.
-- [Step Ahead with Rust: Systems Programming in Rust][book~Step-Ahead-Rust-Systems-Programming-ebook]↗ by Jonathan Creekmore, James Miller (Kindle).
-- [Zero To Production In Rust: An Introduction to Backend Development][book~Zero-Production-Rust-introduction-development]↗ by Luca Palmieri. [979-8847211437][ISBN~979-8847211437]↗: "An opinionated introduction to backend development in Rust". [(website and sample)][zero2prod~website]↗ [(Blog)][book~zero-to-production]↗ [Code for the book (GitHub)][book~zero-to-production~github]↗.
+- [Step Ahead with Rust][book~Step-Ahead-Rust-Systems-Programming-ebook]↗: Systems Programming in Rust, by Jonathan Creekmore, James Miller (Kindle).
+- [Zero To Production In Rust][book~Zero-Production-Rust-introduction-development]↗: An Introduction to Backend Development, by Luca Palmieri. [979-8847211437][ISBN~979-8847211437]↗: "An opinionated introduction to backend development in Rust". [(website and sample)][zero2prod~website]↗ [(Blog)][book~zero-to-production]↗ [Code for the book (GitHub)][book~zero-to-production~github]↗.
 
 ## By Topic {#skip}
 
@@ -78,7 +78,7 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 
 - [Rust API Guidelines][book~api-guidelines]↗.{{hi:APIs}}
 - [`rust-api.dev`][rust-api~website]↗.
-- [Hands-On Microservices with Rust: Build, test, and deploy scalable and reactive microservices with Rust 2018][book~Hands-Microservices-Rust-scalable-microservices-ebook]↗. [978-1789341980][ISBN~978-1789341980]↗.
+- [Hands-On Microservices with Rust][book~Hands-Microservices-Rust-scalable-microservices-ebook]↗: Build, test, and deploy scalable and reactive microservices with Rust 2018. [978-1789341980][ISBN~978-1789341980]↗.
 
 ### Async {#async}
 
@@ -89,9 +89,9 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 - [Command-line Apps in Rust][book~rust-cli]↗.{{hi:CLI}}{{hi:Command Line Interfaces}}
 
 - [Command-Line Rust][book~command-line-rust]↗ by Ken Youens-Clark (O'Reilly).
-- [Command-Line Rust: A Project-Based Primer for Writing Rust CLIs][book~Command-Line-Rust-Project-Based-Primer-Writing]↗: A Project-Based Primer for Writing Rust CLIs by Ken Youens-Clark. [978-1098109431][ISBN~978-1098109431]↗.
+- [Command-Line Rust][book~Command-Line-Rust-Project-Based-Primer-Writing]↗: A Project-Based Primer for Writing Rust CLIs, by Ken Youens-Clark. [978-1098109431][ISBN~978-1098109431]↗.
 
-- [Command-Line Rust: A Project-Based Primer for Writing Rust CLIs 1st Edition][book~Command-Line-Rust-Project-Based-Primer-Writing]↗. [978-1098109431][ISBN~978-1098109431]↗.
+- [Command-Line Rust][book~Command-Line-Rust-Project-Based-Primer-Writing]↗: A Project-Based Primer for Writing Rust CLIs, 1st Edition. [978-1098109431][ISBN~978-1098109431]↗.
 
 ### Compiler & Tools {#compiler-tools}
 
@@ -146,7 +146,7 @@ See also the [Awesome Embedded Rust][awesome-embedded-rust~github]↗, a curated
 
 ### Interpreters {#interpreters}
 
-- [Writing Interpreters in Rust: a Guide][book~writing-interpreters-in-rust]↗ [(GitHub)][book~writing-interpreters-in-rust~github]↗.{{hi:Interpreters}}
+- [Writing Interpreters in Rust][book~writing-interpreters-in-rust]↗: a Guide [(GitHub)][book~writing-interpreters-in-rust~github]↗.{{hi:Interpreters}}
 
 ### Machine Learning {#machine-learning}
 
@@ -172,7 +172,7 @@ See also the [Awesome Embedded Rust][awesome-embedded-rust~github]↗, a curated
 
 ## Security {#security}
 
-- [Black Hat Rust: Applied offensive security with the Rust programming language][black-hat-rust~website]↗ by Sylvain Kerkour.{{hi:Security}}
+- [Black Hat Rust][black-hat-rust~website]↗: Applied offensive security with the Rust programming language, by Sylvain Kerkour.{{hi:Security}}
 - The [Copenhagen Book][book~copenhagen]↗: General guideline on implementing auth in web applications. Not Rust-specific.
 - [High Assurance Rust][highassurance~website]↗: Developing Secure and Robust Software.
 

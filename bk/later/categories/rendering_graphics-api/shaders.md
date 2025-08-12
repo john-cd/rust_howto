@@ -77,6 +77,6 @@ Compute Shaders are often handled through the low-level graphics [APIs][p~apis] 
 [decide what to cover, write](https://github.com/john-cd/rust_howto/issues/1228)
 review `gpu-allocator`
 
-- [rust-gpu: Making Rust a first-class language and ecosystem for GPU shaders][rust_gpu~github]↗.
+- [rust-gpu][rust_gpu~github]↗: Making Rust a first-class language and ecosystem for GPU shaders.
 
 </div>

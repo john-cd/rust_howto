@@ -56,7 +56,7 @@ The Rust ML ecosystem is relatively young compared to Python's. However, Rust's 
 [write](https://github.com/john-cd/rust_howto/issues/472)
 Review tch-rs, burn, ort, rust-bert, TensorFlow/rust, tract, cudarc, DFDX.
 
-- [Awesome-Rust-Neural-Network: A curated collection of Rust projects related to neural networks, designed to complement "Are We Learning Yet?"][awesome-rust-neural-network~github]↗.
+- [Awesome-Rust-Neural-Network][awesome-rust-neural-network~github]↗: A curated collection of Rust projects related to neural networks, designed to complement "Are We Learning Yet?".
 - [`std::autodiff`][c~std::autodiff~docs]↗.
 
 [`burn.dev`][burn~website]↗.

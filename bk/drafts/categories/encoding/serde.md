@@ -62,7 +62,7 @@ The [`monostate`][c~monostate~docs]↗{{hi:monostate}} library implements a type
 dedupe [JSON][p~json] with complex.md.
 [Supported Formats][c~serde~supported-formats]↗.
 
-- [`eserde`: Don't stop at the first deserialization error | Mainmatter][blog~mainmatter-eserde]↗.
+- [`eserde`][blog~mainmatter-eserde]↗: Don't stop at the first deserialization error.
 - [`serde_with` — Rust data encoding library][c~serde_with~lib.rs]↗.
 - [`serde_arrow` — Rust data encoding library][c~serde_arrow~lib.rs]↗.
 - [`serde-encrypted-value` — Rust data encoding library][c~serde-encrypted-value~lib.rs]↗.

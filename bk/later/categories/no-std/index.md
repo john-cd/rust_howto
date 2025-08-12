@@ -50,6 +50,6 @@ Consult the [`no-std`][cat~no-std]↗ category on [`crates.io`][crates.io~websit
 [write](https://github.com/john-cd/rust_howto/issues/427)
 review in depth.
 
-- [micromath: Embedded Rust arithmetic, 2D/3D vector, and statistics library][c~micromath~github]↗.
+- [micromath][c~micromath~github]↗: Embedded Rust arithmetic, 2D/3D vector, and statistics library.
 
 </div>

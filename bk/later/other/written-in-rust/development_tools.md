@@ -56,6 +56,6 @@ It integrates with your shell and lets you quickly [search][p~search] through an
 <div class="hidden">
 [organize](https://github.com/john-cd/rust_howto/issues/612)
 
-- [onefetch: Command-line Git information tool][c~onefetch~github]↗.
+- [onefetch][c~onefetch~github]↗: Command-line Git information tool.
 
 </div>

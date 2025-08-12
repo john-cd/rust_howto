@@ -10,7 +10,7 @@
 
 [`candle`][c~candle-core~docs]↗{{hi:candle}} is a minimalist ML framework for Rust with a focus on performance (including GPU support) and ease of use. Candle is like PyTorch written in Rust and focuses on neural network.
 
-[Candle: a minimalist machine learning framework for rust that focuses on performance including GPU support and ease of use][blog~candle]↗.
+[Candle][blog~candle]↗: a minimalist machine learning framework for rust that focuses on performance including GPU support and ease of use.
 
 ```rust,editable
 {{#include ../../../crates/cats/science/examples/ml/candle.rs:example}}
@@ -37,7 +37,7 @@ Burn is a comprehensive dynamic Deep Learning Framework built using Rust with fl
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/1205)
 
-- [burn: Burn is a new comprehensive dynamic Deep Learning Framework built using Rust with extreme flexibility, compute efficiency and portability as its primary goals.][c~burn~github]↗.
-- [tensorflow: Rust language bindings for TensorFlow][tensorflow-rust~github]↗.
+- [burn][c~burn~github]↗: Burn is a new comprehensive dynamic Deep Learning Framework built using Rust with extreme flexibility, compute efficiency and portability as its primary goals..
+- [tensorflow][tensorflow-rust~github]↗: Rust language bindings for TensorFlow.
 
 </div>
