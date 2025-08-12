@@ -6,7 +6,7 @@
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}{{hi:std::vec::Vec}}{{hi:Vector}}
 
-The vector type [`Vec<T>`]( )↗{{hi: }} is the go-to, general-purpose data structure, when you need a collection of elements that can change in size.
+The vector type [`Vec`][c~std::vec::Vec~docs]↗{{hi:std::vec::Vec}} is the go-to, general-purpose data structure, when you need a collection of elements that can change in size.
 
 - It is a contiguous, growable, owned, heap-allocated array.
 - It can only store values that are the same type.
@@ -23,7 +23,7 @@ The following example demonstrates common operations:
 
 `Vec` allocates memory on the heap (using the global allocator in `std::alloc`) to store its elements. `Vec` maintains a _capacity_ (how many elements it can hold without reallocating) and a _length_ (how many elements it currently holds).
 
-When you push elements and exceed the current capacity, [`Vec`]( )↗{{hi: }} reallocates memory - usually by doubling the capacity. This amortized growth strategy ensures that pushing elements remains efficient over time. The old memory is deallocated, and the contents are copied to the new, larger allocation.
+When you push elements and exceed the current capacity, [`Vec`][c~std::vec::Vec~docs]↗{{hi:std::vec::Vec}} reallocates memory - usually by doubling the capacity. This amortized growth strategy ensures that pushing elements remains efficient over time. The old memory is deallocated, and the contents are copied to the new, larger allocation.
 
 If allocation fails, Rust will abort the program using `alloc::handle_alloc_error`. For zero-sized types (like `()`), `Vec` avoids actual allocation.
 

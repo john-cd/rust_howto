@@ -8283,7 +8283,6 @@
 [c~tracing-subscriber~website]: https://github.com/tokio-rs/tracing/blob/master/tracing-subscriber/README.md
 [c~tracing-subscriber~website~badge]: https://img.shields.io/badge/tracing--subscriber-coral
 [c~tracing::span::Span::enter~docs]: https://docs.rs/tracing/latest/tracing/span/struct.Span.html#method.enter
-
 [c~tracing::span::Span::in_scope~docs]: https://docs.rs/tracing/latest/tracing/span/struct.Span.html#method.in_scope
 [c~tracing~crates.io]: https://crates.io/crates/tracing
 [c~tracing~crates.io~badge]: https://img.shields.io/badge/crates.io-tracing-crimson

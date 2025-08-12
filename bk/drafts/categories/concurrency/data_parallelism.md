@@ -14,7 +14,7 @@ Simple work-stealing parallelism for Rust using [`rayon`][c~rayon~docs]↗{{hi:r
 
 [![rayon][c~rayon~docs~badge]][c~rayon~docs] [![rayon~crates.io][c~rayon~crates.io~badge]][c~rayon~crates.io] [![rayon~github][c~rayon~github~badge]][c~rayon~github] [![rayon~lib.rs][c~rayon~lib.rs~badge]][c~rayon~lib.rs]{{hi:rayon}}{{hi:Concurrency}}{{hi:Parallel}}{{hi:Thread}}{{hi:Performance}}{{hi:Join}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}
 
-Convert calls to [`iter`]( )↗{{hi: }} or `iter_mut` or `into_iter` into `par_iter` or [`par_iter_mut`][c~rayon::iter::IntoParallelRefMutIterator::par_iter_mut~docs]↗{{hi:par_iter_mut}} or `into_par_iter` to execute in parallel{{hi:Parallel execution}}.
+Convert calls to [`iter`][c~std::iter~docs]↗{{hi:std::iter}} or `iter_mut` or `into_iter` into `par_iter` or [`par_iter_mut`][c~rayon::iter::IntoParallelRefMutIterator::par_iter_mut~docs]↗{{hi:par_iter_mut}} or `into_par_iter` to execute in parallel{{hi:Parallel execution}}.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/examples/data_parallelism/multithreading_rayon.rs:example}}

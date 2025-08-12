@@ -21,9 +21,9 @@ While [`Cow`][c~std::borrow::Cow~docs]↗{{hi:std::borrow::Cow}} is a great choi
 
 Instead of e.g. `Cow<str>`, you can use:
 
-- `Arc<str>`, an atomically reference-counted shared string slice, to be used in multithreaded environments,
-- `Rc<str>`, a single-threaded reference-counted string slice,
-- [`Box<str>`]( )↗{{hi:std::boxed::Box}} for heap-allocated string slices.
+- [`Arc<str>`][c~std::sync::Arc~docs]↗, an atomically reference-counted shared string slice, to be used in multithreaded environments,
+- [`Rc<str>`][c~std::rc::Rc~docs]↗, a single-threaded reference-counted string slice,
+- [`Box<str>`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}} for heap-allocated string slices.
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/cow/cow_alternatives.rs:example}}

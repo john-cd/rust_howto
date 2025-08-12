@@ -4,11 +4,11 @@
 
 This section covers profiling tools to identify performance bottlenecks.
 
-Flame graphs are excellent for visualizing CPU usage and identifying hot spots. System profilers like [`perf`]( )↗{{hi: }} provide more detailed information. Benchmarking helps you measure the impact of code changes. Memory profilers help you find memory leaks and excessive allocations. Tracing helps you understand the flow of your program.
+Flame graphs are excellent for visualizing CPU usage and identifying hot spots. System profilers like [`perf`][c~perf~docs]↗{{hi:perf}} provide more detailed information. Benchmarking helps you measure the impact of code changes. Memory profilers help you find memory leaks and excessive allocations. Tracing helps you understand the flow of your program.
 
 | Topic | Rust Crates |
 |---|---|
-| Flame Graphs | [`cargo flamegraph`]( )↗{{hi: }} generates flame graphs from Rust programs. |
+| Flame Graphs | [`cargo flamegraph`][c~flamegraph~docs]↗{{hi:flamegraph}} generates flame graphs from Rust programs. |
 | System Profilers (In-depth Analysis) | [`perf`][c~perf~docs]↗{{hi:perf}} is a powerful system profiler for Linux. `cargo flamegraph` often uses `perf` under the hood. [`dtrace`][c~dtrace~docs]↗{{hi:dtrace}} is another system profiler for macOS, BSD. [`VTune`][vtune-profiler~website]↗{{hi:VTune}} (Intel) is a commercial profiler. |
 | Benchmarking | Built-in [`cargo bench`]( )↗{{hi: }} allows you to write benchmarks directly in your Rust code. |
 | In-Code Profiling (Specific Code Regions) | [`measure_time`][c~measure_time~docs]↗{{hi:measure_time}} is a simple crate for measuring the execution time of code blocks. |

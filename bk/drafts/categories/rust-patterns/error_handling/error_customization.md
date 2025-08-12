@@ -12,7 +12,7 @@ Use [`anyhow`][c~anyhow~docs]{{hi:anyhow}}↗ if you don't care what error type 
 
 Use `Result<T, anyhow::Error>` or equivalently [`anyhow::Result{{hi:anyhow::Result}}<T>`][c~anyhow::Result~docs]↗ as the return type of any fallible function.
 
-You can use [`anyhow`]( )↗{{hi: }} to:
+You can use [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} to:
 
 - Create errors easily.
 - Attach context to help the person troubleshooting the error understand where things went wrong.

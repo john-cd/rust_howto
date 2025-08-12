@@ -6,7 +6,7 @@ Interfacing with Erlang/Elixir from Rust typically involves using ports or NIFs 
 
 ## Ports {#skip}
 
-'Ports' are the simpler approach. Rust communicates with Erlang/Elixir as a separate process using standard input/output. No specific crate is required, but you'll use [`std::process`]( )↗{{hi: }} in Rust and the port mechanisms in Erlang/Elixir.
+'Ports' are the simpler approach. Rust communicates with Erlang/Elixir as a separate process using standard input/output. No specific crate is required, but you'll use [`std::process`][c~std::process~docs]↗{{hi:std::process}} in Rust and the port mechanisms in Erlang/Elixir.
 
 ## NIFs (Native Implemented Functions) {#skip}
 

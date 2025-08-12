@@ -22,7 +22,7 @@ To publish the crate to `crates.io`, use the following steps:
 - Review the packaging output in `target/publish/package`.
 - When ready, `cargo publish --dry-run; cargo publish`.
 
-Type [`just`]( )↗{{hi: }} at the command line for a list of shortcuts for some of the above commands.
+Type [`just`][c~just~docs]↗{{hi:just}} at the command line for a list of shortcuts for some of the above commands.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

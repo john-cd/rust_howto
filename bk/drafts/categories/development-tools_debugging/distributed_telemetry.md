@@ -10,7 +10,7 @@ Prometheus and OpenTelemetry are two prominent open-source observability project
 
 [OpenTelemetry][opentelemetry~website][(GitHub)][open-telemetry~github]↗ is a complete observability framework suitable for monitoring microservices and "cloud-native", modern, distributed systems. It is compatible with most major OSS and commercial backends. [`OpenTelemetry`]( )↗{{hi: }} is a collection of APIs, SDKs, and tools to instrument, generate, collect, and export metrics, logs, and traces to help analyze your software's performance and behavior. Distributed tracing, a key aspect of observability, enables developers to track and analyze requests spanning multiple services.
 
-The [`opentelemetry`]( )↗{{hi: }} crate is an OpenTelemetry API for Rust.
+The [`opentelemetry`][c~opentelemetry~docs]↗{{hi:opentelemetry}} crate is an OpenTelemetry API for Rust.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/examples/other/open_telemetry.rs:example}}

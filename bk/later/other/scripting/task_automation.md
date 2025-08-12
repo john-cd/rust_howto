@@ -11,7 +11,7 @@ You can build simple Rust applications to automate repetitive tasks. The followi
 ## External Process Management {#skip1}
 
 - [`duct`][c~duct~docs]↗{{hi:duct}}.
-- [`std::process`]( )↗{{hi: }} (standard library)↗.
+- [`std::process`][c~std::process~docs]↗{{hi:std::process}} (standard library)↗.
 
 See [[external_commands | External Commands]].
 

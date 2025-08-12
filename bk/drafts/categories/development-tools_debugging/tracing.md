@@ -7,7 +7,7 @@ Tracing refers to the process of capturing and recording information about the e
 | Topic | Rust Crates |
 |---|---|
 | Tracing Framework | [`tracing`][c~tracing~docs]↗{{hi:tracing}} provides the `core` tracing functionality: spans, events, etc. |
-| Event Logging | Handled by [`tracing`]( )↗{{hi: }} using [macros][p~macros] like [`event!`](https://docs.rs/tracing/latest/tracing/macro.event.html)↗{{hi:event!}} and [`debug!`](https://docs.rs/tracing/latest/tracing/macro.debug.html)↗{{hi:debug!}}, [`info!`](https://docs.rs/tracing/latest/tracing/macro.info.html)↗{{hi:info!}}, [`warn!`](https://docs.rs/tracing/latest/tracing/macro.warn.html)↗{{hi:warn!}}, [`error!`](https://docs.rs/tracing/latest/tracing/macro.error.html)↗{{hi:error!}}. |
+| Event Logging | Handled by [`tracing`][c~tracing~docs]↗{{hi:tracing}} using [macros][p~macros] like [`event!`](https://docs.rs/tracing/latest/tracing/macro.event.html)↗{{hi:event!}} and [`debug!`](https://docs.rs/tracing/latest/tracing/macro.debug.html)↗{{hi:debug!}}, [`info!`](https://docs.rs/tracing/latest/tracing/macro.info.html)↗{{hi:info!}}, [`warn!`](https://docs.rs/tracing/latest/tracing/macro.warn.html)↗{{hi:warn!}}, [`error!`](https://docs.rs/tracing/latest/tracing/macro.error.html)↗{{hi:error!}}. |
 | Span Management | Also handled by [`tracing`][c~tracing~docs]↗{{hi:tracing}} through its span API. Context propagation is built into tracing's span system. |
 | Asynchronous Tracing | Supported by [`tracing`][c~tracing~docs]↗{{hi:tracing}} through its [asynchronous][p~asynchronous] span management. |
 | Output and [Formatting][p~formatting] | [`tracing-subscriber`][c~tracing-subscriber~docs]↗{{hi:tracing-subscriber}} formats and outputs traces to various destinations. |

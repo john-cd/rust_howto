@@ -21,7 +21,7 @@ A bitfield is a data structure that efficiently stores a sequence of bits. It is
 [![flagset~github][c~flagset~github~badge]][c~flagset~github]
 [![flagset~lib.rs][c~flagset~lib.rs~badge]][c~flagset~lib.rs]
 
-A [`flagset`]( )↗{{hi: }} refers to a bitfield used to represent a set of boolean flags or options, where each bit has a specific meaning.
+A [`flagset`][c~flagset~docs]↗{{hi:flagset}} refers to a bitfield used to represent a set of boolean flags or options, where each bit has a specific meaning.
 
 [`flagset`][c~flagset~docs]↗{{hi:flagset}} is a ergonomic approach to handling flags that combines the best of existing crates like [`bitflags`][c~bitflags~docs]↗{{hi:bitflags}} and [`enumflags`][c~enumflags~docs]↗{{hi:enumflags}} without their downsides.
 

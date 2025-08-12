@@ -4,11 +4,11 @@
 
 ## Standard Atomic Types {#atomics}
 
-[![std][c~std~docs~badge]][c~std~docs] [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}{{hi:Atomics}}
+[![std][c~std~docs~badge]][c~std~docs] [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}{{hi:Atomics}}{{hi:std::sync::atomic}}
 
-Atomic types{{hi:Atomic types}} in [`std::sync::atomic`][c~std::sync::atomic~docs]{{hi:std::sync::atomic}}↗ provide primitive shared-memory communication between threads{{hi:Threads}}, and are the building blocks of other concurrent types.
+Atomic types{{hi:Atomic types}} in [`std::sync::atomic`][c~std::sync::atomic~docs]↗provide primitive shared-memory communication between threads{{hi:Threads}}, and are the building blocks of other concurrent types.
 
-The [`atomic`]( )↗{{hi: }} module provides [`std::sync::atomic::AtomicBool`][c~std::sync::atomic::AtomicBool~docs]{{hi:std::sync::atomic::AtomicBool}}↗, [`std::sync::atomic::AtomicIsize`][c~std::sync::atomic::AtomicIsize~docs]{{hi:std::sync::atomic::AtomicIsize}}↗, [`std::sync::atomic::AtomicUsize`][c~std::sync::atomic::AtomicUsize~docs]{{hi:std::sync::atomic::AtomicUsize}}↗, [`std::sync::atomic::AtomicI8`][c~std::sync::atomic::AtomicI8~docs]{{hi:std::sync::atomic::AtomicI8}}↗, [`std::sync::atomic::AtomicU16`][c~std::sync::atomic::AtomicU16~docs]{{hi:std::sync::atomic::AtomicU16}}↗, etc.
+The [`std::sync::atomic`][c~std::sync::atomic~docs]↗ module provides [`std::sync::atomic::AtomicBool`][c~std::sync::atomic::AtomicBool~docs]{{hi:std::sync::atomic::AtomicBool}}↗, [`std::sync::atomic::AtomicIsize`][c~std::sync::atomic::AtomicIsize~docs]{{hi:std::sync::atomic::AtomicIsize}}↗, [`std::sync::atomic::AtomicUsize`][c~std::sync::atomic::AtomicUsize~docs]{{hi:std::sync::atomic::AtomicUsize}}↗, [`std::sync::atomic::AtomicI8`][c~std::sync::atomic::AtomicI8~docs]{{hi:std::sync::atomic::AtomicI8}}↗, [`std::sync::atomic::AtomicU16`][c~std::sync::atomic::AtomicU16~docs]{{hi:std::sync::atomic::AtomicU16}}↗, etc.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/examples/atomics/atomics.rs:example}}
@@ -30,7 +30,7 @@ The most common way to share an atomic variable is to put it into an [`std::sync
 
 [![arc-swap][c~arc-swap~docs~badge]][c~arc-swap~docs] [![arc-swap~crates.io][c~arc-swap~crates.io~badge]][c~arc-swap~crates.io] [![arc-swap~github][c~arc-swap~github~badge]][c~arc-swap~github] [![arc-swap~lib.rs][c~arc-swap~lib.rs~badge]][c~arc-swap~lib.rs]{{hi:arc-swap}}{{hi:Arc}}{{hi:Atomic}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
 
-The [`ArcSwap`]( )↗{{hi: }} type in [`arc-swap`][c~arc-swap~docs]↗{{hi:arc-swap}} is a container for an `Arc` that can be changed atomically. Semantically, it is similar to `Atomic<Arc<T>>` (if there was such a thing)↗ or `RwLock<Arc<T>>` (but without the need for the locking). It is optimized for read-mostly scenarios, with consistent performance characteristics.
+The [`arc-swap::ArcSwap`][c~arc-swap::ArcSwap~docs]↗{{hi:arc-swap::ArcSwap}} type in [`arc-swap`][c~arc-swap~docs]↗{{hi:arc-swap}} is a container for an `Arc` that can be changed atomically. Semantically, it is similar to `Atomic<Arc<T>>` (if there was such a thing)↗ or `RwLock<Arc<T>>` (but without the need for the locking). It is optimized for read-mostly scenarios, with consistent performance characteristics.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -5,12 +5,12 @@
 | Topic | Rust Crates |
 |---|---|
 | [[code_formatting_linting | Code Formatting]] | [`cargo fmt`][book~cargo~cargo-fmt]↗{{hi:cargo fmt}} formats your code to a consistent style. |
-| [[code_formatting_linting | Linting]] | [`cargo clippy`]( )↗{{hi: }} catches common code errors and style issues. |
+| [[code_formatting_linting | Linting]] | [`cargo clippy`][c~clippy~docs]↗{{hi:clippy}} catches common code errors and style issues. |
 | [[dependency_management | Dependency Management]] | [`cargo tree`][book~cargo~cargo-tree]↗{{hi:cargo tree}} displays your dependency tree to help you understand your project's dependencies. `cargo outdated` checks for outdated dependencies. `cargo audit` checks for crates with known security vulnerabilities. |
 | Documentation Generation | [`cargo doc`][book~cargo~cargo-doc]↗{{hi:cargo doc}} generates [documentation][p~documentation] from your code. `cargo deadlinks` finds broken links in your documentation. |
 | [[testing | Testing]] | [`cargo test`][book~cargo~cargo-test]↗{{hi:cargo test}} runs your unit and integration tests. |
 | [[benchmarking | Benchmarking]] | [`cargo bench`]( )↗{{hi: }} runs your benchmarks. |
-| [[code_coverage | Code Coverage]] | [`cargo tarpaulin`]( )↗{{hi: }} runs code coverage analysis. |
+| [[code_coverage | Code Coverage]] | [`cargo-tarpaulin`][c~cargo-tarpaulin~docs]↗{{hi:cargo-tarpaulin}} runs code coverage analysis. |
 | Refactoring | Refactoring is often IDE-driven, but some tools exist: [`cargo-expand`][c~cargo-expand~docs]↗{{hi:cargo-expand}} expands [macros][p~macros], for example. |
 | [[versioning | Version Management]] | [`cargo-bump`][c~cargo-bump~docs]↗{{hi:cargo-bump}} helps to automate version updates in your Cargo.toml. |
 

@@ -32,7 +32,7 @@ ROS 1 was the original system, widely used in academia and industry. However, it
 
 - Rust in ROS:
 
-While ROS traditionally favored [Python][p~python] and C++, Rust is gradually gaining traction due to its strong memory safety, [concurrency][p~concurrency] features, and [performance][p~performance] benefits. Libraries like [`rosrust`]( )↗{{hi: }} and `r2r` bring ROS functionality to Rust, enabling developers to create safe and efficient robotics applications.
+While ROS traditionally favored [Python][p~python] and C++, Rust is gradually gaining traction due to its strong memory safety, [concurrency][p~concurrency] features, and [performance][p~performance] benefits. Libraries like [`rosrust`][c~rosrust~docs]↗{{hi:rosrust}} and `r2r` bring ROS functionality to Rust, enabling developers to create safe and efficient robotics applications.
 
 [`rosrust`][c~rosrust~docs]↗{{hi:rosrust}} provides a client library for interacting with ROS. `ros_control_rs` aims to provide Rust bindings for ROS Control.
 
