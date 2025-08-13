@@ -73,7 +73,7 @@ This section provides a few examples of software written in Rust, organized by t
 
 - Browsers:
   - Components of web browsers.
-  - Example: [`Mozilla Firefox`]( )↗{{hi: }} uses Rust in its `Servo` rendering engine.
+  - Example: [`Mozilla Firefox`][mozilla-firefox~website]{{hi:Firefox}} uses Rust in its `Servo` rendering engine.
 - Databases:
   - Database engines.
   - Database drivers.
@@ -127,7 +127,7 @@ This section provides a few examples of software written in Rust, organized by t
 - Observability:
   - [`openobserve`][openobserve~github]↗: petabyte scale Elasticsearch/Splunk/Datadog alternative for logs, metrics, traces, RUM, Error tracking, Session replay.
   - [`opentelemetry-rust`][opentelemetry-rust~github]↗: the Rust OpenTelemetry implementation.
-  - [`influxdb`]( )↗{{hi: }} [(GitHub)][influxdb~github]↗: a scalable datastore for metrics, events, and real-time analytics.
+  - [`influxdb`][influxdb~website]{{hi:influxdb}} [(GitHub)][influxdb~github]↗: a scalable datastore for metrics, events, and real-time analytics.
 
 {{#include development_tools.incl.md}}
 
@@ -151,11 +151,11 @@ This section provides a few examples of software written in Rust, organized by t
 - [RustDesk][rustdesk~website]↗.
 - [OxidOS Automotive][oxidos~website]↗.
 - [ripgrep][c~ripgrep~github]↗: `ripgrep` recursively searches directories for a regex pattern while respecting your gitignore.
-- [zola: A fast static site generator in a single binary with everything built-in. https://www.getzola.org][zola~github]↗.
+- [zola][zola~github]↗: A fast static site generator in a single binary with everything built-in.
 - [solana][c~solana~github]↗: Web-Scale Blockchain for fast, secure, scalable, decentralized apps and marketplaces.
 - [linkerd2][linkerd2~github]↗: Ultralight, security-first service mesh for Kubernetes. Main repo for Linkerd 2.x.
 - [bottlerocket][c~bottlerocket~github]↗: An operating system designed for hosting containers.
-- [`databend`: 𝗗𝗮𝘁𝗮, 𝗔𝗻𝗮𝗹𝘆𝘁𝗶𝗰𝘀 & 𝗔𝗜. Modern alternative to Snowflake. Cost-effective and simple for massive-scale analytics. https://databend.com][databend~github]↗.
+- [`databend`][databend~github]↗: 𝗗𝗮𝘁𝗮, 𝗔𝗻𝗮𝗹𝘆𝘁𝗶𝗰𝘀 & 𝗔𝗜. Modern alternative to Snowflake. Cost-effective and simple for massive-scale analytics.
 - [`rerun`][c~rerun~github]↗: Visualize streams of multimodal data. Free, fast, easy to use, and simple to integrate. Built in Rust.
 - [`tock`][tock~github]↗: A secure embedded operating system for microcontrollers.
 - [`mail-server`][mail-server~github]↗: Secure & Modern All-in-One Mail Server (IMAP, JMAP, POP3, SMTP).
@@ -179,7 +179,7 @@ This section provides a few examples of software written in Rust, organized by t
 - [navi](https://github.com/denisidoro/navi)↗: An interactive cheatsheet tool for the command-line.
 - [RustScan][rustscan~github]↗: The Modern Port Scanner.
 - [workers-rs][workers-rs~github]↗: Write Cloudflare Workers in 100% Rust via WebAssembly.
-- [Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdrant.io/][c~qdrant~github]↗.
+- [Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud][c~qdrant~github]↗.
 - [Hyperlight is a lightweight Virtual Machine Manager (VMM) designed to be embedded within applications. It enables safe execution of untrusted code within micro virtual machines with very low latency and minimal overhead.][c~hyperlight~github]↗.
 - [Perseus][perseus~website]↗.
 - [DORA (Dataflow-Oriented Robotic Architecture) is middleware designed to streamline and simplify the creation of AI-based robotic applications. It offers low latency, composable, and distributed dataflow capabilities. Applications are modeled as directed graphs, also referred to as pipelines.][dora~github]↗.

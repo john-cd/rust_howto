@@ -141,9 +141,7 @@ jobs:
 <div class="hidden">
 [mdbook: organize, expand NOW](https://github.com/john-cd/rust_howto/issues/299)
 
-- [mdslides][mdslides]↗.
-
-[mdslides]: https://github.com/ferrous-systems/mdslides
+- [mdslides][mdslides~github]↗.
 
 ## Test Code in Your `mdbook` {#termbook}
 

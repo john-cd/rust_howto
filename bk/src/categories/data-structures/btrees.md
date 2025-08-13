@@ -9,16 +9,15 @@
 `BTreeMap<K, V>` is a sorted map data structure, similar to `HashMap`, but its keys are always kept in sorted order. This allows for efficient range queries (e.g., retrieving all values within a specific key range) and ordered iteration. Iterating over a BTreeMap will always yield the key-value pairs in ascending order of the keys.
 
 This ordering is the main difference between [`BTreeMap`][c~std::collections::BTreeMap~docs]{{hi:std::collections::BTreeMap}} and the more common `HashMap`. `BTreeMap` is implemented as a B-tree, a self-balancing tree structure that guarantees logarithmic time complexity for most operations.
-[c~std::collections::BTreeMap~docs]: https://doc.rust-lang.org/std/collections/struct.BTreeMap.html
 
-- [`insert(key, value)`](https://doc.rust-lang.org/std/collections/struct.BTreeMap.html#method.insert)↗{{hi:std::collections::BTreeMap::insert}} inserts a new key-value pair. If the key already exists, the old value is replaced and returned.
-- [`get(key)`](https://doc.rust-lang.org/std/collections/struct.BTreeMap.html#method.get)↗{{hi:std::collections::BTreeMap::get}} returns a reference to the value associated with the given key, or `None` if the key is not present.
-- [`remove(key)`](https://doc.rust-lang.org/std/collections/struct.BTreeMap.html#method.remove)↗{{hi:std::collections::BTreeMap::remove}} removes the key-value pair associated with the given key. Returns the removed value, or None if the key was not present.
-- [`contains_key(key)`](https://doc.rust-lang.org/std/collections/struct.BTreeMap.html#method.contains_key)↗{{hi:std::collections::BTreeMap::contains_key}} returns true if the map contains the given key.
-- [`iter()`](https://doc.rust-lang.org/std/collections/struct.BTreeMap.html#method.iter)↗{{hi:std::collections::BTreeMap::iter}} returns an iterator over the key-value pairs in sorted order.
-- [`range(range)`](https://doc.rust-lang.org/std/collections/struct.BTreeMap.html#method.range)↗{{hi:std::collections::BTreeMap::range}} returns an iterator over a specified range of keys.
-- [`first_key_value()`](https://doc.rust-lang.org/std/collections/struct.BTreeMap.html#method.first_key_value)↗{{hi:std::collections::BTreeMap::first_key_value}} returns the smallest (first)↗ key-value pair.
-- [`last_key_value()`](https://doc.rust-lang.org/std/collections/struct.BTreeMap.html#method.last_key_value)↗{{hi:std::collections::BTreeMap::last_key_value}} returns the largest (last) key-value pair.
+- `insert(key, value)`{{hi:std::collections::BTreeMap::insert}} inserts a new key-value pair. If the key already exists, the old value is replaced and returned.
+- `get(key)`{{hi:std::collections::BTreeMap::get}} returns a reference to the value associated with the given key, or `None` if the key is not present.
+- `remove(key)`{{hi:std::collections::BTreeMap::remove}} removes the key-value pair associated with the given key. Returns the removed value, or None if the key was not present.
+- `contains_key(key)`{{hi:std::collections::BTreeMap::contains_key}} returns true if the map contains the given key.
+- `iter()`{{hi:std::collections::BTreeMap::iter}} returns an iterator over the key-value pairs in sorted order.
+- `range(range)`{{hi:std::collections::BTreeMap::range}} returns an iterator over a specified range of keys.
+- `first_key_value()`{{hi:std::collections::BTreeMap::first_key_value}} returns the smallest (first) key-value pair.
+- `last_key_value()`{{hi:std::collections::BTreeMap::last_key_value}} returns the largest (last) key-value pair.
 
 ```rust,editable
 {{#include ../../../crates/cats/data_structures/examples/btrees/btreemap.rs:example}}

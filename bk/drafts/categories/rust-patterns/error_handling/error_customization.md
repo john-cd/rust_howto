@@ -34,7 +34,7 @@ You can use [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} to:
 {{#include ../../../../crates/cats/rust_patterns/examples/error/thiserror.rs:example}}
 ```
 
-The [`#[error(...)]`]( )↗{{hi: }} messages support a shorthand for interpolating fields from the error.
+The [`#[error(...)]`][c~thiserror~docs]↗ messages support a shorthand for interpolating fields from the error.
 
 ```rust,editable,compile_fail,noplayground
 #[error("{var}")]  //⟶ write!("{}", self.var)

@@ -17,7 +17,6 @@ A cryptographic signature, or digital signature, is a mathematical scheme used t
 The [`ed25519`][c~ed25519~docs]↗{{hi:ed25519}} crate is a support library for Edwards Digital Signature Algorithm (EdDSA) over Curve25519 (as specified in RFC 8032), providing signature type definitions and PKCS#8 private key decoding/encoding support.
 
 It doesn't contain an implementation of Ed25519, but instead contains an [`ed25519::Signature`][c~ed25519::Signature~docs]{{hi:ed25519::Signature}} type which other [crates][p~crates] can use in conjunction with the signature::Signer and signature::Verifier [traits][p~traits].
-[c~ed25519::Signature~docs]: https://docs.rs/ed25519/latest/ed25519/struct.Signature.html
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/examples/sign/ed25519.rs:example}}
@@ -33,7 +32,7 @@ A key pair, consisting of a private key and a public key, is generated. The priv
 To sign a message, a hash of the message is created. This hash is then signed using the private key, producing the digital signature.
 The recipient uses the sender's public key to verify the signature. If the signature is valid, it confirms that the message is authentic and has not been altered.
 
-[`ed25519-dalek`][c~ed25519-dalek~docs]↗{{hi:ed25519-dalek}} is compatible with `#![no_std]` environments, making it suitable for [embedded][p~embedded] systems or situations where the standard library is not available.
+[`ed25519-dalek`][c~ed25519-dalek~docs]↗{{hi:ed25519-dalek}} is compatible with [`#![no_std]`][book~rust-reference~no_std] environments, making it suitable for [embedded][p~embedded] systems or situations where the standard library is not available.
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/examples/sign/ed25519_dalek.rs:example}}

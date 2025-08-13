@@ -62,7 +62,7 @@ Numerical integration, differentiation, and root-finding.
 
 Linear, nonlinear, and integer programming. Convex analysis. Game theory and decision-making models.
 
-- [`argmin`](https://docs.rs/argmin/latest/argmin)↗{{hi:argmin}}: A pure Rust optimization library.
+- [`argmin`][c~argmin~docs]↗{{hi:argmin}} is a pure Rust optimization library.
 
 ## Differential Equations
 
@@ -79,7 +79,7 @@ Graphs, networks, and shortest paths.
 
 Combinatorics, set theory, and logic.
 
-- [`bit-set`](https://docs.rs/bit-set/latest/bit_set)↗{{hi:bit-set}} (bit manipulation), [`regex`][c~regex~docs]↗{{hi:regex}} (pattern matching).
+- [`bit-set`][c~bit-set~docs]↗{{hi:bit-set}} (bit manipulation), [`regex`][c~regex~docs]↗{{hi:regex}} (pattern matching).
 
 ## Units of Measurement
 

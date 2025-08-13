@@ -11,7 +11,6 @@
 
 - [`cpython`][c~cpython~docs]↗{{hi:cpython}} provides direct bindings to the CPython interpreter. Lower-level, but very powerful.
 - [`pyo3`][c~pyo3~docs]↗{{hi:pyo3}} is higher-level and easier to use than [`cpython`][c~cpython~docs]↗{{hi:cpython}} for many use cases.
-- [`rust-python`]( )↗{{hi: }} is another option for Python bindings.
 
 ## Interop with Python with `pyo3` {#pyo3}
 
@@ -49,7 +48,7 @@ If you're working with numerical data, integrating with [`numpy`][c~numpy~docs]�
 ## Build Tools {#skip}
 
 - [`maturin`][c~maturin~docs]↗{{hi:maturin}} is a popular tool for building and distributing Python packages that include Rust extensions. It handles the complexities of compilation and linking.
-- [`setuptools-rust`]( )↗{{hi: }} is another option for integrating Rust builds into Python's setuptools.
+- [`setuptools-rust`][pypi~setuptools-rust]{{hi:setuptools-rust}} is another option for integrating Rust builds into Python's setuptools.
 
 See [[development-tools_build-utils | Build Utils]] and [[code_build | Code Build]].
 

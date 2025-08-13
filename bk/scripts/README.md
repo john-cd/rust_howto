@@ -18,6 +18,6 @@ Type `just <module_name>` to display available commands for a given module.
 - `urls`: URLs to external websites.
 - `utils`: utilities.
 
-[bash~website]: https://www.gnu.org/software/bash
-[docker~website]: https://www.docker.com
+[bash~website]: https://gnu.org/software/bash
+[docker~website]: https://docker.com
 [just~website]: https://just.systems/man/en

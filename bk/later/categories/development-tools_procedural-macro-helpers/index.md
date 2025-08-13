@@ -2,7 +2,7 @@
 
 [![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
 
-The term 'macro' [(book)][book~macro]↗ refers to a family of features in Rust: declarative macros (also known as "macros by example") and three kinds of _procedural macros_, the focus of this section:
+The term 'macro' [(book)][book~rust~macros]↗ refers to a family of features in Rust: declarative macros (also known as "macros by example") and three kinds of _procedural macros_, the focus of this section:
 
 - Custom #[derive] macros, used on structs and enums, which specify code to be added.
 - Attribute-like macros that define custom attributes usable on any item.
@@ -20,7 +20,6 @@ The term 'macro' [(book)][book~macro]↗ refers to a family of features in Rust:
 
 {{#include compile_macros.incl.md}}
 
-[book~macro]: https://doc.rust-lang.org/book/ch19-06-macros.html
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

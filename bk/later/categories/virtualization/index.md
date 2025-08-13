@@ -14,7 +14,7 @@ See [[containerization | Containerization]].
 
 - `Firecracker`: A lightweight VMM designed for running microVMs.
 - `CrosVM`: A VMM for Chrome OS, focusing on security and simplicity.
-- Cloud Hypervisor: [`cloud-hypervisor`]( )↗{{hi: }} is a VMM specifically designed for cloud workloads.
+- Cloud Hypervisor: [`cloud-hypervisor`][cloud-hypervisor~website]{{hi:cloud-hypervisor}} is a VMM specifically designed for cloud workloads.
 
 ## Virtualization Frameworks
 
@@ -91,23 +91,29 @@ Working with virtual disk image formats (e.g., qcow2, vmdk) often involves using
 
 cover:
 
-https://github.com/rust-vmm/community
-https://github.com/rust-vmm/vmm-sys-util
-https://github.com/rust-vmm/kvm
-https://crates.io/crates/kvm-bindings
-https://github.com/rust-vmm/kvm/tree/main/kvm-ioctls
+- [rust-vmm community content][rust-vmm~community~github].
 
-https://github.com/firecracker-microvm/firecracker
-https://firecracker-microvm.github.io
-https://lib.rs/gh/firecracker-microvm/firecracker/jailer
+- [vmm-sys-util][rust-vmm~vmm-sys-util~github]: Helpers and utilities used by multiple rust-vmm components and VMMs.
 
-https://github.com/google/crosvm
+- [rust-vmm~kvm~github][rust-vmm~kvm~github]: The kvm workspace hosts libraries related to Rust bindings to the Kernel Virtual Machine (KVM). It currently consists of the following crates:
 
-https://github.com/hyperlight-dev/hyperlight
+kvm-bindings -> Rust FFI bindings to KVM
+kvm-ioctls -> Safe wrappers over the KVM API
 
-https://en.wikipedia.org/wiki/QEMU
+- [kvm-bindings][kvm-bindings~crates.io]: Rust FFI bindings to KVM generated using bindgen.
 
-Mention https://crates.io/crates/polkavm (in Emulators) (smart contracts)
+- [firecracker~github][firecracker~github].
+- [firecracker-microvm~website][firecracker-microvm~website].
+- [jailer][jailer~lib.rs].
 
-Mention [`virt`]( )↗{{hi: }} / `libvirt` C lib?
+- [Google crosvm][crosvm~github].
+
+- [hyperlight (GitHub)][hyperlight~github].
+
+- [QEMU][wikipedia~QEMU].
+
+Mention [`polkavm`][c~polkavm~crates.io]{{hi:polkavm}} (in Emulators) (smart contracts)
+
+Mention [`virt`][c~virt~docs]{{hi:virt}} / `libvirt` C lib?
+
 </div>

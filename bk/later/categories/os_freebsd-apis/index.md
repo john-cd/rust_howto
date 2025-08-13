@@ -11,7 +11,7 @@ Most standard Rust code that runs on other Unix-like systems (Linux, macOS) will
 - File System: The standard library's [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}} and [`std::path`][c~std::path~docs]↗{{hi:std::path}} modules work well on FreeBSD.
 - Networking: The standard library's [`std::net`][c~std::net~docs]↗{{hi:std::net}} and crates like [`tokio`][c~tokio~docs]↗{{hi:tokio}} are compatible with FreeBSD.
 - Processes and Threads: The standard library's [`std::process`][c~std::process~docs]↗{{hi:std::process}} and [`std::thread`][c~std::thread~docs]↗{{hi:std::thread}} work on FreeBSD.
-- [`std::os::unix`]( )↗{{hi: }} provides access to many common Unix system calls. A large portion of these will work on FreeBSD.
+- [`std::os::unix`][c~std::os::unix~docs]{{hi:std::os::unix}} provides access to many common Unix system calls. A large portion of these will work on FreeBSD.
 
 ## FreeBSD-Specific System Calls or Features
 

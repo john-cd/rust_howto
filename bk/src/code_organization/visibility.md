@@ -8,21 +8,21 @@
 
 In Rust, all items (modules, [functions][p~functions], methods, [structs][p~structs], [enums][p~enums], constants...) are _private by default_.
 
-Use the [`pub`]( )↗{{hi: }} keyword before an item's definition to make it public:
+Use the [`pub`][keyword~pub]{{hi:pub}} keyword before an item's definition to make it public:
 
 ```rust,editable
 {{#include ../../crates/code_organization/examples/visibility/pub_keyword.rs:example}}
 ```
 
-There are two exceptions to the "privacy by default" rule: Enum variants in a [`pub enum`]( )↗{{hi: }} are public by default. Associated items (incl. functions and methods) in a `pub` [[trait]] are also public by default.
+There are two exceptions to the "privacy by default" rule: Enum variants in a [`pub enum`][keyword~enum]{{hi:pub enum}} are public by default. Associated items (incl. functions and methods) in a `pub` [[trait]] are also public by default.
 
-Also note that, if we use [`pub`]( )↗{{hi: }} before a struct definition, we make the struct public, but the fields of the struct will still be private. Mark relevant fields with `pub`:
+Also note that, if we use [`pub`][keyword~pub]{{hi:pub}} before a struct definition, we make the struct public, but the fields of the struct will still be private. Mark relevant fields with `pub`:
 
 ```rust,editable
 {{#include ../../crates/code_organization/examples/visibility/public_by_default.rs:example}}
 ```
 
-As discussed below, the scope where an item is visible can be specified after the [`pub`]( )↗{{hi: }} keyword: `pub(crate)↗`, `pub(super)↗`, `pub(in` _path_`)↗`...
+As discussed below, the scope where an item is visible can be specified after the [`pub`][keyword~pub]{{hi:pub}} keyword: `pub(crate)↗`, `pub(super)↗`, `pub(in` _path_`)↗`...
 
 ## Make your Code Items Accessible (Visibility Rules) {#visibility-rules}
 
@@ -46,11 +46,11 @@ In other words,
 {{#include ../../crates/code_organization/examples/visibility/public_access.rs:example}}
 ```
 
-More precisely, _an item is accessible if all segments in its path are accessible_. That means that all enclosing modules traversed in the "parent to child" direction must be [`pub`]( )↗{{hi: }} with the appropriate visibility scope (see below), or, if an enclosing module is not, there must be a suitable reexport - see the `pub use` section of the[[use_keyword | `use` Keyword]] chapter for more details.
+More precisely, _an item is accessible if all segments in its path are accessible_. That means that all enclosing modules traversed in the "parent to child" direction must be [`pub`][keyword~pub]{{hi:pub}} with the appropriate visibility scope (see below), or, if an enclosing module is not, there must be a suitable reexport - see the `pub use` section of the[[use_keyword | `use` Keyword]] chapter for more details.
 
 ### Make your Code Items Visible to your Library's Clients {#visible-to-library-clients}
 
-A library developer needs to expose functionality to crates which link against their library. Anything which is usable externally must be [`pub`]( )↗{{hi: }} from the crate root down to the destination item. Any private item in the chain will disallow external accesses.
+A library developer needs to expose functionality to crates which link against their library. Anything which is usable externally must be [`pub`][keyword~pub]{{hi:pub}} from the crate root down to the destination item. Any private item in the chain will disallow external accesses.
 
 In particular, that means marking the relevant modules in the crate root (e.g. `lib.rs`) as `pub`.
 
@@ -62,9 +62,9 @@ In particular, that means marking the relevant modules in the crate root (e.g. `
 
 You can declare an item (type, function, module...) as visible only within a given scope by prefixing it with `pub(crate)`, `pub(super)` or `pub(in` _path_`)` rather than just `pub`:
 
-- [`pub(crate)`]( )↗{{hi: }} makes an item visible within the current crate only.
-- [`pub(super)`]( )↗{{hi: }} makes an item visible to the parent module only.
-- [`pub(in`]( )↗{{hi: }} _path_`)` makes an item visible within the provided _path_, which must start with `crate`, `self`, or `super` and resolves to an ancestor module of the item whose visibility is being declared. This form is seen infrequently.
+- `pub(crate)` makes an item visible within the current crate only.
+- `pub(super)` makes an item visible to the parent module only.
+- `pub(in _path_)` makes an item visible within the provided _path_, which must start with `crate`, `self`, or `super` and resolves to an ancestor module of the item whose visibility is being declared. This form is seen infrequently.
 
 The following demonstrates this syntax:
 
@@ -72,7 +72,7 @@ The following demonstrates this syntax:
 {{#include ../../crates/code_organization/examples/visibility/visibility_scope.rs:example}}
 ```
 
-When writing a library or in contexts where the public API must remain stable, [`pub(crate)`]( )↗{{hi: }} and related forms are safer to use than `pub` alone, in the sense they are a safeguard against accidentally making an item fully public to external crates linking the library.
+When writing a library or in contexts where the public API must remain stable, `pub(crate)` and related forms are safer to use than `pub` alone, in the sense they are a safeguard against accidentally making an item fully public to external crates linking the library.
 
 ```rust,editable
 {{#include ../../crates/code_organization/examples/visibility/visibility_pub_crate.rs:example}}

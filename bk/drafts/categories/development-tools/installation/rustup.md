@@ -56,17 +56,11 @@ Rustup is used to install and manage Rust toolchains. Toolchains are complete in
 | Command | Description |
 |---|---|
 | [`rustup show`][book~rustup~examples]{{hi:rustup show}} | Show currently installed & active toolchains. |
-[book~rustup]: https://rust-lang.github.io/rustup
-[book~rustup~examples]: https://rust-lang.github.io/rustup/examples.html
 | [`rustup update`][book~rustup~basics]{{hi:rustup update}} | Update all toolchains. |
-[book~rustup~basics]: https://rust-lang.github.io/rustup/basics.html
 | [`rustup default TOOLCHAIN`][book~rustup~toolchains]{{hi:rustup default TOOLCHAIN}} | Set the default toolchain. |
-[book~rustup~toolchains]: https://rust-lang.github.io/rustup/concepts/toolchains.html
 | [`rustup component list`][book~rustup~components]{{hi:rustup component list}} | List available components. |
-[book~rustup~components]: https://rust-lang.github.io/rustup/concepts/components.html
 | [`rustup component add NAME`][book~rustup~components]{{hi:rustup component add NAME}} | Add a component (e.g., clippy, rustfmt)↗. |
 | [`rustup target list`][book~rustup~cross-compilation]{{hi:rustup target list}} | List available compilation targets. |
-[book~rustup~cross-compilation]: https://rust-lang.github.io/rustup/cross-compilation.html
 | [`rustup target add NAME`][book~rustup~cross-compilation]{{hi:rustup target add NAME}} | Add a compilation target. |
 
 </div>

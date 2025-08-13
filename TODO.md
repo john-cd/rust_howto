@@ -197,6 +197,7 @@ Writes are fast when writing to container FS, volume, but slow on bind mount (to
 `/usr/local/cargo` is small enough to fit in memory (16GB max).
 
 [how-to-use-tmpfs-and-its-functions-in-docker][how-to-use-tmpfs-and-its-functions-in-docker]
+
 [how-to-use-tmpfs-and-its-functions-in-docker]: https://linuxhaxor.net/code/how-to-use-tmpfs-and-its-functions-in-docker.html
 
 ### Make gha caching work on CI

@@ -45,7 +45,6 @@ serde_json = "1.0.138"
 ```
 
 - Run the following commands in your terminal to create a [`.env`][.env-files]↗{{hi:.env}} file with the [database][p~database] [URL][p~url]: set up your schema.rs file and migrations.
-[.env-files]: https://medium.com/@michaeldipasquale313/using-env-files-what-they-are-and-when-to-use-them-4f4812c5732f
 
 ```bash
 echo DATABASE_URL=sqlite::memory: > .env

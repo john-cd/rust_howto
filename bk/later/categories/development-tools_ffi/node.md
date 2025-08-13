@@ -44,9 +44,9 @@ serde_json: (If you're exchanging [JSON][p~json] data.)
 
 ## Build Tools {#skip}
 
-[`cargo`][c~cargo~docs]↗{{hi:cargo}} for building the Rust library.
-`npm` or `yarn` for managing the Node.js side and integrating with the Rust addon.)
-`node-gyp` often used for building native Node.js addons, but [`neon`][c~neon~docs]↗{{hi:neon}} simplifies this process.)
+- Use [`cargo`][c~cargo~docs]↗{{hi:cargo}} for building the Rust library.
+- Use `npm` or `yarn` for managing the Node.js side and integrating with the Rust addon.
+- `node-gyp` is often used for building native 'Node.js' addons, but [`neon`][c~neon~docs]↗{{hi:neon}} simplifies this process.
 
 ## Key Concepts and Workflow {#skip}
 

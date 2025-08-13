@@ -5,7 +5,7 @@
 Rust's dependency management is handled by [`Cargo`][c~cargo~docs]↗{{hi:Cargo}}, its built-in package manager.
 
 - [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}, located at the root of a Rust project, is the manifest file that defines the project's metadata and dependencies.
-The [`[dependencies]`]( )↗{{hi: }} section within `Cargo.toml` is where you specify the external crates (libraries)↗ your project relies on.
+The `[dependencies]` section within `Cargo.toml` is where you specify the external crates (libraries)↗ your project relies on.
 - [`Cargo.lock`][c~cargo~cargo.lock]↗{{hi:Cargo.lock}} records the exact versions of all dependencies used in a project. It ensures that builds are reproducible, even if new versions of dependencies are released.
 - [Cargo][p~cargo] automates the process of downloading from [`crates.io`][crates.io~website]↗{{hi:crates.io}}, building, and linking dependencies. It resolves dependency versions, ensuring compatibility and preventing conflicts.
 
@@ -62,8 +62,8 @@ cargo machete
 
 [`cargo-outdated`][c~cargo-outdated~docs]↗{{hi:cargo-outdated}} is a [`cargo`][c~cargo~docs]↗{{hi:cargo}} subcommand for displaying when dependencies are out of date.
 
-If you are using VS Code, also look into the [`Dependi`][dependi~vscode~website]↗{{hi:Dependi}} VS Code plugin.
-[dependi~vscode~website]: https://marketplace.visualstudio.com/items?itemName=fill-labs.dependi
+If you are using VS Code, also look into the [`Dependi`][vscode~dependi~website]↗{{hi:Dependi}} VS Code plugin.
+If you are using VS Code, also look into the [`Dependi`][vscode~dependi~website]↗{{hi:Dependi}} VS Code plugin.
 
 ## `deps.rs` {#deps-rs}
 

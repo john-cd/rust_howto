@@ -33,5 +33,4 @@ Utilities for build scripts and other build time steps.
 <div class="hidden">
 [development-tools_build-utils/index: add](https://github.com/john-cd/rust_howto/issues/306)
 
-[book~cargo~cargo-bench]: https://doc.rust-lang.org/cargo/commands/cargo-bench.html
 </div>

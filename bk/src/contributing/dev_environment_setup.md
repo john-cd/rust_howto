@@ -31,7 +31,7 @@ rustup toolchain install nightly
 rustup component add rustfmt --toolchain nightly
 ```
 
-You may need [`sudo apt-get install libsqlite3-dev`]( )↗{{hi: }} on WSL.
+You may need `sudo apt-get install libsqlite3-dev` on WSL.
 
 Review `.devcontainer/Dockerfile` for other dependencies.
 

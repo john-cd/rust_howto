@@ -25,7 +25,7 @@
   - [No Boilerplate][youtube~@NoBoilerplate]↗.
   - [Rust Nation UK (conference)][youtube~@rustnationuk]↗.
   - [Ryan Levick's Channel][youtube~@RyanLevicksVideos]↗.
-- [`intorust.com`](http://intorust.com)↗ screencasts.
+- [`intorust.com`][intorust~website]↗ screencasts.
 
 ## Rust Podcasts {#podcasts}
 
@@ -34,7 +34,6 @@
 - [Rust in Production][podcast~corrode.dev]↗.
 - [Rust Review][podcast~rust-review]↗.
 - [RustShip][podcast~rustship]↗.
-[podcast~rustship]: https://creators.spotify.com/pod/profile/marco-ieni
 - [The Rust Workshop Podcast][podcast~the-rust-workshop-podcast]↗.
 
 ### Older Podcasts {#older-podcasts}

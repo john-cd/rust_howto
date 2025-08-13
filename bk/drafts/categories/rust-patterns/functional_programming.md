@@ -68,7 +68,6 @@ Note that [`Either`][c~either~docs]↗{{hi:Either}} is general purpose. For desc
 [![frunk][c~frunk~docs~badge]][c~frunk~docs] [![frunk~crates.io][c~frunk~crates.io~badge]][c~frunk~crates.io] [![frunk~github][c~frunk~github~badge]][c~frunk~github] [![frunk~lib.rs][c~frunk~lib.rs~badge]][c~frunk~lib.rs]{{hi:frunk}}{{hi:Monoid}}{{hi:Generic}}{{hi:HList}}{{hi:Validated}}{{hi:frunk}}
 
 Frunk is a functional programming toolbelt for Rust. It provides developers with a number of functional programming data structures and type-level programming tools like [`HList`][c~frunk::hlist::HList~docs]{{hi:HList}} (heterogeneous lists)↗, `Coproduct`, `Generic`, `LabelledGeneric`, `Validated`, `Monoid`, `Semigroup` and friends. It is useful for complex data transformations and metaprogramming.
-[c~frunk::hlist::HList~docs]: https://docs.rs/frunk/latest/frunk/hlist/trait.HList.html
 
 ```rust,editable
 {{#include ../../../crates/cats/rust_patterns/examples/functional_programming/frunk.rs:example}}
@@ -78,10 +77,13 @@ Frunk is a functional programming toolbelt for Rust. It provides developers with
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[functional_programming: organize / align intro and sections / add examples NOW](https://github.com/john-cd/rust_howto/issues/467)
-review https://geo-ant.github.io/blog/2023/rust-type-level-programming
-https://nota-lang.org/examples/blog-post/standalone
-review https://crates.io/crates/tap
+[functional_programming: organize / align intro and sections / add examples](https://github.com/john-cd/rust_howto/issues/467)
+review
+- [rust-type-level-programming][blog~rust-type-level-programming]↗.
+- [Type-Level Programming in Rust][blog~type-level-programming-in-rust]↗.
+
+review [tap][c~tap~crates.io]↗.
+
 ADD Working with Iterators: Creating custom iterators, using iterator adapters, and understanding iterator traits. Here or in `std` lib?
 
 - [Type-level Programming in Rust][blog~willcrichton-type-level-programming]↗.

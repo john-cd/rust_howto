@@ -43,7 +43,6 @@ You may also consult the lists of [Medium blogs tagged with 'Rust'][blog~medium~
 | The [Embedded Rustacean][blog~theembeddedrustacean]↗ | Tutorial-style articles on embedded Rust. |
 | [`fasterthanli.me`][fasterthanli.me~website]↗ | In-depth articles on Rust, networking, and systems programming. |
 | [`faultlore.com`][faultlore~website]↗ | Posts on systems programming and Rust. |
-[faultlore~website]: https://faultlore.com/blah
 | Llogiq's [blog][blog~llogiq]↗ | Rust and Clippy. |
 | [`lord.io`][lord.io~website]↗ | Articles on Rust, game development, and more. |
 | [Mara Bos's blog][blog~m-ou.se]↗ | Thoughts and articles from a core Rust library team member. |
@@ -55,21 +54,18 @@ You may also consult the lists of [Medium blogs tagged with 'Rust'][blog~medium~
 | [Raph Levien's blog][blog~raphlinus]↗ | Insights on Rust, GUIs, and high-performance code. |
 | [Rust magazine][rustmagazine~website]↗ | A monthly magazine for the Rust community. |
 | Sam Sartor's blog: [`samsartor.com`][samsartor~website]↗ | Posts on Rust, Nix, and software development. |
-| Sean McArthur's blog: [`seanmonstar.com`][seanmonstar~website]↗ | Focused on [`hyper`][c~hyper~website]↗{{hi:hyper}}, [`tokio`](https://tokio.rs)↗{{hi:tokio}}, and web development in Rust. |
+| Sean McArthur's blog: [`seanmonstar.com`][seanmonstar~website]↗ | Focused on [`hyper`][c~hyper~website]↗{{hi:hyper}}, [`tokio`][`seanmonstar.com`][seanmonstar~website]↗ | Focused on [`hyper`][c~hyper~website]↗{{hi:hyper}}, [`tokio`][c~tokio~website]↗{{hi:tokio}}, and web development in Rust. |
 | [`readrust.net`][readrust.net~website]↗ | Interesting posts related to the Rust programming language. |
 | [`rust-osdev.com`][rust-osdev~website]↗ | Monthly news on OS and bootloader development in Rust. |
 | [Rust Trends][rust-trends~website]↗ | Biweekly newsletter on all things Rust. |
-| [`smallcultfollowing.com/babysteps`][smallcultfollowing.com~website]↗ | General thoughts about Rust by Niko Matsakis. |
-[smallcultfollowing.com~website]: https://smallcultfollowing.com/babysteps
+| [`smallcultfollowing.com/babysteps`][smallcultfollowing~website]↗ | General thoughts about Rust by Niko Matsakis. |
 | Steve Klabnik's [blog][steveklabnik~website]↗ | Rust, Ruby on Rails. |
 | [Sylvain Kerkour's website][kerkour~website]↗ | Black Hat Rust. |
 | [`tavianator.com`][tavianator~website]↗ | Technical articles on performance and low-level programming. |
-| Tedinski's archive: [`www.tedinski.com/archive`][tedinski~website]↗ | An archive of posts on various programming topics. |
-[tedinski~website]: https://www.tedinski.com/archive
+| Tedinski's archive: [`tedinski.com/archive`][tedinski~website]↗ | An archive of posts on various programming topics. |
 | Writing an OS in Rust: [`os.phil-opp.com`][blog~writing-an-OS-in-rust]↗ | A classic blog series on building a basic OS in Rust. |
 
 You may also consult [this list][forum~fearless-rust-bloggers]↗ (somewhat outdated).
-[forum~fearless-rust-bloggers]: https://users.rust-lang.org/t/fearless-rust-bloggers/16770
 
 ### Project & Organization Blogs {#project-blogs}
 

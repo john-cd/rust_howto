@@ -130,7 +130,7 @@ There are two main types of macros in Rust:
 
 Macros-by-example are expanded at compile-time, meaning they incur no runtime performance cost, and their output is checked syntactically and type-checked.
 
-- _Procedural Macros_ are more advanced and allow you to operate on one or more [`TokenStream`](https://doc.rust-lang.org/proc_macro/struct.TokenStream.html)↗ (representing the source code). They are compiled before the main program and can perform more complex code generation. They come in three flavors:
+- _Procedural Macros_ are more advanced and allow you to operate on one or more [`TokenStream`][c~proc_macro::TokenStream~docs]↗ (representing the source code). They are compiled before the main program and can perform more complex code generation. They come in three flavors:
   - Custom [derive macros][book~rust-reference~derive]↗ (e.g., `#[derive(MyTrait)]`) automatically generate trait implementations for structs and enums.
   - Attribute-like macros (outer attribute `#[route(GET, "/")]`, where `route` is a custom name; or inner attribute `#![foo="bar"]`) modify the behavior of items (e.g., functions or modules) they are applied to.
   - Function-like procedural macros (`my_proc_macro!(...)`) have the same call syntax as macros-by-example.
@@ -249,7 +249,7 @@ The following example demonstrates how to create a simple configuration DSL:
 
 The caveat of DSLs, of course, is that an unfamiliar syntax embedded within Rust code may be confusing to the reader.
 
-To parse Rust-like syntax, refer to the [relevant section](https://lukaswirth.dev/tlborm/decl-macros/building-blocks/parsing.html)↗ of the little book of macros or use the [`syn`](https://docs.rs/syn/latest/syn)↗ crate.
+To parse Rust-like syntax, refer to the [relevant section][book~the-little-book-of-macros~parsing-rust]↗ of the little book of macros or use the [`syn`][c~syn~docs]↗ crate.
 
 ### Write Procedural Macros {#procedural-macros}
 
@@ -272,13 +272,13 @@ Note the following before writing procedural macros:
   ```
 
 - Procedural macros must be defined in the root of that crate (in `lib.rs`).
-- You will always use types from the [`proc_macro`](https://doc.rust-lang.org/proc_macro)↗ crate (provided by the compiler) to interact with token streams [(Rust reference)][book~rust-reference~procedural-macros-macro.proc.proc_macro]↗.
-  - All procedural macros take one or two [`proc_macro::TokenStream`](https://doc.rust-lang.org/proc_macro/struct.TokenStream.html)↗ as input and return a `proc_macro::TokenStream`.
-  - A token stream is roughly equivalent to `Vec<TokenTree>` where a [`TokenTree`](https://doc.rust-lang.org/proc_macro/enum.TokenTree.html)↗ can roughly be thought of as a lexical token or a group of tokens within `()`, `[]`, or `{}` delimiters. For example `foo` is an `Ident` token, `.` is a `Punct` token, and `1.2` is a `Literal` token [(Rust reference)][book~rust-reference~procedural-macros-macro.proc.token]↗.
+- You will always use types from the [`proc_macro`][c~proc_macro~docs]↗ crate (provided by the compiler) to interact with token streams [(Rust reference)][book~rust-reference~procedural-macros-macro.proc.proc_macro]↗.
+  - All procedural macros take one or two [`proc_macro::TokenStream`][c~proc_macro::TokenStream~docs]↗ as input and return a `proc_macro::TokenStream`.
+  - A token stream is roughly equivalent to `Vec<TokenTree>` where a [`TokenTree`][c~proc_macro::TokenTree~docs]↗ can roughly be thought of as a lexical token or a group of tokens within `()`, `[]`, or `{}` delimiters. For example `foo` is an `Ident` token, `.` is a `Punct` token, and `1.2` is a `Literal` token [(Rust reference)][book~rust-reference~procedural-macros-macro.proc.token]↗.
 
 While you could manually parse and generate token streams, it is highly recommended to use helper crates (found on [`crates.io`][crates.io~website]↗):
 
-- [`syn`][c~syn~crates.io]↗ is a parser for Rust syntax. It allows you to parse a `proc_macro::TokenStream` into an Abstract Syntax Tree (AST) that's easy to work with (e.g., [`syn::ItemStruct`](https://docs.rs/syn/2.0.104/syn/struct.ItemStruct.html)↗, [`syn::FnArg`](https://docs.rs/syn/latest/syn/enum.FnArg.html)↗).
+- [`syn`][c~syn~crates.io]↗ is a parser for Rust syntax. It allows you to parse a `proc_macro::TokenStream` into an Abstract Syntax Tree (AST) that's easy to work with (e.g., [`syn::ItemStruct`][c~syn::ItemStruct~docs]↗, [`syn::FnArg`][c~syn::FnArg~docs]↗).
 - `quote` is a quasi-quoting library that makes it easy to generate Rust code from the parsed AST. It allows you to write Rust code directly and "splice in" variables.
 
 Procedural macros are "unhygienic." They behave as if the output token stream was simply written inline to the code it's next to. This means that they are affected by external items and also affects external imports. Use full absolute paths to items in libraries (for example, `::std::option::Option` instead of `Option`) and make sure that generated functions have names that are unlikely to clash with other functions (like `__internal_foo` instead of `foo`) [(Rust reference)][book~rust-reference~procedural-macros-macro.proc.hygiene]↗.
@@ -381,7 +381,7 @@ Watch out for the following common macro pitfalls:
 
 Macros have two ways of reporting errors. The first is to `panic!`. The second is to invoke the `compile_error!` macro.
 
-When something goes wrong inside a macro, the compiler often points to the macro invocation site, not the actual problem. Using the [`compile_error!`](https://doc.rust-lang.org/core/macro.compile_error.html)↗ macro provides clearer diagnostics:
+When something goes wrong inside a macro, the compiler often points to the macro invocation site, not the actual problem. Using the [`compile_error!`][c~core::compile_error~docs]↗ macro provides clearer diagnostics:
 
 ```rust,editable
 macro_rules! must_be_an_identifier {
@@ -403,7 +403,7 @@ fn main() {
 }
 ```
 
-Debugging macros can be challenging. To see what a macro expands to and debug it, use the [`cargo-expand`][c~cargo-expand~crates.io]↗ cargo plugin. See also the [debugging](https://lukaswirth.dev/tlborm/decl-macros/minutiae/debugging.html)↗ section of the little book of macros for more suggestions.
+Debugging macros can be challenging. To see what a macro expands to and debug it, use the [`cargo-expand`][c~cargo-expand~crates.io]↗ cargo plugin. See also the [debugging][book~the-little-book-of-rust-macros~debugging]↗ section of the little book of macros for more suggestions.
 
 ## References {#references}
 

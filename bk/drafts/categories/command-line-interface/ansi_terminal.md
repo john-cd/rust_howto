@@ -48,7 +48,6 @@ It supports all [UNIX][p~unix] and [Windows][p~windows] terminals down to [Windo
 
 - Full control over writing and flushing output buffer.
 - [`is_tty`][c~crossterm::tty::IsTty~docs]↗{{hi:crossterm::tty::IsTty::is_tty}} function.
-[c~crossterm::tty::IsTty~docs]: https://docs.rs/crossterm/latest/crossterm/tty/trait.IsTty.html#tymethod.is_tty
 - Cursor manipulation.
 - Styled output.
 - Terminal handling.

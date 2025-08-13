@@ -33,7 +33,6 @@ The default panic strategy (unwind) includes unwinding information, which increa
 ## Strip Symbols {#skip}
 
 Stripping debug symbols from the final binary using compiler flags like [`-C strip=debuginfo`][book~cargo~profiles-strip]{{hi:strip}} significantly reduces binary size. This is essential for release builds.
-[book~cargo~profiles-strip]: https://doc.rust-lang.org/cargo/reference/profiles.html#strip
 
 ## Minimize Dependencies {#skip}
 

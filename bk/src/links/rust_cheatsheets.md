@@ -8,12 +8,12 @@
 - [Rust for professionals][rust-for-professionals~website]↗.
 - [Rust Cheatsheet (cheatsheets.one)][cheatsheets.one-rust~website]↗.
 - [Rust Cheatsheet (phaiax)][rust-cheatsheet~website]↗.
-- [Rust Cheatsheet (programming-idioms.org)](https://www.programming-idioms.org/cheatsheet/Rust)↗.
+- [Rust Cheatsheet (programming-idioms.org)][programming-idioms~cheatsheet]↗.
+
 - [Rust Cheatsheet (zerotomastery.io)][zerotomastery-rust-cheat-sheet~website]↗.
-- [The Complete(ish) Rust Cheat Sheet](https://dev.to/moekatib/the-completesh-rust-cheat-sheet-4fnn)↗.
+- [The Complete(ish) Rust Cheat Sheet][the-completesh-rust-cheat-sheet~website]↗.
 - [Rust Speedsheet][speedsheet~website]↗.
-- [Idiomatic Rust Snippets][idiomatic-rust-snippets]↗.
-[idiomatic-rust-snippets]: https://idiomatic-rust-snippets.org/intro.html
+- [Idiomatic Rust Snippets][book~idiomatic-rust-snippets]↗.
 
 ## Comparison to Other Languages {#comparison-to-other-languages}
 

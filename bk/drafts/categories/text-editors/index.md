@@ -5,7 +5,6 @@
 Applications for editing text.
 
 For the most comprehensive and user-friendly experience, VS Code (with the [`rust-analyzer`][rust-analyzer~website]{{hi:rust-analyzer}} extension)↗, IntelliJ IDEA (with the Rust plugin)↗ or CLion (with the Rust plugin)↗ are highly recommended. VS Code, in particular, has become popular due to its performance and the quality of the `rust-analyzer` extension.
-[rust-analyzer~website]: https://rust-analyzer.github.io
 
 Vim, Emacs, and Neovim offer great flexibility and power, but they require a higher initial configuration investment. Sublime Text and Atom can also be configured for decent Rust support, but VS Code has largely taken over in popularity.
 

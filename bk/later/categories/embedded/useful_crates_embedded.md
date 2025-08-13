@@ -6,7 +6,7 @@
 
 [![postcard][c~postcard~docs~badge]][c~postcard~docs] [![postcard~crates.io][c~postcard~crates.io~badge]][c~postcard~crates.io] [![postcard~github][c~postcard~github~badge]][c~postcard~github] [![postcard~lib.rs][c~postcard~lib.rs~badge]][c~postcard~lib.rs]{{hi:postcard}}{{hi:Cobs}}{{hi:Framing}}{{hi:Serde}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-[`postcard`][c~postcard~docs]↗{{hi:postcard}} is a `no_std` and [`serde`][c~serde~docs]↗{{hi:serde}} compatible message library for Rust.
+[`postcard`][c~postcard~docs]↗{{hi:postcard}} is a [`#![no_std]`][book~rust-reference~no_std] and [`serde`][c~serde~docs]↗{{hi:serde}} compatible message library for Rust.
 
 ## `smoltcp` {#smoltcp}
 

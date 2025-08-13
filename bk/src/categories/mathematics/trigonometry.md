@@ -16,7 +16,7 @@ Calculates the length of the hypotenuse of a right-angle triangle with an angle 
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~science][cat~science~badge]][cat~science]
 
-Verifies [`tan(x)`](https://doc.rust-lang.org/stable/std/primitive.f64.html#method.tan)↗{{hi:f64::tan}} is equal to `sin(x)/cos(x)` for x = 6.
+Verifies [`tan(x)`][c~f64::tan~docs]↗{{hi:f64::tan}} is equal to `sin(x)/cos(x)` for x = 6.
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/examples/trigonometry/tan_sin_cos.rs:example}}

@@ -17,20 +17,25 @@
 
 <div class="hidden">
 [gpu: write](https://github.com/john-cd/rust_howto/issues/607)
-Review [Reddit blog][reddit]↗ [reddit]: https://www.reddit.com/r/rust/comments/1fyown4/rust_gpu_the_future_of_gpu_programming/?share_id=in53a04f7pnykanqye5tb&utm_content=1&utm_medium=ios_app&utm_name=iossmf&utm_source=share&utm_term=22&rdt=58853
+Review [Reddit blog][blog~reddit~rust_gpu_the_future_of_gpu_programming]↗.
 
 Reference [rust-gpu~github][rust-gpu~github]↗.
 
 Crates:
-https://github.com/Rust-GPU
-https://github.com/Rust-GPU/rust-gpu https://rust-gpu.github.io/ https://rust-gpu.github.io/rust-gpu/book
-https://github.com/cogciprocate/ocl
-https://wgpu.rs/  https://github.com/gfx-rs/wgpu https://github.com/gfx-rs/wgpu/tree/v24/examples#readme
-https://docs.rs/ash
-https://rust-gpu.github.io/Rust-CUDA
-https://github.com/Rust-GPU/Rust-CUDA  https://rust-gpu.github.io/blog/2025/01/27/rust-cuda-reboot
-Examples to look into
-https://github.com/MWATelescope/mwa_hyperdrive/tree/main
-https://github.com/TheZoq2/locksort
+
+- [rust-gpu (GitHub)][rust-gpu~github]↗.
+- [rust-gpu][rust-gpu~website]↗.
+- [Rust GPU Dev Guide][rust-gpu~book]↗.
+- [OpenCL for Rust][ocl-rust~github]↗.
+- [wgpu][c~wgpu~website]↗ [(GitHub)][c~wgpu~github]↗.
+  - [(Examples)][c~wgpu~examples]↗.
+- [ash][c~ash~docs]↗.
+- [rust-gpu~Rust-CUDA][rust-gpu~Rust-CUDA]↗ [(GitHub)][rust-gpu~Rust-CUDA~github]↗
+- [blog~rust-gpu][blog~rust-gpu].
+
+Examples to look into:
+
+<https://github.com/MWATelescope/mwa_hyperdrive/tree/main>
+<https://github.com/TheZoq2/locksort>
 
 </div>

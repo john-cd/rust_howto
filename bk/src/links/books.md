@@ -42,7 +42,6 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 - A [Gentle Introduction to Rust][rust-gentle-intro~website]↗.
 - [Learn Rust by writing Entirely Too Many Linked Lists][book~rust-unofficial-too-many-lists]↗.
 - [Rust-101][book~rust-101]↗.
-[book~rust-101]: https://www.ralfj.de/projects/rust-101/main.html
 - [Rust by Practice][practice.course.rs~website]↗.
 - [Rust Development Classes][rust-classes~website]↗.
 - [Rust Project Primer][rustprojectprimer~website]↗.
@@ -52,24 +51,25 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 - [Beginning Rust][book~Beginning-Rust-Get-Started-2021]↗: Get Started with Rust 2021 Edition, by Carlo Milanesi (Apress). [978-1484272077][ISBN~978-1484272077]↗.
 - [Creative Projects for Rust Programmers][book~Creative-Projects-Rust-Programmers-WebAssembly]↗: Build exciting projects on domains such as web apps, WebAssembly, games, and parsing, by Carlo Milanesi. [978-1789346220][ISBN~978-1789346220]↗.
 - [Code Like a Pro in Rust][book~Code-Like-Rust-Brenden-Matthews-ebook]↗ by Brenden Matthews. [978-1638354543][ISBN~978-1638354543]↗.
-- The [Complete Rust Programming Reference Guide](https://www.amazon.com/dp/1838828109)↗: Design, develop, and deploy effective software systems using the advanced constructs of Rust, by Rahul Sharma, Vesa Kaihlavirta, Claus Matzinger. [978-1838828103][ISBN~978-1838828103]↗.
-- [Effective Rust](https://www.amazon.com/dp/1098151402)↗: 35 Specific Ways to Improve Your Rust Code, by David Drysdale. [(O'Reilly)][book~effective-rust]↗ [978-1098151409][ISBN~978-1098151409]↗ [(online version)][effective-rust~website]↗.
+- The [Complete Rust Programming Reference Guide][book~complete-rust-programming-reference-guide]↗: Design, develop, and deploy effective software systems using the advanced constructs of Rust, by Rahul Sharma, Vesa Kaihlavirta, Claus Matzinger. [978-1838828103][ISBN~978-1838828103]↗.
+- [Effective Rust][book~effective-rust]↗: 35 Specific Ways to Improve Your Rust Code, by David Drysdale. [(O'Reilly)][book~effective-rust-oreilly]↗ [978-1098151409][ISBN~978-1098151409]↗ [(online version)][effective-rust~website]↗.
 - [Fullstack Rust][book~Fullstack-Rust-Complete-Building-Programming-ebook]↗ by Andy Weiss ([Newline][book~fullstack-rust]↗ or Kindle).
 - [Hands-on Rust][book~Hands-Rust-Effective-Learning-Development]↗: Effective Learning Through 2D Game Development and Play, by Herbert Wolverson. [978-1680508161][ISBN~978-1680508161]↗.
 - [Idiomatic Rust][book~Idiomatic-Rust-Code-like-Rustacean]↗: Code like a Rustacean, by Brenden Matthews [9781633437463][ISBN~9781633437463]↗.
-- [Learn Rust in a Month of Lunches](https://www.amazon.com/dp/1633438236)↗ by David MacLeod [(Manning)][book~learn-rust-in-a-month-of-lunches]↗ [978-1633438231][ISBN~978-1633438231]↗.
+- [Learn Rust in a Month of Lunches][book~learn-rust-in-a-month-of-lunches]↗ by David MacLeod [(Manning)][book~learn-rust-in-a-month-of-lunches-manning]↗ [978-1633438231][ISBN~978-1633438231]↗.
 - [Programming Rust][book~Programming-Rust-Fast-Systems-Development-dp-1492052590]↗: Fast, Safe Systems Development, by Jim Blandy, Jason Orendorff [(O'Reilly)][book~programming-rust-2nd-edition]↗. [9781491927281][ISBN~9781491927281]↗.
 - [Programming Rust][book~Programming-Rust-Fast-Systems-Development]↗: Fast, Safe Systems Development, by Jim Blandy, Leonora Tindall. [978-1492052593][ISBN~978-1492052593]↗.
 - [Refactoring to Rust][book~Refactoring-Rust-Lily-Mara]↗ by Lily Mara, Joel Holmes. [9781617299018][ISBN~9781617299018]↗.
-- [Rust Crash Course](https://www.amazon.com/dp/9355510950)↗: Build High-Performance, Efficient and Productive Software with the Power of Next-Generation Programming Skills, by Abhishek Kumar. [978-9355510952][ISBN~978-9355510952]↗.
+- [Rust Crash Course][book~rust-crash-course]↗: Build High-Performance, Efficient and Productive Software with the Power of Next-Generation Programming Skills, by Abhishek Kumar. [978-9355510952][ISBN~978-9355510952]↗.
 - [Rust Essentials 2nd ed.][book~Rust-Essentials-writing-concurrent-applications-dp-1788390016]↗. [978-1788390019][ISBN~978-1788390019]↗.
 - [Rust for Rustaceans][book~Rust-Rustaceans-Programming-Experienced-Developers]↗: Idiomatic Programming for Experienced Developers, by Jon Gjengset. [978-1718501850][ISBN~978-1718501850]↗.
-- [Rust from the Ground Up](https://leanpub.com/rust-from-the-ground-up)↗. It teaches Rust by implementing a classic Unix CLI utility in each chapter (`cat`, `head`, `wc`...).
+- [Rust from the Ground Up][book~rust-from-the-ground-up]↗.
+It teaches Rust by implementing a classic Unix CLI utility in each chapter (`cat`, `head`, `wc`...).
 - [Rust in Action][book~Rust-Action-Tim-McNamara]↗: Systems Programming Concepts and Techniques, by Tim McNamara. [978-1617294556][ISBN~978-1617294556]↗.
-- [Rust Programming By Example](https://www.amazon.com/dp/1788390636)↗: Enter the world of Rust by building engaging, concurrent, reactive, and robust applications, by Guillaume Gomez, Antoni Boucher (Packt). [978-1788390637][ISBN~978-1788390637]↗.
+- [Rust Programming By Example][book~rust-programming-by-example]↗: Enter the world of Rust by building engaging, concurrent, reactive, and robust applications, by Guillaume Gomez, Antoni Boucher (Packt). [978-1788390637][ISBN~978-1788390637]↗.
 - The [Rust Programming Language, 2nd Edition][book~rust-programming-language]↗.
-- [Rust Under the Hood](https://www.amazon.com/dp/B0D7FQB3DH)↗: A deep dive into Rust internals and generated assembly, by Sandeep Ahluwalia, Deepa Ahluwalia. [979-8320364469][ISBN~979-8320364469]↗.
-- The [Secrets of Rust: Tools](https://bitfieldconsulting.com/books/rust-tools)↗.
+- [Rust Under the Hood][book~rust-under-the-hood]↗: A deep dive into Rust internals and generated assembly, by Sandeep Ahluwalia, Deepa Ahluwalia. [979-8320364469][ISBN~979-8320364469]↗.
+- The [Secrets of Rust: Tools][book~secrets-of-rust-tools]↗.
 - [Step Ahead with Rust][book~Step-Ahead-Rust-Systems-Programming-ebook]↗: Systems Programming in Rust, by Jonathan Creekmore, James Miller (Kindle).
 - [Zero To Production In Rust][book~Zero-Production-Rust-introduction-development]↗: An Introduction to Backend Development, by Luca Palmieri. [979-8847211437][ISBN~979-8847211437]↗: "An opinionated introduction to backend development in Rust". [(website and sample)][zero2prod~website]↗ [(Blog)][book~zero-to-production]↗ [Code for the book (GitHub)][book~zero-to-production~github]↗.
 
@@ -97,7 +97,7 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 ### Compiler & Tools {#compiler-tools}
 
 - The [`rustc` Book][book~rustc]↗.{{hi:Compiler}}
-- [Rust Compiler Development Guide](https://rustc-dev-guide.rust-lang.org/getting-started.html)↗.
+- [Rust Compiler Development Guide][book~rust-compiler-development-guide]↗.
 - The [Cargo Book][c~cargo~website]↗. Cargo is the Rust package manager.{{hi:Tools}}{{hi:cargo}}
 - The [`rustdoc` book][book~rustdoc]↗.{{hi:rustdoc}}
 - [Configuring `rustfmt`][rustfmt.toml]↗.{{hi:rustfmt}}
@@ -107,11 +107,11 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 ### Concurrency & Parallelism {#concurrency-parallelism}
 
 - [Rust Atomics and Locks][book~rust-atomics]↗. [9781098119447][ISBN~9781098119447]↗: A deep dive into atomics and locks by Mara Bos.{{hi:Atomics}}{{hi:Locks}}
-- [Rust Concurrency](https://www.amazon.com/dp/1788399978)↗: Master the art of building safe, scalable, and effective software, by Brian Troutwine (Packt). [978-1788399975][ISBN~978-1788399975]↗.{{hi:Concurrency}}{{hi:Parallelism}}
+- [Rust Concurrency][book~rust-concurrency]↗: Master the art of building safe, scalable, and effective software, by Brian Troutwine (Packt). [978-1788399975][ISBN~978-1788399975]↗.{{hi:Concurrency}}{{hi:Parallelism}}
 
 ### Data Analysis {#data-analysis}
 
-- [Data Analysis with Rust Notebooks](https://datacrayon.com/shop/product/data-analysis-with-rust-notebooks)↗. [978-1-915907-10-3][ISBN~978-1-915907103]↗.{{hi:Data analysis}}
+- [Data Analysis with Rust Notebooks][book~data-analysis-with-rust-notebooks]↗.{{hi:Data analysis}} [978-1-915907-10-3][ISBN~978-1-915907103]↗.
 
 ### Design Patterns {#design-patterns}
 
@@ -119,12 +119,11 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 
 ### Embedded Systems {#embedded}
 
-- The [Embedded Rust Book](https://docs.rust-embedded.org/book/intro)↗.{{hi:Embedded development}}
+- The [Embedded Rust Book][book~embedded-rust-book]↗.{{hi:Embedded development}}
 - The [Discovery Book][book~rust-embedded-discovery]↗: Introduction to microcontrollers and how to use Rust with them.{{hi:Microcontrollers}}
 - The [Rust on ESP Book][book~rust-on-esp]↗ for Espressif devices.
-  - [Embedded Rust (no_std) on Espressif](https://docs.esp-rs.org/no_std-training)↗.
+  - [Embedded Rust (no_std) on Espressif][espressif~no_std-training~website]↗.
   - [Embedded Rust on Espressif][book~embedded-rust-on-espressif]↗.
-[book~embedded-rust-on-espressif]: https://docs.esp-rs.org/std-training)↗.
 - The [Embedonomicon][book~embedonomicon]↗.
 
 See also the [Awesome Embedded Rust][awesome-embedded-rust~github]↗, a curated list of resources for embedded and low-level development.
@@ -145,7 +144,6 @@ See also the [Awesome Embedded Rust][awesome-embedded-rust~github]↗, a curated
 ### Idioms {#idioms}
 
 - [Idiomatic Rust Snippets][book~idiomatic-rust-snippets]↗.{{hi:Idiomatic Rust}}
-[book~idiomatic-rust-snippets]: https://idiomatic-rust-snippets.org/intro.html
 
 ### Interpreters {#interpreters}
 
@@ -204,5 +202,9 @@ This page includes a number of links to the websites of publishers and book merc
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO review; review https://lborb.github.io/book/unofficial.html; review https://lborb.github.io/book/applications.html
+TODO review; review
+[The Little Book of Rust Books][book~the-little-book-of-rust-books~unofficial]
+[book~the-little-book-of-rust-books~unofficial]: https://lborb.github.io/book/unofficial.html
+[The Little Book of Rust Books][book~the-little-book-of-rust-books~applications]
+[book~the-little-book-of-rust-books~applications]: https://lborb.github.io/book/applications.html
 </div>

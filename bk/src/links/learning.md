@@ -4,7 +4,7 @@
 
 ## Rust Overviews and Starting Points {#overview}
 
-- [Rust (programming language)](https://en.wikipedia.org/wiki/Rust_(programming_language))↗ on Wikipedia.
+- [Rust (programming language)][wikipedia~rust]↗ on Wikipedia.
 - Rust [language][p~language] main site: [rust-lang.org][rust-lang~website]{{hi:Rust learning}}↗.
 
 ## Learning Roadmaps {#learning-roadmap}
@@ -18,7 +18,6 @@
 - [Rust Gentle Introduction][rust-gentle-intro~website]↗.
 - [Workshop][rust-tutorials-RustConf17~website]↗ slides and exercises from RustConf 2017.
 - [Learn Rust][learn-rust~website]↗.
-[learn-rust~website]: https://hackr.io/tutorials/learn-rust
 - Jonathan Pallant's [Rust on the Raspberry Pi][pi-workshop-rs~github]↗ tutorial.
 
 ## Guides {#guides}
@@ -57,7 +56,7 @@
 - [Yet Another Rust Resource (YARR!)][book~yarr.fyi]↗.
 - Open source training courses about distributed database and distributed systems: [Talent Plan][talent-plan~github]↗.
 - [Tour of Rust][tourofrust~website]↗.
-- [Learn Rust Programming - Complete Course (YouTube)](https://www.youtube.com/watch?v=BpPEoZW5IiY&ab_channel=freeCodeCamp.org)↗.
+- [Learn Rust Programming - Complete Course (YouTube)][youtube~learn-rust-programming]↗.
 
 ### University Courses {#university-courses}
 
@@ -92,7 +91,6 @@
 ## Reference Documentation {#references}
 
 - The [Standard Library][c~std~docs]↗ documentation for the built-in [`std`][c~std~docs]↗{{hi:std}}, [`core`][c~core~docs]↗{{hi:core}}, and [`alloc`][c~alloc~docs]↗{{hi:alloc}} crates.
-[c~core~docs]: https://doc.rust-lang.org/core
 - The [Rust Reference][book~rust-reference]↗: Details of the language semantics.
 - The [Rustonomicon][book~rustonomicon]↗: A high-level companion to the reference and a guide to correctly writing unsafe code in Rust.
 - The [Ferrocene Language Spec][spec~rust-lang]↗: An high quality specification for the Rust language, initially developed by Ferrous Systems.

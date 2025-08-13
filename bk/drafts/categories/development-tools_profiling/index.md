@@ -13,8 +13,6 @@ Flame graphs are excellent for visualizing CPU usage and identifying hot spots. 
 | Benchmarking | Built-in [`cargo bench`][book~cargo~cargo-bench]{{hi:cargo bench}} allows you to write benchmarks directly in your Rust code. |
 | In-Code Profiling (Specific Code Regions) | [`measure_time`][c~measure_time~docs]↗{{hi:measure_time}} is a simple crate for measuring the execution time of code blocks. |
 | Memory Profiling | [`valgrind`][c~valgrind~docs]↗{{hi:valgrind}} (with [`massif`][valgrind~massif~website]↗{{hi:massif}} or [`memcheck`][valgrind~memcheck~website]↗{{hi:memcheck}}): While not Rust-specific, 'Valgrind' is a powerful tool for memory profiling and leak detection. You'd run your Rust program under Valgrind. |
-[valgrind~massif~website]: https://valgrind.org/docs/manual/ms-manual.html
-[valgrind~memcheck~website]: https://valgrind.org/info/tools.html#memcheck
 | Tracing - Understanding Program Flow | [`tracing`][c~tracing~docs]↗{{hi:tracing}}: While not strictly a profiler in the performance sense, [`tracing`][c~tracing~docs]↗{{hi:tracing}} allows you to instrument your code with spans and events, which can be invaluable for understanding the flow of execution and identifying bottlenecks. Often used in combination with other profiling tools. |
 | Sampling Profilers (CPU Usage) | [`samply`][c~samply~docs]↗{{hi:samply}} is a native sampling profiler focusing on ease of use. [`callgrind`][c~callgrind~docs]↗{{hi:callgrind}} is a performance analysis tool often used with `kcachegrind` for visualization. |
 

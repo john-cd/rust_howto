@@ -26,9 +26,8 @@
 
 ## See Also
 
-[Are we Game yet? 2D Rendering][are we game yet? 2d rendering]: Sprites, vectors, splines, hex grids and more
+[Are we Game yet? 2D Rendering][are-we-game-yet?-2d-rendering~website]: Sprites, vectors, splines, hex grids and more
 
-[are we game yet? 2d rendering]: https://arewegameyet.rs/ecosystem/2drendering
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

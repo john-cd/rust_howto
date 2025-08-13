@@ -39,7 +39,6 @@ fn divide_numbers(x: i32, y: i32) -> Result<i32, &'static str> {
 ```
 
 You can handle the [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} via a simple [`match`][keyword~match]↗{{hi:match}} or [`if let`][book~rust~if-let]↗{{hi:if let}} expression:
-[book~rust~if-let]: https://doc.rust-lang.org/book/ch19-01-all-the-places-for-patterns.html#conditional-if-let-expressions
 
 ```rust,editable
 fn main() {
@@ -201,16 +200,16 @@ Error level - description
 ```
 
 Run the recipe with [`RUST_BACKTRACE=1`][c~std::backtrace~docs]{{hi:RUST_BACKTRACE}} to display a detailed backtrace associated with this error.
-[c~std::backtrace~docs]: https://doc.rust-lang.org/std/backtrace/index.html
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
 [error_handling: fix / organize NOW](https://github.com/john-cd/rust_howto/issues/465)
-review https://doc.rust-lang.org/rust-by-example/error.html
+review [![Rust by example - error][book~rust-by-example~error~badge]][book~rust-by-example~error]
+
 FIXME rename examples; move example above to separate file
-credit https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html
+credit the [Recoverable Errors with Result chapter (Rust book)][book~rust~ch09-02-recoverable-errors-with-result]
 
 [`std::io::Error`][c~std::io::Error~docs]{{hi:std::io::Error}}↗ defined type implementing the [`std::error::Error`][c~std::error::Error~docs]{{hi:std::error::Error}}↗ trait.
 

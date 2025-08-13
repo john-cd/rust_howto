@@ -8,12 +8,12 @@ fn main() {}
 
 ## Links
 
-- [Inline]( https://www.rust-lang.org/what/cli )↗.
+- [Inline]( https://rust-lang.org/what/cli )↗.
 - [Reference-style][ref]↗.
 - [Link to Github][github]↗.
 - [shortcut]↗.
 - [collapsed][]↗.
-- <https://www.rust-lang.org/> autolink.
+- <https://rust-lang.org/> autolink.
 - [invalid-ref][invalid-ref]↗.
 
 ## Reference Definitions

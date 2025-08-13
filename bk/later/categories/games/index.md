@@ -7,16 +7,16 @@ Here are some notable games built with Rust:
 |||
 |---|---|---|
 | [`Veloren`][veloren.net~website]↗{{hi:Veloren}} | It's a multiplayer, open-world voxel RPG with a beautiful aesthetic. Think [`Minecraft`][minecraft~website]↗{{hi:Minecraft}} meets `Breath of the Wild`, with a dash of `Dwarf Fortress`. It's open-source and has a dedicated community. |
-| [`Zemeroth`](https://ozkriff.itch.io/zemeroth)↗{{hi:Zemeroth}} | A turn-based tactical game with a unique, tabletop-inspired design. It's also open-source and has a charming, nostalgic feel. |
-| [`Nox Futura`](https://thebracket.itch.io/nox-futura)↗{{hi:Nox Futura}} | This one's still in development, but it's got a lot of potential. It's a 3D colony-building game with survival elements, reminiscent of `Dwarf Fortress`. |
-| [`Epicinium`](https://abunchofhacks.itch.io/epicinium)↗{{hi:Epicinium}} | A strategy game with simultaneous turns and a focus on resource management. It has a cool map editor, too. |
-| [`Hypercoven`](https://filmstars.itch.io/hypercoven)↗{{hi:Hypercoven}} | A real-time strategy game with a unique art style. |
+| [`Zemeroth`][zemeroth~website]↗{{hi:Zemeroth}} | A turn-based tactical game with a unique, tabletop-inspired design. It's also open-source and has a charming, nostalgic feel. |
+| [`Nox Futura`][nox-futura~website]↗{{hi:Nox Futura}} | This one's still in development, but it's got a lot of potential. It's a 3D colony-building game with survival elements, reminiscent of `Dwarf Fortress`. |
+| [`Epicinium`][epicinium~website]↗{{hi:Epicinium}} | A strategy game with simultaneous turns and a focus on resource management. It has a cool map editor, too. |
+| [`Hypercoven`][hypercoven~website]↗{{hi:Hypercoven}} | A real-time strategy game with a unique art style. |
 
-There's a growing collection of smaller indie games made with Rust on [`itch.io`][itch.io~website]↗{{hi:itch.io}}. You can find everything from puzzle games to platformers to simulations there. Check out the ["made with Rust"](https://itch.io/games/made-with-rust)↗ tag!
+There's a growing collection of smaller indie games made with Rust on [`itch.io`][itch.io~website]↗{{hi:itch.io}}. You can find everything from puzzle games to platformers to simulations there. Check out the ["made with Rust"][itch.io~made-with-rust~website]↗ tag!
 
 ## Where to Find More
 
-- [`Are we game yet?`](https://arewegameyet.rs)↗ This website is a fantastic resource for all things Rust game development. It has lists of games, engines, libraries, and more.
+- [`Are we game yet?`][are-we-game-yet?~website]↗ This website is a fantastic resource for all things Rust game development. It has lists of games, engines, libraries, and more.
 - [`itch.io`][itch.io~website]↗ or [GOG.com][gog~website]↗.
 - [`Reddit`][reddit~website]↗{{hi:Reddit}}: The 'r/rust' subreddit often has discussions about game development, and you might find announcements of new Rust games there.
 

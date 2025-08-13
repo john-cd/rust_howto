@@ -40,7 +40,7 @@ You can also search or post on Rust chat servers and forums - see [[blogs | Blog
 - [Top Rust Libraries 2025][libs.tech-rust~website]↗.
 - [State of the Crates 2025][blog~state-of-the-crates]↗.
 - [r/rust: "What are some less popular but well-made crates you'd like others to know about?"][reddit~what_are_some_less_popular_but_wellmade_crates]↗.
-- ["Must know" Rust Crates](https://gitlab.com/samuel_schuepbach/must_know_rust_crates)↗.
+- ["Must know" Rust Crates][must_know_rust_crates~website]↗.
 - [RustRepo][rustrepo~website]↗.
 
 You may also consult older resources, such as:

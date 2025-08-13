@@ -31,7 +31,6 @@ Rust offers various ways to interact with the operating system, depending on you
 | Date and time | Use [`std::time`][c~std::time~docs]↗{{hi:std::time}} for working with time and durations. [`chrono`][c~chrono~docs]↗{{hi:chrono}} is widely used crate for date and time calculations. [`time`][c~time~docs]↗{{hi:time}} is a newer crate for date and time. |
 | Operating System Information | Use [`sysinfo`][c~sysinfo~docs]↗{{hi:sysinfo}} to retrieve system information (CPU, memory, etc.). |
 | Low-level OS interaction or access to specific OS features | Use system calls directly (via [`std::os::unix`][c~std::os::unix~docs]↗{{hi:std::os::unix}} or [`std::os::windows`][c~std::os::windows~docs]↗{{hi:std::os::windows}}) or FFI. `std::os::unix` provides access to Unix-specific system calls. `std::os::windows` provides access to Windows-specific system calls. |
-[c~std::os::unix~docs]: https://doc.rust-lang.org/std/os/unix
 | Foreign Function Interface (FFI) | Rust's FFI allows you to call functions written in other languages (e.g., C) that might interact with the OS directly. This is often used when you need to access OS features that aren't directly exposed by Rust's standard library or other crates. |
 | Random Number Generation | [`rand`][c~rand~docs]↗{{hi:rand}} is a popular random number generator crate, which can in turn call the OS. |
 

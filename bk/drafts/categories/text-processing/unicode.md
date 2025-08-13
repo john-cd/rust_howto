@@ -26,6 +26,5 @@ Unicode segmentation is the process of dividing a string of Unicode text into me
 [review](https://github.com/john-cd/rust_howto/issues/1192)
 
 - [unicode_width][unicode-width~website]↗: Determine displayed width of [`char`][primitive~char]↗{{hi:char}} and [`str`][primitive~str]↗{{hi:str}} types according to Unicode Standard Annex #11 rules.
-[unicode-width~website]: https://unicode-rs.github.io/unicode-width/unicode_width
 
 </div>

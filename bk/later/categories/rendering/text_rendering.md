@@ -22,7 +22,7 @@ API for loading, scaling, positioning and rasterizing OpenType font glyphs.
 
 [`fontdue`][c~fontdue~docs]↗{{hi:fontdue}} is a fast, pure Rust font loading and rasterization library. [`glyph_brush`][c~glyph_brush~docs]↗{{hi:glyph_brush}} is for efficient text layout and caching.
 
-A simple [`no_std`]( )↗{{hi: }} font parser and rasterizer.
+A simple [`#![no_std]`][book~rust-reference~no_std]{{hi:no_std}} font parser and rasterizer.
 
 ## `ttf-parser` and  `opentype` {#ttf-parser}
 
@@ -38,10 +38,9 @@ A simple [`no_std`]( )↗{{hi: }} font parser and rasterizer.
 
 - [`sdl2`][c~sdl2~docs]↗{{hi:sdl2}}: SDL2 bindings for Rust.
 
-- [Are we Game yet? Text Rendering][are we game yet? text rendering]↗.
+- [Are we Game yet? Text Rendering][are-we-game-yet?-text-rendering~website]↗.
 - [[text_layout | Text Layout]].
 
-[are we game yet? text rendering]: https://arewegameyet.rs/ecosystem/textrendering
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

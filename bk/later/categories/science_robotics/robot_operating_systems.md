@@ -64,8 +64,8 @@ Formally specified Rust bindings for ROS2.
 - [`RustDDS`][c~rustdds~crates.io]↗{{hi:RustDDS}} - Rust implementation of Data Distribution Service.
 - [`rosbag`][c~rosbag~crates.io]↗{{hi:rosbag}} - Reading rosbag files in pure Rust.
 - [`rustros_tf`][c~rustros_tf~crates.io]↗{{hi:rustros_tf}} - A rust implementation of the Tf library.
-- [`ros_pointcloud2`]( )↗{{hi: }} - The safe way of using PointCloud2 messages in ROS1 and ROS2.
-- [`optimization-engine`]( )↗{{hi: }} - Fast & Accurate Embedded Optimization for next-generation Robotics and Autonomous Systems.
+- [`ros_pointcloud2`][c~ros_pointcloud2~docs]{{hi:ros_pointcloud2}} - The safe way of using PointCloud2 messages in ROS1 and ROS2.
+- [`optimization-engine`][c~optimization-engine~docs]{{hi:optimization-engine}} - Fast & Accurate Embedded Optimization for next-generation Robotics and Autonomous Systems.
 - [`transforms`][c~transforms~crates.io]↗{{hi:transforms}} - A minimal and stand-alone crate inspired by the ROS2 tf library, but not dependent on ROS or middleware.
 
 {{#include refs.incl.md}}

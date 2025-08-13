@@ -17,8 +17,8 @@ See [[external_commands | External Commands]].
 
 ## Interact with Shells {#skip2}
 
-- [`shell-words`]( )↗{{hi: }} process command line arguments according to the [parsing][p~parsing] rules of Unix shells.
-- [`shellexpand`]( )↗{{hi: }} is a library for shell-like expansion in strings. For example, it expands variables like `$A` or `${B}` into their values and to expand `~` in the beginning of a string into the home directory (given some context).
+- [`shell-words`][c~shell-words~docs]{{hi:shell-words}} processes command line arguments according to the [parsing][p~parsing] rules of Unix shells.
+- [`shellexpand`][c~shellexpand~docs]{{hi:shellexpand}} is a library for shell-like expansion in strings. For example, it expands variables like `$A` or `${B}` into their values and to expand `~` in the beginning of a string into the home directory (given some context).
 
 See also [[shells | Shells]].
 

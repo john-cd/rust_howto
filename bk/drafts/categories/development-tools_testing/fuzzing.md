@@ -14,7 +14,6 @@ Fuzzers generally get their power through a kind of evolutionary algorithm that 
 - [`afl.rs`][c~afl~docs]↗{{hi:afl.rs}}: Bindings to the American Fuzzy Lop (AFL) fuzzer. AFL is a powerful fuzzer, but [cargo][p~cargo] fuzz with libFuzzer is often sufficient and easier to set up.
 
 In almost all cases, [`cargo-fuzz`][c~cargo-fuzz~docs]↗{{hi:cargo-fuzz}} will be your primary tool for fuzzing Rust code. It uses [`libFuzzer`][libFuzzer~website]↗{{hi:libFuzzer}}, a powerful and modern fuzzing engine, and simplifies the fuzzing process significantly. Make sure you define good fuzz targets and use sanitizers to detect errors effectively.
-[libFuzzer~website]: https://llvm.org/docs/LibFuzzer.html
 
 ### Target Definition {#skip}
 

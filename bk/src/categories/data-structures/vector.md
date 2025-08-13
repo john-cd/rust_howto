@@ -10,7 +10,7 @@ The vector type [`Vec`][c~std::vec::Vec~docs]↗{{hi:std::vec::Vec}} is the go-t
 
 - It is a contiguous, growable, owned, heap-allocated array.
 - It can only store values that are the same type.
-- It has O(1) indexing, amortized O(1) [`push`]( )↗{{hi: }} (to the end) and O(1) `pop` (from the end).
+- It has O(1) indexing, amortized O(1) [`push`][c~std::vec::Vec::push~docs]{{hi:std::vec::Vec::push}} (to the end) and O(1) `pop` (from the end).
 - Many other data structures are built upon or interact with `Vec`.
 
 The following example demonstrates common operations:

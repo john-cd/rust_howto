@@ -19,7 +19,6 @@
 [`slog`][c~slog~docs]↗{{hi:slog}} provides structured, extensible, composable logging.
 
 Consider using [`tracing`][c~tracing~docs]↗{{hi:tracing}} instead, especially if you need [`async`][rust~book~async-await]↗{{hi:async}} support. [`slog`][c~slog~docs]↗{{hi:slog}} remains a stable, featureful and battle-tested library, used in many important projects.
-[rust~book~async-await]: https://doc.rust-lang.org/book/ch17-00-async-await.html
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/examples/other/slog.rs:example}}

@@ -27,14 +27,14 @@ Crates like [`axum`][c~axum~docs]↗{{hi:axum}}, [`warp`][c~warp~docs]↗{{hi:wa
 ### Key Technologies {#skip2}
 
 - Communication: Microservices communicate over the network, commonly via REST or [[_grpc | gRPC]].
-- Service Discovery: Use a service registry (e.g., [`Consul`](https://developer.hashicorp.com/consul)↗{{hi:Consul}}, [`etcd`][etcd~website]↗{{hi:etcd}}) to dynamically discover microservice locations.
+- Service Discovery: Use a service registry (e.g., [`Consul`][consul~website]↗{{hi:Consul}}, [`etcd`][etcd~website]↗{{hi:etcd}}) to dynamically discover microservice locations.
 - API Gateway: Use an API gateway (e.g., [`Kong`][kong~website]↗{{hi:Kong}}) to handle routing, [authentication][p~authentication], and other cross-cutting concerns.
 - Message Queues: Use message queues (e.g., [`RabbitMQ`][rabbitmq~website]↗{{hi:RabbitMQ}}, [`Kafka`][kafka~website]↗{{hi:Kafka}}) for [asynchronous][p~asynchronous] communication.
 - [Containerization][p~containerization]: Use [`Docker`][docker~website]↗{{hi:Docker}} and [`Kubernetes`][kubernetes~website]↗{{hi:Kubernetes}} for [containerization][p~containerization] and orchestration.
 - Logging and Monitoring: Implement central logging and monitoring with [`Fluentd`][fluentd~website]↗{{hi:Fluentd}}; [`Elasticsearch`][c~elasticsearch~docs]↗{{hi:Elasticsearch}}, [`Logstash`][logstash~website]↗{{hi:Logstash}}, and [`Kibana`][kibana~website]↗{{hi:Kibana}}; [`Graylog`][graylog~website]↗{{hi:Graylog}}, [`Splunk`][splunk~website]↗{{hi:Splunk}}, [`Prometheus`][prometheus~website]↗{{hi:Prometheus}} and/or [`Grafana`](https://grafana.com/grafana/dashboards)↗{{hi:Grafana}}.
 - [Error Handling][p~error-handling] and Resilience: Implement retry mechanisms, circuit breakers, and other resilience patterns.
 - Configuration Management: externalize configuration and secrets e.g. with [`Vault`][vault~website]↗{{hi:Vault}}.
-- Authentication/Authorization: Implement security with [`JWT`][jwt~website]↗{{hi:JWT}} (JSON Web Tokens) or [`OAuth 2.0`](https://en.wikipedia.org/wiki/OAuth)↗{{hi:OAuth 2.0}} / `OpenID Connect` (OIDC), using the aforementioned API Gateway or a sidecar proxy (e.g. [`Envoy`][envoyproxy~website]↗{{hi:Envoy}}, [`Istio`][istio~website]↗{{hi:Istio}}).
+- Authentication/Authorization: Implement security with [`JWT`][jwt~website]↗{{hi:JWT}} (JSON Web Tokens) or [`OAuth 2.0`][wikipedia~oauth-2.0]↗{{hi:OAuth 2.0}} / `OpenID Connect` (OIDC), using the aforementioned API Gateway or a sidecar proxy (e.g. [`Envoy`][envoyproxy~website]↗{{hi:Envoy}}, [`Istio`][istio~website]↗{{hi:Istio}}).
 - Tracing: Implement distributed tracing to track requests across microservices, using [`OpenTelemetry`][opentelemetry~website]↗{{hi:OpenTelemetry}}, [`Jaeger`][jaegertracing~website]↗{{hi:Jaeger}}, or [`Zipkin`][zipkin~website]↗{{hi:Zipkin}}.
 
 See [[web-programming | Web Programming]], [[web-programming_http-server | Web Programming: HTTP Server]], [[apis | APIs]], and [[amqp | AMQP]].

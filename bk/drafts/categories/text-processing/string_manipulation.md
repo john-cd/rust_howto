@@ -27,7 +27,6 @@
 [![indoc][c~indoc~docs~badge]][c~indoc~docs] [![indoc~crates.io][c~indoc~crates.io~badge]][c~indoc~crates.io] [![indoc~github][c~indoc~github~badge]][c~indoc~github] [![indoc~lib.rs][c~indoc~lib.rs~badge]][c~indoc~lib.rs]{{hi:indoc}}{{hi:String}}{{hi:Literal}}{{hi:Heredoc}}{{hi:Nowdoc}}{{hi:Multiline}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
 The [`indoc!()`][c~indoc::indoc~docs]↗{{hi:indoc::indoc!}} macro takes a multiline string literal and un-indents it at compile time so the leftmost non-space character is in the first column.
-[c~indoc::indoc~docs]: https://docs.rs/indoc/latest/indoc/macro.indoc.html
 The [`indoc`][c~indoc~docs]↗{{hi:indoc}} crate exports five additional macros to substitute conveniently for the standard library's formatting macros:
 
 `formatdoc!($fmt, ...)` equivalent to `format!(indoc!($fmt), ...)`

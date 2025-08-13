@@ -57,8 +57,8 @@ Microcontrollers respond to events via interrupts.
 
 | Topic | Rust Crates |
 |---|---|
-| [`no-std`]( )↗{{hi: }} Environments | `core` (part of the standard library) provides the bare minimum for writing code without the standard library. `alloc` provides memory allocation APIs for no-std environments. See [[no_std | No Std]] and [[no-std_no-alloc | No Alloc]]. |
-| Memory Management (in no-std) | [`alloc`](https://doc.rust-lang.org/alloc)↗{{hi:alloc}} provides allocation APIs. [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}} is a small and efficient allocator for embedded systems. See [[memory-management | Memory Management]] and [[memory_usage_analysis | Memory Usage Analysis]]. |
+| [`no-std`][book~rust-reference~no_std]{{hi:no-std}} Environments | `core` (part of the standard library) provides the bare minimum for writing code without the standard library. `alloc` provides memory allocation APIs for no-std environments. See [[no_std | No Std]] and [[no-std_no-alloc | No Alloc]]. |
+| Memory Management (in no-std) | [`alloc`][c~alloc~docs]↗{{hi:alloc}} provides allocation APIs. [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}} is a small and efficient allocator for embedded systems. See [[memory-management | Memory Management]] and [[memory_usage_analysis | Memory Usage Analysis]]. |
 | Concurrency | [`atomic`][c~atomic~docs]↗{{hi:atomic}}: Provides atomic types for safe concurrency in embedded systems. See [[concurrency | Concurrency]]. |
 | Debugging | [`OpenOCD`][openocd~website]↗{{hi:OpenOCD}}, [`GDB`][c~gdb~docs]↗{{hi:GDB}} are common debugging tools for embedded systems. See [[development-tools_debugging | Debugging]]. |
 | Cross-compiling Rust Code for Commonly Used Target Architectures (e.g., ARM, RISC-V) | See [[cross_compilation | Cross Compilation]] and [[cross_compiling | Cross Compiling]]. |
@@ -89,4 +89,5 @@ Microcontrollers respond to events via interrupts.
 - [better-panic][better-panic~github]↗: A Python-inspired `panic` handler for rust.
 - [No-Panic Rust][blog~no-panic]↗: A Nice Technique for Systems Programming.
 - [no-panics-whatsoever (crates.io)][c~no-panics-whatsoever~crates.io]↗.
+
 </div>

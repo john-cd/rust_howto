@@ -53,7 +53,7 @@ Verify that it is properly installed:
 pre-commit --version
 ```
 
-Add a file called [`.pre-commit-config.yaml`]( )↗{{hi: }} to the root of your project. Use `pre-commit sample-config` for a template.
+Add a file called `.pre-commit-config.yaml`{{hi:.pre-commit-config.yaml}} to the root of your project. Use `pre-commit sample-config` for a template.
 Edit it to configure your preferred hooks.
 
 ```sh

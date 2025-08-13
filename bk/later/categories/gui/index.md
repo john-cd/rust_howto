@@ -24,7 +24,7 @@ See also:
 - the relevant section in [blessed.rs][blessed-rs~website]↗.
 - [The State of Rust GUI libraries][blog~state-rust-gui-libraries]↗.
 - [LibHunt][libhunt-rust-gui~website]↗.
-- [simplifycpp.org](https://simplifycpp.org/?id=a0507)↗.
+- [Top GUI Libraries and Frameworks for Rust (simplifycpp.org)][top-GUI-simplifycpp~website]↗.
 
 ## GUI Frameworks
 

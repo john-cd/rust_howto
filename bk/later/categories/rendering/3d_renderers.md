@@ -57,14 +57,12 @@ See:
 
 ## See Also {#skip3}
 
-- [Are we Game yet? 3D Rendering][are we game yet? 3d rendering]↗.
-
-[are we game yet? 3d rendering]: https://arewegameyet.rs/ecosystem/3drendering
+- [Are we Game yet? 3D Rendering][are-we-game-yet?-3d-rendering~website]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [write. decide what to cover](https://github.com/john-cd/rust_howto/issues/1213)
-See also [`fast-poisson-disk`]( )↗{{hi: }} for generating point distributions.
+See also [`fast-poisson-disk`][c~fast-poisson-disk~docs]↗{{hi:fast-poisson-disk}} for generating point distributions.
 </div>

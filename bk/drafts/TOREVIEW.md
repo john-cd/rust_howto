@@ -3,10 +3,8 @@
 ## Std {#skip}
 
 - [black_box in `core::hint`][c~core::hint::black_box~docs]↗.
-[c~core::hint::black_box~docs]: https://doc.rust-lang.org/core/hint/fn.black_box.html
 - [`std::pin`][c~std::pin~projections-and-structural-pinning~docs].
 - [`core::iter`][c~core::iter~docs]↗.
-[c~core::iter~docs]: https://doc.rust-lang.org/stable/core/iter
 
 ## Markdown {#skip}
 
@@ -21,7 +19,6 @@
 ## CD / CI {#skip}
 
 - [Run a Database in GitHub Actions, Persisting Data to S3, and Access it Publicly][blog~use-github-actions-as-database]↗.
-[blog~use-github-actions-as-database]: https://wesql.io/blog/use-github-actions-as-database
 
 ## Cloud {#skip}
 
@@ -30,7 +27,6 @@
 ## Crates.io {#skip}
 
 - [`crates.io`: development update][blog~crates-io-development-update]↗.
-[blog~crates-io-development-update]: https://blog.rust-lang.org/2025/02/05/crates-io-development-update.html
 
 ## Dataflow Graphs {#skip}
 
@@ -45,8 +41,6 @@
 
 - [Sonatype supports secure development in Rust][blog~sonatype-supports-secure-development-in-rust]↗.
 
-[blog~sonatype-supports-secure-development-in-rust]: https://www.securityinfowatch.com/cybersecurity/press-release/55277880/sonatype-supports-secure-development-in-rust
-
 ## Example Code {#skip}
 
 - [`rust-shed`][rust-shed~github]: Repository containing Rust crates common between other Facebook open source projects (like Mononoke or Eden).
@@ -58,7 +52,6 @@
 ## Language Features {#skip}
 
 - [Converting between different collection types][blog~converting-between-different-collection-types]↗: from `Vec` to `HashSet` or `HashMap`.
-[blog~converting-between-different-collection-types]: https://www.slingacademy.com/article/converting-between-different-collection-types-from-vec-t-to-hashset-t-or-hashmap-t-u
 
 ## Layouts {#skip}
 
@@ -74,13 +67,11 @@
 
 ## Reviews / Evolution of Rust {#skip}
 
-- [A Review of Rust in 2024][blog~rust_review_2024]↗: What Next?.
-[blog~rust_review_2024]: https://barretts.club/posts/rust_review_2024
+- [A Review of Rust in 2024][blog~rust-review-2024]↗: What Next?.
 
 - [Why Rust is Becoming a Contender in AI Development][blog~why-rust-is-becoming-a-contender-in-ai-development].
 
 - [Rust in 2025][blog~lang-interop-extensibility]↗: Language interop and the extensible compiler.
-[blog~lang-interop-extensibility]: https://smallcultfollowing.com/babysteps/blog/2025/03/18/lang-interop-extensibility
 
 ## Unstable Features {#skip}
 
@@ -90,7 +81,6 @@
 ## VS Code {#skip}
 
 - [Fixing Rust memory allocation slowdown in VS Code on Windows][blog~vs-code-debug-heap]↗.
-[blog~vs-code-debug-heap]: https://zaynar.co.uk/posts/vs-code-debug-heap
 
 ## Web {#skip}
 

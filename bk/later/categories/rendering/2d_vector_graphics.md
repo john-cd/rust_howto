@@ -14,7 +14,7 @@ It's useful for creating the geometry for vector graphics, but you'd typically u
 
 [![femtovg][c~femtovg~docs~badge]][c~femtovg~docs] [![femtovg~crates.io][c~femtovg~crates.io~badge]][c~femtovg~crates.io] [![femtovg~github][c~femtovg~github~badge]][c~femtovg~github] [![femtovg~lib.rs][c~femtovg~lib.rs~badge]][c~femtovg~lib.rs]{{hi:femtovg}}{{hi:Canvas}}{{hi:Drawing}}{{hi:Gpu}}{{hi:Graphics}}{{hi:Vector}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}}
 
-[`femtovg`][c~femtovg~docs]↗{{hi:femtovg}} is an anti-aliased 2D vector drawing library. It is "OpenGL based. Offers a simple API. Probably the easiest to get started with." ([blessed.rs](https://blessed.rs/crates#section-graphics)↗).
+[`femtovg`][c~femtovg~docs]↗{{hi:femtovg}} is an anti-aliased 2D vector drawing library. It is "OpenGL based. Offers a simple API. Probably the easiest to get started with." ([blessed.rs][blessed.rs-graphics~website]↗).
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/2d_renderers/femtovg.rs:example}}
@@ -26,7 +26,7 @@ It's useful for creating the geometry for vector graphics, but you'd typically u
 
 [`vger`][c~vger~docs]↗{{hi:vger}} is a 2D [GPU][p~gpu] renderer for dynamic UIs.
 
-"A simpler WGPU-based option which is less innovative but currently more stable than [`vello`][c~vello~docs]↗{{hi:vello}}." ([blessed.rs](https://blessed.rs/crates#section-graphics)↗)↗.
+"A simpler WGPU-based option which is less innovative but currently more stable than [`vello`][c~vello~docs]↗{{hi:vello}}." ([blessed.rs][blessed.rs-graphics~website]↗)↗.
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/2d_renderers/vger.rs:example}}

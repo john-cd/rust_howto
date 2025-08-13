@@ -3,7 +3,6 @@
 {{#include example_code.incl.md}}{{hi:Example code}}
 
 You can use the [Rust Playground][rust-playground~website]↗ to quickly test snippets of code.
-[rust-playground~website]: https://play.rust-lang.org/?version=stable&mode=debug&edition=2024
 
 ## Lists of Popular Rust Repositories {#repositories}
 
@@ -13,12 +12,10 @@ You can use the [Rust Playground][rust-playground~website]↗ to quickly test sn
 - [Open-source Projects Categorized as "Rust" (libhunt.com)][libhunt-topic-rust~website]↗.
 - [`rustrepo.com`][rustrepo~website]↗: A curated list of awesome Rust resources.
 - [Top 100 Best GitHub Repositories for Rust][bestofgithub-rust~website]↗.
-[bestofgithub-rust~website]: https://bestofgit.codes/repositories/languages/rust
 
 ## "RealWorld" Examples {#realworld}
 
 The ["Real World" Example App][realworld~example-apps]↗ [(website)][docs.realworld.build~website]↗, dubbed "the mother of all demo apps", is a fullstack [`medium.com`][medium.com~website]↗ clone implemented in many languages and frameworks. A list of Rust examples is [found here][realworld-rust~website]↗.
-[realworld-rust~website]: https://codebase.show/projects/realworld?language=rust
 
 For example, [`realworld-rust-axum-sqlx`][realworld~rust-axum-sqlx~github]↗ is a full-stack RealWorld implementation using [`axum`][c~axum~docs]↗{{hi:axum}}, [`sqlx`][c~sqlx~docs]↗{{hi:sqlx}}, and [`yew`][c~yew~docs]↗{{hi:yew}}.
 
@@ -31,7 +28,7 @@ For example, [`realworld-rust-axum-sqlx`][realworld~rust-axum-sqlx~github]↗ is
 You will find `cargo-generate`-ready templates in [this list][cargo-generate~github]↗.
 
 Beyond `cargo-generate`, search for Rust projects on [GitHub][rust-templates~github]↗.
-[rust-templates~github]: https://github.com/search?q=template+language%3ARust&type=repositories
+
 For example, you will find a full template for a REST API written in Rust, engineered for maximum testability: [`rust-rest`][rust_rest~github]↗.
 
 ## Source Code for Rust Books {#rust-book-source-code}

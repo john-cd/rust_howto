@@ -47,8 +47,8 @@ If you need to do a _costly_ conversion, it is better to implement [`From`][c~st
 ## References {#references}
 
 - [When and why to use `AsRef<T>` instead of `&T`][stackoverflow~asref]↗.
-- [Rust's `AsRef` Explained][rust-asref-explained]↗.
-[rust-asref-explained]: https://oliverjumpertz.com/blog/rusts-asref-explained
+- [Rust's `AsRef` Explained][blog~rust-asref-explained]↗.
+- [Rust's `AsRef` Explained][blog~rust-asref-explained]↗.
 
 ## Related Topics {#related-topics}
 

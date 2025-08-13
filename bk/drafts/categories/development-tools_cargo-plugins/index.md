@@ -18,7 +18,6 @@ Subcommands that extend the capabilities of Cargo.
 | Licensing | Use [`cargo-about`][c~cargo-about~docs]↗{{hi:cargo-about}}, [`cargo-deny`][c~cargo-deny~docs]↗{{hi:cargo-deny}}, [`cargo-license`][c~cargo-license~docs]↗{{hi:cargo-license}}, or [`cargo-lichking`][c~cargo-lichking~docs]↗{{hi:cargo-lichking}} for license compliance management. |
 | Binary Size Optimization | [`cargo-bloat`][c~cargo-bloat~docs]↗{{hi:cargo-bloat}} identifies what's contributing to your binary's size (eg. modules with generic functions or macros not designed with size-efficiency in mind). |
 | Publishing, Distribution | [`cargo publish`][book~cargo~cargo-publish]{{hi:cargo publish}} publishes your crate to crates.io (built-in). [`cargo-deb`][c~cargo-deb~docs]↗{{hi:cargo-deb}} creates Debian packages. [`cargo-rpm`][c~cargo-rpm~docs]↗{{hi:cargo-rpm}} creates RPM packages. |
-[book~cargo~cargo-publish]: https://doc.rust-lang.org/cargo/commands/cargo-publish.html
 | Change Watching | [`cargo-watch`][c~cargo-watch~docs]↗{{hi:cargo-watch}} watches your project for changes and rebuilds / re-run a command every time the source changes (e.g. [`cargo test`][book~cargo~cargo-test]↗{{hi:cargo test}}). |
 
 ## Writing Code

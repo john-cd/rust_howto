@@ -32,7 +32,7 @@ Bindings for graphics libraries such as Vulkan and OpenGL: see [[graphics | Grap
 
 ## Machine Learning APIs
 
-Bindings for machine learning frameworks like [`TensorFlow`][tensorflow~website]↗{{hi:TensorFlow}} and `PyTorch` (e.g. [`tch-rs`][c~tch~docs]↗{{hi:tch-rs}}): see [[machine-learning | Machine Learning]].
+Bindings for machine learning frameworks like [`TensorFlow`][tensorflow~website]↗{{hi:TensorFlow}} and `PyTorch` (e.g. [`tch-rs`][c~tch~docs]↗{{hi:tch-rs}}): See [[machine-learning | Machine Learning]].
 
 ## Multimedia APIs
 

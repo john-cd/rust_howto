@@ -176,9 +176,9 @@ use crate_name::prelude::*;
 // No need to import common items individually.
 ```
 
-The standard library includes a number of preludes. For example, adding [`use std::io::prelude::*;`]( )↗{{hi: }} at the top of I/O heavy modules imports common I/O traits in one line.
+The standard library includes a number of preludes. For example, adding [`use std::io::prelude::*;`][c~std::io::prelude~docs]{{hi:std::io::prelude}} at the top of I/O heavy modules imports common I/O traits in one line.
 
-There is also a "Rust prelude", things that Rust automatically imports into every Rust program without even the need for an explicit [`use`]( )↗{{hi: }} declaration. Here is an excerpt:
+There is also a "Rust prelude", things that Rust automatically imports into every Rust program without even the need for an explicit [`use`][book~rust-reference~use-declarations]{{hi:use}} declaration. Here is an excerpt:
 
 ```rust,noplayground
 pub use std::option::Option::{self, Some, None};
@@ -215,7 +215,7 @@ Cargo.toml
 
 In that case, `main.rs` imports the public contents of the library crate via `use crate_name::module_name;` and only contain a short `main()` function.
 
-This code organization exposes a public library crate API, which has the advantages of being reusable and more easily testable (via integration tests in the [`tests`](https://doc.rust-lang.org/book/ch11-03-test-organization.html?highlight=tests#the-tests-directory)↗{{hi:tests directory}} folder). However, if the crate is published on [`crates.io`][crates.io~website]↗{{hi:crates.io}}, you must make sure to update your crate version according to Cargo's SemVer (semantic versioning) rules, every time you change the (now public) API. Your code will also break if you decide to rename your crate.
+This code organization exposes a public library crate API, which has the advantages of being reusable and more easily testable (via integration tests in the [`tests`][book~rust~tests-directory]↗{{hi:tests directory}} folder). However, if the crate is published on [`crates.io`][crates.io~website]↗{{hi:crates.io}}, you must make sure to update your crate version according to Cargo's SemVer (semantic versioning) rules, every time you change the (now public) API. Your code will also break if you decide to rename your crate.
 
 A variation of this code organization puts the command-line argument parsing (or UI) code in modules under `main.rs` and keeps the non-user-interface code in the associated library crate.
 
@@ -235,7 +235,7 @@ If your project is large, you may want to split it into several crates, which yo
 
 Each crate, of course, should be further split into modules and submodules as needed.
 
-You will most often create a 'Cargo workspace' to tie together your project's crates. A 'workspace' is a set of 'packages' developed in tandem that share the same [`Cargo.lock`][c~cargo~cargo.lock]↗{{hi:Cargo.lock}} and output (e.g. [`target`](https://doc.rust-lang.org/cargo/reference/build-cache.html)↗) directory - and therefore share the same dependencies. A package is a bundle of one or more crates with `Cargo.toml`{{hi:Cargo.toml}} file that describes how to build those crates. A package include at least one crate, as many binary crates as you like, but at most only one library crate. Note that the concept of a 'package' is often conflated with that of a 'crate' and the latter word is often used to describe the former. Practically, a package is a subfolder of your workspace that contains a `Cargo.toml` file.
+You will most often create a 'Cargo workspace' to tie together your project's crates. A 'workspace' is a set of 'packages' developed in tandem that share the same [`Cargo.lock`][c~cargo~cargo.lock]↗{{hi:Cargo.lock}} and output (e.g. [`target`][book~cargo~build-cache]↗) directory - and therefore share the same dependencies. A package is a bundle of one or more crates with `Cargo.toml`{{hi:Cargo.toml}} file that describes how to build those crates. A package include at least one crate, as many binary crates as you like, but at most only one library crate. Note that the concept of a 'package' is often conflated with that of a 'crate' and the latter word is often used to describe the former. Practically, a package is a subfolder of your workspace that contains a `Cargo.toml` file.
 
 A typical organization may look as follows:
 
@@ -280,14 +280,14 @@ feature2 = ["dep:lib2"]
 
 In projects that mix multiple technologies (a web project or a [`mdbook`][book~mdbook]↗{{hi:mdbook}} that combines markdown and Rust code, like this book), it is common to create a "crates" subdirectory that contains all Rust packages.
 
-The main [`Cargo.toml`]( )↗{{hi: }} file in the root of the workspace should contain a 'workspace' section that references its packages:
+The main [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} file in the root of the workspace should contain a 'workspace' section that references its packages:
 
 ```toml
 [workspace]
 members = [ "lib1", "lib2", "main_lib" ]
 ```
 
-Confusingly, a workspace [`Cargo.toml`]( )↗{{hi: }} can also include a 'root package' in addition to member crates. That lets you place the code of the main library or executable in e.g. a [`src`](https://doc.rust-lang.org/cargo/guide/project-layout.html)↗{{hi:src folder}} folder directly under the workspace root.
+Confusingly, a workspace [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} can also include a 'root package' in addition to member crates. That lets you place the code of the main library or executable in e.g. a [`src`][book~cargo~project-layout]↗{{hi:src folder}} folder directly under the workspace root.
 
 ## Related Topics {#related-topics}
 

@@ -11,7 +11,7 @@ This is a **Work In Progress**. The API are subject to change.
 
 Make sure that:
 
-- [`Rust`](https://www.rust-lang.org)
+- [`Rust`][rust-lang]
 - [`mdbook`][mdbook]
 
 are set up correctly, then install the pre-processor:
@@ -52,8 +52,7 @@ If `remove-hidden-sections` is set to `true`, this preprocessor strips these sec
 
 ## Do not include hidden chapters
 
-The `links` mdBook preprocessor is built-in and included by default.
-It expands the `{{ #playground }}`, `{{ #include }}`, and `{{ #rustdoc_include }}` syntaxes:
+The `links` mdBook preprocessor is built-in and included by default. It expands the `{{ #playground }}`, `{{ #include }}`, and `{{ #rustdoc_include }}` syntaxes:
 
 ```md
 Include a file into your book:
@@ -92,3 +91,4 @@ For example, the following would be removed:
 ```
 
 [mdbook]: https://github.com/rust-lang/mdBook
+[rust-lang]: https://rust-lang.org

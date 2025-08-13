@@ -14,8 +14,8 @@ Rust data types often have multiple representations to suit different needs. For
 | [`&CStr`][c~std::ffi::CStr~docs]↗{{hi:std::ffi::CStr}} | [`CString`][c~std::ffi::CString~docs]↗{{hi:std::ffi::CString}} |
 | [`&OsStr`][c~std::ffi::OsStr~docs]↗{{hi:std::ffi::OsStr}} | [`OsString`][c~std::ffi::OsString~docs]↗{{hi:std::ffi::OsString}} |
 | [`&Path`][c~std::path::Path~docs]↗{{hi:std::path::Path}} | [`PathBuf`][c~std::path::PathBuf~docs]↗{{hi:std::path::PathBuf}} |
-| [`&[T]`](https://doc.rust-lang.org/std/primitive.slice.html)↗{{hi:slice}} | [`Vec<T>`][c~std::vec::Vec~docs]↗{{hi:std::vec::Vec}} |
-| `&[T]` | [`[T; N]`](https://doc.rust-lang.org/std/primitive.array.html)↗{{hi:array}} |
+| [`&[T]`][primitive~slice]↗{{hi:slice}} | [`Vec<T>`][c~std::vec::Vec~docs]↗{{hi:std::vec::Vec}} |
+| `&[T]` | [`[T; N]`][primitive.array]↗{{hi:array}} |
 | [`&T`][primitive~reference]↗{{hi:reference}} | [`Box<T>`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}} |
 | `&T` | [`Arc<T>`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} |
 

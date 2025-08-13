@@ -38,8 +38,8 @@ Do not use `Box` for small, fixed-size types, or when you only need a reference:
 
 Dynamically Sized Types (DSTs), also known as "unsized types," are types whose size cannot be determined at compile time. The most common DSTs are:
 
-- Slices: [`[T]`](https://doc.rust-lang.org/std/primitive.slice.html)↗ (e.g., `[i32]`, `[u8]`),
-- [`str`][primitive~str]↗{{hi:str}}: The string slice type,
+- Slices: [`[T]`][primitive~slice]↗ (e.g., `[i32]`, `[u8]`),
+- [`str`][primitive~str]↗{{hi:str}} - the string slice type,
 - Trait Objects: [`dyn Trait`][keyword~dyn]↗{{hi:dyn}} (e.g., `dyn std::io::Read`).
 
 The following demonstrates boxes containing slices and string slices:
