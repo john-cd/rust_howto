@@ -12,7 +12,7 @@ To accommodate scenarios where additional C, C++, or [assembly][p~assembly] is r
 
 The following example has some bundled C code (`src/hello.c`) that will be used from rust. Before compiling rust source code, the "build" file ([`build.rs`][book~cargo~build-script]↗{{hi:build.rs}}) specified in [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} runs. Using the [cc][c~cc~docs]↗{{hi:cc}} crate, a static library file will be produced (in this case, `libhello.a`, see [`cc::Build::compile`][c~cc::Build::compile~docs]↗{{hi:cc::Build::compile}}) which can then be used from rust by declaring the external function signatures in an [`compile`][c~cc::Build::compile~docs]↗, which can then be used from rust by declaring the external function signatures in an [`extern` block][book~rust-reference~extern-blocks]↗ block.
 
-Since the bundled C is very simple, only a single source file needs to be passed to [`cc::Build`][c~cc::Build~docs]↗{{hi:cc::Build}}. For more complex build requirements, [`cc::Build`][c~cc::Build~docs]↗{{hi:cc::Build}} offers a full suite of builder methods for specifying [`cc::Build::include`][c~cc::Build::include~docs]↗{{hi:cc::Build::include}} paths and extra compiler [`cc::Build::flag`][c~cc::Build::flag~docs]{{hi:cc::Build::flag}}s↗.
+Since the bundled C is very simple, only a single source file needs to be passed to [`cc::Build`][c~cc::Build~docs]↗{{hi:cc::Build}}. For more complex build requirements, [`cc::Build`][c~cc::Build~docs]↗{{hi:cc::Build}} offers a full suite of builder methods for specifying [`cc::Build::include`][c~cc::Build::include~docs]↗{{hi:cc::Build::include}} paths and extra compiler [`cc::Build::flag`][c~cc::Build::flag~docs]↗{{hi:cc::Build::flag}}.
 
 ### `Cargo.toml` {#skip1}
 

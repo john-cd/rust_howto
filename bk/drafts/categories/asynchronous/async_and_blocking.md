@@ -9,7 +9,7 @@
 
 - [Async][p~async] code should never spend a long time without reaching an [`.await`][book~rust-reference~await]↗{{hi:.await}} [`.await`][c~await-tree~docs]↗{{hi:.await}} .
 - Don't carelessly mix [async][p~async]{{hi:async}} code and synchronous, blocking calls like `std::thread::sleep(Duration::from_secs(N));`.
-- If you have to block the thread because of expensive CPU-bound↗{{hi:CPU bound}} computation, call to a synchronous IO API{{hi:Synchronous IO}}, use the [`tokio::task::spawn_blocking`][c~tokio::task::spawn_blocking~docs]↗{{hi:tokio::task::spawn_blocking}} function, use [`rayon`][c~rayon~docs]↗{{hi:rayon}}, or spawn a dedicated thread{{hi:Dedicated thread}}.
+- If you have to block the thread because of expensive CPU-bound{{hi:CPU bound}} computation, call to a synchronous IO API{{hi:Synchronous IO}}, use the [`tokio::task::spawn_blocking`][c~tokio::task::spawn_blocking~docs]↗{{hi:tokio::task::spawn_blocking}} function, use [`rayon`][c~rayon~docs]↗{{hi:rayon}}, or spawn a dedicated thread{{hi:Dedicated thread}}.
 
 See the [Async: What is blocking?][blog~async-what-is-blocking]↗ blog post.
 

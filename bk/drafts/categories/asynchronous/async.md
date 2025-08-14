@@ -24,7 +24,7 @@ Key constructs in Rust:
 {{#include ../../../crates/cats/asynchronous/examples/async/async1.rs:example}}
 ```
 
-As any form of cooperative multitasking↗{{hi:Cooperative multitasking}}, a future{{hi:Futures}} that spends a long time without reaching an [`await`][book~rust-reference~await]↗{{hi:await}} "blocks the thread", which may prevent other tasks from running.
+As any form of cooperative multitasking{{hi:Cooperative multitasking}}, a future{{hi:Futures}} that spends a long time without reaching an [`await`][book~rust-reference~await]↗{{hi:await}} "blocks the thread", which may prevent other tasks from running.
 
 ## Differences with Other Languages {#diff-other-languages}
 
@@ -32,7 +32,7 @@ As any form of cooperative multitasking↗{{hi:Cooperative multitasking}}, a fut
 
 Rust's implementation of [`async`][book~rust-reference~async]↗{{hi:async}} differs from most languages in a few ways:
 
-- Rust's [`async`][book~rust-reference~async]↗{{hi:async}} operations are lazy. Futures↗{{hi:Futures}} are inert in Rust and only make progress only when polled. The executor calls the [`std::task::Poll`][c~std::task::Poll~docs]↗{{hi:std::task::Poll}} method repeatedly to execute futures.
+- Rust's [`async`][book~rust-reference~async]↗{{hi:async}} operations are lazy. Futures{{hi:Futures}} are inert in Rust and only make progress only when polled. The executor calls the [`std::task::Poll`][c~std::task::Poll~docs]↗{{hi:std::task::Poll}} method repeatedly to execute futures.
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/examples/async/async2.rs:example}}
