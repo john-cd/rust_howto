@@ -7,7 +7,3 @@
 | [Manage the `cargo` Cache][ex~development-tools_cargo-plugins~cargo-cache] | [![cargo-cache][c~cargo-cache~docs~badge]][c~cargo-cache~docs] | [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins] |
 | [`cargo expand`][ex~development-tools_cargo-plugins~cargo-expand] | [![cargo-expand][c~cargo-expand~docs~badge]][c~cargo-expand~docs] | [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins] |
 | [`cargo hack`][ex~development-tools_cargo-plugins~cargo-hack] | [![cargo-hack][c~cargo-hack~docs~badge]][c~cargo-hack~docs] | [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins] |
-
-<div class="hidden">
-FIXME review
-</div>

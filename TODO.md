@@ -2,8 +2,6 @@
 
 ## Now
 
-- add index entries and links WIP.
-
 - polish crate_selection.
 
 - polish contributing.
@@ -13,7 +11,6 @@
 - polish intro.
   - review `about` examples.
 
-- Close NOW tickets: WIP.
 - Go trough VS Code bookmarks (WSL): WIP.
 - Go trough VS Code bookmarks (dev container): WIP.
 
@@ -25,11 +22,9 @@
   - process_directives.
   - link_checker.
 
-- Replace inline links and naked URLs by ref-style links.
-
 - License / legal rethink.
 
-- indices.
+- Indices.
   - script for crates_and_examples.
   - rethink crates_alpha and categories.
   - categories.md.

@@ -11,7 +11,3 @@
 | [Avoid Discarding Errors During Error Conversions][ex~error_handling~avoid-discarding-errors-during-error-conversions] | [![std][c~std~docs~badge]][c~std~docs] | [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns] |
 | [Obtain the Backtrace in Complex Error Scenarios][ex~error_handling~obtain-backtrace] | [![std][c~std~docs~badge]][c~std~docs] | [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns] |
 | [Handle Errors Correctly in `main`][ex~error_handling~handle-errors-correctly-in-main] | [![std][c~std~docs~badge]][c~std~docs] | [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns] |
-
-<div class="hidden">
-FIXME review.
-</div>
