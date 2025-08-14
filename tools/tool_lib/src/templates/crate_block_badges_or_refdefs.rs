@@ -17,17 +17,25 @@ pub(super) static CRATE_DESCRIPTION: &str =
 
 /// Reference definitions for the badges above
 pub(super) static CRATE_BLOCK_REFDEFS: &str = "\
-[c~{crate_name}~docs~badge]: https://img.shields.io/crates/v/{crate_name}?label={crate_name}
-[c~{crate_name}~crates.io~badge]: https://img.shields.io/badge/crates.io-{crate_name | shielded}-crimson
 [c~{crate_name}~crates.io]: https://crates.io/crates/{crate_name}
-[c~{crate_name}~github~badge]: https://img.shields.io/badge/{crate_name | shielded}-steelblue?logo=github
-{{ if repository_defined }}[c~{crate_name}~github]: {repository}{{ endif }}
-[c~{crate_name}~lib.rs~badge]: https://img.shields.io/badge/lib.rs-{crate_name | shielded}-yellow
-[c~{crate_name}~lib.rs]: https://lib.rs/crates/{crate_name}
+[c~{crate_name}~crates.io~badge]: https://img.shields.io/badge/crates.io-{crate_name | shielded}-crimson
 [c~{crate_name}~docs]: {{ if documentation_defined }}{documentation}{{ else }}https://docs.rs/{crate_name}{{ endif }}
-{{ if homepage_defined }}[c~{crate_name}~website~badge]: https://img.shields.io/badge/{crate_name | shielded}-coral{{ endif }}
+[c~{crate_name}~docs~badge]: https://img.shields.io/crates/v/{crate_name}?label={crate_name}
+{{ if repository_defined }}[c~{crate_name}~github]: {repository}{{ endif }}
+{{ if repository_defined }}[c~{crate_name}~github~badge]: https://img.shields.io/badge/{crate_name | shielded}-steelblue?logo=github{{ endif }}
+[c~{crate_name}~lib.rs]: https://lib.rs/crates/{crate_name}
+[c~{crate_name}~lib.rs~badge]: https://img.shields.io/badge/lib.rs-{crate_name | shielded}-yellow
 {{ if homepage_defined }}[c~{crate_name}~website]: {homepage}{{ endif }}
+{{ if homepage_defined }}[c~{crate_name}~website~badge]: https://img.shields.io/badge/{crate_name | shielded}-coral{{ endif }}
 ";
+
+// TODO add URLs for additional badges:
+// [c~{crate_name}~recent-downloads~badge]: https://img.shields.io/crates/dr/{crate_name}
+// [c~{crate_name}~deps-rs~badge]: https://img.shields.io/deps-rs/{crate_name}/latest
+// [c~{crate_name}~license~badge]: https://img.shields.io/crates/l/{crate_name}
+// [c~{crate_name}~dependents~badge]: https://img.shields.io/crates/dependents/{crate_name}
+// [c~{crate_name}~commit-activity~badge]: https://img.shields.io/github/commit-activity/y/:user/:repo
+// [c~{crate_name}~last-commit~badge]: https://img.shields.io/github/last-commit/:user/:repo
 
 /// The different modes for generating content related to a crate.
 ///
