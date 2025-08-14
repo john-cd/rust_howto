@@ -49,3 +49,6 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
+
+#[cfg(target_env = "msvc")]
+fn main() {}
