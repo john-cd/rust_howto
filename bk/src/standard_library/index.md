@@ -9,7 +9,7 @@ We listed below the (stable) modules of the Standard Library, highlighted the mo
 | [`std::alloc`][c~std::alloc~docs]↗{{hi:std::alloc}} | Memory allocation APIs. For advanced users. | [[memory-management | Memory Management]] |
 | [`std::any`][c~std::any~docs]↗{{hi:std::any}} | Utilities for dynamic typing or type reflection. Home of [`Any`][c~std::any::Any~docs]↗. Use for plugins, extensibility, scripting. Advanced. | [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]] [[scripting | Scripting]] |
 | [`std::arch`][c~std::arch~docs]↗{{hi:std::arch}} | SIMD and vendor intrinsics module. Advanced topic. | [`std::simd`][c~std::simd~docs]↗ module |
-| [`std::array`][c~std::array~docs]↗{{hi:std::array}} | Utilities for the array primitive type [T; N].{{hi:std::array}} | [[data-structures | Data Structures]], [[vectors | Vectors]], [[slices | Slices]] |
+| [`std::array`][c~std::array~docs]↗{{hi:std::array}} | Utilities for the array primitive type `[T; N]`.{{hi:std::array}} | [[data-structures | Data Structures]], [[vectors | Vectors]], [[slices | Slices]] |
 | [`std::ascii`][c~std::ascii~docs]↗{{hi:std::ascii}} | Operations on ASCII strings and characters. You may use [`escape_default`][c~std::ascii::escape_default~docs]↗{{hi:std::ascii::escape_default}} | [[encoding | Encoding]] |
 | [`std::backtrace`][c~std::backtrace~docs]↗{{hi:std::backtrace}} | Support for capturing a stack backtrace of an OS thread. | [[error_handling | Error Handling]] |
 | [`std::borrow`][c~std::borrow~docs]↗{{hi:std::borrow}} | A module for working with borrowed data. Home of [`Borrow`][c~std::borrow::Borrow~docs]↗ and [`BorrowMut`][c~std::borrow::BorrowMut~docs]↗. | [[borrow | Borrow]], [[ownership_borrowing | Ownership and Borrowing]] |

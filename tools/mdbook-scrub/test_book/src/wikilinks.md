@@ -17,7 +17,8 @@ The following wikilinks should be replaced by their `title`, if present:
 - ~[[file| title5]]~
 - ~[[file|title6 ]]~
 
-Any left-over wikilinks should be scrubbed by `mdbook-scrub` if the corresponding configuration toggle is set (which is the default).
+Any left-over wikilinks should be scrubbed by `mdbook-scrub`
+if the corresponding configuration toggle is set (which is the default).
 
 ## Bad Wikilinks
 

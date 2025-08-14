@@ -1216,6 +1216,7 @@
 [pre-commit-rust~github]: https://github.com/doublify/pre-commit-rust
 [pre-commit.com~hooks~website]: https://pre-commit.com/hooks.html
 [pre-commit.com~website]: https://pre-commit.com
+[primitive~array]: https://doc.rust-lang.org/std/primitive.array.html
 [primitive~bool]: https://doc.rust-lang.org/std/primitive.bool.html
 [primitive~char]: https://doc.rust-lang.org/std/primitive.char.html
 [primitive~f32::sqrt]: https://doc.rust-lang.org/std/primitive.f32.html#method.sqrt

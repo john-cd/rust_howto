@@ -48,6 +48,8 @@
 - pandoc / typst.
 - kindle create.
 
+[gumroad~website][gumroad~website]
+
 [gumroad~website]: https://gumroad.com
 
 <https://pianomanfrazier.com/post/write-a-book-with-markdown/#bookdown-https-bookdown-org-yihui-bookdown>
@@ -204,6 +206,8 @@ Writes are fast when writing to container FS, volume, but slow on bind mount (to
 
 Try local / inline caching as well.
 
+[optimize-docker-builds-github-actions-cache][optimize-docker-builds-github-actions-cache]
+
 [optimize-docker-builds-github-actions-cache]: https://cicube.io/blog/optimize-docker-builds-github-actions-cache
 
 ### Try to build directly on the host, not in a container?
@@ -216,7 +220,11 @@ Write a `.yml` build workflow file for Linux.
 
 Already using the `free-disk-space-ubuntu` action.
 
+[2875][2875]
+
 [2875]: https://github.com/actions/runner-images/issues/2875
+
+[free-disk-space-ubuntu][free-disk-space-ubuntu]
 
 [free-disk-space-ubuntu]: https://github.com/marketplace/actions/free-disk-space-ubuntu
 

@@ -92,11 +92,13 @@ See also [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]].
 [release_automation: write](https://github.com/john-cd/rust_howto/issues/604)
 cover [`cargo-bump`][c~cargo-bump~github]↗{{hi:cargo-bump}} for simple version number increments.
 Link:
+
 - [book~cargo~cargo-login][book~cargo~cargo-login].
 - [book~cargo~cargo-package][book~cargo~cargo-package].
 - [book~cargo~cargo-publish][book~cargo~cargo-publish].
 
 Review:
+
 - [release-plz][release-plz~website].
 - [comprehensive-guide-to-generating-deb-and-rpm-packages-for-rust-applications][blog~comprehensive-guide-to-generating-deb-and-rpm-packages-for-rust-applications].
 - [List_of_software_package_management_systems][wikipedia~List_of_software_package_management_systems].

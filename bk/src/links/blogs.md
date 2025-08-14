@@ -54,7 +54,7 @@ You may also consult the lists of [Medium blogs tagged with 'Rust'][blog~medium~
 | [Raph Levien's blog][blog~raphlinus]↗ | Insights on Rust, GUIs, and high-performance code. |
 | [Rust magazine][rustmagazine~website]↗ | A monthly magazine for the Rust community. |
 | Sam Sartor's blog: [`samsartor.com`][samsartor~website]↗ | Posts on Rust, Nix, and software development. |
-| Sean McArthur's blog: [`seanmonstar.com`][seanmonstar~website]↗ | Focused on [`hyper`][c~hyper~website]↗{{hi:hyper}}, [`tokio`][`seanmonstar.com`][seanmonstar~website]↗ | Focused on [`hyper`][c~hyper~website]↗{{hi:hyper}}, [`tokio`][c~tokio~website]↗{{hi:tokio}}, and web development in Rust. |
+| Sean McArthur's blog: [`seanmonstar.com`][seanmonstar~website]↗ | Focused on [`hyper`][c~hyper~website]↗{{hi:hyper}}, [`tokio`][c~tokio~website]↗{{hi:tokio}}, and web development in Rust. |
 | [`readrust.net`][readrust.net~website]↗ | Interesting posts related to the Rust programming language. |
 | [`rust-osdev.com`][rust-osdev~website]↗ | Monthly news on OS and bootloader development in Rust. |
 | [Rust Trends][rust-trends~website]↗ | Biweekly newsletter on all things Rust. |

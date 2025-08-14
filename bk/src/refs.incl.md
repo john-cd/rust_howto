@@ -2,9 +2,9 @@
 [p~cli]: # "categories/command-line-interface/index.md"
 [p~concurrency]: # "categories/concurrency/index.md"
 [p~config]: # "categories/config/index.md"
-[p~contributing]: # "contributing/index.md"
-[p~crates-alphabetical]: # "crates/crates_alphabetical.md"
-[p~crates-categories]: # "crates/crates_by_category.md"
+[p~contributing]: contributing/index.md
+[p~crates-alphabetical]: crate_selection/crates_alphabetical.md
+[p~crates-categories]: crates_selection/crates_by_category.md
 [p~debugging]: # "categories/development-tools_debugging/index.md"
 [p~development-tools]: # "categories/development-tools/index.md"
 [p~error-customization]: # "categories/rust-patterns/error_handling/error_customization.md"
