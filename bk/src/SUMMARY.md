@@ -89,14 +89,14 @@
 # Links and Resources
 
 - [Links](links/index.md)
-- [Rust Cheat Sheets](links/rust_cheatsheets.md)
-- [Learning](links/learning.md)
-- [Books](links/books.md)
-- [Blogs and Forums](links/blogs.md)
-- [Example Code](links/example_code.md)
-- [Meetings](links/meetings.md)
-- [Videos](links/videos.md)
-- [Companies](links/companies.md)
+  - [Rust Cheat Sheets](links/rust_cheatsheets.md)
+  - [Learning](links/learning.md)
+  - [Books](links/books.md)
+  - [Blogs and Forums](links/blogs.md)
+  - [Example Code](links/example_code.md)
+  - [Meetings](links/meetings.md)
+  - [Videos](links/videos.md)
+  - [Companies](links/companies.md)
 
 # Contributing
 
