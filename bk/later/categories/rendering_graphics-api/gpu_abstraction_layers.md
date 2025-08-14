@@ -32,7 +32,7 @@ For WebGPU development in Rust, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is the essen
 
 [![wgpu~website][c~wgpu~website~badge]][c~wgpu~website] [![wgpu][c~wgpu~docs~badge]][c~wgpu~docs] [![wgpu~crates.io][c~wgpu~crates.io~badge]][c~wgpu~crates.io] [![wgpu~github][c~wgpu~github~badge]][c~wgpu~github] [![wgpu~lib.rs][c~wgpu~lib.rs~badge]][c~wgpu~lib.rs]{{hi:wgpu}}{{hi:Graphics}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}}
 
-[`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is a safe and portable Rusty [WebGPU][wikipedia~webgpu]{{hi:WebGPU}}↗ API wrapper. It is a cross-platform, safe, pure-Rust [graphics][p~graphics] API that exposes modern GPU capabilities. It runs natively on Vulkan, Metal, D3D12, and OpenGL; and on top of WebGL2 and WebGPU on WASM. The API is based on the [WebGPU standard][webgpu~website]↗. It is suitable for general purpose graphics and compute on the GPU. It serves as the core of the WebGPU integration in Firefox and Deno.
+[`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is a safe and portable Rusty [WebGPU][wikipedia~webgpu]↗{{hi:WebGPU}} API wrapper. It is a cross-platform, safe, pure-Rust [graphics][p~graphics] API that exposes modern GPU capabilities. It runs natively on Vulkan, Metal, D3D12, and OpenGL; and on top of WebGL2 and WebGPU on WASM. The API is based on the [WebGPU standard][webgpu~website]↗. It is suitable for general purpose graphics and compute on the GPU. It serves as the core of the WebGPU integration in Firefox and Deno.
 
 - Shader Language: WGSL (WebGPU Shading Language) is the shader language used by WebGPU. You'll write your [shaders][p~shaders] in WGSL. You'll use it in your shader code (which is then loaded by [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}).
 - Graphics Pipeline: You configure the [graphics][p~graphics] pipeline using the [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} API.
@@ -61,6 +61,6 @@ For WebGPU development in Rust, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is the essen
 
 <div class="hidden">
 [webgpu: write](https://github.com/john-cd/rust_howto/issues/375)
-review [rust-gpu-ecosystem~website]: https://rust-gpu.github.io/ecosystem
+review [`rust-gpu` Ecosystem][rust-gpu~ecosystem~website]
 review in depth.
 </div>

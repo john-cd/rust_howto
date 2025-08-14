@@ -33,7 +33,7 @@ Currently available subcommands:
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[`udeps`][c~cargo-udeps~crates.io]{{hi:udeps}}↗ find unused dependencies in [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} .
+[`udeps`][c~cargo-udeps~crates.io]↗{{hi:udeps}} find unused dependencies in [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} .
 
 While compilation of this tool also works on Rust stable, it needs Rust nightly to actually run.
 

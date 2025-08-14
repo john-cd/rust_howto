@@ -15,9 +15,9 @@ How you distribute your application depends on the target platform:
 
 Cargo handles building the release binaries or packaging your Rust code in `.crate` format suitable for `crates.io`:
 
-- [`cargo build --release`][book~cargo~cargo-build]{{hi:cargo build}} creates optimized release binaries.
-- [`cargo package`][book~cargo~cargo-package]{{hi:cargo package}} create a distributable, compressed .crate file with the source code of the package in the current directory. The resulting file will be stored in the `target/package` directory.
-- [`cargo publish`][book~cargo~cargo-publish]{{hi:cargo publish}} uploads a package to the registry (typically `crates.io`).
+- [`cargo build --release`][book~cargo~cargo-build]↗{{hi:cargo build}} creates optimized release binaries.
+- [`cargo package`][book~cargo~cargo-package]↗{{hi:cargo package}} create a distributable, compressed .crate file with the source code of the package in the current directory. The resulting file will be stored in the `target/package` directory.
+- [`cargo publish`][book~cargo~cargo-publish]↗{{hi:cargo publish}} uploads a package to the registry (typically `crates.io`).
 
 ## Publish a Crate to `crates.io` {#skip}
 
@@ -28,17 +28,17 @@ The following are the typical steps to release a crate to [`crates.io`][crates.i
 - Make sure everything works as advertised:
   - `cargo fmt --check`.
   - [`cargo doc`][book~cargo~cargo-doc]↗{{hi:cargo doc}} to inspect the documentation.
-  - [`cargo clean`][book~cargo~cargo-clean]{{hi:cargo clean}} to build from a clean slate.
+  - [`cargo clean`][book~cargo~cargo-clean]↗{{hi:cargo clean}} to build from a clean slate.
   - `cargo clippy`.
   - [`cargo test`][book~cargo~cargo-test]↗{{hi:cargo test}} or `cargo nextest run` to run unit and integration tests.
-  - [`cargo build --locked --release`][book~cargo~cargo-build]{{hi:cargo build}} to build the production binaries.
-  - [`cargo run --release`][book~cargo~cargo-run]{{hi:cargo run}} to manually exercise the application, if relevant.
+  - [`cargo build --locked --release`][book~cargo~cargo-build]↗{{hi:cargo build}} to build the production binaries.
+  - [`cargo run --release`][book~cargo~cargo-run]↗{{hi:cargo run}} to manually exercise the application, if relevant.
 - Increase the application's version number in [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}.
 - Make sure all code is committed and pushed to its repository.
 - Create and push a git tag.
 - Publish the package in the [cargo][p~cargo] registry (for example, crates.io).
-  - Go to [`crates.io`][crates.io~website]{{hi:crates.io}}↗, sign in, and create an API token in `Account Settings` > `API Tokens`, if not done already.
-  - Use [`cargo login`][book~cargo~cargo-login]{{hi:cargo login}} to save the token in `$CARGO_HOME/credentials.toml`.
+  - Go to [`crates.io`][crates.io~website]↗{{hi:crates.io}}, sign in, and create an API token in `Account Settings` > `API Tokens`, if not done already.
+  - Use [`cargo login`][book~cargo~cargo-login]↗{{hi:cargo login}} to save the token in `$CARGO_HOME/credentials.toml`.
   - Review `cargo package --list`, the list of source code files included in the package.
   - `cargo package`, then review the packaging output in `target/package`.
   - `cargo publish --dry-run`.

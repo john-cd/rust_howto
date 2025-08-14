@@ -13,13 +13,13 @@
 [![rustdesk~github][c~rustdesk~github~badge]][c~rustdesk~github]
 [![rustdesk~lib.rs][c~rustdesk~lib.rs~badge]][c~rustdesk~lib.rs]
 
-[rustdesk][c~rustdesk~github]{{hi:rustdesk}}↗ is an open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.
+[rustdesk][c~rustdesk~github]↗{{hi:rustdesk}} is an open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.
 
 ## Email Applications {#email-applications}
 
 [![postsack][postsack~github~badge]][postsack~github]
 
-[postsack][postsack~github]{{hi:postsack}}↗ visually cluster your emails by sender, domain, and more to identify waste.
+[postsack][postsack~github]↗{{hi:postsack}} visually cluster your emails by sender, domain, and more to identify waste.
 
 ## News {#news}
 
@@ -27,11 +27,11 @@
 
 ## Payments {#payments}
 
-[hyperswitch][hyperswitch~github]{{hi:hyperswitch}}↗ is an open source payments switch written in Rust to make payments fast, reliable and affordable.
+[hyperswitch][hyperswitch~github]↗{{hi:hyperswitch}} is an open source payments switch written in Rust to make payments fast, reliable and affordable.
 
 ## Social Media {#social-media}
 
-[lemmy][lemmy~github]{{hi:lemmy}}↗ is a link aggregator and forum for the fediverse.
+[lemmy][lemmy~github]↗{{hi:lemmy}} is a link aggregator and forum for the fediverse.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -97,6 +97,6 @@ Review / incorporate:
 
 Cover Excel data import, yahoo finance, databento, alpaca.
 
-- [yata: Yet Another Technical Analysis library [for Rust]](https://github.com/amv-dev/yata)
+- [yata][c~yata~docs]: Yet Another Technical Analysis library.
 
 </div>

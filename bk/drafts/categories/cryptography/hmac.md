@@ -10,7 +10,7 @@ An HMAC (Hash-based Message Authentication Code) digest is a type of message [au
 
 Note that HMAC (Hash-based Message Authentication Code) uses a shared secret key between two parties (symmetric cryptography). It provides both integrity and authentication. It cannot be used for non-repudiation (proof of origin by a third party). Since both parties have the key, either could have generated the HMAC.
 
-The following example uses [`ring::hmac`][c~ring::hmac~docs]{{hi:ring::hmac}}↗ to creates a [`ring::signature::Signature`][c~ring::signature::Signature~docs]{{hi:ring::signature::Signature}}↗ of a string, then verifies the signature{{hi:Signature}} is correct.
+The following example uses [`ring::hmac`][c~ring::hmac~docs]↗{{hi:ring::hmac}} to creates a [`ring::signature::Signature`][c~ring::signature::Signature~docs]↗{{hi:ring::signature::Signature}} of a string, then verifies the signature{{hi:Signature}} is correct.
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/examples/sign/hmac.rs:example}}

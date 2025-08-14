@@ -64,20 +64,20 @@ By implementing the unsafe marker [traits][p~traits] [`std::marker::Send`][c~std
 <div class="hidden">
 [write; add links?](https://github.com/john-cd/rust_howto/issues/909)
 
-- Implementing Vec: https://doc.rust-lang.org/nomicon/vec/vec.html
-- [An unsafe tour of Rust's Send and Sync][blog~an-unsafe-tour-of-rust-s-send-and-sync].
-- [Rust: A unique perspective][blog~rust-a-unique-perspective]
+- [Implementing `Vec`][book~rustonomicon~implementing-vec]↗.
+- [An unsafe tour of Rust's Send and Sync][blog~an-unsafe-tour-of-rust-s-send-and-sync]↗.
+- [Rust: A unique perspective][blog~rust-a-unique-perspective]↗.
 
 REFERENCES:
 
-- [References][primitive~reference].
+- [References][primitive~reference]↗.
 
 POINTERS:
 
-- [Pointers][primitive~pointer].
-- [Pointer functions][c~std::ptr~docs].
-- [NonNull pointer][c~std::ptr::NonNull~docs].
-- [std::fmt::Pointer][c~std::fmt::Pointer~docs].
+- [Pointers][primitive~pointer]↗.
+- [Pointer functions][c~std::ptr~docs]↗.
+- [NonNull pointer][c~std::ptr::NonNull~docs]↗.
+- [std::fmt::Pointer][c~std::fmt::Pointer~docs]↗.
 
 SEND / SYNC:
 
@@ -85,7 +85,7 @@ SEND / SYNC:
 
 PHANTOM DATA:
 
-- [phantom-data][book~rustonomicon~phantom-data].
-- [PhantomData][c~std::marker::PhantomData~docs].
+- [phantom-data][book~rustonomicon~phantom-data]↗.
+- [PhantomData][c~std::marker::PhantomData~docs]↗.
 
 </div>

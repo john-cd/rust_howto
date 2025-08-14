@@ -6,7 +6,7 @@ While it is common to deploy Rust applications to Cloud services like [AWS][p~aw
 
 ## Deploy Rust Code on `shuttle.dev` {#shuttle}
 
-[shuttle.rs][shuttle-rs~website]{{hi:shuttle.rs}}↗ [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
+[shuttle.rs][shuttle-rs~website]↗{{hi:shuttle.rs}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 
 `Shuttle.dev` is a Rust-native cloud development platform that simplifies backend development and deployment using Rust. Here's a summary of its key capabilities:
 

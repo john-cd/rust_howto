@@ -31,7 +31,7 @@ This project and everyone participating in it is governed by the [Code of Conduc
 
 We are writing a "bible" for the Rust ecosystem, providing examples for common programming tasks with Rust crates.
 
-This book's long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [`blessed.rs`][blessed-rs~website]{{hi:blessed.rs}}↗, the most (recently) downloaded libraries in [`crates.io`][crates.io~website]{{hi:crates.io}}↗, as well as popular crates per [`lib.rs`][lib.rs~website]{{hi:lib.rs}}↗ and its [statistics][lib.rs~stats~website]↗ page - overall, by keyword and by category.
+This book's long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [`blessed.rs`][blessed-rs~website]↗{{hi:blessed.rs}}, the most (recently) downloaded libraries in [`crates.io`][crates.io~website]↗{{hi:crates.io}}, as well as popular crates per [`lib.rs`][lib.rs~website]↗{{hi:lib.rs}} and its [statistics][lib.rs~stats~website]↗ page - overall, by keyword and by category.
 
 An informal (and very long) list of subjects we would like to cover is kept in the [topics of interest][p~topics-of-interest]↗ page.
 

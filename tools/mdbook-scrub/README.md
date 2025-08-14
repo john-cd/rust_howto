@@ -36,7 +36,7 @@ do-not-include-hidden-chapters = true
 hidden-chapter-prefix = "_"
 # The order in which preprocessors are run can be controlled with the `before`
 # and `after` fields.
-# https://rust-lang.github.io/mdBook/format/configuration/preprocessors.html
+# <https://rust-lang.github.io/mdBook/format/configuration/preprocessors.html>
 before = [ "links" ]
 #after = [ "" ]
 ```
@@ -88,7 +88,7 @@ Inserting runnable Rust files:
 
 The path to the file is relative from the current source file.
 
-[`mdbook-private`](https://github.com/RealAtix/mdbook-private)↗ is a preprocessor
+[`mdbook-private`][c~mdbook-private~github]↗ is a preprocessor
 for defining and optionally removing private sections and chapters in a mdbook.
 However, it does not remove included hidden files.
 
@@ -105,3 +105,4 @@ For example, the following would be removed:
 
 [mdbook]: https://github.com/rust-lang/mdBook
 [rust-lang]: https://rust-lang.org
+[c~mdbook-private~github]: https://github.com/RealAtix/mdbook-private

@@ -4,7 +4,7 @@
 
 ## Cheatsheets {#cheatsheets}
 
-- [`cheats.rs`][cheats-rs~website]{{hi:Cheat sheets}}↗ [(GitHub)][cheats.rs~github]↗.
+- [`cheats.rs`][cheats-rs~website]↗{{hi:Cheat sheets}} [(GitHub)][cheats.rs~github]↗.
 - [Rust for professionals][rust-for-professionals~website]↗.
 - [Rust Cheatsheet (cheatsheets.one)][cheatsheets.one-rust~website]↗.
 - [Rust Cheatsheet (phaiax)][rust-cheatsheet~website]↗.
@@ -17,7 +17,7 @@
 
 ## Comparison to Other Languages {#comparison-to-other-languages}
 
-- [Rust for C# developers][book~rust-for-C#-developers]{{hi:Comparison to other languages}}↗.
+- [Rust for C# developers][book~rust-for-C#-developers]↗{{hi:Comparison to other languages}}.
 - [A comparison of Rust's borrow checker to the one in C#][blog~csborrow]↗.
 
 {{#include refs.incl.md}}

@@ -6,7 +6,7 @@
 
 [![salsa][c~salsa~docs~badge]][c~salsa~docs] [![salsa~crates.io][c~salsa~crates.io~badge]][c~salsa~crates.io] [![salsa~github][c~salsa~github~badge]][c~salsa~github] [![salsa~lib.rs][c~salsa~lib.rs~badge]][c~salsa~lib.rs]{{hi:salsa}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]
 
-[Salsa][c~salsa~website]{{hi:salsa}}↗ is a Rust framework for writing incremental, on-demand programs - these are programs that want to adapt to changes in their inputs, continuously producing a new output that is up-to-date.
+[Salsa][c~salsa~website]↗{{hi:salsa}} is a Rust framework for writing incremental, on-demand programs - these are programs that want to adapt to changes in their inputs, continuously producing a new output that is up-to-date.
 
 [`salsa`][c~salsa~docs]↗{{hi:salsa}} is designed for situations where you have a large computation that can be broken down into smaller, interdependent pieces. Salsa automatically tracks dependencies between these pieces, and when a change occurs, it only recomputes the affected parts, rather than the entire computation. This is crucial for [performance][p~performance] in scenarios like compilers, build systems, and interactive tools where changes are frequent and full recomputation is expensive.
 

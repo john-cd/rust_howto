@@ -22,4 +22,4 @@ Any left-over directives should be scrubbed by `mdbook-scrub` if the correspondi
 ## Example of rendered links
 
 - {{docs diesel}} -> [`diesel`][c~diesel~docs]↗{{hi:diesel}}
-- {{github mdbook-linkcheck}} -> [`mdbook-linkcheck` (GitHub)][c~mdbook-linkcheck~github]{{hi:mdbook-linkcheck}}↗.
+- {{github mdbook-linkcheck}} -> [`mdbook-linkcheck` (GitHub)][c~mdbook-linkcheck~github]↗{{hi:mdbook-linkcheck}}.

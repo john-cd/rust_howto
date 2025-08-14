@@ -6,7 +6,7 @@
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-Gets the current working directory{{hi:Current working directory}} by calling [`std::env::current_dir`][c~std::env::current_dir~docs]{{hi:std::env::current_dir}}↗ then for each entries in [`std::fs::read_dir`][c~std::fs::read_dir~docs]{{hi:std::fs::read_dir}}↗ extracts the [`std::fs::DirEntry::path`][c~std::fs::DirEntry::path~docs]{{hi:std::fs::DirEntry::path}}↗ and gets the metadata via [`std::fs::Metadata`][c~std::fs::Metadata~docs]{{hi:std::fs::Metadata}}↗. The [`std::fs::Metadata::modified`][c~std::fs::Metadata::modified~docs]{{hi:std::fs::Metadata::modified}}↗ returns the [`std::time::SystemTime::elapsed`][c~std::time::SystemTime::elapsed~docs]{{hi:std::time::SystemTime::elapsed}}↗ time since last modification{{hi:Time since last modification}}. [`std::time::Duration::as_secs`][c~std::time::Duration::as_secs~docs]{{hi:std::time::Duration::as_secs}}↗ converts the time to seconds and compared with 24 hours (24 *60* 60 seconds). [`std::fs::Metadata::is_file`][c~std::fs::Metadata::is_file~docs]{{hi:std::fs::Metadata::is_file}}↗ filters out directories.
+Gets the current working directory{{hi:Current working directory}} by calling [`std::env::current_dir`][c~std::env::current_dir~docs]↗{{hi:std::env::current_dir}} then for each entries in [`std::fs::read_dir`][c~std::fs::read_dir~docs]↗{{hi:std::fs::read_dir}} extracts the [`std::fs::DirEntry::path`][c~std::fs::DirEntry::path~docs]↗{{hi:std::fs::DirEntry::path}} and gets the metadata via [`std::fs::Metadata`][c~std::fs::Metadata~docs]↗{{hi:std::fs::Metadata}}. The [`std::fs::Metadata::modified`][c~std::fs::Metadata::modified~docs]↗{{hi:std::fs::Metadata::modified}} returns the [`std::time::SystemTime::elapsed`][c~std::time::SystemTime::elapsed~docs]↗{{hi:std::time::SystemTime::elapsed}} time since last modification{{hi:Time since last modification}}. [`std::time::Duration::as_secs`][c~std::time::Duration::as_secs~docs]↗{{hi:std::time::Duration::as_secs}} converts the time to seconds and compared with 24 hours (24 *60* 60 seconds). [`std::fs::Metadata::is_file`][c~std::fs::Metadata::is_file~docs]↗{{hi:std::fs::Metadata::is_file}} filters out directories.
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/modified.rs:example}}
@@ -18,7 +18,7 @@ Gets the current working directory{{hi:Current working directory}} by calling [`
 
 [`same-file`][c~same-file~docs]↗{{hi:same-file}} is a simple crate for determining whether two file paths point to the same file.
 
-Use [`same-file::is_same-file`][c~same-file::is_same-file~docs]{{hi:same-file::is_same-file}}↗ to detect loops for a given path{{hi:Detect loops for a given path}}. For example, a loop could be created on a Unix system via symlinks:
+Use [`same-file::is_same-file`][c~same-file::is_same-file~docs]↗{{hi:same-file::is_same-file}} to detect loops for a given path{{hi:Detect loops for a given path}}. For example, a loop could be created on a Unix system via symlinks:
 
 ```bash
 mkdir -p /tmp/foo/bar/baz
@@ -45,7 +45,7 @@ Find recursively in the current directory duplicate filenames{{hi:Duplicate file
 
 [![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~github][c~walkdir~github~badge]][c~walkdir~github] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-Find files modified within the last day in the current directory. Using [`walkdir::WalkDir::follow_links`][c~walkdir::WalkDir::follow_links~docs]{{hi:walkdir::WalkDir::follow_links}}↗ ensures symbolic links{{hi:Symbolic links}} are followed like they were normal directories and files.
+Find files modified within the last day in the current directory. Using [`walkdir::WalkDir::follow_links`][c~walkdir::WalkDir::follow_links~docs]↗{{hi:walkdir::WalkDir::follow_links}} ensures symbolic links{{hi:Symbolic links}} are followed like they were normal directories and files.
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/find_file.rs:example}}
@@ -55,7 +55,7 @@ Find files modified within the last day in the current directory. Using [`walkdi
 
 [![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~github][c~walkdir~github~badge]][c~walkdir~github] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-Uses [`walkdir::IntoIter::filter_entry`][c~walkdir::IntoIter::filter_entry~docs]{{hi:walkdir::IntoIter::filter_entry}}↗ to descend recursively into entries passing the `is_not_hidden` predicate thus skipping hidden files and directories. [`std::iter::Iterator::filter`][c~std::iter::Iterator::filter~docs]{{hi:std::iter::Iterator::filter}}↗ applies to each [`walkdir::IntoIter::filter_entry`][c~walkdir::IntoIter::filter_entry~docs]{{hi:walkdir::IntoIter::filter_entry}}↗ even if the parent is a hidden directory.
+Uses [`walkdir::IntoIter::filter_entry`][c~walkdir::IntoIter::filter_entry~docs]↗{{hi:walkdir::IntoIter::filter_entry}} to descend recursively into entries passing the `is_not_hidden` predicate thus skipping hidden files and directories. [`std::iter::Iterator::filter`][c~std::iter::Iterator::filter~docs]↗{{hi:std::iter::Iterator::filter}} applies to each [`walkdir::IntoIter::filter_entry`][c~walkdir::IntoIter::filter_entry~docs]↗{{hi:walkdir::IntoIter::filter_entry}} even if the parent is a hidden directory.
 
 Root dir `"."` yields through [`walkdir::WalkDir::depth`][c~walkdir::WalkDir::depth~docs]↗{{hi:walkdir::WalkDir::depth}} usage in `is_not_hidden` predicate.
 
@@ -79,7 +79,7 @@ Recursive [filesystem][p~filesystem] walking that respects ignore files (like .g
 
 [![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~github][c~walkdir~github~badge]][c~walkdir~github] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}{{hi:File sizes}}
 
-Recursion depth can be flexibly set by [`walkdir::Walkdir::min_depth`][c~walkdir::WalkDir::min_depth~docs]{{hi:walkdir::WalkDir::min_depth}}↗ & [`walkdir::WalkDir::max_depth`][c~walkdir::WalkDir::max_depth~docs]{{hi:walkdir::WalkDir::max_depth}}↗ methods. Calculates sum of all file sizes to 3 subfolders depth, ignoring files in the root folder.
+Recursion depth can be flexibly set by [`walkdir::Walkdir::min_depth`][c~walkdir::WalkDir::min_depth~docs]↗{{hi:walkdir::WalkDir::min_depth}} & [`walkdir::WalkDir::max_depth`][c~walkdir::WalkDir::max_depth~docs]↗{{hi:walkdir::WalkDir::max_depth}} methods. Calculates sum of all file sizes to 3 subfolders depth, ignoring files in the root folder.
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/sizes.rs:example}}
@@ -103,7 +103,7 @@ Use the `**` pattern in any path portion. For example, `/media/**/*.png` matches
 
 Find all image files in the `/media/` directory matching the `img_[0-9][0-9]*.png` pattern.
 
-A custom [`glob::MatchOptions`][c~glob::MatchOptions~docs]{{hi:glob::MatchOptions}}↗ struct is passed to the [`glob::glob_with`][c~glob::glob_with~docs]{{hi:glob::glob_with}}↗ function making the glob{{hi:glob}} pattern case insensitive while keeping the other options [`std::default::Default`][c~std::default::Default~docs]{{hi:std::default::Default}}↗.
+A custom [`glob::MatchOptions`][c~glob::MatchOptions~docs]↗{{hi:glob::MatchOptions}} struct is passed to the [`glob::glob_with`][c~glob::glob_with~docs]↗{{hi:glob::glob_with}} function making the glob{{hi:glob}} pattern case insensitive while keeping the other options [`std::default::Default`][c~std::default::Default~docs]↗{{hi:std::default::Default}}.
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/ignore_case.rs:example}}

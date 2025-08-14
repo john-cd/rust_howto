@@ -10,7 +10,7 @@ It is similarly possible to use Azure, GCP (Google Cloud Platform), and other cl
 All major Cloud platforms offer a Rust SDK:
 
 - [Azure SDK for Rust][azure-sdk-for-rust~github]↗.
-- [Google Cloud Platform Rust [Experimental] Client Libraries](https://github.com/googleapis/google-cloud-rust)↗.
+- [Google Cloud Platform Rust [Experimental] Client Libraries][google-cloud-rust~github]↗.
 
 ## Rust-native Cloud Platforms that Offer First-class Support for Rust
 

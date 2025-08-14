@@ -4,7 +4,7 @@
 
 ## Install Rust and Create a First Project {#rust-install}
 
-First, install [Rustup][rustup~website]{{hi:rustup}}↗. On Linux, macOS, or other Unix-like systems (including Windows Subsystem for Linux - WSL), open your terminal and run the following command:
+First, install [Rustup][rustup~website]↗{{hi:rustup}}. On Linux, macOS, or other Unix-like systems (including Windows Subsystem for Linux - WSL), open your terminal and run the following command:
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -78,7 +78,7 @@ Review the [git][git~website]↗ manual for more commands.
 
 ## References {#references}
 
-- [Install Rust][rust-lang~install-rust]{{hi:Rust installation}}↗.
+- [Install Rust][rust-lang~install-rust]↗{{hi:Rust installation}}.
 
 ## Related Topics {#related-topics}
 

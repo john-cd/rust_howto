@@ -17,7 +17,7 @@ Tools that provide developer-facing features such as testing, debugging, linting
 | Continuous Integration | often uses CI platforms directly; no specific Rust crates needed, but [`xtask`][c~xtask~docs]↗{{hi:xtask}} can help manage CI tasks |
 | Code Analysis | `cargo clippy`, `rust-analyzer` (for Language Server Protocol support in IDEs) |
 
-See also [Rust tools][rust-tools]{{hi:Rust tools}}↗.
+See also [Rust tools][rust-tools]↗{{hi:Rust tools}}.
 
 ## Cargo
 
@@ -122,7 +122,7 @@ See also [[cross_compiling | Cross Compiling (Cargo Plugins)]].
 - [`cargo-script`][c~cargo-script~crates.io]↗.
 - [`cargo-play`][c~cargo-play~crates.io]↗.
 - [`sccache-action`][sccache-action~github]↗: `sccache` github action.
-- [`cargo-spellcheck`](https://github.com/drahnr/cargo-spellcheck)↗: Checks all your documentation for spelling and grammar mistakes with hunspell and a nlprule based checker for grammar.
+- [`cargo-spellcheck`][c~cargo-spellcheck~github]↗ checks all your documentation for spelling and grammar mistakes with `hunspell` and a `nlprule`-based checker for grammar.
 - [`cargo-limit`][cargo-limit~github]↗: Productivity improvements for Rust ecosystem: warnings are skipped until errors are fixed, LSP-independent Neovim integration, etc.
 - [`cargo-bloat`][c~cargo-bloat~github]↗: Find out what takes most of the space in your executable.
 - [`cargo-generate`][c~cargo-generate~crates.io]↗.

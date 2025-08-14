@@ -24,7 +24,7 @@
 [![approx~lib.rs][c~approx~lib.rs~badge]][c~approx~lib.rs]
 [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
 
-[`approx`][c~approx~docs]{{hi:approx}}↗ allows approximate floating point equality comparisons and assertions.
+[`approx`][c~approx~docs]↗{{hi:approx}} allows approximate floating point equality comparisons and assertions.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_testing/examples/assertions/approx.rs:example}}

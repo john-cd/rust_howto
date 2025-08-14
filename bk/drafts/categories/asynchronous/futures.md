@@ -4,7 +4,7 @@
 
 [![futures~website][c~futures~website~badge]][c~futures~website] [![futures][c~futures~docs~badge]][c~futures~docs] [![futures~crates.io][c~futures~crates.io~badge]][c~futures~crates.io] [![futures~github][c~futures~github~badge]][c~futures~github] [![futures~lib.rs][c~futures~lib.rs~badge]][c~futures~lib.rs]{{hi:futures}}{{hi:Async}}{{hi:Future}}{{hi:futures}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 
-The [`futures`][c~futures~docs]{{hi:futures}}↗ crate provides a number of core abstractions for writing asynchronous code{{hi:Asynchronous}}.
+The [`futures`][c~futures~docs]↗{{hi:futures}} crate provides a number of core abstractions for writing asynchronous code{{hi:Asynchronous}}.
 
 In most cases, you will use this crate directly only when writing [async][p~async] code{{hi:async}} intended to work for multiple runtimes. Otherwise, use the utilities provided by the ecosystem of your choice - [Tokio][p~tokio] for example.
 
@@ -12,7 +12,7 @@ In most cases, you will use this crate directly only when writing [async][p~asyn
 
 [![futures~website][c~futures~website~badge]][c~futures~website] [![futures][c~futures~docs~badge]][c~futures~docs] [![futures~crates.io][c~futures~crates.io~badge]][c~futures~crates.io] [![futures~github][c~futures~github~badge]][c~futures~github] [![futures~lib.rs][c~futures~lib.rs~badge]][c~futures~lib.rs]{{hi:futures}}{{hi:Async}}{{hi:Future}}{{hi:futures}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 
-[`futures::future::Select`][c~futures::future::Select~docs]{{hi:futures::future::Select}}↗ polls multiple futures and streams simultaneously, executing the branch for the future that finishes first. If multiple futures are ready, one will be pseudo-randomly selected at runtime.
+[`futures::future::Select`][c~futures::future::Select~docs]↗{{hi:futures::future::Select}} polls multiple futures and streams simultaneously, executing the branch for the future that finishes first. If multiple futures are ready, one will be pseudo-randomly selected at runtime.
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/examples/futures/futures1.rs:example}}
@@ -30,7 +30,7 @@ In most cases, you will use this crate directly only when writing [async][p~asyn
 
 [![futures~website][c~futures~website~badge]][c~futures~website] [![futures][c~futures~docs~badge]][c~futures~docs] [![futures~crates.io][c~futures~crates.io~badge]][c~futures~crates.io] [![futures~github][c~futures~github~badge]][c~futures~github] [![futures~lib.rs][c~futures~lib.rs~badge]][c~futures~lib.rs]{{hi:futures}}{{hi:Async}}{{hi:Future}}{{hi:futures}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 
-The [`futures`][c~futures~docs]{{hi:futures}}↗ crate provides an extension trait that provides a variety of convenient adapters.
+The [`futures`][c~futures~docs]↗{{hi:futures}} crate provides an extension trait that provides a variety of convenient adapters.
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/examples/futures/futures3.rs:example}}

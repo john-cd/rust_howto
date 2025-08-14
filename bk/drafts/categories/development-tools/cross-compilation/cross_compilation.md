@@ -18,7 +18,7 @@
 
 Cross-Compilation Tools include [`cross`][c~cross~docs]↗{{hi:cross}}, a popular tool that uses Docker to simplify cross-compilation.
 
-[`cross`][c~cross~github]{{hi:cross}}↗ simplify cross-compilation. It builds your Rust project for different target operating systems and architectures from a single development environment. It requires [`rustup`][rustup~website]{{hi:rustup}}↗ and [`Docker`][docker~website]{{hi:docker}}↗ or [`Podman`][podman~website]{{hi:podman}}↗.
+[`cross`][c~cross~github]↗{{hi:cross}} simplify cross-compilation. It builds your Rust project for different target operating systems and architectures from a single development environment. It requires [`rustup`][rustup~website]↗{{hi:rustup}} and [`Docker`][docker~website]↗{{hi:docker}} or [`Podman`][podman~website]↗{{hi:podman}}.
 
 ```sh
 cargo install cross --git https://github.com/cross-rs/cross
@@ -27,7 +27,7 @@ cargo install cross --git https://github.com/cross-rs/cross
 cargo binstall cross
 ```
 
-[`cross`][c~cross~docs]{{hi:cross}}↗ has the exact same CLI as [`cargo`][c~cargo~docs]{{hi:cargo}}↗ but relies on [`docker`][docker~website]{{hi:docker}}↗ or [`podman`][podman~website]{{hi:podman}}↗.
+[`cross`][c~cross~docs]↗{{hi:cross}} has the exact same CLI as [`cargo`][c~cargo~docs]↗{{hi:cargo}} but relies on [`docker`][docker~website]↗{{hi:docker}} or [`podman`][podman~website]↗{{hi:podman}}.
 
 ```sh
 cross build --target aarch64-unknown-linux-gnu

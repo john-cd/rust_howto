@@ -24,7 +24,7 @@ There's a growing collection of smaller indie games made with Rust on [`itch.io`
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write; need in depth review; review https://arewegameyet.rs/#games](https://github.com/john-cd/rust_howto/issues/373)
+[write; need in depth review; review [are-we-game-yet? games][are-we-game-yet?-games~website] ](https://github.com/john-cd/rust_howto/issues/373)
 
 ```rust,editable
 {{#include ../../../crates/cats/games/examples/games.rs:example}}

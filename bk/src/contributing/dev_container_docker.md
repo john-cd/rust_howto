@@ -2,9 +2,9 @@
 
 {{#include dev_container_docker.incl.md}}
 
-The `development` target of the multi-stage `.devcontainer\Dockerfile` is used by `.devcontainer/devcontainer.json` to install [`mdbook`][c~mdbook~docs]{{hi:mdbook}}↗ and rust tooling{{hi:Rust tooling}}.
+The `development` target of the multi-stage `.devcontainer\Dockerfile` is used by `.devcontainer/devcontainer.json` to install [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} and rust tooling{{hi:Rust tooling}}.
 
-If you don't want to use Dev Container{{hi:Dev Container}}, use the following from the project's root directory to manually build the [`docker`][docker~website]{{hi:docker}}↗ image and run it.
+If you don't want to use Dev Container{{hi:Dev Container}}, use the following from the project's root directory to manually build the [`docker`][docker~website]↗{{hi:docker}} image and run it.
 
 ```bash
 docker build --file .devcontainer/Dockerfile --target development --tag rust_howto_dev --build-arg RUST_IMAGE_LABEL=1.75.0-slim-bookworm --build-arg MDBOOK_VERSION=0.4.36 .
@@ -51,7 +51,7 @@ docker compose -f compose.yaml -f compose-ci.yaml run book # Or simply docker co
 
 It uses the `ci` target in `.devcontainer/Dockerfile`.
 
-To test the [`docker`][docker~website]{{hi:docker}}↗ image manually, use
+To test the [`docker`][docker~website]↗{{hi:docker}} image manually, use
 
 ```bash
 docker build --file .devcontainer/Dockerfile --target ci --tag rust_howto_ci --build-arg RUST_IMAGE_LABEL=1.75.0-slim-bookworm --build-arg MDBOOK_VERSION=0.4.36 .

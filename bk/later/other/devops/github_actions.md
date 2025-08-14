@@ -24,7 +24,7 @@ GitHub Action for installing [development tools][p~development-tools] (mainly fr
         cargo pants
 ```
 
-[`install-action`][install_action~github]{{hi:install-action}}↗ is a GitHub Action for installing development tools (mainly from GitHub Releases).
+[`install-action`][install_action~github]↗{{hi:install-action}} is a GitHub Action for installing development tools (mainly from GitHub Releases).
 
 ```yaml
 - uses: taiki-e/install-action@v2
@@ -34,7 +34,7 @@ GitHub Action for installing [development tools][p~development-tools] (mainly fr
 
 ## Cache Your Compilation {#compilation-caching}
 
-[`rust-cache`][c~rust_cache~github]{{hi:rust-cache}}↗.
+[`rust-cache`][c~rust_cache~github]↗{{hi:rust-cache}}.
 
 [![rust-cache][c~rust_cache~docs~badge]][c~rust_cache~docs]{{hi:rust-cache}}
 [![rust-cache~crates.io][c~rust_cache~crates.io~badge]][c~rust_cache~crates.io]

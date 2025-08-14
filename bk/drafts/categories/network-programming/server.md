@@ -6,7 +6,7 @@
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}{{hi:TCP/IP}}
 
-In this example, the port{{hi:Port}} is displayed on the console, and the program will listen until a request is made. [`std::net::SocketAddrV4`][c~std::net::SocketAddrV4~docs]{{hi:std::net::SocketAddrV4}}↗ assigns a random port when setting port to 0.
+In this example, the port{{hi:Port}} is displayed on the console, and the program will listen until a request is made. [`std::net::SocketAddrV4`][c~std::net::SocketAddrV4~docs]↗{{hi:std::net::SocketAddrV4}} assigns a random port when setting port to 0.
 
 ```rust,editable
 {{#include ../../../crates/cats/network_programming/examples/server/listen_unused.rs:example}}

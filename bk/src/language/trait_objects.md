@@ -8,9 +8,9 @@ Trait objects enable "dynamic dispatch", a form of polymorphism. They allow you 
 
 Recall that a [trait][p~traits]{{hi:Traits}} (also called contract or interface in other programming languages) represents a behavior that multiple types can implement. In the example below, the `Draw` trait describes the ability to be drawn on a screen. A trait is at its core a set of function signatures (and associated types and constants).
 
-A "trait object", denoted `dyn SomeTrait` where [`dyn`][keyword~dyn]{{hi:dyn}} is a keyword and `SomeTrait` is a trait (or a set thereof, see below), is an object that implements that specific trait, but which underlying concrete type is _not known at compile time_. In the example below, `dyn Draw` may be either a `Button` or a `Text` instance, since both types implement the `Draw` trait.
+A "trait object", denoted `dyn SomeTrait` where [`dyn`][keyword~dyn]↗{{hi:dyn}} is a keyword and `SomeTrait` is a trait (or a set thereof, see below), is an object that implements that specific trait, but which underlying concrete type is _not known at compile time_. In the example below, `dyn Draw` may be either a `Button` or a `Text` instance, since both types implement the `Draw` trait.
 
-Because it can host different concrete types at runtime, a trait object is "unsized"{{hi:Unsized}}, a.k.a. dynamically sized, which implies that it is only allowed to show up behind a reference or a smart pointer like [`std::boxed::Box`][c~std::boxed::Box~docs]{{hi:std::boxed::Box}}↗:
+Because it can host different concrete types at runtime, a trait object is "unsized"{{hi:Unsized}}, a.k.a. dynamically sized, which implies that it is only allowed to show up behind a reference or a smart pointer like [`std::boxed::Box`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}}:
 
 - `&dyn MyTrait` is a reference to a trait object (which can be anywhere, stack or heap),
 - `Box<dyn MyTrait>` is a heap-allocated trait object,
@@ -127,7 +127,7 @@ Note, however, two exceptions:
 
 - Trait objects can include "auto traits".{{hi:Auto traits}}
 
-Auto traits are [special traits][book~rust-reference~special-traits]↗, one of [`std::marker::Send`][c~std::marker::Send~docs]{{hi:std::marker::Send}}↗, [`std::marker::Sync`][c~std::marker::Sync~docs]{{hi:std::marker::Sync}}↗, [`std::marker::Unpin`][c~std::marker::Unpin~docs]{{hi:std::marker::Unpin}}↗, [`std::panic::UnwindSafe`][c~std::panic::UnwindSafe~docs]{{hi:std::panic::UnwindSafe}}↗, and [`std::panic::RefUnwindSafe`][c~std::panic::RefUnwindSafe~docs]{{hi:std::panic::RefUnwindSafe}}↗. The compiler automatically implements these autotraits for types if certain conditions are met.
+Auto traits are [special traits][book~rust-reference~special-traits]↗, one of [`std::marker::Send`][c~std::marker::Send~docs]↗{{hi:std::marker::Send}}, [`std::marker::Sync`][c~std::marker::Sync~docs]↗{{hi:std::marker::Sync}}, [`std::marker::Unpin`][c~std::marker::Unpin~docs]↗{{hi:std::marker::Unpin}}, [`std::panic::UnwindSafe`][c~std::panic::UnwindSafe~docs]↗{{hi:std::panic::UnwindSafe}}, and [`std::panic::RefUnwindSafe`][c~std::panic::RefUnwindSafe~docs]↗{{hi:std::panic::RefUnwindSafe}}. The compiler automatically implements these autotraits for types if certain conditions are met.
 
 For example, the following are valid trait objects:
 
@@ -169,7 +169,7 @@ In addition,
 
 ## Related Topics {#related-topics}
 
-- [Trait Objects (docs)][book~rust~trait-objects]{{hi:Trait objects}}↗.
+- [Trait Objects (docs)][book~rust~trait-objects]↗{{hi:Trait objects}}.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

@@ -19,7 +19,7 @@
 {{#include ../../../../crates/cats/development_tools/examples/documentation/rustdoc.rs:example}}
 ```
 
-[`rustdoc`][book~rustdoc]{{hi:rustdoc}}↗ uses the CommonMark Markdown specification.
+[`rustdoc`][book~rustdoc]↗{{hi:rustdoc}} uses the CommonMark Markdown specification.
 
 ```rust,editable
 {{#include ../../../../crates/cats/development_tools/examples/documentation/rustdoc2.rs:example}}
@@ -53,8 +53,8 @@ To add a "run" button on your documentation (allowing its execution in the rust 
 
 ## References
 
-- [The rustdoc book][book~rustdoc]{{hi:rustdoc}}↗.
-- [`docs.rs`][docs.rs~website]{{hi:docs.rs}}↗: open-source documentation{{hi:Documentation}} host for Rust crates.
+- [The rustdoc book][book~rustdoc]↗{{hi:rustdoc}}.
+- [`docs.rs`][docs.rs~website]↗{{hi:docs.rs}}: open-source documentation{{hi:Documentation}} host for Rust crates.
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

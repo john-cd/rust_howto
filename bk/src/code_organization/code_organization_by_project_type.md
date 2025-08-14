@@ -176,9 +176,9 @@ use crate_name::prelude::*;
 // No need to import common items individually.
 ```
 
-The standard library includes a number of preludes. For example, adding [`use std::io::prelude::*;`][c~std::io::prelude~docs]{{hi:std::io::prelude}} at the top of I/O heavy modules imports common I/O traits in one line.
+The standard library includes a number of preludes. For example, adding [`use std::io::prelude::*;`][c~std::io::prelude~docs]↗{{hi:std::io::prelude}} at the top of I/O heavy modules imports common I/O traits in one line.
 
-There is also a "Rust prelude", things that Rust automatically imports into every Rust program without even the need for an explicit [`use`][book~rust-reference~use-declarations]{{hi:use}} declaration. Here is an excerpt:
+There is also a "Rust prelude", things that Rust automatically imports into every Rust program without even the need for an explicit [`use`][book~rust-reference~use-declarations]↗{{hi:use}} declaration. Here is an excerpt:
 
 ```rust,noplayground
 pub use std::option::Option::{self, Some, None};

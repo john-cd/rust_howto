@@ -6,7 +6,7 @@
 
 [![threadpool][c~threadpool~docs~badge]][c~threadpool~docs]{{hi:threadpool}} [![num_cpus][c~num_cpus~docs~badge]][c~num_cpus~docs]{{hi:num_cpus}} [![walkdir][c~walkdir~docs~badge]][c~walkdir~docs]{{hi:walkdir}} [![ring][c~ring~docs~badge]][c~ring~docs]{{hi:ring}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency] [{{hi:Concurrency}}![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-This example calculates the SHA256{{hi:SHA256}} for every file with iso extension in the current directory. A threadpool{{hi:Thread pools}} generates threads equal to the number of cores present in the system found with [`num_cpus::get`][c~num_cpus::get~docs]{{hi:num_cpus::get}}↗. [`walkdir::WalkDir::new`][c~walkdir::WalkDir::new~docs]{{hi:walkdir::WalkDir::new}}↗ iterates the current directory and calls [`walkdir::WalkDir::new`][c~walkdir::WalkDir::new~docs]{{hi:walkdir::WalkDir::new}}↗ to perform the operations of reading and computing SHA256 hash.
+This example calculates the SHA256{{hi:SHA256}} for every file with iso extension in the current directory. A threadpool{{hi:Thread pools}} generates threads equal to the number of cores present in the system found with [`num_cpus::get`][c~num_cpus::get~docs]↗{{hi:num_cpus::get}}. [`walkdir::WalkDir::new`][c~walkdir::WalkDir::new~docs]↗{{hi:walkdir::WalkDir::new}} iterates the current directory and calls [`walkdir::WalkDir::new`][c~walkdir::WalkDir::new~docs]↗{{hi:walkdir::WalkDir::new}} to perform the operations of reading and computing SHA256 hash.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/examples/threadpool/threadpool_walk.rs:example}}
@@ -21,13 +21,13 @@ This example generates an image by drawing a fractal from the [Julia set][web-ju
 [![julia set][web-julia-set]][web-julia-set]
 
 
-Allocate memory for output image of given width and height with [`image::ImageBuffer::new`][c~image::ImageBuffer::new~docs]{{hi:image::ImageBuffer::new}}↗.
-[`image::Rgb::from_channels`][c~image::Rgb::from_channels~docs]{{hi:image::Rgb::from_channels}}↗ calculates RGB pixel values. Create [`threadpool::ThreadPool`][c~threadpool::ThreadPool~docs]{{hi:threadpool::ThreadPool}}↗ with thread count equal to number of cores with [`num_cpus::get`][c~num_cpus::get~docs]{{hi:num_cpus::get}}↗.
-[`threadpool::ThreadPool::execute`][c~threadpool::ThreadPool::execute~docs]{{hi:threadpool::ThreadPool::execute}}↗ receives each pixel as a separate job.
+Allocate memory for output image of given width and height with [`image::ImageBuffer::new`][c~image::ImageBuffer::new~docs]↗{{hi:image::ImageBuffer::new}}.
+[`image::Rgb::from_channels`][c~image::Rgb::from_channels~docs]↗{{hi:image::Rgb::from_channels}} calculates RGB pixel values. Create [`threadpool::ThreadPool`][c~threadpool::ThreadPool~docs]↗{{hi:threadpool::ThreadPool}} with thread count equal to number of cores with [`num_cpus::get`][c~num_cpus::get~docs]↗{{hi:num_cpus::get}}.
+[`threadpool::ThreadPool::execute`][c~threadpool::ThreadPool::execute~docs]↗{{hi:threadpool::ThreadPool::execute}} receives each pixel as a separate job.
 
-[`std::sync::mpsc::channel`][c~std::sync::mpsc::channel~docs]{{hi:std::sync::mpsc::channel}}↗ receives the jobs and [`std::sync::mpsc::Receiver::recv`][c~std::sync::mpsc::Receiver::recv~docs]{{hi:std::sync::mpsc::Receiver::recv}}↗ retrieves them.
-[`image::ImageBuffer::put_pixel`][c~image::ImageBuffer::put_pixel~docs]{{hi:image::ImageBuffer::put_pixel}}↗ uses the data to set the pixel color.
-[`image::ImageBuffer::save`][c~image::ImageBuffer::save~docs]{{hi:image::ImageBuffer::save}}↗ writes the image to `output.png`.
+[`std::sync::mpsc::channel`][c~std::sync::mpsc::channel~docs]↗{{hi:std::sync::mpsc::channel}} receives the jobs and [`std::sync::mpsc::Receiver::recv`][c~std::sync::mpsc::Receiver::recv~docs]↗{{hi:std::sync::mpsc::Receiver::recv}} retrieves them.
+[`image::ImageBuffer::put_pixel`][c~image::ImageBuffer::put_pixel~docs]↗{{hi:image::ImageBuffer::put_pixel}} uses the data to set the pixel color.
+[`image::ImageBuffer::save`][c~image::ImageBuffer::save~docs]↗{{hi:image::ImageBuffer::save}} writes the image to `output.png`.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/concurrency/examples/threadpool/threadpool_fractal.rs:example}}

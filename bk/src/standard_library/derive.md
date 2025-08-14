@@ -8,9 +8,9 @@
 
 Most structs and enums very commonly implement a number of basic traits - for example, to implement equality, cloning, enable storage in a hashmap, and provide debug formatting.
 
-Instead of manually writing large amounts of repetitive code, you can apply the [`derive`][book~rust-reference~derive]{{hi:derive}}↗ attribute to `struct` or `enum` definitions. The attribute, written `#[derive(<Trait_1>, <Trait_2>, ...)]`, where `<Trait_n>` should be replaced by a suitable trait name, automagically generates a basic implementation of the selected traits for the type you've annotated.
+Instead of manually writing large amounts of repetitive code, you can apply the [`derive`][book~rust-reference~derive]↗{{hi:derive}} attribute to `struct` or `enum` definitions. The attribute, written `#[derive(<Trait_1>, <Trait_2>, ...)]`, where `<Trait_n>` should be replaced by a suitable trait name, automagically generates a basic implementation of the selected traits for the type you've annotated.
 
-As described by [Derivable traits][book~rust~derivable-traits]{{hi:Derivable traits}}↗, the following traits are derivable "out of the box":
+As described by [Derivable traits][book~rust~derivable-traits]↗{{hi:Derivable traits}}, the following traits are derivable "out of the box":
 
 - Comparison traits [`Eq`][c~std::cmp::Eq~docs]↗{{hi:std::cmp::Eq}}, [`PartialEq`][c~std::cmp::PartialEq~docs]↗{{hi:std::cmp::PartialEq}}, [`Ord`][c~std::cmp::Ord~docs]↗{{hi:std::cmp::Ord}}, and [`PartialOrd`][c~std::cmp::PartialOrd~docs]↗{{hi:std::cmp::PartialOrd}},
 - [`Clone`][c~std::clone::Clone~docs]↗{{hi:std::clone::Clone}}, which explicitly creates a deep copy of a value,

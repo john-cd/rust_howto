@@ -12,7 +12,7 @@ Enums are custom data types that define a set of possible 'variants' or states t
 {{#include ../../crates/language/examples/enums/enums.rs:example}}
 ```
 
-If we make an enum{{hi:Enums}} public, all of its variants are then public. We only need [`pub`][book~rust-reference~visibility-and-privacy]{{hi:pub}}↗ before the [`enum`][book~rust-reference~enum]↗ keyword.
+If we make an enum{{hi:Enums}} public, all of its variants are then public. We only need [`pub`][book~rust-reference~visibility-and-privacy]↗{{hi:pub}} before the [`enum`][book~rust-reference~enum]↗ keyword.
 
 ## Define Generic Enums {#generic-enums}
 

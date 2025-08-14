@@ -9080,6 +9080,14 @@
 [c~yapp~github~badge]: https://img.shields.io/badge/yapp-steelblue?logo=github
 [c~yapp~lib.rs]: https://lib.rs/crates/yapp
 [c~yapp~lib.rs~badge]: https://img.shields.io/badge/lib.rs-yapp-yellow
+[c~yata~crates.io]: https://crates.io/crates/yata
+[c~yata~crates.io~badge]: https://img.shields.io/badge/crates.io-yata-crimson
+[c~yata~docs]: https://docs.rs/yata
+[c~yata~docs~badge]: https://img.shields.io/crates/v/yata?label=yata
+[c~yata~github]: https://github.com/amv-dev/yata
+[c~yata~github~badge]: https://img.shields.io/badge/yata-steelblue?logo=github
+[c~yata~lib.rs]: https://lib.rs/crates/yata
+[c~yata~lib.rs~badge]: https://img.shields.io/badge/lib.rs-yata-yellow
 [c~yew~crates.io]: https://crates.io/crates/yew
 [c~yew~crates.io~badge]: https://img.shields.io/badge/crates.io-yew-crimson
 [c~yew~docs]: https://docs.rs/yew

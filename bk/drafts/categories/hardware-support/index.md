@@ -44,8 +44,8 @@ See [[memory-management | Memory Management]].
 
 User-space programs request services from the operating system kernel via system calls.
 
-- [`std::os::unix`][c~std::os::unix~docs]{{hi:std::os::unix}} provides access to Unix-specific system calls.
-- [`std::os::windows`][c~std::os::windows~docs]{{hi:std::os::windows}} provides access to Windows-specific system calls.
+- [`std::os::unix`][c~std::os::unix~docs]↗{{hi:std::os::unix}} provides access to Unix-specific system calls.
+- [`std::os::windows`][c~std::os::windows~docs]↗{{hi:std::os::windows}} provides access to Windows-specific system calls.
 
 See [[os_freebsd-apis | FreeBSD APIs]], [[os_linux-apis | Linux APIs]], [[os_macos-apis | macOS APIs]], [[os_unix-apis | Unix APIs]], [[os_windows-apis | Windows APIs]] and [[rust_os | Rust OSes]].
 

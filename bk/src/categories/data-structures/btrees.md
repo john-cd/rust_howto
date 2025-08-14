@@ -8,7 +8,7 @@
 
 `BTreeMap<K, V>` is a sorted map data structure, similar to `HashMap`, but its keys are always kept in sorted order. This allows for efficient range queries (e.g., retrieving all values within a specific key range) and ordered iteration. Iterating over a BTreeMap will always yield the key-value pairs in ascending order of the keys.
 
-This ordering is the main difference between [`BTreeMap`][c~std::collections::BTreeMap~docs]{{hi:std::collections::BTreeMap}} and the more common `HashMap`. `BTreeMap` is implemented as a B-tree, a self-balancing tree structure that guarantees logarithmic time complexity for most operations.
+This ordering is the main difference between [`BTreeMap`][c~std::collections::BTreeMap~docs]↗{{hi:std::collections::BTreeMap}} and the more common `HashMap`. `BTreeMap` is implemented as a B-tree, a self-balancing tree structure that guarantees logarithmic time complexity for most operations.
 
 - `insert(key, value)`{{hi:std::collections::BTreeMap::insert}} inserts a new key-value pair. If the key already exists, the old value is replaced and returned.
 - `get(key)`{{hi:std::collections::BTreeMap::get}} returns a reference to the value associated with the given key, or `None` if the key is not present.

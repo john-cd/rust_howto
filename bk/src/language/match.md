@@ -217,7 +217,7 @@ Note that Rust's "match ergonomics" often make explicit `ref` and `ref mut` unne
 
 ## References {#references}
 
-- [Pattern matching][book~rust~pattern-matching]{{hi:Pattern matching}}↗.
+- [Pattern matching][book~rust~pattern-matching]↗{{hi:Pattern matching}}.
 - [Patterns Are Not Expressions][blog~patterns-are-not-expressions]↗.
 
 {{#include refs.incl.md}}

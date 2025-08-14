@@ -30,7 +30,8 @@ Consider [`bonsai-bt`][c~bonsai-bt~docs]↗{{hi:bonsai-bt}} (Behavior Tree imple
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/1209)
-[behavior-tree~wikipedia]:https://en.wikipedia.org/wiki/Behavior_tree_(artificial_intelligence%2C_robotics_and_control)
+
+[behavior-tree (Wikipedia)][wikipedia~behavior-tree].
 
 Rust Crates:
 

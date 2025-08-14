@@ -25,7 +25,7 @@ See also [[programming_languages | Programming Language]] parsers.
 
 [![lapce~website][lapce~website~badge]][lapce~website]{{hi:lapce}}
 
-[`lapce`][lapce~website]{{hi:lapce}}↗ is a lightning-fast and Powerful Code Editor written in Rust.
+[`lapce`][lapce~website]↗{{hi:lapce}} is a lightning-fast and Powerful Code Editor written in Rust.
 
 ### `zed` {#zed}
 
@@ -34,7 +34,7 @@ See also [[programming_languages | Programming Language]] parsers.
 [![zed~github][c~zed~github~badge]][c~zed~github]
 [![zed~lib.rs][c~zed~lib.rs~badge]][c~zed~lib.rs]
 
-[`zed`][c~zed~github]{{hi:zed}}↗ is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.
+[`zed`][c~zed~github]↗{{hi:zed}} is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.
 
 ## Build Tools {#build-tools}
 

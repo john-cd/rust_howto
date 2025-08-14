@@ -2,7 +2,7 @@
 
 {{#include error_customization.incl.md}}
 
-Use [`anyhow`][c~anyhow~docs]{{hi:anyhow}}↗ if you don't care what error type your functions return, you just want it to be easy. This is common in application code. Use [`thiserror`][c~thiserror~docs]{{hi:thiserror}}↗ if you are a library that wants to design your own dedicated error type(s) so that on failures the caller gets exactly the information that you choose.
+Use [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} if you don't care what error type your functions return, you just want it to be easy. This is common in application code. Use [`thiserror`][c~thiserror~docs]↗{{hi:thiserror}} if you are a library that wants to design your own dedicated error type(s) so that on failures the caller gets exactly the information that you choose.
 
 ## Simplify Error Handling and Attach Context to Errors with `anyhow` {#anyhow}
 
@@ -22,13 +22,13 @@ You can use [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} to:
 {{#include ../../../../crates/cats/rust_patterns/examples/error/anyhow.rs:example}}
 ```
 
-[`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} works with any error type that has an impl of [`std::error::Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}}, including ones defined in your crate e.g. using [`thiserror`][c~thiserror~docs]{{hi:thiserror}}↗.
+[`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} works with any error type that has an impl of [`std::error::Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}}, including ones defined in your crate e.g. using [`thiserror`][c~thiserror~docs]↗{{hi:thiserror}}.
 
 ## Create Custom Error Types Declaratively with `thisError` {#thiserror}
 
 [![thiserror][c~thiserror~docs~badge]][c~thiserror~docs] [![thiserror~crates.io][c~thiserror~crates.io~badge]][c~thiserror~crates.io] [![thiserror~github][c~thiserror~github~badge]][c~thiserror~github] [![thiserror~lib.rs][c~thiserror~lib.rs~badge]][c~thiserror~lib.rs]{{hi:thiserror}}{{hi:Derive}}{{hi:Error}}{{hi:Error-handling}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-[`thiserror`][c~thiserror~docs]{{hi:thiserror}}↗ provides a convenient [`derive`][book~rust-reference~derive]{{hi:derive}}↗ macro for the standard library's [`std::error::Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} trait.
+[`thiserror`][c~thiserror~docs]↗{{hi:thiserror}} provides a convenient [`derive`][book~rust-reference~derive]↗{{hi:derive}} macro for the standard library's [`std::error::Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} trait.
 
 ```rust,editable
 {{#include ../../../../crates/cats/rust_patterns/examples/error/thiserror.rs:example}}
@@ -73,7 +73,7 @@ It is a fork of [`anyhow`][c~anyhow::Result~docs]↗{{hi:anyhow}} [`anyhow`][c~a
 
 [![eyre][c~eyre~docs~badge]][c~eyre~docs]{{hi:eyre}}
 
-Do not use [Error Chain][c~error-chain~docs]{{hi:error-chain}}↗, which is deprecated.
+Do not use [Error Chain][c~error-chain~docs]↗{{hi:error-chain}}, which is deprecated.
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

@@ -2,7 +2,7 @@
 
 {{#include deep_learning.incl.md}}
 
-[`candle`](https://github.com/huggingface/candle)↗{{hi:candle}} is more focused on inference and provides more pre-trained models, while [`burn`][c~burn~docs]↗{{hi:burn}} is more focused on supporting the whole workflow from training to inference. `candle` relies on the underlying cuTENSOR and cuDNNv8 libraries, enabling efficient execution on NVIDIA GPUs.
+[`candle`][c~candle-core~github]↗{{hi:candle}} is more focused on inference and provides more pre-trained models, while [`burn`][c~burn~docs]↗{{hi:burn}} is more focused on supporting the whole workflow from training to inference. `candle` relies on the underlying cuTENSOR and cuDNNv8 libraries, enabling efficient execution on NVIDIA GPUs.e
 
 ## `candle` {#deep-learning}
 

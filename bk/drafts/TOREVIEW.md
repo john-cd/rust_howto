@@ -3,7 +3,7 @@
 ## Std {#skip}
 
 - [black_box in `core::hint`][c~core::hint::black_box~docs]↗.
-- [`std::pin`][c~std::pin~projections-and-structural-pinning~docs].
+- [`std::pin`][c~std::pin~projections-and-structural-pinning~docs]↗.
 - [`core::iter`][c~core::iter~docs]↗.
 
 ## Markdown {#skip}
@@ -75,7 +75,7 @@
 
 ## Unstable Features {#skip}
 
-- [Coroutine in `std::ops`][c~std::ops::Coroutine~docs].
+- [Coroutine in `std::ops`][c~std::ops::Coroutine~docs]↗.
 - [Unstable Features][book~cargo~unstable]↗ - The Cargo Book.
 
 ## VS Code {#skip}

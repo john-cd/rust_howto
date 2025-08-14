@@ -20,7 +20,7 @@ Kin in spirit to [Python][p~python]'s `scikit-learn`, [`linfa`][c~linfa~docs]↗
 
 [![smartcore~website][c~smartcore~website~badge]][c~smartcore~website] [![smartcore][c~smartcore~docs~badge]][c~smartcore~docs] [![smartcore~crates.io][c~smartcore~crates.io~badge]][c~smartcore~crates.io] [![smartcore~github][c~smartcore~github~badge]][c~smartcore~github] [![smartcore~lib.rs][c~smartcore~lib.rs~badge]][c~smartcore~lib.rs]{{hi:smartcore}}{{hi:Statistical}}{{hi:Ai}}{{hi:Machine-learning}}{{hi:Optimization}}{{hi:Linear-algebra}}[![cat~science][cat~science~badge]][cat~science]{{hi:Science}}
 
-[SmartCore][c~smartcore~website]{{hi:smartcore}}↗ is a comprehensive library for machine learning and numerical computing. The library provides a set of tools for linear algebra, numerical computing, optimization, and enables a generic, powerful yet still efficient approach to machine learning.
+[SmartCore][c~smartcore~website]↗{{hi:smartcore}} is a comprehensive library for machine learning and numerical computing. The library provides a set of tools for linear algebra, numerical computing, optimization, and enables a generic, powerful yet still efficient approach to machine learning.
 
 ```rust,editable
 {{#include ../../../crates/cats/science/examples/ml/smartcore.rs:example}}

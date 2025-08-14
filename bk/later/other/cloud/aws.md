@@ -34,7 +34,7 @@ This SDK provides a set of libraries that simplify the use of services like Amaz
 
 See, for example:
 
-- [AWS Rust SDK][aws-rust-sdk~website]{{hi:AWS}}↗.
+- [AWS Rust SDK][aws-rust-sdk~website]↗{{hi:AWS}}.
 - [AWS SDK examples][aws-doc-sdk~examples~github]↗.
 
 ```rust,editable
@@ -44,8 +44,8 @@ See, for example:
 ## References {#references}
 
 - [AWS and Rust][blog~sustainability-with-rust]↗.
-- [AWS Rust SDK][aws-rust-sdk~website]{{hi:AWS}}↗.
-- [Serverless Rust][serverless-rust~website]{{hi:Serverless}}↗ framework.
+- [AWS Rust SDK][aws-rust-sdk~website]↗{{hi:AWS}}.
+- [Serverless Rust][serverless-rust~website]↗{{hi:Serverless}} framework.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

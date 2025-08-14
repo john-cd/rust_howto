@@ -4,7 +4,7 @@
 
 ## `lsd` {#lsd}
 
-[`lsd`][c~lsd~github]{{hi:lsd}} is a command-line utility written in Rust, a rewrite of the GNU `ls` command. It aims to provide a more visually appealing and informative directory listing with features like colored output, icons for different file types, `git` integration, tree-view, and recursive directory traversal.
+[`lsd`][c~lsd~github]↗{{hi:lsd}} is a command-line utility written in Rust, a rewrite of the GNU `ls` command. It aims to provide a more visually appealing and informative directory listing with features like colored output, icons for different file types, `git` integration, tree-view, and recursive directory traversal.
 
 ```sh
 apt install lsd
@@ -18,7 +18,7 @@ apt install lsd
 
 ## `broot` {#broot}
 
-[`broot`][c~broot~website]{{hi:broot}} [![broot~github][c~broot~github~badge]][c~broot~github] is a new way to see and navigate directory trees.
+[`broot`][c~broot~website]↗{{hi:broot}} [![broot~github][c~broot~github~badge]][c~broot~github] is a new way to see and navigate directory trees.
 
 [`broot`][c~broot~docs]↗{{hi:broot}} is an interactive directory tree explorer implemented in Rust, designed for efficient filesystem navigation and manipulation. It provides a navigable, hierarchical view of the [filesystem][p~filesystem], enabling rapid traversal via keyboard shortcuts and intuitive navigation. Beyond basic exploration, [`broot`][c~broot~docs]↗{{hi:broot}} integrates file management operations (move, copy, delete, rename) directly within its interface. Its shell integration allows seamless transitions between [`broot`][c~broot~docs]↗{{hi:broot}} and the shell, facilitating efficient workflow integration.
 

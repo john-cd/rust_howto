@@ -91,7 +91,7 @@ One benefit of implementing `IntoIterator` is that your type will work with the 
 
 ## References {#references}
 
-- [Iterators][book~rust~iterators]{{hi:Iterators}}↗.
+- [Iterators][book~rust~iterators]↗{{hi:Iterators}}.
 - [What is the correct way to return an Iterator (or any other trait)?][blog~stackoverflow~what-is-the-correct-way-to-return-an-iterator-or-any-other-trait]↗.
 - [Implementing Iterator and IntoIterator in Rust][blog~implementing-iterator-and-intoiterator-in-rust]↗.
 

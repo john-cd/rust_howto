@@ -6,7 +6,7 @@ The following includes books and other long-form writings about Rust.
 
 ## Lists of Books {#book-lists}
 
-- [Little Book of Rust Books][book~the-little-book-of-rust-books]{{hi:Rust books}}↗.
+- [Little Book of Rust Books][book~the-little-book-of-rust-books]↗{{hi:Rust books}}.
 - [Awesome Rust Books][rustbooks~github]↗.
 - [LearnRust][learnrust~github]↗: A "list of resources to learn Rust - Roadmap from beginner to advanced level". Includes a book section.
 - [`rust-learning`][rust-learning~github]↗: A bunch of links to books, blog posts, articles, videos, etc. for learning Rust.
@@ -204,7 +204,11 @@ This page includes a number of links to the websites of publishers and book merc
 <div class="hidden">
 TODO review; review
 [The Little Book of Rust Books][book~the-little-book-of-rust-books~unofficial]
+
 [book~the-little-book-of-rust-books~unofficial]: https://lborb.github.io/book/unofficial.html
+
 [The Little Book of Rust Books][book~the-little-book-of-rust-books~applications]
+
 [book~the-little-book-of-rust-books~applications]: https://lborb.github.io/book/applications.html
+
 </div>

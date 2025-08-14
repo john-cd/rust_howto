@@ -9,7 +9,7 @@
 [![swc_ecma_parser~github][c~swc_ecma_parser~github~badge]][c~swc_ecma_parser~github]
 [![swc_ecma_parser~lib.rs][c~swc_ecma_parser~lib.rs~badge]][c~swc_ecma_parser~lib.rs]
 
-[swc_ecma_parser][c~swc_ecma_parser~crates.io]{{hi:swc_ecma_parser}}↗ is a feature-complete ECMAScript / TypeScript parser written in Rust.
+[swc_ecma_parser][c~swc_ecma_parser~crates.io]↗{{hi:swc_ecma_parser}} is a feature-complete ECMAScript / TypeScript parser written in Rust.
 
 ```rust,editable
 {{#include ../../../crates/cats/parser_implementations/examples/javascript/swc_ecma_parser.rs:example}}

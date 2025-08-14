@@ -8,8 +8,8 @@ A [key derivation function][key_derivation_function]↗ (KDF) is a cryptographic
 
 The original use for a KDF is key derivation, the generation of multiple keys from secret passwords or passphrases.
 
-Despite their original use for key derivation, KDFs are possibly better known for their use in password [hashing][p~hashing] (password verification by hash comparison), as used by the [`passwd`][wikipedia~passwd]{{hi:passwd}} file or `shadow` password file. Password hash [functions][p~functions] should be relatively expensive to calculate in case of brute-force attacks, and the key stretching of KDFs happen to provide this characteristic.
-Despite their original use for key derivation, KDFs are possibly better known for their use in password [hashing][p~hashing] (password verification by hash comparison), as used by the [`passwd`][wikipedia~passwd]{{hi:passwd}} file or `shadow` password file. Password hash [functions][p~functions] should be relatively expensive to calculate in case of brute-force attacks, and the key stretching of KDFs happen to provide this characteristic.
+Despite their original use for key derivation, KDFs are possibly better known for their use in password [hashing][p~hashing] (password verification by hash comparison), as used by the [`passwd`][wikipedia~passwd]↗{{hi:passwd}} file or `shadow` password file. Password hash [functions][p~functions] should be relatively expensive to calculate in case of brute-force attacks, and the key stretching of KDFs happen to provide this characteristic.
+Despite their original use for key derivation, KDFs are possibly better known for their use in password [hashing][p~hashing] (password verification by hash comparison), as used by the [`passwd`][wikipedia~passwd]↗{{hi:passwd}} file or `shadow` password file. Password hash [functions][p~functions] should be relatively expensive to calculate in case of brute-force attacks, and the key stretching of KDFs happen to provide this characteristic.
 
 In that role, key derivation [functions][p~functions] take a password, a salt, (and sometimes a cost factor) as inputs, then generate a password hash - deliberately slowly. Their purpose is to make each password guessing trial by an attacker who has obtained a password hash file expensive and therefore the cost of a guessing attack high or prohibitive. In cryptography, "salt" refers to non-secret, random data added to input data before hashing it.
 
@@ -66,9 +66,9 @@ The [`scrypt`][c~scrypt~docs]↗{{hi:scrypt}} key derivation function is designe
 
 [![ring][c~ring~docs~badge]][c~ring~docs] [![ring~crates.io][c~ring~crates.io~badge]][c~ring~crates.io] [![ring~github][c~ring~github~badge]][c~ring~github] [![ring~lib.rs][c~ring~lib.rs~badge]][c~ring~lib.rs]{{hi:ring}}{{hi:Crypto}}{{hi:Cryptography}}{{hi:Rand}}{{hi:Rsa}}{{hi:ECC}} [![data-encoding][c~data-encoding~docs~badge]][c~data-encoding~docs] [![data-encoding~crates.io][c~data-encoding~crates.io~badge]][c~data-encoding~crates.io] [![data-encoding~github][c~data-encoding~github~badge]][c~data-encoding~github] [![data-encoding~lib.rs][c~data-encoding~lib.rs~badge]][c~data-encoding~lib.rs]{{hi:data-encoding}}{{hi:Hex}}{{hi:No_std}}{{hi:Base64}}{{hi:Base32}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-Uses [`ring::pbkdf2`][c~ring::pbkdf2~docs]{{hi:ring::pbkdf2}}↗ to hash a salted password{{hi:Salted passwords}} using the PBKDF2{{hi:PBKDF2}} key derivation function [`ring::pbkdf2::derive`][c~ring::pbkdf2::derive~docs]{{hi:ring::pbkdf2::derive}}↗.
-Verifies the hash{{hi:Hashing}} is correct with [`ring::pbkdf2::verify`][c~ring::pbkdf2::verify~docs]{{hi:ring::pbkdf2::verify}}↗.
-The salt is generated using [`ring::rand::SecureRandom::fill`][c~ring::rand::SecureRandom::fill~docs]{{hi:ring::rand::SecureRandom::fill}}↗ which fills the salt byte array with securely generated random numbers.
+Uses [`ring::pbkdf2`][c~ring::pbkdf2~docs]↗{{hi:ring::pbkdf2}} to hash a salted password{{hi:Salted passwords}} using the PBKDF2{{hi:PBKDF2}} key derivation function [`ring::pbkdf2::derive`][c~ring::pbkdf2::derive~docs]↗{{hi:ring::pbkdf2::derive}}.
+Verifies the hash{{hi:Hashing}} is correct with [`ring::pbkdf2::verify`][c~ring::pbkdf2::verify~docs]↗{{hi:ring::pbkdf2::verify}}.
+The salt is generated using [`ring::rand::SecureRandom::fill`][c~ring::rand::SecureRandom::fill~docs]↗{{hi:ring::rand::SecureRandom::fill}} which fills the salt byte array with securely generated random numbers.
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/examples/password_hashing/pbkdf2.rs:example}}

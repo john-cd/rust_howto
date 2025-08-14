@@ -12,7 +12,7 @@ Structs are custom data types that allow you to group related data together. The
 {{#include ../../crates/language/examples/structs/structs.rs:example}}
 ```
 
-Struct fields{{hi:Fields}} follow the general rule of everything being private by default,{{hi:Private by default}} unless annotated with [`pub`][book~rust-reference~visibility-and-privacy]{{hi:Visibility}}↗. See the [[visibility | Visibility]] chapter.
+Struct fields{{hi:Fields}} follow the general rule of everything being private by default,{{hi:Private by default}} unless annotated with [`pub`][book~rust-reference~visibility-and-privacy]↗{{hi:Visibility}}. See the [[visibility | Visibility]] chapter.
 
 Struct fields may be a primitive type, a tuple, an array, an enum, another struct (for nested structs), a reference...
 

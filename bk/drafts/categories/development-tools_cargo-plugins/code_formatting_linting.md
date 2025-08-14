@@ -67,7 +67,7 @@ cargo fix
 [![cargo-husky~lib.rs][c~cargo-husky~lib.rs~badge]][c~cargo-husky~lib.rs]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 
-[cargo-husky][c~cargo-husky~github]{{hi:cargo-husky}}↗ setup Git hooks automatically for [`cargo`][c~cargo~docs]↗{{hi:cargo}} projects with 🐶
+[cargo-husky][c~cargo-husky~github]↗{{hi:cargo-husky}} setup Git hooks automatically for [`cargo`][c~cargo~docs]↗{{hi:cargo}} projects with 🐶
 
 Git hook scripts are useful for identifying simple issues (failing tests, trailing white spaces, [formatting][p~formatting] of the code, of [JSON][p~json], and YAML files...) before committing code, prior to submission to code review.
 

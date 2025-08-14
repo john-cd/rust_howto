@@ -18,7 +18,7 @@
 
 ## Rust on Nails {#rust-on-nails}
 
-[Rust on Nails][rust-on-nails~website]{{hi:Rust on Nails}}↗.
+[Rust on Nails][rust-on-nails~website]↗{{hi:Rust on Nails}}.
 
 ## See Also
 

@@ -6,7 +6,7 @@
 
 [![zola][zola~website~badge]][zola~website] [![zola~github][zola~github~badge]][zola~github] [![zola~lib.rs][zola~lib.rs~badge]][zola~lib.rs]{{hi:zola}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}} [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}
 
-[Zola][zola~website]{{hi:zola}}↗ is a fast static site generator in a single binary with everything built-in.
+[Zola][zola~website]↗{{hi:zola}} is a fast static site generator in a single binary with everything built-in.
 
 Once Zola is installed, create a new site:
 

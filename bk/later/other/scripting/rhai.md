@@ -13,7 +13,7 @@
 [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
 
-[rhai][c~rhai~website]{{hi:rhai}}↗ is an embedded scripting language and evaluation engine that gives a safe and easy way to add scripting to any Rust application.{{hi:Scripting in Rust}}
+[rhai][c~rhai~website]↗{{hi:rhai}} is an embedded scripting language and evaluation engine that gives a safe and easy way to add scripting to any Rust application.{{hi:Scripting in Rust}}
 
 Features:
 

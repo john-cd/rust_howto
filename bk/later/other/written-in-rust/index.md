@@ -40,7 +40,7 @@ This section provides a few examples of software written in Rust, organized by t
     - [`sd`][c~sd~docs]↗{{hi:sd}}: an intuitive find & replace CLI.
     - [`starship`][c~starship~docs]↗ [(GitHub)][c~starship~github]↗{{hi:starship}} - a customizable prompt for any shell. See [[shells | Shells]].
     - [`broot`][c~broot~docs]↗ [(GitHub)][c~broot~github]↗: a tool to navigate directories.
-    - [`television`][c~television~docs]↗ [(GitHub)][c~television~github]{{hi:television}}↗: a cross-platform and extensible general purpose fuzzy finder TUI.
+    - [`television`][c~television~docs]↗ [(GitHub)][c~television~github]↗{{hi:television}}: a cross-platform and extensible general purpose fuzzy finder TUI.
     - [`sd`][c~sd~docs]↗ [(crates.io)][c~sd~crates.io]↗: an intuitive find & replace CLI.
     - `uutils` [(GitHub)][coreutils~github]↗: cross-platform Rust rewrite of the GNU coreutils.
 
@@ -73,7 +73,7 @@ This section provides a few examples of software written in Rust, organized by t
 
 - Browsers:
   - Components of web browsers.
-  - Example: [`Mozilla Firefox`][mozilla-firefox~website]{{hi:Firefox}} uses Rust in its `Servo` rendering engine.
+  - Example: [`Mozilla Firefox`][mozilla-firefox~website]↗{{hi:Firefox}} uses Rust in its `Servo` rendering engine.
 - Databases:
   - Database engines.
   - Database drivers.
@@ -168,7 +168,7 @@ This section provides a few examples of software written in Rust, organized by t
 - [`alacritty`][alacritty~github]↗: A cross-platform, OpenGL terminal emulator.
 - [`cargo-hakari`][c~cargo-hakari~crates.io]↗.
 - [`spacedrive`][spacedrive~github]↗: Spacedrive is an open source cross-platform file explorer, powered by a virtual distributed filesystem written in Rust.
-- [`swc`](https://github.com/swc-project/swc)↗: Rust-based platform for the Web.
+- [`swc`][c~swc~github]↗: Rust-based platform for the Web.
 - [`influxdb`][influxdb~github]↗: Scalable datastore for metrics, events, and real-time analytics.
 - [`firecracker`][firecracker~github]↗: Secure and fast microVMs for serverless computing.
 - [`Warp`][warp~github]↗: Warp is a modern, Rust-based terminal with AI built in so you and your team can build great software, faster.
@@ -176,7 +176,7 @@ This section provides a few examples of software written in Rust, organized by t
 - [wezterm][wezterm~github]↗: A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust.
 - [redox-os: Mirror of https://gitlab.redox-os.org/redox-os/redox][redox~github]↗.
 - [Neon][neon~github]↗: Serverless Postgres. We separated storage and compute to offer autoscaling, code-like database branching, and scale to zero.
-- [navi](https://github.com/denisidoro/navi)↗: An interactive cheatsheet tool for the command-line.
+- [navi][c~navi~github]↗: An interactive cheatsheet tool for the command-line.
 - [RustScan][rustscan~github]↗: The Modern Port Scanner.
 - [workers-rs][workers-rs~github]↗: Write Cloudflare Workers in 100% Rust via WebAssembly.
 - [Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud][c~qdrant~github]↗.

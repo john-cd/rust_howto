@@ -14,12 +14,12 @@ Popular tooling include:
 ## Workflow Example (GitHub Actions) {#github-actions}
 
 - Developers push code changes to a Git repository.
-- [`GitHub Actions`][github-actions~website]{{hi:GitHub Actions}} is triggered by the push or pull request.
+- [`GitHub Actions`][github-actions~website]↗{{hi:GitHub Actions}} is triggered by the push or pull request.
 - Within the workflow, [`cargo`][c~cargo~docs]↗{{hi:cargo}} builds the Rust application in release mode.
 - [`cargo`][c~cargo~docs]↗{{hi:cargo}} runs all (unit, integration, and end-to-end) tests.
 - The built binary is packaged (e.g., zipped).
-- [`GitHub Actions`][github-actions~website]{{hi:GitHub Actions}} creates a new release on GitHub, attaching the packaged binary.
-- Deployment (Optional): [`GitHub Actions`][github-actions~website]{{hi:GitHub Actions}} deploys the application to a target environment.
+- [`GitHub Actions`][github-actions~website]↗{{hi:GitHub Actions}} creates a new release on GitHub, attaching the packaged binary.
+- Deployment (Optional): [`GitHub Actions`][github-actions~website]↗{{hi:GitHub Actions}} deploys the application to a target environment.
 
 See [[github_actions | Github Actions]].
 
@@ -30,7 +30,7 @@ See [[github_actions | Github Actions]].
 - [Optimizing CI/CD pipelines][blog~optimizing-ci-cd-pipelines-rust-project]↗.
 - [Creating a docker container action][github~creating-a-docker-container-action]↗.
 - ["Upload a Build Artifact" Github Action][upload-a-build-artifact~website]↗.
-- [`docker-cache`][docker-cache~github]{{hi:docker-cache}}↗.
+- [`docker-cache`][docker-cache~github]↗{{hi:docker-cache}}.
 - [Cached Docker images][cached-docker-images~github]↗.
 - [Docker GitHub Action][docker~github-action]↗.
 - [Cache storage backends][docker~cache-storage-backends]↗.

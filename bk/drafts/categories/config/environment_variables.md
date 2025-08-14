@@ -6,7 +6,7 @@
 
 [![dotenvy][c~dotenvy~docs~badge]][c~dotenvy~docs] [![dotenvy~crates.io][c~dotenvy~crates.io~badge]][c~dotenvy~crates.io] [![dotenvy~github][c~dotenvy~github~badge]][c~dotenvy~github] [![dotenvy~lib.rs][c~dotenvy~lib.rs~badge]][c~dotenvy~lib.rs]{{hi:dotenvy}}{{hi:Environment}}{{hi:Env}}{{hi:Dotenv}}{{hi:Settings}}{{hi:Config}}
 
-[`dotenvy`][c~dotenvy~docs]{{hi:dotenvy}}↗ forks and supersedes [`dotenv`][c~dotenv~docs]{{hi:dotenv}}↗.
+[`dotenvy`][c~dotenvy~docs]↗{{hi:dotenvy}} forks and supersedes [`dotenv`][c~dotenv~docs]↗{{hi:dotenv}}.
 
 [`dotenvy`][c~dotenvy~docs]↗{{hi:dotenvy}} is a Rust crate that loads environment variables from a .env file. It's commonly used during development to manage configuration settings without hardcoding them into the application. [`dotenvy`][c~dotenvy~docs]↗{{hi:dotenvy}} parses the .env file, sets the environment variables, and makes them accessible to the application through the standard std::env module. It's a simple but effective way to separate [configuration][p~configuration] from code and manage different environments (development, testing, production) with different .env files. It's important to note that .env files are typically not used in production environments, where environment variables are usually set directly.
 

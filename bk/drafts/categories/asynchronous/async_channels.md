@@ -12,7 +12,7 @@ Tokio's [`sync`][c~tokio::sync~docs]↗ module provides channels{{hi:Channels}} 
 
 ### OneShot {#oneshot}
 
-[`tokio::sync::oneshot`][c~tokio::sync::oneshot~docs]{{hi:tokio::sync::oneshot}}↗ sends a single value from a single producer{{hi:Producer}} to a single consumer{{hi:Consumer}}. This channel{{hi:Channels}} is usually used to send the result of a computation to a waiter.
+[`tokio::sync::oneshot`][c~tokio::sync::oneshot~docs]↗{{hi:tokio::sync::oneshot}} sends a single value from a single producer{{hi:Producer}} to a single consumer{{hi:Consumer}}. This channel{{hi:Channels}} is usually used to send the result of a computation to a waiter.
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/examples/async_channels/async_channels_oneshot.rs:example}}

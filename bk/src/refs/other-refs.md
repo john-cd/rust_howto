@@ -1,4 +1,3 @@
-
 [.dll-files]: https://fileinfo.com/extension/dll
 [.env-files]: https://medium.com/@michaeldipasquale313/using-env-files-what-they-are-and-when-to-use-them-4f4812c5732f
 [.so-files]: https://fileinfo.com/extension/so
@@ -77,6 +76,7 @@
 [are-we-game-yet?-animation~website]: https://arewegameyet.rs/ecosystem/animation
 [are-we-game-yet?-audio~website]: https://arewegameyet.rs/ecosystem/audio
 [are-we-game-yet?-ecs~website]: https://arewegameyet.rs/ecosystem/ecs
+[are-we-game-yet?-games~website]: https://arewegameyet.rs/#games
 [are-we-game-yet?-input~website]: https://arewegameyet.rs/ecosystem/input
 [are-we-game-yet?-math~website]: https://arewegameyet.rs/ecosystem/math
 [are-we-game-yet?-mesh~website]: https://arewegameyet.rs/ecosystem/mesh
@@ -933,6 +933,7 @@
 [godotengine~website]: https://godotengine.org
 [gog~website]: https://gog.com
 [goodfirstissue~website]: https://goodfirstissue.dev/language/rust
+[google-cloud-rust~github]: https://github.com/googleapis/google-cloud-rust
 [google~website]: https://about.google
 [gpui.rs~website]: https://gpui.rs
 [grafana~website]: https://grafana.com
@@ -1359,11 +1360,13 @@
 [rust-gpu~Rust-CUDA]: https://rust-gpu.github.io/Rust-CUDA
 [rust-gpu~Rust-CUDA~github]: https://github.com/Rust-GPU/Rust-CUDA
 [rust-gpu~book]: https://rust-gpu.github.io/rust-gpu/book
+[rust-gpu~ecosystem~website]: https://rust-gpu.github.io/ecosystem
 [rust-gpu~github]: https://github.com/Rust-GPU/rust-gpu
 [rust-gpu~website]: https://rust-gpu.github.io
 [rust-headless-chrome~github]: https://github.com/rust-headless-chrome/rust-headless-chrome
 [rust-howto~.github~github]: https://github.com/john-cd/rust_howto/tree/main/.github
 [rust-howto~.vscode~github]: https://github.com/john-cd/rust_howto/tree/main/.vscode
+[rust-howto~Dockerfile~github]: https://github.com/john-cd/rust_howto/blob/main/.devcontainer/Dockerfile
 [rust-howto~bin~github]: https://github.com/john-cd/rust_howto/tree/main/bin
 [rust-howto~bk-later~github]: https://github.com/john-cd/rust_howto/tree/main/bk/later
 [rust-howto~bk-master~github]: https://github.com/john-cd/rust_howto/tree/main/bk/master
@@ -1646,6 +1649,7 @@
 [wikipedia~List_of_software_package_management_systems]: https://en.wikipedia.org/wiki/List_of_software_package_management_systems
 [wikipedia~QEMU]: https://en.wikipedia.org/wiki/QEMU
 [wikipedia~authenticated-encryption]: https://en.wikipedia.org/wiki/Authenticated_encryption
+[wikipedia~behavior-tree]:https://en.wikipedia.org/wiki/Behavior_tree_(artificial_intelligence%2C_robotics_and_control)
 [wikipedia~bullet]: https://en.wikipedia.org/wiki/Bullet_%28software%29
 [wikipedia~haversine-formula]: https://en.wikipedia.org/wiki/Haversine_formula
 [wikipedia~julia-set]: https://en.wikipedia.org/wiki/Julia_set

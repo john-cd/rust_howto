@@ -11,7 +11,7 @@ We will use two key crates:
 
 [![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~github][c~ndarray~github~badge]][c~ndarray~github] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
 
-Creates two 2-D matrices with [`ndarray::arr2`][c~ndarray::arr2~docs]{{hi:ndarray::arr2}}↗ and sums them element-wise.
+Creates two 2-D matrices with [`ndarray::arr2`][c~ndarray::arr2~docs]↗{{hi:ndarray::arr2}} and sums them element-wise.
 
 Note that the sum is computed as `let sum = &a + &b`. The `&` operator is used to avoid consuming `a` and `b`, making them available later for display. A new array is created containing their sum.
 
@@ -23,7 +23,7 @@ Note that the sum is computed as `let sum = &a + &b`. The `&` operator is used t
 
 [![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~github][c~ndarray~github~badge]][c~ndarray~github] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
 
-Creates two matrices with [`ndarray::arr2`][c~ndarray::arr2~docs]{{hi:ndarray::arr2}}↗ and performs matrix multiplication on them with [`ndarray::ArrayBase::dot`][c~ndarray::ArrayBase::dot~docs]{{hi:ndarray::ArrayBase::dot}}↗.
+Creates two matrices with [`ndarray::arr2`][c~ndarray::arr2~docs]↗{{hi:ndarray::arr2}} and performs matrix multiplication on them with [`ndarray::ArrayBase::dot`][c~ndarray::ArrayBase::dot~docs]↗{{hi:ndarray::ArrayBase::dot}}.
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/examples/linear_algebra/multiply_matrices.rs:example}}
@@ -33,7 +33,7 @@ Creates two matrices with [`ndarray::arr2`][c~ndarray::arr2~docs]{{hi:ndarray::a
 
 [![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~github][c~ndarray~github~badge]][c~ndarray~github] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
 
-Creates a 1-D array (vector) with [`ndarray::arr1`][c~ndarray::arr1~docs]{{hi:ndarray::arr1}}↗ and a 2-D array (matrix) with [`ndarray::arr2`][c~ndarray::arr2~docs]{{hi:ndarray::arr2}}↗.
+Creates a 1-D array (vector) with [`ndarray::arr1`][c~ndarray::arr1~docs]↗{{hi:ndarray::arr1}} and a 2-D array (matrix) with [`ndarray::arr2`][c~ndarray::arr2~docs]↗{{hi:ndarray::arr2}}.
 
 First, a scalar is multiplied by the vector to get another vector. Then, the matrix is multiplied by the new vector with `ndarray::Array2::dot`↗ (Matrix multiplication is performed using `ndarray::Array2::dot`↗, while the `*` operator performs element-wise multiplication.)
 
@@ -47,9 +47,9 @@ In [`ndarray`][c~ndarray~docs]↗, 1-D arrays can be interpreted as either row o
 
 [![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~github][c~ndarray~github~badge]][c~ndarray~github] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
 
-The [`ndarray`][c~ndarray~docs]↗ crate supports a number of ways to create arrays -- this recipe create [`ndarray::Array`][c~ndarray::Array~docs]{{hi:ndarray::Array}}↗ from [`std::vec::Vec`][c~std::vec::Vec~docs]↗{{hi:std::vec::Vec}} using [`std::convert::From`][c~std::convert::From~docs]{{hi:std::convert::From}}↗. Then, it sums the arrays element-wise.
+The [`ndarray`][c~ndarray~docs]↗ crate supports a number of ways to create arrays -- this recipe create [`ndarray::Array`][c~ndarray::Array~docs]↗{{hi:ndarray::Array}} from [`std::vec::Vec`][c~std::vec::Vec~docs]↗{{hi:std::vec::Vec}} using [`std::convert::From`][c~std::convert::From~docs]↗{{hi:std::convert::From}}. Then, it sums the arrays element-wise.
 
-This recipe contains an example of comparing two floating-point [vectors][p~vectors] element-wise. Floating-point numbers are often stored inexactly, making exact comparisons difficult. However, the [`approx::assert_abs_diff_eq`][c~approx::assert_abs_diff_eq~docs]{{hi:approx::assert_abs_diff_eq}}↗ macro from the [`approx`][c~approx~docs]{{hi:approx}}↗ crate allows for convenient element-wise comparisons. To use the [`approx`][c~approx~docs]↗ crate with [`ndarray`][c~ndarray~docs]↗, the [`approx`][c~approx~docs]{{hi:approx}}↗ feature must be added to the [`ndarray`][c~ndarray~docs]↗ dependency in [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}. For example, `ndarray = { version = "0.15.6", features = [ "approx" ] }`.
+This recipe contains an example of comparing two floating-point [vectors][p~vectors] element-wise. Floating-point numbers are often stored inexactly, making exact comparisons difficult. However, the [`approx::assert_abs_diff_eq`][c~approx::assert_abs_diff_eq~docs]↗{{hi:approx::assert_abs_diff_eq}} macro from the [`approx`][c~approx~docs]↗{{hi:approx}} crate allows for convenient element-wise comparisons. To use the [`approx`][c~approx~docs]↗ crate with [`ndarray`][c~ndarray~docs]↗, the [`approx`][c~approx~docs]↗{{hi:approx}} feature must be added to the [`ndarray`][c~ndarray~docs]↗ dependency in [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}. For example, `ndarray = { version = "0.15.6", features = [ "approx" ] }`.
 
 This recipe also contains additional ownership examples. Here, `let z = a + b` consumes `a` and `b`, updates `a` with the result, then moves ownership to `z`. Alternatively,
 `let w = &c + &d` creates a new vector without consuming `c` or `d`, allowing their modification later. See [Binary Operators With Two Arrays][c~ndarray::ArrayBase~docs]↗ for additional detail.
@@ -62,14 +62,14 @@ This recipe also contains additional ownership examples. Here, `let z = a + b` c
 
 [![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~github][c~ndarray~github~badge]][c~ndarray~github] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
 
-This recipe demonstrates use of the [`ndarray::Array1`][c~ndarray::Array1~docs]{{hi:ndarray::Array1}}↗ type, [`ndarray::Array1`][c~ndarray::Array1~docs]{{hi:ndarray::Array1}}↗ type,
-[`ndarray::ArrayBase::fold`][c~ndarray::ArrayBase::fold~docs]{{hi:ndarray::ArrayBase::fold}} method, and [`ndarray::ArrayBase::dot`][c~ndarray::ArrayBase::dot~docs]{{hi:ndarray::ArrayBase::dot}}↗ method in computing the [`l1`][wolfram~l1-norm]{{hi:L1 norm}}↗ and [`l2`][wolfram~l2-norm]{{hi:L2 norm}}↗ norms of a given vector.
+This recipe demonstrates use of the [`ndarray::Array1`][c~ndarray::Array1~docs]↗{{hi:ndarray::Array1}} type, [`ndarray::Array1`][c~ndarray::Array1~docs]↗{{hi:ndarray::Array1}} type,
+[`ndarray::ArrayBase::fold`][c~ndarray::ArrayBase::fold~docs]↗{{hi:ndarray::ArrayBase::fold}} method, and [`ndarray::ArrayBase::dot`][c~ndarray::ArrayBase::dot~docs]↗{{hi:ndarray::ArrayBase::dot}} method in computing the [`l1`][wolfram~l1-norm]↗{{hi:L1 norm}} and [`l2`][wolfram~l2-norm]↗{{hi:L2 norm}} norms of a given vector.
 
-The [`l2_norm`][wolfram~l2-norm]↗ function is the simpler of the two, as it computes the square root of the dot product of a vector with itself. The [`l1_norm`][wolfram~l1-norm]↗ function is computed by a [`ndarray::ArrayBase::fold`][c~ndarray::ArrayBase::fold~docs]{{hi:ndarray::ArrayBase::fold}}↗ operation that sums the absolute values of the elements. (This could also be performed with `x.mapv(f64::abs).scalar_sum()`, but that would allocate a new array for the result of the `mapv`.)
+The [`l2_norm`][wolfram~l2-norm]↗ function is the simpler of the two, as it computes the square root of the dot product of a vector with itself. The [`l1_norm`][wolfram~l1-norm]↗ function is computed by a [`ndarray::ArrayBase::fold`][c~ndarray::ArrayBase::fold~docs]↗{{hi:ndarray::ArrayBase::fold}} operation that sums the absolute values of the elements. (This could also be performed with `x.mapv(f64::abs).scalar_sum()`, but that would allocate a new array for the result of the `mapv`.)
 
-Note that both [`l1_norm`][wolfram~l1-norm]↗ and [`l2_norm`][wolfram~l2-norm]↗ take the [`ndarray::ArrayView1`][c~ndarray::ArrayView1~docs]{{hi:ndarray::ArrayView1}}↗ type. This recipe considers vector norms, so the norm functions only need to accept one-dimensional views, hence [`ndarray::ArrayView1`][c~ndarray::ArrayView1~docs]{{hi:ndarray::ArrayView1}}↗. While the functions could take a parameter of type `&Array1<f64>` instead, that would require the caller to have a reference to an owned array, which is more restrictive than just having access to a view (since a view can be created from any array or view, not just an owned array).
+Note that both [`l1_norm`][wolfram~l1-norm]↗ and [`l2_norm`][wolfram~l2-norm]↗ take the [`ndarray::ArrayView1`][c~ndarray::ArrayView1~docs]↗{{hi:ndarray::ArrayView1}} type. This recipe considers vector norms, so the norm functions only need to accept one-dimensional views, hence [`ndarray::ArrayView1`][c~ndarray::ArrayView1~docs]↗{{hi:ndarray::ArrayView1}}. While the functions could take a parameter of type `&Array1<f64>` instead, that would require the caller to have a reference to an owned array, which is more restrictive than just having access to a view (since a view can be created from any array or view, not just an owned array).
 
-[`ndarray::Array`][c~ndarray::Array~docs]{{hi:ndarray::Array}}↗ and [`ndarray::ArrayView`][c~ndarray::ArrayView~docs]↗ are both type aliases for [`ndarray::ArrayBase`][c~ndarray::ArrayBase~docs]↗. So, the most general argument type for the caller would be `&ArrayBase<S, Ix1> where S: Data`, because then the caller could use `&array` or `&view` instead of `x.view()`. If the function is part of a public API, that may be a better choice for the benefit of users. For internal functions, the more concise `ArrayView1<f64>` may be preferable.
+[`ndarray::Array`][c~ndarray::Array~docs]↗{{hi:ndarray::Array}} and [`ndarray::ArrayView`][c~ndarray::ArrayView~docs]↗ are both type aliases for [`ndarray::ArrayBase`][c~ndarray::ArrayBase~docs]↗. So, the most general argument type for the caller would be `&ArrayBase<S, Ix1> where S: Data`, because then the caller could use `&array` or `&view` instead of `x.view()`. If the function is part of a public API, that may be a better choice for the benefit of users. For internal functions, the more concise `ArrayView1<f64>` may be preferable.
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/examples/linear_algebra/vector_norm.rs:example}}
@@ -86,7 +86,7 @@ Note that both [`l1_norm`][wolfram~l1-norm]↗ and [`l2_norm`][wolfram~l2-norm]�
 [![cat~science][cat~science~badge]][cat~science]
 [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
 
-Creates a 3x3 matrix with [`nalgebra::Matrix3`][c~nalgebra::Matrix3~docs]{{hi:nalgebra::Matrix3}}↗ and inverts it, if possible.
+Creates a 3x3 matrix with [`nalgebra::Matrix3`][c~nalgebra::Matrix3~docs]↗{{hi:nalgebra::Matrix3}} and inverts it, if possible.
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/examples/linear_algebra/invert_matrix.rs:example}}
@@ -96,7 +96,7 @@ Creates a 3x3 matrix with [`nalgebra::Matrix3`][c~nalgebra::Matrix3~docs]{{hi:na
 
 [![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~github][c~ndarray~github~badge]][c~ndarray~github] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
 
-Serialize and deserialize a matrix to and from [JSON][p~json]. Serialization is taken care of by [`serde_json::to_string`][c~serde_json::to_string~docs]{{hi:serde_json::to_string}}↗ and [`serde_json::to_string`][c~serde_json::to_string~docs]{{hi:serde_json::to_string}}↗ performs deserialization.
+Serialize and deserialize a matrix to and from [JSON][p~json]. Serialization is taken care of by [`serde_json::to_string`][c~serde_json::to_string~docs]↗{{hi:serde_json::to_string}} and [`serde_json::to_string`][c~serde_json::to_string~docs]↗{{hi:serde_json::to_string}} performs deserialization.
 
 Note that serialization followed by deserialization gives back the original matrix.
 

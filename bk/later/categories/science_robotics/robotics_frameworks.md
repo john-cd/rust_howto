@@ -13,7 +13,7 @@ High-level robotics frameworks in pure Rust are still emerging.
 
 [`Zenoh`][c~zenoh~docs]↗{{hi:Zenoh}} - A high performance and extremely low overhead Pub/Sub/Query protocol. Quickly becoming the protocol of choice for Robot-to-Anything communication.
 
-[Zenoh][c~zenoh~website]{{hi:zenoh}}↗ is a zero-overhead Pub/Sub/Query protocol. Zenoh (pronounced as /zeno/) unifies data in motion, data at rest and computations. It blends traditional pub/sub with geo-distributed storages, queries and computations, while retaining time and space efficiency.
+[Zenoh][c~zenoh~website]↗{{hi:zenoh}} is a zero-overhead Pub/Sub/Query protocol. Zenoh (pronounced as /zeno/) unifies data in motion, data at rest and computations. It blends traditional pub/sub with geo-distributed storages, queries and computations, while retaining time and space efficiency.
 
 Zenoh is a great tool for data storage, query, and computations over geographically distributed systems.
 

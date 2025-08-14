@@ -12,7 +12,7 @@ All values in Rust are stack-allocated by default. [`Box<T>`][c~std::boxed::Box~
 {{#include ../../crates/standard_library/examples/box/box_basics.rs:example}}
 ```
 
-The `Box<T>` type is a smart pointer{{hi:Smart pointers}}, because it implements the [`std::ops::Deref`][c~std::ops::Deref~docs]{{hi:std::ops::Deref}}↗ trait, which allows `Box<T>` values to be treated just like a reference. You can use the de-reference operator{{hi:Dereference operator}} `*`{{hi:*}} or 'deref coercion' with the `.` operator to use its inner value:
+The `Box<T>` type is a smart pointer{{hi:Smart pointers}}, because it implements the [`std::ops::Deref`][c~std::ops::Deref~docs]↗{{hi:std::ops::Deref}} trait, which allows `Box<T>` values to be treated just like a reference. You can use the de-reference operator{{hi:Dereference operator}} `*`{{hi:*}} or 'deref coercion' with the `.` operator to use its inner value:
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/box/box_deref.rs:example}}
@@ -22,7 +22,7 @@ The `Box<T>` type is a smart pointer{{hi:Smart pointers}}, because it implements
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
-Use [`Box<T>`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}}↗ when
+Use [`Box<T>`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}} when
 
 - you don't want to rely on stack space;
 - you have a large amount of data and you want to avoid copying it on the stack: If you have a very large struct, you might want to allocate it on the heap using `Box` to avoid stack overflow.

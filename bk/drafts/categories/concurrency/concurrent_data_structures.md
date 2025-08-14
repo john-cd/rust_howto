@@ -8,9 +8,9 @@ Refer to the [comparative benchmarks of concurrent HashMaps][conc-map-bench~gith
 
 [![dashmap][c~dashmap~docs~badge]][c~dashmap~docs] [![dashmap~crates.io][c~dashmap~crates.io~badge]][c~dashmap~crates.io] [![dashmap~github][c~dashmap~github~badge]][c~dashmap~github] [![dashmap~lib.rs][c~dashmap~lib.rs~badge]][c~dashmap~lib.rs]{{hi:dashmap}}{{hi:Concurrent}}{{hi:Hashmap}}{{hi:Atomic}}[![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
-[`dashmap`][c~dashmap~docs]{{hi:dashmap}}↗ is a fast concurrent `HashMap` i.e. a concurrent associative array.{{hi:Concurrent associative array}}
+[`dashmap`][c~dashmap~docs]↗{{hi:dashmap}} is a fast concurrent `HashMap` i.e. a concurrent associative array.{{hi:Concurrent associative array}}
 
-[`dashmap`][c~dashmap~docs]{{hi:dashmap}}↗ tries to be a direct replacement for `RwLock<HashMap<K, V>>`.
+[`dashmap`][c~dashmap~docs]↗{{hi:dashmap}} tries to be a direct replacement for `RwLock<HashMap<K, V>>`.
 
 It allows multiple threads to concurrently read and write to the map with minimal contention, using a technique called "shard-based" or "bucket-based" concurrency. This makes [`dashmap`][c~dashmap~docs]↗{{hi:dashmap}} a good choice when you need a hash map that can be accessed frequently by multiple threads without significant performance bottlenecks.
 

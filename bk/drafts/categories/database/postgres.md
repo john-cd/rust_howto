@@ -6,9 +6,9 @@
 
 [![postgres][c~postgres~docs~badge]][c~postgres~docs]{{hi:postgres}} [![cat~database][cat~database~badge]][cat~database]{{hi:Databases}}
 
-Use the [`postgres`][c~postgres~docs]{{hi:postgres}}↗ crate to create tables in a Postgres database.
+Use the [`postgres`][c~postgres~docs]↗{{hi:postgres}} crate to create tables in a Postgres database.
 
-[`postgres::Client::connect`][c~postgres::Client::connect~docs]{{hi:postgres::Client::connect}}↗ helps in connecting to an existing database{{hi:Database}}. The recipe uses a URL string format with [`Client::connect`][c~postgres::Client::connect~docs]↗{{hi:Client::connect}}. It assumes an existing database named `library`, the username is `postgres` and the password is `postgres`.
+[`postgres::Client::connect`][c~postgres::Client::connect~docs]↗{{hi:postgres::Client::connect}} helps in connecting to an existing database{{hi:Database}}. The recipe uses a URL string format with [`Client::connect`][c~postgres::Client::connect~docs]↗{{hi:Client::connect}}. It assumes an existing database named `library`, the username is `postgres` and the password is `postgres`.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/examples/postgres/create_tables.rs:example}}
@@ -18,7 +18,7 @@ Use the [`postgres`][c~postgres~docs]{{hi:postgres}}↗ crate to create tables i
 
 [![postgres][c~postgres~docs~badge]][c~postgres~docs]{{hi:postgres}} [![cat~database][cat~database~badge]][cat~database]{{hi:Databases}}
 
-The recipe inserts data into the `author` table using [`postgres::Client::execute`][c~postgres::Client::execute~docs]{{hi:postgres::Client::execute}}↗ method of [`postgres::Client`][c~postgres::Client~docs]{{hi:postgres::Client}}↗. Then, displays the data from the `author`{{hi:author}} table using [`postgres::Client::query`][c~postgres::Client::query~docs]{{hi:postgres::Client::query}}↗ method of [`postgres::Client`][c~postgres::Client~docs]{{hi:postgres::Client}}↗.
+The recipe inserts data into the `author` table using [`postgres::Client::execute`][c~postgres::Client::execute~docs]↗{{hi:postgres::Client::execute}} method of [`postgres::Client`][c~postgres::Client~docs]↗{{hi:postgres::Client}}. Then, displays the data from the `author`{{hi:author}} table using [`postgres::Client::query`][c~postgres::Client::query~docs]↗{{hi:postgres::Client::query}} method of [`postgres::Client`][c~postgres::Client~docs]↗{{hi:postgres::Client}}.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/examples/postgres/insert_query_data.rs:example}}

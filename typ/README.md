@@ -34,13 +34,19 @@ typst help watch
 
 ## Useful Typst Packages
 
-<https://typst.app/universe/package/codly>
+[typst~codly][typst~codly]
+
+[typst~codly]: https://typst.app/universe/package/codly
 
 ## Useful Templates
 
-<https://typst.app/universe/package/ilm>
+[typst~ilm][typst~ilm]
 
-<https://github.com/typst/templates/tree/main/wonderous-book>
+[typst~ilm]: https://typst.app/universe/package/ilm
+
+[typst~wonderous-book][typst~wonderous-book]
+
+[typst~wonderous-book]: https://github.com/typst/templates/tree/main/wonderous-book
 
 ## mdBook Backends
 
@@ -54,8 +60,12 @@ Add an entry to `book.toml`:
 [output.typst]
 ```
 
-- Code: <https://github.com/LegNeato/mdbook-typst>
-- Configuration options: see <https://docs.rs/crate/mdbook-typst/0.1.7/source/src/config.rs>
+- Code: [mdbook-typst][mdbook-typst~github].
+
+- Configuration options: see [mdbook-typst~config~docs][mdbook-typst~config~docs].
+
+[mdbook-typst~config~docs]: <https://docs.rs/crate/mdbook-typst/0.1.7/source/src/config.rs>
+[mdbook-typst~github]: <https://github.com/LegNeato/mdbook-typst>
 
 ```toml
 [output.typst.output]
@@ -128,8 +138,14 @@ text_font = "libertinus serif"
 
 See also:
 
-- <https://asciidoc.org/>
-- <https://crates.io/crates/mdbook-pandoc>.
-- <https://lib.rs/crates/pullup>
-- <https://lib.rs/crates/mdbook-typstpdf>
-- <https://lib.rs/crates/mdbook-typst-pdf>
+- [asciidoc.org][asciidoc~website].
+- [mdbook-pandoc~crates.io][mdbook-pandoc~crates.io].
+- [pullup~lib.rs][pullup~lib.rs].
+- [mdbook-typstpdf~lib.rs][mdbook-typstpdf~lib.rs].
+- [mdbook-typst-pdf~lib.rs][mdbook-typst-pdf~lib.rs].
+
+[pullup~lib.rs]: <https://lib.rs/crates/pullup>
+[asciidoc~website]: <https://asciidoc.org>
+[mdbook-pandoc~crates.io]: <https://crates.io/crates/mdbook-pandoc>
+[mdbook-typstpdf~lib.rs]: <https://lib.rs/crates/mdbook-typstpdf>
+[mdbook-typst-pdf~lib.rs]: <https://lib.rs/crates/mdbook-typst-pdf>

@@ -6,7 +6,7 @@
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-The [`panic!(...)`][c~std::panic~docs] macro allows a program to terminate immediately and provide feedback to the caller of the program.
+The [`panic!(...)`][c~std::panic~docs]↗ macro allows a program to terminate immediately and provide feedback to the caller of the program.
 
 ```rust,editable
 {{#include ../../../../crates/cats/rust_patterns/examples/error/panic.rs:example}}
@@ -137,7 +137,7 @@ Use the [`?`][book~rust~ch09-02-recoverable-errors-with-result-?]↗{{hi:?}} ope
 
 If the value of the [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} is an `Ok`, the value inside the `Ok` will get returned, and the program will continue. If the value is an `Err`, the `Err` will be returned from the whole function, as if we had used the `return` keyword, so the error value gets propagated to the calling code.
 
-Note that we're only allowed to use the `?`{{hi:?}} operator in a function that returns [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}}, [`Option`][c~std::option::Option~docs]↗{{hi:std::option::Option}}, or another type that implements [`std::ops::FromResidual`][c~std::ops::FromResidual~docs]{{hi:std::ops::FromResidual}}↗.
+Note that we're only allowed to use the `?`{{hi:?}} operator in a function that returns [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}}, [`Option`][c~std::option::Option~docs]↗{{hi:std::option::Option}}, or another type that implements [`std::ops::FromResidual`][c~std::ops::FromResidual~docs]↗{{hi:std::ops::FromResidual}}.
 
 ```rust,editable
 {{#include ../../../../crates/cats/rust_patterns/examples/error/question_mark.rs:example}}
@@ -183,7 +183,7 @@ Uses [`reqwest::blocking`][c~reqwest::blocking~docs]↗ to query a random intege
 
 This recipe shows how to handle a complex error scenario and then print a backtrace.
 
-The example attempts to deserialize the value `256` into a [`u8`][primitive~u8]{{hi:u8}}↗. An error will bubble up from [`serde`][c~serde~docs]↗{{hi:serde}} to [`csv`][c~csv~docs]↗{{hi:csv}} and finally up to the user code.
+The example attempts to deserialize the value `256` into a [`u8`][primitive~u8]↗{{hi:u8}}. An error will bubble up from [`serde`][c~serde~docs]↗{{hi:serde}} to [`csv`][c~csv~docs]↗{{hi:csv}} and finally up to the user code.
 
 ```rust,editable
 {{#include ../../../../crates/cats/rust_patterns/examples/error/backtrace.rs:example}}
@@ -199,7 +199,7 @@ Error level - description
 └> 3 - field 1: number too large to fit in target type
 ```
 
-Run the recipe with [`RUST_BACKTRACE=1`][c~std::backtrace~docs]{{hi:RUST_BACKTRACE}} to display a detailed backtrace associated with this error.
+Run the recipe with [`RUST_BACKTRACE=1`][c~std::backtrace~docs]↗{{hi:RUST_BACKTRACE}} to display a detailed backtrace associated with this error.
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
@@ -211,7 +211,7 @@ review [![Rust by example - error][book~rust-by-example~error~badge]][book~rust-
 FIXME rename examples; move example above to separate file
 credit the [Recoverable Errors with Result chapter (Rust book)][book~rust~ch09-02-recoverable-errors-with-result]
 
-[`std::io::Error`][c~std::io::Error~docs]{{hi:std::io::Error}}↗ defined type implementing the [`std::error::Error`][c~std::error::Error~docs]{{hi:std::error::Error}}↗ trait.
+[`std::io::Error`][c~std::io::Error~docs]↗{{hi:std::io::Error}} defined type implementing the [`std::error::Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} trait.
 
 - [human-panic][c~human-panic~github]↗: Panic messages for humans.
 

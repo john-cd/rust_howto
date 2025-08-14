@@ -26,7 +26,7 @@ cargo audit
 [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
 
-[cargo-auditable][c~cargo-auditable~github]{{hi:cargo-auditable}}↗ makes production Rust binaries auditable.
+[cargo-auditable][c~cargo-auditable~github]↗{{hi:cargo-auditable}} makes production Rust binaries auditable.
 
 It audits binaries for known bugs or security vulnerabilities in production, at scale, with zero bookkeeping.
 
@@ -79,7 +79,7 @@ cargo deny check licenses
 
 - Dependency Analysis: Useful for understanding your supply chain and potential risks
   - [`cargo tree`][book~cargo~cargo-tree]↗{{hi:cargo tree}} displays your dependency tree, showing all transitive dependencies.
-  - [`cargo outdated`][c~cargo-outdated~docs]{{hi:cargo outdated}} checks for outdated dependencies, which might have security fixes available.
+  - [`cargo outdated`][c~cargo-outdated~docs]↗{{hi:cargo outdated}} checks for outdated dependencies, which might have security fixes available.
 - Linting/Style: [`cargo clippy`][c~clippy~docs]↗{{hi:clippy}} lints your code for stylistic issues and potential bugs.
 
 {{#include refs.incl.md}}

@@ -22,7 +22,7 @@
 [![datafusion~github][c~datafusion~github~badge]][c~datafusion~github]
 [![datafusion~lib.rs][c~datafusion~lib.rs~badge]][c~datafusion~lib.rs]
 
-[![datafusion][c~datafusion~docs~badge]][c~datafusion~docs]{{hi:datafusion}} is the `Apache Arrow DataFusion` {{i:SQL}} Query Engine.
+[![datafusion][c~datafusion~docs~badge]][c~datafusion~docs]↗{{hi:datafusion}} is the `Apache Arrow DataFusion` {{i:SQL}} Query Engine.
 
 {{i:Apache DataFusion}} is an in-memory query engine that uses Apache Arrow as the memory model
 

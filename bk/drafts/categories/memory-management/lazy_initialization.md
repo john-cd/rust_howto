@@ -24,7 +24,7 @@ The core functionality of [`once_cell`][c~once_cell~docs]↗{{hi:once_cell}} is 
 
 For lazy initialization scenarios where you want to defer the creation of a value until it's actually needed, without the overhead of thread synchronization, use one of the following:
 
-- The [`OnceCell`][c~core::cell::OnceCell~docs]{{hi:OnceCell}}↗ type provides a way to define a value that will be initialized at most once.
+- The [`OnceCell`][c~core::cell::OnceCell~docs]↗{{hi:OnceCell}} type provides a way to define a value that will be initialized at most once.
 - The corresponding thread-safe version of `OnceCell<T>` is `OnceLock<T>`. [`OnceLock<T>`][c~std::sync::OnceLock~docs]↗ is a lock that allows a value to be initialized exactly once, ensuring that the initialization code is executed only once, even in the presence of multiple threads.
 - [`LazyCell<T>`][c~std::cell::LazyCell~docs]↗ is a value which is initialized on the first access. It is not thread-safe.
 - [`LazyLock`][c~std::sync::LazyLock~docs]↗ is a lazily initialized value that is initialized on first access, ensuring that the initialization code is executed only once, even in the presence of multiple threads. This type is a thread-safe [`LazyCell`][c~std::cell::LazyCell~docs]↗{{hi:LazyCell}}, and can be used in statics. Since initialization may be called from multiple threads, any dereferencing call will block the calling thread if another initialization routine is currently running.
@@ -43,7 +43,7 @@ For lazy initialization scenarios where you want to defer the creation of a valu
 [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
 [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-[`once_cell`][c~once_cell~docs]{{hi:once_cell}}↗ provides two cell-like types, `unsync::OnceCell` and `sync::OnceCell`. A `OnceCell` might store arbitrary non-Copy types, can be assigned to at most once and provides direct access to the stored contents. The `sync` flavor is thread-safe. [`once_cell`][c~once_cell~docs]↗{{hi:once_cell}} also has a [`once_cell::sync::Lazy`][c~once_cell::sync::Lazy~docs]{{hi:once_cell::sync::Lazy}}↗ type, build on top of [`OnceCell`][c~once_cell::sync::OnceCell~docs]↗:
+[`once_cell`][c~once_cell~docs]↗{{hi:once_cell}} provides two cell-like types, `unsync::OnceCell` and `sync::OnceCell`. A `OnceCell` might store arbitrary non-Copy types, can be assigned to at most once and provides direct access to the stored contents. The `sync` flavor is thread-safe. [`once_cell`][c~once_cell~docs]↗{{hi:once_cell}} also has a [`once_cell::sync::Lazy`][c~once_cell::sync::Lazy~docs]↗{{hi:once_cell::sync::Lazy}} type, build on top of [`OnceCell`][c~once_cell::sync::OnceCell~docs]↗:
 
 ```rust,editable
 {{#include ../../../crates/cats/memory_management/examples/lazy_initialization/once_cell2.rs:example}}
@@ -75,7 +75,7 @@ For lazy initialization scenarios where you want to defer the creation of a valu
 [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
 
-Declares a lazily evaluated constant [`std::collections::HashMap`][c~std::collections::HashMap~docs]{{hi:std::collections::HashMap}}↗. The [`std::collections::HashMap`][c~std::collections::HashMap~docs]{{hi:std::collections::HashMap}}↗ will be evaluated once and stored behind a global static reference.
+Declares a lazily evaluated constant [`std::collections::HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}}. The [`std::collections::HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}} will be evaluated once and stored behind a global static reference.
 
 ```rust,editable
 {{#include ../../../crates/cats/memory_management/examples/lazy_initialization/lazy_constant.rs:example}}

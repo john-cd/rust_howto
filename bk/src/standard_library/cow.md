@@ -6,7 +6,7 @@
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:Clone-on-write}}
 
-The type [`std::borrow::Cow`][c~std::borrow::Cow~docs]{{hi:std::borrow::Cow}} is a smart pointer providing clone-on-write functionality: it encloses and provides immutable access to borrowed data, and clone the data lazily when mutation or ownership is required.
+The type [`std::borrow::Cow`][c~std::borrow::Cow~docs]↗{{hi:std::borrow::Cow}} is a smart pointer providing clone-on-write functionality: it encloses and provides immutable access to borrowed data, and clone the data lazily when mutation or ownership is required.
 
 `Cow` optimizes memory usage by delaying cloning until mutation is required, if it is required. It is especially useful in cases where:
 
@@ -18,7 +18,7 @@ The type [`std::borrow::Cow`][c~std::borrow::Cow~docs]{{hi:std::borrow::Cow}} is
 
 ## Accept Either a Owned or Borrowed Value as the Input of a Function {#accept-either-owned-or-borrowed-values}
 
-Since [`Cow`][c~std::borrow::Cow~docs]{{hi:std::borrow::Cow}} allows borrowing until mutation is needed, it's ideal for functions that take either borrowed or owned strings without unnecessary cloning.
+Since [`Cow`][c~std::borrow::Cow~docs]↗{{hi:std::borrow::Cow}} allows borrowing until mutation is needed, it's ideal for functions that take either borrowed or owned strings without unnecessary cloning.
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/cow/cow_as_function_param.rs:example}}
@@ -34,7 +34,7 @@ You can of course pass a `&mut Cow<T>` to a function. Modify the underlying valu
 
 ## Return a `Cow` from a Function {#return-cow-from-function}
 
-It is common to return a [`Cow`][c~std::borrow::Cow~docs]{{hi:std::borrow::Cow}} from a function, if the (borrowed) input is returned unmodified in most, but not all, cases.
+It is common to return a [`Cow`][c~std::borrow::Cow~docs]↗{{hi:std::borrow::Cow}} from a function, if the (borrowed) input is returned unmodified in most, but not all, cases.
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/cow/function_returning_cow.rs:example}}
@@ -56,11 +56,11 @@ The `Into` trait is the dual of [`From`][c~std::convert::From~docs]↗{{hi:std::
 
 To use as a borrowed type, call a method from one of the following traits:
 
-- [`std::borrow::Borrow`][c~std::borrow::Borrow~docs]{{hi:std::borrow::Borrow}}↗,
-- [`std::convert::AsRef`][c~std::convert::AsRef~docs]{{hi:std::convert::AsRef}}↗,
-- [`std::ops::Deref`][c~std::ops::Deref~docs]{{hi:std::ops::Deref}}↗ explicitly or implicitly through a coercion{{hi:Coercion}}.
+- [`std::borrow::Borrow`][c~std::borrow::Borrow~docs]↗{{hi:std::borrow::Borrow}},
+- [`std::convert::AsRef`][c~std::convert::AsRef~docs]↗{{hi:std::convert::AsRef}},
+- [`std::ops::Deref`][c~std::ops::Deref~docs]↗{{hi:std::ops::Deref}} explicitly or implicitly through a coercion{{hi:Coercion}}.
 
-To convert to an owned type, use [`std::borrow::Cow::into_owned`][c~std::borrow::Cow::into_owned~docs]{{hi:std::borrow::Cow::into_owned}}↗, or [`std::string::ToString`][c~std::string::ToString~docs]{{hi:std::string::ToString}}↗ if a `Cow<str>`. Alternatively, use any method to get a reference and then call [`std::borrow::ToOwned`][c~std::borrow::ToOwned~docs]{{hi:std::borrow::ToOwned}}↗.
+To convert to an owned type, use [`std::borrow::Cow::into_owned`][c~std::borrow::Cow::into_owned~docs]↗{{hi:std::borrow::Cow::into_owned}}, or [`std::string::ToString`][c~std::string::ToString~docs]↗{{hi:std::string::ToString}} if a `Cow<str>`. Alternatively, use any method to get a reference and then call [`std::borrow::ToOwned`][c~std::borrow::ToOwned~docs]↗{{hi:std::borrow::ToOwned}}.
 
 The following example demonstrates how to convert a `Cow<str>` to a `&str` or a `String`:
 

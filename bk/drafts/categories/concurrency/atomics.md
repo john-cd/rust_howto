@@ -8,19 +8,19 @@
 
 Atomic types{{hi:Atomic types}} in [`std::sync::atomic`][c~std::sync::atomic~docs]↗provide primitive shared-memory communication between threads{{hi:Threads}}, and are the building blocks of other concurrent types.
 
-The [`std::sync::atomic`][c~std::sync::atomic~docs]↗ module provides [`std::sync::atomic::AtomicBool`][c~std::sync::atomic::AtomicBool~docs]{{hi:std::sync::atomic::AtomicBool}}↗, [`std::sync::atomic::AtomicIsize`][c~std::sync::atomic::AtomicIsize~docs]{{hi:std::sync::atomic::AtomicIsize}}↗, [`std::sync::atomic::AtomicUsize`][c~std::sync::atomic::AtomicUsize~docs]{{hi:std::sync::atomic::AtomicUsize}}↗, [`std::sync::atomic::AtomicI8`][c~std::sync::atomic::AtomicI8~docs]{{hi:std::sync::atomic::AtomicI8}}↗, [`std::sync::atomic::AtomicU16`][c~std::sync::atomic::AtomicU16~docs]{{hi:std::sync::atomic::AtomicU16}}↗, etc.
+The [`std::sync::atomic`][c~std::sync::atomic~docs]↗ module provides [`std::sync::atomic::AtomicBool`][c~std::sync::atomic::AtomicBool~docs]↗{{hi:std::sync::atomic::AtomicBool}}, [`std::sync::atomic::AtomicIsize`][c~std::sync::atomic::AtomicIsize~docs]↗{{hi:std::sync::atomic::AtomicIsize}}, [`std::sync::atomic::AtomicUsize`][c~std::sync::atomic::AtomicUsize~docs]↗{{hi:std::sync::atomic::AtomicUsize}}, [`std::sync::atomic::AtomicI8`][c~std::sync::atomic::AtomicI8~docs]↗{{hi:std::sync::atomic::AtomicI8}}, [`std::sync::atomic::AtomicU16`][c~std::sync::atomic::AtomicU16~docs]↗{{hi:std::sync::atomic::AtomicU16}}, etc.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/examples/atomics/atomics.rs:example}}
 ```
 
-The most common way to share an atomic variable is to put it into an [`std::sync::Arc`][c~std::sync::Arc~docs]{{hi:std::sync::Arc}}↗ (an atomically-reference-counted shared pointer).
+The most common way to share an atomic variable is to put it into an [`std::sync::Arc`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} (an atomically-reference-counted shared pointer).
 
 ## AtomicCell with `crossbeam` {#crossbeam-atomics}
 
 [![crossbeam-utils~website][c~crossbeam-utils~website~badge]][c~crossbeam-utils~website] [![crossbeam-utils][c~crossbeam-utils~docs~badge]][c~crossbeam-utils~docs] [![crossbeam-utils~crates.io][c~crossbeam-utils~crates.io~badge]][c~crossbeam-utils~crates.io] [![crossbeam-utils~github][c~crossbeam-utils~github~badge]][c~crossbeam-utils~github] [![crossbeam-utils~lib.rs][c~crossbeam-utils~lib.rs~badge]][c~crossbeam-utils~lib.rs]{{hi:crossbeam-utils}}{{hi:Atomic}}{{hi:Cache}}{{hi:Scoped}}{{hi:Thread}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-`crossbeam-utils`provides miscellaneous tools for concurrent programming. It offers [`crossbeam::atomic::AtomicCell`][c~crossbeam::atomic::AtomicCell~docs]{{hi:crossbeam::atomic::AtomicCell}}↗, a thread-safe mutable memory location. This type is equivalent to [`std::cell::Cell`][c~std::cell::Cell~docs]{{hi:std::cell::Cell}}↗, except it can also be shared among multiple threads. Operations on AtomicCells use atomic instructions whenever possible, and synchronize using global locks otherwise.
+`crossbeam-utils`provides miscellaneous tools for concurrent programming. It offers [`crossbeam::atomic::AtomicCell`][c~crossbeam::atomic::AtomicCell~docs]↗{{hi:crossbeam::atomic::AtomicCell}}, a thread-safe mutable memory location. This type is equivalent to [`std::cell::Cell`][c~std::cell::Cell~docs]↗{{hi:std::cell::Cell}}, except it can also be shared among multiple threads. Operations on AtomicCells use atomic instructions whenever possible, and synchronize using global locks otherwise.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/examples/atomics/atomic_cell.rs:example}}

@@ -5,7 +5,7 @@
 ## Rust Overviews and Starting Points {#overview}
 
 - [Rust (programming language)][wikipedia~rust]↗ on Wikipedia.
-- Rust [language][p~language] main site: [rust-lang.org][rust-lang~website]{{hi:Rust learning}}↗.
+- Rust [language][p~language] main site: [rust-lang.org][rust-lang~website]↗{{hi:Rust learning}}.
 
 ## Learning Roadmaps {#learning-roadmap}
 

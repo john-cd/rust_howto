@@ -16,7 +16,7 @@
 
 [![sea-orm][c~sea-orm~docs~badge]][c~sea-orm~docs]{{hi:sea-orm}} [![sea-orm~website][c~sea-orm~website~badge]][c~sea-orm~website] [![sea-orm~cookbook][c~sea-orm~cookbook~badge]][c~sea-orm~cookbook] [![cat~database][cat~database~badge]][cat~database]{{hi:Databases}}
 
-[Seaography GraphQL server][c~seaography~website]{{hi:seaography}}↗.
+[Seaography GraphQL server][c~seaography~website]↗{{hi:seaography}}.
 
 Built on top of [`sqlx`][c~sqlx~docs]↗{{hi:sqlx}} (see above). There is also a related sea-query crate that provides a query builder without full ORM functionality.
 

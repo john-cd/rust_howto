@@ -13,8 +13,8 @@ Asynchronous programming{{hi:Asynchronous programming}}, or async{{hi:async}} fo
 
 Key constructs in Rust:
 
-- [`async`][book~rust-reference~async]{{hi:async}}↗ / [`await`][book~rust-reference~await]{{hi:await}}↗ keywords.
-- [`std::future::Future`][c~std::future::Future~docs]{{hi:std::future::Future}}↗.
+- [`async`][book~rust-reference~async]↗{{hi:async}} / [`await`][book~rust-reference~await]↗{{hi:await}} keywords.
+- [`std::future::Future`][c~std::future::Future~docs]↗{{hi:std::future::Future}}.
 
 ## Basic Example {#basic-example}
 
@@ -24,22 +24,22 @@ Key constructs in Rust:
 {{#include ../../../crates/cats/asynchronous/examples/async/async1.rs:example}}
 ```
 
-As any form of cooperative multitasking{{hi:Cooperative multitasking}}, a future{{hi:Futures}} that spends a long time without reaching an [`await`][book~rust-reference~await]{{hi:await}}↗ "blocks the thread", which may prevent other tasks from running.
+As any form of cooperative multitasking↗{{hi:Cooperative multitasking}}, a future{{hi:Futures}} that spends a long time without reaching an [`await`][book~rust-reference~await]↗{{hi:await}} "blocks the thread", which may prevent other tasks from running.
 
 ## Differences with Other Languages {#diff-other-languages}
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 
-Rust's implementation of [`async`][book~rust-reference~async]{{hi:async}}↗ differs from most languages in a few ways:
+Rust's implementation of [`async`][book~rust-reference~async]↗{{hi:async}} differs from most languages in a few ways:
 
-- Rust's [`async`][book~rust-reference~async]{{hi:async}}↗ operations are lazy. Futures{{hi:Futures}} are inert in Rust and only make progress only when polled. The executor calls the [`std::task::Poll`][c~std::task::Poll~docs]{{hi:std::task::Poll}}↗ method repeatedly to execute futures.
+- Rust's [`async`][book~rust-reference~async]↗{{hi:async}} operations are lazy. Futures↗{{hi:Futures}} are inert in Rust and only make progress only when polled. The executor calls the [`std::task::Poll`][c~std::task::Poll~docs]↗{{hi:std::task::Poll}} method repeatedly to execute futures.
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/examples/async/async2.rs:example}}
 ```
 
 - Dropping a future stops it from making further progress.
-- Async is zero-cost in Rust. You can use [`async`][book~rust-reference~async]{{hi:async}}↗ without heap allocations{{hi:Heap allocations}} and dynamic dispatch. This also lets you use async in constrained environments, such as embedded systems.
+- Async is zero-cost in Rust. You can use [`async`][book~rust-reference~async]↗{{hi:async}} without heap allocations{{hi:Heap allocations}} and dynamic dispatch. This also lets you use async in constrained environments, such as embedded systems.
 - No built-in runtime is provided by Rust itself. Instead, runtimes are provided by community-maintained [crates][p~crates].
 - Both single- and multi-threaded runtimes{{hi:Multi-threaded runtimes}} are available.
 
@@ -47,10 +47,10 @@ Rust's implementation of [`async`][book~rust-reference~async]{{hi:async}}↗ dif
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 
-- The [`async`][book~rust-reference~async]{{hi:async}}↗ / [`await`][book~rust-reference~await]{{hi:await}}↗ syntactic sugar is supported directly by the Rust compiler.
-- The most fundamental [traits][p~traits], types, and [functions][p~functions], such as the [`std::future::Future`][c~std::future::Future~docs]{{hi:std::future::Future}}↗ trait, are provided by the standard library.
-- Many utility types, [macros][p~macros] and [functions][p~functions] are provided by the [`[futures`][c~futures~docs]{{hi:futures}}↗ crate. They can be used in any async Rust application.
-- Execution of async code, IO and task spawning are provided by "async runtimes", such as [`tokio`][c~tokio~docs]{{hi:tokio}}↗ and [`async-std`][c~async-std~docs]{{hi:async-std}}↗. Most async applications, and some async crates, depend on a specific runtime.
+- The [`async`][book~rust-reference~async]↗{{hi:async}} / [`await`][book~rust-reference~await]↗{{hi:await}} syntactic sugar is supported directly by the Rust compiler.
+- The most fundamental [traits][p~traits], types, and [functions][p~functions], such as the [`std::future::Future`][c~std::future::Future~docs]↗{{hi:std::future::Future}} trait, are provided by the standard library.
+- Many utility types, [macros][p~macros] and [functions][p~functions] are provided by the [`[futures`][c~futures~docs]↗{{hi:futures}} crate. They can be used in any async Rust application.
+- Execution of async code, IO and task spawning are provided by "async runtimes", such as [`tokio`][c~tokio~docs]↗{{hi:tokio}} and [`async-std`][c~async-std~docs]↗{{hi:async-std}}. Most async applications, and some async crates, depend on a specific runtime.
 
 ## Async Runtimes {#async-runtimes}
 

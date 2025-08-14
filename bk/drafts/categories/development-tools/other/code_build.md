@@ -12,7 +12,7 @@
 | Build Dependencies | Managed by [cargo][p~cargo] |
 | Incremental Compilation | Handled by [cargo][p~cargo]. |
 | Build Automation (for complex builds) | [`xtask`][c~xtask~docs]↗{{hi:xtask}} |
-| Compiler Flags | Configurable in [`Cargo.toml`][book~cargo~cargo-toml]{{hi:Cargo.toml}} |
+| Compiler Flags | Configurable in [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} |
 | Code Generation | Often done with procedural [macros][p~macros] or build scripts. |
 
 ## Save and run project-specific Commands with the `just` Command Runner {#just}
@@ -25,7 +25,7 @@ Consult the [Just programmer's manual][c~just~programmer-manual]↗.
 
 ### Create a `justfile` {#skip1}
 
-Place the following example `justfile`{{hi:justfile}} in the root folder of your project. Run [`just`][c~just~website]{{hi:just}} to see a list of recipes. Run `just <recipe>` to execute the corresponding recipe.
+Place the following example `justfile`{{hi:justfile}} in the root folder of your project. Run [`just`][c~just~website]↗{{hi:just}} to see a list of recipes. Run `just <recipe>` to execute the corresponding recipe.
 
 ```makefile
 # Load a .env file, if present.
@@ -67,19 +67,13 @@ FROM mcr.microsoft.com/devcontainers/base:bullseye
 
 SHELL ["bash", "-c"]
 
-# Prerequisites to Install Just: https://just.systems/man/en
-RUN <<EOF
- wget -qO - 'https://proget.makedeb.org/debian-feeds/prebuilt-mpr.pub' | gpg --dearmor | sudo tee /usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg 1> /dev/null
- echo "deb [arch=all,$(dpkg --print-architecture) signed-by=/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg] https://proget.makedeb.org prebuilt-mpr $(lsb_release -cs)" | sudo tee /etc/apt/sources.list.d/prebuilt-mpr.list
- sudo apt update
-EOF
-
+# Install Just: <https://just.systems/man/en>
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
   && apt-get -y install just \
   && apt-get autoremove -y && apt-get clean -y
 ```
 
-For Alpine, use [`apk`][apk~website]{{hi:apk}}↗:
+For Alpine, use [`apk`][apk~website]↗{{hi:apk}}:
 
 ```dockerfile
 RUN apk add just

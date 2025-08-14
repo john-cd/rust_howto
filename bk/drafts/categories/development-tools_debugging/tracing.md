@@ -86,7 +86,7 @@ A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting t
 
 [![tracing][c~tracing~docs~badge]][c~tracing~docs]{{hi:tracing}} [![tracing~github][c~tracing~github~badge]][c~tracing~github] [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}{{hi:Tracing}}
 
-An [`Event`][c~tracing::Event~docs]{{hi:Event}} signifies something that happened at a moment in time. `tracing`'s events are comparable to the log records emitted by unstructured logging code.
+An [`Event`][c~tracing::Event~docs]↗{{hi:Event}} signifies something that happened at a moment in time. `tracing`'s events are comparable to the log records emitted by unstructured logging code.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing.rs:example}}
@@ -110,7 +110,7 @@ An [`Event`][c~tracing::Event~docs]{{hi:Event}} signifies something that happene
 
 ## Use Spans to Instrument Synchronous and Asynchronous Code {#span-instrument}
 
-Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across [`await`][keyword~await]↗{{hi:await}} points will result in incorrect traces. Use [`tracing::span::Span::in_scope`][c~tracing::span::Span::in_scope~docs]{{hi:tracing::span::Span::in_scope}}↗ to make sure the span is exited before the `await` call. Alternatively, use `instrument` to make sure that the span is automatically exited and re-entered when a async function or block is awaited then resumed.
+Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across [`await`][keyword~await]↗{{hi:await}} points will result in incorrect traces. Use [`tracing::span::Span::in_scope`][c~tracing::span::Span::in_scope~docs]↗{{hi:tracing::span::Span::in_scope}} to make sure the span is exited before the `await` call. Alternatively, use `instrument` to make sure that the span is automatically exited and re-entered when a async function or block is awaited then resumed.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_span_in_scope.rs:example}}

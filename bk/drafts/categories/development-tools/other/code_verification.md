@@ -2,7 +2,7 @@
 
 {{#include code_verification.incl.md}}
 
-[Rust formal methods][rust-formal-methods~website]{{hi:Formal methods}}↗.
+[Rust formal methods][rust-formal-methods~website]↗{{hi:Formal methods}}.
 
 _Formal methods_ are a collection of mathematically rigorous techniques used to specify, design, and verify software and hardware systems. These methods employ formal logic and mathematical proofs to ensure the correctness and reliability of systems, especially those that are safety-critical or security-critical.
 

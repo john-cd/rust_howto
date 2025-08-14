@@ -32,7 +32,7 @@ The default panic strategy (unwind) includes unwinding information, which increa
 
 ## Strip Symbols {#skip}
 
-Stripping debug symbols from the final binary using compiler flags like [`-C strip=debuginfo`][book~cargo~profiles-strip]{{hi:strip}} significantly reduces binary size. This is essential for release builds.
+Stripping debug symbols from the final binary using compiler flags like [`-C strip=debuginfo`][book~cargo~profiles-strip]↗{{hi:strip}} significantly reduces binary size. This is essential for release builds.
 
 ## Minimize Dependencies {#skip}
 
@@ -74,8 +74,8 @@ The Rust compiler spends a lot of time in the "link" step. LLD is much faster at
 
 The default linker does a good job, but there are faster alternatives depending on the operating system you are using:
 
-- [`lld`][lld~website]{{hi:lld}}↗ on Windows and Linux, a linker developed by the LLVM{{hi:LLVM}} project;
-- [`zld`][zld~github]{{hi:zld}}↗ on MacOS. [![zld~github][zld~github~badge]][zld~github].
+- [`lld`][lld~website]↗{{hi:lld}} on Windows and Linux, a linker developed by the LLVM{{hi:LLVM}} project;
+- [`zld`][zld~github]↗{{hi:zld}} on MacOS. [![zld~github][zld~github~badge]][zld~github].
 
 To speed up the linking phase you have to install the alternative linker on your machine and add this [configuration][p~configuration] file to the project:
 
@@ -110,9 +110,9 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 
 [![cat~compilers][cat~compilers~badge]][cat~compilers]{{hi:Compilers}}
 
-[`mold`][mold~github]{{hi:mold}}↗ is up to 5× faster than [`lld`][lld~website]{{hi:lld}}↗, but with a few caveats like limited platform support and occasional stability issues. To install [`mold`][c~mold~docs]↗{{hi:mold}}, run `sudo apt-get install mold clang` in Ubuntu.
+[`mold`][mold~github]↗{{hi:mold}} is up to 5× faster than [`lld`][lld~website]↗{{hi:lld}}, but with a few caveats like limited platform support and occasional stability issues. To install [`mold`][c~mold~docs]↗{{hi:mold}}, run `sudo apt-get install mold clang` in Ubuntu.
 
-You will also need to add the following to your [`cargo`][c~cargo~docs]{{hi:cargo}}↗ config at `.cargo/config.toml`:
+You will also need to add the following to your [`cargo`][c~cargo~docs]↗{{hi:cargo}} config at `.cargo/config.toml`:
 
 ```toml
 [target.x86_64-unknown-linux-gnu]
@@ -133,7 +133,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
 
 ## References {#references}
 
-- [Enable Fast Compiles (Bevy)][c~bevy~enable-fast-compiles]{{hi:bevy}}↗.
+- [Enable Fast Compiles (Bevy)][c~bevy~enable-fast-compiles]↗{{hi:bevy}}.
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

@@ -14,7 +14,7 @@ This crate primarily contains a TokenStream type. Procedural [macros][p~macros] 
 
 [![syn][c~syn~docs~badge]][c~syn~docs] [![syn~crates.io][c~syn~crates.io~badge]][c~syn~crates.io] [![syn~github][c~syn~github~badge]][c~syn~github] [![syn~lib.rs][c~syn~lib.rs~badge]][c~syn~lib.rs]{{hi:syn}}{{hi:Macros}}{{hi:syn}}[![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}[![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}}
 
-The [`syn`][c~syn~docs]{{hi:syn}}↗ crate in Rust is a fundamental library for parsing a stream of Rust tokens into an equivalent syntax tree. It's primarily used when working with procedural macros, but it can also be helpful for other code analysis or manipulation tasks, such as:
+The [`syn`][c~syn~docs]↗{{hi:syn}} crate in Rust is a fundamental library for parsing a stream of Rust tokens into an equivalent syntax tree. It's primarily used when working with procedural macros, but it can also be helpful for other code analysis or manipulation tasks, such as:
 
 - Static analysis: Building tools to check code for specific patterns or enforce coding standards.
 - Code generation: Creating tools that automatically generate Rust code based on some input or configuration.
@@ -48,7 +48,7 @@ The [`syn`][c~syn~docs]{{hi:syn}}↗ crate in Rust is a fundamental library for 
 
 [![proc-macro2][c~proc-macro2~docs~badge]][c~proc-macro2~docs] [![proc-macro2~crates.io][c~proc-macro2~crates.io~badge]][c~proc-macro2~crates.io] [![proc-macro2~github][c~proc-macro2~github~badge]][c~proc-macro2~github] [![proc-macro2~lib.rs][c~proc-macro2~lib.rs~badge]][c~proc-macro2~lib.rs]{{hi:proc-macro2}}{{hi:Macros}}{{hi:Syn}}[![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
 
-[`proc-macro2`][c~proc-macro2~docs]{{hi:proc-macro2}}↗ [![proc-macro2~github][c~proc-macro2~github~badge]][c~proc-macro2~github] bring proc-macro-like functionality to other contexts like build.rs and main.rs and makes procedural macros unit testable.
+[`proc-macro2`][c~proc-macro2~docs]↗{{hi:proc-macro2}} [![proc-macro2~github][c~proc-macro2~github~badge]][c~proc-macro2~github] bring proc-macro-like functionality to other contexts like build.rs and main.rs and makes procedural macros unit testable.
 
 A substitute implementation of the compiler's [`proc_macro`][c~proc_macro~docs]↗{{hi:proc_macro}} API to decouple token-based libraries from the procedural macro use case.
 

@@ -19,11 +19,11 @@ This book is intended for:
 - new Rust programmers, to get an overview of the capabilities of the Rust ecosystem and pointers to other resources.
 - experienced programmers, to find code examples and review best practices for common programming tasks.
 
-Readers should have already some basic familiarity with [Rust][rust-lang~website]↗ concepts. The [Rust Book][book~rust]{{hi:Rust book}}↗ is an excellent resource for complete beginners to get started with. This said, key features of the language are summarized in this book's [language][p~lang] section.
+Readers should have already some basic familiarity with [Rust][rust-lang~website]↗ concepts. The [Rust Book][book~rust]↗{{hi:Rust book}} is an excellent resource for complete beginners to get started with. This said, key features of the language are summarized in this book's [language][p~lang] section.
 
 ## Why This Book
 
-Per the curated list of Rust crates [`blessed.rs`][blessed-rs~website]↗, "the standard library in Rust is much smaller than in Python or Go, for example. Those languages come with "batteries included" support ... Rust, on the other hand, gets things like that from the [`crates.io`][crates.io~website]{{hi:crates.io}}↗ ecosystem and the [`cargo`][c~cargo~docs]↗{{hi:cargo}} package manager. But with _more than 180 thousand crates_ (libraries) to choose from, a common complaint from new Rust developers is that they don't know where to start, which crates they ought to use, and which crates they ought to trust." There are no dominant frameworks or platforms akin to `Rails`, `Django`, `Spring` or `Node` in the Rust world at this time.
+Per the curated list of Rust crates [`blessed.rs`][blessed-rs~website]↗, "the standard library in Rust is much smaller than in Python or Go, for example. Those languages come with "batteries included" support ... Rust, on the other hand, gets things like that from the [`crates.io`][crates.io~website]↗{{hi:crates.io}} ecosystem and the [`cargo`][c~cargo~docs]↗{{hi:cargo}} package manager. But with _more than 180 thousand crates_ (libraries) to choose from, a common complaint from new Rust developers is that they don't know where to start, which crates they ought to use, and which crates they ought to trust." There are no dominant frameworks or platforms akin to `Rails`, `Django`, `Spring` or `Node` in the Rust world at this time.
 
 This book therefore intends to provide EXAMPLES to demonstrate the uses of KEY CRATES, that is libraries necessary for day-to-day Rust coding - examples which are absent from or scattered in the [reference documentation][docs.rs~website]↗ of hundreds of crates. It hopes to become a "cheat sheet on steroid" for the Rust ECOSYSTEM (_not just_ for the Rust language).
 
@@ -37,8 +37,8 @@ The left sidebar is organized by topic. Click on a topic in the sidebar to navig
 
 - The book first summarizes the basics of the [language][p~lang] and often-used elements of the [standard library][p~standard-library]. The [[code_organization | code organization]] section explains how Rust code should be structured.
 - The [[crate_selection | crate selection]] chapter provides pointers on how to locate crates suitable for your project and provides [[crates_alphabetical | alphabetical]] and [[crates_by_category | categorical]] indices of crates used in the book.
-- The bulk of the book is divided in sections named after the [`crates.io`][crates.io~website]{{hi:crates.io}}↗ [categories][crates.io~category_slugs]↗, whenever possible.
-- Each section contains a list of recipes. The recipes are simple statements of a task to accomplish, like "generate random numbers in a range"; and each recipe is tagged with badges indicating which _crates_ they use, like [![rand][c~rand~docs~badge]][c~rand~docs], and which categories on [`crates.io`][crates.io~website]{{hi:crates.io}} those crates belong to, like [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}.
+- The bulk of the book is divided in sections named after the [`crates.io`][crates.io~website]↗{{hi:crates.io}} [categories][crates.io~category_slugs]↗, whenever possible.
+- Each section contains a list of recipes. The recipes are simple statements of a task to accomplish, like "generate random numbers in a range"; and each recipe is tagged with badges indicating which _crates_ they use, like [![rand][c~rand~docs~badge]][c~rand~docs], and which categories on [`crates.io`][crates.io~website]↗{{hi:crates.io}} those crates belong to, like [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}.
 
 The [contributing][p~contributing] section details how to contribute to the book itself.
 
@@ -89,7 +89,7 @@ Next you can replace `src/main.rs` with the full contents of the example and run
 cargo run
 ```
 
-The crate badges that accompany the examples link to the crates' full documentation on [`docs.rs`][docs.rs~website]{{hi:docs.rs}}↗, and is often the next documentation you should read after deciding which crate suites your purpose.
+The crate badges that accompany the examples link to the crates' full documentation on [`docs.rs`][docs.rs~website]↗{{hi:docs.rs}}, and is often the next documentation you should read after deciding which crate suites your purpose.
 
 ## A Note about Error Handling
 
@@ -121,10 +121,10 @@ This book is intended to provide expansive coverage of "key" or "foundational" c
 
 Key crates are identified by cross-referencing:
 
-- [`blessed.rs`][blessed-rs~website]{{hi:blessed.rs}}↗ and similar resources,
-- Most downloaded crates (overall and per category) in [`crates.io`][crates.io~website]{{hi:crates.io}}↗,
+- [`blessed.rs`][blessed-rs~website]↗{{hi:blessed.rs}} and similar resources,
+- Most downloaded crates (overall and per category) in [`crates.io`][crates.io~website]↗{{hi:crates.io}},
 - [Most popular Rust libraries][lib.rs~most-popular~website]↗,
-- High-quality crates per [`lib.rs`][lib.rs~website]{{hi:lib.rs}}↗ [statistics][lib.rs~stats~website]↗.
+- High-quality crates per [`lib.rs`][lib.rs~website]↗{{hi:lib.rs}} [statistics][lib.rs~stats~website]↗.
 
 The selection process is necessarily opinionated. Feel free to offer suggestions (or submit a PR), if the author missed an important, widely used crate.
 

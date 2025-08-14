@@ -4,7 +4,7 @@
 
 The Rust standard library is fairly minimal (on purpose). Besides providing basic data types, the standard library is largely concerned with abstracting over differences in common platforms, e.g., Windows and Unix derivatives.
 
-Instead, major functionality like regular expressions, random numbers, cryptography, serialization, async, and logging, are found in separate Rust crates that are available on [`crates.io`][crates.io~website]{{hi:crates.io}}↗. Rustaceans add these crates to their projects via the [`cargo`][c~cargo~docs]↗{{hi:cargo}} package manager.
+Instead, major functionality like regular expressions, random numbers, cryptography, serialization, async, and logging, are found in separate Rust crates that are available on [`crates.io`][crates.io~website]↗{{hi:crates.io}}. Rustaceans add these crates to their projects via the [`cargo`][c~cargo~docs]↗{{hi:cargo}} package manager.
 
 A common complaint from new Rust developers is that they don't know which crates they ought to use.
 
@@ -24,11 +24,11 @@ It is the main purpose of this book to provide expansive coverage of "key" or "f
 
 You may also use the following sites for crate recommendations:
 
-- [`blessed.rs`][blessed-rs~website]{{hi:blessed.rs}}↗,
-- [`lib.rs`][lib.rs~website]{{hi:lib.rs}}↗, and in particular,
+- [`blessed.rs`][blessed-rs~website]↗{{hi:blessed.rs}},
+- [`lib.rs`][lib.rs~website]↗{{hi:lib.rs}}, and in particular,
   - [Most Popular Rust Libraries][lib.rs~most-popular~website]↗,
   - Crates [statistics][lib.rs~stats~website]↗,
-- The Rust community's official crate registry: [`crates.io`][crates.io~website]{{hi:crates.io}}↗,
+- The Rust community's official crate registry: [`crates.io`][crates.io~website]↗{{hi:crates.io}},
   - [`crates.io`'s Most (Recent) Downloads][crates.io~most-recent-downloads]↗.
   - You should search for crates by [category][crates.io-categories~website]↗ and by [keywords][crates.io-keywords~website]↗.
 
@@ -46,8 +46,8 @@ You can also search or post on Rust chat servers and forums - see [[blogs | Blog
 You may also consult older resources, such as:
 
 - [Best of Rust Crates][reddit~best-of-rust-crates]↗.
-- [Rust Starter Pack][rust-starter-pack~website]{{hi:Rust starter pack}}↗.
-- [![stdx][c~stdx~github~badge]][c~stdx~github]{{hi:stdx}}↗.
+- [Rust Starter Pack][rust-starter-pack~website]↗{{hi:Rust starter pack}}.
+- [![stdx][c~stdx~github~badge]][c~stdx~github]↗{{hi:stdx}}.
 
 ## Understand the State of the Rust Ecosystem {#understand-the-rust-ecosystem}
 

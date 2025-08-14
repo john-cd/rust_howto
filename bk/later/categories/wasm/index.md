@@ -37,7 +37,7 @@ The [`yew`][c~yew~docs]↗{{hi:yew}}, [`seed`][c~seed~docs]↗{{hi:seed}}, [`lep
 
 ## See Also
 
-[Rust and WebAssembly (book)][book~rustwasm]{{hi:WASM}}↗.
+[Rust and WebAssembly (book)][book~rustwasm]↗{{hi:WASM}}.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
@@ -49,7 +49,7 @@ Node.js with WASM.
 Cover [`wat`][c~wat~docs]↗{{hi:wat}}, [`parity-wasm`][c~parity-wasm~docs]↗{{hi:parity-wasm}}
 
 - [WASIX - The Superset of WASI][wasix~website]↗.
-- [wasmtime](https://github.com/bytecodealliance/wasmtime)↗: A fast and secure runtime for WebAssembly.
+- [wasmtime][c~wasmtime~github]↗: A fast and secure runtime for WebAssembly.
 - [WASI.dev][wasi~website]↗.
 
 - [Sycamore][sycamore~website]↗.

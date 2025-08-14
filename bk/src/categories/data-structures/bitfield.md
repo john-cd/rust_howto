@@ -8,7 +8,7 @@ A bitfield is a data structure that efficiently stores a sequence of bits. It is
 
 [![bitflags][c~bitflags~docs~badge]][c~bitflags~docs] [![bitflags~crates.io][c~bitflags~crates.io~badge]][c~bitflags~crates.io] [![bitflags~github][c~bitflags~github~badge]][c~bitflags~github] [![bitflags~lib.rs][c~bitflags~lib.rs~badge]][c~bitflags~lib.rs]{{hi:bitflags}}{{hi:Bit}}{{hi:bitflags}}{{hi:Bitmask}}{{hi:Flags}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-[`bitflags`][c~bitflags~docs]↗{{hi:bitflags}} offers a macro to generate structures which behave like bitflags. It creates type-safe bitfield{{hi:Bitfield}} type `MyFlags` with help of [`bitflags::bitflags`][c~bitflags::bitflags~docs]{{hi:bitflags::bitflags}}↗ macro and implements elementary [`clear`][c~clear~docs]↗{{hi:clear}}{{hi:clear}} operation as well as [`std::fmt::Display`][c~std::fmt::Display~docs]{{hi:std::fmt::Display}}↗ trait for it. Subsequently, shows basic bitwise operations{{hi:Bitwise operations}} and formatting.
+[`bitflags`][c~bitflags~docs]↗{{hi:bitflags}} offers a macro to generate structures which behave like bitflags. It creates type-safe bitfield{{hi:Bitfield}} type `MyFlags` with help of [`bitflags::bitflags`][c~bitflags::bitflags~docs]↗{{hi:bitflags::bitflags}} macro and implements elementary [`clear`][c~clear~docs]↗{{hi:clear}}{{hi:clear}} operation as well as [`std::fmt::Display`][c~std::fmt::Display~docs]↗{{hi:std::fmt::Display}} trait for it. Subsequently, shows basic bitwise operations{{hi:Bitwise operations}} and formatting.
 
 ```rust,editable
 {{#include ../../../crates/cats/data_structures/examples/bitfield/bitfield.rs:example}}

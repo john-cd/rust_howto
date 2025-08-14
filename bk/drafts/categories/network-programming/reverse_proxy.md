@@ -66,7 +66,7 @@ local_addr = "127.0.0.1:22" # The address of the service that needs to be forwar
 
 ## `nginx` {#nginx}
 
-[nginx proxy manager][nginx-proxy-manager~website]{{hi:nginx proxy manager}}↗.
+[nginx proxy manager][nginx-proxy-manager~website]↗{{hi:nginx proxy manager}}.
 
 ## `pingora` {#pingora}
 

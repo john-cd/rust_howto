@@ -52,9 +52,17 @@
 
 [gumroad~website]: https://gumroad.com
 
-<https://pianomanfrazier.com/post/write-a-book-with-markdown/#bookdown-https-bookdown-org-yihui-bookdown>
-<https://pdworkman.com/write-book-with-obsidian/#getting-it-out-of-obsidian>
-<https://medium.com/@sydasif78/book-creation-with-pandoc-and-markdown-893c7d72cb35>
+[blog~write-a-book-with-markdown]
+
+[blog~write-a-book-with-markdown]: <https://pianomanfrazier.com/post/write-a-book-with-markdown/#bookdown-https-bookdown-org-yihui-bookdown>
+
+[write-book-with-obsidian]
+
+[write-book-with-obsidian]: <https://pdworkman.com/write-book-with-obsidian/#getting-it-out-of-obsidian>
+
+[book-creation-with-pandoc-and-markdown]
+
+[book-creation-with-pandoc-and-markdown]: <https://medium.com/@sydasif78/book-creation-with-pandoc-and-markdown-893c7d72cb35>
 
 ### Finish preproc directives in mdbook-scrub
 
@@ -253,7 +261,9 @@ Use cross?
 ## Review the need for rusty_fork
 
 since we use nextest exclusively.
-See nextest execution model: <https://nexte.st/docs/design/how-it-works/>
+See nextest execution model: [nextest-how-it-works]
+
+[nextest-how-it-works]: <https://nexte.st/docs/design/how-it-works>
 
 -------------------------
 

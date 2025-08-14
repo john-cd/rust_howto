@@ -20,7 +20,7 @@ mdbook serve --open
 
 [![Rust by example - Playground][book~rust-by-example~playground~badge]][book~rust-by-example~playground] [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 
-[Playground (Rust by example)][book~rust-by-example~playground]{{hi:Rust by example}}↗.
+[Playground (Rust by example)][book~rust-by-example~playground]↗{{hi:Rust by example}}.
 
 ## Augment `mdbook` with Plugins {#skip1}
 
@@ -52,7 +52,7 @@ cargo install mdbook-hide
 
 `GitHub Actions` is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline.
 
-[GitHub Actions for mdBook][actions-mdbook~github]{{hi:Github actions}} allows you to build your site with [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}}. Linux (Ubuntu), macOS, and Windows are supported.
+[GitHub Actions for mdBook][actions-mdbook~github]↗{{hi:Github actions}} allows you to build your site with [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}}. Linux (Ubuntu), macOS, and Windows are supported.
 
 ```yaml
 name: github pages
@@ -145,11 +145,11 @@ jobs:
 
 ## Test Code in Your `mdbook` {#termbook}
 
-[Byron-termbook][c~termbook~github]{{hi:termbook}} is a runner for [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} to keep your documentation tested:
+[Byron-termbook][c~termbook~github]↗{{hi:termbook}} is a runner for [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} to keep your documentation tested:
 
 ## Alternatives {#skip}
 
-[`mdbook-hide`][c~mdbook-hide~github]{{hi:mdbook-hide}}↗ hides chapters under construction. Install with `cargo install mdbook-hide`. Configure in [`book.toml`][c~mdbook~book.toml]↗{{hi:book.toml}}.
+[`mdbook-hide`][c~mdbook-hide~github]↗{{hi:mdbook-hide}} hides chapters under construction. Install with `cargo install mdbook-hide`. Configure in [`book.toml`][c~mdbook~book.toml]↗{{hi:book.toml}}.
 
 ```toml
 # Adds support for hidden chapters. The hidden chapters can be marked by adding a special Markdown comment: <!--hidden-->
@@ -164,7 +164,7 @@ To mark a chapter as hidden, add the following comment anywhere in the Markdown 
 <!--hidden-->
 ```
 
-- [`mdbook-keeper`][c~mdbook-keeper~crates.io]{{hi:mdbook-keeper}}↗. Install with:
+- [`mdbook-keeper`][c~mdbook-keeper~crates.io]↗{{hi:mdbook-keeper}}. Install with:
 
 ```bash
 cargo install mdbook-keeper --git https://github.com/tfpk/mdbook-keeper.git

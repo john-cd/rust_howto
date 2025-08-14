@@ -17,7 +17,7 @@
 
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:cargo plugins}}
 
-[Cargo Generate][c~cargo-generate~crates.io]{{hi:cargo-generate}}↗ is a developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
+[Cargo Generate][c~cargo-generate~crates.io]↗{{hi:cargo-generate}} is a developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
 
 ## Quickly Open the `crates.io` or `docs.rs` Page for the Latest Version of a Crate {#cargo-open}
 
@@ -26,7 +26,7 @@
 [![cargo-crates~github][c~cargo-crates~github~badge]][c~cargo-crates~github]
 [![cargo-crates~lib.rs][c~cargo-crates~lib.rs~badge]][c~cargo-crates~lib.rs]
 
-`cargo crates` is a [cargo][p~cargo] command to quickly open the [`crates.io`][crates.io~website]{{hi:crates.io}}↗ or[`docs.rs`][docs.rs~website]{{hi:docs.rs}}↗ page for the latest version of a crate.
+`cargo crates` is a [cargo][p~cargo] command to quickly open the [`crates.io`][crates.io~website]↗{{hi:crates.io}} or[`docs.rs`][docs.rs~website]↗{{hi:docs.rs}} page for the latest version of a crate.
 
 ## Related Topics
 

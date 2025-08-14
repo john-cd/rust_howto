@@ -4,9 +4,9 @@
 
 [![ansi_term][c~ansi_term~docs~badge]][c~ansi_term~docs]{{hi:ansi_term}} [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
 
-This program depicts the use of [`ansi_term`][c~ansi_term~crates.io]{{hi:ansi_term}}↗ crate and how it is used for controlling colors and formatting, such as blue bold text or yellow underlined text, on ANSI terminals{{hi:ANSI terminals}}.
+This program depicts the use of [`ansi_term`][c~ansi_term~crates.io]↗{{hi:ansi_term}} crate and how it is used for controlling colors and formatting, such as blue bold text or yellow underlined text, on ANSI terminals{{hi:ANSI terminals}}.
 
-There are two main [data structures][p~data-structures] in [`ansi_term`][c~ansi_term~crates.io]{{hi:ansi_term}}↗: [`ansi_term::ANSIString`][c~ansi_term::ANSIString~docs]{{hi:ansi_term::ANSIString}}↗ and [`Style`][c~ansi_term::Style~docs]{{hi:ansi_term:Style}}↗. A [`Style`][c~ansi_term::Style~docs]↗{{hi:Style}} holds stylistic information: colors, whether the text should be bold, or blinking, or whatever. There are also Color variants that represent simple foreground color styles. An [`ansi_term::ANSIString`][c~ansi_term::ANSIString~docs]{{hi:ansi_term::ANSIString}}↗ is a string paired with a [`ansi_term::Style`][c~ansi_term::Style~docs]{{hi:ansi_term::Style}}↗.
+There are two main [data structures][p~data-structures] in [`ansi_term`][c~ansi_term~crates.io]↗{{hi:ansi_term}}: [`ansi_term::ANSIString`][c~ansi_term::ANSIString~docs]↗{{hi:ansi_term::ANSIString}} and [`Style`][c~ansi_term::Style~docs]↗{{hi:ansi_term:Style}}. A [`Style`][c~ansi_term::Style~docs]↗{{hi:Style}} holds stylistic information: colors, whether the text should be bold, or blinking, or whatever. There are also Color variants that represent simple foreground color styles. An [`ansi_term::ANSIString`][c~ansi_term::ANSIString~docs]↗{{hi:ansi_term::ANSIString}} is a string paired with a [`ansi_term::Style`][c~ansi_term::Style~docs]↗{{hi:ansi_term::Style}}.
 
 **Note:** British English uses *Color* instead of *Color*.
 
@@ -20,7 +20,7 @@ There are two main [data structures][p~data-structures] in [`ansi_term`][c~ansi_
 
 [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
 
-For anything more complex than plain foreground color changes, the code needs to construct [`ansi_term::Style`][c~ansi_term::Style~docs]{{hi:ansi_term::Style}}↗ struct. [`ansi_term::Style::new`][c~ansi_term::Style::new~docs]{{hi:ansi_term::Style::new}}↗ creates the struct, and properties chained.
+For anything more complex than plain foreground color changes, the code needs to construct [`ansi_term::Style`][c~ansi_term::Style~docs]↗{{hi:ansi_term::Style}} struct. [`ansi_term::Style::new`][c~ansi_term::Style::new~docs]↗{{hi:ansi_term::Style::new}} creates the struct, and properties chained.
 
 ```rust,editable
 {{#include ../../../crates/cats/command_line_interface/examples/ansi_term/ansi_term_basic1.rs:example}}
@@ -30,7 +30,7 @@ For anything more complex than plain foreground color changes, the code needs to
 
 [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
 
-[`ansi_term::Color`][c~ansi_term::Color~docs]{{hi:ansi_term::Color}}↗ implements many similar functions as [`ansi_term::Style`][c~ansi_term::Style~docs]{{hi:ansi_term::Style}}↗ and can chain methods.
+[`ansi_term::Color`][c~ansi_term::Color~docs]↗{{hi:ansi_term::Color}} implements many similar functions as [`ansi_term::Style`][c~ansi_term::Style~docs]↗{{hi:ansi_term::Style}} and can chain methods.
 
 ```rust,editable
 {{#include ../../../crates/cats/command_line_interface/examples/ansi_term/ansi_term_basic2.rs:example}}

@@ -18,7 +18,7 @@ Numeric [traits][p~traits] for generic [mathematics][p~mathematics]. [Traits][p~
 
 [![num][c~num~docs~badge]][c~num~docs] [![num~crates.io][c~num~crates.io~badge]][c~num~crates.io] [![num~github][c~num~github~badge]][c~num~github] [![num~lib.rs][c~num~lib.rs~badge]][c~num~lib.rs]{{hi:num}}{{hi:Numerics}}{{hi:Bignum}}{{hi:Mathematics}} [![cat~science][cat~science~badge]][cat~science] [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
-[`num`][c~num~docs]↗{{hi:num}} provides a collection of numeric types and [traits][p~traits] for Rust, including bigint, complex, rational, range [iterators][p~iterators], generic integers, and more! Calculation for integers exceeding 128 bits are possible with [`num::BigInt`][c~num::BigInt~docs]{{hi:num::BigInt}}↗.
+[`num`][c~num~docs]↗{{hi:num}} provides a collection of numeric types and [traits][p~traits] for Rust, including bigint, complex, rational, range [iterators][p~iterators], generic integers, and more! Calculation for integers exceeding 128 bits are possible with [`num::BigInt`][c~num::BigInt~docs]↗{{hi:num::BigInt}}.
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/examples/additional_numeric_types/big_integers.rs:example}}

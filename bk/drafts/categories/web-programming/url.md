@@ -6,11 +6,11 @@
 
 [![url][c~url~docs~badge]][c~url~docs]{{hi:url}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
-The [`url::Url::parse`][c~url::Url::parse~docs]{{hi:url::Url::parse}}↗ method from the [`url`][c~url~docs]{{hi:url}}↗ crate validates and parses a `&str` into a [`url::Url`][c~url::Url~docs]{{hi:url::Url}}↗ struct. The input string may be malformed so this method returns
+The [`url::Url::parse`][c~url::Url::parse~docs]↗{{hi:url::Url::parse}} method from the [`url`][c~url~docs]↗{{hi:url}} crate validates and parses a `&str` into a [`url::Url`][c~url::Url~docs]↗{{hi:url::Url}} struct. The input string may be malformed so this method returns
 `Result<Url, ParseError>`.
 
 Once the URL has been parsed, it can be used with all of the methods in the
-[`url::Url`][c~url::Url~docs]{{hi:url::Url}}↗ type.
+[`url::Url`][c~url::Url~docs]↗{{hi:url::Url}} type.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming/examples/url/parse.rs:example}}
@@ -20,7 +20,7 @@ Once the URL has been parsed, it can be used with all of the methods in the
 
 [![url][c~url~docs~badge]][c~url~docs]{{hi:url}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
-A base URL{{hi:URL}} includes a protocol and a domain. Base URLs have no folders, files or query strings. Each of those items are stripped out of the given URL. [`url::PathSegmentsMut::clear`][c~url::PathSegmentsMut::clear~docs]{{hi:url::PathSegmentsMut::clear}}↗ removes paths and [`url::Url::set_query`][c~url::Url::set_query~docs]{{hi:url::Url::set_query}}↗ removes query string.
+A base URL{{hi:URL}} includes a protocol and a domain. Base URLs have no folders, files or query strings. Each of those items are stripped out of the given URL. [`url::PathSegmentsMut::clear`][c~url::PathSegmentsMut::clear~docs]↗{{hi:url::PathSegmentsMut::clear}} removes paths and [`url::Url::set_query`][c~url::Url::set_query~docs]↗{{hi:url::Url::set_query}} removes query string.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming/examples/url/base.rs:example}}
@@ -30,7 +30,7 @@ A base URL{{hi:URL}} includes a protocol and a domain. Base URLs have no folders
 
 [![url][c~url~docs~badge]][c~url~docs]{{hi:url}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
-The [`url::Url::join`][c~url::Url::join~docs]{{hi:url::Url::join}}↗ method creates a new URL from a base and relative path{{hi:Relative path}}.
+The [`url::Url::join`][c~url::Url::join~docs]↗{{hi:url::Url::join}} method creates a new URL from a base and relative path{{hi:Relative path}}.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming/examples/url/new.rs:example}}
@@ -40,13 +40,13 @@ The [`url::Url::join`][c~url::Url::join~docs]{{hi:url::Url::join}}↗ method cre
 
 [![url][c~url~docs~badge]][c~url~docs]{{hi:url}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
-The [`url::Url`][c~url::Url~docs]{{hi:url::Url}}↗ struct exposes various methods to extract information about the URL it represents.
+The [`url::Url`][c~url::Url~docs]↗{{hi:url::Url}} struct exposes various methods to extract information about the URL it represents.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming/examples/url/origin.rs:example}}
 ```
 
-[`url::Url::origin`][c~url::Url::origin~docs]{{hi:url::Url::origin}}↗ produces the same result.
+[`url::Url::origin`][c~url::Url::origin~docs]↗{{hi:url::Url::origin}} produces the same result.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming/examples/url/origin1.rs:example}}
@@ -56,7 +56,7 @@ The [`url::Url`][c~url::Url~docs]{{hi:url::Url}}↗ struct exposes various metho
 
 [![url][c~url~docs~badge]][c~url~docs]{{hi:url}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
-Parses [`url::Url`][c~url::Url~docs]{{hi:url::Url}}↗ and slices it with [`url::Position`][c~url::Position~docs]{{hi:url::Position}}↗ to strip unneeded URL parts.
+Parses [`url::Url`][c~url::Url~docs]↗{{hi:url::Url}} and slices it with [`url::Position`][c~url::Position~docs]↗{{hi:url::Position}} to strip unneeded URL parts.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming/examples/url/fragment.rs:example}}

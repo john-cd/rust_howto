@@ -1,6 +1,6 @@
 ## Use the `dapr` Distributed Runtime {#dapr}
 
-[Dapr][dapr~website]{{hi:dapr}}↗ is a portable, event-driven, serverless runtime for building distributed applications across cloud and edge.
+[Dapr][dapr~website]↗{{hi:dapr}} is a portable, event-driven, serverless runtime for building distributed applications across cloud and edge.
 
 [`dapr`][c~dapr~docs]↗{{hi:dapr}}
 

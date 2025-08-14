@@ -9,16 +9,16 @@
 
 - [Async][p~async] code should never spend a long time without reaching an [`.await`][book~rust-reference~await]↗{{hi:.await}} [`.await`][c~await-tree~docs]↗{{hi:.await}} .
 - Don't carelessly mix [async][p~async]{{hi:async}} code and synchronous, blocking calls like `std::thread::sleep(Duration::from_secs(N));`.
-- If you have to block the thread because of expensive CPU-bound{{hi:CPU bound}} computation, call to a synchronous IO API{{hi:Synchronous IO}}, use the [`tokio::task::spawn_blocking`][c~tokio::task::spawn_blocking~docs]{{hi:tokio::task::spawn_blocking}}↗ function, use [`rayon`][c~rayon~docs]{{hi:rayon}}↗, or spawn a dedicated thread{{hi:Dedicated thread}}.
+- If you have to block the thread because of expensive CPU-bound↗{{hi:CPU bound}} computation, call to a synchronous IO API{{hi:Synchronous IO}}, use the [`tokio::task::spawn_blocking`][c~tokio::task::spawn_blocking~docs]↗{{hi:tokio::task::spawn_blocking}} function, use [`rayon`][c~rayon~docs]↗{{hi:rayon}}, or spawn a dedicated thread{{hi:Dedicated thread}}.
 
-See the [Async: What is blocking?][blog~async-what-is-blocking] blog post↗.
+See the [Async: What is blocking?][blog~async-what-is-blocking]↗ blog post.
 
 ## Use `spawn_blocking` {#spawn-blocking}
 
 [![tokio][c~tokio~docs~badge]][c~tokio~docs]{{hi:tokio}} [![tokio~crates.io][c~tokio~crates.io~badge]][c~tokio~crates.io]
 [![tokio~github][c~tokio~github~badge]][c~tokio~github] [![tokio~lib.rs][c~tokio~lib.rs~badge]][c~tokio~lib.rs] [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}{{hi:spawn_blocking}}
 
-Use [`tokio::task::spawn_blocking`][c~tokio::task::spawn_blocking~docs]{{hi:tokio::task::spawn_blocking}}↗ to run a _small portion_ of synchronous code{{hi:Synchronous code}}.
+Use [`tokio::task::spawn_blocking`][c~tokio::task::spawn_blocking~docs]↗{{hi:tokio::task::spawn_blocking}} to run a _small portion_ of synchronous code{{hi:Synchronous code}}.
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/examples/call_blocking_from_async/call_blocking_from_async_spawn_blocking.rs:example}}
@@ -64,7 +64,7 @@ In other cases, it may be easier to structure the application as largely synchro
 [![futures-executor~github][c~futures-executor~github~badge]][c~futures-executor~github]
 [![futures-executor~lib.rs][c~futures-executor~lib.rs~badge]][c~futures-executor~lib.rs] [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 
-[`futures-executor`][c~futures-executor~docs]{{hi:futures-executor}}↗ includes a minimal executor. The [`futures-executor::block_on`][c~futures-executor::block_on~docs]{{hi:futures-executor::block_on}}↗ function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
+[`futures-executor`][c~futures-executor~docs]↗{{hi:futures-executor}} includes a minimal executor. The [`futures-executor::block_on`][c~futures-executor::block_on~docs]↗{{hi:futures-executor::block_on}} function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/examples/call_async_from_blocking/call_async_from_blocking_futures_executor.rs:example}}

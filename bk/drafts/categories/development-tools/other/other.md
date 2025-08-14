@@ -4,7 +4,7 @@
 
 ## Search for Rust APIs {#roogle}
 
-[`Roogle`][c~roogle~website]{{hi:roogle}}↗ [![roogle~github][c~roogle~github~badge]][c~roogle~github] [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
+[`Roogle`][c~roogle~website]↗{{hi:roogle}} [![roogle~github][c~roogle~github~badge]][c~roogle~github] [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 
 Roogle is a Rust API [search][p~search] engine, which allows you to [search][p~search] functions by names and type signatures. The query can be one of the following types:
 

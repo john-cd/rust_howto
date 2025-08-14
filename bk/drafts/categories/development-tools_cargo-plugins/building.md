@@ -33,7 +33,7 @@ cargo make --version
 [![cargo-xtask~github][c~cargo-xtask~github~badge]][c~cargo-xtask~github]
 [![cargo-xtask~lib.rs][c~cargo-xtask~lib.rs~badge]][c~cargo-xtask~lib.rs]
 
-[cargo-xtask][c~cargo-xtask~github]{{hi:cargo-xtask}}↗ adds free-form automation to a Rust project, a-la [`make`][make~website]↗{{hi:make}}, [`npm run`][npm~website]↗{{hi:npm run}} or bespoke bash scripts.
+[cargo-xtask][c~cargo-xtask~github]↗{{hi:cargo-xtask}} adds free-form automation to a Rust project, a-la [`make`][make~website]↗{{hi:make}}, [`npm run`][npm~website]↗{{hi:npm run}} or bespoke bash scripts.
 
 The two distinguishing features of [`xtask`][c~cargo-xtask~docs]↗{{hi:xtask}} are the following:
 
@@ -44,7 +44,7 @@ The two distinguishing features of [`xtask`][c~cargo-xtask~docs]↗{{hi:xtask}} 
 
 [![devx-cmd][c~devx-cmd~docs~badge]][c~devx-cmd~docs] [![devx-cmd~crates.io][c~devx-cmd~crates.io~badge]][c~devx-cmd~crates.io] [![devx-cmd~github][c~devx-cmd~github~badge]][c~devx-cmd~github] [![devx-cmd~lib.rs][c~devx-cmd~lib.rs~badge]][c~devx-cmd~lib.rs]{{hi:devx-cmd}}{{hi:Cmd}}{{hi:Bash}}{{hi:Shell}}{{hi:Process}} [![devx-pre-commit][c~devx-pre-commit~docs~badge]][c~devx-pre-commit~docs] [![devx-pre-commit~crates.io][c~devx-pre-commit~crates.io~badge]][c~devx-pre-commit~crates.io] [![devx-pre-commit~github][c~devx-pre-commit~github~badge]][c~devx-pre-commit~github] [![devx-pre-commit~lib.rs][c~devx-pre-commit~lib.rs~badge]][c~devx-pre-commit~lib.rs]{{hi:devx-pre-commit}}{{hi:Formatter}}{{hi:Hook}}{{hi:Pre-commit}}{{hi:Rustfmt}}{{hi:Git}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 
-[`devx`][devx~github]{{hi:devx}}↗ is a collection of utilities for writing your own dev scripts in Rust. The project is inspired by and intended for seamless usage with [`cargo-xtask`][c~cargo-xtask~github]↗ idioms.
+[`devx`][devx~github]↗{{hi:devx}} is a collection of utilities for writing your own dev scripts in Rust. The project is inspired by and intended for seamless usage with [`cargo-xtask`][c~cargo-xtask~github]↗ idioms.
 
 [`devx-cmd`][c~devx-cmd~docs]↗{{hi:devx-cmd}} provides primitives for spawning child processes that are easier than `std::process targeted` when used in development scripts. [`devx-pre-commit`][c~devx-pre-commit~docs]↗{{hi:devx-pre-commit}} creates git pre-commit hooks that enforce good practices.
 
@@ -77,7 +77,7 @@ The following example executes shell commands and interacts with the file system
 
 | Topic | Rust Crates |
 |---|---|
-| General Build Tools | [`cargo build`][book~cargo~cargo-build]{{hi:cargo build}} (built-in) compiles your project. `cargo check` checks your code for errors without compiling. |
+| General Build Tools | [`cargo build`][book~cargo~cargo-build]↗{{hi:cargo build}} (built-in) compiles your project. `cargo check` checks your code for errors without compiling. |
 | Cross-Compilation | [`cross`][c~cross~docs]↗{{hi:cross}} simplifies cross-compilation. |
 | Packaging, Distribution | [`cargo-deb`][c~cargo-deb~docs]↗{{hi:cargo-deb}} creates Debian packages. [`cargo-rpm`][c~cargo-rpm~docs]↗{{hi:cargo-rpm}} creates RPM packages. [`create-dmg`][create-dmg~github]↗{{hi:create-dmg}} creates macOS disk images. |
 | Build Script Helpers | [`cc`][c~cc~docs]↗{{hi:cc}} helps with compiling C/C++ code in build scripts. [`pkg-config`][c~pkg-config~docs]↗{{hi:pkg-config}} finds system libraries. |

@@ -2,6 +2,6 @@
 
 First off, thanks for taking the time to contribute!
 
-The book includes a detailed [Contributing] section.
+The book includes a detailed [contributing] section.
 
-[Contributing]: https://john-cd.com/rust_howto/contributing
+[contributing]: https://john-cd.com/rust_howto/contributing

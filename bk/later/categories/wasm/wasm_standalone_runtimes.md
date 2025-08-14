@@ -42,7 +42,7 @@ Notes:
 [![wasmer~lib.rs][c~wasmer~lib.rs~badge]][c~wasmer~lib.rs]
 [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
 
-[`wasmer`][wasmer~website]{{hi:wasmer.io}}↗ is a runtime for executing WebAssembly on the server-side. It supports JIT (Just In Time), AOT (Ahead Of Time) compilation, an experimental interpreter, as well as pluggable compilers. Install with:
+[`wasmer`][wasmer~website]↗{{hi:wasmer.io}} is a runtime for executing WebAssembly on the server-side. It supports JIT (Just In Time), AOT (Ahead Of Time) compilation, an experimental interpreter, as well as pluggable compilers. Install with:
 
 ```sh
 curl https://get.wasmer.io -sSfL | sh
@@ -100,7 +100,7 @@ The [`wasmtime`][c~wasmtime~github]↗ crate is a high-level API to expose the W
 
 ## See Also
 
-[rustwasm.github.io][rustwasm~website]{{hi:rustwasm}}↗.
+[rustwasm.github.io][rustwasm~website]↗{{hi:rustwasm}}.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
