@@ -8,7 +8,7 @@ The Rust [standard library][p~standard-library] provides smart pointer types, su
 
 ## Shared ownership with `Arc` {#arc}
 
-The type `Arc<T>` provides shared ownership of a value of type `T`, allocated in the heap. Invoking clone on `Arc` produces a new `Arc` instance, which points to the _same allocation_ on the heap as the source `Arc`, while increasing a reference count. When the last `Arc` pointer to a given allocation is destroyed, the value stored in that allocation (often referred to as “inner value”) is also dropped.
+The type `Arc<T>` provides shared ownership of a value of type `T`, allocated in the heap. Invoking clone on `Arc` produces a new `Arc` instance, which points to the _same allocation_ on the heap as the source `Arc`, while increasing a reference count. When the last `Arc` pointer to a given allocation is destroyed, the value stored in that allocation (often referred to as "inner value") is also dropped.
 
 Shared references in Rust disallow mutation by default, and `Arc` is no exception: you _cannot generally obtain a mutable reference to something inside an `Arc`_. If you do need to mutate through an `Arc`, you have several options:
 
