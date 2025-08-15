@@ -100,6 +100,7 @@ Instead, you may:
 ## References {#references}
 
 - [Lifetime elision rules (Rust reference)][book~rust-reference~lifetime-elision]↗.
+- [Common Rust Lifetime Misconceptions][common-rust-lifetime-misconceptions~github]↗.
 - [Self-referential Structs][blog~rust-self-referential-structs]↗.
 
 ## Related Topics {#related-topics}
@@ -114,4 +115,5 @@ Instead, you may:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+TODO review [common-rust-lifetime-misconceptions~github]
 </div>

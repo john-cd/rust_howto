@@ -697,6 +697,7 @@
 [codevoweb~website]: https://codevoweb.com
 [codevoweb~website~badge]: https://img.shields.io/badge/codevoweb-coral
 [commitlint-pre-commit-hook~github]: https://github.com/alessandrojcm/commitlint-pre-commit-hook
+[common-rust-lifetime-misconceptions~github]: https://github.com/pretzelhammer/rust-blog/blob/master/posts/common-rust-lifetime-misconceptions.md
 [commonmark~link-reference-definitions~website]: https://spec.commonmark.org/0.31.2/#link-reference-definitions
 [communicating-between-sync-and-async-code~website]: https://docs.rs/tokio/latest/tokio/sync/mpsc#communicating-between-sync-and-async-code
 [conc-map-bench~github]: https://github.com/xacrimon/conc-map-bench
@@ -1236,7 +1237,6 @@
 [primitive~i8]: https://doc.rust-lang.org/std/primitive.i8.html
 [primitive~isize]: https://doc.rust-lang.org/std/primitive.isize.html
 [primitive~never]: https://doc.rust-lang.org/std/primitive.never.html
-[primitive~pointer]: https://doc.rust-lang.org/reference/types/pointer.html
 [primitive~pointer]: https://doc.rust-lang.org/std/primitive.pointer.html
 [primitive~reference]: https://doc.rust-lang.org/std/primitive.reference.html
 [primitive~slice::len]: https://doc.rust-lang.org/std/primitive.slice.html#method.len
