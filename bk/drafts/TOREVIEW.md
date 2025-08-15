@@ -171,6 +171,10 @@ review [common-rust-lifetime-misconceptions][common-rust-lifetime-misconceptions
 
 cover [book~writing-interpreters-in-rust~github]
 
-cover https://github.com/PacktPublishing/Hands-On-Microservices-with-Rust/blob/master/Chapter08/chat/src/lib.rs
+cover [Hands-On-Microservices-with-Rust]: https://github.com/PacktPublishing/Hands-On-Microservices-with-Rust/blob/master/Chapter08/chat/src/lib.rs
 
-https://github.com/juspay/hyperswitch/tree/main
+review [hyperswitch]: https://github.com/juspay/hyperswitch/tree/main
+
+review [6-rust-programming-mistakes-to-watch-out-for]: https://www.infoworld.com/article/2337218/6-rust-programming-mistakes-to-watch-out-for.html
+
+cover [5-rust-runtimes-every-embedded-developer-needs-to-know]: https://www.designnews.com/embedded-systems/5-rust-runtimes-every-embedded-developer-needs-to-know
