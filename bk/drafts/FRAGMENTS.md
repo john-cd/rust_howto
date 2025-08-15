@@ -15,20 +15,6 @@
 
 ---
 
-## `Cow` Alternatives {#cow-alternatives}
-
-While [`Cow`][c~std::borrow::Cow~docs]↗{{hi:std::borrow::Cow}} is a great choice for optimizing memory usage when dealing with a mix of borrowed and owned data, there are alternatives.
-
-Instead of e.g. `Cow<str>`, you can use:
-
-- [`Arc<str>`][c~std::sync::Arc~docs]↗, an atomically reference-counted shared string slice, to be used in multithreaded environments,
-- [`Rc<str>`][c~std::rc::Rc~docs]↗, a single-threaded reference-counted string slice,
-- [`Box<str>`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}} for heap-allocated string slices.
-
-```rust,editable
-{{#include ../../crates/standard_library/examples/cow/cow_alternatives.rs:example}}
-```
-
 ## Arc::make_mut {#arc_make_mut}
 
 If you need reference-counting, note that [`Rc::make_mut`][c~std::rc::Rc::make_mut~docs]↗{{hi:std::rc::Rc::make_mut}} and [`Arc::make_mut`][c~std::sync::Arc::make_mut~docs]↗{{hi:std::rc::Arc::make_mut}} can provide clone-on-write functionality as well.
@@ -130,7 +116,7 @@ You may also implement the [`AsRef`][c~std::convert::AsRef~docs]↗{{hi:std::con
 {{#include ../../crates/standard_library/examples/  /asref2.rs:example}}
 ```
 
-Note that so-called "Deref polymorphism", meaning implementing [`Deref`][c~std::ops::Deref~docs]↗{{hi:std::ops::Deref}} to emulate inheritance between structs, is considered an [antipattern][deref-anti-pattern~github]↗, especially since `Deref` is an *implicit* conversion.
+Note that so-called "Deref polymorphism", meaning implementing [`Deref`][c~std::ops::Deref~docs]↗{{hi:std::ops::Deref}} to emulate inheritance between structs, is considered an [antipattern][deref-anti-pattern~github]↗, especially since `Deref` is an _implicit_ conversion.
 
 ### References {#references}
 

@@ -70,6 +70,18 @@ The following example demonstrates how to convert a `Cow<str>` to a `&str` or a 
 
 This example was adapted from a [StackOverflow discussion][stackoverflow~how-do-i-get-a-str-or-string-from-stdborrowcowstr]↗.
 
+## `Cow` Alternatives {#cow-alternatives}
+
+Taking the example of strings: using `&str` for borrowing and `String` for owned data might be sufficient if you don't need the flexibility of [`Cow<str>`][c~std::borrow::Cow~docs]↗{{hi:std::borrow::Cow}}. You can also use:
+
+- [`Arc<str>`][c~std::sync::Arc~docs]↗, an atomically reference-counted shared string slice, to be used in multithreaded environments,
+- [`Rc<str>`][c~std::rc::Rc~docs]↗, a single-threaded reference-counted string slice,
+- [`Box<str>`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}} for heap-allocated immutable string slices:
+
+```rust,editable
+{{#include ../../crates/standard_library/examples/cow/cow_alternatives.rs:example}}
+```
+
 ## References {#references}
 
 - [Using Cow in Rust for efficient memory utilization][blog~using-cow-rust-efficient-memory-utilization]↗.

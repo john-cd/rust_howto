@@ -1,10 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
 //! Alternatives to `Cow`.
-//!
-//! If you don't need Cow's flexibility, using `&str` for borrowing and `String`
-//! for owned data might be sufficient.
-
 use std::rc::Rc;
 use std::sync::Arc;
 use std::sync::RwLock;
@@ -38,7 +34,9 @@ fn main() {
         });
         handles.push(handle);
     }
-
+    for handle in handles {
+        handle.join().unwrap();
+    }
     // `Rc<str>` is similar to `Arc<str>`, but optimized for single-threaded
     // environments.
     let shared_string: Rc<str> = Rc::from("Hello, Rust!");
