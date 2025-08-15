@@ -3552,3 +3552,10 @@ oreilly
 debian
 bestofgithub
 dformatloaders
+evcxr
+jupyter
+yazi
+taplo
+stackoverflow
+foldhash
+REPL

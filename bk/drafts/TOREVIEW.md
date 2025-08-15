@@ -125,7 +125,7 @@ This repository is a compilation of well-written, step-by-step guides for re-cre
 
 [SeaORM]: https://www.sea-ql.org/SeaORM/
 
-## TOSORT {#skip}
+## TO SORT {#skip}
 
 [tour-of-rusts-standard-library-traits][tour-of-rusts-standard-library-traits].
 
@@ -165,4 +165,12 @@ This repository is a compilation of well-written, step-by-step guides for re-cre
 
 [blog~why_you_need_sccache]: https://elijahpotter.dev/articles/why_you_need_sccache
 
-https://github.com/pretzelhammer/rust-blog/blob/master/posts/common-rust-lifetime-misconceptions.md#10-closures-follow-the-same-lifetime-elision-rules-as-functions
+review [common-rust-lifetime-misconceptions][common-rust-lifetime-misconceptions]
+
+[common-rust-lifetime-misconceptions]: https://github.com/pretzelhammer/rust-blog/blob/master/posts/common-rust-lifetime-misconceptions.md
+
+cover [book~writing-interpreters-in-rust~github]
+
+cover https://github.com/PacktPublishing/Hands-On-Microservices-with-Rust/blob/master/Chapter08/chat/src/lib.rs
+
+https://github.com/juspay/hyperswitch/tree/main
