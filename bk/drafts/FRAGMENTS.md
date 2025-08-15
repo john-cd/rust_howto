@@ -15,16 +15,6 @@
 
 ---
 
-## Arc::make_mut {#arc_make_mut}
-
-If you need reference-counting, note that [`Rc::make_mut`][c~std::rc::Rc::make_mut~docs]↗{{hi:std::rc::Rc::make_mut}} and [`Arc::make_mut`][c~std::sync::Arc::make_mut~docs]↗{{hi:std::rc::Arc::make_mut}} can provide clone-on-write functionality as well.
-
-```rust,editable
-{{#include ../../crates/standard_library/examples/arc/arc_make_mut.rs:example}}
-```
-
----
-
 ## Create a Self-Referential Type using `Pin` {#self-referential-type}
 
 [![std][c~std~docs~badge]][c~std~docs]

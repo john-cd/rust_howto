@@ -29,12 +29,6 @@ A type is [`std::marker::Sync`][c~std::marker::Sync~docs]↗{{hi:std::marker::Sy
 
 `Arc` is an `Rc` that uses an atomic type for the reference count. Hence, it can be used by multiple threads without the count getting out of sync. If the data that the `Arc` points to is `Sync`, the entire object is `Sync`. If the data is not `Sync` (e.g. a mutable type), it can be made `Sync` using a `Mutex`. Hence the proliferation of `Arc<Mutex<T>>` types in multi-threaded Rust code, as we will see below.
 
-## Using `Arc` and `Mutex` for Safe Concurrent Access to Shared Data {#arc-mutex}
-
-```rust,editable
-{{#include ../../../crates/cats/concurrency/examples/send_sync/send_sync.rs:example}}
-```
-
 ## Implementing `Send` and `Sync` {#implementing-send-sync}
 
 `Send` and `Sync` are automatically derived [traits][p~traits]. This means that, unlike almost every other trait, if a type is composed entirely of `Send` or `Sync` types, then it is `Send` or `Sync`.

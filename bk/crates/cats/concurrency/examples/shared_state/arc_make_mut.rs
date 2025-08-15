@@ -40,13 +40,13 @@ mod cfg {
             max_connections: u8,
         ) {
             // If there are other `Arc` pointers to the same allocation,
-            // then make_mut will clone the inner value to a new allocation to
+            // then `make_mut` will clone the inner value to a new allocation to
             // ensure unique ownership. This is also referred to as
             // clone-on-write.
             let mutable_config: &mut Configuration = Arc::make_mut(self);
             mutable_config.server_address = server_address;
             mutable_config.max_connections = max_connections;
-            println!("Admin task: Configuration updated to {mutable_config:?}");
+            println!("Configuration updated to {mutable_config:?}");
             println!(
                 "Original config after update (should be unchanged for readers): {self:?}"
             );
@@ -55,11 +55,11 @@ mod cfg {
 }
 
 fn main() {
-    // Initialize the configuration and wrap it in an Arc for shared read
+    // Initialize the configuration and wrap it in an `Arc` for shared read
     // access.
     let mut config = cfg::Configuration::new("localhost:8080".to_string(), 100);
 
-    // Simulate multiple readers accessing the configuration.
+    // Simulate multiple readers accessing the configuration:
     let mut handles = vec![];
     for i in 0..3 {
         let config_clone = Arc::clone(&config);
@@ -74,24 +74,21 @@ fn main() {
     }
 
     // Simulate an administrative task updating the configuration
-    // after some time.
+    // after some time:
     thread::sleep(Duration::from_millis(75));
     println!("\nAdmin task: Updating configuration...");
     config.update("api.example.com:8443".to_string(), 200);
 
     // Spawn more readers after the update.
-    for i in 3..6 {
+    for i in 3..5 {
         let config_clone = Arc::clone(&config);
         let handle = thread::spawn(move || {
             println!(
-                "Reader {i} - Server Address: {}",
-                config_clone.server_address()
-            );
-            println!(
-                "Reader {i} - Max Connections: {}",
+                "Reader {i} - Server Address: {}  Max Connections: {}",
+                config_clone.server_address(),
                 config_clone.max_connections()
             );
-            thread::sleep(Duration::from_millis(50));
+            thread::sleep(Duration::from_millis(50 * (i - 3)));
         });
         handles.push(handle);
     }
@@ -107,4 +104,3 @@ fn main() {
 fn test() {
     main();
 }
-// [test; insert](https://github.com/john-cd/rust_howto/issues/1413)

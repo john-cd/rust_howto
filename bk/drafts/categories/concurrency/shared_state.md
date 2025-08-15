@@ -6,6 +6,26 @@ Channels{{hi:Channels}} are similar to single ownership, because once you transf
 
 The Rust [standard library][p~standard-library] provides smart pointer types, such as `Mutex<T>`{{hi:Mutex}} and `Arc<T>`{{hi:Arc}}, that are safe to use in concurrent contexts.
 
+## Shared ownership with `Arc` {#arc}
+
+The type `Arc<T>` provides shared ownership of a value of type `T`, allocated in the heap. Invoking clone on `Arc` produces a new `Arc` instance, which points to the _same allocation_ on the heap as the source `Arc`, while increasing a reference count. When the last `Arc` pointer to a given allocation is destroyed, the value stored in that allocation (often referred to as “inner value”) is also dropped.
+
+Shared references in Rust disallow mutation by default, and `Arc` is no exception: you _cannot generally obtain a mutable reference to something inside an `Arc`_. If you do need to mutate through an `Arc`, you have several options:
+
+- Use interior mutability with synchronization primitives like `Mutex`, `RwLock`, or one of the `Atomic` types.
+- Use clone-on-write semantics with `Arc::make_mut` which provides efficient mutation without requiring interior mutability. This approach clones the data only when needed (when there are multiple references) and can be more efficient when mutations are infrequent.
+- Use `Arc::get_mut` when you know your `Arc` is not shared (has a reference count of 1), which provides direct mutable access to the inner value without any cloning.
+
+## Clone-on-write with `Arc::make_mut` {#arc_make_mut}
+
+Use clone-on-write semantics with `Arc::make_mut` which provides efficient mutation without requiring interior mutability. This approach clones the data only when needed (when there are multiple references) and can be more efficient when mutations are infrequent.
+
+[`Rc::make_mut`][c~std::rc::Rc::make_mut~docs]↗{{hi:std::rc::Rc::make_mut}} and [`Arc::make_mut`][c~std::sync::Arc::make_mut~docs]↗{{hi:std::rc::Arc::make_mut}} can provide clone-on-write functionality.
+
+```rust,editable
+{{#include ../../crates/cats/concurrency/examples/shared_state/arc_make_mut.rs:example}}
+```
+
 ## Maintain a Global Mutable State {#global-mutable-state}
 
 [![lazy_static][c~lazy_static~docs~badge]][c~lazy_static~docs] [![lazy_static~crates.io][c~lazy_static~crates.io~badge]][c~lazy_static~crates.io] [![lazy_static~github][c~lazy_static~github~badge]][c~lazy_static~github] [![lazy_static~lib.rs][c~lazy_static~lib.rs~badge]][c~lazy_static~lib.rs]{{hi:lazy_static}}{{hi:Macro}}{{hi:Lazy}}{{hi:Static}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}{{hi:Global mutable state}}
@@ -24,6 +44,12 @@ Allow access to data from one thread at a time.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/examples/shared_state/shared_state_mutex.rs:example}}
+```
+
+## Using `Arc` and `Mutex` for Safe Concurrent Access to Shared Data {#arc-mutex}
+
+```rust,editable
+{{#include ../../../crates/cats/concurrency/examples/shared_state/send_sync.rs:example}}
 ```
 
 ## `parking_lot` {#parking-lot}
@@ -53,5 +79,5 @@ Allow access to data from one thread at a time.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[shared_state: review; titles](https://github.com/john-cd/rust_howto/issues/266)
+[shared_state: reorganize; section for Arc; for Mutex / Rwlock; for joint use; for make_mut](https://github.com/john-cd/rust_howto/issues/266)
 </div>
