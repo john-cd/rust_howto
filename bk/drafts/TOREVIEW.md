@@ -64,6 +64,7 @@
 ## ML / Search {#skip}
 
 - [`hora`][hora~github]: Efficient approximate nearest neighbor search algorithm collections library written in Rust.
+- [mistral.rs~github] [mistral.rs~github]: https://github.com/EricLBuehler/mistral.rs
 
 ## Reviews / Evolution of Rust {#skip}
 
@@ -96,4 +97,72 @@
 
 - [hello-world.rs][hello-world.rs~github]: Memory safe, blazing fast, configurable, minimal hello world written in rust() in a few lines of code with few(1092) dependencies.
 
-## TO SORT {#skip}
+## jujutsu {#skip}
+
+[jujutsu-tutorial]: https://steveklabnik.github.io/jujutsu-tutorial/hello-world/creating-new-changes.html
+
+## Build your own x {#skip}
+
+This repository is a compilation of well-written, step-by-step guides for re-creating our favorite technologies from scratch: [build-your-own-x~website][build-your-own-x~website].
+
+[build-your-own-x~website]: https://github.com/codecrafters-io/build-your-own-x
+
+## Reflection {#skip}
+
+[reflect~github] [reflect~github]: https://github.com/dtolnay/reflect
+
+## Futures {#skip}
+
+[c~want~docs]. [c~want~docs]: https://docs.rs/want
+
+## Numbers
+
+[fraction][fraction~crates.io].
+
+[fraction~crates.io]: https://crates.io/crates/fraction
+
+## ORMs {#skip}
+
+[SeaORM]: https://www.sea-ql.org/SeaORM/
+
+## TOSORT {#skip}
+
+[tour-of-rusts-standard-library-traits][tour-of-rusts-standard-library-traits].
+
+[foldhash][foldhash].
+
+[gg][gg].
+
+[talent-plan][talent-plan]: open source training courses about distributed database and distributed systems.
+
+[blog~rust-patterns-ref][blog~rust-patterns-ref].
+
+[stackoverflow~understanding-the-send-trait][stackoverflow~understanding-the-send-trait].
+
+[taplo~github][taplo~github]: A TOML toolkit written in Rust.
+
+[yazi~github][yazi~github]:Blazing fast terminal file manager written in Rust, based on async I/O.
+
+[evcxr_jupyter~github][evcxr_jupyter~github]:  A Rust REPL / Jupyter kernel.
+
+[tour-of-rusts-standard-library-traits]: https://github.com/pretzelhammer/rust-blog/blob/master/posts/tour-of-rusts-standard-library-traits.md
+
+[foldhash]: https://github.com/orlp/foldhash
+
+[gg]: https://github.com/gulbanana/gg
+
+[talent-plan]: https://github.com/pingcap/talent-plan/tree/master
+
+[blog~rust-patterns-ref]: http://xion.io/post/code/rust-patterns-ref.html
+
+[stackoverflow~understanding-the-send-trait]: https://stackoverflow.com/questions/59428096/understanding-the-send-trait
+
+[taplo~github]: https://github.com/tamasfe/taplo
+
+[yazi~github]: https://github.com/sxyazi/yazi
+
+[evcxr_jupyter~github]: https://github.com/evcxr/evcxr/blob/main/evcxr_jupyter/README.md
+
+[blog~why_you_need_sccache]: https://elijahpotter.dev/articles/why_you_need_sccache
+
+https://github.com/pretzelhammer/rust-blog/blob/master/posts/common-rust-lifetime-misconceptions.md#10-closures-follow-the-same-lifetime-elision-rules-as-functions
