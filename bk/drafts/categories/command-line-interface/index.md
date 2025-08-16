@@ -51,4 +51,7 @@ Techniques to help create command line interfaces{{hi:Command-line interface}}, 
 - [termimad][c~termimad~github]↗: A library to display rich (Markdown) snippets and texts in a rust terminal application.
 - [rust-terminfo][rust-terminfo~github]↗: Terminal information for Rust.
 
+review [Command Line Applications in Rust (book)][book~rust-cli].
+[command-line-rust~github][command-line-rust~github].
+[command-line-rust~github]: https://github.com/kyclark/command-line-rust/tree/main
 </div>

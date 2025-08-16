@@ -45,4 +45,7 @@
 
 <div class="hidden">
 [send_emails: write](https://github.com/john-cd/rust_howto/issues/342)
+
+[sendgrid~website][sendgrid~website].
+[sendgrid~website]: https://sendgrid.com
 </div>

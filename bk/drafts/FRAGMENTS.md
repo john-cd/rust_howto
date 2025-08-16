@@ -25,6 +25,8 @@ This is an advanced topic.
 {{#include ../../crates/language/examples/lifetimes/self_referential_struct2.rs:example}}
 ```
 
+[movable-ref~github]: https://github.com/engali94/movable-ref
+
 ---
 
 ## Create a Plugin System {#plugins}

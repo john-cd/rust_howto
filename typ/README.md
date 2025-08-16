@@ -144,8 +144,17 @@ See also:
 - [mdbook-typstpdf~lib.rs][mdbook-typstpdf~lib.rs].
 - [mdbook-typst-pdf~lib.rs][mdbook-typst-pdf~lib.rs].
 
-[pullup~lib.rs]: <https://lib.rs/crates/pullup>
+## Markdown {#skip}
+
+- [`mdbook-pdf`][c~mdbook-pdf~crates.io].
+- [`mdbook-tools`][c~mdbook-tools~lib.rs].
+- [Environment Variables - mdBook Documentation][book~mdbook~environment-variables].
+- [quarkdown~github][quarkdown~github]
+
 [asciidoc~website]: <https://asciidoc.org>
+[book~mdbook~environment-variables]: <https://rust-lang.github.io/mdBook/format/configuration/environment-variables.html>
 [mdbook-pandoc~crates.io]: <https://crates.io/crates/mdbook-pandoc>
 [mdbook-typstpdf~lib.rs]: <https://lib.rs/crates/mdbook-typstpdf>
 [mdbook-typst-pdf~lib.rs]: <https://lib.rs/crates/mdbook-typst-pdf>
+[pullup~lib.rs]: <https://lib.rs/crates/pullup>
+[quarkdown~github]: https://github.com/iamgio/quarkdown
