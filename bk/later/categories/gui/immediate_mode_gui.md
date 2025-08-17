@@ -50,4 +50,8 @@ Immediate mode [GUI][p~gui] libraries often need to be integrated with a [render
 <div class="hidden">
 [immediate_mode_gui: write](https://github.com/john-cd/rust_howto/issues/385)
 need in depth review.
+
+[egui.info~examples~website][egui.info~examples~website].
+[egui.info~examples~website]: https://egui.info/examples
+
 </div>

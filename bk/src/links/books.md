@@ -211,4 +211,22 @@ TODO review; review
 
 [book~the-little-book-of-rust-books~applications]: https://lborb.github.io/book/applications.html
 
+---
+
+The online version of the Rust book titled "Rust for C Programmers" got a dedicated website at www.rust-for-c-programmers.com. Despite the title, the book doesn’t require prior experience with the C language. The name is mainly meant to indicate that the book is not aimed at complete beginners who have never written code or lack any basic understanding of systems programming. That said, even newcomers should find it accessible, though they may occasionally need to refer to supplementary material.
+
+The book focuses on teaching Rust’s core concepts with clarity and precision, avoiding unnecessary verbosity. At around 500 pages, it covers most of Rust's fundamentals:
+
+[book~rust-for-c-programmers]: https://www.rust-for-c-programmers.com
+
+[rust-quest]: https://dev.rust-quest.com/en
+
+https://github.com/bitfield/RustBooks
+
+"Async Rust", https://www.ebooks.com/en-nz/book/211498940/async-rust/maxwell-flitton/, Nov 2024.
+
+"Advanced Hands-on Rust": https://pragprog.com/titles/hwmrust/advanced-hands-on-rust/ (sequel to Hands-on Rust"), March 2025 (currently beta)
+
+"Rust Brain Teasers": https://pragprog.com/titles/hwrustbrain/rust-brain-teasers/, March 2022.
+
 </div>

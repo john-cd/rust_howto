@@ -112,4 +112,8 @@ cover [`perseus`][c~perseus~docs]↗{{hi:perseus}} / zola?
 
 - [Are we (I)DE yet?][are-we-ide-yet?~website]↗.
 
+[Porting a cross-platform GUI application to Rust][blog~porting-a-cross-platform-gui-application-to-rust].
+
+[blog~porting-a-cross-platform-gui-application-to-rust]: https://hacks.mozilla.org/2024/04/porting-a-cross-platform-gui-application-to-rust/
+
 </div>

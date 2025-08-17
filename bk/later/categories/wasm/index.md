@@ -55,4 +55,16 @@ Cover [`wat`][c~wat~docs]↗{{hi:wat}}, [`parity-wasm`][c~parity-wasm~docs]↗{{
 - [Sycamore][sycamore~website]↗.
 - [sycamore][c~sycamore~github]↗: A library for creating reactive web apps in Rust and WebAssembly.
 
+[book~rustwasm][book~rustwasm].
+[book~rustwasm]: https://rustwasm.github.io/docs/book/introduction.html
+
+[wasmtime~docs~website][wasmtime~docs~website].
+[wasmtime~docs~website]: https://docs.wasmtime.dev/introduction.html
+
+[rust-yew-realworld-example-app~github][rust-yew-realworld-example-app~github].
+[rust-yew-realworld-example-app~github]: https://github.com/jetli/rust-yew-realworld-example-app
+
+[rust-web-framework-comparison][rust-web-framework-comparison~frontend-frameworks-wasm~github].
+[rust-web-framework-comparison~frontend-frameworks-wasm~github]: https://github.com/flosse/rust-web-framework-comparison#frontend-frameworks-wasm
+
 </div>

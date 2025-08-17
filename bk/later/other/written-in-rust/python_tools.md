@@ -53,4 +53,10 @@ Key features include:
 
 <div class="hidden">
 [python_tools: write](https://github.com/john-cd/rust_howto/issues/617)
+[uv~docs~website][uv~docs~website].
+[uv~docs~website]: https://docs.astral.sh/uv
+
+[pyapp~website][pyapp~website].
+[pyapp~website]: https://ofek.dev/pyapp/latest
+
 </div>

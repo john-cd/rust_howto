@@ -82,4 +82,7 @@ PHANTOM DATA:
 - [phantom-data][book~rustonomicon~phantom-data]↗.
 - [PhantomData][c~std::marker::PhantomData~docs]↗.
 
+[stackoverflow~understanding-the-send-trait][stackoverflow~understanding-the-send-trait].
+[stackoverflow~understanding-the-send-trait]: https://stackoverflow.com/questions/59428096/understanding-the-send-trait
+
 </div>

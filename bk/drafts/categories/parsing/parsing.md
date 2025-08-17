@@ -69,4 +69,7 @@ Grammars are saved in separate [`.pest`][c~pest~docs]↗{{hi:.pest}}  files whi
 - [abnf_to_pest][c~abnf_to_pest~crates.io]↗.
 - [winnow][c~winnow~docs]↗.
 
+[parse-rosetta-rs][parse-rosetta-rs~github].
+[parse-rosetta-rs~github]: https://github.com/rosetta-rs/parse-rosetta-rs
+
 </div>

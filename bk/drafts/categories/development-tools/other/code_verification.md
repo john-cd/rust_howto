@@ -108,4 +108,5 @@ Loom attempts to check all possible interleavings, while Shuttle chooses interle
 
 <div class="hidden">
 [code_verification: expand; revise refs.incl.md](https://github.com/john-cd/rust_howto/issues/303)
+
 </div>

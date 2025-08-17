@@ -53,4 +53,7 @@ Statics can be mutable (`static mut`): Unlike `const`, static variables can be d
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+[const-fn]: https://felixwrt.dev/posts/const-fn
+
 </div>

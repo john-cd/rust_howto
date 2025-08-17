@@ -112,4 +112,16 @@ Combinatorics, set theory, and logic.
 
 - [micromath][c~micromath~github]↗:  Embedded Rust arithmetic, 2D/3D vector, and statistics library.
 
+[fraction][fraction~crates.io].
+
+[fraction~crates.io]: https://crates.io/crates/fraction
+
+TENSORS:
+
+rusten is a minimal, didactic implementation of tensors, or, more accurately, multi-dimensional arrays, in Rust. It mimics NumPy in terms of style and offers core functionalities such as unary, binary, and reduction operations, broadcasting, shape transformations, slicing, and more, all while prioritizing clarity. Unlike existing packages like ndarray, rusten doesn't aim for state-of-the-art performance or support for all use cases. Instead, it's targeted towards those seeking to gain a bare-bones understanding of multi-dimensional containers and related operations, without emphasizing performance or a comprehensive feature set. Coupled with Rust's intuitive syntax and clean memory management model, this means the rusten codebase is easy to explore and extend. It's also worth mentioning that, despite its compact codebase, rusten covers a surprisingly broad range of applications; in fact, with the major exception of convolutional networks, it can express the forward passes of most deep learning models, including transformers.
+
+The motivation behind rusten is that truly understanding how tensor manipulation works under the hood helps fluency in tools like PyTorch. Although there are myriad from-scratch projects devoted to other aspects of deep learning pipelines - common architectures from scratch, machine learning algorithms from scratch, autodiff from scratch, ... - there don't seem to be any learner-oriented resources on how tensors are handled on a low level. A very rudimentary tensor structure is straightforward, but its complexity grows exponentially with the addition of modern features such as broadcasting, non-contiguous views, etc., and rusten's goal is to implement these processes as transparently and plainly as possible to aid interested students. The most similar project is the Tensor by Eureka Labs, but whereas that is more concerned with fine-grained C memory management and concentrates on one-dimensional vectors, rusten's focus is more on the aforementioned advanced array functionalities.
+
+https://www.reddit.com/r/rust/comments/1iuqwts/rusten_a_minimal_didactic_implementation_of/
+
 </div>

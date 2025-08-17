@@ -76,4 +76,11 @@ When defining a function that accepts a closure, you use the `Fn`, `FnMut`, or `
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+Methods expecting a closure can also accept an enum variant (tuple-like)
+
+https://www.reddit.com/r/rust/comments/1l8okiy/im_blown_that_this_is_a_thing/
+
+Enum variants and tuple-like structs can be used as function items in general https://doc.rust-lang.org/reference/types/function-item.html
+
 </div>

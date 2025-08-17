@@ -218,4 +218,21 @@ See also the [Rust Jobs Report][filtra.io-rust~website]↗ (Filtra).
 
 <div class="hidden">
 TODO review links.
+
+## Jobs {#skip}
+
+- [filtra][filtra.io-rust-sep-24~website].
+
+[matic-apr-25]: https://filtra.io/rust/interviews/matic-apr-25
+
+https://jobs.letsgetrusty.com
+https://readytotouch.com/rust/companies
+https://github.com/readytotouch/readytotouch/issues/40
+https://www.reddit.com/r/rust/comments/1jg4rrl/my_list_of_companies_that_use_rust/
+
+https://github.com/omarabid/rust-companies
+https://github.com/ImplFerris/rust-in-production
+
+https://www.searchcraft.io/
+
 </div>

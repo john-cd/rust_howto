@@ -39,4 +39,8 @@
 
 <div class="hidden">
 [toml: write](https://github.com/john-cd/rust_howto/issues/444)
+
+[taplo~github][taplo~github]: A TOML toolkit written in Rust.
+[taplo~github]: https://github.com/tamasfe/taplo
+
 </div>

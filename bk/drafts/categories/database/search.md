@@ -31,4 +31,7 @@
 
 <div class="hidden">
 [database/search.md: expand](https://github.com/john-cd/rust_howto/issues/288)
+
+- [`hora`][hora~github]: Efficient approximate nearest neighbor search algorithm collections library written in Rust.
+
 </div>

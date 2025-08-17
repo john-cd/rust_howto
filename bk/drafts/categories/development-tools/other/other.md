@@ -37,4 +37,13 @@ cargo build --release
 
 - [Gerust][gerust~website]↗: Rust backend project generator.
 
+[loco~website]: https://loco.rs
+
+[kickstart~github]: https://github.com/Keats/kickstart
+
+[protypo~github]: https://github.com/dinosath/protypo
+
+[rise~github]: https://github.com/Dexter2038/rise
+(early)
+
 </div>

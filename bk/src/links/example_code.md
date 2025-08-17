@@ -42,4 +42,22 @@ You may also consult the code examples from various Rust books:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+## ChromeOS Virtual Machine Monitor {#skip}
+
+ChromeOS Virtual Machine Monitor is written in Rust with over 300k LoC
+People sometimes ask for examples of "good" Rust code. This repository contains many well-documented crates that appear from a glance to follow what I consider "idiomatic" Rust. There is a book using mdBook and thorough rustdoc documentation for all crates. Just thought I'd share if someone wants code to read!
+
+[crosvm~github]: https://github.com/google/crosvm/tree/main
+
+[book~crosvm]: https://crosvm.dev/book
+
+[crosvm~wesbite]: https://crosvm.dev/doc/crosvm
+
+## Build your own x {#skip}
+
+This repository is a compilation of well-written, step-by-step guides for re-creating our favorite technologies from scratch: [build-your-own-x~website][build-your-own-x~website].
+
+[build-your-own-x~website]: https://github.com/codecrafters-io/build-your-own-x
+
 </div>

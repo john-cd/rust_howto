@@ -132,4 +132,12 @@ The following covers portions of the Rust Standard Library that are not otherwis
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+[tour-of-rusts-standard-library-traits][tour-of-rusts-standard-library-traits].
+[tour-of-rusts-standard-library-traits]: https://github.com/pretzelhammer/rust-blog/blob/master/posts/tour-of-rusts-standard-library-traits.md
+
+- [black_box in `core::hint`][c~core::hint::black_box~docs]↗.
+- [`std::pin`][c~std::pin~projections-and-structural-pinning~docs]↗.
+- [`core::iter`][c~core::iter~docs]↗.
+
 </div>

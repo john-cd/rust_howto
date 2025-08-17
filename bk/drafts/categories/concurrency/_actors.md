@@ -99,4 +99,7 @@ Ractor is a Rust crate providing a simple, lightweight actor framework. It facil
 
 - [bastion][c~bastion~github]↗: Highly-available Distributed Fault-tolerant Runtime.
 
+https://riker.rs/actors
+https://github.com/uazu/stakker
+
 </div>

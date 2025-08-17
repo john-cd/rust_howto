@@ -77,4 +77,6 @@ See also: [[interfacing_with_javascript | Interfacing With Javascript]].
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/908)
 decide what to cover.
+cover [writing-interpreters-in-rust][book~writing-interpreters-in-rust~github].
+
 </div>

@@ -38,4 +38,7 @@ Examples to look into:
 <https://github.com/MWATelescope/mwa_hyperdrive/tree/main>
 <https://github.com/TheZoq2/locksort>
 
+[blog~rust-on-every-gpu][blog~rust-on-every-gpu].
+[blog~rust-on-every-gpu]: https://rust-gpu.github.io/blog/2025/07/25/rust-on-every-gpu/
+
 </div>

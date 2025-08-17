@@ -81,4 +81,13 @@ Alternatives to the [Tokio][p~tokio] async ecosystem include:
 
 <div class="hidden">
 [write; review in depth](https://github.com/john-cd/rust_howto/issues/633)
+
+async-std has been officially discontinued; use smol instead
+
+Note that after smol came out years ago, async-std switched to use the same underlying async executor as smol. Thus, people switching from async-std to smol should get a very familiar experience, with much the same API structure.
+
+https://crates.io/crates/smol-axum
+
+https://github.com/ohkami-rs/ohkami uses smol
+
 </div>

@@ -90,4 +90,15 @@ Microcontrollers respond to events via interrupts.
 - [No-Panic Rust][blog~no-panic]↗: A Nice Technique for Systems Programming.
 - [no-panics-whatsoever (crates.io)][c~no-panics-whatsoever~crates.io]↗.
 
+## Embedded {#skip}
+
+cover [5-rust-runtimes-every-embedded-developer-needs-to-know][5-rust-runtimes-every-embedded-developer-needs-to-know].
+[5-rust-runtimes-every-embedded-developer-needs-to-know]: https://www.designnews.com/embedded-systems5-rust-runtimes-every-embedded-developer-needs-to-know
+
+[drone-os~website][drone-os~website]
+[drone-os~website]: https://www.drone-os.com
+
+[blog~rust-procedural-macros-replace-panic][blog~rust-procedural-macros-replace-panic]
+[blog~rust-procedural-macros-replace-panic]: https://www.infoq.com/articles/rust-procedural-macros-replace-panic
+
 </div>

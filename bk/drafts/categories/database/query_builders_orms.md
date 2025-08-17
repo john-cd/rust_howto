@@ -157,4 +157,7 @@ while let Some(todo) = todos.next().await {
 
 <div class="hidden">
 [write; move `toasty` example to a file](https://github.com/john-cd/rust_howto/issues/912)
+
+[SeaORM~website][SeaORM~website].
+[SeaORM~website]: https://www.sea-ql.org/SeaORM
 </div>

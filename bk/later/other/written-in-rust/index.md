@@ -196,4 +196,16 @@ This section provides a few examples of software written in Rust, organized by t
 - [grex][c~grex~github]↗: A command-line tool and Rust library with Python bindings for generating regular expressions from user-provided test cases.
 - [youki][youki~github]↗: A container runtime written in Rust.
 
+[yazi~github][yazi~github]:Blazing fast terminal file manager written in Rust, based on async I/O.
+[yazi~github]: https://github.com/sxyazi/yazi
+
+[evcxr_jupyter~github][evcxr_jupyter~github]:  A Rust REPL / Jupyter kernel.
+[evcxr_jupyter~github]: https://github.com/evcxr/evcxr/blob/main/evcxr_jupyter/README.md
+
+[hyperswitch~github][hyperswitch~github].
+[hyperswitch~github]: https://github.com/juspay/hyperswitch/tree/main
+
+[kget~github][kget~github].
+[kget~github]: https://github.com/davimf721/KGet
+
 </div>

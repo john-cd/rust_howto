@@ -59,4 +59,11 @@ Log images, point clouds, etc, and visualize them effortlessly.
 
 <div class="hidden">
 [data_engineering: organize / edit; [`ballista`][c~ballista~docs]↗{{hi:ballista}}; [`spice.ai`][spice.ai~website]](https://github.com/john-cd/rust_howto/issues/589)
+
+[jsonschema~crates.io]: https://crates.io/crates/jsonschema
+[jsonpath~crates.io]: https://crates.io/crates/jsonpath-rust
+[datawithrust~website]: https://datawithrust.com
+[plotters~docs]: https://docs.rs/plotters
+[polars~website]: https://docs.pola.rs
+[ndarray~github]: https://github.com/rust-ndarray/ndarray
 </div>

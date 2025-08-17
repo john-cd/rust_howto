@@ -89,5 +89,13 @@ Leverage existing robotics libraries (often written in C++, Python, or other lan
 <div class="hidden">
 [organize](https://github.com/john-cd/rust_howto/issues/480)
 review in depth; review [robotics][robotics~website]
-review https://github.com/rust-embedded/wg
+review [rust-embedded~github][rust-embedded~github].
+[rust-embedded~github]: https://github.com/rust-embedded/wg
+
+[roboplc~github][roboplc~github].
+[roboplc~github]: https://github.com/roboplc/ehmi
+
+[roboplc~website][roboplc~website].
+[roboplc~website]: https://www.bohemia-automation.com/software/roboplc
+
 </div>

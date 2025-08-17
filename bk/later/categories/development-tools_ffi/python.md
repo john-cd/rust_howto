@@ -57,4 +57,9 @@ See [[development-tools_build-utils | Build Utils]] and [[code_build | Code Buil
 
 <div class="hidden">
 [python_interop: write](https://github.com/john-cd/rust_howto/issues/210)
+
+[how-to-use-rust-with-python-and-python-with-rust][blog~how-to-use-rust-with-python-and-python-with-rust].
+
+[blog~how-to-use-rust-with-python-and-python-with-rust]: https://www.infoworld.com/article/2335770/how-to-use-rust-with-python-and-python-with-rust.html
+
 </div>

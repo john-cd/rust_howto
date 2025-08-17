@@ -106,4 +106,6 @@ The following examples cover less commonly-used data structures:
 - [`elsa` - data structures in Rust][c~elsa~lib.rs]↗.
 - [`Equivalent` - data structures in Rust][c~equivalent~lib.rs]↗.
 
+- [Converting between different collection types][blog~converting-between-different-collection-types]↗: from `Vec` to `HashSet` or `HashMap`.
+
 </div>

@@ -45,4 +45,10 @@ Note a few caveats with `Any`:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+## Reflection {#skip}
+
+[reflect~github][reflect~github].
+[reflect~github]: https://github.com/dtolnay/reflect
+
 </div>

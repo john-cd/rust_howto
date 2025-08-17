@@ -92,4 +92,10 @@ If your scripting language compiles to an executable, use the [`object`][c~objec
 
 [Pre-RFC: `cargo-script` for everyone][forum~pre-rfc-cargo-script-for-everyone]↗.
 
+[blog~roto][blog~roto].
+[blog~roto]: https://blog.nlnetlabs.nl/introducing-roto-a-compiled-scripting-language-for-rust/
+
+[roto~github][roto~github].
+[roto~github]: https://github.com/NLnetLabs/roto/tree/main
+
 </div>

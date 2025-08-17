@@ -41,4 +41,8 @@ See also:
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/1393)
+
+[blog~rust-patterns-ref][blog~rust-patterns-ref].
+[blog~rust-patterns-ref]: http://xion.io/post/code/rust-patterns-ref.html
+
 </div>
