@@ -8,8 +8,8 @@ struct CsvRecordTricky<'a> {
     fields: Vec<&'a str>,
 }
 
-/// 2. Better example of a struct that points to owned data outside of the
-///    struct. Both the line and each field have the same lifetime.
+/// 2. Better example of a `struct` that points to owned data outside of the
+///    `struct`. Both the line and each field have the same lifetime.
 #[derive(Debug)]
 struct CsvRecord<'a> {
     line: &'a str,
