@@ -52,7 +52,7 @@ People sometimes ask for examples of "good" Rust code. This repository contains 
 
 [book~crosvm]: https://crosvm.dev/book
 
-[crosvm~wesbite]: https://crosvm.dev/doc/crosvm
+[crosvm~website]: https://crosvm.dev/doc/crosvm
 
 ## Build your own x {#skip}
 

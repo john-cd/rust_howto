@@ -71,7 +71,7 @@ The basic premise is thus to:
 <div class="hidden">
 [postgres: `cornucopia`](https://github.com/john-cd/rust_howto/issues/286)
 
-If you are not familiar with Cornucopia, it is kinda like SQLc for Go - you write a query in Postgres SQL and then use cli to generate checked Rust code. So no macro compilation time overhead or complex types that are hard for the rust-analyzer to handle. It uses `rust-postgres` under the hood, so it supports query pipelining and the perfomance should be pretty good as well.
+If you are not familiar with Cornucopia, it is kinda like SQLc for Go - you write a query in Postgres SQL and then use cli to generate checked Rust code. So no macro compilation time overhead or complex types that are hard for the rust-analyzer to handle. It uses `rust-postgres` under the hood, so it supports query pipelining and the performance should be pretty good as well.
 
 Fork:
 
