@@ -489,6 +489,7 @@
 [book~rust-extensible-concurrency-sync-and-send]: https://doc.rust-lang.org/stable/book/ch16-04-extensible-concurrency-sync-and-send.html
 [book~rust-for-C#-developers]: https://microsoft.github.io/rust-for-dotnet-devs/latest
 [book~rust-for-C#-developers~badge]: https://img.shields.io/badge/Rust_for_C_sharp_developers-peru?logo=mdbook
+[book~rust-for-c-programmers]: https://www.rust-for-c-programmers.com
 [book~rust-from-the-ground-up]: https://leanpub.com/rust-from-the-ground-up
 [book~rust-fuzz]: https://rust-fuzz.github.io/book/cargo-fuzz.html
 [book~rust-gentle-intro]: https://stevedonovan.github.io/rust-gentle-intro

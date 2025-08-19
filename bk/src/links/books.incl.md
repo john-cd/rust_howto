@@ -4,7 +4,7 @@
 | [Essential and Official Books][ex~links~official-books] |
 | [Official Reference and Documentation][ex~links~reference-documentation] |
 | [Free eBooks][ex~links~free] |
-| [General][ex~links~general] |
+| [Rust Books, General][ex~links~general] |
 | [APIs and Microservices][ex~links~apis] |
 | [Async][ex~links~async] |
 | [Command Line Interfaces][ex~links~cli] |

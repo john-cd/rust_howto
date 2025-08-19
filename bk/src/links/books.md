@@ -44,9 +44,10 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 - [Rust-101][book~rust-101]↗.
 - [Rust by Practice][practice.course.rs~website]↗.
 - [Rust Development Classes][rust-classes~website]↗.
+- [Rust for C Programmers][book~rust-for-c-programmers]↗: Despite the title, the book doesn't require prior experience with the C language. The name is mainly meant to indicate that the book is not aimed at complete beginners who have never written code or lack any basic understanding of systems programming.
 - [Rust Project Primer][rustprojectprimer~website]↗.
 
-## General {#general}
+## Rust Books, General {#general}
 
 - [Beginning Rust][book~Beginning-Rust-Get-Started-2021]↗: Get Started with Rust 2021 Edition, by Carlo Milanesi (Apress). [978-1484272077][ISBN~978-1484272077]↗.
 - [Creative Projects for Rust Programmers][book~Creative-Projects-Rust-Programmers-WebAssembly]↗: Build exciting projects on domains such as web apps, WebAssembly, games, and parsing, by Carlo Milanesi. [978-1789346220][ISBN~978-1789346220]↗.
@@ -202,31 +203,21 @@ This page includes a number of links to the websites of publishers and book merc
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO review; review
-[The Little Book of Rust Books][book~the-little-book-of-rust-books~unofficial]
 
 [book~the-little-book-of-rust-books~unofficial]: https://lborb.github.io/book/unofficial.html
-
-[The Little Book of Rust Books][book~the-little-book-of-rust-books~applications]
-
 [book~the-little-book-of-rust-books~applications]: https://lborb.github.io/book/applications.html
-
----
-
-The online version of the Rust book titled "Rust for C Programmers" got a dedicated website at `www.rust-for-c-programmers.com`. Despite the title, the book doesn't require prior experience with the C language. The name is mainly meant to indicate that the book is not aimed at complete beginners who have never written code or lack any basic understanding of systems programming. That said, even newcomers should find it accessible, though they may occasionally need to refer to supplementary material.
-
-The book focuses on teaching Rust's core concepts with clarity and precision, avoiding unnecessary verbosity. At around 500 pages, it covers most of Rust's fundamentals:
-
-[book~rust-for-c-programmers]: https://www.rust-for-c-programmers.com
 
 [rust-quest]: https://dev.rust-quest.com/en
 
 https://github.com/bitfield/RustBooks
 
-"Async Rust", https://www.ebooks.com/en-nz/book/211498940/async-rust/maxwell-flitton/, Nov 2024.
+"Async Rust", , Nov 2024.
+[]: https://www.ebooks.com/en-nz/book/211498940/async-rust/maxwell-flitton
 
-"Advanced Hands-on Rust": https://pragprog.com/titles/hwmrust/advanced-hands-on-rust/ (sequel to Hands-on Rust"), March 2025 (currently beta)
+"Advanced Hands-on Rust": (sequel to Hands-on Rust"), March 2025 (currently beta)
+[]: https://pragprog.com/titles/hwmrust/advanced-hands-on-rust
 
-"Rust Brain Teasers": https://pragprog.com/titles/hwrustbrain/rust-brain-teasers/, March 2022.
+"Rust Brain Teasers": , March 2022.
+[]: https://pragprog.com/titles/hwrustbrain/rust-brain-teasers
 
 </div>
