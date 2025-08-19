@@ -1,7 +1,9 @@
 [ex~concurrency~actix]: _actors.md#actix
 [ex~concurrency~any-or-all-in-parallel]: data_parallelism.md#any-or-all-in-parallel
-[ex~concurrency~arc-mutex]: send_sync.md#arc-mutex
+[ex~concurrency~arc-mutex]: shared_state.md#arc-mutex
 [ex~concurrency~arc-swap]: atomics.md#arc-swap
+[ex~concurrency~arc]: shared_state.md#arc
+[ex~concurrency~arc_make_mut]: shared_state.md#arc_make_mut
 [ex~concurrency~atomics]: atomics.md#atomics
 [ex~concurrency~crossbeam-atomics]: atomics.md#crossbeam-atomics
 [ex~concurrency~crossbeam-channel]: message_passing.md#crossbeam-channel

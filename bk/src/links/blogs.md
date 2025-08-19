@@ -67,7 +67,7 @@ You may also consult the lists of [Medium blogs tagged with 'Rust'][blog~medium~
 
 You may also consult [this list][forum~fearless-rust-bloggers]↗ (somewhat outdated).
 
-### Project & Organization Blogs {#project-blogs}
+### Project and Organization Blogs {#project-blogs}
 
 | Project (URL) | Description |
 |---|---|

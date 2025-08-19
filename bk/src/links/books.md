@@ -1,4 +1,4 @@
-# Books {#books}
+# Books
 
 {{#include books.incl.md}}
 
@@ -25,7 +25,7 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 - The [Rust Reference][book~rust-reference]↗: The primary reference for the Rust programming language.
 - The [Rustonomicon][book~rustonomicon]↗ [(nightly version)][book~nightly-nomicon]↗.{{hi:Rustonomicon}}{{hi:Unsafe code}}
 
-### Official Reference & Documentation {#reference-documentation}
+### Official Reference and Documentation {#reference-documentation}
 
 - The [Rust Edition Guide][book~edition-guide]↗. Editions are Rust's way of introducing changes into the language that would not otherwise be backwards compatible.{{hi:Editions}}
 - [Rust Error Codes Index][book~error_codes]↗.{{hi:Error codes}}
@@ -73,7 +73,7 @@ It teaches Rust by implementing a classic Unix CLI utility in each chapter (`cat
 - [Step Ahead with Rust][book~Step-Ahead-Rust-Systems-Programming-ebook]↗: Systems Programming in Rust, by Jonathan Creekmore, James Miller (Kindle).
 - [Zero To Production In Rust][book~Zero-Production-Rust-introduction-development]↗: An Introduction to Backend Development, by Luca Palmieri. [979-8847211437][ISBN~979-8847211437]↗: "An opinionated introduction to backend development in Rust". [(website and sample)][zero2prod~website]↗ [(Blog)][book~zero-to-production]↗ [Code for the book (GitHub)][book~zero-to-production~github]↗.
 
-## By Topic {#skip}
+## Rust Books, by Topic {#rust-books-by-topic}
 
 ### APIs and Microservices {#apis}
 
@@ -94,7 +94,7 @@ It teaches Rust by implementing a classic Unix CLI utility in each chapter (`cat
 
 - [Command-Line Rust][book~Command-Line-Rust-Project-Based-Primer-Writing]↗: A Project-Based Primer for Writing Rust CLIs, 1st Edition. [978-1098109431][ISBN~978-1098109431]↗.
 
-### Compiler & Tools {#compiler-tools}
+### Compiler and Tools {#compiler-tools}
 
 - The [`rustc` Book][book~rustc]↗.{{hi:Compiler}}
 - [Rust Compiler Development Guide][book~rust-compiler-development-guide]↗.
@@ -104,7 +104,7 @@ It teaches Rust by implementing a classic Unix CLI utility in each chapter (`cat
 - [Clippy Documentation][book~clippy]↗.{{hi:clippy}}
 - [mdBook Documentation][book~mdbook]↗.{{hi:mdbook}}
 
-### Concurrency & Parallelism {#concurrency-parallelism}
+### Concurrency and Parallelism {#concurrency-parallelism}
 
 - [Rust Atomics and Locks][book~rust-atomics]↗. [9781098119447][ISBN~9781098119447]↗: A deep dive into atomics and locks by Mara Bos.{{hi:Atomics}}{{hi:Locks}}
 - [Rust Concurrency][book~rust-concurrency]↗: Master the art of building safe, scalable, and effective software, by Brian Troutwine (Packt). [978-1788399975][ISBN~978-1788399975]↗.{{hi:Concurrency}}{{hi:Parallelism}}

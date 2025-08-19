@@ -14,6 +14,7 @@
 [ex~standard_library~choose-conversion-trait]: conversion_traits.md#choose-conversion-trait
 [ex~standard_library~combinators]: option.md#combinators
 [ex~standard_library~convert-cow-to-str]: cow.md#convert-cow-to-str
+[ex~standard_library~cow-alternatives]: cow.md#cow-alternatives
 [ex~standard_library~default]: default.md#default
 [ex~standard_library~deref]: smart_pointers.md#deref
 [ex~standard_library~derive-more]: derive.md#derive-more

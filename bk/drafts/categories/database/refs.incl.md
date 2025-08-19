@@ -5,8 +5,8 @@
 [ex~database~cornucopia]: postgres.md#cornucopia
 [ex~database~create-database-sqlite]: sqlite.md#create-database-sqlite
 [ex~database~create-tables-postgres]: postgres.md#create-tables-postgres
-[ex~database~diesel]: query_builders_orms.md#diesel
 [ex~database~diesel-oci]: oracle.md#diesel-oci
+[ex~database~diesel]: query_builders_orms.md#diesel
 [ex~database~elasticsearch]: search.md#elasticsearch
 [ex~database~heed]: key_value_stores.md#heed
 [ex~database~insert-query-data-postgres]: postgres.md#insert-query-data-postgres

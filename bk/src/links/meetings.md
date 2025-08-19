@@ -2,7 +2,7 @@
 
 {{#include meetings.incl.md}}
 
-## Major Annual Conferences & Events {#conferences}
+## Major Annual Conferences and Events {#conferences}
 
 | Conference | Location / Region | Description |
 |---|---|---|

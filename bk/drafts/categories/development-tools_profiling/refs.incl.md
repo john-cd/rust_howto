@@ -1,4 +1,4 @@
-[ex~development-tools_profiling~flamegraph]: benchmarking.md#cargo-flamegraph
+[ex~development-tools_profiling~cargo-flamegraph]: benchmarking.md#cargo-flamegraph
 [ex~development-tools_profiling~cargo-show-asm]: assembly.md#cargo-show-asm
 [ex~development-tools_profiling~criterion]: benchmarking.md#criterion
 [ex~development-tools_profiling~debugging]: memory_usage_analysis.md#debugging

@@ -3,6 +3,7 @@
 [ex~written-in-rust~email-applications]: other_tools.md#email-applications
 [ex~written-in-rust~file-managers]: other_tools.md#file-managers
 [ex~written-in-rust~javascript-tooling]: development_tools.md#javascript-tooling
+[ex~written-in-rust~jujutsu]: development_tools.md#jujutsu
 [ex~written-in-rust~lapce]: development_tools.md#lapce
 [ex~written-in-rust~news]: other_tools.md#news
 [ex~written-in-rust~payments]: other_tools.md#payments

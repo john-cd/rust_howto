@@ -133,6 +133,14 @@ This guide is based on the **contributing.md**. [Make your own][contributing.md~
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
+[ex~contributing~code-of-conduct]: #code-of-conduct
+[ex~contributing~commit-messages]: #commit-messages
+[ex~contributing~i-have-a-question]: #i-have-a-question
+[ex~contributing~i-want-to-contribute]: #i-want-to-contribute
+[ex~contributing~reporting-bugs]: #reporting-bugs
+[ex~contributing~suggesting-enhancements]: #suggesting-enhancements
+[ex~contributing~table-of-contents]: #table-of-contents
+[ex~contributing~styleguides]: #styleguides
 
 <div class="hidden">
 [contributing/index: edit](https://github.com/john-cd/rust_howto/issues/529)

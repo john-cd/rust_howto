@@ -2,11 +2,9 @@
 [ex~links~async]: books.md#async
 [ex~links~blogs]: blogs.md#blogs
 [ex~links~book-lists]: books.md#book-lists
-[ex~links~books]: books.md#books
 [ex~links~chat]: blogs.md#chat
 [ex~links~cheatsheets]: rust_cheatsheets.md#cheatsheets
 [ex~links~cli]: books.md#cli
-[ex~links~companies]: companies.md#companies
 [ex~links~comparison-to-other-languages]: rust_cheatsheets.md#comparison-to-other-languages
 [ex~links~compiler-tools]: books.md#compiler-tools
 [ex~links~concurrency-parallelism]: books.md#concurrency-parallelism
@@ -16,7 +14,6 @@
 [ex~links~design-patterns]: books.md#design-patterns
 [ex~links~embedded]: books.md#embedded
 [ex~links~error-handling]: books.md#error-handling
-[ex~links~example-code]: example_code.md#example-code
 [ex~links~examples-exercises]: learning.md#examples-exercises
 [ex~links~ferrous-systems-training]: learning.md#ferrous-systems-training
 [ex~links~ffi]: books.md#ffi
@@ -28,12 +25,12 @@
 [ex~links~interpreters]: books.md#interpreters
 [ex~links~jobs]: companies.md#jobs
 [ex~links~learning-roadmap]: learning.md#learning-roadmap
-[ex~links~learning]: learning.md#learning
 [ex~links~machine-learning]: books.md#machine-learning
 [ex~links~macros]: books.md#macros
 [ex~links~meetups]: meetings.md#meetups
 [ex~links~network-programming]: books.md#network-programming
 [ex~links~official-books]: books.md#official-books
+[ex~links~older-podcasts]: videos.md#older-podcasts
 [ex~links~overview]: learning.md#overview
 [ex~links~paid-courses]: learning.md#paid-courses
 [ex~links~performance]: books.md#performance

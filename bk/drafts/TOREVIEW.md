@@ -29,7 +29,7 @@
 [talent-plan][talent-plan]: open source training courses about distributed database and distributed systems.
 [talent-plan]: https://github.com/pingcap/talent-plan/tree/master
 
-## Enterprise Backend
+## Enterprise Backend {#skip}
 
 ### Foundations {#skip}
 

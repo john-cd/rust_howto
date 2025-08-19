@@ -1,4 +1,4 @@
-# Learn Rust {#learning}
+# Learn Rust
 
 {{#include learning.incl.md}}
 
@@ -12,7 +12,7 @@
 - [Learn to Become a Rust Developer][roadmap-rust~website]↗.
 - [Roadmap for Rust][roadmap-rust~website]↗.
 
-## Tutorials & Workshop Materials {#tutorials-and-workshop-materials}
+## Tutorials and Workshop Materials {#tutorials-and-workshop-materials}
 
 - [Rust Tutorial that Actually Teaches Rust][rust_tutorial_that_actually_teaches_rust~website]↗.
 - [Rust Gentle Introduction][rust-gentle-intro~website]↗.
@@ -79,7 +79,7 @@
 - [Rust in Motion][course~rust-in-motion]↗ (Manning).
 - [Why Rust? Trustworthy, Concurrent Systems Programming][course~why-rust]↗ (O'Reilly).
 
-## Others {#skip}
+## Others {#others}
 
 - [`rust.code-maven.com`][code-maven~website]↗.
 - [Learning Rust With Entirely Too Many Linked Lists][rust-learning-linked-lists~website]↗.

@@ -49,11 +49,3 @@
 [p~uavs]: # "../categories/aerospace_unmanned-aerial-vehicles/uavs.md"
 [p~version-control]: # "../other/devops/version_control.md"
 [p~windows]: # "../categories/os_windows-apis/windows.md"
-[ex~contributing~code-of-conduct]: index.md#code-of-conduct
-[ex~contributing~commit-messages]: index.md#commit-messages
-[ex~contributing~i-have-a-question]: index.md#i-have-a-question
-[ex~contributing~i-want-to-contribute]: index.md#i-want-to-contribute
-[ex~contributing~reporting-bugs]: index.md#reporting-bugs
-[ex~contributing~suggesting-enhancements]: index.md#suggesting-enhancements
-[ex~contributing~table-of-contents]: index.md#table-of-contents
-[ex~contributing~styleguides]: index.md#styleguides

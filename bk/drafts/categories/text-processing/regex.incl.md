@@ -7,4 +7,4 @@
 | [Replace all Occurrences of one text Pattern with Another Pattern][ex~text-processing~replace-all-occurrences-of-one-text-pattern-with-another-pattern] | [![regex][c~regex~docs~badge]][c~regex~docs] [![lazy_static][c~lazy_static~docs~badge]][c~lazy_static~docs] | [![cat~text-processing][cat~text-processing~badge]][cat~text-processing] |
 | [Longer Regex Example][ex~text-processing~longer-regex~example] | [![regex][c~regex~docs~badge]][c~regex~docs] | [![cat~text-processing][cat~text-processing~badge]][cat~text-processing] |
 | [Use Regular Expressions with Back-references and Lookarounds][ex~text-processing~fancy-regex] | [![fancy-regex][c~fancy-regex~docs~badge]][c~fancy-regex~docs] | [![cat~text-processing][cat~text-processing~badge]][cat~text-processing] |
-| [Longer Regex Example][ex~text-processing~longer-regex~example] | [![regex][c~regex~docs~badge]][c~regex~docs] | [![cat~text-processing][cat~text-processing~badge]][cat~text-processing] |
+| [Longer Regex Example][ex~text-processing~longer-regex-example] | [![regex][c~regex~docs~badge]][c~regex~docs] | [![cat~text-processing][cat~text-processing~badge]][cat~text-processing] |
