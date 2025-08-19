@@ -2,7 +2,7 @@
 
 {{#include videos.incl.md}}
 
-## YouTube Channels and Videos {#videos}
+## YouTube Channels, Videos {#videos}
 
 - Official [Rust YouTube Channel][youtube~@RustVideos]↗.{{hi:YouTube videos}}
 - The [Rust Foundation][youtube~@rustfoundation]↗ channel.
@@ -10,9 +10,9 @@
   - [50 Projects][youtube~50-projects]↗.
   - [Crust of Rust][youtube~crust-of-rust]↗.
   - [Engineer Man][youtube~engineer-man]↗.
+  - [Rust Projects][youtube~tensor-programming]↗.
   - [Rust Tutorial][youtube~rust-tutorial]↗.
   - [Rust Tutorials][youtube~rust-tutorials]↗.
-  - [Tensor Programming][youtube~tensor-programming]↗.
   - [YouCodeThings][youtube~youcodethings]↗.
 - Channels:
   - [Code to the Moon][youtube~@codetothemoon]↗.
@@ -48,5 +48,4 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO curate.
 </div>
