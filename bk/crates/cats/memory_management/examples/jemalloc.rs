@@ -8,38 +8,48 @@
 //! tikv-jemallocator = "0.6"
 //! tikv-jemalloc-ctl = { version = "0.6.0", features = [ "stats", "use_std" ] } # optional - for introspection.
 //! ```
-#![cfg(not(target_env = "msvc"))]
 
-use tikv_jemallocator::Jemalloc;
+#[cfg(not(target_env = "msvc"))]
+mod example {
 
-// Once you've defined the following static, jemalloc will be used for all
-// allocations requested by Rust code in the same program.
-#[global_allocator]
-static GLOBAL: Jemalloc = Jemalloc;
+    use tikv_jemallocator::Jemalloc;
 
-fn main() -> anyhow::Result<()> {
-    // Allocate a large vector.
-    let v: Vec<i32> = Vec::with_capacity(1_000_000);
-    print_alloc()?;
+    // Once you've defined the following static, jemalloc will be used for all
+    // allocations requested by Rust code in the same program.
+    #[global_allocator]
+    static GLOBAL: Jemalloc = Jemalloc;
 
-    // Drop the vector.
-    drop(v);
-    print_alloc()?;
-    Ok(())
+    pub fn test_alloc() -> anyhow::Result<()> {
+        // Allocate a large vector.
+        let v: Vec<i32> = Vec::with_capacity(1_000_000);
+        print_alloc()?;
+
+        // Drop the vector.
+        drop(v);
+        print_alloc()?;
+        Ok(())
+    }
+
+    fn print_alloc() -> anyhow::Result<()> {
+        use tikv_jemalloc_ctl::epoch;
+        use tikv_jemalloc_ctl::stats;
+        // Many statistics are cached and only updated when the epoch is
+        // advanced.
+        epoch::advance().unwrap();
+        let allocated = stats::allocated::read().unwrap();
+        let resident = stats::resident::read().unwrap();
+        println!("{allocated} bytes allocated / {resident} bytes resident");
+
+        // Full allocator statistics:
+        // tikv_jemalloc_ctl::stats_print::stats_print(std::io::stdout(),
+        // tikv_jemalloc_ctl::stats_print::Options::default())?;
+        Ok(())
+    }
 }
 
-fn print_alloc() -> anyhow::Result<()> {
-    use tikv_jemalloc_ctl::epoch;
-    use tikv_jemalloc_ctl::stats;
-    // Many statistics are cached and only updated when the epoch is advanced.
-    epoch::advance().unwrap();
-    let allocated = stats::allocated::read().unwrap();
-    let resident = stats::resident::read().unwrap();
-    println!("{allocated} bytes allocated / {resident} bytes resident");
-
-    // Full allocator statistics:
-    // tikv_jemalloc_ctl::stats_print::stats_print(std::io::stdout(),
-    // tikv_jemalloc_ctl::stats_print::Options::default())?;
+fn main() -> anyhow::Result<()> {
+    #[cfg(not(target_env = "msvc"))]
+    example::test_alloc()?;
     Ok(())
 }
 // ANCHOR_END: example
@@ -49,6 +59,3 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-
-#[cfg(target_env = "msvc")]
-fn main() {}
