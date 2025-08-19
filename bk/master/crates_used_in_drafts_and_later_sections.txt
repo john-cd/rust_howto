@@ -624,7 +624,6 @@ rust_decimal_macros
 rustdesk
 rustfix
 rustfmt
-rustfmt-nightly
 rustix
 rustler
 rustls

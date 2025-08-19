@@ -7,7 +7,7 @@ Tools that provide developer-facing features such as testing, debugging, linting
 | Topic | Rust Crates |
 |---|---|
 | Build System/Package Manager | [`cargo`][c~cargo~docs]↗{{hi:cargo}} |
-| Formatter | [`rustfmt`][c~rustfmt~docs]↗{{hi:rustfmt}} |
+| Formatter | [`rustfmt`][c~rustfmt~github]↗{{hi:rustfmt}} |
 | Linter | [`clippy`][c~clippy~docs]↗{{hi:clippy}} |
 | Testing Framework | [`cargo test`][book~cargo~cargo-test]↗{{hi:cargo test}} (built-in), [`rstest`][c~rstest~docs]↗{{hi:rstest}} (for data-driven tests) |
 | Debugging | [`gdb`][c~gdb~docs]↗{{hi:gdb}}, [`lldb`][c~lldb~docs]↗{{hi:lldb}} (often used via IDE integration), `cargo-debug` |

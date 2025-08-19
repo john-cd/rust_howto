@@ -10,13 +10,10 @@
 
 ## Format Your Code {#rustfmt}
 
-[![rustfmt-nightly][c~rustfmt-nightly~docs~badge]][c~rustfmt-nightly~docs]{{hi:rustfmt-nightly}}
-[![rustfmt-nightly~crates.io][c~rustfmt-nightly~crates.io~badge]][c~rustfmt-nightly~crates.io]
-[![rustfmt-nightly~github][c~rustfmt-nightly~github~badge]][c~rustfmt-nightly~github]
-[![rustfmt-nightly~lib.rs][c~rustfmt-nightly~lib.rs~badge]][c~rustfmt-nightly~lib.rs]
+[![rustfmt~github][c~rustfmt~github~badge]][c~rustfmt~github]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[`rustfmt`][c~rustfmt~docs]↗{{hi:rustfmt}}
+[`rustfmt`][c~rustfmt~github]↗{{hi:rustfmt}}
 
 ```sh
 # Install `rustfmt` if needed
