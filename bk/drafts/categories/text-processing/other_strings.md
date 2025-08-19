@@ -12,7 +12,7 @@ The need for this type arises from the fact that:
 - On Windows, strings are often arbitrary sequences of non-zero 16-bit values, interpreted as UTF-16 when it is valid to do so.
 - In Rust, strings are always valid UTF-8, which may contain zeros.
 
-[`OsString`][c~std::ffi::OsString~docs]↗{{hi:std::ffi::OsString}} and [`OsStr`][c~std::ffi::OsStr~docs]↗{{hi:std::ffi::OsStr}} bridge this gap by simultaneously representing Rust and platform-native string values, and in particular allowing a Rust string to be converted into an “OS” string with no cost if possible. A consequence of this is that `OsString` instances are not NUL terminated; in order to pass to e.g., Unix system call, you should create a [`CStr`][c~std::ffi::CStr~docs]↗{{hi:std::ffi::CStr}}.
+[`OsString`][c~std::ffi::OsString~docs]↗{{hi:std::ffi::OsString}} and [`OsStr`][c~std::ffi::OsStr~docs]↗{{hi:std::ffi::OsStr}} bridge this gap by simultaneously representing Rust and platform-native string values, and in particular allowing a Rust string to be converted into an "OS" string with no cost if possible. A consequence of this is that `OsString` instances are not NUL terminated; in order to pass to e.g., Unix system call, you should create a [`CStr`][c~std::ffi::CStr~docs]↗{{hi:std::ffi::CStr}}.
 
 [`std::ffi::OsStr`][c~std::ffi::OsStr~docs]↗ is a borrowed reference to an OS string. `&OsStr`{{hi:&OsStr}} is to `OsString` as `&str` is to `String`: the former in each pair are borrowed references; the latter are owned strings.
 

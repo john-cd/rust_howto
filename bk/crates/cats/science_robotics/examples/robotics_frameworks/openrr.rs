@@ -11,9 +11,9 @@
 // //!
 // //! - Abstract robot interfaces (`arci`),
 // //! - Concrete implementation of the interfaces (`arci-ros`, `arci-urdf-viz`)
-// //! - Library which uses the interfaces (`openrr-client`, …),
+// //! - Library which uses the interfaces (`openrr-client`, ...),
 // //! - Tools (`openrr-apps`),
-// //! - Libraries that have nothing to do with `arci` (`openrr-planner`, …).
+// //! - Libraries that have nothing to do with `arci` (`openrr-planner`, ...).
 // //!
 // //! Ubuntu is supported for Linux. Partial functionality is available under
 // //! macOS and Windows.

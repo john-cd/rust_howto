@@ -63,10 +63,10 @@ dedupe [JSON][p~json] with complex.md.
 [Supported Formats][c~serde~supported-formats]↗.
 
 - [`eserde`][blog~mainmatter-eserde]↗: Don't stop at the first deserialization error.
-- [`serde_with` — Rust data encoding library][c~serde_with~lib.rs]↗.
-- [`serde_arrow` — Rust data encoding library][c~serde_arrow~lib.rs]↗.
-- [`serde-encrypted-value` — Rust data encoding library][c~serde-encrypted-value~lib.rs]↗.
+- [`serde_with` - Rust data encoding library][c~serde_with~lib.rs]↗.
+- [`serde_arrow` - Rust data encoding library][c~serde_arrow~lib.rs]↗.
+- [`serde-encrypted-value` - Rust data encoding library][c~serde-encrypted-value~lib.rs]↗.
 
-- [`validator`][c~validator~lib.rs]↗: Common validation functions (email, url, length, …) and trait - to be used with `validator_derive`.
+- [`validator`][c~validator~lib.rs]↗: Common validation functions (email, url, length, ...) and trait - to be used with `validator_derive`.
 
 </div>

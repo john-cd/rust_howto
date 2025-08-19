@@ -36,7 +36,7 @@ fn main() -> Result<(), Error> {
     Ok(())
 }
 
-/// Hash a password to a “PHC string” suitable for the purposes of
+/// Hash a password to a "PHC string" suitable for the purposes of
 /// password-based authentication.
 fn password_hashing(password_to_save: &[u8]) -> Result<String, Error> {
     // Generate a random salt

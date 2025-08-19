@@ -25,36 +25,33 @@
 <div class="hidden">
 [axum: write](https://github.com/john-cd/rust_howto/issues/507)
 
- https://github.com/sukjaelee/clean_axum_demo
-: Rust Axum Clean Demo – A One‑Stop, Production‑Ready API Template
+[Rust Axum clean demo][clean_axum_demo] is a one-stop, production-ready API template.
 
-**Rust Axum Clean Demo** is a GitHub template that brings together almost all the best practices and features you need for building a production‑ready API server with [Axum](https://github.com/tokio-rs/axum) and [SQLx](https://github.com/launchbadge/sqlx).
+[clean_axum_demo]: https://github.com/sukjaelee/clean_axum_demo
 
-While Axum’s official examples do a fantastic job of demonstrating individual features (routing, extractors, middleware, etc.), I found it really helpful to have everything wired up in **one** cohesive structure:
+**Rust Axum Clean Demo** is a GitHub template that brings together almost all the best practices and features you need for building a production-ready API server with [Axum][c~axum~github] and [SQLx][c~sqlx~github].
 
-- **Domain‑first modularity**: each domain (user, auth, device, file…) lives in its own module, with controllers, DB layer, and models neatly organized
-- **Clean Architecture** & dependency inversion via traits
-- **SQLx** for compile‑time checked queries + offline mode setup
-- **JWT‑based auth** (login endpoint + `Extension<Claims>`)
-- **File upload & protected file serving** with multipart extractors
-- **Swagger UI docs** powered by `utoipa-swagger-ui` (Authorize 🔒, try out endpoints in‑browser)
-- **Database seeding** scripts to spin up your schema & seed data
-- **Unit & integration tests** out of the box
+While Axum's official examples do a fantastic job of demonstrating individual features (routing, extractors, middleware, etc.), I found it really helpful to have everything wired up in **one** cohesive structure:
 
-implemented OpenTelemetry for my Axum service.
+- **Domain-first modularity**: each domain (user, auth, device, file...) lives in its own module, with controllers, DB layer, and models neatly organized
+- **Clean Architecture** & dependency inversion via traits,
+- **SQLx** for compile-time checked queries + offline mode setup,
+- **JWT-based auth** (login endpoint + `Extension<Claims>`),
+- **File upload & protected file serving** with multipart extractors,
+- **Swagger UI docs** powered by `utoipa-swagger-ui` (Authorize, try out endpoints in-browser),
+- **Database seeding** scripts to spin up your schema & seed data,
+- **Unit & integration tests** out of the box,
 
-https://github.com/seferino-fernandez/ocr_service/blob/main/src/utils/telemetry.rs
+[implement-OpenTelemetry-for-Axum]: https://github.com/seferino-fernandez/ocr_service/blob/main/src/utils/telemetry.rs
 
 db migrations: https://github.com/sheroz/axum-rest-api-sample
 
-Other Axum template https://github.com/anhvdq/keterrest
+Other Axum template [keterrest]: https://github.com/anhvdq/keterrest
 
 Other Generators:
 
-https://github.com/dinosath/protypo
+[protypo~github]: https://github.com/dinosath/protypo
 
-Third generator I found:
-
-https://gerust.rs/
+https://gerust.rs
 
 </div>

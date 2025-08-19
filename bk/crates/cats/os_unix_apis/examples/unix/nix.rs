@@ -13,7 +13,7 @@ use nix::fcntl::OFlag;
 use nix::fcntl::open;
 // File mode / permissions flags:
 use nix::sys::stat::Mode;
-// Safe wrappers around functions found in libc “unistd.h” header:
+// Safe wrappers around functions found in libc "unistd.h" header:
 // Close a raw file descriptor:
 use nix::unistd::close;
 // Read from a raw file descriptor:

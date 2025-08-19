@@ -71,10 +71,10 @@ fn main() {
     struct Foo;
 
     fn stuff(_foo: Pin<&mut Foo>) {
-        // …
+        // ...
     }
 
-    let pinned_foo = pin!(Foo { /* … */ });
+    let pinned_foo = pin!(Foo { /* ... */ });
     stuff(pinned_foo);
 }
 // ANCHOR_END: example

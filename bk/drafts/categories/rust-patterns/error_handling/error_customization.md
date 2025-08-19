@@ -37,10 +37,10 @@ You can use [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} to:
 The [`#[error(...)]`][c~thiserror~docs]↗ messages support a shorthand for interpolating fields from the error.
 
 ```rust,editable,compile_fail,noplayground
-#[error("{var}")]  //⟶ write!("{}", self.var)
-#[error("{0}")]   //⟶ write!("{}", self.0)
-#[error("{var:?}")] //⟶ write!("{:?}", self.var)
-#[error("{0:?}")]  //⟶ write!("{:?}", self.0)
+#[error("{var}")]   // write!("{}", self.var)
+#[error("{0}")]     // write!("{}", self.0)
+#[error("{var:?}")] // write!("{:?}", self.var)
+#[error("{0:?}")]   // write!("{:?}", self.0)
 ```
 
 ```rust,editable

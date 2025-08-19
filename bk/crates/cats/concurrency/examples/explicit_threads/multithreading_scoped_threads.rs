@@ -19,7 +19,7 @@ fn main() {
     let (tx, rx) = mpsc::channel();
 
     thread::scope(|scope| {
-        // Creates a “fork-join” scope.
+        // Creates a "fork-join" scope.
         let tx2 = tx.clone();
         scope.spawn(move || {
             println!("hello from the first scoped thread");

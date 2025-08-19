@@ -39,7 +39,7 @@ Keeping in mind how the incremental compiler works is key to maximizing its bene
 - Avoid actions that invalidate the cache, such as changing dependencies (modifying [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}) or build scripts unnecessarily.
 - Being mindful of how [generics][p~generics] and macros can affect recompilation.
 
-From-scratch builds with incremental compilation{{hi:Incremental compilation}} enabled adds about 15–20% overhead compared to disabled. The initial build needs to write out more intermediate state in order for later incremental builds to take advantage of it. In a CI{{hi:CI}} situation, it would be unusual for there to be a later incremental build within the same job. Thus consider disabling incremental compilation in that context.However, CI workflows that cache the target directory across runs may be benefiting from incremental compilation.
+From-scratch builds with incremental compilation{{hi:Incremental compilation}} enabled adds about 15-20% overhead compared to disabled. The initial build needs to write out more intermediate state in order for later incremental builds to take advantage of it. In a CI{{hi:CI}} situation, it would be unusual for there to be a later incremental build within the same job. Thus consider disabling incremental compilation in that context.However, CI workflows that cache the target directory across runs may be benefiting from incremental compilation.
 
 ## Project Structure and Dependencies {#skip}
 

@@ -108,7 +108,7 @@ fn require_external_svc() -> anyhow::Result<()> {
 // figure out install of the client
 
 // The simplest Oracle Client is the free Oracle Instant Client.
-// Only the “Basic” or “Basic Light” package is required.
+// Only the "Basic" or "Basic Light" package is required.
 // <https://www.oracle.com/database/technologies/instant-client.html>
 // <https://github.com/oracle/docker-images/tree/main/OracleInstantClient>
 

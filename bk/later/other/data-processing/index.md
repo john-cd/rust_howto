@@ -23,7 +23,7 @@
 - [ClickHouse][clickhouse~github]↗, a real-time analytics DBMS.
 - [`vector`][vector~github]↗: A high-performance observability data pipeline.
 
-- [`cube-js`][cube~github]↗: Cube — The Semantic Layer for Building Data Applications.
+- [`cube-js`][cube~github]↗: Cube - The Semantic Layer for Building Data Applications.
 - [Apache OpenDAL][opendal~website]↗.
 
 - ["Could you recommend any projects that utilize Rust for data engineering?"][reddit~data-engineering]↗.
@@ -33,7 +33,7 @@
 - [Big Data Processing for the AI Era - LakeSail][lakesail~website]↗.
 - [`lance`][lance~github]↗: Modern columnar data format for ML and LLMs implemented in Rust. Convert from parquet in 2 lines of code for 100x faster random access, vector index, and data versioning. Compatible with Pandas, DuckDB, Polars, Pyarrow, and PyTorch with more integrations coming..
 - [`fluvio`][fluvio~github]↗: Lean and mean distributed stream processing system written in rust and web assembly. Alternative to Kafka + Flink in one.
-- [Seq — centralized structured logs][datalust~website]↗.
+- [Seq - centralized structured logs][datalust~website]↗.
 
 - [AWS Lambda + DuckDB (and Delta Lake) - by Daniel Beach][blog~aws-lambda-duckdb-and-delta-lake]↗.
 

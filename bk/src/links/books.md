@@ -213,9 +213,9 @@ TODO review; review
 
 ---
 
-The online version of the Rust book titled "Rust for C Programmers" got a dedicated website at www.rust-for-c-programmers.com. Despite the title, the book doesn’t require prior experience with the C language. The name is mainly meant to indicate that the book is not aimed at complete beginners who have never written code or lack any basic understanding of systems programming. That said, even newcomers should find it accessible, though they may occasionally need to refer to supplementary material.
+The online version of the Rust book titled "Rust for C Programmers" got a dedicated website at `www.rust-for-c-programmers.com`. Despite the title, the book doesn't require prior experience with the C language. The name is mainly meant to indicate that the book is not aimed at complete beginners who have never written code or lack any basic understanding of systems programming. That said, even newcomers should find it accessible, though they may occasionally need to refer to supplementary material.
 
-The book focuses on teaching Rust’s core concepts with clarity and precision, avoiding unnecessary verbosity. At around 500 pages, it covers most of Rust's fundamentals:
+The book focuses on teaching Rust's core concepts with clarity and precision, avoiding unnecessary verbosity. At around 500 pages, it covers most of Rust's fundamentals:
 
 [book~rust-for-c-programmers]: https://www.rust-for-c-programmers.com
 

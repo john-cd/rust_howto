@@ -54,6 +54,6 @@ Most HTTP client crates support asynchronous requests using [`async`][keyword~as
 <div class="hidden">
 [web-programming_http-client/index: fix, sync table and contents](https://github.com/john-cd/rust_howto/issues/505)
 
-- [rquest — Rust HTTP client][c~rquest~lib.rs]↗.
+- [rquest - Rust HTTP client][c~rquest~lib.rs]↗.
 
 </div>

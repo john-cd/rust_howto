@@ -95,20 +95,20 @@ Frameworks:
 QUIC:
 
 - [quiche][c~quiche~github]↗: Savory implementation of the QUIC transport protocol and HTTP/3.
-- [Quinn — Rust network library][c~quinn~lib.rs]↗.
+- [Quinn - Rust network library][c~quinn~lib.rs]↗.
 - [msquic][c~msquic~github]↗: Cross-platform, C implementation of the IETF QUIC protocol, exposed to C, C++, C# and Rust..
 
-- [Mockito — Rust web dev library][c~mockito~lib.rs]↗.
+- [Mockito - Rust web dev library][c~mockito~lib.rs]↗.
 
 HTTP:
 
-- [H2 — Rust web dev library][c~h2~lib.rs]↗.
+- [H2 - Rust web dev library][c~h2~lib.rs]↗.
 
 OTHER:
 
-- [webbrowser — Rust web dev library][c~webbrowser~lib.rs]↗ open URLs and local files in the web browsers available on a platform.
+- [webbrowser - Rust web dev library][c~webbrowser~lib.rs]↗ open URLs and local files in the web browsers available on a platform.
 
-- [webpki-root-certs — Rust crypto library][c~webpki-root-certs~lib.rs]↗.
+- [webpki-root-certs - Rust crypto library][c~webpki-root-certs~lib.rs]↗.
 
 - [Sycamore][sycamore~website]↗.
 - [sycamore][c~sycamore~github]↗: A library for creating reactive web apps in Rust and WebAssembly.

@@ -33,8 +33,8 @@ fn main() {
 
     // 5. Most methods have three versions:
     // - The first method consumes the operand.
-    // - The second method has a “_mut” suffix and mutates the operand.
-    // - The third method has a “_ref” suffix and borrows the operand.
+    // - The second method has a "_mut" suffix and mutates the operand.
+    // - The third method has a "_ref" suffix and borrows the operand.
     // The returned item is an incomplete-computation value that can be assigned
     // to an Integer.
     let a = Integer::from(-15);

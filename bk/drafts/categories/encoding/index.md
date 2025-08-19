@@ -103,6 +103,6 @@ Review [`tonic`][c~tonic~docs]↗{{hi:tonic}}, [`grpc`][c~grpc~docs]↗{{hi:grpc
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/929)
 
-- [encoding_rs — web char encoding library][c~encoding_rs~lib.rs]↗.
+- [encoding_rs - web char encoding library][c~encoding_rs~lib.rs]↗.
 
 </div>
