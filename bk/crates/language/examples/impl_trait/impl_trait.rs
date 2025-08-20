@@ -1,5 +1,5 @@
 #![allow(dead_code)]
-// ANCHOR_END: example
+// ANCHOR: example
 // Define an example trait and two structs that implement it:
 trait Speak {
     fn speak(&self) -> String;
