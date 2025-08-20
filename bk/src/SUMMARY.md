@@ -42,7 +42,7 @@
   - [Conversion Traits](standard_library/conversion_traits.md)
   - [AsRef](standard_library/asref.md)
   - [Borrow](standard_library/borrow.md)
-  - [Automatic Trait Derivation (Derive)](standard_library/derive.md)
+  - [Automatic Trait Derivation](standard_library/derive.md)
   - [Overloading Operators](standard_library/ops.md)
   - [Dynamic Typing](standard_library/dynamic_typing.md)
 
@@ -54,11 +54,7 @@
   - [Code Organization by Project Type and Size](code_organization/code_organization_by_project_type.md)
   - [Naming Conventions](code_organization/naming_conventions.md)
 
-# Recipes by Category
-
-- [Crate Selection](crate_selection/index.md)
-  - [Crates (Alphabetic)](crate_selection/crates_alphabetical.md)
-  - [Crates (by Category)](crate_selection/crates_by_category.md)
+# Code Examples by Category
 
 - [Algorithms](categories/algorithms/index.md)
   - [Generate Random Values](categories/algorithms/randomness.md)
@@ -86,7 +82,10 @@
   - [Statistics](categories/mathematics/statistics.md)
   - [Additional Numeric Types](categories/mathematics/additional_numeric_types.md)
 
-# Links and Resources
+# Resources
+
+- [Crate Selection](crate_selection/index.md)
+  - [State of the Rust Ecosystem]([crate_selection/state_of_the_art.md)
 
 - [Links](links/index.md)
   - [Rust Cheat Sheets](links/rust_cheatsheets.md)
@@ -94,8 +93,8 @@
   - [Books](links/books.md)
   - [Blogs and Forums](links/blogs.md)
   - [Example Code](links/example_code.md)
-  - [Meetings](links/meetings.md)
   - [Videos](links/videos.md)
+  - [Meetings](links/meetings.md)
   - [Companies](links/companies.md)
 
 # Contributing
@@ -114,6 +113,11 @@
 
 [Index of Examples](appendices/examples_index.md)
 [Word Index](appendices/word_index.md)
+[Crates (Alphabetic)](appendices/crates_alphabetical.md)
+[Crates (by Category)](appendices/crates_by_category.md)
+
+---
+
 [Thanks](appendices/thanks.md)
 
 {{#include refs.incl.md}}

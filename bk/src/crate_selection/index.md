@@ -2,7 +2,7 @@
 
 ## Choose Dependencies for your Project {#choose-dependencies}
 
-The Rust standard library is fairly minimal (on purpose). Besides providing basic data types, the standard library is largely concerned with abstracting over differences in common platforms, e.g., Windows and Unix derivatives.
+The Rust standard library is fairly minimal. Besides providing basic data types, the standard library is largely concerned with abstracting over differences between common platforms, e.g., Windows and Unix derivatives.
 
 Instead, major functionality like regular expressions, random numbers, cryptography, serialization, async, and logging, are found in separate Rust crates that are available on [`crates.io`][crates.io~website]↗{{hi:crates.io}}. Rustaceans add these crates to their projects via the [`cargo`][c~cargo~docs]↗{{hi:cargo}} package manager.
 
@@ -49,29 +49,9 @@ You may also consult older resources, such as:
 - [Rust Starter Pack][rust-starter-pack~website]↗{{hi:Rust starter pack}}.
 - [![stdx][c~stdx~github~badge]][c~stdx~github]↗{{hi:stdx}}.
 
-## Understand the State of the Rust Ecosystem {#understand-the-rust-ecosystem}
+## Related Topics {#related-topics}
 
-You will find below links to "Are we ... yet?" websites and similar. They list key libraries and tools and provide an idea of the current state of the art in a given domain.
-
-- General:
-  - [Are We Rust Yet?][are-we-rust-yet~github]↗: Awesome list of "Are We *thing* Yet" for Rust.
-    - [Are We ... Yet? (Mozilla Wiki)][areweyet~website]↗.
-  - [Not Yet Awesome Rust][not-yet-awesome-rust~github]↗: a list of Rust code and resources that do NOT exist yet.
-- By Topic:
-  - [Are We Web Yet?][are-we-web-yet?~website]↗.
-  - [Are We Async Yet?][are-we-async-yet?~website]↗.
-  - [Are We GUI Yet?][are-we-gui-yet?~website]↗.
-  - [Are We IDE Yet?][areweideyet~website]↗.
-  - [Are We Game Yet?][are-we-game-yet?~engines~website]↗.
-  - [Are We Learning Yet?][are-we-learning-yet?~website]↗.
-  - [Are We Bio Yet?][blog~rust4bio]↗.
-  - [Are We VFX Yet?][arewevfxyet~website]↗.
-  - [Are We Quantum Yet?][blog~arewequantumyet]↗.
-  - [Are We in Space Yet?][aerorust~website]↗.
-  - [Rust Audio][rust.audio~website]↗.
-  - [Awesome Geo-Rust][awesome-georust~github]↗: geospatial software, libraries, tools and resources, written in Rust.
-
-Note that several of these websites are out-of-date. [Are We Rust Yet?][are-we-rust-yet~github]↗ list their last commit date and update frequency.
+- [[state_of_the_art | State of the Rust Ecosystem]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

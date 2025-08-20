@@ -370,8 +370,8 @@
 [p~concurrency]: # "categories/concurrency/index.md"
 [p~config]: # "categories/config/index.md"
 [p~contributing]: contributing/index.md
-[p~crates-alphabetical]: crate_selection/crates_alphabetical.md
-[p~crates-categories]: crate_selection/crates_by_category.md
+[p~crates-alphabetical]: appendices/crates_alphabetical.md
+[p~crates-categories]: appendices/crates_by_category.md
 [p~debugging]: # "categories/development-tools_debugging/index.md"
 [p~development-tools]: # "categories/development-tools/index.md"
 [p~error-customization]: # "categories/rust-patterns/error_handling/error_customization.md"
