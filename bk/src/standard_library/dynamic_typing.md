@@ -2,7 +2,7 @@
 
 {{#include dynamic_typing.incl.md}}
 
-## Determine the Type of an Object at Runtime and Downcast it with the `Any` Trait {#any-trait}
+## Determine the Type of an Object at Runtime and Downcast with the `Any` Trait {#any-trait}
 
 [![std][c~std~docs~badge]][c~std~docs]
 
