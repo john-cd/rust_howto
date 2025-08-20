@@ -30,6 +30,7 @@
 [ex~links~macros]: books.md#macros
 [ex~links~meetups]: meetings.md#meetups
 [ex~links~network-programming]: books.md#network-programming
+[ex~links~notable-repos]: example_code.md#notable-repos
 [ex~links~official-books]: books.md#official-books
 [ex~links~older-podcasts]: videos.md#older-podcasts
 [ex~links~others]: learning.md#others
@@ -40,10 +41,8 @@
 [ex~links~podcasts]: videos.md#podcasts
 [ex~links~project-blogs]: blogs.md#project-blogs
 [ex~links~random]: books.md#random
-[ex~links~realworld]: example_code.md#realworld
 [ex~links~reference-documentation]: books.md#reference-documentation
 [ex~links~repositories]: example_code.md#repositories
-[ex~links~rust-book-source-code]: example_code.md#rust-book-source-code
 [ex~links~rust-books-by-topic]: books.md#rust-books-by-topic
 [ex~links~rust-templates]: example_code.md#rust-templates
 [ex~links~security]: books.md#security

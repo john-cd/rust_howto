@@ -373,6 +373,7 @@
 [book~complete-rust-programming-reference-guide]: https://amazon.com/dp/1838828109
 [book~comprehensive-rust]: https://google.github.io/comprehensive-rust
 [book~copenhagen]: https://thecopenhagenbook.com
+[book~crosvm]: https://crosvm.dev/book
 [book~data-analysis-with-rust-notebooks]: https://datacrayon.com/shop/product/data-analysis-with-rust-notebooks
 [book~dhghomon]: https://dhghomon.github.io/easy_rust/Chapter_1.html
 [book~easy-rust]: https://fongyoong.github.io/easy_rust/Chapter_1.html
@@ -659,6 +660,7 @@
 [braun-embedded~website]: https://braun-embedded.com
 [brave~github]: https://github.com/brave
 [brave~website]: https://brave.com
+[build-your-own-x~github]: https://github.com/codecrafters-io/build-your-own-x
 [buildbuddy~website]: https://buildbuddy.io
 [bun.sh~website]: https://bun.sh
 [buoyant~website]: https://buoyant.io
@@ -736,6 +738,7 @@
 [create-dmg~github]: https://github.com/create-dmg/create-dmg
 [creusot~github]: https://github.com/creusot-rs/creusot
 [cross-rs~github]: https://github.com/cross-rs
+[crosvm~docs~website]: https://crosvm.dev/doc/crosvm
 [crosvm~github]: https://github.com/google/crosvm
 [cryptape~website]: http://cryptape.com
 [cryptosat~github]: https://github.com/cryptosat
