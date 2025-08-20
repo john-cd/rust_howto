@@ -1,6 +1,3 @@
-
-[Index of Examples](indices/examples_index.md)
-
 # Categories
 
 - [Asynchronous](categories/asynchronous/index.md)

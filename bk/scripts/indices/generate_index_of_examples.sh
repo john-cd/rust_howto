@@ -26,13 +26,12 @@ clean() {
 
 root="$(realpath $1)/"
 
-index_file="${root}src/examples_index.md"
+index_file="${root}src/appendices/examples_index.md"
 
 hiddendiv=$( sed -n '/^<div class="hidden">/,/^<\/div>/ p' "${index_file}" )
 
 # Print the header
 echo $'# Index of Examples\n' > "${index_file}"
-
 
 # Leaf directories only
 # https://stackoverflow.com/questions/4269798/use-gnu-find-to-show-only-the-leaf-directories

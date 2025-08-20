@@ -110,8 +110,11 @@
   - [API Documentation](contributing/api_documentation.md)
   - [Crate Publication](contributing/publication.md)
 
-[Index](word_index.md)
-[Thanks](thanks.md)
+# Appendices
+
+[Index of Examples](appendices/examples_index.md)
+[Word Index](appendices/word_index.md)
+[Thanks](appendices/thanks.md)
 
 {{#include refs.incl.md}}
 <div class="hidden">
