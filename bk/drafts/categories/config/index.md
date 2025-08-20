@@ -22,11 +22,11 @@ Suitable for passing simple configuration options.
 
 ## Best Practices
 
-Use a layered configuration approach: Combine multiple sources (e.g., default files, environment variables, command-line arguments) to provide flexibility and override behavior.
-Validate configuration: Ensure that configuration values are valid and within expected ranges.
-Handle errors gracefully: Provide informative error messages when configuration is invalid or missing.
-Secure sensitive data: Avoid storing secrets in version control. Use environment variables or dedicated secret management tools.
-Document configuration: Provide clear documentation of all configuration options.
+- Use a layered configuration approach: Combine multiple sources (e.g., default files, environment variables, command-line arguments) to provide flexibility and override behavior.
+- Validate configuration: Ensure that configuration values are valid and within expected ranges.
+- Handle errors gracefully: Provide informative error messages when configuration is invalid or missing.
+- Secure sensitive data: Avoid storing secrets in version control. Use environment variables or dedicated secret management tools.
+- Provide clear documentation of all configuration options.
 
 ## Configuration Management
 
