@@ -2,7 +2,7 @@
 
 {{#include companies.incl.md}}
 
-## Companies using Rust {#companies}
+## Companies that Use or Contribute to Rust {#companies}
 
 The following is an (incomplete) list of companies and organizations that use Rust. It combines information from the following sources, among others:
 
@@ -10,7 +10,7 @@ The following is an (incomplete) list of companies and organizations that use Ru
 - [Rust in Production (GitHub)][rust-in-production~github]↗,
 - The member list of the [Rust Foundation][rust-foundation~website]↗.
 
-Please also consult the [list of companies using Rust][theirstack-rust~website]↗ on `theirstack.com` and the [`readytotouch.com`][readytotouch~rust-companies~website]↗ website.
+Please also consult the [list of Companies Using Rust][theirstack-rust~website]↗ on `theirstack.com` and the [`readytotouch.com`][readytotouch~rust-companies~website]↗ website.
 
 |||
 |---|---|
@@ -114,19 +114,19 @@ Please also consult the [list of companies using Rust][theirstack-rust~website]�
 | [Linebender][linebender~website]↗ | See, for example, [Vello][c~vello~github]↗ |
 | [Linkerd][linkerd~website]↗ | |
 | [Lynx][lynx~website]↗ | |
-| [Machina Labs, Inc][machina-labs~website]↗ | |
+| [Machina Labs][machina-labs~website]↗ | |
 | [Maidsafe][maidsafe~website]↗ | Builds a decentralized data and communication network. |
 | [Mainmatter][mainmatter~website]↗ | |
 | [Maplibre][maplibre~website]↗ [(github)][maplibre~github]↗ | |
 | [Materialize][materialize~website]↗ [(github)][materialize~github]↗ | Uses Rust in their streaming data warehouse and engine for incrementally maintaining database views. |
-| [Matic Robots][maticrobots~website]↗ | See this [blog][blog~matic-apr-25]↗. |
+| [Matic Robots][maticrobots~website]↗ | See also this [blog][blog~matic-apr-25]↗. |
 | [Meilisearch][meilisearch~website]↗ [(github)][meilisearch~github]↗ | |
 | [Memfault][memfault~website]↗ | |
 | [Meta][meta~website]↗ | Uses Rust for the source control backend, Libra (now Diem), and other server-side projects. Facebook's primary source control system is partially written in Rust. |
 | [Microsoft][microsoft~website]↗ | Uses Rust for various projects, including the [Windows][p~windows] kernel, Azure, and Visual Studio. [`windows-rs`][c~windows~docs]↗{{hi:windows-rs}} allows you to call Windows API using Rust. There are several Azure services also using Rust, including [Azure IoT Edge][azure-iot-edge~github]↗ and 'Kusto', the core query and storage engine for [Azure Data Explorer][azure-data-explorer]↗. |
 | [MoveParallel][moveparallel~website]↗ | |
 | [Mozilla][mozilla~website]↗ [(github)][mozilla~github]↗ | The creators of Rust, Mozilla has used the Rust language in various projects, including parts of the Firefox web browser. See [Servo][servo~website]↗. |
-| [Multi media, LLC][multimediallc~website]↗ | |
+| [Multi Media, LLC][multimediallc~website]↗ | |
 | [NextRoll][nextroll~website]↗ | |
 | [Novo Nordisk][novonordisk~website]↗ | |
 | [Npm][npm~website]↗ [(github)][npm~github]↗ | The package manager for JavaScript has components written in Rust. Also uses Rust for their authorization service. |
@@ -135,7 +135,7 @@ Please also consult the [list of companies using Rust][theirstack-rust~website]�
 | [OneSignal][onesignal~website]↗ [(blog)][onesignal~blog]↗ | Offers high volume, cross platform push notification delivery. |
 | [OpenUK][openuk~website]↗ | |
 | [Open Source Security][opensrcsec~website]↗ | |
-| [OpenSource Science (OS-Sci)][os-sci~website]↗ | |
+| [OpenSource Science][os-sci~website]↗ (OS-Sci) | |
 | [OxidOS Automotive][oxidos~website]↗ | |
 | [PUCPR][pucpr~website]↗ | |
 | [Parity Technology][parity~website]↗ [(github)][paritytech~github]↗ | Creates open-sourced networks, consensus protocols, and [cryptography][p~cryptography], entirely in Rust. |
@@ -155,8 +155,8 @@ Please also consult the [list of companies using Rust][theirstack-rust~website]�
 | [Renault][renault~website]↗ | French automotive manufacturer. |
 | [Routific][routific~website]↗ | High performance route optimization software. |
 | [RustNL][rustnl~website]↗ | |
-| [Rustdesk][rustdesk~website]↗ [(github)][rustdesk~github]↗ | |
-| [Salesforce][salesforce~website]↗ | Uses Rust & WASM for MuleSoft's Flex Gateway, a new gateway running on Envoy. |
+| [RustDesk][rustdesk~website]↗ [(github)][rustdesk~github]↗ | |
+| [SalesForce][salesforce~website]↗ | Uses Rust & WASM for MuleSoft's Flex Gateway, a new gateway running on Envoy. |
 | [SandboxVR][sandboxvr~website]↗ | |
 | [Sandstorm][sandstorm~website]↗ | The backend of their Collections app is written in Rust. |
 | [Scythe Robotics][scytherobotics~website]↗ | |
@@ -217,9 +217,13 @@ Please also consult the [list of companies using Rust][theirstack-rust~website]�
 - [`rustjobs.dev`][rustjobs.dev~website]↗.
 - [`rustjobs.com`][rustjobs~website]↗.
 - [Rust Jobs for Rustaceans][jobs.letsgetrusty~website]↗.
-- [Rust Developer roles (WellFound)][wellfound~rust-developer~website]↗.
+- [Rust Developer Roles (WellFound)][wellfound~rust-developer~website]↗.
 
 See also the [Rust Jobs Reports][filtra.io-rust~website]↗ on Filtra.
+
+## Related Topics {#related-topics}
+
+- [[meetings | Meetings and Events]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

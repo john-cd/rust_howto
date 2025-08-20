@@ -4,7 +4,7 @@
 
 ## YouTube Channels, Videos {#videos}
 
-- Official [Rust YouTube Channel][youtube~@RustVideos]↗.{{hi:YouTube videos}}
+- Official [Rust YouTube Channel][youtube~@RustVideos]↗.{{hi:YouTube}}{{hi:Videos}}
 - The [Rust Foundation][youtube~@rustfoundation]↗ channel.
 - Playlists:
   - [50 Projects][youtube~50-projects]↗.
@@ -43,6 +43,12 @@
 - [`newrustacean.com`][newrustacean.com~website]↗.
 - [The Way of the Crab][wayofthecrab~website]↗.
 - [Rust Game Dev][podcast~rust-game-dev]↗.
+
+## Related Topics {#related-topics}
+
+- [[blogs | Blogs]].
+- [[books | Books]].
+- [[example_code | Example Code and Templates]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

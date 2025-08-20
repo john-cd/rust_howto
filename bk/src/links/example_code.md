@@ -31,19 +31,19 @@ The ["Real World" Example App][realworld~example-apps]↗ [(website)][docs.realw
 
 For example, [`realworld-rust-axum-sqlx`][realworld~rust-axum-sqlx~github]↗ is a full-stack RealWorld implementation using [`axum`][c~axum~docs]↗{{hi:axum}}, [`sqlx`][c~sqlx~docs]↗{{hi:sqlx}}, and [`yew`][c~yew~docs]↗{{hi:yew}}.
 
-### Source Code of the ChromeOS Virtual Machine Monitor
+### ChromeOS Virtual Machine Monitor
 
-The ChromeOS Virtual Machine Monitor [(GitHub)][crosvm~github] is written in Rust, with over 300k LoC. Its repository contains many well-documented crates. There is a [book][book~crosvm] and thorough [documentation][crosvm~docs~website] for all crates.
+The ChromeOS Virtual Machine Monitor [(github)][crosvm~github]↗ is written in Rust, with over 300k LoC. Its repository contains many well-documented crates. There is a [book][book~crosvm]↗ and thorough [documentation][crosvm~docs~website]↗ for all crates.
 
-### Build your own x
+### Build Your Own X
 
-[Build your own x][build-your-own-x~github] is a compilation of well-written, step-by-step guides for re-creating our favorite technologies from scratch. Includes several Rust projects.
+[Build Your Own X][build-your-own-x~github]↗ is a compilation of well-written, step-by-step guides for re-creating our favorite technologies from scratch. Includes several Rust projects.
 
 ### Source Code for Rust Books
 
 You may also consult the code examples from various Rust books:
 
-- [Code][book~zero-to-production~github]↗ for the ["Zero To Production In Rust"][book~zero-to-production]↗ book.
+- [Code][book~zero-to-production~github]↗ for the ["Zero to Production in Rust"][book~zero-to-production]↗ book.
 - [Source Code][practical-rust-web-projects~github]↗ for ["Practical Rust Web Projects][book~Practical-Rust-Web-Projects-Applications]↗: Building Cloud and Web-Based Applications", 1st ed., by Shing Lyu.
 
 {{#include refs.incl.md}}

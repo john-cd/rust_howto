@@ -9,3 +9,4 @@
 | [University Courses][ex~links~university-courses] |
 | [Ferrous Systems Training][ex~links~ferrous-systems-training] |
 | [Paid Courses][ex~links~paid-courses] |
+| [Others][ex~links~others] |

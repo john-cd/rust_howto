@@ -2,10 +2,18 @@
 
 {{#include learning.incl.md}}
 
+## Lists of Rust Links and Resources {#lists-of-rust-links-and-resources}
+
+- [Rust Learning][rust-learning~github]↗: A bunch of links to blog posts, articles, videos, etc. for learning Rust.
+- [Idiomatic Rust][idiomatic-rust~github]↗: A peer-reviewed collection of articles, talks, repos which teach concise, idiomatic Rust.
+- [LearnRust][learnrust~github]↗.
+- The [Rust Starter Pack][rust-starter-pack~website]↗.
+
 ## Rust Overviews and Starting Points {#overview}
 
 - [Rust (programming language)][wikipedia~rust]↗ on Wikipedia.
 - Rust [language][p~language] main site: [rust-lang.org][rust-lang~website]↗{{hi:Rust learning}}.
+- [Learning Resources - Blessed.rs][blessed.rs-learning-resources~website]↗.
 
 ## Learning Roadmaps {#learning-roadmap}
 
@@ -16,14 +24,14 @@
 
 - [Rust Tutorial that Actually Teaches Rust][rust_tutorial_that_actually_teaches_rust~website]↗.
 - [Rust Gentle Introduction][rust-gentle-intro~website]↗.
-- [Workshop][rust-tutorials-RustConf17~website]↗ slides and exercises from RustConf 2017.
+- [RustConf 2017 Workshop][rust-tutorials-RustConf17~website]↗ slides and exercises.
 - [Learn Rust][learn-rust~website]↗.
 - Jonathan Pallant's [Rust on the Raspberry Pi][pi-workshop-rs~github]↗ tutorial.
 
 ## Guides {#guides}
 
-- [Rusty CS][rusty-cs~github]↗: "A Computer Science Curriculum with Rust flavor!".
-- [Curated Rust][curatedrust~github]↗: "This is a guided walkthrough of the resources that I used to learn Rust."
+- [Rusty CS][rusty-cs~github]↗: A Computer Science Curriculum with Rust flavor.
+- [Curated Rust][curatedrust~github]↗: A guided walkthrough of the resources to learn Rust.
 - [A Gentle Introduction to Rust][rust-gentle-intro~website]↗.
 - [Learning Rust in 2020][rust-blog/blob/master/posts/learning-rust-in-2020.md~github]↗.
 - [`py2rs`][book~py2rs]↗: "From Python into Rust".
@@ -49,14 +57,14 @@
 ## Courses {#courses}
 
 - [`Comprehensive Rust`][book~comprehensive-rust]↗, a free Rust course developed by the Android team at Google. The course covers the full spectrum of Rust, from basic syntax to advanced topics like [generics][p~generics] and [error handling][p~error-handling].
-- [`Rust for professionals`][rust-for-professionals~website]↗.
-- [`A half-hour to learn Rust`][book~a-half-hour-to-learn-rust]↗.
+- [`Rust for Professionals`][rust-for-professionals~website]↗.
+- [`A Half-hour to Learn Rust`][book~a-half-hour-to-learn-rust]↗.
 - [Rust Development Classes][rust-classes~website]↗.
 - [Fast Track to Rust][course~fast-track-to-rust]↗.
 - [Yet Another Rust Resource (YARR!)][book~yarr.fyi]↗.
 - Open source training courses about distributed database and distributed systems: [Talent Plan][talent-plan~github]↗.
 - [Tour of Rust][tourofrust~website]↗.
-- [Learn Rust Programming - Complete Course (YouTube)][youtube~learn-rust-programming]↗.
+- [Learn Rust Programming][youtube~learn-rust-programming]↗ - Complete Course (YouTube).
 
 ### University Courses {#university-courses}
 
@@ -81,6 +89,7 @@
 
 ## Others {#others}
 
+- [`Awesome Rust`][awesome-rust~github]↗: A curated list of Rust code and resources.
 - [`rust.code-maven.com`][code-maven~website]↗.
 - [Learning Rust With Entirely Too Many Linked Lists][rust-learning-linked-lists~website]↗.
 - [Rust by Practice][rust-by-practice~github]↗. Learning Rust By Practice, narrowing the gap between beginner and skilled-dev through challenging examples, exercises and projects.
@@ -100,6 +109,7 @@
 - [[blogs | Blogs]].
 - [[books | Books]].
 - [[example_code | Example Code and Templates]].
+- [[language | Language]].
 - [[meetings | Meetings]].
 - [[rust_cheatsheets | Rust Cheatsheets]].
 - [[videos | Videos and Podcasts]].
@@ -108,5 +118,4 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO organize further.
 </div>

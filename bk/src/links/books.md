@@ -40,7 +40,7 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 - [Effective Rust][effective-rust~website]↗.
 - [Fast Track to Rust][book~easy_rust]↗.
 - A [Gentle Introduction to Rust][rust-gentle-intro~website]↗.
-- [Learn Rust by writing Entirely Too Many Linked Lists][book~rust-unofficial-too-many-lists]↗.
+- [Learn Rust by Writing Entirely Too Many Linked Lists][book~rust-unofficial-too-many-lists]↗.
 - [Rust-101][book~rust-101]↗.
 - [Rust by Practice][practice.course.rs~website]↗.
 - [Rust Development Classes][rust-classes~website]↗.
@@ -70,12 +70,12 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 - [Rust from the Ground Up][book~rust-from-the-ground-up]↗.
 It teaches Rust by implementing a classic Unix CLI utility in each chapter (`cat`, `head`, `wc`...).
 - [Rust in Action][book~Rust-Action-Tim-McNamara]↗: Systems Programming Concepts and Techniques, by Tim McNamara. [978-1617294556][ISBN~978-1617294556]↗.
-- [Rust Programming By Example][book~rust-programming-by-example]↗: Enter the world of Rust by building engaging, concurrent, reactive, and robust applications, by Guillaume Gomez, Antoni Boucher (Packt). [978-1788390637][ISBN~978-1788390637]↗.
+- [Rust Programming by Example][book~rust-programming-by-example]↗: Enter the world of Rust by building engaging, concurrent, reactive, and robust applications, by Guillaume Gomez, Antoni Boucher (Packt). [978-1788390637][ISBN~978-1788390637]↗.
 - The [Rust Programming Language][book~rust-programming-language]↗, 2nd Edition, by Steve Klabnik and Carol Nichols. [978-1718503106][ISBN~978-1718503106]↗.
 - [Rust Under the Hood][book~rust-under-the-hood]↗: A deep dive into Rust internals and generated assembly, by Sandeep Ahluwalia, Deepa Ahluwalia. [979-8320364469][ISBN~979-8320364469]↗.
 - The [Secrets of Rust: Tools][book~secrets-of-rust-tools]↗.
 - [Step Ahead with Rust][book~Step-Ahead-Rust-Systems-Programming-ebook]↗: Systems Programming in Rust, by Jonathan Creekmore, James Miller (Kindle).
-- [Zero To Production In Rust][book~Zero-Production-Rust-introduction-development]↗: An Introduction to Backend Development, by Luca Palmieri. [979-8847211437][ISBN~979-8847211437]↗: "An opinionated introduction to backend development in Rust". [(website and sample)][zero2prod~website]↗ [(blog)][book~zero-to-production]↗ [Code for the book (GitHub)][book~zero-to-production~github]↗.
+- [Zero to Production in Rust][book~Zero-Production-Rust-introduction-development]↗: An Introduction to Backend Development, by Luca Palmieri. [979-8847211437][ISBN~979-8847211437]↗: "An opinionated introduction to backend development in Rust". [(website and sample)][zero2prod~website]↗ [(blog)][book~zero-to-production]↗ [(code for the book)][book~zero-to-production~github]↗.
 
 ## Rust Books, by Topic {#rust-books-by-topic}
 
@@ -102,7 +102,7 @@ It teaches Rust by implementing a classic Unix CLI utility in each chapter (`cat
 - [Clippy Documentation][book~clippy]↗.{{hi:clippy}}
 - [mdBook Documentation][book~mdbook]↗.{{hi:mdbook}}
 - The [`rustc` Book][book~rustc]↗.{{hi:Compiler}}
-- The [`rustdoc` book][book~rustdoc]↗.{{hi:rustdoc}}
+- The [`rustdoc` Book][book~rustdoc]↗.{{hi:rustdoc}}
 - The [Rust Compiler Development Guide][book~rust-compiler-development-guide]↗.
 
 ### Concurrency and Parallelism {#concurrency-parallelism}
@@ -148,7 +148,7 @@ See also the [Awesome Embedded Rust][awesome-embedded-rust~github]↗, a curated
 
 ### Interpreters {#interpreters}
 
-- [Writing Interpreters in Rust][book~writing-interpreters-in-rust]↗: A guide [(GitHub)][book~writing-interpreters-in-rust~github]↗.{{hi:Interpreters}}
+- [Writing Interpreters in Rust][book~writing-interpreters-in-rust]↗. [(GitHub)][book~writing-interpreters-in-rust~github]↗.{{hi:Interpreters}}
 
 ### Machine Learning {#machine-learning}
 
@@ -172,7 +172,7 @@ See also the [Awesome Embedded Rust][awesome-embedded-rust~github]↗, a curated
 
 - The [Rust Rand Book][c~rand~website]↗.{{hi:Random numbers}}
 
-## Security {#security}
+### Security {#security}
 
 - [Black Hat Rust][black-hat-rust~website]↗: Applied offensive security with the Rust programming language, by Sylvain Kerkour.{{hi:Security}}
 - The [Copenhagen Book][book~copenhagen]↗: General guideline on implementing auth in web applications. Not Rust-specific.
@@ -196,7 +196,12 @@ See also the [Awesome Embedded Rust][awesome-embedded-rust~github]↗, a curated
 - [Rust and Webassembly][book~rustwasm]↗.This small book describes how to use Rust and WebAssembly together.{{hi:WASM}}
 - [Programming WebAssembly with Rust][book~Programming-WebAssembly-Rust-Development-Applications]↗: Unified Development for Web, Mobile, and Embedded Applications, 1st Edition, by Kevin Hoffman. [978-1680506365][ISBN~978-1680506365]↗.
 
-This page includes a number of links to the websites of publishers and book merchants for convenience purposes only. It is not an endorsement of these particular retailers or publishers. Click on the ISBN number link to gain access to a Wikipedia page with links to a variety of catalogs, ebook databases, and book sellers to choose from.
+For convenience, this page includes a number of links to the websites of publishers and book merchants. It is not an endorsement of these particular retailers or publishers. Click on the ISBN number link to gain access to a Wikipedia page with links to a variety of catalogs, ebook databases, and book sellers to choose from.
+
+## Related Topics {#related-topics}
+
+- [[blogs | Blogs]].
+- [[example_code | Example Code and Templates]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
