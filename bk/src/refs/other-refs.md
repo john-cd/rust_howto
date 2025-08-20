@@ -1,3 +1,4 @@
+
 [.dll-files]: https://fileinfo.com/extension/dll
 [.env-files]: https://medium.com/@michaeldipasquale313/using-env-files-what-they-are-and-when-to-use-them-4f4812c5732f
 [.so-files]: https://fileinfo.com/extension/so
@@ -9,6 +10,7 @@
 [9fin~website]: https://9fin.com
 [ISBN~978-1-915907103]: https://en.wikipedia.org/wiki/Special:BookSources/978-1-915907103
 [ISBN~978-1098109431]: https://en.wikipedia.org/wiki/Special:BookSources/978-1098109431
+[ISBN~978-1098149055]: https://en.wikipedia.org/wiki/Special:BookSources/978-1098149055
 [ISBN~978-1098151409]: https://en.wikipedia.org/wiki/Special:BookSources/978-1098151409
 [ISBN~978-1484251201]: https://en.wikipedia.org/wiki/Special:BookSources/978-1484251201
 [ISBN~978-1484272077]: https://en.wikipedia.org/wiki/Special:BookSources/978-1484272077
@@ -18,6 +20,7 @@
 [ISBN~978-1638354543]: https://en.wikipedia.org/wiki/Special:BookSources/978-1638354543
 [ISBN~978-1680506365]: https://en.wikipedia.org/wiki/Special:BookSources/978-1680506365
 [ISBN~978-1680508161]: https://en.wikipedia.org/wiki/Special:BookSources/978-1680508161
+[ISBN~978-1680509557]: https://en.wikipedia.org/wiki/Special:BookSources/978-1680509557
 [ISBN~978-1718501850]: https://en.wikipedia.org/wiki/Special:BookSources/978-1718501850
 [ISBN~978-1718503106]: https://en.wikipedia.org/wiki/Special:BookSources/978-1718503106
 [ISBN~978-1788390019]: https://en.wikipedia.org/wiki/Special:BookSources/978-1788390019
@@ -39,6 +42,7 @@
 [ISBN~9781788624893]: https://en.wikipedia.org/wiki/Special:BookSources/9781788624893
 [ISBN~979-8320364469]: https://en.wikipedia.org/wiki/Special:BookSources/979-8320364469
 [ISBN~979-8847211437]: https://en.wikipedia.org/wiki/Special:BookSources/979-8847211437
+[ISBN~979-8888650721]: https://en.wikipedia.org/wiki/Special:BookSources/979-8888650721
 [OpenTelemetry~website]: https://opentelemetry.io
 [abstract-factory-in-rust~website]: https://refactoring.guru/design-patterns/abstract-factory/rust/example#example-0
 [accelerant~website]: https://accelerant.dev
@@ -211,6 +215,7 @@
 [blog~m-ou.se]: https://blog.m-ou.se
 [blog~macros-in-rust-a-tutorial-with-examples]: https://blog.logrocket.com/macros-in-rust-a-tutorial-with-examples
 [blog~mainmatter-eserde]: https://mainmatter.com/blog/2025/02/13/eserde
+[blog~matic-apr-25]: https://filtra.io/rust/interviews/matic-apr-25
 [blog~matklad]: https://matklad.github.io
 [blog~mdbook~including-files]: https://rust-lang.github.io/mdBook/format/mdbook.html#including-files
 [blog~medium~in-depth-analysis-of-polkavm]: https://medium.com/@OneBlockplus/in-depth-analysis-of-polkavm-a-perfect-path-to-understanding-polkadot-2-0-6ac347a296ba
@@ -318,8 +323,10 @@
 [book~Write-Powerful-Rust-Macros-Overmeire-ebook]: https://amazon.com/Write-Powerful-Rust-Macros-Overmeire-ebook/dp/B0D5BR4Z3P
 [book~Zero-Production-Rust-introduction-development]: https://amazon.com/Zero-Production-Rust-introduction-development/dp/B0BHLDMFDQ
 [book~a-half-hour-to-learn-rust]: https://fasterthanli.me/articles/a-half-hour-to-learn-rust
+[book~advanced-hands-on-rust]: https://www.amazon.com/Advanced-Hands-Rust-Coding-Skills/dp/B0DHC6F1X2
 [book~api-guidelines-naming]: https://rust-lang.github.io/api-guidelines/naming.html
 [book~api-guidelines]: https://rust-lang.github.io/api-guidelines
+[book~async-rust]: https://www.amazon.com/Async-Rust-Unleashing-Fearless-Concurrency/dp/1098149092
 [book~asynchronous-programming-in-rust]: https://rust-lang.github.io/async-book
 [book~asynchronous-programming-in-rust~badge]: https://img.shields.io/badge/Asynchronous_programming_in_rust-peru?logo=mdbook
 [book~autocxx]: https://google.github.io/autocxx
@@ -409,6 +416,7 @@
 [book~rust-101]: https://ralfj.de/projects/rust-101/main.html
 [book~rust-atomics]: https://marabos.nl/atomics
 [book~rust-attributes~badge]: https://img.shields.io/badge/Rust_Book-Attributes-blue?logo=mdbook
+[book~rust-brain-teasers]: https://www.amazon.com/Rust-Brain-Teasers-Herbert-Wolverson-ebook/dp/B09Z5T2CDP
 [book~rust-by-example]: https://doc.rust-lang.org/rust-by-example
 [book~rust-by-example~array]: https://doc.rust-lang.org/rust-by-example/primitives/array.html
 [book~rust-by-example~array~badge]: https://img.shields.io/badge/Rust_By_Example-array-violet?logo=mdbook
@@ -506,6 +514,7 @@
 [book~rust-programming-language-2nd-edition]: https://nostarch.com/rust-programming-language-2nd-edition
 [book~rust-programming-language]: https://oreilly.com/library/view/the-rust-programming/9781098156817
 [book~rust-programming-language~badge]: https://img.shields.io/badge/Rust_programming_language-peru?logo=mdbook
+[book~rust-quest]: https://dev.rust-quest.com/en
 [book~rust-reference]: https://doc.rust-lang.org/reference
 [book~rust-reference~TokenStream]: https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.proc_macro.token-stream
 [book~rust-reference~async]: https://doc.rust-lang.org/reference/items/functions.html#async-functions
@@ -1090,6 +1099,7 @@
 [maplibre~website]: https://maplibre.org
 [materialize~github]: https://github.com/MaterializeInc/materialize
 [materialize~website]: https://materialize.com
+[maticrobots~website]: https://maticrobots.com
 [mdbook-indexing/tree/main~github]: https://github.com/daviddrysdale/mdbook-indexing/tree/main
 [mdbook-scrub-readme~github]: https://github.com/john-cd/rust_howto/blob/main/mdbook-scrub/README.md
 [mdslides~github]: https://github.com/ferrous-systems/mdslides
@@ -1289,6 +1299,7 @@
 [rauthy~github]: https://github.com/sebadob/rauthy
 [readrust.net~website]: https://readrust.net
 [readyset~website]: https://readyset.io
+[readytotouch~rust-companies~website]: https://readytotouch.com/rust/companies
 [realworld-rust~website]: https://codebase.show/projects/realworld?language=rust
 [realworld.how]: https://realworld.how
 [realworld~actix-fullstack~github]: https://github.com/Bechma/realworld-actix-fullstack
@@ -1317,6 +1328,7 @@
 [redsift~github]: https://github.com/redsift
 [redsift~website]: https://redsift.com
 [release-plz~website]: https://release-plz.ieni.dev
+[remoteok~remote-rust-jobs~website]: https://remoteok.com/remote-rust-jobs
 [renault~website]: https://renaultgroup.com
 [risingwave~github]: https://github.com/risingwavelabs/risingwave
 [river~github]: https://github.com/memorysafety/river
@@ -1400,6 +1412,7 @@
 [rust-howto~todo~github~badge]: https://img.shields.io/badge/rust__howto_TODO-steelblue?logo=github
 [rust-howto~tools~github]: https://github.com/john-cd/rust_howto/tree/main/tools
 [rust-howto~xmpl~github]: https://github.com/john-cd/rust_howto/tree/main/xmpl
+[rust-in-production~github]: https://github.com/ImplFerris/rust-in-production
 [rust-in-vs-code~website]: https://code.visualstudio.com/docs/languages/rust
 [rust-iot-platform~github]: https://github.com/iot-ecology/rust-iot-platform
 [rust-lang-user-groups~website]: https://prev.rust-lang.org/en-US/user-groups.html
@@ -1444,6 +1457,7 @@
 [rust-vmm~vmm-sys-util~github]: https://github.com/rust-vmm/vmm-sys-util
 [rust-web-framework-comparison~github]: https://github.com/flosse/rust-web-framework-comparison
 [rust.audio~website]: https://rust.audio
+[rust.careers~website]: https://rust.careers
 [rust.code-maven.com-user-groups~website]: https://rust.code-maven.com/user-groups
 [rust_gpu~github]: https://github.com/EmbarkStudios/rust-gpu
 [rust_gpu~github~badge]: https://img.shields.io/badge/rust--gpu-steelblue?logo=github
@@ -1451,6 +1465,7 @@
 [rust_rest~github~badge]: https://img.shields.io/badge/rust--rest-steelblue?logo=github
 [rust_tutorial_that_actually_teaches_rust~website]: https://reddit.com/r/rust/comments/15b9rl5/rust_tutorial_that_actually_teaches_rust
 [rustacean-station~website]: https://rustacean-station.org
+[rustbooks~fork~github]: https://github.com/bitfield/RustBooks
 [rustbooks~github]: https://github.com/sger/RustBooks
 [rustconf.com~website]: https://rustconf.com
 [rustcrypto-password-hashes~github]: https://github.com/RustCrypto/password-hashes#rustcrypto-password-hashes
@@ -1491,6 +1506,7 @@
 [scikit-learn~website]: https://scikit-learn.org/stable
 [scytherobotics~website]: https://scytherobotics.com
 [seanmonstar~website]: https://seanmonstar.com
+[searchcraft~website]: https://www.searchcraft.io
 [sensirion~website]: https://sensirion.com
 [sentry~website]: https://sentry.io
 [serenity~github]: https://github.com/serenity-rs/serenity
@@ -1642,6 +1658,7 @@
 [web-julia-set]: https://cloud.githubusercontent.com/assets/221000/26546700/9be34e80-446b-11e7-81dc-dd9871614ea1.png
 [webassembly~website]: https://webassembly.org
 [webgpu~website]: https://gpuweb.github.io/gpuweb
+[wellfound~rust-developer~website]: https://wellfound.com/role/rust-developer
 [wezterm~github]: https://github.com/wez/wezterm
 [wgpu-template~github]: https://github.com/Foxicution/wgpu-template
 [why-rust-for-robots~website]: https://tangramvision.com/blog/why-rust-for-robots

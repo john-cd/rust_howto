@@ -5,6 +5,7 @@
 [ex~links~chat]: blogs.md#chat
 [ex~links~cheatsheets]: rust_cheatsheets.md#cheatsheets
 [ex~links~cli]: books.md#cli
+[ex~links~companies]: companies.md#companies
 [ex~links~comparison-to-other-languages]: rust_cheatsheets.md#comparison-to-other-languages
 [ex~links~compiler-tools]: books.md#compiler-tools
 [ex~links~concurrency-parallelism]: books.md#concurrency-parallelism
@@ -31,6 +32,7 @@
 [ex~links~network-programming]: books.md#network-programming
 [ex~links~official-books]: books.md#official-books
 [ex~links~older-podcasts]: videos.md#older-podcasts
+[ex~links~others]: learning.md#others
 [ex~links~overview]: learning.md#overview
 [ex~links~paid-courses]: learning.md#paid-courses
 [ex~links~performance]: books.md#performance
@@ -42,6 +44,7 @@
 [ex~links~reference-documentation]: books.md#reference-documentation
 [ex~links~repositories]: example_code.md#repositories
 [ex~links~rust-book-source-code]: example_code.md#rust-book-source-code
+[ex~links~rust-books-by-topic]: books.md#rust-books-by-topic
 [ex~links~rust-templates]: example_code.md#rust-templates
 [ex~links~security]: books.md#security
 [ex~links~standard-library]: books.md#standard-library
