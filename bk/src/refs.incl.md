@@ -14,4 +14,4 @@
 [p~errors]: # "categories/rust-patterns/error_handling/error_handling.md"
 [p~index~examples]: appendices/examples_index.md
 [p~web-programming]: # "categories/web-programming/index.md"
-[p~word-index]: appendices/word_index.md
+[p~word-index]: word_index.md

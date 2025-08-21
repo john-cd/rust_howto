@@ -50,10 +50,10 @@ after = [ "scrub" ]
 # # Run after removal of hidden chapters
 after = [ "links" ]
 
-[preprocessor.indexing.see_instead]
+#[preprocessor.indexing.see_instead]
 # "unit type" = "`()`"  # index entries where the key should point to the value
 
-[preprocessor.indexing.nest_under]
+#[preprocessor.indexing.nest_under]
 # "generic type" = "generics"
 
 ## OUTPUTS --------------------------------------------------------
@@ -137,7 +137,7 @@ no-section-label = true
 git-repository-url = "https://github.com/john-cd/rust_howto"
 # git-repository-icon = "fa-github"
 edit-url-template = "https://github.com/john-cd/rust_howto/edit/main/bk/{path}"
-site-url = "/rust_howto/"
+site-url = "rust_howto/"
 # cname = "john-cd.com"
 # input-404 = "not-found.md"
 
@@ -154,14 +154,14 @@ editable = true            # allows editing the source code
 # copyable = true          # include the copy button for copying code snippets; default: true
 # copy-js = true           # includes the JavaScript for the code editor
 # line-numbers = false     # displays line numbers for editable code
-# runnable = true          # displays a run button for rust code; default: true
+# runnable = true          # displays a run button for Rust code; default: true
 
 # [output.html.code]
 # # A prefix string per language (one or more chars).
 # # Any line starting with whitespace+prefix is hidden.
 # hidelines = { python = "~" }
 
-# [output.html.search]
+[output.html.search]
 # enable = true            # enables the search feature
 # limit-results = 30       # maximum number of search results
 # teaser-word-count = 30   # number of words used for a search result teaser
@@ -169,7 +169,7 @@ editable = true            # allows editing the source code
 # boost-title = 2          # ranking boost factor for matches in headers
 # boost-hierarchy = 1      # ranking boost factor for matches in page names
 # boost-paragraph = 1      # ranking boost factor for matches in text
-# expand = true            # partial words will match longer terms
+expand = true            # partial words will match longer terms
 # heading-split-level = 3  # link results to heading levels
 # copy-js = true           # include Javascript code for search
 

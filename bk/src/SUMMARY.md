@@ -2,10 +2,10 @@
 
 [Introduction](index.md)
 
-# Language, Standard Library, and Code Organization
+# Core Concepts
 
+- [Rust Installation and First Steps](language/rust_install.md)
 - [Language](language/index.md)
-  - [Rust Installation and First Steps](language/rust_install.md)
   - [Entry Points](language/entrypoint.md)
   - [Data Types](language/data_types.md)
   - [Variables](language/variables.md)
@@ -105,6 +105,13 @@
   - [Meetings](links/meetings.md)
   - [Companies](links/companies.md)
 
+# Appendices
+
+- [Index](word_index.md)
+- [Index of Examples](appendices/examples_index.md)
+- [Crates (Alphabetic)](appendices/crates_alphabetical.md)
+- [Crates (by Category)](appendices/crates_by_category.md)
+
 # Contributing
 
 - [Contributing](contributing/index.md)
@@ -116,15 +123,6 @@
   - [Dev Containers and Docker](contributing/dev_container_docker.md)
   - [API Documentation](contributing/api_documentation.md)
   - [Crate Publication](contributing/publication.md)
-
-# Appendices
-
-- [Index of Examples](appendices/examples_index.md)
-- [Word Index](appendices/word_index.md)
-- [Crates (Alphabetic)](appendices/crates_alphabetical.md)
-- [Crates (by Category)](appendices/crates_by_category.md)
-
----
 
 [Thanks](appendices/thanks.md)
 
