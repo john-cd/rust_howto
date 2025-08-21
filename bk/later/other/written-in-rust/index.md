@@ -20,7 +20,7 @@ This section provides a few examples of software written in Rust, organized by t
   - Real-time operating systems (RTOS).
   - Examples:
     - `Tock OS`: An embedded operating system designed for low-power IoT devices.
-    - [esp-rs (GitHub)][espressif~github]↗: Rust on Espressif microcontrollers.
+    - [`esp-rs` (GitHub)][espressif~github]↗: Rust on Espressif microcontrollers.
 - Command-Line Tools:
   - Utilities for system administration.
   - Performance monitoring tools.
@@ -150,11 +150,11 @@ This section provides a few examples of software written in Rust, organized by t
 
 - [RustDesk][rustdesk~website]↗.
 - [OxidOS Automotive][oxidos~website]↗.
-- [ripgrep][c~ripgrep~github]↗: `ripgrep` recursively searches directories for a regex pattern while respecting your gitignore.
-- [zola][zola~github]↗: A fast static site generator in a single binary with everything built-in.
+- [`ripgrep`][c~ripgrep~github]↗: `ripgrep` recursively searches directories for a regex pattern while respecting your gitignore.
+- [`zola`][zola~github]↗: A fast static site generator in a single binary with everything built-in.
 - [solana][c~solana~github]↗: Web-Scale Blockchain for fast, secure, scalable, decentralized apps and marketplaces.
-- [linkerd2][linkerd2~github]↗: Ultralight, security-first service mesh for Kubernetes. Main repo for Linkerd 2.x.
-- [bottlerocket][c~bottlerocket~github]↗: An operating system designed for hosting containers.
+- [`linkerd2`][linkerd2~github]↗: Ultralight, security-first service mesh for Kubernetes. Main repo for Linkerd 2.x.
+- [`bottlerocket`][c~bottlerocket~github]↗: An operating system designed for hosting containers.
 - [`databend`][databend~github]↗: 𝗗𝗮𝘁𝗮, 𝗔𝗻𝗮𝗹𝘆𝘁𝗶𝗰𝘀 & 𝗔𝗜. Modern alternative to Snowflake. Cost-effective and simple for massive-scale analytics.
 - [`rerun`][c~rerun~github]↗: Visualize streams of multimodal data. Free, fast, easy to use, and simple to integrate. Built in Rust.
 - [`tock`][tock~github]↗: A secure embedded operating system for microcontrollers.
@@ -171,41 +171,41 @@ This section provides a few examples of software written in Rust, organized by t
 - [`swc`][c~swc~github]↗: Rust-based platform for the Web.
 - [`influxdb`][influxdb~github]↗: Scalable datastore for metrics, events, and real-time analytics.
 - [`firecracker`][firecracker~github]↗: Secure and fast microVMs for serverless computing.
-- [`Warp`][warp~github]↗: Warp is a modern, Rust-based terminal with AI built in so you and your team can build great software, faster.
+- [`warp`][warp~github]↗: Warp is a modern, Rust-based terminal with AI built in so you and your team can build great software, faster.
 - [RustPython][rustpython~github]↗: A Python Interpreter written in Rust.
-- [wezterm][wezterm~github]↗: A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust.
-- [redox-os: Mirror of https://gitlab.redox-os.org/redox-os/redox][redox~github]↗.
-- [Neon][neon~github]↗: Serverless Postgres. We separated storage and compute to offer autoscaling, code-like database branching, and scale to zero.
-- [navi][c~navi~github]↗: An interactive cheatsheet tool for the command-line.
+- [`wezterm`][wezterm~github]↗: A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust.
+- [`redox-os`: Mirror of https://gitlab.redox-os.org/redox-os/redox][redox~github]↗.
+- [`neon`][neon~github]↗: Serverless Postgres. We separated storage and compute to offer autoscaling, code-like database branching, and scale to zero.
+- [`navi`][c~navi~github]↗: An interactive cheatsheet tool for the command-line.
 - [RustScan][rustscan~github]↗: The Modern Port Scanner.
-- [workers-rs][workers-rs~github]↗: Write Cloudflare Workers in 100% Rust via WebAssembly.
-- [Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud][c~qdrant~github]↗.
-- [Hyperlight is a lightweight Virtual Machine Manager (VMM) designed to be embedded within applications. It enables safe execution of untrusted code within micro virtual machines with very low latency and minimal overhead.][c~hyperlight~github]↗.
+- [`workers-rs`][workers-rs~github]↗: Write Cloudflare Workers in 100% Rust via WebAssembly.
+- [Qdrant][c~qdrant~github]↗ - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the Cloud.
+- [Hyperlight][c~hyperlight~github]↗ is a lightweight Virtual Machine Manager (VMM) designed to be embedded within applications. It enables safe execution of untrusted code within micro virtual machines with very low latency and minimal overhead.
 - [Perseus][perseus~website]↗.
-- [DORA (Dataflow-Oriented Robotic Architecture) is middleware designed to streamline and simplify the creation of AI-based robotic applications. It offers low latency, composable, and distributed dataflow capabilities. Applications are modeled as directed graphs, also referred to as pipelines.][dora~github]↗.
-- [television][c~television~crates.io]↗.
+- [DORA][dora~github]↗ (Dataflow-Oriented Robotic Architecture) is middleware designed to streamline and simplify the creation of AI-based robotic applications. It offers low latency, composable, and distributed dataflow capabilities. Applications are modeled as directed graphs, also referred to as pipelines.
+- [`television`][c~television~crates.io]↗.
 
 - [Fish 4.0][blog~fishshell-rustport]↗: The Fish Of Theseus.
 
-- [shoes][c~shoes~github]↗: A multi-protocol proxy server written in Rust (HTTP, SOCKS5, Vmess, Vless, Shadowsocks, Trojan, Snell, Hysteria2, TUIC v5).
+- [`shoes`][c~shoes~github]↗: A multi-protocol proxy server written in Rust (HTTP, SOCKS5, Vmess, Vless, Shadowsocks, Trojan, Snell, Hysteria2, TUIC v5).
 
-- [Jujutsu (docs)][doc~jujutsu]↗.
+- [`jujutsu` (docs)][doc~jujutsu]↗.
 - [Steve's Jujutsu Tutorial][blog~steveklabnik-jujutsu-tutorial]↗.
 
 - [Codename Goose][doc~block-goose]↗.
-- [grex][c~grex~github]↗: A command-line tool and Rust library with Python bindings for generating regular expressions from user-provided test cases.
-- [youki][youki~github]↗: A container runtime written in Rust.
+- [`grex`][c~grex~github]↗: A command-line tool and Rust library with Python bindings for generating regular expressions from user-provided test cases.
+- [`youki`][youki~github]↗: A container runtime written in Rust.
 
-[yazi~github][yazi~github]:Blazing fast terminal file manager written in Rust, based on async I/O.
+[`yazi`][yazi~github]: Blazing fast terminal file manager written in Rust, based on async I/O.
 [yazi~github]: https://github.com/sxyazi/yazi
 
-[evcxr_jupyter~github][evcxr_jupyter~github]:  A Rust REPL / Jupyter kernel.
+[`evcxr_jupyter`][evcxr_jupyter~github]:  A Rust REPL / Jupyter kernel.
 [evcxr_jupyter~github]: https://github.com/evcxr/evcxr/blob/main/evcxr_jupyter/README.md
 
-[hyperswitch~github][hyperswitch~github].
+[`hyperswitch`][hyperswitch~github].
 [hyperswitch~github]: https://github.com/juspay/hyperswitch/tree/main
 
-[kget~github][kget~github].
+[`kget`][kget~github].
 [kget~github]: https://github.com/davimf721/KGet
 
 </div>

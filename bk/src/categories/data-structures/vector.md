@@ -2,7 +2,7 @@
 
 {{#include vector.incl.md}}
 
-## Store Homogeneous Data in a Contiguous, Growable Array: `Vec` {#vec}
+## Store Homogeneous Data in a Contiguous, Growable Array with `Vec` {#vec}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}{{hi:std::vec::Vec}}{{hi:Vector}}
 

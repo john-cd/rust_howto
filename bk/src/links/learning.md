@@ -12,8 +12,8 @@
 ## Rust Overviews and Starting Points {#overview}
 
 - [Rust (programming language)][wikipedia~rust]↗ on Wikipedia.
-- Rust [language][p~language] main site: [rust-lang.org][rust-lang~website]↗{{hi:Rust learning}}.
-- [Learning Resources - Blessed.rs][blessed.rs-learning-resources~website]↗.
+- Rust [language][p~language] main site: [`rust-lang.org`][rust-lang~website]↗{{hi:Rust learning}}.
+- [Learning Resources][blessed.rs-learning-resources~website]↗ - `blessed.rs`.
 
 ## Learning Roadmaps {#learning-roadmap}
 
@@ -67,7 +67,7 @@
 
 ### Paid Courses {#paid-courses}
 
-- [Dmitri Nesteruk - The Rust Programming Language][udemy-course-rust-lang~website]↗ (Udemy).
+- [The Rust Programming Language][udemy-course-rust-lang~website]↗ by Dmitri Nesteruk (Udemy).
 - [Rust Fundamentals][pluralsight-courses-rust-fundamentals~website]↗ (Pluralsight).
 - [Rust in Motion][course~rust-in-motion]↗ (Manning).
 - [Why Rust? Trustworthy, Concurrent Systems Programming][course~why-rust]↗ (O'Reilly).

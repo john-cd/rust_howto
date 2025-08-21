@@ -71,6 +71,8 @@ The following are the typical steps to release a crate to [`crates.io`][crates.i
 
 [`cargo-dist`][c~cargo-dist~docs]↗{{hi:cargo-dist}} packages shippable applications for Rust.
 
+TODO got archived??
+
 ## Create Debian and RPM Packages with `cargo-deb` and `cargo-rpm` {#cargo-deb}
 
 ## Related Topics {#related-topics}
@@ -93,15 +95,15 @@ See also [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]].
 cover [`cargo-bump`][c~cargo-bump~github]↗{{hi:cargo-bump}} for simple version number increments.
 Link:
 
-- [book~cargo~cargo-login][book~cargo~cargo-login].
-- [book~cargo~cargo-package][book~cargo~cargo-package].
-- [book~cargo~cargo-publish][book~cargo~cargo-publish].
+- [`cargo-login`][book~cargo~cargo-login].
+- [`cargo-package`][book~cargo~cargo-package].
+- [`cargo-publish`][book~cargo~cargo-publish].
 
 Review:
 
-- [release-plz][release-plz~website].
-- [comprehensive-guide-to-generating-deb-and-rpm-packages-for-rust-applications][blog~comprehensive-guide-to-generating-deb-and-rpm-packages-for-rust-applications].
-- [List_of_software_package_management_systems][wikipedia~List_of_software_package_management_systems].
-- [simplifying-debian-packaging-for-rust][blog~medium~simplifying-debian-packaging-for-rust].
+- [`release-plz`][release-plz~website].
+- [Comprehensive guide to generating `deb`and `rpm` packages for Rust applications][blog~comprehensive-guide-to-generating-deb-and-rpm-packages-for-rust-applications].
+- [List of software package management systems][wikipedia~List_of_software_package_management_systems].
+- [Simplifying debian packaging for Rust][blog~medium~simplifying-debian-packaging-for-rust].
 
 </div>

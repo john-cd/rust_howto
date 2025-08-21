@@ -25,10 +25,10 @@ Reading code is the fastest way to learn idiomatic Rust. Use the following links
 
 ### Lists of Popular Rust Repositories {#repositories}
 
-- [GitHub Topic: "Rust" topic][topics-rust~github]↗: Popular repositories on GitHub.
+- GitHub Topic: ["Rust"][topics-rust~github]↗: Popular repositories on GitHub.
 - [Trending GitHub repos][trending-rust~github]↗.
 - [Awesome Rust][awesome-rust~github]↗: A large curated list of Rust resources, including code examples.
-- [Open-source Projects Categorized as "Rust" (libhunt.com)][libhunt-topic-rust~website]↗.
+- [Open-source Projects Categorized as "Rust"][libhunt-topic-rust~website]↗ (`libhunt.com`).
 - [`rustrepo.com`][rustrepo~website]↗: A curated list of awesome Rust resources.
 - [Top 100 Best GitHub Repositories for Rust][bestofgithub-rust~website]↗.
 

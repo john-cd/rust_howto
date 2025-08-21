@@ -70,12 +70,12 @@ Review:
 - [Chef Habitat][chef-habitat~website] [(GitHub)][chef-habitat~github].
 - [KCL Programming Language][kcl-lang~website] [(GitHub)][kcl-lang~github].
 - [`docker-api`][c~docker-api~docs]↗{{hi:docker-api}}: a Rust interface to Docker containers.
-- [Optimizing DevOps Pipelines for Rust Projects: Leveraging Cargo and CI/CD][blog~optimizing-devops-pipelines-for-rust-projects-leveraging-cargo-and-cicd]↗.
+- [Optimizing DevOps Pipelines for Rust Projects][blog~optimizing-devops-pipelines-for-rust-projects-leveraging-cargo-and-cicd]↗: Leveraging Cargo and CI/CD.
 
 CD/CI:
 
-- [gh-workflow][c~gh-workflow~crates.io]↗.
+- [`gh-workflow`][c~gh-workflow~crates.io]↗.
 - [GitHub Actions best practices for Rust projects][blog~github-actions-best-practices]↗.
-- [GitHub - pipelight][pipelight~github]↗: Tiny automation pipelines. Bring CI/CD to the smallest projects. Self-hosted, Lightweight, CLI only.
+- [`pipelight`][pipelight~github]↗: Tiny automation pipelines. Bring CI/CD to the smallest projects. Self-hosted, Lightweight, CLI only.
 
 </div>

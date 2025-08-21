@@ -20,5 +20,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[tempfile: write NOW](https://github.com/john-cd/rust_howto/issues/361)
+[tempfile: write](https://github.com/john-cd/rust_howto/issues/361)
 </div>

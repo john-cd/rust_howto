@@ -207,7 +207,7 @@ Repetition in the transcriber is also possible: the `$(...)*` syntax repeats the
 
 #### Understand the Hygiene of Macros-by-Example {#hygiene}
 
-Macros-by-example have "mixed-site hygiene". This means that loop labels, block labels, and local variables are looked up at the _macro definition site_, while other symbols are looked up at the _macro invocation site_. Refer to the [Rust Reference - Macros][book~rust-reference~macros]↗ for full details.
+Macros-by-example have "mixed-site hygiene". This means that loop labels, block labels, and local variables are looked up at the _macro definition site_, while other symbols are looked up at the _macro invocation site_. Refer to the [Rust Reference][book~rust-reference~macros]↗ for full details.
 
 The following example demonstrates how to use a local variable; and how to define an item in a macro and use it at the invocation site:
 

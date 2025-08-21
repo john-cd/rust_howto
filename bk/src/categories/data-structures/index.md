@@ -101,10 +101,10 @@ The following examples cover less commonly-used data structures:
 [data-structures: expand](https://github.com/john-cd/rust_howto/issues/280)
 
 - [`rust-algorithms`][rust-algorithms~github]↗: Common data structures and algorithms in Rust.
-- [PHF - data structures in Rust][c~phf~lib.rs]↗: Runtime support for perfect hash function data structures.
-- [`PriorityQueue` - data structures in Rust][c~priority-queue~lib.rs]↗.
-- [`elsa` - data structures in Rust][c~elsa~lib.rs]↗.
-- [`Equivalent` - data structures in Rust][c~equivalent~lib.rs]↗.
+- [PHF][c~phf~lib.rs]↗: Runtime support for perfect hash function data structures.
+- [`PriorityQueue`][c~priority-queue~lib.rs]↗.
+- [`elsa`][c~elsa~lib.rs]↗.
+- [`equivalent`][c~equivalent~lib.rs]↗.
 
 - [Converting between different collection types][blog~converting-between-different-collection-types]↗: from `Vec` to `HashSet` or `HashMap`.
 

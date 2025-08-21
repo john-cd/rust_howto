@@ -100,15 +100,15 @@ cover:
 kvm-bindings -> Rust FFI bindings to KVM
 kvm-ioctls -> Safe wrappers over the KVM API
 
-- [kvm-bindings][kvm-bindings~crates.io]: Rust FFI bindings to KVM generated using bindgen.
+- [`kvm-bindings`][kvm-bindings~crates.io]: Rust FFI bindings to KVM generated using bindgen.
 
-- [firecracker~github][firecracker~github].
-- [firecracker-microvm~website][firecracker-microvm~website].
-- [jailer][jailer~lib.rs].
+- [`firecracker`][firecracker~github].
+- [`firecracker-microvm`][firecracker-microvm~website].
+- [`jailer`][jailer~lib.rs].
 
-- [Google crosvm][crosvm~github].
+- [Google `crosvm`][crosvm~github].
 
-- [hyperlight (GitHub)][hyperlight~github].
+- [`hyperlight` (GitHub)][hyperlight~github].
 
 - [QEMU][wikipedia~QEMU].
 

@@ -67,7 +67,7 @@ You may think of them as a `loop` that executes only once and allows exiting ear
 
 ## References {#references}
 
-- [Rust by example - Control flow][book~rust-by-example~flow_control]↗.
+- Rust by Example - [Control flow][book~rust-by-example~flow_control]↗.
 
 ## Related Topics {#related-topics}
 

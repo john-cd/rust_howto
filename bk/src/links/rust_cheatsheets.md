@@ -7,10 +7,10 @@
 - [`cheats.rs`][cheats-rs~website]↗ [(GitHub)][cheats.rs~github]↗.{{hi:Cheat sheets}}
 - [Idiomatic Rust Snippets][book~idiomatic-rust-snippets]↗.
 - [Rust for Professionals][rust-for-professionals~website]↗.
-- [Rust Cheatsheet (cheatsheets.one)][cheatsheets.one-rust~website]↗.
-- [Rust Cheatsheet (phaiax)][rust-cheatsheet~website]↗.
-- [Rust Cheatsheet (programming-idioms.org)][programming-idioms~cheatsheet]↗.
-- [Rust Cheatsheet (zerotomastery.io)][zerotomastery-rust-cheat-sheet~website]↗.
+- [Rust Cheatsheet][cheatsheets.one-rust~website]↗ (`cheatsheets.one`).
+- [Rust Cheatsheet][rust-cheatsheet~website]↗ (phaiax).
+- [Rust Cheatsheet][programming-idioms~cheatsheet]↗ (`programming-idioms.org`).
+- [Rust Cheatsheet][zerotomastery-rust-cheat-sheet~website]↗ (`zerotomastery.io`).
 - [Rust Speedsheet][speedsheet~website]↗.
 - [The Complete(ish) Rust Cheat Sheet][the-completesh-rust-cheat-sheet~website]↗.
 

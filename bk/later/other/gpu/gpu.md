@@ -19,26 +19,26 @@
 [gpu: write](https://github.com/john-cd/rust_howto/issues/607)
 Review [Reddit blog][blog~reddit~rust_gpu_the_future_of_gpu_programming]↗.
 
-Reference [rust-gpu~github][rust-gpu~github]↗.
+Reference [`rust-gpu`][rust-gpu~github]↗.
 
 Crates:
 
-- [rust-gpu (GitHub)][rust-gpu~github]↗.
-- [rust-gpu][rust-gpu~website]↗.
+- [`rust-gpu` (GitHub)][rust-gpu~github]↗.
+- [`rust-gpu`][rust-gpu~website]↗.
 - [Rust GPU Dev Guide][rust-gpu~book]↗.
 - [OpenCL for Rust][ocl-rust~github]↗.
-- [wgpu][c~wgpu~website]↗ [(GitHub)][c~wgpu~github]↗.
+- [`wgpu`][c~wgpu~website]↗ [(GitHub)][c~wgpu~github]↗.
   - [(Examples)][c~wgpu~examples]↗.
-- [ash][c~ash~docs]↗.
-- [rust-gpu~Rust-CUDA][rust-gpu~Rust-CUDA]↗ [(GitHub)][rust-gpu~Rust-CUDA~github]↗
-- [blog~rust-gpu][blog~rust-gpu].
+- [`ash`][c~ash~docs]↗.
+- [Rust-CUDA][rust-gpu~Rust-CUDA]↗ [(GitHub)][rust-gpu~Rust-CUDA~github]↗
+- [`rust-gpu` Blog][blog~rust-gpu].
 
 Examples to look into:
 
 <https://github.com/MWATelescope/mwa_hyperdrive/tree/main>
 <https://github.com/TheZoq2/locksort>
 
-[blog~rust-on-every-gpu][blog~rust-on-every-gpu].
+[Rust on every GPU][blog~rust-on-every-gpu].
 [blog~rust-on-every-gpu]: https://rust-gpu.github.io/blog/2025/07/25/rust-on-every-gpu/
 
 </div>

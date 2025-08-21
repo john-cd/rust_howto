@@ -85,7 +85,7 @@ FIXME.
 
 - [Rust CI Tooling][rust-ci-tooling~website]↗: Clippy, commitlint, pre-commit.
 - [`pre-commit-rust`][pre-commit-rust~github].
-- [A pre-commit hook for commitlint][commitlint-pre-commit-hook~github]↗.
+- [A pre-commit hook for `commitlint`][commitlint-pre-commit-hook~github]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

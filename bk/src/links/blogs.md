@@ -8,9 +8,10 @@
   - [Rust Zulip][forum~rust-lang.zulipchat]↗ chat.
   - [Rust Programming Language Users Forum][forum~users.rust-lang]↗.
   - [Rust Programming Language Internals Forum][forum~internals.rust-lang]↗.
-- [Reddit: `r/rust`][reddit~rust]↗.
-- [Reddit: `r/learnrust`][reddit~learnrust]↗.
-- [Mastodon: `#rustlang`][hachyderm~rustlang~website]↗.
+- Reddit:
+  - [`r/rust`][reddit~rust]↗.
+  - [`r/learnrust`][reddit~learnrust]↗.
+- Mastodon: [`#rustlang`][hachyderm~rustlang~website]↗.
 - [Stack Overflow][blog~stackoverflow~rust]↗.
 
 ## Rust Blogs and Newsletters {#blogs}

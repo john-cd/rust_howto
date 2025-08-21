@@ -81,7 +81,7 @@ fn into_iter(self) -> IntoIter     // `IntoIter` implements `Iterator<Item = U>`
 
 The above is adapted from:
 
-- [Rust API Guidelines: Naming][book~api-guidelines-naming]↗.
+- Rust API Guidelines: [Naming][book~api-guidelines-naming]↗.
 - [RFC430][finalizing-naming-conventions.md~github]↗.
 - [RFC199][ownership-variants~github]↗.
 

@@ -73,8 +73,8 @@ Note that so-called "Deref polymorphism", meaning implementing [`Deref`][c~std::
 ### References {#references}
 
 - [Rust's `AsRef` Explained][blog~rusts-asref-explained]↗.
-- [Rust Is Beyond Object-Oriented, Part 3: Inheritance][blog~thecodedmessage-posts-oop-3-inheritance]↗.
-- [How to implement inheritance-like feature for Rust?][forum~how-to-implement-inheritance-like-feature-for-rust]↗.
+- [Rust is Beyond Object-Oriented, Part 3: Inheritance][blog~thecodedmessage-posts-oop-3-inheritance]↗.
+- [How to Implement Inheritance-like Feature for Rust?][forum~how-to-implement-inheritance-like-feature-for-rust]↗.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

@@ -43,12 +43,12 @@ typst watch main.typ
 
 ## Useful Typst Packages
 
-- [typst~codly][typst~codly].
+- [`codly`][typst~codly].
 
 ## Useful Typst Templates
 
-- [typst~ilm][typst~ilm].
-- [typst~wonderous-book][typst~wonderous-book].
+- [`ilm`][typst~ilm].
+- [`wonderous-book`][typst~wonderous-book].
 
 Initialize with e.g.:
 
@@ -71,10 +71,10 @@ typst init @preview/ilm
 
 ## `mdBook` Backends that Convert Markdown to Typst
 
-- [mdbook-pandoc][mdbook-pandoc~crates.io].
-- [mdbook-typst][mdbook-typst~github].
-- [mdbook-typstpdf][mdbook-typstpdf~lib.rs].
-- [mdbook-typst-pdf][mdbook-typst-pdf~lib.rs].
+- [`mdbook-pandoc`][mdbook-pandoc~crates.io].
+- [`mdbook-typst`][mdbook-typst~github].
+- [`mdbook-typstpdf`][mdbook-typstpdf~lib.rs].
+- [`mdbook-typst-pdf`][mdbook-typst-pdf~lib.rs].
 
 ### `mdbook-typst`
 
@@ -129,12 +129,12 @@ entry_show_rules = [
 
 ## See Also
 
-- [asciidoc.org][asciidoc~website].
-- [Environment Variables - mdBook Documentation][book~mdbook~environment-variables].
+- [`asciidoc.org`][asciidoc~website].
+- [Environment Variables][book~mdbook~environment-variables] - mdBook Documentation.
 - [`mdbook-pdf`][c~mdbook-pdf~crates.io].
 - [`mdbook-tools`][c~mdbook-tools~lib.rs].
-- [pullup][pullup~lib.rs].
-- [quarkdown~github][quarkdown~github]
+- [`pullup`][pullup~lib.rs].
+- [`quarkdown`][quarkdown~github]
 
 [asciidoc~website]: https://asciidoc.org
 [blog~typst]: https://blog.jreyesr.com/posts/typst

@@ -18,7 +18,7 @@
 
 ## Data Structures {#skip}
 
-- [reactive_stores - data structures in Rust][c~reactive_stores~lib.rs].
+- [reactive_stores][c~reactive_stores~lib.rs] - data structures in Rust.
 - [reactive_graph][c~reactive_graph~lib.rs].
 
 [optics~crates.io][optics~crates.io].
@@ -68,7 +68,7 @@ review [6-rust-programming-mistakes-to-watch-out-for]: https://www.infoworld.com
 
 ## Layouts {#skip}
 
-- [Other reprs - The Rustonomicon][book~nomicon~other-reprs].
+- [Other reprs][book~nomicon~other-reprs] - The Rustonomicon.
 
 ## List of Crates Available in the Rust Playground {#skip}
 
@@ -106,8 +106,8 @@ cover [Hands-On-Microservices-with-Rust]: https://github.com/PacktPublishing/Han
 
 ## Zed {#skip}
 
-- [zed hanging on startup because of 'unsupportedversion' Issue #14126 zed-industries/zed][zed-issue-14126-comment~github].
-- [zed hanging on startup because of 'unsupportedversion' Issue #14126 zed-industries/zed][zed-issue-14126~github].
+- [zed hanging on startup because of 'unsupportedversion' Issue #14126][zed-issue-14126-comment~github].
+- [zed hanging on startup because of 'unsupportedversion' Issue #14126][zed-issue-14126~github].
 
 ## Satire {#skip}
 
