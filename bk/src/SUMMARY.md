@@ -75,6 +75,14 @@
   - [Stack-allocated Arrays](categories/data-structures/stack_allocated_arrays.md)
   - [UUIDs](categories/data-structures/uuid.md)
 
+- [File System](categories/filesystem/index.md)
+  - [File Reading & Writing](categories/filesystem/read-write.md)
+  - [Directories](categories/filesystem/directories.md)
+  - [Directory Traversal](categories/filesystem/directory_traversal.md)
+  - [File Watching](categories/filesystem/file_watching.md)
+  - [Temporary Files and Directories](categories/filesystem/tempfile.md)
+  - [User Directories](categories/filesystem/user_directories.md)
+
 - [Mathematics](categories/mathematics/index.md)
   - [Linear Algebra](categories/mathematics/linear_algebra.md)
   - [Trigonometry](categories/mathematics/trigonometry.md)
@@ -85,7 +93,7 @@
 # Resources
 
 - [Crate Selection](crate_selection/index.md)
-  - [State of the Rust Ecosystem]([crate_selection/state_of_the_art.md)
+  - [State of the Rust Ecosystem](crate_selection/state_of_the_art.md)
 
 - [Links](links/index.md)
   - [Rust Cheat Sheets](links/rust_cheatsheets.md)
@@ -111,10 +119,10 @@
 
 # Appendices
 
-[Index of Examples](appendices/examples_index.md)
-[Word Index](appendices/word_index.md)
-[Crates (Alphabetic)](appendices/crates_alphabetical.md)
-[Crates (by Category)](appendices/crates_by_category.md)
+- [Index of Examples](appendices/examples_index.md)
+- [Word Index](appendices/word_index.md)
+- [Crates (Alphabetic)](appendices/crates_alphabetical.md)
+- [Crates (by Category)](appendices/crates_by_category.md)
 
 ---
 

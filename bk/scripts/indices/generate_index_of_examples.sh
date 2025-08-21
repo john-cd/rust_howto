@@ -57,14 +57,14 @@ do
         if [[ $title != "Index" ]]; then
           echo -e "### ${title}\n" >> "${index_file}"
         fi
-        echo -e "{{#include ${incl}}}\n" >> "${index_file}"
+        echo -e "{{#include ../${incl}}}\n" >> "${index_file}"
     done
 done
 
 # Print the footer
 cat >> "${index_file}" << 'EOF'
 {{#include refs.incl.md}}
-{{#include refs/link-refs.md}}
+{{#include ../refs/link-refs.md}}
 
 EOF
 

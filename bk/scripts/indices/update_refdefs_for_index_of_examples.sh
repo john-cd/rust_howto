@@ -12,23 +12,23 @@ IFS=$'\n\t'
 root="$(realpath $1)/"
 
 # Remove all references to examples
-sed -i'.bak' -E '/^\[ex~.+?\]:.*$/d' ${root}src/refs.incl.md
+sed -i'.bak' -E '/^\[ex~.+?\]:.*$/d' ${root}src/appendices/refs.incl.md
 
 # Look into every refs.incl.md (in the subfolders)
-for file in $(find ${root}src -type f -name "refs.incl.md" -not -path "${root}src/refs.incl.md")
+for file in $(find ${root}src -type f -name "refs.incl.md" -not -path "${root}src/appendices/refs.incl.md")
 do
     echo "Processing ${file}"
-    # Get the relative path from src to the directory of the current file
+    # Get the relative path from `src` to the directory of the current file
     rel=$(realpath --relative-to="${root}src" $file | sed 's/refs.incl.md//');
     # Insert the path in each reference definition
-    refs=$(sed -nE 's=(^\[ex~.+?\]:)\s?([^#]+?)(#.+)?$=\1 '${rel}'\2\3=p' $file)
-    # Add the references to src/refs.incl.md
-    echo "${refs}" >> ${root}src/refs.incl.md
+    refs=$(sed -nE 's=(^\[ex~.+?\]:)\s?([^#]+?)(#.+)?$=\1 ../'${rel}'\2\3=p' $file)
+    # Add the references to src/appendices/refs.incl.md
+    echo "${refs}" >> ${root}src/appendices/refs.incl.md
 done
 
 # Sort and dedupe
-sort -u -o ${root}src/refs.incl.md ${root}src/refs.incl.md
+sort -u -o ${root}src/appendices/refs.incl.md ${root}src/appendices/refs.incl.md
 # Delete empty lines
-sed -i -E '/^\s*$/d' ${root}src/refs.incl.md
+sed -i -E '/^\s*$/d' ${root}src/appendices/refs.incl.md
 
 echo "DONE"

@@ -7908,6 +7908,14 @@
 [c~television~github~badge]: https://img.shields.io/badge/television-steelblue?logo=github
 [c~television~lib.rs]: https://lib.rs/crates/television
 [c~television~lib.rs~badge]: https://img.shields.io/badge/lib.rs-television-yellow
+[c~tempdir~crates.io]: https://crates.io/crates/tempdir
+[c~tempdir~crates.io~badge]: https://img.shields.io/badge/crates.io-tempdir-crimson
+[c~tempdir~docs]: https://doc.rust-lang.org/tempdir
+[c~tempdir~docs~badge]: https://img.shields.io/crates/v/tempdir?label=tempdir
+[c~tempdir~github]: https://github.com/rust-lang/tempdir
+[c~tempdir~github~badge]: https://img.shields.io/badge/tempdir-steelblue?logo=github
+[c~tempdir~lib.rs]: https://lib.rs/crates/tempdir
+[c~tempdir~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tempdir-yellow
 [c~tempfile::Builder::tempdir~docs]: https://docs.rs/tempfile/latest/tempfile/struct.Builder.html#method.tempdir
 [c~tempfile::Builder~docs]: https://docs.rs/tempfile/latest/tempfile/struct.Builder.html
 [c~tempfile~crates.io]: https://crates.io/crates/tempfile

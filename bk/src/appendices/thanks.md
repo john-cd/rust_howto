@@ -9,7 +9,7 @@ It incorporates most of the [Rust Cookbook][book~rust-cookbook]↗{{hi:Rust cook
 Please review the [LICENSE][rust-howto~license~github]↗ file.
 
 {{#include refs.incl.md}}
-{{#include refs/link-refs.md}}
+{{#include ../refs/link-refs.md}}
 
 <div class="hidden">
 </div>
