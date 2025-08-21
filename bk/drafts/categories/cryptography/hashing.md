@@ -76,8 +76,11 @@ SHA-2 (Secure Hash Algorithm 2) is a family of cryptographic hash functions desi
 <div class="hidden">
 [hashing: improve](https://github.com/john-cd/rust_howto/issues/273) review [blessed.rs][blessed-rs~website]↗
 
-[foldhash][foldhash~github].
-[foldhash~github]: https://github.com/orlp/foldhash
+[![foldhash][c~foldhash~docs~badge]][c~foldhash~docs] [![foldhash~crates.io][c~foldhash~crates.io~badge]][c~foldhash~crates.io] [![foldhash~github][c~foldhash~github~badge]][c~foldhash~github] [![foldhash~lib.rs][c~foldhash~lib.rs~badge]][c~foldhash~lib.rs]{{hi:foldhash}}{{hi:Hash}}{{hi:Hasher}}{{hi:No-std}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
+
+A fast, non-cryptographic, minimally DoS-resistant hashing algorithm.
+
+---
 
 distinguish between general-purpose and crypto hashing.
 

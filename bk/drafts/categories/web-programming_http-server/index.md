@@ -95,15 +95,10 @@ Middleware is a powerful way to add functionality to your web server.
 - [Cot][cot.rs~website]↗.
 - [Salvo][salvo~website]↗.
 - [Gerust][gerust~website]↗: Rust backend project generator.
-
-[rust-web-framework-comparison~github][rust-web-framework-comparison~github]
-[rust-web-framework-comparison~github]: https://github.com/flosse/rust-web-framework-comparison
-
-[book~async-book][book~async-book]
-[book~async-book]: https://rust-lang.github.io/async-book
-
-[tokio~website]: https://tokio.rs
-[tokio~examples~github]: https://github.com/tokio-rs/tokio/tree/master/examples
+- [Rust Web Framework Comparison][rust-web-framework-comparison~github]↗.
+- [Asynchronous Programming in Rust][book~asynchronous-programming-in-rust]↗.
+- [Tokio][c~tokio~website]↗.
+- [Tokio Examples][c~tokio~examples~docs]↗.
 
 https://github.com/snamiki1212/realworld-v1-rust-actix-web-diesel
 https://gill.net.in/posts/auth-microservice-rust-actix-web1.0-diesel-complete-tutorial/

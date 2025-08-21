@@ -58,12 +58,27 @@ Log images, point clouds, etc, and visualize them effortlessly.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[data_engineering: organize / edit; [`ballista`][c~ballista~docs]↗{{hi:ballista}}; [`spice.ai`][spice.ai~website]](https://github.com/john-cd/rust_howto/issues/589)
+[data_engineering: organize / edit](https://github.com/john-cd/rust_howto/issues/589)
 
-[jsonschema~crates.io]: https://crates.io/crates/jsonschema
-[jsonpath~crates.io]: https://crates.io/crates/jsonpath-rust
-[datawithrust~website]: https://datawithrust.com
-[plotters~docs]: https://docs.rs/plotters
-[polars~website]: https://docs.pola.rs
-[ndarray~github]: https://github.com/rust-ndarray/ndarray
+[![jsonschema][c~jsonschema~docs~badge]][c~jsonschema~docs] [![jsonschema~crates.io][c~jsonschema~crates.io~badge]][c~jsonschema~crates.io] [![jsonschema~github][c~jsonschema~github~badge]][c~jsonschema~github] [![jsonschema~lib.rs][c~jsonschema~lib.rs~badge]][c~jsonschema~lib.rs]{{hi:jsonschema}}{{hi:Validation}}{{hi:jsonschema}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
+
+[![jsonpath][c~jsonpath~docs~badge]][c~jsonpath~docs] [![jsonpath~crates.io][c~jsonpath~crates.io~badge]][c~jsonpath~crates.io] [![jsonpath~github][c~jsonpath~github~badge]][c~jsonpath~github] [![jsonpath~lib.rs][c~jsonpath~lib.rs~badge]][c~jsonpath~lib.rs]{{hi:jsonpath}}{{hi:Json}}{{hi:Query}}{{hi:Xpath}}{{hi:Javascript}}{{hi:jsonpath}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
+
+JSONPath for Rust
+
+---
+
+[![jsonpath-rust][c~jsonpath-rust~docs~badge]][c~jsonpath-rust~docs] [![jsonpath-rust~crates.io][c~jsonpath-rust~crates.io~badge]][c~jsonpath-rust~crates.io] [![jsonpath-rust~github][c~jsonpath-rust~github~badge]][c~jsonpath-rust~github] [![jsonpath-rust~lib.rs][c~jsonpath-rust~lib.rs~badge]][c~jsonpath-rust~lib.rs]{{hi:jsonpath-rust}}{{hi:Json}}{{hi:Xpath}}{{hi:Jsonpath}}{{hi:Json-path}}{{hi:jsonpath-rust}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+
+The library provides the basic functionality to find the set of the data according to the filtering query.
+
+---
+
+- [`ballista`][c~ballista~docs]↗.{{hi:ballista}}
+- [`spice.ai`][spice.ai~website]↗.{{hi:spice.ai}}
+- [`datawithrust.com`][datawithrust~website]↗.
+- [`plotters`][c~plotters~docs]↗.
+- [`polars` additional docs][c~polars~more-docs~website]↗.
+- [`ndarray`][c~ndarray~github]↗.
+
 </div>

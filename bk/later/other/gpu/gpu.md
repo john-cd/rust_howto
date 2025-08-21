@@ -30,7 +30,7 @@ Crates:
 - [`wgpu`][c~wgpu~website]↗ [(GitHub)][c~wgpu~github]↗.
   - [(Examples)][c~wgpu~examples]↗.
 - [`ash`][c~ash~docs]↗.
-- [Rust-CUDA][rust-gpu~Rust-CUDA]↗ [(GitHub)][rust-gpu~Rust-CUDA~github]↗
+- [Rust-CUDA][rust-gpu~Rust-CUDA]↗ [(GitHub)][rust-gpu~Rust-CUDA~github]↗.
 - [`rust-gpu` Blog][blog~rust-gpu].
 
 Examples to look into:
@@ -38,7 +38,6 @@ Examples to look into:
 <https://github.com/MWATelescope/mwa_hyperdrive/tree/main>
 <https://github.com/TheZoq2/locksort>
 
-[Rust on every GPU][blog~rust-on-every-gpu].
-[blog~rust-on-every-gpu]: https://rust-gpu.github.io/blog/2025/07/25/rust-on-every-gpu/
+- [Rust on every GPU][blog~rust-on-every-gpu]↗.
 
 </div>

@@ -25,11 +25,9 @@
 <div class="hidden">
 [axum: write](https://github.com/john-cd/rust_howto/issues/507)
 
-[Rust Axum clean demo][clean_axum_demo] is a one-stop, production-ready API template.
+[Rust Axum clean demo][clean_axum_demo~github]↗ is a one-stop, production-ready API template.
 
-[clean_axum_demo]: https://github.com/sukjaelee/clean_axum_demo
-
-**Rust Axum Clean Demo** is a GitHub template that brings together almost all the best practices and features you need for building a production-ready API server with [Axum][c~axum~github] and [SQLx][c~sqlx~github].
+**Rust Axum Clean Demo** is a GitHub template that brings together almost all the best practices and features you need for building a production-ready API server with [Axum][c~axum~github]↗ and [SQLx][c~sqlx~github]↗.
 
 While Axum's official examples do a fantastic job of demonstrating individual features (routing, extractors, middleware, etc.), I found it really helpful to have everything wired up in **one** cohesive structure:
 
@@ -42,16 +40,16 @@ While Axum's official examples do a fantastic job of demonstrating individual fe
 - **Database seeding** scripts to spin up your schema & seed data,
 - **Unit & integration tests** out of the box,
 
-[implement-OpenTelemetry-for-Axum]: https://github.com/seferino-fernandez/ocr_service/blob/main/src/utils/telemetry.rs
+- Example on how to [implement OpenTelemetry for Axum][implement-OpenTelemetry-for-Axum~github]↗.
+- Database migrations: review [axum-rest-api-sample][axum-rest-api-sample~github]↗.
 
-db migrations: https://github.com/sheroz/axum-rest-api-sample
+Other Axum template:
 
-Other Axum template [keterrest]: https://github.com/anhvdq/keterrest
+- [keterrest][keterrest~github]↗.
 
 Other Generators:
 
-[protypo~github]: https://github.com/dinosath/protypo
-
-https://gerust.rs
+- [protypo~github]↗.
+- [gerust~website]↗.
 
 </div>

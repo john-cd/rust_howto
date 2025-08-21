@@ -60,13 +60,8 @@ It integrates with your shell and lets you quickly [search][p~search] through an
 
 ## Jujutsu {#jujutsu}
 
-[jujutsu-tutorial~website][jujutsu-tutorial~website].
-[jujutsu-tutorial~website]: https://steveklabnik.github.io/jujutsu-tutorial/hello-world/creating-new-changes.html
-
-[jj-workshop~github][jj-workshop~github].
-[jj-workshop~github]: https://github.com/jkoppel/jj-workshop
-
-[gg][gg].
-[gg]: https://github.com/gulbanana/gg
+- [jujutsu-tutorial~website][jujutsu-tutorial~website]↗.
+- [`jj` workshop][jj-workshop~github]↗.
+- [`gg` (Github)][gg~github]↗.
 
 </div>

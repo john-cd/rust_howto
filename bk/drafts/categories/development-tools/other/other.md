@@ -36,10 +36,15 @@ cargo build --release
 [other: expand; revise refs.incl.md](https://github.com/john-cd/rust_howto/issues/305)
 
 - [Gerust][gerust~website]↗: Rust backend project generator.
+- [`loco`][c~loco-rs~website]↗.
 
-[loco~website]: https://loco.rs
+---
 
-[kickstart~github]: https://github.com/Keats/kickstart
+[![kickstart][c~kickstart~docs~badge]][c~kickstart~docs] [![kickstart~crates.io][c~kickstart~crates.io~badge]][c~kickstart~crates.io] [![kickstart~lib.rs][c~kickstart~lib.rs~badge]][c~kickstart~lib.rs]{{hi:kickstart}}{{hi:Templating}}{{hi:Generator}}{{hi:Boilerplate}}{{hi:Tera}}{{hi:Scaffolding}}
+
+A simple way to get started with a project by scaffolding from a template powered by the Tera engine.
+
+---
 
 [protypo~github]: https://github.com/dinosath/protypo
 

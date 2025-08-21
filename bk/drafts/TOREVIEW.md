@@ -14,57 +14,72 @@
 
 ## Dataflow Graphs {#skip}
 
-- [`fractalide`][fractalide~github]: Reusable Reproducible Composable Software.
+- [`fractalide`][fractalide~github]↗: Reusable Reproducible Composable Software.
 
 ## Data Structures {#skip}
 
-- [reactive_stores][c~reactive_stores~lib.rs] - data structures in Rust.
-- [reactive_graph][c~reactive_graph~lib.rs].
+- [reactive_stores][c~reactive_stores~lib.rs]↗ - data structures in Rust.
+- [reactive_graph][c~reactive_graph~lib.rs]↗.
 
-[optics~crates.io][optics~crates.io].
-[optics~crates.io]: https://crates.io/crates/optics
+---
+
+[![optics][c~optics~docs~badge]][c~optics~docs] [![optics~crates.io][c~optics~crates.io~badge]][c~optics~crates.io] [![optics~github][c~optics~github~badge]][c~optics~github] [![optics~lib.rs][c~optics~lib.rs~badge]][c~optics~lib.rs]{{hi:optics}}{{hi:No_std}}{{hi:Iso}}{{hi:Lens}}{{hi:Prism}}{{hi:optics}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
+
+A `no_std`-compatible optics library providing composable lenses, prisms, isomorphisms, and fallible isomorphisms.
 
 ## Distributed Systems {#skip}
 
-[talent-plan][talent-plan]: open source training courses about distributed database and distributed systems.
-[talent-plan]: https://github.com/pingcap/talent-plan/tree/master
+[Open-source training courses about distributed database and distributed systems][talent-plan~github]↗.
 
 ## Enterprise Backend {#skip}
 
 ### Foundations {#skip}
 
-[foundations~github]: https://github.com/cloudflare/foundations
-https://blog.cloudflare.com/introducing-foundations-our-open-source-rust-service-foundation-library/
-https://cprimozic.net/blog/trying-out-cloudflare-foundations-library/?utm_source=tldrnewsletter
+[![foundations][c~foundations~docs~badge]][c~foundations~docs] [![foundations~crates.io][c~foundations~crates.io~badge]][c~foundations~crates.io] [![foundations~github][c~foundations~github~badge]][c~foundations~github] [![foundations~lib.rs][c~foundations~lib.rs~badge]][c~foundations~lib.rs]{{hi:foundations}}{{hi:Settings}}{{hi:Service}}{{hi:Metrics}}{{hi:Telemetry}}{{hi:Seccomp}} [![cat~external-ffi-bindings][cat~external-ffi-bindings~badge]][cat~external-ffi-bindings]{{hi:External FFI bindings}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~config][cat~config~badge]][cat~config]{{hi:Configuration}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
+
+A Rust service foundations library.
+
+- [Introducing Foundations - our open source Rust service foundation library][c~foundations~blog]↗.
+- [Trying Out Cloudflare's `foundations` Library for Rust][blog~trying-out-cloudflare-foundations-library]↗.
 
 ### Graceful Upgrades {#skip}
 
-[bye~github]: https://github.com/dgagn/bye A system for graceful upgrades: it's a fork+exec mechanism with a Linux pipe for passing data between the original process and the "upgraded" process. It's designed to work well with `systemd` for zero-downtime upgrades. In production I use it alongside systemd's socket activation, but it should be tweakable to work with alternatives. It mostly follows systemd conventions so you can drop it into a typical service setup without too much fuss.
+[![bye][c~bye~docs~badge]][c~bye~docs] [![bye~crates.io][c~bye~crates.io~badge]][c~bye~crates.io] [![bye~github][c~bye~github~badge]][c~bye~github] [![bye~lib.rs][c~bye~lib.rs~badge]][c~bye~lib.rs]{{hi:bye}}
+
+A library for graceful shutdown with no downtime.
+
+A system for graceful upgrades: it's a fork+exec mechanism with a Linux pipe for passing data between the original process and the "upgraded" process. It's designed to work well with `systemd` for zero-downtime upgrades. In production I use it alongside systemd's socket activation, but it should be tweakable to work with alternatives. It mostly follows systemd conventions so you can drop it into a typical service setup without too much fuss.
 If you're doing long-lived services in Rust and want painless, no-downtime upgrades, I'd love for you to give it a try (or tear it apart, your choice
 
 ## Example Code {#skip}
 
-- [`rust-shed`][rust-shed~github]: Repository containing Rust crates common between other Facebook open source projects (like Mononoke or Eden).
+- [`rust-shed`][rust-shed~github]↗: Repository containing Rust crates common between other Facebook open source projects (like Mononoke or Eden).
 
 ## Futures {#skip}
 
-[`want`][c~want~docs].
-[c~want~docs]: https://docs.rs/want
+[![want][c~want~docs~badge]][c~want~docs] [![want~crates.io][c~want~crates.io~badge]][c~want~crates.io] [![want~github][c~want~github~badge]][c~want~github] [![want~lib.rs][c~want~lib.rs~badge]][c~want~lib.rs]{{hi:want}}{{hi:Channel}}{{hi:Async}}{{hi:Futures}}
+
+Detect when another Future wants a result.
 
 ## Infra / Dev {#skip}
 
 - [Sonatype supports secure development in Rust][blog~sonatype-supports-secure-development-in-rust]↗.
+- [Why You Need sccache][blog~why_you_need_sccache]↗.
 
-[blog~why_you_need_sccache][blog~why_you_need_sccache].
-[blog~why_you_need_sccache]: https://elijahpotter.dev/articles/why_you_need_sccache
+---
 
-[samoyed~github]: https://github.com/nutthead/samoyed
+[![samoyed][c~samoyed~docs~badge]][c~samoyed~docs] [![samoyed~crates.io][c~samoyed~crates.io~badge]][c~samoyed~crates.io] [![samoyed~github][c~samoyed~github~badge]][c~samoyed~github] [![samoyed~lib.rs][c~samoyed~lib.rs~badge]][c~samoyed~lib.rs]{{hi:samoyed}}{{hi:Git}}{{hi:Git-hooks}}{{hi:Husky}}{{hi:Git-hooks-manager}}
 
-[blog~every-infrastructure-decision-i-endorse-or-regret-after-4-years-running-infrastructure-at-a-startup]: https://cep.dev/posts/every-infrastructure-decision-i-endorse-or-regret-after-4-years-running-infrastructure-at-a-startup/
+A single-binary Git hooks manager.
+
+---
+
+- [Every infrastructure decision I endorse or regret after 4 years running infrastructure at a startup][blog~every-infrastructure-decision-i-endorse-or-regret-after-4-years-running-infrastructure-at-a-startup]↗.
 
 ## Language Features {#skip}
 
-review [6-rust-programming-mistakes-to-watch-out-for]: https://www.infoworld.com/article/2337218/6-rust-programming-mistakes-to-watch-out-for.html
+review
+[6 Rust programming mistakes to watch out for][blog~6-rust-programming-mistakes-to-watch-out-for]↗.
 
 ## Layouts {#skip}
 
@@ -72,21 +87,25 @@ review [6-rust-programming-mistakes-to-watch-out-for]: https://www.infoworld.com
 
 ## List of Crates Available in the Rust Playground {#skip}
 
-- [rust-lang/rust-playground][rust-playground-cargo.toml~github].
+- [rust-lang/rust-playground][rust-playground-cargo.toml~github]↗.
 
 ## Reviews / Evolution of Rust {#skip}
 
 - [A Review of Rust in 2024][blog~rust-review-2024]↗: What Next?.
 
-- [Why Rust is Becoming a Contender in AI Development][blog~why-rust-is-becoming-a-contender-in-ai-development].
+- [Why Rust is Becoming a Contender in AI Development][blog~why-rust-is-becoming-a-contender-in-ai-development]↗.
 
 - [Rust in 2025][blog~lang-interop-extensibility]↗: Language interop and the extensible compiler.
 
 ## Semver Checks {#skip}
 
-https://github.com/obi1kenobi/cargo-semver-checks
+[![cargo-semver-checks][c~cargo-semver-checks~docs~badge]][c~cargo-semver-checks~docs] [![cargo-semver-checks~crates.io][c~cargo-semver-checks~crates.io~badge]][c~cargo-semver-checks~crates.io] [![cargo-semver-checks~github][c~cargo-semver-checks~github~badge]][c~cargo-semver-checks~github] [![cargo-semver-checks~lib.rs][c~cargo-semver-checks~lib.rs~badge]][c~cargo-semver-checks~lib.rs]{{hi:cargo-semver-checks}}{{hi:Cargo}}{{hi:Crate}}{{hi:Linter}}{{hi:Check}}{{hi:Semver}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-https://glitchlesscode.ca/posts/2025-05-30a/
+Scan your Rust crate for semver violations.
+
+---
+
+- [Making SemVer Breakage Obvious – GSoC 2025][blog~making-semver-breakage-obvious]↗.
 
 ## Unstable Features {#skip}
 
@@ -99,18 +118,19 @@ https://glitchlesscode.ca/posts/2025-05-30a/
 
 ## Web {#skip}
 
-- [`geckodriver`][geckodriver~github]: WebDriver for Firefox.
-- [Pake][pake~github]: Turn any webpage into a desktop app with Rust.
+- [`geckodriver`][geckodriver~github]↗: WebDriver for Firefox.
+- [Pake][pake~github]↗: Turn any webpage into a desktop app with Rust.
 
-cover [Hands-On-Microservices-with-Rust]: https://github.com/PacktPublishing/Hands-On-Microservices-with-Rust/blob/master/Chapter08/chat/src/lib.rs
+cover [Hands-On Microservices with Rust 2018 (GitHub)][book~Hands-On-Microservices-with-Rust~github]↗.
+review in particular https://github.com/PacktPublishing/Hands-On-Microservices-with-Rust/blob/master/Chapter08/chat/src/lib.rs
 
 ## Zed {#skip}
 
-- [zed hanging on startup because of 'unsupportedversion' Issue #14126][zed-issue-14126-comment~github].
-- [zed hanging on startup because of 'unsupportedversion' Issue #14126][zed-issue-14126~github].
+- [zed hanging on startup because of 'unsupportedversion' Issue #14126][zed-issue-14126-comment~github]↗.
+- [zed hanging on startup because of 'unsupportedversion' Issue #14126][zed-issue-14126~github]↗.
 
 ## Satire {#skip}
 
-- [hello-world.rs][hello-world.rs~github]: Memory safe, blazing fast, configurable, minimal hello world written in Rust, in a few lines of code with few(1092) dependencies.
+- [hello-world.rs][hello-world.rs~github]↗: Memory safe, blazing fast, configurable, minimal hello world written in Rust, in a few lines of code with few(1092) dependencies.
 
 ## To Sort {#skip}

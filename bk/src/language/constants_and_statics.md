@@ -54,6 +54,6 @@ Statics can be mutable (`static mut`): Unlike `const`, static variables can be d
 
 <div class="hidden">
 
-[const-fn]: https://felixwrt.dev/posts/const-fn
+[When are Rust's `const fn`s executed?][blog~const-fn]↗.
 
 </div>

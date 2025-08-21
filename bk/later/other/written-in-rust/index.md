@@ -145,8 +145,8 @@ This section provides a few examples of software written in Rust, organized by t
 <div class="hidden">
 [organize; decide if we need other pages or if we consolidate here; table?](https://github.com/john-cd/rust_howto/issues/993)
 
-- [awesome-rust-tools][awesome-rust-tools~github]↗: Harness the power of Rust. Those fast productivity tools based on Rust.
-- [awesome-alternatives-in-rust][awesome-alternatives-in-rust~github]↗: A curated list of replacements for existing software written in Rust.
+- [Awesome Rust Tools][awesome-rust-tools~github]↗: Harness the power of Rust. Those fast productivity tools based on Rust.
+- [Awesome alternatives in Rust][awesome-alternatives-in-rust~github]↗: A curated list of replacements for existing software written in Rust.
 
 - [RustDesk][rustdesk~website]↗.
 - [OxidOS Automotive][oxidos~website]↗.
@@ -184,28 +184,31 @@ This section provides a few examples of software written in Rust, organized by t
 - [Perseus][perseus~website]↗.
 - [DORA][dora~github]↗ (Dataflow-Oriented Robotic Architecture) is middleware designed to streamline and simplify the creation of AI-based robotic applications. It offers low latency, composable, and distributed dataflow capabilities. Applications are modeled as directed graphs, also referred to as pipelines.
 - [`television`][c~television~crates.io]↗.
-
-- [Fish 4.0][blog~fishshell-rustport]↗: The Fish Of Theseus.
-
+- [Blog: Fish 4.0][blog~fishshell-rustport]↗: The Fish Of Theseus.
 - [`shoes`][c~shoes~github]↗: A multi-protocol proxy server written in Rust (HTTP, SOCKS5, Vmess, Vless, Shadowsocks, Trojan, Snell, Hysteria2, TUIC v5).
-
 - [`jujutsu` (docs)][doc~jujutsu]↗.
 - [Steve's Jujutsu Tutorial][blog~steveklabnik-jujutsu-tutorial]↗.
-
 - [Codename Goose][doc~block-goose]↗.
 - [`grex`][c~grex~github]↗: A command-line tool and Rust library with Python bindings for generating regular expressions from user-provided test cases.
 - [`youki`][youki~github]↗: A container runtime written in Rust.
+- [`yazi`][yazi~github]↗: Blazing fast terminal file manager written in Rust, based on async I/O.
 
-[`yazi`][yazi~github]: Blazing fast terminal file manager written in Rust, based on async I/O.
-[yazi~github]: https://github.com/sxyazi/yazi
+---
 
-[`evcxr_jupyter`][evcxr_jupyter~github]:  A Rust REPL / Jupyter kernel.
-[evcxr_jupyter~github]: https://github.com/evcxr/evcxr/blob/main/evcxr_jupyter/README.md
+[![evcxr_jupyter][c~evcxr_jupyter~docs~badge]][c~evcxr_jupyter~docs] [![evcxr_jupyter~crates.io][c~evcxr_jupyter~crates.io~badge]][c~evcxr_jupyter~crates.io] [![evcxr_jupyter~github][c~evcxr_jupyter~github~badge]][c~evcxr_jupyter~github] [![evcxr_jupyter~lib.rs][c~evcxr_jupyter~lib.rs~badge]][c~evcxr_jupyter~lib.rs]{{hi:evcxr_jupyter}}
 
-[`hyperswitch`][hyperswitch~github].
-[hyperswitch~github]: https://github.com/juspay/hyperswitch/tree/main
+A Jupyter Kernel for Rust
 
-[`kget`][kget~github].
-[kget~github]: https://github.com/davimf721/KGet
+---
+
+- [`evcxr_jupyter` README][c~evcxr_jupyter~readme~github]↗: A Rust REPL / Jupyter kernel.
+
+- [`hyperswitch`][hyperswitch~github]↗.
+
+---
+
+[![kget][c~kget~docs~badge]][c~kget~docs] [![kget~crates.io][c~kget~crates.io~badge]][c~kget~crates.io] [![kget~github][c~kget~github~badge]][c~kget~github] [![kget~lib.rs][c~kget~lib.rs~badge]][c~kget~lib.rs]{{hi:kget}}{{hi:Http}}{{hi:Torrent}}{{hi:Ftp}}{{hi:Download}}{{hi:Sftp}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}}
+
+A powerful and versatile download manager and library.
 
 </div>

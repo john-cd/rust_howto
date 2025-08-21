@@ -92,10 +92,12 @@ If your scripting language compiles to an executable, use the [`object`][c~objec
 
 [Pre-RFC: `cargo-script` for everyone][forum~pre-rfc-cargo-script-for-everyone]↗.
 
-[blog~roto][blog~roto].
-[blog~roto]: https://blog.nlnetlabs.nl/introducing-roto-a-compiled-scripting-language-for-rust/
+---
 
-[roto~github][roto~github].
-[roto~github]: https://github.com/NLnetLabs/roto/tree/main
+[![roto~website][c~roto~website~badge]][c~roto~website] [![roto][c~roto~docs~badge]][c~roto~docs] [![roto~crates.io][c~roto~crates.io~badge]][c~roto~crates.io] [![roto~github][c~roto~github~badge]][c~roto~github] [![roto~lib.rs][c~roto~lib.rs~badge]][c~roto~lib.rs]{{hi:roto}}{{hi:Routing}}{{hi:Bgp}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
+
+strongly-typed, compiled language for Rotonda
+
+[`roto` Blog][blog~roto]↗.
 
 </div>

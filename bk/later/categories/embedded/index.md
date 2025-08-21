@@ -77,7 +77,7 @@ Microcontrollers respond to events via interrupts.
 - [awesome-embedded-rust][awesome-embedded-rust~github]↗: Curated list of resources for Embedded and Low-level development in the Rust programming language,
 - [Are We RTOS Yet?][arewertosyet~website]↗.
 
-## Libs
+## Libs {#skip}
 
 - [embassy][embassy~github]↗: Modern embedded framework, using Rust and async.
 - [rust-iot-platform][rust-iot-platform~github]↗: A high-performance IoT development platform built with Rust, designed for multi-protocol support and real-time data processing. This platform supports MQTT, WebSockets (WS), TCP, and CoAP protocols, making it highly flexible for diverse IoT applications.
@@ -92,13 +92,8 @@ Microcontrollers respond to events via interrupts.
 
 ## Embedded {#skip}
 
-cover [5-rust-runtimes-every-embedded-developer-needs-to-know][5-rust-runtimes-every-embedded-developer-needs-to-know].
-[5-rust-runtimes-every-embedded-developer-needs-to-know]: https://www.designnews.com/embedded-systems5-rust-runtimes-every-embedded-developer-needs-to-know
-
-[drone-os~website][drone-os~website]
-[drone-os~website]: https://www.drone-os.com
-
-[blog~rust-procedural-macros-replace-panic][blog~rust-procedural-macros-replace-panic]
-[blog~rust-procedural-macros-replace-panic]: https://www.infoq.com/articles/rust-procedural-macros-replace-panic
+- [5 Rust Runtimes Every Embedded Developer Needs to Know][blog~5-rust-runtimes-every-embedded-developer-needs-to-know]↗.
+- [`drone-os.com`][drone-os~website]↗.
+- [How to Use Rust Procedural Macros to Replace Panic with syn’s Fold][blog~rust-procedural-macros-replace-panic]↗.
 
 </div>

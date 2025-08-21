@@ -75,7 +75,8 @@ If you are not familiar with Cornucopia, it is kinda like SQLc for Go - you writ
 
 Fork:
 
-[clorinde~github][clorinde~github].
-[clorinde~github]: https://github.com/halcyonnouveau/clorinde
+[![clorinde][c~clorinde~docs~badge]][c~clorinde~docs] [![clorinde~crates.io][c~clorinde~crates.io~badge]][c~clorinde~crates.io] [![clorinde~github][c~clorinde~github~badge]][c~clorinde~github] [![clorinde~lib.rs][c~clorinde~lib.rs~badge]][c~clorinde~lib.rs]{{hi:clorinde}}{{hi:Sql}}{{hi:Generator}}{{hi:Postgresql}}{{hi:Query}}{{hi:Tokio-postgres}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
+
+Generate type-checked Rust from your PostgreSQL queries.
 
 </div>

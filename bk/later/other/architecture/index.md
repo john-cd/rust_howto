@@ -32,8 +32,8 @@ PLUGINS.
 
 - [INVENTORY][c~inventory~lib.rs]↗.
 
-[tangleguard~website][tangleguard~website].
+---
 
-[tangleguard~website]: https://docs.tangleguard.com
+- [tangleguard~website][tangleguard~website]↗. (poor quality?)
 
 </div>

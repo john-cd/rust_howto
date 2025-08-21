@@ -169,7 +169,9 @@
 [block~website]: https://block.xyz
 [blog.meilisearch~website]: https://blog.meilisearch.com
 [blog~24daysofrust]: https://zsiciarz.github.io/24daysofrust
+[blog~5-rust-runtimes-every-embedded-developer-needs-to-know]: https://www.designnews.com/embedded-systems/5-rust-runtimes-every-embedded-developer-needs-to-know
 [blog~6-ides-built-for-rust]: https://analyticsindiamag.com/6-ides-built-for-rust
+[blog~6-rust-programming-mistakes-to-watch-out-for]: https://www.infoworld.com/article/2337218/6-rust-programming-mistakes-to-watch-out-for.html
 [blog~actors-with-tokio]: https://ryhl.io/blog/actors-with-tokio
 [blog~actors-with-tokio~badge]: https://img.shields.io/badge/blog-actors_with_tokio-beige
 [blog~ai-tools-that-can-generate-code]: https://marktechpost.com/2024/03/14/top-artificial-intelligence-ai-tools-that-can-generate-code-to-help-programmers
@@ -195,14 +197,17 @@
 [blog~choosing-the-right-machine-learning-framework]: https://medium.com/@athan.seal/choosing-the-right-rust-machine-learning-framework-candle-burn-dfdx-or-tch-rs-17501f6cd765
 [blog~client-side-server-with-rust]: https://logankeenan.com/posts/client-side-server-with-rust-a-new-approach-to-ui-development
 [blog~comprehensive-guide-to-generating-deb-and-rpm-packages-for-rust-applications]: https://dev.to/mbayoun95/comprehensive-guide-to-generating-deb-and-rpm-packages-for-rust-applications-41h7
+[blog~const-fn]: https://felixwrt.dev/posts/const-fn
 [blog~converting-between-different-collection-types]: https://slingacademy.com/article/converting-between-different-collection-types-from-vec-t-to-hashset-t-or-hashmap-t-u
 [blog~crates-io-development-update]: https://blog.rust-lang.org/2025/02/05/crates-io-development-update.html
 [blog~csborrow]: https://em-tg.github.io/csborrow
+[blog~every-infrastructure-decision-i-endorse-or-regret-after-4-years-running-infrastructure-at-a-startup]: https://cep.dev/posts/every-infrastructure-decision-i-endorse-or-regret-after-4-years-running-infrastructure-at-a-startup
 [blog~fasterthanli.me-so-you-want-to-live-reload-rust]: https://fasterthanli.me/articles/so-you-want-to-live-reload-rust
 [blog~fishshell-rustport]: https://fishshell.com/blog/rustport
 [blog~gfx-rs]: https://gfx-rs.github.io
 [blog~github-actions-best-practices]: https://infinyon.com/blog/2021/04/github-actions-best-practices
 [blog~how-i-improved-my-rust-compile-times-by-seventy-five-percent]: https://benw.is/posts/how-i-improved-my-rust-compile-times-by-seventy-five-percent
+[blog~how-to-use-rust-with-python-and-python-with-rust]: https://www.infoworld.com/article/2335770/how-to-use-rust-with-python-and-python-with-rust.html
 [blog~implementing-iterator-and-intoiterator-in-rust]: https://dev.to/wrongbyte/implementing-iterator-and-intoiterator-in-rust-3nio
 [blog~inside-rust]: https://blog.rust-lang.org/inside-rust
 [blog~iroh]: https://iroh.computer/blog/iroh-0-33-0-browsers-and-discovery-and-0-RTT-oh-my
@@ -215,6 +220,7 @@
 [blog~m-ou.se]: https://blog.m-ou.se
 [blog~macros-in-rust-a-tutorial-with-examples]: https://blog.logrocket.com/macros-in-rust-a-tutorial-with-examples
 [blog~mainmatter-eserde]: https://mainmatter.com/blog/2025/02/13/eserde
+[blog~making-semver-breakage-obvious]: https://glitchlesscode.ca/posts/2025-05-30a
 [blog~matic-apr-25]: https://filtra.io/rust/interviews/matic-apr-25
 [blog~matklad]: https://matklad.github.io
 [blog~mdbook~including-files]: https://rust-lang.github.io/mdBook/format/mdbook.html#including-files
@@ -241,6 +247,7 @@
 [blog~raphlinus]: https://raphlinus.github.io
 [blog~reddit~rust_gpu_the_future_of_gpu_programming]: https://reddit.com/r/rust/comments/1fyown4/rust_gpu_the_future_of_gpu_programming
 [blog~releases]: https://blog.rust-lang.org/releases
+[blog~roto]: https://blog.nlnetlabs.nl/introducing-roto-a-compiled-scripting-language-for-rust
 [blog~rust-a-unique-perspective-html]: https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html
 [blog~rust-a-unique-perspective]: https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html
 [blog~rust-analyzer-this-week]: https://rust-analyzer.github.io/thisweek
@@ -249,8 +256,10 @@
 [blog~rust-build-times~badge]: https://img.shields.io/badge/blog-Rust_build_times-beige
 [blog~rust-compilation-time]: https://williballenthin.com/post/rust-compilation-time
 [blog~rust-gpu]: https://rust-gpu.github.io/blog/2025/01/27/rust-cuda-reboot
+[blog~rust-on-every-gpu]: https://rust-gpu.github.io/blog/2025/07/25/rust-on-every-gpu
 [blog~rust-path-vs-pathbuf]: https://nick.groenen.me/notes/rust-path-vs-pathbuf
 [blog~rust-practice-projects]: https://zerotomastery.io/blog/rust-practice-projects
+[blog~rust-procedural-macros-replace-panic]: https://www.infoq.com/articles/rust-procedural-macros-replace-panic
 [blog~rust-re-borrowing-and-memory-safety]: https://felipemeriga.hashnode.dev/rust-re-borrowing-and-memory-safety?source=weekly
 [blog~rust-review-2024]: https://barretts.club/posts/rust_review_2024
 [blog~rust-self-referential-structs]: https://ksnll.github.io/rust-self-referential-structs
@@ -283,6 +292,7 @@
 [blog~towardsdatascience-nine-rules-for-simd-acceleration-of-your-rust-code-part-1]: https://towardsdatascience.com/nine-rules-for-simd-acceleration-of-your-rust-code-part-1-c16fe639ce21
 [blog~traits]: https://blog.rust-lang.org/2015/05/11/traits.html
 [blog~traits~badge]: https://img.shields.io/badge/blog-traits-beige
+[blog~trying-out-cloudflare-foundations-library]: https://cprimozic.net/blog/trying-out-cloudflare-foundations-library
 [blog~tuify]: https://developerlife.com/2023/09/17/tuify-clap
 [blog~tuify~badge]: https://img.shields.io/badge/blog-tuify-beige
 [blog~type-level-programming-in-rust]: https://nota-lang.org/examples/blog-post/standalone
@@ -293,6 +303,7 @@
 [blog~vs-code-debug-heap]: https://zaynar.co.uk/posts/vs-code-debug-heap
 [blog~what-is-blocking~badge]: https://img.shields.io/badge/blog-what_is_blocking-beige
 [blog~why-rust-is-becoming-a-contender-in-ai-development]: https://analyticsinsight.net/artificial-intelligence/why-rust-is-becoming-a-contender-in-ai-development
+[blog~why_you_need_sccache]: https://elijahpotter.dev/articles/why_you_need_sccache
 [blog~willcrichton-type-level-programming]: https://willcrichton.net/notes/type-level-programming
 [blog~working-with-env-variables]: https://thorsten-hans.com/working-with-environment-variables-in-rust
 [blog~working-with-env-variables~badge]: https://img.shields.io/badge/blog-working_with_env_variables-beige
@@ -305,6 +316,7 @@
 [book~Fullstack-Rust-Complete-Building-Programming-ebook]: https://amazon.com/Fullstack-Rust-Complete-Building-Programming-ebook/dp/B086G767TP
 [book~Hands-Functional-Programming-Rust-applications]: https://amazon.com/Hands-Functional-Programming-Rust-applications/dp/1788839358
 [book~Hands-Microservices-Rust-scalable-microservices-ebook]: https://amazon.com/Hands-Microservices-Rust-scalable-microservices-ebook/dp/B07GVNZL4G
+[book~Hands-On-Microservices-with-Rust~github]: https://github.com/PacktPublishing/Hands-On-Microservices-with-Rust
 [book~Hands-Rust-Effective-Learning-Development]: https://amazon.com/Hands-Rust-Effective-Learning-Development/dp/1680508164
 [book~Idiomatic-Rust-Code-like-Rustacean]: https://amazon.com/Idiomatic-Rust-Code-like-Rustacean/dp/1633437469
 [book~Network-Programming-Rust-memory-safety-concurrency]: https://amazon.com/Network-Programming-Rust-memory-safety-concurrency/dp/1788624890
@@ -328,6 +340,7 @@
 [book~api-guidelines]: https://rust-lang.github.io/api-guidelines
 [book~async-rust]: https://www.amazon.com/Async-Rust-Unleashing-Fearless-Concurrency/dp/1098149092
 [book~asynchronous-programming-in-rust]: https://rust-lang.github.io/async-book
+[mistral.rs~github]: https://github.com/EricLBuehler/mistral.rs
 [book~asynchronous-programming-in-rust~badge]: https://img.shields.io/badge/Asynchronous_programming_in_rust-peru?logo=mdbook
 [book~autocxx]: https://google.github.io/autocxx
 [book~cargo~badge]: https://img.shields.io/badge/Cargo-peru?logo=mdbook
@@ -855,6 +868,7 @@
 [doc~tera-built-in-filters]: https://keats.github.io/tera/docs/#built-in-filters
 [dora~github]: https://github.com/dora-rs/dora
 [dotbot~github]: https://github.com/anishathalye/dotbot
+[drone-os~website]: https://www.drone-os.com
 [dronecan~website]: https://dronecan.github.io
 [dropbox-capture~website]: https://dropbox.com/capture
 [dropbox~website]: https://dropbox.com
@@ -865,6 +879,7 @@
 [eclipse-corrosion~website]: https://projects.eclipse.org/projects/tools.corrosion
 [effective-rust~website]: https://lurklurk.org/effective-rust
 [eglot~github]: https://github.com/joaotavora/eglot
+[egui.info~examples~website]: https://egui.info/examples
 [elm-lang~website]: https://elm-lang.org
 [emacs-lsp~website]: https://emacs-lsp.github.io/lsp-mode
 [emacs-rust-mode~github]: https://github.com/rust-lang/rust-mode
@@ -930,9 +945,14 @@
 [freiheit~website]: https://freiheit.com
 [fzf~github]: https://github.com/junegunn/fzf
 [gamaspace~website]: https://gamaspace.com
+[rust-web-framework-comparison~github]: https://github.com/flosse/rust-web-framework-comparison
 [geckodriver~github]: https://github.com/mozilla/geckodriver
 [gerust~website]: https://gerust.rs
+[axum-rest-api-sample~github]: https://github.com/sheroz/axum-rest-api-sample
+[implement-OpenTelemetry-for-Axum~github]: https://github.com/seferino-fernandez/ocr_service/blob/main/src/utils/telemetry.rs
+[clean_axum_demo~github]: https://github.com/sukjaelee/clean_axum_demo
 [getsentry~website]: https://getsentry.com
+[gg~github]: https://github.com/gulbanana/gg
 [git-gitignore~website]: https://git-scm.com/docs/gitignore
 [github-actions~website]: https://docs.github.com/en/actions
 [github~api-rate-limiting]: https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28
@@ -1021,10 +1041,12 @@
 [jenkins~website]: https://jenkins.io
 [jetbrains~website]: https://jetbrains.com
 [jfrog~website]: https://jfrog.com
+[jj-workshop~github]: https://github.com/jkoppel/jj-workshop
 [jj~github]: https://github.com/martinvonz/jj
 [jobs.letsgetrusty~website]: https://jobs.letsgetrusty.com
 [john-cd~github]: https://github.com/john-cd
 [journald]: https://freedesktop.org/software/systemd/man/systemd-journald.service.html
+[jujutsu-tutorial~website]: https://steveklabnik.github.io/jujutsu-tutorial/hello-world/creating-new-changes.html
 [jwt~website]: https://jwt.io
 [kafka~website]: https://kafka.apache.org
 [kata-containers~github]: https://github.com/kata-containers/kata-containers
@@ -1277,6 +1299,7 @@
 [promotic-edu~website]: https://promotic-edu.org
 [prusti~website]: https://pm.inf.ethz.ch/research/prusti.html
 [pucpr~website]: https://pucpr.br
+[pyapp~website]: https://ofek.dev/pyapp/latest
 [pyenv~github]: https://github.com/pyenv/pyenv
 [pyenv~github~badge]: https://img.shields.io/badge/pyenv-steelblue?logo=github
 [pypi~pip-tools]: https://pypi.org/project/pip-tools
@@ -1510,6 +1533,7 @@
 [scytherobotics~website]: https://scytherobotics.com
 [seanmonstar~website]: https://seanmonstar.com
 [searchcraft~website]: https://www.searchcraft.io
+[sendgrid~website]: https://sendgrid.com
 [sensirion~website]: https://sensirion.com
 [sentry~website]: https://sentry.io
 [serenity~github]: https://github.com/serenity-rs/serenity
@@ -1519,6 +1543,7 @@
 [shopify~website]: https://shopify.com
 [shuttle-dev~docs]: https://docs.shuttle.dev/introduction/welcome
 [shuttle-dev~website]: https://shuttle.dev
+[shuttle-examples~github]: https://github.com/shuttle-hq/shuttle-examples
 [shuttle~examples~github]: https://github.com/shuttle-hq/shuttle-examples
 [shuttle~website]: https://shuttle.dev
 [silentcast~github]: https://github.com/colinkeenan/silentcast
@@ -1579,6 +1604,7 @@
 [tailcall~website]: https://tailcall.run
 [talent-plan~github]: https://github.com/pingcap/talent-plan
 [talks~github]: https://github.com/rust-community/talks
+[tangleguard~website]: https://docs.tangleguard.com
 [tarro~website]: https://tarro.com
 [tavianator~website]: https://tavianator.com
 [techfund~website]: https://techfund.jp
@@ -1623,6 +1649,7 @@
 [unix-syslog~website]: https://gnu.org/software/libc/manual/html_node/Overview-of-Syslog.html
 [unrealengine~website]: https://unrealengine.com
 [upload-a-build-artifact~website]: https://github.com/marketplace/actions/upload-a-build-artifact
+[uv~docs~website]: https://docs.astral.sh/uv
 [uv~github]: https://github.com/astral-sh/uv
 [vagrantup~website]: https://vagrantup.com
 [vailsys~website]: https://vailsys.com
@@ -1695,6 +1722,7 @@
 [xcode~website]: https://developer.apple.com/xcode
 [xdg-utils~website]: https://github.com/xgqt-org/xdg-utils
 [xfusion~website]: https://xfusion.com
+[yazi~github]: https://github.com/sxyazi/yazi
 [yelp~website]: https://yelp.com
 [yomura-fiber~website]: https://yomurafiber.com
 [youki~github]: https://github.com/youki-dev/youki
@@ -1734,3 +1762,4 @@
 [zld~github~badge]: https://img.shields.io/badge/zld-steelblue?logo=github
 [zola~github]: https://github.com/getzola/zola
 [zs~website]: https://zs.com
+[keterrest~github]: https://github.com/anhvdq/keterrest

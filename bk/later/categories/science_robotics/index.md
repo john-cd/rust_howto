@@ -92,10 +92,16 @@ review in depth; review [robotics][robotics~website]
 review [rust-embedded~github][rust-embedded~github].
 [rust-embedded~github]: https://github.com/rust-embedded/wg
 
-[roboplc~github][roboplc~github].
-[roboplc~github]: https://github.com/roboplc/ehmi
+[![ehmi][c~ehmi~docs~badge]][c~ehmi~docs] [![ehmi~crates.io][c~ehmi~crates.io~badge]][c~ehmi~crates.io] [![ehmi~github][c~ehmi~github~badge]][c~ehmi~github] [![ehmi~lib.rs][c~ehmi~lib.rs~badge]][c~ehmi~lib.rs]{{hi:ehmi}}{{hi:Ui}}{{hi:Plc}}{{hi:Egui}}{{hi:Hmi}}{{hi:Scada}}
 
-[roboplc~website][roboplc~website].
-[roboplc~website]: https://www.bohemia-automation.com/software/roboplc
+HMI components for egui.
+
+---
+
+[![roboplc][c~roboplc~docs~badge]][c~roboplc~docs] [![roboplc~crates.io][c~roboplc~crates.io~badge]][c~roboplc~crates.io] [![roboplc~github][c~roboplc~github~badge]][c~roboplc~github] [![roboplc~lib.rs][c~roboplc~lib.rs~badge]][c~roboplc~lib.rs]{{hi:roboplc}}{{hi:Realtime}}{{hi:Robots}}{{hi:Plc}}{{hi:Industrial}}
+
+Framework for PLCs and real-time micro-services.
+
+[roboplc~website][c~roboplc~website].
 
 </div>

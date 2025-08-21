@@ -39,8 +39,6 @@ Kin in spirit to [Python][p~python]'s `scikit-learn`, [`linfa`][c~linfa~docs]↗
 <div class="hidden">
 [organize / write](https://github.com/john-cd/rust_howto/issues/473)
 
-- [`mistral.rs`][mistral.rs~github].
-
-[mistral.rs~github]: https://github.com/EricLBuehler/mistral.rs
+- [`mistral.rs`][mistral.rs~github]↗.
 
 </div>
