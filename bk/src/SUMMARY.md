@@ -128,5 +128,4 @@
 
 {{#include refs.incl.md}}
 <div class="hidden">
-[rebuild](https://github.com/john-cd/rust_howto/issues/1383)
 </div>
