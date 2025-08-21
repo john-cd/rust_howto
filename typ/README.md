@@ -58,7 +58,9 @@ typst init @preview/ilm
 
 ## Typst Bibliography
 
-<https://github.com/typst/hayagriva>
+<https://typst.app/docs/reference/model/bibliography>
+[Hayagriva](https://github.com/typst/hayagriva).
+[Hayagriva file format](https://github.com/typst/hayagriva/blob/main/docs/file-format.md).
 
 ## References
 
