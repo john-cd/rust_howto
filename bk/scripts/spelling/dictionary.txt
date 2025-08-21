@@ -3590,3 +3590,12 @@ remoteok
 WellFound
 Flitton
 Kolodin
+RustDesk
+SalesForce
+Séguret
+Nethercote
+PoignardAzur
+Levien
+Sartor
+McArthur
+multicopters
