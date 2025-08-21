@@ -99,12 +99,12 @@ Middleware is a powerful way to add functionality to your web server.
 - [Asynchronous Programming in Rust][book~asynchronous-programming-in-rust]↗.
 - [Tokio][c~tokio~website]↗.
 - [Tokio Examples][c~tokio~examples~docs]↗.
-
-https://github.com/snamiki1212/realworld-v1-rust-actix-web-diesel
-https://gill.net.in/posts/auth-microservice-rust-actix-web1.0-diesel-complete-tutorial/
-https://github.com/Bechma/realworld-actix-fullstack
-https://github.com/Apress/practical-rust-web-projects/tree/main
-https://github.com/JoeyMckenzie/realworld-rust-axum-sqlx
-https://github.com/tokio-rs/axum/tree/main/examples
+- [Axum Examples][c~axum~examples]↗.
+- [Source Code for 'Practical Rust Web Projects' by Shing Lyu][practical-rust-web-projects~github]↗.
+- [Auth Web Microservice with rust using Actix-Web 4.0 - Complete Tutorial][blog~auth-microservice-rust-actix-web1.0-diesel-complete-tutorial]↗.
+- [Realworld rust-axum-sqlx][realworld~rust-axum-sqlx~github]↗.
+- [Realworld rust-axum-sqlx][realworld~rust-axum-sqlx~github]↗.
+- [Realworld actix-fullstack][realworld~actix-fullstack~github]↗.
+- [RealWorld with Rust + ActixWeb + Diesel on Clean Architecture][realworld~v1-rust-actix-web-diesel~github]↗.
 
 </div>

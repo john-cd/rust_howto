@@ -181,6 +181,7 @@
 [blog~announcing-async-fn~badge]: https://img.shields.io/badge/blog-announcing_async_fn-beige
 [blog~arewequantumyet]: https://arewequantumyet.github.io
 [blog~async-what-is-blocking]: https://ryhl.io/blog/async-what-is-blocking
+[blog~auth-microservice-rust-actix-web1.0-diesel-complete-tutorial]: https://gill.net.in/posts/auth-microservice-rust-actix-web1.0-diesel-complete-tutorial
 [blog~auth-web-microservice~badge]: https://img.shields.io/badge/blog_auth_microservice-beige
 [blog~aws-lambda-duckdb-and-delta-lake]: https://dataengineeringcentral.substack.com/p/aws-lambda-duckdb-and-delta-lake
 [blog~billydm]: https://billydm.github.io/blog
@@ -1252,7 +1253,7 @@
 [postmates~website]: https://postmates.com
 [postsack~github]: https://github.com/terhechte/postsack
 [postsack~github~badge]: https://img.shields.io/badge/postsack-steelblue?logo=github
-[practical-rust-web-projects~github]: https://github.com/Apress/practical-rust-web-projects/tree/main
+[practical-rust-web-projects~github]: https://github.com/Apress/practical-rust-web-projects
 [practice.course.rs~website]: https://practice.course.rs/why-exercise.html
 [pre-commit-rust~github]: https://github.com/doublify/pre-commit-rust
 [pre-commit.com~hooks~website]: https://pre-commit.com/hooks.html
