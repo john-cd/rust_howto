@@ -15,7 +15,7 @@
 [ex~links~design-patterns]: books.md#design-patterns
 [ex~links~embedded]: books.md#embedded
 [ex~links~error-handling]: books.md#error-handling
-[ex~links~examples-exercises]: learning.md#examples-exercises
+[ex~links~examples-exercises]: example_code.md#examples-exercises
 [ex~links~ferrous-systems-training]: learning.md#ferrous-systems-training
 [ex~links~ffi]: books.md#ffi
 [ex~links~free]: books.md#free

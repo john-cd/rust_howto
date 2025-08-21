@@ -39,21 +39,6 @@
 - [Writing an OS in Rust][blog~writing-an-OS-in-rust]↗.
 - [Hecto][hecto~website]↗: Build your own text editor in Rust.
 
-## Examples and Exercises {#examples-exercises}
-
-- [Rust by Example][book~rust-by-example]↗: Learn rust features with small, targeted examples. Starting with "hello world" and moving up to more complex features like traits and generics.
-- [Rust by Practice][practice.course.rs~website]↗.
-- The [Rust Cookbook][book~rust-cookbook]↗: A collection of simple examples that demonstrate good practices to accomplish common programming tasks, using the crates of the Rust ecosystem.
-- [Rustlings][c~rustlings~github]↗: Small exercises to get you used to reading and writing Rust code, including reading and responding to compiler error messages.
-- [100 Exercises to Learn Rust][100-exercises-to-learn-rust~github]↗.
-- [Rust Mastery Exercises][app.codecrafters.io~rust]↗.
-- [Rust Quizz][rust-quizz~website]↗.
-- [Exercism][exercism-rust~website]↗.
-- [Advent of Code][adventofcode~website]↗: Language-agnostic programming challenges that can be done in Rust.
-- [Project Euler][projecteuler~website]↗: Language-agnostic programming challenges focused mostly on math problems.
-- [Rust Practice Questions][rust-practise-questions~github]↗.
-- Top 15 Rust projects to elevate your skills: [Rust Practice Projects][blog~rust-practice-projects]↗.
-
 ## Courses {#courses}
 
 - [`Comprehensive Rust`][book~comprehensive-rust]↗, a free Rust course developed by the Android team at Google. The course covers the full spectrum of Rust, from basic syntax to advanced topics like [generics][p~generics] and [error handling][p~error-handling].
