@@ -6,5 +6,5 @@
 | [`lapce`][ex~written-in-rust~lapce] |
 | [`zed`][ex~written-in-rust~zed] |
 | [Build Tools][ex~written-in-rust~build-tools] |
-| [written in rust compilers][ex~written-in-rust~compilers] |
+| [Compilers written in Rust][ex~written-in-rust~compilers] |
 | [Utilities][ex~written-in-rust~utilities] |

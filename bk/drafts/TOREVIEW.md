@@ -111,6 +111,6 @@ cover [Hands-On-Microservices-with-Rust]: https://github.com/PacktPublishing/Han
 
 ## Satire {#skip}
 
-- [hello-world.rs][hello-world.rs~github]: Memory safe, blazing fast, configurable, minimal hello world written in rust() in a few lines of code with few(1092) dependencies.
+- [hello-world.rs][hello-world.rs~github]: Memory safe, blazing fast, configurable, minimal hello world written in Rust, in a few lines of code with few(1092) dependencies.
 
 ## To Sort {#skip}

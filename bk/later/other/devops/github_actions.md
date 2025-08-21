@@ -48,7 +48,7 @@ Example `.github/workflows/<name>.yml`
 ```yaml
 - uses: actions/checkout@v4
 
-# Selecting a toolchain either by action or manual `rustup` calls. That should happen before the plugin, as the cache uses the current rustc version as its cache key
+# Selecting a toolchain either by action or manual `rustup` calls. That should happen before the plugin, as the cache uses the current `rustc` version as its cache key
 - run: rustup toolchain install stable --profile minimal
 
 - uses: Swatinem/rust-cache@v2
@@ -118,7 +118,7 @@ Example `.github/workflows/<name>.yml`
 
 FIXME
 
-- `rust-toolchain`: Github action to install Rust components via rustup
+- `rust-toolchain`: Github action to install Rust components via `rustup`.
 - [`rust-cache`][c~rust_cache~docs]↗{{hi:rust-cache}}: Github action to cache compilation artifacts and speed up subsequent runs.
 - `install-action`: GitHub Action for installing [development tools][p~development-tools] (mainly from GitHub Releases).
 
@@ -135,9 +135,9 @@ A type-safe GitHub Actions workflow generator: [`gh-workflow`][c~gh-workflow~doc
 [github_actions - see blessed.rs](https://github.com/john-cd/rust_howto/issues/600)
 write / review in depth
 
-rust-toolchain (github action): Github action to install Rust components via rustup
-rust-cache (github action): Github action to cache compilation artifacts and speed up subsequent runs.
-install-action (github action): GitHub Action for installing [development tools][p~development-tools] (mainly from GitHub Releases).
+`rust-toolchain`: Github action to install Rust components via `rustup`.
+`rust-cache`: Github action to cache compilation artifacts and speed up subsequent runs.
+`install-action`: GitHub Action for installing [development tools][p~development-tools] (mainly from GitHub Releases).
 
 - [Octocrab][c~octocrab~lib.rs]↗.
 
