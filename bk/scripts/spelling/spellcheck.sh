@@ -45,13 +45,13 @@ shopt -s nullglob
 opt=${1:-""}
 dict_filename="$(dirname "$0")/dictionary.txt"
 book_dir="$(realpath $(dirname ${0})/../..)"
-markdown_sources=($(find ${book_dir}/src ${book_dir}/drafts -type f -name "*.md" -not -name "refs.incl.md" -not -wholename "refs/*.md"))
+markdown_sources=($(find ${book_dir}/src ${book_dir}/drafts ${book_dir}/later -type f -name "*.md" -not -name "refs.incl.md" -not -wholename "refs/*.md"))
 mode="check"
 
 # aspell repeatedly modifies personal dictionary for some purpose,
 # so we should use a copy of our dictionary
-mkdir -p "/tmp/.devcontainer/"
-dict_path="/tmp/.devcontainer/$(basename $dict_filename})"
+mkdir -p "/tmp/spelling/"
+dict_path="/tmp/spelling/$(basename $dict_filename})"
 
 if [[ "$opt" == "list" ]]; then
     mode="list"
@@ -65,7 +65,7 @@ if [[ ! -f "$dict_filename" ]]; then
     echo "Please check that it doesn't contain any misspellings."
 
     echo "personal_ws-1.1 en 0 utf-8" > "$dict_filename"
-    cat "${markdown_sources[@]}" | aspell --ignore 3 list | sort -u >> "$dict_filename"
+    cat "${markdown_sources[@]}" | aspell -M --encoding=utf-8 --ignore 3 list | sort -u >> "$dict_filename"
 elif [[ "$mode" == "list" ]]; then
     # List (default) mode: scan all files, report errors
     declare -i retval=0
@@ -78,7 +78,7 @@ elif [[ "$mode" == "list" ]]; then
     fi
 
     for fname in "${markdown_sources[@]}"; do
-        command=$(aspell --ignore 3 --personal="$dict_path" "$mode" < "$fname")
+        command=$(aspell -M  --encoding=utf-8 --ignore 3 --personal="$dict_path" "$mode" < "$fname")
         if [[ -n "$command" ]]; then
             for error in $command; do
                 # FIXME: Find more correct way to get line number
@@ -100,6 +100,6 @@ elif [[ "$mode" == "check" ]]; then
     fi
 
     for fname in "${markdown_sources[@]}"; do
-        aspell --ignore 3 --dont-backup --personal="$dict_path" "$mode" "$fname"
+        aspell -M --encoding=utf-8 --ignore 3 --dont-backup --personal="$dict_path" "$mode" "$fname"
     done
 fi
