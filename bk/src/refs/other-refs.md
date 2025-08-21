@@ -145,6 +145,7 @@
 [aws-lambda-rust-runtime~examples~github]: https://github.com/awslabs/aws-lambda-rust-runtime/tree/main/examples
 [aws-rust-sdk~website]: https://aws.amazon.com/sdk-for-rust
 [aws-rust-sdk~website~badge]: https://img.shields.io/badge/AWS_rust_sdk-coral
+[axum-rest-api-sample~github]: https://github.com/sheroz/axum-rest-api-sample
 [azure-data-explorer]: https://azure.microsoft.com/en-us/products/data-explorer
 [azure-iot-edge~github]: https://github.com/Azure/iotedge
 [azure-sdk-for-rust~github]: https://github.com/Azure/azure-sdk-for-rust
@@ -241,6 +242,7 @@
 [blog~patterns-are-not-expressions]: https://h2co3.github.io/pattern
 [blog~poignardazur]: https://poignardazur.github.io
 [blog~polymonster]: https://polymonster.co.uk
+[blog~porting-a-cross-platform-gui-application-to-rust]: https://hacks.mozilla.org/2024/04/porting-a-cross-platform-gui-application-to-rust
 [blog~practical-rust]: https://dev.to/werner
 [blog~practical-rust~badge]: https://img.shields.io/badge/blog-practical_rust-beige
 [blog~quickwit]: https://quickwit.io/blog
@@ -258,6 +260,7 @@
 [blog~rust-gpu]: https://rust-gpu.github.io/blog/2025/01/27/rust-cuda-reboot
 [blog~rust-on-every-gpu]: https://rust-gpu.github.io/blog/2025/07/25/rust-on-every-gpu
 [blog~rust-path-vs-pathbuf]: https://nick.groenen.me/notes/rust-path-vs-pathbuf
+[blog~rust-patterns-ref]: http://xion.io/post/code/rust-patterns-ref.html
 [blog~rust-practice-projects]: https://zerotomastery.io/blog/rust-practice-projects
 [blog~rust-procedural-macros-replace-panic]: https://www.infoq.com/articles/rust-procedural-macros-replace-panic
 [blog~rust-re-borrowing-and-memory-safety]: https://felipemeriga.hashnode.dev/rust-re-borrowing-and-memory-safety?source=weekly
@@ -340,7 +343,6 @@
 [book~api-guidelines]: https://rust-lang.github.io/api-guidelines
 [book~async-rust]: https://www.amazon.com/Async-Rust-Unleashing-Fearless-Concurrency/dp/1098149092
 [book~asynchronous-programming-in-rust]: https://rust-lang.github.io/async-book
-[mistral.rs~github]: https://github.com/EricLBuehler/mistral.rs
 [book~asynchronous-programming-in-rust~badge]: https://img.shields.io/badge/Asynchronous_programming_in_rust-peru?logo=mdbook
 [book~autocxx]: https://google.github.io/autocxx
 [book~cargo~badge]: https://img.shields.io/badge/Cargo-peru?logo=mdbook
@@ -382,7 +384,7 @@
 [book~clippy]: https://doc.rust-lang.org/clippy
 [book~clippy~allowingdenying-lints]: https://doc.rust-lang.org/clippy/configuration.html#allowingdenying-lints
 [book~command-line-rust]: https://oreilly.com/library/view/command-line-rust/9781098109424
-[book~command-line-rust~github]: https://github.com/kyclark/command-line-rust/tree/main
+[book~command-line-rust~github]: https://github.com/kyclark/command-line-rust
 [book~complete-rust-programming-reference-guide]: https://amazon.com/dp/1838828109
 [book~comprehensive-rust]: https://google.github.io/comprehensive-rust
 [book~copenhagen]: https://thecopenhagenbook.com
@@ -703,6 +705,7 @@
 [chroma~website]: https://trychroma.com
 [circleci~website]: https://circleci.com
 [clang.llvm~website]: https://clang.llvm.org
+[clean_axum_demo~github]: https://github.com/sukjaelee/clean_axum_demo
 [cleanit~github]: https://github.com/Sollimann/CleanIt
 [clever-cloud~website]: https://clever-cloud.com
 [clickhouse~github]: https://github.com/ClickHouse/ClickHouse
@@ -945,12 +948,8 @@
 [freiheit~website]: https://freiheit.com
 [fzf~github]: https://github.com/junegunn/fzf
 [gamaspace~website]: https://gamaspace.com
-[rust-web-framework-comparison~github]: https://github.com/flosse/rust-web-framework-comparison
 [geckodriver~github]: https://github.com/mozilla/geckodriver
 [gerust~website]: https://gerust.rs
-[axum-rest-api-sample~github]: https://github.com/sheroz/axum-rest-api-sample
-[implement-OpenTelemetry-for-Axum~github]: https://github.com/seferino-fernandez/ocr_service/blob/main/src/utils/telemetry.rs
-[clean_axum_demo~github]: https://github.com/sukjaelee/clean_axum_demo
 [getsentry~website]: https://getsentry.com
 [gg~github]: https://github.com/gulbanana/gg
 [git-gitignore~website]: https://git-scm.com/docs/gitignore
@@ -1018,6 +1017,7 @@
 [immunant~github]: https://github.com/immunant
 [immunant~website]: https://immunant.com
 [imperialviolet~website]: https://imperialviolet.org/2017/05/14/aesgcmsiv.html
+[implement-OpenTelemetry-for-Axum~github]: https://github.com/seferino-fernandez/ocr_service/blob/main/src/utils/telemetry.rs
 [infinyon~website]: https://infinyon.com
 [influxdata~website]: https://influxdata.com
 [influxdb~github]: https://github.com/influxdata/influxdb
@@ -1055,6 +1055,7 @@
 [kdab~website]: https://kdab.com
 [kellnr~github]: https://github.com/kellnr/kellnr
 [kerkour~website]: https://kerkour.com
+[keterrest~github]: https://github.com/anhvdq/keterrest
 [key_derivation_function]: https://en.wikipedia.org/wiki/Key_derivation_function
 [keyrock~website]: https://keyrock.com
 [keyword~as]: https://doc.rust-lang.org/std/keyword.as.html
@@ -1159,6 +1160,7 @@
 [minecraft~website]: https://minecraft.net
 [mini-docker-rust~github]: https://github.com/kpcyrd/mini-docker-rust
 [mirai~github]: https://github.com/endorlabs/MIRAI
+[mistral.rs~github]: https://github.com/EricLBuehler/mistral.rs
 [mix~website]: https://hexdocs.pm/mix/1.18.4/Mix.html
 [ml-in-rust-ossinsight~website]: https://ossinsight.io/collections/ml-in-rust/?monthly-rankings=prs
 [mold~github]: https://github.com/rui314/mold
@@ -1224,6 +1226,7 @@
 [pants~github]: https://github.com/pantsbuild/pants
 [paritytech~github]: https://github.com/paritytech
 [parity~website]: https://parity.io
+[parse-rosetta-rs~github]: https://github.com/rosetta-rs/parse-rosetta-rs
 [paste.rs]: https://paste.rs
 [pathway~github]: https://github.com/pathwaycom/pathway
 [perseus~website]: https://framesurge.sh/perseus/en-US
@@ -1297,6 +1300,7 @@
 [prometheus~github]: https://github.com/prometheus/prometheus
 [prometheus~website]: https://prometheus.io
 [promotic-edu~website]: https://promotic-edu.org
+[protypo~github]: https://github.com/dinosath/protypo
 [prusti~website]: https://pm.inf.ethz.ch/research/prusti.html
 [pucpr~website]: https://pucpr.br
 [pyapp~website]: https://ofek.dev/pyapp/latest
@@ -1340,6 +1344,7 @@
 [reddit~learnrust]: https://reddit.com/r/learnrust
 [reddit~rust]: https://reddit.com/r/rust
 [reddit~rust_gpu_the_future_of_gpu_programming]: https://reddit.com/r/rust/comments/1fyown4/rust_gpu_the_future_of_gpu_programming
+[reddit~the_mutable_reference_i_return_from_a_function_in]: https://www.reddit.com/r/rust/comments/1mr3kt4/the_mutable_reference_i_return_from_a_function_in
 [reddit~website]: https://reddit.com
 [reddit~what_are_some_less_popular_but_wellmade_crates]: https://reddit.com/r/rust/comments/106w4ao/what_are_some_less_popular_but_wellmade_crates
 [redhat~website]: https://redhat.com
@@ -1356,6 +1361,7 @@
 [release-plz~website]: https://release-plz.ieni.dev
 [remoteok~remote-rust-jobs~website]: https://remoteok.com/remote-rust-jobs
 [renault~website]: https://renaultgroup.com
+[rise~github]: https://github.com/Dexter2038/rise
 [risingwave~github]: https://github.com/risingwavelabs/risingwave
 [river~github]: https://github.com/memorysafety/river
 [roadmap-rust~website]: https://roadmap.sh/rust
@@ -1390,6 +1396,7 @@
 [rust-course-fei~github]: https://github.com/Kobzol/rust-course-fei/tree/main
 [rust-course~github]: https://github.com/sunface/rust-course
 [rust-digger~website]: https://rust-digger.code-maven.com
+[rust-embedded~github]: https://github.com/rust-embedded/wg
 [rust-events-calendar~website]: https://calendar.google.com/calendar/u/0/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com&pli=1
 [rust-for-linux~github]: https://github.com/Rust-for-Linux
 [rust-for-professionals~website]: https://overexact.com/rust-for-professionals
@@ -1481,7 +1488,9 @@
 [rust-vmm~community~github]: https://github.com/rust-vmm/community
 [rust-vmm~kvm~github]: https://github.com/rust-vmm/kvm
 [rust-vmm~vmm-sys-util~github]: https://github.com/rust-vmm/vmm-sys-util
+[rust-web-framework-comparison~frontend-frameworks-wasm~github]: https://github.com/flosse/rust-web-framework-comparison#frontend-frameworks-wasm
 [rust-web-framework-comparison~github]: https://github.com/flosse/rust-web-framework-comparison
+[rust-yew-realworld-example-app~github]: https://github.com/jetli/rust-yew-realworld-example-app
 [rust.audio~website]: https://rust.audio
 [rust.careers~website]: https://rust.careers
 [rust.code-maven.com-user-groups~website]: https://rust.code-maven.com/user-groups
@@ -1626,6 +1635,7 @@
 [tock~website]: https://tockos.org
 [top-GUI-simplifycpp~website]: https://simplifycpp.org/?id=a0507
 [topics-rust~github]: https://github.com/topics/rust
+[tour-of-rusts-standard-library-traits~github]: https://github.com/pretzelhammer/rust-blog/blob/master/posts/tour-of-rusts-standard-library-traits.md
 [tourofrust~website]: https://tourofrust.com
 [tower-middleware-from-scratch~github]: https://github.com/tower-rs/tower/blob/master/guides/building-a-middleware-from-scratch.md
 [tower-middleware-from-scratch~github~badge]: https://img.shields.io/badge/tower_middleware_from_scratch-steelblue?logo=github
@@ -1762,4 +1772,3 @@
 [zld~github~badge]: https://img.shields.io/badge/zld-steelblue?logo=github
 [zola~github]: https://github.com/getzola/zola
 [zs~website]: https://zs.com
-[keterrest~github]: https://github.com/anhvdq/keterrest

@@ -46,9 +46,10 @@ Note a few caveats with `Any`:
 
 <div class="hidden">
 
-## Reflection {#skip}
+## Compile-time Reflection {#skip}
 
-[reflect~github][reflect~github].
-[reflect~github]: https://github.com/dtolnay/reflect
+[![reflect][c~reflect~docs~badge]][c~reflect~docs] [![reflect~crates.io][c~reflect~crates.io~badge]][c~reflect~crates.io] [![reflect~github][c~reflect~github~badge]][c~reflect~github] [![reflect~lib.rs][c~reflect~lib.rs~badge]][c~reflect~lib.rs]{{hi:reflect}}{{hi:Reflection}} [![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
+
+The "but I thought Rust doesn't have reflection?" memorial brand new way of defining procedural macros.
 
 </div>

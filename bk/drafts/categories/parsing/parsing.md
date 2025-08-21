@@ -65,11 +65,9 @@ Grammars are saved in separate [`.pest`][c~pest~docs]↗{{hi:.pest}}  files whi
 <div class="hidden">
 [parsing: write; examples](https://github.com/john-cd/rust_howto/issues/448)
 
-- [awesome-pest][awesome-pest~github]↗: A curated list of resources, projects, and tools using or for the `pest` parser generator in Rust.
-- [abnf_to_pest][c~abnf_to_pest~crates.io]↗.
-- [winnow][c~winnow~docs]↗.
-
-[parse-rosetta-rs][parse-rosetta-rs~github].
-[parse-rosetta-rs~github]: https://github.com/rosetta-rs/parse-rosetta-rs
+- [Awesome Pest][awesome-pest~github]↗: A curated list of resources, projects, and tools using or for the `pest` parser generator in Rust.
+- [ABNF to Pest][c~abnf_to_pest~crates.io]↗.
+- [`winnow`][c~winnow~docs]↗.
+- [parse-rosetta-rs][parse-rosetta-rs~github]↗.
 
 </div>

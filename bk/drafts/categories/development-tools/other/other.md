@@ -46,9 +46,7 @@ A simple way to get started with a project by scaffolding from a template powere
 
 ---
 
-[protypo~github]: https://github.com/dinosath/protypo
-
-[rise~github]: https://github.com/Dexter2038/rise
-(early)
+- [protypo~github][protypo~github]↗.
+- [Rust initial setup engine][rise~github]↗ (early).
 
 </div>

@@ -117,9 +117,9 @@ Instead, you may:
 <div class="hidden">
 TODO review [common-rust-lifetime-misconceptions~github]
 
-review [common-rust-lifetime-misconceptions][common-rust-lifetime-misconceptions]
-[common-rust-lifetime-misconceptions]: https://github.com/pretzelhammer/rust-blog/blob/master/posts/common-rust-lifetime-misconceptions.md
+review
 
-[the_mutable_reference_i_return_from_a_function_in]: https://www.reddit.com/r/rust/comments/1mr3kt4/the_mutable_reference_i_return_from_a_function_in
+- [Common Rust Lifetime Misconceptions][common-rust-lifetime-misconceptions~github]↗.
+- [The mutable reference I return from a function in Rust seems to violate the borrowing rules — how is this possible?][reddit~the_mutable_reference_i_return_from_a_function_in].
 
 </div>

@@ -14,9 +14,9 @@ This is an advanced topic.
 
 ## See Also {#see-also}
 
-- [`movable-ref`][movable-ref~github]: A Rust library for offset based pointers that enable movable self-referential data structures.
+[![movable-ref][c~movable-ref~docs~badge]][c~movable-ref~docs] [![movable-ref~crates.io][c~movable-ref~crates.io~badge]][c~movable-ref~crates.io] [![movable-ref~github][c~movable-ref~github~badge]][c~movable-ref~github] [![movable-ref~lib.rs][c~movable-ref~lib.rs~badge]][c~movable-ref~lib.rs]{{hi:movable-ref}}{{hi:Offset}}{{hi:Pointer}}{{hi:No-std}}{{hi:Self-referential}}{{hi:Movable}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-[movable-ref~github]: https://github.com/engali94/movable-ref
+A tool for building movable self-referential types.
 
 ## Related Topics {#related-topics}
 

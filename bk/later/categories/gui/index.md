@@ -108,12 +108,10 @@ While primarily for window creation, [`winit`][c~winit~docs]↗{{hi:winit}} is o
 <div class="hidden">
 [organize](https://github.com/john-cd/rust_howto/issues/397)
 review which GUI framework should be recommended - make a table; review links in Choosing the right framework section again.
-cover [`perseus`][c~perseus~docs]↗{{hi:perseus}} / zola?
+cover zola?
 
+- [`perseus`][c~perseus~docs]↗.{{hi:perseus}}
 - [Are we (I)DE yet?][are-we-ide-yet?~website]↗.
-
-[Porting a cross-platform GUI application to Rust][blog~porting-a-cross-platform-gui-application-to-rust].
-
-[blog~porting-a-cross-platform-gui-application-to-rust]: https://hacks.mozilla.org/2024/04/porting-a-cross-platform-gui-application-to-rust/
+- [Porting a cross-platform GUI application to Rust][blog~porting-a-cross-platform-gui-application-to-rust].
 
 </div>

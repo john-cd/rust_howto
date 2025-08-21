@@ -87,10 +87,13 @@ Leverage existing robotics libraries (often written in C++, Python, or other lan
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[organize](https://github.com/john-cd/rust_howto/issues/480)
-review in depth; review [robotics][robotics~website]
-review [rust-embedded~github][rust-embedded~github].
-[rust-embedded~github]: https://github.com/rust-embedded/wg
+[organize; review in depth](https://github.com/john-cd/rust_howto/issues/480)
+review
+
+- [robotics][robotics~website]↗.
+- [rust-embedded~github][rust-embedded~github]↗.
+
+---
 
 [![ehmi][c~ehmi~docs~badge]][c~ehmi~docs] [![ehmi~crates.io][c~ehmi~crates.io~badge]][c~ehmi~crates.io] [![ehmi~github][c~ehmi~github~badge]][c~ehmi~github] [![ehmi~lib.rs][c~ehmi~lib.rs~badge]][c~ehmi~lib.rs]{{hi:ehmi}}{{hi:Ui}}{{hi:Plc}}{{hi:Egui}}{{hi:Hmi}}{{hi:Scada}}
 

@@ -215,4 +215,4 @@ expand = true            # partial words will match longer terms
 # # # Set the pandoc variable named 'variable-name' to 'value'
 # # variable-name = "value"
 
-# [generate PDF NOW](https://github.com/john-cd/rust_howto/issues/1259)
+# [generate PDF](https://github.com/john-cd/rust_howto/issues/1259)

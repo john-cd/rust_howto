@@ -40,7 +40,8 @@
 <div class="hidden">
 [toml: write](https://github.com/john-cd/rust_howto/issues/444)
 
-[taplo~github][taplo~github]: A TOML toolkit written in Rust.
-[taplo~github]: https://github.com/tamasfe/taplo
+[![taplo~website][c~taplo~website~badge]][c~taplo~website] [![taplo][c~taplo~docs~badge]][c~taplo~docs] [![taplo~crates.io][c~taplo~crates.io~badge]][c~taplo~crates.io] [![taplo~github][c~taplo~github~badge]][c~taplo~github] [![taplo~lib.rs][c~taplo~lib.rs~badge]][c~taplo~lib.rs]{{hi:taplo}}{{hi:Parser}}{{hi:Toml}}{{hi:Linter}}{{hi:Formatter}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
+
+A TOML parser, analyzer and formatter library.
 
 </div>
