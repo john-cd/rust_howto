@@ -45,5 +45,5 @@ The [`zip`][c~zip~docs]↗{{hi:zip}} crate allows you to create, open, and manip
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write NOW](https://github.com/john-cd/rust_howto/issues/1062)
+[write](https://github.com/john-cd/rust_howto/issues/1062)
 </div>

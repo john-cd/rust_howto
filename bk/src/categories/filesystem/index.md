@@ -82,7 +82,7 @@ See also [[network-programming | Network Programming]].
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write, review in depth, add missing sections NOW](https://github.com/john-cd/rust_howto/issues/1339)
+[write, review in depth, add missing sections](https://github.com/john-cd/rust_howto/issues/1339)
 
 - [Rust Path vs PathBuf][blog~rust-path-vs-pathbuf]↗.
 

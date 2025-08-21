@@ -20,7 +20,7 @@ Standard networking like [`std::net`][c~std::net~docs]↗{{hi:std::net}} or crat
 
 `ioctl`: A crate for performing 'ioctl' (input/output control) operations on file descriptors. Often used for interacting with device drivers or hardware.
 
-TODO replace by nix.
+FIXME replace by `nix`.
 
 For specialized hardware, you'll often need to find or create crates that provide access to the device's API or protocol.
 

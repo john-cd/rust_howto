@@ -103,7 +103,7 @@ fn require_external_svc() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [finish; debug: Issue: Cannot locate a 64-bit Oracle Client library; need heavy test NOW](https://github.com/john-cd/rust_howto/issues/1020)
+// [finish; debug: Issue: Cannot locate a 64-bit Oracle Client library; need heavy test](https://github.com/john-cd/rust_howto/issues/1020)
 
 // figure out install of the client
 

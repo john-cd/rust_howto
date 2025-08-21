@@ -91,5 +91,5 @@ Zerocopy is often used in [network programming][p~network-programming], where hi
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[typecasts: write NOW; reorganize](https://github.com/john-cd/rust_howto/issues/354)
+[typecasts: write; reorganize](https://github.com/john-cd/rust_howto/issues/354)
 </div>

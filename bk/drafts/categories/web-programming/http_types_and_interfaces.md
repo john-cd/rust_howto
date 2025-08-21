@@ -31,5 +31,5 @@ Combinators and adapters for HTTP request or response bodies.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write NOW](https://github.com/john-cd/rust_howto/issues/1338)
+[write](https://github.com/john-cd/rust_howto/issues/1338)
 </div>

@@ -19,7 +19,7 @@ mod tests {
     use super::*; // To parse the CATEGORIES_URL.
     // use crate::EnvGuard;
 
-    // // FIXME client makes HTTPS requests, not HTTP
+    // // TODO client makes HTTPS requests, not HTTP
     // // Test successful retrieval of the TOML string.
     // #[test]
     // fn test_get_categories_toml_string_success() -> Result<()> {

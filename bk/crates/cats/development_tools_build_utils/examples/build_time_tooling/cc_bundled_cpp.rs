@@ -26,4 +26,4 @@ fn main() {
 // fn test() {
 //     main();
 // }
-// [FIX finish; deal with cc NOW](https://github.com/john-cd/rust_howto/issues/897)
+// [FIX finish; deal with cc](https://github.com/john-cd/rust_howto/issues/897)

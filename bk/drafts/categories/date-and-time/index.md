@@ -35,5 +35,5 @@ There is no clear answer as to which is best between [`time`][c~time~docs]↗{{h
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review in depth NOW](https://github.com/john-cd/rust_howto/issues/1188)
+[review in depth](https://github.com/john-cd/rust_howto/issues/1188)
 </div>

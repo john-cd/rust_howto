@@ -28,5 +28,5 @@ A queue is a FIFO (First-In, First-Out) data structure. [`VecDeque`][c~std::coll
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write NOW](https://github.com/john-cd/rust_howto/issues/1169)
+[write](https://github.com/john-cd/rust_howto/issues/1169)
 </div>

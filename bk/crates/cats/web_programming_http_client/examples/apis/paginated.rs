@@ -144,5 +144,5 @@
 //     res?;
 //     Ok(())
 // }
-// // [fix - the API no longer returns a crate_id - need to get; NOW](https://github.com/john-cd/rust_howto/issues/860)
+// // [fix - the API no longer returns a crate_id - need to get](https://github.com/john-cd/rust_howto/issues/860)
 // // <https://github.com/rust-lang/crates.io/issues/856>

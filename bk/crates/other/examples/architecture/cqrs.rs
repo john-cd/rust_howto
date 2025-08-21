@@ -382,7 +382,7 @@
 //     Ok(())
 // }
 
-// // FIXME finish NOW
+// // TODO finish
 // // <https://martinfowler.com/bliki/CQRS.html>
 // // <https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-1?source=more_series_bottom_blogs>
 // // <https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-2>

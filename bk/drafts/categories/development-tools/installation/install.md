@@ -28,5 +28,5 @@ The [`cargo install`][book~cargo~cargo-install]↗{{hi:cargo install}} command m
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[review NOW](https://github.com/john-cd/rust_howto/issues/918)
+[review](https://github.com/john-cd/rust_howto/issues/918)
 </div>

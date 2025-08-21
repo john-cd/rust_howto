@@ -26,5 +26,5 @@ A safe, reliable implementation of [`remove_dir_all`][c~remove_dir_all~docs]↗{
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[fix - also cover [`std`][c~std~docs]↗{{hi:std}} implementation. NOW](https://github.com/john-cd/rust_howto/issues/357)
+[fix - also cover [`std`][c~std~docs]↗{{hi:std}} implementation](https://github.com/john-cd/rust_howto/issues/357)
 </div>

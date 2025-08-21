@@ -76,4 +76,4 @@ fn main() {
     // cxx();
     // uniffi();
 }
-// [fix build.rs for ffi NOW](https://github.com/john-cd/rust_howto/issues/1026)
+// [fix build.rs for ffi](https://github.com/john-cd/rust_howto/issues/1026)

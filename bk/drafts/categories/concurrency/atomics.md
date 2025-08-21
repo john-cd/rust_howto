@@ -36,7 +36,7 @@ The [`arc-swap::ArcSwap`][c~arc-swap::ArcSwap~docs]↗{{hi:arc-swap::ArcSwap}} t
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[fix NOW](https://github.com/john-cd/rust_howto/issues/1342)
+[fix](https://github.com/john-cd/rust_howto/issues/1342)
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/examples/atomics/spinlock.rs:example}}

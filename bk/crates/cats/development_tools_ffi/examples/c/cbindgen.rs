@@ -47,4 +47,4 @@ pub extern "C" fn create_point(x: f64, y: f64) -> Point {
 }
 
 // ANCHOR_END: example
-// [fix; see build.rs NOW](https://github.com/john-cd/rust_howto/issues/1002)
+// [fix; see build.rs](https://github.com/john-cd/rust_howto/issues/1002)

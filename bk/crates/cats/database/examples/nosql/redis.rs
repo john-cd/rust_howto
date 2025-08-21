@@ -68,4 +68,4 @@ fn require_external_svc() -> Result<()> {
     main()?;
     Ok(())
 }
-// [review NOW](https://github.com/john-cd/rust_howto/issues/1161)?
+// [review](https://github.com/john-cd/rust_howto/issues/1161)?

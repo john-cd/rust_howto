@@ -4,7 +4,7 @@
 
 Rust projects use version control (typically [`git`][git~website]↗{{hi:git}}) like any other software. `git` tracks changes to your code, enables collaboration, and allows you to revert to previous versions. Cargo's [`Cargo.lock`][c~cargo~cargo.lock]↗{{hi:Cargo.lock}} file specifically ensures reproducible builds by pinning exact dependency versions, which can also be version controlled.
 
-The following describes tools that make TODO.
+The following describes tools that make FIXME.
 
 ## Check Your Code Before Committing it {#check-your-code-before-committing}
 

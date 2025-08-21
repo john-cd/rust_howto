@@ -64,5 +64,5 @@ This example uses the [`GitHub API - rate limiting`][github-api-rate-limiting]â†
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review / fix NOW](https://github.com/john-cd/rust_howto/issues/974)
+[review / fix](https://github.com/john-cd/rust_howto/issues/974)
 </div>

@@ -80,7 +80,7 @@
 //     main()?;
 //     Ok(())
 // }
-// // [finish NOW](https://github.com/john-cd/rust_howto/issues/811)
+// // [finish](https://github.com/john-cd/rust_howto/issues/811)
 
 // // https://ngrok.com/blog-post/ngrok-rs
 // // https://ngrok.com/docs/getting-started/rust/

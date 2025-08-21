@@ -32,7 +32,7 @@ fn check_links_in_file(filepath: &std::path::Path) -> anyhow::Result<()> {
     // Read a text file in memory, test if its contents should be processed, and if true, update its contents.
     core_lib::process_text_file(
         filepath,
-        |s: &str| true, // FIXME: check if the file contains any links.
+        |s: &str| true, // TODO: check if the file contains any links.
         |s: &str| std::borrow::Cow::Borrowed(""), // FIXME: update the file.
     )?;
     Ok(())

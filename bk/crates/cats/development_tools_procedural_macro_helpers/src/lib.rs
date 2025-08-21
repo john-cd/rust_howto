@@ -58,4 +58,4 @@
 // }
 // // ANCHOR_END: attribute_macro
 
-// // [finish NOW](https://github.com/john-cd/rust_howto/issues/1157)
+// // [finish](https://github.com/john-cd/rust_howto/issues/1157)

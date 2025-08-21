@@ -64,7 +64,7 @@ See [[development-tools_profiling | Development Tools: Profiling]] and [[memory_
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[memory-management/index: organize; align table and sections; write missing sections; cross link NOW](https://github.com/john-cd/rust_howto/issues/410)
+[memory-management/index: organize; align table and sections; write missing sections; cross link](https://github.com/john-cd/rust_howto/issues/410)
 cover [sanitizer][book~unstable-book~sanitizer]
 cover ASan and MSan.
 unsafe.

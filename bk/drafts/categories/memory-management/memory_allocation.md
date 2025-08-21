@@ -58,7 +58,7 @@ It is important to note that keys may be reused. In other words, once a value as
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write NOW](https://github.com/john-cd/rust_howto/issues/1341)
+[write](https://github.com/john-cd/rust_howto/issues/1341)
 
 - [Jemalloc][c~jemalloc~lib.rs]↗.
 

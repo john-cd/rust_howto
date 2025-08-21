@@ -64,5 +64,5 @@ Encodes byte slice into [`base64`][c~base64~docs]↗{{hi:base64}} {{hi:base64}} 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review NOW](https://github.com/john-cd/rust_howto/issues/930)
+[review](https://github.com/john-cd/rust_howto/issues/930)
 </div>

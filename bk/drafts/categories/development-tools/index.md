@@ -92,7 +92,7 @@ See also [[cross_compiling | Cross Compiling (Cargo Plugins)]].
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[index: reorganize; dedupe alternatives / [`log`][c~log~docs]↗{{hi:log}} / config_log NOW](https://github.com/john-cd/rust_howto/issues/319)
+[index: reorganize; dedupe alternatives / [`log`][c~log~docs]↗{{hi:log}} / config_log](https://github.com/john-cd/rust_howto/issues/319)
 
 ## Editors
 

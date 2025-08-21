@@ -28,4 +28,4 @@ pub fn main() {
 // Requires a clipboard on Linux; otherwise,
 // "Unknown error while interacting with the clipboard: X11 server connection
 // timed out because it was unreachable"
-// [review NOW](https://github.com/john-cd/rust_howto/issues/1155)
+// [review](https://github.com/john-cd/rust_howto/issues/1155)

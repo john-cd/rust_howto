@@ -33,7 +33,7 @@ cargo build --release
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[other: expand; revise refs.incl.md NOW](https://github.com/john-cd/rust_howto/issues/305)
+[other: expand; revise refs.incl.md](https://github.com/john-cd/rust_howto/issues/305)
 
 - [Gerust][gerust~website]↗: Rust backend project generator.
 

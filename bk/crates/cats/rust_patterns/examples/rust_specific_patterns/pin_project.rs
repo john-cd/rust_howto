@@ -232,4 +232,4 @@
 // fn test() {
 //     main();
 // }
-// // [finish; provide projection example before going into pin projection; explain risks; explain use cases NOW](https://github.com/john-cd/rust_howto/issues/1120)
+// // [finish; provide projection example before going into pin projection; explain risks; explain use cases](https://github.com/john-cd/rust_howto/issues/1120)

@@ -40,6 +40,6 @@ Rust Crates:
 
 [![dora-rs][c~dora-rs~docs~badge]][c~dora-rs~docs] [![dora-rs~crates.io][c~dora-rs~crates.io~badge]][c~dora-rs~crates.io] [![dora-rs~github][c~dora-rs~github~badge]][c~dora-rs~github] [![dora-rs~lib.rs][c~dora-rs~lib.rs~badge]][c~dora-rs~lib.rs]{{hi:dora-rs}}
 
-Dataflow Oriented Robotic Architecture: TODO
+Dataflow Oriented Robotic Architecture: FIXME
 
 </div>

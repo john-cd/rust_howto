@@ -37,5 +37,5 @@ Vim, Emacs, and Neovim offer great flexibility and power, but they require a hig
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write; review in depth finish the table NOW](https://github.com/john-cd/rust_howto/issues/962)
+[write; review in depth finish the table](https://github.com/john-cd/rust_howto/issues/962)
 </div>

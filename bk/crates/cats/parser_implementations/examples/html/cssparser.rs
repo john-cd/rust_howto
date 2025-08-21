@@ -109,4 +109,4 @@
 // fn test() {
 //     main();
 // }
-// // [finish NOW](https://github.com/john-cd/rust_howto/issues/1092)
+// // [finish](https://github.com/john-cd/rust_howto/issues/1092)

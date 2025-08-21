@@ -122,5 +122,5 @@
 //     main()?;
 //     Ok(())
 // }
-// // [finish; see also https://github.com/krojew/cdrs-tokio/blob/master/cdrs-tokio/examples/crud_operations.rs NOW](https://github.com/john-cd/rust_howto/issues/1017)
+// // [finish; see also https://github.com/krojew/cdrs-tokio/blob/master/cdrs-tokio/examples/crud_operations.rs](https://github.com/john-cd/rust_howto/issues/1017)
 // // <https://github.com/krojew/cdrs-tokio/blob/master/cdrs-tokio/examples/multiple_thread.rs>

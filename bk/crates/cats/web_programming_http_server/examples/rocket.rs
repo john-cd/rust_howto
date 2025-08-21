@@ -18,6 +18,6 @@
 // #[test]
 // fn require_network() {
 // }
-// // [finish NOW](https://github.com/john-cd/rust_howto/issues/869)
+// // [finish](https://github.com/john-cd/rust_howto/issues/869)
 
 fn main() {}

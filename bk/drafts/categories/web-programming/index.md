@@ -86,7 +86,7 @@ See [[web-programming_websocket | Web Programming: Websocket]].
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[web-programming/index: organize; need full review; further cross link NOW](https://github.com/john-cd/rust_howto/issues/500)
+[web-programming/index: organize; need full review; further cross link](https://github.com/john-cd/rust_howto/issues/500)
 
 Frameworks:
 

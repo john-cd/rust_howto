@@ -47,5 +47,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write NOW](https://github.com/john-cd/rust_howto/issues/486)
+[write](https://github.com/john-cd/rust_howto/issues/486)
 </div>

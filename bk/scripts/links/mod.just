@@ -29,7 +29,7 @@ _default:
 [unix]
 @suggest:
   ./suggest_links_for_bare_urls.sh {{root}}
-# [review suggest_links_for_bare_urls NOW](https://github.com/john-cd/rust_howto/issues/1241)
+# [review suggest_links_for_bare_urls](https://github.com/john-cd/rust_howto/issues/1241)
 
 # (Rough) Convert inline links e.g. [...](http://...) into reference-style links: [...][...] [...]: http://...
 [unix]

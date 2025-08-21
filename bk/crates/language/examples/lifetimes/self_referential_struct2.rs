@@ -84,7 +84,7 @@ mod selfref {
             // `new_unchecked` is okay because we know this value is never used
             // again after being dropped.
             inner_drop(unsafe { Pin::new_unchecked(self) });
-            
+
             fn inner_drop(_this: Pin<&mut SelfRef>) {
                 // Actual drop code goes here.
             }
@@ -115,5 +115,4 @@ fn main() {
 fn test() {
     main();
 }
-
 // [cover <https://doc.rust-lang.org/std/pin/index.html#projections-and-structural-pinning>](https://github.com/john-cd/rust_howto/issues/1407)

@@ -42,4 +42,4 @@ pub fn main() -> Result<(), Error> {
     Ok(())
 }
 // ANCHOR_END: example
-// [review NOW](https://github.com/john-cd/rust_howto/issues/1162)
+// [review](https://github.com/john-cd/rust_howto/issues/1162)

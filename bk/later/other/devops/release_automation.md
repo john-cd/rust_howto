@@ -71,7 +71,7 @@ The following are the typical steps to release a crate to [`crates.io`][crates.i
 
 [`cargo-dist`][c~cargo-dist~docs]↗{{hi:cargo-dist}} packages shippable applications for Rust.
 
-TODO got archived??
+FIXME got archived??
 
 ## Create Debian and RPM Packages with `cargo-deb` and `cargo-rpm` {#cargo-deb}
 

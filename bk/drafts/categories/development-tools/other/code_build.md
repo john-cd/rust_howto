@@ -111,5 +111,5 @@ See [[building | Building]].
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[review; dedupe this page and cargo plugins > building; move from other section NOW](https://github.com/john-cd/rust_howto/issues/919)
+[review; dedupe this page and cargo plugins > building; move from other section](https://github.com/john-cd/rust_howto/issues/919)
 </div>

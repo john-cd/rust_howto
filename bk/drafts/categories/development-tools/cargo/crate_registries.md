@@ -26,5 +26,5 @@ Helpers for interacting with crates.io.
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[write; expand NOW](https://github.com/john-cd/rust_howto/issues/294)
+[write; expand](https://github.com/john-cd/rust_howto/issues/294)
 </div>

@@ -107,7 +107,7 @@ mod tests {
         assert_eq!(model_cat.description, api_cat.description);
     }
 
-    // FIXME client makes HTTPS request, not HTTP.
+    // TODO client makes HTTPS request, not HTTP.
 
     // #[test]
     // fn test_get_categories_for_crate_success() -> Result<()> {

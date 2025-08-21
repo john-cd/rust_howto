@@ -78,9 +78,9 @@ In embedded systems, you often have more direct access to CPU features and perip
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[processor: expand NOW](https://github.com/john-cd/rust_howto/issues/399)
+[processor: expand](https://github.com/john-cd/rust_howto/issues/399)
 
-- [Nine Rules for SIMD Acceleration of Your Rust Code (Part 1) | Towards Data Science][blog~towardsdatascience-nine-rules-for-simd-acceleration-of-your-rust-code-part-1]↗.
-- [Towards fearless SIMD, 7 years later - Linebender][blog~towards-fearless-simd]↗.
+- [Nine Rules for SIMD Acceleration of Your Rust Code (Part 1)][blog~towardsdatascience-nine-rules-for-simd-acceleration-of-your-rust-code-part-1]↗.
+- [Towards fearless SIMD, 7 years later][blog~towards-fearless-simd]↗ - Linebender.
 
 </div>

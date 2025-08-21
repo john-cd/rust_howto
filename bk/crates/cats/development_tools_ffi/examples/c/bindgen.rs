@@ -50,4 +50,4 @@
 // fn test() {
 //     main();
 // }
-// // [fix NOW](https://github.com/john-cd/rust_howto/issues/1001)
+// // [fix](https://github.com/john-cd/rust_howto/issues/1001)

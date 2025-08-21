@@ -10,7 +10,7 @@ Interfacing with Erlang/Elixir from Rust typically involves using ports or NIFs 
 
 ## NIFs (Native Implemented Functions) {#skip}
 
-TODO find proper crate.
+FIXME find proper crate.
 
 The `???` crate allows you to write NIFs in Rust. NIFs run within the Erlang VM, so they are more performant than ports, but also more complex and require extra care to avoid crashing the VM.
 

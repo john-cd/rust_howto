@@ -43,6 +43,8 @@ For lazy initialization scenarios where you want to defer the creation of a valu
 [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
 [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
+FIXME cover once_cell in std
+
 [`once_cell`][c~once_cell~docs]↗{{hi:once_cell}} provides two cell-like types, `unsync::OnceCell` and `sync::OnceCell`. A `OnceCell` might store arbitrary non-Copy types, can be assigned to at most once and provides direct access to the stored contents. The `sync` flavor is thread-safe. [`once_cell`][c~once_cell~docs]↗{{hi:once_cell}} also has a [`once_cell::sync::Lazy`][c~once_cell::sync::Lazy~docs]↗{{hi:once_cell::sync::Lazy}} type, build on top of [`OnceCell`][c~once_cell::sync::OnceCell~docs]↗:
 
 ```rust,editable
@@ -85,7 +87,7 @@ Declares a lazily evaluated constant [`std::collections::HashMap`][c~std::collec
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[lazy_initialization: write / fix NOW](https://github.com/john-cd/rust_howto/issues/411)
+[lazy_initialization: write / fix](https://github.com/john-cd/rust_howto/issues/411)
 cover / link to Once OnceCell OnceLock Lazylock.
 
 </div>

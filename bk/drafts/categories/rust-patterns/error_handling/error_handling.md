@@ -205,14 +205,14 @@ Run the recipe with [`RUST_BACKTRACE=1`][c~std::backtrace~docs]↗{{hi:RUST_BACK
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[error_handling: fix / organize NOW](https://github.com/john-cd/rust_howto/issues/465)
+[error_handling: fix / organize](https://github.com/john-cd/rust_howto/issues/465)
 review [![Rust by example - error][book~rust-by-example~error~badge]][book~rust-by-example~error]
 
-FIXME rename examples; move example above to separate file
+rename examples; move example above to separate file
 credit the [Recoverable Errors with Result chapter (Rust book)][book~rust~ch09-02-recoverable-errors-with-result]
 
 [`std::io::Error`][c~std::io::Error~docs]↗{{hi:std::io::Error}} defined type implementing the [`std::error::Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} trait.
 
-- [human-panic][c~human-panic~github]↗: Panic messages for humans.
+- [`human-panic`][c~human-panic~github]↗: Panic messages for humans.
 
 </div>
