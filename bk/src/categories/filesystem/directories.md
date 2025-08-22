@@ -14,21 +14,30 @@ Use the following recipes to create, list, delete, and recursively traverse dire
 {{#include ../../../crates/cats/filesystem/examples/directories/cwd.rs:example}}
 ```
 
-## `remove_dir_all` {#remove_dir_all}
+## Create, List Contents of, and Remove Directories {#create-list-contents-remove-dirs}
+
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
+
+The following example demonstrates basic operations on directories - creating & removing (recursively if needed), list contents:
+
+```rust,editable
+{{#include ../../../crates/cats/filesystem/examples/directories/manipulate_dirs.rs:example}}
+```
+
+## Remove a Directory and its Contents with `remove_dir_all` {#remove_dir_all}
 
 [![remove_dir_all][c~remove_dir_all~docs~badge]][c~remove_dir_all~docs] [![remove_dir_all~crates.io][c~remove_dir_all~crates.io~badge]][c~remove_dir_all~crates.io] [![remove_dir_all~github][c~remove_dir_all~github~badge]][c~remove_dir_all~github] [![remove_dir_all~lib.rs][c~remove_dir_all~lib.rs~badge]][c~remove_dir_all~lib.rs]{{hi:remove_dir_all}}{{hi:Utility}}{{hi:Filesystem}}{{hi:Windows}}{{hi:Remove_dir}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-FIXME A safe, reliable implementation of [`remove_dir_all`][c~remove_dir_all~docs]↗{{hi:remove_dir_all}} for Windows.
+The [`remove_dir_all`][c~remove_dir_all~docs]↗{{hi:remove_dir_all}} library provides an alternative implementation of `std::fs::remove_dir_all` from the Rust `std` library.
+
+In particular, its optional 'parallel' feature parallelizes the deletion. This is useful when high syscall latency is occurring, such as on Windows or network file systems.
 
 ```rust,editable
-{{#include ../../../crates/cats/filesystem/examples/directories/remove_dir_all.rs:example}}
+{{#include ../../../crates/cats/filesystem/examples/directories/remove_dir_all2.rs:example}}
 ```
-
-also cover [`std`][c~std~docs]↗{{hi:std}} implementation
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[fix](https://github.com/john-cd/rust_howto/issues/357)
 </div>
