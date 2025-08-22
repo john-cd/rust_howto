@@ -1,4 +1,4 @@
-# Sorting Vectors
+# Sorting
 
 {{#include sorting.incl.md}}
 

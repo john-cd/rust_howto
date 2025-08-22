@@ -1,4 +1,4 @@
-# Custom
+# Bitfields
 
 {{#include bitfield.incl.md}}
 

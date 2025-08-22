@@ -1,4 +1,4 @@
-# Learn Rust
+# Learning Rust
 
 {{#include learning.incl.md}}
 

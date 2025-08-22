@@ -1,4 +1,4 @@
-# HashMap
+# Hashmaps and sets
 
 {{#include hashmap.incl.md}}
 

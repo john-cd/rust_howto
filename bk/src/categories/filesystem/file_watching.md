@@ -8,6 +8,8 @@
 
 [`notify`][c~notify~docs]↗{{hi:notify}} is a cross-platform filesystem notification library.
 
+FIXME
+
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/examples/file_watching/notify.rs:example}}
 ```

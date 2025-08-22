@@ -52,7 +52,7 @@ FIXME.
 
 {{#include _ignore.incl.md}}
 
-### User Directories
+### User Directories and Preferred Applications
 
 {{#include user_directories.incl.md}}
 

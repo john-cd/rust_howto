@@ -1,4 +1,4 @@
-# Hashmap's Friends
+# HashMap's Friends
 
 {{#include maps.incl.md}}
 

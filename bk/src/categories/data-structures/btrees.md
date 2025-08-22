@@ -1,4 +1,4 @@
-# BTreeMap and BTreeSet
+# B-Trees
 
 {{#include btrees.incl.md}}
 

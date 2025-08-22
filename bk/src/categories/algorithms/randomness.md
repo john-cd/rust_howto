@@ -1,4 +1,4 @@
-# Generate Random Values
+# Random Values
 
 {{#include randomness.incl.md}}
 
@@ -71,7 +71,7 @@ Randomly generates a string of given length ASCII characters with custom user-de
 {{#include ../../../crates/cats/algorithms/examples/rand/rand_choose.rs:example}}
 ```
 
-## `fastrand` {#fastrand}
+## Generate Random Numbers with `fastrand` {#fastrand}
 
 [![fastrand][c~fastrand~docs~badge]][c~fastrand~docs] [![fastrand~crates.io][c~fastrand~crates.io~badge]][c~fastrand~crates.io] [![fastrand~github][c~fastrand~github~badge]][c~fastrand~github] [![fastrand~lib.rs][c~fastrand~lib.rs~badge]][c~fastrand~lib.rs]{{hi:fastrand}}{{hi:Rand}}{{hi:Random}}{{hi:Wyrand}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
 

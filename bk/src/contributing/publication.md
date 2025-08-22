@@ -1,4 +1,4 @@
-# Publish to `crates.io`
+# Publication to `crates.io`
 
 {{#include publication.incl.md}}
 

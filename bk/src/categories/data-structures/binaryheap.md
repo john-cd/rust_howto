@@ -10,7 +10,7 @@
 {{#include ../../../crates/cats/data_structures/examples/binaryheap/binaryheap.rs:example}}
 ```
 
-## `priority-queue` {#priority-queue}
+## Implement a Priority Queue with `priority-queue` {#priority-queue}
 
 [![priority-queue][c~priority-queue~docs~badge]][c~priority-queue~docs] [![priority-queue~crates.io][c~priority-queue~crates.io~badge]][c~priority-queue~crates.io] [![priority-queue~github][c~priority-queue~github~badge]][c~priority-queue~github] [![priority-queue~lib.rs][c~priority-queue~lib.rs~badge]][c~priority-queue~lib.rs]{{hi:priority-queue}}{{hi:Heap}}{{hi:Priority}}{{hi:Queue}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
