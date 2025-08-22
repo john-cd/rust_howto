@@ -1,6 +1,7 @@
 # Summary
 
-[Introduction](index.md)
+[Introduction](intro/index.md)
+[How to Read This Book](intro/how_to_read_this_book.md)
 
 # Core Concepts
 
