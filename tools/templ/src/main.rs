@@ -24,7 +24,7 @@ fn main() -> anyhow::Result<()> {
         // Generate badges for one or more crates.
         //
         // Include keywords, categories, description, refdefs.
-        // TODO 
+        // TODO
         Cmd::Badges(b) => {
             for name in b.args {
                 let (badges, refdefs) = create_crate_block(name.trim())?;

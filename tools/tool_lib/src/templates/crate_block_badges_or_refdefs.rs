@@ -8,7 +8,7 @@ pub(super) static CRATE_BLOCK_BADGES: &str = concat!(
     "{{ if homepage_defined }}[![{crate_name}~website][c~{crate_name}~website~badge]][c~{crate_name}~website] {{ endif }}",
     "[![{crate_name}][c~{crate_name}~docs~badge]][c~{crate_name}~docs] ",
     "[![{crate_name}~crates.io][c~{crate_name}~crates.io~badge]][c~{crate_name}~crates.io] ",
-    "[![{crate_name}~github][c~{crate_name}~github~badge]][c~{crate_name}~github] ",
+    "{{ if repository_defined }}[![{crate_name}~github][c~{crate_name}~github~badge]][c~{crate_name}~github] {{ endif }}",
     r"[![{crate_name}~lib.rs][c~{crate_name}~lib.rs~badge]][c~{crate_name}~lib.rs]\{\{hi:{crate_name}}} "
 );
 
@@ -21,21 +21,19 @@ pub(super) static CRATE_BLOCK_REFDEFS: &str = "\
 [c~{crate_name}~crates.io~badge]: https://img.shields.io/badge/crates.io-{crate_name | shielded}-crimson
 [c~{crate_name}~docs]: {{ if documentation_defined }}{documentation}{{ else }}https://docs.rs/{crate_name}{{ endif }}
 [c~{crate_name}~docs~badge]: https://img.shields.io/crates/v/{crate_name}?label={crate_name}
-{{ if repository_defined }}[c~{crate_name}~github]: {repository}{{ endif }}
-{{ if repository_defined }}[c~{crate_name}~github~badge]: https://img.shields.io/badge/{crate_name | shielded}-steelblue?logo=github{{ endif }}
+{{ if repository_defined }}[c~{crate_name}~github]: {repository}
+[c~{crate_name}~github~badge]: https://img.shields.io/badge/{crate_name | shielded}-steelblue?logo=github{{ endif }}
 [c~{crate_name}~lib.rs]: https://lib.rs/crates/{crate_name}
 [c~{crate_name}~lib.rs~badge]: https://img.shields.io/badge/lib.rs-{crate_name | shielded}-yellow
-{{ if homepage_defined }}[c~{crate_name}~website]: {homepage}{{ endif }}
-{{ if homepage_defined }}[c~{crate_name}~website~badge]: https://img.shields.io/badge/{crate_name | shielded}-coral{{ endif }}
+{{ if homepage_defined }}[c~{crate_name}~website]: {homepage}
+[c~{crate_name}~website~badge]: https://img.shields.io/badge/{crate_name | shielded}-coral{{ endif }}
+[c~{crate_name}~recent-downloads~badge]: https://img.shields.io/crates/dr/{crate_name}
+[c~{crate_name}~deps-rs~badge]: https://img.shields.io/deps-rs/{crate_name}/latest
+[c~{crate_name}~license~badge]: https://img.shields.io/crates/l/{crate_name}
+[c~{crate_name}~dependents~badge]: https://img.shields.io/crates/dependents/{crate_name}
+{{ if github_detected }}[c~{crate_name}~commit-activity~badge]: https://img.shields.io/github/commit-activity/y/{github_user}/{github_repo}
+[c~{crate_name}~last-commit~badge]: https://img.shields.io/github/last-commit/{github_user}/{github_repo}{{ endif }}
 ";
-
-// TODO add URLs for additional badges:
-// [c~{crate_name}~recent-downloads~badge]: https://img.shields.io/crates/dr/{crate_name}
-// [c~{crate_name}~deps-rs~badge]: https://img.shields.io/deps-rs/{crate_name}/latest
-// [c~{crate_name}~license~badge]: https://img.shields.io/crates/l/{crate_name}
-// [c~{crate_name}~dependents~badge]: https://img.shields.io/crates/dependents/{crate_name}
-// [c~{crate_name}~commit-activity~badge]: https://img.shields.io/github/commit-activity/y/:user/:repo
-// [c~{crate_name}~last-commit~badge]: https://img.shields.io/github/last-commit/:user/:repo
 
 /// The different modes for generating content related to a crate.
 ///
@@ -57,16 +55,25 @@ pub fn create_crate_block_badges_or_refdefs(
 ) -> Result<String> {
     use trim_in_place::TrimInPlace;
 
-    use super::normalize_url::normalize_docs_url;
+    use super::detect_github_url;
+    use super::normalize_docs_url;
 
     let tt = super::get_template_engine()?;
 
-    // Normalize URL
+    // Normalize URL:
     let documentation = crate_data
         .documentation
         .as_ref()
         .map(|s| normalize_docs_url(s))
         .unwrap_or_default();
+
+    let repository: String = crate_data
+        .repository
+        .as_deref()
+        .unwrap_or_default()
+        .replace(".git", "");
+
+    let (github_detected, github_user, github_repo) = detect_github_url(&repository);
 
     #[derive(Serialize)]
     /// Context data used for rendering templates.
@@ -79,7 +86,10 @@ pub fn create_crate_block_badges_or_refdefs(
         homepage_defined: bool,
         homepage: &'a str, /* URL e.g. https://github.com/sollimann/bonsai, https://serde.rs */
         repository_defined: bool,
-        repository: String, // URL e.g. https://github.com/serde-rs/serde
+        repository: &'a str,   // URL e.g. https://github.com/serde-rs/serde
+        github_detected: bool, // The repository is hosted on GitHub.
+        github_user: &'a str,
+        github_repo: &'a str,
     }
 
     let context = Context {
@@ -96,13 +106,10 @@ pub fn create_crate_block_badges_or_refdefs(
             .unwrap_or_default()
             .trim_end_matches('/'),
         repository_defined: crate_data.repository.is_some(),
-        repository: crate_data
-            .repository
-            .as_deref()
-            .unwrap_or_default()
-            .replace(".git", "")
-            .trim_end_matches('/')
-            .to_string(),
+        repository: repository.trim_end_matches('/'),
+        github_detected,
+        github_user,
+        github_repo,
     };
     let mut rendered = match mode {
         GenerationMode::CrateBlock => tt.render("CRATE_BLOCK_BADGES", &context)?,
@@ -143,6 +150,8 @@ fn capitalize_if_not(s: String, should_not_be: &str) -> String {
 pub fn create_crate_block(name: &str) -> Result<(String, Vec<String>)> {
     use anyhow::Context;
 
+    use super::remove_empty_lines;
+
     let mut crate_block = String::new();
 
     let info = crate::get_info_for_crate(name).with_context(|| format!("Unknown crate: {name}"))?;
@@ -174,12 +183,12 @@ pub fn create_crate_block(name: &str) -> Result<(String, Vec<String>)> {
         crate_block.push_str(&(format!("{desc}\n\n")));
     }
 
-    let refdefs =
-        create_crate_block_badges_or_refdefs(&info.crate_data, GenerationMode::CrateBlockRefdefs)?;
+    let (vector_of_lines, refdefs) = remove_empty_lines(&create_crate_block_badges_or_refdefs(
+        &info.crate_data,
+        GenerationMode::CrateBlockRefdefs,
+    )?);
     crate_block.push_str(&refdefs);
 
     // Also return the refdefs as a separate vector of strings.
-    let vector_of_lines: Vec<String> = refdefs.split('\n').map(|str| str.to_string()).collect();
-
     Ok((crate_block, vector_of_lines))
 }

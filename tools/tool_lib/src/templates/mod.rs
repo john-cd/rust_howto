@@ -7,17 +7,21 @@ mod category_badge;
 mod crate_block_badges_or_refdefs;
 mod crates_alphabetical;
 mod crates_by_category;
+mod detect_github_url;
 mod index_anchors;
 mod normalize_url;
 mod rbe;
+mod remove_empty_lines;
 
 pub use category_badge::*;
 pub use crate_block_badges_or_refdefs::*;
 pub use crates_alphabetical::*;
 pub use crates_by_category::*;
+pub use detect_github_url::*;
 pub use index_anchors::*;
 pub use normalize_url::*;
 pub use rbe::*;
+pub use remove_empty_lines::*;
 
 /// Build a template engine with the custom formatters:
 /// - `underscored`: replace `-` by `_` per the Rust convention for module names
@@ -25,16 +29,18 @@ pub use rbe::*;
 ///   shields.io URLs
 fn get_template_engine() -> anyhow::Result<TinyTemplate<'static>> {
     let mut tt = TinyTemplate::new();
-    // replace - by _ per the Rust convention for module names
-    tt.add_formatter("underscored", |val, str| {
-        info!("underscored called with str: {str}, val: {val}");
-        if let Some(v) = val.as_str() {
-            str.push_str(&v.replace("-", "_"));
-        }
-        Ok(())
-    });
-    // used to escape - to --, _ to __, and replace " " by _ for use in
-    // shields.io URLs
+
+    // // Replace - by _ per the Rust convention for module names:
+    // tt.add_formatter("underscored", |val, str| {
+    //     info!("underscored called with str: {str}, val: {val}");
+    //     if let Some(v) = val.as_str() {
+    //         str.push_str(&v.replace("-", "_"));
+    //     }
+    //     Ok(())
+    // });
+
+    // Escape - to --, _ to __, and replace " " by _ for use in
+    // `shields.io` URLs.
     tt.add_formatter("shielded", |val, str| {
         info!("str: {str}, val: {val}");
         if let Some(v) = val.as_str() {
