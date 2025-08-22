@@ -134,8 +134,10 @@ entry_show_rules = [
 - [`mdbook-pdf`][c~mdbook-pdf~crates.io].
 - [`mdbook-tools`][c~mdbook-tools~lib.rs].
 - [`pullup`][pullup~lib.rs].
-- [`quarkdown`][quarkdown~github]
+- [`quarkdown`][quarkdown~github].
+- [`typst-pandoc`][typst-pandoc~github].
 
+[typst-pandoc~github]: https://github.com/alexmodrono/typst-pandoc
 [asciidoc~website]: https://asciidoc.org
 [blog~typst]: https://blog.jreyesr.com/posts/typst
 [book~mdbook~environment-variables]: https://rust-lang.github.io/mdBook/format/configuration/environment-variables.html
