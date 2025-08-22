@@ -8,7 +8,7 @@ The [`futures`][c~futures~docs]↗{{hi:futures}} crate provides a number of core
 
 In most cases, you will use this crate directly only when writing [async][p~async] code{{hi:async}} intended to work for multiple runtimes. Otherwise, use the utilities provided by the ecosystem of your choice - [Tokio][p~tokio] for example.
 
-## Selecting Futures {#selecting-futures}
+## Select Futures {#selecting-futures}
 
 [![futures~website][c~futures~website~badge]][c~futures~website] [![futures][c~futures~docs~badge]][c~futures~docs] [![futures~crates.io][c~futures~crates.io~badge]][c~futures~crates.io] [![futures~github][c~futures~github~badge]][c~futures~github] [![futures~lib.rs][c~futures~lib.rs~badge]][c~futures~lib.rs]{{hi:futures}}{{hi:Async}}{{hi:Future}}{{hi:futures}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 
@@ -18,7 +18,7 @@ In most cases, you will use this crate directly only when writing [async][p~asyn
 {{#include ../../../crates/cats/asynchronous/examples/futures/futures1.rs:example}}
 ```
 
-## Joining Futures {#joining-futures}
+## Join Futures {#joining-futures}
 
 [![futures~website][c~futures~website~badge]][c~futures~website] [![futures][c~futures~docs~badge]][c~futures~docs] [![futures~crates.io][c~futures~crates.io~badge]][c~futures~crates.io] [![futures~github][c~futures~github~badge]][c~futures~github] [![futures~lib.rs][c~futures~lib.rs~badge]][c~futures~lib.rs]{{hi:futures}}{{hi:Async}}{{hi:Future}}{{hi:futures}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 
