@@ -94,6 +94,6 @@ Microcontrollers respond to events via interrupts.
 
 - [5 Rust Runtimes Every Embedded Developer Needs to Know][blog~5-rust-runtimes-every-embedded-developer-needs-to-know]↗.
 - [`drone-os.com`][drone-os~website]↗.
-- [How to Use Rust Procedural Macros to Replace Panic with syn’s Fold][blog~rust-procedural-macros-replace-panic]↗.
+- [How to Use Rust Procedural Macros to Replace Panic with `syn`'s `Fold`][blog~rust-procedural-macros-replace-panic]↗.
 
 </div>

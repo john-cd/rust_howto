@@ -207,7 +207,7 @@ A Jupyter Kernel for Rust
 
 ---
 
-[![kget][c~kget~docs~badge]][c~kget~docs] [![kget~crates.io][c~kget~crates.io~badge]][c~kget~crates.io] [![kget~github][c~kget~github~badge]][c~kget~github] [![kget~lib.rs][c~kget~lib.rs~badge]][c~kget~lib.rs]{{hi:kget}}{{hi:Http}}{{hi:Torrent}}{{hi:Ftp}}{{hi:Download}}{{hi:Sftp}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}}
+[![kget][c~kget~docs~badge]][c~kget~docs] [![kget~crates.io][c~kget~crates.io~badge]][c~kget~crates.io] [![kget~github][c~kget~github~badge]][c~kget~github] [![kget~lib.rs][c~kget~lib.rs~badge]][c~kget~lib.rs]{{hi:kget}}{{hi:HTTP}}{{hi:Torrent}}{{hi:FTP}}{{hi:Download}}{{hi:SFTP}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}}
 
 A powerful and versatile download manager and library.
 

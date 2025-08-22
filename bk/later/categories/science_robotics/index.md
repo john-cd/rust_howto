@@ -95,7 +95,7 @@ review
 
 ---
 
-[![ehmi][c~ehmi~docs~badge]][c~ehmi~docs] [![ehmi~crates.io][c~ehmi~crates.io~badge]][c~ehmi~crates.io] [![ehmi~github][c~ehmi~github~badge]][c~ehmi~github] [![ehmi~lib.rs][c~ehmi~lib.rs~badge]][c~ehmi~lib.rs]{{hi:ehmi}}{{hi:Ui}}{{hi:Plc}}{{hi:Egui}}{{hi:Hmi}}{{hi:Scada}}
+[![ehmi][c~ehmi~docs~badge]][c~ehmi~docs] [![ehmi~crates.io][c~ehmi~crates.io~badge]][c~ehmi~crates.io] [![ehmi~github][c~ehmi~github~badge]][c~ehmi~github] [![ehmi~lib.rs][c~ehmi~lib.rs~badge]][c~ehmi~lib.rs]{{hi:ehmi}}{{hi:Ui}}{{hi:Plc}}{{hi:Egui}}{{hi:Hmi}}{{hi:SCADA}}
 
 HMI components for egui.
 
