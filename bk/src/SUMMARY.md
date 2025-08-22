@@ -5,7 +5,7 @@
 
 # Core Concepts
 
-- [Rust Installation and First Steps](language/rust_install.md)
+- [Rust Installation and First Steps](rust_install/index.md)
 - [Language](language/index.md)
   - [Entry Points](language/entrypoint.md)
   - [Data Types](language/data_types.md)

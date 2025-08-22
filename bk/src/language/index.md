@@ -4,10 +4,6 @@ This section is designed to provide a quick reference for Rust's language featur
 
 It is not intended to be a beginner's book nor a comprehensive guide, but rather a tool for those who are looking to refresh their knowledge. The [`Rust book`][book~rust]↗{{hi:Rust book}} is an excellent resource for complete beginners to get started with. Refer as well to the [[books | books]] chapter for a list of relevant books.
 
-## Rust Installation and First Steps
-
-{{#include rust_install.incl.md}}
-
 ## Entry Points
 
 {{#include entrypoint.incl.md}}

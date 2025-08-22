@@ -1,6 +1,6 @@
 # Rust Installation
 
-{{#include rust_install.incl.md}}
+{{#include index.incl.md}}
 
 ## Install Rust and Create a First Project {#rust-install}
 

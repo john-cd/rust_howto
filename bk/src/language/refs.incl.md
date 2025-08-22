@@ -99,7 +99,6 @@
 [ex~language~return-an-iterator]: iterators.md#return-an-iterator
 [ex~language~return-position-impl-trait]: impl_trait.md#return-position-impl-trait
 [ex~language~return-reference]: functions.md#return-reference
-[ex~language~rust-install]: rust_install.md#rust-install
 [ex~language~scalar-data-types]: data_types.md#scalar-data-types
 [ex~language~sealed-trait-pattern]: traits.md#sealed-trait-pattern
 [ex~language~self-referential-structs]: lifetimes.md#self-referential-structs
