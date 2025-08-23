@@ -2,7 +2,7 @@
 
 [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]
 
-Dealing with files{{hi:Files}} and file systems{{hi:File systems}}.
+This chapters deals with files{{hi:Files}} and file systems.{{hi:File systems}}
 
 For most common file system tasks, [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}} and [`std::path`][c~std::path~docs]↗{{hi:std::path}} will be sufficient. [`fs_extra`][c~fs_extra~docs]↗{{hi:fs_extra}} is useful for more advanced operations. [`tempfile`][c~tempfile~docs]↗{{hi:tempfile}} is great for working with temporary files. [`glob`][c~glob~docs]↗{{hi:glob}} simplifies file pattern matching. Use [`notify`][c~notify~docs]↗{{hi:notify}} for file watching.
 
@@ -20,25 +20,23 @@ For most common file system tasks, [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}} 
 
 ## Paths
 
-FIXME.
+{{#include path.incl.md}}
 
 ## Reading & Writing Files
 
-{{#include read-write.incl.md}}
+{{#include read_write.incl.md}}
 
 ### Working with Standard Input/Output
 
-Reading from stdin, writing to stdout/stderr, and handling command-line arguments.
-
-FIXME.
+{{#include stdin_stdout.incl.md}}
 
 ### Symbolic Links
 
-FIXME.
+{{#include symbolic_links.incl.md}}
 
 ### File Metadata
 
-FIXME.
+{{#include metadata.incl.md}}
 
 ## Directories
 

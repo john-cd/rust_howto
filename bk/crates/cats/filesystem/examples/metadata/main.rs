@@ -1,0 +1,3 @@
+mod metadata;
+
+fn main() {}

@@ -1,0 +1,3 @@
+mod canonicalize;
+
+fn main() {}

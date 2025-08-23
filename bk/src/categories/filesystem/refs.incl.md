@@ -1,4 +1,4 @@
-[ex~filesystem~avoid-writing-and-reading-from-the-same-file]: read-write.md#avoid-writing-and-reading-from-the-same-file
+[ex~filesystem~avoid-writing-and-reading-from-the-same-file]: read_write.md#avoid-writing-and-reading-from-the-same-file
 [ex~filesystem~cwd]: directories.md#cwd
 [ex~filesystem~directories]: user_directories.md#directories
 [ex~filesystem~dirs]: user_directories.md#dirs
@@ -7,9 +7,9 @@
 [ex~filesystem~find-files-modified-last-24-hours]: directory_traversal.md#find-files-modified-last-24-hours
 [ex~filesystem~find-loop-in-path]: directory_traversal.md#find-loop-in-path
 [ex~filesystem~globset]: directory_traversal.md#globset
-[ex~filesystem~memory-map]: read-write.md#memory-map
+[ex~filesystem~memory-map]: read_write.md#memory-map
 [ex~filesystem~open]: user_directories.md#open
-[ex~filesystem~read-lines-of-strings-from-a-file]: read-write.md#read-lines-of-strings-from-a-file
+[ex~filesystem~read-lines-of-strings-from-a-file]: read_write.md#read-lines-of-strings-from-a-file
 [ex~filesystem~recursively-calculate-file-sizes-at-given-depth]: directory_traversal.md#recursively-calculate-file-sizes-at-given-depth
 [ex~filesystem~recursively-find-all-files-with-given-predicate]: directory_traversal.md#recursively-find-all-files-with-given-predicate
 [ex~filesystem~recursively-find-duplicate-file-names]: directory_traversal.md#recursively-find-duplicate-file-names

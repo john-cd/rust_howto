@@ -2,7 +2,7 @@
 
 {{#include user_directories.incl.md}}
 
-Get platform-specific locations for [configuration][p~configuration], cache, and other data.
+The following code examples get platform-specific locations for [configuration][p~configuration], cache, and other data.
 
 ## Locate User Directories with `dirs` {#dirs}
 
@@ -14,7 +14,7 @@ Get platform-specific locations for [configuration][p~configuration], cache, and
 {{#include ../../../crates/cats/filesystem/examples/user_directories/dirs.rs:example}}
 ```
 
-## `directories` {#directories}
+## Locate User Directories with `directories` {#directories}
 
 [![directories][c~directories~docs~badge]][c~directories~docs] [![directories~crates.io][c~directories~crates.io~badge]][c~directories~crates.io] [![directories~github][c~directories~github~badge]][c~directories~github] [![directories~lib.rs][c~directories~lib.rs~badge]][c~directories~lib.rs]{{hi:directories}}{{hi:App_dirs}}{{hi:Xdg}}{{hi:Path}}{{hi:Folder}}{{hi:Basedir}}
 

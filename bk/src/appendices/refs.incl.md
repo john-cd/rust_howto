@@ -76,7 +76,7 @@
 [ex~data-structures~string]: ../categories/data-structures/strings.md#string
 [ex~data-structures~tinyvec]: ../categories/data-structures/stack_allocated_arrays.md#tinyvec
 [ex~data-structures~vec]: ../categories/data-structures/vector.md#vec
-[ex~filesystem~avoid-writing-and-reading-from-the-same-file]: ../categories/filesystem/read-write.md#avoid-writing-and-reading-from-the-same-file
+[ex~filesystem~avoid-writing-and-reading-from-the-same-file]: ../categories/filesystem/read_write.md#avoid-writing-and-reading-from-the-same-file
 [ex~filesystem~cwd]: ../categories/filesystem/directories.md#cwd
 [ex~filesystem~directories]: ../categories/filesystem/user_directories.md#directories
 [ex~filesystem~dirs]: ../categories/filesystem/user_directories.md#dirs
@@ -85,9 +85,9 @@
 [ex~filesystem~find-files-modified-last-24-hours]: ../categories/filesystem/directory_traversal.md#find-files-modified-last-24-hours
 [ex~filesystem~find-loop-in-path]: ../categories/filesystem/directory_traversal.md#find-loop-in-path
 [ex~filesystem~globset]: ../categories/filesystem/directory_traversal.md#globset
-[ex~filesystem~memory-map]: ../categories/filesystem/read-write.md#memory-map
+[ex~filesystem~memory-map]: ../categories/filesystem/read_write.md#memory-map
 [ex~filesystem~open]: ../categories/filesystem/user_directories.md#open
-[ex~filesystem~read-lines-of-strings-from-a-file]: ../categories/filesystem/read-write.md#read-lines-of-strings-from-a-file
+[ex~filesystem~read-lines-of-strings-from-a-file]: ../categories/filesystem/read_write.md#read-lines-of-strings-from-a-file
 [ex~filesystem~recursively-calculate-file-sizes-at-given-depth]: ../categories/filesystem/directory_traversal.md#recursively-calculate-file-sizes-at-given-depth
 [ex~filesystem~recursively-find-all-files-with-given-predicate]: ../categories/filesystem/directory_traversal.md#recursively-find-all-files-with-given-predicate
 [ex~filesystem~recursively-find-duplicate-file-names]: ../categories/filesystem/directory_traversal.md#recursively-find-duplicate-file-names

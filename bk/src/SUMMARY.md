@@ -77,7 +77,7 @@
   - [UUIDs](categories/data-structures/uuid.md)
 
 - [File System](categories/filesystem/index.md)
-  - [File Reading & Writing](categories/filesystem/read-write.md)
+  - [File Reading & Writing](categories/filesystem/read_write.md)
   - [Directories](categories/filesystem/directories.md)
   - [Directory Traversal](categories/filesystem/directory_traversal.md)
   - [File Watching](categories/filesystem/file_watching.md)
