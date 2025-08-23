@@ -20,7 +20,7 @@ For most common file system tasks, [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}} 
 
 ## Paths
 
-{{#include path.incl.md}}
+{{#include paths.incl.md}}
 
 ## Reading & Writing Files
 

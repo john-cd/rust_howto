@@ -78,9 +78,9 @@
 
 {{#include ../categories/filesystem/file_watching.incl.md}}
 
-### Read-Write
+### Read and Write
 
-{{#include ../categories/filesystem/read-write.incl.md}}
+{{#include ../categories/filesystem/read_write.incl.md}}
 
 ### `tempfile`
 
@@ -240,7 +240,7 @@
 
 ### Rust Install
 
-{{#include ../language/rust_install.incl.md}}
+{{#include ../rust_install/index.incl.md}}
 
 ### Slices
 

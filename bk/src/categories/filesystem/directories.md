@@ -33,7 +33,7 @@ The [`remove_dir_all`][c~remove_dir_all~docs]↗{{hi:remove_dir_all}} library pr
 In particular, its optional 'parallel' feature parallelizes the deletion. This is useful when high syscall latency is occurring, such as on Windows or network file systems.
 
 ```rust,editable
-{{#include ../../../crates/cats/filesystem/examples/directories/remove_dir_all2.rs:example}}
+{{#include ../../../crates/cats/filesystem/examples/directories/remove_dir_all.rs:example}}
 ```
 
 {{#include refs.incl.md}}
