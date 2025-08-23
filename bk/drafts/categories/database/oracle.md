@@ -4,7 +4,7 @@ Oracle [Database][p~database] is a multi-model [database][p~database] management
 
 ## `diesel-oci` {#diesel-oci}
 
-[![diesel-oci][c~diesel-oci~docs~badge]][c~diesel-oci~docs] [![diesel-oci~crates.io][c~diesel-oci~crates.io~badge]][c~diesel-oci~crates.io] [![diesel-oci~github][c~diesel-oci~github~badge]][c~diesel-oci~github] [![diesel-oci~lib.rs][c~diesel-oci~lib.rs~badge]][c~diesel-oci~lib.rs]{{hi:diesel-oci}}{{hi:Sql}}{{hi:Oci}}{{hi:Diesel}}{{hi:Oracle}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
+[![diesel-oci][c~diesel-oci~docs~badge]][c~diesel-oci~docs] [![diesel-oci~crates.io][c~diesel-oci~crates.io~badge]][c~diesel-oci~crates.io] [![diesel-oci~repo][c~diesel-oci~repo~badge]][c~diesel-oci~repo] [![diesel-oci~lib.rs][c~diesel-oci~lib.rs~badge]][c~diesel-oci~lib.rs]{{hi:diesel-oci}}{{hi:Sql}}{{hi:Oci}}{{hi:Diesel}}{{hi:Oracle}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
 
 [`diesel-oci`][c~diesel-oci~docs]↗{{hi:diesel}} is an OCI database adapter for [`diesel`][c~diesel~docs]↗{{hi:diesel}}. "Oracle Call Interface" is the comprehensive native C language interface to Oracle Database.
 
@@ -14,7 +14,7 @@ Oracle [Database][p~database] is a multi-model [database][p~database] management
 
 ## Connect to an Oracle Database with `oracle` {#oracle}
 
-[![oracle][c~oracle~docs~badge]][c~oracle~docs] [![oracle~crates.io][c~oracle~crates.io~badge]][c~oracle~crates.io] [![oracle~github][c~oracle~github~badge]][c~oracle~github] [![oracle~lib.rs][c~oracle~lib.rs~badge]][c~oracle~lib.rs]{{hi:oracle}}{{hi:Database}}{{hi:oracle}}
+[![oracle][c~oracle~docs~badge]][c~oracle~docs] [![oracle~crates.io][c~oracle~crates.io~badge]][c~oracle~crates.io] [![oracle~repo][c~oracle~repo~badge]][c~oracle~repo] [![oracle~lib.rs][c~oracle~lib.rs~badge]][c~oracle~lib.rs]{{hi:oracle}}{{hi:Database}}{{hi:oracle}}
 
 [`oracle`][c~oracle~docs]↗{{hi:oracle}} provides Oracle DB bindings for Rust. This crate provides a safe and ergonomic interface to Oracle databases.
 
@@ -24,7 +24,7 @@ Oracle [Database][p~database] is a multi-model [database][p~database] management
 
 ## `sibyl` {#sibyl}
 
-[![sibyl~website][c~sibyl~website~badge]][c~sibyl~website] [![sibyl][c~sibyl~docs~badge]][c~sibyl~docs] [![sibyl~crates.io][c~sibyl~crates.io~badge]][c~sibyl~crates.io] [![sibyl~github][c~sibyl~github~badge]][c~sibyl~github] [![sibyl~lib.rs][c~sibyl~lib.rs~badge]][c~sibyl~lib.rs]{{hi:sibyl}}{{hi:Database}}{{hi:Sql}}{{hi:Ffi}}{{hi:Async}}{{hi:Oracle}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
+[![sibyl~website][c~sibyl~website~badge]][c~sibyl~website] [![sibyl][c~sibyl~docs~badge]][c~sibyl~docs] [![sibyl~crates.io][c~sibyl~crates.io~badge]][c~sibyl~crates.io] [![sibyl~repo][c~sibyl~repo~badge]][c~sibyl~repo] [![sibyl~lib.rs][c~sibyl~lib.rs~badge]][c~sibyl~lib.rs]{{hi:sibyl}}{{hi:Database}}{{hi:Sql}}{{hi:Ffi}}{{hi:Async}}{{hi:Oracle}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
 
 [`sibyl`][c~sibyl~docs]↗{{hi:sibyl}} offers an OCI-based (synchronous or asynchronous) interface between Rust applications and Oracle databases.
 

@@ -39,7 +39,7 @@ Techniques to help create command line interfaces{{hi:Command-line interface}}, 
 ## References
 
 - [Command Line Applications in Rust (book)][book~rust-cli]↗.
-- Look to the [Code][book~command-line-rust~github]↗ for `Command-Line Rust` (O'Reilly, 2022, ISBN 9781098109417).
+- Look to the [Code][book~command-line-rust~repo]↗ for `Command-Line Rust` (O'Reilly, 2022, ISBN 9781098109417).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
@@ -48,14 +48,14 @@ Techniques to help create command line interfaces{{hi:Command-line interface}}, 
 [review](https://github.com/john-cd/rust_howto/issues/907)
 
 - [rustyline][c~rustyline~docs]↗.
-- [termimad][c~termimad~github]↗: A library to display rich (Markdown) snippets and texts in a rust terminal application.
-- [rust-terminfo][rust-terminfo~github]↗: Terminal information for Rust.
+- [termimad][c~termimad~repo]↗: A library to display rich (Markdown) snippets and texts in a rust terminal application.
+- [rust-terminfo][rust-terminfo~repo]↗: Terminal information for Rust.
 
 review [Command Line Applications in Rust (book)][book~rust-cli]↗.
 
 review
 
 - [Command-line Rust][book~command-line-rust]↗.
-- [Code for Command-Line Rust (O'Reilly, 2024, ISBN 9781098109417)][book~command-line-rust~github]↗.
+- [Code for Command-Line Rust (O'Reilly, 2024, ISBN 9781098109417)][book~command-line-rust~repo]↗.
 
 </div>

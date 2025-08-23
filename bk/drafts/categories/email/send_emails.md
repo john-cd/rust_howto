@@ -8,7 +8,7 @@
 
 [![lettre][c~lettre~docs~badge]][c~lettre~docs]{{hi:lettre}} [![cat~email][cat~email~badge]][cat~email]{{hi:Email}}
 [![lettre~crates.io][c~lettre~crates.io~badge]][c~lettre~crates.io]
-[![lettre~github][c~lettre~github~badge]][c~lettre~github]
+[![lettre~repo][c~lettre~repo~badge]][c~lettre~repo]
 [![lettre~lib.rs][c~lettre~lib.rs~badge]][c~lettre~lib.rs]
 [![cat~email][cat~email~badge]][cat~email]{{hi:Email}}
 [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
@@ -21,7 +21,7 @@
 
 [![lettre][c~lettre~docs~badge]][c~lettre~docs]{{hi:lettre}} [![cat~email][cat~email~badge]][cat~email]{{hi:Email}}
 [![lettre~crates.io][c~lettre~crates.io~badge]][c~lettre~crates.io]
-[![lettre~github][c~lettre~github~badge]][c~lettre~github]
+[![lettre~repo][c~lettre~repo~badge]][c~lettre~repo]
 [![lettre~lib.rs][c~lettre~lib.rs~badge]][c~lettre~lib.rs]
 [![cat~email][cat~email~badge]][cat~email]{{hi:Email}}
 [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}

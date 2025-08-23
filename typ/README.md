@@ -72,7 +72,7 @@ typst init @preview/ilm
 ## `mdBook` Backends that Convert Markdown to Typst
 
 - [`mdbook-pandoc`][mdbook-pandoc~crates.io].
-- [`mdbook-typst`][mdbook-typst~github].
+- [`mdbook-typst`][mdbook-typst~repo].
 - [`mdbook-typstpdf`][mdbook-typstpdf~lib.rs].
 - [`mdbook-typst-pdf`][mdbook-typst-pdf~lib.rs].
 
@@ -134,20 +134,20 @@ entry_show_rules = [
 - [`mdbook-pdf`][c~mdbook-pdf~crates.io].
 - [`mdbook-tools`][c~mdbook-tools~lib.rs].
 - [`pullup`][pullup~lib.rs].
-- [`quarkdown`][quarkdown~github].
-- [`typst-pandoc`][typst-pandoc~github].
+- [`quarkdown`][quarkdown~repo].
+- [`typst-pandoc`][typst-pandoc~repo].
 
-[typst-pandoc~github]: https://github.com/alexmodrono/typst-pandoc
+[typst-pandoc~repo]: https://github.com/alexmodrono/typst-pandoc
 [asciidoc~website]: https://asciidoc.org
 [blog~typst]: https://blog.jreyesr.com/posts/typst
 [book~mdbook~environment-variables]: https://rust-lang.github.io/mdBook/format/configuration/environment-variables.html
 [mdbook-pandoc~crates.io]: https://crates.io/crates/mdbook-pandoc
 [mdbook-typst-pdf~lib.rs]: https://lib.rs/crates/mdbook-typst-pdf
 [mdbook-typst~config~docs]: https://docs.rs/crate/mdbook-typst/0.1.7/source/src/config.rs
-[mdbook-typst~github]: https://github.com/LegNeato/mdbook-typst
+[mdbook-typst~repo]: https://github.com/LegNeato/mdbook-typst
 [mdbook-typstpdf~lib.rs]: https://lib.rs/crates/mdbook-typstpdf
 [pullup~lib.rs]: https://lib.rs/crates/pullup
-[quarkdown~github]: https://github.com/iamgio/quarkdown
+[quarkdown~repo]: https://github.com/iamgio/quarkdown
 [typst~codly]: https://typst.app/universe/package/codly
 [typst~ilm]: https://typst.app/universe/package/ilm
 [typst~wonderous-book]: https://github.com/typst/templates/tree/main/wonderous-book

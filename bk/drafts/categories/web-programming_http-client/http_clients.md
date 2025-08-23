@@ -6,7 +6,7 @@
 
 [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}}
 [![reqwest~crates.io][c~reqwest~crates.io~badge]][c~reqwest~crates.io]
-[![reqwest~github][c~reqwest~github~badge]][c~reqwest~github]
+[![reqwest~repo][c~reqwest~repo~badge]][c~reqwest~repo]
 [![reqwest~lib.rs][c~reqwest~lib.rs~badge]][c~reqwest~lib.rs]
 
 [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} is a full-fat HTTP client. It can be used in both synchronous and asynchronous code. It requires the [`tokio`][c~tokio~docs]↗{{hi:tokio}} runtime.
@@ -17,7 +17,7 @@ Multiple examples using [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} are found i
 
 [![ureq][c~ureq~docs~badge]][c~ureq~docs]{{hi:ureq}}
 [![ureq~crates.io][c~ureq~crates.io~badge]][c~ureq~crates.io]
-[![ureq~github][c~ureq~github~badge]][c~ureq~github]
+[![ureq~repo][c~ureq~repo~badge]][c~ureq~repo]
 [![ureq~lib.rs][c~ureq~lib.rs~badge]][c~ureq~lib.rs]
 [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client]{{hi:HTTP client}}
 
@@ -29,7 +29,7 @@ Multiple examples using [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} are found i
 
 ## Build a HTTP Client with `hyper` {#hyper}
 
-[![hyper~website][c~hyper~website~badge]][c~hyper~website] [![hyper][c~hyper~docs~badge]][c~hyper~docs] [![hyper~crates.io][c~hyper~crates.io~badge]][c~hyper~crates.io] [![hyper~github][c~hyper~github~badge]][c~hyper~github] [![hyper~lib.rs][c~hyper~lib.rs~badge]][c~hyper~lib.rs]{{hi:hyper}}{{hi:Http}}{{hi:hyper}}{{hi:Hyperium}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client]{{hi:HTTP client}} [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}
+[![hyper~website][c~hyper~website~badge]][c~hyper~website] [![hyper][c~hyper~docs~badge]][c~hyper~docs] [![hyper~crates.io][c~hyper~crates.io~badge]][c~hyper~crates.io] [![hyper~repo][c~hyper~repo~badge]][c~hyper~repo] [![hyper~lib.rs][c~hyper~lib.rs~badge]][c~hyper~lib.rs]{{hi:hyper}}{{hi:Http}}{{hi:hyper}}{{hi:Hyperium}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client]{{hi:HTTP client}} [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}
 
 [`hyper`][c~hyper~docs]↗{{hi:hyper}} is a HTTP/1 and HTTP/2 implementation (both client and server) that works best with the [`tokio`][c~tokio~docs]↗{{hi:tokio}} async runtime, but can support other runtimes.
 
@@ -41,7 +41,7 @@ Multiple examples using [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} are found i
 
 ## References
 
-- [`hyper` Examples][c~hyper~examples~github]↗.
+- [`hyper` Examples][c~hyper~examples~repo]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

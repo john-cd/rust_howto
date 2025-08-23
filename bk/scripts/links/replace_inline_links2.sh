@@ -40,7 +40,7 @@ do
         fi
 
         ## https://github.com/ImplFerris/LearnRust
-        #sed -n -E 's<(https://github.com/[^/]+/)(.+)<[\2~github]: \1\2<p' <<< "${in_parens}"
+        #sed -n -E 's<(https://github.com/[^/]+/)(.+)<[\2~repo]: \1\2<p' <<< "${in_parens}"
 
         # Create refdefs for books:
         #sed -n -E 's<(https://en.wikipedia.org/wiki/Special:BookSources/)(.*)<[ISBN~\2]: \1\2<p' <<< "${in_parens}"

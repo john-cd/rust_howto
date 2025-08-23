@@ -6,10 +6,10 @@
 
 [![rathole][c~rathole~docs~badge]][c~rathole~docs]{{hi:rathole}}
 [![rathole~crates.io][c~rathole~crates.io~badge]][c~rathole~crates.io]
-[![rathole~github][c~rathole~github~badge]][c~rathole~github]
+[![rathole~repo][c~rathole~repo~badge]][c~rathole~repo]
 [![rathole~lib.rs][c~rathole~lib.rs~badge]][c~rathole~lib.rs]
 
-[Rathole][c~rathole~github]↗ is a lightweight and high-performance reverse proxy for NAT traversal, written in Rust. [`rathole`][c~rathole~docs]↗{{hi:rathole}} is similar to tools like [`frp`][c~frp~docs]↗{{hi:frp}} and [`ngrok`][c~ngrok~docs]↗{{hi:ngrok}}.
+[Rathole][c~rathole~repo]↗ is a lightweight and high-performance reverse proxy for NAT traversal, written in Rust. [`rathole`][c~rathole~docs]↗{{hi:rathole}} is similar to tools like [`frp`][c~frp~docs]↗{{hi:frp}} and [`ngrok`][c~ngrok~docs]↗{{hi:ngrok}}.
 
 NAT (Network Address Translation) can make it challenging to expose services on devices behind a NAT to the internet. Rathole helps to overcome this by allowing these services to be accessible via a [server][p~server] with a public IP.
 
@@ -55,7 +55,7 @@ local_addr = "127.0.0.1:22" # The address of the service that needs to be forwar
 
 [![ngrok][c~ngrok~docs~badge]][c~ngrok~docs]{{hi:ngrok}}{{hi:ngrok-rust}}
 [![ngrok~crates.io][c~ngrok~crates.io~badge]][c~ngrok~crates.io]
-[![ngrok~github][c~ngrok~github~badge]][c~ngrok~github]
+[![ngrok~repo][c~ngrok~repo~badge]][c~ngrok~repo]
 [![ngrok~lib.rs][c~ngrok~lib.rs~badge]][c~ngrok~lib.rs]
 
 [ngrok][c~ngrok~website]↗ is a simplified API-first ingress-as-a-service that adds connectivity, security, and observability to your apps. `ngrok-rust` is the Rust-native crate for adding a public internet address with secure ingress traffic directly into your Rust apps.
@@ -72,7 +72,7 @@ local_addr = "127.0.0.1:22" # The address of the service that needs to be forwar
 
 [![pingora][c~pingora~docs~badge]][c~pingora~docs]{{hi:pingora}}
 [![pingora~crates.io][c~pingora~crates.io~badge]][c~pingora~crates.io]
-[![pingora~github][c~pingora~github~badge]][c~pingora~github]
+[![pingora~repo][c~pingora~repo~badge]][c~pingora~repo]
 [![pingora~lib.rs][c~pingora~lib.rs~badge]][c~pingora~lib.rs]
 [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
@@ -85,12 +85,12 @@ local_addr = "127.0.0.1:22" # The address of the service that needs to be forwar
 
 ### Related Topics {#related-topics}
 
-- [Pingora quick start][c~pingora~quick-start~github]↗.
+- [Pingora quick start][c~pingora~quick-start~repo]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [reverse_proxy: write](https://github.com/john-cd/rust_howto/issues/424)
-[River][river~github]↗.
+[River][river~repo]↗.
 </div>

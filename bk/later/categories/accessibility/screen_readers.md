@@ -6,7 +6,7 @@
 
 [![accesskit][c~accesskit~docs~badge]][c~accesskit~docs]{{hi:accesskit}}
 [![accesskit~crates.io][c~accesskit~crates.io~badge]][c~accesskit~crates.io]
-[![accesskit~github][c~accesskit~github~badge]][c~accesskit~github]
+[![accesskit~repo][c~accesskit~repo~badge]][c~accesskit~repo]
 [![accesskit~lib.rs][c~accesskit~lib.rs~badge]][c~accesskit~lib.rs]
 [![cat~accessibility][cat~accessibility~badge]][cat~accessibility]{{hi:Accessibility}}
 [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}

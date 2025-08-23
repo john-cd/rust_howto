@@ -4,7 +4,7 @@
 
 ## `mlua` {#mlua}
 
-[![mlua][c~mlua~docs~badge]][c~mlua~docs] [![mlua~crates.io][c~mlua~crates.io~badge]][c~mlua~crates.io] [![mlua~github][c~mlua~github~badge]][c~mlua~github] [![mlua~lib.rs][c~mlua~lib.rs~badge]][c~mlua~lib.rs]{{hi:mlua}}{{hi:Lua}}{{hi:Scripting}}{{hi:Async}}{{hi:LuaJIT}}{{hi:Luau}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
+[![mlua][c~mlua~docs~badge]][c~mlua~docs] [![mlua~crates.io][c~mlua~crates.io~badge]][c~mlua~crates.io] [![mlua~repo][c~mlua~repo~badge]][c~mlua~repo] [![mlua~lib.rs][c~mlua~lib.rs~badge]][c~mlua~lib.rs]{{hi:mlua}}{{hi:Lua}}{{hi:Scripting}}{{hi:Async}}{{hi:LuaJIT}}{{hi:Luau}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 
 [`mlua`][c~mlua~docs]↗{{hi:mlua}} provides high-level bindings to `Lua` 5.4/5.3/5.2/5.1 (including `LuaJIT`) and `Roblox Luau` with async/await features and support of writing native Lua modules in Rust.
 

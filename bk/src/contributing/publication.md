@@ -4,12 +4,12 @@
 
 ## Publication Steps {#publish}
 
-The [`publish`][rust-howto~publish~github]↗ folder contains a placeholder crate, so that the book could be located when searching on [`crates.io`][crates.io~website]↗{{hi:crates.io}}.
+The [`publish`][rust-howto~publish~repo]↗ folder contains a placeholder crate, so that the book could be located when searching on [`crates.io`][crates.io~website]↗{{hi:crates.io}}.
 
 To publish the crate to `crates.io`, use the following steps:
 
 - `cd publish`
-- Review [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}, update the metadata as needed. Keep the version in sync with that of the main workspace in [`bk/crates`][rust-howto~code-examples~github]↗.
+- Review [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}, update the metadata as needed. Keep the version in sync with that of the main workspace in [`bk/crates`][rust-howto~code-examples~repo]↗.
 - [`cargo update`][book~cargo~cargo-update]↗{{hi:cargo update}} if necessary.
 - Go to [`crates.io`][crates.io~website]↗{{hi:crates.io}}, sign in, and create an API token in `Account Settings` > `API Tokens`.
 - Use [`cargo login`][book~cargo~cargo-login]↗{{hi:cargo login}} to save the token in `$CARGO_HOME/credentials.toml`.

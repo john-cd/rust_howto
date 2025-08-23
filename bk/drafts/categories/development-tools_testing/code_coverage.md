@@ -9,13 +9,13 @@
 
 ## Coverage Testing with `grcov` {#coverage_testing}
 
-[![grcov][c~grcov~docs~badge]][c~grcov~docs] [![grcov~crates.io][c~grcov~crates.io~badge]][c~grcov~crates.io] [![grcov~github][c~grcov~github~badge]][c~grcov~github] [![grcov~lib.rs][c~grcov~lib.rs~badge]][c~grcov~lib.rs]{{hi:grcov}}{{hi:Coverage}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
+[![grcov][c~grcov~docs~badge]][c~grcov~docs] [![grcov~crates.io][c~grcov~crates.io~badge]][c~grcov~crates.io] [![grcov~repo][c~grcov~repo~badge]][c~grcov~repo] [![grcov~lib.rs][c~grcov~lib.rs~badge]][c~grcov~lib.rs]{{hi:grcov}}{{hi:Coverage}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
 
 Rust tool to collect and aggregate code coverage data for multiple source files.
 
 ## Measure your Code Coverage with `cargo-tarpaulin` {#cargo-tarpaulin}
 
-[![cargo-tarpaulin~github][c~cargo-tarpaulin~github~badge]][c~cargo-tarpaulin~github]{{hi:cargo-tarpaulin}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
+[![cargo-tarpaulin~repo][c~cargo-tarpaulin~repo~badge]][c~cargo-tarpaulin~repo]{{hi:cargo-tarpaulin}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
 `cargo tarpaulin` is a tool to determine code coverage achieved via tests.
 

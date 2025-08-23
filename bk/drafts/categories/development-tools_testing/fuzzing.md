@@ -10,7 +10,7 @@ Fuzzers generally get their power through a kind of evolutionary algorithm that 
 
 ## Fuzzing Engines {#skip}
 
-- [`cargo fuzz`][c~cargo-fuzz~github]↗{{hi:cargo fuzz}}: The most common and recommended way to perform fuzzing in Rust. It integrates well with [Cargo][p~cargo] and uses libFuzzer under the hood.
+- [`cargo fuzz`][c~cargo-fuzz~repo]↗{{hi:cargo fuzz}}: The most common and recommended way to perform fuzzing in Rust. It integrates well with [Cargo][p~cargo] and uses libFuzzer under the hood.
 - [`afl.rs`][c~afl~docs]↗{{hi:afl.rs}}: Bindings to the American Fuzzy Lop (AFL) fuzzer. AFL is a powerful fuzzer, but [cargo][p~cargo] fuzz with libFuzzer is often sufficient and easier to set up.
 
 In almost all cases, [`cargo-fuzz`][c~cargo-fuzz~docs]↗{{hi:cargo-fuzz}} will be your primary tool for fuzzing Rust code. It uses [`libFuzzer`][libFuzzer~website]↗{{hi:libFuzzer}}, a powerful and modern fuzzing engine, and simplifies the fuzzing process significantly. Make sure you define good fuzz targets and use sanitizers to detect errors effectively.
@@ -23,7 +23,7 @@ You'll need to define a fuzz target - a function in your code that the fuzzer wi
 
 Important for effective fuzzing.
 
-A corpus is a set of initial inputs that the fuzzer uses as a starting point. [`cargo fuzz`][c~cargo-fuzz~github]↗{{hi:cargo fuzz}} helps manage corpora.
+A corpus is a set of initial inputs that the fuzzer uses as a starting point. [`cargo fuzz`][c~cargo-fuzz~repo]↗{{hi:cargo fuzz}} helps manage corpora.
 
 ### Coverage-Guided Fuzzing {#skip}
 
@@ -43,13 +43,13 @@ This is a more advanced technique and often involves custom [scripting][p~script
 
 ## `cargo fuzz` {#cargo-fuzz}
 
-[![cargo-fuzz][c~cargo-fuzz~docs~badge]][c~cargo-fuzz~docs] [![cargo-fuzz~crates.io][c~cargo-fuzz~crates.io~badge]][c~cargo-fuzz~crates.io] [![cargo-fuzz~github][c~cargo-fuzz~github~badge]][c~cargo-fuzz~github] [![cargo-fuzz~lib.rs][c~cargo-fuzz~lib.rs~badge]][c~cargo-fuzz~lib.rs]{{hi:cargo-fuzz}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
+[![cargo-fuzz][c~cargo-fuzz~docs~badge]][c~cargo-fuzz~docs] [![cargo-fuzz~crates.io][c~cargo-fuzz~crates.io~badge]][c~cargo-fuzz~crates.io] [![cargo-fuzz~repo][c~cargo-fuzz~repo~badge]][c~cargo-fuzz~repo] [![cargo-fuzz~lib.rs][c~cargo-fuzz~lib.rs~badge]][c~cargo-fuzz~lib.rs]{{hi:cargo-fuzz}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
 
 A [`cargo`][c~cargo~docs]↗{{hi:cargo}} subcommand for fuzzing with [`libFuzzer`][libFuzzer~website]↗{{hi:libFuzzer}}.
 
 ## `afl` {#afl}
 
-[![afl][c~afl~docs~badge]][c~afl~docs] [![afl~crates.io][c~afl~crates.io~badge]][c~afl~crates.io] [![afl~github][c~afl~github~badge]][c~afl~github] [![afl~lib.rs][c~afl~lib.rs~badge]][c~afl~lib.rs]{{hi:afl}}
+[![afl][c~afl~docs~badge]][c~afl~docs] [![afl~crates.io][c~afl~crates.io~badge]][c~afl~crates.io] [![afl~repo][c~afl~repo~badge]][c~afl~repo] [![afl~lib.rs][c~afl~lib.rs~badge]][c~afl~lib.rs]{{hi:afl}}
 
 Fuzz testing (or fuzzing) is a software [testing][p~testing] technique used to find security and stability issues by providing pseudo-random data as input to the software. AFLplusplus is a popular, effective, and modern fuzz [testing][p~testing] tool based on AFL. [`afl.rs`][c~afl~docs]↗{{hi:afl.rs}} allows one to run AFLplusplus on code written in the Rust programming [language][p~language].
 
@@ -66,7 +66,7 @@ The [`proptest`][c~proptest~docs]↗{{hi:proptest}}, [`quickcheck`][c~quickcheck
 
 <div class="hidden">
 [fuzzing: review fuzzing crates](https://github.com/john-cd/rust_howto/issues/339)
-cover [bolero][bolero~github]↗.
+cover [bolero][bolero~repo]↗.
 [`bolero`][c~bolero~docs]↗{{hi:bolero}}
 cover valgrind.
 [`valgrind`][c~valgrind~docs]↗{{hi:valgrind}}.

@@ -65,7 +65,7 @@ See also the [[simulation | Simulation]], [[aerospace_simulation | Aerospace Sim
 - [`k`][c~k~crates.io]↗{{hi:k}} - Kinematics Library for rust-lang.
 - [`static-math`][c~static-math~docs]{{hi:static-math}} - Safe and fast mathematical operations with static arrays in Rust programming language for robotics.
 - [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} - N-dimensional tensor arithmetic library, inspired by python's NumPy.
-- [`faer-rs`][faer-rs~github]↗{{hi:faer-rs}} - Linear algebra foundation for the Rust programming language.
+- [`faer-rs`][faer-rs~repo]↗{{hi:faer-rs}} - Linear algebra foundation for the Rust programming language.
 
 See also the numerical computation ([[additional_numeric_types | Additional Numeric Types]], [[linear_algebra | Linear Algebra]]), [[data-processing | data]] analysis sections.
 
@@ -91,17 +91,17 @@ Leverage existing robotics libraries (often written in C++, Python, or other lan
 review
 
 - [robotics][robotics~website]↗.
-- [rust-embedded~github][rust-embedded~github]↗.
+- [rust-embedded~repo][rust-embedded~repo]↗.
 
 ---
 
-[![ehmi][c~ehmi~docs~badge]][c~ehmi~docs] [![ehmi~crates.io][c~ehmi~crates.io~badge]][c~ehmi~crates.io] [![ehmi~github][c~ehmi~github~badge]][c~ehmi~github] [![ehmi~lib.rs][c~ehmi~lib.rs~badge]][c~ehmi~lib.rs]{{hi:ehmi}}{{hi:Ui}}{{hi:Plc}}{{hi:Egui}}{{hi:Hmi}}{{hi:SCADA}}
+[![ehmi][c~ehmi~docs~badge]][c~ehmi~docs] [![ehmi~crates.io][c~ehmi~crates.io~badge]][c~ehmi~crates.io] [![ehmi~repo][c~ehmi~repo~badge]][c~ehmi~repo] [![ehmi~lib.rs][c~ehmi~lib.rs~badge]][c~ehmi~lib.rs]{{hi:ehmi}}{{hi:Ui}}{{hi:Plc}}{{hi:Egui}}{{hi:Hmi}}{{hi:SCADA}}
 
 HMI components for egui.
 
 ---
 
-[![roboplc][c~roboplc~docs~badge]][c~roboplc~docs] [![roboplc~crates.io][c~roboplc~crates.io~badge]][c~roboplc~crates.io] [![roboplc~github][c~roboplc~github~badge]][c~roboplc~github] [![roboplc~lib.rs][c~roboplc~lib.rs~badge]][c~roboplc~lib.rs]{{hi:roboplc}}{{hi:Realtime}}{{hi:Robots}}{{hi:Plc}}{{hi:Industrial}}
+[![roboplc][c~roboplc~docs~badge]][c~roboplc~docs] [![roboplc~crates.io][c~roboplc~crates.io~badge]][c~roboplc~crates.io] [![roboplc~repo][c~roboplc~repo~badge]][c~roboplc~repo] [![roboplc~lib.rs][c~roboplc~lib.rs~badge]][c~roboplc~lib.rs]{{hi:roboplc}}{{hi:Realtime}}{{hi:Robots}}{{hi:Plc}}{{hi:Industrial}}
 
 Framework for PLCs and real-time micro-services.
 

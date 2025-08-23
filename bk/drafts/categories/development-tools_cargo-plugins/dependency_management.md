@@ -13,7 +13,7 @@ See the [[cargo | Cargo]] and [[development-tools_cargo-plugins | Development To
 
 ## Edit `Cargo.toml` {#cargo-edit}
 
-[![cargo-edit][c~cargo-edit~docs~badge]][c~cargo-edit~docs] [![cargo-edit~crates.io][c~cargo-edit~crates.io~badge]][c~cargo-edit~crates.io] [![cargo-edit~github][c~cargo-edit~github~badge]][c~cargo-edit~github] [![cargo-edit~lib.rs][c~cargo-edit~lib.rs~badge]][c~cargo-edit~lib.rs]{{hi:cargo-edit}}{{hi:Cargo}}{{hi:Cargo-subcommand}}{{hi:Cli}}{{hi:Crates}}{{hi:Dependencies}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
+[![cargo-edit][c~cargo-edit~docs~badge]][c~cargo-edit~docs] [![cargo-edit~crates.io][c~cargo-edit~crates.io~badge]][c~cargo-edit~crates.io] [![cargo-edit~repo][c~cargo-edit~repo~badge]][c~cargo-edit~repo] [![cargo-edit~lib.rs][c~cargo-edit~lib.rs~badge]][c~cargo-edit~lib.rs]{{hi:cargo-edit}}{{hi:Cargo}}{{hi:Cargo-subcommand}}{{hi:Cli}}{{hi:Crates}}{{hi:Dependencies}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
 [`cargo edit`][c~cargo-edit~docs]↗{{hi:cargo edit}} provides commands for modifying a [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} file. It allows you to add, remove, and upgrade dependencies by modifying your `Cargo.toml` file from the command line.
 
@@ -28,7 +28,7 @@ Currently available subcommands:
 
 [![cargo-udeps][c~cargo-udeps~docs~badge]][c~cargo-udeps~docs]{{hi:cargo-udeps}}
 [![cargo-udeps~crates.io][c~cargo-udeps~crates.io~badge]][c~cargo-udeps~crates.io]
-[![cargo-udeps~github][c~cargo-udeps~github~badge]][c~cargo-udeps~github]
+[![cargo-udeps~repo][c~cargo-udeps~repo~badge]][c~cargo-udeps~repo]
 [![cargo-udeps~lib.rs][c~cargo-udeps~lib.rs~badge]][c~cargo-udeps~lib.rs]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
@@ -41,7 +41,7 @@ While compilation of this tool also works on Rust stable, it needs Rust nightly 
 
 [![cargo-machete][c~cargo-machete~docs~badge]][c~cargo-machete~docs]{{hi:cargo-machete}}
 [![cargo-machete~crates.io][c~cargo-machete~crates.io~badge]][c~cargo-machete~crates.io]
-[![cargo-machete~github][c~cargo-machete~github~badge]][c~cargo-machete~github]
+[![cargo-machete~repo][c~cargo-machete~repo~badge]][c~cargo-machete~repo]
 [![cargo-machete~lib.rs][c~cargo-machete~lib.rs~badge]][c~cargo-machete~lib.rs]
 
 [`cargo-machete`][blog~cargo-machete]↗ is a [`cargo`][c~cargo~docs]↗{{hi:cargo}} tool that detects unused dependencies in Rust projects, in a fast (yet imprecise) way.
@@ -57,7 +57,7 @@ cargo machete
 
 [![cargo-outdated][c~cargo-outdated~docs~badge]][c~cargo-outdated~docs]{{hi:cargo-outdated}}
 [![cargo-outdated~crates.io][c~cargo-outdated~crates.io~badge]][c~cargo-outdated~crates.io]
-[![cargo-outdated~github][c~cargo-outdated~github~badge]][c~cargo-outdated~github]
+[![cargo-outdated~repo][c~cargo-outdated~repo~badge]][c~cargo-outdated~repo]
 [![cargo-outdated~lib.rs][c~cargo-outdated~lib.rs~badge]][c~cargo-outdated~lib.rs]
 
 [`cargo-outdated`][c~cargo-outdated~docs]↗{{hi:cargo-outdated}} is a [`cargo`][c~cargo~docs]↗{{hi:cargo}} subcommand for displaying when dependencies are out of date.
@@ -67,7 +67,7 @@ If you are using VS Code, also look into the [`Dependi`][vscode~dependi~website]
 
 ## `deps.rs` {#deps-rs}
 
-[`deps.rs`][deps.rs~website]↗ [(github)][deps.rs~github]↗
+[`deps.rs`][deps.rs~website]↗ [(github)][deps.rs~repo]↗
 
 The [`deps.rs`][deps.rs~website]↗ website uses semantic versioning to detect outdated or insecure dependencies in your project's [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}.
 

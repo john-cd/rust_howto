@@ -20,13 +20,13 @@ For almost all cases where you want an immediate mode [GUI][p~gui] in Rust, [`eg
 
 [![egui][c~egui~docs~badge]][c~egui~docs]{{hi:egui}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
 [![egui~crates.io][c~egui~crates.io~badge]][c~egui~crates.io]
-[![egui~github][c~egui~github~badge]][c~egui~github]
+[![egui~repo][c~egui~repo~badge]][c~egui~repo]
 [![egui~lib.rs][c~egui~lib.rs~badge]][c~egui~lib.rs]
 
 [`egui`][c~egui~docs]↗ is an easy-to-use immediate mode GUI that runs on both web and native. [`egui`][c~egui~docs]↗{{hi:egui}} aims to be the best choice when you want a simple way to create a GUI and you don't need to customize of the look and feel, or you want to add a GUI to a game engine. Great for tools and quick prototyping.
 
 - [egui.rs][c~egui~website]↗.
-- [`egui` demo lib][c~egui_demo_lib~github]↗.
+- [`egui` demo lib][c~egui_demo_lib~repo]↗.
 - [`egui` widgets][c~egui~widgets]↗.
 - [`egui` containers][c~egui~containers]↗.
 - [`egui` main struct Ui][c~egui::Ui~docs]↗.

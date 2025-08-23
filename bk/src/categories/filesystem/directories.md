@@ -26,7 +26,7 @@ The following example demonstrates basic operations on directories - creating & 
 
 ## Remove a Directory and its Contents with `remove_dir_all` {#remove_dir_all}
 
-[![remove_dir_all][c~remove_dir_all~docs~badge]][c~remove_dir_all~docs] [![remove_dir_all~crates.io][c~remove_dir_all~crates.io~badge]][c~remove_dir_all~crates.io] [![remove_dir_all~github][c~remove_dir_all~github~badge]][c~remove_dir_all~github] [![remove_dir_all~lib.rs][c~remove_dir_all~lib.rs~badge]][c~remove_dir_all~lib.rs]{{hi:remove_dir_all}}{{hi:Utility}}{{hi:Filesystem}}{{hi:Windows}}{{hi:Remove_dir}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
+[![remove_dir_all][c~remove_dir_all~docs~badge]][c~remove_dir_all~docs] [![remove_dir_all~crates.io][c~remove_dir_all~crates.io~badge]][c~remove_dir_all~crates.io] [![remove_dir_all~repo][c~remove_dir_all~repo~badge]][c~remove_dir_all~repo] [![remove_dir_all~lib.rs][c~remove_dir_all~lib.rs~badge]][c~remove_dir_all~lib.rs]{{hi:remove_dir_all}}{{hi:Utility}}{{hi:Filesystem}}{{hi:Windows}}{{hi:Remove_dir}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
 The [`remove_dir_all`][c~remove_dir_all~docs]↗{{hi:remove_dir_all}} library provides an alternative implementation of `std::fs::remove_dir_all` from the Rust `std` library.
 

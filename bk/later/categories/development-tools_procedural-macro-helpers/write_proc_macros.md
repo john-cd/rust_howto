@@ -12,7 +12,7 @@ This crate primarily contains a TokenStream type. Procedural [macros][p~macros] 
 
 ## Parse Rust Source Code into an Abstract Syntax Tree {#syn}
 
-[![syn][c~syn~docs~badge]][c~syn~docs] [![syn~crates.io][c~syn~crates.io~badge]][c~syn~crates.io] [![syn~github][c~syn~github~badge]][c~syn~github] [![syn~lib.rs][c~syn~lib.rs~badge]][c~syn~lib.rs]{{hi:syn}}{{hi:Macros}}{{hi:syn}}[![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}[![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}}
+[![syn][c~syn~docs~badge]][c~syn~docs] [![syn~crates.io][c~syn~crates.io~badge]][c~syn~crates.io] [![syn~repo][c~syn~repo~badge]][c~syn~repo] [![syn~lib.rs][c~syn~lib.rs~badge]][c~syn~lib.rs]{{hi:syn}}{{hi:Macros}}{{hi:syn}}[![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}[![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}}
 
 The [`syn`][c~syn~docs]↗{{hi:syn}} crate in Rust is a fundamental library for parsing a stream of Rust tokens into an equivalent syntax tree. It's primarily used when working with procedural macros, but it can also be helpful for other code analysis or manipulation tasks, such as:
 
@@ -26,7 +26,7 @@ The [`syn`][c~syn~docs]↗{{hi:syn}} crate in Rust is a fundamental library for 
 
 ## `paste` {#paste}
 
-[![paste][c~paste~docs~badge]][c~paste~docs] [![paste~crates.io][c~paste~crates.io~badge]][c~paste~crates.io] [![paste~github][c~paste~github~badge]][c~paste~github] [![paste~lib.rs][c~paste~lib.rs~badge]][c~paste~lib.rs]{{hi:paste}}{{hi:Macros}}[![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}}[![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![paste][c~paste~docs~badge]][c~paste~docs] [![paste~crates.io][c~paste~crates.io~badge]][c~paste~crates.io] [![paste~repo][c~paste~repo~badge]][c~paste~repo] [![paste~lib.rs][c~paste~lib.rs~badge]][c~paste~lib.rs]{{hi:paste}}{{hi:Macros}}[![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}}[![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
 [`paste`][c~paste~docs]↗ provides a flexible way to paste together identifiers in a macro, including using pasted identifiers to define new items.
 
@@ -36,7 +36,7 @@ The [`syn`][c~syn~docs]↗{{hi:syn}} crate in Rust is a fundamental library for 
 
 ## `quote` {#quote}
 
-[![quote][c~quote~docs~badge]][c~quote~docs] [![quote~crates.io][c~quote~crates.io~badge]][c~quote~crates.io] [![quote~github][c~quote~github~badge]][c~quote~github] [![quote~lib.rs][c~quote~lib.rs~badge]][c~quote~lib.rs]{{hi:quote}}{{hi:Macros}}{{hi:Syn}}[![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
+[![quote][c~quote~docs~badge]][c~quote~docs] [![quote~crates.io][c~quote~crates.io~badge]][c~quote~crates.io] [![quote~repo][c~quote~repo~badge]][c~quote~repo] [![quote~lib.rs][c~quote~lib.rs~badge]][c~quote~lib.rs]{{hi:quote}}{{hi:Macros}}{{hi:Syn}}[![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
 
 [`quote`][c~quote~docs]↗{{hi:quote}} is a crate that makes it easy to generate Rust code (as TokenStreams). It provides quasiquoting, which makes code generation much more readable and less error-prone. [`quote`][c~quote~docs]↗ provides the `quote!` macro for turning Rust syntax tree{{hi:Syntax tree}} data structures into tokens{{hi:Tokens}} of source code.
 
@@ -46,9 +46,9 @@ The [`syn`][c~syn~docs]↗{{hi:syn}} crate in Rust is a fundamental library for 
 
 ## `proc-macro2` {#proc-macro2}
 
-[![proc-macro2][c~proc-macro2~docs~badge]][c~proc-macro2~docs] [![proc-macro2~crates.io][c~proc-macro2~crates.io~badge]][c~proc-macro2~crates.io] [![proc-macro2~github][c~proc-macro2~github~badge]][c~proc-macro2~github] [![proc-macro2~lib.rs][c~proc-macro2~lib.rs~badge]][c~proc-macro2~lib.rs]{{hi:proc-macro2}}{{hi:Macros}}{{hi:Syn}}[![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
+[![proc-macro2][c~proc-macro2~docs~badge]][c~proc-macro2~docs] [![proc-macro2~crates.io][c~proc-macro2~crates.io~badge]][c~proc-macro2~crates.io] [![proc-macro2~repo][c~proc-macro2~repo~badge]][c~proc-macro2~repo] [![proc-macro2~lib.rs][c~proc-macro2~lib.rs~badge]][c~proc-macro2~lib.rs]{{hi:proc-macro2}}{{hi:Macros}}{{hi:Syn}}[![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
 
-[`proc-macro2`][c~proc-macro2~docs]↗{{hi:proc-macro2}} [![proc-macro2~github][c~proc-macro2~github~badge]][c~proc-macro2~github] bring proc-macro-like functionality to other contexts like build.rs and main.rs and makes procedural macros unit testable.
+[`proc-macro2`][c~proc-macro2~docs]↗{{hi:proc-macro2}} [![proc-macro2~repo][c~proc-macro2~repo~badge]][c~proc-macro2~repo] bring proc-macro-like functionality to other contexts like build.rs and main.rs and makes procedural macros unit testable.
 
 A substitute implementation of the compiler's [`proc_macro`][c~proc_macro~docs]↗{{hi:proc_macro}} API to decouple token-based libraries from the procedural macro use case.
 
@@ -58,9 +58,9 @@ Bring proc-macro-like functionality to other contexts like build.rs and main.rs.
 
 Make procedural [macros][p~macros] unit testable. As a consequence of being specific to procedural [macros][p~macros], nothing that uses [`proc_macro`][c~proc_macro~docs]{{hi:proc_macro}} can be executed from a unit test. In order for helper libraries or components of a macro to be testable in isolation, they must be implemented using `proc-macro2`.
 
-[![proc-macro-workshop~github][proc-macro-workshop~github~badge]][proc-macro-workshop~github]
+[![proc-macro-workshop~repo][proc-macro-workshop~repo~badge]][proc-macro-workshop~repo]
 
-[![proc-macro-workshop~github][proc-macro-workshop~github~badge]][proc-macro-workshop~github]
+[![proc-macro-workshop~repo][proc-macro-workshop~repo~badge]][proc-macro-workshop~repo]
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_procedural_macro_helpers/examples/write_proc_macros/proc_macro2.rs:example}}
@@ -68,7 +68,7 @@ Make procedural [macros][p~macros] unit testable. As a consequence of being spec
 
 ### `darling` {#darling}
 
-[![darling][c~darling~docs~badge]][c~darling~docs] [![darling~crates.io][c~darling~crates.io~badge]][c~darling~crates.io] [![darling~github][c~darling~github~badge]][c~darling~github] [![darling~lib.rs][c~darling~lib.rs~badge]][c~darling~lib.rs]{{hi:darling}}
+[![darling][c~darling~docs~badge]][c~darling~docs] [![darling~crates.io][c~darling~crates.io~badge]][c~darling~crates.io] [![darling~repo][c~darling~repo~badge]][c~darling~repo] [![darling~lib.rs][c~darling~lib.rs~badge]][c~darling~lib.rs]{{hi:darling}}
 
 [`darling`][c~darling~docs]↗{{hi:darling}} provides `derive` macros to easily parse `derive` macro inputs.
 
@@ -104,6 +104,6 @@ Good documentation is essential for any procedural macro. Document your macro's 
 <div class="hidden">
 [write_proc_macros: write; compare with macros.md - what should be in here?](https://github.com/john-cd/rust_howto/issues/331)
 
-- [syn examples][syn-examples~github]↗.
+- [syn examples][syn-examples~repo]↗.
 
 </div>

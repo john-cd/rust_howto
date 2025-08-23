@@ -6,7 +6,7 @@
 
 [![cargo-expand][c~cargo-expand~docs~badge]][c~cargo-expand~docs]{{hi:cargo-expand}}
 [![cargo-expand~crates.io][c~cargo-expand~crates.io~badge]][c~cargo-expand~crates.io]
-[![cargo-expand~github][c~cargo-expand~github~badge]][c~cargo-expand~github]
+[![cargo-expand~repo][c~cargo-expand~repo~badge]][c~cargo-expand~repo]
 [![cargo-expand~lib.rs][c~cargo-expand~lib.rs~badge]][c~cargo-expand~lib.rs]
 [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}

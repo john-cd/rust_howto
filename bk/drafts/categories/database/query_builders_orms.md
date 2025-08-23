@@ -4,7 +4,7 @@
 
 ## `sqlx` {#sqlx}
 
-[![sqlx][c~sqlx~docs~badge]][c~sqlx~docs] [![sqlx~crates.io][c~sqlx~crates.io~badge]][c~sqlx~crates.io] [![sqlx~github][c~sqlx~github~badge]][c~sqlx~github] [![sqlx~lib.rs][c~sqlx~lib.rs~badge]][c~sqlx~lib.rs]{{hi:sqlx}} [![cat~database][cat~database~badge]][cat~database]{{hi:Databases}}
+[![sqlx][c~sqlx~docs~badge]][c~sqlx~docs] [![sqlx~crates.io][c~sqlx~crates.io~badge]][c~sqlx~crates.io] [![sqlx~repo][c~sqlx~repo~badge]][c~sqlx~repo] [![sqlx~lib.rs][c~sqlx~lib.rs~badge]][c~sqlx~lib.rs]{{hi:sqlx}} [![cat~database][cat~database~badge]][cat~database]{{hi:Databases}}
 
 [`sqlx`][c~sqlx~docs]↗ is a low-level, [asynchronous][p~asynchronous] SQL library for Rust. It supports various [databases][p~databases] like PostgreSQL{{hi:PostgreSQL}}, MySQL{{hi:MySQL}}, SQLite{{hi:SQLite}}, and MSSQL{{hi:MSSQL}}, and both [`tokio`][c~tokio~docs]↗{{hi:tokio}} and [`async-std`][c~async-std~docs]↗{{hi:async-std}} async runtimes. It features compile-time checked queries without a DSL. SQLx is not an ORM.
 
@@ -87,7 +87,7 @@ diesel print-schema > src/schema.rs
 
 [![toasty][c~toasty~docs~badge]][c~toasty~docs]{{hi:toasty}}
 [![toasty~crates.io][c~toasty~crates.io~badge]][c~toasty~crates.io]
-[![toasty~github][c~toasty~github~badge]][c~toasty~github]
+[![toasty~repo][c~toasty~repo~badge]][c~toasty~repo]
 [![toasty~lib.rs][c~toasty~lib.rs~badge]][c~toasty~lib.rs]
 
 [`toasty`][c~toasty~docs]↗{{hi:toasty}} is an ORM for the Rust programming language that prioritizes ease-of-use. It supports both SQL databases as well as some NoSQL databases, including DynamoDB and Cassandra. Note that Toasty does not hide the database capabilities. Instead, Toasty exposes features based on the target database.

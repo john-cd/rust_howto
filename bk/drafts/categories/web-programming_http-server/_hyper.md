@@ -6,7 +6,7 @@
 
 [![hyper][c~hyper~docs~badge]][c~hyper~docs]{{hi:hyper}}{{hi:HTTP server}}
 [![hyper~crates.io][c~hyper~crates.io~badge]][c~hyper~crates.io]
-[![hyper~github][c~hyper~github~badge]][c~hyper~github]
+[![hyper~repo][c~hyper~repo~badge]][c~hyper~repo]
 [![hyper~lib.rs][c~hyper~lib.rs~badge]][c~hyper~lib.rs]
 
 [`hyper`][c~hyper~docs]↗{{hi:hyper}} is a low-level asynchronous HTTP implementation (both client and server). It implements HTTP/1 and HTTP/2. It works best with the [`tokio`][c~tokio~docs]↗{{hi:tokio}} async runtime, but can support other runtimes.
@@ -30,21 +30,21 @@ This said, we provide below an example of a HTTP server, following the recommend
 
 ## `hyper` TLS Support {#skip}
 
-[![hyper-tls~website][c~hyper-tls~website~badge]][c~hyper-tls~website] [![hyper-tls][c~hyper-tls~docs~badge]][c~hyper-tls~docs] [![hyper-tls~crates.io][c~hyper-tls~crates.io~badge]][c~hyper-tls~crates.io] [![hyper-tls~github][c~hyper-tls~github~badge]][c~hyper-tls~github] [![hyper-tls~lib.rs][c~hyper-tls~lib.rs~badge]][c~hyper-tls~lib.rs]{{hi:hyper-tls}}{{hi:Http}}{{hi:Https}}{{hi:Hyper}}{{hi:Ssl}}{{hi:Tls}}
+[![hyper-tls~website][c~hyper-tls~website~badge]][c~hyper-tls~website] [![hyper-tls][c~hyper-tls~docs~badge]][c~hyper-tls~docs] [![hyper-tls~crates.io][c~hyper-tls~crates.io~badge]][c~hyper-tls~crates.io] [![hyper-tls~repo][c~hyper-tls~repo~badge]][c~hyper-tls~repo] [![hyper-tls~lib.rs][c~hyper-tls~lib.rs~badge]][c~hyper-tls~lib.rs]{{hi:hyper-tls}}{{hi:Http}}{{hi:Https}}{{hi:Hyper}}{{hi:Ssl}}{{hi:Tls}}
 
 Default TLS implementation for use with `hyper`.
 
-[![hyper-rustls][c~hyper-rustls~docs~badge]][c~hyper-rustls~docs] [![hyper-rustls~crates.io][c~hyper-rustls~crates.io~badge]][c~hyper-rustls~crates.io] [![hyper-rustls~github][c~hyper-rustls~github~badge]][c~hyper-rustls~github] [![hyper-rustls~lib.rs][c~hyper-rustls~lib.rs~badge]][c~hyper-rustls~lib.rs]{{hi:hyper-rustls}}
+[![hyper-rustls][c~hyper-rustls~docs~badge]][c~hyper-rustls~docs] [![hyper-rustls~crates.io][c~hyper-rustls~crates.io~badge]][c~hyper-rustls~crates.io] [![hyper-rustls~repo][c~hyper-rustls~repo~badge]][c~hyper-rustls~repo] [![hyper-rustls~lib.rs][c~hyper-rustls~lib.rs~badge]][c~hyper-rustls~lib.rs]{{hi:hyper-rustls}}
 
 Rustls + [`hyper`][c~hyper~docs]↗{{hi:hyper}} integration for pure rust HTTPS.
 
-[![hyper-openssl][c~hyper-openssl~docs~badge]][c~hyper-openssl~docs] [![hyper-openssl~crates.io][c~hyper-openssl~crates.io~badge]][c~hyper-openssl~crates.io] [![hyper-openssl~github][c~hyper-openssl~github~badge]][c~hyper-openssl~github] [![hyper-openssl~lib.rs][c~hyper-openssl~lib.rs~badge]][c~hyper-openssl~lib.rs]{{hi:hyper-openssl}}
+[![hyper-openssl][c~hyper-openssl~docs~badge]][c~hyper-openssl~docs] [![hyper-openssl~crates.io][c~hyper-openssl~crates.io~badge]][c~hyper-openssl~crates.io] [![hyper-openssl~repo][c~hyper-openssl~repo~badge]][c~hyper-openssl~repo] [![hyper-openssl~lib.rs][c~hyper-openssl~lib.rs~badge]][c~hyper-openssl~lib.rs]{{hi:hyper-openssl}}
 
 Hyper TLS support via OpenSSL.
 
 ## References {#references}
 
-- [`hyper` examples][c~hyper~examples~github]↗.
+- [`hyper` examples][c~hyper~examples~repo]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -16,7 +16,7 @@ Consider the following Rust crates for your in-memory [caching][p~caching] needs
 
 ## `moka` {#moka}
 
-[![moka][c~moka~docs~badge]][c~moka~docs] [![moka~crates.io][c~moka~crates.io~badge]][c~moka~crates.io] [![moka~github][c~moka~github~badge]][c~moka~github] [![moka~lib.rs][c~moka~lib.rs~badge]][c~moka~lib.rs]{{hi:moka}}{{hi:Cache}}{{hi:Concurrent}} [![cat~caching][cat~caching~badge]][cat~caching]{{hi:Caching}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}
+[![moka][c~moka~docs~badge]][c~moka~docs] [![moka~crates.io][c~moka~crates.io~badge]][c~moka~crates.io] [![moka~repo][c~moka~repo~badge]][c~moka~repo] [![moka~lib.rs][c~moka~lib.rs~badge]][c~moka~lib.rs]{{hi:moka}}{{hi:Cache}}{{hi:Concurrent}} [![cat~caching][cat~caching~badge]][cat~caching]{{hi:Caching}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}
 
 [`moka`][c~moka~docs]↗{{hi:moka}} is a fast and concurrent cache library inspired by Java Caffeine.
 
@@ -26,7 +26,7 @@ Consider the following Rust crates for your in-memory [caching][p~caching] needs
 
 ## `cached` {#cached}
 
-[![cached][c~cached~docs~badge]][c~cached~docs] [![cached~crates.io][c~cached~crates.io~badge]][c~cached~crates.io] [![cached~github][c~cached~github~badge]][c~cached~github] [![cached~lib.rs][c~cached~lib.rs~badge]][c~cached~lib.rs]{{hi:cached}}{{hi:Cache}}{{hi:Disk}}{{hi:Lru}}{{hi:Memoize}}{{hi:Redis}} [![cat~caching][cat~caching~badge]][cat~caching]{{hi:Caching}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+[![cached][c~cached~docs~badge]][c~cached~docs] [![cached~crates.io][c~cached~crates.io~badge]][c~cached~crates.io] [![cached~repo][c~cached~repo~badge]][c~cached~repo] [![cached~lib.rs][c~cached~lib.rs~badge]][c~cached~lib.rs]{{hi:cached}}{{hi:Cache}}{{hi:Disk}}{{hi:Lru}}{{hi:Memoize}}{{hi:Redis}} [![cat~caching][cat~caching~badge]][cat~caching]{{hi:Caching}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
 [`cached`][c~cached~docs]↗{{hi:cached}} provides generic cache implementations and simplified function memoization.
 

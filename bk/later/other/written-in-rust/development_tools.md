@@ -4,7 +4,7 @@
 
 ## JavaScript Tooling {#javascript-tooling}
 
-- [Volta][volta~website]↗[(github)][volta~github]↗.
+- [Volta][volta~website]↗[(github)][volta~repo]↗.
 - [Deno][deno~website]↗ uses Rust for its JavaScript and TypeScript runtime.
 - [`Bun`][bun.sh~website]↗{{hi:Bun}}.
 
@@ -12,10 +12,10 @@
 
 [![swc][c~swc~docs~badge]][c~swc~docs]{{hi:swc}}
 [![swc~crates.io][c~swc~crates.io~badge]][c~swc~crates.io]
-[![swc~github][c~swc~github~badge]][c~swc~github]
+[![swc~repo][c~swc~repo~badge]][c~swc~repo]
 [![swc~lib.rs][c~swc~lib.rs~badge]][c~swc~lib.rs]
 
-[`swc` (github)][c~swc~github]↗ (stands for `Speedy Web Compiler`) is a fast TypeScript / JavaScript compiler written in Rust. It's a library for Rust and JavaScript at the same time.
+[`swc` (github)][c~swc~repo]↗ (stands for `Speedy Web Compiler`) is a fast TypeScript / JavaScript compiler written in Rust. It's a library for Rust and JavaScript at the same time.
 
 See also [[programming_languages | Programming Language]] parsers.
 
@@ -31,10 +31,10 @@ See also [[programming_languages | Programming Language]] parsers.
 
 {{hi:zed}}
 [![zed~crates.io][c~zed~crates.io~badge]][c~zed~crates.io]
-[![zed~github][c~zed~github~badge]][c~zed~github]
+[![zed~repo][c~zed~repo~badge]][c~zed~repo]
 [![zed~lib.rs][c~zed~lib.rs~badge]][c~zed~lib.rs]
 
-[`zed`][c~zed~github]↗{{hi:zed}} is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.
+[`zed`][c~zed~repo]↗{{hi:zed}} is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.
 
 ## Build Tools {#build-tools}
 
@@ -56,12 +56,12 @@ It integrates with your shell and lets you quickly [search][p~search] through an
 <div class="hidden">
 [organize](https://github.com/john-cd/rust_howto/issues/612)
 
-- [onefetch][c~onefetch~github]↗: Command-line Git information tool.
+- [onefetch][c~onefetch~repo]↗: Command-line Git information tool.
 
 ## Jujutsu {#jujutsu}
 
 - [jujutsu-tutorial~website][jujutsu-tutorial~website]↗.
-- [`jj` workshop][jj-workshop~github]↗.
-- [`gg` (Github)][gg~github]↗.
+- [`jj` workshop][jj-workshop~repo]↗.
+- [`gg` (Github)][gg~repo]↗.
 
 </div>

@@ -13,7 +13,7 @@ Consider using:
 
 ## `proptest` {#proptesting}
 
-[![proptest~website][c~proptest~website~badge]][c~proptest~website] [![proptest][c~proptest~docs~badge]][c~proptest~docs] [![proptest~crates.io][c~proptest~crates.io~badge]][c~proptest~crates.io] [![proptest~github][c~proptest~github~badge]][c~proptest~github] [![proptest~lib.rs][c~proptest~lib.rs~badge]][c~proptest~lib.rs]{{hi:proptest}}{{hi:Fuzz}}{{hi:Hypothesis}}{{hi:Property}}{{hi:Quickcheck}}{{hi:Testing}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
+[![proptest~website][c~proptest~website~badge]][c~proptest~website] [![proptest][c~proptest~docs~badge]][c~proptest~docs] [![proptest~crates.io][c~proptest~crates.io~badge]][c~proptest~crates.io] [![proptest~repo][c~proptest~repo~badge]][c~proptest~repo] [![proptest~lib.rs][c~proptest~lib.rs~badge]][c~proptest~lib.rs]{{hi:proptest}}{{hi:Fuzz}}{{hi:Hypothesis}}{{hi:Property}}{{hi:Quickcheck}}{{hi:Testing}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
 
 Hypothesis-like property-based [testing][p~testing] and shrinking.
 
@@ -28,7 +28,7 @@ proptest = "1.0.0"
 
 ## Test Data Generation with `fake` {#test_data_generation}
 
-[![fake][c~fake~docs~badge]][c~fake~docs] [![fake~crates.io][c~fake~crates.io~badge]][c~fake~crates.io] [![fake~github][c~fake~github~badge]][c~fake~github] [![fake~lib.rs][c~fake~lib.rs~badge]][c~fake~lib.rs]{{hi:fake}}{{hi:Random}}{{hi:Generator}}{{hi:Data}}{{hi:Faker}}
+[![fake][c~fake~docs~badge]][c~fake~docs] [![fake~crates.io][c~fake~crates.io~badge]][c~fake~crates.io] [![fake~repo][c~fake~repo~badge]][c~fake~repo] [![fake~lib.rs][c~fake~lib.rs~badge]][c~fake~lib.rs]{{hi:fake}}{{hi:Random}}{{hi:Generator}}{{hi:Data}}{{hi:Faker}}
 
 An easy to use library and command line for generating fake data like name, number, address, lorem, dates, etc.
 
@@ -42,5 +42,5 @@ Often done with custom [functions][p~functions] or data structures, but crates l
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-cover property [testing][p~testing] [proptest][c~proptest~github]
+cover property [testing][p~testing] [proptest][c~proptest~repo]
 </div>

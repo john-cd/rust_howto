@@ -10,7 +10,7 @@ Consider [`bonsai-bt`][c~bonsai-bt~docs]↗{{hi:bonsai-bt}} (Behavior Tree imple
 
 [![bonsai-bt][c~bonsai-bt~docs~badge]][c~bonsai-bt~docs]{{hi:bonsai-bt}}
 [![bonsai-bt~crates.io][c~bonsai-bt~crates.io~badge]][c~bonsai-bt~crates.io]
-[![bonsai-bt~github][c~bonsai-bt~github~badge]][c~bonsai-bt~github]
+[![bonsai-bt~repo][c~bonsai-bt~repo~badge]][c~bonsai-bt~repo]
 [![bonsai-bt~lib.rs][c~bonsai-bt~lib.rs~badge]][c~bonsai-bt~lib.rs]
 
 [`bonsai-bt`][c~bonsai-bt~docs]↗{{hi:bonsai-bt}} is a Rust implementation of behavior trees. A [Behavior Tree (Wikipedia)][behavior-tree~wikipedia]↗ (BT) is a data structure in which we can set the rules of how certain behavior's can occur, and the order in which they would execute. BTs are a very efficient way of creating complex systems that are both modular and reactive. These properties are crucial in many applications, which has led to the spread of BT from computer game programming to many branches of AI and Robotics.
@@ -38,7 +38,7 @@ Rust Crates:
 - [`dora-rs`][c~dora-rs~docs]↗{{hi:dora-rs}}: Robotics framework for AI applications. Low usage.
 - `optimization-engine`: [Embedded][p~embedded] optimization for robotics.
 
-[![dora-rs][c~dora-rs~docs~badge]][c~dora-rs~docs] [![dora-rs~crates.io][c~dora-rs~crates.io~badge]][c~dora-rs~crates.io] [![dora-rs~github][c~dora-rs~github~badge]][c~dora-rs~github] [![dora-rs~lib.rs][c~dora-rs~lib.rs~badge]][c~dora-rs~lib.rs]{{hi:dora-rs}}
+[![dora-rs][c~dora-rs~docs~badge]][c~dora-rs~docs] [![dora-rs~crates.io][c~dora-rs~crates.io~badge]][c~dora-rs~crates.io] [![dora-rs~repo][c~dora-rs~repo~badge]][c~dora-rs~repo] [![dora-rs~lib.rs][c~dora-rs~lib.rs~badge]][c~dora-rs~lib.rs]{{hi:dora-rs}}
 
 Dataflow Oriented Robotic Architecture: FIXME
 

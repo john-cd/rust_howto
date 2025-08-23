@@ -100,7 +100,7 @@ The following examples cover less commonly-used data structures:
 <div class="hidden">
 [data-structures: expand](https://github.com/john-cd/rust_howto/issues/280)
 
-- [`rust-algorithms`][rust-algorithms~github]↗: Common data structures and algorithms in Rust.
+- [`rust-algorithms`][rust-algorithms~repo]↗: Common data structures and algorithms in Rust.
 - [PHF][c~phf~lib.rs]↗: Runtime support for perfect hash function data structures.
 - [`PriorityQueue`][c~priority-queue~lib.rs]↗.
 - [`elsa`][c~elsa~lib.rs]↗.

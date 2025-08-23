@@ -4,7 +4,7 @@
 
 ## Implementing Incremental Computation with `salsa` {#salsa}
 
-[![salsa][c~salsa~docs~badge]][c~salsa~docs] [![salsa~crates.io][c~salsa~crates.io~badge]][c~salsa~crates.io] [![salsa~github][c~salsa~github~badge]][c~salsa~github] [![salsa~lib.rs][c~salsa~lib.rs~badge]][c~salsa~lib.rs]{{hi:salsa}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]
+[![salsa][c~salsa~docs~badge]][c~salsa~docs] [![salsa~crates.io][c~salsa~crates.io~badge]][c~salsa~crates.io] [![salsa~repo][c~salsa~repo~badge]][c~salsa~repo] [![salsa~lib.rs][c~salsa~lib.rs~badge]][c~salsa~lib.rs]{{hi:salsa}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]
 
 [Salsa][c~salsa~website]↗{{hi:salsa}} is a Rust framework for writing incremental, on-demand programs - these are programs that want to adapt to changes in their inputs, continuously producing a new output that is up-to-date.
 
@@ -16,7 +16,7 @@
 
 ## Implementing Incremental Computation with `comemo` {#comemo}
 
-[![comemo][c~comemo~docs~badge]][c~comemo~docs] [![comemo~crates.io][c~comemo~crates.io~badge]][c~comemo~crates.io] [![comemo~github][c~comemo~github~badge]][c~comemo~github] [![comemo~lib.rs][c~comemo~lib.rs~badge]][c~comemo~lib.rs]{{hi:comemo}}{{hi:Tracked}}{{hi:Incremental}}{{hi:Constraints}}{{hi:Memoization}} [![cat~caching][cat~caching~badge]][cat~caching]{{hi:Caching}}
+[![comemo][c~comemo~docs~badge]][c~comemo~docs] [![comemo~crates.io][c~comemo~crates.io~badge]][c~comemo~crates.io] [![comemo~repo][c~comemo~repo~badge]][c~comemo~repo] [![comemo~lib.rs][c~comemo~lib.rs~badge]][c~comemo~lib.rs]{{hi:comemo}}{{hi:Tracked}}{{hi:Incremental}}{{hi:Constraints}}{{hi:Memoization}} [![cat~caching][cat~caching~badge]][cat~caching]{{hi:Caching}}
 
 [`comemo`][c~comemo~docs]↗{{hi:comemo}} offers incremental computation through constrained memoization.
 

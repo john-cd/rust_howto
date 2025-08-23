@@ -18,7 +18,7 @@ Tracing refers to the process of capturing and recording information about the e
 
 [![tracing-subscriber][c~tracing-subscriber~docs~badge]][c~tracing-subscriber~docs]{{hi:tracing-subscriber}} [![tracing-subscriber~crates.io][c~tracing-subscriber~crates.io~badge]][c~tracing-subscriber~crates.io]
 
-[![tracing][c~tracing~docs~badge]][c~tracing~docs]{{hi:tracing}} [![tracing~github][c~tracing~github~badge]][c~tracing~github] [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}{{hi:Tracing}}
+[![tracing][c~tracing~docs~badge]][c~tracing~docs]{{hi:tracing}} [![tracing~repo][c~tracing~repo~badge]][c~tracing~repo] [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}{{hi:Tracing}}
 
 A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting them as text and logging them to `stdout`.
 
@@ -84,7 +84,7 @@ A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting t
 
 ## Log Events with `tracing` {#events}
 
-[![tracing][c~tracing~docs~badge]][c~tracing~docs]{{hi:tracing}} [![tracing~github][c~tracing~github~badge]][c~tracing~github] [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}{{hi:Tracing}}
+[![tracing][c~tracing~docs~badge]][c~tracing~docs]{{hi:tracing}} [![tracing~repo][c~tracing~repo~badge]][c~tracing~repo] [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}{{hi:Tracing}}
 
 An [`Event`][c~tracing::Event~docs]↗{{hi:Event}} signifies something that happened at a moment in time. `tracing`'s events are comparable to the log records emitted by unstructured logging code.
 
@@ -94,7 +94,7 @@ An [`Event`][c~tracing::Event~docs]↗{{hi:Event}} signifies something that happ
 
 ## Create then Enter a Span {#spans}
 
-[![tracing][c~tracing~docs~badge]][c~tracing~docs]{{hi:tracing}} [![tracing~github][c~tracing~github~badge]][c~tracing~github] [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}{{hi:Tracing}}
+[![tracing][c~tracing~docs~badge]][c~tracing~docs]{{hi:tracing}} [![tracing~repo][c~tracing~repo~badge]][c~tracing~repo] [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}{{hi:Tracing}}
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_spans.rs:example}}
@@ -102,7 +102,7 @@ An [`Event`][c~tracing::Event~docs]↗{{hi:Event}} signifies something that happ
 
 ## Create and Enter a Span in a One-liner Using `entered` {#span-entered}
 
-[![tracing][c~tracing~docs~badge]][c~tracing~docs]{{hi:tracing}} [![tracing~github][c~tracing~github~badge]][c~tracing~github] [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}{{hi:Tracing}}
+[![tracing][c~tracing~docs~badge]][c~tracing~docs]{{hi:tracing}} [![tracing~repo][c~tracing~repo~badge]][c~tracing~repo] [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}{{hi:Tracing}}
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_span_entered.rs:example}}
@@ -118,7 +118,7 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across [`awai
 
 ## Add Tracing Spans to Functions {#add-tracing-spans-to-fn}
 
-[![tracing][c~tracing~docs~badge]][c~tracing~docs]{{hi:tracing}} [![tracing~github][c~tracing~github~badge]][c~tracing~github] [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}{{hi:Tracing}}
+[![tracing][c~tracing~docs~badge]][c~tracing~docs]{{hi:tracing}} [![tracing~repo][c~tracing~repo~badge]][c~tracing~repo] [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}{{hi:Tracing}}
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_instrument.rs:example}}
@@ -128,7 +128,7 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across [`awai
 
 - [![tracing-journald][c~tracing-journald~docs~badge]][c~tracing-journald~docs]{{hi:tracing-journald}}
 - [![tracing-journald~crates.io][c~tracing-journald~crates.io~badge]][c~tracing-journald~crates.io]
-- [![tracing-journald~github][c~tracing-journald~github~badge]][c~tracing-journald~github]
+- [![tracing-journald~repo][c~tracing-journald~repo~badge]][c~tracing-journald~repo]
 - [![tracing-journald~lib.rs][c~tracing-journald~lib.rs~badge]][c~tracing-journald~lib.rs]
 
 [tracing-journald][c~tracing-journald~docs]↗ provides support for logging [`tracing`][c~tracing~crates.io]↗ events natively to [journald][journald]↗, preserving any structured information.

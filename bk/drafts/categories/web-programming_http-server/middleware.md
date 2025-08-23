@@ -14,7 +14,7 @@ An additional abstraction, the [`tower::Layer`][c~tower::Layer~docs]↗{{hi:towe
 
 A number of third-party libraries support [`tower`][c~tower~docs]↗{{hi:tower}} and the [`tower::Service`][c~tower::Service~docs]↗{{hi:tower::Service}} trait: [`hyper`][c~hyper~crates.io]↗{{hi:hyper}}, [`tonic`][c~tonic~crates.io]↗{{hi:tonic}} (gRPC{{hi:gRPC}}).
 
-[![tower-middleware-from-scratch][tower-middleware-from-scratch~github~badge]][tower-middleware-from-scratch~github]
+[![tower-middleware-from-scratch][tower-middleware-from-scratch~repo~badge]][tower-middleware-from-scratch~repo]
 
 ## `tower-http` {#tower-http}
 
@@ -28,7 +28,7 @@ A number of third-party libraries support [`tower`][c~tower~docs]↗{{hi:tower}}
 
 ## Investigate Alternatives to `tower` {#alternatives}
 
-[![trillium][c~trillium~docs~badge]][c~trillium~docs] [![trillium~crates.io][c~trillium~crates.io~badge]][c~trillium~crates.io] [![trillium~github][c~trillium~github~badge]][c~trillium~github] [![trillium~lib.rs][c~trillium~lib.rs~badge]][c~trillium~lib.rs]{{hi:trillium}}{{hi:Async}}{{hi:trillium}}{{hi:Framework}}[![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}[![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}{{hi:HTTP server}}
+[![trillium][c~trillium~docs~badge]][c~trillium~docs] [![trillium~crates.io][c~trillium~crates.io~badge]][c~trillium~crates.io] [![trillium~repo][c~trillium~repo~badge]][c~trillium~repo] [![trillium~lib.rs][c~trillium~lib.rs~badge]][c~trillium~lib.rs]{{hi:trillium}}{{hi:Async}}{{hi:trillium}}{{hi:Framework}}[![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}[![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}{{hi:HTTP server}}
 
 [`trillium`][c~trillium~docs]↗{{hi:trillium}} is a modular toolkit for building async web apps
 

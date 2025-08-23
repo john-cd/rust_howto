@@ -12,7 +12,7 @@
 
 [![cargo-generate][c~cargo-generate~docs~badge]][c~cargo-generate~docs]{{hi:cargo-generate}}
 [![cargo-generate~crates.io][c~cargo-generate~crates.io~badge]][c~cargo-generate~crates.io]
-[![cargo-generate~github][c~cargo-generate~github~badge]][c~cargo-generate~github]
+[![cargo-generate~repo][c~cargo-generate~repo~badge]][c~cargo-generate~repo]
 [![cargo-generate~lib.rs][c~cargo-generate~lib.rs~badge]][c~cargo-generate~lib.rs]
 
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:cargo plugins}}
@@ -23,7 +23,7 @@
 
 [![cargo-crates][c~cargo-crates~docs~badge]][c~cargo-crates~docs]{{hi:cargo-crates}}
 [![cargo-crates~crates.io][c~cargo-crates~crates.io~badge]][c~cargo-crates~crates.io]
-[![cargo-crates~github][c~cargo-crates~github~badge]][c~cargo-crates~github]
+[![cargo-crates~repo][c~cargo-crates~repo~badge]][c~cargo-crates~repo]
 [![cargo-crates~lib.rs][c~cargo-crates~lib.rs~badge]][c~cargo-crates~lib.rs]
 
 `cargo crates` is a [cargo][p~cargo] command to quickly open the [`crates.io`][crates.io~website]↗{{hi:crates.io}} or[`docs.rs`][docs.rs~website]↗{{hi:docs.rs}} page for the latest version of a crate.

@@ -12,7 +12,7 @@ While it is common to deploy Rust applications to Cloud services like [AWS][p~aw
 
 - Infrastructure-as-Code: You can define your infrastructure directly within your Rust code using annotations (no infrastructure files). [`Shuttle`][shuttle~website]↗{{hi:Shuttle}} handles provisioning resources like [databases][p~databases], secrets, and storage.
 - Rapid Deployment: your Rust applications `can` be deployed quickly and easily to the [cloud][p~cloud] with minimal configuration.
-- Framework Support: Shuttle is compatible with popular Rust frameworks ([`Axum`][c~axum~docs]↗{{hi:Axum}}, [`Actix Web`][c~actix-web~docs]↗{{hi:Actix Web}}, [`Rocket`][c~rocket~docs]↗{{hi:Rocket}}, [`Warp`][c~warp~docs]↗{{hi:Warp}}, [`Tower`][c~tower~docs]↗{{hi:Tower}} and more). The Discord Bot building frameworks [`Serenity`][serenity~github]↗{{hi:Serenity}} and `Poise` are also officially supported.
+- Framework Support: Shuttle is compatible with popular Rust frameworks ([`Axum`][c~axum~docs]↗{{hi:Axum}}, [`Actix Web`][c~actix-web~docs]↗{{hi:Actix Web}}, [`Rocket`][c~rocket~docs]↗{{hi:Rocket}}, [`Warp`][c~warp~docs]↗{{hi:Warp}}, [`Tower`][c~tower~docs]↗{{hi:Tower}} and more). The Discord Bot building frameworks [`Serenity`][serenity~repo]↗{{hi:Serenity}} and `Poise` are also officially supported.
 - Out-of-the-box logging support.
 
 It offers a free tier with access to essential features for individual developers and small projects.
@@ -25,7 +25,7 @@ It offers a free tier with access to essential features for individual developer
 
 - [`shuttle.dev`][shuttle-dev~website]↗{{hi:shuttle}}
 - [`docs.shuttle.dev`][shuttle-dev~docs]{{hi:shuttle.dev}}
-- [Shuttle Examples][shuttle~examples~github]↗.
+- [Shuttle Examples][shuttle~examples~repo]↗.
 
 ## Related Topics
 

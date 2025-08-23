@@ -18,7 +18,7 @@ Kin in spirit to [Python][p~python]'s `scikit-learn`, [`linfa`][c~linfa~docs]↗
 
 ### `smartcore` {#skip2}
 
-[![smartcore~website][c~smartcore~website~badge]][c~smartcore~website] [![smartcore][c~smartcore~docs~badge]][c~smartcore~docs] [![smartcore~crates.io][c~smartcore~crates.io~badge]][c~smartcore~crates.io] [![smartcore~github][c~smartcore~github~badge]][c~smartcore~github] [![smartcore~lib.rs][c~smartcore~lib.rs~badge]][c~smartcore~lib.rs]{{hi:smartcore}}{{hi:Statistical}}{{hi:Ai}}{{hi:Machine-learning}}{{hi:Optimization}}{{hi:Linear-algebra}}[![cat~science][cat~science~badge]][cat~science]{{hi:Science}}
+[![smartcore~website][c~smartcore~website~badge]][c~smartcore~website] [![smartcore][c~smartcore~docs~badge]][c~smartcore~docs] [![smartcore~crates.io][c~smartcore~crates.io~badge]][c~smartcore~crates.io] [![smartcore~repo][c~smartcore~repo~badge]][c~smartcore~repo] [![smartcore~lib.rs][c~smartcore~lib.rs~badge]][c~smartcore~lib.rs]{{hi:smartcore}}{{hi:Statistical}}{{hi:Ai}}{{hi:Machine-learning}}{{hi:Optimization}}{{hi:Linear-algebra}}[![cat~science][cat~science~badge]][cat~science]{{hi:Science}}
 
 [SmartCore][c~smartcore~website]↗{{hi:smartcore}} is a comprehensive library for machine learning and numerical computing. The library provides a set of tools for linear algebra, numerical computing, optimization, and enables a generic, powerful yet still efficient approach to machine learning.
 
@@ -39,6 +39,6 @@ Kin in spirit to [Python][p~python]'s `scikit-learn`, [`linfa`][c~linfa~docs]↗
 <div class="hidden">
 [organize / write](https://github.com/john-cd/rust_howto/issues/473)
 
-- [`mistral.rs`][mistral.rs~github]↗.
+- [`mistral.rs`][mistral.rs~repo]↗.
 
 </div>

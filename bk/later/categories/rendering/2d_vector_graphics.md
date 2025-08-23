@@ -12,7 +12,7 @@ It's useful for creating the geometry for vector graphics, but you'd typically u
 
 ## `femtovg` {#femtovg}
 
-[![femtovg][c~femtovg~docs~badge]][c~femtovg~docs] [![femtovg~crates.io][c~femtovg~crates.io~badge]][c~femtovg~crates.io] [![femtovg~github][c~femtovg~github~badge]][c~femtovg~github] [![femtovg~lib.rs][c~femtovg~lib.rs~badge]][c~femtovg~lib.rs]{{hi:femtovg}}{{hi:Canvas}}{{hi:Drawing}}{{hi:Gpu}}{{hi:Graphics}}{{hi:Vector}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}}
+[![femtovg][c~femtovg~docs~badge]][c~femtovg~docs] [![femtovg~crates.io][c~femtovg~crates.io~badge]][c~femtovg~crates.io] [![femtovg~repo][c~femtovg~repo~badge]][c~femtovg~repo] [![femtovg~lib.rs][c~femtovg~lib.rs~badge]][c~femtovg~lib.rs]{{hi:femtovg}}{{hi:Canvas}}{{hi:Drawing}}{{hi:Gpu}}{{hi:Graphics}}{{hi:Vector}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}}
 
 [`femtovg`][c~femtovg~docs]↗{{hi:femtovg}} is an anti-aliased 2D vector drawing library. It is "OpenGL based. Offers a simple API. Probably the easiest to get started with." ([blessed.rs][blessed.rs-graphics~website]↗).
 
@@ -22,7 +22,7 @@ It's useful for creating the geometry for vector graphics, but you'd typically u
 
 ## `vger` {#vger}
 
-[![vger][c~vger~docs~badge]][c~vger~docs] [![vger~crates.io][c~vger~crates.io~badge]][c~vger~crates.io] [![vger~github][c~vger~github~badge]][c~vger~github] [![vger~lib.rs][c~vger~lib.rs~badge]][c~vger~lib.rs]{{hi:vger}}{{hi:Canvas}}{{hi:Drawing}}{{hi:Gpu}}{{hi:Graphics}}{{hi:Vector}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}}
+[![vger][c~vger~docs~badge]][c~vger~docs] [![vger~crates.io][c~vger~crates.io~badge]][c~vger~crates.io] [![vger~repo][c~vger~repo~badge]][c~vger~repo] [![vger~lib.rs][c~vger~lib.rs~badge]][c~vger~lib.rs]{{hi:vger}}{{hi:Canvas}}{{hi:Drawing}}{{hi:Gpu}}{{hi:Graphics}}{{hi:Vector}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}}
 
 [`vger`][c~vger~docs]↗{{hi:vger}} is a 2D [GPU][p~gpu] renderer for dynamic UIs.
 

@@ -134,7 +134,7 @@ Design patterns are well-proven blueprints or best practices for solving recurri
 
 ## References
 
-- [Rust Unofficial: patterns][rust-unofficial-patterns~github]↗.
+- [Rust Unofficial: patterns][rust-unofficial-patterns~repo]↗.
 - [Rust: state machine pattern][rust-state-machine-pattern]↗.
 
 {{#include refs.incl.md}}
@@ -143,7 +143,7 @@ Design patterns are well-proven blueprints or best practices for solving recurri
 <div class="hidden">
 [index: organize / write / add cross links](https://github.com/john-cd/rust_howto/issues/469)
 
-- [patterns][rust-unofficial-patterns~github]↗: A catalog of Rust design patterns, anti-patterns and idioms.
+- [patterns][rust-unofficial-patterns~repo]↗: A catalog of Rust design patterns, anti-patterns and idioms.
 
 ```rust,editable
 {{#include ../../../crates/cats/rust_patterns/examples/scopeguard.rs:example}}

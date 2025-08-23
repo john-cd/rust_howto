@@ -6,7 +6,7 @@ Unicode segmentation is the process of dividing a string of Unicode text into me
 
 ## Collect Unicode Graphemes {#collect-unicode-graphemes}
 
-[![unicode-segmentation][c~unicode-segmentation~docs~badge]][c~unicode-segmentation~docs] [![unicode-segmentation~crates.io][c~unicode-segmentation~crates.io~badge]][c~unicode-segmentation~crates.io] [![unicode-segmentation~github][c~unicode-segmentation~github~badge]][c~unicode-segmentation~github] [![unicode-segmentation~lib.rs][c~unicode-segmentation~lib.rs~badge]][c~unicode-segmentation~lib.rs]{{hi:unicode-segmentation}}{{hi:Boundary}}{{hi:Grapheme}}{{hi:Text}}{{hi:Unicode}}{{hi:Word}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+[![unicode-segmentation][c~unicode-segmentation~docs~badge]][c~unicode-segmentation~docs] [![unicode-segmentation~crates.io][c~unicode-segmentation~crates.io~badge]][c~unicode-segmentation~crates.io] [![unicode-segmentation~repo][c~unicode-segmentation~repo~badge]][c~unicode-segmentation~repo] [![unicode-segmentation~lib.rs][c~unicode-segmentation~lib.rs~badge]][c~unicode-segmentation~lib.rs]{{hi:unicode-segmentation}}{{hi:Boundary}}{{hi:Grapheme}}{{hi:Text}}{{hi:Unicode}}{{hi:Word}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
 [`unicode-segmentation`][c~unicode-segmentation~docs]↗{{hi:unicode-segmentation}} collects individual Unicode graphemes{{hi:Graphemes}} from UTF-8{{hi:UTF-8}} strings. See in particular the [`unicode-segmentation::UnicodeSegmentation::graphemes`][c~unicode-segmentation::UnicodeSegmentation::graphemes~docs]↗{{hi:unicode-segmentation::UnicodeSegmentation::graphemes}} function.
 

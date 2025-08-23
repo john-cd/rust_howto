@@ -35,7 +35,7 @@ Parse [TOML][p~toml] into your own [structs][p~structs] using [`serde`][c~serde~
 
 ## Read and Write Integers in Little-endian Byte Order {#byteorder}
 
-[![byteorder][c~byteorder~docs~badge]][c~byteorder~docs] [![byteorder~crates.io][c~byteorder~crates.io~badge]][c~byteorder~crates.io] [![byteorder~github][c~byteorder~github~badge]][c~byteorder~github] [![byteorder~lib.rs][c~byteorder~lib.rs~badge]][c~byteorder~lib.rs]{{hi:byteorder}}{{hi:Little-endian}}{{hi:Big-endian}}{{hi:Endian}}{{hi:Byte}}{{hi:Binary}}{{hi:Encoding}}{{hi:Byte order}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
+[![byteorder][c~byteorder~docs~badge]][c~byteorder~docs] [![byteorder~crates.io][c~byteorder~crates.io~badge]][c~byteorder~crates.io] [![byteorder~repo][c~byteorder~repo~badge]][c~byteorder~repo] [![byteorder~lib.rs][c~byteorder~lib.rs~badge]][c~byteorder~lib.rs]{{hi:byteorder}}{{hi:Little-endian}}{{hi:Big-endian}}{{hi:Endian}}{{hi:Byte}}{{hi:Binary}}{{hi:Encoding}}{{hi:Byte order}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
 
 [`byteorder`][c~byteorder~docs]↗ is a library for reading/writing numbers in big-endian and little-endian. It can reverse the significant bytes of structured data. This may be necessary when receiving information over the network, when bytes received are from another system.
 

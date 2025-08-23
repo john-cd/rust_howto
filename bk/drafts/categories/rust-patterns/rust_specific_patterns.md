@@ -6,7 +6,7 @@
 
 [![dyn-clone][c~dyn-clone~docs~badge]][c~dyn-clone~docs]{{hi:dyn-clone}}
 [![dyn-clone~crates.io][c~dyn-clone~crates.io~badge]][c~dyn-clone~crates.io]
-[![dyn-clone~github][c~dyn-clone~github~badge]][c~dyn-clone~github]
+[![dyn-clone~repo][c~dyn-clone~repo~badge]][c~dyn-clone~repo]
 [![dyn-clone~lib.rs][c~dyn-clone~lib.rs~badge]][c~dyn-clone~lib.rs]
 [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
@@ -19,9 +19,9 @@ The [`dyn-clone`][c~dyn-clone~docs]↗{{hi:dyn-clone}} crate provides a [`DynClo
 
 ## `pin-project` and `pin-project-lite` {#pin-project}
 
-[![pin-project][c~pin-project~docs~badge]][c~pin-project~docs] [![pin-project~crates.io][c~pin-project~crates.io~badge]][c~pin-project~crates.io] [![pin-project~github][c~pin-project~github~badge]][c~pin-project~github] [![pin-project~lib.rs][c~pin-project~lib.rs~badge]][c~pin-project~lib.rs]{{hi:pin-project}}{{hi:Attribute}}{{hi:Macros}}{{hi:Pin}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
+[![pin-project][c~pin-project~docs~badge]][c~pin-project~docs] [![pin-project~crates.io][c~pin-project~crates.io~badge]][c~pin-project~crates.io] [![pin-project~repo][c~pin-project~repo~badge]][c~pin-project~repo] [![pin-project~lib.rs][c~pin-project~lib.rs~badge]][c~pin-project~lib.rs]{{hi:pin-project}}{{hi:Attribute}}{{hi:Macros}}{{hi:Pin}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-[![pin-project-lite][c~pin-project-lite~docs~badge]][c~pin-project-lite~docs] [![pin-project-lite~crates.io][c~pin-project-lite~crates.io~badge]][c~pin-project-lite~crates.io] [![pin-project-lite~github][c~pin-project-lite~github~badge]][c~pin-project-lite~github] [![pin-project-lite~lib.rs][c~pin-project-lite~lib.rs~badge]][c~pin-project-lite~lib.rs]{{hi:pin-project-lite}}{{hi:Macros}}{{hi:Pin}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}}
+[![pin-project-lite][c~pin-project-lite~docs~badge]][c~pin-project-lite~docs] [![pin-project-lite~crates.io][c~pin-project-lite~crates.io~badge]][c~pin-project-lite~crates.io] [![pin-project-lite~repo][c~pin-project-lite~repo~badge]][c~pin-project-lite~repo] [![pin-project-lite~lib.rs][c~pin-project-lite~lib.rs~badge]][c~pin-project-lite~lib.rs]{{hi:pin-project-lite}}{{hi:Macros}}{{hi:Pin}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}}
 
 [`pin-project`][c~pin-project~docs]↗{{hi:pin-project}} is a crate for safe and ergonomic pin-projection. The `#[pin_project]` attribute creates projection types covering all the fields of struct or enum.
 

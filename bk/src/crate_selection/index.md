@@ -47,7 +47,7 @@ You may also consult older resources, such as:
 
 - [Best of Rust Crates][reddit~best-of-rust-crates]↗.
 - [Rust Starter Pack][rust-starter-pack~website]↗{{hi:Rust starter pack}}.
-- [![stdx][c~stdx~github~badge]][c~stdx~github]↗{{hi:stdx}}.
+- [![stdx][c~stdx~repo~badge]][c~stdx~repo]↗{{hi:stdx}}.
 
 ## Related Topics {#related-topics}
 

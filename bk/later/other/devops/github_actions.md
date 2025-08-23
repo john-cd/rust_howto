@@ -24,7 +24,7 @@ GitHub Action for installing [development tools][p~development-tools] (mainly fr
         cargo pants
 ```
 
-[`install-action`][install_action~github]↗{{hi:install-action}} is a GitHub Action for installing development tools (mainly from GitHub Releases).
+[`install-action`][install_action~repo]↗{{hi:install-action}} is a GitHub Action for installing development tools (mainly from GitHub Releases).
 
 ```yaml
 - uses: taiki-e/install-action@v2
@@ -34,11 +34,11 @@ GitHub Action for installing [development tools][p~development-tools] (mainly fr
 
 ## Cache Your Compilation {#compilation-caching}
 
-[`rust-cache`][c~rust_cache~github]↗{{hi:rust-cache}}.
+[`rust-cache`][c~rust_cache~repo]↗{{hi:rust-cache}}.
 
 [![rust-cache][c~rust_cache~docs~badge]][c~rust_cache~docs]{{hi:rust-cache}}
 [![rust-cache~crates.io][c~rust_cache~crates.io~badge]][c~rust_cache~crates.io]
-[![rust-cache~github][c~rust_cache~github~badge]][c~rust_cache~github]
+[![rust-cache~repo][c~rust_cache~repo~badge]][c~rust_cache~repo]
 [![rust-cache~lib.rs][c~rust_cache~lib.rs~badge]][c~rust_cache~lib.rs]
 
 `Swatinem/rust-cache` is the current recommended cache action, which handles properly optimizing cache effectiveness for a [cargo][p~cargo] build in CI. That action also automatically sets `CARGO_INCREMENTAL=0` for users of the action.
@@ -124,7 +124,7 @@ FIXME
 
 ## Related Topics {#related-topics}
 
-[![gh-workflow][c~gh-workflow~docs~badge]][c~gh-workflow~docs] [![gh-workflow~crates.io][c~gh-workflow~crates.io~badge]][c~gh-workflow~crates.io] [![gh-workflow~github][c~gh-workflow~github~badge]][c~gh-workflow~github] [![gh-workflow~lib.rs][c~gh-workflow~lib.rs~badge]][c~gh-workflow~lib.rs]{{hi:gh-workflow}}{{hi:Actions}}{{hi:Generator}}{{hi:Github}}{{hi:Workflow}}
+[![gh-workflow][c~gh-workflow~docs~badge]][c~gh-workflow~docs] [![gh-workflow~crates.io][c~gh-workflow~crates.io~badge]][c~gh-workflow~crates.io] [![gh-workflow~repo][c~gh-workflow~repo~badge]][c~gh-workflow~repo] [![gh-workflow~lib.rs][c~gh-workflow~lib.rs~badge]][c~gh-workflow~lib.rs]{{hi:gh-workflow}}{{hi:Actions}}{{hi:Generator}}{{hi:Github}}{{hi:Workflow}}
 
 A type-safe GitHub Actions workflow generator: [`gh-workflow`][c~gh-workflow~docs]↗.
 

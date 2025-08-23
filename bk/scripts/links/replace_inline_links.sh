@@ -34,7 +34,7 @@ do
   # for lines that start with http... or for http... not preceded by " ' or (
   sed -n -E -s '\=(^|[^"'\''(])https?://= {
   # replace https::/github.com/.../...
-  s=([^"'\''(]?https?://github.com/)([^/ ]+/)([^/ ]+)(/[^"'\'')↗]*)?=[`\3`][\3~github] [\3~github]: \1\2\3\4=gp;
+  s=([^"'\''(]?https?://github.com/)([^/ ]+/)([^/ ]+)(/[^"'\'')↗]*)?=[`\3`][\3~repo] [\3~repo]: \1\2\3\4=gp;
   # skip to end if the above matched
   tx;
   # General case http://...

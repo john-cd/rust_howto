@@ -6,11 +6,11 @@
 
 [![nom][c~nom~docs~badge]][c~nom~docs]{{hi:nom}}
 [![nom~crates.io][c~nom~crates.io~badge]][c~nom~crates.io]
-[![nom~github][c~nom~github~badge]][c~nom~github]
+[![nom~repo][c~nom~repo~badge]][c~nom~repo]
 [![nom~lib.rs][c~nom~lib.rs~badge]][c~nom~lib.rs]
 [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
 
-[nom][c~nom~github]↗{{hi:nom}} is a byte-oriented, zero-copy, parser combinators library.
+[nom][c~nom~repo]↗{{hi:nom}} is a byte-oriented, zero-copy, parser combinators library.
 
 See also: the [nominomicon][c~nom~nominomicon]↗ book.
 
@@ -22,7 +22,7 @@ See also: the [nominomicon][c~nom~nominomicon]↗ book.
 
 [![pest][c~pest~docs~badge]][c~pest~docs]{{hi:pest}}
 [![pest~crates.io][c~pest~crates.io~badge]][c~pest~crates.io]
-[![pest~github][c~pest~github~badge]][c~pest~github]
+[![pest~repo][c~pest~repo~badge]][c~pest~repo]
 [![pest~lib.rs][c~pest~lib.rs~badge]][c~pest~lib.rs]
 [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
 
@@ -38,7 +38,7 @@ Grammars are saved in separate [`.pest`][c~pest~docs]↗{{hi:.pest}}  files whi
 
 [![tree-sitter][c~tree-sitter~docs~badge]][c~tree-sitter~docs]{{hi:tree-sitter}}
 [![tree-sitter~crates.io][c~tree-sitter~crates.io~badge]][c~tree-sitter~crates.io]
-[![tree-sitter~github][c~tree-sitter~github~badge]][c~tree-sitter~github]
+[![tree-sitter~repo][c~tree-sitter~repo~badge]][c~tree-sitter~repo]
 [![tree-sitter~lib.rs][c~tree-sitter~lib.rs~badge]][c~tree-sitter~lib.rs]
 
 [`tree-sitter`][c~tree-sitter~docs]↗{{hi:tree-sitter}} provides Rust bindings to the Tree-sitter parsing library. [`tree-sitter`][tree-sitter~website]↗ is a parser generator tool and an incremental parsing library. It can build a concrete syntax tree for a source file and efficiently update the syntax tree as the source file is edited.
@@ -65,9 +65,9 @@ Grammars are saved in separate [`.pest`][c~pest~docs]↗{{hi:.pest}}  files whi
 <div class="hidden">
 [parsing: write; examples](https://github.com/john-cd/rust_howto/issues/448)
 
-- [Awesome Pest][awesome-pest~github]↗: A curated list of resources, projects, and tools using or for the `pest` parser generator in Rust.
+- [Awesome Pest][awesome-pest~repo]↗: A curated list of resources, projects, and tools using or for the `pest` parser generator in Rust.
 - [ABNF to Pest][c~abnf_to_pest~crates.io]↗.
 - [`winnow`][c~winnow~docs]↗.
-- [parse-rosetta-rs][parse-rosetta-rs~github]↗.
+- [parse-rosetta-rs][parse-rosetta-rs~repo]↗.
 
 </div>

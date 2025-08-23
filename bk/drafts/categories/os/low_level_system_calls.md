@@ -6,7 +6,7 @@
 
 [![libc][c~libc~docs~badge]][c~libc~docs]{{hi:libc}}
 [![libc~crates.io][c~libc~crates.io~badge]][c~libc~crates.io]
-[![libc~github][c~libc~github~badge]][c~libc~github]
+[![libc~repo][c~libc~repo~badge]][c~libc~repo]
 [![libc~lib.rs][c~libc~lib.rs~badge]][c~libc~lib.rs]
 [![cat~external-ffi-bindings][cat~external-ffi-bindings~badge]][cat~external-ffi-bindings]{{hi:External FFI bindings}}
 [![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}}

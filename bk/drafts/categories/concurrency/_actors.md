@@ -31,7 +31,7 @@ Possible applications of actor frameworks:
 
 ## `stakker` {#stakker}
 
-[![stakker~website][c~stakker~website~badge]][c~stakker~website] [![stakker][c~stakker~docs~badge]][c~stakker~docs] [![stakker~crates.io][c~stakker~crates.io~badge]][c~stakker~crates.io] [![stakker~github][c~stakker~github~badge]][c~stakker~github] [![stakker~lib.rs][c~stakker~lib.rs~badge]][c~stakker~lib.rs]{{hi:stakker}}{{hi:Runtime}}{{hi:Erlang}}{{hi:Async}}{{hi:Actor}}{{hi:Pony}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+[![stakker~website][c~stakker~website~badge]][c~stakker~website] [![stakker][c~stakker~docs~badge]][c~stakker~docs] [![stakker~crates.io][c~stakker~crates.io~badge]][c~stakker~crates.io] [![stakker~repo][c~stakker~repo~badge]][c~stakker~repo] [![stakker~lib.rs][c~stakker~lib.rs~badge]][c~stakker~lib.rs]{{hi:stakker}}{{hi:Runtime}}{{hi:Erlang}}{{hi:Async}}{{hi:Actor}}{{hi:Pony}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
 [`stakker`][c~stakker~docs]↗{{hi:stakker}} is a lightweight low-level single-threaded actor runtime. It simplifies the development of concurrent applications by promoting message-passing between isolated actors, ensuring data safety and preventing race conditions.
 
@@ -41,7 +41,7 @@ Possible applications of actor frameworks:
 
 ## `riker` {#riker}
 
-[![riker~website][c~riker~website~badge]][c~riker~website] [![riker][c~riker~docs~badge]][c~riker~docs] [![riker~crates.io][c~riker~crates.io~badge]][c~riker~crates.io] [![riker~github][c~riker~github~badge]][c~riker~github] [![riker~lib.rs][c~riker~lib.rs~badge]][c~riker~lib.rs]{{hi:riker}}{{hi:Async}}{{hi:Actors}}{{hi:CQRS}}{{hi:Actor-model}}{{hi:Event_sourcing}}
+[![riker~website][c~riker~website~badge]][c~riker~website] [![riker][c~riker~docs~badge]][c~riker~docs] [![riker~crates.io][c~riker~crates.io~badge]][c~riker~crates.io] [![riker~repo][c~riker~repo~badge]][c~riker~repo] [![riker~lib.rs][c~riker~lib.rs~badge]][c~riker~lib.rs]{{hi:riker}}{{hi:Async}}{{hi:Actors}}{{hi:CQRS}}{{hi:Actor-model}}{{hi:Event_sourcing}}
 
 [`riker`][c~riker~docs]↗{{hi:riker}} is an actor framework for Rust to build fast, highly concurrent, and resilient applications. Riker is an actor framework for Rust inspired by the actor model found in Erlang/OTP and Akka. It provides tools for creating, managing, and interacting with actors, which are lightweight, concurrent units of execution that communicate through message passing. Riker emphasizes fault tolerance and resilience, offering mechanisms for handling actor failures and ensuring the stability of concurrent applications.
 
@@ -53,7 +53,7 @@ Possible applications of actor frameworks:
 
 [![ractor][c~ractor~docs~badge]][c~ractor~docs]{{hi:ractor}}
 [![ractor~crates.io][c~ractor~crates.io~badge]][c~ractor~crates.io]
-[![ractor~github][c~ractor~github~badge]][c~ractor~github]
+[![ractor~repo][c~ractor~repo~badge]][c~ractor~repo]
 [![ractor~lib.rs][c~ractor~lib.rs~badge]][c~ractor~lib.rs]
 
 [`ractor`][c~ractor~docs]↗{{hi:ractor}} is a pure-Rust actor framework, inspired from Erlang's `gen_server`.
@@ -68,7 +68,7 @@ Ractor is a Rust crate providing a simple, lightweight actor framework. It facil
 
 [![actix][c~actix~docs~badge]][c~actix~docs]{{hi:actix}}
 [![actix~crates.io][c~actix~crates.io~badge]][c~actix~crates.io]
-[![actix~github][c~actix~github~badge]][c~actix~github]
+[![actix~repo][c~actix~repo~badge]][c~actix~repo]
 [![actix~lib.rs][c~actix~lib.rs~badge]][c~actix~lib.rs]
 
 [`actix`][c~actix~docs]↗{{hi:actix}} is a performant actor framework for Rust, emphasizing message passing concurrency. It provides tools for creating, managing, and interacting with actors, which are isolated units of execution that communicate asynchronously via messages. Actix is widely used for building concurrent applications, particularly web services, due to its efficiency and support for asynchronous I/O. It offers features like message routing, supervision, and a variety of actor communication patterns.
@@ -97,7 +97,7 @@ Ractor is a Rust crate providing a simple, lightweight actor framework. It facil
 <div class="hidden">
 [_actors: organize](https://github.com/john-cd/rust_howto/issues/269)
 
-- [bastion][c~bastion~github]↗: Highly-available Distributed Fault-tolerant Runtime.
+- [bastion][c~bastion~repo]↗: Highly-available Distributed Fault-tolerant Runtime.
 
 https://riker.rs/actors
 https://github.com/uazu/stakker

@@ -8,7 +8,7 @@ String concatenation is the operation of joining two or more strings together en
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
-[![joinery][c~joinery~docs~badge]][c~joinery~docs] [![joinery~crates.io][c~joinery~crates.io~badge]][c~joinery~crates.io] [![joinery~github][c~joinery~github~badge]][c~joinery~github] [![joinery~lib.rs][c~joinery~lib.rs~badge]][c~joinery~lib.rs]{{hi:joinery}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}} [![cat~value-formatting][cat~value-formatting~badge]][cat~value-formatting]{{hi:Value formatting}}
+[![joinery][c~joinery~docs~badge]][c~joinery~docs] [![joinery~crates.io][c~joinery~crates.io~badge]][c~joinery~crates.io] [![joinery~repo][c~joinery~repo~badge]][c~joinery~repo] [![joinery~lib.rs][c~joinery~lib.rs~badge]][c~joinery~lib.rs]{{hi:joinery}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}} [![cat~value-formatting][cat~value-formatting~badge]][cat~value-formatting]{{hi:Value formatting}}
 
 [`joinery`][c~joinery~docs]↗{{hi:joinery}} is a small crate for generically joining iterators with a separator.
 
@@ -18,7 +18,7 @@ String concatenation is the operation of joining two or more strings together en
 
 ## References
 
-- [String concatenation benchmark][concat~benchmark~github]↗.
+- [String concatenation benchmark][concat~benchmark~repo]↗.
 
 ## Related Topics {#related-topics}
 

@@ -2,7 +2,7 @@
 
 {{#include apis.incl.md}}
 
-## Query the GitHub API {#query-the~github-api}
+## Query the GitHub API {#query-the~repo-api}
 
 [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![serde][c~serde~docs~badge]][c~serde~docs]{{hi:serde}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}} [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client]
 
@@ -26,7 +26,7 @@ Due to both [`reqwest::ClientBuilder::build`][c~reqwest::ClientBuilder::build~do
 {{#include ../../../crates/cats/web_programming_http_client/examples/apis/rest_head.rs:example}}
 ```
 
-## Create and Delete a Gist with the GitHub API {#create-and-delete-gist-with~github-api}
+## Create and Delete a Gist with the GitHub API {#create-and-delete-gist-with~repo-api}
 
 [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![serde][c~serde~docs~badge]][c~serde~docs]{{hi:serde}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}} [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client]
 

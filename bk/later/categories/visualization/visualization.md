@@ -4,7 +4,7 @@
 
 ## `plotters` {#plotters}
 
-[![plotters~website][c~plotters~website~badge]][c~plotters~website] [![plotters][c~plotters~docs~badge]][c~plotters~docs] [![plotters~crates.io][c~plotters~crates.io~badge]][c~plotters~crates.io] [![plotters~github][c~plotters~github~badge]][c~plotters~github] [![plotters~lib.rs][c~plotters~lib.rs~badge]][c~plotters~lib.rs]{{hi:plotters}}{{hi:Drawing}}{{hi:Plotting}}{{hi:Visualization}}{{hi:Webassembly}} [![cat~visualization][cat~visualization~badge]][cat~visualization]{{hi:Visualization}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
+[![plotters~website][c~plotters~website~badge]][c~plotters~website] [![plotters][c~plotters~docs~badge]][c~plotters~docs] [![plotters~crates.io][c~plotters~crates.io~badge]][c~plotters~crates.io] [![plotters~repo][c~plotters~repo~badge]][c~plotters~repo] [![plotters~lib.rs][c~plotters~lib.rs~badge]][c~plotters~lib.rs]{{hi:plotters}}{{hi:Drawing}}{{hi:Plotting}}{{hi:Visualization}}{{hi:Webassembly}} [![cat~visualization][cat~visualization~badge]][cat~visualization]{{hi:Visualization}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
 
 A Rust drawing library focus on data plotting for both [WASM][p~wasm] and native applications.
 
@@ -14,7 +14,7 @@ A Rust drawing library focus on data plotting for both [WASM][p~wasm] and native
 
 [![plotly][c~plotly~docs~badge]][c~plotly~docs]{{hi:plotly}}
 [![plotly~crates.io][c~plotly~crates.io~badge]][c~plotly~crates.io]
-[![plotly~github][c~plotly~github~badge]][c~plotly~github]
+[![plotly~repo][c~plotly~repo~badge]][c~plotly~repo]
 [![plotly~lib.rs][c~plotly~lib.rs~badge]][c~plotly~lib.rs]
 
 [`plotly-rs`][c~plotly~docs]↗{{hi:plotly}} is a plotting library powered by [Plotly.js][plotly.js~website]↗. The aim is to bring over to Rust all the functionality that [`Python`][python]↗{{hi:Python}} users have come to rely on; with the added benefit of type safety and speed.{{hi:Visualization}}

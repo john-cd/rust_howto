@@ -18,7 +18,7 @@
 
 [![cargo-semver-checks][c~cargo-semver-checks~docs~badge]][c~cargo-semver-checks~docs]
 [![cargo-semver-checks~crates.io][c~cargo-semver-checks~crates.io~badge]][c~cargo-semver-checks~crates.io]
-[![cargo-semver-checks~github][c~cargo-semver-checks~github~badge]][c~cargo-semver-checks~github]
+[![cargo-semver-checks~repo][c~cargo-semver-checks~repo~badge]][c~cargo-semver-checks~repo]
 [![cargo-semver-checks~lib.rs][c~cargo-semver-checks~lib.rs~badge]][c~cargo-semver-checks~lib.rs]
 [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}}
 [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
@@ -40,23 +40,23 @@ $ cargo semver-checks
 
 [![cargo-cache][c~cargo-cache~docs~badge]][c~cargo-cache~docs]{{hi:cargo-cache}}
 [![cargo-cache~crates.io][c~cargo-cache~crates.io~badge]][c~cargo-cache~crates.io]
-[![cargo-cache~github][c~cargo-cache~github~badge]][c~cargo-cache~github]
+[![cargo-cache~repo][c~cargo-cache~repo~badge]][c~cargo-cache~repo]
 [![cargo-cache~lib.rs][c~cargo-cache~lib.rs~badge]][c~cargo-cache~lib.rs]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}}
 [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[`cargo cache`][c~cargo-cache~github]↗{{hi:cargo-cache}} manages the [`cargo`][c~cargo~docs]↗{{hi:cargo}} cache ($cargo-HOME or ~/.cargo/), shows sizes and removes directories selectively.
+[`cargo cache`][c~cargo-cache~repo]↗{{hi:cargo-cache}} manages the [`cargo`][c~cargo~docs]↗{{hi:cargo}} cache ($cargo-HOME or ~/.cargo/), shows sizes and removes directories selectively.
 
 ## `cargo expand` {#cargo-expand}
 
-[![cargo-expand][c~cargo-expand~docs~badge]][c~cargo-expand~docs] [![cargo-expand~crates.io][c~cargo-expand~crates.io~badge]][c~cargo-expand~crates.io] [![cargo-expand~github][c~cargo-expand~github~badge]][c~cargo-expand~github] [![cargo-expand~lib.rs][c~cargo-expand~lib.rs~badge]][c~cargo-expand~lib.rs]{{hi:cargo-expand}}{{hi:Cargo}}{{hi:Macros}}{{hi:Subcommand}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}{{hi:cargo-expand}}
+[![cargo-expand][c~cargo-expand~docs~badge]][c~cargo-expand~docs] [![cargo-expand~crates.io][c~cargo-expand~crates.io~badge]][c~cargo-expand~crates.io] [![cargo-expand~repo][c~cargo-expand~repo~badge]][c~cargo-expand~repo] [![cargo-expand~lib.rs][c~cargo-expand~lib.rs~badge]][c~cargo-expand~lib.rs]{{hi:cargo-expand}}{{hi:Cargo}}{{hi:Macros}}{{hi:Subcommand}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}{{hi:cargo-expand}}
 
 `cargo expand` is a wrapper around `rustc -Zunpretty=expanded`. Shows the result of macro expansion and `#[derive]` expansion.
 
 ## `cargo hack` {#cargo-hack}
 
-[![cargo-hack][c~cargo-hack~docs~badge]][c~cargo-hack~docs] [![cargo-hack~crates.io][c~cargo-hack~crates.io~badge]][c~cargo-hack~crates.io] [![cargo-hack~github][c~cargo-hack~github~badge]][c~cargo-hack~github] [![cargo-hack~lib.rs][c~cargo-hack~lib.rs~badge]][c~cargo-hack~lib.rs]{{hi:cargo-hack}}{{hi:Cargo}}{{hi:Subcommand}}{{hi:Testing}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
+[![cargo-hack][c~cargo-hack~docs~badge]][c~cargo-hack~docs] [![cargo-hack~crates.io][c~cargo-hack~crates.io~badge]][c~cargo-hack~crates.io] [![cargo-hack~repo][c~cargo-hack~repo~badge]][c~cargo-hack~repo] [![cargo-hack~lib.rs][c~cargo-hack~lib.rs~badge]][c~cargo-hack~lib.rs]{{hi:cargo-hack}}{{hi:Cargo}}{{hi:Subcommand}}{{hi:Testing}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
 
 [`cargo hack`][c~cargo-hack~docs]↗{{hi:cargo hack}} is a [`cargo`][c~cargo~docs]↗{{hi:cargo}} subcommand to provide various options useful for [testing][p~testing] and continuous integration.
 

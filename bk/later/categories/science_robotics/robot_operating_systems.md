@@ -38,13 +38,13 @@ While ROS traditionally favored [Python][p~python] and C++, Rust is gradually ga
 
 ## `rosrust`: Pure Rust Implementation of a ROS Client Library {#rosrust}
 
-[![rosrust][c~rosrust~docs~badge]][c~rosrust~docs] [![rosrust~crates.io][c~rosrust~crates.io~badge]][c~rosrust~crates.io] [![rosrust~github][c~rosrust~github~badge]][c~rosrust~github] [![rosrust~lib.rs][c~rosrust~lib.rs~badge]][c~rosrust~lib.rs]{{hi:rosrust}}
+[![rosrust][c~rosrust~docs~badge]][c~rosrust~docs] [![rosrust~crates.io][c~rosrust~crates.io~badge]][c~rosrust~crates.io] [![rosrust~repo][c~rosrust~repo~badge]][c~rosrust~repo] [![rosrust~lib.rs][c~rosrust~lib.rs~badge]][c~rosrust~lib.rs]{{hi:rosrust}}
 
 [`rosrust`][c~rosrust~docs]↗{{hi:rosrust}} is a pure Rust implementation of a ROS client library.
 
 ## `r2r`: Minimal ROS2 Rust Bindings {#r2r}
 
-[![r2r][c~r2r~docs~badge]][c~r2r~docs] [![r2r~crates.io][c~r2r~crates.io~badge]][c~r2r~crates.io] [![r2r~github][c~r2r~github~badge]][c~r2r~github] [![r2r~lib.rs][c~r2r~lib.rs~badge]][c~r2r~lib.rs]{{hi:r2r}}
+[![r2r][c~r2r~docs~badge]][c~r2r~docs] [![r2r~crates.io][c~r2r~crates.io~badge]][c~r2r~crates.io] [![r2r~repo][c~r2r~repo~badge]][c~r2r~repo] [![r2r~lib.rs][c~r2r~lib.rs~badge]][c~r2r~lib.rs]{{hi:r2r}}
 
 [`r2r`][c~r2r~docs]↗{{hi:r2r}} offers minimal ROS2 Rust bindings. Easy to use, runtime-agnostic, async rust bindings for ROS2.
 
@@ -58,7 +58,7 @@ Formally specified Rust bindings for ROS2.
 
 ## Other Crates {#skip}
 
-- [`ros2_rust`][ros2_rust~github]↗{{hi:ros2_rust}} - Rust bindings for ROS2.
+- [`ros2_rust`][ros2_rust~repo]↗{{hi:ros2_rust}} - Rust bindings for ROS2.
 - [`roslibrust`][c~roslibrust~crates.io]↗{{hi:roslibrust}} - Pure Rust implementation of a rosbridge client.
 - [`rclrust`][c~rclrust~crates.io]↗{{hi:rclrust}} - Yet another ROS2 Rust client.
 - [`RustDDS`][c~rustdds~crates.io]↗{{hi:RustDDS}} - Rust implementation of Data Distribution Service.

@@ -4,7 +4,7 @@
 
 ## Using `clap`'s Builder API {#clap-builder}
 
-[![clap][c~clap~docs~badge]][c~clap~docs]{{hi:clap}} [![clap~examples][c~clap~examples~badge]][c~clap~examples] [![clap~github][c~clap~github~badge]][c~clap~github] [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
+[![clap][c~clap~docs~badge]][c~clap~docs]{{hi:clap}} [![clap~examples][c~clap~examples~badge]][c~clap~examples] [![clap~repo][c~clap~repo~badge]][c~clap~repo] [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
 
 This application describes the structure of its command-line interface using [`clap`][c~clap~docs]↗{{hi:clap}}'s builder style. The [documentation][c~clap~docs]↗{{hi:clap}} gives two other possible ways to instantiate an application.
 
@@ -58,7 +58,7 @@ Your favorite number must be 256.
 
 ## Generate Shell Completion Scripts with `clap_complete` {#clap_complete}
 
-[![clap_complete][c~clap_complete~docs~badge]][c~clap_complete~docs] [![clap_complete~crates.io][c~clap_complete~crates.io~badge]][c~clap_complete~crates.io] [![clap_complete~github][c~clap_complete~github~badge]][c~clap_complete~github] [![clap_complete~lib.rs][c~clap_complete~lib.rs~badge]][c~clap_complete~lib.rs]{{hi:clap_complete}}{{hi:Bash}}{{hi:Clap}}{{hi:Cli}}{{hi:Completion}} [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
+[![clap_complete][c~clap_complete~docs~badge]][c~clap_complete~docs] [![clap_complete~crates.io][c~clap_complete~crates.io~badge]][c~clap_complete~crates.io] [![clap_complete~repo][c~clap_complete~repo~badge]][c~clap_complete~repo] [![clap_complete~lib.rs][c~clap_complete~lib.rs~badge]][c~clap_complete~lib.rs]{{hi:clap_complete}}{{hi:Bash}}{{hi:Clap}}{{hi:Cli}}{{hi:Completion}} [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
 
 `clap_complete` generates shell completion scripts for your `clap::Command`.
 
@@ -68,7 +68,7 @@ Your favorite number must be 256.
 
 [![lexopt][c~lexopt~docs~badge]][c~lexopt~docs]{{hi:lexopt}}
 [![lexopt~crates.io][c~lexopt~crates.io~badge]][c~lexopt~crates.io]
-[![lexopt~github][c~lexopt~github~badge]][c~lexopt~github]
+[![lexopt~repo][c~lexopt~repo~badge]][c~lexopt~repo]
 [![lexopt~lib.rs][c~lexopt~lib.rs~badge]][c~lexopt~lib.rs]
 
 [`lexopt`][c~lexopt~docs]↗{{hi:lexopt}} offers efficient and ergonomic command-line argument parsing. It prioritizes simplicity and performance with a declarative approach, avoiding complex macros. Expect fast compile times, fast runtime, but a tool pedantic about correctness. Its API is less ergonomic.
@@ -81,7 +81,7 @@ Your favorite number must be 256.
 
 [![pico-args][c~pico-args~docs~badge]][c~pico-args~docs]{{hi:pico-args}}
 [![pico-args~crates.io][c~pico-args~crates.io~badge]][c~pico-args~crates.io]
-[![pico-args~github][c~pico-args~github~badge]][c~pico-args~github]
+[![pico-args~repo][c~pico-args~repo~badge]][c~pico-args~repo]
 [![pico-args~lib.rs][c~pico-args~lib.rs~badge]][c~pico-args~lib.rs]
 
 The [`pico-args`][c~pico-args~docs]↗{{hi:pico-args}} crate is a small and fast library for parsing command-line arguments in Rust.
@@ -102,7 +102,7 @@ The [`pico-args`][c~pico-args~docs]↗{{hi:pico-args}} crate is a small and fast
 
 ### Parse Command-line Arguments with `structopt` {#structopt}
 
-[![structopt][c~structopt~docs~badge]][c~structopt~docs] [![structopt~crates.io][c~structopt~crates.io~badge]][c~structopt~crates.io] [![structopt~github][c~structopt~github~badge]][c~structopt~github] [![structopt~lib.rs][c~structopt~lib.rs~badge]][c~structopt~lib.rs]{{hi:structopt}}{{hi:Docopt}}{{hi:Clap}}{{hi:Derive}}{{hi:Cli}} [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
+[![structopt][c~structopt~docs~badge]][c~structopt~docs] [![structopt~crates.io][c~structopt~crates.io~badge]][c~structopt~crates.io] [![structopt~repo][c~structopt~repo~badge]][c~structopt~repo] [![structopt~lib.rs][c~structopt~lib.rs~badge]][c~structopt~lib.rs]{{hi:structopt}}{{hi:Docopt}}{{hi:Clap}}{{hi:Derive}}{{hi:Cli}} [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
 
 [`structopt`][c~structopt~docs]↗{{hi:structopt}} parses command line arguments by defining a [`struct`][keyword~struct]↗{{hi:struct}}.
 

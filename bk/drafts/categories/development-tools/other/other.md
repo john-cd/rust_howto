@@ -4,7 +4,7 @@
 
 ## Search for Rust APIs {#roogle}
 
-[`Roogle`][c~roogle~website]↗{{hi:roogle}} [![roogle~github][c~roogle~github~badge]][c~roogle~github] [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
+[`Roogle`][c~roogle~website]↗{{hi:roogle}} [![roogle~repo][c~roogle~repo~badge]][c~roogle~repo] [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 
 Roogle is a Rust API [search][p~search] engine, which allows you to [search][p~search] functions by names and type signatures. The query can be one of the following types:
 
@@ -17,7 +17,7 @@ Roogle is a Rust API [search][p~search] engine, which allows you to [search][p~s
 
 ## Minimize Rust Binary Sizes {#binary-minimizer}
 
-[How to minimize Rust binary size][min-sized-rust~github]↗.
+[How to minimize Rust binary size][min-sized-rust~repo]↗.
 
 By default, Rust optimizes for execution speed, compilation speed, and ease of debugging. This approach is suitable for most applications, as it balances [performance][p~performance] and developer productivity. However, in specific scenarios where binary size is a critical concern (e.g., embedded systems or deployment to constrained environments), Rust offers mechanisms to optimize for smaller binary sizes.
 
@@ -46,7 +46,7 @@ A simple way to get started with a project by scaffolding from a template powere
 
 ---
 
-- [protypo~github][protypo~github]↗.
-- [Rust initial setup engine][rise~github]↗ (early).
+- [protypo~repo][protypo~repo]↗.
+- [Rust initial setup engine][rise~repo]↗ (early).
 
 </div>

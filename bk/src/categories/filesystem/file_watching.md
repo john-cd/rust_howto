@@ -4,7 +4,7 @@
 
 ## Watch Files or Directories and Execute a Function When They Change {#watch-files-or-dirs}
 
-[![notify~website][c~notify~website~badge]][c~notify~website] [![notify][c~notify~docs~badge]][c~notify~docs] [![notify~crates.io][c~notify~crates.io~badge]][c~notify~crates.io] [![notify~github][c~notify~github~badge]][c~notify~github] [![notify~lib.rs][c~notify~lib.rs~badge]][c~notify~lib.rs]{{hi:notify}}{{hi:Events}}{{hi:Filesystem}}{{hi:notify}}{{hi:Watch}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
+[![notify~website][c~notify~website~badge]][c~notify~website] [![notify][c~notify~docs~badge]][c~notify~docs] [![notify~crates.io][c~notify~crates.io~badge]][c~notify~crates.io] [![notify~repo][c~notify~repo~badge]][c~notify~repo] [![notify~lib.rs][c~notify~lib.rs~badge]][c~notify~lib.rs]{{hi:notify}}{{hi:Events}}{{hi:Filesystem}}{{hi:notify}}{{hi:Watch}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
 [`notify`][c~notify~docs]↗{{hi:notify}} is a cross-platform filesystem notification library.
 

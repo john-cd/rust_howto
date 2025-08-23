@@ -4,7 +4,7 @@
 
 ## `jni` {#jni}
 
-[![jni][c~jni~docs~badge]][c~jni~docs] [![jni~crates.io][c~jni~crates.io~badge]][c~jni~crates.io] [![jni~github][c~jni~github~badge]][c~jni~github] [![jni~lib.rs][c~jni~lib.rs~badge]][c~jni~lib.rs]{{hi:jni}}{{hi:Ffi}}{{hi:Java}}{{hi:jni}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}}
+[![jni][c~jni~docs~badge]][c~jni~docs] [![jni~crates.io][c~jni~crates.io~badge]][c~jni~crates.io] [![jni~repo][c~jni~repo~badge]][c~jni~repo] [![jni~lib.rs][c~jni~lib.rs~badge]][c~jni~lib.rs]{{hi:jni}}{{hi:Ffi}}{{hi:Java}}{{hi:jni}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}}
 
 [`jni`][c~jni~docs]↗{{hi:jni}} provides Rust bindings to the `Java` JNI API.
 

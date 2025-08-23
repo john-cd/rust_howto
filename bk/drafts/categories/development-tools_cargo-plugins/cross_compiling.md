@@ -10,7 +10,7 @@
 
 ## Cross-compile Using `zig` as the Linker {#zig}
 
-[![cargo-zigbuild][c~cargo-zigbuild~docs~badge]][c~cargo-zigbuild~docs] [![cargo-zigbuild~crates.io][c~cargo-zigbuild~crates.io~badge]][c~cargo-zigbuild~crates.io] [![cargo-zigbuild~github][c~cargo-zigbuild~github~badge]][c~cargo-zigbuild~github] [![cargo-zigbuild~lib.rs][c~cargo-zigbuild~lib.rs~badge]][c~cargo-zigbuild~lib.rs]{{hi:cargo-zigbuild}}{{hi:Cargo}}{{hi:Zig}}
+[![cargo-zigbuild][c~cargo-zigbuild~docs~badge]][c~cargo-zigbuild~docs] [![cargo-zigbuild~crates.io][c~cargo-zigbuild~crates.io~badge]][c~cargo-zigbuild~crates.io] [![cargo-zigbuild~repo][c~cargo-zigbuild~repo~badge]][c~cargo-zigbuild~repo] [![cargo-zigbuild~lib.rs][c~cargo-zigbuild~lib.rs~badge]][c~cargo-zigbuild~lib.rs]{{hi:cargo-zigbuild}}{{hi:Cargo}}{{hi:Zig}}
 
 Compile [Cargo][p~cargo] project with zig as linker.
 

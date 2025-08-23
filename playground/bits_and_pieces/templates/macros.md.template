@@ -2,7 +2,7 @@
 {% macro badges(crate_name) %}
 [![{{ crate_name }}][c~{{ crate_name | underscore }}~docs~badge]][c~{{ crate_name | underscore }}~docs]
 [![{{ crate_name }}~crates.io][c~{{ crate_name | underscore }}~crates.io~badge]][c~{{ crate_name | underscore }}~crates.io]
-[![{{ crate_name }}~github][c~{{ crate_name | underscore }}~github~badge]][c~{{ crate_name | underscore }}~github]
+[![{{ crate_name }}~repo][c~{{ crate_name | underscore }}~repo~badge]][c~{{ crate_name | underscore }}~repo]
 [![{{ crate_name }}~lib.rs][c~{{ crate_name | underscore }}~lib.rs~badge]][c~{{ crate_name | underscore }}~lib.rs]
 {% endmacro badges %}
 
@@ -11,7 +11,7 @@
 [c~{{ crate_name | underscore }}~docs~badge]: https://img.shields.io/crates/v/{{ crate_name }}?label={{ crate_name }}
 [c~{{ crate_name | underscore }}~crates.io~badge]: https://img.shields.io/badge/crates.io-{{ crate_name | shielded }}-crimson
 [c~{{ crate_name | underscore }}~crates.io]: https://crates.io/crates/{{ crate_name | shielded }}
-[c~{{ crate_name | underscore }}~github~badge]: https://img.shields.io/badge/{{ crate_name | shielded }}-steelblue?logo=github
+[c~{{ crate_name | underscore }}~repo~badge]: https://img.shields.io/badge/{{ crate_name | shielded }}-steelblue?logo=github
 [c~{{ crate_name | underscore }}~lib.rs~badge]: https://img.shields.io/badge/lib.rs-{{ crate_name | shielded }}-yellow
 [c~{{ crate_name | underscore }}~lib.rs]: https://lib.rs/crates/{{ crate_name }}
 [c~{{ crate_name | underscore }}~docs]: https://docs.rs/{{ crate_name | underscore }}

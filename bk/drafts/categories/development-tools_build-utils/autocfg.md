@@ -4,7 +4,7 @@
 
 ## `autocfg` {#autocfg}
 
-[![autocfg][c~autocfg~docs~badge]][c~autocfg~docs] [![autocfg~crates.io][c~autocfg~crates.io~badge]][c~autocfg~crates.io] [![autocfg~github][c~autocfg~github~badge]][c~autocfg~github] [![autocfg~lib.rs][c~autocfg~lib.rs~badge]][c~autocfg~lib.rs]{{hi:autocfg}}{{hi:Autoconf}}{{hi:Build}}{{hi:Rustc}} [![cat~development-tools::build-utils][cat~development-tools::build-utils~badge]][cat~development-tools::build-utils]{{hi:Build Utils}}
+[![autocfg][c~autocfg~docs~badge]][c~autocfg~docs] [![autocfg~crates.io][c~autocfg~crates.io~badge]][c~autocfg~crates.io] [![autocfg~repo][c~autocfg~repo~badge]][c~autocfg~repo] [![autocfg~lib.rs][c~autocfg~lib.rs~badge]][c~autocfg~lib.rs]{{hi:autocfg}}{{hi:Autoconf}}{{hi:Build}}{{hi:Rustc}} [![cat~development-tools::build-utils][cat~development-tools::build-utils~badge]][cat~development-tools::build-utils]{{hi:Build Utils}}
 
 Automatic cfg for Rust compiler features
 

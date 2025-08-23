@@ -6,7 +6,7 @@
 
 [![rhai][c~rhai~docs~badge]][c~rhai~docs]{{hi:rhai}}
 [![rhai~crates.io][c~rhai~crates.io~badge]][c~rhai~crates.io]
-[![rhai~github][c~rhai~github~badge]][c~rhai~github]
+[![rhai~repo][c~rhai~repo~badge]][c~rhai~repo]
 [![rhai~lib.rs][c~rhai~lib.rs~badge]][c~rhai~lib.rs]
 [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}}
 [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}}

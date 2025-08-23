@@ -20,7 +20,7 @@ The [`std::fs::Metadata::modified`][c~std::fs::Metadata::modified~docs]↗{{hi:s
 
 ## Find Loops in a Given Path {#find-loop-in-path}
 
-[![same-file][c~same-file~docs~badge]][c~same-file~docs] [![same-file~crates.io][c~same-file~crates.io~badge]][c~same-file~crates.io] [![same-file~github][c~same-file~github~badge]][c~same-file~github] [![same-file~lib.rs][c~same-file~lib.rs~badge]][c~same-file~lib.rs]{{hi:same-file}}{{hi:Same}}{{hi:Equal}}{{hi:Inode}}{{hi:File}}
+[![same-file][c~same-file~docs~badge]][c~same-file~docs] [![same-file~crates.io][c~same-file~crates.io~badge]][c~same-file~crates.io] [![same-file~repo][c~same-file~repo~badge]][c~same-file~repo] [![same-file~lib.rs][c~same-file~lib.rs~badge]][c~same-file~lib.rs]{{hi:same-file}}{{hi:Same}}{{hi:Equal}}{{hi:Inode}}{{hi:File}}
 
 [`same-file`][c~same-file~docs]↗{{hi:same-file}} is a simple crate for determining whether two file paths point to the same file.
 
@@ -39,7 +39,7 @@ The following would assert that a loop exists:
 
 ## Recursively Find Duplicate File Names {#recursively-find-duplicate-file-names}
 
-[![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~github][c~walkdir~github~badge]][c~walkdir~github] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
+[![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~repo][c~walkdir~repo~badge]][c~walkdir~repo] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
 Find duplicate filenames recursively in the current directory , printing them only once.{{hi:Duplicate filenames}}
 
@@ -51,7 +51,7 @@ FIXME
 
 ## Recursively Find All Files with a Given Predicate {#recursively-find-all-files-with-given-predicate}
 
-[![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~github][c~walkdir~github~badge]][c~walkdir~github] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
+[![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~repo][c~walkdir~repo~badge]][c~walkdir~repo] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
 Find files modified within the last day in the current directory. Using [`walkdir::WalkDir::follow_links`][c~walkdir::WalkDir::follow_links~docs]↗{{hi:walkdir::WalkDir::follow_links}} ensures symbolic links{{hi:Symbolic links}} are followed like they were normal directories and files.
 
@@ -61,7 +61,7 @@ Find files modified within the last day in the current directory. Using [`walkdi
 
 ## Traverse Directories While Skipping Dotfiles {#traverse-directories-while-skipping-dotfiles}
 
-[![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~github][c~walkdir~github~badge]][c~walkdir~github] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
+[![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~repo][c~walkdir~repo~badge]][c~walkdir~repo] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
 FIXME Uses [`walkdir::IntoIter::filter_entry`][c~walkdir::IntoIter::filter_entry~docs]↗{{hi:walkdir::IntoIter::filter_entry}} to descend recursively into entries passing the `is_not_hidden` predicate thus skipping hidden files and directories. [`std::iter::Iterator::filter`][c~std::iter::Iterator::filter~docs]↗{{hi:std::iter::Iterator::filter}} applies to each [`walkdir::IntoIter::filter_entry`][c~walkdir::IntoIter::filter_entry~docs]↗{{hi:walkdir::IntoIter::filter_entry}} even if the parent is a hidden directory.
 
@@ -73,7 +73,7 @@ Root dir `"."` yields through [`walkdir::WalkDir::depth`][c~walkdir::WalkDir::de
 
 ## Walk the Filesystem While Respecting Ignore Files {#walk-the-filesystem-while-respecting-ignore-files}
 
-[![ignore][c~ignore~docs~badge]][c~ignore~docs] [![ignore~crates.io][c~ignore~crates.io~badge]][c~ignore~crates.io] [![ignore~github][c~ignore~github~badge]][c~ignore~github] [![ignore~lib.rs][c~ignore~lib.rs~badge]][c~ignore~lib.rs]{{hi:ignore}}{{hi:File}}{{hi:Gitignore}}{{hi:Glob}}{{hi:ignore}}{{hi:Pattern}}
+[![ignore][c~ignore~docs~badge]][c~ignore~docs] [![ignore~crates.io][c~ignore~crates.io~badge]][c~ignore~crates.io] [![ignore~repo][c~ignore~repo~badge]][c~ignore~repo] [![ignore~lib.rs][c~ignore~lib.rs~badge]][c~ignore~lib.rs]{{hi:ignore}}{{hi:File}}{{hi:Gitignore}}{{hi:Glob}}{{hi:ignore}}{{hi:Pattern}}
 
 [`ignore`][c~ignore~docs]↗{{hi:ignore}} is a library for efficiently matching ignore files such as [`.gitignore`][git-gitignore~website]↗{{hi:.gitignore}} against file paths.
 
@@ -85,7 +85,7 @@ FIXME Recursive [filesystem][p~filesystem] walking that respects ignore files (l
 
 ## Recursively Calculate File Sizes at a Given Depth {#recursively-calculate-file-sizes-at-given-depth}
 
-[![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~github][c~walkdir~github~badge]][c~walkdir~github] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}{{hi:File sizes}}
+[![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~repo][c~walkdir~repo~badge]][c~walkdir~repo] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}{{hi:File sizes}}
 
 The following example calculates the sum of all file sizes to 3 subfolders depth, ignoring files in the root folder.
 
@@ -97,7 +97,7 @@ Recursion depth can be flexibly set by [`walkdir::Walkdir::min_depth`][c~walkdir
 
 ## Find All Files with a Given Extension Recursively {#find-all-png-files-recursively}
 
-[![glob][c~glob~docs~badge]][c~glob~docs] [![glob~crates.io][c~glob~crates.io~badge]][c~glob~crates.io] [![glob~github][c~glob~github~badge]][c~glob~github] [![glob~lib.rs][c~glob~lib.rs~badge]][c~glob~lib.rs]{{hi:glob}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
+[![glob][c~glob~docs~badge]][c~glob~docs] [![glob~crates.io][c~glob~crates.io~badge]][c~glob~crates.io] [![glob~repo][c~glob~repo~badge]][c~glob~repo] [![glob~lib.rs][c~glob~lib.rs~badge]][c~glob~lib.rs]{{hi:glob}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
 FIXME Recursively find all PNG files in the current directory. In this case, the `**` pattern matches the current directory and all subdirectories.
 
@@ -109,7 +109,7 @@ Use the `**` pattern in any path portion. For example, `/media/**/*.png` matches
 
 ## Find All Files with Given Pattern, Ignoring Filename Case {#find-all-files-with-given-pattern-ignoring-filename-case}
 
-[![glob][c~glob~docs~badge]][c~glob~docs] [![glob~crates.io][c~glob~crates.io~badge]][c~glob~crates.io] [![glob~github][c~glob~github~badge]][c~glob~github] [![glob~lib.rs][c~glob~lib.rs~badge]][c~glob~lib.rs]{{hi:glob}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
+[![glob][c~glob~docs~badge]][c~glob~docs] [![glob~crates.io][c~glob~crates.io~badge]][c~glob~crates.io] [![glob~repo][c~glob~repo~badge]][c~glob~repo] [![glob~lib.rs][c~glob~lib.rs~badge]][c~glob~lib.rs]{{hi:glob}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
 Find all image files in the `/media/` directory matching the `img_[0-9][0-9]*.png` pattern.
 
@@ -121,7 +121,7 @@ A custom [`glob::MatchOptions`][c~glob::MatchOptions~docs]↗{{hi:glob::MatchOpt
 
 ## FIXME `globset` {#globset}
 
-[![globset][c~globset~docs~badge]][c~globset~docs] [![globset~crates.io][c~globset~crates.io~badge]][c~globset~crates.io] [![globset~github][c~globset~github~badge]][c~globset~github] [![globset~lib.rs][c~globset~lib.rs~badge]][c~globset~lib.rs]{{hi:globset}}{{hi:Glob}}{{hi:Multiple}}{{hi:Pattern}}{{hi:Regex}}{{hi:Set}}
+[![globset][c~globset~docs~badge]][c~globset~docs] [![globset~crates.io][c~globset~crates.io~badge]][c~globset~crates.io] [![globset~repo][c~globset~repo~badge]][c~globset~repo] [![globset~lib.rs][c~globset~lib.rs~badge]][c~globset~lib.rs]{{hi:globset}}{{hi:Glob}}{{hi:Multiple}}{{hi:Pattern}}{{hi:Regex}}{{hi:Set}}
 
 [`globset`][c~globset~docs]↗{{hi:globset}} allows multiple globs to be evaluated at once. Glob set matching is the process of matching one or more [`glob`][c~glob~docs]↗{{hi:glob}} patterns against a single candidate path simultaneously, and returning all of the globs that matched.
 

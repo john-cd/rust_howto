@@ -28,7 +28,7 @@ Use clone-on-write semantics with `Arc::make_mut` which provides efficient mutat
 
 ## Maintain a Global Mutable State {#global-mutable-state}
 
-[![lazy_static][c~lazy_static~docs~badge]][c~lazy_static~docs] [![lazy_static~crates.io][c~lazy_static~crates.io~badge]][c~lazy_static~crates.io] [![lazy_static~github][c~lazy_static~github~badge]][c~lazy_static~github] [![lazy_static~lib.rs][c~lazy_static~lib.rs~badge]][c~lazy_static~lib.rs]{{hi:lazy_static}}{{hi:Macro}}{{hi:Lazy}}{{hi:Static}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}{{hi:Global mutable state}}
+[![lazy_static][c~lazy_static~docs~badge]][c~lazy_static~docs] [![lazy_static~crates.io][c~lazy_static~crates.io~badge]][c~lazy_static~crates.io] [![lazy_static~repo][c~lazy_static~repo~badge]][c~lazy_static~repo] [![lazy_static~lib.rs][c~lazy_static~lib.rs~badge]][c~lazy_static~lib.rs]{{hi:lazy_static}}{{hi:Macro}}{{hi:Lazy}}{{hi:Static}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}{{hi:Global mutable state}}
 
 Declare global state using [`lazy static`][c~lazy_static~docs]↗{{hi:lazy_static}}{{hi:Lazy static}}. [`lazy static`][c~lazy_static~docs]↗{{hi:lazy_static}} creates a globally available `static ref` which requires a [`std::sync::Mutex`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}} to allow mutation (also see [`std::sync::RwLock`][c~std::sync::RwLock~docs]↗{{hi:std::sync::RwLock}}). The [`std::sync::Mutex`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}} wrap ensures the state cannot be simultaneously accessed by multiple threads, preventing race conditions. A [`std::sync::MutexGuard`][c~std::sync::MutexGuard~docs]↗{{hi:std::sync::MutexGuard}} must be acquired to read or mutate the value stored in a [`std::sync::Mutex`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}}.
 
@@ -54,7 +54,7 @@ Allow access to data from one thread at a time.
 
 ## `parking_lot` {#parking-lot}
 
-[![parking_lot][c~parking_lot~docs~badge]][c~parking_lot~docs] [![parking_lot~crates.io][c~parking_lot~crates.io~badge]][c~parking_lot~crates.io] [![parking_lot~github][c~parking_lot~github~badge]][c~parking_lot~github] [![parking_lot~lib.rs][c~parking_lot~lib.rs~badge]][c~parking_lot~lib.rs]{{hi:parking_lot}}{{hi:Mutex}}{{hi:Thread}}{{hi:Rwlock}}{{hi:Condvar}}{{hi:Once}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}
+[![parking_lot][c~parking_lot~docs~badge]][c~parking_lot~docs] [![parking_lot~crates.io][c~parking_lot~crates.io~badge]][c~parking_lot~crates.io] [![parking_lot~repo][c~parking_lot~repo~badge]][c~parking_lot~repo] [![parking_lot~lib.rs][c~parking_lot~lib.rs~badge]][c~parking_lot~lib.rs]{{hi:parking_lot}}{{hi:Mutex}}{{hi:Thread}}{{hi:Rwlock}}{{hi:Condvar}}{{hi:Once}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}
 
 [`parking_lot`][c~parking_lot~docs]↗{{hi:parking_lot}} is a more compact and efficient implementation of the standard synchronization primitives.
 

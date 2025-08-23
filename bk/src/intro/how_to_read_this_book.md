@@ -83,7 +83,7 @@ For more background on error handling in Rust, read [this page][book~rust~error-
 
 ## Additional Examples
 
-The [`xmpl`][rust-howto~xmpl~github]↗ folder in the book's GitHub repo contains additional examples that can't be embedded into the book, due to their length.
+The [`xmpl`][rust-howto~xmpl~repo]↗ folder in the book's GitHub repo contains additional examples that can't be embedded into the book, due to their length.
 
 ## A Note about Crate Representation
 

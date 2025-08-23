@@ -15,7 +15,7 @@ Several other pure-Rust crates cater to various aspects of computer vision:
 
 ## Related Topics
 
-For image I/O and manipulation, [`image`][c~image~docs]↗{{hi:image}} and [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} are essential. For more specialized tasks, machine learning-focused crates like [`tch`][c~tch~docs]↗{{hi:tch}}, [`tract`][c~tract~docs]↗{{hi:tract}}, or [`candle`][c~candle_core~github]↗{{hi:candle}} are appropriate.
+For image I/O and manipulation, [`image`][c~image~docs]↗{{hi:image}} and [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} are essential. For more specialized tasks, machine learning-focused crates like [`tch`][c~tch~docs]↗{{hi:tch}}, [`tract`][c~tract~docs]↗{{hi:tract}}, or [`candle`][c~candle_core~repo]↗{{hi:candle}} are appropriate.
 
 ## Multimedia
 

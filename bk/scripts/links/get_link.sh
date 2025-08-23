@@ -6,7 +6,7 @@ set -euo pipefail
 root="$(realpath $1)/"
 pattern="$2"
 # Look for [c~...pattern...~docs] or [...pattern...] in the global reference definitions
-# excluding suffixes like ~github, ~badge, etc...
+# excluding suffixes like ~repo, ~badge, etc...
 rg -INi  '\[(c~)?([^]]*'${pattern}'[^~]*)(~docs)?\]:\s?(.*)' \
    -r'[`$2`][$1$2~docs]↗{{hi:$2}}' ${root}src/refs
 #  [![$2][$1$2~docs~badge]][$1$2~docs]  [$1$2~docs]: $4

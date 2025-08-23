@@ -6,7 +6,7 @@
 
 [![opencv][c~opencv~docs~badge]][c~opencv~docs]{{hi:opencv}}
 [![opencv~crates.io][c~opencv~crates.io~badge]][c~opencv~crates.io]
-[![opencv~github][c~opencv~github~badge]][c~opencv~github]
+[![opencv~repo][c~opencv~repo~badge]][c~opencv~repo]
 [![opencv~lib.rs][c~opencv~lib.rs~badge]][c~opencv~lib.rs]
 [![cat~computer-vision][cat~computer-vision~badge]][cat~computer-vision]
 

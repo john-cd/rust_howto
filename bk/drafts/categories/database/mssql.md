@@ -4,7 +4,7 @@
 
 ## `tiberius` {#tiberius}
 
-[![tiberius][c~tiberius~docs~badge]][c~tiberius~docs] [![tiberius~crates.io][c~tiberius~crates.io~badge]][c~tiberius~crates.io] [![tiberius~github][c~tiberius~github~badge]][c~tiberius~github] [![tiberius~lib.rs][c~tiberius~lib.rs~badge]][c~tiberius~lib.rs]{{hi:tiberius}}{{hi:Sql}}{{hi:TDS}}{{hi:MSSQL}}
+[![tiberius][c~tiberius~docs~badge]][c~tiberius~docs] [![tiberius~crates.io][c~tiberius~crates.io~badge]][c~tiberius~crates.io] [![tiberius~repo][c~tiberius~repo~badge]][c~tiberius~repo] [![tiberius~lib.rs][c~tiberius~lib.rs~badge]][c~tiberius~lib.rs]{{hi:tiberius}}{{hi:Sql}}{{hi:TDS}}{{hi:MSSQL}}
 
 [`tiberius`][c~tiberius~docs]↗{{hi:tiberius}} is a TDS (MSSQL) driver. It is a fully asynchronous, pure Rust implementation of the TDS protocol. It is built on top of [`tokio`][c~tokio~docs]↗{{hi:tokio}} and [`futures`][c~futures~docs]↗{{hi:futures}}.
 

@@ -16,7 +16,7 @@ Many other microcontroller families have their own HAL crates.
 
 ## `embedded-hal` {#embedded-hal}
 
-[![embedded-hal][c~embedded-hal~docs~badge]][c~embedded-hal~docs] [![embedded-hal~crates.io][c~embedded-hal~crates.io~badge]][c~embedded-hal~crates.io] [![embedded-hal~github][c~embedded-hal~github~badge]][c~embedded-hal~github] [![embedded-hal~lib.rs][c~embedded-hal~lib.rs~badge]][c~embedded-hal~lib.rs]{{hi:embedded-hal}}{{hi:Hal}}{{hi:Io}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~hardware-support][cat~hardware-support~badge]][cat~hardware-support]{{hi:Hardware support}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![embedded-hal][c~embedded-hal~docs~badge]][c~embedded-hal~docs] [![embedded-hal~crates.io][c~embedded-hal~crates.io~badge]][c~embedded-hal~crates.io] [![embedded-hal~repo][c~embedded-hal~repo~badge]][c~embedded-hal~repo] [![embedded-hal~lib.rs][c~embedded-hal~lib.rs~badge]][c~embedded-hal~lib.rs]{{hi:embedded-hal}}{{hi:Hal}}{{hi:Io}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~hardware-support][cat~hardware-support~badge]][cat~hardware-support]{{hi:Hardware support}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
 [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} is a Hardware Abstraction Layer (HAL) for embedded systems.
 
@@ -24,7 +24,7 @@ Many other microcontroller families have their own HAL crates.
 
 ## `rppal` {#skip}
 
-[![rppal][c~rppal~docs~badge]][c~rppal~docs] [![rppal~crates.io][c~rppal~crates.io~badge]][c~rppal~crates.io] [![rppal~github][c~rppal~github~badge]][c~rppal~github] [![rppal~lib.rs][c~rppal~lib.rs~badge]][c~rppal~lib.rs]{{hi:rppal}}{{hi:Embedded-hal}}{{hi:Embedded-hal-impl}}{{hi:Hal}}{{hi:Pi}}{{hi:Raspberry}} [![cat~hardware-support][cat~hardware-support~badge]][cat~hardware-support]{{hi:Hardware support}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}}
+[![rppal][c~rppal~docs~badge]][c~rppal~docs] [![rppal~crates.io][c~rppal~crates.io~badge]][c~rppal~crates.io] [![rppal~repo][c~rppal~repo~badge]][c~rppal~repo] [![rppal~lib.rs][c~rppal~lib.rs~badge]][c~rppal~lib.rs]{{hi:rppal}}{{hi:Embedded-hal}}{{hi:Embedded-hal-impl}}{{hi:Hal}}{{hi:Pi}}{{hi:Raspberry}} [![cat~hardware-support][cat~hardware-support~badge]][cat~hardware-support]{{hi:Hardware support}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}}
 
 [`rppal`][c~rppal~docs]↗{{hi:rppal}} is an interface for the Raspberry Pi's GPIO, I2C, PWM, SPI and UART peripherals.
 

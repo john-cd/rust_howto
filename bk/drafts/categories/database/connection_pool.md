@@ -4,7 +4,7 @@
 
 ## Create a Connection Pool {#connection-pool}
 
-[![deadpool][c~deadpool~docs~badge]][c~deadpool~docs] [![deadpool~crates.io][c~deadpool~crates.io~badge]][c~deadpool~crates.io] [![deadpool~github][c~deadpool~github~badge]][c~deadpool~github] [![deadpool~lib.rs][c~deadpool~lib.rs~badge]][c~deadpool~lib.rs]{{hi:deadpool}}{{hi:Pool}}{{hi:Async}}{{hi:Database}}
+[![deadpool][c~deadpool~docs~badge]][c~deadpool~docs] [![deadpool~crates.io][c~deadpool~crates.io~badge]][c~deadpool~crates.io] [![deadpool~repo][c~deadpool~repo~badge]][c~deadpool~repo] [![deadpool~lib.rs][c~deadpool~lib.rs~badge]][c~deadpool~lib.rs]{{hi:deadpool}}{{hi:Pool}}{{hi:Async}}{{hi:Database}}
 
 [`deadpool`][c~deadpool~docs]↗{{hi:deadpool}} is a simple async pool for connections and objects of any type.
 

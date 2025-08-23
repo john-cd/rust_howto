@@ -75,7 +75,7 @@ The Rust compiler spends a lot of time in the "link" step. LLD is much faster at
 The default linker does a good job, but there are faster alternatives depending on the operating system you are using:
 
 - [`lld`][lld~website]↗{{hi:lld}} on Windows and Linux, a linker developed by the LLVM{{hi:LLVM}} project;
-- [`zld`][zld~github]↗{{hi:zld}} on MacOS. [![zld~github][zld~github~badge]][zld~github].
+- [`zld`][zld~repo]↗{{hi:zld}} on MacOS. [![zld~repo][zld~repo~badge]][zld~repo].
 
 To speed up the linking phase you have to install the alternative linker on your machine and add this [configuration][p~configuration] file to the project:
 
@@ -110,7 +110,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 
 [![cat~compilers][cat~compilers~badge]][cat~compilers]{{hi:Compilers}}
 
-[`mold`][mold~github]↗{{hi:mold}} is up to 5x faster than [`lld`][lld~website]↗{{hi:lld}}, but with a few caveats like limited platform support and occasional stability issues. To install [`mold`][c~mold~docs]↗{{hi:mold}}, run `sudo apt-get install mold clang` in Ubuntu.
+[`mold`][mold~repo]↗{{hi:mold}} is up to 5x faster than [`lld`][lld~website]↗{{hi:lld}}, but with a few caveats like limited platform support and occasional stability issues. To install [`mold`][c~mold~docs]↗{{hi:mold}}, run `sudo apt-get install mold clang` in Ubuntu.
 
 You will also need to add the following to your [`cargo`][c~cargo~docs]↗{{hi:cargo}} config at `.cargo/config.toml`:
 

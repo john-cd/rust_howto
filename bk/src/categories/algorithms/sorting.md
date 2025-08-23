@@ -34,7 +34,7 @@ Sorts a vector{{hi:Vector}} of `Person` structs with properties `name` and `age`
 
 ## See Also {#see-also}
 
-- [glidesort][c~glidesort~github]↗ is a Rust implementation of Glidesort, a stable adaptive quicksort/mergesort hybrid sorting algorithm.
+- [glidesort][c~glidesort~repo]↗ is a Rust implementation of Glidesort, a stable adaptive quicksort/mergesort hybrid sorting algorithm.
 
 ## Related Topics {#related-topics}
 

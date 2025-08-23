@@ -99,7 +99,7 @@ While primarily for window creation, [`winit`][c~winit~docs]↗{{hi:winit}} is o
 
 ## References
 
-- Turn any webpage into a desktop app with Rust [Pake][pake~github]↗.
+- Turn any webpage into a desktop app with Rust [Pake][pake~repo]↗.
 - [Logan Keenan - Client-Side Server with Rust- A New Approach to UI Development][blog~client-side-server-with-rust]↗.
 
 {{#include refs.incl.md}}

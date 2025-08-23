@@ -8,7 +8,7 @@ A UUID is a unique 128-bit value, stored as 16 octets, and regularly formatted a
 
 [![uuid][c~uuid~docs~badge]][c~uuid~docs]{{hi:uuid}}
 [![uuid~crates.io][c~uuid~crates.io~badge]][c~uuid~crates.io]
-[![uuid~github][c~uuid~github~badge]][c~uuid~github]
+[![uuid~repo][c~uuid~repo~badge]][c~uuid~repo]
 [![uuid~lib.rs][c~uuid~lib.rs~badge]][c~uuid~lib.rs]
 [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}}

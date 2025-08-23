@@ -10,13 +10,13 @@ The following describes tools that make FIXME.
 
 [![cargo-husky][c~cargo-husky~docs~badge]][c~cargo-husky~docs]{{hi:cargo-husky}}
 [![cargo-husky~crates.io][c~cargo-husky~crates.io~badge]][c~cargo-husky~crates.io]
-[![cargo-husky~github][c~cargo-husky~github~badge]][c~cargo-husky~github]
+[![cargo-husky~repo][c~cargo-husky~repo~badge]][c~cargo-husky~repo]
 [![cargo-husky~lib.rs][c~cargo-husky~lib.rs~badge]][c~cargo-husky~lib.rs]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 
 Git hook scripts are useful for automatically identifying simple issues, such as missing semicolons, trailing whitespace, poor [[code_formatting_linting | formatting]] of the code or [configuration][p~configuration] files, when committing in [`git`][git~website]↗{{hi:git}}, prior to submission to code review or start of a CI workflow.
 
-[cargo-husky][c~cargo-husky~github]↗{{hi:cargo-husky}} setup Git hooks automatically for [`cargo`][c~cargo~docs]↗{{hi:cargo}} projects with 🐶.
+[cargo-husky][c~cargo-husky~repo]↗{{hi:cargo-husky}} setup Git hooks automatically for [`cargo`][c~cargo~docs]↗{{hi:cargo}} projects with 🐶.
 
 Add the [`cargo-husky`][c~cargo-husky~docs]↗{{hi:cargo-husky}} crate to the `[dev-dependencies]` section of your project's [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}.
 
@@ -84,8 +84,8 @@ FIXME.
 ## See Also
 
 - [Rust CI Tooling][rust-ci-tooling~website]↗: Clippy, commitlint, pre-commit.
-- [`pre-commit-rust`][pre-commit-rust~github].
-- [A pre-commit hook for `commitlint`][commitlint-pre-commit-hook~github]↗.
+- [`pre-commit-rust`][pre-commit-rust~repo].
+- [A pre-commit hook for `commitlint`][commitlint-pre-commit-hook~repo]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
@@ -94,6 +94,6 @@ FIXME.
 [git_hooks: write](https://github.com/john-cd/rust_howto/issues/602)
 dedupe  with code_formatting_linting.
 
-- [overcommit][overcommit~github]↗: A fully configurable and extendable Git hook manager.
+- [overcommit][overcommit~repo]↗: A fully configurable and extendable Git hook manager.
 
 </div>

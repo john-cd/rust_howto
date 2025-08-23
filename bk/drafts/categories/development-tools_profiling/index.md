@@ -32,7 +32,7 @@ Flame graphs are excellent for visualizing CPU usage and identifying hot spots. 
 
 ## References
 
-- The [Rust Performance Book][book~rust-performance]↗. [![book~rust-performance~github][book~rust-performance~github~badge]][book~rust-performance~github]{{hi:Rust performance}}
+- The [Rust Performance Book][book~rust-performance]↗. [![book~rust-performance~repo][book~rust-performance~repo~badge]][book~rust-performance~repo]{{hi:Rust performance}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

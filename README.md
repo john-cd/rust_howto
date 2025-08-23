@@ -13,24 +13,24 @@ This book is going through _heavy edits_. Pardon the dust.
 
 ## Contributing
 
-Contributions are most welcome! Please review the [contributing][rust-howto~contributing~website]↗ section of the book and peruse the book's [GitHub repo][rust-howto~github]↗.
+Contributions are most welcome! Please review the [contributing][rust-howto~contributing~website]↗ section of the book and peruse the book's [GitHub repo][rust-howto~repo]↗.
 
 ## Companion Tools
 
-The [`mdbook-utils`][c~mdbook-utils~crates.io]↗ utility ([(github)][c~mdbook-utils~github]↗ [(docs.rs)][c~mdbook-utils~docs]↗ [(user guide)][c~mdbook-utils~user-guide]↗) helps manage links and code blocks in [`mdbook`][c~mdbook~docs]↗ source directories. It is the companion tool for this book.
+The [`mdbook-utils`][c~mdbook-utils~crates.io]↗ utility ([(github)][c~mdbook-utils~repo]↗ [(docs.rs)][c~mdbook-utils~docs]↗ [(user guide)][c~mdbook-utils~user-guide]↗) helps manage links and code blocks in [`mdbook`][c~mdbook~docs]↗ source directories. It is the companion tool for this book.
 
-There are also a number of utilities and pre-processors in the [`tools`][rust-howto~tools~github]↗ folder of this repo.
+There are also a number of utilities and pre-processors in the [`tools`][rust-howto~tools~repo]↗ folder of this repo.
 
 ## Legal
 
 Please refer to the LICENSE file.
 
 [c~mdbook~docs]: https://rust-lang.github.io/mdBook
-[c~mdbook-utils~github]: https://github.com/john-cd/mdbook-utils
+[c~mdbook-utils~repo]: https://github.com/john-cd/mdbook-utils
 [c~mdbook-utils~docs]: https://docs.rs/mdbook-utils/latest/mdbook_utils
 [c~mdbook-utils~crates.io]: https://crates.io/crates/mdbook-utils
 [c~mdbook-utils~user-guide]: https://john-cd.github.io/mdbook-utils
 [rust-howto~website]: https://john-cd.com/rust_howto
 [rust-howto~contributing~website]: https://john-cd.com/rust_howto/contributing
-[rust-howto~tools~github]: https://github.com/john-cd/rust_howto/tree/main/tools
-[rust-howto~github]: https://github.com/john-cd/rust_howto
+[rust-howto~tools~repo]: https://github.com/john-cd/rust_howto/tree/main/tools
+[rust-howto~repo]: https://github.com/john-cd/rust_howto

@@ -41,6 +41,6 @@ Code examples are found below:
 [expand](https://github.com/john-cd/rust_howto/issues/370)
 Needs full review.
 
-- [pyxel][pyxel~github]↗: A retro game engine for Python.
+- [pyxel][pyxel~repo]↗: A retro game engine for Python.
 
 </div>

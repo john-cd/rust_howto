@@ -26,9 +26,9 @@ The recipe inserts data into the `author` table using [`postgres::Client::execut
 
 ## Aggregate Data {#aggregate-data-postgres}
 
-[![postgres][c~postgres~docs~badge]][c~postgres~docs]{{hi:postgres}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database}} [![csv-sample~github][csv-sample~github~badge]][csv-sample~github]
+[![postgres][c~postgres~docs~badge]][c~postgres~docs]{{hi:postgres}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database}} [![csv-sample~repo][csv-sample~repo~badge]][csv-sample~repo]
 
-This recipe lists the nationalities of the first 7999 artists in the [database][p~database] of the [`Museum of Modern Art`][csv-sample~github]↗ in descending order.
+This recipe lists the nationalities of the first 7999 artists in the [database][p~database] of the [`Museum of Modern Art`][csv-sample~repo]↗ in descending order.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/examples/postgres/aggregate_data.rs:example}}
@@ -38,7 +38,7 @@ This recipe lists the nationalities of the first 7999 artists in the [database][
 
 [![tokio-postgres][c~tokio-postgres~docs~badge]][c~tokio-postgres~docs]{{hi:tokio-postgres}}
 [![tokio-postgres~crates.io][c~tokio-postgres~crates.io~badge]][c~tokio-postgres~crates.io]
-[![tokio-postgres~github][c~tokio-postgres~github~badge]][c~tokio-postgres~github]
+[![tokio-postgres~repo][c~tokio-postgres~repo~badge]][c~tokio-postgres~repo]
 [![tokio-postgres~lib.rs][c~tokio-postgres~lib.rs~badge]][c~tokio-postgres~lib.rs]
 
 [`tokio-postgres`][c~tokio-postgres~docs]↗{{hi:tokio-postgres}} provides an asynchronous PostgreSQL client. It is built on top of the [`tokio`][c~tokio~docs]↗{{hi:tokio}} runtime and thus supports non-blocking interactions with PostgreSQL databases. This crate offers connection pooling, prepared statements, transactions, and support for various PostgreSQL data types. It performs better than [`SQLx`][c~sqlx~docs]↗{{hi:SQLx}}.
@@ -49,9 +49,9 @@ This recipe lists the nationalities of the first 7999 artists in the [database][
 
 ## `cornucopia` for Postgres {#cornucopia}
 
-[![cornucopia~website][c~cornucopia~website~badge]][c~cornucopia~website] [![cornucopia][c~cornucopia~docs~badge]][c~cornucopia~docs] [![cornucopia~crates.io][c~cornucopia~crates.io~badge]][c~cornucopia~crates.io] [![cornucopia~github][c~cornucopia~github~badge]][c~cornucopia~github] [![cornucopia~lib.rs][c~cornucopia~lib.rs~badge]][c~cornucopia~lib.rs]{{hi:cornucopia}}{{hi:Query}}{{hi:Generator}}{{hi:Tokio-postgres}}{{hi:Postgresql}}{{hi:Sql}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
+[![cornucopia~website][c~cornucopia~website~badge]][c~cornucopia~website] [![cornucopia][c~cornucopia~docs~badge]][c~cornucopia~docs] [![cornucopia~crates.io][c~cornucopia~crates.io~badge]][c~cornucopia~crates.io] [![cornucopia~repo][c~cornucopia~repo~badge]][c~cornucopia~repo] [![cornucopia~lib.rs][c~cornucopia~lib.rs~badge]][c~cornucopia~lib.rs]{{hi:cornucopia}}{{hi:Query}}{{hi:Generator}}{{hi:Tokio-postgres}}{{hi:Postgresql}}{{hi:Sql}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
 
-[`cornucopia`][c~cornucopia~docs]↗{{hi:cornucopia}} generates type-checked Rust from your PostgreSQL: [cornucopia-rs][c~cornucopia~github]↗.
+[`cornucopia`][c~cornucopia~docs]↗{{hi:cornucopia}} generates type-checked Rust from your PostgreSQL: [cornucopia-rs][c~cornucopia~repo]↗.
 
 [`cornucopia`][c~cornucopia~docs]↗{{hi:cornucopia}} is a tool powered by `rust-postgres` designed to generate type-checked Rust interfaces from your PostgreSQL queries. It works by preparing your queries against an actual [database][p~database] and then running an extensive validation suite on them. Once the queries are prepared and validated, Rust code is generated into a module, which can be imported and used in your project.
 
@@ -75,7 +75,7 @@ If you are not familiar with Cornucopia, it is kinda like SQLc for Go - you writ
 
 Fork:
 
-[![clorinde][c~clorinde~docs~badge]][c~clorinde~docs] [![clorinde~crates.io][c~clorinde~crates.io~badge]][c~clorinde~crates.io] [![clorinde~github][c~clorinde~github~badge]][c~clorinde~github] [![clorinde~lib.rs][c~clorinde~lib.rs~badge]][c~clorinde~lib.rs]{{hi:clorinde}}{{hi:Sql}}{{hi:Generator}}{{hi:Postgresql}}{{hi:Query}}{{hi:Tokio-postgres}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
+[![clorinde][c~clorinde~docs~badge]][c~clorinde~docs] [![clorinde~crates.io][c~clorinde~crates.io~badge]][c~clorinde~crates.io] [![clorinde~repo][c~clorinde~repo~badge]][c~clorinde~repo] [![clorinde~lib.rs][c~clorinde~lib.rs~badge]][c~clorinde~lib.rs]{{hi:clorinde}}{{hi:Sql}}{{hi:Generator}}{{hi:Postgresql}}{{hi:Query}}{{hi:Tokio-postgres}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
 
 Generate type-checked Rust from your PostgreSQL queries.
 

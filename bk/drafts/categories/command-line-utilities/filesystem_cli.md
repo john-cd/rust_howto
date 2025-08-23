@@ -4,7 +4,7 @@
 
 ## `lsd` {#lsd}
 
-[`lsd`][c~lsd~github]↗{{hi:lsd}} is a command-line utility written in Rust, a rewrite of the GNU `ls` command. It aims to provide a more visually appealing and informative directory listing with features like colored output, icons for different file types, `git` integration, tree-view, and recursive directory traversal.
+[`lsd`][c~lsd~repo]↗{{hi:lsd}} is a command-line utility written in Rust, a rewrite of the GNU `ls` command. It aims to provide a more visually appealing and informative directory listing with features like colored output, icons for different file types, `git` integration, tree-view, and recursive directory traversal.
 
 ```sh
 apt install lsd
@@ -12,19 +12,19 @@ apt install lsd
 
 ## `exa` {#exa}
 
-[![exa~github][c~exa~github~badge]][c~exa~github]{{hi:exa}}
+[![exa~repo][c~exa~repo~badge]][c~exa~repo]{{hi:exa}}
 
 [`exa`][c~exa~docs]↗{{hi:exa}} is a fast, colorful, and informative replacement for `ls`, offering improved defaults and a user-friendly experience. [`exa`][c~exa~docs]↗{{hi:exa}} offers more extensive customization options compared to lsd. You can configure colors, icons, and output format in more detail with exa. [`lsd`][c~lsd~docs]↗{{hi:lsd}} uses a configuration file to store user preferences, while [`exa`][c~exa~docs]↗{{hi:exa}} primarily relies on command-line flags.
 
 ## `broot` {#broot}
 
-[`broot`][c~broot~website]↗{{hi:broot}} [![broot~github][c~broot~github~badge]][c~broot~github] is a new way to see and navigate directory trees.
+[`broot`][c~broot~website]↗{{hi:broot}} [![broot~repo][c~broot~repo~badge]][c~broot~repo] is a new way to see and navigate directory trees.
 
 [`broot`][c~broot~docs]↗{{hi:broot}} is an interactive directory tree explorer implemented in Rust, designed for efficient filesystem navigation and manipulation. It provides a navigable, hierarchical view of the [filesystem][p~filesystem], enabling rapid traversal via keyboard shortcuts and intuitive navigation. Beyond basic exploration, [`broot`][c~broot~docs]↗{{hi:broot}} integrates file management operations (move, copy, delete, rename) directly within its interface. Its shell integration allows seamless transitions between [`broot`][c~broot~docs]↗{{hi:broot}} and the shell, facilitating efficient workflow integration.
 
 ## `bat` {#bat}
 
-[![bat~github][c~bat~github~badge]][c~bat~github]{{hi:bat}}
+[![bat~repo][c~bat~repo~badge]][c~bat~repo]{{hi:bat}}
 
 [`bat`][c~bat~docs]↗{{hi:bat}}{{hi:bat}} is a fast `cat` clone with syntax highlighting and Git{{hi:Git}} integration. It improves upon the standard `cat` command by providing colored output for various file types, line numbers, and integration with Git to show modifications. This enhances readability and makes it easier to quickly inspect code or configuration files directly in the terminal.
 
@@ -42,7 +42,7 @@ bat -A /etc/hosts
 
 [![open][c~open~docs~badge]][c~open~docs]{{hi:open}}
 [![open~crates.io][c~open~crates.io~badge]][c~open~crates.io]
-[![open~github][c~open~github~badge]][c~open~github]
+[![open~repo][c~open~repo~badge]][c~open~repo]
 [![open~lib.rs][c~open~lib.rs~badge]][c~open~lib.rs]
 
 [`open`][c~open~docs]↗{{hi:open}} opens a path or [URL][p~url] using the program configured on the system. [`open`][c~open~docs]↗{{hi:open}} is a cross-platform command-line utility for opening files and URLs in their default associated applications. It abstracts away the platform-specific commands for opening files (like xdg-open on Linux, open on macOS, and start on Windows), providing a consistent and convenient way to launch files, websites, or directories from the terminal regardless of the operating system.

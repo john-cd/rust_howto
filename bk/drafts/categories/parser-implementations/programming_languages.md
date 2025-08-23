@@ -6,7 +6,7 @@
 
 [![swc_ecma_parser][c~swc_ecma_parser~docs~badge]][c~swc_ecma_parser~docs]{{hi:swc_ecma_parser}}
 [![swc_ecma_parser~crates.io][c~swc_ecma_parser~crates.io~badge]][c~swc_ecma_parser~crates.io]
-[![swc_ecma_parser~github][c~swc_ecma_parser~github~badge]][c~swc_ecma_parser~github]
+[![swc_ecma_parser~repo][c~swc_ecma_parser~repo~badge]][c~swc_ecma_parser~repo]
 [![swc_ecma_parser~lib.rs][c~swc_ecma_parser~lib.rs~badge]][c~swc_ecma_parser~lib.rs]
 
 [swc_ecma_parser][c~swc_ecma_parser~crates.io]↗{{hi:swc_ecma_parser}} is a feature-complete ECMAScript / TypeScript parser written in Rust.
@@ -17,7 +17,7 @@
 
 ## Parse SQL {#sql_parsing}
 
-[![sqlparser][c~sqlparser~docs~badge]][c~sqlparser~docs] [![sqlparser~crates.io][c~sqlparser~crates.io~badge]][c~sqlparser~crates.io] [![sqlparser~github][c~sqlparser~github~badge]][c~sqlparser~github] [![sqlparser~lib.rs][c~sqlparser~lib.rs~badge]][c~sqlparser~lib.rs]{{hi:sqlparser}}{{hi:Parser}}{{hi:Sql}}{{hi:Ansi}}{{hi:Lexer}}
+[![sqlparser][c~sqlparser~docs~badge]][c~sqlparser~docs] [![sqlparser~crates.io][c~sqlparser~crates.io~badge]][c~sqlparser~crates.io] [![sqlparser~repo][c~sqlparser~repo~badge]][c~sqlparser~repo] [![sqlparser~lib.rs][c~sqlparser~lib.rs~badge]][c~sqlparser~lib.rs]{{hi:sqlparser}}{{hi:Parser}}{{hi:Sql}}{{hi:Ansi}}{{hi:Lexer}}
 
 [`sqlparser`][c~sqlparser~docs]↗{{hi:sqlparser}} is a general SQL lexer and parser with support for ANSI SQL:2011.
 

@@ -38,7 +38,7 @@ Notes:
 
 [![wasmer][c~wasmer~docs~badge]][c~wasmer~docs]{{hi:wasmer}}
 [![wasmer~crates.io][c~wasmer~crates.io~badge]][c~wasmer~crates.io]
-[![wasmer~github][c~wasmer~github~badge]][c~wasmer~github]
+[![wasmer~repo][c~wasmer~repo~badge]][c~wasmer~repo]
 [![wasmer~lib.rs][c~wasmer~lib.rs~badge]][c~wasmer~lib.rs]
 [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
 
@@ -64,7 +64,7 @@ You can embed the Wasmer runtime in your code with the Wasmer SDK:
 
 [![wasmtime][c~wasmtime~docs~badge]][c~wasmtime~docs]{{hi:wasmtime}}
 [![wasmtime~crates.io][c~wasmtime~crates.io~badge]][c~wasmtime~crates.io]
-[![wasmtime~github][c~wasmtime~github~badge]][c~wasmtime~github]
+[![wasmtime~repo][c~wasmtime~repo~badge]][c~wasmtime~repo]
 [![wasmtime~lib.rs][c~wasmtime~lib.rs~badge]][c~wasmtime~lib.rs]
 [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
 
@@ -86,7 +86,7 @@ wasmtime hello.wasm
 
 [docs.wasmtime.dev][c~wasmtime~docs]↗.
 
-The [`wasmtime`][c~wasmtime~github]↗ crate is a high-level API to expose the Wasmtime runtime. It is useful for embedding WebAssembly into your code and interacting with WebAssembly modules or WebAssembly components. For example, you can compile WebAssembly, create instances, and call functions.
+The [`wasmtime`][c~wasmtime~repo]↗ crate is a high-level API to expose the Wasmtime runtime. It is useful for embedding WebAssembly into your code and interacting with WebAssembly modules or WebAssembly components. For example, you can compile WebAssembly, create instances, and call functions.
 
 ```rust,editable
 {{#include ../../../crates/cats/wasm/examples/wasm_standalone_runtimes/wasmtime.rs:example}}

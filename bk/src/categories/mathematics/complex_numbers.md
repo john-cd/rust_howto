@@ -6,7 +6,7 @@
 
 [![num][c~num~docs~badge]][c~num~docs]{{hi:num}}
 [![num~crates.io][c~num~crates.io~badge]][c~num~crates.io]
-[![num~github][c~num~github~badge]][c~num~github]
+[![num~repo][c~num~repo~badge]][c~num~repo]
 [![num~lib.rs][c~num~lib.rs~badge]][c~num~lib.rs]
 [![cat~science][cat~science~badge]][cat~science]
 [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
@@ -23,7 +23,7 @@ Creates complex numbers of type [`num::complex::Complex`][c~num::complex::Comple
 
 [![num][c~num~docs~badge]][c~num~docs]{{hi:num}}
 [![num~crates.io][c~num~crates.io~badge]][c~num~crates.io]
-[![num~github][c~num~github~badge]][c~num~github]
+[![num~repo][c~num~repo~badge]][c~num~repo]
 [![num~lib.rs][c~num~lib.rs~badge]][c~num~lib.rs]
 [![cat~science][cat~science~badge]][cat~science]
 [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
@@ -40,7 +40,7 @@ Performing mathematical operations on complex numbers is the same as on built-in
 
 [![num][c~num~docs~badge]][c~num~docs]{{hi:num}}
 [![num~crates.io][c~num~crates.io~badge]][c~num~crates.io]
-[![num~github][c~num~github~badge]][c~num~github]
+[![num~repo][c~num~repo~badge]][c~num~repo]
 [![num~lib.rs][c~num~lib.rs~badge]][c~num~lib.rs]
 [![cat~science][cat~science~badge]][cat~science]
 [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}

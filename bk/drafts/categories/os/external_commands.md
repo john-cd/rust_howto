@@ -4,7 +4,7 @@
 
 ## Locate Installed Executables with `which` {#which}
 
-[![which][c~which~docs~badge]][c~which~docs] [![which~crates.io][c~which~crates.io~badge]][c~which~crates.io] [![which~github][c~which~github~badge]][c~which~github] [![which~lib.rs][c~which~lib.rs~badge]][c~which~lib.rs]{{hi:which}}{{hi:Command}}{{hi:Unix}}{{hi:which}}{{hi:Which-rs}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}} [![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}}
+[![which][c~which~docs~badge]][c~which~docs] [![which~crates.io][c~which~crates.io~badge]][c~which~crates.io] [![which~repo][c~which~repo~badge]][c~which~repo] [![which~lib.rs][c~which~lib.rs~badge]][c~which~lib.rs]{{hi:which}}{{hi:Command}}{{hi:Unix}}{{hi:which}}{{hi:Which-rs}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}} [![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}}
 
 [`which`][c~which~docs]↗{{hi:which}} is a Rust equivalent of Unix command "which". It locates installed executables in a cross-platform way.
 
@@ -83,10 +83,10 @@ Reads an environment variable{{hi:Environment variables}} via [`std::env::var`][
 
 [![duct][c~duct~docs~badge]][c~duct~docs]{{hi:duct}}
 [![duct~crates.io][c~duct~crates.io~badge]][c~duct~crates.io]
-[![duct~github][c~duct~github~badge]][c~duct~github]
+[![duct~repo][c~duct~repo~badge]][c~duct~repo]
 [![duct~lib.rs][c~duct~lib.rs~badge]][c~duct~lib.rs]
 
-[`duct`][c~duct~github]↗{{hi:duct}} is a library for running child processes. [`duct`][c~duct~docs]↗{{hi:duct}} makes it easy to build pipelines and redirect I/O like a shell. At the same time, [`duct`][c~duct~docs]↗{{hi:duct}} helps you write correct, portable code: whitespace is never significant, errors from child processes get reported by default, and a variety of [gotchas, bugs, and platform inconsistencies][c~duct~gotchas~github]↗ are handled for you.
+[`duct`][c~duct~repo]↗{{hi:duct}} is a library for running child processes. [`duct`][c~duct~docs]↗{{hi:duct}} makes it easy to build pipelines and redirect I/O like a shell. At the same time, [`duct`][c~duct~docs]↗{{hi:duct}} helps you write correct, portable code: whitespace is never significant, errors from child processes get reported by default, and a variety of [gotchas, bugs, and platform inconsistencies][c~duct~gotchas~repo]↗ are handled for you.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

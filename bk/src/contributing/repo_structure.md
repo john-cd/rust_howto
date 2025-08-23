@@ -4,39 +4,39 @@
 
 ## Folders and Key Files {#folders}
 
-This book's [GitHub repository][rust-howto~github]↗ is structured as follows:
+This book's [GitHub repository][rust-howto~repo]↗ is structured as follows:
 
 - The Dev Container and Docker (Compose) configuration files are found in [`.devcontainer`][dev-containers-devcontainer.json]↗{{hi:.devcontainer}}. Review the [[dev_container_docker | Dev Container and Docker]] page for usage.
-- The [`.github`][rust-howto~.github~github]↗ folder contains the GitHub configuration, including the CD/CI workflows that build the code & book and deploy the book to Github Pages.
-- The [`.vscode`][rust-howto~.vscode~github]↗ folder contains the VS Code configuration (other editors can be used).
-- The [`bin`][rust-howto~bin~github]↗ folder stores executables used to generate parts of the book or used by the book building process. Generate these tools using `just tools release` or `just scrub release`. These commands build the code and copy the compiled executables into `bin`.
-- The [`bk`][rust-howto~bk~github]↗ folder contains the book itself:
+- The [`.github`][rust-howto~.github~repo]↗ folder contains the GitHub configuration, including the CD/CI workflows that build the code & book and deploy the book to Github Pages.
+- The [`.vscode`][rust-howto~.vscode~repo]↗ folder contains the VS Code configuration (other editors can be used).
+- The [`bin`][rust-howto~bin~repo]↗ folder stores executables used to generate parts of the book or used by the book building process. Generate these tools using `just tools release` or `just scrub release`. These commands build the code and copy the compiled executables into `bin`.
+- The [`bk`][rust-howto~bk~repo]↗ folder contains the book itself:
   - The [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} configuration is in [`bk/book.toml`][c~mdbook~book.toml]↗{{hi:book.toml}}.
   - The [markdown][p~markdown] sources of the book are in the `bk/src` folder (work-in-progress chapters are in `bk/drafts`; stub chapters are in `bk/later`), the structure of which is described below.
   - After the book is built using [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}}, the resulting HTML and Javascript are found in `bk/book/html`.
-  - The templates and assets are in [`bk/theme`][rust-howto~bk-theme~github]↗ and [`bk/static`][rust-howto~bk-static~github]↗ respectively.
+  - The templates and assets are in [`bk/theme`][rust-howto~bk-theme~repo]↗ and [`bk/static`][rust-howto~bk-static~repo]↗ respectively.
   - The Rust examples embedded in the book are found below `bk/crates` (see below for details).
-  - The [`bk/master`][rust-howto~bk-master~github]↗ folder contains the master list of crates used in the book (which is used by a few scripts to generate tables).
-  - [`bk/scripts`][rust-howto~bk-scripts~github]↗ contains [just][c~just~website]↗ modules (`mod.just` files) and shell scripts (`*.sh` files) for building the code & book and managing references, links, recipe tables, examples, etc.
+  - The [`bk/master`][rust-howto~bk-master~repo]↗ folder contains the master list of crates used in the book (which is used by a few scripts to generate tables).
+  - [`bk/scripts`][rust-howto~bk-scripts~repo]↗ contains [just][c~just~website]↗ modules (`mod.just` files) and shell scripts (`*.sh` files) for building the code & book and managing references, links, recipe tables, examples, etc.
 - Additional code and tools is found in the `playground`, `publish`, `tools` and `xmpl` folders.
-  - The [`playground`][rust-howto~playground~github]↗ folder contains bits and pieces of code for testing and exploration. Use it to develop new code examples.
-  - The [`publish`][rust-howto~publish~github]↗ folder contains a placeholder crate that is published to `crates.io`, so that the links to the book could be found there.
-  - [`tools`][rust-howto~tools~github]↗ contains several command-line utilities to build specific sections of the book, for example book indices.
+  - The [`playground`][rust-howto~playground~repo]↗ folder contains bits and pieces of code for testing and exploration. Use it to develop new code examples.
+  - The [`publish`][rust-howto~publish~repo]↗ folder contains a placeholder crate that is published to `crates.io`, so that the links to the book could be found there.
+  - [`tools`][rust-howto~tools~repo]↗ contains several command-line utilities to build specific sections of the book, for example book indices.
     - `mdbook-scrub` is a custom `mdbook` preprocessor used by the book.
-  - Additional examples that are too long or complex to be inserted in the book itself are in folders under [`xmpl`][rust-howto~xmpl~github]↗.
+  - Additional examples that are too long or complex to be inserted in the book itself are in folders under [`xmpl`][rust-howto~xmpl~repo]↗.
 
 ## Book Organization {#book-organization}
 
-Within the [`bk/src`][rust-howto~src~github]↗ folder,
+Within the [`bk/src`][rust-howto~src~repo]↗ folder,
 
 - The main table of contents (`SUMMARY.md`) points to the book chapters, which are grouped by section (`language`, `links`...) and, below the `categories` directory, by `crates.io` [categories][crates.io~category_slugs]↗.
   - The `code_organization` section describes how to structure your Rust code using modules, crates, packages and workspaces.
   - The `contributing` section contains information on how to contribute to the book or its examples (including this file).
   - The `crate_selection` section lists the crates used in this book and provide recommendations on how to select external Rust crates for your project.
   - The `indices` folder stores the index of examples and the crate indexes.
-  - The [`language`][rust-howto~bk-src-language~github]↗ section describes Rust language features: types, functions, control flow, etc.
-  - The [`links`][rust-howto~bk-src-links~github]↗ section contains links to Rust documentation, books, videos, cheatsheets, etc.
-  - [`standard_library`][rust-howto~bk-src-standard_library~github]↗ describes core Standard Library types, such as [`Option`][c~std::option::Option~docs]↗ and [`Result`][c~std::result::Result~docs]↗.
+  - The [`language`][rust-howto~bk-src-language~repo]↗ section describes Rust language features: types, functions, control flow, etc.
+  - The [`links`][rust-howto~bk-src-links~repo]↗ section contains links to Rust documentation, books, videos, cheatsheets, etc.
+  - [`standard_library`][rust-howto~bk-src-standard_library~repo]↗ describes core Standard Library types, such as [`Option`][c~std::option::Option~docs]↗ and [`Result`][c~std::result::Result~docs]↗.
 
 Each section or category has one or more chapters. Each chapter consists of a main Markdown file (e.g., `chapter_name.md`) and an associated include file (e.g., `chapter_name.incl.md`) for the 'recipe table', a table of contents with links to all recipes (chapter sections) and associated crates and categories. The main file [includes][blog~mdbook~including-files]↗ the recipe table file, as well as local `refs.incl.md` and global `refs/link-refs.md` files, which contain [link reference definitions][commonmark~link-reference-definitions~website]↗ (the URLs for links).
 
@@ -46,19 +46,19 @@ Each book section or category has an introductory `index.md` file that lists its
 
 In the `bk/src/refs` folder, you will find `category-refs.md` for link references to the `crates.io` [category pages][crates.io-categories~website]↗; `crate-refs.md` for links to [`crates.io`][crates.io~website]↗, [`lib.rs`][lib.rs~website]↗ and GitHub for each crate used in the book; and `other-refs.md` for links to blogs, books, company websites related to Rust.
 
-The [`bk/drafts`][rust-howto~drafts~github]↗ and [`bk/later`][rust-howto~bk-later~github]↗ folders follow the same basic organization.
+The [`bk/drafts`][rust-howto~drafts~repo]↗ and [`bk/later`][rust-howto~bk-later~repo]↗ folders follow the same basic organization.
 
 ## Code Organization {#code-organization}
 
-The book's [GitHub repository][rust-howto~github]↗ is a "monorepo" with multiple independent projects:
+The book's [GitHub repository][rust-howto~repo]↗ is a "monorepo" with multiple independent projects:
 
-- The Rust examples embedded in the book use a very large number of dependencies, therefore their compile time is quite long. For that reason, they are in an isolated [`cargo`][c~cargo~docs]↗{{hi:cargo}} workspace, which manifest is in `bk/crates/Cargo.toml`. The workspace consists of multiple crates below [`bk/crates`][rust-howto~code-examples~github]↗, each named after sections of the book (e.g., `bk/crates/language`) or, within the `bk/crates/cats` folder, after `crates.io` categories (e.g., `bk/crates/cats/algorithms`).
+- The Rust examples embedded in the book use a very large number of dependencies, therefore their compile time is quite long. For that reason, they are in an isolated [`cargo`][c~cargo~docs]↗{{hi:cargo}} workspace, which manifest is in `bk/crates/Cargo.toml`. The workspace consists of multiple crates below [`bk/crates`][rust-howto~code-examples~repo]↗, each named after sections of the book (e.g., `bk/crates/language`) or, within the `bk/crates/cats` folder, after `crates.io` categories (e.g., `bk/crates/cats/algorithms`).
   - Each crate in the workspace contains a [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} file, which list the dependencies used by its code examples. Use `cargo add <crate>` or `cargo add <crate> -F <feature>` while in the appropriate crate folder, in order to add more as required.
   - The examples themselves are stored within the crate's `tests` folder in a subfolder named after their chapter, e.g., `bk/crates/<section or cats/some_category>/examples/<chapter_name>/<example_name>.rs`. In a few cases, you may also find examples in the crate's `tests` or `src` folders or within its `build.rs` file.
   - Each example are in a separate `.rs` Rust file that is a module in a `main.rs` file. All examples of a given chapter are therefore compiled together.
   - The book's code examples, being in a [`cargo`][c~cargo~docs]↗{{hi:cargo}} [workspace][book~rust~ch14-03-cargo-workspaces]↗, share the same dependency versions (a single `Cargo.lock` file) and one shared `target` directory, avoid unnecessary dependency rebuilding.
 - The rest of the code is either in standalone crates (`publish`) or independent workspaces (`playground`,`tools` and `xmpl`).
-  - The [`tools`][rust-howto~tools~github]↗ workspace builds a few CLI binaries that share a common `tool_lib` library.
+  - The [`tools`][rust-howto~tools~repo]↗ workspace builds a few CLI binaries that share a common `tool_lib` library.
   - In the base folder of each project, type [`just`][c~just~docs]↗{{hi:just}} at the shell prompt for a list of commands you can use to format, check, build, lint and test the code. `just release` builds tools in release mode and copies the binaries into the `bin` folder (in the repo root).
 
 Note that, instead of storing the [`cargo`][c~cargo~docs]↗{{hi:cargo}} cache and compiler outputs in a separate `target` folder for each workspace or standalone crate, there is a common `target` folder in the repository root. For example, the compiled examples for the book are in `target/bk`. This is configured in `.cargo/config.toml` files.

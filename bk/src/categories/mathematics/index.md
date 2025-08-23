@@ -110,11 +110,11 @@ Combinatorics, set theory, and logic.
 <div class="hidden">
 [in depth review; decide what to cover in examples](https://github.com/john-cd/rust_howto/issues/936)
 
-- [micromath][c~micromath~github]↗:  Embedded Rust arithmetic, 2D/3D vector, and statistics library.
+- [micromath][c~micromath~repo]↗:  Embedded Rust arithmetic, 2D/3D vector, and statistics library.
 
 ---
 
-[![fraction][c~fraction~docs~badge]][c~fraction~docs] [![fraction~crates.io][c~fraction~crates.io~badge]][c~fraction~crates.io] [![fraction~github][c~fraction~github~badge]][c~fraction~github] [![fraction~lib.rs][c~fraction~lib.rs~badge]][c~fraction~lib.rs]{{hi:fraction}}{{hi:Float}}{{hi:Numeric}}{{hi:Decimal}}{{hi:fraction}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+[![fraction][c~fraction~docs~badge]][c~fraction~docs] [![fraction~crates.io][c~fraction~crates.io~badge]][c~fraction~crates.io] [![fraction~repo][c~fraction~repo~badge]][c~fraction~repo] [![fraction~lib.rs][c~fraction~lib.rs~badge]][c~fraction~lib.rs]{{hi:fraction}}{{hi:Float}}{{hi:Numeric}}{{hi:Decimal}}{{hi:fraction}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
 Lossless fractions and decimals; drop-in float replacement
 

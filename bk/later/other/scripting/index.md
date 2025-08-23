@@ -56,7 +56,7 @@ See [[python | Python]].
 
 Alternatively, you may embed a WebAssembly runtime like [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}, or a WebAssembly interpreter (e.g. [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}}), into your Rust application.
 
-WASM offers portable bytecode and sandboxed execution. Many languages (C, C++, Rust, Go, C#...) compile to or have their VMs in WASM. A list is found in [Awesome WebAssembly Languages][awesome-wasm-langs-typescript~github]↗.
+WASM offers portable bytecode and sandboxed execution. Many languages (C, C++, Rust, Go, C#...) compile to or have their VMs in WASM. A list is found in [Awesome WebAssembly Languages][awesome-wasm-langs-typescript~repo]↗.
 
 See [[wasm | WASM]] and [[wasm_standalone_runtimes | WASM Standalone Runtimes]].
 
@@ -86,15 +86,15 @@ If your scripting language compiles to an executable, use the [`object`][c~objec
 [review](https://github.com/john-cd/rust_howto/issues/991)
 
 - [`rust-script`][rust-script~website]↗: Run Rust files and expressions as scripts without any setup or compilation step.
-- [`rust-script`][c~rust-script~github]↗: Run Rust files and expressions as scripts without any setup or compilation step.
-- [`shell2batch`][c~shell2batch~github]↗: Coverts simple basic shell scripts to windows batch scripts.
+- [`rust-script`][c~rust-script~repo]↗: Run Rust files and expressions as scripts without any setup or compilation step.
+- [`shell2batch`][c~shell2batch~repo]↗: Coverts simple basic shell scripts to windows batch scripts.
 - [`cargo-scripter`][c~cargo-scripter~lib.rs]↗.
 
 [Pre-RFC: `cargo-script` for everyone][forum~pre-rfc-cargo-script-for-everyone]↗.
 
 ---
 
-[![roto~website][c~roto~website~badge]][c~roto~website] [![roto][c~roto~docs~badge]][c~roto~docs] [![roto~crates.io][c~roto~crates.io~badge]][c~roto~crates.io] [![roto~github][c~roto~github~badge]][c~roto~github] [![roto~lib.rs][c~roto~lib.rs~badge]][c~roto~lib.rs]{{hi:roto}}{{hi:Routing}}{{hi:Bgp}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
+[![roto~website][c~roto~website~badge]][c~roto~website] [![roto][c~roto~docs~badge]][c~roto~docs] [![roto~crates.io][c~roto~crates.io~badge]][c~roto~crates.io] [![roto~repo][c~roto~repo~badge]][c~roto~repo] [![roto~lib.rs][c~roto~lib.rs~badge]][c~roto~lib.rs]{{hi:roto}}{{hi:Routing}}{{hi:Bgp}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
 strongly-typed, compiled language for Rotonda
 

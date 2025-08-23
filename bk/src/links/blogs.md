@@ -27,7 +27,7 @@ Lists of popular Rust blogs can be found in:
 
 - [Today's 10 Best Rust Blogs][blog~bloggingfordevs-rust-blogs]↗.
 - [Rust Blogs (rustmeup.com)][rustmeup-resources-rust-blogs~website]↗.
-- [Rust Anthology Master List][rust-anthology~github]↗.
+- [Rust Anthology Master List][rust-anthology~repo]↗.
 
 You may also consult the lists of [Medium Blogs Tagged with 'Rust'][blog~medium~rust]↗, ['Rust Programming Language'][blog~medium~rust-programming-language]↗ and ['Rustlang'][blog~medium~rustlang]↗.
 
@@ -36,7 +36,7 @@ You may also consult the lists of [Medium Blogs Tagged with 'Rust'][blog~medium~
 | Title (URL) | Description |
 |---|---|
 | A learning journal: [`lpalmieri.com`][lpalmieri~website]↗ | Luca Palmieri's blog. |
-| [Andrew Gallant][burntsushi.net~website]↗ | Blogs covering [`regex`][c~regex~docs]↗{{hi:regex}}, [`ripgrep`][c~ripgrep~github]↗{{hi:ripgrep}}, etc. |
+| [Andrew Gallant][burntsushi.net~website]↗ | Blogs covering [`regex`][c~regex~docs]↗{{hi:regex}}, [`ripgrep`][c~ripgrep~repo]↗{{hi:ripgrep}}, etc. |
 | [Billy DM][blog~billydm]↗ | Posts on programming, including Rust. |
 | [Brian Anderson][blog~brson]↗ | LLVM, blockchain, Rust. |
 | [`codevoweb.com`][codevoweb~website]↗ | Demonstrates how to build common applications using multiple languages, including Rust. |

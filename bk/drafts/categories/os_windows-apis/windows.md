@@ -6,7 +6,7 @@
 
 [![windows][c~windows~docs~badge]][c~windows~docs]{{hi:Windows}}
 [![windows~crates.io][c~windows~crates.io~badge]][c~windows~crates.io]
-[![windows~github][c~windows~github~badge]][c~windows~github]
+[![windows~repo][c~windows~repo~badge]][c~windows~repo]
 [![windows~lib.rs][c~windows~lib.rs~badge]][c~windows~lib.rs]
 [![cat~os::windows-apis][cat~os::windows-apis~badge]][cat~os::windows-apis]{{hi:Windows APIs}}
 
@@ -20,7 +20,7 @@
 
 [![winapi][c~winapi~docs~badge]][c~winapi~docs]{{hi:winapi}}
 [![winapi~crates.io][c~winapi~crates.io~badge]][c~winapi~crates.io]
-[![winapi~github][c~winapi~github~badge]][c~winapi~github]
+[![winapi~repo][c~winapi~repo~badge]][c~winapi~repo]
 [![winapi~lib.rs][c~winapi~lib.rs~badge]][c~winapi~lib.rs]
 [![cat~external-ffi-bindings][cat~external-ffi-bindings~badge]][cat~external-ffi-bindings]{{hi:External FFI bindings}}
 [![cat~os::windows-apis][cat~os::windows-apis~badge]][cat~os::windows-apis]{{hi:Windows APIs}}
@@ -34,7 +34,7 @@
 
 ## See Also
 
-Native Windows [GUI][p~gui]: [![native-windows-gui~github][c~native-windows-gui~github~badge]][c~native-windows-gui~github]{{hi:native-windows-gui}}
+Native Windows [GUI][p~gui]: [![native-windows-gui~repo][c~native-windows-gui~repo~badge]][c~native-windows-gui~repo]{{hi:native-windows-gui}}
 
 [`native-windows-gui`][c~native-windows-gui~docs]↗{{hi:native-windows-gui}}
 

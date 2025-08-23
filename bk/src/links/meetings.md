@@ -42,7 +42,7 @@ The following are some of the largest and most active local user groups. They ho
 | [Seattle Rust User Group][meetup~seattle-rust-user-group]↗ | Seattle, WA. |
 | [Vancouver Rust][meetup~vancouver-rust]↗ | Vancouver, BC, Canada. |
 
-See also [Rust Community Talks][talks~github]↗.
+See also [Rust Community Talks][talks~repo]↗.
 
 ## Related Topics {#related-topics}
 

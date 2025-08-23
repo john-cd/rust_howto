@@ -49,17 +49,17 @@ Node.js with WASM.
 Cover [`wat`][c~wat~docs]↗{{hi:wat}}, [`parity-wasm`][c~parity-wasm~docs]↗{{hi:parity-wasm}}
 
 - [WASIX][wasix~website]↗ - The Superset of WASI.
-- [wasmtime][c~wasmtime~github]↗: A fast and secure runtime for WebAssembly.
+- [wasmtime][c~wasmtime~repo]↗: A fast and secure runtime for WebAssembly.
 - [WASI.dev][wasi~website]↗.
 
 - [Sycamore][sycamore~website]↗.
-- [`sycamore`][c~sycamore~github]↗: A library for creating reactive web apps in Rust and WebAssembly.
+- [`sycamore`][c~sycamore~repo]↗: A library for creating reactive web apps in Rust and WebAssembly.
 
 - [Rust and WebAssembly][book~rustwasm]↗.
 
 - [wasmtime][c~wasmtime~website]↗.
 
-- [rust-yew-realworld-example-app~github][rust-yew-realworld-example-app~github]↗.
-- [rust-web-framework-comparison][rust-web-framework-comparison~frontend-frameworks-wasm~github]↗.
+- [rust-yew-realworld-example-app~repo][rust-yew-realworld-example-app~repo]↗.
+- [rust-web-framework-comparison][rust-web-framework-comparison~frontend-frameworks-wasm~repo]↗.
 
 </div>

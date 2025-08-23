@@ -38,7 +38,7 @@ For lazy initialization scenarios where you want to defer the creation of a valu
 
 [![once_cell][c~once_cell~docs~badge]][c~once_cell~docs]{{hi:once_cell}}
 [![once_cell~crates.io][c~once_cell~crates.io~badge]][c~once_cell~crates.io]
-[![once_cell~github][c~once_cell~github~badge]][c~once_cell~github]
+[![once_cell~repo][c~once_cell~repo~badge]][c~once_cell~repo]
 [![once_cell~lib.rs][c~once_cell~lib.rs~badge]][c~once_cell~lib.rs]
 [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
 [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
@@ -55,7 +55,7 @@ FIXME cover once_cell in std
 
 [![lazy_static][c~lazy_static~docs~badge]][c~lazy_static~docs]{{hi:lazy_static}}
 [![lazy_static~crates.io][c~lazy_static~crates.io~badge]][c~lazy_static~crates.io]
-[![lazy_static~github][c~lazy_static~github~badge]][c~lazy_static~github]
+[![lazy_static~repo][c~lazy_static~repo~badge]][c~lazy_static~repo]
 [![lazy_static~lib.rs][c~lazy_static~lib.rs~badge]][c~lazy_static~lib.rs]
 [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
@@ -71,7 +71,7 @@ FIXME cover once_cell in std
 
 [![lazy_static][c~lazy_static~docs~badge]][c~lazy_static~docs]{{hi:lazy_static}}
 [![lazy_static~crates.io][c~lazy_static~crates.io~badge]][c~lazy_static~crates.io]
-[![lazy_static~github][c~lazy_static~github~badge]][c~lazy_static~github]
+[![lazy_static~repo][c~lazy_static~repo~badge]][c~lazy_static~repo]
 [![lazy_static~lib.rs][c~lazy_static~lib.rs~badge]][c~lazy_static~lib.rs]
 [![cat~caching][cat~caching~badge]][cat~caching]{{hi:Caching}}
 [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}

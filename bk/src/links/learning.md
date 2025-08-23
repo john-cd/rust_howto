@@ -4,9 +4,9 @@
 
 ## Lists of Rust Links and Resources {#lists-of-rust-links-and-resources}
 
-- [Rust Learning][rust-learning~github]↗: A bunch of links to blog posts, articles, videos, etc. for learning Rust.
-- [Idiomatic Rust][idiomatic-rust~github]↗: A peer-reviewed collection of articles, talks, repos which teach concise, idiomatic Rust.
-- [LearnRust][learnrust~github]↗.
+- [Rust Learning][rust-learning~repo]↗: A bunch of links to blog posts, articles, videos, etc. for learning Rust.
+- [Idiomatic Rust][idiomatic-rust~repo]↗: A peer-reviewed collection of articles, talks, repos which teach concise, idiomatic Rust.
+- [LearnRust][learnrust~repo]↗.
 - The [Rust Starter Pack][rust-starter-pack~website]↗.
 
 ## Rust Overviews and Starting Points {#overview}
@@ -26,14 +26,14 @@
 - [Rust Gentle Introduction][rust-gentle-intro~website]↗.
 - [RustConf 2017 Workshop][rust-tutorials-RustConf17~website]↗ slides and exercises.
 - [Learn Rust][learn-rust~website]↗.
-- Jonathan Pallant's [Rust on the Raspberry Pi][pi-workshop-rs~github]↗ tutorial.
+- Jonathan Pallant's [Rust on the Raspberry Pi][pi-workshop-rs~repo]↗ tutorial.
 
 ## Guides {#guides}
 
-- [Rusty CS][rusty-cs~github]↗: A Computer Science Curriculum with Rust flavor.
-- [Curated Rust][curatedrust~github]↗: A guided walkthrough of the resources to learn Rust.
+- [Rusty CS][rusty-cs~repo]↗: A Computer Science Curriculum with Rust flavor.
+- [Curated Rust][curatedrust~repo]↗: A guided walkthrough of the resources to learn Rust.
 - [A Gentle Introduction to Rust][rust-gentle-intro~website]↗.
-- [Learning Rust in 2020][rust-blog/blob/master/posts/learning-rust-in-2020.md~github]↗.
+- [Learning Rust in 2020][rust-blog/blob/master/posts/learning-rust-in-2020.md~repo]↗.
 - [`py2rs`][book~py2rs]↗: "From Python into Rust".
 - [24 Days of Rust][blog~24daysofrust]↗.
 - [Writing an OS in Rust][blog~writing-an-OS-in-rust]↗.
@@ -47,7 +47,7 @@
 - [Rust Development Classes][rust-classes~website]↗.
 - [Fast Track to Rust][course~fast-track-to-rust]↗.
 - [Yet Another Rust Resource (YARR!)][book~yarr.fyi]↗.
-- Open source training courses about distributed database and distributed systems: [Talent Plan][talent-plan~github]↗.
+- Open source training courses about distributed database and distributed systems: [Talent Plan][talent-plan~repo]↗.
 - [Tour of Rust][tourofrust~website]↗.
 - [Learn Rust Programming][youtube~learn-rust-programming]↗ - Complete Course (YouTube).
 
@@ -56,14 +56,14 @@
 - [CS 110L][stanford-cs110l~website]↗: Safety in Systems Programming.
 - [CIS 198][course~cis198-2016s]↗: Rust Programming.
 - [CS4414][rust-class~website]↗: Operating Systems.
-- [Rust Course (taught at FEI VŠB-TUO)][rust-course-fei~github]↗.
+- [Rust Course (taught at FEI VŠB-TUO)][rust-course-fei~repo]↗.
 
 ### Ferrous Systems Training {#ferrous-systems-training}
 
-- [Why Rust?][ferrous-systems~why-rust~github]↗.
-- [Rust Training][ferrous-systems~rust-training~github]↗.
-- [Rust Exercises][ferrous-systems~rust-exercises~github]↗.
-- [WASM Training][ferrous-systems~wasm-training~github]↗.
+- [Why Rust?][ferrous-systems~why-rust~repo]↗.
+- [Rust Training][ferrous-systems~rust-training~repo]↗.
+- [Rust Exercises][ferrous-systems~rust-exercises~repo]↗.
+- [WASM Training][ferrous-systems~wasm-training~repo]↗.
 
 ### Paid Courses {#paid-courses}
 
@@ -74,12 +74,12 @@
 
 ## Others {#others}
 
-- [`Awesome Rust`][awesome-rust~github]↗: A curated list of Rust code and resources.
+- [`Awesome Rust`][awesome-rust~repo]↗: A curated list of Rust code and resources.
 - [`rust.code-maven.com`][code-maven~website]↗.
 - [Learning Rust With Entirely Too Many Linked Lists][rust-learning-linked-lists~website]↗.
-- [Rust by Practice][rust-by-practice~github]↗. Learning Rust By Practice, narrowing the gap between beginner and skilled-dev through challenging examples, exercises and projects.
-- [Rust Language Bible][rust-course~github]↗.
-- [How to Learn Modern Rust][how_to_learn_modern_rust~github]↗.
+- [Rust by Practice][rust-by-practice~repo]↗. Learning Rust By Practice, narrowing the gap between beginner and skilled-dev through challenging examples, exercises and projects.
+- [Rust Language Bible][rust-course~repo]↗.
+- [How to Learn Modern Rust][how_to_learn_modern_rust~repo]↗.
 - [Learning Rust][book~rust-learning]↗.
 
 ## Reference Documentation {#references}

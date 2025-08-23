@@ -30,7 +30,7 @@ For WebGPU development in Rust, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is the essen
 
 ## WebGPU Bindings with `wgpu` {#wgpu}
 
-[![wgpu~website][c~wgpu~website~badge]][c~wgpu~website] [![wgpu][c~wgpu~docs~badge]][c~wgpu~docs] [![wgpu~crates.io][c~wgpu~crates.io~badge]][c~wgpu~crates.io] [![wgpu~github][c~wgpu~github~badge]][c~wgpu~github] [![wgpu~lib.rs][c~wgpu~lib.rs~badge]][c~wgpu~lib.rs]{{hi:wgpu}}{{hi:Graphics}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}}
+[![wgpu~website][c~wgpu~website~badge]][c~wgpu~website] [![wgpu][c~wgpu~docs~badge]][c~wgpu~docs] [![wgpu~crates.io][c~wgpu~crates.io~badge]][c~wgpu~crates.io] [![wgpu~repo][c~wgpu~repo~badge]][c~wgpu~repo] [![wgpu~lib.rs][c~wgpu~lib.rs~badge]][c~wgpu~lib.rs]{{hi:wgpu}}{{hi:Graphics}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}}
 
 [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is a safe and portable Rusty [WebGPU][wikipedia~webgpu]↗{{hi:WebGPU}} API wrapper. It is a cross-platform, safe, pure-Rust [graphics][p~graphics] API that exposes modern GPU capabilities. It runs natively on Vulkan, Metal, D3D12, and OpenGL; and on top of WebGL2 and WebGPU on WASM. The API is based on the [WebGPU standard][webgpu~website]↗. It is suitable for general purpose graphics and compute on the GPU. It serves as the core of the WebGPU integration in Firefox and Deno.
 

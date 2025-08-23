@@ -22,7 +22,7 @@ Note that there are still caveats for public [traits][p~traits] - see [Announcin
 
 In addition, [traits][p~traits] that use `-> impl Trait` and `[async][p~async] fn` are not object-safe{{hi:Object-safe traits}}, which means they lack support for dynamic dispatch. In the meanwhile, use the [`async-trait`][c~async-trait~docs]↗{{hi:async-trait}} crate.
 
-[![async-trait][c~async-trait~docs~badge]][c~async-trait~docs]{{hi:async-trait}} [![async-trait~github][c~async-trait~github~badge]][c~async-trait~github] [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
+[![async-trait][c~async-trait~docs~badge]][c~async-trait~docs]{{hi:async-trait}} [![async-trait~repo][c~async-trait~repo~badge]][c~async-trait~repo] [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/examples/async_traits/async_traits3.rs:example}}

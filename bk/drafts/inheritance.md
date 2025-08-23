@@ -68,7 +68,7 @@ You may also implement the [`AsRef`][c~std::convert::AsRef~docs]↗{{hi:std::con
 {{#include ../../crates/standard_library/examples/  /asref2.rs:example}}
 ```
 
-Note that so-called "Deref polymorphism", meaning implementing [`Deref`][c~std::ops::Deref~docs]↗{{hi:std::ops::Deref}} to emulate inheritance between structs, is considered an [anti-pattern][deref-anti-pattern~github]↗, especially since `Deref` is an _implicit_ conversion.
+Note that so-called "Deref polymorphism", meaning implementing [`Deref`][c~std::ops::Deref~docs]↗{{hi:std::ops::Deref}} to emulate inheritance between structs, is considered an [anti-pattern][deref-anti-pattern~repo]↗, especially since `Deref` is an _implicit_ conversion.
 
 ### References {#references}
 

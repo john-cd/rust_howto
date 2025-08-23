@@ -18,7 +18,7 @@ Validates that an [email][p~email] address{{hi:Email address}} is formatted corr
 
 Extracts, sorts, and deduplicates list of hashtags{{hi:Hashtags}} from text.
 
-The hashtag regex given here only catches Latin hashtags that start with a letter. The complete [Twitter hashtag regex][twitter~hashtag-regex~github]↗ [![twitter~hashtag-regex~github][twitter~hashtag-regex~github~badge]][twitter~hashtag-regex~github] is much more complicated.
+The hashtag regex given here only catches Latin hashtags that start with a letter. The complete [Twitter hashtag regex][twitter~hashtag-regex~repo]↗ [![twitter~hashtag-regex~repo][twitter~hashtag-regex~repo~badge]][twitter~hashtag-regex~repo] is much more complicated.
 
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/examples/regex/hashtags.rs:example}}
@@ -61,7 +61,7 @@ The method [`regex::Regex::replace_all`][c~regex::Regex::replace_all~docs]↗{{h
 
 ## Use Regular Expressions with Back-references and Lookarounds {#fancy-regex}
 
-[![fancy-regex][c~fancy-regex~docs~badge]][c~fancy-regex~docs] [![fancy-regex~crates.io][c~fancy-regex~crates.io~badge]][c~fancy-regex~crates.io] [![fancy-regex~github][c~fancy-regex~github~badge]][c~fancy-regex~github] [![fancy-regex~lib.rs][c~fancy-regex~lib.rs~badge]][c~fancy-regex~lib.rs]{{hi:fancy-regex}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+[![fancy-regex][c~fancy-regex~docs~badge]][c~fancy-regex~docs] [![fancy-regex~crates.io][c~fancy-regex~crates.io~badge]][c~fancy-regex~crates.io] [![fancy-regex~repo][c~fancy-regex~repo~badge]][c~fancy-regex~repo] [![fancy-regex~lib.rs][c~fancy-regex~lib.rs~badge]][c~fancy-regex~lib.rs]{{hi:fancy-regex}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
 [`regex`][c~regex~docs]↗{{hi:regex}} is the de facto standard regex library. It is very fast, but does not support fancier features such as backtracking, backreferences, and look-arounds. Use [`fancy-regex`][c~fancy-regex~docs]↗{{hi:fancy-regex}} if you need features that [`regex`][c~regex~docs]↗{{hi:regex}} doesn't support.
 
@@ -71,7 +71,7 @@ The method [`regex::Regex::replace_all`][c~regex::Regex::replace_all~docs]↗{{h
 
 ## Longer Regex Example {#longer-regex-example}
 
-[![regex][c~regex~docs~badge]][c~regex~docs]{{hi:regex}} [![regex~github][c~regex~github~badge]][c~regex~github] [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+[![regex][c~regex~docs~badge]][c~regex~docs]{{hi:regex}} [![regex~repo][c~regex~repo~badge]][c~regex~repo] [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/examples/regex/regex.rs:example}}
@@ -89,7 +89,7 @@ The method [`regex::Regex::replace_all`][c~regex::Regex::replace_all~docs]↗{{h
 <div class="hidden">
 [regex: write](https://github.com/john-cd/rust_howto/issues/488)
 
-- [grex][c~grex~github]↗: A command-line tool and Rust library with Python bindings for generating regular expressions from user-provided test cases.
+- [grex][c~grex~repo]↗: A command-line tool and Rust library with Python bindings for generating regular expressions from user-provided test cases.
 
 - [regex_automata][c~regex-automata~docs]↗: Multi-pattern searches with capture groups.
 

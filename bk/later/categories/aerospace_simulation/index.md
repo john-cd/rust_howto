@@ -32,7 +32,7 @@ For more advanced aerospace simulations, you'll likely need to use FFI to intera
 
 - [`Bullet`][wikipedia~bullet]↗{{hi:Bullet}}: A popular open-source physics engine.
 - [`ODE`][ode~website]↗{{hi:ODE}} (Open Dynamics Engine): Another open-source option.
-- [`Simbody`][simbody~github]↗{{hi:Simbody}}: A high-performance library for multibody dynamics (often used in robotics and aerospace).
+- [`Simbody`][simbody~repo]↗{{hi:Simbody}}: A high-performance library for multibody dynamics (often used in robotics and aerospace).
 
 See:
 

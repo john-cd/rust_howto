@@ -6,7 +6,7 @@ Use [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} if you don't care what error type 
 
 ## Simplify Error Handling and Attach Context to Errors with `anyhow` {#anyhow}
 
-[![anyhow][c~anyhow~docs~badge]][c~anyhow~docs] [![anyhow~crates.io][c~anyhow~crates.io~badge]][c~anyhow~crates.io] [![anyhow~github][c~anyhow~github~badge]][c~anyhow~github] [![anyhow~lib.rs][c~anyhow~lib.rs~badge]][c~anyhow~lib.rs]{{hi:anyhow}}{{hi:Error}}{{hi:Error-handling}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
+[![anyhow][c~anyhow~docs~badge]][c~anyhow~docs] [![anyhow~crates.io][c~anyhow~crates.io~badge]][c~anyhow~crates.io] [![anyhow~repo][c~anyhow~repo~badge]][c~anyhow~repo] [![anyhow~lib.rs][c~anyhow~lib.rs~badge]][c~anyhow~lib.rs]{{hi:anyhow}}{{hi:Error}}{{hi:Error-handling}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
 [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} provides `anyhow::Error`, a flexible concrete Error type built on [`std::error::Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}}.
 
@@ -26,7 +26,7 @@ You can use [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} to:
 
 ## Create Custom Error Types Declaratively with `thisError` {#thiserror}
 
-[![thiserror][c~thiserror~docs~badge]][c~thiserror~docs] [![thiserror~crates.io][c~thiserror~crates.io~badge]][c~thiserror~crates.io] [![thiserror~github][c~thiserror~github~badge]][c~thiserror~github] [![thiserror~lib.rs][c~thiserror~lib.rs~badge]][c~thiserror~lib.rs]{{hi:thiserror}}{{hi:Derive}}{{hi:Error}}{{hi:Error-handling}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
+[![thiserror][c~thiserror~docs~badge]][c~thiserror~docs] [![thiserror~crates.io][c~thiserror~crates.io~badge]][c~thiserror~crates.io] [![thiserror~repo][c~thiserror~repo~badge]][c~thiserror~repo] [![thiserror~lib.rs][c~thiserror~lib.rs~badge]][c~thiserror~lib.rs]{{hi:thiserror}}{{hi:Derive}}{{hi:Error}}{{hi:Error-handling}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
 [`thiserror`][c~thiserror~docs]↗{{hi:thiserror}} provides a convenient [`derive`][book~rust-reference~derive]↗{{hi:derive}} macro for the standard library's [`std::error::Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} trait.
 
@@ -49,7 +49,7 @@ The [`#[error(...)]`][c~thiserror~docs]↗ messages support a shorthand for inte
 
 ## Provide Human-readable Diagnostics with `miette` {#miette}
 
-[![miette][c~miette~docs~badge]][c~miette~docs] [![miette~crates.io][c~miette~crates.io~badge]][c~miette~crates.io] [![miette~github][c~miette~github~badge]][c~miette~github] [![miette~lib.rs][c~miette~lib.rs~badge]][c~miette~lib.rs]{{hi:miette}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
+[![miette][c~miette~docs~badge]][c~miette~docs] [![miette~crates.io][c~miette~crates.io~badge]][c~miette~crates.io] [![miette~repo][c~miette~repo~badge]][c~miette~repo] [![miette~lib.rs][c~miette~lib.rs~badge]][c~miette~lib.rs]{{hi:miette}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
 [`miette`][c~miette~docs]↗{{hi:miette}} is a fancy diagnostic reporting library and protocol.
 
@@ -59,7 +59,7 @@ The [`#[error(...)]`][c~thiserror~docs]↗ messages support a shorthand for inte
 
 ## Create Colorful and User-friendly Error Reports with `color-eyre` {#color-eyre}
 
-[![color-eyre][c~color-eyre~docs~badge]][c~color-eyre~docs] [![color-eyre~crates.io][c~color-eyre~crates.io~badge]][c~color-eyre~crates.io] [![color-eyre~github][c~color-eyre~github~badge]][c~color-eyre~github] [![color-eyre~lib.rs][c~color-eyre~lib.rs~badge]][c~color-eyre~lib.rs]{{hi:color-eyre}}
+[![color-eyre][c~color-eyre~docs~badge]][c~color-eyre~docs] [![color-eyre~crates.io][c~color-eyre~crates.io~badge]][c~color-eyre~crates.io] [![color-eyre~repo][c~color-eyre~repo~badge]][c~color-eyre~repo] [![color-eyre~lib.rs][c~color-eyre~lib.rs~badge]][c~color-eyre~lib.rs]{{hi:color-eyre}}
 
 [`color-eyre`][c~color-eyre~docs]↗{{hi:color-eyre}} is an error report handler for panics and `eyre::Reports` for colorful, consistent, and well formatted error reports for all kinds of errors.
 
@@ -82,6 +82,6 @@ Do not use [Error Chain][c~error-chain~docs]↗{{hi:error-chain}}, which is depr
 [error_customization: write / organize](https://github.com/john-cd/rust_howto/issues/463)
 color-eyre is archived -> eyre.
 
-- [eyre-rs][c~eyre~github]↗.
+- [eyre-rs][c~eyre~repo]↗.
 
 </div>

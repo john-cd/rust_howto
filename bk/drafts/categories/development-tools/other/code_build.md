@@ -17,7 +17,7 @@
 
 ## Save and run project-specific Commands with the `just` Command Runner {#just}
 
-[![just][c~just~docs~badge]][c~just~docs] [![just~crates.io][c~just~crates.io~badge]][c~just~crates.io] [![just~github][c~just~github~badge]][c~just~github] [![just~lib.rs][c~just~lib.rs~badge]][c~just~lib.rs]{{hi:just}}{{hi:Command-line}}{{hi:Development}}{{hi:Runner}}{{hi:Task}}{{hi:Utility}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}}
+[![just][c~just~docs~badge]][c~just~docs] [![just~crates.io][c~just~crates.io~badge]][c~just~crates.io] [![just~repo][c~just~repo~badge]][c~just~repo] [![just~lib.rs][c~just~lib.rs~badge]][c~just~lib.rs]{{hi:just}}{{hi:Command-line}}{{hi:Development}}{{hi:Runner}}{{hi:Task}}{{hi:Utility}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}}
 
 [`just`][c~just~docs]↗{{hi:just}}{{hi:just}} is a command runner{{hi:Command runner}}. It is a Rust-based equivalent to [`make`][make~website]↗{{hi:make}} without the ability to detect file changes, but with significantly fewer syntactic warts.
 
@@ -83,7 +83,7 @@ RUN apk add just
 
 [![bacon][c~bacon~docs~badge]][c~bacon~docs]{{hi:bacon}}
 [![bacon~crates.io][c~bacon~crates.io~badge]][c~bacon~crates.io]
-[![bacon~github][c~bacon~github~badge]][c~bacon~github]
+[![bacon~repo][c~bacon~repo~badge]][c~bacon~repo]
 [![bacon~lib.rs][c~bacon~lib.rs~badge]][c~bacon~lib.rs]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}}

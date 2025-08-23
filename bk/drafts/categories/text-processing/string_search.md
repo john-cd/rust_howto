@@ -4,7 +4,7 @@
 
 ## `aho-corasick` {#aho-corasick}
 
-[![aho-corasick][c~aho-corasick~docs~badge]][c~aho-corasick~docs] [![aho-corasick~crates.io][c~aho-corasick~crates.io~badge]][c~aho-corasick~crates.io] [![aho-corasick~github][c~aho-corasick~github~badge]][c~aho-corasick~github] [![aho-corasick~lib.rs][c~aho-corasick~lib.rs~badge]][c~aho-corasick~lib.rs]{{hi:aho-corasick}}{{hi:Multi}}{{hi:Text}}{{hi:String}}{{hi:Pattern}}{{hi:Search}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+[![aho-corasick][c~aho-corasick~docs~badge]][c~aho-corasick~docs] [![aho-corasick~crates.io][c~aho-corasick~crates.io~badge]][c~aho-corasick~crates.io] [![aho-corasick~repo][c~aho-corasick~repo~badge]][c~aho-corasick~repo] [![aho-corasick~lib.rs][c~aho-corasick~lib.rs~badge]][c~aho-corasick~lib.rs]{{hi:aho-corasick}}{{hi:Multi}}{{hi:Text}}{{hi:String}}{{hi:Pattern}}{{hi:Search}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
 [`aho-corasick`][c~aho-corasick~docs]↗{{hi:aho-corasick}} implements fast multiple substring searching.
 
@@ -14,7 +14,7 @@
 
 ## `memchr` {#memchr}
 
-[![memchr][c~memchr~docs~badge]][c~memchr~docs] [![memchr~crates.io][c~memchr~crates.io~badge]][c~memchr~crates.io] [![memchr~github][c~memchr~github~badge]][c~memchr~github] [![memchr~lib.rs][c~memchr~lib.rs~badge]][c~memchr~lib.rs]{{hi:memchr}}{{hi:Search}}{{hi:Find}}{{hi:memchr}}{{hi:Substring}}{{hi:Memmem}}
+[![memchr][c~memchr~docs~badge]][c~memchr~docs] [![memchr~crates.io][c~memchr~crates.io~badge]][c~memchr~crates.io] [![memchr~repo][c~memchr~repo~badge]][c~memchr~repo] [![memchr~lib.rs][c~memchr~lib.rs~badge]][c~memchr~lib.rs]{{hi:memchr}}{{hi:Search}}{{hi:Find}}{{hi:memchr}}{{hi:Substring}}{{hi:Memmem}}
 
 [`memchr`][c~memchr~docs]↗{{hi:memchr}} provides extremely fast routines for 1, 2 or 3 byte search and single substring search (that use SIMD on x86_64, aarch64 and wasm32).
 
@@ -24,7 +24,7 @@
 
 ## `fuzzy-matcher` {#fuzzy-matcher}
 
-[![fuzzy-matcher][c~fuzzy-matcher~docs~badge]][c~fuzzy-matcher~docs] [![fuzzy-matcher~crates.io][c~fuzzy-matcher~crates.io~badge]][c~fuzzy-matcher~crates.io] [![fuzzy-matcher~github][c~fuzzy-matcher~github~badge]][c~fuzzy-matcher~github] [![fuzzy-matcher~lib.rs][c~fuzzy-matcher~lib.rs~badge]][c~fuzzy-matcher~lib.rs]{{hi:fuzzy-matcher}}{{hi:Match}}{{hi:Search}}{{hi:Fuzzy}}{{hi:Text}}
+[![fuzzy-matcher][c~fuzzy-matcher~docs~badge]][c~fuzzy-matcher~docs] [![fuzzy-matcher~crates.io][c~fuzzy-matcher~crates.io~badge]][c~fuzzy-matcher~crates.io] [![fuzzy-matcher~repo][c~fuzzy-matcher~repo~badge]][c~fuzzy-matcher~repo] [![fuzzy-matcher~lib.rs][c~fuzzy-matcher~lib.rs~badge]][c~fuzzy-matcher~lib.rs]{{hi:fuzzy-matcher}}{{hi:Match}}{{hi:Search}}{{hi:Fuzzy}}{{hi:Text}}
 
 [`fuzzy-matcher`][c~fuzzy-matcher~docs]↗{{hi:fuzzy-matcher}} is a fuzzy matching library.
 
@@ -34,7 +34,7 @@
 
 ## `strsim` {#strsim}
 
-[![strsim][c~strsim~docs~badge]][c~strsim~docs] [![strsim~crates.io][c~strsim~crates.io~badge]][c~strsim~crates.io] [![strsim~github][c~strsim~github~badge]][c~strsim~github] [![strsim~lib.rs][c~strsim~lib.rs~badge]][c~strsim~lib.rs]{{hi:strsim}}{{hi:String}}{{hi:Similarity}}{{hi:Jaro}}{{hi:Hamming}}{{hi:Levenshtein}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+[![strsim][c~strsim~docs~badge]][c~strsim~docs] [![strsim~crates.io][c~strsim~crates.io~badge]][c~strsim~crates.io] [![strsim~repo][c~strsim~repo~badge]][c~strsim~repo] [![strsim~lib.rs][c~strsim~lib.rs~badge]][c~strsim~lib.rs]{{hi:strsim}}{{hi:String}}{{hi:Similarity}}{{hi:Jaro}}{{hi:Hamming}}{{hi:Levenshtein}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
 [`strsim`][c~strsim~docs]↗{{hi:strsim}} implement string similarity metrics. That includes Hamming, Levenshtein, OSA, Damerau-Levenshtein, Jaro, Jaro-Winkler, and Sørensen-Dice.
 

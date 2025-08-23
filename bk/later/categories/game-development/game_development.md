@@ -10,7 +10,7 @@
 
 ### `glam` {#glam}
 
-[![glam][c~glam~docs~badge]][c~glam~docs] [![glam~crates.io][c~glam~crates.io~badge]][c~glam~crates.io] [![glam~github][c~glam~github~badge]][c~glam~github] [![glam~lib.rs][c~glam~lib.rs~badge]][c~glam~lib.rs]{{hi:glam}}{{hi:Gamedev}}{{hi:Math}}{{hi:Matrix}}{{hi:Quaternion}}{{hi:Vector}} [![cat~game-engines][cat~game-engines~badge]][cat~game-engines]{{hi:Game engines}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![glam][c~glam~docs~badge]][c~glam~docs] [![glam~crates.io][c~glam~crates.io~badge]][c~glam~crates.io] [![glam~repo][c~glam~repo~badge]][c~glam~repo] [![glam~lib.rs][c~glam~lib.rs~badge]][c~glam~lib.rs]{{hi:glam}}{{hi:Gamedev}}{{hi:Math}}{{hi:Matrix}}{{hi:Quaternion}}{{hi:Vector}} [![cat~game-engines][cat~game-engines~badge]][cat~game-engines]{{hi:Game engines}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
 [`glam`][c~glam~docs]↗{{hi:glam}} is a 3D math library for [games][p~games] and [graphics][p~graphics].
 

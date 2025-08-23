@@ -28,7 +28,7 @@ The following example showcases various utilities for working with streams:
 
 See also [Tokio][p~tokio] [`async-stream`][c~async-stream~docs]↗{{hi:async-stream}}.
 
-[![async-stream][c~async-stream~docs~badge]][c~async-stream~docs]{{hi:async-stream}} [![async-stream~github][c~async-stream~github~badge]][c~async-stream~github]
+[![async-stream][c~async-stream~docs~badge]][c~async-stream~docs]{{hi:async-stream}} [![async-stream~repo][c~async-stream~repo~badge]][c~async-stream~repo]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

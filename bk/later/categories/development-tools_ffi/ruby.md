@@ -6,7 +6,7 @@ Interfacing with Ruby from Rust is typically done using the Ruby C API via a bin
 
 ## Interop with Ruby via `rutie` {#rutie}
 
-[![rutie][c~rutie~docs~badge]][c~rutie~docs] [![rutie~crates.io][c~rutie~crates.io~badge]][c~rutie~crates.io] [![rutie~github][c~rutie~github~badge]][c~rutie~github] [![rutie~lib.rs][c~rutie~lib.rs~badge]][c~rutie~lib.rs]{{hi:rutie}}{{hi:Ruby}}{{hi:Cruby}}{{hi:rutie}}
+[![rutie][c~rutie~docs~badge]][c~rutie~docs] [![rutie~crates.io][c~rutie~crates.io~badge]][c~rutie~crates.io] [![rutie~repo][c~rutie~repo~badge]][c~rutie~repo] [![rutie~lib.rs][c~rutie~lib.rs~badge]][c~rutie~lib.rs]{{hi:rutie}}{{hi:Ruby}}{{hi:Cruby}}{{hi:rutie}}
 
 The tie between Ruby and Rust.
 
@@ -18,7 +18,7 @@ The [`rutie`][c~rutie~docs]↗{{hi:rutie}} crate provides a high-level and safe 
 
 ## Write Ruby Extension gems in Rust, or call Ruby code from a Rust with `magnus` {#magnus}
 
-[![magnus][c~magnus~docs~badge]][c~magnus~docs] [![magnus~crates.io][c~magnus~crates.io~badge]][c~magnus~crates.io] [![magnus~github][c~magnus~github~badge]][c~magnus~github] [![magnus~lib.rs][c~magnus~lib.rs~badge]][c~magnus~lib.rs]{{hi:magnus}}{{hi:Ruby}}{{hi:Extension}}{{hi:Gem}}{{hi:Rubygem}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~development-tools::ffi][cat~development-tools::ffi~badge]][cat~development-tools::ffi]{{hi:FFI}}
+[![magnus][c~magnus~docs~badge]][c~magnus~docs] [![magnus~crates.io][c~magnus~crates.io~badge]][c~magnus~crates.io] [![magnus~repo][c~magnus~repo~badge]][c~magnus~repo] [![magnus~lib.rs][c~magnus~lib.rs~badge]][c~magnus~lib.rs]{{hi:magnus}}{{hi:Ruby}}{{hi:Extension}}{{hi:Gem}}{{hi:Rubygem}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~development-tools::ffi][cat~development-tools::ffi~badge]][cat~development-tools::ffi]{{hi:FFI}}
 
 High level Ruby bindings. Write Ruby extension gems in Rust, or call Ruby code from a Rust binary.
 

@@ -4,7 +4,7 @@
 
 ## Manipulate Data in a Tabular Format {#dataframes}
 
-[![polars][c~polars~docs~badge]][c~polars~docs]{{hi:polars}} [![`polars` Book][c~polars~book~badge]][c~polars~book] [![`polars` GitHub][c~polars~github~badge]][c~polars~github]{{hi:Dataframes}}
+[![polars][c~polars~docs~badge]][c~polars~docs]{{hi:polars}} [![`polars` Book][c~polars~book~badge]][c~polars~book] [![`polars` GitHub][c~polars~repo~badge]][c~polars~repo]{{hi:Dataframes}}
 
 Similar to the Pandas library in Python but in pure Rust. Uses the {{i:Apache Arrow}} Columnar Format as the memory model.
 

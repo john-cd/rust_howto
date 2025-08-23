@@ -8,7 +8,7 @@ pub(super) static CRATE_BLOCK_BADGES: &str = concat!(
     "{{ if homepage_defined }}[![{crate_name}~website][c~{crate_name}~website~badge]][c~{crate_name}~website] {{ endif }}",
     "[![{crate_name}][c~{crate_name}~docs~badge]][c~{crate_name}~docs] ",
     "[![{crate_name}~crates.io][c~{crate_name}~crates.io~badge]][c~{crate_name}~crates.io] ",
-    "{{ if repository_defined }}[![{crate_name}~github][c~{crate_name}~github~badge]][c~{crate_name}~github] {{ endif }}",
+    "{{ if repository_defined }}[![{crate_name}~repo][c~{crate_name}~repo~badge]][c~{crate_name}~repo] {{ endif }}",
     r"[![{crate_name}~lib.rs][c~{crate_name}~lib.rs~badge]][c~{crate_name}~lib.rs]\{\{hi:{crate_name}}} "
 );
 
@@ -21,8 +21,8 @@ pub(super) static CRATE_BLOCK_REFDEFS: &str = "\
 [c~{crate_name}~crates.io~badge]: https://img.shields.io/badge/crates.io-{crate_name | shielded}-crimson
 [c~{crate_name}~docs]: {{ if documentation_defined }}{documentation}{{ else }}https://docs.rs/{crate_name}{{ endif }}
 [c~{crate_name}~docs~badge]: https://img.shields.io/crates/v/{crate_name}?label={crate_name}
-{{ if repository_defined }}[c~{crate_name}~github]: {repository}
-[c~{crate_name}~github~badge]: https://img.shields.io/badge/{crate_name | shielded}-steelblue?logo=github{{ endif }}
+{{ if repository_defined }}[c~{crate_name}~repo]: {repository}
+[c~{crate_name}~repo~badge]: https://img.shields.io/badge/{crate_name | shielded}-steelblue?logo=github{{ endif }}
 [c~{crate_name}~lib.rs]: https://lib.rs/crates/{crate_name}
 [c~{crate_name}~lib.rs~badge]: https://img.shields.io/badge/lib.rs-{crate_name | shielded}-yellow
 {{ if homepage_defined }}[c~{crate_name}~website]: {homepage}

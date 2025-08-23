@@ -25,7 +25,7 @@ You can also use the AWS SDK from within a Lambda function to interact with AWS 
 {{#include ../../../crates/other/examples/cloud/aws_lambda.rs:example}}
 ```
 
-See also the ["Create Lambda Functions with Rust"][aws-create-lambda-functions-with-rust~website]↗ and ["AWS Lambda Rust Runtime Examples"][aws-lambda-rust-runtime~examples~github]↗ webpages.
+See also the ["Create Lambda Functions with Rust"][aws-create-lambda-functions-with-rust~website]↗ and ["AWS Lambda Rust Runtime Examples"][aws-lambda-rust-runtime~examples~repo]↗ webpages.
 
 ## Interact with AWS Services with the AWS SDK for Rust {#aws-sdk-rust}
 
@@ -35,7 +35,7 @@ This SDK provides a set of libraries that simplify the use of services like Amaz
 See, for example:
 
 - [AWS Rust SDK][aws-rust-sdk~website]↗{{hi:AWS}}.
-- [AWS SDK examples][aws-doc-sdk~examples~github]↗.
+- [AWS SDK examples][aws-doc-sdk~examples~repo]↗.
 
 ```rust,editable
 {{#include ../../../crates/other/examples/cloud/aws_sdk.rs:example}}

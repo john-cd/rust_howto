@@ -25,13 +25,13 @@ Uses `#[doc = "```"]` in doc comments to embed testable examples in your documen
 
 [![insta][c~insta~docs~badge]][c~insta~docs]{{hi:insta}}
 [![insta~crates.io][c~insta~crates.io~badge]][c~insta~crates.io]
-[![insta~github][c~insta~github~badge]][c~insta~github]
+[![insta~repo][c~insta~repo~badge]][c~insta~repo]
 [![insta~lib.rs][c~insta~lib.rs~badge]][c~insta~lib.rs]
 [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
 
 [![cargo-insta][c~cargo-insta~docs~badge]][c~cargo-insta~docs]
 [![cargo-insta~crates.io][c~cargo-insta~crates.io~badge]][c~cargo-insta~crates.io]
-[![cargo-insta~github][c~cargo-insta~github~badge]][c~cargo-insta~github]
+[![cargo-insta~repo][c~cargo-insta~repo~badge]][c~cargo-insta~repo]
 [![cargo-insta~lib.rs][c~cargo-insta~lib.rs~badge]][c~cargo-insta~lib.rs]
 [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 

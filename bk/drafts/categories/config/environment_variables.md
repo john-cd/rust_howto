@@ -4,7 +4,7 @@
 
 ## `dotenvy` {#dotenvy}
 
-[![dotenvy][c~dotenvy~docs~badge]][c~dotenvy~docs] [![dotenvy~crates.io][c~dotenvy~crates.io~badge]][c~dotenvy~crates.io] [![dotenvy~github][c~dotenvy~github~badge]][c~dotenvy~github] [![dotenvy~lib.rs][c~dotenvy~lib.rs~badge]][c~dotenvy~lib.rs]{{hi:dotenvy}}{{hi:Environment}}{{hi:Env}}{{hi:Dotenv}}{{hi:Settings}}{{hi:Config}}
+[![dotenvy][c~dotenvy~docs~badge]][c~dotenvy~docs] [![dotenvy~crates.io][c~dotenvy~crates.io~badge]][c~dotenvy~crates.io] [![dotenvy~repo][c~dotenvy~repo~badge]][c~dotenvy~repo] [![dotenvy~lib.rs][c~dotenvy~lib.rs~badge]][c~dotenvy~lib.rs]{{hi:dotenvy}}{{hi:Environment}}{{hi:Env}}{{hi:Dotenv}}{{hi:Settings}}{{hi:Config}}
 
 [`dotenvy`][c~dotenvy~docs]↗{{hi:dotenvy}} forks and supersedes [`dotenv`][c~dotenv~docs]↗{{hi:dotenv}}.
 
@@ -28,7 +28,7 @@ Use [`std::env`][c~std::env::var~docs]↗{{hi:std::env}} to retrieve a single en
 
 ## `envy` {#envy}
 
-[![envy][c~envy~docs~badge]][c~envy~docs] [![envy~crates.io][c~envy~crates.io~badge]][c~envy~crates.io] [![envy~github][c~envy~github~badge]][c~envy~github] [![envy~lib.rs][c~envy~lib.rs~badge]][c~envy~lib.rs]{{hi:envy}}{{hi:Env}}{{hi:Serde}} [![cat~config][cat~config~badge]][cat~config]{{hi:Configuration}}
+[![envy][c~envy~docs~badge]][c~envy~docs] [![envy~crates.io][c~envy~crates.io~badge]][c~envy~crates.io] [![envy~repo][c~envy~repo~badge]][c~envy~repo] [![envy~lib.rs][c~envy~lib.rs~badge]][c~envy~lib.rs]{{hi:envy}}{{hi:Env}}{{hi:Serde}} [![cat~config][cat~config~badge]][cat~config]{{hi:Configuration}}
 
 [`envy`][c~envy~docs]↗{{hi:envy}} can deserialize environment variables into type-safe [structs][p~structs].
 

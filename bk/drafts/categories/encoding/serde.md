@@ -6,7 +6,7 @@
 
 [![serde][c~serde~docs~badge]][c~serde~docs]{{hi:serde}}
 [![serde~crates.io][c~serde~crates.io~badge]][c~serde~crates.io]
-[![serde~github][c~serde~github~badge]][c~serde~github]
+[![serde~repo][c~serde~repo~badge]][c~serde~repo]
 [![serde~lib.rs][c~serde~lib.rs~badge]][c~serde~lib.rs]
 
 [`serde`][c~serde~docs]↗{{hi:serde}} is the de facto standard serialization library. Use in conjunction with sub-crates like [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}} for the specific format that you are using.
@@ -19,7 +19,7 @@
 
 [![serde_json][c~serde_json~docs~badge]][c~serde_json~docs]{{hi:serde_json}}
 [![serde_json~crates.io][c~serde_json~crates.io~badge]][c~serde_json~crates.io]
-[![serde_json~github][c~serde_json~github~badge]][c~serde_json~github]
+[![serde_json~repo][c~serde_json~repo~badge]][c~serde_json~repo]
 [![serde_json~lib.rs][c~serde_json~lib.rs~badge]][c~serde_json~lib.rs]
 
 [`serde-json`][c~serde_json~docs]↗{{hi:serde-json}}
@@ -32,7 +32,7 @@
 
 [![serde-ignored][c~serde_ignored~docs~badge]][c~serde_ignored~docs]{{hi:serde-ignored}}
 [![serde-ignored~crates.io][c~serde_ignored~crates.io~badge]][c~serde_ignored~crates.io]
-[![serde-ignored~github][c~serde_ignored~github~badge]][c~serde_ignored~github]
+[![serde-ignored~repo][c~serde_ignored~repo~badge]][c~serde_ignored~repo]
 [![serde-ignored~lib.rs][c~serde_ignored~lib.rs~badge]][c~serde_ignored~lib.rs]
 
 [`serde-ignored`][c~serde_ignored~docs]↗{{hi:serde-ignored}}
@@ -45,7 +45,7 @@
 
 [![monostate][c~monostate~docs~badge]][c~monostate~docs]{{hi:monostate}}
 [![monostate~crates.io][c~monostate~crates.io~badge]][c~monostate~crates.io]
-[![monostate~github][c~monostate~github~badge]][c~monostate~github]
+[![monostate~repo][c~monostate~repo~badge]][c~monostate~repo]
 [![monostate~lib.rs][c~monostate~lib.rs~badge]][c~monostate~lib.rs]
 
 The [`monostate`][c~monostate~docs]↗{{hi:monostate}} library implements a type macro for a zero-sized type that is Serde deserializable only from one specific value.

@@ -14,11 +14,11 @@
 
 ## Cross-compile for Multiple Target OSes and Architectures {#cross-compilation}
 
-[![cross][c~cross~docs~badge]][c~cross~docs]{{hi:cross}} [![cross~github][c~cross~github~badge]][c~cross~github] [![cat~compilers][cat~compilers~badge]][cat~compilers]{{hi:Compilers}}
+[![cross][c~cross~docs~badge]][c~cross~docs]{{hi:cross}} [![cross~repo][c~cross~repo~badge]][c~cross~repo] [![cat~compilers][cat~compilers~badge]][cat~compilers]{{hi:Compilers}}
 
 Cross-Compilation Tools include [`cross`][c~cross~docs]↗{{hi:cross}}, a popular tool that uses Docker to simplify cross-compilation.
 
-[`cross`][c~cross~github]↗{{hi:cross}} simplify cross-compilation. It builds your Rust project for different target operating systems and architectures from a single development environment. It requires [`rustup`][rustup~website]↗{{hi:rustup}} and [`Docker`][docker~website]↗{{hi:docker}} or [`Podman`][podman~website]↗{{hi:podman}}.
+[`cross`][c~cross~repo]↗{{hi:cross}} simplify cross-compilation. It builds your Rust project for different target operating systems and architectures from a single development environment. It requires [`rustup`][rustup~website]↗{{hi:rustup}} and [`Docker`][docker~website]↗{{hi:docker}} or [`Podman`][podman~website]↗{{hi:podman}}.
 
 ```sh
 cargo install cross --git https://github.com/cross-rs/cross

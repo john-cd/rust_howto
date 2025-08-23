@@ -8,7 +8,7 @@
 
 [![async-graphql][c~async-graphql~docs~badge]][c~async-graphql~docs]{{hi:async-graphql}}
 [![async-graphql~crates.io][c~async-graphql~crates.io~badge]][c~async-graphql~crates.io]
-[![async-graphql~github][c~async-graphql~github~badge]][c~async-graphql~github]
+[![async-graphql~repo][c~async-graphql~repo~badge]][c~async-graphql~repo]
 [![async-graphql~lib.rs][c~async-graphql~lib.rs~badge]][c~async-graphql~lib.rs]
 [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
@@ -21,7 +21,7 @@
 
 ## Other Options {#skip}
 
-[![juniper~website][c~juniper~website~badge]][c~juniper~website] [![juniper][c~juniper~docs~badge]][c~juniper~docs] [![juniper~crates.io][c~juniper~crates.io~badge]][c~juniper~crates.io] [![juniper~github][c~juniper~github~badge]][c~juniper~github] [![juniper~lib.rs][c~juniper~lib.rs~badge]][c~juniper~lib.rs]{{hi:juniper}}{{hi:Apollo}}{{hi:Server}}{{hi:Graphql}}{{hi:Web}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}
+[![juniper~website][c~juniper~website~badge]][c~juniper~website] [![juniper][c~juniper~docs~badge]][c~juniper~docs] [![juniper~crates.io][c~juniper~crates.io~badge]][c~juniper~crates.io] [![juniper~repo][c~juniper~repo~badge]][c~juniper~repo] [![juniper~lib.rs][c~juniper~lib.rs~badge]][c~juniper~lib.rs]{{hi:juniper}}{{hi:Apollo}}{{hi:Server}}{{hi:Graphql}}{{hi:Web}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}
 
 The [`juniper`][c~juniper~docs]↗{{hi:juniper}} crate is another Rust implementation of GraphQL, facilitating the creation of GraphQL APIs with strong typing and schema definition. It allows Rust developers to define their API's data structure and query capabilities in a declarative way.
 

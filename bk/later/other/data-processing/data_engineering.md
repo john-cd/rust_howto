@@ -6,7 +6,7 @@
 
 [![arrow][c~arrow~docs~badge]][c~arrow~docs]{{hi:arrow}}
 [![arrow~crates.io][c~arrow~crates.io~badge]][c~arrow~crates.io]
-[![arrow~github][c~arrow~github~badge]][c~arrow~github]
+[![arrow~repo][c~arrow~repo~badge]][c~arrow~repo]
 [![arrow~lib.rs][c~arrow~lib.rs~badge]][c~arrow~lib.rs]
 
 [`arrow`][c~arrow~docs]↗{{hi:arrow}} is the official Rust implementation of `Apache Arrow`{{hi:In-memory}}
@@ -19,7 +19,7 @@
 
 [![datafusion][c~datafusion~docs~badge]][c~datafusion~docs]{{hi:datafusion}}
 [![datafusion~crates.io][c~datafusion~crates.io~badge]][c~datafusion~crates.io]
-[![datafusion~github][c~datafusion~github~badge]][c~datafusion~github]
+[![datafusion~repo][c~datafusion~repo~badge]][c~datafusion~repo]
 [![datafusion~lib.rs][c~datafusion~lib.rs~badge]][c~datafusion~lib.rs]
 
 [![datafusion][c~datafusion~docs~badge]][c~datafusion~docs]↗{{hi:datafusion}} is the `Apache Arrow DataFusion` {{i:SQL}} Query Engine.
@@ -36,13 +36,13 @@
 
 `databend`
 
-Modern alternative to Snowflake. Cost-effective and simple for massive-scale analytics. [datafuselabs databend][databend~github]↗{{hi:Analytics}}
+Modern alternative to Snowflake. Cost-effective and simple for massive-scale analytics. [datafuselabs databend][databend~repo]↗{{hi:Analytics}}
 
 ## `rerun` {#rerun}
 
-[![rerun~website][c~rerun~website~badge]][c~rerun~website] [![rerun][c~rerun~docs~badge]][c~rerun~docs] [![rerun~crates.io][c~rerun~crates.io~badge]][c~rerun~crates.io] [![rerun~github][c~rerun~github~badge]][c~rerun~github] [![rerun~lib.rs][c~rerun~lib.rs~badge]][c~rerun~lib.rs]{{hi:rerun}}{{hi:Mesh}}{{hi:Plotting}}{{hi:Point-cloud}}{{hi:Robotics}}{{hi:Visualization}} [![cat~visualization][cat~visualization~badge]][cat~visualization]{{hi:Visualization}} [![cat~computer-vision][cat~computer-vision~badge]][cat~computer-vision]{{hi:Computer vision}}
+[![rerun~website][c~rerun~website~badge]][c~rerun~website] [![rerun][c~rerun~docs~badge]][c~rerun~docs] [![rerun~crates.io][c~rerun~crates.io~badge]][c~rerun~crates.io] [![rerun~repo][c~rerun~repo~badge]][c~rerun~repo] [![rerun~lib.rs][c~rerun~lib.rs~badge]][c~rerun~lib.rs]{{hi:rerun}}{{hi:Mesh}}{{hi:Plotting}}{{hi:Point-cloud}}{{hi:Robotics}}{{hi:Visualization}} [![cat~visualization][cat~visualization~badge]][cat~visualization]{{hi:Visualization}} [![cat~computer-vision][cat~computer-vision~badge]][cat~computer-vision]{{hi:Computer vision}}
 
-[`rerun`][c~rerun~github]↗ visualizes streams of multi-modal data. (see also [[science_robotics | Robotics]]).
+[`rerun`][c~rerun~repo]↗ visualizes streams of multi-modal data. (see also [[science_robotics | Robotics]]).
 
 Log images, point clouds, etc, and visualize them effortlessly.
 
@@ -60,15 +60,15 @@ Log images, point clouds, etc, and visualize them effortlessly.
 <div class="hidden">
 [data_engineering: organize / edit](https://github.com/john-cd/rust_howto/issues/589)
 
-[![jsonschema][c~jsonschema~docs~badge]][c~jsonschema~docs] [![jsonschema~crates.io][c~jsonschema~crates.io~badge]][c~jsonschema~crates.io] [![jsonschema~github][c~jsonschema~github~badge]][c~jsonschema~github] [![jsonschema~lib.rs][c~jsonschema~lib.rs~badge]][c~jsonschema~lib.rs]{{hi:jsonschema}}{{hi:Validation}}{{hi:jsonschema}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
+[![jsonschema][c~jsonschema~docs~badge]][c~jsonschema~docs] [![jsonschema~crates.io][c~jsonschema~crates.io~badge]][c~jsonschema~crates.io] [![jsonschema~repo][c~jsonschema~repo~badge]][c~jsonschema~repo] [![jsonschema~lib.rs][c~jsonschema~lib.rs~badge]][c~jsonschema~lib.rs]{{hi:jsonschema}}{{hi:Validation}}{{hi:jsonschema}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
 
-[![jsonpath][c~jsonpath~docs~badge]][c~jsonpath~docs] [![jsonpath~crates.io][c~jsonpath~crates.io~badge]][c~jsonpath~crates.io] [![jsonpath~github][c~jsonpath~github~badge]][c~jsonpath~github] [![jsonpath~lib.rs][c~jsonpath~lib.rs~badge]][c~jsonpath~lib.rs]{{hi:jsonpath}}{{hi:JSON}}{{hi:Query}}{{hi:XPath}}{{hi:Javascript}}{{hi:jsonpath}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
+[![jsonpath][c~jsonpath~docs~badge]][c~jsonpath~docs] [![jsonpath~crates.io][c~jsonpath~crates.io~badge]][c~jsonpath~crates.io] [![jsonpath~repo][c~jsonpath~repo~badge]][c~jsonpath~repo] [![jsonpath~lib.rs][c~jsonpath~lib.rs~badge]][c~jsonpath~lib.rs]{{hi:jsonpath}}{{hi:JSON}}{{hi:Query}}{{hi:XPath}}{{hi:Javascript}}{{hi:jsonpath}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
 
 JSONPath for Rust
 
 ---
 
-[![jsonpath-rust][c~jsonpath-rust~docs~badge]][c~jsonpath-rust~docs] [![jsonpath-rust~crates.io][c~jsonpath-rust~crates.io~badge]][c~jsonpath-rust~crates.io] [![jsonpath-rust~github][c~jsonpath-rust~github~badge]][c~jsonpath-rust~github] [![jsonpath-rust~lib.rs][c~jsonpath-rust~lib.rs~badge]][c~jsonpath-rust~lib.rs]{{hi:jsonpath-rust}}{{hi:JSON}}{{hi:XPath}}{{hi:jsonpath}}{{hi:json-path}}{{hi:jsonpath-rust}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+[![jsonpath-rust][c~jsonpath-rust~docs~badge]][c~jsonpath-rust~docs] [![jsonpath-rust~crates.io][c~jsonpath-rust~crates.io~badge]][c~jsonpath-rust~crates.io] [![jsonpath-rust~repo][c~jsonpath-rust~repo~badge]][c~jsonpath-rust~repo] [![jsonpath-rust~lib.rs][c~jsonpath-rust~lib.rs~badge]][c~jsonpath-rust~lib.rs]{{hi:jsonpath-rust}}{{hi:JSON}}{{hi:XPath}}{{hi:jsonpath}}{{hi:json-path}}{{hi:jsonpath-rust}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
 The library provides the basic functionality to find the set of the data according to the filtering query.
 
@@ -79,6 +79,6 @@ The library provides the basic functionality to find the set of the data accordi
 - [`datawithrust.com`][datawithrust~website]↗.
 - [`plotters`][c~plotters~docs]↗.
 - [`polars` additional docs][c~polars~more-docs~website]↗.
-- [`ndarray`][c~ndarray~github]↗.
+- [`ndarray`][c~ndarray~repo]↗.
 
 </div>

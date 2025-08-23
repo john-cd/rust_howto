@@ -30,15 +30,15 @@ See [[github_actions | Github Actions]].
 - [Optimizing CI/CD pipelines][blog~optimizing-ci-cd-pipelines-rust-project]↗.
 - [Creating a docker container action][github~creating-a-docker-container-action]↗.
 - ["Upload a Build Artifact" Github Action][upload-a-build-artifact~website]↗.
-- [`docker-cache`][docker-cache~github]↗{{hi:docker-cache}}.
-- [Cached Docker images][cached-docker-images~github]↗.
+- [`docker-cache`][docker-cache~repo]↗{{hi:docker-cache}}.
+- [Cached Docker images][cached-docker-images~repo]↗.
 - [Docker GitHub Action][docker~github-action]↗.
 - [Cache storage backends][docker~cache-storage-backends]↗.
-- [Cache management with GitHub Actions][cache-management-with~github-actions~website]↗.
-- [How to cache docker-compose build inside github-action][stackoverflow~how-to-cache-docker-compose-build-inside~github-action]↗.
+- [Cache management with GitHub Actions][cache-management-with-github-actions~website]↗.
+- [How to cache docker-compose build inside github-action][stackoverflow~how-to-cache-docker-compose-build-inside-github-action]↗.
 - [Optimizing CI/CD pipelines in your Rust projects][blog~optimizing-ci-cd-pipelines-rust-project]↗.
-- [GitHub Action for installing development tools (mainly from GitHub Releases)][install_action~github]↗.
-- [Experience about deploying [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} on github using github action - tutorials - The Rust Programming Language Forum][forum-deploying-mdbook-on~github-using~github-action]↗.
+- [GitHub Action for installing development tools (mainly from GitHub Releases)][install_action~repo]↗.
+- [Experience about deploying [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} on github using github action - tutorials - The Rust Programming Language Forum][forum-deploying-mdbook-on-github-using-github-action]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

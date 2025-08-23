@@ -6,7 +6,7 @@
 
 [![cargo-audit][c~cargo-audit~docs~badge]][c~cargo-audit~docs]{{hi:cargo-audit}}
 [![cargo-audit~crates.io][c~cargo-audit~crates.io~badge]][c~cargo-audit~crates.io]
-[![cargo-audit~github][c~cargo-audit~github~badge]][c~cargo-audit~github]
+[![cargo-audit~repo][c~cargo-audit~repo~badge]][c~cargo-audit~repo]
 [![cargo-audit~lib.rs][c~cargo-audit~lib.rs~badge]][c~cargo-audit~lib.rs]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
@@ -21,12 +21,12 @@ cargo audit
 
 [![cargo-auditable][c~cargo-auditable~docs~badge]][c~cargo-auditable~docs]{{hi:cargo-auditable}}
 [![cargo-auditable~crates.io][c~cargo-auditable~crates.io~badge]][c~cargo-auditable~crates.io]
-[![cargo-auditable~github][c~cargo-auditable~github~badge]][c~cargo-auditable~github]
+[![cargo-auditable~repo][c~cargo-auditable~repo~badge]][c~cargo-auditable~repo]
 [![cargo-auditable~lib.rs][c~cargo-auditable~lib.rs~badge]][c~cargo-auditable~lib.rs]
 [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
 
-[cargo-auditable][c~cargo-auditable~github]↗{{hi:cargo-auditable}} makes production Rust binaries auditable.
+[cargo-auditable][c~cargo-auditable~repo]↗{{hi:cargo-auditable}} makes production Rust binaries auditable.
 
 It audits binaries for known bugs or security vulnerabilities in production, at scale, with zero bookkeeping.
 
@@ -36,7 +36,7 @@ This works by embedding data about the dependency tree in [JSON][p~json] format 
 
 [![cargo-license][c~cargo-license~docs~badge]][c~cargo-license~docs]{{hi:cargo-license}}
 [![cargo-license~crates.io][c~cargo-license~crates.io~badge]][c~cargo-license~crates.io]
-[![cargo-license~github][c~cargo-license~github~badge]][c~cargo-license~github]
+[![cargo-license~repo][c~cargo-license~repo~badge]][c~cargo-license~repo]
 [![cargo-license~lib.rs][c~cargo-license~lib.rs~badge]][c~cargo-license~lib.rs]
 [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
@@ -48,7 +48,7 @@ You can install [`cargo-license`][c~cargo-license~docs]↗{{hi:cargo-license}} w
 
 [![cargo-deny][c~cargo-deny~docs~badge]][c~cargo-deny~docs]{{hi:cargo-deny}}
 [![cargo-deny~crates.io][c~cargo-deny~crates.io~badge]][c~cargo-deny~crates.io]
-[![cargo-deny~github][c~cargo-deny~github~badge]][c~cargo-deny~github]
+[![cargo-deny~repo][c~cargo-deny~repo~badge]][c~cargo-deny~repo]
 [![cargo-deny~lib.rs][c~cargo-deny~lib.rs~badge]][c~cargo-deny~lib.rs]
 [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 

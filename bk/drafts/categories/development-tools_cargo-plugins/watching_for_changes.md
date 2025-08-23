@@ -13,7 +13,7 @@ It's worth noting that some [IDEs][p~ides] also have built-in [file watching][p~
 
 [![cargo-watch][c~cargo-watch~docs~badge]][c~cargo-watch~docs]{{hi:cargo-watch}}
 [![cargo-watch~crates.io][c~cargo-watch~crates.io~badge]][c~cargo-watch~crates.io]
-[![cargo-watch~github][c~cargo-watch~github~badge]][c~cargo-watch~github]
+[![cargo-watch~repo][c~cargo-watch~repo~badge]][c~cargo-watch~repo]
 [![cargo-watch~lib.rs][c~cargo-watch~lib.rs~badge]][c~cargo-watch~lib.rs]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
@@ -35,7 +35,7 @@ cargo watch -x check -x test -x run
 
 [![cargo-limit][c~cargo-limit~docs~badge]][c~cargo-limit~docs]{{hi:cargo-limit}}
 [![cargo-limit~crates.io][c~cargo-limit~crates.io~badge]][c~cargo-limit~crates.io]
-[![cargo-limit~github][c~cargo-limit~github~badge]][c~cargo-limit~github]
+[![cargo-limit~repo][c~cargo-limit~repo~badge]][c~cargo-limit~repo]
 [![cargo-limit~lib.rs][c~cargo-limit~lib.rs~badge]][c~cargo-limit~lib.rs]
 
 [cargo-limit][c~cargo-limit~crates.io]↗ is [Cargo][p~cargo] with less noise: warnings are skipped until errors are fixed, Neovim integration, etc.

@@ -6,7 +6,7 @@
 
 [![await-tree][c~await-tree~docs~badge]][c~await-tree~docs]{{hi:Await tree}}
 [![await-tree~crates.io][c~await-tree~crates.io~badge]][c~await-tree~crates.io]
-[![await-tree~github][c~await-tree~github~badge]][c~await-tree~github]
+[![await-tree~repo][c~await-tree~repo~badge]][c~await-tree~repo]
 [![await-tree~lib.rs][c~await-tree~lib.rs~badge]][c~await-tree~lib.rs]
 [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 

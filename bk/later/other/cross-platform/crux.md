@@ -4,7 +4,7 @@
 
 ## Develop Across Platforms with `crux` {#develop-across-platforms}
 
-[![crux_core][c~crux_core~docs~badge]][c~crux_core~docs]{{hi:crux}} [![crux_core~github][c~crux_core~github~badge]][c~crux_core~github]{{hi:Cross-platform development}}
+[![crux_core][c~crux_core~docs~badge]][c~crux_core~docs]{{hi:crux}} [![crux_core~repo][c~crux_core~repo~badge]][c~crux_core~repo]{{hi:Cross-platform development}}
 
 [`crux`][c~crux_core~docs]↗{{hi:crux_core}} is a framework for cross-platform{{hi:Cross-platform}} applications that can target both mobile native (iOS/Android) and web platforms using a single codebase, building the majority of the application code once, in Rust.
 

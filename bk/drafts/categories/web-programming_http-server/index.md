@@ -95,16 +95,16 @@ Middleware is a powerful way to add functionality to your web server.
 - [Cot][cot.rs~website]↗.
 - [Salvo][salvo~website]↗.
 - [Gerust][gerust~website]↗: Rust backend project generator.
-- [Rust Web Framework Comparison][rust-web-framework-comparison~github]↗.
+- [Rust Web Framework Comparison][rust-web-framework-comparison~repo]↗.
 - [Asynchronous Programming in Rust][book~asynchronous-programming-in-rust]↗.
 - [Tokio][c~tokio~website]↗.
 - [Tokio Examples][c~tokio~examples~docs]↗.
 - [Axum Examples][c~axum~examples]↗.
-- [Source Code for 'Practical Rust Web Projects' by Shing Lyu][practical-rust-web-projects~github]↗.
+- [Source Code for 'Practical Rust Web Projects' by Shing Lyu][practical-rust-web-projects~repo]↗.
 - [Auth Web Microservice with rust using Actix-Web 4.0 - Complete Tutorial][blog~auth-microservice-rust-actix-web1.0-diesel-complete-tutorial]↗.
-- [Realworld rust-axum-sqlx][realworld~rust-axum-sqlx~github]↗.
-- [Realworld rust-axum-sqlx][realworld~rust-axum-sqlx~github]↗.
-- [Realworld actix-fullstack][realworld~actix-fullstack~github]↗.
-- [RealWorld with Rust + ActixWeb + Diesel on Clean Architecture][realworld~v1-rust-actix-web-diesel~github]↗.
+- [Realworld rust-axum-sqlx][realworld~rust-axum-sqlx~repo]↗.
+- [Realworld rust-axum-sqlx][realworld~rust-axum-sqlx~repo]↗.
+- [Realworld actix-fullstack][realworld~actix-fullstack~repo]↗.
+- [RealWorld with Rust + ActixWeb + Diesel on Clean Architecture][realworld~v1-rust-actix-web-diesel~repo]↗.
 
 </div>

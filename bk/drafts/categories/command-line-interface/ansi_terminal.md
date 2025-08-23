@@ -40,7 +40,7 @@ For anything more complex than plain foreground color changes, the code needs to
 
 [![crossterm][c~crossterm~docs~badge]][c~crossterm~docs]{{hi:crossterm}}
 [![crossterm~crates.io][c~crossterm~crates.io~badge]][c~crossterm~crates.io]
-[![crossterm~github][c~crossterm~github~badge]][c~crossterm~github]
+[![crossterm~repo][c~crossterm~repo~badge]][c~crossterm~repo]
 [![crossterm~lib.rs][c~crossterm~lib.rs~badge]][c~crossterm~lib.rs]
 
 [`crossterm`][c~crossterm~docs]↗ is a pure-Rust, low-level terminal rendering and event handling library used to write cross-platform text-based interfaces.
@@ -59,61 +59,61 @@ It supports all [UNIX][p~unix] and [Windows][p~windows] terminals down to [Windo
 
 ## `termcolor` {#termcolor}
 
-[![termcolor][c~termcolor~docs~badge]][c~termcolor~docs] [![termcolor~crates.io][c~termcolor~crates.io~badge]][c~termcolor~crates.io] [![termcolor~github][c~termcolor~github~badge]][c~termcolor~github] [![termcolor~lib.rs][c~termcolor~lib.rs~badge]][c~termcolor~lib.rs]{{hi:termcolor}}{{hi:Color}}{{hi:Win}}{{hi:Windows}}{{hi:Ansi}}{{hi:Console}}
+[![termcolor][c~termcolor~docs~badge]][c~termcolor~docs] [![termcolor~crates.io][c~termcolor~crates.io~badge]][c~termcolor~crates.io] [![termcolor~repo][c~termcolor~repo~badge]][c~termcolor~repo] [![termcolor~lib.rs][c~termcolor~lib.rs~badge]][c~termcolor~lib.rs]{{hi:termcolor}}{{hi:Color}}{{hi:Win}}{{hi:Windows}}{{hi:Ansi}}{{hi:Console}}
 
 [`termcolor`][c~termcolor~docs]↗ is a simple cross platform library for writing colored text to a terminal. It offers a straightforward way to add colored output to your terminal applications in Rust, working consistently across different operating systems. It supports various color choices, text styling, and provides options for controlling where the colored output is directed, such as standard output or standard error.
 
 ## `anstyle` {#anstyle}
 
-[![anstyle~website][c~anstyle~website~badge]][c~anstyle~website] [![anstyle][c~anstyle~docs~badge]][c~anstyle~docs] [![anstyle~crates.io][c~anstyle~crates.io~badge]][c~anstyle~crates.io] [![anstyle~github][c~anstyle~github~badge]][c~anstyle~github] [![anstyle~lib.rs][c~anstyle~lib.rs~badge]][c~anstyle~lib.rs]{{hi:anstyle}}{{hi:Ansi}}{{hi:Color}}{{hi:No_std}}{{hi:Terminal}} [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
+[![anstyle~website][c~anstyle~website~badge]][c~anstyle~website] [![anstyle][c~anstyle~docs~badge]][c~anstyle~docs] [![anstyle~crates.io][c~anstyle~crates.io~badge]][c~anstyle~crates.io] [![anstyle~repo][c~anstyle~repo~badge]][c~anstyle~repo] [![anstyle~lib.rs][c~anstyle~lib.rs~badge]][c~anstyle~lib.rs]{{hi:anstyle}}{{hi:Ansi}}{{hi:Color}}{{hi:No_std}}{{hi:Terminal}} [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
 
 [`anstyle`][c~anstyle~docs]↗ provides composable and spec-compliant ANSI escape code manipulation for styling terminal output.
 
 ## `anstream` {#anstream}
 
-[![anstream~website][c~anstream~website~badge]][c~anstream~website] [![anstream][c~anstream~docs~badge]][c~anstream~docs] [![anstream~crates.io][c~anstream~crates.io~badge]][c~anstream~crates.io] [![anstream~github][c~anstream~github~badge]][c~anstream~github] [![anstream~lib.rs][c~anstream~lib.rs~badge]][c~anstream~lib.rs]{{hi:anstream}}{{hi:Ansi}}{{hi:Color}}{{hi:Strip}}{{hi:Terminal}}{{hi:Wincon}} [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
+[![anstream~website][c~anstream~website~badge]][c~anstream~website] [![anstream][c~anstream~docs~badge]][c~anstream~docs] [![anstream~crates.io][c~anstream~crates.io~badge]][c~anstream~crates.io] [![anstream~repo][c~anstream~repo~badge]][c~anstream~repo] [![anstream~lib.rs][c~anstream~lib.rs~badge]][c~anstream~lib.rs]{{hi:anstream}}{{hi:Ansi}}{{hi:Color}}{{hi:Strip}}{{hi:Terminal}}{{hi:Wincon}} [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
 
 [`anstream`][c~anstream~docs]↗ is a cross-platform library for writing colored text to a terminal. It offers a streaming API for composing and writing styled ANSI output to terminals. It facilitates efficient construction of complex styled strings via chaining, minimizing allocations and optimizing write operations. [`anstream`][c~anstream~docs]↗{{hi:anstream}} supports configurable output destinations (stdout, stderr, or custom writers) and guarantees correct ANSI escape code handling for cross-platform compatibility.
 
 ## `nu-ansi-term` {#nu-ansi-term}
 
-[![nu-ansi-term][c~nu-ansi-term~docs~badge]][c~nu-ansi-term~docs] [![nu-ansi-term~crates.io][c~nu-ansi-term~crates.io~badge]][c~nu-ansi-term~crates.io] [![nu-ansi-term~github][c~nu-ansi-term~github~badge]][c~nu-ansi-term~github] [![nu-ansi-term~lib.rs][c~nu-ansi-term~lib.rs~badge]][c~nu-ansi-term~lib.rs]{{hi:nu-ansi-term}}
+[![nu-ansi-term][c~nu-ansi-term~docs~badge]][c~nu-ansi-term~docs] [![nu-ansi-term~crates.io][c~nu-ansi-term~crates.io~badge]][c~nu-ansi-term~crates.io] [![nu-ansi-term~repo][c~nu-ansi-term~repo~badge]][c~nu-ansi-term~repo] [![nu-ansi-term~lib.rs][c~nu-ansi-term~lib.rs~badge]][c~nu-ansi-term~lib.rs]{{hi:nu-ansi-term}}
 
 [`nu-ansi-term`][c~nu-ansi-term~docs]↗ is a library for ANSI terminal colors and styles (e.g. bold, underline). [`nu-ansi-term`][c~nu-ansi-term~docs]↗{{hi:nu-ansi-term}} provides ANSI terminal coloring and styling capabilities, particularly focused on supporting the styling needs of the [`NuShell`][nushell~website]↗{{hi:NuShell}} project. When used independently, it offers a convenient and familiar API for those already working within the Nu ecosystem, enabling styled terminal output with support for common formatting options.
 
 ## `ansiterm` {#ansiterm}
 
-[![ansiterm][c~ansiterm~docs~badge]][c~ansiterm~docs] [![ansiterm~crates.io][c~ansiterm~crates.io~badge]][c~ansiterm~crates.io] [![ansiterm~github][c~ansiterm~github~badge]][c~ansiterm~github] [![ansiterm~lib.rs][c~ansiterm~lib.rs~badge]][c~ansiterm~lib.rs]{{hi:ansiterm}}
+[![ansiterm][c~ansiterm~docs~badge]][c~ansiterm~docs] [![ansiterm~crates.io][c~ansiterm~crates.io~badge]][c~ansiterm~crates.io] [![ansiterm~repo][c~ansiterm~repo~badge]][c~ansiterm~repo] [![ansiterm~lib.rs][c~ansiterm~lib.rs~badge]][c~ansiterm~lib.rs]{{hi:ansiterm}}
 
 [`ansiterm`][c~ansiterm~docs]↗ is a library for ANSI terminal colors and styles (bold, underline). It provides ANSI escape code manipulation for terminal styling, offering a more direct and lower-level approach compared to some higher-level crates.
 
 ## `console` {#console}
 
-[![console][c~console~docs~badge]][c~console~docs] [![console~crates.io][c~console~crates.io~badge]][c~console~crates.io] [![console~github][c~console~github~badge]][c~console~github] [![console~lib.rs][c~console~lib.rs~badge]][c~console~lib.rs]{{hi:console}}{{hi:Ansi}}{{hi:Colors}}{{hi:console}}{{hi:Terminal}}{{hi:Cli}}
+[![console][c~console~docs~badge]][c~console~docs] [![console~crates.io][c~console~crates.io~badge]][c~console~crates.io] [![console~repo][c~console~repo~badge]][c~console~repo] [![console~lib.rs][c~console~lib.rs~badge]][c~console~lib.rs]{{hi:console}}{{hi:Ansi}}{{hi:Colors}}{{hi:console}}{{hi:Terminal}}{{hi:Cli}}
 
 [`console`][c~console~docs]↗ is a terminal and console abstraction for Rust. The [`console`][c~console~docs]↗{{hi:console}} crate provides a comprehensive set of tools for building interactive console applications. It offers features such as styled text output with ANSI escape code support, progress bar rendering, user input handling (including password prompting and line editing), and terminal manipulation. console aims to simplify the development of rich command-line interfaces by abstracting away platform-specific terminal complexities and providing a consistent API for common console interactions.
 
 ## `owo-colors` {#owo-colors}
 
-[![owo-colors][c~owo-colors~docs~badge]][c~owo-colors~docs] [![owo-colors~crates.io][c~owo-colors~crates.io~badge]][c~owo-colors~crates.io] [![owo-colors~github][c~owo-colors~github~badge]][c~owo-colors~github] [![owo-colors~lib.rs][c~owo-colors~lib.rs~badge]][c~owo-colors~lib.rs]{{hi:owo-colors}}{{hi:Ansi_term}}{{hi:Cli}}{{hi:Color}}{{hi:No-std}}{{hi:Terminal}}[![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
+[![owo-colors][c~owo-colors~docs~badge]][c~owo-colors~docs] [![owo-colors~crates.io][c~owo-colors~crates.io~badge]][c~owo-colors~crates.io] [![owo-colors~repo][c~owo-colors~repo~badge]][c~owo-colors~repo] [![owo-colors~lib.rs][c~owo-colors~lib.rs~badge]][c~owo-colors~lib.rs]{{hi:owo-colors}}{{hi:Ansi_term}}{{hi:Cli}}{{hi:Color}}{{hi:No-std}}{{hi:Terminal}}[![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
 
 [`owo-colors`][c~owo-colors~docs]↗ is a zero-allocation terminal colors that will make people go 'owo'. It provides a simple and fast way to add color to terminal output. It leverages ANSI escape codes for styling and focuses on a concise API for common use cases, prioritizing speed and ease of use over more complex styling features. It's designed to be lightweight and efficient, minimizing overhead for applications where basic terminal coloring is sufficient.
 
 ## `stylish` {#stylish}
 
-[![stylish][c~stylish~docs~badge]][c~stylish~docs] [![stylish~crates.io][c~stylish~crates.io~badge]][c~stylish~crates.io] [![stylish~github][c~stylish~github~badge]][c~stylish~github] [![stylish~lib.rs][c~stylish~lib.rs~badge]][c~stylish~lib.rs]{{hi:stylish}}
+[![stylish][c~stylish~docs~badge]][c~stylish~docs] [![stylish~crates.io][c~stylish~crates.io~badge]][c~stylish~crates.io] [![stylish~repo][c~stylish~repo~badge]][c~stylish~repo] [![stylish~lib.rs][c~stylish~lib.rs~badge]][c~stylish~lib.rs]{{hi:stylish}}
 
 [`stylish`][c~stylish~docs]↗ is another crate implementing colorized text.
 
 ## `yansi` {#yansi}
 
-[![yansi][c~yansi~docs~badge]][c~yansi~docs] [![yansi~crates.io][c~yansi~crates.io~badge]][c~yansi~crates.io] [![yansi~github][c~yansi~github~badge]][c~yansi~github] [![yansi~lib.rs][c~yansi~lib.rs~badge]][c~yansi~lib.rs]{{hi:yansi}}{{hi:Paint}}{{hi:Format}}{{hi:Color}}{{hi:Ansi}}{{hi:Terminal}} [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
+[![yansi][c~yansi~docs~badge]][c~yansi~docs] [![yansi~crates.io][c~yansi~crates.io~badge]][c~yansi~crates.io] [![yansi~repo][c~yansi~repo~badge]][c~yansi~repo] [![yansi~lib.rs][c~yansi~lib.rs~badge]][c~yansi~lib.rs]{{hi:yansi}}{{hi:Paint}}{{hi:Format}}{{hi:Color}}{{hi:Ansi}}{{hi:Terminal}} [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
 
 [`yansi`][c~yansi~docs]↗ is a simple ANSI terminal color painting library. It provides an ergonomic and composable API for styling terminal output with ANSI escape codes. It emphasizes ease of use through its builder-like interface, allowing developers to chain styling methods and construct complex formatted strings.
 
 ## `termion` {#termion}
 
-[![termion][c~termion~docs~badge]][c~termion~docs] [![termion~crates.io][c~termion~crates.io~badge]][c~termion~crates.io] [![termion~github][c~termion~github~badge]][c~termion~github] [![termion~lib.rs][c~termion~lib.rs~badge]][c~termion~lib.rs]{{hi:termion}}{{hi:Color}}{{hi:Password}}{{hi:Terminal}}{{hi:Tty}}{{hi:Tui}}
+[![termion][c~termion~docs~badge]][c~termion~docs] [![termion~crates.io][c~termion~crates.io~badge]][c~termion~crates.io] [![termion~repo][c~termion~repo~badge]][c~termion~repo] [![termion~lib.rs][c~termion~lib.rs~badge]][c~termion~lib.rs]{{hi:termion}}{{hi:Color}}{{hi:Password}}{{hi:Terminal}}{{hi:Tty}}{{hi:Tui}}
 
 [`termion`][c~termion~docs]↗ is a pure Rust, bindless library for low-level handling, manipulating and reading information about terminals. This provides a full-featured alternative to Termbox.
 
@@ -123,7 +123,7 @@ Termion is a pure Rust library that provides a [cross-platform][p~cross-platform
 
 ## `colored` {#colored}
 
-[![colored][c~colored~docs~badge]][c~colored~docs] [![colored~crates.io][c~colored~crates.io~badge]][c~colored~crates.io] [![colored~github][c~colored~github~badge]][c~colored~github] [![colored~lib.rs][c~colored~lib.rs~badge]][c~colored~lib.rs]{{hi:colored}}{{hi:Color}}{{hi:String}}{{hi:Term}}{{hi:Ansi_term}}{{hi:Term-painter}}
+[![colored][c~colored~docs~badge]][c~colored~docs] [![colored~crates.io][c~colored~crates.io~badge]][c~colored~crates.io] [![colored~repo][c~colored~repo~badge]][c~colored~repo] [![colored~lib.rs][c~colored~lib.rs~badge]][c~colored~lib.rs]{{hi:colored}}{{hi:Color}}{{hi:String}}{{hi:Term}}{{hi:Ansi_term}}{{hi:Term-painter}}
 
 The most simple way to add colors in your terminal.
 

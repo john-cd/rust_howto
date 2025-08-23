@@ -169,7 +169,7 @@ To handle a [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} 
 
 ## Avoid Discarding Errors During Error Conversions {#avoid-discarding-errors-during-error-conversions}
 
-[![reqwest][c~reqwest~docs~badge]][c~reqwest~docs] [![reqwest~crates.io][c~reqwest~crates.io~badge]][c~reqwest~crates.io] [![reqwest~github][c~reqwest~github~badge]][c~reqwest~github] [![reqwest~lib.rs][c~reqwest~lib.rs~badge]][c~reqwest~lib.rs]{{hi:reqwest}}{{hi:Client}}{{hi:Http}}{{hi:Request}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}} [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client]{{hi:HTTP client}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
+[![reqwest][c~reqwest~docs~badge]][c~reqwest~docs] [![reqwest~crates.io][c~reqwest~crates.io~badge]][c~reqwest~crates.io] [![reqwest~repo][c~reqwest~repo~badge]][c~reqwest~repo] [![reqwest~lib.rs][c~reqwest~lib.rs~badge]][c~reqwest~lib.rs]{{hi:reqwest}}{{hi:Client}}{{hi:Http}}{{hi:Request}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}} [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client]{{hi:HTTP client}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
 Uses [`reqwest::blocking`][c~reqwest::blocking~docs]↗ to query a random integer generator web service. Converts the string response into an integer.
 
@@ -213,6 +213,6 @@ credit the [Recoverable Errors with Result chapter (Rust book)][book~rust~ch09-0
 
 [`std::io::Error`][c~std::io::Error~docs]↗{{hi:std::io::Error}} defined type implementing the [`std::error::Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} trait.
 
-- [`human-panic`][c~human-panic~github]↗: Panic messages for humans.
+- [`human-panic`][c~human-panic~repo]↗: Panic messages for humans.
 
 </div>

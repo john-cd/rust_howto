@@ -47,7 +47,7 @@ To add a "run" button on your documentation (allowing its execution in the rust 
 
 ## Add Documentation to Function Arguments in Rust {#roxygen}
 
-[![roxygen][c~roxygen~docs~badge]][c~roxygen~docs] [![roxygen~crates.io][c~roxygen~crates.io~badge]][c~roxygen~crates.io] [![roxygen~github][c~roxygen~github~badge]][c~roxygen~github] [![roxygen~lib.rs][c~roxygen~lib.rs~badge]][c~roxygen~lib.rs]{{hi:roxygen}}{{hi:Arguments}}{{hi:Document}}{{hi:Doxygen}}{{hi:Function}}{{hi:Parameters}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
+[![roxygen][c~roxygen~docs~badge]][c~roxygen~docs] [![roxygen~crates.io][c~roxygen~crates.io~badge]][c~roxygen~crates.io] [![roxygen~repo][c~roxygen~repo~badge]][c~roxygen~repo] [![roxygen~lib.rs][c~roxygen~lib.rs~badge]][c~roxygen~lib.rs]{{hi:roxygen}}{{hi:Arguments}}{{hi:Document}}{{hi:Doxygen}}{{hi:Function}}{{hi:Parameters}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
 [`roxygen`][c~roxygen~docs]↗{{hi:roxygen}} helps seamlessly document function parameters with [`rustdoc`][book~rustdoc]↗{{hi:rustdoc}}.
 
@@ -63,6 +63,6 @@ To add a "run" button on your documentation (allowing its execution in the rust 
 [documentation: add; review](https://github.com/john-cd/rust_howto/issues/297)
 Mermaid.js for documentation: `aquamarine`
 
-- [roxygen][c~roxygen~github]↗: Add documentation to function arguments in Rust.
+- [roxygen][c~roxygen~repo]↗: Add documentation to function arguments in Rust.
 
 </div>

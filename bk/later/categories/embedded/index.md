@@ -66,7 +66,7 @@ Microcontrollers respond to events via interrupts.
 ## References
 
 - [Embedded devices working group][rust-lang~embedded-devices-working-group]↗.
-- [Rust Raspberry Pi OS tutorials][rust-raspberrypi-OS-tutorials~github]↗.
+- [Rust Raspberry Pi OS tutorials][rust-raspberrypi-OS-tutorials~repo]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
@@ -74,19 +74,19 @@ Microcontrollers respond to events via interrupts.
 <div class="hidden">
 [write; cover](https://github.com/john-cd/rust_howto/issues/346)
 
-- [awesome-embedded-rust][awesome-embedded-rust~github]↗: Curated list of resources for Embedded and Low-level development in the Rust programming language,
+- [awesome-embedded-rust][awesome-embedded-rust~repo]↗: Curated list of resources for Embedded and Low-level development in the Rust programming language,
 - [Are We RTOS Yet?][arewertosyet~website]↗.
 
 ## Libs {#skip}
 
-- [embassy][embassy~github]↗: Modern embedded framework, using Rust and async.
-- [rust-iot-platform][rust-iot-platform~github]↗: A high-performance IoT development platform built with Rust, designed for multi-protocol support and real-time data processing. This platform supports MQTT, WebSockets (WS), TCP, and CoAP protocols, making it highly flexible for diverse IoT applications.
-- [stm32-rs][stm32-rs~github]↗: Embedded Rust device crates for STM32 microcontrollers.
-- [rtic][c~rtic~github]↗: Real-Time Interrupt-driven Concurrency (RTIC) framework for ARM Cortex-M microcontrollers.
+- [embassy][embassy~repo]↗: Modern embedded framework, using Rust and async.
+- [rust-iot-platform][rust-iot-platform~repo]↗: A high-performance IoT development platform built with Rust, designed for multi-protocol support and real-time data processing. This platform supports MQTT, WebSockets (WS), TCP, and CoAP protocols, making it highly flexible for diverse IoT applications.
+- [stm32-rs][stm32-rs~repo]↗: Embedded Rust device crates for STM32 microcontrollers.
+- [rtic][c~rtic~repo]↗: Real-Time Interrupt-driven Concurrency (RTIC) framework for ARM Cortex-M microcontrollers.
 
 ## Panic Handling {#skip}
 
-- [better-panic][better-panic~github]↗: A Python-inspired `panic` handler for rust.
+- [better-panic][better-panic~repo]↗: A Python-inspired `panic` handler for rust.
 - [No-Panic Rust][blog~no-panic]↗: A Nice Technique for Systems Programming.
 - [no-panics-whatsoever (crates.io)][c~no-panics-whatsoever~crates.io]↗.
 

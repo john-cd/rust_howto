@@ -6,7 +6,7 @@
 
 [![inquire][c~inquire~docs~badge]][c~inquire~docs]{{hi:inquire}}
 [![inquire~crates.io][c~inquire~crates.io~badge]][c~inquire~crates.io]
-[![inquire~github][c~inquire~github~badge]][c~inquire~github]
+[![inquire~repo][c~inquire~repo~badge]][c~inquire~repo]
 [![inquire~lib.rs][c~inquire~lib.rs~badge]][c~inquire~lib.rs]
 [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
 [![cat~value-formatting][cat~value-formatting~badge]][cat~value-formatting]{{hi:Value formatting}}
@@ -23,7 +23,7 @@ It offers a range of built-in prompts for various data types, including text inp
 
 [![indicatif][c~indicatif~docs~badge]][c~indicatif~docs]{{hi:indicatif}}
 [![indicatif~crates.io][c~indicatif~crates.io~badge]][c~indicatif~crates.io]
-[![indicatif~github][c~indicatif~github~badge]][c~indicatif~github]
+[![indicatif~repo][c~indicatif~repo~badge]][c~indicatif~repo]
 [![indicatif~lib.rs][c~indicatif~lib.rs~badge]][c~indicatif~lib.rs]
 [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
 

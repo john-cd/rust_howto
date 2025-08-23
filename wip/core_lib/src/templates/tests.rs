@@ -36,7 +36,7 @@
 //     #[test]
 //     fn test_replace_github() {
 //         let text = "{{!github clap regex}}";
-//         let expected = "[![clap][c~clap~github~badge]][c~clap~github]{{hi:clap}}[![regex][c~regex~github~badge]][c~regex~github]{{hi:regex}}";
+//         let expected = "[![clap][c~clap~repo~badge]][c~clap~repo]{{hi:clap}}[![regex][c~regex~repo~badge]][c~regex~repo]{{hi:regex}}";
 //         assert_eq!(process_crate_badge_directives(text), expected);
 //     }
 
@@ -71,7 +71,7 @@
 //     #[test]
 //     fn test_replace_multiple_types() {
 //         let text = "{{!docs : regex}} {{!github: walkdir}}";
-//         let expected = "[![regex][c~regex~docs~badge]][c~regex~docs]{{hi:regex}} [![walkdir][c~walkdir~github~badge]][c~walkdir~github]{{hi:walkdir}}";
+//         let expected = "[![regex][c~regex~docs~badge]][c~regex~docs]{{hi:regex}} [![walkdir][c~walkdir~repo~badge]][c~walkdir~repo]{{hi:walkdir}}";
 //         assert_eq!(process_crate_badge_directives(text), expected);
 //     }
 
@@ -111,7 +111,7 @@
 //     #[test]
 //     fn test_replace_single_github() {
 //         let text = "{{!github clap}}";
-//         let expected = "[![clap][c~clap~github~badge]][c~clap~github]{{hi:clap}}";
+//         let expected = "[![clap][c~clap~repo~badge]][c~clap~repo]{{hi:clap}}";
 //         assert_eq!(process_crate_badge_directives(text), expected);
 //     }
 //     #[test]

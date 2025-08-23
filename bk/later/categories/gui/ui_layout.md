@@ -4,7 +4,7 @@
 
 ## `taffy` {#taffy}
 
-[![taffy][c~taffy~docs~badge]][c~taffy~docs] [![taffy~crates.io][c~taffy~crates.io~badge]][c~taffy~crates.io] [![taffy~github][c~taffy~github~badge]][c~taffy~github] [![taffy~lib.rs][c~taffy~lib.rs~badge]][c~taffy~lib.rs]{{hi:taffy}}{{hi:Cross-platform}}{{hi:Css-grid}}{{hi:Flexbox}}{{hi:Grid}}{{hi:Layout}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
+[![taffy][c~taffy~docs~badge]][c~taffy~docs] [![taffy~crates.io][c~taffy~crates.io~badge]][c~taffy~crates.io] [![taffy~repo][c~taffy~repo~badge]][c~taffy~repo] [![taffy~lib.rs][c~taffy~lib.rs~badge]][c~taffy~lib.rs]{{hi:taffy}}{{hi:Cross-platform}}{{hi:Css-grid}}{{hi:Flexbox}}{{hi:Grid}}{{hi:Layout}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
 
 [`taffy`][c~taffy~docs]↗{{hi:taffy}} is a flexible UI layout library. "Supports Flexbox and CSS Grid algorithms."
 
@@ -14,7 +14,7 @@
 
 ## `morphorm` {#morphorm}
 
-[![morphorm][c~morphorm~docs~badge]][c~morphorm~docs] [![morphorm~crates.io][c~morphorm~crates.io~badge]][c~morphorm~crates.io] [![morphorm~github][c~morphorm~github~badge]][c~morphorm~github] [![morphorm~lib.rs][c~morphorm~lib.rs~badge]][c~morphorm~lib.rs]{{hi:morphorm}}{{hi:Flex}}{{hi:Gui}}{{hi:Layout}}{{hi:Ui}}
+[![morphorm][c~morphorm~docs~badge]][c~morphorm~docs] [![morphorm~crates.io][c~morphorm~crates.io~badge]][c~morphorm~crates.io] [![morphorm~repo][c~morphorm~repo~badge]][c~morphorm~repo] [![morphorm~lib.rs][c~morphorm~lib.rs~badge]][c~morphorm~lib.rs]{{hi:morphorm}}{{hi:Flex}}{{hi:Gui}}{{hi:Layout}}{{hi:Ui}}
 
 [`morphorm`][c~morphorm~docs]↗{{hi:morphorm}} "implements its own layout algorithm based on Subform layout."
 

@@ -6,7 +6,7 @@
 
 [![mongodb][c~mongodb~docs~badge]][c~mongodb~docs]{{hi:mongodb}}
 [![mongodb~crates.io][c~mongodb~crates.io~badge]][c~mongodb~crates.io]
-[![mongodb~github][c~mongodb~github~badge]][c~mongodb~github]
+[![mongodb~repo][c~mongodb~repo~badge]][c~mongodb~repo]
 [![mongodb~lib.rs][c~mongodb~lib.rs~badge]][c~mongodb~lib.rs]
 [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
@@ -22,7 +22,7 @@ This is the officially supported MongoDB Rust driver, a client side library that
 
 [![redis][c~redis~docs~badge]][c~redis~docs]{{hi:redis}}
 [![redis~crates.io][c~redis~crates.io~badge]][c~redis~crates.io]
-[![redis~github][c~redis~github~badge]][c~redis~github]
+[![redis~repo][c~redis~repo~badge]][c~redis~repo]
 [![redis~lib.rs][c~redis~lib.rs~badge]][c~redis~lib.rs]
 
 Redis-rs is a high level [Redis][redis~website]↗{{hi:redis}} library for Rust. It provides convenient access to all Redis functionality through a very flexible but low-level API. It uses a customizable type conversion trait so that any operation can return results in just the type you are expecting. This makes for a very pleasant development experience.
@@ -33,7 +33,7 @@ Redis-rs is a high level [Redis][redis~website]↗{{hi:redis}} library for Rust.
 
 ## Connect to Cassandra Using `cdrs-tokio` {#cdrs-tokio}
 
-[![cdrs-tokio][c~cdrs-tokio~docs~badge]][c~cdrs-tokio~docs] [![cdrs-tokio~crates.io][c~cdrs-tokio~crates.io~badge]][c~cdrs-tokio~crates.io] [![cdrs-tokio~github][c~cdrs-tokio~github~badge]][c~cdrs-tokio~github] [![cdrs-tokio~lib.rs][c~cdrs-tokio~lib.rs~badge]][c~cdrs-tokio~lib.rs]{{hi:cdrs-tokio}}{{hi:Cassandra}}{{hi:Driver}}{{hi:Client}}{{hi:Async}}{{hi:CassandraDB}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
+[![cdrs-tokio][c~cdrs-tokio~docs~badge]][c~cdrs-tokio~docs] [![cdrs-tokio~crates.io][c~cdrs-tokio~crates.io~badge]][c~cdrs-tokio~crates.io] [![cdrs-tokio~repo][c~cdrs-tokio~repo~badge]][c~cdrs-tokio~repo] [![cdrs-tokio~lib.rs][c~cdrs-tokio~lib.rs~badge]][c~cdrs-tokio~lib.rs]{{hi:cdrs-tokio}}{{hi:Cassandra}}{{hi:Driver}}{{hi:Client}}{{hi:Async}}{{hi:CassandraDB}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
 
 [`cdrs-tokio`][c~cdrs-tokio~docs]↗{{hi:cdrs-tokio}} is an async Cassandra DB (or Scylla DB) driver. It uses the [`tokio`][c~tokio~docs]↗{{hi:tokio}} async runtime.
 
@@ -43,7 +43,7 @@ Redis-rs is a high level [Redis][redis~website]↗{{hi:redis}} library for Rust.
 
 ## Connect to Cassandra Using `cassandra-protocol` {#cassandra-protocol}
 
-[![cassandra-protocol][c~cassandra-protocol~docs~badge]][c~cassandra-protocol~docs] [![cassandra-protocol~crates.io][c~cassandra-protocol~crates.io~badge]][c~cassandra-protocol~crates.io] [![cassandra-protocol~github][c~cassandra-protocol~github~badge]][c~cassandra-protocol~github] [![cassandra-protocol~lib.rs][c~cassandra-protocol~lib.rs~badge]][c~cassandra-protocol~lib.rs]{{hi:cassandra-protocol}}{{hi:Cassandra}}{{hi:Client}}{{hi:CassandraDB}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
+[![cassandra-protocol][c~cassandra-protocol~docs~badge]][c~cassandra-protocol~docs] [![cassandra-protocol~crates.io][c~cassandra-protocol~crates.io~badge]][c~cassandra-protocol~crates.io] [![cassandra-protocol~repo][c~cassandra-protocol~repo~badge]][c~cassandra-protocol~repo] [![cassandra-protocol~lib.rs][c~cassandra-protocol~lib.rs~badge]][c~cassandra-protocol~lib.rs]{{hi:cassandra-protocol}}{{hi:Cassandra}}{{hi:Client}}{{hi:CassandraDB}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
 
 [`cassandra-protocol`][c~cassandra-protocol~docs]↗{{hi:Cassandra}} provides a Cassandra protocol implementation in Rust. Prefer the [`cdrs-tokio`][c~cdrs-tokio~docs]↗{{hi:cdrs-tokio}} crate unless you need a low-level implementation.
 

@@ -50,15 +50,15 @@ Print this message or the help of the given subcommand(s)
 `badge` returns several badges that point to docs.rs, lib.rs, crates.io, etc..., given one or more crate names.
 
 ```txt
-[![rand~website][c~rand~website~badge]][c~rand~website] [![rand][c~rand~docs~badge]][c~rand~docs] [![rand~crates.io][c~rand~crates.io~badge]][c~rand~crates.io] [![rand~github][c~rand~github~badge]][c~rand~github] [![rand~lib.rs][c~rand~lib.rs~badge]][c~rand~lib.rs]{{hi:rand}}{{hi:Random}}{{hi:Rng}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![rand~website][c~rand~website~badge]][c~rand~website] [![rand][c~rand~docs~badge]][c~rand~docs] [![rand~crates.io][c~rand~crates.io~badge]][c~rand~crates.io] [![rand~repo][c~rand~repo~badge]][c~rand~repo] [![rand~lib.rs][c~rand~lib.rs~badge]][c~rand~lib.rs]{{hi:rand}}{{hi:Random}}{{hi:Rng}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
 Random number generators and other randomness functionality.
 
 [c~rand~docs~badge]: https://img.shields.io/crates/v/rand?label=rand
 [c~rand~crates.io~badge]: https://img.shields.io/badge/crates.io-rand-crimson
 [c~rand~crates.io]: https://crates.io/crates/rand
-[c~rand~github~badge]: https://img.shields.io/badge/rand-steelblue?logo=github
-[c~rand~github]: https://github.com/rust-random/rand
+[c~rand~repo~badge]: https://img.shields.io/badge/rand-steelblue?logo=github
+[c~rand~repo]: https://github.com/rust-random/rand
 [c~rand~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rand-yellow
 [c~rand~lib.rs]: https://lib.rs/crates/rand
 [c~rand~docs]: https://docs.rs/rand

@@ -10,10 +10,10 @@
 
 ## Format Your Code {#rustfmt}
 
-[![rustfmt~github][c~rustfmt~github~badge]][c~rustfmt~github]
+[![rustfmt~repo][c~rustfmt~repo~badge]][c~rustfmt~repo]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[`rustfmt`][c~rustfmt~github]↗{{hi:rustfmt}}
+[`rustfmt`][c~rustfmt~repo]↗{{hi:rustfmt}}
 
 ```sh
 # Install `rustfmt` if needed
@@ -29,7 +29,7 @@ cargo fmt -- --check
 
 [![clippy][c~clippy~docs~badge]][c~clippy~docs]{{hi:clippy}}
 [![clippy~crates.io][c~clippy~crates.io~badge]][c~clippy~crates.io]
-[![clippy~github][c~clippy~github~badge]][c~clippy~github]
+[![clippy~repo][c~clippy~repo~badge]][c~clippy~repo]
 [![clippy~lib.rs][c~clippy~lib.rs~badge]][c~clippy~lib.rs]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
@@ -46,7 +46,7 @@ Mute a warning using the [`#[allow(clippy::lint_name)]`][book~clippy~allowingden
 
 [![rustfix][c~rustfix~docs~badge]][c~rustfix~docs]{{hi:rustfix}}
 [![rustfix~crates.io][c~rustfix~crates.io~badge]][c~rustfix~crates.io]
-[![rustfix~github][c~rustfix~github~badge]][c~rustfix~github]
+[![rustfix~repo][c~rustfix~repo~badge]][c~rustfix~repo]
 [![rustfix~lib.rs][c~rustfix~lib.rs~badge]][c~rustfix~lib.rs]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
@@ -60,11 +60,11 @@ cargo fix
 
 [![cargo-husky][c~cargo-husky~docs~badge]][c~cargo-husky~docs]{{hi:cargo-husky}}
 [![cargo-husky~crates.io][c~cargo-husky~crates.io~badge]][c~cargo-husky~crates.io]
-[![cargo-husky~github][c~cargo-husky~github~badge]][c~cargo-husky~github]
+[![cargo-husky~repo][c~cargo-husky~repo~badge]][c~cargo-husky~repo]
 [![cargo-husky~lib.rs][c~cargo-husky~lib.rs~badge]][c~cargo-husky~lib.rs]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 
-[cargo-husky][c~cargo-husky~github]↗{{hi:cargo-husky}} setup Git hooks automatically for [`cargo`][c~cargo~docs]↗{{hi:cargo}} projects with 🐶
+[cargo-husky][c~cargo-husky~repo]↗{{hi:cargo-husky}} setup Git hooks automatically for [`cargo`][c~cargo~docs]↗{{hi:cargo}} projects with 🐶
 
 Git hook scripts are useful for identifying simple issues (failing tests, trailing white spaces, [formatting][p~formatting] of the code, of [JSON][p~json], and YAML files...) before committing code, prior to submission to code review.
 
@@ -89,6 +89,6 @@ See also [`pre-commit`][pre-commit.com~website]↗, which is a Python framework 
 <div class="hidden">
 [code_formatting_linting: expand](https://github.com/john-cd/rust_howto/issues/310)
 
-- [overcommit][overcommit~github]↗: A fully configurable and extendable Git hook manager.
+- [overcommit][overcommit~repo]↗: A fully configurable and extendable Git hook manager.
 
 </div>

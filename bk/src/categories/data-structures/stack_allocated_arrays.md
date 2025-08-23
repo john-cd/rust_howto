@@ -15,7 +15,7 @@ Stack allocation has several important characteristics:
 
 [![arrayvec][c~arrayvec~docs~badge]][c~arrayvec~docs]{{hi:arrayvec}}
 [![arrayvec~crates.io][c~arrayvec~crates.io~badge]][c~arrayvec~crates.io]
-[![arrayvec~github][c~arrayvec~github~badge]][c~arrayvec~github]
+[![arrayvec~repo][c~arrayvec~repo~badge]][c~arrayvec~repo]
 [![arrayvec~lib.rs][c~arrayvec~lib.rs~badge]][c~arrayvec~lib.rs]
 [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
@@ -34,7 +34,7 @@ It offers a simple API but also dereferences to a `slice`, so that the full `sli
 
 [![smallvec][c~smallvec~docs~badge]][c~smallvec~docs]{{hi:smallvec}}
 [![smallvec~crates.io][c~smallvec~crates.io~badge]][c~smallvec~crates.io]
-[![smallvec~github][c~smallvec~github~badge]][c~smallvec~github]
+[![smallvec~repo][c~smallvec~repo~badge]][c~smallvec~repo]
 [![smallvec~lib.rs][c~smallvec~lib.rs~badge]][c~smallvec~lib.rs]
 [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
@@ -49,7 +49,7 @@ Arrays that are stack-allocated will fallback to the heap if the fixed stack cap
 
 [![tinyvec][c~tinyvec~docs~badge]][c~tinyvec~docs]{{hi:tinyvec}}
 [![tinyvec~crates.io][c~tinyvec~crates.io~badge]][c~tinyvec~crates.io]
-[![tinyvec~github][c~tinyvec~github~badge]][c~tinyvec~github]
+[![tinyvec~repo][c~tinyvec~repo~badge]][c~tinyvec~repo]
 [![tinyvec~lib.rs][c~tinyvec~lib.rs~badge]][c~tinyvec~lib.rs]
 [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}

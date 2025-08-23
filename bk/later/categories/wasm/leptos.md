@@ -6,11 +6,11 @@
 
 [![leptos][c~leptos~docs~badge]][c~leptos~docs]{{hi:leptos}}{{hi:HTTP server}}
 [![leptos~crates.io][c~leptos~crates.io~badge]][c~leptos~crates.io]
-[![leptos~github][c~leptos~github~badge]][c~leptos~github]
+[![leptos~repo][c~leptos~repo~badge]][c~leptos~repo]
 [![leptos~lib.rs][c~leptos~lib.rs~badge]][c~leptos~lib.rs]
 [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}
 
-[`leptos`][c~leptos~github]↗{{hi:leptos}} is a full-stack, isomorphic Rust web framework leveraging fine-grained reactivity to build declarative user interfaces.
+[`leptos`][c~leptos~repo]↗{{hi:leptos}} is a full-stack, isomorphic Rust web framework leveraging fine-grained reactivity to build declarative user interfaces.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_server/examples/leptos.rs:example}}

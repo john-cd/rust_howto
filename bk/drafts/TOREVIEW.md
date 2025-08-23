@@ -14,7 +14,7 @@
 
 ## Dataflow Graphs {#skip}
 
-- [`fractalide`][fractalide~github]↗: Reusable Reproducible Composable Software.
+- [`fractalide`][fractalide~repo]↗: Reusable Reproducible Composable Software.
 
 ## Data Structures {#skip}
 
@@ -23,19 +23,19 @@
 
 ---
 
-[![optics][c~optics~docs~badge]][c~optics~docs] [![optics~crates.io][c~optics~crates.io~badge]][c~optics~crates.io] [![optics~github][c~optics~github~badge]][c~optics~github] [![optics~lib.rs][c~optics~lib.rs~badge]][c~optics~lib.rs]{{hi:optics}}{{hi:No_std}}{{hi:Iso}}{{hi:Lens}}{{hi:Prism}}{{hi:optics}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
+[![optics][c~optics~docs~badge]][c~optics~docs] [![optics~crates.io][c~optics~crates.io~badge]][c~optics~crates.io] [![optics~repo][c~optics~repo~badge]][c~optics~repo] [![optics~lib.rs][c~optics~lib.rs~badge]][c~optics~lib.rs]{{hi:optics}}{{hi:No_std}}{{hi:Iso}}{{hi:Lens}}{{hi:Prism}}{{hi:optics}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
 A `no_std`-compatible optics library providing composable lenses, prisms, isomorphisms, and fallible isomorphisms.
 
 ## Distributed Systems {#skip}
 
-[Open-source training courses about distributed database and distributed systems][talent-plan~github]↗.
+[Open-source training courses about distributed database and distributed systems][talent-plan~repo]↗.
 
 ## Enterprise Backend {#skip}
 
 ### Foundations {#skip}
 
-[![foundations][c~foundations~docs~badge]][c~foundations~docs] [![foundations~crates.io][c~foundations~crates.io~badge]][c~foundations~crates.io] [![foundations~github][c~foundations~github~badge]][c~foundations~github] [![foundations~lib.rs][c~foundations~lib.rs~badge]][c~foundations~lib.rs]{{hi:foundations}}{{hi:Settings}}{{hi:Service}}{{hi:Metrics}}{{hi:Telemetry}}{{hi:Seccomp}} [![cat~external-ffi-bindings][cat~external-ffi-bindings~badge]][cat~external-ffi-bindings]{{hi:External FFI bindings}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~config][cat~config~badge]][cat~config]{{hi:Configuration}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
+[![foundations][c~foundations~docs~badge]][c~foundations~docs] [![foundations~crates.io][c~foundations~crates.io~badge]][c~foundations~crates.io] [![foundations~repo][c~foundations~repo~badge]][c~foundations~repo] [![foundations~lib.rs][c~foundations~lib.rs~badge]][c~foundations~lib.rs]{{hi:foundations}}{{hi:Settings}}{{hi:Service}}{{hi:Metrics}}{{hi:Telemetry}}{{hi:Seccomp}} [![cat~external-ffi-bindings][cat~external-ffi-bindings~badge]][cat~external-ffi-bindings]{{hi:External FFI bindings}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~config][cat~config~badge]][cat~config]{{hi:Configuration}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
 
 A Rust service foundations library.
 
@@ -44,7 +44,7 @@ A Rust service foundations library.
 
 ### Graceful Upgrades {#skip}
 
-[![bye][c~bye~docs~badge]][c~bye~docs] [![bye~crates.io][c~bye~crates.io~badge]][c~bye~crates.io] [![bye~github][c~bye~github~badge]][c~bye~github] [![bye~lib.rs][c~bye~lib.rs~badge]][c~bye~lib.rs]{{hi:bye}}
+[![bye][c~bye~docs~badge]][c~bye~docs] [![bye~crates.io][c~bye~crates.io~badge]][c~bye~crates.io] [![bye~repo][c~bye~repo~badge]][c~bye~repo] [![bye~lib.rs][c~bye~lib.rs~badge]][c~bye~lib.rs]{{hi:bye}}
 
 A library for graceful shutdown with no downtime.
 
@@ -53,11 +53,11 @@ If you're doing long-lived services in Rust and want painless, no-downtime upgra
 
 ## Example Code {#skip}
 
-- [`rust-shed`][rust-shed~github]↗: Repository containing Rust crates common between other Facebook open source projects (like Mononoke or Eden).
+- [`rust-shed`][rust-shed~repo]↗: Repository containing Rust crates common between other Facebook open source projects (like Mononoke or Eden).
 
 ## Futures {#skip}
 
-[![want][c~want~docs~badge]][c~want~docs] [![want~crates.io][c~want~crates.io~badge]][c~want~crates.io] [![want~github][c~want~github~badge]][c~want~github] [![want~lib.rs][c~want~lib.rs~badge]][c~want~lib.rs]{{hi:want}}{{hi:Channel}}{{hi:Async}}{{hi:Futures}}
+[![want][c~want~docs~badge]][c~want~docs] [![want~crates.io][c~want~crates.io~badge]][c~want~crates.io] [![want~repo][c~want~repo~badge]][c~want~repo] [![want~lib.rs][c~want~lib.rs~badge]][c~want~lib.rs]{{hi:want}}{{hi:Channel}}{{hi:Async}}{{hi:Futures}}
 
 Detect when another Future wants a result.
 
@@ -68,7 +68,7 @@ Detect when another Future wants a result.
 
 ---
 
-[![samoyed][c~samoyed~docs~badge]][c~samoyed~docs] [![samoyed~crates.io][c~samoyed~crates.io~badge]][c~samoyed~crates.io] [![samoyed~github][c~samoyed~github~badge]][c~samoyed~github] [![samoyed~lib.rs][c~samoyed~lib.rs~badge]][c~samoyed~lib.rs]{{hi:samoyed}}{{hi:Git}}{{hi:Git-hooks}}{{hi:Husky}}{{hi:Git-hooks-manager}}
+[![samoyed][c~samoyed~docs~badge]][c~samoyed~docs] [![samoyed~crates.io][c~samoyed~crates.io~badge]][c~samoyed~crates.io] [![samoyed~repo][c~samoyed~repo~badge]][c~samoyed~repo] [![samoyed~lib.rs][c~samoyed~lib.rs~badge]][c~samoyed~lib.rs]{{hi:samoyed}}{{hi:Git}}{{hi:Git-hooks}}{{hi:Husky}}{{hi:Git-hooks-manager}}
 
 A single-binary Git hooks manager.
 
@@ -87,7 +87,7 @@ review
 
 ## List of Crates Available in the Rust Playground {#skip}
 
-- [rust-lang/rust-playground][rust-playground-cargo.toml~github]↗.
+- [rust-lang/rust-playground][rust-playground-cargo.toml~repo]↗.
 
 ## Reviews / Evolution of Rust {#skip}
 
@@ -99,7 +99,7 @@ review
 
 ## Semver Checks {#skip}
 
-[![cargo-semver-checks][c~cargo-semver-checks~docs~badge]][c~cargo-semver-checks~docs] [![cargo-semver-checks~crates.io][c~cargo-semver-checks~crates.io~badge]][c~cargo-semver-checks~crates.io] [![cargo-semver-checks~github][c~cargo-semver-checks~github~badge]][c~cargo-semver-checks~github] [![cargo-semver-checks~lib.rs][c~cargo-semver-checks~lib.rs~badge]][c~cargo-semver-checks~lib.rs]{{hi:cargo-semver-checks}}{{hi:Cargo}}{{hi:Crate}}{{hi:Linter}}{{hi:Check}}{{hi:Semver}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
+[![cargo-semver-checks][c~cargo-semver-checks~docs~badge]][c~cargo-semver-checks~docs] [![cargo-semver-checks~crates.io][c~cargo-semver-checks~crates.io~badge]][c~cargo-semver-checks~crates.io] [![cargo-semver-checks~repo][c~cargo-semver-checks~repo~badge]][c~cargo-semver-checks~repo] [![cargo-semver-checks~lib.rs][c~cargo-semver-checks~lib.rs~badge]][c~cargo-semver-checks~lib.rs]{{hi:cargo-semver-checks}}{{hi:Cargo}}{{hi:Crate}}{{hi:Linter}}{{hi:Check}}{{hi:Semver}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
 Scan your Rust crate for semver violations.
 
@@ -118,19 +118,19 @@ Scan your Rust crate for semver violations.
 
 ## Web {#skip}
 
-- [`geckodriver`][geckodriver~github]↗: WebDriver for Firefox.
-- [Pake][pake~github]↗: Turn any webpage into a desktop app with Rust.
+- [`geckodriver`][geckodriver~repo]↗: WebDriver for Firefox.
+- [Pake][pake~repo]↗: Turn any webpage into a desktop app with Rust.
 
-cover [Hands-On Microservices with Rust 2018 (GitHub)][book~Hands-On-Microservices-with-Rust~github]↗.
+cover [Hands-On Microservices with Rust 2018 (GitHub)][book~Hands-On-Microservices-with-Rust~repo]↗.
 review in particular https://github.com/PacktPublishing/Hands-On-Microservices-with-Rust/blob/master/Chapter08/chat/src/lib.rs
 
 ## Zed {#skip}
 
-- [zed hanging on startup because of 'unsupportedversion' Issue #14126][zed-issue-14126-comment~github]↗.
-- [zed hanging on startup because of 'unsupportedversion' Issue #14126][zed-issue-14126~github]↗.
+- [zed hanging on startup because of 'unsupportedversion' Issue #14126][zed-issue-14126-comment~repo]↗.
+- [zed hanging on startup because of 'unsupportedversion' Issue #14126][zed-issue-14126~repo]↗.
 
 ## Satire {#skip}
 
-- [hello-world.rs][hello-world.rs~github]↗: Memory safe, blazing fast, configurable, minimal hello world written in Rust, in a few lines of code with few(1092) dependencies.
+- [hello-world.rs][hello-world.rs~repo]↗: Memory safe, blazing fast, configurable, minimal hello world written in Rust, in a few lines of code with few(1092) dependencies.
 
 ## To Sort {#skip}

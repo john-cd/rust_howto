@@ -91,24 +91,24 @@ Working with virtual disk image formats (e.g., qcow2, vmdk) often involves using
 
 cover:
 
-- [rust-vmm community content][rust-vmm~community~github].
+- [rust-vmm community content][rust-vmm~community~repo].
 
-- [vmm-sys-util][rust-vmm~vmm-sys-util~github]: Helpers and utilities used by multiple rust-vmm components and VMMs.
+- [vmm-sys-util][rust-vmm~vmm-sys-util~repo]: Helpers and utilities used by multiple rust-vmm components and VMMs.
 
-- [rust-vmm~kvm~github][rust-vmm~kvm~github]: The kvm workspace hosts libraries related to Rust bindings to the Kernel Virtual Machine (KVM). It currently consists of the following crates:
+- [rust-vmm~kvm~repo][rust-vmm~kvm~repo]: The kvm workspace hosts libraries related to Rust bindings to the Kernel Virtual Machine (KVM). It currently consists of the following crates:
 
 kvm-bindings -> Rust FFI bindings to KVM
 kvm-ioctls -> Safe wrappers over the KVM API
 
 - [`kvm-bindings`][kvm-bindings~crates.io]: Rust FFI bindings to KVM generated using bindgen.
 
-- [`firecracker`][firecracker~github].
+- [`firecracker`][firecracker~repo].
 - [`firecracker-microvm`][firecracker-microvm~website].
 - [`jailer`][jailer~lib.rs].
 
-- [Google `crosvm`][crosvm~github].
+- [Google `crosvm`][crosvm~repo].
 
-- [`hyperlight` (GitHub)][hyperlight~github].
+- [`hyperlight` (GitHub)][hyperlight~repo].
 
 - [QEMU][wikipedia~QEMU].
 

@@ -9,7 +9,7 @@ We will use two key crates:
 
 ## Add Matrices {#adding-matrices}
 
-[![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~github][c~ndarray~github~badge]][c~ndarray~github] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
+[![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~repo][c~ndarray~repo~badge]][c~ndarray~repo] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
 
 Creates two 2-D matrices with [`ndarray::arr2`][c~ndarray::arr2~docs]↗{{hi:ndarray::arr2}} and sums them element-wise.
 
@@ -21,7 +21,7 @@ Note that the sum is computed as `let sum = &a + &b`. The `&` operator is used t
 
 ## Multiply Matrices {#multiplying-matrices}
 
-[![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~github][c~ndarray~github~badge]][c~ndarray~github] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
+[![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~repo][c~ndarray~repo~badge]][c~ndarray~repo] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
 
 Creates two matrices with [`ndarray::arr2`][c~ndarray::arr2~docs]↗{{hi:ndarray::arr2}} and performs matrix multiplication on them with [`ndarray::ArrayBase::dot`][c~ndarray::ArrayBase::dot~docs]↗{{hi:ndarray::ArrayBase::dot}}.
 
@@ -31,7 +31,7 @@ Creates two matrices with [`ndarray::arr2`][c~ndarray::arr2~docs]↗{{hi:ndarray
 
 ## Multiply a Scalar with a Vector and a Matrix {#multiply-a-scalar-with-a-vector-and-a-matrix}
 
-[![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~github][c~ndarray~github~badge]][c~ndarray~github] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
+[![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~repo][c~ndarray~repo~badge]][c~ndarray~repo] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
 
 Creates a 1-D array (vector) with [`ndarray::arr1`][c~ndarray::arr1~docs]↗{{hi:ndarray::arr1}} and a 2-D array (matrix) with [`ndarray::arr2`][c~ndarray::arr2~docs]↗{{hi:ndarray::arr2}}.
 
@@ -45,7 +45,7 @@ In [`ndarray`][c~ndarray~docs]↗, 1-D arrays can be interpreted as either row o
 
 ## Compare Vectors {#vector-comparison}
 
-[![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~github][c~ndarray~github~badge]][c~ndarray~github] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
+[![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~repo][c~ndarray~repo~badge]][c~ndarray~repo] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
 
 The [`ndarray`][c~ndarray~docs]↗ crate supports a number of ways to create arrays -- this recipe create [`ndarray::Array`][c~ndarray::Array~docs]↗{{hi:ndarray::Array}} from [`std::vec::Vec`][c~std::vec::Vec~docs]↗{{hi:std::vec::Vec}} using [`std::convert::From`][c~std::convert::From~docs]↗{{hi:std::convert::From}}. Then, it sums the arrays element-wise.
 
@@ -60,7 +60,7 @@ This recipe also contains additional ownership examples. Here, `let z = a + b` c
 
 ## Calculate Vector Norms {#vector-norm}
 
-[![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~github][c~ndarray~github~badge]][c~ndarray~github] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
+[![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~repo][c~ndarray~repo~badge]][c~ndarray~repo] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
 
 This recipe demonstrates use of the [`ndarray::Array1`][c~ndarray::Array1~docs]↗{{hi:ndarray::Array1}} type, [`ndarray::Array1`][c~ndarray::Array1~docs]↗{{hi:ndarray::Array1}} type,
 [`ndarray::ArrayBase::fold`][c~ndarray::ArrayBase::fold~docs]↗{{hi:ndarray::ArrayBase::fold}} method, and [`ndarray::ArrayBase::dot`][c~ndarray::ArrayBase::dot~docs]↗{{hi:ndarray::ArrayBase::dot}} method in computing the [`l1`][wolfram~l1-norm]↗{{hi:L1 norm}} and [`l2`][wolfram~l2-norm]↗{{hi:L2 norm}} norms of a given vector.
@@ -79,7 +79,7 @@ Note that both [`l1_norm`][wolfram~l1-norm]↗ and [`l2_norm`][wolfram~l2-norm]�
 
 [![nalgebra][c~nalgebra~docs~badge]][c~nalgebra~docs]{{hi:nalgebra}}
 [![nalgebra~crates.io][c~nalgebra~crates.io~badge]][c~nalgebra~crates.io]
-[![nalgebra~github][c~nalgebra~github~badge]][c~nalgebra~github]
+[![nalgebra~repo][c~nalgebra~repo~badge]][c~nalgebra~repo]
 [![nalgebra~lib.rs][c~nalgebra~lib.rs~badge]][c~nalgebra~lib.rs]
 [![cat~mathematics][cat~mathematics~badge]][cat~mathematics]{{hi:Mathematics}}
 [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
@@ -94,7 +94,7 @@ Creates a 3x3 matrix with [`nalgebra::Matrix3`][c~nalgebra::Matrix3~docs]↗{{hi
 
 ## (De)serialize a Matrix {#deserialize-a-matrix}
 
-[![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~github][c~ndarray~github~badge]][c~ndarray~github] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
+[![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~repo][c~ndarray~repo~badge]][c~ndarray~repo] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
 
 Serialize and deserialize a matrix to and from [JSON][p~json]. Serialization is taken care of by [`serde_json::to_string`][c~serde_json::to_string~docs]↗{{hi:serde_json::to_string}} and [`serde_json::to_string`][c~serde_json::to_string~docs]↗{{hi:serde_json::to_string}} performs deserialization.
 

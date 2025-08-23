@@ -6,7 +6,7 @@
 
 [![rustix][c~rustix~docs~badge]][c~rustix~docs]{{hi:rustix}}
 [![rustix~crates.io][c~rustix~crates.io~badge]][c~rustix~crates.io]
-[![rustix~github][c~rustix~github~badge]][c~rustix~github]
+[![rustix~repo][c~rustix~repo~badge]][c~rustix~repo]
 [![rustix~lib.rs][c~rustix~lib.rs~badge]][c~rustix~lib.rs]
 [![cat~date-and-time][cat~date-and-time~badge]][cat~date-and-time]{{hi:Date and time}}
 [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
@@ -23,7 +23,7 @@
 
 [![nix][c~nix~docs~badge]][c~nix~docs]{{hi:nix}}
 [![nix~crates.io][c~nix~crates.io~badge]][c~nix~crates.io]
-[![nix~github][c~nix~github~badge]][c~nix~github]
+[![nix~repo][c~nix~repo~badge]][c~nix~repo]
 [![nix~lib.rs][c~nix~lib.rs~badge]][c~nix~lib.rs]
 [![cat~os::unix-apis][cat~os::unix-apis~badge]][cat~os::unix-apis]{{hi:Unix APIs}}
 

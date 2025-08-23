@@ -48,7 +48,7 @@ The following are the typical steps to release a crate to [`crates.io`][crates.i
 
 [![cargo-release][c~cargo-release~docs~badge]][c~cargo-release~docs]{{hi:cargo-release}}
 [![cargo-release~crates.io][c~cargo-release~crates.io~badge]][c~cargo-release~crates.io]
-[![cargo-release~github][c~cargo-release~github~badge]][c~cargo-release~github]
+[![cargo-release~repo][c~cargo-release~repo~badge]][c~cargo-release~repo]
 [![cargo-release~lib.rs][c~cargo-release~lib.rs~badge]][c~cargo-release~lib.rs]
 [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
@@ -58,7 +58,7 @@ The following are the typical steps to release a crate to [`crates.io`][crates.i
 
 [![release-plz][c~release-plz~docs~badge]][c~release-plz~docs]{{hi:release-plz}}
 [![release-plz~crates.io][c~release-plz~crates.io~badge]][c~release-plz~crates.io]
-[![release-plz~github][c~release-plz~github~badge]][c~release-plz~github]
+[![release-plz~repo][c~release-plz~repo~badge]][c~release-plz~repo]
 [![release-plz~lib.rs][c~release-plz~lib.rs~badge]][c~release-plz~lib.rs]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}}
@@ -67,7 +67,7 @@ The following are the typical steps to release a crate to [`crates.io`][crates.i
 
 ## `cargo-dist` {#cargo-dist}
 
-[![cargo-dist~website][c~cargo-dist~website~badge]][c~cargo-dist~website] [![cargo-dist][c~cargo-dist~docs~badge]][c~cargo-dist~docs] [![cargo-dist~crates.io][c~cargo-dist~crates.io~badge]][c~cargo-dist~crates.io] [![cargo-dist~github][c~cargo-dist~github~badge]][c~cargo-dist~github] [![cargo-dist~lib.rs][c~cargo-dist~lib.rs~badge]][c~cargo-dist~lib.rs]{{hi:cargo-dist}}
+[![cargo-dist~website][c~cargo-dist~website~badge]][c~cargo-dist~website] [![cargo-dist][c~cargo-dist~docs~badge]][c~cargo-dist~docs] [![cargo-dist~crates.io][c~cargo-dist~crates.io~badge]][c~cargo-dist~crates.io] [![cargo-dist~repo][c~cargo-dist~repo~badge]][c~cargo-dist~repo] [![cargo-dist~lib.rs][c~cargo-dist~lib.rs~badge]][c~cargo-dist~lib.rs]{{hi:cargo-dist}}
 
 [`cargo-dist`][c~cargo-dist~docs]↗{{hi:cargo-dist}} packages shippable applications for Rust.
 
@@ -92,7 +92,7 @@ See also [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]].
 
 <div class="hidden">
 [release_automation: write](https://github.com/john-cd/rust_howto/issues/604)
-cover [`cargo-bump`][c~cargo-bump~github]↗{{hi:cargo-bump}} for simple version number increments.
+cover [`cargo-bump`][c~cargo-bump~repo]↗{{hi:cargo-bump}} for simple version number increments.
 Link:
 
 - [`cargo-login`][book~cargo~cargo-login].

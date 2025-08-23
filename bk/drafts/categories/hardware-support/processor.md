@@ -14,7 +14,7 @@
 
 ### Check the Number of Logical cpu Cores {#check-number-of-logical-cpu-cores}
 
-[![num_cpus][c~num_cpus~docs~badge]][c~num_cpus~docs] [![num_cpus~crates.io][c~num_cpus~crates.io~badge]][c~num_cpus~crates.io] [![num_cpus~github][c~num_cpus~github~badge]][c~num_cpus~github] [![num_cpus~lib.rs][c~num_cpus~lib.rs~badge]][c~num_cpus~lib.rs]{{hi:num_cpus}}{{hi:Cpus}}{{hi:Cores}}{{hi:Cpu}} [![cat~hardware-support][cat~hardware-support~badge]][cat~hardware-support]{{hi:Hardware support}}{{hi:Logical cpu cores}}
+[![num_cpus][c~num_cpus~docs~badge]][c~num_cpus~docs] [![num_cpus~crates.io][c~num_cpus~crates.io~badge]][c~num_cpus~crates.io] [![num_cpus~repo][c~num_cpus~repo~badge]][c~num_cpus~repo] [![num_cpus~lib.rs][c~num_cpus~lib.rs~badge]][c~num_cpus~lib.rs]{{hi:num_cpus}}{{hi:Cpus}}{{hi:Cores}}{{hi:Cpu}} [![cat~hardware-support][cat~hardware-support~badge]][cat~hardware-support]{{hi:Hardware support}}{{hi:Logical cpu cores}}
 
 Shows the number of logical CPU cores{{hi:CPU cores}} in the current machine using [`num_cpus::get`][c~num_cpus::get~docs]↗{{hi:num_cpus::get}}.
 

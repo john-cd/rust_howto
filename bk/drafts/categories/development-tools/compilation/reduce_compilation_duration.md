@@ -78,7 +78,7 @@ opt-level = 3
 
 ## Use Dynamic Linking {#dynamic-linking}
 
-[![cargo-add-dynamic][c~cargo-add-dynamic~docs~badge]][c~cargo-add-dynamic~docs] [![cargo-add-dynamic~crates.io][c~cargo-add-dynamic~crates.io~badge]][c~cargo-add-dynamic~crates.io] [![cargo-add-dynamic~github][c~cargo-add-dynamic~github~badge]][c~cargo-add-dynamic~github] [![cargo-add-dynamic~lib.rs][c~cargo-add-dynamic~lib.rs~badge]][c~cargo-add-dynamic~lib.rs]{{hi:cargo-add-dynamic}}{{hi:Cargo}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~compilers][cat~compilers~badge]][cat~compilers]{{hi:Compilers}}
+[![cargo-add-dynamic][c~cargo-add-dynamic~docs~badge]][c~cargo-add-dynamic~docs] [![cargo-add-dynamic~crates.io][c~cargo-add-dynamic~crates.io~badge]][c~cargo-add-dynamic~crates.io] [![cargo-add-dynamic~repo][c~cargo-add-dynamic~repo~badge]][c~cargo-add-dynamic~repo] [![cargo-add-dynamic~lib.rs][c~cargo-add-dynamic~lib.rs~badge]][c~cargo-add-dynamic~lib.rs]{{hi:cargo-add-dynamic}}{{hi:Cargo}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~compilers][cat~compilers~badge]][cat~compilers]{{hi:Compilers}}
 
 ```sh
 cargo install cargo-add-dynamic

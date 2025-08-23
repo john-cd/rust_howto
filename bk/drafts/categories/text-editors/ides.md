@@ -27,7 +27,7 @@
 [![zed][c~zed~docs~badge]][c~zed~website]{{hi:zed}}
 [![zed][c~zed~docs~badge]][c~zed~website]{{hi:zed}}
 [![zed~crates.io][c~zed~crates.io~badge]][c~zed~crates.io]
-[![zed~github][c~zed~github~badge]][c~zed~github]
+[![zed~repo][c~zed~repo~badge]][c~zed~repo]
 [![zed~lib.rs][c~zed~lib.rs~badge]][c~zed~lib.rs]
 [![cat~text-editors][cat~text-editors~badge]][cat~text-editors]
 

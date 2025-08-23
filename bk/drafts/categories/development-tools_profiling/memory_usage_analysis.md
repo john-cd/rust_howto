@@ -11,7 +11,7 @@
 
 [![dhat][c~dhat~docs~badge]][c~dhat~docs]{{hi:dhat}}
 [![dhat~crates.io][c~dhat~crates.io~badge]][c~dhat~crates.io]
-[![dhat~github][c~dhat~github~badge]][c~dhat~github]
+[![dhat~repo][c~dhat~repo~badge]][c~dhat~repo]
 [![dhat~lib.rs][c~dhat~lib.rs~badge]][c~dhat~lib.rs]
 
 [`dhat`][c~dhat~docs]↗{{hi:dhat}} is a library for heap profiling and ad-hoc profiling with DHAT.

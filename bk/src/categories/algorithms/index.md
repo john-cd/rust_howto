@@ -40,7 +40,7 @@ The following table denotes the most common crates used for each algorithm categ
 
 ## References
 
-- [`rust-algorithms`][rust-algorithms~github]↗: Common data structures and algorithms in Rust.
+- [`rust-algorithms`][rust-algorithms~repo]↗: Common data structures and algorithms in Rust.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

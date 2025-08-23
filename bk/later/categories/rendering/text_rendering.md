@@ -12,13 +12,13 @@ API for loading, scaling, positioning and rasterizing OpenType font glyphs.
 
 ## `rusttype` {#rusttype}
 
-[![rusttype][c~rusttype~docs~badge]][c~rusttype~docs] [![rusttype~crates.io][c~rusttype~crates.io~badge]][c~rusttype~crates.io] [![rusttype~github][c~rusttype~github~badge]][c~rusttype~github] [![rusttype~lib.rs][c~rusttype~lib.rs~badge]][c~rusttype~lib.rs]{{hi:rusttype}}{{hi:Otf}}{{hi:Opentype}}{{hi:Ttf}}{{hi:Font}}{{hi:Truetype}}
+[![rusttype][c~rusttype~docs~badge]][c~rusttype~docs] [![rusttype~crates.io][c~rusttype~crates.io~badge]][c~rusttype~crates.io] [![rusttype~repo][c~rusttype~repo~badge]][c~rusttype~repo] [![rusttype~lib.rs][c~rusttype~lib.rs~badge]][c~rusttype~lib.rs]{{hi:rusttype}}{{hi:Otf}}{{hi:Opentype}}{{hi:Ttf}}{{hi:Font}}{{hi:Truetype}}
 
 [`rusttype`][c~rusttype~docs]↗{{hi:rusttype}} is a TrueType font rasterizer and a pure Rust alternative to libraries like FreeType. RustType provides an API for loading, querying and rasterising TrueType fonts. It also provides an implementation of a dynamic [GPU][p~gpu] glyph cache for hardware font rendering.
 
 ## `fontdue` {#fontdue}
 
-[![fontdue][c~fontdue~docs~badge]][c~fontdue~docs] [![fontdue~crates.io][c~fontdue~crates.io~badge]][c~fontdue~crates.io] [![fontdue~github][c~fontdue~github~badge]][c~fontdue~github] [![fontdue~lib.rs][c~fontdue~lib.rs~badge]][c~fontdue~lib.rs]{{hi:fontdue}}{{hi:Font}}{{hi:Opentype}}{{hi:Text}}{{hi:Truetype}}{{hi:Ttf}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![fontdue][c~fontdue~docs~badge]][c~fontdue~docs] [![fontdue~crates.io][c~fontdue~crates.io~badge]][c~fontdue~crates.io] [![fontdue~repo][c~fontdue~repo~badge]][c~fontdue~repo] [![fontdue~lib.rs][c~fontdue~lib.rs~badge]][c~fontdue~lib.rs]{{hi:fontdue}}{{hi:Font}}{{hi:Opentype}}{{hi:Text}}{{hi:Truetype}}{{hi:Ttf}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
 [`fontdue`][c~fontdue~docs]↗{{hi:fontdue}} is a fast, pure Rust font loading and rasterization library. [`glyph_brush`][c~glyph_brush~docs]↗{{hi:glyph_brush}} is for efficient text layout and caching.
 
@@ -26,7 +26,7 @@ A simple [`#![no_std]`][book~rust-reference~no_std]{{hi:no_std}} font parser and
 
 ## `ttf-parser` and  `opentype` {#ttf-parser}
 
-[![ttf-parser][c~ttf-parser~docs~badge]][c~ttf-parser~docs] [![ttf-parser~crates.io][c~ttf-parser~crates.io~badge]][c~ttf-parser~crates.io] [![ttf-parser~github][c~ttf-parser~github~badge]][c~ttf-parser~github] [![ttf-parser~lib.rs][c~ttf-parser~lib.rs~badge]][c~ttf-parser~lib.rs]{{hi:ttf-parser}}{{hi:Opentype}}{{hi:Truetype}}{{hi:Ttf}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}}
+[![ttf-parser][c~ttf-parser~docs~badge]][c~ttf-parser~docs] [![ttf-parser~crates.io][c~ttf-parser~crates.io~badge]][c~ttf-parser~crates.io] [![ttf-parser~repo][c~ttf-parser~repo~badge]][c~ttf-parser~repo] [![ttf-parser~lib.rs][c~ttf-parser~lib.rs~badge]][c~ttf-parser~lib.rs]{{hi:ttf-parser}}{{hi:Opentype}}{{hi:Truetype}}{{hi:Ttf}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}}
 
 [`ttf-parser`][c~ttf-parser~docs]↗{{hi:ttf-parser}} and [`opentype`][c~opentype~docs]↗{{hi:opentype}} provide lower-level font parsing capabilities.
 

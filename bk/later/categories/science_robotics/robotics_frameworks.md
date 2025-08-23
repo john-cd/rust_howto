@@ -8,7 +8,7 @@ High-level robotics frameworks in pure Rust are still emerging.
 
 [![zenoh][c~zenoh~docs~badge]][c~zenoh~docs]{{hi:zenoh}}
 [![zenoh~crates.io][c~zenoh~crates.io~badge]][c~zenoh~crates.io]
-[![zenoh~github][c~zenoh~github~badge]][c~zenoh~github]
+[![zenoh~repo][c~zenoh~repo~badge]][c~zenoh~repo]
 [![zenoh~lib.rs][c~zenoh~lib.rs~badge]][c~zenoh~lib.rs]
 
 [`Zenoh`][c~zenoh~docs]↗{{hi:Zenoh}} - A high performance and extremely low overhead Pub/Sub/Query protocol. Quickly becoming the protocol of choice for Robot-to-Anything communication.
@@ -27,7 +27,7 @@ Zenoh deals with keys/values where each key is a path and is associated to a val
 
 [![openrr][c~openrr~docs~badge]][c~openrr~docs]{{hi:openrr}}
 [![openrr~crates.io][c~openrr~crates.io~badge]][c~openrr~crates.io]
-[![openrr~github][c~openrr~github~badge]][c~openrr~github]
+[![openrr~repo][c~openrr~repo~badge]][c~openrr~repo]
 [![openrr~lib.rs][c~openrr~lib.rs~badge]][c~openrr~lib.rs]
 
 [`openrr`][c~openrr~docs]↗{{hi:openrr}} (Open Rust Robotics)
@@ -44,14 +44,14 @@ Framework for creating fast and reliable robots.
 
 ## Frameworks {#skip}
 
-[`dora-rs`][dora~github]↗{{hi:dora-rs}} - A fast and simple robotics frameworks for AI.
+[`dora-rs`][dora~repo]↗{{hi:dora-rs}} - A fast and simple robotics frameworks for AI.
 `Peng`{{hi:Peng}} - A minimal quadrotor autonomy framework
 
 ## gRPC {#skip}
 
 gRPC A high performance, open source universal RPC framework.
 
-[`CleanIt`][cleanit~github]↗{{hi:CleanIt}} - Open-source Autonomy Software in Rust-lang with [gRPC][p~grpc] for the Roomba series robot vacuum cleaners.
+[`CleanIt`][cleanit~repo]↗{{hi:CleanIt}} - Open-source Autonomy Software in Rust-lang with [gRPC][p~grpc] for the Roomba series robot vacuum cleaners.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

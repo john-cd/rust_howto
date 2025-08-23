@@ -7,9 +7,9 @@ The following includes books and other long-form writings about Rust.
 ## Lists of Books {#book-lists}
 
 - [Little Book of Rust Books][book~the-little-book-of-rust-books]↗{{hi:Rust books}}.
-- [Awesome Rust Books][rustbooks~github]↗ [(fork)][rustbooks~fork~github]↗.
-- [LearnRust][learnrust~github]↗: A "list of resources to learn Rust - Roadmap from beginner to advanced level". Includes a book section.
-- [`rust-learning`][rust-learning~github]↗: A bunch of links to books, blog posts, articles, videos, etc. for learning Rust.
+- [Awesome Rust Books][rustbooks~repo]↗ [(fork)][rustbooks~fork~repo]↗.
+- [LearnRust][learnrust~repo]↗: A "list of resources to learn Rust - Roadmap from beginner to advanced level". Includes a book section.
+- [`rust-learning`][rust-learning~repo]↗: A bunch of links to books, blog posts, articles, videos, etc. for learning Rust.
 
 ## Essential and Official Books {#official-books}
 
@@ -75,7 +75,7 @@ It teaches Rust by implementing a classic Unix CLI utility in each chapter (`cat
 - [Rust Under the Hood][book~rust-under-the-hood]↗: A deep dive into Rust internals and generated assembly, by Sandeep Ahluwalia, Deepa Ahluwalia. [979-8320364469][ISBN~979-8320364469]↗.
 - The [Secrets of Rust: Tools][book~secrets-of-rust-tools]↗.
 - [Step Ahead with Rust][book~Step-Ahead-Rust-Systems-Programming-ebook]↗: Systems Programming in Rust, by Jonathan Creekmore, James Miller (Kindle).
-- [Zero to Production in Rust][book~Zero-Production-Rust-introduction-development]↗: An Introduction to Backend Development, by Luca Palmieri. [979-8847211437][ISBN~979-8847211437]↗: "An opinionated introduction to backend development in Rust". [(website and sample)][zero2prod~website]↗ [(blog)][book~zero-to-production]↗ [(code for the book)][book~zero-to-production~github]↗.
+- [Zero to Production in Rust][book~Zero-Production-Rust-introduction-development]↗: An Introduction to Backend Development, by Luca Palmieri. [979-8847211437][ISBN~979-8847211437]↗: "An opinionated introduction to backend development in Rust". [(website and sample)][zero2prod~website]↗ [(blog)][book~zero-to-production]↗ [(code for the book)][book~zero-to-production~repo]↗.
 
 ## Rust Books, by Topic {#rust-books-by-topic}
 
@@ -127,7 +127,7 @@ It teaches Rust by implementing a classic Unix CLI utility in each chapter (`cat
   - [Embedded Rust on Espressif][book~embedded-rust-on-espressif]↗.
 - The [Embedonomicon][book~embedonomicon]↗.
 
-See also the [Awesome Embedded Rust][awesome-embedded-rust~github]↗, a curated list of resources for embedded and low-level development.
+See also the [Awesome Embedded Rust][awesome-embedded-rust~repo]↗, a curated list of resources for embedded and low-level development.
 
 ### Error Handling {#error-handling}
 
@@ -148,7 +148,7 @@ See also the [Awesome Embedded Rust][awesome-embedded-rust~github]↗, a curated
 
 ### Interpreters {#interpreters}
 
-- [Writing Interpreters in Rust][book~writing-interpreters-in-rust]↗. [(GitHub)][book~writing-interpreters-in-rust~github]↗.{{hi:Interpreters}}
+- [Writing Interpreters in Rust][book~writing-interpreters-in-rust]↗. [(GitHub)][book~writing-interpreters-in-rust~repo]↗.{{hi:Interpreters}}
 
 ### Machine Learning {#machine-learning}
 

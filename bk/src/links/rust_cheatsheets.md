@@ -4,7 +4,7 @@
 
 ## Cheatsheets {#cheatsheets}
 
-- [`cheats.rs`][cheats-rs~website]↗ [(GitHub)][cheats.rs~github]↗.{{hi:Cheat sheets}}
+- [`cheats.rs`][cheats-rs~website]↗ [(GitHub)][cheats.rs~repo]↗.{{hi:Cheat sheets}}
 - [Idiomatic Rust Snippets][book~idiomatic-rust-snippets]↗.
 - [Rust for Professionals][rust-for-professionals~website]↗.
 - [Rust Cheatsheet][cheatsheets.one-rust~website]↗ (`cheatsheets.one`).

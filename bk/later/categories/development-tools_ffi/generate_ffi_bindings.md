@@ -6,7 +6,7 @@
 
 [![bindgen][c~bindgen~docs~badge]][c~bindgen~docs]{{hi:bindgen}}
 [![bindgen~crates.io][c~bindgen~crates.io~badge]][c~bindgen~crates.io]
-[![bindgen~github][c~bindgen~github~badge]][c~bindgen~github]
+[![bindgen~repo][c~bindgen~repo~badge]][c~bindgen~repo]
 [![bindgen~lib.rs][c~bindgen~lib.rs~badge]][c~bindgen~lib.rs]
 [![cat~development-tools::ffi][cat~development-tools::ffi~badge]][cat~development-tools::ffi]{{hi:FFI}}
 [![cat~external-ffi-bindings][cat~external-ffi-bindings~badge]][cat~external-ffi-bindings]{{hi:External FFI bindings}}
@@ -21,7 +21,7 @@
 
 [![cbindgen][c~cbindgen~docs~badge]][c~cbindgen~docs]{{hi:cbindgen}}
 [![cbindgen~crates.io][c~cbindgen~crates.io~badge]][c~cbindgen~crates.io]
-[![cbindgen~github][c~cbindgen~github~badge]][c~cbindgen~github]
+[![cbindgen~repo][c~cbindgen~repo~badge]][c~cbindgen~repo]
 [![cbindgen~lib.rs][c~cbindgen~lib.rs~badge]][c~cbindgen~lib.rs]
 [![cat~development-tools::ffi][cat~development-tools::ffi~badge]][cat~development-tools::ffi]{{hi:FFI}}
 [![cat~external-ffi-bindings][cat~external-ffi-bindings~badge]][cat~external-ffi-bindings]{{hi:External FFI bindings}}
@@ -36,7 +36,7 @@
 
 [![cxx][c~cxx~docs~badge]][c~cxx~docs]{{hi:cxx}}
 [![cxx~crates.io][c~cxx~crates.io~badge]][c~cxx~crates.io]
-[![cxx~github][c~cxx~github~badge]][c~cxx~github]
+[![cxx~repo][c~cxx~repo~badge]][c~cxx~repo]
 [![cxx~lib.rs][c~cxx~lib.rs~badge]][c~cxx~lib.rs]
 [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}}
 [![cat~development-tools::ffi][cat~development-tools::ffi~badge]][cat~development-tools::ffi]{{hi:FFI}}
@@ -52,7 +52,7 @@ While tools like 'SWIG' exist, [`cxx`][c~cxx~docs]↗{{hi:cxx}} is generally pre
 
 ## `uniffi` {#uniffi}
 
-[![uniffi~website][c~uniffi~website~badge]][c~uniffi~website] [![uniffi][c~uniffi~docs~badge]][c~uniffi~docs] [![uniffi~crates.io][c~uniffi~crates.io~badge]][c~uniffi~crates.io] [![uniffi~github][c~uniffi~github~badge]][c~uniffi~github] [![uniffi~lib.rs][c~uniffi~lib.rs~badge]][c~uniffi~lib.rs]{{hi:uniffi}}{{hi:Ffi}}{{hi:Bindgen}}
+[![uniffi~website][c~uniffi~website~badge]][c~uniffi~website] [![uniffi][c~uniffi~docs~badge]][c~uniffi~docs] [![uniffi~crates.io][c~uniffi~crates.io~badge]][c~uniffi~crates.io] [![uniffi~repo][c~uniffi~repo~badge]][c~uniffi~repo] [![uniffi~lib.rs][c~uniffi~lib.rs~badge]][c~uniffi~lib.rs]{{hi:uniffi}}{{hi:Ffi}}{{hi:Bindgen}}
 
 [`uniffi`][c~uniffi~docs]↗{{hi:uniffi}} is a multi-language bindings generator for Rust.
 

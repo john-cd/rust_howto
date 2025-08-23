@@ -88,7 +88,7 @@ Inserting runnable Rust files:
 
 The path to the file is relative from the current source file.
 
-[`mdbook-private`][c~mdbook-private~github]↗ is a preprocessor
+[`mdbook-private`][c~mdbook-private~repo]↗ is a preprocessor
 for defining and optionally removing private sections and chapters in a mdbook.
 However, it does not remove included hidden files.
 
@@ -105,4 +105,4 @@ For example, the following would be removed:
 
 [mdbook]: https://github.com/rust-lang/mdBook
 [rust-lang]: https://rust-lang.org
-[c~mdbook-private~github]: https://github.com/RealAtix/mdbook-private
+[c~mdbook-private~repo]: https://github.com/RealAtix/mdbook-private

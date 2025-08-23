@@ -44,7 +44,7 @@ Rust performs some implicit coercions, such as dereferencing and unsizing. These
 
 [![bytemuck][c~bytemuck~docs~badge]][c~bytemuck~docs]{{hi:bytemuck}}
 [![bytemuck~crates.io][c~bytemuck~crates.io~badge]][c~bytemuck~crates.io]
-[![bytemuck~github][c~bytemuck~github~badge]][c~bytemuck~github]
+[![bytemuck~repo][c~bytemuck~repo~badge]][c~bytemuck~repo]
 [![bytemuck~lib.rs][c~bytemuck~lib.rs~badge]][c~bytemuck~lib.rs]
 [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
 [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
@@ -60,7 +60,7 @@ Rust performs some implicit coercions, such as dereferencing and unsizing. These
 
 [![zerocopy][c~zerocopy~docs~badge]][c~zerocopy~docs]{{hi:zerocopy}}
 [![zerocopy~crates.io][c~zerocopy~crates.io~badge]][c~zerocopy~crates.io]
-[![zerocopy~github][c~zerocopy~github~badge]][c~zerocopy~github]
+[![zerocopy~repo][c~zerocopy~repo~badge]][c~zerocopy~repo]
 [![zerocopy~lib.rs][c~zerocopy~lib.rs~badge]][c~zerocopy~lib.rs]
 [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
 [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}

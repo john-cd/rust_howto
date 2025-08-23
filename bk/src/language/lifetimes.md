@@ -100,7 +100,7 @@ Instead, you may:
 ## References {#references}
 
 - [Lifetime elision rules (Rust reference)][book~rust-reference~lifetime-elision]↗.
-- [Common Rust Lifetime Misconceptions][common-rust-lifetime-misconceptions~github]↗.
+- [Common Rust Lifetime Misconceptions][common-rust-lifetime-misconceptions~repo]↗.
 - [Self-referential Structs][blog~rust-self-referential-structs]↗.
 
 ## Related Topics {#related-topics}
@@ -115,11 +115,11 @@ Instead, you may:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO review [common-rust-lifetime-misconceptions~github]
+TODO review [common-rust-lifetime-misconceptions~repo]
 
 review
 
-- [Common Rust Lifetime Misconceptions][common-rust-lifetime-misconceptions~github]↗.
+- [Common Rust Lifetime Misconceptions][common-rust-lifetime-misconceptions~repo]↗.
 - [The mutable reference I return from a function in Rust seems to violate the borrowing rules — how is this possible?][reddit~the_mutable_reference_i_return_from_a_function_in].
 
 </div>

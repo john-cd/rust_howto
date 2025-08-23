@@ -14,7 +14,7 @@ Alternative to [`crates.io`][crates.io~website]↗{{hi:crates.io}}: [`lib.rs`][l
 
 ## Access crates.io APIs with `crates-io` {#crates-io}
 
-[![crates-io][c~crates-io~docs~badge]][c~crates-io~docs] [![crates-io~crates.io][c~crates-io~crates.io~badge]][c~crates-io~crates.io] [![crates-io~github][c~crates-io~github~badge]][c~crates-io~github] [![crates-io~lib.rs][c~crates-io~lib.rs~badge]][c~crates-io~lib.rs]{{hi:crates-io}}
+[![crates-io][c~crates-io~docs~badge]][c~crates-io~docs] [![crates-io~crates.io][c~crates-io~crates.io~badge]][c~crates-io~crates.io] [![crates-io~repo][c~crates-io~repo~badge]][c~crates-io~repo] [![crates-io~lib.rs][c~crates-io~lib.rs~badge]][c~crates-io~lib.rs]{{hi:crates-io}}
 
 Helpers for interacting with crates.io.
 

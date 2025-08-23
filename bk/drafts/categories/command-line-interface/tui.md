@@ -6,7 +6,7 @@
 
 [![ratatui][c~ratatui~docs~badge]][c~ratatui~docs]{{hi:ratatui}}
 [![ratatui~crates.io][c~ratatui~crates.io~badge]][c~ratatui~crates.io]
-[![ratatui~github][c~ratatui~github~badge]][c~ratatui~github]
+[![ratatui~repo][c~ratatui~repo~badge]][c~ratatui~repo]
 [![ratatui~lib.rs][c~ratatui~lib.rs~badge]][c~ratatui~lib.rs]
 
 [`ratatui`][c~ratatui~website]↗ is a lightweight, high-level library that provides a set of widgets, layouts, and utilities to build complex Rust TUIs.
@@ -24,7 +24,7 @@ cargo generate ratatui/templates simple
 
 ## See Also
 
-[![tui][c~tui~docs~badge]][c~tui~docs] [![tui~crates.io][c~tui~crates.io~badge]][c~tui~crates.io] [![tui~github][c~tui~github~badge]][c~tui~github] [![tui~lib.rs][c~tui~lib.rs~badge]][c~tui~lib.rs]{{hi:tui}}{{hi:Terminal}}{{hi:Dashboard}}{{hi:tui}}
+[![tui][c~tui~docs~badge]][c~tui~docs] [![tui~crates.io][c~tui~crates.io~badge]][c~tui~crates.io] [![tui~repo][c~tui~repo~badge]][c~tui~repo] [![tui~lib.rs][c~tui~lib.rs~badge]][c~tui~lib.rs]{{hi:tui}}{{hi:Terminal}}{{hi:Dashboard}}{{hi:tui}}
 
 A library to build rich terminal user interfaces or dashboards.
 

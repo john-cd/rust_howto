@@ -6,7 +6,7 @@
 
 [![loco-rs][c~loco-rs~docs~badge]][c~loco-rs~docs]{{hi:loco-rs}}{{hi:HTTP server}}
 [![loco-rs~crates.io][c~loco-rs~crates.io~badge]][c~loco-rs~crates.io]
-[![loco-rs~github][c~loco-rs~github~badge]][c~loco-rs~github]
+[![loco-rs~repo][c~loco-rs~repo~badge]][c~loco-rs~repo]
 [![loco-rs~lib.rs][c~loco-rs~lib.rs~badge]][c~loco-rs~lib.rs]
 [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}
 

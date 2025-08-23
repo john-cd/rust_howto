@@ -20,7 +20,7 @@ In this example, the port{{hi:Port}} is displayed on the console, and the progra
 
 [![glommio][c~glommio~docs~badge]][c~glommio~docs]{{hi:glommio}}
 [![glommio~crates.io][c~glommio~crates.io~badge]][c~glommio~crates.io]
-[![glommio~github][c~glommio~github~badge]][c~glommio~github]
+[![glommio~repo][c~glommio~repo~badge]][c~glommio~repo]
 [![glommio~lib.rs][c~glommio~lib.rs~badge]][c~glommio~lib.rs]
 [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}

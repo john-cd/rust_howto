@@ -120,7 +120,7 @@ fn get_replacement_string(kind: DestinationKind, crate_name: &str) -> String {
         Category => ("cat~", ""),
         Crate => ("c~", "~crate"),
         Docs => ("c~", "~docs"),
-        GithubRepo => ("c~", "~github"),
+        GithubRepo => ("c~", "~repo"),
         LibRs => ("c~", "~lib.rs"),
         CratesIo => ("c~", "~crates.io"),
         Web => ("c~", "~website"),
