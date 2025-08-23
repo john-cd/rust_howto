@@ -29,7 +29,8 @@ iced = { version = "0.13.1", optional = true }
 minifb = "0.28.0"
 morphorm = "0.7.0"
 pollster = { version = "0.4", optional = true } # for vello example
-r3bl_tuify = "0.2.0"
+# # FIXME size-of v0.1.5 does not compile on Windows:
+# # r3bl_tuify = "0.2.0"
 # relm4 = { version = "0.9.1", optional = true }
 # relm4-components = { version = "0.9.1", optional = true }
 # # FIXME https://gtk-rs.org/gtk4-rs/git/book/installation_linux.html
