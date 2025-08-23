@@ -7,8 +7,9 @@ fn main() -> std::io::Result<()> {
     let path = "./temp/examples";
     fs::create_dir_all(path)?;
 
-    // Return the canonical, absolute form of a path with all intermediate components normalized and symbolic links resolved.
-    // The path must exist.
+    // Return the canonical, absolute form of a path with all intermediate
+    // components normalized and symbolic links resolved. The path must
+    // exist.
     let normalized_path: PathBuf =
         fs::canonicalize("./temp/examples/../examples")?;
     println!("Canonical path: {}", normalized_path.display());
