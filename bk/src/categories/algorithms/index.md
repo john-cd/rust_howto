@@ -2,13 +2,13 @@
 
 [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
 
-This category covers Rust implementations of core algorithms{{hi:Algorithms}}, such as sorting{{hi:Sorting}} (e.g., merge sort, quicksort), searching{{hi:Searching}}, hashing{{hi:Hashing}}, and more.
+This category covers Rust implementations of core algorithms{{hi:Algorithms}}, such as sorting{{hi:Sorting}} and random value generation.
 
 The following table denotes the most common crates used for each algorithm category.
 
 | Topic | Rust Crates | Notes |
 | --- | --- | --- |
-| Sorting | [`std::cmp`][c~std::cmp~docs]↗{{hi:std::cmp}}, [`itertools`][c~itertools~docs]↗{{hi:itertools}}, [`rand`][c~rand~docs]↗{{hi:rand}} | `std::cmp` provides ordering traits, [`itertools`][c~itertools~docs]↗{{hi:itertools}} for iterators, [`rand`][c~rand~docs]↗{{hi:rand}} for generating test data. No single crate is the sorting crate, as `std::slice::sort` is often sufficient. |
+| Sorting | [`std::cmp`][c~std::cmp~docs]↗{{hi:std::cmp}}, [`itertools`][c~itertools~docs]↗{{hi:itertools}}, [`rand`][c~rand~docs]↗{{hi:rand}} | `std::cmp` provides ordering traits, [`itertools`][c~itertools~docs]↗{{hi:itertools}} iterators, [`rand`][c~rand~docs]↗{{hi:rand}} for generating test data. No single crate is the sorting crate, as `std::slice::sort` is often sufficient. |
 | Searching | [`std::cmp`][c~std::cmp~docs]↗{{hi:std::cmp}} | Binary search is available in the standard library. |
 | Data Structures (General) | [`std::collections`][c~std::collections~docs]↗ for common structures ([`Vec`][c~std::vec::Vec~docs]↗, [`HashMap`][c~std::collections::HashMap~docs]↗, etc.), [`im`][c~im~docs]↗{{hi:im}}, [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} | `std::collections` for common structures (Vec, HashMap, etc.), [`im`][c~im~docs]↗{{hi:im}} for immutable data structures, [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} for graphs. |
 | Graph Algorithms | [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}}, [`pathfinding`][c~pathfinding~docs]↗{{hi:pathfinding}} | [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} is a popular graph library. [`pathfinding`][c~pathfinding~docs]↗{{hi:pathfinding}} provides pathfinding algorithms. |
@@ -29,14 +29,8 @@ The following table denotes the most common crates used for each algorithm categ
 
 | Topic | Related Links |
 |---|---|
-| [[compression | Compression]] | |
-| [[cryptography | Cryptography]] | [[cryptography_utilities | Cryptography Utilities]], [[encryption | Encryption]], [[hashing | Hashing]], [[password_hashing | Password Hashing]] |
-| [[data-processing | Data Processing]] | |
 | [[data-structures | Data Structures]] | [[concurrent_data_structures | Concurrent Data Structures]] |
 | [[mathematics | Mathematics]] | [[additional_numeric_types | Additional Numeric Types]], [[complex_numbers | Complex Numbers]], [[linear_algebra | Linear Algebra]], [[statistics | Statistics]], [[trigonometry | Trigonometry]]. |
-| [[science | Science]] | [[_machine_learning |  Machine Learning]], [[science_geo | Geoscience]], [[science_neuroscience | Neuroscience]], [[science_robotics | Science Robotics]], [[simulation | Simulation]] |
-| [[search | Search]] | [[rust_search_engines | Search Engines]] |
-| [[strings | Strings]] | [[string_concat | String Concat]], [[string_encoding | String Encoding]], [[string_parsing | String Parsing]], [[text-processing | Text Processing]] |
 
 ## References
 
@@ -46,6 +40,16 @@ The following table denotes the most common crates used for each algorithm categ
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review; add graph examples](https://github.com/john-cd/rust_howto/issues/1165)
+[review](https://github.com/john-cd/rust_howto/issues/1165)
+searching
+hashing
+graphs?
+review [rust-algorithms~repo][rust-algorithms~repo].
 
+| [[compression | Compression]] | |
+| [[cryptography | Cryptography]] | [[cryptography_utilities | Cryptography Utilities]], [[encryption | Encryption]], [[hashing | Hashing]], [[password_hashing | Password Hashing]] |
+| [[data-processing | Data Processing]] | |
+| [[science | Science]] | [[_machine_learning |  Machine Learning]], [[science_geo | Geoscience]], [[science_neuroscience | Neuroscience]], [[science_robotics | Science Robotics]], [[simulation | Simulation]] |
+| [[search | Search]] | [[rust_search_engines | Search Engines]] |
+| [[strings | Strings]] | [[string_concat | String Concat]], [[string_encoding | String Encoding]], [[string_parsing | String Parsing]], [[text-processing | Text Processing]] |
 </div>

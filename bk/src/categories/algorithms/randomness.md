@@ -18,13 +18,13 @@ Generates random numbers{{hi:Random numbers}} with help of the random-number gen
 [![rand][c~rand~docs~badge]][c~rand~docs] [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
 [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-Generates a random value{{hi:Random value}} within half-open `[0, 10)` range (not including `10`) with [`rand::Rng::gen_range`][c~rand::Rng::gen_range~docs]↗{{hi:rand::Rng::gen_range}} range.
+Generates a random value{{hi:Random value}} within half-open `[0, 10)` range (not including `10`) with [`rand::Rng::gen_range`][c~rand::Rng::gen_range~docs]↗{{hi:rand::Rng::gen_range}} range:
 
 ```rust,editable
 {{#include ../../../crates/cats/algorithms/examples/rand/rand_range.rs:example}}
 ```
 
-[`rand::distributions::uniform::Uniform`][c~rand::distributions::uniform::Uniform~docs]↗{{hi:rand::distributions::uniform::Uniform}} can obtain values with [uniform distribution][wikipedia~uniform-distribution]↗{{hi:Uniform distribution}}. This has the same effect, but may be faster when repeatedly generating numbers in the same range.
+[`rand::distributions::uniform::Uniform`][c~rand::distributions::uniform::Uniform~docs]↗{{hi:rand::distributions::uniform::Uniform}} can obtain values with [uniform distribution][wikipedia~uniform-distribution]↗{{hi:Uniform distribution}}. This has the same effect, but may be faster when repeatedly generating numbers in the same range:
 
 ```rust,editable
 {{#include ../../../crates/cats/algorithms/examples/rand/rand_range1.rs:example}}
@@ -34,7 +34,7 @@ Generates a random value{{hi:Random value}} within half-open `[0, 10)` range (no
 
 [![rand][c~rand~docs~badge]][c~rand~docs] [![rand_distr][c~rand_distr~docs~badge]][c~rand_distr~docs] [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-By default, random numbers{{hi:Random numbers}} in the [`rand`][c~rand~docs]↗{{hi:rand}} crate have [uniform distribution][wikipedia~uniform-distribution]↗{{hi:Uniform distribution}}. The [`rand_distr`][c~rand_distr~docs]↗{{hi:rand_distr}} crate provides other kinds of distributions{{hi:Distributions}}. To use them, you instantiate a distribution, then sample from that distribution using [`rand::distributions::Distribution::sample`][c~rand::distributions::Distribution::sample~docs]↗{{hi:rand::distributions::Distribution::sample}} with help of a random-number generator [`rand::Rng`][c~rand::Rng~docs]↗{{hi:rand::Rng}}. The distributions available are documented [here][c~rand_distr~docs]↗. An example using the [`rand_distr::Normal`][c~rand_distr::Normal~docs]↗{{hi:rand_distr::Normal}} distribution is shown below.
+By default, random numbers{{hi:Random numbers}} in the [`rand`][c~rand~docs]↗{{hi:rand}} crate have [uniform distribution][wikipedia~uniform-distribution]↗{{hi:Uniform distribution}}. The [`rand_distr`][c~rand_distr~docs]↗{{hi:rand_distr}} crate provides other kinds of distributions{{hi:Distributions}}. To use them, you instantiate a distribution, then sample from that distribution using [`rand::distributions::Distribution::sample`][c~rand::distributions::Distribution::sample~docs]↗{{hi:rand::distributions::Distribution::sample}} with help of a random-number generator [`rand::Rng`][c~rand::Rng~docs]↗{{hi:rand::Rng}}. The distributions available are documented [here][c~rand_distr~docs]↗. An example using the [`rand_distr::Normal`][c~rand_distr::Normal~docs]↗{{hi:rand_distr::Normal}} distribution is shown below:
 
 ```rust,editable
 {{#include ../../../crates/cats/algorithms/examples/rand/rand_dist.rs:example}}
@@ -85,5 +85,5 @@ Randomly generates a string of given length ASCII characters with custom user-de
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review; fix title](https://github.com/john-cd/rust_howto/issues/1390)
+[review](https://github.com/john-cd/rust_howto/issues/1390)
 </div>

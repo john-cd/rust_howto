@@ -6,7 +6,7 @@
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~science][cat~science~badge]][cat~science]{{hi:Sorting}}
 
-This example will sort a Vector of integers via [`std::vec::Vec::sort`][c~std::vec::Vec::sort~docs]↗{{hi:std::vec::Vec::sort}}. Alternative would be to use [`std::vec::Vec::sort_unstable`][c~std::vec::Vec::sort_unstable~docs]↗{{hi:std::vec::Vec::sort_unstable}} which can be faster, but does not preserve the order of equal elements.
+This example will sort a Vector of integers via [`std::vec::Vec::sort`][c~std::vec::Vec::sort~docs]↗{{hi:std::vec::Vec::sort}}. Alternative would be to use [`std::vec::Vec::sort_unstable`][c~std::vec::Vec::sort_unstable~docs]↗{{hi:std::vec::Vec::sort_unstable}}, which can be faster but does not preserve the order of equal elements.
 
 ```rust,editable
 {{#include ../../../crates/cats/algorithms/examples/sort/sort1.rs:example}}
