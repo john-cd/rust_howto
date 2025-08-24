@@ -97,6 +97,7 @@ rust-project.json
 
 # VS Code -----------------------
 .vscode/*
+!.vscode/bookmarks.json
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json

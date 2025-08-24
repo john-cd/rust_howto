@@ -1,0 +1,1144 @@
+{
+	"files": [
+		{
+			"path": "bk/src/categories/filesystem/file_watching.md",
+			"bookmarks": [
+				{
+					"line": 10,
+					"column": 5,
+					"label": ""
+				},
+				{
+					"line": 20,
+					"column": 9,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/appendices/crates_alphabetical.md",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 5,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/appendices/crates_by_category.md",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 6,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/appendices/examples_index.md",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 0,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/appendices/refs.incl.md",
+			"bookmarks": [
+				{
+					"line": 367,
+					"column": 7,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/appendices/thanks.md",
+			"bookmarks": [
+				{
+					"line": 10,
+					"column": 12,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/algorithms/index.md",
+			"bookmarks": [
+				{
+					"line": 11,
+					"column": 4,
+					"label": ""
+				},
+				{
+					"line": 42,
+					"column": 5,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/algorithms/randomness.md",
+			"bookmarks": [
+				{
+					"line": 9,
+					"column": 9,
+					"label": ""
+				},
+				{
+					"line": 20,
+					"column": 14,
+					"label": ""
+				},
+				{
+					"line": 47,
+					"column": 9,
+					"label": ""
+				},
+				{
+					"line": 57,
+					"column": 16,
+					"label": ""
+				},
+				{
+					"line": 67,
+					"column": 14,
+					"label": ""
+				},
+				{
+					"line": 73,
+					"column": 6,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/algorithms/sorting.md",
+			"bookmarks": [
+				{
+					"line": 28,
+					"column": 6,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/data-structures/binaryheap.md",
+			"bookmarks": [
+				{
+					"line": 8,
+					"column": 8,
+					"label": ""
+				},
+				{
+					"line": 16,
+					"column": 23,
+					"label": ""
+				},
+				{
+					"line": 32,
+					"column": 9,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/data-structures/bitfield.md",
+			"bookmarks": [
+				{
+					"line": 16,
+					"column": 10,
+					"label": ""
+				},
+				{
+					"line": 31,
+					"column": 7,
+					"label": ""
+				},
+				{
+					"line": 45,
+					"column": 7,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/data-structures/btrees.md",
+			"bookmarks": [
+				{
+					"line": 4,
+					"column": 4,
+					"label": ""
+				},
+				{
+					"line": 25,
+					"column": 14,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/data-structures/graph.md",
+			"bookmarks": [
+				{
+					"line": 8,
+					"column": 14,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/data-structures/heapless.incl.md",
+			"bookmarks": [
+				{
+					"line": 2,
+					"column": 8,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/data-structures/heapless.md",
+			"bookmarks": [
+				{
+					"line": 4,
+					"column": 8,
+					"label": ""
+				},
+				{
+					"line": 34,
+					"column": 5,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/data-structures/index.md",
+			"bookmarks": [
+				{
+					"line": 15,
+					"column": 14,
+					"label": ""
+				},
+				{
+					"line": 82,
+					"column": 16,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/data-structures/linkedlist.md",
+			"bookmarks": [
+				{
+					"line": 8,
+					"column": 12,
+					"label": ""
+				},
+				{
+					"line": 27,
+					"column": 9,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/data-structures/maps.md",
+			"bookmarks": [
+				{
+					"line": 13,
+					"column": 7,
+					"label": ""
+				},
+				{
+					"line": 57,
+					"column": 11,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/data-structures/refs.incl.md",
+			"bookmarks": [
+				{
+					"line": 27,
+					"column": 7,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/data-structures/stack_allocated_arrays.md",
+			"bookmarks": [
+				{
+					"line": 13,
+					"column": 6,
+					"label": ""
+				},
+				{
+					"line": 32,
+					"column": 8,
+					"label": ""
+				},
+				{
+					"line": 47,
+					"column": 5,
+					"label": ""
+				},
+				{
+					"line": 68,
+					"column": 7,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/data-structures/stack_and_queue.md",
+			"bookmarks": [
+				{
+					"line": 30,
+					"column": 16,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/data-structures/strings.md",
+			"bookmarks": [
+				{
+					"line": 45,
+					"column": 7,
+					"label": ""
+				},
+				{
+					"line": 54,
+					"column": 22,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/data-structures/uuid.md",
+			"bookmarks": [
+				{
+					"line": 26,
+					"column": 4,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/data-structures/vector.md",
+			"bookmarks": [
+				{
+					"line": 48,
+					"column": 13,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/filesystem/directory_traversal.md",
+			"bookmarks": [
+				{
+					"line": 8,
+					"column": 14,
+					"label": ""
+				},
+				{
+					"line": 45,
+					"column": 5,
+					"label": ""
+				},
+				{
+					"line": 65,
+					"column": 9,
+					"label": ""
+				},
+				{
+					"line": 79,
+					"column": 12,
+					"label": ""
+				},
+				{
+					"line": 101,
+					"column": 7,
+					"label": ""
+				},
+				{
+					"line": 121,
+					"column": 9,
+					"label": ""
+				},
+				{
+					"line": 135,
+					"column": 3,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/filesystem/index.md",
+			"bookmarks": [
+				{
+					"line": 50,
+					"column": 10,
+					"label": ""
+				},
+				{
+					"line": 62,
+					"column": 5,
+					"label": ""
+				},
+				{
+					"line": 82,
+					"column": 8,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/filesystem/metadata.incl.md",
+			"bookmarks": [
+				{
+					"line": 2,
+					"column": 13,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/filesystem/metadata.md",
+			"bookmarks": [
+				{
+					"line": 14,
+					"column": 10,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/filesystem/paths.incl.md",
+			"bookmarks": [
+				{
+					"line": 2,
+					"column": 8,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/filesystem/paths.md",
+			"bookmarks": [
+				{
+					"line": 10,
+					"column": 12,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/filesystem/read_write.md",
+			"bookmarks": [
+				{
+					"line": 52,
+					"column": 11,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/filesystem/refs.incl.md",
+			"bookmarks": [
+				{
+					"line": 20,
+					"column": 19,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/filesystem/stdin_stdout.incl.md",
+			"bookmarks": [
+				{
+					"line": 2,
+					"column": 16,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/filesystem/stdin_stdout.md",
+			"bookmarks": [
+				{
+					"line": 6,
+					"column": 18,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/filesystem/symbolic_links.incl.md",
+			"bookmarks": [
+				{
+					"line": 2,
+					"column": 9,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/filesystem/symbolic_links.md",
+			"bookmarks": [
+				{
+					"line": 8,
+					"column": 6,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/filesystem/tempfile.md",
+			"bookmarks": [
+				{
+					"line": 16,
+					"column": 19,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/filesystem/user_directories.md",
+			"bookmarks": [
+				{
+					"line": 10,
+					"column": 8,
+					"label": ""
+				},
+				{
+					"line": 42,
+					"column": 13,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/mathematics/additional_numeric_types.md",
+			"bookmarks": [
+				{
+					"line": 16,
+					"column": 10,
+					"label": ""
+				},
+				{
+					"line": 26,
+					"column": 30,
+					"label": ""
+				},
+				{
+					"line": 36,
+					"column": 16,
+					"label": ""
+				},
+				{
+					"line": 66,
+					"column": 13,
+					"label": ""
+				},
+				{
+					"line": 80,
+					"column": 9,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/mathematics/complex_numbers.md",
+			"bookmarks": [
+				{
+					"line": 15,
+					"column": 16,
+					"label": ""
+				},
+				{
+					"line": 32,
+					"column": 11,
+					"label": ""
+				},
+				{
+					"line": 59,
+					"column": 9,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/mathematics/index.md",
+			"bookmarks": [
+				{
+					"line": 4,
+					"column": 17,
+					"label": ""
+				},
+				{
+					"line": 14,
+					"column": 11,
+					"label": ""
+				},
+				{
+					"line": 26,
+					"column": 15,
+					"label": ""
+				},
+				{
+					"line": 33,
+					"column": 15,
+					"label": ""
+				},
+				{
+					"line": 39,
+					"column": 11,
+					"label": ""
+				},
+				{
+					"line": 110,
+					"column": 13,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/mathematics/linear_algebra.md",
+			"bookmarks": [
+				{
+					"line": 13,
+					"column": 11,
+					"label": ""
+				},
+				{
+					"line": 25,
+					"column": 12,
+					"label": ""
+				},
+				{
+					"line": 35,
+					"column": 14,
+					"label": ""
+				},
+				{
+					"line": 110,
+					"column": 19,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/mathematics/statistics.md",
+			"bookmarks": [
+				{
+					"line": 46,
+					"column": 14,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/mathematics/trigonometry.md",
+			"bookmarks": [
+				{
+					"line": 8,
+					"column": 6,
+					"label": ""
+				},
+				{
+					"line": 18,
+					"column": 6,
+					"label": ""
+				},
+				{
+					"line": 40,
+					"column": 10,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/code_organization/index.md",
+			"bookmarks": [
+				{
+					"line": 48,
+					"column": 6,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/contributing/api_documentation.md",
+			"bookmarks": [
+				{
+					"line": 60,
+					"column": 20,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/contributing/dev_container_docker.md",
+			"bookmarks": [
+				{
+					"line": 86,
+					"column": 15,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/contributing/dev_environment_setup.md",
+			"bookmarks": [
+				{
+					"line": 61,
+					"column": 13,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/contributing/development_editing.md",
+			"bookmarks": [
+				{
+					"line": 24,
+					"column": 14,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/contributing/index.md",
+			"bookmarks": [
+				{
+					"line": 145,
+					"column": 21,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/contributing/preprocessors.md",
+			"bookmarks": [
+				{
+					"line": 18,
+					"column": 11,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/contributing/publication.md",
+			"bookmarks": [
+				{
+					"line": 4,
+					"column": 14,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/contributing/repo_structure.md",
+			"bookmarks": [
+				{
+					"line": 4,
+					"column": 17,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/crate_selection/index.md",
+			"bookmarks": [
+				{
+					"line": 8,
+					"column": 17,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/crate_selection/state_of_the_art.md",
+			"bookmarks": [
+				{
+					"line": 2,
+					"column": 7,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/intro/how_to_read_this_book.md",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 10,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/intro/index.md",
+			"bookmarks": [
+				{
+					"line": 51,
+					"column": 3,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/language/closures.md",
+			"bookmarks": [
+				{
+					"line": 79,
+					"column": 9,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/language/constants_and_statics.md",
+			"bookmarks": [
+				{
+					"line": 56,
+					"column": 13,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/language/lifetimes.md",
+			"bookmarks": [
+				{
+					"line": 117,
+					"column": 10,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/language/macros.md",
+			"bookmarks": [
+				{
+					"line": 426,
+					"column": 11,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/language/slices.md",
+			"bookmarks": [
+				{
+					"line": 33,
+					"column": 11,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/language/trait_objects.md",
+			"bookmarks": [
+				{
+					"line": 171,
+					"column": 20,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/language/traits.md",
+			"bookmarks": [
+				{
+					"line": 4,
+					"column": 9,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/links/blogs.md",
+			"bookmarks": [
+				{
+					"line": 6,
+					"column": 23,
+					"label": ""
+				},
+				{
+					"line": 18,
+					"column": 8,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/links/books.md",
+			"bookmarks": [
+				{
+					"line": 8,
+					"column": 11,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/links/example_code.incl.md",
+			"bookmarks": [
+				{
+					"line": 2,
+					"column": 20,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/links/learning.md",
+			"bookmarks": [
+				{
+					"line": 4,
+					"column": 10,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/links/rust_cheatsheets.md",
+			"bookmarks": [
+				{
+					"line": 6,
+					"column": 6,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/links/videos.md",
+			"bookmarks": [
+				{
+					"line": 6,
+					"column": 7,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/rust_install/index.md",
+			"bookmarks": [
+				{
+					"line": 73,
+					"column": 10,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/standard_library/asref.md",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 11,
+					"label": ""
+				},
+				{
+					"line": 34,
+					"column": 16,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/standard_library/borrow.md",
+			"bookmarks": [
+				{
+					"line": 4,
+					"column": 12,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/standard_library/box.md",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 5,
+					"label": ""
+				},
+				{
+					"line": 20,
+					"column": 16,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/standard_library/conversion_traits.md",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 8,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/standard_library/cow.md",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 13,
+					"label": ""
+				},
+				{
+					"line": 72,
+					"column": 24,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/standard_library/drop.md",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 4,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/standard_library/dynamic_typing.md",
+			"bookmarks": [
+				{
+					"line": 48,
+					"column": 12,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/standard_library/index.md",
+			"bookmarks": [
+				{
+					"line": 82,
+					"column": 3,
+					"label": ""
+				},
+				{
+					"line": 135,
+					"column": 12,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/standard_library/interior_mutability.md",
+			"bookmarks": [
+				{
+					"line": 8,
+					"column": 9,
+					"label": ""
+				},
+				{
+					"line": 54,
+					"column": 22,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/standard_library/ops.md",
+			"bookmarks": [
+				{
+					"line": 23,
+					"column": 6,
+					"label": ""
+				},
+				{
+					"line": 67,
+					"column": 13,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/standard_library/option.md",
+			"bookmarks": [
+				{
+					"line": 63,
+					"column": 5,
+					"label": ""
+				},
+				{
+					"line": 128,
+					"column": 9,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/standard_library/pin.md",
+			"bookmarks": [
+				{
+					"line": 47,
+					"column": 8,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/standard_library/reference_counting.md",
+			"bookmarks": [
+				{
+					"line": 24,
+					"column": 11,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/standard_library/result.md",
+			"bookmarks": [
+				{
+					"line": 8,
+					"column": 7,
+					"label": ""
+				},
+				{
+					"line": 15,
+					"column": 165,
+					"label": ""
+				},
+				{
+					"line": 63,
+					"column": 12,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/standard_library/smart_pointers.md",
+			"bookmarks": [
+				{
+					"line": 6,
+					"column": 25,
+					"label": ""
+				},
+				{
+					"line": 106,
+					"column": 5,
+					"label": ""
+				}
+			]
+		}
+	]
+}
