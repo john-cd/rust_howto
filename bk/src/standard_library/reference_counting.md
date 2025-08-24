@@ -35,8 +35,7 @@ See [[interior_mutability | Interior Mutability]] for more details.
 ## Related Topics {#related-topics}
 
 - [[box | Box]].
-- [[concurrency | Concurrency]].
-- [[cow | Copy on Write]].
+- [[cow | Clone on Write]].
 - [[data-structures | Data Structures]].
 - [[interior_mutability | Interior Mutability]].
 - [[lifetimes | Lifetimes]].
@@ -46,4 +45,7 @@ See [[interior_mutability | Interior Mutability]] for more details.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+- [[concurrency | Concurrency]].
+
 </div>

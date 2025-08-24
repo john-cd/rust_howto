@@ -31,10 +31,12 @@ This is useful when the exact type is complex, not relevant to the caller, or im
 - [[iterators | Iterators]].
 - [[traits | Traits]].
 - [[trait_objects | Trait Objects]].
-- [[rust-patterns | Rust Patterns]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+- [[rust-patterns | Rust Patterns]].
+
 </div>

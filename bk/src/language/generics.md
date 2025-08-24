@@ -81,7 +81,6 @@ The following example demonstrates how to implement traits for types based on co
 - [[enums | Enums]].
 - [[functions | Functions]].
 - [[lifetimes | Lifetimes]].
-- [[rust-patterns | Rust Patterns]].
 - [[structs | Structs]].
 - [[traits | Traits]].
 
@@ -89,4 +88,7 @@ The following example demonstrates how to implement traits for types based on co
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+- [[rust-patterns | Rust Patterns]].
+
 </div>

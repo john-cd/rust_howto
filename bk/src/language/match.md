@@ -213,15 +213,17 @@ Note that Rust's "match ergonomics" often make explicit `ref` and `ref mut` unne
 - [[error_handling | Error Handling]].
 - [[option | Option]].
 - [[result | Result]].
-- [[rust-patterns | Rust Patterns]].
 
 ## References {#references}
 
-- [Pattern matching][book~rust~pattern-matching]↗{{hi:Pattern matching}}.
+- [Pattern Matching][book~rust~pattern-matching]↗{{hi:Pattern matching}}.
 - [Patterns Are Not Expressions][blog~patterns-are-not-expressions]↗.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+- [[rust-patterns | Rust Patterns]].
+
 </div>

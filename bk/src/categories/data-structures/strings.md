@@ -52,7 +52,7 @@ See:
 - [[text-processing | Text Processing]].
 - [[string_parsing | String Parsing]].
 
-## Related Data Structures {#skip}
+## Related Data Structures {#related-data-structures}
 
 - [[slices | Slices]].
 - [[vectors | Vectors]].
@@ -61,6 +61,13 @@ See:
 ## Related Topics {#related-topics}
 
 - [[algorithms | Algorithms]].
+- Working with [[other_strings | Other Strings]] (CString, OsString).
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+
 - [[encoding | Encoding]].
 - [[internationalization | Internationalization]].
 - [[localization | Localization]].
@@ -70,10 +77,5 @@ See:
 - [[text_layout | Text Layout]].
 - [[unicode | Unicode]] handling.
 - [[value_formatting | Value Formatting]].
-- Working with [[other_strings | Other Strings]] (CString, OsString).
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
 </div>

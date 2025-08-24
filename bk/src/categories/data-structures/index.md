@@ -86,8 +86,6 @@ The following examples cover less commonly-used data structures:
   - Skip Lists: [`skiplist`][c~skiplist~docs]↗{{hi:skiplist}}.
   - Ranges as keys: [`rangemap`][c~rangemap~docs]↗{{hi:rangemap}} stores key-value pairs where keys are ranges.
   - Matrices and Tensors: [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} provides an n-dimensional array for numerical computation.
-  - [[dataframes | Dataframes]].
-  - [[concurrent_data_structures | Concurrent Data Structures]].
   - Bitsets: [`roaring`][c~roaring~docs]↗{{hi:roaring}} implements compressed bitsets.
 
 ## Related Topics
@@ -107,5 +105,8 @@ The following examples cover less commonly-used data structures:
 - [`equivalent`][c~equivalent~lib.rs]↗.
 
 - [Converting between different collection types][blog~converting-between-different-collection-types]↗: from `Vec` to `HashSet` or `HashMap`.
+
+  - [[dataframes | Dataframes]].
+  - [[concurrent_data_structures | Concurrent Data Structures]].
 
 </div>

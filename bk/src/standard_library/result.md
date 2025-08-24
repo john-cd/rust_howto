@@ -79,10 +79,7 @@ See also the [[option | Option]] chapter.
 
 ## Related Topics {#related-topics}
 
-- [[error_handling | Error Handling]].
-- [[error_customization | Error Customization]].
 - [[iterators | Iterators]].
-- [[rust-patterns | Rust Patterns]].
 
 ## References {#references}
 
@@ -92,4 +89,9 @@ See also the [[option | Option]] chapter.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+- [[error_handling | Error Handling]].
+- [[error_customization | Error Customization]].
+- [[rust-patterns | Rust Patterns]].
+
 </div>

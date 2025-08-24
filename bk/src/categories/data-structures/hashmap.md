@@ -51,14 +51,16 @@ You can use a custom hash function with [`HashMap`][c~std::collections::HashMap~
 
 ## Related Topics {#related-topics}
 
-- [[concurrent_data_structures | Concurrent Data Structures]].
 - [[data-structures | Data Structures]].
-- [[databases | Databases]].
-- [[hashing | Hashing]].
-- [[key_value_stores | Key-Value Stores]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+
+- [[concurrent_data_structures | Concurrent Data Structures]].
+- [[databases | Databases]].
+- [[hashing | Hashing]].
+- [[key_value_stores | Key-Value Stores]].
+
 </div>

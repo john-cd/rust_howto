@@ -11,7 +11,7 @@
 [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-IndexMap is a data structure in Rust that combines the features of a hashmap and a vector.
+`IndexMap` is a data structure in Rust that combines the features of a hashmap and a vector.
 
 [`indexmap`][c~indexmap~docs]↗{{hi:indexmap}} offers a hash map that separately keeps track of insertion order and allows you to efficiently iterate over its elements in that order.
 

@@ -72,10 +72,12 @@ You may think of them as a `loop` that executes only once and allows exiting ear
 ## Related Topics {#related-topics}
 
 - [[match | Match]].
-- [[rust-patterns | Rust Patterns]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+- [[rust-patterns | Rust Patterns]].
+
 </div>

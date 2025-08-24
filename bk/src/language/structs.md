@@ -143,10 +143,12 @@ Note how multiple `impl` blocks are possible; they can implement associated func
 - [[lifetimes | Lifetimes]].
 - [[generics | Generics]].
 - [[traits | Traits]].
-- [[rust-patterns | Rust Patterns]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+- [[rust-patterns | Rust Patterns]].
+
 </div>

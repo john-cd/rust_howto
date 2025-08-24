@@ -31,7 +31,6 @@ To implement `Drop` for a custom type, you would do something like this:
 
 - [[data_structures | Data Structures]].
 - [[generics | Generics]].
-- [[memory-management | Memory Management]].
 - [[ownership_borrowing | Ownership & Borrowing]].
 - [[reference_counting | Reference Counting]].
 - [[smart_pointers | Smart Pointers]].
@@ -42,4 +41,7 @@ To implement `Drop` for a custom type, you would do something like this:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+- [[memory-management | Memory Management]].
+
 </div>

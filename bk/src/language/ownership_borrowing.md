@@ -148,14 +148,16 @@ The same applies to mutable references:
 ## Related Topics {#related-topics}
 
 - [[lifetimes | Lifetimes]].
-- [[rust-patterns | Rust Patterns]].
 
 ## References {#references}
 
-- [Rust re-borrowing and memory safety][blog~rust-re-borrowing-and-memory-safety]↗.
+- [Rust Re-borrowing and Memory Safety][blog~rust-re-borrowing-and-memory-safety]↗.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+- [[rust-patterns | Rust Patterns]].
+
 </div>

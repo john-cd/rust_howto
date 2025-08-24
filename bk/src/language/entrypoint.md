@@ -42,7 +42,6 @@ Rust also supports asynchronous main functions for writing concurrent applicatio
 
 ## Related Topics {#related-topics}
 
-- [[asynchronous | Asynchronous]].
 - [[functions | Functions]].
 - [[package_layout | Package Layout]].
 
@@ -50,4 +49,7 @@ Rust also supports asynchronous main functions for writing concurrent applicatio
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+- [[asynchronous | Asynchronous]].
+
 </div>

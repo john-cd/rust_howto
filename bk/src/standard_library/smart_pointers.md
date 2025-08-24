@@ -99,11 +99,6 @@ The following example demonstrates the implementation of a basic smart pointer:
 - [[asref | AsRef]].
 - [[borrow | Borrow]].
 - [[cow | COW]] (Clone-on-Write).
-- [[concurrency | Concurrency]].
-- [[memory-management | Memory Management]].
-- [[memory_usage_analysis | Memory Usage Analysis]].
-- [[rust-patterns | Rust Patterns]].
-- [[shared_state | Shared State]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
@@ -111,4 +106,11 @@ The following example demonstrates the implementation of a basic smart pointer:
 <div class="hidden">
 [add cow](https://github.com/john-cd/rust_howto/issues/1384)
 add oncecell, std::sync::OnceLock, lazylock.
+
+- [[concurrency | Concurrency]].
+- [[memory-management | Memory Management]].
+- [[memory_usage_analysis | Memory Usage Analysis]].
+- [[rust-patterns | Rust Patterns]].
+- [[shared_state | Shared State]].
+
 </div>

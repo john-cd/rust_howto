@@ -42,7 +42,6 @@ The following example demonstrates the basic usage of `Pin`, `Unpin`, `PhantomPi
 
 ## Related Topics {#related-topics}
 
-- [[async_programming | Async Programming]].
 - [[futures | Futures]].
 - [[traits | Traits]].
 
@@ -52,4 +51,7 @@ The following example demonstrates the basic usage of `Pin`, `Unpin`, `PhantomPi
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+- [[async_programming | Async Programming]].
+
 </div>

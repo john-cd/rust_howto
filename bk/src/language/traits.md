@@ -170,7 +170,6 @@ This topic is covered in the [Async][p~async]↗ chapter.
 - [[impl_trait | impl Trait]].
 - [[structs | Structs]].
 - [[trait_objects | Trait Objects]].
-- [[rust-patterns | Rust Patterns]].
 
 ## References {#references}
 
@@ -181,4 +180,7 @@ This topic is covered in the [Async][p~async]↗ chapter.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+- [[rust-patterns | Rust Patterns]].
+
 </div>

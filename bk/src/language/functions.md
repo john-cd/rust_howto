@@ -90,10 +90,12 @@ You can also use `std::borrow::Cow` to generalize over owned data and unowned re
 ## Related Topics {#related-topics}
 
 - [[closures | Closures]].
-- [[rust-patterns | Rust Patterns]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+- [[rust-patterns | Rust Patterns]].
+
 </div>
