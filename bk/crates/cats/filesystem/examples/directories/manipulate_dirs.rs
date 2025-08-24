@@ -39,6 +39,7 @@ fn main() -> std::io::Result<()> {
     // `read_dir` returns an iterator over the directory's entries.
     // Note that the order in which `read_dir` returns entries is not
     // guaranteed.
+    // Use recursion to list the contents of all (sub)directories.
     for entry in fs::read_dir("./temp/my_files")? {
         let entry = entry?; // Handle potential error for each entry.
         let path = entry.path();
@@ -47,10 +48,6 @@ fn main() -> std::io::Result<()> {
             print!("- (Directory) {} ", path.display());
         } else {
             print!("- (File)      {} ", path.display());
-        }
-        // Show permissions:
-        if let Ok(metadata) = entry.metadata() {
-            println!("{:?}", metadata.permissions());
         }
     }
 
