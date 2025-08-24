@@ -12,10 +12,10 @@ use remove_dir_all::remove_dir_all;
 fn main() -> io::Result<()> {
     // Create a directory structure for demonstration purposes
     // (if it doesn't exist already).
-    let path = "temp/example_dir2/sub_dir";
+    let path = "temp/example_dir/sub_dir";
     std::fs::create_dir_all(path)?;
-    std::fs::write("temp/example_dir2/file1.txt", "Hello, world!")?;
-    std::fs::write("temp/example_dir2/sub_dir/file2.txt", "Rust is awesome!")?;
+    std::fs::write("temp/example_dir/file1.txt", "Hello, world!")?;
+    std::fs::write("temp/example_dir/sub_dir/file2.txt", "Rust is awesome!")?;
 
     // Now, remove the subdirectory and all of its contents.
     match remove_dir_all(path) {
@@ -37,10 +37,11 @@ fn main() -> io::Result<()> {
     // sensitive to file system races. The crate authors recommend using the
     // `RemoveDir` trait instead. This allows callers to be more confident
     // that what is deleted is what was requested even in the presence of
-    // (malicious) actors changing the filesystem concurrently.
-    let mut dir = std::fs::File::open("temp/example_dir")?;
-    use remove_dir_all::RemoveDir;
-    dir.remove_dir_contents(None)?;
+    // (malicious) actors changing the filesystem concurrently:
+    //
+    // let mut dir = std::fs::File::open("temp/")?;
+    // use remove_dir_all::RemoveDir;
+    // dir.remove_dir_contents(None)?;
     Ok(())
 }
 // ANCHOR_END: example
