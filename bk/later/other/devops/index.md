@@ -42,8 +42,8 @@ See [[containers | Containers]].
 
 Rust is also commonly being used to build DevOps tools. A few examples follow:
 
-- Chef's [`Habitat`][chef-habitat~website]↗{{hi:Habitat}} is a Rust-based infrastructure automation and management tool. Chef Habitat lets you bundle all of your dependencies, codebases, and lifecycle events in a package separate from the user's operating system.
-- Faraday used Rust to develop its `Cage` project. `Cage` is most useful when you want to reuse existing Docker images. You can load existing images into your local environment and start adding new components from local source trees.
+- Chef's [`Habitat`][chef-habitat~website]↗{{hi:Habitat}} is a Rust-based infrastructure automation and management tool. Chef Habitat bundles all of your dependencies, codebases, and lifecycle events in a package separate from the user's operating system.
+- Faraday used Rust to develop its `Cage` project. `Cage` is most useful to reuse existing Docker images. You can load existing images into your local environment and start adding new components from local source trees.
 - [`sccache`][c~sccache~docs]↗{{hi:sccache}} is a [[build_cache | cache]]. compiler tool that can automatically package local toolchains. It supports Rust and C/C++.
 - [`config-rs`][c~config~docs]↗{{hi:config-rs}} is a layered [[config | configuration]] system for Rust applications.
 

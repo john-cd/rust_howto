@@ -12,7 +12,7 @@ fn main() {
     // of an immutable string slice.
     let string_slice: Arc<str> = Arc::from("Slice.");
 
-    // If you need to mutate a shared string, use interior mutability.
+    // When needing to mutate a shared string, use interior mutability.
     let shared_mutable_string: Arc<RwLock<String>> =
         Arc::new(RwLock::new("String".to_string()));
 

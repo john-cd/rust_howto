@@ -54,7 +54,7 @@ async fn main() -> anyhow::Result<()> {
     ];
 
     // Index the documents.
-    // If the index does not exist, Meilisearch creates it when you first add
+    // If the index does not exist, Meilisearch creates it when we first add
     // the documents.
     let task: TaskInfo = index.add_documents(&docs, Some("id")).await?;
     println!("Indexing task: {task:?}");

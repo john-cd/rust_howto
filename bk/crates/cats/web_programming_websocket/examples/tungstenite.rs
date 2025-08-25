@@ -11,7 +11,7 @@ fn main() -> anyhow::Result<()> {
     // Connect to a test WebSocket server in blocking mode.
     let (mut socket, response) = connect("ws://echo.websocket.in")?;
     // To support secure "wss://"" URLs, feature "native-tls" or "rustls-tls"
-    // must be turned on. If you want a non-blocking or other custom stream,
+    // must be turned on. For a non-blocking or other custom stream,
     // call `client` instead.
 
     println!("Connected to the server");

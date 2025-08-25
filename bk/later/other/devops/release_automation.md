@@ -4,7 +4,7 @@
 
 Release automation involves automating the process of building, [testing][p~testing], packaging, and distributing your Rust applications.
 
-How you distribute your application depends on the target platform:
+The distribution of your application depends on the target platform:
 
 - Libraries: publish (open-source) Rust libraries to [`crates.io`][crates.io~website]↗{{hi:crates.io}}.
 - Executables: publish binaries to a service where they `can` be downloaded from (e.g., `GitHub Releases`).
@@ -52,7 +52,7 @@ The following are the typical steps to release a crate to [`crates.io`][crates.i
 [![cargo-release~lib.rs][c~cargo-release~lib.rs~badge]][c~cargo-release~lib.rs]
 [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[`cargo-release`][c~cargo-release~docs]↗{{hi:cargo-release}} automates the release process, including version bumping and publishing to [`crates.io`][crates.io~website]↗{{hi:crates.io}}. It extends `cargo publish` with common release practices like validation, version management, tagging, and pushing. The process is customizable but with defaults that should help you get up and running quickly.
+[`cargo-release`][c~cargo-release~docs]↗{{hi:cargo-release}} automates the release process, including version bumping and publishing to [`crates.io`][crates.io~website]↗{{hi:crates.io}}. It extends `cargo publish` with common release practices like validation, version management, tagging, and pushing. The process is customizable but with defaults that should help getting up and running quickly.
 
 ## `release-plz` {#release-plz}
 
@@ -63,7 +63,7 @@ The following are the typical steps to release a crate to [`crates.io`][crates.i
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}}
 
-[`release-plz`][c~release-plz~docs]↗{{hi:release-plz}} lets you release Rust crates from CI with a "Release PR".
+[`release-plz`][c~release-plz~docs]↗{{hi:release-plz}} releases Rust crates from CI with a "Release PR".
 
 ## `cargo-dist` {#cargo-dist}
 

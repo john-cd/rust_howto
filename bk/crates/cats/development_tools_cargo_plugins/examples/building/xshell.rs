@@ -70,7 +70,7 @@ fn main() -> anyhow::Result<()> {
     let file_path = sh.current_dir().join("text.txt");
     println!("File path: {}", file_path.display());
 
-    // Check existence of the file.
+    // Check existence of the file:
     if sh.path_exists(&file_path) {
         // Read the entire contents of a file into a string.
         if let Ok(file_content) = sh.read_file(&file_path) {

@@ -24,7 +24,7 @@ API for loading, scaling, positioning and rasterizing OpenType font glyphs.
 
 A simple [`#![no_std]`][book~rust-reference~no_std]{{hi:no_std}} font parser and rasterizer.
 
-## `ttf-parser` and  `opentype` {#ttf-parser}
+## `ttf-parser` and `opentype` {#ttf-parser}
 
 [![ttf-parser][c~ttf-parser~docs~badge]][c~ttf-parser~docs] [![ttf-parser~crates.io][c~ttf-parser~crates.io~badge]][c~ttf-parser~crates.io] [![ttf-parser~repo][c~ttf-parser~repo~badge]][c~ttf-parser~repo] [![ttf-parser~lib.rs][c~ttf-parser~lib.rs~badge]][c~ttf-parser~lib.rs]{{hi:ttf-parser}}{{hi:Opentype}}{{hi:Truetype}}{{hi:Ttf}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}}
 

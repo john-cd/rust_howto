@@ -9,8 +9,9 @@ use crossbeam_channel::bounded;
 /// sink.
 fn main() {
     // Create two bounded channels with a capacity of 1.
-    // snd1/rcv1: Used for communication between the producer and workers.
-    // snd2/rcv2: Used for communication between the workers and the sink.
+    // `snd1`/`rcv1` are used for communication between the producer and
+    // workers. `snd2`/`rcv2` are used for communication between the workers
+    // and the sink.
     let (snd1, rcv1) = bounded(1);
     let (snd2, rcv2) = bounded(1);
     let n_msgs = 4;
@@ -34,8 +35,8 @@ fn main() {
             // Clone the sender for the sink and the receiver from the source.
             let (sendr, recvr) = (snd2.clone(), rcv1.clone());
             // Spawn worker threads.
-            // Each worker receives messages from rcv1, processes them,
-            // and sends the results to snd2.
+            // Each worker receives messages from `rcv1`, processes them,
+            // and sends the results to `snd2`.
             s.spawn(move |_| {
                 thread::sleep(Duration::from_millis(500));
                 // Receive until channel closes.
@@ -49,7 +50,7 @@ fn main() {
                 }
             });
         }
-        // Close the snd2 channel.
+        // Close the `snd2` channel.
         // This is necessary to signal to the sink that no more messages will be
         // sent.
         drop(snd2);

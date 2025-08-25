@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
 //! This example showcases how to create a custom environment source for (unit)
-//! testing purposes, allowing you to simulate different environment variable
+//! testing purposes, allowing the simulation of different environment variable
 //! settings without modifying the actual system environment.
 //!
 //! Add to `Cargo.toml`:
@@ -16,7 +16,7 @@ fn test_config() -> anyhow::Result<(), ::config::ConfigError> {
     // environment variables.
     let source = ::config::Environment::default().source(Some({
         let mut env = std::collections::HashMap::new();
-        env.insert("HOST".into(), "1.1.1.1".into()); // Fakes the env. variable HOST="1.1.1.1"
+        env.insert("HOST".into(), "1.1.1.1".into()); // Fakes the env. variable HOST="1.1.1.1".
         env
     }));
 

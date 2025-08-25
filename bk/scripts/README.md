@@ -4,7 +4,7 @@ The `scripts` folder contains [just][just~website]↗ modules (`mod.just` files 
 
 The main `justfile` for the book, located in the `bk` folder, imports these modules. They include recipes that execute shell commands, call bash scripts, or call tools written in Rust (source code in the `tools` folder, release binaries in `bin`).
 
-Type `just` at the terminal to display a list of available modules and commands, which you may use to manage the book.
+Type `just` at the terminal to display a list of available modules and commands to manage the book.
 
 Type `just <module_name>` to display available commands for a given module.
 

@@ -7,7 +7,7 @@ Rust compile times{{hi:Compile times}} can be long. Reducing Rust compilation [d
 | Methods | Description |
 |---|---|
 | Incremental Compilation | Leverage [Cargo][p~cargo]'s [caching][p~caching], be mindful of changes that invalidate the cache. |
-| Dependency Management | Use [`cargo tree`][book~cargo~cargo-tree]↗{{hi:cargo tree}} to analyze dependencies. [`cargo-bloat`][c~cargo-bloat~docs]↗{{hi:cargo-bloat}} can help you identify large dependencies contributing to compile times. |
+| Dependency Management | Use [`cargo tree`][book~cargo~cargo-tree]↗{{hi:cargo tree}} to analyze dependencies. [`cargo-bloat`][c~cargo-bloat~docs]↗{{hi:cargo-bloat}} can help identify large dependencies contributing to compile times. |
 | Compiler Flags | Experiment with compiler flags, but be careful and measure the impact. |
 | Build Profiles | Optimize release builds with appropriate flags in `config.toml`. |
 | Link-Time Optimization (LTO) | Controlled via [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} and `config.toml`. |
@@ -45,7 +45,7 @@ From-scratch builds with incremental compilation{{hi:Incremental compilation}} e
 
 - _Reduce the number of dependencies_. Analyze your [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} and eliminate unused or redundant dependencies. Consider alternatives if a dependency is excessively large or slow to compile.
 - For multi-crate projects, use a _workspace_ to share dependencies and enable workspace-level optimizations. This can reduce redundant compilation.
-- Use feature flags to conditionally compile your code and dependencies. This allows you to exclude unnecessary code during development, reducing compilation time.
+- Use feature flags to conditionally compile your code and dependencies. They can exclude unnecessary code during development, reducing compilation time.
 - For large, infrequently changing dependencies, consider using precompiled versions if available.
 - Organizing your code into smaller, independent [modules][p~modules] and crates can improve incremental compilation by reducing the scope of changes.
 

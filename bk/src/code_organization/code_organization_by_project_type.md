@@ -154,7 +154,7 @@ Library crates with complex public APIs or deeply nested modules often define a 
 A single glob import e.g., `use crate_name::prelude::*;` brings all these common items into scope in one fell swoop and removes the need for repetitive `use` declarations:
 
 ```rust,noplayground
-// src/lib.rs
+// `src/lib.rs`:
 pub mod prelude {
     // Reexport commonly used types, traits, or functions:
     pub use super::a_module::SuperCommonType;

@@ -15,7 +15,7 @@ static mut VAL: usize = 0;
 // otherwise always return the value returned from the first invocation.
 fn get_cached_val() -> usize {
     // Accessing a `static mut` is unsafe much of the time, unless we do so
-    // in a synchronized fashion (e.g. write once or read all)
+    // in a synchronized fashion (e.g. write once or read all):
     unsafe {
         // The given closure will be executed if this is the first time
         // `call_once` has been called.
@@ -35,7 +35,7 @@ fn expensive_computation() -> usize {
 }
 
 fn main() {
-    // A closure has not been executed yet
+    // A closure has not been executed yet:
     assert_eq!(INIT.state(), OnceState::New);
     for _ in 0..3 {
         assert_eq!(get_cached_val(), 42);

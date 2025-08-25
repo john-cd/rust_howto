@@ -2,8 +2,8 @@
 // ANCHOR: example
 use std::collections::HashMap;
 
-/// `derive` is a powerful tool in Rust that allows you to automatically
-/// implement certain traits for your structs and enums.
+/// `derive` is a powerful tool that automatically
+/// implements certain traits for your structs and enums.
 ///
 /// Here we derive several common traits for a simple struct `S` that wraps an
 /// `i32`.
@@ -22,9 +22,9 @@ fn simple_tests() {
 
 // The `Hash` trait enables types to be hashed, which means they can
 // be used as keys in hash-based collections like `HashMap` and `HashSet`.
-// When you use `#[derive(Hash)]` on a struct, the derived implementation
+// When we use `#[derive(Hash)]` on a struct, the derived implementation
 // will typically hash each field of the struct in sequence and combine these
-// hashes  into a single hash value for the entire struct instance.
+// hashes into a single hash value for the entire struct instance.
 fn hash() {
     let mut map = HashMap::new();
 

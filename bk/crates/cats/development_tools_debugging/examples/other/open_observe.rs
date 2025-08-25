@@ -52,10 +52,10 @@
 // use tracing_subscriber::util::SubscriberInitExt;
 
 // // `opentelemetry_otlp` is the official crate to build an Exporter.
-// // `tracing_opentelemetry` is required if you want to integrate OpenObserve
-// with Tokio's tracing project.
+// // `tracing_opentelemetry` is required to integrate 'OpenObserve'
+// // with Tokio's `tracing` project.
 
-// // Create a Resource that captures information about the entity for which
+// // Create a `Resource` that captures information about the entity for which
 // // telemetry is recorded.
 // fn resource() -> Resource {
 //     Resource::from_schema_url(
@@ -74,16 +74,17 @@
 
 //     map.insert(
 //         "authorization",
-//         format!("Basic cm9vdEBleGFtcGxlLmNvbTo3a2xCT052cHhTd09DZ09u") // This
-// is picked from the Ingestion tab openobserve             .parse()
-//             .unwrap(),
+//         format!("Basic cm9vdEBleGFtcGxlLmNvbTo3a2xCT052cHhTd09DZ09u")
+//         // This is picked from the Ingestion tab openobserve.
+//          .parse()
+//           .unwrap(),
 //     );
 //     map.insert("organization", "default".parse().unwrap());
 //     map.insert("stream-name", "default".parse().unwrap());
 //     Ok(map)
 // }
 
-// // Construct MeterProvider for MetricsLayer
+// // Construct MeterProvider for MetricsLayer:
 // fn init_meter_provider() -> SdkMeterProvider {
 //     let exporter = opentelemetry_otlp::new_exporter()
 //         .tonic()
@@ -100,14 +101,14 @@
 //         .with_interval(std::time::Duration::from_secs(30))
 //         .build();
 
-//     // For debugging in development
+//     // For debugging in development:
 //     let stdout_reader = PeriodicReader::builder(
 //         opentelemetry_stdout::MetricsExporter::default(),
 //         runtime::Tokio,
 //     )
 //     .build();
 
-//     // Rename foo metrics to foo_named and drop key_2 attribute
+//     // Rename `foo` metrics to `foo_named` and drop `key_1` attribute:
 //     let view_foo = |instrument: &Instrument| -> Option<Stream> {
 //         if instrument.name == "foo" {
 //             Some(
@@ -120,7 +121,7 @@
 //         }
 //     };
 
-//     // Set Custom histogram boundaries for baz metrics
+//     // Set Custom histogram boundaries for `baz` metrics:
 //     let view_baz = |instrument: &Instrument| -> Option<Stream> {
 //         if instrument.name == "baz" {
 //             Some(Stream::new().name("baz").aggregation(
@@ -147,7 +148,7 @@
 //     meter_provider
 // }
 
-// // Construct Tracer for OpenTelemetryLayer
+// // Construct `Tracer` for OpenTelemetryLayer:
 // fn init_tracer() -> Tracer {
 //     let provider = opentelemetry_otlp::new_pipeline()
 //         .tracing()
@@ -158,7 +159,7 @@
 //                 Sampler::ParentBased(Box::new(Sampler::TraceIdRatioBased(
 //                     1.0,
 //                 ))))
-//                 // If export trace to AWS X-Ray, you can use XrayIdGenerator
+//                 // If export trace to AWS X-Ray, we can use XrayIdGenerator
 //                 .with_id_generator(RandomIdGenerator::default())
 //                 .with_resource(resource()),
 //         )
@@ -176,8 +177,8 @@
 //     provider.tracer("tracing-otel-subscriber")
 // }
 
-// // Initialize tracing-subscriber and return OtelGuard for
-// opentelemetry-related // termination processing
+// // Initialize `tracing-subscriber` and return OtelGuard for
+// // opentelemetry-related termination processing:
 // fn init_tracing_subscriber() -> OtelGuard {
 //     let meter_provider = init_meter_provider();
 //     let tracer = init_tracer();

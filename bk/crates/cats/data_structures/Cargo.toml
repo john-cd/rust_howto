@@ -35,9 +35,9 @@ slotmap = "1.0.7"
 smallvec = "2.0.0-alpha.8" # alpha
 tinyvec = { version = "1.8.1", features = ["alloc"] }
 uuid = { version = "1.11.0", features = [
-    "v4",                # Lets you generate random UUIDs
-    "fast-rng",          # Use a faster (but still sufficiently random) RNG
-    "macro-diagnostics", # Enable better diagnostics for compile-time UUIDs
+    "v4",                # Lets us generate random UUIDs.
+    "fast-rng",          # Use a faster (but still sufficiently random) RNG.
+    "macro-diagnostics", # Enable better diagnostics for compile-time UUIDs.
 ] }
 
 ## General

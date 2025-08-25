@@ -8,7 +8,7 @@
 //     // The basic building blocks of a Morphorm layout are nodes. Each node
 //     // represents an element in the UI.
 //     // Nodes are organized in a tree structure, where each node can have
-// parent     // and child nodes.
+//     // parent and child nodes.
 //     // Create a root node:
 //     let mut world = World::default();
 
@@ -22,37 +22,37 @@
 //     root.set_height(Units::Pixels(400.0));
 //     root.set_layout_type(LayoutType::Row); // Arrange children in a row
 
-//     // Create a child node (red box)
+//     // Create a child node (red box):
 //     let mut red_box = morphorm::Node::new();
 //     red_box.set_width(Units::Pixels(100.0));
 //     red_box.set_height(Units::Pixels(100.0));
 //     red_box.set_background_color(morphorm::Color::rgb(255, 0, 0)); // Red
 //     root.add(&mut red_box);
 
-//     // Create another child node (blue box)
+//     // Create another child node (blue box):
 //     let mut blue_box = morphorm::Node::new();
 //     blue_box.set_width(Units::Pixels(150.0));
 //     blue_box.set_height(Units::Pixels(100.0));
 //     blue_box.set_background_color(morphorm::Color::rgb(0, 0, 255)); // Blue
 //     root.add(&mut blue_box);
 
-//     // Create a third child node (green box) with flex grow
+//     // Create a third child node (green box) with flex grow:
 //     let mut green_box = morphorm::Node::new();
 //     green_box.set_height(Units::Pixels(100.0));
 //     green_box.set_flex_grow(1.0); // Takes up remaining space
 //     green_box.set_background_color(morphorm::Color::rgb(0, 255, 0)); // Green
 //     root.add(&mut green_box);
 
-//     // Calculate the layout
+//     // Calculate the layout:
 //     root.layout(500.0, 400.0); // Provide root width and height
 
-//     // Print the layout results
+//     // Print the layout results:
 //     println!("Root: {:?}", root.get_bounds());
 //     println!("Red Box: {:?}", red_box.get_bounds());
 //     println!("Blue Box: {:?}", blue_box.get_bounds());
 //     println!("Green Box: {:?}", green_box.get_bounds());
 
-//     // Example with absolute positioning
+//     // Example with absolute positioning:
 //     let mut root_absolute = morphorm::Node::new();
 //     root_absolute.set_width(Units::Pixels(500.0));
 //     root_absolute.set_height(Units::Pixels(400.0));
@@ -71,7 +71,7 @@
 //     println!("\nRoot (Absolute): {:?}", root_absolute.get_bounds());
 //     println!("Absolute Box: {:?}", absolute_box.get_bounds());
 
-//     // Example with column layout and margin
+//     // Example with column layout and margin:
 //     let mut root_column = morphorm::Node::new();
 //     root_column.set_width(Units::Pixels(300.0));
 //     root_column.set_height(Units::Pixels(300.0));
@@ -82,8 +82,8 @@
 //     margin_box.set_height(Units::Pixels(50.0));
 //     margin_box.set_margin_left(Units::Pixels(20.0));
 //     margin_box.set_margin_top(Units::Pixels(10.0));
-//     margin_box.set_background_color(morphorm::Color::rgb(255, 165, 0)); //
-// Orange
+//     margin_box.set_background_color(morphorm::Color::rgb(255, 165, 0));
+//     // Orange.
 
 //     root_column.add(&mut margin_box);
 //     root_column.layout(300.0, 300.0);

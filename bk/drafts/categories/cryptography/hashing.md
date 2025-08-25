@@ -32,7 +32,7 @@ For more [algorithms][p~algorithms], see Rust Crypto Hashes: sha2{{hi:sha2}}, sh
 
 [![blake3][c~blake3~docs~badge]][c~blake3~docs] [![blake3~crates.io][c~blake3~crates.io~badge]][c~blake3~crates.io] [![blake3~repo][c~blake3~repo~badge]][c~blake3~repo] [![blake3~lib.rs][c~blake3~lib.rs~badge]][c~blake3~lib.rs]{{hi:blake3}}
 
-[`blake3`][c~blake3~docs]↗{{hi:blake3}} implements the BLAKE3 hash function. BLAKE3 is a cryptographic hash function that is faster than MD5, SHA-1, SHA-2, and SHA-3, yet is at least as secure as the latest standard SHA-3. It's designed to take advantage of parallel processing capabilities. BLAKE3 can produce hashes of arbitrary length, from short digests to longer ones. This is useful for various applications, including key derivation and password hashing. BLAKE3 allows for incremental hashing, where you can update the hash state with new data without recomputing the entire hash. This is useful for streaming data or situations where the input is received in chunks.
+[`blake3`][c~blake3~docs]↗{{hi:blake3}} implements the BLAKE3 hash function. BLAKE3 is a cryptographic hash function that is faster than MD5, SHA-1, SHA-2, and SHA-3, yet is at least as secure as the latest standard SHA-3. It's designed to take advantage of parallel processing capabilities. BLAKE3 can produce hashes of arbitrary length, from short digests to longer ones. This is useful for various applications, including key derivation and password hashing. BLAKE3 allows for incremental hashing, i.e. updating the hash state with new data without recomputing the entire hash. This is useful for streaming data or situations where the input is received in chunks.
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/examples/hashing/blake3.rs:example}}

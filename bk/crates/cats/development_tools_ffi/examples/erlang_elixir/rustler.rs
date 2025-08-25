@@ -6,7 +6,7 @@
 
 // // The `rustler` crate provides macros and functions for creating NIFs
 // // (Native Implemented Functions). NIFs are functions written in Rust that
-// // can be called directly from Erlang or Elixir code. This allows you to
+// // can be called directly from Erlang or Elixir code. This allows to
 // // leverage the performance and safety of Rust within your Erlang/Elixir
 // // applications.
 

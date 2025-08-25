@@ -30,7 +30,7 @@ Interfacing with Lua from Rust is typically done using the Lua C API, and there 
 - [`mlua`][c~mlua~docs]↗{{hi:mlua}}: Another good option for Lua bindings. It focuses on being lightweight and efficient.
 - `lua53`: Direct, lower-level bindings to Lua 5.3. If you need very fine-grained control or are working with a specific Lua version, this might be an option. However, `rlua`{{hi:rlua}} or [`mlua`][c~mlua~docs]↗{{hi:mlua}} are usually preferred for ease of use.
 
-## Communication/Data Marshaling  {#skip2}
+## Communication/Data Marshaling {#skip2}
 
 The Lua binding crates usually handle data marshaling between Rust and Lua types. You won't typically need separate serialization crates like [serde][p~serde] in the same way as with some other FFI scenarios.
 

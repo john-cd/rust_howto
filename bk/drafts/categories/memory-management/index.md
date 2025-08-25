@@ -19,7 +19,7 @@ Rust's memory management is a core strength: you won't often need to manually ma
 - [`Box`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}}: For allocating data on the heap.
 - [`Rc`][c~std::rc::Rc~docs]↗{{hi:std::rc::Rc}} (Reference Counting): For shared ownership of data.
 - [`Arc`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} (Atomic Reference Counting): For shared ownership across threads.
-- [`RefCell`][c~std::cell::RefCell~docs]↗{{hi:std::cell::RefCell}}: For interior mutability (allowing you to mutate data even when there are immutable references to it).
+- [`RefCell`][c~std::cell::RefCell~docs]↗{{hi:std::cell::RefCell}}: For interior mutability (allowing mutating data even when there are immutable references to it).
 - [`Mutex`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}}: For safe mutable access to data from multiple threads.
 
 See [[smart_pointers | Smart Pointers]].
@@ -28,7 +28,7 @@ See [[smart_pointers | Smart Pointers]].
 
 [`static`][keyword~static]↗{{hi:static}} refers to items that have a fixed memory location and a `'static`{{hi:'static}} lifetime, meaning they exist for the entire duration of the program.
 These are similar to constants but represent a specific memory location. All references to a static item point to the same memory location.
-Static items can be mutable (), but modifying them requires an  block due to potential concurrency issues. They are often used for global variables or shared state across threads. See [[shared_state | Shared State]].
+Static items can be mutable (), but modifying them requires a block due to potential concurrency issues. They are often used for global variables or shared state across threads. See [[shared_state | Shared State]].
 
 Lazy initialization is a technique where a resource or variable is initialized only when it's first accessed, rather than at the start of the program. Lazy initialization is particularly useful for expensive computations or resources that may not be needed during the program's execution.
 It is commonly used with statics.
@@ -43,7 +43,7 @@ Use [`unsafe`][keyword~unsafe]↗{{hi:unsafe}} code and [raw pointers][primitive
 
 The core [`alloc`][c~alloc~docs]↗{{hi:alloc}} crate provides the core allocation APIs. You'll rarely use this directly, but it's what the other memory management tools are built on. Custom allocators are rarely needed in typical Rust development. If needed, reach for the Rust wrappers for the well-known 'jemalloc' and 'mimalloc' memory allocation libraries. In addition, [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}} is a small and efficient allocator often used in embedded systems or WebAssembly.
 
-Rust does not have a garbage collector in the traditional sense. It uses ownership and borrowing to manage memory automatically and deterministically. If you need garbage collection for specific reasons, you'd have to look for specialized crates, but this is rare in Rust. For example, the [`seize`][c~seize~docs]↗{{hi:seize}} crate allows for memory reclamation in concurrent data structures.
+Rust does not have a garbage collector in the traditional sense. It uses ownership and borrowing to manage memory automatically and deterministically. If garbage collection is needed for specific reasons, you'd have to look for specialized crates, but this is rare in Rust. For example, the [`seize`][c~seize~docs]↗{{hi:seize}} crate allows for memory reclamation in concurrent data structures.
 
 {{#include memory_allocation.incl.md}}
 

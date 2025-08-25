@@ -3,7 +3,7 @@
 /// This example demonstrates how to use the `cc` crate to compile a C file into
 /// a static library.
 ///
-/// The `cc` crate is a build dependency that allows you to compile C/C++ code
+/// The `cc` crate is a build dependency that allows compiling C/C++ code
 /// as part of your Rust build process.
 ///
 /// In this example, we're compiling `src/hello.c` into a static library named

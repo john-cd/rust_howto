@@ -21,7 +21,7 @@
 // //! ## Prerequisites
 // //!
 // //! As described in the `openrr` documentation,
-// //! - Install the required system libraries  (see below).
+// //! - Install the required system libraries (see below).
 // //! - Install `urdf-viz` and `openrr-apps`,
 // //! - Have a URDF file for your robot.
 // //!
@@ -70,8 +70,8 @@
 //     let urdf_path = "path/to/your/robot.urdf"; // Replace with your URDF path
 //     let urdf_robot = UrdfRobot::from_path(urdf_path)?;
 
-//     // Create a RobotClient. This example uses a dummy client.
-//     // In a real application, you would use a client that connects to your
+//     // Create a `RobotClient``. This example uses a dummy client.
+//     // In a real application, use a client that connects to your
 //     // robot.
 //     let robot_client = Arc::new(DummyRobotClient::new(urdf_robot.clone()));
 
@@ -125,7 +125,7 @@
 //         &self,
 //         joint_names: &[String],
 //     ) -> Result<Vec<f64>, openrr::Error> {
-//         // In a real implementation, you would get the current joint
+//         // In a real implementation, we would get the current joint
 //         // positions from the robot.
 //         // This dummy implementation just returns zeros.
 //         Ok(vec![0.0; joint_names.len()])
@@ -137,7 +137,7 @@
 //         _positions: Vec<f64>,
 //         _duration: std::time::Duration,
 //     ) -> Result<(), openrr::Error> {
-//         // In a real implementation, you would send the joint positions to
+//         // In a real implementation, we would send the joint positions to
 //         // the robot. This dummy implementation does nothing.
 //         info!("DummyRobotClient: send_joint_positions called");
 //         Ok(())

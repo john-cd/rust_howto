@@ -26,16 +26,16 @@ use zeroize::Zeroize;
 // This example demonstrates how to use the ChaCha20Poly1305 AEAD cipher
 // to encrypt and decrypt data, with and without associated data.
 //
-// An Authenticated Encryption with Associated Data (AEAD) cipher,
-// based on the ChaCha20 stream cipher and Poly1305 universal hash function,
-// ChaCha20Poly1305 is notable for being simple and fast when implemented in
+// An "Authenticated Encryption with Associated Data" (AEAD) cipher,
+// based on the "ChaCha20" stream cipher and "Poly1305" universal hash function,
+// "ChaCha20Poly1305" is notable for being simple and fast when implemented in
 // pure software.
 
 fn encrypt_then_decrypt() {
     // Example plaintext to encrypt.
     let mut plaintext: Vec<u8> = b"This is a secret message.".to_vec();
 
-    // Create a key, using a cryptographically secure Random Number Generator
+    // Create a key, using a cryptographically secure Random Number Generator:
     let mut key: Key = ChaCha20Poly1305::generate_key(&mut OsRng);
 
     // Generate a nonce.
@@ -47,7 +47,7 @@ fn encrypt_then_decrypt() {
 
     // --- Encryption ---
     {
-        // Create an instance of the cipher
+        // Create an instance of the cipher:
         let cipher = ChaCha20Poly1305::new(&key);
 
         // Encrypt in-place, replacing the plaintext contents with ciphertext,
@@ -62,12 +62,12 @@ fn encrypt_then_decrypt() {
     }
     // --- Decryption ---
     {
-        // Create a cipher instance for decryption
+        // Create a cipher instance for decryption:
         let cipher_dec = ChaCha20Poly1305::new(&key);
 
         // Decrypt the message in-place, returning an error in the event
         // the provided authentication tag does not match the given ciphertext
-        // (i.e. ciphertext is modified/unauthentic)
+        // (i.e. ciphertext is modified/unauthentic):
         let mut decrypted_plaintext = ciphertext.clone();
         let decrypted_result = cipher_dec.decrypt_in_place_detached(
             &nonce,
@@ -88,7 +88,7 @@ fn encrypt_then_decrypt() {
             }
         }
 
-        // Check if decryption was successful
+        // Check if decryption was successful:
         assert_eq!(decrypted_plaintext, plaintext);
     }
 
@@ -114,12 +114,12 @@ fn encrypt_then_decrypt() {
             }
             Err(e) => {
                 println!("Decryption with bad tag failed as expected: {e}");
-                // This is the expected behavior
+                // This is the expected behavior.
             }
         }
     }
 
-    // Fill all sensitive fields with zeroes
+    // Fill all sensitive fields with zeroes.
     plaintext.zeroize();
     key.zeroize();
     nonce.zeroize();
@@ -131,7 +131,7 @@ fn aad() {
     let mut plaintext = Vec::from(b"This is a secret message.");
     let aad = b"Associated Data";
 
-    // Create an instance of the cipher (with a new key)
+    // Create an instance of the cipher (with a new key):
     let mut key = ChaCha20Poly1305::generate_key(&mut OsRng);
     let cipher_aad = ChaCha20Poly1305::new(&key);
 

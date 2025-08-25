@@ -16,7 +16,7 @@ use zip::write::SimpleFileOptions;
 use zip::write::ZipWriter;
 
 fn main() -> zip::result::ZipResult<()> {
-    // Create a new zip archive file.
+    // Create a new zip archive file:
     let path = Path::new("temp/my_archive.zip");
     let file = File::create(path)?;
     let mut zip = ZipWriter::new(file);

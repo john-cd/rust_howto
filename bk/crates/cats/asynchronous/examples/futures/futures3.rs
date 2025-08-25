@@ -30,7 +30,7 @@ async fn main() -> Result<()> {
     println!("{seven}");
     assert_eq!(seven, 7);
 
-    // Conditional `Either` future
+    // Conditional `Either` future:
     let x = 6;
     let future = if x > 10 {
         async { true }.left_future()

@@ -6,7 +6,7 @@
 |---|---|
 | [[code_formatting_linting | Code Formatting]] | [`cargo fmt`][book~cargo~cargo-fmt]↗{{hi:cargo fmt}} formats your code to a consistent style. |
 | [[code_formatting_linting | Linting]] | [`cargo clippy`][c~clippy~docs]↗{{hi:clippy}} catches common code errors and style issues. |
-| [[dependency_management | Dependency Management]] | [`cargo tree`][book~cargo~cargo-tree]↗{{hi:cargo tree}} displays your dependency tree to help you understand your project's dependencies. `cargo outdated` checks for outdated dependencies. `cargo audit` checks for crates with known security vulnerabilities. |
+| [[dependency_management | Dependency Management]] | [`cargo tree`][book~cargo~cargo-tree]↗{{hi:cargo tree}} displays a dependency tree to help understand your project's dependencies. `cargo outdated` checks for outdated dependencies. `cargo audit` checks for crates with known security vulnerabilities. |
 | Documentation Generation | [`cargo doc`][book~cargo~cargo-doc]↗{{hi:cargo doc}} generates [documentation][p~documentation] from your code. `cargo deadlinks` finds broken links in your documentation. |
 | [[testing | Testing]] | [`cargo test`][book~cargo~cargo-test]↗{{hi:cargo test}} runs your unit and integration tests. |
 | [[benchmarking | Benchmarking]] | [`cargo bench`][book~cargo~cargo-bench]↗{{hi:cargo bench}} runs your benchmarks. |
@@ -26,7 +26,7 @@
 [`cargo-semver-checks`][c~cargo-semver-checks~docs]↗{{hi:cargo-semver-checks}} scans your Rust crate for [`semver`][c~semver~docs]↗{{hi:semver}} violations.
 
 ```sh
-# If you Already Use `cargo-binstall` for Faster Tool installations:
+# If you already use `cargo-binstall`, call:
 $ cargo binstall cargo-semver-checks
 
 # Otherwise:

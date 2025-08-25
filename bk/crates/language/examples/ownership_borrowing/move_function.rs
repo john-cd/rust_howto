@@ -21,7 +21,7 @@ fn main() {
     // `s1` is no longer available:
     // println!("{s1}"); // ERROR: borrow of moved value: `s1`.
 
-    // You can return the value that has been consumed,
+    // We can return the value that has been consumed,
     // if you still need it.
     // Most often, however, it is more convenient to borrow the `String`
     // using references (see below).

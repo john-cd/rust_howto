@@ -22,15 +22,15 @@ fn main() -> Result<(), Error> {
 
     // When a user logs in, the password they provide is checked against the
     // saved PHC string: The correct password passes the verification
-    // function
+    // function.
     let password_to_check = password_to_hash;
     let is_valid = password_verification(password_to_check, &phc_string)?;
     println!("The password is valid: {is_valid}");
 
-    // An incorrect password fails the check
+    // An incorrect password fails the check:
     assert!(!password_verification(b"random_guess", &phc_string)?);
 
-    // Key derivation: derive a child key from a password and salt
+    // Key derivation: derive a child key from a password and salt:
     key_derivation()?;
 
     Ok(())
@@ -39,13 +39,13 @@ fn main() -> Result<(), Error> {
 /// Hash a password to a "PHC string" suitable for the purposes of
 /// password-based authentication.
 fn password_hashing(password_to_save: &[u8]) -> Result<String, Error> {
-    // Generate a random salt
+    // Generate a random salt:
     let salt = SaltString::generate(&mut OsRng);
 
-    // Configure Argon2 with default params (Argon2id v19)
+    // Configure `Argon2` with default params (Argon2id v19):
     let argon2 = Argon2::default();
 
-    // Hash the password to a PHC string ($argon2id$v=19$...)
+    // Hash the password to a PHC string ($argon2id$v=19$...):
     let phc_string = argon2.hash_password(password_to_save, &salt)?.to_string();
 
     Ok(phc_string)
@@ -57,10 +57,10 @@ fn password_verification(
     password_to_check: &[u8],
     phc_string: &str,
 ) -> Result<bool, Error> {
-    // Parsed representation of a PHC string
+    // Parsed representation of a PHC string:
     let parsed_hash = PasswordHash::new(phc_string)?;
 
-    // Verify the password
+    // Verify the password:
     Ok(Argon2::default()
         .verify_password(password_to_check, &parsed_hash)
         .is_ok())
@@ -82,7 +82,7 @@ fn key_derivation() -> Result<(), Error> {
         &mut output_key_material,
     )?;
 
-    // `output_key_material` can now be used as a cryptographic key
+    // `output_key_material` can now be used as a cryptographic key.
 
     Ok(())
 }

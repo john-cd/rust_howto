@@ -22,7 +22,7 @@ async fn main() -> anyhow::Result<()> {
     dotenv().ok();
 
     // Retrieve the MongoDB connection URI from the environment variable.
-    // Example: mongodb://user:password@server:27017/
+    // Example: `mongodb://user:password@server:27017/`.
     let mongo_uri = env::var("MONGO_URI")?;
     // Create a new MongoDB client.
     let client = Client::with_uri_str(&mongo_uri).await?;

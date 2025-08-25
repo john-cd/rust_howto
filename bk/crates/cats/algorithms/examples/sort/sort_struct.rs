@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
-// Define a struct `Person` with `name` and `age` fields.
+/// A struct with `name` and `age` fields.
 #[derive(Debug, Eq, Ord, PartialEq, PartialOrd)]
 struct Person {
     name: String,
@@ -8,7 +8,7 @@ struct Person {
 }
 
 impl Person {
-    // Constructor for creating a new `Person` instance.
+    /// Constructor for creating a new `Person` instance.
     pub fn new(name: String, age: u32) -> Self {
         Person { name, age }
     }
@@ -21,7 +21,7 @@ fn main() {
         Person::new("John".to_string(), 1),
     ];
 
-    // Sort people by derived natural order (name and age)
+    // Sort people by derived natural order (in this case, name and age):
     people.sort();
 
     assert_eq!(
@@ -34,7 +34,7 @@ fn main() {
     );
     println!("{people:?}");
 
-    // Sort people by age
+    // Sort people by age only:
     people.sort_by(|a, b| b.age.cmp(&a.age));
 
     assert_eq!(

@@ -15,11 +15,11 @@
 //! polars = "0.48.1"
 //! ```
 //!
-//! `polars` has a large list of default features, therefore you may want to
+//! `polars` has a large list of default features, therefore we may want to
 //! cherry-pick required features:
 //!
 //! ```toml
-//! polars = { version = "0.48.1", default-features = false, features = ["<what you need>"] }
+//! polars = { version = "0.48.1", default-features = false, features = ["<what we need>"] }
 //! ```
 
 // use std::fs::File;

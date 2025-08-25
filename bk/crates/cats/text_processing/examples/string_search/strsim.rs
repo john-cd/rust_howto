@@ -16,25 +16,25 @@ fn main() {
     let s1 = "aleksandr";
     let s2 = "alexander";
 
-    // Levenshtein distance
+    // Levenshtein distance:
     println!("Levenshtein: {}", levenshtein(s1, s2));
 
-    // Normalized Levenshtein distance (0.0 to 1.0)
+    // Normalized Levenshtein distance (0.0 to 1.0):
     println!("Normalized Levenshtein: {}", normalized_levenshtein(s1, s2));
 
-    // Damerau-Levenshtein distance (handles transpositions)
+    // Damerau-Levenshtein distance (handles transpositions):
     println!("Damerau-Levenshtein: {}", damerau_levenshtein(s1, s2));
 
-    // Jaro similarity (0.0 to 1.0)
+    // Jaro similarity (0.0 to 1.0):
     println!("Jaro: {}", jaro(s1, s2));
 
-    // Jaro-Winkler similarity (0.0 to 1.0)
+    // Jaro-Winkler similarity (0.0 to 1.0):
     println!("Jaro-Winkler: {}", jaro_winkler(s1, s2));
 
-    // Sørensen-Dice coefficient (0.0 to 1.0)
+    // Sørensen-Dice coefficient (0.0 to 1.0):
     println!("Sørensen-Dice: {}", sorensen_dice(s1, s2));
 
-    // Hamming distance (only for equal length strings)
+    // Hamming distance (only for equal length strings):
     let s3 = "karolin";
     let s4 = "kathrin";
     match hamming(s3, s4) {
@@ -42,7 +42,7 @@ fn main() {
         Err(e) => println!("Error calculating Hamming distance: {e}"),
     }
 
-    // Example: Finding closest match
+    // Example: Finding closest match:
     let target = "rusty";
     let candidates = ["dusty", "rust", "trust", "crusty"];
 

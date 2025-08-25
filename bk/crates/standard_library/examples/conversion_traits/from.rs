@@ -17,7 +17,7 @@ fn main() {
     let mm: Millimeters = m.into();
     println!("{mm:?}");
     assert_eq!(mm.0, 2000);
-    // OR
+    // OR:
     let m = Meters(4);
     let mm = Millimeters::from(m);
     println!("{mm:?}");

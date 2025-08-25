@@ -7,7 +7,7 @@
 - Encapsulates data access logic, separating it from business logic.
 - Makes it easier to test the business logic by using mock repositories.
 - Simplifies code maintenance by centralizing data access logic.
-- Allows you to easily switch between different data storage implementations.
+- Easily switches between different data storage implementations.
 - Often combined with ORM tools like [`diesel`][c~diesel~docs]↗{{hi:diesel}} or [`sea-orm`][c~sea-orm~docs]↗{{hi:sea-orm}}. See [[query_builders_orms | Query Builders & ORMs]].
 
 ```rust,editable

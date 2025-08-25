@@ -12,7 +12,7 @@ The need for this type arises from the fact that:
 - On Windows, strings are often arbitrary sequences of non-zero 16-bit values, interpreted as UTF-16 when it is valid to do so.
 - In Rust, strings are always valid UTF-8, which may contain zeros.
 
-[`OsString`][c~std::ffi::OsString~docs]↗{{hi:std::ffi::OsString}} and [`OsStr`][c~std::ffi::OsStr~docs]↗{{hi:std::ffi::OsStr}} bridge this gap by simultaneously representing Rust and platform-native string values, and in particular allowing a Rust string to be converted into an "OS" string with no cost if possible. A consequence of this is that `OsString` instances are not NUL terminated; in order to pass to e.g., Unix system call, you should create a [`CStr`][c~std::ffi::CStr~docs]↗{{hi:std::ffi::CStr}}.
+[`OsString`][c~std::ffi::OsString~docs]↗{{hi:std::ffi::OsString}} and [`OsStr`][c~std::ffi::OsStr~docs]↗{{hi:std::ffi::OsStr}} bridge this gap by simultaneously representing Rust and platform-native string values, and in particular allowing a Rust string to be converted into an "OS" string with no cost if possible. A consequence of this is that `OsString` instances are not NUL terminated; in order to pass to e.g., Unix system call, create a [`CStr`][c~std::ffi::CStr~docs]↗{{hi:std::ffi::CStr}}.
 
 [`std::ffi::OsStr`][c~std::ffi::OsStr~docs]↗ is a borrowed reference to an OS string. `&OsStr`{{hi:&OsStr}} is to `OsString` as `&str` is to `String`: the former in each pair are borrowed references; the latter are owned strings.
 
@@ -29,9 +29,9 @@ C strings are different from Rust strings:
 - C strings are NUL-terminated, i.e., they have a \0 character at the end.
 - C strings cannot have NUL characters in the middle.
 
-Use [`CString`][c~std::ffi::CString~docs]↗{{hi:std::ffi::CString}} and [`CStr`][c~std::ffi::CStr~docs]↗{{hi:std::ffi::CStr}} when you need to convert Rust UTF-8 strings to and from C-style strings. Their primary use case is **FFI**, Foreign Function Interface, the mechanism by which Rust interacts with code written in other languages with a C ABI, like C and Python.
+Use [`CString`][c~std::ffi::CString~docs]↗{{hi:std::ffi::CString}} and [`CStr`][c~std::ffi::CStr~docs]↗{{hi:std::ffi::CStr}} to convert Rust UTF-8 strings to and from C-style strings. Their primary use case is **FFI**, Foreign Function Interface, the mechanism by which Rust interacts with code written in other languages with a C ABI, like C and Python.
 
-[`std::ffi::CString`][c~std::ffi::CString~docs]↗ represents an owned, C-compatible, nul-terminated string with no nul bytes in the middle. A `CString` can be created from either a byte slice or a byte vector, or anything that implements `Into<Vec<u8>>` (for example, you can build a `CString` straight out of a `String` or a `&str`, since both implement that trait).
+[`std::ffi::CString`][c~std::ffi::CString~docs]↗ represents an owned, C-compatible, nul-terminated string with no nul bytes in the middle. A `CString` can be created from either a byte slice or a byte vector, or anything that implements `Into<Vec<u8>>` (for example, we can build a `CString` straight out of a `String` or a `&str`, since both implement that trait).
 
 `std::ffi::CStr` represents a borrowed reference to a nul-terminated array of bytes. It can be constructed safely from a `&[u8]` slice, or unsafely from a raw `*const c_char`. It can be expressed as a literal in the form `c"Hello world"`. Note that this structure does not have a guaranteed layout (the `repr(transparent)` notwithstanding) and should not be directly placed in the signatures of FFI functions. Instead, safe wrappers of FFI functions may leverage `CStr::as_ptr` and the unsafe `CStr::from_ptr` constructor to provide a safe interface to other consumers.
 
@@ -75,7 +75,7 @@ You may also use the [string_cache][c~string_cache~docs]↗ library for internin
 
 [![compact_str][c~compact_str~docs~badge]][c~compact_str~docs] [![compact_str~crates.io][c~compact_str~crates.io~badge]][c~compact_str~crates.io] [![compact_str~repo][c~compact_str~repo~badge]][c~compact_str~repo] [![compact_str~lib.rs][c~compact_str~lib.rs~badge]][c~compact_str~lib.rs]{{hi:compact_str}}{{hi:Compact}}{{hi:Memory}}{{hi:Mutable}}{{hi:Small}}{{hi:String}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
-If you need small formatted string, consider a string type implementing small-string optimization. For example, [compact_str][c~compact_str~crates.io]↗ implements `CompactString`, a memory efficient string type that can store smaller strings on the stack and transparently stores longer strings on the heap.
+For small formatted string, consider a string type implementing small-string optimization. For example, [compact_str][c~compact_str~crates.io]↗ implements `CompactString`, a memory efficient string type that can store smaller strings on the stack and transparently stores longer strings on the heap.
 
 ## Related Topics {#related-topics}
 

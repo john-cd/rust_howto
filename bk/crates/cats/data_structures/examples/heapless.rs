@@ -2,12 +2,12 @@
 //! This example demonstrates the usage of `heapless` collections in Rust.
 //!
 //! `heapless` provides fixed-size, stack-allocated data structures, which are
-//! useful when you know the maximum size of your data at compile time and need
+//! useful when we know the maximum size of our data at compile time and need
 //! to avoid dynamic memory allocation (and potential capacity errors). This is
 //! particularly beneficial in embedded systems or performance-critical
 //! applications where dynamic allocation can be unpredictable or undesirable.
 //!
-//! Choosing `heapless` is a trade-off: you gain performance and determinism but
+//! Choosing `heapless` is a trade-off: gain performance and determinism, but
 //! lose the flexibility of dynamic resizing.
 
 use heapless::FnvIndexMap;
@@ -48,7 +48,7 @@ fn main() -> anyhow::Result<()> {
         println!("Error pushing to string: {err:?}"); // err is ()
     }
 
-    // Fixed-size map (using Fnv hash for performance)
+    // Fixed-size map (using `Fnv` hash for performance):
     let mut map: FnvIndexMap<&str, u32, 4> = FnvIndexMap::new();
 
     map.insert("one", 1).unwrap();

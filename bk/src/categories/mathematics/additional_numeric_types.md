@@ -6,7 +6,7 @@
 
 [![num-traits][c~num-traits~docs~badge]][c~num-traits~docs] [![num-traits~crates.io][c~num-traits~crates.io~badge]][c~num-traits~crates.io] [![num-traits~repo][c~num-traits~repo~badge]][c~num-traits~repo] [![num-traits~lib.rs][c~num-traits~lib.rs~badge]][c~num-traits~lib.rs]{{hi:num-traits}}{{hi:Numerics}}{{hi:Mathematics}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~science][cat~science~badge]][cat~science] [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-Numeric [traits][p~traits] for generic [mathematics][p~mathematics]. [Traits][p~traits] like `Number`, `Add`, etc. that allow you write [functions][p~functions] that are generic over the specific numeric type:
+Numeric [traits][p~traits] for generic [mathematics][p~mathematics]. [Traits][p~traits] like `Number`, `Add`, etc. that allow writing [functions][p~functions] that are generic over the specific numeric type:
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/examples/additional_numeric_types/num_traits.rs:example}}

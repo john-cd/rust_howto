@@ -54,7 +54,8 @@ fn init_logger() {
 //             // Ensure events are captured by `cargo test`
 //             .is_test(true)
 //             // Ignore errors initializing the logger if tests race to
-// configure it             .try_init();
+//             // configure it.
+//             .try_init();
 // }
 
 use rusty_fork::rusty_fork_test;

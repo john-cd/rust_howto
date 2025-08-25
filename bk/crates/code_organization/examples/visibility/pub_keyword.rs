@@ -41,7 +41,7 @@ fn main() {
 
     // Access the public method.
     m::Struct.method();
-    // Equivalent to m::Struct::method(&m::Struct);
+    // Equivalent to `m::Struct::method(&m::Struct);`.
 
     // Bring the public submodule into scope.
     use m::public_module;

@@ -5,7 +5,7 @@
 | Topic | Rust Crates |
 |---|---|
 | Profiling and Benchmarking | `cargo flamegraph` generates flame graphs to visualize performance bottlenecks. `cargo bench` (built-in) runs benchmarks to measure performance. |
-| Optimization Analysis| `cargo expand` expands [macros][p~macros], which can sometimes help you understand generated code and identify optimization opportunities. |
+| Optimization Analysis| `cargo expand` expands [macros][p~macros], which can sometimes help understand generated code and identify optimization opportunities. |
 | Other Performance Tools | [`perf`][c~perf~docs]↗{{hi:perf}}: (System profiler); [`valgrind`][c~valgrind~docs]↗{{hi:valgrind}} (Memory debugging and profiling) |
 
 ## Configure Your `cargo` Project for Maximum Performance, Fast Compile Times or Minimal Binary Size {#cargo-wizard}

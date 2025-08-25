@@ -20,7 +20,7 @@
 
 [`prost`][c~prost~docs]↗{{hi:prost}} is a Protocol Buffers implementation for the Rust Language.
 
-In you `main.rs` file:
+In the `main.rs` file:
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/examples/binary_encoders/prost.rs:example}}
@@ -104,8 +104,8 @@ In `foo.capnp`:
 
 - Compact and efficient: Cap'n Proto is designed to be very space-efficient for both on-the-wire and in-memory representations.
 - Fast: Cap'n Proto offers excellent [performance][p~performance], especially for serialization and deserialization.
-- Language-agnostic: You can generate code in various [programming languages][p~programming-languages] from a single .capnp definition file.
-- Schema evolution: Cap'n Proto supports schema evolution, allowing you to modify the structure of your data over time without breaking compatibility.
+- Language-agnostic: You can generate code in various [programming languages][p~programming-languages] from a single `.capnp` definition file.
+- Schema evolution: Cap'n Proto supports schema evolution, allowing us to modify the structure of your data over time without breaking compatibility.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

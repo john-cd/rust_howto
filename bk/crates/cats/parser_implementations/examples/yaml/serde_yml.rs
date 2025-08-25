@@ -9,7 +9,7 @@
 //! to a file, read the YAML string back from the file, and finally deserialize
 //! it back into a `Person` struct.
 //!
-//! To run this example, you need to have the `serde`, `serde_yaml`, and
+//! To run this example, we need to have the `serde`, `serde_yaml`, and
 //! `anyhow` crates in your `Cargo.toml` file.
 use std::fs::File;
 use std::io::prelude::*;

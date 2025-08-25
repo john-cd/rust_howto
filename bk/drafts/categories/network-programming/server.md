@@ -28,7 +28,7 @@ In this example, the port{{hi:Port}} is displayed on the console, and the progra
 [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 [![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}}
 
-Use [`glommio`][c~glommio~docs]↗{{hi:glommio}} if you need {{i:io_uring support}}. Still somewhat experimental but rapidly maturing.
+Use [`glommio`][c~glommio~docs]↗{{hi:glommio}} for {{i:io_uring support}}. Still somewhat experimental but rapidly maturing.
 
 ```rust,editable
 {{#include ../../../crates/cats/network_programming/examples/server/glommio.rs:example}}

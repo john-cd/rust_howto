@@ -1074,6 +1074,16 @@
 					"label": ""
 				}
 			]
+		},
+		{
+			"path": "bk/crates/cats/development_tools/examples/documentation/rustdoc2.rs",
+			"bookmarks": [
+				{
+					"line": 13,
+					"column": 4,
+					"label": ""
+				}
+			]
 		}
 	]
 }

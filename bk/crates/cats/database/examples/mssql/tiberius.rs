@@ -70,7 +70,7 @@ async fn main() -> anyhow::Result<()> {
 #[test]
 fn require_external_svc() -> anyhow::Result<()> {
     unsafe {
-        // Refer to the compose*.yaml files
+        // Refer to the `compose*.yaml` files.
         std::env::set_var("MSSQL_HOST", "rust_howto_dev-mssql-1");
     }
     main()?;

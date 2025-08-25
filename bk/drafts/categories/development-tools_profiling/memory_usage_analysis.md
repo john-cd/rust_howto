@@ -31,12 +31,12 @@
 
 ## Use Tracing to Understand Allocation Patterns {#tracing}
 
-[`tracing`][c~tracing~docs]↗{{hi:tracing}} can help you understand the flow of your program and identify areas where excessive allocations might be occurring.
+[`tracing`][c~tracing~docs]↗{{hi:tracing}} can help understanding the flow of your program and identify areas where excessive allocations might be occurring.
 See [[tracing | Tracing]].
 
 ## Execution Time Measurement {#timing}
 
-[`measure_time`][c~measure_time~docs]↗{{hi:measure_time}} can help you measure the execution time of code blocks, which can be useful when investigating memory-related performance issues.
+[`measure_time`][c~measure_time~docs]↗{{hi:measure_time}} can measure the execution time of code blocks, e.g. when investigating memory-related performance issues.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

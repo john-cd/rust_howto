@@ -24,7 +24,7 @@ fn main() {
     fnv_set.insert("item1");
     fnv_set.insert("item2");
 
-    // You may also pre-allocate capacity for better performance:
+    // We may also pre-allocate capacity for better performance:
     let mut _map_with_capacity: HashMap<String, String> =
         HashMap::with_capacity(100);
     let mut _set_with_capacity: HashSet<String> = HashSet::with_capacity(100);

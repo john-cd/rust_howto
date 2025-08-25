@@ -82,9 +82,9 @@
 //     /// Attempts to retrieve the next dependency from the API.
 //     ///
 //     /// This function handles pagination by making multiple requests to the
-// API     /// if necessary. It returns `Ok(Some(dep))` if a dependency is
-// found,     /// `Ok(None)` if there are no more dependencies, and `Err(err)`
-// if an error     /// occurs.
+//     /// API if necessary. It returns `Ok(Some(dep))` if a dependency is
+//     /// found, `Ok(None)` if there are no more dependencies, and `Err(err)`
+//     /// if an error occurs.
 //     ///
 //     /// This function is called internally by the `Iterator` implementation.
 //     fn try_next(&mut self) -> Result<Option<Dependency>> {

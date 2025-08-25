@@ -16,7 +16,7 @@ fn parse_port(s: &str) -> Result<u16, Box<dyn Error>> {
     // `Box` encapsulates the `dyn Error` trait object, because it is
     // dynamically sized. The trait object enables "late binding" a.k.a.
     // virtual dispatch at runtime, depending on the actual Error type.
-    // Alternatively, you may return `anyhow::Result` - the `anyhow` crate
+    // Alternatively, return `anyhow::Result` - the `anyhow` crate
     // handles the complexity for you.
     let port: u16 = s.parse()?;
     if port == 0 {

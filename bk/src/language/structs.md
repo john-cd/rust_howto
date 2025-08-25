@@ -6,7 +6,7 @@
 
 [![Rust by example - Structs][book~rust-by-example~structs~badge]][book~rust-by-example~structs]{{hi:Structs}}
 
-Structs are custom data types that allow you to group related data together. The following example demonstrates how to define a `struct` and create a instance of it:
+Structs are custom data types that group related data together. The following example demonstrates how to define a `struct` and create a instance of it:
 
 ```rust,editable
 {{#include ../../crates/language/examples/structs/structs.rs:example}}

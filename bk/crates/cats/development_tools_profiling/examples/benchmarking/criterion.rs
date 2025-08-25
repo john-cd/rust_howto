@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
-//! Run the benchmarks with `cargo bench`
+//! Run the benchmarks with `cargo bench`:
 use std::hint::black_box;
 
 use criterion::Criterion;

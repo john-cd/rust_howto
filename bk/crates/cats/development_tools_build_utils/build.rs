@@ -1,9 +1,9 @@
-// <https://doc.rust-lang.org/cargo/reference/build-scripts.html>
+// <https://doc.rust-lang.org/cargo/reference/build-scripts.html>.
 #![allow(dead_code)]
 
 // ANCHOR: C
 fn c() {
-    // Compile `examples/hello.c` into `libhello.a`
+    // Compile `examples/hello.c` into `libhello.a`:
     cc::Build::new().file("examples/hello.c").compile("hello");
 }
 // ANCHOR_END: C
@@ -22,7 +22,7 @@ fn cpp() {
 
 // ANCHOR: C_DEFINES
 fn cc_defines() {
-    // Compile `examples/foo.c` into `libfoo.a` with defines
+    // Compile `examples/foo.c` into `libfoo.a` with defines:
     cc::Build::new()
         .define("APP_NAME", "\"foo\"")
         .define(

@@ -29,12 +29,12 @@ fn main() -> anyhow::Result<()> {
         );
     }
 
-    // Using with replacement
+    // Using with replacement:
     let ac = AhoCorasick::new(patterns)?;
     let result = ac.replace_all(text, &["APPLE", "BANANA", "ORANGE"]);
     println!("\nReplaced text: {result}");
 
-    // Finding all matches with overlapping patterns
+    // Finding all matches with overlapping patterns:
     let patterns = &["abc", "bc", "c"];
 
     // Use leftmost-first match semantics, which reports leftmost matches, like
@@ -56,7 +56,7 @@ fn main() -> anyhow::Result<()> {
         );
     }
 
-    // Using with byte offsets
+    // Using with byte offsets:
     let patterns = &[b"abc", b"def"];
     let ac = AhoCorasick::new(patterns)?;
 
@@ -71,7 +71,7 @@ fn main() -> anyhow::Result<()> {
         );
     }
 
-    // Example: counting occurrences
+    // Example: counting occurrences:
     let patterns = &["he", "she", "his", "hers"];
     let ac = AhoCorasick::new(patterns)?;
 

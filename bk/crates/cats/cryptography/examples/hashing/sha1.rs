@@ -9,21 +9,21 @@ use sha1::Sha1;
 // compatibility or non-security-sensitive purposes.
 
 fn main() {
-    // Create a SHA-1 hasher
+    // Create a SHA-1 hasher:
     let mut hasher = Sha1::new();
 
-    // Process input message
+    // Process input message:
     hasher.update(b"hello world");
 
-    // Compute the hash digest
+    // Compute the hash digest:
     let result = hasher.finalize();
 
-    // Assert the expected hash value
+    // Assert the expected hash value:
     assert_eq!(result[..], hex!("2aae6c35c94fcfb415dbe95f408b9ce91ee846ed"));
 
     println!("SHA-1 hash of 'hello world': {result:x}");
 }
-// Example adapted from <https://docs.rs/sha1/0.10.6/sha1/index.html>
+// Example adapted from <https://docs.rs/sha1/0.10.6/sha1/index.html>.
 // ANCHOR_END: example
 
 #[test]

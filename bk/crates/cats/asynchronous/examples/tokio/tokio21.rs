@@ -5,7 +5,7 @@ use std::rc::Rc;
 use tokio::task;
 use tokio::time;
 
-/// Demonstrates using `tokio::task::LocalSet` to run non-Send tasks.
+/// Demonstrates using `tokio::task::LocalSet` to run non-`Send` tasks.
 #[tokio::main]
 async fn main() {
     // Data that is not thread-safe:

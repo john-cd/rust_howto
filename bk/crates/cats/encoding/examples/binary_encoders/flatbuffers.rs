@@ -11,7 +11,7 @@
 // //!
 // //! [FlatBuffers](https://flatbuffers.dev) is a cross-platform serialization library
 // //! architected for maximum memory efficiency.
-// //! It allows you to directly access serialized data
+// //! It allows directly accessing serialized data
 // //! without parsing/unpacking it first, while
 // //! still having great forwards/backwards compatibility.
 // //! It was originally created at Google for game development
@@ -53,7 +53,7 @@
 //     // Get the finished buffer as a byte slice.
 //     let finished_bytes = builder.finished_data();
 
-//     // Now you can:
+//     // Now we can:
 //     // 1. Serialize the finished_bytes to a file or send it over the network,
 //     // 2. Deserialize the finished_bytes to access the data in another
 //     // program.

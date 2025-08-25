@@ -12,7 +12,7 @@ The [`as`][keyword~as~docs]↗{{hi:keyword~as}} keyword is used for basic type c
 
 ## Conversion Traits: `From`, `Into`, `TryFrom` and `TryInto` {#skip1}
 
-The [`From`][c~std::convert::From~docs]↗{{hi:std::convert::From}} and [`Into`][c~std::convert::Into~docs]↗{{hi:std::convert::Into}} [traits][p~traits] are used for conversions that should always succeed. [`From`][c~std::convert::From~docs]↗{{hi:std::convert::From}} allows you to define how to convert from a type, and [`Into`][c~std::convert::Into~docs]↗{{hi:std::convert::Into}} provides a blanket implementation for converting into a type if From is implemented. This is the preferred way to do type conversions in most cases.
+The [`From`][c~std::convert::From~docs]↗{{hi:std::convert::From}} and [`Into`][c~std::convert::Into~docs]↗{{hi:std::convert::Into}} [traits][p~traits] are used for conversions that should always succeed. [`From`][c~std::convert::From~docs]↗{{hi:std::convert::From}} defines how to convert from a type, and [`Into`][c~std::convert::Into~docs]↗{{hi:std::convert::Into}} provides a blanket implementation for converting into a type if From is implemented. This is the preferred way to do type conversions in most cases.
 
 The [`TryFrom`][c~std::convert::TryFrom~docs]↗{{hi:std::convert::TryFrom}} and [`TryInto`][c~std::convert::TryInto~docs]↗{{hi:std::convert::TryInto}} [traits][p~traits] are used for conversions that might fail. They return a [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} to indicate success or failure. Use these when there's a possibility of the conversion not working (e.g., [parsing][p~parsing] a string to a number).
 

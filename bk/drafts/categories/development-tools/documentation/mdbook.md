@@ -50,7 +50,7 @@ cargo install mdbook-hide
 
 ## Deploy Your Book or Documentation via a CD / CI Pipeline {#cd-ci}
 
-`GitHub Actions` is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline.
+`GitHub Actions` is a continuous integration and continuous delivery (CI/CD) platform that automates build, test, and deployment pipelines.
 
 [GitHub Actions for mdBook][actions-mdbook~repo]↗{{hi:Github actions}} allows you to build your site with [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}}. Linux (Ubuntu), macOS, and Windows are supported.
 

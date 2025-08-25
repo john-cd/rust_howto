@@ -10,7 +10,7 @@ use rand::distr::Distribution;
 use rand_distr::Normal;
 use rand_distr::NormalError;
 
-/// Sample from a normal distribution with mean 2.0 and standard deviation 3.0.
+/// Sample from a normal distribution with mean 2.0 and standard deviation 3.0:
 fn main() -> Result<(), NormalError> {
     let mut rng = rand::rng();
     let normal = Normal::new(2.0, 3.0)?;

@@ -33,7 +33,7 @@ OPTIONS:
   -n, --number <num>  Five less than your favorite number.
 ```
 
-We can test the application by running a command like the following.
+We can test the application by running a command like the following:
 
 ```bash
 cargo run -- -f myfile.txt -n 251

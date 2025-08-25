@@ -33,7 +33,7 @@ Third, open the Rust documentation, if needed. You can open the locally installe
 rustup doc
 ```
 
-Fourth, you can start creating projects using `cargo new` and build/run them with `cargo build` and `cargo run`.
+Fourth, start creating projects using `cargo new` and build/run them with `cargo build` and `cargo run`.
 
 - Create a new project:
 
@@ -61,7 +61,7 @@ cargo run   # Run the executable.
 
 For more details, peruse the [Getting Started][book~rust~ch01-00-getting-started]↗ chapter of the Rust book.
 
-Fifth, consider adding your project to source control. If you use `git`, you can initialize it using the `git init` command and add a `.gitignore` file to skip the folder where `cargo` stores its cache and outputs:
+Fifth, consider adding your project to source control. If you use `git`, initialize your repository using the `git init` command and add a `.gitignore` file to skip the folder where `cargo` stores its cache and outputs:
 
 ```txt
 target/

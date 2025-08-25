@@ -7,7 +7,7 @@ use fancy_regex::Regex;
 
 fn match_two_identical_words(s: &str) {
     // Check if a text consists of two identical words.
-    // Note the backreference \1 to the 1st capture group (...)
+    // Note the backreference `\1` to the 1st capture group `(...)`.
     let re = Regex::new(r"^(\w+) (\1)$").expect("Error parsing the regex");
     match re.is_match(s) {
         Ok(true) => println!("Match found."),
@@ -27,7 +27,7 @@ fn capture_groups() {
     // (?<=exp) : look-behind, succeeds if exp matches to the
     // left of the current position
     // (?<!exp) : negative look-behind,
-    // succeeds if exp doesn't match to the left
+    // succeeds if exp doesn't match to the left.
     let pattern = r"(?<=dolor)\s*(\w+)";
 
     let re = Regex::new(pattern).expect("Error parsing the regex");

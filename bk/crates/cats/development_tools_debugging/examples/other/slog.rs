@@ -8,10 +8,12 @@
 //! into given destination(s).
 //!
 //! Add to your `Cargo.toml`, as needed:
+//! ```toml
 //! slog = "2.7" # or latest
 //! slog-async = "2.7"
 //! slog-term = "2.8"
 //! slog-scope = "4.4"
+//! ```
 use slog::Drain;
 use slog::o;
 

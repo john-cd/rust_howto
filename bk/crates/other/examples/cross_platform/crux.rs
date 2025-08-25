@@ -12,10 +12,10 @@
 //! to install the toolchains and structure a complete project.
 //!
 //! Add the following to your `Cargo.toml`, as needed:
-//! `crux_core` - the main Crux crate
-//! `crux_http` - HTTP client capability
-//! `crux_kv` - Key-value store capability
-//! `crux_time` - Time capability
+//! `crux_core` - the main Crux crate,
+//! `crux_http` - HTTP client capability,
+//! `crux_kv` - Key-value store capability,
+//! `crux_time` - Time capability.
 
 use crux_core::App;
 use crux_core::Command;
@@ -75,12 +75,12 @@ impl App for Counter {
     // platform. Updating the UI is considered an effect.
     type Effect = Effect;
     // Events are main input for the core, typically triggered by user
-    // interaction in the UI
+    // interaction in the UI.
     type Event = Event;
     // Model is a data structure (typically tree-like)
-    // holding the entire application state
+    // holding the entire application state.
     type Model = Model;
-    // Data structure describing the current state of the user interface
+    // Data structure describing the current state of the user interface.
     type ViewModel = ViewModel;
 
     // The job of the update function is to process an Event, update the

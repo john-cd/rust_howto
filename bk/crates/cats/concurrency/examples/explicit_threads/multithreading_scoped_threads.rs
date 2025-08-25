@@ -5,7 +5,7 @@ use std::path::Path;
 use std::sync::mpsc;
 use std::thread;
 
-/// Reads the contents of a file and returns them as a String.
+/// Reads the contents of a file and returns them as a `String`.
 ///
 /// The error type needs to be `Send` to be used in a channel.
 fn read_contents<T: AsRef<Path>>(
@@ -15,7 +15,7 @@ fn read_contents<T: AsRef<Path>>(
 }
 
 fn main() {
-    // To share state between threads, consider using a channel.
+    // To share state between threads, consider using a channel:
     let (tx, rx) = mpsc::channel();
 
     thread::scope(|scope| {
@@ -35,7 +35,7 @@ fn main() {
     // No join.
     // Spawned threads get joined automatically once the scope ends!
 
-    // Receive messages from the channel.
+    // Receive messages from the channel:
     println!("hello from the main thread");
 
     for received in rx {

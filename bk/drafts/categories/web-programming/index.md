@@ -14,7 +14,7 @@ The following table outlines common web development tasks and relevant Rust crat
 | REST API Design | Often uses web frameworks and serialization crates like [`serde`][c~serde~docs]↗{{hi:serde}}. | REST APIs are typically built using web frameworks and serialization crates. |
 | HTTP Clients | [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}}, [`isahc`][c~isahc~docs]↗{{hi:isahc}} | These crates provide HTTP client functionality for making requests to external services. |
 | Routing | Covered by web frameworks. | Web frameworks provide routing mechanisms to map requests to handlers. |
-| Middleware | Often provided by web frameworks or through crates like [`tower`][c~tower~docs]↗{{hi:tower}}. | Middleware allows you to add functionality to the request/response pipeline. |
+| Middleware | Often provided by web frameworks or through crates like [`tower`][c~tower~docs]↗{{hi:tower}}. | Middleware adds functionality to the request/response pipeline. |
 | Templating | [`minijinja`][c~minijinja~docs]↗{{hi:minijinja}}, [`tera`][c~tera~docs]↗{{hi:tera}}, [`handlebars`][c~handlebars~docs]↗{{hi:handlebars}}, [`askama`][c~askama~docs]↗{{hi:askama}} | Templating engines are used to generate HTML dynamically. |
 | Web Authentication & Authorization | [`actix-web-httpauth`][c~actix-web-httpauth~docs]↗{{hi:actix-web-httpauth}} (for Actix Web), [`tower-http`][c~tower-http~docs]↗{{hi:tower-http}} (generic middleware) | Authentication and authorization are often handled through middleware or dedicated crates. |
 | WebSockets | [`tokio-tungstenite`][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}}, [`async-tungstenite`][c~async-tungstenite~docs]↗{{hi:async-tungstenite}} | These crates provide WebSocket support. |

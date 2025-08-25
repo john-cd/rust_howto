@@ -20,8 +20,8 @@ comm -23 --check-order --output-delimiter="|" /tmp/defined_refdefs.txt /tmp/used
 
 # Counts
 echo
-echo "Count of reference definitions without links and vice versa:" $(comm -3 --check-order --output-delimiter="|" /tmp/defined_refdefs.txt /tmp/used_refdefs.txt  | wc -l)
-echo "Count of reference definitions defined in the refs folder:" $(cat  /tmp/defined_refdefs.txt | wc -l)
-echo "Count of reference definitions used in the markdown:" $(cat  /tmp/used_refdefs.txt | wc -l)
+echo "Count of reference definitions without links and vice versa:" $(comm -3 --check-order --output-delimiter="|" /tmp/defined_refdefs.txt /tmp/used_refdefs.txt | wc -l)
+echo "Count of reference definitions defined in the refs folder:" $(cat /tmp/defined_refdefs.txt | wc -l)
+echo "Count of reference definitions used in the markdown:" $(cat /tmp/used_refdefs.txt | wc -l)
 
 echo "DONE"

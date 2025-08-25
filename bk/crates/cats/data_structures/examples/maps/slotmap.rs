@@ -41,7 +41,7 @@ fn main() {
 
     assert_eq!(sm.get(key2), Some(&"value"));
 
-    // You can also create (multiple) secondary maps that can map the keys
+    // We can also create (multiple) secondary maps that can map the keys
     // returned by SlotMap to other values, to associate arbitrary data with
     // objects stored in slot maps.
     let mut sec = SecondaryMap::new();

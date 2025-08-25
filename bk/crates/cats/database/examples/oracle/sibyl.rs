@@ -22,7 +22,7 @@
 // // sudo unzip instantclient-sqlplus-linux.x64-<version>.zip -d
 // // /opt/oracle
 // // Convert RPM packages to DEB packages (if applicable):
-// // If you downloaded RPM packages, convert them to DEB using the `alien`
+// // If downloading RPM packages, convert them to DEB using the `alien`
 // // command.
 // // sudo alien -i oracle-instantclient-<version>-basic-<version>.rpm
 // // sudo alien -i oracle-instantclient-<version>-sqlplus-<version>.rpm

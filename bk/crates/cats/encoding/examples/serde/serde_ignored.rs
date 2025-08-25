@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
-//! `serde_ignored` is a crate that helps you handle unknown fields when
-//! deserializing with `serde`. It's useful when you want to ignore fields
+//! `serde_ignored` is a crate that helps handle unknown fields when
+//! deserializing with `serde`. It's useful to ignore fields
 //! that are present in the input but not defined in your struct.
 //!
 //! This example demonstrates how to use `serde_ignored` to deserialize a JSON

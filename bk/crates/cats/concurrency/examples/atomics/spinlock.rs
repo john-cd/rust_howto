@@ -11,7 +11,7 @@ use std::thread;
 /// A simple spinlock implementation.
 pub struct Spinlock<T> {
     locked: AtomicBool,
-    data: UnsafeCell<T>, // Allows mutation through `&self` via unsafe code
+    data: UnsafeCell<T>, // Allows mutation through `&self` via unsafe code.
 }
 
 impl<T> Spinlock<T> {
@@ -46,7 +46,7 @@ impl<T> Spinlock<T> {
             // This can improve performance on hyper-threaded CPUs.
             std::hint::spin_loop();
         }
-        // We successfully acquired the lock, return the guard
+        // We successfully acquired the lock, return the guard:
         SpinlockGuard { lock: self }
     }
 

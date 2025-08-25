@@ -27,7 +27,7 @@ This ordering is the main difference between [`BTreeMap`][c~std::collections::BT
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]
 
-`BTreeSet` is a sorted set based on a self-balancing tree, specifically a B-Tree. BTreeSet allows you to store unique elements in a sorted order and provides efficient operations for insertion, deletion, and lookup, with average time complexity of O(log n).
+`BTreeSet` is a sorted set based on a self-balancing tree, specifically a B-Tree. BTreeSet allows storing unique elements in a sorted order and provides efficient operations for insertion, deletion, and lookup, with average time complexity of O(log n).
 
 B-Tree Set is similar to `HashSet`, but it keeps the elements sorted.
 

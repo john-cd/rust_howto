@@ -4,14 +4,14 @@
 // // ANCHOR_END: example
 // //! Salsa is a generic framework for on-demand, incrementalized computation.
 // //!
-// //! The key idea of salsa is that you define your program as a set of
+// //! The key idea of `salsa` is to define a program as a set of
 // //! queries. Every query is used like a function K -> V that maps from some
 // //! key of type K to a value of type V.
 // //!
 // //! This example demonstrates a simple dependency graph:
 // //! `derived_string` depends on `computed_length`, which depends on
-// //! `input_string`. When you change `input_string`, Salsa automatically
-// //! recomputes `computed_length` and `derived_string`. If you change it back
+// //! `input_string`. When we change `input_string`, Salsa automatically
+// //! recomputes `computed_length` and `derived_string`. If we change it back
 // //! to the original value, Salsa avoids recomputation.
 
 // use salsa::prelude::*;
@@ -75,7 +75,7 @@
 // }
 
 // // Tells Salsa that MyState is a database.
-// // Each time you run your program, Salsa remembers the values of each
+// // Each time we run our program, Salsa remembers the values of each
 // // computation in a database. When the inputs change, it consults this
 // // database to look for values that can be reused.
 // impl Database for MyState {}

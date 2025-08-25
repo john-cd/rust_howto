@@ -2,7 +2,7 @@
 
 [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Development tools::Debugging}}
 
-Help you figure out what is going on with your code such as logging{{hi:Logging}}, tracing{{hi:Tracing}}, or assertions{{hi:Assertions}}.
+Helps figure out what is going on with your code such as logging{{hi:Logging}}, tracing{{hi:Tracing}}, or assertions{{hi:Assertions}}.
 
 ## Debuggers
 
@@ -31,7 +31,7 @@ Help you figure out what is going on with your code such as logging{{hi:Logging}
 | Topic | Rust Crates |
 |---|---|
 | Logging Framework | [`log`][c~log~docs]↗{{hi:log}} is an older crate providing logging macros and facade. |
-| Log Implementations (Loggers) | [`env_logger`][c~env_logger~docs]↗{{hi:env_logger}}: A simple logger that configures logging based on environment variables. [`log4rs`][c~log4rs~docs]↗{{hi:log4rs}} is a more flexible logger that supports  [configuration][p~configuration] files (YAML, TOML, JSON). |
+| Log Implementations (Loggers) | [`env_logger`][c~env_logger~docs]↗{{hi:env_logger}}: A simple logger that configures logging based on environment variables. [`log4rs`][c~log4rs~docs]↗{{hi:log4rs}} is a more flexible logger that supports [configuration][p~configuration] files (YAML, TOML, JSON). |
 | Log Filtering | Can be done with [`env_logger`][c~env_logger~docs]↗{{hi:env_logger}}, [`log4rs`][c~log4rs~docs]↗{{hi:log4rs}}. |
 
 {{#include log.incl.md}}

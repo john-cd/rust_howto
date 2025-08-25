@@ -2,7 +2,7 @@
 
 ## AI {#skip}
 
-- [foreverVM][forevervm~website]↗: The sessionless code interpreter. ForeverVM is a code execution API that allows you to securely run arbitrary Python code in a remote sandbox and get back results.
+- [foreverVM][forevervm~website]↗: The sessionless code interpreter. ForeverVM is a code execution API to securely run arbitrary Python code in a remote sandbox and get back results.
 
 ## CD / CI {#skip}
 
@@ -48,8 +48,8 @@ A Rust service foundations library.
 
 A library for graceful shutdown with no downtime.
 
-A system for graceful upgrades: it's a fork+exec mechanism with a Linux pipe for passing data between the original process and the "upgraded" process. It's designed to work well with `systemd` for zero-downtime upgrades. In production I use it alongside systemd's socket activation, but it should be tweakable to work with alternatives. It mostly follows systemd conventions so you can drop it into a typical service setup without too much fuss.
-If you're doing long-lived services in Rust and want painless, no-downtime upgrades, I'd love for you to give it a try (or tear it apart, your choice
+A system for graceful upgrades: it's a fork+exec mechanism with a Linux pipe for passing data between the original process and the "upgraded" process. It's designed to work well with `systemd` for zero-downtime upgrades. In production I use it alongside systemd's socket activation, but it should be tweakable to work with alternatives. It mostly follows systemd conventions, so it can be dropped into a typical service setup without too much fuss.
+
 
 ## Example Code {#skip}
 

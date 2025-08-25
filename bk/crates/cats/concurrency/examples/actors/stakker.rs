@@ -34,7 +34,7 @@
 //                 // Example of sending a message back
 //                 // (if another actor is listening)
 //                 // self.sender.send(MyMessage::PrintValue);
-//                 // If you had a receiver
+//                 // If we had a receiver.
 //                 }
 //             MyMessage::PrintValue => {
 //                 println!("Value to print: {}", self.count);
@@ -50,8 +50,9 @@
 //     // Create a new actor.
 //     let (counter_sender, counter_handle) = system.spawn(
 //         // The actor's initial state.
-//         Counter::new(counter_sender.clone()),  // Clone needed if actor sends
-// back                  // The actor's message handler.
+//         // Clone needed if actor sends back.
+//         Counter::new(counter_sender.clone()),
+//           // The actor's message handler.
 //         |counter, message| counter.handle_message(message),
 //     );
 
@@ -64,9 +65,9 @@
 
 //     // Run the Stakker system.  This will process the messages.
 //     system.run(());
-//     // The empty tuple () is the "external input" in this case
+//     // The empty tuple `()` is the "external input" in this case.
 
-//     // If you need to wait for the actor to finish
+//     // If we need to wait for the actor to finish:
 //     // system.wait(counter_handle);
 // }
 // // ANCHOR_END: example

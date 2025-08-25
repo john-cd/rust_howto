@@ -17,7 +17,7 @@ use std::num::ParseIntError;
 fn open_file(file_path: &str) {
     // Faillible functions like `File::open` return a `Result`...
     let open_result: Result<File, io::Error> = File::open(file_path);
-    // You could handle their `Result` there and then...
+    // We could handle their `Result` there and then...
     match open_result {
         Err(e) => eprintln!("An error occurred while opening the file: {e}"),
         Ok(file) => println!("Opened {file:?}"),
@@ -47,13 +47,13 @@ fn read_file(file_path: &str) -> Result<String, io::Error> {
 fn read_file2(file_path: &str) -> Result<String, io::Error> {
     let mut file: File = File::open(file_path)?;
     // Note that `file` is of type `File`,
-    // not `io::Result<File> = Result<File, io::Error>`
+    // not `io::Result<File> = Result<File, io::Error>`.
     let mut contents = String::new();
     file.read_to_string(&mut contents)?;
     Ok(contents)
 }
 // You can even chain method calls immediately after the `?`, e.g.
-// `File::open(file_path)?.read_to_string(&mut contents)?;`
+// `File::open(file_path)?.read_to_string(&mut contents)?;`.
 
 // You will often need to return one of multiple `Result` types.
 // You could create a custom error `enum` to do so:

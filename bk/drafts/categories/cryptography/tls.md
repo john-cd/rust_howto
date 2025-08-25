@@ -10,7 +10,7 @@ Transport Layer Security (TLS) is a cryptographic protocol designed to provide s
 
 [`rustls`][c~rustls~docs]↗{{hi:rustls}} is a portable pure-rust high-level implementation of TLS. It implements TLS 1.2 and higher. Being written entirely in Rust, it avoids any dependencies on system-level TLS libraries. It is portable and works consistently across different platforms without needing to manage system-specific TLS libraries. It can be used in web servers, clients, and other network-dependent applications.
 
-Choose [`rustls`][c~rustls~docs]↗{{hi:rustls}} (i) for portability and consistent behavior across platforms; (ii) when you need fine-grained control over TLS settings; and (iii) when performance is critical.
+Choose [`rustls`][c~rustls~docs]↗{{hi:rustls}} (i) for portability and consistent behavior across platforms; (ii) when needing fine-grained control over TLS settings; and (iii) when performance is critical.
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/examples/tls/rustls.rs:example}}

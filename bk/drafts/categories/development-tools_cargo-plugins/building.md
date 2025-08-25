@@ -15,7 +15,7 @@
 [![cat~development-tools::build-utils][cat~development-tools::build-utils~badge]][cat~development-tools::build-utils]{{hi:Build Utils}}
 
 [`cargo make`][c~cargo-make~repo]↗{{hi:cargo make}} is a Rust task runner and build tool. The [`cargo-make`][c~cargo-make~docs]↗{{hi:cargo-make}} task runner enables to define and configure sets of tasks and run them as a flow. A task is a command, script, rust code, or other sub tasks to execute. Tasks can have dependencies which are also tasks that will be executed before the task itself.
-With a simple [toml][p~toml] based [configuration][p~configuration] file, you can define a multi platform build script that can run build, test, generate [documentation][p~documentation], run bench tests, run security validations and more, executed by running a single command.
+With a simple [toml][p~toml] based [configuration][p~configuration] file, we can define a multi platform build script that can run build, test, generate [documentation][p~documentation], run bench tests, run security validations and more, executed by running a single command.
 
 Install with
 

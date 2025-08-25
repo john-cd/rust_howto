@@ -40,7 +40,7 @@ fn main() -> anyhow::Result<()> {
 
     // Open a read transaction.
     let rtxn = env.read_txn()?;
-    // Read data from the database
+    // Read data from the database:
     let value = db.get(&rtxn, &1)?.unwrap();
     println!("Value: {value}");
     assert_eq!(value, "Hello, world!");

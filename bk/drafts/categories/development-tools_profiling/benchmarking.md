@@ -19,7 +19,7 @@
 [![criterion~lib.rs][c~criterion~lib.rs~badge]][c~criterion~lib.rs]
 [![cat~development-tools::profiling][cat~development-tools::profiling~badge]][cat~development-tools::profiling]{{hi:Profiling}}
 
-[`criterion`][c~criterion~docs]↗{{hi:criterion}} is a statistically accurate benchmarking tool. [`criterion`][c~criterion~docs]↗{{hi:criterion}} helps you write fast code by detecting and measuring [performance][p~performance] improvements or regressions, even small ones, quickly and accurately. You can optimize with confidence, knowing how each change affects the [performance][p~performance] of your code.
+[`criterion`][c~criterion~docs]↗{{hi:criterion}} is a statistically accurate benchmarking tool. [`criterion`][c~criterion~docs]↗{{hi:criterion}} helps write fast code by detecting and measuring [performance][p~performance] improvements or regressions, even small ones, quickly and accurately. You can optimize with confidence, knowing how each change affects the [performance][p~performance] of your code.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_profiling/examples/benchmarking/criterion.rs:example}}

@@ -20,7 +20,7 @@ use tokio_tungstenite::tungstenite::protocol::Message;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    // Connect to a test WebSocket server, which will echo the message you sent.
+    // Connect to a test WebSocket server, which will echo the message we sent.
     let request = "ws://echo.websocket.in".into_client_request()?;
     // Add headers if needed:
     // request.headers_mut().insert("api-key", "42".parse()?);

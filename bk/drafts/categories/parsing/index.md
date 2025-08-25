@@ -13,7 +13,7 @@ This chapter focuses on writing parsers for binary and text formats. Existing fo
 | Parser Generators | [`lalrpop`][c~lalrpop~docs]↗{{hi:lalrpop}}, [`pest`][c~pest~docs]↗{{hi:pest}} | These tools define the grammar and generate the parser code. |
 | Combinator Parsers | [`nom`][c~nom~docs]↗{{hi:nom}}, [`chumsky`][c~chumsky~docs]↗{{hi:chumsky}}, [`combine`][c~combine~docs]↗{{hi:combine}} | These libraries provide functions that can be combined to build more complex parsers. |
 | Abstract Syntax Trees (AST) | Often implemented in custom structs | Parsers usually produce an AST, which represents the structure of the parsed input. You'll often define your own structs for this. |
-| Serialization/Deserialization | [`serde`][c~serde~docs]↗{{hi:serde}} | If you need to serialize or deserialize an AST, [`serde`][c~serde~docs]↗{{hi:serde}} is the standard choice. |
+| Serialization/Deserialization | [`serde`][c~serde~docs]↗{{hi:serde}} | To serialize or deserialize an AST, [`serde`][c~serde~docs]↗{{hi:serde}} is the standard choice. |
 
 ## Code Examples
 

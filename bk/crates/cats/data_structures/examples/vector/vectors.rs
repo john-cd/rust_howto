@@ -96,7 +96,7 @@ fn main() {
     let _whole_cake: &[_] = &numbers[..];
 
     // In Rust, it's common to use slices, rather than vectors, as
-    // arguments, when you just want to provide read access:
+    // arguments, when we just want to provide read access:
     fn read_vec(v: &[i32]) {
         println!("Inside read_vec: {v:?}");
     }

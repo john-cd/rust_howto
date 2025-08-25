@@ -6,7 +6,7 @@
 
 [![actix-web~website][c~actix-web~website~badge]][c~actix-web~website] [![actix-web][c~actix-web~docs~badge]][c~actix-web~docs] [![actix-web~crates.io][c~actix-web~crates.io~badge]][c~actix-web~crates.io] [![actix-web~repo][c~actix-web~repo~badge]][c~actix-web~repo] [![actix-web~lib.rs][c~actix-web~lib.rs~badge]][c~actix-web~lib.rs]{{hi:actix-web}}{{hi:Actix}}{{hi:Async}}{{hi:Framework}}{{hi:Http}}{{hi:Web}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}} [![cat~web-programming::websocket][cat~web-programming::websocket~badge]][cat~web-programming::websocket]{{hi:WebSocket}}
 
-Actix Web is a powerful, pragmatic, and extremely fast web framework for Rust. All Rust frameworks are fast, but choose [`actix`][c~actix-web~docs]↗{{hi:actix}} if you need the absolutely maximum performance.
+Actix Web is a powerful, pragmatic, and extremely fast web framework for Rust. All Rust frameworks are fast, but choose [`actix`][c~actix-web~docs]↗{{hi:actix}} for absolutely maximum performance.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_server/examples/actix_web.rs:example}}

@@ -64,7 +64,7 @@ Assignment (of non-`Copy` values) is not the only event that triggers a move: pa
 
 ## Clone (Deep Copy) {#clone}
 
-Rust will never automatically create deep copies of your data, because, as described above, it can be expensive.
+Rust will never automatically create deep copies of your data, because, as described above, they can be expensive.
 
 Instead, you may explicitly request a deep copy by calling the `clone` method of the [`std::clone::Clone`][c~std::clone::Clone~docs]↗{{hi:std::clone::Clone}} trait:
 
@@ -101,7 +101,7 @@ Immutable references (of type `&T` if `T` is the base type), also called shared 
 {{#include ../../crates/language/examples/ownership_borrowing/borrowing_immutable.rs:example}}
 ```
 
-Mutable references (of type `&mut T`), called exclusive references, allow you to borrow a value and modify it:
+Mutable references (of type `&mut T`), called exclusive references, borrow a value and modify it:
 
 ```rust,noplayground
 let mut a: i32 = 1;

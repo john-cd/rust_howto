@@ -47,13 +47,13 @@ async fn main() -> anyhow::Result<()> {
     //         let (stream, _) = listener.accept().await?;
 
     //         // Use an adapter to access something implementing `tokio::io`
-    // traits         // as if they implement `hyper::rt` IO traits.
+    //         // traits as if they implement `hyper::rt` IO traits.
     //         let io = TokioIo::new(stream);
 
     //         // Spawn a tokio task to serve multiple connections concurrently.
     //         tokio::task::spawn(async move {
     //             // Finally, we bind the incoming connection to our `hello`
-    // function.             // service_fn converts our function in a `Service`.
+    //             // function. service_fn converts our function in a `Service`.
     //             if let Err(err) = http1::Builder::new()
     //                 .serve_connection(io, service_fn(hello))
     //                 .await

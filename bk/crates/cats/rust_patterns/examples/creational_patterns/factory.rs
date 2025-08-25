@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
-//! A factory is quite useful when you need to create objects of different types
+//! A factory is quite useful when we need to create objects of different types
 //! that share a common interface, without needing to know the exact type at
 //! compile time.
 
@@ -39,7 +39,7 @@ enum ShapeType {
     Square,
 }
 
-// The Factory.
+// The factory.
 struct ShapeFactory;
 
 impl ShapeFactory {

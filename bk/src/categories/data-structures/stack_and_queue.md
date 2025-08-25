@@ -2,7 +2,7 @@
 
 {{#include stack_and_queue.incl.md}}
 
-While Rust's standard library doesn't have dedicated `Stack`{{hi:Stack}} and `Queue` types in the same way some other languages do, you can easily implement their functionality using existing data structures, primarily [`Vec`][c~std::vec::Vec~docs]↗ (for stack-like behavior) and [`VecDeque`][c~std::collections::VecDeque~docs]↗ (for queue-like behavior).
+While Rust's standard library doesn't have dedicated `Stack`{{hi:Stack}} and `Queue` types in the same way some other languages do, you can easily use existing data structures instead - primarily [`Vec`][c~std::vec::Vec~docs]↗ for stack-like behavior, and [`VecDeque`][c~std::collections::VecDeque~docs]↗ for queue-like behavior.
 
 ## Implement a Stack Using `Vec` {#stack}
 

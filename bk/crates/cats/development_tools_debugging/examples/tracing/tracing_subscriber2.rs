@@ -21,7 +21,7 @@ fn layers() {
 
     // Initialize tracing.
     // `registry()` is equivalent to `Registry::default()`.
-    // A Registry is a Subscriber around which multiple Layers implementing
+    // A `Registry` is a `Subscriber`, around which multiple Layers implementing
     // various behaviors may be added.
     tracing_subscriber::registry()
         .with(layer1)
@@ -34,16 +34,17 @@ fn layers() {
 
 use std::error::Error;
 
-// A Layer which filters spans and events based on a set of filter directives.
-// EnvFilter implements both the Layer and Filter traits, so it may be used for
-// both global filtering and per-layer filtering, respectively.
+// A `Layer`, which filters spans and events based on a set of filter
+// directives. `EnvFilter` implements both the `Layer` and `Filter` traits, so
+// it may be used for both global filtering and per-layer filtering,
+// respectively.
 #[allow(dead_code)]
 fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
-    // 1. Returns a new EnvFilter from the value of the RUST_LOG environment
+    // 1. Returns a new `EnvFilter` from the value of the `RUST_LOG` environment
     //    variable, ignoring any invalid filter directives.
     let _filter_layer = EnvFilter::from_default_env();
 
-    // 2. Returns a new EnvFilter from the value of the RUST_LOG environment
+    // 2. Returns a new `EnvFilter` from the value of the `RUST_LOG` environment
     //    variable, or "info" if the environment variable is unset or contains
     //    any invalid filter directives.
     let _filter_layer = EnvFilter::try_from_default_env()
@@ -54,11 +55,11 @@ fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     // mongodb=debug" "my_crate=info,my_crate::my_mod=debug,
     // [my_span]=trace"
 
-    // 3. Custom environment variable
+    // 3. Custom environment variable.
     let _filter_layer = EnvFilter::try_from_env("MY_CUSTOM_FILTER_ENV_VAR")?
-        // Set the base level when not matched by other directives to DEBUG.
+        // Set the base level when not matched by other directives to `DEBUG`.
         .add_directive(LevelFilter::DEBUG.into())
-        // Set the max level for `my_crate::my_mod` to TRACE, overriding
+        // Set the max level for `my_crate::my_mod` to `TRACE`, overriding
         // any directives parsed from the env variable.
         .add_directive("my_crate::my_mod=trace".parse()?);
 

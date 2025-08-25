@@ -35,7 +35,7 @@ mod mylib {
         #[error("Something went wrong!")]
         SomethingWentWrong {
             // The `Source` that we're gonna be printing snippets out of.
-            // This can be a `String` if you don't have or care about file
+            // This can be a `String` if we don't have or care about file
             // names.
             #[source_code]
             src: NamedSource<String>,

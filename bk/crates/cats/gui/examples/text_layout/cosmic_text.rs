@@ -44,7 +44,7 @@
 //         FontColor::default(),
 //     );
 
-//     // Here you would typically display the output as an image,
+//     // Here we would typically display the output as an image,
 //     // but for simplicity, we're just printing the buffer contents.
 //     println!("Buffer: {output:?}");
 // }

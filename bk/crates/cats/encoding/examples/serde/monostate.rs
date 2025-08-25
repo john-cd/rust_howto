@@ -12,8 +12,8 @@
 //!
 //! The `monostate` crate implements the `MustBe` macro, which makes fields
 //! `serde` deserializable only if they have one specific value. This is
-//! particularly helpful when deserializing untagged enums, as it allows you to
-//! differentiate between variants based on the values of their fields.
+//! particularly helpful when deserializing untagged enums, as it allows
+//! to differentiate between variants based on the values of their fields.
 use monostate::MustBe;
 use serde::Deserialize;
 

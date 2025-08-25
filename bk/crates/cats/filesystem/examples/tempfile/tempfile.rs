@@ -15,7 +15,7 @@ use tempfile::tempfile;
 
 fn main() -> std::io::Result<()> {
     // 1. Create a temporary file (inside of `env::temp_dir()`).
-    // Use `tempfile()` when you need a real `File` but don't need to refer to
+    // Use `tempfile()` when needing a real `File` but not needing to refer to
     // it by path.
     let mut temp_file: File = tempfile()?;
     writeln!(temp_file, "This is temporary.")?;
@@ -33,7 +33,7 @@ fn main() -> std::io::Result<()> {
     // Rust destructors being run, so will (almost) never fail to clean up
     // the temporary file.
 
-    // 2. Use `spooled_tempfile()` when you need an in-memory buffer that will
+    // 2. Use `spooled_tempfile()` when needing an in-memory buffer that will
     //    ultimately be backed by a temporary file if it gets too large. This
     //    variant is also secure/reliable in the presence of a pathological
     //    temporary file cleaner.
@@ -47,7 +47,7 @@ fn main() -> std::io::Result<()> {
     assert!(file.is_rolled());
 
     // 3. Create a temporary directory (inside of `env::temp_dir()`).
-    // Use `tempdir()` when you need a temporary directory that will be
+    // Use `tempdir()` when needing a temporary directory that will be
     // recursively deleted on drop.
     let temp_dir: TempDir = tempdir()?;
     let temp_file_path = temp_dir.path().join("temporary_file.txt");
@@ -67,7 +67,7 @@ fn main() -> std::io::Result<()> {
     // succeeded.
     temp_dir.close()?;
 
-    // 4. Use `NamedTempFile::new()` when you need a named temporary file that
+    // 4. Use `NamedTempFile::new()` when needing a named temporary file that
     //    can be refered to its path. `NamedTempFile` also rely on Rust
     //    destructors for cleanup, which may fail. Read the documentation and
     //    prefer `tempfile()` in most cases.
@@ -90,7 +90,7 @@ fn main() -> std::io::Result<()> {
     // Read the content back from the named temporary file.
     // `NamedTempFile::reopen()` guarantees that the re-opened file is the same
     // file, even in the presence of pathological temporary file cleaners.
-    // This function is also useful when you need multiple independent handles
+    // This function is also useful when needing multiple independent handles
     // to the same file (useful for consumer/producer patterns).
     let mut file = temp_file.reopen()?;
     let mut content = String::new();

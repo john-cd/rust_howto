@@ -65,7 +65,7 @@ fn main() {
     // in a `#[no_std]` context) to pin a value which does not implement `Unpin`
     // to its location _on the stack_. Doing so is possible using the `pin!`
     // macro. Unlike `Box::pin`, this does not systematically create a new
-    // heap allocation. <https://doc.rust-lang.org/std/pin/macro.pin.html>
+    // heap allocation. <https://doc.rust-lang.org/std/pin/macro.pin.html>.
     use core::pin::pin;
 
     struct Foo;

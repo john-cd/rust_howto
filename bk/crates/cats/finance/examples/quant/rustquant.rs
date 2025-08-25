@@ -6,7 +6,7 @@
 // //!
 // //! ## Prerequisites
 // //!
-// //! Ensure you have the `RustQuant` library added as a dependency in your
+// //! Ensure that the `RustQuant` library is added as a dependency in your
 // //! `Cargo.toml` file.
 
 // use RustQuant::prelude::*;

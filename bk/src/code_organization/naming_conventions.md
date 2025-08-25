@@ -21,7 +21,7 @@ Rust follows specific naming conventions to maintain consistency and readability
 - Type Parameters: Use concise `UpperCamelCase`, usually a single uppercase letter (`T`, `U`, etc.). Use more descriptive names like `ItemType` only when clarity is needed.
 - Lifetimes: Use short `lowercase` names, usually a single letter (`'a`, `'b`, `'de`, `'src`).
 
-In `UpperCamelCase`, acronyms  and contractions of compound words count as one word: use `Uuid` rather than `UUID`, `Usize` rather than `USize` or `Stdin` rather than `StdIn`. In `snake_case`, acronyms are lower-cased: `is_xid_start`. In `UpperCamelCase` names multiple numbers can be separated by a `_` for clarity: `Windows10_1709` instead of `Windows101709`.
+In `UpperCamelCase`, acronyms and contractions of compound words count as one word: use `Uuid` rather than `UUID`, `Usize` rather than `USize` or `Stdin` rather than `StdIn`. In `snake_case`, acronyms are lower-cased: `is_xid_start`. In `UpperCamelCase` names multiple numbers can be separated by a `_` for clarity: `Windows10_1709` instead of `Windows101709`.
 
 In `snake_case` or `SCREAMING_SNAKE_CASE`, a "word" should never consist of a single letter unless it is the last "word". So, we have `btree_map` rather than `b_tree_map`, but `PI_2` rather than `PI2`.
 

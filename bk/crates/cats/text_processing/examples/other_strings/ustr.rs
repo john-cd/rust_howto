@@ -12,8 +12,8 @@
 //! - Fast FFI ‒ the string is stored with a terminating null byte, so can be
 //!   passed to C directly without using `CString`.
 //!
-//! The downside is no strings are ever freed, so if you're creating lots of
-//! strings, you might run out of memory.
+//! The downside is no strings are ever freed, so if we're creating lots of
+//! strings, we might run out of memory.
 
 use ustr::Ustr;
 use ustr::ustr;

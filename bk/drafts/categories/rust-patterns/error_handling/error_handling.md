@@ -110,7 +110,7 @@ fn main() {
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-The [`map`][c~std::result::Result::map~docs]↗{{hi:map}} and [`map_err`][c~std::result::Result::map_err~docs]↗{{hi:map_err}} methods let you transform the contents of `Ok` and `Err` respectively.
+The [`map`][c~std::result::Result::map~docs]↗{{hi:map}} and [`map_err`][c~std::result::Result::map_err~docs]↗{{hi:map_err}} methods transform the contents of `Ok` and `Err` respectively.
 
 ```rust,editable
 fn main() {

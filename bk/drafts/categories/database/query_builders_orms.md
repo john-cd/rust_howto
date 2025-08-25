@@ -28,7 +28,7 @@ Built on top of [`sqlx`][c~sqlx~docs]↗{{hi:sqlx}} (see above). There is also a
 
 [![diesel][c~diesel~docs~badge]][c~diesel~docs]{{hi:diesel}} [![diesel~lib.rs][c~diesel~lib.rs~badge]][c~diesel~lib.rs] [![cat~database][cat~database~badge]][cat~database]{{hi:Databases}}
 
-The [`diesel`][c~diesel~docs]↗{{hi:diesel}} crate is a powerful ORM (object-relational mapper) and query builder for Rust. It allows you to interact with databases in a type-safe and efficient manner. ORMs help object-oriented programmers abstract the details of relational databases, and do not require writing raw SQL queries.
+The [`diesel`][c~diesel~docs]↗{{hi:diesel}} crate is a powerful ORM (object-relational mapper) and query builder for Rust. It interacts with databases in a type-safe and efficient manner. ORMs help object-oriented programmers abstract the details of relational databases, and do not require writing raw SQL queries.
 
 [`diesel`][c~diesel~docs]↗{{hi:diesel}} supports PostgreSQL, MySQL, and SQLite. [`diesel`][c~diesel~docs]↗{{hi:diesel}} has excellent performance and takes an approach of strict compile time guarantees. The main crate is synchronous only, but [`diesel-async`][c~diesel-async~docs]↗{{hi:diesel-async}} provides an async connection implementation.
 
@@ -140,10 +140,10 @@ User::create()
   .exec(&db)
   .await?;
 
-// Load the user from the database
+// Load the user from the database.
 let user = User::find_by_email("john@example.com").get(&db).await?
 
-// Load and iterate the user's todos
+// Load and iterate the user's todos.
 let mut todos = user.todos().all(&db).await.unwrap();
 
 while let Some(todo) = todos.next().await {

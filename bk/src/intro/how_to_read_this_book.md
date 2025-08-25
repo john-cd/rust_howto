@@ -30,7 +30,7 @@ If you are simply looking for the solution to a given task, the easiest ways to 
 
 ## How to Use the Code Examples
 
-Code examples, a.k.a. Recipes, are designed to give you instant access to working code, along with a full explanation of what it is doing, and to guide you to further information. All recipes are self-contained programs, so that they may be copied directly into your own projects for experimentation. To do so, follow the instructions below.
+Code examples, a.k.a. recipes, are designed to give you instant access to working code, along with a full explanation of what it is doing, and to guide you to further information. All recipes are self-contained programs, so that they may be copied directly into your own projects for experimentation. To do so, follow the instructions below.
 
 Consider the following example for "generate random numbers within a range":
 

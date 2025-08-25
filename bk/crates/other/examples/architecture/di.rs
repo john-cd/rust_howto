@@ -25,10 +25,10 @@ trait Greeter: Interface {
 // The `#[derive(Component)]` attribute tells Shaku that these structs are
 // components that can be managed by the dependency injection container.
 // `Component` represents a single instance of a service, aka a singleton.
-// Each time a component is resolved, you will get the same instance.
+// Each time a component is resolved,  will get the same instance.
 #[derive(Component)]
 // The `#[shaku(interface = Greeter)]` attribute associates each component with
-// the Greeter interface.
+// the `Greeter` interface.
 #[shaku(interface = Greeter)]
 struct EnglishGreeter;
 
@@ -40,9 +40,8 @@ impl Greeter for EnglishGreeter {
 
 // A component is a struct that implements an `Interface` trait.
 // `Interface` traits require certain bounds, such as 'static and optionally
-// `Send
-// + Sync` if using the `thread_safe` feature. The `Interface` trait acts as a
-// trait alias for these bounds.
+// `Send + Sync` if using the `thread_safe` feature.
+// The `Interface` trait acts as a trait alias for these bounds.
 trait Conversation: Interface {
     fn start(&self) -> String;
 }

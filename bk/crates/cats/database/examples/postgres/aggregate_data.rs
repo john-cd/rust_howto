@@ -13,11 +13,11 @@ struct Nation {
 
 /// Connects to a PostgreSQL database, queries artist nationalities and their
 /// counts, and prints the results. Data from
-// <https://github.com/MuseumofModernArt/collection/tree/main>
+// <https://github.com/MuseumofModernArt/collection/tree/main>.
 pub fn main() -> Result<(), Error> {
     // The connection URL is formatted as
-    // postgresql://<user>:<password>@<host>/<db>, for example
-    // postgresql://postgres:postgres@127.0.0.1/moma
+    // `postgresql://<user>:<password>@<host>/<db>`, for example
+    // `postgresql://postgres:postgres@127.0.0.1/moma`.
     let mut client = Client::connect(
         "postgresql://postgres:mysecretpassword@rust_howto_dev-postgres-1/moma",
         NoTls,

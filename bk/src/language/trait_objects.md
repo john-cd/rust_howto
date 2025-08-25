@@ -2,7 +2,7 @@
 
 {{#include trait_objects.incl.md}}
 
-Trait objects enable "dynamic dispatch", a form of polymorphism. They allow you to treat different concrete types that implement a specific trait as if they were the same at runtime. They are particularly useful when you need to create collections of different types that share common behavior, or when the exact type of an object isn't known until runtime.
+Trait objects enable "dynamic dispatch", a form of polymorphism. They treat different concrete types that implement a specific trait as if they were the same at runtime. They are particularly useful when you need to create collections of different types that share common behavior, or when the exact type of an object isn't known until runtime.
 
 ## Trait Objects Basics {#trait-objects-basics}
 

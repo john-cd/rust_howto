@@ -7,7 +7,7 @@ fn main() {
     // ERROR: vec.sort();
 
     // The vector does not contain `f64::NAN`,
-    // so we can sort it using `partial_cmp` safely.
+    // so we can sort it using `partial_cmp` safely:
     vec.sort_by(|a, b| a.partial_cmp(b).unwrap());
 
     assert_eq!(vec, vec![1.1, 1.123, 1.15, 2.0, 5.5]);

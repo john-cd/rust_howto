@@ -84,7 +84,7 @@ fn manipulate_zero_bytes() {
 // alignment, and the order / relative offsets of its fields) is for the type:
 // <https://doc.rust-lang.org/reference/type-layout.html#representations>
 //
-// Types you expect to pass through an FFI / network boundary most often are
+// Types expected to pass through an FFI / network boundary are
 // most often `repr(C)`, as C is the lingua-franca of the programming world.
 // It means that their layout is exactly that C or C++ expect.
 #[repr(C)]

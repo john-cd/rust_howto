@@ -15,22 +15,22 @@ struct MyStruct {
     field2: String,
 }
 fn main() {
-    // Create an instance of MyStruct
+    // Create an instance of `MyStruct`:
     let my_struct = MyStruct {
         field1: 42,
         field2: "Hello, DER!".to_string(),
     };
 
-    // Encode the struct to DER
+    // Encode the struct to DER:
     let der_encoded = my_struct.to_der().expect("Failed to encode");
     println!("DER Encoded: {der_encoded:?}");
 
-    // Decode the DER back to MyStruct
+    // Decode the DER back to `MyStruct`:
     let decoded_struct =
         MyStruct::from_der(&der_encoded).expect("Failed to decode");
     println!("Decoded Struct: {decoded_struct:?}");
 
-    // Verify that the decoded struct matches the original
+    // Verify that the decoded struct matches the original:
     assert_eq!(my_struct, decoded_struct);
 }
 // ANCHOR_END: example

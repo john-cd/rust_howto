@@ -1,12 +1,12 @@
 #![allow(dead_code)]
 // ANCHOR: example
-//! This example demonstrates how to use basic authentication with reqwest.
+//! This example demonstrates how to use basic authentication with `reqwest`.
 
 use reqwest::Error;
 use reqwest::blocking::Client;
 
 fn main() -> Result<(), Error> {
-    // Create a new reqwest client.
+    // Create a new `reqwest` client:
     let client = Client::new();
 
     let user_name = "testuser".to_string();

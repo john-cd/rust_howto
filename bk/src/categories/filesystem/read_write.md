@@ -38,7 +38,7 @@ errors because the two files are same.
 
 [![memmap2][c~memmap2~docs~badge]][c~memmap2~docs]{{hi:memmap2}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-Creates a memory map{{hi:Memory map}} of a file using [`memmap2`][c~memmap2~docs]↗{{hi:memmap2}} and simulates some non-sequential reads{{hi:Non-sequential reads}} from the file. Using a memory map means you just index into a slice rather than dealing with [`std::fs::File::seek`][c~std::fs::File::seek~docs]↗{{hi:std::fs::File::seek}} to navigate a [`std::fs::File`][c~std::fs::File~docs]↗{{hi:std::fs::File}}.
+Creates a memory map{{hi:Memory map}} of a file using [`memmap2`][c~memmap2~docs]↗{{hi:memmap2}} and simulates some non-sequential reads{{hi:Non-sequential reads}} from the file. Using a memory map means just indexing into a slice rather than dealing with [`std::fs::File::seek`][c~std::fs::File::seek~docs]↗{{hi:std::fs::File::seek}} to navigate a [`std::fs::File`][c~std::fs::File~docs]↗{{hi:std::fs::File}}.
 
 The [`memmap2::Mmap::map`][c~memmap2::Mmap::map~docs]↗{{hi:memmap2::Mmap::map}} function assumes the file behind the memory map is not being modified at the same time by another process or else [a race condition][wikipedia~race-condition]↗ occurs.
 

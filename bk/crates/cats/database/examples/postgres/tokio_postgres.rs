@@ -13,7 +13,7 @@
 async fn main() -> Result<(), tokio_postgres::Error> {
     // Connect to the database.
     //  The libpq-style connection strings consist of space-separated
-    // key-value pairs: <https://docs.rs/tokio-postgres/latest/tokio_postgres/config/struct.Config.html>
+    // key-value pairs: <https://docs.rs/tokio-postgres/latest/tokio_postgres/config/struct.Config.html>.
     let (client, connection) = tokio_postgres::connect(
         "host=rust_howto_dev-postgres-1 user=postgres password=mysecretpassword dbname=library",
         tokio_postgres::NoTls,

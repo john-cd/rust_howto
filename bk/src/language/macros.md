@@ -130,7 +130,7 @@ There are two main types of macros in Rust:
 
 Macros-by-example are expanded at compile-time, meaning they incur no runtime performance cost, and their output is checked syntactically and type-checked.
 
-- _Procedural Macros_ are more advanced and allow you to operate on one or more [`TokenStream`][c~proc_macro::TokenStream~docs]↗ (representing the source code). They are compiled before the main program and can perform more complex code generation. They come in three flavors:
+- _Procedural Macros_ are more advanced and operate on one or more [`TokenStream`][c~proc_macro::TokenStream~docs]↗ (representing the source code). They are compiled before the main program and can perform more complex code generation. They come in three flavors:
   - Custom [derive macros][book~rust-reference~derive]↗ (e.g., `#[derive(MyTrait)]`) automatically generate trait implementations for structs and enums.
   - Attribute-like macros (outer attribute `#[route(GET, "/")]`, where `route` is a custom name; or inner attribute `#![foo="bar"]`) modify the behavior of items (e.g., functions or modules) they are applied to.
   - Function-like procedural macros (`my_proc_macro!(...)`) have the same call syntax as macros-by-example.
@@ -278,7 +278,7 @@ Note the following before writing procedural macros:
 
 While you could manually parse and generate token streams, it is highly recommended to use helper crates (found on [`crates.io`][crates.io~website]↗):
 
-- [`syn`][c~syn~crates.io]↗ is a parser for Rust syntax. It allows you to parse a `proc_macro::TokenStream` into an Abstract Syntax Tree (AST) that's easy to work with (e.g., [`syn::ItemStruct`][c~syn::ItemStruct~docs]↗, [`syn::FnArg`][c~syn::FnArg~docs]↗).
+- [`syn`][c~syn~crates.io]↗ is a parser for Rust syntax. It parses a `proc_macro::TokenStream` into an Abstract Syntax Tree (AST) that's easy to work with (e.g., [`syn::ItemStruct`][c~syn::ItemStruct~docs]↗, [`syn::FnArg`][c~syn::FnArg~docs]↗).
 - `quote` is a quasi-quoting library that makes it easy to generate Rust code from the parsed AST. It allows you to write Rust code directly and "splice in" variables.
 
 Procedural macros are "unhygienic." They behave as if the output token stream was simply written inline to the code it's next to. This means that they are affected by external items and also affects external imports. Use full absolute paths to items in libraries (for example, `::std::option::Option` instead of `Option`) and make sure that generated functions have names that are unlikely to clash with other functions (like `__internal_foo` instead of `foo`) [(Rust reference)][book~rust-reference~procedural-macros-macro.proc.hygiene]↗.

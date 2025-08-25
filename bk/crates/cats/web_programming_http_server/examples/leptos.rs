@@ -55,7 +55,7 @@
 
 fn main() {
     //     // Mount the app to the HTML body.
-    //     mount_to_body(App)
+    //     mount_to_body(App);
 }
 
 // #[test]

@@ -4,7 +4,7 @@
 //! - Simple function memoization with `#[cached]`,
 //! - Advanced caching with custom configuration options.
 //!
-//! Remember to add cached = "0.55.1" or latest to your Cargo.toml.
+//! Remember to add `cached = "0.55.1"` or latest to your Cargo.toml.
 
 use cached::proc_macro::cached;
 
@@ -20,11 +20,11 @@ fn fibonacci(n: u64) -> u64 {
 
 /// Cached function with custom time-to-live and max capacity.
 #[cached(
-    // Max cache size.
+    // Max cache size:
     size = 50,
-    // Set a time-to-live (TTL) for cached entries.
+    // Set a time-to-live (TTL) for cached entries:
     time = 60,
-    //  Specify whether to refresh the TTL on cache hits.
+    // Specify whether to refresh the TTL on cache hits:
     time_refresh = true,
  )]
 fn fetch_data(key: usize) -> String {
@@ -36,10 +36,10 @@ fn fetch_data(key: usize) -> String {
 // return values, etc.
 
 fn main() {
-    // First call computes and caches.
+    // First call computes and caches:
     println!("Fibonacci of 10: {}", fibonacci(10));
 
-    // Subsequent calls retrieve from cache.
+    // Subsequent calls retrieve from cache:
     println!("Cached Fibonacci of 10: {}", fibonacci(10));
 
     // Check the underlying cache:
@@ -51,7 +51,7 @@ fn main() {
         // Make sure the lock is dropped.
     }
 
-    // Example with customized cache.
+    // Example with customized cache:
     println!("User data: {}", fetch_data(123));
     println!("Cached user data: {}", fetch_data(123));
 }

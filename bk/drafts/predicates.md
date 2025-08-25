@@ -13,7 +13,7 @@ This is really useful when creating filters and checks that can be changed at ru
 ```rust,editable
 use predicates::prelude::*;
 
-// 1. Define a simple data structure to filter
+// 1. Define a simple data structure to filter.
 #[derive(Debug, Clone)]
 struct File {
     name: String,
@@ -43,7 +43,7 @@ fn main() {
     // The `.and()` method combines two predicates.
     let combined_filter = name_predicate.and(size_predicate);
 
-    // 4. Create some sample data to test against
+    // 4. Create some sample data to test against.
     let files = vec![
         File { name: "monthly_report.txt".into(), size_kb: 120, is_readonly: false },
         File { name: "budget.xlsx".into(), size_kb: 25, is_readonly: false },

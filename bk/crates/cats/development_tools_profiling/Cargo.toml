@@ -32,5 +32,5 @@ harness = false
 # debug = 1
 
 [features]
-dhat-heap = []    # if you are doing heap profiling
-dhat-ad-hoc = []  # if you are doing ad hoc profiling
+dhat-heap = []    # heap profiling.
+dhat-ad-hoc = []  # ad hoc profiling.

@@ -3,15 +3,15 @@
 //! This example demonstrates how to use the `cc` crate to compile a C++ file as
 //! part of a Rust build process.
 //!
-//! The `cc` crate is a build dependency that allows you to compile C/C++ code
-//! and link it into your Rust project. This is useful when you need to
-//! interface with existing C/C++ libraries or when you have
-//! performance-critical code that you want to write in C++.
+//! The `cc` crate is a build dependency that allows compiling C/C++ code
+//! and linking it into your Rust project. This is useful to
+//! interface with existing C/C++ libraries or with
+//! code that we plan to write in C++.
 //!
 //! In this example, we compile a simple C++ file named `src/foo.cpp` and link
 //! it into our Rust project. The compiled library will be named `foo`.
 fn main() {
-    // Create a new `cc::Build` instance.
+    // Create a new `cc::Build` instance:
     cc::Build::new()
         // Indicate that we are compiling C++ code.
         .cpp(true)

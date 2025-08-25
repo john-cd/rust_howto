@@ -50,8 +50,8 @@ fn main() -> Result<()> {
     // Create a module from WAT (WebAssembly Text Format) string.
     let module = Module::new(&engine, WAT)?;
 
-    // Alternatively, you can load a module from a WASM file.
-    // To do this, you can store the WAT into a file and compile it using
+    // Alternatively, load a module from a WASM file.
+    // To do this, store the WAT into a file and compile it using
     // `wat2wasm`. Install that tool with e.g., `sudo apt-get install wabt`,
     // then add: ```
     // let module = Module::from_file(&engine, "hello.wasm")
@@ -79,7 +79,7 @@ fn main() -> Result<()> {
         .instantiate(&mut store, &module)
         .context("failed to instantiate module")?;
 
-    // Without a linker, you can also directly instantiate the module:
+    // Without a linker, we can also directly instantiate the module:
     // ```
     // let instance = Instance::new(&mut store, &module, &[])
     //     .context("Failed to create WASM instance")?;

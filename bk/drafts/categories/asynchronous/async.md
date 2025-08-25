@@ -2,7 +2,7 @@
 
 {{#include async.incl.md}}
 
-Asynchronous programming{{hi:Asynchronous programming}}, or async{{hi:async}} for short, is a concurrent{{hi:Concurrency}} programming model supported by an increasing number of programming languages. It lets you run a large number of concurrent tasks, while preserving much of the look and feel of ordinary synchronous programming, through the async/await{{hi:async/await}} syntax. It helps you deal with events independently of the main program flow, using techniques like futures{{hi:Futures}}, promises{{hi:Promises}}, waiting, or eventing.
+Asynchronous programming{{hi:Asynchronous programming}}, or async{{hi:async}} for short, is a concurrent{{hi:Concurrency}} programming model supported by an increasing number of programming languages. It enables running a large number of concurrent tasks, while preserving much of the look and feel of ordinary synchronous programming, through the async / await{{hi:async/await}} syntax. It helps deal with events independently of the main program flow, using techniques like futures{{hi:Futures}}, promises{{hi:Promises}}, waiting, or eventing.
 
 - Ability to make progress on multiple tasks, even if they don't execute at the exact same time.
 - Mechanism: _cooperative_ multitasking - tasks yield control, allowing other tasks to run.
@@ -39,7 +39,7 @@ Rust's implementation of [`async`][book~rust-reference~async]↗{{hi:async}} dif
 ```
 
 - Dropping a future stops it from making further progress.
-- Async is zero-cost in Rust. You can use [`async`][book~rust-reference~async]↗{{hi:async}} without heap allocations{{hi:Heap allocations}} and dynamic dispatch. This also lets you use async in constrained environments, such as embedded systems.
+- Async is zero-cost in Rust. You can use [`async`][book~rust-reference~async]↗{{hi:async}} without heap allocations{{hi:Heap allocations}} and dynamic dispatch. This also allows use of async in constrained environments, such as embedded systems.
 - No built-in runtime is provided by Rust itself. Instead, runtimes are provided by community-maintained [crates][p~crates].
 - Both single- and multi-threaded runtimes{{hi:Multi-threaded runtimes}} are available.
 

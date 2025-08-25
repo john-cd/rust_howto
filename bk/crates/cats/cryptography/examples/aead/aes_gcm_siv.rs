@@ -12,7 +12,7 @@ use aes_gcm_siv::aead::Payload;
 /// decrypt data using the AES-GCM-SIV algorithm (Misuse-Resistant Authenticated
 /// Encryption Cipher).
 fn main() -> Result<(), aes_gcm_siv::Error> {
-    // Generate a random 256-bit key
+    // Generate a random 256-bit key:
     let key: Key<Aes256GcmSiv> = Aes256GcmSiv::generate_key(&mut OsRng);
 
     // Generate a random 96-bit nonce.
@@ -37,7 +37,7 @@ fn main() -> Result<(), aes_gcm_siv::Error> {
 
     // Decrypt.
     // Failure to pass the same AD that was used during encryption will cause
-    // decryption to fail
+    // decryption to fail:
     let decrypted_ciphertext = cipher.decrypt(
         nonce,
         Payload {

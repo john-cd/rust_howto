@@ -7,9 +7,9 @@ use rand::distr::SampleString;
 /// Generate a random string of 20 alphanumeric characters.
 fn main() {
     let rand_string: String = rand::rng()
-        // Create an iterator that generates values using the `Alphanumeric` distribution.
+        // Create an iterator that generates values using the `Alphanumeric` distribution:
         .sample_iter(&Alphanumeric)
-        // Take the first 20 characters.
+        // Take the first 20 characters:
         .take(20)
         .map(char::from)
         .collect();

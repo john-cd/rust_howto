@@ -7,7 +7,7 @@
 // // This is the interface to the JVM that we'll call the majority of our
 // // methods on.
 // use jni::JNIEnv;
-// // The following objects are what you should use as arguments to your
+// // The following objects are what we should use as arguments to your
 // // native function. They carry extra lifetime information to prevent them
 // // escaping this context and getting used after being GC'd.
 // use jni::objects::{JClass, JString};
@@ -21,9 +21,9 @@
 // // Build the Rust code as a dynamic library (e.g., a .so file for Linux, .dll
 // // for Windows): add a new `[lib]` section and under it,
 // // `crate_type = ["cdylib"]`
-// // if you run cargo build from inside the crate directory, you
+// // if you run `cargo build` from inside the crate directory, you
 // // should see a `libmylib.so` (if you're on Linux) or a `libmylib.dylib` (if
-// // you are on OSX) in the `target/debug` directory.
+// // we are on OSX) in the `target/debug` directory.
 // // Compile the java code with the javac command:
 // // ```sh
 // // javac NativeLibrary.java
@@ -32,7 +32,7 @@
 // command: // ```
 // // javac - h.NativeLibrary.java
 // // ```
-// // Linking: on Linux, you can export
+// // Linking: on Linux, we can export
 // // ```
 // // LD_LIBRARY_PATH=/path/to/mylib/target/debug.
 // // ```
@@ -47,15 +47,15 @@
 // // The Java Native Interface (JNI) function name follows the convention:
 // // Java_<package_name>_<class_name>_<method_name>.
 // // env: JNIEnv is a pointer to the JNI environment, which provides access to
-// JNI // functions. JClass is a pointer to the Java class that this native
-// method // belongs to. It's often unused.
+// // JNI functions. JClass is a pointer to the Java class that this native
+// // method belongs to. It's often unused.
 // pub extern "C" fn Java_com_example_NativeLibrary_greet<'a>(
 //     mut env: JNIEnv<'a>,
 //     _: JClass<'a>,
 //     name: JString<'a>,
 // ) -> JString<'a> {
 //     // Converts the JString argument into a Rust String. The `get_string`
-// method     // returns a `Result` that needs to be handled.
+//     // method returns a `Result` that needs to be handled.
 //     let name_str = env.get_string(&name).expect("Invalid UTF-8");
 //     // Formats a greeting message using the input name.
 //     let hello = format!("Hello, {:?}!", name_str);

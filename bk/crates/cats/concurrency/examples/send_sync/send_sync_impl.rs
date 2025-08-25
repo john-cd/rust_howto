@@ -150,7 +150,7 @@ mod my {
             }
             // When the reference count is zero, we drop the underlying data.
             unsafe { std::ptr::drop_in_place(&mut (*self.ptr).data) };
-            // You could also use `ManuallyDrop::drop(&mut (*self.ptr))`;
+            // We could also use `ManuallyDrop::drop(&mut (*self.ptr))`;
 
             println!("`Arc` data fully dropped!");
         }

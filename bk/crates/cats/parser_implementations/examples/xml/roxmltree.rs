@@ -4,7 +4,7 @@
 //! crate.
 //!
 //! The `roxmltree` crate provides a read-only tree representation of an XML
-//! document. It's a good choice for parsing XML when you don't need to modify
+//! document. It's a good choice for parsing XML when we don't need to modify
 //! the document.
 //!
 //! Built on top of this API, a mapping to the Serde data model is available via

@@ -9,7 +9,7 @@ fn main() {
         println!("{number} ");
     }
     // a..=b can be used for a range that is inclusive on both ends.
-    // You can also use `rev` for reverse enumeration.
+    // We can also use `rev` for reverse enumeration.
     for number in (1..=3).rev() {
         println!("{number} ");
     }
@@ -35,7 +35,7 @@ fn main() {
     }
     // ERROR: value borrowed here after move: println!("b: {:?}", b);
 
-    // You can instead iterate by immutable reference with `iter()`.
+    // We can instead iterate by immutable reference with `iter()`.
     // This is the most common way to iterate over a collection,
     // when you just want to read its elements without modifying them.
     let mut c = vec![10, 20, 30];
@@ -61,7 +61,7 @@ fn main() {
         println!("Byte: {b}");
     }
 
-    // You can use `enumerate` to produce both the index and the value
+    // We can use `enumerate` to produce both the index and the value
     // while iterating.
     let fruits = ["apple", "banana", "cherry"];
     for (index, fruit) in fruits.iter().enumerate() {

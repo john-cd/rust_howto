@@ -6,7 +6,7 @@ use bitflags::bitflags;
 
 // Define a set of bitflags using the `bitflags` macro.
 bitflags! {
-    // Attributes can be applied to flags types
+    // Attributes can be applied to flags types:
     #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
     struct MyFlags: u32 {
         const FLAG_A       = 0b0000_0001;
@@ -42,7 +42,7 @@ fn main() {
     assert_eq!((e1 & e2), MyFlags::FLAG_C);
     assert_eq!((e1 - e2), MyFlags::FLAG_A);
     assert_eq!(!e2, MyFlags::FLAG_A);
-    // Use the fmt::Display implementation above
+    // Use the `fmt::Display` implementation above:
     println!("e1: {e1} e2: {e2}");
 
     // Demonstrate formatting options for the bitflags.

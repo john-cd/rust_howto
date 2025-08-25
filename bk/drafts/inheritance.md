@@ -15,7 +15,7 @@ Instead of inheritance, consider using an [`enum`][keyword~enum]↗{{hi:enum}} (
 ```rust,noplayground
 // The base class becomes an `enum`.
 // - The `enum` clearly defines all possible states or subtypes of `Shape` in one place.
-//   With inheritance, you might have to scour multiple files to understand the full hierarchy.
+//   With inheritance, we might have to scour multiple files to understand the full hierarchy.
 // - All the data for a `Shape` (be it a circle, square, or triangle) is contained within the `enum`.
 //   This can be more cache-friendly.
 enum Shape {
@@ -27,7 +27,7 @@ enum Shape {
 
 impl Shape {
     fn area(&self) -> f64 {
-        // `match` expressions on `enum`s are exhaustive. The compiler will force you to handle every possible variant,
+        // `match` expressions on `enum`s are exhaustive. The compiler will force us to handle every possible variant,
         // which prevents common bugs that can arise when new subclasses are added in an inheritance hierarchy,
         //  but not all code paths are updated.
         match self {

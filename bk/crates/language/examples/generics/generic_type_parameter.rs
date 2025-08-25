@@ -127,7 +127,7 @@ fn main() {
     print_type("hello");
     // `T` is `i32`.
     print_type(42);
-    // You could specify the type explicitly using the `turbofish` notation
+    // We can also specify the type explicitly using the `turbofish` notation
     // `::<...>`.
     print_type::<f64>(3.1);
 
@@ -150,7 +150,7 @@ fn main() {
     // explicitly, since it cannot be inferred from the context.
     let _map = StringMap::<String>::new();
 
-    // You could also write:
+    // We could also write:
     let _map2: StringMap<String> = StringMap::new();
 }
 // ANCHOR_END: example

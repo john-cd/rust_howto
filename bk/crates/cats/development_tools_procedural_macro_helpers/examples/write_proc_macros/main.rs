@@ -40,6 +40,6 @@ mod syn;
 // // <https://medium.com/@alfred.weirich/the-rust-macro-system-part-1-an-introduction-to-attribute-macros-73c963fd63ea>
 // // <https://www.shuttle.dev/blog/2022/12/23/procedural-macros>
 // // <https://doc.rust-lang.org/core/macro.compile_error.html>
-// // <https://github.com/dtolnay/watt>
+// // <https://github.com/dtolnay/watt>.
 
 fn main() {}

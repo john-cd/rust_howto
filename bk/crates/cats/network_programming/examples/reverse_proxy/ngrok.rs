@@ -5,10 +5,10 @@
 // //! This example demonstrates a simple HTTP server that can be exposed to the
 // //! internet using `ngrok`.
 // //!
-// //! "ngrok is your app's front door. ngrok is a globally distributed reverse
-// //! proxy that secures, protects and accelerates your applications and
-// //! network  services, no matter where you run them. ngrok supports
-// delivering //! HTTP, TLS or TCP-based applications".
+// //! "`ngrok` is your app's front door. `ngrok` is a globally distributed
+// //! reverse proxy that secures, protects and accelerates your applications
+// //! and network services, no matter where we run them. `ngrok` supports
+// //! delivering HTTP, TLS or TCP-based applications".
 // //!
 // //! Add to your `Cargo.toml`:
 // //! ```toml
@@ -53,7 +53,7 @@
 //         axum::serve(listener, app).await.unwrap();
 //     });
 
-//     // Set up a  ngrok tunnel.
+//     // Set up a `ngrok` tunnel.
 //     let sess1 = ngrok::Session::builder()
 //         //.authtoken(authtoken)
 //         // Call `authtoken` with the value of the NGROK_AUTHTOKEN environment

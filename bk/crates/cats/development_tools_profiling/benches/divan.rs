@@ -39,7 +39,7 @@
 //     }
 // }
 
-// /// When `harness` is set to false, you are responsible for defining a main()
+// /// When `harness` is set to false, we are responsible for defining a main()
 // /// function to run tests and benchmarks.
 // fn main() {
 //     // Run registered benchmarks.
@@ -50,5 +50,5 @@
 // // ANCHOR_END: example
 
 // // [finish. add to md: https://nikolaivazquez.com/blog/divan/](https://github.com/john-cd/rust_howto/issues/747) cover more attributes; cover blockbox / bencher
-// // review <https://github.com/nvzqz/divan/tree/v0.1.0/examples/benches>
+// // review <https://github.com/nvzqz/divan/tree/v0.1.0/examples/benches>.
 fn main() {}

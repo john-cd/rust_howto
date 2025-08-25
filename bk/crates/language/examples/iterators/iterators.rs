@@ -37,7 +37,7 @@ fn main() {
     }
     println!();
 
-    // You can modify values of a collection through the mutable reference
+    // We can modify values of a collection through the mutable reference
     // provided by `iter_mut()`.
     // Note that the vector has to be `mut`.
     let mut vec4 = vec![4, 5, 6];

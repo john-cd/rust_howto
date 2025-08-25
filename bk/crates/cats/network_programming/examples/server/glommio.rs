@@ -70,14 +70,14 @@ fn main() {
             );
             let t1 = glommio::spawn_local_into(
                 async move {
-                    // your code here
+                    // Your code here.
                 },
                 tq1,
             )
             .unwrap();
             let t2 = glommio::spawn_local_into(
                 async move {
-                    // your code here
+                    // Your code here.
                 },
                 tq2,
             )

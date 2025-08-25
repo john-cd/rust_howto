@@ -32,11 +32,11 @@ fn main() -> Result<(), Box<EvalAltResult>> {
     // You can also register a custom type with `build_type`.
 
     // Safety: turn the Engine into an immutable instance.
-    // See <https://rhai.rs/book/safety/sandbox.html>
+    // See <https://rhai.rs/book/safety/sandbox.html>.
     let engine = engine;
 
     // Define a simple script.
-    // Review further examples at <https://github.com/rhaiscript/rhai/tree/main/scripts>
+    // Review further examples at <https://github.com/rhaiscript/rhai/tree/main/scripts>.
     let script = r#"
         // Define variables:
         let a = 42;
@@ -61,7 +61,7 @@ fn main() -> Result<(), Box<EvalAltResult>> {
     // let result = engine.eval_file::<i64>("hello_world.rhai".into())?;
     // engine.run_file("hello_world.rhai".into())?;
 
-    // If you only need to evaluate expressions, use `eval_expression*`.
+    // To only evaluate expressions, use `eval_expression*`.
     // `Scope` may be used to pass in variables / constants.
     let mut scope = Scope::new();
     scope.push("x", 42_i64);

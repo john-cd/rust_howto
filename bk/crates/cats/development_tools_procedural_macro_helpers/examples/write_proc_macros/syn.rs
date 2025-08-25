@@ -27,7 +27,7 @@ fn simple() -> Result<()> {
 
 /// Parse a function and modify it.
 fn m() -> anyhow::Result<()> {
-    // Example Rust code to parse
+    // Example Rust code to parse:
     let code = r#"
         fn example_function(x: i32) -> i32 {
             x + 1

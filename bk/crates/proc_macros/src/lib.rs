@@ -52,7 +52,7 @@ pub fn debug_print_derive(
         ast.generics.split_for_impl();
 
     // Generate the implementation of the `DebugPrint` trait.
-    // `quote!` allows you to write Rust code directly, and `#ident`,
+    // `quote!` allows us to write Rust code directly, and `#ident`,
     // `#ty_generics`, etc. are "splices" that insert the captured syntax
     // elements.
     let expanded = quote::quote! {

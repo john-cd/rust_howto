@@ -39,7 +39,7 @@
 //     }
 
 //     // Updates the state based on the received message (increment or
-// decrement     // the count).
+//     // decrement the count).
 //     fn update(&mut self, message: Message) {
 //         match message {
 //             Message::Increment => {
@@ -52,9 +52,10 @@
 //     }
 
 //     // Defines the layout of our app. We create a column (Column) with
-// centered     // items. The current count is displayed as text. We create two
-// buttons for     // incrementing and decrementing the count, and we add them
-// to the column.     fn view(&mut self) -> Element<Message> {
+//     // centered items. The current count is displayed as text. We create two
+//     // buttons for incrementing and decrementing the count, and we add them
+//     // to the column.
+//     fn view(&mut self) -> Element<Message> {
 //         let mut col = Column::new()
 //             .align_items(Align::Center)
 //             .push(Text::new(self.count.to_string()).size(50));

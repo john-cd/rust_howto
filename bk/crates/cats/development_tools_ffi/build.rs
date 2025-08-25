@@ -4,14 +4,15 @@ use std::env;
 use std::path::PathBuf;
 
 fn bindgen() {
-    // outputs `libexample.a` in target/debug/build/development_tools_ffi-.../
+    // Outputs `libexample.a` in
+    // `target/debug/build/development_tools_ffi-.../`.
     cc::Build::new()
         .file("examples/c/example.c")
         .compile("example");
 
-    // The path to the header file
+    // The path to the header file:
     let header = "examples/c/example.h";
-    // Generate bindings
+    // Generate bindings:
     let bindings = bindgen::Builder::default()
         .header(header)
         .generate()
@@ -43,9 +44,9 @@ fn cbindgen() {
 // ANCHOR: CXX
 // Code generator for constructing and compiling C++ code.
 // fn cxx() {
-//     // `bridge` returns a `cc::Build` on which you should continue to set up
-// any     // additional source files or compiler flags, and lastly call its
-//     // `compile` method to execute the C++ build.
+//     // `bridge` returns a `cc::Build` on which we should continue to set up
+//     // any additional source files or compiler flags, and lastly call its
+//     // `compile` method to execute the C++ build:
 //     cxx_build::bridge("examples/cpp/cxx.rs")
 //         .file("examples/hello.cc")
 //         .flag_if_supported("-std=c++14")

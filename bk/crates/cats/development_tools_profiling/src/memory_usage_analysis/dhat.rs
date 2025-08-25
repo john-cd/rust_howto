@@ -16,8 +16,8 @@
 //!
 //! # Create features that lets you easily switch profiling on and off:
 //! [features]
-//! dhat-heap = []    # if you are doing heap profiling
-//! dhat-ad-hoc = []  # if you are doing ad hoc profiling
+//! dhat-heap = []    # for heap profiling.
+//! dhat-ad-hoc = []  # for ad hoc profiling.
 //! ```
 
 /// The heap profiling works by using a global allocator that wraps the system
@@ -27,8 +27,10 @@
 #[global_allocator]
 static ALLOC: dhat::Alloc = dhat::Alloc;
 
-/// When you run the code below with:
+/// When we run the code below with:
+///
 /// cargo run --features dhat-heap
+///
 /// `dhat` will collect heap profiling information.
 /// The profiling data will be saved in a file named `dhat-heap.json`
 /// in the current directory. You can then use e.g.
@@ -37,9 +39,9 @@ static ALLOC: dhat::Alloc = dhat::Alloc;
 /// The profiler also prints to `stderr`, like:
 /// dhat: Total:     9,200 bytes in 10 blocks (note: "block" = allocation)
 /// dhat: At t-gmax: 5,120 bytes in 2 blocks
-/// dhat: At t-end:  1,024 bytes in 1 blocks
+/// dhat: At t-end:  1,024 bytes in 1 blocks.
 fn heap_profiling() {
-    // Start the heap profiling session
+    // Start the heap profiling session:
     #[cfg(feature = "dhat-heap")]
     let _profiler = dhat::Profiler::new_heap();
 
@@ -58,7 +60,7 @@ fn heap_profiling() {
 /// The profiler prints to `stderr`:
 /// dhat: Total:     100,000 units in 100,000 events
 /// dhat: The data has been saved to dhat-ad-hoc.json, and is viewable with
-/// dhat/dh_view.html
+/// `dhat/dh_view.html`.
 fn adhoc_profiling() {
     #[cfg(feature = "dhat-ad-hoc")]
     let _profiler = dhat::Profiler::new_ad_hoc();
@@ -78,8 +80,8 @@ pub(crate) fn main() {
     adhoc_profiling();
 }
 
-/// `dhat` also supports heap usage testing, where you can write tests and then
-/// check that they allocated as much heap memory as you expected.
+/// `dhat` also supports heap usage testing, where we can write tests and then
+/// check that they allocated as much heap memory as we expected.
 #[test]
 fn heap_usage_testing() {
     // `testing()` allows the use of dhat::assert! and related macros,
@@ -92,7 +94,7 @@ fn heap_usage_testing() {
 
     let _stats = dhat::HeapStats::get();
 
-    // Now you may assert allocations and number of bytes.
+    // Now we may assert allocations and number of bytes.
     // The exact numbers may depend on the compiler version and the platform.
 
     // For example,

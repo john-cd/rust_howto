@@ -178,7 +178,7 @@
 //         _target: markup::tendril::StrTendril,
 //         _data: markup::tendril::StrTendril,
 //     ) -> usize {
-//         0 // Simplified
+//         0 // Simplified.
 //     }
 
 //     fn append(

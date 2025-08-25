@@ -80,8 +80,8 @@
 //     /// The Root type is the outermost widget of the app. Components can
 //     /// choose this type freely, but the main component must use a Window.
 //     /// In this case, we use a `gtk::Window`.
-//     /// A data structure that contains the widgets that you will need to
-// /// update.
+//     /// A data structure that contains the widgets to update.
+//
 // type Widgets = CounterWidgets;
 
 //     // The Root type is the outermost widget of the app. Components can

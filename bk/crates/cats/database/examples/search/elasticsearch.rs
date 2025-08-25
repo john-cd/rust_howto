@@ -25,12 +25,12 @@ struct MyDocument {
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    // Create an asynchronous Elasticsearch client
+    // Create an asynchronous Elasticsearch client:
     let url = std::env::var("ELASTIC_URL")
         .unwrap_or_else(|_| "http://localhost:9200".into());
     let transport = Transport::single_node(&url)?;
     let client = Elasticsearch::new(transport);
-    // OR: let client = Elasticsearch::default();
+    // OR: `let client = Elasticsearch::default();`.
 
     let response: Response = index_document(&client).await?;
     println!("Index response: {response:?}");
@@ -48,12 +48,12 @@ async fn main() -> anyhow::Result<()> {
 
 /// Indexes a single document into Elasticsearch.
 async fn index_document(client: &Elasticsearch) -> Result<Response, Error> {
-    // Define a document to index
+    // Define a document to index:
     let doc = MyDocument {
         id: 1,
         title: "Rust with Elasticsearch".to_string(),
     };
-    // Index the document
+    // Index the document:
     let response = client
         .index(IndexParts::IndexId("my_index", "1"))
         .body(json!(doc))
@@ -66,7 +66,7 @@ async fn index_document(client: &Elasticsearch) -> Result<Response, Error> {
 async fn search_document(
     client: &Elasticsearch,
 ) -> Result<serde_json::Value, Error> {
-    // Search for the document
+    // Search for the document:
     let search_response = client
         .search(SearchParts::Index(&["my_index"]))
         .from(0)
@@ -88,7 +88,7 @@ async fn search_document(
 async fn bulk_documents(client: &Elasticsearch) -> anyhow::Result<bool> {
     let mut body: Vec<JsonBody<_>> = Vec::with_capacity(4);
 
-    // Add the first operation and document
+    // Add the first operation and document:
     body.push(json!({"index": {"_id": "1"}}).into());
     body.push(
         json!({
@@ -100,7 +100,7 @@ async fn bulk_documents(client: &Elasticsearch) -> anyhow::Result<bool> {
         .into(),
     );
 
-    // Add the second operation and document
+    // Add the second operation and document:
     body.push(json!({"index": {"_id": "2"}}).into());
     body.push(
         json!({
@@ -144,7 +144,7 @@ async fn cat_indices(client: Elasticsearch) -> Result<Response, Error> {
 #[test]
 fn require_external_svc() -> anyhow::Result<()> {
     unsafe {
-        // Refer to the compose*.yaml files
+        // Refer to the `compose*.yaml` files:
         std::env::set_var(
             "ELASTIC_URL",
             "http://rust_howto_dev-elasticsearch-1:9200",

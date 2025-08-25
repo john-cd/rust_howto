@@ -11,7 +11,7 @@ For most common file system tasks, [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}} 
 | File I/O | [`std::fs`][c~std::fs~docs]↗ (standard library) provides the core functionality for working with files and directories (opening, reading, writing, creating, deleting, etc.). |
 | Paths | [`std::path`][c~std::path~docs]↗ (standard library) provides types and functions for working with file paths ([`Path`][c~std::path::Path~docs]↗{{hi:Path}}, [`PathBuf`][c~std::path::PathBuf~docs]↗{{hi:PathBuf}}), extracting file names, extensions, and other path components. |
 | Directories | [`std::fs`][c~std::fs~docs]↗ includes functions for creating, listing, and traversing directories. |
-| File Metadata | [`std::fs`][c~std::fs~docs]↗ allows you to retrieve information about files (size, modification time, permissions, etc.). |
+| File Metadata | [`std::fs`][c~std::fs~docs]↗ allows retrieving information about files (size, modification time, permissions, etc.). |
 | File System Operations | [`fs_extra`][c~fs_extra~docs]↗{{hi:fs_extra}} provides additional file system operations, such as copying directories recursively, setting file permissions, etc. |
 | Temporary Files and Directories | [`tempfile`][c~tempfile~docs]↗{{hi:tempfile}} creates temporary files and directories. |
 | Globbing (Matching File Patterns) | [`glob`][c~glob~docs]↗{{hi:glob}} matches file paths using 'glob' patterns. |

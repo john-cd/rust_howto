@@ -39,24 +39,25 @@
 // `foo_capnp.capnp`. }
 
 // fn main() {
-//     // Create a message builder.
+//     // Create a message builder:
 //     let mut message = Builder::new_default();
 
-//     // Create a root object of our `MyStruct` type.
+//     // Create a root object of our `MyStruct` type:
 //     let mut root = message.init_root::<foo_capnp::my_struct::MyStruct>();
 
-//     // Sets the value of the name field.
+//     // Sets the value of the name field:
 //     root.set_name("Hello from Rust");
-//     // Sets the value of the value field.
+//     // Sets the value of the value field:
 //     root.set_value(42);
 
-//     // Serialize the message.
+//     // Serialize the message:
 //     let mut write_buffer = Vec::new();
 //     serialize::write_message(&mut write_buffer, &message).unwrap();
 
-//     // Now you can:
-//     // 1. Serialize the write_buffer to a file or send it over the network,
-//     // 2. Deserialize the write_buffer to access the data in another program.
+//     // Now we can:
+//     // 1. Serialize the `write_buffer` to a file or send it over the network,
+//     // 2. Deserialize the `write_buffer` to access the data in another
+//     // program.
 
 //     println!("Cap'n Proto message size: {}", write_buffer.len());
 // }

@@ -35,7 +35,7 @@ It offers a wide range of functions for combining, grouping, and manipulating it
 
 [![im~website][c~im~website~badge]][c~im~website] [![im][c~im~docs~badge]][c~im~docs] [![im~crates.io][c~im~crates.io~badge]][c~im~crates.io] [![im~repo][c~im~repo~badge]][c~im~repo] [![im~lib.rs][c~im~lib.rs~badge]][c~im~lib.rs]{{hi:im}}{{hi:Persistent}}{{hi:Hamt}}{{hi:Immutable}}{{hi:B-tree}}{{hi:Rrb-tree}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
-[`im`][c~im~docs]↗{{hi:im}} provides immutable data structures, such as lists, [maps][p~maps], and sets. It facilitates functional programming by providing data structures that cannot be modified in place. Use it when you need to ensure that data does not change in unexpected ways.
+[`im`][c~im~docs]↗{{hi:im}} provides immutable data structures, such as lists, [maps][p~maps], and sets. It facilitates functional programming by providing data structures that cannot be modified in place. Use it to ensure that data does not change in unexpected ways.
 
 ```rust,editable
 {{#include ../../../crates/cats/rust_patterns/examples/functional_programming/im.rs:example}}

@@ -49,7 +49,7 @@
 //     let password = "password";
 //     let auth = StaticPasswordAuthenticatorProvider::new(&user, &password);
 //     // For tests, you may use
-//     // cdrs_tokio::authenticators::NoneAuthenticatorProvider
+//     // `cdrs_tokio::authenticators::NoneAuthenticatorProvider`.
 
 //     // Connect to a Cassandra cluster
 //     let cluster_config = NodeTcpConfigBuilder::new()
@@ -58,7 +58,7 @@
 //         .build()
 //         .await?;
 //     // Create a CDRS session that holds a pool of connections to nodes
-//     // and provides an interface for interacting with the cluster.
+//     // and provides an interface for interacting with the cluster:
 //     let session: CurrentSession = TcpSessionBuilder::new(
 //         RoundRobinLoadBalancingStrategy::new(),
 //         cluster_config,

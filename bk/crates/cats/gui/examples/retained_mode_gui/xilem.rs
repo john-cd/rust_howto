@@ -27,7 +27,7 @@
 //     // Return the view hierarchy for the component.
 //     // It uses `LinearLayout` to arrange the label and button vertically.
 //     // `boxed()` is used to convert the specific view types into `AnyView`,
-// which is     // necessary for the `LinearLayout`.
+//     // which is necessary for the `LinearLayout`.
 //     fn build(&mut self) -> AnyView {
 //         LinearLayout::new(vec![
 //             Label::new(format!("Count: {}", self.count)).boxed(),
@@ -37,15 +37,15 @@
 //     }
 
 //     // The `event()` method is called when an event occurs within the
-// component.     // This triggers an update to the component's state.
+//     // component. This triggers an update to the component's state.
 //     // In this case, when the button is clicked, `cx.poke(())` is called.
 //     fn event(&mut self, _cx: &mut EventCx, event: &()) {
 //         self.count += 1;
 //     }
 
 //     // The `update()` method is called when the component's input data
-// changes.     // In this simple example, there's no external data being passed
-// in, so the     // method is empty.
+//     // changes. In this simple example, there's no external data being passed
+//     // in, so the method is empty.
 //     fn update(&mut self, _data: &Self::Input) {}
 // }
 
@@ -53,7 +53,7 @@
 // application, // using the Adapt view to integrate the Counter component.
 // fn app() -> impl View<AppModel> {
 //     // The Adapt view is used to connect the component to the application's
-// data     // model (AppModel). It takes two closures: one to extract the
+//     // data model (AppModel). It takes two closures: one to extract the
 //     // component's data from the model, and another to update the model with
 //     // the component's new data.
 //     Adapt::new(

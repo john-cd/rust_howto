@@ -2,7 +2,7 @@
 
 {{#include testing.incl.md}}
 
-For most basic code testing needs, using [`cargo test`][book~cargo~cargo-test]↗{{hi:cargo test}} will be sufficient. For more advanced testing, especially property-based testing, [`proptest`][c~proptest~docs]↗{{hi:proptest}} is highly recommended. [`mockall`][c~mockall~docs]↗{{hi:mockall}} or [`faux`][c~faux~docs]↗{{hi:faux}} will help when you need to mock dependencies. [`rstest`][c~rstest~docs]↗{{hi:rstest}} is great for parameterized tests. And for ensuring your tests cover a good portion of your code, [`grcov`][c~grcov~docs]↗{{hi:grcov}} or [`tarpaulin`][c~cargo-tarpaulin~docs]↗{{hi:tarpaulin}} can be used.
+For most basic code testing needs, using [`cargo test`][book~cargo~cargo-test]↗{{hi:cargo test}} will be sufficient. For more advanced testing, especially property-based testing, [`proptest`][c~proptest~docs]↗{{hi:proptest}} is highly recommended. [`mockall`][c~mockall~docs]↗{{hi:mockall}} or [`faux`][c~faux~docs]↗{{hi:faux}} will mock dependencies. [`rstest`][c~rstest~docs]↗{{hi:rstest}} is great for parameterized tests. And for ensuring your tests cover a good portion of your code, [`grcov`][c~grcov~docs]↗{{hi:grcov}} or [`tarpaulin`][c~cargo-tarpaulin~docs]↗{{hi:tarpaulin}} can be used.
 
 ## Unit Testing {#unit_testing}
 
@@ -35,7 +35,7 @@ Uses `#[doc = "```"]` in doc comments to embed testable examples in your documen
 [![cargo-insta~lib.rs][c~cargo-insta~lib.rs~badge]][c~cargo-insta~lib.rs]
 [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-Snapshots tests (also sometimes called approval tests) are tests that assert values against a reference value (the snapshot). Think of it as a supercharged version of [`assert_eq!`][c~std::assert_eq~docs]↗{{hi:assert_eq!}}. [`insta`][insta~website]↗ lets you compare the result of a test against a reference value but, unlike simple assertions, the reference value is managed by [`insta`][c~insta~docs]↗{{hi:insta}} for you.
+Snapshots tests (also sometimes called approval tests) are tests that assert values against a reference value (the snapshot). Think of it as a supercharged version of [`assert_eq!`][c~std::assert_eq~docs]↗{{hi:assert_eq!}}. [`insta`][insta~website]↗ compares the result of a test against a reference value but, unlike simple assertions, the reference value is managed by [`insta`][c~insta~docs]↗{{hi:insta}} for you.
 
 First, install the CLI with `cargo install cargo-insta`. Second, create a test, run it a first time with [`cargo test`][book~cargo~cargo-test]↗{{hi:cargo test}}. This creates a snapshot file (ending with `.snap`). Use `cargo insta review` to review and accept the snapshot. Running `cargo test` again now succeeds, until the value returned by the function under test changes.
 

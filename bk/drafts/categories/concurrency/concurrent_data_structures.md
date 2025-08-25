@@ -12,7 +12,7 @@ Refer to the [comparative benchmarks of concurrent HashMaps][conc-map-bench~repo
 
 [`dashmap`][c~dashmap~docs]↗{{hi:dashmap}} tries to be a direct replacement for `RwLock<HashMap<K, V>>`.
 
-It allows multiple threads to concurrently read and write to the map with minimal contention, using a technique called "shard-based" or "bucket-based" concurrency. This makes [`dashmap`][c~dashmap~docs]↗{{hi:dashmap}} a good choice when you need a hash map that can be accessed frequently by multiple threads without significant performance bottlenecks.
+It allows multiple threads to concurrently read and write to the map with minimal contention, using a technique called "shard-based" or "bucket-based" concurrency. This makes [`dashmap`][c~dashmap~docs]↗{{hi:dashmap}} a good choice for a hash map that can be accessed frequently by multiple threads without significant performance bottlenecks.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/concurrency/examples/concurrent_data_structures/dashmap.rs:example}}

@@ -4,7 +4,7 @@
 // //!
 // //! This example demonstrates how to use `bindgen` to generate Rust bindings
 // //! for a C library.
-// //! `bindgen` allows you to generate Rust bindings for (existing) C
+// //! `bindgen` allows generating Rust bindings for (existing) C
 // //! (and some C++) libraries.
 // //!
 // //! 1. If needed, compile the C library

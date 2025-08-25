@@ -51,7 +51,7 @@ The following example shows pattern matching using a `struct`:
 
 ## Loop as Long as a Pattern Matches with `while let` {#while-let}
 
-`while let` is similar to `if let`, but it allows you to loop as long as the pattern continues to match:
+`while let` is similar to `if let`, but it loops as long as the pattern continues to match:
 
 ```rust,editable
 {{#include ../../crates/language/examples/match/while_let.rs:example}}
@@ -81,7 +81,7 @@ With `let ... else ...`, a refutable pattern (a pattern that can fail) can match
 
 ## Destructure Arguments of a Function or Closure {#destructure-function-or-closure}
 
-Destructuring in function or closure parameters lets you unpack complex data types right in their signature, making your code cleaner:
+Destructuring in function or closure parameters unpacks complex data types right in their signature, making your code cleaner:
 
 ```rust,editable
 {{#include ../../crates/language/examples/match/fn_closure_arguments.rs:example}}
@@ -100,7 +100,7 @@ The following table summarizes possible patterns, which, of course, can be combi
 | Ignoring Values | `_` ignores a single value without binding. For example, `(first, _)` binds the first component of a tuple only. `_name`, a variable name starting with an underscore, binds a value but the compiler won't warn if it's unused, signaling an intentional non-use. `..` ignores multiple remaining items in a tuple, struct, or slice. For example, `Point3D { x: 0, .. }` matches any `Point3D` with x = 0, regardless of the values of `y` and `z`. |
 | Or Patterns | The character `\|` between subpatterns match if any one of the subpatterns matches. `1 \| 2 \| 3` matches 1, 2, or 3. All patterns in an "or" must bind variables of the same name and type, if they do. |
 | Match Guards (`if` conditions) | Match guards add an additional conditional check to a pattern arm. The pattern must match, and the guard's `if` condition must be true for the arm to be chosen. |
-| `@` Bindings to Subpatterns | `@` allow you to bind a variable name to a value while also testing that value against a further pattern. The syntax is `variable_name @ pattern`, e.g., `id_val @ 3..=7`. |
+| `@` Bindings to Subpatterns | `@` binds a variable name to a value while also testing that value against a further pattern. The syntax is `variable_name @ pattern`, e.g., `id_val @ 3..=7`. |
 | `ref` and `ref mut` Bindings | `ref` or `ref mut` create references (`&T` or `&mut T`) to (parts of) the matched value, rather than moving or copying them. This is useful when you want to borrow parts of a value. Note that Rust's "match ergonomics" often make explicit `ref` and `ref mut` unnecessary when matching on references. |
 
 ### Match against Literals {#match-literals}

@@ -12,7 +12,7 @@ fn notify<T: Summary>(item: &T) {
     println!("Breaking news! {}", item.summarize());
 }
 
-/// It  may be equivalently be written in a `where` clause:
+/// It may be equivalently be written in a `where` clause:
 fn notify2<T>(_item: &T)
 where
     T: Summary,

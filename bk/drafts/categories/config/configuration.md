@@ -6,7 +6,7 @@
 
 [![config][c~config~docs~badge]][c~config~docs] [![config~crates.io][c~config~crates.io~badge]][c~config~crates.io] [![config~repo][c~config~repo~badge]][c~config~repo] [![config~lib.rs][c~config~lib.rs~badge]][c~config~lib.rs]{{hi:config}}{{hi:Environment}}{{hi:Env}}{{hi:Settings}}{{hi:config}}{{hi:Configuration}} [![cat~config][cat~config~badge]][cat~config]{{hi:Configuration}}
 
-[`config`][c~config~docs]↗{{hi:config}} is a layered configuration repository. It lets you set a set of default parameters and then extend them via merging in configuration from a variety of sources:
+[`config`][c~config~docs]↗{{hi:config}} is a layered configuration repository. It lets you set default parameters and then extend them via merging in configuration from a variety of sources:
 
 - Files in [JSON][p~json], [TOML][p~toml], [[yaml | YAML]], [[ini | INI]], RON, [JSON][p~json]5; and
 - Environment variables.

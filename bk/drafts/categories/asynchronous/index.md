@@ -2,7 +2,7 @@
 
 [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 
-Crates to help you deal with events independently of the main program flow, using techniques like futures, promises, waiting, or eventing.
+Crates to deal with events independently of the main program flow, using techniques like futures, promises, waiting, or eventing.
 
 ## Useful Crates
 

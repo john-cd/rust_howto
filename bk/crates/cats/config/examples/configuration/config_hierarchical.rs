@@ -95,7 +95,7 @@ mod cfg {
         if let Some(custom_config_file_path) = cli_args.custom_config_file_path
         {
             // Load settings from the custom file (which must exist), if a path
-            // was provided. You could, for example, layer in a
+            // was provided. We could, for example, layer in a
             // local configuration file not checked in to `git`.
             cb = cb
                 .add_source(File::from(custom_config_file_path).required(true));
@@ -103,7 +103,7 @@ mod cfg {
 
         cb = cb
             // Override settings with values from environment variables (with a prefix of
-            // APP) e.g., `APP_DATABASE__MAX_CONNECTIONS=100`
+            // APP) e.g., `APP_DATABASE__MAX_CONNECTIONS=100`.
             .add_source(Environment::with_prefix("APP").prefix_separator("_").separator("__").ignore_empty(true))
             // Programmatic override.
             // This will overwrite any value from other setting sources, if `port` is not `None`.
@@ -115,10 +115,10 @@ mod cfg {
         let s: Settings = config.try_deserialize()?;
         Ok(s)
 
-        // You could also get the value for a specific key:
+        // // We could also get the value for a specific key:
         // let lvl = config.get("logging.level").context("Error getting
-        // 'logging.level'")?; Or deserialize the config object into a
-        // HashMap:
+        // 'logging.level'")?;
+        // // Or deserialize the config object into a HashMap:
         // println!(
         //         "\n{:?}",
         //         config.try_deserialize::<HashMap<String, String>>()?

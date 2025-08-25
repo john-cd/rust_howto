@@ -29,7 +29,7 @@ use pyo3::prelude::*;
 /// ```
 #[pyfunction]
 fn my_function(a: i64, b: i64) -> Result<i64, pyo3::PyErr> {
-    // Your actual function logic here
+    // Your actual function logic here:
     Ok::<_, pyo3::PyErr>(a + b)
 }
 

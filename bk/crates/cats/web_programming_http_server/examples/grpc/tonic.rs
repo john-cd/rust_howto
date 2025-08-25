@@ -27,9 +27,9 @@ use helloworld::HelloReply;
 // pub struct HelloRequest { pub name: String, }
 use helloworld::HelloRequest;
 // Generated trait containing gRPC methods that should be implemented for
-// use with GreeterServer
+// use with GreeterServer:
 use helloworld::greeter_server::Greeter;
-// Wrapper around the Greeter implementation (below)
+// Wrapper around the Greeter implementation (below):
 use helloworld::greeter_server::GreeterServer;
 // A gRPC request and metadata from an RPC call:
 use tonic::Request;

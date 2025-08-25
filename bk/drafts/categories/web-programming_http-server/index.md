@@ -24,7 +24,7 @@ The following table outlines common tasks for building web servers in Rust and r
 - GraphQL API: [`juniper`][c~juniper~docs]↗{{hi:juniper}}, [`async-graphql`][c~async-graphql~docs]↗{{hi:async-graphql}}.
 - Low-Level HTTP Server (Custom): [`hyper`][c~hyper~docs]↗{{hi:hyper}}.
 
-Choose a web framework that fits your project's complexity and requirements. [`actix-web`][c~actix-web~docs]↗{{hi:actix-web}} is popular for performance-sensitive applications. [`axum`][c~axum~docs]↗{{hi:axum}} is a good choice for those familiar with [`tower`][c~tower~docs]↗{{hi:tower}} and [`hyper`][c~hyper~docs]↗{{hi:hyper}}. [`rocket`][c~rocket~docs]↗{{hi:rocket}} is a good choice for smaller projects or if you prefer a more declarative approach. [`warp`][c~warp~docs]↗{{hi:warp}} is very lightweight.
+Choose a web framework that fits your project's complexity and requirements. [`actix-web`][c~actix-web~docs]↗{{hi:actix-web}} is popular for performance-sensitive applications. [`axum`][c~axum~docs]↗{{hi:axum}} is a good choice for those familiar with [`tower`][c~tower~docs]↗{{hi:tower}} and [`hyper`][c~hyper~docs]↗{{hi:hyper}}. [`rocket`][c~rocket~docs]↗{{hi:rocket}} is a good choice for smaller projects or for a more declarative approach. [`warp`][c~warp~docs]↗{{hi:warp}} is very lightweight.
 
 If your web server needs to interact with a database, choose a framework compatible with the appropriate database driver. Plan your authentication and authorization strategy in advance. You should also consider which templating engine (like [`Tera`][c~tera~docs]↗{{hi:Tera}} or [`Handlebars`][c~handlebars~docs]↗{{hi:Handlebars}}) works best with your web framework.
 

@@ -27,8 +27,9 @@
 //     // Create a new certificate builder
 //     let now = Utc::now();
 //     let not_before = Time::from(now);
-//     let not_after = Time::from(now + Duration::days(365)); // Valid for one
-// year     let serial_number = SerialNumber::random();
+//     // Valid for one year.
+//     let not_after = Time::from(now + Duration::days(365));
+//     let serial_number = SerialNumber::random();
 //     let subject = Name::build_common_name("example.com").unwrap();
 //     let issuer = subject.clone();
 
@@ -43,13 +44,13 @@
 //         subject,
 //     )?;
 
-//     // Add extensions (optional)
+//     // Add extensions (optional).
 //     // ...
 
-//     // Sign the certificate
+//     // Sign the certificate:
 //     let certificate = builder.sign(&keys[0])?;
 
-//     // Print or save the certificate (DER encoding)
+//     // Print or save the certificate (DER encoding):
 //     println!("Certificate: {:?}", certificate.to_der()?);
 
 //     Ok(())

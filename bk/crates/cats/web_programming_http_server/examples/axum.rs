@@ -41,7 +41,7 @@
 //     // charset=utf-8`
 // }
 
-// // The `Path` extractor gives you the path parameters (here `id` in
+// // The `Path` extractor gives us the path parameters (here `id` in
 // // `/users/{id}`) and deserializes them.
 // async fn get_user(Path(id): Path<u64>) {
 //     // FIXME
@@ -56,7 +56,7 @@
 //     path
 // }
 
-// // `Query` gives you the query parameters and deserializes them.
+// // `Query` gives the query parameters and deserializes them.
 // async fn query(Query(_params): Query<HashMap<String, String>>) {
 //     // FIXME
 // }

@@ -34,7 +34,7 @@ Rust visibility rules are as follows:
 {{#include ../../crates/code_organization/examples/visibility/private_access.rs:example}}
 ```
 
-- If an item is _public_, then it can be accessed externally from some module `m`, if you can access all the item's ancestor modules from `m`.
+- If an item is _public_, then it can be accessed externally from some module `m`, if all the item's ancestor modules from `m`.
 
 In other words,
 

@@ -43,13 +43,13 @@ impl Handler<Ping> for MyActor {
 fn main() {
     let system = System::new();
 
-    // Start the actor
+    // Start the actor:
     let addr = MyActor.start();
 
-    // Send a Ping message to the actor
+    // Send a Ping message to the actor:
     addr.do_send(Ping);
 
-    // Stop the system after a delay
+    // Stop the system after a delay:
     system.run().unwrap();
     std::thread::sleep(Duration::from_secs(1));
 }

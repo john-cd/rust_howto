@@ -20,7 +20,7 @@
 //! ```
 
 fn main() {
-    // In most cases, you will use the following to
+    // In most cases, use the following to
     // initialize and install the global subscriber for your application:
     tracing_subscriber::fmt::init();
 
@@ -29,7 +29,7 @@ fn main() {
     // That will cause conflicts when executables try to set them later.
 
     // `fmt::init()` sets up a subscriber that logs to the console
-    // and filters logs  at runtime based on the `RUST_LOG` environment
+    // and filters logs at runtime based on the `RUST_LOG` environment
     // variable, for example, `RUST_LOG=debug,my_crate=trace`.
     //
     // If the environment variable is empty or not set, or if it contains only

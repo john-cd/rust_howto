@@ -177,7 +177,7 @@
 //                 // processed. Requesting a redraw here ensures the
 // // application continuously renders frames, which is useful
 // // for animation or if the scene changes over time. For
-// // static scenes, you might only request redraws when
+// // static scenes, we might only request redraws when
 // // necessary (e.g., after resize).
 // window.request_redraw();
 //             }

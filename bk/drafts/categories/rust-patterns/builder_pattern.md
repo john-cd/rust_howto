@@ -7,8 +7,8 @@
 The builder pattern provides a clean and readable way to construct complex objects, especially when dealing with multiple optional fields or validation rules.
 
 - Instead of creating the object directly, you first create a separate Builder object. It is typically named `xyzBuilder` where `xyz` is the name of the struct you're building. The builder holds the state needed to construct the final object, often storing fields as `Option<T>` internally.
-- The builder provides methods (often named after the fields they set, like `.name("Example")`, `.timeout(Duration::from_secs(5))`) to configure the object piece by piece. These methods usually return `self`, allowing you to chain calls together fluently: `builder.field_a(value_a).field_b(value_b)`.
-- Once the desired fields are set, you call a final method on the builder (commonly named `.build()` or `.finish()`). This method takes the configuration stored in the builder, performs any necessary validation (like checking if required fields were provided), and then constructs and returns the final, fully-formed object. If the validation can fail, the `build` method typically returns a `Result`.
+- The builder provides methods (often named after the fields they set, like `.name("Example")`, `.timeout(Duration::from_secs(5))`) to configure the object piece by piece. These methods usually return `self`, allowing chaining calls together fluently: `builder.field_a(value_a).field_b(value_b)`.
+- Once the desired fields are set, call a final method on the builder (commonly named `.build()` or `.finish()`). This method takes the configuration stored in the builder, performs any necessary validation (like checking if required fields were provided), and then constructs and returns the final, fully-formed object. If the validation can fail, the `build` method typically returns a `Result`.
 
 ```rust,editable
 {{#include ../../../crates/cats/rust_patterns/examples/builder_pattern/builder_pattern.rs:example}}
@@ -18,7 +18,7 @@ The builder pattern provides a clean and readable way to construct complex objec
 
 [![typed-builder][c~typed-builder~docs~badge]][c~typed-builder~docs] [![typed-builder~crates.io][c~typed-builder~crates.io~badge]][c~typed-builder~crates.io] [![typed-builder~repo][c~typed-builder~repo~badge]][c~typed-builder~repo] [![typed-builder~lib.rs][c~typed-builder~lib.rs~badge]][c~typed-builder~lib.rs]{{hi:typed-builder}}{{hi:Builder}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-[`typed-builder`][c~typed-builder~docs]↗{{hi:typed-builder}} lets you derive compile-time type-checked builders. It uses a 'derive' macro and leverages Rust's type system to ensure that all required fields are set. If you forget a required field, your code won't even compile.
+[`typed-builder`][c~typed-builder~docs]↗{{hi:typed-builder}} derives compile-time type-checked builders. It uses a 'derive' macro and leverages Rust's type system to ensure that all required fields are set. If you forget a required field, your code won't even compile.
 
 ## `derive_builder` {#derive_builder}
 

@@ -3,11 +3,11 @@
 // //! The following demonstrates the use of the `pin_project` crate for pin
 // //! projection.
 // //!
-// //! Pin projection allows you to safely get mutable references to fields of a
+// //! Pin projection enables safely getting mutable references to fields of a
 // //! `Pin`-ned struct.
 // //!
 // //! Pinning is a mechanism that guarantees that the memory location of a
-// //! value  will not change. This is useful when there are one or more
+// //! value will not change. This is useful when there are one or more
 // //! pointers pointing at that value, for example in self-referential data
 // //! structures, asynchronous programming, and `unsafe` code.
 // //! See [`std::pin`](https://doc.rust-lang.org/std/pin/index.html).
@@ -91,8 +91,8 @@
 //     // These types implement the `Unpin` auto-trait, which cancels the
 //     // restrictive effects of `Pin` when the pointee type `T` is `Unpin`.
 //     // In this example, we rely upon pinning for soundness and must ensure
-// that     // the type is not automatically marked as `Unpin`. We do so by
-// adding a     // `PhantomPinned` marker field.
+//     // that the type is not automatically marked as `Unpin`. We do so by
+//     // adding a `PhantomPinned` marker field.
 //     #[pin] // <------ This `#[pin]` is required to make `Struct` to `!Unpin`.
 //     _marker: PhantomPinned,
 //     // This is equivalent to `#[pin_project(!Unpin)]`.
@@ -149,8 +149,8 @@
 // /// with an enum.
 // ///
 // /// By passing an argument with the same name as the projection method
-// /// to the `pin_project` attribute, you can name the projection type returned
-// /// from the method. This allows you to use pattern matching on the projected
+// /// to the `pin_project` attribute, we can name the projection type returned
+// /// from the method. This allows us to use pattern matching on the projected
 // /// types.
 // #[pin_project(project = EnumProj)]
 // enum PinnedEnum<T, U> {

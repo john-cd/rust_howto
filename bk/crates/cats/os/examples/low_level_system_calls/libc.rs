@@ -71,8 +71,8 @@ fn env() {
 
     // Call the `getenv` C function.
     let path_value: *mut c_char = unsafe { libc::getenv(var_name.as_ptr()) };
-    // BEWARE: You need to take into account the lifetime of your `*const/mut
-    // c_char` pointers and who owns them. Depending on the C API, you may
+    // BEWARE: You need to take into account the lifetime of the `*const/mut
+    // c_char` pointers and who owns them. Depending on the C API, we may
     // need to call a special deallocation function on the string.
 
     match unsafe { cstr_to_rust_string(path_value) } {

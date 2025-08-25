@@ -6,7 +6,7 @@
 
 [![Rust by example - attributes][book~rust-by-example~attributes~badge]][book~rust-by-example~attributes]{{hi:Attributes}}
 
-Attributes are annotations you attach to your Rust code, like functions, structs, modules, or even entire crates. They provide extra information or instructions to the Rust compiler or other tools (like linters or documentation generators). They don't change the logic of the code directly, but they influence how it's compiled, checked, or processed.
+Attributes are annotations attached to your Rust code, like functions, structs, modules, or even entire crates. They provide extra information or instructions to the Rust compiler or other tools (like linters or documentation generators). They don't change the logic of the code directly, but they influence how it's compiled, checked, or processed.
 
 Common attributes include:
 

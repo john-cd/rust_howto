@@ -35,7 +35,7 @@ See [[lua | Lua]].
 
 ## JavaScript
 
-Embedding a JavaScript runtime gives you full JavaScript language support:
+Embedding a JavaScript runtime gives full JavaScript language support:
 
 - [`v8`][c~v8~docs]↗{{hi:v8}}: bindings to Google's V8 engine.
 - [`deno_core`][c~deno_core~docs]↗{{hi:deno_core}}: The core runtime of Deno, a modern JavaScript/TypeScript runtime built with V8, Rust, and Tokio.
@@ -54,7 +54,7 @@ See [[python | Python]].
 
 ## WebAssembly
 
-Alternatively, you may embed a WebAssembly runtime like [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}, or a WebAssembly interpreter (e.g. [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}}), into your Rust application.
+Alternatively, embed a WebAssembly runtime like [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}, or a WebAssembly interpreter (e.g. [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}}), into your Rust application.
 
 WASM offers portable bytecode and sandboxed execution. Many languages (C, C++, Rust, Go, C#...) compile to or have their VMs in WASM. A list is found in [Awesome WebAssembly Languages][awesome-wasm-langs-typescript~repo]↗.
 

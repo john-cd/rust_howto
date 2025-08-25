@@ -6,7 +6,7 @@ Stack-allocated arrays are arrays that are stored on the stack, as opposed to th
 The stack is a region of memory that is used for storing local variables and function call information.
 Stack allocation has several important characteristics:
 
-- The size of stack-allocated arrays must be known at compile time. This means you cannot resize these arrays dynamically as you can with heap-allocated arrays.
+- The size of stack-allocated arrays must be known at compile time. This means one cannot resize these arrays dynamically as one can with heap-allocated arrays.
 - Allocating and deallocating memory on the stack is very fast, because it simply involves adjusting the stack pointer. There is no need for complex memory management as with heap allocation.
 - The stack is typically much smaller than the heap, so stack-allocated arrays are suitable for small to moderately sized arrays.
 - Stack-allocated arrays are automatically deallocated when they go out of scope.

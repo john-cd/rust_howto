@@ -63,7 +63,7 @@ foo:
 
 ```Dockerfile
 FROM mcr.microsoft.com/devcontainers/base:bullseye
-# Or perhaps `mcr.microsoft.com/devcontainers/rust:bullseye` if you want Rust & `cargo`
+# Or perhaps `mcr.microsoft.com/devcontainers/rust:bullseye` for Rust & `cargo`
 
 SHELL ["bash", "-c"]
 
@@ -88,7 +88,7 @@ RUN apk add just
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}}
 
-[`bacon`][c~bacon~docs]↗{{hi:bacon}} is a background rust code checker. It is designed for minimal interaction, so that you can just let it run, alongside your editor, and be notified of warnings, errors, or test failures in your Rust code.
+[`bacon`][c~bacon~docs]↗{{hi:bacon}} is a background rust code checker. It is designed for minimal interaction, so that we can just let it run, alongside your editor, and be notified of warnings, errors, or test failures in your Rust code.
 
 ```sh
 # Install or Update `bacon`
@@ -103,7 +103,7 @@ bacon clippy
 
 ## Related Topics
 
-Consider [`cargo-make`][c~cargo-make~docs]↗{{hi:cargo-make}} if you want something with a bulkier syntax but more cross-platform portability.
+Consider [`cargo-make`][c~cargo-make~docs]↗{{hi:cargo-make}} if we want something with a bulkier syntax but more cross-platform portability.
 
 See [[building | Building]].
 

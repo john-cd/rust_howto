@@ -6,7 +6,7 @@
 
 The [`futures`][c~futures~docs]↗{{hi:futures}} crate provides a number of core abstractions for writing asynchronous code{{hi:Asynchronous}}.
 
-In most cases, you will use this crate directly only when writing [async][p~async] code{{hi:async}} intended to work for multiple runtimes. Otherwise, use the utilities provided by the ecosystem of your choice - [Tokio][p~tokio] for example.
+In most cases, only use this crate directly when writing [async][p~async] code{{hi:async}} intended to work for multiple runtimes. Otherwise, use the utilities provided by the ecosystem of your choice - [Tokio][p~tokio] for example.
 
 ## Select Futures {#selecting-futures}
 

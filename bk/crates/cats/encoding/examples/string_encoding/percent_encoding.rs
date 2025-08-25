@@ -36,7 +36,7 @@ fn decode_url_component(encoded: &str) -> Result<String> {
 fn custom_encode(input: &str) -> String {
     // Create a 'fragment' custom set that only encodes spaces and some special
     // characters.
-    /// See <https://url.spec.whatwg.org/#fragment-percent-encode-set>
+    /// See <https://url.spec.whatwg.org/#fragment-percent-encode-set>.
     const FRAGMENT: &AsciiSet =
         &CONTROLS.add(b' ').add(b'"').add(b'<').add(b'>').add(b'`');
     // Percent-encode the UTF-8 encoding of the given string.
@@ -44,7 +44,7 @@ fn custom_encode(input: &str) -> String {
 }
 
 fn main() -> Result<()> {
-    // Example URL component encoding
+    // Example URL component encoding:
     let original = "Hello, World! @#$%^&*()";
     let encoded = encode_url_component(original);
     let decoded = decode_url_component(&encoded)?;
@@ -53,7 +53,7 @@ fn main() -> Result<()> {
     println!("Encoded:   {encoded}");
     println!("Decoded:   {decoded}");
 
-    // Demonstrate custom encoding
+    // Demonstrate custom encoding:
     let custom_input = "special chars: %+";
     let custom_encoded = custom_encode(custom_input);
     println!("\nCustom Encoding:");

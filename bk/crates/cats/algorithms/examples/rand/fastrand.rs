@@ -8,7 +8,7 @@ use fastrand::Rng;
 
 fn main() {
     // To get reproducible results on every run,
-    // pick an arbitrary number as seed.
+    // pick an arbitrary number as seed:
     fastrand::seed(42);
     // Call a function to generate a number, a boolean, a digit, a character...
     println!("Boolean: {} ", fastrand::bool());

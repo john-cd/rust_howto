@@ -79,7 +79,7 @@ rustfmt --help=config
 
 [![rustfmt~repo][c~rustfmt~repo~badge]][c~rustfmt~repo]{{hi:rustfmt}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 
-For things you do not want [`rustfmt`][c~rustfmt~repo]↗{{hi:rustfmt}} to mangle, use `#[rustfmt::skip]`{{hi:rustfmt::skip}} , `#[rustfmt::skip::macros(macro_name)]`{{hi:rustfmt::skip::macros(macro_name)}} , or `#![rustfmt::skip::attributes(custom_attribute)]`{{hi:rustfmt::skip::attributes(custom_attribute)}}
+For things [`rustfmt`][c~rustfmt~repo]↗{{hi:rustfmt}} should not mangle, use `#[rustfmt::skip]`{{hi:rustfmt::skip}} , `#[rustfmt::skip::macros(macro_name)]`{{hi:rustfmt::skip::macros(macro_name)}} , or `#![rustfmt::skip::attributes(custom_attribute)]`{{hi:rustfmt::skip::attributes(custom_attribute)}}
 
 ## References {#references}
 

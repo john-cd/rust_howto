@@ -4,7 +4,7 @@
 
 Crates to help with sending, receiving, formatting, and parsing email.
 
-For most email sending needs, [`lettre`][c~lettre~docs]↗{{hi:lettre}} is the recommended crate. It provides a comprehensive and easy-to-use API. [`mailparse`][c~mailparse~docs]↗{{hi:mailparse}} is essential if you need to parse incoming emails. The [`mime`][c~mime~docs]↗{{hi:mime}} crate is helpful for constructing complex email messages.
+For most email sending needs, [`lettre`][c~lettre~docs]↗{{hi:lettre}} is the recommended crate. It provides a comprehensive and easy-to-use API. [`mailparse`][c~mailparse~docs]↗{{hi:mailparse}} is essential to parse incoming emails. The [`mime`][c~mime~docs]↗{{hi:mime}} crate is helpful for constructing complex email messages.
 
 ## Send Emails
 
@@ -16,7 +16,7 @@ For most email sending needs, [`lettre`][c~lettre~docs]↗{{hi:lettre}} is the r
 
 ## Email Clients (IMAP/POP3)
 
-While some crates exist for IMAP/POP3, they are less mature and widely used than the sending crates. If you need to interact with mailboxes, you might need to search for specific IMAP/POP3 crates or consider using a separate email client library.
+While some crates exist for IMAP/POP3, they are less mature and widely used than the sending crates. To interact with mailboxes, search for specific IMAP/POP3 crates or consider using a separate email client library.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -6,7 +6,7 @@
 //! ```
 
 fn main() {
-    // Generate a random value:.
+    // Generate a random value:
     let n1: u8 = rand::random();
     println!("Random u8: {n1}");
 

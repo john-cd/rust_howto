@@ -6,7 +6,7 @@
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
-[`HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}} is a key-value data structure. It allows you to store data in an unordered collection, where each element is identified by a unique key. This makes `HashMap` an excellent choice for lookups, insertions, and deletions based on keys.
+[`HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}} is a key-value data structure. It allows storing data in an unordered collection, where each element is identified by a unique key. This makes `HashMap` an excellent choice for lookups, insertions, and deletions based on keys.
 
 All hashmap keys{{hi:Keys}} must have the same type. All values{{hi:Values}} must have the same type.
 
@@ -28,7 +28,7 @@ All hashmap keys{{hi:Keys}} must have the same type. All values{{hi:Values}} mus
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
-You can use a custom-defined type (typically a `struct`) as keys in a HashMap. It is useful when you need to associate data with complex, multi-component identifiers that don't fit naturally into a single primitive type like an integer or a string.
+You can use a custom-defined type (typically a `struct`) as keys in a HashMap. It is useful to associate data with complex, multi-component identifiers that don't fit naturally into a single primitive type like an integer or a string.
 
 ```rust,editable
 {{#include ../../../crates/cats/data_structures/examples/hashmap/custom_type_as_key.rs:example}}

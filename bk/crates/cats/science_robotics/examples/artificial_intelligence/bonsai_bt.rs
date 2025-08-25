@@ -16,15 +16,15 @@
 
 use std::collections::HashMap;
 
-// An Action can either be "condition" which does not alter the system and
-// returns either Success or Failure.
+// An `Action` can either be "condition" which does not alter the system
+// and returns either `Success` or `Failure`.
 // Or it can be an "act" that can alter the system and returns either
-// Success, Failure or Running.
+// `Success`, `Failure` or `Running`.
 use bonsai_bt::Action;
 // The execution state of a behavior tree, along with a "blackboard" (state
 // shared between all nodes in the tree).
 use bonsai_bt::BT;
-// An Event.
+// An `Event`.
 use bonsai_bt::Event;
 // A sequence runs behaviors one by one.
 use bonsai_bt::Sequence;
@@ -70,7 +70,7 @@ fn main() -> anyhow::Result<()> {
     // You may use: `Sequence`, `Select`, `If`, `Invert`, `While`, `WhenAll`,
     // `WhenAny`.
 
-    // A Behavior Tree forms a tree structure, where each node represents a
+    // A behavior tree forms a tree structure, where each node represents a
     // process. When the process terminates, it signals `Success` or `Failure`.
     let mut bt = BT::new(behavior, blackboard);
 
@@ -102,7 +102,7 @@ fn main() -> anyhow::Result<()> {
                 break;
             }
             Status::Running => {
-                // Wait for the dt duration before the next tick, if desired
+                // Wait for the dt duration before the next tick, if desired.
             }
             Status::Failure => {
                 break;
@@ -114,7 +114,7 @@ fn main() -> anyhow::Result<()> {
     assert_eq!(*count, 1);
 
     // If the behavior tree concludes (reaches a steady state),
-    // you can reset the tree back to it's initial state at t = 0.0.
+    // we can reset the tree back to it's initial state at t = 0.0.
     bt.reset_bt();
 
     Ok(())

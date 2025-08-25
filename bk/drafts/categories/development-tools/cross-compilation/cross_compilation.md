@@ -23,7 +23,7 @@ Cross-Compilation Tools include [`cross`][c~cross~docs]↗{{hi:cross}}, a popula
 ```sh
 cargo install cross --git https://github.com/cross-rs/cross
 
-# Optionally, if you have `cargo-binstall`, you can install the pre-built binary
+# Optionally, if `cargo-binstall` is present, install the pre-built binary:
 cargo binstall cross
 ```
 

@@ -2,13 +2,13 @@
 
 {{#include control_flow.incl.md}}
 
-{{i:Control flow}} constructs allow you to run code conditionally or repeatedly, directing the "flow" of your program's execution. Rust provides several familiar ways to do this.
+{{i:Control flow}} constructs run code conditionally or repeatedly, directing the "flow" of your program's execution. Rust provides several familiar ways to do this.
 
 ## Execute Code based on a Condition Using `if` and `else` {#if-else}
 
 [![Rust by example - if else][book~rust-by-example~if_else~badge]][book~rust-by-example~if_else]
 
-`if`, `else`, and `else if` allow you to execute different blocks of code based on whether a boolean condition is true or false:
+`if`, `else`, and `else if` execute different blocks of code based on whether a boolean condition is true or false:
 
 ```rust,editable
 {{#include ../../crates/language/examples/control_flow/if_else.rs:example}}

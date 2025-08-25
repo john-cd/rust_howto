@@ -171,8 +171,8 @@ This section provides a few examples of software written in Rust, organized by t
 - [`swc`][c~swc~repo]↗: Rust-based platform for the Web.
 - [`influxdb`][influxdb~repo]↗: Scalable datastore for metrics, events, and real-time analytics.
 - [`firecracker`][firecracker~repo]↗: Secure and fast microVMs for serverless computing.
-- [`warp`][warp~repo]↗: Warp is a modern, Rust-based terminal with AI built in so you and your team can build great software, faster.
-- [RustPython][rustpython~repo]↗: A Python Interpreter written in Rust.
+- [`warp`][warp~repo]↗ is a modern, Rust-based terminal with AI built in.
+- [RustPython][rustpython~repo]↗ is a Python Interpreter written in Rust.
 - [`wezterm`][wezterm~repo]↗: A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust.
 - [`redox-os`: Mirror of https://gitlab.redox-os.org/redox-os/redox][redox~repo]↗.
 - [`neon`][neon~repo]↗: Serverless Postgres. We separated storage and compute to offer autoscaling, code-like database branching, and scale to zero.

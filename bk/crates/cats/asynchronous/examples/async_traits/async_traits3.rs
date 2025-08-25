@@ -10,7 +10,7 @@ trait Advertisement {
 
 struct Modal;
 
-// Implement the `Advertisement` trait for the `Modal` struct.
+// Implement the `Advertisement` trait for the `Modal` struct:
 #[async_trait]
 impl Advertisement for Modal {
     async fn run(&self) {
@@ -46,7 +46,7 @@ async fn remind_user_to_join_mailing_list() {
 #[tokio::main]
 async fn main() {
     // Create an instance of `Modal` and call the `run` method, awaiting its
-    // completion.
+    // completion:
     Modal.run().await;
 }
 // ANCHOR_END: example

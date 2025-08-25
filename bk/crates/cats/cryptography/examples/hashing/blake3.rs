@@ -27,7 +27,7 @@ fn main() {
     let hash3 = blake3::hash(&large_data);
     println!("Hash of 1KB data: {hash3}");
 
-    // Example 4: Using a key for keyed hashing (KMAC)
+    // Example 4: Using a key for keyed hashing (KMAC).
     let key: &[u8; 32] = b"mysecretkey__________-----------";
     let mut hasher_keyed = blake3::Hasher::new_keyed(key);
     hasher_keyed.update(b"Message to be keyed hashed");
@@ -35,7 +35,7 @@ fn main() {
     // OR let mac = blake3::keyed_hash(key, b"foo");
     println!("Keyed hash: {keyed_hash}");
 
-    // Example 5: Deriving a key using a context string
+    // Example 5: Deriving a key using a context string:
     let context = "My application context";
     // Given cryptographic key material of any length and a context string of
     // any length, `derive_key` outputs a 32-byte derived subkey.

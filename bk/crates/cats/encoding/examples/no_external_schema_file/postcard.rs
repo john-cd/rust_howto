@@ -14,7 +14,7 @@
 //! ```toml
 //! serde = { version = "1.0.*", default-features = false }
 //! ```
-//! Example adapted from <https://lib.rs/crates/postcard>
+//! Example adapted from <https://lib.rs/crates/postcard>.
 use std::ops::Deref;
 
 use heapless::Vec;

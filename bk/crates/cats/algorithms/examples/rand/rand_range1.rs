@@ -5,9 +5,9 @@ use rand::distr::Distribution;
 use rand::distr::Uniform;
 
 fn main() {
-    // Create a random number generator.
+    // Create a random number generator:
     let mut rng = rand::rng();
-    // Create a uniform distribution over the range [1, 7).
+    // Create a uniform distribution over the range [1, 7):
     let die = Uniform::try_from(1..7).unwrap();
 
     loop {

@@ -14,12 +14,12 @@ fn main() {
     // Test for 128-bit integer support:
     ac.emit_has_type("i128");
 
-    // If the type test succeeds, this will write a cargo:rustc-cfg=has_i128
-    // line for Cargo, which translates to Rust arguments --cfg has_i128. Then
-    // in the rest of your Rust code, you can add #[cfg(has_i128)] conditions on
-    // code that should only be used when the compiler supports it.
+    // If the type test succeeds, this will write a `cargo:rustc-cfg=has_i128``
+    // line for Cargo, which translates to Rust arguments `--cfg has_i128`. Then
+    // in the rest of your Rust code, you can add `#[cfg(has_i128)]` conditions
+    // on code that should only be used when the compiler supports it.
 
-    // (optional) We don't need to rerun for anything external.
+    // (optional) You don't need to rerun for anything external.
     // autocfg::rerun_path("build.rs");
 }
 // ANCHOR_END: example

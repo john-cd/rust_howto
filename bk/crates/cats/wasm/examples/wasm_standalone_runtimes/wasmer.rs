@@ -33,7 +33,7 @@ fn main() -> anyhow::Result<()> {
     let mut store = Store::default();
 
     // Compile the module.
-    // The Store also holds the engine that is used to compile the WASM bytes
+    // The `Store` also holds the engine that is used to compile the WASM bytes
     // into a valid module artifact.
     let module = Module::new(&store, module_wat)?;
 

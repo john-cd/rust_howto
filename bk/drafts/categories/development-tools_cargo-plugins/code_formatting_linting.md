@@ -50,7 +50,7 @@ Mute a warning using the [`#[allow(clippy::lint_name)]`][book~clippy~allowingden
 [![rustfix~lib.rs][c~rustfix~lib.rs~badge]][c~rustfix~lib.rs]
 [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-Can automatically fix compiler warnings that have a clear way to correct the problem that's likely what you want.
+Can automatically fix compiler warnings that have a clear way to correct the problem that's likely what we want.
 
 ```sh
 cargo fix

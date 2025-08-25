@@ -22,7 +22,7 @@ The core functionality of [`once_cell`][c~once_cell~docs]↗{{hi:once_cell}} is 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
 
-For lazy initialization scenarios where you want to defer the creation of a value until it's actually needed, without the overhead of thread synchronization, use one of the following:
+For lazy initialization scenarios where we want to defer the creation of a value until it's actually needed, without the overhead of thread synchronization, use one of the following:
 
 - The [`OnceCell`][c~core::cell::OnceCell~docs]↗{{hi:OnceCell}} type provides a way to define a value that will be initialized at most once.
 - The corresponding thread-safe version of `OnceCell<T>` is `OnceLock<T>`. [`OnceLock<T>`][c~std::sync::OnceLock~docs]↗ is a lock that allows a value to be initialized exactly once, ensuring that the initialization code is executed only once, even in the presence of multiple threads.

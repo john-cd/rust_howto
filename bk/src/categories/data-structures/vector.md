@@ -6,7 +6,7 @@
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}{{hi:std::vec::Vec}}{{hi:Vector}}
 
-The vector type [`Vec`][c~std::vec::Vec~docs]↗{{hi:std::vec::Vec}} is the go-to, general-purpose data structure, when you need a collection of elements that can change in size.
+The vector type [`Vec`][c~std::vec::Vec~docs]↗{{hi:std::vec::Vec}} is the go-to, general-purpose data structure, when a collection of elements that can change in size is needed.
 
 - It is a contiguous, growable, owned, heap-allocated array.
 - It can only store values that are the same type.

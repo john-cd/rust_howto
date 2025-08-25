@@ -6,7 +6,7 @@
 
 [![Rust by example - Lifetimes][book~rust-by-example~lifetimes~badge]][book~rust-by-example~lifetimes]{{hi:Lifetimes}}
 
-In Rust, _references_ allow you to access a value without taking ownership of it ("borrow" it). There are immutable references (of type `&T`), which allow read-only, shared access to a value; and mutable references (of type `&mut T`), which allow modification but enforce exclusive access.
+In Rust, _references_ access a value without taking ownership of it ("borrow" it). There are immutable references (of type `&T`), which allow read-only, shared access to a value; and mutable references (of type `&mut T`), which allow modification but enforce exclusive access.
 
 References are similar to pointers but come with strict safety guarantees: they are aligned, not null, and pointing to memory containing a _valid_ value of `T`.
 

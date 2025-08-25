@@ -13,9 +13,9 @@ For applications that do not require a graphical user interface (e.g., CLI tools
 
 See [[cross_compilation | Cross Compilation]] and [[cross_compiling | Cross Compiling]].
 
-Conditional compilation allows you to write platform-specific code, for example to call OS-specific APIs, such as [[os_freebsd-apis | FreeBSD]], [[os_linux-apis | Linux]], [[os_macos-apis | macOS]], [[os_unix-apis | Unix]] or [[os_windows-apis | Windows APIs]].
+Conditional compilation allows writing platform-specific code, for example to call OS-specific APIs, such as [[os_freebsd-apis | FreeBSD]], [[os_linux-apis | Linux]], [[os_macos-apis | macOS]], [[os_unix-apis | Unix]] or [[os_windows-apis | Windows APIs]].
 
-The [`#[cfg(...)]`][book~rust-reference~conditional-compilation]↗{{hi:#[cfg(...)]}} attribute is the primary mechanism for conditional compilation. It allows you to specify conditions that must be met for the code to be included in the compilation, including the target operating system (e.g., `target_os = "windows"`, `target_os = "linux"`) and/or the target architectures (e.g., `target_arch = "x86_64"`, `target_arch = "arm"`).
+The [`#[cfg(...)]`][book~rust-reference~conditional-compilation]↗{{hi:#[cfg(...)]}} attribute is the primary mechanism for conditional compilation. It specifies conditions that must be met for the code to be included in the compilation, including the target operating system (e.g., `target_os = "windows"`, `target_os = "linux"`) and/or the target architectures (e.g., `target_arch = "x86_64"`, `target_arch = "arm"`).
 
 ## Web Development
 
@@ -29,7 +29,7 @@ Rust can be used to build high-performance desktop applications for Windows, mac
 
 ### `tauri` {#tauri}
 
-[`tauri`][c~tauri~docs]↗{{hi:tauri}} allows you to build cross-platform desktop applications for major operating systems (Windows, macOS, Linux) using web technologies for the frontend and Rust for the backend.
+[`tauri`][c~tauri~docs]↗{{hi:tauri}} allows building cross-platform desktop applications for major operating systems (Windows, macOS, Linux) using web technologies for the frontend and Rust for the backend.
 
 ### `wry` {#wry}
 

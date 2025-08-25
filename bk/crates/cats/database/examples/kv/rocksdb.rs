@@ -2,13 +2,13 @@
 // ANCHOR: example
 //! Example using Facebook's RocksDB embeddable database.
 //!
-//! Ensure you have the RocksDB C++ library installed on your system, because
+//! Ensure you have the 'RocksDB' C++ library installed on your system, because
 //! the Rust `rocksdb` crate is just a wrapper around the native C++ RocksDB
-//! library. If you're on `Ubuntu`, you can install it with:
+//! library. If you're on `Ubuntu`, we can install it with:
 //! ```sh
 //! sudo apt-get install librocksdb-dev
 //! ```
-//! On `macOS`, you can install it with:
+//! On `macOS`, we can install it with:
 //! ```sh
 //! brew install rocksdb
 //! ```
@@ -19,7 +19,7 @@ use rocksdb::Options;
 
 fn main() -> anyhow::Result<()> {
     // Create a new temporary directory to store the database,
-    // which will be deleted when `tempdir` goes out of scope
+    // which will be deleted when `tempdir` goes out of scope.
     let tempdir = tempfile::Builder::new()
         .prefix("rocksdb_storage")
         .tempdir()
@@ -27,10 +27,10 @@ fn main() -> anyhow::Result<()> {
             "Failed to create the temporary directory for `rocksdb` storage",
         );
     let path = tempdir.path();
-    // In real life, use e.g.: let path = "my_rocksdb_path";
+    // In real life, use e.g.: `let path = "my_rocksdb_path";`.
     {
         // Open a RocksDB database.
-        // This will create a new database if it doesn't exist.
+        // This will create a new database if it doesn't exist:
         let db = DB::open_default(path)?;
 
         // Insert some key-value pairs:

@@ -30,7 +30,7 @@ fn main() {
     if let Direction::Left = left {
         println!("Going left.");
     } else {
-        // You can also add `else` and `else if` clauses to `if let`.
+        // We can also add `else` and `else if` clauses to `if let`.
         println!("Going right.");
     }
 }

@@ -39,10 +39,10 @@ struct User {
 }
 
 // The `Fake` trait is implemented for any type that implements `Dummy`:
-// Dummy should be implemented instead, and you get the `Fake` implementation
+// `Dummy` should be implemented instead, and we get the `Fake` implementation
 // for free.
 
-// A structure to represent an Order.
+// A structure to represent an Order:
 #[derive(Debug, Dummy)]
 struct Order {
     #[dummy(faker = "1000..2000")]

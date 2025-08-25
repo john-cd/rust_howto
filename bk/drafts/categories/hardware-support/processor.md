@@ -26,7 +26,7 @@ Shows the number of logical CPU cores{{hi:CPU cores}} in the current machine usi
 
 ### Inline Assembly {#skip}
 
-You can use inline [assembly][p~assembly] in Rust with the asm! macro, but it's generally discouraged unless absolutely necessary for performance reasons. It makes code less portable.
+You can use inline [assembly][p~assembly] in Rust with the `asm!` macro, but it's generally discouraged unless absolutely necessary for performance reasons. It makes code less portable.
 
 ### Compiler Intrinsics {#skip}
 
@@ -46,15 +46,15 @@ See [[atomics | Atomics]].
 
 ### Profiling {#skip}
 
-Profiling tools help you identify CPU-related performance issues.
+Profiling tools help identify CPU-related performance issues.
 
-`cargo flamegraph`, [`perf`][c~perf~docs]↗{{hi:perf}} (Linux) help you identify performance bottlenecks in your code, which can be related to CPU usage.
+`cargo flamegraph`, [`perf`][c~perf~docs]↗{{hi:perf}} (Linux) help identify performance bottlenecks in your code, which can be related to CPU usage.
 
 See [[development-tools_profiling | Development Tools Profiling]] and [[memory_usage_analysis | Memory Usage Analysis]].
 
 ### Concurrency and Multithreading (Related to CPU Utilization) {#skip}
 
-Concurrency and multithreading allow you to utilize multiple CPU cores.
+Concurrency and multithreading allow the uses of multiple CPU cores.
 
 `std::thread`: (Standard library) For creating and managing threads.
 [`rayon`][c~rayon~docs]↗{{hi:rayon}}: A [data parallelism][p~data-parallelism] library that makes it easy to parallelize computations.
@@ -72,7 +72,7 @@ System calls are used to interact with the operating system, which in turn inter
 
 ### Embedded Systems Programming {#skip}
 
-In embedded systems, you often have more direct access to CPU features and peripherals. See the [Embedded][p~embedded] Systems section for relevant crates.
+In embedded systems, we often have more direct access to CPU features and peripherals. See the [Embedded][p~embedded] Systems section for relevant crates.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

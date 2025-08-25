@@ -12,7 +12,7 @@ fn is_same_type<T: 'static, U: 'static>() -> bool {
 }
 
 fn main() {
-    // Compare types with `TypeId::of`:`
+    // Compare types with `TypeId::of`:
     println!("i32 vs i32: {}", is_same_type::<i32, i32>()); // true.
     println!("i32 vs u32: {}", is_same_type::<i32, u32>()); // false.
 

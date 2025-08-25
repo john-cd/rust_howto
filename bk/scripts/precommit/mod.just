@@ -28,7 +28,7 @@ _default:
 
 # FIXME Fix auto-fixable lint issues in staged files
 @fix:
-    pre-commit run prettier    # fixes all Markdown (& other) lint issues
+    pre-commit run prettier # fixes all Markdown (& other) lint issues
 
 # FIXME Install/update code automation: pre-commit...
 @install:
@@ -47,5 +47,5 @@ _default:
 
 # Configure `git town`
 @config_git_town:
-    git config git-town.code-hosting-driver gitea  # setup git-town with gitea
-    git config git-town.code-hosting-origin-hostname gitea.example.org  # setup git-town origin hostname
+    git config git-town.code-hosting-driver gitea # Setup git-town with gitea
+    git config git-town.code-hosting-origin-hostname gitea.example.org # Setup git-town origin hostname

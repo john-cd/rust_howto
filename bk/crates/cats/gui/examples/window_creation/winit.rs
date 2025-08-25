@@ -5,7 +5,7 @@
 use winit::application::ApplicationHandler;
 // An event from a `Window`: Resized, Moved, etc.
 use winit::event::WindowEvent;
-// Allow you to create new windows while Winit executes your callback:
+// Allow creating new windows while Winit executes your callback:
 use winit::event_loop::ActiveEventLoop;
 // Indicates the desired behavior of the event loop after
 // `Event::AboutToWait` is emitted.

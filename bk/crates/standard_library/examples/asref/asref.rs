@@ -33,7 +33,7 @@ fn print_vec<T: AsRef<[i32]>>(input: T) {
 }
 
 // `Vec<T>` and `[T; N]` implement `AsRef<[T]>`.
-// You can also pass a reference to a vector or array, thanks to a blanket
+// We can also pass a reference to a vector or array, thanks to a blanket
 // `impl AsRef<U> for &T where T: AsRef<U>` in the standard library.
 fn vec_example() {
     let vec: Vec<i32> = vec![1, 2, 3];

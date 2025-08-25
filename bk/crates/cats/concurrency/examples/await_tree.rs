@@ -2,7 +2,7 @@
 //! This example demonstrates how to use the `await-tree` crate.
 //!
 //! `await-tree` is a tool for visualizing the execution of asynchronous tasks
-//! in Rust. It helps you understand the relationships between tasks and how
+//! in Rust. It helps understand the relationships between tasks and how
 //! they are waiting on each other.
 //!
 //! Add to your `Cargo.toml`:

@@ -25,7 +25,7 @@ There are two main approaches to Rust program verification:
 
 [kani][c~kani~repo]↗ is a Rust verifier / model checker. A model checker formally verifies that a system like a software program meets a given specification, using mathematical techniques (automated reasoning) to prove that a system satisfies a property for all possible states and behaviors. Model checkers explore the entire state space of the system, as opposed to approaches like [fuzzing][p~fuzzing] and property [testing][p~testing].
 
-Model checking is a valuable technique for verifying the correctness of critical systems, such as safety-critical software and communication protocols. Kani is particularly useful for verifying unsafe code blocks. Some example properties you can prove with Kani include memory safety (e.g., null pointer dereferences, use-after-free, etc.), the absence of certain runtime errors (i.e., index out of bounds, panics), the absence of some types of unexpected behavior (e.g., arithmetic overflows), in addition to user-specified assertions.
+Model checking is a valuable technique for verifying the correctness of critical systems, such as safety-critical software and communication protocols. Kani is particularly useful for verifying unsafe code blocks. Some example properties that can be proven with Kani include memory safety (e.g., null pointer dereferences, use-after-free, etc.), the absence of certain runtime errors (i.e., index out of bounds, panics), the absence of some types of unexpected behavior (e.g., arithmetic overflows), in addition to user-specified assertions.
 
 At present, Kani does not support verifying concurrent code.
 
@@ -81,7 +81,7 @@ Loom attempts to check all possible interleavings, while Shuttle chooses interle
 
 - [MIRAI][mirai~repo]↗.
 - [`prusti`][prusti~website]↗ is an automated program verifier for Rust, based on the Viper infrastructure. It leverages Rust's strong type guarantees to simplify the specification and verification of Rust programs.
-- [Creusot][creusot~repo]↗ helps you prove your code is correct in an automated fashion.
+- [Creusot][creusot~repo]↗ helps prove that code is correct in an automated fashion.
 - [`crucible`][c~crucible~docs]↗{{hi:crucible}} (symbolic execution).
 
 ## Related Topics {#related-topics}

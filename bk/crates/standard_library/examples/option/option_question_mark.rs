@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
-//! The `?` operator shines when you have a sequence of operations, each of
+//! The `?` operator shines when we have a sequence of operations, each of
 //! which might fail. It provides an early exit mechanism for functions that
 //! return `Option`. If any intermediate step returns `None`, the function
 //! immediately returns `None`.

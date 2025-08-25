@@ -16,7 +16,7 @@
 // /// This example will demonstrate how to create an index, add documents,
 // /// and perform a search.
 // fn main() -> tantivy::Result<()> {
-//     // Define the schema for your documents
+//     // Define the schema for your documents.
 //     // Tantivy has a very strict schema. You need to specify in advance,
 //     // whether a field is indexed or not, stored or not, and RAM-based or
 //     // not: `let mut schema_builder = Schema::builder();`
@@ -41,38 +41,39 @@
 
 //     let schema = schema_builder.build();
 
-//     // Create a new index in the specified directory
+//     // Create a new index in the specified directory.
 //     // This index will be allocated in anonymous memory. This is useful for
 //     // indexing small set of documents for testing or for a temporary
 //     // in-memory index.
 //     let index = Index::create_in_ram(schema.clone());
 //     // OR: let index = Index::create_in_dir(index_path, schema.clone())?;
 
-//     // Create a multithreaded index writer, specify a buffer size in bytes
+//     // Create a multithreaded index writer, specify a buffer size in bytes:
 //     let mut index_writer = index.writer(50_000_000)?;
 
-//     // Add documents to the index
+//     // Add documents to the index.
 //     index_writer.add_document(doc!(
 //         schema.get_field("title").unwrap() => "Document 1",
 //         schema.get_field("body").unwrap() => "This is the body of document
-// 1", ))?;     index_writer.add_document(doc!(
+// 1", ))?;
+//     index_writer.add_document(doc!(
 //         schema.get_field("title").unwrap() => "Document 2",
 //         schema.get_field("body").unwrap() => "This is the body of document
 // 2", ))?;
 
-//     // Commit the changes
+//     // Commit the changes.
 //     index_writer.commit()?;
 //     // We need to call .commit() explicitly to force the
 //     // index_writer to finish processing the documents in the queue,
 //     // flush the current index to the disk, and advertise
 //     // the existence of new documents.
 
-//     // Create a reader
+//     // Create a reader.
 //     let reader = index
 //         .reader_builder()
-//         .reload_policy(ReloadPolicy::OnCommitWithDelay) // The index is
-// reloaded within milliseconds after a new commit is available.
-//         .try_into()?;
+//         .reload_policy(ReloadPolicy::OnCommitWithDelay)
+//         // The index is reloaded within milliseconds after a new commit is
+// available.         .try_into()?;
 //     // OR: let reader = index.reader()?;
 
 //     // A searcher points to a snapshotted, immutable version of the index.
@@ -80,7 +81,7 @@
 //     // program, and acquire a new searcher for every single request.
 //     let searcher = reader.searcher();
 
-//     // Define a query parser that can interpret human queries
+//     // Define a query parser that can interpret human queries:
 //     let query_parser = tantivy::query::QueryParser::for_index(
 //         &index,
 //         vec![schema.get_field("body").unwrap()], /* Set of default fields
@@ -92,11 +93,11 @@
 //     // Parse the query coming e.g. from the search bar.
 //     let query = query_parser.parse_query("body:document")?;
 
-//     // Search for documents that match the query
+//     // Search for documents that match the query:
 //     let top_docs: Vec<(Score, DocAddress)> = searcher
 //         .search(&query, &tantivy::collector::TopDocs::with_limit(10))?;
 
-//     // Print the search results
+//     // Print the search results:
 //     for (score, doc_address) in top_docs {
 //         // Retrieve the actual content of documents given its `doc_address`.
 //         let retrieved_doc = searcher.doc(doc_address)?;
@@ -106,19 +107,19 @@
 //             score
 //         );
 //         // We can also get an explanation to understand how a found document
-// got         // its score.
+//         // got its score.
 //         let explanation = query.explain(&searcher, doc_address)?;
 //         println!("{}", explanation.to_pretty_json());
 //     }
 
-//     // Delete all documents
+//     // Delete all documents:
 //     index_writer.delete_all_documents()?;
 //     index_writer.commit()?;
 
 //     Ok(())
 // }
-// // Adapted from <https://docs.rs/tantivy/0.22.0/>
-// // See also examples e.g. <https://tantivy-search.github.io/examples/basic_search.html>
+// // Adapted from <https://docs.rs/tantivy/0.22.0/>.
+// // See also examples e.g. <https://tantivy-search.github.io/examples/basic_search.html>.
 // // ANCHOR_END: example
 
 // #[test]

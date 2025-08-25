@@ -33,7 +33,7 @@ A type is [`std::marker::Sync`][c~std::marker::Sync~docs]↗{{hi:std::marker::Sy
 
 `Send` and `Sync` are automatically derived [traits][p~traits]. This means that, unlike almost every other trait, if a type is composed entirely of `Send` or `Sync` types, then it is `Send` or `Sync`.
 
-If you want to work with non-[`Sync`][c~std::marker::Sync~docs]↗{{hi:std::marker::Sync}} / `Send` types like raw pointers, you need to build an abstraction on which `Send` and `Sync` can be derived.
+If we want to work with non-[`Sync`][c~std::marker::Sync~docs]↗{{hi:std::marker::Sync}} / `Send` types like raw pointers, we need to build an abstraction on which `Send` and `Sync` can be derived.
 
 The following provides an example of such abstraction - a simplified implementation of the [`std::sync::Arc`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}}(Atomic Reference Counted) smart pointer, which, as discussed, can safely share data between multiple owners in a thread-safe manner. `my::Arc` consists of an outer struct that wraps a raw pointer to an inner struct (`ArcInner`), which contains the data and the reference count. Cloning `Arc` creates another outer struct that points to the same inner struct and increase the reference count. Dropping an instance of `Arc` decreases the reference count and, if zero, drops the underlying data.
 

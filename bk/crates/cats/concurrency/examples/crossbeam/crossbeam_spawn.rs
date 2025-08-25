@@ -22,7 +22,7 @@ fn find_max(arr: &[i32]) -> Option<i32> {
     let mid = arr.len() / 2;
     let (left, right) = arr.split_at(mid);
 
-    // Use crossbeam to spawn two threads to find the maximum in each half.
+    // Use `crossbeam` to spawn two threads to find the maximum in each half.
     crossbeam::scope(|s| {
         // Spawn a thread to find the maximum in the left half.
         let thread_l = s.spawn(|_| find_max(left));

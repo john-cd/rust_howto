@@ -10,7 +10,7 @@ fn main() {
     // always at the top.
     let mut heap = BinaryHeap::new();
 
-    // Push elements into the BinaryHeap
+    // Push elements into the BinaryHeap:
     heap.push(3);
     heap.push(1);
     heap.push(4);
@@ -36,13 +36,13 @@ fn main() {
     // The heap should now be empty.
     assert!(heap.is_empty());
 
-    // If you need a min-heap instead of a max-heap,
+    // If we need a min-heap instead of a max-heap,
     // use `std::cmp::Reverse` to invert the order.
     let mut heap = BinaryHeap::new();
     heap.push(Reverse(3));
     heap.push(Reverse(1));
     heap.push(Reverse(4));
-    // Pop elements from the `BinaryHeap`.
+    // Pop elements from the `BinaryHeap`:
     while let Some(Reverse(value)) = heap.pop() {
         println!("{value}");
     }

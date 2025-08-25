@@ -12,7 +12,7 @@
 // [build-dependencies]
 // cbindgen = "0.27" # or latest version
 //
-// 2) Define some functions and types that you want to expose to C (see below).
+// 2) Define some functions and types that we want to expose to C (see below).
 // 3) Create a `build.rs` file in your project's root directory to run
 //    `cbindgen`.
 // 4) Use `cargo build` to generate the bindings.

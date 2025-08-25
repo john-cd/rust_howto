@@ -32,7 +32,7 @@ fn main() {
 
     // `Box` owns its value.
     // When `my_boxed_string` goes out of scope (is dropped),
-    // the String on the heap is deallocated.
+    // the `String` on the heap is deallocated.
     {
         let my_boxed_string = Box::new(String::from("Hello, Box!"));
         println!("my_boxed_string: {my_boxed_string}");

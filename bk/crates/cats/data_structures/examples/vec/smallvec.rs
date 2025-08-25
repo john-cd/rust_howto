@@ -19,7 +19,7 @@ fn main() {
     small_vec.push(3);
     small_vec.push(4);
 
-    // You can also initialize it via a macro:
+    // We can also initialize it via a macro:
     let mut small_vec: SmallVec<i32, 4> = smallvec![1, 2, 3, 4];
 
     // Print the current state of the SmallVec.
@@ -52,7 +52,7 @@ fn main() {
     assert_eq!(small_vec, [1]);
     assert_eq!(small_vec2, [2, 3, 4]);
 
-    // SmallVec points to a slice, so you can use normal slice indexing and
+    // SmallVec points to a slice, so we can use normal slice indexing and
     // other methods to access its contents.
     small_vec2[0] = small_vec2[1] + small_vec2[2];
     small_vec2.sort();

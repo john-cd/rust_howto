@@ -9,14 +9,16 @@ use futures_util::stream::StreamExt;
 use tokio::time;
 
 // Add these dependencies to your Cargo.toml:
+// ```toml
 // [dependencies]
 // futures = "0.3"
 // futures-util = "0.3"
 // tokio = { version = "1", features = ["full"] }
+// ```
 
 // Simulated async function that returns a `Result`:
 async fn fetch_data(id: u32) -> Result<String, String> {
-    // Simulate network delay
+    // Simulate network delay:
     time::sleep(Duration::from_millis(100)).await;
     if id % 3 == 0 {
         Err(format!("Error fetching data for id {id}"))
@@ -30,7 +32,7 @@ async fn main() {
     println!("\n===== Stream Utilities =====");
 
     // Create a stream of futures:
-    // `iter` converts an `Iterator` into a `Stream`
+    // `iter` converts an `Iterator` into a `Stream`.
     let stream = stream::iter(vec![1, 2, 3, 4, 5]).map(fetch_data);
 
     // Process stream with `for_each_concurrent`, which
