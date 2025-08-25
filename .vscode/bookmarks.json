@@ -71,41 +71,6 @@
 			]
 		},
 		{
-			"path": "bk/src/categories/algorithms/randomness.md",
-			"bookmarks": [
-				{
-					"line": 9,
-					"column": 9,
-					"label": ""
-				},
-				{
-					"line": 20,
-					"column": 14,
-					"label": ""
-				},
-				{
-					"line": 47,
-					"column": 9,
-					"label": ""
-				},
-				{
-					"line": 57,
-					"column": 16,
-					"label": ""
-				},
-				{
-					"line": 67,
-					"column": 14,
-					"label": ""
-				},
-				{
-					"line": 73,
-					"column": 6,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/categories/algorithms/sorting.md",
 			"bookmarks": [
 				{

@@ -4,10 +4,9 @@
 
 ## Generate Random Numbers {#generate-random-numbers}
 
-[![rand][c~rand~docs~badge]][c~rand~docs] [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
-[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![rand~website][c~rand~website~badge]][c~rand~website] [![rand][c~rand~docs~badge]][c~rand~docs] [![rand~crates.io][c~rand~crates.io~badge]][c~rand~crates.io] [![rand~repo][c~rand~repo~badge]][c~rand~repo] [![rand~lib.rs][c~rand~lib.rs~badge]][c~rand~lib.rs]{{hi:rand}}{{hi:Random}}{{hi:Rng}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-Generates random numbers{{hi:Random numbers}} with help of the random-number generator{{hi:Random-number generator}} [`rand::Rng`][c~rand::Rng~docs]↗{{hi:rand::Rng}}. Each thread has an initialized generator. Integers are uniformly distributed over the range of the type, and floating point numbers are uniformly distributed from 0 up to but not including 1.
+This example demonstrates the basic usage of the `rand` crate for generating random numbers {{hi:Random numbers}}:
 
 ```rust,editable
 {{#include ../../../crates/cats/algorithms/examples/rand/rand1.rs:example}}
@@ -15,16 +14,15 @@ Generates random numbers{{hi:Random numbers}} with help of the random-number gen
 
 ## Generate Random Numbers Within a Range {#generate-random-numbers-within-a-range}
 
-[![rand][c~rand~docs~badge]][c~rand~docs] [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
-[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![rand~website][c~rand~website~badge]][c~rand~website] [![rand][c~rand~docs~badge]][c~rand~docs] [![rand~crates.io][c~rand~crates.io~badge]][c~rand~crates.io] [![rand~repo][c~rand~repo~badge]][c~rand~repo] [![rand~lib.rs][c~rand~lib.rs~badge]][c~rand~lib.rs]{{hi:rand}}{{hi:Random}}{{hi:Rng}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-Generates a random value{{hi:Random value}} within half-open `[0, 10)` range (not including `10`) with [`rand::Rng::gen_range`][c~rand::Rng::gen_range~docs]↗{{hi:rand::Rng::gen_range}} range:
+This example generates a random value{{hi:Random value}} within the half-open `[0, 10)` range (not including `10`):
 
 ```rust,editable
 {{#include ../../../crates/cats/algorithms/examples/rand/rand_range.rs:example}}
 ```
 
-[`rand::distributions::uniform::Uniform`][c~rand::distributions::uniform::Uniform~docs]↗{{hi:rand::distributions::uniform::Uniform}} can obtain values with [uniform distribution][wikipedia~uniform-distribution]↗{{hi:Uniform distribution}}. This has the same effect, but may be faster when repeatedly generating numbers in the same range:
+Using `rand::distr::Uniform` has the same effect but may be faster than `rand::Rng::random_range` when repeatedly generating numbers in the same range:
 
 ```rust,editable
 {{#include ../../../crates/cats/algorithms/examples/rand/rand_range1.rs:example}}
@@ -32,9 +30,13 @@ Generates a random value{{hi:Random value}} within half-open `[0, 10)` range (no
 
 ## Generate Random Numbers Within a Given Distribution {#generate-random-numbers-within-a-given-distribution}
 
-[![rand][c~rand~docs~badge]][c~rand~docs] [![rand_distr][c~rand_distr~docs~badge]][c~rand_distr~docs] [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![rand~website][c~rand~website~badge]][c~rand~website] [![rand][c~rand~docs~badge]][c~rand~docs] [![rand~crates.io][c~rand~crates.io~badge]][c~rand~crates.io] [![rand~repo][c~rand~repo~badge]][c~rand~repo] [![rand~lib.rs][c~rand~lib.rs~badge]][c~rand~lib.rs]{{hi:rand}}{{hi:Random}}{{hi:Rng}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-By default, random numbers{{hi:Random numbers}} in the [`rand`][c~rand~docs]↗{{hi:rand}} crate have [uniform distribution][wikipedia~uniform-distribution]↗{{hi:Uniform distribution}}. The [`rand_distr`][c~rand_distr~docs]↗{{hi:rand_distr}} crate provides other kinds of distributions{{hi:Distributions}}. To use them, you instantiate a distribution, then sample from that distribution using [`rand::distributions::Distribution::sample`][c~rand::distributions::Distribution::sample~docs]↗{{hi:rand::distributions::Distribution::sample}} with help of a random-number generator [`rand::Rng`][c~rand::Rng~docs]↗{{hi:rand::Rng}}. The distributions available are documented [here][c~rand_distr~docs]↗. An example using the [`rand_distr::Normal`][c~rand_distr::Normal~docs]↗{{hi:rand_distr::Normal}} distribution is shown below:
+[![rand_distr~website][c~rand_distr~website~badge]][c~rand_distr~website] [![rand_distr][c~rand_distr~docs~badge]][c~rand_distr~docs] [![rand_distr~crates.io][c~rand_distr~crates.io~badge]][c~rand_distr~crates.io] [![rand_distr~repo][c~rand_distr~repo~badge]][c~rand_distr~repo] [![rand_distr~lib.rs][c~rand_distr~lib.rs~badge]][c~rand_distr~lib.rs]{{hi:rand_distr}}{{hi:Random}}{{hi:Probability}}{{hi:Distribution}}{{hi:Rng}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+
+By default, random numbers{{hi:Random numbers}} in the [`rand`][c~rand~docs]↗{{hi:rand}} crate have [uniform distribution][wikipedia~uniform-distribution]↗{{hi:Uniform distribution}}. The [`rand_distr`][c~rand_distr~docs]↗{{hi:rand_distr}} crate is a super-set of the `rand::distr` module and provides other kinds of statistical distributions{{hi:Distributions}}. Sample from a distribution using the `rand::distr::Distribution::sample` function, passing a random-number generator (implementing [`rand::Rng`][c~rand::Rng~docs]↗{{hi:rand::Rng}}).
+
+An example using the [`rand_distr::Normal`][c~rand_distr::Normal~docs]↗{{hi:rand_distr::Normal}} distribution is shown below:
 
 ```rust,editable
 {{#include ../../../crates/cats/algorithms/examples/rand/rand_dist.rs:example}}
@@ -42,10 +44,9 @@ By default, random numbers{{hi:Random numbers}} in the [`rand`][c~rand~docs]↗{
 
 ## Generate Random Values of a Custom Type {#generate-random-values-custom-type}
 
-[![rand][c~rand~docs~badge]][c~rand~docs] [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
-[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![rand~website][c~rand~website~badge]][c~rand~website] [![rand][c~rand~docs~badge]][c~rand~docs] [![rand~crates.io][c~rand~crates.io~badge]][c~rand~crates.io] [![rand~repo][c~rand~repo~badge]][c~rand~repo] [![rand~lib.rs][c~rand~lib.rs~badge]][c~rand~lib.rs]{{hi:rand}}{{hi:Random}}{{hi:Rng}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-Randomly generates a tuple `(i32, bool, f64)` and variable of user defined type `Point`. Implements the [`rand::distributions::Distribution`][c~rand::distributions::Distribution~docs]↗{{hi:rand::distributions::Distribution}} trait on type Point for [`rand::distributions::Standard`][c~rand::distributions::Standard~docs]↗{{hi:rand::distributions::Standard}} trait in order to allow random generation.
+The following randomly generates a tuple `(i32, bool, f64)` and variable of user defined type `Point`, by implementing the [`rand::distributions::Distribution`][c~rand::distributions::Distribution~docs]↗{{hi:rand::distributions::Distribution}} trait:
 
 ```rust,editable
 {{#include ../../../crates/cats/algorithms/examples/rand/rand_custom.rs:example}}
@@ -53,29 +54,29 @@ Randomly generates a tuple `(i32, bool, f64)` and variable of user defined type 
 
 ## Create Random Passwords from a Set of Alphanumeric Characters {#generate-random-values-from-set-alphanumeric}
 
-[![rand][c~rand~docs~badge]][c~rand~docs] [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}{{hi:Random passwords}}
+[![rand~website][c~rand~website~badge]][c~rand~website] [![rand][c~rand~docs~badge]][c~rand~docs] [![rand~crates.io][c~rand~crates.io~badge]][c~rand~crates.io] [![rand~repo][c~rand~repo~badge]][c~rand~repo] [![rand~lib.rs][c~rand~lib.rs~badge]][c~rand~lib.rs]{{hi:rand}}{{hi:Random}}{{hi:Rng}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} {{hi:Algorithms}}{{hi:Random passwords}}
 
-Randomly generates a string of given length ASCII characters in the range `A-Z, a-z, 0-9`, with [`rand::distributions::Alphanumeric`][c~rand::distributions::Alphanumeric~docs]↗{{hi:rand::distributions::Alphanumeric}} sample.
+In this example, we randomly generate strings of given length from ASCII characters in the range `A-Z, a-z, 0-9`, using [`rand::distributions::Alphanumeric`][c~rand::distributions::Alphanumeric~docs]↗{{hi:rand::distributions::Alphanumeric}}:
 
 ```rust,editable
-{{#include ../../../crates/cats/algorithms/examples/rand/rand_passwd.rs:example}}
+{{#include ../../../crates/cats/algorithms/examples/rand/rand_alphanumeric.rs:example}}
 ```
 
 ## Create Random Passwords from a Set of User-defined Characters {#create-random-passwords-from-a-set-of-user-defined-characters}
 
-[![rand][c~rand~docs~badge]][c~rand~docs] [![cat~os][cat~os~badge]][cat~os]{{hi:OS}}
+[![rand~website][c~rand~website~badge]][c~rand~website] [![rand][c~rand~docs~badge]][c~rand~docs] [![rand~crates.io][c~rand~crates.io~badge]][c~rand~crates.io] [![rand~repo][c~rand~repo~badge]][c~rand~repo] [![rand~lib.rs][c~rand~lib.rs~badge]][c~rand~lib.rs]{{hi:rand}}{{hi:Random}}{{hi:Rng}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-Randomly generates a string of given length ASCII characters with custom user-defined bytestring, with [`rand::Rng::gen_range`][c~rand::Rng::gen_range~docs]↗{{hi:rand::Rng::gen_range}}.
+The following randomly generates a string of given length (e.g. a password) using a predefined character set:
 
 ```rust,editable
-{{#include ../../../crates/cats/algorithms/examples/rand/rand_choose.rs:example}}
+{{#include ../../../crates/cats/algorithms/examples/rand/rand_password.rs:example}}
 ```
 
 ## Generate Random Numbers with `fastrand` {#fastrand}
 
 [![fastrand][c~fastrand~docs~badge]][c~fastrand~docs] [![fastrand~crates.io][c~fastrand~crates.io~badge]][c~fastrand~crates.io] [![fastrand~repo][c~fastrand~repo~badge]][c~fastrand~repo] [![fastrand~lib.rs][c~fastrand~lib.rs~badge]][c~fastrand~lib.rs]{{hi:fastrand}}{{hi:Rand}}{{hi:Random}}{{hi:Wyrand}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
 
-[`fastrand`][c~fastrand~docs]↗{{hi:fastrand}} is a simple and fast random number generator. No dependencies, non-cryptographically secure random numbers, lower complexity than [`rand`][c~rand~docs]↗{{hi:rand}}.
+[`fastrand`][c~fastrand~docs]↗{{hi:fastrand}} is a simple and fast random number generator. It has no dependencies and lower complexity than [`rand`][c~rand~docs]↗{{hi:rand}} but is NOT cryptographically secure:
 
 ```rust,editable
 {{#include ../../../crates/cats/algorithms/examples/rand/fastrand.rs:example}}
@@ -85,5 +86,4 @@ Randomly generates a string of given length ASCII characters with custom user-de
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/1390)
 </div>

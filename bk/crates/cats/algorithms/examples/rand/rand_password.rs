@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
-/// Generates a random password of a specified length using a predefined
-/// character set.
+use rand::Rng;
+
 fn main() {
     // Define the character set to choose from.
     const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZ\
@@ -9,11 +9,16 @@ fn main() {
                             0123456789)(*&^%$#@!~";
 
     // Define the length of the password.
-    const PASSWORD_LEN: usize = 30;
+    const PASSWORD_LEN: usize = 15;
+
+    // Get handle to the local `ThreadRng`, which implements `rand::CryptoRng`.
+    // Read the following about the suitability of `rand` to generate random
+    // passwords: <https://docs.rs/rand_distr/latest/rand_distr/struct.Alphanumeric.html#passwords>
+    let mut rng = rand::rng();
 
     let password: String = (0..PASSWORD_LEN)
         .map(|_| {
-            let idx = rand::random_range(0..CHARSET.len());
+            let idx = rng.random_range(0..CHARSET.len());
             CHARSET[idx] as char
         })
         .collect();

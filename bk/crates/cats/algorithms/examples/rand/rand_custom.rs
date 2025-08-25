@@ -14,8 +14,6 @@ struct Point {
     y: i32,
 }
 
-// Required by:
-// pub fn random<T>() -> T
 // This implementation allows generating random `Point` instances.
 impl Distribution<Point> for StandardUniform {
     fn sample<R: Rng + ?Sized>(&self, rng: &mut R) -> Point {
@@ -25,13 +23,14 @@ impl Distribution<Point> for StandardUniform {
 }
 
 fn main() {
-    // Access a fast, pre-initialized generator.
+    // Access the standard random value generator:
     let mut rng = rand::rng();
-    // Generate a random tuple of (i32, bool, f64).
+
+    // Generate a random tuple of (i32, bool, f64):
     let rand_tuple = rng.random::<(i32, bool, f64)>();
     println!("Random tuple: {rand_tuple:?}");
 
-    // Generate a random Point using the custom distribution.
+    // Generate a random `Point` using the custom implementation.
     let rand_point: Point = rng.random();
     println!("Random Point: {rand_point:?}");
 }

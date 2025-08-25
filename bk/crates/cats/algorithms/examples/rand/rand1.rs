@@ -1,27 +1,31 @@
 #![allow(dead_code)]
 // ANCHOR: example
-//! This example demonstrates the basic usage of the `rand` crate for generating
-//! random numbers.
-//!
 //! In `Cargo.toml`, add:
 //! ```toml
-//! rand = { version = "0.9.0", features = [ "thread_rng" ] }
+//! rand = { version = "0.9.0" } # Or latest.
 //! ```
 
 fn main() {
-    // Generate a random value using the thread-local random number generator.
-    // `random()` is a shorthand for `rng().random()`
+    // Generate a random value:.
     let n1: u8 = rand::random();
     println!("Random u8: {n1}");
-    // With the "turbofish" notation:
+
+    // Use the "turbofish" notation to specify the type.
+    // Integers are uniformly distributed over the range of the type:
     println!("Random u16: {}", rand::random::<u16>());
     println!("Random u32: {}", rand::random::<u32>());
-    println!("Random i32: {}", rand::random::<i32>());
+
+    // Floating point numbers are uniformly distributed from 0 up to but not
+    // including 1:
     println!("Random float: {}", rand::random::<f64>());
-    // Generate a boolean
+
+    // Generate a boolean. Consider the `random_bool` function as well.
     if rand::random() {
         println!("Lucky!");
     }
+    // `random()` is a shorthand for `rng().random()`, where `rng()` returns
+    // a handle to the local `ThreadRng`, a lazily-initialized thread-local
+    // generator.
 }
 // ANCHOR_END: example
 

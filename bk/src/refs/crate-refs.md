@@ -6068,14 +6068,7 @@
 [c~rake~repo~badge]: https://img.shields.io/badge/rake-steelblue?logo=github
 [c~rake~lib.rs]: https://lib.rs/crates/rake
 [c~rake~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rake-yellow
-[c~rand::Rng::gen_range~docs]: https://docs.rs/rand/latest/rand/trait.Rng.html#method.gen_range
 [c~rand::Rng~docs]: https://docs.rs/rand/latest/rand/trait.Rng.html
-[c~rand::distributions::Alphanumeric~docs]: https://docs.rs/rand/latest/rand/distributions/struct.Alphanumeric.html
-[c~rand::distributions::Distribution::sample~docs]: https://docs.rs/rand/latest/rand/distributions/trait.Distribution.html#tymethod.sample
-[c~rand::distributions::Distribution~docs]: https://docs.rs/rand/latest/rand/distributions/trait.Distribution.html
-[c~rand::distributions::Standard~docs]: https://docs.rs/rand/latest/rand/distributions/struct.Standard.html
-[c~rand::distributions::uniform::Uniform~docs]: https://docs.rs/rand/latest/rand/distributions/uniform/struct.Uniform.html
-[c~rand::thread_rng~docs]: https://docs.rs/rand/latest/rand/fn.thread_rng.html
 [c~rand_distr::Normal~docs]: https://docs.rs/rand_distr/latest/rand_distr/struct.Normal.html
 [c~rand_distr~crates.io]: https://crates.io/crates/rand_distr
 [c~rand_distr~crates.io~badge]: https://img.shields.io/badge/crates.io-rand__distr-crimson
