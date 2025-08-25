@@ -41,7 +41,7 @@
 
 ## Courses {#courses}
 
-- [`Comprehensive Rust`][book~comprehensive-rust]↗, a free Rust course developed by the Android team at Google. The course covers the full spectrum of Rust, from basic syntax to advanced topics like [generics][p~generics] and [error handling][p~error-handling].
+- [`Comprehensive Rust`][book~comprehensive-rust]↗, a free Rust course developed by the Android team at Google. The course covers the full spectrum of Rust, from basic syntax to advanced topics like [generics][p~generics] and [[error-handling | error handling]].
 - [`Rust for Professionals`][rust-for-professionals~website]↗.
 - [`A Half-hour to Learn Rust`][book~a-half-hour-to-learn-rust]↗.
 - [Rust Development Classes][rust-classes~website]↗.

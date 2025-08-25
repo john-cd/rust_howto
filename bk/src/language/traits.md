@@ -161,7 +161,7 @@ For more details on trait bounds, see the [[generics | Generics]] and [[impl_tra
 
 ## Use Async with Traits {#async-and-traits}
 
-This topic is covered in the [Async][p~async]↗ chapter.
+This topic is covered in the [[asynchronous | Async]] chapter.
 
 ## Related Topics {#related-topics}
 

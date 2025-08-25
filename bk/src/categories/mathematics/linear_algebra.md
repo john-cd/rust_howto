@@ -96,7 +96,7 @@ Creates a 3x3 matrix with [`nalgebra::Matrix3`][c~nalgebra::Matrix3~docs]↗{{hi
 
 [![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~repo][c~ndarray~repo~badge]][c~ndarray~repo] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
 
-Serialize and deserialize a matrix to and from [JSON][p~json]. Serialization is taken care of by [`serde_json::to_string`][c~serde_json::to_string~docs]↗{{hi:serde_json::to_string}} and [`serde_json::to_string`][c~serde_json::to_string~docs]↗{{hi:serde_json::to_string}} performs deserialization.
+Serialize and deserialize a matrix to and from [[JSON]]. Serialization is taken care of by [`serde_json::to_string`][c~serde_json::to_string~docs]↗{{hi:serde_json::to_string}} and [`serde_json::to_string`][c~serde_json::to_string~docs]↗{{hi:serde_json::to_string}} performs deserialization.
 
 Note that serialization followed by deserialization gives back the original matrix.
 

@@ -21,7 +21,7 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [ANIXE][anixe~website]↗ | Builds their travel services trading platform in Rust. |
 | [ARM][arm~website]↗ | |
 | [Accelerant][accelerant~website]↗ | |
-| [Actyx][actyx~website]↗ [(github)][actyx~repo]↗ | Actyx is a peer-to-peer event stream [database][p~database] (a.k.a. reliable durable pub-sub) written completely in Rust. |
+| [Actyx][actyx~website]↗ [(github)][actyx~repo]↗ | Actyx is a peer-to-peer event stream [[database | database]] (a.k.a. reliable durable pub-sub) written completely in Rust. |
 | [Adacore][adacore~website]↗ [(blog)][adacore~blog]↗ | |
 | [Afterpay][afterpay~website]↗ | |
 | [Airborne Engineering][airborne-engineering~website]↗ | |
@@ -36,7 +36,7 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [Attain][attainoutcomes~website]↗ | |
 | [Automata][ata~website]↗ | |
 | [Autumn Engineering][autumnai~repo]↗ | Offers machine learning frameworks written in Rust. |
-| [Bencher][bencher~website]↗ [(github)][bencher~repo]↗ | Continuous [benchmarking][p~benchmarking] tools designed to catch [performance][p~performance] regressions in CI. |
+| [Bencher][bencher~website]↗ [(github)][bencher~repo]↗ | Continuous [[benchmarking | benchmarking]] tools designed to catch [[performance | performance]] regressions in CI. |
 | [Bitfury][bitfury~website]↗ | Exonum is an extensible framework for blockchain projects written in Rust. |
 | [Block][block~website]↗ | |
 | [Brainport Digital Factory][brainportdigitalfactory~website]↗ | |
@@ -44,8 +44,8 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [Braun Embedded][braun-embedded~website]↗ [(github)][braun-embedded~repo]↗ | Provides firmware development services for ARM Cortex-M microcontrollers. |
 | [Brave][brave~website]↗ [(github)][brave~repo]↗ | Uses Rust for its browser's ad-blocking engine. |
 | [Buoyant][buoyant~website]↗ | |
-| [Calyptech][calyptech~website]↗ | Used for high [performance][p~performance] embedded system components as an alternative to C. |
-| [Canonical][canonical~website]↗ | Everything from server monitoring to [middleware][p~middleware]. |
+| [Calyptech][calyptech~website]↗ | Used for high [[performance | performance]] embedded system components as an alternative to C. |
+| [Canonical][canonical~website]↗ | Everything from server monitoring to [[middleware | middleware]]. |
 | [CarGurus][cargurus~website]↗ | |
 | [Cash App][cash-app~website]↗ | |
 | [Ceph][ceph~website]↗ | Provides an open-source storage system partially written in Rust. Rust bindings for `librbd`, an interface into the Ceph storage platform. |
@@ -57,7 +57,7 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [CodeDay][codeday~website]↗ | |
 | [CoreOS][coreos~website]↗ | CoreOS is a open-sourced container host, using Rust as one of its main programming languages. |
 | [Corrode][corrode~website]↗ [(github)][corrode~repo]↗ | Corrode is a Germany-based Rust consulting and development firm. |
-| [Coursera][coursera~website]↗ | Uses Rust for its [learning][p~learning] platform. |
+| [Coursera][coursera~website]↗ | Uses Rust for its [[learning | learning]] platform. |
 | [Craft][craft~website]↗ | Their core machine learning engine is written in Rust. |
 | [Cryptape][cryptape~website]↗ | Their business intelligence platform built for blockchain is written in Rust. |
 | [CurrySoftware GmbH][currysoftware~repo]↗ | |
@@ -72,13 +72,13 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [Distil Networks][distil-networks~website]↗ | Uses Rust in their low-latency bot detection and mitigation platform. |
 | [Dropbox][dropbox~website]↗ | Uses Rust for its file-syncing engine. See, for example, [Capture][dropbox-capture~website]↗. |
 | [DungeonFog][dungeonfog~website]↗ [(github)][dungeonfog~repo]↗ | Uses Rust in their game engine and map-making tool for RPGs. The "Project Deios" map maker tool is written completely in Rust. |
-| [EVO][evo~website]↗ | Develops marketplaces for online shopping, fintech, and logistics. [Development tools][p~development-tools], containerization, monitoring and orchestration systems written in Rust. |
+| [EVO][evo~website]↗ | Develops marketplaces for online shopping, fintech, and logistics. [[Development tools | development-tools]], containerization, monitoring and orchestration systems written in Rust. |
 | [Embark Studios][embark-studios~website]↗ | |
 | [Embecosm][embecosm~website]↗ | |
 | [Espressif][espressif~website]↗ [(github)][espressif~repo]↗ | Rust improves performance of embedded and IoT devices in ESP products. |
 | [Exonum][exonum~website]↗ | Supports smart contracts written in Rust. |
 | [Faraday][faraday~website]↗ [(github)][faraday~repo]↗ | Embeds AI in workflows. |
-| [Fedi][fedi~website]↗ | Fedi builds on [Fedimint][fedimint~repo]↗, a module based system for [building][p~building] federated applications on top of Bitcoin. |
+| [Fedi][fedi~website]↗ | Fedi builds on [Fedimint][fedimint~repo]↗, a module based system for building federated applications on top of Bitcoin. |
 | [Fermyon][fermyon~website]↗ | |
 | [Ferrous Systems][ferrous-systems~website]↗ [(github)][ferrous-systems~repo]↗ | Ferrous is a Rust consulting firm specializing in embedded systems development. |
 | [Figma][figma~website]↗ | Uses Rust for parts of its design and collaboration tools. Their real-time multiplayer syncing server (used to edit all Figma documents) is written in Rust. |
@@ -123,7 +123,7 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [Meilisearch][meilisearch~website]↗ [(github)][meilisearch~repo]↗ | |
 | [Memfault][memfault~website]↗ | |
 | [Meta][meta~website]↗ | Uses Rust for the source control backend, Libra (now Diem), and other server-side projects. Facebook's primary source control system is partially written in Rust. |
-| [Microsoft][microsoft~website]↗ | Uses Rust for various projects, including the [Windows][p~windows] kernel, Azure, and Visual Studio. [`windows-rs`][c~windows~docs]↗{{hi:windows-rs}} allows you to call Windows API using Rust. There are several Azure services also using Rust, including [Azure IoT Edge][azure-iot-edge~repo]↗ and 'Kusto', the core query and storage engine for [Azure Data Explorer][azure-data-explorer]↗. |
+| [Microsoft][microsoft~website]↗ | Uses Rust for various projects, including the [[windows | Windows]] kernel, Azure, and Visual Studio. [`windows-rs`][c~windows~docs]↗{{hi:windows-rs}} allows you to call Windows API using Rust. There are several Azure services also using Rust, including [Azure IoT Edge][azure-iot-edge~repo]↗ and 'Kusto', the core query and storage engine for [Azure Data Explorer][azure-data-explorer]↗. |
 | [MoveParallel][moveparallel~website]↗ | |
 | [Mozilla][mozilla~website]↗ [(github)][mozilla~repo]↗ | The creators of Rust, Mozilla has used the Rust language in various projects, including parts of the Firefox web browser. See [Servo][servo~website]↗. |
 | [Multi Media, LLC][multimediallc~website]↗ | |
@@ -138,7 +138,7 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [OpenSource Science][os-sci~website]↗ (OS-Sci) | |
 | [OxidOS Automotive][oxidos~website]↗ | |
 | [PUCPR][pucpr~website]↗ | |
-| [Parity Technology][parity~website]↗ [(github)][paritytech~repo]↗ | Creates open-sourced networks, consensus protocols, and [cryptography][p~cryptography], entirely in Rust. |
+| [Parity Technology][parity~website]↗ [(github)][paritytech~repo]↗ | Creates open-sourced networks, consensus protocols, and [[cryptography | cryptography]], entirely in Rust. |
 | [Personio][personio~website]↗ | |
 | [Pollen Robotics][pollen-robotics~website]↗ | |
 | [PolySync][polysync~website]↗ | Builds safety-critical runtime environments & infrastructure for autonomous vehicles. |

@@ -18,11 +18,4 @@
 [ex~filesystem~traverse-directories-while-skipping-dotfiles]: directory_traversal.md#traverse-directories-while-skipping-dotfiles
 [ex~filesystem~walk-the-filesystem-while-respecting-ignore-files]: directory_traversal.md#walk-the-filesystem-while-respecting-ignore-files
 [ex~filesystem~watch-files-or-dirs]: file_watching.md#watch-files-or-dirs
-[p~config]: # "../config/index.md"
-[p~configuration]: # "../config/configuration.md"
 [p~filesystem]: index.md
-[p~linux]: # "../os_linux-apis/linux.md"
-[p~macos]: # "../os_macos-apis/macos.md"
-[p~memory]: # "../development-tools_profiling/memory_usage_analysis.md"
-[p~url]: # "../web-programming/url.md"
-[p~windows]: # "../os_windows-apis/windows.md"

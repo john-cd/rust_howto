@@ -46,16 +46,6 @@
 			]
 		},
 		{
-			"path": "bk/src/appendices/refs.incl.md",
-			"bookmarks": [
-				{
-					"line": 367,
-					"column": 7,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/appendices/thanks.md",
 			"bookmarks": [
 				{
@@ -261,16 +251,6 @@
 			]
 		},
 		{
-			"path": "bk/src/categories/data-structures/refs.incl.md",
-			"bookmarks": [
-				{
-					"line": 27,
-					"column": 7,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/categories/data-structures/stack_allocated_arrays.md",
 			"bookmarks": [
 				{
@@ -446,16 +426,6 @@
 				{
 					"line": 52,
 					"column": 11,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/categories/filesystem/refs.incl.md",
-			"bookmarks": [
-				{
-					"line": 20,
-					"column": 19,
 					"label": ""
 				}
 			]

@@ -25,11 +25,5 @@
 [ex~data-structures~string]: strings.md#string
 [ex~data-structures~tinyvec]: stack_allocated_arrays.md#tinyvec
 [ex~data-structures~vec]: vector.md#vec
-[p~containers]: # "../../other/containers/containers.md"
-[p~databases]: # "../database-implementations/databases.md"
-[p~embedded]: # "../embedded/index.md"
-[p~functions]: # "../../language/functions.md"
+[p~functions]: ../../language/functions.md
 [p~links]: ../../links/index.md
-[p~log]: # "../development-tools_debugging/log.md"
-[p~protocols]: # "../aerospace_protocols/aerospace_protocols.md"
-[p~search]: # "../drafts/categories/database/search.md"

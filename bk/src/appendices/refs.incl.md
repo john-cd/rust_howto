@@ -365,20 +365,11 @@
 [ex~standard_library~return-early-pattern]: ../standard_library/option.md#return-early-pattern
 [ex~standard_library~smart-pointer-comparison]: ../standard_library/smart_pointers.md#smart-pointer-comparison
 [ex~standard_library~sync-primitives]: ../standard_library/smart_pointers.md#sync-primitives
-[p~asynchronous]: # "categories/asynchronous/index.md"
-[p~cli]: # "categories/command-line-interface/index.md"
-[p~concurrency]: # "categories/concurrency/index.md"
-[p~config]: # "categories/config/index.md"
 [p~contributing]: ../contributing/index.md
 [p~crates-alphabetical]: crates_alphabetical.md
 [p~crates-categories]: crates_by_category.md
-[p~debugging]: # "categories/development-tools_debugging/index.md"
-[p~development-tools]: # "categories/development-tools/index.md"
-[p~error-customization]: # "categories/rust-patterns/error_handling/error_customization.md"
-[p~errors]: # "categories/rust-patterns/error_handling/error_handling.md"
 [p~index~examples]: examples_index.md
 [p~lang]: ../language/index.md
 [p~links]: ../links/index.md
 [p~standard-library]: ../standard_library/index.md
-[p~web-programming]: # "categories/web-programming/index.md"
 [p~word-index]: ../word_index.md

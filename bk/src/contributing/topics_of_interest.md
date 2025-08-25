@@ -9,38 +9,38 @@ The following are topics that deserve (additional) coverage and examples:
 - Rust [[macros | Macros]].
 - [[data-structures | Data Structures]].
 - [[testing | Testing]].
-- [GPU][p~gpu] processing, CUDA.
-- [Machine Learning][p~machine-learning], Tensorflow.
+- [[gpu | GPU]] processing, CUDA.
+- [[machine-learning | Machine Learning]], Tensorflow.
 - [[email | Email]].
 - [[template-engine | Template Engines]].
 - [[caching | Caching]].
 - [[compilers | Compilers]].
 - [[wasm | WASM]].
 - [[algorithms | Algorithms]].
-- [Authentication][p~authentication] / authorization: OAuth2, LDAP/AD, DNS lookups...
+- [[authentication | Authentication]] / authorization: OAuth2, LDAP/AD, DNS lookups...
 - Continuous Deployment & Integration ([[cd_ci | CD / CI]]) for Rust projects.
-- Use of Rust in [AWS][p~aws] and other [Cloud][p~cloud] services.
-- [Serverless][p~serverless] Rust.
-- More [database][p~database] examples, including object databases, graph [databases][p~databases], e.g. BonsaiDB, neo4j.
+- Use of Rust in [[aws | AWS]] and other [[cloud | Cloud]] services.
+- [[serverless | Serverless]] Rust.
+- More [[database | database]] examples, including object databases, graph databases, e.g. BonsaiDB, neo4j.
 - [[embedded | Embedded]] systems.
 - [[visualization | Visualization]].
 - [[graphics | Graphics]].
-- [Games][p~games], [[game-engines | Game Engines]].
-- [Search][p~search] engines.
-- [Compression][p~compression]: Zip files and other archives.
+- [[games | Games]], [[game-engines | Game Engines]].
+- [[search | Search]] engines.
+- [[compression | Compression]]: Zip files and other archives.
 - Buffer pools, garbage collection, or other reference-counted examples.
 - IPv6 address processing.
-- [Cloud][p~cloud]: load balancers, status reporting (Vigil), routing, orchestration, containers.
+- [[cloud | Cloud]]: load balancers, status reporting (Vigil), routing, orchestration, containers.
 - Reverse proxies.
 - [[web-programming | Web programming]].
 - [[virtualization | Virtualization]].
-- [Version Control][p~version-control]: libgit2: clone, change branches, create commits, push, pull.
-- [[cryptography | Cryptography]], SSL, SSH, other public key [encryption][p~encryption], X.509, RusTLS.
+- [[version-control | Version Control]]: libgit2: clone, change branches, create commits, push, pull.
+- [[cryptography | Cryptography]], SSL, SSH, other public key [[encryption | encryption]], X.509, RusTLS.
 - [[network-programming | Network Programming]]: Basic and advanced TCP/IP networking.
 - Interfacing with FLTK (Fast Light Tool Kit).
 - Raft Consensus library.
 - Network file systems.
-- [Statistics][p~statistics], math.
+- [[statistics | Statistics]], math.
 - Sound ([[multimedia_audio | Multimedia - audio]]).
 - [[api-bindings | API bindings]].
 - FFI ([[development-tools_ffi | Development tools - FFI]]).
@@ -57,9 +57,9 @@ The following are topics that deserve (additional) coverage and examples:
 - [[computer-vision | Computer Vision]].
 - [[science_robotics | Robotics]].
 - [[simulation | Simulation]].
-- [Science][p~science] ([[geo | Geo]], [[neuroscience | Neuro]]).
+- [[science | Science]] ([[geo | Geo]], [[neuroscience | Neuro]]).
 - [[finance | Finance]].
-- [[aerospace | Aerospace]]-related crates: [Drones][p~drones], UAVs, [Space Protocols][p~space-protocols], simulation...
+- [[aerospace | Aerospace]]-related crates: [[drones | Drones]], UAVs, [[space-protocols | Space Protocols]], simulation...
 - [[cryptocurrencies | Cryptocurrencies]].
 
 Please also consult the [`TODO.md`][rust-howto~todo~repo]↗ file and the [`drafts`][rust-howto~drafts~repo]↗ and [`later`][rust-howto~bk-later~repo]↗ folders.

@@ -136,13 +136,9 @@
 [ex~language~while]: control_flow.md#while
 [ex~language~write-generic-functions]: functions.md#write-generic-functions
 [ex~language~write-macros]: macros.md#write-macros
-[p~async]: # "../categories/asynchronous/index.md"
-[p~documentation]: # "../categories/development-tools/documentation/documentation.md"
 [p~enums]: enums.md
 [p~functions]: functions.md
 [p~option]: ../standard_library/option.md
-[p~rustup]: # "../categories/development-tools/installation/rustup.md"
 [p~standard-library]: ../standard_library/index.md
 [p~structs]: structs.md
 [p~traits]: traits.md
-[p~unix]: # "../categories/os_unix-apis/unix.md"

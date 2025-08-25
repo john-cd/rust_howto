@@ -24,10 +24,9 @@
 [ex~code_organization~visibility-rules]: visibility.md#visibility-rules
 [ex~code_organization~visibility-scope]: visibility.md#visibility-scope
 [ex~code_organization~visible-to-library-clients]: visibility.md#visible-to-library-clients
-[p~enums]: # "../language/enums.md"
-[p~functions]: # "../language/functions.md"
-[p~option]: # "../standard-library/option.md"
-[p~rustup]: # "../categories/development-tools/installation/rustup.md"
-[p~standard-library]: # "../standard-library/index.md"
-[p~structs]: # "../language/structs.md"
-[p~traits]: # "../language/traits.md"
+[p~enums]: ../language/enums.md
+[p~functions]: ../language/functions.md
+[p~option]: ../standard_library/option.md
+[p~standard-library]: ../standard_library/index.md
+[p~structs]: ../language/structs.md
+[p~traits]: ../language/traits.md

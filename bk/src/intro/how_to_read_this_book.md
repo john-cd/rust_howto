@@ -24,9 +24,9 @@ If you are simply looking for the solution to a given task, the easiest ways to 
 
 ## Important Sections
 
-- The book covers cross-cutting concerns that affect most aspects of development e.g. [error handling][p~errors], [error customization][p~error-customization], [configuration][p~config], [debugging][p~debugging]...
-- [Concurrency][p~concurrency], including [asynchronous programming][p~asynchronous], is covered in details.
-- So are [development tools][p~development-tools] and programming domains such as [CLI][p~cli] and [Web][p~web-programming] development.
+- The book covers cross-cutting concerns that affect most aspects of development e.g. [[error_handling | error handling]], [[error_customization | error customization]], [[config | configuration]], [[development-tools_debugging | debugging]]...
+- [[concurrency | Concurrency]], including [[asynchronous | asynchronous programming]], is covered in details.
+- So are [[development tools]] and programming domains such as [[command-line-interface | CLI]] and [[web_programming | Web]] development.
 
 ## How to Use the Code Examples
 
