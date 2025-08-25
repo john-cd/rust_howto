@@ -71,16 +71,6 @@
 			]
 		},
 		{
-			"path": "bk/src/categories/algorithms/sorting.md",
-			"bookmarks": [
-				{
-					"line": 28,
-					"column": 6,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/categories/data-structures/binaryheap.md",
 			"bookmarks": [
 				{
