@@ -11,15 +11,14 @@ fn main() -> anyhow::Result<()> {
 
     // Show permissions for files and folders within `temp/files/`.
     // `read_dir` returns an iterator over the directory's entries.
-    for entry in fs::read_dir("./temp/files")? {
-        if let Ok(entry) = entry {
+    // `flatten` is used to skip over any entries that resulted in an error.
+    for entry in (fs::read_dir("./temp/files")?).flatten() {
             let path = entry.path();
             if let Ok(metadata) = entry.metadata() {
                 println!("{} {:?}", path.display(), metadata.permissions());
             } else {
                 println!("{}", path.display());
             }
-        }
     }
     fs::remove_dir_all("./temp/files")?;
     Ok(())
