@@ -1,6 +1,6 @@
 set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 
-root := clean(source_directory() + "/../..")
+root := clean(join(source_directory(), "..", ".."))
 
 [no-exit-message]
 _default:
@@ -26,4 +26,4 @@ empty := ''
 [windows]
 @templ cmd=help *subcmd=empty:
   if ( -Not (Test-Path -Path {{root}}\..\bin\templ.exe )) { just -f {{root}}\..\tools\justfile release }
-  cd root; {{root}}\..\bin\templ.exe {{cmd}} {{subcmd}}
+  cd {{root}}; {{root}}\..\bin\templ.exe {{cmd}} {{subcmd}}
