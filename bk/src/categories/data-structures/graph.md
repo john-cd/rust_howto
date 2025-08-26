@@ -2,6 +2,9 @@
 
 {{#include graph.incl.md}}
 
+- [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} is a popular graph library.
+- [`pathfinding`][c~pathfinding~docs]↗{{hi:pathfinding}} provides pathfinding algorithms.
+
 ## Manipulate Graphs with `petgraph` {#petgraph}
 
 [![petgraph][c~petgraph~docs~badge]][c~petgraph~docs] [![petgraph~crates.io][c~petgraph~crates.io~badge]][c~petgraph~crates.io] [![petgraph~repo][c~petgraph~repo~badge]][c~petgraph~repo] [![petgraph~lib.rs][c~petgraph~lib.rs~badge]][c~petgraph~lib.rs]{{hi:petgraph}}{{hi:Graph}}{{hi:Unionfind}}{{hi:Graph algorithms}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}

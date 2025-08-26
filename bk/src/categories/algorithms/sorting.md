@@ -2,6 +2,22 @@
 
 {{#include sorting.incl.md}}
 
+No single crate is the "sorting crate", as the standard library is often sufficient.
+
+The primary sorting methods are found on slices (`&[T]`). You'll typically call them on a `Vec<T>` or an array.
+
+- `slice::sort()` is a stable sort, meaning if two elements are equal, their original relative order is preserved. It's an adaptive merge sort that performs well on many data patterns.
+- `slice::sort_unstable()` is generally faster than the stable sort but doesn't guarantee the order of equal elements.
+- `slice::sort_by_key()` sorts a slice based on a key extracted from each element.
+- `slice::sort_by()` allows you to provide a custom comparison function for more complex sorting logic.
+
+Start with `sort_unstable()` for the best performance. If you need to preserve the order of equal elements, use `sort()`.
+
+Note the following crates and modules:
+
+- `itertools` provides an `itertools::sorted` function and a `sorted()` method on its `Itertools` trait. It sorts an iterator into a new `Vec` without needing to collect it first: `(0..10).rev().sorted().collect::<Vec<_>>();`
+- [`std::cmp`][c~std::cmp~docs]↗{{hi:std::cmp}} provides ordering traits.
+
 ## Sort a Vector of Integers {#sort-vector-integers}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}{{hi:Sorting}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}

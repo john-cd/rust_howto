@@ -46,6 +46,9 @@ fn main() {
         ]
     );
 
+    // You can also use `sort_by_key`:
+    people.sort_by_key(|p| p.age);
+
     println!("{people:?}");
 }
 // ANCHOR_END: example

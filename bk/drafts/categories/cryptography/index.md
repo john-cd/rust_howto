@@ -32,16 +32,6 @@ Encryption scheme providing both confidentiality and authentication.
 
 {{#include aead.incl.md}}
 
-## Hashing
-
-One-way function producing a fixed-size "digest." Hashing is used in digital signatures, HMACs, and password hashing.
-
-- Properties: Deterministic, collision-resistant, preimage-resistant.
-- Algorithms: SHA-256, BLAKE3.
-- Purpose: Data integrity.
-
-{{#include hashing.incl.md}}
-
 ## Password Hashing
 
 One-way hashing specifically to protect passwords.

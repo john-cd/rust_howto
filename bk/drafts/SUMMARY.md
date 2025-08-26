@@ -48,7 +48,6 @@
   - [Configuration Management](categories/config/configuration.md)
 
 - [Cryptography](categories/cryptography/index.md)
-  - [Hashing](categories/cryptography/hashing.md)
   - [Password Hashing](categories/cryptography/password_hashing.md)
   - [Encryption](categories/cryptography/encryption.md)
   - [AEAD](categories/cryptography/aead.md)

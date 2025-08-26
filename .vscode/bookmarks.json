@@ -59,12 +59,7 @@
 			"path": "bk/src/categories/algorithms/index.md",
 			"bookmarks": [
 				{
-					"line": 11,
-					"column": 4,
-					"label": ""
-				},
-				{
-					"line": 42,
+					"line": 109,
 					"column": 5,
 					"label": ""
 				}
@@ -129,8 +124,13 @@
 			"path": "bk/src/categories/data-structures/graph.md",
 			"bookmarks": [
 				{
-					"line": 8,
+					"line": 11,
 					"column": 14,
+					"label": ""
+				},
+				{
+					"line": 21,
+					"column": 5,
 					"label": ""
 				}
 			]
@@ -1076,11 +1076,36 @@
 			]
 		},
 		{
-			"path": "bk/crates/cats/development_tools/examples/documentation/rustdoc2.rs",
+			"path": "bk/src/categories/algorithms/sorting.md",
 			"bookmarks": [
 				{
-					"line": 13,
-					"column": 4,
+					"line": 8,
+					"column": 13,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/algorithms/randomness.md",
+			"bookmarks": [
+				{
+					"line": 98,
+					"column": 9,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/algorithms/hashing.md",
+			"bookmarks": [
+				{
+					"line": 29,
+					"column": 19,
+					"label": ""
+				},
+				{
+					"line": 120,
+					"column": 17,
 					"label": ""
 				}
 			]

@@ -2,20 +2,9 @@
 
 [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
 
-This category covers Rust implementations of core algorithms{{hi:Algorithms}}, such as sorting{{hi:Sorting}} and random value generation.
+This category covers Rust implementations of core algorithms{{hi:Algorithms}}, such as sorting{{hi:Sorting}} and random value generation, that are not covered in separate chapters.
 
-The following table denotes the most common crates used for each algorithm category.
-
-| Topic | Rust Crates | Notes |
-| --- | --- | --- |
-| Sorting | [`std::cmp`][c~std::cmp~docs]↗{{hi:std::cmp}}, [`itertools`][c~itertools~docs]↗{{hi:itertools}}, [`rand`][c~rand~docs]↗{{hi:rand}} | `std::cmp` provides ordering traits, [`itertools`][c~itertools~docs]↗{{hi:itertools}} iterators, [`rand`][c~rand~docs]↗{{hi:rand}} for generating test data. No single crate is the sorting crate, as `std::slice::sort` is often sufficient. |
-| Searching | [`std::cmp`][c~std::cmp~docs]↗{{hi:std::cmp}} | Binary search is available in the standard library. |
-| Data Structures (General) | [`std::collections`][c~std::collections~docs]↗ for common structures ([`Vec`][c~std::vec::Vec~docs]↗, [`HashMap`][c~std::collections::HashMap~docs]↗, etc.), [`im`][c~im~docs]↗{{hi:im}}, [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} | `std::collections` for common structures (Vec, HashMap, etc.), [`im`][c~im~docs]↗{{hi:im}} for immutable data structures, [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} for graphs. |
-| Graph Algorithms | [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}}, [`pathfinding`][c~pathfinding~docs]↗{{hi:pathfinding}} | [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} is a popular graph library. [`pathfinding`][c~pathfinding~docs]↗{{hi:pathfinding}} provides pathfinding algorithms. |
-| Dynamic Programming | Often implemented without external crates | DP is often implemented using standard library features like vectors and iterators. |
-| String Algorithms | [`regex`][c~regex~docs]↗{{hi:regex}}, [`aho-corasick`][c~aho-corasick~docs]↗{{hi:aho-corasick}}, [`strsim`][c~strsim~docs]↗{{hi:strsim}} | [`regex`][c~regex~docs]↗{{hi:regex}} for regular expressions, [`aho-corasick`][c~aho-corasick~docs]↗{{hi:aho-corasick}} for multiple pattern searching, [`strsim`][c~strsim~docs]↗{{hi:strsim}} for string similarity. |
-| Numerical Algorithms | [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}}, [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}, [`num`][c~num~docs]↗{{hi:num}} | [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} for linear algebra, [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} for N-dimensional arrays, [`num`][c~num~docs]↗{{hi:num}} for numeric traits. |
-| Cryptography | [`ring`][c~ring~docs]↗{{hi:ring}}, [`rust-crypto`][c~rust-crypto~docs]↗{{hi:rust-crypto}}, [`sha2`][c~sha2~docs]↗{{hi:sha2}} | Several crates exist; choose carefully based on security needs and audit history. |
+[[compression | Compression]], [[cryptography | cryptography]], [[data-structures | data structures]], [[mathematics | mathematics]], [[science | scientific algorithms]], [[search | search]], [[strings | strings]], and [[text-processing | text processing]] are discussed elsewhere but are briefly mentioned below.
 
 ## Random Numbers
 
@@ -25,12 +14,90 @@ The following table denotes the most common crates used for each algorithm categ
 
 {{#include sorting.incl.md}}
 
+## Hashing
+
+{{#include hashing.incl.md}}
+
 ## Related Topics
 
-| Topic | Related Links |
-|---|---|
-| [[data-structures | Data Structures]] | [[concurrent_data_structures | Concurrent Data Structures]] |
-| [[mathematics | Mathematics]] | [[additional_numeric_types | Additional Numeric Types]], [[complex_numbers | Complex Numbers]], [[linear_algebra | Linear Algebra]], [[statistics | Statistics]], [[trigonometry | Trigonometry]]. |
+### Compression Algorithms
+
+For [[compression | compression]], use:
+- `flate2` for deflate, gzip, and zlib compression,
+- `zip`,
+- `tar` for tar archives,
+- `zstd` for Zstandard compression,
+- `bzip2`,
+- `xz2`,
+- `snap` for Snappy compression.
+
+### Data Structures
+
+For common [[data-structures | data structures]] ([`Vec`][c~std::vec::Vec~docs]↗, [`HashMap`][c~std::collections::HashMap~docs]↗, etc.), you will use [`std::collections`][c~std::collections~docs]↗. You may also consider:
+
+- [`im`][c~im~docs]↗{{hi:im}} for immutable data structures,
+- `indexmap` for [[maps | maps]] that keep track of insertion order,
+- `arrayvec`, `smallvec` and `tinyvec` for [[stack_allocated_arrays | stack-allocated arrays]],
+- [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} for [[graph | graphs]],
+- `dashmap` and `papaya` for [[concurrent_data_structures | concurrent data structures]],
+- `parking_lot` for mutexes,
+- `crossbeam-channel`, `flume`, `tokio`, and `postage` for channels.
+
+Worth a mention: `fst` provides fast, memory-efficient, immutable set and map data structures for storing and searching (very) large collections of strings and associated values. It is based on finite state transducers (FSTs). The capabilities of ordered sets and maps mirror that of `BTreeSet` and `BTreeMap` found in the standard library. The key difference is that sets and maps in `fst` are immutable, keys are byte sequences, and values, in the case of maps, are always unsigned 64 bit integers.
+
+See [[vector | vector]] [[hashmap | hash maps]], [[maps | other maps]], [[binaryheap | Binary Heap]] within the [[data-structures | Data Structures]] section for more details.
+
+### Recursive Algorithms
+
+- `stacker` is a stack growth library useful when implementing deeply recursive algorithms that may accidentally blow the stack.
+
+### Search Algorithms
+
+For small-scale tasks, like filtering a list of items in memory, reach first for the standard library:
+
+- `slice::binary_search*` for slices and vectors,
+- `std::iter::Iterator::find` for iterators,
+- `str::find`, `str::rfind` for strings.
+
+- `argminmax` provides efficient argmin & argmax (in 1 function) with SIMD for floats and integers.
+- `bytecount` count occurrences of a given byte, or the number of UTF-8 code points, in a byte slice, fast.
+
+[meilisearch][c~meilisearch~repo]↗ and [tantivy][c~tantivy~repo]↗ are full-text search engines written in Rust, similar to what you'd expect from `Elasticsearch` or `Algolia`.
+
+### String Algorithms and Text Processing
+
+For [[strings | Strings]], use:
+
+- [`regex`][c~regex~docs]↗{{hi:regex}} for regular expressions,
+- `fancy-regex` if you need features, such as backtracking, which regex doesn't support,
+- [`aho-corasick`][c~aho-corasick~docs]↗{{hi:aho-corasick}} for finding occurrences of many patterns at once,
+- [`strsim`][c~strsim~docs]↗{{hi:strsim}} for string similarity.
+
+See also [[string_concat | String Concat]], [[string_encoding | String Encoding]], [[string_parsing | String Parsing]], and [[text-processing | Text Processing]].
+
+### Numerical and Mathematical Algorithms
+
+For [[mathematics | Mathematics]], use the following crates for general numerical tasks:
+
+- Abstracting over different number types:
+  - `num-traits`,
+  - [`num`][c~num~docs]↗{{hi:num}}.
+- [[additional_numeric_types | Additional Numeric Types]]:
+  - `num-bigint` and `rug` for big integers.
+  - `rust_decimal` for big decimals.
+  - `ordered-float` for sortable floats.
+- [[complex_numbers | Complex Numbers]].
+- [[linear_algebra | Linear Algebra]]:
+  - [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}}.
+  - [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}.
+- Data frames:
+  - `polars`.
+  - `datafusion`.
+- [[statistics | Statistics]],
+- [[trigonometry | Trigonometry]].
+- Others
+  - `rustfft` for Fast Fourier Transforms.
+  - `roots` for numerical root finding.
 
 ## References
 
@@ -41,15 +108,19 @@ The following table denotes the most common crates used for each algorithm categ
 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/1165)
-searching
-hashing
-graphs?
+
 review [rust-algorithms~repo][rust-algorithms~repo].
 
+| Topic | Related Links |
+|---|---|
 | [[compression | Compression]] | |
-| [[cryptography | Cryptography]] | [[cryptography_utilities | Cryptography Utilities]], [[encryption | Encryption]], [[hashing | Hashing]], [[password_hashing | Password Hashing]] |
+| [[cryptography | Cryptography]] | [[cryptography_utilities | Cryptography Utilities]], [[encryption | Encryption]],
 | [[data-processing | Data Processing]] | |
-| [[science | Science]] | [[_machine_learning |  Machine Learning]], [[science_geo | Geoscience]], [[science_neuroscience | Neuroscience]], [[science_robotics | Science Robotics]], [[simulation | Simulation]] |
+| [[data-structures | Data Structures]] | [[concurrent_data_structures | Concurrent Data Structures]] |
+| [[science | Science]] | [[_machine_learning | Machine Learning]], [[science_geo | Geoscience]], [[science_neuroscience | Neuroscience]], [[science_robotics | Science Robotics]], [[simulation | Simulation]] |
 | [[search | Search]] | [[rust_search_engines | Search Engines]] |
 | [[strings | Strings]] | [[string_concat | String Concat]], [[string_encoding | String Encoding]], [[string_parsing | String Parsing]], [[text-processing | Text Processing]] |
+
+See [[rust_search_engines | Search Engines]].
+
 </div>

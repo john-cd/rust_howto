@@ -58,8 +58,9 @@
 # Code Examples by Category
 
 - [Algorithms](categories/algorithms/index.md)
-  - [Generate Random Values](categories/algorithms/randomness.md)
-  - [Sort a Vector](categories/algorithms/sorting.md)
+  - [Random Value Generation](categories/algorithms/randomness.md)
+  - [Sorting](categories/algorithms/sorting.md)
+  - [Hashing](categories/algorithms/hashing.md)
 
 - [Data Structures](categories/data-structures/index.md)
   - [Strings](categories/data-structures/strings.md)

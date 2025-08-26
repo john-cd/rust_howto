@@ -109,4 +109,6 @@ The following examples cover less commonly-used data structures:
   - [[dataframes | Dataframes]].
   - [[concurrent_data_structures | Concurrent Data Structures]].
 
+`scroll` is a library for easily and efficiently reading/writing types from data containers like byte arrays.
+
 </div>
