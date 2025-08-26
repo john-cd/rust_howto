@@ -20,7 +20,7 @@ This example sorts a vector of integers via [`sort`][c~std::vec::Vec::sort~docs]
 
 Floats do not implement `Ord` trait (because they can be `NaN`, "not a number"), but they implement the [`std::cmp::PartialOrd`][c~std::cmp::PartialOrd~docs]↗{{hi:std::cmp::PartialOrd}} trait, which provides partial ordering.
 
-A vector{{hi:Vector}} of [`f32`][primitive~f32]↗{{hi:f32}} or [`f64`][primitive~f64]↗{{hi:f64}} guranteed not to contain `NaN` values can therefore be sorted using [`sort_by`][c~std::vec::Vec::sort_by~docs]↗{{hi:sort_by}} and [`std::cmp::PartialOrd::partial_cmp`][c~std::cmp::PartialOrd::partial_cmp~docs]↗{{hi:std::cmp::PartialOrd::partial_cmp}}.
+A vector{{hi:Vector}} of [`f32`][primitive~f32]↗{{hi:f32}} or [`f64`][primitive~f64]↗{{hi:f64}} guaranteed not to contain `NaN` values can therefore be sorted using [`sort_by`][c~std::vec::Vec::sort_by~docs]↗{{hi:sort_by}} and [`std::cmp::PartialOrd::partial_cmp`][c~std::cmp::PartialOrd::partial_cmp~docs]↗{{hi:std::cmp::PartialOrd::partial_cmp}}.
 
 ```rust,editable
 {{#include ../../../crates/cats/algorithms/examples/sort/sort_float.rs:example}}

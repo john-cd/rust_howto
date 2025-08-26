@@ -3634,3 +3634,4 @@ Canonicalize
 canonicalize
 HashMap's
 parallelizes
+struct's
