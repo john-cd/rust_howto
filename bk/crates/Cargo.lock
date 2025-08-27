@@ -428,7 +428,7 @@ name = "algorithms"
 version = "0.1.2"
 dependencies = [
  "anyhow",
- "base16ct 0.2.0",
+ "base16ct 0.3.0",
  "base64ct",
  "blake3",
  "data-encoding",
@@ -1290,9 +1290,9 @@ dependencies = [
 
 [[package]]
 name = "async-graphql"
-version = "7.0.16"
+version = "7.0.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d3ee559e72d983e7e04001ba3bf32e6b71c1d670595780723727fd8a29d36e87"
+checksum = "036618f842229ba0b89652ffe425f96c7c16a49f7e3cb23b56fca7f61fd74980"
 dependencies = [
  "async-graphql-derive",
  "async-graphql-parser",
@@ -1889,9 +1889,9 @@ dependencies = [
 
 [[package]]
 name = "aws-sdk-s3"
-version = "1.96.0"
+version = "1.103.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6e25d24de44b34dcdd5182ac4e4c6f07bcec2661c505acef94c0d293b65505fe"
+checksum = "af040a86ae4378b7ed2f62c83b36be1848709bbbf5757ec850d0e08596a26be9"
 dependencies = [
  "aws-credential-types",
  "aws-runtime",
@@ -2313,6 +2313,12 @@ name = "base16ct"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4c7f02d4ea65f2c1853089ffd8d2787bdbc63de2f0d29dedbcf8ccdfa0ccd4cf"
+
+[[package]]
+name = "base16ct"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d8b59d472eab27ade8d770dcb11da7201c11234bef9f82ce7aa517be028d462b"
 
 [[package]]
 name = "base64"
@@ -16058,16 +16064,16 @@ dependencies = [
 
 [[package]]
 name = "quinn-udp"
-version = "0.5.13"
+version = "0.5.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fcebb1209ee276352ef14ff8732e24cc2b02bbac986cd74a4c81bcb2f9881970"
+checksum = "addec6a0dcad8a8d96a771f815f0eaf55f9d1805756410b39f5fa81332574cbd"
 dependencies = [
  "cfg_aliases 0.2.1",
  "libc",
  "once_cell",
- "socket2 0.5.10",
+ "socket2 0.6.0",
  "tracing",
- "windows-sys 0.59.0",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]

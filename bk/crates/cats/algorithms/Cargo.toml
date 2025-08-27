@@ -26,8 +26,8 @@ ring = "0.17.14"
 
 ## General
 anyhow = "1.0.95"
-base64ct = "1.6.0"
-base16ct = "0.2.0"
+base64ct = { version =  "1.6.0", features = [ "alloc" ] }
+base16ct = { version = "0.3.0", features = [ "alloc" ] }
 data-encoding = "2.6.0"
 hex-literal = "1.0.0"
 tempfile = "3.16.0"
