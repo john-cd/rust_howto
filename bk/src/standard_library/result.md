@@ -6,14 +6,18 @@
 
 [![std][c~std~docs~badge]][c~std~docs]
 
-[`Result<T, E>`][c~std::result::Result~docs]↗{{hi:Result}} is an enum used for error handling. It has two variants:
+[`Result<T, E>`][c~std::result::Result~docs]↗{{hi:Result}} is an `enum` very frequently used for error handling. It has two variants:
 
 - [`Ok(T)`][c~std::result::Result::Ok~docs]↗{{hi:std::result::Result::Ok}} represents success and contains a value of type `T`.
 - [`Err(E)`][c~std::result::Result::Err~docs]↗{{hi:std::result::Result::Err}} represents an error and contains an error value of type `E`.
 
-Functions should return `Result` when errors are expected and recoverable. Note that `Result` is annotated with the `#[must_use]` attribute: the compiler issues a warning when a `Result` value is ignored.
+Functions should return `Result` when errors are _expected_ and _recoverable_.
 
-The following example show to return `Result` from a function, propagate it to the caller with the `?` operator, or process it with `match`. The `anyhow` and `thiserror` libraries can be used to significantly simplify error handling.
+Note that `Result` is annotated with the `#[must_use]` attribute: the compiler issues a warning when a `Result` value is ignored, prompting you if you forgot to handle an error.
+
+`E` above is often a type that implements the [`std::error::Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} trait, which is a standard trait for reporting errors in Rust. You can define your own error types by implementing this trait (but this is verbose) or use libraries like `thiserror` or `anyhow` to greatly simplify error handling.
+
+The following example show to return `Result` from a function, propagate it to the caller with the `?` operator, or process it with `match`:
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/result/result.rs:example}}
@@ -27,7 +31,7 @@ In addition to working with pattern matching, [`Result`][c~std::result::Result~d
 
 | Method       | Description | Use Case |
 |-------------|------------|----------|
-| [`unwrap()`][c~std::result::Result::unwrap~docs]↗{{hi:std::result::Result::unwrap}}  | Returns the `Ok` value or panics if `Err`. | Use when you're certain the result is `Ok`. See also `expect`. |
+| [`unwrap()`][c~std::result::Result::unwrap~docs]↗{{hi:std::result::Result::unwrap}} | Returns the `Ok` value or panics if `Err`. | Use when you're certain the result is `Ok`. See also `expect`. |
 | [`unwrap_or(default)`][c~std::result::Result::unwrap_or_default~docs]↗{{hi:std::result::Result::unwrap_or}} | Returns the `Ok` value or a default if `Err`. | Use when you want a fallback value. |
 | [`unwrap_or_else(func)`][c~std::result::Result::unwrap_or_else~docs]↗{{hi:std::result::Result::unwrap_or_else}}  | Returns the `Ok` value or calls a function to generate a fallback. | Use when computing a fallback dynamically. |
 | [`map(func)`][c~std::result::Result::map~docs]↗{{hi:std::result::Result::map}} | Applies a function to the `Ok` value. | Use to transform the result, if successful. |
@@ -61,7 +65,7 @@ These methods are useful for working with references to the values inside a `Res
 {{#include ../../crates/standard_library/examples/result/result3.rs:example}}
 ```
 
-## `Result` vs `Option` {#result-vs-option}
+## Choose between `Result` and `Option` {#result-vs-option}
 
 [![std][c~std~docs~badge]][c~std~docs]
 

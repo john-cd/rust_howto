@@ -1041,26 +1041,6 @@
 			]
 		},
 		{
-			"path": "bk/src/standard_library/result.md",
-			"bookmarks": [
-				{
-					"line": 8,
-					"column": 7,
-					"label": ""
-				},
-				{
-					"line": 15,
-					"column": 165,
-					"label": ""
-				},
-				{
-					"line": 63,
-					"column": 12,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/standard_library/smart_pointers.md",
 			"bookmarks": [
 				{
