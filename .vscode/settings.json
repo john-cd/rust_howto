@@ -4,6 +4,7 @@
     },
     "rust-analyzer.linkedProjects": [
         "bk/crates/Cargo.toml",
+        "mdbook-utils/Cargo.toml",
         "playground/Cargo.toml",
         "publish/Cargo.toml",
         "tools/Cargo.toml",
@@ -19,4 +20,5 @@
     "rust-analyzer.imports.preferPrelude": true,
     "bookmarks.keepBookmarksOnLineDelete": false,
     "bookmarks.saveBookmarksInProject": true,
+    "rust-analyzer.initializeStopped": true,
 }
