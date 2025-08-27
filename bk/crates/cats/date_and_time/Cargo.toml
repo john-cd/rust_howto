@@ -16,5 +16,6 @@ autolib = false
 
 [dependencies]
 chrono = "0.4.39"
-humantime = "2.1.0"
+# FIXME
+# humantime = "2.1.0"
 time = "0.3.37"

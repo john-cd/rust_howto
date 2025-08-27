@@ -15,7 +15,8 @@ license.workspace = true
 
 [dependencies]
 anyhow = "1.0.95"
-tracing = "0.1.41"
+# FIXME
+#tracing = "0.1.41"
 url = "2.5.4"
 #directive_lib = { path = "../directive_lib" }
 winnow = "0.7.11"

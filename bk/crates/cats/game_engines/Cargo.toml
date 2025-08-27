@@ -14,17 +14,19 @@ categories = ["game_engines"]
 publish.workspace = true
 autolib = false
 
+# FIXME
 [dependencies]
-bevy = { version = "0.16.0", optional = true }
-fyrox = "0.36.0"
-fyrox-core = "0.36.0"
+# bevy = { version = "0.16.0", optional = true }
+# fyrox = "0.36.0"
+# fyrox-core = "0.36.0"
 # ggez = "0.9.3"
 # [ggez conflict with wgpu LATER](https://github.com/john-cd/rust_howto/issues/1289)
 macroquad = "0.4.14"
 
-[features]
-default = []
-bevy = ["dep:bevy"]
+# FIXME
+#[features]
+#default = []
+#bevy = ["dep:bevy"]
 #fyrox = ["dep:fyrox", "dep:fyrox-core"]
 #ggez = ["dep:ggez"]
 #macroquad = ["dep:macroquad"]

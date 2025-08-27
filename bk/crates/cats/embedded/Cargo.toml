@@ -18,5 +18,5 @@ autolib = false
 # embassy = "0.0.0"
 # [embassy: review installation / required dependencies LATER](https://github.com/john-cd/rust_howto/issues/1285)
 
-[features]
-#default = []
+#[features]
+# default = []

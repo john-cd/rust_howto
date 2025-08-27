@@ -19,4 +19,5 @@ proc-macro = true
 [dependencies]
 syn = { version = "2.0", features = ["full"] } # "full" feature is often needed for parsing various Rust constructs
 quote = "1.0"
-proc-macro2 = "1.0" # TokenStream manipulation
+# FIXME
+# proc-macro2 = "1.0" # TokenStream manipulation

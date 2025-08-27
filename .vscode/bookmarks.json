@@ -1089,6 +1089,16 @@
 					"label": ""
 				}
 			]
+		},
+		{
+			"path": "bk/crates/cats/mathematics/Cargo.toml",
+			"bookmarks": [
+				{
+					"line": 33,
+					"column": 12,
+					"label": ""
+				}
+			]
 		}
 	]
 }

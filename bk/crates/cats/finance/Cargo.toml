@@ -18,6 +18,6 @@ autolib = false
 #RustQuant = {version = "0.3", optional = true }
 # [RustQuant: heavy build - polars, nalgebra, etc LATER](https://github.com/john-cd/rust_howto/issues/1313)
 
-[features]
+#[features]
 #default = []
 #rustquant = ["dep:RustQuant"]

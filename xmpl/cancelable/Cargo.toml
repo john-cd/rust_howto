@@ -17,6 +17,7 @@ publish.workspace = true
 anyhow = "1.0.95"
 crossbeam = "0.8.4"
 crossbeam-channel = "0.5.15"
-crossbeam-queue = "0.3.12"
+# FIXME
+#crossbeam-queue = "0.3.12"
 tracing = "0.1.41"
 tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }

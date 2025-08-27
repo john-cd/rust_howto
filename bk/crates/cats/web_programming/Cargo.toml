@@ -16,7 +16,8 @@ autolib = false
 
 [dependencies]
 http = "1.3.1"
-http-body-util = "0.1.2"
+# FIXME
+# http-body-util = "0.1.2"
 url = "2.5.4"
 reqwest = "0.12.12"
 select = "0.6.0"

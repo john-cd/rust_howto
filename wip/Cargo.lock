@@ -771,12 +771,7 @@ dependencies = [
  "clap",
  "core_lib",
  "parse_lib",
- "regex",
- "tempfile",
- "tracing",
  "tracing-subscriber",
- "walkdir",
- "xshell",
 ]
 
 [[package]]
@@ -1088,7 +1083,6 @@ dependencies = [
  "anyhow",
  "fmt2io",
  "multimap",
- "tracing",
  "url",
  "winnow",
 ]
@@ -1149,7 +1143,6 @@ dependencies = [
  "clap",
  "core_lib",
  "directive_lib",
- "tracing",
  "tracing-subscriber",
 ]
 
@@ -2321,21 +2314,6 @@ name = "writeable"
 version = "0.6.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ea2f10b9bb0928dfb1b42b65e1f9e36f7f54dbdf08457afefb38afcdec4fa2bb"
-
-[[package]]
-name = "xshell"
-version = "0.2.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9e7290c623014758632efe00737145b6867b66292c42167f2ec381eb566a373d"
-dependencies = [
- "xshell-macros",
-]
-
-[[package]]
-name = "xshell-macros"
-version = "0.2.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "32ac00cd3f8ec9c1d33fb3e7958a82df6989c42d747bd326c822b1d625283547"
 
 [[package]]
 name = "yoke"

@@ -15,37 +15,33 @@ categories = [ "development_tools_ffi" ]
 publish.workspace = true
 autolib = false
 
+# FIXME
 [dependencies]
-cxx = "1.0.136"
-flutter_rust_bridge = "2.7.0"
-jni = "0.21.1"
-napi = "2.16.13"
-neon = "1.0.0"
+# cxx = "1.0.136"
+# flutter_rust_bridge = "2.7.0"
+# jni = "0.21.1"
+# napi = "2.16.13"
+# neon = "1.0.0"
 # magnus = "0.7.1"
 mlua = { version = "0.10.2", features = ["lua54", "vendored"] }
 # FIXME
 # objc2 = "0.6.0"
 # objc2-foundation = "0.3.0"
 # objc2-app-kit = "0.3.0"
-rustler = "0.36.0"
-#rutie = "0.9.0"
-uniffi = "0.29"
+# rustler = "0.36.0"
+# rutie = "0.9.0"
+# uniffi = "0.29"
 
 ## General
-serde = { version = "1.0.217", features = ["derive"] }
+# serde = { version = "1.0.217", features = ["derive"] }
 
 [target.'cfg(target_os = "linux")'.dependencies]
 pyo3 = "0.25.1" # was pinned to 0.21 to avoid conflict with `polars`
 
+# FIXME
 [build-dependencies]
 bindgen = "0.72.0"
 cbindgen = "0.29.0"
 cc = "1.2"
-cxx-build = "1.0.136"
-uniffi = "0.29"
-
-[features]
-# default = []
-# objc2 = ["dep:objc2", "dep:objc2-foundation", "dep:objc2-app-kit"]
-# pyo3 = ["dep:pyo3"]
-# rutie = ["dep:rutie"]
+# cxx-build = "1.0.136"
+# uniffi = "0.29"

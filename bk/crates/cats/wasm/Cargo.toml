@@ -15,7 +15,8 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-js-sys = "0.3.77"
+# FIXME
+# js-sys = "0.3.77"
 wasmer = "5.0.4"
 wasmtime = "32.0.0"
 yew = { version = "0.21.0", features = ["csr"] }
@@ -23,6 +24,7 @@ yew = { version = "0.21.0", features = ["csr"] }
 ## General
 anyhow = "1.0.95"
 
-[features]
+# FIXME
+#[features]
 #default = []
 #wasm = ["dep:wasmer", "dep:wasmtime", "dep:yew"]

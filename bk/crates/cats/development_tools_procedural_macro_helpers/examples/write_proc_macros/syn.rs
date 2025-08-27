@@ -20,8 +20,9 @@ use syn::Result;
 /// and print it.
 fn simple() -> Result<()> {
     let code = "assert_eq!(u8::max_value(), 255)";
-    let expr = syn::parse_str::<Expr>(code)?;
-    println!("{expr:#?}");
+    let _expr = syn::parse_str::<Expr>(code)?;
+    // FIXME
+    // println!("{expr:#?}");
     Ok(())
 }
 

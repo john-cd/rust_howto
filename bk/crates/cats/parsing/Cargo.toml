@@ -14,18 +14,20 @@ categories = ["parsing"]
 publish.workspace = true
 autolib = false
 
+# FIXME
 [dependencies]
-binascii = "0.1.4"
+# binascii = "0.1.4"
 nom = "8.0.0"
 pest = "2.7.15"
 pest_derive = "2.7.15"
-tree-sitter = "0.25.1"
-tree-sitter-rust = "0.24.0"
+# tree-sitter = "0.25.1"
+# tree-sitter-rust = "0.24.0"
 
 [build-dependencies]
 pest_generator = "2.7.15"
-cc = "1.2"
+# cc = "1.2"
 
-[features]
+# FIXME
+# [features]
 # default = []
 # pest = ["dep:pest", "dep:pest_derive", "dep:pest_generator"]

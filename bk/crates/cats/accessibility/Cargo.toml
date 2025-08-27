@@ -17,6 +17,7 @@ license = "CC0-1.0"
 autolib = false
 
 [dependencies]
-accesskit = "0.20.0"
-accesskit_winit = "0.28.0"
-winit = "0.30.8"
+# FIXME
+# accesskit = "0.20.0"
+# accesskit_winit = "0.28.0"
+# winit = "0.30.8"
