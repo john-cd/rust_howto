@@ -96,7 +96,7 @@ For legacy applications, you may consider using the following hashing algorithms
 [`md-5`][c~md-5~docs]↗{{hi:md-5}} implements the MD5 hash function.
 
 ```rust,editable
-{{#include ../../../crates/cats/algorithms/examples/hashing/md-5.rs:example}}
+{{#include ../../../crates/cats/algorithms/examples/hashing/md5.rs:example}}
 ```
 
 ## Cryptograhic Algorithms

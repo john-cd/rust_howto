@@ -18,6 +18,16 @@ autolib = false
 rand = "0.9.0"
 rand_distr = "0.5.0"
 fastrand = "2.3.0"
+blake3 = "1.5.5"
+md5 = "0.8.0"
+sha1 = "0.10.6"
+sha2 = "0.10.8"
+ring = "0.17.14"
 
 ## General
 anyhow = "1.0.95"
+base64ct = "1.6.0"
+base16ct = "0.2.0"
+data-encoding = "2.6.0"
+hex-literal = "1.0.0"
+tempfile = "3.16.0"
