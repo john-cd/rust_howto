@@ -14,16 +14,15 @@ categories = ["science_robotics"]
 publish.workspace = true
 autolib = false
 
-# FIXME
 [dependencies]
 bonsai-bt = "0.10.0"
-# openrr = "0.1.0" # FIXME lacks native static library `assimpd` on windows https://github.com/assimp/assimp/blob/master/Build.md
-# urdf-rs = "0.9.0"
-# zenoh = { version = "1.1.0", optional = true } # https://github.com/john-cd/rust_howto/issues/1441
+# FIXME openrr = { version = "0.1.0", optional = true } # FIXME lacks native static library `assimpd` on windows https://github.com/assimp/assimp/blob/master/Build.md
+# LATER add example? urdf-rs = "0.9.0"
+# FIXME zenoh = { version = "1.1.0", optional = true } # https://github.com/john-cd/rust_howto/issues/1441
 
 ## General
 anyhow = "1.0.95"
-# tokio = { version = "1.44.2", features = ["full"] }
+# tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread"]  }
 # tracing = "0.1.41"
 # tracing-subscriber = "0.3.19"
 # async-trait = "0.1.85"

@@ -60,3 +60,4 @@ fn perform_some_logging(logger: slog::Logger) {
 fn test() {
     main();
 }
+// TODO review slog-scope

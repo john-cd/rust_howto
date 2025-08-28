@@ -18,22 +18,20 @@ autolib = false
 # FIXME
 [dependencies]
 # cxx = "1.0.136"
-# flutter_rust_bridge = "2.7.0"
-# jni = "0.21.1"
-# napi = "2.16.13"
-# neon = "1.0.0"
-# magnus = "0.7.1"
-mlua = { version = "0.10.2", features = ["lua54", "vendored"] }
-# FIXME
-# objc2 = "0.6.0"
-# objc2-foundation = "0.3.0"
-# objc2-app-kit = "0.3.0"
-# rustler = "0.36.0"
-# rutie = "0.9.0"
-# uniffi = "0.29"
+# flutter_rust_bridge = { version = "2.7.0", optional = true }
+# jni = { version = "0.21.1", optional = true }
+# napi = { version = "2.16.13", optional = true }
+# neon = { version = "1.0.0", optional = true }
+# magnus = { version = "0.7.1", optional = true }
+mlua = { version = "0.11.2", features = ["lua54", "vendored"], optional = true }
+# objc2 = { version = "0.6.0", optional = true }
+# objc2-foundation = { version = "0.3.0", optional = true }
+# objc2-app-kit = { version = "0.3.0", optional = true }
+# rustler = { version = "0.36.0", optional = true }
+# rutie = { version = "0.9.0", optional = true }
+# uniffi = { version = "0.29", optional = true }
 
 ## General
-# serde = { version = "1.0.217", features = ["derive"] }
 
 [target.'cfg(target_os = "linux")'.dependencies]
 pyo3 = "0.25.1" # was pinned to 0.21 to avoid conflict with `polars`
@@ -45,6 +43,15 @@ cbindgen = "0.29.0"
 cc = "1.2"
 # cxx-build = "1.0.136"
 # uniffi = "0.29"
+
+[features]
+erlang = [] # FIXME "dep:rustler"
+flutter = [] # FIXME "dep:flutter_rust_bridge"
+java = [] # FIXME "dep:jni"
+lua = ["dep:mlua"]
+objc = [] # FIXME "dep:objc2", "dep:objc2-foundation", "dep:objc2-app-kit"
+node = [] # FIXME "dep:napi", "dep:neon"
+ruby = [] # FIXME "dep:magnus", "dep:rutie"
 
 [package.metadata.cargo-machete]
 ignored = ["cc", "bindgen", "cbindgen"]

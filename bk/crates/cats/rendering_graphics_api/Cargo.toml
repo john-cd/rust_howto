@@ -16,4 +16,7 @@ autolib = false
 
 [dependencies]
 # FIXME
-# wgpu = "25.0.0" # was pinned for ggez
+# wgpu = { version = "25.0.0", optional = true } # was pinned for ggez
+
+[features]
+wgpu = [] # FIXME "dep:wgpu"

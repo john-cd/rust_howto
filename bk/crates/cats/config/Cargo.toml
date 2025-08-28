@@ -16,16 +16,12 @@ autolib = false
 
 [dependencies]
 config = "0.15.6"
-confy = "0.6.1"
-# dotenv = "0.15.0" # outdated, replaced by dotenvy
+confy = "1.0.0"
+# dotenv is outdated, replaced by dotenvy
 dotenvy = "0.15.7"
 envy = "0.4.2"
-# FIXME
-# lexopt = "0.3.1"
 
 ## General
 anyhow = "1.0.95"
 clap = { version = "4.5", features = [ "cargo" ] }
 serde = { version = "1.0.217", features = ["derive"] }
-# FIXME
-# serde_derive = "1.0.217"

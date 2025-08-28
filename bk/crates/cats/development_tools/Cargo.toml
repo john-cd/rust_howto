@@ -14,27 +14,9 @@ categories = ["development_tools"]
 publish.workspace = true
 
 [dependencies]
-# [add bacon ="3.2.0"](https://github.com/john-cd/rust_howto/issues/1261)
-crates_io_api = "0.11.0"
-# FIXME
-# cross = "0.2.5"
-# doc-comment = "0.3.3"
-# mdbook
-# mdbook-cmdrun
-# mdbook-journal
-# mdbook-keeper
-# mdbook-linkcheck
-# mdbook-pagetoc
-# mdbook-private
-# mdbook-tera
-# mdbook-theme
-# mdbook-toc
-# miri
+crates_io_api = "0.12.0"
+# FIXME add example doc-comment = "0.3.3"
 semver = "1.0.24"
-# termbook = "1.4.2"
-# [termbook requires mdbook; review pre-requisites LATER](https://github.com/john-cd/rust_howto/issues/1294)
-# FIXME
-# yapp = "0.5.0"
 
 ## General
 anyhow = "1.0.95"

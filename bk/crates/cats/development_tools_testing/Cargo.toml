@@ -15,8 +15,7 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-# FIXME
-# afl = "0.15.13"
+# FIXME afl = "0.15.13"
 approx = "0.4.0"   # pin
 fake = { version = "4.3.0", features = [ "derive" ] }
 faux = "0.1"

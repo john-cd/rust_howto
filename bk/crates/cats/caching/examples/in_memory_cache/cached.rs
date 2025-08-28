@@ -6,6 +6,7 @@
 //!
 //! Remember to add `cached = "0.55.1"` or latest to your Cargo.toml.
 
+use std::time::Duration;
 use cached::proc_macro::cached;
 
 /// Cached function with default configuration. Uses the unbounded cache.

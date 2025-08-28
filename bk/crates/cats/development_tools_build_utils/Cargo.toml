@@ -17,7 +17,7 @@ autolib = false
 
 [dependencies]
 anyhow = "1.0.98"
-cc = "1.2.21" # TODO
+cc = "1.2.21" # FIXME
 autocfg = "1.4.0"
 
 ## See build.rs

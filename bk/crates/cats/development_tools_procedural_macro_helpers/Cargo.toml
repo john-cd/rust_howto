@@ -13,18 +13,16 @@ keywords.workspace = true
 categories = ["development_tools_procedural_macro_helpers"]
 publish.workspace = true
 
-# FIXME
 [dependencies]
-# darling = "0.20.10"
-# paste = "1.0.15"
-# proc-macro2 = "1.0.92"
+# FIXME darling = "0.20.10"
+# FIXME paste = "1.0.15"
+# FIXME proc-macro2 = "1.0.92"
 quote = "1.0.38"
 syn = { version = "2.0.92", features = ["full"] }
-# watt = "0.5.0"
+# FIXME watt = "0.5.0"
 
 ## General
 anyhow = "1.0.95"
-#serde = { version = "1.0.217", features = ["derive"] }
 
 # See `lib.rs`
 [lib]

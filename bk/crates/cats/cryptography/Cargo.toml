@@ -21,31 +21,30 @@ argon2 = "0.5.3"
 bcrypt = "0.17.0"
 chacha20poly1305 = "0.10.1"
 der = { version = "0.7.9", features = ["derive", "alloc"] }
-# dsa = "0.6.3"
+# FIXME need an example? dsa = "0.6.3"
 # ed25519 = "2.2.3"
 ed25519-dalek = { version = "2", features = ["rand_core"] }
-# ecdsa = "0.16.9"
-# native-tls = "0.2.12"
+# FIXME ecdsa = "0.16.9"
+# FIXME native-tls = "0.2.12"
 p256 = { version = "0.13.2", features = ["pkcs8"] }
-# pem-rfc7468 = "0.7.0"
+# FIXME pem-rfc7468 = "0.7.0"
 pkcs8 = "0.10.2"
 ring = "0.17.14"
 rsa = "0.9.8"
-# rustls = "0.23.20"
+# FIXME rustls = "0.23.20"
 scrypt = "0.11.0"
 subtle = "2.6.1"
-# tokio-rustls = "0.26.2"
-# x509-cert = "0.2.5"
+# FIXME tokio-rustls = "0.26.2"
+# FIXME x509-cert = "0.2.5"
 zeroize = "1.8.1"
 
 ## General
 anyhow = "1.0.95"
 base64ct = "1.6.0"
+# chrono = "0.4.41"
 data-encoding = "2.6.0"
-# hex-literal = "1.0.0"
 # hyper = { version = "1.5.2", features = ["client"] }
 # hyper-tls = "0.6.0"
 rand = "0.8.5"                                       # pinned because of ed25519
-# tempfile = "3.16.0"
-# tokio = { version = "1.44.2", features = ["full"] }
+# tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread"]  }
 # webpki-roots = "1.0.1"

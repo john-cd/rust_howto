@@ -1,11 +1,11 @@
-#[cfg(target_os = "linux")]
+#[cfg(all(target_os = "linux", feature = "sqlite"))]
 mod initialization;
-#[cfg(target_os = "linux")]
+#[cfg(all(target_os = "linux", feature = "sqlite"))]
 mod insert_select;
-#[cfg(target_os = "linux")]
+#[cfg(all(target_os = "linux", feature = "sqlite"))]
 mod transactions;
 
-#[cfg(target_os = "linux")]
+#[cfg(all(target_os = "linux", feature = "sqlite"))]
 fn main() -> anyhow::Result<()> {
     let _ = std::fs::remove_file("temp/cats.db");
     initialization::main()?;
@@ -14,7 +14,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
-#[cfg(not(target_os = "linux"))]
+#[cfg(not(all(target_os = "linux", feature = "sqlite")))]
 fn main() -> anyhow::Result<()> {
     Ok(())
 }

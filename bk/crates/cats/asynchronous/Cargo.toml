@@ -16,21 +16,18 @@ autolib = false
 
 [dependencies]
 async-channel = "2.3.1"
-# async-std = "1.13.0"
-# async-stream = "0.3.6"
+# LATER async-stream = "0.3.6"
 async-trait = "0.1.85"
-# duct = "1.0.0"
 futures = "0.3.31"
-# futures-executor = "0.3.31"
+# FIXME futures-executor = "0.3.31"
 futures-util = "0.3.31"
 kanal = "0.1.1"                                # NOTE: pre version
-# mio = "1.0.2"
-# parking_lot = "0.12.3"
+# FIXME do we need an example? mio = "1.0.2"
 postage = "0.5.0"
 rayon = "1.10.0"
 reqwest = "0.12.12"
-# smol = "2.0.2"
-tokio = { version = "1.44.2", features = ["full"] }
+#  FIXME need an example smol = "2.0.2"
+tokio = { version = "1.44.2", features = [ "rt-multi-thread", "fs" ] }
 tokio-graceful-shutdown = "0.16.0"
 
 ## General

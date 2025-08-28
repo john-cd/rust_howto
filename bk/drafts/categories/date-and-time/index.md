@@ -36,4 +36,7 @@ There is no clear answer as to which is best between [`time`][c~time~docs]↗{{h
 
 <div class="hidden">
 [review in depth](https://github.com/john-cd/rust_howto/issues/1188)
+
+add examples for humantime
+
 </div>

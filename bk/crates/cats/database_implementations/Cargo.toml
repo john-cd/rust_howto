@@ -15,19 +15,19 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-meilisearch-sdk = "0.28.0"
-sled = "0.34.7"
+meilisearch-sdk = { version= "0.29.1", optional = true }
+sled = { version = "0.34.7", optional = true }
 surrealdb = { version = "2.2.2", features = ["kv-mem"], optional = true }
-# FIXME
-# tantivy = { version = "0.24.0", optional = true }
+# FIXME: tantivy = { version = "0.25.0", optional = true }
 
 ## General
 anyhow = "1.0.95"
 serde = { version = "1.0.217", features = ["derive"] }
-tokio = { version = "1.44.2", features = ["full"] }
+tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread"]  }
 
-# FIXME
 [features]
 # default = []
+meilisearch = ["dep:meilisearch-sdk"]
+sled = ["dep:sled"]
 surrealdb = ["dep:surrealdb"]
-# tantivy = ["dep:tantivy"]
+tantivy = [] # FIXME: "dep:tantivy"

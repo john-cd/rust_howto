@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-#![cfg(feature = "mongodb")]
 // ANCHOR: example
 use std::env;
 

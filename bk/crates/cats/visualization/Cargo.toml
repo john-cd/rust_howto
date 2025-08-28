@@ -15,7 +15,7 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-plotly = "0.12.1"
+plotly = "0.13.5"
 
 ## General
 anyhow = "1.0.95"

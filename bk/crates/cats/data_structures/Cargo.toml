@@ -18,20 +18,18 @@ autolib = false
 [dependencies]
 arrayvec = "0.7.6"
 bitflags = "2.6.0"
-# bloomfilter = "3.0.1"
-# bytes = "1.9.0"
-# dashmap = "6.1.0"
-# either = "1.14.0"
+# TODO add example? bloomfilter = "3.0.1"
+# TODO add example? bytes = "1.9.0"
 flagset = "0.4.6"
 fnv = "1.0.7"
 heapless = "0.7.17" # pinned
 indexmap = "2.7.0"
-# linked-hash-map = "0.5.6"
+# TODO add example? linked-hash-map = "0.5.6"
 multimap = "0.10.0"
 petgraph = "0.8.1"
 priority-queue = "2.3.1"
-# rangemap = "1.5.1"
-# skiplist = "0.6.0"
+# TODO add example? rangemap = "1.5.1"
+# TODO add example? skiplist = "0.6.0"
 slotmap = "1.0.7"
 smallvec = "2.0.0-alpha.8" # alpha
 tinyvec = { version = "1.8.1", features = ["alloc"] }
@@ -43,5 +41,5 @@ uuid = { version = "1.11.0", features = [
 
 ## General
 anyhow = "1.0.95"
-crates_io_api = "0.11.0"
+crates_io_api = "0.12.0"
 bitvec = "1.0.1"

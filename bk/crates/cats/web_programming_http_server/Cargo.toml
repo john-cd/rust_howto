@@ -15,20 +15,18 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-# FIXME
-# actix-web = "4.9.0"
-# async-graphql = "7.0.17"
-# async-graphql-axum = "7.0.17"
-# axum = "0.8.4" # was pinned because of tonic
+# FIXME actix-web = "4.9.0"
+# FIXME async-graphql = { version = "7.0.17", optional = true }
+# async-graphql-axum = { version = "7.0.17", optional = true }
+# FIXME axum = "0.8.4" # was pinned because of tonic
 http = "1.2.0"
 http-body-util = "0.1.2"
-# hyper = { version = "1.6.0", features = ["full"] }
+# FIXME hyper = { version = "1.6.0", features = ["full"] }
 # hyper-util = { version = "0.1", features = ["full"] }
-# leptos = "0.8.2"
+# FIXME leptos = "0.8.2"
 # LATER loco-rs = "0.16.3"
-# mime = "0.3.17"
-prost = "0.13.5"
-tonic = "0.13.0"
+prost = "0.14.1"
+tonic = "0.14.1"
 tower = { version = "0.5.1", features = ["util"] }
 tower-http = { version = "0.6.1", features = ["full", "auth"] }
 # trillium = "0.2.20"
@@ -37,18 +35,19 @@ tower-http = { version = "0.6.1", features = ["full", "auth"] }
 ## General
 anyhow = "1.0.95"
 bytes = "1.9.0"
-# serde_json = "1.0.138"
-tokio = { version = "1.44.2", features = ["full"] }
-# tracing = "0.1.41"
+# serde_json = "1.0.138" # for loco example
+tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread"]  }
+# tracing = "0.1.41" # for axum example
 # tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
 
 [build-dependencies]
-tonic-build = "0.13.0"
+tonic-prost-build = "0.14.1"
+tonic-build = "0.14.1"
 
-# FIXME
-# [features]
+[features]
 # default = []
-# loco = ["dep:loco-rs"]
+async-graphql = [] # FIXME "dep:async-graphql", "dep:async-graphql-axum"
+# LATER loco = ["dep:loco-rs"]
 
 [package.metadata.cargo-machete]
 ignored = ["prost", "tonic-build"]

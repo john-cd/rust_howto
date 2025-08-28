@@ -65,4 +65,6 @@ Mermaid.js for documentation: `aquamarine`
 
 - [roxygen][c~roxygen~repo]↗: Add documentation to function arguments in Rust.
 
+cover `doc-comment` and add example
+
 </div>

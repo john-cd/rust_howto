@@ -26,6 +26,6 @@ notify = "8.0.0"
 open = "5.3.0"
 remove_dir_all = { version = "1.0.0", features = [ "parallel" ] }
 same-file = "1.0.6"
-# tempdir = "0.3.7" # Outdated, replaced by tempfile
+# tempdir is outdated, replaced by tempfile
 tempfile = "3.14.0"
 walkdir = "2.5.0"

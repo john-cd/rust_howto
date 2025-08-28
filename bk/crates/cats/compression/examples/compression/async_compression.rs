@@ -118,3 +118,11 @@
 
 //     Ok(())
 // }
+
+// #[test]
+// fn test() -> anyhow::Result<()> {
+//     main()?;
+//     Ok(())
+// }
+
+// TODO review the above; cover async_zip ?

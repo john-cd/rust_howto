@@ -170,4 +170,18 @@ To mark a chapter as hidden, add the following comment anywhere in the Markdown 
 cargo install mdbook-keeper --git https://github.com/tfpk/mdbook-keeper.git
 ```
 
+Cover:
+- mdbook
+- mdbook-cmdrun
+- mdbook-journal
+- mdbook-keeper
+- mdbook-linkcheck
+- mdbook-pagetoc
+- mdbook-private
+- mdbook-tera
+- mdbook-theme
+- mdbook-toc
+- mdbook-yapp
+- termbook ??
+
 </div>

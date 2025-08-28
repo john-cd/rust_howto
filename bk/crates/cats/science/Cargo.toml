@@ -17,6 +17,7 @@ autolib = false
 # FIXME
 [dependencies]
 ## Machine Learning
+# FIXME don't need all candle crates
 # candle-core = "0.9.1"
 # candle-datasets = "0.8.2"
 # candle-examples = "0.8.1"
@@ -27,10 +28,11 @@ autolib = false
 linfa = "0.7.0"
 linfa-linear = "0.7.0"
 ndarray = "0.15.6" # pinned to 0.15.6 for linfa
-# rand = { version = "0.9.0", features = ["thread_rng"] }
-# smartcore = { version = "0.4.0", features = ["datasets"] }
+# FIXME smartcore = { version = "0.4.0", features = ["datasets"] }
 
-# FIXME
-# [features]
+## General
+# rand = { version = "0.9.0", features = ["thread_rng"] } # for smartcore example
+
+[features]
 #default = []
-#candle = ["dep:candle-core", "dep:candle-nn"]
+# FIXME do we need a feature? candle = ["dep:candle-core", "dep:candle-nn"]

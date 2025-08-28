@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-#![cfg(feature = "arrow")]
 // ANCHOR: example
 //! `arrow` is a complete, safe, native Rust implementation of `Apache Arrow`,
 //! a cross-language development platform for in-memory data.

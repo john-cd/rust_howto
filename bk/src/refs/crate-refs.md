@@ -3004,7 +3004,7 @@
 [c~future-utils~repo~badge]: https://img.shields.io/badge/future--utils-steelblue?logo=github
 [c~future-utils~lib.rs]: https://lib.rs/crates/future-utils
 [c~future-utils~lib.rs~badge]: https://img.shields.io/badge/lib.rs-future--utils-yellow
-[c~futures-executor::block_on~docs]: https://docs.rs/futures-executor/latest/futures-executor/fn.block_on.html
+[c~futures_executor::block_on~docs]: https://docs.rs/futures-executor/latest/futures_executor/fn.block_on.html
 [c~futures-executor~crates.io]: https://crates.io/crates/futures-executor
 [c~futures-executor~crates.io~badge]: https://img.shields.io/badge/crates.io-futures--executor-crimson
 [c~futures-executor~docs]: https://docs.rs/futures-executor

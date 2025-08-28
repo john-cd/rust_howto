@@ -28,13 +28,12 @@ futures = "0.3.31"
 parking_lot = "0.12.3"
 ractor = "0.15.2"
 rayon = "1.10.0"
-# riker = "0.4.2"
-# stakker = "0.2.11"
+# FIXME riker = "0.4.2"
+# FIXME stakker = "0.2.11"
 threadpool = "1.8.1"
 
 ## General
 anyhow = "1.0.95"
-# async-trait = "0.1.85"
 glob = "0.3.1"
 image = "0.25.5"
 itertools = "0.14.0"
@@ -45,5 +44,5 @@ papaya = "0.2.0"
 rand = { version = "0.9.0", features = ["thread_rng"] }
 ring = "0.17.14"
 time = "0.3.37"
-tokio = { version = "1.44.2", features = ["full"] }
+tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread"]  }
 walkdir = "2.5.0"

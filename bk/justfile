@@ -8,25 +8,21 @@ set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 _default:
   @just --list --unsorted --justfile {{source_file()}}
 
-# Format all bin and lib files
-f:
-  @just code fmt
-
-# Format all packages and their local path-based dependencies
-fa:
-  @just code fmtall
-
 # Format the current crate
 [no-cd]
 fc:
   @just code fmtcurrent
+
+# Format all packages and their local path-based dependencies
+fa:
+  @just code fmtall
 
 # Check code in the current crate (or the default packages of the workspace if in the root) (all features)
 [no-cd]
 ckc:
   @just code checkcurrent
 
-# Check all code (all packages, all features)
+# Check all code (all features)
 [no-cd]
 cka:
   @just code checkall
@@ -40,22 +36,19 @@ bc:
 bp pkg:
   @just code buildpkg {{pkg}}
 
-# Build just the code used by the book (default packages, default features)
+# Build all code (default features)
 b:
   @just code build
 
-# Build just the code used by the book (default packages, all features)
-bf:
-  @just code buildfeat
-
-# Build all packages (all features)
+# Build all code (all features)
 ba:
   @just code buildall
 
-# Scan all code for common mistakes (all packages, all features)
+# Scan all code for common mistakes (all features)
 ca:
   @just code clippyall
 
+# Test only tests that match a given keyword
 ntt test:
   @just code nextestthis {{test}}
 
@@ -64,17 +57,13 @@ ntt test:
 ntc:
   @just code nextestcurrent
 
-# Test the code used by the book (no doctests) (default packages, default features)
+# Test all code (no doctests) (default features)
 nt:
   @just code nextest
 
-# Test all code in the workspace (incl. doctests) (all features)
+# Test all code, including doctests (all features)
 nta:
   @just code nextestall
-
-## Test all code (all packages, all features)
-# ta:
-#   @just code testall
 
 # Build and test the code examples
 mod code 'scripts/code'

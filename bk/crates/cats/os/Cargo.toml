@@ -16,7 +16,7 @@ autolib = false
 
 [dependencies]
 libc = "0.2.169"
-which = "7.0.2"
+which = "8.0.0"
 
 ## General
 anyhow = "1.0.95"

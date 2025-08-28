@@ -15,13 +15,13 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-ansi_term = "0.12.1"                                 # NOTE: unmaintained
+ansi_term = "0.12.1" # NOTE: unmaintained
 clap = { version = "4.5.31", features = ["derive"] }
-# clap_complete = "4.5.46"
-# FIXME clap-verbosity-flag = "3.0.0"
+# FIXME add examlep? clap_complete = "4.5.46"
+# FIXME add examle? colored = "3.0.0"
 console = "0.16.0"
 crossterm = "0.29.0"
-indicatif = "0.17.9"
+indicatif = "0.18.0"
 inquire = "0.7.5"
 lexopt = "0.3.1"
 pico-args = "0.5.0"
@@ -29,5 +29,3 @@ ratatui = "0.29.0"   # requires crossterm
 
 ## General
 anyhow = "1.0.95"
-# FIXME
-# colored = "3.0.0"

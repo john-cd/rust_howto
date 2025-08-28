@@ -42,17 +42,23 @@ While [`slab`][c~slab~docs]↗{{hi:slab}} may look like other Rust collections, 
 
 It is important to note that keys may be reused. In other words, once a value associated with a given key is removed from a slab, that key may be returned from future calls to insert.
 
+TODO add example
+
 ### `bumpalo` {#bumpalo}
 
 [![bumpalo][c~bumpalo~docs~badge]][c~bumpalo~docs] [![bumpalo~crates.io][c~bumpalo~crates.io~badge]][c~bumpalo~crates.io] [![bumpalo~repo][c~bumpalo~repo~badge]][c~bumpalo~repo] [![bumpalo~lib.rs][c~bumpalo~lib.rs~badge]][c~bumpalo~lib.rs]{{hi:bumpalo}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
 [`bumpalo`][c~bumpalo~docs]↗{{hi:bumpalo}} is a fast bump allocation arena for Rust.
 
+TODO add example?
+
 ## Garbage Collection with `seize` {#seize}
 
 [![seize][c~seize~docs~badge]][c~seize~docs] [![seize~crates.io][c~seize~crates.io~badge]][c~seize~crates.io] [![seize~repo][c~seize~repo~badge]][c~seize~repo] [![seize~lib.rs][c~seize~lib.rs~badge]][c~seize~lib.rs]{{hi:seize}}{{hi:Garbage}}{{hi:Concurrency}}{{hi:Rcu}}{{hi:Atomic}}{{hi:Lock-free}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
 
 [`seize`][c~seize~docs]↗{{hi:seize}} allows fast, efficient, and predictable memory reclamation for concurrent data structures.
+
+TODO add example?
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

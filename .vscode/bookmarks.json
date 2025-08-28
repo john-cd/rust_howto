@@ -1094,8 +1094,58 @@
 			"path": "bk/crates/cats/mathematics/Cargo.toml",
 			"bookmarks": [
 				{
-					"line": 33,
+					"line": 18,
 					"column": 12,
+					"label": ""
+				},
+				{
+					"line": 30,
+					"column": 13,
+					"label": ""
+				},
+				{
+					"line": 32,
+					"column": 12,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/crates/cats/gui/Cargo.toml",
+			"bookmarks": [
+				{
+					"line": 16,
+					"column": 6,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/crates/cats/science/Cargo.toml",
+			"bookmarks": [
+				{
+					"line": 29,
+					"column": 22,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/crates/cats/computer_vision/Cargo.toml",
+			"bookmarks": [
+				{
+					"line": 21,
+					"column": 12,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/crates/cats/data_structures/Cargo.toml",
+			"bookmarks": [
+				{
+					"line": 24,
+					"column": 9,
 					"label": ""
 				}
 			]
