@@ -31,3 +31,6 @@ pest_generator = "2.7.15"
 # [features]
 # default = []
 # pest = ["dep:pest", "dep:pest_derive", "dep:pest_generator"]
+
+[package.metadata.cargo-machete]
+ignored = ["pest_generator"]

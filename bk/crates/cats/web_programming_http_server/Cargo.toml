@@ -49,3 +49,6 @@ tonic-build = "0.13.0"
 # [features]
 # default = []
 # loco = ["dep:loco-rs"]
+
+[package.metadata.cargo-machete]
+ignored = ["prost", "tonic-build"]

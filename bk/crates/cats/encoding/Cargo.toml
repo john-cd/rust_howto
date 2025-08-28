@@ -56,4 +56,4 @@ prost-build = "0.13.5"
 #protobuf = ["dep:protobuf", "dep:prost", "dep:prost-types", "dep:prost-build"]
 
 [package.metadata.cargo-machete]
-ignored = ["prost", "prost-types", "prost-build"]
+ignored = ["capnpc", "prost", "prost-types", "prost-build"]

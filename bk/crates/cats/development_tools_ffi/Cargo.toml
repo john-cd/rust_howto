@@ -45,3 +45,6 @@ cbindgen = "0.29.0"
 cc = "1.2"
 # cxx-build = "1.0.136"
 # uniffi = "0.29"
+
+[package.metadata.cargo-machete]
+ignored = ["cc", "bindgen", "cbindgen"]
