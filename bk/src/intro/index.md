@@ -15,7 +15,7 @@ In particular, it provides expansive coverage of "key" or "foundational" Rust cr
 This book combines a summary of the language and key features of the standard library; a "cookbook" with a large number of code examples to accomplish common programming tasks; and numerous links to Rust resources (books, blogs, example code, videos, meetings & events, etc).
 
 - It helps you select the proper crates (Rust libraries) for your project,
-- It includes
+- It includes TODO
 
 ## The Rust Programming Language, in a Few Words
 
@@ -34,7 +34,7 @@ This book is not intended for complete beginners. Readers should have already so
 
 Per the curated list of Rust crates [`blessed.rs`][blessed-rs~website]↗, "the standard library in Rust is much smaller than in Python or Go, for example. Those languages come with "batteries included" support ... Rust, on the other hand, gets things like that from the [`crates.io`][crates.io~website]↗{{hi:crates.io}} ecosystem and the [`cargo`][c~cargo~docs]↗{{hi:cargo}} package manager. But with _more than 180 thousand crates_ (libraries) to choose from, a common complaint from new Rust developers is that they don't know where to start, which crates they ought to use, and which crates they ought to trust."
 
-There are no dominant frameworks or platforms akin to `Rails`, `Django`, `Spring` or `Node` in the Rust world at this time. Instead, Rust developers, as they gain experience, learn about
+There are no dominant frameworks or platforms akin to `Rails`, `Django`, `Spring` or `Node` in the Rust world at this time. Instead, Rust developers, as they gain experience, learn about TODO
 
 "key" or "foundational" crates, crates that are not part of the standard library but are very commonly used.
 

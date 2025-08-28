@@ -2,6 +2,10 @@
 
 ## Now
 
+- polish hashing + algorithms
+
+- polish learning.md
+
 - polish crate_selection.
 
 - polish contributing.
@@ -11,8 +15,7 @@
 - polish intro.
   - review `about` examples.
 
-- Go trough VS Code bookmarks (WSL): WIP.
-- Go trough VS Code bookmarks (dev container): WIP.
+- Go trough VS Code bookmarks.
 
 - Manually insert rest of cross-links between pages?
 

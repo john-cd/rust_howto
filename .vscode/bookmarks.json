@@ -1161,6 +1161,16 @@
 			]
 		},
 		{
+			"path": "mdbook-utils/.devcontainer/compose.override.yaml",
+			"bookmarks": [
+				{
+					"line": 16,
+					"column": 13,
+					"label": ""
+				}
+			]
+		},
+		{
 			"path": "bk/scripts/code/heavy_test.sh",
 			"bookmarks": [
 				{
