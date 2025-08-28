@@ -46,7 +46,7 @@ Modern alternative to Snowflake. Cost-effective and simple for massive-scale ana
 
 Log images, point clouds, etc, and visualize them effortlessly.
 
-## Other Frameworks {#skip}
+## Other Frameworks {#other-frameworks}
 
 - Big [Data Processing][p~data-processing] for the AI Era: [LakeSail][lakesail~website]↗.
 

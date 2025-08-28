@@ -114,7 +114,7 @@ Example `.github/workflows/<name>.yml`
     cache-provider: ""
 ```
 
-## Useful GitHub Actions {#skip}
+## Useful GitHub Actions {#useful-github-actions}
 
 FIXME
 

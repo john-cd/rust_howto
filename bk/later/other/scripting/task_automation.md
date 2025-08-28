@@ -4,25 +4,25 @@
 
 You can build simple Rust applications to automate repetitive tasks. The following tools may help:
 
-## Scheduling {#skip}
+## Scheduling {#scheduling}
 
 - [`cron`][c~cron~docs]↗{{hi:cron}} (cron-like scheduling).
 
-## External Process Management {#skip1}
+## External Process Management {#external-process-management}
 
 - [`duct`][c~duct~docs]↗{{hi:duct}}.
 - [`std::process`][c~std::process~docs]↗{{hi:std::process}} (standard library)↗.
 
 See [[external_commands | External Commands]].
 
-## Interact with Shells {#skip2}
+## Interact with Shells {#interact-with-shells}
 
 - [`shell-words`][c~shell-words~docs]↗{{hi:shell-words}} processes command line arguments according to the [parsing][p~parsing] rules of Unix shells.
 - [`shellexpand`][c~shellexpand~docs]↗{{hi:shellexpand}} is a library for shell-like expansion in strings. For example, it expands variables like `$A` or `${B}` into their values and to expand `~` in the beginning of a string into the home directory (given some context).
 
 See also [[shells | Shells]].
 
-## Related Topics {#skip4}
+## Related Topics {#related-topics}
 
 - [[command-line-interface | Command Line Interface]].
   - [[argument_parsing | Argument Parsing]].

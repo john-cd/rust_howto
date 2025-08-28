@@ -4,11 +4,11 @@
 
 Interfacing with Erlang/Elixir from Rust typically involves using ports or NIFs (Native Implemented Functions).
 
-## Ports {#skip}
+## Ports {#ports}
 
 'Ports' are the simpler approach. Rust communicates with Erlang/Elixir as a separate process using standard input/output. No specific crate is required, but you'll use [`std::process`][c~std::process~docs]↗{{hi:std::process}} in Rust and the port mechanisms in Erlang/Elixir.
 
-## NIFs (Native Implemented Functions) {#skip}
+## NIFs (Native Implemented Functions) {#nifs}
 
 FIXME find proper crate.
 
@@ -24,7 +24,7 @@ The `???` crate allows you to write NIFs in Rust. NIFs run within the Erlang VM,
 {{#include ../../../crates/cats/development_tools_ffi/examples/erlang_elixir/rustler.rs:example}}
 ```
 
-## Communication/Serialization (for both Ports and NIFs) {#skip}
+## Communication/Serialization (for both Ports and NIFs) {#communication-serialization}
 
 Use the following crates:
 
@@ -32,12 +32,12 @@ Use the following crates:
 - [`bincode`][c~bincode~docs]↗{{hi:bincode}} is a compact binary format that is often used for efficient communication.
 - [`erlang_term`][c~erlang-term~docs]{{hi:erlang_term}} converts Erlang External Term Format to Rust objects, without using Erlang NIFs.
 
-## Build Tools {#skip}
+## Build Tools {#build-tools}
 
 - [[cargo | `cargo`]] builds the Rust side of the integration.
 - [`mix`][mix~website]↗{{hi:mix}} build the Erlang/Elixir side and manage dependencies.
 
-## Other Considerations {#skip}
+## Other Considerations {#other-considerations}
 
 - Careful [error handling][p~error-handling] is crucial, especially with NIFs, as a crash in the NIF can bring down the entire Erlang VM.
 - Erlang/Elixir and Rust have different [concurrency][p~concurrency] models. You'll need to be mindful of how you manage [concurrency][p~concurrency] across the FFI boundary.- You'll need to map data types between Rust and Erlang/Elixir. The [`erlang_term`][c~erlang_term~docs]{{hi:erlang_term}} crate can help with this.

@@ -1,8 +1,8 @@
-# Clone-on-Write
+# Clone-On-Write with `Cow`
 
 {{#include cow.incl.md}}
 
-## `Cow` Use Cases {#skip}
+## Clone Data Lazily with `Cow` {#clone-data-lazily-with-cow}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:Clone-on-write}}
 

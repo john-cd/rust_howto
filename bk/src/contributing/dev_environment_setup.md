@@ -35,7 +35,7 @@ You may need `sudo apt-get install libsqlite3-dev` on WSL.
 
 Review [`.devcontainer/Dockerfile`][rust-howto~Dockerfile~repo]↗ for other dependencies.
 
-## Alternative `just` Install {#skip1}
+## Alternative `just` Install {#alternative-just-install}
 
 [`just`][c~just~docs]↗{{hi:just}}
 
@@ -44,7 +44,7 @@ sudo apt update
 apt-get -y install just
 ```
 
-## Alternative `mdbook` Install {#skip2}
+## Alternative `mdbook` Install {#alternative-mdbook-install}
 
 [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}}
 

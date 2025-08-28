@@ -80,7 +80,7 @@ The following covers portions of the Rust Standard Library that are not otherwis
 
 {{#include smart_pointers.incl.md}}
 
-### `Box`
+### Heap Storage with `Box`
 
 {{#include box.incl.md}}
 

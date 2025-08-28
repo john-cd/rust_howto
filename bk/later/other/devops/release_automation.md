@@ -11,7 +11,7 @@ The distribution of your application depends on the target platform:
 - [Containers][p~containers]: Use [`Docker`][docker~website]↗{{hi:Docker}} to create the container image, push it to a private or public registry (e.g. [`DockerHub`][dockerhub~website]↗{{hi:DockerHub}}, `GitHub Packages`); optionally pull the image to deploy it to an orchestrator (e.g. [`Kubernetes`][kubernetes~website]↗{{hi:Kubernetes}}) or a Cloud service like [`AWS`][c~aws~docs]↗{{hi:AWS}} or [`Azure`][azure~website]↗{{hi:Azure}}.
 - Packages: Create (`.deb`, `.rpm`...) packages for package management systems (e.g., Debian `dpkg`/`apt`, RPM, Flatpak, HomeBrew...) using [cargo][p~cargo] plugins like [`cargo-deb`][c~cargo-deb~docs]↗{{hi:cargo-deb}}, [`cargo-rpm`][c~cargo-rpm~docs]↗{{hi:cargo-rpm}}...
 
-## Cargo {#skip}
+## Cargo {#cargo}
 
 Cargo handles building the release binaries or packaging your Rust code in `.crate` format suitable for `crates.io`:
 
@@ -19,7 +19,7 @@ Cargo handles building the release binaries or packaging your Rust code in `.cra
 - [`cargo package`][book~cargo~cargo-package]↗{{hi:cargo package}} create a distributable, compressed .crate file with the source code of the package in the current directory. The resulting file will be stored in the `target/package` directory.
 - [`cargo publish`][book~cargo~cargo-publish]↗{{hi:cargo publish}} uploads a package to the registry (typically `crates.io`).
 
-## Publish a Crate to `crates.io` {#skip}
+## Publish a Crate to `crates.io` {#publish-to-crates-io}
 
 The following are the typical steps to release a crate to [`crates.io`][crates.io~website]↗{{hi:crates.io}}:
 

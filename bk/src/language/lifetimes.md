@@ -52,7 +52,7 @@ These rules cover many common scenarios, but you will need lifetimes in more com
 {{#include ../../crates/language/examples/lifetimes/static_lifetime.rs:example}}
 ```
 
-## Use Lifetime Parameters {#skip}
+## Use Lifetime Parameters {#use-lifetime-parameters}
 
 Lifetime parameters can be added to function or method signatures, struct definitions, enumerations, unions, `impl` blocks, type aliases, traits, in the same way that a generic type parameter or constant can be added. They are used to specify the relationships between the lifetimes of different references in the function, type, or item.
 

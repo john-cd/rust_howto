@@ -24,7 +24,7 @@ Microservices communicate with each other through well-defined APIs, promoting l
 
 Crates like [`axum`][c~axum~docs]↗{{hi:axum}}, [`warp`][c~warp~docs]↗{{hi:warp}} or [`tonic`][c~tonic~docs]↗{{hi:tonic}} can help build such services.
 
-### Key Technologies {#skip2}
+### Key Technologies {#key-technologies}
 
 - Communication: Microservices communicate over the network, commonly via REST or [[_grpc | gRPC]].
 - Service Discovery: Use a service registry (e.g., [`Consul`][consul~website]↗{{hi:Consul}}, [`etcd`][etcd~website]↗{{hi:etcd}}) to dynamically discover microservice locations.
@@ -43,7 +43,7 @@ See [[web-programming | Web Programming]], [[web-programming_http-server | Web P
 
 The hexagonal architecture, also known as the "Ports and Adapters" architecture, is a software design pattern that emphasizes separating the core business logic of an application from its external dependencies. It enables testability, flexibility, separation of concerns, and dependency inversion.
 
-### Core Concepts {#skip4}
+### Core Concepts {#core-concepts}
 
 The "Ports and Adapters" architecture divides the system into three main layers:
 
@@ -53,13 +53,13 @@ The "Ports and Adapters" architecture divides the system into three main layers:
 
 This [architecture][p~architecture] enables the core application to function independently of infrastructure and technology specifics.
 
-### Advantages {#skip5}
+### Advantages {#advantages}
 
 - Easy to swap out external systems (e.g., changing a [database][p~database] or UI framework) without affecting core logic.
 - Promotes clean and maintainable code.
 - Ideal for systems where clear boundaries and independence from external systems are important.
 
-### Use Cases {#skip6}
+### Use Cases {#use-cases}
 
 - Complex systems requiring flexibility.
 - Traditional enterprise applications with a focus on maintainability and modularity.
@@ -74,7 +74,7 @@ In an Event-driven architecture (EDA), applications communicate by producing and
 - Enable loose coupling and scalability by structuring systems around events.
 - Promote responsiveness and resilience in distributed systems.
 
-### Core Concepts {#skip8}
+### Core Concepts {#eda-core-concepts}
 
 - Event Producers and Consumers: Systems or components communicate by emitting and responding to events.
 - Event Bus/Queue: Acts as a mediator for events, often using tools like [`Kafka`][kafka~website]↗{{hi:Kafka}}, [`RabbitMQ`][rabbitmq~website]↗{{hi:RabbitMQ}}, or other message brokers.
@@ -83,13 +83,13 @@ In an Event-driven architecture (EDA), applications communicate by producing and
 
 See [[asynchronous | Asynchronous]] and [[amqp | AMQP]].
 
-### Advantages {#skip9}
+### Advantages {#eda-advantages}
 
 - Highly scalable and responsive, as components can work independently.
 - Naturally supports [asynchronous][p~asynchronous] workflows and real-time data processing.
 - Encourages microservices architecture by isolating components.
 
-### Use Cases {#skip}
+### Use Cases {#eda-use-cases}
 
 - Systems with high throughput or real-time requirements (e.g., [`financial`][c~financial~docs]↗{{hi:financial}} systems, IoT platforms, social media apps).
 - Large-scale distributed systems where scalability and availability are key.

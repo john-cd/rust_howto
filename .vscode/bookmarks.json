@@ -716,16 +716,6 @@
 			]
 		},
 		{
-			"path": "bk/src/standard_library/box.md",
-			"bookmarks": [
-				{
-					"line": 0,
-					"column": 5,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/standard_library/conversion_traits.md",
 			"bookmarks": [
 				{
@@ -738,11 +728,6 @@
 		{
 			"path": "bk/src/standard_library/cow.md",
 			"bookmarks": [
-				{
-					"line": 0,
-					"column": 13,
-					"label": ""
-				},
 				{
 					"line": 72,
 					"column": 24,
@@ -773,11 +758,6 @@
 		{
 			"path": "bk/src/standard_library/index.md",
 			"bookmarks": [
-				{
-					"line": 82,
-					"column": 3,
-					"label": ""
-				},
 				{
 					"line": 135,
 					"column": 12,

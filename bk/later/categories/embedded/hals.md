@@ -4,7 +4,7 @@
 
 The [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} crate is the most important for writing portable embedded code. You'll then choose a HAL crate specific to your microcontroller family (e.g., `stm32fxxx-hal`). PACs give you direct register access, but you'll usually work with a HAL. RTOSs are used for more complex embedded applications. [`defmt`][c~defmt~docs]↗{{hi:defmt}} is a very useful logging crate.
 
-## Key Crates {#skip}
+## Key Crates {#key-crates}
 
 - [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}}: A crucial crate that defines common traits for interacting with peripherals (GPIO, SPI, I2C, UART, etc.). This crate is essential for writing portable embedded code.
 - [`cortex-m`][c~cortex-m~docs]↗{{hi:cortex-m}}: Provides access to Cortex-M microcontroller peripherals.
@@ -22,7 +22,7 @@ Many other microcontroller families have their own HAL crates.
 
 {{#example embedded-hal}}
 
-## `rppal` {#skip}
+## `rppal` {#rppal}
 
 [![rppal][c~rppal~docs~badge]][c~rppal~docs] [![rppal~crates.io][c~rppal~crates.io~badge]][c~rppal~crates.io] [![rppal~repo][c~rppal~repo~badge]][c~rppal~repo] [![rppal~lib.rs][c~rppal~lib.rs~badge]][c~rppal~lib.rs]{{hi:rppal}}{{hi:Embedded-hal}}{{hi:Embedded-hal-impl}}{{hi:Hal}}{{hi:Pi}}{{hi:Raspberry}} [![cat~hardware-support][cat~hardware-support~badge]][cat~hardware-support]{{hi:Hardware support}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}}
 

@@ -60,7 +60,7 @@ While tools like 'SWIG' exist, [`cxx`][c~cxx~docs]↗{{hi:cxx}} is generally pre
 {{#include ../../../crates/cats/development_tools_ffi/examples/uniffi.rs:example}}
 ```
 
-## FFI Caveats {#skip}
+## FFI Caveats {#ffi-caveats}
 
 - FFI code often requires _unsafe_ blocks because the Rust compiler cannot guarantee the safety of interactions with foreign code.
 - Memory Management across FFI boundaries requires careful consideration. It often involves using [`Box::into_raw`][c~std::boxed::Box:into_raw~docs]↗{{hi:Box::into_raw}} and `Box::from_raw` to transfer ownership of memory between Rust and C.
@@ -68,11 +68,11 @@ While tools like 'SWIG' exist, [`cxx`][c~cxx~docs]↗{{hi:cxx}} is generally pre
 
 ## Related Topics {#related-topics}
 
-### C / C++ Build Integration {#skip1}
+### C / C++ Build Integration {#c-cpp-build-integration}
 
 [`cc`][c~cc~docs]↗{{hi:cc}} helps with compiling C/C++ code within your Rust build script ([`build.rs`][book~cargo~build-script]↗{{hi:build.rs}}). This is often necessary when working with FFI or C++ bindings. See [[build_time_tooling | Build Time Tooling]].
 
-### Utilities {#skip2}
+### Utilities {#utilities}
 
 - [`std::ffi`][c~std::ffi~docs]↗{{hi:std::ffi}} provides types for interacting with C code, like `CString`, `CStr`, `c_char`, etc.
   - Use `std::ffi::CString`, `std::ffi::CStr` for converting between Rust [strings][p~strings] and C strings.

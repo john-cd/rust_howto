@@ -1,4 +1,4 @@
-# Box
+# Heap Storage with `Box`
 
 {{#include box.incl.md}}
 

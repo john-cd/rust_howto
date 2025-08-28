@@ -2,12 +2,12 @@
 
 {{#include software_architecture_process.incl.md}}
 
-## Define Objectives and Requirements {#skip}
+## Define Objectives and Requirements {#define-objectives-and-requirements}
 
 - Identify the purpose of the project (e.g., [[web-programming | web]]  service, [[embedded | embedded]] system, [[command-line-interface | CLI]] tool, etc.).
 - List functional and non-functional requirements (e.g., performance, scalability, maintainability...).
 
-## Choose a Project Structure {#skip}
+## Choose a Project Structure {#choose-a-project-structure}
 
 - Use Rust's [[modules | module]] system for code organization.
 - A common structure is as follows:
@@ -27,13 +27,13 @@ tests/            (integration tests)
 
 - Large projects may benefit from dependency injection, promoting modularity and testability.
 
-## Design System Components {#skip}
+## Design System Components {#design-system-components}
 
 - Core [Modules][p~modules]: Define the core business logic of the system. Use [[traits | Traits]] for abstraction and flexibility.
 - Data Models: Design type-safe models using Rust's [[structs | `struct`]]s and [[enums | `enum`]]s.
 - [Concurrency][p~concurrency] and Asynchrony: Leverage tools like [`tokio`][c~tokio~docs]↗{{hi:tokio}} for [[asynchronous | asynchronous]] tasks.
 
-## Choose Key Technologies {#skip}
+## Choose Key Technologies {#choose-key-technologies}
 
 - Determine the necessary Rust libraries and external integrations.
 - Use this book!
@@ -50,7 +50,7 @@ Cross-cutting concerns:
 - [Database][p~database]: Use [`sqlx`][c~sqlx~docs]↗{{hi:sqlx}} or [`diesel`][c~diesel~docs]↗{{hi:diesel}} for interacting with databases.
 - Logging: Use [`tracing`][c~tracing~docs]↗{{hi:tracing}} or [`log`][c~log~docs]↗{{hi:log}} for structured logging.
 
-## Handle Error Management {#skip}
+## Handle Error Management {#handle-error-management}
 
 - Use Rust's [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} and [`Option`][c~std::option::Option~docs]↗{{hi:std::option::Option}} types to handle errors gracefully.
 - Create custom error types using [`thiserror`][c~thiserror~docs]↗{{hi:thiserror}} and use [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} for descriptive error messages.
@@ -60,13 +60,13 @@ See:
 - [[error_handling | Error Handling]].
 - [[error_customization | Error Customization]].
 
-## Ensure Security {#skip}
+## Ensure Security {#ensure-security}
 
 - Safe [[concurrency | Concurrency]]: Avoiding data races with Rust's ownership model.
 - [[cryptography | Cryptography]]: Using crates like [`ring`][c~ring~docs]↗{{hi:ring}} or the [`rust-crypto`][c~rust-crypto~docs]↗{{hi:rust-crypto}} suite.
 - [[authentication | Authentication]].
 
-## Ensure Test Coverage {#skip}
+## Ensure Test Coverage {#ensure-test-coverage}
 
 - Write unit tests using `#[test]` in individual modules.
 - Include integration tests for component interaction.
@@ -74,7 +74,7 @@ See:
 
 See [[testing | Testing]].
 
-## Optimize Performance {#skip}
+## Optimize Performance {#optimize-performance}
 
 - Profile and benchmark using [`criterion`][c~criterion~docs]↗{{hi:criterion}} or other profiling tools.
 - Minimize [memory allocation][p~memory-allocation] and leverage Rust's zero-cost abstractions.
@@ -85,7 +85,7 @@ See [[testing | Testing]].
 
 See [[performance | Performance]] and [[development-tools_profiling | Profiling]].
 
-## Deployment and Operations {#skip}
+## Deployment and Operations {#deployment-and-operations}
 
 - [[building | Build]]  the project using `cargo build`.
 - Containerize with Docker or deploy to a platform like [AWS][p~aws], GCP, or Azure.

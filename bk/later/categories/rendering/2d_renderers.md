@@ -6,7 +6,7 @@ A 2D renderer is a software component that generates two-dimensional [images][p~
 
 Two essential components of 2D [rendering][p~rendering] are rasterization and anti-aliasing. Rasterization involves converting vector-based graphic images into raster images, which consist of grids of pixels. Anti-aliasing, on the other hand, is a technique used to smooth the edges of images to reduce jaggedness or pixelation.
 
-## Choosing the Right Library {#skip}
+## Choosing the Right Library {#chooing-the-right-library}
 
 [`raqote`][c~raqote~docs]↗{{hi:raqote}} is a fast, pure Rust 2D graphics library. [`tiny-skia`][c~tiny-skia~docs]↗{{hi:tiny-skia}} is another good option. [`cairo-rs`][c~cairo~docs]↗{{hi:cairo-rs}} provides bindings to the Cairo library. |
 
@@ -18,22 +18,22 @@ Most 2D projects will find [`raqote`][c~raqote~docs]↗{{hi:raqote}} or [`tiny-s
 - Vector Path Generation: [`lyon`][c~lyon~docs]↗{{hi:lyon}}.
 - High Performance 2D/3D (using GPU): [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} (but more complex).
 
-## Topics {#skip1}
+## Topics {#topics}
 
 - Sprite Rendering.
 - Vector Graphics.
 - Text Rendering.
 - Canvas Drawing.
 
-## Pixel-Based (Raster) 2D Rendering {#skip2}
+## Pixel-Based (Raster) 2D Rendering {#pixel-based-2d-rendering}
 
 See [[2d_raster_graphics | 2D Raster Graphics]].
 
-## Vector-Based 2D Rendering {#skip3}
+## Vector-Based 2D Rendering {#vector-based-2d-rendering}
 
 See [[2d_vector_graphics | 2D Vector Graphics]].
 
-## Hybrid (Raster and Vector) {#skip4}
+## Hybrid (Raster and Vector) {#hybrid}
 
 While primarily a low-level, [cross-platform][p~cross-platform] GPU API, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is capable of rasterization and can be used to draw both raster and vector graphics. It's very powerful and performant but requires more setup and code compared to the higher-level libraries. You'd use [`lyon`][c~lyon~docs]↗{{hi:lyon}} to generate vector paths and then [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} to render them.
 
@@ -59,7 +59,7 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 {{#include ../../../crates/cats/gui/examples/2d_renderers/webrender.rs:example}}
 ```
 
-## Other Renderers {#skip5}
+## Other Renderers {#other-renderers}
 
 ## `vello` {#vello}
 
@@ -71,7 +71,7 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 {{#include ../../../crates/cats/gui/examples/2d_renderers/vello.rs:example}}
 ```
 
-## Related Topics {#skip6}
+## Related Topics {#related-topics}
 
 - [[color_handling | Color Handling]].
 - Image Loading and Manipulation: see [[multimedia_images | Multimedia: Images]].
@@ -81,13 +81,13 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 - [[svg_rendering | SVG Rendering]].
 - [[text_rendering | Text Rendering]].
 
-### Applications {#skip7}
+### Applications {#applications}
 
 - [[game-development | Game Development]].
 - [[game_engines | Game Engines]].
 - UI with 2D [Graphics][p~graphics]: see [[gui | GUI]].
 
-## See Also {#skip8}
+## See Also {#see-also}
 
 - [Are we Game yet? 2D Rendering][are-we-game-yet?-2drendering~website]↗: Sprites, vectors, splines, hex grids and more.
 

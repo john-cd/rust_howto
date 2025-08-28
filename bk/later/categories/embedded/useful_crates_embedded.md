@@ -22,7 +22,7 @@
 
 [`portable-atomic`][c~portable-atomic~docs]↗{{hi:portable-atomic}} provides portable atomic types, including support for 128-bit atomics, atomic float, etc.
 
-## Other Useful Crates {#skip}
+## Other Useful Crates {#other-useful-crates}
 
 - [`nb`][c~nb~docs]↗{{hi:nb}}: Non-blocking I/O helpers.
 - [`defmt`][c~defmt~docs]↗{{hi:defmt}}: A logging framework designed for embedded systems.

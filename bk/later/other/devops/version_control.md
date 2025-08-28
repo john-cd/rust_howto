@@ -65,7 +65,7 @@ pre-commit install
 pre-commit run --all-files
 ```
 
-## Useful Git Hooks for Rust {#skip}
+## Useful Git Hooks for Rust {#useful-git-hooks-for-rust}
 
 FIXME.
 
@@ -73,7 +73,7 @@ FIXME.
 - [`cargo check`][book~cargo~cargo-check]↗{{hi:cargo check}}, clippy, test...
 - spell checks.
 
-## Related Topics
+## Related Topics {#related-topics}
 
 - [[development-tools_testing | Development Tools Testing]].
 - [[development-tools_cargo-plugins | Development Tools Cargo Plugins]].
@@ -81,7 +81,7 @@ FIXME.
   - [[code_formatting_linting | Code Formatting & Linting]].
   - [[versioning | Versioning]].
 
-## See Also
+## See Also {#see-also}
 
 - [Rust CI Tooling][rust-ci-tooling~website]↗: Clippy, commitlint, pre-commit.
 - [`pre-commit-rust`][pre-commit-rust~repo].

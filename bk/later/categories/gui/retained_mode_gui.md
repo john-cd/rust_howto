@@ -34,7 +34,7 @@
 {{#include ../../../crates/cats/gui/examples/retained_mode_gui/vizia.rs:example}}
 ```
 
-## Other GUI Frameworks {#skip}
+## Other GUI Frameworks {#other-gui-frameworks}
 
 ### `slint` {#slint}
 

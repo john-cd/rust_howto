@@ -2,7 +2,7 @@
 
 {{#include generics.incl.md}}
 
-## Generics Syntax {#skip}
+## Generics Syntax {#generics-syntax}
 
 [![Rust by example - Generics][book~rust-by-example~generics~badge]][book~rust-by-example~generics]{{hi:Generics}}
 

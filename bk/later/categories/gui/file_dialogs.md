@@ -16,11 +16,11 @@ For most common file dialog needs, [`rfd`][c~rfd~docs]↗{{hi:rfd}} is the recom
 {{#include ../../../crates/cats/gui/examples/file_dialogs/rfd.rs:example}}
 ```
 
-## GUI Framework Integration {#skip}
+## GUI Framework Integration {#gui-framework-integration}
 
 Some [GUI][p~gui] frameworks, like [`iced`][c~iced~docs]↗{{hi:iced}} or [`egui`][c~egui~docs]↗{{hi:egui}}, have their own file dialog integration, but they often use the underlying [`rfd`][c~rfd~docs]↗{{hi:rfd}} crate or similar.
 
-## WebAssembly (WASM) Considerations {#skip}
+## WebAssembly (WASM) Considerations {#webassembly-wasm-considerations}
 
 File dialogs in [WASM][p~wasm] are restricted due to security reasons. You'll typically need to use JavaScript APIs to interact with file systems in a WASM context. Crates like [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} can be used for this purpose.
 

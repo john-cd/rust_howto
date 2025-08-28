@@ -111,7 +111,7 @@ Both `impl Trait` and `dyn Trait` allow you to work with types that implement a 
 
 See [[impl_trait | Impl Trait]] for more details.
 
-## Trait Object Restrictions {#skip}
+## Trait Object Restrictions {#trait-object-restrictions}
 
 ### Trait Objects Can Have Only One Base Trait {#only-one-base-trait}
 

@@ -127,7 +127,7 @@ Patterns can bind parts of a matched value to new variables:
 {{#include ../../crates/language/examples/match/variable_binding.rs:example}}
 ```
 
-### Destructure {#skip}
+### Destructure {#destructure}
 
 Patterns can destructure structs, enums, tuples, and references.
 

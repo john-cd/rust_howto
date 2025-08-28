@@ -44,7 +44,7 @@ You can use a custom hash function with [`HashMap`][c~std::collections::HashMap~
 {{#include ../../../crates/cats/data_structures/examples/hashmap/custom_hash_function.rs:example}}
 ```
 
-## Related Data Structures {#skip}
+## Related Data Structures {#related-data-structures}
 
 - [[btrees | B-trees]].
 - [[maps | Other Maps]].

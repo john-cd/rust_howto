@@ -14,11 +14,11 @@ In most cases, the [`arboard`][c~arboard~docs]↗ crate will be all you need for
 {{#include ../../../crates/cats/gui/examples/clipboard/arboard.rs:example}}
 ```
 
-## GUI Framework Integration {#skip}
+## GUI Framework Integration {#gui-framework-integration}
 
 Some [GUI][p~gui] frameworks, like [`iced`][c~iced~docs]↗{{hi:iced}} or [`egui`][c~egui~docs]↗{{hi:egui}}, have their own clipboard integration.
 
-## WebAssembly (WASM) Considerations {#skip}
+## WebAssembly (WASM) Considerations {#webassembly-wasm-considerations}
 
 Clipboard access in [WASM][p~wasm] is restricted due to security reasons. You'll typically need to use JavaScript APIs to interact with the clipboard in a WASM context. Crates like [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} would be used for this JavaScript interop.
 

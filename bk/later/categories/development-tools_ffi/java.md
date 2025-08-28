@@ -20,23 +20,23 @@
 
 Interfacing with Java from Rust is typically done using the Java Native Interface (JNI). Here's a breakdown:
 
-## JNI Bindings {#skip}
+## JNI Bindings {#jni-bindings}
 
 jni: This is the primary crate for working with JNI in Rust. It provides bindings to the JNI API and helps with managing Java objects, calling Java methods, and handling exceptions.
 Code Generation (Often Needed):
 
 You'll often need to generate some boilerplate code to bridge between Rust and Java. There isn't one single tool that does this perfectly, and it can be a manual process or involve custom scripting. jni-rs (mentioned below) can help.)
 
-## jni-rs (Helpful Tool) {#skip}
+## jni-rs (Helpful Tool) {#jni-rs}
 
 While not a binding generator in the traditional sense, jni-rs provides helpful [macros][p~macros] and utilities to make writing JNI code in Rust easier. It simplifies many common JNI tasks.
 
-## Build Tools {#skip}
+## Build Tools {#build-tools}
 
 cargo: (For building the Rust library.)
 Maven or Gradle: (For building the Java side and integrating with the Rust library.)
 
-## Key Concepts and Workflow {#skip}
+## Key Concepts and Workflow {#key-concepts-and-workflow}
 
 JNI: You'll write Rust code that interacts with the JNI API to call Java methods, access Java fields, and create Java objects.
 Native Methods: You'll define native methods in Java that are implemented in Rust.

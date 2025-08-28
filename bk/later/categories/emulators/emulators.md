@@ -8,13 +8,13 @@
 {{#include ../../../crates/cats/emulators/examples/emulators/emulator.rs:example}}
 ```
 
-## Virtual Machines / CPU Emulators {#skip}
+## Virtual Machines / CPU Emulators {#virtual-machines-cpu-emulators}
 
 Mention [`polkavm`][c~polkavm~docs]{{hi:polkavm}} (used in smart contracts, etc.) - ~500k downloads.
 
 PolkaVM is a general purpose user-level RISC-V based virtual machine. This project is still unfinished and is a very heavy work-in-progress.
 
-## ROM Loading {#skip}
+## ROM Loading {#rom-loading}
 
 [`ihex`][c~ihex~docs]↗{{hi:ihex}} is a Rust library for [parsing][p~parsing] and generating Intel HEX (or IHEX) objects. This format is commonly used for representing compiled program code and data to be loaded into a microcontroller, flash memory or ROM.
 

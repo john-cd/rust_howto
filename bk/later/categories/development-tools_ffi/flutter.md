@@ -6,7 +6,7 @@ Interfacing with Flutter/Dart from Rust is primarily done using FFI (Foreign Fun
 
 The [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_bridge}} crate is the most important crate. It significantly simplifies the process of creating and managing the FFI bridge between Rust and Flutter/Dart. It's highly recommended to use it unless you have very specific low-level FFI needs.
 
-## Rust Side {#skip1}
+## Rust Side {#rust-side}
 
 [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_bridge}}: This crate aims to simplify the FFI interaction between Dart and Rust. It handles a lot of the boilerplate and code generation. This is the strongly recommended approach.
 
@@ -14,7 +14,7 @@ The [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_brid
 
 [`cbindgen`][c~cbindgen~docs]↗{{hi:cbindgen}}: Useful if you're working with C code as an intermediary, although [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_bridge}} generally handles this for you.
 
-## Dart/Flutter Side {#skip2}
+## Dart/Flutter Side {#dart-flutter-side}
 
 - 'ffi': (Dart's FFI package for interacting with native code.)
 
@@ -30,7 +30,7 @@ The [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_brid
 {{#include ../../../crates/cats/development_tools_ffi/examples/flutter/flutter_rust_bridge.rs:example}}
 ```
 
-## Communication Between Rust and Dart {#skip3}
+## Communication Between Rust and Dart {#communication-between-rust-and-dart}
 
 You'll serialize data in Rust and deserialize it in Dart, or vice-versa.
 
@@ -39,7 +39,7 @@ You'll serialize data in Rust and deserialize it in Dart, or vice-versa.
 
 For more complex interactions, you might use platform channels, but [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_bridge}} often abstracts this away.
 
-## Build Tools {#skip4}
+## Build Tools {#build-tools}
 
 Use:
 

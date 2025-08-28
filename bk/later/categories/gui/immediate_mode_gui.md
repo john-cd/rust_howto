@@ -4,13 +4,13 @@
 
 For almost all cases where you want an immediate mode [GUI][p~gui] in Rust, [`egui`][c~egui~docs]↗{{hi:egui}} is the recommended choice. It's well-featured, performant, and has a great community.
 
-## Key Concepts {#skip}
+## Key Concepts {#key-concepts}
 
 - Immediate mode GUIs redraw the entire UI on every frame. This simplifies the API but can be less efficient for very complex UIs.
 - You'll manage the UI state directly in your application code. The [GUI][p~gui] library doesn't maintain an internal representation of the UI.
 - Immediate-mode GUIs are often used in a declarative style, where you describe the [UI layout][p~ui-layout] and elements in your code, and the GUI library handles the rendering.
 
-## Use Cases {#skip}
+## Use Cases {#use-cases}
 
 - Tools: Immediate mode GUIs are often used for creating tools and editors because they are easy to prototype and iterate on.
 - [Games][p~games]: The [performance][p~performance] of immediate mode GUIs makes them suitable for game UIs.
@@ -35,11 +35,11 @@ For almost all cases where you want an immediate mode [GUI][p~gui] in Rust, [`eg
 {{#include ../../../crates/cats/gui/examples/immediate_mode_gui/egui.rs:example}}
 ```
 
-## Integration with Rendering {#skip1}
+## Integration with Rendering {#integration-with-rendering}
 
 Immediate mode [GUI][p~gui] libraries often need to be integrated with a [rendering][p~rendering] backend. [`egui`][c~egui~docs]↗{{hi:egui}} has its own renderers for various platforms and backends, including [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`glow`][c~glow~docs]↗{{hi:glow}}, and others.
 
-## Other Immediate Mode GUI Libraries {#skip2}
+## Other Immediate Mode GUI Libraries {#other-immediate-mode-gui-libraries}
 
 - `imgui` provides Rust bindings for `Dear ImGui`.
 - [`conrod`][c~conrod~docs]↗{{hi:conrod}} is an older immediate mode [GUI][p~gui] library.

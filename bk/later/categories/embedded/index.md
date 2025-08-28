@@ -77,20 +77,20 @@ Microcontrollers respond to events via interrupts.
 - [awesome-embedded-rust][awesome-embedded-rust~repo]↗: Curated list of resources for Embedded and Low-level development in the Rust programming language,
 - [Are We RTOS Yet?][arewertosyet~website]↗.
 
-## Libs {#skip}
+## Libs {#libs}
 
 - [embassy][embassy~repo]↗: Modern embedded framework, using Rust and async.
 - [rust-iot-platform][rust-iot-platform~repo]↗: A high-performance IoT development platform built with Rust, designed for multi-protocol support and real-time data processing. This platform supports MQTT, WebSockets (WS), TCP, and CoAP protocols, making it highly flexible for diverse IoT applications.
 - [stm32-rs][stm32-rs~repo]↗: Embedded Rust device crates for STM32 microcontrollers.
 - [rtic][c~rtic~repo]↗: Real-Time Interrupt-driven Concurrency (RTIC) framework for ARM Cortex-M microcontrollers.
 
-## Panic Handling {#skip}
+## Panic Handling {#panic-handling}
 
 - [better-panic][better-panic~repo]↗: A Python-inspired `panic` handler for rust.
 - [No-Panic Rust][blog~no-panic]↗: A Nice Technique for Systems Programming.
 - [no-panics-whatsoever (crates.io)][c~no-panics-whatsoever~crates.io]↗.
 
-## Embedded {#skip}
+## Embedded {#embedded}
 
 - [5 Rust Runtimes Every Embedded Developer Needs to Know][blog~5-rust-runtimes-every-embedded-developer-needs-to-know]↗.
 - [`drone-os.com`][drone-os~website]↗.

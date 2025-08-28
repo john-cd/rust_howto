@@ -41,7 +41,7 @@ Writes some data to a file, then calculates the SHA-256{{hi:SHA-256}} [`digest::
 {{#include ../../../crates/cats/algorithms/examples/hashing/sha_digest.rs:example}}
 ```
 
-## Use General-purpose Hashing Algorithms {#skip1}
+## Use General-purpose Hashing Algorithms {#general-purpose-hashing-algorithms}
 
 For more [[algorithms | algorithms]], see Rust Crypto Hashes: sha2{{hi:sha2}}, sha1{{hi:sha1}}, md-5{{hi:md-5}}
 

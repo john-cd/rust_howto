@@ -20,11 +20,11 @@
 
 Interfacing with Objective-C from Rust is primarily done using the [`objc`][c~objc~docs]↗{{hi:objc}} crate and related tools. Here's a breakdown:
 
-## Objective-C Runtime Bindings {#skip}
+## Objective-C Runtime Bindings {#objc-runtime-bindings}
 
 objc: This is the core crate for interacting with the Objective-C runtime. It provides access to Objective-C classes, methods, and objects. It handles a lot of the low-level details of Objective-C interaction.
 
-## Code Generation (Often Needed) {#skip1}
+## Code Generation (Often Needed) {#code-generation}
 
 objc_foundation: Provides bindings for the Foundation framework classes (NSString, NSArray, etc.). Often used in conjunction with objc.
 
@@ -37,7 +37,7 @@ Build Tools:
 cargo: (For building the Rust library.)
 Xcode: (For building the Objective-C/Swift side and integrating with the Rust library. You'll typically create a framework or library that includes your Rust code.)
 
-## Key Concepts and Workflow {#skip2}
+## Key Concepts and Workflow {#key-concepts-and-workflow}
 
 Objective-C Runtime: You'll use the [`objc`][c~objc~docs]↗{{hi:objc}} crate to interact with the Objective-C runtime.
 Messaging: You'll send messages to Objective-C objects using the [`objc`][c~objc~docs]↗{{hi:objc}} crate.
