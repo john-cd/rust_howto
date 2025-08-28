@@ -4,8 +4,8 @@
 //! Simple Rust example using the `nix` crate to handle Unix-like operating
 //! system tasks: create a file, write to it, read from it, and delete it.
 
-// Raw file descriptor:
-use std::os::fd::RawFd;
+// File descriptor:
+use std::os::fd::OwnedFd;
 
 // Configuration options for opened files:
 use nix::fcntl::OFlag;
@@ -22,13 +22,15 @@ use nix::unistd::read;
 use nix::unistd::unlink;
 // Write to a raw file descriptor:
 use nix::unistd::write;
+use rustix::fd::AsFd;
+use rustix::fd::BorrowedFd;
 
 fn main() -> nix::Result<()> {
     let path = "example.txt";
     let data = b"Hello, nix!";
     {
         // Create and open a file.
-        let rfd: RawFd = open(
+        let rfd: OwnedFd = open(
             path,
             // Create the file if it does not exist. Only allow writing:
             OFlag::O_CREAT | OFlag::O_WRONLY,
@@ -36,27 +38,23 @@ fn main() -> nix::Result<()> {
             Mode::S_IRUSR | Mode::S_IWUSR,
         )?;
 
+        let borrowed_fd: BorrowedFd<'_> = rfd.as_fd();
         // Write to the file:
-        unsafe {
-            write(std::os::fd::BorrowedFd::borrow_raw(rfd), data)?;
-        }
+        write(borrowed_fd, data)?;
 
         // Close the file.
         close(rfd)?;
     }
     {
         // Open the file for reading:
-        let rfd2: RawFd = open(path, OFlag::O_RDONLY, Mode::empty())?;
+        let fd2: OwnedFd = open(path, OFlag::O_RDONLY, Mode::empty())?;
 
         // Read from the file:
         let mut buffer: Vec<u8> = vec![0; data.len()];
-        read(rfd2, &mut buffer)?;
+        read(fd2, &mut buffer)?;
 
         // Print the content of the file:
         println!("{}", String::from_utf8_lossy(&buffer));
-
-        // Close the file.
-        close(rfd2)?;
     }
     // Delete the file.
     unlink(path)?;
