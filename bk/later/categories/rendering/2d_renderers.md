@@ -6,7 +6,7 @@ A 2D renderer is a software component that generates two-dimensional [images][p~
 
 Two essential components of 2D [rendering][p~rendering] are rasterization and anti-aliasing. Rasterization involves converting vector-based graphic images into raster images, which consist of grids of pixels. Anti-aliasing, on the other hand, is a technique used to smooth the edges of images to reduce jaggedness or pixelation.
 
-## Choosing the Right Library {#chooing-the-right-library}
+## Choosing the Right Library {#choosing-the-right-library}
 
 [`raqote`][c~raqote~docs]↗{{hi:raqote}} is a fast, pure Rust 2D graphics library. [`tiny-skia`][c~tiny-skia~docs]↗{{hi:tiny-skia}} is another good option. [`cairo-rs`][c~cairo~docs]↗{{hi:cairo-rs}} provides bindings to the Cairo library. |
 
