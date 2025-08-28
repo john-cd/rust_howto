@@ -1,6 +1,6 @@
 ||
 |--------|
-| [Trait Syntax][ex~language~trait] |
+| [Trait Syntax][ex~language~trait-syntax] |
 | [Provide a Default Implementation for a Trait's Function or Method][ex~language~default-implementation] |
 | [Define Associated Types in Traits][ex~language~associated-types] |
 | [Define Associated Constants in Traits][ex~language~constants-in-traits] |

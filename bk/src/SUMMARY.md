@@ -78,12 +78,16 @@
   - [UUIDs](categories/data-structures/uuid.md)
 
 - [File System](categories/filesystem/index.md)
+  - [Paths](categories/filesystem/paths.md)
   - [File Reading & Writing](categories/filesystem/read_write.md)
   - [Directories](categories/filesystem/directories.md)
   - [Directory Traversal](categories/filesystem/directory_traversal.md)
+  - [Metadata](categories/filesystem/metadata.md)
+  - [Stdin & Stdout](categories/filesystem/stdin_stdout.md)
   - [File Watching](categories/filesystem/file_watching.md)
   - [Temporary Files and Directories](categories/filesystem/tempfile.md)
   - [User Directories](categories/filesystem/user_directories.md)
+  - [Symbolic Links](categories/filesystem/symbolic_links.md)
 
 - [Mathematics](categories/mathematics/index.md)
   - [Linear Algebra](categories/mathematics/linear_algebra.md)

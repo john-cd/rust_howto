@@ -401,3 +401,4 @@
 [p~links]: ../links/index.md
 [p~standard-library]: ../standard_library/index.md
 [p~word-index]: ../word_index.md
+[ex~rust_install~rust-install]: ../rust_install/index.md#rust-install
