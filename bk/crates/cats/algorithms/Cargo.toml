@@ -16,18 +16,18 @@ autolib = false
 
 [dependencies]
 rand = "0.9.0"
-rand_distr = "0.5.0"
+rand_distr = "0.5.1"
 fastrand = "2.3.0"
-blake3 = "1.5.5"
+blake3 = "1.8.2"
 md5 = "0.8.0"
 sha1 = "0.10.6"
-sha2 = "0.10.8"
+sha2 = "0.10.9"
 ring = "0.17.14"
 
 ## General
 anyhow = "1.0.95"
-base64ct = { version =  "1.6.0", features = [ "alloc" ] }
+base64ct = { version =  "1.8.0", features = [ "alloc" ] }
 base16ct = { version = "0.3.0", features = [ "alloc" ] }
-data-encoding = "2.6.0"
+data-encoding = "2.9.0"
 hex-literal = "1.0.0"
-tempfile = "3.16.0"
+tempfile = "3.21.0"
