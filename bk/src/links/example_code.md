@@ -32,21 +32,21 @@ Reading code is the fastest way to learn idiomatic Rust. Use the following links
 - [`rustrepo.com`][rustrepo~website]↗: A curated list of awesome Rust resources.
 - [Top 100 Best GitHub Repositories for Rust][bestofgithub-rust~website]↗.
 
-### "RealWorld" Examples
+### "RealWorld" Examples {#realworld-examples}
 
 The ["Real World" Example App][realworld~example-apps]↗ [(website)][docs.realworld.build~website]↗, dubbed "the mother of all demo apps", is a fullstack [`medium.com`][medium.com~website]↗ clone implemented in many languages and frameworks. A list of Rust implementations is [found here][realworld-rust~website]↗.
 
 For example, [`realworld-rust-axum-sqlx`][realworld~rust-axum-sqlx~repo]↗ is a full-stack RealWorld implementation using [`axum`][c~axum~docs]↗{{hi:axum}}, [`sqlx`][c~sqlx~docs]↗{{hi:sqlx}}, and [`yew`][c~yew~docs]↗{{hi:yew}}.
 
-### ChromeOS Virtual Machine Monitor
+### ChromeOS Virtual Machine Monitor {#crosvm}
 
 The ChromeOS Virtual Machine Monitor [(github)][crosvm~repo]↗ is written in Rust, with over 300k LoC. Its repository contains many well-documented crates. There is a [book][book~crosvm]↗ and thorough [documentation][crosvm~docs~website]↗ for all crates.
 
-### Build Your Own X
+### Build Your Own X {#build-your-own-x}
 
 [Build Your Own X][build-your-own-x~repo]↗ is a compilation of well-written, step-by-step guides for re-creating your favorite technologies from scratch. It includes several Rust projects.
 
-### Source Code for Rust Books
+### Source Code for Rust Books {#source-code-for-rust-books}
 
 You may also consult the code examples from various Rust books:
 

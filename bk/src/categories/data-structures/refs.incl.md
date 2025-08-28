@@ -18,6 +18,7 @@
 [ex~data-structures~placeholders]: strings.md#placeholders
 [ex~data-structures~priority-queue]: binaryheap.md#priority-queue
 [ex~data-structures~queue]: stack_and_queue.md#queue
+[ex~data-structures~related-data-structures]: strings.md#related-data-structures
 [ex~data-structures~slotmap]: maps.md#slotmap
 [ex~data-structures~smallvec]: stack_allocated_arrays.md#smallvec
 [ex~data-structures~stack]: stack_and_queue.md#stack

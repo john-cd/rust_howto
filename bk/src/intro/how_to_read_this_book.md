@@ -22,13 +22,13 @@ If you are simply looking for the solution to a given task, the easiest ways to 
 - Look up into the [word index][p~word-index] lists concepts, crates (in lower case), and Rust items (using their full path e.g. [`parking_lot::ReentrantMutex`][c~parking_lot::ReentrantMutex~docs]↗{{hi:parking_lot::ReentrantMutex}}),
 - Consult the [[crates_alphabetical | alphabetical]] and [[crates_by_category | categorical]] crates indices.
 
-## Important Sections
+## Important Sections {#important-sections}
 
 - The book covers cross-cutting concerns that affect most aspects of development e.g. [[error_handling | error handling]], [[error_customization | error customization]], [[config | configuration]], [[development-tools_debugging | debugging]]...
 - [[concurrency | Concurrency]], including [[asynchronous | asynchronous programming]], is covered in details.
 - So are [[development tools]] and programming domains such as [[command-line-interface | CLI]] and [[web_programming | Web]] development.
 
-## How to Use the Code Examples
+## How to Use the Code Examples {#how-to-use-code-examples}
 
 Code examples, a.k.a. recipes, are designed to give you instant access to working code, along with a full explanation of what it is doing, and to guide you to further information. All recipes are self-contained programs, so that they may be copied directly into your own projects for experimentation. To do so, follow the instructions below.
 
@@ -61,7 +61,7 @@ cargo run
 
 The crate badges that accompany the examples link to the crates' full documentation on [`docs.rs`][docs.rs~website]↗{{hi:docs.rs}}, and is often the next documentation you should read after deciding which crate suites your purpose.
 
-## A Note about Error Handling
+## A Note about Error Handling {#note-about-error-handling}
 
 Error handling in Rust is robust when done correctly, but can require a fair bit of boilerplate. Because of this, one often sees Rust examples filled with [`unwrap`][c~std::result::Result::unwrap~docs]↗{{hi:unwrap}} calls, instead of proper error handling.
 
@@ -81,11 +81,11 @@ Within the code, we use the [`?`][book~rust~ch09-02-recoverable-errors-with-resu
 
 For more background on error handling in Rust, read [this page][book~rust~error-handling]↗ of the 'Rust book'.
 
-## Additional Examples
+## Additional Examples {#additional-examples}
 
 The [`xmpl`][rust-howto~xmpl~repo]↗ folder in the book's GitHub repo contains additional examples that can't be embedded into the book, due to their length.
 
-## A Note about Crate Representation
+## A Note about Crate Representation {#note-about-crate-representation}
 
 This book provides expansive coverage of "key" or "foundational" crates - the crates that make up the most common programming tasks, and that the rest of the ecosystem builds off of.
 

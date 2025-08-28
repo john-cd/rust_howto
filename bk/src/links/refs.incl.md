@@ -2,6 +2,7 @@
 [ex~links~async]: books.md#async
 [ex~links~blogs]: blogs.md#blogs
 [ex~links~book-lists]: books.md#book-lists
+[ex~links~build-your-own-x]: example_code.md#build-your-own-x
 [ex~links~chat]: blogs.md#chat
 [ex~links~cheatsheets]: rust_cheatsheets.md#cheatsheets
 [ex~links~cli]: books.md#cli
@@ -11,6 +12,7 @@
 [ex~links~concurrency-parallelism]: books.md#concurrency-parallelism
 [ex~links~conferences]: meetings.md#conferences
 [ex~links~courses]: learning.md#courses
+[ex~links~crosvm]: example_code.md#crosvm
 [ex~links~data-analysis]: books.md#data-analysis
 [ex~links~design-patterns]: books.md#design-patterns
 [ex~links~embedded]: books.md#embedded
@@ -26,6 +28,7 @@
 [ex~links~interpreters]: books.md#interpreters
 [ex~links~jobs]: companies.md#jobs
 [ex~links~learning-roadmap]: learning.md#learning-roadmap
+[ex~links~lists-of-rust-links-and-resources]: learning.md#lists-of-rust-links-and-resources
 [ex~links~machine-learning]: books.md#machine-learning
 [ex~links~macros]: books.md#macros
 [ex~links~meetups]: meetings.md#meetups
@@ -41,11 +44,13 @@
 [ex~links~podcasts]: videos.md#podcasts
 [ex~links~project-blogs]: blogs.md#project-blogs
 [ex~links~random]: books.md#random
+[ex~links~realworld-examples]: example_code.md#realworld-examples
 [ex~links~reference-documentation]: books.md#reference-documentation
 [ex~links~repositories]: example_code.md#repositories
 [ex~links~rust-books-by-topic]: books.md#rust-books-by-topic
 [ex~links~rust-templates]: example_code.md#rust-templates
 [ex~links~security]: books.md#security
+[ex~links~source-code-for-rust-books]: example_code.md#source-code-for-rust-books
 [ex~links~standard-library]: books.md#standard-library
 [ex~links~tutorials-and-workshop-materials]: learning.md#tutorials-and-workshop-materials
 [ex~links~university-courses]: learning.md#university-courses

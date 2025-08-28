@@ -51,7 +51,7 @@ An example using the [`rand_distr::Normal`][c~rand_distr::Normal~docs]↗{{hi:ra
 
 [![rand~website][c~rand~website~badge]][c~rand~website] [![rand][c~rand~docs~badge]][c~rand~docs] [![rand~crates.io][c~rand~crates.io~badge]][c~rand~crates.io] [![rand~repo][c~rand~repo~badge]][c~rand~repo] [![rand~lib.rs][c~rand~lib.rs~badge]][c~rand~lib.rs]{{hi:rand}}{{hi:Random}}{{hi:Rng}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-The following randomly generates a tuple `(i32, bool, f64)` and variable of user defined type `Point`, by implementing the [`rand::distributions::Distribution`][c~rand::distributions::Distribution~docs]↗{{hi:rand::distributions::Distribution}} trait:
+The following randomly generates a tuple `(i32, bool, f64)` and variable of user defined type `Point`, by implementing the `Distribution` trait:
 
 ```rust,editable
 {{#include ../../../crates/cats/algorithms/examples/rand/rand_custom.rs:example}}
@@ -61,7 +61,7 @@ The following randomly generates a tuple `(i32, bool, f64)` and variable of user
 
 [![rand~website][c~rand~website~badge]][c~rand~website] [![rand][c~rand~docs~badge]][c~rand~docs] [![rand~crates.io][c~rand~crates.io~badge]][c~rand~crates.io] [![rand~repo][c~rand~repo~badge]][c~rand~repo] [![rand~lib.rs][c~rand~lib.rs~badge]][c~rand~lib.rs]{{hi:rand}}{{hi:Random}}{{hi:Rng}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} {{hi:Algorithms}}{{hi:Random passwords}}
 
-In this example, we randomly generate strings of given length from ASCII characters in the range `A-Z, a-z, 0-9`, using [`rand::distributions::Alphanumeric`][c~rand::distributions::Alphanumeric~docs]↗{{hi:rand::distributions::Alphanumeric}}:
+In this example, we randomly generate strings of given length from ASCII characters in the range `A-Z, a-z, 0-9`, using the `Alphanumeric` distribution:
 
 ```rust,editable
 {{#include ../../../crates/cats/algorithms/examples/rand/rand_alphanumeric.rs:example}}

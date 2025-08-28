@@ -59,8 +59,63 @@
 			"path": "bk/src/categories/algorithms/index.md",
 			"bookmarks": [
 				{
-					"line": 109,
+					"line": 11,
+					"column": 4,
+					"label": ""
+				},
+				{
+					"line": 42,
 					"column": 5,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/algorithms/randomness.md",
+			"bookmarks": [
+				{
+					"line": 9,
+					"column": 9,
+					"label": ""
+				},
+				{
+					"line": 20,
+					"column": 14,
+					"label": ""
+				},
+				{
+					"line": 47,
+					"column": 9,
+					"label": ""
+				},
+				{
+					"line": 57,
+					"column": 16,
+					"label": ""
+				},
+				{
+					"line": 63,
+					"column": 193,
+					"label": ""
+				},
+				{
+					"line": 67,
+					"column": 14,
+					"label": ""
+				},
+				{
+					"line": 73,
+					"column": 6,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/algorithms/sorting.md",
+			"bookmarks": [
+				{
+					"line": 28,
+					"column": 6,
 					"label": ""
 				}
 			]
@@ -124,13 +179,8 @@
 			"path": "bk/src/categories/data-structures/graph.md",
 			"bookmarks": [
 				{
-					"line": 11,
+					"line": 8,
 					"column": 14,
-					"label": ""
-				},
-				{
-					"line": 21,
-					"column": 5,
 					"label": ""
 				}
 			]
@@ -201,6 +251,16 @@
 				{
 					"line": 57,
 					"column": 11,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/data-structures/refs.incl.md",
+			"bookmarks": [
+				{
+					"line": 27,
+					"column": 7,
 					"label": ""
 				}
 			]
@@ -381,6 +441,16 @@
 				{
 					"line": 52,
 					"column": 11,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/filesystem/refs.incl.md",
+			"bookmarks": [
+				{
+					"line": 20,
+					"column": 19,
 					"label": ""
 				}
 			]
@@ -1041,6 +1111,26 @@
 			]
 		},
 		{
+			"path": "bk/src/standard_library/result.md",
+			"bookmarks": [
+				{
+					"line": 8,
+					"column": 7,
+					"label": ""
+				},
+				{
+					"line": 15,
+					"column": 165,
+					"label": ""
+				},
+				{
+					"line": 63,
+					"column": 12,
+					"label": ""
+				}
+			]
+		},
+		{
 			"path": "bk/src/standard_library/smart_pointers.md",
 			"bookmarks": [
 				{
@@ -1050,111 +1140,6 @@
 				},
 				{
 					"line": 106,
-					"column": 5,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/categories/algorithms/sorting.md",
-			"bookmarks": [
-				{
-					"line": 8,
-					"column": 13,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/categories/algorithms/randomness.md",
-			"bookmarks": [
-				{
-					"line": 98,
-					"column": 9,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/categories/algorithms/hashing.md",
-			"bookmarks": [
-				{
-					"line": 29,
-					"column": 19,
-					"label": ""
-				},
-				{
-					"line": 120,
-					"column": 17,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/crates/cats/mathematics/Cargo.toml",
-			"bookmarks": [
-				{
-					"line": 18,
-					"column": 12,
-					"label": ""
-				},
-				{
-					"line": 30,
-					"column": 13,
-					"label": ""
-				},
-				{
-					"line": 32,
-					"column": 12,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/later_crates/cats/gui/Cargo.toml",
-			"bookmarks": [
-				{
-					"line": 16,
-					"column": 6,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/later_crates/cats/science/Cargo.toml",
-			"bookmarks": [
-				{
-					"line": 29,
-					"column": 22,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/later_crates/cats/computer_vision/Cargo.toml",
-			"bookmarks": [
-				{
-					"line": 21,
-					"column": 12,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/crates/cats/data_structures/Cargo.toml",
-			"bookmarks": [
-				{
-					"line": 24,
-					"column": 9,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/scripts/code/mod.just",
-			"bookmarks": [
-				{
-					"line": 110,
 					"column": 5,
 					"label": ""
 				}
@@ -1171,11 +1156,11 @@
 			]
 		},
 		{
-			"path": "bk/scripts/code/heavy_test.sh",
+			"path": "bk/src/categories/algorithms/hashing.md",
 			"bookmarks": [
 				{
-					"line": 5,
-					"column": 7,
+					"line": 45,
+					"column": 24,
 					"label": ""
 				}
 			]

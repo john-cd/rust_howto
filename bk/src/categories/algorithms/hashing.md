@@ -43,7 +43,7 @@ Writes some data to a file, then calculates the SHA-256{{hi:SHA-256}} [`digest::
 
 ## Use General-purpose Hashing Algorithms {#skip1}
 
-For more [algorithms][p~algorithms], see Rust Crypto Hashes: sha2{{hi:sha2}}, sha1{{hi:sha1}}, md-5{{hi:md-5}}
+For more [[algorithms | algorithms]], see Rust Crypto Hashes: sha2{{hi:sha2}}, sha1{{hi:sha1}}, md-5{{hi:md-5}}
 
 ### Hash with `blake3` {#blake3}
 
@@ -99,7 +99,7 @@ For legacy applications, you may consider using the following hashing algorithms
 {{#include ../../../crates/cats/algorithms/examples/hashing/md5.rs:example}}
 ```
 
-## Cryptograhic Algorithms
+## Cryptograhic Algorithms {#cryptographic-algorithms}
 
 Use [`ring`][c~ring~docs]↗{{hi:ring}}, [`rust-crypto`][c~rust-crypto~docs]↗{{hi:rust-crypto}}, [`sha2`][c~sha2~docs]↗{{hi:sha2}}. Choose carefully based on security needs and audit history.
 

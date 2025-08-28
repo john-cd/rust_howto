@@ -1,6 +1,12 @@
 # Index of Examples
 
+## Appendices
+
 ## Algorithms
+
+### Hashing
+
+{{#include ../categories/algorithms/hashing.incl.md}}
 
 ### Randomness
 
@@ -78,9 +84,25 @@
 
 {{#include ../categories/filesystem/file_watching.incl.md}}
 
-### Read and Write
+### Metadata
+
+{{#include ../categories/filesystem/metadata.incl.md}}
+
+### Paths
+
+{{#include ../categories/filesystem/paths.incl.md}}
+
+### Read Write
 
 {{#include ../categories/filesystem/read_write.incl.md}}
+
+### Stdin Stdout
+
+{{#include ../categories/filesystem/stdin_stdout.incl.md}}
+
+### Symbolic Links
+
+{{#include ../categories/filesystem/symbolic_links.incl.md}}
 
 ### `tempfile`
 
@@ -176,6 +198,8 @@
 
 ## Crate: Selection
 
+## Intro
+
 ## Language
 
 ### Attributes
@@ -238,10 +262,6 @@
 
 {{#include ../language/ownership_borrowing.incl.md}}
 
-### Rust Install
-
-{{#include ../rust_install/index.incl.md}}
-
 ### Slices
 
 {{#include ../language/slices.incl.md}}
@@ -295,6 +315,10 @@
 ### Videos
 
 {{#include ../links/videos.incl.md}}
+
+## Rust: Install
+
+{{#include ../rust_install/index.incl.md}}
 
 ## Standard: Library
 

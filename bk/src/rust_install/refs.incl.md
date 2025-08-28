@@ -1,1 +1,1 @@
-[ex~language~rust-install]: index.md#rust-install
+[ex~rust_install~rust-install]: index.md#rust-install

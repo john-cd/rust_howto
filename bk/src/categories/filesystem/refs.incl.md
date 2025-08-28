@@ -1,4 +1,6 @@
 [ex~filesystem~avoid-writing-and-reading-from-the-same-file]: read_write.md#avoid-writing-and-reading-from-the-same-file
+[ex~filesystem~canonicalize]: paths.md#canonicalize
+[ex~filesystem~create-list-contents-remove-dirs]: directories.md#create-list-contents-remove-dirs
 [ex~filesystem~cwd]: directories.md#cwd
 [ex~filesystem~directories]: user_directories.md#directories
 [ex~filesystem~dirs]: user_directories.md#dirs
@@ -8,12 +10,15 @@
 [ex~filesystem~find-loop-in-path]: directory_traversal.md#find-loop-in-path
 [ex~filesystem~globset]: directory_traversal.md#globset
 [ex~filesystem~memory-map]: read_write.md#memory-map
+[ex~filesystem~metadata]: metadata.md#metadata
 [ex~filesystem~open]: user_directories.md#open
 [ex~filesystem~read-lines-of-strings-from-a-file]: read_write.md#read-lines-of-strings-from-a-file
 [ex~filesystem~recursively-calculate-file-sizes-at-given-depth]: directory_traversal.md#recursively-calculate-file-sizes-at-given-depth
 [ex~filesystem~recursively-find-all-files-with-given-predicate]: directory_traversal.md#recursively-find-all-files-with-given-predicate
 [ex~filesystem~recursively-find-duplicate-file-names]: directory_traversal.md#recursively-find-duplicate-file-names
 [ex~filesystem~remove_dir_all]: directories.md#remove_dir_all
+[ex~filesystem~stdin-stdout]: stdin_stdout.md#stdin-stdout
+[ex~filesystem~symbolic-links]: symbolic_links.md#symbolic-links
 [ex~filesystem~temporary-files-or-directories]: tempfile.md#temporary-files-or-directories
 [ex~filesystem~traverse-directories-while-skipping-dotfiles]: directory_traversal.md#traverse-directories-while-skipping-dotfiles
 [ex~filesystem~walk-the-filesystem-while-respecting-ignore-files]: directory_traversal.md#walk-the-filesystem-while-respecting-ignore-files
