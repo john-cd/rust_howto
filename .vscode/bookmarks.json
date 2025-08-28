@@ -1111,7 +1111,7 @@
 			]
 		},
 		{
-			"path": "bk/crates/cats/gui/Cargo.toml",
+			"path": "bk/later_crates/cats/gui/Cargo.toml",
 			"bookmarks": [
 				{
 					"line": 16,
@@ -1121,7 +1121,7 @@
 			]
 		},
 		{
-			"path": "bk/crates/cats/science/Cargo.toml",
+			"path": "bk/later_crates/cats/science/Cargo.toml",
 			"bookmarks": [
 				{
 					"line": 29,
@@ -1131,7 +1131,7 @@
 			]
 		},
 		{
-			"path": "bk/crates/cats/computer_vision/Cargo.toml",
+			"path": "bk/later_crates/cats/computer_vision/Cargo.toml",
 			"bookmarks": [
 				{
 					"line": 21,
@@ -1146,6 +1146,26 @@
 				{
 					"line": 24,
 					"column": 9,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/scripts/code/mod.just",
+			"bookmarks": [
+				{
+					"line": 110,
+					"column": 5,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/scripts/code/heavy_test.sh",
+			"bookmarks": [
+				{
+					"line": 5,
+					"column": 7,
 					"label": ""
 				}
 			]

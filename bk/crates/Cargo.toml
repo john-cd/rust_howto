@@ -5,7 +5,7 @@ members = [
     "cats/*",
     "code_organization",
     "language",
-    "other",
+    # "other",
     "proc_macros",
     "standard_library",
 ]
