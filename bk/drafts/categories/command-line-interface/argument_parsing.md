@@ -62,7 +62,7 @@ Your favorite number must be 256.
 
 `clap_complete` generates shell completion scripts for your `clap::Command`.
 
-## `clap` Alternatives {#skip}
+## `clap` Alternatives {#clap-alternatives .skip}
 
 ### Parse Command-line Arguments with `lexopt` {#lexopt}
 
@@ -108,11 +108,11 @@ The [`pico-args`][c~pico-args~docs]↗{{hi:pico-args}} crate is a small and fast
 
 [`structopt`][c~structopt~docs]↗{{hi:structopt}} (now superseded by [`clap`][c~clap~docs]↗{{hi:clap}}) simplifies command-line argument parsing by automatically generating parsers from struct definitions. It leverages a `derive` macro to reduce boilerplate and provides a declarative way to define CLI options, arguments, and subcommands, making it easier to create complex and well-documented command-line interfaces.
 
-## References {#references}
+## References {#references .skip}
 
 - [Parsing arguments in Rust, without using dependencies][blog~parsing-arguments-rust-no-dep]↗.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[parse | Parse]].
 - [[parser-implementations | Parser Implementations]].

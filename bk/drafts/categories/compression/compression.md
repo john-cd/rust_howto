@@ -36,7 +36,7 @@ The [`zip`][c~zip~docs]↗{{hi:zip}} crate creates, opens, and manipulates ZIP f
 {{#include ../../../crates/cats/compression/examples/compression/zip.rs:example}}
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[filesystem | Filesystem]].
 - [[compression | Compression]].

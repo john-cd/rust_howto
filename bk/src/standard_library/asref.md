@@ -44,13 +44,13 @@ For non-generic contexts or when `Deref` coercion suffices, `&T` remains the sim
 
 If you need to do a _costly_ conversion, it is better to implement [`From`][c~std::convert::From~docs]↗{{hi:std::convert::From}} instead or write a custom function.
 
-## References {#references}
+## References {#references .skip}
 
 - [When and why to use `AsRef<T>` instead of `&T`][stackoverflow~asref]↗.
 - [Rust's `AsRef` Explained][blog~rust-asref-explained]↗.
 - [Rust's `AsRef` Explained][blog~rust-asref-explained]↗.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[box | `Box`]].
 - [[borrow | `Borrow`]].

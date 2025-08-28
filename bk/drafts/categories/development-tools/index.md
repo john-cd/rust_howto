@@ -99,7 +99,7 @@ See also [[cross_compiling | Cross Compiling (Cargo Plugins)]].
 - [`lapce`][lapce~repo]↗: Lightning-fast and Powerful Code Editor written in Rust.
 - [`intellij-rust`][intellij-rust~repo]↗: Rust plugin for the IntelliJ Platform.
 
-## Registries {#skip}
+## Registries {#registries .skip}
 
 - [`alexandrie`][c~alexandrie~repo]↗: An alternative crate registry, implemented in Rust.
 - [`meuse`][meuse~repo]↗: A private Cargo crate registry, for Rust.

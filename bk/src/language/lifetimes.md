@@ -97,13 +97,13 @@ Instead, you may:
 {{#include ../../crates/language/examples/lifetimes/self_referential_struct.rs:example}}
 ```
 
-## References {#references}
+## References {#references .skip}
 
 - [Lifetime elision rules (Rust reference)][book~rust-reference~lifetime-elision]↗.
 - [Common Rust Lifetime Misconceptions][common-rust-lifetime-misconceptions~repo]↗.
 - [Self-referential Structs][blog~rust-self-referential-structs]↗.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[cow | COW]].
 - [[memory-management | Memory Management]].

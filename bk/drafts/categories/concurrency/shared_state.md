@@ -70,7 +70,7 @@ Allow access to data from one thread at a time.
 {{#include ../../../crates/cats/concurrency/examples/shared_state/shared_state_parking_lot2.rs:example}}
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[lazy_initialization | Lazy Initialization]].
 - [[memory-management | Memory Management]].

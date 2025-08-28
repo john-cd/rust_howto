@@ -6,21 +6,21 @@ Sensor fusion / integration, SLAM (Simultaneous Localization and Mapping).
 
 Sensor integration often requires specialized crates that interact with specific sensor hardware.
 
-## Sensor Data Processing {#skip}
+## Sensor Data Processing {#sensor-data-processing .skip}
 
 [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}: N-dimensional tensor arithmetic
 
-## Handling PointCloud2 Messages in ROS {#skip}
+## Handling PointCloud2 Messages in ROS {#handling-pointcloud2 .skip}
 
 `ros_pointcloud2`
 
-## Simulate Sensor Interactions {#skip}
+## Simulate Sensor Interactions {#simulate-sensor-interactions .skip}
 
 [`rapier`][rapier.rs~website]↗{{hi:rapier}}: Physics engine
 
 See [[simulation_visualization | Simulation Visualization]].
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[computer-vision | Computer Vision]].
 

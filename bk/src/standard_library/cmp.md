@@ -36,7 +36,7 @@ The following example implements a custom order for software versions:
 {{#include ../../crates/standard_library/examples/cmp/ord.rs:example}}
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[algorithms | Algorithms]].
 - [[data_structures | Data Structures]].
@@ -45,7 +45,7 @@ The following example implements a custom order for software versions:
 - [[sorting | Sorting]].
 - [[traits | Traits]].
 
-## References {#references}
+## References {#references .skip}
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

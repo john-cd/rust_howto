@@ -10,11 +10,11 @@ Low-Level [Rendering][p~rendering] Graphics APIs include:
 - Vulkan.
 - WebGL and WebGPU.
 
-## Vulkan {#skip}
+## Vulkan {#vulkan .skip}
 
 See [[vulkan | Vulkan]].
 
-## OpenGL {#skip}
+## OpenGL {#opengl .skip}
 
 See [[opengl | OpenGL]].
 
@@ -34,7 +34,7 @@ Metal access is provided by the [`metal`][c~metal~docs]↗{{hi:metal}} crate or 
 
 See also [`metal-rs`][c~metal~docs]↗{{hi:metal-rs}}: 'Metal' bindings.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[gpu | GPU]].
 - [[gpu_abstraction_layers | GPU Abstraction Layers]].

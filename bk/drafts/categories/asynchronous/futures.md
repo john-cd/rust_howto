@@ -46,11 +46,11 @@ Common utilities and extension [traits][p~traits] for the [`futures-rs`][c~futur
 {{#include ../../../crates/cats/asynchronous/examples/futures/futures_util.rs:example}}
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[tokio | Tokio]].
 
-## See Also
+## See Also {#see-also .skip}
 
 [![futures-executor][c~futures-executor~docs~badge]][c~futures-executor~docs]{{hi:futures-executor}}
 

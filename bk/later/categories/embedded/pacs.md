@@ -4,7 +4,7 @@
 
 These crates provide direct access to the microcontroller's registers. You'll often use a HAL on top of a PAC.
 
-## Key Crates {#key-crates}
+## Key Crates {#key-crates .skip}
 
 - `stm32fxxx-pac`: PACs for STM32 microcontrollers.
 

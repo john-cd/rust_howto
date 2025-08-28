@@ -45,7 +45,7 @@ See also:
 
 If you're working with numerical data, integrating with [`numpy`][c~numpy~docs]↗{{hi:numpy}} is often essential. Crates like [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} in Rust can also facilitate this. See [[mathematics | Mathematics]].
 
-## Build Tools {#build-tools}
+## Build Tools {#build-tools .skip}
 
 - [`maturin`][c~maturin~docs]↗{{hi:maturin}} is a popular tool for building and distributing Python packages that include Rust extensions. It handles the complexities of compilation and linking.
 - [`setuptools-rust`][pypi~setuptools-rust]{{hi:setuptools-rust}} is another option for integrating Rust builds into Python's setuptools.

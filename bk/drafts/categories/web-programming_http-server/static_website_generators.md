@@ -43,7 +43,7 @@ zola serve
 
 You can further customize your site by editing the templates in the templates directory and adding your styles in the static directory.
 
-### Themes for `zola` {#skip1}
+### Themes for `zola` {#themes-for-zola .skip}
 
 [AdiDoks][adidoks~website]↗ is a modern documentation theme.
 

@@ -29,8 +29,8 @@ do
     link=$(sed -nE 's/^#.*\{#(.+?)\}\s*$/[ex~'${parent}'~\1]: '${base}'#\1/p' ${file})
     if [ -n "$link" ]; then
         echo "$link" >> "${ref_file}"
-        # Remove {#skip}, {#skip1}... and empty lines.
-        sed -E -i '/(.+?~skip[0-9]*\].*)/d; /(.+?~related-topics\].*)/d; /(.+?~references\].*)/d; /^\s*$/d' "${ref_file}"
+        # Remove { .skip} and empty lines.
+        sed -E -i '/(.+?\.skip.*)/d; /^\s*$/d' "${ref_file}"
         # Sort and dedupe refdefs.
         sort -u -o "${dir}/refs.incl.md" "${ref_file}"
     fi

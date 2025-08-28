@@ -33,7 +33,7 @@
 {{#include ../../../crates/other/examples/architecture/di.rs:example}}
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[config | Configuration]] Management: Loading and managing settings with [`config`][c~config~docs]↗{{hi:config}} or [`dotenv`][c~dotenv~docs]↗{{hi:dotenv}}.
 - Logging and Monitoring: Structured logging with [`tracing`][c~tracing~docs]↗{{hi:tracing}} or [`log`][c~log~docs]↗{{hi:log}}. See [[development-tools_debugging | Development Tools: Debugging]].

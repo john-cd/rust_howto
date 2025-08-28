@@ -43,7 +43,7 @@ The [`strum`][c~strum~docs]↗{{hi:strum}} crate provides helpful macros for wor
 {{#include ../../crates/language/examples/enums/strum.rs:example}}
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[match | Match]].
 - [[rust-patterns | Rust Patterns]].

@@ -12,7 +12,7 @@
 apt install gping
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[command-line-interface | Command Line Interface]].
 - [[external_commands | External Commands]].

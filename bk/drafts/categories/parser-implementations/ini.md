@@ -12,7 +12,7 @@
 {{#include ../../../crates/cats/parser_implementations/examples/ini/rust-ini.rs:example}}
 ```
 
-## Other Options {#skip}
+## Other Options {#other-options .skip}
 
 [`ini`][c~ini~docs]↗{{hi:ini}} can be used for parsing INI configuration files. [`ini`][c~ini~docs]↗{{hi:ini}} is a simple macro built on top of `configparser`.
 

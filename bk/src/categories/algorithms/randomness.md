@@ -87,7 +87,7 @@ The following randomly generates a string of given length (e.g. a password) usin
 {{#include ../../../crates/cats/algorithms/examples/rand/fastrand.rs:example}}
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[algorithms | Algorithms]].
 

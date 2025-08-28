@@ -21,7 +21,7 @@ General-purpose [linear algebra][p~linear-algebra] library with transformations 
 
 `k` is for kinematics.
 
-## Path Planning {#skip}
+## Path Planning {#path-planning .skip}
 
 Collision avoidance, trajectory optimization.
 

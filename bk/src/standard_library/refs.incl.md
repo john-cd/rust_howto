@@ -12,6 +12,7 @@
 [ex~standard_library~box]: box.md#box
 [ex~standard_library~cell]: interior_mutability.md#cell
 [ex~standard_library~choose-conversion-trait]: conversion_traits.md#choose-conversion-trait
+[ex~standard_library~clone-data-lazily-with-cow]: cow.md#clone-data-lazily-with-cow
 [ex~standard_library~combinators]: option.md#combinators
 [ex~standard_library~compile-type-reflection]: dynamic_typing.md#compile-type-reflection
 [ex~standard_library~convert-cow-to-str]: cow.md#convert-cow-to-str
@@ -48,7 +49,6 @@
 [ex~standard_library~result]: result.md#result
 [ex~standard_library~return-cow-from-function]: cow.md#return-cow-from-function
 [ex~standard_library~return-early-pattern]: option.md#return-early-pattern
-[ex~standard_library~see-also]: option.md#see-also
 [ex~standard_library~smart-pointer-comparison]: smart_pointers.md#smart-pointer-comparison
 [ex~standard_library~sync-primitives]: smart_pointers.md#sync-primitives
 [p~asref]: asref.md

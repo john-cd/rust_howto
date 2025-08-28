@@ -2,7 +2,7 @@
 
 {{#include wasm_runtimes.incl.md}}
 
-## WASM Runtimes {#skip}
+## WASM Runtimes {#wasm-runtimes .skip}
 
 This table focuses on Rust crates that can be used as WebAssembly (WASM) runtimes, meaning they can execute [WASM][p~wasm] bytecode. This is distinct from tools used to *compile* to [WASM][p~wasm].
 
@@ -13,7 +13,7 @@ This table focuses on Rust crates that can be used as WebAssembly (WASM) runtime
 | [`cranelift`][c~cranelift~docs]↗{{hi:cranelift}} (used by [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}) | A code generator used by [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} for AOT compilation. | Generates optimized machine code from WASM. | N/A (part of [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}) | N/A | Not a runtime itself, but a crucial component of [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}. |
 | [`rwasm`][c~rwasm~docs]↗{{hi:rwasm}} | A lightweight WASM runtime. | Small footprint, suitable for embedded systems. | Yes | Yes | Designed for resource-constrained environments. |
 
-## Choosing a Runtime {#skip1}
+## Choosing a Runtime {#choosing-a-runtime .skip}
 
 The [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} runtime, backed by Mozilla, has become very popular and is a strong default choice for many projects.
 
@@ -32,7 +32,7 @@ Notes:
 - [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} is generally considered to be very performant due to its AOT compilation.
 - WASM runtimes often prioritize security, as [WASM][p~wasm] is often used to execute untrusted code.
 
-## Code Examples {#skip2}
+## Code Examples {#code-examples .skip}
 
 ### `wasmer` {#wasmer}
 
@@ -92,13 +92,13 @@ The [`wasmtime`][c~wasmtime~repo]↗ crate is a high-level API to expose the Was
 {{#include ../../../crates/cats/wasm/examples/wasm_standalone_runtimes/wasmtime.rs:example}}
 ```
 
-## WebAssembly System Interface (WASI) {#skip3}
+## WebAssembly System Interface (WASI) {#wasi.skip}
 
 [`wasi-rs`][c~wasi~docs]↗{{hi:wasi-rs}} provides bindings for the WASI API, enabling your WASM code to interact with the host environment (file system, networking, etc.). In particular, WASI allows you to run WASM code on servers or other environments outside the browser. Used by [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}} and [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}.
 
 [`cargo-wasi`][c~cargo-wasi~docs]↗{{hi:cargo-wasi}} is used for compiling to WASI (WebAssembly System Interface), which is useful for running WASM outside of the browser (e.g., on servers or embedded devices).
 
-## See Also
+## See Also {#see-also .skip}
 
 [rustwasm.github.io][rustwasm~website]↗{{hi:rustwasm}}.
 

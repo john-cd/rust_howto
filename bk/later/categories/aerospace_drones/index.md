@@ -43,7 +43,7 @@ Consider using:
 - [`image`][c~image~docs]↗{{hi:image}} for image loading and manipulation.
 - [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} for efficient array operations (often used in image processing).
 
-## See Also
+## See Also {#see-also .skip}
 
 - [[additional_numeric_types | Additional Numeric Types]].
 - [[algorithms | Algorithms]].

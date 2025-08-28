@@ -81,7 +81,7 @@ You may also consult [this list][forum~fearless-rust-bloggers]↗ (somewhat outd
 | [`rust-analyzer`: This Week][blog~rust-analyzer-this-week]↗ | Weekly news about the `rust-analyzer` language server. |
 | `shuttle.dev` [blog][blog~shuttle.dev]↗ and [launchpad][launchpad-shuttle-dev~website]↗ | Shuttle is a service to deploy Rust applications to the Cloud. |
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[books | Books]].
 

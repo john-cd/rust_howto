@@ -12,7 +12,7 @@
 {{#include ../../../crates/cats/encoding/examples/binary_encoders/bincode.rs:example}}
 ```
 
-## ProtoBuf {#skip1}
+## ProtoBuf {#protoBuf .skip}
 
 ### `prost` {#prost}
 
@@ -100,7 +100,7 @@ In `foo.capnp`:
 {{#include ../../../crates/cats/encoding/examples/binary_encoders/foo.capnp}}
 ```
 
-### Key Features of Cap'n Proto {#skip2}
+### Key Features of Cap'n Proto {#key-features .skip}
 
 - Compact and efficient: Cap'n Proto is designed to be very space-efficient for both on-the-wire and in-memory representations.
 - Fast: Cap'n Proto offers excellent [performance][p~performance], especially for serialization and deserialization.

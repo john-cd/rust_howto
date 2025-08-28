@@ -67,8 +67,6 @@ SHA-2 (Secure Hash Algorithm 2) is a family of cryptographic hash functions desi
 {{#include ../../../crates/cats/algorithms/examples/hashing/sha2.rs:example}}
 ```
 
-
-
 ### `foldhash` {#foldhash}
 
 [![foldhash][c~foldhash~docs~badge]][c~foldhash~docs] [![foldhash~crates.io][c~foldhash~crates.io~badge]][c~foldhash~crates.io] [![foldhash~repo][c~foldhash~repo~badge]][c~foldhash~repo] [![foldhash~lib.rs][c~foldhash~lib.rs~badge]][c~foldhash~lib.rs]{{hi:foldhash}}{{hi:Hash}}{{hi:Hasher}}{{hi:No-std}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
@@ -109,7 +107,7 @@ Use [`ring`][c~ring~docs]↗{{hi:ring}}, [`rust-crypto`][c~rust-crypto~docs]↗{
 - `ed25519`, `ecdsa`, `dsa` for digital signatures,
 - `der`, `pem-rfc7468`, `pkcs8`, `x509-cert` for certificates,
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[algorithms | Algorithms]].
 - [[data-structures | Data Structures]].

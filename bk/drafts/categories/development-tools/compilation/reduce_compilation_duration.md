@@ -41,7 +41,7 @@ Keeping in mind how the incremental compiler works is key to maximizing its bene
 
 From-scratch builds with incremental compilation{{hi:Incremental compilation}} enabled adds about 15-20% overhead compared to disabled. The initial build needs to write out more intermediate state in order for later incremental builds to take advantage of it. In a CI{{hi:CI}} situation, it would be unusual for there to be a later incremental build within the same job. Thus consider disabling incremental compilation in that context.However, CI workflows that cache the target directory across runs may be benefiting from incremental compilation.
 
-## Project Structure and Dependencies {#skip}
+## Project Structure and Dependencies {#project-structure-and-dependencies .skip}
 
 - _Reduce the number of dependencies_. Analyze your [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} and eliminate unused or redundant dependencies. Consider alternatives if a dependency is excessively large or slow to compile.
 - For multi-crate projects, use a _workspace_ to share dependencies and enable workspace-level optimizations. This can reduce redundant compilation.
@@ -51,7 +51,7 @@ From-scratch builds with incremental compilation{{hi:Incremental compilation}} e
 
 [`cargo tree`][book~cargo~cargo-tree]↗{{hi:cargo tree}} is a useful tool for dependency analysis.
 
-## Compiler-Level Optimizations {#skip}
+## Compiler-Level Optimizations {#compiler-level-optimizations .skip}
 
 - Use the [`dev`][book~cargo~dev-profile]↗{{hi:dev}} profile for development, which prioritizes fast compilation over optimizations. Switch to the [`release`][book~cargo~release-profile]↗{{hi:release}} profile only for final builds.
 - Increasing the number of codegen units ([`rustc`][book~rustc~docs]↗{{hi:book~rustc}} flag: `-C codegen-units=N`) allows the compiler to parallelize code generation. Experiment to find the optimal value; too many can hinder Link-Time Optimization (LTO).
@@ -88,7 +88,7 @@ cargo build
 
 See also: [Speeding up incremental Rust compilation with dylibs][blog~speeding-up-incremental-rust-compilation]↗.
 
-## Build Machine Hardware Considerations {#skip}
+## Build Machine Hardware Considerations {#build-machine-hardware-considerations .skip}
 
 Build your code with the right machine:
 
@@ -98,13 +98,13 @@ Build your code with the right machine:
 
 Consider using remote build servers or a separate build machine for large projects.
 
-## References {#references}
+## References {#references .skip}
 
 - [Eight solutions for troubleshooting your Rust build times][blog~rust-build-times]↗.
 - [How I improved my Rust compile times by seventy-five percent][blog~how-i-improved-my-rust-compile-times-by-seventy-five-percent]↗.
 - [Rust compilation time][blog~rust-compilation-time]↗.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[benchmarking | Benchmarking]].
 - [[build_utils | Build Utils]].

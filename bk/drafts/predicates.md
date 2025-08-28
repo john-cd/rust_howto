@@ -74,7 +74,7 @@ fn main() {
 }
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

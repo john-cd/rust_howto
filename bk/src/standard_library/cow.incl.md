@@ -6,3 +6,4 @@
 | [Modify a `Cow` In-place][ex~standard_library~modify-cow-in-place] | [![std][c~std~docs~badge]][c~std~docs] |
 | [Return a `Cow` from a Function][ex~standard_library~return-cow-from-function] | [![std][c~std~docs~badge]][c~std~docs] |
 | [`Cow` Alternatives][ex~standard_library~cow-alternatives] | [![std][c~std~docs~badge]][c~std~docs] |
+| [Clone Data Lazily with `Cow`][ex~standard_library~clone-data-lazily-with-cow] |

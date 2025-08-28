@@ -58,11 +58,11 @@ You can also implement `derive` for your own traits through procedural [[macros 
 {{#include ../../crates/standard_library/examples/derive/derive_more.rs:example}}
 ```
 
-## References {#references}
+## References {#references .skip}
 
 - [Derive (Rust reference)][book~rust-reference~derive]↗.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[attributes | Attributes]].
 - [[macros | Macros]].

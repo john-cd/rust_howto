@@ -77,14 +77,14 @@ Loom attempts to check all possible interleavings, while Shuttle chooses interle
 
 [`loom`][c~loom~docs]↗{{hi:loom}} allows permutation testing for concurrent code.
 
-## Other Tools {#skip}
+## Other Tools {#other-tools .skip}
 
 - [MIRAI][mirai~repo]↗.
 - [`prusti`][prusti~website]↗ is an automated program verifier for Rust, based on the Viper infrastructure. It leverages Rust's strong type guarantees to simplify the specification and verification of Rust programs.
 - [Creusot][creusot~repo]↗ helps prove that code is correct in an automated fashion.
 - [`crucible`][c~crucible~docs]↗{{hi:crucible}} (symbolic execution).
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 | Topic | Rust Crates |
 |---|---|
@@ -95,7 +95,7 @@ Loom attempts to check all possible interleavings, while Shuttle chooses interle
 | Fuzzing | [`cargo fuzz`][book~rust-fuzz]↗{{hi:cargo fuzz}}, [`afl.rs`][c~afl~docs]↗{{hi:afl.rs}} (bindings to AFL) |
 | Code Review Tools: Not Rust-specific, but used in conjunction with Rust code. Examples: GitHub, GitLab, etc. | |
 
-## References {#references}
+## References {#references .skip}
 
 - [Model Checking][wikipedia~model-checking]↗.
 - [Kani Rust Verifier][c~kani~website]↗.

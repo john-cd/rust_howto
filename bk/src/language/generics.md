@@ -76,7 +76,7 @@ The following example demonstrates how to implement traits for types based on co
 {{#include ../../crates/language/examples/generics/const_generics2.rs:example}}
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[enums | Enums]].
 - [[functions | Functions]].

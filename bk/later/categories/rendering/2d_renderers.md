@@ -18,7 +18,7 @@ Most 2D projects will find [`raqote`][c~raqote~docs]↗{{hi:raqote}} or [`tiny-s
 - Vector Path Generation: [`lyon`][c~lyon~docs]↗{{hi:lyon}}.
 - High Performance 2D/3D (using GPU): [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} (but more complex).
 
-## Topics {#topics}
+## Topics {#topics .skip}
 
 - Sprite Rendering.
 - Vector Graphics.
@@ -71,7 +71,7 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 {{#include ../../../crates/cats/gui/examples/2d_renderers/vello.rs:example}}
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[color_handling | Color Handling]].
 - Image Loading and Manipulation: see [[multimedia_images | Multimedia: Images]].
@@ -87,7 +87,7 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 - [[game_engines | Game Engines]].
 - UI with 2D [Graphics][p~graphics]: see [[gui | GUI]].
 
-## See Also {#see-also}
+## See Also {#see-also .skip}
 
 - [Are we Game yet? 2D Rendering][are-we-game-yet?-2drendering~website]↗: Sprites, vectors, splines, hex grids and more.
 

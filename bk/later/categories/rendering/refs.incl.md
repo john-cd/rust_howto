@@ -1,8 +1,15 @@
 [ex~rendering~ab_glyph]: text_rendering.md#ab_glyph
+[ex~rendering~applications]: 2d_renderers.md#applications
+[ex~rendering~applications]: 3d_renderers.md#applications
+[ex~rendering~choosing-the-right-library]: 2d_renderers.md#choosing-the-right-library
 [ex~rendering~femtovg]: 2d_vector_graphics.md#femtovg
 [ex~rendering~fontdue]: text_rendering.md#fontdue
+[ex~rendering~hardware-acceleration]: 3d_renderers.md#hardware-acceleration
+[ex~rendering~hybrid]: 2d_renderers.md#hybrid
 [ex~rendering~kiss3d]: 3d_renderers.md#kiss3d
 [ex~rendering~lyon]: 2d_vector_graphics.md#lyon
+[ex~rendering~other-renderers]: 2d_renderers.md#other-renderers
+[ex~rendering~pixel-based-2d-rendering]: 2d_renderers.md#pixel-based-2d-rendering
 [ex~rendering~pixels]: 2d_raster_graphics.md#pixels
 [ex~rendering~raqote]: 2d_raster_graphics.md#raqote
 [ex~rendering~rend3]: 3d_renderers.md#rend3
@@ -11,8 +18,10 @@
 [ex~rendering~skia-safe]: 2d_renderers.md#skia-safe
 [ex~rendering~threed]: 3d_renderers.md#threed
 [ex~rendering~tiny-skia]: 2d_raster_graphics.md#tiny-skia
+[ex~rendering~topics]: 3d_renderers.md#topics
 [ex~rendering~ttf-parser]: text_rendering.md#ttf-parser
 [ex~rendering~usvg]: svg_rendering.md#usvg
+[ex~rendering~vector-based-2d-rendering]: 2d_renderers.md#vector-based-2d-rendering
 [ex~rendering~vello]: 2d_renderers.md#vello
 [ex~rendering~vger]: 2d_vector_graphics.md#vger
 [ex~rendering~webrender]: 2d_renderers.md#webrender

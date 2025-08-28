@@ -122,7 +122,7 @@ FIXME
 - [`rust-cache`][c~rust_cache~docs]↗{{hi:rust-cache}}: Github action to cache compilation artifacts and speed up subsequent runs.
 - `install-action`: GitHub Action for installing [development tools][p~development-tools] (mainly from GitHub Releases).
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 [![gh-workflow][c~gh-workflow~docs~badge]][c~gh-workflow~docs] [![gh-workflow~crates.io][c~gh-workflow~crates.io~badge]][c~gh-workflow~crates.io] [![gh-workflow~repo][c~gh-workflow~repo~badge]][c~gh-workflow~repo] [![gh-workflow~lib.rs][c~gh-workflow~lib.rs~badge]][c~gh-workflow~lib.rs]{{hi:gh-workflow}}{{hi:Actions}}{{hi:Generator}}{{hi:Github}}{{hi:Workflow}}
 

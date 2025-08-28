@@ -30,11 +30,11 @@
 {{#include ../../../crates/cats/email/examples/lettre.rs:example}}
 ```
 
-### Send Emails Asynchronously {#skip}
+### Send Emails Asynchronously {#send-emails-asynchronously .skip}
 
 [`lettre`][c~lettre~docs]↗{{hi:lettre}} supports asynchronous sending.
 
-### Send Emails Securely {#skip}
+### Send Emails Securely {#send-emails-securely .skip}
 
 [`lettre`][c~lettre~docs]↗{{hi:lettre}} integrates with TLS (Transport Layer Security) for secure email transmission.
 

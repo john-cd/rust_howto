@@ -65,7 +65,7 @@ Alternatives to the [Tokio][p~tokio] async ecosystem include:
 - [![embassy][c~embassy~docs~badge]][c~embassy~docs]{{hi:embassy}} [Embassy][c~embassy~website]↗ [![embassy~repo][c~embassy~repo~badge]][c~embassy~repo] for embedded systems.
 - [![mio][c~mio~docs~badge]][c~mio~docs]{{hi:mio}} [Mio][c~mio~crates.io]↗ is a fast, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS abstractions. It is part of the Tokio ecosystem.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[concurrency | Concurrency]].
 

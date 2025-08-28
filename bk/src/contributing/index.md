@@ -120,7 +120,7 @@ Enhancement suggestions are tracked as [GitHub issues][rust-howto~issues]↗.
 
 ### Commit Messages {#commit-messages}
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [TODO list][rust-howto~todo~repo]↗.
 - [LICENSE][rust-howto~license~repo]↗.

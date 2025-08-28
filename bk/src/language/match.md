@@ -207,14 +207,14 @@ Variable binding moves or copies a matched value into the new variable. `ref` (o
 
 Note that Rust's "match ergonomics" often make explicit `ref` and `ref mut` unnecessary when matching on references.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[control_flow | Control Flow]].
 - [[error_handling | Error Handling]].
 - [[option | Option]].
 - [[result | Result]].
 
-## References {#references}
+## References {#references .skip}
 
 - [Pattern Matching][book~rust~pattern-matching]↗{{hi:Pattern matching}}.
 - [Patterns Are Not Expressions][blog~patterns-are-not-expressions]↗.

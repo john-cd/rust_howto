@@ -22,7 +22,7 @@ Constants are primarily used for values that truly never change throughout the l
 {{#include ../../crates/language/examples/constants_and_statics/constants.rs:example}}
 ```
 
-### References {#references}
+### References {#references .skip}
 
 - [Constants (Rust book)][book~rust~ch03-01-variables-and-mutability-constants]↗.
 - [Constant evaluation (Rust reference)][book~rust-reference~const_eval]↗.

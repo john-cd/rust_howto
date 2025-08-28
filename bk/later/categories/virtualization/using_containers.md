@@ -2,7 +2,7 @@
 
 {{#include using_containers.incl.md}}
 
-## Testing and Debugging with Containers {#skip}
+## Testing and Debugging with Containers {#testing-and-debugging-with-containers .skip}
 
 - [Testcontainers][c~testcontainers~crates.io]↗: A library for running Docker containers in integration tests.
 See the [testcontainers][testcontainers~website]↗ website.

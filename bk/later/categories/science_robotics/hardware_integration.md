@@ -4,7 +4,7 @@
 
 Low-level hardware access, [embedded][p~embedded] systems.
 
-## Device Drivers {#skip}
+## Device Drivers {#device-drivers .skip}
 
 Robotics-related sensor/motor drivers:
 

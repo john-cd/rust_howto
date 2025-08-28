@@ -22,7 +22,7 @@ You will find below links to "Are we ... yet?" websites and similar. They list k
 
 Note that several of these websites are out-of-date. [Are We Rust Yet?][are-we-rust-yet~repo]↗ list their last commit date and update frequency.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[crate_selection | Crate Selection]].
 - [[books | Books]].

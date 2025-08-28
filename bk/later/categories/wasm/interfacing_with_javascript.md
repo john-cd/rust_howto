@@ -20,14 +20,14 @@ This does not include any Web, [Node][p~node], or any other JS environment APIs.
 
 TODO add example ?
 
-## Accessing DOM and Web APIs via Rust {#skip}
+## Accessing DOM and Web APIs via Rust {#accessing-dom .skip}
 
 The [`web-sys`][c~web-sys~crates.io]↗{{hi:web-sys}} crate provides Rust bindings to the Web's APIs, allowing you to interact with the DOM, Canvas, WebGL, and other browser features.
 Essentially, [`web-sys`][c~web-sys~docs]↗{{hi:web-sys}} is the bridge that lets your Rust code talk to the browser.
 
 TODO add example ?
 
-## Calling Rust/WASM Functions from JavaScript {#skip1}
+## Calling Rust/WASM Functions from JavaScript {#calling-rust-wasm .skip}
 
 [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} also facilitates calling Rust/WASM functions from JavaScript.
 

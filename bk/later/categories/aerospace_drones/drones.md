@@ -8,7 +8,7 @@
 {{#include ../../../crates/cats/aerospace_drones/examples/drones/drones1.rs:example}}
 ```
 
-## See Also
+## See Also {#see-also .skip}
 
 - [[aerospace | Aerospace]].
 - [[aerospace_protocols | Aerospace Protocols]].

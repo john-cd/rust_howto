@@ -405,14 +405,14 @@ fn main() {
 
 Debugging macros can be challenging. To see what a macro expands to and debug it, use the [`cargo-expand`][c~cargo-expand~crates.io]↗ cargo plugin. See also the [debugging][book~the-little-book-of-rust-macros~debugging]↗ section of the little book of macros for more suggestions.
 
-## References {#references}
+## References {#references .skip}
 
 - [Rust Reference - Macros][book~rust-reference~macros]↗.
 - [Rust by Example - Macros][book~rust-by-example~macros]↗.
 - The [Little Book of Rust Macros][book~rust-macros]↗.
 - [Macros in Rust][blog~macros-in-rust-a-tutorial-with-examples]↗: A tutorial with examples.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[development-tools_procedural-macro-helpers | Development Tools: Procedural Macro Helpers]].
   - [[compile_macros | Compile Macros]].

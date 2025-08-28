@@ -32,7 +32,7 @@
 {{#include ../../../crates/cats/os_windows_apis/examples/windows/winapi.rs:example}}
 ```
 
-## See Also
+## See Also {#see-also .skip}
 
 Native Windows [GUI][p~gui]: [![native-windows-gui~repo][c~native-windows-gui~repo~badge]][c~native-windows-gui~repo]{{hi:native-windows-gui}}
 

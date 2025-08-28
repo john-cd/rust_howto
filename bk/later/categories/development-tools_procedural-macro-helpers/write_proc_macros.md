@@ -90,7 +90,7 @@ Debugging procedural [macros][p~macros] can be tricky. Often involves printing t
 
 Good documentation is essential for any procedural macro. Document your macro's usage, attributes, and any potential pitfalls.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[macros | Macros]].
 - [[development-tools_procedural-macro-helpers | Development Tools: Procedural Macro Helpers]].

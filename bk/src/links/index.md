@@ -49,7 +49,7 @@ This section provides a large number of links to Rust resources.
 
 {{#include companies.incl.md}}
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[crate_selection | Crate Selection]].
 

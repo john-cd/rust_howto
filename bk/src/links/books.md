@@ -198,7 +198,7 @@ See also the [Awesome Embedded Rust][awesome-embedded-rust~repo]↗, a curated l
 
 For convenience, this page includes a number of links to the websites of publishers and book merchants. It is not an endorsement of these particular retailers or publishers. Click on the ISBN number link to gain access to a Wikipedia page with links to a variety of catalogs, ebook databases, and book sellers to choose from.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[blogs | Blogs]].
 - [[example_code | Example Code and Templates]].

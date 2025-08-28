@@ -56,7 +56,7 @@ While ROS traditionally favored [Python][p~python] and C++, Rust is gradually ga
 
 Formally specified Rust bindings for ROS2.
 
-## Other Crates {#skip}
+## Other Crates {#other-crates .skip}
 
 - [`ros2_rust`][ros2_rust~repo]↗{{hi:ros2_rust}} - Rust bindings for ROS2.
 - [`roslibrust`][c~roslibrust~crates.io]↗{{hi:roslibrust}} - Pure Rust implementation of a rosbridge client.

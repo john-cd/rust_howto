@@ -22,7 +22,7 @@ See [[external_commands | External Commands]].
 
 See also [[shells | Shells]].
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[command-line-interface | Command Line Interface]].
   - [[argument_parsing | Argument Parsing]].

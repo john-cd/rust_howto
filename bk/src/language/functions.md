@@ -87,7 +87,7 @@ Instead, you should typically:
 
 You can also use `std::borrow::Cow` to generalize over owned data and unowned references. See the [[cow | COW]] chapter.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[closures | Closures]].
 

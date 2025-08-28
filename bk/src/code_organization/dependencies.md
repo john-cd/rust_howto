@@ -41,7 +41,7 @@ fn main() -> Result<()> {
 }
 ```
 
-## References {#references}
+## References {#references .skip}
 
 - [Using a Crate to Get More Functionality][book~rust~ch02-00-guessing-game-tutorial.html#using-a-crate-to-get-more-functionality]↗.
 

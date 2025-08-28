@@ -32,12 +32,12 @@ Use the following crates:
 - [`bincode`][c~bincode~docs]↗{{hi:bincode}} is a compact binary format that is often used for efficient communication.
 - [`erlang_term`][c~erlang-term~docs]{{hi:erlang_term}} converts Erlang External Term Format to Rust objects, without using Erlang NIFs.
 
-## Build Tools {#build-tools}
+## Build Tools {#build-tools .skip}
 
 - [[cargo | `cargo`]] builds the Rust side of the integration.
 - [`mix`][mix~website]↗{{hi:mix}} build the Erlang/Elixir side and manage dependencies.
 
-## Other Considerations {#other-considerations}
+## Other Considerations {#other-considerations .skip}
 
 - Careful [error handling][p~error-handling] is crucial, especially with NIFs, as a crash in the NIF can bring down the entire Erlang VM.
 - Erlang/Elixir and Rust have different [concurrency][p~concurrency] models. You'll need to be mindful of how you manage [concurrency][p~concurrency] across the FFI boundary.- You'll need to map data types between Rust and Erlang/Elixir. The [`erlang_term`][c~erlang_term~docs]{{hi:erlang_term}} crate can help with this.

@@ -24,7 +24,7 @@ Currently available subcommands:
 
 ## Find Unused Dependencies {#find-unused-dependencies}
 
-### `cargo udeps` {#skip1}
+### `cargo udeps` {#cargo-udeps .skip}
 
 [![cargo-udeps][c~cargo-udeps~docs~badge]][c~cargo-udeps~docs]{{hi:cargo-udeps}}
 [![cargo-udeps~crates.io][c~cargo-udeps~crates.io~badge]][c~cargo-udeps~crates.io]
@@ -37,7 +37,7 @@ Currently available subcommands:
 
 While compilation of this tool also works on Rust stable, it needs Rust nightly to actually run.
 
-### `cargo machete` {#skip2}
+### `cargo machete` {#cargo-machete .skip}
 
 [![cargo-machete][c~cargo-machete~docs~badge]][c~cargo-machete~docs]{{hi:cargo-machete}}
 [![cargo-machete~crates.io][c~cargo-machete~crates.io~badge]][c~cargo-machete~crates.io]
@@ -74,7 +74,7 @@ The [`deps.rs`][deps.rs~website]↗ website uses semantic versioning to detect o
 
 [`rust-digger.code-maven.com`][rust-digger~website]↗ collects data about [Rust Crates][crates.io~website]↗ to find the common practices of Open Source Rust developers and trying to improve the Rust ecosystem.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[cargo | Cargo]].
 - [[development_tools | Development Tools]].

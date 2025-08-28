@@ -163,7 +163,7 @@ For more details on trait bounds, see the [[generics | Generics]] and [[impl_tra
 
 This topic is covered in the [[asynchronous | Async]] chapter.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[enums | Enums]].
 - [[generics | Generics]].
@@ -171,7 +171,7 @@ This topic is covered in the [[asynchronous | Async]] chapter.
 - [[structs | Structs]].
 - [[trait_objects | Trait Objects]].
 
-## References {#references}
+## References {#references .skip}
 
 - [Traits (blog)][blog~traits]↗.
 - [What is the correct way to return an Iterator (or any other trait)?][blog~stackoverflow~what-is-the-correct-way-to-return-an-iterator-or-any-other-trait]↗.

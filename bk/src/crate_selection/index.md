@@ -49,7 +49,7 @@ You may also consult older resources, such as:
 - [Rust Starter Pack][rust-starter-pack~website]↗{{hi:Rust starter pack}}.
 - [![stdx][c~stdx~repo~badge]][c~stdx~repo]↗{{hi:stdx}}.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[state_of_the_art | State of the Rust Ecosystem]].
 

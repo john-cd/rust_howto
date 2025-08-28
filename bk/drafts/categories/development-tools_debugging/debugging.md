@@ -6,7 +6,7 @@
 |---|---|
 | Debugging | [`gdb`][c~gdb~docs]↗{{hi:gdb}} or [`lldb`][c~lldb~docs]↗{{hi:lldb}} |
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[development-tools | Development Tools]].
 - [[development-tools_profiling | Development Tools: Profiling]].

@@ -2,9 +2,9 @@
 
 {{#include memory_allocation.incl.md}}
 
-## Custom Memory Allocators {#skip}
+## Custom Memory Allocators {#custom-memory-allocators .skip}
 
-### `wee_alloc` {#wee_alloc}
+### Use a Custom Allocator `wee_alloc` {#wee_alloc}
 
 [![wee_alloc][c~wee_alloc~docs~badge]][c~wee_alloc~docs] [![wee_alloc~crates.io][c~wee_alloc~crates.io~badge]][c~wee_alloc~crates.io] [![wee_alloc~repo][c~wee_alloc~repo~badge]][c~wee_alloc~repo] [![wee_alloc~lib.rs][c~wee_alloc~lib.rs~badge]][c~wee_alloc~lib.rs]{{hi:wee_alloc}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}}
 
@@ -30,7 +30,7 @@ Mimalloc is a general purpose, performance-oriented allocator built by Microsoft
 {{#include ../../../crates/cats/memory_management/examples/mimalloc.rs:example}}
 ```
 
-## Pre-allocated Storage for a Uniform Data Type {#skip}
+## Pre-allocated Storage for a Uniform Data Type {#pre-allocated-storage .skip}
 
 ### `slab` {#slab}
 

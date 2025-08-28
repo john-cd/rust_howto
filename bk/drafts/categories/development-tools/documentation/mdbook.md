@@ -22,7 +22,7 @@ mdbook serve --open
 
 [Playground (Rust by example)][book~rust-by-example~playground]↗{{hi:Rust by example}}.
 
-## Augment `mdbook` with Plugins {#skip1}
+## Augment `mdbook` with Plugins {#augment-mdbook-with-plugins .skip}
 
 [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} has a large number of [third-party plugins][c~mdbook~third-party-plugins~wiki]↗.
 
@@ -87,7 +87,7 @@ jobs:
           publish_dir: ./book
 ```
 
-## Add a Table of Contents to Each Page {#skip1}
+## Add a Table of Contents to Each Page {#add-a-table-of-contents-to-each-page .skip}
 
 ### `mdbook-toc` {#mdbook-toc}
 
@@ -107,7 +107,7 @@ jobs:
 
 [`mdbook-pagetoc`][c~mdbook-pagetoc~docs]↗{{hi:mdbook-pagetoc}} is a [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} plugin that provides a table of contents for each page.
 
-## Create Pages from a Template {#skip2}
+## Create Pages from a Template {#create-pages-from-a-template .skip}
 
 ### Create Pages from a Template with `mdbook-tera` {#mdbook-tera}
 
@@ -127,7 +127,7 @@ jobs:
 
 [`mdbook-journal`][c~mdbook-journal~docs]↗{{hi:mdbook-journal}} is a journal plugin for [`mdBook`][c~mdbook~docs]↗{{hi:mdBook}}.
 
-## Other {#skip3}
+## Other {#other .skip}
 
 ### Preprocess your Book via Arbitrary Commands with `mdbook-cmdrun` {#mdbook-cmdrun}
 
@@ -147,7 +147,7 @@ jobs:
 
 [Byron-termbook][c~termbook~repo]↗{{hi:termbook}} is a runner for [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} to keep your documentation tested:
 
-## Alternatives {#skip}
+## Alternatives {#alternatives .skip}
 
 [`mdbook-hide`][c~mdbook-hide~repo]↗{{hi:mdbook-hide}} hides chapters under construction. Install with `cargo install mdbook-hide`. Configure in [`book.toml`][c~mdbook~book.toml]↗{{hi:book.toml}}.
 

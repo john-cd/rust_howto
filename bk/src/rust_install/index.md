@@ -76,11 +76,11 @@ git commit
 
 Review the [git][git~website]↗ manual for more commands.
 
-## References {#references}
+## References {#references .skip}
 
 - [Install Rust][rust-lang~install-rust]↗{{hi:Rust installation}}.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[cargo |`cargo`]].
 - [[entrypoint | Entrypoints]].

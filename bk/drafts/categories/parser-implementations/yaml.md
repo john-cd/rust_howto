@@ -12,7 +12,7 @@
 {{#include ../../../crates/cats/parser_implementations/examples/yaml/serde_yml.rs:example}}
 ```
 
-## Other Options {#skip}
+## Other Options {#other-options .skip}
 
 Consider [`yaml-rust`][c~yaml-rust~docs]↗{{hi:yaml-rust}}. 'serde_yaml' is deprecated.
 

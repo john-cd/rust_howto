@@ -62,7 +62,7 @@ fn main() {
 }
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[data_structures | Data Structures]].
 - [[drop | Drop]].

@@ -66,7 +66,7 @@ When defining a function that accepts a closure, you use the `Fn`, `FnMut`, or `
 {{#include ../../crates/language/examples/closures/closures_as_input_parameters.rs:example}}
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[functions | Functions]].
 - [[rust-patterns | Rust Patterns]].

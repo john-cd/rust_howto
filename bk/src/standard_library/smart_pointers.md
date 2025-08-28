@@ -94,7 +94,7 @@ The following example demonstrates the implementation of a basic smart pointer:
 {{#include ../../crates/standard_library/examples/smart_pointers/deref.rs:example}}
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[asref | AsRef]].
 - [[borrow | Borrow]].

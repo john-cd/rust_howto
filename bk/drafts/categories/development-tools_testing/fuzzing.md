@@ -8,36 +8,36 @@ Fuzzing is a unguided approach to random [testing][p~testing]. A fuzzer generall
 
 Fuzzers generally get their power through a kind of evolutionary algorithm that rewards new mutant inputs that "discover" new branches of the program under test. Fuzzers are excellent for [testing][p~testing] security boundaries, precisely because they make no validity assumptions (hence, they are "unguided") when generating the input.
 
-## Fuzzing Engines {#skip}
+## Fuzzing Engines {#fuzzing-engines .skip}
 
 - [`cargo fuzz`][c~cargo-fuzz~repo]↗{{hi:cargo fuzz}}: The most common and recommended way to perform fuzzing in Rust. It integrates well with [Cargo][p~cargo] and uses libFuzzer under the hood.
 - [`afl.rs`][c~afl~docs]↗{{hi:afl.rs}}: Bindings to the American Fuzzy Lop (AFL) fuzzer. AFL is a powerful fuzzer, but [cargo][p~cargo] fuzz with libFuzzer is often sufficient and easier to set up.
 
 In almost all cases, [`cargo-fuzz`][c~cargo-fuzz~docs]↗{{hi:cargo-fuzz}} will be your primary tool for fuzzing Rust code. It uses [`libFuzzer`][libFuzzer~website]↗{{hi:libFuzzer}}, a powerful and modern fuzzing engine, and simplifies the fuzzing process significantly. Make sure to define good fuzz targets and use sanitizers to detect errors effectively.
 
-### Target Definition {#skip}
+### Target Definition {#Target Definition .skip}
 
 You'll need to define a fuzz target - a function in your code that the fuzzer will call with different inputs. This is a crucial step in setting up fuzzing.
 
-### Corpus Management {#skip}
+### Corpus Management {#Corpus Management .skip}
 
 Important for effective fuzzing.
 
 A corpus is a set of initial inputs that the fuzzer uses as a starting point. [`cargo fuzz`][c~cargo-fuzz~repo]↗{{hi:cargo fuzz}} helps manage corpora.
 
-### Coverage-Guided Fuzzing {#skip}
+### Coverage-Guided Fuzzing {#Coverage-Guided Fuzzing .skip}
 
 Most effective.
 
 [`libFuzzer`][libFuzzer~website]↗{{hi:libFuzzer}} (used by `cargo fuzz`): libFuzzer is a coverage-guided fuzzer, meaning it uses [code coverage][p~code-coverage] information to guide its search for bugs.
 AFL: Also a coverage-guided fuzzer.
 
-### Sanitizers (for Detecting errors) {#skip}
+### Sanitizers (for Detecting errors) {#Sanitizers (for Detecting errors) .skip}
 
 Address Sanitizer (ASan): Detects memory errors (e.g., use-after-free, memory leaks). Enable it with compiler flags (e.g., `-fsanitize=address`).
 Undefined Behavior Sanitizer (UBSan): Detects undefined behavior (e.g., integer overflow, out-of-bounds access). Enable it with compiler flags (e.g., `-fsanitize=undefined`).
 
-### Differential Fuzzing: (For Comparing implementations) {#skip}
+### Differential Fuzzing: (For Comparing implementations) {#Differential Fuzzing: (For Comparing implementations) .skip}
 
 This is a more advanced technique and often involves custom [scripting][p~scripting] or tools. There aren't specific crates for it.
 
@@ -57,7 +57,7 @@ Fuzz testing (or fuzzing) is a software [testing][p~testing] technique used to f
 {{#include ../../../crates/cats/development_tools_testing/examples/fuzzing/afl.rs:example}}
 ```
 
-## Related Topic: Property-Based Testing {#skip}
+## Related Topic: Property-Based Testing {#Related Topic: Property-Based Testing .skip}
 
 The [`proptest`][c~proptest~docs]↗{{hi:proptest}}, [`quickcheck`][c~quickcheck~docs]↗{{hi:quickcheck}} crates are used for property-based testing, which is a different but complementary technique to fuzzing. Property-based testing generates many random inputs to verify properties of your code.
 

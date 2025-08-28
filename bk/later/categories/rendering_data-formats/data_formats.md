@@ -8,7 +8,7 @@
 {{#include ../../../crates/cats/rendering_data_formats/examples/data_formats/data_formats.rs:example}}
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

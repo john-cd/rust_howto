@@ -19,7 +19,7 @@
 - [Rust for C# Developers][book~rust-for-C#-developers]↗{{hi:Comparison to other languages}}.
 - [A Comparison of Rust's Borrow Checker to the one in C#][blog~csborrow]↗.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[books | Books]].
 - [[example_code | Example Code and Templates]].

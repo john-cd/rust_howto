@@ -40,7 +40,7 @@ The following example demonstrates the basic usage of `Pin`, `Unpin`, `PhantomPi
 {{#include ../../crates/standard_library/examples/pin/pin.rs:example}}
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[futures | Futures]].
 - [[traits | Traits]].

@@ -19,3 +19,4 @@
 | [Bind a Variable with `@` Bindings (Bind to Subpatterns)][ex~language~at-bindings] |
 | [Match Guards (`if condition`)][ex~language~match-guards] |
 | [Create References While Binding with `ref` and `ref mut`][ex~language~ref-and-ref-mut-bindings] |
+| [Destructure][ex~language~destructure] |

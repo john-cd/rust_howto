@@ -6,7 +6,7 @@
 
 [`rapier`][rapier.rs~website]↗ is a physics engine (2D and 3D).
 
-## See Also
+## See Also {#see-also .skip}
 
 - [Physics][are-we-game-yet?-physics~website]↗.
 

@@ -41,6 +41,7 @@
 [ex~language~destructure-references]: match.md#destructure-references
 [ex~language~destructure-structs]: match.md#destructure-structs
 [ex~language~destructure-tuples]: match.md#destructure-tuples
+[ex~language~destructure]: match.md#destructure
 [ex~language~destructuring]: variables.md#destructuring
 [ex~language~diverging-functions]: functions.md#diverging-functions
 [ex~language~dsl-macros]: macros.md#dsl-macros
@@ -54,6 +55,7 @@
 [ex~language~function]: functions.md#function
 [ex~language~generic-enums]: enums.md#generic-enums
 [ex~language~generic-traits]: traits.md#generic-traits
+[ex~language~generics-syntax]: generics.md#generics-syntax
 [ex~language~hygiene]: macros.md#hygiene
 [ex~language~if-else]: control_flow.md#if-else
 [ex~language~if-let]: match.md#if-let
@@ -95,7 +97,6 @@
 [ex~language~procedural-macros]: macros.md#procedural-macros
 [ex~language~production-code-attributes]: attributes.md#production-code-attributes
 [ex~language~ref-and-ref-mut-bindings]: match.md#ref-and-ref-mut-bindings
-[ex~language~references-borrowing]: ownership_borrowing.md#references-borrowing
 [ex~language~repetitions]: macros.md#repetitions
 [ex~language~return-an-iterator]: iterators.md#return-an-iterator
 [ex~language~return-position-impl-trait]: impl_trait.md#return-position-impl-trait
@@ -118,6 +119,7 @@
 [ex~language~strum]: enums.md#strum
 [ex~language~supertraits]: traits.md#supertraits
 [ex~language~trait-bounds]: traits.md#trait-bounds
+[ex~language~trait-object-restrictions]: trait_objects.md#trait-object-restrictions
 [ex~language~trait-objects-basics]: trait_objects.md#trait-objects-basics
 [ex~language~trait-syntax]: traits.md#trait-syntax
 [ex~language~traits-types-elsewhere]: traits.md#traits-types-elsewhere
@@ -127,6 +129,7 @@
 [ex~language~unreachable-macros]: macros.md#unreachable-macros
 [ex~language~update-struct]: structs.md#update-struct
 [ex~language~use-iterators]: iterators.md#use-iterators
+[ex~language~use-lifetime-parameters]: lifetimes.md#use-lifetime-parameters
 [ex~language~use-macros]: macros.md#use-macros
 [ex~language~use-match-to-branch-on-a-pattern]: match.md#use-match-to-branch-on-a-pattern
 [ex~language~use-slice-as-function-argument]: slices.md#use-slice-as-function-argument

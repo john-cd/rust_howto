@@ -42,7 +42,7 @@
 {{#include ../../../crates/cats/text_processing/examples/string_search/strsim.rs:example}}
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[rust_search_engines | Rust Search Engines]].
 - [[search | Search]].

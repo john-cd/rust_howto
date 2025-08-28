@@ -82,12 +82,12 @@ Taking the example of strings: using `&str` for borrowing and `String` for owned
 {{#include ../../crates/standard_library/examples/cow/cow_alternatives.rs:example}}
 ```
 
-## References {#references}
+## References {#references .skip}
 
 - [Using Cow in Rust for efficient memory utilization][blog~using-cow-rust-efficient-memory-utilization]↗.
 - [The Secret Life of Cows][blog~secret-life-of-cows]↗.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[lifetimes | Lifetimes]].
 - [[memory-management | Memory Management]].

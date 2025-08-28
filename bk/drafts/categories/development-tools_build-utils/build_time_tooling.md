@@ -14,7 +14,7 @@ The following example has some bundled C code (`src/hello.c`) that will be used 
 
 Since the bundled C is very simple, only a single source file needs to be passed to [`cc::Build`][c~cc::Build~docs]↗{{hi:cc::Build}}. For more complex build requirements, [`cc::Build`][c~cc::Build~docs]↗{{hi:cc::Build}} offers a full suite of builder methods for specifying [`cc::Build::include`][c~cc::Build::include~docs]↗{{hi:cc::Build::include}} paths and extra compiler [`cc::Build::flag`][c~cc::Build::flag~docs]↗{{hi:cc::Build::flag}}.
 
-### `Cargo.toml` {#skip1}
+### `Cargo.toml` {#cargo-toml .skip}
 
 [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}
 
@@ -30,7 +30,7 @@ cc = "1"
 error-chain = "0.11"
 ```
 
-### `build.rs` {#skip2}
+### `build.rs` {#build-rs .skip}
 
 `build.rs`
 
@@ -38,7 +38,7 @@ error-chain = "0.11"
 {{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_bundled_static.rs:example}}
 ```
 
-### `src/hello.c` {#skip3}
+### `src/hello.c` {#hello-c .skip}
 
 ```c
 #include <stdio.h>
@@ -52,7 +52,7 @@ void greet(const char* name) {
 }
 ```
 
-### `src/main.rs` {#skip4}
+### `src/main.rs` {#main-rs .skip}
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_bundled_static1.rs:example}}
@@ -66,7 +66,7 @@ void greet(const char* name) {
 
 Linking a bundled C++ library is very similar to linking a bundled C library. The two core differences when compiling and statically linking a bundled C++ library are specifying a C++ compiler via the builder method [`cc::Build::cpp`][c~cc::Build::cpp~docs]↗{{hi:cc::Build::cpp}} and preventing name mangling by the C++ compiler by adding the `extern "C"` section at the top of our C++ source file.
 
-### `Cargo.toml` (static C++) {#skip5}
+### `Cargo.toml` (static C++) {#cargo-toml .skip}
 
 ```toml
 [package]
@@ -77,13 +77,13 @@ build = "build.rs"
 cc = "1"
 ```
 
-### `build.rs` (static C++) {#skip6}
+### `build.rs` (static C++) {#build-rs-static-cpp .skip}
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_bundled_cpp.rs:example}}
 ```
 
-### `src/foo.cpp` (static C++) {#skip7}
+### `src/foo.cpp` (static C++) {#foo-cpp .skip}
 
 ```cpp
 extern "C" {
@@ -95,7 +95,7 @@ int multiply(int x, int y) {
 }
 ```
 
-### `src/main.rs` (static C++) {#skip8}
+### `src/main.rs` (static C++) {#main-rs .skip}
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_bundled_cpp1.rs:example}}
@@ -112,7 +112,7 @@ The method takes an [`std::option::Option`][c~std::option::Option~docs]↗{{hi:s
 as well as `#define WELCOME` (pass [`std::option::Option::None`][c~std::option::Option::None~docs]↗{{hi:std::option::Option::None}} as the value for a value-less define). This example builds
 a bundled C file with dynamic defines set in [`build.rs`][book~cargo~build-script]↗{{hi:build.rs}} and prints "`Welcome to foo - version 1.0.2`" when run. [Cargo][p~cargo] sets some [environment variables][book~cargo~env]↗ which may be useful for some custom defines.
 
-### `Cargo.toml` (custom defines) {#skip9}
+### `Cargo.toml` (custom defines) {#cargo-toml-custom-defines .skip}
 
 ```toml
 [package]
@@ -124,13 +124,13 @@ build = "build.rs"
 cc = "1"
 ```
 
-### `build.rs` (custom defines) {#skip10}
+### `build.rs` (custom defines) {#build-rs-custom-defines .skip}
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_defines.rs:example}}
 ```
 
-### `src/foo.c` (custom defines) {#skip11}
+### `src/foo.c` (custom defines) {#foo-c-custom-defines .skip}
 
 ```c
 #include <stdio.h>
@@ -143,7 +143,7 @@ void print_app_info() {
 }
 ```
 
-### `src/main.rs` (custom defines) {#skip12}
+### `src/main.rs` (custom defines) {#main-rs-custom-defines .skip}
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_defines1.rs:example}}

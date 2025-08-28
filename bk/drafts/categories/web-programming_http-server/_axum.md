@@ -12,7 +12,7 @@
 {{#include ../../../crates/cats/web_programming_http_server/examples/axum.rs:example}}
 ```
 
-## See Also
+## See Also {#see-also .skip}
 
 - [Axum examples][c~axum~examples]↗.
 - ["Real world" examples with `axum` and `sqlx`][realworld~rust-axum-sqlx~repo]↗.

@@ -65,11 +65,11 @@ You may think of them as a `loop` that executes only once and allows exiting ear
 {{#include ../../crates/language/examples/control_flow/labeled_block_expression.rs:example}}
 ```
 
-## References {#references}
+## References {#references .skip}
 
 - Rust by Example - [Control flow][book~rust-by-example~flow_control]↗.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[match | Match]].
 

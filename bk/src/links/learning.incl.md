@@ -9,3 +9,4 @@
 | [Ferrous Systems Training][ex~links~ferrous-systems-training] |
 | [Paid Courses][ex~links~paid-courses] |
 | [Others][ex~links~others] |
+| [Lists of Rust Links and Resources][ex~links~lists-of-rust-links-and-resources] |

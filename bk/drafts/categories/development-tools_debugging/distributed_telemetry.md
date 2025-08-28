@@ -16,7 +16,7 @@ The [`opentelemetry`][c~opentelemetry~docs]↗{{hi:opentelemetry}} crate is an O
 {{#include ../../../crates/cats/development_tools_debugging/examples/other/open_telemetry.rs:example}}
 ```
 
-### Useful Links {#skip}
+### Useful Links {#useful-links .skip}
 
 - [`axum-tracing-opentelemetry` crate (GitHub)][tracing-axum-opentelemetry~repo]↗.
 - [OpenTelemetry with Rust - documentation][opentelemetry~rust]↗.
@@ -38,7 +38,7 @@ Prometheus instrumentation library for Rust applications. Prometheus is an open-
 - targets are discovered via service discovery or static configuration,
 - multiple modes of graphing and dashboarding support.
 
-### Useful Links {#skip}
+### Useful Links {#useful-links2 .skip}
 
 - [Grafana][grafana~website]↗.
 - [Prometheus][prometheus~repo] monitoring system and time series database.
@@ -52,7 +52,7 @@ Prometheus instrumentation library for Rust applications. Prometheus is an open-
 {{#include ../../../crates/cats/development_tools_debugging/examples/other/open_observe.rs:example}}
 ```
 
-## Other Common Observability Tools & Platforms {#skip}
+## Other Common Observability Tools & Platforms {#other-common-observability-tools-platforms .skip}
 
 - [Fluentd][fluentd~repo]↗ open-source log collector.
 - [Splunk][splunk~website]↗ is a unified security and observability platform.
@@ -62,7 +62,7 @@ Prometheus instrumentation library for Rust applications. Prometheus is an open-
 - [Nagios][nagios~website]↗.
 - [New Relic][newrelic~website]↗.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[metrics | Metrics]].
 - [[tracing | Tracing]].

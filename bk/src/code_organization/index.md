@@ -38,7 +38,7 @@ Rust's "module system" helps structure your projects effectively. It gives fine-
 
 - [[package_layout | Package Layout]].
 
-## References {#references}
+## References {#references .skip}
 
 - [Rust Project Primer][rustprojectprimer~website]↗.
 

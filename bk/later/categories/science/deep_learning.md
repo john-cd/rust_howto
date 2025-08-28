@@ -16,13 +16,13 @@
 {{#include ../../../crates/cats/science/examples/ml/candle.rs:example}}
 ```
 
-## `burn` {#skip4}
+## `burn` {#burn .skip}
 
 [![burn][c~burn~docs~badge]][c~burn~docs] [![burn~crates.io][c~burn~crates.io~badge]][c~burn~crates.io] [![burn~repo][c~burn~repo~badge]][c~burn~repo] [![burn~lib.rs][c~burn~lib.rs~badge]][c~burn~lib.rs]{{hi:burn}}{{hi:Deep-learning}}{{hi:Machine-learning}}{{hi:Ndarray}}{{hi:PyTorch}}{{hi:Tensor}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~science][cat~science~badge]][cat~science]{{hi:Science}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
 
 Burn is a comprehensive dynamic Deep Learning Framework built using Rust with flexibility, compute efficiency and portability as its primary goals.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[computer-vision | Computer Vision]].
 - [[linear_algebra | Linear Algebra]].

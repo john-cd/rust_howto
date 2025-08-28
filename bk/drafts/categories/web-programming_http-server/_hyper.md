@@ -28,7 +28,7 @@ This said, we provide below an example of a HTTP server, following the recommend
 {{#include ../../../crates/cats/web_programming_http_server/examples/hyper_server.rs:example}}
 ```
 
-## `hyper` TLS Support {#skip}
+## `hyper` TLS Support {#hyper-tls-support .skip}
 
 [![hyper-tls~website][c~hyper-tls~website~badge]][c~hyper-tls~website] [![hyper-tls][c~hyper-tls~docs~badge]][c~hyper-tls~docs] [![hyper-tls~crates.io][c~hyper-tls~crates.io~badge]][c~hyper-tls~crates.io] [![hyper-tls~repo][c~hyper-tls~repo~badge]][c~hyper-tls~repo] [![hyper-tls~lib.rs][c~hyper-tls~lib.rs~badge]][c~hyper-tls~lib.rs]{{hi:hyper-tls}}{{hi:Http}}{{hi:Https}}{{hi:Hyper}}{{hi:Ssl}}{{hi:Tls}}
 
@@ -42,7 +42,7 @@ Rustls + [`hyper`][c~hyper~docs]↗{{hi:hyper}} integration for pure rust HTTPS.
 
 Hyper TLS support via OpenSSL.
 
-## References {#references}
+## References {#references .skip}
 
 - [`hyper` examples][c~hyper~examples~repo]↗.
 

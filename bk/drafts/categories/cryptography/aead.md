@@ -45,7 +45,7 @@ AES-GCM-SIV (Advanced [Encryption][p~encryption] Standard - Galois/Counter Mode 
 
 For more [algorithms][p~algorithms], see Rust Crypto AEADs: aes-gcm-siv{{hi:aes-gcm-siv}}, aes-gcm{{hi:aes-gcm}}, chacha20poly1305{{hi:chacha20poly1305}}.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[encryption | Encryption]].
 - [[hashing | Hashing]].

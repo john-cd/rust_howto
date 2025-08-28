@@ -44,7 +44,7 @@ The following are some of the largest and most active local user groups. They ho
 
 See also [Rust Community Talks][talks~repo]↗.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[videos | Videos and Podcasts]].
 

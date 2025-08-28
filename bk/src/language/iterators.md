@@ -89,13 +89,13 @@ One benefit of implementing `IntoIterator` is that your type will work with the 
 {{#include ../../crates/language/examples/iterators/implement_intoiterator.rs:example}}
 ```
 
-## References {#references}
+## References {#references .skip}
 
 - [Iterators][book~rust~iterators]↗{{hi:Iterators}}.
 - [What is the correct way to return an Iterator (or any other trait)?][blog~stackoverflow~what-is-the-correct-way-to-return-an-iterator-or-any-other-trait]↗.
 - [Implementing Iterator and IntoIterator in Rust][blog~implementing-iterator-and-intoiterator-in-rust]↗.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[closures | Closures]].
 - [[data-structures | Data Structures]].

@@ -52,7 +52,7 @@
 {{#include ../../../crates/cats/parser_implementations/examples/xml/roxmltree.rs:example}}
 ```
 
-## Other Options {#skip}
+## Other Options {#other-options .skip}
 
 [`minidom`][c~minidom~docs]↗{{hi:minidom}} builds a DOM tree.
 

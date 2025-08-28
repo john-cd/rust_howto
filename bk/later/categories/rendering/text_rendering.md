@@ -34,7 +34,7 @@ A simple [`#![no_std]`][book~rust-reference~no_std]{{hi:no_std}} font parser and
 
 [`opentype`][c~opentype~docs]↗{{hi:opentype}}
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [`sdl2`][c~sdl2~docs]↗{{hi:sdl2}}: SDL2 bindings for Rust.
 

@@ -48,7 +48,7 @@ Distinguish the above traits from the following:
 - [`Deref`][c~std::ops::Deref~docs]↗{{hi:std::ops::Deref}} provides _implicit_ access to the inner data of _smart pointers_ via _dereferencing_ (`*`, `.` method calls) - e.g., from `Box<T>` to `T`. It is a key part of Rust's deref coercion system.
 - [`Borrow`][c~std::borrow::Borrow~docs]↗{{hi:std::borrow::Borrow}} enables structural borrowing, especially for collections. `Borrow` is most often used in standard library collections like `HashMap`{{hi:std::collections::HashMap}} to let you use a borrowed key (e.g., `&str`) to look up an owned key (`String`). Unlike `AsRef`, which is for conversion, `Borrow` implies full _equivalence in behavior_. In particular, `Eq`, `Ord` and `Hash` _must_ be equivalent for borrowed and owned values.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[asref | AsRef]].
 - [[borrow | Borrow]].

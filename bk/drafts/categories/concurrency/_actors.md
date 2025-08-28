@@ -77,7 +77,7 @@ Ractor is a Rust crate providing a simple, lightweight actor framework. It facil
 {{#include ../../../crates/cats/concurrency/examples/actors/actix.rs:example}}
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[_actix | Actix]] Web.
 - [[concurrency | Concurrency]].

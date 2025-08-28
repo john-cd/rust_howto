@@ -32,7 +32,7 @@ If you need mutability inside an `Rc`, you can use [`RefCell<T>`][c~std::cell::R
 
 See [[interior_mutability | Interior Mutability]] for more details.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[box | Box]].
 - [[cow | Clone on Write]].

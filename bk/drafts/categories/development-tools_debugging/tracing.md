@@ -124,7 +124,7 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across [`awai
 {{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_instrument.rs:example}}
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [![tracing-journald][c~tracing-journald~docs~badge]][c~tracing-journald~docs]{{hi:tracing-journald}}
 - [![tracing-journald~crates.io][c~tracing-journald~crates.io~badge]][c~tracing-journald~crates.io]
@@ -133,7 +133,7 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across [`awai
 
 [tracing-journald][c~tracing-journald~docs]↗ provides support for logging [`tracing`][c~tracing~crates.io]↗ events natively to [journald][journald]↗, preserving any structured information.
 
-## References {#references}
+## References {#references .skip}
 
 - [Next steps with Tracing][c~tracing~next-steps]↗.
 

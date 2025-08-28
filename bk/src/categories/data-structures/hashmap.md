@@ -49,7 +49,7 @@ You can use a custom hash function with [`HashMap`][c~std::collections::HashMap~
 - [[btrees | B-trees]].
 - [[maps | Other Maps]].
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[data-structures | Data Structures]].
 

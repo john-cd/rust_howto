@@ -77,7 +77,7 @@ When all Senders or all Receivers are dropped, the channel becomes closed. When 
 {{#include ../../../crates/cats/asynchronous/examples/async_channels/kanal.rs:example}}
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[concurrency | Concurrency]].
 - [[concurrent_data_structures | Concurrent Data Structures]].

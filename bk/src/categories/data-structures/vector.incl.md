@@ -2,3 +2,4 @@
 |---|---|
 | [Store Homogeneous Data in a Contiguous, Growable Array with `Vec`][ex~data-structures~vec] | [![std][c~std~docs~badge]][c~std~docs] |
 | [`Vec` Memory Allocation][ex~data-structures~memory-allocation] | [![std][c~std~docs~badge]][c~std~docs] |
+| [Other Data Structures][ex~data-structures~other-data-structures] | | |

@@ -3,6 +3,7 @@
 [ex~data-processing~dataframes]: dataframes.md#dataframes
 [ex~data-processing~datafusion]: data_engineering.md#datafusion
 [ex~data-processing~manipulate-csv-files-from-the-command-line]: csv.md#manipulate-csv-files-from-the-command-line
+[ex~data-processing~other-frameworks]: data_engineering.md#other-frameworks
 [ex~data-processing~rerun]: data_engineering.md#rerun
 [p~csv]: # "../../categories/encoding/csv.md"
 [p~data-processing]: index.md

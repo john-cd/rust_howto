@@ -1,3 +1,5 @@
+[ex~contributing~alternative-just-install]: dev_environment_setup.md#alternative-just-install
+[ex~contributing~alternative-mdbook-install]: dev_environment_setup.md#alternative-mdbook-install
 [ex~contributing~book-organization]: repo_structure.md#book-organization
 [ex~contributing~code-organization]: repo_structure.md#code-organization
 [ex~contributing~deployment-to-github-pages]: dev_container_docker.md#deployment-to-github-pages

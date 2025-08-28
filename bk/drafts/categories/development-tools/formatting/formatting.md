@@ -2,7 +2,7 @@
 
 {{#include formatting.incl.md}}
 
-## Key Tools {#skip}
+## Key Tools {#key-tools .skip}
 
 | Topic | Rust Crates |
 |---|---|
@@ -81,7 +81,7 @@ rustfmt --help=config
 
 For things [`rustfmt`][c~rustfmt~repo]↗{{hi:rustfmt}} should not mangle, use `#[rustfmt::skip]`{{hi:rustfmt::skip}} , `#[rustfmt::skip::macros(macro_name)]`{{hi:rustfmt::skip::macros(macro_name)}} , or `#![rustfmt::skip::attributes(custom_attribute)]`{{hi:rustfmt::skip::attributes(custom_attribute)}}
 
-## References {#references}
+## References {#references .skip}
 
 - [The Rust Style Guide][style-guide~website]↗.
 

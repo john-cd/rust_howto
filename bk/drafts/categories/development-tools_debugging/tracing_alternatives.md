@@ -2,7 +2,7 @@
 
 {{#include tracing_alternatives.incl.md}}
 
-## Use Older Alternatives to `tracing` {#skip1}
+## Use Older Alternatives to `tracing` {#use-older-alternatives-to-tracing .skip}
 
 [`tracing`][c~tracing~docs]↗{{hi:tracing}} is now the "go-to" crate for logging, but [`log`][c~log~docs]↗{{hi:log}}, [`slog`][c~slog~docs]↗{{hi:slog}} and [`log4rs`][c~log4rs~docs]↗{{hi:log4rs}} are still in extensive use.
 

@@ -6,7 +6,7 @@
 
 ## Use Classical Machine Learning Algorithms {#classical-ml}
 
-### `linfa` {#skip1}
+### `linfa` {#linfa .skip}
 
 [![linfa][c~linfa~docs~badge]][c~linfa~docs]{{hi:linfa}} [![linfa~crates.io][c~linfa~crates.io~badge]][c~linfa~crates.io] [![linfa~website][c~linfa~website~badge]][c~linfa~website] [![cat~science][cat~science~badge]][cat~science]{{hi:Science}}{{hi:Machine learning}}
 
@@ -16,7 +16,7 @@ Kin in spirit to [Python][p~python]'s `scikit-learn`, [`linfa`][c~linfa~docs]↗
 {{#include ../../../crates/cats/science/examples/ml/linfa.rs:example}}
 ```
 
-### `smartcore` {#skip2}
+### `smartcore` {#smartcore .skip}
 
 [![smartcore~website][c~smartcore~website~badge]][c~smartcore~website] [![smartcore][c~smartcore~docs~badge]][c~smartcore~docs] [![smartcore~crates.io][c~smartcore~crates.io~badge]][c~smartcore~crates.io] [![smartcore~repo][c~smartcore~repo~badge]][c~smartcore~repo] [![smartcore~lib.rs][c~smartcore~lib.rs~badge]][c~smartcore~lib.rs]{{hi:smartcore}}{{hi:Statistical}}{{hi:Ai}}{{hi:Machine-learning}}{{hi:Optimization}}{{hi:Linear-algebra}}[![cat~science][cat~science~badge]][cat~science]{{hi:Science}}
 
@@ -26,7 +26,7 @@ Kin in spirit to [Python][p~python]'s `scikit-learn`, [`linfa`][c~linfa~docs]↗
 {{#include ../../../crates/cats/science/examples/ml/smartcore.rs:example}}
 ```
 
-## See Also
+## See Also {#see-also .skip}
 
 - [Are we learning yet?][are-we-learning-yet?~website]↗.
 - [Clustering][are-we-learning-yet?-clustering~website]↗.

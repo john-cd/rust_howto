@@ -2,7 +2,7 @@
 
 {{#include wasm_basics.incl.md}}
 
-## What is WASM? {#skip}
+## What is WASM? {#What-is-wasm .skip}
 
 WebAssembly (abbreviated [WASM][p~wasm]) is a low-level assembly-like language with a compact binary format that can be run in modern web browsers.
 
@@ -18,7 +18,7 @@ WebAssembly binaries typically have a [`.wasm`][book~rustwasm]↗{{hi:.wasm}} fi
 
 In essence, WebAssembly bridges the gap between high-level programming languages and the Web, enabling developers to create powerful and performant web applications.
 
-## WASM Use Cases {#skip}
+## WASM Use Cases {#wasm-use-cases .skip}
 
 Inside the browser:
 
@@ -49,7 +49,7 @@ WASM can be used to build virtual machines or [emulators][p~emulators] for other
 
 See [webassembly.org][webassembly~website] and [madewithwebassembly.com][madewithwebassembly~website]↗.
 
-### Example: Game Development Using WASM {#skip}
+### Example: Game Development Using WASM {#example .skip}
 
 Rust can be used for [game development][p~game-development] targeting the web via WASM. [`winit`][c~winit~docs]↗{{hi:winit}} handles window creation, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} provides access to WebGPU, and [`bevy`][c~bevy~docs]↗{{hi:bevy}} is a Rust game engine that can compile to WASM.
 

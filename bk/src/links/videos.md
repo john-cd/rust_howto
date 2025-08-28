@@ -44,7 +44,7 @@
 - [The Way of the Crab][wayofthecrab~website]↗.
 - [Rust Game Dev][podcast~rust-game-dev]↗.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[blogs | Blogs]].
 - [[books | Books]].

@@ -24,7 +24,7 @@ This is useful when the exact type is complex, not relevant to the caller, or im
 {{#include ../../crates/language/examples/impl_trait/rpit.rs:example}}
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[closures | Closures]].
 - [[generics | Generics]].

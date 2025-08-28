@@ -23,7 +23,7 @@
 
 Consult the [Just programmer's manual][c~just~programmer-manual]↗.
 
-### Create a `justfile` {#skip1}
+### Create a `justfile` {#create-a-justfile .skip}
 
 Place the following example `justfile`{{hi:justfile}} in the root folder of your project. Run [`just`][c~just~website]↗{{hi:just}} to see a list of recipes. Run `just <recipe>` to execute the corresponding recipe.
 
@@ -57,7 +57,7 @@ foo:
   echo "$hello from Bash!"
 ```
 
-### Install `just` in a Dev Container {#skip2}
+### Install `just` in a Dev Container {#install-just-in-a-dev-container .skip}
 
 [`just`][c~just~docs]↗{{hi:just}}
 

@@ -70,7 +70,7 @@ You may also implement the [`AsRef`][c~std::convert::AsRef~docs]↗{{hi:std::con
 
 Note that so-called "Deref polymorphism", meaning implementing [`Deref`][c~std::ops::Deref~docs]↗{{hi:std::ops::Deref}} to emulate inheritance between structs, is considered an [anti-pattern][deref-anti-pattern~repo]↗, especially since `Deref` is an _implicit_ conversion.
 
-### References {#references}
+### References {#references .skip}
 
 - [Rust's `AsRef` Explained][blog~rusts-asref-explained]↗.
 - [Rust is Beyond Object-Oriented, Part 3: Inheritance][blog~thecodedmessage-posts-oop-3-inheritance]↗.

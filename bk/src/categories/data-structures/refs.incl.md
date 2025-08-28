@@ -10,6 +10,7 @@
 [ex~data-structures~hashmap]: hashmap.md#hashmap
 [ex~data-structures~hashset]: hashmap.md#hashset
 [ex~data-structures~heapless]: heapless.md#heapless
+[ex~data-structures~implement-a-priority-queue]: binaryheap.md#implement-a-priority-queue
 [ex~data-structures~indexmap]: maps.md#indexmap
 [ex~data-structures~linkedlist]: linkedlist.md#linkedlist
 [ex~data-structures~memory-allocation]: vector.md#memory-allocation
@@ -19,6 +20,7 @@
 [ex~data-structures~placeholders]: strings.md#placeholders
 [ex~data-structures~priority-queue]: binaryheap.md#priority-queue
 [ex~data-structures~queue]: stack_and_queue.md#queue
+[ex~data-structures~related-data-structures]: hashmap.md#related-data-structures
 [ex~data-structures~related-data-structures]: strings.md#related-data-structures
 [ex~data-structures~slotmap]: maps.md#slotmap
 [ex~data-structures~smallvec]: stack_allocated_arrays.md#smallvec

@@ -37,18 +37,18 @@ Other (Less Common) Options:
 
 `nodejs-sys`: Provides lower-level bindings to the Node.js API, but [`neon`][c~neon~docs]↗{{hi:neon}} is generally preferred for ease of use and safety.
 
-## Communication/Serialization {#communication-serialization}
+## Communication/Serialization {#communication-serialization .skip}
 
 [`serde`][c~serde~docs]↗{{hi:serde}}: (Often used for serializing and deserializing data passed between Rust and Node.js. Although N-API provides mechanisms for passing data, using [serde][p~serde] can be helpful for more complex data structures.)
 serde_json: (If you're exchanging [JSON][p~json] data.)
 
-## Build Tools {#build-tools}
+## Build Tools {#build-tools .skip}
 
 - Use [`cargo`][c~cargo~docs]↗{{hi:cargo}} for building the Rust library.
 - Use `npm` or `yarn` for managing the Node.js side and integrating with the Rust addon.
 - `node-gyp` is often used for building native 'Node.js' addons, but [`neon`][c~neon~docs]↗{{hi:neon}} simplifies this process.
 
-## Key Concepts and Workflow {#key-concepts-and-workflow}
+## Key Concepts and Workflow {#key-concepts-and-workflow .skip}
 
 N-API: You'll write Rust code that interacts with the N-API to create Node.js objects, call JavaScript functions, and handle data.
 Addons: You'll create a Node.js addon that exposes your Rust functions to JavaScript.

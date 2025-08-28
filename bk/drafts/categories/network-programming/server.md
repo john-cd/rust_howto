@@ -16,7 +16,7 @@ In this example, the port{{hi:Port}} is displayed on the console, and the progra
 
 `io_uring`{{hi:io_uring}} is a [Linux][p~linux] kernel system call interface for high-performance [asynchronous][p~asynchronous] I/O operations on storage devices. It works by creating two circular buffers, called "queue rings", for storage of submission and completion of I/O requests, respectively.
 
-### High-performance Asynchronous I/O with `glommio` {#skip1}
+### High-performance Asynchronous I/O with `glommio` {#high-performance-asynchronous-io .skip}
 
 [![glommio][c~glommio~docs~badge]][c~glommio~docs]{{hi:glommio}}
 [![glommio~crates.io][c~glommio~crates.io~badge]][c~glommio~crates.io]

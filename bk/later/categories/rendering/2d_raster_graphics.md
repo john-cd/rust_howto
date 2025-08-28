@@ -18,13 +18,13 @@
 
 [`tiny-skia`][c~tiny-skia~docs]↗{{hi:tiny-skia}} is a small, fast, and portable 2D [graphics][p~graphics] library that can render to bitmaps. Supports paths, gradients, and text. Excellent for when you need something lightweight and performant.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[color_handling | Color Handling]].
 - Image Loading and Manipulation: see [[multimedia_images | Multimedia: Images]].
 - [[2d_vector_graphics | 2D Vector Graphics]].
 
-## See Also
+## See Also {#see-also .skip}
 
 [Are we Game yet? 2D Rendering][are-we-game-yet?-2d-rendering~website]: Sprites, vectors, splines, hex grids and more
 

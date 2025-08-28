@@ -13,7 +13,7 @@ Shaders are programs that run on the [GPU][p~gpu] (Graphics Processing Unit). Th
 
 Shaders are written in specialized [programming languages][p~programming-languages] like GLSL (OpenGL Shading Language), HLSL (High-Level Shading Language for DirectX), and Metal Shading Language (for Apple's Metal API). [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} uses WGSL.
 
-## Topics {#skip}
+## Topics {#topics .skip}
 
 - SPIR-V compilation.
 - GLSL/HLSL compilation.
@@ -34,17 +34,17 @@ Making Rust a first-class language and ecosystem for [GPU][p~gpu] shaders.
 
 Multi-platform high-performance compute language extension for Rust.
 
-## GLSL/HLSL Compilation {#skip}
+## GLSL/HLSL Compilation {#glsl-hlsl .skip}
 
 FIXME.
 
-## SPIR-V {#skip}
+## SPIR-V {#spirv .skip}
 
-### `glsl-to-spirv` {#skip}
+### `glsl-to-spirv` {#glsl-to-spirv .skip}
 
 [`glsl-to-spirv`][c~glsl-to-spirv~docs]↗{{hi:glsl-to-spirv}} compiles GLSL to SPIR-V.
 
-### `spirv-builder` {#skip}
+### `spirv-builder` {#spirv-builder .skip}
 
 For building spirv modules.
 
@@ -56,16 +56,16 @@ For inspecting SPIR-V shaders.
 
 [`shaderc`][c~shaderc~docs]↗{{hi:shaderc}} is a Rust wrapper for the `shaderc` library (compiles GLSL/HLSL to SPIR-V).
 
-## Compute Shaders and GPU Compute (GPGPU) {#skip}
+## Compute Shaders and GPU Compute (GPGPU) {#gpgpu .skip}
 
 Compute Shaders are often handled through the low-level graphics [APIs][p~apis] like [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} or [`vulkano`][c~vulkano~docs]↗{{hi:vulkano}}.
 
-## References {#references}
+## References {#references .skip}
 
 - [[typecasts | Typecasts]] and especially [`bytemuck`][c~bytemuck~docs]↗{{hi:bytemuck}} - A crate for mucking around with piles of bytes.
 - [Are we Game yet? - Shaders][are-we-game-yet?-shader~website]↗.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[gpu | GPU]].
 - [[gpu_abstraction_layers | GPU Abstraction Layers]].

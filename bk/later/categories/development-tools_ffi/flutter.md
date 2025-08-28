@@ -39,7 +39,7 @@ You'll serialize data in Rust and deserialize it in Dart, or vice-versa.
 
 For more complex interactions, you might use platform channels, but [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_bridge}} often abstracts this away.
 
-## Build Tools {#build-tools}
+## Build Tools {#build-tools .skip}
 
 Use:
 

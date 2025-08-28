@@ -16,7 +16,7 @@ Notable crypto projects using Rust include:
 {{#include ../../../crates/cats/cryptography_cryptocurrencies/examples/cryptocurrencies/cryptocurrencies.rs:example}}
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - Cryptographic Primitives: [`ring`][c~ring~docs]↗{{hi:ring}}, [`rust-crypto`][c~rust-crypto~docs]↗{{hi:rust-crypto}} suite, [`sha2`][c~sha2~docs]↗{{hi:sha2}}, [`secp256k1`][c~secp256k1~docs]↗{{hi:secp256k1}} (for elliptic curve [cryptography][p~cryptography], often used in Bitcoin).
 - Blockchain Data Structures: These are often implemented directly without dedicated crates, but libraries like [`bitcoin`][c~bitcoin~docs]↗{{hi:bitcoin}} may provide some. See also [[data-structures | Data Structures]].

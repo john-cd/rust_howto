@@ -14,12 +14,12 @@ The `Default` trait has a single method, `default()`, which returns the default 
 {{#include ../../crates/standard_library/examples/default/default.rs:example}}
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[derive | Derive]].
 - [[traits | Traits]].
 
-## References {#references}
+## References {#references .skip}
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

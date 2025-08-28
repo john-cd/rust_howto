@@ -58,7 +58,7 @@ Read [Implementing Vec][book~rustonomicon~implementing-vec]↗ for more details 
 - [[stack_and_queue | Stacks and Queues]].
 - [[strings | Strings]].
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[algorithms | Algorithms]].
 - [[encoding | Encoding]].

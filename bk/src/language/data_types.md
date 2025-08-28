@@ -87,7 +87,7 @@ type Point = (i32, i32);
 type TypeAlias<T> = Bar<T> where T: Foo;
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 See also:
 

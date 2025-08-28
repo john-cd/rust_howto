@@ -1,13 +1,17 @@
 [ex~devops~cargo-deb]: release_automation.md#cargo-deb
 [ex~devops~cargo-dist]: release_automation.md#cargo-dist
 [ex~devops~cargo-release]: release_automation.md#cargo-release
+[ex~devops~cargo]: release_automation.md#cargo
 [ex~devops~cdci]: cd_ci.md#cdci
 [ex~devops~check-your-code-before-committing]: version_control.md#check-your-code-before-committing
 [ex~devops~compilation-caching]: github_actions.md#compilation-caching
 [ex~devops~github-actions]: cd_ci.md#github-actions
 [ex~devops~installation-of-development-tools]: github_actions.md#installation-of-development-tools
 [ex~devops~pre-commit]: version_control.md#pre-commit
+[ex~devops~publish-to-crates-io]: release_automation.md#publish-to-crates-io
 [ex~devops~release-plz]: release_automation.md#release-plz
+[ex~devops~useful-git-hooks-for-rust]: version_control.md#useful-git-hooks-for-rust
+[ex~devops~useful-github-actions]: github_actions.md#useful-github-actions
 [p~cargo]: ../../../src/categories/development-tools/cargo/cargo.md
 [p~configuration]: ../../categories/config/configuration.md
 [p~containers]: ../../categories/virtualization/containers.md

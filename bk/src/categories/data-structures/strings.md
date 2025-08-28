@@ -58,7 +58,7 @@ See:
 - [[vectors | Vectors]].
 - [[cow | COW]].
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[algorithms | Algorithms]].
 - Working with [[other_strings | Other Strings]] (CString, OsString).

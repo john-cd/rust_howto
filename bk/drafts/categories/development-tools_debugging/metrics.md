@@ -6,14 +6,14 @@ Metrics software is used to measure, analyze, and improve various aspects of sof
 
 Examples of common metrics include CPU and memory usage; cache hit ratios; response time, latency, throughput (queries per second) for APIs; build success rate and pipeline duration for CD/CI workflows.
 
-## Useful Crates {#skip}
+## Useful Crates {#useful-crates .skip}
 
 - [`metrics`][metrics.rs~website]↗ is a batteries-included instrumentation ecosystem to quickly and easily instrument your libraries and applications. It supports three fundamental metric types: counters, gauges, and histograms.
 - [`tokio-metrics`][c~tokio-metrics~crates.io]↗ provides utilities for collecting metrics from a Tokio application, including runtime and per-task metrics.
 - [`cadence`][c~cadence~crates.io]↗ is an extensible [`statsd`][statsd~repo]↗{{hi:statsd}} client for Rust.
 - [`sentry`][c~sentry~crates.io]↗ is a ['Sentry'][getsentry~website]↗ client for Rust.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[distributed_telemetry | Distributed Telemetry]].
 - [[tracing | Tracing]].

@@ -22,7 +22,7 @@
 {{#include ../../../crates/cats/text_processing/examples/diffing/similar.rs:example}}
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[development-tools | Development Tools]].
 - [[strings | Strings]].

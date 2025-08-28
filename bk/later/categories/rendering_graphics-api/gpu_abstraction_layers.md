@@ -4,7 +4,7 @@
 
 Libraries that provide a [cross-platform][p~cross-platform] abstraction over native graphics APIs.
 
-## Key Concepts {#skip}
+## Key Concepts {#key-concepts .skip}
 
 - [Shaders][p~shaders]: Programs that run on the GPU.
 - Pipelines: The sequence of steps involved in rendering.
@@ -12,7 +12,7 @@ Libraries that provide a [cross-platform][p~cross-platform] abstraction over nat
 - Textures: [Images][p~images] used in rendering.
 - Bind Groups: How [shaders][p~shaders] access resources.
 
-## Key Rust Crates {#skip}
+## Key Rust Crates {#Key Rust Crates .skip}
 
 - [`wgpu-rs`][c~wgpu~docs]↗{{hi:wgpu-rs}}.
 - [`gfx-rs`][c~gfx~crates.io]↗{{hi:gfx-rs}}: A low-level, cross-platform graphics abstraction (historically used, less active now).
@@ -20,7 +20,7 @@ Libraries that provide a [cross-platform][p~cross-platform] abstraction over nat
 
 [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is often preferred for its ease of use.
 
-## WebGPU {#skip}
+## WebGPU {#webgpu .skip}
 
 WebGPU is a JavaScript, C++, Rust, and C API that allows portably and efficiently utilizing a device's graphics processing unit ([GPU][p~gpu]). This is achieved with the underlying [Vulkan][p~vulkan], Metal, or Direct3D 12 system APIs.
 
@@ -46,11 +46,9 @@ For WebGPU development in Rust, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is the essen
 {{#include ../../../crates/cats/rendering_graphics_api/examples/gpu_abstraction_layers/wgpu.rs:example}}
 ```
 
-### Related Topics {#related-topics}
+### Related Topics {#related-topics .skip}
 
 - `web-sys`: Web bindings, used for WebGPU in the browser.
-
-## Related Topics {#related-topics}
 
 - [[graphics | Graphics]].
 - [[mathematics | Mathematics]].

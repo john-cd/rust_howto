@@ -12,13 +12,13 @@ This is an advanced topic.
 {{#include ../../crates/language/examples/lifetimes/self_referential_struct2.rs:example}}
 ```
 
-## See Also {#see-also}
+## See Also {#see-also .skip}
 
 [![movable-ref][c~movable-ref~docs~badge]][c~movable-ref~docs] [![movable-ref~crates.io][c~movable-ref~crates.io~badge]][c~movable-ref~crates.io] [![movable-ref~repo][c~movable-ref~repo~badge]][c~movable-ref~repo] [![movable-ref~lib.rs][c~movable-ref~lib.rs~badge]][c~movable-ref~lib.rs]{{hi:movable-ref}}{{hi:Offset}}{{hi:Pointer}}{{hi:No-std}}{{hi:Self-referential}}{{hi:Movable}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
 A tool for building movable self-referential types.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[ownership_borrowing | Ownership and Borrowing]].
 

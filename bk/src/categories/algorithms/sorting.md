@@ -54,11 +54,11 @@ To sort in a different way, provide a custom comparator function to the [`std::v
 {{#include ../../../crates/cats/algorithms/examples/sort/sort_struct.rs:example}}
 ```
 
-## See Also {#see-also}
+## See Also {#see-also .skip}
 
 - [glidesort][c~glidesort~repo]↗ is a Rust implementation of Glidesort, a stable adaptive quicksort/mergesort hybrid sorting algorithm.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[data-structures | Data Structures]].
 - [[btrees | B-trees]].

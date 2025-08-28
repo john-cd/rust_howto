@@ -8,3 +8,4 @@
 | [Cryptograhic Algorithms][ex~algorithms~cryptographic-algorithms] | | |
 | [`foldhash`][ex~algorithms~foldhash] | | |
 | [Legacy Hashing Algorithms][ex~algorithms~legacy-hashing-algorithms] | | |
+| [Use General-purpose Hashing Algorithms][ex~algorithms~general-purpose-hashing-algorithms] | | |

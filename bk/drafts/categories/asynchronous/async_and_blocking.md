@@ -81,7 +81,7 @@ TODO futures_executor::block_on vs futures::executor::block_on
 {{#include ../../../crates/cats/asynchronous/examples/call_async_from_blocking/call_async_from_blocking_tokio_runtime.rs:example}}
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[concurrency | Concurrency]].
 

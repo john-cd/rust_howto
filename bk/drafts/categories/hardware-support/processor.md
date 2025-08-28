@@ -2,13 +2,13 @@
 
 {{#include processor.incl.md}}
 
-## Key Points {#skip}
+## Key Points {#key-points .skip}
 
 - Rust generally doesn't require direct CPU manipulation. The compiler and standard library provide good abstractions.
 - SIMD and atomic operations are important for performance.
 - Direct access to CPU features (like inline [assembly][p~assembly]) is usually only necessary for very specialized or performance-critical code. Avoid it if you can.
 
-## CPU Identification {#skip}
+## CPU Identification {#cpu-identification .skip}
 
 [`cpuid`][c~cpuid~docs]↗{{hi:cpuid}}: A crate for getting CPU information (vendor, features, etc.)
 
@@ -22,13 +22,13 @@ Shows the number of logical CPU cores{{hi:CPU cores}} in the current machine usi
 {{#include ../../../crates/cats/hardware_support/examples/processor/cpu_count.rs:example}}
 ```
 
-## Low-Level Programming and Optimization {#skip}
+## Low-Level Programming and Optimization {#low-level .skip}
 
-### Inline Assembly {#skip}
+### Inline Assembly {#inline-assembly .skip}
 
 You can use inline [assembly][p~assembly] in Rust with the `asm!` macro, but it's generally discouraged unless absolutely necessary for performance reasons. It makes code less portable.
 
-### Compiler Intrinsics {#skip}
+### Compiler Intrinsics {#compiler-intrinsics .skip}
 
 Compiler intrinsics are functions that map directly to CPU instructions. They're often used for low-level optimization. Access to intrinsics is usually through [`std::arch`][c~std::arch~docs]↗{{hi:std::arch}}.
 
@@ -38,13 +38,13 @@ Compiler intrinsics are functions that map directly to CPU instructions. They're
 
 [`packed_simd`][c~packed_simd~docs]↗{{hi:packed_simd}}: A crate for portable SIMD.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
-### Atomic Operations {#skip}
+### Atomic Operations {#atomic-operations .skip}
 
 See [[atomics | Atomics]].
 
-### Profiling {#skip}
+### Profiling {#profiling .skip}
 
 Profiling tools help identify CPU-related performance issues.
 
@@ -52,7 +52,7 @@ Profiling tools help identify CPU-related performance issues.
 
 See [[development-tools_profiling | Development Tools Profiling]] and [[memory_usage_analysis | Memory Usage Analysis]].
 
-### Concurrency and Multithreading (Related to CPU Utilization) {#skip}
+### Concurrency and Multithreading (Related to CPU Utilization) {#concurrency-and-multithreading .skip}
 
 Concurrency and multithreading allow the uses of multiple CPU cores.
 
@@ -62,15 +62,15 @@ Concurrency and multithreading allow the uses of multiple CPU cores.
 
 See [[concurrency | Concurrency]].
 
-## Memory Model {#skip}
+## Memory Model {#memory-model .skip}
 
 Understanding the CPU's memory model is important for writing correct concurrent code. See [[memory-management | Memory Management]].
 
-### Operating System Interaction {#skip}
+### Operating System Interaction {#operating-system-interaction .skip}
 
 System calls are used to interact with the operating system, which in turn interacts with the CPU. See [[os | OS]].
 
-### Embedded Systems Programming {#skip}
+### Embedded Systems Programming {#embedded-systems-programming .skip}
 
 In embedded systems, we often have more direct access to CPU features and peripherals. See the [Embedded][p~embedded] Systems section for relevant crates.
 

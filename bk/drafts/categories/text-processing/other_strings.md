@@ -77,7 +77,7 @@ You may also use the [string_cache][c~string_cache~docs]↗ library for internin
 
 For small formatted string, consider a string type implementing small-string optimization. For example, [compact_str][c~compact_str~crates.io]↗ implements `CompactString`, a memory efficient string type that can store smaller strings on the stack and transparently stores longer strings on the heap.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[development-tools_ffi | Development Tools: FFI]].
 - [[strings | Strings]].

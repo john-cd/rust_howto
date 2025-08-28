@@ -133,11 +133,11 @@ Note how multiple `impl` blocks are possible; they can implement associated func
 {{#include ../../crates/language/examples/structs/generic_structs.rs:example}}
 ```
 
-## References {#references}
+## References {#references .skip}
 
 [Creating Structs In Rust][blog~rust-struct-guide]↗: Builder Pattern, Fluent Interfaces, And More.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[enums | Enums]].
 - [[lifetimes | Lifetimes]].

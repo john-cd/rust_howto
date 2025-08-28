@@ -10,7 +10,7 @@
 {{#include ../../../crates/cats/web_programming_http_server/examples/middleware/cors.rs:example}}
 ```
 
-## See Also
+## See Also {#see-also .skip}
 
 - [CORS (Mozilla)][mozilla~cors]↗.
 

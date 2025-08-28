@@ -24,7 +24,7 @@ The following example showcases various utilities for working with streams:
 {{#include ../../../crates/cats/asynchronous/examples/streams/streams3.rs:example}}
 ```
 
-## See Also
+## See Also {#see-also .skip}
 
 See also [Tokio][p~tokio] [`async-stream`][c~async-stream~docs]↗{{hi:async-stream}}.
 

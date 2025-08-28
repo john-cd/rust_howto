@@ -126,11 +126,11 @@ See also the [[asref | AsRef]] chapter.
 {{#include ../../crates/standard_library/examples/option/option_ref.rs:example}}
 ```
 
-## See Also {#see-also}
+## See Also {#see-also .skip}
 
 - The [ShowOption][c~show-option~lib.rs]↗ crate provides extension methods and macros for formatting Options.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[iterators | Iterators]].
 - [[match | Match]].

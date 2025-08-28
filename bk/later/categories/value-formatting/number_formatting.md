@@ -20,7 +20,7 @@ Fast floating point to string conversion.
 
 Fast integer primitive to string conversion.
 
-## See Also
+## See Also {#see-also .skip}
 
 - [[internationalization | Internationalization]].
 - [[localization | Localization]].

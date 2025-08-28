@@ -22,7 +22,7 @@ cargo install cargo-generate
 cargo generate ratatui/templates simple
 ```
 
-## See Also
+## See Also {#see-also .skip}
 
 [![tui][c~tui~docs~badge]][c~tui~docs] [![tui~crates.io][c~tui~crates.io~badge]][c~tui~crates.io] [![tui~repo][c~tui~repo~badge]][c~tui~repo] [![tui~lib.rs][c~tui~lib.rs~badge]][c~tui~lib.rs]{{hi:tui}}{{hi:Terminal}}{{hi:Dashboard}}{{hi:tui}}
 
@@ -30,7 +30,7 @@ A library to build rich terminal user interfaces or dashboards.
 
 [![r3bl_tuify][c~r3bl_tuify~docs~badge]][c~r3bl_tuify~docs]{{hi:r3bl_tuify}} [![r3bl_tuify~crates.io][c~r3bl_tuify~crates.io~badge]][c~r3bl_tuify~crates.io]↗ [![blog~tuify][blog~tuify~badge]][blog~tuify]↗
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[ansi_terminal | ANSI Terminal]].
 - [[gui | GUI]].

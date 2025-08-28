@@ -18,7 +18,7 @@ Key Features:
 {{#include ../../../crates/cats/wasm/examples/yew/yew.rs:example}}
 ```
 
-### See Also
+### See Also {#see-also .skip}
 
 - [What is Yew?][c~yew~website]↗.
 

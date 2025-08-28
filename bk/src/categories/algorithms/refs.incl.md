@@ -3,6 +3,7 @@
 [ex~algorithms~cryptographic-algorithms]: hashing.md#cryptographic-algorithms
 [ex~algorithms~fastrand]: randomness.md#fastrand
 [ex~algorithms~foldhash]: hashing.md#foldhash
+[ex~algorithms~general-purpose-hashing-algorithms]: hashing.md#general-purpose-hashing-algorithms
 [ex~algorithms~generate-random-numbers-within-a-given-distribution]: randomness.md#generate-random-numbers-within-a-given-distribution
 [ex~algorithms~generate-random-numbers-within-a-range]: randomness.md#generate-random-numbers-within-a-range
 [ex~algorithms~generate-random-numbers]: randomness.md#generate-random-numbers
@@ -10,7 +11,6 @@
 [ex~algorithms~generate-random-values-from-set-alphanumeric]: randomness.md#generate-random-values-from-set-alphanumeric
 [ex~algorithms~legacy-hashing-algorithms]: hashing.md#legacy-hashing-algorithms
 [ex~algorithms~md-5]: hashing.md#md-5
-[ex~algorithms~see-also]: sorting.md#see-also
 [ex~algorithms~sha1]: hashing.md#sha1
 [ex~algorithms~sha256]: hashing.md#sha256
 [ex~algorithms~sha2]: hashing.md#sha2

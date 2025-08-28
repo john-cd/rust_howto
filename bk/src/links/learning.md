@@ -84,14 +84,14 @@ TODO
 - [How to Learn Modern Rust][how_to_learn_modern_rust~repo]↗.
 - [Learning Rust][book~rust-learning]↗.
 
-## Reference Documentation {#references}
+## Reference Documentation {#references .skip}
 
 - The [Standard Library][c~std~docs]↗ documentation for the built-in [`std`][c~std~docs]↗{{hi:std}}, [`core`][c~core~docs]↗{{hi:core}}, and [`alloc`][c~alloc~docs]↗{{hi:alloc}} crates.
 - The [Rust Reference][book~rust-reference]↗: Details of the language semantics.
 - The [Rustonomicon][book~rustonomicon]↗: A high-level companion to the reference and a guide to correctly writing unsafe code in Rust.
 - The [Ferrocene Language Spec][spec~rust-lang]↗: An high quality specification for the Rust language, initially developed by Ferrous Systems.
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[blogs | Blogs]].
 - [[books | Books]].

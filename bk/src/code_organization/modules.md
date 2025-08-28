@@ -171,11 +171,11 @@ The following example summarizes the visibility rules when it comes to modules. 
 {{#include ../../crates/code_organization/examples/modules/module_visibility.rs:example}}
 ```
 
-## Related Topics {#related-topics}
+## Related Topics {#related-topics .skip}
 
 - [[package_layout | Package Layout]].
 
-## References {#references}
+## References {#references .skip}
 
 - [Defining Modules to Control Scope and Privacy (Rust book)][book~rust~ch07-02-defining-modules-to-control-scope-and-privacy]↗.
 - [Paths for Referring to an Item in the Module Tree (Rust book)][book~rust~ch07-03-paths-for-referring-to-an-item-in-the-module-tree]↗.
