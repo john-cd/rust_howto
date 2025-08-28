@@ -2,7 +2,7 @@
 
 {{#include borrow.incl.md}}
 
-## `Borrow` Trait {#borrow}
+## Use the `Borrow` Trait to Work with Borrowed Types Synonymous with Owned Types {#borrow}
 
 [![std][c~std~docs~badge]][c~std~docs]
 

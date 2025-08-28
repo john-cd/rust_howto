@@ -24,7 +24,7 @@ Numeric [traits][p~traits] for generic [mathematics][p~mathematics]. [Traits][p~
 {{#include ../../../crates/cats/mathematics/examples/additional_numeric_types/big_integers.rs:example}}
 ```
 
-### `num-bigint` {#num-bigint}
+### Use Big Integers with `num-bigint` {#num-bigint}
 
 [![num-bigint][c~num-bigint~docs~badge]][c~num-bigint~docs] [![num-bigint~crates.io][c~num-bigint~crates.io~badge]][c~num-bigint~crates.io] [![num-bigint~repo][c~num-bigint~repo~badge]][c~num-bigint~repo] [![num-bigint~lib.rs][c~num-bigint~lib.rs~badge]][c~num-bigint~lib.rs]{{hi:num-bigint}}{{hi:Bignum}}{{hi:Mathematics}}{{hi:Numerics}} [![cat~science][cat~science~badge]][cat~science] [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
@@ -34,7 +34,7 @@ Numeric [traits][p~traits] for generic [mathematics][p~mathematics]. [Traits][p~
 {{#include ../../../crates/cats/mathematics/examples/additional_numeric_types/num_bigint.rs:example}}
 ```
 
-### `rug` {#rug}
+### Work with Arbitrary-precision Integers, Rationals, Dloats, and Complex Numbers with `rug` {#rug}
 
 [![rug][c~rug~docs~badge]][c~rug~docs] [![rug~crates.io][c~rug~crates.io~badge]][c~rug~crates.io] [![rug~repo][c~rug~repo~badge]][c~rug~repo] [![rug~lib.rs][c~rug~lib.rs~badge]][c~rug~lib.rs]{{hi:rug}}{{hi:Bignum}}{{hi:GMP}}{{hi:Mathematics}}{{hi:Numerics}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~mathematics][cat~mathematics~badge]][cat~mathematics]{{hi:Mathematics}}
 

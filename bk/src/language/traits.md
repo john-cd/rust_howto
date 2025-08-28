@@ -2,7 +2,7 @@
 
 {{#include traits.incl.md}}
 
-## Trait Syntax {#trait}
+## Declare a Trait {#trait-syntax}
 
 Traits are a way to define shared behavior that types can implement. They are similar to interfaces or abstract classes in other languages.
 

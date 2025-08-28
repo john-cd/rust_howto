@@ -1,4 +1,4 @@
-# AsRef and &T {#asref}
+# AsRef and `&T` {#asref}
 
 {{#include asref.incl.md}}
 
@@ -32,7 +32,7 @@ Note that `Option::as_ref()` and `Result::as_ref()` are inherent methods on the 
 {{#include ../../crates/standard_library/examples/asref/option_asref.rs:example}}
 ```
 
-## `AsRef` vs. `Deref` vs. `Borrow` {#asref-vs-deref-vs-borrow}
+## Choose between `AsRef`, `Deref`, and `Borrow` {#asref-vs-deref-vs-borrow}
 
 These traits are related but have distinct purposes:
 

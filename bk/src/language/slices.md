@@ -31,7 +31,7 @@ let empty = &x[..0]; // Same as `&x[0..0]`.
 assert_eq!(empty, &[]);
 ```
 
-### Common Use Cases {#skip}
+### Common Use Cases {#common-use-cases}
 
 - Accessing Subsets of Data: Slices are frequently used to access specific portions of arrays, vectors, or strings without copying the entire collection.
 - Function Arguments: Slices are often used as function arguments when you want to operate on a part of a collection.

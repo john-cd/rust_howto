@@ -6,7 +6,7 @@
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~science][cat~science~badge]][cat~science]{{hi:Trigonometry}}
 
-Calculates the length of the hypotenuse of a right-angle triangle with an angle of 2 radians and opposite side length of 80.
+The following calculates the length of the hypotenuse of a right-angle triangle with an angle of 2 radians and opposite side length of 80:
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/examples/trigonometry/side_length.rs:example}}
@@ -16,7 +16,7 @@ Calculates the length of the hypotenuse of a right-angle triangle with an angle 
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~science][cat~science~badge]][cat~science]
 
-Verifies [`tan(x)`][c~f64::tan~docs]↗{{hi:f64::tan}} is equal to `sin(x)/cos(x)` for x = 6.
+We verify below that [`tan(x)`][c~f64::tan~docs]↗{{hi:f64::tan}} is equal to `sin(x)/cos(x)` for x = 6:
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/examples/trigonometry/tan_sin_cos.rs:example}}

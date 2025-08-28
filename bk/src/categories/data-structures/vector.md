@@ -46,7 +46,7 @@ For fixed-size collections, use arrays. For small collections, using stack-alloc
 
 Read [Implementing Vec][book~rustonomicon~implementing-vec]↗ for more details about `Vec` memory management.
 
-## Other Data Structures {#skip}
+## Other Data Structures {#other-data-structures}
 
 - [[btrees | B-trees]].
 - [[binaryheap | Binary Heaps]].

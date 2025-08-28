@@ -6,7 +6,7 @@ The core idea of interior mutability is to allow data to be mutated even when th
 
 `RefCell<T>` (and `Cell<T>`, `OnceCell<T>`) do not implement `Sync` and are therefore _single-threaded_. The corresponding `Sync` version of `RefCell<T>` is [`RwLock<T>`][c~std::sync::RwLock~docs]↗{{hi:std::sync::RwLock}}. Use [`Mutex<T>`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}}, `RwLock<T>`, [`OnceLock<T>`][c~std::sync::OnceLock~docs]↗{{hi:std::sync::OnceLock}}, or atomic types when working with multiple threads.
 
-## `RefCell` {#refcell}
+## Use `RefCell` {#refcell}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![book~rust~refcell][book~rust~refcell~badge]][book~rust~refcell]{{hi:std::cell::RefCell}}
 
@@ -21,7 +21,7 @@ Attempts to violate borrowing rules (like having multiple mutable borrows) will 
 {{#include ../../crates/standard_library/examples/interior_mutability/refcell.rs:example}}
 ```
 
-## `Cell` {#cell}
+## Use `Cell` {#cell}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}{{hi:std::cell::Cell}}
 
@@ -33,7 +33,7 @@ Attempts to violate borrowing rules (like having multiple mutable borrows) will 
 {{#include ../../crates/standard_library/examples/interior_mutability/cell.rs:example}}
 ```
 
-## `OnceCell` {#oncecell}
+## Use `OnceCell` {#oncecell}
 
 See [[lazy-initialization | lazy initialization]].
 

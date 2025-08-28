@@ -2,7 +2,7 @@
 
 {{#include publication.incl.md}}
 
-## Publication Steps {#publish}
+## Steps to Publish to `crates.io` {#publication-steps}
 
 The [`publish`][rust-howto~publish~repo]↗ folder contains a placeholder crate, so that the book could be located when searching on [`crates.io`][crates.io~website]↗{{hi:crates.io}}.
 

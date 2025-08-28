@@ -43,7 +43,7 @@ You may also use [`dbg`][c~std::dbg~docs]↗{{hi:std::dbg}} for debug output.{{h
 
 See the [[string_concat | String Concatenation]] chapter and the [Concatenation Benchmark][concatenation_benchmarks~repo]↗.
 
-## String Manipulation {#skip}
+## String Manipulation {#string-manipulation}
 
 See:
 

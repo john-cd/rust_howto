@@ -19,6 +19,7 @@
 [ex~language~common-enums]: enums.md#common-enums
 [ex~language~common-macros]: macros.md#common-macros
 [ex~language~common-traits]: structs.md#common-traits
+[ex~language~common-use-cases]: slices.md#common-use-cases
 [ex~language~compound-types]: data_types.md#compound-types
 [ex~language~concat-macro]: macros.md#concat-macro
 [ex~language~conditional-compilation]: attributes.md#conditional-compilation
@@ -118,7 +119,7 @@
 [ex~language~supertraits]: traits.md#supertraits
 [ex~language~trait-bounds]: traits.md#trait-bounds
 [ex~language~trait-objects-basics]: trait_objects.md#trait-objects-basics
-[ex~language~trait]: traits.md#trait
+[ex~language~trait-syntax]: traits.md#trait-syntax
 [ex~language~traits-types-elsewhere]: traits.md#traits-types-elsewhere
 [ex~language~tuple-structs]: structs.md#tuple-structs
 [ex~language~type-aliases]: data_types.md#type-aliases

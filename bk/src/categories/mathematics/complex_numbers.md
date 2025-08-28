@@ -13,7 +13,7 @@
 [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
-Creates complex numbers of type [`num::complex::Complex`][c~num::complex::Complex~docs]↗{{hi:num::complex::Complex}}. Both the real and imaginary part of the complex number must be of the same type.
+The following example creates complex numbers of type [`num::complex::Complex`][c~num::complex::Complex~docs]↗{{hi:num::complex::Complex}}. Note that both the real and imaginary part of the complex number must be of the same type:
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/examples/complex_numbers/create_complex.rs:example}}
@@ -30,7 +30,7 @@ Creates complex numbers of type [`num::complex::Complex`][c~num::complex::Comple
 [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
-Performing mathematical operations on complex numbers is the same as on built-in types: the numbers in question must be of the same type (i.e. floats or integers).
+The following demonstrates performing mathematical operations on complex numbers the same way than on built-in types. The numbers in question must be of the same type (i.e. floats or integers):
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/examples/complex_numbers/add_complex.rs:example}}

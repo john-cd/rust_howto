@@ -35,6 +35,12 @@ Note a few caveats with `Any`:
 - Loss of Compile-Time Guarantees: When you put something into `Box<dyn Any>` or similar, you lose type information at compile time. This makes it harder for the compiler to catch errors for you.
 - If there's a way to achieve your goal using generics with trait bounds, enums, or other more type-safe Rust patterns, those are generally preferred over `Any`. `Any` should be used when you genuinely need runtime type introspection for heterogeneous collections.
 
+## Compile-time Reflection {#compile-type-reflection}
+
+[![reflect][c~reflect~docs~badge]][c~reflect~docs] [![reflect~crates.io][c~reflect~crates.io~badge]][c~reflect~crates.io] [![reflect~repo][c~reflect~repo~badge]][c~reflect~repo] [![reflect~lib.rs][c~reflect~lib.rs~badge]][c~reflect~lib.rs]{{hi:reflect}}{{hi:Reflection}} [![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
+
+The "but I thought Rust doesn't have reflection?" memorial brand new way of defining procedural macros.
+
 ## Related Topics {#related-topics}
 
 - [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]].
@@ -45,11 +51,5 @@ Note a few caveats with `Any`:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-
-## Compile-time Reflection {#skip}
-
-[![reflect][c~reflect~docs~badge]][c~reflect~docs] [![reflect~crates.io][c~reflect~crates.io~badge]][c~reflect~crates.io] [![reflect~repo][c~reflect~repo~badge]][c~reflect~repo] [![reflect~lib.rs][c~reflect~lib.rs~badge]][c~reflect~lib.rs]{{hi:reflect}}{{hi:Reflection}} [![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
-
-The "but I thought Rust doesn't have reflection?" memorial brand new way of defining procedural macros.
-
+TODO review
 </div>

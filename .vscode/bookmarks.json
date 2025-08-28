@@ -59,13 +59,23 @@
 			"path": "bk/src/categories/algorithms/index.md",
 			"bookmarks": [
 				{
-					"line": 11,
-					"column": 4,
+					"line": 25,
+					"column": 26,
 					"label": ""
 				},
 				{
 					"line": 42,
 					"column": 5,
+					"label": ""
+				},
+				{
+					"line": 51,
+					"column": 29,
+					"label": ""
+				},
+				{
+					"line": 57,
+					"column": 14,
 					"label": ""
 				}
 			]
@@ -79,28 +89,13 @@
 					"label": ""
 				},
 				{
-					"line": 20,
-					"column": 14,
-					"label": ""
-				},
-				{
 					"line": 47,
 					"column": 9,
 					"label": ""
 				},
 				{
-					"line": 57,
-					"column": 16,
-					"label": ""
-				},
-				{
 					"line": 63,
 					"column": 193,
-					"label": ""
-				},
-				{
-					"line": 67,
-					"column": 14,
 					"label": ""
 				},
 				{
@@ -199,11 +194,6 @@
 			"path": "bk/src/categories/data-structures/heapless.md",
 			"bookmarks": [
 				{
-					"line": 4,
-					"column": 8,
-					"label": ""
-				},
-				{
 					"line": 34,
 					"column": 5,
 					"label": ""
@@ -256,33 +246,8 @@
 			]
 		},
 		{
-			"path": "bk/src/categories/data-structures/refs.incl.md",
-			"bookmarks": [
-				{
-					"line": 27,
-					"column": 7,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/categories/data-structures/stack_allocated_arrays.md",
 			"bookmarks": [
-				{
-					"line": 13,
-					"column": 6,
-					"label": ""
-				},
-				{
-					"line": 32,
-					"column": 8,
-					"label": ""
-				},
-				{
-					"line": 47,
-					"column": 5,
-					"label": ""
-				},
 				{
 					"line": 68,
 					"column": 7,
@@ -301,36 +266,11 @@
 			]
 		},
 		{
-			"path": "bk/src/categories/data-structures/strings.md",
-			"bookmarks": [
-				{
-					"line": 45,
-					"column": 7,
-					"label": ""
-				},
-				{
-					"line": 54,
-					"column": 22,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/categories/data-structures/uuid.md",
 			"bookmarks": [
 				{
 					"line": 26,
 					"column": 4,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/categories/data-structures/vector.md",
-			"bookmarks": [
-				{
-					"line": 48,
-					"column": 13,
 					"label": ""
 				}
 			]
@@ -396,31 +336,11 @@
 			]
 		},
 		{
-			"path": "bk/src/categories/filesystem/metadata.incl.md",
-			"bookmarks": [
-				{
-					"line": 2,
-					"column": 13,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/categories/filesystem/metadata.md",
 			"bookmarks": [
 				{
 					"line": 14,
 					"column": 10,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/categories/filesystem/paths.incl.md",
-			"bookmarks": [
-				{
-					"line": 2,
-					"column": 8,
 					"label": ""
 				}
 			]
@@ -446,26 +366,6 @@
 			]
 		},
 		{
-			"path": "bk/src/categories/filesystem/refs.incl.md",
-			"bookmarks": [
-				{
-					"line": 20,
-					"column": 19,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/categories/filesystem/stdin_stdout.incl.md",
-			"bookmarks": [
-				{
-					"line": 2,
-					"column": 16,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/categories/filesystem/stdin_stdout.md",
 			"bookmarks": [
 				{
@@ -476,31 +376,11 @@
 			]
 		},
 		{
-			"path": "bk/src/categories/filesystem/symbolic_links.incl.md",
-			"bookmarks": [
-				{
-					"line": 2,
-					"column": 9,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/categories/filesystem/symbolic_links.md",
 			"bookmarks": [
 				{
 					"line": 8,
 					"column": 6,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/categories/filesystem/tempfile.md",
-			"bookmarks": [
-				{
-					"line": 16,
-					"column": 19,
 					"label": ""
 				}
 			]
@@ -529,16 +409,6 @@
 					"label": ""
 				},
 				{
-					"line": 26,
-					"column": 30,
-					"label": ""
-				},
-				{
-					"line": 36,
-					"column": 16,
-					"label": ""
-				},
-				{
 					"line": 66,
 					"column": 13,
 					"label": ""
@@ -554,16 +424,6 @@
 			"path": "bk/src/categories/mathematics/complex_numbers.md",
 			"bookmarks": [
 				{
-					"line": 15,
-					"column": 16,
-					"label": ""
-				},
-				{
-					"line": 32,
-					"column": 11,
-					"label": ""
-				},
-				{
 					"line": 59,
 					"column": 9,
 					"label": ""
@@ -574,32 +434,7 @@
 			"path": "bk/src/categories/mathematics/index.md",
 			"bookmarks": [
 				{
-					"line": 4,
-					"column": 17,
-					"label": ""
-				},
-				{
-					"line": 14,
-					"column": 11,
-					"label": ""
-				},
-				{
-					"line": 26,
-					"column": 15,
-					"label": ""
-				},
-				{
-					"line": 33,
-					"column": 15,
-					"label": ""
-				},
-				{
-					"line": 39,
-					"column": 11,
-					"label": ""
-				},
-				{
-					"line": 110,
+					"line": 114,
 					"column": 13,
 					"label": ""
 				}
@@ -608,21 +443,6 @@
 		{
 			"path": "bk/src/categories/mathematics/linear_algebra.md",
 			"bookmarks": [
-				{
-					"line": 13,
-					"column": 11,
-					"label": ""
-				},
-				{
-					"line": 25,
-					"column": 12,
-					"label": ""
-				},
-				{
-					"line": 35,
-					"column": 14,
-					"label": ""
-				},
 				{
 					"line": 110,
 					"column": 19,
@@ -643,16 +463,6 @@
 		{
 			"path": "bk/src/categories/mathematics/trigonometry.md",
 			"bookmarks": [
-				{
-					"line": 8,
-					"column": 6,
-					"label": ""
-				},
-				{
-					"line": 18,
-					"column": 6,
-					"label": ""
-				},
 				{
 					"line": 40,
 					"column": 10,
@@ -716,36 +526,6 @@
 				{
 					"line": 145,
 					"column": 21,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/contributing/preprocessors.md",
-			"bookmarks": [
-				{
-					"line": 18,
-					"column": 11,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/contributing/publication.md",
-			"bookmarks": [
-				{
-					"line": 4,
-					"column": 14,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/contributing/repo_structure.md",
-			"bookmarks": [
-				{
-					"line": 4,
-					"column": 17,
 					"label": ""
 				}
 			]
@@ -841,31 +621,11 @@
 			]
 		},
 		{
-			"path": "bk/src/language/slices.md",
-			"bookmarks": [
-				{
-					"line": 33,
-					"column": 11,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/language/trait_objects.md",
 			"bookmarks": [
 				{
 					"line": 171,
 					"column": 20,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/language/traits.md",
-			"bookmarks": [
-				{
-					"line": 4,
-					"column": 9,
 					"label": ""
 				}
 			]
@@ -952,21 +712,6 @@
 					"line": 0,
 					"column": 11,
 					"label": ""
-				},
-				{
-					"line": 34,
-					"column": 16,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/standard_library/borrow.md",
-			"bookmarks": [
-				{
-					"line": 4,
-					"column": 12,
-					"label": ""
 				}
 			]
 		},
@@ -976,11 +721,6 @@
 				{
 					"line": 0,
 					"column": 5,
-					"label": ""
-				},
-				{
-					"line": 20,
-					"column": 16,
 					"label": ""
 				}
 			]
@@ -1024,8 +764,8 @@
 			"path": "bk/src/standard_library/dynamic_typing.md",
 			"bookmarks": [
 				{
-					"line": 48,
-					"column": 12,
+					"line": 37,
+					"column": 28,
 					"label": ""
 				}
 			]
@@ -1071,31 +811,6 @@
 				{
 					"line": 67,
 					"column": 13,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/standard_library/option.md",
-			"bookmarks": [
-				{
-					"line": 63,
-					"column": 5,
-					"label": ""
-				},
-				{
-					"line": 128,
-					"column": 9,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/standard_library/pin.md",
-			"bookmarks": [
-				{
-					"line": 47,
-					"column": 8,
 					"label": ""
 				}
 			]

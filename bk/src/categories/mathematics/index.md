@@ -2,7 +2,7 @@
 
 [![cat~mathematics][cat~mathematics~badge]][cat~mathematics]{{hi:Mathematics}}
 
-Crates with a mathematical aspect.
+This section reviews Rust crates with a mathematical aspect.
 
 For most general-purpose math needs, [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} (linear algebra) and [`rand`][c~rand~docs]↗{{hi:rand}} (random numbers) are excellent starting points. For graphics or game development, [`glam`][c~glam~docs]↗{{hi:glam}} is often preferred. For statistics, [`statrs`][c~statrs~docs]↗{{hi:statrs}} is comprehensive.If you're doing numerical computing, [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}. There are also specific crates available for specialized areas like number theory or units of measurement.
 
@@ -12,7 +12,7 @@ For most general-purpose math needs, [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgeb
 
 ## Linear Algebra
 
-Vectors, matrices, eigenvalues, and eigenvectors. Key crates include:
+For vectors, matrices, eigenvalues, and eigenvectors, key crates include:
 
 - [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}}: A widely used and mature linear algebra library. Excellent for general-purpose linear algebra.
 - [`glam`][c~glam~docs]↗{{hi:glam}}: A fast and ergonomic linear algebra library designed for graphics and games. Often preferred in those contexts.
@@ -24,24 +24,28 @@ Vectors, matrices, eigenvalues, and eigenvectors. Key crates include:
 
 ## Probability and Statistics
 
-Random variables, distributions, and hypothesis testing. Probabilistic models, stochastic processes, and statistical inference.
+For random variables, distributions, hypothesis testing, probabilistic models, stochastic processes, and statistical inference, use the following crates:
 
-- [`statrs`][c~statrs~docs]↗{{hi:statrs}}: A comprehensive statistics library.
-- [`rand`][c~rand~docs]↗{{hi:rand}}: While primarily for random number generation, [`rand`][c~rand~docs]↗{{hi:rand}} also provides some statistical distributions and functions.
+- [`statrs`][c~statrs~docs]↗{{hi:statrs}} is a comprehensive statistics library.
+- While primarily for random number generation, [`rand`][c~rand~docs]↗{{hi:rand}} also provides some statistical distributions and functions.
 
 {{#include statistics.incl.md}}
 
 ### Random Number Generation
 
-Generating random numbers for simulations, cryptography, etc.
+To generating random numbers for simulations, cryptography, etc., use [`rand`][c~rand~docs]↗{{hi:rand}}, a popular and widely used random number generator crate.
 
-- [`rand`][c~rand~docs]↗{{hi:rand}}: A popular and widely used random number generator crate.
+See the [[randomness | Randomness]] chapter.
+
+### Statistical
 
 ## Additional Numeric Types
 
-- [`num-bigint`][c~num-bigint~docs]↗{{hi:num-bigint}} for arbitrary-precision integers.
-- [`num-rational`][c~num-rational~docs]↗{{hi:num-rational}} for rational numbers.
-- [`num`][c~num~docs]↗{{hi:num}}: A crate that provides numeric traits and other utilities.
+To work with numeric types beyond what is available in the standard library, use the following crates:
+
+- [`num`][c~num~docs]↗{{hi:num}} provides numeric traits and other utilities.
+- [`num-bigint`][c~num-bigint~docs]↗{{hi:num-bigint}} works with arbitrary-precision integers.
+- [`num-rational`][c~num-rational~docs]↗{{hi:num-rational}} provides rational numbers.
 
 {{#include additional_numeric_types.incl.md}}
 

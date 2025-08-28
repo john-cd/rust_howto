@@ -1,4 +1,4 @@
 ||
 |---|
 | [Preprocessors Used in the Book][ex~contributing~preprocessors] |
-| [`mdbook-scrub`][ex~contributing~mdbook-scrub] |
+| [`mdbook-scrub`, a Custom Preprocessor for `mdbook`][ex~contributing~mdbook-scrub] |

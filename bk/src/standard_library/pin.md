@@ -45,8 +45,6 @@ The following example demonstrates the basic usage of `Pin`, `Unpin`, `PhantomPi
 - [[futures | Futures]].
 - [[traits | Traits]].
 
-## Related Data Structures {#related-data-structures}
-
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 

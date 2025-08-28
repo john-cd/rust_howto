@@ -11,7 +11,7 @@ Stack allocation has several important characteristics:
 - The stack is typically much smaller than the heap, so stack-allocated arrays are suitable for small to moderately sized arrays.
 - Stack-allocated arrays are automatically deallocated when they go out of scope.
 
-## `arrayvec` {#arrayvec}
+## Store Fixed-size Vectors and Strings on the Stack with `arrayvec` {#arrayvec}
 
 [![arrayvec][c~arrayvec~docs~badge]][c~arrayvec~docs]{{hi:arrayvec}}
 [![arrayvec~crates.io][c~arrayvec~crates.io~badge]][c~arrayvec~crates.io]
@@ -30,7 +30,7 @@ It offers a simple API but also dereferences to a `slice`, so that the full `sli
 {{#include ../../../crates/cats/data_structures/examples/vec/arrayvec.rs:example}}
 ```
 
-## `smallvec` {#smallvec}
+## Store Small Vectors on the Stack with Fallback to the Heap, with `smallvec` {#smallvec}
 
 [![smallvec][c~smallvec~docs~badge]][c~smallvec~docs]{{hi:smallvec}}
 [![smallvec~crates.io][c~smallvec~crates.io~badge]][c~smallvec~crates.io]
@@ -45,7 +45,7 @@ Arrays that are stack-allocated will fallback to the heap if the fixed stack cap
 {{#include ../../../crates/cats/data_structures/examples/vec/smallvec.rs:example}}
 ```
 
-## `tinyvec` {#tinyvec}
+## Store Small Vectors on the Stack with Fallback to the Heap, with `tinyvec` {#tinyvec}
 
 [![tinyvec][c~tinyvec~docs~badge]][c~tinyvec~docs]{{hi:tinyvec}}
 [![tinyvec~crates.io][c~tinyvec~crates.io~badge]][c~tinyvec~crates.io]

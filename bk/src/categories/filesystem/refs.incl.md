@@ -12,6 +12,7 @@
 [ex~filesystem~memory-map]: read_write.md#memory-map
 [ex~filesystem~metadata]: metadata.md#metadata
 [ex~filesystem~open]: user_directories.md#open
+[ex~filesystem~other-options]: tempfile.md#other-options
 [ex~filesystem~read-lines-of-strings-from-a-file]: read_write.md#read-lines-of-strings-from-a-file
 [ex~filesystem~recursively-calculate-file-sizes-at-given-depth]: directory_traversal.md#recursively-calculate-file-sizes-at-given-depth
 [ex~filesystem~recursively-find-all-files-with-given-predicate]: directory_traversal.md#recursively-find-all-files-with-given-predicate

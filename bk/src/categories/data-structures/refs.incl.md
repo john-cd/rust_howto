@@ -14,6 +14,7 @@
 [ex~data-structures~linkedlist]: linkedlist.md#linkedlist
 [ex~data-structures~memory-allocation]: vector.md#memory-allocation
 [ex~data-structures~multimap]: maps.md#multimap
+[ex~data-structures~other-data-structures]: vector.md#other-data-structures
 [ex~data-structures~petgraph]: graph.md#petgraph
 [ex~data-structures~placeholders]: strings.md#placeholders
 [ex~data-structures~priority-queue]: binaryheap.md#priority-queue
@@ -23,6 +24,7 @@
 [ex~data-structures~smallvec]: stack_allocated_arrays.md#smallvec
 [ex~data-structures~stack]: stack_and_queue.md#stack
 [ex~data-structures~string-concatenation]: strings.md#string-concatenation
+[ex~data-structures~string-manipulation]: strings.md#string-manipulation
 [ex~data-structures~string]: strings.md#string
 [ex~data-structures~tinyvec]: stack_allocated_arrays.md#tinyvec
 [ex~data-structures~vec]: vector.md#vec

@@ -13,6 +13,7 @@
 [ex~standard_library~cell]: interior_mutability.md#cell
 [ex~standard_library~choose-conversion-trait]: conversion_traits.md#choose-conversion-trait
 [ex~standard_library~combinators]: option.md#combinators
+[ex~standard_library~compile-type-reflection]: dynamic_typing.md#compile-type-reflection
 [ex~standard_library~convert-cow-to-str]: cow.md#convert-cow-to-str
 [ex~standard_library~cow-alternatives]: cow.md#cow-alternatives
 [ex~standard_library~default]: default.md#default
@@ -41,13 +42,13 @@
 [ex~standard_library~rc]: reference_counting.md#rc
 [ex~standard_library~refcell]: interior_mutability.md#refcell
 [ex~standard_library~reference-counting]: smart_pointers.md#reference-counting
-[ex~standard_library~related-data-structures]: pin.md#related-data-structures
 [ex~standard_library~result-methods]: result.md#result-methods
 [ex~standard_library~result-references]: result.md#result-references
 [ex~standard_library~result-vs-option]: result.md#result-vs-option
 [ex~standard_library~result]: result.md#result
 [ex~standard_library~return-cow-from-function]: cow.md#return-cow-from-function
 [ex~standard_library~return-early-pattern]: option.md#return-early-pattern
+[ex~standard_library~see-also]: option.md#see-also
 [ex~standard_library~smart-pointer-comparison]: smart_pointers.md#smart-pointer-comparison
 [ex~standard_library~sync-primitives]: smart_pointers.md#sync-primitives
 [p~asref]: asref.md

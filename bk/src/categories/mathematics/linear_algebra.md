@@ -11,7 +11,7 @@ We will use two key crates:
 
 [![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~repo][c~ndarray~repo~badge]][c~ndarray~repo] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
 
-Creates two 2-D matrices with [`ndarray::arr2`][c~ndarray::arr2~docs]↗{{hi:ndarray::arr2}} and sums them element-wise.
+This example creates two 2-D matrices with [`ndarray::arr2`][c~ndarray::arr2~docs]↗{{hi:ndarray::arr2}} and sums them element-wise.
 
 Note that the sum is computed as `let sum = &a + &b`. The `&` operator is used to avoid consuming `a` and `b`, making them available later for display. A new array is created containing their sum.
 
@@ -23,7 +23,7 @@ Note that the sum is computed as `let sum = &a + &b`. The `&` operator is used t
 
 [![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~repo][c~ndarray~repo~badge]][c~ndarray~repo] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
 
-Creates two matrices with [`ndarray::arr2`][c~ndarray::arr2~docs]↗{{hi:ndarray::arr2}} and performs matrix multiplication on them with [`ndarray::ArrayBase::dot`][c~ndarray::ArrayBase::dot~docs]↗{{hi:ndarray::ArrayBase::dot}}.
+This code example creates two matrices with [`ndarray::arr2`][c~ndarray::arr2~docs]↗{{hi:ndarray::arr2}} and performs matrix multiplication on them with [`ndarray::ArrayBase::dot`][c~ndarray::ArrayBase::dot~docs]↗{{hi:ndarray::ArrayBase::dot}}.
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/examples/linear_algebra/multiply_matrices.rs:example}}
@@ -33,7 +33,7 @@ Creates two matrices with [`ndarray::arr2`][c~ndarray::arr2~docs]↗{{hi:ndarray
 
 [![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~repo][c~ndarray~repo~badge]][c~ndarray~repo] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
 
-Creates a 1-D array (vector) with [`ndarray::arr1`][c~ndarray::arr1~docs]↗{{hi:ndarray::arr1}} and a 2-D array (matrix) with [`ndarray::arr2`][c~ndarray::arr2~docs]↗{{hi:ndarray::arr2}}.
+The following example creates a 1-D array (vector) with [`ndarray::arr1`][c~ndarray::arr1~docs]↗{{hi:ndarray::arr1}} and a 2-D array (matrix) with [`ndarray::arr2`][c~ndarray::arr2~docs]↗{{hi:ndarray::arr2}}.
 
 First, a scalar is multiplied by the vector to get another vector. Then, the matrix is multiplied by the new vector with `ndarray::Array2::dot`↗ (Matrix multiplication is performed using `ndarray::Array2::dot`↗, while the `*` operator performs element-wise multiplication.)
 
@@ -86,7 +86,7 @@ Note that both [`l1_norm`][wolfram~l1-norm]↗ and [`l2_norm`][wolfram~l2-norm]�
 [![cat~science][cat~science~badge]][cat~science]
 [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
 
-Creates a 3x3 matrix with [`nalgebra::Matrix3`][c~nalgebra::Matrix3~docs]↗{{hi:nalgebra::Matrix3}} and inverts it, if possible.
+This code snippet creates a 3x3 matrix with [`nalgebra::Matrix3`][c~nalgebra::Matrix3~docs]↗{{hi:nalgebra::Matrix3}} and inverts it, if possible.
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/examples/linear_algebra/invert_matrix.rs:example}}
@@ -96,7 +96,7 @@ Creates a 3x3 matrix with [`nalgebra::Matrix3`][c~nalgebra::Matrix3~docs]↗{{hi
 
 [![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~repo][c~ndarray~repo~badge]][c~ndarray~repo] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
 
-Serialize and deserialize a matrix to and from [[JSON]]. Serialization is taken care of by [`serde_json::to_string`][c~serde_json::to_string~docs]↗{{hi:serde_json::to_string}} and [`serde_json::to_string`][c~serde_json::to_string~docs]↗{{hi:serde_json::to_string}} performs deserialization.
+You can serialize and deserialize a matrix to and from [[JSON]] using [`serde_json::to_string`][c~serde_json::to_string~docs]↗{{hi:serde_json::to_string}} and `serde_json::from_str`{{hi:serde_json::from_str}}.
 
 Note that serialization followed by deserialization gives back the original matrix.
 

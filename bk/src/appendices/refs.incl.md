@@ -49,12 +49,12 @@
 [ex~contributing~dev-container-feature]: ../contributing/api_documentation.md#dev-container-feature
 [ex~contributing~docker-compose]: ../contributing/dev_container_docker.md#docker-compose
 [ex~contributing~examples-fully-tested]: ../contributing/repo_structure.md#examples-fully-tested
-[ex~contributing~folders]: ../contributing/repo_structure.md#folders
+[ex~contributing~folders-and-key-files]: ../contributing/repo_structure.md#folders-and-key-files
 [ex~contributing~mdbook-scrub]: ../contributing/preprocessors.md#mdbook-scrub
 [ex~contributing~other-methods-to-preview-the-documentation-html]: ../contributing/api_documentation.md#other-methods-to-preview-the-documentation-html
 [ex~contributing~other]: ../contributing/dev_environment_setup.md#other
 [ex~contributing~preprocessors]: ../contributing/preprocessors.md#preprocessors
-[ex~contributing~publish]: ../contributing/publication.md#publish
+[ex~contributing~publication-steps]: ../contributing/publication.md#publication-steps
 [ex~contributing~push-image-to-docker-hub]: ../contributing/dev_container_docker.md#push-image-to-docker-hub
 [ex~contributing~using-vs-code]: ../contributing/dev_environment_setup.md#using-vs-code
 [ex~data-structures~arrayvec]: ../categories/data-structures/stack_allocated_arrays.md#arrayvec
@@ -73,6 +73,7 @@
 [ex~data-structures~linkedlist]: ../categories/data-structures/linkedlist.md#linkedlist
 [ex~data-structures~memory-allocation]: ../categories/data-structures/vector.md#memory-allocation
 [ex~data-structures~multimap]: ../categories/data-structures/maps.md#multimap
+[ex~data-structures~other-data-structures]: ../categories/data-structures/vector.md#other-data-structures
 [ex~data-structures~petgraph]: ../categories/data-structures/graph.md#petgraph
 [ex~data-structures~placeholders]: ../categories/data-structures/strings.md#placeholders
 [ex~data-structures~priority-queue]: ../categories/data-structures/binaryheap.md#priority-queue
@@ -82,6 +83,7 @@
 [ex~data-structures~smallvec]: ../categories/data-structures/stack_allocated_arrays.md#smallvec
 [ex~data-structures~stack]: ../categories/data-structures/stack_and_queue.md#stack
 [ex~data-structures~string-concatenation]: ../categories/data-structures/strings.md#string-concatenation
+[ex~data-structures~string-manipulation]: ../categories/data-structures/strings.md#string-manipulation
 [ex~data-structures~string]: ../categories/data-structures/strings.md#string
 [ex~data-structures~tinyvec]: ../categories/data-structures/stack_allocated_arrays.md#tinyvec
 [ex~data-structures~vec]: ../categories/data-structures/vector.md#vec
@@ -99,6 +101,7 @@
 [ex~filesystem~memory-map]: ../categories/filesystem/read_write.md#memory-map
 [ex~filesystem~metadata]: ../categories/filesystem/metadata.md#metadata
 [ex~filesystem~open]: ../categories/filesystem/user_directories.md#open
+[ex~filesystem~other-options]: ../categories/filesystem/tempfile.md#other-options
 [ex~filesystem~read-lines-of-strings-from-a-file]: ../categories/filesystem/read_write.md#read-lines-of-strings-from-a-file
 [ex~filesystem~recursively-calculate-file-sizes-at-given-depth]: ../categories/filesystem/directory_traversal.md#recursively-calculate-file-sizes-at-given-depth
 [ex~filesystem~recursively-find-all-files-with-given-predicate]: ../categories/filesystem/directory_traversal.md#recursively-find-all-files-with-given-predicate
@@ -136,6 +139,7 @@
 [ex~language~common-enums]: ../language/enums.md#common-enums
 [ex~language~common-macros]: ../language/macros.md#common-macros
 [ex~language~common-traits]: ../language/structs.md#common-traits
+[ex~language~common-use-cases]: ../language/slices.md#common-use-cases
 [ex~language~compound-types]: ../language/data_types.md#compound-types
 [ex~language~concat-macro]: ../language/macros.md#concat-macro
 [ex~language~conditional-compilation]: ../language/attributes.md#conditional-compilation
@@ -235,7 +239,7 @@
 [ex~language~supertraits]: ../language/traits.md#supertraits
 [ex~language~trait-bounds]: ../language/traits.md#trait-bounds
 [ex~language~trait-objects-basics]: ../language/trait_objects.md#trait-objects-basics
-[ex~language~trait]: ../language/traits.md#trait
+[ex~language~trait-syntax]: ../language/traits.md#trait-syntax
 [ex~language~traits-types-elsewhere]: ../language/traits.md#traits-types-elsewhere
 [ex~language~tuple-structs]: ../language/structs.md#tuple-structs
 [ex~language~type-aliases]: ../language/data_types.md#type-aliases
@@ -336,7 +340,6 @@
 [ex~mathematics~vector-comparison]: ../categories/mathematics/linear_algebra.md#vector-comparison
 [ex~mathematics~vector-norm]: ../categories/mathematics/linear_algebra.md#vector-norm
 [ex~mathematics~verifying-tan-is-equal-to-sin-divided-by-cos]: ../categories/mathematics/trigonometry.md#verifying-tan-is-equal-to-sin-divided-by-cos
-[ex~rust_install~rust-install]: ../rust_install/index.md#rust-install
 [ex~standard_library~accept-either-owned-or-borrowed-values]: ../standard_library/cow.md#accept-either-owned-or-borrowed-values
 [ex~standard_library~adapters-for-working-with-references]: ../standard_library/option.md#adapters-for-working-with-references
 [ex~standard_library~any-trait]: ../standard_library/dynamic_typing.md#any-trait
@@ -352,6 +355,7 @@
 [ex~standard_library~cell]: ../standard_library/interior_mutability.md#cell
 [ex~standard_library~choose-conversion-trait]: ../standard_library/conversion_traits.md#choose-conversion-trait
 [ex~standard_library~combinators]: ../standard_library/option.md#combinators
+[ex~standard_library~compile-type-reflection]: ../standard_library/dynamic_typing.md#compile-type-reflection
 [ex~standard_library~convert-cow-to-str]: ../standard_library/cow.md#convert-cow-to-str
 [ex~standard_library~cow-alternatives]: ../standard_library/cow.md#cow-alternatives
 [ex~standard_library~default]: ../standard_library/default.md#default
@@ -380,13 +384,13 @@
 [ex~standard_library~rc]: ../standard_library/reference_counting.md#rc
 [ex~standard_library~refcell]: ../standard_library/interior_mutability.md#refcell
 [ex~standard_library~reference-counting]: ../standard_library/smart_pointers.md#reference-counting
-[ex~standard_library~related-data-structures]: ../standard_library/pin.md#related-data-structures
 [ex~standard_library~result-methods]: ../standard_library/result.md#result-methods
 [ex~standard_library~result-references]: ../standard_library/result.md#result-references
 [ex~standard_library~result-vs-option]: ../standard_library/result.md#result-vs-option
 [ex~standard_library~result]: ../standard_library/result.md#result
 [ex~standard_library~return-cow-from-function]: ../standard_library/cow.md#return-cow-from-function
 [ex~standard_library~return-early-pattern]: ../standard_library/option.md#return-early-pattern
+[ex~standard_library~see-also]: ../standard_library/option.md#see-also
 [ex~standard_library~smart-pointer-comparison]: ../standard_library/smart_pointers.md#smart-pointer-comparison
 [ex~standard_library~sync-primitives]: ../standard_library/smart_pointers.md#sync-primitives
 [p~contributing]: ../contributing/index.md

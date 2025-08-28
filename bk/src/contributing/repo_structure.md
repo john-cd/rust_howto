@@ -2,7 +2,7 @@
 
 {{#include repo_structure.incl.md}}
 
-## Folders and Key Files {#folders}
+## Folders and Key Files {#folders-and-key-files}
 
 This book's [GitHub repository][rust-howto~repo]↗ is structured as follows:
 

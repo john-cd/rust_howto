@@ -4,12 +4,12 @@
 [ex~contributing~dev-container-feature]: api_documentation.md#dev-container-feature
 [ex~contributing~docker-compose]: dev_container_docker.md#docker-compose
 [ex~contributing~examples-fully-tested]: repo_structure.md#examples-fully-tested
-[ex~contributing~folders]: repo_structure.md#folders
+[ex~contributing~folders-and-key-files]: repo_structure.md#folders-and-key-files
 [ex~contributing~mdbook-scrub]: preprocessors.md#mdbook-scrub
 [ex~contributing~other-methods-to-preview-the-documentation-html]: api_documentation.md#other-methods-to-preview-the-documentation-html
 [ex~contributing~other]: dev_environment_setup.md#other
 [ex~contributing~preprocessors]: preprocessors.md#preprocessors
-[ex~contributing~publish]: publication.md#publish
+[ex~contributing~publication-steps]: publication.md#publication-steps
 [ex~contributing~push-image-to-docker-hub]: dev_container_docker.md#push-image-to-docker-hub
 [ex~contributing~using-vs-code]: dev_environment_setup.md#using-vs-code
 [p~language]: ../language/index.md

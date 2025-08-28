@@ -14,7 +14,7 @@ Note that temporary files and directories have subtle security and resource leak
 {{#include ../../../crates/cats/filesystem/examples/tempfile/tempfile.rs:example}}
 ```
 
-### Other Options {#skip}
+### Other Options {#other-options}
 
 - The [`tempdir`][c~tempdir~docs]↗{{hi:tempdir}} crate is being merged into [`tempfile`][c~tempfile~docs]↗{{hi:tempfile}}.
 

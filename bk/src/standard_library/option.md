@@ -61,7 +61,7 @@ This pattern removes the need for explicit, convoluted [`match`][keyword~match]â
 {{#include ../../crates/standard_library/examples/option/option_question_mark.rs:example}}
 ```
 
-## Common `Option` Methods {#option-methods}
+## Work with the Contents of an `Option` {#option-methods}
 
 [![std][c~std~docs~badge]][c~std~docs]
 
@@ -126,7 +126,7 @@ See also the [[asref | AsRef]] chapter.
 {{#include ../../crates/standard_library/examples/option/option_ref.rs:example}}
 ```
 
-## See Also {#skip}
+## See Also {#see-also}
 
 - The [ShowOption][c~show-option~lib.rs]â†— crate provides extension methods and macros for formatting Options.
 

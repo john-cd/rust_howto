@@ -18,7 +18,7 @@ The `Box<T>` type is a smart pointer{{hi:Smart pointers}}, because it implements
 {{#include ../../crates/standard_library/examples/box/box_deref.rs:example}}
 ```
 
-### `Box` Use Cases {#box-use-cases}
+### Decide When to Use `Box` {#box-use-cases}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 

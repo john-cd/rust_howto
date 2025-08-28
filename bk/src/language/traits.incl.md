@@ -12,3 +12,4 @@
 | [Define Generic Traits that Work with Multiple Types][ex~language~generic-traits] |
 | [Use a Trait Bound to Guarantee that a Generic Type Implements a Trait][ex~language~trait-bounds] |
 | [Use Async with Traits][ex~language~async-and-traits] |
+| [Declare a Trait][ex~language~trait-syntax] | | |

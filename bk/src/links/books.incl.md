@@ -2,7 +2,7 @@
 |---|
 | [Lists of Books][ex~links~book-lists] |
 | [Essential and Official Books][ex~links~official-books] |
-| [Official Reference and Documentation][ex~links~reference-documentation] |
+| [Other Official Reference and Documentation][ex~links~reference-documentation] |
 | [Free eBooks][ex~links~free] |
 | [Rust Books, General][ex~links~general] |
 | [APIs and Microservices][ex~links~apis] |
@@ -26,5 +26,6 @@
 | [Security][ex~links~security] |
 | [Standard Library][ex~links~standard-library] |
 | [Unsafe Code][ex~links~unsafe] |
-| [Web][ex~links~web] |
+| [Web Programming][ex~links~web] |
 | [Webassembly (WASM)][ex~links~wasm] |
+| [Rust Books, by Topic][ex~links~rust-books-by-topic] | | |

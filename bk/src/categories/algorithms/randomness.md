@@ -4,7 +4,7 @@
 
 `rand` is the _de facto_ standard for random number generation in Rust. Use `rand_distr` for random distributions beyond what is available in `rand`. You may also consider lightweight alternatives to `rand` such as [`fastrand`][c~fastrand~docs]. Honorable mentions include:
 
-- `oorandom`, a minimalistic pseudorandom number generator, when the rand crate is just too big.
+- `oorandom`, a minimalistic pseudorandom number generator, when the `rand` crate is just too big.
 - `getrandom`, a low-level library for accessing the operating system's random number generator.
 
 ## Generate Random Numbers {#generate-random-numbers}
