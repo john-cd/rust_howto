@@ -3635,3 +3635,9 @@ canonicalize
 HashMap's
 parallelizes
 struct's
+minimalistic
+SwissTable
+checksums
+Cryptograhic
+FSTs
+argmax
