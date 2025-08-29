@@ -893,8 +893,8 @@
 [embecosm~website]: https://embecosm.com
 [envoyproxy~website]: https://envoyproxy.io
 [epicinium~website]: https://abunchofhacks.itch.io/epicinium
-[espressif~repo]: https://github.com/esp-rs
 [espressif~no_std-training~website]: https://docs.espressif.com/projects/rust/no_std-training
+[espressif~repo]: https://github.com/esp-rs
 [espressif~website]: https://espressif.com
 [etcd~website]: https://etcd.io
 [eurorust.eu~website]: https://eurorust.eu
@@ -1172,9 +1172,9 @@
 [mozilla~content-length]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Length
 [mozilla~content-type]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type
 [mozilla~cors]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
-[mozilla~repo]: https://github.com/mozilla
 [mozilla~mime-type]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types
 [mozilla~range]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range
+[mozilla~repo]: https://github.com/mozilla
 [mozilla~website]: https://mozilla.org
 [multimediallc~website]: https://multimediallc.com
 [must_know_rust_crates~website]: https://gitlab.com/samuel_schuepbach/must_know_rust_crates
@@ -1431,8 +1431,6 @@
 [rust-howto~contributing~repo~badge]: https://img.shields.io/badge/contributing_to_rust__howto-steelblue?logo=github
 [rust-howto~drafts~repo]: https://github.com/john-cd/rust_howto/tree/main/bk/drafts
 [rust-howto~drafts~repo~badge]: https://img.shields.io/badge/rust__howto_drafts-steelblue?logo=github
-[rust-howto~repo]: https://github.com/john-cd/rust_howto
-[rust-howto~repo~badge]: https://img.shields.io/badge/rust__howto-steelblue?logo=github
 [rust-howto~issues]: https://github.com/john-cd/rust_howto/issues
 [rust-howto~license~repo]: https://github.com/john-cd/rust_howto/blob/main/LICENSE
 [rust-howto~mdbook-scrub~repo]: https://github.com/john-cd/rust_howto/blob/main/mdbook-scrub
@@ -1440,6 +1438,8 @@
 [rust-howto~playground~repo]: https://github.com/john-cd/rust_howto/tree/main/playground
 [rust-howto~publish~repo]: https://github.com/john-cd/rust_howto/tree/main/publish
 [rust-howto~readme~repo]: https://github.com/john-cd/rust_howto/blob/main/README.md
+[rust-howto~repo]: https://github.com/john-cd/rust_howto
+[rust-howto~repo~badge]: https://img.shields.io/badge/rust__howto-steelblue?logo=github
 [rust-howto~src~repo]: https://github.com/john-cd/rust_howto/tree/main/bk/src
 [rust-howto~summary~repo]: https://github.com/john-cd/rust_howto/blob/main/bk/src/SUMMARY.md
 [rust-howto~todo~repo]: https://github.com/john-cd/rust_howto/blob/main/TODO.md

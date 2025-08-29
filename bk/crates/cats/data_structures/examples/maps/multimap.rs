@@ -1,18 +1,16 @@
 #![allow(dead_code)]
 // ANCHOR: example
-//! This example demonstrates how to use a `MultiMap` to store multiple values
-//! for the same key.
 use anyhow::Result;
 use crates_io_api::Category;
 use crates_io_api::SyncClient;
 use multimap::MultiMap;
 
-// Calls the crates.io API client and retrieve the categories a given crate
+// Calls the `crates.io` API client and retrieve the categories a given crate
 // belongs to.
 fn get_categories_for_crate(crate_name: &str) -> Result<Vec<Category>> {
     let client = SyncClient::new(
         "my-user-agent (my-contact@domain.com)",
-        std::time::Duration::from_millis(1000), // Rate limit interval
+        std::time::Duration::from_millis(1000), // Rate limit interval.
     )?;
     // Retrieve the crate's information:
     let crt = client.get_crate(crate_name)?;
