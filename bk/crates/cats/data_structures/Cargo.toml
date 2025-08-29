@@ -18,6 +18,7 @@ autolib = false
 [dependencies]
 arrayvec = "0.7.6"
 bitflags = "2.6.0"
+bitvec = "1.0.1"
 # TODO add example? bloomfilter = "3.0.1"
 # TODO add example? bytes = "1.9.0"
 flagset = "0.4.6"
@@ -30,6 +31,7 @@ petgraph = "0.8.1"
 priority-queue = "2.3.1"
 # TODO add example? rangemap = "1.5.1"
 # TODO add example? skiplist = "0.6.0"
+roaring = "0.11.2"
 slotmap = "1.0.7"
 smallvec = "2.0.0-alpha.8" # alpha
 tinyvec = { version = "1.8.1", features = ["alloc"] }
@@ -42,4 +44,3 @@ uuid = { version = "1.11.0", features = [
 ## General
 anyhow = "1.0.95"
 crates_io_api = "0.12.0"
-bitvec = "1.0.1"

@@ -2983,6 +2983,7 @@ dependencies = [
  "multimap",
  "petgraph 0.8.2",
  "priority-queue",
+ "roaring 0.11.2",
  "slotmap",
  "smallvec 2.0.0-alpha.11",
  "tinyvec",
@@ -9721,7 +9722,7 @@ dependencies = [
  "geo",
  "regex",
  "revision-derive 0.11.0",
- "roaring",
+ "roaring 0.10.12",
  "rust_decimal",
  "uuid",
 ]
@@ -9887,6 +9888,16 @@ dependencies = [
  "bytemuck",
  "byteorder",
  "serde",
+]
+
+[[package]]
+name = "roaring"
+version = "0.11.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f08d6a905edb32d74a5d5737a0c9d7e950c312f3c46cb0ca0a2ca09ea11878a0"
+dependencies = [
+ "bytemuck",
+ "byteorder",
 ]
 
 [[package]]
@@ -11570,7 +11581,7 @@ dependencies = [
  "revision 0.11.0",
  "ring",
  "rmpv",
- "roaring",
+ "roaring 0.10.12",
  "rust-stemmers",
  "rust_decimal",
  "scrypt",

@@ -1,8 +1,10 @@
-# Bitfields
+# Bit fields and arrays
 
 {{#include bitfield.incl.md}}
 
-A bitfield is a data structure that efficiently stores a sequence of bits. It is a way to represent a set of boolean flags or options in a compact manner, using individual bits within an integer or an array of integers. Bitfields save memory and potentially improve performance.
+A bit array (also known as bit map, bit set, bit string, or bit vector) is an array data structure that compactly stores bits.
+
+It is a way to represent a set of boolean flags or options in a compact manner, using individual bits within an integer or an array of integers. Bit arrays save memory and potentially improve performance.
 
 ## Define and Operate on a Type Represented as a Bitfield {#bitfield}
 
@@ -33,12 +35,22 @@ A [`flagset`][c~flagset~docs]↗{{hi:flagset}} refers to a bitfield used to repr
 
 [![bitvec~website][c~bitvec~website~badge]][c~bitvec~website] [![bitvec][c~bitvec~docs~badge]][c~bitvec~docs] [![bitvec~crates.io][c~bitvec~crates.io~badge]][c~bitvec~crates.io] [![bitvec~repo][c~bitvec~repo~badge]][c~bitvec~repo] [![bitvec~lib.rs][c~bitvec~lib.rs~badge]][c~bitvec~lib.rs]{{hi:bitvec}}{{hi:Bitstream}}{{hi:Bitvector}}{{hi:Bitmap}}{{hi:Bitfield}}{{hi:bitvec}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-[`bitvec`][c~bitvec~docs]↗{{hi:bitvec}} provides efficient storage and manipulation of bit vectors. It addresses memory by bits, for packed collections and bitfields.
-
-This example demonstrates the usage of the `bitvec` crate for bit manipulation in Rust:
+[`bitvec`][c~bitvec~docs]↗{{hi:bitvec}} provides efficient storage and manipulation of bit vectors. It addresses memory by bits, for packed collections and bitfields. This example demonstrates the usage of the `bitvec` crate for bit manipulation in Rust:
 
 ```rust,editable
 {{#include ../../../crates/cats/data_structures/examples/bitfield/bitvec.rs:example}}
+```
+
+## Store Large Sets of Integers with `roaring` {#roaring}
+
+[![roaring][c~roaring~docs~badge]][c~roaring~docs] [![roaring~crates.io][c~roaring~crates.io~badge]][c~roaring~crates.io] [![roaring~repo][c~roaring~repo~badge]][c~roaring~repo] [![roaring~lib.rs][c~roaring~lib.rs~badge]][c~roaring~lib.rs]{{hi:roaring}}{{hi:Bitmap}}{{hi:Data-structure}}{{hi:roaring}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+
+Bitsets, also called bitmaps, are commonly used as fast data structures, for example as indices for SQL query engines, search engines, and big data processing systems.
+
+Unfortunately, they can use too much memory. To compensate, [`roaring`][c~roaring~docs]↗{{hi:roaring}} implements compressed bitmap data structures. They efficiently store and manipulate large sets of integers:
+
+```rust,editable
+{{#include ../../../crates/cats/data_structures/examples/bitfield/roaring.rs:example}}
 ```
 
 {{#include refs.incl.md}}
@@ -46,7 +58,4 @@ This example demonstrates the usage of the `bitvec` crate for bit manipulation i
 
 <div class="hidden">
 [bitfield: edit / review](https://github.com/john-cd/rust_howto/issues/279)
-
-- [roaring][c~roaring~crates.io]↗.
-
 </div>
