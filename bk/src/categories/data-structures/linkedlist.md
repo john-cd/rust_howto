@@ -12,9 +12,19 @@
 - Adding or removing elements from the front or back of the list is very efficient, with an average time complexity of O(1).
 - The list can grow or shrink as needed.
 
+However, randomly accessing elements is slower compared to arrays due to the linear nature of the structure.
+
+Except for a few niche cases (frequent splitting or merging of large lists, lock-free concurrency, pure functional programming...), you should _prefer `Vec` or `VecDeque`_ over `LinkedList` - due to less frequent allocation, lower memory overhead, efficient random access, and CPU cache locality.
+
+This example demonstrates common operations with `LinkedList`:
+
 ```rust,editable
 {{#include ../../../crates/cats/data_structures/examples/linkedlist/linkedlist.rs:example}}
 ```
+
+## References {#references .skip}
+
+- [Learn Rust by Writing Entirely Too Many Linked Lists][book~rust-unofficial-too-many-lists]↗.
 
 ## Related Topics {#related-topics .skip}
 
@@ -26,4 +36,5 @@
 
 <div class="hidden">
 [expand](https://github.com/john-cd/rust_howto/issues/1170)
+
 </div>
