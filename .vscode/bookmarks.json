@@ -144,38 +144,13 @@
 					"label": ""
 				},
 				{
-					"line": 31,
-					"column": 7,
+					"line": 37,
+					"column": 14,
 					"label": ""
 				},
 				{
-					"line": 45,
+					"line": 47,
 					"column": 7,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/categories/data-structures/btrees.md",
-			"bookmarks": [
-				{
-					"line": 4,
-					"column": 4,
-					"label": ""
-				},
-				{
-					"line": 25,
-					"column": 14,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/categories/data-structures/graph.md",
-			"bookmarks": [
-				{
-					"line": 8,
-					"column": 14,
 					"label": ""
 				}
 			]
@@ -836,6 +811,16 @@
 				{
 					"line": 28,
 					"column": 68,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/crates/cats/data_structures/examples/bitfield/bitvec.rs",
+			"bookmarks": [
+				{
+					"line": 141,
+					"column": 14,
 					"label": ""
 				}
 			]
