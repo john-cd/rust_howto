@@ -6,13 +6,7 @@
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]
 
-`LinkedList` represents a doubly linked list, where each element contains a reference to both the next and the previous elements. This allows for efficient insertions and deletions from both ends of the list.
-
-- You can iterate over the elements of the list in both forward and backward directions.
-- Adding or removing elements from the front or back of the list is very efficient, with an average time complexity of O(1).
-- The list can grow or shrink as needed.
-
-However, randomly accessing elements is slower compared to arrays due to the linear nature of the structure.
+`LinkedList` represents a doubly linked list, where each element contains a reference to both the next and the previous elements. This allows for efficient insertions and deletions (in constant time) from both ends of the list. You can also iterate over the elements of the list in both forward and backward directions. However, randomly accessing elements is slower (in O(n) time) compared to arrays, due to the linear nature of the structure.
 
 Except for a few niche cases (frequent splitting or merging of large lists, lock-free concurrency, pure functional programming...), you should _prefer `Vec` or `VecDeque`_ over `LinkedList` - due to less frequent allocation, lower memory overhead, efficient random access, and CPU cache locality.
 
@@ -35,6 +29,4 @@ This example demonstrates common operations with `LinkedList`:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[expand](https://github.com/john-cd/rust_howto/issues/1170)
-
 </div>
