@@ -3,12 +3,14 @@ use roaring::RoaringBitmap;
 
 fn main() {
     // Create two bitmaps representing two sets of user IDs:
-    // These are highly optimized data structures for storing sets of 32-bit unsigned integers (u32).
+    // These are highly optimized data structures for storing sets of 32-bit
+    // unsigned integers (u32).
     let mut online_users = RoaringBitmap::new();
     let mut subscribed_users = RoaringBitmap::new();
 
     // Add some user IDs to the bitmaps. Users with IDs 1, 5, 1000 are online.
-    // Roaring bitmaps automatically handle compression, making them very memory-efficient for both sparse and dense data.
+    // Roaring bitmaps automatically handle compression, making them very
+    // memory-efficient for both sparse and dense data.
     online_users.insert(1);
     online_users.insert(5);
     online_users.insert(1000);

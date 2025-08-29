@@ -17,7 +17,8 @@ fn main() {
     // and will only refer to the entity that was inserted.
 
     let key2 = sm.insert("value");
-    // `key1` and `key2` are not the same, even though they contain the same value:
+    // `key1` and `key2` are not the same, even though they contain the same
+    // value:
     assert_ne!(key1, key2);
 
     // Access values by key:
@@ -39,8 +40,8 @@ fn main() {
     assert_eq!(sm.get(key2), Some(&"value"));
 
     // We can also create (multiple) secondary maps that can map the keys
-    // returned by `SlotMap` to other values, to associate additional arbitrary data with
-    // objects stored in slot maps.
+    // returned by `SlotMap` to other values, to associate additional arbitrary
+    // data with objects stored in slot maps.
     let mut sec = SecondaryMap::new();
     // Insert a value into the secondary map, associated with `key2`.
     sec.insert(key2, "secondary");
