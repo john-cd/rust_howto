@@ -49,17 +49,17 @@
 			"path": "bk/src/categories/algorithms/index.md",
 			"bookmarks": [
 				{
-					"line": 43,
+					"line": 44,
 					"column": 5,
 					"label": ""
 				},
 				{
-					"line": 52,
+					"line": 53,
 					"column": 29,
 					"label": ""
 				},
 				{
-					"line": 58,
+					"line": 59,
 					"column": 14,
 					"label": ""
 				}
@@ -179,12 +179,7 @@
 			"path": "bk/src/categories/data-structures/maps.md",
 			"bookmarks": [
 				{
-					"line": 13,
-					"column": 7,
-					"label": ""
-				},
-				{
-					"line": 57,
+					"line": 53,
 					"column": 11,
 					"label": ""
 				}

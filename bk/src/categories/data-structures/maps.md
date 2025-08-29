@@ -4,16 +4,12 @@
 
 ## Store Data in an Insertion-ordered Map {#indexmap}
 
-[![indexmap][c~indexmap~docs~badge]][c~indexmap~docs]{{hi:indexmap}}
-[![indexmap~crates.io][c~indexmap~crates.io~badge]][c~indexmap~crates.io]
-[![indexmap~repo][c~indexmap~repo~badge]][c~indexmap~repo]
-[![indexmap~lib.rs][c~indexmap~lib.rs~badge]][c~indexmap~lib.rs]
-[![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
-[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![indexmap][c~indexmap~docs~badge]][c~indexmap~docs] [![indexmap~crates.io][c~indexmap~crates.io~badge]][c~indexmap~crates.io] [![indexmap~github][c~indexmap~github~badge]][c~indexmap~github] [![indexmap~lib.rs][c~indexmap~lib.rs~badge]][c~indexmap~lib.rs]{{hi:indexmap}}{{hi:Hashmap}}{{hi:No_std}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-`IndexMap` is a data structure in Rust that combines the features of a hashmap and a vector.
+[`indexmap`][c~indexmap~docs]↗{{hi:indexmap}} offers the `IndexMap` data structure that combines the features of a hashmap and a vector.
+It keeps track of insertion order and allows efficiently iteration over its elements in that order.
 
-[`indexmap`][c~indexmap~docs]↗{{hi:indexmap}} offers a hash map that separately keeps track of insertion order and allows efficiently iteration over its elements in that order.
+This example demonstrates the usage of `IndexMap`, including methods for accessing elements by index and using the `entry` API:
 
 ```rust,editable
 {{#include ../../../crates/cats/data_structures/examples/maps/indexmap.rs:example}}
