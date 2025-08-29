@@ -6,16 +6,16 @@
 
 [![std][c~std~docs~badge]][c~std~docs]
 
-[`Result<T, E>`][c~std::result::Result~docs]↗{{hi:Result}} is an `enum` very frequently used for error handling. It has two variants:
+[`Result<T, E>`][c~std::result::Result~docs]↗{{hi:Result}} is an `enum` very frequently used for error handling - specifically when errors are _expected_ and _recoverable_.
+
+`Result<T, E>` has two variants:
 
 - [`Ok(T)`][c~std::result::Result::Ok~docs]↗{{hi:std::result::Result::Ok}} represents success and contains a value of type `T`.
 - [`Err(E)`][c~std::result::Result::Err~docs]↗{{hi:std::result::Result::Err}} represents an error and contains an error value of type `E`.
 
-Functions should return `Result` when errors are _expected_ and _recoverable_.
+`E` above often implements the [`std::error::Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} trait, which is a standard trait for reporting errors in Rust. You can define your own error types by implementing this trait (but this is verbose) or use libraries like `thiserror` or `anyhow` to greatly simplify error handling.
 
-Note that `Result` is annotated with the `#[must_use]` attribute: the compiler issues a warning when a `Result` value is ignored, prompting you if you forgot to handle an error.
-
-`E` above is often a type that implements the [`std::error::Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} trait, which is a standard trait for reporting errors in Rust. You can define your own error types by implementing this trait (but this is verbose) or use libraries like `thiserror` or `anyhow` to greatly simplify error handling.
+`Result` is annotated with the `#[must_use]` attribute: the compiler issues a warning when a `Result` value is ignored, prompting you if you forgot to handle an error.
 
 The following example show to return `Result` from a function, propagate it to the caller with the `?` operator, or process it with `match`:
 
