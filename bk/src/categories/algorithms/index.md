@@ -24,12 +24,13 @@ This category covers Rust implementations of core algorithms{{hi:Algorithms}}, s
 
 For [[compression | compression]], use:
 - `flate2` for deflate, gzip, and zlib compression,
-- `zip`,
+- `zip` for zip files,
 - `tar` for tar archives,
 - `zstd` for Zstandard compression,
 - `bzip2`,
 - `xz2`,
 - `snap` for Snappy compression.
+- `brotli` for Brotli compression.
 
 ### Data Structures
 

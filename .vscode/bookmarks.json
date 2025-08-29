@@ -16,16 +16,6 @@
 			]
 		},
 		{
-			"path": "bk/src/appendices/crates_alphabetical.md",
-			"bookmarks": [
-				{
-					"line": 0,
-					"column": 5,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/appendices/crates_by_category.md",
 			"bookmarks": [
 				{
@@ -59,22 +49,17 @@
 			"path": "bk/src/categories/algorithms/index.md",
 			"bookmarks": [
 				{
-					"line": 25,
-					"column": 26,
-					"label": ""
-				},
-				{
-					"line": 42,
+					"line": 43,
 					"column": 5,
 					"label": ""
 				},
 				{
-					"line": 51,
+					"line": 52,
 					"column": 29,
 					"label": ""
 				},
 				{
-					"line": 57,
+					"line": 58,
 					"column": 14,
 					"label": ""
 				}
@@ -156,16 +141,6 @@
 			]
 		},
 		{
-			"path": "bk/src/categories/data-structures/heapless.incl.md",
-			"bookmarks": [
-				{
-					"line": 2,
-					"column": 8,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/categories/data-structures/heapless.md",
 			"bookmarks": [
 				{
@@ -194,12 +169,7 @@
 			"path": "bk/src/categories/data-structures/linkedlist.md",
 			"bookmarks": [
 				{
-					"line": 8,
-					"column": 12,
-					"label": ""
-				},
-				{
-					"line": 27,
+					"line": 37,
 					"column": 9,
 					"label": ""
 				}
