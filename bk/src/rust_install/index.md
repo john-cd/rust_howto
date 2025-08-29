@@ -71,7 +71,7 @@ Once you have edited your code, stage and commit the changes with:
 
 ```sh
 git add .
-git commit
+git commit -m "commit message"
 ```
 
 Review the [git][git~website]↗ manual for more commands.

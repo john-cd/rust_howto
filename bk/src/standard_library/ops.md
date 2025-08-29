@@ -65,7 +65,7 @@ fn main() {
 ## Related Topics {#related-topics .skip}
 
 - [[data_structures | Data Structures]].
-- [[drop | Drop]].
+- [[drop | `Drop`]].
 - [[traits | Traits]].
 
 {{#include refs.incl.md}}
