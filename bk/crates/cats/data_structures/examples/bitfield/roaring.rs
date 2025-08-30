@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 // ANCHOR: example
 use roaring::RoaringBitmap;
 

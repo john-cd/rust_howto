@@ -5,7 +5,6 @@
 //! [dependencies]
 //! bitvec = "1.0.1" # Or latest
 //! ```
-use std::fmt::Debug;
 
 use bitvec::prelude::*;
 
@@ -18,8 +17,7 @@ fn main() {
     println!("First bit: {}", bv[0]);
     println!("Second bit: {}", bv[1]);
 
-    // Modify bits.
-    // The parameters are: index, value.
+    // Modify bits. The parameters are: index, value:
     bv.set(0, true);
     bv.set(5, true);
     println!("Modified BitVec: {bv}");
@@ -47,10 +45,10 @@ fn main() {
 
     // Create `BitVec`s with different storage types and endianness:
     let bv_lsb0 = bitvec![u16, Lsb0; 0, 1, 0, 1, 1, 0, 1, 0];
-    println!("LSB0 BitVec: {bv_lsb0}");
+    println!("u16 LSB BitVec: {bv_lsb0}");
 
     let bv_u32 = bitvec![u32, Msb0; 0, 1, 0, 1, 1, 0, 1, 0];
-    println!("u32 BitVec: {bv_u32}");
+    println!("u32 MSB BitVec: {bv_u32}");
 
     println!("\n===== Bit Manipulation Operations =====");
 
@@ -92,11 +90,11 @@ fn main() {
 
     // Modify a slice:
     bv_slice[4..8].fill(true);
-    println!("After filling [4..8] with true: {bv_slice}");
+    println!("After filling [4..8] with `1`s: {bv_slice}");
 
     println!("\n===== Practical Applications =====");
 
-    // Example 1: Bit flags e.g. file permissions:
+    // Example 1: Bit flags e.g. file permissions.
     let mut flags = bitvec![u8, Msb0; 0; 8];
 
     // Set flags:
@@ -109,47 +107,23 @@ fn main() {
     println!("Can write: {}", flags[1]);
     println!("Can execute: {}", flags[2]);
 
-    // Example 2: Bit packing - Pack multiple boolean values efficiently.
+    // Example 2: Bit packing - pack multiple boolean values efficiently.
     let mut packed = BitVec::<u8, Msb0>::new();
 
     // Appends single bits to the vector:
-    packed.push(true); // is_active
-    packed.push(false); // is_admin
-    packed.push(true); // is_verified
-    packed.push(false); // is_premium
+    packed.push(true); // is_active.
+    packed.push(false); // is_admin.
+    packed.push(true); // is_verified.
+    packed.push(false); // is_premium.
 
     println!("Packed bits: {packed}");
 
-    // Example 3: Simple bloom filter:
-    fn create_bloom_filter<T: Debug>(
-        size: usize,
-        items: &[T],
-        hash_fn: impl Fn(&T) -> usize,
-    ) -> BitVec<u8> {
-        let mut filter = bitvec![u8, Lsb0; 0; size];
-
-        for item in items {
-            let hash = hash_fn(item) % size;
-            filter.set(hash, true);
-            println!("Added item {item:?}, hash: {hash}");
-        }
-        filter
-    }
-
-    let test_items = ["apple", "banana", "cherry"];
-    let bloom = create_bloom_filter(10, &test_items, |s| {
-        // Example only.
-        s.len() * 7 + s.chars().next().unwrap() as usize
-    });
-
-    println!("Bloom filter: {bloom}");
-
-    // Example 4: Bit-packed struct:
+    // Example 3: Bit-packed struct.
     use bitvec::field::BitField;
 
     let mut data = bitvec![u16, Lsb0; 0; 16];
 
-    // Pack values into specific bit ranges:
+    // Pack (small) values into specific bit ranges:
     data[0..3].store(0b101u8);
     data[3..8].store(0b10011u8);
     data[8..16].store(0b11001010u8);
