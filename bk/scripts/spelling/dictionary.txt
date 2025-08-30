@@ -603,6 +603,7 @@ Graylog
 Greenbone
 Group
 Gruber
+Guid
 Guillaume
 Guybrush
 GzDecoder
@@ -2106,6 +2107,7 @@ deserializing
 designators
 desktop
 dest
+destructor
 destructure
 destructured
 destructures
