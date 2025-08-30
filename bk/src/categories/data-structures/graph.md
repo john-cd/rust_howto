@@ -22,5 +22,4 @@ The following example demonstrates creating a graph, adding nodes and edges, tra
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1346)
 </div>
