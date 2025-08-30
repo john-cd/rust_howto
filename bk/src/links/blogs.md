@@ -16,7 +16,7 @@
 
 ## Rust Blogs and Newsletters {#blogs}
 
-Official blogs:
+The "official" Rust blogs are written by the Rust Foundation or core Rust team members:
 
 - [Rust Blog][rust-lang~blog]↗.
 - ["Inside Rust"][blog~inside-rust]↗.
