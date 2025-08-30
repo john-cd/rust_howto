@@ -1,8 +1,8 @@
-# Bit fields and arrays
+# Bit Arrays
 
-{{#include bitfield.incl.md}}
+{{#include bitarrays.incl.md}}
 
-A bit array (also known as bit map, bit set, bit string, or bit vector) is an data structure that allocates one or more adjacent bits for specific purposes, so that any single bit or group of bits within the structure can be set or inspected. A bit field is a bit array that typically fit within a machine word.
+A bit array (also known as bit map, bit set, bit string, or bit vector) is an data structure that allocates one or more adjacent bits for specific purposes, so that any single bit or group of bits within the structure can be set or inspected.
 
 It is a way to represent a set of boolean flags or values with a limited range in a compact manner, using individual bits or small group of bits within an integer or an array of integers. Bit arrays save memory and potentially improve performance.
 

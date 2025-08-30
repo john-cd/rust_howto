@@ -58,13 +58,13 @@
 [ex~contributing~push-image-to-docker-hub]: ../contributing/dev_container_docker.md#push-image-to-docker-hub
 [ex~contributing~using-vs-code]: ../contributing/dev_environment_setup.md#using-vs-code
 [ex~data-structures~arrayvec]: ../categories/data-structures/stack_allocated_arrays.md#arrayvec
-[ex~data-structures~bitfield]: ../categories/data-structures/bitfield.md#bitfield
-[ex~data-structures~bitvec]: ../categories/data-structures/bitfield.md#bitvec
+[ex~data-structures~bitfield]: ../categories/data-structures/bitarrays.md#bitfield
+[ex~data-structures~bitvec]: ../categories/data-structures/bitarrays.md#bitvec
 [ex~data-structures~btreemap]: ../categories/data-structures/btrees.md#btreemap
 [ex~data-structures~btreeset]: ../categories/data-structures/btrees.md#btreeset
 [ex~data-structures~custom-hash-function]: ../categories/data-structures/hashmap.md#custom-hash-function
 [ex~data-structures~custom-key-type]: ../categories/data-structures/hashmap.md#custom-key-type
-[ex~data-structures~flagset]: ../categories/data-structures/bitfield.md#flagset
+[ex~data-structures~flagset]: ../categories/data-structures/bitarrays.md#flagset
 [ex~data-structures~generate-parse-uuid]: ../categories/data-structures/unique_ids.md#generate-parse-uuid
 [ex~data-structures~hashmap]: ../categories/data-structures/hashmap.md#hashmap
 [ex~data-structures~hashset]: ../categories/data-structures/hashmap.md#hashset
@@ -78,7 +78,6 @@
 [ex~data-structures~placeholders]: ../categories/data-structures/strings.md#placeholders
 [ex~data-structures~priority-queue]: ../categories/data-structures/binaryheap.md#priority-queue
 [ex~data-structures~queue]: ../categories/data-structures/stack_and_queue.md#queue
-[ex~data-structures~related-data-structures]: ../categories/data-structures/strings.md#related-data-structures
 [ex~data-structures~slotmap]: ../categories/data-structures/maps.md#slotmap
 [ex~data-structures~smallvec]: ../categories/data-structures/stack_allocated_arrays.md#smallvec
 [ex~data-structures~stack]: ../categories/data-structures/stack_and_queue.md#stack

@@ -71,7 +71,7 @@
   - [Stacks and Queues](categories/data-structures/stack_and_queue.md)
   - [Binary Heaps](categories/data-structures/binaryheap.md)
   - [Linked Lists](categories/data-structures/linkedlist.md)
-  - [Bitfields](categories/data-structures/bitfield.md)
+  - [Bit Arrays](categories/data-structures/bitarrays.md)
   - [Graph](categories/data-structures/graph.md)
   - [Heapless Data Structures](categories/data-structures/heapless.md)
   - [Stack-allocated Arrays](categories/data-structures/stack_allocated_arrays.md)

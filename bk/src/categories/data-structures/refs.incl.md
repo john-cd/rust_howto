@@ -1,11 +1,11 @@
 [ex~data-structures~arrayvec]: stack_allocated_arrays.md#arrayvec
-[ex~data-structures~bitfield]: bitfield.md#bitfield
-[ex~data-structures~bitvec]: bitfield.md#bitvec
+[ex~data-structures~bitfield]: bitarrays.md#bitfield
+[ex~data-structures~bitvec]: bitarrays.md#bitvec
 [ex~data-structures~btreemap]: btrees.md#btreemap
 [ex~data-structures~btreeset]: btrees.md#btreeset
 [ex~data-structures~custom-hash-function]: hashmap.md#custom-hash-function
 [ex~data-structures~custom-key-type]: hashmap.md#custom-key-type
-[ex~data-structures~flagset]: bitfield.md#flagset
+[ex~data-structures~flagset]: bitarrays.md#flagset
 [ex~data-structures~generate-parse-uuid]: unique_ids.md#generate-parse-uuid
 [ex~data-structures~hashmap]: hashmap.md#hashmap
 [ex~data-structures~hashset]: hashmap.md#hashset
@@ -20,8 +20,6 @@
 [ex~data-structures~placeholders]: strings.md#placeholders
 [ex~data-structures~priority-queue]: binaryheap.md#priority-queue
 [ex~data-structures~queue]: stack_and_queue.md#queue
-[ex~data-structures~related-data-structures]: hashmap.md#related-data-structures
-[ex~data-structures~related-data-structures]: strings.md#related-data-structures
 [ex~data-structures~slotmap]: maps.md#slotmap
 [ex~data-structures~smallvec]: stack_allocated_arrays.md#smallvec
 [ex~data-structures~stack]: stack_and_queue.md#stack
