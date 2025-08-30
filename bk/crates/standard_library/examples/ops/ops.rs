@@ -3,7 +3,8 @@
 use std::ops::Add;
 
 // The struct we want to overload the '+' operator for.
-// We derive a few convenience traits, incl. `Debug` to allow for easy printing with `{:?}`.
+// We derive a few convenience traits, incl. `Debug` to allow for easy printing
+// with `{:?}`.
 #[derive(Debug, Copy, Clone, PartialEq, Eq)]
 struct Point {
     x: i32,
