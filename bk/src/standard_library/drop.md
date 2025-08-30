@@ -1,6 +1,8 @@
-# Drop
+# Release Resources when a Value is No Longer Needed
 
 {{#include drop.incl.md}}
+
+When a value is no longer needed, Rust will run a "destructor" on that value. The most common way that a value is no longer needed is when it goes out of scope. This destructor calls `Drop::drop` for that value, if the special `Drop` trait is implemented for its type.
 
 ## Release External Resources by Implementing the `Drop` Trait {#drop}
 
@@ -8,11 +10,11 @@
 
 The [`Drop`][c~std::ops::Drop~docs]↗{{hi:std::ops::Drop}} trait allows you to define custom behavior when your types go out of scope, such as releasing resources or performing cleanup tasks.
 
-Its `drop` method is called automatically by Rust when:
+Its `drop` method is called automatically when:
 
 - A value goes out of scope (e.g., at the end of a function, a [`let`][keyword~let]↗{{hi:let}} binding's scope, or a block).
 - A variable is re-assigned (and the old value is dropped).
-- A collection (like a Vec) is dropped, its elements are also dropped.
+- A collection (like a `Vec`) is dropped - its elements are also dropped.
 
 Common use cases include:
 

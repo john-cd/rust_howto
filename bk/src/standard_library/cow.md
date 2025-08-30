@@ -70,7 +70,7 @@ The following example demonstrates how to convert a `Cow<str>` to a `&str` or a 
 
 This example was adapted from a [StackOverflow discussion][stackoverflow~how-do-i-get-a-str-or-string-from-stdborrowcowstr]↗.
 
-## `Cow` Alternatives {#cow-alternatives}
+## Use `Arc`, `Rc`, `Box` as `Cow` Alternatives {#cow-alternatives}
 
 Taking the example of strings: using `&str` for borrowing and `String` for owned data might be sufficient if you don't need the flexibility of [`Cow<str>`][c~std::borrow::Cow~docs]↗{{hi:std::borrow::Cow}}. You can also use:
 

@@ -74,11 +74,6 @@
 					"label": ""
 				},
 				{
-					"line": 47,
-					"column": 9,
-					"label": ""
-				},
-				{
 					"line": 63,
 					"column": 193,
 					"label": ""
@@ -146,11 +141,6 @@
 				{
 					"line": 15,
 					"column": 5,
-					"label": ""
-				},
-				{
-					"line": 40,
-					"column": 19,
 					"label": ""
 				},
 				{
@@ -601,26 +591,6 @@
 			]
 		},
 		{
-			"path": "bk/src/standard_library/cow.md",
-			"bookmarks": [
-				{
-					"line": 72,
-					"column": 24,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/standard_library/drop.md",
-			"bookmarks": [
-				{
-					"line": 0,
-					"column": 4,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/standard_library/dynamic_typing.md",
 			"bookmarks": [
 				{
@@ -679,7 +649,7 @@
 			"path": "bk/src/standard_library/result.md",
 			"bookmarks": [
 				{
-					"line": 63,
+					"line": 64,
 					"column": 12,
 					"label": ""
 				}
