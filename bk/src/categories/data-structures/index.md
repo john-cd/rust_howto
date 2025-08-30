@@ -66,13 +66,13 @@ The following examples cover less commonly-used data structures:
 
 {{#include bitfield.incl.md}}
 
-### UUIDs
-
-{{#include uuid.incl.md}}
-
-### Heapless Data Structures
+## Heapless Data Structures
 
 {{#include heapless.incl.md}}
+
+## Unique Identifers
+
+{{#include unique_ids.incl.md}}
 
 ## Additional Data Structures
 

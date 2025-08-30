@@ -65,7 +65,7 @@
 [ex~data-structures~custom-hash-function]: ../categories/data-structures/hashmap.md#custom-hash-function
 [ex~data-structures~custom-key-type]: ../categories/data-structures/hashmap.md#custom-key-type
 [ex~data-structures~flagset]: ../categories/data-structures/bitfield.md#flagset
-[ex~data-structures~generate-parse-uuid]: ../categories/data-structures/uuid.md#generate-parse-uuid
+[ex~data-structures~generate-parse-uuid]: ../categories/data-structures/unique_ids.md#generate-parse-uuid
 [ex~data-structures~hashmap]: ../categories/data-structures/hashmap.md#hashmap
 [ex~data-structures~hashset]: ../categories/data-structures/hashmap.md#hashset
 [ex~data-structures~heapless]: ../categories/data-structures/heapless.md#heapless

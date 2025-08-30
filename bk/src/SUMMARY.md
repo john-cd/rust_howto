@@ -75,7 +75,7 @@
   - [Graph](categories/data-structures/graph.md)
   - [Heapless Data Structures](categories/data-structures/heapless.md)
   - [Stack-allocated Arrays](categories/data-structures/stack_allocated_arrays.md)
-  - [UUIDs](categories/data-structures/uuid.md)
+  - [Unique Identifiers](categories/data-structures/unique_ids.md)
 
 - [File System](categories/filesystem/index.md)
   - [Paths](categories/filesystem/paths.md)

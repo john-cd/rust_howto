@@ -6,7 +6,7 @@
 [ex~data-structures~custom-hash-function]: hashmap.md#custom-hash-function
 [ex~data-structures~custom-key-type]: hashmap.md#custom-key-type
 [ex~data-structures~flagset]: bitfield.md#flagset
-[ex~data-structures~generate-parse-uuid]: uuid.md#generate-parse-uuid
+[ex~data-structures~generate-parse-uuid]: unique_ids.md#generate-parse-uuid
 [ex~data-structures~hashmap]: hashmap.md#hashmap
 [ex~data-structures~hashset]: hashmap.md#hashset
 [ex~data-structures~heapless]: heapless.md#heapless
