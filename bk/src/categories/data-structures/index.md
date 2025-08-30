@@ -70,7 +70,7 @@ The following examples cover less commonly-used data structures:
 
 {{#include heapless.incl.md}}
 
-## Unique Identifers
+## Unique Identifiers
 
 {{#include unique_ids.incl.md}}
 

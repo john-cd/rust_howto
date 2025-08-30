@@ -315,6 +315,7 @@ Covariant
 Cpython
 Creational
 Creekmore
+Crockford
 CrosVM
 Cruby
 Cryptape
@@ -1540,6 +1541,7 @@ UAVs
 UBSan
 UDP
 UI
+ULIDs
 URL
 USize
 UT
@@ -2571,6 +2573,7 @@ leptosfmt
 leptrino
 letsgetrusty
 lettre
+lexicographically
 lexopt
 lfcd
 libFuzzer
