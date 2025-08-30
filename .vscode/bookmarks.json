@@ -256,16 +256,6 @@
 			]
 		},
 		{
-			"path": "bk/src/categories/filesystem/symbolic_links.md",
-			"bookmarks": [
-				{
-					"line": 8,
-					"column": 6,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/categories/filesystem/user_directories.md",
 			"bookmarks": [
 				{
