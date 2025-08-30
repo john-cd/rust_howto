@@ -43,7 +43,7 @@ pub fn greet(name: &str) {
 
 [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} helps manage WASM memory. [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}} is a memory allocator designed for WASM.
 
-### Testing and Debugging {#testing-and-febugging .skip}
+### Testing and Debugging {#testing-and-debugging .skip}
 
 #### Unit Testing WASM Modules {#unit-testing-wasm-modules .skip4}
 

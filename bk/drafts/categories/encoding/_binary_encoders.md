@@ -12,7 +12,7 @@
 {{#include ../../../crates/cats/encoding/examples/binary_encoders/bincode.rs:example}}
 ```
 
-## ProtoBuf {#protoBuf .skip}
+## ProtoBuf {#protobuf .skip}
 
 ### `prost` {#prost}
 

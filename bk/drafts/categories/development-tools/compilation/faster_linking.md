@@ -44,7 +44,7 @@ Static linking (using `-C prefer-dynamic=no`) can sometimes reduce binary size i
 
 Generally faster than dynamic linking. Often the default in Rust.
 
-## Optimize Dependencies {#optimize-dependdencies .skip}
+## Optimize Dependencies {#optimize-dependencies .skip}
 
 Ensure dependencies are also built with optimizations enabled. This can be achieved by setting appropriate build profiles for dependencies in your [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}.
 
