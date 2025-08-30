@@ -54,8 +54,8 @@
 					"label": ""
 				},
 				{
-					"line": 53,
-					"column": 29,
+					"line": 52,
+					"column": 8,
 					"label": ""
 				},
 				{
@@ -94,8 +94,8 @@
 			"path": "bk/src/categories/algorithms/sorting.md",
 			"bookmarks": [
 				{
-					"line": 28,
-					"column": 6,
+					"line": 27,
+					"column": 21,
 					"label": ""
 				}
 			]
@@ -121,26 +121,6 @@
 			]
 		},
 		{
-			"path": "bk/src/categories/data-structures/bitfield.md",
-			"bookmarks": [
-				{
-					"line": 16,
-					"column": 10,
-					"label": ""
-				},
-				{
-					"line": 37,
-					"column": 14,
-					"label": ""
-				},
-				{
-					"line": 47,
-					"column": 7,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/categories/data-structures/heapless.md",
 			"bookmarks": [
 				{
@@ -154,33 +134,8 @@
 			"path": "bk/src/categories/data-structures/index.md",
 			"bookmarks": [
 				{
-					"line": 15,
+					"line": 14,
 					"column": 14,
-					"label": ""
-				},
-				{
-					"line": 82,
-					"column": 16,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/categories/data-structures/linkedlist.md",
-			"bookmarks": [
-				{
-					"line": 37,
-					"column": 9,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/categories/data-structures/maps.md",
-			"bookmarks": [
-				{
-					"line": 51,
-					"column": 11,
 					"label": ""
 				}
 			]
@@ -201,16 +156,6 @@
 				{
 					"line": 30,
 					"column": 16,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/categories/data-structures/uuid.md",
-			"bookmarks": [
-				{
-					"line": 26,
-					"column": 4,
 					"label": ""
 				}
 			]
@@ -781,11 +726,31 @@
 			]
 		},
 		{
-			"path": "bk/crates/cats/data_structures/examples/bitfield/bitvec.rs",
+			"path": "bk/crates/cats/data_structures/Cargo.toml",
 			"bookmarks": [
 				{
-					"line": 141,
-					"column": 14,
+					"line": 25,
+					"column": 11,
+					"label": ""
+				},
+				{
+					"line": 35,
+					"column": 21,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/crates/cats/compression/Cargo.toml",
+			"bookmarks": [
+				{
+					"line": 24,
+					"column": 6,
+					"label": ""
+				},
+				{
+					"line": 27,
+					"column": 9,
 					"label": ""
 				}
 			]
