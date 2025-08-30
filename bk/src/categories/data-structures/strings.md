@@ -52,7 +52,7 @@ See:
 - [[text-processing | Text Processing]].
 - [[string_parsing | String Parsing]].
 
-## Related Data Structures {#related-data-structures}
+## Related Data Structures {#related-data-structures .skip}
 
 - [[slices | Slices]].
 - [[vectors | Vectors]].
@@ -61,6 +61,7 @@ See:
 ## Related Topics {#related-topics .skip}
 
 - [[algorithms | Algorithms]].
+- [[lifetimes | Lifetimes]].
 - Working with [[other_strings | Other Strings]] (CString, OsString).
 
 {{#include refs.incl.md}}
