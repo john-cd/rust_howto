@@ -1,4 +1,4 @@
-# Borrow
+# Borrowed Types with `Borrow`
 
 {{#include borrow.incl.md}}
 

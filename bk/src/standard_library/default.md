@@ -1,4 +1,4 @@
-# Default Trait
+# Default Values with `Default`
 
 {{#include default.incl.md}}
 

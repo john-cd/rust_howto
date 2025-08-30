@@ -1,4 +1,4 @@
-# Result
+# Recoverable Error Handling with `Result`
 
 {{#include result.incl.md}}
 

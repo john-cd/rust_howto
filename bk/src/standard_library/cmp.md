@@ -1,4 +1,4 @@
-# Comparing Values
+# Value Comparison
 
 {{#include cmp.incl.md}}
 

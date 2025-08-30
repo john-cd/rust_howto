@@ -46,10 +46,6 @@ For most common file system tasks, [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}} 
 
 {{#include directory_traversal.incl.md}}
 
-### Walk the Filesystem While Respecting Ignore Files
-
-{{#include _ignore.incl.md}}
-
 ### User Directories and Preferred Applications
 
 {{#include user_directories.incl.md}}
