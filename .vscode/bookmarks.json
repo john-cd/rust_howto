@@ -144,7 +144,17 @@
 			"path": "bk/src/categories/data-structures/stack_allocated_arrays.md",
 			"bookmarks": [
 				{
-					"line": 63,
+					"line": 15,
+					"column": 5,
+					"label": ""
+				},
+				{
+					"line": 40,
+					"column": 19,
+					"label": ""
+				},
+				{
+					"line": 56,
 					"column": 7,
 					"label": ""
 				}
