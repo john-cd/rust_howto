@@ -44,7 +44,7 @@ By default, random numbers{{hi:Random numbers}} in the [`rand`][c~rand~docs]↗{
 An example using the [`rand_distr::Normal`][c~rand_distr::Normal~docs]↗{{hi:rand_distr::Normal}} distribution is shown below:
 
 ```rust,editable
-{{#include ../../../crates/cats/algorithms/examples/rand/rand_dist.rs:example}}
+{{#include ../../../crates/cats/algorithms/examples/rand/rand_distr.rs:example}}
 ```
 
 ## Generate Random Values of a Custom Type {#generate-random-values-custom-type}
