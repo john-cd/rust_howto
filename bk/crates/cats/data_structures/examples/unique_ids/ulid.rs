@@ -1,12 +1,13 @@
 #![allow(dead_code)]
 // ANCHOR: example
 use std::str::FromStr;
+
 use ulid::Ulid;
 
 fn main() {
     // Generate a new ULID.
-    // It automatically captures the current system time for the timestamp portion
-    // and fills the rest with cryptographically secure random data:
+    // It automatically captures the current system time for the timestamp
+    // portion and fills the rest with cryptographically secure random data:
     let new_ulid = Ulid::new();
     println!("Generated ULID: {}", new_ulid);
 
