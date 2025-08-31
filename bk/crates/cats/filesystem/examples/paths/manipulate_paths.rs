@@ -24,13 +24,13 @@ fn inspect_path<P: AsRef<Path>>(path: P) {
     // Returns the last component of the path (e.g., `file.txt`) as an
     // `Option<&OsStr>`. `file_name` is a misnomer for a path to a directory:
     if let Some(filename) = p.file_name() {
-        println!("  Last Component: {:?}", filename);
+        println!("  Last Component: {filename:?}");
     }
 
     //  Returns the file extension (without the leading dot) as an
     // `Option<&OsStr>`:
     if let Some(ext) = p.extension() {
-        println!("  Extension: {:?}", ext);
+        println!("  Extension: {ext:?}");
     }
 
     print!("  All Components:\n    ");
