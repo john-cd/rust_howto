@@ -8,7 +8,7 @@
 
 [`notify`][c~notify~docs]↗{{hi:notify}} is a cross-platform filesystem notification library.
 
-FIXME
+This example demonstrates how to watch for file system events. It sets up a file system watcher that monitors a directory and its subdirectories for any changes, such as file creation, modification, or deletion:
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/examples/file_watching/notify.rs:example}}
@@ -18,5 +18,4 @@ FIXME
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[file_watching: write](https://github.com/john-cd/rust_howto/issues/359)
 </div>

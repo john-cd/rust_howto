@@ -1,21 +1,6 @@
 {
 	"files": [
 		{
-			"path": "bk/src/categories/filesystem/file_watching.md",
-			"bookmarks": [
-				{
-					"line": 10,
-					"column": 5,
-					"label": ""
-				},
-				{
-					"line": 20,
-					"column": 9,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/appendices/crates_by_category.md",
 			"bookmarks": [
 				{
