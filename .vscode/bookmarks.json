@@ -216,21 +216,6 @@
 			]
 		},
 		{
-			"path": "bk/src/categories/filesystem/paths.md",
-			"bookmarks": [
-				{
-					"line": 13,
-					"column": 5,
-					"label": ""
-				},
-				{
-					"line": 25,
-					"column": 12,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/categories/filesystem/read_write.md",
 			"bookmarks": [
 				{

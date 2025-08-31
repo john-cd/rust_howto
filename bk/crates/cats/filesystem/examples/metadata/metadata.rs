@@ -32,7 +32,7 @@ fn inspect_file<P: AsRef<std::path::Path>>(path: P) -> anyhow::Result<()> {
                 duration.as_secs()
             );
         }
-        Err(e) => eprintln!("Could not retrieve modification time: {}", e),
+        Err(e) => eprintln!("Could not retrieve modification time: {e}"),
     }
 
     Ok(())
