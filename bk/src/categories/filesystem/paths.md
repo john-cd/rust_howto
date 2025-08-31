@@ -29,6 +29,10 @@ The following returns the canonical, absolute form of a path with all intermedia
 {{#include ../../../crates/cats/filesystem/examples/paths/canonicalize.rs:example}}
 ```
 
+## References {#references .skip}
+
+- [Rust `Path` vs `PathBuf`][blog~rust-path-vs-pathbuf]↗.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

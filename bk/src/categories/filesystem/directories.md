@@ -18,7 +18,7 @@ Use the following recipes to create, list, delete, and recursively traverse dire
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-The following example demonstrates basic operations on directories - creating & removing (recursively if needed), list contents:
+The following example demonstrates basic operations on directories - creating & removing (recursively if needed), listing contents:
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/examples/directories/manipulate_dirs.rs:example}}
