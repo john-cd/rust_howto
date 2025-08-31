@@ -226,16 +226,6 @@
 			]
 		},
 		{
-			"path": "bk/src/categories/filesystem/stdin_stdout.md",
-			"bookmarks": [
-				{
-					"line": 6,
-					"column": 18,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/categories/filesystem/user_directories.md",
 			"bookmarks": [
 				{
