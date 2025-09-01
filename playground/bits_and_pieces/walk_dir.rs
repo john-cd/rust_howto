@@ -4,14 +4,14 @@
 // regex = "1.11.1"
 // tempfile = "3.20.0"
 // tracing = "0.1.41"
-// tracing-subscriber = {version = "0.3.19", features = ["env-filter"] }
+// tracing-subscriber = {version = "0.3.20", features = ["env-filter"] }
 // walkdir = "2.5.0"
 
 use anyhow::Result;
 use clap::Parser;
 use clap::Parser;
-use std::path::PathBuf;
 use std::path::Path;
+use std::path::PathBuf;
 use walkdir::WalkDir;
 
 #[derive(Parser, Debug)]
@@ -36,7 +36,6 @@ pub fn walk_directory(dir: &Path) -> Result<()> {
     }
     Ok(())
 }
-
 
 fn main() -> Result<()> {
     // Install a global tracing subscriber that listens for events and filters based on the value of the RUST_LOG environment variable.

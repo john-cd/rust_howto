@@ -31,7 +31,7 @@ slog-term = "2.9.1"
 tracing = "0.1.41"
 tracing-appender = "0.2.3"
 # FIXME tracing-opentelemetry = { version = "0.31.0", optional = true }
-tracing-subscriber = { version = "0.3.19", features = ["env-filter", "time", "json"] }
+tracing-subscriber = { version = "0.3.20", features = ["env-filter", "time", "json"] }
 
 ## General
 anyhow = "1.0.95"

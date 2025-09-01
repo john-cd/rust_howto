@@ -16,7 +16,7 @@
 //! ```toml
 //! [dependencies]
 //! tracing = "0.1.41" # Or latest version
-//! tracing-subscriber = "0.3.19"
+//! tracing-subscriber = "0.3.20"
 //! ```
 
 fn main() {

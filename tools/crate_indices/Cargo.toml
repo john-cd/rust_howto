@@ -20,7 +20,7 @@ clap_builder = "4.5.20"
 itertools = "0.14.0"
 tool_lib = { path = "../tool_lib" }
 tracing = "0.1.41"
-tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
+tracing-subscriber = { version = "0.3.20", features = ["env-filter"] }
 
 [[bin]]
 name = "crate-indices"

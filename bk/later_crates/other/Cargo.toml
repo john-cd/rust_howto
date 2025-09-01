@@ -49,7 +49,7 @@ async-trait = "0.1.85"
 serde = { version = "1.0.217", features = ["derive"] }
 tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread"] }
 tracing = "0.1.41"
-tracing-subscriber = "0.3.19"
+tracing-subscriber = "0.3.20"
 
 [features]
 datafusion = [] # FIXME "dep:datafusion"
