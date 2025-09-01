@@ -2,15 +2,21 @@
 
 {{#include read_write.incl.md}}
 
-ile reading and writing primarily through the std::fs module and the traits found in std::io, like Read and Write.
+File reading and writing happens primarily through the `std::fs` module of the standard library, and the traits found in `std::io`, like `Read` and `Write`.
 
-## Read Lines of Strings from a File {#read-lines-of-strings-from-a-file}
+## Read from and Write to a File {#read-and-write}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-The following writes a three-line message to a file, then reads it back a line at a time with the [`std::io::Lines`][c~std::io::Lines~docs]↗{{hi:std::io::Lines}} iterator created by [`std::io::BufRead::lines`][c~std::io::BufRead::lines~docs]↗.{{hi:std::io::BufRead::lines}}
+The following example opens a file, writes to it, then reads its contents back in several different ways.
 
-[`std::fs::File`][c~std::fs::File~docs]↗{{hi:std::fs::File}} implements [`std::io::Read`][c~std::io::Read~docs]↗{{hi:std::io::Read}}, which provides the [`std::io::BufReader`][c~std::io::BufReader~docs]↗{{hi:std::io::BufReader}} trait. [`std::fs::File::create`][c~std::fs::File::create~docs]↗{{hi:std::fs::File::create}} opens a [`std::fs::File`][c~std::fs::File~docs]↗{{hi:std::fs::File}} for writing, [`std::fs::File::open`][c~std::fs::File::open~docs]↗{{hi:std::fs::File::open}} for reading.
+- [`std::fs::File::create`][c~std::fs::File::create~docs]↗{{hi:std::fs::File::create}} opens a [`std::fs::File`][c~std::fs::File~docs]↗{{hi:std::fs::File}} for writing, [`std::fs::File::open`][c~std::fs::File::open~docs]↗{{hi:std::fs::File::open}} for reading. `std::fs::OpenOptions` may be used to open a file in another mode.
+- `File` implements the [`std::io::Read`][c~std::io::Read~docs]↗{{hi:std::io::Read}} trait for reading bytes from a source, the [`std::io::Write`][c~std::io::Write~docs]↗{{hi:std::io::Write}} trait for writing bytes to a destination, and `std::io::Seek` for moving within a stream of bytes.
+- You may use the `std::write!` and `writeln!` macros to write formatted data.
+- `File` does not buffer reads and writes. Wrap the `File` in a [`std::io::BufReader`][c~std::io::BufReader~docs]↗{{hi:std::io::BufReader}} or `BufWriter` (which implement `BufRead` and `BufWrite`), when performing many small read or write calls.
+- `std::io::BufRead::lines` returns a [`std::io::Lines`][c~std::io::Lines~docs]↗{{hi:std::io::Lines}} iterator over individual lines of the file. LF or CRLF line endings are removed.
+- `std::fs::write` writes a slice as the entire contents of a file. This is a convenience function for using `File::create` and `std::io::Write::write_all` with fewer imports.
+- `std::fs::read` and `std::fs::read_to_string` read the entire contents of a file into a bytes vector or a string, respectively. They are convenience functions for using `File::open` and `std::io::Read::read_to_end` or `read_to_string` without an intermediate variable.
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/examples/read_write/read_file.rs:example}}
