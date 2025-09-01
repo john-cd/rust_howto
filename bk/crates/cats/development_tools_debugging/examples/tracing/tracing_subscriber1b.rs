@@ -50,6 +50,10 @@ use rusty_fork::rusty_fork_test;
 rusty_fork_test! {
     #[test]
     fn test() {
+        use std::fs;
+        if !fs::exists("temp")? {
+            fs::create_dir("temp")?;
+        }
         main();
     }
 }

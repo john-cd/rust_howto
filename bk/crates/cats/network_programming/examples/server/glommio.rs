@@ -94,6 +94,10 @@ fn main() {
 
 #[test]
 fn test() {
+    use std::fs;
+    if !fs::exists("temp")? {
+        fs::create_dir("temp")?;
+    }
     main();
 }
 // [finish](https://github.com/john-cd/rust_howto/issues/810)

@@ -31,6 +31,7 @@ use rusty_fork::rusty_fork_test;
 rusty_fork_test! {
     #[test]
     fn test() {
+        std::fs::create_dir_all("temp/log/")?;
         main().unwrap();
     }
 }

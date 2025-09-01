@@ -48,6 +48,10 @@ fn main() -> zip::result::ZipResult<()> {
 
 #[test]
 fn test() -> anyhow::Result<()> {
+    use std::fs;
+    if !fs::exists("temp")? {
+        fs::create_dir("temp")?;
+    }
     main()?;
     Ok(())
 }

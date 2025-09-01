@@ -15,11 +15,11 @@ fn main() {
     // Specify the directory to walk.
     let root = std::path::Path::new("examples/");
 
-    // Create a WalkBuilder and build a new Walk iterator.
+    // Create a `WalkBuilder` and build a new `Walk` iterator.
     // A lot more options are available.
     let walker = WalkBuilder::new(root)
         .add("temp/") // Add another directory to walk.
-        .standard_filters(true)  // Respect .gitignore and other ignore files.
+        .standard_filters(true)  // Respect `.gitignore` and other ignore files.
         .build();
 
     // Iterate over the entries.
@@ -43,5 +43,9 @@ fn main() {
 
 #[test]
 fn test() {
+    use std::fs;
+    if !fs::exists("temp")? {
+        fs::create_dir("temp")?;
+    }
     main();
 }
