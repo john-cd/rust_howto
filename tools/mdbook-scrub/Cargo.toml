@@ -19,7 +19,7 @@ categories = [
 #anyhow = "1.0.95"
 clap = "4.5.31"
 #futures-util = "0.3.31"
-mdbook = "=0.4.49"
+mdbook = "=0.4.52"
 #moka = { version = "0.12.10", features = ["future"] }
 # simd available for the x64 platform
 #pulldown-cmark = { version = "0.13.0", default-features = false, features = [
