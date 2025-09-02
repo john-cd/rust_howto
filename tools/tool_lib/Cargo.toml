@@ -16,7 +16,7 @@ license = "MIT OR Apache-2.0"
 [dependencies]
 anyhow = "1.0.95"
 cargo_toml = "0.22.1"
-crates_io_api = "0.11.0"
+crates_io_api = "0.12.0"
 itertools = "0.14.0"
 once_cell = "1.20.2"
 regex = "1.11.1"
