@@ -214,8 +214,18 @@
 			"path": "bk/src/categories/filesystem/user_directories.md",
 			"bookmarks": [
 				{
+					"line": 4,
+					"column": 10,
+					"label": ""
+				},
+				{
 					"line": 10,
 					"column": 8,
+					"label": ""
+				},
+				{
+					"line": 20,
+					"column": 27,
 					"label": ""
 				},
 				{
