@@ -1,7 +1,7 @@
 // #![allow(dead_code)]
 // // ANCHOR: example
-// //! This example demonstrates how to use the `wasmer` crate to run a WebAssembly
-// //! module.
+// //! This example demonstrates how to use the `wasmer` crate to run a
+// //! WebAssembly module.
 // //!
 // //! The WebAssembly module is defined in the WebAssembly Text (WAT) format.
 // //! It exports a function named `add` that takes two `i32` parameters and
@@ -17,8 +17,8 @@
 //     let module_wat = r#"
 //     (module
 //       (type $add_t (func (param i32 i32) (result i32)))
-//       (func $add_f (type $add_t) (param $lhs i32) (param $rhs i32) (result i32)
-//         local.get $lhs
+//       (func $add_f (type $add_t) (param $lhs i32) (param $rhs i32) (result
+// i32)         local.get $lhs
 //         local.get $rhs
 //         i32.add)
 //       (export "add" (func $add_f)))"#;
@@ -33,12 +33,13 @@
 //     let mut store = Store::default();
 
 //     // Compile the module.
-//     // The `Store` also holds the engine that is used to compile the WASM bytes
-//     // into a valid module artifact.
+//     // The `Store` also holds the engine that is used to compile the WASM
+//     // bytes into a valid module artifact.
 //     let module = Module::new(&store, module_wat)?;
 
 //     // Create an import object.
-//     // The module doesn't import anything, so we create an empty import object.
+//     // The module doesn't import anything, so we create an empty import
+//     // object.
 //     let import_object = imports! {};
 
 //     // Instantiate the module:
