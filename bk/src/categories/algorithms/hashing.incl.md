@@ -5,7 +5,7 @@
 | [Hash with `sha1`][ex~algorithms~sha1] | [![sha1][c~sha1~docs~badge]][c~sha1~docs] | [![cat~algorithms][cat~algorithms~badge]][cat~algorithms] |
 | [Hash with `md-5`][ex~algorithms~md-5] | [![md-5][c~md-5~docs~badge]][c~md-5~docs] | [![cat~algorithms][cat~algorithms~badge]][cat~algorithms] |
 | [Hash with `blake3`][ex~algorithms~blake3] | [![blake3][c~blake3~docs~badge]][c~blake3~docs] | [![cat~algorithms][cat~algorithms~badge]][cat~algorithms] |
-| [Cryptograhic Algorithms][ex~algorithms~cryptographic-algorithms] | | |
-| [`foldhash`][ex~algorithms~foldhash] | | |
-| [Legacy Hashing Algorithms][ex~algorithms~legacy-hashing-algorithms] | | |
-| [Use General-purpose Hashing Algorithms][ex~algorithms~general-purpose-hashing-algorithms] | | |
+| [Cryptograhic Algorithms][ex~algorithms~cryptographic-algorithms] | | [![cat~algorithms][cat~algorithms~badge]][cat~algorithms] |
+| [`foldhash`][ex~algorithms~foldhash] | | [![cat~algorithms][cat~algorithms~badge]][cat~algorithms] |
+| [Legacy Hashing Algorithms][ex~algorithms~legacy-hashing-algorithms] | | [![cat~algorithms][cat~algorithms~badge]][cat~algorithms] |
+| [Use General-purpose Hashing Algorithms][ex~algorithms~general-purpose-hashing-algorithms] | | [![cat~algorithms][cat~algorithms~badge]][cat~algorithms] |
