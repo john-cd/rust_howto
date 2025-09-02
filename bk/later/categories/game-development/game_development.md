@@ -20,7 +20,7 @@
 {{#include ../../../crates/cats/game_development/examples/game_development/glam.rs:example}}
 ```
 
-## See Also {#see-also .skip}
+## Related Topics {#related-topics .skip}
 
 - [[game-engines | Game Engines]].
 - [[games | Games]] written in Rust.

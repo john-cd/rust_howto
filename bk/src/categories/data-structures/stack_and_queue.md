@@ -24,6 +24,11 @@ A queue is a FIFO (First-In, First-Out) data structure. [`VecDeque`][c~std::coll
 {{#include ../../../crates/cats/data_structures/examples/stack_and_queue/queue.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+- [[linkedlist | Linked Lists]].
+- [[vectors | Vectors]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

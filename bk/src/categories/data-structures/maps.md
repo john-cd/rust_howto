@@ -43,6 +43,12 @@ This example showcases how to create, insert, access, and remove elements from a
 {{#include ../../../crates/cats/data_structures/examples/maps/slotmap.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+- [[graphs | Graphs]].
+- [[hashmaps | Hashmaps]].
+- [[vectors | Vectors]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

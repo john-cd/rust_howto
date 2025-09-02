@@ -26,6 +26,10 @@
 
 [`tinysearch`][c~tinysearch~docs]↗{{hi:tinysearch}} is compiled to WebAssembly to run in a browser. It can be used together with static site generators such as `Jekyll`, `Hugo`, [`Zola`][zola~website]↗{{hi:Zola}}, [`Cobalt`][cobalt~website]↗{{hi:Cobalt}}, or `Pelican`.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

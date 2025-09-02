@@ -51,6 +51,10 @@ Collision avoidance path planning for robotics.
 
 Inverse and forward kinematics for 6-axis robots with a parallel base and spherical wrist.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

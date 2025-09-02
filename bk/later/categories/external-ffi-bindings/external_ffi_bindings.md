@@ -6,6 +6,10 @@
 
 [`libc`][c~libc~docs]↗{{hi:libc}} provides definitions for C standard library functions and types.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

@@ -14,6 +14,10 @@ Similar to the Pandas library in Python but in pure Rust. Uses the {{i:Apache Ar
 {{#include ../../../crates/other/examples/data_processing/polars.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

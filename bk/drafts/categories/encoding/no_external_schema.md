@@ -24,6 +24,10 @@
 {{#include ../../../crates/cats/encoding/examples/no_external_schema_file/rkyv.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

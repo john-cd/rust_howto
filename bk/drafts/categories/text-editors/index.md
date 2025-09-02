@@ -33,6 +33,10 @@ Vim, Emacs, and Neovim offer great flexibility and power, but they require a hig
 
 {{#include ides.incl.md}}
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

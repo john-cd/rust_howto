@@ -22,6 +22,10 @@
 {{#include ../../../crates/cats/web_programming_http_server/examples/rocket.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

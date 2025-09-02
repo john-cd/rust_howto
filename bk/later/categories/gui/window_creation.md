@@ -40,6 +40,10 @@
 
 [`glfw`][c~glfw~docs]↗{{hi:glfw}} provides bindings to the GLFW library.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

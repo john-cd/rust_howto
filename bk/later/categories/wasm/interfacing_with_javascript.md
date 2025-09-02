@@ -31,6 +31,10 @@ TODO add example ?
 
 [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} also facilitates calling Rust/WASM functions from JavaScript.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

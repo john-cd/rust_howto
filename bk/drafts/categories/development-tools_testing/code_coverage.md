@@ -19,6 +19,10 @@ Rust tool to collect and aggregate code coverage data for multiple source files.
 
 `cargo tarpaulin` is a tool to determine code coverage achieved via tests.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

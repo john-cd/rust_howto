@@ -36,9 +36,13 @@ The following code examples get platform-specific locations for [[configuration]
 {{#include ../../../crates/cats/filesystem/examples/open.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+- [[directories | Directories]].
+- [[paths | Paths]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[user_directories: write](https://github.com/john-cd/rust_howto/issues/362)
 </div>

@@ -88,6 +88,10 @@ Reads an environment variable{{hi:Environment variables}} via [`std::env::var`][
 
 [`duct`][c~duct~repo]↗{{hi:duct}} is a library for running child processes. [`duct`][c~duct~docs]↗{{hi:duct}} makes it easy to build pipelines and redirect I/O like a shell. At the same time, [`duct`][c~duct~docs]↗{{hi:duct}} helps write correct, portable code: whitespace is never significant, errors from child processes get reported by default, and a variety of [gotchas, bugs, and platform inconsistencies][c~duct~gotchas~repo]↗ are handled for you.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

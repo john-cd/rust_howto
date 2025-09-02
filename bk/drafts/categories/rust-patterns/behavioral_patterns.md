@@ -8,6 +8,10 @@ The typestate pattern is a design pattern that encodes information about an obje
 
 - [Typestate Pattern][blog~typestate-pattern]↗.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

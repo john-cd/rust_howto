@@ -23,6 +23,10 @@ A Rust drawing library focus on data plotting for both [WASM][p~wasm] and native
 {{#include ../../../crates/cats/visualization/examples/visualization/plotly.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

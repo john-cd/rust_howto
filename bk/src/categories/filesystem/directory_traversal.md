@@ -127,6 +127,12 @@ A custom [`glob::MatchOptions`][c~glob::MatchOptions~docs]↗{{hi:glob::MatchOpt
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/globset.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+- [[directories | Directories]].
+- [[paths | Paths]].
+- [[symbolic_links | Symbolic Links]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

@@ -12,7 +12,7 @@
 {{#include ../../../crates/cats/finance/examples/quant/rustquant.rs:example}}
 ```
 
-## See Also {#see-also .skip}
+## Related Topics {#related-topics .skip}
 
 - [[mathematics | Mathematics]].
 - [[linear_algebra | Linear Algebra]].

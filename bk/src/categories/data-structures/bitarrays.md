@@ -52,6 +52,10 @@ Unfortunately, they can use too much memory. To compensate, [`roaring`][c~roarin
 {{#include ../../../crates/cats/data_structures/examples/bitfield/roaring.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+- [[vectors | Vectors]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

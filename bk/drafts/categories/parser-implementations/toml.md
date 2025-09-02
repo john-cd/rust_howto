@@ -34,6 +34,10 @@
 {{#include ../../../crates/cats/parser_implementations/examples/toml/basic_toml.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

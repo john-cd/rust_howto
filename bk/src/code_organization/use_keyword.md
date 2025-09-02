@@ -63,6 +63,10 @@ Note that, while these shortcuts make your code more compact and readable, they 
 - [Bringing Paths into Scope with the use Keyword (Rust book)][book~rust~ch07-04-bringing-paths-into-scope-with-the-use-keyword]↗.
 - [Use declarations (Rust reference)][book~rust-reference~use-declarations]↗.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 

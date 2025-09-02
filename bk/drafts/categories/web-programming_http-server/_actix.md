@@ -19,6 +19,10 @@ Actix Web is a powerful, pragmatic, and extremely fast web framework for Rust. A
 - ["Real world" example with Actix Web][realworld~actix-fullstack~repo]↗.
 - ["Real world" example with Actix Web and Diesel][realworld~v1-rust-actix-web-diesel~repo]↗.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

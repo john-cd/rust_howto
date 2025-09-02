@@ -12,6 +12,11 @@ Symbolic links are handled primarily through the standard library's `std::fs` mo
 {{#include ../../../crates/cats/filesystem/examples/symbolic_links/symbolic_links.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+- [[read_write | Reading and Writing Files]].
+- [[paths | Paths]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

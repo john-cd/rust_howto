@@ -27,6 +27,10 @@ The [`juniper`][c~juniper~docs]↗{{hi:juniper}} crate is another Rust implement
 
 Juniper doesn't include a web server. Instead, it provides building blocks to make integration with existing servers straightforward, including embedded GraphiQL and/or GraphQL Playground for easy debugging.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

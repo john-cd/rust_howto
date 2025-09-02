@@ -10,6 +10,10 @@ A tiny library providing a GPU-powered pixel frame buffer.
 
 {{#example pixels}}
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

@@ -50,6 +50,11 @@ Note that [`tinyvec`][c~tinyvec~docs]↗{{hi:tinyvec}} requires items to impleme
 {{#include ../../../crates/cats/data_structures/examples/vec/tinyvec.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+- [[heapless | Heapless data structures]].
+- [[vectors | Vectors]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

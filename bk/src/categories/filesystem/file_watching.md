@@ -14,6 +14,12 @@ This example demonstrates how to watch for file system events. It sets up a file
 {{#include ../../../crates/cats/filesystem/examples/file_watching/notify.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+- [[directories | Directories]].
+- [[directory_traversal | Directory Traversal]].
+- [[paths | Paths]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

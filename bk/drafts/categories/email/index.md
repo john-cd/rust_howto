@@ -18,6 +18,10 @@ For most email sending needs, [`lettre`][c~lettre~docs]↗{{hi:lettre}} is the r
 
 While some crates exist for IMAP/POP3, they are less mature and widely used than the sending crates. To interact with mailboxes, search for specific IMAP/POP3 crates or consider using a separate email client library.
 
+## Related Topics
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

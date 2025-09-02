@@ -35,6 +35,10 @@ There are independent packages that provides additional functionality, for examp
 - [`rhai-rand`][c~rhai-rand~docs]↗{{hi:rhai-rand}} provides random number generation using the [`rand`][c~rand~docs]↗{{hi:rand}} crate and array shuffling and sampling.
 - [`rhai-sci`][c~rhai-sci~docs]↗{{hi:rhai-sci}} provides functions useful for scientific computing, inspired by languages like MATLAB, Octave, and R.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

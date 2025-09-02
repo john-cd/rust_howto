@@ -51,6 +51,10 @@ Redis-rs is a high level [Redis][redis~website]↗{{hi:redis}} library for Rust.
 {{#include ../../../crates/cats/database/examples/cassandra/cassandra_protocol.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

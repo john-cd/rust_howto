@@ -18,6 +18,10 @@ PolkaVM is a general purpose user-level RISC-V based virtual machine. This proje
 
 [`ihex`][c~ihex~docs]↗{{hi:ihex}} is a Rust library for [parsing][p~parsing] and generating Intel HEX (or IHEX) objects. This format is commonly used for representing compiled program code and data to be loaded into a microcontroller, flash memory or ROM.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

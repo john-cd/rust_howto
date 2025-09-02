@@ -11,6 +11,10 @@
 
 - [`half`][c~half~lib.rs] - data structures in Rust.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include refs/link-refs.md}}
 

@@ -24,6 +24,10 @@ The [`cargo install`][book~cargo~cargo-install]↗{{hi:cargo install}} command m
 
 `cargo binstall` works by fetching the crate information from [`crates.io`][crates.io~website]↗{{hi:crates.io}} and searching the linked repository for matching releases and artifacts, falling back to the `quickinstall`{{hi:quickinstall}} third-party artifact host, to alternate targets as supported, and finally to `cargo install` as a last resort.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
 

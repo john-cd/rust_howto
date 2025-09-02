@@ -35,7 +35,7 @@ It is based on a self-balancing tree, specifically a B-Tree. `BTreeSet` allows s
 {{#include ../../../crates/cats/data_structures/examples/btrees/btreeset.rs:example}}
 ```
 
-## Related Topics
+## Related Topics {#related-topics .skip}
 
 - [[hashmaps | Hashmaps]].
 - Other [[maps | Maps]].

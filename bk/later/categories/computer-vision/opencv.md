@@ -33,7 +33,7 @@ The [`opencv`][c~opencv~docs]↗{{hi:opencv}} Rust crate provides bindings to Op
 {{#include ../../../crates/cats/computer_vision/examples/opencv/opencv.rs:example}}
 ```
 
-## See Also {#see-also .skip}
+## Related Topics {#related-topics .skip}
 
 - [[algorithms | Algorithms]].
 - [[mathematics | Mathematics]].

@@ -18,6 +18,10 @@ Here is an example demonstrating the use of [`deadpool`][c~deadpool~docs]↗{{hi
 {{#include ../../../crates/cats/database/examples/connection_pool/deadpool2.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

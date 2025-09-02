@@ -111,6 +111,10 @@ This example generates thumbnails for all `jpg`{{hi:JPEG}} files in the current 
 {{#include ../../../crates/cats/concurrency/examples/data_parallelism/rayon_thumbnails.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

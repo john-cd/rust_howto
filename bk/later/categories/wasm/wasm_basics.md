@@ -53,6 +53,10 @@ See [webassembly.org][webassembly~website] and [madewithwebassembly.com][madewit
 
 Rust can be used for [game development][p~game-development] targeting the web via WASM. [`winit`][c~winit~docs]↗{{hi:winit}} handles window creation, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} provides access to WebGPU, and [`bevy`][c~bevy~docs]↗{{hi:bevy}} is a Rust game engine that can compile to WASM.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

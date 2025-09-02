@@ -20,7 +20,7 @@
 {{#include ../../../crates/cats/data_structures/examples/binaryheap/priority_queue.rs:example}}
 ```
 
-## Related Topics
+## Related Topics {#related-topics .skip}
 
 - [[btrees | B-trees]].
 - [[maps | Maps]].

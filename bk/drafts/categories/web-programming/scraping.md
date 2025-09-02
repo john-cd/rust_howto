@@ -37,6 +37,10 @@ MediaWiki link syntax is described [here][mediawiki~link-syntax]↗.
 {{#include ../../../crates/cats/web_programming/examples/scraping/unique.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

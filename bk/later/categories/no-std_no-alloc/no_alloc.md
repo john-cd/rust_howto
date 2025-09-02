@@ -8,6 +8,10 @@
 {{#include ../../../crates/cats/no_std_no_alloc/examples/no_alloc/no_alloc.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

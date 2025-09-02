@@ -33,6 +33,10 @@ Allocate memory for output image of given width and height with [`image::ImageBu
 {{#include ../../../crates/cats/concurrency/examples/threadpool/threadpool_fractal.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

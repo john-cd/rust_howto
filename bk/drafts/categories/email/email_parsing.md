@@ -14,6 +14,10 @@
 
 [`mime`][c~mime~docs]↗{{hi:mime}} works with MIME types and structures. It is often used when constructing or parsing emails.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

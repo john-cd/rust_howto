@@ -41,6 +41,10 @@ See, for example:
 {{#include ../../../crates/other/examples/cloud/aws_sdk.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 ## References {#references .skip}
 
 - [AWS and Rust][blog~sustainability-with-rust]↗.

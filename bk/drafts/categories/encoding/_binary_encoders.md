@@ -107,6 +107,10 @@ In `foo.capnp`:
 - Language-agnostic: You can generate code in various [programming languages][p~programming-languages] from a single `.capnp` definition file.
 - Schema evolution: Cap'n Proto supports schema evolution, allowing us to modify the structure of your data over time without breaking compatibility.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

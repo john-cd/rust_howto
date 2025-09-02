@@ -28,7 +28,7 @@
 
 `cargo crates` is a [cargo][p~cargo] command to quickly open the [`crates.io`][crates.io~website]↗{{hi:crates.io}} or[`docs.rs`][docs.rs~website]↗{{hi:docs.rs}} page for the latest version of a crate.
 
-## Related Topics
+## Related Topics {#related-topics .skip}
 
 | Topic | Rust Crates |
 |---|---|

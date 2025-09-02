@@ -81,6 +81,10 @@ rustfmt --help=config
 
 For things [`rustfmt`][c~rustfmt~repo]↗{{hi:rustfmt}} should not mangle, use `#[rustfmt::skip]`{{hi:rustfmt::skip}} , `#[rustfmt::skip::macros(macro_name)]`{{hi:rustfmt::skip::macros(macro_name)}} , or `#![rustfmt::skip::attributes(custom_attribute)]`{{hi:rustfmt::skip::attributes(custom_attribute)}}
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 ## References {#references .skip}
 
 - [The Rust Style Guide][style-guide~website]↗.

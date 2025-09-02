@@ -29,6 +29,10 @@ cargo build --release
 
 [Top artificial intelligence tools that can generate code to help programmers][blog~ai-tools-that-can-generate-code]↗.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
 

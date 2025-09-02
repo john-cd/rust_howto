@@ -49,6 +49,10 @@ Statics can be mutable (`static mut`): Unlike `const`, static variables can be d
 {{#include ../../crates/language/examples/constants_and_statics/static_mut.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 

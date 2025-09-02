@@ -58,6 +58,10 @@ Consider using:
 - [`bevy`][c~bevy~docs]↗{{hi:bevy}}, which is a data-driven game engine suitable for 3D visualization.
 - [`plotters`][c~plotters~docs]↗{{hi:plotters}} for creating plots and charts of simulation data.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

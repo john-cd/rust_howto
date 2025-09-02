@@ -26,6 +26,10 @@ Elegant and safe OpenGL wrapper. Glium is an intermediate layer between OpenGL a
 
 Cross-platform OpenGL context provider.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

@@ -46,6 +46,13 @@ It is also possible to write to a `File` as if it were a `&mut [u8]` by using mu
 {{#include ../../../crates/cats/filesystem/examples/read_write/memmap2.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+- [[file_watching | File Watching]].
+- [[paths | Paths]].
+- [[sdtin_stdout | Standard Input and Output]].
+- [[tempfile | Temporary Files]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

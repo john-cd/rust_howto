@@ -39,6 +39,10 @@ The [`yew`][c~yew~docs]↗{{hi:yew}}, [`seed`][c~seed~docs]↗{{hi:seed}}, [`lep
 
 [Rust and WebAssembly (book)][book~rustwasm]↗{{hi:WASM}}.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

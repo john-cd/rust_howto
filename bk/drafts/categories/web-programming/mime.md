@@ -36,6 +36,10 @@ Note that the [`reqwest::header`][c~reqwest::header~docs]↗{{hi:reqwest::header
 {{#include ../../../crates/cats/web_programming/examples/mime/request.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

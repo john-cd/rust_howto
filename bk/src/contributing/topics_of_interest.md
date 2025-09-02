@@ -64,6 +64,10 @@ The following are topics that deserve (additional) coverage and examples:
 
 Please also consult the [`TODO.md`][rust-howto~todo~repo]↗ file and the [`drafts`][rust-howto~drafts~repo]↗ and [`later`][rust-howto~bk-later~repo]↗ folders.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include ../refs/link-refs.md}}
 {{#include refs.incl.md}}
 

@@ -73,6 +73,10 @@ Frunk is a functional programming toolbelt for Rust. It provides developers with
 {{#include ../../../crates/cats/rust_patterns/examples/functional_programming/frunk.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

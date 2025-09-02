@@ -15,6 +15,10 @@ Robotics-related sensor/motor drivers:
 - [`leptrino-force-torque-sensor`][c~leptrino-force-torque-sensor~docs]{{hi:leptrino-force-torque-sensor}} - Leptrino 6-axis force sensor driver.
 - [`realsense-rust`][c~realsense-rust~docs]{{hi:realsense-rust}} - RealSense Bindings for Rust.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

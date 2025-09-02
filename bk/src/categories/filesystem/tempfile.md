@@ -18,6 +18,11 @@ Note that temporary files and directories have subtle security and resource leak
 
 - The [`tempdir`][c~tempdir~docs]↗{{hi:tempdir}} crate is being merged into [`tempfile`][c~tempfile~docs]↗{{hi:tempfile}}.
 
+## Related Topics {#related-topics .skip}
+
+- [[read_write | Reading and Writing Files]].
+- [[paths | Paths]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

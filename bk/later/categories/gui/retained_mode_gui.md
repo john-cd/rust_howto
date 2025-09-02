@@ -86,6 +86,10 @@ If you're a Swift developer, you should find Xilem easy to use because its synta
 
 [`druid`][c~druid~docs]↗{{hi:druid}} is a data-first Rust-native UI design toolkit (experimental). Druid is a relatively mature alternative to Iced / Slint, however it has been discontinued in favor of Xilem, so its use for new projects is discouraged.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

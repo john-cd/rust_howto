@@ -39,6 +39,10 @@
 
 - [Neovim][nvim~website]↗.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 ## References
 
 - [Six IDEs built for Rust][blog~6-ides-built-for-rust]↗.

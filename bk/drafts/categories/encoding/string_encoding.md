@@ -60,6 +60,10 @@ Encodes byte slice into [`base64`][c~base64~docs]↗{{hi:base64}} {{hi:base64}} 
 {{#include ../../../crates/cats/encoding/examples/string_encoding/percent-encoding.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

@@ -40,6 +40,10 @@
 
 [`lettre`][c~lettre~docs]↗{{hi:lettre}} also supports various authentication mechanisms for SMTP.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

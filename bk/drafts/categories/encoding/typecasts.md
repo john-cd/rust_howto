@@ -87,6 +87,10 @@ Zerocopy is often used in [network programming][p~network-programming], where hi
 - Rust encourages the use of [traits][p~traits] like [`From`][c~std::convert::From~docs]↗{{hi:std::convert::From}}, [`Into`][c~std::convert::Into~docs]↗{{hi:std::convert::Into}}, [`TryFrom`][c~std::convert::TryFrom~docs]↗{{hi:std::convert::TryFrom}}, and [`TryInto`][c~std::convert::TryInto~docs]↗{{hi:std::convert::TryInto}} for conversions. This makes the code more generic and reusable.
 - Rust avoids implicit type casting, which can lead to unexpected behavior in C/C++.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

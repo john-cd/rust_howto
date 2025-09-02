@@ -18,6 +18,10 @@ task queues, background job processing, and publish-subscribe (pub-sub).
 {{#include ../../../crates/cats/database/examples/amqp/lapin.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

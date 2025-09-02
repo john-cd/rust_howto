@@ -62,6 +62,10 @@ Parses [`url::Url`][c~url::Url~docs]↗{{hi:url::Url}} and slices it with [`url:
 {{#include ../../../crates/cats/web_programming/examples/url/fragment.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

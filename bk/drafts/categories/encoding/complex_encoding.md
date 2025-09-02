@@ -43,6 +43,10 @@ Parse [TOML][p~toml] into your own [structs][p~structs] using [`serde`][c~serde~
 {{#include ../../../crates/cats/encoding/examples/endian_byte.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

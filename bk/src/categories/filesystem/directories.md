@@ -36,6 +36,13 @@ In particular, its optional 'parallel' feature parallelizes the deletion. This i
 {{#include ../../../crates/cats/filesystem/examples/directories/remove_dir_all.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+- [[directory_traversal | Directory Traversal]].
+- [[paths | Paths]].
+- [[symbolic_links | Symbolic Links]].
+- [[user_directories | User Directories]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

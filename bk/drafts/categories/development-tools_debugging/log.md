@@ -72,6 +72,10 @@ Logs messages to [UNIX `syslog`][unix-syslog~website]↗. Initializes logger bac
 {{#include ../../../crates/cats/development_tools_debugging/examples/log/log_syslog.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

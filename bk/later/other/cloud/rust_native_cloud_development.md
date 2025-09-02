@@ -21,13 +21,15 @@ It offers a free tier with access to essential features for individual developer
 {{#include ../../../crates/other/examples/cloud/shuttle.rs:example}}
 ```
 
-## References
+## References {#references .skip}
 
 - [`shuttle.dev`][shuttle-dev~website]↗{{hi:shuttle}}
 - [`docs.shuttle.dev`][shuttle-dev~docs]{{hi:shuttle.dev}}
 - [Shuttle Examples][shuttle~examples~repo]↗.
 
-## Related Topics
+## Related Topics {#related-topics .skip}
+
+FIXME
 
 - [[aws | AWS]].
 - [[development_tools | Development Tools]].

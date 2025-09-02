@@ -32,6 +32,10 @@ The builder pattern provides a clean and readable way to construct complex objec
 
 [`bon`][c~bon~docs]↗{{hi:bon}} is a compile-time-checked builder generator with additional features like support for fallible/async builders and named function arguments via the builder pattern.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

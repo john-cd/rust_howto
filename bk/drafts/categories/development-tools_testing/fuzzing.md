@@ -57,9 +57,13 @@ Fuzz testing (or fuzzing) is a software [testing][p~testing] technique used to f
 {{#include ../../../crates/cats/development_tools_testing/examples/fuzzing/afl.rs:example}}
 ```
 
-## Related Topic: Property-Based Testing {#Related Topic: Property-Based Testing .skip}
+## Related Topic: Property-Based Testing {#related-topic-property-based-testing .skip}
 
 The [`proptest`][c~proptest~docs]↗{{hi:proptest}}, [`quickcheck`][c~quickcheck~docs]↗{{hi:quickcheck}} crates are used for property-based testing, which is a different but complementary technique to fuzzing. Property-based testing generates many random inputs to verify properties of your code.
+
+## Related Topics {#related-topics .skip}
+
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

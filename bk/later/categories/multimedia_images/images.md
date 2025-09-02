@@ -47,6 +47,10 @@ Image Analysis:
 Low-level [graphics][p~graphics] APIs like [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} are often used for displaying images or performing GPU-accelerated image processing.
 See [[rendering_graphics-api | Rendering: Graphics API]].
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

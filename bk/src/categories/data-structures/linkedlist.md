@@ -22,8 +22,9 @@ This example demonstrates common operations with `LinkedList`:
 
 ## Related Topics {#related-topics .skip}
 
-- [[vectors | Vectors]].
+- [[graphs | Graphs]].
 - [[stack_and_queue | Stacks and Queues]].
+- [[vectors | Vectors]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

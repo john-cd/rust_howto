@@ -73,7 +73,7 @@ The following example executes shell commands and interacts with the file system
 {{#include ../../../crates/cats/development_tools_cargo-plugins/examples/building/xshell.rs}}
 ```
 
-## Related Topics
+## Related Topics {#related-topics .skip}
 
 | Topic | Rust Crates |
 |---|---|

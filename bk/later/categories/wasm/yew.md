@@ -24,6 +24,10 @@ Key Features:
 
 - [Example "Real World" app built with Rust + Yew + WebAssembly][c~yew~realworld~example]↗ [![yew~realworld~example][c~yew~realworld~example~badge]][c~yew~realworld~example].
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

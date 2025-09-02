@@ -13,6 +13,10 @@
 
 [`xsv`][c~xsv~docs]↗{{hi:xsv}} can be used to index, slice, analyze, split and join CSV files.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

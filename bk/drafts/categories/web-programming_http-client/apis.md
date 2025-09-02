@@ -60,6 +60,10 @@ This example uses the [`GitHub API - rate limiting`][github-api-rate-limiting]â†
 {{#include ../../../crates/cats/web_programming_http_client/examples/apis/rate_limited.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

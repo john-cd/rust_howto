@@ -34,6 +34,10 @@ The following example computes the distance in kilometers between two points on 
 {{#include ../../../crates/cats/mathematics/examples/trigonometry/latitude_longitude.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+- [[complex_numbers | Complex Numbers]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

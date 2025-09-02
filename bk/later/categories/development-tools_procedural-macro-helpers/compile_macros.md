@@ -16,6 +16,10 @@
 {{#include ../../../crates/cats/development_tools_procedural_macro_helpers/examples/compile_macros/watt.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

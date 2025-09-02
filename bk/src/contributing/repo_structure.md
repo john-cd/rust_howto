@@ -89,6 +89,10 @@ These tests are run by the CD/CI workflows (in the `.github` folder) following a
 
 For the sake of readability, the test boilerplate is hidden in the book.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 

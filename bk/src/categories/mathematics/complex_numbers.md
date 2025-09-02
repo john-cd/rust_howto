@@ -53,6 +53,10 @@ Complex numbers have a range of interesting properties when it comes to how they
 {{#include ../../../crates/cats/mathematics/examples/complex_numbers/mathematical_functions.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+- [[additional_numeric_types | Additional Numeric Types]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

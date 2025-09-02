@@ -45,6 +45,10 @@ fn main() -> Result<()> {
 
 - [Using a Crate to Get More Functionality][book~rust~ch02-00-guessing-game-tutorial.html#using-a-crate-to-get-more-functionality]↗.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 

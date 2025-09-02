@@ -18,6 +18,10 @@ The user interface{{hi:User interface}} layer is built natively, with modern dec
 {{#include ../../../crates/other/examples/cross_platform/crux.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

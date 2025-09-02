@@ -65,6 +65,10 @@ Crux is a framework for building cross-platform applications with a focus on tes
 
 Dioxus is a Rust-based framework designed for building cross-platform user interfaces. It enables developers to create applications for web, desktop, and mobile platforms using a single Rust codebase. Dioxus is designed to be familiar to developers with web development experience, utilizing concepts similar to HTML, CSS, and JavaScript. It includes features like hot reloading, server-side rendering, and support for modern web technologies. It uses a Virtual DOM for efficient UI updates. It also provides a CLI tool to aid in project creation, building, and serving.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

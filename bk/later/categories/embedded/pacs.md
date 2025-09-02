@@ -10,6 +10,10 @@ These crates provide direct access to the microcontroller's registers. You'll of
 
 Similar PACs exist for most microcontroller families.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

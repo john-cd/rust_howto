@@ -51,6 +51,10 @@ Key features include:
 - Working with virtual environments.
 - Supports [`Cargo`][c~cargo~docs]↗{{hi:Cargo}}-style workspaces for scalable projects.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 <div class="hidden">
 [python_tools: write](https://github.com/john-cd/rust_howto/issues/617)
 

@@ -83,6 +83,11 @@ Declares a lazily evaluated constant [`std::collections::HashMap`][c~std::collec
 {{#include ../../../crates/cats/memory_management/examples/lazy_initialization/lazy_constant.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

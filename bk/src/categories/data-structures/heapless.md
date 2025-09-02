@@ -28,6 +28,10 @@ This can be particularly useful for [[embedded]] systems or other environments w
 {{#include ../../../crates/cats/data_structures/examples/heapless.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+- [[stack_allocated_arrays | Stack-allocated Arrays]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

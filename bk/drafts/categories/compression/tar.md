@@ -36,6 +36,10 @@ Iterate over the [`tar::Archive::entries`][c~tar::Archive::entries~docs]↗{{hi:
 {{#include ../../../crates/cats/compression/examples/tar/tar_strip_prefix.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

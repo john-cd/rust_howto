@@ -40,6 +40,10 @@ In the following example, colors add to a table having a unique constraint on th
 {{#include ../../../crates/cats/database/examples/sqlite/transactions.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

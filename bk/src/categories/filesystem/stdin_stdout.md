@@ -12,6 +12,11 @@ The following demonstrates how to work with them. You will rarely need to explic
 {{#include ../../../crates/cats/filesystem/examples/stdin_stdout/stdin_stdout.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+- [[read_write | Reading and Writing Files]].
+- [[paths | Paths]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

@@ -28,6 +28,10 @@ Many other microcontroller families have their own HAL crates.
 
 [`rppal`][c~rppal~docs]↗{{hi:rppal}} is an interface for the Raspberry Pi's GPIO, I2C, PWM, SPI and UART peripherals.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

@@ -38,6 +38,10 @@ See [[tracing | Tracing]].
 
 [`measure_time`][c~measure_time~docs]↗{{hi:measure_time}} can measure the execution time of code blocks, e.g. when investigating memory-related performance issues.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

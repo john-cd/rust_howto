@@ -40,6 +40,10 @@ If you're building a non-end product, such as a rust library that other rust pac
 - A package can contain as many binary crate{{hi:Binary crate}}s as needed, but at most only one library crate{{hi:Library crate}}.
 - If a package contains `src/main.rs`{{hi:src/main.rs}} and `src/lib.rs`{{hi:src/lib.rs}}, it has two crates: a binary and a library, both with the same name as the package.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
 

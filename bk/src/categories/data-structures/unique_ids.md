@@ -24,6 +24,11 @@ ULID stands for Universally Unique Lexicographically Sortable Identifier, which 
 {{#include ../../../crates/cats/data_structures/examples/unique_ids/ulid.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+- [[maps | Maps]].
+- [[heapless | Heapless data structures]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

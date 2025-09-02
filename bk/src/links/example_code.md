@@ -63,6 +63,10 @@ You will find `cargo-generate`-ready templates in [this list][cargo-generate~rep
 
 For example, you will find a full template for a REST API written in Rust, engineered for maximum testability in the [`rust-rest`][rust_rest~repo]↗ repo.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 

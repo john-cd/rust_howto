@@ -63,6 +63,10 @@ Runs [`git --version`][git~website]↗{{hi:git}} using [`std::process::Command`]
 {{#include ../../../../crates/cats/development_tools/examples/semver/semver_command.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
 

@@ -17,7 +17,7 @@
 {{#include ../../../crates/cats/accessibility/examples/screen_readers/accesskit.rs:example}}
 ```
 
-## See Also {#see-also .skip}
+## Related Topics {#related-topics .skip}
 
 - [[gui | GUI]].
 

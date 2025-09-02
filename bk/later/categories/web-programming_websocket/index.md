@@ -32,6 +32,10 @@ The following table outlines common tasks for working with WebSockets in Rust, a
 
 {{#include websocket.incl.md}}
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

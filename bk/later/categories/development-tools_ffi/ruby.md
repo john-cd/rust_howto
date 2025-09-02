@@ -42,6 +42,10 @@ Use:
 - [`cargo`][c~cargo~docs]↗{{hi:cargo}} for building the Rust library.
 - [`rake`][c~rake~docs]↗{{hi:rake}} or `bundler` for managing the Ruby side and integrating with the Rust library.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

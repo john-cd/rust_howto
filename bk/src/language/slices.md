@@ -65,6 +65,10 @@ String slices, denoted `&str`, are very common. In particular, string literals a
 
 See the [[string | String]] chapter for more details.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 

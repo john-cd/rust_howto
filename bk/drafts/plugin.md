@@ -15,6 +15,10 @@ For a true plugin architecture where plugins are compiled as separate shared lib
 - Define an entry point: Each plugin [`.so`][.so-files]↗{{hi:.so}}/[`.dll`][.dll-files]↗{{hi:.dll}} would export a specific [`extern "C"`][keyword~extern]↗{{hi:extern "C"}} function that the host calls to get a `Box<dyn Plugin>`.
 - Version Management: Even with [`extern "C"`][keyword~extern]↗{{hi:extern "C"}}, you need robust versioning for your common plugin interface crate to prevent issues if host and plugins are compiled with different versions of the interface. Crates like [`abi_stable`][c~abi_stable~docs]↗{{hi:abi_stable}} can help with this by providing more robust ABI compatibility checks.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include refs/link-refs.md}}
 

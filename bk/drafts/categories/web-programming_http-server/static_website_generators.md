@@ -47,6 +47,10 @@ You can further customize your site by editing the templates in the templates di
 
 [AdiDoks][adidoks~website]↗ is a modern documentation theme.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

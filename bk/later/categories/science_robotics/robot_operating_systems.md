@@ -68,6 +68,10 @@ Formally specified Rust bindings for ROS2.
 - [`optimization-engine`][c~optimization-engine~docs]{{hi:optimization-engine}} - Fast & Accurate Embedded Optimization for next-generation Robotics and Autonomous Systems.
 - [`transforms`][c~transforms~crates.io]↗{{hi:transforms}} - A minimal and stand-alone crate inspired by the ROS2 tf library, but not dependent on ROS or middleware.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

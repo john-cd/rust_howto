@@ -149,6 +149,10 @@ void print_app_info() {
 {{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_defines1.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

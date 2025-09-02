@@ -104,6 +104,10 @@ Note that serialization followed by deserialization gives back the original matr
 {{#include ../../../crates/cats/mathematics/examples/linear_algebra/deserialize_matrix.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+- [[vectors | Vectors]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

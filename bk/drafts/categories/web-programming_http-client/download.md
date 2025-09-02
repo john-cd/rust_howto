@@ -39,6 +39,10 @@ The Range header is defined in [`RFC7233`][ietf~http-range-rfc7233]↗{{hi:RFC-7
 {{#include ../../../crates/cats/web_programming_http_client/examples/download/partial.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

@@ -22,6 +22,10 @@
 {{#include ../../../crates/cats/gui/examples/text_layout/parley.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

@@ -36,6 +36,10 @@ See also:
 - [Projections and Structural Pinning][c~std::pin~projections-and-structural-pinning~docs]↗.
 - [`std::pin::Pin`][c~std::pin::Pin~docs]↗.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

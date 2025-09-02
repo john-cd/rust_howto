@@ -16,6 +16,10 @@
 {{#include ../../../crates/cats/date_and_time/examples/time.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

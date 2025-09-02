@@ -18,6 +18,10 @@ Bindings for directly calling [`libc`][c~libc~docs]↗{{hi:libc}} functions.
 {{#include ../../../crates/cats/os/examples/low_level_system_calls/libc.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

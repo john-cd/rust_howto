@@ -40,6 +40,10 @@ Make sure the [`gtk4`][c~gtk4~docs]↗{{hi:gtk4}} crate version you're using is 
 - [`gio`][c~gio~docs]↗{{hi:gio}} offers bindings to the GIO (GNOME Input/Output) library, used for [asynchronous][p~asynchronous] operations, file I/O, and other system-related tasks in GTK applications.
 - [`glib`][c~glib~docs]↗{{hi:glib}} provides bindings to the GLib library, which is the foundation for GTK and GIO. You'll often use this indirectly.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

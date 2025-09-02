@@ -38,6 +38,10 @@ Often done with custom [functions][p~functions] or data structures, but crates l
 {{#include ../../../crates/cats/development_tools_testing/examples/property_based_testing/fake.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

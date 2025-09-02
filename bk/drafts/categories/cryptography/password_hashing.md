@@ -76,6 +76,10 @@ The salt is generated using [`ring::rand::SecureRandom::fill`][c~ring::rand::Sec
 
 For more [algorithms][p~algorithms], see [Rust Crypto Password Hashes][rustcrypto-password-hashes~repo]↗.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

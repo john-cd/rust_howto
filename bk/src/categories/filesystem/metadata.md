@@ -10,6 +10,12 @@ You can get file metadata in Rust using the `fs::metadata` function from the sta
 {{#include ../../../crates/cats/filesystem/examples/metadata/metadata.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+- [[read_write | Reading and Writing Files]].
+- [[paths | Paths]].
+- [[symbolic_links | Symbolic Links]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

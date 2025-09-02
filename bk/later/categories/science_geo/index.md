@@ -28,6 +28,10 @@ The Rust geoscience ecosystem is developing, and while not as mature as Python's
 
 {{#include geo.incl.md}}
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

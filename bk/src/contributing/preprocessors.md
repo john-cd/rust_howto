@@ -25,6 +25,10 @@ The [[mdbook | `mdbook`]] chapter describes these preprocessors and backends in 
 
 Consult the project's [README][mdbook-scrub-readme~repo]↗ for more details.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 

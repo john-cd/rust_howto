@@ -27,6 +27,10 @@ BEWARE: Be wary of scams.
 - Wallet Development: often involves a combination of the above crates and custom logic.
 - Smart Contracts: primarily a [`Solidity`][soliditylang~website]↗{{hi:Solidity}} ecosystem, but Rust may be used for [testing][p~testing] or interacting with contracts via crates like [`ethers`][c~ethers~docs]↗{{hi:ethers}}.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

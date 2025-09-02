@@ -43,6 +43,10 @@ By implementing the unsafe marker [traits][p~traits] [`std::marker::Send`][c~std
 {{#include ../../../crates/cats/concurrency/examples/send_sync/send_sync_impl.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 ## References {#references .skip}
 
 - [Understanding the `Send` trait][stackoverflow~understanding-the-send-trait]↗.

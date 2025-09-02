@@ -8,6 +8,10 @@
 {{#include ../../../crates/cats/virtualization/examples/virtualization/virtualization1.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

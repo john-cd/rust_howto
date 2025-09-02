@@ -18,6 +18,11 @@ The following example demonstrates creating a graph, adding nodes and edges, tra
 
 - [`pathfinding`][c~pathfinding~docs]↗{{hi:pathfinding}} provides pathfinding algorithms.
 
+## Related Topics {#related-topics .skip}
+
+- [[linkedlist | Linked Lists]].
+- [[maps | Maps]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

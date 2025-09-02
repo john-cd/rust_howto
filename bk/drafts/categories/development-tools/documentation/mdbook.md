@@ -135,6 +135,10 @@ jobs:
 
 [`mdbook-cmdrun`][c~mdbook-cmdrun~docs]↗{{hi:mdbook-cmdrun}} is a [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} pre-processor to run arbitrary commands.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
 

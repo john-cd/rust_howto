@@ -74,6 +74,10 @@ Typenum is a Rust library for type-level numbers evaluated at compile time. It c
 {{#include ../../../crates/cats/mathematics/examples/additional_numeric_types/typenum.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+- [[complex_numbers | Complex Numbers]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

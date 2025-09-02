@@ -12,6 +12,10 @@
 
 [`Redox`][redox~website]↗[(github)][redox~repo]↗{{hi:redox}} is an experimental, Unix-like, general-purpose, microkernel-based operating system written in Rust, aiming to bring Rust to a modern microkernel, a full set of programs, and be a complete alternative to Linux and BSD.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

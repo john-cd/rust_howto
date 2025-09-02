@@ -65,6 +65,10 @@ The basic premise is thus to:
 {{#include ../../../crates/cats/database/examples/postgres/cornucopia.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

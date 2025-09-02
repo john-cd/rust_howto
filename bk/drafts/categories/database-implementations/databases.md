@@ -46,6 +46,10 @@ SurrealDB is a scalable, distributed, collaborative, document-graph [database][p
 {{#include ../../../crates/cats/database_implementations/examples/databases/surrealdb.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

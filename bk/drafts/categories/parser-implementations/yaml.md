@@ -16,6 +16,10 @@
 
 Consider [`yaml-rust`][c~yaml-rust~docs]↗{{hi:yaml-rust}}. 'serde_yaml' is deprecated.
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

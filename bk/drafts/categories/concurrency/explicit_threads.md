@@ -22,6 +22,10 @@ Note: when the main thread of a Rust program completes, all spawned threads{{hi:
 {{#include ../../../crates/cats/concurrency/examples/explicit_threads/multithreading_scoped_threads.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

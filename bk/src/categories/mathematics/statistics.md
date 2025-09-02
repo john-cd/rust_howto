@@ -40,6 +40,10 @@ The z-score is the number of standard deviations a single measurement spans away
 {{#include ../../../crates/cats/mathematics/examples/stats/standard_deviation.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+- [[complex_numbers | Complex Numbers]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
