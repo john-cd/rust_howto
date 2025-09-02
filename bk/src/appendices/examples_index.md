@@ -18,43 +18,43 @@
 
 ## Data Structures
 
-### Binaryheap
+### Binary Heaps
 
 {{#include ../categories/data-structures/binaryheap.incl.md}}
 
-### Bitarrays
+### Bit Arrays
 
 {{#include ../categories/data-structures/bitarrays.incl.md}}
 
-### Btrees
+### B-trees
 
 {{#include ../categories/data-structures/btrees.incl.md}}
 
-### Graph
+### Graphs
 
 {{#include ../categories/data-structures/graph.incl.md}}
 
-### Hashmap
+### Hashmaps
 
 {{#include ../categories/data-structures/hashmap.incl.md}}
 
-### Heapless
+### Heapless Data Structures
 
 {{#include ../categories/data-structures/heapless.incl.md}}
 
-### `LinkedList`
+### Linked Lists
 
 {{#include ../categories/data-structures/linkedlist.incl.md}}
 
-### Maps
+### Other Maps
 
 {{#include ../categories/data-structures/maps.incl.md}}
 
-### Stack Allocated Arrays
+### Stack-allocated Arrays
 
 {{#include ../categories/data-structures/stack_allocated_arrays.incl.md}}
 
-### Stack and Queue
+### Stacks and Queues
 
 {{#include ../categories/data-structures/stack_and_queue.incl.md}}
 
@@ -62,11 +62,11 @@
 
 {{#include ../categories/data-structures/strings.incl.md}}
 
-### Unique Ids
+### Unique IDs
 
 {{#include ../categories/data-structures/unique_ids.incl.md}}
 
-### Vector
+### Vectors
 
 {{#include ../categories/data-structures/vector.incl.md}}
 
