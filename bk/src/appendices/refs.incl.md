@@ -3,6 +3,7 @@
 [ex~algorithms~cryptographic-algorithms]: ../categories/algorithms/hashing.md#cryptographic-algorithms
 [ex~algorithms~fastrand]: ../categories/algorithms/randomness.md#fastrand
 [ex~algorithms~foldhash]: ../categories/algorithms/hashing.md#foldhash
+[ex~algorithms~general-purpose-hashing-algorithms]: ../categories/algorithms/hashing.md#general-purpose-hashing-algorithms
 [ex~algorithms~generate-random-numbers-within-a-given-distribution]: ../categories/algorithms/randomness.md#generate-random-numbers-within-a-given-distribution
 [ex~algorithms~generate-random-numbers-within-a-range]: ../categories/algorithms/randomness.md#generate-random-numbers-within-a-range
 [ex~algorithms~generate-random-numbers]: ../categories/algorithms/randomness.md#generate-random-numbers
@@ -10,7 +11,6 @@
 [ex~algorithms~generate-random-values-from-set-alphanumeric]: ../categories/algorithms/randomness.md#generate-random-values-from-set-alphanumeric
 [ex~algorithms~legacy-hashing-algorithms]: ../categories/algorithms/hashing.md#legacy-hashing-algorithms
 [ex~algorithms~md-5]: ../categories/algorithms/hashing.md#md-5
-[ex~algorithms~see-also]: ../categories/algorithms/sorting.md#see-also
 [ex~algorithms~sha1]: ../categories/algorithms/hashing.md#sha1
 [ex~algorithms~sha256]: ../categories/algorithms/hashing.md#sha256
 [ex~algorithms~sha2]: ../categories/algorithms/hashing.md#sha2
@@ -43,6 +43,8 @@
 [ex~code_organization~visibility-rules]: ../code_organization/visibility.md#visibility-rules
 [ex~code_organization~visibility-scope]: ../code_organization/visibility.md#visibility-scope
 [ex~code_organization~visible-to-library-clients]: ../code_organization/visibility.md#visible-to-library-clients
+[ex~contributing~alternative-just-install]: ../contributing/dev_environment_setup.md#alternative-just-install
+[ex~contributing~alternative-mdbook-install]: ../contributing/dev_environment_setup.md#alternative-mdbook-install
 [ex~contributing~book-organization]: ../contributing/repo_structure.md#book-organization
 [ex~contributing~code-organization]: ../contributing/repo_structure.md#code-organization
 [ex~contributing~deployment-to-github-pages]: ../contributing/dev_container_docker.md#deployment-to-github-pages
@@ -69,6 +71,7 @@
 [ex~data-structures~hashmap]: ../categories/data-structures/hashmap.md#hashmap
 [ex~data-structures~hashset]: ../categories/data-structures/hashmap.md#hashset
 [ex~data-structures~heapless]: ../categories/data-structures/heapless.md#heapless
+[ex~data-structures~implement-a-priority-queue]: ../categories/data-structures/binaryheap.md#implement-a-priority-queue
 [ex~data-structures~indexmap]: ../categories/data-structures/maps.md#indexmap
 [ex~data-structures~linkedlist]: ../categories/data-structures/linkedlist.md#linkedlist
 [ex~data-structures~memory-allocation]: ../categories/data-structures/vector.md#memory-allocation
@@ -160,6 +163,7 @@
 [ex~language~destructure-references]: ../language/match.md#destructure-references
 [ex~language~destructure-structs]: ../language/match.md#destructure-structs
 [ex~language~destructure-tuples]: ../language/match.md#destructure-tuples
+[ex~language~destructure]: ../language/match.md#destructure
 [ex~language~destructuring]: ../language/variables.md#destructuring
 [ex~language~diverging-functions]: ../language/functions.md#diverging-functions
 [ex~language~dsl-macros]: ../language/macros.md#dsl-macros
@@ -173,6 +177,7 @@
 [ex~language~function]: ../language/functions.md#function
 [ex~language~generic-enums]: ../language/enums.md#generic-enums
 [ex~language~generic-traits]: ../language/traits.md#generic-traits
+[ex~language~generics-syntax]: ../language/generics.md#generics-syntax
 [ex~language~hygiene]: ../language/macros.md#hygiene
 [ex~language~if-else]: ../language/control_flow.md#if-else
 [ex~language~if-let]: ../language/match.md#if-let
@@ -214,7 +219,6 @@
 [ex~language~procedural-macros]: ../language/macros.md#procedural-macros
 [ex~language~production-code-attributes]: ../language/attributes.md#production-code-attributes
 [ex~language~ref-and-ref-mut-bindings]: ../language/match.md#ref-and-ref-mut-bindings
-[ex~language~references-borrowing]: ../language/ownership_borrowing.md#references-borrowing
 [ex~language~repetitions]: ../language/macros.md#repetitions
 [ex~language~return-an-iterator]: ../language/iterators.md#return-an-iterator
 [ex~language~return-position-impl-trait]: ../language/impl_trait.md#return-position-impl-trait
@@ -237,6 +241,7 @@
 [ex~language~strum]: ../language/enums.md#strum
 [ex~language~supertraits]: ../language/traits.md#supertraits
 [ex~language~trait-bounds]: ../language/traits.md#trait-bounds
+[ex~language~trait-object-restrictions]: ../language/trait_objects.md#trait-object-restrictions
 [ex~language~trait-objects-basics]: ../language/trait_objects.md#trait-objects-basics
 [ex~language~trait-syntax]: ../language/traits.md#trait-syntax
 [ex~language~traits-types-elsewhere]: ../language/traits.md#traits-types-elsewhere
@@ -246,6 +251,7 @@
 [ex~language~unreachable-macros]: ../language/macros.md#unreachable-macros
 [ex~language~update-struct]: ../language/structs.md#update-struct
 [ex~language~use-iterators]: ../language/iterators.md#use-iterators
+[ex~language~use-lifetime-parameters]: ../language/lifetimes.md#use-lifetime-parameters
 [ex~language~use-macros]: ../language/macros.md#use-macros
 [ex~language~use-match-to-branch-on-a-pattern]: ../language/match.md#use-match-to-branch-on-a-pattern
 [ex~language~use-slice-as-function-argument]: ../language/slices.md#use-slice-as-function-argument
@@ -339,6 +345,7 @@
 [ex~mathematics~vector-comparison]: ../categories/mathematics/linear_algebra.md#vector-comparison
 [ex~mathematics~vector-norm]: ../categories/mathematics/linear_algebra.md#vector-norm
 [ex~mathematics~verifying-tan-is-equal-to-sin-divided-by-cos]: ../categories/mathematics/trigonometry.md#verifying-tan-is-equal-to-sin-divided-by-cos
+[ex~rust_install~rust-install]: ../rust_install/index.md#rust-install
 [ex~standard_library~accept-either-owned-or-borrowed-values]: ../standard_library/cow.md#accept-either-owned-or-borrowed-values
 [ex~standard_library~adapters-for-working-with-references]: ../standard_library/option.md#adapters-for-working-with-references
 [ex~standard_library~any-trait]: ../standard_library/dynamic_typing.md#any-trait
@@ -353,6 +360,7 @@
 [ex~standard_library~box]: ../standard_library/box.md#box
 [ex~standard_library~cell]: ../standard_library/interior_mutability.md#cell
 [ex~standard_library~choose-conversion-trait]: ../standard_library/conversion_traits.md#choose-conversion-trait
+[ex~standard_library~clone-data-lazily-with-cow]: ../standard_library/cow.md#clone-data-lazily-with-cow
 [ex~standard_library~combinators]: ../standard_library/option.md#combinators
 [ex~standard_library~compile-type-reflection]: ../standard_library/dynamic_typing.md#compile-type-reflection
 [ex~standard_library~convert-cow-to-str]: ../standard_library/cow.md#convert-cow-to-str
@@ -389,7 +397,6 @@
 [ex~standard_library~result]: ../standard_library/result.md#result
 [ex~standard_library~return-cow-from-function]: ../standard_library/cow.md#return-cow-from-function
 [ex~standard_library~return-early-pattern]: ../standard_library/option.md#return-early-pattern
-[ex~standard_library~see-also]: ../standard_library/option.md#see-also
 [ex~standard_library~smart-pointer-comparison]: ../standard_library/smart_pointers.md#smart-pointer-comparison
 [ex~standard_library~sync-primitives]: ../standard_library/smart_pointers.md#sync-primitives
 [p~contributing]: ../contributing/index.md
@@ -400,4 +407,3 @@
 [p~links]: ../links/index.md
 [p~standard-library]: ../standard_library/index.md
 [p~word-index]: ../word_index.md
-[ex~rust_install~rust-install]: ../rust_install/index.md#rust-install

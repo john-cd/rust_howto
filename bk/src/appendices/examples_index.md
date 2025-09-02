@@ -22,9 +22,9 @@
 
 {{#include ../categories/data-structures/binaryheap.incl.md}}
 
-### Bitfield
+### Bitarrays
 
-{{#include ../categories/data-structures/bitfield.incl.md}}
+{{#include ../categories/data-structures/bitarrays.incl.md}}
 
 ### Btrees
 
@@ -62,9 +62,9 @@
 
 {{#include ../categories/data-structures/strings.incl.md}}
 
-### UUID
+### Unique Ids
 
-{{#include ../categories/data-structures/uuid.incl.md}}
+{{#include ../categories/data-structures/unique_ids.incl.md}}
 
 ### Vector
 
@@ -199,6 +199,10 @@
 ## Crate: Selection
 
 ## Intro
+
+### How To Read This Book
+
+{{#include ../intro/how_to_read_this_book.incl.md}}
 
 ## Language
 
