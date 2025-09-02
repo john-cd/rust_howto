@@ -41,9 +41,9 @@ You may also use [`dbg`][c~std::dbg~docs]↗{{hi:std::dbg}} for debug output.{{h
 
 ## Concatenate Strings {#string-concatenation}
 
-See the [[string_concat | String Concatenation]] chapter and the [Concatenation Benchmark][concatenation_benchmarks~repo]↗.
+See the [[string_concat | String Concatenation]] chapter and the [Concatenation Benchmark][concatenation_benchmarks~repo]↗ repository.
 
-## String Manipulation {#string-manipulation}
+## String Manipulation {#string-manipulation .skip}
 
 See:
 
