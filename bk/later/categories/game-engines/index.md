@@ -22,6 +22,10 @@ Code examples are found below:
 
 {{#include game_engines.incl.md}}
 
+## References
+
+- [Are we Game yet? - Engines][are-we-game-yet?~engines~website]↗.
+
 ## Related Topics
 
 - [[games | Games]].
@@ -29,10 +33,6 @@ Code examples are found below:
 - [[graphics | Graphics]].
 - [[rendering | Rendering]].
 - [[window_creation | Window Creation]]. [`winit`][c~winit~docs]↗{{hi:winit}}: A window creation and event handling library. Often used as a foundation for custom engines or when more control is needed.
-
-## References
-
-- [Are we Game yet? - Engines][are-we-game-yet?~engines~website]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

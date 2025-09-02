@@ -39,13 +39,13 @@ Multiple examples using [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} are found i
 {{#include ../../../crates/cats/web_programming_http_client/examples/http_clients/hyper.rs:example}}
 ```
 
+## References {#references .skip}
+
+- [`hyper` Examples][c~hyper~examples~repo]↗.
+
 ## Related Topics {#related-topics .skip}
 
 FIXME
-
-## References
-
-- [`hyper` Examples][c~hyper~examples~repo]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

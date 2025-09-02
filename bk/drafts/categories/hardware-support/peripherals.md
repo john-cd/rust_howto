@@ -24,16 +24,20 @@ FIXME replace by `nix`.
 
 For specialized hardware, you'll often need to find or create crates that provide access to the device's API or protocol.
 
-## Related Topics {#related-topics .skip}
-
-- [[embedded | Embedded Systems]].
-- [[os | OS]].
-
 ### Device Drivers {#device-drivers .skip}
 
 Writing device drivers in Rust is complex and often involves unsafe code and close interaction with the operating system kernel. You'll typically need to work with platform-specific driver APIs.
 
+FIXME
+
 ### Hardware Access (User Space) {#hardware-access .skip}
+
+FIXME
+
+## Related Topics {#related-topics .skip}
+
+- [[embedded | Embedded Systems]].
+- [[os | OS]].
 
 Accessing hardware from user space (without a driver) is often restricted for security reasons. It might involve using system calls or interacting with specific device files. See [[os | OS]].
 

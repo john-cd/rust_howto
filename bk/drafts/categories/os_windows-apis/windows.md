@@ -34,9 +34,8 @@
 
 ## See Also {#see-also .skip}
 
-Native Windows [GUI][p~gui]: [![native-windows-gui~repo][c~native-windows-gui~repo~badge]][c~native-windows-gui~repo]{{hi:native-windows-gui}}
-
-[`native-windows-gui`][c~native-windows-gui~docs]↗{{hi:native-windows-gui}}
+- Native Windows [GUI][p~gui]: [`native-windows-gui`][c~native-windows-gui~repo]↗.{{hi:native-windows-gui}}
+- [`native-windows-gui`][c~native-windows-gui~docs]↗.{{hi:native-windows-gui}}
 
 ## Related Topics {#related-topics .skip}
 

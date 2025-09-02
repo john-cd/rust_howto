@@ -19,10 +19,6 @@ The `Default` trait has a single method, `default()`, which returns the default 
 - [[derive | Derive]].
 - [[traits | Traits]].
 
-## References {#references .skip}
-
-FIXME
-
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 

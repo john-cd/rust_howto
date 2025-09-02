@@ -61,6 +61,11 @@ Using iterators in parallel with crates like [`rayon`][c~rayon~docs]↗{{hi:rayo
 
 {{#include send_sync.incl.md}}
 
+## References
+
+- [![Rust concurrency book][book~rust~concurrency~badge]][book~rust~concurrency]↗.
+- [Rust Atomics][book~rust-atomics]↗.
+
 ## Related Topics
 
 - [[async | Async]].
@@ -70,11 +75,6 @@ Using iterators in parallel with crates like [`rayon`][c~rayon~docs]↗{{hi:rayo
 - [[message_passing | Message Passing]].
 - [[explicit_threads | Explicit Threads]].
 - [[processor | Processor]].
-
-## References
-
-- [![Rust concurrency book][book~rust~concurrency~badge]][book~rust~concurrency]↗.
-- [Rust Atomics][book~rust-atomics]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -73,6 +73,12 @@ FIXME.
 - [`cargo check`][book~cargo~cargo-check]↗{{hi:cargo check}}, clippy, test...
 - spell checks.
 
+## See Also {#see-also .skip}
+
+- [Rust CI Tooling][rust-ci-tooling~website]↗: Clippy, commitlint, pre-commit.
+- [`pre-commit-rust`][pre-commit-rust~repo].
+- [A pre-commit hook for `commitlint`][commitlint-pre-commit-hook~repo]↗.
+
 ## Related Topics {#related-topics .skip}
 
 - [[development-tools_testing | Development Tools Testing]].
@@ -80,12 +86,6 @@ FIXME.
   - [[building | Building]].
   - [[code_formatting_linting | Code Formatting & Linting]].
   - [[versioning | Versioning]].
-
-## See Also {#see-also .skip}
-
-- [Rust CI Tooling][rust-ci-tooling~website]↗: Clippy, commitlint, pre-commit.
-- [`pre-commit-rust`][pre-commit-rust~repo].
-- [A pre-commit hook for `commitlint`][commitlint-pre-commit-hook~repo]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -20,7 +20,7 @@ There's a growing collection of smaller indie games made with Rust on [`itch.io`
 - [`itch.io`][itch.io~website]↗ or [GOG.com][gog~website]↗.
 - [`Reddit`][reddit~website]↗{{hi:Reddit}}: The 'r/rust' subreddit often has discussions about game development, and you might find announcements of new Rust games there.
 
-## Related Topics {#related-topics .skip}
+## Related Topics
 
 FIXME
 

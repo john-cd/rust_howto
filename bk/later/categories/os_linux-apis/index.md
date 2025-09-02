@@ -55,7 +55,7 @@ Writing device drivers is advanced and requires close interaction with the Linux
 
 {{#include linux.incl.md}}
 
-## Related Topics {#related-topics .skip}
+## Related Topics
 
 FIXME
 

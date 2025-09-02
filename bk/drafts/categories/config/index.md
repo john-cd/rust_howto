@@ -51,11 +51,11 @@ Suitable for passing simple configuration options.
 [`serde`][c~serde~docs]↗{{hi:serde}}: (Not a config crate itself, but essential for serializing and deserializing configuration - data in most cases).
 - Environment Variables: [`std::env`][c~std::env~docs]↗{{hi:std::env}} (for accessing environment variables directly).
 
-## Related Topics {#related-topics .skip}
+Configuration Validation: (Often done manually or with custom functions, but schemars can be used to generate JSON schema for validation).
+
+### Command-line Arguments
 
 - Command-Line Arguments (often used in conjunction with [`config`][c~config~docs]↗{{hi:config}}): [`clap`][c~clap~docs]↗{{hi:clap}}, [`structopt`][c~structopt~docs]↗{{hi:structopt}}, [`argh`][c~argh~docs]↗{{hi:argh}}
-
-Configuration Validation: (Often done manually or with custom functions, but schemars can be used to generate JSON schema for validation).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

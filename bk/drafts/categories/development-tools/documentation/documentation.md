@@ -51,14 +51,14 @@ To add a "run" button on your documentation (allowing its execution in the rust 
 
 [`roxygen`][c~roxygen~docs]↗{{hi:roxygen}} helps seamlessly document function parameters with [`rustdoc`][book~rustdoc]↗{{hi:rustdoc}}.
 
-## Related Topics {#related-topics .skip}
-
-FIXME
-
-## References
+## References {#references .skip}
 
 - [The rustdoc book][book~rustdoc]↗{{hi:rustdoc}}.
 - [`docs.rs`][docs.rs~website]↗{{hi:docs.rs}}: open-source documentation{{hi:Documentation}} host for Rust crates.
+
+## Related Topics {#related-topics .skip}
+
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

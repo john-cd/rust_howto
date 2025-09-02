@@ -30,6 +30,8 @@ A library to build rich terminal user interfaces or dashboards.
 
 [![r3bl_tuify][c~r3bl_tuify~docs~badge]][c~r3bl_tuify~docs]{{hi:r3bl_tuify}} [![r3bl_tuify~crates.io][c~r3bl_tuify~crates.io~badge]][c~r3bl_tuify~crates.io]↗ [![blog~tuify][blog~tuify~badge]][blog~tuify]↗
 
+FIXME
+
 ## Related Topics {#related-topics .skip}
 
 - [[ansi_terminal | ANSI Terminal]].

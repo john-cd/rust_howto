@@ -17,6 +17,23 @@ Game development in Rust is a vibrant area, and the crates you'll need depend on
 
 {{#include game_development.incl.md}}
 
+## References
+
+Are we Game yet?
+
+- [AI][are-we-game-yet?-ai~website]↗: AI libraries, steering, behaviour trees, planners, etc.
+- [Animation][are-we-game-yet?-animation~website]↗: rigging, tweening, anything related to animation.
+- [Audio][are-we-game-yet?-audio~website]↗: Wrappers for FMOD, OpenAL, MIDI and similar, and higher level APIs.
+- [ECS][are-we-game-yet?-ecs~website]↗: Entity Component System implementations.
+- [Input][are-we-game-yet?-input~website]↗: Libraries to handle controllers, gamepads, keyboards, etc.
+- [Math][are-we-game-yet?-math~website]↗: Linear algebra libraries, quaternions, color conversion and more.
+- [Mesh Tools][are-we-game-yet?-mesh~website]↗: Tools for optimising and processing meshes.
+- [Networking][are-we-game-yet?-networking~website]↗: Multiplayer, Protocols, and more.
+- [Tools][are-we-game-yet?-tools~website]↗: Tools & other game-dev related libraries.
+- [UI][are-we-game-yet?-ui~website]↗: Immediate mode UI libraries and more.
+- [VR][are-we-game-yet?-vr~website]↗: VR engines and libraries.
+- [Windowing][are-we-game-yet?-windowing~website]↗ Windowing and Context Creation crates.
+
 ## Related Topics
 
 | Topic | Description | Relevant Rust crate(s) |
@@ -42,23 +59,6 @@ See also:
 - [[deep_learning | Deep Learning]].
 - [[games | Games]].
 - [[game_engines | Game Engines]].
-
-## References
-
-Are we Game yet?
-
-- [AI][are-we-game-yet?-ai~website]↗: AI libraries, steering, behaviour trees, planners, etc.
-- [Animation][are-we-game-yet?-animation~website]↗: rigging, tweening, anything related to animation.
-- [Audio][are-we-game-yet?-audio~website]↗: Wrappers for FMOD, OpenAL, MIDI and similar, and higher level APIs.
-- [ECS][are-we-game-yet?-ecs~website]↗: Entity Component System implementations.
-- [Input][are-we-game-yet?-input~website]↗: Libraries to handle controllers, gamepads, keyboards, etc.
-- [Math][are-we-game-yet?-math~website]↗: Linear algebra libraries, quaternions, color conversion and more.
-- [Mesh Tools][are-we-game-yet?-mesh~website]↗: Tools for optimising and processing meshes.
-- [Networking][are-we-game-yet?-networking~website]↗: Multiplayer, Protocols, and more.
-- [Tools][are-we-game-yet?-tools~website]↗: Tools & other game-dev related libraries.
-- [UI][are-we-game-yet?-ui~website]↗: Immediate mode UI libraries and more.
-- [VR][are-we-game-yet?-vr~website]↗: VR engines and libraries.
-- [Windowing][are-we-game-yet?-windowing~website]↗ Windowing and Context Creation crates.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

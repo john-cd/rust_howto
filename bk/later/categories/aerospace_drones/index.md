@@ -43,7 +43,7 @@ Consider using:
 - [`image`][c~image~docs]↗{{hi:image}} for image loading and manipulation.
 - [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} for efficient array operations (often used in image processing).
 
-## See Also {#see-also .skip}
+## Related Topics
 
 - [[additional_numeric_types | Additional Numeric Types]].
 - [[algorithms | Algorithms]].
@@ -59,10 +59,6 @@ Consider using:
 
 - [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} for linear algebra and control algorithms.
 - [`num-traits`][c~num-traits~docs]↗{{hi:num-traits}} & [`num-complex`][c~num-complex~docs]↗{{hi:num-complex}} for numerical and complex number operations.
-
-## Related Topics {#related-topics .skip}
-
-FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

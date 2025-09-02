@@ -12,15 +12,15 @@
 
 ## `wonnx` {#wonnx}
 
-## Related Topics {#related-topics .skip}
+## References
+
+- [Are we Learning yet? - GPU computing][are-we-learning-yet?~gpu-computing~website]↗.
+
+## Related Topics
 
 - [[shaders | Shaders]].
 - [[rendering | Rendering]].
 - [[rendering_graphics-api | Rendering Graphics API]].
-
-## References
-
-- [Are we Learning yet? - GPU computing][are-we-learning-yet?~gpu-computing~website]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

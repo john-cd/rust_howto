@@ -24,17 +24,6 @@ The Rust ML ecosystem is relatively young compared to Python's. However, Rust's 
 
 {{#include deep_learning.incl.md}}
 
-## Related Topics
-
-| Topic | Rust Crate(s) | Notes |
-|---|---|---|
-| [[computer-vision | Computer Vision]] | [`image`][c~image~docs]↗{{hi:image}}, [`opencv-rs`][c~opencv~docs]↗{{hi:opencv-rs}} bindings to OpenCV | [`image`][c~image~docs]↗{{hi:image}} is for image manipulation. [`opencv-rs`][c~opencv~docs]↗{{hi:opencv-rs}} provides bindings to the popular OpenCV library. |
-| Data Manipulation & [[data-processing | Processing]]  | [`polars`][c~polars~docs]↗{{hi:polars}}, [`dataframe`][c~dataframe~docs]↗{{hi:dataframe}} | [`polars`][c~polars~docs]↗{{hi:polars}} and [`dataframe`][c~dataframe~docs]↗{{hi:dataframe}} are designed for efficient data manipulation and analysis, similar to Pandas in Python. |
-| Data [[visualization | Visualization]] | [`plotters`][c~plotters~docs]↗{{hi:plotters}}, [`iced`][c~iced~docs]↗{{hi:iced}}, [`egui`][c~egui~docs]↗{{hi:egui}} | While not strictly ML-specific, these crates are essential for visualizing data and model performance. |
-| [[linear_algebra | Linear Algebra]] & Numerical Computation | [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}}, [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}, [`matrix`][c~matrix~docs]↗{{hi:matrix}} | These crates provide efficient array and matrix operations, essential for many ML algorithms. |
-
-[[development-tools_ffi | FFI]] (Foreign Function Interface) can be used to integrate with ML frameworks written in other languages.
-
 ## References
 
 - [Why Rust is becoming a contender in AI development][blog~why-rust-is-becoming-a-contender-in-ai-development]↗.
@@ -48,6 +37,17 @@ The Rust ML ecosystem is relatively young compared to Python's. However, Rust's 
 - [Natural Language Processing][are-we-learning-yet?-nlp~website]↗.
 - [Reinforcement learning][are-we-learning-yet?-reinforcement~website]↗.
 - [Scientific Computing][are-we-learning-yet?-scientific-computing~website]↗.
+
+## Related Topics
+
+| Topic | Rust Crate(s) | Notes |
+|---|---|---|
+| [[computer-vision | Computer Vision]] | [`image`][c~image~docs]↗{{hi:image}}, [`opencv-rs`][c~opencv~docs]↗{{hi:opencv-rs}} bindings to OpenCV | [`image`][c~image~docs]↗{{hi:image}} is for image manipulation. [`opencv-rs`][c~opencv~docs]↗{{hi:opencv-rs}} provides bindings to the popular OpenCV library. |
+| Data Manipulation & [[data-processing | Processing]]  | [`polars`][c~polars~docs]↗{{hi:polars}}, [`dataframe`][c~dataframe~docs]↗{{hi:dataframe}} | [`polars`][c~polars~docs]↗{{hi:polars}} and [`dataframe`][c~dataframe~docs]↗{{hi:dataframe}} are designed for efficient data manipulation and analysis, similar to Pandas in Python. |
+| Data [[visualization | Visualization]] | [`plotters`][c~plotters~docs]↗{{hi:plotters}}, [`iced`][c~iced~docs]↗{{hi:iced}}, [`egui`][c~egui~docs]↗{{hi:egui}} | While not strictly ML-specific, these crates are essential for visualizing data and model performance. |
+| [[linear_algebra | Linear Algebra]] & Numerical Computation | [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}}, [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}, [`matrix`][c~matrix~docs]↗{{hi:matrix}} | These crates provide efficient array and matrix operations, essential for many ML algorithms. |
+
+[[development-tools_ffi | FFI]] (Foreign Function Interface) can be used to integrate with ML frameworks written in other languages.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

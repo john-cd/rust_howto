@@ -82,7 +82,12 @@ While primarily for window creation, [`winit`][c~winit~docs]↗{{hi:winit}} is o
 
 {{#include clipboard.incl.md}}
 
-## Related Topics {#related-topics .skip}
+## References
+
+- Turn any webpage into a desktop app with Rust [Pake][pake~repo]↗.
+- [Logan Keenan - Client-Side Server with Rust- A New Approach to UI Development][blog~client-side-server-with-rust]↗.
+
+## Related Topics
 
 - [[accessibility | Accessibility]].
 - [[command-line-interface | Command Line Interface]].
@@ -96,11 +101,6 @@ While primarily for window creation, [`winit`][c~winit~docs]↗{{hi:winit}} is o
 - [[wasm | WASM]].
 - [[web-programming | Web Programming]].
 - [[web-programming_http-server | Web Programming: HTTP Server]].
-
-## References {#references .skip}
-
-- Turn any webpage into a desktop app with Rust [Pake][pake~repo]↗.
-- [Logan Keenan - Client-Side Server with Rust- A New Approach to UI Development][blog~client-side-server-with-rust]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

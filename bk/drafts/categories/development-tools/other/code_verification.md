@@ -84,6 +84,14 @@ Loom attempts to check all possible interleavings, while Shuttle chooses interle
 - [Creusot][creusot~repo]↗ helps prove that code is correct in an automated fashion.
 - [`crucible`][c~crucible~docs]↗{{hi:crucible}} (symbolic execution).
 
+## References {#references .skip}
+
+- [Model Checking][wikipedia~model-checking]↗.
+- [Kani Rust Verifier][c~kani~website]↗.
+- [Announcing the Kani Rust Verifier Project][c~kani~announcing-the-kani-rust-verifier-project~blog]↗.
+- [Using the Kani Rust Verifier on a Firecracker Example][c~kani~using-the-kani-rust-verifier-on-a-firecracker~example~blog]↗.
+- [Using the Kani Rust Verifier on a Rust Standard Library CVE][c~kani~using-the-kani-rust-verifier-on-a-rust-standard-library-cve]↗.
+
 ## Related Topics {#related-topics .skip}
 
 | Topic | Rust Crates |
@@ -94,14 +102,6 @@ Loom attempts to check all possible interleavings, while Shuttle chooses interle
 | Integration Testing | Often uses `cargo test`. Focuses on testing interactions between modules or components. |
 | Fuzzing | [`cargo fuzz`][book~rust-fuzz]↗{{hi:cargo fuzz}}, [`afl.rs`][c~afl~docs]↗{{hi:afl.rs}} (bindings to AFL) |
 | Code Review Tools: Not Rust-specific, but used in conjunction with Rust code. Examples: GitHub, GitLab, etc. | |
-
-## References {#references .skip}
-
-- [Model Checking][wikipedia~model-checking]↗.
-- [Kani Rust Verifier][c~kani~website]↗.
-- [Announcing the Kani Rust Verifier Project][c~kani~announcing-the-kani-rust-verifier-project~blog]↗.
-- [Using the Kani Rust Verifier on a Firecracker Example][c~kani~using-the-kani-rust-verifier-on-a-firecracker~example~blog]↗.
-- [Using the Kani Rust Verifier on a Rust Standard Library CVE][c~kani~using-the-kani-rust-verifier-on-a-rust-standard-library-cve]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

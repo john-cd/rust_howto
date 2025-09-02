@@ -36,9 +36,8 @@
 
 ## See Also {#see-also .skip}
 
-[`sdl2`][c~sdl2~docs]↗{{hi:sdl2}} can also be used for windowing and input, but [`winit`][c~winit~docs]↗{{hi:winit}} is often preferred in the Rust ecosystem.
-
-[`glfw`][c~glfw~docs]↗{{hi:glfw}} provides bindings to the GLFW library.
+- [`sdl2`][c~sdl2~docs]↗{{hi:sdl2}} can also be used for windowing and input, but [`winit`][c~winit~docs]↗{{hi:winit}} is often preferred in the Rust ecosystem.
+- [`glfw`][c~glfw~docs]↗{{hi:glfw}} provides bindings to the GLFW library.
 
 ## Related Topics {#related-topics .skip}
 

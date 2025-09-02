@@ -39,13 +39,13 @@
 
 - [Neovim][nvim~website]↗.
 
+## References {#references .skip}
+
+- [Six IDEs built for Rust][blog~6-ides-built-for-rust]↗.
+
 ## Related Topics {#related-topics .skip}
 
 FIXME
-
-## References
-
-- [Six IDEs built for Rust][blog~6-ides-built-for-rust]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

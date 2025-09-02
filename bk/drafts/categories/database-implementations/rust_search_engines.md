@@ -30,7 +30,7 @@
 {{#include ../../../crates/cats/database_implementations/examples/search_engines/tantivy.rs:example}}
 ```
 
-## Related Topics
+## Related Topics {#related-topics .skip}
 
 | Topic | Rust crate(s) | Notes |
 |---|---|---|

@@ -34,13 +34,13 @@ Rust's "module system" helps structure your projects effectively. It gives fine-
 
 {{#include naming_conventions.incl.md}}
 
+## References
+
+- [Rust Project Primer][rustprojectprimer~website]↗.
+
 ## Related Topics
 
 - [[package_layout | Package Layout]].
-
-## References {#references .skip}
-
-- [Rust Project Primer][rustprojectprimer~website]↗.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

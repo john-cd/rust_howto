@@ -139,7 +139,7 @@ This section provides a few examples of software written in Rust, organized by t
 
 {{#include other_tools.incl.md}}
 
-## Related Topics {#related-topics .skip}
+## Related Topics
 
 FIXME
 

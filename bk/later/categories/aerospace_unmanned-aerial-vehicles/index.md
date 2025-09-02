@@ -18,7 +18,7 @@ Consider using:
 - Spektrum DSM/DSMX: Another common RC protocol.
 - FrSky SmartPort/FPort: A telemetry protocol used by FrSky RC systems.
 
-## See Also {#see-also .skip}
+## Related Topics
 
 ### Parsing Binary Data
 
@@ -48,10 +48,6 @@ See:
 If your target is a flight controller running on an embedded system, [`#![no_std]`][book~rust-reference~no_std]↗{{hi:no_std}} is essential.
 
 See [[no_std | No Std]] and [[no_alloc | No Alloc]].
-
-## Related Topics {#related-topics .skip}
-
-FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

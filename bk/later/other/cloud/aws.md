@@ -41,15 +41,15 @@ See, for example:
 {{#include ../../../crates/other/examples/cloud/aws_sdk.rs:example}}
 ```
 
-## Related Topics {#related-topics .skip}
-
-FIXME
-
 ## References {#references .skip}
 
 - [AWS and Rust][blog~sustainability-with-rust]↗.
 - [AWS Rust SDK][aws-rust-sdk~website]↗{{hi:AWS}}.
 - [Serverless Rust][serverless-rust~website]↗{{hi:Serverless}} framework.
+
+## Related Topics {#related-topics .skip}
+
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -64,14 +64,14 @@ See also:
 
 Often requires specialized libraries or custom implementations using compute [[shaders | shaders]].
 
+## References
+
+- [gfx-rs.github.io][blog~gfx-rs]↗.
+
 ## Related Topics
 
 - Mathematics / Linear Algebra: [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} and [`glam`][c~glam~docs]↗{{hi:glam}} are used for vector and matrix math. Also consider [`cgmath`][c~cgmath~docs]↗{{hi:cgmath}} and [`euclid`][c~euclid~docs]↗{{hi:euclid}} for geometry. See [[mathematics | Mathematics]], [[linear_algebra | Linear Algebra]] and [[game_development | Game Development]].
 - [[simulation | Simulation]] and [[physics_engines | Physics Engines]].
-
-## See Also {#see-also .skip}
-
-- [gfx-rs.github.io][blog~gfx-rs]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

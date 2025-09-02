@@ -52,7 +52,7 @@ See [[development-tools_ffi | Development Tools: FFI]] and [[external-ffi-bindin
 
 {{#include macos.incl.md}}
 
-## Related Topics {#related-topics .skip}
+## Related Topics
 
 FIXME
 

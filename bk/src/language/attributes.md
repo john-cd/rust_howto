@@ -129,17 +129,17 @@ For complicated conditional compilation scenarios, consider using the `cfg-if` c
 {{#include ../../crates/language/examples/attributes/cfg_if.rs:example}}
 ```
 
+## References {#references .skip}
+
+- [Attributes reference][book~rust-reference~attributes]↗.
+- [The `#[doc]` attribute][book~rustdoc~doc-attribute]↗.
+
 ## Related Topics {#related-topics .skip}
 
 - [[derive | Derive]] for the `#[derive(...)]` attribute used to automatically derive common traits.
 - [[rust-patterns | Rust Patterns]].
 - [[testing | Testing]] for the `#[test]` attribute.
 - [[documentation | Documentation]] for the `#[doc(...)]` attribute.
-
-## References {#references .skip}
-
-- [Attributes reference][book~rust-reference~attributes]↗.
-- [The `#[doc]` attribute][book~rustdoc~doc-attribute]↗.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

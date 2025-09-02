@@ -43,10 +43,6 @@ By implementing the unsafe marker [traits][p~traits] [`std::marker::Send`][c~std
 {{#include ../../../crates/cats/concurrency/examples/send_sync/send_sync_impl.rs:example}}
 ```
 
-## Related Topics {#related-topics .skip}
-
-FIXME
-
 ## References {#references .skip}
 
 - [Understanding the `Send` trait][stackoverflow~understanding-the-send-trait]↗.
@@ -55,6 +51,10 @@ FIXME
 - [An unsafe tour of Rust's `Send` and `Sync`][blog~nyanpasu64-an-unsafe-tour-of-rust-s-send-and-sync]↗.
 - [Extensible Concurrency with the `Sync` and `Send` Traits][book~rust-extensible-concurrency-sync-and-send]↗.
 - [Rust: A unique perspective][blog~rust-a-unique-perspective-html]↗.
+
+## Related Topics {#related-topics .skip}
+
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -32,6 +32,10 @@ It's useful for creating the geometry for vector graphics, but you'd typically u
 {{#include ../../../crates/cats/gui/examples/2d_renderers/vger.rs:example}}
 ```
 
+## See Also {#see-also .skip}
+
+- [2D Rendering][are-we-game-yet?-2drendering~website]↗: Sprites, vectors, splines, hex grids and more.
+
 ## Related Topics {#related-topics .skip}
 
 - [[2d_renderers | 2D Renderers]].
@@ -41,10 +45,6 @@ It's useful for creating the geometry for vector graphics, but you'd typically u
 - [[rendering | Rendering]].
 - [[rendering_engines | Rendering Engines]].
 - [[svg_rendering | SVG Rendering]].
-
-## See Also {#see-also .skip}
-
-[2D Rendering][are-we-game-yet?-2drendering~website]↗: Sprites, vectors, splines, hex grids and more.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -53,7 +53,7 @@ Crates to deal with events independently of the main program flow, using techniq
 - [[web-programming_http-server | Web Programming HTTP Server]].
 - [[web-programming_websocket | Web Programming Websocket]].
 
-### Concurrency: `tokio::sync`, [`async-channel`][c~async-channel~docs]↗{{hi:async-channel}}
+### Concurrency: `tokio::sync`, `async-channel`
 
 - [[concurrency | Concurrency]].
 - [[concurrent_data_structures | Concurrent Data Structures]].

@@ -30,16 +30,16 @@ Here's a list of some common command-line utilities written in Rust:
 
 {{#include shells.incl.md}}
 
+## References
+
+- [My terminal became more Rusty][blog~rusty-terminal]↗.
+
 ## Related Topics
 
 - [[command-line-interface | Command Line Interface]].
 - [[external_commands | External Commands]].
 - [[links | Links]].
 - [[written_in_rust | Written in Rust]].
-
-## References
-
-- [My terminal became more Rusty][blog~rusty-terminal]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

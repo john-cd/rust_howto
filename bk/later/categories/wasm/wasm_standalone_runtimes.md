@@ -100,7 +100,7 @@ The [`wasmtime`][c~wasmtime~repo]↗ crate is a high-level API to expose the Was
 
 ## See Also {#see-also .skip}
 
-[rustwasm.github.io][rustwasm~website]↗{{hi:rustwasm}}.
+- [rustwasm.github.io][rustwasm~website]↗{{hi:rustwasm}}.
 
 ## Related Topics {#related-topics .skip}
 

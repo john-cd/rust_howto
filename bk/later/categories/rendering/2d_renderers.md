@@ -71,6 +71,10 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 {{#include ../../../crates/cats/gui/examples/2d_renderers/vello.rs:example}}
 ```
 
+## See Also {#see-also .skip}
+
+- [Are we Game yet? 2D Rendering][are-we-game-yet?-2drendering~website]↗: Sprites, vectors, splines, hex grids and more.
+
 ## Related Topics {#related-topics .skip}
 
 - [[color_handling | Color Handling]].
@@ -86,10 +90,6 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 - [[game-development | Game Development]].
 - [[game_engines | Game Engines]].
 - UI with 2D [Graphics][p~graphics]: see [[gui | GUI]].
-
-## See Also {#see-also .skip}
-
-- [Are we Game yet? 2D Rendering][are-we-game-yet?-2drendering~website]↗: Sprites, vectors, splines, hex grids and more.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

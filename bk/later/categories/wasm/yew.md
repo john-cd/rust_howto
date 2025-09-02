@@ -21,7 +21,6 @@ Key Features:
 ### See Also {#see-also .skip}
 
 - [What is Yew?][c~yew~website]↗.
-
 - [Example "Real World" app built with Rust + Yew + WebAssembly][c~yew~realworld~example]↗ [![yew~realworld~example][c~yew~realworld~example~badge]][c~yew~realworld~example].
 
 ## Related Topics {#related-topics .skip}

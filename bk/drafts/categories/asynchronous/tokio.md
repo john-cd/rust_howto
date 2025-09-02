@@ -50,7 +50,7 @@ Example from [tokio-graceful-shutdown][c~tokio-graceful-shutdown~docs]↗{{hi:to
 {{#include ../../../crates/cats/asynchronous/examples/tokio/tokio_graceful_shutdown.rs:example}}
 ```
 
-## Useful Links
+## Useful Links {#useful-links .skip}
 
 - [`tokio.rs`][c~tokio~website]↗.
 - [![tokio examples][c~tokio~examples~docs~badge]][c~tokio~examples~docs]{{hi:Tokio examples}}.

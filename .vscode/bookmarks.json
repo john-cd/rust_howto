@@ -104,7 +104,7 @@
 			"path": "bk/src/categories/data-structures/heapless.md",
 			"bookmarks": [
 				{
-					"line": 34,
+					"line": 38,
 					"column": 5,
 					"label": ""
 				}
@@ -129,7 +129,7 @@
 					"label": ""
 				},
 				{
-					"line": 56,
+					"line": 61,
 					"column": 7,
 					"label": ""
 				}
@@ -139,7 +139,7 @@
 			"path": "bk/src/categories/data-structures/stack_and_queue.md",
 			"bookmarks": [
 				{
-					"line": 30,
+					"line": 35,
 					"column": 16,
 					"label": ""
 				}
@@ -184,7 +184,7 @@
 					"label": ""
 				},
 				{
-					"line": 133,
+					"line": 139,
 					"column": 3,
 					"label": ""
 				}
@@ -227,11 +227,6 @@
 					"line": 20,
 					"column": 27,
 					"label": ""
-				},
-				{
-					"line": 42,
-					"column": 13,
-					"label": ""
 				}
 			]
 		},
@@ -249,7 +244,7 @@
 					"label": ""
 				},
 				{
-					"line": 80,
+					"line": 84,
 					"column": 9,
 					"label": ""
 				}
@@ -259,7 +254,7 @@
 			"path": "bk/src/categories/mathematics/complex_numbers.md",
 			"bookmarks": [
 				{
-					"line": 59,
+					"line": 63,
 					"column": 9,
 					"label": ""
 				}
@@ -279,7 +274,7 @@
 			"path": "bk/src/categories/mathematics/linear_algebra.md",
 			"bookmarks": [
 				{
-					"line": 110,
+					"line": 114,
 					"column": 19,
 					"label": ""
 				}
@@ -289,7 +284,7 @@
 			"path": "bk/src/categories/mathematics/statistics.md",
 			"bookmarks": [
 				{
-					"line": 46,
+					"line": 50,
 					"column": 14,
 					"label": ""
 				}
@@ -299,7 +294,7 @@
 			"path": "bk/src/categories/mathematics/trigonometry.md",
 			"bookmarks": [
 				{
-					"line": 40,
+					"line": 44,
 					"column": 10,
 					"label": ""
 				}
@@ -319,7 +314,12 @@
 			"path": "bk/src/contributing/api_documentation.md",
 			"bookmarks": [
 				{
-					"line": 60,
+					"line": 56,
+					"column": 11,
+					"label": ""
+				},
+				{
+					"line": 64,
 					"column": 20,
 					"label": ""
 				}
@@ -329,7 +329,12 @@
 			"path": "bk/src/contributing/dev_container_docker.md",
 			"bookmarks": [
 				{
-					"line": 86,
+					"line": 82,
+					"column": 5,
+					"label": ""
+				},
+				{
+					"line": 90,
 					"column": 15,
 					"label": ""
 				}
@@ -339,7 +344,12 @@
 			"path": "bk/src/contributing/dev_environment_setup.md",
 			"bookmarks": [
 				{
-					"line": 61,
+					"line": 57,
+					"column": 5,
+					"label": ""
+				},
+				{
+					"line": 65,
 					"column": 13,
 					"label": ""
 				}
@@ -349,7 +359,12 @@
 			"path": "bk/src/contributing/development_editing.md",
 			"bookmarks": [
 				{
-					"line": 24,
+					"line": 20,
+					"column": 15,
+					"label": ""
+				},
+				{
+					"line": 28,
 					"column": 14,
 					"label": ""
 				}
@@ -429,7 +444,12 @@
 			"path": "bk/src/language/constants_and_statics.md",
 			"bookmarks": [
 				{
-					"line": 56,
+					"line": 51,
+					"column": 26,
+					"label": ""
+				},
+				{
+					"line": 60,
 					"column": 13,
 					"label": ""
 				}
@@ -577,6 +597,11 @@
 					"line": 64,
 					"column": 12,
 					"label": ""
+				},
+				{
+					"line": 87,
+					"column": 14,
+					"label": ""
 				}
 			]
 		},
@@ -666,6 +691,126 @@
 				{
 					"line": 28,
 					"column": 7,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/later_crates/cats/science/Cargo.toml",
+			"bookmarks": [
+				{
+					"line": 29,
+					"column": 4,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/code_organization/dependencies.md",
+			"bookmarks": [
+				{
+					"line": 49,
+					"column": 5,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/code_organization/naming_conventions.md",
+			"bookmarks": [
+				{
+					"line": 87,
+					"column": 24,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/code_organization/use_keyword.md",
+			"bookmarks": [
+				{
+					"line": 65,
+					"column": 6,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/code_organization/visibility.md",
+			"bookmarks": [
+				{
+					"line": 84,
+					"column": 10,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/contributing/preprocessors.md",
+			"bookmarks": [
+				{
+					"line": 27,
+					"column": 9,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/contributing/publication.md",
+			"bookmarks": [
+				{
+					"line": 27,
+					"column": 5,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/contributing/repo_structure.md",
+			"bookmarks": [
+				{
+					"line": 91,
+					"column": 13,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/contributing/topics_of_interest.md",
+			"bookmarks": [
+				{
+					"line": 66,
+					"column": 7,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/language/ownership_borrowing.md",
+			"bookmarks": [
+				{
+					"line": 151,
+					"column": 17,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/language/slices.md",
+			"bookmarks": [
+				{
+					"line": 67,
+					"column": 15,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/links/example_code.md",
+			"bookmarks": [
+				{
+					"line": 65,
+					"column": 6,
 					"label": ""
 				}
 			]

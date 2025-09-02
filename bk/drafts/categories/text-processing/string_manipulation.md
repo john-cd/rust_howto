@@ -39,7 +39,7 @@ The [`indoc`][c~indoc~docs]↗{{hi:indoc}} crate exports five additional macros 
 {{#include ../../../crates/cats/text_processing/examples/string_manipulation/indoc.rs:example}}
 ```
 
-## Related Topics
+## Related Topics {#related-topics .skip}
 
 - [[strings | Strings]].
 

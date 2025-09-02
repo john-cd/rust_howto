@@ -45,8 +45,6 @@ The following example implements a custom order for software versions:
 - [[sorting | Sorting]].
 - [[traits | Traits]].
 
-## References {#references .skip}
-
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 

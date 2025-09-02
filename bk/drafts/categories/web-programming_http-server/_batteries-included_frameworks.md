@@ -20,9 +20,9 @@
 
 [Rust on Nails][rust-on-nails~website]↗{{hi:Rust on Nails}}.
 
-## See Also {#see-also .skip}
+## References {#references .skip}
 
-[Building a SaaS with Rust and Next.js][blog~building-a-saas-with-rust-and-next-js]↗.
+- [Building a SaaS with Rust and Next.js][blog~building-a-saas-with-rust-and-next-js]↗.
 
 ## Related Topics {#related-topics .skip}
 

@@ -6,7 +6,7 @@
 
 {{#include aerospace.incl.md}}
 
-## See Also {#see-also .skip}
+## Related Topics
 
 ### Code Verification
 
@@ -50,10 +50,6 @@ See [[hardware-support | Hardware Support]].
 - Property Testing: [`proptest`][c~proptest~docs]↗{{hi:proptest}} for a specific property.
 
 See [[testing | Testing]].
-
-## Related Topics {#related-topics .skip}
-
-FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

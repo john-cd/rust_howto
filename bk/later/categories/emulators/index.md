@@ -52,7 +52,7 @@ Consider [`cpal`][c~cpal~docs]↗{{hi:cpal}}, a crate for cross-platform audio i
 
 See [[development-tools_debugging | Development Tools: Debugging]].
 
-## Related Topics {#related-topics .skip}
+## Related Topics
 
 FIXME
 

@@ -77,6 +77,11 @@ Ractor is a Rust crate providing a simple, lightweight actor framework. It facil
 {{#include ../../../crates/cats/concurrency/examples/actors/actix.rs:example}}
 ```
 
+## References {#references .skip}
+
+- [Actors with `Tokio`][blog~actors-with-tokio]↗{{hi:Actors}}.
+- [`ractor` blog][ractor blog][c~ractor~blog]↗.
+
 ## Related Topics {#related-topics .skip}
 
 - [[_actix | Actix]] Web.
@@ -85,11 +90,6 @@ Ractor is a Rust crate providing a simple, lightweight actor framework. It facil
 - [[network-programming | Network Programming]].
 - [[web-programming | Web Programming]].
 - [[web-programming_http-server | Web Programming: HTTP Server]].
-
-## References
-
-- [Actors with `Tokio`][blog~actors-with-tokio]↗{{hi:Actors}}.
-- [`ractor` blog][ractor blog][c~ractor~blog]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -31,15 +31,15 @@ Techniques to help create command line interfaces{{hi:Command-line interface}}, 
 
 {{#include user_interaction.incl.md}}
 
-## Related Topics
-
-- [[command-line-utilities | Command Line Utilities]].
-- [[internationalization | Internationalization]].
-
 ## References
 
 - [Command Line Applications in Rust (book)][book~rust-cli]↗.
 - Look to the [Code][book~command-line-rust~repo]↗ for `Command-Line Rust` (O'Reilly, 2022, ISBN 9781098109417).
+
+## Related Topics
+
+- [[command-line-utilities | Command Line Utilities]].
+- [[internationalization | Internationalization]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

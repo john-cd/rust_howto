@@ -145,13 +145,13 @@ The same applies to mutable references:
 {{#include ../../crates/language/examples/ownership_borrowing/borrowing_function_mutable.rs:example}}
 ```
 
-## Related Topics {#related-topics .skip}
-
-- [[lifetimes | Lifetimes]].
-
 ## References {#references .skip}
 
 - [Rust Re-borrowing and Memory Safety][blog~rust-re-borrowing-and-memory-safety]↗.
+
+## Related Topics {#related-topics .skip}
+
+- [[lifetimes | Lifetimes]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

@@ -67,6 +67,11 @@ See [[_graphql | GraphQL]].
 
 See [[web-programming_websocket | Web Programming: Websocket]].
 
+## References
+
+- [Are we Web yet?][are-we-web-yet?~website]↗.
+- [Building a crawler in Rust][blog~building-a-crawler-in-rust]↗: design and associated types.
+
 ## Related Topics
 
 | Topic | Rust Crates (Examples) | Notes |
@@ -76,11 +81,6 @@ See [[web-programming_websocket | Web Programming: Websocket]].
 | [[network-programming | Networking]] (Low-Level) | [`tokio::net`][c~tokio::net~docs]↗{{hi:tokio::net}}, [`std::net`][c~std::net~docs]↗{{hi:std::net}} | These modules provide low-level networking primitives. Often used by higher-level frameworks. |
 | [[serde | Serialization/Deserialization]] (JSON, etc.) | [`serde`][c~serde~docs]↗{{hi:serde}}, [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}}, [`serde_yml`][c~serde_yml~docs]↗{{hi:serde_yml}} | [`serde`][c~serde~docs]↗{{hi:serde}} is a powerful framework for serializing and deserializing data, often used with JSON and other formats. |
 | [[development-tools_testing | Testing]] | Built-in testing framework, [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} for integration testing | Rust has a built-in testing framework, and [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} can be used for integration testing of web services. |
-
-## References
-
-- [Are we Web yet?][are-we-web-yet?~website]↗.
-- [Building a crawler in Rust][blog~building-a-crawler-in-rust]↗: design and associated types.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

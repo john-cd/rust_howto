@@ -34,7 +34,7 @@ Most HTTP client crates support asynchronous requests using [`async`][keyword~as
 
 {{#include download.incl.md}}
 
-## Related Topics {#related-topics .skip}
+## Related Topics
 
 | Topic | Rust Crates (Examples) | Notes |
 |---|---|---|

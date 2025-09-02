@@ -47,7 +47,7 @@ See [[data-structures | Data Structures]].
 
 See [[encoding | Encoding]] and especially [[complex_encoding | Complex Encoding]].
 
-## Related Topics {#related-topics .skip}
+## Related Topics
 
 FIXME
 

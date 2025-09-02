@@ -43,13 +43,13 @@ The [`flume`][c~flume~docs]↗{{hi:flume}} crate is a library that provides mult
 {{#include ../../../crates/cats/concurrency/examples/message_passing/flume.rs:example}}
 ```
 
+## See Also {#see-also .skip}
+
+- [Message passing (rust book)][book~rust~message-passing]↗{{hi:Message passing}}.
+
 ## Related Topics {#related-topics .skip}
 
 FIXME
-
-## See Also {#see-also .skip}
-
-[Message passing (rust book)][book~rust~message-passing]↗{{hi:Message passing}}.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

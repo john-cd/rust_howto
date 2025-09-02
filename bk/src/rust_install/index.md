@@ -2,7 +2,7 @@
 
 {{#include index.incl.md}}
 
-## Install Rust and Create a First Project {#rust-install}
+## Install Rust and Create a First Project
 
 First, install [Rustup][rustup~website]↗{{hi:rustup}}. On Linux, macOS, or other Unix-like systems (including Windows Subsystem for Linux - WSL), open your terminal and run the following command:
 
@@ -76,11 +76,11 @@ git commit -m "commit message"
 
 Review the [git][git~website]↗ manual for more commands.
 
-## References {#references .skip}
+## References
 
 - [Install Rust][rust-lang~install-rust]↗{{hi:Rust installation}}.
 
-## Related Topics {#related-topics .skip}
+## Related Topics
 
 - [[cargo |`cargo`]].
 - [[entrypoint | Entrypoints]].

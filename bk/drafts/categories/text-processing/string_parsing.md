@@ -12,7 +12,7 @@ Creates a custom struct `RGB` and implements the [`FromStr`][c~std::str::FromStr
 {{#include ../../../crates/cats/text_processing/examples/string_parsing/from_str.rs:example}}
 ```
 
-## Related Topics
+## Related Topics {#related-topics .skip}
 
 - [[parsing | Parsing]].
   - [[parse | Date and Time Parsing]].

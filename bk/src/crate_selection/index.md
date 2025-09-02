@@ -1,6 +1,6 @@
 # Crate Selection
 
-## Choose Dependencies for your Project {#choose-dependencies}
+## Choose Dependencies for your Project
 
 The Rust standard library is fairly minimal. Besides providing basic data types, the standard library is largely concerned with abstracting over differences between common platforms, e.g., Windows and Unix derivatives.
 
@@ -8,7 +8,7 @@ Instead, major functionality like regular expressions, random numbers, cryptogra
 
 A common complaint from new Rust developers is that they don't know which crates they ought to use.
 
-### Use this Book to Select Crates for your Project {#crates}
+### Use this Book to Select Crates for your Project
 
 It is the main purpose of this book to provide expansive coverage of "key" or "foundational" crates - those crates that make up the most common programming tasks.
 
@@ -20,7 +20,7 @@ It is the main purpose of this book to provide expansive coverage of "key" or "f
 1. Use this book's [[links | links]] to Rust documentation, books, videos, cheatsheets, etc.
 1. The [[example_code | Example Code and Templates]] chapter provides lists of popular Rust repositories.
 
-### Crate Recommendations {#crate-recommendations}
+### Crate Recommendations
 
 You may also use the following sites for crate recommendations:
 
@@ -34,7 +34,7 @@ You may also use the following sites for crate recommendations:
 
 You can also search or post on Rust chat servers and forums - see [[blogs | Blogs and Forums]].
 
-### Additional Lists & Reviews {#lists-reviews}
+### Additional Lists & Reviews
 
 - [Awesome Rust (libhunt.com)][rust-libhunt~website]↗.
 - [Top Rust Libraries 2025][libs.tech-rust~website]↗.
@@ -49,7 +49,7 @@ You may also consult older resources, such as:
 - [Rust Starter Pack][rust-starter-pack~website]↗{{hi:Rust starter pack}}.
 - [![stdx][c~stdx~repo~badge]][c~stdx~repo]↗{{hi:stdx}}.
 
-## Related Topics {#related-topics .skip}
+## Related Topics
 
 - [[state_of_the_art | State of the Rust Ecosystem]].
 

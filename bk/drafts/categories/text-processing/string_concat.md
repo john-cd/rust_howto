@@ -16,7 +16,7 @@ String concatenation is the operation of joining two or more strings together en
 {{#include ../../../crates/cats/text_processing/examples/string_concat/string_concat.rs:example}}
 ```
 
-## References
+## References {#references .skip}
 
 - [String concatenation benchmark][concat~benchmark~repo]↗.
 

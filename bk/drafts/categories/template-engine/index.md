@@ -51,7 +51,7 @@ The best template engine for your project depends on your specific requirements:
 
 {{#include tinytemplate.incl.md}}
 
-## Related Topics {#related-topics .skip}
+## Related Topics
 
 FIXME
 

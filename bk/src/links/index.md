@@ -2,7 +2,7 @@
 
 This section provides a large number of links to Rust resources.
 
-## Key Websites {#key-websites}
+## Key Websites
 
 |||
 |---|---|
@@ -17,39 +17,39 @@ This section provides a large number of links to Rust resources.
 | [`github.com`][github~website]↗ | The home of most Rust code repositories. |
 | The [Rust Foundation][rustfoundation.org~website]↗ | The non-profit stewarding the Rust programming language. |
 
-## Rust Cheatsheets {#rust-cheatsheets}
+## Rust Cheatsheets
 
 {{#include rust_cheatsheets.incl.md}}
 
-## Learning Resources {#learning-resources}
+## Learning Resources
 
 {{#include learning.incl.md}}
 
-## Example Code {#example-code}
+## Example Code
 
 {{#include example_code.incl.md}}
 
-## Books {#books}
+## Books
 
 {{#include books.incl.md}}
 
-## Blogs {#blogs}
+## Blogs
 
 {{#include blogs.incl.md}}
 
-## Videos, Podcasts {#videos-podcasts}
+## Videos, Podcasts
 
 {{#include videos.incl.md}}
 
-## Meetings & Events {#meetings-events}
+## Meetings & Events
 
 {{#include meetings.incl.md}}
 
-## Companies & Jobs {#companies-jobs}
+## Companies & Jobs
 
 {{#include companies.incl.md}}
 
-## Related Topics {#related-topics .skip}
+## Related Topics
 
 - [[crate_selection | Crate Selection]].
 

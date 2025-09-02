@@ -6,6 +6,10 @@ The process of confirming identities.
 
 {{#include basic_authentication.incl.md}}
 
+## References
+
+The [Copenhagen Book][book~copenhagen]↗ provides a general guideline on implementing Auth in web applications.
+
 ## Related Topics
 
 | Topic | Rust Crates | Notes |
@@ -15,10 +19,6 @@ The process of confirming identities.
 | OAuth 2.0 | [`oauth2`][c~oauth2~docs]↗{{hi:oauth2}} | |
 | Web Authentication | Often tied to web frameworks like [`actix-web`][c~actix-web~docs]↗{{hi:actix-web}}, [`warp`][c~warp~docs]↗{{hi:warp}}, etc. No single dominant crate. | See [[web-programming | Web Programming]] and [[web-programming_http-server | Web Programming HTTP Server]]. |
 | [[cryptography | Cryptographic]] Primitives | [`ring`][c~ring~docs]↗{{hi:ring}}, [`rust-crypto`][c~rust-crypto~docs]↗{{hi:rust-crypto}} (often abstracted by higher-level crates). | See [[encryption | Encryption]], [[signature | Signatures]], [[certificates | Certificates]] and [[cryptography_utilities | Cryptography Utilities]] |
-
-## References
-
-The [Copenhagen Book][book~copenhagen]↗ provides a general guideline on implementing Auth in web applications.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

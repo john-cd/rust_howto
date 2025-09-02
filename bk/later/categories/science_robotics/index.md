@@ -69,19 +69,16 @@ See also the [[simulation | Simulation]], [[aerospace_simulation | Aerospace Sim
 
 See also the numerical computation ([[additional_numeric_types | Additional Numeric Types]], [[linear_algebra | Linear Algebra]]), [[data-processing | data]] analysis sections.
 
+## References
+
+- [![robotics.rs][robotics-rs~website~badge]][robotics-rs~website] [robotics.rs][robotics-rs~website]↗.
+- [Robotics (lib.rs)][robotics~lib.rs]↗ [![cat~science::robotics][cat~science::robotics~badge]][cat~science::robotics]{{hi:Robotics}}
+- [Why rust for robots][why-rust-for-robots~website]↗.
+- [Linux embracing Rust will boost robotics community][blog~linux-embracing-rust-will-boost-robotics-community]↗.
+
 ## Related Topics
 
 Leverage existing robotics libraries (often written in C++, Python, or other languages) by creating Rust bindings using [[development-tools_ffi | FFI]]. Also utilize Rust's [[concurrency | concurrency]] crates to build robotics-specific tools.
-
-## See Also {#see-also .skip}
-
-[![robotics.rs][robotics-rs~website~badge]][robotics-rs~website] [robotics.rs][robotics-rs~website]↗..
-
-[Robotics (lib.rs)][robotics~lib.rs]↗ [![cat~science::robotics][cat~science::robotics~badge]][cat~science::robotics]{{hi:Robotics}}
-
-[Why rust for robots][why-rust-for-robots~website]↗.
-
-[Linux embracing Rust will boost robotics community][blog~linux-embracing-rust-will-boost-robotics-community]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

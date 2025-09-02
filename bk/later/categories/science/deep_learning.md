@@ -22,14 +22,14 @@
 
 Burn is a comprehensive dynamic Deep Learning Framework built using Rust with flexibility, compute efficiency and portability as its primary goals.
 
+## References {#references .skip}
+
+- [Neural Networks][are-we-learning-yet?-neural-networks~website]↗.
+
 ## Related Topics {#related-topics .skip}
 
 - [[computer-vision | Computer Vision]].
 - [[linear_algebra | Linear Algebra]].
-
-## References {#references .skip}
-
-- [Neural Networks][are-we-learning-yet?-neural-networks~website]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
