@@ -12,8 +12,6 @@ The [`std::fs::Metadata::modified`][c~std::fs::Metadata::modified~docs]↗{{hi:s
 
 [`std::time::Duration::as_secs`][c~std::time::Duration::as_secs~docs]↗{{hi:std::time::Duration::as_secs}} converts the time to seconds and compared with 24 hours (24 *60* 60 seconds). [`std::fs::Metadata::is_file`][c~std::fs::Metadata::is_file~docs]↗{{hi:std::fs::Metadata::is_file}} filters out directories.
 
-
-
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/modified.rs:example}}
 ```

@@ -75,4 +75,6 @@ FIXME.
 
 <div class="hidden">
 [review in depth](https://github.com/john-cd/rust_howto/issues/1339)
+
+cover https://crates.io/crates/async-fs
 </div>
