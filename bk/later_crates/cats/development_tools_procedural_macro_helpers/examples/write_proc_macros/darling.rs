@@ -53,7 +53,7 @@
 
 //         impl MyMacro for MyStruct {
 //             pub fn hello() {
-//                 println!("Hello, {}!", #name);
+//                 println!("Hello, {#name}!");
 //             }
 //         }
 //     };

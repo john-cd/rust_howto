@@ -16,7 +16,7 @@ where
 {
     let dir_path = dir_path.as_ref();
     if !dir_path.is_dir() {
-        bail!("{:?} should be a folder and exist on disk!", dir_path);
+        bail!("{dir_path:?} should be a folder and exist on disk!");
     }
     Ok(dir_path.to_path_buf())
 }

@@ -39,16 +39,16 @@
 
 //     // Perform some data manipulation.
 //     let df_filtered = df.filter(&df["some_column"].gt_eq(100))?;
-//     println!("Filtered DataFrame:\n{}", df_filtered);
+//     println!("Filtered DataFrame:\n{df_filtered}");
 
 //     let df_selected = df_filtered.select(&["some_column",
-// "another_column"])?;     println!("Selected Columns:\n{}", df_selected);
+// "another_column"])?;     println!("Selected Columns:\n{df_selected}");
 
 //     // Group by a column and aggregate.
 //     let df_grouped = df_selected
 //         .groupby("some_column")?
 //         .agg(&[("another_column", &["sum", "mean"])])?;
-//     println!("Grouped DataFrame:\n{}", df_grouped);
+//     println!("Grouped DataFrame:\n{df_grouped}");
 
 //     Ok(())
 // }

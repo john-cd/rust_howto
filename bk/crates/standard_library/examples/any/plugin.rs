@@ -242,9 +242,9 @@
 //     }
 
 //     fn log(&mut self, message: &str) {
-//         println!("Host Log: {}", message);
+//         println!("Host Log: {message}");
 //         let mut app_state = self.app_state.lock().unwrap();
-//         app_state.messages.push(format!("[LOG] {}", message));
+//         app_state.messages.push(format!("[LOG] {message}"));
 //     }
 // }
 
@@ -326,7 +326,7 @@
 //     // --- Host checks the state after plugins run ---
 //     println!("\n--- Host checking state after plugins ---");
 //     let current_counter = app_state.lock().unwrap().counter;
-//     println!("Final app counter: {}", current_counter);
+//     println!("Final app counter: {current_counter}");
 
 //     let messages = app_state.lock().unwrap().messages.clone();
 //     println!("App messages: {:?}", messages);
@@ -340,8 +340,8 @@
 //         // `HostPluginContext` and before any plugins ran.
 //         // To get "Plugin Says Hello", the host would need to know to look
 // for         // it *after* MyStringPlugin has registered it.
-//         println!("Host retrieved String from context: \"{}\"",
-// plugin_message);     }
+//         println!("Host retrieved String from context: \"{plugin_message}\""
+// );     }
 
 //     if let Some(other_plugin_message) =
 //         plugin_manager.get_registered_service::<CustomPluginService>()

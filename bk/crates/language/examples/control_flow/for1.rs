@@ -33,7 +33,7 @@ fn main() {
         // Implicit call to `into_iter()`.
         println!("the value is: {element}");
     }
-    // ERROR: value borrowed here after move: println!("b: {:?}", b);
+    // ERROR: value borrowed here after move: println!("b: {b:?}");
 
     // We can instead iterate by immutable reference with `iter()`.
     // This is the most common way to iterate over a collection,

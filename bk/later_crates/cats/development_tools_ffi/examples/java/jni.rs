@@ -58,7 +58,7 @@
 //     // method returns a `Result` that needs to be handled.
 //     let name_str = env.get_string(&name).expect("Invalid UTF-8");
 //     // Formats a greeting message using the input name.
-//     let hello = format!("Hello, {:?}!", name_str);
+//     let hello = format!("Hello, {name_str:?}!");
 
 //     // Creates a new JString object from the Rust String.
 //     env.new_string(&hello)

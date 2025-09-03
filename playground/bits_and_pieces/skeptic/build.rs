@@ -31,7 +31,7 @@ fn main() -> Result<()> {
     // Check for the existence of Markdown files.
     let markdown_path = root_path.join("src/");
     if !Path::new(&markdown_path).exists() {
-        let msg = format!("The folder {:?} does not exist.", markdown_path);
+        let msg = format!("The folder {markdown_path:?} does not exist.");
         println!("cargo:warning=ERROR: {msg}");
         bail!("{msg}");
     }
@@ -68,8 +68,7 @@ fn main() -> Result<()> {
         .collect::<Vec<_>>();
 
     println!(
-        "cargo:warning=Info: building the skeptic tests for the book under root {:?}",
-        root_path
+        "cargo:warning=Info: building the skeptic tests for the book under root {root_path:?}"
     );
     // `skeptic` must run from `build.rs` - it needs the OUT_DIR env
     // variable... thus this code cannot be moved to a separate

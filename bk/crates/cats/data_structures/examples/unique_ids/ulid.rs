@@ -9,7 +9,7 @@ fn main() {
     // It automatically captures the current system time for the timestamp
     // portion and fills the rest with cryptographically secure random data:
     let new_ulid = Ulid::new();
-    println!("Generated ULID: {}", new_ulid);
+    println!("Generated ULID: {new_ulid}");
 
     // You can also get its components:
     println!("Timestamp: {}", new_ulid.timestamp_ms());
@@ -22,11 +22,11 @@ fn main() {
     match Ulid::from_str(ulid_str) {
         // Or use `parse()`.
         Ok(parsed_ulid) => {
-            println!("Successfully parsed ULID: {}", parsed_ulid);
+            println!("Successfully parsed ULID: {parsed_ulid}");
             println!("Parsed timestamp: {:?} ms", parsed_ulid.datetime());
         }
         Err(e) => {
-            println!("Failed to parse ULID: {}", e);
+            println!("Failed to parse ULID: {e}");
         }
     }
 }

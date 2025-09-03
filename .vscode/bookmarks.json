@@ -774,6 +774,21 @@
 					"label": ""
 				}
 			]
+		},
+		{
+			"path": "bk/crates/language/examples/macros/macro_by_example_metavariables.rs",
+			"bookmarks": [
+				{
+					"line": 5,
+					"column": 12,
+					"label": ""
+				},
+				{
+					"line": 9,
+					"column": 14,
+					"label": ""
+				}
+			]
 		}
 	]
 }

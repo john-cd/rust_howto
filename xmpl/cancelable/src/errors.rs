@@ -10,7 +10,7 @@ pub enum TaskError {
 impl Display for TaskError {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), std::fmt::Error> {
         // Just call `Debug`.
-        write!(f, "{:?}", self)?;
+        write!(f, "{self:?}")?;
         Ok(())
     }
 }
