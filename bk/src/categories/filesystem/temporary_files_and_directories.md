@@ -1,0 +1,30 @@
+# Temporary Files and Directories
+
+{{#include temporary_files_and_directories.incl.md}}
+
+## Create Temporary Files or Temporary Directories {#temporary-files-or-directories}
+
+[![tempfile~website][c~tempfile~website~badge]][c~tempfile~website] [![tempfile][c~tempfile~docs~badge]][c~tempfile~docs] [![tempfile~crates.io][c~tempfile~crates.io~badge]][c~tempfile~crates.io] [![tempfile~repo][c~tempfile~repo~badge]][c~tempfile~repo] [![tempfile~lib.rs][c~tempfile~lib.rs~badge]][c~tempfile~lib.rs]{{hi:tempfile}}{{hi:Filesystem}}{{hi:Tempfile}}
+
+The following example demonstrates the use of the [`tempfile`][c~tempfile~docs]↗ crate for creating temporary files and directories that are automatically deleted when no longer referenced.
+
+Note that temporary files and directories have subtle security and resource leaking risks. Caveat lector!
+
+```rust,editable
+{{#include ../../../crates/cats/filesystem/examples/tempfile/tempfile.rs:example}}
+```
+
+### Other Options {#other-options}
+
+- The [`tempdir`][c~tempdir~docs]↗{{hi:tempdir}} crate is being merged into [`tempfile`][c~tempfile~docs]↗{{hi:tempfile}}.
+
+## Related Topics {#related-topics .skip}
+
+- [[read_write | Reading and Writing Files]].
+- [[paths | Paths]].
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+</div>

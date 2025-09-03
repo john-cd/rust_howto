@@ -34,24 +34,24 @@
 			"path": "bk/src/categories/algorithms/index.md",
 			"bookmarks": [
 				{
-					"line": 44,
+					"line": 45,
 					"column": 5,
 					"label": ""
 				},
 				{
-					"line": 52,
+					"line": 53,
 					"column": 8,
 					"label": ""
 				},
 				{
-					"line": 59,
+					"line": 60,
 					"column": 14,
 					"label": ""
 				}
 			]
 		},
 		{
-			"path": "bk/src/categories/algorithms/randomness.md",
+			"path": "bk/src/categories/algorithms/random_value_generation.md",
 			"bookmarks": [
 				{
 					"line": 9,
@@ -81,7 +81,7 @@
 			]
 		},
 		{
-			"path": "bk/src/categories/data-structures/binaryheap.md",
+			"path": "bk/src/categories/data-structures/binary_heaps.md",
 			"bookmarks": [
 				{
 					"line": 8,
@@ -101,7 +101,7 @@
 			]
 		},
 		{
-			"path": "bk/src/categories/data-structures/heapless.md",
+			"path": "bk/src/categories/data-structures/heapless_data_structures.md",
 			"bookmarks": [
 				{
 					"line": 38,
@@ -114,14 +114,14 @@
 			"path": "bk/src/categories/data-structures/index.md",
 			"bookmarks": [
 				{
-					"line": 14,
+					"line": 20,
 					"column": 14,
 					"label": ""
 				}
 			]
 		},
 		{
-			"path": "bk/src/categories/data-structures/stack_allocated_arrays.md",
+			"path": "bk/src/categories/data-structures/stack-allocated_arrays.md",
 			"bookmarks": [
 				{
 					"line": 15,
@@ -136,7 +136,7 @@
 			]
 		},
 		{
-			"path": "bk/src/categories/data-structures/stack_and_queue.md",
+			"path": "bk/src/categories/data-structures/stacks_and_queues.md",
 			"bookmarks": [
 				{
 					"line": 35,
@@ -211,7 +211,7 @@
 			]
 		},
 		{
-			"path": "bk/src/categories/filesystem/user_directories.md",
+			"path": "bk/src/categories/filesystem/user_directories_and_preferred_applications.md",
 			"bookmarks": [
 				{
 					"line": 4,
@@ -264,6 +264,26 @@
 			"path": "bk/src/categories/mathematics/index.md",
 			"bookmarks": [
 				{
+					"line": 61,
+					"column": 14,
+					"label": ""
+				},
+				{
+					"line": 72,
+					"column": 11,
+					"label": ""
+				},
+				{
+					"line": 77,
+					"column": 26,
+					"label": ""
+				},
+				{
+					"line": 83,
+					"column": 22,
+					"label": ""
+				},
+				{
 					"line": 114,
 					"column": 13,
 					"label": ""
@@ -301,7 +321,7 @@
 			]
 		},
 		{
-			"path": "bk/src/code_organization/index.md",
+			"path": "bk/src/code-organization/index.md",
 			"bookmarks": [
 				{
 					"line": 48,
@@ -311,7 +331,7 @@
 			]
 		},
 		{
-			"path": "bk/src/contributing/api_documentation.md",
+			"path": "bk/src/contributing/documentation_generation.md",
 			"bookmarks": [
 				{
 					"line": 56,
@@ -326,7 +346,7 @@
 			]
 		},
 		{
-			"path": "bk/src/contributing/dev_container_docker.md",
+			"path": "bk/src/contributing/dev_container_and_docker.md",
 			"bookmarks": [
 				{
 					"line": 82,
@@ -341,7 +361,7 @@
 			]
 		},
 		{
-			"path": "bk/src/contributing/dev_environment_setup.md",
+			"path": "bk/src/contributing/development_environment_setup.md",
 			"bookmarks": [
 				{
 					"line": 57,
@@ -356,7 +376,7 @@
 			]
 		},
 		{
-			"path": "bk/src/contributing/development_editing.md",
+			"path": "bk/src/contributing/book_editing_and_example_code_development.md",
 			"bookmarks": [
 				{
 					"line": 20,
@@ -381,7 +401,7 @@
 			]
 		},
 		{
-			"path": "bk/src/crate_selection/index.md",
+			"path": "bk/src/crate-selection/index.md",
 			"bookmarks": [
 				{
 					"line": 8,
@@ -391,17 +411,17 @@
 			]
 		},
 		{
-			"path": "bk/src/crate_selection/state_of_the_art.md",
+			"path": "bk/src/crate-selection/current_state_of_the_art.md",
 			"bookmarks": [
 				{
-					"line": 2,
+					"line": 4,
 					"column": 7,
 					"label": ""
 				}
 			]
 		},
 		{
-			"path": "bk/src/intro/how_to_read_this_book.md",
+			"path": "bk/src/introduction/how_to_read_this_book.md",
 			"bookmarks": [
 				{
 					"line": 0,
@@ -411,7 +431,7 @@
 			]
 		},
 		{
-			"path": "bk/src/intro/index.md",
+			"path": "bk/src/introduction/index.md",
 			"bookmarks": [
 				{
 					"line": 17,
@@ -476,7 +496,7 @@
 			]
 		},
 		{
-			"path": "bk/src/language/trait_objects.md",
+			"path": "bk/src/language/trait_objects_and_dynamic_dispatch.md",
 			"bookmarks": [
 				{
 					"line": 171,
@@ -486,7 +506,7 @@
 			]
 		},
 		{
-			"path": "bk/src/links/blogs.md",
+			"path": "bk/src/links/blogs_and_forums.md",
 			"bookmarks": [
 				{
 					"line": 6,
@@ -516,7 +536,7 @@
 			]
 		},
 		{
-			"path": "bk/src/links/learning.md",
+			"path": "bk/src/links/learning_rust.md",
 			"bookmarks": [
 				{
 					"line": 4,
@@ -536,7 +556,7 @@
 			]
 		},
 		{
-			"path": "bk/src/links/videos.md",
+			"path": "bk/src/links/videos_and_podcasts.md",
 			"bookmarks": [
 				{
 					"line": 6,
@@ -546,7 +566,7 @@
 			]
 		},
 		{
-			"path": "bk/src/standard_library/dynamic_typing.md",
+			"path": "bk/src/standard-library/dynamic_typing.md",
 			"bookmarks": [
 				{
 					"line": 37,
@@ -556,7 +576,7 @@
 			]
 		},
 		{
-			"path": "bk/src/standard_library/index.md",
+			"path": "bk/src/standard-library/index.md",
 			"bookmarks": [
 				{
 					"line": 135,
@@ -566,22 +586,22 @@
 			]
 		},
 		{
-			"path": "bk/src/standard_library/interior_mutability.md",
+			"path": "bk/src/standard-library/interior_mutability.md",
 			"bookmarks": [
 				{
-					"line": 8,
+					"line": 10,
 					"column": 9,
 					"label": ""
 				},
 				{
-					"line": 54,
+					"line": 56,
 					"column": 22,
 					"label": ""
 				}
 			]
 		},
 		{
-			"path": "bk/src/standard_library/reference_counting.md",
+			"path": "bk/src/standard-library/reference_counting.md",
 			"bookmarks": [
 				{
 					"line": 24,
@@ -591,7 +611,7 @@
 			]
 		},
 		{
-			"path": "bk/src/standard_library/result.md",
+			"path": "bk/src/standard-library/recoverable_error_handling.md",
 			"bookmarks": [
 				{
 					"line": 64,
@@ -606,7 +626,7 @@
 			]
 		},
 		{
-			"path": "bk/src/standard_library/smart_pointers.md",
+			"path": "bk/src/standard-library/smart_pointers.md",
 			"bookmarks": [
 				{
 					"line": 6,
@@ -706,7 +726,7 @@
 			]
 		},
 		{
-			"path": "bk/src/code_organization/dependencies.md",
+			"path": "bk/src/code-organization/dependencies.md",
 			"bookmarks": [
 				{
 					"line": 49,
@@ -716,7 +736,7 @@
 			]
 		},
 		{
-			"path": "bk/src/code_organization/naming_conventions.md",
+			"path": "bk/src/code-organization/naming_conventions.md",
 			"bookmarks": [
 				{
 					"line": 87,
@@ -726,7 +746,7 @@
 			]
 		},
 		{
-			"path": "bk/src/code_organization/use_keyword.md",
+			"path": "bk/src/code-organization/use_declarations.md",
 			"bookmarks": [
 				{
 					"line": 65,
@@ -736,7 +756,7 @@
 			]
 		},
 		{
-			"path": "bk/src/code_organization/visibility.md",
+			"path": "bk/src/code-organization/visibility.md",
 			"bookmarks": [
 				{
 					"line": 84,
@@ -746,7 +766,7 @@
 			]
 		},
 		{
-			"path": "bk/src/contributing/preprocessors.md",
+			"path": "bk/src/contributing/mdBook_pre-processors.md",
 			"bookmarks": [
 				{
 					"line": 27,
@@ -756,7 +776,7 @@
 			]
 		},
 		{
-			"path": "bk/src/contributing/publication.md",
+			"path": "bk/src/contributing/publication_to_crates.io.md",
 			"bookmarks": [
 				{
 					"line": 27,
@@ -766,7 +786,7 @@
 			]
 		},
 		{
-			"path": "bk/src/contributing/repo_structure.md",
+			"path": "bk/src/contributing/repository_structure.md",
 			"bookmarks": [
 				{
 					"line": 91,
@@ -786,7 +806,7 @@
 			]
 		},
 		{
-			"path": "bk/src/language/ownership_borrowing.md",
+			"path": "bk/src/language/ownership_and_borrowing.md",
 			"bookmarks": [
 				{
 					"line": 151,
@@ -811,6 +831,16 @@
 				{
 					"line": 65,
 					"column": 6,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/standard-library/dynamic_typing.incl.md",
+			"bookmarks": [
+				{
+					"line": 3,
+					"column": 32,
 					"label": ""
 				}
 			]

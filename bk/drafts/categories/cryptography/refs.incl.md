@@ -22,16 +22,16 @@
 [ex~cryptography~zeroize]: cryptography_utilities.md#zeroize
 [p~algorithms]: ../../../src/categories/algorithms/index.md
 [p~authentication]: ../authentication/index.md
-[p~crates]: ../../../src/crate_selection/index.md
+[p~crates]: ../../../src/crate-selection/index.md
 [p~database]: ../database/index.md
-[p~derive]: ../../../src/standard_library/derive.md
+[p~derive]: ../../../src/standard_library/automatic_trait_derivation.md
 [p~email]: ../email/index.md
 [p~embedded]: # "../embedded/index.md"
 [p~encoding]: ../encoding/index.md
 [p~encryption]: encryption.md
 [p~functions]: ../../../src/language/functions.md
 [p~hashing]: ../../../src/categories/algorithms/hashing.md
-[p~match]: ../../../src/language/match.md
+[p~match]: ../../../src/language/pattern_matching.md
 [p~performance]: ../development-tools_cargo-plugins/performance.md
 [p~search]: ../database/search.md
 [p~server]: ../network-programming/server.md

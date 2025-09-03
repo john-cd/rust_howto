@@ -21,9 +21,9 @@ This section provides a large number of links to Rust resources.
 
 {{#include rust_cheatsheets.incl.md}}
 
-## Learning Resources
+## Learning Rust
 
-{{#include learning.incl.md}}
+{{#include learning_rust.incl.md}}
 
 ## Example Code
 
@@ -33,21 +33,21 @@ This section provides a large number of links to Rust resources.
 
 {{#include books.incl.md}}
 
-## Blogs
+## Blogs and Forums
 
-{{#include blogs.incl.md}}
+{{#include blogs_and_forums.incl.md}}
 
-## Videos, Podcasts
+## Videos and Podcasts
 
-{{#include videos.incl.md}}
+{{#include videos_and_podcasts.incl.md}}
 
-## Meetings & Events
+## Meetings
 
 {{#include meetings.incl.md}}
 
-## Companies & Jobs
+## Rust Companies and Jobs
 
-{{#include companies.incl.md}}
+{{#include rust_companies_and_jobs.incl.md}}
 
 ## Related Topics
 

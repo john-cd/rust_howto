@@ -28,7 +28,7 @@
 [p~cargo]: ../development-tools/cargo/cargo.md
 [p~code-coverage]: ../development-tools_testing/code_coverage.md
 [p~configuration]: ../config/configuration.md
-[p~crates]: ../../../src/crate_selection/index.md
+[p~crates]: ../../../src/crate-selection/index.md
 [p~cross-platform]: # "../../other/cross-platform/index.md"
 [p~databases]: ../database-implementations/databases.md
 [p~documentation]: ../development-tools/documentation/documentation.md

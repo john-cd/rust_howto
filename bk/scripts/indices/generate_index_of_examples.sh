@@ -13,13 +13,13 @@ clean() {
     echo "$1" | sed -E '
     s/.*/\L&/;
     s/[a-z]*/\u&/g;
-    s/\s(In|Of|And|With)\s/\L&/g;
-    s/(Cli|Ansi|Uuid|Ffi|Os|Wasm|bsd|Gpu|Api|Gui|Lru|cv|Cd|Ci|Csv|Aws|Cors|Http|Ide|sql|ql|Tui|Mssql|Amqp|Kv|Tls|Aead|Orm|Hmac|Html|Json|Ini|Toml|Yaml|Xml|Mime|Url)/\U&/g;
+    s/\s(In|Of|And|With|To|By)\s/\L&/g;
+    s/(Cli|Ansi|Uuid|Ffi|Os|Wasm|bsd|Gpu|Api|Gui|Lru|cv|Cd|Ci|Csv|Aws|Cors|Http|sql|ql|Tui|Mssql|Amqp|Kv|Tls|Aead|Orm|Hmac|Html|Json|Ini|Toml|Yaml|Xml|Mime|Url)/\U&/g;
     s/Asref/`AsRef`/g;
     s/Cow/`Cow`/g;
     s/Grpc/gRPC/g;
+    s/Crates.Io/`crates.io`/g;
     s/Mdbook/mdBook/g;
-    s/Linkedlist/`LinkedList`/g;
     s/(Tar|Cwd|Miri|Just|Rhai|Actix|Axum|Hyper|Tinytemplate|Tera|Tempfile|Autocfg|Crossbeam|Flate2)/\L`&`/g;
     s/\b(Option|Result)\b/`&`/g'
 }

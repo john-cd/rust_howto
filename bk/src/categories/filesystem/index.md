@@ -22,13 +22,13 @@ For most common file system tasks, [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}} 
 
 {{#include paths.incl.md}}
 
-## Reading & Writing Files
+## Reading and Writing Files
 
-{{#include read_write.incl.md}}
+{{#include reading_and_writing_files.incl.md}}
 
-### Working with Standard Input/Output
+### Working with the Standard Input and Output
 
-{{#include stdin_stdout.incl.md}}
+{{#include working_with_the_standard_input_and_output.incl.md}}
 
 ### Symbolic Links
 
@@ -36,7 +36,7 @@ For most common file system tasks, [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}} 
 
 ### File Metadata
 
-{{#include metadata.incl.md}}
+{{#include file_metadata.incl.md}}
 
 ## Directories
 
@@ -52,7 +52,7 @@ For most common file system tasks, [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}} 
 
 ## Temporary Files and Directories
 
-{{#include tempfile.incl.md}}
+{{#include temporary_files_and_directories.incl.md}}
 
 ## Globbing
 

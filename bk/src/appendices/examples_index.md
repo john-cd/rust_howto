@@ -8,9 +8,9 @@
 
 {{#include ../categories/algorithms/hashing.incl.md}}
 
-### Randomness
+### Random Value Generation
 
-{{#include ../categories/algorithms/randomness.incl.md}}
+{{#include ../categories/algorithms/random_value_generation.incl.md}}
 
 ### Sorting
 
@@ -18,57 +18,57 @@
 
 ## Data Structures
 
+### B-Trees
+
+{{#include ../categories/data-structures/b-trees.incl.md}}
+
 ### Binary Heaps
 
-{{#include ../categories/data-structures/binaryheap.incl.md}}
+{{#include ../categories/data-structures/binary_heaps.incl.md}}
 
 ### Bit Arrays
 
-{{#include ../categories/data-structures/bitarrays.incl.md}}
-
-### B-trees
-
-{{#include ../categories/data-structures/btrees.incl.md}}
+{{#include ../categories/data-structures/bit_arrays.incl.md}}
 
 ### Graphs
 
-{{#include ../categories/data-structures/graph.incl.md}}
+{{#include ../categories/data-structures/graphs.incl.md}}
 
 ### Hashmaps
 
-{{#include ../categories/data-structures/hashmap.incl.md}}
+{{#include ../categories/data-structures/hashmaps.incl.md}}
 
 ### Heapless Data Structures
 
-{{#include ../categories/data-structures/heapless.incl.md}}
+{{#include ../categories/data-structures/heapless_data_structures.incl.md}}
 
 ### Linked Lists
 
-{{#include ../categories/data-structures/linkedlist.incl.md}}
+{{#include ../categories/data-structures/linked_lists.incl.md}}
 
 ### Other Maps
 
-{{#include ../categories/data-structures/maps.incl.md}}
+{{#include ../categories/data-structures/other_maps.incl.md}}
 
-### Stack-allocated Arrays
+### Stack-Allocated Arrays
 
-{{#include ../categories/data-structures/stack_allocated_arrays.incl.md}}
+{{#include ../categories/data-structures/stack-allocated_arrays.incl.md}}
 
 ### Stacks and Queues
 
-{{#include ../categories/data-structures/stack_and_queue.incl.md}}
+{{#include ../categories/data-structures/stacks_and_queues.incl.md}}
 
 ### Strings
 
 {{#include ../categories/data-structures/strings.incl.md}}
 
-### Unique IDs
+### Unique Identifiers
 
-{{#include ../categories/data-structures/unique_ids.incl.md}}
+{{#include ../categories/data-structures/unique_identifiers.incl.md}}
 
 ### Vectors
 
-{{#include ../categories/data-structures/vector.incl.md}}
+{{#include ../categories/data-structures/vectors.incl.md}}
 
 ## Filesystem
 
@@ -80,37 +80,37 @@
 
 {{#include ../categories/filesystem/directory_traversal.incl.md}}
 
+### File Metadata
+
+{{#include ../categories/filesystem/file_metadata.incl.md}}
+
 ### File Watching
 
 {{#include ../categories/filesystem/file_watching.incl.md}}
-
-### Metadata
-
-{{#include ../categories/filesystem/metadata.incl.md}}
 
 ### Paths
 
 {{#include ../categories/filesystem/paths.incl.md}}
 
-### Read Write
+### Reading and Writing Files
 
-{{#include ../categories/filesystem/read_write.incl.md}}
-
-### Stdin Stdout
-
-{{#include ../categories/filesystem/stdin_stdout.incl.md}}
+{{#include ../categories/filesystem/reading_and_writing_files.incl.md}}
 
 ### Symbolic Links
 
 {{#include ../categories/filesystem/symbolic_links.incl.md}}
 
-### `tempfile`
+### Temporary Files and Directories
 
-{{#include ../categories/filesystem/tempfile.incl.md}}
+{{#include ../categories/filesystem/temporary_files_and_directories.incl.md}}
 
-### User Directories
+### User Directories and Preferred Applications
 
-{{#include ../categories/filesystem/user_directories.incl.md}}
+{{#include ../categories/filesystem/user_directories_and_preferred_applications.incl.md}}
+
+### Working with The Standard Input and Output
+
+{{#include ../categories/filesystem/working_with_the_standard_input_and_output.incl.md}}
 
 ## Mathematics
 
@@ -134,75 +134,79 @@
 
 {{#include ../categories/mathematics/trigonometry.incl.md}}
 
-## Code: Organization
+## Code Organization
 
-### Code Organization By Project Type
+### Code Organization by Project Type
 
-{{#include ../code_organization/code_organization_by_project_type.incl.md}}
+{{#include ../code-organization/code_organization_by_project_type.incl.md}}
 
 ### Dependencies
 
-{{#include ../code_organization/dependencies.incl.md}}
+{{#include ../code-organization/dependencies.incl.md}}
 
-{{#include ../code_organization/index.incl.md}}
+{{#include ../code-organization/index.incl.md}}
 
-### Modules
+### Modules and Paths
 
-{{#include ../code_organization/modules.incl.md}}
+{{#include ../code-organization/modules_and_paths.incl.md}}
 
 ### Naming Conventions
 
-{{#include ../code_organization/naming_conventions.incl.md}}
+{{#include ../code-organization/naming_conventions.incl.md}}
 
-### Use Keyword
+### Use Declarations
 
-{{#include ../code_organization/use_keyword.incl.md}}
+{{#include ../code-organization/use_declarations.incl.md}}
 
 ### Visibility
 
-{{#include ../code_organization/visibility.incl.md}}
+{{#include ../code-organization/visibility.incl.md}}
 
 ## Contributing
 
-### API Documentation
+### Book Editing and Example Code Development
 
-{{#include ../contributing/api_documentation.incl.md}}
+{{#include ../contributing/book_editing_and_example_code_development.incl.md}}
 
-### Dev Container Docker
+### Dev Container and Docker
 
-{{#include ../contributing/dev_container_docker.incl.md}}
+{{#include ../contributing/dev_container_and_docker.incl.md}}
 
-### Dev Environment Setup
+### Development Environment Setup
 
-{{#include ../contributing/dev_environment_setup.incl.md}}
+{{#include ../contributing/development_environment_setup.incl.md}}
 
-### Development Editing
+### Documentation Generation
 
-{{#include ../contributing/development_editing.incl.md}}
+{{#include ../contributing/documentation_generation.incl.md}}
 
-### Preprocessors
+### mdBook Pre-Processors
 
-{{#include ../contributing/preprocessors.incl.md}}
+{{#include ../contributing/mdBook_pre-processors.incl.md}}
 
-### Publication
+### Publication to `crates.io`
 
-{{#include ../contributing/publication.incl.md}}
+{{#include ../contributing/publication_to_crates.io.incl.md}}
 
-### Repo Structure
+### Repository Structure
 
-{{#include ../contributing/repo_structure.incl.md}}
+{{#include ../contributing/repository_structure.incl.md}}
 
 ### Topics of Interest
 
 {{#include ../contributing/topics_of_interest.incl.md}}
 
-## Crate: Selection
+## Crate Selection
 
-## Intro
+### Current State of The Art
 
-### How To Read This Book
+{{#include ../crate-selection/current_state_of_the_art.incl.md}}
 
-{{#include ../intro/how_to_read_this_book.incl.md}}
+## Introduction
+
+### How to Read This Book
+
+{{#include ../introduction/how_to_read_this_book.incl.md}}
 
 ## Language
 
@@ -226,13 +230,13 @@
 
 {{#include ../language/data_types.incl.md}}
 
-### Entrypoint
+### Entry Points
 
-{{#include ../language/entrypoint.incl.md}}
+{{#include ../language/entry_points.incl.md}}
 
-### Enums
+### Enumerations
 
-{{#include ../language/enums.incl.md}}
+{{#include ../language/enumerations.incl.md}}
 
 ### Functions
 
@@ -258,13 +262,13 @@
 
 {{#include ../language/macros.incl.md}}
 
-### Match
+### Ownership and Borrowing
 
-{{#include ../language/match.incl.md}}
+{{#include ../language/ownership_and_borrowing.incl.md}}
 
-### Ownership Borrowing
+### Pattern Matching
 
-{{#include ../language/ownership_borrowing.incl.md}}
+{{#include ../language/pattern_matching.incl.md}}
 
 ### Slices
 
@@ -274,9 +278,9 @@
 
 {{#include ../language/structs.incl.md}}
 
-### Trait Objects
+### Trait Objects and Dynamic Dispatch
 
-{{#include ../language/trait_objects.incl.md}}
+{{#include ../language/trait_objects_and_dynamic_dispatch.incl.md}}
 
 ### Traits
 
@@ -288,25 +292,21 @@
 
 ## Links
 
-### Blogs
+### Blogs and Forums
 
-{{#include ../links/blogs.incl.md}}
+{{#include ../links/blogs_and_forums.incl.md}}
 
 ### Books
 
 {{#include ../links/books.incl.md}}
 
-### Companies
-
-{{#include ../links/companies.incl.md}}
-
 ### Example Code
 
 {{#include ../links/example_code.incl.md}}
 
-### Learning
+### Learning Rust
 
-{{#include ../links/learning.incl.md}}
+{{#include ../links/learning_rust.incl.md}}
 
 ### Meetings
 
@@ -316,83 +316,87 @@
 
 {{#include ../links/rust_cheatsheets.incl.md}}
 
-### Videos
+### Rust Companies and Jobs
 
-{{#include ../links/videos.incl.md}}
+{{#include ../links/rust_companies_and_jobs.incl.md}}
 
-## Rust: Install
+### Videos and Podcasts
 
-{{#include ../rust_install/index.incl.md}}
+{{#include ../links/videos_and_podcasts.incl.md}}
 
-## Standard: Library
+## Rust Installation
 
-### `AsRef`
+{{#include ../rust-installation/index.incl.md}}
 
-{{#include ../standard_library/asref.incl.md}}
+## Standard Library
 
-### Borrow
+### Automatic Trait Derivation
 
-{{#include ../standard_library/borrow.incl.md}}
+{{#include ../standard-library/automatic_trait_derivation.incl.md}}
 
-### Box
+### Borrowed Types
 
-{{#include ../standard_library/box.incl.md}}
+{{#include ../standard-library/borrowed_types.incl.md}}
 
-### Cmp
+### Clone-On-Write
 
-{{#include ../standard_library/cmp.incl.md}}
+{{#include ../standard-library/clone-on-write.incl.md}}
 
 ### Conversion Traits
 
-{{#include ../standard_library/conversion_traits.incl.md}}
+{{#include ../standard-library/conversion_traits.incl.md}}
 
-### `Cow`
+### Default Values
 
-{{#include ../standard_library/cow.incl.md}}
-
-### Default
-
-{{#include ../standard_library/default.incl.md}}
-
-### Derive
-
-{{#include ../standard_library/derive.incl.md}}
-
-### Drop
-
-{{#include ../standard_library/drop.incl.md}}
+{{#include ../standard-library/default_values.incl.md}}
 
 ### Dynamic Typing
 
-{{#include ../standard_library/dynamic_typing.incl.md}}
+{{#include ../standard-library/dynamic_typing.incl.md}}
+
+### Heap Storage
+
+{{#include ../standard-library/heap_storage.incl.md}}
 
 ### Interior Mutability
 
-{{#include ../standard_library/interior_mutability.incl.md}}
+{{#include ../standard-library/interior_mutability.incl.md}}
 
-### Ops
+### Memory Address Pinning
 
-{{#include ../standard_library/ops.incl.md}}
+{{#include ../standard-library/memory_address_pinning.incl.md}}
 
-### `Option`
+### Operators
 
-{{#include ../standard_library/option.incl.md}}
+{{#include ../standard-library/operators.incl.md}}
 
-### Pin
+### Optional Values
 
-{{#include ../standard_library/pin.incl.md}}
+{{#include ../standard-library/optional_values.incl.md}}
+
+### Recoverable Error Handling
+
+{{#include ../standard-library/recoverable_error_handling.incl.md}}
+
+### Reference-To-Reference Conversions
+
+{{#include ../standard-library/reference-to-reference_conversions.incl.md}}
 
 ### Reference Counting
 
-{{#include ../standard_library/reference_counting.incl.md}}
+{{#include ../standard-library/reference_counting.incl.md}}
 
-### `Result`
+### Resource Cleanup
 
-{{#include ../standard_library/result.incl.md}}
+{{#include ../standard-library/resource_cleanup.incl.md}}
 
 ### Smart Pointers
 
-{{#include ../standard_library/smart_pointers.incl.md}}
+{{#include ../standard-library/smart_pointers.incl.md}}
+
+### Value Comparison
+
+{{#include ../standard-library/value_comparison.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

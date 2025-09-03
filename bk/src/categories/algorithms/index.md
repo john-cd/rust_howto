@@ -6,9 +6,9 @@ This category covers Rust implementations of core algorithms{{hi:Algorithms}}, s
 
 [[compression | Compression]], [[cryptography | cryptography]], [[data-structures | data structures]], [[mathematics | mathematics]], [[science | scientific algorithms]], [[search | search]], [[strings | strings]], and [[text-processing | text processing]] are discussed elsewhere but are briefly mentioned below.
 
-## Random Numbers
+## Random Value Generation
 
-{{#include randomness.incl.md}}
+{{#include random_value_generation.incl.md}}
 
 ## Sorting
 
@@ -23,6 +23,7 @@ This category covers Rust implementations of core algorithms{{hi:Algorithms}}, s
 ### Compression Algorithms
 
 For [[compression | compression]], use:
+
 - `flate2` for deflate, gzip, and zlib compression,
 - `zip` for zip files,
 - `tar` for tar archives,

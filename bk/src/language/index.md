@@ -6,7 +6,7 @@ It is not intended to be a beginner's book nor a comprehensive guide, but rather
 
 ## Entry Points
 
-{{#include entrypoint.incl.md}}
+{{#include entry_points.incl.md}}
 
 ## Data Types
 
@@ -22,7 +22,7 @@ It is not intended to be a beginner's book nor a comprehensive guide, but rather
 
 ## Ownership and Borrowing
 
-{{#include ownership_borrowing.incl.md}}
+{{#include ownership_and_borrowing.incl.md}}
 
 ## Lifetimes
 
@@ -38,7 +38,7 @@ It is not intended to be a beginner's book nor a comprehensive guide, but rather
 
 ## Pattern Matching
 
-{{#include match.incl.md}}
+{{#include pattern_matching.incl.md}}
 
 ## Functions
 
@@ -52,9 +52,9 @@ It is not intended to be a beginner's book nor a comprehensive guide, but rather
 
 {{#include structs.incl.md}}
 
-## Enums
+## Enumerations
 
-{{#include enums.incl.md}}
+{{#include enumerations.incl.md}}
 
 ## Traits
 
@@ -64,9 +64,9 @@ It is not intended to be a beginner's book nor a comprehensive guide, but rather
 
 {{#include impl_trait.incl.md}}
 
-## Trait Objects
+## Trait Objects and Dynamic Dispatch
 
-{{#include trait_objects.incl.md}}
+{{#include trait_objects_and_dynamic_dispatch.incl.md}}
 
 ## Iterators
 

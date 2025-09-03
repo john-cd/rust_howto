@@ -15,7 +15,7 @@
 [p~functions]: ../../../drafts/language/functions.md
 [p~game-development]: ../../../drafts/categories/game-development/game_development.md
 [p~html]: ../../../src/categories/parser-implementations/html.md
-[p~modules]: ../../../src/code_organization/modules.md
+[p~modules]: ../../../src/code_organization/modules_and_paths.md
 [p~node]: ../../../drafts/categories/development-tools_ffi/node.md
 [p~performance]: ../../../src/categories/development-tools_cargo-plugins/performance.md
 [p~programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md
