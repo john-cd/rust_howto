@@ -33,4 +33,7 @@ FIXME
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+- [[cargo | Cargo]].
+
 </div>

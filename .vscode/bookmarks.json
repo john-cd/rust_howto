@@ -349,12 +349,7 @@
 			"path": "bk/src/contributing/dev_container_and_docker.md",
 			"bookmarks": [
 				{
-					"line": 82,
-					"column": 5,
-					"label": ""
-				},
-				{
-					"line": 90,
+					"line": 91,
 					"column": 15,
 					"label": ""
 				}
@@ -766,6 +761,16 @@
 				{
 					"line": 3,
 					"column": 32,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": ".github/workflows/build_book_code_and_book_on_windows.yml",
+			"bookmarks": [
+				{
+					"line": 76,
+					"column": 42,
 					"label": ""
 				}
 			]
