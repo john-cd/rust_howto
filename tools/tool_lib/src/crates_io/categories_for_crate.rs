@@ -134,7 +134,7 @@ mod tests {
 
     //     // Mock the HTTP endpoint.
     //     let mock_endpoint = server
-    //         .mock("GET", &*format!("/api/v1/crates/{}", crate_name))
+    //         .mock("GET", &*format!("/api/v1/crates/{crate_name}"))
     //         .with_status(200)
     //         .with_header("content-type", "application/json")
     //         .with_body(serde_json::to_string(&mock_response)?)
@@ -191,7 +191,7 @@ mod tests {
     //     };
 
     //     let mock_endpoint = server
-    //         .mock("GET", &*format!("/api/v1/crates/{}", crate_name))
+    //         .mock("GET", &*format!("/api/v1/crates/{crate_name}"))
     //         .with_status(200)
     //         .with_header("content-type", "application/json")
     //         .with_body(serde_json::to_string(&mock_response)?)
@@ -229,7 +229,7 @@ mod tests {
 
     //     // Mock a 404 Not Found error
     //     let mock_endpoint = server
-    //         .mock("GET", &*format!("/api/v1/crates/{}", crate_name))
+    //         .mock("GET", &*format!("/api/v1/crates/{crate_name}"))
     //         .with_status(404)
     //         .with_header("content-type", "application/json")
     //         .with_body(r#"{"errors": [{"detail": "Not Found"}]}"#) // Example error body

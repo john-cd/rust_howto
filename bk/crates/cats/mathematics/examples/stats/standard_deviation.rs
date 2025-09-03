@@ -67,8 +67,8 @@ fn main() {
         _ => None,
     };
     println!(
-        "Z-score of data at index 4 (with value {}) is {:?}",
-        data[4], zscore
+        "Z-score of data at index 4 (with value {}) is {zscore:?}",
+        data[4]
     );
 }
 // ANCHOR_END: example

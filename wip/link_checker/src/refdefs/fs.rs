@@ -48,7 +48,7 @@ where
             info!("{} created", dir_path.as_ref().display());
         }
         Ok(true) => {
-            // debug: tracing::debug!("{} already exists", dest_dir);
+            // debug: tracing::debug!("{dest_dir} already exists");
         }
         Err(_) => {
             bail!(

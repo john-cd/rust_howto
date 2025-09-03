@@ -195,8 +195,8 @@
 //                         self.event_store.apply_event(event);
 //                         Ok(())
 //                     } else {
-//                         Err(anyhow::anyhow!("Product with id {} not found",
-// id))                     }
+//                         Err(anyhow::anyhow!("Product with id {id} not found"
+// ))                     }
 //                 }
 //             }
 //         }

@@ -31,7 +31,7 @@ fn main() {
     println!("Is result `Err`? {}", result.is_err());
 
     if let Ok(ref value) = result {
-        println!("Result value: {}", value);
+        println!("Result value: {value}");
     } else {
         println!("Computation failed.");
     }

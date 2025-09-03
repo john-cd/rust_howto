@@ -148,7 +148,7 @@
 // &code_with_predicate[left_node.start_byte()..left_node.end_byte()];
 //         let right_value = &code_with_predicate
 //             [right_node.start_byte()..right_node.end_byte()];
-//         println!("- {} + {}", left_name, right_value);
+//         println!("- {left_name} + {right_value}");
 //     }
 
 //     Ok(())

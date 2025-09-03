@@ -66,7 +66,7 @@ fn main() { println!("hello world!"); }
     let gist: Gist = response.json().await?;
     println!("Created {gist:?}");
 
-    let request_url = format!("{}/{}", request_url, gist.id);
+    let request_url = format!("{request_url}/{}", gist.id);
     let response = Client::new()
         .delete(&request_url)
         .basic_auth(gh_user, Some(gh_pass))

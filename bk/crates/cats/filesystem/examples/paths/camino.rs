@@ -11,7 +11,7 @@ fn main() {
 
     // .to_str() returns an Option, which can be `None`.
     match path.to_str() {
-        Some(s) => println!("The path is: {}", s),
+        Some(s) => println!("The path is: {s}"),
         None => println!("Path is not valid UTF-8."),
     }
 
@@ -21,12 +21,12 @@ fn main() {
 
     // Create a new Utf8PathBuf. The `from` method works like the standard one.
     let mut path = Utf8PathBuf::from("data/files/résumé");
-    println!("Initial path: {}", path);
+    println!("Initial path: {path}");
 
     // Push a new component onto the path.
     // This is guaranteed to be UTF-8.
     path.push("résumé-2025.txt");
-    println!("Final path: {}", path);
+    println!("Final path: {path}");
 
     // You can directly use the path as a `&str` without any `to_str()` call.
     if path.as_str().ends_with(".txt") {
@@ -35,7 +35,7 @@ fn main() {
 
     // You can also get e.g. the file name directly:
     if let Some(file_name) = path.file_name() {
-        println!("File name is: {}", file_name);
+        println!("File name is: {file_name}");
     }
 }
 // ANCHOR_END: example

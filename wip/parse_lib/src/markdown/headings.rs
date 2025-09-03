@@ -8,40 +8,40 @@
 //!     let heading1 = "# My first heading {#first}\n";
 //!     match parse_atx_heading.parse_peek(heading1) {
 //!         Ok((rest, heading)) => {
-//!             println!("Parsed: {:?}, Remaining: '{}'", heading, rest);
+//!             println!("Parsed: {heading:?}, Remaining: '{rest}'");
 //!         }
 //!         Err(e) => {
-//!             eprintln!("Error parsing: {:?}", e);
+//!             eprintln!("Error parsing: {e:?}");
 //!         }
 //!     }
 //!
 //!     let heading2 = "### Simple heading\n";
 //!     match parse_atx_heading.parse_peek(heading2) {
 //!         Ok((rest, heading)) => {
-//!             println!("Parsed: {:?}, Remaining: '{}'", heading, rest);
+//!             println!("Parsed: {heading:?}, Remaining: '{rest}'");
 //!         }
 //!         Err(e) => {
-//!             eprintln!("Error parsing: {:?}", e);
+//!             eprintln!("Error parsing: {e:?}");
 //!         }
 //!     }
 //!
 //!     let heading3 = "# Heading with trailing hashes ###\n";
 //!     match parse_atx_heading.parse_peek(heading3) {
 //!         Ok((rest, heading)) => {
-//!             println!("Parsed: {:?}, Remaining: '{}'", heading, rest);
+//!             println!("Parsed: {heading:?}, Remaining: '{rest}'");
 //!         }
 //!         Err(e) => {
-//!             eprintln!("Error parsing: {:?}", e);
+//!             eprintln!("Error parsing: {e:?}");
 //!         }
 //!     }
 //!
 //!     let heading4 = "  ## Another heading ##  {#another-one}  \n";
 //!     match parse_atx_heading.parse_peek(heading4) {
 //!         Ok((rest, heading)) => {
-//!             println!("Parsed: {:?}, Remaining: '{}'", heading, rest);
+//!             println!("Parsed: {heading:?}, Remaining: '{rest}'");
 //!         }
 //!         Err(e) => {
-//!             eprintln!("Error parsing: {:?}", e);
+//!             eprintln!("Error parsing: {e:?}");
 //!         }
 //!     }
 //! ```

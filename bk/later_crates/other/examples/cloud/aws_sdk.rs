@@ -40,7 +40,7 @@ async fn main() -> anyhow::Result<()> {
             }
         }
         Err(e) => {
-            error!("Failed to list objects: {}", e);
+            error!("Failed to list objects: {e}");
         }
     }
 

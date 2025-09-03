@@ -29,12 +29,12 @@ fn parse_port(s: &str) -> Result<u16, Box<dyn Error>> {
 fn main() {
     match parse_port("123") {
         Ok(port) => println!("Port: {port}"),
-        Err(err) => panic!("{}", err),
+        Err(err) => panic!("{err}"),
     }
     // Test with an invalid port number (zero).
     // match parse_port("0") {
     //     Ok(port) => println!("Port: {port}"),
-    //     Err(err) => panic!("{}", err),
+    //     Err(err) => panic!("{err}"),
     // }
 }
 // ANCHOR_END: example

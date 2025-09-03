@@ -64,7 +64,7 @@
 //         }),
 //     );
 //     let count = parser.count();
-//     info!("Parser: {} events", count);
+//     info!("Parser: {count} events");
 // }
 
 // /// Write reference definitions parsed from a Markdown parser to a

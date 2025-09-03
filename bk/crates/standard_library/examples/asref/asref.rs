@@ -10,7 +10,7 @@ fn print_length<T: AsRef<str>>(s: T) {
     // `as_ref`.
     let s_ref: &str = s.as_ref();
     // Print the string slice and its length.
-    println!("The length of '{}' is {}", s_ref, s_ref.len());
+    println!("The length of '{s_ref}' is {}", s_ref.len());
 }
 
 /// Let's call `print_length` with arguments of various types.

@@ -81,8 +81,8 @@ impl std::error::Error for MyError {}
 impl std::fmt::Display for MyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            MyError::Io(err) => write!(f, "IO error: {}", err),
-            MyError::Parse(err) => write!(f, "Parse error: {}", err),
+            MyError::Io(err) => write!(f, "IO error: {err}"),
+            MyError::Parse(err) => write!(f, "Parse error: {err}"),
         }
     }
 }

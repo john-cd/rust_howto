@@ -24,9 +24,7 @@ fn main() {
         let handle = thread::spawn(move || {
             thread::sleep(Duration::from_millis(50 * i));
             println!(
-                "Thread {} - {} {}",
-                i,
-                string_slice_clone,
+                "Thread {i} - {string_slice_clone} {}",
                 shared_mutable_string_clone.read().unwrap()
             );
             // Edit the `String`.

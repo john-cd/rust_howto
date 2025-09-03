@@ -47,7 +47,7 @@ fn main() -> anyhow::Result<()> {
     // Initialize the Tera template engine.
     let templ: &tera::Result<tera::Tera> = &TEMPLATES;
     if let Err(e) = templ {
-        bail!("The Tera template engine failed to initialize: {}", e);
+        bail!("The Tera template engine failed to initialize: {e}");
     }
 
     // Create a context with values for the placeholders.

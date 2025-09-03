@@ -55,7 +55,7 @@
 //     let app = Router::new().route("/", get(handler));
 
 //     let addr = SocketAddr::from(([127, 0, 0, 1], 8080));
-//     info!("Listening on {}", addr);
+//     info!("Listening on {addr}");
 //     axum::Server::bind(&addr)
 //         .serve(app.into_make_service())
 //         .await

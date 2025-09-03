@@ -36,7 +36,7 @@ fn main() {
                 }
                 2 => match map_clone.get("key1") {
                     Some(value) => {
-                        println!("Thread {} read key1: {}", thread_id, *value);
+                        println!("Thread {thread_id} read key1: {}", *value);
                     }
                     _ => {
                         println!("Thread {thread_id} couldn't find key1");
@@ -46,8 +46,8 @@ fn main() {
                     Some(mut value) => {
                         *value += 10;
                         println!(
-                            "Thread {} incremented key2 value to {}",
-                            thread_id, *value
+                            "Thread {thread_id} incremented key2 value to {}",
+                            *value
                         );
                     }
                     _ => {

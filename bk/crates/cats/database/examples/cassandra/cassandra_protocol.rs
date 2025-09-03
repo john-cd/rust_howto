@@ -67,8 +67,7 @@
 //                             match val {
 //                                 Value::Text(t) => println!("Text Value: {}",
 // t),                                 Value::Int(i) => println!(
-//                                     "Int Value: {}",
-//                                     i
+//                                     "Int Value: {i}"
 //                                 ), // Handle other Value types as needed.
 //                                 _ => println!("Other Value: {:?}", val),
 //                             }

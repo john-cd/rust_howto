@@ -57,8 +57,7 @@ impl Iterator for PartialRangeIter {
             );
             Some(
                 HeaderValue::from_str(&format!(
-                    "bytes={}-{}",
-                    prev_start,
+                    "bytes={prev_start}-{}",
                     self.start - 1
                 ))
                 .expect("string provided by format!"),
@@ -95,7 +94,7 @@ fn main() -> Result<()> {
         let status = response.status();
         if !(status == StatusCode::OK || status == StatusCode::PARTIAL_CONTENT)
         {
-            bail!("Unexpected server response: {}", status)
+            bail!("Unexpected server response: {status}")
         }
         std::io::copy(&mut response, &mut output_file)?;
     }

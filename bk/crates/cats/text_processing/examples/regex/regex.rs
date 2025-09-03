@@ -89,8 +89,7 @@ fn search_with_all_regexes(contents: &str) {
             print!("{} -> ", &caps[0]);
             for group in re.1.iter() {
                 print!(
-                    "{}={}; ",
-                    group,
+                    "{group}={}; ",
                     // Retrieve each named capture group in turn...
                     // `extract` can't be used here, since the # of capture
                     // groups varies.

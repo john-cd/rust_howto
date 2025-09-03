@@ -34,12 +34,11 @@
 //                 span: _,
 //             }) => {
 //                 println!(
-//                     "XML Declaration: version={} encoding={:?}
-// standalone={:?}",                     version, encoding, standalone
-//                 );
+//                     "XML Declaration: version={version} encoding={encoding:?}
+// standalone={standalone:?}");
 //             }
 //             Ok(Token::Comment { text, span: _ }) => {
-//                 println!("{" ".repeat(depth * 2}Comment: {}"), text);
+//                 println!("{" ".repeat(depth * 2}Comment: {text}"));
 //             }
 //             Ok(Token::ElementStart {
 //                 prefix,
@@ -63,7 +62,7 @@
 //                 if let Some(prefix) = prefix {
 //                     print!("{prefix}:");
 //                 }
-//                 println!("{local, value}=\"{}\"");
+//                 println!("{}=\"{}\"", local, value);
 //             }
 //             Ok(Token::ElementEnd { end, span: _ }) => match end {
 //                 xmlparser::ElementEnd::Close(prefix, local) => {
@@ -83,7 +82,7 @@
 //             Ok(Token::Text { text, span: _ }) => {
 //                 let trimmed = text.trim();
 //                 if !trimmed.is_empty() {
-//                     println!("{" ".repeat(depth * 2}Text: {}"), trimmed);
+//                     println!("{}Text: {}"), " ".repeat(depth * 2), trimmed);
 //                 }
 //             }
 //             Err(e) => {

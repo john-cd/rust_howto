@@ -101,9 +101,8 @@
 //         // Retrieve the actual content of documents given its `doc_address`.
 //         let retrieved_doc = searcher.doc(doc_address)?;
 //         println!(
-//             "Document found: {:?}, score: {}",
-//             retrieved_doc.to_json(&schema),
-//             score
+//             "Document found: {:?}, score: {score}",
+//             retrieved_doc.to_json(&schema)
 //         );
 //         // We can also get an explanation to understand how a found document
 //         // got its score.

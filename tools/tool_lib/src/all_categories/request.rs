@@ -83,8 +83,7 @@ mod tests {
     //         let err_string = result.unwrap_err().to_string();
     //         assert!(
     //             err_string.contains("404") && err_string.contains("Not Found"),
-    //             "Error message did not indicate a 404 error: {}",
-    //             err_string
+    //             "Error message did not indicate a 404 error: {err_string}"
     //         );
 
     //         Ok(())

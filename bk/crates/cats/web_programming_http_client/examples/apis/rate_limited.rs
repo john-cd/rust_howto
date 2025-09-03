@@ -69,9 +69,8 @@
 //             continue;
 //         } else {
 //             println!(
-//                 "Rate limit is currently {}/{}, the reset of this limit will
-// be within {} seconds.",                 rate_remaining,
-//                 rate_limit,
+//                 "Rate limit is currently {rate_remaining}/{rate_limit}, the
+// reset of this limit will be within {} seconds.",
 //                 rate_reset_within.as_secs(),
 //             );
 //             break;

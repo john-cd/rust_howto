@@ -32,17 +32,15 @@
 
 //     // 2. Asynchronously compress the file.
 //     println!(
-//         "Compressing '{}' to '{}'...",
-//         input_filename, compressed_filename
+//         "Compressing '{input_filename}' to '{compressed_filename}'..."
 //     );
 //     compress_file_async(input_filename, compressed_filename).await?;
 //     println!("Compression complete.");
 
 //     // 3. Asynchronously decompress the file.
 //     println!(
-//         "Decompressing '{}' to '{}'...",
-//         compressed_filename, decompressed_filename
-//     );
+//         "Decompressing '{compressed_filename}' to
+// '{decompressed_filename}'...",     );
 //     decompress_file_async(compressed_filename, decompressed_filename).await?;
 //     println!("Decompression complete.");
 

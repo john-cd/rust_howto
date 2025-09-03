@@ -72,7 +72,7 @@
 //             Token::Ident(ident) => ident.as_ref().to_string(),
 //             Token::Number { value, .. } => value.to_string(),
 //             Token::Dimension { value, unit, .. } => {
-//                 format!("{}{}", value, unit.as_ref())
+//                 format!("{value}{}", unit.as_ref())
 //             }
 //             Token::Semicolon => ";".to_string(),
 //             Token::Colon => ":".to_string(),

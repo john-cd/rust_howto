@@ -83,9 +83,8 @@ impl Preproc {
                     Ok(pc) => pc,
                     Err(e) => {
                         warn!(
-                            "Error in `preprocessor.{}` configuration: {}; using defaults",
-                            self.name(),
-                            e
+                            "Error in `preprocessor.{}` configuration: {e}; using defaults",
+                            self.name()
                         );
                         PreprocConfig::default()
                     }

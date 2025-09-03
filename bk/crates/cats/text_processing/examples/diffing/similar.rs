@@ -60,7 +60,7 @@ fn line_diff() {
         // Format the line with line number and styling:
         let line = Line(
             change.old_index().or(change.new_index()),
-            format!("{}{}", sign, change.value()),
+            format!("{sign}{}", change.value()),
         );
         println!("{}", style.apply_to(line));
     }

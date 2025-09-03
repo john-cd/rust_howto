@@ -82,8 +82,7 @@ mod tests {
 
             assert_eq!(
                 input, decoded,
-                "Encoding and decoding failed for: {}",
-                input
+                "Encoding and decoding failed for: {input}"
             );
         }
 

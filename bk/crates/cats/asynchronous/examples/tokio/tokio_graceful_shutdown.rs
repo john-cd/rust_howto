@@ -9,7 +9,7 @@ use tokio_graceful_shutdown::Toplevel;
 /// Counts down from 3 to 1, logging each number.
 async fn countdown() {
     for i in (1..=3).rev() {
-        tracing::info!("Shutting down in: {}", i);
+        tracing::info!("Shutting down in: {i}");
         sleep(Duration::from_millis(1000)).await;
     }
 }

@@ -96,7 +96,7 @@
 //         .query_with_values(insert_query, row.into_query_values())
 //         .await?;
 
-//     println!("Inserted user: {} (ID: {})", name, id);
+//     println!("Inserted user: {name} (ID: {id})");
 
 //     // Query the inserted row
 //     let select_query =

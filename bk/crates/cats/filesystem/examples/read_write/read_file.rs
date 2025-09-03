@@ -45,7 +45,7 @@ fn read_from_file() -> Result<(), io::Error> {
     // Read the entire contents of a file into a string.
     // The contents of the file must be valid UTF-8.
     let message: String = fs::read_to_string(path_str)?;
-    println!("`read_to_string`:\n {}", message);
+    println!("`read_to_string`:\n {message}");
 
     // Or read the entire contents of a file into a bytes vector:
     let data: Vec<u8> = fs::read("temp/lines.txt")?;

@@ -53,8 +53,8 @@ fn main() {
         .unwrap();
 
     println!(
-        "Closest match to '{}' is '{}' with score {}",
-        target, closest.0, closest.1
+        "Closest match to '{target}' is '{}' with score {}",
+        closest.0, closest.1
     );
 }
 // ANCHOR_END: example

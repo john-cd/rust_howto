@@ -88,7 +88,7 @@ pub fn sql(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     let expanded = quote::quote! {
         {
             let query = #sql_query;
-            println!("Executing SQL query: {}", query);
+            println!("Executing SQL query: {query}");
             // In a real scenario, you'd typically return some type
             // that represents the prepared statement or a query result.
             query

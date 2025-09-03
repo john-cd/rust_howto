@@ -45,7 +45,7 @@ fn main() {
 
     // String formatting; shorthand for `user = user`:
     let user = "ferris";
-    event!(Level::TRACE, "login: {}", user);
+    event!(Level::TRACE, "login: {user}");
 
     // Records an event with a `struct` field using the `Debug` format.
     // Note the `?`: `my_struct` will be recorded

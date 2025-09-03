@@ -42,9 +42,8 @@ fn main() {
                 // Receive until channel closes.
                 for msg in recvr.iter() {
                     println!(
-                        "Worker {:?} received {}.",
-                        thread::current().id(),
-                        msg
+                        "Worker {:?} received {msg}.",
+                        thread::current().id()
                     );
                     sendr.send(msg * 2).unwrap();
                 }

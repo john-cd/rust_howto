@@ -13,9 +13,8 @@ fn main() {
         .and_hms_opt(17, 33, 44)
         .unwrap();
     println!(
-        "Number of seconds between 1970-01-01 00:00:00 and {} is
+        "Number of seconds between 1970-01-01 00:00:00 and {date_time} is
     {}.",
-        date_time,
         date_time.and_utc().timestamp()
     );
 

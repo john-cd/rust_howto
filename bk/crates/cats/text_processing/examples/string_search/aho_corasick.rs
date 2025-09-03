@@ -24,8 +24,8 @@ fn main() -> anyhow::Result<()> {
     println!("Basic matches:");
     for (pattern_idx, start, end) in matches {
         println!(
-            "Pattern '{}' at byte range {}..{}",
-            patterns[pattern_idx], start, end
+            "Pattern '{}' at byte range {start}..{end}",
+            patterns[pattern_idx]
         );
     }
 

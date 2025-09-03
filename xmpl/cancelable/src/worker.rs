@@ -54,14 +54,14 @@ impl Worker {
                                                         if !r_die.is_empty() { continue; }
                                                         let task_id = task.task_id();
                                                         let token = cancel_source.make_token(task_id);
-                                                        tracing::info!("Task {} starting.", task_id);
+                                                        tracing::info!("Task {task_id} starting.");
                                                         match task.execute(token, &s_taskresponse) {
                                                             Ok(final_task_response) => {
                                                                 tracing::info!("Task {} completed.", final_task_response.task_id);
                                                             }
                                                             Err(e) => {
                                                                 match e.downcast_ref::<TaskError>() {
-                        Some(&TaskError::Interrupted) => { tracing::info!("Task {} interrupted.", task_id); }
+                        Some(&TaskError::Interrupted) => { tracing::info!("Task {task_id} interrupted."); }
                         _ => { tracing::error!("Task error: {e:?}"); }
                     }
 

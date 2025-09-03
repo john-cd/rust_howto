@@ -33,7 +33,7 @@ fn main() -> Result<()> {
     if !Path::new(&markdown_path).exists() {
         let msg = format!("The folder {:?} does not exist.", markdown_path);
         println!("cargo:warning=ERROR: {msg}");
-        bail!("{}", msg);
+        bail!("{msg}");
     }
 
     //// We are only testing code that are in the Markdown,
