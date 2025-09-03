@@ -2,6 +2,11 @@
 //!
 //! See <https://docs.rs/winnow/0.7.11/winnow/_tutorial/chapter_7/index.html>.
 
+use annotate_snippets::AnnotationKind;
+use annotate_snippets::Group;
+use annotate_snippets::Level;
+use annotate_snippets::Renderer;
+use annotate_snippets::Snippet;
 use winnow::error::ContextError;
 use winnow::error::ParseError;
 
@@ -21,14 +26,16 @@ impl std::error::Error for ParsingError {}
 
 impl std::fmt::Display for ParsingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let message = annotate_snippets::Level::Error
-            .title(&self.message)
-            .snippet(
-                annotate_snippets::Snippet::source(&self.input)
-                    .fold(true)
-                    .annotation(annotate_snippets::Level::Error.span(self.span.clone())),
-            );
-        let renderer = annotate_snippets::Renderer::plain();
+        let message =
+            &[
+                Group::with_title(annotate_snippets::Level::ERROR.primary_title(&self.message))
+                    .element(
+                        annotate_snippets::Snippet::source(&self.input)
+                            .fold(true)
+                            .annotation(AnnotationKind::Primary.span(self.span.clone())),
+                    ),
+            ];
+        let renderer = annotate_snippets::Renderer::styled();
         let rendered = renderer.render(message);
         rendered.fmt(f)
     }
