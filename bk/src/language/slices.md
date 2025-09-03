@@ -67,7 +67,8 @@ See the [[string | String]] chapter for more details.
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[strings | Strings]].
+- [[vectors | Vectors]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

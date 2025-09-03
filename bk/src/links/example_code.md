@@ -65,7 +65,10 @@ For example, you will find a full template for a REST API written in Rust, engin
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[blogs_and_forums | Blogs and Forums]].
+- [[books | Books]].
+- [[examples_index | Examples]].
+- [[videos_and_podcasts | Videos and Podcasts]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

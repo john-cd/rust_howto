@@ -88,6 +88,8 @@ See also the [[option | Option]] chapter.
 ## Related Topics {#related-topics .skip}
 
 - [[iterators | Iterators]].
+- [[optional_values | Optional Values]].
+- [[pattern_matching | Pattern Matching]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

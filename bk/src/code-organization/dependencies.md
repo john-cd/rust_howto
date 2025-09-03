@@ -47,10 +47,16 @@ fn main() -> Result<()> {
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[code_organization_by_project_type | Code Organization By Project Type]].
+- [[crate-selection | Crate Selection]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+- [[cargo | Cargo]].
+- [[dependency_management | Dependency Management]].
+- [[development-tools_cargo-plugins | Development Tools - Cargo Plugins]].
+
 </div>

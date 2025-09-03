@@ -65,7 +65,9 @@ Note that, while these shortcuts make your code more compact and readable, they 
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[dependencies | Dependencies]].
+- [[modules_and_paths | Modules and Paths]].
+- [[visibility | Visibility]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

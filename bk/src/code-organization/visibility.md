@@ -84,7 +84,8 @@ When writing a library or in contexts where the public API must remain stable, `
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[modules_and_paths | Modules and Paths]].
+- [[use_declarations | Use Declarations]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

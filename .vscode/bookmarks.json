@@ -464,12 +464,7 @@
 			"path": "bk/src/language/constants_and_statics.md",
 			"bookmarks": [
 				{
-					"line": 51,
-					"column": 26,
-					"label": ""
-				},
-				{
-					"line": 60,
+					"line": 62,
 					"column": 13,
 					"label": ""
 				}
@@ -617,11 +612,6 @@
 					"line": 64,
 					"column": 12,
 					"label": ""
-				},
-				{
-					"line": 87,
-					"column": 14,
-					"label": ""
 				}
 			]
 		},
@@ -634,7 +624,7 @@
 					"label": ""
 				},
 				{
-					"line": 106,
+					"line": 111,
 					"column": 5,
 					"label": ""
 				}
@@ -726,46 +716,6 @@
 			]
 		},
 		{
-			"path": "bk/src/code-organization/dependencies.md",
-			"bookmarks": [
-				{
-					"line": 49,
-					"column": 5,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/code-organization/naming_conventions.md",
-			"bookmarks": [
-				{
-					"line": 87,
-					"column": 24,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/code-organization/use_declarations.md",
-			"bookmarks": [
-				{
-					"line": 65,
-					"column": 6,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/code-organization/visibility.md",
-			"bookmarks": [
-				{
-					"line": 84,
-					"column": 10,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/contributing/mdBook_pre-processors.md",
 			"bookmarks": [
 				{
@@ -811,26 +761,6 @@
 				{
 					"line": 151,
 					"column": 17,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/language/slices.md",
-			"bookmarks": [
-				{
-					"line": 67,
-					"column": 15,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/links/example_code.md",
-			"bookmarks": [
-				{
-					"line": 65,
-					"column": 6,
 					"label": ""
 				}
 			]

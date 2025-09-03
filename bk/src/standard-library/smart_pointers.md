@@ -96,9 +96,14 @@ The following example demonstrates the implementation of a basic smart pointer:
 
 ## Related Topics {#related-topics .skip}
 
-- [[asref | AsRef]].
-- [[borrow | Borrow]].
-- [[cow | COW]] (Clone-on-Write).
+- [[borrowed_types | `Borrow`]].
+- [[clone-on-write | `Cow`]] (Clone-on-Write).
+- [[interior_mutability | Interior Mutability]].
+- [[heap_storage | Heap Storage]].
+- [[ownership_and_borrowing | Ownership and Borrowing]].
+- [[reference_counting | Reference Counting]].
+- [[resource_cleanup | Resource Cleanup]].
+- [[vectors | Vectors]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

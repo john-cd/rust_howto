@@ -51,7 +51,9 @@ Statics can be mutable (`static mut`): Unlike `const`, static variables can be d
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[data_types | Data Types]].
+- [[lifetimes | Lifetimes]].
+- [[variables | Variables]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
