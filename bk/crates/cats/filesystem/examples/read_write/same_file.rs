@@ -3,7 +3,6 @@
 use std::io::Error;
 
 use same_file::Handle;
-use same_file::is_same_file;
 
 /// Check whether we are reading & writing to the same file.
 fn main() -> Result<(), Error> {
@@ -34,7 +33,7 @@ fn main() -> Result<(), Error> {
     // You may also check whether two file paths correspond to the same file
     // (due to hard or symbolic links):
     #[cfg(unix)]
-    assert!(is_same_file("/bin/sh", "/usr/bin/sh")?);
+    assert!(same_file::is_same_file("/bin/sh", "/usr/bin/sh")?);
 
     Ok(())
 }
