@@ -8,6 +8,7 @@ members = [
     # "other",
     "proc_macros",
     "standard_library",
+    "utils",
 ]
 exclude = []
 

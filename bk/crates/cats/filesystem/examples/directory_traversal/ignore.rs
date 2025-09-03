@@ -42,10 +42,11 @@ fn main() {
 // ANCHOR_END: example
 
 #[test]
-fn test() {
+fn test() -> anyhow::Result<()> {
     use std::fs;
     if !fs::exists("temp")? {
         fs::create_dir("temp")?;
     }
     main();
+    Ok(())
 }

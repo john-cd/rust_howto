@@ -54,11 +54,12 @@
 // }
 
 // #[test]
-// fn test() {
+// fn test() -> anyhow::Result<()> {
 //    use std::fs;
 //    if !fs::exists("temp")? {
 //        fs::create_dir("temp")?;
 //    }
 //    main();
+//    Ok(())
 // }
 // // [finish](https://github.com/john-cd/rust_howto/issues/885)

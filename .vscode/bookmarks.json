@@ -681,16 +681,6 @@
 			]
 		},
 		{
-			"path": "bk/crates/cats/development_tools_debugging/examples/log/log_custom.rs",
-			"bookmarks": [
-				{
-					"line": 28,
-					"column": 7,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/later_crates/cats/science/Cargo.toml",
 			"bookmarks": [
 				{

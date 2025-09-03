@@ -1,16 +1,16 @@
 #![allow(dead_code)]
 // ANCHOR: example
 use std::fs;
-use std::io;
 use std::path::Path;
+use anyhow::Context;
 
 // Creating symbolic links is platform-specific, because different operating
 // systems handle them differently (e.g., file vs. directory links on Windows).
-fn create_symlink(original: &Path, link: &Path) -> io::Result<()> {
+fn create_symlink(original: &Path, link: &Path) -> anyhow::Result<()> {
     #[cfg(target_family = "unix")]
     {
         use std::os::unix::fs;
-        fs::symlink(original, link)
+        fs::symlink(original, link).context("Failed to create a new symbolic link.")
     }
     #[cfg(target_family = "windows")]
     {
@@ -65,10 +65,9 @@ where
 }
 
 fn main() -> anyhow::Result<()> {
-    fs::create_dir_all("temp")?;
-    fs::write("temp/source.txt", "Hello, world!")?;
     let original = Path::new("temp/source.txt");
-    let link = Path::new("temp/my_link");
+    fs::write(original, "Hello, world!")?;
+    let link = Path::new("temp/my_link.txt");
 
     create_symlink(original, link)?;
 
@@ -80,6 +79,12 @@ fn main() -> anyhow::Result<()> {
 
 #[test]
 fn test() -> anyhow::Result<()> {
+
+    let temp = Path::new("./temp");
+    utils::clean_folder(&temp).context("Failed to clean up the temp directory.")?;
+    if !temp.exists() {
+        fs::create_dir(temp).context("Failed to create the temp directory.")?;
+    }
     main()?;
     Ok(())
 }
