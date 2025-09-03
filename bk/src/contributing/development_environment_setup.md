@@ -57,11 +57,17 @@ apt-get -y install just
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[rust-installation | Rust Installation]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
 [dev_environment_setup: review; write windows install; `winget install openssl`; need Python](https://github.com/john-cd/rust_howto/issues/527)
+
+- [[containers | Containers]].
+- [[development_tools | Development Tools]].
+- [[text-editors | Text Editors]].
+- [[vscode | Vscode]].
+
 </div>

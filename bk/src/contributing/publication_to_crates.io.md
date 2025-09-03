@@ -27,7 +27,7 @@ Type [`just`][c~just~docs]↗{{hi:just}} at the command line for a list of short
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[book_editing_and_example_code_development | Book Editing and Example Code Development]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
@@ -35,5 +35,8 @@ FIXME
 <div class="hidden">
 
 - [[cargo | Cargo]].
+- [[crate_registries | Crate Registries]].
+- [[github_actions | Github Actions]].
+- [[release_automation | Release Automation]].
 
 </div>

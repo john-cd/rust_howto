@@ -91,10 +91,14 @@ For the sake of readability, the test boilerplate is hidden in the book.
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[book_editing_and_example_code_development | Book Editing and Example Code Development]].
+- [[modules_and_paths | Modules and Paths]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+- [[cargo | Cargo]].
+
 </div>

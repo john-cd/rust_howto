@@ -359,11 +359,6 @@
 			"path": "bk/src/contributing/development_environment_setup.md",
 			"bookmarks": [
 				{
-					"line": 57,
-					"column": 5,
-					"label": ""
-				},
-				{
 					"line": 65,
 					"column": 13,
 					"label": ""
@@ -701,26 +696,6 @@
 				{
 					"line": 29,
 					"column": 4,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/contributing/mdBook_pre-processors.md",
-			"bookmarks": [
-				{
-					"line": 27,
-					"column": 9,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/contributing/publication_to_crates.io.md",
-			"bookmarks": [
-				{
-					"line": 27,
-					"column": 5,
 					"label": ""
 				}
 			]
