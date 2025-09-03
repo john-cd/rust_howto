@@ -82,7 +82,9 @@ docker push johncd/rust_howto_ci:latest
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[development_environment_setup | Development Environment Setup]].
+- [[repository_structure | Repository Structure]].
+- [[repository_structure | Repository Structure]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
