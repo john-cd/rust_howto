@@ -66,7 +66,8 @@ Please also consult the [`TODO.md`][rust-howto~todo~repo]↗ file and the [`draf
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[book_editing_and_example_code_development | Book Editing and Example Code Development]].
+- [[repository_structure | Repository Structure]].
 
 {{#include ../refs/link-refs.md}}
 {{#include refs.incl.md}}
