@@ -45,7 +45,7 @@
 [p~html]: # "../../categories/parser-implementations/html.md"
 [p~immediate-mode-gui]: immediate_mode_gui.md
 [p~main]: ../../../drafts/language/entrypoint.md
-[p~option]: ../../../drafts/standard_library/option.md
+[p~option]: ../../../drafts/standard-library/option.md
 [p~performance]: # "../../categories/development-tools_cargo-plugins/performance.md"
 [p~rendering]: ../../../drafts/categories/rendering/index.md
 [p~ui-layout]: ui_layout.md

@@ -97,6 +97,7 @@
 [ex~language~procedural-macros]: macros.md#procedural-macros
 [ex~language~production-code-attributes]: attributes.md#production-code-attributes
 [ex~language~ref-and-ref-mut-bindings]: pattern_matching.md#ref-and-ref-mut-bindings
+[ex~language~references-borrowing]: ownership_and_borrowing.md#references-borrowing
 [ex~language~repetitions]: macros.md#repetitions
 [ex~language~return-an-iterator]: iterators.md#return-an-iterator
 [ex~language~return-position-impl-trait]: impl_trait.md#return-position-impl-trait
@@ -142,7 +143,7 @@
 [ex~language~write-macros]: macros.md#write-macros
 [p~enums]: enumerations.md
 [p~functions]: functions.md
-[p~option]: ../standard_library/optional_values.md
-[p~standard-library]: ../standard_library/index.md
+[p~option]: ../standard-library/optional_values.md
+[p~standard-library]: ../standard-library/index.md
 [p~structs]: structs.md
 [p~traits]: traits.md

@@ -1,6 +1,6 @@
 # Heap Storage
 
-{{#include box.incl.md}}
+{{#include heap_storage.incl.md}}
 
 ## Store Data on the Heap with `Box` {#box}
 

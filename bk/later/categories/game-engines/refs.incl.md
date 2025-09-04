@@ -6,4 +6,4 @@
 [p~games]: # "../games/games.md"
 [p~graphics]: # "../graphics/index.md"
 [p~gui]: # "../gui/index.md"
-[p~option]: # "../../standard_library/option.md"
+[p~option]: # "../../standard-library/option.md"

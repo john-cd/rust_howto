@@ -24,7 +24,7 @@
 [p~authentication]: ../authentication/index.md
 [p~crates]: ../../../src/crate-selection/index.md
 [p~database]: ../database/index.md
-[p~derive]: ../../../src/standard_library/automatic_trait_derivation.md
+[p~derive]: ../../../src/standard-library/automatic_trait_derivation.md
 [p~email]: ../email/index.md
 [p~embedded]: # "../embedded/index.md"
 [p~encoding]: ../encoding/index.md

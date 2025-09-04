@@ -26,7 +26,7 @@
 [ex~code-organization~visible-to-library-clients]: visibility.md#visible-to-library-clients
 [p~enums]: ../language/enumerations.md
 [p~functions]: ../language/functions.md
-[p~option]: ../standard_library/optional_values.md
-[p~standard-library]: ../standard_library/index.md
+[p~option]: ../standard-library/optional_values.md
+[p~standard-library]: ../standard-library/index.md
 [p~structs]: ../language/structs.md
 [p~traits]: ../language/traits.md

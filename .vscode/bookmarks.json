@@ -744,6 +744,16 @@
 					"label": ""
 				}
 			]
+		},
+		{
+			"path": "bk/drafts/inheritance.md",
+			"bookmarks": [
+				{
+					"line": 67,
+					"column": 35,
+					"label": ""
+				}
+			]
 		}
 	]
 }

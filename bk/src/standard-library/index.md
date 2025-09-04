@@ -82,7 +82,7 @@ The following covers portions of the Rust Standard Library that are not otherwis
 
 ### Heap Storage with `Box`
 
-{{#include box.incl.md}}
+{{#include heap_storage.incl.md}}
 
 ### Reference Counting: `Rc`, `Arc`
 

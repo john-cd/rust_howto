@@ -48,7 +48,7 @@ For most common file system tasks, [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}} 
 
 ### User Directories and Preferred Applications
 
-{{#include user_directories.incl.md}}
+{{#include user_directories_and_preferred_applications.incl.md}}
 
 ## Temporary Files and Directories
 

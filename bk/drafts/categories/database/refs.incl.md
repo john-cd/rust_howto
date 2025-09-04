@@ -37,7 +37,7 @@
 [p~graphql]: # "../web-programming_http-server/graphql.md"
 [p~ignore]: # "../filesystem/ignore.md"
 [p~memory]: ../development-tools_profiling/memory_usage_analysis.md
-[p~option]: # "../../standard_library/option.md"
+[p~option]: # "../../standard-library/option.md"
 [p~performance]: ../development-tools_cargo-plugins/performance.md
 [p~postgres]: postgres.md
 [p~programming-languages]: ../parser-implementations/programming_languages.md

@@ -1,6 +1,6 @@
 # Current State of the Art
 
-{{#include current_state_of_the_art.md.incl.md}}
+{{#include current_state_of_the_art.incl.md}}
 
 You will find below links to "Are we ... yet?" websites and similar. They list key libraries and tools and provide an idea of the current state of the art in a given domain.
 

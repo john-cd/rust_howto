@@ -25,6 +25,6 @@
 [p~functions]: ../../language/functions.md
 [p~iterators]: ../../language/iterators.md
 [p~mathematics]: index.md
-[p~option]: ../../standard_library/optional_values.md
+[p~option]: ../../standard-library/optional_values.md
 [p~traits]: ../../language/traits.md
 [p~vectors]: ../data-structures/vectors.md

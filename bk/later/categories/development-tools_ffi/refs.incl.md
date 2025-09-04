@@ -48,7 +48,7 @@
 [p~language]: ../../language/index.md
 [p~macros]: ../../language/macros.md
 [p~modules]: ../../language/modules.md
-[p~option]: # "../../standard_library/option.md"
+[p~option]: # "../../standard-library/option.md"
 [p~performance]: ../development-tools_cargo-plugins/performance.md
 [p~serde]: ../encoding/serde.md
 [p~strings]: ../data-structures/strings.md

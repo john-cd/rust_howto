@@ -5,4 +5,3 @@
 | [Clone (Deep Copy)][ex~language~clone] |
 | [Copy Semantics][ex~language~copy-semantics] |
 | [Borrowing when Calling a Function][ex~language~references-borrowing] |
-| [Borrowing when Calling a Function][ex~language~borrowing] |

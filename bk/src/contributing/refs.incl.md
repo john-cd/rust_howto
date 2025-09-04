@@ -17,6 +17,6 @@
 [p~language]: ../language/index.md
 [p~learning]: ../links/learning_rust.md
 [p~main]: ../language/entry_points.md
-[p~modules]: ../code_organization/modules_and_paths.md
-[p~src]: ../intro/index.md
+[p~modules]: ../code-organization/modules_and_paths.md
+[p~src]: ../introduction/index.md
 [p~topics-of-interest]: topics_of_interest.md

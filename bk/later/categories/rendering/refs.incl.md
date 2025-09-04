@@ -31,7 +31,7 @@
 [p~gpu]: ../../other/gpu/gpu.md
 [p~graphics]: ../graphics/index.md
 [p~images]: ../multimedia_images/images.md
-[p~option]: # "../../standard_library/option.md"
+[p~option]: # "../../standard-library/option.md"
 [p~performance]: ../development-tools_cargo-plugins/performance.md
 [p~rendering-engine]: ../rendering_engine/index.md
 [p~rendering]: index.md

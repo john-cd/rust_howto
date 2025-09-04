@@ -1,6 +1,6 @@
 # Publication to `crates.io`
 
-{{#include publication.incl.md}}
+{{#include publication_to_crates.io.incl.md}}
 
 ## Steps to Publish to `crates.io` {#publication-steps}
 

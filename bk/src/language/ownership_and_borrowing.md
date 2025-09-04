@@ -89,7 +89,7 @@ The `Copy` trait is a marker trait, meaning it doesn't have any methods. Types t
 {{#include ../../crates/language/examples/ownership_borrowing/copy.rs:example}}
 ```
 
-## References and Borrowing {#references-borrowing .skip}
+## References and Borrowing {#references-borrowing}
 
 A _reference_ in Rust is essentially a pointer (a memory address) to a value in memory, plus additional guarantees that the pointed-to data is valid (while a reference to an object exist, the object cannot be destroyed / dropped).
 

@@ -65,7 +65,7 @@ impl HasArea for Shape {
 You may also implement the [`AsRef`][c~std::convert::AsRef~docs]↗{{hi:std::convert::AsRef}} trait to retrieve the "base class":
 
 ```rust,editable
-{{#include ../../crates/standard_library/examples/  /asref2.rs:example}}
+{{#include ../../crates/standard-library/examples/  /asref2.rs:example}}
 ```
 
 Note that so-called "Deref polymorphism", meaning implementing [`Deref`][c~std::ops::Deref~docs]↗{{hi:std::ops::Deref}} to emulate inheritance between structs, is considered an [anti-pattern][deref-anti-pattern~repo]↗, especially since `Deref` is an _implicit_ conversion.
