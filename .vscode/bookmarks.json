@@ -211,26 +211,6 @@
 			]
 		},
 		{
-			"path": "bk/src/categories/filesystem/user_directories_and_preferred_applications.md",
-			"bookmarks": [
-				{
-					"line": 4,
-					"column": 10,
-					"label": ""
-				},
-				{
-					"line": 10,
-					"column": 8,
-					"label": ""
-				},
-				{
-					"line": 20,
-					"column": 27,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/categories/mathematics/additional_numeric_types.md",
 			"bookmarks": [
 				{

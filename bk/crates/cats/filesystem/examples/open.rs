@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
-//! Demonstrates how to use the `open` crate to open files and URLs using the
+//! This example demonstrates how to use the `open` crate to open files and URLs using the
 //! default program associated with the file type.
 
 fn main() {
@@ -29,8 +29,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-// #[test]
-// fn test() {
-//     main();
-// }
-// [how to test properly](https://github.com/john-cd/rust_howto/issues/1004)
+#[ignore = "Relies on default programs that may not be installed by default."]
+#[test]
+fn test() {
+    main();
+}
