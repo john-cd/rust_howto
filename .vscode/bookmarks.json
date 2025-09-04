@@ -734,6 +734,16 @@
 					"label": ""
 				}
 			]
+		},
+		{
+			"path": "bk/src/categories/data-structures/vectors.md",
+			"bookmarks": [
+				{
+					"line": 25,
+					"column": 31,
+					"label": ""
+				}
+			]
 		}
 	]
 }

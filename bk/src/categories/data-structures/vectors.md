@@ -21,6 +21,8 @@ The following example demonstrates common operations:
 
 ## `Vec` Memory Allocation {#memory-allocation}
 
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}}{{hi:std::vec::Vec}}{{hi:Vector}}
+
 `Vec` allocates memory on the heap (using the global allocator in `std::alloc`) to store its elements. `Vec` maintains a _capacity_ (how many elements it can hold without reallocating) and a _length_ (how many elements it currently holds).
 
 When you push elements and exceed the current capacity, [`Vec`][c~std::vec::Vec~docs]↗{{hi:std::vec::Vec}} reallocates memory - usually by doubling the capacity. This amortized growth strategy ensures that pushing elements remains efficient over time. The old memory is deallocated, and the contents are copied to the new, larger allocation.
