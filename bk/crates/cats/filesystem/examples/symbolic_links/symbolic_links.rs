@@ -2,6 +2,7 @@
 // ANCHOR: example
 use std::fs;
 use std::path::Path;
+
 use anyhow::Context;
 
 // Creating symbolic links is platform-specific, because different operating
@@ -10,7 +11,8 @@ fn create_symlink(original: &Path, link: &Path) -> anyhow::Result<()> {
     #[cfg(target_family = "unix")]
     {
         use std::os::unix::fs;
-        fs::symlink(original, link).context("Failed to create a new symbolic link.")
+        fs::symlink(original, link)
+            .context("Failed to create a new symbolic link.")
     }
     #[cfg(target_family = "windows")]
     {
@@ -79,9 +81,9 @@ fn main() -> anyhow::Result<()> {
 
 #[test]
 fn test() -> anyhow::Result<()> {
-
     let temp = Path::new("./temp");
-    utils::clean_folder(&temp).context("Failed to clean up the temp directory.")?;
+    utils::clean_folder(&temp)
+        .context("Failed to clean up the temp directory.")?;
     if !temp.exists() {
         fs::create_dir(temp).context("Failed to create the temp directory.")?;
     }

@@ -1,6 +1,7 @@
-use std::fs::DirEntry;
 use std::fs;
+use std::fs::DirEntry;
 use std::path::Path;
+
 use tracing::info;
 
 /// Checks if a directory entry is hidden (starts with a dot).
