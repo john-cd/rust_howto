@@ -18,17 +18,16 @@ fn create_symlink(original: &Path, link: &Path) -> anyhow::Result<()> {
     {
         use std::os::windows::fs;
         if original.is_dir() {
-            fs::symlink_dir(original, link)
+            Ok(fs::symlink_dir(original, link)?)
         } else {
-            fs::symlink_file(original, link)
+            Ok(fs::symlink_file(original, link)?)
         }
     }
     // A fallback for unsupported platforms:
     #[cfg(not(any(unix, windows)))]
     {
-        Err(io::Error::new(
-            io::ErrorKind::Other,
-            "Symbolic links not supported on this platform",
+        Err(anyhow::Error::msg(
+            "Symbolic links not supported on this platform"
         ))
     }
 }
