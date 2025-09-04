@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
-//! This example demonstrates how to use the `open` crate to open files and URLs using the
-//! default program associated with the file type.
+//! This example demonstrates how to use the `open` crate to open files and URLs
+//! using the default program associated with the file type.
 
 fn main() {
     //  The `that` function attempts to open the specified path with the

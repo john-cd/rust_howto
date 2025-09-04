@@ -27,7 +27,7 @@ fn create_symlink(original: &Path, link: &Path) -> anyhow::Result<()> {
     #[cfg(not(any(unix, windows)))]
     {
         Err(anyhow::Error::msg(
-            "Symbolic links not supported on this platform"
+            "Symbolic links not supported on this platform",
         ))
     }
 }
