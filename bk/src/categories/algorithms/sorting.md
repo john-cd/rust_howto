@@ -25,7 +25,7 @@ Note the following crates and modules:
 This example sorts a vector of integers via [`sort`][c~std::vec::Vec::sort~docs]↗{{hi:std::vec::Vec::sort}}. Alternatively, use [`sort_unstable`][c~std::vec::Vec::sort_unstable~docs]↗{{hi:std::vec::Vec::sort_unstable}}, which can be faster but does not preserve the order of equal elements.
 
 ```rust,editable
-{{#include ../../../crates/cats/algorithms/examples/sort/sort1.rs:example}}
+{{#include ../../../crates/cats/algorithms/examples/sort/sort_basic.rs:example}}
 ```
 
 ## Sort a Vector of Floats {#sort-vector-floats}
