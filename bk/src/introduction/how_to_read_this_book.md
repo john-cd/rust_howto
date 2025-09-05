@@ -9,7 +9,7 @@ The book is organized in a few major sections. Click on a heading (with an arrow
 - Each chapter within each subsection contains a list of recipes. The recipes are simple statements of a task to accomplish, like "generate random numbers in a range"; and each recipe is tagged with badges indicating which _crates_ they use, like [![rand][c~rand~docs~badge]][c~rand~docs], and which categories on [`crates.io`][crates.io~website]↗{{hi:crates.io}} those crates belong to, like [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}.
 - The [[crate_selection | crate selection]] chapter in the "Resources" section provides additional pointers on how to locate crates suitable for your project.
 - The [links][p~links] section provides pointers to notable Rust websites, [[learning | learning]] resources, cheat sheets, [[books | books]], [[example_code | code examples]], etc.
-- The appendices includes a word index, an index of examples in the book, and provides [[crates_alphabetical | alphabetical]] and [[crates_by_category | categorical]] lists of crates used in the book.
+- The indices includes a word index, an index of examples in the book, and provides [[crates_alphabetical | alphabetical]] and [[crates_by_category | categorical]] lists of crates used in the book.
 - The [contributing][p~contributing] section details how to contribute to the book itself.
 
 ## Look for a Solution for a Specific Task {#look-for-solution-for-specific-task}

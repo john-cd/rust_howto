@@ -26,7 +26,7 @@ Verify the [[markdown | Markdown]] is properly rendered using `just serve` or `m
 - [[topics_of_interest | Topics of Interest]].
 
 {{#include refs.incl.md}}
-{{#include ../refs/link-refs.md}}
+{{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [development_editing: review](https://github.com/john-cd/rust_howto/issues/523)

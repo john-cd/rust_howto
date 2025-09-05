@@ -132,7 +132,7 @@ Enhancement suggestions are tracked as [GitHub issues][rust-howto~issues]↗.
 This guide is based on the **contributing.md**. [Make your own][contributing.md~make-your-own]↗!
 
 {{#include refs.incl.md}}
-{{#include ../refs/link-refs.md}}
+{{#include ../../refs/link-refs.md}}
 [ex~contributing~code-of-conduct]: #code-of-conduct
 [ex~contributing~commit-messages]: #commit-messages
 [ex~contributing~i-have-a-question]: #i-have-a-question

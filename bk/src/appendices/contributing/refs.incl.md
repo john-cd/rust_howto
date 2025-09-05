@@ -14,9 +14,9 @@
 [ex~contributing~publication-steps]: publication_to_crates.io.md#publication-steps
 [ex~contributing~push-image-to-docker-hub]: dev_container_and_docker.md#push-image-to-docker-hub
 [ex~contributing~using-vs-code]: development_environment_setup.md#using-vs-code
-[p~language]: ../language/index.md
-[p~learning]: ../links/learning_rust.md
-[p~main]: ../language/entry_points.md
-[p~modules]: ../code-organization/modules_and_paths.md
-[p~src]: ../introduction/index.md
+[p~language]: ../../language/index.md
+[p~learning]: ../../links/learning_rust.md
+[p~main]: ../../language/entry_points.md
+[p~modules]: ../../code-organization/modules_and_paths.md
+[p~src]: ../../introduction/index.md
 [p~topics-of-interest]: topics_of_interest.md

@@ -111,24 +111,24 @@
   - [Meetings](links/meetings.md)
   - [Rust Companies and Jobs](links/rust_companies_and_jobs.md)
 
-# Appendices
+# Indices
 
 - [Index](word_index.md)
-- [Index of Examples](appendices/examples_index.md)
-- [Crates (Alphabetic)](appendices/crates_alphabetical.md)
-- [Crates (by Category)](appendices/crates_by_category.md)
+- [Index of Examples](indices/examples_index.md)
+- [Crates (Alphabetic)](indices/crates_alphabetical.md)
+- [Crates (by Category)](indices/crates_by_category.md)
 
-# Contributing
+# Appendices
 
-- [Contributing](contributing/index.md)
-  - [Topics of Interest](contributing/topics_of_interest.md)
-  - [Repository Structure](contributing/repository_structure.md)
-  - [Development Environment Setup](contributing/development_environment_setup.md)
-  - [Book Editing and Example Code Development](contributing/book_editing_and_example_code_development.md)
-  - [mdBook Pre-processors](contributing/mdBook_pre-processors.md)
-  - [Dev Containers and Docker](contributing/dev_container_and_docker.md)
-  - [Documentation Generation](contributing/documentation_generation.md)
-  - [Publication to `crates.io`](contributing/publication_to_crates.io.md)
+- [Contributing](appendices/contributing/index.md)
+  - [Topics of Interest](appendices/contributing/topics_of_interest.md)
+  - [Repository Structure](appendices/contributing/repository_structure.md)
+  - [Development Environment Setup](appendices/contributing/development_environment_setup.md)
+  - [Book Editing and Example Code Development](appendices/contributing/book_editing_and_example_code_development.md)
+  - [mdBook Pre-processors](appendices/contributing/mdBook_pre-processors.md)
+  - [Dev Containers and Docker](appendices/contributing/dev_container_and_docker.md)
+  - [Documentation Generation](appendices/contributing/documentation_generation.md)
+  - [Publication to `crates.io`](appendices/contributing/publication_to_crates.io.md)
 
 [Thanks](appendices/thanks.md)
 

@@ -95,7 +95,7 @@ For the sake of readability, the test boilerplate is hidden in the book.
 - [[modules_and_paths | Modules and Paths]].
 
 {{#include refs.incl.md}}
-{{#include ../refs/link-refs.md}}
+{{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 

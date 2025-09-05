@@ -26,7 +26,7 @@ clean() {
 
 root="$(realpath $1)/"
 
-index_file="${root}src/appendices/examples_index.md"
+index_file="${root}src/indices/examples_index.md"
 
 hiddendiv=$( sed -n '/^<div class="hidden">/,/^<\/div>/ p' "${index_file}" )
 

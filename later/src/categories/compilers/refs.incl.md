@@ -5,7 +5,7 @@
 [p~caching]: ../caching/index.md
 [p~cargo]: ../development-tools/cargo/cargo.md
 [p~configuration]: ../config/configuration.md
-[p~contributing]: ../../contributing/index.md
+[p~contributing]: ../../appendices/contributing/index.md
 [p~duration]: ../date-and-time/duration.md
 [p~functions]: ../../language/functions.md
 [p~generics]: ../../language/generics.md

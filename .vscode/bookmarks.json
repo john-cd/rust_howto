@@ -1,7 +1,7 @@
 {
 	"files": [
 		{
-			"path": "bk/src/appendices/crates_by_category.md",
+			"path": "bk/src/indices/crates_by_category.md",
 			"bookmarks": [
 				{
 					"line": 0,
@@ -11,7 +11,7 @@
 			]
 		},
 		{
-			"path": "bk/src/appendices/examples_index.md",
+			"path": "bk/src/indices/examples_index.md",
 			"bookmarks": [
 				{
 					"line": 0,
@@ -21,6 +21,11 @@
 				{
 					"line": 2,
 					"column": 6,
+					"label": ""
+				},
+				{
+					"line": 202,
+					"column": 5,
 					"label": ""
 				}
 			]
@@ -311,7 +316,7 @@
 			]
 		},
 		{
-			"path": "bk/src/contributing/documentation_generation.md",
+			"path": "bk/src/appendices/contributing/documentation_generation.md",
 			"bookmarks": [
 				{
 					"line": 51,
@@ -331,7 +336,7 @@
 			]
 		},
 		{
-			"path": "bk/src/contributing/dev_container_and_docker.md",
+			"path": "bk/src/appendices/contributing/dev_container_and_docker.md",
 			"bookmarks": [
 				{
 					"line": 27,
@@ -346,7 +351,7 @@
 			]
 		},
 		{
-			"path": "bk/src/contributing/development_environment_setup.md",
+			"path": "bk/src/appendices/contributing/development_environment_setup.md",
 			"bookmarks": [
 				{
 					"line": 65,
@@ -356,7 +361,7 @@
 			]
 		},
 		{
-			"path": "bk/src/contributing/book_editing_and_example_code_development.md",
+			"path": "bk/src/appendices/contributing/book_editing_and_example_code_development.md",
 			"bookmarks": [
 				{
 					"line": 31,
@@ -366,7 +371,7 @@
 			]
 		},
 		{
-			"path": "bk/src/contributing/index.md",
+			"path": "bk/src/appendices/contributing/index.md",
 			"bookmarks": [
 				{
 					"line": 37,
@@ -696,7 +701,7 @@
 			]
 		},
 		{
-			"path": "bk/src/contributing/repository_structure.md",
+			"path": "bk/src/appendices/contributing/repository_structure.md",
 			"bookmarks": [
 				{
 					"line": 4,
@@ -736,7 +741,7 @@
 			]
 		},
 		{
-			"path": "bk/src/contributing/topics_of_interest.md",
+			"path": "bk/src/appendices/contributing/topics_of_interest.md",
 			"bookmarks": [
 				{
 					"line": 66,
@@ -851,7 +856,7 @@
 			]
 		},
 		{
-			"path": "bk/src/contributing/mdBook_pre-processors.md",
+			"path": "bk/src/appendices/contributing/mdBook_pre-processors.md",
 			"bookmarks": [
 				{
 					"line": 4,

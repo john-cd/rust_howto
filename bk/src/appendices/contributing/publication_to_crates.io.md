@@ -30,7 +30,7 @@ Type [`just`][c~just~docs]↗{{hi:just}} at the command line for a list of short
 - [[book_editing_and_example_code_development | Book Editing and Example Code Development]].
 
 {{#include refs.incl.md}}
-{{#include ../refs/link-refs.md}}
+{{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 

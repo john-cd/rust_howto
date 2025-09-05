@@ -30,7 +30,7 @@ Consult the project's [README][mdbook-scrub-readme~repo]↗ for more details.
 - [[book_editing_and_example_code_development | Book Editing and Example Code Development]].
 
 {{#include refs.incl.md}}
-{{#include ../refs/link-refs.md}}
+{{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 

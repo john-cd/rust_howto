@@ -1,6 +1,38 @@
 # Index of Examples
 
-## Appendices
+## Contributing
+
+### Book Editing and Example Code Development
+
+{{#include ../appendices/contributing/book_editing_and_example_code_development.incl.md}}
+
+### Dev Container and Docker
+
+{{#include ../appendices/contributing/dev_container_and_docker.incl.md}}
+
+### Development Environment Setup
+
+{{#include ../appendices/contributing/development_environment_setup.incl.md}}
+
+### Documentation Generation
+
+{{#include ../appendices/contributing/documentation_generation.incl.md}}
+
+### mdBook Pre-Processors
+
+{{#include ../appendices/contributing/mdBook_pre-processors.incl.md}}
+
+### Publication to `crates.io`
+
+{{#include ../appendices/contributing/publication_to_crates.io.incl.md}}
+
+### Repository Structure
+
+{{#include ../appendices/contributing/repository_structure.incl.md}}
+
+### Topics of Interest
+
+{{#include ../appendices/contributing/topics_of_interest.incl.md}}
 
 ## Algorithms
 
@@ -162,45 +194,13 @@
 
 {{#include ../code-organization/visibility.incl.md}}
 
-## Contributing
-
-### Book Editing and Example Code Development
-
-{{#include ../contributing/book_editing_and_example_code_development.incl.md}}
-
-### Dev Container and Docker
-
-{{#include ../contributing/dev_container_and_docker.incl.md}}
-
-### Development Environment Setup
-
-{{#include ../contributing/development_environment_setup.incl.md}}
-
-### Documentation Generation
-
-{{#include ../contributing/documentation_generation.incl.md}}
-
-### mdBook Pre-Processors
-
-{{#include ../contributing/mdBook_pre-processors.incl.md}}
-
-### Publication to `crates.io`
-
-{{#include ../contributing/publication_to_crates.io.incl.md}}
-
-### Repository Structure
-
-{{#include ../contributing/repository_structure.incl.md}}
-
-### Topics of Interest
-
-{{#include ../contributing/topics_of_interest.incl.md}}
-
 ## Crate Selection
 
 ### Current State of The Art
 
 {{#include ../crate-selection/current_state_of_the_art.incl.md}}
+
+## Indices
 
 ## Introduction
 

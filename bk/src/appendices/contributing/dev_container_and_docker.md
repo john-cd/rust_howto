@@ -86,7 +86,7 @@ docker push johncd/rust_howto_ci:latest
 - [[repository_structure | Repository Structure]].
 
 {{#include refs.incl.md}}
-{{#include ../refs/link-refs.md}}
+{{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [dev_container_docker: review; rust and Docker; multistage builds](https://github.com/john-cd/rust_howto/issues/525)
