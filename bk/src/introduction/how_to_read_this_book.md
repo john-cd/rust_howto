@@ -65,27 +65,27 @@ The [`xmpl`][rust-howto~xmpl~repo]↗ folder in the book's GitHub repo contains 
 
 Error handling in Rust is robust but can require a bit of boilerplate. Because of this, one often sees Rust examples filled with [`unwrap`][c~std::result::Result::unwrap~docs]↗{{hi:unwrap}} calls, instead of proper error handling.
 
-Since this book's recipes are intended to be reused as-is and encourage best practices, they set up error handling correctly when there are [`Result`][c~std::result::Result~docs]↗{{hi:Result}} types involved. The structure generally looks like:
+Since this book's recipes are intended to be reused as-is and encourage best practices, they set up error handling correctly when there are [`Result`][c~std::result::Result~docs]↗{{hi:Result}} types involved.
+
+In most examples, we have chosen to use [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}}'s [`Result`][c~anyhow::Result~docs]↗ as the return type of any fallible function (instead of writing `std::result::Result<_, Box<dyn std::error::Error>>` or using custom [`Result`][c~std::result::Result~docs]↗{{hi:Result}} or [`Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} types). Within the code, we use the [`?`][book~rust~ch09-02-recoverable-errors-with-result-?]↗{{hi:?}} operator to easily propagate any error that implements the [`std::error::Error`][c~std::error::Error~docs]↗ trait. The structure generally looks like the following:
 
 ```rust,editable
 {{#include ../../crates/about/examples/about1.rs:example}}
 ```
 
+The `main` function often returns a `Result` as well. Rust converts it into an exit code and displays the error, if any:
+
 ```rust,editable
 {{#include ../../crates/about/examples/about2.rs:example}}
 ```
 
-In most examples, we have chosen to use [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}}'s [`Result`][c~anyhow::Result~docs]↗ as the return type of any fallible function, instead of writing `std::result::Result<_, Box<dyn std::error::Error>>` or using custom [`Result`][c~std::result::Result~docs]↗{{hi:Result}} or [`Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} types.
-
-Within the code, we use the [`?`][book~rust~ch09-02-recoverable-errors-with-result-?]↗{{hi:?}} operator to easily propagate any error that implements the [`std::error::Error`][c~std::error::Error~docs]↗ trait.
-
-For more background on error handling in Rust, read [this page][book~rust~error-handling]↗ of the 'Rust book'.
+For more background on error handling in Rust, review the [[entry_points | entry points]] and [[error_handling | error handling]] sections of this book or read [this section][book~rust~error-handling]↗ of the 'Rust book'.
 
 ## A Note about Crate Representation {#note-about-crate-representation}
 
-This book covers "key" or "foundational" crates - the crates that make up the most common programming tasks, and that the rest of the ecosystem builds off of.
+This book intends to cover "key" or "foundational" crates - the crates that make up the most common programming tasks, and that the rest of the ecosystem builds off of.
 
-Key crates were identified by cross-referencing [`blessed.rs`][blessed-rs~website]↗{{hi:blessed.rs}}, most downloaded crates (overall and per category) in [`crates.io`][crates.io~website]↗{{hi:crates.io}}, [most popular Rust libraries][lib.rs~most-popular~website]↗ and high-quality crates per [`lib.rs`][lib.rs~website]↗{{hi:lib.rs}} [statistics][lib.rs~stats~website]↗, among others.
+Key crates were identified by cross-referencing [`blessed.rs`][blessed-rs~website]↗{{hi:blessed.rs}}, the most downloaded crates (overall and per category) in [`crates.io`][crates.io~website]↗{{hi:crates.io}}, [most popular Rust libraries][lib.rs~most-popular~website]↗ and high-quality crates per [`lib.rs`][lib.rs~website]↗{{hi:lib.rs}} [statistics][lib.rs~stats~website]↗, as well as pouring over countless blogs, forums, and examples.
 
 This said, the crate selection process is necessarily opinionated. Feel free to offer suggestions (or submit a PR to the book's GitHub repo), if the author missed an important, widely used crate.
 
