@@ -414,48 +414,13 @@
 					"label": ""
 				},
 				{
-					"line": 128,
-					"column": 13,
-					"label": ""
-				},
-				{
-					"line": 63,
+					"line": 16,
 					"column": 12,
 					"label": ""
 				},
 				{
-					"line": 70,
-					"column": 13,
-					"label": ""
-				},
-				{
-					"line": 74,
-					"column": 41,
-					"label": ""
-				},
-				{
-					"line": 83,
-					"column": 23,
-					"label": ""
-				},
-				{
-					"line": 85,
-					"column": 26,
-					"label": ""
-				},
-				{
-					"line": 89,
-					"column": 126,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/introduction/index.md",
-			"bookmarks": [
-				{
-					"line": 50,
-					"column": 10,
+					"line": 61,
+					"column": 22,
 					"label": ""
 				}
 			]

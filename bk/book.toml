@@ -137,7 +137,7 @@ no-section-label = true
 git-repository-url = "https://github.com/john-cd/rust_howto"
 # git-repository-icon = "fa-github"
 edit-url-template = "https://github.com/john-cd/rust_howto/edit/main/bk/{path}"
-site-url = "rust_howto/"
+site-url = "/rust_howto/"
 # cname = "john-cd.com"
 # input-404 = "not-found.md"
 
