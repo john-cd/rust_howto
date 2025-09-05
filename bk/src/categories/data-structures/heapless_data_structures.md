@@ -2,7 +2,7 @@
 
 {{#include heapless_data_structures.incl.md}}
 
-## Work with Heapless Data Structures with `heapless` {#heapless}
+## Work with Heapless Data Structures {#heapless}
 
 [![heapless][c~heapless~docs~badge]][c~heapless~docs] [![heapless~crates.io][c~heapless~crates.io~badge]][c~heapless~crates.io] [![heapless~repo][c~heapless~repo~badge]][c~heapless~repo] [![heapless~lib.rs][c~heapless~lib.rs~badge]][c~heapless~lib.rs]{{hi:heapless}}{{hi:No heap}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
