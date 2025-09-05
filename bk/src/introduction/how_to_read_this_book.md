@@ -4,7 +4,7 @@ Click on the "three stacked bars" on the top left corner, in order to reveal the
 
 The book is organized in a few major sections. Click on a heading (with an arrow) to expand it and navigate to chapters within the book.
 
-- The book first summarizes core concepts of the [language][p~lang] and often-used elements of the [standard library][p~standard-library](if they are not covered elsewhere). The [[code_organization | code organization]] section explains how Rust code should be structured, depending on your project's needs.
+- The book first summarizes core concepts of the [language][p~lang] and often-used elements of the [standard library][p~standard-library] (if they are not covered elsewhere). The [[code_organization | code organization]] section explains how Rust code should be structured, depending on your project's needs.
 - The bulk of the book focuses on the Rust ecosystem, meaning Rust tools and public libraries that you reuse in your project. It is divided in subsections named, whenever possible, after the [categories][crates.io~category_slugs]↗ of [`crates.io`][crates.io~website]↗{{hi:crates.io}}, the central registry of public Rust crates. That means you can easily list and search for related crates using `crates.io` or [`lib.rs`][lib.rs~website]↗.
 - Each chapter within each subsection contains a list of recipes. The recipes are simple statements of a task to accomplish, like "generate random numbers in a range"; and each recipe is tagged with badges indicating which _crates_ they use, like [![rand][c~rand~docs~badge]][c~rand~docs], and which categories on [`crates.io`][crates.io~website]↗{{hi:crates.io}} those crates belong to, like [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}.
 - The [[crate_selection | crate selection]] chapter in the "Resources" section provides additional pointers on how to locate crates suitable for your project.
@@ -67,7 +67,7 @@ Error handling in Rust is robust but can require a bit of boilerplate. Because o
 
 Since this book's recipes are intended to be reused as-is and encourage best practices, they set up error handling correctly when there are [`Result`][c~std::result::Result~docs]↗{{hi:Result}} types involved.
 
-In most examples, we have chosen to use [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}}'s [`Result`][c~anyhow::Result~docs]↗ as the return type of any fallible function (instead of writing `std::result::Result<_, Box<dyn std::error::Error>>` or using custom [`Result`][c~std::result::Result~docs]↗{{hi:Result}} or [`Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} types). Within the code, we use the [`?`][book~rust~ch09-02-recoverable-errors-with-result-?]↗{{hi:?}} operator to easily propagate any error that implements the [`std::error::Error`][c~std::error::Error~docs]↗ trait. The structure generally looks like the following:
+In most examples, we have chosen to use [`anyhow::Result`][c~anyhow::Result~docs]↗ (from the [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} crate) as the return type of any fallible function (instead of writing `std::result::Result<_, Box<dyn std::error::Error>>` or using custom [`Result`][c~std::result::Result~docs]↗{{hi:Result}} or [`Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} types). Within the code, we use the [`?`][book~rust~ch09-02-recoverable-errors-with-result-?]↗{{hi:?}} operator to easily propagate any error that implements the [`std::error::Error`][c~std::error::Error~docs]↗ trait. The structure generally looks like the following:
 
 ```rust,editable
 {{#include ../../crates/about/examples/about1.rs:example}}
@@ -79,7 +79,7 @@ The `main` function often returns a `Result` as well. Rust converts it into an e
 {{#include ../../crates/about/examples/about2.rs:example}}
 ```
 
-For more background on error handling in Rust, review the [[entry_points | entry points]] and [[error_handling | error handling]] sections of this book or read [this section][book~rust~error-handling]↗ of the 'Rust book'.
+For more background on error handling in Rust, review the [[entry_points | entry point]] and [[error_handling | error handling]] sections of this book or read [this section][book~rust~error-handling]↗ of the 'Rust book'.
 
 ## A Note about Crate Representation {#note-about-crate-representation}
 
@@ -87,7 +87,7 @@ This book intends to cover "key" or "foundational" crates - the crates that make
 
 Key crates were identified by cross-referencing [`blessed.rs`][blessed-rs~website]↗{{hi:blessed.rs}}, the most downloaded crates (overall and per category) in [`crates.io`][crates.io~website]↗{{hi:crates.io}}, [most popular Rust libraries][lib.rs~most-popular~website]↗ and high-quality crates per [`lib.rs`][lib.rs~website]↗{{hi:lib.rs}} [statistics][lib.rs~stats~website]↗, as well as pouring over countless blogs, forums, and examples.
 
-This said, the crate selection process is necessarily opinionated. Feel free to offer suggestions (or submit a PR to the book's GitHub repo), if the author missed an important, widely used crate.
+The crate selection process is necessarily opinionated. Feel free to offer suggestions (or submit a PR to the book's GitHub repo), if the author missed an important, widely used crate.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

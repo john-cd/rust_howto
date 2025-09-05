@@ -16,7 +16,7 @@ The [`bk/book.toml`][rust-howto~book.toml~repo]↗ config file configures severa
 
 The [[mdbook | `mdbook`]] chapter describes these preprocessors and backends in more detail.
 
-## `mdbook-scrub`, a Custom Preprocessor for `mdbook` {#mdbook-scrub}
+## Use `mdbook-scrub`, a Custom Preprocessor for `mdbook` {#mdbook-scrub}
 
 [`mdbook-scrub`][rust-howto~mdbook-scrub~repo]↗ is a [custom preprocessor][book~mdbook~preprocessors]↗ written specifically for this book. It is a simple tool that
 
