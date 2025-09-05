@@ -45,7 +45,7 @@ Per the curated list of Rust crates [`blessed.rs`][blessed-rs~website]↗, "the 
 
 Furthermore, there are no dominant comprehensive platforms akin to `Rails`, `Django`, `Spring` or `Node` in the Rust world at this time, although several frameworks are in specific areas, such as asynchronous programming, web development, or GUI.
 
-Instead, Rust developers learn which crates to use, and how to use them, in an osmotic manner - the knowledge is passed down from a Rust expert to its team members; or gleaned from blogs, forums, or mailing lists. This is Rust's "second learning curve" after mastering the basics of the langague and standard library.
+Instead, Rust developers learn which crates to use, and how to use them, in an osmotic manner - the knowledge is passed down from a Rust expert to its team members; or gleaned from blogs, forums, or mailing lists. This is Rust's "second learning curve" after mastering the basics of the language and standard library.
 
 This book therefore aims at reducing this learning curve by providing numerous **examples** demonstrating the uses of the **foundational crates** that are necessary for day-to-day Rust coding - examples which are absent from or may be scattered in the [reference documentation][docs.rs~website]↗ of hundreds of crates. It hopes to become a "cheat sheet on steroid" for the Rust ecosystem (_not just_ for the Rust language).
 
