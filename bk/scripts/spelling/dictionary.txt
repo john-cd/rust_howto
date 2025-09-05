@@ -1013,6 +1013,7 @@ OnceLock
 OneShot
 OneSignal
 Onto
+OpEn
 OpenAI
 OpenAL
 OpenCL
@@ -1709,6 +1710,7 @@ alexandrie
 algolia
 algorithm
 algorithmia
+algos
 alisha
 all
 alloc
@@ -2490,6 +2492,7 @@ io's
 ioctls
 ipnet
 iroh
+irreproducible
 isahc
 isize
 isomorphisms
@@ -2550,6 +2553,7 @@ kickstart
 knoldus
 kondo
 kong
+kornia
 kraken
 krypt
 kryptco
@@ -3275,6 +3279,7 @@ solana
 soliditylang
 somefile
 sonatype
+sophus
 sortable
 spacedrive
 spacemacs
@@ -3572,6 +3577,7 @@ webpki
 webrender
 webservice
 websocket
+websockets
 webviews
 wellfound
 wellmade

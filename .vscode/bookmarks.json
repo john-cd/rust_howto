@@ -17,6 +17,11 @@
 					"line": 0,
 					"column": 0,
 					"label": ""
+				},
+				{
+					"line": 2,
+					"column": 6,
+					"label": ""
 				}
 			]
 		},
@@ -66,6 +71,11 @@
 				{
 					"line": 73,
 					"column": 6,
+					"label": ""
+				},
+				{
+					"line": 79,
+					"column": 18,
 					"label": ""
 				}
 			]
@@ -359,6 +369,11 @@
 			"path": "bk/src/contributing/index.md",
 			"bookmarks": [
 				{
+					"line": 37,
+					"column": 27,
+					"label": ""
+				},
+				{
 					"line": 145,
 					"column": 21,
 					"label": ""
@@ -394,13 +409,43 @@
 			"path": "bk/src/introduction/how_to_read_this_book.md",
 			"bookmarks": [
 				{
-					"line": 62,
+					"line": 1,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 128,
+					"column": 13,
+					"label": ""
+				},
+				{
+					"line": 63,
 					"column": 12,
 					"label": ""
 				},
 				{
-					"line": 86,
+					"line": 70,
+					"column": 13,
+					"label": ""
+				},
+				{
+					"line": 74,
+					"column": 41,
+					"label": ""
+				},
+				{
+					"line": 83,
 					"column": 23,
+					"label": ""
+				},
+				{
+					"line": 85,
+					"column": 26,
+					"label": ""
+				},
+				{
+					"line": 89,
+					"column": 126,
 					"label": ""
 				}
 			]
@@ -694,6 +739,11 @@
 					"label": ""
 				},
 				{
+					"line": 14,
+					"column": 31,
+					"label": ""
+				},
+				{
 					"line": 27,
 					"column": 22,
 					"label": ""
@@ -851,16 +901,6 @@
 			]
 		},
 		{
-			"path": "bk/src/categories/data-structures/unique_identifiers.incl.md",
-			"bookmarks": [
-				{
-					"line": 3,
-					"column": 16,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/categories/filesystem/paths.incl.md",
 			"bookmarks": [
 				{
@@ -876,6 +916,26 @@
 				{
 					"line": 33,
 					"column": 20,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/SUMMARY.md",
+			"bookmarks": [
+				{
+					"line": 122,
+					"column": 8,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/refs/other-refs.md",
+			"bookmarks": [
+				{
+					"line": 1417,
+					"column": 5,
 					"label": ""
 				}
 			]

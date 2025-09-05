@@ -111,7 +111,7 @@ Ecosystem:
 ros2 r2r
 Middleware: dora-rs copper-rs
 comm: zenoh
-math: nafaer-rs , OpEn
+math: faer-rs , OpEn
 sim: rapier, bevy
 Viz: rerun, kiss3d, foxglove (ROS2)
 File loading: mcap

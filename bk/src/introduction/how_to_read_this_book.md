@@ -24,7 +24,7 @@ If you are simply looking for the solution to a given task, the easiest ways to 
 
 ## Use the Code Examples {#how-to-use-code-examples}
 
-Code examples, a.k.a. recipes, are designed to give you instant access to working code, along with an explanation of what it is doing, and to guide you to further information. Most recipes can be copied to the clipboard; edited in place; and run on the Rust playground by clicking the "right arrow" butto. The results, if any, are displayed below the example.
+Code examples, a.k.a. recipes, are designed to give you instant access to working code, along with an explanation of what it is doing, and to guide you to further information. Most recipes can be copied to the clipboard; edited in place; and run on the Rust playground by clicking the "right arrow" button. The results, if any, are displayed below the example.
 
 All recipes are self-contained programs, so that they may be copied directly into your own projects for experimentation. To do so, follow the instructions below.
 
