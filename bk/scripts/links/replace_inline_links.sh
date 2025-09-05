@@ -23,7 +23,7 @@ set -euo pipefail
 
 root="$(realpath $1)/"
 
-for file in $( find ${root}src ${root}drafts ${root}later -type f -name "*.md"  -not -name "refs.incl.md" -not -name "SUMMARY.md" -not -name "*refs.md" )
+for file in $( find ${root}src ${root}drafts ${root}../later/src -type f -name "*.md"  -not -name "refs.incl.md" -not -name "SUMMARY.md" -not -name "*refs.md" )
 do
   echo ">> $file"
   # Replace naked URLs by reference-style link.

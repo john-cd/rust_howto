@@ -5,9 +5,9 @@ root="$(realpath $1)"
 keyword="${2:-""}"
 
 if [ "$keyword" == "" ]; then
-  files=$( find "${root}/src" "${root}/drafts" "${root}/later" -type f -name "*.md" -not -name "*.incl.md" -not -name "SUMMARY.md" -not -name "*refs.md" )
+  files=$( find "${root}/src" "${root}/drafts" "${root}/../later/src" -type f -name "*.md" -not -name "*.incl.md" -not -name "SUMMARY.md" -not -name "*refs.md" )
 else
-  files=$( rg -F -i --files-with-matches -g "*.md" -g "!*.incl.md" -g "!SUMMARY.md" -g "!*refs.md" "${keyword}" "${root}/src" "${root}/drafts" "${root}/later" )
+  files=$( rg -F -i --files-with-matches -g "*.md" -g "!*.incl.md" -g "!SUMMARY.md" -g "!*refs.md" "${keyword}" "${root}/src" "${root}/drafts" "${root}/../later/src" )
 fi
 
 for file in ${files}

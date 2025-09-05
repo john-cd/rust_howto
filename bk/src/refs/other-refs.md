@@ -1415,7 +1415,7 @@
 [rust-howto~.vscode~repo]: https://github.com/john-cd/rust_howto/tree/main/.vscode
 [rust-howto~Dockerfile~repo]: https://github.com/john-cd/rust_howto/blob/main/.devcontainer/Dockerfile
 [rust-howto~bin~repo]: https://github.com/john-cd/rust_howto/tree/main/bin
-[rust-howto~bk-later~repo]: https://github.com/john-cd/rust_howto/tree/main/bk/later
+[rust-howto~bk-later~repo]: https://github.com/john-cd/rust_howto/tree/main/later
 [rust-howto~bk-master~repo]: https://github.com/john-cd/rust_howto/tree/main/bk/master
 [rust-howto~bk-scripts~repo]: https://github.com/john-cd/rust_howto/tree/main/bk/scripts
 [rust-howto~bk-src-language~repo]: https://github.com/john-cd/rust_howto/tree/main/bk/src/language

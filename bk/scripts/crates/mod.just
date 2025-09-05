@@ -1,6 +1,6 @@
 set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 
-book_root := clean(source_directory() + "/../..")
+book_root := clean(join(source_directory(), "../.."))
 
 set tempdir := "."
 
@@ -17,7 +17,7 @@ backtick:
    for crate in $( cat {{book_root}}/master/crates.txt | sed -E -e '/^\s*(vision|markup|combine|matrix|derive|raster|job|thumbnails|digest|encoding|ping|clear|can|core|fetch|find|atomic|protobuf|ignore|select|windows|tracing|heapless|bytes|regex|futures|cached|config|diff|which|fake|glob|markdown|insta|similar|time|just|directories|image|open|log|either|which|similar|cargo|just|cross|colored|console)\s*$/d' )
    do
      echo ">> $crate"
-     find {{book_root}}/src {{book_root}}/drafts {{book_root}}/later -type f -name '*.md' -not -name '*.incl.md' -not -name '*refs.md' \
+     find {{book_root}}/src {{book_root}}/drafts {{book_root}}/../later -type f -name '*.md' -not -name '*.incl.md' -not -name '*refs.md' \
         -exec sed -E -i 's~(\s)('"${crate}"')(\s)~\1`\2`\3~g' {} \;
    done
 

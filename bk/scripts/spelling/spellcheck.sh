@@ -45,7 +45,7 @@ shopt -s nullglob
 opt=${1:-""}
 dict_filename="$(dirname "$0")/dictionary.txt"
 book_dir="$(realpath $(dirname ${0})/../..)"
-markdown_sources=($(find ${book_dir}/src ${book_dir}/drafts ${book_dir}/later -type f -name "*.md" -not -name "refs.incl.md" -not -wholename "refs/*.md"))
+markdown_sources=($(find ${book_dir}/src ${book_dir}/drafts ${book_dir}/../later/src -type f -name "*.md" -not -name "refs.incl.md" -not -wholename "refs/*.md"))
 mode="check"
 
 # aspell repeatedly modifies personal dictionary for some purpose,
