@@ -3,42 +3,39 @@
 <div class="warning">
 This book is going through HEAVY EDITS. Pardon the dust.
 
-A large number of chapters and examples are currently hidden, as we are reorganizing the book.
+A large number of chapters and examples are currently hidden, as I am reorganizing the book.
 </div>
 
 ## What You Will Find Here
 
 This book is "everything you need for day-to-day Rust coding, in one place". It is a compendium of **code examples** and **resources** for the **Rust programming language** and its **ecosystem**.
 
-In particular, it provides expansive coverage of "key" or "foundational" Rust crates (libraries) and tools that are used , and that the rest of the ecosystem builds off of.
+It combines a summary of the language and of key features of the standard library; a "cookbook" with a large number of code examples to accomplish common programming tasks; and numerous links to Rust resources (books, blogs, example code, videos, meetings & events, etc).
 
-This book combines a summary of the language and key features of the standard library; a "cookbook" with a large number of code examples to accomplish common programming tasks; and numerous links to Rust resources (books, blogs, example code, videos, meetings & events, etc).
-
-- It helps you select the proper crates (Rust libraries) for your project,
-- It includes TODO
+In particular, it emphasizes coverage of **foundational Rust crates** (libraries) and tools, crates that are not part of the standard library but are very commonly used and that every experienced Rust developer should know - or at least know about.
 
 ## The Rust Programming Language, in a Few Words
 
-Rust is a modern programming language that offers high performance, reliability, and productivity. It is designed to prevent common errors such as memory leaks{{hi:Memory leaks}}, data races{{hi:Data races}}, and null pointer dereferences{{hi:Null pointer dereferences}}, by enforcing strict rules at compile time. Rust supports powerful features such as generics{{hi:Generics}}, traits{{hi:Traits}}, macros{{hi:Macros}}, and concurrency{{hi:Concurrency}}, making it suitable for a wide range of applications.
+You are likely reading this book, because you are aware that Rust is a modern programming language that offers high safety, reliability, and performance. It emphasizes memory safety{{hi:Memory safety}} (without a garbage collector), type safety{{hi:Type safety}}, and fearless concurrency{{hi:Concurrency}}, without code brittleness. Rust is designed to prevent common errors such as memory leaks{{hi:Memory leaks}}, data races{{hi:Data races}}, and null pointer dereferences{{hi:Null pointer dereferences}}, by enforcing strict rules at compile time. It supports powerful features such as pattern matching, algebraic data types, higher-order functions, generics{{hi:Generics}}, traits{{hi:Traits}}, macros{{hi:Macros}}, and asynchrony, making it suitable for a wide range of applications - from embedded development & systems programming to high-level (e.g. web) development.
 
 ## Who Should Read This Book
 
 This book is intended for:
 
-- Experienced programmers, to find code examples for common programming tasks, and refresh their memory on the Rust language and standard library.
+- Experienced programmers, to locate the right crates for their projects, to find code examples for common programming tasks, and refresh their memory on the Rust language and standard library.
 - New Rust programmers, to get an overview of the capabilities of the Rust ecosystem, learn best practices, and get pointers to learning resources.
 
 This book is not intended for complete beginners. Readers should have already some basic familiarity with [Rust][rust-lang~website]↗ concepts. The [Rust Book][book~rust]↗{{hi:Rust book}} is an excellent resource to get started with. This said, most features of the language are summarized in this book's [language][p~lang] and [[standard_library | standard library]] sections.
 
 ## Why This Book
 
-Per the curated list of Rust crates [`blessed.rs`][blessed-rs~website]↗, "the standard library in Rust is much smaller than in Python or Go, for example. Those languages come with "batteries included" support ... Rust, on the other hand, gets things like that from the [`crates.io`][crates.io~website]↗{{hi:crates.io}} ecosystem and the [`cargo`][c~cargo~docs]↗{{hi:cargo}} package manager. But with _more than 180 thousand crates_ (libraries) to choose from, a common complaint from new Rust developers is that they don't know where to start, which crates they ought to use, and which crates they ought to trust."
+Per the curated list of Rust crates [`blessed.rs`][blessed-rs~website]↗, "the standard library in Rust is much smaller than in Python or Go, for example. Those languages come with "batteries included" support ... Rust, on the other hand, gets things like that from the [`crates.io`][crates.io~website]↗{{hi:crates.io}} ecosystem and the [`cargo`][c~cargo~docs]↗{{hi:cargo}} package manager. But with _more than 195 thousand crates_ (libraries) to choose from, a common complaint from new Rust developers is that they don't know where to start, which crates they ought to use, and which crates they ought to trust."
 
-There are no dominant frameworks or platforms akin to `Rails`, `Django`, `Spring` or `Node` in the Rust world at this time. Instead, Rust developers, as they gain experience, learn about TODO
+Furthermore, there are no dominant comprehensive frameworks or platforms akin to `Rails`, `Django`, `Spring` or `Node` in the Rust world at this time (although several are emerging in specific areas, such as asynchronous programming, web development, GUI...).
 
-"key" or "foundational" crates, crates that are not part of the standard library but are very commonly used.
+Instead, Rust developers learn which crates to use, and how to use them, in an osomotic manner - the knowledge is passed down from a Rust expert to its team members; or gleaned from blogs, forums, or mailing lists.
 
-This book therefore provides EXAMPLES demonstrating the uses of the KEY CRATES necessary for day-to-day Rust coding - examples which are absent from or may be scattered in the [reference documentation][docs.rs~website]↗ of hundreds of crates. It hopes to become a "cheat sheet on steroid" for the Rust ECOSYSTEM (_not just_ for the Rust language).
+This book therefore aims at reducing this learning curve by providing numerous **examples** demonstrating the uses of the **foundational crates** that are necessary for day-to-day Rust coding - examples which are absent from or may be scattered in the [reference documentation][docs.rs~website]↗ of hundreds of crates. It hopes to become a "cheat sheet on steroid" for the Rust ECOSYSTEM (_not just_ for the Rust language).
 
 This book is a complement to similar works:
 
@@ -49,5 +46,4 @@ This book is a complement to similar works:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[polish](https://github.com/john-cd/rust_howto/issues/536)
 </div>

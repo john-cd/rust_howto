@@ -376,36 +376,6 @@
 			]
 		},
 		{
-			"path": "bk/src/introduction/how_to_read_this_book.md",
-			"bookmarks": [
-				{
-					"line": 0,
-					"column": 10,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/introduction/index.md",
-			"bookmarks": [
-				{
-					"line": 17,
-					"column": 8,
-					"label": ""
-				},
-				{
-					"line": 36,
-					"column": 178,
-					"label": ""
-				},
-				{
-					"line": 51,
-					"column": 3,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/language/closures.md",
 			"bookmarks": [
 				{
@@ -651,7 +621,7 @@
 			]
 		},
 		{
-			"path": "bk/later_crates/cats/science/Cargo.toml",
+			"path": "later/src_crates/cats/science/Cargo.toml",
 			"bookmarks": [
 				{
 					"line": 29,
