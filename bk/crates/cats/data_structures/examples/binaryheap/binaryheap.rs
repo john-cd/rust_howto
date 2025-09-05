@@ -1,5 +1,5 @@
 #![allow(dead_code)]
-// ANCHOR_END: example
+// ANCHOR: example
 use std::cmp::Reverse;
 use std::collections::BinaryHeap;
 
