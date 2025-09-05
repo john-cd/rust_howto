@@ -46,7 +46,7 @@ Each book section or category has an introductory `index.md` file that lists its
 
 In the `bk/src/refs` folder, you will find `category-refs.md` for link references to the `crates.io` [category pages][crates.io-categories~website]↗; `crate-refs.md` for links to [`crates.io`][crates.io~website]↗, [`lib.rs`][lib.rs~website]↗ and GitHub for each crate used in the book; and `other-refs.md` for links to blogs, books, company websites related to Rust.
 
-The [`bk/drafts`][rust-howto~drafts~repo]↗ and [`bk/later`][rust-howto~bk-later~repo]↗ folders follow the same basic organization.
+The [`bk/drafts`][rust-howto~drafts~repo]↗ and [`later/src`][rust-howto~bk-later~repo]↗ folders follow the same basic organization.
 
 ## Code Organization {#code-organization}
 

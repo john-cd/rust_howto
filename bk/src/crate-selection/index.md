@@ -10,7 +10,7 @@ A common complaint from new Rust developers is that they don't know which crates
 
 ### Use this Book to Select Crates for your Project
 
-It is the main purpose of this book to provide expansive coverage of "key" or "foundational" crates - those crates that make up the most common programming tasks.
+It is the main purpose of this book to provide expansive coverage of "key" or "foundational" crates - those crates that make up the most common programming tasks:
 
 1. Browse the left sidebar for a relevant category.
 1. Search by keyword for recipes for your specific problem.
@@ -34,7 +34,7 @@ You may also use the following sites for crate recommendations:
 
 You can also search or post on Rust chat servers and forums - see [[blogs | Blogs and Forums]].
 
-### Additional Lists & Reviews
+### Consult Additional Lists & Reviews
 
 - [Awesome Rust (libhunt.com)][rust-libhunt~website]↗.
 - [Top Rust Libraries 2025][libs.tech-rust~website]↗.

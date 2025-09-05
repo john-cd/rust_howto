@@ -37,7 +37,7 @@ docker compose up -d
 docker compose up --build -d
 ```
 
-## Deployment to GitHub Pages {#deployment-to-github-pages}
+## Deploy to GitHub Pages {#deployment-to-github-pages}
 
 The continuous integration workflow{{hi:Continuous integration workflow}} is found under `.github`{{hi:.github}}. See the [GitHub Actions documentation][github-actions~website]↗ for details.
 

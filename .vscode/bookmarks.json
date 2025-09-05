@@ -304,6 +304,11 @@
 			"path": "bk/src/contributing/documentation_generation.md",
 			"bookmarks": [
 				{
+					"line": 51,
+					"column": 15,
+					"label": ""
+				},
+				{
 					"line": 56,
 					"column": 11,
 					"label": ""
@@ -318,6 +323,11 @@
 		{
 			"path": "bk/src/contributing/dev_container_and_docker.md",
 			"bookmarks": [
+				{
+					"line": 27,
+					"column": 12,
+					"label": ""
+				},
 				{
 					"line": 91,
 					"column": 15,
@@ -362,6 +372,11 @@
 					"line": 8,
 					"column": 17,
 					"label": ""
+				},
+				{
+					"line": 22,
+					"column": 10,
+					"label": ""
 				}
 			]
 		},
@@ -371,6 +386,31 @@
 				{
 					"line": 4,
 					"column": 7,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/introduction/how_to_read_this_book.md",
+			"bookmarks": [
+				{
+					"line": 64,
+					"column": 12,
+					"label": ""
+				},
+				{
+					"line": 88,
+					"column": 23,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/introduction/index.md",
+			"bookmarks": [
+				{
+					"line": 49,
+					"column": 10,
 					"label": ""
 				}
 			]
@@ -572,6 +612,21 @@
 					"line": 45,
 					"column": 24,
 					"label": ""
+				},
+				{
+					"line": 69,
+					"column": 9,
+					"label": ""
+				},
+				{
+					"line": 75,
+					"column": 8,
+					"label": ""
+				},
+				{
+					"line": 99,
+					"column": 9,
+					"label": ""
 				}
 			]
 		},
@@ -633,6 +688,31 @@
 		{
 			"path": "bk/src/contributing/repository_structure.md",
 			"bookmarks": [
+				{
+					"line": 4,
+					"column": 7,
+					"label": ""
+				},
+				{
+					"line": 27,
+					"column": 22,
+					"label": ""
+				},
+				{
+					"line": 48,
+					"column": 34,
+					"label": ""
+				},
+				{
+					"line": 50,
+					"column": 24,
+					"label": ""
+				},
+				{
+					"line": 67,
+					"column": 36,
+					"label": ""
+				},
 				{
 					"line": 91,
 					"column": 13,
@@ -711,6 +791,61 @@
 				{
 					"line": 67,
 					"column": 35,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/language/variables.md",
+			"bookmarks": [
+				{
+					"line": 12,
+					"column": 10,
+					"label": ""
+				},
+				{
+					"line": 20,
+					"column": 16,
+					"label": ""
+				},
+				{
+					"line": 30,
+					"column": 23,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/code-organization/code_organization_by_project_type.md",
+			"bookmarks": [
+				{
+					"line": 95,
+					"column": 10,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/code-organization/naming_conventions.md",
+			"bookmarks": [
+				{
+					"line": 45,
+					"column": 12,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/contributing/mdBook_pre-processors.md",
+			"bookmarks": [
+				{
+					"line": 4,
+					"column": 8,
+					"label": ""
+				},
+				{
+					"line": 18,
+					"column": 19,
 					"label": ""
 				}
 			]

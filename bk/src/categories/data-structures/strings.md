@@ -2,7 +2,7 @@
 
 {{#include strings.incl.md}}
 
-## `String` and `&str` {#string}
+## Create Strings with `String` and `&str` {#string}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}{{hi:Strings}}
 

@@ -8,7 +8,7 @@ Note that [`cargo doc --open`][book~cargo~cargo-doc]↗{{hi:cargo doc}} does not
 
 Read the `justfile`{{hi:justfile}} or the [just module][c~just~programmer-manual]↗ in `bk/scripts/docs`{{hi:just}} for more details.
 
-## Using a Dev Container Feature {#dev-container-feature}
+## Use a "Dev Container" Feature {#dev-container-feature}
 
 Alternatively, use the ["Desktop lite" Dev Container feature][desktop-lite~repo]↗{{hi:desktop-lite}} to install a light GUI manager{{hi:GUI manager}}. Add the following to [`devcontainer.json`][dev-containers-devcontainer.json]↗{{hi:devcontainer.json}}:
 
