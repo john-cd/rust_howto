@@ -104,4 +104,25 @@ Framework for PLCs and real-time micro-services.
 
 [roboplc~website][c~roboplc~website].
 
+Notes from RustConf 2025
+
+Ecosystem:
+
+ros2 r2r
+Middleware: dora-rs copper-rs
+comm: zenoh
+math: nafaer-rs , OpEn
+sim: rapier, bevy
+Viz: rerun, kiss3d, foxglove (ROS2)
+File loading: mcap
+CV: kornia-rs, sophus-rs
+ML: burn, candle
+
+Need in the Rust ecosystem:
+
+- device driver
+- algos localization, mapping, navigation
+- unified simulation
+- better GPU support
+
 </div>
