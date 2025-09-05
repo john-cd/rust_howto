@@ -16,7 +16,17 @@ In particular, it emphasizes coverage of **foundational Rust crates** (libraries
 
 ## The Rust Programming Language, in a Few Words
 
-You are likely reading this book, because you are aware that Rust is a modern programming language that offers high safety, reliability, and performance. It emphasizes memory safety{{hi:Memory safety}} (without a garbage collector), type safety{{hi:Type safety}}, and fearless concurrency{{hi:Concurrency}}, without code brittleness. Rust is designed to prevent common errors such as memory leaks{{hi:Memory leaks}}, data races{{hi:Data races}}, and null pointer dereferences{{hi:Null pointer dereferences}}, by enforcing strict rules at compile time. It supports powerful features such as pattern matching, algebraic data types, higher-order functions, generics{{hi:Generics}}, traits{{hi:Traits}}, macros{{hi:Macros}}, and asynchrony, making it suitable for a wide range of applications - from embedded development & systems programming to high-level (e.g. web) development.
+You are likely reading this book, because you are aware that Rust is a modern programming language that offers high safety, reliability, and performance.
+
+It emphasizes type safety{{hi:Type safety}}, memory safety{{hi:Memory safety}} (without a garbage collector), and fearless concurrency{{hi:Concurrency}} - that is, without code brittleness and refactoring fears. Rust is designed to prevent common errors such as memory leaks{{hi:Memory leaks}}, data races{{hi:Data races}}, and null pointer dereferences{{hi:Null pointer dereferences}}, by enforcing strict rules at compile time.
+
+It is a language with both low-level control and high-level, yet zero-cost, abstractions, bridging the capabilities of, say, C or C++ with that of Python. No rewrite of prototypes in a "production" language is necessary. It supports powerful features such as pattern matching{{hi:Pattern matching}}, algebraic data types{{hi:Algebraic data types}}, higher-order functions{{hi:Higher-order functions}}, generics{{hi:Generics}}, traits{{hi:Traits}}, macros{{hi:Macros}}, and asynchronous programming{{hi:Async}}.
+
+It compiles for many CPUs and operating systems (or no OS), making it suitable for a wide range of applications - from embedded development & systems programming to web development.
+
+Above all, Rust's key strength is that it forces you - and assists you greatly in - writing high-quality code. Writing Rust can take more time upfront, but that translates into fewer flaky tests, fewer irreproducible bugs, fewer customer service tickets, fewer costly production environment failures (which, of course, happen in the middle of the night), fewer security breaches. Its rigor results in higher productivity overall.
+
+It has also a very rich ecosystem of crates, for anything from algorithms to websockets - as we will discover in this book.
 
 ## Who Should Read This Book
 
