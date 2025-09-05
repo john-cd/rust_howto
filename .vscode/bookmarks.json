@@ -394,12 +394,12 @@
 			"path": "bk/src/introduction/how_to_read_this_book.md",
 			"bookmarks": [
 				{
-					"line": 64,
+					"line": 62,
 					"column": 12,
 					"label": ""
 				},
 				{
-					"line": 88,
+					"line": 86,
 					"column": 23,
 					"label": ""
 				}
@@ -409,7 +409,7 @@
 			"path": "bk/src/introduction/index.md",
 			"bookmarks": [
 				{
-					"line": 49,
+					"line": 50,
 					"column": 10,
 					"label": ""
 				}
@@ -846,6 +846,36 @@
 				{
 					"line": 18,
 					"column": 19,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/data-structures/unique_identifiers.incl.md",
+			"bookmarks": [
+				{
+					"line": 3,
+					"column": 16,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/filesystem/paths.incl.md",
+			"bookmarks": [
+				{
+					"line": 3,
+					"column": 5,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/categories/filesystem/paths.md",
+			"bookmarks": [
+				{
+					"line": 33,
+					"column": 20,
 					"label": ""
 				}
 			]

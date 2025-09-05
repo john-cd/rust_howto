@@ -1,6 +1,5 @@
 [ex~introduction~additional-examples]: how_to_read_this_book.md#additional-examples
 [ex~introduction~how-to-use-code-examples]: how_to_read_this_book.md#how-to-use-code-examples
-[ex~introduction~important-sections]: how_to_read_this_book.md#important-sections
 [ex~introduction~note-about-crate-representation]: how_to_read_this_book.md#note-about-crate-representation
 [ex~introduction~note-about-error-handling]: how_to_read_this_book.md#note-about-error-handling
 [p~contributing]: ../contributing/index.md

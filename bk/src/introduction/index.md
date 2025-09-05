@@ -50,7 +50,7 @@ This book therefore aims at reducing this learning curve by providing numerous *
 This book is a complement to similar works:
 
 - [Rust by Example][book~rust-by-example~book]↗ is similar in concept - a collection of runnable examples - but not in scope, as it focuses solely on the Rust language and standard library.
-- The [Rust Cookbook][book~rust-cookbook]↗ community project shares very similar goals with this book. While it is the official "cookbook" for Rust, few updates have been made in the last 4 years. Many of its examples no longer work. Several crates it references are no longer maintained. The author therefore decided to merge the contents of the `Rust Cookbook` into this book and refresh its examples.
+- The [Rust Cookbook][book~rust-cookbook]↗ community project shares very similar goals with this book. While it is the official "cookbook" for Rust, few updates have been made in the last 4 years. Many of its examples no longer work. Several crates it references are no longer maintained. The author therefore decided to merge the (public domain) contents of the `Rust Cookbook` into this book and refresh its examples.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
