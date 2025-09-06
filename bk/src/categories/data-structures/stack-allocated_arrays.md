@@ -6,23 +6,19 @@ Stack-allocated arrays are arrays that are stored on the stack, as opposed to th
 
 - Allocating and deallocating memory on the stack is very fast, because it simply involves adjusting the stack pointer. There is no need for complex memory management as with heap allocation.
 - The size of stack-allocated arrays must be known at compile time. This means one cannot resize these arrays dynamically as one can with heap-allocated arrays.
-- The stack is typically much smaller than the heap, so stack-allocated arrays are suitable for small to moderately sized arrays.
+- The stack is typically much smaller than the heap, so stack-allocated arrays are only suitable for small to moderately sized arrays.
 - Stack-allocated arrays are automatically deallocated when they go out of scope.
 
 ## Store Fixed-size Vectors and Strings on the Stack with `arrayvec` {#arrayvec}
 
 [![arrayvec][c~arrayvec~docs~badge]][c~arrayvec~docs] [![arrayvec~crates.io][c~arrayvec~crates.io~badge]][c~arrayvec~crates.io] [![arrayvec~repo][c~arrayvec~repo~badge]][c~arrayvec~repo] [![arrayvec~lib.rs][c~arrayvec~lib.rs~badge]][c~arrayvec~lib.rs]{{hi:arrayvec}}{{hi:Array}}{{hi:Data-structure}}{{hi:No_std}}{{hi:Stack}}{{hi:Vector}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-A vector with fixed capacity, backed by an array (it can be stored on the stack too). Implements fixed capacity ArrayVec and ArrayString.
+[`arrayvec`][c~arrayvec~docs]↗{{hi:arrayvec}} provides the types `ArrayVec` and `ArrayString`, which are stack-allocated, fixed-capacity array-backed vector and string types.
 
-[`arrayvec`][c~arrayvec~docs]↗{{hi:arrayvec}} provides the types `ArrayVec` and `ArrayString`, which are stack-allocated, fixed size array-backed vector and string types.
-
-`ArrayVec` is a vector-like collection with a fixed capacity that is determined at compile time.
-`ArrayVec` allocates its storage on the stack rather than on the heap, which can lead to better performance.
-It offers a simple API but also dereferences to a `slice`, so that the full `slice` API is available.
+`ArrayVec` is a vector-like collection with a fixed capacity that is determined at compile time. `ArrayVec` allocates its storage on the stack rather than on the heap, which can lead to better performance. It offers a simple API but also dereferences to a `slice`, so that the full `slice` API is available:
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/data_structures/examples/vec/arrayvec.rs:example}}
+{{#include ../../../crates/cats/data_structures/examples/stack_allocated/arrayvec.rs:example}}
 ```
 
 ## Store Small Vectors on the Stack with Fallback to the Heap, with `smallvec` {#smallvec}
@@ -33,7 +29,7 @@ It offers a simple API but also dereferences to a `slice`, so that the full `sli
 Arrays that are stack-allocated will fallback to the heap if the fixed stack capacity is exceeded.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/data_structures/examples/vec/smallvec.rs:example}}
+{{#include ../../../crates/cats/data_structures/examples/stack_allocated/smallvec.rs:example}}
 ```
 
 ## Store Small Vectors on the Stack with Fallback to the Heap, with `tinyvec` {#tinyvec}
@@ -47,17 +43,17 @@ The [`tinyvec`][c~tinyvec~docs]↗{{hi:tinyvec}} crate provides a way to work wi
 Note that [`tinyvec`][c~tinyvec~docs]↗{{hi:tinyvec}} requires items to implement the [`Default`][c~std::default::Default~docs]↗{{hi:std::default::Default}} trait.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/data_structures/examples/vec/tinyvec.rs:example}}
+{{#include ../../../crates/cats/data_structures/examples/stack_allocated/tinyvec.rs:example}}
 ```
 
 ## Related Topics {#related-topics .skip}
 
 - [[heapless | Heapless data structures]].
+- [[slices | Slices]].
 - [[vectors | Vectors]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-#282
 </div>
