@@ -61,36 +61,6 @@
 			]
 		},
 		{
-			"path": "bk/src/categories/algorithms/random_value_generation.md",
-			"bookmarks": [
-				{
-					"line": 4,
-					"column": 4,
-					"label": ""
-				},
-				{
-					"line": 9,
-					"column": 9,
-					"label": ""
-				},
-				{
-					"line": 63,
-					"column": 193,
-					"label": ""
-				},
-				{
-					"line": 73,
-					"column": 6,
-					"label": ""
-				},
-				{
-					"line": 79,
-					"column": 18,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/categories/data-structures/binary_heaps.md",
 			"bookmarks": [
 				{

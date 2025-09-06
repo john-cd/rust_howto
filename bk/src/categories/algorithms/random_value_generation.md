@@ -2,12 +2,9 @@
 
 {{#include random_value_generation.incl.md}}
 
-`rand` is the _de facto_ standard for random number generation in Rust. Use `rand_distr` for random distributions beyond what is available in `rand`. You may also consider lightweight alternatives to `rand` such as [`fastrand`][c~fastrand~docs]. Honorable mentions include:
+[`rand`][c~rand~website]↗{{hi:rand}} is the _de facto_ standard for random number generation in Rust. Use [`rand_distr`][c~rand_distr~docs]↗{{hi:rand_distr}} for random distributions beyond what is available in `rand`. You may also consider lightweight alternatives to `rand` such as [`fastrand`][c~fastrand~docs] or [`oorandom`][c~oorandom~docs]↗.
 
-- `oorandom`, a minimalistic pseudorandom number generator, when the `rand` crate is just too big.
-- `getrandom`, a low-level library for accessing the operating system's random number generator.
-
-## Generate Random Numbers {#generate-random-numbers}
+## Generate Random Numbers or Boolean Values {#generate-random-numbers}
 
 [![rand~website][c~rand~website~badge]][c~rand~website] [![rand][c~rand~docs~badge]][c~rand~docs] [![rand~crates.io][c~rand~crates.io~badge]][c~rand~crates.io] [![rand~repo][c~rand~repo~badge]][c~rand~repo] [![rand~lib.rs][c~rand~lib.rs~badge]][c~rand~lib.rs]{{hi:rand}}{{hi:Random}}{{hi:Rng}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
@@ -61,7 +58,7 @@ The following randomly generates a tuple `(i32, bool, f64)` and variable of user
 
 [![rand~website][c~rand~website~badge]][c~rand~website] [![rand][c~rand~docs~badge]][c~rand~docs] [![rand~crates.io][c~rand~crates.io~badge]][c~rand~crates.io] [![rand~repo][c~rand~repo~badge]][c~rand~repo] [![rand~lib.rs][c~rand~lib.rs~badge]][c~rand~lib.rs]{{hi:rand}}{{hi:Random}}{{hi:Rng}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} {{hi:Algorithms}}{{hi:Random passwords}}
 
-In this example, we randomly generate strings of given length from ASCII characters in the range `A-Z, a-z, 0-9`, using the `Alphanumeric` distribution:
+This example randomly generates strings of given length from ASCII characters in the range `A-Z, a-z, 0-9`, using the `Alphanumeric` distribution:
 
 ```rust,editable
 {{#include ../../../crates/cats/algorithms/examples/rand/rand_alphanumeric.rs:example}}
@@ -77,7 +74,9 @@ The following randomly generates a string of given length (e.g. a password) usin
 {{#include ../../../crates/cats/algorithms/examples/rand/rand_password.rs:example}}
 ```
 
-## Generate Random Numbers with `fastrand` {#fastrand}
+Alternatively, the [`passwords`][c~passwords~docs]↗{{hi:passwords}} crate provides useful tools to generate (multiple) readable passwords, as well as analyze and score them. [`rand_regex`][c~rand_regex~docs]↗{{hi:rand_regex}} generates random strings and byte strings matching a regular expression.
+
+## Generate Non-cryptographically Secure Random Numbers Quickly {#fastrand}
 
 [![fastrand][c~fastrand~docs~badge]][c~fastrand~docs] [![fastrand~crates.io][c~fastrand~crates.io~badge]][c~fastrand~crates.io] [![fastrand~repo][c~fastrand~repo~badge]][c~fastrand~repo] [![fastrand~lib.rs][c~fastrand~lib.rs~badge]][c~fastrand~lib.rs]{{hi:fastrand}}{{hi:Rand}}{{hi:Random}}{{hi:Wyrand}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
 
@@ -87,6 +86,8 @@ The following randomly generates a string of given length (e.g. a password) usin
 {{#include ../../../crates/cats/algorithms/examples/rand/fastrand.rs:example}}
 ```
 
+You should also read the [`oorandom` README file][c~oorandom~lib.rs]↗ for a comparison of `rand` alternatives and a brief history of random number generation.
+
 ## Related Topics {#related-topics .skip}
 
 - [[algorithms | Algorithms]].
@@ -95,8 +96,4 @@ The following randomly generates a string of given length (e.g. a password) usin
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-
-- `passwords` provides useful tools to generate multiple readable passwords, as well as analyze and score them.
-- `rand_regex` generates random strings and byte strings matching a regex.
-
 </div>
