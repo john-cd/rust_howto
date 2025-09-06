@@ -6,11 +6,11 @@
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}{{hi:Strings}}
 
-`str` (String Slice) is a primitive type representing a view into a sequence of UTF-8 encoded bytes:
+The "string slice" type, `str`, is a primitive representing a view into a sequence of UTF-8 encoded bytes:
 
 - It is immutable.
-- Since `str`'s size is unknown at compile time, one can only handle it behind a pointer. It is most often seen in its borrowed form as `&str`.
-- `&str` is a fat pointer containing a pointer to the string data (which can reside on the heap, stack, or in static memory) and its length.
+- Since the size of an `str` is unknown at compile time, one can only handle it behind a pointer. It is most often seen in its borrowed form as `&str`.
+- `&str` is a fat pointer containing a pointer to the actual string data (which can reside on the heap, stack, or in static memory) and its length.
 - `&str` is a view into existing string data _without taking ownership_. This is common for function arguments and where owning the string is not needed.
 
 String literals (e.g., "hello") are of type `&'static str`, meaning they exist for the entire lifetime of the program.
