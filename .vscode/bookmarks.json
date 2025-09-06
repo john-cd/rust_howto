@@ -96,16 +96,6 @@
 			]
 		},
 		{
-			"path": "bk/src/categories/data-structures/stacks_and_queues.md",
-			"bookmarks": [
-				{
-					"line": 35,
-					"column": 16,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/categories/filesystem/directory_traversal.md",
 			"bookmarks": [
 				{
