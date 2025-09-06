@@ -57,35 +57,10 @@
 					"line": 60,
 					"column": 14,
 					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/categories/data-structures/binary_heaps.md",
-			"bookmarks": [
-				{
-					"line": 8,
-					"column": 8,
-					"label": ""
 				},
 				{
-					"line": 16,
-					"column": 23,
-					"label": ""
-				},
-				{
-					"line": 32,
-					"column": 9,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/categories/data-structures/heapless_data_structures.md",
-			"bookmarks": [
-				{
-					"line": 49,
-					"column": 5,
+					"line": 111,
+					"column": 7,
 					"label": ""
 				}
 			]
@@ -96,6 +71,11 @@
 				{
 					"line": 20,
 					"column": 14,
+					"label": ""
+				},
+				{
+					"line": 92,
+					"column": 6,
 					"label": ""
 				}
 			]
@@ -186,6 +166,11 @@
 				{
 					"line": 58,
 					"column": 5,
+					"label": ""
+				},
+				{
+					"line": 76,
+					"column": 4,
 					"label": ""
 				}
 			]
@@ -351,6 +336,11 @@
 				{
 					"line": 37,
 					"column": 27,
+					"label": ""
+				},
+				{
+					"line": 127,
+					"column": 9,
 					"label": ""
 				},
 				{
@@ -522,6 +512,11 @@
 					"line": 37,
 					"column": 28,
 					"label": ""
+				},
+				{
+					"line": 53,
+					"column": 7,
+					"label": ""
 				}
 			]
 		},
@@ -599,23 +594,33 @@
 			"path": "bk/src/categories/algorithms/hashing.md",
 			"bookmarks": [
 				{
-					"line": 45,
+					"line": 24,
+					"column": 6,
+					"label": ""
+				},
+				{
+					"line": 46,
 					"column": 24,
 					"label": ""
 				},
 				{
-					"line": 69,
+					"line": 70,
 					"column": 9,
 					"label": ""
 				},
 				{
-					"line": 75,
+					"line": 76,
 					"column": 8,
 					"label": ""
 				},
 				{
-					"line": 99,
+					"line": 100,
 					"column": 9,
+					"label": ""
+				},
+				{
+					"line": 119,
+					"column": 6,
 					"label": ""
 				}
 			]
