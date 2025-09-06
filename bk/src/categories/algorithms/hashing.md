@@ -12,6 +12,7 @@ Hashes are widely used in various applications such as:
 - Digital Signatures: Verifying the authenticity and integrity of messages or documents.
 
 Use the following crates for general-purpose hashing and cryptographic hashing:
+
 - `blake3` and `sha2` for general-purpose hashing
 - `ahash` for use in in-memory hashmaps.
 - `rustc-hash` for fast, non-cryptographic hashing.
