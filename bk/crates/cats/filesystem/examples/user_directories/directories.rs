@@ -36,6 +36,7 @@ pub fn get_config_dir() -> Result<PathBuf> {
     };
     Ok(directory)
 }
+// Look into `BaseDirs` and `UserDirs` for additional directories as well.
 
 fn main() {
     println!("{:?}", get_data_dir());
