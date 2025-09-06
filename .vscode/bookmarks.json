@@ -24,7 +24,7 @@
 					"label": ""
 				},
 				{
-					"line": 202,
+					"line": 198,
 					"column": 5,
 					"label": ""
 				}
@@ -74,18 +74,28 @@
 					"label": ""
 				},
 				{
-					"line": 92,
+					"line": 88,
 					"column": 6,
 					"label": ""
 				}
 			]
 		},
 		{
-			"path": "bk/src/categories/data-structures/stack-allocated_arrays.md",
+			"path": "bk/src/categories/data-structures/stack-allocated.md",
 			"bookmarks": [
 				{
-					"line": 17,
+					"line": 4,
+					"column": 8,
+					"label": ""
+				},
+				{
+					"line": 19,
 					"column": 9,
+					"label": ""
+				},
+				{
+					"line": 49,
+					"column": 20,
 					"label": ""
 				}
 			]
@@ -854,7 +864,7 @@
 			"path": "bk/src/SUMMARY.md",
 			"bookmarks": [
 				{
-					"line": 122,
+					"line": 121,
 					"column": 8,
 					"label": ""
 				}

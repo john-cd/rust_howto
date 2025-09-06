@@ -1,4 +1,4 @@
-[ex~data-structures~arrayvec]: stack-allocated_arrays.md#arrayvec
+[ex~data-structures~arrayvec]: stack-allocated.md#arrayvec
 [ex~data-structures~bitflags]: bit_arrays.md#bitflags
 [ex~data-structures~bitvec]: bit_arrays.md#bitvec
 [ex~data-structures~btreemap]: b-trees.md#btreemap
@@ -9,7 +9,6 @@
 [ex~data-structures~generate-parse-uuid]: unique_identifiers.md#generate-parse-uuid
 [ex~data-structures~hashmap]: hashmaps.md#hashmap
 [ex~data-structures~hashset]: hashmaps.md#hashset
-[ex~data-structures~heapless]: heapless_data_structures.md#heapless
 [ex~data-structures~implement-a-priority-queue]: binary_heaps.md#implement-a-priority-queue
 [ex~data-structures~indexmap]: other_maps.md#indexmap
 [ex~data-structures~linkedlist]: linked_lists.md#linkedlist
@@ -21,11 +20,11 @@
 [ex~data-structures~queue]: stacks_and_queues.md#queue
 [ex~data-structures~roaring]: bit_arrays.md#roaring
 [ex~data-structures~slotmap]: other_maps.md#slotmap
-[ex~data-structures~smallvec]: stack-allocated_arrays.md#smallvec
+[ex~data-structures~smallvec]: stack-allocated.md#smallvec
 [ex~data-structures~stack]: stacks_and_queues.md#stack
 [ex~data-structures~string-concatenation]: strings.md#string-concatenation
 [ex~data-structures~string]: strings.md#string
-[ex~data-structures~tinyvec]: stack-allocated_arrays.md#tinyvec
+[ex~data-structures~tinyvec]: stack-allocated.md#tinyvec
 [ex~data-structures~ulid]: unique_identifiers.md#ulid
 [ex~data-structures~vec]: vectors.md#vec
 [p~functions]: ../../language/functions.md

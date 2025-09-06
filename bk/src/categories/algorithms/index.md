@@ -39,7 +39,7 @@ For common [[data-structures | data structures]] ([`Vec`][c~std::vec::Vec~docs]�
 
 - [`im`][c~im~docs]↗{{hi:im}} for immutable data structures,
 - `indexmap` for [[maps | maps]] that keep track of insertion order,
-- `arrayvec`, `smallvec` and `tinyvec` for [[stack_allocated_arrays | stack-allocated arrays]],
+- `arrayvec`, `smallvec`, `tinyvec` and `heapless` for [[stack-allocated | stack-allocated data structures]],
 - [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} for [[graph | graphs]],
 - `dashmap` and `papaya` for [[concurrent_data_structures | concurrent data structures]],
 - `parking_lot` for mutexes,

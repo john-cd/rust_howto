@@ -53,10 +53,9 @@ Read [Implementing Vec][book~rustonomicon~implementing-vec]↗ for more details 
 - [[btrees | B-trees]].
 - [[binaryheap | Binary Heaps]].
 - [[hashmaps | Hashmaps]].
-- [[heapless | Heapless data structures]].
 - [[maps | Other Maps]].
 - [[slices | Slices]].
-- [[stack_allocated_arrays | Stack Allocated Arrays]].
+- [[stack-allocated | Stack-allocated data structures]].
 - [[stack_and_queue | Stacks and Queues]].
 - [[strings | Strings]].
 

@@ -70,10 +70,6 @@
 
 {{#include ../categories/data-structures/hashmaps.incl.md}}
 
-### Heapless Data Structures
-
-{{#include ../categories/data-structures/heapless_data_structures.incl.md}}
-
 ### Linked Lists
 
 {{#include ../categories/data-structures/linked_lists.incl.md}}
@@ -82,9 +78,9 @@
 
 {{#include ../categories/data-structures/other_maps.incl.md}}
 
-### Stack-Allocated Arrays
+### Stack-Allocated Data Structures
 
-{{#include ../categories/data-structures/stack-allocated_arrays.incl.md}}
+{{#include ../categories/data-structures/stack-allocated.incl.md}}
 
 ### Stacks and Queues
 

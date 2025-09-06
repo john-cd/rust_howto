@@ -59,7 +59,7 @@
 [ex~contributing~publication-steps]: ../appendices/contributing/publication_to_crates.io.md#publication-steps
 [ex~contributing~push-image-to-docker-hub]: ../appendices/contributing/dev_container_and_docker.md#push-image-to-docker-hub
 [ex~contributing~using-vs-code]: ../appendices/contributing/development_environment_setup.md#using-vs-code
-[ex~data-structures~arrayvec]: ../categories/data-structures/stack-allocated_arrays.md#arrayvec
+[ex~data-structures~arrayvec]: ../categories/data-structures/stack-allocated.md#arrayvec
 [ex~data-structures~bitflags]: ../categories/data-structures/bit_arrays.md#bitflags
 [ex~data-structures~bitvec]: ../categories/data-structures/bit_arrays.md#bitvec
 [ex~data-structures~btreemap]: ../categories/data-structures/b-trees.md#btreemap
@@ -70,7 +70,6 @@
 [ex~data-structures~generate-parse-uuid]: ../categories/data-structures/unique_identifiers.md#generate-parse-uuid
 [ex~data-structures~hashmap]: ../categories/data-structures/hashmaps.md#hashmap
 [ex~data-structures~hashset]: ../categories/data-structures/hashmaps.md#hashset
-[ex~data-structures~heapless]: ../categories/data-structures/heapless_data_structures.md#heapless
 [ex~data-structures~implement-a-priority-queue]: ../categories/data-structures/binary_heaps.md#implement-a-priority-queue
 [ex~data-structures~indexmap]: ../categories/data-structures/other_maps.md#indexmap
 [ex~data-structures~linkedlist]: ../categories/data-structures/linked_lists.md#linkedlist
@@ -82,11 +81,11 @@
 [ex~data-structures~queue]: ../categories/data-structures/stacks_and_queues.md#queue
 [ex~data-structures~roaring]: ../categories/data-structures/bit_arrays.md#roaring
 [ex~data-structures~slotmap]: ../categories/data-structures/other_maps.md#slotmap
-[ex~data-structures~smallvec]: ../categories/data-structures/stack-allocated_arrays.md#smallvec
+[ex~data-structures~smallvec]: ../categories/data-structures/stack-allocated.md#smallvec
 [ex~data-structures~stack]: ../categories/data-structures/stacks_and_queues.md#stack
 [ex~data-structures~string-concatenation]: ../categories/data-structures/strings.md#string-concatenation
 [ex~data-structures~string]: ../categories/data-structures/strings.md#string
-[ex~data-structures~tinyvec]: ../categories/data-structures/stack-allocated_arrays.md#tinyvec
+[ex~data-structures~tinyvec]: ../categories/data-structures/stack-allocated.md#tinyvec
 [ex~data-structures~ulid]: ../categories/data-structures/unique_identifiers.md#ulid
 [ex~data-structures~vec]: ../categories/data-structures/vectors.md#vec
 [ex~filesystem~avoid-writing-and-reading-from-the-same-file]: ../categories/filesystem/reading_and_writing_files.md#avoid-writing-and-reading-from-the-same-file

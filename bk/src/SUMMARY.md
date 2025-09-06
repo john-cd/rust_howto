@@ -73,8 +73,7 @@
   - [Linked Lists](categories/data-structures/linked_lists.md)
   - [Bit Arrays](categories/data-structures/bit_arrays.md)
   - [Graphs](categories/data-structures/graphs.md)
-  - [Heapless Data Structures](categories/data-structures/heapless_data_structures.md)
-  - [Stack-allocated Arrays](categories/data-structures/stack-allocated_arrays.md)
+  - [Stack-allocated Data Structures](categories/data-structures/stack-allocated.md)
   - [Unique Identifiers](categories/data-structures/unique_identifiers.md)
 
 - [File System](categories/filesystem/index.md)

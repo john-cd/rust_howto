@@ -30,9 +30,9 @@ Refer to the [[language | Language]] and [[standard-library | Standard Library]]
 
 {{#include stacks_and_queues.incl.md}}
 
-## Stack-allocated Arrays
+## Stack-allocated Data Structures
 
-{{#include stack-allocated_arrays.incl.md}}
+{{#include stack-allocated.incl.md}}
 
 ## Hashmaps
 
@@ -61,10 +61,6 @@ Refer to the [[language | Language]] and [[standard-library | Standard Library]]
 ## Bit Arrays
 
 {{#include bit_arrays.incl.md}}
-
-## Heapless Data Structures
-
-{{#include heapless_data_structures.incl.md}}
 
 ## Unique Identifiers
 

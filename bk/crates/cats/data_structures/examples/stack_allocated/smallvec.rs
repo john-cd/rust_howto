@@ -3,10 +3,6 @@
 use smallvec::SmallVec;
 use smallvec::smallvec;
 
-/// This example demonstrates the usage of the `SmallVec` data structure from
-/// the `smallvec` crate. `SmallVec` is a vector-like data structure that stores
-/// elements inline when the number of elements is small, and switches to heap
-/// allocation when the number of elements exceeds its inline capacity.
 fn main() {
     // Create a SmallVec with a small inline capacity of 4.
     // This means that the first 4 elements will be stored directly within the
