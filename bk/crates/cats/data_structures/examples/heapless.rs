@@ -1,29 +1,22 @@
 // ANCHOR: example
-//! This example demonstrates the usage of `heapless` collections in Rust.
-//!
-//! `heapless` provides fixed-size, stack-allocated data structures, which are
-//! useful when we know the maximum size of our data at compile time and need
-//! to avoid dynamic memory allocation (and potential capacity errors). This is
-//! particularly beneficial in embedded systems or performance-critical
-//! applications where dynamic allocation can be unpredictable or undesirable.
-//!
-//! Choosing `heapless` is a trade-off: gain performance and determinism, but
-//! lose the flexibility of dynamic resizing.
-
 use heapless::FnvIndexMap;
 use heapless::String;
 use heapless::Vec;
 
-fn main() -> anyhow::Result<()> {
-    // `heapless`` collections have a fixed, compile-time determined capacity.
-    // Here we define a fixed-size vector with capacity of 5.
-    let mut vec: Vec<u32, 5> = Vec::new();
+fn main() {
+    // `heapless` collections have a fixed capacity determined at compile time.
+    // Here we define a fixed-size vector with capacity of 3.
+    let mut vec: Vec<u32, 3> = Vec::new();
 
-    // Because they have a fixed size, operations like `push` or `insert` can
-    // fail if the collection is full.
     vec.push(1).unwrap();
     vec.push(2).unwrap();
     vec.push(3).unwrap();
+    // Because they have a fixed size, operations like `push` or `insert` can
+    // fail if the collection is full. In that case, `push` returns back the
+    // item.
+    if let Err(err) = vec.push(4) {
+        println!("Error pushing to vector: {err:?}");
+    };
 
     println!("Vector: {vec:?}");
     println!("Vector length: {}", vec.len());
@@ -33,7 +26,7 @@ fn main() -> anyhow::Result<()> {
         println!("Popped: {last}");
     }
 
-    // Fixed-size string with capacity of 16:
+    // Declare a fixed-size string with capacity of 16:
     let mut string: String<16> = String::from("Hello");
 
     assert!(string.push_str(", world!").is_ok());
@@ -42,19 +35,23 @@ fn main() -> anyhow::Result<()> {
     println!("String length: {}", string.len());
     println!("String capacity: {}", string.capacity());
 
-    // Error if we exceed the capacity:
+    // Returns an error, if we exceed the capacity:
     let result = string.push_str(" It is too much!");
     if let Err(err) = result {
-        println!("Error pushing to string: {err:?}"); // err is ()
+        println!("Error pushing to string: {err:?}"); // `err` is simply `()`.
     }
 
-    // Fixed-size map (using `Fnv` hash for performance):
+    // Define a fixed-size map (using the `Fnv` hash for performance):
     let mut map: FnvIndexMap<&str, u32, 4> = FnvIndexMap::new();
 
     map.insert("one", 1).unwrap();
     map.insert("two", 2).unwrap();
     map.insert("three", 3).unwrap();
     map.insert("four", 4).unwrap();
+    // If a key already exists in the map, the key remains and retains in its
+    // place in the order, its corresponding value is updated with the new
+    // value and the older value is returned inside `Some(_)`.
+    assert_eq!(map.insert("three", 33), Ok(Some(3)));
 
     println!("Map: {map:?}");
 
@@ -67,21 +64,18 @@ fn main() -> anyhow::Result<()> {
         println!("Error inserting to map: {err:?}");
     }
 
-    // Iterating over the map:
+    // Iterate over the map:
     for (key, value) in &map {
         println!("Key: {key}, Value: {value}");
     }
 
-    // Clearing the map:
+    // Clear the map:
     map.clear();
     println!("Map is empty: {}", map.is_empty());
-
-    Ok(())
 }
 // ANCHOR_END: example
 
 #[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+fn test() {
+    main();
 }
