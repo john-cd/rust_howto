@@ -2,6 +2,10 @@
 
 ## Now
 
+- polish stack-allocated
+
+- polish directory_traversal
+
 - polish hashing + algorithms
 
 - polish learning.md
@@ -12,18 +16,9 @@
 
 - finish to add RBE link #29.
 
-- polish intro.
-  - review `about` examples.
-
-- Go trough VS Code bookmarks.
+- Go trough VS Code bookmarks - WIP.
 
 - Manually insert rest of cross-links between pages?
-
-- finish new tools in wip folder.
-  - parser_lib.
-  - inline_links.
-  - process_directives.
-  - link_checker.
 
 - License / legal rethink.
 
@@ -87,6 +82,12 @@
 document WIP.
 add tests WIP.
 consolidate CLIs.
+
+- finish new tools in book_tooling
+  - parser_lib.
+  - inline_links.
+  - process_directives.
+  - link_checker.
 
 -------------------------
 

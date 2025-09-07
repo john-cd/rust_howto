@@ -879,6 +879,16 @@
 					"label": ""
 				}
 			]
+		},
+		{
+			"path": "bk/crates/cats/mathematics/examples/additional_numeric_types/typenum.rs",
+			"bookmarks": [
+				{
+					"line": 2,
+					"column": 17,
+					"label": ""
+				}
+			]
 		}
 	]
 }
