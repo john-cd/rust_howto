@@ -33,8 +33,12 @@ async fn main() -> Result<(), Error> {
     let response = client.get(&request_url).send().await?;
 
     // Deserialize the JSON response into a vector of `User` structs.
-    let users: Vec<User> = response.json().await?;
-    println!("{users:?}");
+    if let Ok(users) = response.json::<Vec<User>>().await {
+        println!("{users:?}");
+    } else {
+        println!("Could not deserialize the response as JSON.");
+    }
+
     Ok(())
 }
 // ANCHOR_END: example
