@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
-//! This example demonstrates how to use the `glob` crate to find all PNG files
-//! in a directory tree.
+//! This example demonstrates how to use the `glob` crate
+//! to find all PNG files in a directory tree.
 
 use anyhow::Result;
 use glob::glob;
