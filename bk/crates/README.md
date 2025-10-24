@@ -34,6 +34,7 @@ bk
 - `other` contains the code examples that can't be mapped to a [`crates.io`][crates.io~website]↗{{hi:crates.io}} category.
 - `proc_macros` contains procedural macro examples used in the "language" section of the book.
 - `standard_library` contains the code examples for the Rust standard library.
+- `utils` is a library of utility functions to be used in tests and code examples.
 
 ## In Each Crate Folder
 
