@@ -14,7 +14,7 @@ categories.workspace = true
 publish.workspace = true
 
 [dependencies]
-anyhow = "1.0.95"
+anyhow = "1.0.100"
 crossbeam = "0.8.4"
 crossbeam-channel = "0.5.15"
 # FIXME
