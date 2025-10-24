@@ -116,7 +116,7 @@ review [rust-algorithms~repo][rust-algorithms~repo].
 | Topic | Related Links |
 |---|---|
 | [[compression | Compression]] | |
-| [[cryptography | Cryptography]] | [[cryptography_utilities | Cryptography Utilities]], [[encryption | Encryption]],
+| [[cryptography | Cryptography]] | [[cryptography_utilities | Cryptography Utilities]], [[encryption | Encryption]] |
 | [[data-processing | Data Processing]] | |
 | [[data-structures | Data Structures]] | [[concurrent_data_structures | Concurrent Data Structures]] |
 | [[science | Science]] | [[_machine_learning | Machine Learning]], [[science_geo | Geoscience]], [[science_neuroscience | Neuroscience]], [[science_robotics | Science Robotics]], [[simulation | Simulation]] |
