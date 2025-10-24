@@ -6,7 +6,7 @@
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-FIXME Gets the current working directory{{hi:Current working directory}} by calling [`std::env::current_dir`][c~std::env::current_dir~docs]↗{{hi:std::env::current_dir}} then for each entries in [`std::fs::read_dir`][c~std::fs::read_dir~docs]↗{{hi:std::fs::read_dir}} extracts the [`std::fs::DirEntry::path`][c~std::fs::DirEntry::path~docs]↗{{hi:std::fs::DirEntry::path}} and gets the metadata via [`std::fs::Metadata`][c~std::fs::Metadata~docs]↗{{hi:std::fs::Metadata}}.
+The following example gets the current working directory{{hi:Current working directory}} by calling [`std::env::current_dir`][c~std::env::current_dir~docs]↗{{hi:std::env::current_dir}} then for each entries in [`std::fs::read_dir`][c~std::fs::read_dir~docs]↗{{hi:std::fs::read_dir}} extracts the [`std::fs::DirEntry::path`][c~std::fs::DirEntry::path~docs]↗{{hi:std::fs::DirEntry::path}} and gets the metadata via [`std::fs::Metadata`][c~std::fs::Metadata~docs]↗{{hi:std::fs::Metadata}}.
 
 The [`std::fs::Metadata::modified`][c~std::fs::Metadata::modified~docs]↗{{hi:std::fs::Metadata::modified}} returns the [`std::time::SystemTime::elapsed`][c~std::time::SystemTime::elapsed~docs]↗{{hi:std::time::SystemTime::elapsed}} time since last modification{{hi:Time since last modification}}.
 
