@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+#![allow(deprecated)] // TODO Nonce::from_slice
 // ANCHOR: example
 use aes_gcm_siv::Aes256GcmSiv;
 use aes_gcm_siv::Key;

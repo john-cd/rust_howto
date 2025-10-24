@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+#![allow(deprecated)] // TODO
 // ANCHOR: example
 // Algorithm:
 use aes_gcm::Aes256Gcm; // Use Aes128Gcm or Aes256Gcm, respectively.

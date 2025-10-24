@@ -18,12 +18,12 @@ autolib = false
 aes-gcm-siv = "0.11.1"
 aes-gcm = "0.10.3"
 argon2 = "0.5.3"
-bcrypt = "0.17.0"
+bcrypt = "0.17.1"
 chacha20poly1305 = "0.10.1"
-der = { version = "0.7.9", features = ["derive", "alloc"] }
+der = { version = "0.7.10", features = ["derive", "alloc"] }
 # FIXME need an example? dsa = "0.6.3"
 # ed25519 = "2.2.3"
-ed25519-dalek = { version = "2", features = ["rand_core"] }
+ed25519-dalek = { version = "2.2.0", features = ["rand_core"] }
 # FIXME ecdsa = "0.16.9"
 # FIXME native-tls = "0.2.12"
 p256 = { version = "0.13.2", features = ["pkcs8"] }
@@ -36,15 +36,15 @@ scrypt = "0.11.0"
 subtle = "2.6.1"
 # FIXME tokio-rustls = "0.26.2"
 # FIXME x509-cert = "0.2.5"
-zeroize = "1.8.1"
+zeroize = "1.8.2"
 
 ## General
-anyhow = "1.0.95"
-base64ct = "1.6.0"
+anyhow = "1.0.100"
+base64ct = "1.8.0"
 # chrono = "0.4.41"
-data-encoding = "2.6.0"
+data-encoding = "2.9.0"
 # hyper = { version = "1.5.2", features = ["client"] }
 # hyper-tls = "0.6.0"
-rand = "0.8.5"                                       # pinned because of ed25519
+rand = "0.8.5" # pinned because of ed25519
 # tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread"]  }
 # webpki-roots = "1.0.1"
