@@ -2,8 +2,8 @@
 // ANCHOR: example
 use walkdir::WalkDir;
 
-/// Calculates the total size of all files within a directory tree (within a
-/// given depth).
+/// Calculates the total size of all files within a directory tree
+/// (within a given depth).
 fn main() {
     // Create a new `WalkDir` iterator starting from the current directory
     // (".").
