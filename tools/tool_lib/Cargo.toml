@@ -14,7 +14,7 @@ publish = false
 license = "MIT OR Apache-2.0"
 
 [dependencies]
-anyhow = "1.0.95"
+anyhow = "1.0.100"
 cargo_toml = "0.22.1"
 crates_io_api = "0.12.0"
 itertools = "0.14.0"
