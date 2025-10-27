@@ -17,6 +17,6 @@ publish.workspace = true
 proc-macro = true
 
 [dependencies]
-syn = { version = "2.0", features = ["full"] } # "full" feature is often needed for parsing various Rust constructs
-quote = "1.0"
+syn = { version = "2.0.108", features = ["full"] } # "full" feature is often needed for parsing various Rust constructs
+quote = "1.0.41"
 # TODO add example  proc-macro2 = "1.0" # TokenStream manipulation

@@ -6,7 +6,7 @@
 //! Add to your `Cargo.toml` file:
 //! ```toml
 //! [dependencies]
-//! postcard = "1.0.0"
+//! postcard = "1.1.3" # Or latest version.
 //! ```
 //!
 //! By default, `serde` has the `std` feature enabled, which makes it
@@ -17,7 +17,6 @@
 //! Example adapted from <https://lib.rs/crates/postcard>.
 use std::ops::Deref;
 
-use heapless::Vec;
 use postcard::from_bytes;
 use postcard::to_vec;
 use serde::Deserialize;
@@ -25,7 +24,8 @@ use serde::Serialize;
 
 #[derive(Serialize, Deserialize, Debug, Eq, PartialEq)]
 struct RefStruct<'a> {
-    bytes: &'a [u8],
+    bytes: &'a [u8], /* NOTE: postcard handles `&[u8]` and `&[u8; N]`
+                      * differently. */
     str_s: &'a str,
 }
 
@@ -34,7 +34,7 @@ fn main() {
 
     let bytes = [0x01, 0x10, 0x02, 0x20];
 
-    let output: Vec<u8, 11> = to_vec(&RefStruct {
+    let output: heapless::Vec<u8, 11> = to_vec(&RefStruct {
         bytes: &bytes,
         str_s: message,
     })
@@ -62,4 +62,4 @@ fn main() {
 fn test() {
     main();
 }
-// [review postcard example](https://github.com/john-cd/rust_howto/issues/1038)
+// [review postcard example](https://github.com/john-cd/rust_howto/issues/1038) TODO unwrap

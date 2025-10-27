@@ -17,6 +17,6 @@ autolib = false
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow = "1.0.95"
-rand = { version = "0.9.0", features = ["thread_rng"] }
-url = "2.5.4"
+anyhow = "1.0.100"
+rand = { version = "0.9.2", features = ["thread_rng"] }
+url = "2.5.7"

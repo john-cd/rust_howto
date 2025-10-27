@@ -2,7 +2,6 @@
 // ANCHOR: example
 //! `comrak` is a CommonMark and GitHub-flavored Markdown compatible parser.
 use comrak::Arena;
-use comrak::ComrakOptions;
 use comrak::Options;
 use comrak::format_html;
 use comrak::markdown_to_html;
@@ -13,8 +12,7 @@ use comrak::parse_document;
 fn to_html() {
     let markdown_input =
         "# Hello world\n\nThis is **bold** text and *italic* text.";
-    let html_output =
-        markdown_to_html(markdown_input, &ComrakOptions::default());
+    let html_output = markdown_to_html(markdown_input, &Options::default());
 
     println!("{html_output}");
 }
@@ -41,14 +39,14 @@ fn replace_text(
     for node in root.descendants() {
         if let NodeValue::Text(ref mut text) = node.data.borrow_mut().value {
             // If the node is a text node, perform the string replacement.
-            *text = text.replace(orig_string, replacement);
+            *text = text.replace(orig_string, replacement).into();
         }
     }
 
-    let mut html = vec![];
+    let mut html = String::new();
     format_html(root, &Options::default(), &mut html).unwrap();
 
-    String::from_utf8(html).unwrap()
+    html
 }
 
 fn main() {
@@ -67,3 +65,4 @@ fn main() {
 fn test() {
     main();
 }
+// TODO unwrap

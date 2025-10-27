@@ -15,4 +15,4 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-lettre = { version = "0.11.11", features = [ "tokio1-native-tls" ] }
+lettre = { version = "0.11.19", features = [ "tokio1-native-tls" ] }

@@ -16,11 +16,11 @@ autolib = false
 
 [dependencies]
 # FIXME afl = "0.15.13"
-approx = "0.4.0"   # pin
-fake = { version = "4.3.0", features = [ "derive" ] }
-faux = "0.1"
-insta = "1.41.1"
+approx = "0.5.1" # was pinned at 0.4.0
+fake = { version = "4.4.0", features = [ "derive" ] }
+faux = "0.1.13"
+insta = "1.43.2"
 mockall = "0.13.1"
-proptest = "1.6.0"
+proptest = "1.9.0"
 
 ## General

@@ -15,22 +15,22 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-nalgebra = { version = "0.34.0", features = ["serde-serialize"] }
-ndarray = { version = "0.15.6", features = [
+nalgebra = { version = "0.34.1", features = ["serde-serialize"] }
+ndarray = { version = "0.16.1", features = [
     "approx",
 ] } # pinned to 0.15.6 for linfa
 num = "0.4.3"
 num-bigint = "0.4.6"
 num-traits = "0.2.19"
-ordered-float = "5.0.0"
-rust_decimal = "1.36.0"
-rust_decimal_macros = "1.36.0"
+ordered-float = "5.1.0"
+rust_decimal = "1.39.0"
+rust_decimal_macros = "1.39.0"
 
 # General
-anyhow = "1.0.95"
-approx = "0.4.0"       # pin
-serde_json = "1.0.138"
+anyhow = "1.0.100"
+approx = "0.5.1" # was pinned at 0.4.0
+serde_json = "1.0.145"
 # FIXME typenum = "1.18.0"
 
 [target.'cfg(target_os = "linux")'.dependencies]
-rug = "1.26.1"
+rug = "1.28.0"

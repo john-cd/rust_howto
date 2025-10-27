@@ -14,9 +14,9 @@ categories = ["development-tools", "command-line-utilities", "text-processing"]
 publish.workspace = true
 
 [dependencies]
-anyhow = "1.0.95"
-clap = { version = "4.5.31", features = ["cargo"] }
-clap_builder = "4.5.20"
+anyhow = "1.0.100"
+clap = { version = "4.5.50", features = ["cargo"] }
+clap_builder = "4.5.50"
 itertools = "0.14.0"
 tool_lib = { path = "../tool_lib" }
 tracing = "0.1.41"

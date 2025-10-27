@@ -16,8 +16,8 @@ publish.workspace = true
 [dependencies]
 crates_io_api = "0.12.0"
 # FIXME add example doc-comment = "0.3.3"
-semver = "1.0.24"
+semver = "1.0.27"
 
 ## General
-anyhow = "1.0.95"
+anyhow = "1.0.100"
 tracing = "0.1.41"

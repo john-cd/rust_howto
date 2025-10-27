@@ -7,7 +7,7 @@ fn main() {
     // Create a SmallVec with a small inline capacity of 4.
     // This means that the first 4 elements will be stored directly within the
     // `SmallVec` struct, avoiding heap allocation.
-    let mut small_vec: SmallVec<i32, 4> = SmallVec::new();
+    let mut small_vec: SmallVec<[i32; 4]> = SmallVec::new();
 
     // Push some elements into the SmallVec.
     small_vec.push(1);
@@ -16,7 +16,7 @@ fn main() {
     small_vec.push(4);
 
     // We can also initialize it via a macro:
-    let mut small_vec: SmallVec<i32, 4> = smallvec![1, 2, 3, 4];
+    let mut small_vec: SmallVec<[i32; 4]> = smallvec![1, 2, 3, 4];
 
     // Print the current state of the SmallVec.
     println!("SmallVec (inline): {small_vec:?}");
@@ -40,18 +40,10 @@ fn main() {
     // Print the state of the SmallVec after popping.
     println!("SmallVec after popping: {small_vec:?}");
 
-    // Split off the SmallVec.
-    // `split_off` splits the vector into two at the given index.
-    // The original vector will contain elements up to (but not including) the
-    // index, and the new vector will contain the rest.
-    let mut small_vec2 = small_vec.split_off(1);
-    assert_eq!(small_vec, [1]);
-    assert_eq!(small_vec2, [2, 3, 4]);
-
     // SmallVec points to a slice, so we can use normal slice indexing and
     // other methods to access its contents.
-    small_vec2[0] = small_vec2[1] + small_vec2[2];
-    small_vec2.sort();
+    small_vec[0] = small_vec[1] + small_vec[2];
+    small_vec.sort();
 }
 // ANCHOR_END: example
 

@@ -25,7 +25,7 @@ pingora = { version = "0.6.0", features = [ "lb" ] }  # NOTE: requires `sfv` pat
 # url = "2.5.4"
 
 # General
-anyhow = "1.0.95"
+anyhow = "1.0.100"
 
 [target.'cfg(target_os = "linux")'.dependencies]
 glommio = "0.9.0"

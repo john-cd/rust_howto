@@ -19,30 +19,30 @@ autolib = false
 # FIXME async-graphql = { version = "7.0.17", optional = true }
 # async-graphql-axum = { version = "7.0.17", optional = true }
 # FIXME axum = "0.8.4" # was pinned because of tonic
-http = "1.2.0"
-http-body-util = "0.1.2"
+http = "1.3.1"
+http-body-util = "0.1.3"
 # FIXME hyper = { version = "1.6.0", features = ["full"] }
 # hyper-util = { version = "0.1", features = ["full"] }
 # FIXME leptos = "0.8.2"
 # LATER loco-rs = "0.16.3"
 prost = "0.14.1"
-tonic = "0.14.1"
-tower = { version = "0.5.1", features = ["util"] }
-tower-http = { version = "0.6.1", features = ["full", "auth"] }
+tonic = "0.14.2"
+tower = { version = "0.5.2", features = ["util"] }
+tower-http = { version = "0.6.6", features = ["full", "auth"] }
 # trillium = "0.2.20"
 # [trillium: do we need LATER](https://github.com/john-cd/rust_howto/issues/1314)
 
 ## General
-anyhow = "1.0.95"
-bytes = "1.9.0"
+anyhow = "1.0.100"
+bytes = "1.10.1"
 # serde_json = "1.0.138" # for loco example
-tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread"]  }
+tokio = { version = "1.48.0", features = ["macros", "rt-multi-thread"]  }
 # tracing = "0.1.41" # for axum example
 # tracing-subscriber = { version = "0.3.20", features = ["env-filter"] }
 
 [build-dependencies]
-tonic-prost-build = "0.14.1"
-tonic-build = "0.14.1"
+tonic-prost-build = "0.14.2"
+tonic-build = "0.14.2"
 
 [features]
 # default = []

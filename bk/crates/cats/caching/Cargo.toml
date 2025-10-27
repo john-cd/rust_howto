@@ -16,5 +16,5 @@ autolib = false
 
 [dependencies]
 cached = "0.56.0"
-lru = "0.16.0"
-moka = { version = "0.12.10", features = ["sync"] }
+lru = "0.16.2"
+moka = { version = "0.12.11", features = ["sync"] }

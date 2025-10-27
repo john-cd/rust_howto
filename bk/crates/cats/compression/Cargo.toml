@@ -15,12 +15,12 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-flate2 = "1.1.2"
-tar = "0.4.43"
-zip = "4.5.0"
+flate2 = "1.1.5"
+tar = "0.4.44"
+zip = "6.0.0"
 
 # General
-anyhow = "1.0.95"
+anyhow = "1.0.100"
 
 # TODO add example for async_zip?
 # async_zip = "0.0.17"
