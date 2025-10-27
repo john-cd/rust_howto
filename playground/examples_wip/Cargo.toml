@@ -15,7 +15,7 @@ license = "MIT OR Apache-2.0"
 
 # FIXME
 [dependencies]
-anyhow = "1.0.95"
+anyhow = "1.0.100"
 #inquire = "0.7.5"
 #regex = "1.11.1"
 #tracing = "0.1.41"
