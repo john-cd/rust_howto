@@ -21,3 +21,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
+// TODO create a PNG file?
