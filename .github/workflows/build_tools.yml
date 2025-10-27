@@ -60,10 +60,11 @@ jobs:
 
     - name: Update Rust; Install nightly Rust
       run: |
+        rustup component add clippy
         rustup update stable
-        rustup default stable
         rustup toolchain install nightly
         rustup component add rustfmt --toolchain nightly
+        rustup default stable
         rustup show
 
     - name: Check the format
