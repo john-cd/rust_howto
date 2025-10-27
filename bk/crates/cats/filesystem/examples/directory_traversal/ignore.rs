@@ -6,7 +6,7 @@
 //!
 //! In `Cargo.toml`, add:
 //! ```toml
-//! ignore = "0.4" # or latest
+//! ignore = "0.4" # or latest.
 //! ```
 
 use ignore::WalkBuilder;

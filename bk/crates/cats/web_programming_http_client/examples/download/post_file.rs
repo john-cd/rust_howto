@@ -22,15 +22,16 @@ async fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn require_network() -> anyhow::Result<()> {
-    use std::io::Write;
-    if !std::fs::exists("temp")? {
-        std::fs::create_dir("temp")?;
-    }
-    // Create a file to be posted.
-    let mut f = File::create("temp/message")?;
-    f.write_all(b"Hello")?;
-    main()?;
-    Ok(())
-}
+// #[test]
+// fn require_network() -> anyhow::Result<()> {
+//     use std::io::Write;
+//     if !std::fs::exists("temp")? {
+//         std::fs::create_dir("temp")?;
+//     }
+//     // Create a file to be posted.
+//     let mut f = File::create("temp/message")?;
+//     f.write_all(b"Hello")?;
+//     main()?;
+//     Ok(())
+// }
+// TODO rewrite - paste.rs is down

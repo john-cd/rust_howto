@@ -29,8 +29,7 @@ fn main() -> Result<()> {
                 let last_modified = duration.as_secs();
                 if (last_modified < 24 * 3600) && metadata.is_file() {
                     println!(
-                        "Last modified: {:?} seconds, is read only: {:?}, size: {:?} bytes, filename: {:?}",
-                        last_modified,
+                        "Last modified: {last_modified:?} seconds, is read only: {:?}, size: {:?} bytes, filename: {:?}",
                         metadata.permissions().readonly(),
                         metadata.len(),
                         path.file_name().ok_or(anyhow!("No filename."))?
