@@ -15,5 +15,5 @@ license = "CC0-1.0"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-clap = { version = "4.5.50", features = ["cargo", "env"] }
+clap = { version = "4.5.51", features = ["cargo", "env"] }
 env_logger = "0.11.8"
