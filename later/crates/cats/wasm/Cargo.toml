@@ -18,7 +18,7 @@ autolib = false
 # LATER add example?
 # js-sys = "0.3.77"
 wasmer = "6.0.1"
-wasmtime = { version = "36.0.2", optional = true } # Heavy compile
+wasmtime = { version = "36.0.3", optional = true } # Heavy compile
 yew = { version = "0.21.0", features = ["csr"] }
 
 ## General
