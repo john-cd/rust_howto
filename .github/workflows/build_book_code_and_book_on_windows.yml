@@ -30,7 +30,7 @@ jobs:
 
       # Checks out your repository under $GITHUB_WORKSPACE
       - name: Code checkout (clones the Git repository)
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/caching-dependencies-to-speed-up-workflows
       # Install paths for Rust / Cargo in https://github.com/actions/runner-images/blob/main/images/windows/scripts/build/Install-Rust.ps1
