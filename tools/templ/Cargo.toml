@@ -18,7 +18,7 @@ anyhow = "1.0.100"
 clap = { version = "4.5.51", features = ["cargo"] }
 clap_builder = "4.5.50"
 tool_lib = { path = "../tool_lib" }
-tracing = "0.1.41"
+tracing = "0.1.43"
 tracing-subscriber = { version = "0.3.20", features = ["env-filter"] }
 
 [[bin]]

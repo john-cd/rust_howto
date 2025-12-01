@@ -27,7 +27,7 @@ similar = "2.7.0"
 #tera = "1.20.0"
 tinytemplate = "1.2.1"
 toml = "0.9.8"
-tracing = "0.1.41"
+tracing = "0.1.43"
 trim-in-place = "0.1.7"
 walkdir = "2.5.0"
 
