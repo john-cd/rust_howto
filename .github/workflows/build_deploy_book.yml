@@ -61,7 +61,7 @@ jobs:
           docker-images: false
           swap-storage: true
       - name: Code checkout (clones the Git repository)
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       # - name: Validate YAML files
       #   run: yamllint ./.devcontainer/ ./.github/ ./.github/workflows/
       - name: Login to Docker Hub
