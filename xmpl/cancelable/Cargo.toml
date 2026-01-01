@@ -19,5 +19,5 @@ crossbeam = "0.8.4"
 crossbeam-channel = "0.5.15"
 # FIXME
 #crossbeam-queue = "0.3.12"
-tracing = "0.1.43"
+tracing = "0.1.44"
 tracing-subscriber = { version = "0.3.20", features = ["env-filter"] }
