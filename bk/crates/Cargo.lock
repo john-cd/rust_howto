@@ -1635,7 +1635,7 @@ name = "caching"
 version = "0.1.2"
 dependencies = [
  "cached",
- "lru 0.16.2",
+ "lru 0.16.3",
  "moka",
 ]
 
@@ -6429,9 +6429,9 @@ dependencies = [
 
 [[package]]
 name = "lru"
-version = "0.16.2"
+version = "0.16.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "96051b46fc183dc9cd4a223960ef37b9af631b55191852a8274bfef064cda20f"
+checksum = "a1dc47f592c06f33f8e3aea9591776ec7c9f9e4124778ff8a3c3b87159f7e593"
 dependencies = [
  "hashbrown 0.16.0",
 ]
@@ -11507,9 +11507,9 @@ checksum = "b7401a30af6cb5818bb64852270bb722533397edcfc7344954a38f420819ece2"
 
 [[package]]
 name = "surrealdb"
-version = "2.3.10"
+version = "2.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0b7bfcb971a0d8a1e18e18c1a2a4cdde67939328c950becb166cd6aa01ad9a69"
+checksum = "2679904b834ec4481a5305c5ac5ab68c0b6c8e3538e744c40b5a9b9867d3f5fa"
 dependencies = [
  "arrayvec",
  "async-channel",
@@ -11549,9 +11549,9 @@ dependencies = [
 
 [[package]]
 name = "surrealdb-core"
-version = "2.3.10"
+version = "2.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b1f5919eecece41e95b2ce71e94d73f3b6d0b9360c5d9023fe609225adc57b1a"
+checksum = "3e764f99f016ddfaedafc9c777a830b371a1b2e536b5d146a1ef69674e041ed6"
 dependencies = [
  "addr",
  "affinitypool",

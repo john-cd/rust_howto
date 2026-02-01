@@ -17,7 +17,7 @@ autolib = false
 [dependencies]
 meilisearch-sdk = { version= "0.30.0", optional = true }
 sled = { version = "0.34.7", optional = true }
-surrealdb = { version = "2.3.10", features = ["kv-mem"], optional = true }
+surrealdb = { version = "2.5.0", features = ["kv-mem"], optional = true }
 # FIXME: tantivy = { version = "0.25.0", optional = true }
 
 ## General
