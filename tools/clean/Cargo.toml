@@ -14,7 +14,7 @@ categories = ["development-tools", "command-line-utilities"]
 publish = false
 
 [dependencies]
-anyhow = "1.0.100"
+anyhow = "1.0.102"
 clap = { version = "4.5.53", features = ["derive"] }
 tempfile = "3.23.0"
 tracing = "0.1.44"
