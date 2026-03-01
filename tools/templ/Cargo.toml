@@ -14,7 +14,7 @@ categories = ["development-tools", "command-line-utilities", "text-processing"]
 publish = false
 
 [dependencies]
-anyhow = "1.0.100"
+anyhow = "1.0.102"
 clap = { version = "4.5.53", features = ["cargo"] }
 clap_builder = "4.5.50"
 tool_lib = { path = "../tool_lib" }
