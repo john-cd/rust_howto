@@ -15,7 +15,7 @@ fn main() -> Result<(), aes_gcm_siv::Error> {
     // Generate a random 256-bit key:
     let key: Key<Aes256GcmSiv> = Aes256GcmSiv::generate_key(&mut OsRng);
 
-    // Generate a 96-bit nonce.
+    // Generate a random 96-bit nonce.
     // A nonce is an arbitrary (often random) number that can be used just once
     // in a cryptographic communication.
     let nonce = Nonce::from(*b"unique nonce");
