@@ -282,3 +282,49 @@ Add build job to main workflow.
 - retrieve most downloaded / recently downloaded / most relevant crates from crates.io / lib.rs.
 - collect other sources of ranking: r/rust, awesome-rust, etc.
 - generate a list of crates that should be included in the book.
+
+-------------------------
+
+## Inline TODOs from Code and Content
+
+### Code Examples
+
+- **Cryptography**:
+  - [DONE] Fix `Nonce::from_slice` deprecation in `aes_gcm_siv.rs` and `aes_gcm.rs`.
+- **Parser Implementations**:
+  - [DONE] Resolve `unwrap` in `comrak.rs`.
+- **Encoding**:
+  - [DONE] Resolve `unwrap` in `postcard.rs`.
+- **Web Programming**:
+  - [DONE] Rewrite `post_file.rs` (paste.rs is down).
+- **Development Tools**:
+  - [DONE] Review `slog-scope` in `slog.rs`.
+  - Automate `dhat.rs` features.
+- **Data Structures**:
+  - [DONE] Review `arrayvec.rs` and `smallvec.rs`.
+  - Add examples for `bloomfilter`, `bytes`, `linked-hash-map`, `rangemap`, `skiplist`.
+- **Filesystem**:
+  - [DONE] Create PNG file in `png.rs`.
+  - Review various directory traversal examples.
+- **Asynchronous**:
+  - [DONE] Expand `tokio_graceful_shutdown.rs`.
+
+### Book Content
+
+- **Drafts**:
+  - Complete "inheritance", "plugin", "overflow", "predicates" sections.
+  - Document `rust-analyzer` settings in `vscode.md`.
+- **Categories**:
+  - Add example for `seography` in `query_builders_orms.md`.
+  - Compare `futures_executor::block_on` vs `futures::executor::block_on`.
+- **Language**:
+  - Review common rust lifetime misconceptions.
+
+### Tooling (`mdbook-utils` & `tools`)
+
+- **mdbook-utils**:
+  - Test link regexes.
+  - Improve reference definition generation.
+  - Remove internal links from certain outputs.
+- **mdbook-scrub**:
+  - Implement missing directives: crate link/badge, category link/badge.

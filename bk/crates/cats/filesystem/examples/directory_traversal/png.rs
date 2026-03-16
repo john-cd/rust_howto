@@ -18,7 +18,14 @@ fn main() -> Result<()> {
 
 #[test]
 fn test() -> anyhow::Result<()> {
+    // Create a temporary PNG file for testing.
+    let path = std::path::Path::new("test_image.png");
+    std::fs::File::create(path)?;
+
     main()?;
+
+    // Clean up.
+    std::fs::remove_file(path)?;
+
     Ok(())
 }
-// TODO create a PNG file?
