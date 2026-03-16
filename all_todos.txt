@@ -1,0 +1,112 @@
+./later/src/categories/aerospace_simulation/index.md:69:TODO write
+./later/src/categories/wasm/interfacing_with_javascript.md:21:TODO add example ?
+./later/src/categories/wasm/interfacing_with_javascript.md:28:TODO add example ?
+./later/crates/other/examples/architecture/cqrs.rs:385:// // TODO finish
+./LICENSE:17:TODO issue of using CC0 for software??
+./LICENSE:29:This project, by its very nature, includes code examples for hundreds of Rust crates, and uses TODO
+./LICENSE:33:Copyright and permission notices for Rust crates are found TODO
+./bk/master/crates_used_in_drafts_and_later_sections.txt:1:TODO cover the following crates in the book?
+./bk/drafts/inheritance.md:87:TODO write
+./bk/drafts/plugin.md:26:TODO write
+./bk/drafts/contributing/vscode.md:3:TODO document rust-analyzer settings that works with large codebases like this book.
+./bk/drafts/contributing/vscode.md:85:TODO write
+./bk/drafts/overflow.md:22:TODO write
+./bk/drafts/predicates.md:83:TODO write
+./bk/drafts/categories/database/query_builders_orms.md:27:TODO add example for seography
+./bk/drafts/categories/asynchronous/async_and_blocking.md:69:TODO futures_executor::block_on vs futures::executor::block_on
+./bk/drafts/categories/memory-management/memory_allocation.md:45:TODO add example
+./bk/drafts/categories/memory-management/memory_allocation.md:53:TODO add example?
+./bk/drafts/categories/memory-management/memory_allocation.md:61:TODO add example?
+./bk/drafts/categories/development-tools_profiling/benchmarking.md:75:hyperfine --warmup 3 'grep -R TODO *'
+./bk/src/links/learning_rust.md:7:TODO
+./bk/src/code-organization/index.md:49:TODO cover monorepo / git submodules?
+./bk/src/refs/other-refs.md:1445:[rust-howto~todo~repo]: https://github.com/john-cd/rust_howto/blob/main/TODO.md
+./bk/src/refs/other-refs.md:1446:[rust-howto~todo~repo~badge]: https://img.shields.io/badge/rust__howto_TODO-steelblue?logo=github
+./bk/src/language/macros.md:427:TODO split?
+./bk/src/language/lifetimes.md:118:TODO review [common-rust-lifetime-misconceptions~repo]
+./bk/src/standard-library/dynamic_typing.md:54:TODO review
+./bk/src/categories/algorithms/hashing.md:25:TODO distinguish between general-purpose / fast / OOS resistant / crypto hashing.
+./bk/src/appendices/contributing/index.md:125:- [TODO list][rust-howto~todo~repo]↗.
+./bk/src/appendices/contributing/topics_of_interest.md:65:Please also consult the [`TODO.md`][rust-howto~todo~repo]↗ file and the [`drafts`][rust-howto~drafts~repo]↗ and [`later`][rust-howto~bk-later~repo]↗ folders.
+./bk/scripts/spelling/dictionary.txt:1450:TODO
+./bk/scripts/gh/mod.just:28:# Create an GH issue for each TODO line in the book's Markdown files
+./bk/scripts/gh/mod.just:35:  prefix='^\s*TODO\s*:?\s*'
+./bk/scripts/gh/mod.just:52:# Create an GH issue for each TODO line in .rs files (incl. code examples)
+./bk/scripts/gh/mod.just:60:  pattern='TODO\s*:?\s*'
+./bk/scripts/gh/mod.just:77:# Create an GH issue for each TODO line in other files (*.sh, *.toml, *.yaml...)
+./bk/scripts/gh/mod.just:85:  pattern='TODO\s*:?\s*'
+./bk/crates/proc_macros/Cargo.toml:22:# TODO add example  proc-macro2 = "1.0" # TokenStream manipulation
+./bk/crates/cats/parser_implementations/examples/markdown/comrak.rs:68:// TODO unwrap
+./bk/crates/cats/web_programming_http_client/examples/download/post_file.rs:37:// TODO rewrite - paste.rs is down
+./bk/crates/cats/development_tools_debugging/examples/tracing/tracing_subscriber2.rs:89:// TODO
+./bk/crates/cats/development_tools_debugging/examples/other/slog.rs:63:// TODO review slog-scope
+./bk/crates/cats/encoding/examples/no_external_schema_file/postcard.rs:65:// [review postcard example](https://github.com/john-cd/rust_howto/issues/1038) TODO unwrap
+./bk/crates/cats/compression/examples/compression/async_compression.rs:130:// TODO review the above; cover async_zip ?
+./bk/crates/cats/compression/Cargo.toml:25:# TODO add example for async_zip?
+./bk/crates/cats/parsing/Cargo.toml:19:nom = "8.0.0" # TODO add winnow example
+./bk/crates/cats/development_tools_profiling/src/memory_usage_analysis/dhat.rs:121:// TODO automate: cargo run --features dhat-heap / cargo run --features
+./bk/crates/cats/asynchronous/examples/tokio/tokio_graceful_shutdown.rs:75:// TODO expand
+./bk/crates/cats/data_structures/examples/stack_allocated/arrayvec.rs:45:// TODO review
+./bk/crates/cats/data_structures/examples/stack_allocated/smallvec.rs:54:// TODO review
+./bk/crates/cats/data_structures/Cargo.toml:22:# TODO add example? bloomfilter = "3.0.1"
+./bk/crates/cats/data_structures/Cargo.toml:23:# TODO add example? bytes = "1.9.0"
+./bk/crates/cats/data_structures/Cargo.toml:28:# TODO add example? linked-hash-map = "0.5.6"
+./bk/crates/cats/data_structures/Cargo.toml:32:# TODO add example? rangemap = "1.5.1"
+./bk/crates/cats/data_structures/Cargo.toml:33:# TODO add example? skiplist = "0.6.0"
+./bk/crates/cats/cryptography/examples/aead/aes_gcm_siv.rs:2:#![allow(deprecated)] // TODO Nonce::from_slice
+./bk/crates/cats/cryptography/examples/aead/aes_gcm.rs:2:#![allow(deprecated)] // TODO
+./bk/crates/cats/filesystem/examples/directory_traversal/png.rs:24:// TODO create a PNG file?
+./bk/crates/cats/filesystem/examples/directory_traversal/duplicate_name.rs:31:// TODO review
+./bk/crates/cats/filesystem/examples/directory_traversal/ignore_case.rs:28:// TODO review
+./bk/crates/cats/filesystem/examples/directory_traversal/loops.rs:72:// TODO review
+./bk/crates/cats/filesystem/examples/directory_traversal/sizes.rs:27:// TODO review
+./bk/crates/cats/filesystem/examples/directory_traversal/skip_dot.rs:34:// TODO review
+./bk/crates/cats/filesystem/examples/directory_traversal/find_file.rs:46:// TODO review
+./bk/crates/cats/development_tools_cargo_plugins/examples/building/xshell.rs:118:// TODO echo $MY_VAR does not work?
+./mdbook-utils/src/link/rules.rs:18:// TODO the Regexes need testing
+./mdbook-utils/src/link/link_and_linkbuilder.rs:136:    /// Return the link's text or TODO if empty
+./mdbook-utils/src/link/link_and_linkbuilder.rs:138:        self.text.clone().unwrap_or(Cow::from("TODO"))
+./mdbook-utils/src/link/link_and_linkbuilder.rs:163:    // TODO need to look ref defs for existing labels
+./mdbook-utils/src/link/link_and_linkbuilder.rs:170:            // TODO
+./mdbook-utils/src/link/link_and_linkbuilder.rs:213:            "TODO".into()
+./mdbook-utils/src/link/link_and_linkbuilder.rs:227:            "ABC".into() // TODO
+./mdbook-utils/src/link/link_and_linkbuilder.rs:276:// TODO
+./mdbook-utils/src/link/link_and_linkbuilder.rs:287:// TODO
+./mdbook-utils/src/main.rs:24:            env::set_var(key, "info"); // TODO
+./mdbook-utils/src/cli/refdefs_commands.rs:16:    // TODO merge with generation from dependencies?
+./mdbook-utils/src/cli/book_toml.rs:35:    src: Option<String>, /* TODO consider std::ffi::OsString - need a custom deserializer?
+./mdbook-utils/src/cli/markdown_commands.rs:39:    // TODO autoreplace autolinks / inline links by ref links
+./mdbook-utils/src/cli/markdown_commands.rs:146:            // TODO
+./mdbook-utils/src/cli/markdown_commands.rs:156:            // TODO
+./mdbook-utils/src/parser/mod.rs:79:        Some(("http://TODO".into(), ":BROKEN_LINK:".into()))
+./mdbook-utils/src/parser/mod.rs:84:// TODO use this function
+./mdbook-utils/src/write_from_parser/github.rs:15:// TODO
+./mdbook-utils/src/write_from_parser/write_whole.rs:57:// TODO use write_to_markdown
+./mdbook-utils/src/lib.rs:163:// TODO need to remove internal links
+./mdbook-utils/src/lib.rs:227:        // TODO ::write_duplicate_links_to(links, f)?;
+./mdbook-utils/src/lib.rs:248:        // TODO ::write_broken_links_to(links, f)?;
+./mdbook-utils/src/lib.rs:285:    // TODO can we read just the *-refs.md files?
+./mdbook-utils/src/lib.rs:290:        // TODO
+./mdbook-utils/src/markdown/extract_code.rs:21:// TODO document
+./mdbook-utils/src/markdown/extract_code.rs:79:// TODO document
+./mdbook-utils/src/markdown/extract_code.rs:83:// TODO
+./mdbook-utils/src/markdown/extract_code.rs:128:    // TODO
+./mdbook-utils/src/generate/refdefs_from_dependencies.rs:28:// TODO
+./mdbook-utils/Cargo.toml:27:    "TODO.md",
+./mdbook-utils/.devcontainer/publish.sh:42:## TODO check that the last commit has been tagged, that the tag corresponds to the version in Cargo.toml,
+./mdbook-utils/README.md:3:This is a **Work In Progress**. The command-line interface (CLI) and underlying API are subject to change. A summary of recently released changes is found in [RELEASES.md](./RELEASES.md). You may also consult [TODO.md](./TODO.md).
+./playground/bits_and_pieces/templates/chapter/index.md.template:13:TODO write
+./playground/bits_and_pieces/templates/chapter/subchapter.md.template:11:TODO write
+./playground/bits_and_pieces/pest_parser/markdown_links.pest:108:// TODO LATER
+./playground/bits_and_pieces/tool_lib/src/tera/mod.rs:65:// TODO
+./tools/tool_lib/src/all_categories/request.rs:22:    // // TODO client makes HTTPS requests, not HTTP
+./tools/tool_lib/src/crates_io/categories_for_crate.rs:110:    // TODO client makes HTTPS request, not HTTP.
+./tools/tool_lib/src/crates_io/mod.rs:21:// TODO
+./tools/mdbook-scrub/test_book/src/crate_badges.md:3:TODO: NOT IMPLEMENTED.
+./tools/mdbook-scrub/test_book/src/category_badges.md:3:TODO: NOT IMPLEMENTED.
+./tools/mdbook-scrub/test_book/src/category_links.md:3:TODO: NOT IMPLEMENTED.
+./tools/mdbook-scrub/test_book/src/crate_links.md:3:TODO: NOT IMPLEMENTED.
+./tools/mdbook-scrub/test_book/src/SUMMARY.md:7:### Category Directives (TODO NOT IMPLEMENTED)
+./tools/mdbook-scrub/test_book/src/SUMMARY.md:12:### Crate Directives (TODO NOT IMPLEMENTED)
+./tools/templ/src/main.rs:27:        // TODO
+./typ/README.md:3:TODO
