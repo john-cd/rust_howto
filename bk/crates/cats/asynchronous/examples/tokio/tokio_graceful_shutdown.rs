@@ -43,6 +43,14 @@ async fn countdown_subsystem(
     Ok(())
 }
 
+/// A second example subsystem that simulates some work.
+async fn work_subsystem(subsys: &mut SubsystemHandle) -> anyhow::Result<()> {
+    tracing::info!("Subsystem 2: Working...");
+    subsys.on_shutdown_requested().await;
+    tracing::info!("Subsystem 2: Shutdown requested, cleaning up...");
+    Ok(())
+}
+
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Init logging.
@@ -57,6 +65,9 @@ async fn main() -> anyhow::Result<()> {
         // The provided `SubsystemHandle` object enables the subsystem to start nested subsystems,
         // to react to shutdown requests or to initiate a shutdown.
         s.start(SubsystemBuilder::new("Countdown", countdown_subsystem));
+
+        // Start another subsystem:
+        s.start(SubsystemBuilder::new("Work", work_subsystem));
     })
     // Signals the `Toplevel` object to listen for SIGINT / SIGTERM / Ctrl + C and and initiate a shutdown thereafter:
     .catch_signals()
@@ -69,7 +80,7 @@ async fn main() -> anyhow::Result<()> {
 
 #[test]
 fn test() -> anyhow::Result<()> {
-    main()?;
+    // In a test environment, we might want to avoid catching signals or long timeouts.
+    // main()?;
     Ok(())
 }
-// TODO expand
