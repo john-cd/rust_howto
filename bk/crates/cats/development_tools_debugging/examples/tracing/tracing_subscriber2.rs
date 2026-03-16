@@ -63,7 +63,7 @@ fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
         // any directives parsed from the env variable.
         .add_directive("my_crate::my_mod=trace".parse()?);
 
-    // FIXME fmt().with_env_filter(filter_layer).try_init()?;
+    fmt().with_env_filter(_filter_layer).try_init()?;
 
     // Test it.
     tracing::debug!("tracing configured!");
@@ -71,8 +71,10 @@ fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
 }
 
 fn main() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
+    // Note: layers() and filter() both try to initialize the global subscriber.
+    // In a real application, only one subscriber should be initialized.
     layers();
-    // FIXME filter()?;
+    // filter()?;
     Ok(())
 }
 // ANCHOR_END: example
@@ -86,7 +88,6 @@ rusty_fork_test! {
         main().unwrap();
     }
 }
-// TODO
 
 // Per-Layer Filtering
 // <https://docs.rs/tracing-subscriber/latest/tracing_subscriber/layer/index.html#per-layer-filtering>
