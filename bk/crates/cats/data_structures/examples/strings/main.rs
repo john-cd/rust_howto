@@ -1,3 +1,4 @@
+mod bytes;
 mod string_format;
 mod strings;
 

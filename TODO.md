@@ -294,8 +294,10 @@ Add build job to main workflow.
 - **Web Programming**: Migrated `post_file.rs` to `httpbin.org`.
 - **Logging**: Integrated `slog-scope` and fixed `tracing_subscriber2.rs` initialization logic.
 - **Filesystem**: Improved `png.rs` test robustness.
-- **Pin Projection**: Correctly implemented and enabled the `pin_project.rs` example.
+- **Pin Projection**: Correctly implemented and enabled the `pin_project.rs` example using safe projection.
+- **Parsing/Data Structures**: Added new examples for `winnow` and `bytes` crates.
 - **Testing**: Introduced process-isolated tests for tracing and logging via `rusty-fork`.
+- **Content/Drafts**: Completed initial drafting for `inheritance.md`, `overflow.md`, `plugin.md`, and `predicates.md`.
 
 -------------------------
 
@@ -309,7 +311,7 @@ Add build job to main workflow.
 
 ### Crate Integration
 
-- **Pending Examples**: Integrate and document crates like `tantivy`, `tree-sitter`, `opentelemetry`, and `winnow`.
+- **Pending Examples**: Integrate and document crates like `tantivy`, `tree-sitter`, and `opentelemetry`.
 - **Cleanup**: Review and enable commented-out dependencies in various `Cargo.toml` files.
 
 ### Tooling

@@ -17,7 +17,7 @@ async fn main() -> Result<()> {
     let client = reqwest::Client::new();
     let res = client.post(httpbin_api).body(contents).send().await?;
     let response_text = res.text().await?;
-    println!("Response: {response_text}");
+    println!("Response from httpbin: {response_text}");
     Ok(())
 }
 // ANCHOR_END: example

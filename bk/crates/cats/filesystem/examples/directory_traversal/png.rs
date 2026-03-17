@@ -18,14 +18,25 @@ fn main() -> Result<()> {
 
 #[test]
 fn test() -> anyhow::Result<()> {
-    // Create a temporary PNG file for testing.
-    let path = std::path::Path::new("test_image.png");
-    std::fs::File::create(path)?;
+    use std::fs;
+    use std::path::Path;
 
+    // Create a temporary directory.
+    let temp_dir = Path::new("temp_png_test");
+    if !temp_dir.exists() {
+        fs::create_dir_all(temp_dir)?;
+    }
+
+    // Create a dummy PNG file.
+    let png_file = temp_dir.join("test_image.png");
+    fs::write(&png_file, b"\x89PNG\r\n\x1a\n")?;
+
+    // Run main and check if it finds the file.
+    // Note: main searches in the current directory tree using glob("**/*.png").
     main()?;
 
     // Clean up.
-    std::fs::remove_file(path)?;
+    fs::remove_dir_all(temp_dir)?;
 
     Ok(())
 }

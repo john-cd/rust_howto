@@ -2952,6 +2952,7 @@ dependencies = [
  "arrayvec",
  "bitflags 2.10.0",
  "bitvec",
+ "bytes",
  "crates_io_api",
  "flagset",
  "fnv",
@@ -7911,10 +7912,12 @@ dependencies = [
 name = "parsing"
 version = "0.1.2"
 dependencies = [
+ "anyhow",
  "nom 8.0.0",
  "pest",
  "pest_derive",
  "pest_generator",
+ "winnow",
 ]
 
 [[package]]
