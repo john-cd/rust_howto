@@ -42,12 +42,12 @@ use std::error::Error;
 fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     // 1. Returns a new `EnvFilter` from the value of the `RUST_LOG` environment
     //    variable, ignoring any invalid filter directives.
-    let _filter_layer = EnvFilter::from_default_env();
+    let _filter_layer_1 = EnvFilter::from_default_env();
 
     // 2. Returns a new `EnvFilter` from the value of the `RUST_LOG` environment
     //    variable, or "info" if the environment variable is unset or contains
     //    any invalid filter directives.
-    let _filter_layer = EnvFilter::try_from_default_env()
+    let _filter_layer_2 = EnvFilter::try_from_default_env()
         .or_else(|_| EnvFilter::try_new("info"))
         .unwrap();
 
@@ -56,14 +56,14 @@ fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     // [my_span]=trace"
 
     // 3. Custom environment variable.
-    let _filter_layer = EnvFilter::try_from_env("MY_CUSTOM_FILTER_ENV_VAR")?
+    let filter_layer = EnvFilter::try_from_env("MY_CUSTOM_FILTER_ENV_VAR")?
         // Set the base level when not matched by other directives to `DEBUG`.
         .add_directive(LevelFilter::DEBUG.into())
         // Set the max level for `my_crate::my_mod` to `TRACE`, overriding
         // any directives parsed from the env variable.
         .add_directive("my_crate::my_mod=trace".parse()?);
 
-    fmt().with_env_filter(_filter_layer).try_init()?;
+    fmt().with_env_filter(filter_layer).try_init()?;
 
     // Test it.
     tracing::debug!("tracing configured!");
