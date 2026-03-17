@@ -50,7 +50,7 @@ rusty_fork_test! {
     #[test]
     fn test() {
         use std::fs;
-        if !fs::exists("temp").unwrap() {
+        if !std::path::Path::new("temp").exists() {
             fs::create_dir("temp").unwrap();
         }
         main();

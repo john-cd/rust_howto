@@ -66,7 +66,7 @@ RUN apt-get update \
     llvm \
     m4 \
     make \
-    pandoc \
+    # pandoc \ huge https://github.com/john-cd/rust_howto/issues/1442
     pkg-config \
     protobuf-compiler \
     python3 \

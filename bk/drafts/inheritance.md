@@ -76,13 +76,69 @@ Note that so-called "Deref polymorphism", meaning implementing [`Deref`][c~std::
 - [Rust is Beyond Object-Oriented, Part 3: Inheritance][blog~thecodedmessage-posts-oop-3-inheritance]↗.
 - [How to Implement Inheritance-like Feature for Rust?][forum~how-to-implement-inheritance-like-feature-for-rust]↗.
 
+## dynamic dispatch with trait objects {#dynamic-dispatch}
+
+While Rust prefers static dispatch (using generics and monomorphization), you can achieve dynamic polymorphism—similar to virtual methods in other languages—using **trait objects**.
+
+A trait object is written as `&dyn Trait` or `Box<dyn Trait>`. It allows you to store different types that implement the same trait in a single collection.
+
+```rust,noplayground
+trait Animal {
+    fn make_sound(&self);
+}
+
+struct Dog;
+impl Animal for Dog {
+    fn make_sound(&self) { println!("Woof!"); }
+}
+
+struct Cat;
+impl Animal for Cat {
+    fn make_sound(&self) { println!("Meow!"); }
+}
+
+fn main() {
+    let animals: Vec<Box<dyn Animal>> = vec![
+        Box::new(Dog),
+        Box::new(Cat),
+    ];
+
+    for animal in animals {
+        animal.make_sound();
+    }
+}
+```
+
+## Composition over Inheritance {#composition}
+
+Instead of inheriting behavior, Rust encourages embedding one struct within another. This "has-a" relationship is often cleaner and more flexible.
+
+```rust,noplayground
+struct Engine {
+    hp: u32,
+}
+
+impl Engine {
+    fn start(&self) { println!("Engine started with {} HP", self.hp); }
+}
+
+struct Car {
+    engine: Engine, // Composition
+    model: String,
+}
+
+impl Car {
+    fn start(&self) {
+        println!("Starting {}", self.model);
+        self.engine.start();
+    }
+}
+```
+
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[traits | Traits]].
+- [[dynamic_typing | Dynamic Typing]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-TODO write
-</div>

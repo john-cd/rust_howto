@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 // ANCHOR: example
 // Algorithm:
 use aes_gcm::Aes256Gcm; // Use Aes128Gcm or Aes256Gcm, respectively.
@@ -19,7 +18,7 @@ fn main() {
     // Generate a random 256-bit key:
     let key: Key<Aes256Gcm> = Aes256Gcm::generate_key(&mut OsRng);
 
-    // Generate a 96-bit nonce.
+    // Generate a random 96-bit nonce.
     let nonce = Nonce::from(*b"unique nonce");
 
     // Create the cipher...
