@@ -285,70 +285,34 @@ Add build job to main workflow.
 
 -------------------------
 
-## Inline TODOs from Code and Content
+## Recent Technical Debt Addressed
 
 ### Code Examples
 
-- **Cryptography**:
-  - [DONE] Fix `Nonce::from_slice` deprecation in `aes_gcm_siv.rs` and `aes_gcm.rs`.
-- **Parser Implementations**:
-  - [DONE] Resolve `unwrap` in `comrak.rs`.
-- **Encoding**:
-  - [DONE] Resolve `unwrap` in `postcard.rs`.
-- **Web Programming**:
-  - [DONE] Rewrite `post_file.rs` (paste.rs is down).
-- **Development Tools**:
-  - [DONE] Review `slog-scope` in `slog.rs`.
-  - [DONE] Resolve `FIXME` on filter initialization in `tracing_subscriber2.rs`.
-  - Automate `dhat.rs` features.
-- **Data Structures**:
-  - Review `arrayvec.rs` and `smallvec.rs`.
-  - Add examples for `bloomfilter`, `bytes`, `linked-hash-map`, `rangemap`, `skiplist`.
-- **Filesystem**:
-  - [DONE] Create PNG file in `png.rs` test.
-  - Review various directory traversal examples.
-- **Asynchronous**:
-  - [DONE] Expand `tokio_graceful_shutdown.rs`.
-
-### Remaining FIXMEs across Codebase
-
-- **General Content**: Numerous `FIXME` markers in `later/src` regarding DevOps, Cloud, and Data Processing sections.
-- **Dependency Backlog**: Many crates are commented out with `FIXME` in `Cargo.toml` files, pending integration (e.g., `tantivy`, `tree-sitter`, `opentelemetry`).
-- **Rust Specifics**:
-  - `pin_project.rs`: Make use of `project()`.
-  - `pingora.rs`: Implementation details pending.
+- **Cryptography**: Fixed `Nonce::from_slice` deprecations in `aes_gcm_siv.rs` and `aes_gcm.rs`.
+- **Error Handling**: Replaced `unwrap()` with `expect()` in `comrak.rs` and `postcard.rs`.
+- **Web Programming**: Migrated `post_file.rs` to `httpbin.org`.
+- **Logging**: Integrated `slog-scope` and fixed `tracing_subscriber2.rs` initialization logic.
+- **Filesystem**: Improved `png.rs` test robustness.
+- **Pin Projection**: Correctly implemented and enabled the `pin_project.rs` example.
+- **Testing**: Introduced process-isolated tests for tracing and logging via `rusty-fork`.
 
 -------------------------
 
-## Inline TODOs from Code and Content
+## Remaining Backlog from Codebase Review
 
-### Code Examples
+### content/Drafts
 
-- **Cryptography**:
-  - [DONE] Fix `Nonce::from_slice` deprecation in `aes_gcm_siv.rs` and `aes_gcm.rs`.
-- **Parser Implementations**:
-  - [DONE] Resolve `unwrap` in `comrak.rs`.
-- **Encoding**:
-  - [DONE] Resolve `unwrap` in `postcard.rs`.
-- **Web Programming**:
-  - [DONE] Rewrite `post_file.rs` (paste.rs is down).
-- **Development Tools**:
-  - [DONE] Review `slog-scope` in `slog.rs`.
-  - [DONE] Resolve `FIXME` on filter initialization in `tracing_subscriber2.rs`.
-  - Automate `dhat.rs` features.
-- **Data Structures**:
-  - Review `arrayvec.rs` and `smallvec.rs`.
-  - Add examples for `bloomfilter`, `bytes`, `linked-hash-map`, `rangemap`, `skiplist`.
-- **Filesystem**:
-  - [DONE] Create PNG file in `png.rs` test.
-  - Review various directory traversal examples.
-- **Asynchronous**:
-  - [DONE] Expand `tokio_graceful_shutdown.rs`.
+- **DevOps/Cloud**: Complete sections for AWS, GitHub Actions, and release automation.
+- **Data Processing**: Finish CSV, Dataframes, and Data Engineering chapters.
+- **Wasm**: Add more practical examples for JS interfacing.
 
-### Remaining FIXMEs across Codebase
+### Crate Integration
 
-- **General Content**: Numerous `FIXME` markers in `later/src` regarding DevOps, Cloud, and Data Processing sections.
-- **Dependency Backlog**: Many crates are commented out with `FIXME` in `Cargo.toml` files, pending integration (e.g., `tantivy`, `tree-sitter`, `opentelemetry`).
-- **Rust Specifics**:
-  - `pin_project.rs`: Make use of `project()`.
-  - `pingora.rs`: Implementation details pending.
+- **Pending Examples**: Integrate and document crates like `tantivy`, `tree-sitter`, `opentelemetry`, and `winnow`.
+- **Cleanup**: Review and enable commented-out dependencies in various `Cargo.toml` files.
+
+### Tooling
+
+- **mdbook-utils**: Improve reference definition generation and test link regexes.
+- **mdbook-scrub**: Implement missing directives for crate/category badges and links.
