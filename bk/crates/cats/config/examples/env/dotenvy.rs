@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
+//! Examples for working with `.env` files using `dotenvy`.
 use std::env;
 
 use anyhow::Result;
