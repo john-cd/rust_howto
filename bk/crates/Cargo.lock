@@ -1669,8 +1669,6 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "tempfile",
- "tracing",
- "tracing-subscriber",
  "xshell",
 ]
 
@@ -3254,7 +3252,6 @@ dependencies = [
  "crates_io_api",
  "semver",
  "tracing",
- "tracing-subscriber",
 ]
 
 [[package]]
@@ -3264,8 +3261,6 @@ dependencies = [
  "anyhow",
  "autocfg",
  "cc",
- "tracing",
- "tracing-subscriber",
 ]
 
 [[package]]
