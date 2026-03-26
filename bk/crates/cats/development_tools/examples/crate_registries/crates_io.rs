@@ -7,7 +7,6 @@ use crates_io_api::CrateResponse;
 use crates_io_api::CratesPage;
 use crates_io_api::Sort;
 use crates_io_api::SyncClient;
-use tracing::warn;
 
 /// Instantiate the 'crates.io' API client.
 /// The client is configured with a rate limit.
@@ -24,7 +23,7 @@ fn get_client() -> Result<SyncClient> {
 #[tracing::instrument(err)]
 fn get_info_for_crate(crate_name: &str) -> Result<CrateResponse> {
     let client = get_client()?;
-    warn!("Calling the 'crates.io' API for {crate_name}");
+    println!("Calling the 'crates.io' API for {crate_name}");
     let crt = client.get_crate(crate_name)?;
     Ok(crt)
 }

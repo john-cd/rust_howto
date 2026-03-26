@@ -102,11 +102,11 @@ fn main() -> anyhow::Result<()> {
     // Environment variables:
     // `xshell` maintains its own environment map, independent of the system's.
     sh.set_var("MY_VAR", "my_value");
-    tracing::info!("Set MY_VAR to {}", sh.var("MY_VAR")?);
+    println!("Set MY_VAR to {}", sh.var("MY_VAR")?);
 
     // Note: To use an environment variable via `echo`, the shell itself must be invoked to evaluate it.
     let env_var = cmd!(sh, "sh -c 'echo $MY_VAR'").read()?;
-    tracing::info!("MY_VAR environment variable evaluated by sh: {env_var}");
+    println!("MY_VAR environment variable evaluated by sh: {env_var}");
 
     // Change the working directory permanently:
     let temp_dir = tempfile::tempdir()?;
