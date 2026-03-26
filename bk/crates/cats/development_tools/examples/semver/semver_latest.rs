@@ -15,6 +15,7 @@ use semver::VersionReq;
 
 /// Finds the maximum matching version from an iterable of version strings based
 /// on a version requirement string.
+#[tracing::instrument(skip(iterable), err)]
 fn find_max_matching_version<'a, I>(
     // The version requirement string (e.g., ">=1.0.0", "<2.0.0").
     version_req_str: &str,
@@ -34,14 +35,58 @@ where
         .max())
 }
 
+#[tracing::instrument(err)]
 fn main() -> Result<()> {
+    // Initialize tracing subscriber
+    let _ = tracing_subscriber::fmt::try_init();
+    tracing::info!("Starting semver_latest example");
+
     let max_matching_version =
         find_max_matching_version("<= 1.0.0", vec!["0.9.0", "1.0.0", "1.0.1"])?;
-    println!("Maximum matching version: {max_matching_version:?}");
+    tracing::info!("Maximum matching version for <= 1.0.0 is: {max_matching_version:?}");
     assert_eq!(max_matching_version, Some(Version::parse("1.0.0")?));
 
+    let max_match_2 = find_max_matching_version(
+        ">1.2.3-alpha.3",
+        vec![
+            "1.2.3-alpha.3",
+            "1.2.3-alpha.4",
+            "1.2.3-alpha.10",
+            "1.2.3-beta.4",
+            "3.4.5-alpha.9",
+        ]
+    )?;
+    tracing::info!("Maximum matching version for >1.2.3-alpha.3 is: {max_match_2:?}");
+
     assert_eq!(
-        find_max_matching_version(
+        max_match_2,
+        Some(Version::parse("1.2.3-beta.4")?)
+    );
+
+    tracing::info!("semver_latest example completed successfully.");
+
+    Ok(())
+}
+// ANCHOR_END: example
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
+
+    #[test]
+    fn test_find_max_matching_version() -> anyhow::Result<()> {
+        let _ = tracing_subscriber::fmt::try_init();
+
+        let max = find_max_matching_version("<= 1.0.0", vec!["0.9.0", "1.0.0", "1.0.1"])?;
+        assert_eq!(max, Some(Version::parse("1.0.0")?));
+
+        let max2 = find_max_matching_version(
             ">1.2.3-alpha.3",
             vec![
                 "1.2.3-alpha.3",
@@ -50,13 +95,11 @@ fn main() -> Result<()> {
                 "1.2.3-beta.4",
                 "3.4.5-alpha.9",
             ]
-        )?,
-        Some(Version::parse("1.2.3-beta.4")?)
-    );
+        )?;
+        assert_eq!(max2, Some(Version::parse("1.2.3-beta.4")?));
 
-    Ok(())
-}
-// ANCHOR_END: example
+        let none_match = find_max_matching_version(">= 5.0.0", vec!["1.0.0", "2.0.0"])?;
+        assert_eq!(none_match, None);
 
 #[cfg(test)]
 mod tests {

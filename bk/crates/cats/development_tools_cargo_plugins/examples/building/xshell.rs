@@ -9,7 +9,12 @@
 use xshell::Shell;
 use xshell::cmd;
 
+#[tracing::instrument(err)]
 fn main() -> anyhow::Result<()> {
+    // Initialize tracing subscriber
+    // We only init it if it hasn't been initialized by a test framework
+    let _ = tracing_subscriber::fmt::try_init();
+    tracing::info!("Starting xshell example");
 
     // Create a new Shell instance.
     //
@@ -86,13 +91,13 @@ fn main() -> anyhow::Result<()> {
 
     // Checking command status:
     let status = cmd!(sh, "true").run();
-    println!("Command status: {status:?}");
+    tracing::info!("Command status: {status:?}");
 
     let failed_status = cmd!(sh, "false").run();
-    println!("Failed command status: {failed_status:?}");
+    tracing::info!("Failed command status: {failed_status:?}");
     // Capture `stderr` with `read_stderr`:
     let err_result = cmd!(sh, "cat nonexistent_file").read_stderr();
-    println!("Standard error: {}", err_result.unwrap_err());
+    tracing::info!("Standard error: {}", err_result.unwrap_err());
 
     // Environment variables:
     // `xshell` maintains its own environment map, independent of the system's.
@@ -107,6 +112,8 @@ fn main() -> anyhow::Result<()> {
     let temp_dir = tempfile::tempdir()?;
     let temp_path = temp_dir.path();
     sh.change_dir(temp_path);
+
+    tracing::info!("xshell example completed successfully.");
 
     Ok(())
 }
