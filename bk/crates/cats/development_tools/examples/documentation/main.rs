@@ -1,3 +1,4 @@
+//! Documentation tools examples.
 mod rustdoc;
 mod rustdoc2;
 mod rustdoc3;

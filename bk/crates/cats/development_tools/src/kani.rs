@@ -1,8 +1,12 @@
 // ANCHOR: example
+//! This module contains an example of verifying Rust code using Kani.
+//!
+//! See <https://model-checking.github.io/kani/tutorial-first-steps.html>.
 #![allow(unexpected_cfgs)]
 #![allow(dead_code)]
 
 // Define a very simple function to verify:
+#[tracing::instrument]
 fn add(a: i32, b: i32) -> i32 {
     // For testing purposes, we make it fail for only 1 in billions of possible
     // inputs:
@@ -85,13 +89,39 @@ mod verification {
     // a concrete example of a value of x that triggers the failure.
 }
 
+#[tracing::instrument]
 fn main() {
-    println!("2 + 3 = {}", add(2, 3));
+    // Initialize tracing subscriber
+    let _ = tracing_subscriber::fmt::try_init();
+    tracing::info!("Starting kani example");
+
+    let sum = add(2, 3);
+    tracing::info!("2 + 3 = {}", sum);
+
+    tracing::info!("kani example completed successfully.");
 }
 // Examples adapted from the tutorial: <https://model-checking.github.io/kani/tutorial-first-steps.html>
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main() {
+        main();
+    }
+
+    #[test]
+    fn test_add() {
+        assert_eq!(add(2, 3), 5);
+        assert_eq!(add(0, 0), 0);
+        assert_eq!(add(-1, 1), 0);
+    }
+
+    #[test]
+    #[should_panic(expected = "Oh no, a failing corner case!")]
+    fn test_add_corner_case() {
+        add(42, 1);
+    }
 }
