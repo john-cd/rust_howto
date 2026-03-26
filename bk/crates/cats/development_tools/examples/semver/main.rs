@@ -1,3 +1,4 @@
+//! Semver tools examples.
 mod semver_command;
 mod semver_complex;
 mod semver_latest;

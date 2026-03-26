@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
+//! Examples for working with standard environment variables.
 use std::env;
 
 /// Extracts the value of the `RUST_LOG` environment variable.

@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
+//! Examples for working with `.env` files and `envy`.
 use serde::Deserialize;
 
 // Define a Configuration struct that can be deserialized from environment

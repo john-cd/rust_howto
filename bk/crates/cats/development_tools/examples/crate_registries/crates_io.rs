@@ -11,6 +11,7 @@ use tracing::warn;
 
 /// Instantiate the 'crates.io' API client.
 /// The client is configured with a rate limit.
+#[tracing::instrument(err)]
 fn get_client() -> Result<SyncClient> {
     let client = SyncClient::new(
         "my-user-agent (my-contact@domain.com)",
@@ -20,6 +21,7 @@ fn get_client() -> Result<SyncClient> {
 }
 
 /// Retrieve information for a given crate.
+#[tracing::instrument(err)]
 fn get_info_for_crate(crate_name: &str) -> Result<CrateResponse> {
     let client = get_client()?;
     warn!("Calling the 'crates.io' API for {crate_name}");
@@ -28,16 +30,17 @@ fn get_info_for_crate(crate_name: &str) -> Result<CrateResponse> {
 }
 
 /// List the top dependencies for the most downloaded crates.
+#[tracing::instrument(err)]
 fn list_top_dependencies() -> Result<()> {
     let client = get_client()?;
     // Retrieve summary data.
     let summary = client.summary()?;
     for c in summary.most_downloaded {
-        println!("{} - {}:", c.id, c.downloads);
+        tracing::info!("{} - {}:", c.id, c.downloads);
         for dep in client.crate_dependencies(&c.id, &c.max_version)? {
             // Ignore optional dependencies.
             if !dep.optional {
-                println!("    * {}", dep.crate_id);
+                tracing::info!("    * {}", dep.crate_id);
             }
         }
     }
@@ -45,6 +48,7 @@ fn list_top_dependencies() -> Result<()> {
 }
 
 /// Search for crates matching a given query.
+#[tracing::instrument(skip(search), err)]
 fn search_for_crates(search: impl Into<String>) -> Result<CratesPage> {
     let client = get_client()?;
 
@@ -60,19 +64,26 @@ fn search_for_crates(search: impl Into<String>) -> Result<CratesPage> {
     Ok(crates)
 }
 
+#[tracing::instrument(err)]
 fn main() -> Result<()> {
+    // Initialize tracing subscriber
+    let _ = tracing_subscriber::fmt::try_init();
+    tracing::info!("Starting crates_io API example");
+
     // Search for crates that mention "signature verification":
-    println!("Search:\n");
+    tracing::info!("Search:\n");
     let result = search_for_crates("signature verification")?;
-    println!("{result:#?}");
+    tracing::info!("{result:#?}");
 
     // Display information for a crate:
-    println!("\n\nInfo:\n");
+    tracing::info!("\n\nInfo:\n");
     let info = get_info_for_crate("wgsldoc")?;
-    println!("{info:#?}");
+    tracing::info!("{info:#?}");
 
-    println!("\n\nTop dependencies for the most downloaded crates:\n");
+    tracing::info!("\n\nTop dependencies for the most downloaded crates:\n");
     list_top_dependencies()?;
+
+    tracing::info!("crates_io API example completed successfully.");
 
     Ok(())
 }
