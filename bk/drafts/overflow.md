@@ -11,13 +11,24 @@
 
 - [`half`][c~half~lib.rs] - data structures in Rust.
 
+## Summary of arithmetic behaviors
+
+| Method Class | Behavior on Overflow | Example |
+|---|---|---|
+| `wrapping_` | Performs two's complement wrapping | `255u8.wrapping_add(1) == 0` |
+| `checked_` | Returns `None` | `255u8.checked_add(1) == None` |
+| `overflowing_` | Returns `(result, overflowed: bool)` | `255u8.overflowing_add(1) == (0, true)` |
+| `saturating_` | Returns the max/min of the type | `255u8.saturating_add(1) == 255` |
+
+## Panics in Debug vs. Wrapping in Release
+
+By default, Rust panics on integer overflow in **debug** builds. However, in **release** builds, it performs wrapping arithmetic (equivalent to `wrapping_add`).
+
+If you need a specific behavior regardless of the build mode, you should use the explicit methods listed above.
+
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[mathematics | Mathematics]].
 
 {{#include refs.incl.md}}
-{{#include refs/link-refs.md}}
-
-<div class="hidden">
-TODO write
-</div>
+{{#include ../refs/link-refs.md}}

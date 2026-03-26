@@ -38,7 +38,7 @@ fn main() {
         bytes: &bytes,
         str_s: message,
     })
-    .unwrap();
+    .expect("failed to serialize");
 
     assert_eq!(
         &[
@@ -47,7 +47,8 @@ fn main() {
         output.deref()
     );
 
-    let out: RefStruct = from_bytes(output.deref()).unwrap();
+    let out: RefStruct =
+        from_bytes(output.deref()).expect("failed to deserialize");
     assert_eq!(
         out,
         RefStruct {
@@ -62,4 +63,3 @@ fn main() {
 fn test() {
     main();
 }
-// [review postcard example](https://github.com/john-cd/rust_howto/issues/1038) TODO unwrap

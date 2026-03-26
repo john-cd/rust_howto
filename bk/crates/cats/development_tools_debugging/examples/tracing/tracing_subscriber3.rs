@@ -61,12 +61,15 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
-#[test]
-fn test() -> anyhow::Result<()> {
-    use std::fs;
-    if !fs::exists("temp")? {
-        fs::create_dir("temp")?;
+use rusty_fork::rusty_fork_test;
+
+rusty_fork_test! {
+    #[test]
+    fn test() {
+        use std::fs;
+        if !std::path::Path::new("temp").exists() {
+            fs::create_dir("temp").unwrap();
+        }
+        main().unwrap();
     }
-    main()?;
-    Ok(())
 }

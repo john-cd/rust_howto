@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-#![allow(deprecated)] // TODO
 // ANCHOR: example
 // Algorithm:
 use aes_gcm::Aes256Gcm; // Use Aes128Gcm or Aes256Gcm, respectively.
@@ -21,7 +19,7 @@ fn main() {
     let key: Key<Aes256Gcm> = Aes256Gcm::generate_key(&mut OsRng);
 
     // Generate a random 96-bit nonce.
-    let nonce = Nonce::from_slice(b"unique nonce");
+    let nonce = Nonce::from(*b"unique nonce");
 
     // Create the cipher...
     let cipher = Aes256Gcm::new(&key);
@@ -32,12 +30,12 @@ fn main() {
     // To authenticate additional Associated Data,
     // apply the same method than in the AES-GCM-SIV example:
     let ciphertext = cipher
-        .encrypt(nonce, plaintext.as_ref())
+        .encrypt(&nonce, plaintext.as_ref())
         .expect("encryption failure!");
     println!("Ciphertext: {ciphertext:?}");
 
     let decrypted_ciphertext = cipher
-        .decrypt(nonce, ciphertext.as_ref())
+        .decrypt(&nonce, ciphertext.as_ref())
         .expect("decryption failure!");
 
     assert_eq!(plaintext, decrypted_ciphertext.as_slice());

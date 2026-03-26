@@ -47,12 +47,22 @@ fn main() {
     // supplements them with additional ones.
     let child_logger = root_logger.new(o!("key" => "value"));
     perform_some_logging(child_logger);
+
+    // Using slog-scope for global logging:
+    let _guard = slog_scope::set_global_logger(root_logger);
+    slog_scope::info!("Global logging with slog-scope"; "global" => true);
+    perform_global_logging();
 }
 
-/// Example function that performs some logging.
+/// Example function that performs some logging using a logger.
 fn perform_some_logging(logger: slog::Logger) {
     slog::info!(logger, "Performing some work"; "task" => "example task");
     // More work...
+}
+
+/// Example function that performs logging using the global logger.
+fn perform_global_logging() {
+    slog_scope::info!("Performing global work"; "task" => "global task");
 }
 // ANCHOR_END: example
 
@@ -60,4 +70,3 @@ fn perform_some_logging(logger: slog::Logger) {
 fn test() {
     main();
 }
-// TODO review slog-scope

@@ -39,9 +39,11 @@ fn main() -> Result<()> {
     // 2. Access parts of the data by indexing with square brackets.
     // The result of square bracket indexing is a borrow, so the type is
     // `&Value`.
-    let name = parsed["name"].as_str().unwrap();
-    let age = parsed["age"].as_i64().unwrap();
-    let phones = parsed["phones"].as_array().unwrap();
+    let name = parsed["name"].as_str().expect("name should be a string");
+    let age = parsed["age"].as_i64().expect("age should be an integer");
+    let phones = parsed["phones"]
+        .as_array()
+        .expect("phones should be an array");
 
     println!("Name: {name}");
     println!("Age: {age}");

@@ -15,13 +15,20 @@ For a true plugin architecture where plugins are compiled as separate shared lib
 - Define an entry point: Each plugin [`.so`][.so-files]↗{{hi:.so}}/[`.dll`][.dll-files]↗{{hi:.dll}} would export a specific [`extern "C"`][keyword~extern]↗{{hi:extern "C"}} function that the host calls to get a `Box<dyn Plugin>`.
 - Version Management: Even with [`extern "C"`][keyword~extern]↗{{hi:extern "C"}}, you need robust versioning for your common plugin interface crate to prevent issues if host and plugins are compiled with different versions of the interface. Crates like [`abi_stable`][c~abi_stable~docs]↗{{hi:abi_stable}} can help with this by providing more robust ABI compatibility checks.
 
+## WASM-based Plugin Systems
+
+An alternative to loading shared libraries is using **WebAssembly (WASM)**. This approach offers several advantages:
+
+- **Security**: Plugins run in a sandbox, preventing them from accessing the host's memory or file system directly.
+- **Portability**: The same WASM plugin can run on any platform.
+- **Language Independence**: Plugins can be written in any language that compiles to WASM (e.g., C, C++, AssemblyScript, Zig).
+
+Crates like [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} or [`wasmer`][c~wasmer~docs]↗{{hi:wasmer}} are commonly used to host WASM-based plugin systems in Rust.
+
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[dynamic_typing | Dynamic Typing]].
+- [[wasm | WebAssembly]].
 
 {{#include refs.incl.md}}
-{{#include refs/link-refs.md}}
-
-<div class="hidden">
-TODO write
-</div>
+{{#include ../refs/link-refs.md}}

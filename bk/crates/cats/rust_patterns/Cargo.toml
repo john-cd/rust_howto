@@ -25,7 +25,7 @@ im = "15.1.0"
 # eyre is outdated, see color-eyre
 itertools = "0.14.0"
 miette = { version = "7.6.0", features = ["fancy"] }
-# FIXME pin-project = "1.1.10"
+pin-project = "1.1.10"
 # pin-project-lite = "0.2.16"
 reqwest = { version = "0.12.24", features = ["blocking"] }
 rpds = "1.1.2"

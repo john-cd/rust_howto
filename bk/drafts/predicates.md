@@ -74,11 +74,19 @@ fn main() {
 }
 ```
 
+## Common Predicate Types
+
+The `predicates` crate provides a wide range of built-in predicates:
+
+- **String checks**: `contains`, `starts_with`, `ends_with`, `is_empty`, `matches` (regex).
+- **Comparison**: `eq`, `ne`, `gt`, `ge`, `lt`, `le`.
+- **Logic**: `and`, `or`, `not`, `always`, `never`.
+- **Collections**: `in_iter`, `contains_ok`.
+- **Path checks**: `exists`, `is_file`, `is_dir`.
+
 ## Related Topics {#related-topics .skip}
+
+- [[development-tools_testing | Testing]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-TODO write
-</div>

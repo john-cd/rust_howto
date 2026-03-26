@@ -282,3 +282,39 @@ Add build job to main workflow.
 - retrieve most downloaded / recently downloaded / most relevant crates from crates.io / lib.rs.
 - collect other sources of ranking: r/rust, awesome-rust, etc.
 - generate a list of crates that should be included in the book.
+
+-------------------------
+
+## Recent Technical Debt Addressed
+
+### Code Examples
+
+- **Cryptography**: Fixed `Nonce::from_slice` deprecations in `aes_gcm_siv.rs` and `aes_gcm.rs`.
+- **Error Handling**: Replaced `unwrap()` with `expect()` in `comrak.rs` and `postcard.rs`.
+- **Web Programming**: Migrated `post_file.rs` to `httpbin.org`.
+- **Logging**: Integrated `slog-scope` and fixed `tracing_subscriber2.rs` initialization logic.
+- **Filesystem**: Improved `png.rs` test robustness.
+- **Pin Projection**: Correctly implemented and enabled the `pin_project.rs` example using safe projection.
+- **Parsing/Data Structures**: Added new examples for `winnow` and `bytes` crates.
+- **Testing**: Introduced process-isolated tests for tracing and logging via `rusty-fork`.
+- **Content/Drafts**: Completed initial drafting for `inheritance.md`, `overflow.md`, `plugin.md`, and `predicates.md`.
+
+-------------------------
+
+## Remaining Backlog from Codebase Review
+
+### content/Drafts
+
+- **DevOps/Cloud**: Complete sections for AWS, GitHub Actions, and release automation.
+- **Data Processing**: Finish CSV, Dataframes, and Data Engineering chapters.
+- **Wasm**: Add more practical examples for JS interfacing.
+
+### Crate Integration
+
+- **Pending Examples**: Integrate and document crates like `tantivy`, `tree-sitter`, and `opentelemetry`.
+- **Cleanup**: Review and enable commented-out dependencies in various `Cargo.toml` files.
+
+### Tooling
+
+- **mdbook-utils**: Improve reference definition generation and test link regexes.
+- **mdbook-scrub**: Implement missing directives for crate/category badges and links.

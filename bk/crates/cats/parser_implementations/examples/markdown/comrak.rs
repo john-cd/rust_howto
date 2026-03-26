@@ -44,7 +44,8 @@ fn replace_text(
     }
 
     let mut html = String::new();
-    format_html(root, &Options::default(), &mut html).unwrap();
+    format_html(root, &Options::default(), &mut html)
+        .expect("failed to format HTML");
 
     html
 }
@@ -65,4 +66,3 @@ fn main() {
 fn test() {
     main();
 }
-// TODO unwrap
