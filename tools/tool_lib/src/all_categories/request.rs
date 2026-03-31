@@ -40,9 +40,12 @@ mod tests {
             .with_body(expected_toml)
             .create();
 
-        // Set the HTTPS_PROXY environment variable to redirect the request to the mock server.
+        // Set the ALL_PROXY environment variable to redirect the request to the mock server.
+        // Using `ALL_PROXY` instead of `HTTPS_PROXY` because `https_only(true)`
+        // might cause `HTTPS_PROXY` to initiate a CONNECT request that mockito
+        // does not handle by default for simple mocks.
         // `EnvGuard` ensures the variable is restored when it goes out of scope.
-        let _proxy_guard = EnvGuard::set("HTTPS_PROXY", &server.url());
+        let _proxy_guard = EnvGuard::set("ALL_PROXY", &server.url());
 
         // Call the function under test.
         let result = get_categories_toml_string();
@@ -71,8 +74,8 @@ mod tests {
             .with_body("Not Found")
             .create();
 
-        // Set the HTTPS_PROXY environment variable.
-        let _proxy_guard = EnvGuard::set("HTTPS_PROXY", &server.url());
+        // Set the ALL_PROXY environment variable.
+        let _proxy_guard = EnvGuard::set("ALL_PROXY", &server.url());
 
         // Call the function under test.
         let result = get_categories_toml_string();
