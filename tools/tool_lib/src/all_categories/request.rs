@@ -52,7 +52,11 @@ mod tests {
 
         // Assertions
         mock_endpoint.assert(); // Verify the mock endpoint was hit.
-        assert!(result.is_ok(), "Expected Ok result, got Err: {:?}", result.err());
+        assert!(
+            result.is_ok(),
+            "Expected Ok result, got Err: {:?}",
+            result.err()
+        );
         assert_eq!(result.unwrap(), expected_toml);
 
         Ok(())
