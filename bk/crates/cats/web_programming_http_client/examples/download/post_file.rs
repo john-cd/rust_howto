@@ -2,16 +2,12 @@
 // ANCHOR: example
 //! This example shows how to POST a file to a server.
 
-use std::fs::File;
-use std::io::Read;
-
 use anyhow::Result;
+use tokio::fs;
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    let mut file = File::open("temp/message")?;
-    let mut contents = String::new();
-    file.read_to_string(&mut contents)?;
+    let contents = fs::read_to_string("temp/message").await?;
 
     let httpbin_api = "https://httpbin.org/post";
     let client = reqwest::Client::new();
@@ -24,13 +20,11 @@ async fn main() -> Result<()> {
 
 #[tokio::test]
 async fn test() -> anyhow::Result<()> {
-    use std::io::Write;
-    if !std::fs::exists("temp")? {
-        std::fs::create_dir("temp")?;
+    if !fs::try_exists("temp").await? {
+        fs::create_dir("temp").await?;
     }
     // Create a file to be posted.
-    let mut f = File::create("temp/message")?;
-    f.write_all(b"Hello")?;
+    fs::write("temp/message", b"Hello").await?;
 
     // In a CI environment, we might want to skip tests that require network access.
     // main().await?;
