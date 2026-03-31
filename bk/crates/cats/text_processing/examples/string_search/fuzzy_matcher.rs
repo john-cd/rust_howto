@@ -32,7 +32,7 @@ fn main() {
 
     // Display results
     println!("\nResults (sorted by match score):");
-    for (score, item) in matches.clone() {
+    for (score, item) in &matches {
         println!("Score: {score}, Item: '{item}'");
     }
 
