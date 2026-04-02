@@ -4,28 +4,34 @@
 
 ## YouTube Channels, Videos {#videos}
 
-- Official [Rust YouTube Channel][youtube~@RustVideos]↗.{{hi:YouTube}}{{hi:Videos}}
+Official channels:{{hi:YouTube}}{{hi:Videos}}
+
+- Official [Rust YouTube Channel][youtube~@RustVideos]↗.
 - The [Rust Foundation][youtube~@rustfoundation]↗ channel.
-- Playlists:
-  - [50 Projects][youtube~50-projects]↗.
-  - [Crust of Rust][youtube~crust-of-rust]↗.
-  - [Engineer Man][youtube~engineer-man]↗.
-  - [Rust Projects][youtube~tensor-programming]↗.
-  - [Rust Tutorial][youtube~rust-tutorial]↗.
-  - [Rust Tutorials][youtube~rust-tutorials]↗.
-  - [YouCodeThings][youtube~youcodethings]↗.
-- Channels:
-  - [Code to the Moon][youtube~@codetothemoon]↗.
-  - [Jeremy Chone's Channel][youtube~@JeremyChone]↗.
-  - [Jon Gjengset's Channel][youtube~@jonhoo]↗.
-  - [Learning Rust][youtube~@learning_rust]↗.
-  - [Let's Get Rusty][youtube~@letsgetrusty]↗.
-  - [Logan Smith's Channel][youtube~@_noisecode]↗.
-  - [Michael Mullin's Channel][youtube~@masmullin]↗.
-  - [No Boilerplate][youtube~@NoBoilerplate]↗.
-  - [Rust Nation UK (conference)][youtube~@rustnationuk]↗.
-  - [Ryan Levick's Channel][youtube~@RyanLevicksVideos]↗.
+
+Community channels:
+
+- [Code to the Moon][youtube~@codetothemoon]↗.
+- [Jeremy Chone's Channel][youtube~@JeremyChone]↗.
+- [Jon Gjengset's Channel][youtube~@jonhoo]↗.
+- [Learning Rust][youtube~@learning_rust]↗.
+- [Let's Get Rusty][youtube~@letsgetrusty]↗.
+- [Logan Smith's Channel][youtube~@_noisecode]↗.
+- [Michael Mullin's Channel][youtube~@masmullin]↗.
+- [No Boilerplate][youtube~@NoBoilerplate]↗.
+- [Rust Nation UK (conference)][youtube~@rustnationuk]↗.
+- [Ryan Levick's Channel][youtube~@RyanLevicksVideos]↗.
+
+Playlists and screencasts:
+
 - [`intorust.com`][intorust~website]↗ screencasts.
+- [50 Projects][youtube~50-projects]↗.
+- [Crust of Rust][youtube~crust-of-rust]↗.
+- [Engineer Man][youtube~engineer-man]↗.
+- [Rust Projects][youtube~tensor-programming]↗.
+- [Rust Tutorial][youtube~rust-tutorial]↗.
+- [Rust Tutorials][youtube~rust-tutorials]↗.
+- [YouCodeThings][youtube~youcodethings]↗.
 
 ## Rust Podcasts {#podcasts}
 
@@ -41,8 +47,8 @@
 - [Are We Podcast Yet?][podcast~are-we-podcast-yet]↗.
 - [Building With Rust][podcast~building-with-rust]↗.
 - [`newrustacean.com`][newrustacean.com~website]↗.
-- [The Way of the Crab][wayofthecrab~website]↗.
 - [Rust Game Dev][podcast~rust-game-dev]↗.
+- [The Way of the Crab][wayofthecrab~website]↗.
 
 ## Related Topics {#related-topics .skip}
 
