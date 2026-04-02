@@ -1,0 +1,16 @@
+#!/bin/sh
+set -e
+
+if ! command -v just > /dev/null 2>&1; then
+  echo "error: 'just' is not installed. Install it from https://github.com/casey/just" >&2
+  exit 1
+fi
+
+REPO_ROOT=$(git rev-parse --show-toplevel)
+cd "${REPO_ROOT}/bk"
+
+echo '+just fa'
+just fa
+
+echo '+just ca'
+just ca
