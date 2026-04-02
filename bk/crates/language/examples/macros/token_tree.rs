@@ -27,6 +27,7 @@ fn main() {
     }
     // Use `$( $name:tt )+` for one or more token trees; `$( $name:tt );*` for
     // semicolon-separated tokens, etc.
+    println!("Token tree examples complete");
 }
 // ANCHOR_END: example
 

@@ -81,33 +81,8 @@
 // // `tokio` macros and rt-multi-thread features should be enabled.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    //     // FIXME
-    //     //  tracing_subscriber::registry()
-    //     //     .with(
-    //     //         tracing_subscriber::EnvFilter::try_from_default_env()
-    //     //             .unwrap_or_else(|_| format!("{}=debug",
-    //     // env!("CARGO_CRATE_NAME")).into()),     )
-    //     //     .with(tracing_subscriber::fmt::layer())
-    //     //     .init();
-
-    //     let shared_state = Arc::new(AppState { request_count: 0 });
-
-    //     // Build our application that routes requests to handlers
-    //     // The `path` is a string of path segments separated by /.
-    //     // Each segment can be either static, a capture, or a wildcard,
-    //     // e.g. /users/123 or /users/{id} or /assets/{*path}.
-    //     let router = Router::new()
-    //         .route("/", get(root)) // Could be `get`, `post`, or `delete`...
-    //         .route("/users/{id}", get(get_user).post(post_user))
-    //         // FIXME .route("/assets/{*path}", get(serve_asset)) // Note:
-    // doesn't // match empty segments i.e. /assets or /assets/.
-    // .fallback(fallback)
-    //         .with_state(shared_state);
-
-    //     // Run it
-    //     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await?;
-    //     // tracing::debug!("Listening on {}", listener.local_addr()?);
-    //     axum::serve(listener, router).await?;
+    //     ...commented...
+    println!("axum example: a web framework for building HTTP servers (see full implementation in the book)");
     Ok(())
 }
 

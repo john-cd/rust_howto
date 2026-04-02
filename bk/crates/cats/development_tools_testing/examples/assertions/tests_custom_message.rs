@@ -11,6 +11,7 @@ fn check_name(name: &str) {
 }
 
 fn main() {
+    println!("Checking if 'Carl' contains 'Carol'...");
     check_name("Carl");
 }
 // ANCHOR_END: example

@@ -22,6 +22,7 @@ fn main() -> Result<()> {
 
     log::info!("Hello, world!");
 
+    println!("log_custom example: log4rs configured to write to temp/log/output.log");
     Ok(())
 }
 // ANCHOR_END: example
