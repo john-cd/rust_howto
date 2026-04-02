@@ -1,7 +1,3 @@
-#![allow(unused_imports)]
-
-use std::path::PathBuf;
-
 use args::*;
 use clap::ArgMatches;
 use clap::Command;
