@@ -10109,7 +10109,6 @@ dependencies = [
  "itertools 0.14.0",
  "miette 7.6.0",
  "pin-project",
- "reqwest",
  "rpds",
  "scopeguard",
  "serde",
