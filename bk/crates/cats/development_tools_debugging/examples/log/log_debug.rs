@@ -11,6 +11,7 @@ fn main() {
     env_logger::init();
 
     execute_query("DROP TABLE students");
+    println!("log_debug example: set RUST_LOG=debug to see the debug log above");
 }
 // ANCHOR_END: example
 

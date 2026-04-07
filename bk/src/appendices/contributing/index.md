@@ -49,7 +49,7 @@ If you then still feel the need to ask a question and need clarification, we rec
 
 - Open an [Issue][rust-howto~new-issue]↗.
 - Provide as much context as you can about what you're running into.
-- Provide project and platform versions (nodejs, npm, etc), depending on what seems relevant.
+- Provide project and platform versions (Rust, cargo, OS, etc), depending on what seems relevant.
 
 We will then take care of the issue as soon as possible.
 
@@ -112,13 +112,42 @@ Enhancement suggestions are tracked as [GitHub issues][rust-howto~issues]↗.
 - Provide a **step-by-step description of the suggested enhancement** in as many details as possible.
 - **Describe the current behavior** and **explain which behavior you expected to see instead** and why. At this point you can also tell which alternatives do not work for you.
 - You may want to **include screenshots and animated GIFs** which help you demonstrate the steps or point out the part which the suggestion is related to. You can use [this tool][licecap~website]↗ to record GIFs on macOS and Windows, and [this tool][silentcast~repo]↗ on Linux.
-- **Explain why this enhancement would be useful** to most CONTRIBUTING.md users. You may also want to point out the other projects that solved it better and which could serve as inspiration.
+- **Explain why this enhancement would be useful** to most users of this book. You may also want to point out the other projects that solved it better and which could serve as inspiration.
 
 ### Your First Contribution {#your-first-contribution}
 
+If you are new to the project and want to make your first contribution, here are a few suggestions:
+
+- Read the book and note anything that is unclear, outdated, or incorrect.
+- Browse the [issues list][rust-howto~issues]↗ and look for issues tagged `good first issue` or `help wanted`.
+- Consult the [topics of interest][p~topics-of-interest]↗ page for subject areas that need coverage.
+- Review the [repository structure][ex~contributing~folders-and-key-files]↗ to understand how the book and code examples are organized.
+- Set up a [development environment][ex~contributing~using-vs-code]↗ and try running and editing the examples.
+
+Start small: fix a typo, improve a code example, or add a link before taking on a larger contribution.
+
 ## Styleguides {#styleguides}
 
+### Code Style
+
+- All Rust code examples must be formatted with `rustfmt`. Run `just fmtall` or `cargo +nightly fmt --all`.
+- Code must pass `clippy` lints (`just clippyall` or `cargo clippy --all-targets`).
+- Examples should be concise, self-contained, and focused on demonstrating a single concept or crate.
+- Include `// ANCHOR: example` / `// ANCHOR_END: example` markers and a `#[test] fn test() { main(); }` function so that the example is tested automatically (see the [repository structure][ex~contributing~examples-fully-tested]↗ page for the standard test boilerplate).
+
+### Documentation Style
+
+- Use clear, simple language. Avoid jargon where possible; explain it when unavoidable.
+- Keep prose short and to the point. The book is a reference, not a tutorial.
+- Prefer active voice.
+- Link to official documentation and crate pages where relevant.
+
 ### Commit Messages {#commit-messages}
+
+- Use the present tense and imperative mood: "Add example for X" rather than "Added example for X".
+- Keep the first line under 72 characters.
+- Reference related issues with `#<issue number>` in the commit message body when applicable.
+- Group logically related changes in a single commit.
 
 ## Related Topics {#related-topics .skip}
 

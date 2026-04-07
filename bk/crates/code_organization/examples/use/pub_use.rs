@@ -25,6 +25,7 @@ fn main() {
     // Access the re-exported item via its alternate name.
     a_module::another_name();
 
+    println!("pub use example: functions re-exported and called successfully");
     // Notes:
     // - Re-exports hide implementation details and flatten the module
     //   hierarchy. `public_function` appears as if it were declared in

@@ -3,6 +3,7 @@
 [ex~concurrency~arc-mutex]: shared_state.md#arc-mutex
 [ex~concurrency~arc-swap]: atomics.md#arc-swap
 [ex~concurrency~arc]: shared_state.md#arc
+[ex~concurrency~spinlock]: atomics.md#spinlock
 [ex~concurrency~arc_make_mut]: shared_state.md#arc_make_mut
 [ex~concurrency~atomics]: atomics.md#atomics
 [ex~concurrency~crossbeam-atomics]: atomics.md#crossbeam-atomics

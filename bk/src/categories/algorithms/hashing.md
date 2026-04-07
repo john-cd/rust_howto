@@ -52,7 +52,7 @@ For more [[algorithms | algorithms]], see Rust Crypto Hashes: sha2{{hi:sha2}}, s
 
 [`blake3`][c~blake3~docs]↗{{hi:blake3}} implements the BLAKE3 hash function. BLAKE3 is a cryptographic hash function that is faster than MD5, SHA-1, SHA-2, and SHA-3, yet is at least as secure as the latest standard SHA-3. It is designed to take advantage of parallel processing capabilities. BLAKE3 can produce hashes of arbitrary length, from short digests to longer ones. This is useful for various applications, including key derivation and password hashing. BLAKE3 allows for incremental hashing, i.e. updating the hash state with new data without recomputing the entire hash. This is useful for streaming data or situations where the input is received in chunks.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/algorithms/examples/hashing/blake3.rs:example}}
 ```
 
@@ -64,7 +64,7 @@ SHA-2 (Secure Hash Algorithm 2) is a family of cryptographic hash functions desi
 
 [`sha2`][c~sha2~docs]↗{{hi:sha2}} is a pure Rust implementation of the SHA-2 hash function family, including SHA-224, SHA-256, SHA-384, and SHA-512. SHA-256 is the most commonly used variant.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/algorithms/examples/hashing/sha2.rs:example}}
 ```
 
@@ -84,7 +84,7 @@ For legacy applications, you may consider using the following hashing algorithms
 
 [`sha1`][c~sha1~docs]↗{{hi:sha1}} implements the SHA-1 hash function.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/algorithms/examples/hashing/sha1.rs:example}}
 ```
 
