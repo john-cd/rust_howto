@@ -94,7 +94,7 @@ async fn require_external_svc() -> anyhow::Result<()> {
     unsafe {
         std::env::set_var("PG_URL", test_url);
     }
-    main().await?;
+    main()?;
     Ok(())
 }
 // [finish](https://github.com/john-cd/rust_howto/issues/719) need heay test
