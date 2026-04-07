@@ -97,7 +97,7 @@ async fn require_external_svc() -> anyhow::Result<()> {
             "host=rust_howto_dev-postgres-1 user=postgres password=mysecretpassword dbname=library",
         );
     }
-    main().await?;
+    main()?;
     Ok(())
 }
 // [finish](https://github.com/john-cd/rust_howto/issues/719) need heay test
