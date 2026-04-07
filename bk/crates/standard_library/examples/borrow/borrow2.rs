@@ -20,6 +20,7 @@ fn main() {
     // Pass a `String`.
     let name = "eve".to_string();
     assert_eq!(find_score(&scores, name), Some(30));
+    println!("eve's score: {:?}", find_score(&scores, "eve"));
 }
 // ANCHOR_END: example
 

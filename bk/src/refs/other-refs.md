@@ -1678,6 +1678,7 @@
 [vim-lsp~repo]: https://github.com/prabirshrestha/vim-lsp
 [vim~website]: https://vim.org
 [visual-studio~website]: https://visualstudio.microsoft.com
+[msvc~website]: https://visualstudio.microsoft.com/visual-cpp-build-tools
 [volta~repo]: https://github.com/volta-cli
 [volta~website]: https://volta.sh
 [volvo~website]: https://volvocars.com
@@ -1725,6 +1726,7 @@
 [wikipedia~unix-timestamp]: https://en.wikipedia.org/wiki/Unix_time
 [wikipedia~webgpu]: https://en.wikipedia.org/wiki/WebGPU
 [wildfish~website]: https://wildfish.com
+[winget~website]: https://learn.microsoft.com/en-us/windows/package-manager/winget
 [wolfram~l1-norm]: http://mathworld.wolfram.com/L1-Norm.html
 [wolfram~l2-norm]: http://mathworld.wolfram.com/L2-Norm.html
 [workers-rs~repo]: https://github.com/cloudflare/workers-rs

@@ -35,6 +35,33 @@ You may need `sudo apt-get install libsqlite3-dev` on WSL.
 
 Review [`.devcontainer/Dockerfile`][rust-howto~Dockerfile~repo]↗ for other dependencies.
 
+## Install on Windows {#windows-install}
+
+On Windows, use [`winget`][winget~website]↗{{hi:winget}} (Windows Package Manager) to install the required tools:
+
+```powershell
+winget install Rustlang.Rustup
+winget install Microsoft.VisualStudioCode
+winget install Docker.DockerDesktop
+winget install Casey.Just
+winget install Python.Python.3
+winget install ShiningLight.OpenSSL  # Required by crates that depend on native TLS (e.g. `openssl-sys`)
+```
+
+After installing Rust via `rustup`, open a new terminal and run:
+
+```powershell
+rustup component add clippy
+cargo install cargo-nextest
+cargo install mdbook
+cargo install mdbook-linkcheck
+cargo install mdbook-utils
+rustup toolchain install nightly
+rustup component add rustfmt --toolchain nightly
+```
+
+> Note: On Windows, you may also need the [Microsoft C++ Build Tools][msvc~website]↗{{hi:MSVC}} or the Visual Studio C++ workload for compiling some crates.
+
 ## Install `just` (Alternative) {#alternative-just-install}
 
 [`just`][c~just~docs]↗{{hi:just}}
