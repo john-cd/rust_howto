@@ -6768,9 +6768,12 @@ name = "memory_management"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "bumpalo",
  "lazy_static",
  "mimalloc",
  "once_cell",
+ "seize 0.5.1",
+ "slab",
  "tikv-jemalloc-ctl",
  "tikv-jemallocator",
 ]
