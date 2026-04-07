@@ -34,7 +34,12 @@ cat > "${path}/.gitignore" <<-EOF
 	target/
 EOF
 
-cp "${root}crates/cats/algorithms/LICENSE" "${path}/LICENSE"
+license_src="$(find "${root}crates/cats" -maxdepth 2 -name "LICENSE" | head -1)"
+if [[ -z "${license_src}" ]]; then
+    echo "Error: no LICENSE file found under ${root}crates/cats/ to copy." >&2
+    exit 1
+fi
+cp "${license_src}" "${path}/LICENSE"
 
 cat > "${path}/README.md" <<-EOF
 	# README
