@@ -36,7 +36,7 @@ The following example creates a type `MyFlags` with the help of the [`bitflags::
 
 [`bitvec`][c~bitvec~docs]↗{{hi:bitvec}} provides efficient storage and manipulation of bit vectors. It addresses memory by bits, for packed collections and bitfields. This example demonstrates the usage of the `bitvec` crate:
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/data_structures/examples/bitfield/bitvec.rs:example}}
 ```
 
@@ -48,7 +48,7 @@ Bitmaps are commonly used as fast data structures, for example as indices for da
 
 Unfortunately, they can use too much memory. To compensate, [`roaring`][c~roaring~docs]↗{{hi:roaring}} implements compressed bitmap data structures. They efficiently store and manipulate large sets of integers:
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/data_structures/examples/bitfield/roaring.rs:example}}
 ```
 
