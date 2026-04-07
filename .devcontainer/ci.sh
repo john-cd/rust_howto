@@ -19,14 +19,13 @@ cd bk/crates
 ## Fails if not formatted properly
 cargo +nightly fmt --all --check
 
-## [add cargo plugins to CI script](https://github.com/john-cd/rust_howto/issues/1277)
 ## Check dependencies
-# cargo deny check \
-#     && cargo outdated --exit-code 1 \
-#     && cargo udeps \
-#     && rm -rf ~/.cargo/advisory-db \
-#     && cargo audit \
-#     && cargo pants
+cargo deny check \
+    && cargo outdated --exit-code 1 \
+    && cargo +nightly udeps \
+    && rm -rf ~/.cargo/advisory-db \
+    && cargo audit \
+    && cargo pants
 
 ## Fetch the dependencies
 cargo fetch
