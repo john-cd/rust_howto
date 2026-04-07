@@ -32,8 +32,9 @@ fn main() {
     let collector = Arc::new(Collector::new());
 
     // Box a value and obtain a raw pointer that will be managed by `seize`.
-    // `ManuallyDrop` prevents Rust from dropping the value automatically;
-    // `seize` takes responsibility for running the destructor.
+    // `ManuallyDrop` prevents Rust's automatic drop destructor from running
+    // when the `Box` is consumed: `seize` takes responsibility for running
+    // the destructor at the correct time via `collector.retire`.
     let ptr: *mut ManuallyDrop<i32> =
         Box::into_raw(Box::new(ManuallyDrop::new(100_i32)));
 
@@ -48,6 +49,9 @@ fn main() {
 
         // `guard.protect` performs a safe atomic load: the loaded pointer
         // is guaranteed to remain valid for the lifetime of `guard`.
+        // `Acquire` pairs with the `Release` store done by the writing
+        // thread, ensuring all prior writes to the pointed-to value are
+        // visible to this thread.
         let raw = guard.protect(&shared, Ordering::Acquire);
 
         if !raw.is_null() {
