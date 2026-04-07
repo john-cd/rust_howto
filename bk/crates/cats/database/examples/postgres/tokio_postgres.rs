@@ -94,7 +94,7 @@ async fn require_external_svc() -> anyhow::Result<()> {
     unsafe {
         std::env::set_var(
             "PG_URL",
-            "host=rust_howto_dev-postgres-1 user=postgres password=mysecretpassword dbname=library",
+            "host=rust_howto_dev-postgres-1 user=postgres password=password dbname=library",
         );
     }
     main().await?;

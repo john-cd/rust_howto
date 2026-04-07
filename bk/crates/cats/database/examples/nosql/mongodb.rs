@@ -58,7 +58,7 @@ fn require_external_svc() -> anyhow::Result<()> {
         // configuration.
         env::set_var(
             "MONGO_URI",
-            "mongodb://mongoadmin:mysecretpassword@rust_howto_dev-mongodb-1:27017/",
+            "mongodb://mongoadmin:password@rust_howto_dev-mongodb-1:27017/",
         );
     }
     main()?;

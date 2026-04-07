@@ -28,7 +28,7 @@ fn require_external_svc() -> anyhow::Result<()> {
     unsafe {
         std::env::set_var(
             "PG_URL",
-            "postgresql://postgres:mysecretpassword@rust_howto_dev-postgres-1/library",
+            "postgresql://postgres:password@rust_howto_dev-postgres-1/library",
         );
     }
     main()?;

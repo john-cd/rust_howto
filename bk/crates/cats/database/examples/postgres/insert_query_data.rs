@@ -21,7 +21,7 @@ pub fn main() -> Result<(), Error> {
     let url = std::env::var("PG_URL").unwrap_or_else(|_| {
         "postgresql://postgres:password@localhost/library".to_string()
     });
-    let mut client = Client::connect(url, NoTls)?;
+    let mut client = Client::connect(&url, NoTls)?;
 
     // Create a HashMap to store author names and their respective countries.
     let mut authors = HashMap::new();
