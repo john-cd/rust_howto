@@ -38,7 +38,7 @@ swc_common = "15.0.0"
 tl = "0.7.8"
 toml_edit = "0.23.7"
 toml = "0.9.8"
-# FIXME xml = "0.8.20"
+xml = "0.8"
 # FIXME xml5ever = "0.23.0"
 # FIXME xmlparser = "0.13.6"
 
