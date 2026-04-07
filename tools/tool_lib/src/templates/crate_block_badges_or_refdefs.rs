@@ -204,6 +204,14 @@ pub fn create_crate_block(name: &str) -> Result<(String, Vec<String>)> {
 /// - `{{#crate: crt cat1 cat-2 }}` (crate name with optional additional words)
 const CRATE_BLOCK_DIRECTIVE_REGEX: &str = r"\{\{\s*#crate\s*:?\s+([^\s}]+)[^}]*\}\}";
 
+/// Lazily compiled regex for `{{#crate crate_name}}` directives.
+/// Compiled only once and reused across all calls.
+static CRATE_BLOCK_RE: once_cell::sync::Lazy<regex::Regex> =
+    once_cell::sync::Lazy::new(|| {
+        regex::Regex::new(CRATE_BLOCK_DIRECTIVE_REGEX)
+            .expect("CRATE_BLOCK_DIRECTIVE_REGEX is a valid regex")
+    });
+
 /// Expand all `{{#crate crate_name}}` directives in the given content string.
 ///
 /// For each `{{#crate crate_name}}` directive found, fetches crate information
@@ -229,9 +237,8 @@ pub fn process_crate_block_directives(content: &str) -> Result<(String, Vec<Stri
     use std::collections::HashSet;
 
     use regex::Captures;
-    use regex::Regex;
 
-    let re = Regex::new(CRATE_BLOCK_DIRECTIVE_REGEX)?;
+    let re = &*CRATE_BLOCK_RE;
 
     // Collect unique crate names from all directives in the content.
     let crate_names: HashSet<String> = re
@@ -291,10 +298,9 @@ pub fn expand_crate_block_directives_in_directory(
 ) -> Result<()> {
     use std::ffi::OsStr;
 
-    use regex::Regex;
     use walkdir::WalkDir;
 
-    let re = Regex::new(CRATE_BLOCK_DIRECTIVE_REGEX)?;
+    let re = &*CRATE_BLOCK_RE;
     let mut all_refdefs: Vec<String> = Vec::new();
 
     for entry in WalkDir::new(dir) {
@@ -333,13 +339,11 @@ pub fn expand_crate_block_directives_in_directory(
 
 #[cfg(test)]
 mod directive_tests {
-    use regex::Regex;
-
-    use super::CRATE_BLOCK_DIRECTIVE_REGEX;
+    use super::CRATE_BLOCK_RE;
 
     /// Helper: test that the regex captures the expected crate name from `input`.
     fn assert_captures_crate_name(input: &str, expected_name: &str) {
-        let re = Regex::new(CRATE_BLOCK_DIRECTIVE_REGEX).unwrap();
+        let re = &*CRATE_BLOCK_RE;
         let caps = re.captures(input).unwrap_or_else(|| {
             panic!("Expected regex to match '{input}'");
         });
@@ -348,7 +352,7 @@ mod directive_tests {
 
     /// Helper: test that the regex does NOT match `input`.
     fn assert_no_match(input: &str) {
-        let re = Regex::new(CRATE_BLOCK_DIRECTIVE_REGEX).unwrap();
+        let re = &*CRATE_BLOCK_RE;
         assert!(
             re.captures(input).is_none(),
             "Expected regex NOT to match '{input}'"
@@ -401,7 +405,7 @@ mod directive_tests {
 
     #[test]
     fn test_multiple_directives_in_content() {
-        let re = Regex::new(CRATE_BLOCK_DIRECTIVE_REGEX).unwrap();
+        let re = &*CRATE_BLOCK_RE;
         let content = "See {{#crate serde}} and {{#crate: anyhow }}.";
         let names: Vec<&str> = re
             .captures_iter(content)
