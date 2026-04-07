@@ -16,7 +16,7 @@ pub fn main() -> anyhow::Result<()> {
     let url = std::env::var("PG_URL").unwrap_or_else(|_| {
         // Example connection URL:
         // `postgresql://postgres:postgres@localhost/library`.
-        "postgresql://postgres:password@localhost/library".to_string()
+        "postgresql://postgres:<password>@localhost/library".to_string()
     });
     let mut client = Client::connect(url, NoTls)?;
 

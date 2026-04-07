@@ -19,7 +19,7 @@ pub fn main() -> Result<(), Error> {
     // postgresql://<user>:<password>@<host>/<db>,
     // for example postgresql://postgres:postgres@localhost/library
     let url = std::env::var("PG_URL").unwrap_or_else(|_| {
-        "postgresql://postgres:password@localhost/library".to_string()
+        "postgresql://postgres:<password>@localhost/library".to_string()
     });
     let mut client = Client::connect(url, NoTls)?;
 
