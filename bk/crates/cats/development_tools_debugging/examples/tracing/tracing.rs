@@ -15,6 +15,11 @@ use tracing::trace;
 use tracing::warn;
 
 fn main() {
+    // Initialize a tracing subscriber to see the events below.
+    let _ = tracing_subscriber::fmt()
+        .with_max_level(tracing::Level::TRACE)
+        .try_init();
+
     // Basic logging of a message at various severity levels.
     event!(Level::INFO, "something happened");
     error!("error!");

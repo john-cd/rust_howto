@@ -77,7 +77,7 @@ Root dir `"."` yields through [`walkdir::WalkDir::depth`][c~walkdir::WalkDir::de
 
 FIXME Recursive [filesystem][p~filesystem] walking that respects ignore files (like .gitignore)
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/ignore.rs:example}}
 ```
 
@@ -123,7 +123,7 @@ A custom [`glob::MatchOptions`][c~glob::MatchOptions~docs]↗{{hi:glob::MatchOpt
 
 [`globset`][c~globset~docs]↗{{hi:globset}} allows multiple globs to be evaluated at once. Glob set matching is the process of matching one or more [`glob`][c~glob~docs]↗{{hi:glob}} patterns against a single candidate path simultaneously, and returning all of the globs that matched.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/globset.rs:example}}
 ```
 

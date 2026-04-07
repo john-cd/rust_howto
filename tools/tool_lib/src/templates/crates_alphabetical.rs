@@ -29,3 +29,38 @@ pub fn create_alphabetical_crate_page_section<'a>(
     let rendered = tt.render("ALPHABETICAL_ROW", &context)?;
     Ok(rendered)
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_create_alphabetical_crate_page_section_empty() {
+        let first_letter = "A";
+        let crate_names = vec![];
+        let result = create_alphabetical_crate_page_section(first_letter, crate_names).unwrap();
+        assert_eq!(result, "## A\n\n\n");
+    }
+
+    #[test]
+    fn test_create_alphabetical_crate_page_section_one_crate() {
+        let first_letter = "A";
+        let crate_names = vec!["anyhow"];
+        let result = create_alphabetical_crate_page_section(first_letter, crate_names).unwrap();
+        assert_eq!(
+            result,
+            "## A\n\n[![anyhow][c~anyhow~docs~badge]][c~anyhow~docs] \n"
+        );
+    }
+
+    #[test]
+    fn test_create_alphabetical_crate_page_section_multiple_crates() {
+        let first_letter = "A";
+        let crate_names = vec!["anyhow", "assert_cmd"];
+        let result = create_alphabetical_crate_page_section(first_letter, crate_names).unwrap();
+        assert_eq!(
+            result,
+            "## A\n\n[![anyhow][c~anyhow~docs~badge]][c~anyhow~docs] [![assert_cmd][c~assert_cmd~docs~badge]][c~assert_cmd~docs] \n"
+        );
+    }
+}

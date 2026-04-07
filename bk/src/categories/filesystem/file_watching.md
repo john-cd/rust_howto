@@ -10,7 +10,7 @@
 
 This example demonstrates how to watch for file system events. It sets up a file system watcher that monitors a directory and its subdirectories for any changes, such as file creation, modification, or deletion:
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/filesystem/examples/file_watching/notify.rs:example}}
 ```
 

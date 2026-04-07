@@ -32,18 +32,26 @@ The most common way to share an atomic variable is to put it into an [`std::sync
 
 The [`arc-swap::ArcSwap`][c~arc-swap::ArcSwap~docs]↗{{hi:arc-swap::ArcSwap}} type in [`arc-swap`][c~arc-swap~docs]↗{{hi:arc-swap}} is a container for an `Arc` that can be changed atomically. Semantically, it is similar to `Atomic<Arc<T>>` (if there was such a thing)↗ or `RwLock<Arc<T>>` (but without the need for the locking). It is optimized for read-mostly scenarios, with consistent performance characteristics.
 
+## Build a Spinlock Using Atomics {#spinlock}
+
+[![std][c~std~docs~badge]][c~std~docs] [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}{{hi:Spinlock}}{{hi:std::sync::atomic::AtomicBool}}
+
+A spinlock{{hi:Spinlock}} is a simple synchronization primitive that uses busy-waiting (spinning) to acquire a lock. Unlike [`std::sync::Mutex`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}}, which puts the thread to sleep when the lock is unavailable, a spinlock keeps checking in a tight loop. This makes spinlocks efficient for very short critical sections, but wasteful for longer ones.
+
+The following example implements a spinlock using [`std::sync::atomic::AtomicBool`][c~std::sync::atomic::AtomicBool~docs]↗{{hi:std::sync::atomic::AtomicBool}} with RAII-based locking via a guard type:
+
+```rust,editable
+{{#include ../../../crates/cats/concurrency/examples/atomics/spinlock.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[shared_state | Shared-State Concurrency]].
+- [[send_sync | `Send` and `Sync`]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [fix](https://github.com/john-cd/rust_howto/issues/1342)
-
-```rust,editable
-{{#include ../../../crates/cats/concurrency/examples/atomics/spinlock.rs:example}}
-```
-
 </div>

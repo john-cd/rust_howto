@@ -18,7 +18,7 @@ fn main() {
     // `Vec<T>` implements `Deref<Target = [T]>`.
     // Therefore, you can simply pass a `&Vec` to a function
     // that accepts `&[T]`.
-    let _ = sum(&vector);
+    println!("Sum of {:?}: {}", vector, sum(&vector));
 
     let slice: &[i32] = &vector[..];
     let _ = sum(slice);

@@ -25,6 +25,7 @@ async fn main() -> std::io::Result<()> {
     //         .bind("127.0.0.1:8080")?
     //         .run()
     //         .await
+    println!("actix_web example: a powerful HTTP server framework (see full implementation in the book)");
     Ok(())
 }
 
