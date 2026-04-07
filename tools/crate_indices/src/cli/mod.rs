@@ -16,6 +16,7 @@ pub(crate) enum Cmd {
     AlphabeticalCratePage(CmdArgs),
     ListCrates(DirectoryCmdArgs),
     UpdateRefDefs(CmdArgs2),
+    ExpandCrateBlocks(ExpandCrateBlocksCmdArgs),
 }
 
 /// Command arguments with a list of crate names,
@@ -38,6 +39,13 @@ pub(crate) struct DirectoryCmdArgs {
     pub dirpathbuf: PathBuf,
 }
 
+/// Command arguments for `expand_crate_blocks`
+#[derive(Debug)]
+pub(crate) struct ExpandCrateBlocksCmdArgs {
+    pub dirpathbuf: PathBuf,
+    pub refdefs_filepathbuf: Option<PathBuf>,
+}
+
 pub(super) fn get_cmd() -> anyhow::Result<Cmd> {
     // Parse the specified command-line arguments, exiting on failure.
     let matches = commands::cli().get_matches_from(capture_stdin()?);
@@ -57,6 +65,11 @@ pub(super) fn get_cmd() -> anyhow::Result<Cmd> {
     } else if let Some(m) = matches.subcommand_matches("list_crates") {
         Ok(Cmd::ListCrates(DirectoryCmdArgs {
             dirpathbuf: get_dir_path(m),
+        }))
+    } else if let Some(m) = matches.subcommand_matches("expand_crate_blocks") {
+        Ok(Cmd::ExpandCrateBlocks(ExpandCrateBlocksCmdArgs {
+            dirpathbuf: get_dir_path(m),
+            refdefs_filepathbuf: get_optional_file_path(m),
         }))
     } else {
         Ok(Cmd::None)
@@ -97,4 +110,10 @@ fn get_dir_path(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("directory")
         .expect("directory has a default value")
         .to_path_buf()
+}
+
+/// Get an optional file path from the command line arguments.
+/// Returns `None` if the argument was not provided.
+fn get_optional_file_path(m: &clap::ArgMatches) -> Option<PathBuf> {
+    m.get_one::<PathBuf>("file_path").map(|p| p.to_path_buf())
 }
