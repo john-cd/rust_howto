@@ -37,6 +37,7 @@ fn main() -> anyhow::Result<()> {
     // VerifyingKeys, SecretKeys, SigningKeys, and Signatures can be
     // serialised into byte-arrays by calling `to_bytes`.
 
+    println!("Ed25519 signature verified successfully!");
     Ok(())
 }
 // ANCHOR_END: example

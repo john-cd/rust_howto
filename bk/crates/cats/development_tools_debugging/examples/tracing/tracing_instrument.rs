@@ -38,6 +38,11 @@ async fn some_other_async_function() {
 
 #[tokio::main]
 async fn main() {
+    // Initialize a tracing subscriber to see the events below.
+    let _ = tracing_subscriber::fmt()
+        .with_max_level(tracing::Level::TRACE)
+        .try_init();
+
     my_function(42);
     my_async_function().await;
 }

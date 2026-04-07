@@ -46,6 +46,7 @@ fn main() {
     // Bring the public submodule into scope.
     use m::public_module;
     // ERROR: use m::private_module;
+    println!("pub_keyword example: public items accessible, private items not");
 }
 // ANCHOR_END: example
 
