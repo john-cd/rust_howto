@@ -20,6 +20,7 @@ fn main() {
     // to the value.
     let r = Pin::into_inner(pinned_x);
     assert_eq!(*r, 42);
+    println!("Pinned value: {}", *r);
 
     // 2. **General case:**
     // If the pointee value's type does not implement `Unpin`, then Rust will

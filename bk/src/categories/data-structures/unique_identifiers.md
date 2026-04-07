@@ -20,7 +20,7 @@ A UUID is a unique 128-bit value, stored as 16 octets, and regularly formatted a
 
 ULID stands for Universally Unique Lexicographically Sortable Identifier, which is a type of unique identifier that is 128 bits long and can be lexicographically sorted in order of creation. It is designed to avoid some limitations of UUIDs, such as being more compact and allowing for easier sorting. Of the 128-bits, the first 48 are a Unix timestamp in milliseconds. The remaining 80 are random. The first 48 provide for lexicographic sorting and the remaining 80 ensure that the identifier is unique. Canonically, a ULID is represented as a 26 character Crockford Base32-encoded string. [ulid][c~ulid~docs]↗ implements ULIDs in Rust:
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/data_structures/examples/unique_ids/ulid.rs:example}}
 ```
 

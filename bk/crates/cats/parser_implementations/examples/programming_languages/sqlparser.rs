@@ -35,11 +35,11 @@ fn main() -> anyhow::Result<()> {
     //   &dialect, "SELECT * FROM foo"
     // )?;
 
-    for statement in statements.clone() {
+    for statement in &statements {
         // `statement` is a top-level construct: SELECT, INSERT, CREATE, etc.
         match statement {
             // SELECT statment.
-            Statement::Query(query) => match *query.body {
+            Statement::Query(query) => match &*query.body {
                 // SELECT .. FROM .. HAVING (no ORDER BY or set operations).
                 SetExpr::Select(select) => {
                     println!("SELECT statement:");

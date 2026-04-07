@@ -18,10 +18,10 @@ pub fn main() -> Result<(), Error> {
     // The connection URL is formatted as
     // `postgresql://<user>:<password>@<host>/<db>`, for example
     // `postgresql://postgres:postgres@127.0.0.1/moma`.
-    let mut client = Client::connect(
-        "postgresql://postgres:mysecretpassword@rust_howto_dev-postgres-1/moma",
-        NoTls,
-    )?;
+    let url = std::env::var("PG_URL").unwrap_or_else(|_| {
+        "postgresql://postgres:password@localhost/moma".to_string()
+    });
+    let mut client = Client::connect(url, NoTls)?;
 
     for row in client.query(
         "SELECT nationality, COUNT(nationality) AS count

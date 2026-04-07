@@ -84,6 +84,7 @@ async fn main() {
         //.layer(ValidateRequestHeaderLayer::accept("application/json"))
         // Wrap the `Service` in our middleware stack.
         .service_fn(handler);
+    println!("tower_http example: middleware stack built (authentication, logging, compression, etc.)");
 }
 // ANCHOR_END: example
 

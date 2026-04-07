@@ -28,6 +28,7 @@ static GLOBAL: MiMalloc = MiMalloc;
 fn main() {
     // Allocate a large vector.
     let _v = vec![0; 1024 * 1024];
+    println!("Allocated 1 MiB using the mimalloc allocator");
 }
 // ANCHOR_END: example
 
