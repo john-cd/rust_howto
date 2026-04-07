@@ -106,7 +106,7 @@ fn main() {
     let order = Order {
         id: Faker.fake(),
         user_id: user.id,
-        items: (0..3).map(|_| CompanyName().fake()).collect(), // FIXME
+        items: fake::vec![String as CompanyName(); 3],
         total: (50.0..500.0).fake(),
         shipping_address: Address {
             street: StreetName().fake(),
