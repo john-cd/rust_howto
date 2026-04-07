@@ -42,7 +42,6 @@ mod tests {
     use chrono::Utc;
     use crates_io_api::Category as CratesIoCategory;
 
-    use super::*;
     use crate::model;
 
     // Helper function to create a mock CratesIoCategory.
