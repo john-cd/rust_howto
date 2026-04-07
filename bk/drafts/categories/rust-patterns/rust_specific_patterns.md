@@ -28,7 +28,7 @@ The [`dyn-clone`][c~dyn-clone~docs]↗{{hi:dyn-clone}} crate provides a [`DynClo
 `pin-project-lite` is a lightweight version of `pin-project` written with declarative macros. The `pin_project!` macro creates a projection type covering all the fields of struct.
 
 ```rust,editable
-{{#include ../../../crates/cats/rust_patterns/examples/rust_specific_patterns/pin-project.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/examples/rust_specific_patterns/pin_project.rs:example}}
 ```
 
 See also:
@@ -36,9 +36,28 @@ See also:
 - [Projections and Structural Pinning][c~std::pin~projections-and-structural-pinning~docs]↗.
 - [`std::pin::Pin`][c~std::pin::Pin~docs]↗.
 
+## Run Code at Scope Exit with `scopeguard` {#scopeguard}
+
+[![scopeguard][c~scopeguard~docs~badge]][c~scopeguard~docs]{{hi:scopeguard}}
+[![scopeguard~crates.io][c~scopeguard~crates.io~badge]][c~scopeguard~crates.io]
+[![scopeguard~repo][c~scopeguard~repo~badge]][c~scopeguard~repo]
+[![scopeguard~lib.rs][c~scopeguard~lib.rs~badge]][c~scopeguard~lib.rs]
+[![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
+
+[`scopeguard`][c~scopeguard~docs]↗{{hi:scopeguard}} implements the RAII (Resource Acquisition Is Initialization) pattern by running a closure when a value goes out of scope, even during a panic. Use the `defer!` macro for simple deferred actions, or `scopeguard::guard` when the closure needs access to an owned value.
+
+```rust,editable
+{{#include ../../../crates/cats/rust_patterns/examples/rust_specific_patterns/scopeguard.rs:example}}
+```
+
+See also [`std::ops::Drop`][c~std::ops::Drop~docs]↗{{hi:std::ops::Drop}} for implementing custom cleanup on your own types.
+
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[asynchronous | Asynchronous]]: `Pin` and `pin-project` are commonly used when implementing `Future`s and async state machines.
+- [[resource_cleanup | Resource Cleanup]]: the `Drop` trait, which underpins RAII and `scopeguard`.
+- [[smart_pointers | Smart Pointers]]: `Box<dyn Trait>` and pinned smart pointers.
+- [[traits | Traits]]: trait objects and dynamic dispatch, including the newtype pattern.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

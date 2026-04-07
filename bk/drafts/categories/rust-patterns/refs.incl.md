@@ -10,6 +10,7 @@
 [ex~rust-patterns~im]: functional_programming.md#im
 [ex~rust-patterns~pin-project]: rust_specific_patterns.md#pin-project
 [ex~rust-patterns~rpds]: functional_programming.md#rpds
+[ex~rust-patterns~scopeguard]: rust_specific_patterns.md#scopeguard
 [ex~rust-patterns~singleton]: creational_patterns.md#singleton
 [ex~rust-patterns~typed-builder]: builder_pattern.md#typed-builder
 [ex~rust-patterns~typestate-pattern]: behavioral_patterns.md#typestate-pattern
