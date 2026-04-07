@@ -61,6 +61,7 @@
   - [Random Value Generation](categories/algorithms/random_value_generation.md)
   - [Sorting](categories/algorithms/sorting.md)
   - [Hashing](categories/algorithms/hashing.md)
+  - [Graph Algorithms](categories/algorithms/graph_algorithms.md)
 
 - [Data Structures](categories/data-structures/index.md)
   - [Strings](categories/data-structures/strings.md)

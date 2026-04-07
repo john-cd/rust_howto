@@ -24,6 +24,8 @@ sha1 = "0.10.6"
 sha2 = "0.10.9"
 ring = "0.17.14"
 
+petgraph = "0.8.3"
+
 ## General
 anyhow = "1.0.100"
 base64ct = { version =  "1.8.0", features = [ "alloc" ] }
