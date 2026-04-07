@@ -18,7 +18,7 @@ pub fn main() -> anyhow::Result<()> {
         // `postgresql://postgres:postgres@localhost/library`.
         "postgresql://postgres:password@localhost/library".to_string()
     });
-    let mut client = Client::connect(url, NoTls)?;
+    let mut client = Client::connect(&url, NoTls)?;
 
     client.batch_execute(
         "
