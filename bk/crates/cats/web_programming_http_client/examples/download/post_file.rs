@@ -6,12 +6,11 @@ use tokio::fs::File;
 use tokio::io::AsyncReadExt;
 
 use anyhow::Result;
+use tokio::fs;
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    let mut file = File::open("temp/message").await?;
-    let mut contents = String::new();
-    file.read_to_string(&mut contents).await?;
+    let contents = fs::read_to_string("temp/message").await?;
 
     let httpbin_api = "https://httpbin.org/post";
     let client = reqwest::Client::new();
