@@ -40,7 +40,8 @@ diesel::table! {
 // The `diesel::table!` macro is used to define a table schema in Diesel.
 
 // Define a struct to hold the query results.
-#[derive(Queryable, PartialEq, Debug)]
+#[derive(QueryableByName, Queryable, PartialEq, Debug)]
+#[diesel(table_name = users)]
 struct User {
     username: String,
     password: String,
@@ -59,21 +60,20 @@ fn main() -> anyhow::Result<()> {
         env::var("ORACLE_DB_PASSWORD").expect("ORACLE_DB_PASSWORD not set");
 
     // Set up a connection to Oracle DB using Diesel and diesel_oci
-    let mut _connection: OciConnection =
+    let mut connection: OciConnection =
         establish_connection(&db_url, &username, &password)?;
 
-    // // FIXME
-    // // Query the database (fetching users as an example)
-    // let results = diesel::sql_query("SELECT * FROM users WHERE ROWNUM <= 5")
-    //     .load::<User>(&mut connection)?;
+        // Query the database (fetching users as an example)
+    let results = diesel::sql_query("SELECT * FROM users WHERE ROWNUM <= 5")
+        .load::<User>(&mut connection)?;
 
-    // // Print the results
-    // for user in results {
-    //     println!("Username: {}, Password: {}", user.username, user.password);
-    // }
+    // Print the results
+    for user in results {
+        println!("Username: {}, Password: {}", user.username, user.password);
+    }
 
-    // // Use the connection similary to any other diesel connection
-    // let _res = users::table.load::<(i32, String, String)>(&mut connection)?;
+    // Use the connection similary to any other diesel connection
+    let _res = users::table.load::<(i32, String, String)>(&mut connection)?;
 
     Ok(())
 }

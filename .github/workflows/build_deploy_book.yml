@@ -87,6 +87,14 @@ jobs:
         working-directory: ./.devcontainer/
       # - name: List docker images (debug)
       #   run: docker image ls
+      - name: Measure runner disk space and memory before build
+        run: |
+          echo "=== Disk space ==="
+          df -h
+          echo "=== Memory ==="
+          free -h
+          echo "=== Docker disk usage ==="
+          docker system df
       - name: Check that all the code builds and pass tests; build the book
         run: docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml run book
       - name: Setup GitHub Pages
