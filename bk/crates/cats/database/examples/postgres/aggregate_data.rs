@@ -21,7 +21,7 @@ pub fn main() -> Result<(), Error> {
     let url = std::env::var("PG_URL").unwrap_or_else(|_| {
         "postgresql://postgres:password@localhost/moma".to_string()
     });
-    let mut client = Client::connect(url, NoTls)?;
+    let mut client = Client::connect(&url, NoTls)?;
 
     for row in client.query(
         "SELECT nationality, COUNT(nationality) AS count
