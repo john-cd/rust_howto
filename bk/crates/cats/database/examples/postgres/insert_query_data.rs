@@ -5,6 +5,7 @@ use std::collections::HashMap;
 use postgres::Client;
 use postgres::Error;
 use postgres::NoTls;
+use postgres::types::ToSql;
 
 /// Represents an author with an ID, name, and country.
 struct Author {
@@ -29,21 +30,23 @@ pub fn main() -> Result<(), Error> {
     authors.insert(String::from("Rabindranath Tagore"), "India");
     authors.insert(String::from("Anita Nair"), "India");
 
-    // Iterate over the authors HashMap and insert each author into the
-    // database. For each author, create an Author struct and execute an SQL
-    // INSERT query. The query uses parameterized values ($1, $2) to prevent
-    // SQL injection.
-    for (key, value) in &authors {
-        let author = Author {
-            _id: 0,
-            name: key.to_string(),
-            country: value.to_string(),
-        };
+    // Bulk insert the authors into the database to prevent N+1 queries.
+    // Build the query string and the parameters vector.
+    if !authors.is_empty() {
+        let mut query = String::from("INSERT INTO author (name, country) VALUES ");
+        let mut params: Vec<&(dyn ToSql + Sync)> = Vec::new();
 
-        client.execute(
-            "INSERT INTO author (name, country) VALUES ($1, $2)",
-            &[&author.name, &author.country],
-        )?;
+        for (i, (key, value)) in authors.iter().enumerate() {
+            if i > 0 {
+                query.push_str(", ");
+            }
+            // Add parameter placeholders ($1, $2), ($3, $4), etc.
+            query.push_str(&format!("(${}, ${})", i * 2 + 1, i * 2 + 2));
+            params.push(key);
+            params.push(value);
+        }
+
+        client.execute(&query, &params[..])?;
     }
 
     // Query the database to retrieve all authors and print their details.

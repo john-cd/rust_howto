@@ -14,10 +14,7 @@ async fn main() -> Result<(), tokio_postgres::Error> {
     // Connect to the database.
     //  The libpq-style connection strings consist of space-separated
     // key-value pairs: <https://docs.rs/tokio-postgres/latest/tokio_postgres/config/struct.Config.html>.
-    let url = std::env::var("PG_URL").unwrap_or_else(|_| {
-        "host=localhost user=postgres password=password dbname=library"
-            .to_string()
-    });
+    let url = std::env::var("PG_URL").expect("PG_URL must be set");
     let (client, connection) =
         tokio_postgres::connect(&url, tokio_postgres::NoTls).await?;
 
@@ -91,6 +88,9 @@ async fn main() -> Result<(), tokio_postgres::Error> {
 #[tokio::test]
 async fn require_external_svc() -> anyhow::Result<()> {
     let _lock = super::ENV_MUTEX.lock().unwrap();
+    let test_url = std::env::var("TEST_PG_URL").unwrap_or_else(|_| {
+        "host=rust_howto_dev-postgres-1 user=postgres password=password dbname=library".to_string()
+    });
     unsafe {
         std::env::set_var(
             "PG_URL",

@@ -70,6 +70,14 @@ mdbook-utils sitemap
 
 echo "----------"
 
+## Report folder sizes so that the tmpfs mount size can be monitored and tuned if needed.
+echo "=== Memory usage ==="
+free -h
+echo "=== Relevant folder sizes ==="
+du -sh /code/target/ /usr/local/cargo/ 2>/dev/null || true
+
+echo "----------"
+
 ## Do not remove.
 ## This is what will cause the dockerfile CMD to run.
 exec "$@"

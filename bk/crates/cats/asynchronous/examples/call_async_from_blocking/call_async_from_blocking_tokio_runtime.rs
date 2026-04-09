@@ -18,7 +18,7 @@ fn main() {
 
     // Do something time-consuming while the async background tasks
     // execute.
-    std::thread::sleep(std::time::Duration::from_millis(750));
+    std::thread::sleep(std::time::Duration::from_millis(100));
     println!("Finished time-consuming task.");
 
     // Wait for all of them to complete.
@@ -33,7 +33,7 @@ fn main() {
 async fn my_bg_task(i: u64) {
     // By subtracting, the tasks with larger values of i sleep for a
     // shorter duration.
-    let millis = 1000 - 50 * i;
+    let millis = 200 - 20 * i;
     println!("Task {i} sleeping for {millis} ms.");
 
     tokio::time::sleep(tokio::time::Duration::from_millis(millis)).await;
