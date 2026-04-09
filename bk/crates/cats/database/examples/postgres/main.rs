@@ -10,6 +10,7 @@ mod insert_query_data;
 mod tokio_postgres;
 
 #[cfg(feature = "postgres")]
+#[allow(dead_code)]
 pub(crate) static ENV_MUTEX: std::sync::Mutex<()> = std::sync::Mutex::new(());
 
 #[cfg(feature = "postgres")]
