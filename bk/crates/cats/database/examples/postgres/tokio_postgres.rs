@@ -92,7 +92,10 @@ async fn require_external_svc() -> anyhow::Result<()> {
         "host=rust_howto_dev-postgres-1 user=postgres password=password dbname=library".to_string()
     });
     unsafe {
-        std::env::set_var("PG_URL", test_url);
+        std::env::set_var(
+            "PG_URL",
+            "host=rust_howto_dev-postgres-1 user=postgres password=password dbname=library",
+        );
     }
     main()?;
     Ok(())
