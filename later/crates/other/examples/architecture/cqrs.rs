@@ -186,12 +186,15 @@ mod commands {
                 } => {
                     let current_quantity = self.get_current_quantity(id);
                     if let Some(current) = current_quantity {
-                        let new_quantity =
-                            (current as i32 + quantity).max(0) as u32; //
-                        // FIXME handle errors
+                        let new_quantity = current as i32 + quantity;
+                        if new_quantity < 0 {
+                            return Err(anyhow::anyhow!(
+                                "Update would result in negative quantity for product {id}!"
+                            ));
+                        }
                         let event = ProductEvent::ProductQuantityUpdated {
                             id,
-                            new_quantity,
+                            new_quantity: new_quantity as u32,
                         };
                         self.event_store.apply_event(event);
                         Ok(())
@@ -388,6 +391,31 @@ fn main() -> anyhow::Result<()> {
 fn test() -> anyhow::Result<()> {
     // We just execute main, which shouldn't panic
     let _ = main();
+    Ok(())
+}
+
+#[test]
+fn test_negative_quantity_update_returns_error() -> anyhow::Result<()> {
+    let event_store = events::SimpleEventStore::new();
+    let command_handler = commands::CommandHandler::new(event_store);
+
+    command_handler.process(commands::Command::CreateProduct {
+        id: 1,
+        name: "Test Product".to_string(),
+        quantity: 10,
+    })?;
+
+    let result = command_handler.process(commands::Command::UpdateProductQuantity {
+        id: 1,
+        quantity_change: -11,
+    });
+
+    assert!(result.is_err());
+    assert!(result
+        .unwrap_err()
+        .to_string()
+        .contains("Update would result in negative quantity"));
+
     Ok(())
 }
 
