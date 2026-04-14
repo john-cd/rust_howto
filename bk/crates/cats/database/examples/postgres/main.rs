@@ -26,11 +26,10 @@ fn main() -> anyhow::Result<()> {
 #[test]
 fn require_external_svc() -> anyhow::Result<()> {
     let _lock = ENV_MUTEX.lock().unwrap();
+    let test_url =
+        std::env::var("TEST_PG_URL").expect("TEST_PG_URL must be set");
     unsafe {
-        std::env::set_var(
-            "PG_URL",
-            "postgresql://postgres:password@rust_howto_dev-postgres-1/library",
-        );
+        std::env::set_var("PG_URL", test_url);
     }
     main()?;
     Ok(())

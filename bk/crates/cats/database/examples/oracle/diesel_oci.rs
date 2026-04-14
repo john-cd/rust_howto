@@ -95,10 +95,18 @@ fn establish_connection(
 
 #[test]
 fn require_external_svc() -> anyhow::Result<()> {
+    let _lock = super::ENV_MUTEX.lock().unwrap();
+    let username = std::env::var("TEST_ORACLE_DB_USERNAME")
+        .expect("TEST_ORACLE_DB_USERNAME must be set");
+    let password = std::env::var("TEST_ORACLE_DB_PASSWORD")
+        .expect("TEST_ORACLE_DB_PASSWORD must be set");
+    let db_url = std::env::var("TEST_ORACLE_DB_URL")
+        .expect("TEST_ORACLE_DB_URL must be set");
+
     unsafe {
-        env::set_var("ORACLE_DB_USERNAME", "SYS");
-        env::set_var("ORACLE_DB_PASSWORD", "CHANGE_ON_INSTALL");
-        env::set_var("ORACLE_DB_URL", "rust_howto_dev-redis-1");
+        env::set_var("ORACLE_DB_USERNAME", username);
+        env::set_var("ORACLE_DB_PASSWORD", password);
+        env::set_var("ORACLE_DB_URL", db_url);
     }
     main()?;
     Ok(())
