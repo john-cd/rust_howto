@@ -64,7 +64,7 @@ It is important to note that keys may be reused. In other words, once a value as
 
 The key types are:
 - `Collector`: manages epochs and tracks which threads are active.
-- `LocalGuard` (obtained via `Collector::enter`): while held, prevents reclamation of any objects loaded through it.
+- `Guard` (returned by `collector.enter()` / `Collector::enter`): while held, prevents reclamation of any objects loaded through it.
 - `collector.retire(ptr, reclaim::boxed)`: schedules a pointer for deferred reclamation once no threads hold a guard that could have seen it.
 
 ```rust,editable
