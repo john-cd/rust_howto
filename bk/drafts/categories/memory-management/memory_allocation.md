@@ -42,33 +42,47 @@ While [`slab`][c~slab~docs]↗{{hi:slab}} may look like other Rust collections, 
 
 It is important to note that keys may be reused. In other words, once a value associated with a given key is removed from a slab, that key may be returned from future calls to insert.
 
-TODO add example
+```rust,editable
+{{#include ../../../crates/cats/memory_management/examples/slab.rs:example}}
+```
 
 ### `bumpalo` {#bumpalo}
 
 [![bumpalo][c~bumpalo~docs~badge]][c~bumpalo~docs] [![bumpalo~crates.io][c~bumpalo~crates.io~badge]][c~bumpalo~crates.io] [![bumpalo~repo][c~bumpalo~repo~badge]][c~bumpalo~repo] [![bumpalo~lib.rs][c~bumpalo~lib.rs~badge]][c~bumpalo~lib.rs]{{hi:bumpalo}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-[`bumpalo`][c~bumpalo~docs]↗{{hi:bumpalo}} is a fast bump allocation arena for Rust.
+[`bumpalo`][c~bumpalo~docs]↗{{hi:bumpalo}} is a fast bump allocation arena for Rust. Bump allocation works by maintaining a pointer to a region of memory; each allocation simply advances this pointer, making allocations extremely cheap (O(1)). All memory is freed at once when the arena is dropped, which makes it ideal for allocating many short-lived objects with the same lifetime.
 
-TODO add example?
+```rust,editable
+{{#include ../../../crates/cats/memory_management/examples/bumpalo.rs:example}}
+```
 
 ## Garbage Collection with `seize` {#seize}
 
 [![seize][c~seize~docs~badge]][c~seize~docs] [![seize~crates.io][c~seize~crates.io~badge]][c~seize~crates.io] [![seize~repo][c~seize~repo~badge]][c~seize~repo] [![seize~lib.rs][c~seize~lib.rs~badge]][c~seize~lib.rs]{{hi:seize}}{{hi:Garbage}}{{hi:Concurrency}}{{hi:Rcu}}{{hi:Atomic}}{{hi:Lock-free}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
 
-[`seize`][c~seize~docs]↗{{hi:seize}} allows fast, efficient, and predictable memory reclamation for concurrent data structures.
+[`seize`][c~seize~docs]↗{{hi:seize}} allows fast, efficient, and predictable memory reclamation for concurrent data structures. It solves the problem of safely freeing shared objects when multiple threads may be reading them simultaneously, without using locks.
 
-TODO add example?
+The key types are:
+- `Collector`: manages epochs and tracks which threads are active.
+- `Guard` (returned by `collector.enter()` / `Collector::enter`): while held, prevents reclamation of any objects loaded through it.
+- `collector.retire(ptr, reclaim::boxed)`: schedules a pointer for deferred reclamation once no threads hold a guard that could have seen it.
+
+```rust,editable
+{{#include ../../../crates/cats/memory_management/examples/seize.rs:example}}
+```
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[memory-management/index | Memory Management overview]]
+- [[lazy_initialization | Global Statics and Lazy Initialization]]
+- [[smart_pointers | Smart Pointers]]
+- [[shared_state | Shared State]]
+- [[development-tools_profiling | Development Tools: Profiling]]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1341)
 
 - [Jemalloc][c~jemalloc~lib.rs]↗.
 
