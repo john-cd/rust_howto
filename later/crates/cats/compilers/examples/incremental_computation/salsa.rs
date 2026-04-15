@@ -7,15 +7,16 @@
 //!
 //! The key idea is to define computations as *tracked functions*. Salsa
 //! automatically records which inputs each tracked function reads. When an
-//! input changes, only the affected computations are re-executed; everything
-//! else is served from the cache.
+//! input changes, only the affected computations are invalidated and will be
+//! re-executed on the next query; everything else is served from the cache.
 //!
 //! This example builds a simple dependency chain:
 //! - `word_count` depends on the `content` of a `SourceInput`.
 //! - `summary` depends on both `content` and `word_count`.
 //!
-//! When `content` is updated, Salsa re-runs `word_count` and `summary`
-//! automatically.
+//! When `content` is updated, Salsa invalidates the cached results for
+//! `word_count` and `summary`, and recomputes them the next time they are
+//! queried.
 
 use salsa::Setter;
 
