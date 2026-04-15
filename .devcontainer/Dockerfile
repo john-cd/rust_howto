@@ -66,7 +66,6 @@ RUN apt-get update \
     llvm \
     m4 \
     make \
-    # pandoc \ huge https://github.com/john-cd/rust_howto/issues/1442
     pkg-config \
     protobuf-compiler \
     python3 \
@@ -83,6 +82,15 @@ RUN apt-get update \
 ## Alternatively, use `lld` instead of the `mold` linker
 ## See configuration in .cargo/config.toml
 ## If using the `slim` Rust image, you may need to install: curl pkg-config libssl-dev
+
+## Install pandoc from the official GitHub binary release.
+## Using a direct binary download instead of `apt install pandoc` avoids pulling in large Haskell dependencies.
+## Pandoc is required by the `mdbook-pandoc` backend to generate the PDF version of the book.
+ARG PANDOC_VERSION=invalid
+RUN wget -q "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-1-amd64.deb" \
+        -O /tmp/pandoc.deb \
+    && dpkg -i /tmp/pandoc.deb \
+    && rm /tmp/pandoc.deb
 
 # Install CMake (installed by `apt` above)
 # RUN wget https://github.com/Kitware/CMake/releases/download/v3.31.6/cmake-3.31.6-linux-x86_64.sh \
@@ -127,6 +135,9 @@ RUN <<EOF
     # old version: cargo binstall --no-confirm mdbook-indexing
     cargo install --force mdbook-indexing
     cargo install --locked mdbook-pandoc
+    ## Install tectonic: a self-contained TeX/LaTeX engine used as the PDF engine for mdbook-pandoc.
+    ## See https://tectonic-typesetting.github.io
+    cargo install --locked tectonic
 
     ## [LATER https://lib.rs/crates/mdbook-open-on-gh add an "Edit this file on GitHub" link on the bottom of every page, linking directly to the source file.](https://github.com/john-cd/rust_howto/issues/1278)
     # cargo binstall --no-confirm mdbook-open-on-gh
