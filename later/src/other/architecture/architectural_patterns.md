@@ -38,7 +38,7 @@
 The [`inventory`][c~inventory~docs]↗{{hi:inventory}} crate enables a *submit-and-collect* pattern: plugins or services register themselves at link time via `inventory::submit!`, and the application collects them at runtime with `inventory::iter`. This approach:
 
 - Requires no central registry file to update when adding new plugins.
-- Works entirely at compile time; no runtime reflection is needed.
+- Uses compile/link-time registration with runtime iteration, without needing runtime reflection.
 - Is commonly used for plugin architectures, command dispatchers, and test registries.
 
 ```rust,editable
