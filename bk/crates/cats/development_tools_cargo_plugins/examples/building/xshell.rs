@@ -104,9 +104,25 @@ fn main() -> anyhow::Result<()> {
     sh.set_var("MY_VAR", "my_value");
     println!("Set MY_VAR to {}", sh.var("MY_VAR")?);
 
-    // Note: To use an environment variable via `echo`, the shell itself must be invoked to evaluate it.
-    let env_var = cmd!(sh, "sh -c 'echo $MY_VAR'").read()?;
-    println!("MY_VAR environment variable evaluated by sh: {env_var}");
+    // Important: `xshell` does NOT invoke a shell, so shell variable expansion
+    // does NOT happen. `$MY_VAR` is passed literally to the command.
+    // The following prints the literal string "$MY_VAR", NOT "my_value":
+    let literal = cmd!(sh, "echo $MY_VAR").read()?;
+    println!("Direct echo $MY_VAR (literal, not expanded): '{literal}'");
+    assert_eq!(literal, "$MY_VAR");
+
+    // The correct `xshell` approach is to retrieve the value with `sh.var()`
+    // and then use Rust variable interpolation `{my_var}` in the `cmd!` macro:
+    let my_var = sh.var("MY_VAR")?;
+    let via_interpolation = cmd!(sh, "echo {my_var}").read()?;
+    println!("Via Rust variable interpolation: '{via_interpolation}'");
+    assert_eq!(via_interpolation, "my_value");
+
+    // Alternatively, to expand shell variables you can invoke a shell explicitly.
+    // Note: this is NOT cross-platform (requires `sh` to be available).
+    let via_sh = cmd!(sh, "sh -c 'echo $MY_VAR'").read()?;
+    println!("Via sh -c (shell expansion): '{via_sh}'");
+    assert_eq!(via_sh, "my_value");
 
     // Change the working directory permanently:
     let temp_dir = tempfile::tempdir()?;

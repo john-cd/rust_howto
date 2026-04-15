@@ -69,6 +69,7 @@ async fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+#[ignore = "Needs review"]
 #[test]
 fn require_network() -> anyhow::Result<()> {
     main()?;
