@@ -10,6 +10,7 @@ mod insert_query_data;
 mod tokio_postgres;
 
 #[cfg(feature = "postgres")]
+#[allow(dead_code)]
 pub(crate) static ENV_MUTEX: std::sync::Mutex<()> = std::sync::Mutex::new(());
 
 #[cfg(feature = "postgres")]
@@ -28,7 +29,7 @@ fn require_external_svc() -> anyhow::Result<()> {
     unsafe {
         std::env::set_var(
             "PG_URL",
-            "postgresql://postgres:mysecretpassword@rust_howto_dev-postgres-1/library",
+            "postgresql://postgres:password@rust_howto_dev-postgres-1/library",
         );
     }
     main()?;

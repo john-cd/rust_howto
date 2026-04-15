@@ -4,6 +4,7 @@
 [ex~architecture~cqrs]: common_architectures.md#cqrs
 [ex~architecture~define-objectives-and-requirements]: software_architecture_process.md#define-objectives-and-requirements
 [ex~architecture~dependency-injection]: architectural_patterns.md#dependency-injection
+[ex~architecture~inventory]: architectural_patterns.md#inventory
 [ex~architecture~deployment-and-operations]: software_architecture_process.md#deployment-and-operations
 [ex~architecture~design-system-components]: software_architecture_process.md#design-system-components
 [ex~architecture~ensure-security]: software_architecture_process.md#ensure-security
