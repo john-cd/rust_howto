@@ -46,6 +46,29 @@ The file passed is: myfile.txt
 Your favorite number must be 256.
 ```
 
+## Advanced `clap` Builder Example with Subcommands {#clap-builder-advanced}
+
+[![clap][c~clap~docs~badge]][c~clap~docs]{{hi:clap}} [![clap~examples][c~clap~examples~badge]][c~clap~examples] [![clap~repo][c~clap~repo~badge]][c~clap~repo] [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
+
+The following example, found in [`xmpl/clap_builder_xmpl`][rust-howto~clap_builder_xmpl~repo]↗, demonstrates how to build a full-featured CLI using [`clap`][c~clap~docs]↗{{hi:clap}}'s builder API. Because it spans multiple modules, it cannot be embedded directly into this page.
+
+It showcases:
+
+- **Subcommands**: `open` (one or more file paths), `query` (a sequence of query words), and `test` (a hidden command).
+- **Global flags**: `--verbose` / `-v` (repeatable, for verbosity) and `--config` / `-c` (file path), both readable from environment variables (`TOOL_VERBOSE`, `TOOL_CONFIG_FILE`).
+- **Custom styling** for the help output, using [`clap::builder::styling`][c~clap~docs]↗.
+- **Inferred subcommands**: partial name matches (e.g., `te` matches `test`).
+- **Builder pattern**: a `Config` struct with a dedicated `ConfigBuilder` separating CLI parsing from app configuration.
+
+Browse the full source at [`xmpl/clap_builder_xmpl`][rust-howto~clap_builder_xmpl~repo]↗ or clone the repository and run:
+
+```sh
+cd xmpl/clap_builder_xmpl
+cargo run -- --help
+cargo run -- -vv open file1.csv file2.csv
+cargo run -- --config config.toml query SELECT col FROM tbl
+```
+
 ## Using `clap`'s Derive API {#clap-derive}
 
 [![clap][c~clap~docs~badge]][c~clap~docs]{{hi:clap}} [(tutorial)][c~clap~tutorial]↗ [(cookbook)][c~clap~cookbook]↗ [![clap examples][c~clap~examples~badge]][c~clap~examples] [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}

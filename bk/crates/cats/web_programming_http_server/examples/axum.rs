@@ -65,8 +65,8 @@ async fn query(Query(_params): Query<HashMap<String, String>>) -> String {
 // Buffer the request body and deserialize it as JSON into a
 // `serde_json::Value`. `Json` supports any type that implements
 // `serde::Deserialize`.
-async fn json(Json(_payload): Json<serde_json::Value>) -> String {
-    format!("JSON payload: {_payload:?}")
+async fn json(Json(payload): Json<serde_json::Value>) -> Json<serde_json::Value> {
+    Json(payload)
 }
 
 // Access the application state via the `State` extractor.
