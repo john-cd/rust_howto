@@ -18,7 +18,6 @@
 //! seize = "0.5"
 //! ```
 
-use std::mem::ManuallyDrop;
 use std::sync::Arc;
 use std::sync::atomic::AtomicPtr;
 use std::sync::atomic::Ordering;
@@ -32,11 +31,10 @@ fn main() {
     let collector = Arc::new(Collector::new());
 
     // Box a value and obtain a raw pointer that will be managed by `seize`.
-    // `ManuallyDrop` prevents Rust's automatic drop destructor from running
-    // when the `Box` is consumed: `seize` takes responsibility for running
-    // the destructor at the correct time via `collector.retire`.
-    let ptr: *mut ManuallyDrop<i32> =
-        Box::into_raw(Box::new(ManuallyDrop::new(100_i32)));
+    // `Box::into_raw` transfers ownership out of the `Box` without dropping
+    // the pointee; `seize` will later reclaim and drop it at a safe time via
+    // `collector.retire`.
+    let ptr: *mut i32 = Box::into_raw(Box::new(100_i32));
 
     // Store the pointer in an atomic so it can be shared across threads.
     let shared = Arc::new(AtomicPtr::new(ptr));
@@ -56,7 +54,7 @@ fn main() {
 
         if !raw.is_null() {
             // Safety: `raw` is non-null and protected by `guard`.
-            let value: i32 = unsafe { **raw };
+            let value: i32 = unsafe { *raw };
             println!("Read value: {value}");
         }
 
@@ -67,11 +65,12 @@ fn main() {
     // After all guards that could have seen this pointer are dropped,
     // retire it so the collector can free the memory when it is safe.
     //
-    // `seize::reclaim::boxed` calls `Box::from_raw` to drop the value.
+    // `seize::reclaim::boxed` calls `Box::from_raw` and drops the original
+    // `T`, so any destructor runs at reclamation time.
     //
     // Safety: `ptr` is no longer accessible to any other thread.
     unsafe {
-        collector.retire(ptr, seize::reclaim::boxed::<ManuallyDrop<i32>>);
+        collector.retire(ptr, seize::reclaim::boxed::<i32>);
     }
 
     println!("Value retired; memory will be reclaimed by the collector.");
