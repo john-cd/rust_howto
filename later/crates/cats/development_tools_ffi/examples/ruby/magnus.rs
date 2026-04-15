@@ -4,6 +4,7 @@
 // use magnus::RString;
 // use magnus::define_global_function;
 // use magnus::eval;
+// use magnus::class;
 
 // /// Simple function to be called from Ruby.
 // fn hello_rust() -> String {
@@ -17,8 +18,8 @@
 //     // Create a new Ruby string object from the given Rust string.
 //     let string = RString::new(&ruby, "Hello from Rust!")?;
 
-//     // Evaluate Ruby code.
-//     ruby.eval(&format!("puts '{}'", string.to_str()?))?;
+//     // Safely call the `puts` method via the Object class without evaluating dynamic strings.
+//     class::object().funcall::<_, _, ()>("puts", (string,))?;
 
 //     // Define a global Ruby function that calls a Rust function.
 //     define_global_function("hello_rust", hello_rust);

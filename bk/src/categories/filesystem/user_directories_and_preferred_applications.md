@@ -22,7 +22,7 @@ The following example gets paths to standard (home, configuration, data, cache, 
 
 [`directories`][c~directories~docs]↗{{hi:directories}} is higher-level than [`dirs`][c~dirs~docs]↗{{hi:dirs}}. Use `directories` if you need to compute cache, config, etc. paths for specific applications or projects:
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/filesystem/examples/user_directories/directories.rs:example}}
 ```
 

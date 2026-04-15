@@ -304,7 +304,7 @@ proc-macro2 = "1.0" # TokenStream manipulation.
 
 - Add the following to `lib.rs`, the root of the new crate:
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../crates/proc_macros/src/lib.rs:derive_macro}}
 ```
 
@@ -317,7 +317,7 @@ proc-macros = { path = "../proc_macros" } # Adjust the path as necessary.
 
 - Then, in your main crate, use the macro like this:
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../crates/language/examples/macros/proc_macro_derive.rs:example}}
 ```
 
@@ -339,13 +339,13 @@ struct MyStruct {
 - Create a separate crate and add it to your main crate's `Cargo.toml`, as above.
 - Add the following to `lib.rs`, the root of the new crate:
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../crates/proc_macros/src/lib.rs:attribute_macro}}
 ```
 
 - Then, in your main crate, use the macro like this:
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../crates/language/examples/macros/proc_macro_attribute.rs:example}}
 ```
 
@@ -356,13 +356,13 @@ struct MyStruct {
 - Create a separate crate and add it to your main crate's `Cargo.toml`, as above.
 - Add the following to `lib.rs`, the root of the new crate:
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../crates/proc_macros/src/lib.rs:function_macro}}
 ```
 
 Then, in your main crate, use the macro like this:
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../crates/language/examples/macros/proc_macro_function.rs:example}}
 ```
 

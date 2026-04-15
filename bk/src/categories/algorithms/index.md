@@ -18,6 +18,10 @@ This category covers Rust implementations of core algorithms{{hi:Algorithms}}, s
 
 {{#include hashing.incl.md}}
 
+## Graph Algorithms
+
+{{#include graph_algorithms.incl.md}}
+
 ## Related Topics
 
 ### Compression Algorithms

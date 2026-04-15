@@ -56,9 +56,13 @@ fn require_external_svc() -> anyhow::Result<()> {
         // Set the MONGO_URI environment variable to connect to the MongoDB
         // service. Refer to the compose*.yaml files for the service
         // configuration.
+        let password =
+            env::var("MONGO_PASSWORD").expect("MONGO_PASSWORD must be set");
         env::set_var(
             "MONGO_URI",
-            "mongodb://mongoadmin:mysecretpassword@rust_howto_dev-mongodb-1:27017/",
+            format!(
+                "mongodb://mongoadmin:{password}@rust_howto_dev-mongodb-1:27017/"
+            ),
         );
     }
     main()?;

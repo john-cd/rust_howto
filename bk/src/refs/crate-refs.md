@@ -318,6 +318,14 @@
 [c~async-channel~lib.rs~badge]: https://img.shields.io/badge/lib.rs-async--channel-yellow
 [c~async-channel~repo]: https://github.com/smol-rs/async-channel
 [c~async-channel~repo~badge]: https://img.shields.io/badge/async--channel-steelblue?logo=github
+[c~async-fs~crates.io]: https://crates.io/crates/async-fs
+[c~async-fs~crates.io~badge]: https://img.shields.io/badge/crates.io-async--fs-crimson
+[c~async-fs~docs]: https://docs.rs/async-fs
+[c~async-fs~docs~badge]: https://img.shields.io/crates/v/async-fs?label=async-fs
+[c~async-fs~lib.rs]: https://lib.rs/crates/async-fs
+[c~async-fs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-async--fs-yellow
+[c~async-fs~repo]: https://github.com/smol-rs/async-fs
+[c~async-fs~repo~badge]: https://img.shields.io/badge/async--fs-steelblue?logo=github
 [c~async-graphql-axum~crates.io]: https://crates.io/crates/async-graphql-axum
 [c~async-graphql-axum~crates.io~badge]: https://img.shields.io/badge/crates.io-async--graphql--axum-crimson
 [c~async-graphql-axum~docs]: https://docs.rs/async-graphql-axum

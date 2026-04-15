@@ -5,6 +5,11 @@ use tracing::span;
 
 /// Demonstrates entering and exiting a span using `entered()` and `exit()`.
 fn main() {
+    // Initialize a tracing subscriber to see the span events below.
+    let _ = tracing_subscriber::fmt()
+        .with_max_level(tracing::Level::TRACE)
+        .try_init();
+
     // Create a span, entering it using `entered()`, thus consuming it and
     // returning a guard that will exit the span when dropped.
     {

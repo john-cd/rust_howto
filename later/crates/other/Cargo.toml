@@ -20,6 +20,7 @@ autolib = false
 [dependencies]
 
 ## Architecture
+inventory = "0.3.24"
 shaku = "0.6.2"
 
 ## Cloud

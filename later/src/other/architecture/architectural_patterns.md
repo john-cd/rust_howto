@@ -33,6 +33,18 @@
 {{#include ../../../crates/other/examples/architecture/di.rs:example}}
 ```
 
+### Compile-time Service Registration with `inventory` {#inventory}
+
+The [`inventory`][c~inventory~docs]↗{{hi:inventory}} crate enables a *submit-and-collect* pattern: plugins or services register themselves at link time via `inventory::submit!`, and the application collects them at runtime with `inventory::iter`. This approach:
+
+- Requires no central registry file to update when adding new plugins.
+- Uses compile/link-time registration with runtime iteration, without needing runtime reflection.
+- Is commonly used for plugin architectures, command dispatchers, and test registries.
+
+```rust,editable
+{{#include ../../../crates/other/examples/architecture/di_inventory.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [[config | Configuration]] Management: Loading and managing settings with [`config`][c~config~docs]↗{{hi:config}} or [`dotenv`][c~dotenv~docs]↗{{hi:dotenv}}.
@@ -46,5 +58,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write. create missing examples. cover [`inventory`][c~inventory~docs]↗{{hi:inventory}} crate for DI](https://github.com/john-cd/rust_howto/issues/1231)?
+[P1 done](https://github.com/john-cd/rust_howto/issues/1231)
 </div>

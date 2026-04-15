@@ -39,7 +39,7 @@ See:
 
 The [`strum`][c~strum~docs]↗{{hi:strum}} crate provides helpful macros for working with enums and strings. It also can convert from an integer to an enum, add custom properties to enum variants, etc.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../crates/language/examples/enums/strum.rs:example}}
 ```
 

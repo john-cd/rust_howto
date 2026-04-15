@@ -28,7 +28,7 @@ The [`priority-queue`][c~priority-queue~docs]↗{{hi:priority-queue}} crate prov
 This example demonstrates the usage of the `priority-queue` crate in Rust. It showcases various functionalities including creating a priority queue,
 inserting elements, popping elements, using custom types, and more:
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/data_structures/examples/binaryheap/priority_queue.rs:example}}
 ```
 

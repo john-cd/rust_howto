@@ -169,9 +169,9 @@ To handle a [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} 
 
 ## Avoid Discarding Errors During Error Conversions {#avoid-discarding-errors-during-error-conversions}
 
-[![reqwest][c~reqwest~docs~badge]][c~reqwest~docs] [![reqwest~crates.io][c~reqwest~crates.io~badge]][c~reqwest~crates.io] [![reqwest~repo][c~reqwest~repo~badge]][c~reqwest~repo] [![reqwest~lib.rs][c~reqwest~lib.rs~badge]][c~reqwest~lib.rs]{{hi:reqwest}}{{hi:Client}}{{hi:Http}}{{hi:Request}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}} [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client]{{hi:HTTP client}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
+[![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-Uses [`reqwest::blocking`][c~reqwest::blocking~docs]↗ to query a random integer generator web service. Converts the string response into an integer.
+The `?` operator automatically converts different error types (e.g., [`std::io::Error`][p~std::io::Error]↗, [`std::num::ParseIntError`][p~std::num::ParseIntError]↗) into [`anyhow::Error`][c~anyhow::Error~docs]↗, retaining the full error information along the call chain.
 
 ```rust,editable
 {{#include ../../../../crates/cats/rust_patterns/examples/error/retain.rs:example}}

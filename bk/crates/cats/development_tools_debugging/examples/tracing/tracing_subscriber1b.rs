@@ -36,6 +36,7 @@ fn main() {
     // Calling this instrumented function will log span events, since
     // `with_span_events` is enabled above.
     a_function();
+    println!("tracing_subscriber1b example: logs written to temp/my_log.json in JSON format");
 }
 
 #[instrument]
