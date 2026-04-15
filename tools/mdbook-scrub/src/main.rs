@@ -27,19 +27,18 @@ fn make_app() -> Command {
 fn main() {
     let matches = make_app().get_matches();
 
-    // FIXME
-    // // Logging:
-    // let log_file = std::fs::OpenOptions::new()
-    //     .append(true)
-    //     .create(true)
-    //     .open("mdbook-scrub.log")
-    //     .unwrap();
+    // Logging:
+    let log_file = std::fs::OpenOptions::new()
+        .append(true)
+        .create(true)
+        .open("mdbook-scrub.log")
+        .unwrap();
 
-    // tracing_subscriber::fmt()
-    //     .with_max_level(tracing::Level::INFO)
-    //     .json()
-    //     .with_writer(std::sync::Mutex::new(log_file))
-    //     .init();
+    let _ = tracing_subscriber::fmt()
+        .with_max_level(tracing::Level::INFO)
+        .json()
+        .with_writer(std::sync::Mutex::new(log_file))
+        .try_init();
 
     let preprocessor = mdbook_scrub::Preproc::new();
 

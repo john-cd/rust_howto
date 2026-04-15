@@ -28,7 +28,7 @@ The [`dyn-clone`][c~dyn-clone~docs]↗{{hi:dyn-clone}} crate provides a [`DynClo
 `pin-project-lite` is a lightweight version of `pin-project` written with declarative macros. The `pin_project!` macro creates a projection type covering all the fields of struct.
 
 ```rust,editable
-{{#include ../../../crates/cats/rust_patterns/examples/rust_specific_patterns/pin-project.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/examples/rust_specific_patterns/pin_project.rs:example}}
 ```
 
 See also:
@@ -36,9 +36,30 @@ See also:
 - [Projections and Structural Pinning][c~std::pin~projections-and-structural-pinning~docs]↗.
 - [`std::pin::Pin`][c~std::pin::Pin~docs]↗.
 
+## Run Code on Scope Exit with `scopeguard` {#scopeguard}
+
+[![scopeguard][c~scopeguard~docs~badge]][c~scopeguard~docs]{{hi:scopeguard}}
+[![scopeguard~crates.io][c~scopeguard~crates.io~badge]][c~scopeguard~crates.io]
+[![scopeguard~repo][c~scopeguard~repo~badge]][c~scopeguard~repo]
+[![scopeguard~lib.rs][c~scopeguard~lib.rs~badge]][c~scopeguard~lib.rs]
+[![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
+
+[`scopeguard`][c~scopeguard~docs]↗{{hi:scopeguard}} is a library that implements a scope guard: a type that runs a closure when it goes out of scope, even if code panics (as long as `panic` doesn't abort). This is useful for RAII-style resource management — releasing locks, closing file handles, reverting state changes, and similar cleanup tasks.
+
+Use the `defer!` macro for fire-and-forget cleanup, or `scopeguard::guard` when the cleanup closure needs to operate on a specific owned value.
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/rust_patterns/examples/scopeguard.rs:example}}
+```
+
+See also [`std::ops::Drop`][c~std::ops::Drop~docs]↗{{hi:std::ops::Drop}} for custom cleanup on your own types.
+
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[asynchronous | Asynchronous]]: `Pin` and `pin-project` are frequently used when manually implementing `Future`s and async state machines.
+- [[resource_cleanup | Resource Cleanup]]: the `Drop` trait, which underpins RAII and `scopeguard`.
+- [[smart_pointers | Smart Pointers]]: `Box<dyn Trait>` and pinned smart pointers.
+- [[traits | Traits]]: trait objects and dynamic dispatch, including the newtype pattern.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

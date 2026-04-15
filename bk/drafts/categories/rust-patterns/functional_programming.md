@@ -69,7 +69,7 @@ Note that [`Either`][c~either~docs]↗{{hi:Either}} is general purpose. For desc
 
 Frunk is a functional programming toolbelt for Rust. It provides developers with a number of functional programming data structures and type-level programming tools like [`HList`][c~frunk::hlist::HList~docs]↗{{hi:HList}} (heterogeneous lists)↗, `Coproduct`, `Generic`, `LabelledGeneric`, `Validated`, `Monoid`, `Semigroup` and friends. It is useful for complex data transformations and metaprogramming.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/rust_patterns/examples/functional_programming/frunk.rs:example}}
 ```
 

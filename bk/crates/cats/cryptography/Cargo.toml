@@ -45,6 +45,6 @@ base64ct = "1.8.0"
 data-encoding = "2.9.0"
 # hyper = { version = "1.5.2", features = ["client"] }
 # hyper-tls = "0.6.0"
-rand = "0.8.5" # pinned because of ed25519
+rand = "0.9.3" # pinned because of ed25519
 # tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread"]  }
 # webpki-roots = "1.0.1"

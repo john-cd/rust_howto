@@ -16,8 +16,7 @@ autolib = false
 
 [dependencies]
 comemo = "0.5.0"
-# FIXME finish salsa example
-# salsa = "0.23.0"
+salsa = "0.26.0"
 
 ## General
 anyhow = "1.0.95"
