@@ -30,3 +30,8 @@ list_not_tested:
 [unix]
 @convert_example_placeholders:
     ./convert_example_placeholders.sh {{root}}
+
+# Create a new cat crate for a given crates.io category (e.g., `just create algorithms`)
+[unix]
+@create cat:
+    ./create.sh {{root}} {{cat}}

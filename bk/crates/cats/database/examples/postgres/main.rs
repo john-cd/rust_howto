@@ -10,9 +10,14 @@ mod insert_query_data;
 mod tokio_postgres;
 
 #[cfg(feature = "postgres")]
+#[allow(dead_code)]
+pub(crate) static ENV_MUTEX: std::sync::Mutex<()> = std::sync::Mutex::new(());
+
+#[cfg(feature = "postgres")]
 fn main() -> anyhow::Result<()> {
     create_tables::main()?;
     insert_query_data::main()?;
+    // NOTE: aggregate_data::main() expects a different database (e.g., "moma").
     // FIXME aggregate_data::main()?;
     Ok(())
 }
@@ -20,6 +25,13 @@ fn main() -> anyhow::Result<()> {
 #[cfg(feature = "postgres")]
 #[test]
 fn require_external_svc() -> anyhow::Result<()> {
+    let _lock = ENV_MUTEX.lock().unwrap();
+    unsafe {
+        std::env::set_var(
+            "PG_URL",
+            "postgresql://postgres:password@rust_howto_dev-postgres-1/library",
+        );
+    }
     main()?;
     Ok(())
 }

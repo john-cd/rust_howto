@@ -40,7 +40,7 @@ Numeric [traits][p~traits] for generic [mathematics][p~mathematics]. [Traits][p~
 
 [`rug`][c~rug~docs]↗{{hi:rug}} offers arbitrary-precision integers, rational, floating-point and [complex numbers][p~complex-numbers] based on GMP, MPFR and MPC. LGPL licensed. Wrapper for GMP. Much faster than [`num-bigint`][c~num-bigint~docs]↗{{hi:num-bigint}}.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/mathematics/examples/additional_numeric_types/rug.rs:example}}
 ```
 
@@ -50,7 +50,7 @@ Numeric [traits][p~traits] for generic [mathematics][p~mathematics]. [Traits][p~
 
 `big-decimal` is a decimal number implementation written in pure Rust suitable for financial and fixed-precision calculations. The binary representation consists of a 96 bit integer number, a scaling factor used to specify the decimal fraction and a 1 bit sign.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/mathematics/examples/additional_numeric_types/rust_decimal.rs:example}}
 ```
 

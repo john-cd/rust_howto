@@ -30,6 +30,7 @@ fn main() -> Result<()> {
     // its full path:
     let _h: HashMap<String, String> = std::collections::HashMap::new();
 
+    println!("use_external_crate example: imported items from external crates");
     Ok(())
 }
 

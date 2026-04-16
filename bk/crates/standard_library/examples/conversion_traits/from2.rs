@@ -22,6 +22,7 @@ impl From<&str> for MyError {
 }
 
 fn main() -> Result<(), MyError> {
+    println!("Testing custom error conversion with the ? operator:");
     let _file = std::fs::File::open("missing.txt")?; // `io::Error` becomes `MyError`.
     Err("custom failure")?; // `&str` becomes `MyError`.
     Ok(())

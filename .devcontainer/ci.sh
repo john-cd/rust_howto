@@ -19,14 +19,13 @@ cd bk/crates
 ## Fails if not formatted properly
 cargo +nightly fmt --all --check
 
-## [add cargo plugins to CI script](https://github.com/john-cd/rust_howto/issues/1277)
 ## Check dependencies
-# cargo deny check \
-#     && cargo outdated --exit-code 1 \
-#     && cargo udeps \
-#     && rm -rf ~/.cargo/advisory-db \
-#     && cargo audit \
-#     && cargo pants
+cargo deny check \
+    && cargo outdated --exit-code 1 \
+    && cargo +nightly udeps \
+    && rm -rf ~/.cargo/advisory-db \
+    && cargo audit \
+    && cargo pants
 
 ## Fetch the dependencies
 cargo fetch
@@ -67,6 +66,14 @@ cp static/*.* book/html/
 # sed -i -e 's/<urls>/<url>/g' -e 's/<\/urls>/<\/url>/g' book/sitemap.xml
 
 mdbook-utils sitemap
+
+echo "----------"
+
+## Report folder sizes so that the tmpfs mount size can be monitored and tuned if needed.
+echo "=== Memory usage ==="
+free -h
+echo "=== Relevant folder sizes ==="
+du -sh /code/target/ /usr/local/cargo/ 2>/dev/null || true
 
 echo "----------"
 

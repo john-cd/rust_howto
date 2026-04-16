@@ -56,6 +56,7 @@ fn main() {
             str_s: message,
         }
     );
+    println!("Serialized to {} bytes and deserialized successfully", output.len());
 }
 // ANCHOR_END: example
 

@@ -42,7 +42,7 @@ Note that the [`memmap2::Mmap::map`][c~memmap2::Mmap::map~docs]↗{{hi:memmap2::
 
 It is also possible to write to a `File` as if it were a `&mut [u8]` by using mutable memory maps.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/filesystem/examples/read_write/memmap2.rs:example}}
 ```
 

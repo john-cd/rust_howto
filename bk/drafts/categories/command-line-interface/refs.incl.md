@@ -4,6 +4,7 @@
 [ex~command-line-interface~bold-colored-text]: ansi_terminal.md#bold-colored-text
 [ex~command-line-interface~bold-text]: ansi_terminal.md#bold-text
 [ex~command-line-interface~clap-builder]: argument_parsing.md#clap-builder
+[ex~command-line-interface~clap-builder-advanced]: argument_parsing.md#clap-builder-advanced
 [ex~command-line-interface~clap-derive]: argument_parsing.md#clap-derive
 [ex~command-line-interface~clap_complete]: argument_parsing.md#clap_complete
 [ex~command-line-interface~colored-text]: ansi_terminal.md#colored-text

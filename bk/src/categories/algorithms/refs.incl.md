@@ -11,6 +11,10 @@
 [ex~algorithms~generate-random-values-from-set-alphanumeric]: random_value_generation.md#generate-random-values-from-set-alphanumeric
 [ex~algorithms~legacy-hashing-algorithms]: hashing.md#legacy-hashing-algorithms
 [ex~algorithms~md-5]: hashing.md#md-5
+[ex~algorithms~petgraph-bfs]: graph_algorithms.md#petgraph-bfs
+[ex~algorithms~petgraph-dfs]: graph_algorithms.md#petgraph-dfs
+[ex~algorithms~petgraph-dijkstra]: graph_algorithms.md#petgraph-dijkstra
+[ex~algorithms~petgraph-toposort]: graph_algorithms.md#petgraph-toposort
 [ex~algorithms~sha1]: hashing.md#sha1
 [ex~algorithms~sha256]: hashing.md#sha256
 [ex~algorithms~sha2]: hashing.md#sha2
