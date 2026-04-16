@@ -4961,7 +4961,13 @@
 [c~nalgebra-lapack~repo~badge]: https://img.shields.io/badge/nalgebra--lapack-steelblue?logo=github
 [c~nalgebra-lapack~website]: https://nalgebra.rs
 [c~nalgebra-lapack~website~badge]: https://img.shields.io/badge/nalgebra--lapack-coral
+[c~nalgebra::Isometry3~docs]: https://docs.rs/nalgebra/latest/nalgebra/geometry/type.Isometry3.html
 [c~nalgebra::Matrix3~docs]: https://docs.rs/nalgebra/latest/nalgebra/base/type.Matrix3.html
+[c~nalgebra::Point3~docs]: https://docs.rs/nalgebra/latest/nalgebra/geometry/type.Point3.html
+[c~nalgebra::Rotation3~docs]: https://docs.rs/nalgebra/latest/nalgebra/geometry/type.Rotation3.html
+[c~nalgebra::Translation3~docs]: https://docs.rs/nalgebra/latest/nalgebra/geometry/type.Translation3.html
+[c~nalgebra::Unit~docs]: https://docs.rs/nalgebra/latest/nalgebra/base/struct.Unit.html
+[c~nalgebra::Vector3~docs]: https://docs.rs/nalgebra/latest/nalgebra/base/type.Vector3.html
 [c~nalgebra~crates.io]: https://crates.io/crates/nalgebra
 [c~nalgebra~crates.io~badge]: https://img.shields.io/badge/crates.io-nalgebra-crimson
 [c~nalgebra~docs]: https://docs.rs/nalgebra

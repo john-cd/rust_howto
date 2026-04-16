@@ -92,6 +92,64 @@ This code snippet creates a 3x3 matrix with [`nalgebra::Matrix3`][c~nalgebra::Ma
 {{#include ../../../crates/cats/mathematics/examples/linear_algebra/invert_matrix.rs:example}}
 ```
 
+## Use nalgebra Vectors {#nalgebra-vectors}
+
+[![nalgebra][c~nalgebra~docs~badge]][c~nalgebra~docs]{{hi:nalgebra}}
+[![nalgebra~crates.io][c~nalgebra~crates.io~badge]][c~nalgebra~crates.io]
+[![nalgebra~repo][c~nalgebra~repo~badge]][c~nalgebra~repo]
+[![nalgebra~lib.rs][c~nalgebra~lib.rs~badge]][c~nalgebra~lib.rs]
+[![cat~mathematics][cat~mathematics~badge]][cat~mathematics]{{hi:Mathematics}}
+[![cat~science][cat~science~badge]][cat~science]
+
+[`nalgebra`][c~nalgebra~docs]↗ provides fixed-size and dynamically-sized vectors and matrices. This example creates two [`nalgebra::Vector3`][c~nalgebra::Vector3~docs]↗{{hi:nalgebra::Vector3}} values and demonstrates:
+
+- **Dot product**: `v1.dot(&v2)` gives the scalar product of two vectors.
+- **Cross product**: `v1.cross(&v2)` gives the vector perpendicular to both (3D only).
+- **Norm**: `v.norm()` returns the Euclidean (L2) magnitude of the vector.
+- **Normalization**: `v.normalize()` returns a unit vector in the same direction.
+
+```rust,editable
+{{#include ../../../crates/cats/mathematics/examples/linear_algebra/nalgebra_vectors.rs:example}}
+```
+
+## Apply Transformations {#nalgebra-transformations}
+
+[![nalgebra][c~nalgebra~docs~badge]][c~nalgebra~docs]{{hi:nalgebra}}
+[![nalgebra~crates.io][c~nalgebra~crates.io~badge]][c~nalgebra~crates.io]
+[![nalgebra~repo][c~nalgebra~repo~badge]][c~nalgebra~repo]
+[![nalgebra~lib.rs][c~nalgebra~lib.rs~badge]][c~nalgebra~lib.rs]
+[![cat~mathematics][cat~mathematics~badge]][cat~mathematics]{{hi:Mathematics}}
+[![cat~science][cat~science~badge]][cat~science]
+
+[`nalgebra`][c~nalgebra~docs]↗ provides types for geometric transformations. This example demonstrates:
+
+- **[`nalgebra::Rotation3`][c~nalgebra::Rotation3~docs]↗{{hi:nalgebra::Rotation3}}**: creates a rotation around an axis by an angle using `Rotation3::from_axis_angle`.
+- **[`nalgebra::Translation3`][c~nalgebra::Translation3~docs]↗{{hi:nalgebra::Translation3}}**: represents a translation in 3D space.
+- **[`nalgebra::Isometry3`][c~nalgebra::Isometry3~docs]↗{{hi:nalgebra::Isometry3}}**: combines a rotation and a translation into a single rigid-body transformation.
+
+The `*` operator applies the transformation to a [`nalgebra::Point3`][c~nalgebra::Point3~docs]↗{{hi:nalgebra::Point3}}.
+
+```rust,editable
+{{#include ../../../crates/cats/mathematics/examples/linear_algebra/nalgebra_transformations.rs:example}}
+```
+
+## Decompose a Matrix with SVD {#nalgebra-svd}
+
+[![nalgebra][c~nalgebra~docs~badge]][c~nalgebra~docs]{{hi:nalgebra}}
+[![nalgebra~crates.io][c~nalgebra~crates.io~badge]][c~nalgebra~crates.io]
+[![nalgebra~repo][c~nalgebra~repo~badge]][c~nalgebra~repo]
+[![nalgebra~lib.rs][c~nalgebra~lib.rs~badge]][c~nalgebra~lib.rs]
+[![cat~mathematics][cat~mathematics~badge]][cat~mathematics]{{hi:Mathematics}}
+[![cat~science][cat~science~badge]][cat~science]
+
+[Singular Value Decomposition (SVD)][wikipedia~singular-value-decomposition]↗{{hi:SVD}} factorizes a matrix `M` into `U * Σ * Vᵀ`, where `U` and `V` are orthogonal matrices and `Σ` is a diagonal matrix of singular values. SVD is widely used in dimensionality reduction, pseudoinverse computation, and solving least-squares problems.
+
+This example uses [`nalgebra::Matrix3`][c~nalgebra::Matrix3~docs]↗{{hi:nalgebra::Matrix3}} and calls `.svd(true, true)` to compute the full decomposition. It also shows how to compute the determinant and trace of the matrix using `.determinant()` and `.trace()`.
+
+```rust,editable
+{{#include ../../../crates/cats/mathematics/examples/linear_algebra/nalgebra_decomposition.rs:example}}
+```
+
 ## (De)serialize a Matrix {#deserialize-a-matrix}
 
 [![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~repo][c~ndarray~repo~badge]][c~ndarray~repo] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]

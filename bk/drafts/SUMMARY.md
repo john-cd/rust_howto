@@ -78,6 +78,10 @@
   - [Parsing and Displaying](categories/date-and-time/parse.md)
   - [`time` Crate](categories/date-and-time/time_crate.md)
 
+- [Data Structures](categories/data-structures/index.md)
+  - [Perfect Hash Functions](categories/data-structures/phf.md)
+  - [Append-only Collections](categories/data-structures/elsa.md)
+
 - [Development Tools](categories/development-tools/index.md)
   - [Cargo](categories/development-tools/cargo/cargo.md)
     - [Package Layout](categories/development-tools/cargo/package_layout.md)
