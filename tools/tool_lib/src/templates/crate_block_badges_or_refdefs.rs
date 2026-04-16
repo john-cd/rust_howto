@@ -245,3 +245,237 @@ pub fn create_crate_block(name: &str) -> Result<(String, Vec<String>)> {
     // Also return the refdefs as a separate vector of strings.
     Ok((crate_block, vector_of_lines))
 }
+
+/// The regex pattern for matching `{{#crate crate_name}}` directives.
+///
+/// Matches the following variations:
+/// - `{{#crate crt}}`
+/// - `{{#crate crt }}`
+/// - `{{#crate: crt}}`
+/// - `{{#crate : crt}}`
+/// - `{{#crate x_y-z}}`
+/// - `{{#crate: crt cat1 cat-2 }}` (crate name with optional additional words)
+const CRATE_BLOCK_DIRECTIVE_REGEX: &str = r"\{\{\s*#crate\s*:?\s+([^\s}]+)[^}]*\}\}";
+
+/// Lazily compiled regex for `{{#crate crate_name}}` directives.
+/// Compiled only once and reused across all calls.
+static CRATE_BLOCK_RE: once_cell::sync::Lazy<regex::Regex> =
+    once_cell::sync::Lazy::new(|| {
+        regex::Regex::new(CRATE_BLOCK_DIRECTIVE_REGEX)
+            .expect("CRATE_BLOCK_DIRECTIVE_REGEX is a valid regex")
+    });
+
+/// Expand all `{{#crate crate_name}}` directives in the given content string.
+///
+/// For each `{{#crate crate_name}}` directive found, fetches crate information
+/// from crates.io and replaces the directive with the full crate block markdown
+/// (badges, keywords, categories, description, and reference definitions).
+///
+/// Directives for which crate information cannot be fetched are left unchanged,
+/// so that `mdbook-scrub` can clean them up later.
+///
+/// # Arguments
+///
+/// * `content` - The markdown content to process.
+///
+/// # Returns
+///
+/// A tuple `(expanded_content, refdefs)` where:
+/// - `expanded_content` is the content with directives replaced.
+/// - `refdefs` is a `Vec` of reference definition strings (one per non-empty
+///   line from all expanded crate blocks), suitable for merging into a
+///   `refs` file.
+pub fn process_crate_block_directives(content: &str) -> Result<(String, Vec<String>)> {
+    use std::collections::HashMap;
+    use std::collections::HashSet;
+
+    use regex::Captures;
+
+    let re = &*CRATE_BLOCK_RE;
+
+    // Collect unique crate names from all directives in the content.
+    let crate_names: HashSet<String> = re
+        .captures_iter(content)
+        .map(|caps| caps[1].trim().to_string())
+        .collect();
+
+    if crate_names.is_empty() {
+        return Ok((content.to_string(), vec![]));
+    }
+
+    // Pre-fetch crate data for all unique crate names.
+    // This avoids repeated API calls when the same crate appears multiple times.
+    let mut cache: HashMap<String, String> = HashMap::new();
+    let mut all_refdefs: Vec<String> = Vec::new();
+
+    for name in &crate_names {
+        match create_crate_block(name) {
+            Ok((block, refdefs)) => {
+                all_refdefs.extend(refdefs);
+                cache.insert(name.clone(), block);
+            }
+            Err(e) => {
+                tracing::warn!("Failed to generate crate block for '{name}': {e}");
+            }
+        }
+    }
+
+    // Replace directives with the pre-fetched crate block content.
+    // If crate lookup failed, leave the original directive unchanged.
+    let new_content = re.replace_all(content, |caps: &Captures| {
+        let name = caps[1].trim();
+        cache
+            .get(name)
+            .cloned()
+            .unwrap_or_else(|| caps[0].to_string())
+    });
+
+    Ok((new_content.into_owned(), all_refdefs))
+}
+
+/// Walk a directory tree, expand all `{{#crate crate_name}}` directives found
+/// in `.md` files, and optionally merge the collected reference definitions
+/// into a refdefs file.
+///
+/// For each Markdown file that contains one or more `{{#crate crate_name}}`
+/// directives, the file is backed up and overwritten with the expanded content.
+///
+/// # Arguments
+///
+/// * `dir` - Root directory to walk recursively.
+/// * `refdefs_file` - Optional path to a refdefs file where the collected
+///   reference definitions will be merged.
+pub fn expand_crate_block_directives_in_directory(
+    dir: &std::path::Path,
+    refdefs_file: Option<&std::path::Path>,
+) -> Result<()> {
+    use std::ffi::OsStr;
+
+    use walkdir::WalkDir;
+
+    let re = &*CRATE_BLOCK_RE;
+    let mut all_refdefs: Vec<String> = Vec::new();
+
+    for entry in WalkDir::new(dir) {
+        let entry = entry?;
+        let path = entry.path();
+
+        // Only process Markdown files.
+        if path.extension() != Some(OsStr::new("md")) {
+            continue;
+        }
+
+        let content = std::fs::read_to_string(path)?;
+
+        // Skip files that do not contain any `{{#crate }}` directives.
+        if !re.is_match(&content) {
+            continue;
+        }
+
+        tracing::info!("Processing '{}'", path.display());
+        let (new_content, refdefs) = process_crate_block_directives(&content)?;
+        all_refdefs.extend(refdefs);
+
+        // Only write back if the content actually changed.
+        if new_content != content {
+            crate::backup_then_write_to(path, new_content)?;
+        }
+    }
+
+    // Merge all collected refdefs into the refdefs file, if one was provided.
+    if let Some(refdefs_path) = refdefs_file {
+        crate::merge(refdefs_path, all_refdefs)?;
+    }
+
+    Ok(())
+}
+
+#[cfg(test)]
+mod directive_tests {
+    use super::CRATE_BLOCK_RE;
+
+    /// Helper: test that the regex captures the expected crate name from `input`.
+    fn assert_captures_crate_name(input: &str, expected_name: &str) {
+        let re = &*CRATE_BLOCK_RE;
+        let caps = re.captures(input).unwrap_or_else(|| {
+            panic!("Expected regex to match '{input}'");
+        });
+        assert_eq!(caps[1].trim(), expected_name, "input = {input:?}");
+    }
+
+    /// Helper: test that the regex does NOT match `input`.
+    fn assert_no_match(input: &str) {
+        let re = &*CRATE_BLOCK_RE;
+        assert!(
+            re.captures(input).is_none(),
+            "Expected regex NOT to match '{input}'"
+        );
+    }
+
+    #[test]
+    fn test_simple_crate_directive() {
+        assert_captures_crate_name("{{#crate crt}}", "crt");
+    }
+
+    #[test]
+    fn test_crate_directive_trailing_space() {
+        assert_captures_crate_name("{{#crate crt }}", "crt");
+    }
+
+    #[test]
+    fn test_crate_directive_colon() {
+        assert_captures_crate_name("{{#crate: crt}}", "crt");
+    }
+
+    #[test]
+    fn test_crate_directive_space_colon_space() {
+        assert_captures_crate_name("{{#crate : crt}}", "crt");
+    }
+
+    #[test]
+    fn test_crate_directive_hyphen_underscore() {
+        assert_captures_crate_name("{{#crate x_y-z}}", "x_y-z");
+    }
+
+    #[test]
+    fn test_crate_directive_with_additional_categories() {
+        assert_captures_crate_name(
+            "{{#crate: crt cat1 cat-2 cat-2-2 cat3::sub-cat-3 }}",
+            "crt",
+        );
+    }
+
+    #[test]
+    fn test_no_match_missing_crate_name() {
+        assert_no_match("{{#crate}}");
+        assert_no_match("{{#crate }}");
+    }
+
+    #[test]
+    fn test_no_match_example_directive() {
+        assert_no_match("{{#example some_example}}");
+    }
+
+    #[test]
+    fn test_multiple_directives_in_content() {
+        let re = &*CRATE_BLOCK_RE;
+        let content = "See {{#crate serde}} and {{#crate: anyhow }}.";
+        let names: Vec<&str> = re
+            .captures_iter(content)
+            .map(|c| c.get(1).unwrap().as_str().trim())
+            .collect();
+        // Order depends on iteration; just check both are present.
+        assert!(names.contains(&"serde"), "expected 'serde' in {names:?}");
+        assert!(names.contains(&"anyhow"), "expected 'anyhow' in {names:?}");
+    }
+
+    #[test]
+    fn test_process_crate_block_directives_no_directives() {
+        let content = "# Hello\n\nNo directives here.\n";
+        let result = super::process_crate_block_directives(content);
+        assert!(result.is_ok());
+        let (out, refdefs) = result.unwrap();
+        assert_eq!(out, content);
+        assert!(refdefs.is_empty());
+    }
+}

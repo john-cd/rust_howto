@@ -16,6 +16,7 @@ pub(super) fn cli() -> Command {
         .subcommand(subcommand_crate_page())
         .subcommand(subcommand_list_crates())
         .subcommand(subcommand_update_refdefs())
+        .subcommand(subcommand_expand_crate_blocks())
 }
 
 /// Builds the `category_page` subcommand of the CLI user interface
@@ -56,7 +57,20 @@ fn subcommand_update_refdefs() -> Command {
         .visible_alias("u")
         .about("Update the book's master list of reference definitions, reading the list of crates to include from the file path passed in argument")
         .arg(arg_crate_name())
-        .arg(arg_file_path())
+        .arg(arg_file_path_with_default())
+}
+
+/// Builds the `expand_crate_blocks` subcommand of the CLI user interface
+fn subcommand_expand_crate_blocks() -> Command {
+    Command::new("expand_crate_blocks")
+        .visible_alias("e")
+        .about(
+            "Walk a directory of Markdown files, expand {{#crate <name>}} directives into full \
+             crate badge blocks, and optionally merge the collected reference definitions into \
+             a refdefs file",
+        )
+        .arg(arg_directory())
+        .arg(arg_optional_file_path())
 }
 
 // Arguments -------------------------------------------------
@@ -70,8 +84,8 @@ fn arg_crate_name() -> clap::Arg {
         .help("Crate name(s)")
 }
 
-/// Builds the `file_path` argument of the CLI user interface
-fn arg_file_path() -> clap::Arg {
+/// Builds the `file_path` argument with a default value (used by `update_refdefs`).
+fn arg_file_path_with_default() -> clap::Arg {
     Arg::new("file_path")
         .long("file")
         .short('f')
@@ -82,6 +96,20 @@ fn arg_file_path() -> clap::Arg {
         .value_hint(ValueHint::FilePath)
         .default_value("./src/refs/crate-refs.md")
         .help("File path")
+}
+
+/// Builds the `file_path` argument without a default value (used by `expand_crate_blocks`).
+/// The refdefs file is optional: when not provided, reference definitions are not merged.
+fn arg_optional_file_path() -> clap::Arg {
+    Arg::new("file_path")
+        .long("file")
+        .short('f')
+        .required(false)
+        .action(clap::ArgAction::Set)
+        .value_name("FILE")
+        .value_parser(clap::value_parser!(PathBuf))
+        .value_hint(ValueHint::FilePath)
+        .help("Optional path to a refdefs file where reference definitions will be merged")
 }
 
 /// Builds the `directory` argument of the CLI user interface

@@ -10,9 +10,8 @@ use tool_lib::Category;
 /// This binary creates markdown files for the crate indices
 ///
 /// It can create a page with crates grouped by category,
-/// a page with crates grouped alphabetically,
-/// individual crate page sections for `crates_and_examples.md`,
-/// or update the refdefs.
+/// a page with crates grouped alphabetically, update the refdefs,
+/// or expand `{{#crate <name>}}` directives in Markdown files.
 fn main() -> anyhow::Result<()> {
     tracing_subscriber::fmt()
         .with_max_level(tracing::Level::WARN)
@@ -115,6 +114,12 @@ fn main() -> anyhow::Result<()> {
                 all_refdefs.extend(refdefs);
             }
             tool_lib::merge(cmdargs.filepathbuf, all_refdefs)?;
+        }
+        cli::Cmd::ExpandCrateBlocks(cmdargs) => {
+            tool_lib::expand_crate_block_directives_in_directory(
+                &cmdargs.dirpathbuf,
+                cmdargs.refdefs_filepathbuf.as_deref(),
+            )?;
         }
     }
     Ok(())
