@@ -1722,6 +1722,7 @@
 [wikipedia~polkadot]: https://en.wikipedia.org/wiki/Polkadot_(blockchain_platform)
 [wikipedia~race-condition]: https://en.wikipedia.org/wiki/Race_condition#File_systems
 [wikipedia~rust]: https://en.wikipedia.org/wiki/Rust_(programming_language)
+[wikipedia~singular-value-decomposition]: https://en.wikipedia.org/wiki/Singular_value_decomposition
 [wikipedia~splay-tree]: https://en.wikipedia.org/wiki/Splay_tree
 [wikipedia~uniform-distribution]: https://en.wikipedia.org/wiki/Uniform_distribution_(continuous)
 [wikipedia~unix-timestamp]: https://en.wikipedia.org/wiki/Unix_time
