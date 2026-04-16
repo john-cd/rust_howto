@@ -72,10 +72,6 @@ cargo install --force mdbook-indexing
 
 cargo binstall --no-confirm just
 cargo binstall --no-confirm cargo-deny
-cargo binstall --no-confirm cargo-audit
-cargo binstall --no-confirm cargo-outdated
-cargo +nightly install --locked cargo-udeps
-cargo binstall --no-confirm cargo-pants
 cargo binstall --no-confirm lychee
 
 cargo install sccache --locked

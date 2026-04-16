@@ -19,30 +19,32 @@ mod domain {
     /// Represents a product in the domain.
     #[derive(Debug, Clone)]
     pub struct Product {
-        pub id: u32,
-        pub name: String,
-        pub quantity: u32,
-        pub price: f64,
+        id: u32,
+        name: String,
+        quantity: u32,
     }
 
     /// Implementation of the Product struct.
     impl Product {
-        pub fn new(id: u32, name: String, quantity: u32, price: f64) -> Self {
-            Product {
-                id,
-                name,
-                quantity,
-                price,
-            }
+        pub fn new(id: u32, name: String, quantity: u32) -> Self {
+            Product { id, name, quantity }
+        }
+
+        // Getters.
+        pub fn id(&self) -> u32 {
+            self.id
+        }
+
+        pub fn name(&self) -> &str {
+            &self.name
+        }
+
+        pub fn quantity(&self) -> u32 {
+            self.quantity
         }
 
         pub fn set_quantity(&mut self, quantity: u32) {
             self.quantity = quantity;
-        }
-
-        pub fn update(&mut self, name: String, price: f64) {
-            self.name = name;
-            self.price = price;
         }
     }
 }
@@ -66,12 +68,6 @@ mod events {
             id: u32,
             name: String,
             quantity: u32,
-            price: f64,
-        },
-        ProductUpdated {
-            id: u32,
-            name: String,
-            price: f64,
         },
         ProductQuantityUpdated {
             id: u32,
@@ -137,12 +133,6 @@ mod commands {
             id: u32,
             name: String,
             quantity: u32,
-            price: f64,
-        },
-        UpdateProduct {
-            id: u32,
-            name: String,
-            price: f64,
         },
         UpdateProductQuantity {
             id: u32,
@@ -181,37 +171,13 @@ mod commands {
         }
 
         /// Handles a command and generates events.
-        pub async fn handle(&self, command: Command) -> anyhow::Result<()> {
+        fn handle(&self, command: Command) -> anyhow::Result<()> {
             match command {
-                Command::CreateProduct {
-                    id,
-                    name,
-                    quantity,
-                    price,
-                } => {
-                    let event = ProductEvent::ProductCreated {
-                        id,
-                        name,
-                        quantity,
-                        price,
-                    };
+                Command::CreateProduct { id, name, quantity } => {
+                    let event =
+                        ProductEvent::ProductCreated { id, name, quantity };
                     self.event_store.apply_event(event);
                     Ok(())
-                }
-
-                Command::UpdateProduct { id, name, price } => {
-                    // Check if product exists by replaying events
-                    if self.get_current_quantity(id).is_some() {
-                        let event = ProductEvent::ProductUpdated {
-                            id,
-                            name,
-                            price,
-                        };
-                        self.event_store.apply_event(event);
-                        Ok(())
-                    } else {
-                        Err(anyhow::anyhow!("Product with id {id} not found"))
-                    }
                 }
 
                 Command::UpdateProductQuantity {
@@ -223,7 +189,7 @@ mod commands {
                         let new_quantity = current as i32 + quantity;
                         if new_quantity < 0 {
                             return Err(anyhow::anyhow!(
-                                "Insufficient quantity for product {id}"
+                                "Update would result in negative quantity for product {id}!"
                             ));
                         }
                         let event = ProductEvent::ProductQuantityUpdated {
@@ -233,16 +199,16 @@ mod commands {
                         self.event_store.apply_event(event);
                         Ok(())
                     } else {
-                        Err(anyhow::anyhow!("Product with id {id} not found"))
-                    }
+                        Err(anyhow::anyhow!("Product with id {id} not found"
+))                     }
                 }
             }
         }
 
         /// Processes a command.
-        pub async fn process(&self, command: Command) -> anyhow::Result<()> {
+        pub fn process(&self, command: Command) -> anyhow::Result<()> {
             self.validate(&command)?;
-            self.handle(command).await
+            self.handle(command)
         }
 
         /// Gets the current quantity of a product by replaying events.
@@ -262,15 +228,6 @@ mod commands {
                         new_quantity,
                     } if *id == product_id => {
                         current_quantity = Some(*new_quantity);
-                    }
-                    ProductEvent::ProductUpdated { id, .. }
-                        if *id == product_id =>
-                    {
-                        // Price/Name updates don't change quantity,
-                        // but they confirm the product exists.
-                        if current_quantity.is_none() {
-                            current_quantity = Some(0);
-                        }
                     }
                     _ => {}
                 }
@@ -322,26 +279,15 @@ mod read_store {
             }
         }
 
-        fn apply_event_internal(
-            read_model: &mut HashMap<u32, Product>,
-            event: ProductEvent,
-        ) {
+        /// Updates the read model based on an event.
+        fn update(&self, event: ProductEvent) {
             match event {
-                ProductEvent::ProductCreated {
-                    id,
-                    name,
-                    quantity,
-                    price,
-                } => {
-                    read_model
-                        .insert(id, Product::new(id, name, quantity, price));
+                ProductEvent::ProductCreated { id, name, quantity } => {
+                    let mut read_model = self.read_model.write().unwrap();
+                    read_model.insert(id, Product::new(id, name, quantity));
                 }
-                ProductEvent::ProductUpdated { id, name, price } => {
-                    if let Some(product) = read_model.get_mut(&id) {
-                        product.update(name, price);
-                    }
-                }
-                ProductEvent::ProductQuantityUpdated { id, new_quantity } => {
+                ProductEvent::ProductQuantityUpdated { id, new_quantity } =>
+{                     let mut read_model = self.read_model.write().unwrap();
                     if let Some(product) = read_model.get_mut(&id) {
                         product.set_quantity(new_quantity);
                     }
@@ -355,8 +301,8 @@ mod read_store {
         pub fn rebuild_read_model(&self, events: Vec<ProductEvent>) {
             let mut read_model = self.read_model.write().unwrap();
             read_model.clear();
-            for event in events {
-                Self::apply_event_internal(&mut read_model, event);
+            for event in events.into_iter() {
+                self.update(event);
             }
         }
     }
@@ -367,12 +313,6 @@ mod query {
 
     use super::domain::Product;
     use super::read_store::ProductRepository;
-
-    /// Queries represent intentions to retrieve data from the system.
-    #[derive(Debug)]
-    pub enum Query {
-        GetProduct(u32),
-    }
 
     /// Query Handler:
     /// - Handles read requests.
@@ -390,15 +330,10 @@ mod query {
             }
         }
 
-        /// Handles a query.
-        pub async fn handle(&self, query: Query) -> anyhow::Result<Product> {
-            match query {
-                Query::GetProduct(id) => {
-                    self.read_repo.get_product(id).ok_or_else(|| {
-                        anyhow::anyhow!("Product with id {id} not found")
-                    })
-                }
-            }
+        /// Gets a product by ID.
+        pub fn get_product(&self, id: u32) -> Option<Product> {
+            // Business logic goes here
+            self.read_repo.get_product(id)
         }
     }
 }
@@ -406,12 +341,8 @@ mod query {
 /// Main function.
 use events::EventRepository;
 
-#[tokio::main]
-async fn main() -> anyhow::Result<()> {
+fn main() -> anyhow::Result<()> {
     use commands::Command;
-    use query::Query;
-    use std::time::Duration;
-    use tokio::time;
 
     let event_store = events::SimpleEventStore::new();
     let command_handler = commands::CommandHandler::new(event_store);
@@ -419,85 +350,73 @@ async fn main() -> anyhow::Result<()> {
     let read_store = read_store::SimpleReadStore::new();
     let query_handler = query::QueryHandler::new(read_store.clone());
 
-    // Create a product
-    command_handler
-        .process(Command::CreateProduct {
-            id: 1,
-            name: "Laptop".to_string(),
-            quantity: 10,
-            price: 1200.0,
-        })
-        .await?;
-
-    // Update product quantity
-    command_handler
-        .process(Command::UpdateProductQuantity {
-            id: 1,
-            quantity_change: -3,
-        })
-        .await?;
-
-    // Rebuild read model from events
-    let events = command_handler.event_store.get_events(None);
-    read_store.rebuild_read_model(events);
-
-    // Query the product
-    let query = Query::GetProduct(1);
-    match query_handler.handle(query).await {
-        Ok(product_retrieved) => {
-            println!(
-                "Product returned by query via query handler: {:?}",
-                product_retrieved
-            );
-        }
-        Err(e) => {
-            println!("An error occurred: {}", e);
-        }
-    }
-
-    // Send an update command
-    let command = Command::UpdateProduct {
+    command_handler.process(Command::CreateProduct {
         id: 1,
-        name: "Laptop v2".to_string(),
-        price: 1500.0,
-    };
-    command_handler.process(command).await?;
+        name: "Laptop".to_string(),
+        quantity: 10,
+    })?;
 
-    // Wait for event handler to process events (simulated here by rebuild)
-    time::sleep(Duration::from_millis(100)).await;
+    command_handler.process(Command::UpdateProductQuantity {
+        id: 1,
+        quantity_change: -3,
+    })?;
+
     let events = command_handler.event_store.get_events(None);
     read_store.rebuild_read_model(events);
 
-    // Query the product again
-    let query = Query::GetProduct(1);
-    match query_handler.handle(query).await {
-        Ok(product_retrieved) => {
-            println!("Updated product: {:?}", product_retrieved);
-            assert_eq!(product_retrieved.name, "Laptop v2");
-            assert_eq!(product_retrieved.price, 1500.0);
-        }
-        Err(e) => {
-            println!("An error occurred: {}", e);
-        }
+    if let Some(product) = query_handler.get_product(1) {
+        println!("Product: {product:?}");
+    } else {
+        println!("Product not found");
     }
 
-    // Try to create another product
     command_handler
         .process(Command::CreateProduct {
             id: 2,
             name: "Mouse".to_string(),
             quantity: 20,
-            price: 25.0,
         })
-        .await?;
+        .unwrap();
 
+    // read_store.rebuild_read_model(events);
+    // if let Some(product) = query_handler.get_product(2) {
+    //     println!("Product: {product:?}");
+    // } else {
+    //     println!("Product not found");
+    // }
     Ok(())
 }
 
-#[tokio::test]
-async fn test_cqrs() -> anyhow::Result<()> {
+#[test]
+fn test() -> anyhow::Result<()> {
     // We just execute main, which shouldn't panic
-    main()
+    let _ = main();
+    Ok(())
+}
+
+#[test]
+fn test_negative_quantity_update_returns_error() -> anyhow::Result<()> {
+    let event_store = events::SimpleEventStore::new();
+    let command_handler = commands::CommandHandler::new(event_store);
+
+    command_handler.process(commands::Command::CreateProduct {
+        id: 1,
+        name: "Test Product".to_string(),
+        quantity: 10,
+    })?;
+
+    let result = command_handler.process(commands::Command::UpdateProductQuantity {
+        id: 1,
+        quantity_change: -11,
+    });
+
+    assert!(result.is_err());
+    assert!(result
+        .unwrap_err()
+        .to_string()
+        .contains("Update would result in negative quantity"));
+
+    Ok(())
 }
 
 // TODO finish

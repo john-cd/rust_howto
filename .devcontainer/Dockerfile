@@ -158,9 +158,6 @@ RUN <<EOF
     ## Install the link checker `lychee`
     cargo binstall --no-confirm just
     cargo binstall --no-confirm cargo-deny
-    cargo binstall --no-confirm cargo-audit
-    cargo binstall --no-confirm cargo-outdated
-    cargo binstall --no-confirm cargo-pants
     cargo binstall --no-confirm lychee
 EOF
 
@@ -176,9 +173,6 @@ RUN rustup toolchain install nightly \
 ## Optional: make nightly the default
 #     && rustup default nightly
 ## You must update all .github wokflows as well
-
-## Install cargo-udeps, which requires the nightly toolchain to build
-RUN cargo +nightly install --locked cargo-udeps
 
 WORKDIR /code
 
@@ -213,7 +207,11 @@ RUN curl -sS https://webi.sh/gh | sh
 RUN cargo install --locked kani-verifier && \
     cargo install --locked bacon && \
     cargo binstall --no-confirm ripgrep
-## Note: cargo-deny, cargo-audit, cargo-outdated, cargo-udeps, cargo-pants are installed in the base stage.
+## Install optional cargo plugins:
+#  cargo install --locked cargo-outdated || true
+#  cargo install --locked cargo-udeps || true
+#  cargo install --locked cargo-audit || true
+#  cargo install --locked cargo-pants || true
 ## Optionally, install tool to convert TOML to JSON
 #   && cargo binstall --no-confirm toml2json \
 

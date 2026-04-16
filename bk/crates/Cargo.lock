@@ -18,7 +18,7 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "cargo-husky",
- "rand 0.9.3",
+ "rand 0.9.2",
  "url",
 ]
 
@@ -211,7 +211,7 @@ dependencies = [
  "hex-literal",
  "md5 0.8.0",
  "petgraph 0.8.3",
- "rand 0.9.3",
+ "rand 0.9.2",
  "rand_distr 0.5.1",
  "ring",
  "sha1",
@@ -822,7 +822,7 @@ dependencies = [
  "futures-util",
  "kanal",
  "postage",
- "rand 0.9.3",
+ "rand 0.9.2",
  "rayon",
  "reqwest",
  "time",
@@ -1459,7 +1459,7 @@ dependencies = [
  "indexmap 2.12.0",
  "js-sys",
  "once_cell",
- "rand 0.9.3",
+ "rand 0.9.2",
  "serde",
  "serde_bytes",
  "serde_json",
@@ -1655,7 +1655,7 @@ name = "caching"
 version = "0.1.2"
 dependencies = [
  "cached",
- "lru 0.17.0",
+ "lru 0.16.3",
  "moka",
 ]
 
@@ -1845,7 +1845,7 @@ dependencies = [
  "hostname",
  "local-ip-address",
  "percent-encoding",
- "rand 0.9.3",
+ "rand 0.9.2",
  "thrift_codec",
  "tokio",
  "trackable",
@@ -2301,7 +2301,7 @@ dependencies = [
  "papaya",
  "parking_lot 0.12.5",
  "ractor",
- "rand 0.9.3",
+ "rand 0.9.2",
  "rayon",
  "ring",
  "threadpool",
@@ -2734,7 +2734,7 @@ dependencies = [
  "ed25519-dalek",
  "p256",
  "pkcs8",
- "rand 0.9.3",
+ "rand 0.8.5",
  "ring",
  "rsa",
  "scrypt",
@@ -4059,7 +4059,7 @@ dependencies = [
  "deunicode",
  "dummy",
  "either",
- "rand 0.9.3",
+ "rand 0.9.2",
 ]
 
 [[package]]
@@ -5073,17 +5073,6 @@ name = "hashbrown"
 version = "0.16.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5419bdc4f6a9207fbeba6d11b604d481addf78ecd10c11ad51e76c2f6482748d"
-dependencies = [
- "allocator-api2",
- "equivalent",
- "foldhash 0.2.0",
-]
-
-[[package]]
-name = "hashbrown"
-version = "0.17.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4f467dd6dccf739c208452f8014c75c18bb8301b050ad1cfb27153803edb0f51"
 dependencies = [
  "allocator-api2",
  "equivalent",
@@ -6532,7 +6521,7 @@ dependencies = [
  "log-mdc",
  "mock_instant",
  "parking_lot 0.12.5",
- "rand 0.9.3",
+ "rand 0.9.2",
  "serde",
  "serde-value",
  "serde_json",
@@ -6573,11 +6562,11 @@ dependencies = [
 
 [[package]]
 name = "lru"
-version = "0.17.0"
+version = "0.16.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0e0b564323a0fb6d54b864f625ae139de9612e27edb944dda37c109f05aac531"
+checksum = "a1dc47f592c06f33f8e3aea9591776ec7c9f9e4124778ff8a3c3b87159f7e593"
 dependencies = [
- "hashbrown 0.17.0",
+ "hashbrown 0.16.0",
 ]
 
 [[package]]
@@ -7962,7 +7951,7 @@ dependencies = [
  "hmac",
  "pkcs12",
  "pkcs5",
- "rand 0.9.3",
+ "rand 0.9.2",
  "rc2",
  "sha1",
  "sha2",
@@ -8581,7 +8570,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ba89e4400cb978f0d7be1c14bd7ab4168c8e2c00d97ff19f964fc0048780237c"
 dependencies = [
  "arrayvec",
- "hashbrown 0.17.0",
+ "hashbrown 0.16.0",
  "parking_lot 0.12.5",
  "rand 0.8.5",
 ]
@@ -8889,7 +8878,7 @@ dependencies = [
  "hmac",
  "md-5",
  "memchr",
- "rand 0.9.3",
+ "rand 0.9.2",
  "sha2",
  "stringprep",
 ]
@@ -9103,7 +9092,7 @@ dependencies = [
  "bit-vec 0.8.0",
  "bitflags 2.10.0",
  "num-traits",
- "rand 0.9.3",
+ "rand 0.9.2",
  "rand_chacha 0.9.0",
  "rand_xorshift",
  "regex-syntax",
@@ -9347,7 +9336,7 @@ dependencies = [
  "bytes",
  "getrandom 0.3.4",
  "lru-slab",
- "rand 0.9.3",
+ "rand 0.9.2",
  "ring",
  "rustc-hash 2.1.1",
  "rustls",
@@ -9477,9 +9466,9 @@ dependencies = [
 
 [[package]]
 name = "rand"
-version = "0.9.3"
+version = "0.9.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7ec095654a25171c2124e9e3393a930bddbffdc939556c914957a4c3e0a87166"
+checksum = "6db2770f06117d490610c7488547d543617b21bfa07796d7a12f6f1bd53850d1"
 dependencies = [
  "rand_chacha 0.9.0",
  "rand_core 0.9.3",
@@ -9559,7 +9548,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6a8615d50dcf34fa31f7ab52692afec947c4dd0ab803cc87cb3b0b4570ff7463"
 dependencies = [
  "num-traits",
- "rand 0.9.3",
+ "rand 0.9.2",
 ]
 
 [[package]]
@@ -10451,9 +10440,9 @@ dependencies = [
 
 [[package]]
 name = "rustls-webpki"
-version = "0.103.12"
+version = "0.103.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8279bb85272c9f10811ae6a6c547ff594d6a7f3c6c6b02ee9726d1d0dcfcdd06"
+checksum = "df33b2b81ac578cabaf06b89b0631153a3f416b0a886e8a7a1707fb51abbd1ef"
 dependencies = [
  "aws-lc-rs",
  "ring",
@@ -12791,7 +12780,7 @@ dependencies = [
  "pin-project-lite",
  "postgres-protocol",
  "postgres-types",
- "rand 0.9.3",
+ "rand 0.9.2",
  "socket2 0.6.1",
  "tokio",
  "tokio-util",
@@ -13322,7 +13311,7 @@ version = "1.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "470dbf6591da1b39d43c14523b2b469c86879a53e8b758c8e090a470fe7b1fbe"
 dependencies = [
- "rand 0.9.3",
+ "rand 0.9.2",
  "serde",
  "web-time",
 ]
@@ -13629,7 +13618,7 @@ checksum = "2f87b8aa10b915a06587d0dec516c282ff295b475d94abf425d62b57710070a2"
 dependencies = [
  "getrandom 0.3.4",
  "js-sys",
- "rand 0.9.3",
+ "rand 0.9.2",
  "serde",
  "uuid-macro-internal",
  "wasm-bindgen",
