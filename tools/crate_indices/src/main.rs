@@ -10,7 +10,9 @@ use tool_lib::Category;
 /// This binary creates markdown files for the crate indices
 ///
 /// It can create a page with crates grouped by category,
-/// a page with crates grouped alphabetically, or update the refdefs.
+/// a page with crates grouped alphabetically,
+/// individual crate page sections for `crates_and_examples.md`,
+/// or update the refdefs.
 fn main() -> anyhow::Result<()> {
     tracing_subscriber::fmt()
         .with_max_level(tracing::Level::WARN)
@@ -68,6 +70,27 @@ fn main() -> anyhow::Result<()> {
                     crates.iter().map(AsRef::as_ref).collect(),
                 )?;
                 println!("{markdown}");
+            }
+        }
+        cli::Cmd::CratePage(crates) => {
+            // Group by first letter, uppercased
+            let grouped = crates
+                .crate_names
+                .iter()
+                .filter(|name| !name.is_empty() && name.as_str() != "std")
+                .sorted()
+                .map(|n| {
+                    let f: String = n.chars().next().unwrap().to_uppercase().collect();
+                    (f, n)
+                })
+                .into_group_map();
+
+            for (first_letter, crates) in grouped.iter().sorted_by_key(|x| x.0) {
+                println!("## {first_letter}\n");
+                for name in crates.iter().sorted() {
+                    let markdown = tool_lib::create_crate_page_section(name)?;
+                    println!("{markdown}");
+                }
             }
         }
         cli::Cmd::ListCrates(dircmdargs) => {
