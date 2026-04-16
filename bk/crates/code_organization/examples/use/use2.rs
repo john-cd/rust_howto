@@ -19,7 +19,7 @@ fn eat_at_restaurant() {
     // without writing the whole path e.g.
     // `front_of_house::hosting::add_to_waitlist()`.
     //
-    // IDIOM: we imported the module, not the function itself.
+    // IDIOM: import the module, not the function itself.
     hosting::add_to_waitlist();
 }
 

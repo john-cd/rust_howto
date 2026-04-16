@@ -4,5 +4,5 @@ operator = { "+" | "-" | "*" | "/" } // | matches one of the four strings (eithe
 number = { ASCII_DIGIT+ } // + matches one or more times
 
 // This rule starts with a _ and is therefore silent
-// (it produces no tokens or error reports)
+// (it produces no tokens or error reports).
 WHITESPACE = _{ " " | "\t" | "\r" | "\n" }

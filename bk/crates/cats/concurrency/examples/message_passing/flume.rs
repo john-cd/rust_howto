@@ -12,20 +12,20 @@ use flume::unbounded;
 // Example of using the `flume` crate for message passing.
 //
 // Features:
-// - Unbounded, bounded and rendezvous queues
-// - Drop-in replacement for `std::sync::mpsc`
-// - Additional features like MPMC support and send timeouts/deadlines
-// - `Sender` and `Receiver` both implement `Send + Sync + Clone`
-// - Asynchronous support, including mix and match with sync code
-// - `select`-like interface
-// - No `unsafe` code
+// - Unbounded, bounded and rendezvous queues.
+// - Drop-in replacement for `std::sync::mpsc`.
+// - Additional features like MPMC support and send timeouts/deadlines.
+// - `Sender` and `Receiver` both implement `Send + Sync + Clone`.
+// - Asynchronous support, including mix and match with sync code.
+// - `select`-like interface.
+// - No `unsafe` code.
 
 fn main() {
     // Create a bounded channel:
     let (tx, rx): (Sender<i32>, Receiver<i32>) = bounded(2);
 
     let tx2 = tx.clone();
-    // Spawn a producer thread
+    // Spawn a producer thread:
     let producer_handle = thread::spawn(move || {
         for i in 1..6 {
             // If there is no space left for new messages, calls to
@@ -43,7 +43,7 @@ fn main() {
     });
 
     let rx2 = rx.clone();
-    // Spawn a consumer thread
+    // Spawn a consumer thread:
     let consumer_handle = thread::spawn(move || {
         // Receive values from the channel in a loop.
         loop {
@@ -63,7 +63,7 @@ fn main() {
         }
     });
 
-    // Wait for producer thread to finish
+    // Wait for producer thread to finish:
     match producer_handle.join() {
         Ok(_) => println!("Producer thread finished."),
         Err(e) => eprintln!("Producer thread error: {e:?}"),

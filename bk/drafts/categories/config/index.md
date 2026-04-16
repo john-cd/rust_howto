@@ -10,23 +10,23 @@ Configuration management {{hi:Configuration management}} is the practice of hand
 
 ## Common Approaches
 
-- [[environment_variables | Environment Variables]] are suitable for simple configurations. The `std::env` module provides access to environment variables.
-- [[configuration | Configuration]] files like [[toml | TOML]], [[ini | INI]], [[yaml | YAML]], [[json | JSON]], or RON provide structured and organized configuration. Popular Rust crates for parsing these formats include: [`toml`][c~toml~docs]⮳{{hi:toml}}, [`serde_json`][c~serde_json~docs]⮳{{hi:serde_json}}, `ron`, [`serde`][c~serde~docs]⮳{{hi:serde}}.
+- [[environment_variables | Environment Variables]] are suitable for simple configurations. The [`std::env`][c~std::env~docs]↗{{hi:std::env}} module provides access to environment variables.
+- [[configuration | Configuration]] files like [[toml | TOML]], [[ini | INI]], [[yaml | YAML]], [[json | JSON]], or RON provide structured and organized configuration. Popular Rust crates for parsing these formats include: [`toml`][c~toml~docs]↗{{hi:toml}}, [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}}, [`ron`][c~ron~docs]↗{{hi:ron}}, [`serde`][c~serde~docs]↗{{hi:serde}}.
 
-FIXME Configuration crates like [`config-rs`][c~config~docs]⮳{{hi:config-rs}}, a powerful and flexible crate for layered configuration. It supports merging configurations from various sources, including files, environment variables, and in-memory data.
+FIXME Configuration crates like [`config-rs`][c~config~docs]↗{{hi:config-rs}}, a powerful and flexible crate for layered configuration. It supports merging configurations from various sources, including files, environment variables, and in-memory data.
 Excellent for 12-factor applications.
 
 Command-Line Arguments:
-Using crates like `clap` to parse command-line arguments.
+Using crates like [`clap`][c~clap~docs]↗{{hi:clap}} to parse command-line arguments.
 Suitable for passing simple configuration options.
 
 ## Best Practices
 
-Use a layered configuration approach: Combine multiple sources (e.g., default files, environment variables, command-line arguments) to provide flexibility and override behavior.
-Validate configuration: Ensure that configuration values are valid and within expected ranges.
-Handle errors gracefully: Provide informative error messages when configuration is invalid or missing.
-Secure sensitive data: Avoid storing secrets in version control. Use environment variables or dedicated secret management tools.
-Document configuration: Provide clear documentation of all configuration options.
+- Use a layered configuration approach: Combine multiple sources (e.g., default files, environment variables, command-line arguments) to provide flexibility and override behavior.
+- Validate configuration: Ensure that configuration values are valid and within expected ranges.
+- Handle errors gracefully: Provide informative error messages when configuration is invalid or missing.
+- Secure sensitive data: Avoid storing secrets in version control. Use environment variables or dedicated secret management tools.
+- Provide clear documentation of all configuration options.
 
 ## Configuration Management
 
@@ -40,22 +40,22 @@ Document configuration: Provide clear documentation of all configuration options
 
 ### Configuration File Formats
 
-- TOML: [`toml`][c~toml~docs]⮳{{hi:toml}}
-- YAML: [`serde_yml`][c~serde_yml~docs]⮳{{hi:serde_yml}}, [`yaml-rust`][c~yaml_rust~docs]⮳{{hi:yaml-rust}}
-- JSON: [`serde_json`][c~serde_json~docs]⮳{{hi:serde_json}}
-- INI: [`ini`][c~ini~docs]⮳{{hi:ini}}
+- TOML: [`toml`][c~toml~docs]↗{{hi:toml}}
+- YAML: [`serde_yml`][c~serde_yml~docs]↗{{hi:serde_yml}}, [`yaml-rust`][c~yaml-rust~docs]↗{{hi:yaml-rust}}
+- JSON: [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}}
+- INI: [`ini`][c~ini~docs]↗{{hi:ini}}
 
 ### Configuration Management
 
-- [`config`][c~config~docs]⮳{{hi:config}}: A popular crate that supports multiple formats and merging configurations from different sources (files, environment variables, etc.).
-[`serde`][c~serde~docs]⮳{{hi:serde}}: (Not a config crate itself, but essential for serializing and deserializing configuration - data in most cases).
-- Environment Variables: `std::env` (for accessing environment variables directly).
-
-## Related Topics {#skip}
-
-- Command-Line Arguments (often used in conjunction with [`config`][c~config~docs]⮳{{hi:config}}): [`clap`][c~clap~docs]⮳{{hi:clap}}, [`structopt`][c~structopt~docs]⮳{{hi:structopt}}, [`argh`][c~argh~docs]⮳{{hi:argh}}
+- [`config`][c~config~docs]↗{{hi:config}}: A popular crate that supports multiple formats and merging configurations from different sources (files, environment variables, etc.).
+[`serde`][c~serde~docs]↗{{hi:serde}}: (Not a config crate itself, but essential for serializing and deserializing configuration - data in most cases).
+- Environment Variables: [`std::env`][c~std::env~docs]↗{{hi:std::env}} (for accessing environment variables directly).
 
 Configuration Validation: (Often done manually or with custom functions, but schemars can be used to generate JSON schema for validation).
+
+### Command-line Arguments
+
+- Command-Line Arguments (often used in conjunction with [`config`][c~config~docs]↗{{hi:config}}): [`clap`][c~clap~docs]↗{{hi:clap}}, [`structopt`][c~structopt~docs]↗{{hi:structopt}}, [`argh`][c~argh~docs]↗{{hi:argh}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

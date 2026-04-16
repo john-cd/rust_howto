@@ -16,7 +16,7 @@ fn parse_port(s: &str) -> Result<u16, Box<dyn Error>> {
     // `Box` encapsulates the `dyn Error` trait object, because it is
     // dynamically sized. The trait object enables "late binding" a.k.a.
     // virtual dispatch at runtime, depending on the actual Error type.
-    // Alternatively, you may return `anyhow::Result` - the `anyhow` crate
+    // Alternatively, return `anyhow::Result` - the `anyhow` crate
     // handles the complexity for you.
     let port: u16 = s.parse()?;
     if port == 0 {
@@ -29,12 +29,12 @@ fn parse_port(s: &str) -> Result<u16, Box<dyn Error>> {
 fn main() {
     match parse_port("123") {
         Ok(port) => println!("Port: {port}"),
-        Err(err) => panic!("{}", err),
+        Err(err) => panic!("{err}"),
     }
     // Test with an invalid port number (zero).
     // match parse_port("0") {
     //     Ok(port) => println!("Port: {port}"),
-    //     Err(err) => panic!("{}", err),
+    //     Err(err) => panic!("{err}"),
     // }
 }
 // ANCHOR_END: example

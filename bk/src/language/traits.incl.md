@@ -1,6 +1,6 @@
 ||
 |--------|
-| [Trait Syntax][ex~language~trait] |
+| [Declare a Trait][ex~language~trait-syntax] |
 | [Provide a Default Implementation for a Trait's Function or Method][ex~language~default-implementation] |
 | [Define Associated Types in Traits][ex~language~associated-types] |
 | [Define Associated Constants in Traits][ex~language~constants-in-traits] |
@@ -12,3 +12,4 @@
 | [Define Generic Traits that Work with Multiple Types][ex~language~generic-traits] |
 | [Use a Trait Bound to Guarantee that a Generic Type Implements a Trait][ex~language~trait-bounds] |
 | [Use Async with Traits][ex~language~async-and-traits] |
+| [Declare a Trait][ex~language~trait-syntax] | | |

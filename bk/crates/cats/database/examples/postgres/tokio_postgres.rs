@@ -13,12 +13,10 @@
 async fn main() -> Result<(), tokio_postgres::Error> {
     // Connect to the database.
     //  The libpq-style connection strings consist of space-separated
-    // key-value pairs: <https://docs.rs/tokio-postgres/latest/tokio_postgres/config/struct.Config.html>
-    let (client, connection) = tokio_postgres::connect(
-        "host=rust_howto_dev-postgres-1 user=postgres password=mysecretpassword dbname=library",
-        tokio_postgres::NoTls,
-    )
-    .await?;
+    // key-value pairs: <https://docs.rs/tokio-postgres/latest/tokio_postgres/config/struct.Config.html>.
+    let url = std::env::var("PG_URL").expect("PG_URL must be set");
+    let (client, connection) =
+        tokio_postgres::connect(&url, tokio_postgres::NoTls).await?;
 
     // Spawn the connection on a separate task.
     // The connection object performs the actual communication with the
@@ -87,9 +85,19 @@ async fn main() -> Result<(), tokio_postgres::Error> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn require_external_svc() -> anyhow::Result<()> {
-    main()?;
+#[tokio::test]
+async fn require_external_svc() -> anyhow::Result<()> {
+    let _lock = super::ENV_MUTEX.lock().unwrap();
+    let test_url = std::env::var("TEST_PG_URL").unwrap_or_else(|_| {
+        "host=rust_howto_dev-postgres-1 user=postgres password=password dbname=library".to_string()
+    });
+    unsafe {
+        std::env::set_var(
+            "PG_URL",
+            "host=rust_howto_dev-postgres-1 user=postgres password=password dbname=library",
+        );
+    }
+    tokio::task::spawn_blocking(|| main()).await??;
     Ok(())
 }
-// [finish NOW](https://github.com/john-cd/rust_howto/issues/719) need heay test
+// [finish](https://github.com/john-cd/rust_howto/issues/719) need heay test

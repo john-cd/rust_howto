@@ -85,8 +85,8 @@ impl Category {
     ) -> Category {
         match parent {
             Some(parent) => Category {
-                slug: format!("{}::{}", parent.slug, slug),
-                category: format!("{}::{}", parent.category, category),
+                slug: format!("{}::{slug}", parent.slug),
+                category: format!("{}::{category}", parent.category),
                 description: description.into(),
             },
             None => Category {

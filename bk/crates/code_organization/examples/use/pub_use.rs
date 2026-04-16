@@ -10,7 +10,7 @@ mod a_module {
     // into scope, with the `public_function` name.
     // Since `use` is preceded by `pub`, the `public_function` name is public.
     pub use private_module::public_function;
-    // You can rename the item that is re-exported:
+    // We can rename the item that is re-exported:
     pub use private_module::public_function as another_name;
 }
 
@@ -25,6 +25,7 @@ fn main() {
     // Access the re-exported item via its alternate name.
     a_module::another_name();
 
+    println!("pub use example: functions re-exported and called successfully");
     // Notes:
     // - Re-exports hide implementation details and flatten the module
     //   hierarchy. `public_function` appears as if it were declared in

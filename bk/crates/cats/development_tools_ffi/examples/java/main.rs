@@ -1,3 +1,0 @@
-mod jni;
-
-fn main() {}

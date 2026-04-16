@@ -25,7 +25,7 @@ use a::b;
 
 // A relative path starts from the current module and uses
 // `self`, or an identifier in the current module.
-// You could also write: `use self::a::b;`.
+// We could also write: `use self::a::b;`.
 
 fn main() {
     // Call the function using its full path.

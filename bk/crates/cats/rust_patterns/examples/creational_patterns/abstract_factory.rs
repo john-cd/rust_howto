@@ -11,8 +11,8 @@
 //! The following example simulates building a UI library that needs to support
 //! different themes, like "Light" and "Dark." Each theme will have its own set
 //! of widgets: buttons, text boxes, and so on. The Abstract Factory pattern
-//! lets you define an interface for creating these families of widgets,
-//!  and then you can have concrete factories for each theme.
+//! lets us define an interface for creating these families of widgets,
+//!  and then we can have concrete factories for each theme.
 
 // Operations common to all concrete objects.
 trait Button {
@@ -85,7 +85,7 @@ mod dark {
         }
     }
 
-    // Concrete Factory for Dark Theme.
+    // Concrete factory for Dark Theme.
     pub struct DarkGUIFactory;
 
     impl GUIFactory for DarkGUIFactory {

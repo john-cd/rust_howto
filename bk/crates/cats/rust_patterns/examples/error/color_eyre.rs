@@ -23,8 +23,7 @@ fn divide(a: i32, b: i32) -> Result<i32> {
     if b == 0 {
         // Use the `eyre!` macro to construct an ad-hoc error from a string.
         Err(eyre!(
-            "Attempted to divide {} by zero in the `divide` function.",
-            a
+            "Attempted to divide {a} by zero in the `divide` function."
         ))
     } else {
         Ok(a / b)

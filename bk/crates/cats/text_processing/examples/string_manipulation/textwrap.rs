@@ -11,8 +11,10 @@ use textwrap::fill;
 use textwrap::wrap;
 
 // Add the dependency to Cargo.toml:
+// ```toml
 // [dependencies]
 // textwrap = "0.16.0"
+// ```
 
 fn main() {
     let text = "The quick brown fox jumps over the lazy dog. This is an example of text that will be wrapped to demonstrate the textwrap crate functionality in Rust. It offers various options to control how text wrapping behaves.";
@@ -45,14 +47,14 @@ fn main() {
     let hyphenated = fill(text, &options);
     println!("{hyphenated}");
 
-    // Handling long words
+    // Handling long words.
     let text_with_long_word =
         "This contains supercalifragilisticexpialidocious which is quite long.";
     println!("\nHandling long words (width: 20):");
     let long_word_wrapped = fill(text_with_long_word, 20);
     println!("{long_word_wrapped}");
 
-    // Preserving indentation of the first line
+    // Preserving indentation of the first line.
     let indented_text =
         "    This paragraph has\nan indentation that should be preserved.";
     println!("\nPreserving first-line indent:");

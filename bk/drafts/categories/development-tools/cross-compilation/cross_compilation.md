@@ -4,30 +4,30 @@
 
 |  |  |
 |---|---|
-| Build Systems | Use [cargo][p~cargo], xtask (for managing complex builds) |
+| Build Systems | Use [cargo][p~cargo], [`xtask`][c~xtask~docs]↗{{hi:xtask}} (for managing complex builds) |
 | Target Specification | Handled by [cargo][p~cargo] through target triples |
-| C/C++ Dependencies | Often a source of complexity; [`cc`][c~cc~docs]⮳{{hi:cc}} crate can help |
-| Platform-Specific Code | Use conditional compilation [attributes][p~attributes] like `cfg` to manage platform-specific code |
-| Foreign Function Interface (FFI) | Use `std::ffi` (for interacting with C code, which might require cross-compilation) |
+| C/C++ Dependencies | Often a source of complexity; [`cc`][c~cc~docs]↗{{hi:cc}} crate can help |
+| Platform-Specific Code | Use conditional compilation [attributes][p~attributes] like [`cfg`][book~rust-reference~conditional-compilation]↗{{hi:cfg}} to manage platform-specific code |
+| Foreign Function Interface (FFI) | Use [`std::ffi`][c~std::ffi~docs]↗{{hi:std::ffi}} (for interacting with C code, which might require cross-compilation) |
 
 ## Cross-compile with `cargo` {#cross-compile-with-cargo}
 
 ## Cross-compile for Multiple Target OSes and Architectures {#cross-compilation}
 
-[![cross][c~cross~docs~badge]][c~cross~docs]{{hi:cross}} [![cross~github][c~cross~github~badge]][c~cross~github] [![cat~compilers][cat~compilers~badge]][cat~compilers]{{hi:Compilers}}
+[![cross][c~cross~docs~badge]][c~cross~docs]{{hi:cross}} [![cross~repo][c~cross~repo~badge]][c~cross~repo] [![cat~compilers][cat~compilers~badge]][cat~compilers]{{hi:Compilers}}
 
-Cross-Compilation Tools include [`cross`][c~cross~docs]⮳{{hi:cross}}, a popular tool that uses Docker to simplify cross-compilation.
+Cross-Compilation Tools include [`cross`][c~cross~docs]↗{{hi:cross}}, a popular tool that uses Docker to simplify cross-compilation.
 
-[`cross`][c~cross~github]{{hi:cross}}⮳ simplify cross-compilation. It builds your Rust project for different target operating systems and architectures from a single development environment. It requires [`rustup`][rustup~website]{{hi:rustup}}⮳ and [`Docker`][docker~website]{{hi:docker}}⮳ or [`Podman`][podman~website]{{hi:podman}}⮳.
+[`cross`][c~cross~repo]↗{{hi:cross}} simplify cross-compilation. It builds your Rust project for different target operating systems and architectures from a single development environment. It requires [`rustup`][rustup~website]↗{{hi:rustup}} and [`Docker`][docker~website]↗{{hi:docker}} or [`Podman`][podman~website]↗{{hi:podman}}.
 
 ```sh
 cargo install cross --git https://github.com/cross-rs/cross
 
-# Optionally, if you have `cargo-binstall`, you can install the pre-built binary
+# Optionally, if `cargo-binstall` is present, install the pre-built binary:
 cargo binstall cross
 ```
 
-[`cross`][c~cross~docs]{{hi:cross}}⮳ has the exact same CLI as [`cargo`][c~cargo~docs]{{hi:cargo}}⮳ but relies on [`docker`][docker~website]{{hi:docker}}⮳ or [`podman`][podman~website]{{hi:podman}}⮳.
+[`cross`][c~cross~docs]↗{{hi:cross}} has the exact same CLI as [`cargo`][c~cargo~docs]↗{{hi:cargo}} but relies on [`docker`][docker~website]↗{{hi:docker}} or [`podman`][podman~website]↗{{hi:podman}}.
 
 ```sh
 cross build --target aarch64-unknown-linux-gnu
@@ -39,9 +39,9 @@ cross run --target aarch64-unknown-linux-gnu
 
 [![cross~wiki][c~cross~wiki~badge]][c~cross~wiki]
 
-Examples: [![cross-toml~example][c~cross-toml~example~badge]][c~cross-toml~example]
+Examples: [![cross~toml-example][c~cross~toml-example~badge]][c~cross~toml-example]
 
-## Related Topics {#skip}
+## Related Topics {#related-topics .skip}
 
 - [[autocfg | Autocfg]].
 - [[build_time_tooling | Build Time Tooling]].

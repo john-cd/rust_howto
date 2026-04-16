@@ -1,0 +1,62 @@
+# Common Design Patterns in Rust
+
+{{#include architectural_patterns.incl.md}}
+
+## Repository Pattern {#repository-pattern}
+
+- Encapsulates data access logic, separating it from business logic.
+- Makes it easier to test the business logic by using mock repositories.
+- Simplifies code maintenance by centralizing data access logic.
+- Easily switches between different data storage implementations.
+- Often combined with ORM tools like [`diesel`][c~diesel~docs]↗{{hi:diesel}} or [`sea-orm`][c~sea-orm~docs]↗{{hi:sea-orm}}. See [[query_builders_orms | Query Builders & ORMs]].
+
+```rust,editable
+{{#include ../../../crates/other/examples/architecture/repository.rs:example}}
+```
+
+## State Machine Pattern {#state-machine-pattern}
+
+- Models systems as a collection of states and transitions.
+- Useful for handling workflows or processes with clear states.
+
+```rust,editable
+{{#include ../../../crates/other/examples/architecture/state_machine.rs:example}}
+```
+
+## Dependency Injection {#dependency-injection}
+
+- Promotes modularity by injecting dependencies at runtime or compile time.
+- Achievable using crates like [`shaku`][c~shaku~docs]↗{{hi:shaku}}.
+- Rarer in Rust than in other languages like Java.
+
+```rust,editable
+{{#include ../../../crates/other/examples/architecture/di.rs:example}}
+```
+
+### Compile-time Service Registration with `inventory` {#inventory}
+
+The [`inventory`][c~inventory~docs]↗{{hi:inventory}} crate enables a *submit-and-collect* pattern: plugins or services register themselves at link time via `inventory::submit!`, and the application collects them at runtime with `inventory::iter`. This approach:
+
+- Requires no central registry file to update when adding new plugins.
+- Uses compile/link-time registration with runtime iteration, without needing runtime reflection.
+- Is commonly used for plugin architectures, command dispatchers, and test registries.
+
+```rust,editable
+{{#include ../../../crates/other/examples/architecture/di_inventory.rs:example}}
+```
+
+## Related Topics {#related-topics .skip}
+
+- [[config | Configuration]] Management: Loading and managing settings with [`config`][c~config~docs]↗{{hi:config}} or [`dotenv`][c~dotenv~docs]↗{{hi:dotenv}}.
+- Logging and Monitoring: Structured logging with [`tracing`][c~tracing~docs]↗{{hi:tracing}} or [`log`][c~log~docs]↗{{hi:log}}. See [[development-tools_debugging | Development Tools: Debugging]].
+- [[error_handling | Error Handling]].
+- [[testing | Testing]] and Quality Assurance.
+- [[performance | Performance]] Optimization.
+- Deployment and Operations. See [[devops | Devops]].
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[P1 done](https://github.com/john-cd/rust_howto/issues/1231)
+</div>

@@ -1,0 +1,3 @@
+[submodule "mdbook-utils"]
+	path = mdbook-utils
+	url = https://github.com/john-cd/mdbook-utils

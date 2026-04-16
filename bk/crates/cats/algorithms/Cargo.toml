@@ -15,9 +15,21 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-rand = { version = "0.9.0", features = ["thread_rng"] }
-rand_distr = "0.5.0"
+rand = "0.9.3"
+rand_distr = "0.5.1"
 fastrand = "2.3.0"
+blake3 = "1.8.2"
+md5 = "0.8.0"
+sha1 = "0.10.6"
+sha2 = "0.10.9"
+ring = "0.17.14"
+
+petgraph = "0.8.3"
 
 ## General
-anyhow = "1.0.95"
+anyhow = "1.0.100"
+base64ct = { version =  "1.8.0", features = [ "alloc" ] }
+base16ct = { version = "0.3.0", features = [ "alloc" ] }
+data-encoding = "2.9.0"
+hex-literal = "1.0.0"
+tempfile = "3.23.0"

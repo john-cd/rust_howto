@@ -41,9 +41,7 @@ fn main() -> Result<()> {
     // Check if the parsed version meets the required version constraint.
     if !version_test.matches(&parsed_version) {
         bail!(
-            "Command version lower than minimum supported version (found {}, need {})",
-            parsed_version,
-            version_constraint
+            "Command version lower than minimum supported version (found {parsed_version}, need {version_constraint})"
         );
     }
     println!("{parsed_version:?}");

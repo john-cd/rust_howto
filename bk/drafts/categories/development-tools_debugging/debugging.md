@@ -4,9 +4,9 @@
 
 | Topic | Rust Crates |
 |---|---|
-| Debugging | [`gdb`][c~gdb~docs]⮳{{hi:gdb}} or [`lldb`][c~lldb~docs]⮳{{hi:lldb}} |
+| Debugging | [`gdb`][c~gdb~docs]↗{{hi:gdb}} or [`lldb`][c~lldb~docs]↗{{hi:lldb}} |
 
-## Related Topics {#skip}
+## Related Topics {#related-topics .skip}
 
 - [[development-tools | Development Tools]].
 - [[development-tools_profiling | Development Tools: Profiling]].

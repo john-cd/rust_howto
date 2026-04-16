@@ -28,12 +28,12 @@ use ratatui::widgets::Widget;
 ///
 /// It also handles any errors that occur during the application's execution.
 fn main() {
-    // Create a new DefaultTerminal and initialize it
+    // Create a new `DefaultTerminal` and initialize it
     // with the following defaults:
-    // - Backend: CrosstermBackend writing to Stdout
-    // - Raw mode enabled
-    // - Alternate screen buffer enabled
-    // - Panic hook installed
+    // - Backend: `CrosstermBackend` writing to `Stdout`,
+    // - Raw mode enabled,
+    // - Alternate screen buffer enabled,
+    // - Panic hook installed.
     let terminal = ratatui::init();
     let app_result = App::default().run(terminal);
     // Restore the terminal to its original state.
@@ -67,7 +67,7 @@ impl App {
     fn run(&mut self, mut terminal: DefaultTerminal) -> Result<()> {
         while self.mode != Mode::Done {
             // `draw` must render the entire UI.
-            // You should only call it once for each pass
+            // It should be called only once for each pass
             // through your application's main loop.
             terminal.draw(|frame| self.ui(frame))?;
             self.handle_events()?;
@@ -112,7 +112,7 @@ impl App {
                     self.mode = Mode::Exiting
                 }
                 // Call additional methods here to handle other
-                // key events
+                // key events.
             }
             Mode::Exiting => match key_event.code {
                 KeyCode::Char('y') => self.mode = Mode::Done,
@@ -131,7 +131,7 @@ impl App {
 /// application's UI is rendered.
 impl Widget for &App {
     fn render(self, area: Rect, buf: &mut Buffer) {
-        // Create a layout with three vertical chunks using Layout.
+        // Create a layout with three vertical chunks using `Layout`.
         // Each chunk will hold a different widget.
         let chunks = Layout::default()
             .direction(Direction::Vertical)
@@ -147,20 +147,20 @@ impl Widget for &App {
             .split(area);
 
         // Within the root widget (and its children), we call the `render`
-        // method, passing in the area which you want to render the
-        // widgets to. Here, we draw a `Block` widget with a title.
+        // method, passing in the area which we want to render the
+        // widgets to. Here, we draw a `Block` widget with a title:
         let title_block = Block::default().borders(Borders::ALL).title(
             Span::styled("Ratatui example", Style::default().fg(Color::Yellow)),
         );
         title_block.render(chunks[0], buf);
 
-        // You can create a custom Widget struct to encapsulate the rendering
+        // We can create a custom Widget struct to encapsulate the rendering
         // logic:
         MiddleWidget::new("This is an example of using ratatui to create terminal user interfaces")
             .render(chunks[1], buf);
 
         // Draw another Paragraph widget in the third chunk as a footer,
-        // with instructions dependent on the current mode.
+        // with instructions dependent on the current mode:
         let current_navigation_text = match self.mode {
             Mode::Running => Span::styled(
                 "Press 'q' to quit",

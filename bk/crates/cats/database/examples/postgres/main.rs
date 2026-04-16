@@ -1,19 +1,41 @@
+#[cfg(feature = "postgres")]
 mod aggregate_data;
+#[cfg(feature = "postgres")]
 mod cornucopia;
+#[cfg(feature = "postgres")]
 mod create_tables;
+#[cfg(feature = "postgres")]
 mod insert_query_data;
+#[cfg(feature = "postgres")]
 mod tokio_postgres;
 
+#[cfg(feature = "postgres")]
+#[allow(dead_code)]
+pub(crate) static ENV_MUTEX: std::sync::Mutex<()> = std::sync::Mutex::new(());
+
+#[cfg(feature = "postgres")]
 fn main() -> anyhow::Result<()> {
     create_tables::main()?;
     insert_query_data::main()?;
-    // aggregate_data::main()?;
+    // NOTE: aggregate_data::main() expects a different database (e.g., "moma").
+    // FIXME aggregate_data::main()?;
     Ok(())
 }
 
+#[cfg(feature = "postgres")]
 #[test]
 fn require_external_svc() -> anyhow::Result<()> {
+    let _lock = ENV_MUTEX.lock().unwrap();
+    unsafe {
+        std::env::set_var(
+            "PG_URL",
+            "postgresql://postgres:password@rust_howto_dev-postgres-1/library",
+        );
+    }
     main()?;
     Ok(())
 }
-// [review NOW](https://github.com/john-cd/rust_howto/issues/713)
+
+#[cfg(not(feature = "postgres"))]
+fn main() {}
+// [review](https://github.com/john-cd/rust_howto/issues/713)

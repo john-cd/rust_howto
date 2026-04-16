@@ -2,7 +2,7 @@
 
 [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Development tools::Testing}}
 
-Tools to help you verify the correctness{{hi:Correctness}} of your code.
+Tools to verify the correctness{{hi:Correctness}} of your code.
 
 ## Testing
 
@@ -30,6 +30,6 @@ Tools to help you verify the correctness{{hi:Correctness}} of your code.
 <div class="hidden">
 [expand](https://github.com/john-cd/rust_howto/issues/341)
 
-- [trybuild: Test harness for ui tests of compiler diagnostics](https://github.com/dtolnay/trybuild)
+- [trybuild][c~trybuild~repo]↗: Test harness for ui tests of compiler diagnostics.
 
 </div>

@@ -16,7 +16,7 @@ fn main() {
             // Pin the map.
             // Pinning and unpinning the table is relatively cheap but not free.
             // Therefore, pin reuse is encouraged, within reason, noting that,
-            // as long as you are holding on to a pin, you
+            // as long as we are holding on to a pin, you
             // are preventing the map from performing garbage collection.
             let m = map.pin();
             for i in 'A'..='Z' {
@@ -38,14 +38,13 @@ fn main() {
         });
 
         // Read the values.
-        // Note that
+        // Note that:
         // - Read and write operations may overlap in time.
         // - There is no support for locking the entire table nor individual
-        //   keys
-        // to prevent concurrent access, except through external fine-grained
-        // locking.
-        // - Read operations (such as get) reflect the results of
-        // the most-recent write.
+        //   keys to prevent concurrent access, except through external
+        //   fine-grained locking.
+        // - Read operations (such as get) reflect the results of the
+        //   most-recent write.
         s.spawn(|| {
             for (key, value) in map.pin().iter() {
                 println!("{key}: {value}");
@@ -56,12 +55,12 @@ fn main() {
         let m = map.pin();
         // Updates an existing entry or inserts a default value atomically.
         m.update_or_insert('#', |e| e + 1, 1);
-        // In this case, the key did not exist and 1 was inserted.
+        // In this case, the key did not exist and `1` was inserted.
         assert_eq!(m.get(&'#'), Some(&1));
         // Updates an existing entry atomically.
         assert_eq!(m.update('#', |e| e + 1), Some(&2));
     });
-    // Example adapted from <https://docs.rs/papaya/latest/papaya/>
+    // Example adapted from <https://docs.rs/papaya/latest/papaya>
 }
 // ANCHOR_END: example
 

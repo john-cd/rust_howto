@@ -23,21 +23,21 @@ use crossterm::terminal::ClearType;
 fn main() -> anyhow::Result<()> {
     let mut stdout = stdout();
 
-    // Enter raw mode and enable mouse capture
+    // Enter raw mode and enable mouse capture:
     terminal::enable_raw_mode()?;
-    // Execute the command immediately
+    // Execute the command immediately:
     execute!(stdout, EnableMouseCapture)?;
 
-    // Clear the screen and move cursor to the top left
-    // You can queue commands instead of executing them directly
-    // when you call `Write::flush` these commands will be executed.
+    // Clear the screen and move cursor to the top left.
+    // We can queue commands instead of executing them directly.
+    // When we call `Write::flush`, these commands will be executed.
     queue!(stdout, Clear(ClearType::All), cursor::MoveTo(0, 0))?;
     // Many other commands...
     stdout.flush()?;
 
-    // Display instructions
+    // Display instructions:
     println!("Press 'q' to exit.");
-    // Set the foreground color to blue and the background color to white.
+    // Set the foreground color to blue and the background color to white:
     execute!(
         stdout,
         SetForegroundColor(Color::Blue),
@@ -46,12 +46,12 @@ fn main() -> anyhow::Result<()> {
     )?;
     // We can use the `execute` function rather than the macro.
     // The `execute` function returns itself,
-    // therefore you can queue another command.
-    // Reset the color to the default.
+    // therefore we could queue another command.
+    // Reset the color to the default:
     stdout.execute(style::ResetColor)?;
 
     loop {
-        // Listen for key events
+        // Listen for key events:
         if let Event::Key(key_event) = event::read()? {
             match key_event.code {
                 KeyCode::Char('q') => {
@@ -74,7 +74,7 @@ fn main() -> anyhow::Result<()> {
         }
     }
 
-    // Leave raw mode and disable mouse capture
+    // Leave raw mode and disable mouse capture:
     terminal::disable_raw_mode()?;
     execute!(stdout, DisableMouseCapture)?;
 

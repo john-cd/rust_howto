@@ -62,10 +62,10 @@ fn main() -> Result<()> {
 #[test]
 fn require_external_svc() -> Result<()> {
     unsafe {
-        // container name = $COMPOSE_PROJECT_NAME + service name + number
+        // container name = $COMPOSE_PROJECT_NAME + service name + number.
         env::set_var("REDIS_HOSTNAME", "rust_howto_dev-redis-1");
     }
     main()?;
     Ok(())
 }
-// [review NOW](https://github.com/john-cd/rust_howto/issues/1161)?
+// [review](https://github.com/john-cd/rust_howto/issues/1161)?

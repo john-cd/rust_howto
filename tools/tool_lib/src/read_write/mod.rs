@@ -29,7 +29,7 @@ pub use merge::*;
 pub fn write_if_not_exists<P: AsRef<Path>>(filepath: P, contents: String) -> Result<()> {
     let filepath = filepath.as_ref();
     if !filepath.is_file() {
-        anyhow::bail!("{:?} is not a regular file!", filepath);
+        anyhow::bail!("{filepath:?} is not a regular file!");
     }
 
     let mut pathbuf: PathBuf = PathBuf::from(filepath);
@@ -38,7 +38,7 @@ pub fn write_if_not_exists<P: AsRef<Path>>(filepath: P, contents: String) -> Res
         pathbuf = ext::extend_extension(&pathbuf, "new");
         c += 1;
         if c > 3 {
-            anyhow::bail!("Could not create an entirely new file. {:?}", pathbuf);
+            anyhow::bail!("Could not create an entirely new file. {pathbuf:?}");
         }
     }
 

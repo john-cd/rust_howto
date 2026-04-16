@@ -12,8 +12,7 @@ fn main() {
 
     let (is_pm, hour) = now.hour12();
     println!(
-        "The current UTC time is {:02}:{:02}:{:02} {}",
-        hour,
+        "The current UTC time is {hour:02}:{:02}:{:02} {}",
         now.minute(),
         now.second(),
         if is_pm { "PM" } else { "AM" }
@@ -25,8 +24,7 @@ fn main() {
 
     let (is_common_era, year) = now.year_ce();
     println!(
-        "The current UTC date is {}-{:02}-{:02} {:?} ({})",
-        year,
+        "The current UTC date is {year}-{:02}-{:02} {:?} ({})",
         now.month(),
         now.day(),
         now.weekday(),

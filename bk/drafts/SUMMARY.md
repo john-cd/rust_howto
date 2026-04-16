@@ -1,13 +1,4 @@
-
-[Index of Examples](indices/examples_index.md)
-[Crates (Alphabetic)](indices/crates_alphabetical.md)
-[Crates (by Category)](indices/crates_by_category.md)
-
 # Categories
-
-- [Algorithms](categories/algorithms/index.md)
-  - [Generate Random Values](categories/algorithms/randomness.md)
-  - [Sort a Vector](categories/algorithms/sorting.md)
 
 - [Asynchronous](categories/asynchronous/index.md)
   - [Async](categories/asynchronous/async.md)
@@ -57,7 +48,6 @@
   - [Configuration Management](categories/config/configuration.md)
 
 - [Cryptography](categories/cryptography/index.md)
-  - [Hashing](categories/cryptography/hashing.md)
   - [Password Hashing](categories/cryptography/password_hashing.md)
   - [Encryption](categories/cryptography/encryption.md)
   - [AEAD](categories/cryptography/aead.md)
@@ -66,18 +56,6 @@
   - [Certificates](categories/cryptography/certificates.md)
   - [TLS](categories/cryptography/tls.md)
   - [Cryptographic Utilities](categories/cryptography/cryptography_utilities.md)
-
-- [Data Structures](categories/data-structures/index.md)
-  - [Maps](categories/data-structures/maps.md)
-  - [B-Trees](categories/data-structures/btrees.md)
-  - [Stacks and Queues](categories/data-structures/stack_and_queue.md)
-  - [Binary Heaps](categories/data-structures/binaryheap.md)
-  - [Linked Lists](categories/data-structures/linkedlist.md)
-  - [Bitfields](categories/data-structures/bitfield.md)
-  - [Graph](categories/data-structures/graph.md)
-  - [Heapless Data Structures](categories/data-structures/heapless.md)
-  - [Stack-allocated Arrays](categories/data-structures/stack_allocated_arrays.md)
-  - [UUIDs](categories/data-structures/uuid.md)
 
 - [Database Access](categories/database/index.md)
   - [SQLite](categories/database/sqlite.md)
@@ -99,6 +77,10 @@
   - [Duration and Calculation](categories/date-and-time/duration.md)
   - [Parsing and Displaying](categories/date-and-time/parse.md)
   - [`time` Crate](categories/date-and-time/time_crate.md)
+
+- [Data Structures](categories/data-structures/index.md)
+  - [Perfect Hash Functions](categories/data-structures/phf.md)
+  - [Append-only Collections](categories/data-structures/elsa.md)
 
 - [Development Tools](categories/development-tools/index.md)
   - [Cargo](categories/development-tools/cargo/cargo.md)
@@ -175,26 +157,11 @@
 - [Error Handling](categories/rust-patterns/error_handling/error_handling.md)
   - [Error Customization](categories/rust-patterns/error_handling/error_customization.md)
 
-- [File System](categories/filesystem/index.md)
-  - [File Reading & Writing](categories/filesystem/read-write.md)
-  - [Directories](categories/filesystem/directories.md)
-  - [Directory Traversal](categories/filesystem/directory_traversal.md)
-  - [File Watching](categories/filesystem/file_watching.md)
-  - [Temporary Files and Directories](categories/filesystem/tempfile.md)
-  - [User Directories](categories/filesystem/user_directories.md)
-
 - [Graphics](categories/graphics/index.md)
 
 - [Hardware Support](categories/hardware-support/index.md)
   - [Processor](categories/hardware-support/processor.md)
   - [Peripherals](categories/hardware-support/peripherals.md)
-
-- [Mathematics](categories/mathematics/index.md)
-  - [Linear Algebra](categories/mathematics/linear_algebra.md)
-  - [Trigonometry](categories/mathematics/trigonometry.md)
-  - [Complex Numbers](categories/mathematics/complex_numbers.md)
-  - [Statistics](categories/mathematics/statistics.md)
-  - [Additional Numeric Types](categories/mathematics/additional_numeric_types.md)
 
 - [Memory Management](categories/memory-management/index.md)
   - [Lazy Initialization](categories/memory-management/lazy_initialization.md)
@@ -276,17 +243,3 @@
   - [GraphQL](categories/web-programming_http-server/_graphql.md)
   - [gRPC](categories/web-programming_http-server/_grpc.md)
   - [`hyper`](categories/web-programming_http-server/_hyper.md)
-
----
-
-- [Links](links/index.md)
-  - [Links](links/links.md)
-  - [Example Code](links/example_code.md)
-  - [Blogs](links/blogs.md)
-  - [Books](links/books.md)
-  - [Companies](links/companies.md)
-  - [Learning](links/learning.md)
-
-[Thanks](thanks.md)
-
----

@@ -7,8 +7,8 @@ use semver::Version;
 
 fn main() -> Result<()> {
     let version_1 = Version::parse("1.0.0-alpha")?;
-    // Prints: Version { major: 1, minor: 0, patch: 0, pre: [Identifier(Alpha)],
-    // build: [] }
+    // Prints `Version { major: 1, minor: 0, patch: 0, pre: [Identifier(Alpha)],
+    // build: [] }`.
     println!("{version_1:?}");
     let version_2 = Version::parse("1.0.0")?;
     println!("{version_2:?}");

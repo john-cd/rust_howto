@@ -43,7 +43,7 @@ fn string_slices() {
     // Create a string slice pointing to a part of the `String`:
     let slice4: &str = &my_string[0..4]; // "Rust"
     println!("Slice of part of a `String`: '{slice4}'");
-    // Caution: If we were to try to slice only part of a unicode
+    // Caution: If you were to try to slice only part of a unicode
     // character's bytes, Rust would panic at runtime.
     // String slices must always be valid UTF-8!
 
@@ -65,7 +65,7 @@ fn string_literals() {
     let literal: &'static str = "Hello, world!";
     println!("String literal: '{literal}'");
 
-    // You can't directly modify a string literal.
+    // We can't directly modify a string literal.
     // ERROR: literal.push_str("!");
 
     // String literals can be used to create a `String`.

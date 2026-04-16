@@ -4,12 +4,16 @@
 
 ## Inspect the Generated Assembly {#cargo-show-asm}
 
-[![cargo-show-asm][c~cargo_show_asm~docs~badge]][c~cargo_show_asm~docs]{{hi:cargo-show-asm}}
-[![cargo-show-asm~crates.io][c~cargo_show_asm~crates.io~badge]][c~cargo_show_asm~crates.io]
-[![cargo-show-asm~github][c~cargo_show_asm~github~badge]][c~cargo_show_asm~github]
-[![cargo-show-asm~lib.rs][c~cargo_show_asm~lib.rs~badge]][c~cargo_show_asm~lib.rs]
+[![cargo-show-asm][c~cargo-show-asm~docs~badge]][c~cargo-show-asm~docs]{{hi:cargo-show-asm}}
+[![cargo-show-asm~crates.io][c~cargo-show-asm~crates.io~badge]][c~cargo-show-asm~crates.io]
+[![cargo-show-asm~repo][c~cargo-show-asm~repo~badge]][c~cargo-show-asm~repo]
+[![cargo-show-asm~lib.rs][c~cargo-show-asm~lib.rs~badge]][c~cargo-show-asm~lib.rs]
 
 `cargo show-asm` prints the generated assembly code for a Rust function.
+
+## Related Topics {#related-topics .skip}
+
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

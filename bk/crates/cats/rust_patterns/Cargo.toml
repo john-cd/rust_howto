@@ -15,23 +15,20 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-anyhow = "1.0.95"
-cfg-if = "1.0.0"
-color-eyre = "0.6.3"
-csv = "1.3.1"
-dyn-clone = "1.0.17"
+anyhow = "1.0.100"
+color-eyre = "0.6.5"
+csv = "1.4.0"
+dyn-clone = "1.0.20"
 either = "1.15.0"
-frunk = "0.4.3"
+frunk = "0.4.4"
+frunk_core = "0.4.4"
 im = "15.1.0"
-indoc = "2.0.5"
-# eyre = "0.6.12" # outdated, see color-eyre
+# eyre is outdated, see color-eyre
 itertools = "0.14.0"
-miette = { version = "7.2.0", features = ["fancy"] }
+miette = { version = "7.6.0", features = ["fancy"] }
 pin-project = "1.1.10"
-pin-project-lite = "0.2.16"
-reqwest = { version = "0.12.12", features = ["blocking"] }
-rpds = "1.1.0"
+# pin-project-lite = "0.2.16"
+rpds = "1.1.2"
 scopeguard = "1.2.0"
-serde = { version = "1.0.217", features = ["derive"] }
-thiserror = "2.0.1"
-typenum = "1.18.0"
+serde = { version = "1.0.228", features = ["derive"] }
+thiserror = "2.0.17"

@@ -6,7 +6,7 @@
 
 [![Rust by example - attributes][book~rust-by-example~attributes~badge]][book~rust-by-example~attributes]{{hi:Attributes}}
 
-Attributes are annotations you attach to your Rust code, like functions, structs, modules, or even entire crates. They provide extra information or instructions to the Rust compiler or other tools (like linters or documentation generators). They don't change the logic of the code directly, but they influence how it's compiled, checked, or processed.
+Attributes are annotations attached to your Rust code, like functions, structs, modules, or even entire crates. They provide extra information or instructions to the Rust compiler or other tools (like linters or documentation generators). They don't change the logic of the code directly, but they influence how it's compiled, checked, or processed.
 
 Common attributes include:
 
@@ -86,7 +86,7 @@ Common lint attributes are:
 #![deny(unsafe_code)]      // Prevent the use of unsafe blocks.
 ```
 
-To print the list of compiler 'lint' options and default settings, enter `rustc -W help` at the command prompt, or refer to the [lints chapter (`rustc` book)](https://doc.rust-lang.org/rustc/lints/index.html)⮳.{{hi:Lint checks}}
+To print the list of compiler 'lint' options and default settings, enter `rustc -W help` at the command prompt, or refer to the [lints chapter (`rustc` book)][book~rustc~lints]↗.{{hi:Lint checks}}
 
 There are also lints for other tools, such as "clippy" and "rustdoc". For example, `#![deny(clippy::all)]` is a very common attribute to make all Clippy lints that are "warn" by default into hard errors. This makes Clippy much stricter. You may also use `#![warn(clippy::pedantic)]` for even more pedantic Clippy lints.
 
@@ -115,11 +115,11 @@ Use the `#[cfg(...)]` attribute to write code that only compiles for a specific 
 {{#include ../../crates/language/examples/attributes/conditional_compilation.rs:example}}
 ```
 
-See also the [conditional compilation][book~rust-reference~conditional-compilation]⮳ chapter of the Rust Reference.
+See also the [conditional compilation][book~rust-reference~conditional-compilation]↗ chapter of the Rust Reference.
 
 ### Conditionally Compile Code Blocks with `cfg-if` {#cfg-if}
 
-[![cfg-if][c~cfg_if~docs~badge]][c~cfg_if~docs] [![cfg-if~crates.io][c~cfg_if~crates.io~badge]][c~cfg_if~crates.io] [![cfg-if~github][c~cfg_if~github~badge]][c~cfg_if~github] [![cfg-if~lib.rs][c~cfg_if~lib.rs~badge]][c~cfg_if~lib.rs]{{hi:cfg-if}}
+[![cfg-if][c~cfg-if~docs~badge]][c~cfg-if~docs] [![cfg-if~crates.io][c~cfg-if~crates.io~badge]][c~cfg-if~crates.io] [![cfg-if~repo][c~cfg-if~repo~badge]][c~cfg-if~repo] [![cfg-if~lib.rs][c~cfg-if~lib.rs~badge]][c~cfg-if~lib.rs]{{hi:cfg-if}}
 
 For complicated conditional compilation scenarios, consider using the `cfg-if` crate in addition to the `#[cfg(...)]` attribute.
 
@@ -129,17 +129,17 @@ For complicated conditional compilation scenarios, consider using the `cfg-if` c
 {{#include ../../crates/language/examples/attributes/cfg_if.rs:example}}
 ```
 
-## Related Topics {#skip}
+## References {#references .skip}
+
+- [Attributes reference][book~rust-reference~attributes]↗.
+- [The `#[doc]` attribute][book~rustdoc~doc-attribute]↗.
+
+## Related Topics {#related-topics .skip}
 
 - [[derive | Derive]] for the `#[derive(...)]` attribute used to automatically derive common traits.
 - [[rust-patterns | Rust Patterns]].
 - [[testing | Testing]] for the `#[test]` attribute.
 - [[documentation | Documentation]] for the `#[doc(...)]` attribute.
-
-## References {#skip1}
-
-- [Attributes reference][book~rust-reference~attributes]⮳.
-- [The `#[doc]` attribute](https://doc.rust-lang.org/rustdoc/write-documentation/the-doc-attribute.html)⮳.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

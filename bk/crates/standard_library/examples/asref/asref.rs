@@ -10,7 +10,7 @@ fn print_length<T: AsRef<str>>(s: T) {
     // `as_ref`.
     let s_ref: &str = s.as_ref();
     // Print the string slice and its length.
-    println!("The length of '{}' is {}", s_ref, s_ref.len());
+    println!("The length of '{s_ref}' is {}", s_ref.len());
 }
 
 /// Let's call `print_length` with arguments of various types.
@@ -33,7 +33,7 @@ fn print_vec<T: AsRef<[i32]>>(input: T) {
 }
 
 // `Vec<T>` and `[T; N]` implement `AsRef<[T]>`.
-// You can also pass a reference to a vector or array, thanks to a blanket
+// We can also pass a reference to a vector or array, thanks to a blanket
 // `impl AsRef<U> for &T where T: AsRef<U>` in the standard library.
 fn vec_example() {
     let vec: Vec<i32> = vec![1, 2, 3];

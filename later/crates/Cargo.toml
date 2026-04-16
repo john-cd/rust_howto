@@ -1,0 +1,40 @@
+[workspace]
+resolver = "3"
+members = [
+    "cats/*",
+    "other",
+]
+exclude = []
+
+# Default values for packages in the workspace
+[workspace.package]
+version = "0.1.2"
+authors = ["John CD"]
+edition = "2024"
+rust-version = "1.86"
+description = "A documentation summary and a compendium of snippets and recipes for the Rust language and ecosystem. Everything you need for day-to-day Rust coding, all in one place."
+documentation = "https://docs.rs/rust_howto/"
+homepage = "https://john-cd.com/rust_howto/"
+repository = "https://github.com/john-cd/rust_howto/"
+license-file = "../LICENSE"
+keywords = [
+    "patterns",
+    "cookbook",
+    "howto",
+    "how-to",
+    "documentation",
+    "Rust bible",
+]
+categories = [
+    "algorithms",
+    "asynchronous",
+    "concurrency",
+    "web-programming",
+    "development-tools",
+    "api-bindings",
+    "caching",
+    "command-line-interface",
+    "compilers",
+    "compression",
+]
+publish = false

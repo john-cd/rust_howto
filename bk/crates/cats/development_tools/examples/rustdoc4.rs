@@ -3,7 +3,7 @@
 //!
 //! Place the following attribute at the top of your crate.
 //! Note it is an _inner_ attribute that starts with `#!`.
-//! Adjust the URL as needed. The official playground is <https://play.rust-lang.org/>
+//! Adjust the URL as needed. The official playground is <https://play.rust-lang.org/>.
 #![doc(html_playground_url = "https://playground.example.com/")]
 
 /// Example of a code example embedded into doc comments:

@@ -37,10 +37,11 @@ fn main() {
     let _ = a_module::Enum::Variant;
     let _ = a_module::PublicStructPublicField { public_val: true };
 
-    // As we will see below, we can't access `private_val`,
-    // but we can use its public associated function to create the struct:
+    // We can't access `private_val`,
+    // but we can use the public associated function to create the struct:
     // ERROR: let _ = a_module::PublicStruct { private_val: true };
     let _ = a_module::PublicStruct::new(false);
+    println!("public_by_default example: enum variants and struct fields can be public by default");
 }
 // ANCHOR_END: example
 

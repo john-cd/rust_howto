@@ -9,7 +9,13 @@
 use xshell::Shell;
 use xshell::cmd;
 
+#[tracing::instrument(err)]
 fn main() -> anyhow::Result<()> {
+    // Initialize tracing subscriber
+    // We only init it if it hasn't been initialized by a test framework
+    let _ = tracing_subscriber::fmt::try_init();
+    tracing::info!("Starting xshell example");
+
     // Create a new Shell instance.
     //
     // This provides the environment for running commands. It maintains a
@@ -70,7 +76,7 @@ fn main() -> anyhow::Result<()> {
     let file_path = sh.current_dir().join("text.txt");
     println!("File path: {}", file_path.display());
 
-    // Check existence of the file.
+    // Check existence of the file:
     if sh.path_exists(&file_path) {
         // Read the entire contents of a file into a string.
         if let Ok(file_content) = sh.read_file(&file_path) {
@@ -85,33 +91,53 @@ fn main() -> anyhow::Result<()> {
 
     // Checking command status:
     let status = cmd!(sh, "true").run();
-    println!("Command status: {status:?}");
+    tracing::info!("Command status: {status:?}");
 
     let failed_status = cmd!(sh, "false").run();
-    println!("Failed command status: {failed_status:?}");
+    tracing::info!("Failed command status: {failed_status:?}");
     // Capture `stderr` with `read_stderr`:
     let err_result = cmd!(sh, "cat nonexistent_file").read_stderr();
-    println!("Standard error: {}", err_result.unwrap_err());
+    tracing::info!("Standard error: {}", err_result.unwrap_err());
 
     // Environment variables:
     // `xshell` maintains its own environment map, independent of the system's.
     sh.set_var("MY_VAR", "my_value");
     println!("Set MY_VAR to {}", sh.var("MY_VAR")?);
-    let env_var = cmd!(sh, "echo $MY_VAR").read()?;
-    println!("MY_VAR environment variable: {env_var}");
+
+    // Important: `xshell` does NOT invoke a shell, so shell variable expansion
+    // does NOT happen. `$MY_VAR` is passed literally to the command.
+    // The following prints the literal string "$MY_VAR", NOT "my_value":
+    let literal = cmd!(sh, "echo $MY_VAR").read()?;
+    println!("Direct echo $MY_VAR (literal, not expanded): '{literal}'");
+    assert_eq!(literal, "$MY_VAR");
+
+    // The correct `xshell` approach is to retrieve the value with `sh.var()`
+    // and then use Rust variable interpolation `{my_var}` in the `cmd!` macro:
+    let my_var = sh.var("MY_VAR")?;
+    let via_interpolation = cmd!(sh, "echo {my_var}").read()?;
+    println!("Via Rust variable interpolation: '{via_interpolation}'");
+    assert_eq!(via_interpolation, "my_value");
+
+    // Alternatively, to expand shell variables you can invoke a shell explicitly.
+    // Note: this is NOT cross-platform (requires `sh` to be available).
+    let via_sh = cmd!(sh, "sh -c 'echo $MY_VAR'").read()?;
+    println!("Via sh -c (shell expansion): '{via_sh}'");
+    assert_eq!(via_sh, "my_value");
 
     // Change the working directory permanently:
     let temp_dir = tempfile::tempdir()?;
     let temp_path = temp_dir.path();
     sh.change_dir(temp_path);
 
+    tracing::info!("xshell example completed successfully.");
+
     Ok(())
 }
 // ANCHOR_END: example
 
 #[test]
+#[cfg(target_os = "linux")]
 fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// TODO echo $MY_VAR does not work?

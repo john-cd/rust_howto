@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-#![cfg(feature = "surrealdb")]
 // ANCHOR: example
 #![allow(clippy::result_large_err)]
 use serde::Deserialize;
@@ -95,4 +94,4 @@ fn test() -> Result<()> {
     main()?;
     Ok(())
 }
-// [review https://surrealdb.com/docs/ NOW](https://github.com/john-cd/rust_howto/issues/1148)
+// [review https://surrealdb.com/docs](https://github.com/john-cd/rust_howto/issues/1148)

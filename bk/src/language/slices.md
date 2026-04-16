@@ -21,8 +21,8 @@ A few important points:
 - They allow you to work with parts of a collection, enabling flexibility in data manipulation.
 - Slice references are "fat pointers", i.e. they store a pointer and the length of the sequence they refer to, thus they have twice the size of pointers to regular `Sized` types.
 - As a primitive type, `slice` implements a large number of methods, for example to `swap` two elements; `reverse` the order of elements in the slice in place; `iter`ate elements; create `chunks` or overlapping windows into the slice; figure out if the slice `contains` an element with the given value, etc. See also:
-  - [`slice::sort_by`][primitive~slice::sort_by]⮳,
-  - [`slice::split_at`][primitive~slice::split_at]⮳.
+  - [`slice::sort_by`][primitive~slice::sort_by]↗,
+  - [`slice::split_at`][primitive~slice::split_at]↗.
 
 Empty slices can be created:
 
@@ -31,7 +31,7 @@ let empty = &x[..0]; // Same as `&x[0..0]`.
 assert_eq!(empty, &[]);
 ```
 
-### Common Use Cases {#skip}
+### Common Use Cases {#common-use-cases}
 
 - Accessing Subsets of Data: Slices are frequently used to access specific portions of arrays, vectors, or strings without copying the entire collection.
 - Function Arguments: Slices are often used as function arguments when you want to operate on a part of a collection.
@@ -64,6 +64,11 @@ String slices, denoted `&str`, are very common. In particular, string literals a
 ```
 
 See the [[string | String]] chapter for more details.
+
+## Related Topics {#related-topics .skip}
+
+- [[strings | Strings]].
+- [[vectors | Vectors]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

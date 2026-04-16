@@ -1,0 +1,20 @@
+# Data Formats
+
+{{#include data_formats.incl.md}}
+
+## Data Format {#data-format}
+
+```rust,editable
+{{#include ../../../crates/cats/rendering_data_formats/examples/data_formats/data_formats.rs:example}}
+```
+
+## Related Topics {#related-topics .skip}
+
+FIXME
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[data_formats: locate crates, write](https://github.com/john-cd/rust_howto/issues/453)
+</div>

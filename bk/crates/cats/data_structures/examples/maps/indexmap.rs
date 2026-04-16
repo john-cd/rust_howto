@@ -2,11 +2,6 @@
 // ANCHOR: example
 use indexmap::IndexMap;
 
-/// This example demonstrates the usage of `IndexMap` from the `indexmap` crate.
-///
-/// `IndexMap` is a hash table that preserves the order of key insertion.
-/// It provides methods for accessing elements by index and using the `entry`.
-/// API.
 fn main() {
     // Create an IndexMap:
     let mut map = IndexMap::new();
@@ -17,7 +12,7 @@ fn main() {
     map.insert("c", 3);
 
     // Iterate in insertion order:
-    println!("Iterating over IndexMap in insertion order:");
+    println!("Iterating over `IndexMap` in insertion order:");
     for (key, value) in &map {
         println!("{key}: {value}");
     }

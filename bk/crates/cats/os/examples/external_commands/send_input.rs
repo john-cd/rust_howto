@@ -55,7 +55,7 @@ fn main() -> Result<()> {
         println!("{words:#?}");
     } else {
         let err = String::from_utf8(output.stderr)?;
-        bail!("External command failed:\n {}", err);
+        bail!("External command failed:\n {err}");
     }
     Ok(())
 }

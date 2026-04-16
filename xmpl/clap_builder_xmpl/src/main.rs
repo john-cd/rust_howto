@@ -3,11 +3,7 @@
 mod cli;
 
 fn main() {
-    let rust_log = std::env::var("RUST_LOG").unwrap_or_else(|_| "info".to_owned());
-    unsafe {
-        std::env::set_var("RUST_LOG", rust_log);
-    }
-    env_logger::init(); // Log to stderr.
+    env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("info")).init(); // Log to stderr.
 
     let (config, cmds) = cli::get_args();
 

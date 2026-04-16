@@ -82,9 +82,9 @@
 //     /// Attempts to retrieve the next dependency from the API.
 //     ///
 //     /// This function handles pagination by making multiple requests to the
-// API     /// if necessary. It returns `Ok(Some(dep))` if a dependency is
-// found,     /// `Ok(None)` if there are no more dependencies, and `Err(err)`
-// if an error     /// occurs.
+//     /// API if necessary. It returns `Ok(Some(dep))` if a dependency is
+//     /// found, `Ok(None)` if there are no more dependencies, and `Err(err)`
+//     /// if an error occurs.
 //     ///
 //     /// This function is called internally by the `Iterator` implementation.
 //     fn try_next(&mut self) -> Result<Option<Dependency>> {
@@ -144,5 +144,5 @@
 //     res?;
 //     Ok(())
 // }
-// // [fix - the API no longer returns a crate_id - need to get; NOW](https://github.com/john-cd/rust_howto/issues/860)
+// // [fix - the API no longer returns a crate_id - need to get](https://github.com/john-cd/rust_howto/issues/860)
 // // <https://github.com/rust-lang/crates.io/issues/856>

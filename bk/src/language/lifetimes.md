@@ -6,7 +6,7 @@
 
 [![Rust by example - Lifetimes][book~rust-by-example~lifetimes~badge]][book~rust-by-example~lifetimes]{{hi:Lifetimes}}
 
-In Rust, _references_ allow you to access a value without taking ownership of it ("borrow" it). There are immutable references (of type `&T`), which allow read-only, shared access to a value; and mutable references (of type `&mut T`), which allow modification but enforce exclusive access.
+In Rust, _references_ access a value without taking ownership of it ("borrow" it). There are immutable references (of type `&T`), which allow read-only, shared access to a value; and mutable references (of type `&mut T`), which allow modification but enforce exclusive access.
 
 References are similar to pointers but come with strict safety guarantees: they are aligned, not null, and pointing to memory containing a _valid_ value of `T`.
 
@@ -52,7 +52,7 @@ These rules cover many common scenarios, but you will need lifetimes in more com
 {{#include ../../crates/language/examples/lifetimes/static_lifetime.rs:example}}
 ```
 
-## Use Lifetime Parameters {#skip}
+## Use Lifetime Parameters {#use-lifetime-parameters}
 
 Lifetime parameters can be added to function or method signatures, struct definitions, enumerations, unions, `impl` blocks, type aliases, traits, in the same way that a generic type parameter or constant can be added. They are used to specify the relationships between the lifetimes of different references in the function, type, or item.
 
@@ -80,6 +80,8 @@ The following example shows a `struct` with a lifetime parameter and multiple im
 
 ### Avoid Self-referential Structs {#self-referential-structs}
 
+[![std][c~std~docs~badge]][c~std~docs]
+
 Self-referential structs, that is structs that hold a reference to their own fields, can be tricky due to Rust's ownership and borrowing rules. You can easily run into issues when they are moved, as the references might become invalid. There is also no way to tie the lifetime of a reference to the lifetime of the struct that contains it.
 
 Instead, you may:
@@ -88,19 +90,20 @@ Instead, you may:
 - Store the owned data outside the struct and let the struct hold only references,
 - Store ranges rather than references, if the pointed-to type is a sequence (array, string, vector...),
 - Use `Rc` or `Arc`.
-- Use raw pointers,
 - Use arena-style allocation to enforce shared lifetimes.
+- Use raw pointers (Requires `unsafe` code).
 
 ```rust,editable
 {{#include ../../crates/language/examples/lifetimes/self_referential_struct.rs:example}}
 ```
 
-## References {#skip}
+## References {#references .skip}
 
-- [Lifetime elision rules (Rust reference)](https://doc.rust-lang.org/reference/lifetime-elision.html)⮳.
-- [Self-referential Structs](https://ksnll.github.io/rust-self-referential-structs)⮳.
+- [Lifetime elision rules (Rust reference)][book~rust-reference~lifetime-elision]↗.
+- [Common Rust Lifetime Misconceptions][common-rust-lifetime-misconceptions~repo]↗.
+- [Self-referential Structs][blog~rust-self-referential-structs]↗.
 
-## Related Topics {#skip}
+## Related Topics {#related-topics .skip}
 
 - [[cow | COW]].
 - [[memory-management | Memory Management]].
@@ -112,4 +115,11 @@ Instead, you may:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+TODO review [common-rust-lifetime-misconceptions~repo]
+
+review
+
+- [Common Rust Lifetime Misconceptions][common-rust-lifetime-misconceptions~repo]↗.
+- [The mutable reference I return from a function in Rust seems to violate the borrowing rules — how is this possible?][reddit~the_mutable_reference_i_return_from_a_function_in].
+
 </div>

@@ -18,7 +18,7 @@ Validates that an [email][p~email] address{{hi:Email address}} is formatted corr
 
 Extracts, sorts, and deduplicates list of hashtags{{hi:Hashtags}} from text.
 
-The hashtag regex given here only catches Latin hashtags that start with a letter. The complete [Twitter hashtag regex][twitter~hashtag-regex~github]⮳ [![twitter~hashtag-regex~github][twitter~hashtag-regex~github~badge]][twitter~hashtag-regex~github] is much more complicated.
+The hashtag regex given here only catches Latin hashtags that start with a letter. The complete [Twitter hashtag regex][twitter~hashtag-regex~repo]↗ [![twitter~hashtag-regex~repo][twitter~hashtag-regex~repo~badge]][twitter~hashtag-regex~repo] is much more complicated.
 
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/examples/regex/hashtags.rs:example}}
@@ -28,7 +28,7 @@ The hashtag regex given here only catches Latin hashtags that start with a lette
 
 [![regex][c~regex~docs~badge]][c~regex~docs]{{hi:regex}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
-Processes a string of text using [`regex::Regex::captures_iter`][c~regex::Regex::captures_iter~docs]{{hi:regex::Regex::captures_iter}}⮳ to capture multiple phone numbers{{hi:Phone numbers}}. The example here is for US convention phone numbers.
+Processes a string of text using [`regex::Regex::captures_iter`][c~regex::Regex::captures_iter~docs]↗{{hi:regex::Regex::captures_iter}} to capture multiple phone numbers{{hi:Phone numbers}}. The example here is for US convention phone numbers.
 
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/examples/regex/phone.rs:example}}
@@ -38,9 +38,9 @@ Processes a string of text using [`regex::Regex::captures_iter`][c~regex::Regex:
 
 [![regex][c~regex~docs~badge]][c~regex~docs]{{hi:regex}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
-Reads a file named `application.log` and only outputs the lines containing “version X.X.X”, some IP address followed by port 443 (e.g. “192.168.0.1:443”), or a specific warning.
+Reads a file named `application.log` and only outputs the lines containing "version X.X.X", some IP address followed by port 443 (e.g. "192.168.0.1:443"), or a specific warning.
 
-A [`regex::RegexSetBuilder`][c~regex::RegexSetBuilder~docs]{{hi:regex::RegexSetBuilder}}⮳ composes a [`regex::RegexSetBuilder`][c~regex::RegexSetBuilder~docs]{{hi:regex::RegexSetBuilder}}⮳ Since backslashes are very common in regular expressions{{hi:Regular expressions}}, using [raw string literals][book~rust~raw-string-literals]⮳ makes them more readable.
+A [`regex::RegexSetBuilder`][c~regex::RegexSetBuilder~docs]↗{{hi:regex::RegexSetBuilder}} composes a [`regex::RegexSetBuilder`][c~regex::RegexSetBuilder~docs]↗{{hi:regex::RegexSetBuilder}} Since backslashes are very common in regular expressions{{hi:Regular expressions}}, using [raw string literals][book~rust~raw-string-literals]↗ makes them more readable.
 
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/examples/regex/filter_log.rs:example}}
@@ -52,8 +52,8 @@ A [`regex::RegexSetBuilder`][c~regex::RegexSetBuilder~docs]{{hi:regex::RegexSetB
 
 Replaces all occurrences of the standard ISO 8601{{hi:ISO 8601}} *YYYY-MM-DD* date pattern with the equivalent American English date{{hi:Date}} with slashes. For example `2013-01-15` becomes `01/15/2013`.
 
-The method [`regex::Regex::replace_all`][c~regex::Regex::replace_all~docs]{{hi:regex::Regex::replace_all}}⮳ replaces all occurrences of the whole regex{{hi:regex}}.
-`&str` implements the [`regex::Replacer`][c~regex::Replacer~docs]{{hi:regex::Replacer}}⮳ trait which allows variables like `$abcde` to refer to corresponding named capture groups{{hi:Named capture groups}} `(?P<abcde>REGEX)` from the search regex. See the [`replacement string syntax`][c~regex::Regex~replacement-string-syntax]{{hi:Replacement string syntax}}⮳ for examples and escaping detail.
+The method [`regex::Regex::replace_all`][c~regex::Regex::replace_all~docs]↗{{hi:regex::Regex::replace_all}} replaces all occurrences of the whole regex{{hi:regex}}.
+`&str` implements the [`regex::Replacer`][c~regex::Replacer~docs]↗{{hi:regex::Replacer}} trait which allows variables like `$abcde` to refer to corresponding named capture groups{{hi:Named capture groups}} `(?P<abcde>REGEX)` from the search regex. See the [`replacement string syntax`][c~regex::Regex~replacement-string-syntax]↗{{hi:Replacement string syntax}} for examples and escaping detail.
 
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/examples/regex/replace.rs:example}}
@@ -61,9 +61,9 @@ The method [`regex::Regex::replace_all`][c~regex::Regex::replace_all~docs]{{hi:r
 
 ## Use Regular Expressions with Back-references and Lookarounds {#fancy-regex}
 
-[![fancy-regex][c~fancy_regex~docs~badge]][c~fancy_regex~docs] [![fancy-regex~crates.io][c~fancy_regex~crates.io~badge]][c~fancy_regex~crates.io] [![fancy-regex~github][c~fancy_regex~github~badge]][c~fancy_regex~github] [![fancy-regex~lib.rs][c~fancy_regex~lib.rs~badge]][c~fancy_regex~lib.rs]{{hi:fancy-regex}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+[![fancy-regex][c~fancy-regex~docs~badge]][c~fancy-regex~docs] [![fancy-regex~crates.io][c~fancy-regex~crates.io~badge]][c~fancy-regex~crates.io] [![fancy-regex~repo][c~fancy-regex~repo~badge]][c~fancy-regex~repo] [![fancy-regex~lib.rs][c~fancy-regex~lib.rs~badge]][c~fancy-regex~lib.rs]{{hi:fancy-regex}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
-[`regex`][c~regex~docs]⮳{{hi:regex}} is the de facto standard regex library. It is very fast, but does not support fancier features such as backtracking, backreferences, and look-arounds. Use [`fancy-regex`][c~fancy_regex~docs]⮳{{hi:fancy-regex}} if you need features that [`regex`][c~regex~docs]⮳{{hi:regex}} doesn't support.
+[`regex`][c~regex~docs]↗{{hi:regex}} is the de facto standard regex library. It is very fast, but does not support fancier features such as backtracking, backreferences, and look-arounds. Use [`fancy-regex`][c~fancy-regex~docs]↗{{hi:fancy-regex}} if you need features that [`regex`][c~regex~docs]↗{{hi:regex}} doesn't support.
 
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/examples/regex/fancy_regex.rs:example}}
@@ -71,13 +71,13 @@ The method [`regex::Regex::replace_all`][c~regex::Regex::replace_all~docs]{{hi:r
 
 ## Longer Regex Example {#longer-regex-example}
 
-[![regex][c~regex~docs~badge]][c~regex~docs]{{hi:regex}} [![regex~github][c~regex~github~badge]][c~regex~github] [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+[![regex][c~regex~docs~badge]][c~regex~docs]{{hi:regex}} [![regex~repo][c~regex~repo~badge]][c~regex~repo] [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/examples/regex/regex.rs:example}}
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics .skip}
 
 - [[rust_search_engines | Rust Search Engines]].
 - [[search | Search]].
@@ -89,8 +89,8 @@ The method [`regex::Regex::replace_all`][c~regex::Regex::replace_all~docs]{{hi:r
 <div class="hidden">
 [regex: write](https://github.com/john-cd/rust_howto/issues/488)
 
-- [grex: A command-line tool and Rust library with Python bindings for generating regular expressions from user-provided test cases](https://github.com/pemistahl/grex)
+- [grex][c~grex~repo]↗: A command-line tool and Rust library with Python bindings for generating regular expressions from user-provided test cases.
 
-- [regex_automata](https://docs.rs/regex-automata/0.4.9/regex_automata/#should-i-be-using-this-crate) Multi-pattern searches with capture groups
+- [regex_automata][c~regex-automata~docs]↗: Multi-pattern searches with capture groups.
 
 </div>

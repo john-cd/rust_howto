@@ -1,3 +1,0 @@
-mod rustler;
-
-fn main() {}

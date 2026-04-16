@@ -8,8 +8,8 @@
 //! new data structures are created with the desired changes.
 //!
 //! This said, `im` provides a safe default choice for the most common kinds of
-//! data structures, allowing you to defer careful thinking about the right data
-//! structure for the job until you need to start looking for optimizations.
+//! data structures and defers careful thinking about the right data
+//! structure for the job until optimizations are needed.
 //! Most operations are O(log n) or better.
 //!
 //! The most obvious benefit of _immutable data structures_ - avoiding the
@@ -23,9 +23,9 @@
 //! for larger data sets modified infrequently.
 //!
 //! Because `im` makes copies of shared nodes in its data structures before
-//! updating them, the values you store must implement `Clone`. If you want to
+//! updating them, the values we store must implement `Clone`. If we want to
 //! store values for which cloning is expensive, or values that don't implement
-//! `Clone`, you need to wrap them in `Rc` or `Arc`.
+//! `Clone`, we need to wrap them in `Rc` or `Arc`.
 use im::HashMap;
 use im::HashSet;
 use im::Vector;
@@ -33,7 +33,7 @@ use im::hashmap;
 use im::vector;
 
 fn main() {
-    // Immutable Vector (based on RRB trees),
+    // Immutable vector (based on RRB trees),
     // i.e. a sequence of elements in insertion order.
     // Practically every operation is O(log n), except push/pop on both sides,
     // which will be O(1) amortized, and O(log n) in the worst case.
@@ -44,10 +44,10 @@ fn main() {
     v1.push_back(2);
     v1.push_back(3);
 
-    // Clone the Vector and modify.
+    // Clone the `Vector` and modify.
     // `im` uses _lazy cloning_. The initial `clone` is instant, and as you
     // modify the cloned data structure, it will clone chunks only where you
-    // change them, so that if you change the entire thing you will
+    // change them, so that if we change the entire thing we will
     // eventually have performed a full clone.
     let mut v2 = v1.clone();
     v2.push_back(4);
@@ -62,13 +62,13 @@ fn main() {
     // Simpler: use the `vector!` macro.
     assert_eq!(5, vector![1, 2, 3, 4, 5].len());
 
-    // The `im` maps - HashMap and OrdMap - generally perform similarly to their
-    // equivalents in the standard library, but tend to run a bit slower on the
-    // basic operations. On the other hand, they offer the cheap copy and
-    // structural sharing between copies that you'd expect from immutable
-    // data structures.
+    // The `im` maps - `HashMap` and `OrdMap` - generally perform similarly to
+    // their equivalents in the standard library, but tend to run a bit
+    // slower on the basic operations. On the other hand, they offer the
+    // cheap copy and structural sharing between copies that you'd expect
+    // from immutable data structures.
 
-    // Let's explore the Immutable HashMap (based on hash array mapped tries).
+    // Let's explore the immutable `HashMap` (based on hash array mapped tries).
     // Most operations on this map are O(logx n) for a suitably high x that it
     // should be nearly O(1) for most maps. Keys will need to implement
     // `Hash` and `Eq`.
@@ -98,7 +98,7 @@ fn main() {
     println!("Original map: {map1:?}");
     println!("Modified map: {map2:?}");
 
-    // Immutable HashSet
+    // Immutable `HashSet`:
     let mut set1 = HashSet::new();
     set1.insert(1);
     set1.insert(2);

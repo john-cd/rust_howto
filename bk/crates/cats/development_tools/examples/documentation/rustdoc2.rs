@@ -12,6 +12,7 @@
 /// ```
 /// // You can have Rust code between fences inside the comments.
 /// // If you pass `--test` to `rustdoc`, it will even test it for you!
+/// // `cargo test` runs doctest automatically as well.
 /// let person = Person::new("name");
 /// ```
 fn new(name: &str) -> Person {

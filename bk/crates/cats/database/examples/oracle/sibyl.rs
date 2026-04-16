@@ -22,7 +22,7 @@
 // // sudo unzip instantclient-sqlplus-linux.x64-<version>.zip -d
 // // /opt/oracle
 // // Convert RPM packages to DEB packages (if applicable):
-// // If you downloaded RPM packages, convert them to DEB using the `alien`
+// // If downloading RPM packages, convert them to DEB using the `alien`
 // // command.
 // // sudo alien -i oracle-instantclient-<version>-basic-<version>.rpm
 // // sudo alien -i oracle-instantclient-<version>-sqlplus-<version>.rpm
@@ -85,7 +85,7 @@
 //     main()?;
 //     Ok(())
 // }
-// [finish; review https://lib.rs/crates/sibyl ; also test / review in depth install steps NOW](https://github.com/john-cd/rust_howto/issues/1022)
+// [finish; review https://lib.rs/crates/sibyl ; also test / review in depth install steps](https://github.com/john-cd/rust_howto/issues/1022)
 // // <https://docs.oracle.com/en/database/oracle/oracle-database/21/lacli/sdk-instant-client.html>
 // // <https://docs.oracle.com/en/database/oracle/oracle-database/19/lacli/installing-ic-arm-packages.html>
 // // <https://help.ubuntu.com/community/RPM/AlienHowto>

@@ -4,9 +4,9 @@
 
 ## `sqlx` {#sqlx}
 
-[![sqlx][c~sqlx~docs~badge]][c~sqlx~docs] [![sqlx~crates.io][c~sqlx~crates.io~badge]][c~sqlx~crates.io] [![sqlx~github][c~sqlx~github~badge]][c~sqlx~github] [![sqlx~lib.rs][c~sqlx~lib.rs~badge]][c~sqlx~lib.rs]{{hi:sqlx}} [![cat~database][cat~database~badge]][cat~database]{{hi:Databases}}
+[![sqlx][c~sqlx~docs~badge]][c~sqlx~docs] [![sqlx~crates.io][c~sqlx~crates.io~badge]][c~sqlx~crates.io] [![sqlx~repo][c~sqlx~repo~badge]][c~sqlx~repo] [![sqlx~lib.rs][c~sqlx~lib.rs~badge]][c~sqlx~lib.rs]{{hi:sqlx}} [![cat~database][cat~database~badge]][cat~database]{{hi:Databases}}
 
-[`sqlx`][c~sqlx~docs]⮳ is a low-level, [asynchronous][p~asynchronous] SQL library for Rust. It supports various [databases][p~databases] like PostgreSQL{{hi:PostgreSQL}}, MySQL{{hi:MySQL}}, SQLite{{hi:SQLite}}, and MSSQL{{hi:MSSQL}}, and both [`tokio`][c~tokio~docs]⮳{{hi:tokio}} and [`async-std`][c~async_std~docs]⮳{{hi:async-std}} async runtimes. It features compile-time checked queries without a DSL. SQLx is not an ORM.
+[`sqlx`][c~sqlx~docs]↗ is a low-level, [asynchronous][p~asynchronous] SQL library for Rust. It supports various [databases][p~databases] like PostgreSQL{{hi:PostgreSQL}}, MySQL{{hi:MySQL}}, SQLite{{hi:SQLite}}, and MSSQL{{hi:MSSQL}}, and both [`tokio`][c~tokio~docs]↗{{hi:tokio}} and [`async-std`][c~async-std~docs]↗{{hi:async-std}} async runtimes. It features compile-time checked queries without a DSL. SQLx is not an ORM.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/examples/query_builders_orms/sqlx.rs:example}}
@@ -14,25 +14,27 @@
 
 ## SeaORM {#sea-orm}
 
-[![sea-orm][c~sea_orm~docs~badge]][c~sea_orm~docs]{{hi:sea-orm}} [![sea_orm~website][c~sea_orm~website~badge]][c~sea_orm~website] [![sea_orm~cookbook][c~sea_orm~cookbook~badge]][c~sea_orm~cookbook] [![cat~database][cat~database~badge]][cat~database]{{hi:Databases}}
+[![sea-orm][c~sea-orm~docs~badge]][c~sea-orm~docs]{{hi:sea-orm}} [![sea-orm~website][c~sea-orm~website~badge]][c~sea-orm~website] [![sea-orm~cookbook][c~sea-orm~cookbook~badge]][c~sea-orm~cookbook] [![cat~database][cat~database~badge]][cat~database]{{hi:Databases}}
 
-[Seaography GraphQL server][c~seaography~website]{{hi:seaography}}⮳.
+[Seaography GraphQL server][c~seaography~website]↗{{hi:seaography}}.
 
-Built on top of [`sqlx`][c~sqlx~docs]⮳{{hi:sqlx}} (see above). There is also a related sea-query crate that provides a query builder without full ORM functionality.
+Built on top of [`sqlx`][c~sqlx~docs]↗{{hi:sqlx}} (see above). There is also a related sea-query crate that provides a query builder without full ORM functionality.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/examples/query_builders_orms/sea_orm.rs:example}}
 ```
 
+TODO add example for seography
+
 ## `diesel` {#diesel}
 
 [![diesel][c~diesel~docs~badge]][c~diesel~docs]{{hi:diesel}} [![diesel~lib.rs][c~diesel~lib.rs~badge]][c~diesel~lib.rs] [![cat~database][cat~database~badge]][cat~database]{{hi:Databases}}
 
-The [`diesel`][c~diesel~docs]⮳{{hi:diesel}} crate is a powerful ORM (object-relational mapper) and query builder for Rust. It allows you to interact with databases in a type-safe and efficient manner. ORMs help object-oriented programmers abstract the details of relational databases, and do not require writing raw SQL queries.
+The [`diesel`][c~diesel~docs]↗{{hi:diesel}} crate is a powerful ORM (object-relational mapper) and query builder for Rust. It interacts with databases in a type-safe and efficient manner. ORMs help object-oriented programmers abstract the details of relational databases, and do not require writing raw SQL queries.
 
-[`diesel`][c~diesel~docs]⮳{{hi:diesel}} supports PostgreSQL, MySQL, and SQLite. [`diesel`][c~diesel~docs]⮳{{hi:diesel}} has excellent performance and takes an approach of strict compile time guarantees. The main crate is synchronous only, but [`diesel-async`][c~diesel_async~docs]⮳{{hi:diesel-async}} provides an async connection implementation.
+[`diesel`][c~diesel~docs]↗{{hi:diesel}} supports PostgreSQL, MySQL, and SQLite. [`diesel`][c~diesel~docs]↗{{hi:diesel}} has excellent performance and takes an approach of strict compile time guarantees. The main crate is synchronous only, but [`diesel-async`][c~diesel-async~docs]↗{{hi:diesel-async}} provides an async connection implementation.
 
-To create a new [`diesel`][c~diesel~docs]⮳{{hi:diesel}} project targeting [`sqlite`][c~sqlite~docs]⮳{{hi:sqlite}}, follow these steps:
+To create a new [`diesel`][c~diesel~docs]↗{{hi:diesel}} project targeting [`sqlite`][c~sqlite~docs]↗{{hi:sqlite}}, follow these steps:
 
 - Add the necessary dependencies to your Cargo.toml file (update the versions as needed):
 
@@ -44,8 +46,7 @@ serde = { version = "1.0.217", features = ["derive"] }
 serde_json = "1.0.138"
 ```
 
-- Run the following commands in your terminal to create a `.env` file with the [database][p~database] [URL][p~url]:
-set up your schema.rs file and migrations.
+- Run the following commands in your terminal to create a [`.env`][.env-files]↗{{hi:.env}} file with the [database][p~database] [URL][p~url]: set up your schema.rs file and migrations.
 
 ```bash
 echo DATABASE_URL=sqlite::memory: > .env
@@ -88,14 +89,14 @@ diesel print-schema > src/schema.rs
 
 [![toasty][c~toasty~docs~badge]][c~toasty~docs]{{hi:toasty}}
 [![toasty~crates.io][c~toasty~crates.io~badge]][c~toasty~crates.io]
-[![toasty~github][c~toasty~github~badge]][c~toasty~github]
+[![toasty~repo][c~toasty~repo~badge]][c~toasty~repo]
 [![toasty~lib.rs][c~toasty~lib.rs~badge]][c~toasty~lib.rs]
 
-[`toasty`][c~toasty~docs]⮳{{hi:toasty}} is an ORM for the Rust programming language that prioritizes ease-of-use. It supports both SQL databases as well as some NoSQL databases, including DynamoDB and Cassandra. Note that Toasty does not hide the database capabilities. Instead, Toasty exposes features based on the target database.
+[`toasty`][c~toasty~docs]↗{{hi:toasty}} is an ORM for the Rust programming language that prioritizes ease-of-use. It supports both SQL databases as well as some NoSQL databases, including DynamoDB and Cassandra. Note that Toasty does not hide the database capabilities. Instead, Toasty exposes features based on the target database.
 
 It is currently in active development and not yet published to crates.io. You can try using it directly from Github.
 
-Using the example in the [Toasty announcement blog][c~toasty~blog], projects that use Toasty start by creating a schema file to define the application's data model.
+Using the example in the [Toasty announcement blog][c~toasty~blog]↗, projects that use Toasty start by creating a schema file to define the application's data model.
 
 ```text
 model User {
@@ -141,10 +142,10 @@ User::create()
   .exec(&db)
   .await?;
 
-// Load the user from the database
+// Load the user from the database.
 let user = User::find_by_email("john@example.com").get(&db).await?
 
-// Load and iterate the user's todos
+// Load and iterate the user's todos.
 let mut todos = user.todos().all(&db).await.unwrap();
 
 while let Some(todo) = todos.next().await {
@@ -153,9 +154,16 @@ while let Some(todo) = todos.next().await {
 }
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write; move toasty example to a file](https://github.com/john-cd/rust_howto/issues/912)
+[write; move `toasty` example to a file](https://github.com/john-cd/rust_howto/issues/912)
+
+- [SeaORM][c~sea-orm-cli~website]↗.
+
 </div>

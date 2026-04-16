@@ -6,7 +6,7 @@ set -u
 # Manual review necessary
 # Requires ripgrep
 #
-# Usage: ./scripts/urls/list_bare_urls.sh <root folder>
+# Usage: ./scripts/urls/<script_name>.sh <root folder>
 
 root="$(realpath $1)/"
 
@@ -22,7 +22,7 @@ do
   # Outputs reference-style links
   {
   echo "${contents}" | rg --pcre2 --only-matching -r '[`$2`][$2~website] [$2~website]: $1$2$3' '(?<!: |["`([])(http(?:s)?://(?:www\d?\.)?)([^./]+)(\S+)?'
-  echo "${contents}" | rg --pcre2 --only-matching -r '[`$2`][$2~github] [$2~github]: $1$2$3' '(?<!: |["`([])(http(?:s)?://(?:github\.com/)?)([^./]+)(\S+)?'
+  echo "${contents}" | rg --pcre2 --only-matching -r '[`$2`][$2~repo] [$2~repo]: $1$2$3' '(?<!: |["`([])(http(?:s)?://(?:github\.com/)?)([^./]+)(\S+)?'
   # --pcre2 = Perl regex enabled (allows look-arounds) -g = glob, -r = replace
   } | sed 's=/$==' | sort
 done

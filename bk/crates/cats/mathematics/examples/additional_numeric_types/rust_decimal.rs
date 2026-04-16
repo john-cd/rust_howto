@@ -21,7 +21,7 @@ fn main() {
     let product = number1 * number2;
     let quotient = number1 / number2;
 
-    // Printing the results
+    // Printing the results:
     println!("Number 1: {number1}");
     println!("Number 2: {number2}");
     println!("Sum: {sum}");
@@ -29,7 +29,7 @@ fn main() {
     println!("Product: {product}");
     println!("Quotient: {quotient}");
 
-    // 3. Converting to and from strings
+    // 3. Converting to and from strings:
     let number_str = "98.76";
     let number_from_str = Decimal::from_str(number_str).unwrap();
     println!("Number from string: {number_from_str}");

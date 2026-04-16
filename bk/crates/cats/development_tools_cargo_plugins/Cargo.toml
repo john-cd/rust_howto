@@ -17,5 +17,7 @@ publish.workspace = true
 xshell = "0.2.7"
 
 ## General
-anyhow = "1.0.97"
-tempfile = "3.19.1"
+anyhow = "1.0.100"
+tempfile = "3.23.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }

@@ -5,8 +5,10 @@ use memchr::memchr;
 // Use `memchr` to efficiently search for a byte in a slice.
 
 // Add the dependency to Cargo.toml:
+// ```toml
 // [dependencies]
 // memchr = "2.7.4" # Or latest
+// ```
 
 fn main() {
     let haystack = b"hello world";
@@ -35,7 +37,7 @@ fn main() {
         indices
     }
 
-    // Find all occurrences of 'l'
+    // Find all occurrences of 'l':
     let all_l_positions = find_all_occurrences(b'l', haystack);
     println!("All 'l' positions: {all_l_positions:?}");
 }

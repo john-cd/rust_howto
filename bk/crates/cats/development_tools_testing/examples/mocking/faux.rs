@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
-//! `faux` allows you to mock the methods of structs for testing without
-//! complicating or polluting your code.
+//! `faux` mocks the methods of structs for testing without
+//! complicating or polluting our code.
 
 /// Represents a user with an ID and a name.
 #[derive(Debug, Clone, PartialEq)]

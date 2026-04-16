@@ -18,7 +18,7 @@ struct Student {
 // Manual implementation of `Hash` for demonstration purposes.
 // BEWARE: If two keys are equal, their hashes must be equal.
 // This is a fundamental requirement for hash-based collections.
-// k1 == k2 -> hash(k1) == hash(k2)
+// k1 == k2 -> hash(k1) == hash(k2).
 impl Hash for Student {
     fn hash<H: Hasher>(&self, state: &mut H) {
         self.id.hash(state);

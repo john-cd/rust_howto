@@ -6,13 +6,13 @@
 
 [![Rust by example - Structs][book~rust-by-example~structs~badge]][book~rust-by-example~structs]{{hi:Structs}}
 
-Structs are custom data types that allow you to group related data together. The following example demonstrates how to define a `struct` and create a instance of it:
+Structs are custom data types that group related data together. The following example demonstrates how to define a `struct` and create a instance of it:
 
 ```rust,editable
 {{#include ../../crates/language/examples/structs/structs.rs:example}}
 ```
 
-Struct fields{{hi:Fields}} follow the general rule of everything being private by default,{{hi:Private by default}} unless annotated with [`pub`][book~rust-reference~visibility-and-privacy]{{hi:Visibility}}⮳. See the [[visibility | Visibility]] chapter.
+Struct fields{{hi:Fields}} follow the general rule of everything being private by default,{{hi:Private by default}} unless annotated with [`pub`][book~rust-reference~visibility-and-privacy]↗{{hi:Visibility}}. See the [[visibility | Visibility]] chapter.
 
 Struct fields may be a primitive type, a tuple, an array, an enum, another struct (for nested structs), a reference...
 
@@ -133,20 +133,22 @@ Note how multiple `impl` blocks are possible; they can implement associated func
 {{#include ../../crates/language/examples/structs/generic_structs.rs:example}}
 ```
 
-## References {#skip}
+## References {#references .skip}
 
-[Creating Structs In Rust: Builder Pattern, Fluent Interfaces, And More](https://zerotomastery.io/blog/rust-struct-guide)⮳.
+[Creating Structs In Rust][blog~rust-struct-guide]↗: Builder Pattern, Fluent Interfaces, And More.
 
-## Related Topics {#skip}
+## Related Topics {#related-topics .skip}
 
 - [[enums | Enums]].
 - [[lifetimes | Lifetimes]].
 - [[generics | Generics]].
 - [[traits | Traits]].
-- [[rust-patterns | Rust Patterns]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+- [[rust-patterns | Rust Patterns]].
+
 </div>

@@ -4,9 +4,9 @@
 
 ## Create a Simple Website Using a Static Website Generator {#zola}
 
-[![zola][c~zola~website~badge]][c~zola~website] [![zola~github][c~zola~github~badge]][c~zola~github] [![zola~lib.rs][c~zola~lib.rs~badge]][c~zola~lib.rs]{{hi:zola}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}} [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}
+[![zola][zola~website~badge]][zola~website] [![zola~repo][zola~repo~badge]][zola~repo] [![zola~lib.rs][zola~lib.rs~badge]][zola~lib.rs]{{hi:zola}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}} [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}
 
-[Zola][c~zola~website]{{hi:zola}}⮳ is a fast static site generator in a single binary with everything built-in.
+[Zola][zola~website]↗{{hi:zola}} is a fast static site generator in a single binary with everything built-in.
 
 Once Zola is installed, create a new site:
 
@@ -43,9 +43,13 @@ zola serve
 
 You can further customize your site by editing the templates in the templates directory and adding your styles in the static directory.
 
-### Themes for `zola` {#skip1}
+### Themes for `zola` {#themes-for-zola .skip}
 
-[AdiDoks][adidoks~website] is a modern documentation theme.
+[AdiDoks][adidoks~website]↗ is a modern documentation theme.
+
+## Related Topics {#related-topics .skip}
+
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

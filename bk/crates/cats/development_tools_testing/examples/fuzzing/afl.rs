@@ -4,7 +4,7 @@
 // // ANCHOR_END: example
 // //! `afl` (American Fuzzy Loop) is a popular fuzz testing tool, and `afl.rs`
 // //! is a Rust crate that provides support for integrating AFL with Rust
-// //! programs. Below is an example of how you can use `afl.rs` to fuzz a
+// //! programs. Below is an example of how we can use `afl.rs` to fuzz a
 // //! simple Rust function.
 // //!
 // //! # Steps
@@ -50,4 +50,4 @@
 // fn test() {
 //     main();
 // }
-// // [finish NOW](https://github.com/john-cd/rust_howto/issues/748)
+// // [finish](https://github.com/john-cd/rust_howto/issues/748)

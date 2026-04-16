@@ -13,7 +13,7 @@ fn print_value<T: Debug>(value: T) {
 }
 
 /// Type constraints can be written in a separate `where` clause for clarity.
-/// You can also combine multiple trait bounds with `+`.
+/// We can also combine multiple trait bounds with `+`.
 fn print_value2<T>(value: T)
 where
     T: Debug + Display,

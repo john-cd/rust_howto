@@ -33,8 +33,8 @@ do
     # Insert potential links to crates into the book's Markdown
     for file in ${files}
     do
-      # Insert [...][cat~<category>]⮳{{hi:<category>}}
-      sed -E -i 's='"${regex}${pattern}"'([^a-zA-Z._-])=\1[\2][cat~'"${cat}"']⮳{{hi:'"${cat}"'}}\3=Ig' "${file}"
+      # Insert [...][cat~<category>]↗{{hi:<category>}}
+      sed -E -i 's='"${regex}${pattern}"'([^a-zA-Z._-])=\1[\2][cat~'"${cat}"']↗{{hi:'"${cat}"'}}\3=Ig' "${file}"
       if [ $? -ne 0 ]; then
         echo "Error: ${file}"
       fi

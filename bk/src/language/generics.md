@@ -2,7 +2,7 @@
 
 {{#include generics.incl.md}}
 
-## Generics Syntax {#skip}
+## Generics Syntax {#generics-syntax}
 
 [![Rust by example - Generics][book~rust-by-example~generics~badge]][book~rust-by-example~generics]{{hi:Generics}}
 
@@ -76,12 +76,11 @@ The following example demonstrates how to implement traits for types based on co
 {{#include ../../crates/language/examples/generics/const_generics2.rs:example}}
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics .skip}
 
 - [[enums | Enums]].
 - [[functions | Functions]].
 - [[lifetimes | Lifetimes]].
-- [[rust-patterns | Rust Patterns]].
 - [[structs | Structs]].
 - [[traits | Traits]].
 
@@ -89,4 +88,7 @@ The following example demonstrates how to implement traits for types based on co
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+- [[rust-patterns | Rust Patterns]].
+
 </div>

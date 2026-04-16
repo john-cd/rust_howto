@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
-//! `lazy_static` allows you to define statically initialized values that are
+//! `lazy_static` defines statically initialized values that are
 //! computed lazily at runtime. It can be particularly useful for initializing
 //! data that is expensive to compute or that needs to be shared across multiple
 //! threads.
@@ -30,7 +30,7 @@ lazy_static! {
     static ref COUNT: usize = CONFIG.len();
 
     // `COUNTER` is a lazily-initialized Mutex-protected integer counter.
-    // The Mutex ensures that the COUNTER can be safely incremented from multiple threads, if needed.
+    // The `Mutex` ensures that the COUNTER can be safely incremented from multiple threads, if needed.
     static ref COUNTER: Mutex<i32> = Mutex::new(0);
 }
 

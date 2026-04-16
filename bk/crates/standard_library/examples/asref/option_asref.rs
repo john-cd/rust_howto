@@ -5,7 +5,7 @@
 // `maybe_name`.
 fn process_optional_string(maybe_name: Option<String>) {
     let borrowed_name: Option<&String> = maybe_name.as_ref();
-    // If you used `maybe_name.unwrap()`, `maybe_name` would be consumed.
+    // If we used `maybe_name.unwrap()`, `maybe_name` would be consumed.
     // let consumed_name = maybe_name.unwrap();
 
     if let Some(name_ref) = borrowed_name {
@@ -17,7 +17,7 @@ fn process_optional_string(maybe_name: Option<String>) {
         println!("No name provided.");
     }
 
-    // You can also get `Option<&str>` directly if the inner type is `String`.
+    // We can also get `Option<&str>` directly if the inner type is `String`.
     // `as_deref` is a shortcut for `opt.as_ref().map(|s| s.as_str())` or
     // equivalent `opt.as_ref().map(|s| &*s)`.
     let borrowed_str: Option<&str> = maybe_name.as_deref();

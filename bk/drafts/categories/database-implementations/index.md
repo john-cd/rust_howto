@@ -6,9 +6,9 @@ Databases allow clients to store and query large amounts of data in an efficient
 
 | Database Type | Rust crates |
 |---|---|
-| Embedded Databases | [`sled`][c~sled~docs]⮳{{hi:sled}}: A high-performance embedded database. [`lmdb-rs`][c~lmdb_rs~docs]⮳{{hi:lmdb-rs}}: Bindings to the LMDB embedded database. [`rocksdb`][c~rocksdb~docs]⮳{{hi:rocksdb}}: Bindings to the RocksDB embedded database. `tikv`: A distributed transactional key-value database (used in TiDB). While not strictly embedded, it's often used in similar ways. |
-| Key-Value Stores | [`sled`][c~sled~docs]⮳{{hi:sled}} and [`lmdb-rs`][c~lmdb_rs~docs]⮳{{hi:lmdb-rs}} above can also be used as key-value stores. |
-| Other Databases | [`tantivy`][c~tantivy~docs]⮳{{hi:tantivy}}: A full-text search engine library. [`qdrant`][c~qdrant~docs]⮳{{hi:qdrant}}: A vector similarity search engine. |
+| Embedded Databases | [`sled`][c~sled~docs]↗{{hi:sled}}: A high-performance embedded database. [`lmdb-rs`][c~lmdb-rs~docs]↗{{hi:lmdb-rs}}: Bindings to the LMDB embedded database. [`rocksdb`][c~rocksdb~docs]↗{{hi:rocksdb}}: Bindings to the RocksDB embedded database. [`tikv`][tikv~website]↗{{hi:tikv}}: A distributed transactional key-value database (used in TiDB). While not strictly embedded, it's often used in similar ways. |
+| Key-Value Stores | [`sled`][c~sled~docs]↗{{hi:sled}} and [`lmdb-rs`][c~lmdb-rs~docs]↗{{hi:lmdb-rs}} above can also be used as key-value stores. |
+| Other Databases | [`tantivy`][c~tantivy~docs]↗{{hi:tantivy}}: A full-text search engine library. [`qdrant`][c~qdrant~docs]↗{{hi:qdrant}}: A vector similarity search engine. |
 
 ## Databases Written in Rust
 
@@ -26,7 +26,7 @@ Databases allow clients to store and query large amounts of data in an efficient
 
 ## Message Queues Written in Rust
 
-- [robustmq: RobustMQ is a next-generation, high-performance, cloud-native, converged message queue that is compatible with multiple mainstream message queuing protocols and has complete Serverless capabilities.](https://github.com/robustmq/robustmq)
-- [rocketmq-rust: Apache RocketMQ build in Rust. Faster, safer, and with lower memory usage.](https://github.com/mxsm/rocketmq-rust)
+- [robustmq][c~robustmq~repo]↗ is a next-generation, high-performance, cloud-native, converged message queue that is compatible with multiple mainstream message queuing protocols and has complete Serverless capabilities.
+- [rocketmq-rust][c~rocketmq-rust~repo]↗: Apache RocketMQ build in Rust. Faster, safer, and with lower memory usage.
 
 </div>

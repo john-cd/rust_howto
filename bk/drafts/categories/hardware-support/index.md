@@ -18,13 +18,13 @@ For operating system interaction, you'll often use system calls. For external pe
 
 Interact with hardware registers in embedded systems.
 
-FIXME
+FIXME.
 
 ## Interrupts
 
 Hardware signals the CPU through interrupts.
 
-FIXME
+FIXME.
 
 ## Device Drivers
 
@@ -32,7 +32,7 @@ Software that interfaces between the operating system and hardware.
 
 ## Hardware Protocols
 
-FIXME how devices communicate with each other
+FIXME how devices communicate with each other.
 
 ## Related Topics
 
@@ -44,15 +44,15 @@ See [[memory-management | Memory Management]].
 
 User-space programs request services from the operating system kernel via system calls.
 
-- `std::os::unix` provides access to Unix-specific system calls.
-- `std::os::windows` provides access to Windows-specific system calls.
+- [`std::os::unix`][c~std::os::unix~docs]↗{{hi:std::os::unix}} provides access to Unix-specific system calls.
+- [`std::os::windows`][c~std::os::windows~docs]↗{{hi:std::os::windows}} provides access to Windows-specific system calls.
 
 See [[os_freebsd-apis | FreeBSD APIs]], [[os_linux-apis | Linux APIs]], [[os_macos-apis | macOS APIs]], [[os_unix-apis | Unix APIs]], [[os_windows-apis | Windows APIs]] and [[rust_os | Rust OSes]].
 
-### `no_std` Environments
+### `#![no_std]` Environments
 
-- `core` provides the bare minimum for writing code without the standard library.
-- `alloc` provides memory allocation APIs for `no-std` environments.
+- [`core`][c~core~docs]↗{{hi:core}} provides the bare minimum for writing code without the standard library.
+- [`alloc`][c~alloc~docs]↗{{hi:alloc}} provides memory allocation APIs for `no-std`{{hi:no-std}} environments.
 
 See [[no_std | no `std`]].
 
@@ -64,8 +64,8 @@ See [[embedded | Embedded]] Systems.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[expand hardware-support, write missing sections NOW](https://github.com/john-cd/rust_howto/issues/70)
+[expand hardware-support, write missing sections](https://github.com/john-cd/rust_howto/issues/70)
 
-- [Multiversion — Rust HW library](https://lib.rs/crates/multiversion)
+- [Multiversion][c~multiversion~lib.rs]↗ - Rust HW library.
 
 </div>

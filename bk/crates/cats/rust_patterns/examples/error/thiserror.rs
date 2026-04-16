@@ -8,7 +8,7 @@ use thiserror::Error;
 /// trait.
 #[derive(Error, Debug)]
 pub enum DataStoreError {
-    // A `Display` impl is generated for your error if you provide
+    // A `Display` impl is generated for your error if we provide
     // #[error("...")] messages on the struct or each variant of your enum.
     #[error("data store disconnected")]
     Disconnect(#[from] std::io::Error), /* A `From` impl is generated for

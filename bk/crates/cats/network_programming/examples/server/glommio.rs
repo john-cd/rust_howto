@@ -70,14 +70,14 @@ fn main() {
             );
             let t1 = glommio::spawn_local_into(
                 async move {
-                    // your code here
+                    // Your code here.
                 },
                 tq1,
             )
             .unwrap();
             let t2 = glommio::spawn_local_into(
                 async move {
-                    // your code here
+                    // Your code here.
                 },
                 tq2,
             )
@@ -93,8 +93,13 @@ fn main() {
 // ANCHOR_END: example
 
 #[test]
-fn test() {
+fn test() -> anyhow::Result<()> {
+    use std::fs;
+    if !fs::exists("temp")? {
+        fs::create_dir("temp")?;
+    }
     main();
+    Ok(())
 }
 // [finish](https://github.com/john-cd/rust_howto/issues/810)
 // review <https://itnext.io/modern-storage-is-plenty-fast-it-is-the-apis-that-are-bad-6a68319fbc1a>

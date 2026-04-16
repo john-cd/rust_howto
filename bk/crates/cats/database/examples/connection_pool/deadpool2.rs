@@ -11,7 +11,7 @@
 //! deadpool = "0.12.1" # or latest version
 //! deadpool-postgres = { version = "0.14.1", features = ["serde"] }
 //!
-//! Add you database's configuration to your `.env` file, for example:
+//! Add the database's configuration to your `.env` file, for example:
 //! PG__HOST=pg.example.com
 //! PG__USER=john_doe
 //! PG__PASSWORD=topsecret
@@ -49,10 +49,10 @@ async fn main() -> anyhow::Result<()> {
     let cfg = Config::from_env()?;
     // Creates a new `Pool` using the `deadpool_postgres::Config`.
     let pool = cfg.pg.create_pool(Some(Runtime::Tokio1), NoTls)?;
-    // Retrieves an Object from this Pool or waits for one to become available
+    // Retrieves an Object from this Pool or waits for one to become available:
     let client = pool.get().await?;
     // Like `tokio_postgres::Client::prepare()`, but uses an existing
-    // `Statement` from the `StatementCache` if possible
+    // `Statement` from the `StatementCache` if possible:
     let stmt = client.prepare_cached("SELECT version()").await?;
     let rows = client.query(&stmt, &[]).await?;
 

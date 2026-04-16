@@ -13,9 +13,9 @@ use std::thread;
 use dashmap::DashMap;
 
 fn main() {
-    // Create a shared DashMap with an Arc.
+    // Create a shared `DashMap` with an `Arc`.
     let map: Arc<DashMap<&str, i32, _>> = Arc::new(DashMap::new());
-    // Alternatively, you can use `DashMap::with_capacity(20)` to pre-allocate
+    // Alternatively, your can use `DashMap::with_capacity(20)` to pre-allocate
     // space.
 
     // Create multiple threads.
@@ -36,7 +36,7 @@ fn main() {
                 }
                 2 => match map_clone.get("key1") {
                     Some(value) => {
-                        println!("Thread {} read key1: {}", thread_id, *value);
+                        println!("Thread {thread_id} read key1: {}", *value);
                     }
                     _ => {
                         println!("Thread {thread_id} couldn't find key1");
@@ -46,8 +46,8 @@ fn main() {
                     Some(mut value) => {
                         *value += 10;
                         println!(
-                            "Thread {} incremented key2 value to {}",
-                            thread_id, *value
+                            "Thread {thread_id} incremented key2 value to {}",
+                            *value
                         );
                     }
                     _ => {
@@ -64,16 +64,16 @@ fn main() {
         thread.join().unwrap();
     }
 
-    // Remove "key1" and assert its value.
+    // Remove "key1" and assert its value:
     assert_eq!(map.remove("key1").unwrap().1, 0); // `remove` returns Option<(K, V)>.
 
-    // Check if "key2" exists.
+    // Check if "key2" exists:
     assert!(map.contains_key("key2"));
 
-    // Remove "key2" if its value is 11.
+    // Remove "key2" if its value is 11:
     map.remove_if("key2", |_, val| *val == 11);
 
-    // Access the final state of the map from the main thread.
+    // Access the final state of the map from the main thread:
     println!("final count: {}", map.iter().count());
 }
 // ANCHOR_END: example

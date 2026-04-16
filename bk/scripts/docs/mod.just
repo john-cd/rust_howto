@@ -23,7 +23,7 @@ book_root := clean(source_directory() + "/../..")
   set -euo pipefail
   cd {{ book_root }}/crates/
   cargo clean --doc
-  cargo doc --no-deps  --document-private-items --locked --bins --examples --workspace
+  cargo doc --no-deps --document-private-items --locked --bins --examples --workspace
 # optional:
 
 # Build and display the `cargo doc` documentation for all packages

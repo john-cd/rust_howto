@@ -16,7 +16,7 @@
 
 See also:
 
-- [abstract-factory in rust][abstract-factory-in-rust~website]⮳.
+- [abstract-factory in rust][abstract-factory-in-rust~website]↗.
 
 ## Implement a Singleton {#singleton}
 
@@ -24,9 +24,13 @@ See also:
 {{#include ../../../crates/cats/rust_patterns/examples/creational_patterns/singleton.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+[write](https://github.com/john-cd/rust_howto/issues/1391)
 </div>

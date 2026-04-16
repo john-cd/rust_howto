@@ -22,15 +22,14 @@ fn main() -> Result<()> {
 
     log::info!("Hello, world!");
 
+    println!("log_custom example: log4rs configured to write to temp/log/output.log");
     Ok(())
 }
 // ANCHOR_END: example
 
-use rusty_fork::rusty_fork_test;
-// Runs in a seprate process
-rusty_fork_test! {
-    #[test]
-    fn test() {
-        main().unwrap();
-    }
+#[test]
+fn test() -> anyhow::Result<()> {
+    std::fs::create_dir_all("temp/log/")?;
+    main()?;
+    Ok(())
 }

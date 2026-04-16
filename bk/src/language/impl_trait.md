@@ -24,17 +24,19 @@ This is useful when the exact type is complex, not relevant to the caller, or im
 {{#include ../../crates/language/examples/impl_trait/rpit.rs:example}}
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics .skip}
 
 - [[closures | Closures]].
 - [[generics | Generics]].
 - [[iterators | Iterators]].
 - [[traits | Traits]].
 - [[trait_objects | Trait Objects]].
-- [[rust-patterns | Rust Patterns]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+- [[rust-patterns | Rust Patterns]].
+
 </div>

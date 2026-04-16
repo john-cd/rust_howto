@@ -12,7 +12,7 @@ use std::cmp::Ordering;
 fn partition(data: &[i32]) -> Option<(Vec<i32>, i32, Vec<i32>)> {
     match data.len() {
         // If the slice is empty, there's nothing to partition.
-        // Return None to indicate this.
+        // Return `None` to indicate this.
         0 => None,
         // Otherwise, proceed with partitioning.
         _ => {

@@ -2,7 +2,7 @@
 
 {{#include traits.incl.md}}
 
-## Trait Syntax {#trait}
+## Declare a Trait {#trait-syntax}
 
 Traits are a way to define shared behavior that types can implement. They are similar to interfaces or abstract classes in other languages.
 
@@ -161,24 +161,26 @@ For more details on trait bounds, see the [[generics | Generics]] and [[impl_tra
 
 ## Use Async with Traits {#async-and-traits}
 
-This topic is covered in the [Async][p~async]⮳ chapter.
+This topic is covered in the [[asynchronous | Async]] chapter.
 
-## Related Topics {#skip}
+## References {#references .skip}
+
+- [Traits (blog)][blog~traits]↗.
+- [What is the correct way to return an Iterator (or any other trait)?][blog~stackoverflow~what-is-the-correct-way-to-return-an-iterator-or-any-other-trait]↗.
+
+## Related Topics {#related-topics .skip}
 
 - [[enums | Enums]].
 - [[generics | Generics]].
 - [[impl_trait | impl Trait]].
 - [[structs | Structs]].
 - [[trait_objects | Trait Objects]].
-- [[rust-patterns | Rust Patterns]].
-
-## References {#skip}
-
-- [Traits (blog)][blog~traits]⮳.
-- [What is the correct way to return an Iterator (or any other trait)?](https://stackoverflow.com/questions/27535289/what-is-the-correct-way-to-return-an-iterator-or-any-other-trait)⮳.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+- [[rust-patterns | Rust Patterns]].
+
 </div>

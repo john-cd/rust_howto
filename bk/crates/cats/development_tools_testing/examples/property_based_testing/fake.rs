@@ -39,10 +39,10 @@ struct User {
 }
 
 // The `Fake` trait is implemented for any type that implements `Dummy`:
-// Dummy should be implemented instead, and you get the `Fake` implementation
+// `Dummy` should be implemented instead, and we get the `Fake` implementation
 // for free.
 
-// A structure to represent an Order.
+// A structure to represent an Order:
 #[derive(Debug, Dummy)]
 struct Order {
     #[dummy(faker = "1000..2000")]
@@ -106,7 +106,7 @@ fn main() {
     let order = Order {
         id: Faker.fake(),
         user_id: user.id,
-        items: (0..3).map(|_| CompanyName().fake()).collect(), // FIXME
+        items: fake::vec![String as CompanyName(); 3],
         total: (50.0..500.0).fake(),
         shipping_address: Address {
             street: StreetName().fake(),
@@ -135,4 +135,4 @@ fn main() {
 fn test() {
     main();
 }
-// [review https://docs.rs/fake/4.2.0/fake/index.html  NOW](https://github.com/john-cd/rust_howto/issues/1124)
+// [review https://docs.rs/fake/4.2.0/fake/index.html](https://github.com/john-cd/rust_howto/issues/1124)

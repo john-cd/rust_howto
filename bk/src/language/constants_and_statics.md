@@ -22,10 +22,10 @@ Constants are primarily used for values that truly never change throughout the l
 {{#include ../../crates/language/examples/constants_and_statics/constants.rs:example}}
 ```
 
-### References {#skip}
+### References {#references .skip}
 
-- [Constants (Rust book)](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html#constants)⮳.
-- [Constant evaluation (Rust reference)](https://doc.rust-lang.org/reference/const_eval.html)⮳.
+- [Constants (Rust book)][book~rust~ch03-01-variables-and-mutability-constants]↗.
+- [Constant evaluation (Rust reference)][book~rust-reference~const_eval]↗.
 
 ## Declare Statics {#statics}
 
@@ -49,8 +49,17 @@ Statics can be mutable (`static mut`): Unlike `const`, static variables can be d
 {{#include ../../crates/language/examples/constants_and_statics/static_mut.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+- [[data_types | Data Types]].
+- [[lifetimes | Lifetimes]].
+- [[variables | Variables]].
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+[When are Rust's `const fn`s executed?][blog~const-fn]↗.
+
 </div>

@@ -6,7 +6,11 @@
 
 A badge{{hi:Badges}} is a small image that displays status information about a crate, for example the version number or build status, and links to a detailed page.
 
-[Shield.io][shield-io~website]{{hi:shields.io}}⮳.
+[Shield.io][shield-io~website]↗{{hi:shields.io}}.
+
+## Related Topics {#related-topics .skip}
+
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

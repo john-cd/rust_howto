@@ -60,7 +60,7 @@ services:
         max-size: 1g
     environment:
       - MONGO_INITDB_ROOT_USERNAME=mongoadmin
-      - MONGO_INITDB_ROOT_PASSWORD=mysecretpassword
+      - MONGO_INITDB_ROOT_PASSWORD=password
 
   mssql:
     image: "mcr.microsoft.com/mssql/server"
@@ -82,7 +82,7 @@ services:
   postgres:
     image: postgres:alpine
     environment:
-      - POSTGRES_PASSWORD=mysecretpassword
+      - POSTGRES_PASSWORD=password
       - POSTGRES_DB=library
     restart: always
     volumes:

@@ -16,4 +16,3 @@ pub enum RenderableObjects {
     Subchapter(Subchapter),
     ExampleIndex(ExampleIndex),
 }
-// [finish; unit tests](https://github.com/john-cd/rust_howto/issues/1366)

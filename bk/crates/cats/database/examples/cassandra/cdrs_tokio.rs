@@ -49,7 +49,7 @@
 //     let password = "password";
 //     let auth = StaticPasswordAuthenticatorProvider::new(&user, &password);
 //     // For tests, you may use
-//     // cdrs_tokio::authenticators::NoneAuthenticatorProvider
+//     // `cdrs_tokio::authenticators::NoneAuthenticatorProvider`.
 
 //     // Connect to a Cassandra cluster
 //     let cluster_config = NodeTcpConfigBuilder::new()
@@ -58,7 +58,7 @@
 //         .build()
 //         .await?;
 //     // Create a CDRS session that holds a pool of connections to nodes
-//     // and provides an interface for interacting with the cluster.
+//     // and provides an interface for interacting with the cluster:
 //     let session: CurrentSession = TcpSessionBuilder::new(
 //         RoundRobinLoadBalancingStrategy::new(),
 //         cluster_config,
@@ -96,7 +96,7 @@
 //         .query_with_values(insert_query, row.into_query_values())
 //         .await?;
 
-//     println!("Inserted user: {} (ID: {})", name, id);
+//     println!("Inserted user: {name} (ID: {id})");
 
 //     // Query the inserted row
 //     let select_query =
@@ -122,5 +122,5 @@
 //     main()?;
 //     Ok(())
 // }
-// // [finish; see also https://github.com/krojew/cdrs-tokio/blob/master/cdrs-tokio/examples/crud_operations.rs NOW](https://github.com/john-cd/rust_howto/issues/1017)
+// // [finish; see also https://github.com/krojew/cdrs-tokio/blob/master/cdrs-tokio/examples/crud_operations.rs](https://github.com/john-cd/rust_howto/issues/1017)
 // // <https://github.com/krojew/cdrs-tokio/blob/master/cdrs-tokio/examples/multiple_thread.rs>

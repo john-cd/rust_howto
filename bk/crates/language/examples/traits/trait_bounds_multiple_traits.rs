@@ -11,7 +11,7 @@ fn func<T: Debug + Clone>(t: &T) {
     // We can also print `t` with `:?` because it implements `Debug`.
 }
 
-/// It  may be equivalently be written in a `where` clause:
+/// It may be equivalently be written in a `where` clause:
 fn func2<T>(t: &T)
 where
     T: Debug + Clone,

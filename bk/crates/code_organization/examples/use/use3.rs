@@ -2,7 +2,7 @@
 // ANCHOR: example
 // This `use` statement allows us to use `HashMap` directly without having to
 // specify its full path.
-// IDIOM: we imported the `struct` itself, not its parent module.
+// IDIOM: import the `struct` itself, not its parent module.
 use std::collections::HashMap;
 
 // `HashMap` is declared in the standard library (`std`), which is an external

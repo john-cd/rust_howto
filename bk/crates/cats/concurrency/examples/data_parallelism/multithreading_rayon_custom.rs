@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
 fn main() {
-    // Build the threadpool
+    // Build the threadpool:
     let pool = rayon::ThreadPoolBuilder::new()
         .num_threads(8)
         .build()
@@ -13,14 +13,14 @@ fn main() {
     println!("{n}");
 }
 
-/// Calculates the nth fibonacci number
+/// Calculates the nth fibonacci number:
 fn fib(n: usize) -> usize {
     if n == 0 || n == 1 {
         return n;
     }
-    // Conceptually, calling join() is similar to spawning two threads,
+    // Conceptually, calling `join()` is similar to spawning two threads,
     // one executing each of the two closures.
-    let (a, b) = rayon::join(|| fib(n - 1), || fib(n - 2)); // runs inside of `pool`
+    let (a, b) = rayon::join(|| fib(n - 1), || fib(n - 2)); // runs inside of `pool`.
     a + b
 }
 // ANCHOR_END: example

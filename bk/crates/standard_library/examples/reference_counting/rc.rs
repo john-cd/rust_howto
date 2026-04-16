@@ -23,7 +23,7 @@ fn main() {
 
     // `Rc` is a smart pointer, so we can dereference it.
     println!("{:?}", *a);
-    // The `.` operator lets you call methods on the underlying vector.
+    // The `.` operator lets us call methods on the underlying vector.
     b.iter().for_each(|x| print!("{x} "));
 
     // We can get a mutable reference to the inner value, if there are NO OTHER

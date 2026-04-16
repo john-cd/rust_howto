@@ -7,7 +7,7 @@ fn main() {
     // This default immutability helps prevent common programming errors,
     // especially in concurrent programming.
     let i = 5;
-    // You cannot change the value of an immutable variable.
+    // We cannot change the value of an immutable variable.
     // ERROR: i = 6;
     println!("i: {i}");
 
@@ -26,11 +26,11 @@ fn main() {
 
     // Declare a mutable variable with `let mut`:
     let mut st = String::new();
-    // You can modify or reassign a mutable variable.
+    // We can modify or reassign a mutable variable.
     st.push_str("42");
     st = "43".to_string();
     println!("st: {st}");
-    // You cannot change its type:
+    // We cannot change its type:
     // ERROR: st = 42;
 }
 

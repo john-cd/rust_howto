@@ -12,7 +12,7 @@ use anyhow::Result;
 use lazy_static::lazy_static;
 use regex::Regex;
 
-fn extract_links(content: &str) -> HashSet<Cow<str>> {
+fn extract_links(content: &str) -> HashSet<Cow<'_, str>> {
     lazy_static! {
         static ref WIKI_REGEX: Regex = Regex::new(
             r"(?x)

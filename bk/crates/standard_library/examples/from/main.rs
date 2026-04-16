@@ -1,3 +1,0 @@
-mod from;
-
-fn main() {}

@@ -5,7 +5,7 @@
 ///
 /// In asynchronous programming, blocking operations can halt the progress of
 /// the entire asynchronous runtime. To avoid this,
-/// `tokio::task::spawn_blocking` allows you to offload blocking tasks to a
+/// `tokio::task::spawn_blocking` allows us to offload blocking tasks to a
 /// separate thread pool.
 #[tokio::main]
 async fn main() {

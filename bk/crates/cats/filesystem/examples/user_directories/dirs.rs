@@ -1,8 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-//! The `dirs` crate provides a convenient way to get paths to
-//! standard directories on the file system.
-
 fn main() {
     // Get the home directory.
     if let Some(home_dir) = dirs::home_dir() {

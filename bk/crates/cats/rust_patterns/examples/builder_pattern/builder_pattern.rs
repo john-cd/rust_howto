@@ -15,7 +15,7 @@ struct DatabaseConfig {
 }
 
 impl DatabaseConfig {
-    /// Optional: you may provide a method that returns a builder.
+    /// Optional: provide a method that returns a builder.
     fn build(host: String, port: u16) -> DatabaseConfigBuilder {
         DatabaseConfigBuilder::new(host, port)
     }

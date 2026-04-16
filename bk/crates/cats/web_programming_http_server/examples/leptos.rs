@@ -54,8 +54,9 @@
 // }
 
 fn main() {
-    //     // Mount the app to the HTML body.
-    //     mount_to_body(App)
+    //     // FIXME
+    //     mount_to_body(App);
+    println!("leptos example: a reactive web framework for building web UIs (see full implementation in the book)");
 }
 
 // #[test]

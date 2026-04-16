@@ -1,5 +1,0 @@
-edition = "2024"
-newline_style = "Unix" # Default: "Auto"
-#max_width = 80         # Default: 100
-imports_granularity = "Item"
-group_imports = "StdExternalCrate"

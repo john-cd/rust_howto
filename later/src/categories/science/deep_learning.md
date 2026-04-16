@@ -1,0 +1,43 @@
+# Neural Networks and Deep Learning
+
+{{#include deep_learning.incl.md}}
+
+[`candle`][c~candle-core~repo]↗{{hi:candle}} is more focused on inference and provides more pre-trained models, while [`burn`][c~burn~docs]↗{{hi:burn}} is more focused on supporting the whole workflow from training to inference. `candle` relies on the underlying cuTENSOR and cuDNNv8 libraries, enabling efficient execution on NVIDIA GPUs.e
+
+## `candle` {#deep-learning}
+
+[![candle-core][c~candle-core~docs~badge]][c~candle-core~docs] [![candle-core~crates.io][c~candle-core~crates.io~badge]][c~candle-core~crates.io] [![candle-core~repo][c~candle-core~repo~badge]][c~candle-core~repo] [![candle-core~lib.rs][c~candle-core~lib.rs~badge]][c~candle-core~lib.rs]{{hi:candle}}{{hi:candle-core}}{{hi:BLAS}}{{hi:Machine-learning}}{{hi:Tensor}}[![cat~science][cat~science~badge]][cat~science]{{hi:Science}}
+
+[`candle`][c~candle-core~docs]↗{{hi:candle}} is a minimalist ML framework for Rust with a focus on performance (including GPU support) and ease of use. Candle is like PyTorch written in Rust and focuses on neural network.
+
+[Candle][blog~candle]↗: a minimalist machine learning framework for rust that focuses on performance including GPU support and ease of use.
+
+```rust,editable
+{{#include ../../../crates/cats/science/examples/ml/candle.rs:example}}
+```
+
+## `burn` {#burn .skip}
+
+[![burn][c~burn~docs~badge]][c~burn~docs] [![burn~crates.io][c~burn~crates.io~badge]][c~burn~crates.io] [![burn~repo][c~burn~repo~badge]][c~burn~repo] [![burn~lib.rs][c~burn~lib.rs~badge]][c~burn~lib.rs]{{hi:burn}}{{hi:Deep-learning}}{{hi:Machine-learning}}{{hi:Ndarray}}{{hi:PyTorch}}{{hi:Tensor}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~science][cat~science~badge]][cat~science]{{hi:Science}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
+
+Burn is a comprehensive dynamic Deep Learning Framework built using Rust with flexibility, compute efficiency and portability as its primary goals.
+
+## References {#references .skip}
+
+- [Neural Networks][are-we-learning-yet?-neural-networks~website]↗.
+
+## Related Topics {#related-topics .skip}
+
+- [[computer-vision | Computer Vision]].
+- [[linear_algebra | Linear Algebra]].
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[write](https://github.com/john-cd/rust_howto/issues/1205)
+
+- [burn][c~burn~repo]↗: Burn is a new comprehensive dynamic Deep Learning Framework built using Rust with extreme flexibility, compute efficiency and portability as its primary goals..
+- [tensorflow][tensorflow-rust~repo]↗: Rust language bindings for TensorFlow.
+
+</div>

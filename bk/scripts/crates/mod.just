@@ -1,6 +1,8 @@
 set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 
-book_root := clean(source_directory() + "/../..")
+book_root := clean(join(source_directory(), "../.."))
+
+set tempdir := "."
 
 [no-exit-message]
 _default:
@@ -8,13 +10,50 @@ _default:
 
 ## ---- CRATE MANAGEMENT -----------------------------------
 
-# (BEWARE: modifies many files; manual review required) put all crate names in the book's Markdown between ` ` (the crate names are sourced from a text file passed as an argument)
+# (BEWARE: modifies many files; manual review required) Put all crate names in the book's Markdown between ` `
 backtick:
    #! /usr/bin/env bash
    set -euo pipefail
-   for crate in $( cat {{book_root}}/master/crates.txt | sed -E -e '/^\s*(protobuf|ignore|select|windows|tracing|heapless|bytes|regex|futures|cached|config|diff|which|fake|glob|markdown|insta|similar|time|just|directories|image|open|log|either|which|similar|cargo|just|cross|colored|console)\s*$/d' )
+   for crate in $( cat {{book_root}}/master/crates.txt | sed -E -e '/^\s*(vision|markup|combine|matrix|derive|raster|job|thumbnails|digest|encoding|ping|clear|can|core|fetch|find|atomic|protobuf|ignore|select|windows|tracing|heapless|bytes|regex|futures|cached|config|diff|which|fake|glob|markdown|insta|similar|time|just|directories|image|open|log|either|which|similar|cargo|just|cross|colored|console)\s*$/d' )
    do
      echo ">> $crate"
-     find {{book_root}}/src {{book_root}}/drafts -type f -name '*.md' -not -name '*.incl.md' -not -name '*refs.md' \
+     find {{book_root}}/src {{book_root}}/drafts {{book_root}}/../later -type f -name '*.md' -not -name '*.incl.md' -not -name '*refs.md' \
         -exec sed -E -i 's~(\s)('"${crate}"')(\s)~\1`\2`\3~g' {} \;
    done
+
+# Check the master list of crates against `crates.io` and print invalid names (slow).
+check:
+    #! /usr/bin/env bash
+    set -uo pipefail
+    for crate in $( cat {{book_root}}/master/crates.txt )
+    do
+      cargo info ${crate} > /dev/null 2>&1 || echo "$crate"
+    done
+    echo "DONE"
+
+# Extract crate names from [c~<name>::optional::path~suffix] link labels in all Markdown files in `src` (except refdef files) and compare with the master list.
+compare_with_markdown:
+    #! /usr/bin/env bash
+    set -euo pipefail
+    root={{book_root}}/
+    # Extract crate name from labels [c~<name>::optional::path~suffix] in all Markdown files (except refdef files).
+    regex='(\[c~)([^:~]+)([^]]+\])'
+    # comm -3 = suppress column 3 (lines that appear in both files)
+    # You may add: ${root}drafts ${root}later
+    rg --no-line-number --no-filename --only-matching -g "*.md" -g "!*-refs.md" --replace '$2' "${regex}" "${root}src" | sort -u | comm --check-order -3 --output-delimiter="|" - <(sort -u ${root}master/crates.txt)
+
+# Sort the master list of crates.
+@sort:
+  sort -u -o {{book_root}}/master/crates.txt {{book_root}}//master/crates.txt
+
+#replace:
+#    #! /usr/bin/env bash
+#    set -euo pipefail
+#    root={{book_root}}/
+#    crates=$(grep '_' ${root}/.txt)
+#    for crate in $crates
+#    do
+#      new_crate=$(sed 's/_/-/g' <<< "$crate" )
+#      echo ">>> ${new_crate}"
+#      find "${root}" -type f -name "*.md" -exec sed -E -i 's/'"${crate}"'/'"${new_crate}"'/g' {} \;
+#    done

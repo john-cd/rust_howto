@@ -6,3 +6,4 @@
 | [Use Lifetimes and Lifetime Parameters in Struct Definitions and Implementations][ex~language~lifetime-annotations] |
 | [Avoid Self-referential Structs][ex~language~self-referential-structs] |
 | [Lifetime Elision Rules][ex~language~lifetime-elision-rules] |
+| [Use Lifetime Parameters][ex~language~use-lifetime-parameters] |

@@ -2,12 +2,12 @@
 //! This example demonstrates how to use the `await-tree` crate.
 //!
 //! `await-tree` is a tool for visualizing the execution of asynchronous tasks
-//! in Rust. It helps you understand the relationships between tasks and how
+//! in Rust. It helps understand the relationships between tasks and how
 //! they are waiting on each other.
 //!
 //! Add to your `Cargo.toml`:
 //! ```toml
-//! await-tree = "0.3.0" # Or latest
+//! await-tree = "0.3.1" # Or latest
 //! ```
 use await_tree::ConfigBuilder;
 use await_tree::InstrumentAwait;
@@ -41,14 +41,14 @@ async fn main() {
 
     // Print the await-trees:
     // foo 0 [1.003s]
-    //   baz [1.003s]
     //   bar 0 [1.003s]
     //     pending inside bar 0 [1.003s]
+    //   baz [1.003s]
     //
     // foo 1 [1.003s]
-    //   baz [1.003s]
     //   bar 1 [1.003s]
     //     pending inside bar 1 [1.003s]
+    //   baz [1.003s]
     for (_, tree) in registry
         .collect::<i32>()
         .into_iter()
@@ -70,16 +70,12 @@ async fn main() {
 
 /// `foo` is an asynchronous function that spawns two other asynchronous
 /// functions, `bar` and `baz`, and waits for them to complete.
-///
-/// # Arguments
-/// * `n` - An integer used to identify the task.
 async fn foo(n: i32) {
     // Instrument futures with `instrument_await`.
 
     // Spans of joined futures will be siblings in the tree.
     join(
-        bar(n).instrument_await(format!("bar {n}")), /* The span can be a
-                                                      * String */
+        bar(n).instrument_await(format!("bar {n}")), // The span can be a `String`.
         baz(n).instrument_await("baz"), // or `&'static str`.
     )
     .await;
@@ -112,4 +108,3 @@ async fn baz(n: i32) {
 fn test() {
     main();
 }
-// TODO clean up

@@ -10,6 +10,10 @@
 {{#include ../../../crates/cats/development_tools_debugging/examples/other/type_name_of_val.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+FIXME
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
@@ -17,6 +21,6 @@
 [review](https://github.com/john-cd/rust_howto/issues/926)
 
 - move to proper location.
-- cover [`std::any::type_name`][c~std::any::type_name~docs].
+- cover [`std::any::type_name`][c~std::any::type_name~docs]↗.
 
 </div>

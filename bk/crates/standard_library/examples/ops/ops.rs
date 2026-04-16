@@ -3,8 +3,9 @@
 use std::ops::Add;
 
 // The struct we want to overload the '+' operator for.
-// We derive the `Debug` trait to allow for easy printing with `{:?}`.
-#[derive(Debug, Copy, Clone)]
+// We derive a few convenience traits, incl. `Debug` to allow for easy printing
+// with `{:?}`.
+#[derive(Debug, Copy, Clone, PartialEq, Eq)]
 struct Point {
     x: i32,
     y: i32,
@@ -30,12 +31,13 @@ fn main() {
     let p1 = Point { x: 1, y: 5 };
     let p2 = Point { x: 2, y: 3 };
 
-    // Here we use the overloaded '+' operator.
+    // Here we use the overloaded '+' operator:
     let p3 = p1 + p2;
+    assert_eq!(p3, Point { x: 3, y: 8 });
 
-    println!("{:?} + {:?} = {:?}", p1, p2, p3);
-    // Expected output: Point { x: 1, y: 5 } + Point { x: 2, y: 3 } = Point { x:
-    // 3, y: 8 }
+    println!("{p1:?} + {p2:?} = {p3:?}");
+    // Expected output:
+    // Point { x: 1, y: 5 } + Point { x: 2, y: 3 } = Point { x: 3, y: 8 }
 }
 // ANCHOR_END: example
 

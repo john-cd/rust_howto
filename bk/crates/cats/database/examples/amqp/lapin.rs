@@ -84,7 +84,7 @@ async fn main() -> anyhow::Result<()> {
         )
         .await?;
 
-    // Process messages
+    // Process messages:
     println!("Waiting for messages...");
     if let Some(delivery) = consumer.next().await {
         let delivery = delivery?;
@@ -109,7 +109,7 @@ async fn main() -> anyhow::Result<()> {
 #[test]
 fn require_external_svc() -> anyhow::Result<()> {
     unsafe {
-        // Refer to the compose*.yaml files
+        // Refer to the `compose*.yaml` files:
         std::env::set_var(
             "AMQP_ADDR",
             "amqp://guest:guest@rust_howto_dev-amqp-1:5672",

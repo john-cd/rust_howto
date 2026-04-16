@@ -73,6 +73,7 @@ fn main() {
     assert_eq!(zip_iter.next(), Some((1, 'a')));
     assert_eq!(zip_iter.next(), Some((2, 'b')));
     assert_eq!(zip_iter.next(), None);
+    println!("Iterator examples passed!");
 }
 // ANCHOR_END: example
 

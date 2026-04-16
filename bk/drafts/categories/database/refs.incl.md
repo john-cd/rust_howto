@@ -1,12 +1,12 @@
 [ex~database~aggregate-data-postgres]: postgres.md#aggregate-data-postgres
-[ex~database~cassandra_protocol]: nosql.md#cassandra_protocol
-[ex~database~cdrs_tokio]: nosql.md#cdrs_tokio
+[ex~database~cassandra-protocol]: nosql.md#cassandra-protocol
+[ex~database~cdrs-tokio]: nosql.md#cdrs-tokio
 [ex~database~connection-pool]: connection_pool.md#connection-pool
 [ex~database~cornucopia]: postgres.md#cornucopia
 [ex~database~create-database-sqlite]: sqlite.md#create-database-sqlite
 [ex~database~create-tables-postgres]: postgres.md#create-tables-postgres
+[ex~database~diesel-oci]: oracle.md#diesel-oci
 [ex~database~diesel]: query_builders_orms.md#diesel
-[ex~database~diesel_oci]: oracle.md#diesel_oci
 [ex~database~elasticsearch]: search.md#elasticsearch
 [ex~database~heed]: key_value_stores.md#heed
 [ex~database~insert-query-data-postgres]: postgres.md#insert-query-data-postgres
@@ -29,7 +29,7 @@
 [p~caching]: ../caching/index.md
 [p~cargo]: ../development-tools/cargo/cargo.md
 [p~configuration]: ../config/configuration.md
-[p~crates]: ../../crate_selection/index.md
+[p~crates]: ../../../src/crate-selection/index.md
 [p~database]: index.md
 [p~databases]: ../database-implementations/databases.md
 [p~email]: # "../email/index.md"
@@ -37,7 +37,7 @@
 [p~graphql]: # "../web-programming_http-server/graphql.md"
 [p~ignore]: # "../filesystem/ignore.md"
 [p~memory]: ../development-tools_profiling/memory_usage_analysis.md
-[p~option]: # "../../standard_library/option.md"
+[p~option]: # "../../standard-library/option.md"
 [p~performance]: ../development-tools_cargo-plugins/performance.md
 [p~postgres]: postgres.md
 [p~programming-languages]: ../parser-implementations/programming_languages.md

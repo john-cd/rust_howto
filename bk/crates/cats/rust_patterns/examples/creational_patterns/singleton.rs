@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-
 use std::sync::Mutex;
 use std::sync::OnceLock;
 
@@ -49,7 +48,7 @@ fn main() {
 
     {
         let mut settings_guard_2 = get_settings().lock().unwrap();
-        // The MutexGuard provides mutable access.
+        // The `MutexGuard` provides mutable access.
         settings_guard_2.set_config("new_config".to_string());
         println!("Config 2 updated!");
     } // Lock released here.

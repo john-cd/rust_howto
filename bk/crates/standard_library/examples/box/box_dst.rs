@@ -7,7 +7,7 @@ fn main() {
     println!("Boxed slice: {boxed_slice:?}");
     println!("Length of boxed slice: {}", boxed_slice.len()); // via `Deref`.
 
-    // You can also convert a `Vec` into a `Box<[T]>`, consuming the `Vec` and
+    // We can also convert a `Vec` into a `Box<[T]>`, consuming the `Vec` and
     // avoiding a copy. `Box<[T]>` may be more compact than `Vec` but is not
     // resizable.
     let my_vec = vec![4, 5, 6, 7];
@@ -18,7 +18,7 @@ fn main() {
     let boxed_str: Box<str> = "Hello, Rust!".to_string().into_boxed_str();
     println!("Boxed string: {boxed_str}");
 
-    // You can also create it directly from a `&str` literal (less common).
+    // We can also create it directly from a `&str` literal (less common).
     let another_boxed_str: Box<str> = Box::from("Another string slice");
     println!("Another boxed string: {another_boxed_str}");
 }

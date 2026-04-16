@@ -13,26 +13,25 @@ clean() {
     echo "$1" | sed -E '
     s/.*/\L&/;
     s/[a-z]*/\u&/g;
-    s/\s(In|Of|And|With)\s/\L&/g;
-    s/(Cli|Ansi|Uuid|Ffi|Os|Wasm|bsd|Gpu|Api|Gui|Lru|cv|Cd|Ci|Csv|Aws|Cors|Http|Ide|sql|ql|Tui|Mssql|Amqp|Kv|Tls|Aead|Orm|Hmac|Html|Json|Ini|Toml|Yaml|Xml|Mime|Url)/\U&/g;
+    s/\s(In|Of|And|With|To|By)\s/\L&/g;
+    s/(Cli|Ansi|Uuid|Ffi|Os|Wasm|bsd|Gpu|Api|Gui|Lru|cv|Cd|Ci|Csv|Aws|Cors|Http|sql|ql|Tui|Mssql|Amqp|Kv|Tls|Aead|Orm|Hmac|Html|Json|Ini|Toml|Yaml|Xml|Mime|Url)/\U&/g;
     s/Asref/`AsRef`/g;
     s/Cow/`Cow`/g;
     s/Grpc/gRPC/g;
+    s/Crates.Io/`crates.io`/g;
     s/Mdbook/mdBook/g;
-    s/Linkedlist/`LinkedList`/g;
     s/(Tar|Cwd|Miri|Just|Rhai|Actix|Axum|Hyper|Tinytemplate|Tera|Tempfile|Autocfg|Crossbeam|Flate2)/\L`&`/g;
     s/\b(Option|Result)\b/`&`/g'
 }
 
 root="$(realpath $1)/"
 
-index_file="${root}src/examples_index.md"
+index_file="${root}src/indices/examples_index.md"
 
 hiddendiv=$( sed -n '/^<div class="hidden">/,/^<\/div>/ p' "${index_file}" )
 
 # Print the header
 echo $'# Index of Examples\n' > "${index_file}"
-
 
 # Leaf directories only
 # https://stackoverflow.com/questions/4269798/use-gnu-find-to-show-only-the-leaf-directories
@@ -58,14 +57,14 @@ do
         if [[ $title != "Index" ]]; then
           echo -e "### ${title}\n" >> "${index_file}"
         fi
-        echo -e "{{#include ${incl}}}\n" >> "${index_file}"
+        echo -e "{{#include ../${incl}}}\n" >> "${index_file}"
     done
 done
 
 # Print the footer
 cat >> "${index_file}" << 'EOF'
 {{#include refs.incl.md}}
-{{#include refs/link-refs.md}}
+{{#include ../refs/link-refs.md}}
 
 EOF
 

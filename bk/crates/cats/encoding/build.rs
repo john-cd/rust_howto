@@ -25,5 +25,6 @@ fn prost() {
 fn main() {
     #[cfg(target_os = "linux")]
     capnp();
-    // prost(); // TODO
+    // prost();
 }
+// [fix prost](https://github.com/john-cd/rust_howto/issues/1417)

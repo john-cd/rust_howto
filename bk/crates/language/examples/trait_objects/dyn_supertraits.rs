@@ -40,11 +40,11 @@ fn main() {
         name: String::from("Alice"),
     };
 
-    // You can directly pass a reference to `person`,
+    // We can directly pass a reference to `person`,
     // because it implements `Greet`.
     say_hello_and_goodbye(&person);
 
-    // You can also explicitly create a trait object reference:
+    // We can also explicitly create a trait object reference:
     let greet_obj: &dyn Greet = &person;
     say_hello_and_goodbye(greet_obj);
 }

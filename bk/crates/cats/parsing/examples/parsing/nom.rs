@@ -28,8 +28,8 @@ fn parse_number(input: &str) -> IResult<&str, u32> {
 /// `parse_comma_separated_numbers` parses a comma-separated list of numbers.
 /// It returns a vector of `u32` integers.
 fn parse_comma_separated_numbers(input: &str) -> IResult<&str, Vec<u32>> {
-    // `tag` recognizes a pattern / string.
-    // `separated_list0` alternates between two parsers to produce a list of
+    // - `tag` recognizes a pattern / string.
+    // - `separated_list0` alternates between two parsers to produce a list of
     // elements.
     separated_list0(tag(","), parse_number).parse(input)
 }

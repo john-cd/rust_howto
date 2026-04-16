@@ -16,7 +16,7 @@ fn main() {
         data.push(4);
     });
 
-    // println!("{:?}", data); // Error: `data` was moved into the closure.
+    // println!("{data:?}"); // Error: `data` was moved into the closure.
 
     handle.join().unwrap();
 }

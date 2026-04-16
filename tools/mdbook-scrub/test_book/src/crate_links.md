@@ -1,11 +1,10 @@
 # Crate Links
 
-TODO: NOT IMPLEMENTED
+TODO: NOT IMPLEMENTED.
 
 The `rust_howto` book uses custom directives to insert crate links and badges.
 
-Any left-over directives should be scrubbed by `mdbook-scrub` if the corresponding
-configuration toggle is set (which is the default).
+Any left-over directives should be scrubbed by `mdbook-scrub` if the corresponding configuration toggle is set (which is the default).
 
 - Internal crate page: {{crate xyz}}
 - Variations:
@@ -22,5 +21,5 @@ configuration toggle is set (which is the default).
 
 ## Example of rendered links
 
-- {{docs diesel}} -> [`diesel`][c~diesel~docs]⮳{{hi:diesel}}
-- {{github mdbook-linkcheck}} -> [`mdbook-linkcheck` (GitHub)][c~mdbook_linkcheck~github]{{hi:mdbook-linkcheck}}⮳.
+- {{docs diesel}} -> [`diesel`][c~diesel~docs]↗{{hi:diesel}}
+- {{github mdbook-linkcheck}} -> [`mdbook-linkcheck` (GitHub)][c~mdbook-linkcheck~repo]↗{{hi:mdbook-linkcheck}}.

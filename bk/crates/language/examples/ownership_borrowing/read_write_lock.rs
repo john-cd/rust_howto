@@ -10,7 +10,7 @@ fn main() {
     let ref_s1 = &s1;
     let ref_s2 = &s1;
 
-    // You cannot modify `s1` or obtain a mutable (exclusive) reference to it
+    // We cannot modify `s1` or obtain a mutable (exclusive) reference to it
     // when holding immutable references.
     // s1.push('!');
     // ERROR: "cannot borrow `s1` as mutable because it is also borrowed as

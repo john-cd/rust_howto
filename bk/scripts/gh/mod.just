@@ -2,6 +2,8 @@ set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 
 root := clean(source_directory() + "/../..")
 
+set tempdir := "."
+
 [no-exit-message]
 _default:
   @just --list --unsorted --justfile {{source_file()}}
@@ -31,7 +33,7 @@ create_issues_for_markdown:
   IFS=$'\n\t'
   dir="{{root}}/../"
   prefix='^\s*TODO\s*:?\s*'
-  for file in $(find {{root}}/src {{root}}/drafts -type f -name "*.md" -not -name "*refs.md")
+  for file in $(find {{root}}/src {{root}}/drafts {{root}}/later -type f -name "*.md" -not -name "*refs.md")
   do
     base=$(basename $file '.md')
     rel=$(realpath --relative-to=${dir} $file)

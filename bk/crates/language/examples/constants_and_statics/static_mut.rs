@@ -40,7 +40,7 @@ fn do_instead() {
     static COUNTER: AtomicU16 = AtomicU16::new(0);
 
     println!("Initial COUNTER value: {}", COUNTER.load(Ordering::Relaxed));
-    // Be sure to analyze your use case to determine the correct Ordering to
+    // Be sure to analyze your use case to determine the correct `Ordering` to
     // use.
 
     let old_count = COUNTER.fetch_add(1, Ordering::Relaxed);

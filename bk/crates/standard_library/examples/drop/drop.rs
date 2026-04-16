@@ -29,7 +29,7 @@ fn main() {
     };
     println!("CustomStruct 'e' created.");
     // We can explicitly drop a value using `std::mem::drop`, but usually,
-    // you let Rust handle it automatically.
+    // Rust handles it automatically.
     drop(e);
     println!("CustomStruct 'e' dropped before end of main.");
 

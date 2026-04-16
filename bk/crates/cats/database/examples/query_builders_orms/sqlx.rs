@@ -7,7 +7,10 @@
 //! database table, creating a table, inserting data, and retrieving data.
 //!
 //! In Cargo.toml, add the following dependencies:
+//! ```toml
+//! [dependencies]
 //! sqlx = { version = "0.8", features = [ "runtime-tokio", "sqlite" ]
+//! ```
 
 use sqlx::SqlitePool;
 
@@ -20,7 +23,7 @@ struct User {
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    // Create a connection pool
+    // Create a connection pool:
     let pool = SqlitePool::connect("sqlite::memory:").await?;
 
     // In SQL, queries can be separated into prepared (parameterized) or
@@ -32,7 +35,7 @@ async fn main() -> anyhow::Result<()> {
     // BEGIN). In SQLx, a `&str` is treated as an unprepared query,
     // and a `Query` or `QueryAs` struct is treated as a prepared query.
 
-    // Create the users table using a prepared, cached query
+    // Create the users table using a prepared, cached query:
     sqlx::query(
         "
         CREATE TABLE IF NOT EXISTS users (
@@ -44,20 +47,20 @@ async fn main() -> anyhow::Result<()> {
     .execute(&pool)
     .await?;
 
-    // Insert a new user
+    // Insert a new user:
     sqlx::query("INSERT INTO users (name, email) VALUES (?, ?)")
         .bind("John Doe")
         .bind("john@example.com")
         .execute(&pool)
         .await?;
 
-    // Retrieve all users
+    // Retrieve all users:
     let users: Vec<User> =
         sqlx::query_as::<_, User>("SELECT id, name, email FROM users")
             .fetch_all(&pool)
             .await?;
 
-    // Print the retrieved users
+    // Print the retrieved users:
     for user in users {
         println!(
             "ID: {}, Name: {}, Email: {}",
@@ -71,7 +74,7 @@ async fn main() -> anyhow::Result<()> {
 
 #[test]
 fn require_external_svc() -> anyhow::Result<()> {
-    // Test function to run the main example
+    // Test function to run the main example.
     main()?;
     Ok(())
 }

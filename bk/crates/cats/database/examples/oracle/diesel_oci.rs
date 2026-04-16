@@ -40,7 +40,8 @@ diesel::table! {
 // The `diesel::table!` macro is used to define a table schema in Diesel.
 
 // Define a struct to hold the query results.
-#[derive(Queryable, PartialEq, Debug)]
+#[derive(QueryableByName, Queryable, PartialEq, Debug)]
+#[diesel(table_name = users)]
 struct User {
     username: String,
     password: String,
@@ -59,21 +60,20 @@ fn main() -> anyhow::Result<()> {
         env::var("ORACLE_DB_PASSWORD").expect("ORACLE_DB_PASSWORD not set");
 
     // Set up a connection to Oracle DB using Diesel and diesel_oci
-    let mut _connection: OciConnection =
+    let mut connection: OciConnection =
         establish_connection(&db_url, &username, &password)?;
 
-    // // FIXME
-    // // Query the database (fetching users as an example)
-    // let results = diesel::sql_query("SELECT * FROM users WHERE ROWNUM <= 5")
-    //     .load::<User>(&mut connection)?;
+        // Query the database (fetching users as an example)
+    let results = diesel::sql_query("SELECT * FROM users WHERE ROWNUM <= 5")
+        .load::<User>(&mut connection)?;
 
-    // // Print the results
-    // for user in results {
-    //     println!("Username: {}, Password: {}", user.username, user.password);
-    // }
+    // Print the results
+    for user in results {
+        println!("Username: {}, Password: {}", user.username, user.password);
+    }
 
-    // // Use the connection similary to any other diesel connection
-    // let _res = users::table.load::<(i32, String, String)>(&mut connection)?;
+    // Use the connection similary to any other diesel connection
+    let _res = users::table.load::<(i32, String, String)>(&mut connection)?;
 
     Ok(())
 }
@@ -103,12 +103,12 @@ fn require_external_svc() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [finish; debug: Issue: Cannot locate a 64-bit Oracle Client library; need heavy test NOW](https://github.com/john-cd/rust_howto/issues/1020)
+// [finish; debug: Issue: Cannot locate a 64-bit Oracle Client library; need heavy test](https://github.com/john-cd/rust_howto/issues/1020)
 
 // figure out install of the client
 
 // The simplest Oracle Client is the free Oracle Instant Client.
-// Only the “Basic” or “Basic Light” package is required.
+// Only the "Basic" or "Basic Light" package is required.
 // <https://www.oracle.com/database/technologies/instant-client.html>
 // <https://github.com/oracle/docker-images/tree/main/OracleInstantClient>
 

@@ -27,6 +27,8 @@ They preferentially capture variables by reference and only go lower when requir
 
 ## Force Closure Capture by Value {#move-closures}
 
+[![std][c~std~docs~badge]][c~std~docs]
+
 A closure can be forced to capture its environment by copying or moving values by prefixing it with the `move` keyword.
 This is often used to ensure that the closure's lifetime is `'static` and common when creating a new thread.
 
@@ -36,6 +38,8 @@ This is often used to ensure that the closure's lifetime is `'static` and common
 
 ## Annotate Closure Types {#closure-with-type-annotations}
 
+[![std][c~std~docs~badge]][c~std~docs]
+
 Closures can often infer parameter and return-value types, but you can add them manually:
 
 ```rust,editable
@@ -44,13 +48,17 @@ Closures can often infer parameter and return-value types, but you can add them 
 
 ## Use Closures as Function Arguments {#closures-as-input-parameters}
 
+[![std][c~std~docs~badge]][c~std~docs]
+
 Closures are frequently used as arguments to functions, especially higher-order functions like those found on iterators (`map`, `filter`, `fold`, etc.).
 
 A closure automatically implements one of three special traits:
 
-- [`std::ops::Fn`][c~std::ops::Fn~docs]{{hi:std::ops::Fn}}⮳ if the closure uses the captured value by reference (`&T`),
-- [`std::ops::FnMut`][c~std::ops::FnMut~docs]{{hi:std::ops::FnMut}}⮳ if the closure uses the captured value by mutable reference (`&mut T`),
-- [`std::ops::FnOnce`][c~std::ops::FnOnce~docs]{{hi:std::ops::FnOnce}}⮳ if the closure uses the captured value by value (`T`) e.g. moves it.
+- [`std::ops::Fn`][c~std::ops::Fn~docs]↗{{hi:std::ops::Fn}} if the closure uses the captured value by reference (`&T`) (or don't capture anything at all),
+- [`std::ops::FnMut`][c~std::ops::FnMut~docs]↗{{hi:std::ops::FnMut}} if the closure uses the captured value by mutable reference (`&mut T`),
+- [`std::ops::FnOnce`][c~std::ops::FnOnce~docs]↗{{hi:std::ops::FnOnce}} if the closure uses the captured value by value (`T`) e.g. moves it.
+
+Additionally, for any type `F` that implements `Fn` / `FnMut` / `FnOnce`, `&F` implements them, too.
 
 When defining a function that accepts a closure, you use the `Fn`, `FnMut`, or `FnOnce` traits as bounds:
 
@@ -58,7 +66,7 @@ When defining a function that accepts a closure, you use the `Fn`, `FnMut`, or `
 {{#include ../../crates/language/examples/closures/closures_as_input_parameters.rs:example}}
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics .skip}
 
 - [[functions | Functions]].
 - [[rust-patterns | Rust Patterns]].
@@ -68,4 +76,11 @@ When defining a function that accepts a closure, you use the `Fn`, `FnMut`, or `
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+
+Methods expecting a closure can also accept an enum variant (tuple-like)
+
+https://www.reddit.com/r/rust/comments/1l8okiy/im_blown_that_this_is_a_thing/
+
+Enum variants and tuple-like structs can be used as function items in general https://doc.rust-lang.org/reference/types/function-item.html
+
 </div>

@@ -71,7 +71,7 @@ alias s := serve
   echo "Serve the book"
   cd {{root}} && mdbook serve -p 3000 -n 127.0.0.1 --open {{root}}
   ## NOTE: can conflict with "port" / EXPOSE in the Docker / Docker Compose configuration
-  ## Or use: cd  {{root}}/book/html ; python3 -m http.server 3000
+  ## Or use: cd {{root}}/book/html ; python3 -m http.server 3000
 
 alias q := quick
 

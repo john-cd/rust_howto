@@ -10,8 +10,8 @@ use serde_json::Value;
 
 fn main() {
     let json5_str = r#"{
-        // Comments are allowed
-        unquoted: 'and you can use single quotes',
+        // Comments are allowed.
+        unquoted: 'and we can use single quotes',
         trailingComma: ['in arrays', 'like', 'this', ],
         hexadecimal: 0xDEADbeef,
         infinity: Infinity,

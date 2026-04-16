@@ -1,3 +1,0 @@
-mod wgpu;
-
-fn main() {}

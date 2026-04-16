@@ -12,14 +12,16 @@ use tokio::time;
 // asynchronous code.
 
 // Add these dependencies to your Cargo.toml:
+// ```toml
 // [dependencies]
 // futures = "0.3"
 // futures-util = "0.3"
 // tokio = { version = "1", features = ["full"] }
+// ```
 
 /// Simulated async function that returns a `Result`:
 async fn fetch_data(id: u32) -> Result<String, String> {
-    // Simulate network delay
+    // Simulate network delay:
     time::sleep(Duration::from_millis(100)).await;
     if id % 3 == 0 {
         Err(format!("Error fetching data for id {id}"))
@@ -32,9 +34,9 @@ async fn fetch_data(id: u32) -> Result<String, String> {
 async fn main() {
     println!("\n===== Combining Futures =====");
     // Demonstrates:
-    // `select` for racing futures,
-    // `join_all` for waiting on multiple futures,
-    // `try_join` for handling errors in combined futures.
+    // - `select` for racing futures,
+    // - `join_all` for waiting on multiple futures,
+    // - `try_join` for handling errors in combined futures.
 
     // `ready` creates a future that is immediately ready with a value.
     let future1 =
@@ -59,7 +61,7 @@ async fn main() {
     // Join futures:
     let futures = vec![fetch_data(1), fetch_data(2)];
     // The future returned by `join_all` will drive execution for all of its
-    // underlying futures, collecting the results into a destination Vec<T>
+    // underlying futures, collecting the results into a destination `Vec<T>`
     // in the same order as they were provided.
     let results: Vec<Result<String, String>> = future::join_all(futures).await;
     println!("Join results: {results:?}");
@@ -73,11 +75,11 @@ async fn main() {
 
     println!("===== Future Extensions =====");
     // Demonstrates:
-    // `map` to transform future outputs,
-    // `and_then` for chaining asynchronous operations,
-    // `or_else` for error handling.
+    // - `map` to transform future outputs,
+    // - `and_then` for chaining asynchronous operations,
+    // - `or_else` for error handling.
 
-    // Use `map` to transform the output of a Future
+    // Use `map` to transform the output of a Future:
     let future = fetch_data(1).map(|result| match result {
         Ok(data) => Ok(format!("Processed: {data}")),
         Err(e) => Err(e),
@@ -86,7 +88,7 @@ async fn main() {
 
     // Use `and_then` for chaining futures:
     let future = fetch_data(2).and_then(|data| async move {
-        // Simulate additional processing
+        // Simulate additional processing:
         time::sleep(Duration::from_millis(50)).await;
         Ok(format!("Enhanced: {data}"))
     });
@@ -95,7 +97,7 @@ async fn main() {
     // Use `or_else` for error handling:
     let future = fetch_data(3).or_else(|err| async move {
         println!("Recovering from error: {err}");
-        // Return a fallback value
+        // Return a fallback value:
         Ok::<_, String>(String::from("Fallback data"))
     });
     println!("OrElse result: {:?}", future.await);

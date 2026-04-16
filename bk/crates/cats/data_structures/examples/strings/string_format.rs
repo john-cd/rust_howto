@@ -59,10 +59,10 @@ fn format() {
     let info = format!("{0} {1} {0}", "+", "-");
     println!("{info}"); // Output: + - +
 
-    // You can format numbers with specific precision and alignment:
+    // We can format numbers with specific precision and alignment:
     let pi = std::f32::consts::PI;
     println!("Pi to two decimal places: {pi:.2}");
-    // Output: Pi to two decimal places: 3.14.
+    // Output: Pi to two decimal places: `3.14`.
 
     let number = 123;
     println!("Right aligned with width 10: {number:>10}");
@@ -70,10 +70,10 @@ fn format() {
 
     // Print binary, hexadecimal...
     println!("Binary representation: {number:b}");
-    // Output: Binary representation: 1111011.
+    // Output: Binary representation: `1111011`.
 
     println!("Hexadecimal representation: {:x}", 255);
-    // Output: Hexadecimal representation: ff.
+    // Output: Hexadecimal representation: `ff`.
 
     println!("Uppercase Hexadecimal: {:X}", 255);
     // Output: Uppercase Hexadecimal: FF.

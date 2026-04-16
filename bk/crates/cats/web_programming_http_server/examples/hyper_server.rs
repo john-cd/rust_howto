@@ -47,13 +47,13 @@ async fn main() -> anyhow::Result<()> {
     //         let (stream, _) = listener.accept().await?;
 
     //         // Use an adapter to access something implementing `tokio::io`
-    // traits         // as if they implement `hyper::rt` IO traits.
+    //         // traits as if they implement `hyper::rt` IO traits.
     //         let io = TokioIo::new(stream);
 
     //         // Spawn a tokio task to serve multiple connections concurrently.
     //         tokio::task::spawn(async move {
     //             // Finally, we bind the incoming connection to our `hello`
-    // function.             // service_fn converts our function in a `Service`.
+    //             // function. service_fn converts our function in a `Service`.
     //             if let Err(err) = http1::Builder::new()
     //                 .serve_connection(io, service_fn(hello))
     //                 .await
@@ -72,7 +72,7 @@ async fn main() -> anyhow::Result<()> {
 //     main()?;
 //     Ok(())
 // }
-// // [finish NOW](https://github.com/john-cd/rust_howto/issues/866)
+// // [finish](https://github.com/john-cd/rust_howto/issues/866)
 // // <https://hyper.rs/>
 // // <https://hyper.rs/guides/1/server/hello-world/>
 // // <https://github.com/hyperium/hyper/tree/master/examples>

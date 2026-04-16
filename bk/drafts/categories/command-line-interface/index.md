@@ -4,16 +4,16 @@ Techniques to help create command line interfaces{{hi:Command-line interface}}, 
 
 | Topic | Relevant Rust Crates |
 |---|---|
-| [[argument_parsing | Argument Parsing]] | [`clap`][c~clap~docs]⮳{{hi:clap}}, [`structopt`][c~structopt~docs]⮳{{hi:structopt}}, [`argh`][c~argh~docs]⮳{{hi:argh}} |
-| Interactive Prompts | [`dialoguer`][c~dialoguer~docs]⮳{{hi:dialoguer}}, [`console`][c~console~docs]⮳{{hi:console}} | See [[user_interaction | User Interaction]]. |
-| Progress Bars | [`indicatif`][c~indicatif~docs]⮳{{hi:indicatif}}, [`pbr`][c~pbr~docs]⮳{{hi:pbr}} | See [[command-line-interface | Command Line Interface]]. |
-| Table Formatting | [`prettytable`][c~prettytable~docs]⮳{{hi:prettytable}}, [`term-table`][c~term_table~docs]⮳{{hi:term-table}} | |
-| Color Output | [`ansi_term`][c~ansi_term~docs]⮳{{hi:ansi_term}}, [`owo-colors`][c~owo_colors~docs]⮳{{hi:owo-colors}} | |
-| File System Operations | Use `std::fs`, [`pathdiff`][c~pathdiff~docs]⮳{{hi:pathdiff}}. | See [[filesystem | Filesystem]]. |
-| Process Management | `std::process` | See [[external_commands | External Commands]]. |
-| Text Manipulation | [`regex`][c~regex~docs]⮳{{hi:regex}}, [`grep-cli`][c~grep_cli~docs]⮳{{hi:grep-cli}}, [`bat`][c~bat~docs]⮳{{hi:bat}} (for `cat` like functionality) | See [[text-processing | Text Processing]]. |
-| Configuration | [`config`][c~config~docs]⮳{{hi:config}}, [`serde`][c~serde~docs]⮳{{hi:serde}} (for serialization) | See [[config | Config]] and [[configuration | Configuration]]. |
-| Logging | [`log`][c~log~docs]⮳{{hi:log}}, [`env_logger`][c~env_logger~docs]⮳{{hi:env_logger}} | See [[log | Log]], [[tracing | Tracing]] and [[tracing_alternatives | Tracing Alternatives]]. |
+| [[argument_parsing | Argument Parsing]] | [`clap`][c~clap~docs]↗{{hi:clap}}, [`structopt`][c~structopt~docs]↗{{hi:structopt}}, [`argh`][c~argh~docs]↗{{hi:argh}} |
+| Interactive Prompts | [`dialoguer`][c~dialoguer~docs]↗{{hi:dialoguer}}, [`console`][c~console~docs]↗{{hi:console}} | See [[user_interaction | User Interaction]]. |
+| Progress Bars | [`indicatif`][c~indicatif~docs]↗{{hi:indicatif}}, [`pbr`][c~pbr~docs]↗{{hi:pbr}} | See [[command-line-interface | Command Line Interface]]. |
+| Table Formatting | [`prettytable`][c~prettytable~docs]↗{{hi:prettytable}}, [`term-table`][c~term-table~docs]↗{{hi:term-table}} | |
+| Color Output | [`ansi_term`][c~ansi_term~docs]↗{{hi:ansi_term}}, [`owo-colors`][c~owo-colors~docs]↗{{hi:owo-colors}} | |
+| File System Operations | Use `std::fs`, [`pathdiff`][c~pathdiff~docs]↗{{hi:pathdiff}}. | See [[filesystem | Filesystem]]. |
+| Process Management | [`std::process`][c~std::process~docs]↗{{hi:std::process}} | See [[external_commands | External Commands]]. |
+| Text Manipulation | [`regex`][c~regex~docs]↗{{hi:regex}}, [`grep-cli`][c~grep-cli~docs]↗{{hi:grep-cli}}, [`bat`][c~bat~docs]↗{{hi:bat}} (for `cat` like functionality) | See [[text-processing | Text Processing]]. |
+| Configuration | [`config`][c~config~docs]↗{{hi:config}}, [`serde`][c~serde~docs]↗{{hi:serde}} (for serialization) | See [[config | Config]] and [[configuration | Configuration]]. |
+| Logging | [`log`][c~log~docs]↗{{hi:log}}, [`env_logger`][c~env_logger~docs]↗{{hi:env_logger}} | See [[log | Log]], [[tracing | Tracing]] and [[tracing_alternatives | Tracing Alternatives]]. |
 
 ## Argument Parsing
 
@@ -31,15 +31,15 @@ Techniques to help create command line interfaces{{hi:Command-line interface}}, 
 
 {{#include user_interaction.incl.md}}
 
+## References
+
+- [Command Line Applications in Rust (book)][book~rust-cli]↗.
+- Look to the [Code][book~command-line-rust~repo]↗ for `Command-Line Rust` (O'Reilly, 2022, ISBN 9781098109417).
+
 ## Related Topics
 
 - [[command-line-utilities | Command Line Utilities]].
 - [[internationalization | Internationalization]].
-
-## References
-
-- [Command Line Applications in Rust (book)][book~rust-cli]⮳.
-- Look to the [Code][book~command-line-rust~github]⮳ for `Command-Line Rust` (O'Reilly, 2022, ISBN 9781098109417).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
@@ -47,8 +47,15 @@ Techniques to help create command line interfaces{{hi:Command-line interface}}, 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/907)
 
-- [rustyline](https://docs.rs/rustyline/latest/rustyline/#example)
-- [termimad: A library to display rich (Markdown) snippets and texts in a rust terminal application](https://github.com/Canop/termimad)
-- [rust-terminfo: Terminal information for Rust.](https://github.com/meh/rust-terminfo)
+- [rustyline][c~rustyline~docs]↗.
+- [termimad][c~termimad~repo]↗: A library to display rich (Markdown) snippets and texts in a rust terminal application.
+- [rust-terminfo][rust-terminfo~repo]↗: Terminal information for Rust.
+
+review [Command Line Applications in Rust (book)][book~rust-cli]↗.
+
+review
+
+- [Command-line Rust][book~command-line-rust]↗.
+- [Code for Command-Line Rust (O'Reilly, 2024, ISBN 9781098109417)][book~command-line-rust~repo]↗.
 
 </div>

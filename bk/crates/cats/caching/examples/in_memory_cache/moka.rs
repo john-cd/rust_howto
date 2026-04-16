@@ -24,19 +24,19 @@ fn main() {
         .time_to_idle(Duration::from_secs(600))
         .build();
 
-    // Insert a key-value pair.
+    // Insert a key-value pair:
     cache.insert("key1", "value1");
 
-    // Retrieve a value.
+    // Retrieve a value:
     match cache.get("key1") {
         Some(value) => println!("Retrieved value: {value}"),
         None => println!("Value not found"),
     }
-    // Note: Every time get is called for an existing key, it creates a clone of
-    // the stored value and returns it. If you want to store values that
-    // will be expensive to clone, wrap them in `std::sync::Arc`.
+    // Note: Every time `get` is called for an existing key, it creates a clone
+    // of the stored value and returns it. If you want to store values that
+    // are expensive to clone, wrap them in `std::sync::Arc`.
 
-    // Remove an entry.
+    // Remove an entry:
     cache.invalidate("key1");
 
     // To share the same cache across multiple threads, clone it.

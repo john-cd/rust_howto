@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
 //! This example demonstrates how to use the `directories` crate to find the
-//! user's data and config directories.
+//! user's data and config directories for a specific application.
 
 use std::path::PathBuf;
 
@@ -36,6 +36,7 @@ pub fn get_config_dir() -> Result<PathBuf> {
     };
     Ok(directory)
 }
+// Look into `BaseDirs` and `UserDirs` for additional directories as well.
 
 fn main() {
     println!("{:?}", get_data_dir());

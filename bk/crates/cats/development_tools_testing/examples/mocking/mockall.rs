@@ -64,13 +64,13 @@ impl<T: UserRepository> UserService<T> {
         id: u64,
         new_email: String,
     ) -> Result<User, String> {
-        // Get the user
+        // Get the user:
         let mut user = self.get_user(id)?;
 
-        // Update the email
+        // Update the email:
         user.email = new_email;
 
-        // Save the user
+        // Save the user:
         self.repository.save(user.clone())?;
 
         Ok(user)
@@ -91,8 +91,8 @@ mod tests {
     fn test_get_user_success() {
         let mut mock_repo = MockUserRepository::new();
 
-        // Set up expectations for find_by_id
-        // We expect find_by_id to be called once with id 1
+        // Set up expectations for `find_by_id`.
+        // We expect `find_by_id` to be called once with id 1:
         mock_repo
             .expect_find_by_id() // The method we're setting expectations for
             .with(eq(1)) // The argument we expect (using predicate). You can also use custom functions: .withf(|user| user.id == 1)
@@ -105,13 +105,13 @@ mod tests {
                 })
             });
 
-        // Create our service with the mock repository
+        // Create our service with the mock repository:
         let service = UserService::new(mock_repo);
 
-        // Call the method we want to test
+        // Call the method we want to test:
         let result = service.get_user(1);
 
-        // Assert the result
+        // Assert the result:
         assert!(result.is_ok());
         let user = result.unwrap();
         assert_eq!(user.id, 1);
@@ -128,20 +128,21 @@ mod tests {
         let mut mock_repo = MockUserRepository::new();
 
         // Set up expectations:
-        // We expect `find_by_id` to be called once with id 999 and return None
+        // We expect `find_by_id` to be called once with id 999 and return
+        // `None`:
         mock_repo
             .expect_find_by_id()
             .with(eq(999))
             .times(1)
             .returning(|_| None);
 
-        // Create our service with the mock repository
+        // Create our service with the mock repository:
         let service = UserService::new(mock_repo);
 
-        // Call the method we want to test
+        // Call the method we want to test:
         let result = service.get_user(999);
 
-        // Assert the result
+        // Assert the result:
         assert!(result.is_err());
         assert_eq!(result.unwrap_err(), "User with id 999 not found");
     }
@@ -170,7 +171,7 @@ mod tests {
 
         // Set up expectations for save, we expect it to be called once with a
         // user with id 1, name "John Doe" and email
-        // "newemail@example.com"
+        // "newemail@example.com".
         mock_repo
             .expect_save()
             .withf(|user: &User| {

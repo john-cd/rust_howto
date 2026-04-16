@@ -178,7 +178,7 @@
 //         _target: markup::tendril::StrTendril,
 //         _data: markup::tendril::StrTendril,
 //     ) -> usize {
-//         0 // Simplified
+//         0 // Simplified.
 //     }
 
 //     fn append(
@@ -254,7 +254,7 @@
 //     let indent = "  ".repeat(depth);
 
 //     if let Some(name) = &node.name {
-//         print!("{indent, name.local}Element: {}");
+//         print!("{indent}Element: {}", name.local);
 
 //         if !node.attrs.is_empty() {
 //             print!(" [");
@@ -262,7 +262,7 @@
 //                 if i > 0 {
 //                     print!(", ");
 //                 }
-//                 print!("{attr.name.local, attr.value}=\"{}\"");
+//                 print!("{}=\"{}\"", attr.name.local, attr.value);
 //             }
 //             print!("]");
 //         }
@@ -270,7 +270,7 @@
 //     } else if let Some(text) = &node.text {
 //         let trimmed = text.trim();
 //         if !trimmed.is_empty() {
-//             println!("{indent, trimmed}Text: \"{}\"");
+//             println!("{}Text: \"{}\"", indent, trimmed);
 //         }
 //     }
 
@@ -319,4 +319,4 @@
 // fn test() {
 //     main();
 // }
-// // [finish NOW](https://github.com/john-cd/rust_howto/issues/1103)
+// // [finish](https://github.com/john-cd/rust_howto/issues/1103)

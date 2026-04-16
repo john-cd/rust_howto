@@ -12,13 +12,13 @@ use aes_gcm_siv::aead::Payload;
 /// decrypt data using the AES-GCM-SIV algorithm (Misuse-Resistant Authenticated
 /// Encryption Cipher).
 fn main() -> Result<(), aes_gcm_siv::Error> {
-    // Generate a random 256-bit key
+    // Generate a random 256-bit key:
     let key: Key<Aes256GcmSiv> = Aes256GcmSiv::generate_key(&mut OsRng);
 
     // Generate a random 96-bit nonce.
     // A nonce is an arbitrary (often random) number that can be used just once
     // in a cryptographic communication.
-    let nonce = Nonce::from_slice(b"unique nonce");
+    let nonce = Nonce::from(*b"unique nonce");
 
     let cipher: Aes256GcmSiv = Aes256GcmSiv::new(&key);
 
@@ -27,7 +27,7 @@ fn main() -> Result<(), aes_gcm_siv::Error> {
     let plaintext = b"Secret message";
     let associated_data = b"Header";
     let ciphertext: Vec<u8> = cipher.encrypt(
-        nonce,
+        &nonce,
         Payload {
             msg: plaintext,
             aad: associated_data, // AD stays unencrypted...
@@ -37,9 +37,9 @@ fn main() -> Result<(), aes_gcm_siv::Error> {
 
     // Decrypt.
     // Failure to pass the same AD that was used during encryption will cause
-    // decryption to fail
+    // decryption to fail:
     let decrypted_ciphertext = cipher.decrypt(
-        nonce,
+        &nonce,
         Payload {
             msg: ciphertext.as_ref(),
             aad: associated_data,

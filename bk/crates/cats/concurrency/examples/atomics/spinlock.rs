@@ -11,7 +11,7 @@ use std::thread;
 /// A simple spinlock implementation.
 pub struct Spinlock<T> {
     locked: AtomicBool,
-    data: UnsafeCell<T>, // Allows mutation through `&self` via unsafe code
+    data: UnsafeCell<T>, // Allows mutation through `&self` via unsafe code.
 }
 
 impl<T> Spinlock<T> {
@@ -28,7 +28,7 @@ impl<T> Spinlock<T> {
     /// Returns a guard that allows access to the data and releases the
     /// lock when dropped.
     #[inline]
-    pub fn lock(&self) -> SpinlockGuard<T> {
+    pub fn lock(&self) -> SpinlockGuard<'_, T> {
         // Spin until we successfully acquire the lock.
         // `compare_exchange_weak` is often preferred in loops, as it can be
         // more performant on some platforms, even if it spuriously fails.
@@ -46,7 +46,7 @@ impl<T> Spinlock<T> {
             // This can improve performance on hyper-threaded CPUs.
             std::hint::spin_loop();
         }
-        // We successfully acquired the lock, return the guard
+        // We successfully acquired the lock, return the guard:
         SpinlockGuard { lock: self }
     }
 

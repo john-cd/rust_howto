@@ -4,15 +4,15 @@
 
 ## `gping` {#gping}
 
-[`gping`][c~gping~github]{{hi:gping}}
+[`gping`][c~gping~repo]↗{{hi:gping}}
 
-[`gping`][c~gping~docs]⮳{{hi:gping}} is like [`ping`][c~ping~docs]⮳{{hi:ping}}, but with a graph. [`gping`][c~gping~docs]⮳{{hi:gping}} is a command-line utility for visualizing ping latency graphically in the terminal. It provides a dynamic, real-time plot of ping times to multiple hosts, allowing users to quickly assess network connectivity and latency issues. Install with:
+[`gping`][c~gping~docs]↗{{hi:gping}} is like [`ping`][c~ping~docs]↗{{hi:ping}}, but with a graph. [`gping`][c~gping~docs]↗{{hi:gping}} is a command-line utility for visualizing ping latency graphically in the terminal. It provides a dynamic, real-time plot of ping times to multiple hosts, allowing users to quickly assess network connectivity and latency issues. Install with:
 
 ```sh
 apt install gping
 ```
 
-## Related Topics {#skip}
+## Related Topics {#related-topics .skip}
 
 - [[command-line-interface | Command Line Interface]].
 - [[external_commands | External Commands]].

@@ -6,14 +6,14 @@ Metrics software is used to measure, analyze, and improve various aspects of sof
 
 Examples of common metrics include CPU and memory usage; cache hit ratios; response time, latency, throughput (queries per second) for APIs; build success rate and pipeline duration for CD/CI workflows.
 
-## Useful Crates {#skip}
+## Useful Crates {#useful-crates .skip}
 
-- [`metrics`](https://metrics.rs) is a batteries-included instrumentation ecosystem for Rust, allowing you to quickly and easily instrument your libraries and applications. It supports three fundamental metric types: counters, gauges, and histograms.
-- [`tokio-metrics`](https://crates.io/crates/tokio-metrics) provides utilities for collecting metrics from a Tokio application, including runtime and per-task metrics.
-- [`cadence`](https://crates.io/crates/cadence) is an extensible `statsd` client for Rust.
-- [`sentry`](https://crates.io/crates/sentry) is a ['Sentry'](https://getsentry.com) client for Rust.
+- [`metrics`][metrics.rs~website]↗ is a batteries-included instrumentation ecosystem to quickly and easily instrument your libraries and applications. It supports three fundamental metric types: counters, gauges, and histograms.
+- [`tokio-metrics`][c~tokio-metrics~crates.io]↗ provides utilities for collecting metrics from a Tokio application, including runtime and per-task metrics.
+- [`cadence`][c~cadence~crates.io]↗ is an extensible [`statsd`][statsd~repo]↗{{hi:statsd}} client for Rust.
+- [`sentry`][c~sentry~crates.io]↗ is a ['Sentry'][getsentry~website]↗ client for Rust.
 
-## Related Topics {#skip}
+## Related Topics {#related-topics .skip}
 
 - [[distributed_telemetry | Distributed Telemetry]].
 - [[tracing | Tracing]].

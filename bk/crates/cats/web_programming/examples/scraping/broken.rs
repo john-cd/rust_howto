@@ -69,9 +69,10 @@ async fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+#[ignore = "Needs review"]
 #[test]
 fn require_network() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// TODO flaky test
+// [flaky test](https://github.com/john-cd/rust_howto/issues/1419)

@@ -57,7 +57,7 @@ async fn main() -> anyhow::Result<()> {
 
     // Get a connection from the pool.
     let conn = pool.get().await.map_err(|err| {
-        anyhow::anyhow!("Could not retrieve from the Pool: {:?}", err)
+        anyhow::anyhow!("Could not retrieve from the Pool: {err:?}")
     })?;
     let answer = conn.get_answer().await;
     assert_eq!(answer, 42);

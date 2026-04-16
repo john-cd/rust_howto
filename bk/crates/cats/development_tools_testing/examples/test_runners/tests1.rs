@@ -27,8 +27,8 @@ mod tests {
     use super::*;
 
     /// Test functions must be free, monomorphic functions that take no
-    /// arguments, and commonly return `()` or `Result<T, E>` where T:
-    /// Termination, E: Debug
+    /// arguments, and commonly return `()` or `Result<T, E> where T:
+    /// Termination, E: Debug`.
     #[test]
     fn larger_can_hold_smaller() {
         let larger = Rectangle {
@@ -41,8 +41,8 @@ mod tests {
         };
 
         assert!(larger.can_hold(&smaller));
-        // You may also use: assert_eq!(result, some_const);
-        // or assert_ne!(...)
+        // You may also use `assert_eq!(result, some_const);`
+        // or `assert_ne!(...)`.
     }
 
     /// This test passes if the code inside the function panics;

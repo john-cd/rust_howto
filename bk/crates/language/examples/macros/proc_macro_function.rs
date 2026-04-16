@@ -4,8 +4,7 @@
 use proc_macros::sql;
 
 fn main() {
-    // Function-like procedural macros are invoked using the macro invocation
-    // operator (!).
+    // Function-like procedural macros are invoked using `!`.
     let user_query = sql!(SELECT * FROM users WHERE id = 1);
     println!("Query result: {user_query}");
 

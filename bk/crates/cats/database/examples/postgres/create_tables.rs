@@ -11,13 +11,14 @@ use postgres::NoTls;
 /// key referencing the `author` table).
 pub fn main() -> anyhow::Result<()> {
     // Establish a connection to the PostgreSQL database.
-    // The connection URL format is: postgresql://<user>:<password>@<host>/<db>
-    let mut client = Client::connect(
+    // The connection URL format is
+    // `postgresql://<user>:<password>@<host>/<db>`.
+    let url = std::env::var("PG_URL").unwrap_or_else(|_| {
         // Example connection URL:
-        // postgresql://postgres:postgres@localhost/library
-        "postgresql://postgres:mysecretpassword@rust_howto_dev-postgres-1/library",
-        NoTls,
-    )?;
+        // `postgresql://postgres:postgres@localhost/library`.
+        "postgresql://postgres:password@localhost/library".to_string()
+    });
+    let mut client = Client::connect(&url, NoTls)?;
 
     client.batch_execute(
         "

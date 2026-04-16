@@ -8,17 +8,17 @@ fn main() {}
 
 ## Links
 
-- [Inline]( https://www.rust-lang.org/what/cli )
-- [Reference-style][ref]
-- [Link to Github][github]
-- [shortcut]
-- [collapsed][]
-- <https://www.rust-lang.org/> autolink
-- [invalid-ref][invalid-ref]
+- [Inline link]( https://rust-lang.org/what/cli )↗.
+- [Reference-style Link][ref]↗.
+- [Link to Github][github]↗.
+- [Shortcut]↗.
+- [Collapsed][]↗.
+- <https://rust-lang.org/> Autolink.
+- [Invalid Reference][invalid-ref]↗.
 
 ## Reference Definitions
 
-[ref]: https://rust-cli.github.io/book/index.html
+[ref]: https://rust-cli.github.io/book
 [github]: https://github.com/john-cd
 [shortcut]: https://rust-cli.github.io/book/in-depth/human-communication.html
 [collapsed]: https://rust-cli.github.io/book/in-depth/signals.html

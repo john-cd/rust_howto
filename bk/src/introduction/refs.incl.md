@@ -1,0 +1,12 @@
+[ex~introduction~additional-examples]: how_to_read_this_book.md#additional-examples
+[ex~introduction~how-to-use-code-examples]: how_to_read_this_book.md#how-to-use-code-examples
+[ex~introduction~note-about-crate-representation]: how_to_read_this_book.md#note-about-crate-representation
+[ex~introduction~note-about-error-handling]: how_to_read_this_book.md#note-about-error-handling
+[p~contributing]: ../appendices/contributing/index.md
+[p~crates-alphabetical]: ../indices/crates_alphabetical.md
+[p~crates-categories]: ../indices/crates_by_category.md
+[p~index~examples]: ../indices/examples_index.md
+[p~lang]: ../language/index.md
+[p~links]: ../links/index.md
+[p~standard-library]: ../standard-library/index.md
+[p~word-index]: ../word_index.md

@@ -8,7 +8,7 @@ fn documented_function() {
     println!("Function with doc comment.");
 }
 
-// Alternatively, you may use an external file.
+// Alternatively, we may use an external file.
 // This is useful for including large amounts of documentation.
 #[doc = include_str!("../../../../README.md")]
 fn function_including_external_file_as_documentation() {}

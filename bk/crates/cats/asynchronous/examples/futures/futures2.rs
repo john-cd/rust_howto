@@ -13,7 +13,7 @@ async fn main() {
     // The `join!` macro polls multiple futures simultaneously, returning
     // a tuple of all results once complete.
     assert_eq!(join!(foo(1), foo(2)), (1, 2));
-    // `join!` is variadic, so you can pass any number of futures
+    // `join!` is variadic, so we can pass any number of futures.
 
     // `join_all` create a future which represents a collection of the
     // outputs of the futures given.

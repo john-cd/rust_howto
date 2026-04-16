@@ -1,3 +1,0 @@
-mod sync;
-
-fn main() {}

@@ -1,6 +1,8 @@
+// #![cfg(feature = "async-graphql")]
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
+
 // //! # Example: Async GraphQL with Axum
 // //!
 // //! This example demonstrates how to set up a simple GraphQL server using the

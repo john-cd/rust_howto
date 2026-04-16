@@ -12,7 +12,7 @@ struct Config {
     logging_enabled: bool, // defaults to `false`.
 }
 
-// If you want custom defaults, you can implement the trait manually:
+// For custom defaults, implement the trait manually:
 #[derive(Debug)]
 struct Config2 {
     timeout: u32,
@@ -39,7 +39,7 @@ fn main() {
     let config2 = Config2::default();
     println!("{config2:?}");
 
-    // You can also use struct update syntax to override specific fields:
+    // We can also use struct update syntax to override specific fields:
     let _custom_config = Config {
         timeout: 10000,
         ..Config::default()

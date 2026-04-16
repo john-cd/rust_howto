@@ -12,7 +12,7 @@ fn main() {
     // It moves the elements out of the vector,
     // so `vec1` CANNOT be used again.
     println!("`2` exists in `vec1`: {}", vec1.into_iter().any(|x| x == 2));
-    // ERROR: println!("{:?}", vec1);
+    // ERROR: println!("{vec1:?}");
 
     // `any` above tests if any element of the iterator matches a predicate.
 
@@ -37,7 +37,7 @@ fn main() {
     }
     println!();
 
-    // You can modify values of a collection through the mutable reference
+    // We can modify values of a collection through the mutable reference
     // provided by `iter_mut()`.
     // Note that the vector has to be `mut`.
     let mut vec4 = vec![4, 5, 6];

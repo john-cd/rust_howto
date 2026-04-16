@@ -7,15 +7,16 @@ fn execute_query(query: &str) {
 
 fn main() {
     // `env_logger` is a simple logger that can be configured via environment
-    // variables. Example: `RUST_LOG=info ./app`
+    // variables. Example: `RUST_LOG=info ./app`.
     env_logger::init();
 
     execute_query("DROP TABLE students");
+    println!("log_debug example: set RUST_LOG=debug to see the debug log above");
 }
 // ANCHOR_END: example
 
 use rusty_fork::rusty_fork_test;
-// Runs in a separate process
+// Runs in a separate process:
 rusty_fork_test! {
     #[test]
     fn test() {

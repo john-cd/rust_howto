@@ -10,15 +10,15 @@ Caching refers to storing the results of previous computations, in order to reus
 
 ## Hybrid Caches
 
-[`foyer`][c~foyer~docs]⮳{{hi:foyer}} is a hybrid cache for Rust.
+[`foyer`][c~foyer~docs]↗{{hi:foyer}} is a hybrid cache for Rust.
 
 ## Distributed Caches
 
-Consider [`redis`][c~redis~docs]⮳{{hi:redis}}. Refer to the [[nosql | NoSQL]] and [[key_value_stores | Key Value Stores]] chapters.
+Consider [`redis`][c~redis~docs]↗{{hi:redis}}. Refer to the [[nosql | NoSQL]] and [[key_value_stores | Key Value Stores]] chapters.
 
 ## Cache Invalidation
 
-Cache invalidation is often application-specific, but crates like [`notify`][c~notify~docs]⮳{{hi:notify}} can help with file-based invalidation.
+Cache invalidation is often application-specific, but crates like [`notify`][c~notify~docs]↗{{hi:notify}} can help with file-based invalidation.
 Refer to the following chapters:
 
 - [[file_watching | File Watching]].

@@ -73,7 +73,11 @@
 // // ANCHOR_END: example
 // #[test]
 // fn test() -> anyhow::Result<()> {
+// use std::fs;
+// if !fs::exists("temp")? {
+//     fs::create_dir("temp")?;
+// }
 //     main()?;
 //     Ok(())
 // }
-// // [read / write a file NOW](https://github.com/john-cd/rust_howto/issues/1009)
+// // [read / write a file](https://github.com/john-cd/rust_howto/issues/1009)

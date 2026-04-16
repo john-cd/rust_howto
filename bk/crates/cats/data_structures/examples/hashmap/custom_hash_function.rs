@@ -24,7 +24,7 @@ fn main() {
     fnv_set.insert("item1");
     fnv_set.insert("item2");
 
-    // You may also pre-allocate capacity for better performance:
+    // We may also pre-allocate capacity for better performance:
     let mut _map_with_capacity: HashMap<String, String> =
         HashMap::with_capacity(100);
     let mut _set_with_capacity: HashSet<String> = HashSet::with_capacity(100);
@@ -34,6 +34,7 @@ fn main() {
         fnv::FnvHashMap::with_capacity_and_hasher(10, Default::default());
     map.insert(1, "one");
     map.insert(2, "two");
+    println!("fnv_map: key1={:?}, key2={:?}", fnv_map.get("key1"), fnv_map.get("key2"));
 }
 // ANCHOR_END: example
 

@@ -4,10 +4,10 @@
 
 | Topic | Rust Crates |
 |---|---|
-| Documentation Generator | `cargo doc` (built-in) |
+| Documentation Generator | [`cargo doc`][book~cargo~cargo-doc]↗{{hi:cargo doc}} (built-in) |
 | Doc Comments | Use /// or //! in your code. |
 | Testing with Documentation Examples | Use `#[doc = "```"]` in doc comments |
-| Markdown Processing (for docs) | pulldown-cmark, `comrak` |
+| Markdown Processing (for docs) | `pulldown-cmark`, [`comrak`][c~comrak~docs]↗{{hi:comrak}} |
 | Generating Documentation from Tests | Often done with custom scripts or build tools. |
 | API Documentation Generators (for REST [APIs][p~apis], etc.) | Often tied to web frameworks; no single dominant crate. |
 
@@ -19,19 +19,19 @@
 {{#include ../../../../crates/cats/development_tools/examples/documentation/rustdoc.rs:example}}
 ```
 
-[`rustdoc`][book~rustdoc]{{hi:rustdoc}}⮳ uses the CommonMark Markdown specification.
+[`rustdoc`][book~rustdoc]↗{{hi:rustdoc}} uses the CommonMark Markdown specification.
 
 ```rust,editable
 {{#include ../../../../crates/cats/development_tools/examples/documentation/rustdoc2.rs:example}}
 ```
 
-Any item annotated with `#[doc(hidden)]` will not appear in the documentation.
+Any item annotated with [`#[doc(hidden)]`][book~rustdoc~doc-attribute-hidden]↗{{hi:#[doc]}} will not appear in the documentation.
 
 Run `rustdoc src/lib.rs --crate-name <name>` or `cargo doc --open` to create a new directory, `doc` (or `target/doc` when using [cargo][p~cargo]), with a website inside.
 
 ## Create Module- or Crate-level Documentation {#module-or-crate-level-documentation}
 
-Use `//!` at the top of the file (instead of `///`) for module-level documentation.
+Use [`//!`][book~rust-reference~doc-comments]↗{{hi://!}} at the top of the file (instead of `///`{{hi:///}}) for module-level documentation.
 
 The first lines within `lib.rs` will compose the crate-level documentation front-page.
 
@@ -47,14 +47,18 @@ To add a "run" button on your documentation (allowing its execution in the rust 
 
 ## Add Documentation to Function Arguments in Rust {#roxygen}
 
-[![roxygen][c~roxygen~docs~badge]][c~roxygen~docs] [![roxygen~crates.io][c~roxygen~crates.io~badge]][c~roxygen~crates.io] [![roxygen~github][c~roxygen~github~badge]][c~roxygen~github] [![roxygen~lib.rs][c~roxygen~lib.rs~badge]][c~roxygen~lib.rs]{{hi:roxygen}}{{hi:Arguments}}{{hi:Document}}{{hi:Doxygen}}{{hi:Function}}{{hi:Parameters}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
+[![roxygen][c~roxygen~docs~badge]][c~roxygen~docs] [![roxygen~crates.io][c~roxygen~crates.io~badge]][c~roxygen~crates.io] [![roxygen~repo][c~roxygen~repo~badge]][c~roxygen~repo] [![roxygen~lib.rs][c~roxygen~lib.rs~badge]][c~roxygen~lib.rs]{{hi:roxygen}}{{hi:Arguments}}{{hi:Document}}{{hi:Doxygen}}{{hi:Function}}{{hi:Parameters}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-[`roxygen`][c~roxygen~docs]⮳{{hi:roxygen}} helps seamlessly document function parameters with [`rustdoc`][book~rustdoc]⮳{{hi:rustdoc}}.
+[`roxygen`][c~roxygen~docs]↗{{hi:roxygen}} helps seamlessly document function parameters with [`rustdoc`][book~rustdoc]↗{{hi:rustdoc}}.
 
-## References
+## References {#references .skip}
 
-- [The rustdoc book][book~rustdoc]{{hi:rustdoc}}⮳.
-- [`docs.rs`][docs.rs~website]{{hi:docs.rs}}⮳: open-source documentation{{hi:Documentation}} host for Rust crates.
+- [The rustdoc book][book~rustdoc]↗{{hi:rustdoc}}.
+- [`docs.rs`][docs.rs~website]↗{{hi:docs.rs}}: open-source documentation{{hi:Documentation}} host for Rust crates.
+
+## Related Topics {#related-topics .skip}
+
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
@@ -63,6 +67,8 @@ To add a "run" button on your documentation (allowing its execution in the rust 
 [documentation: add; review](https://github.com/john-cd/rust_howto/issues/297)
 Mermaid.js for documentation: `aquamarine`
 
-- [roxygen: Add documentation to function arguments in Rust](https://github.com/geo-ant/roxygen)
+- [roxygen][c~roxygen~repo]↗: Add documentation to function arguments in Rust.
+
+cover `doc-comment` and add example
 
 </div>

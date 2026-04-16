@@ -10,7 +10,7 @@ use tokio::time::Duration;
 use tokio::time::sleep;
 
 // `ractor` is a pure-Rust actor framework, inspired from Erlang's gen_server.
-// https://slawlor.github.io/ractor/
+// <https://slawlor.github.io/ractor>
 
 // `ractor` gives a set of generic primitives and helps automate the actor
 // supervision tree and management of actors along with traditional actor
@@ -18,30 +18,32 @@ use tokio::time::sleep;
 // runtime.
 
 // Add to your `Cargo.toml`:
+// ```toml
 // [dependencies]
 // ractor = "0.14"
+// ```
 
-// Message type that the actor accepts
+// Message type that the actor accepts:
 #[derive(Debug, Clone)]
 struct Greet(String);
 
 #[cfg(feature = "cluster")]
 impl ractor::Message for Greet {}
 
-// Main actor struct
+// Main actor struct:
 struct Greeter;
 
-// Inner state of the actor
+// Inner state of the actor:
 struct GreeterState {
     count: u64,
 }
 
 impl ractor::Actor for Greeter {
-    // Startup initialization args
+    // Startup initialization args:
     type Arguments = ();
-    // Actor's message type
+    // Actor's message type:
     type Msg = Greet;
-    // Optional internal state
+    // Optional internal state:
     type State = GreeterState;
 
     // Invoked when an actor is being started by the system:
@@ -58,7 +60,7 @@ impl ractor::Actor for Greeter {
         cast!(myself, Greet("Hello!".to_string()))?;
         // Or: myself.send_message(Greet("Hello!".to_string()))?;
 
-        // Create the initial state
+        // Create the initial state:
         Ok(GreeterState { count: 0 })
     }
 
@@ -90,15 +92,15 @@ impl ractor::Actor for Greeter {
 
 #[tokio::main]
 async fn main() {
-    // Create a Greeter actor
+    // Create a `Greeter` actor:
     let (_actor, handle) =
         Actor::spawn(Some("Actor1".to_string()), Greeter, ())
             .await
-            .expect("Failed to start the actor"); // panic in `pre_start()`
+            .expect("Failed to start the actor"); // panic in `pre_start()`.
 
     handle.await.expect("Actor failed to exit properly");
 
-    // Sleep for a bit to let the actor finish any remaining work
+    // Sleep for a bit to let the actor finish any remaining work:
     sleep(Duration::from_millis(50)).await;
 }
 

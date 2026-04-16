@@ -47,7 +47,7 @@ fn main() {
     private_in_top_module();
 
     // In the same way, `my_module` is _private_, but _accessible_ from
-    // `main()`. Here, we define an alias;
+    // `main()`. Here, we define an alias:
     use my_module as alias;
 
     // Private items are inaccessible from a parent module.
@@ -58,7 +58,7 @@ fn main() {
     // items within a module.
     my_module::public_function();
 
-    // You can also use the alias.
+    // We can also use the alias:
     alias::public_function();
 
     // Paths can include multiple segments to reach nested modules.

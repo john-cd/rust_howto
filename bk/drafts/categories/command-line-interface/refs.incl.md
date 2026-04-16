@@ -4,6 +4,7 @@
 [ex~command-line-interface~bold-colored-text]: ansi_terminal.md#bold-colored-text
 [ex~command-line-interface~bold-text]: ansi_terminal.md#bold-text
 [ex~command-line-interface~clap-builder]: argument_parsing.md#clap-builder
+[ex~command-line-interface~clap-builder-advanced]: argument_parsing.md#clap-builder-advanced
 [ex~command-line-interface~clap-derive]: argument_parsing.md#clap-derive
 [ex~command-line-interface~clap_complete]: argument_parsing.md#clap_complete
 [ex~command-line-interface~colored-text]: ansi_terminal.md#colored-text
@@ -23,7 +24,7 @@
 [ex~command-line-interface~termion]: ansi_terminal.md#termion
 [ex~command-line-interface~yansi]: ansi_terminal.md#yansi
 [p~cross-platform]: # "../../other/cross-platform/index.md"
-[p~data-structures]: ../data-structures/index.md
+[p~data-structures]: ../../../src/categories/data-structures/index.md
 [p~main]: ../../language/entrypoint.mdint.md
 [p~parsing]: # "../parsing/index.md"
 [p~performance]: ../development-tools_cargo-plugins/performance.md

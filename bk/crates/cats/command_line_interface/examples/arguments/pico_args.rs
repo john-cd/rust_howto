@@ -8,11 +8,11 @@ fn main() -> anyhow::Result<()> {
     let mut args = Arguments::from_env();
 
     // Parse named arguments:
-    // --name and --age are optional key-value pairs, parsed using the
+    // `--name` and `--age` are optional key-value pairs, parsed using the
     // `FromStr` trait. This is a shorthand for
     // `opt_value_from_fn("--name", FromStr::from_str)`.
     let name: Option<String> = args.opt_value_from_str("--name")?;
-    // The `FromStr` trait is used to parse the value.
+    // The `FromStr` trait is used to parse the value:
     let age: Option<u32> = args.opt_value_from_str("--age")?;
 
     // Parse a flag:

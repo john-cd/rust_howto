@@ -15,9 +15,9 @@ Parallelism implies:
 
 Key constructs in Rust:
 
-- Threads{{hi:Threads}} are independent units of execution that can be spawned using e.g. [`std::thread::spawn`][c~std::thread::spawn~docs]⮳{{hi:std::thread::spawn}}{{hi:std::thread::spawn}}.
-- Mutexes e.g. [`std::sync::Mutex`][c~std::sync::Mutex~docs]⮳{{hi:std::sync::Mutex}} protect shared data from race conditions.
-- Channels{{hi:Channels}} e.g. [`std::sync::mpsc`][c~std::sync::mpsc::channel~docs]⮳{{hi:std::sync::mpsc}} allow threads to communicate and exchange data.
+- Threads{{hi:Threads}} are independent units of execution that can be spawned using e.g. [`std::thread::spawn`][c~std::thread::spawn~docs]↗{{hi:std::thread::spawn}}{{hi:std::thread::spawn}}.
+- Mutexes e.g. [`std::sync::Mutex`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}} protect shared data from race conditions.
+- Channels{{hi:Channels}} e.g. [`std::sync::mpsc`][c~std::sync::mpsc::channel~docs]↗{{hi:std::sync::mpsc}} allow threads to communicate and exchange data.
 
 ## Explicit Threads
 
@@ -53,13 +53,18 @@ Shared Memory. Using atomic types for thread-safe data access.
 
 ## Data Parallelism
 
-Using iterators in parallel with crates like [`rayon`][c~rayon~docs]⮳{{hi:rayon}}.
+Using iterators in parallel with crates like [`rayon`][c~rayon~docs]↗{{hi:rayon}}.
 
 {{#include data_parallelism.incl.md}}
 
 ## `Send` and `Sync`
 
 {{#include send_sync.incl.md}}
+
+## References
+
+- [![Rust concurrency book][book~rust~concurrency~badge]][book~rust~concurrency]↗.
+- [Rust Atomics][book~rust-atomics]↗.
 
 ## Related Topics
 
@@ -70,11 +75,6 @@ Using iterators in parallel with crates like [`rayon`][c~rayon~docs]⮳{{hi:rayo
 - [[message_passing | Message Passing]].
 - [[explicit_threads | Explicit Threads]].
 - [[processor | Processor]].
-
-## References
-
-- [![Rust concurrency book][book~rust~concurrency~badge]][book~rust~concurrency]⮳.
-- [Rust Atomics][book~rust-atomics]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

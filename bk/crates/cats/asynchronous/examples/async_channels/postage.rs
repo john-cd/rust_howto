@@ -19,7 +19,7 @@ async fn broadcaster(id: usize, mut tx: broadcast::Sender<String>) {
             break;
         }
         println!("Sent: {msg}");
-        // Simulate work
+        // Simulate work:
         tokio::time::sleep(Duration::from_millis(10)).await;
     }
 }
@@ -52,7 +52,7 @@ async fn main() {
     task::spawn(receiver("A", rx));
     task::spawn(receiver("B", rx2));
 
-    // Let the broadcasters and receivers run for a short duration.
+    // Let the broadcasters and receivers run for a short duration:
     tokio::time::sleep(Duration::from_millis(50)).await;
 
     // Subscribe to the channel.
@@ -64,7 +64,7 @@ async fn main() {
     let mut tx2 = tx.clone();
     tx2.send("Last message".into()).await.ok();
 
-    // Wait for all the receivers to print
+    // Wait for all the receivers to print:
     tokio::time::sleep(Duration::from_millis(25)).await;
 }
 // ANCHOR_END: example

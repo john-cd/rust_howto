@@ -10,7 +10,7 @@ use ring::rand::SecureRandom;
 /// (Hash-based Message Authentication Code) signature for a message and then
 /// verify the signature. It uses SHA256 as the underlying hash function.
 fn main() -> Result<(), Unspecified> {
-    // 1. Create a key
+    // 1. Create a key:
     let key;
     {
         let mut key_value = [0u8; 48];
@@ -22,7 +22,7 @@ fn main() -> Result<(), Unspecified> {
         key = hmac::Key::new(hmac::HMAC_SHA256, &key_value);
     }
 
-    // 2. Sign a message
+    // 2. Sign a message:
     let message = "Legitimate and important message.";
     let signature = hmac::sign(&key, message.as_bytes());
 

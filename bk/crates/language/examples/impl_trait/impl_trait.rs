@@ -1,5 +1,5 @@
 #![allow(dead_code)]
-// ANCHOR_END: example
+// ANCHOR: example
 // Define an example trait and two structs that implement it:
 trait Speak {
     fn speak(&self) -> String;
@@ -36,9 +36,9 @@ fn get_animal() -> impl Speak {
 // Use a trait object in that situation:
 // fn get_animal(is_dog: bool) -> impl Speak {
 //     if is_dog {
-//         Dog //  This is one concrete type
+//         Dog //  This is one concrete type.
 //     } else {
-//         Cat // Error: `if` and `else` have incompatible types
+//         Cat // Error: `if` and `else` have incompatible types.
 //     }
 // }
 

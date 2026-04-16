@@ -27,7 +27,7 @@ async fn producer(id: usize, tx: Sender<String>) {
             eprintln!("Failed to send message: {err}");
             break;
         }
-        // Simulate work
+        // Simulate work:
         let sleep_duration = rand::rng().random_range(10..50);
         time::sleep(Duration::from_millis(sleep_duration)).await;
     }
@@ -47,7 +47,7 @@ async fn consumer(id: usize, rx: Receiver<String>) {
     // are no more messages.
     while let Ok(msg) = rx.recv().await {
         println!("Consumer {id}: Received {msg}");
-        // Simulate processing
+        // Simulate processing:
         let sleep_duration = rand::rng().random_range(30..100);
         time::sleep(Duration::from_millis(sleep_duration)).await;
     }
@@ -56,11 +56,11 @@ async fn consumer(id: usize, rx: Receiver<String>) {
 
 #[tokio::main]
 async fn main() {
-    let (tx, rx) = bounded(2); // Create a bounded channel with a capacity of 2
+    let (tx, rx) = bounded(2); // Create a bounded channel with a capacity of 2.
     // You may also use an unbounded queue.
     assert_eq!(rx.try_recv(), Err(TryRecvError::Empty));
 
-    // Create 3 producer tasks
+    // Create 3 producer tasks:
     let mut producer_tasks = vec![];
     for i in 0..3 {
         let tx = tx.clone();
@@ -68,7 +68,7 @@ async fn main() {
     }
     assert_eq!(tx.sender_count(), 4);
 
-    // Create 2 consumer tasks
+    // Create 2 consumer tasks:
     let mut consumer_tasks = vec![];
     for i in 0..2 {
         let rx = rx.clone();
@@ -84,7 +84,7 @@ async fn main() {
         tx.len()
     );
 
-    // Close the channel to signal consumers that no more messages will be sent
+    // Close the channel to signal consumers that no more messages will be sent:
     drop(tx);
     // or tx.close();
     assert!(rx.is_closed());
@@ -92,7 +92,7 @@ async fn main() {
     for task in consumer_tasks {
         let _ = task.await;
     }
-    // The channel is empty.
+    // The channel is empty:
     assert!(rx.is_empty());
 }
 // ANCHOR_END: example

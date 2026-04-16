@@ -1,1 +1,1 @@
-[ref2]: http://google.com/
+[ref2]: http://google.com

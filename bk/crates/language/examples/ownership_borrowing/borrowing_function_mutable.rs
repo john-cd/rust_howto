@@ -13,12 +13,12 @@ fn main() {
     // Create a mutable reference to `s`:
     let ref_mut1 = &mut s;
 
-    // You can pass the string by mutable reference to a function and modify it.
+    // We can pass the string by mutable reference to a function and modify it.
     change(ref_mut1);
     // While the `String` type has "move semantics", the function does not
     // consume the string, since the mutable reference does not own it.
 
-    // You cannot create other mutable or immutable references while the
+    // We cannot create other mutable or immutable references while the
     // exclusive reference is in use:
     // let ref_mut2 = &mut s;
     // ERROR: cannot borrow `s` as mutable more than once at a time.

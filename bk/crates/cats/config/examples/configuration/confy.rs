@@ -11,7 +11,7 @@ struct MyConfig {
     api_key: String,
 }
 
-/// `MyConfig` implements `Default`
+/// `MyConfig` implements `Default`:
 impl ::std::default::Default for MyConfig {
     fn default() -> Self {
         Self {

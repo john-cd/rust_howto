@@ -62,6 +62,7 @@ fn generate_path(path_template: &str) -> Result<PathBuf> {
     Ok(PathBuf::from(Tera::one_off(path_template, &context, true)?))
 }
 
+// TODO
 // use walkdir::DirEntry;
 // use walkdir::WalkDir;
 // fn build_table(templ: Tera) -> anyhow::Result<()> {

@@ -32,7 +32,7 @@ async fn main() -> Result {
         fs::create_dir("temp")?;
     }
 
-    // Create a stream of futures
+    // Create a stream of futures:
     let futures = urls
         .iter()
         .zip(filenames.iter())
@@ -45,7 +45,7 @@ async fn main() -> Result {
                 Err(e) => {
                     println!("Error: {e}");
                     match e.source() {
-                        // Print the source of the error if available
+                        // Print the source of the error if available:
                         Some(source) => {
                             println!("  Caused by: {source}");
                         }

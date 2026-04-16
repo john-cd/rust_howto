@@ -15,4 +15,4 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-num_cpus = "1.16.0"
+num_cpus = "1.17.0"

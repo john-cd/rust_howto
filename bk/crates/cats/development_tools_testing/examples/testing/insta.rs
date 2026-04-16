@@ -11,7 +11,7 @@ pub fn format_user(name: &str, age: u32) -> String {
 /// The following is a test that uses `insta` to snapshot the output.
 /// Run with `cargo test`.
 /// If the test fails, `insta` will prompt you to review and accept the new
-/// snapshot. This allows you to easily manage changes to your output
+/// snapshot. This allows easily management of changes to your output
 /// over time.
 #[test]
 fn test_format_user() {

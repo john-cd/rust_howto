@@ -6,7 +6,7 @@
 //!
 //! In `Cargo.toml`, add:
 //! ```toml
-//! ignore = "0.4" # or latest
+//! ignore = "0.4" # or latest.
 //! ```
 
 use ignore::WalkBuilder;
@@ -15,11 +15,11 @@ fn main() {
     // Specify the directory to walk.
     let root = std::path::Path::new("examples/");
 
-    // Create a WalkBuilder and build a new Walk iterator.
+    // Create a `WalkBuilder` and build a new `Walk` iterator.
     // A lot more options are available.
     let walker = WalkBuilder::new(root)
         .add("temp/") // Add another directory to walk.
-        .standard_filters(true)  // Respect .gitignore and other ignore files.
+        .standard_filters(true)  // Respect `.gitignore` and other ignore files.
         .build();
 
     // Iterate over the entries.
@@ -42,6 +42,11 @@ fn main() {
 // ANCHOR_END: example
 
 #[test]
-fn test() {
+fn test() -> anyhow::Result<()> {
+    use std::fs;
+    if !fs::exists("temp")? {
+        fs::create_dir("temp")?;
+    }
     main();
+    Ok(())
 }

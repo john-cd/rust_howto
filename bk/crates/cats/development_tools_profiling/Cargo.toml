@@ -14,12 +14,13 @@ categories = [ "development_tools_profiling" ]
 publish.workspace = true
 
 [dependencies]
-criterion = "0.6.0"
+criterion = "0.7.0"
 dhat = "0.3.3"
 
+# FIXME
 ## Config for `divan` example below:
-[dev-dependencies]
-divan = "0.1.17"
+#[dev-dependencies]
+#divan = "0.1.17"
 
 [[bench]]
 name = "divan"
@@ -32,5 +33,5 @@ harness = false
 # debug = 1
 
 [features]
-dhat-heap = []    # if you are doing heap profiling
-dhat-ad-hoc = []  # if you are doing ad hoc profiling
+dhat-heap = []    # heap profiling.
+dhat-ad-hoc = []  # ad hoc profiling.

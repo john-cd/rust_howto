@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-#![cfg(feature = "mongodb")]
 // ANCHOR: example
 use std::env;
 
@@ -22,7 +21,7 @@ async fn main() -> anyhow::Result<()> {
     dotenv().ok();
 
     // Retrieve the MongoDB connection URI from the environment variable.
-    // Example: mongodb://user:password@server:27017/
+    // Example: `mongodb://user:password@server:27017/`.
     let mongo_uri = env::var("MONGO_URI")?;
     // Create a new MongoDB client.
     let client = Client::with_uri_str(&mongo_uri).await?;
@@ -57,9 +56,13 @@ fn require_external_svc() -> anyhow::Result<()> {
         // Set the MONGO_URI environment variable to connect to the MongoDB
         // service. Refer to the compose*.yaml files for the service
         // configuration.
+        let password =
+            env::var("MONGO_PASSWORD").expect("MONGO_PASSWORD must be set");
         env::set_var(
             "MONGO_URI",
-            "mongodb://mongoadmin:mysecretpassword@rust_howto_dev-mongodb-1:27017/",
+            format!(
+                "mongodb://mongoadmin:{password}@rust_howto_dev-mongodb-1:27017/"
+            ),
         );
     }
     main()?;

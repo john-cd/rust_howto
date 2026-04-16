@@ -1,10 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
 //! Alternatives to `Cow`.
-//!
-//! If you don't need Cow's flexibility, using `&str` for borrowing and `String`
-//! for owned data might be sufficient.
-
 use std::rc::Rc;
 use std::sync::Arc;
 use std::sync::RwLock;
@@ -16,7 +12,7 @@ fn main() {
     // of an immutable string slice.
     let string_slice: Arc<str> = Arc::from("Slice.");
 
-    // If you need to mutate a shared string, use interior mutability.
+    // When needing to mutate a shared string, use interior mutability.
     let shared_mutable_string: Arc<RwLock<String>> =
         Arc::new(RwLock::new("String".to_string()));
 
@@ -28,9 +24,7 @@ fn main() {
         let handle = thread::spawn(move || {
             thread::sleep(Duration::from_millis(50 * i));
             println!(
-                "Thread {} - {} {}",
-                i,
-                string_slice_clone,
+                "Thread {i} - {string_slice_clone} {}",
                 shared_mutable_string_clone.read().unwrap()
             );
             // Edit the `String`.
@@ -38,7 +32,9 @@ fn main() {
         });
         handles.push(handle);
     }
-
+    for handle in handles {
+        handle.join().unwrap();
+    }
     // `Rc<str>` is similar to `Arc<str>`, but optimized for single-threaded
     // environments.
     let shared_string: Rc<str> = Rc::from("Hello, Rust!");

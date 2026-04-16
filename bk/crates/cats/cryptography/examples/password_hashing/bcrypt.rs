@@ -15,7 +15,7 @@ use bcrypt::verify;
 fn main() -> Result<(), Box<dyn Error>> {
     // 1) When setting the password, hash it and store the hash:
 
-    // Password to be hashed
+    // Password to be hashed:
     let password = "super_secret_password";
 
     // Generate a password hash using the default cost.

@@ -69,9 +69,8 @@
 //             continue;
 //         } else {
 //             println!(
-//                 "Rate limit is currently {}/{}, the reset of this limit will
-// be within {} seconds.",                 rate_remaining,
-//                 rate_limit,
+//                 "Rate limit is currently {rate_remaining}/{rate_limit}, the
+// reset of this limit will be within {} seconds.",
 //                 rate_reset_within.as_secs(),
 //             );
 //             break;
@@ -87,4 +86,4 @@
 //     res?;
 //     Ok(())
 // }
-// // [fix interaction with https://docs.github.com/en/rest?apiVersion=2022-11-28 NOW](https://github.com/john-cd/rust_howto/issues/177)
+// // [fix interaction with https://docs.github.com/en/rest?apiVersion=2022-11-28](https://github.com/john-cd/rust_howto/issues/177)

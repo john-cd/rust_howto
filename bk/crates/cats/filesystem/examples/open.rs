@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
-//! Demonstrates how to use the `open` crate to open files and URLs using the
-//! default program associated with the file type.
+//! This example demonstrates how to use the `open` crate to open files and URLs
+//! using the default program associated with the file type.
 
 fn main() {
     //  The `that` function attempts to open the specified path with the
@@ -18,7 +18,7 @@ fn main() {
     // OR: open::with("http://rust-lang.org", "firefox")?;
 
     // Depending on the platform and system configuration, launchers can block.
-    // If you want to be sure they don't, use `that_in_background()` or
+    // To be sure they don't, use `that_in_background()` or
     // `that_detached` instead.
 
     // Get the commands that would be used to try to open the specified path.
@@ -29,8 +29,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-// #[test]
-// fn test() {
-//     main();
-// }
-// [how to test properly](https://github.com/john-cd/rust_howto/issues/1004)
+#[ignore = "Relies on default programs that may not be installed by default."]
+#[test]
+fn test() {
+    main();
+}

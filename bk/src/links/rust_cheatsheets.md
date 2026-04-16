@@ -4,18 +4,25 @@
 
 ## Cheatsheets {#cheatsheets}
 
-- [`cheats.rs`][cheats-rs~website]{{hi:Cheat sheets}}⮳ [(GitHub)](https://github.com/ralfbiedert/cheats.rs)⮳.
-- [Rust for professionals][rust-for-professionals~website]⮳.
-- [Rust Cheatsheet (cheatsheets.one)](https://cheatsheets.one/tech/rust)⮳.
-- [Rust Cheatsheet (phaiax)](https://phaiax.github.io/rust-cheatsheet)⮳.
-- [Rust Cheatsheet (programming-idioms.org)](https://www.programming-idioms.org/cheatsheet/Rust)⮳.
-- [Rust Cheatsheet (zerotomastery.io)](https://zerotomastery.io/cheatsheets/rust-cheat-sheet)⮳.
-- [The Complete(ish) Rust Cheat Sheet](https://dev.to/moekatib/the-completesh-rust-cheat-sheet-4fnn)⮳.
+- [`cheats.rs`][cheats-rs~website]↗ [(GitHub)][cheats.rs~repo]↗.{{hi:Cheat sheets}}
+- [Idiomatic Rust Snippets][book~idiomatic-rust-snippets]↗.
+- [Rust for Professionals][rust-for-professionals~website]↗.
+- [Rust Cheatsheet][cheatsheets.one-rust~website]↗ (`cheatsheets.one`).
+- [Rust Cheatsheet][rust-cheatsheet~website]↗ (phaiax).
+- [Rust Cheatsheet][programming-idioms~cheatsheet]↗ (`programming-idioms.org`).
+- [Rust Cheatsheet][zerotomastery-rust-cheat-sheet~website]↗ (`zerotomastery.io`).
+- [Rust Speedsheet][speedsheet~website]↗.
+- [The Complete(ish) Rust Cheat Sheet][the-completesh-rust-cheat-sheet~website]↗.
 
 ## Comparison to Other Languages {#comparison-to-other-languages}
 
-- [Rust for C# developers][book~rust-for-C#-developers]{{hi:Comparison to other languages}}⮳.
-- [A comparison of Rust's borrow checker to the one in C#][blog~csborrow]⮳.
+- [Rust for C# Developers][book~rust-for-C#-developers]↗{{hi:Comparison to other languages}}.
+- [A Comparison of Rust's Borrow Checker to the one in C#][blog~csborrow]↗.
+
+## Related Topics {#related-topics .skip}
+
+- [[books | Books]].
+- [[example_code | Example Code and Templates]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

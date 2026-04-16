@@ -2,19 +2,19 @@
 
 {{#include formatting.incl.md}}
 
-## Key Tools {#skip}
+## Key Tools {#key-tools .skip}
 
 | Topic | Rust Crates |
 |---|---|
-| Code Formatter | [`rustfmt`][c~rustfmt~docs]⮳{{hi:rustfmt}} is the standard Rust code formatter. |
+| Code Formatter | [`rustfmt`][c~rustfmt~repo]↗{{hi:rustfmt}} is the standard Rust code formatter. |
 | Formatting Configuration | [Configuration][p~configuration] is done through `rustfmt.toml` files. |
-| Integration | Most [IDEs][p~ides] have built-in [`rustfmt`][c~rustfmt~docs]⮳{{hi:rustfmt}} integration. |
+| Integration | Most [IDEs][p~ides] have built-in [`rustfmt`][c~rustfmt~repo]↗{{hi:rustfmt}} integration. |
 
 ## Format your Rust code with `rustfmt` {#rustfmt}
 
-[![rustfmt_nightly~github][c~rustfmt_nightly~github~badge]][c~rustfmt_nightly~github]{{hi:rustfmt}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
+[![rustfmt~repo][c~rustfmt~repo~badge]][c~rustfmt~repo]{{hi:rustfmt}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 
-Install [`rustfmt`][c~rustfmt~docs]⮳{{hi:rustfmt}} with `rustup component add rustfmt`
+Install [`rustfmt`][c~rustfmt~repo]↗{{hi:rustfmt}} with `rustup component add rustfmt`
 
 ```sh
 rustfmt <filename e.g. lib.rs> <main.rs> ...
@@ -23,7 +23,7 @@ rustfmt <filename e.g. lib.rs> <main.rs> ...
 cargo fmt
 ```
 
-Using `--check` instructs [`rustfmt`][c~rustfmt~docs]⮳{{hi:rustfmt}}{{hi:rustfmt}} to exit with an error code if the input is not formatted correctly (useful for CI).
+Using `--check` instructs [`rustfmt`][c~rustfmt~repo]↗{{hi:rustfmt}}{{hi:rustfmt}} to exit with an error code if the input is not formatted correctly (useful for CI).
 
 ```sh
 cargo fmt --all -- --check
@@ -77,13 +77,17 @@ rustfmt --help=config
 
 ### Use Attributes to Skip Code Formatting in Your Code {#formatting-attributes}
 
-[![rustfmt_nightly~github][c~rustfmt_nightly~github~badge]][c~rustfmt_nightly~github]{{hi:rustfmt}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
+[![rustfmt~repo][c~rustfmt~repo~badge]][c~rustfmt~repo]{{hi:rustfmt}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 
-For things you do not want [`rustfmt`][c~rustfmt~docs]⮳{{hi:rustfmt}} to mangle, use `#[rustfmt::skip]`{{hi:rustfmt::skip}} , `#[rustfmt::skip::macros(macro_name)]`{{hi:rustfmt::skip::macros(macro_name)}} , or `#![rustfmt::skip::attributes(custom_attribute)]`{{hi:rustfmt::skip::attributes(custom_attribute)}}
+For things [`rustfmt`][c~rustfmt~repo]↗{{hi:rustfmt}} should not mangle, use `#[rustfmt::skip]`{{hi:rustfmt::skip}} , `#[rustfmt::skip::macros(macro_name)]`{{hi:rustfmt::skip::macros(macro_name)}} , or `#![rustfmt::skip::attributes(custom_attribute)]`{{hi:rustfmt::skip::attributes(custom_attribute)}}
 
-## References {#skip}
+## References {#references .skip}
 
-- [The Rust Style Guide](https://doc.rust-lang.org/stable/style-guide)⮳.
+- [The Rust Style Guide][style-guide~website]↗.
+
+## Related Topics {#related-topics .skip}
+
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

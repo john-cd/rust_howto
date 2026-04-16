@@ -13,21 +13,16 @@ Examples of behavior that contributes to a positive environment for our communit
 * Demonstrating empathy and kindness toward other people
 * Being respectful of differing opinions, viewpoints, and experiences
 * Giving and gracefully accepting constructive feedback
-* Accepting responsibility and apologizing to those affected by our mistakes,
- and learning from the experience
-* Focusing on what is best not just for us as individuals, but for the
- overall community
+* Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience
+* Focusing on what is best not just for us as individuals, but for the overall community
 
 Examples of unacceptable behavior include:
 
-* The use of sexualized language or imagery, and sexual attention or
- advances of any kind
+* The use of sexualized language or imagery, and sexual attention or advances of any kind
 * Trolling, insulting or derogatory comments, and personal or political attacks
 * Public or private harassment
-* Publishing others' private information, such as a physical or email
- address, without their explicit permission
-* Other conduct which could reasonably be considered inappropriate in a
- professional setting
+* Publishing others' private information, such as a physical or email address, without their explicit permission
+* Other conduct which could reasonably be considered inappropriate in a professional setting
 
 ## Enforcement Responsibilities
 
@@ -75,14 +70,14 @@ Community leaders will follow these Community Impact Guidelines in determining t
 
 ## Attribution
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 2.0, available [here][code_of_conduct].
+This Code of Conduct is adapted from the [Contributor Covenant][homepage]↗, version 2.0, [available here][code_of_conduct]↗.
 
-Community Impact Guidelines were inspired by [Mozilla's code of conduct enforcement ladder][enforcement_ladder].
+Community Impact Guidelines were inspired by [Mozilla's code of conduct enforcement ladder][enforcement_ladder]↗.
 
-For answers to common questions about this code of conduct, see the [FAQ][faq]. [Translations][translations] are available.
+For answers to common questions about this code of conduct, see the [FAQ][faq]↗. [Translations][translations]↗ are available.
 
-[homepage]: https://www.contributor-covenant.org
-[code_of_conduct]: https://www.contributor-covenant.org/version/2/0/code_of_conduct.html
+[homepage]: https://contributor-covenant.org
+[code_of_conduct]: https://contributor-covenant.org/version/2/0/code_of_conduct.html
 [enforcement_ladder]: https://github.com/mozilla/diversity
-[faq]: https://www.contributor-covenant.org/faq
-[translations]: https://www.contributor-covenant.org/translations
+[faq]: https://contributor-covenant.org/faq
+[translations]: https://contributor-covenant.org/translations

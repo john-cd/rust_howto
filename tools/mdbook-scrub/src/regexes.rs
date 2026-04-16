@@ -3,19 +3,20 @@ use regex::Regex;
 
 use super::conf::PreprocConfig;
 
-// TODO share RegexAndReplacement code with CLIs (core_lib)
+// [share RegexAndReplacement code with CLIs (core_lib)](https://github.com/john-cd/rust_howto/issues/1420)
 
-// Replacement closure
+// Replacement closure.
 type Replacement = Box<dyn Fn(&Captures) -> String>;
 
+/// Holds a Regex and a Replacement object.
 pub struct RegexAndReplacement {
     pub re: Regex,
-    // Most often set to None for no replacement, meaning deletion
+    // Most often set to `None` for no replacement, meaning deletion.
     pub replacement: Option<Replacement>,
 }
 
-// Generate the replacement Regexes needed, depending on the configuration
-// Can return an empty Vec.
+/// Generate the replacement Regexes needed, depending on the configuration.
+/// Can return an empty `Vec`.
 pub fn get_regexes_and_replacements(conf: &PreprocConfig) -> Vec<RegexAndReplacement> {
     let mut rr = vec![];
     if conf.remove_hidden_sections {

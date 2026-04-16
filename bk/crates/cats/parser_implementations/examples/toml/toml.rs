@@ -36,7 +36,8 @@ fn main() {
         date = 1979-05-27T07:32:00Z
     "#;
 
-    let parsed_toml: Config = toml::from_str(toml_string).unwrap();
+    let parsed_toml: Config =
+        toml::from_str(toml_string).expect("Failed to parse TOML");
     println!("{parsed_toml:#?}");
 }
 // ANCHOR_END: example

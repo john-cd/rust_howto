@@ -29,4 +29,4 @@ done
 
 echo "DONE"
 
-# [escape TODO escape & in titles; combine with the generate / fix recipe table script in titles; combine with the generate / fix recipe table script](https://github.com/john-cd/rust_howto/issues/1373)
+# [escape & in titles; combine with the generate / fix recipe table script in titles; combine with the generate / fix recipe table script](https://github.com/john-cd/rust_howto/issues/1373)

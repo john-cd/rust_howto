@@ -66,7 +66,7 @@ fn main() { println!("hello world!"); }
     let gist: Gist = response.json().await?;
     println!("Created {gist:?}");
 
-    let request_url = format!("{}/{}", request_url, gist.id);
+    let request_url = format!("{request_url}/{}", gist.id);
     let response = Client::new()
         .delete(&request_url)
         .basic_auth(gh_user, Some(gh_pass))
@@ -86,4 +86,4 @@ fn main() { println!("hello world!"); }
 fn require_network() {
     println!("{:?}", main());
 }
-// [review; rewrite so that a username and password are not required? NOW](https://github.com/john-cd/rust_howto/issues/178)
+// [review; rewrite so that a username and password are not required?](https://github.com/john-cd/rust_howto/issues/178)

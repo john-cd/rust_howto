@@ -6,18 +6,18 @@ Tools that provide developer-facing features such as testing, debugging, linting
 
 | Topic | Rust Crates |
 |---|---|
-| Build System/Package Manager | [`cargo`][c~cargo~docs]⮳{{hi:cargo}} |
-| Formatter | [`rustfmt`][c~rustfmt~docs]⮳{{hi:rustfmt}} |
-| Linter | [`clippy`][c~clippy~docs]⮳{{hi:clippy}} |
-| Testing Framework | `cargo test` (built-in), [`rstest`][c~rstest~docs]⮳{{hi:rstest}} (for data-driven tests) |
-| Debugging | [`gdb`][c~gdb~docs]⮳{{hi:gdb}}, [`lldb`][c~lldb~docs]⮳{{hi:lldb}} (often used via IDE integration), `cargo-debug` |
-| Profiling | `cargo flamegraph`, [`perf`][c~perf~docs]⮳{{hi:perf}} (system profiler) |
-| Documentation Generator | `cargo doc` |
-| Code Coverage | [`grcov`][c~grcov~docs]⮳{{hi:grcov}}, [`tarpaulin`][c~tarpaulin~docs]⮳{{hi:tarpaulin}} |
-| Continuous Integration | often uses CI platforms directly; no specific Rust crates needed, but [`xtask`][c~xtask~docs]⮳{{hi:xtask}} can help manage CI tasks |
+| Build System/Package Manager | [`cargo`][c~cargo~docs]↗{{hi:cargo}} |
+| Formatter | [`rustfmt`][c~rustfmt~repo]↗{{hi:rustfmt}} |
+| Linter | [`clippy`][c~clippy~docs]↗{{hi:clippy}} |
+| Testing Framework | [`cargo test`][book~cargo~cargo-test]↗{{hi:cargo test}} (built-in), [`rstest`][c~rstest~docs]↗{{hi:rstest}} (for data-driven tests) |
+| Debugging | [`gdb`][c~gdb~docs]↗{{hi:gdb}}, [`lldb`][c~lldb~docs]↗{{hi:lldb}} (often used via IDE integration), `cargo-debug` |
+| Profiling | `cargo flamegraph`, [`perf`][c~perf~docs]↗{{hi:perf}} (system profiler) |
+| Documentation Generator | [`cargo doc`][book~cargo~cargo-doc]↗{{hi:cargo doc}} |
+| Code Coverage | [`grcov`][c~grcov~docs]↗{{hi:grcov}}, [`tarpaulin`][c~cargo-tarpaulin~docs]↗{{hi:tarpaulin}} |
+| Continuous Integration | often uses CI platforms directly; no specific Rust crates needed, but [`xtask`][c~xtask~docs]↗{{hi:xtask}} can help manage CI tasks |
 | Code Analysis | `cargo clippy`, `rust-analyzer` (for Language Server Protocol support in IDEs) |
 
-See also [Rust tools][rust-tools]{{hi:Rust tools}}⮳.
+See also [Rust tools][rust-tools]↗{{hi:Rust tools}}.
 
 ## Cargo
 
@@ -79,89 +79,89 @@ See also [[cross_compiling | Cross Compiling (Cargo Plugins)]].
 
 | Utilities |
 |---|
-| [`fd-find`][c~fd_find~docs]⮳{{hi:fd-find}} as a more human-friendly alternative to [`find`][c~find~docs]⮳{{hi:find}} which, by default, ignores paths listed in things like `.gitignore` and mimics Vim's smartcase option. |
-| [`hyperfine`][c~hyperfine~docs]⮳{{hi:hyperfine}} as an analogue to the UNIX time command which can do warm-up runs, run the command multiple times to do statistical outlier detection, display a progress bar for the multiple runs, export results to CSV/JSON/etc., parameterize the runs, etc. |
-| [`miniserve`][c~miniserve~docs]⮳{{hi:miniserve}} as a simple, easy way to serve up some files or accept some uploads over HTTP. |
-| [`ripgrep`][c~ripgrep~docs]⮳{{hi:ripgrep}} is excellent for fast searching of file contents. |
-| [`rust-script`][c~rust_script~docs]⮳{{hi:rust-script}} as a way to quickly write little single-file programs in Rust without having to spin up a whole project. |
-| [`skim`][c~skim~docs]⮳{{hi:skim}} is a Rust clone of `fzf` with some additional features. |
-| [`tokei`][c~tokei~docs]⮳{{hi:tokei}} gathers statistics about a codebase (i.e. number of files, lines, lines of code, lines of comments, and lines of blanks, per language). |
-| [`xd`][c~xd~docs]⮳{{hi:xd}} as an alternative to 'xxd' that doesn't have as many features, but renders un-printable characters in a reversible "codepage 437 plus a symbol for NULL" mapping to ensure that all patterns in the visualization of binary files are visible... not just ones that occur in printable characters. |
+| [`fd-find`][c~fd-find~docs]↗{{hi:fd-find}} as a more human-friendly alternative to [`find`][c~find~docs]↗{{hi:find}} which, by default, ignores paths listed in things like [`.gitignore`][git-gitignore~website]↗{{hi:.gitignore}} and mimics Vim's smartcase option. |
+| [`hyperfine`][c~hyperfine~docs]↗{{hi:hyperfine}} as an analogue to the UNIX time command which can do warm-up runs, run the command multiple times to do statistical outlier detection, display a progress bar for the multiple runs, export results to CSV/JSON/etc., parameterize the runs, etc. |
+| [`miniserve`][c~miniserve~docs]↗{{hi:miniserve}} as a simple, easy way to serve up some files or accept some uploads over HTTP. |
+| [`ripgrep`][c~ripgrep~docs]↗{{hi:ripgrep}} is excellent for fast searching of file contents. |
+| [`rust-script`][c~rust-script~docs]↗{{hi:rust-script}} as a way to quickly write little single-file programs in Rust without having to spin up a whole project. |
+| [`skim`][c~skim~docs]↗{{hi:skim}} is a Rust clone of [`fzf`][fzf~repo]↗{{hi:fzf}} with some additional features. |
+| [`tokei`][c~tokei~docs]↗{{hi:tokei}} gathers statistics about a codebase (i.e. number of files, lines, lines of code, lines of comments, and lines of blanks, per language). |
+| [`xd`][c~xd~docs]↗{{hi:xd}} as an alternative to 'xxd' that doesn't have as many features, but renders un-printable characters in a reversible "codepage 437 plus a symbol for NULL" mapping to ensure that all patterns in the visualization of binary files are visible... not just ones that occur in printable characters. |
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[index: reorganize; dedupe alternatives / [`log`][c~log~docs]⮳{{hi:log}} / config_log NOW](https://github.com/john-cd/rust_howto/issues/319)
+[index: reorganize; dedupe alternatives / [`log`][c~log~docs]↗{{hi:log}} / config_log](https://github.com/john-cd/rust_howto/issues/319)
 
 ## Editors
 
-- [lapce: Lightning-fast and Powerful Code Editor written in Rust](https://github.com/lapce/lapce)
-- [intellij-rust: Rust plugin for the IntelliJ Platform](https://github.com/intellij-rust/intellij-rust)
+- [`lapce`][lapce~repo]↗: Lightning-fast and Powerful Code Editor written in Rust.
+- [`intellij-rust`][intellij-rust~repo]↗: Rust plugin for the IntelliJ Platform.
 
-## Registries {#skip}
+## Registries
 
-- [alexandrie: An alternative crate registry, implemented in Rust.](https://github.com/Hirevo/alexandrie)
-- [meuse: A private Cargo crate registry, for Rust](https://github.com/mcorbin/meuse)
-- [kellnr: The registry for Rust crates](https://github.com/kellnr/kellnr)
-- [panamax: Mirror rustup and crates.io repositories, for offline Rust and cargo usage.](https://github.com/panamax-rs/panamax)
+- [`alexandrie`][c~alexandrie~repo]↗: An alternative crate registry, implemented in Rust.
+- [`meuse`][meuse~repo]↗: A private Cargo crate registry, for Rust.
+- [`kellnr`][kellnr~repo]↗: The registry for Rust crates.
+- [`panamax`][c~panamax~repo]↗: Mirror rustup and crates.io repositories, for offline Rust and cargo usage..
 
 ## Tests
 
-- [assertables](https://docs.rs/assertables/latest/assertables/)
-- [proptest: Hypothesis-like property testing for Rust](https://github.com/proptest-rs/proptest)
+- [`assertables`][c~assertables~docs]↗.
+- [`proptest`][c~proptest~repo]↗: Hypothesis-like property testing for Rust.
 
 ## Cargo Plugins
 
-- [cargo-semver-checks](https://crates.io/crates/cargo-semver-checks)
-- [cargo-c](https://crates.io/crates/cargo-c)
-- [kondo: Cleans dependencies and build artifacts from your projects.](https://github.com/tbillington/kondo)
-- [cargo-sweep: A cargo subcommand for cleaning up unused build files generated by Cargo](https://github.com/holmgr/cargo-sweep)
-- [cargo-update: A cargo subcommand for checking and applying updates to installed executables](https://github.com/nabijaczleweli/cargo-update)
-- [cargo-xtask](https://github.com/matklad/cargo-xtask)
-- [cargo-script](https://crates.io/crates/cargo-script)
-- [cargo-play](https://crates.io/crates/cargo-play)
-- [sccache-action: sccache github action](https://github.com/Mozilla-Actions/sccache-action)
-- [cargo-spellcheck: Checks all your documentation for spelling and grammar mistakes with hunspell and a nlprule based checker for grammar](https://github.com/drahnr/cargo-spellcheck)
-- [cargo-limit: Productivity improvements for Rust ecosystem: warnings are skipped until errors are fixed, LSP-independent Neovim integration, etc.](https://github.com/cargo-limit/cargo-limit)
-- [cargo-bloat: Find out what takes most of the space in your executable.](https://github.com/RazrFalcon/cargo-bloat)
-- [cargo-generate](https://crates.io/crates/cargo-generate)
-- [cargo-workspaces](https://crates.io/crates/cargo-workspaces)
+- [`cargo-semver-checks`][c~cargo-semver-checks~crates.io]↗.
+- [`cargo-c`][c~cargo-c~crates.io]↗.
+- [`kondo`][kondo~repo]↗: Cleans dependencies and build artifacts from your projects.
+- [`cargo-sweep`][c~cargo-sweep~repo]↗: A cargo subcommand for cleaning up unused build files generated by Cargo.
+- [`cargo-update`][c~cargo-update~repo]↗: A cargo subcommand for checking and applying updates to installed executables.
+- [`cargo-xtask`][c~cargo-xtask~repo]↗.
+- [`cargo-script`][c~cargo-script~crates.io]↗.
+- [`cargo-play`][c~cargo-play~crates.io]↗.
+- [`sccache-action`][sccache-action~repo]↗: `sccache` github action.
+- [`cargo-spellcheck`][c~cargo-spellcheck~repo]↗ checks all your documentation for spelling and grammar mistakes with `hunspell` and a `nlprule`-based checker for grammar.
+- [`cargo-limit`][cargo-limit~repo]↗: Productivity improvements for Rust ecosystem: warnings are skipped until errors are fixed, LSP-independent Neovim integration, etc.
+- [`cargo-bloat`][c~cargo-bloat~repo]↗: Find out what takes most of the space in your executable.
+- [`cargo-generate`][c~cargo-generate~crates.io]↗.
+- [`cargo-workspaces`][c~cargo-workspaces~crates.io]↗.
 
 ## Linkers
 
-- [Mold: A Modern Linker](https://github.com/rui314/mold)
+- [Mold][mold~repo]↗: A Modern Linker.
 
 ## Cross Compilation
 
-- [Cross-Platform Development](https://rustmeup.com/tutorials/cross-platform-development)
-- [Cross-compilation in Rust](https://kerkour.com/rust-cross-compilation)
+- [Cross-Platform Development][rustmeup-tutorials-cross-platform-development~website]↗.
+- [Cross-compilation in Rust][blog~kerkour-rust-cross-compilation]↗.
 
 ## Live Reload
 
-- [So you want to live-reload Rust](https://fasterthanli.me/articles/so-you-want-to-live-reload-rust)
-- [watchexec: Executes commands in response to file modifications](https://github.com/watchexec/watchexec)
+- [So you want to live-reload Rust][blog~fasterthanli.me-so-you-want-to-live-reload-rust]↗.
+- [`watchexec`][c~watchexec~repo]↗: Executes commands in response to file modifications.
 
 ## CD / CI
 
-- [act: Run your GitHub Actions locally](https://github.com/nektos/act)
+- [`act`][act~repo]↗: Run your GitHub Actions locally.
 
 ## Others
 
-- [vscode-just: VSCode syntax highlighting for just files](https://github.com/nefrob/vscode-just)
+- [`vscode-just`][vscode-just~repo]↗: VSCode syntax highlighting for just files.
 
-- [dotbot: A tool that bootstraps your dotfiles](https://github.com/anishathalye/dotbot)
+- [`dotbot`][dotbot~repo]↗: A tool that bootstraps your dotfiles.
 
-- [Bazel at Enterprise Scale | BuildBuddy](https://www.buildbuddy.io/)
+- [Bazel at Enterprise Scale | BuildBuddy][buildbuddy~website]↗.
 
-- [The Pants Build System](https://github.com/pantsbuild/pants)
+- [The Pants Build System][pants~repo]↗.
 
-- [mini-docker-rust: Very small rust docker image](https://github.com/kpcyrd/mini-docker-rust)
+- [`mini-docker-rust`][mini-docker-rust~repo]↗: Very small rust docker image.
 
-- [contracts](https://crates.io/crates/contracts)
+- [`contracts`][c~contracts~crates.io]↗.
 
-- [Vagrant by HashiCorp](https://www.vagrantup.com/)
+- [Vagrant by HashiCorp][vagrantup~website]↗.
 
-- [include_dir — Rust dev tool](https://lib.rs/crates/include_dir) An evolution of the include_str!() and include_bytes!() macros for embedding an entire directory tree into your binary.
+- [`include_dir` - Rust dev tool][c~include_dir~lib.rs]↗: An evolution of the `include_str!()` and `include_bytes!()` macros for embedding an entire directory tree into your binary.
 
 </div>

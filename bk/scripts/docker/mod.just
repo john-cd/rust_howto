@@ -14,7 +14,7 @@ push_ci:
   set -euo pipefail
   ## Access private images in DockerHub
   docker login
-  d="{{root}}/.devcontainer/"
+  d="{{root}}/../.devcontainer/"
   cd ${d}
   docker buildx bake -f compose.yaml -f compose-ci.yaml --pull --push --allow=fs.read=..
   ## OR: docker compose -f compose.yaml -f compose-ci.yaml build --pull --push

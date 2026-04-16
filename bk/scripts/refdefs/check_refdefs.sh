@@ -6,11 +6,11 @@ set -euo pipefail
 
 root="$(realpath $1)/"
 # Extract reference definitions e.g. [label]: http://xyz
-grep -Proh '\[[^\[\]]+?\](?=:)' ${root}src ${root}drafts ${root}later | sort -u > /tmp/defined_refdefs.txt
+grep -Proh '\[[^\[\]]+?\](?=:)' ${root}src ${root}drafts ${root}../later/src | sort -u > /tmp/defined_refdefs.txt
 # grep -r = recursive, h = no-filename, P = perl regex, o = only-matching
 
 # Extract labels preceded by ] e.g. [some_text][label]
-grep -Proh '(?<=\])\[[^ \[\]]+?\]' ${root}src ${root}drafts ${root}later | sort -u > /tmp/used_refdefs.txt
+grep -Proh '(?<=\])\[[^ \[\]]+?\]' ${root}src ${root}drafts ${root}../later/src | sort -u > /tmp/used_refdefs.txt
 
 echo ">>> Links w/o reference definition:"
 comm -13 --check-order --output-delimiter="|" /tmp/defined_refdefs.txt /tmp/used_refdefs.txt | sort
@@ -20,8 +20,8 @@ comm -23 --check-order --output-delimiter="|" /tmp/defined_refdefs.txt /tmp/used
 
 # Counts
 echo
-echo "Count of reference definitions without links and vice versa:" $(comm -3 --check-order --output-delimiter="|" /tmp/defined_refdefs.txt /tmp/used_refdefs.txt  | wc -l)
-echo "Count of reference definitions defined in the refs folder:" $(cat  /tmp/defined_refdefs.txt | wc -l)
-echo "Count of reference definitions used in the markdown:" $(cat  /tmp/used_refdefs.txt | wc -l)
+echo "Count of reference definitions without links and vice versa:" $(comm -3 --check-order --output-delimiter="|" /tmp/defined_refdefs.txt /tmp/used_refdefs.txt | wc -l)
+echo "Count of reference definitions defined in the refs folder:" $(cat /tmp/defined_refdefs.txt | wc -l)
+echo "Count of reference definitions used in the markdown:" $(cat /tmp/used_refdefs.txt | wc -l)
 
 echo "DONE"
