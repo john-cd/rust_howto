@@ -138,6 +138,59 @@ fn capitalize_if_not(s: String, should_not_be: &str) -> String {
     }
 }
 
+/// Creates a crate page section for use in the `crates_and_examples.md` index page.
+///
+/// Each section includes:
+/// - An H3 header with an anchor: `### \`{name}\` {#{name}}`
+/// - Badges for docs.rs, crates.io, GitHub repo, and lib.rs
+/// - Keyword index entries (`{{hi:...}}`)
+/// - Category badges
+/// - An empty recipe table placeholder
+///
+/// # Arguments
+///
+/// * `name` - The name of the crate.
+///
+/// Returns the generated markdown section as a `String`.
+pub fn create_crate_page_section(name: &str) -> Result<String> {
+    use anyhow::Context;
+
+    let mut section = String::new();
+
+    // H3 header with anchor
+    section.push_str(&format!("### `{name}` {{#{name}}}\n\n"));
+
+    let info =
+        crate::get_info_for_crate(name).with_context(|| format!("Unknown crate: {name}"))?;
+
+    // Badges for docs.rs, crates.io, repo, lib.rs
+    let badges =
+        create_crate_block_badges_or_refdefs(&info.crate_data, GenerationMode::CrateBlock)?;
+    section.push_str(&badges);
+
+    // Keyword index anchors
+    let keywords: Vec<_> = info
+        .keywords
+        .into_iter()
+        .map(|k| capitalize_if_not(k.keyword, name))
+        .collect();
+    let kws = keywords.iter().map(String::as_str).collect();
+    let markdown = super::create_index_anchors(kws)?;
+    section.push_str(&markdown);
+
+    // Category badges
+    for cat in info.categories {
+        let markdown = super::create_category_badge(&cat.category, &cat.slug)?;
+        section.push_str(&markdown);
+    }
+    section.push_str("\n\n");
+
+    // Empty recipe table placeholder
+    section.push_str("| Recipe |\n|--------|\n");
+
+    Ok(section)
+}
+
 /// Creates a "crate block" for a given crate, which includes several badges linking to various crate websites; associated keywords, categories; crate description,
 /// and reference definitions for all links.
 ///

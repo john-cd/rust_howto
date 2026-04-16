@@ -13,6 +13,7 @@ pub(super) fn cli() -> Command {
         .version(clap::crate_version!()) // Sets the version for the short version (-V) and help messages.
         .subcommand(subcommand_category_page())
         .subcommand(subcommand_alphabetical_page())
+        .subcommand(subcommand_crate_page())
         .subcommand(subcommand_list_crates())
         .subcommand(subcommand_update_refdefs())
         .subcommand(subcommand_expand_crate_blocks())
@@ -31,6 +32,14 @@ fn subcommand_alphabetical_page() -> Command {
     Command::new("alphabetical_page")
         .visible_alias("a")
         .about("Returns the markdown for the alphabetical page, given a list of crates")
+        .arg(arg_crate_name())
+}
+
+/// Builds the `crate_page` subcommand of the CLI user interface
+fn subcommand_crate_page() -> Command {
+    Command::new("crate_page")
+        .visible_alias("p")
+        .about("Returns the markdown for individual crate sections in crates_and_examples.md, given a list of crates")
         .arg(arg_crate_name())
 }
 

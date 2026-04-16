@@ -71,6 +71,27 @@ fn main() -> anyhow::Result<()> {
                 println!("{markdown}");
             }
         }
+        cli::Cmd::CratePage(crates) => {
+            // Group by first letter, uppercased
+            let grouped = crates
+                .crate_names
+                .iter()
+                .filter(|name| !name.is_empty() && name.as_str() != "std")
+                .sorted()
+                .map(|n| {
+                    let f: String = n.chars().next().unwrap().to_uppercase().collect();
+                    (f, n)
+                })
+                .into_group_map();
+
+            for (first_letter, crates) in grouped.iter().sorted_by_key(|x| x.0) {
+                println!("## {first_letter}\n");
+                for name in crates.iter().sorted() {
+                    let markdown = tool_lib::create_crate_page_section(name)?;
+                    println!("{markdown}");
+                }
+            }
+        }
         cli::Cmd::ListCrates(dircmdargs) => {
             let book_root = dircmdargs.dirpathbuf;
             let list = tool_lib::get_dependencies(book_root)?;

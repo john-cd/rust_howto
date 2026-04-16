@@ -14,6 +14,7 @@ pub(crate) enum Cmd {
     None,
     CategoryPage(CmdArgs),
     AlphabeticalCratePage(CmdArgs),
+    CratePage(CmdArgs),
     ListCrates(DirectoryCmdArgs),
     UpdateRefDefs(CmdArgs2),
     ExpandCrateBlocks(ExpandCrateBlocksCmdArgs),
@@ -55,6 +56,10 @@ pub(super) fn get_cmd() -> anyhow::Result<Cmd> {
         }))
     } else if let Some(m) = matches.subcommand_matches("alphabetical_page") {
         Ok(Cmd::AlphabeticalCratePage(CmdArgs {
+            crate_names: get_crate_names(m),
+        }))
+    } else if let Some(m) = matches.subcommand_matches("crate_page") {
+        Ok(Cmd::CratePage(CmdArgs {
             crate_names: get_crate_names(m),
         }))
     } else if let Some(m) = matches.subcommand_matches("update_refdefs") {

@@ -19,6 +19,12 @@ empty := ''
   {{root}}/../bin/crate-indices {{cmd}} {{subcmd}}
 # or: cargo run -p crate_indices -- {{cmd}} {{subcmd}}
 
+# Generate crate page sections for `crates_and_examples.md`, given a list of crate names
+[no-cd]
+@crate_page *crates=empty:
+  {{root}}/../bin/crate-indices crate_page {{crates}}
+# Usage: just indices crate_page crate1 crate2 crate3
+
 ## ---- INDEX OF EXAMPLES --------------------------------
 
 # Outputs the contents of index of examples `src/examples_index.md` (reading the local tables of content of all subchapters)

@@ -33,7 +33,7 @@ The following returns the canonical, absolute form of a path with all intermedia
 
 The `camino` crate provides an alternative to the standard `Path` and `PathBuf` types that are guaranteed to be UTF-8 encoded. While Rust strings are UTF-8, file paths on many operating systems are not, which can lead to complex error handling. `camino` ensures your path types are always valid UTF-8, just like your strings:
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/filesystem/examples/paths/camino.rs:example}}
 ```
 

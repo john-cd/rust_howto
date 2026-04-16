@@ -1425,6 +1425,7 @@
 [rust-howto~bk-theme~repo]: https://github.com/john-cd/rust_howto/tree/main/bk/theme
 [rust-howto~bk~repo]: https://github.com/john-cd/rust_howto/tree/main/bk
 [rust-howto~book.toml~repo]: https://github.com/john-cd/rust_howto/blob/main/bk/book.toml
+[rust-howto~clap_builder_xmpl~repo]: https://github.com/john-cd/rust_howto/tree/main/xmpl/clap_builder_xmpl
 [rust-howto~code-examples~repo]: https://github.com/john-cd/rust_howto/tree/main/bk/crates
 [rust-howto~code-of-conduct~repo]: https://github.com/john-cd/rust_howto/blob/main/CODE_OF_CONDUCT.md
 [rust-howto~contributing~repo]: https://github.com/john-cd/rust_howto/blob/main/CONTRIBUTING.md
@@ -1721,6 +1722,7 @@
 [wikipedia~polkadot]: https://en.wikipedia.org/wiki/Polkadot_(blockchain_platform)
 [wikipedia~race-condition]: https://en.wikipedia.org/wiki/Race_condition#File_systems
 [wikipedia~rust]: https://en.wikipedia.org/wiki/Rust_(programming_language)
+[wikipedia~singular-value-decomposition]: https://en.wikipedia.org/wiki/Singular_value_decomposition
 [wikipedia~splay-tree]: https://en.wikipedia.org/wiki/Splay_tree
 [wikipedia~uniform-distribution]: https://en.wikipedia.org/wiki/Uniform_distribution_(continuous)
 [wikipedia~unix-timestamp]: https://en.wikipedia.org/wiki/Unix_time

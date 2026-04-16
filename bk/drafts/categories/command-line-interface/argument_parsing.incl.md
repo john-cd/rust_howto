@@ -1,6 +1,7 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Using `clap`'s Builder API][ex~command-line-interface~clap-builder] | [![clap][c~clap~docs~badge]][c~clap~docs] | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |
+| [Advanced `clap` Builder Example with Subcommands][ex~command-line-interface~clap-builder-advanced] | [![clap][c~clap~docs~badge]][c~clap~docs] | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |
 | [Using `clap`'s Derive API][ex~command-line-interface~clap-derive] | [![clap][c~clap~docs~badge]][c~clap~docs] | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |
 | [Parse Command-line Arguments with `lexopt`][ex~command-line-interface~lexopt] | [![lexopt][c~lexopt~docs~badge]][c~lexopt~docs] | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |
 | [Parse Command-line Arguments with `pico-args`][ex~command-line-interface~pico-args] | [![pico-args][c~pico-args~docs~badge]][c~pico-args~docs] | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |
