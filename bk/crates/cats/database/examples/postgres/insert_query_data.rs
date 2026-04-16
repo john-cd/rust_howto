@@ -19,9 +19,7 @@ pub fn main() -> Result<(), Error> {
     // The connection URL is formatted as
     // postgresql://<user>:<password>@<host>/<db>,
     // for example postgresql://postgres:postgres@localhost/library
-    let url = std::env::var("PG_URL").unwrap_or_else(|_| {
-        "postgresql://postgres:password@localhost/library".to_string()
-    });
+    let url = std::env::var("PG_URL").expect("PG_URL must be set");
     let mut client = Client::connect(&url, NoTls)?;
 
     // Create a HashMap to store author names and their respective countries.

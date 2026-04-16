@@ -54,14 +54,18 @@ async fn main() -> Result<(), Error> {
 
 #[test]
 fn require_external_svc() -> anyhow::Result<()> {
+    let _lock = super::ENV_MUTEX.lock().unwrap();
+    let username = std::env::var("TEST_ORACLE_DB_USERNAME")
+        .expect("TEST_ORACLE_DB_USERNAME must be set");
+    let password = std::env::var("TEST_ORACLE_DB_PASSWORD")
+        .expect("TEST_ORACLE_DB_PASSWORD must be set");
+    let db_url = std::env::var("TEST_ORACLE_DB_URL")
+        .expect("TEST_ORACLE_DB_URL must be set");
+
     unsafe {
-        // Refer to the compose*.yaml files.
-        std::env::set_var("ORACLE_DB_USERNAME", "sysdba");
-        std::env::set_var("ORACLE_DB_PASSWORD", "Oracle_123");
-        std::env::set_var(
-            "ORACLE_DB_URL",
-            "rust_howto_dev-oracle-1:1521/ORCLCDB",
-        );
+        std::env::set_var("ORACLE_DB_USERNAME", username);
+        std::env::set_var("ORACLE_DB_PASSWORD", password);
+        std::env::set_var("ORACLE_DB_URL", db_url);
     }
     main()?;
     Ok(())

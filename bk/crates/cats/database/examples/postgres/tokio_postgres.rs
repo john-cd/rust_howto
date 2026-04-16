@@ -88,14 +88,10 @@ async fn main() -> Result<(), tokio_postgres::Error> {
 #[tokio::test]
 async fn require_external_svc() -> anyhow::Result<()> {
     let _lock = super::ENV_MUTEX.lock().unwrap();
-    let test_url = std::env::var("TEST_PG_URL").unwrap_or_else(|_| {
-        "host=rust_howto_dev-postgres-1 user=postgres password=password dbname=library".to_string()
-    });
+    let test_url =
+        std::env::var("TEST_PG_URL").expect("TEST_PG_URL must be set");
     unsafe {
-        std::env::set_var(
-            "PG_URL",
-            "host=rust_howto_dev-postgres-1 user=postgres password=password dbname=library",
-        );
+        std::env::set_var("PG_URL", test_url);
     }
     tokio::task::spawn_blocking(|| main()).await??;
     Ok(())
