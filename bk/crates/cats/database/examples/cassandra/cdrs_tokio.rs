@@ -45,8 +45,14 @@
 
 // #[tokio::main]
 // async fn main() -> anyhow::Result<()> {
-//     let user = "user";
-//     let password = "password";
+//     // Load environment variables from a .env file (for secure handling of
+//     // credentials).
+//     // use dotenvy::dotenv;
+//     // dotenv().ok();
+//
+//     let user = std::env::var("CASSANDRA_USER").expect("CASSANDRA_USER not set");
+//     let password =
+//         std::env::var("CASSANDRA_PASSWORD").expect("CASSANDRA_PASSWORD not set");
 //     let auth = StaticPasswordAuthenticatorProvider::new(&user, &password);
 //     // For tests, you may use
 //     // `cdrs_tokio::authenticators::NoneAuthenticatorProvider`.
