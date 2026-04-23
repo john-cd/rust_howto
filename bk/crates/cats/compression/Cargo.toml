@@ -22,11 +22,13 @@ zip = "6.0.0"
 # General
 anyhow = "1.0.100"
 
-# TODO add example for async_zip?
-# async_zip = "0.0.17"
+# async_zip
+async_zip = { version = "0.0.17", features = ["full"] }
 
 # FIXME finish async_compresssion example
 # bytes = "1.9.0"
 # futures = "0.3.31"
-# tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread"] }
+tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread"] }
+tokio-util = { version = "0.7", features = ["compat"] }
+futures-lite = "2"
 # tokio-util = { version = "0.7.13", features = ["codec"] }
