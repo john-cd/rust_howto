@@ -26,7 +26,9 @@ shaku = "0.6.2"
 aws-config = "1.6.2"
 aws-sdk-s3 = "1.105.0"
 # FIXME lambda_runtime = "0.14.2"
-# FIXME shuttle-runtime = "0.56.0"
+shuttle-runtime = "0.57.0"
+shuttle-axum = "0.57.0"
+axum = "0.8.1"
 
 ## Cross platform
 crux_core = "0.16.0"
