@@ -150,6 +150,9 @@ version = "0.1.2"
 [[package]]
 name = "aerospace_unmanned_aerial_vehicles"
 version = "0.1.2"
+dependencies = [
+ "tello",
+]
 
 [[package]]
 name = "aes"
@@ -13631,13 +13634,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "tello"
+version = "0.6.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d8e71f4d262a2f7d229ab389810d85f0f87a531d9d5af5f273a5d6825139699c"
+dependencies = [
+ "byteorder",
+ "chrono",
+ "tokio",
+ "tokio-stream",
+]
+
+[[package]]
 name = "tempfile"
 version = "3.27.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "32497e9a4c7b38532efcdebeef879707aa9f794296a4f0244f6f69e9bc8574bd"
 dependencies = [
  "fastrand",
- "getrandom 0.3.4",
+ "getrandom 0.4.2",
  "once_cell",
  "rustix 1.1.4",
  "windows-sys 0.61.2",
@@ -13951,6 +13966,7 @@ dependencies = [
  "futures-core",
  "pin-project-lite",
  "tokio",
+ "tokio-util",
 ]
 
 [[package]]
