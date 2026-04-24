@@ -14,21 +14,13 @@ categories = ["network_programming"]
 publish.workspace = true
 autolib = false
 
-# FIXME
 [dependencies]
-# FIXME ngrok = { version = "0.15.0", features = [ "axum" ] }
-pingora = { version = "0.6.0", features = [ "lb" ] }  # NOTE: requires `sfv` patch in the workspace Cargo.toml
-
-## FIXME For ngrok example:
 # axum = { version = "0.8.4", features = ["tokio"] }
 # tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread"]  }
 # url = "2.5.4"
-
-# General
 anyhow = "1.0.100"
+# FIXME ngrok = { version = "0.15.0", features = [ "axum" ] }
+pingora = { version = "0.8.0", features = ["lb"] }
 
 [target.'cfg(target_os = "linux")'.dependencies]
 glommio = "0.9.0"
-
-#[features]
-#default = []

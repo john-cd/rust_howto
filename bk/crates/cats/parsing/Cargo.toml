@@ -14,18 +14,17 @@ categories = ["parsing"]
 publish.workspace = true
 autolib = false
 
-# FIXME
+[package.metadata.cargo-machete]
+ignored = ["pest_generator"]
+
 [dependencies]
-nom = "8.0.0"
-winnow = "0.7.1"
 anyhow = "1.0.100"
+nom = "8.0.0"
 pest = "2.8.3"
 pest_derive = "2.8.3"
+winnow = "0.7.1"
 # FIXME tree-sitter = "0.25.1"
 # tree-sitter-rust = "0.24.0"
 
 [build-dependencies]
 pest_generator = "2.8.3"
-
-[package.metadata.cargo-machete]
-ignored = ["pest_generator"]

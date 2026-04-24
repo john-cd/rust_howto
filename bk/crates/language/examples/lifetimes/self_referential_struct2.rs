@@ -105,6 +105,37 @@ mod selfref {
     }
 }
 
+pub mod structural_pinning {
+    use std::pin::Pin;
+
+    pub struct Struct {
+        pub structural_field: i32,
+        pub unpinned_field: i32,
+    }
+
+    impl Struct {
+        // Structural Pinning: Pinning is "structural" for this field, meaning
+        // that if the struct is pinned, then so is the field.
+        // It allows writing a projection that creates a `Pin<&mut Field>`.
+        pub fn structural_field(self: Pin<&mut Self>) -> Pin<&mut i32> {
+            // SAFETY: This is okay because `structural_field` is pinned when
+            // `self` is.
+            unsafe { self.map_unchecked_mut(|s| &mut s.structural_field) }
+        }
+
+        // Non-structural Pinning: We explicitly choose not to expose a
+        // `Pin<&mut Field>`, so we don't need to be careful about other
+        // code moving out of that field. It provides a projection
+        // method that turns `Pin<&mut Struct>` into `&mut Field`.
+        pub fn unpinned_field(self: Pin<&mut Self>) -> &mut i32 {
+            // SAFETY: This is okay because `unpinned_field` is never considered
+            // pinned, therefore we do not need to uphold any
+            // pinning guarantees for this field.
+            unsafe { &mut self.get_unchecked_mut().unpinned_field }
+        }
+    }
+}
+
 fn main() {
     use std::pin::Pin;
 
@@ -137,4 +168,3 @@ fn main() {
 fn test() {
     main();
 }
-// [cover <https://doc.rust-lang.org/std/pin/index.html#projections-and-structural-pinning>](https://github.com/john-cd/rust_howto/issues/1407)

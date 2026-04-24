@@ -24,6 +24,3 @@
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
-<div class="hidden">
-[screen_readers: write](https://github.com/john-cd/rust_howto/issues/187)
-</div>
