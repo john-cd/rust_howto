@@ -15,7 +15,5 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
+mavlink = "0.17.1"
 
-## General
-# FIXME
-#anyhow = "1.0.95"
