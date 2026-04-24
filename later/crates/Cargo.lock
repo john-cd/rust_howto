@@ -15000,8 +15000,11 @@ name = "wasm"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "js-sys",
+ "wasm-bindgen",
  "wasmer",
  "wasmtime",
+ "web-sys",
  "yew",
 ]
 
