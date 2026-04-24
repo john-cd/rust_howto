@@ -14,7 +14,3 @@
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[uavs: write](https://github.com/john-cd/rust_howto/issues/204)
-</div>
