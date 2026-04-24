@@ -41,7 +41,7 @@ The following would assert that a loop exists:
 
 Find duplicate filenames recursively in the current directory , printing them only once.{{hi:Duplicate filenames}}
 
-FIXME
+
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/duplicate_name.rs:example}}
@@ -61,7 +61,7 @@ Find files modified within the last day in the current directory. Using [`walkdi
 
 [![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~repo][c~walkdir~repo~badge]][c~walkdir~repo] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-FIXME Uses [`walkdir::IntoIter::filter_entry`][c~walkdir::IntoIter::filter_entry~docs]↗{{hi:walkdir::IntoIter::filter_entry}} to descend recursively into entries passing the `is_not_hidden` predicate thus skipping hidden files and directories. [`std::iter::Iterator::filter`][c~std::iter::Iterator::filter~docs]↗{{hi:std::iter::Iterator::filter}} applies to each [`walkdir::IntoIter::filter_entry`][c~walkdir::IntoIter::filter_entry~docs]↗{{hi:walkdir::IntoIter::filter_entry}} even if the parent is a hidden directory.
+The following example uses [`walkdir::IntoIter::filter_entry`][c~walkdir::IntoIter::filter_entry~docs]↗{{hi:walkdir::IntoIter::filter_entry}} to descend recursively into entries passing the `is_not_hidden` predicate thus skipping hidden files and directories. [`std::iter::Iterator::filter`][c~std::iter::Iterator::filter~docs]↗{{hi:std::iter::Iterator::filter}} applies to each [`walkdir::IntoIter::filter_entry`][c~walkdir::IntoIter::filter_entry~docs]↗{{hi:walkdir::IntoIter::filter_entry}} even if the parent is a hidden directory.
 
 Root dir `"."` yields through [`walkdir::WalkDir::depth`][c~walkdir::WalkDir::depth~docs]↗{{hi:walkdir::WalkDir::depth}} usage in `is_not_hidden` predicate.
 
@@ -75,7 +75,7 @@ Root dir `"."` yields through [`walkdir::WalkDir::depth`][c~walkdir::WalkDir::de
 
 [`ignore`][c~ignore~docs]↗{{hi:ignore}} is a library for efficiently matching ignore files such as [`.gitignore`][git-gitignore~website]↗{{hi:.gitignore}} against file paths.
 
-FIXME Recursive [filesystem][p~filesystem] walking that respects ignore files (like .gitignore)
+Recursive [filesystem][p~filesystem] walking that respects ignore files (like .gitignore)
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/ignore.rs:example}}
@@ -97,7 +97,7 @@ Recursion depth can be flexibly set by [`walkdir::Walkdir::min_depth`][c~walkdir
 
 [![glob][c~glob~docs~badge]][c~glob~docs] [![glob~crates.io][c~glob~crates.io~badge]][c~glob~crates.io] [![glob~repo][c~glob~repo~badge]][c~glob~repo] [![glob~lib.rs][c~glob~lib.rs~badge]][c~glob~lib.rs]{{hi:glob}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-FIXME Recursively find all PNG files in the current directory. In this case, the `**` pattern matches the current directory and all subdirectories.
+Recursively find all PNG files in the current directory. In this case, the `**` pattern matches the current directory and all subdirectories.
 
 Use the `**` pattern in any path portion. For example, `/media/**/*.png` matches all PNGs in `media` and it's subdirectories.
 
@@ -117,7 +117,7 @@ A custom [`glob::MatchOptions`][c~glob::MatchOptions~docs]↗{{hi:glob::MatchOpt
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/ignore_case.rs:example}}
 ```
 
-## FIXME `globset` {#globset}
+##  `globset` {#globset}
 
 [![globset][c~globset~docs~badge]][c~globset~docs] [![globset~crates.io][c~globset~crates.io~badge]][c~globset~crates.io] [![globset~repo][c~globset~repo~badge]][c~globset~repo] [![globset~lib.rs][c~globset~lib.rs~badge]][c~globset~lib.rs]{{hi:globset}}{{hi:Glob}}{{hi:Multiple}}{{hi:Pattern}}{{hi:Regex}}{{hi:Set}}
 
@@ -136,6 +136,3 @@ A custom [`glob::MatchOptions`][c~glob::MatchOptions~docs]↗{{hi:glob::MatchOpt
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
-<div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/358)
-</div>
