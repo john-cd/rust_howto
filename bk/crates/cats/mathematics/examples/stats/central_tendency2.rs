@@ -19,6 +19,7 @@ fn main() {
         .max_by_key(|&(_, count)| count)
         .map(|(value, _)| *value);
 
+    println!("Mode of the data is {mode:?}");
     assert_eq!(mode, Some(1));
 }
 // ANCHOR_END: example
