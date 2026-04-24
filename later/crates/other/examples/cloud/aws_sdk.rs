@@ -1,12 +1,8 @@
 #![allow(dead_code)]
-//! # AWS SDK Example
-//!
-//! This example demonstrates how to use the AWS SDK for Rust to interact with
-//! Amazon S3.
-//!
-//! It lists the contents of a specified S3 bucket.
-
 // ANCHOR: example
+//! This example demonstrates how to use the AWS SDK for Rust to interact with
+//! Amazon S3. It lists the contents of a specified S3 bucket.
+
 use aws_config::BehaviorVersion;
 use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_s3::Client;
@@ -48,7 +44,7 @@ async fn main() -> anyhow::Result<()> {
 
 #[test]
 fn require_network() -> anyhow::Result<()> {
-    // main()?; // Skip running S3 queries in simple unit tests to avoid network
+    // main()?; // TODO Skip running S3 queries in simple unit tests to avoid network
     // timeouts / missing AWS credentials.
     Ok(())
 }
