@@ -1,3 +1,5 @@
+#!/bin/bash
+cat << 'INNER' > tools/crate_indices/src/main.rs
 mod cli;
 
 use std::collections::HashMap;
@@ -131,3 +133,4 @@ fn main() -> anyhow::Result<()> {
     }
     Ok(())
 }
+INNER
