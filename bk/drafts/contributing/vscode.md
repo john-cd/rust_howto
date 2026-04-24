@@ -1,8 +1,15 @@
 # VS Code Configuration
 
-TODO document rust-analyzer settings that works with large codebases like this book.
-
 ## `rust-analyzer` Configuration {#rust-analyzer-configuration}
+
+For large codebases, you may want to prevent `rust-analyzer` from starting automatically on workspace load to save resources, and exclude build directories like `target/` from VS Code's search index:
+
+```json
+"search.exclude": {
+    "**/target": true
+},
+"rust-analyzer.initializeStopped": true,
+```
 
 Main `settings.json` under e.g. `C:\Users\<user_name>\AppData\Roaming\Code\User`
 
@@ -12,10 +19,11 @@ Main `settings.json` under e.g. `C:\Users\<user_name>\AppData\Roaming\Code\User`
 {
     "rust-analyzer.linkedProjects": [
         "bk/crates/Cargo.toml",
+        "later/crates/Cargo.toml",
+        "mdbook-utils/Cargo.toml",
         "playground/Cargo.toml",
         "publish/Cargo.toml",
         "tools/Cargo.toml",
-        "wip/Cargo.toml",
         "xmpl/Cargo.toml"
     ],
     // More configuration settings...
