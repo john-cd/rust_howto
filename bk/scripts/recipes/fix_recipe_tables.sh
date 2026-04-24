@@ -20,20 +20,84 @@ base=$(basename $file)
 name=$(basename $file .md)
 dir=$(dirname $file)
 if [ -f "${dir}/refs.incl.md" ]; then
-    # Grab the labels of the refdefs pointing to the current file from the local references
-    labels=$(sed -En 's/^\[ex~(.*)\]:\s?'${base}'.*$/\1/p' ${dir}/refs.incl.md)
+    # Grab the labels and anchors of the refdefs pointing to the current file from the local references
+    # Format is usually [ex~label]: file.md#anchor
+    # We will get 'label|anchor' pairs
+    labels_and_anchors=$(sed -En "s/^\[ex~([^]]+)\]:\s*(\.\.\/)*${base}(#([^ ]*))?.*$/\1|\4/p" "${dir}/refs.incl.md")
+
     # If not empty...
-    if [ -n "$labels" ]; then
+    if [ -n "$labels_and_anchors" ]; then
         echo "> ${file}"
-        for label in ${labels}
-        do
-        # If the destination (recipe table) file does not exist or label is not in it
-        if [ ! -f "${file%.md}.incl.md" ] || [ $(grep -Pc "\[ex~${label}\]" "${file%.md}.incl.md") -eq 0 ]
-        then
-            title=$(echo ${label} | tr '-' ' ')
-            # Add table row with link in the corresponding .incl.md
-            echo "| [${title}][ex~${label}] | | |" >> "${file%.md}.incl.md"
+        incl_file="${file%.md}.incl.md"
+
+        # Determine number of columns and if crates/categories are present
+        num_cols=3
+        has_crates=1
+        has_categories=1
+        if [ -f "$incl_file" ]; then
+            header=$(head -n 1 "$incl_file" || true)
+            if [[ "$header" == *"| Recipe |"* ]]; then
+                num_cols=$(echo "$header" | tr -cd '|' | wc -c || echo 3)
+                num_cols=$((num_cols - 1))
+                if [[ "$header" != *"Crates"* ]]; then has_crates=0; fi
+                if [[ "$header" != *"Categories"* ]]; then has_categories=0; fi
+            fi
         fi
+
+        for item in ${labels_and_anchors}
+        do
+            label="${item%|*}"
+            anchor="${item#*|}"
+
+            # If the destination (recipe table) file does not exist or label is not in it
+            if [ ! -f "$incl_file" ] || [ $(grep -Pc "\[ex~${label}\]" "$incl_file") -eq 0 ]
+            then
+                # Extract title, removing only the prefix (like algorithms~) if present, and replace hyphens with spaces
+                title=$(echo "${label}" | awk -F'~' '{print $NF}' | tr '-' ' ')
+
+                crates=""
+                categories=""
+
+                if [ -n "$anchor" ]; then
+                    # Extract the block of text from {#anchor} to the next #
+                    block=$(awk "/\{#${anchor}[^}]*\}/ {flag=1} flag && /^#/ && !/\{#${anchor}[^}]*\}/ {flag=0; exit} flag" "$file")
+                    crates=$(echo "$block" | grep -o -E '\[\!\[[^]]+\]\[c~[^]]+\]\]\[c~[^]]+\]' | grep -E '~(docs|website|repo)\]' | awk '!seen[$0]++' | tr '\n' ' ' | sed 's/ *$//' || true)
+                    categories=$(echo "$block" | grep -o -E '\[\!\[[^]]+\]\[cat~[^]]+\]\]\[cat~[^]]+\]' | awk '!seen[$0]++' | tr '\n' ' ' | sed 's/ *$//' || true)
+                fi
+
+                # Build row string based on columns
+                row="| [${title}][ex~${label}] |"
+
+                if [ $num_cols -ge 2 ]; then
+                    if [ $has_crates -eq 1 ]; then
+                        row="$row $crates |"
+                    elif [ $has_categories -eq 1 ]; then
+                        row="$row $categories |"
+                    else
+                        row="$row |"
+                    fi
+                fi
+
+                if [ $num_cols -ge 3 ]; then
+                    if [ $has_categories -eq 1 ]; then
+                        row="$row $categories |"
+                    else
+                        row="$row |"
+                    fi
+                fi
+
+                if [ ! -f "$incl_file" ]; then
+                    echo "$row" >> "$incl_file"
+                else
+                    # Insert before <div class="hidden" if it exists, otherwise append
+                    if grep -q "<div class=\"hidden\"" "$incl_file" || grep -q "<div class='hidden'" "$incl_file"; then
+                        awk -v row="$row" '/<div class="hidden"/ || /<div class='\''hidden'\''/ {print row; print; next} 1' "$incl_file" > "${incl_file}.tmp"
+                        mv "${incl_file}.tmp" "$incl_file"
+                    else
+                        echo "$row" >> "$incl_file"
+                    fi
+                fi
+            fi
         done
     fi
 fi
@@ -55,5 +119,3 @@ done
 done
 
 echo "DONE"
-
-# [append before <div class="hidden" >; insert crate and categories badges; handle tables with only one or two columns](https://github.com/john-cd/rust_howto/issues/1372)
