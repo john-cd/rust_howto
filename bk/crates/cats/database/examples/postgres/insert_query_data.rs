@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
 use std::collections::HashMap;
+use std::fmt::Write;
 
 use postgres::Client;
 use postgres::Error;
@@ -39,7 +40,7 @@ pub fn main() -> Result<(), Error> {
                 query.push_str(", ");
             }
             // Add parameter placeholders ($1, $2), ($3, $4), etc.
-            query.push_str(&format!("(${}, ${})", i * 2 + 1, i * 2 + 2));
+            let _ = write!(query, "(${}, ${})", i * 2 + 1, i * 2 + 2);
             params.push(key);
             params.push(value);
         }
