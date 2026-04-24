@@ -53,14 +53,19 @@ mod selfref {
             boxed
         }
 
-        // Although it is not valid to swap data or assign through a `Pin<Ptr>`
-        // since it would reuse the pinned object's memory, it is possible to
-        // assign validly by implementing a function with special care.
-        // We unpack the `Pin`, update values, and manually fix up the pointer.
-
-        // Copies the contents of `src` into `self`, fixing up the self-pointer
-        // in the process.
-        // <https://doc.rust-lang.org/std/pin/index.html#assigning-pinned-data>
+        /// Overwrites the contents of `self` with `src`, fixing up the
+        /// self-pointer in the process.
+        ///
+        /// Since `SelfRef` is `!Unpin`, it cannot be moved once pinned.
+        /// However, we can still overwrite its data in-place if we have
+        /// exclusive access (`&mut Self`). This requires `unsafe` to
+        /// bypass the `Pin` protection.
+        ///
+        /// Note that the self-referential pointer must be updated to point
+        /// to the new data's address within `self`, not the address it had
+        /// in `src`.
+        ///
+        /// <https://doc.rust-lang.org/std/pin/index.html#assigning-pinned-data>
         pub fn assign(self: Pin<&mut Self>, src: Pin<&mut Self>) {
             unsafe {
                 // Unwraps the `Pin<Ptr>`, returning the underlying `Ptr`.
@@ -74,27 +79,27 @@ mod selfref {
                 };
 
                 // Adjust the self-pointer:
-                let new_ptr = unpinned_src.data.as_ptr() as *const String;
+                let new_ptr = &unpinned_self.data as *const String;
                 unpinned_self.ptr = new_ptr;
             }
         }
     }
 
-    // The `drop` function takes `&mut self`, but this is called even if
-    // that `self` has been pinned! Implementing `Drop` for a type with
-    // address-sensitive states requires some care.
-    // We use `inner_drop` with a `Pin<&mut Self>` to make sure that you do
-    // not accidentally use `self` in a way that is in conflict with pinning's
-    // invariants inside the drop logic.
-    // <https://doc.rust-lang.org/std/pin/index.html#implementing-drop-for-types-with-address-sensitive-states>
+    /// When implementing `Drop` for `!Unpin` types, we must be careful not to
+    /// move `self`. Although `drop` takes `&mut self`, the `Pin` contract
+    /// guarantees that the value has not been moved since it was pinned.
+    ///
+    /// <https://doc.rust-lang.org/std/pin/index.html#implementing-drop-for-types-with-address-sensitive-states>
     impl Drop for SelfRef {
         fn drop(&mut self) {
-            // `new_unchecked` is okay because we know this value is never used
-            // again after being dropped.
+            // SAFETY: We must ensure that `inner_drop` does not move `self`.
+            // Since we are in `drop`, the value will be invalidated anyway
+            // after this call, but any code inside `inner_drop` must respect
+            // the pinning invariant.
             inner_drop(unsafe { Pin::new_unchecked(self) });
 
             fn inner_drop(_this: Pin<&mut SelfRef>) {
-                // Actual drop code goes here.
+                // Actual drop code would go here.
             }
         }
     }
@@ -139,32 +144,23 @@ fn main() {
     let pinned: Pin<Box<SelfRef>> =
         SelfRef::new("I am a self-referential struct.");
 
-    assert!(std::ptr::addr_eq(&pinned.data, pinned.ptr));
+    assert!(&pinned.data as *const String == pinned.ptr);
 
     // `Pin` and `Box` implement `Debug` if the underlying type does.
     println!("{pinned:?}");
 
     // The inner pointee `SelfRef` struct will now never be allowed to move.
     // Meanwhile, we are free to move the smart pointer around.
-    let mut _still_unmoved = pinned;
+    let mut still_unmoved = pinned;
 
-    use structural_pinning::Struct;
-    let s = Struct {
-        structural_field: 1,
-        unpinned_field: 2,
-    };
-    let mut pinned_struct = std::pin::pin!(s);
+    let mut other_pinned = SelfRef::new("I am another self-referential struct.");
 
-    // We can project a structurally pinned field to a Pin<&mut Field>
-    let mut sf = pinned_struct.as_mut().structural_field();
-    *sf = 10;
+    // Perform an assignment.
+    still_unmoved.as_mut().assign(other_pinned.as_mut());
 
-    // We can project a non-structurally pinned field to a &mut Field
-    let uf = pinned_struct.as_mut().unpinned_field();
-    *uf = 20;
-
-    assert_eq!(*pinned_struct.as_mut().structural_field(), 10);
-    assert_eq!(*pinned_struct.as_mut().unpinned_field(), 20);
+    assert_eq!(still_unmoved.data, "I am another self-referential struct.");
+    // Verify the self-pointer was updated correctly to the target's address.
+    assert!(&still_unmoved.data as *const String == still_unmoved.ptr);
 }
 // ANCHOR_END: example
 
