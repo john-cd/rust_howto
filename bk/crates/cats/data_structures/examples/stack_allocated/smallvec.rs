@@ -21,6 +21,9 @@ fn main() {
     // We can also initialize it via a macro:
     let mut small_vec: SmallVec<[i32; 4]> = smallvec![1, 2, 3, 4];
 
+    // Print the current state of the SmallVec.
+    println!("SmallVec (inline): {small_vec:?}");
+
     // Push beyond the inline capacity, causing a heap allocation.
     small_vec.push(5);
 
@@ -29,13 +32,22 @@ fn main() {
     // The capacity grows upon spilling (typically doubling the original capacity)
     assert_eq!(small_vec.capacity(), 8);
 
+    // Print the state of the SmallVec after pushing beyond capacity.
+    println!("SmallVec (heap-allocated): {small_vec:?}");
+
     // Access elements using indexing.
+    for i in 0..small_vec.len() {
+        println!("Element at index {i}: {}", small_vec[i]);
+    }
     assert_eq!(small_vec[0], 1);
     assert_eq!(small_vec.last(), Some(&5));
 
     // Pop an element from the SmallVec.
     let value = small_vec.pop();
     assert_eq!(value, Some(5));
+
+    // Print the state of the SmallVec after popping.
+    println!("SmallVec after popping: {small_vec:?}");
 
     // SmallVec points to a slice, so we can use normal slice indexing and
     // other slice methods.
