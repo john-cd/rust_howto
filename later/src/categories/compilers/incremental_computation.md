@@ -1,5 +1,16 @@
 # Incremental Computation
 
+Incremental computation is a software engineering technique that attempts to save time by only recomputing those outputs which depend on changed data. When a program processes a large dataset and only a small portion of it changes, re-running the entire computation can be inefficient. Instead, an incremental computation framework keeps track of the dependencies between inputs and outputs. When an input changes, it only invalidates and recomputes the specific outputs affected by that change, reusing the previously computed results for the rest.
+
+This paradigm is especially useful in domains such as:
+- **Compilers**: Recompiling only the files or functions that have changed, rather than the whole codebase.
+- **Build Systems**: Re-running only the build steps whose source files have been modified.
+- **Interactive Applications**: Updating the user interface in response to user actions without re-rendering the entire screen.
+- **Data Analysis Pipelines**: Updating metrics or dashboards when new data arrives without processing all historical data from scratch.
+
+Rust offers several frameworks and libraries to facilitate incremental computation, each with its own approach to dependency tracking and memoization.
+
+
 {{#include incremental_computation.incl.md}}
 
 ## Implementing Incremental Computation with `salsa` {#salsa}
@@ -38,6 +49,3 @@
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
-<div class="hidden">
-[incremental_computation: write](https://github.com/john-cd/rust_howto/issues/244)
-</div>

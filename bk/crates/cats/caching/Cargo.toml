@@ -10,11 +10,11 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "caching" ]
+categories = ["caching"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
 cached = "0.56.0"
-lru = "0.16.3"
+lru = "0.17.0"
 moka = { version = "0.12.11", features = ["sync"] }

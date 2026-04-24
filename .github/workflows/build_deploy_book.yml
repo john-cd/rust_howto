@@ -81,9 +81,12 @@ jobs:
       # - name: Display the workspace (debug)
       #   run: echo ${{ github.workspace }}
       ## Build and push using the CLI
-      - name: Build, load to local image store, push to DockerHub
-        run: docker buildx bake -f compose.yaml -f compose-ci.yaml --push --load --allow=fs.read=.. --builder=${{ steps.builder.outputs.name }}
+      - name: Build, cache, and push to DockerHub
+        run: docker buildx bake -f compose.yaml -f compose-ci.yaml --push --allow=fs.read=.. --builder=${{ steps.builder.outputs.name }}
         # Will read the .env file there:
+        working-directory: ./.devcontainer/
+      - name: Load image to local Docker daemon
+        run: docker buildx bake -f compose.yaml -f compose-ci.yaml --load --set "*.cache-to=" --allow=fs.read=.. --builder=${{ steps.builder.outputs.name }}
         working-directory: ./.devcontainer/
       # - name: List docker images (debug)
       #   run: docker image ls
