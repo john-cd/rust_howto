@@ -1,12 +1,20 @@
 #![allow(dead_code)]
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
-// fn main() {}
+// ANCHOR: example
+use arbitrary_int::{u11, u14};
+use spacepackets::SpHeader;
 
-// #[test]
-// #[ignore = "later"]
-// fn test() {
-//     main();
-// }
-// // [write LATER](https://github.com/john-cd/rust_howto/issues/64)
+fn main() {
+    let sp_header = SpHeader::new_for_unseg_tc(u11::new(0x42), u14::new(12), 1);
+    println!("{:?}", sp_header);
+    let mut ccsds_buf: [u8; 32] = [0; 32];
+    sp_header
+        .write_to_be_bytes(&mut ccsds_buf)
+        .expect("Writing CCSDS TC header failed");
+    println!("{:x?}", &ccsds_buf[0..6]);
+}
+// ANCHOR_END: example
+
+#[test]
+fn test() {
+    main();
+}
