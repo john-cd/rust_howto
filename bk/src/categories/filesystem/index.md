@@ -73,6 +73,3 @@ For most common file system tasks, [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}} 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
-<div class="hidden">
-[review in depth](https://github.com/john-cd/rust_howto/issues/1339)
-</div>

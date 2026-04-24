@@ -15,7 +15,6 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
+arbitrary-int = "2.1.1"
+spacepackets = "0.17"
 
-## General
-# FIXME
-#anyhow = "1.0.95"

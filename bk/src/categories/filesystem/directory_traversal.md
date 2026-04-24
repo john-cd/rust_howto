@@ -39,9 +39,7 @@ The following would assert that a loop exists:
 
 [![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~repo][c~walkdir~repo~badge]][c~walkdir~repo] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-Find duplicate filenames recursively in the current directory , printing them only once.{{hi:Duplicate filenames}}
-
-FIXME
+The following example uses [`walkdir::WalkDir::into_iter`][c~walkdir::WalkDir::into_iter~docs]↗{{hi:walkdir::WalkDir::into_iter}} to traverse the current directory and its subdirectories. It filters out directories with [`walkdir::DirEntry::file_type`][c~walkdir::DirEntry::file_type~docs]↗{{hi:walkdir::DirEntry::file_type}} and [`std::fs::FileType::is_dir`][c~std::fs::FileType::is_dir~docs]↗{{hi:std::fs::FileType::is_dir}}, gets the filename via [`walkdir::DirEntry::file_name`][c~walkdir::DirEntry::file_name~docs]↗{{hi:walkdir::DirEntry::file_name}}, and counts occurrences in a [`std::collections::HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}}. A duplicate is printed exactly once when its count reaches `2`.
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/duplicate_name.rs:example}}
@@ -51,7 +49,7 @@ FIXME
 
 [![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~repo][c~walkdir~repo~badge]][c~walkdir~repo] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-Find files modified within the last day in the current directory. Using [`walkdir::WalkDir::follow_links`][c~walkdir::WalkDir::follow_links~docs]↗{{hi:walkdir::WalkDir::follow_links}} ensures symbolic links{{hi:Symbolic links}} are followed like they were normal directories and files.
+The following example finds files modified within the last day in the current directory. Using [`walkdir::WalkDir::follow_links`][c~walkdir::WalkDir::follow_links~docs]↗{{hi:walkdir::WalkDir::follow_links}} ensures symbolic links{{hi:Symbolic links}} are followed like they were normal directories and files.
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/find_file.rs:example}}
@@ -61,7 +59,7 @@ Find files modified within the last day in the current directory. Using [`walkdi
 
 [![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~repo][c~walkdir~repo~badge]][c~walkdir~repo] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-FIXME Uses [`walkdir::IntoIter::filter_entry`][c~walkdir::IntoIter::filter_entry~docs]↗{{hi:walkdir::IntoIter::filter_entry}} to descend recursively into entries passing the `is_not_hidden` predicate thus skipping hidden files and directories. [`std::iter::Iterator::filter`][c~std::iter::Iterator::filter~docs]↗{{hi:std::iter::Iterator::filter}} applies to each [`walkdir::IntoIter::filter_entry`][c~walkdir::IntoIter::filter_entry~docs]↗{{hi:walkdir::IntoIter::filter_entry}} even if the parent is a hidden directory.
+The following example uses [`walkdir::IntoIter::filter_entry`][c~walkdir::IntoIter::filter_entry~docs]↗{{hi:walkdir::IntoIter::filter_entry}} to descend recursively into entries passing the `is_not_hidden` predicate thus skipping hidden files and directories. [`std::iter::Iterator::filter`][c~std::iter::Iterator::filter~docs]↗{{hi:std::iter::Iterator::filter}} applies to each [`walkdir::IntoIter::filter_entry`][c~walkdir::IntoIter::filter_entry~docs]↗{{hi:walkdir::IntoIter::filter_entry}} even if the parent is a hidden directory.
 
 Root dir `"."` yields through [`walkdir::WalkDir::depth`][c~walkdir::WalkDir::depth~docs]↗{{hi:walkdir::WalkDir::depth}} usage in `is_not_hidden` predicate.
 
@@ -75,7 +73,7 @@ Root dir `"."` yields through [`walkdir::WalkDir::depth`][c~walkdir::WalkDir::de
 
 [`ignore`][c~ignore~docs]↗{{hi:ignore}} is a library for efficiently matching ignore files such as [`.gitignore`][git-gitignore~website]↗{{hi:.gitignore}} against file paths.
 
-FIXME Recursive [filesystem][p~filesystem] walking that respects ignore files (like .gitignore)
+The following example recursively walks the file system respecting ignore files with [`ignore::WalkBuilder::new`][c~ignore::WalkBuilder::new~docs]↗{{hi:ignore::WalkBuilder::new}}.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/ignore.rs:example}}
@@ -85,7 +83,7 @@ FIXME Recursive [filesystem][p~filesystem] walking that respects ignore files (l
 
 [![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~repo][c~walkdir~repo~badge]][c~walkdir~repo] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}{{hi:File sizes}}
 
-The following example calculates the sum of all file sizes to 3 subfolders depth, ignoring files in the root folder.
+The following example uses [`walkdir::WalkDir::into_iter`][c~walkdir::WalkDir::into_iter~docs]↗{{hi:walkdir::WalkDir::into_iter}} to calculate the sum of all file sizes to 3 subfolders depth, ignoring files in the root folder.
 
 Recursion depth can be flexibly set by [`walkdir::Walkdir::min_depth`][c~walkdir::WalkDir::min_depth~docs]↗{{hi:walkdir::WalkDir::min_depth}} & [`walkdir::WalkDir::max_depth`][c~walkdir::WalkDir::max_depth~docs]↗{{hi:walkdir::WalkDir::max_depth}} methods.
 
@@ -97,7 +95,7 @@ Recursion depth can be flexibly set by [`walkdir::Walkdir::min_depth`][c~walkdir
 
 [![glob][c~glob~docs~badge]][c~glob~docs] [![glob~crates.io][c~glob~crates.io~badge]][c~glob~crates.io] [![glob~repo][c~glob~repo~badge]][c~glob~repo] [![glob~lib.rs][c~glob~lib.rs~badge]][c~glob~lib.rs]{{hi:glob}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-FIXME Recursively find all PNG files in the current directory. In this case, the `**` pattern matches the current directory and all subdirectories.
+The following example recursively finds all PNG files in the current directory. In this case, the `**` pattern matches the current directory and all subdirectories.
 
 Use the `**` pattern in any path portion. For example, `/media/**/*.png` matches all PNGs in `media` and it's subdirectories.
 
@@ -109,7 +107,7 @@ Use the `**` pattern in any path portion. For example, `/media/**/*.png` matches
 
 [![glob][c~glob~docs~badge]][c~glob~docs] [![glob~crates.io][c~glob~crates.io~badge]][c~glob~crates.io] [![glob~repo][c~glob~repo~badge]][c~glob~repo] [![glob~lib.rs][c~glob~lib.rs~badge]][c~glob~lib.rs]{{hi:glob}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-Find all image files in the `/media/` directory matching the `img_[0-9][0-9]*.png` pattern.
+The following example finds all image files in the `/media/` directory matching the `img_[0-9][0-9]*.png` pattern.
 
 A custom [`glob::MatchOptions`][c~glob::MatchOptions~docs]↗{{hi:glob::MatchOptions}} struct is passed to the [`glob::glob_with`][c~glob::glob_with~docs]↗{{hi:glob::glob_with}} function making the glob{{hi:glob}} pattern case insensitive while keeping the other options [`std::default::Default`][c~std::default::Default~docs]↗{{hi:std::default::Default}}.
 
@@ -117,11 +115,11 @@ A custom [`glob::MatchOptions`][c~glob::MatchOptions~docs]↗{{hi:glob::MatchOpt
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/ignore_case.rs:example}}
 ```
 
-## FIXME `globset` {#globset}
+## Evaluate Multiple Globs with `globset` {#globset}
 
 [![globset][c~globset~docs~badge]][c~globset~docs] [![globset~crates.io][c~globset~crates.io~badge]][c~globset~crates.io] [![globset~repo][c~globset~repo~badge]][c~globset~repo] [![globset~lib.rs][c~globset~lib.rs~badge]][c~globset~lib.rs]{{hi:globset}}{{hi:Glob}}{{hi:Multiple}}{{hi:Pattern}}{{hi:Regex}}{{hi:Set}}
 
-[`globset`][c~globset~docs]↗{{hi:globset}} allows multiple globs to be evaluated at once. Glob set matching is the process of matching one or more [`glob`][c~glob~docs]↗{{hi:glob}} patterns against a single candidate path simultaneously, and returning all of the globs that matched.
+The following example uses [`globset`][c~globset~docs]↗{{hi:globset}} which allows multiple globs to be evaluated at once. Glob set matching is the process of matching one or more [`glob`][c~glob~docs]↗{{hi:glob}} patterns against a single candidate path simultaneously, and returning all of the globs that matched.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/globset.rs:example}}
@@ -136,6 +134,3 @@ A custom [`glob::MatchOptions`][c~glob::MatchOptions~docs]↗{{hi:glob::MatchOpt
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
-<div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/358)
-</div>

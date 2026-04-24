@@ -15,6 +15,7 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
+tello = "0.6.3"
 
 ## General
 # FIXME

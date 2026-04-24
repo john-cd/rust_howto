@@ -63,6 +63,8 @@ RUN apt-get update \
     libxdo-dev \
     libxkbcommon-dev \
     libxkbcommon-x11-dev \
+    locales \
+    openssl \
     llvm \
     m4 \
     make \
@@ -76,6 +78,13 @@ RUN apt-get update \
     xorg-dev \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
+
+## Fix perl warning: Setting locale failed
+RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && \
+    locale-gen
+ENV LANG=en_US.UTF-8 \
+    LANGUAGE=en_US:en \
+    LC_ALL=en_US.UTF-8
 
 ## Optionally install linker and other utilities
 # mold clang \
@@ -248,11 +257,7 @@ CMD [ "sleep", "infinity" ]
 ## Stage for Continuous Integration (book building)
 FROM base AS ci
 
-## [LATER switch to slim or Alpine image for CI. Need to solve openssl install](https://github.com/john-cd/rust_howto/issues/1279)
-## https://stackoverflow.com/questions/70561544/rust-openssl-could-not-find-directory-of-openssl-installation
-## https://www.cyberciti.biz/faq/perl-warning-setting-locale-failed-in-debian-ubuntu/
-# ENV LC_CTYPE=en_US.UTF-8
-# ENV LC_ALL=en_US.UTF-8
+
 
 ## The following is a bit of a hack to try to speed up CI: create separate docker layers for the dependencies and the code / examples
 ## Use `just push_ci` to build the CI image locally, push it to DockerHub; GitHub Actions will pull this image and use it as cache.

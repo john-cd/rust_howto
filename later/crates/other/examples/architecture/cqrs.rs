@@ -12,7 +12,6 @@
 //! - The write side (commands) focuses on state changes.
 //! - The read side (queries) focuses on efficient data retrieval.
 
-
 /// Domain Model.
 mod domain {
 
@@ -119,8 +118,6 @@ mod events {
 /// Commands module.
 mod commands {
 
-
-
     use super::events::EventRepository;
     use super::events::ProductEvent;
 
@@ -156,8 +153,8 @@ mod commands {
         /// Validates a command before applying it.
         fn validate(&self, command: &Command) -> anyhow::Result<()> {
             match command {
-                Command::CreateProduct { quantity, .. } if *quantity == 0 =>
-{                     Err(anyhow::anyhow!(
+                Command::CreateProduct { quantity, .. } if *quantity == 0 => {
+                    Err(anyhow::anyhow!(
                         "Cannot create product with zero quantity!"
                     ))
                 }
@@ -199,8 +196,8 @@ mod commands {
                         self.event_store.apply_event(event);
                         Ok(())
                     } else {
-                        Err(anyhow::anyhow!("Product with id {id} not found"
-))                     }
+                        Err(anyhow::anyhow!("Product with id {id} not found"))
+                    }
                 }
             }
         }
@@ -254,9 +251,6 @@ mod read_store {
 
     /// `SimpleProductRepository` struct.
 
-
-
-
     /// SimpleReadStore struct.
     ///
     /// Data Access Layer (DAL) with database entities (events here).
@@ -286,8 +280,8 @@ mod read_store {
                     let mut read_model = self.read_model.write().unwrap();
                     read_model.insert(id, Product::new(id, name, quantity));
                 }
-                ProductEvent::ProductQuantityUpdated { id, new_quantity } =>
-{                     let mut read_model = self.read_model.write().unwrap();
+                ProductEvent::ProductQuantityUpdated { id, new_quantity } => {
+                    let mut read_model = self.read_model.write().unwrap();
                     if let Some(product) = read_model.get_mut(&id) {
                         product.set_quantity(new_quantity);
                     }
@@ -405,16 +399,19 @@ fn test_negative_quantity_update_returns_error() -> anyhow::Result<()> {
         quantity: 10,
     })?;
 
-    let result = command_handler.process(commands::Command::UpdateProductQuantity {
-        id: 1,
-        quantity_change: -11,
-    });
+    let result =
+        command_handler.process(commands::Command::UpdateProductQuantity {
+            id: 1,
+            quantity_change: -11,
+        });
 
     assert!(result.is_err());
-    assert!(result
-        .unwrap_err()
-        .to_string()
-        .contains("Update would result in negative quantity"));
+    assert!(
+        result
+            .unwrap_err()
+            .to_string()
+            .contains("Update would result in negative quantity")
+    );
 
     Ok(())
 }

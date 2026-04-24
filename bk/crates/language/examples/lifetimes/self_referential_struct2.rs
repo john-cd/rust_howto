@@ -53,7 +53,10 @@ mod selfref {
             boxed
         }
 
-        // FIXME explain
+        // Although it is not valid to swap data or assign through a `Pin<Ptr>`
+        // since it would reuse the pinned object's memory, it is possible to
+        // assign validly by implementing a function with special care.
+        // We unpack the `Pin`, update values, and manually fix up the pointer.
 
         // Copies the contents of `src` into `self`, fixing up the self-pointer
         // in the process.
@@ -77,7 +80,12 @@ mod selfref {
         }
     }
 
-    // FIXME explain
+    // The `drop` function takes `&mut self`, but this is called even if
+    // that `self` has been pinned! Implementing `Drop` for a type with
+    // address-sensitive states requires some care.
+    // We use `inner_drop` with a `Pin<&mut Self>` to make sure that you do
+    // not accidentally use `self` in a way that is in conflict with pinning's
+    // invariants inside the drop logic.
     // <https://doc.rust-lang.org/std/pin/index.html#implementing-drop-for-types-with-address-sensitive-states>
     impl Drop for SelfRef {
         fn drop(&mut self) {
@@ -88,6 +96,37 @@ mod selfref {
             fn inner_drop(_this: Pin<&mut SelfRef>) {
                 // Actual drop code goes here.
             }
+        }
+    }
+}
+
+pub mod structural_pinning {
+    use std::pin::Pin;
+
+    pub struct Struct {
+        pub structural_field: i32,
+        pub unpinned_field: i32,
+    }
+
+    impl Struct {
+        // Structural Pinning: Pinning is "structural" for this field, meaning
+        // that if the struct is pinned, then so is the field.
+        // It allows writing a projection that creates a `Pin<&mut Field>`.
+        pub fn structural_field(self: Pin<&mut Self>) -> Pin<&mut i32> {
+            // SAFETY: This is okay because `structural_field` is pinned when
+            // `self` is.
+            unsafe { self.map_unchecked_mut(|s| &mut s.structural_field) }
+        }
+
+        // Non-structural Pinning: We explicitly choose not to expose a
+        // `Pin<&mut Field>`, so we don't need to be careful about other
+        // code moving out of that field. It provides a projection
+        // method that turns `Pin<&mut Struct>` into `&mut Field`.
+        pub fn unpinned_field(self: Pin<&mut Self>) -> &mut i32 {
+            // SAFETY: This is okay because `unpinned_field` is never considered
+            // pinned, therefore we do not need to uphold any
+            // pinning guarantees for this field.
+            unsafe { &mut self.get_unchecked_mut().unpinned_field }
         }
     }
 }
@@ -108,6 +147,24 @@ fn main() {
     // The inner pointee `SelfRef` struct will now never be allowed to move.
     // Meanwhile, we are free to move the smart pointer around.
     let mut _still_unmoved = pinned;
+
+    use structural_pinning::Struct;
+    let s = Struct {
+        structural_field: 1,
+        unpinned_field: 2,
+    };
+    let mut pinned_struct = std::pin::pin!(s);
+
+    // We can project a structurally pinned field to a Pin<&mut Field>
+    let mut sf = pinned_struct.as_mut().structural_field();
+    *sf = 10;
+
+    // We can project a non-structurally pinned field to a &mut Field
+    let uf = pinned_struct.as_mut().unpinned_field();
+    *uf = 20;
+
+    assert_eq!(*pinned_struct.as_mut().structural_field(), 10);
+    assert_eq!(*pinned_struct.as_mut().unpinned_field(), 20);
 }
 // ANCHOR_END: example
 
@@ -115,4 +172,3 @@ fn main() {
 fn test() {
     main();
 }
-// [cover <https://doc.rust-lang.org/std/pin/index.html#projections-and-structural-pinning>](https://github.com/john-cd/rust_howto/issues/1407)

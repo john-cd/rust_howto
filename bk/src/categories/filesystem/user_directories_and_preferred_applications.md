@@ -44,5 +44,3 @@ The following example gets paths to standard (home, configuration, data, cache, 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
-<div class="hidden">
-</div>

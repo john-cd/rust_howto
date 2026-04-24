@@ -1,5 +1,3 @@
 mod accesskit;
 
-fn main() {
-    // accesskit::main();
-}
+fn main() {}

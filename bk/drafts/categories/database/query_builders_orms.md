@@ -24,7 +24,9 @@ Built on top of [`sqlx`][c~sqlx~docs]↗{{hi:sqlx}} (see above). There is also a
 {{#include ../../../crates/cats/database/examples/query_builders_orms/sea_orm.rs:example}}
 ```
 
-TODO add example for seography
+```rust,editable,noplayground
+{{#include ../../../crates/cats/database/examples/query_builders_orms/seaography.rs:example}}
+```
 
 ## `diesel` {#diesel}
 

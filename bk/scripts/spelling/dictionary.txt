@@ -2631,7 +2631,6 @@ lldb
 llogiq
 llvm
 lmdb
-locahost
 localhost
 loco
 lodepng

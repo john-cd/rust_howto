@@ -1108,7 +1108,7 @@
 [linkerd~website]: https://linkerd.io
 [lld~website]: https://lld.llvm.org
 [lld~website~badge]: https://img.shields.io/badge/lld-coral
-[locahost:6080~website]: http://localhost:6080
+[localhost:6080~website]: http://localhost:6080
 [localhost:3000]: http://localhost:3000
 [logstash~website]: https://elastic.co/logstash
 [lord.io~website]: https://lord.io
