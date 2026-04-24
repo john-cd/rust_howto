@@ -39,8 +39,6 @@ The following would assert that a loop exists:
 
 [![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~repo][c~walkdir~repo~badge]][c~walkdir~repo] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-Find duplicate filenames recursively in the current directory , printing them only once.{{hi:Duplicate filenames}}
-
 The following example uses [`walkdir::WalkDir::into_iter`][c~walkdir::WalkDir::into_iter~docs]↗{{hi:walkdir::WalkDir::into_iter}} to traverse the current directory and its subdirectories. It filters out directories with [`walkdir::DirEntry::file_type`][c~walkdir::DirEntry::file_type~docs]↗{{hi:walkdir::DirEntry::file_type}} and [`std::fs::FileType::is_dir`][c~std::fs::FileType::is_dir~docs]↗{{hi:std::fs::FileType::is_dir}}, gets the filename via [`walkdir::DirEntry::file_name`][c~walkdir::DirEntry::file_name~docs]↗{{hi:walkdir::DirEntry::file_name}}, and counts occurrences in a [`std::collections::HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}}. A duplicate is printed exactly once when its count reaches `2`.
 
 ```rust,editable
@@ -74,8 +72,8 @@ Root dir `"."` yields through [`walkdir::WalkDir::depth`][c~walkdir::WalkDir::de
 [![ignore][c~ignore~docs~badge]][c~ignore~docs] [![ignore~crates.io][c~ignore~crates.io~badge]][c~ignore~crates.io] [![ignore~repo][c~ignore~repo~badge]][c~ignore~repo] [![ignore~lib.rs][c~ignore~lib.rs~badge]][c~ignore~lib.rs]{{hi:ignore}}{{hi:File}}{{hi:Gitignore}}{{hi:Glob}}{{hi:ignore}}{{hi:Pattern}}
 
 [`ignore`][c~ignore~docs]↗{{hi:ignore}} is a library for efficiently matching ignore files such as [`.gitignore`][git-gitignore~website]↗{{hi:.gitignore}} against file paths.
-The following example recursively walks the file system respecting ignore files with [`ignore::WalkBuilder::new`][c~ignore::WalkBuilder::new~docs]↗{{hi:ignore::WalkBuilder::new}}.
 
+The following example recursively walks the file system respecting ignore files with [`ignore::WalkBuilder::new`][c~ignore::WalkBuilder::new~docs]↗{{hi:ignore::WalkBuilder::new}}.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/ignore.rs:example}}
