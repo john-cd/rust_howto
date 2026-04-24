@@ -178,6 +178,22 @@ fn main() {
     assert_eq!(still_unmoved.data, "I am another self-referential struct.");
     // Verify the self-pointer was updated correctly to the target's address.
     assert!(std::ptr::eq(&still_unmoved.data, still_unmoved.ptr));
+
+    use structural_pinning::Struct;
+
+    let mut pinned_struct = std::pin::pin!(Struct {
+        structural_field: 1,
+        unpinned_field: 2,
+    });
+
+    // Project a structurally pinned field to a Pin<&mut Field>.
+    *pinned_struct.as_mut().structural_field() = 10;
+
+    // Project a non-structurally pinned field to a &mut Field.
+    *pinned_struct.as_mut().unpinned_field() = 20;
+
+    assert_eq!(*pinned_struct.as_mut().structural_field(), 10);
+    assert_eq!(*pinned_struct.as_mut().unpinned_field(), 20);
 }
 
 // ANCHOR_END: example
