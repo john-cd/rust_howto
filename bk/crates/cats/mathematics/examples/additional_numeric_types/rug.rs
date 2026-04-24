@@ -29,6 +29,7 @@ fn main() {
     //    value that has to be assigned to a new value.
     let a_b_ref = &a + &b;
     let sum = Integer::from(a_b_ref);
+    println!("Sum of integers: {sum}");
     assert_eq!(sum.to_string(), "1111111110111111111011111111100");
 
     // 5. Most methods have three versions:
@@ -52,6 +53,7 @@ fn main() {
     let r1 = Rational::from((1, 3));
     let r2 = Rational::from((2, 3));
     let sum_rational = Rational::from(&r1 + &r2);
+    println!("Sum of rationals: {sum_rational}");
     assert_eq!(sum_rational.to_string(), "1");
 
     // 7. Working with floating-point numbers:
@@ -68,6 +70,7 @@ fn main() {
 
     let product_ref = &f1 * &f2;
     let product = Float::with_val(53, product_ref);
+    println!("Product of floats: {product}");
     assert_eq!(product.to_string(), "2.8465780742245217");
 }
 // ANCHOR_END: example

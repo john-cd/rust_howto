@@ -21,6 +21,14 @@ fn main() {
     let product = number1 * number2;
     let quotient = number1 / number2;
 
+    // Printing the results:
+    println!("Number 1: {number1}");
+    println!("Number 2: {number2}");
+    println!("Sum: {sum}");
+    println!("Difference: {difference}");
+    println!("Product: {product}");
+    println!("Quotient: {quotient}");
+
     // Asserting the results:
     assert_eq!(sum.to_string(), "69.12");
     assert_eq!(difference.to_string(), "-44.44");
@@ -30,9 +38,11 @@ fn main() {
     // 3. Converting to and from strings:
     let number_str = "98.76";
     let number_from_str = Decimal::from_str(number_str).unwrap();
+    println!("Number from string: {number_from_str}");
     assert_eq!(number_from_str.to_string(), "98.76");
 
     let number_to_str = number_from_str.to_string();
+    println!("Number to string: {number_to_str}");
     assert_eq!(number_to_str, "98.76");
 }
 // ANCHOR_END: example

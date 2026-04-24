@@ -23,8 +23,18 @@ fn main() {
     map.insert(OrderedFloat(2.718), "e");
     map.insert(OrderedFloat(1.618), "golden ratio");
 
+    // Iterate over the map and print the values:
+    for (key, value) in &map {
+        println!("{key:.3}: {value}");
+    }
+
     // Check if a value exists in the map:
     let key = OrderedFloat(2.718);
+    if map.contains_key(&key) {
+        println!("The map contains the key 2.718");
+    } else {
+        println!("The map does not contain the key 2.718");
+    }
     assert!(map.contains_key(&key));
     assert_eq!(*map.get(&key).unwrap(), "e");
 }
