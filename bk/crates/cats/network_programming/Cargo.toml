@@ -17,7 +17,7 @@ autolib = false
 # FIXME
 [dependencies]
 # FIXME ngrok = { version = "0.15.0", features = [ "axum" ] }
-pingora = { version = "0.6.0", features = [ "lb" ] }  # NOTE: requires `sfv` patch in the workspace Cargo.toml
+pingora = { version = "0.8.0", features = [ "lb" ] }
 
 ## FIXME For ngrok example:
 # axum = { version = "0.8.4", features = ["tokio"] }
