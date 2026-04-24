@@ -105,13 +105,13 @@ fn main() {
     let data = [3, 1, 6, 1, 5, 8, 1, 8, 10, 11];
 
     let part = partition(&data);
-    println!("Partition is {part:?}");
+    assert_eq!(part, Some((vec![1, 1, 1], 3, vec![6, 5, 8, 8, 10, 11])));
 
     let sel = select(&data, 5);
-    println!("Selection at ordered index 5 is {sel:?}");
+    assert_eq!(sel, Some(6));
 
     let med = median(&data);
-    println!("Median is {med:?}");
+    assert_eq!(med, Some(5.5));
 }
 // ANCHOR_END: example
 
@@ -119,4 +119,3 @@ fn main() {
 fn test() {
     main();
 }
-// [REVIEW](https://github.com/john-cd/rust_howto/issues/1352)
