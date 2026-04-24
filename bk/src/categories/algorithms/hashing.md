@@ -11,18 +11,19 @@ Hashes are widely used in various applications such as:
 - Password Storage: Storing hashed versions of passwords rather than plain text to enhance security.
 - Digital Signatures: Verifying the authenticity and integrity of messages or documents.
 
-Use the following crates for general-purpose hashing and cryptographic hashing:
+Use the following crates depending on your hashing needs:
 
-- `blake3` and `sha2` for general-purpose hashing
-- `ahash` for use in in-memory hashmaps.
-- `rustc-hash` for fast, non-cryptographic hashing.
-- `murmur3` is a non-cryptographic hash function suitable for general hash-based lookup.
-- `fnv` is the Fowler–Noll–Vo hash function that is more efficient for smaller hash keys.
-- `hashbrown` is a Rust port of Google's high-performance SwissTable hash map, adapted to make it a drop-in replacement for Rust's standard `HashMap` and `HashSet` types.
-
-You may also use `crc` or `crc32fast` for CRC checksums.
-
-TODO distinguish between general-purpose / fast / OOS resistant / crypto hashing.
+- **Cryptographic hashing**:
+  - `blake3` and `sha2` for cryptographic hashing and secure digests.
+- **DoS resistant hashing**:
+  - `ahash` for fast, DOS-resistant hashing for use in in-memory hashmaps.
+  - `hashbrown` is a Rust port of Google's high-performance SwissTable hash map, adapted to make it a drop-in replacement for Rust's standard `HashMap` and `HashSet` types.
+- **Fast, non-cryptographic hashing**:
+  - `rustc-hash` for fast, non-cryptographic hashing.
+  - `fnv` is the Fowler–Noll–Vo hash function that is more efficient for smaller hash keys.
+- **General-purpose hashing**:
+  - `murmur3` is a non-cryptographic hash function suitable for general hash-based lookup.
+  - `crc` or `crc32fast` for CRC checksums.
 
 [](https://github.com/RustCrypto/hashes#rustcrypto-hashes)
 
