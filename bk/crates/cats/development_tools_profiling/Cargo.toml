@@ -10,8 +10,17 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "development_tools_profiling" ]
+categories = ["development_tools_profiling"]
 publish.workspace = true
+
+## Config for dhat example below:
+## Profiles for the non root package are ignored.
+# [profile.release]
+# debug = 1
+
+[features]
+dhat-heap = []
+dhat-ad-hoc = []
 
 [dependencies]
 criterion = "0.7.0"
@@ -26,12 +35,3 @@ dhat = "0.3.3"
 name = "divan"
 # When set to false, you are responsible for defining a main() function to run tests and benchmarks.
 harness = false
-
-## Config for dhat example below:
-## Profiles for the non root package are ignored.
-# [profile.release]
-# debug = 1
-
-[features]
-dhat-heap = []    # heap profiling.
-dhat-ad-hoc = []  # ad hoc profiling.

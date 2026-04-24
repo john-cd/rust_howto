@@ -639,12 +639,12 @@
 			"path": "bk/crates/cats/data_structures/Cargo.toml",
 			"bookmarks": [
 				{
-					"line": 25,
+					"line": 23,
 					"column": 11,
 					"label": ""
 				},
 				{
-					"line": 35,
+					"line": 33,
 					"column": 21,
 					"label": ""
 				}

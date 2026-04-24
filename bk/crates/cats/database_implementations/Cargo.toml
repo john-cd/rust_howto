@@ -14,20 +14,20 @@ categories = ["database_implementations"]
 publish.workspace = true
 autolib = false
 
-[dependencies]
-meilisearch-sdk = { version= "0.30.0", optional = true }
-sled = { version = "0.34.7", optional = true }
-surrealdb = { version = "2.6.1", features = ["kv-mem"], optional = true }
-tantivy = { version = "0.22.0", optional = true }
-
-## General
-anyhow = "1.0.100"
-serde = { version = "1.0.228", features = ["derive"] }
-tokio = { version = "1.48.0", features = ["macros", "rt-multi-thread"]  }
-
 [features]
 # default = []
 meilisearch = ["dep:meilisearch-sdk"]
 sled = ["dep:sled"]
 surrealdb = ["dep:surrealdb"]
 tantivy = ["dep:tantivy"]
+
+[dependencies]
+
+## General
+anyhow = "1.0.100"
+meilisearch-sdk = { version = "0.30.0", optional = true }
+serde = { version = "1.0.228", features = ["derive"] }
+sled = { version = "0.34.7", optional = true }
+surrealdb = { version = "2.6.1", features = ["kv-mem"], optional = true }
+tantivy = { version = "0.22.0", optional = true }
+tokio = { version = "1.48.0", features = ["macros", "rt-multi-thread"] }
