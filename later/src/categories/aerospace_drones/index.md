@@ -2,6 +2,8 @@
 
 [![cat~aerospace::drones][cat~aerospace::drones~badge]][cat~aerospace::drones]{{hi:Aerospace::Drones}}
 
+Rust's memory safety, zero-cost abstractions, and fearless concurrency make it a highly compelling language for aerospace and drone applications. Drones (Unmanned Aerial Vehicles) require real-time processing, extreme reliability, and efficient resource management. This chapter covers the ecosystem of crates suitable for writing flight control software, handling sensor integration, implementing communication protocols, and processing data for computer vision.
+
 {{#include drones.incl.md}}
 
 ## Core Flight Control & Communication
@@ -50,7 +52,6 @@ Consider using:
 - [[computer-vision | Computer Vision]].
 - [[hardware-support | Hardware Support]].
 - [[images | Images]].
-- [[linear_algebra | Linear Algebra]].
 - [[mathematics | Mathematics]].
 - [[multimedia_images | Multimedia Images]].
 - [[linear_algebra | Linear Algebra]].
@@ -63,6 +64,3 @@ Consider using:
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
-<div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/193)
-</div>

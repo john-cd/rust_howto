@@ -104,11 +104,9 @@ Bindings to Graphical User Interfaces, such as bindings to the GTK library - see
 
 ## Related Topics
 
-FIXME
+- [[external-ffi-bindings | External FFI Bindings]]
+- [[development-tools_ffi | Development Tools FFI]]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
-<div class="hidden">
-[api-bindings: polish](https://github.com/john-cd/rust_howto/issues/211)
-</div>

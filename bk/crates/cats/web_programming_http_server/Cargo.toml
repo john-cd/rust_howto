@@ -13,12 +13,23 @@ keywords.workspace = true
 categories = ["web_programming_http_server"]
 publish.workspace = true
 autolib = false
+# LATER loco = ["dep:loco-rs"]
+
+[package.metadata.cargo-machete]
+ignored = ["prost", "tonic-build"]
+
+[features]
+async-graphql = []
 
 [dependencies]
+# trillium = "0.2.20"
+# [trillium: do we need LATER](https://github.com/john-cd/rust_howto/issues/1314)
+anyhow = "1.0.100"
 # FIXME actix-web = "4.9.0"
 # FIXME async-graphql = { version = "7.0.17", optional = true }
 # async-graphql-axum = { version = "7.0.17", optional = true }
 axum = "0.8.4"
+bytes = "1.11.1"
 http = "1.3.1"
 http-body-util = "0.1.3"
 # FIXME hyper = { version = "1.6.0", features = ["full"] }
@@ -26,28 +37,14 @@ http-body-util = "0.1.3"
 # FIXME leptos = "0.8.2"
 # LATER loco-rs = "0.16.3"
 prost = "0.14.1"
+serde_json = "1.0.138"
+tokio = { version = "1.48.0", features = ["macros", "rt-multi-thread"] }
 tonic = "0.14.2"
 tower = { version = "0.5.2", features = ["util"] }
 tower-http = { version = "0.6.6", features = ["full", "auth"] }
-# trillium = "0.2.20"
-# [trillium: do we need LATER](https://github.com/john-cd/rust_howto/issues/1314)
-
-## General
-anyhow = "1.0.100"
-bytes = "1.11.1"
-serde_json = "1.0.138"
-tokio = { version = "1.48.0", features = ["macros", "rt-multi-thread"]  }
 tracing = "0.1.41"
 tracing-subscriber = { version = "0.3.20", features = ["env-filter"] }
 
 [build-dependencies]
-tonic-prost-build = "0.14.2"
 tonic-build = "0.14.2"
-
-[features]
-# default = []
-async-graphql = [] # FIXME "dep:async-graphql", "dep:async-graphql-axum"
-# LATER loco = ["dep:loco-rs"]
-
-[package.metadata.cargo-machete]
-ignored = ["prost", "tonic-build"]
+tonic-prost-build = "0.14.2"
