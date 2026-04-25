@@ -14,7 +14,7 @@
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+[[OpenCL]]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
