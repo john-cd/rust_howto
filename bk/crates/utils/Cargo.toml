@@ -8,6 +8,7 @@ description.workspace = true
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
+license = "MIT OR Apache-2.0"
 keywords.workspace = true
 categories.workspace = true
 publish.workspace = true
