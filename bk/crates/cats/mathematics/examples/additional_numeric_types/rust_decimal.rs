@@ -29,13 +29,21 @@ fn main() {
     println!("Product: {product}");
     println!("Quotient: {quotient}");
 
+    // Asserting the results:
+    assert_eq!(sum.to_string(), "69.12");
+    assert_eq!(difference.to_string(), "-44.44");
+    assert_eq!(product.to_string(), "700.6652");
+    assert_eq!(quotient.to_string(), "0.2173300457907713983797111659");
+
     // 3. Converting to and from strings:
     let number_str = "98.76";
     let number_from_str = Decimal::from_str(number_str).unwrap();
     println!("Number from string: {number_from_str}");
+    assert_eq!(number_from_str.to_string(), "98.76");
 
     let number_to_str = number_from_str.to_string();
     println!("Number to string: {number_to_str}");
+    assert_eq!(number_to_str, "98.76");
 }
 // ANCHOR_END: example
 

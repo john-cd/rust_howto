@@ -1,6 +1,9 @@
 #![allow(dead_code)]
 // ANCHOR: example
-use arbitrary_int::{u11, u14};
+use arbitrary_int::u11;
+use arbitrary_int::u14;
+use spacepackets::CcsdsPacket;
+use spacepackets::SequenceFlags;
 use spacepackets::SpHeader;
 
 fn main() {
@@ -12,6 +15,19 @@ fn main() {
         .expect("Writing CCSDS TC header failed");
     println!("{:x?}", &ccsds_buf[0..6]);
 }
+
+// TODO
+// pub fn main() {
+//     let header = SpHeader::new_for_tm(
+//         u11::new(0x10),
+//         SequenceFlags::Unsegmented,
+//         u14::new(0x01),
+//         3,
+//     );
+
+//     assert_eq!(header.apid().value(), 0x10);
+//     assert_eq!(header.seq_count().value(), 0x01);
+// }
 // ANCHOR_END: example
 
 #[test]

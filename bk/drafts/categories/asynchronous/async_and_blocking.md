@@ -64,9 +64,9 @@ In other cases, it may be easier to structure the application as largely synchro
 [![futures-executor~repo][c~futures-executor~repo~badge]][c~futures-executor~repo]
 [![futures-executor~lib.rs][c~futures-executor~lib.rs~badge]][c~futures-executor~lib.rs] [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 
-[`futures-executor`][c~futures-executor~docs]↗{{hi:futures-executor}} includes a minimal executor. The [`futures_executor::block_on`][c~futures_executor::block_on~docs]↗{{hi:futures_executor::block_on}} function is useful to run an async function synchronously in codebase that is mostly synchronous.
+[`futures-executor`][c~futures-executor~docs]↗{{hi:futures-executor}} includes a minimal executor. The [`futures::executor::block_on`][c~futures_executor::block_on~docs]↗{{hi:futures::executor::block_on}} function is useful to run an async function synchronously in codebase that is mostly synchronous.
 
-TODO futures_executor::block_on vs futures::executor::block_on
+
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/examples/call_async_from_blocking/call_async_from_blocking_futures_executor.rs:example}}
@@ -88,6 +88,3 @@ TODO futures_executor::block_on vs futures::executor::block_on
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
-<div class="hidden">
-[async_and_blocking: cleanup](https://github.com/john-cd/rust_howto/issues/213)
-</div>
