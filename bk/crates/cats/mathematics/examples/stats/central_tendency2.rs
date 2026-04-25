@@ -20,6 +20,7 @@ fn main() {
         .map(|(value, _)| *value);
 
     println!("Mode of the data is {mode:?}");
+    assert_eq!(mode, Some(1));
 }
 // ANCHOR_END: example
 
