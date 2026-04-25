@@ -1,5 +1,5 @@
 mod drones1;
 
 fn main() {
-    // drones1::main();
+    // We do not call drones1::main() to avoid network operations.
 }

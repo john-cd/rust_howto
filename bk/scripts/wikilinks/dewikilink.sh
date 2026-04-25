@@ -13,13 +13,11 @@ root="$(realpath $1)/"
 files=$(find ${root}src -type f \( -name "*.md" -not -name "SUMMARY.md" -not -name "examples_index.md" -not -name "*.incl.md" \))
 
 # [[...]] or [[...|...]]
-regex='\[\[(\S+)\s*(\|\s*(.+))?\]\]'
+regex='\[\[([^|[:space:]\]]+)\s*(?:\|\s*([^]]+))?\]\]'
 
 for file in ${files}
 do
   echo -e ">> ${file}"
-  ## Replace [[...]] or [[...|...]] by [...][p~...]
-  sed -E -i "s=${regex}=[\3][p~\1]=g" "${file}" # -n p
 
   dir=$(dirname ${file})
   for target_file_name in $( rg --no-line-number --no-filename --only-matching -r '$1' "${regex}" "${file}" )
@@ -33,4 +31,8 @@ do
     rel_path=$(realpath --relative-to=${dir} ${target_path})
     echo "[p~${base}]: ${rel_path}" #>> "${dir}/refs.incl.md"
   done
+
+  ## Replace [[...|...]] by [...][p~...] and [[...]] by [...][p~...]
+  sed -E -i -e 's=\[\[([^]|[:space:]]+)\s*\|\s*([^]]+)\]\]=[\2][p~\1]=g' -e 's=\[\[([^]|[:space:]]+)\]\]=[\1][p~\1]=g' "${file}" # -n p
+
 done

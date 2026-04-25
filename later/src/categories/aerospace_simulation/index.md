@@ -60,11 +60,9 @@ Consider using:
 
 ## Related Topics
 
-FIXME
+- [[aerospace | Aerospace]].
+- [[simulation | Simulation]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
-<div class="hidden">
-TODO write
-</div>
