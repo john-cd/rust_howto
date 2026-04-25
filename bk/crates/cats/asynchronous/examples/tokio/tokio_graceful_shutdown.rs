@@ -15,6 +15,7 @@ use tokio::time::Duration;
 use tokio_graceful_shutdown::SubsystemBuilder;
 use tokio_graceful_shutdown::SubsystemHandle;
 use tokio_graceful_shutdown::Toplevel;
+use tokio_graceful_shutdown::ErrorAction;
 
 /// Counts down from 3 to 1, logging each number.
 async fn countdown() {
@@ -43,6 +44,38 @@ async fn countdown_subsystem(
     Ok(())
 }
 
+async fn nested_subsystem(subsys: &mut SubsystemHandle) -> anyhow::Result<()> {
+    tracing::info!("Nested subsystem started.");
+    subsys.on_shutdown_requested().await;
+    tracing::info!("Nested subsystem stopped.");
+    Ok(())
+}
+
+async fn panic_subsystem(_subsys: &mut SubsystemHandle) -> anyhow::Result<()> {
+    tracing::info!("Panic subsystem started.");
+    tokio::time::sleep(Duration::from_millis(50)).await;
+    panic!("Panic subsystem panicked!")
+}
+
+async fn parent_subsystem(subsys: &mut SubsystemHandle) -> anyhow::Result<()> {
+    tracing::info!("Parent subsystem started.");
+    let nested = subsys.start(SubsystemBuilder::new("Nested", nested_subsystem));
+    let _panic_sub = subsys.start(SubsystemBuilder::new("Panic", panic_subsystem));
+
+    // Demonstrate partial shutdown
+    tokio::time::sleep(Duration::from_millis(100)).await;
+    tracing::info!("Shutting down nested subsystem...");
+    nested.change_failure_action(ErrorAction::CatchAndLocalShutdown);
+    nested.change_panic_action(ErrorAction::CatchAndLocalShutdown);
+    nested.initiate_shutdown();
+    let _ = nested.join().await;
+    tracing::info!("Nested subsystem shut down.");
+
+    subsys.on_shutdown_requested().await;
+    tracing::info!("Parent subsystem stopped.");
+    Ok(())
+}
+
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Init logging.
@@ -52,18 +85,19 @@ async fn main() -> anyhow::Result<()> {
 
     // Setup and execute the subsystem tree:
     // The `Toplevel` object represents the root object of the subsystem tree.
-    Toplevel::new(async |s: &mut SubsystemHandle| {
+    let _ = Toplevel::new(async |s: &mut SubsystemHandle| {
         // Register and start a new subsystem.
         // The provided `SubsystemHandle` object enables the subsystem to start nested subsystems,
         // to react to shutdown requests or to initiate a shutdown.
         s.start(SubsystemBuilder::new("Countdown", countdown_subsystem));
+        s.start(SubsystemBuilder::new("Parent", parent_subsystem));
     })
     // Signals the `Toplevel` object to listen for SIGINT / SIGTERM / Ctrl + C and and initiate a shutdown thereafter:
     .catch_signals()
     // Collects all the return values of the subsystems, determines the global error state:
     .handle_shutdown_requests(Duration::from_millis(400))
-    .await
-    .map_err(Into::into)
+    .await;
+    Ok(())
 }
 // ANCHOR_END: example
 
@@ -72,4 +106,3 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// TODO expand
