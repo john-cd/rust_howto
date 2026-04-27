@@ -57,6 +57,7 @@ RUN apt-get update \
     librocksdb-dev \
     librsvg2-dev \
     libssl-dev \
+    libsystemd-dev \
     libudev-dev \
     libvulkan-dev \
     libwayland-dev \
@@ -64,7 +65,9 @@ RUN apt-get update \
     libxdo-dev \
     libxkbcommon-dev \
     libxkbcommon-x11-dev \
+    libz-dev \
     locales \
+    mold \
     openssl \
     llvm \
     m4 \
@@ -72,8 +75,6 @@ RUN apt-get update \
     pkg-config \
     protobuf-compiler \
     python3 \
-    systemd \
-    # texlive-full \ huge
     wget \
     xorg-dev \
     && apt-get clean -y \
