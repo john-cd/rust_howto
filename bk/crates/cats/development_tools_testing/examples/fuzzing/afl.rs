@@ -50,4 +50,4 @@
 // fn test() {
 //     main();
 // }
-// // [finish](https://github.com/john-cd/rust_howto/issues/748)
+// [Implement AFL.rs fuzzing target and panic discovery](https://github.com/john-cd/rust_howto/issues/748)
