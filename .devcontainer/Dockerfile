@@ -30,10 +30,9 @@ SHELL ["bash", "-c"]
 ## `cmake build-essential libudev-dev xorg-dev libglu1-mesa-dev libasound2-dev libxkbcommon-dev` for `openrr`
 ## `diffutils gcc m4 make` for `gmp-mpfr-sys` / `rug`
 ## `pandoc` for `mdbook-pandoc`
-## Note: the following caching should only be useful for development. Removed to save space on the GitHub Action runner
-## --mount=type=cache,target=/var/cache/apt,sharing=locked \
-## --mount=type=cache,target=/var/lib/apt,sharing=locked \
-RUN apt-get update \
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y --no-install-recommends \
     aspell \
@@ -77,8 +76,7 @@ RUN apt-get update \
     python3 \
     wget \
     xorg-dev \
-    && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean -y
 
 ## Optionally install linker and other utilities
 # mold clang \
