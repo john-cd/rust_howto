@@ -1,8 +1,6 @@
 #![allow(dead_code)]
 #![cfg(feature = "datafusion")]
 // ANCHOR: example
-// COMING SOON
-// ANCHOR_END: example
 //! This example demonstrates how to use DataFusion to set up a simple
 //! in-memory table and run a SQL query on it.
 //!
@@ -24,7 +22,7 @@
 
 use std::sync::Arc;
 
-use arrow::array::ArrayRef;
+use datafusion::arrow::array::ArrayRef;
 use datafusion::arrow::datatypes::DataType;
 use datafusion::arrow::datatypes::Field;
 use datafusion::arrow::datatypes::Schema;
@@ -45,9 +43,9 @@ async fn run() -> datafusion::error::Result<()> {
     ];
 
     // Convert data into `RecordBatch`.
-    let name_array: arrow::array::StringArray =
+    let name_array: datafusion::arrow::array::StringArray =
         data.iter().map(|r| Some(r[0].clone())).collect();
-    let age_array: arrow::array::Int32Array = data
+    let age_array: datafusion::arrow::array::Int32Array = data
         .iter()
         .map(|r| Some(r[1].parse::<i32>().unwrap()))
         .collect();
@@ -87,6 +85,9 @@ pub fn main() {
     let rt = tokio::runtime::Runtime::new().unwrap();
     rt.block_on(run()).unwrap();
 }
+
+// ANCHOR_END: example
+
 
 #[test]
 fn test() {
