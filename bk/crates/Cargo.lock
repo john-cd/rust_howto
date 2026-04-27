@@ -581,6 +581,7 @@ dependencies = [
  "compression-codecs",
  "compression-core",
  "futures-core",
+ "futures-io",
  "pin-project-lite",
  "tokio",
 ]
@@ -812,6 +813,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "async_zip"
+version = "0.0.17"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "00b9f7252833d5ed4b00aa9604b563529dd5e11de9c23615de2dcdf91eb87b52"
+dependencies = [
+ "async-compression",
+ "chrono",
+ "crc32fast",
+ "futures-lite 2.6.1",
+ "pin-project",
+ "thiserror 1.0.69",
+ "tokio",
+ "tokio-util",
+]
+
+[[package]]
 name = "asynchronous"
 version = "0.1.2"
 dependencies = [
@@ -819,6 +836,7 @@ dependencies = [
  "async-channel",
  "async-trait",
  "futures",
+ "futures-executor",
  "futures-util",
  "kanal",
  "postage",
@@ -1153,7 +1171,7 @@ dependencies = [
  "bitflags 2.10.0",
  "cexpr",
  "clang-sys",
- "itertools 0.10.5",
+ "itertools 0.13.0",
  "log",
  "prettyplease",
  "proc-macro2",
@@ -2164,8 +2182,15 @@ name = "compression"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "async-compression",
+ "async_zip",
+ "bytes",
  "flate2",
+ "futures",
+ "futures-lite 2.6.1",
  "tar",
+ "tokio",
+ "tokio-util",
  "zip",
 ]
 
@@ -2176,8 +2201,11 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ef8a506ec4b81c460798f572caead636d57d3d7e940f998160f52bd254bf2d23"
 dependencies = [
  "brotli 8.0.2",
+ "bzip2",
  "compression-core",
+ "deflate64",
  "flate2",
+ "liblzma",
  "memchr",
  "zstd",
  "zstd-safe",
@@ -6283,6 +6311,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "liblzma"
+version = "0.4.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b6033b77c21d1f56deeae8014eb9fbe7bdf1765185a6c508b5ca82eeaed7f899"
+dependencies = [
+ "liblzma-sys",
+]
+
+[[package]]
+name = "liblzma-sys"
+version = "0.4.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1a60851d15cd8c5346eca4ab8babff585be2ae4bc8097c067291d3ffe2add3b6"
+dependencies = [
+ "cc",
+ "libc",
+ "pkg-config",
+]
+
+[[package]]
 name = "libm"
 version = "0.2.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -6522,20 +6570,16 @@ dependencies = [
 
 [[package]]
 name = "lru"
-<<<<<<< jules-2462485863143797420-f5f7ab26
-version = "0.16.3"
-=======
-version = "0.14.0"
+version = "0.16.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9f8cc7106155f10bdf99a6f379688f543ad6596a415375b36a59a054ceda1198"
+checksum = "7f66e8d5d03f609abc3a39e6f08e4164ebf1447a732906d39eb9b99b7919ef39"
 dependencies = [
- "hashbrown 0.15.5",
+ "hashbrown 0.16.0",
 ]
 
 [[package]]
 name = "lru"
 version = "0.17.0"
->>>>>>> main
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0e0b564323a0fb6d54b864f625ae139de9612e27edb944dda37c109f05aac531"
 dependencies = [
@@ -8401,7 +8445,7 @@ dependencies = [
  "httpdate",
  "indexmap 1.9.3",
  "log",
- "lru 0.16.3",
+ "lru 0.16.4",
  "once_cell",
  "parking_lot 0.12.5",
  "pingora-core",
@@ -8541,7 +8585,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "91bb5030596a3d442c0866ac68afe29c14ba558e77c726dcdf7016b0dbb359d9"
 dependencies = [
  "arrayvec",
- "hashbrown 0.16.0",
+ "hashbrown 0.17.0",
  "parking_lot 0.12.5",
  "rand 0.8.6",
 ]
@@ -8554,7 +8598,7 @@ checksum = "67f034be36772f318370d058913db43dbd22c3763ad974c995ba2e4afb2bb52a"
 dependencies = [
  "crossbeam-queue",
  "log",
- "lru 0.16.3",
+ "lru 0.16.4",
  "parking_lot 0.12.5",
  "pingora-timeout",
  "thread_local",
