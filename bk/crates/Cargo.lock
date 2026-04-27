@@ -6522,9 +6522,6 @@ dependencies = [
 
 [[package]]
 name = "lru"
-<<<<<<< jules-2462485863143797420-f5f7ab26
-version = "0.16.3"
-=======
 version = "0.14.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9f8cc7106155f10bdf99a6f379688f543ad6596a415375b36a59a054ceda1198"
@@ -6535,7 +6532,6 @@ dependencies = [
 [[package]]
 name = "lru"
 version = "0.17.0"
->>>>>>> main
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0e0b564323a0fb6d54b864f625ae139de9612e27edb944dda37c109f05aac531"
 dependencies = [

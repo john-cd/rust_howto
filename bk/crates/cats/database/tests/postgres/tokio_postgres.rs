@@ -9,8 +9,7 @@
 /// - Query the table for rows and print the results.
 /// - Update a row in the table.
 /// - Delete a row from the table.
-#[tokio::main]
-async fn main() -> Result<(), tokio_postgres::Error> {
+pub async fn run() -> Result<(), tokio_postgres::Error> {
     // Connect to the database.
     //  The libpq-style connection strings consist of space-separated
     // key-value pairs: <https://docs.rs/tokio-postgres/latest/tokio_postgres/config/struct.Config.html>.
@@ -83,17 +82,8 @@ async fn main() -> Result<(), tokio_postgres::Error> {
 
     Ok(())
 }
-// ANCHOR_END: example
 
-#[tokio::test]
-async fn require_external_svc() -> anyhow::Result<()> {
-    let _lock = super::ENV_MUTEX.lock().unwrap();
-    let test_url =
-        std::env::var("TEST_PG_URL").expect("TEST_PG_URL must be set");
-    unsafe {
-        std::env::set_var("PG_URL", test_url);
-    }
-    tokio::task::spawn_blocking(|| main()).await??;
-    Ok(())
+pub fn main() -> Result<(), tokio_postgres::Error> {
+    tokio::runtime::Runtime::new().unwrap().block_on(run())
 }
-// [finish](https://github.com/john-cd/rust_howto/issues/719) need heay test
+// ANCHOR_END: example
