@@ -1,11 +1,11 @@
 #![allow(dead_code)]
-// ANCHOR: example
 use std::env;
 
 use dotenvy::dotenv;
 use oracle::Connection;
 use oracle::Error;
 
+// ANCHOR: example
 /// Rust bindings to ODPI-C.
 ///
 /// This example demonstrates how to connect to an Oracle database,
@@ -53,6 +53,7 @@ async fn main() -> Result<(), Error> {
 // ANCHOR_END: example
 
 #[test]
+#[ignore = "requires external oracle db and oracle client library"]
 fn require_external_svc() -> anyhow::Result<()> {
     let _lock = super::ENV_MUTEX.lock().unwrap();
     let username = std::env::var("TEST_ORACLE_DB_USERNAME")
@@ -70,5 +71,6 @@ fn require_external_svc() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [finish; need to fix heavy test](https://github.com/john-cd/rust_howto/issues/1021)
-// <https://odpi-c.readthedocs.io/en/latest/user_guide/installation.html>
+
+// Troubleshooting "DPI-1047: Cannot locate a 64-bit Oracle Client library"
+// See https://odpi-c.readthedocs.io/en/latest/user_guide/installation.html

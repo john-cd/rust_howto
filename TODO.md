@@ -46,7 +46,7 @@
 - [x] [Web] Update Hyper server example to 1.0 API and implement routing [hyper_server.rs](bk/crates/cats/web_programming_http_server/examples/hyper_server.rs) ([#866](https://github.com/john-cd/rust_howto/issues/866))
 - [x] [Web] Implement Axum routing, state, and review time limits [axum.rs](bk/crates/cats/web_programming_http_server/examples/axum.rs) ([#865](https://github.com/john-cd/rust_howto/issues/865))
 - [x] [Web] Implement Rocket Hello World and route mounting [rocket.rs](bk/crates/cats/web_programming_http_server/examples/rocket.rs) ([#869](https://github.com/john-cd/rust_howto/issues/869))
-- [ ] [Web] Implement Leptos reactive counter and view mounting [leptos.rs](bk/crates/cats/web_programming_http_server/examples/leptos.rs) ([#867](https://github.com/john-cd/rust_howto/issues/867))
+- [?] [Web] Implement Leptos reactive counter and view mounting [leptos.rs](bk/crates/cats/web_programming_http_server/examples/leptos.rs) ([#867](https://github.com/john-cd/rust_howto/issues/867))
 - [x] [Web] Implement Async-GraphQL schema with Axum integration [async_graphql.rs](bk/crates/cats/web_programming_http_server/examples/async_graphql.rs) ([#864](https://github.com/john-cd/rust_howto/issues/864))
 - [x] [Web] Implement Actix-Web network requirement test [actix_web.rs](bk/crates/cats/web_programming_http_server/examples/actix_web.rs)
 - [ ] [Network] Finalize Pingora reverse proxy implementation [pingora.rs](bk/crates/cats/network_programming/examples/reverse_proxy/pingora.rs) ([#812](https://github.com/john-cd/rust_howto/issues/812))
@@ -3766,7 +3766,7 @@
 - [ ] actix-web = "4.9.0" ([bk/crates/cats/web_programming_http_server/Cargo.toml](./bk/crates/cats/web_programming_http_server/Cargo.toml#L28))
 - [ ] async-graphql = { version = "7.0.17", optional = true } ([bk/crates/cats/web_programming_http_server/Cargo.toml](./bk/crates/cats/web_programming_http_server/Cargo.toml#L29))
 - [ ] hyper = { version = "1.6.0", features = ["full"] } ([bk/crates/cats/web_programming_http_server/Cargo.toml](./bk/crates/cats/web_programming_http_server/Cargo.toml#L35))
-- [ ] leptos = "0.8.2" ([bk/crates/cats/web_programming_http_server/Cargo.toml](./bk/crates/cats/web_programming_http_server/Cargo.toml#L37))
+- [?] leptos = "0.8.2" ([bk/crates/cats/web_programming_http_server/Cargo.toml](./bk/crates/cats/web_programming_http_server/Cargo.toml#L37))
 
 ### bk/crates/cats/web_programming_http_server/examples/actix_web.rs
 
@@ -3790,8 +3790,8 @@
 
 ### bk/crates/cats/web_programming_http_server/examples/leptos.rs
 
-- [ ] Resolve TODO/FIXME at line 57 ([bk/crates/cats/web_programming_http_server/examples/leptos.rs](./bk/crates/cats/web_programming_http_server/examples/leptos.rs#L57))
-- [ ] [Implement Leptos reactive counter and view mounting](https://github.com/john-cd/rust_howto/issues/867) ([bk/crates/cats/web_programming_http_server/examples/leptos.rs](./bk/crates/cats/web_programming_http_server/examples/leptos.rs#L66))
+- [?] Resolve TODO/FIXME at line 57 ([bk/crates/cats/web_programming_http_server/examples/leptos.rs](./bk/crates/cats/web_programming_http_server/examples/leptos.rs#L57))
+- [?] [Implement Leptos reactive counter and view mounting](https://github.com/john-cd/rust_howto/issues/867) ([bk/crates/cats/web_programming_http_server/examples/leptos.rs](./bk/crates/cats/web_programming_http_server/examples/leptos.rs#L66))
 
 ### bk/crates/cats/web_programming_http_server/examples/loco/main.rs
 
@@ -3851,7 +3851,7 @@
 
 ### later/crates/cats/development_tools_ffi/examples/cpp/cxx.rs
 
-- [ ] [finish](https://github.com/john-cd/rust_howto/issues/738) ([later/crates/cats/development_tools_ffi/examples/cpp/cxx.rs](./later/crates/cats/development_tools_ffi/examples/cpp/cxx.rs#L33))
+- [-] [finish](https://github.com/john-cd/rust_howto/issues/738) ([later/crates/cats/development_tools_ffi/examples/cpp/cxx.rs](./later/crates/cats/development_tools_ffi/examples/cpp/cxx.rs#L33))
 
 ### later/crates/cats/development_tools_ffi/examples/erlang_elixir/rustler.rs
 
@@ -3862,8 +3862,7 @@
 - [ ] [finish; reorg as a project using flutter_rust_bridge_codegen](https://github.com/john-cd/rust_howto/issues/1028) ([later/crates/cats/development_tools_ffi/examples/flutter/flutter_rust_bridge.rs](./later/crates/cats/development_tools_ffi/examples/flutter/flutter_rust_bridge.rs#L35))
 
 ### later/crates/cats/development_tools_ffi/examples/java/jni.rs
-
-- [ ] [finish](https://github.com/john-cd/rust_howto/issues/1029) ([later/crates/cats/development_tools_ffi/examples/java/jni.rs](./later/crates/cats/development_tools_ffi/examples/java/jni.rs#L72))
+- [-] finish (later/crates/cats/development_tools_ffi/examples/java/jni.rs)
 
 ### later/crates/cats/development_tools_ffi/examples/lua/mlua2.rs
 
