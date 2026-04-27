@@ -63,6 +63,6 @@ fn main() {
 // fn test() {
 //     main();
 // }
-// // [finish](https://github.com/john-cd/rust_howto/issues/867)
+// // [Implement Leptos reactive counter and view mounting](https://github.com/john-cd/rust_howto/issues/867)
 // // <https://leptos.dev/>
 // // <https://github.com/leptos-rs/awesome-leptos>

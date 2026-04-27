@@ -172,5 +172,5 @@ This guide is based on the **contributing.md**. [Make your own][contributing.md~
 [ex~contributing~styleguides]: #styleguides
 
 <div class="hidden">
-[contributing/index: edit](https://github.com/john-cd/rust_howto/issues/529)
+[Documentation: Finalize Contributing Guide and Styleguides](https://github.com/john-cd/rust_howto/issues/529)
 </div>
