@@ -6,25 +6,65 @@ set -u
 # Manual review necessary
 # Requires ripgrep
 #
-# Usage: ./scripts/urls/<script_name>.sh <root folder>
+# Usage: ./scripts/urls/<script_name>.sh <root folder> [output path]
+# Alternatively, set INPUT_PATH and optionally OUTPUT_PATH.
 
-root="$(realpath $1)/"
+input_path="${1:-${INPUT_PATH:-}}"
+output_path="${2:-${OUTPUT_PATH:-}}"
+
+if [[ -z "${input_path}" ]]; then
+  echo "Error: No input path provided." >&2
+  echo "Usage: $0 <input_path> [output_path]" >&2
+  exit 1
+fi
+
+root="$(realpath "${input_path}")/"
+
+if [[ ! -d "${root}" ]]; then
+  echo "Error: Input path '${root}' does not exist or is not a directory." >&2
+  exit 1
+fi
+
+# Determine search paths: prefer src/ and drafts/ if they exist, otherwise use root.
+search_paths=()
+for dir in "src" "drafts"; do
+  if [[ -d "${root}${dir}" ]]; then
+    search_paths+=("${root}${dir}")
+  fi
+done
+
+if [[ ${#search_paths[@]} -eq 0 ]]; then
+  search_paths=("${root}")
+fi
 
 # [pass a var](https://github.com/john-cd/rust_howto/issues/1243)
-#pattern=('(?<!: |["`([])(http(?:s)?://(?:www\d?\.|github\.com/)?)([^./]+)(\S+)?')
-#"${pattern[@]}"
+patterns=(
+  '(?<!: |["`([])(http(?:s)?://(?:www\d?\.)?)([^./]+)(\S+)?' '[`$2`][$2~website] [$2~website]: $1$2$3'
+  '(?<!: |["`([])(http(?:s)?://(?:github\.com/)?)([^./]+)(\S+)?' '[`$2`][$2~repo] [$2~repo]: $1$2$3'
+)
 
-for file in $( find ${root}src ${root}drafts -type f -name "*.md"  -not -name "refs.incl.md" -not -name "SUMMARY.md" -not -name "*refs.md" )
-do
-  echo ">> $file"
-  contents=$(rg --multiline --invert-match '`.*`' $file)
-  # Look for http(s)://... and outputs references
-  # Outputs reference-style links
-  {
-  echo "${contents}" | rg --pcre2 --only-matching -r '[`$2`][$2~website] [$2~website]: $1$2$3' '(?<!: |["`([])(http(?:s)?://(?:www\d?\.)?)([^./]+)(\S+)?'
-  echo "${contents}" | rg --pcre2 --only-matching -r '[`$2`][$2~repo] [$2~repo]: $1$2$3' '(?<!: |["`([])(http(?:s)?://(?:github\.com/)?)([^./]+)(\S+)?'
-  # --pcre2 = Perl regex enabled (allows look-arounds) -g = glob, -r = replace
-  } | sed 's=/$==' | sort
-done
+process_files() {
+  for file in $( find "${search_paths[@]}" -type f -name "*.md"  -not -name "refs.incl.md" -not -name "SUMMARY.md" -not -name "*refs.md" )
+  do
+    echo ">> $file" >&2
+    contents=$(rg --multiline --invert-match '`.*`' "$file")
+    # Look for http(s)://... and outputs references
+    # Outputs reference-style links
+    {
+      for ((i=0; i<${#patterns[@]}; i+=2)); do
+        pattern="${patterns[$i]}"
+        replacement="${patterns[$i+1]}"
+        echo "${contents}" | rg --pcre2 --only-matching -r "${replacement}" "${pattern}"
+      done
+    # --pcre2 = Perl regex enabled (allows look-arounds) -g = glob, -r = replace
+    } | sed 's=/$==' | sort
+  done
+}
+
+if [[ -n "${output_path}" ]]; then
+  process_files > "${output_path}"
+else
+  process_files
+fi
 
 echo "DONE"
