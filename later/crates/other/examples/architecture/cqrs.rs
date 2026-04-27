@@ -1,7 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-// COMING SOON
-// ANCHOR_END: example
 //! CQRS (Command Query Responsibility Segregation) is an architectural
 //! pattern that separates the models for reading and writing data.
 //! This separation allows for independent scaling and optimization of the
@@ -372,14 +370,17 @@ fn main() -> anyhow::Result<()> {
         })
         .unwrap();
 
-    // read_store.rebuild_read_model(events);
-    // if let Some(product) = query_handler.get_product(2) {
-    //     println!("Product: {product:?}");
-    // } else {
-    //     println!("Product not found");
-    // }
+    let events = command_handler.event_store.get_events(None);
+    read_store.rebuild_read_model(events);
+    if let Some(product) = query_handler.get_product(2) {
+        println!("Product: {product:?}");
+    } else {
+        println!("Product not found");
+    }
     Ok(())
 }
+
+// ANCHOR_END: example
 
 #[test]
 fn test() -> anyhow::Result<()> {
