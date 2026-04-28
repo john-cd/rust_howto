@@ -68,12 +68,20 @@ async fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 #[test]
+#[ignore = "Requires an external Microsoft SQL Server instance"]
 fn require_external_svc() -> anyhow::Result<()> {
-    unsafe {
-        // Refer to the `compose*.yaml` files.
-        std::env::set_var("MSSQL_HOST", "rust_howto_dev-mssql-1");
+    if std::env::var("MSSQL_HOST").is_err() {
+        eprintln!(
+            "Skipping MSSQL integration test; set MSSQL_HOST to run this test."
+        );
+        return Ok(());
     }
+
     main()?;
     Ok(())
 }
 // [fix heavy test](https://github.com/john-cd/rust_howto/issues/1019)
+// unsafe {
+//     // Refer to the `compose*.yaml` files.
+//     std::env::set_var("MSSQL_HOST", "rust_howto_dev-mssql-1");
+// }

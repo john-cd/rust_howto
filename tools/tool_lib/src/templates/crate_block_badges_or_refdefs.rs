@@ -160,8 +160,7 @@ pub fn create_crate_page_section(name: &str) -> Result<String> {
     // H3 header with anchor
     section.push_str(&format!("### `{name}` {{#{name}}}\n\n"));
 
-    let info =
-        crate::get_info_for_crate(name).with_context(|| format!("Unknown crate: {name}"))?;
+    let info = crate::get_info_for_crate(name).with_context(|| format!("Unknown crate: {name}"))?;
 
     // Badges for docs.rs, crates.io, repo, lib.rs
     let badges =
@@ -259,11 +258,10 @@ const CRATE_BLOCK_DIRECTIVE_REGEX: &str = r"\{\{\s*#crate\s*:?\s+([^\s}]+)[^}]*\
 
 /// Lazily compiled regex for `{{#crate crate_name}}` directives.
 /// Compiled only once and reused across all calls.
-static CRATE_BLOCK_RE: once_cell::sync::Lazy<regex::Regex> =
-    once_cell::sync::Lazy::new(|| {
-        regex::Regex::new(CRATE_BLOCK_DIRECTIVE_REGEX)
-            .expect("CRATE_BLOCK_DIRECTIVE_REGEX is a valid regex")
-    });
+static CRATE_BLOCK_RE: once_cell::sync::Lazy<regex::Regex> = once_cell::sync::Lazy::new(|| {
+    regex::Regex::new(CRATE_BLOCK_DIRECTIVE_REGEX)
+        .expect("CRATE_BLOCK_DIRECTIVE_REGEX is a valid regex")
+});
 
 /// Expand all `{{#crate crate_name}}` directives in the given content string.
 ///
@@ -439,10 +437,7 @@ mod directive_tests {
 
     #[test]
     fn test_crate_directive_with_additional_categories() {
-        assert_captures_crate_name(
-            "{{#crate: crt cat1 cat-2 cat-2-2 cat3::sub-cat-3 }}",
-            "crt",
-        );
+        assert_captures_crate_name("{{#crate: crt cat1 cat-2 cat-2-2 cat3::sub-cat-3 }}", "crt");
     }
 
     #[test]
