@@ -2,6 +2,24 @@
 set -eux
 set -o pipefail
 
+## @fn monitor_resources()
+## @brief Periodically logs tmpfs and memory usage to stdout in the background.
+monitor_resources() {
+    while true; do
+        echo "[$(date +%T)] --- Resource Snapshot ---"
+        df -h /code/target/ 2>/dev/null || echo "tmpfs not yet mounted"
+        free -h
+        sleep 60
+    done
+}
+
+## Start background monitoring
+monitor_resources &
+MONITOR_PID=$!
+
+# Kill background monitor on script exit
+trap 'kill $MONITOR_PID 2>/dev/null || true' EXIT
+
 # Main script executed during the main CI workflow.
 #
 # See the `Dockerfile`.
@@ -31,9 +49,6 @@ cargo +nightly fmt --all --check
 ## Fetch the dependencies
 cargo fetch
 
-## Build & release the tools, incl. the mdbook-scrub preprocessor
-cargo build --bins --locked --release --manifest-path '../../tools/Cargo.toml' --artifact-dir "../../bin"
-
 ## Make sure all examples (and tools) compile
 ## - We prefer `cargo build ...` to `cargo check --workspace --all-targets --locked --profile ci`
 ## Some diagnostics and errors are only emitted during code generation, so they inherently won't be reported with cargo check.
@@ -46,12 +61,20 @@ cargo build --workspace --all-targets --locked --profile ci --all-features
 ## - Elevate clippy warnings to errors, which will in turn fail the build.
 cargo clippy --workspace --all-targets --locked --profile ci --all-features -- --deny warnings
 
-## Test all code examples (except heavy tests and "ignore_in_ci" tests)
-cargo nextest run --workspace --all-targets --locked --cargo-profile ci --profile ci --hide-progress-bar --all-features
+if [ "${SKIP_TESTS:-false}" != "true" ]; then
+    ## Test all code examples (except heavy tests and "ignore_in_ci" tests)
+    ## NEXTEST_ARGS can be used to pass --partition hash:K/N
+    cargo nextest run --workspace --all-targets --locked --cargo-profile ci --profile ci --hide-progress-bar --all-features --status-level pass ${NEXTEST_ARGS:-}
 
-## `nextest` does not handle doctests.
-cargo test --workspace --doc --locked --profile ci -- --show-output
+    ## `nextest` does not handle doctests.
+    cargo test --workspace --doc --locked --profile ci -- --show-output
+fi
 ## NOTE supersedes: mdbook test / skeptic tests
+
+if [ "${SKIP_BOOK_BUILD:-false}" = "true" ]; then
+    echo "Skipping book build as requested."
+    exit 0
+fi
 
 ## Build the book (html)
 cd ..
@@ -70,13 +93,17 @@ mdbook-utils sitemap
 
 echo "----------"
 
-## Report folder sizes so that the tmpfs mount size can be monitored and tuned if needed.
-echo "=== Memory usage ==="
+## Final report on resource consumption
+echo "=== Final Memory usage ==="
 free -h
-echo "=== Relevant folder sizes ==="
-du -sh /code/target/ /usr/local/cargo/ 2>/dev/null || true
+echo "=== tmpfs Utilization ==="
+df -h /code/target/ 2>/dev/null || true
+echo "=== Cargo Cache Size ==="
+du -sh /usr/local/cargo/ 2>/dev/null || true
 
 echo "----------"
+
+kill $MONITOR_PID 2>/dev/null || true
 
 ## Do not remove.
 ## This is what will cause the dockerfile CMD to run.
