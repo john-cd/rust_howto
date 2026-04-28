@@ -32,13 +32,30 @@ Oracle [Database][p~database] is a multi-model [database][p~database] management
 {{#include ../../../crates/cats/database/examples/oracle/sibyl.rs:example}}
 ```
 
+## Troubleshooting {#troubleshooting}
+
+### Cannot locate a 64-bit Oracle Client library
+
+If you encounter the error `DPI-1047: Cannot locate a 64-bit Oracle Client library`, it means the [Oracle Instant Client](https://www.oracle.com/database/technologies/instant-client.html) is missing or not correctly configured in your system's library path.
+
+To resolve this on Linux:
+
+1.  **Install dependencies**:
+    ```bash
+    sudo apt-get install libaio1 odpic-dev
+    ```
+2.  **Download and extract** the Oracle Instant Client.
+3.  **Set `LD_LIBRARY_PATH`**:
+    ```bash
+    export LD_LIBRARY_PATH=/path/to/instantclient:$LD_LIBRARY_PATH
+    ```
+4.  Alternatively, configure the system-wide library path by adding a file to `/etc/ld.so.conf.d/` and running `sudo ldconfig`.
+
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[database/sqlite | SQLite]]
+- [[database/postgres | Postgres]]
+- [[database/mssql | MSSQL]]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1069)
-</div>

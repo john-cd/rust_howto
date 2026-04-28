@@ -14,7 +14,9 @@
 fn main() {
     // cc::Build::new().file("src/hello.c").compile("hello");
     // // outputs `libhello.a`
-    println!("cc_bundled_static example: compiles a C file into a static library (requires a C compiler)");
+    println!(
+        "cc_bundled_static example: compiles a C file into a static library (requires a C compiler)"
+    );
 }
 // ANCHOR_END: example
 

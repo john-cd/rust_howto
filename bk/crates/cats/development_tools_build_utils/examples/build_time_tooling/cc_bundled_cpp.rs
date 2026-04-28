@@ -19,7 +19,9 @@ fn main() {
     //     .file("src/foo.cpp")
     //     // Compile the C++ file and name the resulting library "foo".
     //     .compile("foo");
-    println!("cc_bundled_cpp example: compiles a C++ file and links it into your Rust project (requires a C++ compiler and src/foo.cpp)");
+    println!(
+        "cc_bundled_cpp example: compiles a C++ file and links it into your Rust project (requires a C++ compiler and src/foo.cpp)"
+    );
 }
 // ANCHOR_END: example
 

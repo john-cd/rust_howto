@@ -11,7 +11,9 @@ fn main() {
         let x = 3 * 4; // "Expensive" computation
         log::trace!("the answer was: {x}");
     }
-    println!("log_env_variable example: set MY_APP_LOG=debug to see log output above");
+    println!(
+        "log_env_variable example: set MY_APP_LOG=debug to see log output above"
+    );
 }
 
 //#[cfg(not(test))]

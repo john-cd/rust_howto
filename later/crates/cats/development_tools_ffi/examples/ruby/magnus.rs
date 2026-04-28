@@ -18,8 +18,9 @@
 //     // Create a new Ruby string object from the given Rust string.
 //     let string = RString::new(&ruby, "Hello from Rust!")?;
 
-//     // Safely call the `puts` method via the Object class without evaluating dynamic strings.
-//     class::object().funcall::<_, _, ()>("puts", (string,))?;
+//     // Safely call the `puts` method via the Object class without evaluating
+//     // dynamic strings.
+// class::object().funcall::<_, _, ()>("puts", (string,))?;
 
 //     // Define a global Ruby function that calls a Rust function.
 //     define_global_function("hello_rust", hello_rust);

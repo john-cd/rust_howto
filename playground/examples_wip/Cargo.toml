@@ -13,7 +13,6 @@ categories = []
 publish = false
 license = "MIT OR Apache-2.0"
 
-# FIXME
 [dependencies]
 anyhow = "1.0.102"
 #inquire = "0.7.5"

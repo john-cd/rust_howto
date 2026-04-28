@@ -33,7 +33,8 @@ fn main() -> anyhow::Result<()> {
                         cats.push(Category {
                             category: "Uncategorized".into(),
                             slug: "uncategorized".into(),
-                            description: "These crates are not added to any category on crates.io".into(),
+                            description: "These crates are not added to any category on crates.io"
+                                .into(),
                         });
                     }
                     Ok((name.into(), cats))

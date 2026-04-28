@@ -101,20 +101,22 @@ pub fn sql(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
 
 // ANCHOR: procmacro2_example
 
-// `proc-macro2` allows manipulating TokenStreams outside of a procedural macro context,
-// making it easier to write unit tests for procedural macros.
+// `proc-macro2` allows manipulating TokenStreams outside of a procedural macro
+// context, making it easier to write unit tests for procedural macros.
 // Here we define the core logic using `proc_macro2::TokenStream`.
 fn process_tokens(input: proc_macro2::TokenStream) -> proc_macro2::TokenStream {
     input
         .into_iter()
         .map(|tt| match tt {
             proc_macro2::TokenTree::Ident(ident) if ident == "old_ident" => {
-                let new_ident = proc_macro2::Ident::new("new_ident", ident.span());
+                let new_ident =
+                    proc_macro2::Ident::new("new_ident", ident.span());
                 proc_macro2::TokenTree::Ident(new_ident)
             }
             proc_macro2::TokenTree::Group(group) => {
                 let new_stream = process_tokens(group.stream());
-                let mut new_group = proc_macro2::Group::new(group.delimiter(), new_stream);
+                let mut new_group =
+                    proc_macro2::Group::new(group.delimiter(), new_stream);
                 new_group.set_span(group.span());
                 proc_macro2::TokenTree::Group(new_group)
             }
@@ -123,10 +125,12 @@ fn process_tokens(input: proc_macro2::TokenStream) -> proc_macro2::TokenStream {
         .collect()
 }
 
-// Then we expose the procedural macro interface which seamlessly converts between
-// `proc_macro::TokenStream` and `proc_macro2::TokenStream`.
+// Then we expose the procedural macro interface which seamlessly converts
+// between `proc_macro::TokenStream` and `proc_macro2::TokenStream`.
 #[proc_macro]
-pub fn replace_ident(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
+pub fn replace_ident(
+    input: proc_macro::TokenStream,
+) -> proc_macro::TokenStream {
     let input2 = proc_macro2::TokenStream::from(input);
     let output2 = process_tokens(input2);
     proc_macro::TokenStream::from(output2)
@@ -135,13 +139,16 @@ pub fn replace_ident(input: proc_macro::TokenStream) -> proc_macro::TokenStream 
 // And we can write unit tests for the core logic directly!
 #[cfg(test)]
 mod tests {
-    use super::*;
     use std::str::FromStr;
+
+    use super::*;
 
     #[test]
     fn test_process_tokens() {
-        let input = proc_macro2::TokenStream::from_str("let old_ident = 1;").unwrap();
-        let expected = proc_macro2::TokenStream::from_str("let new_ident = 1;").unwrap();
+        let input =
+            proc_macro2::TokenStream::from_str("let old_ident = 1;").unwrap();
+        let expected =
+            proc_macro2::TokenStream::from_str("let new_ident = 1;").unwrap();
 
         let output = process_tokens(input);
 
