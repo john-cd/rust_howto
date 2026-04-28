@@ -5,7 +5,6 @@ mod quote;
 mod syn;
 
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // //! # Procedural Macro Examples
 // //!
@@ -23,7 +22,7 @@ mod syn;
 //     my_function();
 // }
 
-// // [finish; review the following; decide what examples are needed](https://github.com/john-cd/rust_howto/issues/1158)
+[finish; review the following; decide what examples are needed](https://github.com/john-cd/rust_howto/issues/1158)
 // // for proc macros. move proc macros to lib.rs
 // // reorganize examples in folders
 // // <https://doc.rust-lang.org/proc_macro/index.html>

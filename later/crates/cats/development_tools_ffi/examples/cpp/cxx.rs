@@ -1,7 +1,6 @@
 #![allow(dead_code)]
 // #![allow(unused_imports)]
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // use cxx::CxxString;
 // use cxx::let_cxx_string;

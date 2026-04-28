@@ -29,4 +29,4 @@
 // rustler::init!("Elixir.MyRustLibrary");
 // // ANCHOR_END: example
 
-// // [review; how to test](https://github.com/john-cd/rust_howto/issues/1080)
+[review; how to test](https://github.com/john-cd/rust_howto/issues/1080)

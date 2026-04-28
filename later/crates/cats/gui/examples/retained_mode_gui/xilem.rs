@@ -1,5 +1,4 @@
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // use xilem::component::Component;
 // use xilem::context::EventCx;
@@ -63,7 +62,7 @@
 //     )
 // }
 
-// // The AppModel struct holds the application's state.
+The AppModel struct holds the application's state.
 // struct AppModel {
 //     counter: (),
 // }
@@ -74,5 +73,5 @@
 // }
 
 pub fn main() {}
-// // [finish; https://github.com/linebender/xilem ](https://github.com/john-cd/rust_howto/issues/795)
+[finish; https://github.com/linebender/xilem ](https://github.com/john-cd/rust_howto/issues/795)
 // // <https://raphlinus.github.io/rust/gui/2022/07/15/next-dozen-guis.html>

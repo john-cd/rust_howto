@@ -1,5 +1,4 @@
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // Trait that handles the application events:
 use winit::application::ApplicationHandler;
@@ -84,4 +83,4 @@ pub fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
-// // [review; https://github.com/rust-windowing/winit/tree/master/examples](https://github.com/john-cd/rust_howto/issues/794)
+[review; https://github.com/rust-windowing/winit/tree/master/examples](https://github.com/john-cd/rust_howto/issues/794)

@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // //! The following demonstrates how to use the `xml5ever` crate for parsing
 // //! XML documents. It provides two main examples:

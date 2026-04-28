@@ -26,7 +26,7 @@
 // }
 // ANCHOR_END: derive_macro
 
-// // FIXME write; review https://docs.rs/syn/latest/syn/index.html
+FIXME write; review https://docs.rs/syn/latest/syn/index.html
 
 // // ANCHOR: attribute_macro
 // extern crate proc_macro;

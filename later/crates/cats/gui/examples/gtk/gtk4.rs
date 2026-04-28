@@ -1,5 +1,4 @@
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // //! This example demonstrates a simple GTK4 application with a counter.
 // //!
@@ -91,4 +90,4 @@
 // }
 
 pub fn main() {}
-// // [finish; review https://gtk-rs.org/](https://github.com/john-cd/rust_howto/issues/780)
+[finish; review https://gtk-rs.org/](https://github.com/john-cd/rust_howto/issues/780)

@@ -3,7 +3,7 @@
 // use objc2::{class, msg_send, sel, sel_impl};
 
 // /// The main function where the Objective-C interaction takes place.
-// /// This function uses `unsafe` because it interacts with raw pointers and
+/ This function uses `unsafe` because it interacts with raw pointers and
 // foreign code. fn main() {
 //     unsafe {
 //         let class_name = "NSString";
@@ -31,4 +31,4 @@
 // fn test() {
 //     main();
 // }
-// // [finish; fix; https://docs.rs/objc2/latest/objc2/](https://github.com/john-cd/rust_howto/issues/1034)
+[finish; fix; https://docs.rs/objc2/latest/objc2/](https://github.com/john-cd/rust_howto/issues/1034)

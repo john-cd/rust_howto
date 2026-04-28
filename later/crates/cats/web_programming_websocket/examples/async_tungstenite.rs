@@ -1,8 +1,7 @@
 #![allow(dead_code)]
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
-// //! This example demonstrates how to use `async-tungstenite` to connect to a
+! This example demonstrates how to use `async-tungstenite` to connect to a
 // //! WebSocket server, send a message, and receive a response.
 // //!
 // //! `async-tungstenite` provides asynchronous WebSockets for `async-std`,
@@ -13,8 +12,8 @@
 // //!
 // //! In your `Cargo.toml`, add:
 // //! ```toml
-// //! async-tungstenite = { version = "0.28.2", features = ["tokio-runtime",
-// //! "tokio-native-tls"] }
+! async-tungstenite = { version = "0.28.2", features = ["tokio-runtime",
+! "tokio-native-tls"] }
 // //! ```
 
 // use async_tungstenite::tokio::connect_async;
@@ -60,6 +59,6 @@
 // fn require_network() {
 //     main();
 // }
-// // [finish; echo.websocket.org has moved permanently](https://github.com/john-cd/rust_howto/issues/1058)
+[finish; echo.websocket.org has moved permanently](https://github.com/john-cd/rust_howto/issues/1058)
 
 fn main() {}

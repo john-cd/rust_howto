@@ -4,9 +4,9 @@ use quote::quote;
 use syn::Ident;
 use syn::parse_quote;
 
-/// This example demonstrates the use of the `quote!` macro from the `quote`
+This example demonstrates the use of the `quote!` macro from the `quote`
 /// crate to generate Rust code dynamically. It shows how to create an
-/// identifier using `syn::parse_quote!` and then use it within a `quote!`
+identifier using `syn::parse_quote!` and then use it within a `quote!`
 /// block to generate a `TokenStream` representing a piece of Rust code.
 fn main() {
     // Create an identifier.

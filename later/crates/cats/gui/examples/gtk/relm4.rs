@@ -1,6 +1,5 @@
 // #![allow(dead_code)]
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // /// # Example
 // ///
@@ -208,4 +207,4 @@ pub fn main() {
     //     app.run::<CounterModel>(1);
 }
 
-// // [finish; review https://relm4.org/book/stable/](https://github.com/john-cd/rust_howto/issues/784)
+[finish; review https://relm4.org/book/stable/](https://github.com/john-cd/rust_howto/issues/784)

@@ -7,15 +7,15 @@
 // // This is the interface to the JVM that we'll call the majority of our
 // // methods on.
 // use jni::JNIEnv;
-// // The following objects are what we should use as arguments to your
+The following objects are what we should use as arguments to your
 // // native function. They carry extra lifetime information to prevent them
 // // escaping this context and getting used after being GC'd.
 // use jni::objects::{JClass, JString};
 
 // // This is just a pointer. We'll be returning it from our function. We
-// // can't return one of the objects with lifetime information because the
-// // lifetime checker won't let us.
-// // use jni::sys::jstring;
+can't return one of the objects with lifetime information because the
+lifetime checker won't let us.
+use jni::sys::jstring;
 
 // // In `Cargo.toml`, under [dependencies], add jni = "0.21.1"
 // // Build the Rust code as a dynamic library (e.g., a .so file for Linux, .dll
@@ -67,6 +67,6 @@
 // // ANCHOR_END: example
 
 // // #[test]
-// // fn test() {
-// // }
+fn test() {
+}
 // // [finish](https://github.com/john-cd/rust_howto/issues/1029)

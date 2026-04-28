@@ -38,7 +38,7 @@ fn compute_derived_value(config: Tracked<Config>) -> i32 {
     base_value * 2 + 10
 }
 
-/// Define a struct to represent a configuration.
+Define a struct to represent a configuration.
 #[derive(Clone, Debug)]
 struct Config {
     value: i32,

@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // //! This example demonstrates how to use the `protobuf` crate to serialize
 // //! and deserialize data using Protocol Buffers.

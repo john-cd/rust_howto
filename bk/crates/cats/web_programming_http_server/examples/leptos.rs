@@ -1,5 +1,4 @@
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // //! This is a simple counter example using the Leptos framework.
 // //!

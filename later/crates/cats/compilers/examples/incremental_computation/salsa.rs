@@ -53,7 +53,7 @@ fn summary(db: &dyn salsa::Database, input: SourceInput) -> String {
 
 /// The *database* holds all incremental state.
 ///
-/// `salsa::Storage` manages the memo tables; `#[salsa::db]` wires up the
+`salsa::Storage` manages the memo tables; `#[salsa::db]` wires up the
 /// required trait impls.
 #[salsa::db]
 #[derive(Default)]

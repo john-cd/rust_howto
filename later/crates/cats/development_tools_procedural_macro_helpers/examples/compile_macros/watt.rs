@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // //! Watt is a procedural macro library that allows us to write our
 // //! procedural macros without the overhead of the `proc_macro` crate.
@@ -42,19 +41,19 @@
 // }
 
 // // // Usage example:
-// // use my_macro_crate::my_macro;
+use my_macro_crate::my_macro;
 
 // // #[my_macro]
-// // fn example_function() {
-// //     println!("Hello from the macro-enhanced function!");
-// // }
+fn example_function() {
+    println!("Hello from the macro-enhanced function!");
+}
 
-// // fn main() {
-// //     example_function();
-// // }
+fn main() {
+    example_function();
+}
 
 // // #[test]
-// // fn test() {
-// //     main();
-// // }
+fn test() {
+    main();
+}
 // // [finish](https://github.com/john-cd/rust_howto/issues/744)

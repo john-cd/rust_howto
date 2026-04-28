@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // //! This example demonstrates how to use the `xmlparser` crate to parse an
 // //! XML string. It showcases handling XML declarations, comments, elements,

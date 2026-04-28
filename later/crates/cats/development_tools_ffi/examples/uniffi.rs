@@ -2,7 +2,7 @@
 // ANCHOR: example
 //#![allow(non_snake_case)]
 
-// // This example demonstrates how to use UniFFI to create a Rust library that
+This example demonstrates how to use UniFFI to create a Rust library that
 // // can be called from other languages.
 
 // use uniffi::Bindgen;
@@ -19,9 +19,9 @@
 // // ANCHOR_END: example
 
 // // #[test]
-// // fn test() {
-// //     main();
-// // }
+fn test() {
+    main();
+}
 // [finish; https://github.com/mozilla/uniffi-rs/blob/main/examples/arithmetic/Cargo.toml](https://github.com/john-cd/rust_howto/issues/1037)
 
 fn main() {}

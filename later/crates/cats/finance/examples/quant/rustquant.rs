@@ -1,7 +1,6 @@
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
-// //! This example demonstrates how to use the `RustQuant` library to price
+! This example demonstrates how to use the `RustQuant` library to price
 // //! European call and put options using the Black-Scholes-Merton model.
 // //!
 // //! ## Prerequisites
@@ -50,4 +49,4 @@
 // fn test() {
 //     main();
 // }
-// // [finish; review](https://github.com/john-cd/rust_howto/issues/764)
+[finish; review](https://github.com/john-cd/rust_howto/issues/764)

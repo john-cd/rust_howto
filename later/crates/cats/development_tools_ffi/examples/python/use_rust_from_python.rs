@@ -3,7 +3,6 @@
 #![allow(clippy::useless_conversion)]
 #![cfg(target_os = "linux")]
 // ANCHOR: example
-// COMING SOON
 // ANCHOR_END: example
 
 use std::result::Result;

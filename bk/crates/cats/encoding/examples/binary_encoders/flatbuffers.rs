@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // //! This example demonstrates how to use the `flatbuffers` crate in Rust.
 // //! It shows how to create a FlatBufferBuilder, define a schema,

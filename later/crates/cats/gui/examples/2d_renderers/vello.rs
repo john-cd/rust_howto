@@ -1,14 +1,13 @@
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
-// //! This example demonstrates how to use the `vello` crate for 2D rendering
+! This example demonstrates how to use the `vello` crate for 2D rendering
 // //! with GPU acceleration. It sets up a window using `winit` and draws
 // //! a simple scene containing a rectangle and a circle using Vello's API.
 // //!
 // //! ## Key Concepts:
 // //! - **Renderer:** The core Vello object responsible for rendering scenes to
 // //!   a surface (like a window).
-// //! - **SceneBuilder:** Used to construct a scene by adding shapes, paths,
+! - **SceneBuilder:** Used to construct a scene by adding shapes, paths,
 // //!   and other drawing commands.
 // //! - **Peniko:** Vello uses the `peniko` crate for defining colors, brushes,
 // //!   and fill/stroke styles.

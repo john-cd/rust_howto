@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 
 // // Sibyl is an OCI-based interface between Rust applications and Oracle

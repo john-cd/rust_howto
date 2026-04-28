@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // //! This example demonstrates a basic usage of the `smartcore` crate for
 // machine learning tasks. //!
@@ -20,9 +19,9 @@
 // use smartcore::linear::linear_regression::LinearRegression;
 // use smartcore::metrics::mean_squared_error;
 // // KNNClassifier
-// // use smartcore::neighbors::knn_classifier::*;
+use smartcore::neighbors::knn_classifier::*;
 // // Various distance metrics
-// // use smartcore::metrics::distance::*;
+use smartcore::metrics::distance::*;
 
 // fn main() {
 //     // Generate a dataset.
@@ -76,4 +75,4 @@
 // fn test() {
 //     main();
 // }
-// // [finish; kNN example; syn data generation for linear regr.; 70/30 split; etc](https://github.com/john-cd/rust_howto/issues/837)
+[finish; kNN example; syn data generation for linear regr.; 70/30 split; etc](https://github.com/john-cd/rust_howto/issues/837)

@@ -1,8 +1,7 @@
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // use morphorm::*;
-// // use morphorm_ecs::*;
+use morphorm_ecs::*;
 
 // fn main() {
 //     // The basic building blocks of a Morphorm layout are nodes. Each node

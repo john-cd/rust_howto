@@ -1,6 +1,5 @@
 // #![allow(dead_code)]
 // // ANCHOR: example
-// // // COMING SOON
 // // ANCHOR_END: example
 // //! This example shows how to create a simple gRPC server using the `tonic`
 // //! crate.

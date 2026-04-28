@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // //! This module demonstrates the usage of the `darling` crate for simplifying
 // the creation of custom derive macros. //!
@@ -17,9 +16,9 @@
 
 // /// Options for the `MyMacro` derive macro.
 // ///
-// /// This struct defines the structure of the attributes that `MyMacro`
+/ This struct defines the structure of the attributes that `MyMacro`
 // expects. #[derive(Debug, FromDeriveInput)]
-// /// Specifies that the attributes for this struct are under the `my_macro`
+/ Specifies that the attributes for this struct are under the `my_macro`
 // namespace. #[darling(attributes(my_macro))]
 // struct MyMacroOpts {
 //     name: String,

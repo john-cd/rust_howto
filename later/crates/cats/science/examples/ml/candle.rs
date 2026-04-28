@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // //! This example demonstrates a simple linear regression model using the
 // //! Candle library. It showcases the basic steps of defining a model,
