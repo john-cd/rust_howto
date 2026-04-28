@@ -8,7 +8,8 @@ use std::rc::Rc;
 
 fn main() {
     // Create a shared mutable vector
-    let shared_vec: Rc<RefCell<Vec<i32>>> = Rc::new(RefCell::new(vec![1, 2, 3]));
+    let shared_vec: Rc<RefCell<Vec<i32>>> =
+        Rc::new(RefCell::new(vec![1, 2, 3]));
 
     // Create another owner of the same data
     let owner2 = Rc::clone(&shared_vec);
