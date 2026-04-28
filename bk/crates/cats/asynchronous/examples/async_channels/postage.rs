@@ -73,4 +73,3 @@ async fn main() {
 fn test() {
     main();
 }
-// [finish; polish postage.rs example / add examples for other queues; logging; stream, sink](https://github.com/john-cd/rust_howto/issues/80)

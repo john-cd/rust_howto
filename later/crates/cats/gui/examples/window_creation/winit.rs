@@ -83,8 +83,13 @@ pub fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-// TODO
-// #[test]
-// fn test() {
-//     main();
-// }
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    // TODO
+    #[test]
+    fn compile_event_loop() {
+        let _event_loop = EventLoop::new().expect("create event loop");
+    }
+}

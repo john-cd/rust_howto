@@ -244,7 +244,7 @@ mod read_store {
     /// Repository with domain objects.
     pub trait ProductRepository {
         fn get_product(&self, id: u32) -> Option<Product>;
-        // FIXME get_all_products() -> Vec<Product>;
+        // Additional read methods can be added here, such as `get_all_products()`.
     }
 
     /// `SimpleProductRepository` struct.
@@ -417,12 +417,13 @@ fn test_negative_quantity_update_returns_error() -> anyhow::Result<()> {
     Ok(())
 }
 
-// TODO finish
-// <https://martinfowler.com/bliki/CQRS.html>
-// <https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-1?source=more_series_bottom_blogs>
-// <https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-2>
-// <https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs>
-// <https://doc.rust-cqrs.org/intro.html>
-// <https://github.com/primait/event_sourcing.rs>
-// <https://github.com/eniltrexAdmin/crappy-user>
-// <https://github.com/serverlesstechnology/cqrs-demo/tree/main>
+// TODO
+// Notes:
+// - This example can be extended with a `get_all_products()` query method,
+//   event store snapshots, and more advanced read-model reconstruction.
+// - See the CQRS pattern for additional architecture guidance:
+//   https://martinfowler.com/bliki/CQRS.html
+//   https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-1
+//   https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-2
+//   https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs
+//   https://doc.rust-cqrs.org/intro.html
