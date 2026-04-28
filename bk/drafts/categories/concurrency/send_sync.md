@@ -70,3 +70,34 @@ By implementing the unsafe marker [traits][p~traits] [`std::marker::Send`][c~std
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[write; add links?](https://github.com/john-cd/rust_howto/issues/909)
+
+- [Implementing `Vec`][book~rustonomicon~implementing-vec]↗.
+- [An unsafe tour of Rust's Send and Sync][blog~an-unsafe-tour-of-rust-s-send-and-sync]↗.
+- [Rust: A unique perspective][blog~rust-a-unique-perspective]↗.
+
+REFERENCES:
+
+- [References][primitive~reference]↗.
+
+POINTERS:
+
+- [Pointers][primitive~pointer]↗.
+- [Pointer functions][c~std::ptr~docs]↗.
+- [NonNull pointer][c~std::ptr::NonNull~docs]↗.
+- [std::fmt::Pointer][c~std::fmt::Pointer~docs]↗.
+
+SEND / SYNC:
+
+- [The Rustonomicon: `Send` and `Sync`][book~rustonomicon~send-and-sync]↗.
+
+PHANTOM DATA:
+
+- [phantom-data][book~rustonomicon~phantom-data]↗.
+- [PhantomData][c~std::marker::PhantomData~docs]↗.
+
+- [Understanding the `Send` trait][stackoverflow~understanding-the-send-trait]↗.
+</div>
+
