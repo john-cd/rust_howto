@@ -30,10 +30,9 @@ SHELL ["bash", "-c"]
 ## `cmake build-essential libudev-dev xorg-dev libglu1-mesa-dev libasound2-dev libxkbcommon-dev` for `openrr`
 ## `diffutils gcc m4 make` for `gmp-mpfr-sys` / `rug`
 ## `pandoc` for `mdbook-pandoc`
-## Note: the following caching should only be useful for development. Removed to save space on the GitHub Action runner
-## --mount=type=cache,target=/var/cache/apt,sharing=locked \
-## --mount=type=cache,target=/var/lib/apt,sharing=locked \
-RUN apt-get update \
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y --no-install-recommends \
     aspell \
@@ -53,9 +52,11 @@ RUN apt-get update \
     libglu1-mesa-dev \
     libgtk-4-dev \
     libopencv-dev \
+    libpython3-dev \
     librocksdb-dev \
     librsvg2-dev \
     libssl-dev \
+    libsystemd-dev \
     libudev-dev \
     libvulkan-dev \
     libwayland-dev \
@@ -63,7 +64,9 @@ RUN apt-get update \
     libxdo-dev \
     libxkbcommon-dev \
     libxkbcommon-x11-dev \
+    libz-dev \
     locales \
+    mold \
     openssl \
     llvm \
     m4 \
@@ -71,13 +74,15 @@ RUN apt-get update \
     pkg-config \
     protobuf-compiler \
     python3 \
-    python3.11-dev \
-    systemd \
-    # texlive-full \ huge
     wget \
     xorg-dev \
-    && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean -y
+
+## Optionally install linker and other utilities
+# mold clang \
+## Alternatively, use `lld` instead of the `mold` linker
+## See configuration in .cargo/config.toml
+## If using the `slim` Rust image, you may need to install: curl pkg-config libssl-dev
 
 ## Fix perl warning: Setting locale failed
 RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && \
@@ -86,18 +91,12 @@ ENV LANG=en_US.UTF-8 \
     LANGUAGE=en_US:en \
     LC_ALL=en_US.UTF-8
 
-## Optionally install linker and other utilities
-# mold clang \
-## Alternatively, use `lld` instead of the `mold` linker
-## See configuration in .cargo/config.toml
-## If using the `slim` Rust image, you may need to install: curl pkg-config libssl-dev
-
 ## Install pandoc from the official GitHub binary release.
 ## Using a direct binary download instead of `apt install pandoc` avoids pulling in large Haskell dependencies.
 ## Pandoc is required by the `mdbook-pandoc` backend to generate the PDF version of the book.
 ARG PANDOC_VERSION=invalid
 RUN wget -q "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-1-amd64.deb" \
-        -O /tmp/pandoc.deb \
+    -O /tmp/pandoc.deb \
     && dpkg -i /tmp/pandoc.deb \
     && rm /tmp/pandoc.deb
 
@@ -110,10 +109,9 @@ RUN wget -q "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/p
 #     rm /tmp/cmake-install.sh && \
 #     ln -s /opt/cmake-3.31.6/bin/* /usr/local/bin
 
-## Update Rust if needed
 ## Install clippy
 ## Install stable rustfmt (used by `rust-analyzer` e.g. when using VS code) and clippy
-RUN rustup update && rustup component add clippy rustfmt
+RUN rustup component add clippy rustfmt
 
 # The default value is overriden by the build arg passed by compose.yaml,
 # itself set from the RUST_IMAGE_LABEL env. variable in `.devcontainer/.env` file
@@ -123,51 +121,25 @@ ARG MDBOOK_VERSION=invalid
 ## Install nextest
 ## Install mdbook from the binary release
 ## Install mdbook preprocessors
-## Note: you can cache the registry (not the bin folder) Only useful in development
-## Disabled to save space on the GitHub Action runner
+## Note: you can cache the registry (not the bin folder)- only useful in development
+## Currently disabled to save space on the GitHub Action runner
 ## --mount=type=cache,target=/usr/local/cargo/registry \
 ## See https://doc.rust-lang.org/cargo/guide/cargo-home.html
 RUN <<EOF
     set -e
     curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
-    cargo binstall --no-confirm --secure cargo-nextest
-    # mdbook not installed
-    if [ ! hash mdbook 2>/dev/null ]; then
-        cargo binstall --version ${MDBOOK_VERSION} --no-confirm mdbook
-    fi
-    # mdbook installed but old version - force the installation of the new version
-    if [[ $(mdbook -V) != "mdbook v${MDBOOK_VERSION}" ]]; then
-        cargo binstall --version ${MDBOOK_VERSION} --no-confirm --force mdbook
-    fi
-    cargo binstall --no-confirm mdbook-linkcheck
-    cargo binstall --no-confirm mdbook-private
-    # old version: cargo binstall --no-confirm mdbook-indexing
+    cargo binstall --no-confirm --secure \
+        cargo-nextest \
+        mdbook@${MDBOOK_VERSION} \
+        mdbook-linkcheck \
+        mdbook-private \
+        mdbook-pandoc \
+        tectonic \
+        sccache \
+        just \
+        cargo-deny \
+        lychee
     cargo install --force mdbook-indexing
-    cargo install --locked mdbook-pandoc
-    ## Install tectonic: a self-contained TeX/LaTeX engine used as the PDF engine for mdbook-pandoc.
-    ## See https://tectonic-typesetting.github.io
-    cargo install --locked tectonic
-
-    ## [LATER https://lib.rs/crates/mdbook-open-on-gh add an "Edit this file on GitHub" link on the bottom of every page, linking directly to the source file.](https://github.com/john-cd/rust_howto/issues/1278)
-    # cargo binstall --no-confirm mdbook-open-on-gh
-
-    # Install sccache
-    # Configure it as a rustc wrapper in $HOME/.cargo/config.toml (for Linux / WSL).
-    # By default, stores its cache locally in ~/.cache/sccache
-    # https://github.com/mozilla/sccache/tree/main
-    cargo install --locked sccache
-
-    # ------------------------------
-    ## Technically the following section is only required for development
-    ## but we want to cache these layers before `rustup nightly`
-    ## which changes very often (if we do install it).
-
-    ## Install `just` (from the binary release)
-    ## Install cargo plugins
-    ## Install the link checker `lychee`
-    cargo binstall --no-confirm just
-    cargo binstall --no-confirm cargo-deny
-    cargo binstall --no-confirm lychee
 EOF
 
 # ------------------------------
@@ -177,8 +149,7 @@ EOF
 RUN cargo install --locked mdbook-utils
 
 ## Install nightly - last, since it changes very often
-RUN rustup toolchain install nightly \
-    && rustup component add rustfmt clippy --toolchain nightly
+RUN rustup toolchain install nightly --profile minimal --component rustfmt
 ## Optional: make nightly the default
 #     && rustup default nightly
 ## You must update all .github wokflows as well
@@ -189,7 +160,7 @@ WORKDIR /code
 ## Stage for development
 FROM base AS development
 
-## Additional packages for development only
+## Additional packages for development only.
 ## You can cache with
 ## --mount=type=cache,target=/var/cache/apt,sharing=locked \
 ## --mount=type=cache,target=/var/lib/apt,sharing=locked \
@@ -207,15 +178,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 ## Install the GitHub CLI
 RUN curl -sS https://webi.sh/gh | sh
 
-## Install `pre-commit` (requires python / pipx)
-## NOTE: `pre-commit` has been replaced by `cargo husky`
-# RUN pipx install pre-commit \
-#     && pipx ensurepath
-
 ## Install tools
-RUN cargo install --locked kani-verifier && \
-    cargo install --locked bacon && \
-    cargo binstall --no-confirm ripgrep
+RUN cargo binstall --no-confirm --secure kani-verifier bacon ripgrep
 ## Install optional cargo plugins:
 #  cargo install --locked cargo-outdated || true
 #  cargo install --locked cargo-udeps || true
@@ -256,8 +220,6 @@ CMD [ "sleep", "infinity" ]
 ## ------------------------------------------------------------------------------------------------
 ## Stage for Continuous Integration (book building)
 FROM base AS ci
-
-
 
 ## The following is a bit of a hack to try to speed up CI: create separate docker layers for the dependencies and the code / examples
 ## Use `just push_ci` to build the CI image locally, push it to DockerHub; GitHub Actions will pull this image and use it as cache.
