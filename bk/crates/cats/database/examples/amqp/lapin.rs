@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
+// This example demonstrates how to publish and consume messages with the
+// `lapin` AMQP client.
 use futures::stream::StreamExt; /* or: use futures_lite::stream::StreamExt; */
 use lapin::BasicProperties;
 use lapin::Channel;

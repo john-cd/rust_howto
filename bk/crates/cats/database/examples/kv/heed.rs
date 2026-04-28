@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
+// This example demonstrates using the `heed` crate as an LMDB-backed key-value
+// store.
 use heed::Database;
 use heed::EnvOpenOptions;
 use heed::types::*;

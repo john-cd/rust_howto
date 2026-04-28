@@ -33,8 +33,14 @@ impl Counter {
 impl Actor for Counter {
     type Msg = MyMessage;
 
-    // This method is invoked by the Stakker runtime when an actor receives a message.
-    fn recv(&mut self, _ctx: &mut Context<Self::Msg>, msg: Self::Msg, _sender: Sender) {
+    // This method is invoked by the Stakker runtime when an actor receives a
+    // message.
+    fn recv(
+        &mut self,
+        _ctx: &mut Context<Self::Msg>,
+        msg: Self::Msg,
+        _sender: Sender,
+    ) {
         self.handle_message(msg);
     }
 }

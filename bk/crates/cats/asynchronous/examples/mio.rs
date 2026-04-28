@@ -1,8 +1,13 @@
 // ANCHOR: example
 //! This example demonstrates basic `mio` event polling with a `Waker`.
 
-use mio::{Events, Interest, Poll, Token, Waker};
 use std::time::Duration;
+
+use mio::Events;
+use mio::Interest;
+use mio::Poll;
+use mio::Token;
+use mio::Waker;
 
 const WAKE_TOKEN: Token = Token(0);
 

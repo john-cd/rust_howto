@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
+// This example demonstrates how to encode and decode PKCS#8 private keys.
 use std::fs::File;
 use std::io::Write;
 

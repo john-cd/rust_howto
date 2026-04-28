@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
+// This example demonstrates connecting to MongoDB and performing basic CRUD
+// operations with the `mongodb` crate.
 use std::env;
 
 use dotenvy::dotenv;

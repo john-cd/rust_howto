@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
+// This example demonstrates connecting to and querying Microsoft SQL Server
+// using the `tiberius` crate.
 use futures::stream::TryStreamExt;
 use tiberius::AuthMethod;
 use tiberius::Client;

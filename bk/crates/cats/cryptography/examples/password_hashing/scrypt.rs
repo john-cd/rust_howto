@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
+// This example demonstrates how to hash and verify passwords using scrypt.
 use std::error::Error;
 
 use scrypt::Scrypt;
