@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
+//! This example demonstrates inserting rows into PostgreSQL and querying the
+//! inserted data back.
 use std::collections::HashMap;
 use std::fmt::Write;
 

@@ -34,13 +34,17 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    use std::io::Write;
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        use std::io::Write;
 
-    std::fs::create_dir_all("temp").unwrap();
-    let mut f = std::fs::File::create("temp/number.txt").unwrap();
-    writeln!(f, "42").unwrap();
+        std::fs::create_dir_all("temp").unwrap();
+        let mut f = std::fs::File::create("temp/number.txt").unwrap();
+        writeln!(f, "42").unwrap();
 
-    main().unwrap();
+        main().unwrap();
+    }
 }

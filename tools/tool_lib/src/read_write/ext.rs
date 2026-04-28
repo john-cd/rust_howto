@@ -49,6 +49,8 @@ pub fn extend_extension<P: AsRef<Path>>(filepath: &P, insert: &str) -> PathBuf {
 
 #[cfg(test)]
 mod tests {
+    use super::*;
+
     #[test]
     fn test() {
         assert_eq!(

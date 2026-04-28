@@ -23,9 +23,14 @@ fn main() {
     // ffi::hello(&name); // Requires actual C++ library to be linked
 }
 
-#[test]
-fn test() {
-    main();
-}
 // ANCHOR_END: example
 // [finish](https://github.com/john-cd/rust_howto/issues/738)
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
+}

@@ -34,9 +34,13 @@ fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
-#[ignore = "Needs review"]
-#[test]
-fn test() {
-    println!("{:?}", main());
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[ignore = "Needs review"]
+    #[test]
+    fn test() {
+        println!("{:?}", main());
+    }
 }
 // [finish; listens to a connection forever](https://github.com/john-cd/rust_howto/issues/166)

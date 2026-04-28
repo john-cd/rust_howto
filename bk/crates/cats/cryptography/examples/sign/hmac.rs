@@ -34,8 +34,12 @@ fn main() -> Result<(), Unspecified> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    main().map_err(|_| anyhow::anyhow!("hmac.rs failure"))?;
-    Ok(())
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() -> anyhow::Result<()> {
+        main().map_err(|_| anyhow::anyhow!("hmac.rs failure"))?;
+        Ok(())
+    }
 }

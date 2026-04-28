@@ -107,14 +107,18 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-#[ignore = "Needs review"]
-#[test]
-fn require_network() -> anyhow::Result<()> {
-    use std::fs;
-    if !fs::exists("temp")? {
-        fs::create_dir("temp")?;
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[ignore = "Needs review"]
+    #[test]
+    fn require_network() -> anyhow::Result<()> {
+        use std::fs;
+        if !fs::exists("temp")? {
+            fs::create_dir("temp")?;
+        }
+        main()?;
+        Ok(())
     }
-    main()?;
-    Ok(())
 }
 // [review; flaky test](https://github.com/john-cd/rust_howto/issues/176)

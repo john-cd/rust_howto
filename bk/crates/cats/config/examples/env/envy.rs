@@ -26,11 +26,15 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    unsafe {
-        std::env::set_var("PORT", "80");
-        std::env::set_var("MY_APP__PORT", "8080");
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        unsafe {
+            std::env::set_var("PORT", "80"); // TODO use Mutex
+            std::env::set_var("MY_APP__PORT", "8080");
+        }
+        main();
     }
-    main();
 }

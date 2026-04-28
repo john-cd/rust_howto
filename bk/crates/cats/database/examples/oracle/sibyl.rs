@@ -46,16 +46,20 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-#[test]
-#[ignore = "requires external oracle db and oracle client library"]
-fn require_external_svc() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    #[ignore = "requires external oracle db and oracle client library"]
+    fn require_external_svc() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }
 
-// To use Sibyl, you need to download the appropriate Instant Client packages
-// for your Linux distribution and architecture (usually 64-bit) from the
-// official Oracle website:
+// TODO To use Sibyl, you need to download the appropriate Instant Client
+// packages for your Linux distribution and architecture (usually 64-bit) from
+// the official Oracle website:
 // <https://www.oracle.com/database/technologies/instant-client/downloads.html>
 // Install the alien package: This tool is used to convert RPM packages
 // (which Oracle provides) to Debian packages suitable for Ubuntu.

@@ -57,8 +57,13 @@ fn main() -> Result<(), aes_gcm_siv::Error> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    main().map_err(|_| anyhow::anyhow!("Failed encryption or decryption"))?;
-    Ok(())
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() -> anyhow::Result<()> {
+        main()
+            .map_err(|_| anyhow::anyhow!("Failed encryption or decryption"))?;
+        Ok(())
+    }
 }

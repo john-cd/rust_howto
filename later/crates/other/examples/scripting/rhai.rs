@@ -79,6 +79,7 @@ fn main() -> Result<(), Box<EvalAltResult>> {
 
 #[cfg(test)]
 mod tests {
+    use super::*;
     #[test]
     fn test() -> Result<(), Box<EvalAltResult>> {
         main()?;

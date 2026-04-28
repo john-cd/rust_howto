@@ -82,15 +82,19 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn require_external_svc() -> anyhow::Result<()> {
-    unsafe {
-        // Refer to the compose*.yaml files.
-        std::env::set_var(
-            "MEILISEARCH_URL",
-            "http://rust_howto_dev-meilisearch-1:7700",
-        );
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn require_external_svc() -> anyhow::Result<()> {
+        unsafe {
+            // Refer to the compose*.yaml files.
+            std::env::set_var(
+                "MEILISEARCH_URL",
+                "http://rust_howto_dev-meilisearch-1:7700",
+            );
+        }
+        main()?;
+        Ok(())
     }
-    main()?;
-    Ok(())
 }

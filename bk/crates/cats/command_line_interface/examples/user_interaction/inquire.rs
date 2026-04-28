@@ -33,8 +33,12 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-#[ignore = "Requires user input"]
-fn require_user_input() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    #[ignore = "Requires user input"]
+    fn require_user_input() {
+        main();
+    }
 }

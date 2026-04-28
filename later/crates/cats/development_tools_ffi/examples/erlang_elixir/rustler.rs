@@ -30,10 +30,15 @@ rustler::init!("Elixir.MyRustLibrary");
 
 fn main() {}
 
-#[test]
-fn test() {
-    main();
-}
 // ANCHOR_END: example
 
 // [review; how to test](https://github.com/john-cd/rust_howto/issues/1080)
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
+}

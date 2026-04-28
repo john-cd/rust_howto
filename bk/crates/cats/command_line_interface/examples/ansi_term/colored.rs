@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 // ANCHOR: example
 //! This example demonstrates text styling using the `colored` crate.
 
@@ -15,8 +16,12 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
 }
 // TODO add to a chapter on command line interfaces with colored

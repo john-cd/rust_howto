@@ -38,9 +38,13 @@ fn main() {
     assert!(pos[0] != 0.0);
     assert!(vel[0] != 0.0);
 }
-
-#[test]
-fn test() {
-    main();
-}
 // ANCHOR_END: example
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
+}

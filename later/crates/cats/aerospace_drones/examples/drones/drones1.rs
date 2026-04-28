@@ -15,8 +15,12 @@ pub fn main() -> Result<(), String> {
 }
 // ANCHOR_END: example
 
-#[test]
-#[ignore = "requires real drone"]
-fn test() {
-    main().unwrap();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    #[ignore = "requires real drone"]
+    fn test() {
+        main().unwrap();
+    }
 }

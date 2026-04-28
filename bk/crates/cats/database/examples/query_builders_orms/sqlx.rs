@@ -72,9 +72,12 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn require_external_svc() -> anyhow::Result<()> {
-    // Test function to run the main example.
-    main()?;
-    Ok(())
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn require_external_svc() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }

@@ -92,14 +92,18 @@ fn main() {
 // Example adapted from <https://docs.rs/glommio/latest/glommio/>
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    use std::fs;
-    if !fs::exists("temp")? {
-        fs::create_dir("temp")?;
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() -> anyhow::Result<()> {
+        use std::fs;
+        if !fs::exists("temp")? {
+            fs::create_dir("temp")?;
+        }
+        main();
+        Ok(())
     }
-    main();
-    Ok(())
 }
 // [finish](https://github.com/john-cd/rust_howto/issues/810)
 // review <https://itnext.io/modern-storage-is-plenty-fast-it-is-the-apis-that-are-bad-6a68319fbc1a>

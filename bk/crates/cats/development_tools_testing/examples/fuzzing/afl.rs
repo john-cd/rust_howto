@@ -43,10 +43,14 @@ fn main() {
     });
 }
 
-#[test]
-fn test() {
-    // In a real fuzzing environment, this would run indefinitely.
-    // Here we just check that the function exists and can be called.
-    fuzz_me(b"safe");
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        // In a real fuzzing environment, this would run indefinitely.
+        // Here we just check that the function exists and can be called.
+        fuzz_me(b"safe");
+    }
 }
 // ANCHOR_END: example

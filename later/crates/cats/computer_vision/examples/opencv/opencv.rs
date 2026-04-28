@@ -53,8 +53,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main().unwrap();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main().unwrap();
+    }
 }
 // [review; expand example; review https://blog.devgenius.io/rust-and-opencv-bb0467bf35ff](https://github.com/john-cd/rust_howto/issues/1079)

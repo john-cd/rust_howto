@@ -58,7 +58,11 @@ fn calculate_hash<T: Hash>(t: &T) -> u64 {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
 }

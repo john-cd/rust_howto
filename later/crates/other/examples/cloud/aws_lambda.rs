@@ -55,6 +55,7 @@ async fn main() -> Result<(), Error> {
 
 #[cfg(test)]
 mod tests {
+    use super::*;
     #[test]
     fn require_network() {
         // main(); // TODO test removed to prevent lambda running directly

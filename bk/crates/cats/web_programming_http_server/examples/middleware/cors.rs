@@ -53,8 +53,12 @@ async fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn require_network() -> Result<()> {
-    main()?;
-    Ok(())
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn require_network() -> Result<()> {
+        main()?;
+        Ok(())
+    }
 }

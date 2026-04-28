@@ -33,10 +33,15 @@ pub fn hello_from_rust(name: &str) -> String {
 
 fn main() {}
 
-#[test]
-fn test() {
-    main();
-}
 // ANCHOR_END: example
 
 // [finish; reorg as a project using flutter_rust_bridge_codegen](https://github.com/john-cd/rust_howto/issues/1028)
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
+}

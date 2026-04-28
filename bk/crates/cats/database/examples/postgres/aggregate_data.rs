@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
+// This example demonstrates aggregating query results in PostgreSQL using the
+// `postgres` crate.
 use postgres::Client;
 use postgres::Error;
 use postgres::NoTls;

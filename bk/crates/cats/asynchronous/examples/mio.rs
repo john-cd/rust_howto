@@ -39,6 +39,7 @@ fn main() -> std::io::Result<()> {
 
 #[cfg(test)]
 mod tests {
+    use super::*;
     #[test]
     fn test() {
         main().unwrap();

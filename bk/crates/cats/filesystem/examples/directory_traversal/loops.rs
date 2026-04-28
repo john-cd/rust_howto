@@ -52,20 +52,27 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    // mkdir -p /tmp/foo/bar/baz
-    if let Ok(exists) = std::fs::exists("/tmp/foo/bar/baz") {
-        if !exists {
-            std::fs::create_dir_all("/tmp/foo/bar/baz")?;
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() -> anyhow::Result<()> {
+        // mkdir -p /tmp/foo/bar/baz
+        if let Ok(exists) = std::fs::exists("/tmp/foo/bar/baz") {
+            if !exists {
+                std::fs::create_dir_all("/tmp/foo/bar/baz")?;
+            }
         }
-    }
-    // ln -s /tmp/foo/ /tmp/foo/bar/baz/qux
-    if let Ok(exists) = std::fs::exists("/tmp/foo/bar/baz/qux") {
-        if !exists {
-            std::os::unix::fs::symlink("/tmp/foo/", "/tmp/foo/bar/baz/qux")?;
+        // ln -s /tmp/foo/ /tmp/foo/bar/baz/qux
+        if let Ok(exists) = std::fs::exists("/tmp/foo/bar/baz/qux") {
+            if !exists {
+                std::os::unix::fs::symlink(
+                    "/tmp/foo/",
+                    "/tmp/foo/bar/baz/qux",
+                )?;
+            }
         }
+        main();
+        Ok(())
     }
-    main();
-    Ok(())
 }

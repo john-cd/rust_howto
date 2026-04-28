@@ -10,8 +10,12 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[should_panic]
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[should_panic]
+    #[test]
+    fn test() {
+        main();
+    }
 }

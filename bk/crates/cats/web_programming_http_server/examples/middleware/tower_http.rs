@@ -90,8 +90,12 @@ async fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-fn require_network() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn require_network() {
+        main();
+    }
 }
 // [review](https://github.com/john-cd/rust_howto/issues/871)

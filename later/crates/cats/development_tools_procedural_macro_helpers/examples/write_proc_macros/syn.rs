@@ -71,9 +71,13 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }
 // [finish. See https://github.com/dtolnay/syn/tree/master/examples](https://github.com/john-cd/rust_howto/issues/743)

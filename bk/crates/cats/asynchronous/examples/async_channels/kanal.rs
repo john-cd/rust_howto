@@ -53,6 +53,7 @@ async fn consumer(rx: AsyncReceiver<i32>) -> anyhow::Result<()> {
 
 #[cfg(test)]
 mod tests {
+    use super::*;
     #[test]
     fn test() -> anyhow::Result<()> {
         main()?;

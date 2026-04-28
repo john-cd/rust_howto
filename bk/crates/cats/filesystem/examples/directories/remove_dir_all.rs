@@ -46,8 +46,12 @@ fn main() -> io::Result<()> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() -> io::Result<()> {
-    main()?;
-    Ok(())
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() -> io::Result<()> {
+        main()?;
+        Ok(())
+    }
 }

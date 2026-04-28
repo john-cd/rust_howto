@@ -120,6 +120,7 @@ fn main() -> Result<()> {
 
 #[cfg(test)]
 mod tests {
+    use super::*;
     #[test]
     fn test() -> anyhow::Result<()> {
         main()?;

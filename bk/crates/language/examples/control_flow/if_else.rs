@@ -29,7 +29,11 @@ fn main() {
 // All branches of an `if/else` expression must evaluate to the same type.
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
 }
