@@ -118,5 +118,8 @@ fn heap_usage_testing() {
 fn test() {
     main();
 }
-// TODO automate: cargo run --features dhat-heap / cargo run --features
-// dhat-ad-hoc
+// TODO
+// Run the example with:
+//   cargo run --features dhat-heap
+// or:
+//   cargo run --features dhat-ad-hoc

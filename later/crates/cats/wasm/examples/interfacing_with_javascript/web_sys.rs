@@ -9,7 +9,9 @@ use web_sys::window;
 #[wasm_bindgen]
 pub fn show_alert() {
     if let Some(window) = window() {
-        window.alert_with_message("Hello from Rust!").expect("Failed to show alert");
+        window
+            .alert_with_message("Hello from Rust!")
+            .expect("Failed to show alert");
     }
 }
 // ANCHOR_END: example

@@ -3,7 +3,9 @@
 /// This example demonstrates a simple panic.
 /// When executed, it will cause the program to terminate abruptly.
 fn main() {
-    println!("panic example: calling panic! causes immediate program termination");
+    println!(
+        "panic example: calling panic! causes immediate program termination"
+    );
     panic!("Crash and burn");
 }
 // ANCHOR_END: example
