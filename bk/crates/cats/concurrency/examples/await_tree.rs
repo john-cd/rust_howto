@@ -75,7 +75,8 @@ async fn foo(n: i32) {
 
     // Spans of joined futures will be siblings in the tree.
     join(
-        bar(n).instrument_await(format!("bar {n}")), // The span can be a `String`.
+        bar(n).instrument_await(format!("bar {n}")), /* The span can be a
+                                                      * `String`. */
         baz(n).instrument_await("baz"), // or `&'static str`.
     )
     .await;

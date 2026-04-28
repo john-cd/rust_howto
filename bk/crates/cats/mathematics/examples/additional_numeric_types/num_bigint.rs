@@ -24,7 +24,10 @@ fn main() {
     // Multiply.
     let product = &a * &b;
     println!("Product: {product}");
-    assert_eq!(product.to_string(), "121932631137021795226185032733622923332237463801111263526900");
+    assert_eq!(
+        product.to_string(),
+        "121932631137021795226185032733622923332237463801111263526900"
+    );
 
     // Divide.
     let quotient = &b / &a;

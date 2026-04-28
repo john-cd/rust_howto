@@ -119,9 +119,9 @@ fn require_external_svc() -> anyhow::Result<()> {
 // To resolve this on Linux:
 // 1. Install `libaio1`: `sudo apt-get install libaio1`
 // 2. Download and extract the Oracle Instant Client.
-// 3. Set the `LD_LIBRARY_PATH` environment variable to the directory
-//    containing the Instant Client libraries:
-//    `export LD_LIBRARY_PATH=/path/to/instantclient:$LD_LIBRARY_PATH`
+// 3. Set the `LD_LIBRARY_PATH` environment variable to the directory containing
+//    the Instant Client libraries: `export
+//    LD_LIBRARY_PATH=/path/to/instantclient:$LD_LIBRARY_PATH`
 // 4. Alternatively, add the path to `/etc/ld.so.conf.d/` and run `ldconfig`.
 
 // The simplest Oracle Client is the free Oracle Instant Client.

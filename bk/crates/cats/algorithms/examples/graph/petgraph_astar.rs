@@ -19,11 +19,17 @@ fn main() {
     graph.add_edge(d, e, 1);
     graph.add_edge(c, e, 1);
 
-    let path = astar(&graph, a, |finish| finish == e, |e| *e.weight(), |node| {
-        let (x, y) = graph[node];
-        let (ex, ey) = graph[e];
-        (x.abs_diff(ex) + y.abs_diff(ey)) as u32
-    });
+    let path = astar(
+        &graph,
+        a,
+        |finish| finish == e,
+        |e| *e.weight(),
+        |node| {
+            let (x, y) = graph[node];
+            let (ex, ey) = graph[e];
+            (x.abs_diff(ex) + y.abs_diff(ey)) as u32
+        },
+    );
 
     println!("Shortest path from A to E:");
     if let Some((cost, path_nodes)) = path {

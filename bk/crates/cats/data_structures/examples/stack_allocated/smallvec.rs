@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
-use smallvec::{smallvec, SmallVec};
+use smallvec::SmallVec;
+use smallvec::smallvec;
 
 fn main() {
     // Create a SmallVec with a small inline capacity of 4.
@@ -29,7 +30,8 @@ fn main() {
 
     // The vector has now spilled over to the heap
     assert!(small_vec.spilled());
-    // The capacity grows upon spilling (typically doubling the original capacity)
+    // The capacity grows upon spilling (typically doubling the original
+    // capacity)
     assert_eq!(small_vec.capacity(), 8);
 
     // Print the state of the SmallVec after pushing beyond capacity.

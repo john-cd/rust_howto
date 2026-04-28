@@ -23,9 +23,7 @@ pub async fn main() -> anyhow::Result<()> {
     println!("Created '{input_filename}'");
 
     // 2. Asynchronously compress the file.
-    println!(
-        "Compressing '{input_filename}' to '{compressed_filename}'..."
-    );
+    println!("Compressing '{input_filename}' to '{compressed_filename}'...");
     compress_file_async(input_filename, compressed_filename).await?;
     println!("Compression complete.");
 
@@ -82,7 +80,7 @@ async fn decompress_file_async(
 fn test() -> anyhow::Result<()> {
     use std::fs;
     if !fs::exists("temp")? {
-       fs::create_dir("temp")?;
+        fs::create_dir("temp")?;
     }
     main()?;
     Ok(())

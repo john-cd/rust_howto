@@ -28,7 +28,9 @@ fn main() {
     log::info!("[root] info");
     log::debug!("[root] debug");
     foo::run();
-    println!("log_mod example: set RUST_LOG=debug to see module-specific log output above");
+    println!(
+        "log_mod example: set RUST_LOG=debug to see module-specific log output above"
+    );
 }
 // ANCHOR_END: example
 
