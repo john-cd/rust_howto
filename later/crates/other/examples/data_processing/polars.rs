@@ -58,22 +58,25 @@ fn main() -> anyhow::Result<()> {
 
     Ok(())
 }
-
-#[test]
-fn test() -> anyhow::Result<()> {
-    use std::fs;
-    use std::io::Write;
-    if !fs::exists("temp")? {
-        fs::create_dir("temp")?;
-    }
-    let mut file = fs::File::create("temp/data.csv")?;
-    writeln!(file, "some_column,another_column")?;
-    writeln!(file, "150,10.5")?;
-    writeln!(file, "50,5.0")?;
-    writeln!(file, "120,20.0")?;
-    writeln!(file, "150,15.5")?;
-
-    main()?;
-    Ok(())
-}
 // ANCHOR_END: example
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test() -> anyhow::Result<()> {
+        use std::fs;
+        use std::io::Write;
+        if !fs::exists("temp")? {
+            fs::create_dir("temp")?;
+        }
+        let mut file = fs::File::create("temp/data.csv")?;
+        writeln!(file, "some_column,another_column")?;
+        writeln!(file, "150,10.5")?;
+        writeln!(file, "50,5.0")?;
+        writeln!(file, "120,20.0")?;
+        writeln!(file, "150,15.5")?;
+
+        main()?;
+        Ok(())
+    }
+}

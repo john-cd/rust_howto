@@ -85,10 +85,12 @@ pub fn main() {
     let rt = tokio::runtime::Runtime::new().unwrap();
     rt.block_on(run()).unwrap();
 }
-
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test() {
+        main();
+    }
 }

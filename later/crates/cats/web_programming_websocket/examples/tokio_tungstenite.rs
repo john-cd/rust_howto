@@ -49,9 +49,17 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-#[test]
 fn require_network() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
 // [review https://github.com/snapview/tokio-tungstenite/tree/master/examples](https://github.com/john-cd/rust_howto/issues/1145)
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn require_network() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
+}

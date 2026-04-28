@@ -26,7 +26,10 @@ async fn main() {
 // Example from <https://tokio.rs/tokio/tutorial/hello-tokio>
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test() {
+        main();
+    }
 }

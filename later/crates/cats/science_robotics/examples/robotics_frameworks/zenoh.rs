@@ -73,10 +73,13 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }
 // [write](https://github.com/john-cd/rust_howto/issues/845)
 // <https://github.com/eclipse-zenoh/zenoh/tree/main/examples>
