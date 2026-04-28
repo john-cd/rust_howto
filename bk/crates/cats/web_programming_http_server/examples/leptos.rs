@@ -56,7 +56,9 @@
 fn main() {
     //     // FIXME
     //     mount_to_body(App);
-    println!("leptos example: a reactive web framework for building web UIs (see full implementation in the book)");
+    println!(
+        "leptos example: a reactive web framework for building web UIs (see full implementation in the book)"
+    );
 }
 
 // #[test]

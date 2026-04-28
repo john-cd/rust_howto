@@ -2,11 +2,10 @@
 // ANCHOR: example
 //! This example shows how to POST a file to a server.
 
-use tokio::fs::File;
-use tokio::io::AsyncReadExt;
-
 use anyhow::Result;
 use tokio::fs;
+use tokio::fs::File;
+use tokio::io::AsyncReadExt;
 
 #[tokio::main]
 async fn main() -> Result<()> {
@@ -31,7 +30,7 @@ async fn test() -> anyhow::Result<()> {
     let mut f = File::create("temp/message").await?;
     f.write_all(b"Hello").await?;
 
-    // In a CI environment, we might want to skip tests that require network access.
-    // main().await?;
+    // In a CI environment, we might want to skip tests that require network
+    // access. main().await?;
     Ok(())
 }
