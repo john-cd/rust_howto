@@ -14,14 +14,12 @@
 //! sam deploy --guided
 //! ```
 
-
 // ANCHOR: example
 use lambda_runtime::Error;
 use lambda_runtime::LambdaEvent;
 use lambda_runtime::service_fn;
 use serde::Deserialize;
 use serde::Serialize;
-
 use tracing_subscriber;
 
 #[derive(Deserialize)]

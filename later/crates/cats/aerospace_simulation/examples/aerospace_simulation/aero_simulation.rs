@@ -2,14 +2,14 @@
 // ANCHOR: example
 /// A basic 1D rocket launch simulation.
 struct Rocket {
-    mass_empty: f64,   // kg
-    fuel_mass: f64,    // kg
-    thrust: f64,       // N
-    burn_rate: f64,    // kg/s
-    drag_coeff: f64,   // dimensionless
-    area: f64,         // m^2
-    velocity: f64,     // m/s
-    altitude: f64,     // m
+    mass_empty: f64, // kg
+    fuel_mass: f64,  // kg
+    thrust: f64,     // N
+    burn_rate: f64,  // kg/s
+    drag_coeff: f64, // dimensionless
+    area: f64,       // m^2
+    velocity: f64,   // m/s
+    altitude: f64,   // m
 }
 
 impl Rocket {
@@ -22,7 +22,12 @@ impl Rocket {
         // Exponential atmosphere model
         let air_density = 1.225 * (-self.altitude / 8000.0).exp();
 
-        let drag = 0.5 * air_density * self.velocity.powi(2) * self.drag_coeff * self.area * self.velocity.signum();
+        let drag = 0.5
+            * air_density
+            * self.velocity.powi(2)
+            * self.drag_coeff
+            * self.area
+            * self.velocity.signum();
 
         let current_thrust = if self.fuel_mass > 0.0 {
             self.thrust
@@ -101,9 +106,21 @@ mod tests {
         rocket.update(1.0); // 1 second update
 
         // The rocket should move upwards and burn fuel
-        assert!(rocket.altitude > 0.0, "Rocket should have positive altitude");
-        assert!(rocket.velocity > 0.0, "Rocket should have positive velocity");
-        assert!(rocket.fuel_mass < 1500.0, "Rocket should have burned some fuel");
-        assert!(rocket.total_mass() < initial_mass, "Total mass should decrease");
+        assert!(
+            rocket.altitude > 0.0,
+            "Rocket should have positive altitude"
+        );
+        assert!(
+            rocket.velocity > 0.0,
+            "Rocket should have positive velocity"
+        );
+        assert!(
+            rocket.fuel_mass < 1500.0,
+            "Rocket should have burned some fuel"
+        );
+        assert!(
+            rocket.total_mass() < initial_mass,
+            "Total mass should decrease"
+        );
     }
 }

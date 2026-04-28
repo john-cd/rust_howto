@@ -41,7 +41,9 @@ fn main() {
     // but we can use the public associated function to create the struct:
     // ERROR: let _ = a_module::PublicStruct { private_val: true };
     let _ = a_module::PublicStruct::new(false);
-    println!("public_by_default example: enum variants and struct fields can be public by default");
+    println!(
+        "public_by_default example: enum variants and struct fields can be public by default"
+    );
 }
 // ANCHOR_END: example
 

@@ -5,19 +5,18 @@
 //! The application defines a single route (`/`) that returns
 //! "Hello, Shuttle!"  when accessed.
 //!
-//! - We define an async main function with the `shuttle_runtime::main` attribute
-//! to initialize the application.
-//! - Inside the `main` function, we create an instance of axum `Router` and define a
-//!   single route (/) that returns "Hello, Shuttle!" when accessed.
+//! - We define an async main function with the `shuttle_runtime::main`
+//!   attribute to initialize the application.
+//! - Inside the `main` function, we create an instance of axum `Router` and
+//!   define a single route (/) that returns "Hello, Shuttle!" when accessed.
 //! - We return an instance of `ShuttleAxum` with the initialized router.
 
-use axum::routing::get;
 use axum::Router;
+use axum::routing::get;
 
 #[shuttle_runtime::main]
 async fn axum() -> shuttle_axum::ShuttleAxum {
-    let router = Router::new()
-        .route("/", get(hello_world));
+    let router = Router::new().route("/", get(hello_world));
 
     Ok(router.into())
 }
