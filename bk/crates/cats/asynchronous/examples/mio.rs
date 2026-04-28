@@ -37,8 +37,11 @@ fn main() -> std::io::Result<()> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main().unwrap();
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test() {
+        main().unwrap();
+    }
 }
 // TODO add to a chapter on asynchronous programming with mio

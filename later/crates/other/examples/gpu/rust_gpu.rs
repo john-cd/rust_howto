@@ -28,9 +28,12 @@ pub fn main_vs(
 }
 // ANCHOR_END: example
 
-fn main() {}
+fn main() {} // TODO
 
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test() {
+        main();
+    }
 }

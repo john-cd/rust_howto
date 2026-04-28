@@ -13,7 +13,7 @@
 - [ ] polish hashing + algorithms
 - [ ] polish [learning.md](bk/src/learning.md)
 - [ ] polish [crate_selection](bk/src/crate_selection.md)
-- [x] polish [contributing](bk/src/appendices/contributing/index.md) [#529](https://github.com/john-cd/rust_howto/issues/529)
+- [?] polish [contributing](bk/src/appendices/contributing/index.md) [#529](https://github.com/john-cd/rust_howto/issues/529)
 - [ ] finish to add RBE link [#29](https://github.com/john-cd/rust_howto/issues/29).
 - [ ] Go through VS Code bookmarks - WIP.
 - [ ] Manually insert rest of cross-links between pages?
@@ -41,14 +41,14 @@
 - [ ] add tests WIP.
 - [ ] consolidate CLIs.
 - [ ] finish new tools in book_tooling
-- [x] [Web] Migrate to modern WebSocket echo service [async_tungstenite.rs](later/crates/cats/web_programming_websocket/examples/async_tungstenite.rs) ([#1058](https://github.com/john-cd/rust_howto/issues/1058))
-- [x] [Web] Implement Tonic gRPC example and server boilerplate [tonic.rs](bk/crates/cats/web_programming_http_server/examples/grpc/tonic.rs) ([#870](https://github.com/john-cd/rust_howto/issues/870))
-- [x] [Web] Update Hyper server example to 1.0 API and implement routing [hyper_server.rs](bk/crates/cats/web_programming_http_server/examples/hyper_server.rs) ([#866](https://github.com/john-cd/rust_howto/issues/866))
-- [x] [Web] Implement Axum routing, state, and review time limits [axum.rs](bk/crates/cats/web_programming_http_server/examples/axum.rs) ([#865](https://github.com/john-cd/rust_howto/issues/865))
-- [x] [Web] Implement Rocket Hello World and route mounting [rocket.rs](bk/crates/cats/web_programming_http_server/examples/rocket.rs) ([#869](https://github.com/john-cd/rust_howto/issues/869))
+- [?] [Web] Migrate to modern WebSocket echo service [async_tungstenite.rs](later/crates/cats/web_programming_websocket/examples/async_tungstenite.rs) ([#1058](https://github.com/john-cd/rust_howto/issues/1058))
+- [?] [Web] Implement Tonic gRPC example and server boilerplate [tonic.rs](bk/crates/cats/web_programming_http_server/examples/grpc/tonic.rs) ([#870](https://github.com/john-cd/rust_howto/issues/870))
+- [?] [Web] Update Hyper server example to 1.0 API and implement routing [hyper_server.rs](bk/crates/cats/web_programming_http_server/examples/hyper_server.rs) ([#866](https://github.com/john-cd/rust_howto/issues/866))
+- [?] [Web] Implement Axum routing, state, and review time limits [axum.rs](bk/crates/cats/web_programming_http_server/examples/axum.rs) ([#865](https://github.com/john-cd/rust_howto/issues/865))
+- [?] [Web] Implement Rocket Hello World and route mounting [rocket.rs](bk/crates/cats/web_programming_http_server/examples/rocket.rs) ([#869](https://github.com/john-cd/rust_howto/issues/869))
 - [?] [Web] Implement Leptos reactive counter and view mounting [leptos.rs](bk/crates/cats/web_programming_http_server/examples/leptos.rs) ([#867](https://github.com/john-cd/rust_howto/issues/867))
-- [x] [Web] Implement Async-GraphQL schema with Axum integration [async_graphql.rs](bk/crates/cats/web_programming_http_server/examples/async_graphql.rs) ([#864](https://github.com/john-cd/rust_howto/issues/864))
-- [x] [Web] Implement Actix-Web network requirement test [actix_web.rs](bk/crates/cats/web_programming_http_server/examples/actix_web.rs)
+- [?] [Web] Implement Async-GraphQL schema with Axum integration [async_graphql.rs](bk/crates/cats/web_programming_http_server/examples/async_graphql.rs) ([#864](https://github.com/john-cd/rust_howto/issues/864))
+- [?] [Web] Implement Actix-Web network requirement test [actix_web.rs](bk/crates/cats/web_programming_http_server/examples/actix_web.rs)
 - [ ] [Network] Finalize Pingora reverse proxy implementation [pingora.rs](bk/crates/cats/network_programming/examples/reverse_proxy/pingora.rs) ([#812](https://github.com/john-cd/rust_howto/issues/812))
 - [ ] [Network] Complete comprehensive reverse proxy section for Pingora and Rathole [reverse_proxy.md](bk/drafts/categories/network-programming/reverse_proxy.md) ([#424](https://github.com/john-cd/rust_howto/issues/424))
 - [ ] [Database] Fix heavy test orchestration for Tiberius MSSQL [tiberius.rs](bk/crates/cats/database/examples/mssql/tiberius.rs) ([#1019](https://github.com/john-cd/rust_howto/issues/1019))
@@ -61,14 +61,14 @@
 - [ ] Address all TODO comments in mdbook-utils codebase
 - [ ] Document all modules, functions, and structs in mdbook-utils
 - [ ] Generate `categories.md` stub in mdbook-utils
-- [ ] review cancelable example in `xmpl/`
-- [ ] move WIP examples from `playground/`
+- [?] review cancelable example in `xmpl/`
+- [?] move WIP examples from `playground/`
 - [ ] drafts: Finish
 - [ ] review drafts section for what I missed.
 - [ ] move categories back to src, after final review.
 - [ ] `other` section - move what's ready.
 - [ ] sccache for dev container setup?
-- [ ] Clean up playground crate
+- [?] Clean up playground crate
 - [ ] Move mdbook-utils repo ?
 - [ ] Setup bacon
 - [ ] Add git hooks to automate formatting / clippy check / fix before commit
@@ -3299,46 +3299,46 @@
 
 ### bk/crates/cats/asynchronous/Cargo.toml
 
-- [ ] do we need an example? mio = "1.0.2" ([bk/crates/cats/asynchronous/Cargo.toml](./bk/crates/cats/asynchronous/Cargo.toml#L28))
-- [ ] need an example smol = "2.0.2" ([bk/crates/cats/asynchronous/Cargo.toml](./bk/crates/cats/asynchronous/Cargo.toml#L34))
+- [?] do we need an example? mio = "1.0.2" ([bk/crates/cats/asynchronous/Cargo.toml](./bk/crates/cats/asynchronous/Cargo.toml#L28))
+- [?] need an example smol = "2.0.2" ([bk/crates/cats/asynchronous/Cargo.toml](./bk/crates/cats/asynchronous/Cargo.toml#L34))
 
 ### bk/crates/cats/asynchronous/examples/async_channels/postage.rs
 
-- [ ] [finish; polish postage.rs example / add examples for other queues; logging; stream, sink](https://github.com/john-cd/rust_howto/issues/80) ([bk/crates/cats/asynchronous/examples/async_channels/postage.rs](./bk/crates/cats/asynchronous/examples/async_channels/postage.rs#L76))
+- [?] [finish; polish postage.rs example / add examples for other queues; logging; stream, sink](https://github.com/john-cd/rust_howto/issues/80) ([bk/crates/cats/asynchronous/examples/async_channels/postage.rs](./bk/crates/cats/asynchronous/examples/async_channels/postage.rs#L76))
 
 ### bk/crates/cats/asynchronous/examples/streams/streams2.rs
 
-- [ ] [finish; asynchronous/streams.md: add more. streams2.rs is noplayground because it requires a network. rewrite](https://github.com/john-cd/rust_howto/issues/645) ([bk/crates/cats/asynchronous/examples/streams/streams2.rs](./bk/crates/cats/asynchronous/examples/streams/streams2.rs#L72))
+- [?] [finish; asynchronous/streams.md: add more. streams2.rs is noplayground because it requires a network. rewrite](https://github.com/john-cd/rust_howto/issues/645) ([bk/crates/cats/asynchronous/examples/streams/streams2.rs](./bk/crates/cats/asynchronous/examples/streams/streams2.rs#L72))
 
 ### bk/crates/cats/caching/examples/in_memory_cache/cached.rs
 
-- [ ] [review further](https://github.com/john-cd/rust_howto/issues/1354) ([bk/crates/cats/caching/examples/in_memory_cache/cached.rs](./bk/crates/cats/caching/examples/in_memory_cache/cached.rs#L66))
+- [?] [review further](https://github.com/john-cd/rust_howto/issues/1354) ([bk/crates/cats/caching/examples/in_memory_cache/cached.rs](./bk/crates/cats/caching/examples/in_memory_cache/cached.rs#L66))
 
 ### bk/crates/cats/command_line_interface/Cargo.toml
 
-- [ ] add examlep? clap_complete = "4.5.46" ([bk/crates/cats/command_line_interface/Cargo.toml](./bk/crates/cats/command_line_interface/Cargo.toml#L23))
-- [ ] add examle? colored = "3.0.0" ([bk/crates/cats/command_line_interface/Cargo.toml](./bk/crates/cats/command_line_interface/Cargo.toml#L24))
+- [?] add examlep? clap_complete = "4.5.46" ([bk/crates/cats/command_line_interface/Cargo.toml](./bk/crates/cats/command_line_interface/Cargo.toml#L23))
+- [?] add examle? colored = "3.0.0" ([bk/crates/cats/command_line_interface/Cargo.toml](./bk/crates/cats/command_line_interface/Cargo.toml#L24))
 
 ### bk/crates/cats/compression/examples/compression/flate2.rs
 
-- [ ] [read / write a file](https://github.com/john-cd/rust_howto/issues/1009) ([bk/crates/cats/compression/examples/compression/flate2.rs](./bk/crates/cats/compression/examples/compression/flate2.rs#L83))
+- [?] [read / write a file](https://github.com/john-cd/rust_howto/issues/1009) ([bk/crates/cats/compression/examples/compression/flate2.rs](./bk/crates/cats/compression/examples/compression/flate2.rs#L83))
 
 ### bk/crates/cats/compression/examples/tar/tar_compress.rs
 
-- [ ] [review; tar_compress.rs is noplayground - fix?](https://github.com/john-cd/rust_howto/issues/255) ([bk/crates/cats/compression/examples/tar/tar_compress.rs](./bk/crates/cats/compression/examples/tar/tar_compress.rs#L32))
+- [?] [review; tar_compress.rs is noplayground - fix?](https://github.com/john-cd/rust_howto/issues/255) ([bk/crates/cats/compression/examples/tar/tar_compress.rs](./bk/crates/cats/compression/examples/tar/tar_compress.rs#L32))
 
 ### bk/crates/cats/compression/examples/tar/tar_decompress.rs
 
-- [ ] [review; tar_decompress.rs is noplayground - fix?](https://github.com/john-cd/rust_howto/issues/254) ([bk/crates/cats/compression/examples/tar/tar_decompress.rs](./bk/crates/cats/compression/examples/tar/tar_decompress.rs#L24))
+- [?] [review; tar_decompress.rs is noplayground - fix?](https://github.com/john-cd/rust_howto/issues/254) ([bk/crates/cats/compression/examples/tar/tar_decompress.rs](./bk/crates/cats/compression/examples/tar/tar_decompress.rs#L24))
 
 ### bk/crates/cats/compression/examples/tar/tar_strip_prefix.rs
 
-- [ ] [review; tar_strip_prefix.rs is noplayground - fix?](https://github.com/john-cd/rust_howto/issues/256) ([bk/crates/cats/compression/examples/tar/tar_strip_prefix.rs](./bk/crates/cats/compression/examples/tar/tar_strip_prefix.rs#L36))
+- [?] [review; tar_strip_prefix.rs is noplayground - fix?](https://github.com/john-cd/rust_howto/issues/256) ([bk/crates/cats/compression/examples/tar/tar_strip_prefix.rs](./bk/crates/cats/compression/examples/tar/tar_strip_prefix.rs#L36))
 
 ### bk/crates/cats/concurrency/Cargo.toml
 
-- [ ] riker = "0.4.2" ([bk/crates/cats/concurrency/Cargo.toml](./bk/crates/cats/concurrency/Cargo.toml#L43))
-- [ ] stakker = "0.2.11" ([bk/crates/cats/concurrency/Cargo.toml](./bk/crates/cats/concurrency/Cargo.toml#L44))
+- [?] riker = "0.4.2" ([bk/crates/cats/concurrency/Cargo.toml](./bk/crates/cats/concurrency/Cargo.toml#L43))
+- [?] stakker = "0.2.11" ([bk/crates/cats/concurrency/Cargo.toml](./bk/crates/cats/concurrency/Cargo.toml#L44))
 
 ### bk/crates/cats/concurrency/examples/actors/actix.rs
 
@@ -3350,7 +3350,7 @@
 
 ### bk/crates/cats/concurrency/examples/actors/stakker.rs
 
-- [ ] [finish](https://github.com/john-cd/rust_howto/issues/94) ([bk/crates/cats/concurrency/examples/actors/stakker.rs](./bk/crates/cats/concurrency/examples/actors/stakker.rs#L79))
+- [?] [finish](https://github.com/john-cd/rust_howto/issues/94) ([bk/crates/cats/concurrency/examples/actors/stakker.rs](./bk/crates/cats/concurrency/examples/actors/stakker.rs#L79))
 
 ### bk/crates/cats/concurrency/examples/concurrent_data_structures/flurry.rs
 
@@ -3374,13 +3374,13 @@
 
 ### bk/crates/cats/cryptography/Cargo.toml
 
-- [ ] need an example? dsa = "0.6.3" ([bk/crates/cats/cryptography/Cargo.toml](./bk/crates/cats/cryptography/Cargo.toml#L28))
-- [ ] ecdsa = "0.16.9" ([bk/crates/cats/cryptography/Cargo.toml](./bk/crates/cats/cryptography/Cargo.toml#L31))
-- [ ] native-tls = "0.2.12" ([bk/crates/cats/cryptography/Cargo.toml](./bk/crates/cats/cryptography/Cargo.toml#L32))
-- [ ] pem-rfc7468 = "0.7.0" ([bk/crates/cats/cryptography/Cargo.toml](./bk/crates/cats/cryptography/Cargo.toml#L34))
-- [ ] rustls = "0.23.20" ([bk/crates/cats/cryptography/Cargo.toml](./bk/crates/cats/cryptography/Cargo.toml#L41))
-- [ ] tokio-rustls = "0.26.2" ([bk/crates/cats/cryptography/Cargo.toml](./bk/crates/cats/cryptography/Cargo.toml#L44))
-- [ ] x509-cert = "0.2.5" ([bk/crates/cats/cryptography/Cargo.toml](./bk/crates/cats/cryptography/Cargo.toml#L45))
+- [?] need an example? dsa = "0.6.3" ([bk/crates/cats/cryptography/Cargo.toml](./bk/crates/cats/cryptography/Cargo.toml#L28))
+- [?] ecdsa = "0.16.9" ([bk/crates/cats/cryptography/Cargo.toml](./bk/crates/cats/cryptography/Cargo.toml#L31))
+- [?] native-tls = "0.2.12" ([bk/crates/cats/cryptography/Cargo.toml](./bk/crates/cats/cryptography/Cargo.toml#L32))
+- [?] pem-rfc7468 = "0.7.0" ([bk/crates/cats/cryptography/Cargo.toml](./bk/crates/cats/cryptography/Cargo.toml#L34))
+- [?] rustls = "0.23.20" ([bk/crates/cats/cryptography/Cargo.toml](./bk/crates/cats/cryptography/Cargo.toml#L41))
+- [?] tokio-rustls = "0.26.2" ([bk/crates/cats/cryptography/Cargo.toml](./bk/crates/cats/cryptography/Cargo.toml#L44))
+- [?] x509-cert = "0.2.5" ([bk/crates/cats/cryptography/Cargo.toml](./bk/crates/cats/cryptography/Cargo.toml#L45))
 
 ### bk/crates/cats/cryptography/examples/certs/pem_rfc7468.rs
 
@@ -3412,13 +3412,13 @@
 
 ### bk/crates/cats/database/Cargo.toml
 
-- [ ] cassandra-protocol = { version = "3.3.0", optional = true } ([bk/crates/cats/database/Cargo.toml](./bk/crates/cats/database/Cargo.toml#L38))
-- [ ] cdrs-tokio = { version = "8.1.4", features = ["derive"], optional = true } ([bk/crates/cats/database/Cargo.toml](./bk/crates/cats/database/Cargo.toml#L39))
-- [ ] cornucopia = { version = "0.9.0", optional = true } ([bk/crates/cats/database/Cargo.toml](./bk/crates/cats/database/Cargo.toml#L40))
-- [ ] diesel_migrations = { version = "2.2.0", features = ["sqlite"], optional = true } ([bk/crates/cats/database/Cargo.toml](./bk/crates/cats/database/Cargo.toml#L44))
-- [ ] sea-orm = { version = "1.1.3", optional = true } ([bk/crates/cats/database/Cargo.toml](./bk/crates/cats/database/Cargo.toml#L59))
-- [ ] seaography = { version = "1.1.2", optional = true } ([bk/crates/cats/database/Cargo.toml](./bk/crates/cats/database/Cargo.toml#L60))
-- [ ] uuid = { version = "1", features = ["v4"] } ([bk/crates/cats/database/Cargo.toml](./bk/crates/cats/database/Cargo.toml#L67))
+- [?] cassandra-protocol = { version = "3.3.0", optional = true } ([bk/crates/cats/database/Cargo.toml](./bk/crates/cats/database/Cargo.toml#L38))
+- [?] cdrs-tokio = { version = "8.1.4", features = ["derive"], optional = true } ([bk/crates/cats/database/Cargo.toml](./bk/crates/cats/database/Cargo.toml#L39))
+- [?] cornucopia = { version = "0.9.0", optional = true } ([bk/crates/cats/database/Cargo.toml](./bk/crates/cats/database/Cargo.toml#L40))
+- [?] diesel_migrations = { version = "2.2.0", features = ["sqlite"], optional = true } ([bk/crates/cats/database/Cargo.toml](./bk/crates/cats/database/Cargo.toml#L44))
+- [?] sea-orm = { version = "1.1.3", optional = true } ([bk/crates/cats/database/Cargo.toml](./bk/crates/cats/database/Cargo.toml#L59))
+- [?] seaography = { version = "1.1.2", optional = true } ([bk/crates/cats/database/Cargo.toml](./bk/crates/cats/database/Cargo.toml#L60))
+- [?] uuid = { version = "1", features = ["v4"] } ([bk/crates/cats/database/Cargo.toml](./bk/crates/cats/database/Cargo.toml#L67))
 
 ### bk/crates/cats/database/examples/cassandra/cassandra_protocol.rs
 
@@ -3487,11 +3487,11 @@
 
 ### bk/crates/cats/date_and_time/Cargo.toml
 
-- [ ] add example  humantime = "2.1.0" ([bk/crates/cats/date_and_time/Cargo.toml](./bk/crates/cats/date_and_time/Cargo.toml#L19))
+- [?] add example  humantime = "2.1.0" ([bk/crates/cats/date_and_time/Cargo.toml](./bk/crates/cats/date_and_time/Cargo.toml#L19))
 
 ### bk/crates/cats/development_tools/Cargo.toml
 
-- [ ] add example doc-comment = "0.3.3" ([bk/crates/cats/development_tools/Cargo.toml](./bk/crates/cats/development_tools/Cargo.toml#L19))
+- [?] add example doc-comment = "0.3.3" ([bk/crates/cats/development_tools/Cargo.toml](./bk/crates/cats/development_tools/Cargo.toml#L19))
 
 ### bk/crates/cats/development_tools_build_utils/build.rs
 

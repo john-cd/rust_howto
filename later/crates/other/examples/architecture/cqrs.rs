@@ -379,44 +379,45 @@ fn main() -> anyhow::Result<()> {
     }
     Ok(())
 }
-
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    // We just execute main, which shouldn't panic
-    let _ = main();
-    Ok(())
-}
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test() -> anyhow::Result<()> {
+        // We just execute main, which shouldn't panic
+        let _ = main();
+        Ok(())
+    }
 
-#[test]
-fn test_negative_quantity_update_returns_error() -> anyhow::Result<()> {
-    let event_store = events::SimpleEventStore::new();
-    let command_handler = commands::CommandHandler::new(event_store);
+    #[test]
+    fn test_negative_quantity_update_returns_error() -> anyhow::Result<()> {
+        let event_store = events::SimpleEventStore::new();
+        let command_handler = commands::CommandHandler::new(event_store);
 
-    command_handler.process(commands::Command::CreateProduct {
-        id: 1,
-        name: "Test Product".to_string(),
-        quantity: 10,
-    })?;
-
-    let result =
-        command_handler.process(commands::Command::UpdateProductQuantity {
+        command_handler.process(commands::Command::CreateProduct {
             id: 1,
-            quantity_change: -11,
-        });
+            name: "Test Product".to_string(),
+            quantity: 10,
+        })?;
 
-    assert!(result.is_err());
-    assert!(
-        result
-            .unwrap_err()
-            .to_string()
-            .contains("Update would result in negative quantity")
-    );
+        let result =
+            command_handler.process(commands::Command::UpdateProductQuantity {
+                id: 1,
+                quantity_change: -11,
+            });
 
-    Ok(())
+        assert!(result.is_err());
+        assert!(
+            result
+                .unwrap_err()
+                .to_string()
+                .contains("Update would result in negative quantity")
+        );
+
+        Ok(())
+    }
 }
-
 // TODO
 // Notes:
 // - This example can be extended with a `get_all_products()` query method,
