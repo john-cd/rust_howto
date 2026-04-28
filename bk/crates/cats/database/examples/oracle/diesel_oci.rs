@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-// ANCHOR_END: example
 use std::env;
 
 // Import diesel.
@@ -12,14 +11,15 @@ use diesel_oci::OciConnection;
 // sensitive information like database credentials.
 use dotenvy::dotenv;
 
+// ANCHOR: example
 // `diesel_oci` is a Diesel backend and connection implementation for Oracle
 // databases.
 
 // In your `Cargo.toml`, add the following dependencies:
 // [dependencies]
-// diesel = { version = "2.2.6", features = [ ] }
-// diesel-oci = "0.3.0"
-// dotenvy = "0.15.0"
+// diesel = { version = "2.3.3", features = [ ] }
+// diesel-oci = "0.4.0"
+// dotenvy = "0.15.7"
 // tokio = { version = "1", features = ["full"] }
 
 diesel::table! {
@@ -62,7 +62,7 @@ fn main() -> anyhow::Result<()> {
     let mut connection: OciConnection =
         establish_connection(&db_url, &username, &password)?;
 
-        // Query the database (fetching users as an example)
+    // Query the database (fetching users as an example)
     let results = diesel::sql_query("SELECT * FROM users WHERE ROWNUM <= 5")
         .load::<User>(&mut connection)?;
 
@@ -91,8 +91,10 @@ fn establish_connection(
     // Create and return the connection
     OciConnection::establish(&connection_string)
 }
+// ANCHOR_END: example
 
 #[test]
+#[ignore = "requires external oracle db and oracle client library"]
 fn require_external_svc() -> anyhow::Result<()> {
     let _lock = super::ENV_MUTEX.lock().unwrap();
     let username = std::env::var("TEST_ORACLE_DB_USERNAME")
@@ -110,9 +112,19 @@ fn require_external_svc() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [finish; debug: Issue: Cannot locate a 64-bit Oracle Client library; need heavy test](https://github.com/john-cd/rust_howto/issues/1020)
 
-// figure out install of the client
+// TODO review
+// Troubleshooting "DPI-1047: Cannot locate a 64-bit Oracle Client library"
+// This error occurs when the Oracle Instant Client is not installed or not
+// in the system's library path.
+//
+// To resolve this on Linux:
+// 1. Install `libaio1`: `sudo apt-get install libaio1`
+// 2. Download and extract the Oracle Instant Client.
+// 3. Set the `LD_LIBRARY_PATH` environment variable to the directory
+//    containing the Instant Client libraries:
+//    `export LD_LIBRARY_PATH=/path/to/instantclient:$LD_LIBRARY_PATH`
+// 4. Alternatively, add the path to `/etc/ld.so.conf.d/` and run `ldconfig`.
 
 // The simplest Oracle Client is the free Oracle Instant Client.
 // Only the "Basic" or "Basic Light" package is required.
