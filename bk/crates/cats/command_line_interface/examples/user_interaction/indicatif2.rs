@@ -38,7 +38,9 @@ fn progress() {
 
 fn main() -> anyhow::Result<()> {
     progress();
-    println!("indicatif example: progress bar displayed (visible in terminal, suppressed in non-terminal output)");
+    println!(
+        "indicatif example: progress bar displayed (visible in terminal, suppressed in non-terminal output)"
+    );
     Ok(())
 }
 // ANCHOR_END: example

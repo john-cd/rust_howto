@@ -32,7 +32,8 @@ pub fn main() -> Result<(), Error> {
     // Bulk insert the authors into the database to prevent N+1 queries.
     // Build the query string and the parameters vector.
     if !authors.is_empty() {
-        let mut query = String::from("INSERT INTO author (name, country) VALUES ");
+        let mut query =
+            String::from("INSERT INTO author (name, country) VALUES ");
         let mut params: Vec<&(dyn ToSql + Sync)> = Vec::new();
 
         for (i, (key, value)) in authors.iter().enumerate() {

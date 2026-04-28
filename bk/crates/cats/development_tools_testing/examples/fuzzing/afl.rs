@@ -28,7 +28,8 @@ fn fuzz_me(data: &[u8]) {
         return;
     }
 
-    if data[0] == b'f' && data[1] == b'u' && data[2] == b'z' && data[3] == b'z' {
+    if data[0] == b'f' && data[1] == b'u' && data[2] == b'z' && data[3] == b'z'
+    {
         panic!("Fuzzing triggered!");
     }
 }

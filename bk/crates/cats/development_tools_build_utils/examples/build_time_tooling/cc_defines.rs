@@ -14,7 +14,9 @@ fn main() {
     //     .define("WELCOME", None)
     //     .file("src/foo.c")
     //     .compile("foo");
-    println!("cc_defines example: defines C preprocessor macros for use in C source files");
+    println!(
+        "cc_defines example: defines C preprocessor macros for use in C source files"
+    );
 }
 // ANCHOR_END: example
 

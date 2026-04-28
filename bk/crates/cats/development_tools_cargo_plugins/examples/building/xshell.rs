@@ -118,8 +118,9 @@ fn main() -> anyhow::Result<()> {
     println!("Via Rust variable interpolation: '{via_interpolation}'");
     assert_eq!(via_interpolation, "my_value");
 
-    // Alternatively, to expand shell variables you can invoke a shell explicitly.
-    // Note: this is NOT cross-platform (requires `sh` to be available).
+    // Alternatively, to expand shell variables you can invoke a shell
+    // explicitly. Note: this is NOT cross-platform (requires `sh` to be
+    // available).
     let via_sh = cmd!(sh, "sh -c 'echo $MY_VAR'").read()?;
     println!("Via sh -c (shell expansion): '{via_sh}'");
     assert_eq!(via_sh, "my_value");

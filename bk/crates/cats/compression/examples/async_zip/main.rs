@@ -1,8 +1,8 @@
 use anyhow::Result;
-use async_zip::{
-    Compression, ZipEntryBuilder, base::read::mem::ZipFileReader,
-    base::write::ZipFileWriter,
-};
+use async_zip::Compression;
+use async_zip::ZipEntryBuilder;
+use async_zip::base::read::mem::ZipFileReader;
+use async_zip::base::write::ZipFileWriter;
 use futures_lite::io::AsyncReadExt as FuturesAsyncReadExt;
 use tokio::fs::File;
 use tokio::io::AsyncReadExt;
