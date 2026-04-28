@@ -16,7 +16,7 @@ fn capnp() {
 fn prost() {
     prost_build::compile_protos(
         &["examples/binary_encoders/person.proto"],
-        &["src/"],
+        &["examples/binary_encoders/"],
     )
     .unwrap();
 }
@@ -25,6 +25,6 @@ fn prost() {
 fn main() {
     #[cfg(target_os = "linux")]
     capnp();
-    // prost();
+    prost();
 }
 // [fix prost](https://github.com/john-cd/rust_howto/issues/1417)
