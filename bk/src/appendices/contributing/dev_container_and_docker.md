@@ -2,12 +2,29 @@
 
 {{#include dev_container_and_docker.incl.md}}
 
-The `development` target of the multi-stage `.devcontainer/Dockerfile` is used by `.devcontainer/devcontainer.json` to install [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} and rust tooling{{hi:Rust tooling}}.
+The `.devcontainer/Dockerfile` uses a multi-stage build{{hi:Multi-stage build}} to optimize the image size and build time.
+
+## Multi-stage Build Strategy {#multi-stage-build-strategy}
+
+The `Dockerfile` is organized into three main stages:
+
+1.  **`base` stage**: Contains all the system dependencies, common Rust tools (like `clippy`, `rustfmt`), and specialized tools (like `mdbook`, `pandoc`, `tectonic`). It serves as the foundation for the other stages.
+2.  **`development` stage**: Extends the `base` stage with additional tools for local development, such as `jq`, `fzf`, the GitHub CLI (`gh`), and debugging tools like `bacon` and `kani-verifier`. It is used by [Dev Container][ex~contributing~using-vs-code]↗ and contains user-specific configuration (like Git settings).
+3.  **`ci` stage**: Also extends the `base` stage. It is optimized for building the book in Continuous Integration environments (like GitHub Actions). It copies the entire repository into the image and uses a specific entrypoint script to build the documentation.
+
+The `development` target is used by `.devcontainer/devcontainer.json` to install [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} and rust tooling{{hi:Rust tooling}}.
+
+## Rust and Docker {#rust-and-docker}
+
+The project uses several tools and techniques to optimize the Rust development experience within Docker:
+
+-   **`cargo binstall`**: To speed up the image build process, we use [`cargo-binstall`][c~cargo-binstall~repo]↗ to install Rust tools as pre-compiled binaries whenever possible, rather than compiling them from source.
+-   **`sccache`**: We use [`sccache`][c~sccache~repo]↗ (Shared Compilation Cache) to cache Rust compilation artifacts. This significantly speeds up subsequent builds by avoiding redundant compilation.
 
 If you don't want to use Dev Container{{hi:Dev Container}}, use the following from the project's root directory to manually build the [`docker`][docker~website]↗{{hi:docker}} image and run it.
 
 ```bash
-docker build --file .devcontainer/Dockerfile --target development --tag rust_howto_dev --build-arg RUST_IMAGE_LABEL=1.75.0-slim-bookworm --build-arg MDBOOK_VERSION=0.4.36 .
+docker build --file .devcontainer/Dockerfile --target development --tag rust_howto_dev --build-arg RUST_IMAGE_LABEL=1.88.0-slim-trixie --build-arg MDBOOK_VERSION=0.4.49 .
 docker run --rm --detach --name rust_howto_dev1 --volume $(pwd):/code rust_howto_dev
 docker exec -it rust_howto_dev1 bash
 ```
@@ -54,7 +71,7 @@ It uses the `ci` target in `.devcontainer/Dockerfile`.
 To test the [`docker`][docker~website]↗{{hi:docker}} image manually, use
 
 ```bash
-docker build --file .devcontainer/Dockerfile --target ci --tag rust_howto_ci --build-arg RUST_IMAGE_LABEL=1.75.0-slim-bookworm --build-arg MDBOOK_VERSION=0.4.36 .
+docker build --file .devcontainer/Dockerfile --target ci --tag rust_howto_ci --build-arg RUST_IMAGE_LABEL=1.88.0-slim-trixie --build-arg MDBOOK_VERSION=0.4.49 .
 docker run -it --rm --name rust_howto_ci1 --volume $(pwd)/book:/code/bk/book rust_howto_ci bash
 ```
 
@@ -65,7 +82,7 @@ docker run -it --rm --name rust_howto_ci1 --volume $(pwd)/book:/code/bk/book rus
 From the project root folder, use the following to build and push the `development` image:
 
 ```bash
-docker build --file .devcontainer/Dockerfile --target development --tag johncd/rust_howto_dev:latest --build-arg RUST_IMAGE_LABEL=1.75.0-slim-bookworm --build-arg MDBOOK_VERSION=0.4.36 .
+docker build --file .devcontainer/Dockerfile --target development --tag johncd/rust_howto_dev:latest --build-arg RUST_IMAGE_LABEL=1.88.0-slim-trixie --build-arg MDBOOK_VERSION=0.4.49 .
 # Or `docker tag rust_howto_dev johncd/rust_howto_dev:latest`
 docker login
 # Or `docker login -u "user" -p "password" docker.io`
@@ -75,7 +92,7 @@ docker push johncd/rust_howto_dev:latest
 Use the following to build and push the CI image:
 
 ```bash
-docker build --file .devcontainer/Dockerfile --target ci --tag johncd/rust_howto_ci --build-arg RUST_IMAGE_LABEL=1.75.0-slim-bookworm --build-arg MDBOOK_VERSION=0.4.36 .
+docker build --file .devcontainer/Dockerfile --target ci --tag johncd/rust_howto_ci --build-arg RUST_IMAGE_LABEL=1.88.0-slim-trixie --build-arg MDBOOK_VERSION=0.4.49 .
 docker login
 docker push johncd/rust_howto_ci:latest
 ```
@@ -87,10 +104,3 @@ docker push johncd/rust_howto_ci:latest
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[dev_container_docker: review; rust and Docker; multistage builds](https://github.com/john-cd/rust_howto/issues/525)
-
-- [[development-tools | Development Tools]].
-
-</div>
