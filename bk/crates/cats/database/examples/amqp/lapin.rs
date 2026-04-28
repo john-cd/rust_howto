@@ -108,15 +108,20 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn require_external_svc() -> anyhow::Result<()> {
-    unsafe {
-        // Refer to the `compose*.yaml` files:
-        std::env::set_var(
-            "AMQP_ADDR",
-            "amqp://guest:guest@rust_howto_dev-amqp-1:5672",
-        );
+#[cfg(test)]
+mod tests {
+    use super::*;
+    // TODO
+    #[test]
+    fn require_external_svc() -> anyhow::Result<()> {
+        unsafe {
+            // Refer to the `compose*.yaml` files:
+            std::env::set_var(
+                "AMQP_ADDR",
+                "amqp://guest:guest@rust_howto_dev-amqp-1:5672",
+            );
+        }
+        main()?;
+        Ok(())
     }
-    main()?;
-    Ok(())
 }

@@ -52,9 +52,14 @@ fn my_module(module: &Bound<'_, PyModule>) -> PyResult<()> {
 
 fn main() {}
 
-#[test]
-fn test() {
-    main();
-}
 // ANCHOR_END: example
 // [finish; fix](https://github.com/john-cd/rust_howto/issues/996)
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
+}

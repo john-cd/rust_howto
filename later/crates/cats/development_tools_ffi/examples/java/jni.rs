@@ -1,7 +1,8 @@
 #![allow(dead_code)]
 // ANCHOR: example
 use jni::JNIEnv;
-use jni::objects::{JClass, JString};
+use jni::objects::JClass;
+use jni::objects::JString;
 
 // In `Cargo.toml`, under [dependencies], add jni = "0.21.1"
 // Build the Rust code as a dynamic library (e.g., a .so file for Linux, .dll
@@ -53,9 +54,14 @@ pub extern "C" fn Java_com_example_NativeLibrary_greet<'a>(
 
 fn main() {}
 
-#[test]
-fn test() {
-    main();
-}
 // ANCHOR_END: example
 // [finish](https://github.com/john-cd/rust_howto/issues/1029)
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
+}

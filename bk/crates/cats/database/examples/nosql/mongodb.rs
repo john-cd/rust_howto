@@ -52,21 +52,25 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn require_external_svc() -> anyhow::Result<()> {
-    unsafe {
-        // Set the MONGO_URI environment variable to connect to the MongoDB
-        // service. Refer to the compose*.yaml files for the service
-        // configuration.
-        let password =
-            env::var("MONGO_PASSWORD").expect("MONGO_PASSWORD must be set");
-        env::set_var(
-            "MONGO_URI",
-            format!(
-                "mongodb://mongoadmin:{password}@rust_howto_dev-mongodb-1:27017/"
-            ),
-        );
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn require_external_svc() -> anyhow::Result<()> {
+        unsafe {
+            // Set the MONGO_URI environment variable to connect to the MongoDB
+            // service. Refer to the compose*.yaml files for the service
+            // configuration.
+            let password =
+                env::var("MONGO_PASSWORD").expect("MONGO_PASSWORD must be set");
+            env::set_var(
+                "MONGO_URI",
+                format!(
+                    "mongodb://mongoadmin:{password}@rust_howto_dev-mongodb-1:27017/"
+                ),
+            );
+        }
+        main()?;
+        Ok(())
     }
-    main()?;
-    Ok(())
 }

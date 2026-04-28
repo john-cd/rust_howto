@@ -93,7 +93,6 @@ fn main() -> anyhow::Result<()> {
 ///
 /// This function sets up temporary configuration files, runs the main
 /// function, and cleans up afterwards.
-#[test]
 fn test() -> anyhow::Result<()> {
     use std::fs;
 
@@ -153,3 +152,67 @@ level = "debug"
     Ok(())
 }
 // ANCHOR_END: example
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() -> anyhow::Result<()> {
+        use std::fs;
+
+        // Create the temp folder, if needed.
+        if !fs::exists("temp")? {
+            fs::create_dir("temp")?;
+        }
+
+        // Create the base configuration file.
+        let default_toml = r#"
+    [service]
+    name = "UserService"
+    port = 8080
+
+    [database]
+    url = "postgresql://user:password@localhost:5432/mydb"
+    max_connections = 50
+
+    [logging]
+    level = "info"
+    "#;
+
+        fs::write("temp/default.toml", default_toml)?;
+
+        // Preparation: create a configuration file for the "development"
+        // environment.
+        let dev_toml = r#"
+    [database]
+    max_connections = 5
+
+    [logging]
+    level = "debug"
+    "#;
+
+        fs::write("temp/development.toml", dev_toml)?;
+
+        // Set environment variables to override specific settings, e.g.:
+        // ```sh
+        // export APP_SERVICE__PORT=9000
+        // export APP_DATABASE__MAX_CONNECTIONS=25
+        // export APP_LOGGING__LEVEL=error
+        // ```
+        unsafe {
+            // Override the name in this example:
+            std::env::set_var("APP_SERVICE__NAME", "MyService");
+        }
+
+        main()?;
+
+        unsafe {
+            std::env::remove_var("APP_SERVICE__NAME");
+        }
+
+        fs::remove_file("temp/default.toml")?;
+        fs::remove_file("temp/development.toml")?;
+
+        Ok(())
+    }
+}

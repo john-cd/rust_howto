@@ -167,7 +167,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main().unwrap();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main().unwrap();
+    }
 }

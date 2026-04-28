@@ -44,6 +44,7 @@ fn main() -> anyhow::Result<()> {
 
 #[cfg(test)]
 mod tests {
+    use super::*;
     #[test]
     fn test() -> anyhow::Result<()> {
         main()?;

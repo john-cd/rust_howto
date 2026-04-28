@@ -124,9 +124,14 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
 #[ignore = "Needs review"]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    #[ignore = "Needs review"]
+    fn test() {
+        main();
+    }
 }
 // [review / test](https://github.com/john-cd/rust_howto/issues/822)

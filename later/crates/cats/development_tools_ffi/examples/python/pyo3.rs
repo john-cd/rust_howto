@@ -64,9 +64,14 @@ fn main() {
     println!("{:?}", test_my_function());
 }
 
-#[test]
-fn test() {
-    main();
-}
 // ANCHOR_END: example
 // [finish; fix py examples](https://github.com/john-cd/rust_howto/issues/78)
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
+}

@@ -1,21 +1,32 @@
 #![allow(dead_code)]
 // ANCHOR: example
 // Seaography is an automated GraphQL framework for SeaORM.
-// You do not write query builder logic by hand. Instead, you use the
-// seaography-cli to auto-generate the server from your existing database:
+// It is primarily driven by generated code rather than hand-written query
+// builders.
 //
-// 1. Generate entities using sea-orm-cli: sea-orm-cli generate entity -o
-//    src/entities -u sqlite://sakila.db --seaography
+// 1. Generate SeaORM entities from your existing database:
+// ```sh
+// sea-orm-cli generate entity -o src/entities -u sqlite://sakila.db --seaography
+// ```
 //
-// 2. Generate the GraphQL server project using seaography-cli: seaography-cli
-//    ./ src/entities sqlite://sakila.db seaography-sqlite-example
+// 2. Generate the GraphQL server project:
+// ```sh
+// seaography-cli ./ src/entities sqlite://sakila.db seaography-sqlite-example
+// ```
 //
-// 3. Start the server: cd seaography-sqlite-example && cargo run
+// 3. Run the generated server:
+// ```sh
+// cd seaography-sqlite-example && cargo run
+// ```
 // ANCHOR_END: example
 
-fn main() {}
+fn main() {} // TODO: Add an example of using the generated code from Seaography to interact with the database.
 
-#[test]
-fn require_external_svc() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn require_external_svc() {
+        main();
+    }
 }

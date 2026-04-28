@@ -27,10 +27,14 @@ fn main() {
     // In a real application, you would define modules and classes here.
 }
 
-#[test]
-fn test() {
-    // main();
-}
 // ANCHOR_END: example
 
 // [finish](https://github.com/john-cd/rust_howto/issues/1036)
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test() {
+        // main();
+    }
+}

@@ -55,7 +55,7 @@ fn cli() -> clap::Command {
 }
 
 #[cfg(test)]
-mod tests {
+mod tests { use super::*;
     #[test]
     fn test_app() {
         cli().debug_assert();
