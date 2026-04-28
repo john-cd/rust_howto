@@ -1,19 +1,106 @@
 # syntax=docker/dockerfile:1-labs
 
+# This Dockerfile defines multiple stages to build a Rust development environment optimized for building the Rust How-To book and its examples.
+# The stages are:
+# 1. `tool-builder`: Builds and installs Rust tools and binaries (e.g., mdbook and its plugins) in a Rust image.
+# 2. `base`: Sets up the base image with necessary system dependencies and copies the tools from the builder stage.
+# 3. `tools-app-builder`: Builds local Rust tools (e.g., mdbook-scrub) from the source code.
+# 4. `development`: The final image for development, which includes additional tools and configurations for an optimal development experience.
+# 5. `ci`: A stage optimized for Continuous Integration, which includes only the necessary tools and dependencies to build the book in a CI environment.
+# Each stage is designed to optimize caching and reduce the final image size by only including necessary components
+#
 # Dockerfile reference guide at
 # https://docs.docker.com/go/dockerfile-reference/
 # See also https://docs.docker.com/language/rust/
+
+# ------------------------------------------------------------------------------------------------
+# The base Rust image stage, used as the starting point for both the tool builders and the final images.
 
 # The default value is overriden by the build arg passed by compose.yaml,
 # itself set from the RUST_IMAGE_LABEL env. variable in `.devcontainer/.env` file
 ARG RUST_IMAGE_LABEL=invalid
 
-FROM rust:${RUST_IMAGE_LABEL} AS base
-## Alternative: mcr.microsoft.com/devcontainers/rust:bookworm
+FROM rust:${RUST_IMAGE_LABEL} AS rust-core
 ## Repo for the Rust images: https://github.com/rust-lang/docker-rust/tree/master
 ## The full Rust image depends on https://github.com/docker-library/buildpack-deps
 
+## Install stable rustfmt (used by `rust-analyzer` e.g. when using VS code) and clippy
+RUN rustup component add clippy rustfmt
+
+## Install nightly with rustfmt - last, since it changes often
+RUN rustup toolchain install nightly --profile minimal --component rustfmt
+## Optional: make nightly the default
+#     && rustup default nightly
+## You must update all .github wokflows as well
+
+# ------------------------------------------------------------------------------------------------
+# Stage to build and install (external) Rust tools (e.g., mdbook and its plugins) in the image, used for both development and CI stages.
+
+FROM rust-core AS tool-builder
+
+# The default value is overriden by the build arg passed by compose.yaml,
+# itself set from the RUST_IMAGE_LABEL env. variable in `.devcontainer/.env` file
+ARG MDBOOK_VERSION=invalid
+
+## Install cargo binstall (binary install)
+## Install nextest
+## Install mdbook
+## Install mdbook preprocessors
+## Note: you can cache the registry (not the bin folder)- only useful in development
+## Disable to save space on the GitHub Action runner
+## --mount=type=cache,target=/usr/local/cargo/registry \
+## See https://doc.rust-lang.org/cargo/guide/cargo-home.html
+RUN --mount=type=cache,target=/usr/local/cargo/registry \
+    <<EOF
+    set -e
+    curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+    cargo binstall --no-confirm --secure \
+        cargo-nextest \
+        mdbook@${MDBOOK_VERSION} \
+        mdbook-linkcheck \
+        mdbook-private \
+        mdbook-pandoc \
+        tectonic \
+        sccache \
+        just \
+        cargo-deny \
+        lychee
+    cargo install --force mdbook-indexing
+EOF
+
+## Install the mdbook-utils tool that is a companion to the book.
+## Installed last, because the tool is still in development
+RUN cargo install --locked mdbook-utils
+
+## ------------------------------------------------------------------------------------------------
+
+## Stage to build local tools (e.g., mdbook-scrub)
+FROM rust-core AS local-tool-builder
+
+WORKDIR /code
+
+RUN mkdir -p /code/bin/
+
+## Set target directory to a predictable path
+ENV CARGO_TARGET_DIR=/code/target/tools/
+
+## Copy only the tools source to optimize caching
+COPY tools/ /code/tools/
+
+RUN cargo fetch --locked --manifest-path /code/tools/Cargo.toml
+
+## Build the tools in release mode
+RUN --mount=type=cache,target=/usr/local/cargo/registry \
+  cargo +nightly build --bins --locked --all-features --release --artifact-dir /code/bin --manifest-path /code/tools/Cargo.toml
+
+# ------------------------------------------------------------------------------------------------
+
+# The base image with all system dependencies and tools installed, used for both development and CI stages.
+FROM rust-core AS base
+
 SHELL ["bash", "-c"]
+
+WORKDIR /code
 
 ## Install
 ## `aspell*` required for spell checking
@@ -78,8 +165,6 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     xorg-dev \
     && apt-get clean -y
 
-## Optionally install linker and other utilities
-# mold clang \
 ## Alternatively, use `lld` instead of the `mold` linker
 ## See configuration in .cargo/config.toml
 ## If using the `slim` Rust image, you may need to install: curl pkg-config libssl-dev
@@ -100,64 +185,12 @@ RUN wget -q "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/p
     && dpkg -i /tmp/pandoc.deb \
     && rm /tmp/pandoc.deb
 
-# Install CMake (installed by `apt` above)
-# RUN wget https://github.com/Kitware/CMake/releases/download/v3.31.6/cmake-3.31.6-linux-x86_64.sh \
-#     -q -O /tmp/cmake-install.sh && \
-#     chmod u+x /tmp/cmake-install.sh && \
-#     mkdir /opt/cmake-3.31.6/ && \
-#     /tmp/cmake-install.sh --skip-license --prefix=/opt/cmake-3.31.6/ && \
-#     rm /tmp/cmake-install.sh && \
-#     ln -s /opt/cmake-3.31.6/bin/* /usr/local/bin
-
-## Install clippy
-## Install stable rustfmt (used by `rust-analyzer` e.g. when using VS code) and clippy
-RUN rustup component add clippy rustfmt
-
-# The default value is overriden by the build arg passed by compose.yaml,
-# itself set from the RUST_IMAGE_LABEL env. variable in `.devcontainer/.env` file
-ARG MDBOOK_VERSION=invalid
-
-## Install cargo binstall (binary install)
-## Install nextest
-## Install mdbook from the binary release
-## Install mdbook preprocessors
-## Note: you can cache the registry (not the bin folder)- only useful in development
-## Currently disabled to save space on the GitHub Action runner
-## --mount=type=cache,target=/usr/local/cargo/registry \
-## See https://doc.rust-lang.org/cargo/guide/cargo-home.html
-RUN <<EOF
-    set -e
-    curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
-    cargo binstall --no-confirm --secure \
-        cargo-nextest \
-        mdbook@${MDBOOK_VERSION} \
-        mdbook-linkcheck \
-        mdbook-private \
-        mdbook-pandoc \
-        tectonic \
-        sccache \
-        just \
-        cargo-deny \
-        lychee
-    cargo install --force mdbook-indexing
-EOF
-
-# ------------------------------
-
-## Install the mdbook-utils tool that is a companion to the book.
-## Installed second to last, because the tool is still in development
-RUN cargo install --locked mdbook-utils
-
-## Install nightly - last, since it changes very often
-RUN rustup toolchain install nightly --profile minimal --component rustfmt
-## Optional: make nightly the default
-#     && rustup default nightly
-## You must update all .github wokflows as well
-
-WORKDIR /code
+## Copy only binaries from builder to keep the base image lean
+COPY --from=tool-builder /usr/local/cargo/bin/ /usr/local/cargo/bin/
 
 ## ------------------------------------------------------------------------------------------------
-## Stage for development
+
+## Stage for development / Dev Container, with additional tools and configurations for an optimal development experience.
 FROM base AS development
 
 ## Additional packages for development only.
@@ -178,15 +211,20 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 ## Install the GitHub CLI
 RUN curl -sS https://webi.sh/gh | sh
 
-## Install tools
+## Install additional dev tools
 RUN cargo binstall --no-confirm --secure kani-verifier bacon ripgrep
 ## Install optional cargo plugins:
 #  cargo install --locked cargo-outdated || true
-#  cargo install --locked cargo-udeps || true
-#  cargo install --locked cargo-audit || true
-#  cargo install --locked cargo-pants || true
+#  cargo-udeps
+#  cargo-audit
+#  cargo-pants
+#  cargo-sweep
+#  cargo-cache
 ## Optionally, install tool to convert TOML to JSON
 #   && cargo binstall --no-confirm toml2json \
+
+## Copy only binaries from local tool builder to keep the base image lean
+COPY --from=local-tool-builder /code/bin/ /code/bin/
 
 ## `rustup` completions
 ## Command history - https://code.visualstudio.com/remote/advancedcontainers/persist-bash-history
@@ -210,7 +248,7 @@ RUN git config --global user.email ${EMAIL} && git config --global user.name ${G
 EXPOSE 3000
 
 ## https://code.visualstudio.com/remote/advancedcontainers/start-processes
-COPY --chmod=755 .devcontainer/dev.sh ./.devcontainer/
+COPY --link --chmod=755 .devcontainer/dev.sh ./.devcontainer/
 ENTRYPOINT [ "./.devcontainer/dev.sh" ]
 
 ## Sleep to keep the container running.
@@ -218,35 +256,27 @@ ENTRYPOINT [ "./.devcontainer/dev.sh" ]
 CMD [ "sleep", "infinity" ]
 
 ## ------------------------------------------------------------------------------------------------
+
 ## Stage for Continuous Integration (book building)
 FROM base AS ci
 
-## The following is a bit of a hack to try to speed up CI: create separate docker layers for the dependencies and the code / examples
-## Use `just push_ci` to build the CI image locally, push it to DockerHub; GitHub Actions will pull this image and use it as cache.
+## Set environment variables to optimize for CI compilation
+ENV CARGO_INCREMENTAL=0 \
+    RUST_BACKTRACE=1
 
-# [LATER reconsider when we can reliably use cached docker images in GitHub Actions; slow and takes space](https://github.com/john-cd/rust_howto/issues/1280)
-
-## Copy all the Cargo.toml / lock (and config.toml files) of the workspace
-## The --parents flag preserves parent directories for the source entries.
-## NOTE: [lib] or [[bin]] targets must be defined in all Cargo.toml, since the code is not present at this stage and autodiscovery won't work.
-#COPY --parents .cargo/ Cargo.toml Cargo.lock crates/about/Cargo.toml crates/categories/*/Cargo.toml \
-#    crates/language/Cargo.toml crates/other/Cargo.toml crates/standard_library/Cargo.toml \
-#    crates/playground/Cargo.toml crates/publish/Cargo.toml crates/tools/*/Cargo.toml crates/xmpl/*/Cargo.toml ./
-
-## Bake the dependencies into (a separate layer of) the CI image (since they don't change often).
-#RUN cargo fetch
-
-## Optionally pre-compile the dependencies but not the code of tools and examples (which change more often)
-## a) Copy the (empty) src/lib.rs for default members of the workspace (no other code)
-# COPY --parents crates/about/src/ crates/categories/*/src/ crates/language/src crates/other/src crates/standard_library/src ./
-## b) Compile the dependencies (and src/lib.rs)
-# RUN cargo build --all-targets --locked --profile ci
+## Copy local tools from the builder stage
+COPY --from=local-tool-builder /code/bin/ /code/bin/
 
 ## Copy the whole code in the container (excluding what is in .dockerignore)
-COPY . .
+## Ensure .dockerignore excludes large directories like .git and target/
+COPY --link . .
 
 ## Make sure the start scripts have permission to execute
 RUN find . -name "target" -prune -o \( -type f -name "*.sh" -exec chmod +x {} \; \)
+
+## Cleanup: remove cargo registry index to save space if not using cache mounts here
+## This reduces image size by hundreds of megabytes.
+RUN rm -rf /usr/local/cargo/registry/index/*
 
 ## Compilation of the whole code happens within that script at runtime
 ENTRYPOINT [ "./.devcontainer/ci.sh" ]

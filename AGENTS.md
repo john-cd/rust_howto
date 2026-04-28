@@ -1,4 +1,4 @@
-# rust_howto Copilot Instructions
+# rust_howto Instructions
 
 ## Build, test, and lint
 
