@@ -1,8 +1,9 @@
 // ANCHOR: example
 //! This example demonstrates a small asynchronous workload using `smol`.
 
-use smol::Timer;
 use std::time::Duration;
+
+use smol::Timer;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Run the async block on the smol runtime.

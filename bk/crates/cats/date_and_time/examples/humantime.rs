@@ -17,11 +17,17 @@ fn main() -> anyhow::Result<()> {
 
     // Compute and format half of the duration.
     let half_duration = duration.checked_div(2).unwrap_or_default();
-    println!("Half the duration is: {}", humantime::format_duration(half_duration));
+    println!(
+        "Half the duration is: {}",
+        humantime::format_duration(half_duration)
+    );
 
     // Format a short duration example.
     let fast_duration = Duration::from_millis(750);
-    println!("Fast operation time: {}", humantime::format_duration(fast_duration));
+    println!(
+        "Fast operation time: {}",
+        humantime::format_duration(fast_duration)
+    );
 
     Ok(())
 }

@@ -20,8 +20,12 @@ fn main() -> Result<(), NormalError> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }

@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
+// This example demonstrates connecting to Redis and executing commands using
+// the `redis` crate.
 use std::env;
 
 use anyhow::Context;
