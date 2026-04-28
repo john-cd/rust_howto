@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // //! This example demonstrates how to use the `cssparser` crate to parse CSS.
 // //!

@@ -7,7 +7,7 @@
 // /// structures and their implementations.
 // ///
 // /// In this example, `create_structs` takes a list of identifiers (e.g., Foo,
-// /// Bar, Baz) and uses `paste` to generate a struct named
+/ Bar, Baz) and uses `paste` to generate a struct named
 // /// `[< $name Struct >]`
 // /// for each identifier, along with associated `new` and `get_value`
 // functions. methods. macro_rules! create_structs {

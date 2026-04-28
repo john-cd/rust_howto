@@ -53,6 +53,7 @@ fn require_external_svc() -> anyhow::Result<()> {
     Ok(())
 }
 
+// TODO review
 // To use Sibyl, you need to download the appropriate Instant Client packages
 // for your Linux distribution and architecture (usually 64-bit) from the
 // official Oracle website:

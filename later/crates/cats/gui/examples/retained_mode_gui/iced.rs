@@ -1,5 +1,4 @@
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 
 // use iced::Element;
@@ -9,7 +8,7 @@
 // use iced::widget::Container;
 // use iced::widget::button;
 
-// // We define a struct Counter to hold the state of our app.
+We define a struct Counter to hold the state of our app.
 // // It includes the current count and two button states.
 // #[derive(Default)]
 // struct Counter {

@@ -1,9 +1,8 @@
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // //! # WebRender Example
 // //!
-// //! This example demonstrates how to use WebRender to draw a rotating
+! This example demonstrates how to use WebRender to draw a rotating
 // rectangle.
 
 // use std::time::Instant;

@@ -1,6 +1,5 @@
 // #![allow(dead_code)]
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // //! This example shows how to use the `crates.io` API to retrieve the reverse
 // //! dependencies of a crate. The API is paginated, so we need to make

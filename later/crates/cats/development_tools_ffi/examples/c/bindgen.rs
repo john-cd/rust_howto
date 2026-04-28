@@ -2,7 +2,7 @@
 // // ANCHOR: example
 // //! # Bindgen Example
 // //!
-// //! This example demonstrates how to use `bindgen` to generate Rust bindings
+! This example demonstrates how to use `bindgen` to generate Rust bindings
 // //! for a C library.
 // //! `bindgen` allows generating Rust bindings for (existing) C
 // //! (and some C++) libraries.

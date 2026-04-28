@@ -116,15 +116,15 @@ fn main() {
 
 [lbl4]
 
-![image5](image_url5)
+//![image5](image_url5)
 
-![image6][image_lbl6]
+//![image6][image_lbl6]
 
 image_lbl6: image_url6
 
-![image_lbl7]
+//![image_lbl7]
 
-![image_lbl8][]
+//![image_lbl8][]
 ";
 
     extract_inline_links(md);

@@ -1,5 +1,4 @@
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // use tao::event::Event;
 // use tao::event::WindowEvent;

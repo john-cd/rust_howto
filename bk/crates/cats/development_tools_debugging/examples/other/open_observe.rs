@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 
 // // OpenObserve (O2 for short) is a cloud-native observability platform built

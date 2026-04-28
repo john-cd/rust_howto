@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // #![cfg(target_os = "macos")]
 

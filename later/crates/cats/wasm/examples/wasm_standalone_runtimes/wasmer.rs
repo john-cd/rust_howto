@@ -1,6 +1,6 @@
 // #![allow(dead_code)]
 // // ANCHOR: example
-// //! This example demonstrates how to use the `wasmer` crate to run a
+! This example demonstrates how to use the `wasmer` crate to run a
 // //! WebAssembly module.
 // //!
 // //! The WebAssembly module is defined in the WebAssembly Text (WAT) format.

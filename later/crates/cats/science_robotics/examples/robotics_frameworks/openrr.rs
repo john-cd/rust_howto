@@ -1,10 +1,9 @@
 #![allow(dead_code)]
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // //! # OpenRR Example
 // //!
-// //! This example demonstrates how to use the `openrr` crate to control a
+! This example demonstrates how to use the `openrr` crate to control a
 // //! robot.
 // //!
 // //! OpenRR contains..

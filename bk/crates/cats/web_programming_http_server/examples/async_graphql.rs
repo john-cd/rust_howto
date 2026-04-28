@@ -1,6 +1,5 @@
 // #![cfg(feature = "async-graphql")]
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 
 // //! # Example: Async GraphQL with Axum

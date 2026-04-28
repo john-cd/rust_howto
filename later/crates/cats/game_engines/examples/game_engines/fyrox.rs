@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // //! This example demonstrates how to create a simple window with a text
 // widget using the Fyrox game engine. //!

@@ -1,5 +1,4 @@
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // //! This is a simple HTTP server example using the `hyper` crate.
 // //! It listens on port 3000 and responds with "Hello, world!" to all

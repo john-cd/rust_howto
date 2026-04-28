@@ -1,5 +1,4 @@
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // use vger::canvas::Canvas;
 // use vger::canvas::Color;

@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // //! This example demonstrates how to use the `windows` crate to call the
 // //! `MessageBoxW` function from the Windows API.

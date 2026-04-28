@@ -1,5 +1,4 @@
 // ANCHOR: example
-// // COMING SOON
 // ANCHOR_END: example
 
 //! This example demonstrates a basic HTTP server using the Loco framework.

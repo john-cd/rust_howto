@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-// // COMING SOON
 // ANCHOR_END: example
 //! Example of using the `hyper` low-level HTTP client to fetch a URL.
 //!

@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // //! This is a simple example of a procedural macro that derives the `Debug`
 // //! trait for a struct.
@@ -14,7 +13,7 @@
 // //! [dependencies]
 // //! proc-macro2 = "1.0" # Or latest version
 // //! quote = "1.0"
-// //! syn = { version = "1.0", features = ["full"] }
+! syn = { version = "1.0", features = ["full"] }
 // //!
 // //! [lib]
 // //! proc-macro = true

@@ -11,7 +11,7 @@
 // //! crate-type = ["cdylib"]
 // //!
 // //! [dependencies]
-// //! mlua = { version = "0.10.2", features = ["lua54", "module"] }
+! mlua = { version = "0.10.2", features = ["lua54", "module"] }
 // //! ```
 // //!
 // //! 2. Run the Lua script:

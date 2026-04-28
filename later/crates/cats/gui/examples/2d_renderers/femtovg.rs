@@ -1,8 +1,7 @@
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // //! # Femtovg Example
-// //! This example demonstrates how to use the `femtovg` crate for 2D
+! This example demonstrates how to use the `femtovg` crate for 2D
 // //! rendering. It showcases drawing shapes, text, images, and applying
 // //! transformations.
 // //!

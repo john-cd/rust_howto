@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // // ANCHOR: example
-// // COMING SOON
 // // ANCHOR_END: example
 // //! This example demonstrates how to use the `prost` crate to serialize and
 // //! deserialize a protobuf message.
