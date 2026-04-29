@@ -15,3 +15,5 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
+ndarray = "0.15"
+nifti = "0.10"
