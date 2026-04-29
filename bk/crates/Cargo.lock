@@ -3406,6 +3406,7 @@ dependencies = [
  "chacha20poly1305",
  "data-encoding",
  "der",
+ "digest 0.10.7",
  "dsa",
  "ecdsa",
  "ed25519",
@@ -3421,6 +3422,8 @@ dependencies = [
  "rsa",
  "rustls",
  "scrypt",
+ "sha1",
+ "signature 1.6.4",
  "subtle",
  "tokio-rustls",
  "x509-cert",
@@ -4388,7 +4391,7 @@ dependencies = [
  "pkcs8",
  "rfc6979",
  "sha2 0.10.9",
- "signature",
+ "signature 2.2.0",
  "zeroize",
 ]
 
@@ -4471,7 +4474,7 @@ dependencies = [
  "digest 0.10.7",
  "elliptic-curve",
  "rfc6979",
- "signature",
+ "signature 2.2.0",
  "spki",
 ]
 
@@ -4482,7 +4485,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "115531babc129696a58c64a4fef0a8bf9e9698629fb97e9e40767d235cfbcd53"
 dependencies = [
  "pkcs8",
- "signature",
+ "signature 2.2.0",
 ]
 
 [[package]]
@@ -11899,7 +11902,7 @@ dependencies = [
  "pkcs1",
  "pkcs8",
  "rand_core 0.6.4",
- "signature",
+ "signature 2.2.0",
  "spki",
  "subtle",
  "zeroize",
@@ -12969,6 +12972,12 @@ dependencies = [
  "errno",
  "libc",
 ]
+
+[[package]]
+name = "signature"
+version = "1.6.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "74233d3b3b2f6d4b006dc19dee745e73e2a6bfb6f93607cd3b02bd5b00797d7c"
 
 [[package]]
 name = "signature"
@@ -16841,6 +16850,8 @@ checksum = "1301e935010a701ae5f8655edc0ad17c44bad3ac5ce8c39185f75453b720ae94"
 dependencies = [
  "const-oid 0.9.6",
  "der",
+ "sha1",
+ "signature 2.2.0",
  "spki",
  "tls_codec",
 ]

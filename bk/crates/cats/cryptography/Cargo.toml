@@ -25,6 +25,9 @@ chacha20poly1305 = "0.10.1"
 data-encoding = "2.9.0"
 der = { version = "0.7.10", features = ["derive", "alloc"] }
 dsa = "0.6.3"
+digest = "0.10.6"
+sha1 = "0.10.6"
+signature = "1.5.0"
 ed25519 = "2.2.3"
 ed25519-dalek = { version = "2.2.0", features = ["rand_core"] }
 ecdsa = "0.16.9"
@@ -41,5 +44,5 @@ rustls = "0.23.20"
 scrypt = "0.11.0"
 subtle = "2.6.1"
 tokio-rustls = "0.26.2"
-x509-cert = "0.2.5"
+x509-cert = { version = "0.2.5", features = ["builder"] }
 zeroize = "1.8.2"
