@@ -29,10 +29,10 @@ It offers a free tier with access to essential features for individual developer
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
-
-- [[aws | AWS]].
+- [[cloud | Cloud]].
 - [[development_tools | Development Tools]].
+- [[aws | AWS]].
+- [[wasm | WebAssembly]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

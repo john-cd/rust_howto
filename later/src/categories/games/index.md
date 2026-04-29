@@ -22,7 +22,10 @@ There's a growing collection of smaller indie games made with Rust on [`itch.io`
 
 ## Related Topics
 
-FIXME
+- Game engine ecosystems.
+- Indie and open-source Rust games.
+- Graphics and audio toolchains.
+- [Rust game libraries](../game-engines/game_engines.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
