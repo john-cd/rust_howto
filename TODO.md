@@ -3342,11 +3342,11 @@
 
 ### bk/crates/cats/concurrency/examples/actors/actix.rs
 
-- [ ] [finish; test fails: `spawn_local` called from outside of a `task::LocalSet` or LocalRuntime](https://github.com/john-cd/rust_howto/issues/682) ([bk/crates/cats/concurrency/examples/actors/actix.rs](./bk/crates/cats/concurrency/examples/actors/actix.rs#L63))
+- [?] [finish; test fails: `spawn_local` called from outside of a `task::LocalSet` or LocalRuntime](https://github.com/john-cd/rust_howto/issues/682) ([bk/crates/cats/concurrency/examples/actors/actix.rs](./bk/crates/cats/concurrency/examples/actors/actix.rs#L63))
 
 ### bk/crates/cats/concurrency/examples/actors/actors.rs
 
-- [ ] [finish](https://github.com/john-cd/rust_howto/issues/1011) ([bk/crates/cats/concurrency/examples/actors/actors.rs](./bk/crates/cats/concurrency/examples/actors/actors.rs#L32))
+- [?] [finish](https://github.com/john-cd/rust_howto/issues/1011) ([bk/crates/cats/concurrency/examples/actors/actors.rs](./bk/crates/cats/concurrency/examples/actors/actors.rs#L32))
 
 ### bk/crates/cats/concurrency/examples/actors/stakker.rs
 
@@ -3358,7 +3358,7 @@
 
 ### bk/crates/cats/concurrency/examples/data_parallelism/rayon_thumbnails.rs
 
-- [ ] [review; rayon_thumbnails: address the need for test jpg data_parallelism: rayon_thumbnails.rs is noplayground - linking with cc](https://github.com/john-cd/rust_howto/issues/261) ([bk/crates/cats/concurrency/examples/data_parallelism/rayon_thumbnails.rs](./bk/crates/cats/concurrency/examples/data_parallelism/rayon_thumbnails.rs#L94))
+- [?] [review; rayon_thumbnails: address the need for test jpg data_parallelism: rayon_thumbnails.rs is noplayground - linking with cc](https://github.com/john-cd/rust_howto/issues/261) ([bk/crates/cats/concurrency/examples/data_parallelism/rayon_thumbnails.rs](./bk/crates/cats/concurrency/examples/data_parallelism/rayon_thumbnails.rs#L94))
 
 ### bk/crates/cats/concurrency/examples/shared_state/global_mut_state.rs
 
@@ -3384,27 +3384,27 @@
 
 ### bk/crates/cats/cryptography/examples/certs/pem_rfc7468.rs
 
-- [ ] [finish](https://github.com/john-cd/rust_howto/issues/697) ([bk/crates/cats/cryptography/examples/certs/pem_rfc7468.rs](./bk/crates/cats/cryptography/examples/certs/pem_rfc7468.rs#L40))
+- [?] [finish](https://github.com/john-cd/rust_howto/issues/697) ([bk/crates/cats/cryptography/examples/certs/pem_rfc7468.rs](./bk/crates/cats/cryptography/examples/certs/pem_rfc7468.rs#L40))
 
 ### bk/crates/cats/cryptography/examples/certs/x509_cert.rs
 
-- [ ] [finish](https://github.com/john-cd/rust_howto/issues/705) ([bk/crates/cats/cryptography/examples/certs/x509_cert.rs](./bk/crates/cats/cryptography/examples/certs/x509_cert.rs#L65))
+- [?] [finish](https://github.com/john-cd/rust_howto/issues/705) ([bk/crates/cats/cryptography/examples/certs/x509_cert.rs](./bk/crates/cats/cryptography/examples/certs/x509_cert.rs#L65))
 
 ### bk/crates/cats/cryptography/examples/sign/ecdsa.rs
 
-- [ ] [finish](https://github.com/john-cd/rust_howto/issues/693) ([bk/crates/cats/cryptography/examples/sign/ecdsa.rs](./bk/crates/cats/cryptography/examples/sign/ecdsa.rs#L66))
+- [?] [finish](https://github.com/john-cd/rust_howto/issues/693) ([bk/crates/cats/cryptography/examples/sign/ecdsa.rs](./bk/crates/cats/cryptography/examples/sign/ecdsa.rs#L66))
 
 ### bk/crates/cats/cryptography/examples/sign/ed25519.rs
 
-- [ ] [finish](https://github.com/john-cd/rust_howto/issues/1084) ([bk/crates/cats/cryptography/examples/sign/ed25519.rs](./bk/crates/cats/cryptography/examples/sign/ed25519.rs#L67))
+- [?] [finish](https://github.com/john-cd/rust_howto/issues/1084) ([bk/crates/cats/cryptography/examples/sign/ed25519.rs](./bk/crates/cats/cryptography/examples/sign/ed25519.rs#L67))
 
 ### bk/crates/cats/cryptography/examples/tls/native_tls.rs
 
-- [ ] [finish](https://github.com/john-cd/rust_howto/issues/696) ([bk/crates/cats/cryptography/examples/tls/native_tls.rs](./bk/crates/cats/cryptography/examples/tls/native_tls.rs#L37))
+- [?] [finish](https://github.com/john-cd/rust_howto/issues/696) ([bk/crates/cats/cryptography/examples/tls/native_tls.rs](./bk/crates/cats/cryptography/examples/tls/native_tls.rs#L37))
 
 ### bk/crates/cats/cryptography/examples/tls/rustls.rs
 
-- [ ] [review tokio-rustls; need full integration test; document further; review https://github.com/rustls/rustls/tree/main/examples](https://github.com/john-cd/rust_howto/issues/700) ([bk/crates/cats/cryptography/examples/tls/rustls.rs](./bk/crates/cats/cryptography/examples/tls/rustls.rs#L79))
+- [?] [review tokio-rustls; need full integration test; document further; review https://github.com/rustls/rustls/tree/main/examples](https://github.com/john-cd/rust_howto/issues/700) ([bk/crates/cats/cryptography/examples/tls/rustls.rs](./bk/crates/cats/cryptography/examples/tls/rustls.rs#L79))
 
 ### bk/crates/cats/data_structures/Cargo.toml
 
@@ -3471,11 +3471,11 @@
 
 ### bk/crates/cats/database/examples/query_builders_orms/diesel1.rs
 
-- [ ] [finish](https://github.com/john-cd/rust_howto/issues/709) ([bk/crates/cats/database/examples/query_builders_orms/diesel1.rs](./bk/crates/cats/database/examples/query_builders_orms/diesel1.rs#L87))
+- [?] [finish](https://github.com/john-cd/rust_howto/issues/709) ([bk/crates/cats/database/examples/query_builders_orms/diesel1.rs](./bk/crates/cats/database/examples/query_builders_orms/diesel1.rs#L87))
 
 ### bk/crates/cats/database/examples/query_builders_orms/sea_orm.rs
 
-- [ ] [finish](https://github.com/john-cd/rust_howto/issues/715) ([bk/crates/cats/database/examples/query_builders_orms/sea_orm.rs](./bk/crates/cats/database/examples/query_builders_orms/sea_orm.rs#L53))
+- [?] [finish](https://github.com/john-cd/rust_howto/issues/715) ([bk/crates/cats/database/examples/query_builders_orms/sea_orm.rs](./bk/crates/cats/database/examples/query_builders_orms/sea_orm.rs#L53))
 
 ### bk/crates/cats/database/examples/search/elasticsearch.rs
 
