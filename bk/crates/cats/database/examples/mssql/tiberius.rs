@@ -69,18 +69,22 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-#[test]
-#[ignore = "Requires an external Microsoft SQL Server instance"]
-fn require_external_svc() -> anyhow::Result<()> {
-    if std::env::var("MSSQL_HOST").is_err() {
-        eprintln!(
-            "Skipping MSSQL integration test; set MSSQL_HOST to run this test."
-        );
-        return Ok(());
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    #[ignore = "Requires an external Microsoft SQL Server instance"]
+    fn require_external_svc() -> anyhow::Result<()> {
+        if std::env::var("MSSQL_HOST").is_err() {
+            // TODO
+            eprintln!(
+                "Skipping MSSQL integration test; set MSSQL_HOST to run this test."
+            );
+            return Ok(());
+        }
+        main()?;
+        Ok(())
     }
-
-    main()?;
-    Ok(())
 }
 // [fix heavy test](https://github.com/john-cd/rust_howto/issues/1019)
 // unsafe {

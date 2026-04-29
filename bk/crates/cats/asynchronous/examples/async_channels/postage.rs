@@ -1,8 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
 use postage::broadcast;
-use postage::prelude::Stream;
-use postage::sink::Sink;
 use tokio::task;
 use tokio::time::Duration;
 
