@@ -64,10 +64,9 @@ fn main() {
 struct S;
 // ANCHOR_END: example
 
-use rusty_fork::rusty_fork_test;
-
-// Runs in a separate process.
-rusty_fork_test! {
+#[cfg(test)]
+mod tests {
+    use super::*;
     #[test]
     fn test() {
         tracing_subscriber::fmt()

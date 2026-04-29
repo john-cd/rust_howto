@@ -35,11 +35,11 @@ fn main() {
     }
 }
 // ANCHOR_END: example
-use rusty_fork::rusty_fork_test;
 
-// Runs in a separate process.
-rusty_fork_test! {
-#[test]
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
     fn test() {
         tracing_subscriber::fmt()
             .with_max_level(tracing::Level::TRACE)
