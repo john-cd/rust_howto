@@ -5408,11 +5408,11 @@
 
 #### devcontainer/ci.sh
 
-- [ ] Review issue [#1277](https://github.com/john-cd/rust_howto/issues/1277) in [devcontainer/ci.sh](./devcontainer/ci.sh#L22)
+- [ ] Review issue [#1277](https://github.com/john-cd/rust_howto/issues/1277) in [devcontainer/ci.sh](./.devcontainer/ci.sh#L22)
 
 #### devcontainer/compose-ci.yaml
 
-- [ ] Review issue [#1271](https://github.com/john-cd/rust_howto/issues/1271) in [devcontainer/compose-ci.yaml](./devcontainer/compose-ci.yaml#L19)
+- [ ] Review issue [#1271](https://github.com/john-cd/rust_howto/issues/1271) in [.devcontainer/compose-ci.yaml](./.devcontainer/compose-ci.yaml#L19)
 
 #### xmpl/clap_builder_xmpl/src/cli/args.rs
 

@@ -18,7 +18,6 @@ concurrency:
 defaults:
   run:
     shell: bash
-    working-directory: ./tools
 
 env:
   CARGO_TERM_COLOR: always
@@ -27,46 +26,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    # Checks out your repository under $GITHUB_WORKSPACE
     - name: Code checkout (clones the Git repository)
       uses: actions/checkout@v6
 
-    - name: Rust Cache
-      uses: Swatinem/rust-cache@v2
-      with:
-        workspaces: tools -> target
-        shared-key: "rust-howto-shared"
-        cache-targets: "false"
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v4
 
-    - name: Install binstall
-      run: curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
-
-    - name: Install nextest
-      run: cargo binstall --no-confirm --secure --force cargo-nextest
-
-    - name: Install just
-      run: cargo binstall --no-confirm --force just
-
-    - name: Update Rust; Install nightly Rust
+    - name: Build local-tool-builder image
       run: |
-        rustup component add clippy
-        rustup update stable
-        rustup toolchain install nightly
-        rustup component add rustfmt --toolchain nightly
-        rustup default stable
-        rustup show
+        docker buildx build \
+          --file .devcontainer/Dockerfile \
+          --target local-tool-builder \
+          --tag rust_howto_tools_app_builder:latest \
+          --cache-from type=gha,scope=rust_howto_tools \
+          --cache-to type=gha,mode=max,scope=rust_howto_tools \
+          --load ..
 
-    - name: Check the format
-      run: just fa
-
-    - name: Build
-      run: just ba
-
-    - name: Clippy
-      run: just ca
-
-    - name: Run tests
-      run: just nta
-
-    - name: Build in release mode
-      run: just release
+    - name: Run tools tests inside container
+      run: |
+        docker run --rm rust_howto_tools_app_builder:latest bash -lc "cd /code/tools && cargo +nightly test --locked --all-features"
