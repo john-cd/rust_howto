@@ -13,63 +13,8 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-defaults:
-  run:
-    shell: bash
-
-env:
-  CARGO_TERM_COLOR: always
-
 jobs:
-  build:
-    name: Build the book
-    runs-on: ubuntu-latest
-    steps:
-      - name: Code checkout (clones the Git repository)
-        uses: actions/checkout@v6
-      - name: Install `cargo binstall`
-        run: curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
-      - name: Install mdBook
-        run: |
-          cargo binstall --version "0.4.35" --no-confirm mdbook
-          cargo binstall --no-confirm mdbook-linkcheck
-          cargo binstall --no-confirm mdbook-private
-          cargo binstall --no-confirm mdbook-indexing
-      - name: Install `mdbook-utils`
-        run: cargo install --locked --force mdbook-utils
-      - name: Update Rust; Install nightly Rust
-        run: |
-          rustup update stable
-          rustup default stable
-          rustup toolchain install nightly
-          rustup show
-      - name: Build & release the tools, incl. mdbook-scrub
-        run: cargo +nightly build --bins --locked --release -Z unstable-options --artifact-dir "../bin"
-        working-directory: './tools'
-      - name: Build the book
-        run: |
-          mdbook build
-          cp ./static/*.* ./book/html/
-          mdbook-utils sitemap
-        working-directory: './bk'
-      - name: Setup GitHub Pages
-        id: pages
-        uses: actions/configure-pages@v6
-      - name: Upload artifacts
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: ./bk/book/html/
   deploy:
-      name: Deploy to GitHub Pages
-      needs: build
-      runs-on: ubuntu-latest
-      permissions:
-        pages: write
-        id-token: write
-      environment:
-        name: github-pages
-        url: ${{ steps.deployment.outputs.page_url }}
-      steps:
-        - name: Deploy to GitHub Pages
-          id: deployment
-          uses: actions/deploy-pages@v5
+    uses: ./.github/workflows/build_deploy_book.yml
+    with:
+      deploy_to_gh_pages: true

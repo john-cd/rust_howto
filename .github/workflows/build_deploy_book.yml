@@ -7,6 +7,12 @@
 name: Build the book code and deploy the book to GitHub Pages (Linux)
 
 on:
+  workflow_call:
+    inputs:
+      deploy_to_gh_pages:
+        description: "If true, deploy the book to GitHub Pages"
+        type: boolean
+        default: false
   ## Runs on pushes targeting the default branch
   push:
     branches: ["main"]

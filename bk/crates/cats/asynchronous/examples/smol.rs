@@ -23,7 +23,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         });
 
         // Wait for both tasks to complete and combine their results.
-        let result = task1.await? + task2.await?;
+        let result = task1.await + task2.await;
         println!("Total result: {result}");
         Ok(())
     })

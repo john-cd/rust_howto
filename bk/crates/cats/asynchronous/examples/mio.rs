@@ -4,7 +4,6 @@
 use std::time::Duration;
 
 use mio::Events;
-use mio::Interest;
 use mio::Poll;
 use mio::Token;
 use mio::Waker;

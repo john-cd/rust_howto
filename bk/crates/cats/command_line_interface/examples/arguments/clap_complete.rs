@@ -2,10 +2,9 @@
 // ANCHOR: example
 //! This example demonstrates generating shell completions with `clap_complete`.
 
-use std::path::PathBuf;
-
 use clap::Arg;
 use clap::Command;
+use clap::builder::ValueParser;
 use clap_complete::generate_to;
 use clap_complete::shells::Bash;
 
@@ -15,7 +14,8 @@ fn build_cli() -> Command {
             .short('c')
             .long("config")
             .help("Path to the config file")
-            .takes_value(true),
+            .num_args(1)
+            .value_parser(ValueParser::path_buf()),
     )
 }
 
@@ -25,6 +25,7 @@ fn main() -> std::io::Result<()> {
 
     // Use the system temporary directory for generated completion files.
     let out_dir = std::env::temp_dir().join("myapp-completions");
+    std::fs::create_dir_all(&out_dir)?;
 
     // Generate Bash completion scripts into the output directory.
     let out_dir = generate_to(Bash, &mut cmd, "myapp", &out_dir)?;
