@@ -21,10 +21,10 @@ ignored = ["capnpc", "prost", "prost-types", "prost-build"]
 [dependencies]
 anyhow = "1.0.100"
 base64 = "0.22.1"
-# FIXME bincode = "2.0.1"
+bincode = "2.0.1"
 bytemuck = { version = "1.24.0", features = ["derive"] }
 byteorder = "1.5.0"
-# FIXME capnp = "0.21.0"
+capnp = "0.21.0"
 ciborium = "0.2.2"
 csv = "1.4.0"
 data-encoding = "2.9.0"
@@ -40,7 +40,7 @@ prost-types = "0.14.1"
 rkyv = "0.8.12"
 serde = { version = "1.0.228", features = ["derive"] }
 serde_ignored = "0.1.14"
-# FIXME rmp-serde = "1.3.0"
+rmp-serde = "1.3.0"
 serde_json = "1.0.145"
 toml = "0.9.8"
 url = "2.5.7"

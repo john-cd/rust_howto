@@ -21,20 +21,20 @@ ignored = ["rust-ini"]
 sqlparser = ["dep:sqlparser"]
 
 [dependencies]
-# FIXME xml5ever = "0.23.0"
-# FIXME xmlparser = "0.13.6"
+xml5ever = "0.23.0"
+xmlparser = "0.13.6"
 anyhow = "1.0.100"
 basic-toml = "0.1.10"
 chrono = { version = "0.4.42", features = ["serde"] }
 comrak = "0.45.0"
-# FIXME cssparser = "0.35.0"
-# FIXME html5ever = "0.33.0"
+cssparser = "0.35.0"
+html5ever = "0.33.0"
 json5 = "0.4.1"
 markdown = "1.0.0"
-# FIXME markup5ever = "0.16.0"
-# FIXME markup5ever_arcdom = "0.1.2"
+markup5ever = "0.16.0"
+markup5ever_arcdom = "0.1.2"
 pulldown-cmark = "0.13.0"
-# FIXME quick-xml = {version = "0.37.2", features = ["serialize"] }
+quick-xml = { version = "0.37.2", features = ["serialize"] }
 roxmltree = "0.21.1"
 rust-ini = "0.21.3"
 serde = { version = "1.0.228", features = ["derive"] }
