@@ -153,7 +153,8 @@ fn main() {
     // Meanwhile, we are free to move the smart pointer around.
     let mut still_unmoved = pinned;
 
-    let mut other_pinned = SelfRef::new("I am another self-referential struct.");
+    let mut other_pinned =
+        SelfRef::new("I am another self-referential struct.");
 
     // Perform an assignment.
     still_unmoved.as_mut().assign(other_pinned.as_mut());
