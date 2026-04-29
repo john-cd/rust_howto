@@ -137,11 +137,6 @@
 					"line": 119,
 					"column": 9,
 					"label": ""
-				},
-				{
-					"line": 139,
-					"column": 3,
-					"label": ""
 				}
 			]
 		},
@@ -162,11 +157,6 @@
 					"line": 58,
 					"column": 5,
 					"label": ""
-				},
-				{
-					"line": 76,
-					"column": 4,
-					"label": ""
 				}
 			]
 		},
@@ -181,11 +171,6 @@
 				{
 					"line": 66,
 					"column": 13,
-					"label": ""
-				},
-				{
-					"line": 84,
-					"column": 9,
 					"label": ""
 				}
 			]
@@ -241,31 +226,11 @@
 			]
 		},
 		{
-			"path": "bk/src/categories/mathematics/statistics.md",
-			"bookmarks": [
-				{
-					"line": 50,
-					"column": 14,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/src/categories/mathematics/trigonometry.md",
 			"bookmarks": [
 				{
 					"line": 44,
 					"column": 10,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/code-organization/index.md",
-			"bookmarks": [
-				{
-					"line": 48,
-					"column": 6,
 					"label": ""
 				}
 			]
@@ -709,7 +674,7 @@
 					"label": ""
 				},
 				{
-					"line": 91,
+					"line": 95,
 					"column": 13,
 					"label": ""
 				}
