@@ -8,10 +8,19 @@
 
 ## Top-level TODO file tasks
 
+- [ ] review all changed examples
+- [ ] merge the 7 pull requests
+- [ ] review changes to mdbook-utils
+- [ ] fix windows install script / install LLVM
+- [ ] debug dev container
+- [ ] review all [?] tasks
+- [ ] consolidate GitHub workflows (use Docker always)
+
+
 - [ ] polish stack-allocated
 - [ ] polish directory_traversal
 - [ ] polish hashing + algorithms
-- [ ] polish [learning.md](bk/src/learning.md)
+- [ ] polish [learning.md](./bk/src/learning.md)
 - [ ] polish [crate_selection](bk/src/crate_selection.md)
 - [?] polish [contributing](bk/src/appendices/contributing/index.md) [#529](https://github.com/john-cd/rust_howto/issues/529)
 - [ ] finish to add RBE link [#29](https://github.com/john-cd/rust_howto/issues/29).
@@ -49,10 +58,10 @@
 - [?] [Web] Implement Leptos reactive counter and view mounting [leptos.rs](bk/crates/cats/web_programming_http_server/examples/leptos.rs) ([#867](https://github.com/john-cd/rust_howto/issues/867))
 - [?] [Web] Implement Async-GraphQL schema with Axum integration [async_graphql.rs](bk/crates/cats/web_programming_http_server/examples/async_graphql.rs) ([#864](https://github.com/john-cd/rust_howto/issues/864))
 - [?] [Web] Implement Actix-Web network requirement test [actix_web.rs](bk/crates/cats/web_programming_http_server/examples/actix_web.rs)
-- [ ] [Network] Finalize Pingora reverse proxy implementation [pingora.rs](bk/crates/cats/network_programming/examples/reverse_proxy/pingora.rs) ([#812](https://github.com/john-cd/rust_howto/issues/812))
+- [?] [Network] Finalize Pingora reverse proxy implementation [pingora.rs](bk/crates/cats/network_programming/examples/reverse_proxy/pingora.rs) ([#812](https://github.com/john-cd/rust_howto/issues/812))
 - [ ] [Network] Complete comprehensive reverse proxy section for Pingora and Rathole [reverse_proxy.md](bk/drafts/categories/network-programming/reverse_proxy.md) ([#424](https://github.com/john-cd/rust_howto/issues/424))
-- [ ] [Database] Fix heavy test orchestration for Tiberius MSSQL [tiberius.rs](bk/crates/cats/database/examples/mssql/tiberius.rs) ([#1019](https://github.com/john-cd/rust_howto/issues/1019))
-- [ ] [Database] Implement PostgreSQL aggregation examples [aggregate_data.rs](bk/crates/cats/database/examples/postgres/aggregate_data.rs)
+- [?] [Database] Fix heavy test orchestration for Tiberius MSSQL [tiberius.rs](bk/crates/cats/database/examples/mssql/tiberius.rs) ([#1019](https://github.com/john-cd/rust_howto/issues/1019))
+- [?] [Database] Implement PostgreSQL aggregation examples [aggregate_data.rs](bk/crates/cats/database/examples/postgres/aggregate_data.rs)
 - [ ] [GUI] Implement Winit window creation example [winit.rs](later/crates/cats/gui/examples/window_creation/winit.rs)
 - [ ] [Parser] Implement `DocumentParser` trait and URL parsing 1427.md ([#1427](https://github.com/john-cd/rust_howto/issues/1427))
 - [ ] [Test] Implement AFL.rs fuzzing target and panic discovery afl.rs ([#748](https://github.com/john-cd/rust_howto/issues/748))
@@ -3434,11 +3443,11 @@
 
 ### bk/crates/cats/database/examples/mssql/tiberius.rs
 
-- [ ] [fix heavy test](https://github.com/john-cd/rust_howto/issues/1019) ([bk/crates/cats/database/examples/mssql/tiberius.rs](./bk/crates/cats/database/examples/mssql/tiberius.rs#L79))
+- [?] [fix heavy test](https://github.com/john-cd/rust_howto/issues/1019) ([bk/crates/cats/database/examples/mssql/tiberius.rs](./bk/crates/cats/database/examples/mssql/tiberius.rs#L79))
 
 ### bk/crates/cats/database/examples/nosql/redis.rs
 
-- [ ] [review](https://github.com/john-cd/rust_howto/issues/1161)? ([bk/crates/cats/database/examples/nosql/redis.rs](./bk/crates/cats/database/examples/nosql/redis.rs#L71))
+- [?] [review](https://github.com/john-cd/rust_howto/issues/1161)? ([bk/crates/cats/database/examples/nosql/redis.rs](./bk/crates/cats/database/examples/nosql/redis.rs#L71))
 
 ### bk/crates/cats/database/examples/oracle/diesel_oci.rs
 
@@ -3454,7 +3463,7 @@
 
 ### bk/crates/cats/database/examples/postgres/aggregate_data.rs
 
-- [ ] [review](https://github.com/john-cd/rust_howto/issues/1162) ([bk/crates/cats/database/examples/postgres/aggregate_data.rs](./bk/crates/cats/database/examples/postgres/aggregate_data.rs#L43))
+- [?] [review](https://github.com/john-cd/rust_howto/issues/1162) ([bk/crates/cats/database/examples/postgres/aggregate_data.rs](./bk/crates/cats/database/examples/postgres/aggregate_data.rs#L43))
 
 ### bk/crates/cats/database/examples/postgres/cornucopia.rs
 
@@ -3463,11 +3472,11 @@
 ### bk/crates/cats/database/examples/postgres/main.rs
 
 - [ ] aggregate_data::main()? ([bk/crates/cats/database/examples/postgres/main.rs](./bk/crates/cats/database/examples/postgres/main.rs#L21))
-- [ ] [review](https://github.com/john-cd/rust_howto/issues/713) ([bk/crates/cats/database/examples/postgres/main.rs](./bk/crates/cats/database/examples/postgres/main.rs#L40))
+- [?] [review](https://github.com/john-cd/rust_howto/issues/713) ([bk/crates/cats/database/examples/postgres/main.rs](./bk/crates/cats/database/examples/postgres/main.rs#L40))
 
 ### bk/crates/cats/database/examples/postgres/tokio_postgres.rs
 
-- [ ] [finish](https://github.com/john-cd/rust_howto/issues/719) need heay test ([bk/crates/cats/database/examples/postgres/tokio_postgres.rs](./bk/crates/cats/database/examples/postgres/tokio_postgres.rs#L99))
+- [?] [finish](https://github.com/john-cd/rust_howto/issues/719) need heay test ([bk/crates/cats/database/examples/postgres/tokio_postgres.rs](./bk/crates/cats/database/examples/postgres/tokio_postgres.rs#L99))
 
 ### bk/crates/cats/database/examples/query_builders_orms/diesel1.rs
 
@@ -3479,7 +3488,7 @@
 
 ### bk/crates/cats/database/examples/search/elasticsearch.rs
 
-- [ ] [review fix heavy test; secure the connection](https://github.com/john-cd/rust_howto/issues/710) ([bk/crates/cats/database/examples/search/elasticsearch.rs](./bk/crates/cats/database/examples/search/elasticsearch.rs#L156))
+- [?] [review fix heavy test; secure the connection](https://github.com/john-cd/rust_howto/issues/710) ([bk/crates/cats/database/examples/search/elasticsearch.rs](./bk/crates/cats/database/examples/search/elasticsearch.rs#L156))
 
 ### bk/crates/cats/database_implementations/examples/databases/surrealdb.rs
 
@@ -3570,7 +3579,7 @@
 
 ### bk/crates/cats/email/examples/lettre.rs
 
-- [ ] [review; Requires valid SMTP credentials to run](https://github.com/john-cd/rust_howto/issues/1144) ([bk/crates/cats/email/examples/lettre.rs](./bk/crates/cats/email/examples/lettre.rs#L45))
+- [?] [review; Requires valid SMTP credentials to run](https://github.com/john-cd/rust_howto/issues/1144) ([bk/crates/cats/email/examples/lettre.rs](./bk/crates/cats/email/examples/lettre.rs#L45))
 
 ### bk/crates/cats/encoding/Cargo.toml
 
@@ -4296,27 +4305,27 @@
 
 #### bk/crates/cats/compression/examples/tar/tar_compress.rs
 
-- [ ] Review issue [#255](https://github.com/john-cd/rust_howto/issues/255) in [bk/crates/cats/compression/examples/tar/tar_compress.rs](./bk/crates/cats/compression/examples/tar/tar_compress.rs#L32)
+- [?] Review issue [#255](https://github.com/john-cd/rust_howto/issues/255) in [bk/crates/cats/compression/examples/tar/tar_compress.rs](./bk/crates/cats/compression/examples/tar/tar_compress.rs#L32)
 
 #### bk/crates/cats/compression/examples/tar/tar_decompress.rs
 
-- [ ] Review issue [#254](https://github.com/john-cd/rust_howto/issues/254) in [bk/crates/cats/compression/examples/tar/tar_decompress.rs](./bk/crates/cats/compression/examples/tar/tar_decompress.rs#L24)
+- [?] Review issue [#254](https://github.com/john-cd/rust_howto/issues/254) in [bk/crates/cats/compression/examples/tar/tar_decompress.rs](./bk/crates/cats/compression/examples/tar/tar_decompress.rs#L24)
 
 #### bk/crates/cats/compression/examples/tar/tar_strip_prefix.rs
 
-- [ ] Review issue [#256](https://github.com/john-cd/rust_howto/issues/256) in [bk/crates/cats/compression/examples/tar/tar_strip_prefix.rs](./bk/crates/cats/compression/examples/tar/tar_strip_prefix.rs#L36)
+- [?] Review issue [#256](https://github.com/john-cd/rust_howto/issues/256) in [bk/crates/cats/compression/examples/tar/tar_strip_prefix.rs](./bk/crates/cats/compression/examples/tar/tar_strip_prefix.rs#L36)
 
 #### bk/crates/cats/concurrency/examples/actors/actix.rs
 
-- [ ] Review issue [#682](https://github.com/john-cd/rust_howto/issues/682) in [bk/crates/cats/concurrency/examples/actors/actix.rs](./bk/crates/cats/concurrency/examples/actors/actix.rs#L63)
+- [?] Review issue [#682](https://github.com/john-cd/rust_howto/issues/682) in [bk/crates/cats/concurrency/examples/actors/actix.rs](./bk/crates/cats/concurrency/examples/actors/actix.rs#L63)
 
 #### bk/crates/cats/concurrency/examples/actors/actors.rs
 
-- [ ] Review issue [#1011](https://github.com/john-cd/rust_howto/issues/1011) in [bk/crates/cats/concurrency/examples/actors/actors.rs](./bk/crates/cats/concurrency/examples/actors/actors.rs#L32)
+- [?] Review issue [#1011](https://github.com/john-cd/rust_howto/issues/1011) in [bk/crates/cats/concurrency/examples/actors/actors.rs](./bk/crates/cats/concurrency/examples/actors/actors.rs#L32)
 
 #### bk/crates/cats/concurrency/examples/actors/stakker.rs
 
-- [ ] Review issue [#94](https://github.com/john-cd/rust_howto/issues/94) in [bk/crates/cats/concurrency/examples/actors/stakker.rs](./bk/crates/cats/concurrency/examples/actors/stakker.rs#L79)
+- [?] Review issue [#94](https://github.com/john-cd/rust_howto/issues/94) in [bk/crates/cats/concurrency/examples/actors/stakker.rs](./bk/crates/cats/concurrency/examples/actors/stakker.rs#L79)
 
 #### bk/crates/cats/concurrency/examples/concurrent_data_structures/flurry.rs
 
@@ -4340,27 +4349,27 @@
 
 #### bk/crates/cats/cryptography/examples/certs/pem_rfc7468.rs
 
-- [ ] Review issue [#697](https://github.com/john-cd/rust_howto/issues/697) in [bk/crates/cats/cryptography/examples/certs/pem_rfc7468.rs](./bk/crates/cats/cryptography/examples/certs/pem_rfc7468.rs#L40)
+- [?] Review issue [#697](https://github.com/john-cd/rust_howto/issues/697) in [bk/crates/cats/cryptography/examples/certs/pem_rfc7468.rs](./bk/crates/cats/cryptography/examples/certs/pem_rfc7468.rs#L40)
 
 #### bk/crates/cats/cryptography/examples/certs/x509_cert.rs
 
-- [ ] Review issue [#705](https://github.com/john-cd/rust_howto/issues/705) in [bk/crates/cats/cryptography/examples/certs/x509_cert.rs](./bk/crates/cats/cryptography/examples/certs/x509_cert.rs#L65)
+- [?] Review issue [#705](https://github.com/john-cd/rust_howto/issues/705) in [bk/crates/cats/cryptography/examples/certs/x509_cert.rs](./bk/crates/cats/cryptography/examples/certs/x509_cert.rs#L65)
 
 #### bk/crates/cats/cryptography/examples/sign/ecdsa.rs
 
-- [ ] Review issue [#693](https://github.com/john-cd/rust_howto/issues/693) in [bk/crates/cats/cryptography/examples/sign/ecdsa.rs](./bk/crates/cats/cryptography/examples/sign/ecdsa.rs#L66)
+- [?] Review issue [#693](https://github.com/john-cd/rust_howto/issues/693) in [bk/crates/cats/cryptography/examples/sign/ecdsa.rs](./bk/crates/cats/cryptography/examples/sign/ecdsa.rs#L66)
 
 #### bk/crates/cats/cryptography/examples/sign/ed25519.rs
 
-- [ ] Review issue [#1084](https://github.com/john-cd/rust_howto/issues/1084) in [bk/crates/cats/cryptography/examples/sign/ed25519.rs](./bk/crates/cats/cryptography/examples/sign/ed25519.rs#L67)
+- [?] Review issue [#1084](https://github.com/john-cd/rust_howto/issues/1084) in [bk/crates/cats/cryptography/examples/sign/ed25519.rs](./bk/crates/cats/cryptography/examples/sign/ed25519.rs#L67)
 
 #### bk/crates/cats/cryptography/examples/tls/native_tls.rs
 
-- [ ] Review issue [#696](https://github.com/john-cd/rust_howto/issues/696) in [bk/crates/cats/cryptography/examples/tls/native_tls.rs](./bk/crates/cats/cryptography/examples/tls/native_tls.rs#L37)
+- [?] Review issue [#696](https://github.com/john-cd/rust_howto/issues/696) in [bk/crates/cats/cryptography/examples/tls/native_tls.rs](./bk/crates/cats/cryptography/examples/tls/native_tls.rs#L37)
 
 #### bk/crates/cats/cryptography/examples/tls/rustls.rs
 
-- [ ] Review issue [#700](https://github.com/john-cd/rust_howto/issues/700) in [bk/crates/cats/cryptography/examples/tls/rustls.rs](./bk/crates/cats/cryptography/examples/tls/rustls.rs#L79)
+- [?] Review issue [#700](https://github.com/john-cd/rust_howto/issues/700) in [bk/crates/cats/cryptography/examples/tls/rustls.rs](./bk/crates/cats/cryptography/examples/tls/rustls.rs#L79)
 
 #### bk/crates/cats/database/examples/cassandra/cassandra_protocol.rs
 
@@ -4396,7 +4405,7 @@
 
 #### bk/crates/cats/database/examples/postgres/aggregate_data.rs
 
-- [ ] Review issue [#1162](https://github.com/john-cd/rust_howto/issues/1162) in [bk/crates/cats/database/examples/postgres/aggregate_data.rs](./bk/crates/cats/database/examples/postgres/aggregate_data.rs#L43)
+- [?] Review issue [#1162](https://github.com/john-cd/rust_howto/issues/1162) in [bk/crates/cats/database/examples/postgres/aggregate_data.rs](./bk/crates/cats/database/examples/postgres/aggregate_data.rs#L43)
 
 #### bk/crates/cats/database/examples/postgres/cornucopia.rs
 
@@ -4536,7 +4545,7 @@
 
 #### bk/crates/cats/network_programming/examples/reverse_proxy/pingora.rs
 
-- [ ] Review issue [#812](https://github.com/john-cd/rust_howto/issues/812) in [bk/crates/cats/network_programming/examples/reverse_proxy/pingora.rs](./bk/crates/cats/network_programming/examples/reverse_proxy/pingora.rs#L79)
+- [?] Review issue [#812](https://github.com/john-cd/rust_howto/issues/812) in [bk/crates/cats/network_programming/examples/reverse_proxy/pingora.rs](./bk/crates/cats/network_programming/examples/reverse_proxy/pingora.rs#L79)
 
 #### bk/crates/cats/network_programming/examples/server/glommio.rs
 
