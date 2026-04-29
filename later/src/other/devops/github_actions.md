@@ -116,11 +116,14 @@ Example `.github/workflows/<name>.yml`
 
 ## Useful GitHub Actions {#useful-github-actions}
 
-FIXME
+These GitHub Actions help keep Rust workflows consistent, fast, and reliable across branches:
 
-- `rust-toolchain`: Github action to install Rust components via `rustup`.
-- [`rust-cache`][c~rust_cache~docs]↗{{hi:rust-cache}}: Github action to cache compilation artifacts and speed up subsequent runs.
-- `install-action`: GitHub Action for installing [development tools][p~development-tools] (mainly from GitHub Releases).
+- `rust-toolchain` to install the correct Rust toolchain.
+- [`rust-cache`][c~rust_cache~docs]↗{{hi:rust-cache}} to cache compilation artifacts and speed up repeated CI runs.
+- `taiki-e/install-action` or `cargo-binstall-action` to install command-line tooling from GitHub Releases or crates.io.
+- `actions/checkout` to clone the repository and preserve submodules.
+- `actions/upload-artifact` to archive build artifacts for release or debugging.
+- `actions/cache` or build-system-specific cache actions for toolchain and dependency caches.
 
 ## Related Topics {#related-topics .skip}
 

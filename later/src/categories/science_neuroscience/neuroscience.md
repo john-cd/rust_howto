@@ -10,7 +10,10 @@
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- Scientific data processing.
+- Neuroimaging and signal analysis.
+- Machine learning for biology.
+- `nifti` and `dicom` ecosystem tooling.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

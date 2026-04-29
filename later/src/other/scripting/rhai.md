@@ -37,7 +37,10 @@ There are independent packages that provides additional functionality, for examp
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[scripting | Scripting]].
+- [[parsing | Parsing]].
+- [[embedded | Embedded Systems]].
+- [[programming_languages | Programming Languages]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

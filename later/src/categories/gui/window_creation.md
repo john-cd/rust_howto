@@ -41,7 +41,10 @@
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- Window management and event handling.
+- Cross-platform GUI integration.
+- Native application toolkits.
+- [File Dialogs](./file_dialogs.md) and [Clipboard](./clipboard.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
