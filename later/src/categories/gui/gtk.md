@@ -42,7 +42,10 @@ Make sure the [`gtk4`][c~gtk4~docs]↗{{hi:gtk4}} crate version you're using is 
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- Cross-platform GUI development.
+- Native Linux desktop toolkits.
+- GTK application design.
+- Rust bindings for C libraries.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
