@@ -38,6 +38,7 @@ async fn main() -> std::io::Result<()> {
 fn require_network() -> std::io::Result<()> {
     // TODO
     // Note: Running this in a test environment will block the thread until the
-    // server is killed. main()
+    // server is killed. 
+    // TODO main()
     Ok(())
 }
