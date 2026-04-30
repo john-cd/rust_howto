@@ -29,9 +29,13 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    std::fs::create_dir_all("temp/log/")?;
-    main()?;
-    Ok(())
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() -> anyhow::Result<()> {
+        std::fs::create_dir_all("temp/log/")?;
+        main()?;
+        Ok(())
+    }
 }

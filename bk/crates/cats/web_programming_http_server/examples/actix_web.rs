@@ -34,11 +34,21 @@ async fn main() -> std::io::Result<()> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn require_network() -> std::io::Result<()> {
-    // TODO
-    // Note: Running this in a test environment will block the thread until the
-    // server is killed. 
-    // TODO main()
-    Ok(())
+#[cfg(test)]
+mod tests {
+    use actix_web::test;
+
+    use super::*;
+
+    #[actix_web::test]
+    async fn require_network() -> std::io::Result<()> {
+        let app = test::init_service(App::new().service(greet)).await;
+        let req = test::TestRequest::get().uri("/").to_request();
+
+        let resp = test::call_service(&app, req).await;
+        let body = test::read_body(resp).await;
+
+        assert_eq!(body, "Hello, world!");
+        Ok(())
+    }
 }

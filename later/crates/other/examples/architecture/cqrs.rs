@@ -244,7 +244,8 @@ mod read_store {
     /// Repository with domain objects.
     pub trait ProductRepository {
         fn get_product(&self, id: u32) -> Option<Product>;
-        // FIXME get_all_products() -> Vec<Product>;
+        // Additional read methods can be added here, such as
+        // `get_all_products()`.
     }
 
     /// `SimpleProductRepository` struct.
@@ -379,50 +380,50 @@ fn main() -> anyhow::Result<()> {
     }
     Ok(())
 }
-
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    // We just execute main, which shouldn't panic
-    let _ = main();
-    Ok(())
-}
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() -> anyhow::Result<()> {
+        // We just execute main, which shouldn't panic
+        let _ = main();
+        Ok(())
+    }
 
-#[test]
-fn test_negative_quantity_update_returns_error() -> anyhow::Result<()> {
-    let event_store = events::SimpleEventStore::new();
-    let command_handler = commands::CommandHandler::new(event_store);
+    #[test]
+    fn test_negative_quantity_update_returns_error() -> anyhow::Result<()> {
+        let event_store = events::SimpleEventStore::new();
+        let command_handler = commands::CommandHandler::new(event_store);
 
-    command_handler.process(commands::Command::CreateProduct {
-        id: 1,
-        name: "Test Product".to_string(),
-        quantity: 10,
-    })?;
-
-    let result =
-        command_handler.process(commands::Command::UpdateProductQuantity {
+        command_handler.process(commands::Command::CreateProduct {
             id: 1,
-            quantity_change: -11,
-        });
+            name: "Test Product".to_string(),
+            quantity: 10,
+        })?;
 
-    assert!(result.is_err());
-    assert!(
-        result
-            .unwrap_err()
-            .to_string()
-            .contains("Update would result in negative quantity")
-    );
+        let result =
+            command_handler.process(commands::Command::UpdateProductQuantity {
+                id: 1,
+                quantity_change: -11,
+            });
 
-    Ok(())
+        assert!(result.is_err());
+        assert!(
+            result
+                .unwrap_err()
+                .to_string()
+                .contains("Update would result in negative quantity")
+        );
+
+        Ok(())
+    }
 }
-
-// TODO finish
-// <https://martinfowler.com/bliki/CQRS.html>
-// <https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-1?source=more_series_bottom_blogs>
-// <https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-2>
-// <https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs>
-// <https://doc.rust-cqrs.org/intro.html>
-// <https://github.com/primait/event_sourcing.rs>
-// <https://github.com/eniltrexAdmin/crappy-user>
-// <https://github.com/serverlesstechnology/cqrs-demo/tree/main>
+// TODO
+// Notes:
+// - This example can be extended with a `get_all_products()` query method,
+//   event store snapshots, and more advanced read-model reconstruction.
+// - See the CQRS pattern for additional architecture guidance: https://martinfowler.com/bliki/CQRS.html
+//   https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-1 https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-2
+//   https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs https://doc.rust-cqrs.org/intro.html

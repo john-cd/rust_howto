@@ -160,8 +160,7 @@ pub fn create_crate_page_section(name: &str) -> Result<String> {
     // H3 header with anchor
     section.push_str(&format!("### `{name}` {{#{name}}}\n\n"));
 
-    let info =
-        crate::get_info_for_crate(name).with_context(|| format!("Unknown crate: {name}"))?;
+    let info = crate::get_info_for_crate(name).with_context(|| format!("Unknown crate: {name}"))?;
 
     // Badges for docs.rs, crates.io, repo, lib.rs
     let badges =
@@ -259,11 +258,10 @@ const CRATE_BLOCK_DIRECTIVE_REGEX: &str = r"\{\{\s*#crate\s*:?\s+([^\s}]+)[^}]*\
 
 /// Lazily compiled regex for `{{#crate crate_name}}` directives.
 /// Compiled only once and reused across all calls.
-static CRATE_BLOCK_RE: once_cell::sync::Lazy<regex::Regex> =
-    once_cell::sync::Lazy::new(|| {
-        regex::Regex::new(CRATE_BLOCK_DIRECTIVE_REGEX)
-            .expect("CRATE_BLOCK_DIRECTIVE_REGEX is a valid regex")
-    });
+static CRATE_BLOCK_RE: once_cell::sync::Lazy<regex::Regex> = once_cell::sync::Lazy::new(|| {
+    regex::Regex::new(CRATE_BLOCK_DIRECTIVE_REGEX)
+        .expect("CRATE_BLOCK_DIRECTIVE_REGEX is a valid regex")
+});
 
 /// Expand all `{{#crate crate_name}}` directives in the given content string.
 ///
@@ -390,9 +388,10 @@ pub fn expand_crate_block_directives_in_directory(
     Ok(())
 }
 
+
 #[cfg(test)]
-mod directive_tests {
-    use super::CRATE_BLOCK_RE;
+mod tests {
+        use super::*;
 
     /// Helper: test that the regex captures the expected crate name from `input`.
     fn assert_captures_crate_name(input: &str, expected_name: &str) {
@@ -412,70 +411,67 @@ mod directive_tests {
         );
     }
 
-    #[test]
-    fn test_simple_crate_directive() {
-        assert_captures_crate_name("{{#crate crt}}", "crt");
-    }
+        #[test]
+        fn test_simple_crate_directive() {
+            assert_captures_crate_name("{{#crate crt}}", "crt");
+        }
 
-    #[test]
-    fn test_crate_directive_trailing_space() {
-        assert_captures_crate_name("{{#crate crt }}", "crt");
-    }
+        #[test]
+        fn test_crate_directive_trailing_space() {
+            assert_captures_crate_name("{{#crate crt }}", "crt");
+        }
 
-    #[test]
-    fn test_crate_directive_colon() {
-        assert_captures_crate_name("{{#crate: crt}}", "crt");
-    }
+        #[test]
+        fn test_crate_directive_colon() {
+            assert_captures_crate_name("{{#crate: crt}}", "crt");
+        }
 
-    #[test]
-    fn test_crate_directive_space_colon_space() {
-        assert_captures_crate_name("{{#crate : crt}}", "crt");
-    }
+        #[test]
+        fn test_crate_directive_space_colon_space() {
+            assert_captures_crate_name("{{#crate : crt}}", "crt");
+        }
 
-    #[test]
-    fn test_crate_directive_hyphen_underscore() {
-        assert_captures_crate_name("{{#crate x_y-z}}", "x_y-z");
-    }
+        #[test]
+        fn test_crate_directive_hyphen_underscore() {
+            assert_captures_crate_name("{{#crate x_y-z}}", "x_y-z");
+        }
 
-    #[test]
-    fn test_crate_directive_with_additional_categories() {
-        assert_captures_crate_name(
-            "{{#crate: crt cat1 cat-2 cat-2-2 cat3::sub-cat-3 }}",
-            "crt",
-        );
-    }
+        #[test]
+        fn test_crate_directive_with_additional_categories() {
+            assert_captures_crate_name("{{#crate: crt cat1 cat-2 cat-2-2 cat3::sub-cat-3 }}", "crt");
+        }
 
-    #[test]
-    fn test_no_match_missing_crate_name() {
-        assert_no_match("{{#crate}}");
-        assert_no_match("{{#crate }}");
-    }
+        #[test]
+        fn test_no_match_missing_crate_name() {
+            assert_no_match("{{#crate}}");
+            assert_no_match("{{#crate }}");
+        }
 
-    #[test]
-    fn test_no_match_example_directive() {
-        assert_no_match("{{#example some_example}}");
-    }
+        #[test]
+        fn test_no_match_example_directive() {
+            assert_no_match("{{#example some_example}}");
+        }
 
-    #[test]
-    fn test_multiple_directives_in_content() {
-        let re = &*CRATE_BLOCK_RE;
-        let content = "See {{#crate serde}} and {{#crate: anyhow }}.";
-        let names: Vec<&str> = re
-            .captures_iter(content)
-            .map(|c| c.get(1).unwrap().as_str().trim())
-            .collect();
-        // Order depends on iteration; just check both are present.
-        assert!(names.contains(&"serde"), "expected 'serde' in {names:?}");
-        assert!(names.contains(&"anyhow"), "expected 'anyhow' in {names:?}");
-    }
+        #[test]
+        fn test_multiple_directives_in_content() {
+            let re = &*CRATE_BLOCK_RE;
+            let content = "See {{#crate serde}} and {{#crate: anyhow }}.";
+            let names: Vec<&str> = re
+                .captures_iter(content)
+                .map(|c| c.get(1).unwrap().as_str().trim())
+                .collect();
+            // Order depends on iteration; just check both are present.
+            assert!(names.contains(&"serde"), "expected 'serde' in {names:?}");
+            assert!(names.contains(&"anyhow"), "expected 'anyhow' in {names:?}");
+        }
 
-    #[test]
-    fn test_process_crate_block_directives_no_directives() {
-        let content = "# Hello\n\nNo directives here.\n";
-        let result = super::process_crate_block_directives(content);
-        assert!(result.is_ok());
-        let (out, refdefs) = result.unwrap();
-        assert_eq!(out, content);
-        assert!(refdefs.is_empty());
-    }
+        #[test]
+        fn test_process_crate_block_directives_no_directives() {
+            let content = "# Hello\n\nNo directives here.\n";
+            let result = super::process_crate_block_directives(content);
+            assert!(result.is_ok());
+            let (out, refdefs) = result.unwrap();
+            assert_eq!(out, content);
+            assert!(refdefs.is_empty());
+        }
 }

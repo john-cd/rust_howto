@@ -28,9 +28,13 @@ fn main() {
     });
 }
 
-#[test]
-fn test_bolero() {
-    // When running as a test, it uses a default number of iterations.
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_bolero() {
+        // When running as a test, it uses a default number of iterations.
+        main();
+    }
 }
 // ANCHOR_END: example

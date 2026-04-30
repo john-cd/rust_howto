@@ -40,9 +40,9 @@ fn main() -> Result<(), SetLoggerError> {
 }
 // ANCHOR_END: example
 
-use rusty_fork::rusty_fork_test;
-// Runs in a separate process:
-rusty_fork_test! {
+#[cfg(test)]
+mod tests {
+    use super::*;
     #[test]
     fn test() {
         main().unwrap();

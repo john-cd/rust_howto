@@ -37,16 +37,20 @@ fn main() -> Result<(), std::io::Error> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    // Preparation.
-    if !std::fs::exists("temp")? {
-        std::fs::create_dir("temp")?;
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() -> anyhow::Result<()> {
+        // Preparation.
+        if !std::fs::exists("temp")? {
+            std::fs::create_dir("temp")?;
+        }
+        let path = Path::new("temp/out.txt");
+        if path.exists() {
+            std::fs::remove_file(path)?;
+        }
+        main()?;
+        Ok(())
     }
-    let path = Path::new("temp/out.txt");
-    if path.exists() {
-        std::fs::remove_file(path)?;
-    }
-    main()?;
-    Ok(())
 }

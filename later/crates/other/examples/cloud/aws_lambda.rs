@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// ANCHOR: example
 //! This is a basic example of an AWS Lambda function written in Rust.
 //! It demonstrates how to use the `lambda_runtime` crate to create a simple
 //! function that takes a name as input and returns a greeting message.
@@ -14,14 +15,11 @@
 //! sam deploy --guided
 //! ```
 
-
-// ANCHOR: example
 use lambda_runtime::Error;
 use lambda_runtime::LambdaEvent;
 use lambda_runtime::service_fn;
 use serde::Deserialize;
 use serde::Serialize;
-
 use tracing_subscriber;
 
 #[derive(Deserialize)]
@@ -53,10 +51,14 @@ async fn main() -> Result<(), Error> {
     lambda_runtime::run(func).await?;
     Ok(())
 }
-
-#[test]
-fn require_network() {
-    // main(); // test removed to prevent lambda running directly
-}
 // ANCHOR_END: example
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn require_network() {
+        // main(); // TODO test removed to prevent lambda running directly
+    }
+}
 // [finish](https://github.com/john-cd/rust_howto/issues/878)

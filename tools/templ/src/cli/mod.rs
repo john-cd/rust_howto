@@ -54,7 +54,10 @@ fn cli() -> clap::Command {
         .arg(config_flag::arg_verbose())
 }
 
-#[test]
-fn test_app() {
-    cli().debug_assert();
+#[cfg(test)]
+mod tests { use super::*;
+    #[test]
+    fn test_app() {
+        cli().debug_assert();
+    }
 }

@@ -20,9 +20,9 @@ use syn::Result;
 /// and print it.
 fn simple() -> Result<()> {
     let code = "assert_eq!(u8::max_value(), 255)";
-    let _expr = syn::parse_str::<Expr>(code)?;
-    // FIXME
-    // println!("{expr:#?}");
+    let expr = syn::parse_str::<Expr>(code)?;
+    let expr_tokens = quote! { #expr };
+    println!("{expr_tokens}");
     Ok(())
 }
 
@@ -71,9 +71,13 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }
 // [finish. See https://github.com/dtolnay/syn/tree/master/examples](https://github.com/john-cd/rust_howto/issues/743)

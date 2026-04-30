@@ -26,7 +26,8 @@
 // }
 // ANCHOR_END: derive_macro
 
-// // FIXME write; review https://docs.rs/syn/latest/syn/index.html
+// // For more details, review the `syn` parser documentation:
+// // https://docs.rs/syn/latest/syn/index.html
 
 // // ANCHOR: attribute_macro
 // extern crate proc_macro;

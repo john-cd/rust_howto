@@ -7,10 +7,10 @@
 //! and `hyper`. It doesn't have its own middleware system but instead uses
 //! `tower::Service`. This means `axum` gets timeouts, tracing, compression,
 //! authorization, and more, for free.
-/// See also:
-/// - <https://docs.rs/axum/latest/axum/index.html>
-/// - <https://docs.rs/axum/0.8.1/axum/extract/struct.State.html>
-/// - <https://docs.rs/axum/0.8.1/axum/extract/index.html>
+//! See also:
+//! - <https://docs.rs/axum/latest/axum/index.html>
+//! - <https://docs.rs/axum/0.8.1/axum/extract/struct.State.html>
+//! - <https://docs.rs/axum/0.8.1/axum/extract/index.html>
 use std::collections::HashMap;
 use std::sync::Arc;
 
@@ -117,12 +117,17 @@ async fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
-#[test]
-fn require_network() -> anyhow::Result<()> {
-    // main()?;
-    Ok(())
-}
 // // ANCHOR_END: example
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn require_network() -> anyhow::Result<()> {
+        // main()?;
+        Ok(())
+    }
+}
 // // [review time limit](https://github.com/john-cd/rust_howto/issues/865)
 // // <https://docs.rs/axum/latest/axum/index.html>
 // // <https://docs.rs/axum/0.8.1/axum/extract/struct.State.html>

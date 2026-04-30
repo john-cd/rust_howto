@@ -1,11 +1,11 @@
 // ANCHOR: example
-// Operating System's Random Number Generator.
-use rand::rngs::OsRng;
+// Operating System's Random Number Generator compatible with rsa.
 // Encryption using PKCS#1 v1.5 padding.
 use rsa::Pkcs1v15Encrypt;
 // Private and Public keys:
 use rsa::RsaPrivateKey;
 use rsa::RsaPublicKey;
+use rsa::rand_core::OsRng;
 
 // RSA encryption and decryption.
 //
@@ -57,7 +57,11 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
 }

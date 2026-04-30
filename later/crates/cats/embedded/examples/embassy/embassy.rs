@@ -81,9 +81,12 @@ impl LedPin {
 
 // ANCHOR_END: example
 
-#[test]
-#[ignore = "requires embassy crate"]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests { use super::*;
+    #[test]
+    #[ignore = "requires embassy crate"]
+    fn test() {
+        main();
+    }
 }
 // [finish](https://github.com/john-cd/rust_howto/issues/751)

@@ -1,25 +1,24 @@
 #![allow(dead_code)]
+// ANCHOR: example
+//! `diesel_oci` is a Diesel backend and connection implementation for Oracle
+//! databases.
+//!
+//! In your `Cargo.toml`, add the following dependencies:
+//! ```toml
+//! [dependencies]
+//! diesel = { version = "2.3.3" }
+//! diesel-oci = "0.4.0"
+//! dotenvy = "0.15.7"
+//! tokio = { version = "1", features = ["full"] }
+//! ```
+
 use std::env;
 
 // Import diesel.
 use diesel::prelude::*;
 // Import the oracle connection type.
 use diesel_oci::OciConnection;
-// Import dotenvy to load environment variables from a .env file.
-// This is useful for managing configuration settings, especially
-// sensitive information like database credentials.
 use dotenvy::dotenv;
-
-// ANCHOR: example
-// `diesel_oci` is a Diesel backend and connection implementation for Oracle
-// databases.
-
-// In your `Cargo.toml`, add the following dependencies:
-// [dependencies]
-// diesel = { version = "2.3.3", features = [ ] }
-// diesel-oci = "0.4.0"
-// dotenvy = "0.15.7"
-// tokio = { version = "1", features = ["full"] }
 
 diesel::table! {
     // Import sql_types from diesel.
@@ -92,26 +91,30 @@ fn establish_connection(
 }
 // ANCHOR_END: example
 
-#[test]
-#[ignore = "requires external oracle db and oracle client library"]
-fn require_external_svc() -> anyhow::Result<()> {
-    let _lock = super::ENV_MUTEX.lock().unwrap();
-    let username = std::env::var("TEST_ORACLE_DB_USERNAME")
-        .expect("TEST_ORACLE_DB_USERNAME must be set");
-    let password = std::env::var("TEST_ORACLE_DB_PASSWORD")
-        .expect("TEST_ORACLE_DB_PASSWORD must be set");
-    let db_url = std::env::var("TEST_ORACLE_DB_URL")
-        .expect("TEST_ORACLE_DB_URL must be set");
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    #[ignore = "requires external oracle db and oracle client library"]
+    fn require_external_svc() -> anyhow::Result<()> {
+        let _lock = super::ENV_MUTEX.lock().unwrap();
+        let username = std::env::var("TEST_ORACLE_DB_USERNAME")
+            .expect("TEST_ORACLE_DB_USERNAME must be set");
+        let password = std::env::var("TEST_ORACLE_DB_PASSWORD")
+            .expect("TEST_ORACLE_DB_PASSWORD must be set");
+        let db_url = std::env::var("TEST_ORACLE_DB_URL")
+            .expect("TEST_ORACLE_DB_URL must be set");
 
-    unsafe {
-        env::set_var("ORACLE_DB_USERNAME", username);
-        env::set_var("ORACLE_DB_PASSWORD", password);
-        env::set_var("ORACLE_DB_URL", db_url);
+        unsafe {
+            env::set_var("ORACLE_DB_USERNAME", username);
+            env::set_var("ORACLE_DB_PASSWORD", password);
+            env::set_var("ORACLE_DB_URL", db_url);
+        }
+        main()?;
+        Ok(())
     }
-    main()?;
-    Ok(())
 }
-
+// TODO
 // Troubleshooting "DPI-1047: Cannot locate a 64-bit Oracle Client library"
 // This error occurs when the Oracle Instant Client is not installed or not
 // in the system's library path.

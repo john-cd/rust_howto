@@ -39,8 +39,12 @@ fn main() {
         result1.map_left(|s| s.to_uppercase()).map_right(|n| n + 10);
 }
 
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
 }
 // [finish example](https://github.com/john-cd/rust_howto/issues/1317)

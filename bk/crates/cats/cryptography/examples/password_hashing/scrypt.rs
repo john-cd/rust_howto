@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
+// This example demonstrates how to hash and verify passwords using scrypt.
 use std::error::Error;
 
 use scrypt::Scrypt;
@@ -41,7 +42,11 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main().unwrap();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main().unwrap();
+    }
 }

@@ -108,8 +108,12 @@ fn main() -> std::io::Result<()> {
 // Examples adapted from <https://docs.rs/tempfile>
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }

@@ -26,7 +26,11 @@ fn main() {
 // Example adapted from <https://docs.rs/sha1/0.10.6/sha1/index.html>.
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
 }

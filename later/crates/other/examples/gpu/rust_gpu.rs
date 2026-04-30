@@ -1,7 +1,9 @@
 #![allow(dead_code)]
 // ANCHOR: example
 #[cfg(target_arch = "wasm32")]
-use spirv_std::glam::{vec4, Vec4};
+use spirv_std::glam::Vec4;
+#[cfg(target_arch = "wasm32")]
+use spirv_std::glam::vec4;
 #[cfg(target_arch = "wasm32")]
 use spirv_std::spirv;
 
@@ -26,9 +28,13 @@ pub fn main_vs(
 }
 // ANCHOR_END: example
 
-fn main() {}
+fn main() {} // TODO
 
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
 }

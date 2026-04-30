@@ -4,7 +4,7 @@
 # The stages are:
 # 1. `tool-builder`: Builds and installs Rust tools and binaries (e.g., mdbook and its plugins) in a Rust image.
 # 2. `base`: Sets up the base image with necessary system dependencies and copies the tools from the builder stage.
-# 3. `tools-app-builder`: Builds local Rust tools (e.g., mdbook-scrub) from the source code.
+# 3. `local-tool-builder`: Builds local Rust tools (e.g., mdbook-scrub) from the source code.
 # 4. `development`: The final image for development, which includes additional tools and configurations for an optimal development experience.
 # 5. `ci`: A stage optimized for Continuous Integration, which includes only the necessary tools and dependencies to build the book in a CI environment.
 # Each stage is designed to optimize caching and reduce the final image size by only including necessary components
@@ -91,7 +91,7 @@ RUN cargo fetch --locked --manifest-path /code/tools/Cargo.toml
 
 ## Build the tools in release mode
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
-  cargo +nightly build --bins --locked --all-features --release --artifact-dir /code/bin --manifest-path /code/tools/Cargo.toml
+    cargo +nightly build --bins --locked --all-features --release --artifact-dir /code/bin --manifest-path /code/tools/Cargo.toml
 
 # ------------------------------------------------------------------------------------------------
 

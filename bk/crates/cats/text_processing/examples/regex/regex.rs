@@ -133,7 +133,11 @@ image_lbl6: image_url6
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
 }

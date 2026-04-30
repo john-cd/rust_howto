@@ -23,8 +23,10 @@ async fn main() -> anyhow::Result<()> {
         .await;
     let client = Client::new(&config);
 
-    // List objects in the S3 bucket.
-    let bucket_name = "your-bucket-name";
+    // List objects in the S3 bucket. The bucket can be overridden with
+    // the `AWS_S3_BUCKET` environment variable for real runs and tests.
+    let bucket_name = std::env::var("AWS_S3_BUCKET")
+        .unwrap_or_else(|_| "your-bucket-name".to_string());
     let result = client.list_objects_v2().bucket(bucket_name).send().await;
 
     match result {
@@ -42,9 +44,20 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn require_network() -> anyhow::Result<()> {
-    // main()?; // TODO Skip running S3 queries in simple unit tests to avoid network
-    // timeouts / missing AWS credentials.
-    Ok(())
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn require_network() -> anyhow::Result<()> {
+        // TODO
+        if std::env::var("AWS_S3_BUCKET").is_err() {
+            eprintln!(
+                "Skipping AWS network test because AWS_S3_BUCKET is not set."
+            );
+            return Ok(());
+        }
+
+        main()?;
+        Ok(())
+    }
 }

@@ -70,7 +70,7 @@ fn extract_crate_names(depset: &DepsSet) -> Vec<String> {
 }
 
 #[cfg(test)]
-mod tests {
+mod tests { use super::*;
     use std::fs;
     use std::path::Path;
 

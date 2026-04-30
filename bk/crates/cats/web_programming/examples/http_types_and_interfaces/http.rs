@@ -37,8 +37,12 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
 }
 // [expand; HTTP header interpretation and generation.  LATER](https://github.com/john-cd/rust_howto/issues/1355)
