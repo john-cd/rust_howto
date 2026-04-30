@@ -21,7 +21,7 @@ use redis::Connection;
 /// error if the connection fails.
 fn connect() -> Result<Connection> {
     let redis_host_name = env::var("REDIS_HOSTNAME")
-        .context("missing environment variable REDIS_HOSTNAME")?;
+        .unwrap_or_else(|_| "127.0.0.1:6379".to_string());
     let redis_password = env::var("REDIS_PASSWORD").unwrap_or_default();
     // Does Redis server need a secure connection?
     let uri_scheme = match env::var("IS_TLS") {
@@ -64,12 +64,17 @@ fn main() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
+    #[ignore = "Requires an external Redis server"]
     fn require_external_svc() -> Result<()> {
-        unsafe {
-            // container name = $COMPOSE_PROJECT_NAME + service name + number.
-            env::set_var("REDIS_HOSTNAME", "rust_howto_dev-redis-1");
+        if env::var("REDIS_HOSTNAME").is_err() {
+            eprintln!(
+                "Skipping Redis integration test; set REDIS_HOSTNAME to run this test."
+            );
+            return Ok(());
         }
+
         main()?;
         Ok(())
     }
