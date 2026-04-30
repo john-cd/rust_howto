@@ -27,7 +27,7 @@ futures-util = "0.3.31"
 kanal = "0.1.1"                                                        # NOTE: pre version
 mio = "1.0.2"
 postage = "0.5.0"
-rand = { version = "0.9.2", features = ["thread_rng"] }
+rand = { version = "0.10.1", features = ["thread_rng"] }
 rayon = "1.11.0"
 reqwest = "0.12.24"
 time = "0.3.45"

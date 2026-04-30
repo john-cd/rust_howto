@@ -16,5 +16,5 @@ autolib = false
 
 [dependencies]
 cached = "0.56.0"
-lru = "0.17.0"
+lru = "0.18.0"
 moka = { version = "0.12.11", features = ["sync"] }
