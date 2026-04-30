@@ -15,11 +15,11 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-# axum = { version = "0.8.4", features = ["tokio"] }
-# tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread"]  }
-# url = "2.5.4"
+axum = { version = "0.8.4", features = ["tokio"] }
+tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread"]  }
+url = "2.5.4"
 anyhow = "1.0.100"
-# FIXME ngrok = { version = "0.15.0", features = [ "axum" ] }
+ngrok = { version = "0.15.0", features = [ "axum" ] }
 pingora = { version = "0.8.0", features = ["lb"] }
 
 [target.'cfg(target_os = "linux")'.dependencies]
