@@ -7,18 +7,24 @@
 
 use std::error::Error;
 
-use sys_locale::{get_locale, get_locales};
+use sys_locale::get_locale;
+use sys_locale::get_locales;
 
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     let current_locale = get_locale().unwrap_or_else(|| "en-US".to_string());
     let mut preferred_locales = get_locales();
-    let locale = preferred_locales.next().unwrap_or_else(|| current_locale.clone());
+    let locale = preferred_locales
+        .next()
+        .unwrap_or_else(|| current_locale.clone());
 
     let message = translate_greeting(&locale);
 
     println!("Detected locale: {}", locale);
     println!("Localized greeting: {}", message);
-    println!("Full locale preference list: {:?}", preferred_locales.collect::<Vec<_>>());
+    println!(
+        "Full locale preference list: {:?}",
+        preferred_locales.collect::<Vec<_>>()
+    );
 
     Ok(())
 }
@@ -44,11 +50,17 @@ mod tests {
 
     #[test]
     fn translate_greeting_selects_spanish() {
-        assert_eq!(translate_greeting("es-ES"), "¡Hola! Bienvenido al ejemplo de localización.");
+        assert_eq!(
+            translate_greeting("es-ES"),
+            "¡Hola! Bienvenido al ejemplo de localización."
+        );
     }
 
     #[test]
     fn translate_greeting_defaults_to_english() {
-        assert_eq!(translate_greeting("unknown"), "Hello! Welcome to the localization example.");
+        assert_eq!(
+            translate_greeting("unknown"),
+            "Hello! Welcome to the localization example."
+        );
     }
 }
