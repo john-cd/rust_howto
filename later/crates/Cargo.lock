@@ -5096,6 +5096,7 @@ dependencies = [
  "anyhow",
  "quote",
  "syn 2.0.117",
+ "watt",
 ]
 
 [[package]]
@@ -18966,6 +18967,12 @@ checksum = "4bd7fda1199b94fff395c2d19a153f05dbe7807630316fa9673367666fd2ad8c"
 dependencies = [
  "wast",
 ]
+
+[[package]]
+name = "watt"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b3bf2314bda414d3272de8e57b7073da37d4cd19c92cffb53f80b725fddfb289"
 
 [[package]]
 name = "wayland-backend"

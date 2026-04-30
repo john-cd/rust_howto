@@ -1,3 +1,5 @@
 mod watt;
 
-fn main() {}
+fn main() {
+    watt::main();
+}
