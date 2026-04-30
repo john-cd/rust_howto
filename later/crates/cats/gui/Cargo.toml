@@ -19,37 +19,41 @@ autolib = false
 arboard = "3.4.1"
 cosmic-text = "0.14.0"
 dioxus = { version = "0.6.1", optional = true }
-# dioxus-desktop = { version = "0.6.1", optional = true }
-# dioxus-web = { version = "0.6.1", optional = true }
+dioxus-desktop = { version = "0.6.1", optional = true }
+dioxus-web = { version = "0.6.1", optional = true }
 eframe = "0.32.1"
 egui = "0.32.1"
 femtovg = { version = "0.16.0", optional = true }
-# floem = { version = "0.2.0", optional = true } # FIXME review requirements
-# gtk = { version = "0.9.5", package = "gtk4", optional = true } # FIXME Make sure to use gtk4; for relm4 / gtk4 examples
-iced = { version = "0.13.1", optional = true }
+floem = { version = "0.2.0", optional = true }
+gtk = { version = "0.11.3", package = "gtk4", optional = true }
+iced = { version = "0.14.0", optional = true }
 # minifb = "0.28.0"
 morphorm = "0.7.0"
-# pollster = { version = "0.4", optional = true } # for vello example
+pollster = { version = "0.4.0", optional = true }
 # # FIXME size-of v0.1.5 does not compile on Windows:
 # # r3bl_tuify = "0.2.0"
-# relm4 = { version = "0.9.1", optional = true }
-# relm4-components = { version = "0.9.1", optional = true }
+relm4 = { version = "0.11.0", optional = true }
+relm4-components = { version = "0.11.0", optional = true }
 # # FIXME https://gtk-rs.org/gtk4-rs/git/book/installation_linux.html
 # # FIXME https://gtk-rs.org/gtk4-rs/git/book/installation_windows.html
 rfd = "0.15.2"
-skia-safe = { version = "0.86.0", features = [
+skia-safe = { version = "0.84.0", features = [
     "gl",
-], optional = true } # pinned for slint
-slint = "1.10.0"
+], optional = true }
+slint = { version = "1.11.0", optional = true }
 taffy = "0.9.1"
 tao = "0.34.0"
-tauri = "2.0.6" # Requires multiple libraries. See Dockerfile
-vello = { version = "0.5.0", optional = true }
+tauri = "2.0.6"
+vello = { version = "0.8.0", optional = true }
 vger = { version = "0.4.0", optional = true }
-# vizia = { version = "0.2.0", optional = true } # FIXME conflict with skia-safe
-# webrender = { version = "0.61.0", optional = true } # FIXME conflicts with RustQuant - native library `freetype`
-winit = "0.30.8"                               # for vello, winit examples
-xilem = { version = "0.3.0", optional = true }
+vizia = { version = "0.3.0", optional = true, default-features = false, features = ["winit"] }
+webrender = { version = "0.68.0", optional = true }
+winit = "0.30.8"
+xilem = { version = "0.4.0", optional = true }
+glutin = { version = "0.32.3", optional = true }
+gl = { version = "0.14.0", optional = true }
+wgpu = { version = "29.0.1", optional = true }
+glutin-winit = { version = "0.5.0", optional = true }
 
 ## General
 anyhow = "1.0.95"
@@ -57,11 +61,15 @@ anyhow = "1.0.95"
 # FIXME
 [features]
 default = []
-dioxus = ["dep:dioxus"] # "dep:dioxus-web", "dep:dioxus-desktop"
-#femtovg = ["dep:femtovg"]
-#gtk = ["dep:gtk", "dep:relm4", "dep:relm4-components"]
+dioxus = ["dep:dioxus", "dep:dioxus-desktop", "dep:dioxus-web"]
+femtovg = ["dep:femtovg"]
+gtk = ["dep:gtk", "dep:relm4", "dep:relm4-components"]
 iced = ["dep:iced"]
 skia = ["dep:skia-safe"]
 vger = ["dep:vger"]
-#vello = ["dep:pollster", "dep:vello"]
+vello = ["dep:pollster", "dep:vello", "dep:wgpu"]
+vizia = ["dep:vizia"]
+webrender = ["dep:webrender", "dep:glutin", "dep:gl", "dep:glutin-winit"]
+floem = ["dep:floem"]
 xilem = ["dep:xilem"]
+slint = ["dep:slint"]
