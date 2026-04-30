@@ -14,7 +14,6 @@ use accesskit::TreeUpdate;
 
 // In this example, we
 // - create a simple accessibility tree with a root node and a button node.
-
 fn main() {
     let root_id = NodeId(0);
     let button_id = NodeId(1);
@@ -39,6 +38,10 @@ fn main() {
     assert_eq!(update.tree.unwrap().root, root_id);
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

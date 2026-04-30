@@ -4,6 +4,7 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - wasm"
 documentation.workspace = true
 homepage.workspace = true
@@ -15,8 +16,8 @@ autolib = false
 
 [dependencies]
 # LATER add example?
-js-sys = "0.3.77"
-web-sys = { version = "0.3.77", features = ["Window"] }
+js-sys = "0.3.95"
+web-sys = { version = "0.3.95", features = ["Window"] }
 wasm-bindgen = "0.2.100"
 wasmer = "6.0.1"
 wasmtime = { version = "36.0.7", optional = true } # Heavy compile

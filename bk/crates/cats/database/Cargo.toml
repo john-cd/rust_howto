@@ -4,6 +4,7 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples for Database interactions with SQLx, Diesel, MongoDB, and Redis."
 documentation.workspace = true
 homepage.workspace = true

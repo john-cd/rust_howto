@@ -19,17 +19,20 @@ use rand::Rng;
 /// Windows.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Prep: create a temporary directory:
-    if !fs::exists("temp")? {
-        fs::create_dir("temp")?;
+    let temp_dir = std::path::Path::new("temp");
+    if !temp_dir.exists() {
+        fs::create_dir(temp_dir)?;
     }
     // Prep: create a random image:
     let width = 100;
     let height = 100;
-    let mut rng = rand::rng();
+    let mut rng = rand::thread_rng();
     let mut rgb_image = RgbImage::new(width, height);
     for x in 0..width {
         for y in 0..height {
-            let (r, g, b): (u8, u8, u8) = rng.random();
+            let r = rng.gen::<u8>();
+            let g = rng.gen::<u8>();
+            let b = rng.gen::<u8>();
             rgb_image.put_pixel(x, y, Rgb([r, g, b]));
         }
     }
@@ -52,6 +55,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), Box<dyn std::error::Error>> {
+    main()?;
+    Ok(())
+}
 
 #[cfg(test)]
 mod tests {

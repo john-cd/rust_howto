@@ -15,9 +15,9 @@ pub(crate) static ENV_MUTEX: std::sync::Mutex<()> = std::sync::Mutex::new(());
 
 #[cfg(feature = "postgres")]
 fn main() -> anyhow::Result<()> {
-    create_tables::main()?;
-    insert_query_data::main()?;
-    // NOTE: `aggregate_data::main()` is a separate Postgres example that
+    create_tables::run()?;
+    insert_query_data::run()?;
+    // NOTE: `aggregate_data::run()` is a separate Postgres example that
     // operates on a different schema, so it is intentionally not executed here.
     Ok(())
 }

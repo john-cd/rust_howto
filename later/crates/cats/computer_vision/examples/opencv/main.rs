@@ -1,3 +1,5 @@
 mod opencv;
 
-fn main() {}
+fn main() {
+    opencv::run();
+}

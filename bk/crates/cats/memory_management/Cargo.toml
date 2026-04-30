@@ -4,6 +4,7 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Examples of advanced memory management, allocators, and data structures like Slab and Bumpalo."
 documentation.workspace = true
 homepage.workspace = true

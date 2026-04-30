@@ -3,4 +3,8 @@ mod candle;
 mod linfa;
 mod smartcore;
 
-fn main() {}
+fn main() {
+    candle::run();
+    linfa::run();
+    smartcore::run();
+}

@@ -1,4 +1,7 @@
 mod bindgen;
 mod cbindgen;
 
-fn main() {}
+fn main() {
+    bindgen::run();
+    cbindgen::run();
+}

@@ -13,7 +13,7 @@ use minifb::WindowOptions;
 const WIDTH: usize = 320;
 const HEIGHT: usize = 240;
 
-pub fn main() {
+fn main() {
     let mut window = Window::new(
         "minifb native graphics example",
         WIDTH,
@@ -49,10 +49,18 @@ pub fn main() {
         last_frame = Instant::now();
     }
 }
-// ANCHOR_END: example
-// TODO review
 
-// #[test]
-// fn test() {
-//     main();
-// }
+// ANCHOR_END: example
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        // TODO main();
+    }
+}
+// TODO review

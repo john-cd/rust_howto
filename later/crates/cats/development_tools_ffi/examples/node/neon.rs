@@ -29,4 +29,8 @@ fn main(mut cx: ModuleContext) -> NeonResult<()> {
 }
 // ANCHOR_END: example
 
+pub fn run() {
+    main();
+}
+
 // [finish how to test](https://github.com/john-cd/rust_howto/issues/1033)?

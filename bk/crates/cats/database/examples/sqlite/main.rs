@@ -12,9 +12,9 @@ fn main() -> anyhow::Result<()> {
         fs::create_dir("temp")?;
     }
     let _ = fs::remove_file("temp/cats.db");
-    initialization::main()?;
-    insert_select::main()?;
-    transactions::main()?;
+    initialization::run()?;
+    insert_select::run()?;
+    transactions::run()?;
     Ok(())
 }
 

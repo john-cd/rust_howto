@@ -1,3 +1,5 @@
 mod embassy;
 
-fn main() {}
+fn main() {
+    embassy::run();
+}

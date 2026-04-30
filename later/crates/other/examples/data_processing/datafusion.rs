@@ -81,11 +81,15 @@ async fn run() -> datafusion::error::Result<()> {
     Ok(())
 }
 
-pub fn main() {
+fn main() {
     let rt = tokio::runtime::Runtime::new().unwrap();
     rt.block_on(run()).unwrap();
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

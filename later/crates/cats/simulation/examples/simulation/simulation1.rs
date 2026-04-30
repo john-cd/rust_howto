@@ -71,8 +71,16 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
 }
-// // [write LATER](https://github.com/john-cd/rust_howto/issues/846)
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+        #[test]
+    fn test() {
+        main();
+    }
+}
+// [review](https://github.com/john-cd/rust_howto/issues/846)

@@ -4,6 +4,7 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "A simple CLI tool to generate markdown fragments, e.g. markdown links and reference definitions. The outputs can be copy-pasted into the book's markdown where needed."
 documentation.workspace = true
 homepage.workspace = true

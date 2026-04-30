@@ -2,6 +2,6 @@ mod morphorm;
 mod taffy;
 
 fn main() {
-    morphorm::main();
-    taffy::main();
+    morphorm::run();
+    taffy::run();
 }

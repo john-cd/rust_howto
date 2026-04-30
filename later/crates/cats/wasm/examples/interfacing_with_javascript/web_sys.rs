@@ -14,4 +14,17 @@ pub fn show_alert() {
             .expect("Failed to show alert");
     }
 }
+
+fn main() {
+    // TODO run();
+}
 // ANCHOR_END: example
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
+}

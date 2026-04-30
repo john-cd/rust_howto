@@ -4,13 +4,13 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Examples covering fundamental Rust language features, macros, and asynchronous programming."
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
 keywords = ["language", "rust-fundamentals", "macros", "tokio", "strum"]
 publish = false
-readme = "README.md"
 autolib = false
 
 [features]

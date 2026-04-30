@@ -12,7 +12,7 @@ use postgres::NoTls;
 /// The `author` table has columns for `id`, `name`, and `country`.
 /// The `book` table has columns for `id`, `title`, and `author_id` (a foreign
 /// key referencing the `author` table).
-pub fn main() -> anyhow::Result<()> {
+fn main() -> anyhow::Result<()> {
     // Establish a connection to the PostgreSQL database.
     // The connection URL format is
     // `postgresql://<user>:<password>@<host>/<db>`.
@@ -45,3 +45,7 @@ pub fn main() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}

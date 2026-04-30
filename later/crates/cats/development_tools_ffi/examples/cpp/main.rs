@@ -1,3 +1,5 @@
 mod cxx;
 
-fn main() {}
+fn main() {
+    cxx::run();
+}

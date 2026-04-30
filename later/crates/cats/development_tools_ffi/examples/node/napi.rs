@@ -10,11 +10,14 @@ fn hello(name: String) -> String {
     format!("Hello, {name}!")
 }
 
-fn main() {}
+fn main() {
+    // TODO
+}
 
 // ANCHOR_END: example
-
-// [finish; https://lib.rs/crates/napi; https://github.com/napi-rs/package-template](https://github.com/john-cd/rust_howto/issues/1032)
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
@@ -24,3 +27,4 @@ mod tests {
         main();
     }
 }
+// [finish; https://lib.rs/crates/napi; https://github.com/napi-rs/package-template](https://github.com/john-cd/rust_howto/issues/1032)

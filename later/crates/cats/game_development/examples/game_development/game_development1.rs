@@ -6,7 +6,7 @@ use parry2d::query;
 use parry2d::shape::Ball;
 use parry2d::shape::Cuboid;
 
-pub fn main() {
+fn main() {
     // Define shapes
     let ball = Ball::new(1.0);
     let cuboid = Cuboid::new(Vector::new(1.0, 1.0));
@@ -42,6 +42,10 @@ pub fn main() {
     }
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

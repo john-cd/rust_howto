@@ -39,6 +39,9 @@ fn main() {
     println!("Transformed vector: {transformed_vector:?}");
 }
 // ANCHOR_END: example
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

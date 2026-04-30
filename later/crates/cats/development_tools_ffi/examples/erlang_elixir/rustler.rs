@@ -28,11 +28,16 @@ fn add(env: Env, a: i32, b: i32) -> NifResult<i32> {
 // call these NIFs.
 rustler::init!("Elixir.MyRustLibrary");
 
-fn main() {}
+fn main() {
+    // TODO
+    // The main function is not used in this context, as the NIFs are called
+    // from Elixir.
+}
 
 // ANCHOR_END: example
-
-// [review; how to test](https://github.com/john-cd/rust_howto/issues/1080)
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
@@ -42,3 +47,4 @@ mod tests {
         main();
     }
 }
+// [review; how to test](https://github.com/john-cd/rust_howto/issues/1080)

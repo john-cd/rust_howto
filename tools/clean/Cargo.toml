@@ -4,6 +4,7 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "A utility to clean up temporary directories and build artifacts during development and testing."
 documentation.workspace = true
 homepage.workspace = true

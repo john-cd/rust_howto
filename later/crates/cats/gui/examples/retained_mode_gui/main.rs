@@ -4,16 +4,18 @@ mod iced;
 mod slint;
 #[cfg(feature = "vizia")]
 mod vizia;
+#[cfg(feature = "xilem")]
 mod xilem;
 
 fn main() -> anyhow::Result<()> {
     #[cfg(feature = "floem")]
-    floem::main();
-    iced::main();
-    // slint::main()?;
+    floem::run();
+    iced::run();
+    // slint::run()?;
     #[cfg(feature = "vizia")]
-    vizia::main();
-    xilem::main();
+    vizia::run();
+    #[cfg(feature = "xilem")]
+    xilem::run();
     Ok(())
 }
 // [finish fix](https://github.com/john-cd/rust_howto/issues/1051)

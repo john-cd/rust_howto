@@ -1,3 +1,5 @@
 mod rapier2d;
 
-fn main() {}
+fn main() {
+    rapier2d::run();
+}

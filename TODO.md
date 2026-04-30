@@ -3433,7 +3433,7 @@
 
 ### bk/crates/cats/database/examples/postgres/main.rs
 
-- [ ] aggregate_data::main()? ([bk/crates/cats/database/examples/postgres/main.rs](./bk/crates/cats/database/examples/postgres/main.rs#L21))
+- [ ] aggregate_data::run()? ([bk/crates/cats/database/examples/postgres/main.rs](./bk/crates/cats/database/examples/postgres/main.rs#L21))
 - [?] [review](https://github.com/john-cd/rust_howto/issues/713) ([bk/crates/cats/database/examples/postgres/main.rs](./bk/crates/cats/database/examples/postgres/main.rs#L40))
 
 ### bk/crates/cats/database/examples/postgres/tokio_postgres.rs
