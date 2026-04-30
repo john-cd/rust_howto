@@ -10,7 +10,7 @@ services:
     environment:
       - RUST_LOG=debug
       - AMQP_ADDR=amqp://guest:guest@rust_howto-amqp-1:5672
-      - SMTP_SERVER=rust_howto-smtp-1:1025
+      - SMTP_SERVER=smtp:1025
       - SMTP_USER=smtp_username
       - SMTP_PASSWORD=smtp_password
       - CASSANDRA_ADDR=cassandra:9042
@@ -20,7 +20,7 @@ services:
       - MSSQL_ADDR=mssql:1433
       - ORACLE_ADDR=oracle:1521
       - POSTGRES_ADDR=postgres:5432
-      - REDIS_ADDR=redis:6379
+      - REDIS_HOSTNAME=redis:6379
 
   amqp:
     image: rabbitmq:management
