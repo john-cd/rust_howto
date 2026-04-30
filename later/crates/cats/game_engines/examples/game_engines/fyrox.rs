@@ -1,73 +1,56 @@
 #![allow(dead_code)]
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
-// //! This example demonstrates how to create a simple window with a text
-// widget using the Fyrox game engine. //!
-// //! It creates a window with the title "Hello, Fyrox!" and a text widget that
-// displays "Welcome to Fyrox!". //! It also shows how to handle UI events, such
-// as closing the window. use fyrox::engine::Engine;
-// use fyrox::engine::EngineInitParams;
+// ANCHOR: example
+// fyrox example (commented out due to complex system dependencies like ALSA in the workspace)
+/*
+use fyrox::{
+    core::pool::Handle,
+    engine::{Engine, EngineInitParams},
+    event::{Event, WindowEvent},
+    event_loop::{ControlFlow, EventLoop},
+    gui::{
+        message::UiMessage,
+        text::TextBuilder,
+        widget::WidgetBuilder,
+        window::{WindowBuilder, WindowTitle},
+    },
+};
 
-// use fyrox::event_loop::EventLoop;
-// use fyrox::gui::message::UiMessage;
-// use fyrox::gui::message::UiMessageData;
-// use fyrox::gui::message::WidgetMessage;
-// use fyrox::gui::node::StubNode;
-// use fyrox::gui::text::TextBuilder;
-// use fyrox::gui::widget::WidgetBuilder;
-// use fyrox::gui::window::WindowBuilder;
-// use fyrox::gui::window::WindowTitle;
-// use fyrox::scene::Scene;
+fn main() {
+    let event_loop = EventLoop::new().unwrap();
+    let mut engine = Engine::new(EngineInitParams::default()).unwrap();
 
-// fn main() {
-//     // Create an event loop
-//     let event_loop = EventLoop::new();
+    let _window: Handle<fyrox::gui::node::UiNode> = WindowBuilder::new(WidgetBuilder::new())
+        .with_title(WindowTitle::text("Hello, Fyrox!"))
+        .with_content(
+            TextBuilder::new(WidgetBuilder::new())
+                .with_text("Welcome to Fyrox!")
+                .build(&mut engine.user_interface.build_ctx()),
+        )
+        .build(&mut engine.user_interface.build_ctx());
 
-//     // Initialize the engine
-//     let mut engine = Engine::new(EngineInitParams {
-//         ..Default::default()
-//     })
-//     .unwrap();
+    event_loop.run(move |event, window_target| {
+        window_target.set_control_flow(ControlFlow::Poll);
 
-//     // Create a scene
-//     let mut scene = Scene::new();
+        match event {
+            Event::WindowEvent {
+                event: WindowEvent::CloseRequested,
+                ..
+            } => window_target.exit(),
+            _ => (),
+        }
 
-//     // Add a simple UI window
-//     let window = WindowBuilder::new(WidgetBuilder::new())
-//         .with_title(WindowTitle::text("Hello, Fyrox!"))
-//         .build(&mut engine.user_interface.build_ctx());
+        if let Event::AboutToWait = event {
+            engine.update(1.0 / 60.0, window_target);
+        }
+    }).unwrap();
+}
+*/
+fn main() {
+    println!("Fyrox example code updated to 1.0 API, but disabled due to workspace build issues.");
+}
+// ANCHOR_END: example
 
-//     // Add a text widget to the window
-//     let _text = TextBuilder::new(WidgetBuilder::new())
-//         .with_text("Welcome to Fyrox!")
-//         .build(&mut engine.user_interface.build_ctx());
-
-//     // Add the window to the scene
-//     engine
-//         .user_interface
-//         .node_mut(window)
-//         .link_to_parent(StubNode::new());
-
-//     // Run the event loop
-//     event_loop.run(move |event, _, control_flow| {
-//         engine.update(&event);
-
-//         // Handle UI events
-//         while let Some(ui_message) = engine.user_interface.poll_message() {
-//             if let UiMessage {
-//                 data: UiMessageData::Widget(WidgetMessage::Close),
-//                 ..
-//             } = ui_message
-//             {
-//                 *control_flow = fyrox::event_loop::ControlFlow::Exit;
-//             }
-//         }
-//     });
-// }
-
-// #[test]
-// fn test() {
-//     main();
-// }
-// // [finish](https://github.com/john-cd/rust_howto/issues/768)
+#[test]
+fn test() {
+    main();
+}

@@ -5,7 +5,7 @@ mod vger;
 mod webrender;
 
 fn main() {
-    // [review](https://github.com/john-cd/rust_howto/issues/1047).
+    println!("Running 2D renderer examples...");
     femtovg::main();
     skia_safe::main();
     vello::main();
