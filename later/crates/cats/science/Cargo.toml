@@ -4,19 +4,18 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description = "Book code examples and their crate dependencies - science"
+description = "Scientific computing and machine learning examples using Ndarray, Linfa, and Candle."
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+keywords = ["science", "machine-learning", "ndarray", "linfa", "candle", "ai"]
 categories = ["science"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-candle-core = "0.9.1"
-candle-nn = "0.9.1"
+candle-core = { version = "0.9.1", optional = true }
+candle-nn = { version = "0.9.1", optional = true }
 linfa = "0.7.0"
 linfa-linear = "0.7.0"
 ndarray = "0.15.6" # pinned to 0.15.6 for linfa
@@ -24,5 +23,5 @@ smartcore = "0.4.0"
 rand = { version = "0.10.1", features = ["std"] }
 
 [features]
-#default = []
-# FIXME do we need a feature? candle = ["dep:candle-core", "dep:candle-nn"]
+default = []
+candle = ["dep:candle-core", "dep:candle-nn"]

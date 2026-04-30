@@ -4,12 +4,11 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description = "Book code examples and their crate dependencies"
+description = "Core examples demonstrating idiomatic use of the Rust standard library and common error handling patterns."
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+keywords = ["std", "standard-library", "thiserror", "derive_more"]
 categories.workspace = true
 publish = false
 readme = "README.md"
@@ -17,6 +16,6 @@ autolib = false
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow = "1.0.100"
+anyhow = "1.0.102"
 derive_more = { version = "2.0.1", features = ["full"] }
 thiserror = "2.0.17"

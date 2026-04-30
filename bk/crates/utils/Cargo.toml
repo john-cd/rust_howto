@@ -4,12 +4,12 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description.workspace = true
+description = "Common utility functions and filesystem helpers shared across the Rust How-to examples."
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
 license-file.workspace = true
-keywords.workspace = true
+keywords = ["utils", "helpers", "walkdir", "filesystem"]
 categories = ["development-tools"]
 publish.workspace = true
 

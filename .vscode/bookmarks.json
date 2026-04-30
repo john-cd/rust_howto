@@ -604,12 +604,12 @@
 			"path": "bk/crates/cats/data_structures/Cargo.toml",
 			"bookmarks": [
 				{
-					"line": 23,
+					"line": 22,
 					"column": 11,
 					"label": ""
 				},
 				{
-					"line": 33,
+					"line": 32,
 					"column": 21,
 					"label": ""
 				}

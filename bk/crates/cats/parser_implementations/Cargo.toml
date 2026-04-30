@@ -8,8 +8,8 @@ description = "Book code examples and their crate dependencies - parser_implemen
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = ["parser-implementations"]
 publish.workspace = true
 autolib = false
@@ -21,8 +21,6 @@ ignored = ["rust-ini"]
 sqlparser = ["dep:sqlparser"]
 
 [dependencies]
-xml5ever = "0.23.0"
-xmlparser = "0.13.6"
 anyhow = "1.0.100"
 basic-toml = "0.1.10"
 chrono = { version = "0.4.42", features = ["serde"] }
@@ -49,3 +47,5 @@ tl = "0.7.8"
 toml = "0.9.8"
 toml_edit = "0.23.7"
 xml = "0.8.20"
+xml5ever = "0.23.0"
+xmlparser = "0.13.6"

@@ -8,8 +8,8 @@ description = "Book code examples and their crate dependencies - concurrency"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = ["concurrency"]
 publish.workspace = true
 autolib = false
@@ -39,8 +39,8 @@ parking_lot = "0.12.5"
 ractor = "0.15.9"
 rand = { version = "0.10.1", features = ["thread_rng"] }
 rayon = "1.11.0"
-ring = "0.17.14"
 riker = "0.4.2"
+ring = "0.17.14"
 stakker = "0.2.11"
 threadpool = "1.8.1"
 time = "0.3.45"

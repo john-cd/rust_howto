@@ -4,26 +4,22 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description = "Book code examples and their crate dependencies - web_programming_websocket"
+description = "Book code examples for Web Programming with WebSockets using Tungstenite."
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+keywords = ["websocket", "networking", "tungstenite", "tokio", "async"]
 categories = ["web-programming::websocket"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-# FIXME async-tungstenite = { version = "0.29.1", features = [
-#    "tokio-runtime",
-#    "tokio-native-tls",
-# ] }
-# [async-tungstenite: review](https://github.com/john-cd/rust_howto/issues/1291)
+async-tungstenite = { version = "0.29.1", features = [
+   "tokio-runtime",
+   "tokio-native-tls",
+] }
 tokio-tungstenite = "0.27.0"
 tungstenite = "0.27.0"
-
-## General
 anyhow = "1.0.99"
 futures-util = "0.3.31"
 tokio = { version = "1.47.1", features = ["macros", "rt-multi-thread", "net"]  }

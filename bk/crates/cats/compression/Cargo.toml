@@ -8,8 +8,8 @@ description = "Book code examples - compression"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = ["compression"]
 publish.workspace = true
 autolib = false

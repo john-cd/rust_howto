@@ -8,12 +8,12 @@ description = "Book code examples and their crate dependencies"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["rust-patterns"]
 publish = false
 readme = "README.md"
 autolib = false
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow = "1.0.100"
+anyhow = "1.0.102"
