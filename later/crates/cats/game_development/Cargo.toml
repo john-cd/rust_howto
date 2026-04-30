@@ -15,4 +15,5 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
+parry2d = "0.20"
 glam = "0.30.0"

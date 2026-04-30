@@ -3,8 +3,8 @@
 //! A no_std example using only `core` and a fixed-size stack buffer.
 //!
 //! The example demonstrates how to format text without heap allocations.
-use core::fmt::Write;
 use core::fmt;
+use core::fmt::Write;
 
 struct ArrayString {
     buf: [u8; 64],
