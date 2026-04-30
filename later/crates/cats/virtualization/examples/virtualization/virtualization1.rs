@@ -1,12 +1,16 @@
 #![allow(dead_code)]
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
-// fn main() {}
+// ANCHOR: example
+//! Buildable placeholder example.
+//!
+//! Original placeholder comments are preserved below as comments.
+fn main() {
+    println!("Placeholder example.");
+}
+// ANCHOR_END: example
 
-// #[test]
-// #[ignore = "later"]
-// fn test() {
-//     main();
-// }
-// // [write LATER;  cover WASMI cargo add wasmi](https://github.com/john-cd/rust_howto/issues/852)
+#[test]
+#[ignore = "later"]
+fn test() {
+    main();
+}
+// [write;  cover WASMI cargo add wasmi](https://github.com/john-cd/rust_howto/issues/852)

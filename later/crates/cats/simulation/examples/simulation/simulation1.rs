@@ -21,7 +21,9 @@ fn main() {
     let mut multibody_joints = MultibodyJointSet::new();
     let mut ccd_solver = CCDSolver::new();
 
-    let ground_body = RigidBodyBuilder::new_static().translation(vector![0.0f32, -1.0f32]).build();
+    let ground_body = RigidBodyBuilder::new_static()
+        .translation(vector![0.0f32, -1.0f32])
+        .build();
     let ground_handle = bodies.insert(ground_body);
     let ground_collider = ColliderBuilder::cuboid(10.0f32, 1.0f32).build();
     colliders.insert(ground_collider, ground_handle, &mut bodies);

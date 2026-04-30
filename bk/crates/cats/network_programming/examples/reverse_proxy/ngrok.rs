@@ -27,7 +27,8 @@
 //! ## Usage
 //!
 //! 1. Install ngrok e.g. `brew install ngrok`
-//! 2. Run the server: `cargo test --package network_programming --example reverse_proxy`
+//! 2. Run the server: `cargo test --package network_programming --example
+//!    reverse_proxy`
 //! 3. Start ngrok: `ngrok http 3000`
 //! 4. Access the server from the internet using the ngrok URL.
 

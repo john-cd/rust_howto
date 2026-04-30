@@ -1,3 +1,5 @@
 mod images;
 
-fn main() {}
+fn main() {
+    images::run().expect("image example failed");
+}

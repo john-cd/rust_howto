@@ -1,3 +1,5 @@
 mod no_alloc;
 
-fn main() {}
+fn main() {
+    no_alloc::run();
+}

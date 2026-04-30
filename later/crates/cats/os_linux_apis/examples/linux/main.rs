@@ -1,3 +1,5 @@
 mod linux;
 
-fn main() {}
+fn main() {
+    linux::main();
+}
