@@ -12234,17 +12234,6 @@ dependencies = [
 
 [[package]]
 name = "nix"
-version = "0.27.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2eb04e9c688eff1c89d72b407f168cf79bb9e867a9d3323ed6c01519eb9cc053"
-dependencies = [
- "bitflags 2.11.1",
- "cfg-if",
- "libc",
-]
-
-[[package]]
-name = "nix"
 version = "0.29.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "71e2746dc3a24dd78b3cfcb7be93368c6de9963d30f43a6a73998a9cf4b17b46"
@@ -13347,9 +13336,6 @@ version = "0.1.2"
 [[package]]
 name = "os_linux_apis"
 version = "0.1.2"
-dependencies = [
- "nix 0.27.1",
-]
 
 [[package]]
 name = "os_macos_apis"
@@ -16736,7 +16722,7 @@ dependencies = [
  "linfa",
  "linfa-linear",
  "ndarray",
- "rand 0.9.4",
+ "rand 0.10.1",
  "smartcore",
 ]
 

@@ -24,7 +24,7 @@ base64 = "0.22.1"
 bincode = "2.0.1"
 bytemuck = { version = "1.24.0", features = ["derive"] }
 byteorder = "1.5.0"
-capnp = "0.21.0"
+capnp = "0.24.0"
 ciborium = "0.2.2"
 csv = "1.4.0"
 data-encoding = "2.9.0"
