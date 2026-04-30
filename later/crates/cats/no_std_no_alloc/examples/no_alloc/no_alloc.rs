@@ -4,8 +4,8 @@
 //!
 //! This example runs in a `#![no_std]` context and formats text into a
 //! fixed-size stack buffer without heap allocations.
-use core::fmt::Write;
 use core::fmt;
+use core::fmt::Write;
 
 pub fn run() {
     let mut buffer = ArrayString::new();
