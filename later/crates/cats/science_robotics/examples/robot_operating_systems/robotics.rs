@@ -16,7 +16,8 @@ fn main() {
     })
     .expect("failed to subscribe");
 
-    let publisher: Publisher<String> = rosrust::publish("/hello", 10).expect("failed to create publisher");
+    let publisher: Publisher<String> =
+        rosrust::publish("/hello", 10).expect("failed to create publisher");
 
     let mut count = 0;
     while rosrust::is_ok() && count < 5 {
