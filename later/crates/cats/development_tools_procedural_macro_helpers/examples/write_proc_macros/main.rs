@@ -1,27 +1,19 @@
+//! Demonstrates how to use `darling`, `proc-macro2`, `syn`, and `quote`
+//! outside of a `proc-macro` crate.
+//!
+//! This example parses a simple struct syntax tree, generates a `Debug`
+//! implementation, and prints the resulting token stream.
+
 mod darling;
 mod paste;
 mod proc_macro2;
 mod quote;
 mod syn;
 
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
-// //! # Procedural Macro Examples
-// //!
-// //! The following demonstrates the usage of an example `log_fn` procedural
-// macro. //!
-// //! The `log_fn` macro automatically logs the entry and exit of a function.
-// use development_tools_procedural_macro_helpers::log_fn;
-
-// #[log_fn]
-// fn my_function() {
-//     println!("Inside my_function");
-// }
-
-// fn main() {
-//     my_function();
-// }
+fn main() {
+    darling::run();
+    // TODO add examples for paste, proc_macro2, quote, and syn.
+}
 
 // // [finish; review the following; decide what examples are needed](https://github.com/john-cd/rust_howto/issues/1158)
 // // for proc macros. move proc macros to lib.rs
@@ -42,4 +34,3 @@ mod syn;
 // // <https://doc.rust-lang.org/core/macro.compile_error.html>
 // // <https://github.com/dtolnay/watt>.
 
-fn main() {}

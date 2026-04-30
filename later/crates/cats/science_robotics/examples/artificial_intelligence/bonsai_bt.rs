@@ -119,6 +119,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+pub fn run() {
+    main();
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -128,6 +132,6 @@ mod tests {
         Ok(())
     }
 }
-// [review / exapnd](https://github.com/john-cd/rust_howto/issues/841)
+// [review / expand](https://github.com/john-cd/rust_howto/issues/841)
 // <https://github.com/Sollimann/bonsai/blob/1aa74afcb11603e86d5c7e941a70b2533e844e16/examples/src/async_drone/main.rs>
 // <https://github.com/Sollimann/bonsai/blob/main/docs/concepts/README.md>

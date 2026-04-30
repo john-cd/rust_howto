@@ -39,6 +39,6 @@ Each workspace has its own `.cargo\config.toml`, but they all redirect builds in
 - When adding or moving book content under `bk\src\`, also update `bk\src\SUMMARY.md`; the book structure is driven from there.
 - Markdown links are often centralized through `refs.incl.md` or `refs\link-refs.md` instead of inline URLs.
 - Embedded Rust examples usually live under `bk\crates\<section-or-category>\examples\<chapter>\`. A chapter-level `main.rs` pulls recipe files in via `mod ...;`.
-- Example files normally expose only the book-visible snippet between `// ANCHOR: example` and `// ANCHOR_END: example`, then add a hidden `#[test] fn test() { main(); }` so the snippet is continuously exercised by workspace tests.
+- Example files normally expose only the book-visible snippet between `// ANCHOR: example` and `// ANCHOR_END: example`, then add hidden `pub fn run() { main(); }` and `#[test] fn test() { main(); }` so the snippet is continuously exercised by workspace tests and is accessible from the root module.
 - The `bk\justfile` is the main contributor entry point. It delegates to `bk\scripts\...\mod.just` modules for code, book, links, refs, examples, indices, and related maintenance tasks; prefer those recipes over inventing new ad hoc commands.
 - On Windows, the repo's `justfile`s are already configured to use PowerShell (`pwsh.exe`). Prefer `just` recipes when available instead of assuming Bash-only command sequences.

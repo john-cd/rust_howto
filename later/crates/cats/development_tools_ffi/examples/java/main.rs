@@ -1,3 +1,5 @@
 mod jni;
 
-fn main() {}
+fn main() {
+    jni::run();
+}

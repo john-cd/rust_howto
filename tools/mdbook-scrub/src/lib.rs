@@ -47,7 +47,7 @@ impl Preprocessor for Preproc {
         // return the orginal book.
         if !rrs.is_empty() {
             book.for_each_mut(|item: &mut BookItem| {
-                if let BookItem::Chapter(ref mut chapter) = item {
+                if let BookItem::Chapter(chapter) = item {
                     info!("Processing chapter '{}'", chapter.name);
                     let content = &mut chapter.content;
                     for rr in rrs.iter() {

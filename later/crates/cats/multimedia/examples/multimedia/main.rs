@@ -1,3 +1,5 @@
 mod multimedia1;
 
-fn main() {}
+fn main() {
+    multimedia1::run();
+}

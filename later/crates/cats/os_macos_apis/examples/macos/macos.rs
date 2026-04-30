@@ -29,7 +29,7 @@ mod macos_impl {
         }
     }
 
-    pub fn run() {
+    fn main() {
         unsafe {
             let _pool = NSAutoreleasePool::new(nil);
             let process_info: id =
@@ -45,15 +45,19 @@ mod macos_impl {
 }
 
 #[cfg(not(target_os = "macos"))]
-pub fn main() {
+fn main() {
     println!("This example uses macOS APIs and is only supported on macOS.");
 }
 
 #[cfg(target_os = "macos")]
-pub fn main() {
+fn main() {
     macos_impl::run();
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

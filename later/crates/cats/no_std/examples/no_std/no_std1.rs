@@ -37,12 +37,16 @@ impl Write for ArrayString {
     }
 }
 
-pub fn run() {
+fn main() {
     let mut buffer = ArrayString::new();
     write!(&mut buffer, "no_std core example: {} + {} = {}", 3, 4, 7).unwrap();
     assert_eq!(buffer.as_str(), "no_std core example: 3 + 4 = 7");
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

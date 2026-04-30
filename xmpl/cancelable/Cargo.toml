@@ -4,6 +4,7 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Code examples demonstrating how to implement cancelable tasks and threads using crossbeam-channel."
 documentation.workspace = true
 homepage.workspace = true

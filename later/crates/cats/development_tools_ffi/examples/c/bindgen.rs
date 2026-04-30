@@ -46,7 +46,9 @@ fn main() {
 }
 // ANCHOR_END: example
 
-// [fix](https://github.com/john-cd/rust_howto/issues/1001)
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
@@ -56,3 +58,4 @@ mod tests {
         main();
     }
 }
+// [fix](https://github.com/john-cd/rust_howto/issues/1001)

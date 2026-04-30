@@ -8,5 +8,5 @@ mod cfg_if;
 mod conditional_compilation;
 
 fn main() {
-    attributes_production::main();
+    attributes_production::run();
 }

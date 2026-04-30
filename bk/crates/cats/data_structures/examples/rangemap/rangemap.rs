@@ -1,7 +1,7 @@
 // ANCHOR: example
 use rangemap::RangeMap;
 
-pub fn main() {
+fn main() {
     let mut rm = RangeMap::new();
 
     rm.insert(0..50, "first half");
@@ -12,6 +12,10 @@ pub fn main() {
     assert_eq!(rm.get(&100), None);
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

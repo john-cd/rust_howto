@@ -62,7 +62,6 @@ mod data {
 }
 
 // --- Service Layer ---
-
 mod business {
     use std::sync::Arc;
 
@@ -141,6 +140,10 @@ async fn main() -> Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

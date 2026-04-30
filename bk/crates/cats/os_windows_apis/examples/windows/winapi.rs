@@ -9,8 +9,6 @@ use winapi::shared::minwindef::LPARAM;
 use winapi::shared::minwindef::LRESULT;
 use winapi::shared::minwindef::UINT;
 use winapi::shared::minwindef::WPARAM;
-// use winapi::shared::windef::HBRUSH;
-// use winapi::shared::windef::HINSTANCE;
 use winapi::shared::windef::HWND;
 use winapi::um::libloaderapi::GetModuleHandleW;
 use winapi::um::winuser::CS_HREDRAW;
@@ -19,10 +17,7 @@ use winapi::um::winuser::CreateWindowExW;
 use winapi::um::winuser::DefWindowProcW;
 use winapi::um::winuser::DispatchMessageW;
 use winapi::um::winuser::GetMessageW;
-// use winapi::um::winuser::MB_ICONINFORMATION;
-// use winapi::um::winuser::MB_OK;
 use winapi::um::winuser::MSG;
-// use winapi::um::winuser::MessageBoxW;
 use winapi::um::winuser::RegisterClassW;
 use winapi::um::winuser::SW_SHOW;
 use winapi::um::winuser::ShowWindow;
@@ -68,7 +63,7 @@ fn to_wstring(str: &str) -> Vec<u16> {
 }
 
 /// Basic Windows application with a message box.
-pub fn main() {
+fn main() {
     unsafe {
         let h_instance = GetModuleHandleW(null_mut());
         // Define the window class name.
@@ -123,6 +118,10 @@ pub fn main() {
     }
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

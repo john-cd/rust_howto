@@ -1,3 +1,5 @@
 mod simulation1;
 
-fn main() {}
+fn main() {
+    simulation1::run();
+}

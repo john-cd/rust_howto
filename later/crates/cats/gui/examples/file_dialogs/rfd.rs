@@ -3,7 +3,7 @@
 
 use rfd::FileDialog;
 
-pub fn main() {
+fn main() {
     let file = FileDialog::new()
         .add_filter("Text files", &["txt"])
         .set_title("Choose a Text File")
@@ -15,4 +15,8 @@ pub fn main() {
     }
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 // [how to test](https://github.com/john-cd/rust_howto/issues/785)

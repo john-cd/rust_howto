@@ -63,9 +63,11 @@ fn main() {
 
     println!("{:?}", test_my_function());
 }
-
 // ANCHOR_END: example
-// [finish; fix py examples](https://github.com/john-cd/rust_howto/issues/78)
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
@@ -75,3 +77,4 @@ mod tests {
         main();
     }
 }
+// [finish; fix py examples](https://github.com/john-cd/rust_howto/issues/78)

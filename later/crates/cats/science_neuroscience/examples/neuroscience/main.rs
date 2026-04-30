@@ -1,3 +1,5 @@
 mod neuro;
 
-fn main() {}
+fn main() {
+    neuro::run();
+}

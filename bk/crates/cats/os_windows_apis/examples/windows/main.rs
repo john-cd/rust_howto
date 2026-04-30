@@ -3,5 +3,5 @@ mod windows;
 
 fn main() {
     #[cfg(target_os = "windows")]
-    windows::main();
+    windows::run();
 }

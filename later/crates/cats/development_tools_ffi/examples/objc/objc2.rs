@@ -33,10 +33,11 @@ fn main() {
         let _ = string;
     }
 }
-
 // ANCHOR_END: example
 
-// [finish; fix; https://docs.rs/objc2/latest/objc2/](https://github.com/john-cd/rust_howto/issues/1034)
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
@@ -46,3 +47,4 @@ mod tests {
         main();
     }
 }
+// [finish; fix; https://docs.rs/objc2/latest/objc2/](https://github.com/john-cd/rust_howto/issues/1034)

@@ -4,6 +4,7 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples for low-level Rendering Graphics APIs like WGPU."
 documentation.workspace = true
 homepage.workspace = true

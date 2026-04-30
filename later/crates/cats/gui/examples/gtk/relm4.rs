@@ -1,7 +1,121 @@
-// #![allow(dead_code)]
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR: example
+use relm4::ComponentParts;
+use relm4::ComponentSender;
+use relm4::RelmApp;
+use relm4::SimpleComponent;
+use relm4::gtk;
+use relm4::gtk::glib::clone;
+use relm4::gtk::prelude::*;
+
+struct CounterModel {
+    value: i32,
+}
+
+#[derive(Debug)]
+enum CounterInput {
+    Increment,
+    Decrement,
+}
+
+struct CounterWidgets {
+    counter_label: gtk::Label,
+    conditional_label: gtk::Label,
+}
+
+impl SimpleComponent for CounterModel {
+    type Init = i32;
+    type Input = CounterInput;
+    type Output = ();
+    type Root = gtk::Window;
+    type Widgets = CounterWidgets;
+
+    fn init_root() -> Self::Root {
+        gtk::Window::builder()
+            .title("Simple relm4 counter")
+            .default_width(320)
+            .default_height(140)
+            .build()
+    }
+
+    fn init(
+        init_value: Self::Init,
+        window: Self::Root,
+        sender: ComponentSender<Self>,
+    ) -> ComponentParts<Self> {
+        let model = CounterModel { value: init_value };
+
+        let vbox = gtk::Box::builder()
+            .orientation(gtk::Orientation::Vertical)
+            .spacing(10)
+            .margin_all(12)
+            .build();
+
+        let increment_button = gtk::Button::with_label("Increment");
+        let decrement_button = gtk::Button::with_label("Decrement");
+
+        increment_button.connect_clicked(clone!(@strong sender => move |_| {
+            sender.input(CounterInput::Increment);
+        }));
+
+        decrement_button.connect_clicked(clone!(@strong sender => move |_| {
+            sender.input(CounterInput::Decrement);
+        }));
+
+        let counter_label =
+            gtk::Label::new(Some(&format!("Counter: {}", model.value)));
+        let conditional_label = gtk::Label::new(Some("Counter is even!"));
+
+        vbox.append(&counter_label);
+        vbox.append(&increment_button);
+        vbox.append(&decrement_button);
+        vbox.append(&conditional_label);
+
+        window.set_child(Some(&vbox));
+
+        let widgets = CounterWidgets {
+            counter_label,
+            conditional_label,
+        };
+
+        ComponentParts { model, widgets }
+    }
+
+    fn update(&mut self, input: Self::Input, _sender: ComponentSender<Self>) {
+        match input {
+            CounterInput::Increment => self.value += 1,
+            CounterInput::Decrement => self.value -= 1,
+        }
+    }
+
+    fn update_view(
+        &self,
+        widgets: &mut Self::Widgets,
+        _sender: ComponentSender<Self>,
+    ) {
+        widgets
+            .counter_label
+            .set_label(&format!("Counter: {}", self.value));
+
+        let status_label = if self.value % 2 == 0 {
+            "Counter is even!"
+        } else {
+            "Counter is odd!"
+        };
+
+        widgets.conditional_label.set_label(status_label);
+    }
+}
+
+fn main() {
+    let app = RelmApp::new("relm4.example.counter");
+    app.run::<CounterModel>(0);
+}
+// ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
+
 // /// # Example
 // ///
 // /// This is a simple example of a counter application using `relm4`.
@@ -203,9 +317,9 @@
 // }
 
 // /// The main function.
-pub fn main() {
-    //     let app = RelmApp::new("relm4.example.simple_manual");
-    //     app.run::<CounterModel>(1);
-}
+// fn main() {
+//     //     let app = RelmApp::new("relm4.example.simple_manual");
+//     //     app.run::<CounterModel>(1);
+// }
 
 // // [finish; review https://relm4.org/book/stable/](https://github.com/john-cd/rust_howto/issues/784)

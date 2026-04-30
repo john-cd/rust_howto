@@ -9,7 +9,7 @@ use flate2::write::GzEncoder;
 
 /// This function creates a compressed tar archive (tar.gz) of the 'tests'
 /// directory.
-pub fn main() -> Result<(), std::io::Error> {
+fn main() -> Result<(), std::io::Error> {
     // Create a temporary folder:
     if !fs::exists("temp")? {
         fs::create_dir("temp")?;
@@ -29,4 +29,17 @@ pub fn main() -> Result<(), std::io::Error> {
 }
 // ANCHOR_END: example
 
+pub fn run()  -> Result<(), std::io::Error> {
+    main()?;
+    Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main().unwrap();
+    }
+}
 // [review; tar_compress.rs is noplayground - fix?](https://github.com/john-cd/rust_howto/issues/255)

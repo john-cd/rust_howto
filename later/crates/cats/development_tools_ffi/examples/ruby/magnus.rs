@@ -34,16 +34,18 @@ fn main() -> Result<(), Error> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
 
-// [finish](https://github.com/john-cd/rust_howto/issues/1035)
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
     fn test() {
-        // main(); // Requires Ruby VM to be initialized and linked
+        // main(); // TODO Requires Ruby VM to be initialized and linked
     }
 }
+// [finish](https://github.com/john-cd/rust_howto/issues/1035)

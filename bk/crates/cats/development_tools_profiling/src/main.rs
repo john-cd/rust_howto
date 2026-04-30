@@ -4,6 +4,6 @@ mod memory_usage_analysis {
 }
 
 fn main() {
-    memory_usage_analysis::dhat::main();
-    memory_usage_analysis::measure_time::main();
+    memory_usage_analysis::dhat::run();
+    memory_usage_analysis::measure_time::run();
 }

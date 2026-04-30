@@ -1,4 +1,7 @@
 mod openrr;
 mod zenoh;
 
-fn main() {}
+fn main() {
+    openrr::run();
+    zenoh::run();
+}

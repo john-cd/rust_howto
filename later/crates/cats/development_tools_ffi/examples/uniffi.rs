@@ -17,11 +17,14 @@ pub fn add(a: i32, b: i32) -> i32 {
     a + b
 }
 
-fn main() {}
-
+fn main() {
+    // TODO
+}
 // ANCHOR_END: example
 
-// [finish; https://github.com/mozilla/uniffi-rs/blob/main/examples/arithmetic/Cargo.toml](https://github.com/john-cd/rust_howto/issues/1037)
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
@@ -31,3 +34,4 @@ mod tests {
         main();
     }
 }
+// [finish; https://github.com/mozilla/uniffi-rs/blob/main/examples/arithmetic/Cargo.toml](https://github.com/john-cd/rust_howto/issues/1037)

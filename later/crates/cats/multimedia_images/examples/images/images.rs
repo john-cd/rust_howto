@@ -10,7 +10,7 @@ use std::path::PathBuf;
 use image::ImageBuffer;
 use image::Rgb;
 
-pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
+fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let output_path = image_output_path_from_args().unwrap_or_else(|| {
         let default = PathBuf::from("generated_image.png");
         eprintln!("No output path provided, writing to {}", default.display());
@@ -48,6 +48,10 @@ fn image_output_path_from_args() -> Option<PathBuf> {
     std::env::args_os().nth(1).map(PathBuf::from)
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

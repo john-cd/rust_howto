@@ -2,7 +2,7 @@
 // ANCHOR: example
 use tello::Drone;
 
-pub fn main() -> Result<(), String> {
+fn main() -> Result<(), String> {
     let mut drone = Drone::new("192.168.10.1:8889");
     drone.connect(11111);
     println!("Drone connected.");
@@ -14,6 +14,11 @@ pub fn main() -> Result<(), String> {
     Ok(())
 }
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), String> {
+    main()?;
+    Ok(())
+}
 
 #[cfg(test)]
 mod tests {

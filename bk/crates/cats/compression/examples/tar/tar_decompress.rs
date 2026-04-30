@@ -5,7 +5,7 @@ use std::fs::File;
 use flate2::read::GzDecoder;
 use tar::Archive;
 
-pub fn main() -> Result<(), std::io::Error> {
+fn main() -> Result<(), std::io::Error> {
     // Define the path to the compressed tar archive.
     // This file should exist in the 'temp' directory.
     // The archive is expected to be a gzip-compressed tar file.
@@ -21,4 +21,8 @@ pub fn main() -> Result<(), std::io::Error> {
 }
 // ANCHOR_END: example
 
+pub fn run() -> Result<(), std::io::Error> {
+    main()?;
+    Ok(())
+}
 // [review; tar_decompress.rs is noplayground - fix?](https://github.com/john-cd/rust_howto/issues/254)

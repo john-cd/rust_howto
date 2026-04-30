@@ -8,10 +8,10 @@ fn main() -> anyhow::Result<()> {
     if !fs::exists("temp")? {
         fs::create_dir("temp")?;
     }
-    tar_compress::main()?;
+    tar_compress::run()?;
     // the following requires the archive created above.
-    tar_strip_prefix::main()?;
-    tar_decompress::main()?;
+    tar_strip_prefix::run()?;
+    tar_decompress::run()?;
 
     Ok(())
 }

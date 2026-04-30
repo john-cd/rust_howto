@@ -4,6 +4,7 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - game_engines"
 documentation.workspace = true
 homepage.workspace = true
@@ -19,7 +20,7 @@ bevy = { version = "0.16.0", optional = true }
 fyrox = { version = "0.36.0", optional = true }
 # TODO fyrox-core = { version = "0.36.0", optional = true }
 anyhow = { version = "1.0.95", optional = true }
-ggez = { version = "0.9.3", optional = true } # TODO ggez conflict with wgpu
+ggez = { version = "0.10.0-rc0", optional = true }
 macroquad = "0.4.14"
 
 # FIXME

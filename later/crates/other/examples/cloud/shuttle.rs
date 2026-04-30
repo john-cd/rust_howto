@@ -28,6 +28,10 @@ async fn hello_world() -> &'static str {
 }
 // ANCHOR_END: example
 
+pub fn run() {
+    main();
+}
+
 // Local tests are omitted since shuttle depends on a specific runtime.
 // The code itself is type-checked during compilation.
 

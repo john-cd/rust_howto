@@ -1,7 +1,7 @@
 // ANCHOR: example
 use skiplist::SkipMap;
 
-pub fn main() {
+fn main() {
     let mut map = SkipMap::new();
 
     map.insert(3, "three");
@@ -13,6 +13,10 @@ pub fn main() {
     }
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

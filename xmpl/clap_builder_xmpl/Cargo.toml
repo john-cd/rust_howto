@@ -4,6 +4,7 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Example demonstrating the builder pattern for command-line argument parsing using the clap library."
 documentation.workspace = true
 homepage.workspace = true

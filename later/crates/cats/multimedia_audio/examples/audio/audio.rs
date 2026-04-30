@@ -1,10 +1,13 @@
 #![allow(dead_code)]
-use cpal::traits::{DeviceTrait, HostTrait, StreamTrait};
 use std::error::Error;
+
+use cpal::traits::DeviceTrait;
+use cpal::traits::HostTrait;
+use cpal::traits::StreamTrait;
 
 // ANCHOR: example
 /// A simple example that plays a 440Hz sine wave (A4) for 1 second.
-pub fn main() -> Result<(), Box<dyn Error>> {
+fn main() -> Result<(), Box<dyn Error>> {
     let host = cpal::default_host();
     let device = host
         .default_output_device()
@@ -21,7 +24,10 @@ pub fn main() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
-fn run<T>(device: &cpal::Device, config: &cpal::StreamConfig) -> Result<(), Box<dyn Error>>
+fn run<T>(
+    device: &cpal::Device,
+    config: &cpal::StreamConfig,
+) -> Result<(), Box<dyn Error>>
 where
     T: cpal::SizedSample + cpal::FromSample<f32>,
 {
@@ -59,6 +65,10 @@ where
     Ok(())
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[test]
 #[ignore = "requires audio device"]

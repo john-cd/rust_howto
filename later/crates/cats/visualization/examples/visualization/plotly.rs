@@ -42,6 +42,11 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+pub fn run() {
+    main()?;
+    Ok(())
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

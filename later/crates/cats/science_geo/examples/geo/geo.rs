@@ -30,8 +30,12 @@ fn main() {
 }
 // ANCHOR_END: example
 
+pub fn run() {
+    main();
+}
+
 #[test]
 fn test() {
     main();
 }
-// [write LATER](https://github.com/john-cd/rust_howto/issues/839)
+// [review](https://github.com/john-cd/rust_howto/issues/839)

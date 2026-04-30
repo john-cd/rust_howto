@@ -54,10 +54,22 @@
 
 //     Ok(())
 // }
-// // ANCHOR_END: example
+//
+fn main() {
+    // TODO
+}
 
-// #[test]
-// fn test() -> anyhow::Result<()> {
-//     main()?;
-//     Ok(())
-// }
+// ANCHOR_END: example
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
+}

@@ -50,10 +50,15 @@ fn my_module(module: &Bound<'_, PyModule>) -> PyResult<()> {
     module.add_function(wrap_pyfunction!(my_function, module)?)
 }
 
-fn main() {}
-
+fn main() {
+    // TODO: Add code to build the Python module and demonstrate how to call it
+    // from Python.
+}
 // ANCHOR_END: example
-// [finish; fix](https://github.com/john-cd/rust_howto/issues/996)
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
@@ -63,3 +68,4 @@ mod tests {
         main();
     }
 }
+// [finish; fix](https://github.com/john-cd/rust_howto/issues/996)

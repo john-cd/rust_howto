@@ -17,10 +17,14 @@ fn measure_execution_time() {
     thread::sleep(Duration::from_millis(100));
 }
 
-pub fn main() {
+fn main() {
     measure_execution_time();
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[test]
 fn test() {

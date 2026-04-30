@@ -1,3 +1,5 @@
 mod video;
 
-fn main() {}
+fn main() {
+    video::run().expect("video example failed");
+}

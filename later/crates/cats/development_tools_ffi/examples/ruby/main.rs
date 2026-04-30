@@ -1,4 +1,7 @@
 mod magnus;
 mod rutie;
 
-fn main() {}
+fn main() {
+    magnus::run();
+    rutie::run();
+}

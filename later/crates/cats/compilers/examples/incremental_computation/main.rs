@@ -1,4 +1,7 @@
 mod comemo;
 mod salsa;
 
-fn main() {}
+fn main() {
+    comemo::run();
+    salsa::run();
+}
