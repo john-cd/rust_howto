@@ -8,20 +8,18 @@ description = "Book code examples and their crate dependencies - science_robotic
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = ["science::robotics"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
 bonsai-bt = "0.10.0"
-openrr = "0.1.0"
-rosrust = "0.9.12"
-rosrust_msg = "0.1.8"
-zenoh = "1.1.0" # https://github.com/john-cd/rust_howto/issues/1441
-
-## General
+openrr = { version = "0.1.0", optional = true }
+rosrust = { version = "0.9.12", optional = true }
+rosrust_msg = { version = "0.1.8", optional = true }
+zenoh = "1.1.0"
 anyhow = "1.0.95"
 tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread"] }
 tracing = "0.1.41"
@@ -30,3 +28,5 @@ async-trait = "0.1.85"
 
 [features]
 default = []
+openrr = ["dep:openrr"]
+rosrust = ["dep:rosrust", "dep:rosrust_msg"]

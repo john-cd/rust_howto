@@ -8,8 +8,8 @@ description = "Book code examples and their crate dependencies - parsing"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = ["parsing"]
 publish.workspace = true
 autolib = false
@@ -22,9 +22,9 @@ anyhow = "1.0.100"
 nom = "8.0.0"
 pest = "2.8.3"
 pest_derive = "2.8.3"
-winnow = "0.7.1"
 tree-sitter = "0.25.1"
 tree-sitter-rust = "0.24.0"
+winnow = "0.7.1"
 
 [build-dependencies]
 pest_generator = "2.8.3"

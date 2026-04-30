@@ -41,4 +41,23 @@ pub fn main() -> Result<(), Error> {
     Ok(())
 }
 // ANCHOR_END: example
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn require_postgres_environment() -> Result<(), Error> {
+        if std::env::var("PG_URL").is_err() {
+            eprintln!(
+                "Skipping PostgreSQL aggregation example test; set PG_URL to run this test."
+            );
+            return Ok(());
+        }
+
+        main()?;
+        Ok(())
+    }
+}
+
 // [review](https://github.com/john-cd/rust_howto/issues/1162)

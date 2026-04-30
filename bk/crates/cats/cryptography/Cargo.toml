@@ -4,12 +4,12 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description = "Book code examples and their crate dependencies - cryptography"
+description = "Book code examples for Cryptography including AES, RSA, and TLS implementations."
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["cryptography", "encryption", "tls", "aes", "rsa", "security"]
 categories = ["cryptography"]
 publish.workspace = true
 autolib = false
@@ -24,24 +24,24 @@ bcrypt = "0.17.1"
 chacha20poly1305 = "0.10.1"
 data-encoding = "2.9.0"
 der = { version = "0.7.10", features = ["derive", "alloc"] }
-dsa = "0.6.3"
 digest = "0.10.6"
-sha1 = "0.10.6"
-signature = "1.5.0"
+dsa = "0.6.3"
+ecdsa = "0.16.9"
 ed25519 = "2.2.3"
 ed25519-dalek = { version = "2.2.0", features = ["rand_core"] }
-ecdsa = "0.16.9"
+hyper = { version = "1.9.0", features = ["client"] }
+hyper-tls = "0.6.0"
 native-tls = "0.2.12"
 p256 = { version = "0.13.2", features = ["pkcs8"] }
 pem-rfc7468 = "0.7.0"
 pkcs8 = "0.10.2"
-hyper = { version = "1.9.0", features = ["client"] }
-hyper-tls = "0.6.0"
 rand = "0.10.1"   # TODO was pinned because of ed25519
 ring = "0.17.14"
 rsa = "0.9.10"
 rustls = "0.23.20"
 scrypt = "0.11.0"
+sha1 = "0.10.6"
+signature = "1.5.0"
 subtle = "2.6.1"
 tokio-rustls = "0.26.2"
 x509-cert = { version = "0.2.5", features = ["builder"] }

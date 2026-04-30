@@ -4,16 +4,15 @@ edition = "2024"
 version.workspace = true
 authors.workspace = true
 rust-version.workspace = true
-description.workspace = true
+description = "Book code examples for Accessibility using AccessKit and Winit."
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-keywords.workspace = true
+keywords = ["accessibility", "accesskit", "winit", "gui"]
 categories = ["accessibility"]
 publish.workspace = true
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 readme = "README.md"
-license = "CC0-1.0"
 autolib = false
 
 [dependencies]

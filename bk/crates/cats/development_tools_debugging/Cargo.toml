@@ -4,15 +4,24 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description = "Book code examples and their crate dependencies - development_tools_debugging"
+description = "Examples of logging, tracing, and observability patterns using tracing, log4rs, and OpenTelemetry."
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["debugging", "tracing", "logging", "opentelemetry", "observability"]
 categories = ["development-tools::debugging"]
 publish.workspace = true
 autolib = false
+
+[features]
+default = []
+opentelemetry = [
+    "dep:opentelemetry",
+    "dep:opentelemetry-jaeger",
+    "dep:opentelemetry-stdout",
+    "dep:tracing-opentelemetry",
+]
 
 [dependencies]
 
@@ -22,11 +31,10 @@ chrono = "0.4.42"
 env_logger = "0.11.8"
 log = "0.4.28"
 log4rs = "1.4.0"
+opentelemetry = { version = "0.30.0", optional = true }
+opentelemetry-jaeger = { version = "0.22.0", optional = true }
+opentelemetry-stdout = { version = "0.30.0", optional = true }
 serde = { version = "1.0.228", features = ["derive"] }
-opentelemetry = "0.30.0"
-opentelemetry-jaeger = "0.22.0"
-opentelemetry-stdout = "0.30.0"
-tracing-opentelemetry = "0.31.0"
 slog = "2.8.2"
 slog-async = "2.8.0"
 slog-scope = "4.4.1"
@@ -35,6 +43,7 @@ tempfile = "3.23.0"
 tokio = { version = "1.48.0", features = ["macros", "rt-multi-thread"] }
 tracing = "0.1.41"
 tracing-appender = "0.2.3"
+tracing-opentelemetry = { version = "0.31.0", optional = true }
 tracing-subscriber = { version = "0.3.20", features = ["env-filter", "time", "json"] }
 
 [target.'cfg(target_os = "linux")'.dependencies]
@@ -42,10 +51,3 @@ syslog = "7.0.0"
 
 [dev-dependencies]
 anyhow = "1.0.100"
-## Used for testing
-rusty-fork = "0.3.1"
-
-# FIXME
-# [features]
-# default = []
-# opentelemetry = ["dep:opentelemetry", "dep:opentelemetry-jaeger", "dep:opentelemetry-otlp", "dep:opentelemetry_sdk", "dep:opentelemetry-semantic-conventions", "dep:tracing-opentelemetry"]

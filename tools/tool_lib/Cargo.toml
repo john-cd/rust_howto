@@ -11,7 +11,7 @@ repository.workspace = true
 keywords = ["markdown generation"]
 categories = ["development-tools", "command-line-utilities", "text-processing"]
 publish = false
-license = "MIT OR Apache-2.0"
+
 
 [dependencies]
 anyhow = "1.0.102"
@@ -23,8 +23,6 @@ regex = "1.12.3"
 reqwest = { version = "0.13.1", features = ["blocking"] }
 serde = { version = "1.0.228", features = ["derive"] }
 similar = "2.7.0"
-# FIXME
-#tera = "1.20.0"
 tinytemplate = "1.2.1"
 toml = "1.0.6"
 tracing = "0.1.44"
