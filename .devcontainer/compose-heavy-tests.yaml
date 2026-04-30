@@ -6,6 +6,10 @@
 # https://awesome-docker-compose.com
 #
 services:
+  book:
+    environment:
+      - RUST_LOG=debug
+      - AMQP_ADDR=amqp://guest:guest@rust_howto-amqp-1:5672
 
   amqp:
     image: rabbitmq:management
