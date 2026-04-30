@@ -1,53 +1,48 @@
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR: example
+use cosmic_text::{Attrs, Buffer, Color, FontSystem, Metrics, Shaping, SwashCache};
 
-// use cosmic_text::Attrs;
-// use cosmic_text::Buffer;
-// use cosmic_text::BufferLine;
-// use cosmic_text::FontSystem;
-// use cosmic_text::SwashCache;
-// use cosmic_text::Metrics;
+// Advanced text handling in a generic way.
+// `cosmic_text` provides abstractions for shaping, font discovery,
+// font fallback, layout, rasterization, and editing.
 
-// // Advanced text handling in a generic way.
-// // `cosmic_text` provides abstractions for shaping, font discovery,
-// // font fallback, layout, rasterization, and editing.
+pub fn main() {
+    // Initialize the font system (allows access to any installed system fonts)
+    // Create one per application
+    let mut font_system = FontSystem::new();
+    // A SwashCache stores rasterized glyphs, create one per application
+    let mut swash_cache = SwashCache::new();
 
-// fn main() {
-//     // Initialize the font system (allows access to any installed system
-// fonts)     // Create one per application
-//     let mut font_system = FontSystem::new();
-//     // A SwashCache stores rasterized glyphs, create one per application
-//     let mut swash_cache = SwashCache::new();
+    // Define the text and its attributes
+    let text = "Hello, Cosmic Text!";
+    let attrs = Attrs::new();
 
-//     // Define the text and its attributes
-//     let text = "Hello, Cosmic Text!";
-//     let attrs = Attrs::new();
+    // Text metrics indicate the font size and line height of a buffer
+    let metrics = Metrics::new(14.0, 20.0);
 
-//     // Text metrics indicate the font size and line height of a buffer
-//     let metrics = Metrics::new(14.0, 20.0);
+    // Create a Buffer provides shaping and layout for a UTF-8 string
+    // Create one per text widget
+    let mut buffer = Buffer::new(&mut font_system, metrics);
 
-//     // Create a Buffer provides shaping and layout for a UTF-8 string
-//     // Create one per text widget
-//     let mut buffer =
-//         Buffer::new(&mut font_system, metrics);
-//     buffer.push_str(text);
-//     buffer.shape_until_last_break();
+    // Set buffer size
+    buffer.set_size(&mut font_system, Some(800.0), Some(600.0));
 
-//     // Render the buffer
-//     let mut output = vec![0u8; 800 * 600 * 4];
-//     buffer.draw(
-//         &mut swash_cache,
-//         &mut output,
-//         800,
-//         600,
-//         FontColor::default(),
-//     );
+    // Set text with attributes and shaping strategy
+    buffer.set_text(&mut font_system, text, &attrs, Shaping::Advanced);
 
-//     // Here we would typically display the output as an image,
-//     // but for simplicity, we're just printing the buffer contents.
-//     println!("Buffer: {output:?}");
-// }
+    // Shape text for rendering
+    buffer.shape_until_scroll(&mut font_system, true);
 
-pub fn main() {}
-// // [finish](https://github.com/john-cd/rust_howto/issues/774)
+    // Render the buffer
+    let text_color = Color::rgb(0, 0, 0);
+
+    buffer.draw(
+        &mut font_system,
+        &mut swash_cache,
+        text_color,
+        |x, y, w, h, color| {
+            // In a real app, you'd draw a rectangle here to a surface
+            println!("Drawing at ({x}, {y}) size {w}x{h} with color {color:?}");
+        },
+    );
+}
+// ANCHOR_END: example

@@ -1,70 +1,52 @@
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR: example
+// (backend)
+#![cfg_attr(
+    all(not(debug_assertions), target_os = "windows"),
+    windows_subsystem = "windows"
+)]
 
-// // (backend)
+use tauri::menu::{MenuBuilder, MenuItemBuilder};
+use tauri::Manager;
+use std::sync::Mutex;
 
-// // Project Setup: Create a new Tauri project:
-// // cargo create --bin my-tauri-app
-// // cd my-tauri-app
-// // tauri init
+#[tauri::command]
+fn get_counter(state: tauri::State<'_, CounterState>) -> i32 {
+    *state.value.lock().unwrap()
+}
 
-// #![cfg_attr(
-//     all(not(debug_assertions), target_os = "windows"),
-//     windows_subsystem = "windows"
-// )]
+#[tauri::command]
+fn increment_counter(state: tauri::State<'_, CounterState>) {
+    *state.value.lock().unwrap() += 1;
+}
 
-// use tauri::{CustomMenuItem, Menu, MenuItem, Submenu};
+struct CounterState {
+    value: Mutex<i32>,
+}
 
-// #[tauri::command]
-// fn get_counter(counter: tauri::State<'_, CounterState>) -> i32 {
-//     counter.value
-// }
+pub fn main() {
+    tauri::Builder::default()
+        .plugin(tauri_plugin_shell::init())
+        .setup(|app| {
+            let quit = MenuItemBuilder::with_id("quit", "Quit").build(app)?;
+            let menu = MenuBuilder::new(app)
+                .items(&[&quit])
+                .build()?;
+            app.set_menu(menu)?;
 
-// #[tauri::command]
-// fn increment_counter(counter: tauri::StateMut<'_, CounterState>) {
-//     counter.value += 1;
-// }
+            app.on_menu_event(move |app_handle, event| {
+                if event.id().as_ref() == "quit" {
+                    app_handle.exit(0);
+                }
+            });
 
-// #[tauri::command]
-// fn decrement_counter(counter: tauri::StateMut<'_, CounterState>) {
-//     counter.value -= 1;
-// }
-
-// struct CounterState {
-//     value: i32,
-// }
-
-// pub fn main() {
-//         let quit = CustomMenuItem::new("quit".to_string(), "Quit");
-//     let submenu = Submenu::new("File", Menu::new().add_item(quit));
-//     let menu = Menu::new()
-//         .add_native_item(MenuItem::Copy)
-//         .add_item(CustomMenuItem::new("hide", "Hide"))
-//         .add_submenu(submenu);
-
-//     tauri::Builder::default()
-//         .menu(menu)
-//         .on_menu_event(|event| {
-//             match event.menu_item_id() {
-//                 "quit" => {
-//                     std::process::exit(0);
-//                 }
-//                 "hide" => {
-//                     event.window().hide().unwrap();
-//                 }
-//                 _ => {}
-//             }
-//         })
-//         .manage(CounterState { value: 0 })
-//         .invoke_handler(tauri::generate_handler![
-//             get_counter,
-//             increment_counter,
-//             decrement_counter
-//         ])
-//         .run(tauri::generate_context!())
-//         .expect("error while running tauri application");
-// }
-
-pub fn main() {}
-// // [finish](https://github.com/john-cd/rust_howto/issues/790)
+            app.manage(CounterState { value: Mutex::new(0) });
+            Ok(())
+        })
+        .invoke_handler(tauri::generate_handler![
+            get_counter,
+            increment_counter
+        ])
+        .run(tauri::generate_context!())
+        .expect("error while running tauri application");
+}
+// ANCHOR_END: example

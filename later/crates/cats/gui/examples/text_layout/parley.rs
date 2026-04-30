@@ -1,95 +1,43 @@
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR: example
+use parley::{Alignment, AlignmentOptions, FontContext, LayoutContext, StyleProperty};
 
-// use parley::buffer::Buffer;
-// use parley::layout::{Alignment, Layout};
-// use parley::render::{FontContext, TextRenderer};
-// use parley::style::{FontFace, FontMetrics, Style};
+// Parley is a rich text layout engine.
+// It handles complex text shaping, line breaking, and bidirectional text.
 
-// // - The code loads a font from a file. You must replace
-// // "path/to/your/font.ttf" with the actual path to a `.ttf` or `.otf` font
-// // file on your system.
-// // - The code applies a `Style` to the text, including setting the
-// // font, size, and color.
-// // - The `Layout` is configured with a fixed width and
-// // infinite height (`f32::INFINITY`), enabling text wrapping.
-// // - The example iterates through the layout's lines and glyphs, printing
-// // their positions and glyph IDs. This gives us the raw data we need for
-// // rendering.
-// // - The example includes a very basic string representation
-// // of the rendered text. It creates a 2D vector of characters and sets '#'
-// // where glyphs are present.
-// // - This is a simple way to visualize the layout
-// // within the console.
+pub fn main() {
+    // Initialize font context
+    let mut font_cx = FontContext::new();
+    // Initialize layout context with default brush type [u8; 4]
+    let mut layout_cx: LayoutContext<[u8; 4]> = LayoutContext::new();
 
-// fn main() {
-//     // Initialize font context (you'll need a font file path):
-//     let font_path = "path/to/your/font.ttf"; // Replace with your font path.
-//     let font_context = FontContext::new();
-//     let font = font_context.new_font_from_file(font_path, 0).unwrap();
-//     let font_metrics = FontMetrics::new(font, 16.0);
+    let text = "Hello, Parley! This is a rich text layout example in Rust.";
 
-//     // Create a text buffer:
-//     let text = "Hello, Parley! This is a Rust example.\nIt supports multiple
-// lines.";     let mut buffer = Buffer::new(&font_context, &font_metrics);
-//     buffer.set_text(text);
+    // Use ranged_builder for flat list of spans or simple text
+    let mut builder = layout_cx.ranged_builder(&mut font_cx, text, 1.0, true);
 
-//     // Create a style:
-//     let style = Style {
-//         font_face: FontFace::from(font),
-//         font_size: 16.0,
-//         color: parley::color::Color::rgb(255, 255, 255), // White
-//         ..Default::default()
-//     };
-//     buffer.set_style(0..text.len(), style);
+    // Set default style for the entire text
+    builder.push_default(StyleProperty::FontSize(16.0));
 
-//     // Create a layout:
-//     let mut layout = Layout::new(&font_context, &font_metrics);
-//     layout.set_size(200.0, f32::INFINITY);
-//     // Set a width, infinite height for wrapping.
-//     layout.set_alignment(Alignment::Start);
-//     layout.add_buffer(&buffer);
-//     layout.layout();
+    // Build the layout
+    let mut layout = builder.build(text);
 
-//     // Now we have the layout, we can use a renderer to draw it.
-//     // This example provides a basic outline; you'll likely integrate
-//     // `Parley` with a graphics library (e.g., `wgpu`, `piet`).
+    // Break lines at a specific width
+    layout.break_all_lines(Some(300.0));
 
-//     println!("Layout Bounds: {:?}", layout.bounds());
-//     for line in layout.lines() {
-//         println!("Line Bounds: {:?}", line.bounds());
-//         for glyph in line.glyphs() {
-//             println!(
-//                 "Glyph: {:?} at ({}, {})",
-//                 glyph.glyph_id, glyph.x, glyph.y
-//             );
-//         }
-//     }
+    // Align the text
+    layout.align(Alignment::Start, AlignmentOptions::default());
 
-//     // Example of rendering to a very basic string representation:
-//     let mut rendered_text = String::new();
-//     let bounds = layout.bounds();
-//     let width = bounds.width.ceil() as usize;
-//     let height = bounds.height.ceil() as usize;
+    println!("Layout size: {}x{}", layout.width(), layout.height());
 
-//     let mut pixels: Vec<Vec<char>> = vec![vec![' '; width]; height];
-
-//     for line in layout.lines() {
-//         for glyph in line.glyphs() {
-//             let x = glyph.x.floor() as usize;
-//             let y = glyph.y.floor() as usize;
-//             if y < height && x < width{
-//                 pixels[y][x] = '#';
-//             }
-//         }
-//     }
-//     for row in pixels {
-//         rendered_text.push_str(&row.iter().collect::<String>());
-//         rendered_text.push('\n');
-//     }
-//     println!("{rendered_text}");
-// }
-
-pub fn main() {}
-// // [finish](https://github.com/john-cd/rust_howto/issues/783)
+    // Iterate through lines and items (glyph runs)
+    for line in layout.lines() {
+        let metrics = line.metrics();
+        println!("Line at y: {}", metrics.baseline);
+        for item in line.items() {
+            if let parley::PositionedLayoutItem::GlyphRun(run) = item {
+                println!("  Glyph run with {} glyphs", run.glyphs().count());
+            }
+        }
+    }
+}
+// ANCHOR_END: example

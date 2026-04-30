@@ -1,23 +1,38 @@
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR: example
+use baseview::{Event, EventStatus, Size, Window, WindowHandler, WindowOpenOptions, WindowScalePolicy};
 
-// Specialized window creation library targetting windows
-// to be embedded in other applications (e.g. DAW plugins).
+// Baseview is a low-level windowing system for audio plugin UIs.
 
-// A low-level windowing system geared towards making audio plugin UIs.
+struct MyHandler;
 
-// `baseview` abstracts the platform-specific windowing APIs (`winapi`, `cocoa`,
-// `xcb`) into a platform-independent API, but otherwise gets out of your way so
-// we can write plugin UIs.
+impl WindowHandler for MyHandler {
+    fn on_frame(&mut self, _window: &mut Window) {
+        // Handle frame updates
+    }
 
-// Requirements:
-// ```sh
-// sudo apt-get install libx11-dev libxcb1-dev libx11-xcb-dev libgl1-mesa-dev
-// ```
-
-pub fn main() -> anyhow::Result<()> {
-    Ok(())
+    fn on_event(&mut self, _window: &mut Window, event: Event) -> EventStatus {
+        match event {
+            Event::Mouse(_) => println!("Mouse event"),
+            Event::Keyboard(_) => println!("Keyboard event"),
+            Event::Window(baseview::WindowEvent::WillClose) => {
+                println!("Window will close");
+            }
+            _ => {}
+        }
+        EventStatus::Captured
+    }
 }
 
-// [write; review https://github.com/RustAudio/baseview](https://github.com/john-cd/rust_howto/issues/1056)
+pub fn main() -> anyhow::Result<()> {
+    let options = WindowOpenOptions {
+        title: "Baseview Example".into(),
+        size: Size::new(800.0, 600.0),
+        scale: WindowScalePolicy::SystemScaleFactor,
+    };
+
+    // This will block the current thread until the window is closed.
+    Window::open_blocking(options, |_window| MyHandler);
+
+    Ok(())
+}
+// ANCHOR_END: example

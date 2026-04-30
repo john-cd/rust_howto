@@ -1,99 +1,138 @@
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
-// use morphorm::*;
-// // use morphorm_ecs::*;
+// ANCHOR: example
+use morphorm::*;
 
-// fn main() {
-//     // The basic building blocks of a Morphorm layout are nodes. Each node
-//     // represents an element in the UI.
-//     // Nodes are organized in a tree structure, where each node can have
-//     // parent and child nodes.
-//     // Create a root node:
-//     let mut world = World::default();
+// Morphorm is a UI layout engine.
+// In version 0.8, it requires implementing Cache, Tree, and Store traits.
 
-//     let root = world.add(None);
-//     //let mut root = morphorm::Node::new();
-//     // Morphorm uses units to specify sizes and positions. These include:
-//     // - Absolute Pixel values,
-//     // - Percentage: Percentage of the parent's size,
-//     // - Stretch: Distributes remaining space.
-//     root.set_width(Units::Pixels(500.0));
-//     root.set_height(Units::Pixels(400.0));
-//     root.set_layout_type(LayoutType::Row); // Arrange children in a row
+#[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
+pub struct Entity(u32);
 
-//     // Create a child node (red box):
-//     let mut red_box = morphorm::Node::new();
-//     red_box.set_width(Units::Pixels(100.0));
-//     red_box.set_height(Units::Pixels(100.0));
-//     red_box.set_background_color(morphorm::Color::rgb(255, 0, 0)); // Red
-//     root.add(&mut red_box);
+#[derive(Default)]
+pub struct SimpleStore {
+    pub width: std::collections::HashMap<Entity, Units>,
+    pub height: std::collections::HashMap<Entity, Units>,
+}
 
-//     // Create another child node (blue box):
-//     let mut blue_box = morphorm::Node::new();
-//     blue_box.set_width(Units::Pixels(150.0));
-//     blue_box.set_height(Units::Pixels(100.0));
-//     blue_box.set_background_color(morphorm::Color::rgb(0, 0, 255)); // Blue
-//     root.add(&mut blue_box);
+#[derive(Default)]
+pub struct SimpleCache {
+    pub rects: std::collections::HashMap<Entity, (f32, f32, f32, f32)>,
+}
 
-//     // Create a third child node (green box) with flex grow:
-//     let mut green_box = morphorm::Node::new();
-//     green_box.set_height(Units::Pixels(100.0));
-//     green_box.set_flex_grow(1.0); // Takes up remaining space
-//     green_box.set_background_color(morphorm::Color::rgb(0, 255, 0)); // Green
-//     root.add(&mut green_box);
+impl Cache for SimpleCache {
+    type Node = Entity;
+    fn width(&self, node: &Self::Node) -> f32 { self.rects.get(node).map(|r| r.2).unwrap_or(0.0) }
+    fn height(&self, node: &Self::Node) -> f32 { self.rects.get(node).map(|r| r.3).unwrap_or(0.0) }
+    fn posx(&self, node: &Self::Node) -> f32 { self.rects.get(node).map(|r| r.0).unwrap_or(0.0) }
+    fn posy(&self, node: &Self::Node) -> f32 { self.rects.get(node).map(|r| r.1).unwrap_or(0.0) }
+    fn set_bounds(&mut self, node: &Self::Node, x: f32, y: f32, w: f32, h: f32) {
+        self.rects.insert(*node, (x, y, w, h));
+    }
+}
 
-//     // Calculate the layout:
-//     root.layout(500.0, 400.0); // Provide root width and height
+#[derive(Default)]
+pub struct SimpleTree {
+    pub children: std::collections::HashMap<Entity, Vec<Entity>>,
+}
 
-//     // Print the layout results:
-//     println!("Root: {:?}", root.get_bounds());
-//     println!("Red Box: {:?}", red_box.get_bounds());
-//     println!("Blue Box: {:?}", blue_box.get_bounds());
-//     println!("Green Box: {:?}", green_box.get_bounds());
+impl SimpleTree {
+    pub fn add(&mut self, entity: Entity, parent: Option<Entity>) {
+        if let Some(p) = parent {
+            self.children.entry(p).or_default().push(entity);
+        }
+    }
+}
 
-//     // Example with absolute positioning:
-//     let mut root_absolute = morphorm::Node::new();
-//     root_absolute.set_width(Units::Pixels(500.0));
-//     root_absolute.set_height(Units::Pixels(400.0));
+pub struct ChildIter<'a> {
+    pub iter: std::slice::Iter<'a, Entity>,
+}
 
-//     let mut absolute_box = morphorm::Node::new();
-//     absolute_box.set_position_type(PositionType::SelfDirected);
-//     absolute_box.set_left(Units::Pixels(50.0));
-//     absolute_box.set_top(Units::Pixels(50.0));
-//     absolute_box.set_width(Units::Pixels(100.0));
-//     absolute_box.set_height(Units::Pixels(100.0));
-//     absolute_box.set_background_color(morphorm::Color::rgb(255, 255, 0)); //
-// Yellow
+impl<'a> Iterator for ChildIter<'a> {
+    type Item = &'a Entity;
+    fn next(&mut self) -> Option<Self::Item> {
+        self.iter.next()
+    }
+}
 
-//     root_absolute.add(&mut absolute_box);
-//     root_absolute.layout(500.0, 400.0);
-//     println!("\nRoot (Absolute): {:?}", root_absolute.get_bounds());
-//     println!("Absolute Box: {:?}", absolute_box.get_bounds());
+impl Node for Entity {
+    type CacheKey = Entity;
+    type Tree = SimpleTree;
+    type Store = SimpleStore;
+    type SubLayout<'a> = ();
+    type ChildIter<'t> = ChildIter<'t>;
 
-//     // Example with column layout and margin:
-//     let mut root_column = morphorm::Node::new();
-//     root_column.set_width(Units::Pixels(300.0));
-//     root_column.set_height(Units::Pixels(300.0));
-//     root_column.set_layout_type(LayoutType::Column);
+    fn key(&self) -> Self::CacheKey { *self }
+    fn children<'t>(&self, tree: &'t Self::Tree) -> Self::ChildIter<'t> {
+        static EMPTY: Vec<Entity> = Vec::new();
+        ChildIter {
+            iter: tree.children.get(self).unwrap_or(&EMPTY).iter()
+        }
+    }
 
-//     let mut margin_box = morphorm::Node::new();
-//     margin_box.set_width(Units::Pixels(100.0));
-//     margin_box.set_height(Units::Pixels(50.0));
-//     margin_box.set_margin_left(Units::Pixels(20.0));
-//     margin_box.set_margin_top(Units::Pixels(10.0));
-//     margin_box.set_background_color(morphorm::Color::rgb(255, 165, 0));
-//     // Orange.
+    fn layout_type(&self, _store: &Self::Store) -> Option<LayoutType> { Some(LayoutType::Row) }
+    fn width(&self, store: &Self::Store) -> Option<Units> { store.width.get(self).copied() }
+    fn height(&self, store: &Self::Store) -> Option<Units> { store.height.get(self).copied() }
 
-//     root_column.add(&mut margin_box);
-//     root_column.layout(300.0, 300.0);
+    // Required methods with default/stub implementations
+    fn visible(&self, _: &Self::Store) -> bool { true }
+    fn position_type(&self, _: &Self::Store) -> Option<PositionType> { Some(PositionType::Relative) }
+    fn alignment(&self, _: &Self::Store) -> Option<Alignment> { None }
+    fn left(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
+    fn right(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
+    fn top(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
+    fn bottom(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
+    fn content_size(&self, _: &Self::Store, _: &mut Self::SubLayout<'_>, _: Option<f32>, _: Option<f32>) -> Option<(f32, f32)> { None }
+    fn padding_left(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
+    fn padding_right(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
+    fn padding_top(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
+    fn padding_bottom(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
+    fn vertical_gap(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
+    fn horizontal_gap(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
+    fn min_vertical_gap(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
+    fn min_horizontal_gap(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
+    fn max_vertical_gap(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
+    fn max_horizontal_gap(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
+    fn min_width(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
+    fn min_height(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
+    fn max_width(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
+    fn max_height(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
+    fn border_left(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
+    fn border_right(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
+    fn border_top(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
+    fn border_bottom(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
+    fn vertical_scroll(&self, _: &Self::Store) -> Option<f32> { Some(0.0) }
+    fn horizontal_scroll(&self, _: &Self::Store) -> Option<f32> { Some(0.0) }
+    fn grid_columns(&self, _: &Self::Store) -> Option<Vec<Units>> { None }
+    fn grid_rows(&self, _: &Self::Store) -> Option<Vec<Units>> { None }
+    fn column_start(&self, _: &Self::Store) -> Option<usize> { None }
+    fn row_start(&self, _: &Self::Store) -> Option<usize> { None }
+    fn column_span(&self, _: &Self::Store) -> Option<usize> { None }
+    fn row_span(&self, _: &Self::Store) -> Option<usize> { None }
+}
 
-//     println!(
-//         "\nRoot (Column with Margin): {:?}",
-//         root_column.get_bounds()
-//     );
-//     println!("Margin Box: {:?}", margin_box.get_bounds());
-// }
+pub fn main() {
+    let mut cache = SimpleCache::default();
+    let mut tree = SimpleTree::default();
+    let mut store = SimpleStore::default();
 
-pub fn main() {}
-// // [finish](https://github.com/john-cd/rust_howto/issues/782)
+    let root = Entity(0);
+    tree.add(root, None);
+    store.width.insert(root, Units::Pixels(500.0));
+    store.height.insert(root, Units::Pixels(400.0));
+
+    let child1 = Entity(1);
+    tree.add(child1, Some(root));
+    store.width.insert(child1, Units::Pixels(100.0));
+    store.height.insert(child1, Units::Pixels(100.0));
+
+    let child2 = Entity(2);
+    tree.add(child2, Some(root));
+    store.width.insert(child2, Units::Pixels(200.0));
+    store.height.insert(child2, Units::Pixels(100.0));
+
+    root.layout(&mut cache, &tree, &store, &mut ());
+
+    println!("Root bounds: ({}, {}, {}, {})", cache.posx(&root), cache.posy(&root), cache.width(&root), cache.height(&root));
+    println!("Child 1 bounds: ({}, {}, {}, {})", cache.posx(&child1), cache.posy(&child1), cache.width(&child1), cache.height(&child1));
+    println!("Child 2 bounds: ({}, {}, {}, {})", cache.posx(&child2), cache.posy(&child2), cache.width(&child2), cache.height(&child2));
+}
+// ANCHOR_END: example

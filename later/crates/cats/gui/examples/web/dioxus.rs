@@ -1,33 +1,25 @@
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR: example
+use dioxus::prelude::*;
 
-// use dioxus::prelude::*;
+// Dioxus is a cross-platform UI framework for Rust.
 
-// fn main() {
-//     launch(App);
-// }
+pub fn main() {
+    // Launch the application
+    #[cfg(feature = "dioxus")]
+    dioxus::launch(App);
+}
 
-// // App is our main component function. It uses the use_state hook to create
-// and manage the count state. fn App(cx: Scope) -> Element {
-//     let count = use_state(&cx, || 0);
+#[cfg(feature = "dioxus")]
+#[component]
+fn App() -> Element {
+    let mut count = use_signal(|| 0);
 
-//     // Render function where we define the structure and behavior of our
-// component using Dioxus' rsx! syntax.     cx.render(rsx! {
-//         div {
-//             h1 { "Counter" }
-//             button {
-//                 onclick: move |_| count.set(*count - 1),
-//                 "-",
-//             }
-//             span { "{count}" }
-//             button {
-//                 onclick: move |_| count.set(*count + 1),
-//                 "+",
-//             }
-//         }
-//     })
-// }
-
-pub fn main() {}
-// // [finish](https://github.com/john-cd/rust_howto/issues/775)
+    rsx! {
+        div {
+            h1 { "Counter: {count}" }
+            button { onclick: move |_| count += 1, "+" }
+            button { onclick: move |_| count -= 1, "-" }
+        }
+    }
+}
+// ANCHOR_END: example

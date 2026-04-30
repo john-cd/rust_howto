@@ -1,68 +1,36 @@
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
-// use tao::event::Event;
-// use tao::event::WindowEvent;
-// use tao::event_loop::ControlFlow;
-// use tao::event_loop::EventLoop;
-// use tao::window::WindowBuilder;
+// ANCHOR: example
+use tao::event::{Event, WindowEvent};
+use tao::event_loop::{ControlFlow, EventLoop};
+use tao::window::WindowBuilder;
 
-// fn main() {
-//     let event_loop = EventLoop::new();
-//     let window = WindowBuilder::new()
-//         .with_title("Tao Example")
-//         .build(&event_loop)
-//         .unwrap();
+// Tao is a cross-platform window manager library.
 
-//     event_loop.run(move |event, _, control_flow| {
-//         *control_flow = ControlFlow::Wait;
+pub fn main() {
+    let event_loop = EventLoop::new();
+    let window = WindowBuilder::new()
+        .with_title("Tao Example")
+        .build(&event_loop)
+        .unwrap();
 
-//         match event {
-//             Event::WindowEvent {
-//                 event: WindowEvent::CloseRequested,
-//                 ..
-//             } => *control_flow = ControlFlow::Exit,
-//             Event::WindowEvent {
-//                 event: WindowEvent::Resized(physical_size),
-//                 ..
-//             } => {
-//                 println!("Resized to: {physical_size:?}");
-//                 // Handle resize event here (e.g., redraw graphics)
-//             }
-//             Event::WindowEvent {
-//                 event: WindowEvent::Moved(position),
-//                 ..
-//             } => {
-//                 println!("Moved to: {position:?}");
-//             }
-//             Event::WindowEvent {
-//                 event: WindowEvent::KeyboardInput { input, .. },
-//                 ..
-//             } => {
-//                 if let Some(keycode) = input.virtual_keycode {
-//                     println!("Key pressed: {keycode:?}");
-//                     // Handle keyboard input here
-//                 }
-//             }
-//             Event::WindowEvent {
-//                 event: WindowEvent::MouseInput { state, button, .. },
-//                 ..
-//             } => {
-//                 println!("Mouse {button:?} pressed: {state:?}");
-//             }
-//             Event::MainEventsCleared => {
-//                 // Application update logic goes here.
-//                 // println!("Main Events Cleared");
-//                 window.request_redraw();
-//             }
-//             Event::RedrawRequested(_window_id) => {
-//                 // Redraw the application.
-//                 // println!("Redraw Requested");
-//             }
-//             _ => (),
-//         }
-//     });
-// }
+    event_loop.run(move |event, _, control_flow| {
+        *control_flow = ControlFlow::Wait;
 
-pub fn main() {}
-// // [finish](https://github.com/john-cd/rust_howto/issues/789)
+        match event {
+            Event::WindowEvent {
+                event: WindowEvent::CloseRequested,
+                ..
+            } => *control_flow = ControlFlow::Exit,
+            Event::WindowEvent {
+                event: WindowEvent::Resized(physical_size),
+                ..
+            } => {
+                println!("Resized to: {physical_size:?}");
+            }
+            Event::MainEventsCleared => {
+                window.request_redraw();
+            }
+            _ => (),
+        }
+    });
+}
+// ANCHOR_END: example
