@@ -10,7 +10,6 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories.workspace = true
 publish = false
 readme = "README.md"
 autolib = false

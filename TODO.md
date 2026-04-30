@@ -3666,9 +3666,6 @@
 
 - [ ] [review / test](https://github.com/john-cd/rust_howto/issues/822) ([bk/crates/cats/os_windows_apis/examples/windows/winapi.rs](./bk/crates/cats/os_windows_apis/examples/windows/winapi.rs#L132))
 
-### bk/crates/cats/os_windows_apis/examples/windows/windows.rs
-
-- [ ] [finish](https://github.com/john-cd/rust_howto/issues/823) ([bk/crates/cats/os_windows_apis/examples/windows/windows.rs](./bk/crates/cats/os_windows_apis/examples/windows/windows.rs#L43))
 
 ### bk/crates/cats/parser_implementations/Cargo.toml
 
@@ -3814,37 +3811,10 @@
 
 - [?] [Implement Rocket Hello World and route mounting](https://github.com/john-cd/rust_howto/issues/869) ([bk/crates/cats/web_programming_http_server/examples/rocket.rs](./bk/crates/cats/web_programming_http_server/examples/rocket.rs#L21))
 
-### later/crates/cats/accessibility/Cargo.toml
-
-- [ ] Resolve TODO/FIXME at line 20 ([later/crates/cats/accessibility/Cargo.toml](./later/crates/cats/accessibility/Cargo.toml#L20))
-
-### later/crates/cats/aerospace_simulation/Cargo.toml
-
-- [ ] Resolve TODO/FIXME at line 20 ([later/crates/cats/aerospace_simulation/Cargo.toml](./later/crates/cats/aerospace_simulation/Cargo.toml#L20))
-
-### later/crates/cats/aerospace_space_protocols/examples/space_protocols/space_protocols.rs
-
-- [ ] Resolve TODO/FIXME at line 19 ([later/crates/cats/aerospace_space_protocols/examples/space_protocols/space_protocols.rs](./later/crates/cats/aerospace_space_protocols/examples/space_protocols/space_protocols.rs#L19))
-
 ### later/crates/cats/computer_vision/examples/opencv/opencv.rs
 
 - [ ] [review; expand example; review https://blog.devgenius.io/rust-and-opencv-bb0467bf35ff](https://github.com/john-cd/rust_howto/issues/1079) ([later/crates/cats/computer_vision/examples/opencv/opencv.rs](./later/crates/cats/computer_vision/examples/opencv/opencv.rs#L60))
 
-### later/crates/cats/cryptography_cryptocurrencies/examples/cryptocurrencies/cryptocurrencies.rs
-
-- [ ] [write LATER](https://github.com/john-cd/rust_howto/issues/707) ([later/crates/cats/cryptography_cryptocurrencies/examples/cryptocurrencies/cryptocurrencies.rs](./later/crates/cats/cryptography_cryptocurrencies/examples/cryptocurrencies/cryptocurrencies.rs#L12))
-
-### later/crates/cats/development_tools_ffi/Cargo.toml
-
-- [ ] [fix categories in all Cargo.toml](https://github.com/john-cd/rust_howto/issues/1307) ([later/crates/cats/development_tools_ffi/Cargo.toml](./later/crates/cats/development_tools_ffi/Cargo.toml#L14))
-- [ ] Resolve TODO/FIXME at line 18 ([later/crates/cats/development_tools_ffi/Cargo.toml](./later/crates/cats/development_tools_ffi/Cargo.toml#L18))
-- [ ] Resolve TODO/FIXME at line 39 ([later/crates/cats/development_tools_ffi/Cargo.toml](./later/crates/cats/development_tools_ffi/Cargo.toml#L39))
-- [ ] erlang = [] # "dep:rustler" ([later/crates/cats/development_tools_ffi/Cargo.toml](./later/crates/cats/development_tools_ffi/Cargo.toml#L48))
-- [ ] flutter = [] # "dep:flutter_rust_bridge" ([later/crates/cats/development_tools_ffi/Cargo.toml](./later/crates/cats/development_tools_ffi/Cargo.toml#L49))
-- [ ] java = [] # "dep:jni" ([later/crates/cats/development_tools_ffi/Cargo.toml](./later/crates/cats/development_tools_ffi/Cargo.toml#L50))
-- [ ] objc = [] # "dep:objc2", "dep:objc2-foundation", "dep:objc2-app-kit" ([later/crates/cats/development_tools_ffi/Cargo.toml](./later/crates/cats/development_tools_ffi/Cargo.toml#L52))
-- [ ] node = [] # "dep:napi", "dep:neon" ([later/crates/cats/development_tools_ffi/Cargo.toml](./later/crates/cats/development_tools_ffi/Cargo.toml#L53))
-- [ ] ruby = [] # "dep:magnus", "dep:rutie" ([later/crates/cats/development_tools_ffi/Cargo.toml](./later/crates/cats/development_tools_ffi/Cargo.toml#L54))
 
 ### later/crates/cats/development_tools_ffi/build.rs
 
@@ -3909,13 +3879,6 @@
 
 - [ ] [finish; https://github.com/mozilla/uniffi-rs/blob/main/examples/arithmetic/Cargo.toml](https://github.com/john-cd/rust_howto/issues/1037) ([later/crates/cats/development_tools_ffi/examples/uniffi.rs](./later/crates/cats/development_tools_ffi/examples/uniffi.rs#L25))
 
-### later/crates/cats/development_tools_procedural_macro_helpers/Cargo.toml
-
-- [ ] darling = "0.20.10" ([later/crates/cats/development_tools_procedural_macro_helpers/Cargo.toml](./later/crates/cats/development_tools_procedural_macro_helpers/Cargo.toml#L17))
-- [ ] paste = "1.0.15" ([later/crates/cats/development_tools_procedural_macro_helpers/Cargo.toml](./later/crates/cats/development_tools_procedural_macro_helpers/Cargo.toml#L18))
-- [ ] proc-macro2 = "1.0.92" ([later/crates/cats/development_tools_procedural_macro_helpers/Cargo.toml](./later/crates/cats/development_tools_procedural_macro_helpers/Cargo.toml#L19))
-- [ ] watt = "0.5.0" ([later/crates/cats/development_tools_procedural_macro_helpers/Cargo.toml](./later/crates/cats/development_tools_procedural_macro_helpers/Cargo.toml#L22))
-
 ### later/crates/cats/development_tools_procedural_macro_helpers/examples/compile_macros/watt.rs
 
 - [ ] [finish](https://github.com/john-cd/rust_howto/issues/744) ([later/crates/cats/development_tools_procedural_macro_helpers/examples/compile_macros/watt.rs](./later/crates/cats/development_tools_procedural_macro_helpers/examples/compile_macros/watt.rs#L60))
@@ -3972,10 +3935,7 @@
 
 ### later/crates/cats/game_engines/Cargo.toml
 
-- [ ] bevy = { version = "0.16.0", optional = true } ([later/crates/cats/game_engines/Cargo.toml](./later/crates/cats/game_engines/Cargo.toml#L18))
-- [ ] fyrox = { version = "0.36.0", optional = true } ([later/crates/cats/game_engines/Cargo.toml](./later/crates/cats/game_engines/Cargo.toml#L19))
 - [ ] ggez = { version = "0.9.3", optional = true } # ggez conflict with wgpu ([later/crates/cats/game_engines/Cargo.toml](./later/crates/cats/game_engines/Cargo.toml#L21))
-- [ ] Resolve TODO/FIXME at line 24 ([later/crates/cats/game_engines/Cargo.toml](./later/crates/cats/game_engines/Cargo.toml#L24))
 
 ### later/crates/cats/game_engines/examples/game_engines/bevy.rs
 
@@ -4139,23 +4099,23 @@
 
 ### later/crates/cats/no_std/examples/no_std/no_std1.rs
 
-- [ ] [write LATER](https://github.com/john-cd/rust_howto/issues/814) ([later/crates/cats/no_std/examples/no_std/no_std1.rs](./later/crates/cats/no_std/examples/no_std/no_std1.rs#L12))
+- [?] [review](https://github.com/john-cd/rust_howto/issues/814) ([later/crates/cats/no_std/examples/no_std/no_std1.rs](./later/crates/cats/no_std/examples/no_std/no_std1.rs#L12))
 
 ### later/crates/cats/no_std_no_alloc/examples/no_alloc/no_alloc.rs
 
-- [ ] [write LATER](https://github.com/john-cd/rust_howto/issues/815) ([later/crates/cats/no_std_no_alloc/examples/no_alloc/no_alloc.rs](./later/crates/cats/no_std_no_alloc/examples/no_alloc/no_alloc.rs#L12))
+- [?] [review](https://github.com/john-cd/rust_howto/issues/815) ([later/crates/cats/no_std_no_alloc/examples/no_alloc/no_alloc.rs](./later/crates/cats/no_std_no_alloc/examples/no_alloc/no_alloc.rs#L12))
 
 ### later/crates/cats/os_freebsd_apis/examples/freebsd/freebsd.rs
 
-- [ ] [write LATER](https://github.com/john-cd/rust_howto/issues/817) ([later/crates/cats/os_freebsd_apis/examples/freebsd/freebsd.rs](./later/crates/cats/os_freebsd_apis/examples/freebsd/freebsd.rs#L14))
+- [?] [write](https://github.com/john-cd/rust_howto/issues/817) ([later/crates/cats/os_freebsd_apis/examples/freebsd/freebsd.rs](./later/crates/cats/os_freebsd_apis/examples/freebsd/freebsd.rs#L14))
 
 ### later/crates/cats/os_linux_apis/examples/linux/linux.rs
 
-- [ ] [write LATER](https://github.com/john-cd/rust_howto/issues/818) ([later/crates/cats/os_linux_apis/examples/linux/linux.rs](./later/crates/cats/os_linux_apis/examples/linux/linux.rs#L14))
+- [?] [write](https://github.com/john-cd/rust_howto/issues/818) ([later/crates/cats/os_linux_apis/examples/linux/linux.rs](./later/crates/cats/os_linux_apis/examples/linux/linux.rs#L14))
 
 ### later/crates/cats/os_macos_apis/examples/macos/macos.rs
 
-- [ ] [write LATER](https://github.com/john-cd/rust_howto/issues/819) ([later/crates/cats/os_macos_apis/examples/macos/macos.rs](./later/crates/cats/os_macos_apis/examples/macos/macos.rs#L14))
+- [?] [write](https://github.com/john-cd/rust_howto/issues/819) ([later/crates/cats/os_macos_apis/examples/macos/macos.rs](./later/crates/cats/os_macos_apis/examples/macos/macos.rs#L14))
 
 ### later/crates/cats/rendering/examples/2d_raster_graphics/render.rs
 
@@ -4172,7 +4132,6 @@
 ### later/crates/cats/rendering_graphics_api/Cargo.toml
 
 - [ ] Resolve TODO/FIXME at line 18 ([later/crates/cats/rendering_graphics_api/Cargo.toml](./later/crates/cats/rendering_graphics_api/Cargo.toml#L18))
-- [ ] wgpu = [] # "dep:wgpu" ([later/crates/cats/rendering_graphics_api/Cargo.toml](./later/crates/cats/rendering_graphics_api/Cargo.toml#L22))
 
 ### later/crates/cats/rendering_graphics_api/examples/gpu_abstraction_layers/wgpu.rs
 
@@ -4184,9 +4143,6 @@
 
 ### later/crates/cats/science/Cargo.toml
 
-- [ ] Resolve TODO/FIXME at line 17 ([later/crates/cats/science/Cargo.toml](./later/crates/cats/science/Cargo.toml#L17))
-- [ ] don't need all candle crates ([later/crates/cats/science/Cargo.toml](./later/crates/cats/science/Cargo.toml#L20))
-- [ ] smartcore = { version = "0.4.0", features = ["datasets"] } ([later/crates/cats/science/Cargo.toml](./later/crates/cats/science/Cargo.toml#L31))
 - [ ] do we need a feature? candle = ["dep:candle-core", "dep:candle-nn"] ([later/crates/cats/science/Cargo.toml](./later/crates/cats/science/Cargo.toml#L38))
 
 ### later/crates/cats/science/examples/ml/candle.rs

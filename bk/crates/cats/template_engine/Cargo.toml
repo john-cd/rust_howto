@@ -10,7 +10,7 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = ["template_engine"]
+categories = ["template-engine"]
 publish.workspace = true
 autolib = false
 

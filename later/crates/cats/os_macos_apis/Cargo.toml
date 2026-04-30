@@ -10,7 +10,7 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "os_macos_apis" ]
+categories = [ "os::macos-apis" ]
 publish.workspace = true
 autolib = false
 
