@@ -68,7 +68,7 @@ fn to_wstring(str: &str) -> Vec<u16> {
 }
 
 /// Basic Windows application with a message box.
-fn main() {
+pub fn main() {
     unsafe {
         let h_instance = GetModuleHandleW(null_mut());
         // Define the window class name.
@@ -124,7 +124,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[ignore = "Needs review"]
 #[cfg(test)]
 mod tests {
     use super::*;
