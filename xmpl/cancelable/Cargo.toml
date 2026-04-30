@@ -10,7 +10,7 @@ homepage.workspace = true
 repository.workspace = true
 license.workspace = true
 keywords.workspace = true
-categories.workspace = true
+categories = ["asynchronous"]
 publish.workspace = true
 
 [dependencies]

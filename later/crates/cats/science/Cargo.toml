@@ -14,9 +14,7 @@ categories = ["science"]
 publish.workspace = true
 autolib = false
 
-# FIXME
 [dependencies]
-## Machine Learning
 candle-core = "0.9.1"
 candle-nn = "0.9.1"
 linfa = "0.7.0"
@@ -24,8 +22,6 @@ linfa-linear = "0.7.0"
 ndarray = "0.15.6" # pinned to 0.15.6 for linfa
 smartcore = "0.4.0"
 rand = { version = "0.10.1", features = ["std"] }
-
-## General
 
 [features]
 #default = []

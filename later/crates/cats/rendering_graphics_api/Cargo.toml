@@ -10,7 +10,7 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "rendering_graphics_api" ]
+categories = [ "rendering::graphics-api" ]
 publish.workspace = true
 autolib = false
 
