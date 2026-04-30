@@ -10,6 +10,17 @@ services:
     environment:
       - RUST_LOG=debug
       - AMQP_ADDR=amqp://guest:guest@rust_howto-amqp-1:5672
+      - SMTP_SERVER=rust_howto-smtp-1:1025
+      - SMTP_USER=smtp_username
+      - SMTP_PASSWORD=smtp_password
+      - CASSANDRA_ADDR=cassandra:9042
+      - ELASTICSEARCH_ADDR=http://elasticsearch:9200
+      - MEILISEARCH_ADDR=http://meilisearch:7700
+      - MONGODB_URI=mongodb://mongoadmin:password@mongodb:27017
+      - MSSQL_ADDR=mssql:1433
+      - ORACLE_ADDR=oracle:1521
+      - POSTGRES_ADDR=postgres:5432
+      - REDIS_ADDR=redis:6379
 
   amqp:
     image: rabbitmq:management
@@ -93,6 +104,13 @@ services:
       - db_data:/var/lib/postgresql/data
     expose:
       - 5432
+
+  smtp:
+    image: mailhog/mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    restart: unless-stopped
 
   # https://hub.docker.com/_/redis
   redis:
