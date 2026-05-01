@@ -2564,12 +2564,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "emulators"
-version = "0.1.2"
-dependencies = [
- "polkavm",
-]
-[[package]]
 name = "equivalent"
 version = "1.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4353,12 +4347,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "picosimd"
-version = "0.9.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3f8cf1ae70818c6476eb2da0ac8f3f55ecdea41a7aa16824ea6efc4a31cccf41"
-
-[[package]]
 name = "pin-project"
 version = "1.1.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4896,46 +4884,6 @@ dependencies = [
  "stacker",
  "version_check",
 ]
-
-[[package]]
-name = "polkavm"
-version = "0.33.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d90ece49c68657299648e20469517e22c6ec38321307bb14a69c27a33927a491"
-dependencies = [
- "libc",
- "log",
- "picosimd",
- "polkavm-assembler",
- "polkavm-common",
- "polkavm-linux-raw",
-]
-
-[[package]]
-name = "polkavm-assembler"
-version = "0.33.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "00010f7924647dbf6f468d85d0fcfe4c3587cfb4557ef13f3682dbece8fd57f0"
-dependencies = [
- "log",
-]
-
-[[package]]
-name = "polkavm-common"
-version = "0.33.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9e44a9487003cf5b9fc4462bbcf105cc37d5d9b18b40edf5ed50dd20ed1fdb27"
-dependencies = [
- "log",
- "picosimd",
- "polkavm-assembler",
-]
-
-[[package]]
-name = "polkavm-linux-raw"
-version = "0.33.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "42063d4a1c52e569f7794df27dab3e19c9fa8946184023257bdbb43eb4a94be5"
 
 [[package]]
 name = "portable-atomic"
