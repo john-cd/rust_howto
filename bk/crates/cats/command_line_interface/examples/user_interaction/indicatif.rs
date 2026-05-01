@@ -66,7 +66,12 @@ fn main() -> anyhow::Result<()> {
     spinner()?;
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

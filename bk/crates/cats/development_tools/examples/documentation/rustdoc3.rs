@@ -14,7 +14,12 @@ fn main() {
         "//! ... are `inner` comments that apply to the containing module (or crate)."
     );
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

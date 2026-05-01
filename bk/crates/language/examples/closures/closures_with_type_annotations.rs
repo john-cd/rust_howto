@@ -14,7 +14,12 @@ fn main() {
     };
     println!("Return value: {}", expensive_closure(1));
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

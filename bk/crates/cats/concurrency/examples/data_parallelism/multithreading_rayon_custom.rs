@@ -25,6 +25,10 @@ fn fib(n: usize) -> usize {
 }
 // ANCHOR_END: example
 
+pub fn run() {
+    main();
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

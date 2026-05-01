@@ -63,7 +63,12 @@ fn main() {
     circle.draw();
     square.draw();
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

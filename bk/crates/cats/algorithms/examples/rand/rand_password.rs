@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
-use rand::Rng;
+use rand::RngExt;
 
 fn main() {
     // Define the character set to choose from:
@@ -25,7 +25,12 @@ fn main() {
 
     println!("{password:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

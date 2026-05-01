@@ -1,5 +1,5 @@
 mod aero;
 
 fn main() {
-    // aero::run();
+    let _ = aero::run();
 }

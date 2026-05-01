@@ -63,7 +63,12 @@ fn main() {
         find_first_even(vec![1, 2, 3].as_slice())
     );
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

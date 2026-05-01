@@ -39,7 +39,12 @@ fn main() -> Result<(), ParseError> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), ParseError> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

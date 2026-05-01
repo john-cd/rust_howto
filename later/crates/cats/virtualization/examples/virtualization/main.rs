@@ -1,5 +1,5 @@
 mod virtualization1;
 
 fn main() {
-    virtualization1::run();
+    let _ = virtualization1::run();
 }

@@ -1,6 +1,46 @@
+use clap::Parser;
+use clap::Subcommand;
+
 mod dyn_autotraits;
 mod dyn_compat;
 mod dyn_supertraits;
 mod trait_objects;
 
-fn main() {}
+#[derive(Parser)]
+struct Cli {
+    #[command(subcommand)]
+    command: Option<Commands>,
+}
+
+#[derive(Subcommand)]
+enum Commands {
+    #[command(name = "dyn_autotraits")]
+    DynAutotraits,
+    #[command(name = "dyn_compat")]
+    DynCompat,
+    #[command(name = "dyn_supertraits")]
+    DynSupertraits,
+    #[command(name = "trait_objects")]
+    TraitObjects,
+}
+
+fn main() {
+    let cli = Cli::parse();
+
+    if let Some(command) = cli.command {
+        match command {
+            Commands::DynAutotraits => {
+                let _ = dyn_autotraits::run();
+            }
+            Commands::DynCompat => {
+                let _ = dyn_compat::run();
+            }
+            Commands::DynSupertraits => {
+                let _ = dyn_supertraits::run();
+            }
+            Commands::TraitObjects => {
+                let _ = trait_objects::run();
+            }
+        }
+    }
+}

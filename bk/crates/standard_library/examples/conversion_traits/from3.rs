@@ -17,7 +17,12 @@ fn main() {
     let msg: Message = raw.into(); // Use `From<&[u8]>`.
     println!("{msg:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

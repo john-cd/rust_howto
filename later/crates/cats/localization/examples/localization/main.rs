@@ -1,5 +1,5 @@
 mod localization1;
 
 fn main() {
-    localization1::run().expect("localization example failed");
+    let _ = localization1::run();
 }

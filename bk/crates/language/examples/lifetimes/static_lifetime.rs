@@ -10,7 +10,12 @@ fn my_string() -> &'static str {
 fn main() {
     println!("{}", my_string());
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

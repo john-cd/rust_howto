@@ -1,5 +1,5 @@
 mod render;
 
 fn main() {
-    render::run();
+    let _ = render::run();
 }

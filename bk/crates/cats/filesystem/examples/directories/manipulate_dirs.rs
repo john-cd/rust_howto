@@ -60,7 +60,12 @@ fn main() -> std::io::Result<()> {
     fs::remove_dir_all("./temp/my_files")?;
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> std::io::Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

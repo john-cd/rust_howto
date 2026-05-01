@@ -102,7 +102,12 @@ async fn main() {
     });
     println!("OrElse result: {:?}", future.await);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

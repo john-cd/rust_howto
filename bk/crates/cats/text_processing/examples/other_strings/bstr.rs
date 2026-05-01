@@ -58,7 +58,12 @@ fn main() {
         println!("Line: {line:?}");
     }
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

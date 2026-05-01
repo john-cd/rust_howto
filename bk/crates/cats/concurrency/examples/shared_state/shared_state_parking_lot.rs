@@ -41,7 +41,12 @@ fn main() {
         assert_eq!(get_cached_val(), 42);
     }
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

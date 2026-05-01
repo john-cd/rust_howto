@@ -53,7 +53,12 @@ fn main() {
     system.run().unwrap();
     std::thread::sleep(Duration::from_secs(1));
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

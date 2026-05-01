@@ -38,7 +38,12 @@ fn main() {
         println!("File name is: {file_name}");
     }
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

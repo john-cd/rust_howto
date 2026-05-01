@@ -23,6 +23,7 @@ surrealdb = ["dep:surrealdb"]
 tantivy = ["dep:tantivy"]
 
 [dependencies]
+clap = { version = "4.6.1", features = ["derive"] }
 
 ## General
 anyhow = "1.0.100"

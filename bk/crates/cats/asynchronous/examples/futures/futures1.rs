@@ -34,7 +34,12 @@ async fn race_tasks() {
 async fn main() {
     race_tasks().await;
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

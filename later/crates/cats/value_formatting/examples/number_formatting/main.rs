@@ -1,5 +1,5 @@
 mod ryu;
 
 fn main() {
-    ryu::run();
+    let _ = ryu::run();
 }

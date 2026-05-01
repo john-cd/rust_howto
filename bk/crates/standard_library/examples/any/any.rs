@@ -43,7 +43,12 @@ fn main() {
 
     print_if_string(Box::new(s));
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

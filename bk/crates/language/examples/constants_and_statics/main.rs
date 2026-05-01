@@ -1,5 +1,40 @@
+use clap::Parser;
+use clap::Subcommand;
+
 mod constants;
 mod static_mut;
 mod statics;
 
-fn main() {}
+#[derive(Parser)]
+struct Cli {
+    #[command(subcommand)]
+    command: Option<Commands>,
+}
+
+#[derive(Subcommand)]
+enum Commands {
+    #[command(name = "constants")]
+    Constants,
+    #[command(name = "static_mut")]
+    StaticMut,
+    #[command(name = "statics")]
+    Statics,
+}
+
+fn main() {
+    let cli = Cli::parse();
+
+    if let Some(command) = cli.command {
+        match command {
+            Commands::Constants => {
+                let _ = constants::run();
+            }
+            Commands::StaticMut => {
+                let _ = static_mut::run();
+            }
+            Commands::Statics => {
+                let _ = statics::run();
+            }
+        }
+    }
+}

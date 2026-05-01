@@ -20,7 +20,12 @@ fn main() -> Result<(), Error> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), Error> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

@@ -53,7 +53,12 @@ fn main() {
     let _mapped_result =
         result1.map_left(|s| s.to_uppercase()).map_right(|n| n + 10);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

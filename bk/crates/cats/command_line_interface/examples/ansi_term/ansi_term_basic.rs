@@ -11,7 +11,12 @@ fn main() {
         Colour::Green.paint("green")
     );
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

@@ -17,7 +17,12 @@ fn main() {
     documented_function();
     function_including_external_file_as_documentation();
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

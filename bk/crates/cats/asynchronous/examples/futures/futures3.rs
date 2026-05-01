@@ -48,7 +48,12 @@ async fn main() -> Result<()> {
     assert_eq!(flat, 1);
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

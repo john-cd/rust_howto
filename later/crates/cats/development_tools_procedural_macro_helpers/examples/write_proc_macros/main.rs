@@ -4,7 +4,7 @@
 //! This example parses a simple struct syntax tree, generates a `Debug`
 //! implementation, and prints the resulting token stream.
 
-use clap::Parser;
+use clap::{Parser, Subcommand};
 
 mod darling;
 mod paste;
@@ -14,19 +14,45 @@ mod syn;
 
 #[derive(Parser)]
 struct Cli {
-    #[arg(short, long)]
-    example: String,
+    #[command(subcommand)]
+    command: Option<Commands>,
+}
+
+#[derive(Subcommand)]
+enum Commands {
+    #[command(name = "darling")]
+    Darling,
+    #[command(name = "paste")]
+    Paste,
+    #[command(name = "proc_macro2")]
+    ProcMacro2,
+    #[command(name = "quote")]
+    Quote,
+    #[command(name = "syn")]
+    Syn,
 }
 
 fn main() {
     let cli = Cli::parse();
-    match cli.example.as_str() {
-        "darling" => darling::run(),
-        "paste" => paste::run(),
-        "proc_macro2" => proc_macro2::run(),
-        "quote" => quote::run(),
-        "syn" => syn::run(),
-        _ => eprintln!("Unknown example. Try: darling, paste, proc_macro2, quote, syn"),
+
+    if let Some(command) = cli.command {
+        match command {
+            Commands::Darling => {
+                let _ = darling::run();
+            }
+            Commands::Paste => {
+                let _ = paste::run();
+            }
+            Commands::ProcMacro2 => {
+                let _ = proc_macro2::run();
+            }
+            Commands::Quote => {
+                let _ = quote::run();
+            }
+            Commands::Syn => {
+                let _ = syn::run();
+            }
+        }
     }
 }
 

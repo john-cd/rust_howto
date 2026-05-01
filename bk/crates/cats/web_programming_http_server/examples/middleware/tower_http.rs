@@ -88,7 +88,12 @@ async fn main() {
         "tower_http example: middleware stack built (authentication, logging, compression, etc.)"
     );
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

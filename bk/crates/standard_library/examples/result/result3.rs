@@ -33,7 +33,12 @@ fn main() {
 
     // There is also a `as_deref_mut` method.
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

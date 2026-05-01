@@ -37,7 +37,12 @@ fn main() {
     func2(&s);
     func3(&s);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

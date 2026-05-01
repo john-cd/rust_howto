@@ -32,7 +32,12 @@ fn main() {
     // has been used for the last time.
     let _ref2 = &s;
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

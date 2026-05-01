@@ -19,7 +19,12 @@ fn main() {
     increment_all(&mut v[..]);
     println!("{}", sum_of_squares(&v[..]));
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

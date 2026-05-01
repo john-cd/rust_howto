@@ -50,7 +50,7 @@ fn rolled_back_tx(conn: &mut Connection) -> Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> Result<()> {
-    main()?;
+    main()
 }
 
 #[cfg(test)]

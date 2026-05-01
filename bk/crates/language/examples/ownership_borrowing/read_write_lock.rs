@@ -23,7 +23,12 @@ fn main() {
     s1 = MyStruct(false);
     s1.0 = true;
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

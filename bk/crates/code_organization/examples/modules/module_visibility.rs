@@ -73,7 +73,12 @@ fn main() {
     // in its parent module.
     my_module::call_func_in_parent_module();
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

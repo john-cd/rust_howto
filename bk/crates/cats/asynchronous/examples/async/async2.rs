@@ -20,11 +20,16 @@ async fn main() {
     // Calling `.await` on `op` starts executing `say_world`:
     op.await;
 }
+
 // Prints:
 // hello
 // world
 // Example from <https://tokio.rs/tokio/tutorial/hello-tokio>
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

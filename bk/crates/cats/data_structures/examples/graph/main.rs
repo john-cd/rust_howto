@@ -1,3 +1,5 @@
 mod petgraph;
 
-fn main() {}
+fn main() {
+    let _ = petgraph::run();
+}

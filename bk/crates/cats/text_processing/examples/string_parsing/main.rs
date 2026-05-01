@@ -1,3 +1,5 @@
 mod from_str;
 
-fn main() {}
+fn main() {
+    let _ = from_str::run();
+}

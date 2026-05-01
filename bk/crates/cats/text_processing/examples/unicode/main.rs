@@ -1,3 +1,5 @@
 mod graphemes;
 
-fn main() {}
+fn main() {
+    let _ = graphemes::run();
+}

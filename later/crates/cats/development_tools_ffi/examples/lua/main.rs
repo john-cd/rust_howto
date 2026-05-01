@@ -1,9 +1,45 @@
 #[cfg(feature = "lua")]
+use clap::{Parser, Subcommand};
+
+#[cfg(feature = "lua")]
 mod mlua;
 #[cfg(feature = "lua")]
 mod mlua2;
 
+#[cfg(feature = "lua")]
+#[derive(Parser)]
+struct Cli {
+    #[command(subcommand)]
+    command: Option<Commands>,
+}
+
+#[cfg(feature = "lua")]
+#[derive(Subcommand)]
+enum Commands {
+    #[cfg(feature = "lua")]
+    #[command(name = "mlua")]
+    Mlua,
+    #[cfg(feature = "lua")]
+    #[command(name = "mlua2")]
+    Mlua2,
+}
+
 fn main() {
-    mlua::run();
-    mlua2::run();
+    #[cfg(feature = "lua")]
+    {
+        let cli = Cli::parse();
+
+        if let Some(command) = cli.command {
+            match command {
+                #[cfg(feature = "lua")]
+                Commands::Mlua => {
+                    let _ = mlua::run();
+                }
+                #[cfg(feature = "lua")]
+                Commands::Mlua2 => {
+                    let _ = mlua2::run();
+                }
+            }
+        }
+    }
 }

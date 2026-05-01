@@ -16,7 +16,12 @@ fn main() {
     futures::executor::block_on(future);
     // `future` is run and "hello, world!" is printed.
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

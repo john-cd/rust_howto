@@ -1,5 +1,5 @@
 mod geo;
 
 fn main() {
-    geo::run();
+    let _ = geo::run();
 }

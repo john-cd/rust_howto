@@ -22,7 +22,7 @@ fn main() -> Result<(), std::io::Error> {
 // ANCHOR_END: example
 
 pub fn run() -> Result<(), std::io::Error> {
-    main()?;
-    Ok(())
+    main()
 }
+
 // [review; tar_decompress.rs is noplayground - fix?](https://github.com/john-cd/rust_howto/issues/254)

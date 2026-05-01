@@ -1,3 +1,5 @@
 mod drop;
 
-fn main() {}
+fn main() {
+    let _ = drop::run();
+}

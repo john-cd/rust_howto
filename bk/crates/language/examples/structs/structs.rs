@@ -29,7 +29,12 @@ fn main() {
     // Access fields with the `.` operator:
     let _ = user1.active;
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

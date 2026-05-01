@@ -28,7 +28,12 @@ fn main() {
     println!("Camel case: {}", input.to_lower_camel_case()); // helloWorldExampleString
     println!("Title case: {}", input.to_title_case()); // Hello World Example String
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

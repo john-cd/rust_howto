@@ -27,7 +27,12 @@ fn env_extract() -> String {
 fn main() {
     println!("SHELL: {}", env_extract());
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

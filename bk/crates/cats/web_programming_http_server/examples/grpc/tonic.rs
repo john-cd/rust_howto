@@ -81,3 +81,5 @@
 // //     Ok(())
 // // }
 // // [review; need to write full integration test, testing the endpoint then stopping the server](https://github.com/john-cd/rust_howto/issues/870)
+
+pub fn run() {}

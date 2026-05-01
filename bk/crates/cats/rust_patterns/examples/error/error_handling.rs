@@ -27,7 +27,12 @@ fn main() {
     }
     assert_eq!(my_string, "foo\n");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

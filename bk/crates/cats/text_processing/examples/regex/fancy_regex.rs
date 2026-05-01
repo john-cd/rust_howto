@@ -58,7 +58,12 @@ fn main() {
     capture_groups();
     split_text();
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

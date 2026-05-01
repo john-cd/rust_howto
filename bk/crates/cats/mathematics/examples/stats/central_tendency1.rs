@@ -116,7 +116,12 @@ fn main() {
     println!("Median is {med:?}");
     assert_eq!(med, Some(5.5));
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

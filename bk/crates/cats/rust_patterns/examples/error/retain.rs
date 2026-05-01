@@ -32,7 +32,12 @@ fn main() -> anyhow::Result<()> {
     println!("The number is: {n}");
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

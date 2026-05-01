@@ -14,7 +14,12 @@ fn main() {
     let sum = add(5, 7);
     println!("Sum: {sum}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

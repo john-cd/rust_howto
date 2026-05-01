@@ -67,7 +67,12 @@ async fn main() {
         .init();
     my_async_function().await;
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

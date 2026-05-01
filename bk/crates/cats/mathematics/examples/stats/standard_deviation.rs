@@ -74,7 +74,12 @@ fn main() {
     );
     assert_eq!(zscore, Some(-0.11076978));
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

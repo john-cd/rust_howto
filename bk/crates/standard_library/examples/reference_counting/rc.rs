@@ -39,7 +39,12 @@ fn main() {
     let x = Rc::new(6);
     assert_eq!(Rc::try_unwrap(x), Ok(6));
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

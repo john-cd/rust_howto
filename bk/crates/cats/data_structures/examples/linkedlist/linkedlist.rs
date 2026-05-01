@@ -65,7 +65,12 @@ fn main() {
     list.clear();
     println!("List is empty: {}", list.is_empty());
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

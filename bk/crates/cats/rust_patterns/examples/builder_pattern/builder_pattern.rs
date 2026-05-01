@@ -93,7 +93,12 @@ fn main() {
 
     println!("Database Configuration: {config:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

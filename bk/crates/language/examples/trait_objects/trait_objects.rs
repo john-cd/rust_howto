@@ -53,7 +53,7 @@ impl Screen {
 
     /// Runs the screen, drawing each component.
     fn run(&self) {
-        for component in self.components.iter() {
+        for component in &self.components {
             // The purpose of trait objects is to permit "late binding" of
             // methods. Calling a method on a trait object results
             // in dynamic dispatch at runtime.
@@ -67,6 +67,10 @@ fn main() {
     s.run();
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

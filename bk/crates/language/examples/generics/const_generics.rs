@@ -23,7 +23,12 @@ fn main() {
     println!("Array length: {len}");
     assert_eq!(len, 3);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

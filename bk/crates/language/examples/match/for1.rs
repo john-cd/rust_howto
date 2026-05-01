@@ -10,7 +10,12 @@ fn main() {
         println!("x: {x}, y: {y}");
     }
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

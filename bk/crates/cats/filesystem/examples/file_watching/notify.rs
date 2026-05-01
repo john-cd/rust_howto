@@ -52,8 +52,13 @@ fn main() -> Result<()> {
 
     Ok(())
 }
+
 // Look for additional examples in <https://github.com/notify-rs/notify/tree/main/examples>.
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

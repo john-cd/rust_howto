@@ -29,7 +29,12 @@ fn main() {
     // semicolon-separated tokens, etc.
     println!("Token tree examples complete");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

@@ -136,3 +136,7 @@ mod tests {
         main();
     }
 }
+
+pub fn run() {
+    main();
+}

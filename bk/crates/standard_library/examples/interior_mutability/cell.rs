@@ -69,7 +69,12 @@ fn main() {
     // `into_inner` consumes the `Cell<T>` and returns the interior value.
     let _inner = my_string_struct.value.into_inner();
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

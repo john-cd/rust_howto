@@ -1,3 +1,5 @@
 mod linkedlist;
 
-fn main() {}
+fn main() {
+    let _ = linkedlist::run();
+}

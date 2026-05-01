@@ -27,7 +27,12 @@ fn main() {
     println!("Sum of range: {}", sum_all(0..5)); // Output: Sum of range: 10.
     println!("Sum of iterator: {}", sum_all(std::iter::repeat_n(5, 2))); // Output: Sum of iterator: 10.
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

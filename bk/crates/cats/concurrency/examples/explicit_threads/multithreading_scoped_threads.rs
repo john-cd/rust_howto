@@ -42,7 +42,12 @@ fn main() {
         println!("Got: {received:?}");
     }
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

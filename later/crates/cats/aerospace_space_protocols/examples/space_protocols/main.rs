@@ -1,5 +1,5 @@
 mod space_protocols;
 
 fn main() {
-    // space_protocols::run();
+    let _ = space_protocols::run();
 }

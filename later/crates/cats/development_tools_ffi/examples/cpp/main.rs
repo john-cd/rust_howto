@@ -1,5 +1,5 @@
 mod cxx;
 
 fn main() {
-    cxx::run();
+    let _ = cxx::run();
 }

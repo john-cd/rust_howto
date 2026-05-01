@@ -62,7 +62,12 @@ async fn main() -> Result {
     println!("Downloaded files successfully!");
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result {
+    main()
+}
 
 #[test]
 fn require_network() -> anyhow::Result<()> {

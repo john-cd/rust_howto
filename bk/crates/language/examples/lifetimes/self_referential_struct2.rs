@@ -163,7 +163,12 @@ fn main() {
     // Verify the self-pointer was updated correctly to the target's address.
     assert!(&still_unmoved.data as *const String == still_unmoved.ptr);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

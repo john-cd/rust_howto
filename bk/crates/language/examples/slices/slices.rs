@@ -37,7 +37,12 @@ fn main() {
     slice_from_array();
     slice_from_vector();
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

@@ -35,7 +35,12 @@ fn main() {
 
     println!("End of main.");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

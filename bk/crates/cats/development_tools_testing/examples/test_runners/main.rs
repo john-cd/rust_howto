@@ -1,3 +1,5 @@
 mod tests1;
 
-fn main() {}
+fn main() {
+    let _ = tests1::run();
+}

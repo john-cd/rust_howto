@@ -135,7 +135,12 @@ fn main() {
     <Circle as TraitMethods>::associated_function();
     println!("dyn compatibility examples: dyn-compatible traits demonstrated");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

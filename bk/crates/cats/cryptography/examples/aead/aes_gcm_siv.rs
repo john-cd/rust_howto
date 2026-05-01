@@ -55,7 +55,12 @@ fn main() -> Result<(), aes_gcm_siv::Error> {
     assert_eq!(plaintext, decrypted_ciphertext.as_slice());
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), aes_gcm_siv::Error> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

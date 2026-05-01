@@ -1,3 +1,5 @@
 mod libc;
 
-fn main() {}
+fn main() {
+    let _ = libc::run();
+}

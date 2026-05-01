@@ -1,3 +1,5 @@
 mod pin;
 
-fn main() {}
+fn main() {
+    let _ = pin::run();
+}

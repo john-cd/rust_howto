@@ -46,7 +46,12 @@ fn main() {
     assert!(d_position > b_position && d_position > c_position);
     assert!(e_position > d_position);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

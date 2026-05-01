@@ -1,5 +1,5 @@
 mod rapier2d;
 
 fn main() {
-    rapier2d::run();
+    let _ = rapier2d::run();
 }

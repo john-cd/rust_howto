@@ -23,7 +23,12 @@ fn main() {
         Err(e) => println!("Could not find command: {e}"),
     }
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

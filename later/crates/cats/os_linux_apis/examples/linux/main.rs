@@ -1,5 +1,5 @@
 mod linux;
 
 fn main() {
-    linux::run();
+    let _ = linux::run();
 }

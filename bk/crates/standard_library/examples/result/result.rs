@@ -165,7 +165,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let _ = unit_return_value(file_path);
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), Box<dyn std::error::Error>> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

@@ -83,7 +83,12 @@ async fn main() -> Result<(), tokio_postgres::Error> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), tokio_postgres::Error> {
+    main()
+}
 
 #[tokio::test]
 async fn require_external_svc() -> anyhow::Result<()> {

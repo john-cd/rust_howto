@@ -1,7 +1,33 @@
+use clap::{Parser, Subcommand};
+
 mod magnus;
 mod rutie;
 
+#[derive(Parser)]
+struct Cli {
+    #[command(subcommand)]
+    command: Option<Commands>,
+}
+
+#[derive(Subcommand)]
+enum Commands {
+    #[command(name = "magnus")]
+    Magnus,
+    #[command(name = "rutie")]
+    Rutie,
+}
+
 fn main() {
-    magnus::run();
-    rutie::run();
+    let cli = Cli::parse();
+
+    if let Some(command) = cli.command {
+        match command {
+            Commands::Magnus => {
+                let _ = magnus::run();
+            }
+            Commands::Rutie => {
+                let _ = rutie::run();
+            }
+        }
+    }
 }

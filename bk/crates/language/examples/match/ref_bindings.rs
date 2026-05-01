@@ -52,7 +52,12 @@ fn main() {
     // BETTER:
     let _port: &i32 = &value;
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

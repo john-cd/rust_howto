@@ -1,5 +1,5 @@
 mod rfd;
 
 fn main() {
-    rfd::run();
+    let _ = rfd::run();
 }

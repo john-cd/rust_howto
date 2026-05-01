@@ -14,7 +14,12 @@ fn main() {
     assert_eq!(res, "hello world");
     println!("{}", std::str::from_utf8(&res).unwrap());
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

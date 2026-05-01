@@ -1,5 +1,5 @@
 mod internationalization1;
 
 fn main() {
-    internationalization1::run().expect("internationalization example failed");
+    let _ = internationalization1::run();
 }

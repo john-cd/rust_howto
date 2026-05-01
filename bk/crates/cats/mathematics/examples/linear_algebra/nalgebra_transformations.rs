@@ -34,7 +34,12 @@ fn main() {
     let transformed = isometry * point;
     println!("Transforming {point} yields: {transformed}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

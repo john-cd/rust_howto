@@ -17,7 +17,12 @@ fn main() -> Result<()> {
     wtr.flush()?;
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

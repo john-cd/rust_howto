@@ -10,7 +10,12 @@ fn main() {
     let absent_number: Option<i32> = None;
     println!("{absent_number:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

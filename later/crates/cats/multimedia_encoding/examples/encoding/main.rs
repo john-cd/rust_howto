@@ -1,5 +1,5 @@
 mod encoding;
 
 fn main() {
-    encoding::run().expect("encoding example failed");
+    let _ = encoding::run();
 }

@@ -42,7 +42,12 @@ fn main() {
     notify2(&a);
     notify3(&a);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

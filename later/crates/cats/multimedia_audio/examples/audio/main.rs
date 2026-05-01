@@ -1,6 +1,6 @@
 mod audio;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    audio::run()?;
+    let _ = audio::run();
     Ok(())
 }

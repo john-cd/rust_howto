@@ -1,27 +1,45 @@
 #[cfg(feature = "gtk")]
-use clap::Parser;
+use clap::{Parser, Subcommand};
 
 #[cfg(feature = "gtk")]
 mod gtk4;
-
 #[cfg(feature = "gtk")]
 mod relm4;
 
 #[cfg(feature = "gtk")]
 #[derive(Parser)]
 struct Cli {
-    #[arg(short, long)]
-    example: String,
+    #[command(subcommand)]
+    command: Option<Commands>,
+}
+
+#[cfg(feature = "gtk")]
+#[derive(Subcommand)]
+enum Commands {
+    #[cfg(feature = "gtk")]
+    #[command(name = "gtk4")]
+    Gtk4,
+    #[cfg(feature = "gtk")]
+    #[command(name = "relm4")]
+    Relm4,
 }
 
 fn main() {
     #[cfg(feature = "gtk")]
     {
         let cli = Cli::parse();
-        match cli.example.as_str() {
-            "gtk4" => gtk4::run(),
-            "relm4" => relm4::run(),
-            _ => eprintln!("Unknown example. Try: gtk4, relm4"),
+
+        if let Some(command) = cli.command {
+            match command {
+                #[cfg(feature = "gtk")]
+                Commands::Gtk4 => {
+                    let _ = gtk4::run();
+                }
+                #[cfg(feature = "gtk")]
+                Commands::Relm4 => {
+                    let _ = relm4::run();
+                }
+            }
         }
     }
 }

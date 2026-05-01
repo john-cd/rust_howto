@@ -30,7 +30,12 @@ fn main() -> Result<()> {
     // unsafe { greet(c_name.as_ptr()) }
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

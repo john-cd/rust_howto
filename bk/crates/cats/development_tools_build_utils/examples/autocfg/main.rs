@@ -1,4 +1,7 @@
 //! Autocfg examples.
+
 mod autocfg;
 
-fn main() {}
+fn main() {
+    let _ = autocfg::run();
+}

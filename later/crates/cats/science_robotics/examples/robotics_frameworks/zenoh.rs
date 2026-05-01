@@ -73,6 +73,10 @@ fn ze(e: impl std::fmt::Display) -> anyhow::Error {
 }
 // ANCHOR_END: example
 
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -10,7 +10,7 @@ use opencv::core::Vector;
 use opencv::imgcodecs;
 use opencv::imgproc;
 use opencv::prelude::*;
-use rand::Rng;
+use rand::RngExt;
 
 /// This example demonstrates how to load an image, convert it to grayscale, and
 /// save the result using the `opencv` crate.
@@ -26,13 +26,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Prep: create a random image:
     let width = 100;
     let height = 100;
-    let mut rng = rand::thread_rng();
+    let mut rng = rand::rng();
     let mut rgb_image = RgbImage::new(width, height);
     for x in 0..width {
         for y in 0..height {
-            let r = rng.gen::<u8>();
-            let g = rng.gen::<u8>();
-            let b = rng.gen::<u8>();
+            // Generate a noisy RGB image so the grayscale conversion has
+            // something visible to transform.
+            let r = rng.random::<u8>();
+            let g = rng.random::<u8>();
+            let b = rng.random::<u8>();
             rgb_image.put_pixel(x, y, Rgb([r, g, b]));
         }
     }
@@ -57,8 +59,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 // ANCHOR_END: example
 
 pub fn run() -> Result<(), Box<dyn std::error::Error>> {
-    main()?;
-    Ok(())
+    main()
 }
 
 #[cfg(test)]

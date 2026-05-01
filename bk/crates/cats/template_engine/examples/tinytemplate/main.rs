@@ -1,3 +1,5 @@
 mod tinytemplate;
 
-fn main() {}
+fn main() {
+    let _ = tinytemplate::run();
+}

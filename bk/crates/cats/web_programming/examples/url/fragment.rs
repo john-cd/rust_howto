@@ -21,7 +21,12 @@ fn main() -> Result<(), ParseError> {
     println!("`cleaned`: {cleaned}");
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), ParseError> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

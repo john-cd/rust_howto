@@ -43,7 +43,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-pub fn run() {
+pub(crate) fn run() {
     main();
 }
 

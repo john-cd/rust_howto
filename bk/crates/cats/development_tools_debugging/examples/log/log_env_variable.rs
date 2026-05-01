@@ -49,6 +49,10 @@ fn init_logger() {
 }
 // ANCHOR_END: example
 
+pub fn run() {
+    main();
+}
+
 // #[cfg(test)]
 // fn init_logger() {
 //     let _ = env_logger::builder()

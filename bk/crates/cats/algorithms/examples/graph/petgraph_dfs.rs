@@ -41,7 +41,12 @@ fn main() {
     assert!(visited.contains(&"E"));
     assert_eq!(visited.len(), 5);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

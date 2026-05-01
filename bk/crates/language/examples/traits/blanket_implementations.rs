@@ -25,7 +25,12 @@ fn main() {
     // of `VeryUsefulTrait` for `String`, since it implements `Display`:
     println!("{}", s.my_method());
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

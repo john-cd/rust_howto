@@ -1,4 +1,4 @@
-use clap::Parser;
+use clap::{Parser, Subcommand};
 
 #[cfg(feature = "candle")]
 mod candle;
@@ -7,17 +7,36 @@ mod smartcore;
 
 #[derive(Parser)]
 struct Cli {
-    #[arg(short, long)]
-    example: String,
+    #[command(subcommand)]
+    command: Option<Commands>,
+}
+
+#[derive(Subcommand)]
+enum Commands {
+    #[cfg(feature = "candle")]
+    #[command(name = "candle")]
+    Candle,
+    #[command(name = "linfa")]
+    Linfa,
+    #[command(name = "smartcore")]
+    Smartcore,
 }
 
 fn main() {
     let cli = Cli::parse();
-    match cli.example.as_str() {
-        #[cfg(feature = "candle")]
-        "candle" => candle::run(),
-        "linfa" => linfa::run(),
-        "smartcore" => smartcore::run(),
-        _ => eprintln!("Unknown example. Try: candle, linfa, smartcore"),
+
+    if let Some(command) = cli.command {
+        match command {
+            #[cfg(feature = "candle")]
+            Commands::Candle => {
+                let _ = candle::run();
+            }
+            Commands::Linfa => {
+                let _ = linfa::run();
+            }
+            Commands::Smartcore => {
+                let _ = smartcore::run();
+            }
+        }
     }
 }

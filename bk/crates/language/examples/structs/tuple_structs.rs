@@ -26,7 +26,12 @@ fn main() {
     let s = UnitLike;
     println!("{s:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

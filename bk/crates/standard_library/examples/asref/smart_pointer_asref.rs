@@ -24,7 +24,12 @@ fn main() {
         &**ref_to_contained_string
     );
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

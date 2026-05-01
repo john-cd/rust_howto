@@ -14,7 +14,12 @@ fn unused_function() {}
 fn main() {
     println!("Nobody is calling `unused_function`.");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

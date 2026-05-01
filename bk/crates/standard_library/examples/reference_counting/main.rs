@@ -1,3 +1,5 @@
 mod rc;
 
-fn main() {}
+fn main() {
+    let _ = rc::run();
+}

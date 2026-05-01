@@ -1,3 +1,6 @@
+use clap::Parser;
+use clap::Subcommand;
+
 mod multithreading_rayon;
 mod multithreading_rayon_custom;
 mod multithreading_rayon_parsort;
@@ -8,4 +11,66 @@ mod rayon_parallel_search;
 mod rayon_parallel_sort;
 mod rayon_thumbnails;
 
-fn main() {}
+#[derive(Parser)]
+struct Cli {
+    #[command(subcommand)]
+    command: Option<Commands>,
+}
+
+#[derive(Subcommand)]
+enum Commands {
+    #[command(name = "multithreading_rayon")]
+    MultithreadingRayon,
+    #[command(name = "multithreading_rayon_custom")]
+    MultithreadingRayonCustom,
+    #[command(name = "multithreading_rayon_parsort")]
+    MultithreadingRayonParsort,
+    #[command(name = "rayon_any_all")]
+    RayonAnyAll,
+    #[command(name = "rayon_iter_mut")]
+    RayonIterMut,
+    #[command(name = "rayon_map_reduce")]
+    RayonMapReduce,
+    #[command(name = "rayon_parallel_search")]
+    RayonParallelSearch,
+    #[command(name = "rayon_parallel_sort")]
+    RayonParallelSort,
+    #[command(name = "rayon_thumbnails")]
+    RayonThumbnails,
+}
+
+fn main() {
+    let cli = Cli::parse();
+
+    if let Some(command) = cli.command {
+        match command {
+            Commands::MultithreadingRayon => {
+                let _ = multithreading_rayon::run();
+            }
+            Commands::MultithreadingRayonCustom => {
+                let _ = multithreading_rayon_custom::run();
+            }
+            Commands::MultithreadingRayonParsort => {
+                let _ = multithreading_rayon_parsort::run();
+            }
+            Commands::RayonAnyAll => {
+                let _ = rayon_any_all::run();
+            }
+            Commands::RayonIterMut => {
+                let _ = rayon_iter_mut::run();
+            }
+            Commands::RayonMapReduce => {
+                let _ = rayon_map_reduce::run();
+            }
+            Commands::RayonParallelSearch => {
+                let _ = rayon_parallel_search::run();
+            }
+            Commands::RayonParallelSort => {
+                let _ = rayon_parallel_sort::run();
+            }
+            Commands::RayonThumbnails => {
+                let _ = rayon_thumbnails::run();
+            }
+        }
+    }
+}

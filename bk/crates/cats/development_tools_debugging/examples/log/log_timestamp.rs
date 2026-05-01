@@ -29,7 +29,12 @@ fn main() {
     log::info!("info");
     log::debug!("debug");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

@@ -30,7 +30,12 @@ fn main() {
     // Print the signature in hex format:
     println!("Signature: {signature:x?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[test]
 fn test() {

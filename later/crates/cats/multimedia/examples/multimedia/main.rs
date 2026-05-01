@@ -1,5 +1,5 @@
 mod multimedia1;
 
 fn main() {
-    multimedia1::run();
+    let _ = multimedia1::run();
 }

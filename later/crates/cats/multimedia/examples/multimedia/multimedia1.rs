@@ -25,8 +25,9 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 }
 
 // ANCHOR_END: example
-pub fn run() {
-    main();
+
+pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
+    main()
 }
 
 #[cfg(test)]

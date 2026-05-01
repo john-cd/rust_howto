@@ -1,5 +1,5 @@
 mod jni;
 
 fn main() {
-    jni::run();
+    let _ = jni::run();
 }

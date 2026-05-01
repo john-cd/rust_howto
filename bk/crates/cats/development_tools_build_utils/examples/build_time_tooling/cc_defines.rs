@@ -18,7 +18,12 @@ fn main() {
         "cc_defines example: defines C preprocessor macros for use in C source files"
     );
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

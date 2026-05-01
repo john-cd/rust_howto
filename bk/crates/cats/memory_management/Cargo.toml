@@ -16,6 +16,7 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
+clap = { version = "4.6.1", features = ["derive"] }
 anyhow = "1.0.100"
 bumpalo = "3.17.0"
 lazy_static = "1.5.0"

@@ -1,5 +1,5 @@
 mod games;
 
 fn main() {
-    games::run();
+    let _ = games::run();
 }

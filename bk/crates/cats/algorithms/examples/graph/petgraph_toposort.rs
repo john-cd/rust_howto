@@ -50,7 +50,12 @@ fn main() {
         Err(_) => println!("Graph contains a cycle!"),
     }
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

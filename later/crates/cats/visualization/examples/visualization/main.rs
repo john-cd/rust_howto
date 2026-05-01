@@ -1,5 +1,5 @@
 mod plotly;
 
 fn main() {
-    plotly::run();
+    let _ = plotly::run();
 }

@@ -75,7 +75,12 @@ fn main() {
     assert_eq!(zip_iter.next(), None);
     println!("Iterator examples passed!");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

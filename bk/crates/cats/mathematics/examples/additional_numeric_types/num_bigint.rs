@@ -39,7 +39,12 @@ fn main() {
     println!("One: {one}");
     assert_eq!(one.to_string(), "1");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

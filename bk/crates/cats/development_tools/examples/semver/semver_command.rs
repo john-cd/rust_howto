@@ -47,7 +47,12 @@ fn main() -> Result<()> {
     println!("{parsed_version:?}");
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

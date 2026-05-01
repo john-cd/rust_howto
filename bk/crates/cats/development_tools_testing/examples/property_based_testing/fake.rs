@@ -128,7 +128,12 @@ fn main() {
     let user_agents: Vec<String> = (0..3).map(|_| UserAgent().fake()).collect();
     println!("User Agents: {user_agents:#?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

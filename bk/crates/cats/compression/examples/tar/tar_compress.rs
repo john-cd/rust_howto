@@ -29,9 +29,8 @@ fn main() -> Result<(), std::io::Error> {
 }
 // ANCHOR_END: example
 
-pub fn run()  -> Result<(), std::io::Error> {
-    main()?;
-    Ok(())
+pub fn run() -> Result<(), std::io::Error> {
+    main()
 }
 
 #[cfg(test)]

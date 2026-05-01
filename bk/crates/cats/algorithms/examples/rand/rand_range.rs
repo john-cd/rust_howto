@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
-use rand::Rng;
+use rand::RngExt;
 
 /// Demonstrates generating random numbers within a specified range.
 fn main() {
@@ -11,7 +11,12 @@ fn main() {
     // Generate a random float between 0.0 (inclusive) and 10.0 (exclusive):
     println!("Float: {}", rng.random_range(0.0..10.0));
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

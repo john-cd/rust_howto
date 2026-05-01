@@ -25,7 +25,12 @@ fn main() {
     modify_string(&mut borrowed_to_owned);
     println!("{borrowed_to_owned}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

@@ -34,7 +34,12 @@ fn main() {
     // Print the state of the `TinyVec` after popping:
     println!("TinyVec after popping: {tiny_vec:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

@@ -32,7 +32,12 @@ fn main() {
         println!("Yes. It's definitely *not* Linux!");
     }
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

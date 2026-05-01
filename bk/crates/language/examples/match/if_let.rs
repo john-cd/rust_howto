@@ -34,7 +34,12 @@ fn main() {
         println!("Going right.");
     }
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

@@ -1,5 +1,5 @@
 mod watt;
 
 fn main() {
-    watt::run();
+    let _ = watt::run();
 }

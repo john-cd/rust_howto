@@ -45,7 +45,12 @@ fn main() {
     assert_eq!(distances[&d], 8); // A -> C -> B -> D: 2 + 1 + 5 = 8
     assert_eq!(distances[&e], 10); // A -> C -> B -> D -> E: 8 + 2 = 10
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

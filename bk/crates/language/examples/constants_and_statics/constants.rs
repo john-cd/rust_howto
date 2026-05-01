@@ -82,7 +82,12 @@ fn main() {
     // When each variable goes out of scope, its destructor is run. The above
     // prints `Dropped.` thrice.
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

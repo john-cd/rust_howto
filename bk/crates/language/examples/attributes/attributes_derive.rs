@@ -16,7 +16,12 @@ fn main() {
     // compile-time error.
     println!("The point is: {p1:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

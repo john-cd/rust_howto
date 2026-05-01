@@ -6,7 +6,12 @@
 fn main() {
     println!("Hello, world!");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

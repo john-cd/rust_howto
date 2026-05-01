@@ -1,3 +1,5 @@
 mod tonic;
 
-fn main() {}
+fn main() {
+    let _ = tonic::run();
+}

@@ -1,5 +1,5 @@
 mod freebsd;
 
 fn main() {
-    freebsd::run();
+    let _ = freebsd::run();
 }

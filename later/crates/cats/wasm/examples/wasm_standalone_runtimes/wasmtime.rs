@@ -118,9 +118,8 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-pub fn run() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+pub fn run() -> Result<()> {
+    main()
 }
 
 #[cfg(test)]

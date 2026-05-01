@@ -1,3 +1,5 @@
 mod skiplist;
 
-fn main() {}
+fn main() {
+    let _ = skiplist::run();
+}

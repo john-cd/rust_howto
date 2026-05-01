@@ -61,7 +61,12 @@ fn main() -> nix::Result<()> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> nix::Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

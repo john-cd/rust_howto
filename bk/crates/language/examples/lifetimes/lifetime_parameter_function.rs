@@ -26,7 +26,12 @@ fn main() {
     println!("x: {x}");
     // x is valid until this line.
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

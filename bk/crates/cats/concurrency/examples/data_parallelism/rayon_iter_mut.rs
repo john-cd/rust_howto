@@ -13,7 +13,12 @@ fn main() {
     arr.par_iter_mut().for_each(|p| *p -= 1);
     println!("{arr:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

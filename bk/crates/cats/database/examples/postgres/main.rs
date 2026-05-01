@@ -1,4 +1,9 @@
 #[cfg(feature = "postgres")]
+use clap::Parser;
+#[cfg(feature = "postgres")]
+use clap::Subcommand;
+
+#[cfg(feature = "postgres")]
 mod aggregate_data;
 #[cfg(feature = "postgres")]
 mod cornucopia;
@@ -10,20 +15,68 @@ mod insert_query_data;
 mod tokio_postgres;
 
 #[cfg(feature = "postgres")]
-#[allow(dead_code)]
-pub(crate) static ENV_MUTEX: std::sync::Mutex<()> = std::sync::Mutex::new(());
+#[derive(Parser)]
+struct Cli {
+    #[command(subcommand)]
+    command: Option<Commands>,
+}
 
 #[cfg(feature = "postgres")]
+#[derive(Subcommand)]
+enum Commands {
+    #[cfg(feature = "postgres")]
+    #[command(name = "aggregate_data")]
+    AggregateData,
+    #[cfg(feature = "postgres")]
+    #[command(name = "cornucopia")]
+    Cornucopia,
+    #[cfg(feature = "postgres")]
+    #[command(name = "create_tables")]
+    CreateTables,
+    #[cfg(feature = "postgres")]
+    #[command(name = "insert_query_data")]
+    InsertQueryData,
+    #[cfg(feature = "postgres")]
+    #[command(name = "tokio_postgres")]
+    TokioPostgres,
+}
+
 fn main() -> anyhow::Result<()> {
-    create_tables::run()?;
-    insert_query_data::run()?;
-    // NOTE: `aggregate_data::run()` is a separate Postgres example that
-    // operates on a different schema, so it is intentionally not executed here.
+    #[cfg(feature = "postgres")]
+    {
+        let cli = Cli::parse();
+
+        if let Some(command) = cli.command {
+            match command {
+                #[cfg(feature = "postgres")]
+                Commands::AggregateData => {
+                    let _ = aggregate_data::run();
+                }
+                #[cfg(feature = "postgres")]
+                Commands::Cornucopia => {
+                    let _ = cornucopia::run();
+                }
+                #[cfg(feature = "postgres")]
+                Commands::CreateTables => {
+                    let _ = create_tables::run();
+                }
+                #[cfg(feature = "postgres")]
+                Commands::InsertQueryData => {
+                    let _ = insert_query_data::run();
+                }
+                #[cfg(feature = "postgres")]
+                Commands::TokioPostgres => {
+                    let _ = tokio_postgres::run();
+                }
+            }
+        }
+    }
     Ok(())
 }
 
-#[cfg(not(feature = "postgres"))]
-fn main() {}
+#[cfg(feature = "postgres")]
+#[allow(dead_code)]
+pub(crate) static ENV_MUTEX: std::sync::Mutex<()> = std::sync::Mutex::new(());
 
 #[cfg(test)]
 mod tests {

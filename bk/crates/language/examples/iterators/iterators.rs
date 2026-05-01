@@ -46,7 +46,12 @@ fn main() {
     }
     println!("The modified vector is: {vec4:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

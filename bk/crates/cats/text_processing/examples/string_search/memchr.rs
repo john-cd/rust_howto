@@ -41,7 +41,12 @@ fn main() {
     let all_l_positions = find_all_occurrences(b'l', haystack);
     println!("All 'l' positions: {all_l_positions:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

@@ -1,6 +1,6 @@
 #![allow(unused)]
-// ANCHOR_END: example
 //! Example of a sealed trait, preventing external implementations.
+// ANCHOR: example
 
 mod a_module {
     #[allow(private_bounds)]
@@ -38,7 +38,12 @@ fn main() {
     // found for type `i32` in the current scope
     println!("Sealed trait pattern: called some_public_method on {a}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

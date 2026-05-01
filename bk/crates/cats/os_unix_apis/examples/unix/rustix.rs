@@ -66,7 +66,12 @@ fn main() -> anyhow::Result<()> {
     println!("File deleted: {new_file_path}");
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

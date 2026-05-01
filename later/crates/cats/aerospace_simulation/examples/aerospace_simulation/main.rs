@@ -1,5 +1,5 @@
 mod aero_simulation;
 
 fn main() {
-    // aero_simulation::run();
+    let _ = aero_simulation::run();
 }

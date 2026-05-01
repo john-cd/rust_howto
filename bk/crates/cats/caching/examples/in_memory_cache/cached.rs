@@ -57,7 +57,12 @@ fn main() {
     println!("User data: {}", fetch_data(123));
     println!("Cached user data: {}", fetch_data(123));
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

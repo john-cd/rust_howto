@@ -112,7 +112,12 @@ fn main() -> Result<()> {
     mylib::this_fails()?;
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

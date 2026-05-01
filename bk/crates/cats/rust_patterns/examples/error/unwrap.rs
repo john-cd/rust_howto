@@ -30,7 +30,12 @@ fn main() {
     // You may also use `unwrap`, which panics if there is an error but does not
     // display a custom message: `result.unwrap();`
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

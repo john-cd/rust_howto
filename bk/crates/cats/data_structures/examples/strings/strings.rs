@@ -104,7 +104,12 @@ fn main() {
     string_literals();
     common_operations();
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

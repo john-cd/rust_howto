@@ -49,8 +49,8 @@ fn image_output_path_from_args() -> Option<PathBuf> {
 }
 // ANCHOR_END: example
 
-pub fn run() {
-    main();
+pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
+    main()
 }
 
 #[cfg(test)]

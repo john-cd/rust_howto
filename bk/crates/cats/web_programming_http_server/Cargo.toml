@@ -25,6 +25,7 @@ rocket-support = ["rocket"]
 loco-support = ["dep:loco-rs"]
 
 [dependencies]
+clap = { version = "4.6.1", features = ["derive"] }
 # trillium = "0.2.20"
 # [trillium: do we need LATER](https://github.com/john-cd/rust_howto/issues/1314)
 actix-web = "4.9.0"

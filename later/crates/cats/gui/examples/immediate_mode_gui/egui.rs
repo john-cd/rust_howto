@@ -39,8 +39,8 @@ impl eframe::App for MyApp {
 }
 // ANCHOR_END: example
 
-pub fn run() {
-    main();
+pub fn run() -> Result<(), eframe::Error> {
+    main()
 }
 
 // Hard to test. Initializing the event loop outside of the main thread is a

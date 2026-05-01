@@ -12,7 +12,12 @@ fn main() {
     }
     // Prints: 5 4 3 2 1
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

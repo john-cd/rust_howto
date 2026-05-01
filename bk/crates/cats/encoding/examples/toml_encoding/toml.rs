@@ -74,6 +74,10 @@ fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
+pub fn run() -> Result<(), Error> {
+    main()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

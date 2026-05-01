@@ -1,5 +1,5 @@
 mod embassy;
 
 fn main() {
-    embassy::run();
+    let _ = embassy::run();
 }

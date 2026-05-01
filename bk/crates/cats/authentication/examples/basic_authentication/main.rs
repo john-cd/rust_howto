@@ -1,3 +1,5 @@
 mod basic;
 
-fn main() {}
+fn main() {
+    let _ = basic::run();
+}

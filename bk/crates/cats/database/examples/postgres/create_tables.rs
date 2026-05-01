@@ -46,6 +46,6 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-pub fn run() {
-    main();
+pub fn run() -> anyhow::Result<()> {
+    main()
 }

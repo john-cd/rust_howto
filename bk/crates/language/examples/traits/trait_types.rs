@@ -65,7 +65,12 @@ fn main() {
     let r = &42;
     r.foo();
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

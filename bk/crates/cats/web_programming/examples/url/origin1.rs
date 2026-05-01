@@ -26,6 +26,7 @@ fn main() -> Result<()> {
 
     Ok(())
 }
+
 // ANCHOR_END: example_start
 
 #[cfg(test)]
@@ -36,4 +37,8 @@ mod tests {
         main()?;
         Ok(())
     }
+}
+
+pub fn run() -> Result<()> {
+    main()
 }

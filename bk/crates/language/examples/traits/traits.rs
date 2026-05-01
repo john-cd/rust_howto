@@ -38,7 +38,12 @@ fn main() {
     // Or, if we needed to fully disambiguate:
     <NewsArticle as Summary>::summarize(&na);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
