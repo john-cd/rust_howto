@@ -38,8 +38,11 @@ impl RowStruct {
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    let user = "user";
-    let password = "password";
+    dotenvy::dotenv().ok();
+    let user =
+        std::env::var("CASSANDRA_USER").context("CASSANDRA_USER must be set")?;
+    let password = std::env::var("CASSANDRA_PASSWORD")
+        .context("CASSANDRA_PASSWORD must be set")?;
     let auth = StaticPasswordAuthenticatorProvider::new(user, password);
 
     let cluster_config = NodeTcpConfigBuilder::new()
