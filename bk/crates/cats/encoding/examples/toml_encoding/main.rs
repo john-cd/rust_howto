@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Toml => {
-                let _ = toml::run();
+                toml::run();
             }
             Commands::Toml1 => {
-                let _ = toml1::run();
+                toml1::run();
             }
         }
     }

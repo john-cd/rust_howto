@@ -33,19 +33,19 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Base64 => {
-                let _ = base64::run();
+                base64::run();
             }
             Commands::Hex => {
-                let _ = hex::run();
+                hex::run();
             }
             Commands::PercentEncode => {
-                let _ = percent_encode::run();
+                percent_encode::run();
             }
             Commands::PercentEncoding => {
-                let _ = percent_encoding::run();
+                percent_encoding::run();
             }
             Commands::UrlEncode => {
-                let _ = url_encode::run();
+                url_encode::run();
             }
         }
     }

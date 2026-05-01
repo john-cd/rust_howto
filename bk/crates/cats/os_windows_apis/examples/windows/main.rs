@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Winapi => {
-                let _ = winapi::run();
+                winapi::run();
             }
             Commands::Windows => {
-                let _ = windows::run();
+                windows::run();
             }
         }
     }

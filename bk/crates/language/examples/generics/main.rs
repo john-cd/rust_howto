@@ -30,16 +30,16 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::ConstGenerics => {
-                let _ = const_generics::run();
+                const_generics::run();
             }
             Commands::ConstGenerics2 => {
-                let _ = const_generics2::run();
+                const_generics2::run();
             }
             Commands::GenericLifetime => {
-                let _ = generic_lifetime::run();
+                generic_lifetime::run();
             }
             Commands::GenericTypeParameter => {
-                let _ = generic_type_parameter::run();
+                generic_type_parameter::run();
             }
         }
     }

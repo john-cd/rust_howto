@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Filename => {
-                let _ = filename::run();
+                filename::run();
             }
             Commands::Request => {
-                let _ = request::run();
+                request::run();
             }
             Commands::String => {
-                let _ = string::run();
+                string::run();
             }
         }
     }

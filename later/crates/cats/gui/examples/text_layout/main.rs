@@ -23,10 +23,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::CosmicText => {
-                let _ = cosmic_text::run();
+                cosmic_text::run();
             }
             Commands::Parley => {
-                let _ = parley::run();
+                parley::run();
             }
         }
     }

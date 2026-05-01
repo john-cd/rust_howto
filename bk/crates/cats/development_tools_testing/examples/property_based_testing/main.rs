@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Fake => {
-                let _ = fake::run();
+                fake::run();
             }
             Commands::Proptest => {
-                let _ = proptest::run();
+                proptest::run();
             }
         }
     }

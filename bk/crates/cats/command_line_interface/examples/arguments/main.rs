@@ -33,19 +33,19 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Clap => {
-                let _ = clap::run();
+                clap::run();
             }
             Commands::ClapBasic => {
-                let _ = clap_basic::run();
+                clap_basic::run();
             }
             Commands::ClapComplete => {
-                let _ = clap_complete::run();
+                clap_complete::run();
             }
             Commands::Lexopt => {
-                let _ = lexopt::run();
+                lexopt::run();
             }
             Commands::PicoArgs => {
-                let _ = pico_args::run();
+                pico_args::run();
             }
         }
     }

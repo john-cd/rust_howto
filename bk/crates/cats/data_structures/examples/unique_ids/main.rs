@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Ulid => {
-                let _ = ulid::run();
+                ulid::run();
             }
             Commands::Uuid => {
-                let _ = uuid::run();
+                uuid::run();
             }
         }
     }

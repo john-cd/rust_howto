@@ -30,16 +30,16 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Der => {
-                let _ = der::run();
+                der::run();
             }
             Commands::PemRfc7468 => {
-                let _ = pem_rfc7468::run();
+                pem_rfc7468::run();
             }
             Commands::Pkcs8 => {
-                let _ = pkcs8::run();
+                pkcs8::run();
             }
             Commands::X509Cert => {
-                let _ = x509_cert::run();
+                x509_cert::run();
             }
         }
     }

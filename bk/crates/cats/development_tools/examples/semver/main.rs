@@ -35,19 +35,19 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::SemverCommand => {
-                let _ = semver_command::run();
+                semver_command::run();
             }
             Commands::SemverComplex => {
-                let _ = semver_complex::run();
+                semver_complex::run();
             }
             Commands::SemverLatest => {
-                let _ = semver_latest::run();
+                semver_latest::run();
             }
             Commands::SemverParse => {
-                let _ = semver_parse::run();
+                semver_parse::run();
             }
             Commands::SemverPrerelease => {
-                let _ = semver_prerelease::run();
+                semver_prerelease::run();
             }
         }
     }

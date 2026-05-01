@@ -35,11 +35,11 @@ fn main() {
             match command {
                 #[cfg(feature = "lmdb")]
                 Commands::Heed => {
-                    let _ = heed::run();
+                    heed::run();
                 }
                 #[cfg(feature = "rocksdb")]
                 Commands::Rocksdb => {
-                    let _ = rocksdb::run();
+                    rocksdb::run();
                 }
             }
         }

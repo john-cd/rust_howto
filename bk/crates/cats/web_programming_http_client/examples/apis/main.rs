@@ -33,19 +33,19 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Paginated => {
-                let _ = paginated::run();
+                paginated::run();
             }
             Commands::RateLimited => {
-                let _ = rate_limited::run();
+                rate_limited::run();
             }
             Commands::RestGet => {
-                let _ = rest_get::run();
+                rest_get::run();
             }
             Commands::RestHead => {
-                let _ = rest_head::run();
+                rest_head::run();
             }
             Commands::RestPost => {
-                let _ = rest_post::run();
+                rest_post::run();
             }
         }
     }

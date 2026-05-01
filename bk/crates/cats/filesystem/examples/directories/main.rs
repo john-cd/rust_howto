@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Cwd => {
-                let _ = cwd::run();
+                cwd::run();
             }
             Commands::ManipulateDirs => {
-                let _ = manipulate_dirs::run();
+                manipulate_dirs::run();
             }
             Commands::RemoveDirAll => {
-                let _ = remove_dir_all::run();
+                remove_dir_all::run();
             }
         }
     }

@@ -45,31 +45,31 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::LogCustom => {
-                let _ = log_custom::run();
+                log_custom::run();
             }
             Commands::LogCustomLogger => {
-                let _ = log_custom_logger::run();
+                log_custom_logger::run();
             }
             Commands::LogDebug => {
-                let _ = log_debug::run();
+                log_debug::run();
             }
             Commands::LogEnvVariable => {
-                let _ = log_env_variable::run();
+                log_env_variable::run();
             }
             Commands::LogError => {
-                let _ = log_error::run();
+                log_error::run();
             }
             Commands::LogMod => {
-                let _ = log_mod::run();
+                log_mod::run();
             }
             Commands::LogStdout => {
-                let _ = log_stdout::run();
+                log_stdout::run();
             }
             Commands::LogSyslog => {
-                let _ = log_syslog::run();
+                log_syslog::run();
             }
             Commands::LogTimestamp => {
-                let _ = log_timestamp::run();
+                log_timestamp::run();
             }
         }
     }

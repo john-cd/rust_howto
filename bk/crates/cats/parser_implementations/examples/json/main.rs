@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Json5 => {
-                let _ = json5::run();
+                json5::run();
             }
             Commands::SerdeJson => {
-                let _ = serde_json::run();
+                serde_json::run();
             }
             Commands::SimdJson => {
-                let _ = simd_json::run();
+                simd_json::run();
             }
         }
     }

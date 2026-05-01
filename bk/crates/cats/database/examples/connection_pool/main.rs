@@ -26,11 +26,11 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Deadpool => {
-                let _ = deadpool::run();
+                deadpool::run();
             }
             #[cfg(feature = "postgres")]
             Commands::Deadpool2 => {
-                let _ = deadpool2::run();
+                deadpool2::run();
             }
         }
     }

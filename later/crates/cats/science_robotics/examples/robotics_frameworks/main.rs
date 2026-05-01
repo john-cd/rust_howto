@@ -23,10 +23,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Openrr => {
-                let _ = openrr::run();
+                openrr::run();
             }
             Commands::Zenoh => {
-                let _ = zenoh::run();
+                zenoh::run();
             }
         }
     }

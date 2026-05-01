@@ -39,25 +39,25 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::DivergingFunctions => {
-                let _ = diverging_functions::run();
+                diverging_functions::run();
             }
             Commands::FunctionPointers => {
-                let _ = function_pointers::run();
+                function_pointers::run();
             }
             Commands::Functions => {
-                let _ = functions::run();
+                functions::run();
             }
             Commands::GenericFunctions => {
-                let _ = generic_functions::run();
+                generic_functions::run();
             }
             Commands::GenericFunctions2 => {
-                let _ = generic_functions2::run();
+                generic_functions2::run();
             }
             Commands::GenericFunctions3 => {
-                let _ = generic_functions3::run();
+                generic_functions3::run();
             }
             Commands::ReturnReference => {
-                let _ = return_reference::run();
+                return_reference::run();
             }
         }
     }

@@ -29,13 +29,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Rustdoc => {
-                let _ = rustdoc::run();
+                rustdoc::run();
             }
             Commands::Rustdoc2 => {
-                let _ = rustdoc2::run();
+                rustdoc2::run();
             }
             Commands::Rustdoc3 => {
-                let _ = rustdoc3::run();
+                rustdoc3::run();
             }
         }
     }

@@ -57,43 +57,43 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Tracing => {
-                let _ = tracing::run();
+                tracing::run();
             }
             Commands::TracingInstrument => {
-                let _ = tracing_instrument::run();
+                tracing_instrument::run();
             }
             Commands::TracingSpanEntered => {
-                let _ = tracing_span_entered::run();
+                tracing_span_entered::run();
             }
             Commands::TracingSpanInScope => {
-                let _ = tracing_span_in_scope::run();
+                tracing_span_in_scope::run();
             }
             Commands::TracingSpans => {
-                let _ = tracing_spans::run();
+                tracing_spans::run();
             }
             Commands::TracingSubscriber => {
-                let _ = tracing_subscriber::run();
+                tracing_subscriber::run();
             }
             Commands::TracingSubscriber1 => {
-                let _ = tracing_subscriber1::run();
+                tracing_subscriber1::run();
             }
             Commands::TracingSubscriber1b => {
-                let _ = tracing_subscriber1b::run();
+                tracing_subscriber1b::run();
             }
             Commands::TracingSubscriber2 => {
-                let _ = tracing_subscriber2::run();
+                tracing_subscriber2::run();
             }
             Commands::TracingSubscriber2b => {
-                let _ = tracing_subscriber2b::run();
+                tracing_subscriber2b::run();
             }
             Commands::TracingSubscriber3 => {
-                let _ = tracing_subscriber3::run();
+                tracing_subscriber3::run();
             }
             Commands::TracingSubscriber3b => {
-                let _ = tracing_subscriber3b::run();
+                tracing_subscriber3b::run();
             }
             Commands::TracingSubscriber4 => {
-                let _ = tracing_subscriber4::run();
+                tracing_subscriber4::run();
             }
         }
     }

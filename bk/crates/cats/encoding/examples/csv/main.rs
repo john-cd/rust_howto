@@ -42,28 +42,28 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Delimiter => {
-                let _ = delimiter::run();
+                delimiter::run();
             }
             Commands::Filter => {
-                let _ = filter::run();
+                filter::run();
             }
             Commands::Invalid => {
-                let _ = invalid::run();
+                invalid::run();
             }
             Commands::Read => {
-                let _ = read::run();
+                read::run();
             }
             Commands::Read1 => {
-                let _ = read1::run();
+                read1::run();
             }
             Commands::SerdeSerialize => {
-                let _ = serde_serialize::run();
+                serde_serialize::run();
             }
             Commands::Serialize => {
-                let _ = serialize::run();
+                serialize::run();
             }
             Commands::Transform => {
-                let _ = transform::run();
+                transform::run();
             }
         }
     }

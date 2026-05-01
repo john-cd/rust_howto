@@ -45,31 +45,31 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::MultithreadingRayon => {
-                let _ = multithreading_rayon::run();
+                multithreading_rayon::run();
             }
             Commands::MultithreadingRayonCustom => {
-                let _ = multithreading_rayon_custom::run();
+                multithreading_rayon_custom::run();
             }
             Commands::MultithreadingRayonParsort => {
-                let _ = multithreading_rayon_parsort::run();
+                multithreading_rayon_parsort::run();
             }
             Commands::RayonAnyAll => {
-                let _ = rayon_any_all::run();
+                rayon_any_all::run();
             }
             Commands::RayonIterMut => {
-                let _ = rayon_iter_mut::run();
+                rayon_iter_mut::run();
             }
             Commands::RayonMapReduce => {
-                let _ = rayon_map_reduce::run();
+                rayon_map_reduce::run();
             }
             Commands::RayonParallelSearch => {
-                let _ = rayon_parallel_search::run();
+                rayon_parallel_search::run();
             }
             Commands::RayonParallelSort => {
-                let _ = rayon_parallel_sort::run();
+                rayon_parallel_sort::run();
             }
             Commands::RayonThumbnails => {
-                let _ = rayon_thumbnails::run();
+                rayon_thumbnails::run();
             }
         }
     }

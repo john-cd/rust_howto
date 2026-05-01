@@ -23,10 +23,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Morphorm => {
-                let _ = morphorm::run();
+                morphorm::run();
             }
             Commands::Taffy => {
-                let _ = taffy::run();
+                taffy::run();
             }
         }
     }

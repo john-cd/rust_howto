@@ -42,28 +42,28 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Fastrand => {
-                let _ = fastrand::run();
+                fastrand::run();
             }
             Commands::Rand1 => {
-                let _ = rand1::run();
+                rand1::run();
             }
             Commands::RandAlphanumeric => {
-                let _ = rand_alphanumeric::run();
+                rand_alphanumeric::run();
             }
             Commands::RandCustom => {
-                let _ = rand_custom::run();
+                rand_custom::run();
             }
             Commands::RandDistr => {
-                let _ = rand_distr::run();
+                rand_distr::run();
             }
             Commands::RandPassword => {
-                let _ = rand_password::run();
+                rand_password::run();
             }
             Commands::RandRange => {
-                let _ = rand_range::run();
+                rand_range::run();
             }
             Commands::RandRange1 => {
-                let _ = rand_range1::run();
+                rand_range1::run();
             }
         }
     }

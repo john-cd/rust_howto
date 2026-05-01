@@ -57,43 +57,43 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Anyhow => {
-                let _ = anyhow::run();
+                anyhow::run();
             }
             Commands::Backtrace => {
-                let _ = backtrace::run();
+                backtrace::run();
             }
             Commands::ColorEyre => {
-                let _ = color_eyre::run();
+                color_eyre::run();
             }
             Commands::ErrorHandling => {
-                let _ = error_handling::run();
+                error_handling::run();
             }
             Commands::Miette => {
-                let _ = miette::run();
+                miette::run();
             }
             Commands::Panic => {
-                let _ = panic::run();
+                panic::run();
             }
             Commands::QuestionMark => {
-                let _ = question_mark::run();
+                question_mark::run();
             }
             Commands::QuestionMark2 => {
-                let _ = question_mark2::run();
+                question_mark2::run();
             }
             Commands::Retain => {
-                let _ = retain::run();
+                retain::run();
             }
             Commands::Thiserror => {
-                let _ = thiserror::run();
+                thiserror::run();
             }
             Commands::Thiserror2 => {
-                let _ = thiserror2::run();
+                thiserror2::run();
             }
             Commands::Unwrap => {
-                let _ = unwrap::run();
+                unwrap::run();
             }
             Commands::UnwrapOrElse => {
-                let _ = unwrap_or_else::run();
+                unwrap_or_else::run();
             }
         }
     }

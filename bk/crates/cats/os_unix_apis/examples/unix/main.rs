@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Nix => {
-                let _ = nix::run();
+                nix::run();
             }
             Commands::Rustix => {
-                let _ = rustix::run();
+                rustix::run();
             }
         }
     }

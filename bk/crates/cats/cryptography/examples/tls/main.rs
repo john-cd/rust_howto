@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::NativeTls => {
-                let _ = native_tls::run();
+                native_tls::run();
             }
             Commands::Rustls => {
-                let _ = rustls::run();
+                rustls::run();
             }
         }
     }

@@ -39,25 +39,25 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Email => {
-                let _ = email::run();
+                email::run();
             }
             Commands::FancyRegex => {
-                let _ = fancy_regex::run();
+                fancy_regex::run();
             }
             Commands::FilterLog => {
-                let _ = filter_log::run();
+                filter_log::run();
             }
             Commands::Hashtags => {
-                let _ = hashtags::run();
+                hashtags::run();
             }
             Commands::Phone => {
-                let _ = phone::run();
+                phone::run();
             }
             Commands::Regex => {
-                let _ = regex::run();
+                regex::run();
             }
             Commands::Replace => {
-                let _ = replace::run();
+                replace::run();
             }
         }
     }

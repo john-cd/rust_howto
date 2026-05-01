@@ -35,11 +35,11 @@ fn main() {
             match command {
                 #[cfg(feature = "cassandra")]
                 Commands::CassandraProtocol => {
-                    let _ = cassandra_protocol::run();
+                    cassandra_protocol::run();
                 }
                 #[cfg(feature = "cassandra")]
                 Commands::CdrsTokio => {
-                    let _ = cdrs_tokio::run();
+                    cdrs_tokio::run();
                 }
             }
         }

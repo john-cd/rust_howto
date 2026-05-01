@@ -36,22 +36,22 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::CcBundledCpp => {
-                let _ = cc_bundled_cpp::run();
+                cc_bundled_cpp::run();
             }
             Commands::CcBundledCpp1 => {
-                let _ = cc_bundled_cpp1::run();
+                cc_bundled_cpp1::run();
             }
             Commands::CcBundledStatic => {
-                let _ = cc_bundled_static::run();
+                cc_bundled_static::run();
             }
             Commands::CcBundledStatic1 => {
-                let _ = cc_bundled_static1::run();
+                cc_bundled_static1::run();
             }
             Commands::CcDefines => {
-                let _ = cc_defines::run();
+                cc_defines::run();
             }
             Commands::CcDefines1 => {
-                let _ = cc_defines1::run();
+                cc_defines1::run();
             }
         }
     }

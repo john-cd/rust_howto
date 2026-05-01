@@ -36,22 +36,22 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::CowAlternatives => {
-                let _ = cow_alternatives::run();
+                cow_alternatives::run();
             }
             Commands::CowAsFunctionParam => {
-                let _ = cow_as_function_param::run();
+                cow_as_function_param::run();
             }
             Commands::CowToBorrowedOwned => {
-                let _ = cow_to_borrowed_owned::run();
+                cow_to_borrowed_owned::run();
             }
             Commands::FunctionReturningCow => {
-                let _ = function_returning_cow::run();
+                function_returning_cow::run();
             }
             Commands::IntoCow => {
-                let _ = into_cow::run();
+                into_cow::run();
             }
             Commands::ModifyCowInPlace => {
-                let _ = modify_cow_in_place::run();
+                modify_cow_in_place::run();
             }
         }
     }

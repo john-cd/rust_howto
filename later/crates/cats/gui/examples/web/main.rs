@@ -23,10 +23,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Dioxus => {
-                let _ = dioxus::run();
+                dioxus::run();
             }
             Commands::Tauri => {
-                let _ = tauri::run();
+                tauri::run();
             }
         }
     }

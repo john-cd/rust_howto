@@ -27,13 +27,13 @@ fn main() -> anyhow::Result<()> {
     if let Some(command) = cli.command {
         match command {
             Commands::TarCompress => {
-                let _ = tar_compress::run();
+                tar_compress::run();
             }
             Commands::TarDecompress => {
-                let _ = tar_decompress::run();
+                tar_decompress::run();
             }
             Commands::TarStripPrefix => {
-                let _ = tar_strip_prefix::run();
+                tar_strip_prefix::run();
             }
         }
     }

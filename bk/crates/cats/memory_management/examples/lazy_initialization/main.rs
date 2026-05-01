@@ -30,16 +30,16 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::LazyConstant => {
-                let _ = lazy_constant::run();
+                lazy_constant::run();
             }
             Commands::LazyStatic => {
-                let _ = lazy_static::run();
+                lazy_static::run();
             }
             Commands::OnceCell => {
-                let _ = once_cell::run();
+                once_cell::run();
             }
             Commands::OnceCell2 => {
-                let _ = once_cell2::run();
+                once_cell2::run();
             }
         }
     }

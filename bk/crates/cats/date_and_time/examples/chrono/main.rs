@@ -36,22 +36,22 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Checked => {
-                let _ = checked::run();
+                checked::run();
             }
             Commands::Current => {
-                let _ = current::run();
+                current::run();
             }
             Commands::Format => {
-                let _ = format::run();
+                format::run();
             }
             Commands::ParseStringIntoDatetime => {
-                let _ = parse_string_into_datetime::run();
+                parse_string_into_datetime::run();
             }
             Commands::Timestamp => {
-                let _ = timestamp::run();
+                timestamp::run();
             }
             Commands::Timezone => {
-                let _ = timezone::run();
+                timezone::run();
             }
         }
     }

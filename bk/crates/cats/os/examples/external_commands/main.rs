@@ -50,29 +50,29 @@ fn main() {
         match command {
             #[cfg(target_family = "unix")]
             Commands::Continuous => {
-                let _ = continuous::run();
+                continuous::run();
             }
             #[cfg(target_family = "unix")]
             Commands::ErrorFile => {
-                let _ = error_file::run();
+                error_file::run();
             }
             #[cfg(target_family = "unix")]
             Commands::Piped => {
-                let _ = piped::run();
+                piped::run();
             }
             Commands::ProcessOutput => {
-                let _ = process_output::run();
+                process_output::run();
             }
             #[cfg(target_family = "unix")]
             Commands::ReadEnvVariable => {
-                let _ = read_env_variable::run();
+                read_env_variable::run();
             }
             #[cfg(target_family = "unix")]
             Commands::SendInput => {
-                let _ = send_input::run();
+                send_input::run();
             }
             Commands::Which => {
-                let _ = which::run();
+                which::run();
             }
         }
     }

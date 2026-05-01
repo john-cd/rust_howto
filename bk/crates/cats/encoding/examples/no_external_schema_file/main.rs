@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Postcard => {
-                let _ = postcard::run();
+                postcard::run();
             }
             Commands::Rkyv => {
-                let _ = rkyv::run();
+                rkyv::run();
             }
         }
     }

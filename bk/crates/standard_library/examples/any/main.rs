@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Any => {
-                let _ = any::run();
+                any::run();
             }
             Commands::Plugin => {
-                let _ = plugin::run();
+                plugin::run();
             }
             Commands::TypeId => {
-                let _ = type_id::run();
+                type_id::run();
             }
         }
     }

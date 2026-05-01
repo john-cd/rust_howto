@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Cssparser => {
-                let _ = cssparser::run();
+                cssparser::run();
             }
             Commands::Html5ever => {
-                let _ = html5ever::run();
+                html5ever::run();
             }
             Commands::Tl => {
-                let _ = tl::run();
+                tl::run();
             }
         }
     }

@@ -33,11 +33,11 @@ fn main() {
             match command {
                 #[cfg(feature = "gtk")]
                 Commands::Gtk4 => {
-                    let _ = gtk4::run();
+                    gtk4::run();
                 }
                 #[cfg(feature = "gtk")]
                 Commands::Relm4 => {
-                    let _ = relm4::run();
+                    relm4::run();
                 }
             }
         }

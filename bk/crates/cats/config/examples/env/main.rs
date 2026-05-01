@@ -29,13 +29,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Dotenvy => {
-                let _ = dotenvy::run();
+                dotenvy::run();
             }
             Commands::Env => {
-                let _ = env::run();
+                env::run();
             }
             Commands::Envy => {
-                let _ = envy::run();
+                envy::run();
             }
         }
     }

@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Eq => {
-                let _ = eq::run();
+                eq::run();
             }
             Commands::Ord => {
-                let _ = ord::run();
+                ord::run();
             }
         }
     }

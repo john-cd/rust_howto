@@ -33,19 +33,19 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Either => {
-                let _ = either::run();
+                either::run();
             }
             Commands::Frunk => {
-                let _ = frunk::run();
+                frunk::run();
             }
             Commands::Im => {
-                let _ = im::run();
+                im::run();
             }
             Commands::Itertools => {
-                let _ = itertools::run();
+                itertools::run();
             }
             Commands::Rpds => {
-                let _ = rpds::run();
+                rpds::run();
             }
         }
     }

@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Hyper => {
-                let _ = hyper::run();
+                hyper::run();
             }
             Commands::Ureq => {
-                let _ = ureq::run();
+                ureq::run();
             }
         }
     }

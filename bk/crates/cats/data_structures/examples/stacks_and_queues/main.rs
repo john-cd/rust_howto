@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Queue => {
-                let _ = queue::run();
+                queue::run();
             }
             Commands::Stack => {
-                let _ = stack::run();
+                stack::run();
             }
         }
     }

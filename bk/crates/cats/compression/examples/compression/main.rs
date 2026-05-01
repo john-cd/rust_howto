@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::AsyncCompression => {
-                let _ = async_compression::run();
+                async_compression::run();
             }
             Commands::Flate2 => {
-                let _ = flate2::run();
+                flate2::run();
             }
             Commands::Zip => {
-                let _ = zip::run();
+                zip::run();
             }
         }
     }

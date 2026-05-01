@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Bytes => {
-                let _ = bytes::run();
+                bytes::run();
             }
             Commands::StringFormat => {
-                let _ = string_format::run();
+                string_format::run();
             }
             Commands::Strings => {
-                let _ = strings::run();
+                strings::run();
             }
         }
     }

@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Heck => {
-                let _ = heck::run();
+                heck::run();
             }
             Commands::Indoc => {
-                let _ = indoc::run();
+                indoc::run();
             }
             Commands::Textwrap => {
-                let _ = textwrap::run();
+                textwrap::run();
             }
         }
     }

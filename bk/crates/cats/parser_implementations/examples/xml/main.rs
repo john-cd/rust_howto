@@ -33,19 +33,19 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::QuickXml => {
-                let _ = quick_xml::run();
+                quick_xml::run();
             }
             Commands::Roxmltree => {
-                let _ = roxmltree::run();
+                roxmltree::run();
             }
             Commands::Xml => {
-                let _ = xml::run();
+                xml::run();
             }
             Commands::Xml5ever => {
-                let _ = xml5ever::run();
+                xml5ever::run();
             }
             Commands::Xmlparser => {
-                let _ = xmlparser::run();
+                xmlparser::run();
             }
         }
     }

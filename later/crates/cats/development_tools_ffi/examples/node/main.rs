@@ -23,10 +23,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Napi => {
-                let _ = napi::run();
+                napi::run();
             }
             Commands::Neon => {
-                let _ = neon::run();
+                neon::run();
             }
         }
     }

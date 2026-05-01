@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Broken => {
-                let _ = broken::run();
+                broken::run();
             }
             Commands::ExtractLinks => {
-                let _ = extract_links::run();
+                extract_links::run();
             }
             Commands::Unique => {
-                let _ = unique::run();
+                unique::run();
             }
         }
     }

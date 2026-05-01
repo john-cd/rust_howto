@@ -48,34 +48,34 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::DuplicateName => {
-                let _ = duplicate_name::run();
+                duplicate_name::run();
             }
             Commands::FindFile => {
-                let _ = find_file::run();
+                find_file::run();
             }
             Commands::Globset => {
-                let _ = globset::run();
+                globset::run();
             }
             Commands::Ignore => {
-                let _ = ignore::run();
+                ignore::run();
             }
             Commands::IgnoreCase => {
-                let _ = ignore_case::run();
+                ignore_case::run();
             }
             Commands::Loops => {
-                let _ = loops::run();
+                loops::run();
             }
             Commands::Modified => {
-                let _ = modified::run();
+                modified::run();
             }
             Commands::Png => {
-                let _ = png::run();
+                png::run();
             }
             Commands::Sizes => {
-                let _ = sizes::run();
+                sizes::run();
             }
             Commands::SkipDot => {
-                let _ = skip_dot::run();
+                skip_dot::run();
             }
         }
     }

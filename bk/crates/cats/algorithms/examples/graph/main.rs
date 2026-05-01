@@ -33,19 +33,19 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::PetgraphAstar => {
-                let _ = petgraph_astar::run();
+                petgraph_astar::run();
             }
             Commands::PetgraphBfs => {
-                let _ = petgraph_bfs::run();
+                petgraph_bfs::run();
             }
             Commands::PetgraphDfs => {
-                let _ = petgraph_dfs::run();
+                petgraph_dfs::run();
             }
             Commands::PetgraphDijkstra => {
-                let _ = petgraph_dijkstra::run();
+                petgraph_dijkstra::run();
             }
             Commands::PetgraphToposort => {
-                let _ = petgraph_toposort::run();
+                petgraph_toposort::run();
             }
         }
     }

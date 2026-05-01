@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Afl => {
-                let _ = afl::run();
+                afl::run();
             }
             Commands::BoleroExample => {
-                let _ = bolero_example::run();
+                bolero_example::run();
             }
         }
     }

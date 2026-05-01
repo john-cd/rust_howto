@@ -39,21 +39,21 @@ fn main() -> anyhow::Result<()> {
         match command {
             #[cfg(feature = "floem")]
             Commands::Floem => {
-                let _ = floem::run();
+                floem::run();
             }
             Commands::Iced => {
-                let _ = iced::run();
+                iced::run();
             }
             Commands::Slint => {
-                let _ = slint::run();
+                slint::run();
             }
             #[cfg(feature = "vizia")]
             Commands::Vizia => {
-                let _ = vizia::run();
+                vizia::run();
             }
             #[cfg(feature = "xilem")]
             Commands::Xilem => {
-                let _ = xilem::run();
+                xilem::run();
             }
         }
     }

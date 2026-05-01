@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::MultithreadingScopedThreads => {
-                let _ = multithreading_scoped_threads::run();
+                multithreading_scoped_threads::run();
             }
             Commands::MultithreadingSpawnJoin => {
-                let _ = multithreading_spawn_join::run();
+                multithreading_spawn_join::run();
             }
         }
     }

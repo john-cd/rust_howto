@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::AtomicCell => {
-                let _ = atomic_cell::run();
+                atomic_cell::run();
             }
             Commands::Atomics => {
-                let _ = atomics::run();
+                atomics::run();
             }
             Commands::Spinlock => {
-                let _ = spinlock::run();
+                spinlock::run();
             }
         }
     }

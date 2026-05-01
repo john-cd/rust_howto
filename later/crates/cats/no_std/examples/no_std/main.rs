@@ -4,5 +4,5 @@
 mod no_std1;
 
 fn main() {
-    let _ = no_std1::run();
+    no_std1::run();
 }

@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Subtle => {
-                let _ = subtle::run();
+                subtle::run();
             }
             Commands::Zeroize => {
-                let _ = zeroize::run();
+                zeroize::run();
             }
         }
     }

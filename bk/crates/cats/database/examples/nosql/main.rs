@@ -35,11 +35,11 @@ fn main() {
             match command {
                 #[cfg(feature = "mongodb")]
                 Commands::Mongodb => {
-                    let _ = mongodb::run();
+                    mongodb::run();
                 }
                 #[cfg(feature = "redis")]
                 Commands::Redis => {
-                    let _ = redis::run();
+                    redis::run();
                 }
             }
         }

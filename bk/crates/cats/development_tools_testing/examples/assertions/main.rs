@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Approx => {
-                let _ = approx::run();
+                approx::run();
             }
             Commands::TestsCustomMessage => {
-                let _ = tests_custom_message::run();
+                tests_custom_message::run();
             }
         }
     }

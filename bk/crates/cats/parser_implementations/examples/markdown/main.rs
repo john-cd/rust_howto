@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Comrak => {
-                let _ = comrak::run();
+                comrak::run();
             }
             Commands::Markdown => {
-                let _ = markdown::run();
+                markdown::run();
             }
             Commands::PulldownCmark => {
-                let _ = pulldown_cmark::run();
+                pulldown_cmark::run();
             }
         }
     }

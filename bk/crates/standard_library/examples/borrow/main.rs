@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Borrow => {
-                let _ = borrow::run();
+                borrow::run();
             }
             Commands::Borrow2 => {
-                let _ = borrow2::run();
+                borrow2::run();
             }
             Commands::Borrow3 => {
-                let _ = borrow3::run();
+                borrow3::run();
             }
         }
     }

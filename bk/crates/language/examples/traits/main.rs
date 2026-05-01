@@ -60,46 +60,46 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::AssociatedTypes => {
-                let _ = associated_types::run();
+                associated_types::run();
             }
             Commands::BlanketImplementations => {
-                let _ = blanket_implementations::run();
+                blanket_implementations::run();
             }
             Commands::ConstInTraits => {
-                let _ = const_in_traits::run();
+                const_in_traits::run();
             }
             Commands::ExtendExternalType => {
-                let _ = extend_external_type::run();
+                extend_external_type::run();
             }
             Commands::GenericTraits => {
-                let _ = generic_traits::run();
+                generic_traits::run();
             }
             Commands::Newtype => {
-                let _ = newtype::run();
+                newtype::run();
             }
             Commands::SealedTraitPattern => {
-                let _ = sealed_trait_pattern::run();
+                sealed_trait_pattern::run();
             }
             Commands::Supertraits => {
-                let _ = supertraits::run();
+                supertraits::run();
             }
             Commands::TraitBounds => {
-                let _ = trait_bounds::run();
+                trait_bounds::run();
             }
             Commands::TraitBounds2 => {
-                let _ = trait_bounds2::run();
+                trait_bounds2::run();
             }
             Commands::TraitBoundsMultipleTraits => {
-                let _ = trait_bounds_multiple_traits::run();
+                trait_bounds_multiple_traits::run();
             }
             Commands::TraitDefaultImplementation => {
-                let _ = trait_default_implementation::run();
+                trait_default_implementation::run();
             }
             Commands::TraitTypes => {
-                let _ = trait_types::run();
+                trait_types::run();
             }
             Commands::Traits => {
-                let _ = traits::run();
+                traits::run();
             }
         }
     }

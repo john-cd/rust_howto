@@ -36,22 +36,22 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::ConsumeIntoiterator => {
-                let _ = consume_intoiterator::run();
+                consume_intoiterator::run();
             }
             Commands::ImplementIntoiterator => {
-                let _ = implement_intoiterator::run();
+                implement_intoiterator::run();
             }
             Commands::IteratorAdapters => {
-                let _ = iterator_adapters::run();
+                iterator_adapters::run();
             }
             Commands::Iterators => {
-                let _ = iterators::run();
+                iterators::run();
             }
             Commands::ReturnIterator => {
-                let _ = return_iterator::run();
+                return_iterator::run();
             }
             Commands::SimpleIterators => {
-                let _ = simple_iterators::run();
+                simple_iterators::run();
             }
         }
     }

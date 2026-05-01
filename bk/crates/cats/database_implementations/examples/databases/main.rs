@@ -35,11 +35,11 @@ fn main() {
             match command {
                 #[cfg(feature = "sled")]
                 Commands::Sled => {
-                    let _ = sled::run();
+                    sled::run();
                 }
                 #[cfg(feature = "surrealdb")]
                 Commands::Surrealdb => {
-                    let _ = surrealdb::run();
+                    surrealdb::run();
                 }
             }
         }

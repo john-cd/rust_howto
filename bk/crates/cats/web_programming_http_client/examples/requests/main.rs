@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Get => {
-                let _ = get::run();
+                get::run();
             }
             Commands::Get1 => {
-                let _ = get1::run();
+                get1::run();
             }
             Commands::Header => {
-                let _ = header::run();
+                header::run();
             }
         }
     }

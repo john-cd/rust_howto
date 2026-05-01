@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Tokio2 => {
-                let _ = tokio2::run();
+                tokio2::run();
             }
             Commands::Tokio21 => {
-                let _ = tokio21::run();
+                tokio21::run();
             }
             Commands::TokioGracefulShutdown => {
-                let _ = tokio_graceful_shutdown::run();
+                tokio_graceful_shutdown::run();
             }
         }
     }

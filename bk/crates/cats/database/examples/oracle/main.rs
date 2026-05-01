@@ -49,15 +49,15 @@ fn main() {
             match command {
                 #[cfg(feature = "oracle")]
                 Commands::DieselOci => {
-                    let _ = diesel_oci::run();
+                    diesel_oci::run();
                 }
                 #[cfg(feature = "oracle")]
                 Commands::Oracle => {
-                    let _ = oracle::run();
+                    oracle::run();
                 }
                 #[cfg(all(target_os = "linux", feature = "oracle"))]
                 Commands::Sibyl => {
-                    let _ = sibyl::run();
+                    sibyl::run();
                 }
             }
         }

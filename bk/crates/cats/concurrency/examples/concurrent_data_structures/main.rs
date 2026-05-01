@@ -30,16 +30,16 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::CrossbeamQueue => {
-                let _ = crossbeam_queue::run();
+                crossbeam_queue::run();
             }
             Commands::Dashmap => {
-                let _ = dashmap::run();
+                dashmap::run();
             }
             Commands::Flurry => {
-                let _ = flurry::run();
+                flurry::run();
             }
             Commands::Papaya => {
-                let _ = papaya::run();
+                papaya::run();
             }
         }
     }

@@ -33,19 +33,19 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Actix => {
-                let _ = actix::run();
+                actix::run();
             }
             Commands::Actors => {
-                let _ = actors::run();
+                actors::run();
             }
             Commands::Ractor => {
-                let _ = ractor::run();
+                ractor::run();
             }
             Commands::Riker => {
-                let _ = riker::run();
+                riker::run();
             }
             Commands::Stakker => {
-                let _ = stakker::run();
+                stakker::run();
             }
         }
     }

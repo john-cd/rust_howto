@@ -1,5 +1,5 @@
 mod notify;
 
 fn main() {
-    let _ = notify::run();
+    notify::run();
 }

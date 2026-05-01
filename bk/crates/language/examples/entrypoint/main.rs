@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::AsyncMain => {
-                let _ = async_main::run();
+                async_main::run();
             }
             Commands::MainFn => {
-                let _ = main_fn::run();
+                main_fn::run();
             }
             Commands::MainFnWithResult => {
-                let _ = main_fn_with_result::run();
+                main_fn_with_result::run();
             }
         }
     }

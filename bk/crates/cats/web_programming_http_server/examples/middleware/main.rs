@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Cors => {
-                let _ = cors::run();
+                cors::run();
             }
             Commands::TowerHttp => {
-                let _ = tower_http::run();
+                tower_http::run();
             }
         }
     }

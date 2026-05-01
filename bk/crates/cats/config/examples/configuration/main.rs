@@ -32,16 +32,16 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::ConfigHierarchical => {
-                let _ = config_hierarchical::run();
+                config_hierarchical::run();
             }
             Commands::ConfigSingleton => {
-                let _ = config_singleton::run();
+                config_singleton::run();
             }
             Commands::ConfigTesting => {
-                let _ = config_testing::run();
+                config_testing::run();
             }
             Commands::Confy => {
-                let _ = confy::run();
+                confy::run();
             }
         }
     }

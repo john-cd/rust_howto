@@ -30,16 +30,16 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Cell => {
-                let _ = cell::run();
+                cell::run();
             }
             Commands::OnceCell => {
-                let _ = once_cell::run();
+                once_cell::run();
             }
             Commands::RcRefcell => {
-                let _ = rc_refcell::run();
+                rc_refcell::run();
             }
             Commands::Refcell => {
-                let _ = refcell::run();
+                refcell::run();
             }
         }
     }

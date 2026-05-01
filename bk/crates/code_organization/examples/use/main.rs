@@ -36,22 +36,22 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::PubUse => {
-                let _ = pub_use::run();
+                pub_use::run();
             }
             Commands::Use1 => {
-                let _ = use1::run();
+                use1::run();
             }
             Commands::Use2 => {
-                let _ = use2::run();
+                use2::run();
             }
             Commands::Use3 => {
-                let _ = use3::run();
+                use3::run();
             }
             Commands::UseExternalCrate => {
-                let _ = use_external_crate::run();
+                use_external_crate::run();
             }
             Commands::UseShortcuts => {
-                let _ = use_shortcuts::run();
+                use_shortcuts::run();
             }
         }
     }

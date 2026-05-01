@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Memmap2 => {
-                let _ = memmap2::run();
+                memmap2::run();
             }
             Commands::ReadFile => {
-                let _ = read_file::run();
+                read_file::run();
             }
             Commands::SameFile => {
-                let _ = same_file::run();
+                same_file::run();
             }
         }
     }

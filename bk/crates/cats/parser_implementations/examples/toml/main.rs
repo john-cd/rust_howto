@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::BasicToml => {
-                let _ = basic_toml::run();
+                basic_toml::run();
             }
             Commands::Toml => {
-                let _ = toml::run();
+                toml::run();
             }
             Commands::TomlEdit => {
-                let _ = toml_edit::run();
+                toml_edit::run();
             }
         }
     }

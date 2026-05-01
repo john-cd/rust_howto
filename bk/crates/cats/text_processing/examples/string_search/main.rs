@@ -30,16 +30,16 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::AhoCorasick => {
-                let _ = aho_corasick::run();
+                aho_corasick::run();
             }
             Commands::FuzzyMatcher => {
-                let _ = fuzzy_matcher::run();
+                fuzzy_matcher::run();
             }
             Commands::Memchr => {
-                let _ = memchr::run();
+                memchr::run();
             }
             Commands::Strsim => {
-                let _ = strsim::run();
+                strsim::run();
             }
         }
     }

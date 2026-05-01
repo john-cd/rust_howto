@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Btreemap => {
-                let _ = btreemap::run();
+                btreemap::run();
             }
             Commands::Btreeset => {
-                let _ = btreeset::run();
+                btreeset::run();
             }
         }
     }

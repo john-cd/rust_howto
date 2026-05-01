@@ -45,19 +45,19 @@ fn main() {
             match command {
                 #[cfg(feature = "diesel")]
                 Commands::Diesel1 => {
-                    let _ = diesel1::run();
+                    diesel1::run();
                 }
                 #[cfg(feature = "sea_orm")]
                 Commands::SeaOrm => {
-                    let _ = sea_orm::run();
+                    sea_orm::run();
                 }
                 #[cfg(feature = "sea_orm")]
                 Commands::Seaography => {
-                    let _ = seaography::run();
+                    seaography::run();
                 }
                 #[cfg(feature = "sqlx")]
                 Commands::Sqlx => {
-                    let _ = sqlx::run();
+                    sqlx::run();
                 }
             }
         }

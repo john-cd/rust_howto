@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Indicatif => {
-                let _ = indicatif::run();
+                indicatif::run();
             }
             Commands::Indicatif2 => {
-                let _ = indicatif2::run();
+                indicatif2::run();
             }
             Commands::Inquire => {
-                let _ = inquire::run();
+                inquire::run();
             }
         }
     }

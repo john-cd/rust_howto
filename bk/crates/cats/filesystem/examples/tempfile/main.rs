@@ -1,5 +1,5 @@
 mod tempfile;
 
 fn main() {
-    let _ = tempfile::run();
+    tempfile::run();
 }

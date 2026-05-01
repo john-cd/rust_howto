@@ -32,19 +32,19 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Cqrs => {
-                let _ = cqrs::run();
+                cqrs::run();
             }
             Commands::Di => {
-                let _ = di::run();
+                di::run();
             }
             Commands::LayeredArchitecture => {
-                let _ = layered_architecture::run();
+                layered_architecture::run();
             }
             Commands::Repository => {
-                let _ = repository::run();
+                repository::run();
             }
             Commands::StateMachine => {
-                let _ = state_machine::run();
+                state_machine::run();
             }
         }
     }

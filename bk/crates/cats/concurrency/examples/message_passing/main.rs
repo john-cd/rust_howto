@@ -30,16 +30,16 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Flume => {
-                let _ = flume::run();
+                flume::run();
             }
             Commands::MessagePassingCrossbeamChannel => {
-                let _ = message_passing_crossbeam_channel::run();
+                message_passing_crossbeam_channel::run();
             }
             Commands::MessagePassingCrossbeamChannelAfterTick => {
-                let _ = message_passing_crossbeam_channel_after_tick::run();
+                message_passing_crossbeam_channel_after_tick::run();
             }
             Commands::MessagePassingMpsc => {
-                let _ = message_passing_mpsc::run();
+                message_passing_mpsc::run();
             }
         }
     }

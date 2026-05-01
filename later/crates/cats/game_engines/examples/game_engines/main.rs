@@ -29,16 +29,16 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Bevy => {
-                let _ = bevy::run();
+                bevy::run();
             }
             Commands::Fyrox => {
-                let _ = fyrox::run();
+                fyrox::run();
             }
             Commands::Ggez => {
-                let _ = ggez::run();
+                ggez::run();
             }
             Commands::Macroquad => {
-                let _ = macroquad::run();
+                macroquad::run();
             }
         }
     }
