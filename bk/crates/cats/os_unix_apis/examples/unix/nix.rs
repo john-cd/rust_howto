@@ -63,8 +63,12 @@ fn main() -> nix::Result<()> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() -> nix::Result<()> {
-    main()?;
-    Ok(())
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() -> nix::Result<()> {
+        main()?;
+        Ok(())
+    }
 }

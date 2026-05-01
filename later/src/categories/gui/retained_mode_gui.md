@@ -88,7 +88,10 @@ If you're a Swift developer, you should find Xilem easy to use because its synta
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- Declarative UI frameworks.
+- Event-driven application design.
+- Native and cross-platform GUI toolkits.
+- Performance tuning for desktop apps.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

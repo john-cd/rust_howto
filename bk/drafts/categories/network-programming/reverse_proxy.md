@@ -91,6 +91,6 @@ local_addr = "127.0.0.1:22" # The address of the service that needs to be forwar
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[reverse_proxy: write](https://github.com/john-cd/rust_howto/issues/424)
+[Network: Complete comprehensive reverse proxy section for Pingora and Rathole](https://github.com/john-cd/rust_howto/issues/424)
 [River][river~repo]↗.
 </div>

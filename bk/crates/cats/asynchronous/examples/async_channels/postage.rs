@@ -1,8 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
 use postage::broadcast;
-use postage::prelude::Stream;
-use postage::sink::Sink;
 use tokio::task;
 use tokio::time::Duration;
 
@@ -69,8 +67,11 @@ async fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
 }
-// [finish; polish postage.rs example / add examples for other queues; logging; stream, sink](https://github.com/john-cd/rust_howto/issues/80)

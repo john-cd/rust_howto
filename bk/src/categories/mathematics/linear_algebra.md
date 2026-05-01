@@ -152,7 +152,7 @@ This example uses [`nalgebra::Matrix3`][c~nalgebra::Matrix3~docs]↗{{hi:nalgebr
 
 ## (De)serialize a Matrix {#deserialize-a-matrix}
 
-[![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~repo][c~ndarray~repo~badge]][c~ndarray~repo] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
+[![nalgebra][c~nalgebra~docs~badge]][c~nalgebra~docs]{{hi:nalgebra}} [![nalgebra~crates.io][c~nalgebra~crates.io~badge]][c~nalgebra~crates.io] [![nalgebra~repo][c~nalgebra~repo~badge]][c~nalgebra~repo] [![nalgebra~lib.rs][c~nalgebra~lib.rs~badge]][c~nalgebra~lib.rs] [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
 
 You can serialize and deserialize a matrix to and from [[JSON]] using [`serde_json::to_string`][c~serde_json::to_string~docs]↗{{hi:serde_json::to_string}} and `serde_json::from_str`{{hi:serde_json::from_str}}.
 
@@ -169,6 +169,3 @@ Note that serialization followed by deserialization gives back the original matr
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
-<div class="hidden">
-[linear_algebra: review; cover more of `nalgebra`](https://github.com/john-cd/rust_howto/issues/408)
-</div>

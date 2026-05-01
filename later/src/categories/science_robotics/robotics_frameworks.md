@@ -55,7 +55,10 @@ gRPC A high performance, open source universal RPC framework.
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- Robotics middleware and protocols.
+- Control systems and kinematics.
+- Dataflow architectures.
+- [ROS](./robot_operating_systems.md) and native Rust robotics.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -32,7 +32,9 @@ fn main() {
     // ERROR: a_module::public_nested_module::private();
     // ERROR: a_module::private_nested_module::private();
     // ERROR: a_module::private_nested_module::public();
-    println!("public_access example: public items in public modules are accessible");
+    println!(
+        "public_access example: public items in public modules are accessible"
+    );
 }
 
 // The same applies when calling from a brother module.
@@ -48,7 +50,11 @@ mod another_module {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
 }

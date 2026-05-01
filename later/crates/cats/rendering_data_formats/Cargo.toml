@@ -10,8 +10,9 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "rendering_data_formats" ]
+categories = [ "rendering::data-formats" ]
 publish.workspace = true
 autolib = false
 
 [dependencies]
+gltf = "1.4"

@@ -18,8 +18,11 @@
 // #[test]
 // fn require_network() {
 // }
-// // [finish](https://github.com/john-cd/rust_howto/issues/869)
+// // [Implement Rocket Hello World and route mounting](https://github.com/john-cd/rust_howto/issues/869)
 
 fn main() {
-    println!("rocket example: a web framework for Rust (see full implementation in the book)");
+    // TODO implement the Rocket example; see https://github.com/john-cd/rust_howto/issues/869
+    println!(
+        "rocket example: a web framework for Rust (see full implementation in the book)"
+    );
 }

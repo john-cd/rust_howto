@@ -28,14 +28,15 @@ fn main() {
     log::info!("[root] info");
     log::debug!("[root] debug");
     foo::run();
-    println!("log_mod example: set RUST_LOG=debug to see module-specific log output above");
+    println!(
+        "log_mod example: set RUST_LOG=debug to see module-specific log output above"
+    );
 }
 // ANCHOR_END: example
 
-use rusty_fork::rusty_fork_test;
-
-// Runs in a separate process:
-rusty_fork_test! {
+#[cfg(test)]
+mod tests {
+    use super::*;
     #[test]
     fn test() {
         main();

@@ -209,8 +209,12 @@ fn main() -> anyhow::Result<()> {
 // Examples adapted from <https://docs.rs/zerocopy/>
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }

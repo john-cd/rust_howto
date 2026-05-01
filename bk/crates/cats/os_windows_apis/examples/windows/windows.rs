@@ -1,43 +1,31 @@
 #![allow(dead_code)]
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
-// //! This example demonstrates how to use the `windows` crate to call the
-// //! `MessageBoxW` function from the Windows API.
-// //! It displays a simple message box with the text "Hello, windows!" and
-// //! the title "Greetings".
-// #![cfg(target_os = "windows")]
+#![cfg(target_os = "windows")]
+//! This example demonstrates how to use the `windows` crate to call the
+//! `MessageBoxW` function from the Windows API.
+//! It displays a simple message box with the text "Hello, windows!" and
+//! the title "Greetings".
 
-// use windows::Win32::Foundation::HWND;
-// use windows::Win32::Foundation::PWSTR;
-// use windows::Win32::UI::WindowsAndMessaging::MB_OK;
-// use windows::Win32::UI::WindowsAndMessaging::MessageBoxW;
+use windows::Win32::UI::WindowsAndMessaging::MB_OK;
+use windows::Win32::UI::WindowsAndMessaging::MessageBoxW;
+use windows::core::w;
 
-// /// Simple Windows application that displays a message box
-// /// saying "Hello, windows!".
-// fn main() {
-//     unsafe {
-//         MessageBoxW(
-//             HWND(0),
-//             PWSTR(
-//                 "Hello, windows!"
-//                     .encode_utf16()
-//                     .collect::<Vec<u16>>()
-//                     .as_mut_ptr(),
-//             ),
-//             PWSTR(
-//                 "Greetings"
-//                     .encode_utf16()
-//                     .collect::<Vec<u16>>()
-//                     .as_mut_ptr(),
-//             ),
-//             MB_OK,
-//         );
-//     }
-// }
+// ANCHOR: example
+/// Simple Windows application that displays a message box
+/// saying "Hello, windows!".
+pub fn main() {
+    unsafe {
+        MessageBoxW(None, w!("Hello, windows!"), w!("Greetings"), MB_OK);
+    }
+}
+// ANCHOR_END: example
 
-// #[test]
-// fn test() {
-//     main();
-// }
-// // [finish](https://github.com/john-cd/rust_howto/issues/823)
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "Displays a message box"]
+    fn test() {
+        main();
+    }
+}

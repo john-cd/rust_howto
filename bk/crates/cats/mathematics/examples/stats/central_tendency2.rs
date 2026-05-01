@@ -20,10 +20,15 @@ fn main() {
         .map(|(value, _)| *value);
 
     println!("Mode of the data is {mode:?}");
+    assert_eq!(mode, Some(1));
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
 }

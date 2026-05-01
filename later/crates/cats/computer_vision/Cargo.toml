@@ -10,12 +10,12 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = ["computer_vision"]
+categories = ["computer-vision"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-rand = { version = "0.9.3", features = ["thread_rng"] }
+rand = { version = "0.10.1", features = ["thread_rng"] }
 
 [target.'cfg(target_os = "linux")'.dependencies]
 image = { version = "0.25.5", optional = true }

@@ -1,10 +1,13 @@
 #![allow(dead_code)]
 // ANCHOR: example
+// This example demonstrates asynchronous Cassandra access using `cdrs-tokio`.
+
 use std::sync::Arc;
 
 use cdrs_tokio::IntoCdrsValue;
 use cdrs_tokio::TryFromRow;
-// use cdrs_tokio::TryFromUdt;
+
+use anyhow::Context;
 use cdrs_tokio::authenticators::StaticPasswordAuthenticatorProvider;
 use cdrs_tokio::cluster::NodeTcpConfigBuilder;
 use cdrs_tokio::cluster::TcpConnectionManager;
@@ -57,9 +60,11 @@ pub async fn run() -> anyhow::Result<()> {
         .with_contact_point("127.0.0.1:9042".into())
         .with_authenticator_provider(Arc::new(auth))
         .build()
-        .await?;
+        .await
+        .context("failed to build Cassandra cluster config")?;
     // Create a CDRS session that holds a pool of connections to nodes
     // and provides an interface for interacting with the cluster:
+
     let session: CurrentSession = TcpSessionBuilder::new(
         RoundRobinLoadBalancingStrategy::new(),
         cluster_config,

@@ -10,15 +10,13 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = ["development_tools"]
+categories = ["development-tools"]
 publish.workspace = true
 
 [dependencies]
-crates_io_api = "0.12.0"
-# FIXME add example doc-comment = "0.3.3"
-semver = "1.0.27"
-
-## General
 anyhow = "1.0.100"
+crates_io_api = "0.12.0"
+doc-comment = "0.3.3"
+semver = "1.0.27"
 tracing = "0.1.41"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }

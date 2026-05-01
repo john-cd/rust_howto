@@ -75,7 +75,8 @@ fn main() {
     let p: Point = frunk::from_generic(h6);
     assert_eq!(p, Point { x: 1.0, y: 2.0 });
 
-    // Convert a struct into its HList representation with `frunk::into_generic`.
+    // Convert a struct into its HList representation with
+    // `frunk::into_generic`.
     let p2 = Point { x: 3.0, y: 4.0 };
     let h7 = frunk::into_generic(p2);
     assert_eq!(h7, hlist![3.0f64, 4.0f64]);
@@ -101,7 +102,14 @@ fn main() {
         z: 3.0,
     };
     let v: Vec3 = frunk::convert_from(pt);
-    assert_eq!(v, Vec3 { x: 1.0, y: 2.0, z: 3.0 });
+    assert_eq!(
+        v,
+        Vec3 {
+            x: 1.0,
+            y: 2.0,
+            z: 3.0
+        }
+    );
 
     // -----------------------------------------------------------------------
     // LabelledGeneric: struct-to-struct conversion that checks field *names*.
@@ -138,7 +146,7 @@ fn main() {
     // `transform_from` additionally handles reordered fields via `Sculptor`.
     #[derive(LabelledGeneric, Debug, PartialEq)]
     struct ArchivedUser<'a> {
-        age: usize,        // fields in a different order
+        age: usize, // fields in a different order
         last_name: &'a str,
         first_name: &'a str,
     }
@@ -165,8 +173,12 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
 }
 // [finish example](https://github.com/john-cd/rust_howto/issues/1318)

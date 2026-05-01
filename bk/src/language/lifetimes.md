@@ -97,11 +97,20 @@ Instead, you may:
 {{#include ../../crates/language/examples/lifetimes/self_referential_struct.rs:example}}
 ```
 
+## Common Misconceptions {#common-misconceptions}
+
+- **`T` only contains owned types**: In generic code, the type parameter `T` contains all types, including references (e.g., `&i32` or `&mut i32`). Therefore, `T` is a superset of `&T` and `&mut T`.
+- **`T: 'static` means the type must be valid for the entire program**: `T: 'static` actually means that `T` *can* live at least as long as a `'static` lifetime. Owned types (like `String` or `Vec`) satisfy this bound because their owner can hold them indefinitely. It does not mean the value *has* to live for the entire program, or that it is created at compile time.
+- **`&'a T` and `T: 'a` are the same**: `T: 'a` means type `T` must be valid for lifetime `'a`. This accepts owned types, types containing references, and references. `&'a T` only accepts references.
+- **Downgrading mutable references to shared references is always safe**: When you re-borrow a mutable reference as a shared reference (for example, returning `&T` from a method that takes `&mut self`), it extends the mutable reference's exclusive borrow for the duration of the re-borrow. This means you cannot have other overlapping shared references, keeping the restrictiveness of an exclusive borrow while only providing read-only access.
+- **Lifetimes can grow and shrink at run-time**: Lifetimes are statically verified at compile-time. The borrow checker assumes every code path can be taken and chooses the shortest possible lifetime. Lifetimes cannot grow or shrink dynamically at run-time.
+
 ## References {#references .skip}
 
 - [Lifetime elision rules (Rust reference)][book~rust-reference~lifetime-elision]↗.
 - [Common Rust Lifetime Misconceptions][common-rust-lifetime-misconceptions~repo]↗.
 - [Self-referential Structs][blog~rust-self-referential-structs]↗.
+- [The mutable reference I return from a function in Rust seems to violate the borrowing rules — how is this possible?][reddit~the_mutable_reference_i_return_from_a_function_in]↗.
 
 ## Related Topics {#related-topics .skip}
 
@@ -114,12 +123,3 @@ Instead, you may:
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
-<div class="hidden">
-TODO review [common-rust-lifetime-misconceptions~repo]
-
-review
-
-- [Common Rust Lifetime Misconceptions][common-rust-lifetime-misconceptions~repo]↗.
-- [The mutable reference I return from a function in Rust seems to violate the borrowing rules — how is this possible?][reddit~the_mutable_reference_i_return_from_a_function_in].
-
-</div>

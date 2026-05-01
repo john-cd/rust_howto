@@ -11,20 +11,25 @@ Hashes are widely used in various applications such as:
 - Password Storage: Storing hashed versions of passwords rather than plain text to enhance security.
 - Digital Signatures: Verifying the authenticity and integrity of messages or documents.
 
-Use the following crates for general-purpose hashing and cryptographic hashing:
+Depending on your specific use case, use the following crates for general-purpose hashing, fast non-cryptographic hashing, DoS-resistant hashing, and cryptographic hashing:
 
-- `blake3` and `sha2` for general-purpose hashing
-- `ahash` for use in in-memory hashmaps.
+**Cryptographic Hashing:**
+- `sha2` for standard cryptographic hashing.
+- `blake3` for fast, general-purpose cryptographic hashing.
+
+**Fast, Non-Cryptographic Hashing:**
 - `rustc-hash` for fast, non-cryptographic hashing.
 - `murmur3` is a non-cryptographic hash function suitable for general hash-based lookup.
 - `fnv` is the Fowler–Noll–Vo hash function that is more efficient for smaller hash keys.
+
+**DoS-Resistant Hashing for HashMaps:**
+- `ahash` for use as a DoS-resistant hash function in in-memory hashmaps.
 - `hashbrown` is a Rust port of Google's high-performance SwissTable hash map, adapted to make it a drop-in replacement for Rust's standard `HashMap` and `HashSet` types.
 
-You may also use `crc` or `crc32fast` for CRC checksums.
+**Checksums:**
+- `crc` or `crc32fast` for CRC checksums.
 
-TODO distinguish between general-purpose / fast / OOS resistant / crypto hashing.
-
-[](https://github.com/RustCrypto/hashes#rustcrypto-hashes)
+[RustCrypto Hashes](https://github.com/RustCrypto/hashes#rustcrypto-hashes)
 
 [Cryptographic hash function](https://en.wikipedia.org/wiki/Cryptographic_hash_function)
 
@@ -98,7 +103,7 @@ For legacy applications, you may consider using the following hashing algorithms
 {{#include ../../../crates/cats/algorithms/examples/hashing/md5.rs:example}}
 ```
 
-## Cryptograhic Algorithms {#cryptographic-algorithms}
+## Cryptographic Algorithms {#cryptographic-algorithms}
 
 Use [`ring`][c~ring~docs]↗{{hi:ring}}, [`rust-crypto`][c~rust-crypto~docs]↗{{hi:rust-crypto}}, [`sha2`][c~sha2~docs]↗{{hi:sha2}}. Choose carefully based on security needs and audit history.
 
@@ -111,16 +116,10 @@ Use [`ring`][c~ring~docs]↗{{hi:ring}}, [`rust-crypto`][c~rust-crypto~docs]↗{
 ## Related Topics {#related-topics .skip}
 
 - [[algorithms | Algorithms]].
+- [[cryptography | Cryptography]].
 - [[data-structures | Data Structures]].
+- [[encryption | Encryption]].
+- [[password_hashing | Password Hashing]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[hashing: improve](https://github.com/john-cd/rust_howto/issues/273)
-
-- [[cryptography | Cryptography]],
-- [[encryption | Encryption]],
-- [[password_hashing | Password Hashing]].
-
-</div>

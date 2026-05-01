@@ -49,9 +49,12 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-// This test should not run during CI.
-#[test]
-fn ignore_in_ci() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn ignore_in_ci() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }

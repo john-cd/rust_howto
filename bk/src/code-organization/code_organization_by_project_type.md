@@ -289,6 +289,15 @@ members = [ "lib1", "lib2", "main_lib" ]
 
 Confusingly, a workspace [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} can also include a 'root package' in addition to member crates. That lets you place the code of the main library or executable in e.g. a [`src`][book~cargo~project-layout]↗{{hi:src folder}} folder directly under the workspace root.
 
+## Monorepos and Git Submodules {#monorepos-and-git-submodules}
+
+As projects scale, you may encounter the concept of a "monorepo" (monolithic repository). A monorepo is a single version control repository that houses multiple, often logically independent projects or crates. Cargo workspaces (discussed above) are naturally well-suited for a monorepo architecture, as they allow you to manage multiple related packages within a single Git repository while sharing dependencies and a common `Cargo.lock`.
+
+If you have independent repositories that need to be included within a larger project, you can use [Git submodules][git~submodules]↗. Submodules allow you to keep a Git repository as a subdirectory of another Git repository, letting you clone another project into your project while keeping your commits separate.
+
+When working with Git submodules in your Rust projects, remember this crucial best practice:
+**Always push changes in the submodule to its own remote repository before committing and pushing the updated submodule pointer in the parent repository.** If you commit the parent repository pointing to a local submodule commit that hasn't been pushed, other contributors or CI systems will encounter a broken build because they cannot fetch that specific submodule commit.
+
 ## Related Topics {#related-topics .skip}
 
 - [[package_layout | Package Layout]].

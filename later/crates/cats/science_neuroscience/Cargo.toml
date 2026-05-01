@@ -10,8 +10,10 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "science_neuroscience" ]
+categories = [ "science::neuroscience" ]
 publish.workspace = true
 autolib = false
 
 [dependencies]
+ndarray = "0.15"
+nifti = "0.10"

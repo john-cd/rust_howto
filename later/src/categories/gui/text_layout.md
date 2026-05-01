@@ -24,7 +24,10 @@
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- Typography and international text support.
+- GUI layout engines.
+- Cross-platform UI rendering.
+- Accessibility and localization.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -10,12 +10,10 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = ["aerospace_space_protocols"]
+categories = ["aerospace::space-protocols"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-
-## General
-# FIXME
-#anyhow = "1.0.95"
+arbitrary-int = "2.1.1"
+spacepackets = "0.17.0"

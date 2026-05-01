@@ -1,7 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-// COMING SOON
-// ANCHOR_END: example
 
 // This example demonstrates the use of `cbindgen`.
 //
