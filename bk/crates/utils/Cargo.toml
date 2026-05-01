@@ -10,7 +10,7 @@ homepage.workspace = true
 repository.workspace = true
 license-file.workspace = true
 keywords.workspace = true
-categories.workspace = true
+categories = ["development-tools"]
 publish.workspace = true
 
 [dependencies]

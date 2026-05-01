@@ -12,7 +12,10 @@ A tiny library providing a GPU-powered pixel frame buffer.
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- Image memory management.
+- Graphics API interoperability.
+- Rendering and framebuffers.
+- Multimedia performance engineering.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

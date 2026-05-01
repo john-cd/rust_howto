@@ -10,7 +10,10 @@
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- Linux system programming.
+- OS-level APIs and bindings.
+- Cross-platform compatibility.
+- Performance and low-level Rust.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

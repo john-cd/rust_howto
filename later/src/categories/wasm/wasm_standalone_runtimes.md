@@ -104,7 +104,11 @@ The [`wasmtime`][c~wasmtime~repo]↗ crate is a high-level API to expose the Was
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[wasm | WASM]].
+- [[wasm_development | WASM Development]].
+- [[wasm_basics | WASM Basics]].
+- [[cloud | Cloud]].
+- [[embedded | Embedded Systems]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

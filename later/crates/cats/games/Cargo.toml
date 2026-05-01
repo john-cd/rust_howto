@@ -14,3 +14,4 @@ categories = [ "games" ]
 publish.workspace = true
 
 [dependencies]
+macroquad = "0.4.14"

@@ -10,8 +10,9 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "multimedia_images" ]
+categories = [ "multimedia::images" ]
 publish.workspace = true
 autolib = false
 
 [dependencies]
+image = "0.25.9"

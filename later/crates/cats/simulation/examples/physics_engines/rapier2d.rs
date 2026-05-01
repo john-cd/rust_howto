@@ -1,14 +1,10 @@
 #![allow(dead_code)]
 // ANCHOR: example
-//! Simulate a simple 2D bouncing ball using the `rapier2d` physics engine.
-//!
-//! This example creates a static ground and a dynamic ball, then steps the
-//! physics simulation for several frames.
-
 use rapier2d::prelude::*;
 
 fn main() {
-    let gravity = vector![0.0f32, -9.81f32];
+    // A small simulation: one dynamic ball falling onto a static ground.
+    let gravity = vector![0.0, -9.81];
     let integration_parameters = IntegrationParameters::default();
 
     let mut physics_pipeline = PhysicsPipeline::new();
@@ -21,22 +17,18 @@ fn main() {
     let mut multibody_joints = MultibodyJointSet::new();
     let mut ccd_solver = CCDSolver::new();
 
-    let ground_body = RigidBodyBuilder::new_static()
-        .translation(vector![0.0f32, -1.0f32])
-        .build();
+    let ground_body = RigidBodyBuilder::new_static().build();
     let ground_handle = bodies.insert(ground_body);
-    let ground_collider = ColliderBuilder::cuboid(10.0f32, 1.0f32).build();
+    let ground_collider = ColliderBuilder::cuboid(5.0, 0.1)
+        .translation(vector![0.0, -0.5])
+        .build();
     colliders.insert(ground_collider, ground_handle, &mut bodies);
 
     let ball_body = RigidBodyBuilder::new_dynamic()
-        .translation(vector![0.0f32, 5.0f32])
-        .linvel(vector![1.0f32, 0.0f32])
+        .translation(vector![0.0, 3.0])
         .build();
     let ball_handle = bodies.insert(ball_body);
-    let ball_collider = ColliderBuilder::ball(0.5f32)
-        .restitution(0.7f32)
-        .friction(0.5f32)
-        .build();
+    let ball_collider = ColliderBuilder::ball(0.5).restitution(0.7).build();
     colliders.insert(ball_collider, ball_handle, &mut bodies);
 
     for step in 0..120 {
@@ -57,15 +49,13 @@ fn main() {
 
         let ball = &bodies[ball_handle];
         let position = ball.position();
-        let velocity = ball.linvel();
-
         println!(
-            "step {:>3}: position=({:.2}, {:.2}), velocity=({:.2}, {:.2})",
+            "step {:>3}: ball position = ({:.2}, {:.2}), velocity = ({:.2}, {:.2})",
             step,
             position.translation.x,
             position.translation.y,
-            velocity.x,
-            velocity.y,
+            ball.linvel().x,
+            ball.linvel().y,
         );
     }
 }
@@ -75,4 +65,4 @@ fn main() {
 fn test() {
     main();
 }
-// // [write LATER](https://github.com/john-cd/rust_howto/issues/846)
+// TODO review / add to a chapter on physics engines with rapier2d

@@ -40,7 +40,7 @@ mod tests {
     #[test]
     #[ignore = "requires real drone"]
     fn test() {
-       main();
+        main();
     }
 }
 // TODO

@@ -16,4 +16,3 @@ autolib = false
 
 [dependencies]
 polkavm = "0.33.1"
-polkavm-assembler = "0.33.0"

@@ -10,10 +10,9 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = ["aerospace_protocols"]
+categories = ["aerospace::protocols"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
 mavlink = "0.17.1"
-
