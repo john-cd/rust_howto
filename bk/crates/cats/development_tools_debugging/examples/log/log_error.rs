@@ -13,14 +13,15 @@ fn main() {
     if let Err(err) = response {
         log::error!("Failed to execute query: {err}");
     }
-    println!("log_error example: set RUST_LOG=error to see the error log above");
+    println!(
+        "log_error example: set RUST_LOG=error to see the error log above"
+    );
 }
 // ANCHOR_END: example
 
-use rusty_fork::rusty_fork_test;
-
-// Runs in a separate process:
-rusty_fork_test! {
+#[cfg(test)]
+mod tests {
+    use super::*;
     #[test]
     fn test() {
         main();

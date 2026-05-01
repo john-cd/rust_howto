@@ -32,9 +32,13 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-#[test]
-#[ignore = "Needs review"]
-fn test() {
-    println!("{:?}", main());
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    #[ignore = "Needs review"]
+    fn test() {
+        println!("{:?}", main());
+    }
 }
 // [finish; deal with extern](https://github.com/john-cd/rust_howto/issues/900)

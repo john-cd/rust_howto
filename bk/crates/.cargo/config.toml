@@ -1,5 +1,13 @@
 # Reference: https://doc.rust-lang.org/cargo/reference/config.html
 
+
+# Configuration to use the high-performance 'mold' linker on Linux.
+# mold is significantly faster than the default ld or lld.
+
+# [target.x86_64-unknown-linux-gnu]
+# linker = "clang"
+# rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
+
 # paths = ["/path/to/override"] # path dependency overrides
 
 # [alias]     # command aliases
@@ -177,11 +185,6 @@ opt-level = 0
 # runner = "..."            # wrapper to run executables
 # rustflags = ["...", "..."]  # custom flags for `rustc`
 
-# error: linking with `link.exe` failed: exit code: 0xc0000409
-# https://github.com/rust-lang/rust/issues/141626
-# (can be removed once link.exe is fixed)
-[target.x86_64-pc-windows-msvc]
-linker = "rust-lld"
 
 # [target.<cfg>]
 # runner = "..."            # wrapper to run executables

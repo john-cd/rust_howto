@@ -10,7 +10,7 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = ["web_programming_websocket"]
+categories = ["web-programming::websocket"]
 publish.workspace = true
 autolib = false
 
@@ -26,4 +26,4 @@ tungstenite = "0.27.0"
 ## General
 anyhow = "1.0.99"
 futures-util = "0.3.31"
-tokio = { version = "1.47.1", features = ["macros", "rt-multi-thread"]  }
+tokio = { version = "1.47.1", features = ["macros", "rt-multi-thread", "net"]  }

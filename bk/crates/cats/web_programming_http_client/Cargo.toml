@@ -10,20 +10,18 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = ["web_programming_http_client"]
+categories = ["web-programming::http-client"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-hyper = "1.7.0"
-hyper-util = "0.1.17"
-reqwest = { version = "0.12.24", features = ["blocking", "json", "stream"] }
-ureq = "3.1.2"
-
-## General
 anyhow = "1.0.100"
 http-body-util = "0.1.3"
+hyper = "1.9.0"
+hyper-util = "0.1.17"
+reqwest = { version = "0.12.24", features = ["blocking", "json", "stream"] }
 serde = { version = "1.0.228", features = ["derive"] }
 tempfile = "3.23.0"
-tokio = { version = "1.48.0", features = ["macros", "rt-multi-thread", "fs", "io-util", "io-std"]  }
+tokio = { version = "1.48.0", features = ["macros", "rt-multi-thread", "fs", "io-util", "io-std"] }
+ureq = "3.1.2"
 url = "2.5.7"

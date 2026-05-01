@@ -1,5 +1,8 @@
 #![allow(dead_code)]
 // ANCHOR: example
+//! This example demonstrates creating database tables in PostgreSQL using the
+//! `postgres` crate.
+
 use postgres::Client;
 use postgres::NoTls;
 

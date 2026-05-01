@@ -207,7 +207,6 @@ impl Widget for MiddleWidget {
 ///
 /// It checks if pressing 'q' in `Running` mode changes the mode to
 /// `Exiting`.
-#[test]
 fn handle_key_event() -> io::Result<()> {
     let mut app = App::default();
     app.handle_key_event(KeyCode::Char('q').into());
@@ -216,3 +215,16 @@ fn handle_key_event() -> io::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn handle_key_event() -> io::Result<()> {
+        let mut app = App::default();
+        app.handle_key_event(KeyCode::Char('q').into());
+        assert_eq!(app.mode, Mode::Exiting);
+        // More tests here...
+        Ok(())
+    }
+}

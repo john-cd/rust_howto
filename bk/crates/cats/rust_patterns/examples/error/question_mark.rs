@@ -38,11 +38,15 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    // Make sure the `temp` folder exists.
-    if !std::fs::exists("temp").unwrap() {
-        std::fs::create_dir("temp").unwrap();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        // Make sure the `temp` folder exists.
+        if !std::fs::exists("temp").unwrap() {
+            std::fs::create_dir("temp").unwrap();
+        }
+        main();
     }
-    main();
 }

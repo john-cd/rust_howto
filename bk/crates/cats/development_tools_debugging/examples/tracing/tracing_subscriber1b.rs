@@ -36,7 +36,9 @@ fn main() {
     // Calling this instrumented function will log span events, since
     // `with_span_events` is enabled above.
     a_function();
-    println!("tracing_subscriber1b example: logs written to temp/my_log.json in JSON format");
+    println!(
+        "tracing_subscriber1b example: logs written to temp/my_log.json in JSON format"
+    );
 }
 
 #[instrument]
@@ -45,9 +47,9 @@ fn a_function() {
 }
 // ANCHOR_END: example
 
-use rusty_fork::rusty_fork_test;
-
-rusty_fork_test! {
+#[cfg(test)]
+mod tests {
+    use super::*;
     #[test]
     fn test() {
         use std::fs;

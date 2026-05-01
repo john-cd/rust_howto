@@ -55,8 +55,12 @@ fn main() -> Result<()> {
 // Look for additional examples in <https://github.com/notify-rs/notify/tree/main/examples>.
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }

@@ -4,10 +4,10 @@ use std::marker::PhantomData;
 
 use typenum::Prod;
 use typenum::Sum;
-use typenum::Unsigned;
 use typenum::U2;
 use typenum::U3;
 use typenum::U6;
+use typenum::Unsigned;
 
 /// A type-safe fixed-size buffer whose capacity is encoded in its type.
 ///
@@ -33,7 +33,8 @@ impl<T: Default + Clone, N: Unsigned> FixedBuffer<T, N> {
 
 fn main() {
     // `typenum` provides type-level numbers evaluated at compile time.
-    // U2 and U3 are type aliases for the compile-time unsigned integers 2 and 3.
+    // U2 and U3 are type aliases for the compile-time unsigned integers 2 and
+    // 3.
     println!("U2 = {}", U2::USIZE);
     println!("U3 = {}", U3::USIZE);
 
@@ -58,7 +59,11 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
 }

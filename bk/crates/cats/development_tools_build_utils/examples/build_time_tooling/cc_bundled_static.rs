@@ -14,13 +14,20 @@
 fn main() {
     // cc::Build::new().file("src/hello.c").compile("hello");
     // // outputs `libhello.a`
-    println!("cc_bundled_static example: compiles a C file into a static library (requires a C compiler)");
+    println!(
+        "cc_bundled_static example: compiles a C file into a static library (requires a C compiler)"
+    );
 }
 // ANCHOR_END: example
 
-#[test]
 #[ignore = "Needs review"]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    #[ignore = "Needs review"]
+    fn test() {
+        main();
+    }
 }
 // [finish; deal with cc](https://github.com/john-cd/rust_howto/issues/899)

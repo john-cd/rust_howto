@@ -34,11 +34,19 @@ fn main() {
         fnv::FnvHashMap::with_capacity_and_hasher(10, Default::default());
     map.insert(1, "one");
     map.insert(2, "two");
-    println!("fnv_map: key1={:?}, key2={:?}", fnv_map.get("key1"), fnv_map.get("key2"));
+    println!(
+        "fnv_map: key1={:?}, key2={:?}",
+        fnv_map.get("key1"),
+        fnv_map.get("key2")
+    );
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
 }

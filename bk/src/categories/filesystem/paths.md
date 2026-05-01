@@ -51,5 +51,3 @@ The `camino` crate provides an alternative to the standard `Path` and `PathBuf` 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
-<div class="hidden">
-</div>

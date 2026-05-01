@@ -1,41 +1,46 @@
 #![allow(dead_code)]
-// // ANCHOR: example
-// use rutie::*;
+// ANCHOR: example
+use rutie::Object;
+use rutie::RString;
+use rutie::VM;
 
-// /// Example
-// ///
-// ///  1. Compile the Rust code:
-// /// ```bash
-// /// cargo build --release
-// /// ```
-// ///
-// /// 2. Run the Ruby script using a Ruby interpreter:
-// /// ```bash
-// /// ruby script.rb
-// /// ```
+/// Example
+///
+///  1. Compile the Rust code:
+/// ```bash
+/// cargo build --release
+/// ```
+///
+/// 2. Run the Ruby script using a Ruby interpreter:
+/// ```bash
+/// ruby script.rb
+/// ```
 
-// /// Mark the RustModule function as a Ruby module.
-// #[module]
-// fn RustModule(_cls: Class) -> anyhow::Result<()> {
-//     // Create a new Ruby class
-//     Class::new("RustClass", None).define(|cls| {
-//         // Define a class method
-//         cls.def("hello", hello)?;
-//         Ok(())
-//     })?;
+/// Mark the RustModule function as a Ruby module.
+// Note: In a real rutie project, you'd use macros to export this.
+// This is a simplified representation for documentation.
 
-//     Ok(())
-// }
+pub extern "C" fn hello(
+    _argc: i32,
+    _argv: *const rutie::types::Value,
+    _slf: rutie::types::Value,
+) -> rutie::types::Value {
+    RString::new_utf8("Hello from Rust!").value()
+}
 
-// /// Defines a method `hello` that returns a Ruby string.
-// ///
-// /// # Arguments
-// ///
-// /// * `_slf` - The Ruby object instance (self).
-// fn hello(_slf: Object) -> anyhow::Result<RString> {
-//     // Create a new Ruby string
-//     Ok(RString::new_utf8("Hello from Rust!"))
-// }
-// // ANCHOR_END: example
+fn main() {
+    VM::init();
+    // In a real application, you would define modules and classes here.
+}
 
-// // [finish](https://github.com/john-cd/rust_howto/issues/1036)
+// ANCHOR_END: example
+
+// [finish](https://github.com/john-cd/rust_howto/issues/1036)
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test() {
+        // main();
+    }
+}

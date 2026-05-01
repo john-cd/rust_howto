@@ -13,11 +13,15 @@ pub fn format_user(name: &str, age: u32) -> String {
 /// If the test fails, `insta` will prompt you to review and accept the new
 /// snapshot. This allows easily management of changes to your output
 /// over time.
-#[test]
-fn test_format_user() {
-    use insta::assert_snapshot;
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_format_user() {
+        use insta::assert_snapshot;
 
-    let formatted = format_user("Alice", 30);
-    assert_snapshot!("format_user_snapshot", formatted);
+        let formatted = format_user("Alice", 30);
+        assert_snapshot!("format_user_snapshot", formatted);
+    }
 }
 // ANCHOR_END: example

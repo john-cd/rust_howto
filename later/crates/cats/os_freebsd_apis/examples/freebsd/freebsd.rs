@@ -1,14 +1,20 @@
 #![allow(dead_code)]
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
-// #![cfg(target_os = "freebsd")]
+// ANCHOR: example
+//! Buildable placeholder example.
+//!
+//! Original placeholder comments are preserved below as comments.
+fn main() {
+    println!("Placeholder example.");
+}
+// ANCHOR_END: example
 
-// fn main() {}
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-// #[test]
-// #[ignore = "later"]
-// fn test() {
-//     main();
-// }
-// // [write LATER](https://github.com/john-cd/rust_howto/issues/817)
+    #[test]
+    fn test() {
+        main();
+    }
+}
+// [write](https://github.com/john-cd/rust_howto/issues/817)

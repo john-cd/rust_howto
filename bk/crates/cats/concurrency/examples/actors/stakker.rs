@@ -1,79 +1,78 @@
 #![allow(dead_code)]
-// // ANCHOR: example
-// use stakker::*;
+// ANCHOR: example
+use stakker::*;
 
-// // Stakker is a lightweight, low-level, single-threaded actor runtime.
-// // It is designed to be layered on top of whatever event loop the user
-// // prefers to use. Use it to build concurrent, distributed applications.
+// Define the messages that the actor can process.
+// `Increment` increases the counter, while `GetValue` prints it.
+#[derive(Clone, Debug)]
+enum MyMessage {
+    Increment(u32),
+    GetValue,
+}
 
-// // Define the message type that actors will exchange.
-// enum MyMessage {
-//     Increment(u32),
-//     GetValue,
-//     PrintValue,
-// }
+struct Counter {
+    count: u32,
+}
 
-// // Define the actor's state and behavior.
-// struct Counter {
-//     count: u32,
-//     sender: Sender<MyMessage>, // To send messages back (if needed)
-// }
+impl Counter {
+    // Handle a single message and update or report state.
+    fn handle_message(&mut self, message: MyMessage) {
+        match message {
+            MyMessage::Increment(amount) => {
+                // Increase the internal counter by the provided amount.
+                self.count += amount;
+            }
+            MyMessage::GetValue => {
+                // Print the current value of the counter.
+                println!("Current value: {}", self.count);
+            }
+        }
+    }
+}
 
-// impl Counter {
-//     fn new(sender: Sender<MyMessage>) -> Self {
-//         Counter { count: 0, sender }
-//     }
+impl Actor for Counter {
+    type Msg = MyMessage;
 
-//     fn handle_message(&mut self, message: MyMessage) {
-//         match message {
-//             MyMessage::Increment(amount) => {
-//                 self.count += amount;
-//             }
-//             MyMessage::GetValue => {
-//                 println!("Current value: {}", self.count);
-//                 // Example of sending a message back
-//                 // (if another actor is listening)
-//                 // self.sender.send(MyMessage::PrintValue);
-//                 // If we had a receiver.
-//                 }
-//             MyMessage::PrintValue => {
-//                 println!("Value to print: {}", self.count);
-//             }
-//         }
-//     }
-// }
+    // This method is invoked by the Stakker runtime when an actor receives a
+    // message.
+    fn recv(
+        &mut self,
+        _ctx: &mut Context<Self::Msg>,
+        msg: Self::Msg,
+        _sender: Sender,
+    ) {
+        self.handle_message(msg);
+    }
+}
 
-// fn main() {
-//     // Create a Stakker system.
-//     let mut system = Stakker::new();
+fn main() {
+    // Create the actor system.
+    let mut system = Stakker::new();
 
-//     // Create a new actor.
-//     let (counter_sender, counter_handle) = system.spawn(
-//         // The actor's initial state.
-//         // Clone needed if actor sends back.
-//         Counter::new(counter_sender.clone()),
-//           // The actor's message handler.
-//         |counter, message| counter.handle_message(message),
-//     );
+    // Spawn a `Counter` actor with an initial count of 0.
+    let counter = system.spawn(Counter { count: 0 }, |counter, message| {
+        counter.handle_message(message)
+    });
 
-//     // Send messages to the actor.
-//     counter_sender.send(MyMessage::Increment(5));
-//     counter_sender.send(MyMessage::Increment(10));
-//     counter_sender.send(MyMessage::GetValue);
-//     counter_sender.send(MyMessage::Increment(2));
-//     counter_sender.send(MyMessage::GetValue);
+    // Send a few messages to the actor.
+    // These are processed asynchronously by the actor system.
+    counter.send(MyMessage::Increment(5));
+    counter.send(MyMessage::Increment(10));
+    counter.send(MyMessage::GetValue);
+    counter.send(MyMessage::Increment(2));
+    counter.send(MyMessage::GetValue);
 
-//     // Run the Stakker system.  This will process the messages.
-//     system.run(());
-//     // The empty tuple `()` is the "external input" in this case.
+    // Run the actor system until no work remains.
+    system.run(());
+}
+// ANCHOR_END: example
 
-//     // If we need to wait for the actor to finish:
-//     // system.wait(counter_handle);
-// }
-// // ANCHOR_END: example
-
-// #[test]
-// fn test() {
-//     main();
-// }
-// // [finish](https://github.com/john-cd/rust_howto/issues/94)
+// TODO add to a chapter on actors with stakker
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
+}

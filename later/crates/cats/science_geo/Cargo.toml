@@ -10,8 +10,9 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "science_geo" ]
+categories = [ "science::geo" ]
 publish.workspace = true
 autolib = false
 
 [dependencies]
+geo = "0.26"

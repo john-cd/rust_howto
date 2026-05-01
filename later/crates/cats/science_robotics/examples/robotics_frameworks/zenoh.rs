@@ -35,19 +35,13 @@ async fn main() -> anyhow::Result<()> {
 
     // Declare a subscriber for the key expression.
     // The subscriber must be declared before publishing to receive messages.
-    let subscriber = session
-        .declare_subscriber(key_expr)
-        .await
-        .map_err(ze)?;
+    let subscriber = session.declare_subscriber(key_expr).await.map_err(ze)?;
     println!("Subscriber declared on '{key_expr}'.");
 
     // Publish a message to the key expression.
     // Zenoh dispatches the message to all matching local and remote
     // subscribers.
-    session
-        .put(key_expr, "Hello, Zenoh!")
-        .await
-        .map_err(ze)?;
+    session.put(key_expr, "Hello, Zenoh!").await.map_err(ze)?;
     println!("Published to '{key_expr}'.");
 
     // Receive the next message with a timeout.
@@ -79,10 +73,14 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }
 // [write](https://github.com/john-cd/rust_howto/issues/845)
 // <https://github.com/eclipse-zenoh/zenoh/tree/main/examples>

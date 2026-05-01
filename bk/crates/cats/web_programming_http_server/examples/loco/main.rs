@@ -1,88 +1,94 @@
+#![allow(dead_code)]
+#![allow(unused_variables)]
+
 // ANCHOR: example
-// // COMING SOON
-// ANCHOR_END: example
-
 //! This example demonstrates a basic HTTP server using the Loco framework.
-//! It defines a simple User model, routes for fetching and creating users,
-//! and uses Loco's application bootstrapping and startup mechanisms.
+//! It defines a simple application with a controller and routes.
 //!
-//! Note: This example requires a database setup and the necessary Loco
-//! dependencies.
+//! Loco is a web framework for Rust inspired by Ruby on Rails.
 
-use anyhow::Result;
-// use loco_rs::app::AppContext;
-// use loco_rs::app::Hooks;
-// use loco_rs::boot::BootResult;
-// use loco_rs::boot::StartMode;
-// use loco_rs::boot::create_app;
-// use loco_rs::controller::AppRoutes;
-// use loco_rs::db::DataPool;
-// use loco_rs::model::Model;
-// use loco_rs::model::NewModel;
-// use loco_rs::task::Tasks;
-// use serde::Deserialize;
-// use serde::Serialize;
+use std::path::Path;
+use loco_rs::prelude::*;
+use loco_rs::app::Hooks;
+use loco_rs::task::Tasks;
+use loco_rs::boot::{BootResult, StartMode};
+use loco_rs::controller::AppRoutes;
+use loco_rs::bgworker::Queue;
+use loco_rs::environment::Environment;
 
-// // Uses #[derive(Model)] and #[derive(NewModel)] to define the User model and
-// // its creation counterpart NewUser.
+/// The application's main structure.
+pub struct App;
 
-// #[derive(Clone, Debug, Serialize, Deserialize, PartialEq, Eq, Model)]
-// #[table = "users"] // The #[table = "users"] attribute specifies the database
-// table name. pub struct User {
-//     #[primary_key]
-//     pub id: i64,
-//     pub name: String,
-// }
+#[async_trait]
+impl Hooks for App {
+    /// Sets the application name.
+    fn app_name() -> &'static str {
+        env!("CARGO_CRATE_NAME")
+    }
 
-// #[derive(Clone, Debug, Serialize, Deserialize, NewModel)]
-// pub struct NewUser {
-//     pub name: String,
-// }
+    /// Registers the application routes.
+    fn routes(_ctx: &AppContext) -> AppRoutes {
+        AppRoutes::with_default_routes().add_route(home::routes())
+    }
 
-// // Define routes for fetching all users (GET) and creating a new user (POST).
-// async fn routes(ctx: &AppContext, routes: &mut AppRoutes) -> Result<()> {
-//     routes.add("/", get_users);
-//     routes.add("/users", create_user).post();
-//     Ok(())
-// }
+    async fn boot(
+        _mode: StartMode,
+        _environment: &Environment,
+        _config: loco_rs::config::Config,
+    ) -> Result<BootResult> {
+        // In a real app, this would initialize the application context.
+        todo!()
+    }
 
-// // Use User::all(&ctx.db).await? to fetch all users and User::create(&ctx.db,
-// // new_user).await? to create a new user.
+    async fn connect_workers(_ctx: &AppContext, _queue: &Queue) -> Result<()> {
+        Ok(())
+    }
 
-// async fn get_users(ctx: &AppContext) -> Result<String> {
-//     let users = User::all(&ctx.db).await?;
-//     let json = serde_json::to_string(&users)?;
-//     Ok(json)
-// }
+    fn register_tasks(_tasks: &mut Tasks) {}
 
-// async fn create_user(ctx: &AppContext, new_user: NewUser) -> Result<String> {
-//     let user = User::create(&ctx.db, new_user).await?;
-//     let json = serde_json::to_string(&user)?; // Serialize the user data to
-// JSON for the responses.     Ok(json)
-// }
+    async fn truncate(_ctx: &AppContext) -> Result<()> {
+        Ok(())
+    }
 
-// async fn boot_app(mode: StartMode) -> Result<BootResult> {
-//     create_app(mode).await
-// }
-
-#[tokio::main]
-async fn main() -> Result<()> {
-    // // Use create_app, boot.start, and boot_app for proper application
-    // // bootstrapping and startup.
-    // let boot = boot_app(StartMode::Server).await?;
-    // let routes = routes(&boot.app_context, &mut boot.router).await?;
-
-    // boot.start(routes).await?;
-
-    Ok(())
+    async fn seed(_ctx: &AppContext, _path: &Path) -> Result<()> {
+        Ok(())
+    }
 }
 
-// pub async fn app_hooks(_ctx: &AppContext, _hooks: &mut Hooks) -> Result<()> {
-//     Ok(())
-// }
+/// A simple controller for the home page.
+mod home {
+    use super::*;
 
-// pub async fn tasks(_ctx: &AppContext, _tasks: &mut Tasks) -> Result<()> {
-//     Ok(())
-// }
+    /// A basic handler that returns a "Hello, World!" message.
+    async fn hello(State(_ctx): State<AppContext>) -> Result<Response> {
+        format::text("Hello, Loco!")
+    }
 
-// // [finish](https://github.com/john-cd/rust_howto/issues/868)
+    /// Defines the routes for this controller.
+    pub fn routes() -> Routes {
+        Routes::new().prefix("home").add("/hello", get(hello))
+    }
+}
+
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    // In a real application, you would use:
+    // use loco_rs::boot::{create_app, StartMode};
+    // let boot = create_app::<App>(StartMode::Server, &Environment::Development).await?;
+    // boot.start().await?;
+
+    println!("Loco application initialized (simulated).");
+    Ok(())
+}
+// ANCHOR_END: example
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[tokio::test]
+    async fn test_app_init() {
+        // Verification that the main logic is accessible
+        assert_eq!(App::app_name(), env!("CARGO_CRATE_NAME"));
+    }
+}

@@ -1,12 +1,40 @@
 #![allow(dead_code)]
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
-// fn main() {}
+// ANCHOR: example
+#[cfg(target_arch = "wasm32")]
+use spirv_std::glam::Vec4;
+#[cfg(target_arch = "wasm32")]
+use spirv_std::glam::vec4;
+#[cfg(target_arch = "wasm32")]
+use spirv_std::spirv;
 
-// #[test]
-// #[ignore = "later"]
-// fn test() {
-//     main();
-// }
-// // [write; need to review - see gpu.md LATER](https://github.com/john-cd/rust_howto/issues/886)
+#[cfg(target_arch = "wasm32")]
+#[spirv(fragment)]
+pub fn main_fs(output: &mut Vec4) {
+    *output = vec4(1.0, 0.0, 0.0, 1.0);
+}
+
+#[cfg(target_arch = "wasm32")]
+#[spirv(vertex)]
+pub fn main_vs(
+    #[spirv(vertex_index)] vert_id: i32,
+    #[spirv(position, invariant)] out_pos: &mut Vec4,
+) {
+    *out_pos = vec4(
+        (vert_id - 1) as f32,
+        ((vert_id & 1) * 2 - 1) as f32,
+        0.0,
+        1.0,
+    );
+}
+// ANCHOR_END: example
+
+fn main() {} // TODO
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
+}

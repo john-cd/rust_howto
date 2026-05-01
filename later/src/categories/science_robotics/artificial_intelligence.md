@@ -40,6 +40,6 @@ Rust Crates:
 
 [![dora-rs][c~dora-rs~docs~badge]][c~dora-rs~docs] [![dora-rs~crates.io][c~dora-rs~crates.io~badge]][c~dora-rs~crates.io] [![dora-rs~repo][c~dora-rs~repo~badge]][c~dora-rs~repo] [![dora-rs~lib.rs][c~dora-rs~lib.rs~badge]][c~dora-rs~lib.rs]{{hi:dora-rs}}
 
-Dataflow Oriented Robotic Architecture: FIXME
+Dataflow Oriented Robotic Architecture resources are still maturing in Rust, but Rust's safety and performance are a good match for robotics AI workloads.
 
 </div>

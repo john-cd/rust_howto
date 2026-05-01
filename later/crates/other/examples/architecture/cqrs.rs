@@ -1,7 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-// COMING SOON
-// ANCHOR_END: example
 //! CQRS (Command Query Responsibility Segregation) is an architectural
 //! pattern that separates the models for reading and writing data.
 //! This separation allows for independent scaling and optimization of the
@@ -11,7 +9,6 @@
 //! - Commands and queries are handled separately.
 //! - The write side (commands) focuses on state changes.
 //! - The read side (queries) focuses on efficient data retrieval.
-
 
 /// Domain Model.
 mod domain {
@@ -119,8 +116,6 @@ mod events {
 /// Commands module.
 mod commands {
 
-
-
     use super::events::EventRepository;
     use super::events::ProductEvent;
 
@@ -156,8 +151,8 @@ mod commands {
         /// Validates a command before applying it.
         fn validate(&self, command: &Command) -> anyhow::Result<()> {
             match command {
-                Command::CreateProduct { quantity, .. } if *quantity == 0 =>
-{                     Err(anyhow::anyhow!(
+                Command::CreateProduct { quantity, .. } if *quantity == 0 => {
+                    Err(anyhow::anyhow!(
                         "Cannot create product with zero quantity!"
                     ))
                 }
@@ -199,8 +194,8 @@ mod commands {
                         self.event_store.apply_event(event);
                         Ok(())
                     } else {
-                        Err(anyhow::anyhow!("Product with id {id} not found"
-))                     }
+                        Err(anyhow::anyhow!("Product with id {id} not found"))
+                    }
                 }
             }
         }
@@ -249,13 +244,11 @@ mod read_store {
     /// Repository with domain objects.
     pub trait ProductRepository {
         fn get_product(&self, id: u32) -> Option<Product>;
-        // FIXME get_all_products() -> Vec<Product>;
+        // Additional read methods can be added here, such as
+        // `get_all_products()`.
     }
 
     /// `SimpleProductRepository` struct.
-
-
-
 
     /// SimpleReadStore struct.
     ///
@@ -286,8 +279,8 @@ mod read_store {
                     let mut read_model = self.read_model.write().unwrap();
                     read_model.insert(id, Product::new(id, name, quantity));
                 }
-                ProductEvent::ProductQuantityUpdated { id, new_quantity } =>
-{                     let mut read_model = self.read_model.write().unwrap();
+                ProductEvent::ProductQuantityUpdated { id, new_quantity } => {
+                    let mut read_model = self.read_model.write().unwrap();
                     if let Some(product) = read_model.get_mut(&id) {
                         product.set_quantity(new_quantity);
                     }
@@ -378,53 +371,59 @@ fn main() -> anyhow::Result<()> {
         })
         .unwrap();
 
-    // read_store.rebuild_read_model(events);
-    // if let Some(product) = query_handler.get_product(2) {
-    //     println!("Product: {product:?}");
-    // } else {
-    //     println!("Product not found");
-    // }
+    let events = command_handler.event_store.get_events(None);
+    read_store.rebuild_read_model(events);
+    if let Some(product) = query_handler.get_product(2) {
+        println!("Product: {product:?}");
+    } else {
+        println!("Product not found");
+    }
     Ok(())
 }
+// ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    // We just execute main, which shouldn't panic
-    let _ = main();
-    Ok(())
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() -> anyhow::Result<()> {
+        // We just execute main, which shouldn't panic
+        let _ = main();
+        Ok(())
+    }
+
+    #[test]
+    fn test_negative_quantity_update_returns_error() -> anyhow::Result<()> {
+        let event_store = events::SimpleEventStore::new();
+        let command_handler = commands::CommandHandler::new(event_store);
+
+        command_handler.process(commands::Command::CreateProduct {
+            id: 1,
+            name: "Test Product".to_string(),
+            quantity: 10,
+        })?;
+
+        let result =
+            command_handler.process(commands::Command::UpdateProductQuantity {
+                id: 1,
+                quantity_change: -11,
+            });
+
+        assert!(result.is_err());
+        assert!(
+            result
+                .unwrap_err()
+                .to_string()
+                .contains("Update would result in negative quantity")
+        );
+
+        Ok(())
+    }
 }
-
-#[test]
-fn test_negative_quantity_update_returns_error() -> anyhow::Result<()> {
-    let event_store = events::SimpleEventStore::new();
-    let command_handler = commands::CommandHandler::new(event_store);
-
-    command_handler.process(commands::Command::CreateProduct {
-        id: 1,
-        name: "Test Product".to_string(),
-        quantity: 10,
-    })?;
-
-    let result = command_handler.process(commands::Command::UpdateProductQuantity {
-        id: 1,
-        quantity_change: -11,
-    });
-
-    assert!(result.is_err());
-    assert!(result
-        .unwrap_err()
-        .to_string()
-        .contains("Update would result in negative quantity"));
-
-    Ok(())
-}
-
-// TODO finish
-// <https://martinfowler.com/bliki/CQRS.html>
-// <https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-1?source=more_series_bottom_blogs>
-// <https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-2>
-// <https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs>
-// <https://doc.rust-cqrs.org/intro.html>
-// <https://github.com/primait/event_sourcing.rs>
-// <https://github.com/eniltrexAdmin/crappy-user>
-// <https://github.com/serverlesstechnology/cqrs-demo/tree/main>
+// TODO
+// Notes:
+// - This example can be extended with a `get_all_products()` query method,
+//   event store snapshots, and more advanced read-model reconstruction.
+// - See the CQRS pattern for additional architecture guidance: https://martinfowler.com/bliki/CQRS.html
+//   https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-1 https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-2
+//   https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs https://doc.rust-cqrs.org/intro.html

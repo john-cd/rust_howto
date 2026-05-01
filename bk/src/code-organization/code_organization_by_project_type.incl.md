@@ -7,3 +7,4 @@
 | [Create a Prelude for Commonly Used Items of Your Library][ex~code-organization~prelude] |
 | [Organize the Code of a Binary Crate][ex~code-organization~binary-crate-organization] |
 | [Organize Large Projects Using a Workspace][ex~code-organization~large-projects] |
+| [Monorepos and Git Submodules][ex~code-organization~monorepos-and-git-submodules] |

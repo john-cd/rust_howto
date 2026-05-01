@@ -10,15 +10,15 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = ["development_tools_build_utils"]
+categories = ["development-tools::build-utils"]
 publish.workspace = true
 build = "build.rs"
 autolib = false
 
 [dependencies]
 anyhow = "1.0.100"
-cc = "1.2.59"
 autocfg = "1.5.0"
+cc = "1.2.59"
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 
