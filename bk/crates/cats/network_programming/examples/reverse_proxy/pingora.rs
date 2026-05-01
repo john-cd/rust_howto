@@ -1,7 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-// COMING SOON
-// ANCHOR_END: example
 //! Pingora example.
 //!
 //! Pingora is a high-performance and low-level async multithreaded library that
@@ -37,6 +35,11 @@ fn main() {
     let mut my_server = Server::new(None).unwrap();
     my_server.bootstrap();
     my_server.run_forever();
+}
+// ANCHOR_END: example
+
+pub fn run() {
+    main();
 }
 
 #[ignore = "Needs review"]

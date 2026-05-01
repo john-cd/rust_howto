@@ -1,3 +1,5 @@
 mod graphics;
 
-fn main() {}
+fn main() {
+    graphics::run();
+}

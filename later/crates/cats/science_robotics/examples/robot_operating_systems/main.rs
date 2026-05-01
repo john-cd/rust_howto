@@ -1,3 +1,5 @@
 mod robotics;
 
-fn main() {}
+fn main() {
+    robotics::run();
+}

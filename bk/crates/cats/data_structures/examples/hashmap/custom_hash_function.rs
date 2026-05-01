@@ -40,7 +40,12 @@ fn main() {
         fnv_map.get("key2")
     );
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

@@ -27,7 +27,12 @@ fn main() {
     // a handle to the local `ThreadRng`, a lazily-initialized thread-local
     // generator.
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

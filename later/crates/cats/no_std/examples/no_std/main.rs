@@ -1,3 +1,8 @@
+#![no_std]
+#![no_main]
+
 mod no_std1;
 
-fn main() {}
+fn main() {
+    no_std1::run();
+}

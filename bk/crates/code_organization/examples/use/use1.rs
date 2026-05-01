@@ -48,7 +48,12 @@ fn main() {
     use a::Point;
     let _p: Point = (1, 2);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

@@ -27,7 +27,12 @@ fn main() -> Result<(), confy::ConfyError> {
     println!("{cfg:?}");
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), confy::ConfyError> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

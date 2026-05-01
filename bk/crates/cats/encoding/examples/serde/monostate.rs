@@ -54,8 +54,13 @@ fn main() {
         "Deserialized ApiResponse (success and error variants) successfully"
     );
 }
+
 // Example adapted from <https://github.com/dtolnay/monostate/blob/master/tests/test.rs>.
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

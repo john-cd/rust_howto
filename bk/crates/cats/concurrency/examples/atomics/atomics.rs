@@ -38,7 +38,12 @@ fn main() {
     println!("Final threads: {final_thread_count}");
     assert_eq!(final_thread_count, 6);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

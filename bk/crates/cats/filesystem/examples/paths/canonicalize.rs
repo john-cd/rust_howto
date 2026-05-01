@@ -21,7 +21,12 @@ fn main() -> std::io::Result<()> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> std::io::Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

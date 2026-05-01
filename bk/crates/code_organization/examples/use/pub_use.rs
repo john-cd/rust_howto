@@ -33,7 +33,12 @@ fn main() {
     // - `a_module`, while private, is accessible, because `main` is in the same
     //   module.
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

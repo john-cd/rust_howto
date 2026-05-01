@@ -12,7 +12,10 @@ Convert and manage colors with a focus on correctness, flexibility and ease of u
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- Image formats and processing.
+- Color spaces and conversion.
+- Graphics and rendering.
+- Multimedia pipelines.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

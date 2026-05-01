@@ -12,3 +12,7 @@ pub fn get_current_time() -> String {
     String::from(date.to_utc_string())
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}

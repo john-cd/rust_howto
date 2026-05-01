@@ -105,7 +105,12 @@ fn main() -> Result<()> {
     println!("Finished with success!");
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

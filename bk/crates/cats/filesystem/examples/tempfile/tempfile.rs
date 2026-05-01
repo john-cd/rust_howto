@@ -105,8 +105,13 @@ fn main() -> std::io::Result<()> {
 
     Ok(())
 }
+
 // Examples adapted from <https://docs.rs/tempfile>
 // ANCHOR_END: example
+
+pub fn run() -> std::io::Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

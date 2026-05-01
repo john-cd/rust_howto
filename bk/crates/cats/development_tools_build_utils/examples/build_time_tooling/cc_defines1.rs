@@ -21,3 +21,5 @@
 //     main();
 // }
 // // [finish; deal with extern](https://github.com/john-cd/rust_howto/issues/901)
+
+pub fn run() {}

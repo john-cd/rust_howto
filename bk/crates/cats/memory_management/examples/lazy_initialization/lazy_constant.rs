@@ -27,7 +27,12 @@ fn main() {
 
     show_access("Jim");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

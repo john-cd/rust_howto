@@ -4,14 +4,17 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - science_neuroscience"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
-categories = [ "science_neuroscience" ]
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = [ "science::neuroscience" ]
 publish.workspace = true
 autolib = false
 
 [dependencies]
+ndarray = "0.15"
+nifti = { version = "0.10", features = ["ndarray_volumes"] }

@@ -1,5 +1,7 @@
+use clap::Parser;
+use clap::Subcommand;
+
 mod bincode;
-// [review](https://github.com/john-cd/rust_howto/issues/1234).
 #[cfg(target_os = "linux")]
 mod capnp;
 mod ciborium;
@@ -8,4 +10,58 @@ mod prost;
 mod protobuf;
 mod rmp_serde;
 
-fn main() {}
+#[derive(Parser)]
+struct Cli {
+    #[command(subcommand)]
+    command: Option<Commands>,
+}
+
+#[derive(Subcommand)]
+enum Commands {
+    #[command(name = "bincode")]
+    Bincode,
+    #[cfg(target_os = "linux")]
+    #[command(name = "capnp")]
+    Capnp,
+    #[command(name = "ciborium")]
+    Ciborium,
+    #[command(name = "flatbuffers")]
+    Flatbuffers,
+    #[command(name = "prost")]
+    Prost,
+    #[command(name = "protobuf")]
+    Protobuf,
+    #[command(name = "rmp_serde")]
+    RmpSerde,
+}
+
+fn main() {
+    let cli = Cli::parse();
+
+    if let Some(command) = cli.command {
+        match command {
+            Commands::Bincode => {
+                bincode::run();
+            }
+            #[cfg(target_os = "linux")]
+            Commands::Capnp => {
+                capnp::run();
+            }
+            Commands::Ciborium => {
+                ciborium::run();
+            }
+            Commands::Flatbuffers => {
+                flatbuffers::run();
+            }
+            Commands::Prost => {
+                prost::run();
+            }
+            Commands::Protobuf => {
+                protobuf::run();
+            }
+            Commands::RmpSerde => {
+                rmp_serde::run();
+            }
+        }
+    }
+}

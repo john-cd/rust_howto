@@ -4,13 +4,14 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description = "Book code examples and their crate dependencies - template_engine"
+readme = "README.md"
+description = "Code examples for popular Rust template engines including Tera and TinyTemplate."
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
-categories = ["template_engine"]
+
+keywords = ["templates", "tera", "tinytemplate", "web", "rendering"]
+categories = ["template-engine"]
 publish.workspace = true
 autolib = false
 

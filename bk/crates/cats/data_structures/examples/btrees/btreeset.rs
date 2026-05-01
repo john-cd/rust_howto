@@ -79,7 +79,12 @@ fn main() {
     names.clear();
     println!("Set is empty: {}", names.is_empty());
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

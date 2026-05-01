@@ -38,3 +38,5 @@
 //     main();
 // }
 // // [finish](https://github.com/john-cd/rust_howto/issues/697)
+
+pub fn run() {}

@@ -6,7 +6,7 @@ use std::fs;
 
 use rusqlite::Connection;
 
-pub fn main() -> anyhow::Result<()> {
+fn main() -> anyhow::Result<()> {
     // Create the "temp" directory if it doesn't exist.
     if !fs::exists("temp")? {
         fs::create_dir("temp")?;
@@ -33,3 +33,7 @@ pub fn main() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
+pub fn run() -> anyhow::Result<()> {
+    main()
+}

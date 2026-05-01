@@ -4,29 +4,33 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - science_robotics"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
-categories = ["science_robotics"]
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["science::robotics"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
+clap = { version = "4.6.1", features = ["derive"] }
 bonsai-bt = "0.10.0"
-# FIXME openrr = { version = "0.1.0", optional = true } # FIXME lacks native static library `assimpd` on windows https://github.com/assimp/assimp/blob/master/Build.md
-# LATER add example? urdf-rs = "0.9.0"
-zenoh = "1.1.0" # https://github.com/john-cd/rust_howto/issues/1441
-
-## General
+openrr = { version = "0.1.0", optional = true }
+zenoh = "1.1.0"
 anyhow = "1.0.95"
 tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread"] }
-# tracing = "0.1.41"
-# tracing-subscriber = "0.3.20"
-# async-trait = "0.1.85"
+tracing = "0.1.41"
+tracing-subscriber = "0.3.20"
+async-trait = "0.1.85"
+
+[target.'cfg(not(target_os = "windows"))'.dependencies]
+rosrust = { version = "0.9.12", optional = true }
+rosrust_msg = { version = "0.1.8", optional = true }
 
 [features]
 default = []
-# FIXME openrr = ["dep:openrr"]
+openrr = ["dep:openrr"]
+rosrust = ["dep:rosrust", "dep:rosrust_msg"]

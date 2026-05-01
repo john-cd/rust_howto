@@ -4,64 +4,66 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description = "Book code examples and their crate dependencies - gui"
+readme = "README.md"
+description = "Comprehensive examples of Rust GUI frameworks including Slint, Egui, Iced, and Tauri."
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["gui", "slint", "egui", "iced", "tauri", "dioxus"]
 categories = ["gui"]
 publish.workspace = true
 autolib = false
 
-# FIXME
 [dependencies]
+clap = { version = "4.6.1", features = ["derive"] }
 arboard = "3.4.1"
 cosmic-text = "0.14.0"
 dioxus = { version = "0.6.1", optional = true }
-# dioxus-desktop = { version = "0.6.1", optional = true }
-# dioxus-web = { version = "0.6.1", optional = true }
 eframe = "0.32.1"
 egui = "0.32.1"
 femtovg = { version = "0.16.0", optional = true }
-# floem = { version = "0.2.0", optional = true } # FIXME review requirements
-# gtk = { version = "0.9.5", package = "gtk4", optional = true } # FIXME Make sure to use gtk4; for relm4 / gtk4 examples
+floem = { version = "0.2.0", optional = true }
 iced = { version = "0.13.1", optional = true }
-# minifb = "0.28.0"
+minifb = "0.28.0"
+parley = "0.9.0"
 morphorm = "0.7.0"
 # pollster = { version = "0.4", optional = true } # for vello example
 # # FIXME size-of v0.1.5 does not compile on Windows:
 # # r3bl_tuify = "0.2.0"
 # relm4 = { version = "0.9.1", optional = true }
 # relm4-components = { version = "0.9.1", optional = true }
+# GTK support requires native GTK libraries and pkg-config on the host system.
+# This workspace does not enforce GTK support in the all-features build.
 # # FIXME https://gtk-rs.org/gtk4-rs/git/book/installation_linux.html
 # # FIXME https://gtk-rs.org/gtk4-rs/git/book/installation_windows.html
 rfd = "0.15.2"
-skia-safe = { version = "0.86.0", features = [
+skia-safe = { version = "0.84.0", features = [
     "gl",
-], optional = true } # pinned for slint
-slint = "1.10.0"
+], optional = true } # TODO pinned for slint
+slint = "1.11.0"
 taffy = "0.9.1"
+baseview = { git = "https://github.com/RustAudio/baseview", branch = "master" }
 tao = "0.34.0"
 tauri = "2.0.6" # Requires multiple libraries. See Dockerfile
 vello = { version = "0.5.0", optional = true }
-vger = { version = "0.4.0", optional = true }
-# vizia = { version = "0.2.0", optional = true } # FIXME conflict with skia-safe
-# webrender = { version = "0.61.0", optional = true } # FIXME conflicts with RustQuant - native library `freetype`
+vger = "0.4.0"
+vizia = { version = "0.3.0", optional = true }
+webrender = { version = "0.68.0", optional = true }
+glutin = { version = "0.28.0", optional = true }
+gl = { version = "0.14.0", optional = true }
 winit = "0.30.8"                               # for vello, winit examples
-xilem = { version = "0.3.0", optional = true }
-
-## General
+wgpu = "22"
+pollster = "0.4"
 anyhow = "1.0.95"
 
-# FIXME
 [features]
 default = []
 dioxus = ["dep:dioxus"] # "dep:dioxus-web", "dep:dioxus-desktop"
-#femtovg = ["dep:femtovg"]
-#gtk = ["dep:gtk", "dep:relm4", "dep:relm4-components"]
+webrender = ["dep:webrender", "dep:glutin", "dep:gl"]
+femtovg = ["dep:femtovg"]
 iced = ["dep:iced"]
-skia = ["dep:skia-safe"]
-vger = ["dep:vger"]
-#vello = ["dep:pollster", "dep:vello"]
-xilem = ["dep:xilem"]
+skia = ["dep:skia-safe", "dep:glutin", "dep:gl"]
+vello = ["dep:vello"]
+floem = ["dep:floem"]
+vizia = ["dep:vizia"]

@@ -21,7 +21,12 @@ fn main() {
     println!("Value of y after converting from x: {y}");
     assert_eq!(y, 1.0);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

@@ -17,7 +17,10 @@
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- Async embedded programming.
+- Embedded hardware abstraction.
+- Real-time systems and low power design.
+- HAL and PAC-based development.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

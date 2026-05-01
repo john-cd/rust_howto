@@ -30,7 +30,12 @@ fn main() {
     let john = new("John");
     println!("{john:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

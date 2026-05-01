@@ -4,7 +4,7 @@ use async_channel::Receiver;
 use async_channel::Sender;
 use async_channel::TryRecvError;
 use async_channel::bounded;
-use rand::Rng;
+use rand::RngExt;
 use tokio::task;
 use tokio::time;
 use tokio::time::Duration;
@@ -95,7 +95,12 @@ async fn main() {
     // The channel is empty:
     assert!(rx.is_empty());
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

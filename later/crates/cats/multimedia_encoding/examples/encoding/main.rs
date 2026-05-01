@@ -1,3 +1,5 @@
 mod encoding;
 
-fn main() {}
+fn main() {
+    encoding::run();
+}

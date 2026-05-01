@@ -4,17 +4,19 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description = "Book code examples and their crate dependencies - memory_management"
+readme = "README.md"
+description = "Examples of advanced memory management, allocators, and data structures like Slab and Bumpalo."
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
-categories = ["memory_management"]
+
+keywords = ["memory", "allocators", "bumpalo", "mimalloc", "slab", "optimization"]
+categories = ["memory-management"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
+clap = { version = "4.6.1", features = ["derive"] }
 anyhow = "1.0.100"
 bumpalo = "3.17.0"
 lazy_static = "1.5.0"

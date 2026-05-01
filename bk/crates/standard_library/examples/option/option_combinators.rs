@@ -22,7 +22,12 @@ fn main() {
     let contents = contents_maybe.unwrap_or_else(String::new);
     println!("{contents}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

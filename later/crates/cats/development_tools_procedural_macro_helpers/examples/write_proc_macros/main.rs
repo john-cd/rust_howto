@@ -1,27 +1,60 @@
+//! Demonstrates how to use `darling`, `proc-macro2`, `syn`, and `quote`
+//! outside of a `proc-macro` crate.
+//!
+//! This example parses a simple struct syntax tree, generates a `Debug`
+//! implementation, and prints the resulting token stream.
+
+use clap::{Parser, Subcommand};
+
 mod darling;
 mod paste;
 mod proc_macro2;
 mod quote;
 mod syn;
 
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
-// //! # Procedural Macro Examples
-// //!
-// //! The following demonstrates the usage of an example `log_fn` procedural
-// macro. //!
-// //! The `log_fn` macro automatically logs the entry and exit of a function.
-// use development_tools_procedural_macro_helpers::log_fn;
+#[derive(Parser)]
+struct Cli {
+    #[command(subcommand)]
+    command: Option<Commands>,
+}
 
-// #[log_fn]
-// fn my_function() {
-//     println!("Inside my_function");
-// }
+#[derive(Subcommand)]
+enum Commands {
+    #[command(name = "darling")]
+    Darling,
+    #[command(name = "paste")]
+    Paste,
+    #[command(name = "proc_macro2")]
+    ProcMacro2,
+    #[command(name = "quote")]
+    Quote,
+    #[command(name = "syn")]
+    Syn,
+}
 
-// fn main() {
-//     my_function();
-// }
+fn main() {
+    let cli = Cli::parse();
+
+    if let Some(command) = cli.command {
+        match command {
+            Commands::Darling => {
+                darling::run();
+            }
+            Commands::Paste => {
+                paste::run();
+            }
+            Commands::ProcMacro2 => {
+                proc_macro2::run();
+            }
+            Commands::Quote => {
+                quote::run();
+            }
+            Commands::Syn => {
+                syn::run();
+            }
+        }
+    }
+}
 
 // // [finish; review the following; decide what examples are needed](https://github.com/john-cd/rust_howto/issues/1158)
 // // for proc macros. move proc macros to lib.rs
@@ -41,5 +74,3 @@ mod syn;
 // // <https://www.shuttle.dev/blog/2022/12/23/procedural-macros>
 // // <https://doc.rust-lang.org/core/macro.compile_error.html>
 // // <https://github.com/dtolnay/watt>.
-
-fn main() {}

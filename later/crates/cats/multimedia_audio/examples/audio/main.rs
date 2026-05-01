@@ -1,3 +1,6 @@
 mod audio;
 
-fn main() {}
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    audio::run();
+    Ok(())
+}

@@ -1,3 +1,5 @@
 mod yew;
 
-fn main() {}
+fn main() {
+    yew::run();
+}

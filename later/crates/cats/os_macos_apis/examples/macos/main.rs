@@ -1,3 +1,5 @@
 mod macos;
 
-fn main() {}
+fn main() {
+    macos::run();
+}

@@ -75,7 +75,7 @@ fn adhoc_profiling() {
     }
 }
 
-pub(crate) fn main() {
+fn main() {
     heap_profiling();
     adhoc_profiling();
 }
@@ -113,6 +113,10 @@ fn heap_usage_testing() {
 }
 // Example adapted from <https://docs.rs/dhat/latest/dhat/>
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[test]
 fn test() {

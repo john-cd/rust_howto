@@ -30,7 +30,12 @@ fn main() {
         Wrapper(vec!["example".to_string(), "example 2".to_string()])
     );
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

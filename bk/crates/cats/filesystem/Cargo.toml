@@ -4,17 +4,19 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - filesystem"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = ["filesystem"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
+clap = { version = "4.6.1", features = ["derive"] }
 anyhow = "1.0.100"
 camino = "1.2.1"
 directories = "6.0.0"

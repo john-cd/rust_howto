@@ -65,7 +65,12 @@ fn main() {
     scores.clear();
     println!("After clearing, number of teams: {}", scores.len());
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

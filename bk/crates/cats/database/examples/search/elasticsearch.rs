@@ -140,6 +140,10 @@ async fn cat_indices(client: Elasticsearch) -> Result<Response, Error> {
 }
 // ANCHOR_END: example
 
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

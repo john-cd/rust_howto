@@ -1,3 +1,5 @@
 mod linkedlist;
 
-fn main() {}
+fn main() {
+    linkedlist::run();
+}

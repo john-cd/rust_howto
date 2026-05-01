@@ -18,7 +18,12 @@ fn main() {
     // Print the hash as a hexadecimal string:
     println!("MD5 hash of '{data}': {digest:x}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

@@ -34,7 +34,12 @@ fn main() {
     queue.push_front(-2);
     assert_eq!(queue.back(), Some(&-1));
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

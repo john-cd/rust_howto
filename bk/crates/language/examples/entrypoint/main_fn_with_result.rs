@@ -12,7 +12,12 @@ fn main() -> std::io::Result<()> {
     // meaningful return value.
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> std::io::Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

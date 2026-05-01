@@ -1,4 +1,34 @@
+use clap::Parser;
+use clap::Subcommand;
+
 mod afl;
 mod bolero_example;
 
-fn main() {}
+#[derive(Parser)]
+struct Cli {
+    #[command(subcommand)]
+    command: Option<Commands>,
+}
+
+#[derive(Subcommand)]
+enum Commands {
+    #[command(name = "afl")]
+    Afl,
+    #[command(name = "bolero_example")]
+    BoleroExample,
+}
+
+fn main() {
+    let cli = Cli::parse();
+
+    if let Some(command) = cli.command {
+        match command {
+            Commands::Afl => {
+                afl::run();
+            }
+            Commands::BoleroExample => {
+                bolero_example::run();
+            }
+        }
+    }
+}

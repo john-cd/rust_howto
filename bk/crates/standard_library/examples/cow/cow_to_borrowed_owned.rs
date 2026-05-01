@@ -35,7 +35,12 @@ fn main() {
     // already owned.
     println!("{}", example.into_owned());
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

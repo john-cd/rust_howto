@@ -18,12 +18,12 @@ fn main() -> Result<()> {
     create_test_files()?;
 
     let options: MatchOptions = Default::default();
-    let files: Vec<_> = glob_with("*.jpg", options)?
+    let files: Vec<_> = glob_with("temp/test_images/*.jpg", options)?
         .filter_map(|x| x.ok())
         .collect();
 
     if files.is_empty() {
-        println!("No .jpg files found in current directory");
+        println!("No .jpg files found in temp/test_images");
         return Ok(());
     }
 
@@ -90,6 +90,10 @@ fn create_test_files() -> Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

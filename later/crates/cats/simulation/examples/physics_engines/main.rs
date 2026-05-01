@@ -1,2 +1,5 @@
-// LATER
-fn main() {}
+mod rapier2d;
+
+fn main() {
+    rapier2d::run();
+}

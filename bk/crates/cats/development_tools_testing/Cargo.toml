@@ -4,25 +4,27 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description = "Book code examples and their crate dependencies - development_tools_testing"
+readme = "README.md"
+description = "Examples of advanced testing techniques including property-based testing, mocking, and fuzzing."
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
-categories = ["development_tools_testing"]
+
+keywords = ["testing", "proptest", "mockall", "insta", "fuzzing", "bolero"]
+categories = ["development-tools::testing"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
+clap = { version = "4.6.1", features = ["derive"] }
 afl = "0.15.13"
 approx = "0.5.1" # was pinned at 0.4.0
+arbitrary = { version = "1.4.1", features = ["derive"] }
+bolero = "0.13.0"
 fake = { version = "4.4.0", features = ["derive"] }
 faux = "0.1.13"
 insta = "1.43.2"
 mockall = "0.13.1"
 proptest = "1.9.0"
-bolero = "0.13.0"
-arbitrary = { version = "1.4.1", features = ["derive"] }
 
 ## General

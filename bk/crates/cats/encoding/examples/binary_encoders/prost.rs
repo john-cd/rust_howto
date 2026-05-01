@@ -28,7 +28,12 @@ fn main() {
 
     println!("Name: {}, Age: {}", decoded_person.name, decoded_person.age);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

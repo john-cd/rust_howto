@@ -60,7 +60,12 @@ fn main() {
 
     println!("{html}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

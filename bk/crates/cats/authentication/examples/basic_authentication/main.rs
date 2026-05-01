@@ -1,3 +1,5 @@
 mod basic;
 
-fn main() {}
+fn main() {
+    basic::run();
+}

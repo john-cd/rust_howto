@@ -56,7 +56,7 @@ impl Rocket {
     }
 }
 
-pub fn main() {
+fn main() {
     let mut rocket = Rocket {
         mass_empty: 500.0,
         fuel_mass: 1500.0,
@@ -83,14 +83,15 @@ pub fn main() {
 }
 // ANCHOR_END: example
 
+pub fn run() {
+    main();
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
-
     #[test]
     fn test_rocket_simulation() {
-        main();
-
         let mut rocket = Rocket {
             mass_empty: 500.0,
             fuel_mass: 1500.0,

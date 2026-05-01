@@ -19,7 +19,12 @@ fn main() {
 
     foo(42, 43);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

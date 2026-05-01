@@ -18,7 +18,12 @@ async fn main() -> Result<()> {
     println!("Response from httpbin: {response_text}");
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
 
 #[tokio::test]
 async fn test() -> anyhow::Result<()> {
@@ -31,7 +36,7 @@ async fn test() -> anyhow::Result<()> {
     f.write_all(b"Hello").await?;
 
     // In a CI environment, we might want to skip tests that require network
-    // access. 
+    // access.
     // TODO main().await?;
     Ok(())
 }

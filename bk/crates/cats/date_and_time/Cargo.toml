@@ -4,17 +4,20 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - date_and_time"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
-categories = ["date_and_time"]
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["date-and-time"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
+anyhow = "1.0.100"
+clap = { version = "4.6.1", features = ["derive"] }
 chrono = "0.4.42"
 humantime = "2.1.0"
 time = "0.3.45"

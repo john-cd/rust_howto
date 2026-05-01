@@ -22,7 +22,12 @@ fn main() {
     assert_eq!(v, 9);
     println!("{v}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

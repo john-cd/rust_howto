@@ -1,4 +1,9 @@
 #[cfg(feature = "elasticsearch")]
 mod elasticsearch;
 
-fn main() {}
+fn main() {
+    #[cfg(feature = "elasticsearch")]
+    {
+        elasticsearch::run();
+    }
+}

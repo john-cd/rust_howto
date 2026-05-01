@@ -1,23 +1,65 @@
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR: example
+//! Create a simple `baseview` window and respond to basic window events.
+//!
+//! The window stays open until the close button is requested.
+//!
+//! `baseview` is a specialized, low-level window creation library targetting
+//! windows to be embedded in other applications (e.g. audio plugin UIs).
+//!
+//! `baseview` abstracts the platform-specific windowing APIs (`winapi`,
+//! `cocoa`, `xcb`) into a platform-independent API, but otherwise gets out of
+//! your way so we can write plugin UIs.
+//!
+//! Requirements (Linux):
+//! ```sh
+//! sudo apt-get install libx11-dev libxcb1-dev libx11-xcb-dev libgl1-mesa-dev
+//! ```
+use anyhow::Result;
+use baseview::ControlFlow;
+use baseview::Size;
+use baseview::Window;
+use baseview::WindowDelegate;
+use baseview::WindowEvent;
+use baseview::WindowOpenOptions;
+use baseview::WindowScalePolicy;
 
-// Specialized window creation library targetting windows
-// to be embedded in other applications (e.g. DAW plugins).
+struct BaseviewExample;
 
-// A low-level windowing system geared towards making audio plugin UIs.
+impl WindowDelegate for BaseviewExample {
+    fn on_frame(&mut self, _window: &mut Window<'_>) {
+        // No drawing is performed in this example; just keep the window
+        // responsive.
+    }
 
-// `baseview` abstracts the platform-specific windowing APIs (`winapi`, `cocoa`,
-// `xcb`) into a platform-independent API, but otherwise gets out of your way so
-// we can write plugin UIs.
-
-// Requirements:
-// ```sh
-// sudo apt-get install libx11-dev libxcb1-dev libx11-xcb-dev libgl1-mesa-dev
-// ```
-
-pub fn main() -> anyhow::Result<()> {
-    Ok(())
+    fn on_window_event(
+        &mut self,
+        event: WindowEvent<'_>,
+        control_flow: &mut ControlFlow,
+    ) {
+        match event {
+            WindowEvent::CloseRequested => *control_flow = ControlFlow::Exit,
+            WindowEvent::Resized(size) => {
+                println!("Window resized to: {}x{}", size.width, size.height);
+            }
+            WindowEvent::Moved(position) => {
+                println!("Window moved to: {}x{}", position.x, position.y);
+            }
+            _ => (),
+        }
+    }
 }
 
-// [write; review https://github.com/RustAudio/baseview](https://github.com/john-cd/rust_howto/issues/1056)
+fn main() -> Result<()> {
+    let size = Size::new(640.0, 480.0);
+    let mut open_options =
+        WindowOpenOptions::new("Baseview Example".to_string(), size);
+    open_options.scale = WindowScalePolicy::ScaleFactor(1.0);
+
+    Window::open_parentless(open_options, Box::new(BaseviewExample));
+    Ok(())
+}
+// ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}

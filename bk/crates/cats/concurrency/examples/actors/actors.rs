@@ -30,3 +30,5 @@
 // }
 // // ANCHOR_END: example
 // // [finish](https://github.com/john-cd/rust_howto/issues/1011)
+
+pub fn run() {}

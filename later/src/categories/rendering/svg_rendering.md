@@ -18,7 +18,10 @@
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- Vector graphics and rendering.
+- UI toolkits and shape drawing.
+- Cross-platform graphics libraries.
+- Image and multimedia workflows.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

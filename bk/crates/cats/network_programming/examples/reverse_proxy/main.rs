@@ -1,6 +1,37 @@
+use clap::Parser;
+use clap::Subcommand;
+
 mod ngrok;
-// Linux is Pingora's tier 1 environment and main focus.
 #[cfg(target_family = "unix")]
 mod pingora;
 
-fn main() {}
+#[derive(Parser)]
+struct Cli {
+    #[command(subcommand)]
+    command: Option<Commands>,
+}
+
+#[derive(Subcommand)]
+enum Commands {
+    #[command(name = "ngrok")]
+    Ngrok,
+    #[cfg(target_family = "unix")]
+    #[command(name = "pingora")]
+    Pingora,
+}
+
+fn main() {
+    let cli = Cli::parse();
+
+    if let Some(command) = cli.command {
+        match command {
+            Commands::Ngrok => {
+                ngrok::run();
+            }
+            #[cfg(target_family = "unix")]
+            Commands::Pingora => {
+                pingora::run();
+            }
+        }
+    }
+}

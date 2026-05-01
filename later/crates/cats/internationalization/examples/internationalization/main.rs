@@ -1,3 +1,5 @@
 mod internationalization1;
 
-fn main() {}
+fn main() {
+    internationalization1::run();
+}
