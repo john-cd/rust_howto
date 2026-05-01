@@ -13,7 +13,12 @@ fn main() {
         Colour::Yellow.bold().paint("this is bold and colored")
     );
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

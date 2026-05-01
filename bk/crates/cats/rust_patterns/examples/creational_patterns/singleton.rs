@@ -56,7 +56,12 @@ fn main() {
     let settings_guard_3 = get_settings().lock().unwrap();
     println!("Config 3: {}", settings_guard_3.get_config());
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

@@ -16,8 +16,7 @@ fn main() -> Result<(), String> {
 // ANCHOR_END: example
 
 pub fn run() -> Result<(), String> {
-    main()?;
-    Ok(())
+    main()
 }
 
 #[cfg(test)]

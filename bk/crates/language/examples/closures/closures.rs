@@ -16,7 +16,12 @@ fn main() {
         println!("{s}");
     }
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

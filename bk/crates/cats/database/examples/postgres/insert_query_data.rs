@@ -67,6 +67,6 @@ fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
-pub fn run() {
-    main();
+pub fn run() -> Result<(), Error> {
+    main()
 }

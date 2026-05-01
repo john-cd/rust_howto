@@ -1,5 +1,5 @@
 mod rustquant;
 
 fn main() {
-    rustquant::run();
+    let _ = rustquant::run();
 }

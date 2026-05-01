@@ -1,5 +1,5 @@
 mod cryptocurrencies;
 
 fn main() {
-    cryptocurrencies::run();
+    let _ = cryptocurrencies::run();
 }

@@ -1,4 +1,9 @@
 #[cfg(all(target_os = "linux", feature = "sqlite"))]
+use clap::Parser;
+#[cfg(all(target_os = "linux", feature = "sqlite"))]
+use clap::Subcommand;
+
+#[cfg(all(target_os = "linux", feature = "sqlite"))]
 mod initialization;
 #[cfg(all(target_os = "linux", feature = "sqlite"))]
 mod insert_select;
@@ -6,20 +11,48 @@ mod insert_select;
 mod transactions;
 
 #[cfg(all(target_os = "linux", feature = "sqlite"))]
-fn main() -> anyhow::Result<()> {
-    use std::fs;
-    if !fs::exists("temp")? {
-        fs::create_dir("temp")?;
-    }
-    let _ = fs::remove_file("temp/cats.db");
-    initialization::run()?;
-    insert_select::run()?;
-    transactions::run()?;
-    Ok(())
+#[derive(Parser)]
+struct Cli {
+    #[command(subcommand)]
+    command: Option<Commands>,
 }
 
-#[cfg(not(all(target_os = "linux", feature = "sqlite")))]
+#[cfg(all(target_os = "linux", feature = "sqlite"))]
+#[derive(Subcommand)]
+enum Commands {
+    #[cfg(all(target_os = "linux", feature = "sqlite"))]
+    #[command(name = "initialization")]
+    Initialization,
+    #[cfg(all(target_os = "linux", feature = "sqlite"))]
+    #[command(name = "insert_select")]
+    InsertSelect,
+    #[cfg(all(target_os = "linux", feature = "sqlite"))]
+    #[command(name = "transactions")]
+    Transactions,
+}
+
 fn main() -> anyhow::Result<()> {
+    #[cfg(all(target_os = "linux", feature = "sqlite"))]
+    {
+        let cli = Cli::parse();
+
+        if let Some(command) = cli.command {
+            match command {
+                #[cfg(all(target_os = "linux", feature = "sqlite"))]
+                Commands::Initialization => {
+                    let _ = initialization::run();
+                }
+                #[cfg(all(target_os = "linux", feature = "sqlite"))]
+                Commands::InsertSelect => {
+                    let _ = insert_select::run();
+                }
+                #[cfg(all(target_os = "linux", feature = "sqlite"))]
+                Commands::Transactions => {
+                    let _ = transactions::run();
+                }
+            }
+        }
+    }
     Ok(())
 }
 

@@ -1,5 +1,5 @@
 mod neuro;
 
 fn main() {
-    neuro::run();
+    let _ = neuro::run();
 }

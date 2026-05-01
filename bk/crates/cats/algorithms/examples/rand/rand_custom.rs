@@ -3,6 +3,7 @@
 //! Demonstrates how to implement a custom distribution for the `rand` crate.
 
 use rand::Rng;
+use rand::RngExt;
 use rand::distr::Distribution;
 use rand::distr::StandardUniform;
 
@@ -34,7 +35,12 @@ fn main() {
     let rand_point: Point = rng.random();
     println!("Random Point: {rand_point:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

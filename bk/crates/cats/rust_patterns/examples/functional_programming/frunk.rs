@@ -171,7 +171,12 @@ fn main() {
 
     println!("All frunk assertions passed!");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

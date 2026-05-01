@@ -14,7 +14,12 @@ fn main() {
     println!("a: {a}, b: {b}");
     assert_eq!(a, b);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

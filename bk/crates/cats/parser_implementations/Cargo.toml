@@ -22,6 +22,7 @@ ignored = ["rust-ini"]
 sqlparser = ["dep:sqlparser"]
 
 [dependencies]
+clap = { version = "4.6.1", features = ["derive"] }
 anyhow = "1.0.100"
 basic-toml = "0.1.10"
 chrono = { version = "0.4.42", features = ["serde"] }

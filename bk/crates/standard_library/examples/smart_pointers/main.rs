@@ -1,3 +1,5 @@
 mod deref;
 
-fn main() {}
+fn main() {
+    let _ = deref::run();
+}

@@ -19,6 +19,7 @@ autolib = false
 ignored = ["capnpc", "prost", "prost-types", "prost-build"]
 
 [dependencies]
+clap = { version = "4.6.1", features = ["derive"] }
 anyhow = "1.0.100"
 base64 = "0.22.1"
 bincode = "2.0.1"
@@ -47,3 +48,4 @@ zerocopy = { version = "0.8.27", features = ["derive"] }
 [build-dependencies]
 capnpc = "0.21.4"
 prost-build = "0.14.1"
+protoc-bin-vendored = "3"

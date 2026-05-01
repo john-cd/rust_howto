@@ -1,7 +1,33 @@
+use clap::{Parser, Subcommand};
+
 mod openrr;
 mod zenoh;
 
+#[derive(Parser)]
+struct Cli {
+    #[command(subcommand)]
+    command: Option<Commands>,
+}
+
+#[derive(Subcommand)]
+enum Commands {
+    #[command(name = "openrr")]
+    Openrr,
+    #[command(name = "zenoh")]
+    Zenoh,
+}
+
 fn main() {
-    openrr::run();
-    zenoh::run();
+    let cli = Cli::parse();
+
+    if let Some(command) = cli.command {
+        match command {
+            Commands::Openrr => {
+                let _ = openrr::run();
+            }
+            Commands::Zenoh => {
+                let _ = zenoh::run();
+            }
+        }
+    }
 }

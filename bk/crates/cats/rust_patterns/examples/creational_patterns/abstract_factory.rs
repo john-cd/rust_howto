@@ -114,7 +114,12 @@ fn main() {
     // Using the Dark theme factory.
     render(&dark::DarkGUIFactory, "Hello from dark theme!");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

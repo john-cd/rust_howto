@@ -16,6 +16,7 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
+clap = { version = "4.6.1", features = ["derive"] }
 anyhow = "1.0.100"
 arrayvec = "0.7.6"
 bitflags = "2.10.0"

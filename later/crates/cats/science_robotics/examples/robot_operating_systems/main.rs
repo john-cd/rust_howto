@@ -1,5 +1,5 @@
 mod robotics;
 
 fn main() {
-    robotics::run();
+    let _ = robotics::run();
 }

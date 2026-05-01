@@ -42,7 +42,12 @@ fn main() {
         println!("No path found.");
     }
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

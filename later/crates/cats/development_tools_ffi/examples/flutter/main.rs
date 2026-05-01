@@ -1,5 +1,5 @@
 mod flutter_rust_bridge;
 
 fn main() {
-    flutter_rust_bridge::run();
+    let _ = flutter_rust_bridge::run();
 }

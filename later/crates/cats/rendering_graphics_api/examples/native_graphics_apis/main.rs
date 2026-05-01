@@ -1,5 +1,5 @@
 mod graphics;
 
 fn main() {
-    graphics::run();
+    let _ = graphics::run();
 }

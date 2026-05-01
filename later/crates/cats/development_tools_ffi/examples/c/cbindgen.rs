@@ -48,4 +48,5 @@ pub extern "C" fn create_point(x: f64, y: f64) -> Point {
 pub fn run() {
     main();
 }
+
 // [fix; see build.rs](https://github.com/john-cd/rust_howto/issues/1002)

@@ -27,7 +27,12 @@ fn main() {
         "use_shortcuts example: glob imports, combined imports, and aliases"
     );
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

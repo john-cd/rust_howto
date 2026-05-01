@@ -25,7 +25,8 @@ fn main() -> Result<(), winit::error::EventLoopError> {
 }
 // ANCHOR_END: example
 
-pub fn run() {
-    main();
+pub fn run() -> Result<(), winit::error::EventLoopError> {
+    main()
 }
+
 // TODO add a test

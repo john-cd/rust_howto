@@ -1,6 +1,8 @@
 #![allow(dead_code)]
 // ANCHOR: example
 use postage::broadcast;
+use postage::prelude::Sink;
+use postage::prelude::Stream;
 use tokio::task;
 use tokio::time::Duration;
 
@@ -65,7 +67,12 @@ async fn main() {
     // Wait for all the receivers to print:
     tokio::time::sleep(Duration::from_millis(25)).await;
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

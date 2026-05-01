@@ -25,7 +25,12 @@ fn main() {
     let s: &S = &S { field: 3 };
     let _field: u32 = s.field;
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

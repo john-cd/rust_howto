@@ -1,5 +1,5 @@
 mod objc2;
 
 fn main() {
-    objc2::run();
+    let _ = objc2::run();
 }

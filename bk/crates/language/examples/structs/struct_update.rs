@@ -26,7 +26,12 @@ fn main() {
     };
     println!("{user2:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
-use rand::Rng;
+use rand::RngExt;
 use rand::distr::Alphanumeric;
 use rand::distr::SampleString;
 
@@ -19,7 +19,12 @@ fn main() {
     let rand_string2 = Alphanumeric.sample_string(&mut rand::rng(), 20);
     println!("Another random string: {rand_string2}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

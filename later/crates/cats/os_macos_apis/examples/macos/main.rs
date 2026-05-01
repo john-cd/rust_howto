@@ -1,5 +1,5 @@
 mod macos;
 
 fn main() {
-    macos::run();
+    let _ = macos::run();
 }

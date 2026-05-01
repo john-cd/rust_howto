@@ -1,5 +1,5 @@
 mod rustler;
 
 fn main() {
-    rustler::run();
+    let _ = rustler::run();
 }

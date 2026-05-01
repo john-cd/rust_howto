@@ -3,10 +3,10 @@
 //! Example: create a geographic polygon, compute its area, and find its
 //! centroid using the `geo` crate.
 
+use geo::Area;
 use geo::Centroid;
-use geo::GeoFloat;
 use geo::LineString;
-use geo::polygon;
+use geo::Polygon;
 
 fn main() {
     let outer = LineString::from(vec![
@@ -18,9 +18,7 @@ fn main() {
         (0.0, 0.0),
     ]);
 
-    let park = polygon!(
-        exterior: outer,
-    );
+    let park = Polygon::new(outer, vec![]);
 
     let area = park.unsigned_area();
     let centroid = park.centroid().expect("polygon should have a centroid");

@@ -18,7 +18,12 @@ pub fn show_alert() {
 fn main() {
     // TODO run();
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

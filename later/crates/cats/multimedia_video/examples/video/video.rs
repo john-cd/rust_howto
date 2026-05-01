@@ -69,8 +69,9 @@ fn video_path_from_args() -> Option<PathBuf> {
     std::env::args_os().nth(1).map(PathBuf::from)
 }
 // ANCHOR_END: example
-pub fn run() {
-    main();
+
+pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
+    main()
 }
 
 #[cfg(test)]

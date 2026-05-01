@@ -1,5 +1,5 @@
 mod no_alloc;
 
 fn main() {
-    no_alloc::run();
+    let _ = no_alloc::run();
 }

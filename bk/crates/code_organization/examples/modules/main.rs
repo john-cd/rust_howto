@@ -1,3 +1,5 @@
 mod module_visibility;
 
-fn main() {}
+fn main() {
+    let _ = module_visibility::run();
+}

@@ -1,6 +1,6 @@
 mod egui;
 
 fn main() -> Result<(), eframe::Error> {
-    egui::run()?;
+    let _ = egui::run();
     Ok(())
 }

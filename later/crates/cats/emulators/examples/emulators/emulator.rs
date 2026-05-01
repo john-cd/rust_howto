@@ -69,7 +69,9 @@ fn main() -> ExampleResult<()> {
 
     let export_names: Vec<_> = module
         .exports()
-        .map(|export| String::from_utf8_lossy(export.symbol()).into_owned())
+        .map(|export| {
+            String::from_utf8_lossy(export.symbol().as_bytes()).into_owned()
+        })
         .collect();
 
     println!("Loaded guest blob: {}", guest_path.display());
@@ -129,8 +131,8 @@ fn _guest_contract(_path: &Path) -> ExampleResult<()> {
 }
 // ANCHOR_END: example
 
-pub fn run() {
-    main();
+pub fn run() -> ExampleResult<()> {
+    main()
 }
 
 #[test]

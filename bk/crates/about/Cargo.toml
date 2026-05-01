@@ -19,6 +19,3 @@ autolib = false
 anyhow = "1.0.100"
 rand = { version = "0.10.1", features = ["thread_rng"] }
 url = "2.5.7"
-
-[dev-dependencies]
-cargo-husky = { version = "1", default-features = false, features = ["user-hooks"] }

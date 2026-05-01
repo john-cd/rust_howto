@@ -50,7 +50,12 @@ async fn main() -> Result<(), Error> {
     conn.close()?;
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), Error> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

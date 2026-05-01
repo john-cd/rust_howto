@@ -1,5 +1,5 @@
 mod aero_protocols;
 
 fn main() {
-    aero_protocols::run();
+    let _ = aero_protocols::run();
 }

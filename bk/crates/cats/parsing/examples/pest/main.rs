@@ -1,3 +1,5 @@
 mod pest;
 
-fn main() {}
+fn main() {
+    let _ = pest::run();
+}

@@ -34,8 +34,7 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> Result<()> {
-    main()?;
-    Ok(())
+    main()
 }
 
 #[cfg(test)]

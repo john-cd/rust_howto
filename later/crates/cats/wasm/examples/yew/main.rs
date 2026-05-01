@@ -1,5 +1,5 @@
 mod yew;
 
 fn main() {
-    yew::run();
+    let _ = yew::run();
 }

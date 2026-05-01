@@ -1,5 +1,5 @@
 mod accesskit;
 
 fn main() {
-    accesskit::run();
+    let _ = accesskit::run();
 }

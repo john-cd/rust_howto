@@ -15,7 +15,12 @@ fn main() {
         "log_debug example: set RUST_LOG=debug to see the debug log above"
     );
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

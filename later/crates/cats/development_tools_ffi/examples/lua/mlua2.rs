@@ -47,8 +47,8 @@ fn main() -> LuaResult<()> {
 }
 // ANCHOR_END: example
 
-pub fn run() {
-    main().unwrap();
+pub fn run() -> LuaResult<()> {
+    main()
 }
 
 #[cfg(test)]

@@ -1,5 +1,5 @@
 mod data_formats;
 
 fn main() {
-    data_formats::run();
+    let _ = data_formats::run();
 }

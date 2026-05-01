@@ -1,3 +1,5 @@
 mod metadata;
 
-fn main() {}
+fn main() {
+    let _ = metadata::run();
+}

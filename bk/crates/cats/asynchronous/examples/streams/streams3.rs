@@ -76,7 +76,12 @@ async fn main() {
 
     println!("Filtered stream results: {filtered:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

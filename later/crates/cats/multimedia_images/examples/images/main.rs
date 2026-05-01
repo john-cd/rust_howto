@@ -1,5 +1,5 @@
 mod images;
 
 fn main() {
-    images::run().expect("image example failed");
+    let _ = images::run();
 }

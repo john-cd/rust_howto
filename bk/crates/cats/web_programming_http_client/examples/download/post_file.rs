@@ -18,7 +18,12 @@ async fn main() -> Result<()> {
     println!("Response from httpbin: {response_text}");
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
 
 #[tokio::test]
 async fn test() -> anyhow::Result<()> {

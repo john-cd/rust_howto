@@ -16,7 +16,12 @@ fn main() {
         now.format("%a %b %e %T %Y")
     );
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

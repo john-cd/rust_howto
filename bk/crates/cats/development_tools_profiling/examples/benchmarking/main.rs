@@ -1,3 +1,5 @@
 mod criterion;
 
-fn main() {}
+fn main() {
+    let _ = criterion::run();
+}

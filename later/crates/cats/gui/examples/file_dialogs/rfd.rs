@@ -19,4 +19,5 @@ fn main() {
 pub fn run() {
     main();
 }
+
 // [how to test](https://github.com/john-cd/rust_howto/issues/785)

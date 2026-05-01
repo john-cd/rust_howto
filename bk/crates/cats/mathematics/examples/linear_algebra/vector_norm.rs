@@ -32,7 +32,12 @@ fn main() {
     println!("||x||_1 = {}", l1_norm(x.view()));
     println!("Normalizing x yields {:?}", normalize(x));
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

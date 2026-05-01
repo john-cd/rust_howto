@@ -45,7 +45,12 @@ fn main() {
     "};
     println!("\nSQL query:\n{sql_query}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

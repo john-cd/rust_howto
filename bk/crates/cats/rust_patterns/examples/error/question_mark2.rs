@@ -37,7 +37,12 @@ fn main() {
     //     Err(err) => panic!("{err}"),
     // }
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

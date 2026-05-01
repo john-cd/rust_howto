@@ -17,7 +17,12 @@ fn main() {
     print_args!(10);
     print_args!("hello", true);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

@@ -20,7 +20,7 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 
     let locale =
         Locale::try_from_bytes(locale_tag.as_bytes()).unwrap_or_default();
-    let canonical = Locale::canonicalize(locale_tag.as_bytes())?;
+    let canonical = locale.to_string();
     let language = locale.id.language.to_string();
     let region = locale
         .id
@@ -54,8 +54,8 @@ fn render_greeting(language: &str, region: &str) -> &'static str {
 }
 // ANCHOR_END: example
 
-pub fn run() {
-    main();
+pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
+    main()
 }
 
 #[cfg(test)]

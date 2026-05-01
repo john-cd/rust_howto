@@ -16,16 +16,19 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
+clap = { version = "4.6.1", features = ["derive"] }
 bonsai-bt = "0.10.0"
 openrr = { version = "0.1.0", optional = true }
-rosrust = { version = "0.9.12", optional = true }
-rosrust_msg = { version = "0.1.8", optional = true }
 zenoh = "1.1.0"
 anyhow = "1.0.95"
 tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread"] }
 tracing = "0.1.41"
 tracing-subscriber = "0.3.20"
 async-trait = "0.1.85"
+
+[target.'cfg(not(target_os = "windows"))'.dependencies]
+rosrust = { version = "0.9.12", optional = true }
+rosrust_msg = { version = "0.1.8", optional = true }
 
 [features]
 default = []

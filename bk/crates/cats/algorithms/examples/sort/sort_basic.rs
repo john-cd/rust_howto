@@ -12,7 +12,12 @@ fn main() {
     assert_eq!(vec, vec![1, 2, 5, 10, 15]);
     println!("{vec:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

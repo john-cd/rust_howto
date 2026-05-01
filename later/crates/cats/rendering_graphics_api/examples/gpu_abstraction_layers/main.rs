@@ -3,5 +3,7 @@ mod wgpu;
 
 fn main() {
     #[cfg(feature = "wgpu")]
-    wgpu::run();
+    {
+        let _ = wgpu::run();
+    }
 }

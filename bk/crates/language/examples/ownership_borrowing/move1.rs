@@ -16,11 +16,16 @@ fn main() {
     println!("{s2}, world!");
     // ERROR: println!("{s1}, world!"); // `s1` is invalid.
 }
+
 // `s2` gets out of scope here, therefore the String it owns is dropped
 // (deallocated). `s1` invalidation earlier prevents a "double free" error,
 // where two variables might try to deallocate the same memory when they go out
 // of scope.
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

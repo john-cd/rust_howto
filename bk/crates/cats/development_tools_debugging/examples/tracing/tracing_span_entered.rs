@@ -34,7 +34,12 @@ fn main() {
         tracing::info!("Within the span.");
     }
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

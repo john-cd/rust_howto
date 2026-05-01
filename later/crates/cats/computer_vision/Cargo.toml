@@ -5,7 +5,6 @@ authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
 readme = "README.md"
-readme = "README.md"
 description = "Book code examples and their crate dependencies - computer_vision"
 documentation.workspace = true
 homepage.workspace = true

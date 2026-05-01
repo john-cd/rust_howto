@@ -16,6 +16,7 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
+clap = { version = "4.6.1", features = ["derive"] }
 aes-gcm = "0.10.3"
 aes-gcm-siv = "0.11.1"
 anyhow = "1.0.100"
@@ -37,6 +38,7 @@ p256 = { version = "0.13.2", features = ["pkcs8"] }
 pem-rfc7468 = "0.7.0"
 pkcs8 = "0.10.2"
 rand = "0.10.1"   # TODO was pinned because of ed25519
+rand_core = "0.6.4"
 ring = "0.17.14"
 rsa = "0.9.10"
 rustls = "0.23.20"

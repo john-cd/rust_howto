@@ -19,7 +19,12 @@ fn main() {
         scores.get("bob")
     );
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

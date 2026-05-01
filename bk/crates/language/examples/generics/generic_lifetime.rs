@@ -28,7 +28,12 @@ fn main() {
     let literal = "This string literal is of type &'static str";
     let _data: DataHolder<'static, str> = DataHolder { data: literal };
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

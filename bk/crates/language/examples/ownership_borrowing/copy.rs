@@ -26,7 +26,12 @@ fn main() {
     // Both `a` and `b` remain valid:
     println!("a = {a:?}, b = {b:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

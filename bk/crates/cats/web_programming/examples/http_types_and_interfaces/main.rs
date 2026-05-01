@@ -1,3 +1,5 @@
 mod http;
 
-fn main() {}
+fn main() {
+    let _ = http::run();
+}

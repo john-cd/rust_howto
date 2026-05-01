@@ -1,5 +1,5 @@
 mod simulation1;
 
 fn main() {
-    simulation1::run();
+    let _ = simulation1::run();
 }
