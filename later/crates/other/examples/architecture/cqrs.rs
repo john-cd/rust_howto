@@ -393,7 +393,7 @@ mod tests {
     #[test]
     fn test() -> anyhow::Result<()> {
         // We just execute main, which shouldn't panic
-        let _ = main();
+        main();
         Ok(())
     }
 
