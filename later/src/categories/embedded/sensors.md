@@ -4,10 +4,7 @@
 
 ## Related Topics {#related-topics .skip}
 
-- Embedded communication protocols.
-- Sensor fusion and control loops.
-- Microcontroller peripheral access.
-- Robotics and IoT applications.
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

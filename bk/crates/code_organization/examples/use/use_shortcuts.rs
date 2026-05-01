@@ -23,17 +23,11 @@ fn main() {
 
     // Use the alias defined above:
     destruct(v);
-    println!(
-        "use_shortcuts example: glob imports, combined imports, and aliases"
-    );
+    println!("use_shortcuts example: glob imports, combined imports, and aliases");
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        main();
-    }
+#[test]
+fn test() {
+    main();
 }

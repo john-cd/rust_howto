@@ -29,10 +29,7 @@ BEWARE: Be wary of scams.
 
 ## Related Topics
 
-- [[cryptography | Cryptography]].
-- [[blockchain | Blockchain]].
-- [[security | Security]].
-- [[development_tools | Development Tools]].
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

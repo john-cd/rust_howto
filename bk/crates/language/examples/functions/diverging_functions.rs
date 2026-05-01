@@ -27,12 +27,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[should_panic]
-    #[test]
-    fn test() {
-        main();
-    }
+#[should_panic]
+#[test]
+fn test() {
+    main();
 }

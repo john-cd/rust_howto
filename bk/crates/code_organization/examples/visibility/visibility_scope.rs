@@ -30,17 +30,11 @@ fn main() {
     a::b::visible_in_crate();
     // ERROR: a::b::visible_in_parent_module();
     // ERROR: a::b::c::visible_in_a();
-    println!(
-        "visibility_scope example: pub(super) and pub(in path) restrict visibility to specific scopes"
-    );
+    println!("visibility_scope example: pub(super) and pub(in path) restrict visibility to specific scopes");
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        main();
-    }
+#[test]
+fn test() {
+    main();
 }

@@ -53,10 +53,7 @@ Inverse and forward kinematics for 6-axis robots with a parallel base and spheri
 
 ## Related Topics {#related-topics .skip}
 
-- Robotics kinematics and motion planning.
-- Embedded control and real-time systems.
-- Path finding and optimization.
-- [Robot frameworks](./robotics_frameworks.md).
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

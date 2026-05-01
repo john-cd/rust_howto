@@ -17,10 +17,7 @@ Robotics-related sensor/motor drivers:
 
 ## Related Topics {#related-topics .skip}
 
-- Embedded hardware interfaces.
-- Sensor and actuator drivers.
-- Robotics control loops.
-- Low-level systems integration.
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

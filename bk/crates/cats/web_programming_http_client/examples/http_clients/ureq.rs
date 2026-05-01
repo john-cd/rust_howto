@@ -20,13 +20,9 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn require_network() -> anyhow::Result<()> {
-        main()?;
-        Ok(())
-    }
+#[test]
+fn require_network() -> anyhow::Result<()> {
+    main()?;
+    Ok(())
 }
 // [write more?](https://github.com/john-cd/rust_howto/issues/862)

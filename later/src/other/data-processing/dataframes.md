@@ -16,10 +16,7 @@ Similar to the Pandas library in Python but in pure Rust. Uses the {{i:Apache Ar
 
 ## Related Topics {#related-topics .skip}
 
-- [[data_processing | Data and ETL]].
-- [[python | Python]].
-- [[mathematics | Mathematics]].
-- [[visualization | Visualization]].
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

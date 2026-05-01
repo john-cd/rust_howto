@@ -56,18 +56,11 @@ fn main() {
             str_s: message,
         }
     );
-    println!(
-        "Serialized to {} bytes and deserialized successfully",
-        output.len()
-    );
+    println!("Serialized to {} bytes and deserialized successfully", output.len());
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        main();
-    }
+#[test]
+fn test() {
+    main();
 }

@@ -22,8 +22,6 @@ all cmd:
 
 # Book
 mod bk
-# Later
-mod later
 # Playground
 mod playground
 # Placeholder crate on `crates.io`

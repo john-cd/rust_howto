@@ -74,14 +74,10 @@ do
 // ANCHOR_END: example
 fn main() {}
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    #[ignore = "not yet implemented"]
-    fn test() {
-        main();
-    }
+#[test]
+#[ignore = "not yet implemented"]
+fn test() {
+    main();
 }
 // [add example](${issue})
 EOF

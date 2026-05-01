@@ -10,9 +10,8 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "os::freebsd-apis" ]
+categories = [ "os_freebsd_apis" ]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-nix = "0.27"

@@ -38,14 +38,13 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+use rusty_fork::rusty_fork_test;
+
+// Runs in a separate process.
+rusty_fork_test! {
     #[test]
     fn test() {
         main();
     }
 }
-// TODO The same builder methods used here are also available on `fmt()` if
-// you prefer to configure the subscriber directly instead of providing a
-// custom `Format`.
+// FIXME cover same functions on fmt()

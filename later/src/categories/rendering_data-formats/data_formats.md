@@ -10,10 +10,7 @@
 
 ## Related Topics {#related-topics .skip}
 
-- [[graphics | Graphics]].
-- [[rendering | Rendering]].
-- [[multimedia_images | Multimedia Images]].
-- [[data_processing | Data and ETL]].
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -54,10 +54,7 @@ See [[development-tools_debugging | Development Tools: Debugging]].
 
 ## Related Topics
 
-- Systems programming and emulation.
-- Graphics and audio for emulators.
-- Debugging and tooling.
-- Virtualization and hardware abstraction.
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

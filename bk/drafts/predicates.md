@@ -4,7 +4,7 @@
 
 - [predicates][c~predicates~lib.rs]↗: Boolean-valued predicate functions.
 
-A predicate is a function that returns `true` or `false`. In Rust, predicates are useful for building reusable, composable filters, validation checks, and runtime-configurable business logic.
+Composable first-order predicate functions.
 
 This library implements an interface to "predicates" - boolean-valued functions of one argument. This allows combinatorial logic to be created and assembled at runtime and then used one or more times for evaluating values.
 
@@ -83,12 +83,6 @@ The `predicates` crate provides a wide range of built-in predicates:
 - **Logic**: `and`, `or`, `not`, `always`, `never`.
 - **Collections**: `in_iter`, `contains_ok`.
 - **Path checks**: `exists`, `is_file`, `is_dir`.
-
-## Why Use Predicates?
-
-- Keep filtering and validation logic separate from the code that applies it.
-- Build complex behavior from simple, reusable building blocks.
-- Change filters dynamically at runtime without rewriting the core algorithm.
 
 ## Related Topics {#related-topics .skip}
 

@@ -18,18 +18,14 @@ Bindings for all JS global objects and functions found in all JS environments li
 
 This does not include any Web, [Node][p~node], or any other JS environment APIs. Only the things that are guaranteed to exist in the global scope by the ECMAScript standard.
 
-```rust,editable
-{{#include ../../../crates/cats/wasm/examples/interfacing_with_javascript/js_sys.rs:example}}
-```
+TODO add example ?
 
 ## Accessing DOM and Web APIs via Rust {#accessing-dom .skip}
 
 The [`web-sys`][c~web-sys~crates.io]↗{{hi:web-sys}} crate provides Rust bindings to the Web's APIs, allowing you to interact with the DOM, Canvas, WebGL, and other browser features.
 Essentially, [`web-sys`][c~web-sys~docs]↗{{hi:web-sys}} is the bridge that lets your Rust code talk to the browser.
 
-```rust,editable
-{{#include ../../../crates/cats/wasm/examples/interfacing_with_javascript/web_sys.rs:example}}
-```
+TODO add example ?
 
 ## Calling Rust/WASM Functions from JavaScript {#calling-rust-wasm .skip}
 
@@ -37,10 +33,7 @@ Essentially, [`web-sys`][c~web-sys~docs]↗{{hi:web-sys}} is the bridge that let
 
 ## Related Topics {#related-topics .skip}
 
-- [[wasm_basics | WASM Basics]].
-- [[wasm_development | WASM Development]].
-- [[programming_languages | Programming Languages]].
-- [[web-programming | Web Programming]].
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

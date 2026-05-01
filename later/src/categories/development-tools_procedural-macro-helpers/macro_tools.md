@@ -15,10 +15,7 @@
 
 ## Related Topics {#related-topics .skip}
 
-- Procedural macros and code generation.
-- Compile-time tooling.
-- Derive and attribute macros.
-- Development productivity tools.
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -20,11 +20,6 @@ For vectors, matrices, eigenvalues, and eigenvectors, key crates include:
 - [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}: For N-dimensional arrays.Essential for numerical computation and data analysis.
 - [`nalgebra-lapack`][c~nalgebra-lapack~docs]↗{{hi:nalgebra-lapack}} provides LAPACK bindings for linear algebra operations.
 
-### Tensors
-
-`rusten` is a minimal, didactic implementation of tensors, or, more accurately, multi-dimensional arrays, in Rust. It mimics NumPy in terms of style and offers core functionalities such as unary, binary, and reduction operations, broadcasting, shape transformations, slicing, and more, all while prioritizing clarity. Unlike existing packages like ndarray, rusten doesn't aim for state-of-the-art performance or support for all use cases. Instead, it's targeted towards those seeking to gain a bare-bones understanding of multi-dimensional containers and related operations, without emphasizing performance or a comprehensive feature set. Coupled with Rust's intuitive syntax and clean memory management model, this means the rusten codebase is easy to explore and extend. It's also worth mentioning that, despite its compact codebase, rusten covers a surprisingly broad range of applications; in fact, with the major exception of convolutional networks, it can express the forward passes of most deep learning models, including transformers.
-
-The motivation behind rusten is that truly understanding how tensor manipulation works under the hood helps fluency in tools like PyTorch. Although there are myriad from-scratch projects devoted to other aspects of deep learning pipelines - common architectures from scratch, machine learning algorithms from scratch, autodiff from scratch, ... - there don't seem to be any learner-oriented resources on how tensors are handled on a low level. A very rudimentary tensor structure is straightforward, but its complexity grows exponentially with the addition of modern features such as broadcasting, non-contiguous views, etc., and rusten's goal is to implement these processes as transparently and plainly as possible to aid interested students.
 {{#include linear_algebra.incl.md}}
 
 ## Probability and Statistics
@@ -52,15 +47,6 @@ To work with numeric types beyond what is available in the standard library, use
 - [`num-bigint`][c~num-bigint~docs]↗{{hi:num-bigint}} works with arbitrary-precision integers.
 - [`num-rational`][c~num-rational~docs]↗{{hi:num-rational}} provides rational numbers.
 
-### Embedded Rust Mathematics
-
-- [`micromath`][c~micromath~repo]↗{{hi:micromath}}: Embedded Rust arithmetic, 2D/3D vector, and statistics library.
-
-### Fractions
-
-[![fraction][c~fraction~docs~badge]][c~fraction~docs] [![fraction~crates.io][c~fraction~crates.io~badge]][c~fraction~crates.io] [![fraction~repo][c~fraction~repo~badge]][c~fraction~repo] [![fraction~lib.rs][c~fraction~lib.rs~badge]][c~fraction~lib.rs]{{hi:fraction}}{{hi:Float}}{{hi:Numeric}}{{hi:Decimal}}{{hi:fraction}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
-
-`fraction` provides lossless fractions and decimals as a drop-in float replacement.
 {{#include additional_numeric_types.incl.md}}
 
 ### Complex Numbers
@@ -125,3 +111,23 @@ Combinatorics, set theory, and logic.
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
+<div class="hidden">
+[in depth review; decide what to cover in examples](https://github.com/john-cd/rust_howto/issues/936)
+
+- [micromath][c~micromath~repo]↗:  Embedded Rust arithmetic, 2D/3D vector, and statistics library.
+
+---
+
+[![fraction][c~fraction~docs~badge]][c~fraction~docs] [![fraction~crates.io][c~fraction~crates.io~badge]][c~fraction~crates.io] [![fraction~repo][c~fraction~repo~badge]][c~fraction~repo] [![fraction~lib.rs][c~fraction~lib.rs~badge]][c~fraction~lib.rs]{{hi:fraction}}{{hi:Float}}{{hi:Numeric}}{{hi:Decimal}}{{hi:fraction}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+
+Lossless fractions and decimals; drop-in float replacement
+
+TENSORS:
+
+`rusten` is a minimal, didactic implementation of tensors, or, more accurately, multi-dimensional arrays, in Rust. It mimics NumPy in terms of style and offers core functionalities such as unary, binary, and reduction operations, broadcasting, shape transformations, slicing, and more, all while prioritizing clarity. Unlike existing packages like ndarray, rusten doesn't aim for state-of-the-art performance or support for all use cases. Instead, it's targeted towards those seeking to gain a bare-bones understanding of multi-dimensional containers and related operations, without emphasizing performance or a comprehensive feature set. Coupled with Rust's intuitive syntax and clean memory management model, this means the rusten codebase is easy to explore and extend. It's also worth mentioning that, despite its compact codebase, rusten covers a surprisingly broad range of applications; in fact, with the major exception of convolutional networks, it can express the forward passes of most deep learning models, including transformers.
+
+The motivation behind rusten is that truly understanding how tensor manipulation works under the hood helps fluency in tools like PyTorch. Although there are myriad from-scratch projects devoted to other aspects of deep learning pipelines - common architectures from scratch, machine learning algorithms from scratch, autodiff from scratch, ... - there don't seem to be any learner-oriented resources on how tensors are handled on a low level. A very rudimentary tensor structure is straightforward, but its complexity grows exponentially with the addition of modern features such as broadcasting, non-contiguous views, etc., and rusten's goal is to implement these processes as transparently and plainly as possible to aid interested students. The most similar project is the Tensor by Eureka Labs, but whereas that is more concerned with fine-grained C memory management and concentrates on one-dimensional vectors, rusten's focus is more on the aforementioned advanced array functionalities.
+
+https://www.reddit.com/r/rust/comments/1iuqwts/rusten_a_minimal_didactic_implementation_of/
+
+</div>

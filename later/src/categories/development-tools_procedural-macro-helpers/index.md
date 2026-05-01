@@ -22,10 +22,7 @@ The term 'macro' [(book)][book~rust~macros]↗ refers to a family of features in
 
 ## Related Topics
 
-- Procedural macro authoring.
-- Rust compiler tooling.
-- Compile-time code generation.
-- Development productivity and debugging.
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -12,7 +12,7 @@ pub use info::*;
 /// Instantiate the crates.io API client.
 fn get_client() -> Result<SyncClient> {
     let client = SyncClient::new(
-        "rust_howto_agent (agent@example.com)",
+        "my-user-agent (my-contact@domain.com)",
         std::time::Duration::from_millis(1000), // rate limit interval
     )?;
     Ok(client)

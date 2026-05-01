@@ -1,7 +1,10 @@
 [workspace]
 resolver = "3"
-members = ["cats/*", "other"]
-exclude = ["cats/embedded"]  # TODO
+members = [
+    "cats/*",
+    "other",
+]
+exclude = []
 
 # Default values for packages in the workspace
 [workspace.package]

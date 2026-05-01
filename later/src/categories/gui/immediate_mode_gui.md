@@ -46,10 +46,7 @@ Immediate mode [GUI][p~gui] libraries often need to be integrated with a [render
 
 ## Related Topics {#related-topics .skip}
 
-- User interface design patterns.
-- High-performance GUI rendering.
-- Game development toolkits.
-- Native and web GUI backends.
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

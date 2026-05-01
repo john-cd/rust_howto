@@ -45,3 +45,6 @@ Rust's "module system" helps structure your projects effectively. It gives fine-
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
+<div class="hidden">
+TODO cover monorepo / git submodules?
+</div>

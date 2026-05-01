@@ -10,17 +10,18 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
+categories.workspace = true
 publish = false
 readme = "README.md"
 autolib = false
-
-[features]
-full = []
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 anyhow = "1.0.100"
 cfg-if = "1.0.4"
-proc_macros = { path = "../proc_macros" }
 strum = { version = "0.27.2", features = ["derive"] }
 tokio = { version = "1.48.0", features = ["macros", "rt-multi-thread"] }
+proc_macros = { path = "../proc_macros" }
+
+[features]
+full = []

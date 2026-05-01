@@ -49,12 +49,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        main();
-    }
+#[test]
+fn test() {
+    main();
 }
-// TODO See also examples in <https://docs.rs/crate/moka/0.12.10>
+// See also examples in <https://docs.rs/crate/moka/0.12.10>

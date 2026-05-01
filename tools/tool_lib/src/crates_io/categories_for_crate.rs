@@ -66,4 +66,5 @@ mod tests {
         assert_eq!(model_cat.slug, api_cat.slug);
         assert_eq!(model_cat.description, api_cat.description);
     }
+
 }

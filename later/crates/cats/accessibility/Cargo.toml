@@ -9,7 +9,7 @@ documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
 keywords.workspace = true
-categories = ["accessibility"]
+categories.workspace = true
 publish.workspace = true
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 readme = "README.md"
@@ -17,6 +17,7 @@ license = "CC0-1.0"
 autolib = false
 
 [dependencies]
-accesskit = "0.20.0"
-accesskit_winit = "0.28.0"
-winit = "0.30.8"
+# FIXME
+# accesskit = "0.20.0"
+# accesskit_winit = "0.28.0"
+# winit = "0.30.8"

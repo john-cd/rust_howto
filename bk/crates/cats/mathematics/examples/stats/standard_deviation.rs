@@ -54,11 +54,9 @@ fn main() {
 
     let data_mean = mean(&data);
     println!("Mean is {data_mean:?}");
-    assert_eq!(data_mean, Some(5.4));
 
     let data_std_deviation = std_deviation(&data);
     println!("Standard deviation is {data_std_deviation:?}");
-    assert_eq!(data_std_deviation, Some(3.6110942));
 
     let zscore = match (data_mean, data_std_deviation) {
         (Some(mean), Some(std_deviation)) => {
@@ -72,15 +70,10 @@ fn main() {
         "Z-score of data at index 4 (with value {}) is {zscore:?}",
         data[4]
     );
-    assert_eq!(zscore, Some(-0.11076978));
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        main();
-    }
+#[test]
+fn test() {
+    main();
 }

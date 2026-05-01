@@ -1,11 +1,11 @@
 #![allow(dead_code)]
+// ANCHOR: example
 use std::env;
 
 use dotenvy::dotenv;
 use oracle::Connection;
 use oracle::Error;
 
-// ANCHOR: example
 /// Rust bindings to ODPI-C.
 ///
 /// This example demonstrates how to connect to an Oracle database,
@@ -52,28 +52,23 @@ async fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    #[ignore = "requires external oracle db and oracle client library"]
-    fn require_external_svc() -> anyhow::Result<()> {
-        let _lock = super::ENV_MUTEX.lock().unwrap();
-        let username = std::env::var("TEST_ORACLE_DB_USERNAME")
-            .expect("TEST_ORACLE_DB_USERNAME must be set");
-        let password = std::env::var("TEST_ORACLE_DB_PASSWORD")
-            .expect("TEST_ORACLE_DB_PASSWORD must be set");
-        let db_url = std::env::var("TEST_ORACLE_DB_URL")
-            .expect("TEST_ORACLE_DB_URL must be set");
+#[test]
+fn require_external_svc() -> anyhow::Result<()> {
+    let _lock = super::ENV_MUTEX.lock().unwrap();
+    let username = std::env::var("TEST_ORACLE_DB_USERNAME")
+        .expect("TEST_ORACLE_DB_USERNAME must be set");
+    let password = std::env::var("TEST_ORACLE_DB_PASSWORD")
+        .expect("TEST_ORACLE_DB_PASSWORD must be set");
+    let db_url = std::env::var("TEST_ORACLE_DB_URL")
+        .expect("TEST_ORACLE_DB_URL must be set");
 
-        unsafe {
-            std::env::set_var("ORACLE_DB_USERNAME", username);
-            std::env::set_var("ORACLE_DB_PASSWORD", password);
-            std::env::set_var("ORACLE_DB_URL", db_url);
-        }
-        main()?;
-        Ok(())
+    unsafe {
+        std::env::set_var("ORACLE_DB_USERNAME", username);
+        std::env::set_var("ORACLE_DB_PASSWORD", password);
+        std::env::set_var("ORACLE_DB_URL", db_url);
     }
+    main()?;
+    Ok(())
 }
-// TODO Troubleshooting "DPI-1047: Cannot locate a 64-bit Oracle Client library"
-// See https://odpi-c.readthedocs.io/en/latest/user_guide/installation.html
+// [finish; need to fix heavy test](https://github.com/john-cd/rust_howto/issues/1021)
+// <https://odpi-c.readthedocs.io/en/latest/user_guide/installation.html>

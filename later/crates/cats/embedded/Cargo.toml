@@ -10,20 +10,11 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = ["embedded"]
+categories = [ "embedded" ]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-
-[dev-dependencies]
-embassy = { git = "https://github.com/embassy-rs/embassy", branch = "main", features = [
-    "alloc",
-    "std",
-] }
-cortex-m = "0.7"
-cortex-m-rt = "0.7"
-panic-halt = "0.2"
 
 #[features]
 # default = []

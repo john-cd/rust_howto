@@ -1,11 +1,10 @@
-name: rust_howto
+name: rust_howto_ci
 services:
   book:
     # When pull_policy is missing from the service definition, Compose attempts to pull the image first
     # and then builds from source if the image isn't found in the registry or platform cache.
     # IMAGE_VERSION = version of the Docker image to create e.g. 0.1.0
     image: johncd/rust_howto_ci:${IMAGE_VERSION:-latest} # Name and tag of the image that will be built
-    pull_policy: always # Always check for newer base image versions in CI
     build:
       target: ci
       cache_from:
@@ -17,6 +16,7 @@ services:
         ## GitHub Action cache https://docs.docker.com/build/ci/github-actions/cache/#github-cache
         ## As above, it only works when using a buildx builder with `docker-container` driver, etc in a GitHub Actions workflow
         ## Ignored otherwise
+        ## [make gha caching work in CI workflow](https://github.com/john-cd/rust_howto/issues/1271)
         - type=gha,scope=rust_howto_ci
       cache_to:
         ##  In the `max` cache mode, all docker layers are cached, even those of intermediate steps.
@@ -29,13 +29,12 @@ services:
         target: /code/bk/book
         bind:
           create_host_path: true
-      # Use a tmpfs (in-RAM) mount for the Rust build target directory.
-      # This provides maximum I/O speed for compilation artifacts.
+      ## Use a tmpfs (in-RAM) mount for the Rust build target directory to speed up compilation.
+      ## All intermediate build artifacts are written to RAM instead of disk, reducing I/O overhead.
       ## The GitHub Actions ubuntu-latest runner has ~7 GB RAM; folder sizes are reported at the end
       ## of ci.sh (du) and at the start of the CI workflow (free/df) so that the size can be monitored.
       ## Note: tmpfs and bind mounts are NOT suitable for /usr/local/cargo/ because they would obscure
-      ## the cargo binaries (mdbook, nextest, …) and the package registry that are cached.
+      ## the cargo binaries (mdbook, nextest, …) and the package registry that are pre-baked into the
+      ## Docker image layers.
       - type: tmpfs
         target: /code/target/
-        tmpfs:
-          size: 5G

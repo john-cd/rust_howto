@@ -10,10 +10,7 @@
 
 ## Related Topics {#related-topics .skip}
 
-- [[graphics | Graphics]].
-- [[rendering | Rendering]].
-- [[game-development | Game Development]].
-- [[gpu | GPU]].
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

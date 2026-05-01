@@ -10,10 +10,7 @@
 
 ## Related Topics {#related-topics .skip}
 
-- Audio and video codecs.
-- Media processing pipelines.
-- File formats and serialization.
-- Performance-sensitive multimedia code.
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

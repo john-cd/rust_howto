@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
+// COMING SOON
+// ANCHOR_END: example
 //! # Behavior Tree Example
 //!
 //! This example demonstrates the use of a Behavior Tree (BT) to control a
@@ -117,16 +119,11 @@ fn main() -> anyhow::Result<()> {
 
     Ok(())
 }
-// ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() -> anyhow::Result<()> {
-        main()?;
-        Ok(())
-    }
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
+    Ok(())
 }
 // [review / exapnd](https://github.com/john-cd/rust_howto/issues/841)
 // <https://github.com/Sollimann/bonsai/blob/1aa74afcb11603e86d5c7e941a70b2533e844e16/examples/src/async_drone/main.rs>

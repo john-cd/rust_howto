@@ -35,19 +35,19 @@ fn main() {
     // If the environment variable is empty or not set, or if it contains only
     // invalid directives, the ERROR level is used.
 
-    // `tracing_subscriber::fmt::init()` is equivalent to:
-    // tracing_subscriber::fmt()    // Returns `SubscriberBuilder::default()`.
-    //     .with_env_filter(EnvFilter::from_default_env())  // Reads RUST_LOG.
-    //     .init(); // Installs the global default subscriber.
-
     // Test it out.
     tracing::error!("tracing configured!");
 }
+// `tracing_subscriber::fmt::init()` is equivalent to:
+// tracing_subscriber::fmt() // Returns `SubscriberBuilder::default()`.
+//     .with_env_filter(EnvFilter::from_default_env()) // Reads RUST_LOG.
+//     .init(); // Installs the global default subscriber.
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+use rusty_fork::rusty_fork_test;
+
+// Runs in a separate process.
+rusty_fork_test! {
     #[test]
     fn test() {
         main();

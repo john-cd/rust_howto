@@ -20,3 +20,5 @@ The following demonstrates how to work with them. You will rarely need to explic
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
+<div class="hidden">
+</div>

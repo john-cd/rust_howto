@@ -29,12 +29,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[ignore = "Relies on default programs that may not be installed by default."]
-    #[test]
-    fn test() {
-        main();
-    }
+#[ignore = "Relies on default programs that may not be installed by default."]
+#[test]
+fn test() {
+    main();
 }

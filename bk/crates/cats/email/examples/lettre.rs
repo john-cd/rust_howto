@@ -14,14 +14,7 @@ use lettre::Transport;
 use lettre::message::header::ContentType;
 use lettre::transport::smtp::authentication::Credentials;
 
-fn main() -> anyhow::Result<()> {
-    let smtp_server = std::env::var("SMTP_SERVER")
-        .unwrap_or_else(|_| "smtp.gmail.com".to_string());
-    let smtp_username = std::env::var("SMTP_USERNAME")
-        .unwrap_or_else(|_| "smtp_username".to_string());
-    let smtp_password = std::env::var("SMTP_PASSWORD")
-        .unwrap_or_else(|_| "smtp_password".to_string());
-
+fn main() {
     let email = Message::builder()
         .from("NoBody <nobody@domain.tld>".parse().unwrap())
         .reply_to("Someone <someone@domain.tld>".parse().unwrap())
@@ -31,36 +24,22 @@ fn main() -> anyhow::Result<()> {
         .body(String::from("Body text here"))
         .unwrap();
 
-    let creds = Credentials::new(smtp_username, smtp_password);
-    let mailer = SmtpTransport::relay(&smtp_server)
+    let creds = Credentials::new(
+        "smtp_username".to_owned(),
+        "smtp_password".to_owned(),
+    );
+
+    // Open a remote connection to gmail:
+    let mailer = SmtpTransport::relay("smtp.gmail.com")
         .unwrap()
         .credentials(creds)
         .build();
 
-    mailer.send(&email)?;
-    println!("Email sent successfully!");
-    Ok(())
-}
-// ANCHOR_END: example
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    #[ignore = "Requires SMTP credentials"]
-    fn require_external_svc() -> anyhow::Result<()> {
-        if std::env::var("SMTP_USERNAME").is_err()
-            || std::env::var("SMTP_PASSWORD").is_err()
-        {
-            eprintln!(
-                "Skipping SMTP integration test; set SMTP_USERNAME and SMTP_PASSWORD to run."
-            );
-            return Ok(());
-        }
-
-        main()?;
-        Ok(())
+    // Send the email:
+    match mailer.send(&email) {
+        Ok(_) => println!("Email sent successfully!"),
+        Err(e) => panic!("Could not send email: {e:?}"),
     }
 }
+// ANCHOR_END: example
 // [review; Requires valid SMTP credentials to run](https://github.com/john-cd/rust_howto/issues/1144)

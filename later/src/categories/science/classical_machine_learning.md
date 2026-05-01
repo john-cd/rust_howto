@@ -35,10 +35,7 @@ Kin in spirit to [Python][p~python]'s `scikit-learn`, [`linfa`][c~linfa~docs]↗
 
 ## Related Topics {#related-topics .skip}
 
-- Data science and analytics.
-- Deep learning and neural networks.
-- Statistical modeling.
-- Scientific computing in Rust.
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

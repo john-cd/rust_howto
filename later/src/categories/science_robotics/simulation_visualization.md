@@ -31,10 +31,7 @@ Logging SDK and visualizer for robotics.
 
 ## Related Topics {#related-topics .skip}
 
-- Robotics development and testing.
-- Simulation engines and visualization.
-- Sensor and motion planning tools.
-- [Robot operating systems](./robot_operating_systems.md).
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -27,7 +27,7 @@
 Use Rust from Python:
 
 ```rust
-{{#include ../../../crates/cats/development_tools_ffi/examples/python/use_rust_from_python.rs:example}}
+{{#include ../../../crates/cats/development_tools_ffi/examples/python/use_rust_from_python.rs}}
 ```
 
 ## Data Exchange Between Rust and Python {#data-exchange-between-rust-and-python}
@@ -50,7 +50,11 @@ If you're working with numerical data, integrating with [`numpy`][c~numpy~docs]â
 - [`maturin`][c~maturin~docs]â†—{{hi:maturin}} is a popular tool for building and distributing Python packages that include Rust extensions. It handles the complexities of compilation and linking.
 - [`setuptools-rust`][pypi~setuptools-rust]{{hi:setuptools-rust}} is another option for integrating Rust builds into Python's setuptools.
 
-See [[code_build | Code Build]].
+See [[development-tools_build-utils | Build Utils]] and [[code_build | Code Build]].
+
+## Related Topics {#related-topics .skip}
+
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

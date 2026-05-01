@@ -1,7 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-// This example demonstrates inserting and selecting SQLite data using
-// `rusqlite`.
 use std::collections::HashMap;
 
 use rusqlite::Connection;

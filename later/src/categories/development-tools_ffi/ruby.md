@@ -2,7 +2,7 @@
 
 {{#include ruby.incl.md}}
 
-Interfacing with Ruby from Rust is typically done using the Ruby C API via a binding crate. [`rutie`][c~rutie~docs]↗{{hi:rutie}} is the key crate here. It significantly simplifies the process of creating Ruby extensions in Rust.
+Interfacing with Ruby from Rust is typically done using the Ruby C API via a binding crate. [`rutie`][c~rutie~docs]↗{{hi:rutie}} is the key crate here. It significantly simplifies the process of creating Ruby extensions in Rust. It's highly recommended to use it unless you have very specific low-level Ruby C API requirements. It abstracts away much of the complexity of manual Ruby C API interaction.
 
 ## Interop with Ruby via `rutie` {#rutie}
 
@@ -10,7 +10,7 @@ Interfacing with Ruby from Rust is typically done using the Ruby C API via a bin
 
 The tie between Ruby and Rust.
 
-The [`rutie`][c~rutie~docs]↗{{hi:rutie}} crate provides a high-level and safe interface to the Ruby C API. It's the most common and recommended approach for Ruby/Rust integration.
+The [`rutie`][c~rutie~docs]↗{{hi:rutie}} crate provides a high-level and safe interface to the Ruby C API. It's the most common and recommended approach for Ruby/Rust integration. It handles a lot of the boilerplate and memory management.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/examples/ruby/rutie.rs:example}}
@@ -33,7 +33,7 @@ High level Ruby bindings. Write Ruby extension gems in Rust, or call Ruby code f
 
 ## Communication / Data Marshaling Between Ruby and Rust {#communication-data-marshaling-between-ruby-and-rust}
 
-The [`rutie`][c~rutie~docs]↗{{hi:rutie}} crate handles much of the data marshaling between Rust and Ruby types. [`serde`][c~serde~docs]↗{{hi:serde}} can be used for serializing and deserializing data if needed.
+The [`rutie`][c~rutie~docs]↗{{hi:rutie}} crate handles much of the data marshaling between Rust and Ruby types. [`serde`][c~serde~docs]↗{{hi:serde}} can be used for serializing and deserializing data if needed, but often [`rutie`][c~rutie~docs]↗{{hi:rutie}}'s built-in conversion mechanisms are sufficient.
 
 ## Build Tools for Rust + Ruby {#build-tools-for-rust-ruby}
 
@@ -41,6 +41,10 @@ Use:
 
 - [`cargo`][c~cargo~docs]↗{{hi:cargo}} for building the Rust library.
 - [`rake`][c~rake~docs]↗{{hi:rake}} or `bundler` for managing the Ruby side and integrating with the Rust library.
+
+## Related Topics {#related-topics .skip}
+
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

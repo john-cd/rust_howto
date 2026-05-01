@@ -84,18 +84,12 @@ async fn main() {
         //.layer(ValidateRequestHeaderLayer::accept("application/json"))
         // Wrap the `Service` in our middleware stack.
         .service_fn(handler);
-    println!(
-        "tower_http example: middleware stack built (authentication, logging, compression, etc.)"
-    );
+    println!("tower_http example: middleware stack built (authentication, logging, compression, etc.)");
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn require_network() {
-        main();
-    }
+#[test]
+fn require_network() {
+    main();
 }
 // [review](https://github.com/john-cd/rust_howto/issues/871)

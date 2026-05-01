@@ -5,12 +5,12 @@ static CATEGORIES_URL: &str = "https://raw.githubusercontent.com/rust-lang/crate
 
 pub(super) fn get_categories_toml_string() -> Result<String> {
     // Allows tests to override the URL.
-    let url_str =
-        std::env::var("MOCK_CATEGORIES_URL").unwrap_or_else(|_| CATEGORIES_URL.to_string());
+    let url_str = std::env::var("MOCK_CATEGORIES_URL").unwrap_or_else(|_| CATEGORIES_URL.to_string());
     let url = reqwest::Url::parse(&url_str)?;
 
     let is_localhost = url.host_str() == Some("127.0.0.1") || url.host_str() == Some("localhost");
-    let builder = reqwest::blocking::Client::builder().https_only(!is_localhost);
+    let builder = reqwest::blocking::Client::builder()
+        .https_only(!is_localhost);
 
     #[cfg(test)]
     let builder = builder.no_proxy(); // Important so mockito requests don't get routed through ALL_PROXY when running locally
@@ -18,10 +18,7 @@ pub(super) fn get_categories_toml_string() -> Result<String> {
     let client = builder.build()?;
     let response = client.get(url).send()?;
     if !response.status().is_success() {
-        return Err(anyhow::anyhow!(
-            "Request failed with status: {}",
-            response.status()
-        ));
+        return Err(anyhow::anyhow!("Request failed with status: {}", response.status()));
     }
     let body = response.text()?;
     Ok(body)
@@ -30,15 +27,15 @@ pub(super) fn get_categories_toml_string() -> Result<String> {
 #[allow(dead_code)]
 #[allow(unused_imports)]
 #[cfg(test)]
-mod tests { use super::*;
-    // A mutex to ensure that tests setting MOCK_CATEGORIES_URL don't run concurrently.
-    use std::sync::Mutex;
-
+mod tests {
     use anyhow::Result;
     use url::Url;
 
     use super::*; // To parse the CATEGORIES_URL.
     use crate::EnvGuard;
+
+    // A mutex to ensure that tests setting MOCK_CATEGORIES_URL don't run concurrently.
+    use std::sync::Mutex;
     static ENV_MUTEX: Mutex<()> = Mutex::new(());
 
     // Test successful retrieval of the TOML string.

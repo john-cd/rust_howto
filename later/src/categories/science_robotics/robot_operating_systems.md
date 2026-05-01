@@ -70,10 +70,7 @@ Formally specified Rust bindings for ROS2.
 
 ## Related Topics {#related-topics .skip}
 
-- Distributed middleware.
-- Robotics communication protocols.
-- Simulation and systems integration.
-- [Robot frameworks](./robotics_frameworks.md).
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -8,15 +8,15 @@ description.workspace = true
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license-file.workspace = true
+license = "MIT OR Apache-2.0"
 keywords.workspace = true
-categories = ["development-tools::procedural-macro-helpers"]
+categories.workspace = true
 publish.workspace = true
 
 [lib]
 proc-macro = true
 
 [dependencies]
-proc-macro2 = "1.0"
-quote = "1.0.41"
 syn = { version = "2.0.108", features = ["full"] } # "full" feature is often needed for parsing various Rust constructs
+quote = "1.0.41"
+# TODO add example  proc-macro2 = "1.0" # TokenStream manipulation

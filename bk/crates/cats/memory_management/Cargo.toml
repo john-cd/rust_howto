@@ -10,12 +10,11 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = ["memory-management"]
+categories = ["memory_management"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-anyhow = "1.0.100"
 bumpalo = "3.17.0"
 lazy_static = "1.5.0"
 mimalloc = "0.1.48"
@@ -23,6 +22,9 @@ once_cell = "1.21.3"
 seize = "0.5.1"
 slab = "0.4.9"
 
+# General
+anyhow = "1.0.100"
+
 [target.'cfg(not(target_env = "msvc"))'.dependencies]
-tikv-jemalloc-ctl = { version = "0.6.1", features = ["stats", "use_std"] }
 tikv-jemallocator = "0.6.1"
+tikv-jemalloc-ctl = { version = "0.6.1", features = [ "stats", "use_std" ] }

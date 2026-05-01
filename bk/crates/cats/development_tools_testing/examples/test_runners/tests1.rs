@@ -22,6 +22,8 @@ impl Rectangle {
 /// when running `cargo test`.
 #[cfg(test)]
 mod tests {
+    // The following provides access to all objects in the parent module,
+    // which contains the main code.
     use super::*;
 
     /// Test functions must be free, monomorphic functions that take no

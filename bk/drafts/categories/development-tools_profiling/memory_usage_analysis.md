@@ -38,13 +38,9 @@ See [[tracing | Tracing]].
 
 [`measure_time`][c~measure_time~docs]↗{{hi:measure_time}} can measure the execution time of code blocks, e.g. when investigating memory-related performance issues.
 
-```rust,editable
-{{#include ../../../crates/cats/development_tools_profiling/src/memory_usage_analysis/measure_time.rs:example}}
-```
-
 ## Related Topics {#related-topics .skip}
 
-- [[memory-management | Memory Management]]
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

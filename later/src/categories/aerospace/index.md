@@ -6,27 +6,6 @@
 
 {{#include aerospace.incl.md}}
 
-## Drones
-
-See [[aerospace_drones | Drones]].
-
-## Protocols
-
-See [[aerospace_protocols | Aerospace Protocols]].
-
-## Simulation
-
-See [[aerospace_simulation | Aerospace Simulation]].
-
-## Space Protocols
-
-See [[aerospace_space-protocols | Space Protocols]].
-
-## Unmanned Aerial Vehicles
-
-See [[aerospace_unmanned-aerial-vehicles | Unmanned Aerial Vehicles]].
-
-
 ## Related Topics
 
 ### Code Verification
@@ -75,3 +54,6 @@ See [[testing | Testing]].
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
+<div class="hidden">
+[review](https://github.com/john-cd/rust_howto/issues/190)
+</div>

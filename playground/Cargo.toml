@@ -13,6 +13,6 @@ documentation = "https://docs.rs/rust_howto/"
 homepage = "https://john-cd.com/rust_howto/"
 repository = "https://github.com/john-cd/rust_howto/tools/"
 keywords = []
-categories = ["development-tools"]
+categories = []
 publish = false
 license = "MIT OR Apache-2.0"

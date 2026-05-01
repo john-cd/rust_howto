@@ -85,18 +85,20 @@ Refer to the [[language | Language]] and [[standard-library | Standard Library]]
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
-
-## See Also
+<div class="hidden">
+[data-structures: expand](https://github.com/john-cd/rust_howto/issues/280)
 
 - [`rust-algorithms`][rust-algorithms~repo]↗: Common data structures and algorithms in Rust.
 - [PHF][c~phf~lib.rs]↗: Runtime support for perfect hash function data structures.
 - [`PriorityQueue`][c~priority-queue~lib.rs]↗.
 - [`elsa`][c~elsa~lib.rs]↗.
 - [`equivalent`][c~equivalent~lib.rs]↗.
+
 - [Converting between different collection types][blog~converting-between-different-collection-types]↗: from `Vec` to `HashSet` or `HashMap`.
-- [[dataframes | Dataframes]].
-- [[concurrent_data_structures | Concurrent Data Structures]].
-- [`scroll`][c~scroll~docs]↗: easily and efficiently read/write types from data containers like byte arrays.
-<div class="hidden">
-[data-structures: expand](https://github.com/john-cd/rust_howto/issues/280)
+
+  - [[dataframes | Dataframes]].
+  - [[concurrent_data_structures | Concurrent Data Structures]].
+
+`scroll` is a library for easily and efficiently reading/writing types from data containers like byte arrays.
+
 </div>

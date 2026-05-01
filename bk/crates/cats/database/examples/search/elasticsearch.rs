@@ -140,20 +140,17 @@ async fn cat_indices(client: Elasticsearch) -> Result<Response, Error> {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn require_external_svc() -> anyhow::Result<()> {
-        unsafe {
-            // Refer to the `compose*.yaml` files:
-            std::env::set_var(
-                "ELASTIC_URL",
-                "http://rust_howto_dev-elasticsearch-1:9200",
-            );
-        }
-        main()?;
-        Ok(())
+/// Test function that requires an external Elasticsearch service.
+#[test]
+fn require_external_svc() -> anyhow::Result<()> {
+    unsafe {
+        // Refer to the `compose*.yaml` files:
+        std::env::set_var(
+            "ELASTIC_URL",
+            "http://rust_howto_dev-elasticsearch-1:9200",
+        );
     }
+    main()?;
+    Ok(())
 }
 // [review fix heavy test; secure the connection](https://github.com/john-cd/rust_howto/issues/710)

@@ -22,20 +22,14 @@ fn main() -> Result<()> {
 
     log::info!("Hello, world!");
 
-    println!(
-        "log_custom example: log4rs configured to write to temp/log/output.log"
-    );
+    println!("log_custom example: log4rs configured to write to temp/log/output.log");
     Ok(())
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() -> anyhow::Result<()> {
-        std::fs::create_dir_all("temp/log/")?;
-        main()?;
-        Ok(())
-    }
+#[test]
+fn test() -> anyhow::Result<()> {
+    std::fs::create_dir_all("temp/log/")?;
+    main()?;
+    Ok(())
 }

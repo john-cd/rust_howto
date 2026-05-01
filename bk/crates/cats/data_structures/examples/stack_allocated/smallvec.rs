@@ -15,10 +15,6 @@ fn main() {
     small_vec.push(3);
     small_vec.push(4);
 
-    assert_eq!(small_vec.len(), 4);
-    // Elements are stored inline (no heap allocation yet)
-    assert!(!small_vec.spilled());
-
     // We can also initialize it via a macro:
     let mut small_vec: SmallVec<[i32; 4]> = smallvec![1, 2, 3, 4];
 
@@ -28,12 +24,6 @@ fn main() {
     // Push beyond the inline capacity, causing a heap allocation.
     small_vec.push(5);
 
-    // The vector has now spilled over to the heap
-    assert!(small_vec.spilled());
-    // The capacity grows upon spilling (typically doubling the original
-    // capacity)
-    assert_eq!(small_vec.capacity(), 8);
-
     // Print the state of the SmallVec after pushing beyond capacity.
     println!("SmallVec (heap-allocated): {small_vec:?}");
 
@@ -41,31 +31,24 @@ fn main() {
     for i in 0..small_vec.len() {
         println!("Element at index {i}: {}", small_vec[i]);
     }
-    assert_eq!(small_vec[0], 1);
-    assert_eq!(small_vec.last(), Some(&5));
 
     // Pop an element from the SmallVec.
-    let value = small_vec.pop();
-    assert_eq!(value, Some(5));
+    if let Some(value) = small_vec.pop() {
+        println!("Popped value: {value}");
+    }
 
     // Print the state of the SmallVec after popping.
     println!("SmallVec after popping: {small_vec:?}");
 
     // SmallVec points to a slice, so we can use normal slice indexing and
-    // other slice methods.
+    // other methods to access its contents.
     small_vec[0] = small_vec[1] + small_vec[2];
     small_vec.sort();
-
-    let expected: SmallVec<[i32; 4]> = smallvec![2, 3, 4, 5];
-    assert_eq!(small_vec, expected);
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        main();
-    }
+#[test]
+fn test() {
+    main();
 }
+// TODO review

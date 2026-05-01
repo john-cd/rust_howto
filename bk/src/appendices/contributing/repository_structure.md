@@ -79,13 +79,9 @@ fn main() {
 
 // This test is executed by `cargo test` or `cargo nextest run`
 // every time the code is built. It calls `main()`.
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        main();
-    }
+#[test]
+fn test() {
+    main();
 }
 ```
 

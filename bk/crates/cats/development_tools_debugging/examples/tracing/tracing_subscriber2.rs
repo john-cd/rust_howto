@@ -2,11 +2,13 @@
 // ANCHOR: example
 use std::io;
 
+// use tracing_subscriber::filter;
 use tracing_subscriber::Layer;
 use tracing_subscriber::filter::EnvFilter;
 use tracing_subscriber::filter::LevelFilter;
 use tracing_subscriber::fmt;
 use tracing_subscriber::layer::SubscriberExt;
+// use tracing_subscriber::prelude::*;
 use tracing_subscriber::util::SubscriberInitExt;
 
 /// The most important component of the `tracing-subscriber` API is the
@@ -109,9 +111,10 @@ fn per_layer_filtering() {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+use rusty_fork::rusty_fork_test;
+
+// Runs in a separate process.
+rusty_fork_test! {
     #[test]
     fn test_layers() {
         layers();
@@ -119,9 +122,7 @@ mod tests {
 
     #[test]
     fn test_filter() {
-        unsafe {
-            std::env::set_var("MY_CUSTOM_FILTER_ENV_VAR", "info");
-        }
+        unsafe { std::env::set_var("MY_CUSTOM_FILTER_ENV_VAR", "info"); }
         filter().unwrap();
     }
 
@@ -130,4 +131,3 @@ mod tests {
         per_layer_filtering();
     }
 }
-// TODO review

@@ -28,10 +28,7 @@ Cross-platform OpenGL context provider.
 
 ## Related Topics {#related-topics .skip}
 
-- [[graphics | Graphics]].
-- [[rendering | Rendering]].
-- [[gpu | GPU]].
-- [[shaders | Shaders]].
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

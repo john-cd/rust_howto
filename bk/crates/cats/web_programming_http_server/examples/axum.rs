@@ -7,10 +7,10 @@
 //! and `hyper`. It doesn't have its own middleware system but instead uses
 //! `tower::Service`. This means `axum` gets timeouts, tracing, compression,
 //! authorization, and more, for free.
-//! See also:
-//! - <https://docs.rs/axum/latest/axum/index.html>
-//! - <https://docs.rs/axum/0.8.1/axum/extract/struct.State.html>
-//! - <https://docs.rs/axum/0.8.1/axum/extract/index.html>
+/// See also:
+/// - <https://docs.rs/axum/latest/axum/index.html>
+/// - <https://docs.rs/axum/0.8.1/axum/extract/struct.State.html>
+/// - <https://docs.rs/axum/0.8.1/axum/extract/index.html>
 use std::collections::HashMap;
 use std::sync::Arc;
 
@@ -65,9 +65,7 @@ async fn query(Query(_params): Query<HashMap<String, String>>) -> String {
 // Buffer the request body and deserialize it as JSON into a
 // `serde_json::Value`. `Json` supports any type that implements
 // `serde::Deserialize`.
-async fn json(
-    Json(payload): Json<serde_json::Value>,
-) -> Json<serde_json::Value> {
+async fn json(Json(payload): Json<serde_json::Value>) -> Json<serde_json::Value> {
     Json(payload)
 }
 
@@ -87,9 +85,7 @@ async fn main() -> anyhow::Result<()> {
     let _ = tracing_subscriber::registry()
         .with(
             tracing_subscriber::EnvFilter::try_from_default_env()
-                .unwrap_or_else(|_| {
-                    format!("{}=debug", env!("CARGO_CRATE_NAME")).into()
-                }),
+                .unwrap_or_else(|_| format!("{}=debug", env!("CARGO_CRATE_NAME")).into()),
         )
         .with(tracing_subscriber::fmt::layer())
         .try_init();
@@ -117,17 +113,12 @@ async fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
-// // ANCHOR_END: example
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn require_network() -> anyhow::Result<()> {
-        // main()?;
-        Ok(())
-    }
+#[test]
+fn require_network() -> anyhow::Result<()> {
+    // main()?;
+    Ok(())
 }
+// // ANCHOR_END: example
 // // [review time limit](https://github.com/john-cd/rust_howto/issues/865)
 // // <https://docs.rs/axum/latest/axum/index.html>
 // // <https://docs.rs/axum/0.8.1/axum/extract/struct.State.html>

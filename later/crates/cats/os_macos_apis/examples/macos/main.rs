@@ -1,5 +1,3 @@
 mod macos;
 
-fn main() {
-    macos::main();
-}
+fn main() {}

@@ -53,11 +53,7 @@ fn main() {
 // Adapted from <https://docs.rs/flagset>
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        main();
-    }
+#[test]
+fn test() {
+    main();
 }

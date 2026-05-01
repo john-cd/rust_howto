@@ -4,7 +4,7 @@
 
 Rust projects use version control (typically [`git`][git~website]↗{{hi:git}}) like any other software. `git` tracks changes to your code, enables collaboration, and allows reverting to previous versions. Cargo's [`Cargo.lock`][c~cargo~cargo.lock]↗{{hi:Cargo.lock}} file specifically ensures reproducible builds by pinning exact dependency versions, which can also be version controlled.
 
-The following describes tools that make version control workflows more reliable and easier to maintain for Rust projects.
+The following describes tools that make FIXME.
 
 ## Check Your Code Before Committing it {#check-your-code-before-committing}
 
@@ -67,13 +67,11 @@ pre-commit run --all-files
 
 ## Useful Git Hooks for Rust {#useful-git-hooks-for-rust}
 
-A few useful Git hooks for Rust projects include formatting, linting, static analysis, and tests. These hooks help enforce consistency and catch common mistakes before changes are committed.
+FIXME.
 
-- `cargo fmt --all` for code formatting.
-- `cargo check` and `cargo clippy` for compile-time validation and linting.
-- `cargo test` or `cargo nextest run` to run unit and integration tests.
-- Targeted spell checks for README, documentation, and comments.
-- `cargo fmt --check` and `cargo clippy --all-targets --all-features` for CI-friendly validation.
+- [`cargo fmt`][book~cargo~cargo-fmt]↗{{hi:cargo fmt}}.
+- [`cargo check`][book~cargo~cargo-check]↗{{hi:cargo check}}, clippy, test...
+- spell checks.
 
 ## See Also {#see-also .skip}
 

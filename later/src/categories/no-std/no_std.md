@@ -10,10 +10,7 @@
 
 ## Related Topics {#related-topics .skip}
 
-- [[no-std_no-alloc | No Alloc]].
-- [[embedded | Embedded Systems]].
-- [[memory-management | Memory Management]].
-- [[development_tools | Development Tools]].
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

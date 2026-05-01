@@ -2,11 +2,11 @@ mod conf;
 mod regexes;
 
 use conf::PreprocConfig;
-use mdbook::BookItem;
 use mdbook::book::Book;
 use mdbook::errors::Error;
 use mdbook::preprocess::Preprocessor;
 use mdbook::preprocess::PreprocessorContext;
+use mdbook::BookItem;
 use regexes::*;
 use tracing::info;
 use tracing::warn;

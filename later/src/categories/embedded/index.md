@@ -37,16 +37,16 @@ Crates that are primarily useful on embedded devices or without an operating sys
 
 ## Data Acquisition and Calibration
 
-Embedded systems often collect sensor data and calibrate measurements for accuracy. Common tasks include sampling analog inputs, converting signals to digital values, and compensating for drift or nonlinearity.
+FIXME.
 
 ## Memory-mapped I/O
 
-Memory-mapped I/O allows peripherals to appear as memory addresses. Reading and writing to those addresses is how drivers communicate with hardware on many microcontrollers.
+FIXME.
 Microcontrollers commonly interact with peripherals via memory-mapped I/O.
 
 ## Interrupts
 
-Interrupts allow the processor to react immediately to external or internal events, such as timer expiries or peripheral input. Writing safe interrupt handlers is a key part of embedded Rust design.
+FIXME.
 Microcontrollers respond to events via interrupts.
 
 ## Useful Crates for Embedded Systems Programming

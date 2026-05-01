@@ -14,10 +14,7 @@
 
 ## Related Topics {#related-topics .skip}
 
-- [[localization | Localization]].
-- [[gui | GUI]].
-- [[web-programming | Web Programming]].
-- [[accessibility | Accessibility]].
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

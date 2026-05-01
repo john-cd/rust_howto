@@ -10,10 +10,7 @@
 
 ## Related Topics {#related-topics .skip}
 
-- Audio and image processing.
-- Media playback and streaming.
-- Multimedia formats and codecs.
-- `WASM` and cross-platform media apps.
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

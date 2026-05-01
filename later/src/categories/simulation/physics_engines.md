@@ -12,10 +12,7 @@
 
 ## Related Topics {#related-topics .skip}
 
-- [[game-development | Game Development]].
-- [[graphics | Graphics]].
-- [[physics | Physics]].
-- [[visualization | Visualization]].
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

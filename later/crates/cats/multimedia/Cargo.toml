@@ -15,4 +15,3 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-rodio = "0.17.3"

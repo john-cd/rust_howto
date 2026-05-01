@@ -137,6 +137,11 @@
 					"line": 119,
 					"column": 9,
 					"label": ""
+				},
+				{
+					"line": 139,
+					"column": 3,
+					"label": ""
 				}
 			]
 		},
@@ -157,6 +162,11 @@
 					"line": 58,
 					"column": 5,
 					"label": ""
+				},
+				{
+					"line": 76,
+					"column": 4,
+					"label": ""
 				}
 			]
 		},
@@ -171,6 +181,11 @@
 				{
 					"line": 66,
 					"column": 13,
+					"label": ""
+				},
+				{
+					"line": 84,
+					"column": 9,
 					"label": ""
 				}
 			]
@@ -226,11 +241,31 @@
 			]
 		},
 		{
+			"path": "bk/src/categories/mathematics/statistics.md",
+			"bookmarks": [
+				{
+					"line": 50,
+					"column": 14,
+					"label": ""
+				}
+			]
+		},
+		{
 			"path": "bk/src/categories/mathematics/trigonometry.md",
 			"bookmarks": [
 				{
 					"line": 44,
 					"column": 10,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "bk/src/code-organization/index.md",
+			"bookmarks": [
+				{
+					"line": 48,
+					"column": 6,
 					"label": ""
 				}
 			]
@@ -604,12 +639,12 @@
 			"path": "bk/crates/cats/data_structures/Cargo.toml",
 			"bookmarks": [
 				{
-					"line": 23,
+					"line": 25,
 					"column": 11,
 					"label": ""
 				},
 				{
-					"line": 33,
+					"line": 35,
 					"column": 21,
 					"label": ""
 				}
@@ -674,7 +709,7 @@
 					"label": ""
 				},
 				{
-					"line": 95,
+					"line": 91,
 					"column": 13,
 					"label": ""
 				}

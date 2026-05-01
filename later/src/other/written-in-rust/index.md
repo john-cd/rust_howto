@@ -141,11 +141,7 @@ This section provides a few examples of software written in Rust, organized by t
 
 ## Related Topics
 
-- [[development_tools | Development Tools]].
-- [[cross-platform | Cross-platform Development]].
-- [[scripting | Scripting]].
-- [[command-line-interface | Command Line Interface]].
-- [[programming_languages | Programming Languages]].
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

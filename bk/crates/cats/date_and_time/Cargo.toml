@@ -10,11 +10,11 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = ["date-and-time"]
+categories = [ "date_and_time" ]
 publish.workspace = true
 autolib = false
 
 [dependencies]
 chrono = "0.4.42"
-humantime = "2.1.0"
+# FIXME add example  humantime = "2.1.0"
 time = "0.3.45"

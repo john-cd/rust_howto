@@ -30,6 +30,7 @@ Refer to [[wasm | WASM]].
 
 - [`pyo3`][c~pyo3~docs]↗{{hi:pyo3}}: Excellent for creating Python extensions in Rust and embedding Python in Rust. Very versatile.
 - [`cpython`][c~cpython~docs]↗{{hi:cpython}}: Lower-level bindings to the CPython interpreter. More complex, but offers more control.
+- `rust-python`: Another option for Python bindings.
 
 {{#include python.incl.md}}
 
@@ -59,25 +60,29 @@ Refer to [[wasm | WASM]].
 
 ## Other Languages
 
-Many languages have their own FFI mechanisms. You'll often need to find or create bindings specific to the language you want to interact with.
+Many languages have their own FFI mechanisms. You'll often need to find or create bindings specific to the language you want to interact with. Sometimes, tools like SWIG can be used, but are less common with Rust than other languages.
 
-### General Binding Generators
+### General Binding Generators (Less Common with Rust)
 
 While widely used with other languages, [`SWIG`][swig~website]↗{{hi:SWIG}} (Simplified Wrapper and Interface Generator) is less frequently used with Rust due to the effectiveness of crates like [`pyo3`][c~pyo3~docs]↗{{hi:pyo3}} and [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}}.
-
-- [`uniffi`][c~uniffi~docs]↗{{hi:uniffi}}: A multi-language bindings generator for Rust.
 
 ## Related Topics
 
 ### Build Tools
 
-- [`cargo`][c~cargo~docs]↗{{hi:cargo}}: Essential for building Rust projects that involve FFI or bindings.
-- [`maturin`][c~maturin~docs]↗{{hi:maturin}}: Specifically for building and distributing Python packages that include Rust extensions.
-- [`cc`][c~cc~docs]↗{{hi:cc}}: C/C++ compiler driver for Rust.
+[`cargo`][c~cargo~docs]↗{{hi:cargo}}: (Essential for building Rust projects that involve FFI or bindings.)
+[`maturin`][c~maturin~docs]↗{{hi:maturin}}: Specifically for building and distributing Python packages that include Rust extensions.
 
 ### Build System Integration (for FFI)
 
 Usually handled with build scripts ([`build.rs`][book~cargo~build-script]↗{{hi:build.rs}}) and the [`cc`][c~cc~docs]↗{{hi:cc}} crate for compiling C/C++ code, if necessary.
+
+FIXME
+
+- [[build_utils | Build Utils]].
+- [[code_build | Code Build]].
+- [[building | Building]].
+- [[development-tools_build-utils | Development Tools: Build Utils]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
