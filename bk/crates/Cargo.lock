@@ -4064,6 +4064,7 @@ dependencies = [
  "heed",
  "lapin",
  "mongodb",
+ "once_cell",
  "oracle",
  "postgres",
  "redis 0.32.7",

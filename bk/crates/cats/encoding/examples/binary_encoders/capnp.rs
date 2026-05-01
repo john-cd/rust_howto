@@ -36,8 +36,10 @@ fn main() {
     let mut message = Builder::new_default();
 
     {
-        // 2. Initialize the root object using the generated Builder type for 'MyStruct'.
-        let mut my_struct = message.init_root::<foo_capnp::my_struct::Builder>();
+        // 2. Initialize the root object using the generated Builder type for
+        //    'MyStruct'.
+        let mut my_struct =
+            message.init_root::<foo_capnp::my_struct::Builder>();
 
         // 3. Set values on the fields.
         my_struct.set_name("Hello from Rust");
@@ -46,9 +48,13 @@ fn main() {
 
     // 4. Serialize the message into a byte buffer.
     let mut write_buffer = Vec::new();
-    serialize::write_message(&mut write_buffer, &message).expect("Failed to serialize message");
+    serialize::write_message(&mut write_buffer, &message)
+        .expect("Failed to serialize message");
 
-    println!("Cap'n Proto message serialized. Size: {} bytes", write_buffer.len());
+    println!(
+        "Cap'n Proto message serialized. Size: {} bytes",
+        write_buffer.len()
+    );
 }
 
 #[test]

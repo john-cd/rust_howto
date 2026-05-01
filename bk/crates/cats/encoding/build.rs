@@ -3,6 +3,7 @@
 // ANCHOR: capnp
 /// Compile a Captain Proto schema.
 fn capnp() {
+    println!("cargo::rerun-if-changed=examples/binary_encoders/foo.capnp");
     capnpc::CompilerCommand::new()
         //.src_prefix("schema") //  For all files specified for compilation that start with prefix, removes the prefix when computing output filenames.
         .file("examples/binary_encoders/foo.capnp") // Add a file to the list of files to be compiled.
@@ -14,6 +15,7 @@ fn capnp() {
 // ANCHOR: prost
 /// Compile a ProtoBuf schema.
 fn prost() {
+    println!("cargo::rerun-if-changed=examples/binary_encoders/person.proto");
     prost_build::compile_protos(
         &["examples/binary_encoders/person.proto"],
         &["examples/binary_encoders/"],
@@ -22,6 +24,7 @@ fn prost() {
 }
 // ANCHOR_END: prost
 
+/// Entry point for the build script.
 fn main() {
     #[cfg(target_os = "linux")]
     capnp();

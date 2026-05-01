@@ -18,10 +18,10 @@ autolib = false
 ignored = ["prost", "tonic-build"]
 
 [features]
-loco = ["dep:loco-rs"]
-async-graphql-support = ["async-graphql", "async-graphql-axum"]
-leptos-support = ["leptos"]
-rocket-support = ["rocket"]
+loco = ["loco-support"]
+async-graphql-support = ["dep:async-graphql", "dep:async-graphql-axum"]
+leptos-support = ["dep:leptos"]
+rocket-support = ["dep:rocket"]
 loco-support = ["dep:loco-rs"]
 
 [dependencies]
