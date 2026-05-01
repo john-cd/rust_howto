@@ -16,17 +16,11 @@ pub(crate) mod b_module {
 fn main() {
     a_module::visible_in_crate_only();
     b_module::visible_in_crate_only();
-    println!(
-        "visibility_pub_crate example: pub(crate) restricts visibility to the current crate"
-    );
+    println!("visibility_pub_crate example: pub(crate) restricts visibility to the current crate");
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        main();
-    }
+#[test]
+fn test() {
+    main();
 }

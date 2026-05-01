@@ -33,12 +33,8 @@ West Hollywood,CA,37031,34.0900000,-118.3608333";
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() -> anyhow::Result<()> {
-        main()?;
-        Ok(())
-    }
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
+    Ok(())
 }

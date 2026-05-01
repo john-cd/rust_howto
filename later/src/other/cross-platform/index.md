@@ -35,23 +35,23 @@ Rust can be used to build high-performance desktop applications for Windows, mac
 
 Wry is a cross-platform WebView rendering library. It provides a way to create cross-platform desktop applications with a focus on simplicity and performance. It is often used in conjunction with [`tauri`][c~tauri~docs]↗{{hi:tauri}}.
 
-`Wry` is a good choice when you want a lightweight native wrapper around a web-based frontend without the extra opinionated tooling of a larger framework.
+FIXME.
 
 ### GTK
 
 [`GTK-rs`][c~gtk4~crates.io]↗{{hi:GTK-rs}} is a Rust binding for the GTK (GIMP Toolkit) library, which is widely used for creating graphical user interfaces on Linux and other platforms.
 
-GTK is appropriate when you want a more traditional desktop application with native Linux look-and-feel and an established UI toolkit.
-
 ## Mobile Development
 
-While native mobile development with Rust is still maturing, Rust can be combined with frameworks like [`Flutter`][docs.flutter.dev~website]↗{{hi:Flutter}} or [`React Native`][react-native~website]↗ to build mobile apps where Rust provides backend or shared business logic and the UI is rendered with platform-specific tooling.
+While native mobile development with Rust is nascent, Rust `can` be combined with frameworks like [`Flutter`][docs.flutter.dev~website]↗{{hi:Flutter}} to create cross-platform mobile apps. Rust can provide the backend logic, and Flutter handles the UI.
 
-Mobile development with Rust is currently most compelling for shared libraries, native modules, or performance-critical parts of the app rather than full UI stacks.
+FIXME.
 
 ## Embedded Systems
 
-Rust is increasingly used in embedded systems because it offers memory safety and predictable performance. Embedded Rust projects often compile for bare-metal or `no_std` environments and use crates such as `cortex-m`, `embedded-hal`, and `rtic`.
+Rust is becoming increasingly used in embedded systems due to its performance and safety.
+
+FIXME.
 
 ## Notable Cross-Platform Application Frameworks
 
@@ -67,10 +67,7 @@ Dioxus is a Rust-based framework designed for building cross-platform user inter
 
 ## Related Topics
 
-- [[cross-platform | Cross-platform Development]].
-- [[gui | GUI]].
-- [[embedded | Embedded Systems]].
-- [[wasm | WebAssembly]].
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -29,12 +29,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        main();
-    }
+#[test]
+fn test() {
+    main();
 }
 // [review lazy_constant.rs and lazy_static.rs and global_mut_state.rs](https://github.com/john-cd/rust_howto/issues/939)

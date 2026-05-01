@@ -77,12 +77,8 @@ fn main() -> Result<(), Box<EvalAltResult>> {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() -> Result<(), Box<EvalAltResult>> {
-        main()?;
-        Ok(())
-    }
+#[test]
+fn test() -> Result<(), Box<EvalAltResult>> {
+    main()?;
+    Ok(())
 }

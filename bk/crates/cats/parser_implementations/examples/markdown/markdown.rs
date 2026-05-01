@@ -30,11 +30,7 @@ This is a simple paragraph with **bold** and *italic* text.
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        main();
-    }
+#[test]
+fn test() {
+    main();
 }

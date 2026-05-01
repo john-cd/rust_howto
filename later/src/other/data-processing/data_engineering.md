@@ -56,10 +56,7 @@ Log images, point clouds, etc, and visualize them effortlessly.
 
 ## Related Topics {#related-topics .skip}
 
-- [[data_processing | Data and ETL]].
-- [[cloud | Cloud]].
-- [[development_tools | Development Tools]].
-- [[web-programming | Web Programming]].
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

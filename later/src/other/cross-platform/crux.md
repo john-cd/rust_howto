@@ -20,10 +20,7 @@ The user interface{{hi:User interface}} layer is built natively, with modern dec
 
 ## Related Topics {#related-topics .skip}
 
-- [[cross-platform | Cross-platform Development]].
-- [[architecture | Architecture]].
-- [[wasm | WebAssembly]].
-- [[programming_languages | Programming Languages]].
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

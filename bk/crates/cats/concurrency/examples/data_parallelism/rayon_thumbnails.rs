@@ -1,15 +1,14 @@
 #![allow(dead_code)]
 // ANCHOR: example
+use std::fs::File;
 use std::fs::create_dir_all;
+use std::io::Write;
 use std::path::Path;
 
 use anyhow::Context;
 use anyhow::Result;
 use glob::MatchOptions;
 use glob::glob_with;
-use image::ImageFormat;
-use image::Rgb;
-use image::RgbImage;
 use image::imageops::FilterType;
 use rayon::prelude::*;
 
@@ -18,12 +17,12 @@ fn main() -> Result<()> {
     create_test_files()?;
 
     let options: MatchOptions = Default::default();
-    let files: Vec<_> = glob_with("temp/test_images/*.jpg", options)?
+    let files: Vec<_> = glob_with("*.jpg", options)?
         .filter_map(|x| x.ok())
         .collect();
 
     if files.is_empty() {
-        println!("No .jpg files found in temp/test_images");
+        println!("No .jpg files found in current directory");
         return Ok(());
     }
 
@@ -77,27 +76,19 @@ fn create_test_files() -> Result<()> {
         std::fs::create_dir_all(test_dir)?;
     }
 
-    // Create a few small valid JPEG image files for the example.
+    // Create a few dummy .jpg files.
     for i in 0..3 {
         let file_path = test_dir.join(format!("test_{i}.jpg"));
-        let mut image = RgbImage::new(32, 32);
-        for (x, y, pixel) in image.enumerate_pixels_mut() {
-            let value = ((x + y + i) % 256) as u8;
-            *pixel = Rgb([value, 255 - value, value / 2]);
-        }
-        image.save_with_format(&file_path, ImageFormat::Jpeg)?;
+        let mut file = File::create(&file_path)?;
+        // Write some dummy data to the file (not a real image).
+        file.write_all(b"dummy image data")?;
     }
     Ok(())
 }
-// ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() -> anyhow::Result<()> {
-        main()?;
-        Ok(())
-    }
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
+    Ok(())
 }
 // [review; rayon_thumbnails: address the need for test jpg data_parallelism: rayon_thumbnails.rs is noplayground - linking with cc](https://github.com/john-cd/rust_howto/issues/261)

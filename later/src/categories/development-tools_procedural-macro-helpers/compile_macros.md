@@ -18,10 +18,7 @@
 
 ## Related Topics {#related-topics .skip}
 
-- Code generation and macros.
-- Rust compiler extensions.
-- Build scripts and procedural macros.
-- Compile-time API design.
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

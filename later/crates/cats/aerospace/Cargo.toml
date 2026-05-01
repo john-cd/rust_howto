@@ -15,7 +15,6 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-sgp4 = "2.4.0"
 
 ## General
 #anyhow = "1.0.95"

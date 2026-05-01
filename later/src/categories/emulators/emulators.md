@@ -20,10 +20,7 @@ PolkaVM is a general purpose user-level RISC-V based virtual machine. This proje
 
 ## Related Topics {#related-topics .skip}
 
-- Virtual machines and CPU emulators.
-- ROM and firmware handling.
-- Graphics and audio output.
-- Platform compatibility.
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

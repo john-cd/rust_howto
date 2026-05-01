@@ -2,44 +2,7 @@
 resolver = "3"
 members = [
     "about",
-    "cats/algorithms",
-    "cats/asynchronous",
-    "cats/authentication",
-    "cats/caching",
-    "cats/command_line_interface",
-    "cats/compression",
-    "cats/concurrency",
-    "cats/config",
-    "cats/cryptography",
-    "cats/data_structures",
-    "cats/database",
-    "cats/database_implementations",
-    "cats/date_and_time",
-    "cats/development_tools",
-    "cats/development_tools_build_utils",
-    "cats/development_tools_cargo_plugins",
-    "cats/development_tools_debugging",
-    "cats/development_tools_profiling",
-    "cats/development_tools_testing",
-    "cats/email",
-    "cats/encoding",
-    "cats/filesystem",
-    "cats/graphics",
-    "cats/hardware_support",
-    "cats/mathematics",
-    "cats/memory_management",
-    "cats/network_programming",
-    "cats/os",
-    "cats/os_unix_apis",
-    "cats/os_windows_apis",
-    "cats/parser_implementations",
-    "cats/parsing",
-    "cats/rust_patterns",
-    "cats/template_engine",
-    "cats/text_processing",
-    "cats/web_programming",
-    "cats/web_programming_http_client",
-    "cats/web_programming_http_server",
+    "cats/*",
     "code_organization",
     "language",
     # "other",
@@ -60,7 +23,14 @@ documentation = "https://docs.rs/rust_howto/"
 homepage = "https://john-cd.com/rust_howto/"
 repository = "https://github.com/john-cd/rust_howto/"
 license-file = "../LICENSE"
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+keywords = [
+    "patterns",
+    "cookbook",
+    "howto",
+    "how-to",
+    "documentation",
+    "Rust bible",
+]
 categories = [
     "algorithms",
     "asynchronous",
@@ -75,3 +45,6 @@ categories = [
 ]
 publish = false
 
+# Was needed for https://github.com/cloudflare/pingora/issues/568
+#[patch.crates-io]
+#sfv = { git = "https://github.com/undef1nd/sfv.git", tag = "v0.9.4" }

@@ -76,9 +76,9 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+use rusty_fork::rusty_fork_test;
+
+rusty_fork_test! {
     #[test]
     fn test() {
         use std::fs;

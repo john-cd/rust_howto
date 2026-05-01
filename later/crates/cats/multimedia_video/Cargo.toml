@@ -10,9 +10,8 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "multimedia::video" ]
+categories = [ "multimedia_video" ]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-av-scenechange = { version = "0.14.1", default-features = false }

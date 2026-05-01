@@ -10,22 +10,20 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = ["game-engines"]
+categories = ["game_engines"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-bevy = { version = "0.16.0", optional = true }
-fyrox = { version = "0.36.0", optional = true }
-# TODO fyrox-core = { version = "0.36.0", optional = true }
-anyhow = { version = "1.0.95", optional = true }
-ggez = { version = "0.9.3", optional = true } # TODO ggez conflict with wgpu
+# FIXME bevy = { version = "0.16.0", optional = true }
+# FIXME fyrox = { version = "0.36.0", optional = true }
+# fyrox-core = { version = "0.36.0", optional = true }
+# FIXME ggez = { version = "0.9.3", optional = true } # ggez conflict with wgpu
 macroquad = "0.4.14"
 
 # FIXME
-[features]
-default = []
-bevy = ["dep:bevy"]
-fyrox = ["dep:fyrox", "dep:anyhow"]
-# TODO fyrox = ["dep:fyrox", "dep:fyrox-core"]
-ggez = ["dep:ggez"]
+#[features]
+#default = []
+#bevy = ["dep:bevy"]
+#fyrox = ["dep:fyrox", "dep:fyrox-core"]
+#ggez = ["dep:ggez"]

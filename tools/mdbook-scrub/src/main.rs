@@ -1,10 +1,10 @@
 use std::io;
 use std::process;
 
+use clap::crate_name;
 use clap::Arg;
 use clap::ArgMatches;
 use clap::Command;
-use clap::crate_name;
 use mdbook::errors::Error;
 use mdbook::preprocess::CmdPreprocessor;
 use mdbook::preprocess::Preprocessor;

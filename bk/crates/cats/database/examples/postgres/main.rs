@@ -17,28 +17,24 @@ pub(crate) static ENV_MUTEX: std::sync::Mutex<()> = std::sync::Mutex::new(());
 fn main() -> anyhow::Result<()> {
     create_tables::main()?;
     insert_query_data::main()?;
-    // NOTE: `aggregate_data::main()` is a separate Postgres example that
-    // operates on a different schema, so it is intentionally not executed here.
+    // NOTE: aggregate_data::main() expects a different database (e.g., "moma").
+    // FIXME aggregate_data::main()?;
+    Ok(())
+}
+
+#[cfg(feature = "postgres")]
+#[test]
+fn require_external_svc() -> anyhow::Result<()> {
+    let _lock = ENV_MUTEX.lock().unwrap();
+    let test_url =
+        std::env::var("TEST_PG_URL").expect("TEST_PG_URL must be set");
+    unsafe {
+        std::env::set_var("PG_URL", test_url);
+    }
+    main()?;
     Ok(())
 }
 
 #[cfg(not(feature = "postgres"))]
 fn main() {}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[cfg(feature = "postgres")]
-    #[test]
-    fn require_external_svc() -> anyhow::Result<()> {
-        let _lock = ENV_MUTEX.lock().unwrap();
-        let test_url =
-            std::env::var("TEST_PG_URL").expect("TEST_PG_URL must be set");
-        unsafe {
-            std::env::set_var("PG_URL", test_url);
-        }
-        main()?;
-        Ok(())
-    }
-}
 // [review](https://github.com/john-cd/rust_howto/issues/713)

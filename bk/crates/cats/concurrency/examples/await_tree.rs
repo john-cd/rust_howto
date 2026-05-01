@@ -75,8 +75,7 @@ async fn foo(n: i32) {
 
     // Spans of joined futures will be siblings in the tree.
     join(
-        bar(n).instrument_await(format!("bar {n}")), /* The span can be a
-                                                      * `String`. */
+        bar(n).instrument_await(format!("bar {n}")), // The span can be a `String`.
         baz(n).instrument_await("baz"), // or `&'static str`.
     )
     .await;
@@ -105,11 +104,7 @@ async fn baz(n: i32) {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        main();
-    }
+#[test]
+fn test() {
+    main();
 }

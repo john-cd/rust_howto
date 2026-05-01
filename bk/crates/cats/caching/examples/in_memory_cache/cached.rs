@@ -59,13 +59,9 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        main();
-    }
+#[test]
+fn test() {
+    main();
 }
 // [review further](https://github.com/john-cd/rust_howto/issues/1354)
 // <https://docs.rs/cached/latest/cached/proc_macro/index.html>

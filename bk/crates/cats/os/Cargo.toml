@@ -15,7 +15,9 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-anyhow = "1.0.100"
 libc = "0.2.177"
-regex = "1.12.2"
 which = "8.0.0"
+
+## General
+anyhow = "1.0.100"
+regex = "1.12.2"

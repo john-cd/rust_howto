@@ -76,12 +76,8 @@ path = "src/main.rs"
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() -> anyhow::Result<()> {
-        main()?;
-        Ok(())
-    }
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
+    Ok(())
 }

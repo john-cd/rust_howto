@@ -112,13 +112,8 @@ fn transfer_amount(
 }
 // ANCHOR_END: example
 
-// Adapted from <https://docs.rs/derive_more/latest/derive_more/>
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        main();
-    }
+#[test]
+fn test() {
+    main();
 }
+// Adapted from <https://docs.rs/derive_more/latest/derive_more/>

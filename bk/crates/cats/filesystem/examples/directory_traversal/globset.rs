@@ -32,12 +32,9 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() -> anyhow::Result<()> {
-        main()?;
-        Ok(())
-    }
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
+    Ok(())
 }
+// [review](https://github.com/john-cd/rust_howto/issues/1003)

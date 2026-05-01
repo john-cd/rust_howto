@@ -19,5 +19,5 @@ _default:
 
 # Check for security advisories, license issues, etc
 @check_crates:
-  cd {{root}} && cargo deny check --hide-inclusion-graph
+  cd {{root}}/crates && cargo deny check --hide-inclusion-graph
 # [review cargo deny](https://github.com/john-cd/rust_howto/issues/1275)

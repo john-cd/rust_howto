@@ -30,10 +30,7 @@ Many other microcontroller families have their own HAL crates.
 
 ## Related Topics {#related-topics .skip}
 
-- Peripheral Access Crates and low-level hardware.
-- Embedded real-time systems.
-- Microcontroller-specific HALs.
-- `embedded-hal` ecosystem best practices.
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

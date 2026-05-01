@@ -34,11 +34,7 @@ The following table outlines common tasks for working with WebSockets in Rust, a
 
 ## Related Topics
 
-- [[web-programming | Web Programming]].
-- [[web-programming_http-server | Web Programming: HTTP Server]].
-- [[network-programming | Network Programming]].
-- [[wasm | WASM]].
-- [[development_tools | Development Tools]].
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

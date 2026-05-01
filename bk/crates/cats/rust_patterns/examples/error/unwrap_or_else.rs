@@ -44,15 +44,11 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        use std::fs;
-        if !fs::exists("temp").unwrap() {
-            fs::create_dir("temp").unwrap();
-        }
-        main();
+#[test]
+fn test() {
+    use std::fs;
+    if !fs::exists("temp").unwrap() {
+        fs::create_dir("temp").unwrap();
     }
+    main();
 }

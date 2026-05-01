@@ -25,10 +25,7 @@ A Rust drawing library focus on data plotting for both [WASM][p~wasm] and native
 
 ## Related Topics {#related-topics .skip}
 
-- [[graphics | Graphics]].
-- [[rendering | Rendering]].
-- [[wasm | WASM]].
-- [[development_tools | Development Tools]].
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

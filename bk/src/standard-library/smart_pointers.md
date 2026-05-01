@@ -23,11 +23,6 @@ Here's a table of common smart pointers in Rust, outlining their primary use cas
 | [`Mutex<T>`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}} | Provides mutual exclusion, allowing only one thread at a time to access the wrapped data. Thread-safe, provides interior mutability across threads. Blocks other threads trying to acquire the lock. | Sharing mutable data safely between multiple threads. | `let m = Arc::new(Mutex::new(5)); let data = m.lock().unwrap(); *data += 1;` |
 | [`RwLock<T>`][c~std::sync::RwLock~docs]↗{{hi:std::sync::RwLock}} | Provides a multiple-reader, single-writer lock. Allows multiple readers or one writer at a time. Thread-safe, provides interior mutability across threads. More permissive than `Mutex` for read operations. | When you have data that is frequently read but infrequently written to by multiple threads. | `let lock = Arc::new(RwLock::new(vec![1, 2, 3])); let read_guard = lock.read().unwrap();` |
 | [`Weak<T>`][c~std::rc::Weak~docs]↗{{hi:std::rc::Weak}}{{hi:std::sync::Weak}} | A non-owning, "weak" reference to data managed by `Rc<T>` or `Arc<T>`. Does not prevent the data from being dropped. | Does not increase the reference count. Can be upgraded to `Rc<T>` or `Arc<T>` if the data still exists. Used to break reference cycles. | Preventing memory leaks in cyclic data structures when using `Rc<T>` or `Arc<T>`. Implementing caches or observers. | `let five = Rc::new(5); let weak_five = Rc::downgrade(&five);` |
-| [`Cow<'a, B>`][c~std::borrow::Cow~docs]↗{{hi:std::borrow::Cow}} | Clone-on-write smart pointer: encapsulates and provides immutable access to borrowed data, and lazily clones the data when mutation or ownership is required. | Optimizing performance by avoiding unnecessary clones. Useful when reading is common but writing is rare. | `let mut cow = Cow::Borrowed("hello"); cow.to_mut().push_str(" world");` |
-| [`OnceCell<T>`][c~std::cell::OnceCell~docs]↗{{hi:std::cell::OnceCell}} | A cell which can be written to only once. Not thread-safe. | Lazy initialization of global or local data in a single-threaded context. | `let cell = OnceCell::new(); cell.set(5).unwrap();` |
-| [`OnceLock<T>`][c~std::sync::OnceLock~docs]↗{{hi:std::sync::OnceLock}} | A synchronization primitive which can be written to only once. Thread-safe version of `OnceCell`. | Safe, lazy initialization of global data accessible from multiple threads. | `static LOCK: OnceLock<i32> = OnceLock::new(); LOCK.set(10).unwrap();` |
-| [`LazyCell<T, F>`][c~std::cell::LazyCell~docs]↗{{hi:std::cell::LazyCell}} | A value which is initialized on the first access. Not thread-safe. | Lazy initialization with a provided initialization function. | `let lazy = LazyCell::new(|| 5); assert_eq!(*lazy, 5);` |
-| [`LazyLock<T, F>`][c~std::sync::LazyLock~docs]↗{{hi:std::sync::LazyLock}} | A value which is initialized on the first access. Thread-safe version of `LazyCell`. | Safe, lazy initialization of global data with a provided initialization function. | `static LAZY: LazyLock<i32> = LazyLock::new(|| 10); assert_eq!(*LAZY, 10);` |
 
 ## Smart Pointer Comparison {#smart-pointer-comparison}
 
@@ -109,11 +104,18 @@ The following example demonstrates the implementation of a basic smart pointer:
 - [[reference_counting | Reference Counting]].
 - [[resource_cleanup | Resource Cleanup]].
 - [[vectors | Vectors]].
+
+{{#include refs.incl.md}}
+{{#include ../refs/link-refs.md}}
+
+<div class="hidden">
+[add cow](https://github.com/john-cd/rust_howto/issues/1384)
+add oncecell, std::sync::OnceLock, lazylock.
+
 - [[concurrency | Concurrency]].
 - [[memory-management | Memory Management]].
 - [[memory_usage_analysis | Memory Usage Analysis]].
 - [[rust-patterns | Rust Patterns]].
 - [[shared_state | Shared State]].
 
-{{#include refs.incl.md}}
-{{#include ../refs/link-refs.md}}
+</div>

@@ -47,10 +47,7 @@ fn main() -> Result<()> {
         "Maximum matching version for <= 1.0.0 is: {max_matching_version:?}"
     );
     assert_eq!(max_matching_version, Some(Version::parse("1.0.0")?));
-    println!(
-        "Max version matching '<= 1.0.0': {:?}",
-        max_matching_version
-    );
+    println!("Max version matching '<= 1.0.0': {:?}", max_matching_version);
 
     let max_match_2 = find_max_matching_version(
         ">1.2.3-alpha.3",

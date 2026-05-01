@@ -12,15 +12,13 @@ Tools for programming languages: compilers, interpreters, transpilers, and virtu
 
 ## Compiler Implementations
 
-This category covers the tools and libraries used to build compilers, interpreters, and transpilers in Rust. These projects support language parsing, analysis, code generation, and runtime execution.
+FIXME.
 
 ### Interpreters
 
-Interpreters execute source code directly, often using an internal AST or bytecode representation. Rust is a popular choice for interpreter implementations because of its strong performance and memory safety.
+FIXME.
 
 ### Transpilers
-
-Transpilers convert source code from one language into another, allowing developers to target multiple platforms or runtimes from a single source language.
 
 See also [[transpilers | Transpilers]].
 

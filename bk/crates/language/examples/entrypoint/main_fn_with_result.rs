@@ -14,11 +14,7 @@ fn main() -> std::io::Result<()> {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        assert!(main().is_err());
-    }
+#[test]
+fn test() {
+    assert!(main().is_err());
 }

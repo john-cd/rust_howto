@@ -3,39 +3,16 @@
 #
 # For more help, visit the .dockerignore file reference guide at
 # https://docs.docker.com/go/build-context-dockerignore/
-
-# Git and CI
 .git/
 .github/
-
-# IDEs and Editors
 .vscode/
-.idea/
-*.swp
-*.swo
-
-# Build Artifacts
 bin/
-**/target/
-**/book/
-**/doctest_cache/
-**/temp/
-
-# Python bits (since python3 is in the Dockerfile)
-__pycache__/
-*.py[cod]
-*$py.class
-
-# Project specific
-bk/drafts/
-later/
-mdbook-utils/
+bk/book/
+bk/crates/*/temp/
+bk/crates/*/target/
+bk/doctest_cache/
+bk/target/
+target/
 playground/
 publish/
-typ/
-/*.md
-/*.html
-
-# Logs and Temp
-**/*.log
-tmp/
+*.log

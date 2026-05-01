@@ -39,10 +39,8 @@ fn main() {
             // Verify that "Fetch Data" comes before "Validate"
             // and "Validate" comes before "Load".
             let pos: Vec<&str> = order.iter().map(|n| graph[*n]).collect();
-            let fetch_position =
-                pos.iter().position(|&s| s == "Fetch Data").unwrap();
-            let validate_position =
-                pos.iter().position(|&s| s == "Validate").unwrap();
+            let fetch_position = pos.iter().position(|&s| s == "Fetch Data").unwrap();
+            let validate_position = pos.iter().position(|&s| s == "Validate").unwrap();
             let load_position = pos.iter().position(|&s| s == "Load").unwrap();
             assert!(fetch_position < validate_position);
             assert!(validate_position < load_position);
@@ -52,11 +50,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        main();
-    }
+#[test]
+fn test() {
+    main();
 }

@@ -49,9 +49,11 @@ See [[encoding | Encoding]] and especially [[complex_encoding | Complex Encoding
 
 ## Related Topics
 
-- [[aerospace | Aerospace]].
-- [[aerospace_protocols | Aerospace Protocols]].
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
+<div class="hidden">
+[write](https://github.com/john-cd/rust_howto/issues/202)
+</div>

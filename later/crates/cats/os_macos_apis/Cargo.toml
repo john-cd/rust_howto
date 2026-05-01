@@ -10,12 +10,8 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "os::macos-apis" ]
+categories = [ "os_macos_apis" ]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-
-[target.'cfg(target_os = "macos")'.dependencies]
-cocoa = "0.24"
-objc = "0.2.7"

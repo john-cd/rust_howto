@@ -8,10 +8,7 @@
 
 ## Related Topics {#related-topics .skip}
 
-- Real-time embedded application design.
-- Deterministic concurrency and scheduling.
-- Embedded HAL and hardware access.
-- Safe embedded Rust patterns.
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -36,10 +36,7 @@ Dioxus supports:
 
 ## Related Topics {#related-topics .skip}
 
-- Web and desktop UI frameworks.
-- [WASM](../wasm/index.md) applications.
-- Cross-platform application development.
-- Native and hybrid UI toolkits.
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

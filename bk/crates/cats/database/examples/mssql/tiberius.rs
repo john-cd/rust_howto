@@ -1,7 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-// This example demonstrates connecting to and querying Microsoft SQL Server
-// using the `tiberius` crate.
 use futures::stream::TryStreamExt;
 use tiberius::AuthMethod;
 use tiberius::Client;
@@ -69,25 +67,13 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    #[ignore = "Requires an external Microsoft SQL Server instance"]
-    fn require_external_svc() -> anyhow::Result<()> {
-        if std::env::var("MSSQL_HOST").is_err() {
-            // TODO
-            eprintln!(
-                "Skipping MSSQL integration test; set MSSQL_HOST to run this test."
-            );
-            return Ok(());
-        }
-        main()?;
-        Ok(())
+#[test]
+fn require_external_svc() -> anyhow::Result<()> {
+    unsafe {
+        // Refer to the `compose*.yaml` files.
+        std::env::set_var("MSSQL_HOST", "rust_howto_dev-mssql-1");
     }
+    main()?;
+    Ok(())
 }
 // [fix heavy test](https://github.com/john-cd/rust_howto/issues/1019)
-// unsafe {
-//     // Refer to the `compose*.yaml` files.
-//     std::env::set_var("MSSQL_HOST", "rust_howto_dev-mssql-1");
-// }

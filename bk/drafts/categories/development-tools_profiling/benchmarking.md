@@ -11,21 +11,6 @@
 
 `cargo flamegraph` generates execution flamegraphs.
 
-To install:
-```sh
-cargo install cargo-flamegraph
-```
-
-Basic usage:
-```sh
-# Profile a binary:
-cargo flamegraph --bin <name>
-# Profile an example:
-cargo flamegraph --example <name>
-# Profile a benchmark:
-cargo flamegraph --bench <name>
-```
-
 ## `criterion` {#criterion}
 
 [![criterion][c~criterion~docs~badge]][c~criterion~docs]{{hi:criterion}}
@@ -88,14 +73,11 @@ hyperfine --runs 5 'sleep 0.3'
 hyperfine 'hexdump file' 'xxd file'
 # Run the benchmark on a warm cache
 hyperfine --warmup 3 'grep -R TODO *'
-# Run the benchmark and export results to Markdown
-hyperfine --export-markdown results.md 'ls' 'find .'
 ```
 
 ## Related Topics {#related-topics .skip}
 
-- [[development-tools_debugging | Debugging]]
-- [[development-tools_cargo-plugins | Cargo Plugins]]
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

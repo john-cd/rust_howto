@@ -10,8 +10,12 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = ["aerospace::simulation"]
+categories = ["aerospace_simulation"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
+
+## General
+# FIXME
+#anyhow = "1.0.95"

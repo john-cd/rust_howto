@@ -31,11 +31,7 @@ criterion_group!(benches, benchmark_fibonacci);
 criterion_main!(benches);
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        main();
-    }
+#[test]
+fn test() {
+    main();
 }

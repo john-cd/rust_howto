@@ -7,12 +7,6 @@
 name: Build the book code and deploy the book to GitHub Pages (Linux)
 
 on:
-  workflow_call:
-    inputs:
-      deploy_to_gh_pages:
-        description: "If true, deploy the book to GitHub Pages"
-        type: boolean
-        default: false
   ## Runs on pushes targeting the default branch
   push:
     branches: ["main"]
@@ -46,11 +40,10 @@ env:
   IMAGE_NAME: johncd/rust_howto_ci
 
 jobs:
+  ## Build job
   ## Introduction to GitHub Actions with Docker: https://docs.docker.com/guides/gha/
-  build-image:
+  build:
     runs-on: ubuntu-latest
-    outputs:
-      image_name: ${{ env.IMAGE_NAME }}
     steps:
       ## https://github.com/marketplace/actions/free-disk-space-ubuntu
       - name: Free Disk Space (Ubuntu)
@@ -85,67 +78,30 @@ jobs:
         uses: docker/setup-buildx-action@v4
       # - name: List Docker builders (debug)
       #   run: docker buildx ls
-      - name: Build, cache (type=gha), and push to DockerHub
-        run: |
-          docker buildx bake -f compose.yaml -f compose-ci.yaml \
-            --push --allow=fs.read=.. \
-            --builder=${{ steps.builder.outputs.name }}
+      # - name: Display the workspace (debug)
+      #   run: echo ${{ github.workspace }}
+      ## Build and push using the CLI
+      - name: Build, load to local image store, push to DockerHub
+        run: docker buildx bake -f compose.yaml -f compose-ci.yaml --push --load --allow=fs.read=.. --builder=${{ steps.builder.outputs.name }}
+        # Will read the .env file there:
         working-directory: ./.devcontainer/
-
-  test:
-    needs: build-image
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        partition: [1, 2]
-    steps:
-      - name: Code checkout
-        uses: actions/checkout@v6
-      - name: Rust Cache
-        uses: Swatinem/rust-cache@v2
-        with:
-          shared-key: "rust-howto-shared"
-          cache-targets: "false"
-      - name: Login to Docker Hub
-        uses: docker/login-action@v4
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Run partitioned tests
+      # - name: List docker images (debug)
+      #   run: docker image ls
+      - name: Measure runner disk space and memory before build
         run: |
-          docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml run \
-            -e NEXTEST_ARGS="--partition hash:${{ matrix.partition }}/2" \
-            -e SKIP_BOOK_BUILD="true" \
-            book
-
-  build-book:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Code checkout
-        uses: actions/checkout@v6
-      - name: Rust Cache
-        uses: Swatinem/rust-cache@v2
-        with:
-          shared-key: "rust-howto-shared"
-          cache-targets: "false"
-          save-if: false # Only restore in the final build stage
-      - name: Login to Docker Hub
-        uses: docker/login-action@v4
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build the book
-        run: |
-          docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml run \
-            -e SKIP_TESTS="true" \
-            book
+          echo "=== Disk space ==="
+          df -h
+          echo "=== Memory ==="
+          free -h
+          echo "=== Docker disk usage ==="
+          docker system df
+      - name: Check that all the code builds and pass tests; build the book
+        run: docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml run book
       - name: Setup GitHub Pages
         id: pages
         uses: actions/configure-pages@v6
       - name: Upload artifacts
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./book/html/
 
@@ -154,7 +110,8 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     if: ${{ inputs.deploy_to_gh_pages }}
-    needs: build-book
+    # Add a dependency to the build job
+    needs: build
     ## Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
     permissions:
       pages: write # to deploy to Pages

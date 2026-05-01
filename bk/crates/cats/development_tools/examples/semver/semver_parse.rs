@@ -25,12 +25,8 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() -> Result<()> {
-        main()?;
-        Ok(())
-    }
+#[test]
+fn test() -> Result<()> {
+    main()?;
+    Ok(())
 }

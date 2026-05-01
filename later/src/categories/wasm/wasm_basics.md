@@ -55,10 +55,7 @@ Rust can be used for [game development][p~game-development] targeting the web vi
 
 ## Related Topics {#related-topics .skip}
 
-- [[wasm_development | WASM Development]].
-- [[interfacing_with_javascript | Interfacing with Javascript]].
-- [[web-programming | Web Programming]].
-- [[development_tools | Development Tools]].
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

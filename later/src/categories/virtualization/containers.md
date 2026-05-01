@@ -30,10 +30,7 @@ docker init
 
 ## Related Topics {#related-topics .skip}
 
-- [[virtualization | Virtualization]].
-- [[cloud | Cloud]].
-- [[development_tools | Development Tools]].
-- [[operating_systems | Operating Systems]].
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

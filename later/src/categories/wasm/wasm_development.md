@@ -77,10 +77,7 @@ WASM binary size is important for web performance. Use tools like [`wee_alloc`][
 
 ## Related Topics {#related-topics .skip}
 
-- [[wasm_basics | WASM Basics]].
-- [[interfacing_with_javascript | Interfacing with Javascript]].
-- [[development_tools | Development Tools]].
-- [[cloud | Cloud]].
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -31,11 +31,7 @@ fn divide(a: i32, b: i32) -> Result<i32> {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        assert!(main().is_err());
-    }
+#[test]
+fn test() {
+    assert!(main().is_err());
 }

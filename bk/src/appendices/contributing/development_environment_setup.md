@@ -45,7 +45,7 @@ winget install Microsoft.VisualStudioCode
 winget install Docker.DockerDesktop
 winget install Casey.Just
 winget install Python.Python.3
-winget install openssl  # Required by crates that depend on native TLS (e.g. `openssl-sys`)
+winget install ShiningLight.OpenSSL  # Required by crates that depend on native TLS (e.g. `openssl-sys`)
 ```
 
 After installing Rust via `rustup`, open a new terminal and run:
@@ -84,11 +84,17 @@ apt-get -y install just
 
 ## Related Topics {#related-topics .skip}
 
-- [[containers | Containers]].
-- [[development_tools | Development Tools]].
 - [[rust-installation | Rust Installation]].
-- [[text-editors | Text Editors]].
-- [[vscode | Vscode]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[dev_environment_setup: review; write windows install; `winget install openssl`; need Python](https://github.com/john-cd/rust_howto/issues/527)
+
+- [[containers | Containers]].
+- [[development_tools | Development Tools]].
+- [[text-editors | Text Editors]].
+- [[vscode | Vscode]].
+
+</div>

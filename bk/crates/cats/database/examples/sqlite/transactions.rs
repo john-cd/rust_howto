@@ -1,7 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-// This example demonstrates transaction management with SQLite using
-// `rusqlite`.
 use std::fs;
 
 use anyhow::Result;

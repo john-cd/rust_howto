@@ -11,6 +11,7 @@ mod opencmd;
 mod querycmd;
 mod testcmd;
 pub(crate) use cmd::Cmd;
+pub(crate) use config::Config;
 
 /// Define the command tree and arguments that the command-line
 /// interface will accept.

@@ -23,7 +23,7 @@
 | [![config][cat~config~badge]][cat~config] | Configuration management for applications. | [Configuration](../categories/config/index.md) |
 | [![cryptography][cat~cryptography~badge]][cat~cryptography] | Algorithms for securing data. | [Cryptography](../categories/cryptography/index.md) |
 | [![cryptography::cryptocurrencies][cat~cryptography::cryptocurrencies~badge]][cat~cryptography::cryptocurrencies] | Digital currencies, wallets, and distributed ledgers. | - |
-| [![data-structures][cat~data-structures~badge]][cat~data-structures] | Rust implementations of particular ways of organizing data suited for specific purposes. | [Data Structures](../categories/data-structures/index.md) |
+| [![data-structures][cat~data-structures~badge]][cat~data-structures] | Rust implementations of particular ways of organizing data suited for specific purposes. | - |
 | [![database][cat~database~badge]][cat~database] | Interfaces with database management systems. | [Database Access](../categories/database/index.md) |
 | [![database-implementations][cat~database-implementations~badge]][cat~database-implementations] | Database management systems implemented in Rust. | [Database Implementations](../categories/database-implementations/index.md) |
 | [![date-and-time][cat~date-and-time~badge]][cat~date-and-time] | Managing dates, times, durations, and time zones. | [Date and Time](../categories/date-and-time/index.md) |
@@ -99,3 +99,6 @@
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
+<div class="hidden">
+[link to category pages](https://github.com/john-cd/rust_howto/issues/1394)
+</div>

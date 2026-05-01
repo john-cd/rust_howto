@@ -34,10 +34,7 @@ Mention https://github.com/moby/buildkit
 
 ## Related Topics {#related-topics .skip}
 
-- [[containers | Containers]].
-- [[cloud | Cloud]].
-- [[development_tools | Development Tools]].
-- [[network-programming | Network Programming]].
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

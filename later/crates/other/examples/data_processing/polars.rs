@@ -1,6 +1,8 @@
 #![allow(dead_code)]
-#![cfg(feature = "polars")]
+//#![cfg(feature = "polars")]
 // ANCHOR: example
+// COMING SOON
+// ANCHOR_END: example
 //! # Polars Data Processing Example
 //!
 //! This example demonstrates basic data processing operations using the Polars
@@ -10,74 +12,54 @@
 //!
 //! ```toml
 //! [dependencies]
-//! polars = "0.49.1"
+//! polars = "0.48.1"
 //! ```
 //!
 //! `polars` has a large list of default features, therefore we may want to
 //! cherry-pick required features:
 //!
 //! ```toml
-//! polars = { version = "0.49.1", default-features = false, features = ["lazy", "csv"] }
+//! polars = { version = "0.48.1", default-features = false, features = ["<what we need>"] }
 //! ```
 
-use polars::prelude::*;
+// use std::fs::File;
 
-fn main() -> anyhow::Result<()> {
-    // Read a CSV file into a DataFrame.
-    let df = CsvReadOptions::default()
-        .with_has_header(true)
-        .try_into_reader_with_file_path(Some("temp/data.csv".into()))?
-        .finish()?;
+// use polars::prelude::*;
 
-    // Display the first few rows of the DataFrame.
-    println!("DataFrame:\n{}", df.head(Some(5)));
+// fn main() -> Result<()> {
+//     // Read a CSV file into a DataFrame.
+//     let file = File::open("temp/data.csv")?;
+//     let df = CsvReader::new(file)
+//         .infer_schema(None)
+//         .has_header(true)
+//         .finish()?;
 
-    // Perform some data manipulation.
-    let df_filtered = df
-        .lazy()
-        .filter(col("some_column").gt_eq(lit(100)))
-        .collect()?;
-    println!("Filtered DataFrame:\n{df_filtered}");
+//     // Display the first few rows of the DataFrame.
+//     println!("DataFrame:\n{}", df.head(Some(5)));
 
-    let df_selected = df_filtered
-        .lazy()
-        .select([col("some_column"), col("another_column")])
-        .collect()?;
-    println!("Selected Columns:\n{df_selected}");
+//     // Perform some data manipulation.
+//     let df_filtered = df.filter(&df["some_column"].gt_eq(100))?;
+//     println!("Filtered DataFrame:\n{df_filtered}");
 
-    // Group by a column and aggregate.
-    let df_grouped = df_selected
-        .lazy()
-        .group_by([col("some_column")])
-        .agg([
-            col("another_column").sum().alias("sum"),
-            col("another_column").mean().alias("mean"),
-        ])
-        .collect()?;
-    println!("Grouped DataFrame:\n{df_grouped}");
+//     let df_selected = df_filtered.select(&["some_column",
+// "another_column"])?;     println!("Selected Columns:\n{df_selected}");
 
-    Ok(())
-}
-// ANCHOR_END: example
+//     // Group by a column and aggregate.
+//     let df_grouped = df_selected
+//         .groupby("some_column")?
+//         .agg(&[("another_column", &["sum", "mean"])])?;
+//     println!("Grouped DataFrame:\n{df_grouped}");
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() -> anyhow::Result<()> {
-        use std::fs;
-        use std::io::Write;
-        if !fs::exists("temp")? {
-            fs::create_dir("temp")?;
-        }
-        let mut file = fs::File::create("temp/data.csv")?;
-        writeln!(file, "some_column,another_column")?;
-        writeln!(file, "150,10.5")?;
-        writeln!(file, "50,5.0")?;
-        writeln!(file, "120,20.0")?;
-        writeln!(file, "150,15.5")?;
+//     Ok(())
+// }
 
-        main()?;
-        Ok(())
-    }
-}
+// #[test]
+// fn test() -> anyhow::Result<()> {
+//    use std::fs;
+//    if !fs::exists("temp")? {
+//        fs::create_dir("temp")?;
+//    }
+//    main();
+//    Ok(())
+// }
+// // [finish](https://github.com/john-cd/rust_howto/issues/885)

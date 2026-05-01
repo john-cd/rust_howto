@@ -15,4 +15,3 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-polkavm = "0.33.1"

@@ -1,5 +1,4 @@
 [ex~development-tools_testing~afl]: fuzzing.md#afl
-[ex~development-tools_testing~bolero]: fuzzing.md#bolero
 [ex~development-tools_testing~approx]: assertions.md#approx
 [ex~development-tools_testing~assertion_libraries]: assertions.md#assertion_libraries
 [ex~development-tools_testing~async_testing]: testing.md#async_testing

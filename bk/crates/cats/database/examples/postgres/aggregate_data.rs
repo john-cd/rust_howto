@@ -1,7 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-// This example demonstrates aggregating query results in PostgreSQL using the
-// `postgres` crate.
 use postgres::Client;
 use postgres::Error;
 use postgres::NoTls;
@@ -23,16 +21,17 @@ pub fn main() -> Result<(), Error> {
     let url = std::env::var("PG_URL").expect("PG_URL must be set");
     let mut client = Client::connect(&url, NoTls)?;
 
-    let query = r#"SELECT nationality, COUNT(nationality) AS count
-        FROM artists
-        GROUP BY nationality
-        ORDER BY count DESC"#;
-
-    for row in client.query(query, &[])? {
-        let (nationality, count): (Option<String>, Option<i64>) =
+    for row in client.query(
+        "SELECT nationality, COUNT(nationality) AS count
+ FROM artists GROUP BY nationality ORDER BY count DESC",
+        &[],
+    )? {
+        let (nat, cnt): (Option<String>, Option<i64>) =
             (row.get(0), row.get(1));
 
-        if let (Some(nationality), Some(count)) = (nationality, count) {
+        if let Some(nationality) = nat
+            && let Some(count) = cnt
+        {
             let nation = Nation { nationality, count };
             println!("{} {}", nation.nationality, nation.count);
         }

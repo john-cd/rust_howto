@@ -14,10 +14,7 @@
 
 ## Related Topics {#related-topics .skip}
 
-- GIS data formats.
-- Mapping and visualization.
-- Spatial analysis.
-- Scientific and geospatial workflows.
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-// This example demonstrates how to encode and decode PKCS#8 private keys.
 use std::fs::File;
 use std::io::Write;
 
@@ -9,9 +8,9 @@ use base64ct::LineEnding;
 use pkcs8::DecodePrivateKey;
 // Trait to serialize a private key to a PKCS#8 encoded document:
 use pkcs8::EncodePrivateKey;
-use rsa::RsaPrivateKey;
 // Operating System's Random Number Generator:
-use rsa::rand_core::OsRng;
+use rand::rngs::OsRng;
+use rsa::RsaPrivateKey;
 // Components of an RSA private key:
 use rsa::traits::PrivateKeyParts;
 
@@ -51,12 +50,8 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() -> anyhow::Result<()> {
-        main()?;
-        Ok(())
-    }
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
+    Ok(())
 }

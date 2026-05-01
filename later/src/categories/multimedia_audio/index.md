@@ -27,11 +27,11 @@ Use:
 
 ## Audio Effects, Filters, and Compression
 
-Rust audio libraries support real-time audio processing such as equalization, compression, reverb, and filtering. These capabilities are useful for music production, game audio, and live audio processing.
+FIXME.
 
 ## Audio Streaming
 
-Audio streaming enables low-latency playback and capture of continuous audio streams. Rust libraries such as `cpal` and `rodio` can be combined with async runtimes to build streaming applications.
+FIXME.
 
 ## Audio Synthesis
 
@@ -48,7 +48,6 @@ Use [`synth-rs`][c~synth~docs]↗{{hi:synth-rs}} for audio synthesis.
 - [[multimedia | Multimedia]].
 - [[multimedia_encoding | Multimedia: Encoding]].
 - [[multimedia_video | Multimedia: Video]].
-- [[audio | Audio]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

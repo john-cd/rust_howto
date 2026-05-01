@@ -53,10 +53,7 @@ Key features include:
 
 ## Related Topics {#related-topics .skip}
 
-- [[development_tools | Development Tools]].
-- [[scripting | Scripting]].
-- [[cross-platform | Cross-platform Development]].
-- [[programming_languages | Programming Languages]].
+FIXME
 
 <div class="hidden">
 [python_tools: write](https://github.com/john-cd/rust_howto/issues/617)

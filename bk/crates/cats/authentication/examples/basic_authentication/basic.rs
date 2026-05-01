@@ -23,12 +23,8 @@ fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn require_network() -> anyhow::Result<()> {
-        main()?;
-        Ok(())
-    }
+#[test]
+fn require_network() -> anyhow::Result<()> {
+    main()?;
+    Ok(())
 }

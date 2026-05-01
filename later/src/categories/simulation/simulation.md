@@ -12,10 +12,7 @@
 
 ## Related Topics {#related-topics .skip}
 
-- [[science_robotics | Robotics]].
-- [[physics_engines | Physics Engines]].
-- [[game-development | Game Development]].
-- [[visualization | Visualization]].
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

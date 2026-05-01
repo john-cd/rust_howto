@@ -1,7 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-// This example demonstrates how to publish and consume messages with the
-// `lapin` AMQP client.
 use futures::stream::StreamExt; /* or: use futures_lite::stream::StreamExt; */
 use lapin::BasicProperties;
 use lapin::Channel;
@@ -108,20 +106,15 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    // TODO
-    #[test]
-    fn require_external_svc() -> anyhow::Result<()> {
-        unsafe {
-            // Refer to the `compose*.yaml` files:
-            std::env::set_var(
-                "AMQP_ADDR",
-                "amqp://guest:guest@rust_howto_dev-amqp-1:5672",
-            );
-        }
-        main()?;
-        Ok(())
+#[test]
+fn require_external_svc() -> anyhow::Result<()> {
+    unsafe {
+        // Refer to the `compose*.yaml` files:
+        std::env::set_var(
+            "AMQP_ADDR",
+            "amqp://guest:guest@rust_howto_dev-amqp-1:5672",
+        );
     }
+    main()?;
+    Ok(())
 }

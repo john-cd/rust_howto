@@ -12,10 +12,7 @@ Similar PACs exist for most microcontroller families.
 
 ## Related Topics {#related-topics .skip}
 
-- Microcontroller register access.
-- HAL and higher-level embedded libraries.
-- Device-specific crates and toolchains.
-- Bare-metal and no-std development.
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

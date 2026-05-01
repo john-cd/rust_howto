@@ -9,10 +9,7 @@
 
 ## Related Topics {#related-topics .skip}
 
-- [[cloud | Cloud]].
-- [[distributed_systems | Distributed Systems]].
-- [[development_tools | Development Tools]].
-- [[programming_languages | Programming Languages]].
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

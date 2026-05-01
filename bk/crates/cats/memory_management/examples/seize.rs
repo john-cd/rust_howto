@@ -7,8 +7,8 @@
 //!
 //! The key types are:
 //! - [`Collector`]: tracks threads and manages reclamation epochs.
-//! - [`LocalGuard`] (via `Collector::enter`): a per-thread guard that protects
-//!   objects from being reclaimed while it is held.
+//! - [`LocalGuard`] (via `Collector::enter`): a per-thread guard that
+//!   protects objects from being reclaimed while it is held.
 //!
 //! `seize` is primarily useful when building lock-free data structures
 //! where multiple threads share ownership of heap-allocated nodes.
@@ -76,11 +76,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        main();
-    }
+#[test]
+fn test() {
+    main();
 }

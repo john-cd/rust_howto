@@ -41,11 +41,7 @@ The [`yew`][c~yew~docs]↗{{hi:yew}}, [`seed`][c~seed~docs]↗{{hi:seed}}, [`lep
 
 ## Related Topics
 
-- [[wasm_basics | WASM Basics]].
-- [[wasm_development | WASM Development]].
-- [[interfacing_with_javascript | Interfacing with Javascript]].
-- [[web-programming | Web Programming]].
-- [[virtualization | Virtualization]].
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

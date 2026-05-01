@@ -36,7 +36,7 @@ Multi-platform high-performance compute language extension for Rust.
 
 ## GLSL/HLSL Compilation {#glsl-hlsl .skip}
 
-Compilation from traditional shader languages like GLSL and HLSL to GPU-ready binaries is often handled by tools such as `shaderc`, `naga`, or `glsl-to-spirv`. These toolchains are useful when targeting Vulkan, DX12, or other graphics backends from Rust.
+FIXME.
 
 ## SPIR-V {#spirv .skip}
 

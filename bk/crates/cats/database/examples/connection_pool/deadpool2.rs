@@ -65,13 +65,9 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn require_external_svc() -> anyhow::Result<()> {
-        main()?;
-        Ok(())
-    }
+#[test]
+fn require_external_svc() -> anyhow::Result<()> {
+    main()?;
+    Ok(())
 }
 // [finish; need heavy test](https://github.com/john-cd/rust_howto/issues/46)

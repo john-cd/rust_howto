@@ -45,34 +45,28 @@ pub fn extend_extension<P: AsRef<Path>>(filepath: &P, insert: &str) -> PathBuf {
     }
 }
 
-// [file_prefix is still unstable.](https://github.com/john-cd/rust_howto/issues/902)
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test() {
-        assert_eq!(
-            extend_extension(&Path::new("/path/to/file.md"), "new"),
-            Path::new("/path/to/file.new.md")
-        );
-        assert_eq!(
-            extend_extension(&Path::new("/path/to/file"), "new"),
-            Path::new("/path/to/file.new")
-        );
-        assert_eq!(
-            extend_extension(&Path::new("file"), "new"),
-            Path::new("file.new")
-        );
-        assert_eq!(
-            extend_extension(&Path::new("file.md"), "new"),
-            Path::new("file.new.md")
-        );
-        assert_eq!(
-            extend_extension(&Path::new("file.a.md"), "new"),
-            Path::new("file.a.new.md")
-        );
-        assert_eq!(extend_extension(&Path::new(""), "new"), Path::new(""));
-    }
+#[test]
+fn test() {
+    assert_eq!(
+        extend_extension(&Path::new("/path/to/file.md"), "new"),
+        Path::new("/path/to/file.new.md")
+    );
+    assert_eq!(
+        extend_extension(&Path::new("/path/to/file"), "new"),
+        Path::new("/path/to/file.new")
+    );
+    assert_eq!(
+        extend_extension(&Path::new("file"), "new"),
+        Path::new("file.new")
+    );
+    assert_eq!(
+        extend_extension(&Path::new("file.md"), "new"),
+        Path::new("file.new.md")
+    );
+    assert_eq!(
+        extend_extension(&Path::new("file.a.md"), "new"),
+        Path::new("file.a.new.md")
+    );
+    assert_eq!(extend_extension(&Path::new(""), "new"), Path::new(""));
 }
+// [file_prefix is still unstable.](https://github.com/john-cd/rust_howto/issues/902)

@@ -18,7 +18,6 @@ enum State {
 struct StateMachine {
     state: State,
 }
-
 /// Represents the possible events that can trigger state transitions.
 #[derive(Debug)]
 enum Event {
@@ -105,11 +104,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        main();
-    }
+#[test]
+fn test() {
+    main();
 }

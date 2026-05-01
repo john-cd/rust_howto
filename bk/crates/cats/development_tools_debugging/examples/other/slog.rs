@@ -52,9 +52,7 @@ fn main() {
     let _guard = slog_scope::set_global_logger(root_logger);
     slog_scope::info!("Global logging with slog-scope"; "global" => true);
     perform_global_logging();
-    println!(
-        "slog example: structured logging with slog (log output above goes to stderr)"
-    );
+    println!("slog example: structured logging with slog (log output above goes to stderr)");
 }
 
 /// Example function that performs some logging using a logger.
@@ -69,11 +67,7 @@ fn perform_global_logging() {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        main();
-    }
+#[test]
+fn test() {
+    main();
 }

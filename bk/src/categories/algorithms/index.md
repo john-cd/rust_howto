@@ -37,8 +37,6 @@ For [[compression | compression]], use:
 - `snap` for Snappy compression.
 - `brotli` for Brotli compression.
 
-
-See [[compression | Compression]].
 ### Data Structures
 
 For common [[data-structures | data structures]] ([`Vec`][c~std::vec::Vec~docs]↗, [`HashMap`][c~std::collections::HashMap~docs]↗, etc.), you will use [`std::collections`][c~std::collections~docs]↗. You may also consider:
@@ -55,8 +53,6 @@ Worth a mention: `fst` provides fast, memory-efficient, immutable set and map da
 
 See [[vector | vector]] [[hashmap | hash maps]], [[maps | other maps]], [[binaryheap | Binary Heap]] within the [[data-structures | Data Structures]] section for more details.
 
-
-See [[data-structures | Data Structures]] and [[concurrent_data_structures | Concurrent Data Structures]].
 ### Recursive Algorithms
 
 - `stacker` is a stack growth library useful when implementing deeply recursive algorithms that may accidentally blow the stack.
@@ -72,7 +68,7 @@ For small-scale tasks, like filtering a list of items in memory, reach first for
 - `argminmax` provides efficient argmin & argmax (in 1 function) with SIMD for floats and integers.
 - `bytecount` count occurrences of a given byte, or the number of UTF-8 code points, in a byte slice, fast.
 
-[meilisearch][c~meilisearch~repo]↗ and [tantivy][c~tantivy~repo]↗ are full-text search engines written in Rust, similar to what you'd expect from `Elasticsearch` or `Algolia`. See also [[rust_search_engines | Search Engines]].
+[meilisearch][c~meilisearch~repo]↗ and [tantivy][c~tantivy~repo]↗ are full-text search engines written in Rust, similar to what you'd expect from `Elasticsearch` or `Algolia`.
 
 ### String Algorithms and Text Processing
 
@@ -84,15 +80,6 @@ For [[strings | Strings]], use:
 - [`strsim`][c~strsim~docs]↗{{hi:strsim}} for string similarity.
 
 See also [[string_concat | String Concat]], [[string_encoding | String Encoding]], [[string_parsing | String Parsing]], and [[text-processing | Text Processing]].
-
-### Cryptography
-
-See [[cryptography | Cryptography]], [[cryptography_utilities | Cryptography Utilities]], and [[encryption | Encryption]].
-
-### Data Processing
-
-See [[data-processing | Data Processing]].
-
 
 ### Numerical and Mathematical Algorithms
 
@@ -118,11 +105,6 @@ For [[mathematics | Mathematics]], use the following crates for general numerica
   - `rustfft` for Fast Fourier Transforms.
   - `roots` for numerical root finding.
 
-### Science
-
-See [[science | Science]], [[_machine_learning | Machine Learning]], [[science_geo | Geoscience]], [[science_neuroscience | Neuroscience]], [[science_robotics | Science Robotics]], and [[simulation | Simulation]].
-
-
 ## References
 
 - [`rust-algorithms`][rust-algorithms~repo]↗: Common data structures and algorithms in Rust.
@@ -130,3 +112,21 @@ See [[science | Science]], [[_machine_learning | Machine Learning]], [[science_g
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
+<div class="hidden">
+[review](https://github.com/john-cd/rust_howto/issues/1165)
+
+review [rust-algorithms~repo][rust-algorithms~repo].
+
+| Topic | Related Links |
+|---|---|
+| [[compression | Compression]] | |
+| [[cryptography | Cryptography]] | [[cryptography_utilities | Cryptography Utilities]], [[encryption | Encryption]] |
+| [[data-processing | Data Processing]] | |
+| [[data-structures | Data Structures]] | [[concurrent_data_structures | Concurrent Data Structures]] |
+| [[science | Science]] | [[_machine_learning | Machine Learning]], [[science_geo | Geoscience]], [[science_neuroscience | Neuroscience]], [[science_robotics | Science Robotics]], [[simulation | Simulation]] |
+| [[search | Search]] | [[rust_search_engines | Search Engines]] |
+| [[strings | Strings]] | [[string_concat | String Concat]], [[string_encoding | String Encoding]], [[string_parsing | String Parsing]], [[text-processing | Text Processing]] |
+
+See [[rust_search_engines | Search Engines]].
+
+</div>

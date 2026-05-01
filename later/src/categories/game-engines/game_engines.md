@@ -48,10 +48,7 @@
 
 ## Related Topics {#related-topics .skip}
 
-- Game development libraries.
-- Rendering and physics engines.
-- Audio and input systems.
-- [Games](../games/index.md) made with Rust.
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

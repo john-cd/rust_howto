@@ -24,16 +24,12 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() -> anyhow::Result<()> {
-        if !std::fs::exists("temp")? {
-            std::fs::create_dir("temp")?;
-        }
-        fs::write("temp/poem.txt", b" Lorem ipsum ")?;
-        main();
-        Ok(())
+#[test]
+fn test() -> anyhow::Result<()> {
+    if !std::fs::exists("temp")? {
+        std::fs::create_dir("temp")?;
     }
+    fs::write("temp/poem.txt", b" Lorem ipsum ")?;
+    main();
+    Ok(())
 }

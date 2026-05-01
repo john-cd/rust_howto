@@ -10,9 +10,8 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "multimedia::audio" ]
+categories = [ "multimedia_audio" ]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-cpal = "0.15"

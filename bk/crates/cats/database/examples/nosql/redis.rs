@@ -1,7 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-// This example demonstrates connecting to Redis and executing commands using
-// the `redis` crate.
 use std::env;
 
 use anyhow::Context;
@@ -21,7 +19,7 @@ use redis::Connection;
 /// error if the connection fails.
 fn connect() -> Result<Connection> {
     let redis_host_name = env::var("REDIS_HOSTNAME")
-        .unwrap_or_else(|_| "127.0.0.1:6379".to_string());
+        .context("missing environment variable REDIS_HOSTNAME")?;
     let redis_password = env::var("REDIS_PASSWORD").unwrap_or_default();
     // Does Redis server need a secure connection?
     let uri_scheme = match env::var("IS_TLS") {
@@ -61,22 +59,13 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    #[ignore = "Requires an external Redis server"]
-    fn require_external_svc() -> Result<()> {
-        if env::var("REDIS_HOSTNAME").is_err() {
-            eprintln!(
-                "Skipping Redis integration test; set REDIS_HOSTNAME to run this test."
-            );
-            return Ok(());
-        }
-
-        main()?;
-        Ok(())
+#[test]
+fn require_external_svc() -> Result<()> {
+    unsafe {
+        // container name = $COMPOSE_PROJECT_NAME + service name + number.
+        env::set_var("REDIS_HOSTNAME", "rust_howto_dev-redis-1");
     }
+    main()?;
+    Ok(())
 }
 // [review](https://github.com/john-cd/rust_howto/issues/1161)?

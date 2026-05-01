@@ -49,9 +49,7 @@ See, for example:
 
 ## Related Topics {#related-topics .skip}
 
-- [[cloud]]
-- [[container]]
-- [[microservices]]
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

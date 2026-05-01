@@ -33,10 +33,7 @@ Morphorm is suitable for various use cases, including:
 
 ## Related Topics {#related-topics .skip}
 
-- GUI frameworks and rendering.
-- Responsive layout and styling.
-- Cross-platform user interfaces.
-- Performance-sensitive UI design.
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

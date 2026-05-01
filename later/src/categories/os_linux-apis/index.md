@@ -57,10 +57,7 @@ Writing device drivers is advanced and requires close interaction with the Linux
 
 ## Related Topics
 
-- Linux system programming and kernels.
-- OS-level APIs and bindings.
-- Cross-platform compatibility.
-- Device drivers and low-level performance.
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

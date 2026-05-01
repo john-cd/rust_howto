@@ -55,16 +55,12 @@ key4 = value4
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() -> anyhow::Result<()> {
-        use std::fs;
-        if !fs::exists("temp")? {
-            fs::create_dir("temp")?;
-        }
-        main()?;
-        Ok(())
+#[test]
+fn test() -> anyhow::Result<()> {
+    use std::fs;
+    if !fs::exists("temp")? {
+        fs::create_dir("temp")?;
     }
+    main()?;
+    Ok(())
 }

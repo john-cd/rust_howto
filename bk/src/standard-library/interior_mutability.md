@@ -23,16 +23,6 @@ Attempts to violate borrowing rules (like having multiple mutable borrows) will 
 {{#include ../../crates/standard_library/examples/interior_mutability/refcell.rs:example}}
 ```
 
-### Shared Mutable State with `Rc<RefCell<T>>` {#rc-refcell}
-
-A common pattern in Rust is using [`Rc<T>`][c~std::rc::Rc~docs]↗{{hi:std::rc::Rc}} together with `RefCell<T>` to allow multiple owners of mutable data. `Rc<T>` allows multiple owners of some data, but it only gives immutable access to that data. By wrapping a `RefCell<T>` inside an `Rc<T>`, you get a value that can have multiple owners _and_ can be mutated!
-
-```rust,editable
-{{#include ../../crates/standard_library/examples/interior_mutability/rc_refcell.rs:example}}
-```
-
-If you need shared mutable state across multiple threads, you should use `Arc<T>` with [`Mutex<T>`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}} or [`RwLock<T>`][c~std::sync::RwLock~docs]↗{{hi:std::sync::RwLock}} instead of `Rc<RefCell<T>>`.
-
 ## Use `Cell` {#cell}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}{{hi:std::cell::Cell}}
@@ -47,17 +37,7 @@ If you need shared mutable state across multiple threads, you should use `Arc<T>
 
 ## Use `OnceCell` {#oncecell}
 
-[![std][c~std~docs~badge]][c~std~docs]{{hi:std}}{{hi:std::cell::OnceCell}}
-
-[`OnceCell<T>`][c~std::cell::OnceCell~docs]↗ allows for single assignment interior mutability. Unlike `Cell` or `RefCell`, once a `OnceCell` is initialized, its value cannot be changed. This makes it perfect for [[lazy-initialization | lazy initialization]], where you want to defer the creation of an expensive value until it is first needed, but ensure it is only computed once.
-
-You can initialize a `OnceCell` using `set`, but a more common pattern is to use `get_or_init`, which takes a closure that returns the initialization value.
-
-```rust,editable
-{{#include ../../crates/standard_library/examples/interior_mutability/once_cell.rs:example}}
-```
-
-For a multi-threaded context, use [`OnceLock<T>`][c~std::sync::OnceLock~docs]↗{{hi:std::sync::OnceLock}} instead of `OnceCell<T>`.
+See [[lazy-initialization | lazy initialization]].
 
 ## Related Topics {#related-topics .skip}
 
@@ -73,3 +53,6 @@ For a multi-threaded context, use [`OnceLock<T>`][c~std::sync::OnceLock~docs]↗
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
+<div class="hidden">
+[finish to rewrite OnceCell / example: RefCell inside of Rc / link to Mutex / RwLock](https://github.com/john-cd/rust_howto/issues/1385)
+</div>

@@ -23,13 +23,9 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        let res = main();
-        println!("{res:?}");
-        assert!(res.is_err())
-    }
+#[test]
+fn test() {
+    let res = main();
+    println!("{res:?}");
+    assert!(res.is_err())
 }

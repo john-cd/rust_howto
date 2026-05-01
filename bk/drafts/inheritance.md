@@ -4,7 +4,7 @@
 
 Rust does not support traditional inheritance like object-oriented languages. Instead, it encourages using _traits_ and _composition_ to achieve similar functionality, allowing for shared behavior without the complexities and pitfalls of inheritance.
 
-More precisely, Rust tends to model things with 'has-a' relationships (composition) instead of 'is-a' relationships (inheritance). When you need a family of related variants, an `enum` is often the simplest and most idiomatic choice. When you need shared behavior across different concrete types, traits provide a safe and explicit interface.
+More precisely, Rust tends to model things with 'has-a' relationships (composition) instead of 'is-a' relationships (inheritance).
 
 ## Use Enumerations and Traits Instead of Inheritance {#inheritance-in-rust}
 
@@ -50,9 +50,9 @@ trait HasArea {
 impl HasArea for Shape {
     fn area(&self) -> f64 {
         match self {
-            Shape::Circle { radius } => std::f64::consts::PI * radius * radius,
-            Shape::Square { side } => side * side,
-            Shape::Triangle { base, height } => 0.5 * base * height,
+            Shape::Circle { radius } => std::f64::consts::PI *radius* radius,
+            Shape::Square { side } => side *side,
+            Shape::Triangle { base, height } => 0.5* base * height,
         }
     }
 }

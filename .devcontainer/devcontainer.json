@@ -14,6 +14,7 @@
     // The optional 'workspaceFolder' property is the path VS Code should open by default when
     // connected. This is typically a file mount in .devcontainer/compose.yaml
     "workspaceFolder": "/code",
+
     // Features to add to the dev container. More info: https://containers.dev/features.
     // We install Docker within the container and connect to the host OS docker engine.
     // See https://github.com/devcontainers/features/tree/main/src/docker-outside-of-docker
@@ -31,9 +32,9 @@
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     // 3000 for mdbook serve --open
     // 6080 for desktop lite - see https://github.com/devcontainers/features/tree/main/src/desktop-lite
-    "forwardPorts": [
-        3000
-    ],
+    // "forwardPorts": [
+    //     3000 //, 6080
+    // ],
     // "portsAttributes": {
     //     "6080": {
     //         "label": "desktop"
@@ -59,6 +60,7 @@
             ]
         }
     },
+
     // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
     "remoteUser": "root"
 }

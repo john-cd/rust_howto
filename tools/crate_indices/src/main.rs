@@ -28,15 +28,7 @@ fn main() -> anyhow::Result<()> {
                 .filter(|name| name != "std")
                 .map(|n| {
                     let name = n.trim();
-                    let mut cats = tool_lib::get_categories_for_crate(name)?;
-                    if cats.is_empty() {
-                        cats.push(Category {
-                            category: "Uncategorized".into(),
-                            slug: "uncategorized".into(),
-                            description: "These crates are not added to any category on crates.io"
-                                .into(),
-                        });
-                    }
+                    let cats = tool_lib::get_categories_for_crate(name)?;
                     Ok((name.into(), cats))
                 })
                 .collect();

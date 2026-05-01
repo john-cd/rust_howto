@@ -28,12 +28,8 @@ fn main() -> LuaResult<()> {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() -> LuaResult<()> {
-        main()?;
-        Ok(())
-    }
+#[test]
+fn test() -> LuaResult<()> {
+    main()?;
+    Ok(())
 }

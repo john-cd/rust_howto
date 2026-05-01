@@ -7028,14 +7028,6 @@
 [c~scraper~lib.rs~badge]: https://img.shields.io/badge/lib.rs-scraper-yellow
 [c~scraper~repo]: https://github.com/causal-agent/scraper
 [c~scraper~repo~badge]: https://img.shields.io/badge/scraper-steelblue?logo=github
-[c~scroll~crates.io]: https://crates.io/crates/scroll
-[c~scroll~crates.io~badge]: https://img.shields.io/badge/crates.io-scroll-crimson
-[c~scroll~docs]: https://docs.rs/scroll
-[c~scroll~docs~badge]: https://img.shields.io/crates/v/scroll?label=scroll
-[c~scroll~lib.rs]: https://lib.rs/crates/scroll
-[c~scroll~lib.rs~badge]: https://img.shields.io/badge/lib.rs-scroll-yellow
-[c~scroll~repo]: https://github.com/m4b/scroll
-[c~scroll~repo~badge]: https://img.shields.io/badge/scroll-steelblue?logo=github
 [c~scrypt~crates.io]: https://crates.io/crates/scrypt
 [c~scrypt~crates.io~badge]: https://img.shields.io/badge/crates.io-scrypt-crimson
 [c~scrypt~docs]: https://docs.rs/scrypt

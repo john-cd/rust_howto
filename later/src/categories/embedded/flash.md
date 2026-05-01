@@ -6,10 +6,7 @@
 
 ## Related Topics {#related-topics .skip}
 
-- Embedded tooling and debugging.
-- Bootloaders and firmware updates.
-- Hardware programming workflows.
-- `probe-rs` and device flashing.
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

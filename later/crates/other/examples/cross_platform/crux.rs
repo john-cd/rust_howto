@@ -1,8 +1,11 @@
 #![allow(dead_code)]
+// ANCHOR: example
+// COMING SOON
+// ANCHOR_END: example
 //! # Crux Core Example
 //!
 //! This example demonstrates the core concepts of a Crux application.
-//! It's a simple counter app that can increment, decrement, and reset a value.
+//! It's a simple counter app that can increment and decrement a value.
 //!
 //! The following only provides an example of the Core of a Crux app.
 //! Follow the steps in <https://redbadger.github.io/crux/>
@@ -14,7 +17,6 @@
 //! `crux_kv` - Key-value store capability,
 //! `crux_time` - Time capability.
 
-// ANCHOR: example
 use crux_core::App;
 use crux_core::Command;
 use crux_core::render::render;
@@ -24,7 +26,7 @@ use serde::Serialize;
 /// Define a `Model` struct to hold the state of the application.
 #[derive(Default)]
 pub struct Model {
-    count: isize,
+    count: i32,
 }
 
 /// Define a `ViewModel` struct to represent the state of the UI.
@@ -39,7 +41,6 @@ pub struct ViewModel {
 pub enum Event {
     Increment,
     Decrement,
-    Reset,
 }
 
 /// Define the `Capabilities` struct to hold the capabilities of the app.
@@ -91,7 +92,6 @@ impl App for Counter {
         match event {
             Event::Increment => model.count += 1,
             Event::Decrement => model.count -= 1,
-            Event::Reset => model.count = 0,
         };
         render()
     }
@@ -120,18 +120,11 @@ fn main() {
 
     let view = core.view();
     assert_eq!(view.count, "Count is: 1");
-
-    core.process_event(Event::Reset);
-    let view = core.view();
-    assert_eq!(view.count, "Count is: 0");
 }
-// ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test() {
-        main();
-    }
+#[test]
+fn test() {
+    main();
 }
+// [finish](https://github.com/john-cd/rust_howto/issues/880)
+// <https://github.com/redbadger/crux/blob/master/examples/counter/shared/src/app.rs>

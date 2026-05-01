@@ -68,7 +68,7 @@ fn to_wstring(str: &str) -> Vec<u16> {
 }
 
 /// Basic Windows application with a message box.
-pub fn main() {
+fn main() {
     unsafe {
         let h_instance = GetModuleHandleW(null_mut());
         // Define the window class name.
@@ -124,13 +124,9 @@ pub fn main() {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    #[ignore = "Needs review"]
-    fn test() {
-        main();
-    }
+#[test]
+#[ignore = "Needs review"]
+fn test() {
+    main();
 }
 // [review / test](https://github.com/john-cd/rust_howto/issues/822)

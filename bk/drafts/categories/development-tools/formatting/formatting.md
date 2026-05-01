@@ -35,8 +35,8 @@ Create a `rustfmt.toml`{{hi:rustfmt.toml}} in the project root folder.
 For example,
 
 ```toml
-edition = "2024"
-style_edition = "2024"
+edition = "2021"
+style_edition = "2021"
 unstable_features = true
 
 newline_style = "Unix"

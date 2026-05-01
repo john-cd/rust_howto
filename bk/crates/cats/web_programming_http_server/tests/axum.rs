@@ -119,7 +119,11 @@ async fn test_fallback() -> anyhow::Result<()> {
 
     let app = create_app();
     let response = app
-        .oneshot(Request::builder().uri("/nonexistent").body(Body::empty())?)
+        .oneshot(
+            Request::builder()
+                .uri("/nonexistent")
+                .body(Body::empty())?,
+        )
         .await?;
     assert_eq!(response.status(), StatusCode::NOT_FOUND);
     Ok(())

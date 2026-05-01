@@ -55,7 +55,6 @@
 
 - [Development tools - FFI](categories/development-tools_ffi/index.md)
   - [Generating FFI bindings for C and C++](categories/development-tools_ffi/generate_ffi_bindings.md)
-  - [Python](categories/development-tools_ffi/python.md)
   - [Erlang, Elixir](categories/development-tools_ffi/erlang_elixir.md)
   - [Flutter](categories/development-tools_ffi/flutter.md)
   - [Java](categories/development-tools_ffi/java.md)

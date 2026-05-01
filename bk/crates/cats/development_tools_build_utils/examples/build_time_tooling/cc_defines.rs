@@ -14,19 +14,13 @@ fn main() {
     //     .define("WELCOME", None)
     //     .file("src/foo.c")
     //     .compile("foo");
-    println!(
-        "cc_defines example: defines C preprocessor macros for use in C source files"
-    );
+    println!("cc_defines example: defines C preprocessor macros for use in C source files");
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[ignore = "Needs review"]
-    #[test]
-    fn test() {
-        main();
-    }
+#[ignore = "Needs review"]
+#[test]
+fn test() {
+    main();
 }
 // [finish; deal wth cc](https://github.com/john-cd/rust_howto/issues/1000)

@@ -15,4 +15,3 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-sys-locale = "0.3.2"

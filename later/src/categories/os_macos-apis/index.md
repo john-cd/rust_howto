@@ -54,10 +54,7 @@ See [[development-tools_ffi | Development Tools: FFI]] and [[external-ffi-bindin
 
 ## Related Topics
 
-- macOS-specific APIs and frameworks.
-- Objective-C interop and Cocoa.
-- Native application toolkits.
-- Cross-platform Rust development.
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

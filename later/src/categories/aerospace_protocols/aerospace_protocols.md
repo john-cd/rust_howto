@@ -17,3 +17,6 @@
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
+<div class="hidden">
+[protocols: write](https://github.com/john-cd/rust_howto/issues/195)
+</div>

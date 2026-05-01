@@ -13,7 +13,7 @@ create-missing = false              # whether or not to create missing pages
 extra-watch-dirs = ["static", "theme", "crates/about", "crates/cats", "crates/language", "crates/other", "crates/standard_library"]
 
 [rust]
-edition = "2024" # the default edition for code blocks. Default is "2015"
+edition = "2021" # the default edition for code blocks. Default is "2015"
 
 ## PREPROCESSORS -----------------------------------------------------
 

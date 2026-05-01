@@ -24,10 +24,7 @@ Clipboard access in [WASM][p~wasm] is restricted due to security reasons. You'll
 
 ## Related Topics {#related-topics .skip}
 
-- GUI interoperability and input.
-- Cross-platform clipboard APIs.
-- WebAssembly clipboard handling.
-- File dialogs and drag-and-drop.
+FIXME
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
