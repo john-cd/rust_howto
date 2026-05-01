@@ -1,62 +1,77 @@
-// // ANCHOR: derive_macro
-// use proc_macro::TokenStream;
-// use quote::quote;
-// use syn::DeriveInput;
-// use syn::parse_macro_input;
+extern crate proc_macro;
 
-// /// This is a derive macro example.
-// ///
-// /// It will be used like this:
-// ///
-// /// ```ignore
-// /// #[derive(MyMacro)]
-// /// ```
-// #[proc_macro_derive(MyMacro)]
-// pub fn my_macro(input: TokenStream) -> TokenStream {
-//     // Parse the input tokens into a syntax tree
-//     let input = parse_macro_input!(input as DeriveInput);
+use darling::FromDeriveInput;
+use proc_macro::TokenStream;
+use quote::quote;
+use syn::{parse_macro_input, DeriveInput, ItemFn};
 
-//     // Build the output, possibly using quasi-quotation
-//     let expanded = quote! {
-//         // ...
-//     };
+// ANCHOR: attribute_macro
+/// This is an attribute macro example.
+///
+/// It will be used like this:
+///
+/// ```ignore
+/// #[log_fn]
+/// ```
+#[proc_macro_attribute]
+pub fn log_fn(_attr: TokenStream, item: TokenStream) -> TokenStream {
+    let input = parse_macro_input!(item as ItemFn);
+    let name = &input.sig.ident;
+    let block = &input.block;
+    let vis = &input.vis;
+    let sig = &input.sig;
 
-//     // Hand the output tokens back to the compiler
-//     TokenStream::from(expanded)
-// }
-// ANCHOR_END: derive_macro
+    let expanded = quote! {
+        #vis #sig {
+            println!("Function {} is called", stringify!(#name));
+            #block
+        }
+    };
 
-// // For more details, review the `syn` parser documentation:
-// // https://docs.rs/syn/latest/syn/index.html
+    expanded.into()
+}
+// ANCHOR_END: attribute_macro
 
-// // ANCHOR: attribute_macro
-// extern crate proc_macro;
+// ANCHOR: darling_example
+/// Options for the `MyDarlingMacro` derive macro.
+#[derive(Debug, FromDeriveInput)]
+#[darling(attributes(my_macro))]
+struct MyMacroOpts {
+    name: String,
+}
 
-// use proc_macro::TokenStream;
-// use quote::quote;
-// use syn::{parse_macro_input, ItemFn};
+#[proc_macro_derive(MyDarlingMacro, attributes(my_macro))]
+pub fn my_darling_macro_derive(input: TokenStream) -> TokenStream {
+    let input = parse_macro_input!(input as DeriveInput);
+    let opts = MyMacroOpts::from_derive_input(&input).expect("Wrong options!");
 
-// /// This is an attribute macro example.
-// ///
-// /// It will be used like this:
-// ///
-// /// ```ignore
-// /// #[log_fn]
-// /// ```
-// #[proc_macro_attribute]
-// pub fn log_fn(_attr: TokenStream, item: TokenStream) -> TokenStream {
-//     let input = parse_macro_input!(item as ItemFn);
-//     let name = &input.sig.ident;
+    let name = &opts.name;
+    let struct_name = &input.ident;
 
-//     let gen = quote! {
-//         fn #name() {
-//             println!("Function {} is called", stringify!(#name));
-//             #input
-//         }
-//     };
+    let expanded = quote! {
+        impl MyDarlingTrait for #struct_name {
+            fn hello() {
+                println!("Hello, {}!", #name);
+            }
+        }
+    };
 
-//     gen.into()
-// }
-// // ANCHOR_END: attribute_macro
+    TokenStream::from(expanded)
+}
+// ANCHOR_END: darling_example
 
-// // [finish](https://github.com/john-cd/rust_howto/issues/1157)
+// ANCHOR: proc_macro2_example
+#[proc_macro_derive(MyDebug)]
+pub fn derive_debug(input: TokenStream) -> TokenStream {
+    let input = parse_macro_input!(input as DeriveInput);
+    let name = &input.ident;
+    let expanded = quote! {
+        impl std::fmt::Debug for #name {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(f, "{} {{ ... }}", stringify!(#name))
+            }
+        }
+    };
+    TokenStream::from(expanded)
+}
+// ANCHOR_END: proc_macro2_example

@@ -1,71 +1,47 @@
 #![allow(dead_code)]
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
-// //! This is a simple example of using the `ggez` game engine.
-// //!
-// //! `ggez` is a lightweight game framework for Rust.
-// //! To run this example, you'll need to have a directory named `resources` in
-// //! the same folder as your `Cargo.toml`. This directory can be empty for
-// now.
+// ANCHOR: example
+// ggez example (commented out due to dependency conflicts in the workspace)
+/*
+use ggez::{Context, ContextBuilder, GameResult};
+use ggez::graphics::{self, Color, Canvas};
+use ggez::event::{self, EventHandler};
 
-// use std::path;
+struct MainState;
 
-// use ggez::Context;
-// use ggez::ContextBuilder;
-// use ggez::GameResult;
-// use ggez::event::EventHandler;
-// use ggez::event::EventsLoop;
-// use ggez::graphics;
-// use ggez::graphics::Color;
+impl MainState {
+    fn new(_ctx: &mut Context) -> GameResult<MainState> {
+        Ok(MainState)
+    }
+}
 
-// /// `MainState` is the main game state.
-// struct MainState;
+impl EventHandler for MainState {
+    fn update(&mut self, _ctx: &mut Context) -> GameResult {
+        Ok(())
+    }
 
-// impl MainState {
-//     pub fn new(_ctx: &mut Context) -> GameResult<MainState> {
-//         let s = MainState;
-//         Ok(s)
-//     }
-// }
+    fn draw(&mut self, ctx: &mut Context) -> GameResult {
+        let mut canvas = Canvas::from_frame(ctx, Color::BLACK);
 
-// impl EventHandler for MainState {
-//     /// The `update` function updates the game state. In this simple example,
-//     /// it does nothing.
-//     fn update(&mut self, _ctx: &mut Context) -> GameResult<()> {
-//         Ok(())
-//     }
+        let text = graphics::Text::new("Hello, ggez!");
+        canvas.draw(&text, graphics::DrawParam::from((ggez::glam::Vec2::new(200.0, 300.0),)));
 
-//     /// The `draw` function clears the screen and draws a piece of text
-//     /// ("Hello, ggez!") at the coordinates (200, 300).
-//     fn draw(&mut self, ctx: &mut Context) -> GameResult<()> {
-//         graphics::clear(ctx, Color::from_rgb(0, 0, 0));
-//         let text = graphics::Text::new("Hello, ggez!");
-//         graphics::draw(
-//             ctx,
-//             &text,
-//             (ggez::mint::Point2 { x: 200.0, y: 300.0 },),
-//         )?;
-//         graphics::present(ctx)?;
-//         Ok(())
-//     }
-// }
+        canvas.finish(ctx)?;
+        Ok(())
+    }
+}
 
-// /// The `main` function sets up the `ggez` context and event loop, and then
-// /// runs the game.
-// fn main() -> GameResult {
-//     let (mut ctx, mut event_loop) =
-//         ContextBuilder::new("hello_ggez", "author_name")
-//             .add_resource_path(path::PathBuf::from("./resources"))
-//             .build()
-//             .expect("Could not create ggez context!");
+pub fn main() -> GameResult {
+    let cb = ContextBuilder::new("hello_ggez", "author");
+    println!("ggez context builder initialized.");
+    Ok(())
+}
+*/
+fn main() {
+    println!("ggez example is currently disabled due to workspace dependency conflicts.");
+}
+// ANCHOR_END: example
 
-//     let mut state = MainState::new(&mut ctx)?;
-//     ggez::event::run(&mut ctx, &mut event_loop, &mut state)
-// }
-
-// #[test]
-// fn test() {
-//     main();
-// }
-// // [finish](https://github.com/john-cd/rust_howto/issues/769)
+#[test]
+fn test() {
+    main();
+}
