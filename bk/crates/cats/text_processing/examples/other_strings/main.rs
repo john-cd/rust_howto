@@ -30,16 +30,16 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Bstr => {
-                let _ = bstr::run();
+                bstr::run();
             }
             Commands::Cstring => {
-                let _ = cstring::run();
+                cstring::run();
             }
             Commands::Osstring => {
-                let _ = osstring::run();
+                osstring::run();
             }
             Commands::Ustr => {
-                let _ = ustr::run();
+                ustr::run();
             }
         }
     }

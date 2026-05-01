@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Nom => {
-                let _ = nom::run();
+                nom::run();
             }
             Commands::TreeSitter => {
-                let _ = tree_sitter::run();
+                tree_sitter::run();
             }
             Commands::Winnow => {
-                let _ = winnow::run();
+                winnow::run();
             }
         }
     }

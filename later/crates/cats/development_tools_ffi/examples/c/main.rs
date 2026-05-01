@@ -23,10 +23,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Bindgen => {
-                let _ = bindgen::run();
+                bindgen::run();
             }
             Commands::Cbindgen => {
-                let _ = cbindgen::run();
+                cbindgen::run();
             }
         }
     }

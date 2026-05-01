@@ -39,25 +39,25 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::PrivateAccess => {
-                let _ = private_access::run();
+                private_access::run();
             }
             Commands::PubKeyword => {
-                let _ = pub_keyword::run();
+                pub_keyword::run();
             }
             Commands::PublicAccess => {
-                let _ = public_access::run();
+                public_access::run();
             }
             Commands::PublicByDefault => {
-                let _ = public_by_default::run();
+                public_by_default::run();
             }
             Commands::VisibilityExternalCode => {
-                let _ = visibility_external_code::run();
+                visibility_external_code::run();
             }
             Commands::VisibilityPubCrate => {
-                let _ = visibility_pub_crate::run();
+                visibility_pub_crate::run();
             }
             Commands::VisibilityScope => {
-                let _ = visibility_scope::run();
+                visibility_scope::run();
             }
         }
     }

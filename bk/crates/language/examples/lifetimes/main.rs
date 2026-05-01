@@ -36,22 +36,22 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::LifetimeParameterFunction => {
-                let _ = lifetime_parameter_function::run();
+                lifetime_parameter_function::run();
             }
             Commands::LifetimeParameterStruct => {
-                let _ = lifetime_parameter_struct::run();
+                lifetime_parameter_struct::run();
             }
             Commands::LifetimeParameters => {
-                let _ = lifetime_parameters::run();
+                lifetime_parameters::run();
             }
             Commands::SelfReferentialStruct => {
-                let _ = self_referential_struct::run();
+                self_referential_struct::run();
             }
             Commands::SelfReferentialStruct2 => {
-                let _ = self_referential_struct2::run();
+                self_referential_struct2::run();
             }
             Commands::StaticLifetime => {
-                let _ = static_lifetime::run();
+                static_lifetime::run();
             }
         }
     }

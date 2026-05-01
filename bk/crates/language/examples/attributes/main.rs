@@ -42,28 +42,28 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::AllowDeadCode => {
-                let _ = allow_dead_code::run();
+                allow_dead_code::run();
             }
             Commands::AttributesDeprecated => {
-                let _ = attributes_deprecated::run();
+                attributes_deprecated::run();
             }
             Commands::AttributesDerive => {
-                let _ = attributes_derive::run();
+                attributes_derive::run();
             }
             Commands::AttributesEarlyDevelopment => {
-                let _ = attributes_early_development::run();
+                attributes_early_development::run();
             }
             Commands::AttributesMustUse => {
-                let _ = attributes_must_use::run();
+                attributes_must_use::run();
             }
             Commands::AttributesProduction => {
-                let _ = attributes_production::run();
+                attributes_production::run();
             }
             Commands::CfgIf => {
-                let _ = cfg_if::run();
+                cfg_if::run();
             }
             Commands::ConditionalCompilation => {
-                let _ = conditional_compilation::run();
+                conditional_compilation::run();
             }
         }
     }

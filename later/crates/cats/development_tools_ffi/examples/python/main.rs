@@ -33,11 +33,11 @@ fn main() {
             match command {
                 #[cfg(target_os = "linux")]
                 Commands::Pyo3 => {
-                    let _ = pyo3::run();
+                    pyo3::run();
                 }
                 #[cfg(target_os = "linux")]
                 Commands::UseRustFromPython => {
-                    let _ = use_rust_from_python::run();
+                    use_rust_from_python::run();
                 }
             }
         }

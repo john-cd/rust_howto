@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Binaryheap => {
-                let _ = binaryheap::run();
+                binaryheap::run();
             }
             Commands::PriorityQueue => {
-                let _ = priority_queue::run();
+                priority_queue::run();
             }
         }
     }

@@ -36,22 +36,22 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::ArcMakeMut => {
-                let _ = arc_make_mut::run();
+                arc_make_mut::run();
             }
             Commands::GlobalMutState => {
-                let _ = global_mut_state::run();
+                global_mut_state::run();
             }
             Commands::SendSync => {
-                let _ = send_sync::run();
+                send_sync::run();
             }
             Commands::SharedStateMutex => {
-                let _ = shared_state_mutex::run();
+                shared_state_mutex::run();
             }
             Commands::SharedStateParkingLot => {
-                let _ = shared_state_parking_lot::run();
+                shared_state_parking_lot::run();
             }
             Commands::SharedStateParkingLot2 => {
-                let _ = shared_state_parking_lot2::run();
+                shared_state_parking_lot2::run();
             }
         }
     }

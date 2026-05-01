@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::SortBasic => {
-                let _ = sort_basic::run();
+                sort_basic::run();
             }
             Commands::SortFloat => {
-                let _ = sort_float::run();
+                sort_float::run();
             }
             Commands::SortStruct => {
-                let _ = sort_struct::run();
+                sort_struct::run();
             }
         }
     }

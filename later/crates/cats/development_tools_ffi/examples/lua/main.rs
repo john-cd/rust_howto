@@ -33,11 +33,11 @@ fn main() {
             match command {
                 #[cfg(feature = "lua")]
                 Commands::Mlua => {
-                    let _ = mlua::run();
+                    mlua::run();
                 }
                 #[cfg(feature = "lua")]
                 Commands::Mlua2 => {
-                    let _ = mlua2::run();
+                    mlua2::run();
                 }
             }
         }

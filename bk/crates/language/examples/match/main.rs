@@ -78,64 +78,64 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::AtBindings => {
-                let _ = at_bindings::run();
+                at_bindings::run();
             }
             Commands::DestructureEnum => {
-                let _ = destructure_enum::run();
+                destructure_enum::run();
             }
             Commands::DestructureReference => {
-                let _ = destructure_reference::run();
+                destructure_reference::run();
             }
             Commands::DestructureStruct => {
-                let _ = destructure_struct::run();
+                destructure_struct::run();
             }
             Commands::DestructureTuple => {
-                let _ = destructure_tuple::run();
+                destructure_tuple::run();
             }
             Commands::FnClosureArguments => {
-                let _ = fn_closure_arguments::run();
+                fn_closure_arguments::run();
             }
             Commands::For1 => {
-                let _ = for1::run();
+                for1::run();
             }
             Commands::IfLet => {
-                let _ = if_let::run();
+                if_let::run();
             }
             Commands::IgnoreValues => {
-                let _ = ignore_values::run();
+                ignore_values::run();
             }
             Commands::Let1 => {
-                let _ = let1::run();
+                let1::run();
             }
             Commands::LetElse => {
-                let _ = let_else::run();
+                let_else::run();
             }
             Commands::Literals => {
-                let _ = literals::run();
+                literals::run();
             }
             Commands::Match1 => {
-                let _ = match1::run();
+                match1::run();
             }
             Commands::Match2 => {
-                let _ = match2::run();
+                match2::run();
             }
             Commands::MatchGuards => {
-                let _ = match_guards::run();
+                match_guards::run();
             }
             Commands::OrPatterns => {
-                let _ = or_patterns::run();
+                or_patterns::run();
             }
             Commands::Ranges => {
-                let _ = ranges::run();
+                ranges::run();
             }
             Commands::RefBindings => {
-                let _ = ref_bindings::run();
+                ref_bindings::run();
             }
             Commands::VariableBinding => {
-                let _ = variable_binding::run();
+                variable_binding::run();
             }
             Commands::WhileLet => {
-                let _ = while_let::run();
+                while_let::run();
             }
         }
     }

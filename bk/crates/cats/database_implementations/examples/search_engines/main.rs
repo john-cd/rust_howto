@@ -35,11 +35,11 @@ fn main() {
             match command {
                 #[cfg(feature = "meilisearch")]
                 Commands::Meilisearch => {
-                    let _ = meilisearch::run();
+                    meilisearch::run();
                 }
                 #[cfg(feature = "tantivy")]
                 Commands::Tantivy => {
-                    let _ = tantivy::run();
+                    tantivy::run();
                 }
             }
         }

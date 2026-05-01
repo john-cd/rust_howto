@@ -33,19 +33,19 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::BoxBasics => {
-                let _ = box_basics::run();
+                box_basics::run();
             }
             Commands::BoxDeref => {
-                let _ = box_deref::run();
+                box_deref::run();
             }
             Commands::BoxDst => {
-                let _ = box_dst::run();
+                box_dst::run();
             }
             Commands::BoxRecursive => {
-                let _ = box_recursive::run();
+                box_recursive::run();
             }
             Commands::BoxTraitObjects => {
-                let _ = box_trait_objects::run();
+                box_trait_objects::run();
             }
         }
     }

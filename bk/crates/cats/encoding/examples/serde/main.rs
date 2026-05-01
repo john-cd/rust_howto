@@ -33,19 +33,19 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Json => {
-                let _ = json::run();
+                json::run();
             }
             Commands::Monostate => {
-                let _ = monostate::run();
+                monostate::run();
             }
             Commands::Serde => {
-                let _ = serde::run();
+                serde::run();
             }
             Commands::SerdeIgnored => {
-                let _ = serde_ignored::run();
+                serde_ignored::run();
             }
             Commands::SerdeJson => {
-                let _ = serde_json::run();
+                serde_json::run();
             }
         }
     }

@@ -3,5 +3,5 @@
 mod xshell;
 
 fn main() {
-    let _ = xshell::run();
+    xshell::run();
 }

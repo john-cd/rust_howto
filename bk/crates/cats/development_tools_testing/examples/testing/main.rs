@@ -1,5 +1,5 @@
 mod insta;
 
 fn main() {
-    let _ = insta::run();
+    insta::run();
 }

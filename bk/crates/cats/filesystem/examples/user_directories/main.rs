@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Directories => {
-                let _ = directories::run();
+                directories::run();
             }
             Commands::Dirs => {
-                let _ = dirs::run();
+                dirs::run();
             }
         }
     }

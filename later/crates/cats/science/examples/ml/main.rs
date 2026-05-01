@@ -29,13 +29,13 @@ fn main() {
         match command {
             #[cfg(feature = "candle")]
             Commands::Candle => {
-                let _ = candle::run();
+                candle::run();
             }
             Commands::Linfa => {
-                let _ = linfa::run();
+                linfa::run();
             }
             Commands::Smartcore => {
-                let _ = smartcore::run();
+                smartcore::run();
             }
         }
     }

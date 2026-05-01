@@ -33,19 +33,19 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::For1 => {
-                let _ = for1::run();
+                for1::run();
             }
             Commands::IfElse => {
-                let _ = if_else::run();
+                if_else::run();
             }
             Commands::LabeledBlockExpression => {
-                let _ = labeled_block_expression::run();
+                labeled_block_expression::run();
             }
             Commands::Loop1 => {
-                let _ = loop1::run();
+                loop1::run();
             }
             Commands::While1 => {
-                let _ = while1::run();
+                while1::run();
             }
         }
     }

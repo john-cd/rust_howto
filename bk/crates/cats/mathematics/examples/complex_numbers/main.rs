@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::AddComplex => {
-                let _ = add_complex::run();
+                add_complex::run();
             }
             Commands::CreateComplex => {
-                let _ = create_complex::run();
+                create_complex::run();
             }
             Commands::MathematicalFunctions => {
-                let _ = mathematical_functions::run();
+                mathematical_functions::run();
             }
         }
     }

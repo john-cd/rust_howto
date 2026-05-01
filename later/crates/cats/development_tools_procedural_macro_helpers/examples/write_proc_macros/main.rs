@@ -38,19 +38,19 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Darling => {
-                let _ = darling::run();
+                darling::run();
             }
             Commands::Paste => {
-                let _ = paste::run();
+                paste::run();
             }
             Commands::ProcMacro2 => {
-                let _ = proc_macro2::run();
+                proc_macro2::run();
             }
             Commands::Quote => {
-                let _ = quote::run();
+                quote::run();
             }
             Commands::Syn => {
-                let _ = syn::run();
+                syn::run();
             }
         }
     }

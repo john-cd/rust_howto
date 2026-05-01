@@ -26,13 +26,13 @@ fn main() -> anyhow::Result<()> {
     if let Some(command) = cli.command {
         match command {
             Commands::Baseview => {
-                let _ = baseview::run();
+                baseview::run();
             }
             Commands::Tao => {
-                let _ = tao::run();
+                tao::run();
             }
             Commands::Winit => {
-                let _ = winit::run();
+                winit::run();
             }
         }
     }

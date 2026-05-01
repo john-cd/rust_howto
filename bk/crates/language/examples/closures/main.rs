@@ -33,19 +33,19 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Closures => {
-                let _ = closures::run();
+                closures::run();
             }
             Commands::ClosuresAsInputParameters => {
-                let _ = closures_as_input_parameters::run();
+                closures_as_input_parameters::run();
             }
             Commands::ClosuresCapture => {
-                let _ = closures_capture::run();
+                closures_capture::run();
             }
             Commands::ClosuresMove => {
-                let _ = closures_move::run();
+                closures_move::run();
             }
             Commands::ClosuresWithTypeAnnotations => {
-                let _ = closures_with_type_annotations::run();
+                closures_with_type_annotations::run();
             }
         }
     }

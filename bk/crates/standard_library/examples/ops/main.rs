@@ -5,5 +5,5 @@
 mod ops;
 
 fn main() {
-    let _ = ops::run();
+    ops::run();
 }

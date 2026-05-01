@@ -4,6 +4,6 @@ mod tiberius;
 fn main() {
     #[cfg(feature = "mssql")]
     {
-        let _ = tiberius::run();
+        tiberius::run();
     }
 }

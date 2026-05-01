@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::DynClone => {
-                let _ = dyn_clone::run();
+                dyn_clone::run();
             }
             Commands::PinProject => {
-                let _ = pin_project::run();
+                pin_project::run();
             }
         }
     }

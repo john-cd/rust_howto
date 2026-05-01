@@ -39,25 +39,25 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::OptionCombinators => {
-                let _ = option_combinators::run();
+                option_combinators::run();
             }
             Commands::OptionMatch => {
-                let _ = option_match::run();
+                option_match::run();
             }
             Commands::OptionQuestionMark => {
-                let _ = option_question_mark::run();
+                option_question_mark::run();
             }
             Commands::OptionRef => {
-                let _ = option_ref::run();
+                option_ref::run();
             }
             Commands::OptionUnwrap => {
-                let _ = option_unwrap::run();
+                option_unwrap::run();
             }
             Commands::Options1 => {
-                let _ = options1::run();
+                options1::run();
             }
             Commands::Options2 => {
-                let _ = options2::run();
+                options2::run();
             }
         }
     }

@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Diff => {
-                let _ = diff::run();
+                diff::run();
             }
             Commands::Similar => {
-                let _ = similar::run();
+                similar::run();
             }
         }
     }

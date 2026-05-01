@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Async1 => {
-                let _ = async1::run();
+                async1::run();
             }
             Commands::Async2 => {
-                let _ = async2::run();
+                async2::run();
             }
         }
     }

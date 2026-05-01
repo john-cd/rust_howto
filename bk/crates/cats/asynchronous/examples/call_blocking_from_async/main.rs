@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::CallBlockingFromAsyncRayon => {
-                let _ = call_blocking_from_async_rayon::run();
+                call_blocking_from_async_rayon::run();
             }
             Commands::CallBlockingFromAsyncSpawnBlocking => {
-                let _ = call_blocking_from_async_spawn_blocking::run();
+                call_blocking_from_async_spawn_blocking::run();
             }
             Commands::CallBlockingFromAsyncSpawnDedicatedThread => {
-                let _ = call_blocking_from_async_spawn_dedicated_thread::run();
+                call_blocking_from_async_spawn_dedicated_thread::run();
             }
         }
     }

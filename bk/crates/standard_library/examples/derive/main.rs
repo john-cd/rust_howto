@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Derive => {
-                let _ = derive::run();
+                derive::run();
             }
             Commands::DeriveMore => {
-                let _ = derive_more::run();
+                derive_more::run();
             }
         }
     }

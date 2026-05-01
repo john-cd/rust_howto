@@ -44,25 +44,25 @@ fn main() {
         match command {
             #[cfg(feature = "femtovg")]
             Commands::Femtovg => {
-                let _ = femtovg::run();
+                femtovg::run();
             }
             Commands::Minifb => {
-                let _ = minifb::run();
+                minifb::run();
             }
             #[cfg(feature = "skia")]
             Commands::SkiaSafe => {
-                let _ = skia_safe::run();
+                skia_safe::run();
             }
             #[cfg(feature = "vello")]
             Commands::Vello => {
-                let _ = vello::run();
+                vello::run();
             }
             Commands::Vger => {
-                let _ = vger::run();
+                vger::run();
             }
             #[cfg(feature = "webrender")]
             Commands::Webrender => {
-                let _ = webrender::run();
+                webrender::run();
             }
         }
     }

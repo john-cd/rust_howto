@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::StringConcat => {
-                let _ = string_concat::run();
+                string_concat::run();
             }
             Commands::StringConcat2 => {
-                let _ = string_concat2::run();
+                string_concat2::run();
             }
         }
     }

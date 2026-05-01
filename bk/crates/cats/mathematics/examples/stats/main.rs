@@ -30,16 +30,16 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::CentralTendency => {
-                let _ = central_tendency::run();
+                central_tendency::run();
             }
             Commands::CentralTendency1 => {
-                let _ = central_tendency1::run();
+                central_tendency1::run();
             }
             Commands::CentralTendency2 => {
-                let _ = central_tendency2::run();
+                central_tendency2::run();
             }
             Commands::StandardDeviation => {
-                let _ = standard_deviation::run();
+                standard_deviation::run();
             }
         }
     }

@@ -30,16 +30,16 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Destructuring => {
-                let _ = destructuring::run();
+                destructuring::run();
             }
             Commands::Shadowing => {
-                let _ = shadowing::run();
+                shadowing::run();
             }
             Commands::Vars => {
-                let _ = vars::run();
+                vars::run();
             }
             Commands::Vars2 => {
-                let _ = vars2::run();
+                vars2::run();
             }
         }
     }

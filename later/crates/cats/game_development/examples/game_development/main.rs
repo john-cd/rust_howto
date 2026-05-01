@@ -23,10 +23,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::GameDevelopment1 => {
-                let _ = game_development1::run();
+                game_development1::run();
             }
             Commands::Glam => {
-                let _ = glam::run();
+                glam::run();
             }
         }
     }

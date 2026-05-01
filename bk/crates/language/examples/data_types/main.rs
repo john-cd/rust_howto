@@ -30,16 +30,16 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::CompoundDataTypes => {
-                let _ = compound_data_types::run();
+                compound_data_types::run();
             }
             Commands::ScalarDataTypes => {
-                let _ = scalar_data_types::run();
+                scalar_data_types::run();
             }
             Commands::StringDataTypes => {
-                let _ = string_data_types::run();
+                string_data_types::run();
             }
             Commands::UnitNever => {
-                let _ = unit_never::run();
+                unit_never::run();
             }
         }
     }

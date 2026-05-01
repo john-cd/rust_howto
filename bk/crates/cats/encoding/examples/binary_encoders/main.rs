@@ -41,26 +41,26 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Bincode => {
-                let _ = bincode::run();
+                bincode::run();
             }
             #[cfg(target_os = "linux")]
             Commands::Capnp => {
-                let _ = capnp::run();
+                capnp::run();
             }
             Commands::Ciborium => {
-                let _ = ciborium::run();
+                ciborium::run();
             }
             Commands::Flatbuffers => {
-                let _ = flatbuffers::run();
+                flatbuffers::run();
             }
             Commands::Prost => {
-                let _ = prost::run();
+                prost::run();
             }
             Commands::Protobuf => {
-                let _ = protobuf::run();
+                protobuf::run();
             }
             Commands::RmpSerde => {
-                let _ = rmp_serde::run();
+                rmp_serde::run();
             }
         }
     }

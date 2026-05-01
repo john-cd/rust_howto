@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::ThreadpoolFractal => {
-                let _ = threadpool_fractal::run();
+                threadpool_fractal::run();
             }
             Commands::ThreadpoolWalk => {
-                let _ = threadpool_walk::run();
+                threadpool_walk::run();
             }
         }
     }

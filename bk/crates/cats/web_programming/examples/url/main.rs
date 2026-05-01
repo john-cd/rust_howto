@@ -36,22 +36,22 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Base => {
-                let _ = base::run();
+                base::run();
             }
             Commands::Fragment => {
-                let _ = fragment::run();
+                fragment::run();
             }
             Commands::New => {
-                let _ = new::run();
+                new::run();
             }
             Commands::Origin => {
-                let _ = origin::run();
+                origin::run();
             }
             Commands::Origin1 => {
-                let _ = origin1::run();
+                origin1::run();
             }
             Commands::Parse => {
-                let _ = parse::run();
+                parse::run();
             }
         }
     }

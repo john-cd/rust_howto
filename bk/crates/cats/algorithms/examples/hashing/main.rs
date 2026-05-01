@@ -33,19 +33,19 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Blake3 => {
-                let _ = blake3::run();
+                blake3::run();
             }
             Commands::Md5 => {
-                let _ = md5::run();
+                md5::run();
             }
             Commands::Sha1 => {
-                let _ = sha1::run();
+                sha1::run();
             }
             Commands::Sha2 => {
-                let _ = sha2::run();
+                sha2::run();
             }
             Commands::ShaDigest => {
-                let _ = sha_digest::run();
+                sha_digest::run();
             }
         }
     }

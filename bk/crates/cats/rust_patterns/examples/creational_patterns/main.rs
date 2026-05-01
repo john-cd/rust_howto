@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::AbstractFactory => {
-                let _ = abstract_factory::run();
+                abstract_factory::run();
             }
             Commands::Factory => {
-                let _ = factory::run();
+                factory::run();
             }
             Commands::Singleton => {
-                let _ = singleton::run();
+                singleton::run();
             }
         }
     }

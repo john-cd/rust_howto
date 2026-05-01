@@ -57,43 +57,43 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::MacroByExampleBasic => {
-                let _ = macro_by_example_basic::run();
+                macro_by_example_basic::run();
             }
             Commands::MacroByExampleDsl => {
-                let _ = macro_by_example_dsl::run();
+                macro_by_example_dsl::run();
             }
             Commands::MacroByExampleHygiene => {
-                let _ = macro_by_example_hygiene::run();
+                macro_by_example_hygiene::run();
             }
             Commands::MacroByExampleMetavariables => {
-                let _ = macro_by_example_metavariables::run();
+                macro_by_example_metavariables::run();
             }
             Commands::MacroByExampleRepetitions => {
-                let _ = macro_by_example_repetitions::run();
+                macro_by_example_repetitions::run();
             }
             Commands::MacroByExampleTypeChecking => {
-                let _ = macro_by_example_type_checking::run();
+                macro_by_example_type_checking::run();
             }
             Commands::MacroByExampleTypeChecking2 => {
-                let _ = macro_by_example_type_checking2::run();
+                macro_by_example_type_checking2::run();
             }
             Commands::Macros => {
-                let _ = macros::run();
+                macros::run();
             }
             Commands::ProcMacro2Example => {
-                let _ = proc_macro2_example::run();
+                proc_macro2_example::run();
             }
             Commands::ProcMacroAttribute => {
-                let _ = proc_macro_attribute::run();
+                proc_macro_attribute::run();
             }
             Commands::ProcMacroDerive => {
-                let _ = proc_macro_derive::run();
+                proc_macro_derive::run();
             }
             Commands::ProcMacroFunction => {
-                let _ = proc_macro_function::run();
+                proc_macro_function::run();
             }
             Commands::TokenTree => {
-                let _ = token_tree::run();
+                token_tree::run();
             }
         }
     }

@@ -1,5 +1,5 @@
 mod uavs;
 
 fn main() {
-    let _ = uavs::run();
+    uavs::run();
 }

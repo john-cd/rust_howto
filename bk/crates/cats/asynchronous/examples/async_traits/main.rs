@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::AsyncTraits => {
-                let _ = async_traits::run();
+                async_traits::run();
             }
             Commands::AsyncTraits2 => {
-                let _ = async_traits2::run();
+                async_traits2::run();
             }
             Commands::AsyncTraits3 => {
-                let _ = async_traits3::run();
+                async_traits3::run();
             }
         }
     }

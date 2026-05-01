@@ -40,15 +40,15 @@ fn main() -> anyhow::Result<()> {
             match command {
                 #[cfg(all(target_os = "linux", feature = "sqlite"))]
                 Commands::Initialization => {
-                    let _ = initialization::run();
+                    initialization::run();
                 }
                 #[cfg(all(target_os = "linux", feature = "sqlite"))]
                 Commands::InsertSelect => {
-                    let _ = insert_select::run();
+                    insert_select::run();
                 }
                 #[cfg(all(target_os = "linux", feature = "sqlite"))]
                 Commands::Transactions => {
-                    let _ = transactions::run();
+                    transactions::run();
                 }
             }
         }

@@ -30,16 +30,16 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::DynAutotraits => {
-                let _ = dyn_autotraits::run();
+                dyn_autotraits::run();
             }
             Commands::DynCompat => {
-                let _ = dyn_compat::run();
+                dyn_compat::run();
             }
             Commands::DynSupertraits => {
-                let _ = dyn_supertraits::run();
+                dyn_supertraits::run();
             }
             Commands::TraitObjects => {
-                let _ = trait_objects::run();
+                trait_objects::run();
             }
         }
     }

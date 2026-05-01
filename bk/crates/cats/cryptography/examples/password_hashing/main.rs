@@ -30,16 +30,16 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Argon2 => {
-                let _ = argon2::run();
+                argon2::run();
             }
             Commands::Bcrypt => {
-                let _ = bcrypt::run();
+                bcrypt::run();
             }
             Commands::Pbkdf2 => {
-                let _ = pbkdf2::run();
+                pbkdf2::run();
             }
             Commands::Scrypt => {
-                let _ = scrypt::run();
+                scrypt::run();
             }
         }
     }

@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Glommio => {
-                let _ = glommio::run();
+                glommio::run();
             }
             Commands::ListenUnused => {
-                let _ = listen_unused::run();
+                listen_unused::run();
             }
         }
     }

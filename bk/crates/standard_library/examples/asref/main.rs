@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Asref => {
-                let _ = asref::run();
+                asref::run();
             }
             Commands::OptionAsref => {
-                let _ = option_asref::run();
+                option_asref::run();
             }
             Commands::SmartPointerAsref => {
-                let _ = smart_pointer_asref::run();
+                smart_pointer_asref::run();
             }
         }
     }

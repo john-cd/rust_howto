@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::ImplTrait => {
-                let _ = impl_trait::run();
+                impl_trait::run();
             }
             Commands::Rpit => {
-                let _ = rpit::run();
+                rpit::run();
             }
         }
     }

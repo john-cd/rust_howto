@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Arrayvec => {
-                let _ = arrayvec::run();
+                arrayvec::run();
             }
             Commands::Smallvec => {
-                let _ = smallvec::run();
+                smallvec::run();
             }
             Commands::Tinyvec => {
-                let _ = tinyvec::run();
+                tinyvec::run();
             }
         }
     }

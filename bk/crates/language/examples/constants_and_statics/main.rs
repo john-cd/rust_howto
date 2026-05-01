@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Constants => {
-                let _ = constants::run();
+                constants::run();
             }
             Commands::StaticMut => {
-                let _ = static_mut::run();
+                static_mut::run();
             }
             Commands::Statics => {
-                let _ = statics::run();
+                statics::run();
             }
         }
     }

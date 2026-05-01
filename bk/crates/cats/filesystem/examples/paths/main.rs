@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Camino => {
-                let _ = camino::run();
+                camino::run();
             }
             Commands::Canonicalize => {
-                let _ = canonicalize::run();
+                canonicalize::run();
             }
             Commands::ManipulatePaths => {
-                let _ = manipulate_paths::run();
+                manipulate_paths::run();
             }
         }
     }

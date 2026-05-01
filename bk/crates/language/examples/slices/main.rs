@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::SliceAsArgument => {
-                let _ = slice_as_argument::run();
+                slice_as_argument::run();
             }
             Commands::Slices => {
-                let _ = slices::run();
+                slices::run();
             }
             Commands::StringSlices => {
-                let _ = string_slices::run();
+                string_slices::run();
             }
         }
     }

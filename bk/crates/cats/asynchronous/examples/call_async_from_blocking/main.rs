@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::CallAsyncFromBlockingFuturesExecutor => {
-                let _ = call_async_from_blocking_futures_executor::run();
+                call_async_from_blocking_futures_executor::run();
             }
             Commands::CallAsyncFromBlockingTokioRuntime => {
-                let _ = call_async_from_blocking_tokio_runtime::run();
+                call_async_from_blocking_tokio_runtime::run();
             }
         }
     }

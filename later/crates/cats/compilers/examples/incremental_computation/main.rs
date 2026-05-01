@@ -23,10 +23,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Comemo => {
-                let _ = comemo::run();
+                comemo::run();
             }
             Commands::Salsa => {
-                let _ = salsa::run();
+                salsa::run();
             }
         }
     }

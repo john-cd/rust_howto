@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Cached => {
-                let _ = cached::run();
+                cached::run();
             }
             Commands::Lru => {
-                let _ = lru::run();
+                lru::run();
             }
             Commands::Moka => {
-                let _ = moka::run();
+                moka::run();
             }
         }
     }

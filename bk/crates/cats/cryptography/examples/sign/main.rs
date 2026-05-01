@@ -33,19 +33,19 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Dsa => {
-                let _ = dsa::run();
+                dsa::run();
             }
             Commands::Ecdsa => {
-                let _ = ecdsa::run();
+                ecdsa::run();
             }
             Commands::Ed25519 => {
-                let _ = ed25519::run();
+                ed25519::run();
             }
             Commands::Ed25519Dalek => {
-                let _ = ed25519_dalek::run();
+                ed25519_dalek::run();
             }
             Commands::Hmac => {
-                let _ = hmac::run();
+                hmac::run();
             }
         }
     }

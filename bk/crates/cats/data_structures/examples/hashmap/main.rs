@@ -30,16 +30,16 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::CustomHashFunction => {
-                let _ = custom_hash_function::run();
+                custom_hash_function::run();
             }
             Commands::CustomTypeAsKey => {
-                let _ = custom_type_as_key::run();
+                custom_type_as_key::run();
             }
             Commands::Hashmap => {
-                let _ = hashmap::run();
+                hashmap::run();
             }
             Commands::Hashset => {
-                let _ = hashset::run();
+                hashset::run();
             }
         }
     }

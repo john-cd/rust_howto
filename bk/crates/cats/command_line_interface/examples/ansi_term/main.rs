@@ -30,16 +30,16 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::AnsiTermBasic => {
-                let _ = ansi_term_basic::run();
+                ansi_term_basic::run();
             }
             Commands::AnsiTermBasic1 => {
-                let _ = ansi_term_basic1::run();
+                ansi_term_basic1::run();
             }
             Commands::AnsiTermBasic2 => {
-                let _ = ansi_term_basic2::run();
+                ansi_term_basic2::run();
             }
             Commands::Colored => {
-                let _ = colored::run();
+                colored::run();
             }
         }
     }

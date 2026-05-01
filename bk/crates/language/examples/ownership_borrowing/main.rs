@@ -45,31 +45,31 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::BorrowingFunction => {
-                let _ = borrowing_function::run();
+                borrowing_function::run();
             }
             Commands::BorrowingFunctionMutable => {
-                let _ = borrowing_function_mutable::run();
+                borrowing_function_mutable::run();
             }
             Commands::BorrowingImmutable => {
-                let _ = borrowing_immutable::run();
+                borrowing_immutable::run();
             }
             Commands::Clone => {
-                let _ = clone::run();
+                clone::run();
             }
             Commands::Copy => {
-                let _ = copy::run();
+                copy::run();
             }
             Commands::Move1 => {
-                let _ = move1::run();
+                move1::run();
             }
             Commands::MoveFunction => {
-                let _ = move_function::run();
+                move_function::run();
             }
             Commands::ReadWriteLock => {
-                let _ = read_write_lock::run();
+                read_write_lock::run();
             }
             Commands::Scope => {
-                let _ = scope::run();
+                scope::run();
             }
         }
     }

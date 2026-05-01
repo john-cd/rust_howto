@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::AesGcm => {
-                let _ = aes_gcm::run();
+                aes_gcm::run();
             }
             Commands::AesGcmSiv => {
-                let _ = aes_gcm_siv::run();
+                aes_gcm_siv::run();
             }
             Commands::Chacha20poly1305 => {
-                let _ = chacha20poly1305::run();
+                chacha20poly1305::run();
             }
         }
     }

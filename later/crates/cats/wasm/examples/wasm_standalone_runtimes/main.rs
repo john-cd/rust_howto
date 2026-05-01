@@ -25,11 +25,11 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Wasmer => {
-                let _ = wasmer::run();
+                wasmer::run();
             }
             #[cfg(feature = "wasmtime")]
             Commands::Wasmtime => {
-                let _ = wasmtime::run();
+                wasmtime::run();
             }
         }
     }

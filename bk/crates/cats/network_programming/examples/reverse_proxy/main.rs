@@ -26,11 +26,11 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Ngrok => {
-                let _ = ngrok::run();
+                ngrok::run();
             }
             #[cfg(target_family = "unix")]
             Commands::Pingora => {
-                let _ = pingora::run();
+                pingora::run();
             }
         }
     }

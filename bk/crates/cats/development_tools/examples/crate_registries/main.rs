@@ -3,5 +3,5 @@
 mod crates_io;
 
 fn main() {
-    let _ = crates_io::run();
+    crates_io::run();
 }

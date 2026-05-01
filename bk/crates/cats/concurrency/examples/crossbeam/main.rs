@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::CrossbeamComplex => {
-                let _ = crossbeam_complex::run();
+                crossbeam_complex::run();
             }
             Commands::CrossbeamSpawn => {
-                let _ = crossbeam_spawn::run();
+                crossbeam_spawn::run();
             }
             Commands::CrossbeamSpsc => {
-                let _ = crossbeam_spsc::run();
+                crossbeam_spsc::run();
             }
         }
     }

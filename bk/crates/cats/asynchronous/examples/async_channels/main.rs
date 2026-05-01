@@ -36,22 +36,22 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::AsyncChannel => {
-                let _ = async_channel::run();
+                async_channel::run();
             }
             Commands::AsyncChannelsMpsc => {
-                let _ = async_channels_mpsc::run();
+                async_channels_mpsc::run();
             }
             Commands::AsyncChannelsOneshot => {
-                let _ = async_channels_oneshot::run();
+                async_channels_oneshot::run();
             }
             Commands::AsyncChannelsOneshot2 => {
-                let _ = async_channels_oneshot2::run();
+                async_channels_oneshot2::run();
             }
             Commands::Kanal => {
-                let _ = kanal::run();
+                kanal::run();
             }
             Commands::Postage => {
-                let _ = postage::run();
+                postage::run();
             }
         }
     }

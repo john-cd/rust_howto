@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Bytemuck => {
-                let _ = bytemuck::run();
+                bytemuck::run();
             }
             Commands::Zerocopy => {
-                let _ = zerocopy::run();
+                zerocopy::run();
             }
         }
     }

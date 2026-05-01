@@ -30,16 +30,16 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::OpenObserve => {
-                let _ = open_observe::run();
+                open_observe::run();
             }
             Commands::OpenTelemetry => {
-                let _ = open_telemetry::run();
+                open_telemetry::run();
             }
             Commands::Slog => {
-                let _ = slog::run();
+                slog::run();
             }
             Commands::TypeNameOfVal => {
-                let _ = type_name_of_val::run();
+                type_name_of_val::run();
             }
         }
     }

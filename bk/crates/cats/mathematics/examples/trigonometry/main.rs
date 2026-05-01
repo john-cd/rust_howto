@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::LatitudeLongitude => {
-                let _ = latitude_longitude::run();
+                latitude_longitude::run();
             }
             Commands::SideLength => {
-                let _ = side_length::run();
+                side_length::run();
             }
             Commands::TanSinCos => {
-                let _ = tan_sin_cos::run();
+                tan_sin_cos::run();
             }
         }
     }

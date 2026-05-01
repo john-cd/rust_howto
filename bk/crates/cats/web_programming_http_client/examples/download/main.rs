@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Download => {
-                let _ = download::run();
+                download::run();
             }
             Commands::Partial => {
-                let _ = partial::run();
+                partial::run();
             }
             Commands::PostFile => {
-                let _ = post_file::run();
+                post_file::run();
             }
         }
     }

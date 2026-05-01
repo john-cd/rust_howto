@@ -23,10 +23,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::JsSys => {
-                let _ = js_sys::run();
+                js_sys::run();
             }
             Commands::WebSys => {
-                let _ = web_sys::run();
+                web_sys::run();
             }
         }
     }

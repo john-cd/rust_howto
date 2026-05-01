@@ -48,34 +48,34 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::AddMatrices => {
-                let _ = add_matrices::run();
+                add_matrices::run();
             }
             Commands::DeserializeMatrix => {
-                let _ = deserialize_matrix::run();
+                deserialize_matrix::run();
             }
             Commands::InvertMatrix => {
-                let _ = invert_matrix::run();
+                invert_matrix::run();
             }
             Commands::MultiplyMatrices => {
-                let _ = multiply_matrices::run();
+                multiply_matrices::run();
             }
             Commands::MultiplyScalarVectorMatrix => {
-                let _ = multiply_scalar_vector_matrix::run();
+                multiply_scalar_vector_matrix::run();
             }
             Commands::NalgebraDecomposition => {
-                let _ = nalgebra_decomposition::run();
+                nalgebra_decomposition::run();
             }
             Commands::NalgebraTransformations => {
-                let _ = nalgebra_transformations::run();
+                nalgebra_transformations::run();
             }
             Commands::NalgebraVectors => {
-                let _ = nalgebra_vectors::run();
+                nalgebra_vectors::run();
             }
             Commands::VectorComparison => {
-                let _ = vector_comparison::run();
+                vector_comparison::run();
             }
             Commands::VectorNorm => {
-                let _ = vector_norm::run();
+                vector_norm::run();
             }
         }
     }

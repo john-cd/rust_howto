@@ -44,26 +44,26 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::BigIntegers => {
-                let _ = big_integers::run();
+                big_integers::run();
             }
             Commands::NumBigint => {
-                let _ = num_bigint::run();
+                num_bigint::run();
             }
             Commands::NumTraits => {
-                let _ = num_traits::run();
+                num_traits::run();
             }
             Commands::OrderedFloat => {
-                let _ = ordered_float::run();
+                ordered_float::run();
             }
             #[cfg(target_os = "linux")]
             Commands::Rug => {
-                let _ = rug::run();
+                rug::run();
             }
             Commands::RustDecimal => {
-                let _ = rust_decimal::run();
+                rust_decimal::run();
             }
             Commands::Typenum => {
-                let _ = typenum::run();
+                typenum::run();
             }
         }
     }

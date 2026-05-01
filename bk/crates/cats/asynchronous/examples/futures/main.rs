@@ -30,16 +30,16 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Futures1 => {
-                let _ = futures1::run();
+                futures1::run();
             }
             Commands::Futures2 => {
-                let _ = futures2::run();
+                futures2::run();
             }
             Commands::Futures3 => {
-                let _ = futures3::run();
+                futures3::run();
             }
             Commands::FuturesUtil => {
-                let _ = futures_util::run();
+                futures_util::run();
             }
         }
     }

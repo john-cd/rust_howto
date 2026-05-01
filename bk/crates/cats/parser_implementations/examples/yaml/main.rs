@@ -1,5 +1,5 @@
 mod serde_yml;
 
 fn main() {
-    let _ = serde_yml::run();
+    serde_yml::run();
 }

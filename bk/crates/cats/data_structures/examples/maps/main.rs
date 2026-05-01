@@ -30,16 +30,16 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Indexmap => {
-                let _ = indexmap::run();
+                indexmap::run();
             }
             Commands::LinkedHashMap => {
-                let _ = linked_hash_map::run();
+                linked_hash_map::run();
             }
             Commands::Multimap => {
-                let _ = multimap::run();
+                multimap::run();
             }
             Commands::Slotmap => {
-                let _ = slotmap::run();
+                slotmap::run();
             }
         }
     }

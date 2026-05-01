@@ -48,34 +48,34 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::CommonTraits => {
-                let _ = common_traits::run();
+                common_traits::run();
             }
             Commands::GenericStructs => {
-                let _ = generic_structs::run();
+                generic_structs::run();
             }
             Commands::StructConstant => {
-                let _ = struct_constant::run();
+                struct_constant::run();
             }
             Commands::StructFields => {
-                let _ = struct_fields::run();
+                struct_fields::run();
             }
             Commands::StructImpl => {
-                let _ = struct_impl::run();
+                struct_impl::run();
             }
             Commands::StructInit => {
-                let _ = struct_init::run();
+                struct_init::run();
             }
             Commands::StructTrait => {
-                let _ = struct_trait::run();
+                struct_trait::run();
             }
             Commands::StructUpdate => {
-                let _ = struct_update::run();
+                struct_update::run();
             }
             Commands::Structs => {
-                let _ = structs::run();
+                structs::run();
             }
             Commands::TupleStructs => {
-                let _ = tuple_structs::run();
+                tuple_structs::run();
             }
         }
     }

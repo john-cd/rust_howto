@@ -24,10 +24,10 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Enums => {
-                let _ = enums::run();
+                enums::run();
             }
             Commands::Strum => {
-                let _ = strum::run();
+                strum::run();
             }
         }
     }

@@ -30,16 +30,16 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Bitflags => {
-                let _ = bitflags::run();
+                bitflags::run();
             }
             Commands::Bitvec => {
-                let _ = bitvec::run();
+                bitvec::run();
             }
             Commands::Flagset => {
-                let _ = flagset::run();
+                flagset::run();
             }
             Commands::Roaring => {
-                let _ = roaring::run();
+                roaring::run();
             }
         }
     }

@@ -27,13 +27,13 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Streams => {
-                let _ = streams::run();
+                streams::run();
             }
             Commands::Streams2 => {
-                let _ = streams2::run();
+                streams2::run();
             }
             Commands::Streams3 => {
-                let _ = streams3::run();
+                streams3::run();
             }
         }
     }
