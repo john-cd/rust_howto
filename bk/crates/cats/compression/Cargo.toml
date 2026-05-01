@@ -16,7 +16,6 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-clap = { version = "4.6.1", features = ["derive"] }
 
 # General
 anyhow = "1.0.100"
@@ -25,6 +24,7 @@ async-compression = { version = "0.4.18", features = ["tokio", "gzip"] }
 # async_zip
 async_zip = { version = "0.0.17", features = ["full"] }
 bytes = "1.9.0"
+clap = { version = "4.6.1", features = ["derive"] }
 flate2 = "1.1.5"
 futures = "0.3.31"
 futures-lite = "2"

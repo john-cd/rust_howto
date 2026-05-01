@@ -4,10 +4,9 @@
 
 use std::sync::Arc;
 
+use anyhow::Context;
 use cdrs_tokio::IntoCdrsValue;
 use cdrs_tokio::TryFromRow;
-
-use anyhow::Context;
 use cdrs_tokio::authenticators::StaticPasswordAuthenticatorProvider;
 use cdrs_tokio::cluster::NodeTcpConfigBuilder;
 use cdrs_tokio::cluster::TcpConnectionManager;
@@ -49,8 +48,8 @@ pub async fn run() -> anyhow::Result<()> {
     dotenv().ok();
 
     let user = std::env::var("CASSANDRA_USER").expect("CASSANDRA_USER not set");
-    let password =
-        std::env::var("CASSANDRA_PASSWORD").expect("CASSANDRA_PASSWORD not set");
+    let password = std::env::var("CASSANDRA_PASSWORD")
+        .expect("CASSANDRA_PASSWORD not set");
     let auth = StaticPasswordAuthenticatorProvider::new(&user, &password);
     // For tests, you may use
     // `cdrs_tokio::authenticators::NoneAuthenticatorProvider`.

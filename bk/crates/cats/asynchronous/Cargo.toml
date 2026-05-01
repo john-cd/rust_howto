@@ -16,13 +16,13 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-clap = { version = "4.6.1", features = ["derive"] }
 
 ## General
 anyhow = "1.0.100"
 async-channel = "2.5.0"
 # LATER async-stream = "0.3.6"
 async-trait = "0.1.89"
+clap = { version = "4.6.1", features = ["derive"] }
 futures = "0.3.31"
 futures-executor = "0.3.31"
 futures-util = "0.3.31"

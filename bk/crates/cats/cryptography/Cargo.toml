@@ -16,7 +16,6 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-clap = { version = "4.6.1", features = ["derive"] }
 aes-gcm = "0.10.3"
 aes-gcm-siv = "0.11.1"
 anyhow = "1.0.100"
@@ -24,6 +23,7 @@ argon2 = "0.5.3"
 base64ct = "1.8.0"
 bcrypt = "0.17.1"
 chacha20poly1305 = "0.10.1"
+clap = { version = "4.6.1", features = ["derive"] }
 data-encoding = "2.9.0"
 der = { version = "0.7.10", features = ["derive", "alloc"] }
 digest = "0.10.6"

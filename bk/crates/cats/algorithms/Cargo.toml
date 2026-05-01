@@ -15,13 +15,11 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-clap = { version = "4.6.1", features = ["derive"] }
-
-## General
 anyhow = "1.0.100"
 base16ct = { version = "0.3.0", features = ["alloc"] }
 base64ct = { version = "1.8.0", features = ["alloc"] }
 blake3 = "1.8.2"
+clap = { version = "4.6.1", features = ["derive"] }
 data-encoding = "2.9.0"
 fastrand = "2.3.0"
 hex-literal = "1.0.0"
