@@ -1,5 +1,7 @@
 #[cfg(target_os = "linux")]
-use clap::{Parser, Subcommand};
+use clap::Parser;
+#[cfg(target_os = "linux")]
+use clap::Subcommand;
 
 #[cfg(target_os = "linux")]
 mod pyo3;

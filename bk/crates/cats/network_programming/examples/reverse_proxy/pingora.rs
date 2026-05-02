@@ -42,10 +42,15 @@ pub fn run() {
     main();
 }
 
-#[ignore = "Needs review"]
-#[test]
-fn require_network() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[ignore = "Needs review"]
+    #[test]
+    fn require_network() {
+        main();
+    }
 }
 // [finish](https://github.com/john-cd/rust_howto/issues/812)
 // <https://github.com/cloudflare/pingora/blob/main/pingora/examples/server.rs>

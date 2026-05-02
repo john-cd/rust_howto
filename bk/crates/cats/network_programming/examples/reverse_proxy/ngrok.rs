@@ -77,13 +77,18 @@ async fn main() -> anyhow::Result<()> {
     run().await
 }
 
-#[ignore = "Requires network access and NGROK_AUTHTOKEN"]
-#[test]
-fn require_network() {
-    tokio::runtime::Runtime::new()
-        .unwrap()
-        .block_on(run())
-        .unwrap();
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[ignore = "Requires network access and NGROK_AUTHTOKEN"]
+    #[test]
+    fn require_network() {
+        tokio::runtime::Runtime::new()
+            .unwrap()
+            .block_on(run())
+            .unwrap();
+    }
 }
 
 // [finish](https://github.com/john-cd/rust_howto/issues/811)
@@ -93,6 +98,6 @@ fn require_network() {
 // https://github.com/ngrok/ngrok-rust/tree/main/ngrok/examples
 // https://github.com/ngrok/ngrok-rust/blob/main/ngrok/src/online_tests.rs
 
-// https://pinggy.io/blog/best_ngrok_alternatives/
+// https://pinggy.io/blog/best_ngrok-alternatives/
 // https://dev.to/ghoshbishakh/top-3-ngrok-alternatives-499e
 // ANCHOR_END: example

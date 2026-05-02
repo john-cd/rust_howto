@@ -16,7 +16,7 @@ pub fn show_alert() {
 }
 
 fn main() {
-    // TODO run();
+    // TODO
 }
 
 // ANCHOR_END: example

@@ -40,8 +40,12 @@ pub fn run() -> Result<(), Box<dyn Error>> {
     main()
 }
 
-#[test]
-fn test() -> Result<(), Box<dyn Error>> {
-    main()
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() -> Result<(), Box<dyn Error>> {
+        main()
+    }
+    // [review](https://github.com/john-cd/rust_howto/issues/840)
 }
-// [review](https://github.com/john-cd/rust_howto/issues/840)

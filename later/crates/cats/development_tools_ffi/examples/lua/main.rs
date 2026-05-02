@@ -1,5 +1,7 @@
 #[cfg(feature = "lua")]
-use clap::{Parser, Subcommand};
+use clap::Parser;
+#[cfg(feature = "lua")]
+use clap::Subcommand;
 
 #[cfg(feature = "lua")]
 mod mlua;
