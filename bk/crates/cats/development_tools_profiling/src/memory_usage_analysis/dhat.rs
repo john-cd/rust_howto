@@ -82,35 +82,6 @@ fn main() {
 
 /// `dhat` also supports heap usage testing, where we can write tests and then
 /// check that they allocated as much heap memory as we expected.
-#[test]
-fn heap_usage_testing() {
-    // `testing()` allows the use of dhat::assert! and related macros,
-    // and disables saving of profile data on Profiler drop.
-    let _profiler = dhat::Profiler::builder().testing().build();
-
-    let _v1: Vec<i32> = vec![1, 2, 3, 4];
-    let v2: Vec<u8> = vec![5, 6, 7, 8];
-    drop(v2);
-
-    let _stats = dhat::HeapStats::get();
-
-    // Now we may assert allocations and number of bytes.
-    // The exact numbers may depend on the compiler version and the platform.
-
-    // For example,
-    // - Total allocations and number of bytes:
-    // dhat::assert_eq!(stats.total_blocks, 2);
-    // dhat::assert_eq!(stats.total_bytes, 20);
-
-    // - Allocations and number of bytes at the point of peak heap size:
-    // dhat::assert_eq!(stats.max_blocks, 2);
-    // dhat::assert_eq!(stats.max_bytes, 20);
-
-    // - Current allocations and number of bytes.
-    // Now a single allocation remains alive:
-    // dhat::assert_eq!(stats.curr_blocks, 1);
-    // dhat::assert_eq!(stats.curr_bytes, 16);
-}
 // Example adapted from <https://docs.rs/dhat/latest/dhat/>
 // ANCHOR_END: example
 
@@ -118,9 +89,45 @@ pub fn run() {
     main();
 }
 
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn heap_usage_testing() {
+        // `testing()` allows the use of dhat::assert! and related macros,
+        // and disables saving of profile data on Profiler drop.
+        let _profiler = dhat::Profiler::builder().testing().build();
+
+        let _v1: Vec<i32> = vec![1, 2, 3, 4];
+        let v2: Vec<u8> = vec![5, 6, 7, 8];
+        drop(v2);
+
+        let _stats = dhat::HeapStats::get();
+
+        // Now we may assert allocations and number of bytes.
+        // The exact numbers may depend on the compiler version and the
+        // platform.
+
+        // For example,
+        // - Total allocations and number of bytes:
+        // dhat::assert_eq!(stats.total_blocks, 2);
+        // dhat::assert_eq!(stats.total_bytes, 20);
+
+        // - Allocations and number of bytes at the point of peak heap size:
+        // dhat::assert_eq!(stats.max_blocks, 2);
+        // dhat::assert_eq!(stats.max_bytes, 20);
+
+        // - Current allocations and number of bytes.
+        // Now a single allocation remains alive:
+        // dhat::assert_eq!(stats.curr_blocks, 1);
+        // dhat::assert_eq!(stats.curr_bytes, 16);
+    }
+
+    #[test]
+    fn test() {
+        main();
+    }
 }
 // TODO
 // Run the example with:

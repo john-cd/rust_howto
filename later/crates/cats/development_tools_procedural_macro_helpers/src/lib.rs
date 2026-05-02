@@ -68,7 +68,8 @@ pub fn log_fn(_attr: TokenStream, item: TokenStream) -> TokenStream {
 #[proc_macro]
 pub fn watt_macro(input: TokenStream) -> TokenStream {
     // In a real watt implementation, we would load the WASM file:
-    // static MACRO: watt::WasmMacro = watt::proc_macro!(include_bytes!("my_macro.wasm"));
+    // static MACRO: watt::WasmMacro =
+    // watt::proc_macro!(include_bytes!("my_macro.wasm"));
     // MACRO.proc_macro(input)
 
     // For this example, we'll just mock it:

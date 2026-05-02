@@ -53,6 +53,11 @@ mod tests {
     use super::*;
 
     #[test]
+    fn test_main() {
+        main().unwrap();
+    }
+
+    #[test]
     fn translate_greeting_selects_spanish() {
         assert_eq!(
             translate_greeting("es-ES"),

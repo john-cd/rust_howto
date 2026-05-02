@@ -43,9 +43,11 @@ pub fn run() -> Result<(), Error> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
-    fn test() {
-        // main(); // TODO Requires Ruby VM to be initialized and linked
+    #[ignore = "requires Ruby VM initialization"]
+    fn test_main() {
+        main().unwrap();
     }
 }
 // [finish](https://github.com/john-cd/rust_howto/issues/1035)

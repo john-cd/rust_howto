@@ -63,3 +63,14 @@ fn main() -> Result<()> {
 pub fn run() -> Result<()> {
     main()
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires interactive example runtime"]
+    fn test_main() {
+        main().unwrap();
+    }
+}

@@ -63,6 +63,11 @@ mod tests {
     use super::*;
 
     #[test]
+    fn test_main() {
+        main().unwrap();
+    }
+
+    #[test]
     fn render_greeting_returns_english_for_unknown_locale() {
         assert_eq!(
             render_greeting("xx", "ZZ"),

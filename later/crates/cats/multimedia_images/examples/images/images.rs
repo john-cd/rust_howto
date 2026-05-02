@@ -58,6 +58,11 @@ mod tests {
     use super::*;
 
     #[test]
+    fn test_main() {
+        main().unwrap();
+    }
+
+    #[test]
     fn build_gradient_image_has_expected_pixel_values() {
         let img = build_gradient_image(3, 3);
         assert_eq!(img[(0, 0)], Rgb([0, 0, 0]));

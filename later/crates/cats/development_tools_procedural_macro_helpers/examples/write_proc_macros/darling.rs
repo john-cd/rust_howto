@@ -1,7 +1,7 @@
 #![allow(dead_code)]
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR: example
+// COMING SOON
+// ANCHOR_END: example
 // //! This module demonstrates the usage of the `darling` crate for simplifying
 // the creation of custom derive macros. //!
 // //! `darling` provides a convenient way to parse attributes on structs and
@@ -64,9 +64,19 @@
 // /// A dummy trait for demonstration purposes.
 // pub trait MyMacro {}
 
-// /// A test function to demonstrate the usage of the macro.
-// #[test]
-// fn test() {
-//     main();
-// }
-// // [finish](https://github.com/john-cd/rust_howto/issues/739)
+fn main() {}
+
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main() {
+        main();
+    }
+}
+// [finish](https://github.com/john-cd/rust_howto/issues/739)

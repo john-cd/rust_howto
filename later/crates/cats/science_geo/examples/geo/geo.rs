@@ -32,8 +32,12 @@ pub fn run() {
     main();
 }
 
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
+    // [review](https://github.com/john-cd/rust_howto/issues/839)
 }
-// [review](https://github.com/john-cd/rust_howto/issues/839)

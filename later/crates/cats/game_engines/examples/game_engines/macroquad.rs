@@ -43,9 +43,10 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     #[ignore = "requires a graphics device"]
-    fn test_macroquad_init() {
+    fn test_main() {
         main();
     }
 }

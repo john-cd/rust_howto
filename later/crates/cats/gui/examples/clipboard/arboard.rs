@@ -28,6 +28,17 @@ pub fn run() {
     main();
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires clipboard access"]
+    fn test_main() {
+        main();
+    }
+}
+
 // Requires a clipboard on Linux; otherwise,
 // "Unknown error while interacting with the clipboard: X11 server connection
 // timed out because it was unreachable"

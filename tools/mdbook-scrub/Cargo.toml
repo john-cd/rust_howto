@@ -16,7 +16,7 @@ categories = [
 
 [dependencies]
 clap = "4.6.1"
-mdbook = "0.5.2"
+mdbook-preprocessor = "0.5.2"
 regex = "1.12.3"
 semver = "1.0.28"
 serde = { version = "1.0.228", features = ["derive"] }
