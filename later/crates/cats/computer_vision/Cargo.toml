@@ -19,8 +19,8 @@ autolib = false
 rand = { version = "0.10.1", features = ["thread_rng"] }
 
 [target.'cfg(target_os = "linux")'.dependencies]
-image = { version = "0.25.5", optional = true }
-opencv = { version = "0.95.0", default-features = false, features = [ "clang-runtime", "imgcodecs", "imgproc" ], optional = true }
+image = { version = "0.25.10", optional = true }
+opencv = { version = "0.98.2", default-features = false, features = [ "clang-runtime", "imgcodecs", "imgproc" ], optional = true }
 # The above requires `libopencv-dev` `clang` `libclang-dev`
 
 [features]

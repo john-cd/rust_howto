@@ -16,4 +16,4 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-nix = "0.27"
+nix = "0.31"

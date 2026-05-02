@@ -15,6 +15,6 @@ categories = ["development-tools"]
 publish.workspace = true
 
 [dependencies]
-anyhow = "1.0.100"
-tracing = "0.1.41"
+anyhow = "1.0.102"
+tracing = "0.1.44"
 walkdir = "2.5.0"

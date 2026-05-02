@@ -17,5 +17,5 @@ autolib = false
 
 [dependencies]
 clap = { version = "4.6.1", features = ["derive"] }
-parry2d = "0.20"
-glam = "0.30.0"
+parry2d = "0.26"
+glam = "0.32.1"

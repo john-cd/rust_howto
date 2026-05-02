@@ -15,7 +15,7 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-wgpu = { version = "25.0.0", optional = true } # was pinned for ggez
+wgpu = { version = "29.0.3", optional = true } # was pinned for ggez
 
 [features]
 default = []

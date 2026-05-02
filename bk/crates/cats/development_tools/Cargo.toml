@@ -16,9 +16,9 @@ publish.workspace = true
 
 [dependencies]
 clap = { version = "4.6.1", features = ["derive"] }
-anyhow = "1.0.100"
+anyhow = "1.0.102"
 crates_io_api = "0.12.0"
-doc-comment = "0.3.3"
-semver = "1.0.27"
-tracing = "0.1.41"
+doc-comment = "0.3.4"
+semver = "1.0.28"
+tracing = "0.1.44"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }

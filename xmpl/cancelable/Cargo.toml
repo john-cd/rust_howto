@@ -18,4 +18,4 @@ anyhow = "1.0.102"
 crossbeam = "0.8.4"
 crossbeam-channel = "0.5.15"
 tracing = "0.1.44"
-tracing-subscriber = { version = "0.3.20", features = ["env-filter"] }
+tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
