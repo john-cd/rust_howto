@@ -1,5 +1,5 @@
 #![allow(dead_code)]
-// // ANCHOR: example
+// ANCHOR: example
 // use paste::paste;
 
 // /// The `paste` macro is used to concatenate identifiers within the
@@ -46,9 +46,19 @@
 //     println!("Baz: {}", z.get_value());
 // }
 
-// // ANCHOR_END: example
+fn main() {}
+// ANCHOR_END: example
 
-// #[test]
-// fn test() {
-//     main();
-// }
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main() {
+        main();
+    }
+}

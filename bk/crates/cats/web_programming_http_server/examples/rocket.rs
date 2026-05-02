@@ -1,6 +1,5 @@
-// // ANCHOR: example
+// ANCHOR: example
 // // COMING SOON
-// // ANCHOR_END: example
 // //! This is a simple example of a Rocket web server.
 // //!
 // //! It defines a single route that returns "Hello, world!" when accessed.
@@ -25,4 +24,19 @@ fn main() {
     println!(
         "rocket example: a web framework for Rust (see full implementation in the book)"
     );
+}
+// ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

@@ -29,8 +29,19 @@ fn main(mut cx: ModuleContext) -> NeonResult<()> {
 }
 // ANCHOR_END: example
 
-pub fn run() -> NeonResult<()> {
-    main()
+pub fn run() -> anyhow::Result<()> {
+    // TODO main()?;
+    Ok(())
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires Node module runtime"]
+    fn test_main() {
+        // TODO main().unwrap();
+    }
+}
 // [finish how to test](https://github.com/john-cd/rust_howto/issues/1033)?

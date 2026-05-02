@@ -79,7 +79,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
-        #[test]
+    #[test]
     fn test() {
         main();
     }

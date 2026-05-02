@@ -13,7 +13,6 @@ fn hello(name: String) -> String {
 fn main() {
     // TODO
 }
-
 // ANCHOR_END: example
 
 pub fn run() {

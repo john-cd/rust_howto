@@ -54,8 +54,9 @@ pub fn run() -> LuaResult<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
-    fn test() {
-        run();
+    fn test_main() {
+        main().unwrap();
     }
 }
