@@ -59,9 +59,11 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
-    fn test() {
-        // TODO main();
+    #[ignore = "requires interactive example runtime"]
+    fn test_main() {
+        main();
     }
 }
 // TODO review

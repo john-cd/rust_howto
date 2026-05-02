@@ -35,6 +35,12 @@ mod tests {
     use super::*;
 
     #[test]
+    #[ignore = "requires audio output device"]
+    fn test_main() {
+        main().unwrap();
+    }
+
+    #[test]
     fn create_rodio_output_stream() {
         let _result = OutputStream::try_default();
     }

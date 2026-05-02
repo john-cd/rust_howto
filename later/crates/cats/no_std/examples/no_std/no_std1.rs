@@ -53,8 +53,8 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test() {
-        run();
+    fn test_main() {
+        main();
     }
 }
 // [review](https://github.com/john-cd/rust_howto/issues/814)

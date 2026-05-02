@@ -15,14 +15,14 @@ use axum::Router;
 use axum::routing::get;
 
 #[shuttle_runtime::main]
-async fn axum() -> shuttle_axum::ShuttleAxum {
+async fn main() -> shuttle_axum::ShuttleAxum {
     let router = Router::new().route("/", get(hello_world));
 
     Ok(router.into())
 }
 
-// this is a function that returns a static string
-// all functions used as endpoints must return a HTTP-compatible response
+// A function that returns a static string.
+// All functions used as endpoints must return a HTTP-compatible response
 async fn hello_world() -> &'static str {
     "Hello, Shuttle!"
 }
@@ -30,6 +30,17 @@ async fn hello_world() -> &'static str {
 
 pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires Shuttle runtime"]
+    fn test_main() {
+        main();
+    }
 }
 
 // Local tests are omitted since shuttle depends on a specific runtime.

@@ -116,6 +116,17 @@ pub fn run() {
     main();
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires interactive example runtime"]
+    fn test_main() {
+        main();
+    }
+}
+
 // /// # Example
 // ///
 // /// This is a simple example of a counter application using `relm4`.
