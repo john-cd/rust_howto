@@ -1,34 +1,52 @@
 #![allow(dead_code)]
-// // ANCHOR: example
-// //! This example demonstrates a basic actor implementation.
-// //!
-// //! An actor is a concurrent entity that can receive and process messages.
-// //! It's a fundamental building block for concurrent systems.
-// use std::time::Duration;
-// use actors::{Actor, Context, SystemBuilder, Sender};
+// ANCHOR: example
+//! This example demonstrates a basic actor implementation pattern.
+//!
+//! It spawns a worker thread that receives messages over an MPSC channel,
+//! prints them, and exits cleanly on a stop signal.
+//! An actor is a concurrent entity that can receive and process messages.
+//! It's a fundamental building block for concurrent systems.
+use std::sync::mpsc;
+use std::thread;
 
-// struct MyActor;
+enum Message {
+    Print(String),
+    Stop,
+}
 
-// impl Actor for MyActor {
-//     type Msg = String;
+fn main() {
+    let (sender, receiver) = mpsc::channel::<Message>();
 
-//     fn recv(&mut self, ctx: &Context<String>, msg: String, sender: Sender) {
-//         println!("received {msg}");
-//     }
-// }
+    let actor = thread::spawn(move || {
+        while let Ok(message) = receiver.recv() {
+            match message {
+                Message::Print(text) => println!("actor received: {text}"),
+                Message::Stop => break,
+            }
+        }
+    });
 
-// #[test]
-// fn test() {
-//     let sys = SystemBuilder::new().name("my-app").create().unwrap();
-//     // Every actor has a name that is required to be unique among
-//     // its singlings (those actors sharing the same parent actor).
-//     let my_actor = sys.actor_of::<MyActor>("my-actor").unwrap();
-//     my_actor.tell("Hello!".to_string(), None);
+    sender
+        .send(Message::Print(
+            "Hello from an actor-like worker".to_string(),
+        ))
+        .expect("channel should be open");
+    sender.send(Message::Stop).expect("channel should be open");
 
-//     // force main to wait before exiting program
-//     std::thread::sleep(Duration::from_millis(500));
-// }
-// // ANCHOR_END: example
-// // [finish](https://github.com/john-cd/rust_howto/issues/1011)
+    actor.join().expect("actor thread should finish cleanly");
+}
+// ANCHOR_END: example
 
-pub fn run() {}
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
+    // [finish](https://github.com/john-cd/rust_howto/issues/1011)
+}
