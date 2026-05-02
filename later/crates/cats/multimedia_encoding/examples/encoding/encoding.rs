@@ -43,6 +43,11 @@ mod tests {
     use super::*;
 
     #[test]
+    fn test_main() {
+        main().unwrap();
+    }
+
+    #[test]
     fn default_config_creates_context() {
         let cfg = Config::default();
         let ctx: Context<u8> =

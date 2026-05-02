@@ -2,11 +2,11 @@ mod conf;
 mod regexes;
 
 use conf::PreprocConfig;
-use mdbook::BookItem;
-use mdbook::book::Book;
-use mdbook::errors::Error;
-use mdbook::preprocess::Preprocessor;
-use mdbook::preprocess::PreprocessorContext;
+use mdbook_preprocessor::Preprocessor;
+use mdbook_preprocessor::PreprocessorContext;
+use mdbook_preprocessor::book::Book;
+use mdbook_preprocessor::book::BookItem;
+use mdbook_preprocessor::errors::Result;
 use regexes::*;
 use tracing::info;
 use tracing::warn;
@@ -36,10 +36,10 @@ impl Preprocessor for Preproc {
         Self::NAME
     }
 
-    fn run(&self, ctx: &PreprocessorContext, mut book: Book) -> Result<Book, Error> {
+    fn run(&self, ctx: &PreprocessorContext, mut book: Book) -> Result<Book> {
         info!("Running `mdbook-scrub` preprocessor");
 
-        let conf: PreprocConfig = self.retrieve_config(&ctx.config);
+        let conf: PreprocConfig = self.retrieve_config(ctx);
         // Compile the replacement Regex(es) only once per book.
         let rrs = get_regexes_and_replacements(&conf);
 
@@ -67,15 +67,15 @@ impl Preprocessor for Preproc {
     }
 
     // All usual renderers are supported.
-    fn supports_renderer(&self, renderer: &str) -> bool {
-        renderer != "not-supported"
+    fn supports_renderer(&self, renderer: &str) -> Result<bool> {
+        Ok(renderer != "not-supported")
     }
 }
 
 impl Preproc {
-    fn retrieve_config(&self, conf: &mdbook::Config) -> PreprocConfig {
+    fn retrieve_config(&self, ctx: &PreprocessorContext) -> PreprocConfig {
         // Get the table associated with a particular preprocessor.
-        match conf.get_preprocessor(self.name()) {
+        match ctx.config.get_preprocessor(self.name()) {
             Some(raw) => {
                 // `raw` is `toml::Table`.
                 let s = toml::to_string(&raw).expect("toml::to_string failed!");

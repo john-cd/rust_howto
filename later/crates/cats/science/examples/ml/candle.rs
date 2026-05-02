@@ -1,7 +1,7 @@
 #![allow(dead_code)]
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR: example
+// COMING SOON
+// ANCHOR_END: example
 // //! This example demonstrates a simple linear regression model using the
 // //! Candle library. It showcases the basic steps of defining a model,
 // //! training it, and making predictions.
@@ -112,3 +112,19 @@
 // // [finish](https://github.com/john-cd/rust_howto/issues/835) review https://huggingface.github.io/candle/index.html
 // // <https://github.com/ToluClassics/candle-tutorial>
 // // <https://huggingface.github.io/candle/index.html>
+
+fn main() {}
+
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main() {
+        main();
+    }
+}

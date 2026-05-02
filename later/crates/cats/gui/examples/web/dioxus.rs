@@ -1,12 +1,8 @@
-// // ANCHOR: example
+// ANCHOR: example
 // // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR_END: example
 
 // use dioxus::prelude::*;
-
-// fn main() {
-//     launch(App);
-// }
 
 // // App is our main component function. It uses the use_state hook to create
 // and manage the count state. fn App(cx: Scope) -> Element {
@@ -29,5 +25,24 @@
 //     })
 // }
 
-pub fn main() {}
-// // [finish](https://github.com/john-cd/rust_howto/issues/775)
+// fn main() {
+    //     launch(App);
+    // }
+
+fn main() {}
+
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires interactive example runtime"]
+    fn test_main() {
+        main();
+    }
+}
+// [finish](https://github.com/john-cd/rust_howto/issues/775)

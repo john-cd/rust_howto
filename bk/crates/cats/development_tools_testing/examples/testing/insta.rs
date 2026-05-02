@@ -8,6 +8,10 @@ pub fn format_user(name: &str, age: u32) -> String {
     format!("Name: {name}, Age: {age}")
 }
 
+fn main() {
+    println!("{}", format_user("Alice", 30));
+}
+
 /// The following is a test that uses `insta` to snapshot the output.
 /// Run with `cargo test`.
 /// If the test fails, `insta` will prompt you to review and accept the new
@@ -25,3 +29,7 @@ mod tests {
     }
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}

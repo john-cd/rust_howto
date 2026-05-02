@@ -135,22 +135,32 @@ pub fn run() -> ExampleResult<()> {
     main()
 }
 
-#[test]
-fn test_host_runtime_builds() {
-    let mut config = Config::default();
-    config.set_backend(Some(BackendKind::Interpreter));
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    let _engine = Engine::new(&config).expect("engine should initialize");
+    #[test]
+    fn test_main() {
+        main().unwrap();
+    }
 
-    let mut linker: Linker<HostState, Infallible> = Linker::new();
-    linker
-        .define_typed(
-            "host_increment",
-            |caller: Caller<'_, HostState>, value: u32| -> u32 {
-                let state = caller.user_data;
-                state.counter += value;
-                state.counter
-            },
-        )
-        .expect("host callback should register");
+    #[test]
+    fn test_host_runtime_builds() {
+        let mut config = Config::default();
+        config.set_backend(Some(BackendKind::Interpreter));
+
+        let _engine = Engine::new(&config).expect("engine should initialize");
+
+        let mut linker: Linker<HostState, Infallible> = Linker::new();
+        linker
+            .define_typed(
+                "host_increment",
+                |caller: Caller<'_, HostState>, value: u32| -> u32 {
+                    let state = caller.user_data;
+                    state.counter += value;
+                    state.counter
+                },
+            )
+            .expect("host callback should register");
+    }
 }

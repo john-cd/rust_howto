@@ -1,7 +1,7 @@
 #![allow(dead_code)]
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR: example
+// COMING SOON
+// ANCHOR_END: example
 // //! This example demonstrates how to use `async-tungstenite` to connect to a
 // //! WebSocket server, send a message, and receive a response.
 // //!
@@ -56,10 +56,19 @@
 //     }
 // }
 
-// #[test]
-// fn require_network() {
-//     main();
-// }
-// // [finish; echo.websocket.org has moved permanently](https://github.com/john-cd/rust_howto/issues/1058)
-
 fn main() {}
+
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main() {
+        main();
+    }
+}
+// [finish; echo.websocket.org has moved permanently](https://github.com/john-cd/rust_howto/issues/1058)

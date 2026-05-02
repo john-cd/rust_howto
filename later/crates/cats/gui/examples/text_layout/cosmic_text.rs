@@ -1,7 +1,6 @@
-// // ANCHOR: example
+// ANCHOR: example
 // // COMING SOON
-// // ANCHOR_END: example
-
+// ANCHOR_END: example
 // use cosmic_text::Attrs;
 // use cosmic_text::Buffer;
 // use cosmic_text::BufferLine;
@@ -49,5 +48,20 @@
 //     println!("Buffer: {output:?}");
 // }
 
-pub fn main() {}
+fn main() {}
+
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires interactive example runtime"]
+    fn test_main() {
+        main();
+    }
+}
 // // [finish](https://github.com/john-cd/rust_howto/issues/774)

@@ -12,9 +12,13 @@ pub fn run() {
     main();
 }
 
-#[test]
-#[ignore = "later"]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    #[ignore = "later"]
+    fn test() {
+        main();
+    }
+    // // [write LATER](https://github.com/john-cd/rust_howto/issues/831)
 }
-// // [write LATER](https://github.com/john-cd/rust_howto/issues/831)
