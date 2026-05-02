@@ -1,20 +1,19 @@
 #![allow(dead_code)]
 #![allow(unused_variables)]
-
 // ANCHOR: example
 //! This example demonstrates a basic HTTP server using the Loco framework.
 //! It defines a simple application with a controller and routes.
 //!
 //! Loco is a web framework for Rust inspired by Ruby on Rails.
 
-use std::path::Path;
-use loco_rs::prelude::*;
 use loco_rs::app::Hooks;
-use loco_rs::task::Tasks;
+use loco_rs::bgworker::Queue;
 use loco_rs::boot::{BootResult, StartMode};
 use loco_rs::controller::AppRoutes;
-use loco_rs::bgworker::Queue;
 use loco_rs::environment::Environment;
+use loco_rs::prelude::*;
+use loco_rs::task::Tasks;
+use std::path::Path;
 
 /// The application's main structure.
 pub struct App;
