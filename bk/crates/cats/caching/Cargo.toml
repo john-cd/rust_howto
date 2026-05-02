@@ -16,7 +16,7 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-cached = "0.56.0"
+cached = "0.59.0"
 clap = { version = "4.6.1", features = ["derive"] }
 lru = "0.18.0"
-moka = { version = "0.12.11", features = ["sync"] }
+moka = { version = "0.12.15", features = ["sync"] }

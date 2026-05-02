@@ -16,4 +16,4 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-ryu = "1.0.19"
+ryu = "1.0.23"

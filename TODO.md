@@ -29,16 +29,15 @@
 - [ ] polish directory_traversal
 - [ ] polish hashing + algorithms
 - [?] polish [contributing](bk/src/appendices/contributing/index.md) [#529](https://github.com/john-cd/rust_howto/issues/529)
-- [ ] finish to add RBE link [#29](https://github.com/john-cd/rust_howto/issues/29).
 
 ## LOGISTICS
 
 - [ ] License / legal rethink.
 - [ ] Manually insert rest of cross-links between pages?
+- [ ] finish to add RBE link [#29](https://github.com/john-cd/rust_howto/issues/29).
 - [ ] Indices.
 - [ ] Update recipe tables: improve scripts that generate links / update recipe tables.
 - [ ] Additional Links / Content: use/move the rest of links in TOREVIEW.md.
-
 - [ ] make a plan to use pandoc / typst instead of mdbook.
 - [ ] kindle create. [gumroad~website][gumroad~website] [blog~write-a-book-with-markdown] [write-book-with-obsidian] [book-creation-with-pandoc-and-markdown]
 - [ ] Scrub any left-over {{#example ...}}, {{#crate ...}}... etc and warn. WIP.
@@ -62,38 +61,6 @@
 - [ ] review drafts section for what I missed.
 - [ ] move categories back to src, after final review.
 - [ ] `other` section - move what's ready.
-
-## mdbook-utils
-
-- [ ] Address all TODO comments in mdbook-utils codebase
-- [ ] Document all modules, functions, and structs in mdbook-utils
-- [ ] Generate `categories.md` stub in mdbook-utils
-
-
-
-- [?] [Web] Migrate to modern WebSocket echo service [async_tungstenite.rs](later/crates/cats/web_programming_websocket/examples/async_tungstenite.rs) ([#1058](https://github.com/john-cd/rust_howto/issues/1058))
-- [?] [Web] Implement Tonic gRPC example and server boilerplate [tonic.rs](bk/crates/cats/web_programming_http_server/examples/grpc/tonic.rs) ([#870](https://github.com/john-cd/rust_howto/issues/870))
-- [?] [Web] Update Hyper server example to 1.0 API and implement routing [hyper_server.rs](bk/crates/cats/web_programming_http_server/examples/hyper_server.rs) ([#866](https://github.com/john-cd/rust_howto/issues/866))
-- [?] [Web] Implement Axum routing, state, and review time limits [axum.rs](bk/crates/cats/web_programming_http_server/examples/axum.rs) ([#865](https://github.com/john-cd/rust_howto/issues/865))
-- [?] [Web] Implement Rocket Hello World and route mounting [rocket.rs](bk/crates/cats/web_programming_http_server/examples/rocket.rs) ([#869](https://github.com/john-cd/rust_howto/issues/869))
-- [?] [Web] Implement Leptos reactive counter and view mounting [leptos.rs](bk/crates/cats/web_programming_http_server/examples/leptos.rs) ([#867](https://github.com/john-cd/rust_howto/issues/867))
-- [?] [Web] Implement Async-GraphQL schema with Axum integration [async_graphql.rs](bk/crates/cats/web_programming_http_server/examples/async_graphql.rs) ([#864](https://github.com/john-cd/rust_howto/issues/864))
-- [?] [Web] Implement Actix-Web network requirement test [actix_web.rs](bk/crates/cats/web_programming_http_server/examples/actix_web.rs)
-- [?] [Network] Finalize Pingora reverse proxy implementation [pingora.rs](bk/crates/cats/network_programming/examples/reverse_proxy/pingora.rs) ([#812](https://github.com/john-cd/rust_howto/issues/812))
-- [ ] [Network] Complete comprehensive reverse proxy section for Pingora and Rathole [reverse_proxy.md](bk/drafts/categories/network-programming/reverse_proxy.md) ([#424](https://github.com/john-cd/rust_howto/issues/424))
-- [?] [Database] Fix heavy test orchestration for Tiberius MSSQL [tiberius.rs](bk/crates/cats/database/examples/mssql/tiberius.rs) ([#1019](https://github.com/john-cd/rust_howto/issues/1019))
-- [?] [Database] Implement PostgreSQL aggregation examples [aggregate_data.rs](bk/crates/cats/database/examples/postgres/aggregate_data.rs)
-- [ ] [GUI] Implement Winit window creation example [winit.rs](later/crates/cats/gui/examples/window_creation/winit.rs)
-- [ ] [Parser] Implement `DocumentParser` trait and URL parsing 1427.md ([#1427](https://github.com/john-cd/rust_howto/issues/1427))
-- [ ] [Test] Implement AFL.rs fuzzing target and panic discovery afl.rs ([#748](https://github.com/john-cd/rust_howto/issues/748))
-- [ ] [Memory] Review and finalize lazy initialization examples lazy_static.rs ([#939](https://github.com/john-cd/rust_howto/issues/939))
-- [ ] [Async] Expand stream examples with concurrent processing streams.md ([#645](https://github.com/john-cd/rust_howto/issues/645))
-
-- [?] review cancelable example in `xmpl/`
-- [?] move WIP examples from `playground/`
-
-- [ ] sccache for dev container setup?
-- [?] Clean up playground crate
 - [ ] Move mdbook-utils repo ?
 - [ ] Setup bacon
 - [ ] Add git hooks to automate formatting / clippy check / fix before commit
@@ -113,6 +80,41 @@
 - [ ] Fix .github issue templates
 - [ ] content/Drafts
 - [ ] Crate Integration
+- [ ] sccache for dev container setup?
+
+## mdbook-utils
+
+- [ ] Address all TODO comments in mdbook-utils codebase
+- [ ] Document all modules, functions, and structs in mdbook-utils
+- [ ] Generate `categories.md` stub in mdbook-utils
+
+## HUMAN REVIEW
+
+- [?] [Web] Migrate to modern WebSocket echo service [async_tungstenite.rs](later/crates/cats/web_programming_websocket/examples/async_tungstenite.rs) ([#1058](https://github.com/john-cd/rust_howto/issues/1058))
+- [?] [Web] Implement Tonic gRPC example and server boilerplate [tonic.rs](bk/crates/cats/web_programming_http_server/examples/grpc/tonic.rs) ([#870](https://github.com/john-cd/rust_howto/issues/870))
+- [?] [Web] Update Hyper server example to 1.0 API and implement routing [hyper_server.rs](bk/crates/cats/web_programming_http_server/examples/hyper_server.rs) ([#866](https://github.com/john-cd/rust_howto/issues/866))
+- [?] [Web] Implement Axum routing, state, and review time limits [axum.rs](bk/crates/cats/web_programming_http_server/examples/axum.rs) ([#865](https://github.com/john-cd/rust_howto/issues/865))
+- [?] [Web] Implement Rocket Hello World and route mounting [rocket.rs](bk/crates/cats/web_programming_http_server/examples/rocket.rs) ([#869](https://github.com/john-cd/rust_howto/issues/869))
+- [?] [Web] Implement Leptos reactive counter and view mounting [leptos.rs](bk/crates/cats/web_programming_http_server/examples/leptos.rs) ([#867](https://github.com/john-cd/rust_howto/issues/867))
+- [?] [Web] Implement Async-GraphQL schema with Axum integration [async_graphql.rs](bk/crates/cats/web_programming_http_server/examples/async_graphql.rs) ([#864](https://github.com/john-cd/rust_howto/issues/864))
+- [?] [Web] Implement Actix-Web network requirement test [actix_web.rs](bk/crates/cats/web_programming_http_server/examples/actix_web.rs)
+- [?] [Network] Finalize Pingora reverse proxy implementation [pingora.rs](bk/crates/cats/network_programming/examples/reverse_proxy/pingora.rs) ([#812](https://github.com/john-cd/rust_howto/issues/812))
+- [ ] [Network] Complete comprehensive reverse proxy section for Pingora and Rathole [reverse_proxy.md](bk/drafts/categories/network-programming/reverse_proxy.md) ([#424](https://github.com/john-cd/rust_howto/issues/424))
+- [?] [Database] Fix heavy test orchestration for Tiberius MSSQL [tiberius.rs](bk/crates/cats/database/examples/mssql/tiberius.rs) ([#1019](https://github.com/john-cd/rust_howto/issues/1019))
+- [?] [Database] Implement PostgreSQL aggregation examples [aggregate_data.rs](bk/crates/cats/database/examples/postgres/aggregate_data.rs)
+- [?] review cancelable example in `xmpl/`
+- [?] move WIP examples from `playground/`
+- [?] Clean up playground crate
+
+
+
+- [ ] [GUI] Implement Winit window creation example [winit.rs](later/crates/cats/gui/examples/window_creation/winit.rs)
+- [ ] [Parser] Implement `DocumentParser` trait and URL parsing 1427.md ([#1427](https://github.com/john-cd/rust_howto/issues/1427))
+- [ ] [Test] Implement AFL.rs fuzzing target and panic discovery afl.rs ([#748](https://github.com/john-cd/rust_howto/issues/748))
+- [ ] [Memory] Review and finalize lazy initialization examples lazy_static.rs ([#939](https://github.com/john-cd/rust_howto/issues/939))
+- [ ] [Async] Expand stream examples with concurrent processing streams.md ([#645](https://github.com/john-cd/rust_howto/issues/645))
+
+
 
 ## Book Content and Drafts
 

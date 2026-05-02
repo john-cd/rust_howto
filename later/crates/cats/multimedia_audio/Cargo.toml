@@ -16,4 +16,4 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-cpal = "0.15"
+cpal = "0.17"

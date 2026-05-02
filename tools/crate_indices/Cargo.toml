@@ -16,12 +16,12 @@ publish.workspace = true
 
 [dependencies]
 anyhow = "1.0.102"
-clap = { version = "4.6.0", features = ["cargo"] }
-clap_builder = "4.5.50"
+clap = { version = "4.6.1", features = ["cargo"] }
+clap_builder = "4.6.0"
 itertools = "0.14.0"
 tool_lib = { path = "../tool_lib" }
 tracing = "0.1.44"
-tracing-subscriber = { version = "0.3.20", features = ["env-filter"] }
+tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
 
 [[bin]]
 name = "crate-indices"

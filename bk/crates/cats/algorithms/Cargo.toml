@@ -15,20 +15,20 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-anyhow = "1.0.100"
-base16ct = { version = "0.3.0", features = ["alloc"] }
-base64ct = { version = "1.8.0", features = ["alloc"] }
-blake3 = "1.8.2"
+anyhow = "1.0.102"
+base16ct = { version = "1.0.0", features = ["alloc"] }
+base64ct = { version = "1.8.3", features = ["alloc"] }
+blake3 = "1.8.5"
 clap = { version = "4.6.1", features = ["derive"] }
-data-encoding = "2.9.0"
-fastrand = "2.3.0"
-hex-literal = "1.0.0"
+data-encoding = "2.11.0"
+fastrand = "2.4.1"
+hex-literal = "1.1.0"
 md5 = "0.8.0"
 
 petgraph = "0.8.3"
 rand = "0.10.1"
 rand_distr = "0.6.0"
 ring = "0.17.14"
-sha1 = "0.10.6"
-sha2 = "0.10.9"
-tempfile = "3.23.0"
+sha1 = "0.11.0"
+sha2 = "0.11.0"
+tempfile = "3.27.0"

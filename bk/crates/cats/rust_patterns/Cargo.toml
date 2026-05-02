@@ -17,7 +17,7 @@ autolib = false
 
 [dependencies]
 clap = { version = "4.6.1", features = ["derive"] }
-anyhow = "1.0.100"
+anyhow = "1.0.102"
 color-eyre = "0.6.5"
 csv = "1.4.0"
 dyn-clone = "1.0.20"
@@ -28,9 +28,9 @@ im = "15.1.0"
 # eyre is outdated, see color-eyre
 itertools = "0.14.0"
 miette = { version = "7.6.0", features = ["fancy"] }
-pin-project = "1.1.10"
+pin-project = "1.1.11"
 # pin-project-lite = "0.2.16"
-rpds = "1.1.2"
+rpds = "1.2.0"
 scopeguard = "1.2.0"
 serde = { version = "1.0.228", features = ["derive"] }
-thiserror = "2.0.17"
+thiserror = "2.0.18"

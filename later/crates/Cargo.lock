@@ -7889,8 +7889,6 @@ dependencies = [
  "quote",
  "syn 2.0.117",
  "watt",
-<<<<<<< fix-watt-example-796816190474475994
-=======
 ]
 
 [[package]]
@@ -7900,7 +7898,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d3dd60d1080a57a05ab032377049e0591415d2b31afd7028356dbf3cc6dcb066"
 dependencies = [
  "generic-array",
->>>>>>> main
 ]
 
 [[package]]

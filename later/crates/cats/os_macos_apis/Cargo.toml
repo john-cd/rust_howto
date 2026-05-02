@@ -18,5 +18,5 @@ autolib = false
 [dependencies]
 
 [target.'cfg(target_os = "macos")'.dependencies]
-cocoa = "0.24"
+cocoa = "0.26"
 objc = "0.2.7"

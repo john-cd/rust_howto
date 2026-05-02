@@ -16,4 +16,4 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-image = "0.25.9"
+image = "0.25.10"

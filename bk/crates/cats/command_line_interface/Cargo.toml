@@ -17,8 +17,6 @@ autolib = false
 
 [dependencies]
 ansi_term = "0.12.1" # NOTE: unmaintained
-
-## General
 anyhow = "1.0.102"
 clap = { version = "4.6.1", features = ["derive"] }
 clap_complete = "4.6.3"

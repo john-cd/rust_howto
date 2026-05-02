@@ -16,4 +16,4 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-rapier2d = "0.25"
+rapier2d = "0.32"

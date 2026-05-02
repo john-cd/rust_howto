@@ -16,4 +16,4 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-geo = "0.26"
+geo = "0.33"

@@ -24,12 +24,12 @@ dhat-heap = []
 dhat-ad-hoc = []
 
 [dependencies]
-criterion = "0.7.0"
+criterion = "0.8.2"
 dhat = "0.3.3"
-measure_time = "0.8"
+measure_time = "0.9"
 
 [dev-dependencies]
-divan = "0.1.17"
+divan = "0.1.21"
 
 [[bench]]
 name = "divan"
