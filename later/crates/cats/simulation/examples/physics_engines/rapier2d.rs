@@ -65,8 +65,12 @@ pub fn run() {
     main();
 }
 
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
+    // TODO review / add to a chapter on physics engines with rapier2d
 }
-// TODO review / add to a chapter on physics engines with rapier2d

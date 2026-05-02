@@ -34,7 +34,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-fn run() -> anyhow::Result<()> {
+pub fn run() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }

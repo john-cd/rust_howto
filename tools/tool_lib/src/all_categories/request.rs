@@ -30,14 +30,14 @@ pub(super) fn get_categories_toml_string() -> Result<String> {
 #[allow(dead_code)]
 #[allow(unused_imports)]
 #[cfg(test)]
-mod tests { use super::*;
+mod tests {
     // A mutex to ensure that tests setting MOCK_CATEGORIES_URL don't run concurrently.
     use std::sync::Mutex;
 
     use anyhow::Result;
     use url::Url;
 
-    use super::*; // To parse the CATEGORIES_URL.
+    use super::*;
     use crate::EnvGuard;
     static ENV_MUTEX: Mutex<()> = Mutex::new(());
 

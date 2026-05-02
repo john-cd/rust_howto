@@ -4,7 +4,8 @@
 //! This example parses a simple struct syntax tree, generates a `Debug`
 //! implementation, and prints the resulting token stream.
 
-use clap::{Parser, Subcommand};
+use clap::Parser;
+use clap::Subcommand;
 
 mod darling;
 mod paste;

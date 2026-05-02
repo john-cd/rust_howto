@@ -1,4 +1,5 @@
-use clap::{Parser, Subcommand};
+use clap::Parser;
+use clap::Subcommand;
 
 mod js_sys;
 mod web_sys;

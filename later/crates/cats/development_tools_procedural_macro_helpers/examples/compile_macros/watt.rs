@@ -15,8 +15,6 @@
 //! This approach provides isolation and can speed up compilation as the macro
 //! logic is pre-compiled to WASM.
 
-
-
 // use quote::quote;
 // use syn::ItemFn;
 // use syn::parse_macro_input;
@@ -70,7 +68,7 @@ use development_tools_procedural_macro_helpers::watt_macro;
 // In this example, 'watt_macro' is a shim that would normally load a WASM file.
 watt_macro!(some input);
 
-pub fn main() {
+fn main() {
     println!("Demonstrating Watt-like macro usage:");
     watt_demo();
 }
@@ -89,6 +87,5 @@ mod tests {
         main();
     }
 }
-
 
 // [finish](https://github.com/john-cd/rust_howto/issues/744)

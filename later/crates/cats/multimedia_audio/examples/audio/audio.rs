@@ -70,8 +70,12 @@ pub fn run() {
     main();
 }
 
-#[test]
-#[ignore = "requires audio device"]
-fn test() {
-    main().unwrap();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    #[ignore = "requires audio device"]
+    fn test() {
+        main().unwrap();
+    }
 }

@@ -59,9 +59,11 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
-    fn test() {
-        // TODO main();
+    #[ignore = "requires wasm example runtime"]
+    fn test_main() {
+        main();
     }
 }
 // [review](https://github.com/john-cd/rust_howto/issues/856)

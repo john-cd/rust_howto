@@ -1,5 +1,7 @@
 #[cfg(feature = "gtk")]
-use clap::{Parser, Subcommand};
+use clap::Parser;
+#[cfg(feature = "gtk")]
+use clap::Subcommand;
 
 #[cfg(feature = "gtk")]
 mod gtk4;

@@ -29,4 +29,15 @@ pub fn run() -> Result<(), winit::error::EventLoopError> {
     main()
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires interactive example runtime"]
+    fn test_main() {
+        main().unwrap();
+    }
+}
+
 // TODO add a test

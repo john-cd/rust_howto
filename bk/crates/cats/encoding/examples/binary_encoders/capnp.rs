@@ -57,13 +57,19 @@ fn main() {
     );
 }
 
-#[test]
-fn test_capnp_serialization() {
-    main();
-}
 // ANCHOR_END: example
 
 /// Entry point to run the Cap'n Proto example.
 pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_capnp_serialization() {
+        main();
+    }
 }

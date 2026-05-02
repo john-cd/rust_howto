@@ -41,7 +41,7 @@ impl RowStruct {
     }
 }
 
-pub async fn run() -> anyhow::Result<()> {
+async fn example() -> anyhow::Result<()> {
     // Load environment variables from a .env file (for secure handling of
     // credentials).
     use dotenvy::dotenv;
@@ -121,22 +121,35 @@ KEY, name TEXT, age INT);",
 
     Ok(())
 }
+
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    example().await
+}
 // ANCHOR_END: example
 
-#[tokio::test]
-async fn require_external_svc() -> anyhow::Result<()> {
-    let _lock = super::ENV_MUTEX.lock().unwrap();
-    let user = std::env::var("TEST_CASSANDRA_USER")
-        .expect("TEST_CASSANDRA_USER must be set");
-    let password = std::env::var("TEST_CASSANDRA_PASSWORD")
-        .expect("TEST_CASSANDRA_PASSWORD must be set");
-
-    unsafe {
-        std::env::set_var("CASSANDRA_USER", user);
-        std::env::set_var("CASSANDRA_PASSWORD", password);
-    }
-    run().await?;
-    Ok(())
+pub async fn run() -> anyhow::Result<()> {
+    example().await
 }
-// [finish; see also https://github.com/krojew/cdrs-tokio/blob/master/cdrs-tokio/examples/crud_operations.rs](https://github.com/john-cd/rust_howto/issues/1017)
-// <https://github.com/krojew/cdrs-tokio/blob/master/cdrs-tokio/examples/multiple_thread.rs>
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[tokio::test]
+    async fn require_external_svc() -> anyhow::Result<()> {
+        let _lock = super::ENV_MUTEX.lock().unwrap();
+        let user = std::env::var("TEST_CASSANDRA_USER")
+            .expect("TEST_CASSANDRA_USER must be set");
+        let password = std::env::var("TEST_CASSANDRA_PASSWORD")
+            .expect("TEST_CASSANDRA_PASSWORD must be set");
+
+        unsafe {
+            std::env::set_var("CASSANDRA_USER", user);
+            std::env::set_var("CASSANDRA_PASSWORD", password);
+        }
+        run().await?;
+        Ok(())
+    }
+    // [finish; see also https://github.com/krojew/cdrs-tokio/blob/master/cdrs-tokio/examples/crud_operations.rs](https://github.com/john-cd/rust_howto/issues/1017)
+    // <https://github.com/krojew/cdrs-tokio/blob/master/cdrs-tokio/examples/multiple_thread.rs>
+}

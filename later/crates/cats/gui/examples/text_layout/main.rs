@@ -1,4 +1,5 @@
-use clap::{Parser, Subcommand};
+use clap::Parser;
+use clap::Subcommand;
 
 mod cosmic_text;
 mod parley;
