@@ -75,3 +75,20 @@ async fn main() -> anyhow::Result<()> {
 pub fn run() -> anyhow::Result<()> {
     main()
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Verifies the greeting logic by calling the service implementation directly.
+    #[tokio::test]
+    async fn test_greeter_logic() {
+        let greeter = MyGreeter::default();
+        let request = Request::new(HelloRequest {
+            name: "Rustacean".to_string(),
+        });
+
+        let response = greeter.say_hello(request).await.expect("gRPC method failed");
+        assert_eq!(response.into_inner().message, "Hello Rustacean!");
+    }
+}
