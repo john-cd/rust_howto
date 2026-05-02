@@ -8,29 +8,37 @@
 
 ## Top-level TODO file tasks
 
-- [ ] review all changed examples
-- [ ] merge the 7 pull requests
-- [ ] review changes to mdbook-utils
-- [ ] fix windows install script / install LLVM
+### General
+
+- [ ] merge the pull requests
 - [ ] debug dev container
 - [ ] review all [?] tasks
+- [ ] review all changed examples
+- [ ] review changes to mdbook-utils
+- [ ] Go through VS Code bookmarks - WIP.
+- [ ] HUMAN finish to review chrome bookmarks and include in text.
+
+## NEXT
+
+- [ ] fix windows install script / install LLVM
 - [ ] consolidate GitHub workflows (use Docker always)
 
+## WRITING
 
 - [ ] polish stack-allocated
 - [ ] polish directory_traversal
 - [ ] polish hashing + algorithms
-- [ ] polish [learning.md](./bk/src/learning.md)
-- [ ] polish [crate_selection](bk/src/crate_selection.md)
 - [?] polish [contributing](bk/src/appendices/contributing/index.md) [#529](https://github.com/john-cd/rust_howto/issues/529)
 - [ ] finish to add RBE link [#29](https://github.com/john-cd/rust_howto/issues/29).
-- [ ] Go through VS Code bookmarks - WIP.
-- [ ] Manually insert rest of cross-links between pages?
+
+## LOGISTICS
+
 - [ ] License / legal rethink.
+- [ ] Manually insert rest of cross-links between pages?
 - [ ] Indices.
 - [ ] Update recipe tables: improve scripts that generate links / update recipe tables.
 - [ ] Additional Links / Content: use/move the rest of links in TOREVIEW.md.
-- [ ] HUMAN finish to review chrome bookmarks and include in text.
+
 - [ ] make a plan to use pandoc / typst instead of mdbook.
 - [ ] kindle create. [gumroad~website][gumroad~website] [blog~write-a-book-with-markdown] [write-book-with-obsidian] [book-creation-with-pandoc-and-markdown]
 - [ ] Scrub any left-over {{#example ...}}, {{#crate ...}}... etc and warn. WIP.
@@ -50,6 +58,19 @@
 - [ ] add tests WIP.
 - [ ] consolidate CLIs.
 - [ ] finish new tools in book_tooling
+- [ ] drafts: Finish
+- [ ] review drafts section for what I missed.
+- [ ] move categories back to src, after final review.
+- [ ] `other` section - move what's ready.
+
+## mdbook-utils
+
+- [ ] Address all TODO comments in mdbook-utils codebase
+- [ ] Document all modules, functions, and structs in mdbook-utils
+- [ ] Generate `categories.md` stub in mdbook-utils
+
+
+
 - [?] [Web] Migrate to modern WebSocket echo service [async_tungstenite.rs](later/crates/cats/web_programming_websocket/examples/async_tungstenite.rs) ([#1058](https://github.com/john-cd/rust_howto/issues/1058))
 - [?] [Web] Implement Tonic gRPC example and server boilerplate [tonic.rs](bk/crates/cats/web_programming_http_server/examples/grpc/tonic.rs) ([#870](https://github.com/john-cd/rust_howto/issues/870))
 - [?] [Web] Update Hyper server example to 1.0 API and implement routing [hyper_server.rs](bk/crates/cats/web_programming_http_server/examples/hyper_server.rs) ([#866](https://github.com/john-cd/rust_howto/issues/866))
@@ -67,15 +88,10 @@
 - [ ] [Test] Implement AFL.rs fuzzing target and panic discovery afl.rs ([#748](https://github.com/john-cd/rust_howto/issues/748))
 - [ ] [Memory] Review and finalize lazy initialization examples lazy_static.rs ([#939](https://github.com/john-cd/rust_howto/issues/939))
 - [ ] [Async] Expand stream examples with concurrent processing streams.md ([#645](https://github.com/john-cd/rust_howto/issues/645))
-- [ ] Address all TODO comments in mdbook-utils codebase
-- [ ] Document all modules, functions, and structs in mdbook-utils
-- [ ] Generate `categories.md` stub in mdbook-utils
+
 - [?] review cancelable example in `xmpl/`
 - [?] move WIP examples from `playground/`
-- [ ] drafts: Finish
-- [ ] review drafts section for what I missed.
-- [ ] move categories back to src, after final review.
-- [ ] `other` section - move what's ready.
+
 - [ ] sccache for dev container setup?
 - [?] Clean up playground crate
 - [ ] Move mdbook-utils repo ?
@@ -93,7 +109,6 @@
 - [ ] Create CI build / tests on Windows
 - [ ] Make `just` commands fully work on Windows
 - [ ] consider cargo make / xtask instead of just?
-- [ ] Review the need for `rusty_fork`, since we use nextest exclusively. See nextest execution model: [nextest-how-it-works]
 - [ ]  CI build on MacOS too? Create a .yml file for MacOS build on GitHub runner? Add build job to main workflow.
 - [ ] Fix .github issue templates
 - [ ] content/Drafts

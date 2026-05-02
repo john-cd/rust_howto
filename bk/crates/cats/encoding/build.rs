@@ -20,7 +20,7 @@ fn prost() {
         &["examples/binary_encoders/person.proto"],
         &["examples/binary_encoders/"],
     )
-    .unwrap();
+    .expect("Failed to compile Protocol Buffers. Ensure `protoc` is installed and on your PATH. See WINDOWS_BUILD.md for instructions.");
 }
 // ANCHOR_END: prost
 
