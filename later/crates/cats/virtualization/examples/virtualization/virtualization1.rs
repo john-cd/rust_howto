@@ -4,10 +4,10 @@
 //!
 //! This loads a tiny WebAssembly module from a raw byte array, instantiates it
 //! with `wasmi`, and calls the exported `run` function.
-use wasmi::ImportsBuilder;
+use wasmi::Engine;
+use wasmi::Linker;
 use wasmi::Module;
-use wasmi::ModuleInstance;
-use wasmi::NopExternals;
+use wasmi::Store;
 
 fn main() {
     let wasm_bytes: &[u8] = &[
@@ -16,17 +16,21 @@ fn main() {
         0x75, 0x6e, 0x00, 0x00, 0x0a, 0x09, 0x01, 0x07, 0x00, 0x41, 0x2a, 0x0b,
     ];
 
+    let engine = Engine::default();
     let module =
-        Module::from_buffer(wasm_bytes).expect("failed to load wasm module");
-    let instance = ModuleInstance::new(&module, &ImportsBuilder::default())
-        .expect("failed to instantiate wasm module")
-        .assert_no_start();
+        Module::new(&engine, wasm_bytes).expect("failed to load wasm module");
+    let mut store = Store::new(&engine, ());
+    let linker = Linker::new(&engine);
+    let instance = linker
+        .instantiate_and_start(&mut store, &module)
+        .expect("failed to instantiate/start wasm module");
 
-    let result = instance
-        .invoke_export("run", &[], &mut NopExternals)
+    let run = instance
+        .get_typed_func::<(), i32>(&store, "run")
+        .expect("failed to resolve exported function");
+    let value = run
+        .call(&mut store, ())
         .expect("failed to invoke exported function");
-
-    let value = result.expect_i32();
     println!("wasmi result: {}", value);
 }
 // ANCHOR_END: example

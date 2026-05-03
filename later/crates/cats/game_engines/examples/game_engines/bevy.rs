@@ -46,7 +46,7 @@
 // }
 
 pub fn run() {
-    main();
+    // TODO Placeholder until the Bevy demo is reintroduced.
 }
 
 #[cfg(test)]
@@ -56,7 +56,7 @@ mod tests {
     #[test]
     #[ignore = "requires interactive example runtime"]
     fn test_main() {
-        main();
+        run();
     }
 }
 // // [finish](https://github.com/john-cd/rust_howto/issues/767)

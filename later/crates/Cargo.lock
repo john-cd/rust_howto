@@ -12443,12 +12443,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d5fdcc9ac77c6d74ff5cf6e65ef3181d6af32003b16fce3a77fb451d2f695993"
 
 [[package]]
-name = "icu_locid"
-version = "2.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d4b1caaf463dca211ec77afa9210dfa507f99f76168faf15d650ab7ad03416fd"
-
-[[package]]
 name = "icu_normalizer"
 version = "2.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -12878,7 +12872,7 @@ dependencies = [
 name = "internationalization"
 version = "0.1.2"
 dependencies = [
- "icu_locid",
+ "icu_locale_core",
  "sys-locale",
 ]
 
@@ -19574,7 +19568,7 @@ dependencies = [
  "clap",
  "linfa",
  "linfa-linear",
- "ndarray 0.17.2",
+ "ndarray 0.16.1",
  "rand 0.10.1",
  "smartcore",
 ]

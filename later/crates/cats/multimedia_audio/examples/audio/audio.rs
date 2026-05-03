@@ -15,23 +15,23 @@ fn main() -> Result<(), Box<dyn Error>> {
     let config = device.default_output_config()?;
 
     match config.sample_format() {
-        cpal::SampleFormat::F32 => run::<f32>(&device, &config.into())?,
-        cpal::SampleFormat::I16 => run::<i16>(&device, &config.into())?,
-        cpal::SampleFormat::U16 => run::<u16>(&device, &config.into())?,
+        cpal::SampleFormat::F32 => run_stream::<f32>(&device, &config.into())?,
+        cpal::SampleFormat::I16 => run_stream::<i16>(&device, &config.into())?,
+        cpal::SampleFormat::U16 => run_stream::<u16>(&device, &config.into())?,
         _ => return Err("unsupported sample format".into()),
     }
 
     Ok(())
 }
 
-fn run<T>(
+fn run_stream<T>(
     device: &cpal::Device,
     config: &cpal::StreamConfig,
 ) -> Result<(), Box<dyn Error>>
 where
     T: cpal::SizedSample + cpal::FromSample<f32>,
 {
-    let sample_rate = config.sample_rate.0 as f32;
+    let sample_rate = config.sample_rate as f32;
     let channels = config.channels as usize;
 
     // Produce a 440Hz sine wave.
@@ -66,8 +66,8 @@ where
 }
 // ANCHOR_END: example
 
-pub fn run() {
-    main();
+pub fn run() -> Result<(), Box<dyn Error>> {
+    main()
 }
 
 #[cfg(test)]

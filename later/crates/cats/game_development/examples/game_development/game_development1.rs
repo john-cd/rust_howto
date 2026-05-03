@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
-use parry2d::math::Isometry;
+use parry2d::math::Pose;
 use parry2d::math::Vector;
 use parry2d::query;
 use parry2d::shape::Ball;
@@ -12,8 +12,8 @@ fn main() {
     let cuboid = Cuboid::new(Vector::new(1.0, 1.0));
 
     // Define positions
-    let ball_pos = Isometry::translation(0.0, 0.0);
-    let cuboid_pos = Isometry::translation(1.5, 0.0);
+    let ball_pos = Pose::from_translation(Vector::new(0.0, 0.0));
+    let cuboid_pos = Pose::from_translation(Vector::new(1.5, 0.0));
 
     // 1. Intersection test
     let intersects =
@@ -55,3 +55,4 @@ mod tests {
         main();
     }
 }
+// TODO review

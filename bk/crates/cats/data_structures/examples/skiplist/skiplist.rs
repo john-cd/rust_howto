@@ -2,7 +2,7 @@
 use skiplist::SkipMap;
 
 fn main() {
-    let mut map = SkipMap::new();
+    let mut map: SkipMap<i32, &str, 16> = SkipMap::new();
 
     map.insert(3, "three");
     map.insert(1, "one");

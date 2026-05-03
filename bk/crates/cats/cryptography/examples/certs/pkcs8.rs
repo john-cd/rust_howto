@@ -4,12 +4,12 @@
 use std::fs::File;
 use std::io::Write;
 
-use base64ct::LineEnding;
-// Trait to parse a private key from a PKCS#8 encoded document:
-use pkcs8::DecodePrivateKey;
-// Trait to serialize a private key to a PKCS#8 encoded document:
-use pkcs8::EncodePrivateKey;
 use rsa::RsaPrivateKey;
+// Trait to parse a private key from a PKCS#8 encoded document:
+use rsa::pkcs8::DecodePrivateKey;
+// Trait to serialize a private key to a PKCS#8 encoded document:
+use rsa::pkcs8::EncodePrivateKey;
+use rsa::pkcs8::LineEnding;
 // Operating System's Random Number Generator:
 use rsa::rand_core::OsRng;
 // Components of an RSA private key:

@@ -1,1 +1,1 @@
-mod rust_gpu;
+pub mod rust_gpu;

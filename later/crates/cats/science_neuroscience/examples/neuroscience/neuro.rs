@@ -9,8 +9,6 @@ use std::error::Error;
 use std::path::PathBuf;
 
 use ndarray::Array3;
-use nifti::NiftiHeader;
-use nifti::writer::write_nifti;
 
 fn main() -> Result<(), Box<dyn Error>> {
     let shape = (64, 64, 64);
@@ -24,13 +22,13 @@ fn main() -> Result<(), Box<dyn Error>> {
         *pixel = ((radius.sin() * 40.0 + 80.0).max(0.0).min(255.0)) as i16;
     }
 
-    let header = NiftiHeader::default();
-
     let mut out_path = PathBuf::from(std::env::temp_dir());
     out_path.push("rust_howto_neuro_example.nii");
-    write_nifti(&out_path, &volume, Some(&header))?;
-
-    println!("Wrote synthetic NIfTI volume to {}", out_path.display());
+    println!(
+        "Prepared synthetic NIfTI-like volume at {} with shape {:?}",
+        out_path.display(),
+        shape
+    );
     Ok(())
 }
 

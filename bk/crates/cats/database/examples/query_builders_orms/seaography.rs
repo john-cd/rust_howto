@@ -22,6 +22,10 @@
 
 fn main() {} // TODO: Add an example of using the generated code from Seaography to interact with the database.
 
+pub fn run() {
+    main();
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
