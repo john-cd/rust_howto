@@ -16,7 +16,10 @@ fn main() -> anyhow::Result<()> {
     // `Digest::digest` method:
     let hash1 = Sha256::digest(b"my message");
     // Print the hash as a hexadecimal string:
-    println!("SHA-256 hash #1: {hash1:x}");
+    println!(
+        "SHA-256 hash #1: {}",
+        base16ct::lower::encode_string(&hash1)
+    );
 
     // Otherwise, create a Sha256 hasher:
     let mut hasher = Sha256::new();
@@ -30,7 +33,10 @@ fn main() -> anyhow::Result<()> {
 
     // Read hash digest and consume hasher:
     let hash2 = hasher.finalize();
-    println!("SHA-256 hash #2: {hash2:x}");
+    println!(
+        "SHA-256 hash #2: {}",
+        base16ct::lower::encode_string(&hash2)
+    );
 
     // Same exercise, but using `Sha512` and `chain_update`:
     let hash3 = Sha512::new()
@@ -45,17 +51,18 @@ fn main() -> anyhow::Result<()> {
     // Hash the contents of a file:
     // First, we will create a file inside of `env::temp_dir()`.
     let mut file = tempfile::tempfile()?;
+
+    use std::io::Read;
+    use std::io::Seek;
     use std::io::Write;
+
     writeln!(file, "Some data")?;
-    // or: let mut file = fs::File::open(&some_path)?;
 
-    // Copies the entire contents of a reader into a writer,
-    // in this case the hasher.
-    let mut hasher = Sha256::new();
+    file.rewind()?;
+    let mut file_contents = Vec::new();
+    file.read_to_end(&mut file_contents)?;
+    let hash4 = Sha256::digest(&file_contents);
 
-    std::io::copy(&mut file, &mut hasher)?;
-    let hash4 = hasher.finalize();
-    // Constant-time conversion to hexadecimal:
     let hex_hash = base16ct::lower::encode_string(&hash4);
     println!("Hex-encoded hash #4: {hex_hash}");
 
