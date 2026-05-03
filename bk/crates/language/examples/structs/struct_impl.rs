@@ -36,7 +36,12 @@ fn main() {
     println!("Area: {}", sq.area());
     // This is equivalent to `Rectangle::area(&sq)`.
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

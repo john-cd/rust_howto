@@ -10,7 +10,7 @@ use std::error::Error;
 use sys_locale::get_locale;
 use sys_locale::get_locales;
 
-pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
+fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let current_locale = get_locale().unwrap_or_else(|| "en-US".to_string());
     let mut preferred_locales = get_locales();
     let locale = preferred_locales
@@ -44,9 +44,18 @@ fn translate_greeting(locale: &str) -> &'static str {
 }
 // ANCHOR_END: example
 
+pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
+    main()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn test_main() {
+        main().unwrap();
+    }
 
     #[test]
     fn translate_greeting_selects_spanish() {

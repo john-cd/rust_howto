@@ -17,12 +17,20 @@ fn measure_execution_time() {
     thread::sleep(Duration::from_millis(100));
 }
 
-pub fn main() {
+fn main() {
     measure_execution_time();
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
 }

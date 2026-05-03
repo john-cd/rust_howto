@@ -4,22 +4,23 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "A simple CLI tool to generate markdown fragments, e.g. markdown links and reference definitions. The outputs can be copy-pasted into the book's markdown where needed."
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "MIT OR Apache-2.0"
+
 keywords = ["markdown generation"]
 categories = ["development-tools", "command-line-utilities", "text-processing"]
 publish = false
 
 [dependencies]
 anyhow = "1.0.102"
-clap = { version = "4.6.0", features = ["cargo"] }
-clap_builder = "4.5.50"
+clap = { version = "4.6.1", features = ["cargo"] }
+clap_builder = "4.6.0"
 tool_lib = { path = "../tool_lib" }
 tracing = "0.1.44"
-tracing-subscriber = { version = "0.3.20", features = ["env-filter"] }
+tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
 
 [[bin]]
 name = "templ"

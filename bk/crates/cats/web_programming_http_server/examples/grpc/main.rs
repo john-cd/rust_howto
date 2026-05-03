@@ -1,3 +1,6 @@
 mod tonic;
+mod tonic_client;
 
-fn main() {}
+fn main() {
+    tonic::run();
+}

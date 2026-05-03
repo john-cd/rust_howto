@@ -1,6 +1,6 @@
 #[cfg(feature = "arrow")]
-mod arrow;
+pub mod arrow;
 #[cfg(feature = "datafusion")]
-mod datafusion;
-#[cfg(feature = "polars")]
-mod polars;
+pub mod datafusion;
+// TODO #[cfg(feature = "polars")]
+// mod polars;

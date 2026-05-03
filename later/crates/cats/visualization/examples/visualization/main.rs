@@ -1,3 +1,5 @@
 mod plotly;
 
-fn main() {}
+fn main() {
+    plotly::run();
+}

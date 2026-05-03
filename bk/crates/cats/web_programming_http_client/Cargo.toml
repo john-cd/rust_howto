@@ -4,24 +4,26 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - web_programming_http_client"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = ["web-programming::http-client"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-anyhow = "1.0.100"
+clap = { version = "4.6.1", features = ["derive"] }
+anyhow = "1.0.102"
 http-body-util = "0.1.3"
 hyper = "1.9.0"
-hyper-util = "0.1.17"
-reqwest = { version = "0.12.24", features = ["blocking", "json", "stream"] }
+hyper-util = "0.1.20"
+reqwest = { version = "0.13.3", features = ["blocking", "json", "stream"] }
 serde = { version = "1.0.228", features = ["derive"] }
-tempfile = "3.23.0"
-tokio = { version = "1.48.0", features = ["macros", "rt-multi-thread", "fs", "io-util", "io-std"] }
-ureq = "3.1.2"
-url = "2.5.7"
+tempfile = "3.27.0"
+tokio = { version = "1.52.1", features = ["macros", "rt-multi-thread", "fs", "io-util", "io-std"] }
+ureq = "3.3.0"
+url = "2.5.8"

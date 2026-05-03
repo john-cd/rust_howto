@@ -34,7 +34,12 @@ fn main() -> Result<(), Utf8Error> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), Utf8Error> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

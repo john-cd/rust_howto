@@ -9,7 +9,7 @@ use tokio::io::AsyncWriteExt;
 use tokio::io::BufReader;
 
 #[tokio::main]
-pub async fn main() -> anyhow::Result<()> {
+async fn main() -> anyhow::Result<()> {
     let input_filename = "temp/uncompressed_async.txt";
     let compressed_filename = "temp/compressed_async.gz";
     let decompressed_filename = "temp/decompressed_async.txt";
@@ -76,6 +76,10 @@ async fn decompress_file_async(
     Ok(())
 }
 // ANCHOR_END: example
+
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

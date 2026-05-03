@@ -134,7 +134,12 @@ fn main() -> anyhow::Result<()> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
 
 #[cfg(target_os = "linux")]
 #[cfg(test)]

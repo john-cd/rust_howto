@@ -46,7 +46,12 @@ fn main() {
         println!("Value for file: {}", file_path.display());
     }
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

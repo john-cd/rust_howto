@@ -1,6 +1,6 @@
-// // ANCHOR: example
+// ANCHOR: example
 // // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR_END: example
 // use vger::canvas::Canvas;
 // use vger::canvas::Color;
 // use vger::geom::Point;
@@ -68,5 +68,21 @@
 //     );
 // }
 
-pub fn main() {}
+fn main() {}
+// ANCHOR_END: example
+
+pub fn run() {
+	main();
+}
 // // [finish](https://github.com/john-cd/rust_howto/issues/792)
+
+#[cfg(test)]
+mod tests {
+	use super::*;
+
+	#[test]
+	#[ignore = "requires interactive example runtime"]
+	fn test_main() {
+		main();
+	}
+}

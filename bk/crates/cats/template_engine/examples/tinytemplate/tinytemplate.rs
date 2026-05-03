@@ -47,7 +47,12 @@ fn main() {
     // Print the rendered template:
     println!("{rendered}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

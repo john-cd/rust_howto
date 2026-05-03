@@ -4,19 +4,20 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description = "A very simnple tool to clean `temp` folders before and after testing."
+readme = "README.md"
+description = "A utility to clean up temporary directories and build artifacts during development and testing."
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "MIT OR Apache-2.0"
-keywords = ["cleanup before / after testing"]
+
+keywords = ["cleanup", "testing", "filesystem", "dev-tools", "cli"]
 categories = ["development-tools", "command-line-utilities"]
 publish = false
 
 [dependencies]
 tempfile = "3.27.0"
 anyhow = "1.0.102"
-clap = { version = "4.6.0", features = ["derive"] }
+clap = { version = "4.6.1", features = ["derive"] }
 tracing = "0.1.44"
-tracing-subscriber = { version = "0.3.20", features = ["env-filter"] }
+tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
 walkdir = "2.5.0"

@@ -31,7 +31,12 @@ fn main() -> io::Result<()> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> io::Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

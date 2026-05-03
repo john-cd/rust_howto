@@ -1,5 +1,5 @@
 // ANCHOR: example
-use rand::Rng;
+use rand::RngExt;
 
 /// This is a simple example that demonstrates how to use the `rand` crate to
 /// generate a random `f64`.
@@ -10,6 +10,10 @@ fn main() {
     println!("Random f64: {}", rng.random::<f64>());
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

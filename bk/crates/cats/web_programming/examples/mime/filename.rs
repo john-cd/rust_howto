@@ -25,7 +25,12 @@ fn main() {
         println!("MIME for {file}: {mime}");
     }
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

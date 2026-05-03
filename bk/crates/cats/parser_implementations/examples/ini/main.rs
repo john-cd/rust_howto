@@ -1,3 +1,5 @@
 mod rust_ini;
 
-fn main() {}
+fn main() {
+    rust_ini::run();
+}

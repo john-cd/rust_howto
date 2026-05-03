@@ -1,3 +1,5 @@
 mod vectors;
 
-fn main() {}
+fn main() {
+    vectors::run();
+}

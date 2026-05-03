@@ -1,3 +1,5 @@
 mod geo;
 
-fn main() {}
+fn main() {
+    geo::run();
+}

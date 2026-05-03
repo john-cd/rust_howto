@@ -1,3 +1,5 @@
 mod send_sync_impl;
 
-fn main() {}
+fn main() {
+    send_sync_impl::run();
+}

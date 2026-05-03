@@ -8,29 +8,36 @@
 
 ## Top-level TODO file tasks
 
-- [ ] review all changed examples
-- [ ] merge the 7 pull requests
-- [ ] review changes to mdbook-utils
-- [ ] fix windows install script / install LLVM
+### General
+
+- [ ] merge the pull requests
 - [ ] debug dev container
 - [ ] review all [?] tasks
+- [ ] review all changed examples
+- [ ] review changes to mdbook-utils
+- [ ] Go through VS Code bookmarks - WIP.
+- [ ] HUMAN finish to review chrome bookmarks and include in text.
+
+## NEXT
+
+- [ ] fix windows install script / install LLVM
 - [ ] consolidate GitHub workflows (use Docker always)
 
+## WRITING
 
 - [ ] polish stack-allocated
 - [ ] polish directory_traversal
 - [ ] polish hashing + algorithms
-- [ ] polish [learning.md](./bk/src/learning.md)
-- [ ] polish [crate_selection](bk/src/crate_selection.md)
 - [?] polish [contributing](bk/src/appendices/contributing/index.md) [#529](https://github.com/john-cd/rust_howto/issues/529)
-- [ ] finish to add RBE link [#29](https://github.com/john-cd/rust_howto/issues/29).
-- [ ] Go through VS Code bookmarks - WIP.
-- [ ] Manually insert rest of cross-links between pages?
+
+## LOGISTICS
+
 - [ ] License / legal rethink.
+- [ ] Manually insert rest of cross-links between pages?
+- [ ] finish to add RBE link [#29](https://github.com/john-cd/rust_howto/issues/29).
 - [ ] Indices.
 - [ ] Update recipe tables: improve scripts that generate links / update recipe tables.
 - [ ] Additional Links / Content: use/move the rest of links in TOREVIEW.md.
-- [ ] HUMAN finish to review chrome bookmarks and include in text.
 - [ ] make a plan to use pandoc / typst instead of mdbook.
 - [ ] kindle create. [gumroad~website][gumroad~website] [blog~write-a-book-with-markdown] [write-book-with-obsidian] [book-creation-with-pandoc-and-markdown]
 - [ ] Scrub any left-over {{#example ...}}, {{#crate ...}}... etc and warn. WIP.
@@ -50,34 +57,10 @@
 - [ ] add tests WIP.
 - [ ] consolidate CLIs.
 - [ ] finish new tools in book_tooling
-- [?] [Web] Migrate to modern WebSocket echo service [async_tungstenite.rs](later/crates/cats/web_programming_websocket/examples/async_tungstenite.rs) ([#1058](https://github.com/john-cd/rust_howto/issues/1058))
-- [?] [Web] Implement Tonic gRPC example and server boilerplate [tonic.rs](bk/crates/cats/web_programming_http_server/examples/grpc/tonic.rs) ([#870](https://github.com/john-cd/rust_howto/issues/870))
-- [?] [Web] Update Hyper server example to 1.0 API and implement routing [hyper_server.rs](bk/crates/cats/web_programming_http_server/examples/hyper_server.rs) ([#866](https://github.com/john-cd/rust_howto/issues/866))
-- [?] [Web] Implement Axum routing, state, and review time limits [axum.rs](bk/crates/cats/web_programming_http_server/examples/axum.rs) ([#865](https://github.com/john-cd/rust_howto/issues/865))
-- [?] [Web] Implement Rocket Hello World and route mounting [rocket.rs](bk/crates/cats/web_programming_http_server/examples/rocket.rs) ([#869](https://github.com/john-cd/rust_howto/issues/869))
-- [?] [Web] Implement Leptos reactive counter and view mounting [leptos.rs](bk/crates/cats/web_programming_http_server/examples/leptos.rs) ([#867](https://github.com/john-cd/rust_howto/issues/867))
-- [?] [Web] Implement Async-GraphQL schema with Axum integration [async_graphql.rs](bk/crates/cats/web_programming_http_server/examples/async_graphql.rs) ([#864](https://github.com/john-cd/rust_howto/issues/864))
-- [?] [Web] Implement Actix-Web network requirement test [actix_web.rs](bk/crates/cats/web_programming_http_server/examples/actix_web.rs)
-- [?] [Network] Finalize Pingora reverse proxy implementation [pingora.rs](bk/crates/cats/network_programming/examples/reverse_proxy/pingora.rs) ([#812](https://github.com/john-cd/rust_howto/issues/812))
-- [ ] [Network] Complete comprehensive reverse proxy section for Pingora and Rathole [reverse_proxy.md](bk/drafts/categories/network-programming/reverse_proxy.md) ([#424](https://github.com/john-cd/rust_howto/issues/424))
-- [?] [Database] Fix heavy test orchestration for Tiberius MSSQL [tiberius.rs](bk/crates/cats/database/examples/mssql/tiberius.rs) ([#1019](https://github.com/john-cd/rust_howto/issues/1019))
-- [?] [Database] Implement PostgreSQL aggregation examples [aggregate_data.rs](bk/crates/cats/database/examples/postgres/aggregate_data.rs)
-- [ ] [GUI] Implement Winit window creation example [winit.rs](later/crates/cats/gui/examples/window_creation/winit.rs)
-- [ ] [Parser] Implement `DocumentParser` trait and URL parsing 1427.md ([#1427](https://github.com/john-cd/rust_howto/issues/1427))
-- [ ] [Test] Implement AFL.rs fuzzing target and panic discovery afl.rs ([#748](https://github.com/john-cd/rust_howto/issues/748))
-- [ ] [Memory] Review and finalize lazy initialization examples lazy_static.rs ([#939](https://github.com/john-cd/rust_howto/issues/939))
-- [ ] [Async] Expand stream examples with concurrent processing streams.md ([#645](https://github.com/john-cd/rust_howto/issues/645))
-- [ ] Address all TODO comments in mdbook-utils codebase
-- [ ] Document all modules, functions, and structs in mdbook-utils
-- [ ] Generate `categories.md` stub in mdbook-utils
-- [?] review cancelable example in `xmpl/`
-- [?] move WIP examples from `playground/`
 - [ ] drafts: Finish
 - [ ] review drafts section for what I missed.
 - [ ] move categories back to src, after final review.
 - [ ] `other` section - move what's ready.
-- [ ] sccache for dev container setup?
-- [?] Clean up playground crate
 - [ ] Move mdbook-utils repo ?
 - [ ] Setup bacon
 - [ ] Add git hooks to automate formatting / clippy check / fix before commit
@@ -93,11 +76,45 @@
 - [ ] Create CI build / tests on Windows
 - [ ] Make `just` commands fully work on Windows
 - [ ] consider cargo make / xtask instead of just?
-- [ ] Review the need for `rusty_fork`, since we use nextest exclusively. See nextest execution model: [nextest-how-it-works]
 - [ ]  CI build on MacOS too? Create a .yml file for MacOS build on GitHub runner? Add build job to main workflow.
 - [ ] Fix .github issue templates
 - [ ] content/Drafts
 - [ ] Crate Integration
+- [ ] sccache for dev container setup?
+
+## mdbook-utils
+
+- [ ] Address all TODO comments in mdbook-utils codebase
+- [ ] Document all modules, functions, and structs in mdbook-utils
+- [ ] Generate `categories.md` stub in mdbook-utils
+
+## HUMAN REVIEW
+
+- [?] [Web] Migrate to modern WebSocket echo service [async_tungstenite.rs](later/crates/cats/web_programming_websocket/examples/async_tungstenite.rs) ([#1058](https://github.com/john-cd/rust_howto/issues/1058))
+- [?] [Web] Implement Tonic gRPC example and server boilerplate [tonic.rs](bk/crates/cats/web_programming_http_server/examples/grpc/tonic.rs) ([#870](https://github.com/john-cd/rust_howto/issues/870))
+- [?] [Web] Update Hyper server example to 1.0 API and implement routing [hyper_server.rs](bk/crates/cats/web_programming_http_server/examples/hyper_server.rs) ([#866](https://github.com/john-cd/rust_howto/issues/866))
+- [?] [Web] Implement Axum routing, state, and review time limits [axum.rs](bk/crates/cats/web_programming_http_server/examples/axum.rs) ([#865](https://github.com/john-cd/rust_howto/issues/865))
+- [?] [Web] Implement Rocket Hello World and route mounting [rocket.rs](bk/crates/cats/web_programming_http_server/examples/rocket.rs) ([#869](https://github.com/john-cd/rust_howto/issues/869))
+- [?] [Web] Implement Leptos reactive counter and view mounting [leptos.rs](bk/crates/cats/web_programming_http_server/examples/leptos.rs) ([#867](https://github.com/john-cd/rust_howto/issues/867))
+- [?] [Web] Implement Async-GraphQL schema with Axum integration [async_graphql.rs](bk/crates/cats/web_programming_http_server/examples/async_graphql.rs) ([#864](https://github.com/john-cd/rust_howto/issues/864))
+- [?] [Web] Implement Actix-Web network requirement test [actix_web.rs](bk/crates/cats/web_programming_http_server/examples/actix_web.rs)
+- [?] [Network] Finalize Pingora reverse proxy implementation [pingora.rs](bk/crates/cats/network_programming/examples/reverse_proxy/pingora.rs) ([#812](https://github.com/john-cd/rust_howto/issues/812))
+- [ ] [Network] Complete comprehensive reverse proxy section for Pingora and Rathole [reverse_proxy.md](bk/drafts/categories/network-programming/reverse_proxy.md) ([#424](https://github.com/john-cd/rust_howto/issues/424))
+- [?] [Database] Fix heavy test orchestration for Tiberius MSSQL [tiberius.rs](bk/crates/cats/database/examples/mssql/tiberius.rs) ([#1019](https://github.com/john-cd/rust_howto/issues/1019))
+- [?] [Database] Implement PostgreSQL aggregation examples [aggregate_data.rs](bk/crates/cats/database/examples/postgres/aggregate_data.rs)
+- [?] review cancelable example in `xmpl/`
+- [?] move WIP examples from `playground/`
+- [?] Clean up playground crate
+
+
+
+- [ ] [GUI] Implement Winit window creation example [winit.rs](later/crates/cats/gui/examples/window_creation/winit.rs)
+- [ ] [Parser] Implement `DocumentParser` trait and URL parsing 1427.md ([#1427](https://github.com/john-cd/rust_howto/issues/1427))
+- [ ] [Test] Implement AFL.rs fuzzing target and panic discovery afl.rs ([#748](https://github.com/john-cd/rust_howto/issues/748))
+- [ ] [Memory] Review and finalize lazy initialization examples lazy_static.rs ([#939](https://github.com/john-cd/rust_howto/issues/939))
+- [ ] [Async] Expand stream examples with concurrent processing streams.md ([#645](https://github.com/john-cd/rust_howto/issues/645))
+
+
 
 ## Book Content and Drafts
 
@@ -3306,10 +3323,6 @@
 
 ## Examples, Crates, and Code
 
-### bk/crates/cats/asynchronous/Cargo.toml
-
-- [?] do we need an example? mio = "1.0.2" ([bk/crates/cats/asynchronous/Cargo.toml](./bk/crates/cats/asynchronous/Cargo.toml#L28))
-- [?] need an example smol = "2.0.2" ([bk/crates/cats/asynchronous/Cargo.toml](./bk/crates/cats/asynchronous/Cargo.toml#L34))
 
 ### bk/crates/cats/asynchronous/examples/async_channels/postage.rs
 
@@ -3322,11 +3335,6 @@
 ### bk/crates/cats/caching/examples/in_memory_cache/cached.rs
 
 - [?] [review further](https://github.com/john-cd/rust_howto/issues/1354) ([bk/crates/cats/caching/examples/in_memory_cache/cached.rs](./bk/crates/cats/caching/examples/in_memory_cache/cached.rs#L66))
-
-### bk/crates/cats/command_line_interface/Cargo.toml
-
-- [?] add examlep? clap_complete = "4.5.46" ([bk/crates/cats/command_line_interface/Cargo.toml](./bk/crates/cats/command_line_interface/Cargo.toml#L23))
-- [?] add examle? colored = "3.0.0" ([bk/crates/cats/command_line_interface/Cargo.toml](./bk/crates/cats/command_line_interface/Cargo.toml#L24))
 
 ### bk/crates/cats/compression/examples/compression/flate2.rs
 
@@ -3343,11 +3351,6 @@
 ### bk/crates/cats/compression/examples/tar/tar_strip_prefix.rs
 
 - [?] [review; tar_strip_prefix.rs is noplayground - fix?](https://github.com/john-cd/rust_howto/issues/256) ([bk/crates/cats/compression/examples/tar/tar_strip_prefix.rs](./bk/crates/cats/compression/examples/tar/tar_strip_prefix.rs#L36))
-
-### bk/crates/cats/concurrency/Cargo.toml
-
-- [?] riker = "0.4.2" ([bk/crates/cats/concurrency/Cargo.toml](./bk/crates/cats/concurrency/Cargo.toml#L43))
-- [?] stakker = "0.2.11" ([bk/crates/cats/concurrency/Cargo.toml](./bk/crates/cats/concurrency/Cargo.toml#L44))
 
 ### bk/crates/cats/concurrency/examples/actors/actix.rs
 
@@ -3381,16 +3384,6 @@
 
 - [ ] [review](https://github.com/john-cd/rust_howto/issues/148) ([bk/crates/cats/config/examples/configuration/confy.rs](./bk/crates/cats/config/examples/configuration/confy.rs#L37))
 
-### bk/crates/cats/cryptography/Cargo.toml
-
-- [?] need an example? dsa = "0.6.3" ([bk/crates/cats/cryptography/Cargo.toml](./bk/crates/cats/cryptography/Cargo.toml#L28))
-- [?] ecdsa = "0.16.9" ([bk/crates/cats/cryptography/Cargo.toml](./bk/crates/cats/cryptography/Cargo.toml#L31))
-- [?] native-tls = "0.2.12" ([bk/crates/cats/cryptography/Cargo.toml](./bk/crates/cats/cryptography/Cargo.toml#L32))
-- [?] pem-rfc7468 = "0.7.0" ([bk/crates/cats/cryptography/Cargo.toml](./bk/crates/cats/cryptography/Cargo.toml#L34))
-- [?] rustls = "0.23.20" ([bk/crates/cats/cryptography/Cargo.toml](./bk/crates/cats/cryptography/Cargo.toml#L41))
-- [?] tokio-rustls = "0.26.2" ([bk/crates/cats/cryptography/Cargo.toml](./bk/crates/cats/cryptography/Cargo.toml#L44))
-- [?] x509-cert = "0.2.5" ([bk/crates/cats/cryptography/Cargo.toml](./bk/crates/cats/cryptography/Cargo.toml#L45))
-
 ### bk/crates/cats/cryptography/examples/certs/pem_rfc7468.rs
 
 - [?] [finish](https://github.com/john-cd/rust_howto/issues/697) ([bk/crates/cats/cryptography/examples/certs/pem_rfc7468.rs](./bk/crates/cats/cryptography/examples/certs/pem_rfc7468.rs#L40))
@@ -3414,20 +3407,6 @@
 ### bk/crates/cats/cryptography/examples/tls/rustls.rs
 
 - [?] [review tokio-rustls; need full integration test; document further; review https://github.com/rustls/rustls/tree/main/examples](https://github.com/john-cd/rust_howto/issues/700) ([bk/crates/cats/cryptography/examples/tls/rustls.rs](./bk/crates/cats/cryptography/examples/tls/rustls.rs#L79))
-
-### bk/crates/cats/data_structures/Cargo.toml
-
-- [ ] Resolve TODO/FIXME at line 17 ([bk/crates/cats/data_structures/Cargo.toml](./bk/crates/cats/data_structures/Cargo.toml#L17))
-
-### bk/crates/cats/database/Cargo.toml
-
-- [?] cassandra-protocol = { version = "3.3.0", optional = true } ([bk/crates/cats/database/Cargo.toml](./bk/crates/cats/database/Cargo.toml#L38))
-- [?] cdrs-tokio = { version = "8.1.4", features = ["derive"], optional = true } ([bk/crates/cats/database/Cargo.toml](./bk/crates/cats/database/Cargo.toml#L39))
-- [?] cornucopia = { version = "0.9.0", optional = true } ([bk/crates/cats/database/Cargo.toml](./bk/crates/cats/database/Cargo.toml#L40))
-- [?] diesel_migrations = { version = "2.2.0", features = ["sqlite"], optional = true } ([bk/crates/cats/database/Cargo.toml](./bk/crates/cats/database/Cargo.toml#L44))
-- [?] sea-orm = { version = "1.1.3", optional = true } ([bk/crates/cats/database/Cargo.toml](./bk/crates/cats/database/Cargo.toml#L59))
-- [?] seaography = { version = "1.1.2", optional = true } ([bk/crates/cats/database/Cargo.toml](./bk/crates/cats/database/Cargo.toml#L60))
-- [?] uuid = { version = "1", features = ["v4"] } ([bk/crates/cats/database/Cargo.toml](./bk/crates/cats/database/Cargo.toml#L67))
 
 ### bk/crates/cats/database/examples/cassandra/cassandra_protocol.rs
 
@@ -3471,7 +3450,7 @@
 
 ### bk/crates/cats/database/examples/postgres/main.rs
 
-- [ ] aggregate_data::main()? ([bk/crates/cats/database/examples/postgres/main.rs](./bk/crates/cats/database/examples/postgres/main.rs#L21))
+- [ ] aggregate_data::run()? ([bk/crates/cats/database/examples/postgres/main.rs](./bk/crates/cats/database/examples/postgres/main.rs#L21))
 - [?] [review](https://github.com/john-cd/rust_howto/issues/713) ([bk/crates/cats/database/examples/postgres/main.rs](./bk/crates/cats/database/examples/postgres/main.rs#L40))
 
 ### bk/crates/cats/database/examples/postgres/tokio_postgres.rs
@@ -3493,14 +3472,6 @@
 ### bk/crates/cats/database_implementations/examples/databases/surrealdb.rs
 
 - [ ] [review https://surrealdb.com/docs](https://github.com/john-cd/rust_howto/issues/1148) ([bk/crates/cats/database_implementations/examples/databases/surrealdb.rs](./bk/crates/cats/database_implementations/examples/databases/surrealdb.rs#L97))
-
-### bk/crates/cats/date_and_time/Cargo.toml
-
-- [?] add example  humantime = "2.1.0" ([bk/crates/cats/date_and_time/Cargo.toml](./bk/crates/cats/date_and_time/Cargo.toml#L19))
-
-### bk/crates/cats/development_tools/Cargo.toml
-
-- [?] add example doc-comment = "0.3.3" ([bk/crates/cats/development_tools/Cargo.toml](./bk/crates/cats/development_tools/Cargo.toml#L19))
 
 ### bk/crates/cats/development_tools_build_utils/build.rs
 
@@ -3530,12 +3501,6 @@
 
 - [ ] [finish; deal with extern](https://github.com/john-cd/rust_howto/issues/901) ([bk/crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_defines1.rs](./bk/crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_defines1.rs#L23))
 
-### bk/crates/cats/development_tools_debugging/Cargo.toml
-
-- [ ] Resolve TODO/FIXME at line 27 ([bk/crates/cats/development_tools_debugging/Cargo.toml](./bk/crates/cats/development_tools_debugging/Cargo.toml#L27))
-- [ ] tracing-opentelemetry = { version = "0.31.0", optional = true } ([bk/crates/cats/development_tools_debugging/Cargo.toml](./bk/crates/cats/development_tools_debugging/Cargo.toml#L41))
-- [ ] tonic = "0.13.0" # for open_observe example ([bk/crates/cats/development_tools_debugging/Cargo.toml](./bk/crates/cats/development_tools_debugging/Cargo.toml#L43))
-- [ ] Resolve TODO/FIXME at line 53 ([bk/crates/cats/development_tools_debugging/Cargo.toml](./bk/crates/cats/development_tools_debugging/Cargo.toml#L53))
 
 ### bk/crates/cats/development_tools_debugging/examples/log/log_env_variable.rs
 
@@ -3553,10 +3518,6 @@
 
 - [ ] cover same functions on fmt() ([bk/crates/cats/development_tools_debugging/examples/tracing/tracing_subscriber4.rs](./bk/crates/cats/development_tools_debugging/examples/tracing/tracing_subscriber4.rs#L50))
 
-### bk/crates/cats/development_tools_profiling/Cargo.toml
-
-- [ ] Resolve TODO/FIXME at line 29 ([bk/crates/cats/development_tools_profiling/Cargo.toml](./bk/crates/cats/development_tools_profiling/Cargo.toml#L29))
-
 ### bk/crates/cats/development_tools_profiling/benches/divan.rs
 
 - [ ] [finish. add to md: https://nikolaivazquez.com/blog/divan/](https://github.com/john-cd/rust_howto/issues/747) cover more attributes; cover blockbox / bencher ([bk/crates/cats/development_tools_profiling/benches/divan.rs](./bk/crates/cats/development_tools_profiling/benches/divan.rs#L52))
@@ -3564,10 +3525,6 @@
 ### bk/crates/cats/development_tools_profiling/src/memory_usage_analysis/dhat.rs
 
 - [ ] automate: cargo run --features dhat-heap / cargo run --features ([bk/crates/cats/development_tools_profiling/src/memory_usage_analysis/dhat.rs](./bk/crates/cats/development_tools_profiling/src/memory_usage_analysis/dhat.rs#L121))
-
-### bk/crates/cats/development_tools_testing/Cargo.toml
-
-- [ ] afl = "0.15.13" ([bk/crates/cats/development_tools_testing/Cargo.toml](./bk/crates/cats/development_tools_testing/Cargo.toml#L18))
 
 ### bk/crates/cats/development_tools_testing/examples/fuzzing/afl.rs
 
@@ -3581,15 +3538,6 @@
 
 - [?] [review; Requires valid SMTP credentials to run](https://github.com/john-cd/rust_howto/issues/1144) ([bk/crates/cats/email/examples/lettre.rs](./bk/crates/cats/email/examples/lettre.rs#L45))
 
-### bk/crates/cats/encoding/Cargo.toml
-
-- [ ] bincode = "2.0.1" ([bk/crates/cats/encoding/Cargo.toml](./bk/crates/cats/encoding/Cargo.toml#L24))
-- [ ] capnp = "0.21.0" ([bk/crates/cats/encoding/Cargo.toml](./bk/crates/cats/encoding/Cargo.toml#L27))
-- [ ] flatbuffers = "25.1.21" ([bk/crates/cats/encoding/Cargo.toml](./bk/crates/cats/encoding/Cargo.toml#L32))
-- [ ] form_urlencoded = "1.2.1" ([bk/crates/cats/encoding/Cargo.toml](./bk/crates/cats/encoding/Cargo.toml#L33))
-- [ ] protobuf = "4.31.1-release" ([bk/crates/cats/encoding/Cargo.toml](./bk/crates/cats/encoding/Cargo.toml#L37))
-- [ ] rmp-serde = "1.3.0" ([bk/crates/cats/encoding/Cargo.toml](./bk/crates/cats/encoding/Cargo.toml#L43))
-
 ### bk/crates/cats/encoding/build.rs
 
 - [ ] [fix prost](https://github.com/john-cd/rust_howto/issues/1417) ([bk/crates/cats/encoding/build.rs](./bk/crates/cats/encoding/build.rs#L30))
@@ -3601,10 +3549,6 @@
 ### bk/crates/cats/encoding/examples/binary_encoders/capnp.rs
 
 - [ ] [finish; see https://capnproto.org/ https://capnproto.org/rust.html https://capnproto.org/install.html](https://github.com/john-cd/rust_howto/issues/1041) ([bk/crates/cats/encoding/examples/binary_encoders/capnp.rs](./bk/crates/cats/encoding/examples/binary_encoders/capnp.rs#L69))
-
-### bk/crates/cats/encoding/examples/binary_encoders/flatbuffers.rs
-
-- [ ] [finish; https://flatbuffers.dev/languages/rust/](https://github.com/john-cd/rust_howto/issues/1043) ([bk/crates/cats/encoding/examples/binary_encoders/flatbuffers.rs](./bk/crates/cats/encoding/examples/binary_encoders/flatbuffers.rs#L68))
 
 ### bk/crates/cats/encoding/examples/binary_encoders/main.rs
 
@@ -3638,10 +3582,6 @@
 
 - [ ] [review lazy_constant.rs and lazy_static.rs and global_mut_state.rs](https://github.com/john-cd/rust_howto/issues/939) ([bk/crates/cats/memory_management/examples/lazy_initialization/lazy_static.rs](./bk/crates/cats/memory_management/examples/lazy_initialization/lazy_static.rs#L89))
 
-### bk/crates/cats/network_programming/Cargo.toml
-
-- [ ] ngrok = { version = "0.15.0", features = [ "axum" ] } ([bk/crates/cats/network_programming/Cargo.toml](./bk/crates/cats/network_programming/Cargo.toml#L22))
-
 ### bk/crates/cats/network_programming/examples/reverse_proxy/ngrok.rs
 
 - [ ] [finish](https://github.com/john-cd/rust_howto/issues/811) ([bk/crates/cats/network_programming/examples/reverse_proxy/ngrok.rs](./bk/crates/cats/network_programming/examples/reverse_proxy/ngrok.rs#L83))
@@ -3658,24 +3598,9 @@
 
 - [ ] [finish; listens to a connection forever](https://github.com/john-cd/rust_howto/issues/166) ([bk/crates/cats/network_programming/examples/server/listen_unused.rs](./bk/crates/cats/network_programming/examples/server/listen_unused.rs#L42))
 
-### bk/crates/cats/os_windows_apis/Cargo.toml
-
-- [ ] windows = { version = "0.61.1" } ([bk/crates/cats/os_windows_apis/Cargo.toml](./bk/crates/cats/os_windows_apis/Cargo.toml#L21))
-
 ### bk/crates/cats/os_windows_apis/examples/windows/winapi.rs
 
 - [ ] [review / test](https://github.com/john-cd/rust_howto/issues/822) ([bk/crates/cats/os_windows_apis/examples/windows/winapi.rs](./bk/crates/cats/os_windows_apis/examples/windows/winapi.rs#L132))
-
-
-### bk/crates/cats/parser_implementations/Cargo.toml
-
-- [ ] xml5ever = "0.23.0" ([bk/crates/cats/parser_implementations/Cargo.toml](./bk/crates/cats/parser_implementations/Cargo.toml#L24))
-- [ ] xmlparser = "0.13.6" ([bk/crates/cats/parser_implementations/Cargo.toml](./bk/crates/cats/parser_implementations/Cargo.toml#L25))
-- [ ] cssparser = "0.35.0" ([bk/crates/cats/parser_implementations/Cargo.toml](./bk/crates/cats/parser_implementations/Cargo.toml#L30))
-- [ ] html5ever = "0.33.0" ([bk/crates/cats/parser_implementations/Cargo.toml](./bk/crates/cats/parser_implementations/Cargo.toml#L31))
-- [ ] markup5ever = "0.16.0" ([bk/crates/cats/parser_implementations/Cargo.toml](./bk/crates/cats/parser_implementations/Cargo.toml#L34))
-- [ ] markup5ever_arcdom = "0.1.2" ([bk/crates/cats/parser_implementations/Cargo.toml](./bk/crates/cats/parser_implementations/Cargo.toml#L35))
-- [ ] quick-xml = {version = "0.37.2", features = ["serialize"] } ([bk/crates/cats/parser_implementations/Cargo.toml](./bk/crates/cats/parser_implementations/Cargo.toml#L37))
 
 ### bk/crates/cats/parser_implementations/examples/html/cssparser.rs
 
@@ -3701,10 +3626,6 @@
 
 - [ ] [finish](https://github.com/john-cd/rust_howto/issues/1102) ([bk/crates/cats/parser_implementations/examples/xml/xmlparser.rs](./bk/crates/cats/parser_implementations/examples/xml/xmlparser.rs#L101))
 
-### bk/crates/cats/parsing/Cargo.toml
-
-- [ ] tree-sitter = "0.25.1" ([bk/crates/cats/parsing/Cargo.toml](./bk/crates/cats/parsing/Cargo.toml#L26))
-
 ### bk/crates/cats/parsing/examples/parsing/tree_sitter.rs
 
 - [ ] [finish](https://github.com/john-cd/rust_howto/issues/827) ([bk/crates/cats/parsing/examples/parsing/tree_sitter.rs](./bk/crates/cats/parsing/examples/parsing/tree_sitter.rs#L162))
@@ -3724,10 +3645,6 @@
 ### bk/crates/cats/rust_patterns/examples/rust_specific_patterns/pin_project.rs
 
 - [ ] [finish; provide projection example before going into pin projection; explain risks; explain use cases](https://github.com/john-cd/rust_howto/issues/1120) ([bk/crates/cats/rust_patterns/examples/rust_specific_patterns/pin_project.rs](./bk/crates/cats/rust_patterns/examples/rust_specific_patterns/pin_project.rs#L227))
-
-### bk/crates/cats/web_programming/Cargo.toml
-
-- [ ] http-body-util = "0.1.2" ([bk/crates/cats/web_programming/Cargo.toml](./bk/crates/cats/web_programming/Cargo.toml#L26))
 
 ### bk/crates/cats/web_programming/examples/http_types_and_interfaces/http.rs
 
@@ -3769,14 +3686,7 @@
 ### bk/crates/cats/web_programming_http_server/Cargo.toml
 
 - [ ] [trillium: do we need LATER](https://github.com/john-cd/rust_howto/issues/1314) ([bk/crates/cats/web_programming_http_server/Cargo.toml](./bk/crates/cats/web_programming_http_server/Cargo.toml#L26))
-- [ ] actix-web = "4.9.0" ([bk/crates/cats/web_programming_http_server/Cargo.toml](./bk/crates/cats/web_programming_http_server/Cargo.toml#L28))
-- [ ] async-graphql = { version = "7.0.17", optional = true } ([bk/crates/cats/web_programming_http_server/Cargo.toml](./bk/crates/cats/web_programming_http_server/Cargo.toml#L29))
-- [ ] hyper = { version = "1.6.0", features = ["full"] } ([bk/crates/cats/web_programming_http_server/Cargo.toml](./bk/crates/cats/web_programming_http_server/Cargo.toml#L35))
 - [?] leptos = "0.8.2" ([bk/crates/cats/web_programming_http_server/Cargo.toml](./bk/crates/cats/web_programming_http_server/Cargo.toml#L37))
-
-### bk/crates/cats/web_programming_http_server/examples/actix_web.rs
-
-- [?] Resolve TODO/FIXME at line 36 ([bk/crates/cats/web_programming_http_server/examples/actix_web.rs](./bk/crates/cats/web_programming_http_server/examples/actix_web.rs#L36))
 
 ### bk/crates/cats/web_programming_http_server/examples/async_graphql.rs
 
@@ -3916,10 +3826,6 @@
 ### later/crates/cats/emulators/examples/emulators/emulator.rs
 
 - [ ] [write LATER](https://github.com/john-cd/rust_howto/issues/752) ([later/crates/cats/emulators/examples/emulators/emulator.rs](./later/crates/cats/emulators/examples/emulators/emulator.rs#L12))
-
-### later/crates/cats/finance/Cargo.toml
-
-- [ ] [RustQuant: heavy build - polars, nalgebra, etc LATER](https://github.com/john-cd/rust_howto/issues/1313) ([later/crates/cats/finance/Cargo.toml](./later/crates/cats/finance/Cargo.toml#L19))
 
 ### later/crates/cats/finance/examples/quant/rustquant.rs
 
@@ -4129,10 +4035,6 @@
 
 - [ ] [write LATER](https://github.com/john-cd/rust_howto/issues/830) ([later/crates/cats/rendering_engine/examples/rendering_engines/render.rs](./later/crates/cats/rendering_engine/examples/rendering_engines/render.rs#L12))
 
-### later/crates/cats/rendering_graphics_api/Cargo.toml
-
-- [ ] Resolve TODO/FIXME at line 18 ([later/crates/cats/rendering_graphics_api/Cargo.toml](./later/crates/cats/rendering_graphics_api/Cargo.toml#L18))
-
 ### later/crates/cats/rendering_graphics_api/examples/gpu_abstraction_layers/wgpu.rs
 
 - [ ] [finish](https://github.com/john-cd/rust_howto/issues/772) ([later/crates/cats/rendering_graphics_api/examples/gpu_abstraction_layers/wgpu.rs](./later/crates/cats/rendering_graphics_api/examples/gpu_abstraction_layers/wgpu.rs#L156))
@@ -4140,10 +4042,6 @@
 ### later/crates/cats/rendering_graphics_api/examples/native_graphics_apis/graphics.rs
 
 - [ ] [write LATER](https://github.com/john-cd/rust_howto/issues/831) ([later/crates/cats/rendering_graphics_api/examples/native_graphics_apis/graphics.rs](./later/crates/cats/rendering_graphics_api/examples/native_graphics_apis/graphics.rs#L12))
-
-### later/crates/cats/science/Cargo.toml
-
-- [ ] do we need a feature? candle = ["dep:candle-core", "dep:candle-nn"] ([later/crates/cats/science/Cargo.toml](./later/crates/cats/science/Cargo.toml#L38))
 
 ### later/crates/cats/science/examples/ml/candle.rs
 
@@ -4164,8 +4062,6 @@
 ### later/crates/cats/science_robotics/Cargo.toml
 
 - [ ] openrr = { version = "0.1.0", optional = true } # lacks native static library `assimpd` on windows https://github.com/assimp/assimp/blob/master/Build.md ([later/crates/cats/science_robotics/Cargo.toml](./later/crates/cats/science_robotics/Cargo.toml#L19))
-- [ ] zenoh = "1.1.0" # https://github.com/john-cd/rust_howto/issues/1441 ([later/crates/cats/science_robotics/Cargo.toml](./later/crates/cats/science_robotics/Cargo.toml#L21))
-- [ ] openrr = ["dep:openrr"] ([later/crates/cats/science_robotics/Cargo.toml](./later/crates/cats/science_robotics/Cargo.toml#L32))
 
 ### later/crates/cats/science_robotics/examples/artificial_intelligence/bonsai_bt.rs
 
@@ -4187,13 +4083,9 @@
 
 - [ ] [write LATER](https://github.com/john-cd/rust_howto/issues/846) ([later/crates/cats/simulation/examples/simulation/simulation1.rs](./later/crates/cats/simulation/examples/simulation/simulation1.rs#L12))
 
-### later/crates/cats/virtualization/Cargo.toml
-
-- [ ] [LATER review wasmi](https://github.com/john-cd/rust_howto/issues/1263) ([later/crates/cats/virtualization/Cargo.toml](./later/crates/cats/virtualization/Cargo.toml#L18))
-
 ### later/crates/cats/virtualization/examples/virtualization/virtualization1.rs
 
-- [ ] [write LATER;  cover WASMI cargo add wasmi](https://github.com/john-cd/rust_howto/issues/852) ([later/crates/cats/virtualization/examples/virtualization/virtualization1.rs](./later/crates/cats/virtualization/examples/virtualization/virtualization1.rs#L12))
+- [?] [write;  cover WASMI cargo add wasmi](https://github.com/john-cd/rust_howto/issues/852) ([later/crates/cats/virtualization/examples/virtualization/virtualization1.rs](./later/crates/cats/virtualization/examples/virtualization/virtualization1.rs#L12))
 
 ### later/crates/cats/visualization/examples/visualization/plotly.rs
 
@@ -4207,11 +4099,6 @@
 
 - [ ] [review](https://github.com/john-cd/rust_howto/issues/856) ([later/crates/cats/wasm/examples/yew/yew.rs](./later/crates/cats/wasm/examples/yew/yew.rs#L59))
 
-### later/crates/cats/web_programming_websocket/Cargo.toml
-
-- [ ] async-tungstenite = { version = "0.29.1", features = [ ([later/crates/cats/web_programming_websocket/Cargo.toml](./later/crates/cats/web_programming_websocket/Cargo.toml#L18))
-- [ ] [async-tungstenite: review](https://github.com/john-cd/rust_howto/issues/1291) ([later/crates/cats/web_programming_websocket/Cargo.toml](./later/crates/cats/web_programming_websocket/Cargo.toml#L22))
-
 ### later/crates/cats/web_programming_websocket/examples/async_tungstenite.rs
 
 - [?] [Web] Migrate to wss://echo.websocket.events and enable async-tungstenite example (https://github.com/john-cd/rust_howto/issues/1058) - COMPLETED ([later/crates/cats/web_programming_websocket/examples/async_tungstenite.rs](./later/crates/cats/web_programming_websocket/examples/async_tungstenite.rs#L58))
@@ -4219,10 +4106,6 @@
 ### later/crates/cats/web_programming_websocket/examples/tokio_tungstenite.rs
 
 - [ ] [review https://github.com/snapview/tokio-tungstenite/tree/master/examples](https://github.com/john-cd/rust_howto/issues/1145) ([later/crates/cats/web_programming_websocket/examples/tokio_tungstenite.rs](./later/crates/cats/web_programming_websocket/examples/tokio_tungstenite.rs#L57))
-
-### later/crates/other/Cargo.toml
-
-- [ ] Resolve TODO/FIXME at line 19 ([later/crates/other/Cargo.toml](./later/crates/other/Cargo.toml#L19))
 
 ### later/crates/other/examples/architecture/cqrs.rs
 
@@ -4236,10 +4119,6 @@
 ### later/crates/other/examples/cloud/aws_sdk.rs
 
 - [ ] main()?; // Skip running S3 queries in simple unit tests to avoid network ([later/crates/other/examples/cloud/aws_sdk.rs](./later/crates/other/examples/cloud/aws_sdk.rs#L47))
-
-### playground/examples_wip/Cargo.toml
-
-- [ ] Resolve TODO/FIXME at line 16 ([playground/examples_wip/Cargo.toml](./playground/examples_wip/Cargo.toml#L16))
 
 ### GitHub issue references
 
@@ -4459,10 +4338,6 @@
 
 - [ ] Review issue [#1041](https://github.com/john-cd/rust_howto/issues/1041) in [bk/crates/cats/encoding/examples/binary_encoders/capnp.rs](./bk/crates/cats/encoding/examples/binary_encoders/capnp.rs#L69)
 
-#### bk/crates/cats/encoding/examples/binary_encoders/flatbuffers.rs
-
-- [ ] Review issue [#1043](https://github.com/john-cd/rust_howto/issues/1043) in [bk/crates/cats/encoding/examples/binary_encoders/flatbuffers.rs](./bk/crates/cats/encoding/examples/binary_encoders/flatbuffers.rs#L68)
-
 #### bk/crates/cats/encoding/examples/binary_encoders/main.rs
 
 - [ ] Review issue [#1234](https://github.com/john-cd/rust_howto/issues/1234) in [bk/crates/cats/encoding/examples/binary_encoders/main.rs](./bk/crates/cats/encoding/examples/binary_encoders/main.rs#L2)
@@ -4643,10 +4518,6 @@
 
 - [ ] Review issue [#707](https://github.com/john-cd/rust_howto/issues/707) in [later/crates/cats/cryptography_cryptocurrencies/examples/cryptocurrencies/cryptocurrencies.rs](./later/crates/cats/cryptography_cryptocurrencies/examples/cryptocurrencies/cryptocurrencies.rs#L12)
 
-#### later/crates/cats/development_tools_ffi/Cargo.toml
-
-- [ ] Review issue [#1307](https://github.com/john-cd/rust_howto/issues/1307) in [later/crates/cats/development_tools_ffi/Cargo.toml](./later/crates/cats/development_tools_ffi/Cargo.toml#L14)
-
 #### later/crates/cats/development_tools_ffi/build.rs
 
 - [ ] Review issue [#1026](https://github.com/john-cd/rust_howto/issues/1026) in [later/crates/cats/development_tools_ffi/build.rs](./later/crates/cats/development_tools_ffi/build.rs#L80)
@@ -4746,10 +4617,6 @@
 #### later/crates/cats/emulators/examples/emulators/emulator.rs
 
 - [ ] Review issue [#752](https://github.com/john-cd/rust_howto/issues/752) in [later/crates/cats/emulators/examples/emulators/emulator.rs](./later/crates/cats/emulators/examples/emulators/emulator.rs#L12)
-
-#### later/crates/cats/finance/Cargo.toml
-
-- [ ] Review issue [#1313](https://github.com/john-cd/rust_howto/issues/1313) in [later/crates/cats/finance/Cargo.toml](./later/crates/cats/finance/Cargo.toml#L19)
 
 #### later/crates/cats/finance/examples/quant/rustquant.rs
 
@@ -4963,10 +4830,6 @@
 
 - [ ] Review issue [#840](https://github.com/john-cd/rust_howto/issues/840) in [later/crates/cats/science_neuroscience/examples/neuroscience/neuro.rs](./later/crates/cats/science_neuroscience/examples/neuroscience/neuro.rs#L12)
 
-#### later/crates/cats/science_robotics/Cargo.toml
-
-- [ ] Review issue [#1441](https://github.com/john-cd/rust_howto/issues/1441) in [later/crates/cats/science_robotics/Cargo.toml](./later/crates/cats/science_robotics/Cargo.toml#L21)
-
 #### later/crates/cats/science_robotics/examples/artificial_intelligence/bonsai_bt.rs
 
 - [ ] Review issue [#841](https://github.com/john-cd/rust_howto/issues/841) in [later/crates/cats/science_robotics/examples/artificial_intelligence/bonsai_bt.rs](./later/crates/cats/science_robotics/examples/artificial_intelligence/bonsai_bt.rs#L128)
@@ -4987,9 +4850,6 @@
 
 - [ ] Review issue [#846](https://github.com/john-cd/rust_howto/issues/846) in [later/crates/cats/simulation/examples/simulation/simulation1.rs](./later/crates/cats/simulation/examples/simulation/simulation1.rs#L12)
 
-#### later/crates/cats/virtualization/Cargo.toml
-
-- [ ] Review issue [#1263](https://github.com/john-cd/rust_howto/issues/1263) in [later/crates/cats/virtualization/Cargo.toml](./later/crates/cats/virtualization/Cargo.toml#L18)
 
 #### later/crates/cats/virtualization/examples/virtualization/virtualization1.rs
 
@@ -5006,10 +4866,6 @@
 #### later/crates/cats/wasm/examples/yew/yew.rs
 
 - [ ] Review issue [#856](https://github.com/john-cd/rust_howto/issues/856) in [later/crates/cats/wasm/examples/yew/yew.rs](./later/crates/cats/wasm/examples/yew/yew.rs#L59)
-
-#### later/crates/cats/web_programming_websocket/Cargo.toml
-
-- [ ] Review issue [#1291](https://github.com/john-cd/rust_howto/issues/1291) in [later/crates/cats/web_programming_websocket/Cargo.toml](./later/crates/cats/web_programming_websocket/Cargo.toml#L22)
 
 #### later/crates/cats/web_programming_websocket/examples/async_tungstenite.rs
 
@@ -5158,10 +5014,6 @@
 
 - [ ] [replace_in_file(path)?;](https://github.com/john-cd/rust_howto/issues/1439) ([playground/bits_and_pieces/walk_dir.rs](./playground/bits_and_pieces/walk_dir.rs#L34))
 
-### tools/mdbook-scrub/Cargo.toml
-
-- [ ] Resolve TODO/FIXME at line 18 ([tools/mdbook-scrub/Cargo.toml](./tools/mdbook-scrub/Cargo.toml#L18))
-
 ### tools/mdbook-scrub/src/regexes.rs
 
 - [ ] [share RegexAndReplacement code with CLIs (core_lib)](https://github.com/john-cd/rust_howto/issues/1420) ([tools/mdbook-scrub/src/regexes.rs](./tools/mdbook-scrub/src/regexes.rs#L6))
@@ -5190,10 +5042,6 @@
 ### tools/templ/src/main.rs
 
 - [ ] Resolve TODO/FIXME at line 27 ([tools/templ/src/main.rs](./tools/templ/src/main.rs#L27))
-
-### tools/tool_lib/Cargo.toml
-
-- [ ] Resolve TODO/FIXME at line 26 ([tools/tool_lib/Cargo.toml](./tools/tool_lib/Cargo.toml#L26))
 
 ### tools/tool_lib/src/crates_io/info.rs
 
@@ -5355,10 +5203,6 @@
 ### devcontainer/compose-ci.yaml
 
 - [ ] [make gha caching work in CI workflow](https://github.com/john-cd/rust_howto/issues/1271) ([devcontainer/compose-ci.yaml](./devcontainer/compose-ci.yaml#L19))
-
-### xmpl/cancelable/Cargo.toml
-
-- [ ] Resolve TODO/FIXME at line 20 ([xmpl/cancelable/Cargo.toml](./xmpl/cancelable/Cargo.toml#L20))
 
 ### xmpl/clap_builder_xmpl/src/cli/args.rs
 

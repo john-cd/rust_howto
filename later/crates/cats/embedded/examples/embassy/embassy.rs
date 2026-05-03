@@ -78,8 +78,11 @@ impl LedPin {
         // Set the LED pin low
     }
 }
-
 // ANCHOR_END: example
+
+pub fn run() -> ! {
+    main()
+}
 
 #[cfg(test)]
 mod tests { use super::*;

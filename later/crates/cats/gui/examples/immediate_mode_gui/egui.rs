@@ -11,7 +11,7 @@
 
 use eframe::egui;
 
-pub fn main() -> Result<(), eframe::Error> {
+fn main() -> Result<(), eframe::Error> {
     let options = eframe::NativeOptions::default();
     eframe::run_native(
         "Hello egui",
@@ -38,6 +38,21 @@ impl eframe::App for MyApp {
     }
 }
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), eframe::Error> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires interactive example runtime"]
+    fn test_main() {
+        main().unwrap();
+    }
+}
 
 // Hard to test. Initializing the event loop outside of the main thread is a
 // significant cross-platform compatibility hazard.

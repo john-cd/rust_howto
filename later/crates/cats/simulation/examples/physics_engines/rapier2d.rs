@@ -61,8 +61,16 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
 }
-// TODO review / add to a chapter on physics engines with rapier2d
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
+    // TODO review / add to a chapter on physics engines with rapier2d
+}

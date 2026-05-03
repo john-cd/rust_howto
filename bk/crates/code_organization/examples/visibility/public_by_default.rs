@@ -45,7 +45,12 @@ fn main() {
         "public_by_default example: enum variants and struct fields can be public by default"
     );
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

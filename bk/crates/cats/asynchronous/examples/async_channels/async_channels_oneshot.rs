@@ -41,7 +41,12 @@ async fn one_shot() {
 async fn main() {
     one_shot().await;
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

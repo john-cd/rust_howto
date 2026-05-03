@@ -53,12 +53,18 @@ async fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
+pub fn run() {
+    main();
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
-    fn require_network() {
-        // main(); // TODO test removed to prevent lambda running directly
+    #[ignore = "requires Lambda runtime"]
+    fn test_main() {
+        main().unwrap();
     }
 }
 // [finish](https://github.com/john-cd/rust_howto/issues/878)

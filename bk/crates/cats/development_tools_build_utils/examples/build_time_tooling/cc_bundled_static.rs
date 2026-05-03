@@ -18,7 +18,12 @@ fn main() {
         "cc_bundled_static example: compiles a C file into a static library (requires a C compiler)"
     );
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[ignore = "Needs review"]
 #[cfg(test)]

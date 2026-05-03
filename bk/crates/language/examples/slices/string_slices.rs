@@ -1,5 +1,5 @@
 #![allow(dead_code)]
-// ANCHOR_END: example
+// ANCHOR: example
 //! String slice examples.
 
 fn main() {
@@ -23,6 +23,10 @@ fn main() {
     assert!(std::ptr::eq(whole_slice.as_ptr(), s.as_ptr()));
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

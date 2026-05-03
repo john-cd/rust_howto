@@ -51,7 +51,12 @@ fn main() {
     // `itertools` also offers `all`, `any`, `concat`, `fold`, "join",
     // `partition`, `sorted`, etc.
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

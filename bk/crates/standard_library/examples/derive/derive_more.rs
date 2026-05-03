@@ -112,6 +112,10 @@ fn transfer_amount(
 }
 // ANCHOR_END: example
 
+pub fn run() {
+    main();
+}
+
 // Adapted from <https://docs.rs/derive_more/latest/derive_more/>
 
 #[cfg(test)]

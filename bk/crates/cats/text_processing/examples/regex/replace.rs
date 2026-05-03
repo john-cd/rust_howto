@@ -19,7 +19,12 @@ fn main() {
     println!("{after}");
     assert_eq!(after, "03/14/2012, 01/15/2013 and 07/05/2014");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

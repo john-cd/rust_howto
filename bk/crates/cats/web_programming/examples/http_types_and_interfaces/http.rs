@@ -35,7 +35,12 @@ fn main() {
     println!("Request URI: {}", request.uri());
     println!("Response Status: {}", response.status());
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

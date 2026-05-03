@@ -4,12 +4,13 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - parser_implementations"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = ["parser-implementations"]
 publish.workspace = true
 autolib = false
@@ -21,31 +22,32 @@ ignored = ["rust-ini"]
 sqlparser = ["dep:sqlparser"]
 
 [dependencies]
-xml5ever = "0.23.0"
-xmlparser = "0.13.6"
-anyhow = "1.0.100"
+clap = { version = "4.6.1", features = ["derive"] }
+anyhow = "1.0.102"
 basic-toml = "0.1.10"
-chrono = { version = "0.4.42", features = ["serde"] }
-comrak = "0.45.0"
-cssparser = "0.35.0"
-html5ever = "0.33.0"
-json5 = "0.4.1"
+chrono = { version = "0.4.44", features = ["serde"] }
+comrak = "0.52.0"
+cssparser = "0.37.0"
+html5ever = "0.39.0"
+json5 = "1.3.1"
 markdown = "1.0.0"
-markup5ever = "0.16.0"
+markup5ever = "0.39.0"
 markup5ever_arcdom = "0.1.2"
-pulldown-cmark = "0.13.0"
-quick-xml = { version = "0.37.2", features = ["serialize"] }
+pulldown-cmark = "0.13.3"
+quick-xml = { version = "0.39.2", features = ["serialize"] }
 roxmltree = "0.21.1"
 rust-ini = "0.21.3"
 serde = { version = "1.0.228", features = ["derive"] }
-serde_json = "1.0.145"
+serde_json = "1.0.149"
 serde_yml = "0.0.12"
 simd-json = "0.17.0"
-sqlparser = { version = "0.59.0", features = ["visitor"], optional = true }
-swc_common = "15.0.0"
-swc_ecma_ast = "16.0.0"
-swc_ecma_parser = "25.0.0"
+sqlparser = { version = "0.61.0", features = ["visitor"], optional = true }
+swc_common = "21.0.1"
+swc_ecma_ast = "23.0.0"
+swc_ecma_parser = "39.0.2"
 tl = "0.7.8"
-toml = "0.9.8"
-toml_edit = "0.23.7"
-xml = "0.8.20"
+toml = "1.1.2"
+toml_edit = "0.25.11"
+xml = "1.2.1"
+xml5ever = "0.39.0"
+xmlparser = "0.13.6"

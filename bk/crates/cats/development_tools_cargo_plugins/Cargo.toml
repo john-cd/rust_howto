@@ -4,20 +4,21 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description.workspace = true
+readme = "README.md"
+description = "Book code examples for creating and using Cargo plugins and automating tasks with xshell."
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["cargo", "plugins", "xshell", "automation", "development-tools"]
 categories = ["development-tools::cargo-plugins"]
 publish.workspace = true
 
 [dependencies]
 
 ## General
-anyhow = "1.0.100"
-tempfile = "3.23.0"
+anyhow = "1.0.102"
+tempfile = "3.27.0"
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 xshell = "0.2.7"

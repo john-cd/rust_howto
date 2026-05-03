@@ -20,7 +20,12 @@ fn main() {
     let new_matrix = matrix.dot(&new_vector);
     println!("{new_matrix}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

@@ -4,20 +4,20 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - finance"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = [ "finance" ]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-# RustQuant = {version = "0.3", optional = true }
-# [RustQuant: heavy build - polars, nalgebra, etc LATER](https://github.com/john-cd/rust_howto/issues/1313)
+# TODO RustQuant = { version = "0.3", optional = true }
 
-#[features]
-#default = []
-#rustquant = ["dep:RustQuant"]
+[features]
+default = []
+rustquant = [] # TODO "dep:RustQuant"]

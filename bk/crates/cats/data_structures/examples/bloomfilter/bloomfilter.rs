@@ -1,7 +1,7 @@
 // ANCHOR: example
 use bloomfilter::Bloom;
 
-pub fn main() {
+fn main() {
     let items_count = 100;
     let mut bloom = Bloom::new_for_fp_rate(items_count, 0.01).unwrap();
 
@@ -13,6 +13,10 @@ pub fn main() {
     assert!(!bloom.check(&"item3"));
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

@@ -38,3 +38,7 @@ mod tests {
     }
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}

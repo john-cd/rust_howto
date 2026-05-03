@@ -24,7 +24,12 @@ fn main() {
 
     println!("c: {c:?} c2: {c2:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

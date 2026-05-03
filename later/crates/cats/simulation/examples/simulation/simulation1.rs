@@ -13,7 +13,7 @@ fn main() {
 
     let mut physics_pipeline = PhysicsPipeline::new();
     let mut island_manager = IslandManager::new();
-    let mut broad_phase = BroadPhase::new();
+    let mut broad_phase = BroadPhaseMultiSap::new();
     let mut narrow_phase = NarrowPhase::new();
     let mut bodies = RigidBodySet::new();
     let mut colliders = ColliderSet::new();
@@ -21,14 +21,14 @@ fn main() {
     let mut multibody_joints = MultibodyJointSet::new();
     let mut ccd_solver = CCDSolver::new();
 
-    let ground_body = RigidBodyBuilder::new_static()
+    let ground_body = RigidBodyBuilder::fixed()
         .translation(vector![0.0f32, -1.0f32])
         .build();
     let ground_handle = bodies.insert(ground_body);
     let ground_collider = ColliderBuilder::cuboid(10.0f32, 1.0f32).build();
-    colliders.insert(ground_collider, ground_handle, &mut bodies);
+    colliders.insert_with_parent(ground_collider, ground_handle, &mut bodies);
 
-    let ball_body = RigidBodyBuilder::new_dynamic()
+    let ball_body = RigidBodyBuilder::dynamic()
         .translation(vector![0.0f32, 5.0f32])
         .linvel(vector![1.0f32, 0.0f32])
         .build();
@@ -37,7 +37,7 @@ fn main() {
         .restitution(0.7f32)
         .friction(0.5f32)
         .build();
-    colliders.insert(ball_collider, ball_handle, &mut bodies);
+    colliders.insert_with_parent(ball_collider, ball_handle, &mut bodies);
 
     for step in 0..120 {
         physics_pipeline.step(
@@ -51,6 +51,7 @@ fn main() {
             &mut impulse_joints,
             &mut multibody_joints,
             &mut ccd_solver,
+            None,
             &(),
             &(),
         );
@@ -71,8 +72,16 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
 }
-// // [write LATER](https://github.com/john-cd/rust_howto/issues/846)
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
+}
+// [review](https://github.com/john-cd/rust_howto/issues/846)

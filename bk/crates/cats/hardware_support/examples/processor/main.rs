@@ -1,3 +1,5 @@
 mod cpu_count;
 
-fn main() {}
+fn main() {
+    cpu_count::run();
+}

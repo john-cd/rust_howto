@@ -1,3 +1,5 @@
 mod rangemap;
 
-fn main() {}
+fn main() {
+    rangemap::run();
+}

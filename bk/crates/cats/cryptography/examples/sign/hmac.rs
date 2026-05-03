@@ -32,7 +32,12 @@ fn main() -> Result<(), Unspecified> {
     println!("Message verified.");
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), Unspecified> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

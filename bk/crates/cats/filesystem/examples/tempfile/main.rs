@@ -1,3 +1,5 @@
 mod tempfile;
 
-fn main() {}
+fn main() {
+    tempfile::run();
+}

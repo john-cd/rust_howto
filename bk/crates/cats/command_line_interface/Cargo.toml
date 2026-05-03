@@ -4,28 +4,27 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - command_line_interface"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = ["command-line-interface"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
 ansi_term = "0.12.1" # NOTE: unmaintained
-
-## General
-anyhow = "1.0.100"
-clap = { version = "4.5.50", features = ["derive"] }
-clap_complete = "4.5.46"
-colored = "3.0.0"
-console = "0.16.1"
+anyhow = "1.0.102"
+clap = { version = "4.6.1", features = ["derive"] }
+clap_complete = "4.6.3"
+colored = "3.1.1"
+console = "0.16.3"
 crossterm = "0.29.0"
-indicatif = "0.18.1"
-inquire = "0.9.1"
-lexopt = "0.3.1"
+indicatif = "0.18.4"
+inquire = "0.9.4"
+lexopt = "0.3.2"
 pico-args = "0.5.0"
-ratatui = "0.29.0"                                   # requires crossterm
+ratatui = "0.30.0"                                   # requires crossterm

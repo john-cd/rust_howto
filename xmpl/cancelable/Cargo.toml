@@ -4,12 +4,12 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description.workspace = true
+readme = "README.md"
+description = "Code examples demonstrating how to implement cancelable tasks and threads using crossbeam-channel."
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license.workspace = true
-keywords.workspace = true
+keywords = ["concurrency", "cancellation", "crossbeam", "patterns", "threads"]
 categories = ["asynchronous"]
 publish.workspace = true
 
@@ -18,4 +18,4 @@ anyhow = "1.0.102"
 crossbeam = "0.8.4"
 crossbeam-channel = "0.5.15"
 tracing = "0.1.44"
-tracing-subscriber = { version = "0.3.20", features = ["env-filter"] }
+tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }

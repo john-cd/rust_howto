@@ -4,12 +4,13 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - development_tools_profiling"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = ["development-tools::profiling"]
 publish.workspace = true
 
@@ -23,13 +24,12 @@ dhat-heap = []
 dhat-ad-hoc = []
 
 [dependencies]
-criterion = "0.7.0"
+criterion = "0.8.2"
 dhat = "0.3.3"
-measure_time = "0.8"
+measure_time = "0.9"
 
-## Config for `divan` example below:
 [dev-dependencies]
-divan = "0.1.17"
+divan = "0.1.21"
 
 [[bench]]
 name = "divan"

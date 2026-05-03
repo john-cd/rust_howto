@@ -9,7 +9,12 @@ fn main() {
         Style::new().bold().paint("This is Bold")
     );
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

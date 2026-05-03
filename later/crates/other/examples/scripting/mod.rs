@@ -1,1 +1,1 @@
-mod rhai;
+pub mod rhai;

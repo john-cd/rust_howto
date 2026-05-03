@@ -1,7 +1,7 @@
 // ANCHOR: example
 //! `allow` attributes suppress specific warnings.
 //!
-//! These attributes are typically used during eatly development to temporarily
+//! These attributes are typically used during early development to temporarily
 //! ignore warnings that are not relevant at the moment, but should be
 //! addressed before releasing the code.
 #![allow(unused_variables)]
@@ -37,7 +37,12 @@ fn main() {
     required();
     println!("Done!");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

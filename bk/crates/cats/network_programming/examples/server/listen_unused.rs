@@ -32,7 +32,12 @@ fn main() -> Result<(), Error> {
     println!("{addr:?} says {input}");
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), Error> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

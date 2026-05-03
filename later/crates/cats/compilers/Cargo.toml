@@ -4,19 +4,21 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description.workspace = true
+readme = "README.md"
+description = "Examples focused on compiler design and incremental computation using Salsa and Comemo."
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["compilers", "incremental", "salsa", "comemo", "ast"]
 categories = ["compilers"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-comemo = "0.5.0"
-salsa = "0.26.0"
+clap = { version = "4.6.1", features = ["derive"] }
+comemo = "0.5.1"
+salsa = "0.26.1"
 
 ## General
-anyhow = "1.0.95"
+anyhow = "1.0.102"

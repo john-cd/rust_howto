@@ -1,7 +1,34 @@
+use clap::Parser;
+use clap::Subcommand;
+
 mod cosmic_text;
 mod parley;
 
+#[derive(Parser)]
+struct Cli {
+    #[command(subcommand)]
+    command: Option<Commands>,
+}
+
+#[derive(Subcommand)]
+enum Commands {
+    #[command(name = "cosmic_text")]
+    CosmicText,
+    #[command(name = "parley")]
+    Parley,
+}
+
 fn main() {
-    cosmic_text::main();
-    parley::main();
+    let cli = Cli::parse();
+
+    if let Some(command) = cli.command {
+        match command {
+            Commands::CosmicText => {
+                cosmic_text::run();
+            }
+            Commands::Parley => {
+                parley::run();
+            }
+        }
+    }
 }

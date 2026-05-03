@@ -77,3 +77,5 @@
 //     Ok(())
 // }
 // // [review tokio-rustls; need full integration test; document further; review https://github.com/rustls/rustls/tree/main/examples](https://github.com/john-cd/rust_howto/issues/700)
+
+pub fn run() {}

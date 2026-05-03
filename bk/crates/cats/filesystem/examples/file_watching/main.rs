@@ -1,3 +1,5 @@
 mod notify;
 
-fn main() {}
+fn main() {
+    notify::run();
+}

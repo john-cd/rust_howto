@@ -1,9 +1,0 @@
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.69s
-     Running unittests examples/architecture/main.rs (/app/later/crates/../../target/later/debug/examples/architecture-98882e81ac495143)
-
-running 5 tests
-test repository::test ... ok
-test di::test ... ok
-test state_machine::test ... ok
-test layered_architecture::test ... ok
-test cqrs::test has been running for over 60 seconds

@@ -10,7 +10,7 @@ use std::path::PathBuf;
 use image::ImageBuffer;
 use image::Rgb;
 
-pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
+fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let output_path = image_output_path_from_args().unwrap_or_else(|| {
         let default = PathBuf::from("generated_image.png");
         eprintln!("No output path provided, writing to {}", default.display());
@@ -49,9 +49,18 @@ fn image_output_path_from_args() -> Option<PathBuf> {
 }
 // ANCHOR_END: example
 
+pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
+    main()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn test_main() {
+        main().unwrap();
+    }
 
     #[test]
     fn build_gradient_image_has_expected_pixel_values() {

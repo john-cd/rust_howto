@@ -47,7 +47,12 @@ fn main() {
         println!("Shape area: {:.2}", shape.area());
     }
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

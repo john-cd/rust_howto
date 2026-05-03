@@ -11,14 +11,6 @@ use std::time::Duration;
 
 use zenoh::Config;
 
-/// Convert a zenoh error into an `anyhow::Error`.
-///
-/// Zenoh uses `Box<dyn std::error::Error + Send + Sync>` which lacks the
-/// `'static` bound that `anyhow` requires for automatic `From` conversions.
-fn ze(e: impl std::fmt::Display) -> anyhow::Error {
-    anyhow::anyhow!("{e}")
-}
-
 /// Demonstrates basic Zenoh pub/sub in a single session.
 ///
 /// A Zenoh session is the entry point for any Zenoh network operation.
@@ -71,7 +63,19 @@ async fn main() -> anyhow::Result<()> {
     session.close().await.map_err(ze)?;
     Ok(())
 }
+
+/// Convert a zenoh error into an `anyhow::Error`.
+///
+/// Zenoh uses `Box<dyn std::error::Error + Send + Sync>` which lacks the
+/// `'static` bound that `anyhow` requires for automatic `From` conversions.
+fn ze(e: impl std::fmt::Display) -> anyhow::Error {
+    anyhow::anyhow!("{e}")
+}
 // ANCHOR_END: example
+
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

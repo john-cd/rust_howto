@@ -22,7 +22,12 @@ fn main() {
     println!("Mode of the data is {mode:?}");
     assert_eq!(mode, Some(1));
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

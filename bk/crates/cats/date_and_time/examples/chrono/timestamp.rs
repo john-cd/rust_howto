@@ -27,7 +27,12 @@ fn main() {
         "Date after a billion seconds since 1970-01-01 00:00:00 was {date_time_after_a_billion_seconds}."
     );
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

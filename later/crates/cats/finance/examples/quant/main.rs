@@ -1,3 +1,5 @@
 mod rustquant;
 
-fn main() {}
+fn main() {
+    rustquant::run();
+}

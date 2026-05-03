@@ -14,7 +14,7 @@ fn main() {
     array.push(2);
 
     // Try extending from a slice:
-    let _ = array.try_extend_from_slice(&[3, 4, 5]);
+    array.try_extend_from_slice(&[3, 4, 5]);
     assert!(array.is_full());
     assert_eq!(&array[..], &[1, 2, 3, 4, 5]);
 
@@ -62,7 +62,12 @@ fn main() {
     array.clear();
     assert!(array.is_empty());
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

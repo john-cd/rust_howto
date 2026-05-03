@@ -1,7 +1,6 @@
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
-
+// ANCHOR: example
+// COMING SOON
+// ANCHOR_END: example
 // use taffy::prelude::*;
 // use taffy::style::AlignItems;
 // use taffy::style::JustifyContent;
@@ -126,5 +125,20 @@
 //     println!("Flex Grow Child 2 Layout: {child_flex_grow_2_layout:?}");
 // }
 
-pub fn main() {}
-// // [finish](https://github.com/john-cd/rust_howto/issues/788)
+fn main() {}
+
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires interactive example runtime"]
+    fn test_main() {
+        main();
+    }
+}
+// [finish](https://github.com/john-cd/rust_howto/issues/788)

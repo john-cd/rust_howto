@@ -18,7 +18,12 @@ fn main() {
 
     println!("Sensitive data after zeroizing: {sensitive_data:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

@@ -14,11 +14,12 @@
 //! ```toml
 //! serde = { version = "1.0.*", default-features = false }
 //! ```
+//!
 //! Example adapted from <https://lib.rs/crates/postcard>.
 use std::ops::Deref;
 
 use postcard::from_bytes;
-use postcard::to_vec;
+use postcard::to_stdvec;
 use serde::Deserialize;
 use serde::Serialize;
 
@@ -34,7 +35,7 @@ fn main() {
 
     let bytes = [0x01, 0x10, 0x02, 0x20];
 
-    let output: heapless::Vec<u8, 11> = to_vec(&RefStruct {
+    let output = to_stdvec(&RefStruct {
         bytes: &bytes,
         str_s: message,
     })
@@ -61,7 +62,12 @@ fn main() {
         output.len()
     );
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
