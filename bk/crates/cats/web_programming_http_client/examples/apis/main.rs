@@ -33,7 +33,9 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Paginated => {
-                paginated::run();
+                if let Err(err) = paginated::run() {
+                    eprintln!("{err}");
+                }
             }
             Commands::RateLimited => {
                 rate_limited::run();
