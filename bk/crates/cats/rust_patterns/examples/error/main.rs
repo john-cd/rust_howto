@@ -60,7 +60,8 @@ fn main() -> ::anyhow::Result<()> {
                 anyhow::run()?;
             }
             Commands::Backtrace => {
-                backtrace::run().map_err(|e| ::anyhow::anyhow!(e.to_string()))?;
+                backtrace::run()
+                    .map_err(|e| ::anyhow::anyhow!(e.to_string()))?;
             }
             Commands::ColorEyre => {
                 color_eyre::run()

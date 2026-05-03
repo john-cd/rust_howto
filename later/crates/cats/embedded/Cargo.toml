@@ -5,7 +5,6 @@ authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
 readme = "README.md"
-readme = "README.md"
 description = "Book code examples and their crate dependencies - embedded"
 documentation.workspace = true
 homepage.workspace = true
@@ -19,12 +18,12 @@ autolib = false
 [dependencies]
 
 [dev-dependencies]
+cortex-m = "0.7"
+cortex-m-rt = "0.7"
 embassy = { git = "https://github.com/embassy-rs/embassy", branch = "main", features = [
     "alloc",
     "std",
 ] }
-cortex-m = "0.7"
-cortex-m-rt = "0.7"
 panic-halt = "0.2"
 
 #[features]

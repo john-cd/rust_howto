@@ -39,7 +39,8 @@ fn main() -> anyhow::Result<()> {
                 }
                 #[cfg(feature = "tantivy")]
                 Commands::Tantivy => {
-                    tantivy::run().map_err(|e| anyhow::anyhow!(e.to_string()))?;
+                    tantivy::run()
+                        .map_err(|e| anyhow::anyhow!(e.to_string()))?;
                 }
             }
         }

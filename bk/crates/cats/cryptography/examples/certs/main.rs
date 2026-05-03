@@ -33,7 +33,8 @@ fn main() -> anyhow::Result<()> {
                 der::run();
             }
             Commands::PemRfc7468 => {
-                pem_rfc7468::run().map_err(|e| anyhow::anyhow!(e.to_string()))?;
+                pem_rfc7468::run()
+                    .map_err(|e| anyhow::anyhow!(e.to_string()))?;
             }
             Commands::Pkcs8 => {
                 pkcs8::run()?;

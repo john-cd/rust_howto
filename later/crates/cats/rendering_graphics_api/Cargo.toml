@@ -10,13 +10,13 @@ documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
 keywords = ["rendering", "graphics", "wgpu", "gpu", "api"]
-categories = [ "rendering::graphics-api" ]
+categories = ["rendering::graphics-api"]
 publish.workspace = true
 autolib = false
-
-[dependencies]
-wgpu = { version = "29.0.3", optional = true } # was pinned for ggez
 
 [features]
 default = []
 wgpu = ["dep:wgpu"]
+
+[dependencies]
+wgpu = { version = "29.0.3", optional = true } # was pinned for ggez

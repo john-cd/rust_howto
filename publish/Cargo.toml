@@ -22,7 +22,7 @@ keywords = [
     "examples",
     "summary",
 ]
-categories = [ "development-tools" ]
+categories = ["development-tools"]
 readme = "README.md"
 
 publish = true

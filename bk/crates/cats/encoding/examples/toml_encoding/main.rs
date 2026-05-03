@@ -18,17 +18,18 @@ enum Commands {
     Toml1,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Toml => {
-                toml::run();
+                toml::run()?;
             }
             Commands::Toml1 => {
-                toml1::run();
+                toml1::run()?;
             }
         }
     }
+    Ok(())
 }

@@ -10,7 +10,7 @@ documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
 keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-categories = [ "multimedia" ]
+categories = ["multimedia"]
 publish.workspace = true
 autolib = false
 

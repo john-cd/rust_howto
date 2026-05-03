@@ -18,7 +18,7 @@ enum Commands {
     Zerocopy,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -27,8 +27,9 @@ fn main() {
                 bytemuck::run();
             }
             Commands::Zerocopy => {
-                zerocopy::run();
+                zerocopy::run()?;
             }
         }
     }
+    Ok(())
 }

@@ -11,7 +11,7 @@ homepage.workspace = true
 repository.workspace = true
 
 keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-categories = [ "multimedia::images" ]
+categories = ["multimedia::images"]
 publish.workspace = true
 autolib = false
 

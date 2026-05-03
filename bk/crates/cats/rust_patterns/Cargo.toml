@@ -16,8 +16,8 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-clap = { version = "4.6.1", features = ["derive"] }
 anyhow = "1.0.102"
+clap = { version = "4.6.1", features = ["derive"] }
 color-eyre = "0.6.5"
 csv = "1.4.0"
 dyn-clone = "1.0.20"

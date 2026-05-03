@@ -15,19 +15,34 @@ categories = ["gui"]
 publish.workspace = true
 autolib = false
 
+[features]
+default = []
+dioxus = ["dep:dioxus"]
+webrender = ["dep:webrender", "dep:glutin", "dep:gl"]
+femtovg = ["dep:femtovg"]
+iced = ["dep:iced"]
+skia = ["dep:skia-safe", "dep:glutin", "dep:gl"]
+vello = ["dep:vello"]
+floem = ["dep:floem"]
+
 [dependencies]
-clap = { version = "4.6.1", features = ["derive"] }
+anyhow = "1.0.102"
 arboard = "3.6.1"
+baseview = { git = "https://github.com/RustAudio/baseview", branch = "master" }
+clap = { version = "4.6.1", features = ["derive"] }
 cosmic-text = "0.19.0"
 dioxus = { version = "0.7.7", optional = true }
 eframe = "0.33.3" # TODO upgrade
 egui = "0.33.3" # TODO upgrade
 femtovg = { version = "0.23.2", optional = true }
 floem = { version = "0.2.0", optional = true }
+gl = { version = "0.14.0", optional = true }
+glutin = { version = "0.32.3", optional = true }
 iced = { version = "0.14.0", optional = true }
 minifb = "0.28.0"
-parley = "0.9.0"
 morphorm = "0.8.0"
+parley = "0.9.0"
+pollster = "0.4"
 # pollster = { version = "0.4", optional = true } # for vello example
 # # FIXME size-of v0.1.5 does not compile on Windows:
 # # r3bl_tuify = "0.2.0"
@@ -38,30 +53,17 @@ morphorm = "0.8.0"
 # # FIXME https://gtk-rs.org/gtk4-rs/git/book/installation_linux.html
 # # FIXME https://gtk-rs.org/gtk4-rs/git/book/installation_windows.html
 rfd = "0.17.2"
-skia-safe = { version = "0.90.0", features = [ # TODO upgrade to 0.97.0
+skia-safe = { version = "0.90.0", features = [
+    # TODO upgrade to 0.97.0
     "gl",
 ], optional = true } # TODO pinned for slint
 slint = "1.16.1"
 taffy = "0.10.1"
-baseview = { git = "https://github.com/RustAudio/baseview", branch = "master" }
 tao = "0.35.0"
 tauri = "2.11.0" # Requires multiple libraries. See Dockerfile
 vello = { version = "0.7.0", optional = true } # TODO upgrade to 0.8.0+
 vger = "0.4.0"
 webrender = { version = "0.68.0", optional = true }
-glutin = { version = "0.32.3", optional = true }
-gl = { version = "0.14.0", optional = true }
-winit = "0.30.13"                               # for vello, winit examples
 wgpu = "29.0.3"
-pollster = "0.4"
-anyhow = "1.0.102"
-
-[features]
-default = []
-dioxus = ["dep:dioxus"] # "dep:dioxus-web", "dep:dioxus-desktop"
-webrender = ["dep:webrender", "dep:glutin", "dep:gl"]
-femtovg = ["dep:femtovg"]
-iced = ["dep:iced"]
-skia = ["dep:skia-safe", "dep:glutin", "dep:gl"]
-vello = ["dep:vello"]
-floem = ["dep:floem"]
+winit = "0.30.13"                               # for vello, winit examples
+#vizia = ["dep:vizia"]

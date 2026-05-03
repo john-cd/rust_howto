@@ -18,8 +18,7 @@ use tokio_tungstenite::tungstenite::client::IntoClientRequest;
 // text, binary...
 use tokio_tungstenite::tungstenite::protocol::Message;
 
-#[tokio::main]
-async fn main() -> anyhow::Result<()> {
+async fn tokio_tungstenite_main() -> anyhow::Result<()> {
     // Connect to a test WebSocket server, which will echo the message we sent.
     let request = "ws://echo.websocket.in".into_client_request()?;
     // Add headers if needed:
@@ -49,9 +48,15 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    tokio_tungstenite_main().await
+}
+
 pub fn run() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+    // Note: This can't be used directly because tokio::main requires async
+    // context. The actual async runtime is set up by the main() function.
+    Err(anyhow::anyhow!("Use main() or test context instead"))
 }
 
 #[cfg(test)]

@@ -11,13 +11,13 @@ homepage.workspace = true
 repository.workspace = true
 
 keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-categories = [ "finance" ]
+categories = ["finance"]
 publish.workspace = true
 autolib = false
-
-[dependencies]
 # TODO RustQuant = { version = "0.3", optional = true }
 
 [features]
 default = []
-rustquant = [] # TODO "dep:RustQuant"]
+rustquant = []
+
+[dependencies]

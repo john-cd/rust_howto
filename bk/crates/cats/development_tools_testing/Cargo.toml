@@ -16,11 +16,11 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-clap = { version = "4.6.1", features = ["derive"] }
 afl = "0.18.1"
 approx = "0.5.1" # was pinned at 0.4.0
 arbitrary = { version = "1.4.2", features = ["derive"] }
 bolero = "0.13.4"
+clap = { version = "4.6.1", features = ["derive"] }
 fake = { version = "5.1.0", features = ["derive"] }
 faux = "0.1.13"
 insta = "1.47.2"

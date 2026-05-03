@@ -19,7 +19,6 @@ autolib = false
 ignored = ["capnpc", "prost", "prost-types", "prost-build"]
 
 [dependencies]
-clap = { version = "4.6.1", features = ["derive"] }
 anyhow = "1.0.102"
 base64 = "0.22.1"
 bincode = { version = "2.0.1", features = ["serde"] } # TODO update to 3.0.0
@@ -27,6 +26,7 @@ bytemuck = { version = "1.25.0", features = ["derive"] }
 byteorder = "1.5.0"
 capnp = "0.25.4"
 ciborium = "0.2.2"
+clap = { version = "4.6.1", features = ["derive"] }
 csv = "1.4.0"
 data-encoding = "2.11.0"
 flatbuffers = "25.12.19"

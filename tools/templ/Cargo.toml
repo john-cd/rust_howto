@@ -14,6 +14,10 @@ keywords = ["markdown generation"]
 categories = ["development-tools", "command-line-utilities", "text-processing"]
 publish = false
 
+[[bin]]
+name = "templ"
+path = "src/main.rs"
+
 [dependencies]
 anyhow = "1.0.102"
 clap = { version = "4.6.1", features = ["cargo"] }
@@ -21,7 +25,3 @@ clap_builder = "4.6.0"
 tool_lib = { path = "../tool_lib" }
 tracing = "0.1.44"
 tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
-
-[[bin]]
-name = "templ"
-path = "src/main.rs"
