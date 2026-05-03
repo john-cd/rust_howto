@@ -18,7 +18,6 @@ autolib = false
 ignored = ["prost", "tonic-build"]
 
 [features]
-loco = ["loco-support"]
 async-graphql-support = ["dep:async-graphql", "dep:async-graphql-axum"]
 leptos-support = ["dep:leptos"]
 rocket-support = ["dep:rocket"]
@@ -54,4 +53,4 @@ tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
 [build-dependencies]
 tonic-build = "0.14.5"
 tonic-prost-build = "0.14.5"
-protoc-bin-vendored = "3"
+protoc-bin-vendored = "3.2.0"

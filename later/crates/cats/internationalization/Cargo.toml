@@ -15,5 +15,5 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-icu_locale_core = "2.2.0"
+icu_locale_core = { version = "2.2.0", features = ["alloc"] }
 sys-locale = "0.3.2"
