@@ -69,9 +69,13 @@ pub fn run() -> Result {
     main()
 }
 
-#[test]
-fn require_network() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn require_network() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
+    // [finish; asynchronous/streams.md: add more. streams2.rs is noplayground because it requires a network. rewrite](https://github.com/john-cd/rust_howto/issues/645)
 }
-// [finish; asynchronous/streams.md: add more. streams2.rs is noplayground because it requires a network. rewrite](https://github.com/john-cd/rust_howto/issues/645)

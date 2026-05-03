@@ -16,6 +16,22 @@ impl Rectangle {
     }
 }
 
+fn main() {
+    let larger = Rectangle {
+        width: 8,
+        height: 7,
+    };
+    let smaller = Rectangle {
+        width: 5,
+        height: 1,
+    };
+
+    println!(
+        "Can the larger rectangle hold the smaller one? {}",
+        larger.can_hold(&smaller)
+    );
+}
+
 /// This module contains unit tests for the `Rectangle` struct.
 /// You will typically write the unit tests in the same file than the main code.
 /// The `cfg` attribute ensures that the tests are conditionally compiled only
@@ -70,3 +86,7 @@ mod tests {
     }
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}

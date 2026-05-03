@@ -20,10 +20,10 @@
 //! ```
 
 // Imports from the module created by `tonic` (see below):
-use helloworld::greeter_server::Greeter;
-use helloworld::greeter_server::GreeterServer;
 use helloworld::HelloReply;
 use helloworld::HelloRequest;
+use helloworld::greeter_server::Greeter;
+use helloworld::greeter_server::GreeterServer;
 // A gRPC request and metadata from an RPC call:
 use tonic::Request;
 // A gRPC response and metadata from an RPC call:
@@ -80,7 +80,8 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies the greeting logic by calling the service implementation directly.
+    /// Verifies the greeting logic by calling the service implementation
+    /// directly.
     #[tokio::test]
     async fn test_greeter_logic() {
         let greeter = MyGreeter::default();
@@ -88,7 +89,10 @@ mod tests {
             name: "Rustacean".to_string(),
         });
 
-        let response = greeter.say_hello(request).await.expect("gRPC method failed");
+        let response = greeter
+            .say_hello(request)
+            .await
+            .expect("gRPC method failed");
         assert_eq!(response.into_inner().message, "Hello Rustacean!");
     }
 }

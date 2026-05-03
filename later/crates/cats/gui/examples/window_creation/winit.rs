@@ -91,6 +91,12 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    #[test]
+    #[ignore = "requires interactive example runtime"]
+    fn test_main() {
+        main().unwrap();
+    }
+
     // TODO proper test
     #[test]
     fn compile_event_loop() {
