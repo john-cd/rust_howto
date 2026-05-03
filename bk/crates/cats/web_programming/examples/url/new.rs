@@ -34,8 +34,9 @@ fn main() -> Result<(), ParseError> {
 
 // ANCHOR_END: example
 
-pub fn run() -> Result<(), ParseError> {
-    main()
+pub fn run() -> anyhow::Result<()> {
+    main()?;
+    Ok(())
 }
 
 #[cfg(test)]
