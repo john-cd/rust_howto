@@ -23,7 +23,12 @@ fn main() {
     println!("{mm:?}");
     assert_eq!(mm.0, 4000);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

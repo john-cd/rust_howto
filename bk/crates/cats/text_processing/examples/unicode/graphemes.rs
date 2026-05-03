@@ -9,7 +9,12 @@ fn main() {
     println!("{graphemes:?}");
     assert_eq!(graphemes[3], "é");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

@@ -21,7 +21,12 @@ fn main() -> Result<(), DecodeError> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), DecodeError> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

@@ -1,10 +1,13 @@
 #![allow(dead_code)]
-use cpal::traits::{DeviceTrait, HostTrait, StreamTrait};
 use std::error::Error;
+
+use cpal::traits::DeviceTrait;
+use cpal::traits::HostTrait;
+use cpal::traits::StreamTrait;
 
 // ANCHOR: example
 /// A simple example that plays a 440Hz sine wave (A4) for 1 second.
-pub fn main() -> Result<(), Box<dyn Error>> {
+fn main() -> Result<(), Box<dyn Error>> {
     let host = cpal::default_host();
     let device = host
         .default_output_device()
@@ -12,20 +15,23 @@ pub fn main() -> Result<(), Box<dyn Error>> {
     let config = device.default_output_config()?;
 
     match config.sample_format() {
-        cpal::SampleFormat::F32 => run::<f32>(&device, &config.into())?,
-        cpal::SampleFormat::I16 => run::<i16>(&device, &config.into())?,
-        cpal::SampleFormat::U16 => run::<u16>(&device, &config.into())?,
+        cpal::SampleFormat::F32 => run_stream::<f32>(&device, &config.into())?,
+        cpal::SampleFormat::I16 => run_stream::<i16>(&device, &config.into())?,
+        cpal::SampleFormat::U16 => run_stream::<u16>(&device, &config.into())?,
         _ => return Err("unsupported sample format".into()),
     }
 
     Ok(())
 }
 
-fn run<T>(device: &cpal::Device, config: &cpal::StreamConfig) -> Result<(), Box<dyn Error>>
+fn run_stream<T>(
+    device: &cpal::Device,
+    config: &cpal::StreamConfig,
+) -> Result<(), Box<dyn Error>>
 where
     T: cpal::SizedSample + cpal::FromSample<f32>,
 {
-    let sample_rate = config.sample_rate.0 as f32;
+    let sample_rate = config.sample_rate as f32;
     let channels = config.channels as usize;
 
     // Produce a 440Hz sine wave.
@@ -60,8 +66,16 @@ where
 }
 // ANCHOR_END: example
 
-#[test]
-#[ignore = "requires audio device"]
-fn test() {
-    main().unwrap();
+pub fn run() -> Result<(), Box<dyn Error>> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    #[ignore = "requires audio device"]
+    fn test() {
+        main().unwrap();
+    }
 }

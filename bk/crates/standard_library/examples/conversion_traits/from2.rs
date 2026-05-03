@@ -4,7 +4,7 @@
 use std::io;
 
 #[derive(Debug)]
-enum MyError {
+pub(crate) enum MyError {
     Io(io::Error),
     Message(String),
 }
@@ -27,7 +27,12 @@ fn main() -> Result<(), MyError> {
     Err("custom failure")?; // `&str` becomes `MyError`.
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), MyError> {
+    main()
+}
 
 fn test() {
     assert!(main().is_err());

@@ -1,3 +1,5 @@
 mod serde_yml;
 
-fn main() {}
+fn main() {
+    serde_yml::run();
+}

@@ -4,12 +4,13 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples - compression"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = ["compression"]
 publish.workspace = true
 autolib = false
@@ -17,16 +18,17 @@ autolib = false
 [dependencies]
 
 # General
-anyhow = "1.0.100"
-async-compression = { version = "0.4.18", features = ["tokio", "gzip"] }
+anyhow = "1.0.102"
+async-compression = { version = "0.4.42", features = ["tokio", "gzip"] }
 
 # async_zip
-async_zip = { version = "0.0.17", features = ["full"] }
-bytes = "1.9.0"
-flate2 = "1.1.5"
-futures = "0.3.31"
-futures-lite = "2"
+async_zip = { version = "0.0.18", features = ["full"] }
+bytes = "1.11.1"
+clap = { version = "4.6.1", features = ["derive"] }
+flate2 = "1.1.9"
+futures = "0.3.32"
+futures-lite = "2.6.1"
 tar = "0.4.45"
-tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread", "fs", "io-util", "io-std"] }
-tokio-util = { version = "0.7.13", features = ["codec"] }
-zip = "6.0.0"
+tokio = { version = "1.52.1", features = ["macros", "rt-multi-thread", "fs", "io-util", "io-std"] }
+tokio-util = { version = "0.7.18", features = ["codec"] }
+zip = "8.6.0"

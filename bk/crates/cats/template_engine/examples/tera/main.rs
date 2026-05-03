@@ -1,3 +1,5 @@
 mod tera;
 
-fn main() {}
+fn main() {
+    tera::run();
+}

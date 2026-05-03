@@ -19,7 +19,12 @@ fn main() {
     // Since `i64` implements the `MyHash` trait, we can call its method.
     println!("{}", x.myhash());
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

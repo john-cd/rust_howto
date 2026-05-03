@@ -1,4 +1,7 @@
 //! Crate registries examples.
+
 mod crates_io;
 
-fn main() {}
+fn main() {
+    crates_io::run();
+}

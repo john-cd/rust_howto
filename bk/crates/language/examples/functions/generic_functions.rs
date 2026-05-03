@@ -32,7 +32,12 @@ fn main() {
 
     take_two(Some(3), "4");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

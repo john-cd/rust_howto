@@ -32,15 +32,20 @@ fn main() {
     VM::init();
     // In a real application, you would define modules and classes here.
 }
-
 // ANCHOR_END: example
 
-// [finish](https://github.com/john-cd/rust_howto/issues/1036)
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
+    use super::*;
+
     #[test]
-    fn test() {
-        // main();
+    #[ignore = "requires Ruby VM initialization"]
+    fn test_main() {
+        main();
     }
 }
+// [finish](https://github.com/john-cd/rust_howto/issues/1036)

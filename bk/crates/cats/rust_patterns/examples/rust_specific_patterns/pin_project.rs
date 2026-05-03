@@ -218,7 +218,12 @@ fn main() {
     example3();
     example4();
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

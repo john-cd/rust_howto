@@ -4,15 +4,16 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - multimedia_images"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = [ "multimedia::images" ]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-image = "0.25.9"
+image = "0.25.10"

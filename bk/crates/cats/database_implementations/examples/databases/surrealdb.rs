@@ -8,11 +8,13 @@ use surrealdb::Result;
 use surrealdb::Surreal;
 // For an in-memory database, use:
 use surrealdb::engine::local::Mem;
+use surrealdb::types::SurrealValue;
 // For a RocksDB file, use:
 // use surrealdb::engine::local::RocksDb;
 
 // The document to store in the database.
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, SurrealValue)]
+#[surreal(crate = "surrealdb::types")]
 struct Person {
     name: String, // or: Cow<'static, str>
     age: u16,
@@ -87,7 +89,12 @@ async fn main() -> Result<()> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

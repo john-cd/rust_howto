@@ -1,5 +1,7 @@
 # Reference: https://doc.rust-lang.org/cargo/reference/config.html
 
+[env]
+CLANG_SYS_STATIC = "1"
 
 # Configuration to use the high-performance 'mold' linker on Linux.
 # mold is significantly faster than the default ld or lld.

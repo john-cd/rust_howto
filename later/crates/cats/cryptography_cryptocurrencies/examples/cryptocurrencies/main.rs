@@ -1,3 +1,5 @@
 mod cryptocurrencies;
 
-fn main() {}
+fn main() {
+    cryptocurrencies::run();
+}

@@ -41,7 +41,12 @@ fn main() {
     };
     print_hash(&p);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

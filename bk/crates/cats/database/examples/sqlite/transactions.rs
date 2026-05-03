@@ -1,14 +1,14 @@
 #![allow(dead_code)]
 // ANCHOR: example
-// This example demonstrates transaction management with SQLite using
-// `rusqlite`.
+// This example demonstrates transaction management with SQLite
+// using `rusqlite`.
 use std::fs;
 
 use anyhow::Result;
 use rusqlite::Connection;
 
 /// Demonstrates successful and rolled-back transactions using `rusqlite`.
-pub fn main() -> Result<()> {
+fn main() -> Result<()> {
     if !fs::exists("temp")? {
         fs::create_dir("temp")?;
     }
@@ -48,3 +48,16 @@ fn rolled_back_tx(conn: &mut Connection) -> Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        // TODO main().unwrap();
+    }
+}

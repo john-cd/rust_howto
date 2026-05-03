@@ -10,7 +10,12 @@ fn main() {
         None => (),
     }
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

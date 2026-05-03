@@ -7,7 +7,7 @@
 use core::fmt;
 use core::fmt::Write;
 
-pub fn run() {
+fn main() {
     let mut buffer = ArrayString::new();
     write!(
         &mut buffer,
@@ -53,12 +53,16 @@ impl Write for ArrayString {
 }
 // ANCHOR_END: example
 
+pub fn run() {
+    main();
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
     fn test() {
-        run();
+        main();
     }
 }

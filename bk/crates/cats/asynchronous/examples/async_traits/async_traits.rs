@@ -39,7 +39,12 @@ async fn main() {
     let hc = MyHealthChecker;
     do_health_check(hc).await;
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

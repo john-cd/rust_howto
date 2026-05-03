@@ -1,3 +1,4 @@
+#![cfg(all(feature = "rosrust", not(windows)))] // TODO review Windows support
 #![allow(dead_code)]
 // ANCHOR: example
 //! Example: publish and subscribe to a simple ROS topic using `rosrust`.
@@ -33,9 +34,16 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-#[ignore = "requires ROS master"]
-fn test() {
+pub fn run() {
     main();
 }
-// // [write LATER](https://github.com/john-cd/rust_howto/issues/844)
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
+}
+// [review](https://github.com/john-cd/rust_howto/issues/844)

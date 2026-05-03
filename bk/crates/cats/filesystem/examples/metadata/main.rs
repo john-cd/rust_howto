@@ -1,3 +1,5 @@
 mod metadata;
 
-fn main() {}
+fn main() {
+    metadata::run();
+}

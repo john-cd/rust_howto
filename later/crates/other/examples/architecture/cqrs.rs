@@ -331,9 +331,9 @@ mod query {
     }
 }
 
-/// Main function.
 use events::EventRepository;
 
+/// Main function.
 fn main() -> anyhow::Result<()> {
     use commands::Command;
 
@@ -380,7 +380,12 @@ fn main() -> anyhow::Result<()> {
     }
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {
@@ -388,7 +393,7 @@ mod tests {
     #[test]
     fn test() -> anyhow::Result<()> {
         // We just execute main, which shouldn't panic
-        let _ = main();
+        main();
         Ok(())
     }
 

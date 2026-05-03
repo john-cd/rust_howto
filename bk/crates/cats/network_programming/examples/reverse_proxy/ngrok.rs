@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// ANCHOR: example
 //! This example demonstrates a simple HTTP server that can be exposed to the
 //! internet using `ngrok`.
 //!
@@ -32,7 +33,6 @@
 //! 3. Start ngrok: `ngrok http 3000`
 //! 4. Access the server from the internet using the ngrok URL.
 
-// ANCHOR: example
 use std::net::SocketAddr;
 
 use axum::Router;
@@ -40,7 +40,8 @@ use axum::routing::get;
 use ngrok::config::ForwarderBuilder;
 use url::Url;
 
-async fn run() -> anyhow::Result<()> {
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
     // Create an Axum app.
     let app = Router::new().route("/", get(|| async { "Hello from Axum!" }));
 
@@ -71,21 +72,25 @@ async fn run() -> anyhow::Result<()> {
     tokio::signal::ctrl_c().await?;
     Ok(())
 }
+// ANCHOR_END: example
 
-#[tokio::main]
-async fn main() -> anyhow::Result<()> {
-    run().await
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
-#[ignore = "Requires network access and NGROK_AUTHTOKEN"]
-#[test]
-fn require_network() {
-    tokio::runtime::Runtime::new()
-        .unwrap()
-        .block_on(run())
-        .unwrap();
-}
+#[cfg(test)]
+mod tests {
+    use super::*;
 
+    #[ignore = "Requires network access and NGROK_AUTHTOKEN"]
+    #[test]
+    fn require_network() {
+        tokio::runtime::Runtime::new()
+            .unwrap()
+            .block_on(run_inner())
+            .unwrap();
+    }
+}
 // [finish](https://github.com/john-cd/rust_howto/issues/811)
 
 // https://ngrok.com/blog-post/ngrok-rs
@@ -93,6 +98,5 @@ fn require_network() {
 // https://github.com/ngrok/ngrok-rust/tree/main/ngrok/examples
 // https://github.com/ngrok/ngrok-rust/blob/main/ngrok/src/online_tests.rs
 
-// https://pinggy.io/blog/best_ngrok_alternatives/
+// https://pinggy.io/blog/best_ngrok-alternatives/
 // https://dev.to/ghoshbishakh/top-3-ngrok-alternatives-499e
-// ANCHOR_END: example

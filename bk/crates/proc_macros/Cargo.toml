@@ -4,12 +4,13 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description.workspace = true
+readme = "README.md"
+description = "Core procedural macro implementations (derive, attribute, and function-like) used in the book examples."
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
 license-file.workspace = true
-keywords.workspace = true
+keywords = ["proc-macro", "metaprogramming", "syn", "quote", "codegen"]
 categories = ["development-tools::procedural-macro-helpers"]
 publish.workspace = true
 
@@ -18,5 +19,5 @@ proc-macro = true
 
 [dependencies]
 proc-macro2 = "1.0"
-quote = "1.0.41"
-syn = { version = "2.0.108", features = ["full"] } # "full" feature is often needed for parsing various Rust constructs
+quote = "1.0.45"
+syn = { version = "2.0.117", features = ["full"] } # "full" feature is often needed for parsing various Rust constructs

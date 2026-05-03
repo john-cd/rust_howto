@@ -18,20 +18,29 @@ async fn main() -> Result<()> {
     println!("Response from httpbin: {response_text}");
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[tokio::test]
-async fn test() -> anyhow::Result<()> {
-    use tokio::io::AsyncWriteExt;
-    if !tokio::fs::try_exists("temp").await? {
-        tokio::fs::create_dir("temp").await?;
-    }
-    // Create a file to be posted.
-    let mut f = File::create("temp/message").await?;
-    f.write_all(b"Hello").await?;
+pub fn run() -> Result<()> {
+    main()
+}
 
-    // In a CI environment, we might want to skip tests that require network
-    // access.
-    // TODO main().await?;
-    Ok(())
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[tokio::test]
+    async fn test() -> anyhow::Result<()> {
+        use tokio::io::AsyncWriteExt;
+        if !tokio::fs::try_exists("temp").await? {
+            tokio::fs::create_dir("temp").await?;
+        }
+        // Create a file to be posted.
+        let mut f = File::create("temp/message").await?;
+        f.write_all(b"Hello").await?;
+
+        // In a CI environment, we might want to skip tests that require network
+        // access.
+        // TODO main().await?;
+        Ok(())
+    }
 }

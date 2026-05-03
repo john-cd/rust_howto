@@ -29,7 +29,12 @@ fn main() {
     // Immutable references are `Copy`, thus `ref_s1` is also still valid:
     println!("{ref_s1:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

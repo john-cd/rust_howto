@@ -1,5 +1,5 @@
 mod uavs;
 
 fn main() {
-    // uavs::main();
+    uavs::run();
 }

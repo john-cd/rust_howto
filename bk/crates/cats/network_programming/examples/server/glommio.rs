@@ -89,8 +89,13 @@ fn main() {
         .unwrap();
     println!("glommio example finished");
 }
+
 // Example adapted from <https://docs.rs/glommio/latest/glommio/>
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

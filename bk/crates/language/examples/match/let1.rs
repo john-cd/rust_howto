@@ -33,7 +33,12 @@ fn main() {
     let [start, middle @ .., end] = arr;
     println!("start: {start}, middle: {middle:?}, end: {end}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

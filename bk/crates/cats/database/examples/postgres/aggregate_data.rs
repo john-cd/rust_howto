@@ -16,7 +16,7 @@ struct Nation {
 /// Connects to a PostgreSQL database, queries artist nationalities and their
 /// counts, and prints the results. Data from
 // <https://github.com/MuseumofModernArt/collection/tree/main>.
-pub fn main() -> Result<(), Error> {
+fn main() -> Result<(), Error> {
     // The connection URL is formatted as
     // `postgresql://<user>:<password>@<host>/<db>`, for example
     // `postgresql://postgres:postgres@127.0.0.1/moma`.
@@ -41,4 +41,26 @@ pub fn main() -> Result<(), Error> {
     Ok(())
 }
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), Error> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn require_postgres_environment() -> Result<(), Error> {
+        if std::env::var("PG_URL").is_err() {
+            eprintln!(
+                "Skipping PostgreSQL aggregation example test; set PG_URL to run this test."
+            );
+            return Ok(());
+        }
+
+        main()?;
+        Ok(())
+    }
+}
 // [review](https://github.com/john-cd/rust_howto/issues/1162)

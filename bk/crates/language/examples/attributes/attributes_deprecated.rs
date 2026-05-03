@@ -16,7 +16,12 @@ fn main() {
     // In this case, the module-wide `#![allow(deprecated)]` attribute
     // (first line of the example) suppresses the warning.
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

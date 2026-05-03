@@ -1,3 +1,5 @@
 mod symbolic_links;
 
-fn main() {}
+fn main() {
+    symbolic_links::run();
+}

@@ -4,17 +4,19 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - caching"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = ["caching"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-cached = "0.56.0"
+cached = "0.59.0"
+clap = { version = "4.6.1", features = ["derive"] }
 lru = "0.18.0"
-moka = { version = "0.12.11", features = ["sync"] }
+moka = { version = "0.12.15", features = ["sync"] }

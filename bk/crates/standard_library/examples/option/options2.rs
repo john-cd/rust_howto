@@ -32,7 +32,12 @@ fn main() {
     // The absence of a value is noted explicitly with `None`.
     println!("{}", bake_cake(None));
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

@@ -4,15 +4,16 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - multimedia_audio"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = [ "multimedia::audio" ]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-cpal = "0.15"
+cpal = "0.17"

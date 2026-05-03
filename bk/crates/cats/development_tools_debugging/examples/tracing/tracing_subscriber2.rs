@@ -109,6 +109,10 @@ fn per_layer_filtering() {
 }
 // ANCHOR_END: example
 
+pub fn run() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
+    main()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

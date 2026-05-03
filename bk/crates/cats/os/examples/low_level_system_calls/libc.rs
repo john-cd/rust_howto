@@ -110,7 +110,12 @@ fn main() {
     strerror();
     null_pointer()
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

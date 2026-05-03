@@ -45,7 +45,12 @@ fn main() {
         String::from_utf8(decrypted_ciphertext).unwrap()
     );
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

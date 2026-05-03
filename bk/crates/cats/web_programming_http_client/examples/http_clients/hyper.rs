@@ -81,7 +81,12 @@ async fn main() -> anyhow::Result<()> {
     println!("\n\nDone!");
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

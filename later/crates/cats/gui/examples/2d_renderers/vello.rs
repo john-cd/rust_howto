@@ -1,195 +1,182 @@
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
-// //! This example demonstrates how to use the `vello` crate for 2D rendering
-// //! with GPU acceleration. It sets up a window using `winit` and draws
-// //! a simple scene containing a rectangle and a circle using Vello's API.
-// //!
-// //! ## Key Concepts:
-// //! - **Renderer:** The core Vello object responsible for rendering scenes to
-// //!   a surface (like a window).
-// //! - **SceneBuilder:** Used to construct a scene by adding shapes, paths,
-// //!   and other drawing commands.
-// //! - **Peniko:** Vello uses the `peniko` crate for defining colors, brushes,
-// //!   and fill/stroke styles.
-// //! - **Kurbo:** Vello uses the `kurbo` crate for defining geometric shapes
-// //!   (like Rect, Circle).
-// //! - **Winit:** Used for creating the window and handling user input and
-// //!   window events.
-// //! - **Pollster:** Used to block on asynchronous operations during
-// //!   initialization and rendering, simplifying the example for synchronous
-// //!   contexts.
+// ANCHOR: example
+//! A minimal Vello example using `winit`, `wgpu`, and `vello`.
+//!
+//! It creates a window, builds a simple 2D scene, and renders it every frame.
+use std::time::Instant;
 
-// // Import necessary items from the vello crate.
-// use vello::kurbo; // For defining geometric shapes.
-// use vello::peniko::{Brush, Color, Fill, Stroke}; // For defining drawing
-// styles. use vello::{AaConfig, DeviceParams, RenderParams, Renderer,
-// SceneBuilder}; // Core Vello types. // Use winit for window creation and
-// event handling. use winit::dpi::PhysicalSize;
-// use winit::event::Event;
-// use winit::event::WindowEvent;
-// use winit::event_loop::ControlFlow;
-// use winit::event_loop::EventLoop;
-// use winit::window::WindowBuilder;
+use pollster::block_on;
+use vello::AaConfig;
+use vello::RenderParams;
+use vello::Renderer;
+use vello::RendererOptions;
+use vello::SceneBuilder;
+use vello::kurbo::Affine;
+use vello::kurbo::Circle;
+use vello::kurbo::Rect;
+use vello::peniko::Brush;
+use vello::peniko::Color;
+use vello::peniko::Fill;
+use vello::peniko::Stroke;
+use winit::dpi::PhysicalSize;
+use winit::event::Event;
+use winit::event::WindowEvent;
+use winit::event_loop::ControlFlow;
+use winit::event_loop::EventLoop;
+use winit::window::WindowBuilder;
 
-// /// Entry point for the Vello example application.
-// ///
-// /// Initializes winit, creates a window, sets up the Vello renderer,
-// /// and runs the event loop to draw a scene.
-// pub fn main() -> Result<(), Box<dyn std::error::Error>> {
-//     // --- 1. Winit Setup ---
-//     // Create an event loop for handling window events.
-//     let event_loop = EventLoop::new();
-//     // Build the application window.
-//     let window = WindowBuilder::new()
-//         .with_title("Vello Example")
-//         .with_inner_size(PhysicalSize::new(600, 400))
-//        // Set initial window size.
-//        .build(&event_loop)?;
+fn main() {
+    let event_loop = EventLoop::new();
+    let window = WindowBuilder::new()
+        .with_title("Vello Example")
+        .with_inner_size(PhysicalSize::new(800, 600))
+        .build(&event_loop)
+        .expect("Failed to create window");
 
-//     // --- 2. Vello Renderer Initialization ---
-//     // Create a Vello Renderer instance associated with the window.
-//     // `Renderer::new` is async, so `pollster::block_on` is used here to wait
-//     // for it to complete in this synchronous `main` function context.
-//     // This might block the main thread briefly during startup.
-//     let mut renderer = pollster::block_on(Renderer::new(&window))?;
+    let instance = wgpu::Instance::new(wgpu::Backends::all());
+    let surface = unsafe { instance.create_surface(&window) }
+        .expect("Failed to create surface");
 
-//     // --- 3. Winit Event Loop ---
-//     event_loop.run(move |event, _, control_flow| {
-//         // Set the default control flow to Poll. This means the loop will run
-//         // continuously, checking for events and redrawing as needed.
-//         *control_flow = ControlFlow::Poll;
+    let adapter =
+        block_on(instance.request_adapter(&wgpu::RequestAdapterOptions {
+            power_preference: wgpu::PowerPreference::HighPerformance,
+            compatible_surface: Some(&surface),
+            force_fallback_adapter: false,
+        }))
+        .expect("Failed to request adapter");
 
-//         match event {
-//             // --- Event Handling ---
-//             Event::WindowEvent {
-//                 event: WindowEvent::CloseRequested,
-//                 // User clicked the close button.
-//                 ..
-//             } => {
-//                 // Set control flow to Exit to break out of the event loop
-//                 // and close the application.
-//                 *control_flow = ControlFlow::Exit;
-//             }
-//             Event::WindowEvent {
-//                 event: WindowEvent::Resized(physical_size),
-//                 // Window was resized.
-//                 ..
-//             } => {
-//                 // Optional: Handle window resize events if needed.
-//                 // Vello's `render_to_window` handles surface reconfiguration
-//                 // automatically based on the render params width/height.
-//                 println!("Window resized to: {physical_size:?}");
-//                 // Request a redraw to render the scene with the new size.
-//                 window.request_redraw();
-//             }
+    let (device, queue) = block_on(adapter.request_device(
+        &wgpu::DeviceDescriptor {
+            label: None,
+            features: wgpu::Features::empty(),
+            limits: wgpu::Limits::downlevel_defaults(),
+        },
+        None,
+    ))
+    .expect("Failed to request device");
 
-//             // --- Redrawing ---
-//             Event::RedrawRequested(_) => {
-//                 // This event is triggered when the window needs to be
-//                 // redrawn, either by the OS or by `window.request_redraw()`.
+    let mut surface_config = wgpu::SurfaceConfiguration {
+        usage: wgpu::TextureUsages::RENDER_ATTACHMENT
+            | wgpu::TextureUsages::COPY_SRC
+            | wgpu::TextureUsages::STORAGE_BINDING,
+        format: surface.get_supported_formats(&adapter)[0],
+        width: 800,
+        height: 600,
+        present_mode: wgpu::PresentMode::Fifo,
+        alpha_mode: wgpu::CompositeAlphaMode::Auto,
+        view_formats: vec![],
+    };
+    surface.configure(&device, &surface_config);
 
-//                 // Get the current inner dimensions of the window.
-//                 let width = window.inner_size().width;
-//                 let height = window.inner_size().height;
+    let mut renderer = Renderer::new(&device, RendererOptions::default())
+        .expect("Failed to create Vello renderer");
 
-//                 // --- 4. Scene Building ---
-//                 // Create a SceneBuilder to define what to draw.
-//                 let mut scene_builder = SceneBuilder::new();
+    let start_time = Instant::now();
 
-//                 // Define a red rectangle with a blue outline.
-//                 let rect = kurbo::Rect::new(50.0, 50.0, 250.0, 150.0);
-//                 // Fill the rectangle with solid red color.
-//                 scene_builder.fill(
-//                     Fill::NonZero, // Fill rule (NonZero is common).
-//                     kurbo::Affine::IDENTITY, // No transformation.
-//                     &Brush::Solid(Color::RED), // Solid red brush.
-//                     None, // No alpha mask.
-//                     &rect, // The shape to fill.
-//                 );
-//                 // Stroke the rectangle's outline with a 5px blue line.
-//                 scene_builder.stroke(
-//                     &Stroke::new(5.0), // 5px stroke width.
-//                     kurbo::Affine::IDENTITY, // No transformation.
-//                     &Brush::Solid(Color::BLUE), // Solid blue brush.
-//                     None, // No alpha mask.
-//                     &rect, // The shape to stroke.
-//                 );
+    event_loop.run(move |event, _, control_flow| {
+        *control_flow = ControlFlow::Poll;
 
-//                 // Define and draw a green circle.
-//                 let circle = kurbo::Circle::new((350.0, 100.0), 50.0);
-// // Center (350, 100), radius 50.
-//                  scene_builder.fill(
-//                     Fill::NonZero,
-//                     kurbo::Affine::IDENTITY,
-//                     &Brush::Solid(Color::GREEN), // Solid green brush.
-//                     None,
-//                     &circle, // The shape to fill.
-//                 );
+        match event {
+            Event::WindowEvent { event, .. } => match event {
+                WindowEvent::Resized(new_size) => {
+                    if new_size.width > 0 && new_size.height > 0 {
+                        surface_config.width = new_size.width;
+                        surface_config.height = new_size.height;
+                        surface.configure(&device, &surface_config);
+                    }
+                }
+                WindowEvent::CloseRequested => {
+                    *control_flow = ControlFlow::Exit
+                }
+                _ => (),
+            },
+            Event::RedrawRequested(_) => {
+                let scene = build_scene();
+                let render_params = RenderParams {
+                    base_color: Color::WHITE,
+                    width: surface_config.width,
+                    height: surface_config.height,
+                    antialiasing_method: AaConfig::Msaa8,
+                };
 
-//                 // Finalize the scene.
-//                 let scene = scene_builder.build();
+                let surface_texture = match surface.get_current_texture() {
+                    Ok(surface_texture) => surface_texture,
+                    Err(err) => {
+                        eprintln!("Failed to acquire surface texture: {err}");
+                        *control_flow = ControlFlow::Exit;
+                        return;
+                    }
+                };
 
-//                 // --- 5. Rendering ---
-//                 // Define parameters for rendering.
-//                 let render_params = RenderParams {
-//                   base_color: Color::WHITE,
-//                   // Background color when clearing.
-//                   width,
-//                   // Render width matches window width.
-//                   height,
-//                   // Render height matches window height.
-//                   antialiasing_method: AaConfig::Msaa8,
-//                   // Use 8x MSAA for smoother edges.
-//                 };
+                let texture_view = surface_texture
+                    .texture
+                    .create_view(&wgpu::TextureViewDescriptor::default());
 
-//                 // Define device parameters (optional, defaults are often
-//                 // fine).
-//                 let device_params = DeviceParams {
-//                     power_preference: wgpu::PowerPreference::HighPerformance,
-//                  // Request high performance GPU if available.
-//                  ..Default::default()                 };
+                if let Err(err) = renderer.render_to_texture(
+                    &device,
+                    &queue,
+                    &scene,
+                    &texture_view,
+                    &render_params,
+                ) {
+                    eprintln!("Failed to render Vello scene: {err}");
+                    *control_flow = ControlFlow::Exit;
+                    return;
+                }
 
-//                 // Render the scene to the window's surface.
-//                 // `render_to_window` is async, so `pollster::block_on` is
-//                 // used. In a more complex application, you might integrate
-//                 // this with an async runtime.
-//                 match pollster::block_on(renderer.render_to_window(
-//                     &window,
-//                     &scene,
-//                     &render_params,
-//                     &device_params,
-//                 )) {
-//                     Ok(_) => {} // Render successful.
-//                     Err(e) => {
-//                         // Handle rendering errors (e.g., surface lost).
-//                         eprintln!("Error rendering to window: {e}");
-//                         // You might want to recreate the renderer or exit
-//                         // here depending on the error.
-//                         *control_flow = ControlFlow::Exit;
-//                     }
-//                 }
-//             }
+                surface_texture.present();
+            }
+            Event::MainEventsCleared => {
+                window.request_redraw();
+            }
+            _ => (),
+        }
+    });
+}
 
-//             // --- Continuous Rendering ---
-//             Event::MainEventsCleared => {
-//                 // This event is fired after all window events have been
-//                 // processed. Requesting a redraw here ensures the
-// // application continuously renders frames, which is useful
-// // for animation or if the scene changes over time. For
-// // static scenes, we might only request redraws when
-// // necessary (e.g., after resize).
-// window.request_redraw();
-//             }
-//             _ => (), // Ignore other events.
-//         }
-//     });
+fn build_scene() -> vello::Scene {
+    let mut scene_builder = SceneBuilder::new();
 
-// // Note: The event loop runs indefinitely until `ControlFlow::Exit` is
-// // set. `event_loop.run` never returns in the normal case, so code here
-// // is unreachable. However, returning Ok(()) satisfies the function
-// // signature.
-// Ok(())
-// }
+    let rect = Rect::new(50.0, 50.0, 250.0, 150.0);
+    scene_builder.fill(
+        Fill::NonZero,
+        Affine::IDENTITY,
+        &Brush::Solid(Color::RED),
+        None,
+        &rect,
+    );
+    scene_builder.stroke(
+        &Stroke::new(5.0),
+        Affine::IDENTITY,
+        &Brush::Solid(Color::BLUE),
+        None,
+        &rect,
+    );
 
-pub fn main() {}
+    let circle = Circle::new((400.0, 120.0), 60.0);
+    scene_builder.fill(
+        Fill::NonZero,
+        Affine::IDENTITY,
+        &Brush::Solid(Color::GREEN),
+        None,
+        &circle,
+    );
+
+    scene_builder.build()
+}
+
+// ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires interactive example runtime"]
+    fn test_main() {
+        main();
+    }
+}

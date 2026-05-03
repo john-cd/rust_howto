@@ -12,7 +12,7 @@ use tar::Archive;
 ///
 /// It opens a gzipped tar archive, iterates over its entries, strips the
 /// "bundle/logs" prefix, and unpacks the files to the new paths.
-pub fn main() -> Result<()> {
+fn main() -> Result<()> {
     let file = File::open("temp/archive.tar.gz")?;
     let mut archive = Archive::new(GzDecoder::new(file));
     let prefix = "bundle/logs";
@@ -33,4 +33,16 @@ pub fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+pub fn run() -> Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main().unwrap();
+    }
+}
 // [review; tar_strip_prefix.rs is noplayground - fix?](https://github.com/john-cd/rust_howto/issues/256)

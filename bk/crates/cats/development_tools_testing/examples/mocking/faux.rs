@@ -51,6 +51,22 @@ impl<D: Database> UserService<D> {
     }
 }
 
+struct ActualDatabase; // Well, sort of...
+
+impl Database for ActualDatabase {
+    fn get_user(&self, id: u64) -> Option<User> {
+        (id == 1).then(|| User {
+            id,
+            name: "Alice".to_string(),
+        })
+    }
+
+    fn save_user(&self, user: &User) -> bool {
+        println!("Saved user: {user:?}");
+        true
+    }
+}
+
 /// A mock implementation of the `Database` trait.
 #[faux::create]
 struct MockDatabase {}
@@ -61,13 +77,24 @@ impl Database for MockDatabase {
     /// Mock implementation of `get_user`.
     /// This method will be mocked during testing.
     fn get_user(&self, _id: u64) -> Option<User> {
-        unimplemented!()
+        None
     }
 
     fn save_user(&self, _user: &User) -> bool {
         // This will be mocked as well.
-        unimplemented!()
+        false
     }
+}
+
+fn main() {
+    let service = UserService::new(ActualDatabase);
+    let original_name = service
+        .get_user_name(1)
+        .expect("demo database should return a user");
+    let updated = service.update_user_name(1, "Bob".to_string());
+
+    println!("Original user name: {original_name}");
+    println!("Update succeeded: {updated}");
 }
 
 /// Test module for `UserService` using `MockDatabase`.
@@ -130,3 +157,7 @@ mod tests {
     }
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}

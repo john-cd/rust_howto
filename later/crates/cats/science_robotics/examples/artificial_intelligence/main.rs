@@ -1,3 +1,5 @@
 mod bonsai_bt;
 
-fn main() {}
+fn main() {
+    bonsai_bt::run();
+}

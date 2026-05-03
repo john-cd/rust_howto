@@ -1,3 +1,5 @@
 mod stdin_stdout;
 
-fn main() {}
+fn main() {
+    stdin_stdout::run();
+}

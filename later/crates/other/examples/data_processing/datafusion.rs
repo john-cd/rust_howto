@@ -30,7 +30,7 @@ use datafusion::arrow::record_batch::RecordBatch;
 use datafusion::datasource::MemTable;
 use datafusion::execution::context::SessionContext;
 
-async fn run() -> datafusion::error::Result<()> {
+async fn run_query() -> datafusion::error::Result<()> {
     // Create a simple schema and data.
     let schema = Schema::new(vec![
         Field::new("name", DataType::Utf8, false),
@@ -81,11 +81,15 @@ async fn run() -> datafusion::error::Result<()> {
     Ok(())
 }
 
-pub fn main() {
+fn main() {
     let rt = tokio::runtime::Runtime::new().unwrap();
-    rt.block_on(run()).unwrap();
+    rt.block_on(run_query()).unwrap();
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

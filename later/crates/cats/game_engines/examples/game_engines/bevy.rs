@@ -1,7 +1,8 @@
 #![allow(dead_code)]
-// // ANCHOR: example
+// ANCHOR: example
 // // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR_END: example
+
 // //! This example demonstrates a basic Bevy application that:
 // //!
 // //! 1. Sets up a 2D camera.
@@ -44,8 +45,18 @@
 //     }
 // }
 
-// #[test]
-// fn test() {
-//     main();
-// }
+pub fn run() {
+    // TODO Placeholder until the Bevy demo is reintroduced.
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires interactive example runtime"]
+    fn test_main() {
+        run();
+    }
+}
 // // [finish](https://github.com/john-cd/rust_howto/issues/767)

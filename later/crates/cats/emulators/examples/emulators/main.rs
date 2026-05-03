@@ -1,3 +1,5 @@
 mod emulator;
 
-fn main() {}
+fn main() {
+    emulator::run();
+}

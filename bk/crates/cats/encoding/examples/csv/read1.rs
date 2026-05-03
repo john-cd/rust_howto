@@ -30,7 +30,12 @@ fn main() -> Result<(), csv::Error> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), csv::Error> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

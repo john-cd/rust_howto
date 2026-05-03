@@ -36,7 +36,12 @@ fn main() {
     // Test it out.
     tracing::error!("tracing configured!");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

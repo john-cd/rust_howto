@@ -1,4 +1,34 @@
+use clap::Parser;
+use clap::Subcommand;
+
 mod threadpool_fractal;
 mod threadpool_walk;
 
-fn main() {}
+#[derive(Parser)]
+struct Cli {
+    #[command(subcommand)]
+    command: Option<Commands>,
+}
+
+#[derive(Subcommand)]
+enum Commands {
+    #[command(name = "threadpool_fractal")]
+    ThreadpoolFractal,
+    #[command(name = "threadpool_walk")]
+    ThreadpoolWalk,
+}
+
+fn main() {
+    let cli = Cli::parse();
+
+    if let Some(command) = cli.command {
+        match command {
+            Commands::ThreadpoolFractal => {
+                threadpool_fractal::run();
+            }
+            Commands::ThreadpoolWalk => {
+                threadpool_walk::run();
+            }
+        }
+    }
+}

@@ -17,7 +17,7 @@ struct Author {
     country: String,
 }
 
-pub fn main() -> Result<(), Error> {
+fn main() -> Result<(), Error> {
     // Connect to the PostgreSQL database using the provided connection string.
     // The connection URL is formatted as
     // postgresql://<user>:<password>@<host>/<db>,
@@ -66,3 +66,7 @@ pub fn main() -> Result<(), Error> {
     Ok(())
 }
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), Error> {
+    main()
+}

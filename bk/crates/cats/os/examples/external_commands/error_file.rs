@@ -35,7 +35,12 @@ fn main() -> Result<(), std::io::Error> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), std::io::Error> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

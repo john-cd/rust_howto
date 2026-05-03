@@ -44,5 +44,20 @@ pub extern "C" fn create_point(x: f64, y: f64) -> Point {
     Point { x, y }
 }
 
+fn main() {}
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main() {
+        main();
+    }
+}
 // [fix; see build.rs](https://github.com/john-cd/rust_howto/issues/1002)

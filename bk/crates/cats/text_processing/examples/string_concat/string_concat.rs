@@ -124,7 +124,12 @@ fn main() {
     concatenate_with_write_macro();
     concatenate_with_chain();
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

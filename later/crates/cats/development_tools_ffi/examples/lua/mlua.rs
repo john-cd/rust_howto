@@ -26,7 +26,12 @@ fn main() -> LuaResult<()> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> LuaResult<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

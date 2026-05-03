@@ -11,7 +11,12 @@ fn main() -> Result<()> {
     println!("The current directory is {}", cwd.display());
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

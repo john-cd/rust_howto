@@ -57,7 +57,12 @@ fn main() {
     // `impl Speak`.
     // let dog: Dog = get_animal();
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

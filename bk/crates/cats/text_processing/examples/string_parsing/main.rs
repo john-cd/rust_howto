@@ -1,3 +1,5 @@
 mod from_str;
 
-fn main() {}
+fn main() {
+    from_str::run();
+}

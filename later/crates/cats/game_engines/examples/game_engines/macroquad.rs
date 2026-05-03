@@ -36,8 +36,18 @@ async fn main() {
 }
 // ANCHOR_END: example
 
-// #[test]
-// fn test() {
-//     main();
-// }
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires a graphics device"]
+    fn test_main() {
+        main();
+    }
+}
 // [finish](https://github.com/john-cd/rust_howto/issues/771) need proper testing

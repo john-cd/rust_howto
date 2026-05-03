@@ -1,3 +1,5 @@
 mod virtualization1;
 
-fn main() {}
+fn main() {
+    virtualization1::run();
+}

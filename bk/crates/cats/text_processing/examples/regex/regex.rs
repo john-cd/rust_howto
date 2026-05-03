@@ -131,7 +131,12 @@ image_lbl6: image_url6
 
     search_with_all_regexes(md);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

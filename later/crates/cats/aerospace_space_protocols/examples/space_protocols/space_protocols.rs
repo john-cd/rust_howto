@@ -27,6 +27,10 @@ fn main() {
 }
 // ANCHOR_END: example
 
+pub fn run() {
+    main();
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -35,3 +39,5 @@ mod tests {
         main();
     }
 }
+// TODO review the space_protocols crate and add more examples for telemetry,
+// telecommand, and file transfer protocols.

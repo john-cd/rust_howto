@@ -52,10 +52,14 @@ pub extern "C" fn Java_com_example_NativeLibrary_greet<'a>(
         .expect("Couldn't create Java String!")
 }
 
-fn main() {}
-
+fn main() {
+    // TODO
+}
 // ANCHOR_END: example
-// [finish](https://github.com/john-cd/rust_howto/issues/1029)
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
@@ -65,3 +69,4 @@ mod tests {
         main();
     }
 }
+// [finish](https://github.com/john-cd/rust_howto/issues/1029)

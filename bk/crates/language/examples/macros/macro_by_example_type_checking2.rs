@@ -89,7 +89,12 @@ fn main() {
     integer_only!(41 + 1);
     // ERROR: integer_only!(4.2_f64);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
