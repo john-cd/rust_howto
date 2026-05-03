@@ -1,3 +1,5 @@
+#![allow(unexpected_cfgs)]
+
 #[cfg(feature = "gtk")]
 use clap::Parser;
 #[cfg(feature = "gtk")]

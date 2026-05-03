@@ -1,5 +1,6 @@
 mod stdin_stdout;
 
-fn main() {
-    stdin_stdout::run();
+fn main() -> anyhow::Result<()> {
+    stdin_stdout::run()?;
+    Ok(())
 }

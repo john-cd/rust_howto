@@ -1,5 +1,5 @@
 mod encoding;
 
-fn main() {
-    encoding::run();
+fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+    encoding::run()
 }

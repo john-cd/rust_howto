@@ -21,20 +21,21 @@ enum Commands {
     RemoveDirAll,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Cwd => {
-                cwd::run();
+                cwd::run()?;
             }
             Commands::ManipulateDirs => {
-                manipulate_dirs::run();
+                manipulate_dirs::run()?;
             }
             Commands::RemoveDirAll => {
-                remove_dir_all::run();
+                remove_dir_all::run()?;
             }
         }
     }
+    Ok(())
 }

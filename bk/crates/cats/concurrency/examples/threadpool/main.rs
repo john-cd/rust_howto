@@ -18,17 +18,18 @@ enum Commands {
     ThreadpoolWalk,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::ThreadpoolFractal => {
-                threadpool_fractal::run();
+                threadpool_fractal::run()?;
             }
             Commands::ThreadpoolWalk => {
-                threadpool_walk::run();
+                threadpool_walk::run()?;
             }
         }
     }
+    Ok(())
 }

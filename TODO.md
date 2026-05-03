@@ -20,7 +20,7 @@
 
 ## NEXT
 
-- [ ] fix windows install script / install LLVM
+- [?] fix windows install script / install LLVM
 - [ ] consolidate GitHub workflows (use Docker always)
 
 ## WRITING
@@ -53,8 +53,8 @@
 - [ ] links.
 - [ ] templ.
 - [ ] tool_lib.
-- [ ] document WIP.
-- [ ] add tests WIP.
+- [ ] document
+- [ ] add tests
 - [ ] consolidate CLIs.
 - [ ] finish new tools in book_tooling
 - [ ] drafts: Finish
@@ -105,8 +105,6 @@
 - [?] review cancelable example in `xmpl/`
 - [?] move WIP examples from `playground/`
 - [?] Clean up playground crate
-
-
 
 - [ ] [GUI] Implement Winit window creation example [winit.rs](later/crates/cats/gui/examples/window_creation/winit.rs)
 - [ ] [Parser] Implement `DocumentParser` trait and URL parsing 1427.md ([#1427](https://github.com/john-cd/rust_howto/issues/1427))

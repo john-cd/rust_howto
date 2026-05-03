@@ -30,7 +30,7 @@ enum Commands {
     Postage,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -48,11 +48,12 @@ fn main() {
                 async_channels_oneshot2::run();
             }
             Commands::Kanal => {
-                kanal::run();
+                kanal::run()?;
             }
             Commands::Postage => {
                 postage::run();
             }
         }
     }
+    Ok(())
 }

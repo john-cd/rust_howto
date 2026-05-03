@@ -64,13 +64,12 @@
 //     ggez::event::run(&mut ctx, &mut event_loop, &mut state)
 // }
 
-pub fn main() -> anyhow::Result<()> {
-    // main()?;
-    Ok(())
+pub fn main() {
+    // main();
 }
 
-pub fn run() -> anyhow::Result<()> {
-    main()
+pub fn run() {
+    main();
 }
 
 #[cfg(test)]
@@ -83,4 +82,4 @@ mod tests {
         main().unwrap();
     }
 }
-// // [finish](https://github.com/john-cd/rust_howto/issues/769)
+// [finish](https://github.com/john-cd/rust_howto/issues/769)

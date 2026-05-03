@@ -1,5 +1,5 @@
 mod localization1;
 
-fn main() {
-    localization1::run();
+fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+    localization1::run()
 }

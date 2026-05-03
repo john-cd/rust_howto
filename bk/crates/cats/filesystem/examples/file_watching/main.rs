@@ -1,5 +1,6 @@
 mod notify;
 
-fn main() {
-    notify::run();
+fn main() -> anyhow::Result<()> {
+    notify::run()?;
+    Ok(())
 }

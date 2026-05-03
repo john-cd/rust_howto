@@ -24,7 +24,7 @@ enum Commands {
     FuturesUtil,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -36,11 +36,12 @@ fn main() {
                 futures2::run();
             }
             Commands::Futures3 => {
-                futures3::run();
+                futures3::run()?;
             }
             Commands::FuturesUtil => {
                 futures_util::run();
             }
         }
     }
+    Ok(())
 }

@@ -1,7 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-// COMING SOON
-// ANCHOR_END: example
 // //! This example demonstrates how to use `async-tungstenite` to connect to a
 // //! WebSocket server, send a message, and receive a response.
 // //!
@@ -56,7 +54,10 @@
 //     }
 // }
 
-fn main() {}
+fn main() {
+    // TODO
+}
+// ANCHOR_END: example
 
 pub fn run() {
     main();
