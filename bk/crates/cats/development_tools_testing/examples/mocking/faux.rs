@@ -77,12 +77,12 @@ impl Database for MockDatabase {
     /// Mock implementation of `get_user`.
     /// This method will be mocked during testing.
     fn get_user(&self, _id: u64) -> Option<User> {
-        unimplemented!()
+        None
     }
 
     fn save_user(&self, _user: &User) -> bool {
         // This will be mocked as well.
-        unimplemented!()
+        false
     }
 }
 
