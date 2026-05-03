@@ -41,7 +41,7 @@ impl RowStruct {
         query_values!("id" => self.key, "name" => self.name, "age" => self.age)
     }
 }
-
+  
 async fn example() -> anyhow::Result<()> {
     // Load environment variables from a .env file (for secure handling of
     // credentials).
@@ -51,20 +51,21 @@ async fn example() -> anyhow::Result<()> {
     let user = std::env::var("CASSANDRA_USER").expect("CASSANDRA_USER not set");
     let password = std::env::var("CASSANDRA_PASSWORD")
         .expect("CASSANDRA_PASSWORD not set");
-    let auth = StaticPasswordAuthenticatorProvider::new(&user, &password);
+    let auth = StaticPasswordAuthenticatorProvider::new(&user, &password
+      
     // For tests, you may use
     // `cdrs_tokio::authenticators::NoneAuthenticatorProvider`.
 
-    // Connect to a Cassandra cluster
+    // Connect to a Cassandra cluster:
     let cluster_config = NodeTcpConfigBuilder::new()
         .with_contact_point("127.0.0.1:9042".into())
         .with_authenticator_provider(Arc::new(auth))
         .build()
         .await
         .context("failed to build Cassandra cluster config")?;
+      
     // Create a CDRS session that holds a pool of connections to nodes
     // and provides an interface for interacting with the cluster:
-
     let session: CurrentSession = TcpSessionBuilder::new(
         RoundRobinLoadBalancingStrategy::new(),
         cluster_config,
@@ -72,7 +73,7 @@ async fn example() -> anyhow::Result<()> {
     .build()
     .await?;
 
-    // Create keyspace and table (if they don't exist)
+    // Create keyspace and table (if they don't exist):
     session
         .query(
             "CREATE KEYSPACE IF NOT EXISTS test_keyspace WITH replication = \
@@ -87,7 +88,7 @@ KEY, name TEXT, age INT);",
         )
         .await?;
 
-    // Insert a row into the 'users' table
+    // Insert a row into the 'users' table:
     let insert_query =
         "INSERT INTO test_keyspace.users (id, name, age) VALUES (?, ?, ?);";
     let id = Uuid::new_v4();
@@ -104,7 +105,7 @@ KEY, name TEXT, age INT);",
 
     println!("Inserted user: {name} (ID: {id})");
 
-    // Query the inserted row
+    // Query the inserted row:
     let select_query =
         "SELECT id, name, age FROM test_keyspace.users WHERE name = ?;";
     let rows = session
@@ -114,7 +115,7 @@ KEY, name TEXT, age INT);",
         .into_rows()
         .ok_or_else(|| anyhow::anyhow!("No rows in the result set"))?;
 
-    // Display the result of the query
+    // Display the result of the query:
     for row in rows {
         let row = <RowStruct as TryFromRowTrait>::try_from_row(row)?;
         let id = row.key;
