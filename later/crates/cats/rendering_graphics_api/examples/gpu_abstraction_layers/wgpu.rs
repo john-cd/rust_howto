@@ -19,10 +19,10 @@ fn main() {
 }
 
 async fn async_main() {
-    let instance = wgpu::Instance::new(wgpu::InstanceDescriptor {
-        backends: wgpu::Backends::PRIMARY,
-        dx12_shader_compiler: Default::default(),
-    });
+    let mut instance_desc =
+        wgpu::InstanceDescriptor::new_without_display_handle();
+    instance_desc.backends = wgpu::Backends::PRIMARY;
+    let instance = wgpu::Instance::new(instance_desc);
 
     let adapter = instance
         .request_adapter(&wgpu::RequestAdapterOptions {
@@ -37,14 +37,12 @@ async fn async_main() {
     println!("Using adapter: {} ({:?})", info.name, info.backend);
 
     let (device, queue) = adapter
-        .request_device(
-            &wgpu::DeviceDescriptor {
-                label: Some("wgpu example device"),
-                features: wgpu::Features::empty(),
-                limits: wgpu::Limits::default(),
-            },
-            None,
-        )
+        .request_device(&wgpu::DeviceDescriptor {
+            label: Some("wgpu example device"),
+            required_features: wgpu::Features::empty(),
+            required_limits: wgpu::Limits::default(),
+            ..Default::default()
+        })
         .await
         .expect("Failed to create device");
 

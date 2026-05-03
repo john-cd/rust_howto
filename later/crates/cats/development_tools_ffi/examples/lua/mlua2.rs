@@ -30,11 +30,7 @@ fn hello(_: &Lua, name: String) -> LuaResult<()> {
     Ok(())
 }
 
-/// Creates a Lua module with a function `hello`.
-///
-/// This function is marked as a Lua module using the `#[mlua::lua_module]`
-/// attribute.
-#[mlua::lua_module]
+/// Creates a Lua table of exports with a function `hello`.
 fn my_module(lua: &Lua) -> LuaResult<LuaTable> {
     let exports = lua.create_table()?;
     exports.set("hello", lua.create_function(hello)?)?;
@@ -42,6 +38,8 @@ fn my_module(lua: &Lua) -> LuaResult<LuaTable> {
 }
 
 fn main() -> LuaResult<()> {
+    let lua = Lua::new();
+    let _exports = my_module(&lua)?;
     println!("mlua module example compiled successfully.");
     Ok(())
 }

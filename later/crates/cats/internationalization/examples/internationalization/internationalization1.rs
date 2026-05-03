@@ -18,8 +18,9 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
         .next()
         .unwrap_or_else(|| current_locale.clone());
 
-    let locale =
-        Locale::try_from_bytes(locale_tag.as_bytes()).unwrap_or_default();
+    let locale = Locale::try_from_utf8(locale_tag.as_bytes())
+        .or_else(|_| Locale::try_from_str("und"))
+        .expect("'und' must always parse as a valid locale");
     let canonical = locale.to_string();
     let language = locale.id.language.to_string();
     let region = locale

@@ -4,6 +4,7 @@ use accesskit::Node;
 use accesskit::NodeId;
 use accesskit::Role;
 use accesskit::Tree;
+use accesskit::TreeId;
 use accesskit::TreeUpdate;
 
 // AccessKit makes it easier to implement accessibility, for screen readers
@@ -31,6 +32,7 @@ fn main() {
     let update = TreeUpdate {
         nodes: vec![(root_id, root), (button_id, button)],
         tree: Some(tree),
+        tree_id: TreeId::ROOT,
         focus: root_id,
     };
 
