@@ -41,7 +41,7 @@ impl RowStruct {
         query_values!("id" => self.key, "name" => self.name, "age" => self.age)
     }
 }
-  
+
 async fn example() -> anyhow::Result<()> {
     // Load environment variables from a .env file (for secure handling of
     // credentials).
@@ -51,8 +51,8 @@ async fn example() -> anyhow::Result<()> {
     let user = std::env::var("CASSANDRA_USER").expect("CASSANDRA_USER not set");
     let password = std::env::var("CASSANDRA_PASSWORD")
         .expect("CASSANDRA_PASSWORD not set");
-    let auth = StaticPasswordAuthenticatorProvider::new(&user, &password
-      
+    let auth = StaticPasswordAuthenticatorProvider::new(&user, &password);
+
     // For tests, you may use
     // `cdrs_tokio::authenticators::NoneAuthenticatorProvider`.
 
@@ -63,7 +63,7 @@ async fn example() -> anyhow::Result<()> {
         .build()
         .await
         .context("failed to build Cassandra cluster config")?;
-      
+
     // Create a CDRS session that holds a pool of connections to nodes
     // and provides an interface for interacting with the cluster:
     let session: CurrentSession = TcpSessionBuilder::new(

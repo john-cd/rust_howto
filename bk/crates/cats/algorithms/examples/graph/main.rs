@@ -16,15 +16,15 @@ struct Cli {
 #[derive(Subcommand)]
 enum Commands {
     #[command(name = "petgraph_astar")]
-    PetgraphAstar,
+    Astar,
     #[command(name = "petgraph_bfs")]
-    PetgraphBfs,
+    Bfs,
     #[command(name = "petgraph_dfs")]
-    PetgraphDfs,
+    Dfs,
     #[command(name = "petgraph_dijkstra")]
-    PetgraphDijkstra,
+    Dijkstra,
     #[command(name = "petgraph_toposort")]
-    PetgraphToposort,
+    Toposort,
 }
 
 fn main() {
@@ -32,19 +32,19 @@ fn main() {
 
     if let Some(command) = cli.command {
         match command {
-            Commands::PetgraphAstar => {
+            Commands::Astar => {
                 petgraph_astar::run();
             }
-            Commands::PetgraphBfs => {
+            Commands::Bfs => {
                 petgraph_bfs::run();
             }
-            Commands::PetgraphDfs => {
+            Commands::Dfs => {
                 petgraph_dfs::run();
             }
-            Commands::PetgraphDijkstra => {
+            Commands::Dijkstra => {
                 petgraph_dijkstra::run();
             }
-            Commands::PetgraphToposort => {
+            Commands::Toposort => {
                 petgraph_toposort::run();
             }
         }

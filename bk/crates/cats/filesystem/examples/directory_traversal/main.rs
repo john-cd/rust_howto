@@ -44,7 +44,7 @@ enum Commands {
     SkipDot,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -53,26 +53,26 @@ fn main() {
                 duplicate_name::run();
             }
             Commands::FindFile => {
-                find_file::run();
+                find_file::run()?;
             }
             Commands::Globset => {
-                globset::run();
+                globset::run()?;
             }
             Commands::Ignore => {
                 ignore::run();
             }
             Commands::IgnoreCase => {
-                ignore_case::run();
+                ignore_case::run()?;
             }
             #[cfg(target_os = "linux")]
             Commands::Loops => {
                 loops::run();
             }
             Commands::Modified => {
-                modified::run();
+                modified::run()?;
             }
             Commands::Png => {
-                png::run();
+                png::run()?;
             }
             Commands::Sizes => {
                 sizes::run();
@@ -82,4 +82,6 @@ fn main() {
             }
         }
     }
+
+    Ok(())
 }

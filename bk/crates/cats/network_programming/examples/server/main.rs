@@ -20,7 +20,7 @@ enum Commands {
     ListenUnused,
 }
 
-fn main() {
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -30,8 +30,10 @@ fn main() {
                 glommio::run();
             }
             Commands::ListenUnused => {
-                listen_unused::run();
+                listen_unused::run()?;
             }
         }
     }
+
+    Ok(())
 }

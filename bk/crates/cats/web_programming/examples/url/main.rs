@@ -30,32 +30,19 @@ enum Commands {
     Parse,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
-        if let Err(e) = match command {
-            Commands::Base => {
-                base::run()
-            }
-            Commands::Fragment => {
-                fragment::run()
-            }
-            Commands::New => {
-                new::run()
-            }
-            Commands::Origin => {
-                origin::run()
-            }
-            Commands::Origin1 => {
-                origin1::run()
-            }
-            Commands::Parse => {
-                parse::run()
-            }
-        }
-        {
-            eprintln!("{e}");
+        match command {
+            Commands::Base => base::run()?,
+            Commands::Fragment => fragment::run()?,
+            Commands::New => new::run()?,
+            Commands::Origin => origin::run().map_err(anyhow::Error::from)?,
+            Commands::Origin1 => origin1::run()?,
+            Commands::Parse => parse::run()?,
         }
     }
+
+    Ok(())
 }

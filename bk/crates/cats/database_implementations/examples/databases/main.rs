@@ -26,7 +26,7 @@ enum Commands {
     Surrealdb,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     #[cfg(any(feature = "sled", feature = "surrealdb"))]
     {
         let cli = Cli::parse();
@@ -35,13 +35,15 @@ fn main() {
             match command {
                 #[cfg(feature = "sled")]
                 Commands::Sled => {
-                    sled::run();
+                    sled::run()?;
                 }
                 #[cfg(feature = "surrealdb")]
                 Commands::Surrealdb => {
-                    surrealdb::run();
+                    surrealdb::run()?;
                 }
             }
         }
     }
+
+    Ok(())
 }

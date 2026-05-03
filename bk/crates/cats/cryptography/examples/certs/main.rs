@@ -24,7 +24,7 @@ enum Commands {
     X509Cert,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -33,14 +33,16 @@ fn main() {
                 der::run();
             }
             Commands::PemRfc7468 => {
-                pem_rfc7468::run();
+                pem_rfc7468::run().map_err(|e| anyhow::anyhow!(e.to_string()))?;
             }
             Commands::Pkcs8 => {
-                pkcs8::run();
+                pkcs8::run()?;
             }
             Commands::X509Cert => {
-                x509_cert::run();
+                x509_cert::run()?;
             }
         }
     }
+
+    Ok(())
 }

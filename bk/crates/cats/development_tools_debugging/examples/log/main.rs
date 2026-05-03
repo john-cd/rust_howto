@@ -21,59 +21,61 @@ struct Cli {
 #[derive(Subcommand)]
 enum Commands {
     #[command(name = "log_custom")]
-    LogCustom,
+    Custom,
     #[command(name = "log_custom_logger")]
-    LogCustomLogger,
+    CustomLogger,
     #[command(name = "log_debug")]
-    LogDebug,
+    Debug,
     #[command(name = "log_env_variable")]
-    LogEnvVariable,
+    EnvVariable,
     #[command(name = "log_error")]
-    LogError,
+    Error,
     #[command(name = "log_mod")]
-    LogMod,
+    Mod,
     #[command(name = "log_stdout")]
-    LogStdout,
+    Stdout,
     #[cfg(target_os = "linux")]
     #[command(name = "log_syslog")]
-    LogSyslog,
+    Syslog,
     #[command(name = "log_timestamp")]
-    LogTimestamp,
+    Timestamp,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
-            Commands::LogCustom => {
-                log_custom::run();
+            Commands::Custom => {
+                log_custom::run()?;
             }
-            Commands::LogCustomLogger => {
-                log_custom_logger::run();
+            Commands::CustomLogger => {
+                log_custom_logger::run()?;
             }
-            Commands::LogDebug => {
+            Commands::Debug => {
                 log_debug::run();
             }
-            Commands::LogEnvVariable => {
+            Commands::EnvVariable => {
                 log_env_variable::run();
             }
-            Commands::LogError => {
+            Commands::Error => {
                 log_error::run();
             }
-            Commands::LogMod => {
+            Commands::Mod => {
                 log_mod::run();
             }
-            Commands::LogStdout => {
+            Commands::Stdout => {
                 log_stdout::run();
             }
             #[cfg(target_os = "linux")]
-            Commands::LogSyslog => {
+            Commands::Syslog => {
                 log_syslog::run();
             }
-            Commands::LogTimestamp => {
+            Commands::Timestamp => {
                 log_timestamp::run();
             }
         }
     }
+
+    Ok(())
 }

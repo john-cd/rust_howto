@@ -27,7 +27,7 @@ fn main() {
         |node| {
             let (x, y) = graph[node];
             let (ex, ey) = graph[e];
-            (x.abs_diff(ex) + y.abs_diff(ey)) as u32
+            x.abs_diff(ex) + y.abs_diff(ey)
         },
     );
 

@@ -26,23 +26,25 @@ enum Commands {
     Confy,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::ConfigHierarchical => {
-                config_hierarchical::run();
+                config_hierarchical::run()?;
             }
             Commands::ConfigSingleton => {
-                config_singleton::run();
+                config_singleton::run()?;
             }
             Commands::ConfigTesting => {
                 config_testing::run();
             }
             Commands::Confy => {
-                confy::run();
+                confy::run()?;
             }
         }
     }
+
+    Ok(())
 }

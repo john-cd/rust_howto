@@ -26,7 +26,7 @@ enum Commands {
     Tantivy,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     #[cfg(any(feature = "meilisearch", feature = "tantivy"))]
     {
         let cli = Cli::parse();
@@ -35,13 +35,15 @@ fn main() {
             match command {
                 #[cfg(feature = "meilisearch")]
                 Commands::Meilisearch => {
-                    meilisearch::run();
+                    meilisearch::run()?;
                 }
                 #[cfg(feature = "tantivy")]
                 Commands::Tantivy => {
-                    tantivy::run();
+                    tantivy::run().map_err(|e| anyhow::anyhow!(e.to_string()))?;
                 }
             }
         }
     }
+
+    Ok(())
 }

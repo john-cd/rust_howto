@@ -22,7 +22,7 @@ enum Commands {
     String,
 }
 
-fn main() {
+fn main() -> Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -31,11 +31,13 @@ fn main() {
                 filename::run();
             }
             Commands::Request => {
-                request::run();
+                request::run()?;
             }
             Commands::String => {
                 string::run();
             }
         }
     }
+
+    Ok(())
 }

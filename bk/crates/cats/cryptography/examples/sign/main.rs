@@ -27,7 +27,7 @@ enum Commands {
     Hmac,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -36,17 +36,19 @@ fn main() {
                 dsa::run();
             }
             Commands::Ecdsa => {
-                ecdsa::run();
+                ecdsa::run()?;
             }
             Commands::Ed25519 => {
-                ed25519::run();
+                ed25519::run()?;
             }
             Commands::Ed25519Dalek => {
-                ed25519_dalek::run();
+                ed25519_dalek::run()?;
             }
             Commands::Hmac => {
-                hmac::run();
+                hmac::run().map_err(|e| anyhow::anyhow!("{e:?}"))?;
             }
         }
     }
+
+    Ok(())
 }

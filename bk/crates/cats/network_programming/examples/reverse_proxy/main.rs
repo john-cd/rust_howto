@@ -20,13 +20,13 @@ enum Commands {
     Pingora,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Ngrok => {
-                ngrok::run();
+                ngrok::run()?;
             }
             #[cfg(target_family = "unix")]
             Commands::Pingora => {
@@ -34,4 +34,6 @@ fn main() {
             }
         }
     }
+
+    Ok(())
 }

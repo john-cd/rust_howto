@@ -81,16 +81,17 @@ fn main() -> anyhow::Result<()> {
                 tracing_subscriber1b::run();
             }
             Commands::TracingSubscriber2 => {
-                tracing_subscriber2::run();
+                tracing_subscriber2::run()
+                    .map_err(|e| anyhow::anyhow!(e.to_string()))?;
             }
             Commands::TracingSubscriber2b => {
                 tracing_subscriber2b::run();
             }
             Commands::TracingSubscriber3 => {
-                tracing_subscriber3::run();
+                tracing_subscriber3::run()?;
             }
             Commands::TracingSubscriber3b => {
-                tracing_subscriber3b::run();
+                tracing_subscriber3b::run()?;
             }
             Commands::TracingSubscriber4 => {
                 tracing_subscriber4::run();

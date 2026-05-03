@@ -28,26 +28,28 @@ enum Commands {
     PicoArgs,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Clap => {
-                clap_example::run();
+                clap_example::run()?;
             }
             Commands::ClapBasic => {
                 clap_basic::run();
             }
             Commands::ClapComplete => {
-                clap_complete::run();
+                clap_complete::run()?;
             }
             Commands::Lexopt => {
-                lexopt::run();
+                lexopt::run()?;
             }
             Commands::PicoArgs => {
-                pico_args::run();
+                pico_args::run()?;
             }
         }
     }
+
+    Ok(())
 }

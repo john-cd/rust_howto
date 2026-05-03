@@ -42,7 +42,7 @@ enum Commands {
     VectorNorm,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -51,7 +51,7 @@ fn main() {
                 add_matrices::run();
             }
             Commands::DeserializeMatrix => {
-                deserialize_matrix::run();
+                deserialize_matrix::run()?;
             }
             Commands::InvertMatrix => {
                 invert_matrix::run();
@@ -79,4 +79,6 @@ fn main() {
             }
         }
     }
+
+    Ok(())
 }

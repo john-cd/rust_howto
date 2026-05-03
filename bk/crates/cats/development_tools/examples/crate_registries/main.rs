@@ -2,6 +2,7 @@
 
 mod crates_io;
 
-fn main() {
-    crates_io::run();
+fn main() -> anyhow::Result<()> {
+    crates_io::run()?;
+    Ok(())
 }

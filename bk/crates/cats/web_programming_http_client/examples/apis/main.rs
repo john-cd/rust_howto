@@ -27,28 +27,28 @@ enum Commands {
     RestPost,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Paginated => {
-                if let Err(err) = paginated::run() {
-                    eprintln!("{err}");
-                }
+                paginated::run()?;
             }
             Commands::RateLimited => {
-                rate_limited::run();
+                rate_limited::run()?;
             }
             Commands::RestGet => {
-                rest_get::run();
+                rest_get::run().map_err(|e| anyhow::anyhow!(e.to_string()))?;
             }
             Commands::RestHead => {
-                rest_head::run();
+                rest_head::run()?;
             }
             Commands::RestPost => {
-                rest_post::run();
+                rest_post::run()?;
             }
         }
     }
+
+    Ok(())
 }

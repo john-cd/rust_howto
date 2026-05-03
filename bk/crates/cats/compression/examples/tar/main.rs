@@ -14,11 +14,11 @@ struct Cli {
 #[derive(Subcommand)]
 enum Commands {
     #[command(name = "tar_compress")]
-    TarCompress,
+    Compress,
     #[command(name = "tar_decompress")]
-    TarDecompress,
+    Decompress,
     #[command(name = "tar_strip_prefix")]
-    TarStripPrefix,
+    StripPrefix,
 }
 
 fn main() -> anyhow::Result<()> {
@@ -26,14 +26,14 @@ fn main() -> anyhow::Result<()> {
 
     if let Some(command) = cli.command {
         match command {
-            Commands::TarCompress => {
-                tar_compress::run();
+            Commands::Compress => {
+                tar_compress::run()?;
             }
-            Commands::TarDecompress => {
-                tar_decompress::run();
+            Commands::Decompress => {
+                tar_decompress::run()?;
             }
-            Commands::TarStripPrefix => {
-                tar_strip_prefix::run();
+            Commands::StripPrefix => {
+                tar_strip_prefix::run()?;
             }
         }
     }

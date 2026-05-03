@@ -21,20 +21,22 @@ enum Commands {
     PostFile,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Download => {
-                download::run();
+                download::run()?;
             }
             Commands::Partial => {
-                partial::run();
+                partial::run()?;
             }
             Commands::PostFile => {
-                post_file::run();
+                post_file::run()?;
             }
         }
     }
+
+    Ok(())
 }

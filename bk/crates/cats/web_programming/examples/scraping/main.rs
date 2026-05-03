@@ -21,20 +21,22 @@ enum Commands {
     Unique,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Broken => {
-                broken::run();
+                broken::run()?;
             }
             Commands::ExtractLinks => {
-                extract_links::run();
+                extract_links::run()?;
             }
             Commands::Unique => {
-                unique::run();
+                unique::run()?;
             }
         }
     }
+
+    Ok(())
 }

@@ -18,17 +18,19 @@ enum Commands {
     Rustls,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::NativeTls => {
-                native_tls::run();
+                native_tls::run()?;
             }
             Commands::Rustls => {
-                rustls::run();
+                rustls::run()?;
             }
         }
     }
+
+    Ok(())
 }

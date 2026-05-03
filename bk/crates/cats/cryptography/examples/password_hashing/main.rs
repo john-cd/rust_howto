@@ -24,23 +24,25 @@ enum Commands {
     Scrypt,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Argon2 => {
-                argon2::run();
+                argon2::run().map_err(|e| anyhow::anyhow!("{e:?}"))?;
             }
             Commands::Bcrypt => {
-                bcrypt::run();
+                bcrypt::run().map_err(|e| anyhow::anyhow!(e.to_string()))?;
             }
             Commands::Pbkdf2 => {
-                pbkdf2::run();
+                pbkdf2::run().map_err(|e| anyhow::anyhow!("{e:?}"))?;
             }
             Commands::Scrypt => {
-                scrypt::run();
+                scrypt::run().map_err(|e| anyhow::anyhow!(e.to_string()))?;
             }
         }
     }
+
+    Ok(())
 }

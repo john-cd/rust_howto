@@ -4,7 +4,7 @@
 use std::error::Error;
 
 use scrypt::Scrypt;
-use scrypt::password_hash::PasswordHash;
+use scrypt::password_hash::phc::PasswordHash;
 use scrypt::password_hash::PasswordHasher;
 use scrypt::password_hash::PasswordVerifier;
 
