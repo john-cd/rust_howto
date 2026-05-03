@@ -6,6 +6,16 @@
 //!
 //! Loco is a web framework for Rust inspired by Ruby on Rails.
 
+<<<<<<< fix-unimplemented-mock-methods-faux-11345163998950228030
+use loco_rs::app::Hooks;
+use loco_rs::bgworker::Queue;
+use loco_rs::boot::{BootResult, StartMode};
+use loco_rs::controller::AppRoutes;
+use loco_rs::environment::Environment;
+use loco_rs::prelude::*;
+use loco_rs::task::Tasks;
+use std::path::Path;
+=======
 use std::path::Path;
 
 #[cfg(feature = "loco")]
@@ -24,6 +34,7 @@ use loco_rs::environment::Environment;
 use loco_rs::prelude::*;
 #[cfg(feature = "loco")]
 use loco_rs::task::Tasks;
+>>>>>>> main
 
 /// The application's main structure.
 #[cfg(feature = "loco")]
