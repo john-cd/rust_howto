@@ -18,10 +18,12 @@ fn main() {
 
     println!("{ref_s1:?} {ref_s2:?}"); // Last use of the `ref_*` variables.
 
-    // However, you can reassign the variable or obtain a mutable reference,
+    // However, you can obtain a mutable reference,
     // once the shared references are no longer in use.
     s1 = MyStruct(false);
     s1.0 = true;
+
+    println!("{s1:?}");
 }
 
 // ANCHOR_END: example

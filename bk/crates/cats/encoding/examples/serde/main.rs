@@ -27,13 +27,13 @@ enum Commands {
     SerdeJson,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Json => {
-                json::run();
+                json::run()?;
             }
             Commands::Monostate => {
                 monostate::run();
@@ -49,4 +49,5 @@ fn main() {
             }
         }
     }
+    Ok(())
 }

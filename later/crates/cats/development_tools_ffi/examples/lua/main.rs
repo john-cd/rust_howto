@@ -26,7 +26,8 @@ enum Commands {
     Mlua2,
 }
 
-fn main() {
+#[cfg(feature = "lua")]
+fn main() -> LuaResult<()> {
     #[cfg(feature = "lua")]
     {
         let cli = Cli::parse();
@@ -35,13 +36,17 @@ fn main() {
             match command {
                 #[cfg(feature = "lua")]
                 Commands::Mlua => {
-                    mlua::run();
+                    mlua::run()?;
                 }
                 #[cfg(feature = "lua")]
                 Commands::Mlua2 => {
-                    mlua2::run();
+                    mlua2::run()?;
                 }
             }
         }
     }
+    Ok(())
 }
+
+#[cfg(not(feature = "lua"))]
+fn main() {}

@@ -1,5 +1,5 @@
 mod internationalization1;
 
-fn main() {
-    internationalization1::run();
+fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+    internationalization1::run()
 }

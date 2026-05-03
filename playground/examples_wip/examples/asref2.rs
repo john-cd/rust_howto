@@ -88,6 +88,7 @@ fn main() {
     println!("Printing details for a bare media file:");
     print_media_details(&bare_file);
 }
+
 // ANCHOR_END: example
 
 pub fn run() {

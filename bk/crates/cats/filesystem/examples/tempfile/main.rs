@@ -1,5 +1,6 @@
 mod tempfile;
 
-fn main() {
-    tempfile::run();
+fn main() -> anyhow::Result<()> {
+    tempfile::run()?;
+    Ok(())
 }

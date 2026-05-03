@@ -58,7 +58,9 @@ async fn main() {
 // ANCHOR_END: example
 
 pub fn run() {
-    main();
+    // This example uses #[macroquad::main] which transforms the main function.
+    // The actual game logic runs through the macroquad runtime and cannot be
+    // directly invoked from here.
 }
 
 #[cfg(test)]

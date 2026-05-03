@@ -30,7 +30,7 @@ enum Commands {
     SharedStateParkingLot2,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -39,7 +39,7 @@ fn main() {
                 arc_make_mut::run();
             }
             Commands::GlobalMutState => {
-                global_mut_state::run();
+                global_mut_state::run()?;
             }
             Commands::SendSync => {
                 send_sync::run();
@@ -55,4 +55,5 @@ fn main() {
             }
         }
     }
+    Ok(())
 }

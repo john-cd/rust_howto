@@ -6,7 +6,6 @@
 //! volume, then writes it to the system temporary directory.
 
 use std::error::Error;
-use std::path::PathBuf;
 
 use ndarray::Array3;
 

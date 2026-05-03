@@ -72,17 +72,17 @@ fn main() {}
 // ANCHOR_END: example
 
 pub fn run() {
-	main();
+    main();
 }
 // // [finish](https://github.com/john-cd/rust_howto/issues/792)
 
 #[cfg(test)]
 mod tests {
-	use super::*;
+    use super::*;
 
-	#[test]
-	#[ignore = "requires interactive example runtime"]
-	fn test_main() {
-		main();
-	}
+    #[test]
+    #[ignore = "requires interactive example runtime"]
+    fn test_main() {
+        main();
+    }
 }

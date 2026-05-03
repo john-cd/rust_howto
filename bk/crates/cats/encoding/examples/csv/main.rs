@@ -36,35 +36,36 @@ enum Commands {
     Transform,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Delimiter => {
-                delimiter::run();
+                delimiter::run()?;
             }
             Commands::Filter => {
-                filter::run();
+                filter::run()?;
             }
             Commands::Invalid => {
-                invalid::run();
+                invalid::run()?;
             }
             Commands::Read => {
-                read::run();
+                read::run()?;
             }
             Commands::Read1 => {
-                read1::run();
+                read1::run()?;
             }
             Commands::SerdeSerialize => {
-                serde_serialize::run();
+                serde_serialize::run()?;
             }
             Commands::Serialize => {
-                serialize::run();
+                serialize::run()?;
             }
             Commands::Transform => {
-                transform::run();
+                transform::run()?;
             }
         }
     }
+    Ok(())
 }

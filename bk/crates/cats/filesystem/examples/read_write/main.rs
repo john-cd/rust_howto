@@ -21,20 +21,21 @@ enum Commands {
     SameFile,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Memmap2 => {
-                memmap2::run();
+                memmap2::run()?;
             }
             Commands::ReadFile => {
-                read_file::run();
+                read_file::run()?;
             }
             Commands::SameFile => {
-                same_file::run();
+                same_file::run()?;
             }
         }
     }
+    Ok(())
 }

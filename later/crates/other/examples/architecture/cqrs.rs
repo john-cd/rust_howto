@@ -248,9 +248,7 @@ mod read_store {
         // `get_all_products()`.
     }
 
-    /// `SimpleProductRepository` struct.
-
-    /// SimpleReadStore struct.
+    /// `SimpleReadStore` struct.
     ///
     /// Data Access Layer (DAL) with database entities (events here).
     #[derive(Clone)]

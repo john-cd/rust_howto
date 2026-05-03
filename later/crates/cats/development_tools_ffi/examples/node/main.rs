@@ -18,7 +18,7 @@ enum Commands {
     Neon,
 }
 
-fn main() {
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -27,8 +27,9 @@ fn main() {
                 napi::run();
             }
             Commands::Neon => {
-                neon::run();
+                neon::run()?;
             }
         }
     }
+    Ok(())
 }

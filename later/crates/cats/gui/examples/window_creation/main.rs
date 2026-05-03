@@ -30,13 +30,13 @@ fn main() -> anyhow::Result<()> {
         match command {
             #[cfg(not(windows))]
             Commands::Baseview => {
-                baseview::run();
+                baseview::run()?;
             }
             Commands::Tao => {
                 tao::run();
             }
             Commands::Winit => {
-                winit::run();
+                winit::run()?;
             }
         }
     }
