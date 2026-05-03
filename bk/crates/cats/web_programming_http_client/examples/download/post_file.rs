@@ -4,8 +4,6 @@
 
 use anyhow::Result;
 use tokio::fs;
-use tokio::fs::File;
-use tokio::io::AsyncReadExt;
 
 #[tokio::main]
 async fn main() -> Result<()> {
@@ -35,7 +33,7 @@ mod tests {
             tokio::fs::create_dir("temp").await?;
         }
         // Create a file to be posted.
-        let mut f = File::create("temp/message").await?;
+        let mut f = tokio::fs::File::create("temp/message").await?;
         f.write_all(b"Hello").await?;
 
         // In a CI environment, we might want to skip tests that require network

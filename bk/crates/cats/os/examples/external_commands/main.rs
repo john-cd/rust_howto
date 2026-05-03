@@ -43,7 +43,7 @@ enum Commands {
     Which,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -61,7 +61,7 @@ fn main() {
                 piped::run();
             }
             Commands::ProcessOutput => {
-                process_output::run();
+                process_output::run()?;
             }
             #[cfg(target_family = "unix")]
             Commands::ReadEnvVariable => {
@@ -76,4 +76,6 @@ fn main() {
             }
         }
     }
+
+    Ok(())
 }

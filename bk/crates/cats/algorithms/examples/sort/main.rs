@@ -14,11 +14,11 @@ struct Cli {
 #[derive(Subcommand)]
 enum Commands {
     #[command(name = "sort_basic")]
-    SortBasic,
+    Basic,
     #[command(name = "sort_float")]
-    SortFloat,
+    Float,
     #[command(name = "sort_struct")]
-    SortStruct,
+    Struct,
 }
 
 fn main() {
@@ -26,13 +26,13 @@ fn main() {
 
     if let Some(command) = cli.command {
         match command {
-            Commands::SortBasic => {
+            Commands::Basic => {
                 sort_basic::run();
             }
-            Commands::SortFloat => {
+            Commands::Float => {
                 sort_float::run();
             }
-            Commands::SortStruct => {
+            Commands::Struct => {
                 sort_struct::run();
             }
         }

@@ -21,20 +21,22 @@ enum Commands {
     Zip,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::AsyncCompression => {
-                async_compression::run();
+                async_compression::run()?;
             }
             Commands::Flate2 => {
-                flate2::run();
+                flate2::run()?;
             }
             Commands::Zip => {
-                zip::run();
+                zip::run()?;
             }
         }
     }
+
+    Ok(())
 }

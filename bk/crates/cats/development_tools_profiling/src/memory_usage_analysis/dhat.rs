@@ -80,8 +80,8 @@ fn main() {
     adhoc_profiling();
 }
 
-/// `dhat` also supports heap usage testing, where we can write tests and then
-/// check that they allocated as much heap memory as we expected.
+// `dhat` also supports heap usage testing, where we can write tests and then
+// check that they allocated as much heap memory as we expected.
 // Example adapted from <https://docs.rs/dhat/latest/dhat/>
 // ANCHOR_END: example
 

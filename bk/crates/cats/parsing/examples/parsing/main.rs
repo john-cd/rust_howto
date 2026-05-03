@@ -21,7 +21,7 @@ enum Commands {
     Winnow,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -30,11 +30,13 @@ fn main() {
                 nom::run();
             }
             Commands::TreeSitter => {
-                tree_sitter::run();
+                tree_sitter::run()?;
             }
             Commands::Winnow => {
-                winnow::run();
+                winnow::run()?;
             }
         }
     }
+
+    Ok(())
 }

@@ -30,7 +30,7 @@ enum Commands {
     CcDefines1,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -45,7 +45,7 @@ fn main() {
                 cc_bundled_static::run();
             }
             Commands::CcBundledStatic1 => {
-                cc_bundled_static1::run();
+                cc_bundled_static1::run()?;
             }
             Commands::CcDefines => {
                 cc_defines::run();
@@ -55,4 +55,6 @@ fn main() {
             }
         }
     }
+
+    Ok(())
 }

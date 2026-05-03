@@ -21,7 +21,7 @@ enum Commands {
     ManipulatePaths,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -30,11 +30,13 @@ fn main() {
                 camino::run();
             }
             Commands::Canonicalize => {
-                canonicalize::run();
+                canonicalize::run()?;
             }
             Commands::ManipulatePaths => {
                 manipulate_paths::run();
             }
         }
     }
+
+    Ok(())
 }

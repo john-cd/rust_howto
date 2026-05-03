@@ -102,11 +102,11 @@ impl Worker {
     /// (interrupting the current task if any).
     pub fn die(&mut self) -> anyhow::Result<()> {
         self.cancel_source.cancel_all()?; // Interrupt current tasks if any.
-        if let Some(sender) = self.s_die.take() {
-            if let Err(e) = sender.send(Die) {
-                tracing::error!("Die signal: channel error: {e}");
-                return Err(e.into());
-            }
+        if let Some(sender) = self.s_die.take()
+            && let Err(e) = sender.send(Die)
+        {
+            tracing::error!("Die signal: channel error: {e}");
+            return Err(e.into());
         }
         if let Some(thread) = self.thread.take() {
             if thread.join().is_err() {

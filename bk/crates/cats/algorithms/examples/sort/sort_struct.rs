@@ -35,7 +35,7 @@ fn main() {
     println!("{people:?}");
 
     // Sort people by age only:
-    people.sort_by(|a, b| b.age.cmp(&a.age));
+    people.sort_by_key(|p| std::cmp::Reverse(p.age));
 
     assert_eq!(
         people,

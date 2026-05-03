@@ -18,17 +18,19 @@ enum Commands {
     Ureq,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Hyper => {
-                hyper::run();
+                hyper::run()?;
             }
             Commands::Ureq => {
-                ureq::run();
+                ureq::run()?;
             }
         }
     }
+
+    Ok(())
 }

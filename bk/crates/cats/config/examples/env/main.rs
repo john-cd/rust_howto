@@ -23,13 +23,13 @@ enum Commands {
     Envy,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Dotenvy => {
-                dotenvy::run();
+                dotenvy::run()?;
             }
             Commands::Env => {
                 env::run();
@@ -39,4 +39,6 @@ fn main() {
             }
         }
     }
+
+    Ok(())
 }

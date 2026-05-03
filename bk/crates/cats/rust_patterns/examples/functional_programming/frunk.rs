@@ -22,6 +22,8 @@ use frunk::hlist;
 use frunk::hlist_pat;
 use frunk::monoid::combine_all;
 
+type Sculpted = frunk::HList![f32, i32, &'static str];
+
 fn main() {
     // -----------------------------------------------------------------------
     // HList: a statically typed heterogeneous list.
@@ -29,7 +31,7 @@ fn main() {
     // -----------------------------------------------------------------------
 
     // Build an HList with the `hlist!` macro.
-    let h = hlist![42i32, "hello", 3.14f64, true];
+    let h = hlist![42i32, "hello", std::f64::consts::PI, true];
 
     // Destructure with `hlist_pat!`.
     let hlist_pat![n, s, f, b] = h;
@@ -54,8 +56,7 @@ fn main() {
 
     // Sculpt: re-order / select a subset of types from an HList.
     let h5 = hlist![9000i32, "joe", 41.0f32, true];
-    let (reshaped, remainder2): (frunk::HList![f32, i32, &str], _) =
-        h5.sculpt();
+    let (reshaped, remainder2): (Sculpted, _) = h5.sculpt();
     assert_eq!(reshaped, hlist![41.0f32, 9000i32, "joe"]);
     assert_eq!(remainder2, hlist![true]);
 

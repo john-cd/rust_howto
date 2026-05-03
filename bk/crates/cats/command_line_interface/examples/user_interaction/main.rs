@@ -21,20 +21,22 @@ enum Commands {
     Inquire,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Indicatif => {
-                indicatif::run();
+                indicatif::run()?;
             }
             Commands::Indicatif2 => {
-                indicatif2::run();
+                indicatif2::run()?;
             }
             Commands::Inquire => {
                 inquire::run();
             }
         }
     }
+
+    Ok(())
 }

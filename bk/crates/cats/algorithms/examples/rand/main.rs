@@ -36,7 +36,7 @@ enum Commands {
     RandRange1,
 }
 
-fn main() {
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -54,7 +54,7 @@ fn main() {
                 rand_custom::run();
             }
             Commands::RandDistr => {
-                rand_distr::run();
+                rand_distr::run()?;
             }
             Commands::RandPassword => {
                 rand_password::run();
@@ -67,4 +67,6 @@ fn main() {
             }
         }
     }
+
+    Ok(())
 }

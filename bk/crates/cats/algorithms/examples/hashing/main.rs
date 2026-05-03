@@ -27,7 +27,7 @@ enum Commands {
     ShaDigest,
 }
 
-fn main() {
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -42,11 +42,13 @@ fn main() {
                 sha1::run();
             }
             Commands::Sha2 => {
-                sha2::run();
+                sha2::run()?;
             }
             Commands::ShaDigest => {
-                sha_digest::run();
+                sha_digest::run()?;
             }
         }
     }
+
+    Ok(())
 }

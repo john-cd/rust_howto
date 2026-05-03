@@ -51,25 +51,26 @@ enum Commands {
     UnwrapOrElse,
 }
 
-fn main() {
+fn main() -> ::anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Anyhow => {
-                anyhow::run();
+                anyhow::run()?;
             }
             Commands::Backtrace => {
-                backtrace::run();
+                backtrace::run().map_err(|e| ::anyhow::anyhow!(e.to_string()))?;
             }
             Commands::ColorEyre => {
-                color_eyre::run();
+                color_eyre::run()
+                    .map_err(|e| ::anyhow::anyhow!(e.to_string()))?;
             }
             Commands::ErrorHandling => {
                 error_handling::run();
             }
             Commands::Miette => {
-                miette::run();
+                miette::run().map_err(|e| ::anyhow::anyhow!(e.to_string()))?;
             }
             Commands::Panic => {
                 panic::run();
@@ -81,10 +82,11 @@ fn main() {
                 question_mark2::run();
             }
             Commands::Retain => {
-                retain::run();
+                retain::run()?;
             }
             Commands::Thiserror => {
-                thiserror::run();
+                thiserror::run()
+                    .map_err(|e| ::anyhow::anyhow!(e.to_string()))?;
             }
             Commands::Thiserror2 => {
                 thiserror2::run();
@@ -97,4 +99,6 @@ fn main() {
             }
         }
     }
+
+    Ok(())
 }

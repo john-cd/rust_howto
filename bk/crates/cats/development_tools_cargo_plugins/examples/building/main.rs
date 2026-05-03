@@ -2,6 +2,7 @@
 
 mod xshell;
 
-fn main() {
-    xshell::run();
+fn main() -> anyhow::Result<()> {
+    xshell::run()?;
+    Ok(())
 }

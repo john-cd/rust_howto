@@ -21,7 +21,7 @@ enum Commands {
     Chacha20poly1305,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -30,11 +30,13 @@ fn main() {
                 aes_gcm::run();
             }
             Commands::AesGcmSiv => {
-                aes_gcm_siv::run();
+                aes_gcm_siv::run().map_err(|e| anyhow::anyhow!("{e:?}"))?;
             }
             Commands::Chacha20poly1305 => {
                 chacha20poly1305::run();
             }
         }
     }
+
+    Ok(())
 }

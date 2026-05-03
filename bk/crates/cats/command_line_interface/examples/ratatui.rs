@@ -107,13 +107,12 @@ impl App {
     /// such as 'q' to quit, 'y' to confirm, or 'n' to cancel.
     fn handle_key_event(&mut self, key_event: KeyEvent) {
         match self.mode {
-            Mode::Running => {
-                if key_event.code == KeyCode::Char('q') {
-                    self.mode = Mode::Exiting
-                }
+            Mode::Running if key_event.code == KeyCode::Char('q') => {
+                self.mode = Mode::Exiting
                 // Call additional methods here to handle other
                 // key events.
             }
+            Mode::Running => {}
             Mode::Exiting => match key_event.code {
                 KeyCode::Char('y') => self.mode = Mode::Done,
                 KeyCode::Char('n') => self.mode = Mode::Running,
@@ -203,17 +202,6 @@ impl Widget for MiddleWidget {
     }
 }
 
-/// Test function to verify the behavior of `handle_key_event`.
-///
-/// It checks if pressing 'q' in `Running` mode changes the mode to
-/// `Exiting`.
-fn handle_key_event() -> io::Result<()> {
-    let mut app = App::default();
-    app.handle_key_event(KeyCode::Char('q').into());
-    assert_eq!(app.mode, Mode::Exiting);
-    // More tests here...
-    Ok(())
-}
 // ANCHOR_END: example
 
 #[cfg(test)]

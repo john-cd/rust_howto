@@ -24,7 +24,7 @@ enum Commands {
     OnceCell2,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -33,7 +33,7 @@ fn main() {
                 lazy_constant::run();
             }
             Commands::LazyStatic => {
-                lazy_static::run();
+                lazy_static::run()?;
             }
             Commands::OnceCell => {
                 once_cell::run();
@@ -43,4 +43,6 @@ fn main() {
             }
         }
     }
+
+    Ok(())
 }

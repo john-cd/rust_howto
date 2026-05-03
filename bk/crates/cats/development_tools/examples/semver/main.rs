@@ -20,38 +20,40 @@ struct Cli {
 enum Commands {
     #[cfg(not(windows))]
     #[command(name = "semver_command")]
-    SemverCommand,
+    Command,
     #[command(name = "semver_complex")]
-    SemverComplex,
+    Complex,
     #[command(name = "semver_latest")]
-    SemverLatest,
+    Latest,
     #[command(name = "semver_parse")]
-    SemverParse,
+    Parse,
     #[command(name = "semver_prerelease")]
-    SemverPrerelease,
+    Prerelease,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             #[cfg(not(windows))]
-            Commands::SemverCommand => {
-                semver_command::run();
+            Commands::Command => {
+                semver_command::run()?;
             }
-            Commands::SemverComplex => {
-                semver_complex::run();
+            Commands::Complex => {
+                semver_complex::run()?;
             }
-            Commands::SemverLatest => {
-                semver_latest::run();
+            Commands::Latest => {
+                semver_latest::run()?;
             }
-            Commands::SemverParse => {
-                semver_parse::run();
+            Commands::Parse => {
+                semver_parse::run()?;
             }
-            Commands::SemverPrerelease => {
-                semver_prerelease::run();
+            Commands::Prerelease => {
+                semver_prerelease::run()?;
             }
         }
     }
+
+    Ok(())
 }

@@ -21,20 +21,22 @@ enum Commands {
     Header,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Get => {
-                get::run();
+                get::run()?;
             }
             Commands::Get1 => {
-                get1::run();
+                get1::run()?;
             }
             Commands::Header => {
-                header::run();
+                header::run()?;
             }
         }
     }
+
+    Ok(())
 }
