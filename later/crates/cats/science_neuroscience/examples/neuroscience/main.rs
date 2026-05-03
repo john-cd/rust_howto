@@ -1,5 +1,5 @@
 mod neuro;
 
-fn main() {
-    neuro::run();
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    neuro::run()
 }

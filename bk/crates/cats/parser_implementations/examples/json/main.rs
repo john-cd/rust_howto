@@ -21,7 +21,7 @@ enum Commands {
     SimdJson,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -30,11 +30,12 @@ fn main() {
                 json5::run();
             }
             Commands::SerdeJson => {
-                serde_json::run();
+                serde_json::run().map_err(|e| anyhow::anyhow!("{}", e))?;
             }
             Commands::SimdJson => {
                 simd_json::run();
             }
         }
     }
+    Ok(())
 }

@@ -1,5 +1,5 @@
 mod rust_ini;
 
-fn main() {
-    rust_ini::run();
+fn main() -> anyhow::Result<()> {
+    rust_ini::run()
 }

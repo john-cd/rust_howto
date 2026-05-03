@@ -21,7 +21,7 @@ enum Commands {
     Tl,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -33,8 +33,9 @@ fn main() {
                 html5ever::run();
             }
             Commands::Tl => {
-                tl::run();
+                tl::run()?;
             }
         }
     }
+    Ok(())
 }

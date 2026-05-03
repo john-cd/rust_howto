@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
-use std::time::Duration;
+
 
 use tello::Drone;
 use tello::Message;

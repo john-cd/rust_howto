@@ -1,5 +1,5 @@
 mod multimedia1;
 
-fn main() {
-    multimedia1::run();
+fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+    multimedia1::run()
 }

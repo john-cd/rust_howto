@@ -1,5 +1,5 @@
 mod plotly;
 
-fn main() {
-    plotly::run();
+fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+    plotly::run()
 }
