@@ -6,6 +6,7 @@ mod find_file;
 mod globset;
 mod ignore;
 mod ignore_case;
+#[cfg(target_os = "linux")]
 mod loops;
 mod modified;
 mod png;
@@ -30,6 +31,7 @@ enum Commands {
     Ignore,
     #[command(name = "ignore_case")]
     IgnoreCase,
+    #[cfg(target_os = "linux")]
     #[command(name = "loops")]
     Loops,
     #[command(name = "modified")]
@@ -62,6 +64,7 @@ fn main() {
             Commands::IgnoreCase => {
                 ignore_case::run();
             }
+            #[cfg(target_os = "linux")]
             Commands::Loops => {
                 loops::run();
             }

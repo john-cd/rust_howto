@@ -1,7 +1,9 @@
 use clap::Parser;
 use clap::Subcommand;
 
+#[cfg(target_family = "unix")]
 mod nix;
+#[cfg(target_family = "unix")]
 mod rustix;
 
 #[derive(Parser)]
@@ -12,8 +14,10 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Commands {
+    #[cfg(target_family = "unix")]
     #[command(name = "nix")]
     Nix,
+    #[cfg(target_family = "unix")]
     #[command(name = "rustix")]
     Rustix,
 }
@@ -23,9 +27,11 @@ fn main() {
 
     if let Some(command) = cli.command {
         match command {
+            #[cfg(target_family = "unix")]
             Commands::Nix => {
                 nix::run();
             }
+            #[cfg(target_family = "unix")]
             Commands::Rustix => {
                 rustix::run();
             }
