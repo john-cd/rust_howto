@@ -1,3 +1,3 @@
-mod aws_lambda;
-mod aws_sdk;
-mod shuttle;
+pub mod aws_lambda;
+pub mod aws_sdk;
+pub mod shuttle;

@@ -7,7 +7,7 @@
 
 use std::error::Error;
 
-use icu_locid::Locale;
+use icu_locale_core::Locale;
 use sys_locale::get_locale;
 use sys_locale::get_locales;
 

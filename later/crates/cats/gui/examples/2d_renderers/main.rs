@@ -6,10 +6,12 @@ mod femtovg;
 mod minifb;
 #[cfg(feature = "skia")]
 mod skia_safe;
-#[cfg(feature = "vello")]
+#[cfg(all(feature = "vello", not(windows)))]
+// TODO review Vello support for Windows
 mod vello;
 mod vger;
-#[cfg(feature = "webrender")]
+#[cfg(all(feature = "webrender", not(windows)))]
+// TODO Webrender support Windows
 mod webrender;
 
 #[derive(Parser)]
@@ -28,12 +30,12 @@ enum Commands {
     #[cfg(feature = "skia")]
     #[command(name = "skia_safe")]
     SkiaSafe,
-    #[cfg(feature = "vello")]
+    #[cfg(all(feature = "vello", not(windows)))]
     #[command(name = "vello")]
     Vello,
     #[command(name = "vger")]
     Vger,
-    #[cfg(feature = "webrender")]
+    #[cfg(all(feature = "webrender", not(windows)))]
     #[command(name = "webrender")]
     Webrender,
 }
@@ -54,14 +56,14 @@ fn main() {
             Commands::SkiaSafe => {
                 skia_safe::run();
             }
-            #[cfg(feature = "vello")]
+            #[cfg(all(feature = "vello", not(windows)))]
             Commands::Vello => {
                 vello::run();
             }
             Commands::Vger => {
                 vger::run();
             }
-            #[cfg(feature = "webrender")]
+            #[cfg(all(feature = "webrender", not(windows)))]
             Commands::Webrender => {
                 webrender::run();
             }

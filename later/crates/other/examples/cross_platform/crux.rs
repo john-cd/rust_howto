@@ -62,10 +62,6 @@ pub struct Counter;
 /// logic, especially model changes and side-effects triggered by events.
 /// Apps can be composed from modules, each resembling a smaller, simpler
 impl App for Counter {
-    // A user-friendly API used to request effects and provide events
-    // that should be dispatched when the effect is completed. For example, a
-    // HTTP client is a capability.
-    type Capabilities = ();
     // A side-effect the core can request from the shell.
     // This is typically a form of I/O or similar interaction with the host
     // platform. Updating the UI is considered an effect.
@@ -86,7 +82,6 @@ impl App for Counter {
         &self,
         event: Self::Event,
         model: &mut Self::Model,
-        _caps: &(),
     ) -> Command<Effect, Event> {
         match event {
             Event::Increment => model.count += 1,

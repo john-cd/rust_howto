@@ -2,6 +2,7 @@ use clap::Parser;
 use clap::Subcommand;
 
 mod dioxus;
+#[cfg(not(windows))] // TODO review Windows support
 mod tauri;
 
 #[derive(Parser)]
@@ -14,6 +15,7 @@ struct Cli {
 enum Commands {
     #[command(name = "dioxus")]
     Dioxus,
+    #[cfg(not(windows))]
     #[command(name = "tauri")]
     Tauri,
 }
@@ -26,6 +28,7 @@ fn main() {
             Commands::Dioxus => {
                 dioxus::run();
             }
+            #[cfg(not(windows))]
             Commands::Tauri => {
                 tauri::run();
             }
