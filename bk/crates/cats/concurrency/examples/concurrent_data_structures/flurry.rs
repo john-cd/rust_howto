@@ -106,7 +106,9 @@ fn main() {
 }
 // ANCHOR_END: example
 
-// [review https://github.com/jonhoo/flurry/blob/main/benches/flurry_dashmap.rs](https://github.com/john-cd/rust_howto/issues/1152)
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
@@ -116,3 +118,4 @@ mod tests {
         main();
     }
 }
+// [review https://github.com/jonhoo/flurry/blob/main/benches/flurry_dashmap.rs](https://github.com/john-cd/rust_howto/issues/1152)

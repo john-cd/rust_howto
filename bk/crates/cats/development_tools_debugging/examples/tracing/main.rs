@@ -51,7 +51,7 @@ enum Commands {
     TracingSubscriber4,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -97,4 +97,5 @@ fn main() {
             }
         }
     }
+    Ok(())
 }

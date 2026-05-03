@@ -6,12 +6,13 @@ use std::sync::Arc;
 
 use anyhow::Context;
 use cdrs_tokio::IntoCdrsValue;
-use cdrs_tokio::TryFromRow;
 use cdrs_tokio::authenticators::StaticPasswordAuthenticatorProvider;
 use cdrs_tokio::cluster::NodeTcpConfigBuilder;
 use cdrs_tokio::cluster::TcpConnectionManager;
 use cdrs_tokio::cluster::session::Session;
+use cdrs_tokio::cluster::session::SessionBuilder;
 use cdrs_tokio::cluster::session::TcpSessionBuilder;
+use cdrs_tokio::frame::TryFromRow as TryFromRowTrait;
 use cdrs_tokio::load_balancing::RoundRobinLoadBalancingStrategy;
 use cdrs_tokio::query::*;
 use cdrs_tokio::query_values;
@@ -27,7 +28,7 @@ type CurrentSession = Session<
     RoundRobinLoadBalancingStrategy<TransportTcp, TcpConnectionManager>,
 >;
 
-#[derive(Clone, Debug, IntoCdrsValue, TryFromRow, PartialEq)]
+#[derive(Clone, Debug, IntoCdrsValue, cdrs_tokio::TryFromRow, PartialEq)]
 struct RowStruct {
     key: Uuid,
     name: String,
@@ -107,7 +108,7 @@ KEY, name TEXT, age INT);",
     let select_query =
         "SELECT id, name, age FROM test_keyspace.users WHERE name = ?;";
     let rows = session
-        .query_with_values(select_query, (name,))
+        .query_with_values(select_query, query_values!(name))
         .await?
         .response_body()?
         .into_rows()
@@ -115,7 +116,10 @@ KEY, name TEXT, age INT);",
 
     // Display the result of the query
     for row in rows {
-        let (id, name, age): (Uuid, String, i32) = row.try_into()?;
+        let row = <RowStruct as TryFromRowTrait>::try_from_row(row)?;
+        let id = row.key;
+        let name = row.name;
+        let age = row.age;
         println!("Found user: {name} (ID: {id}, Age: {age})");
     }
 
@@ -134,10 +138,15 @@ pub async fn run() -> anyhow::Result<()> {
 
 #[cfg(test)]
 mod tests {
+    use std::sync::Mutex;
+
     use super::*;
+
+    static ENV_MUTEX: Mutex<()> = Mutex::new(());
+
     #[tokio::test]
     async fn require_external_svc() -> anyhow::Result<()> {
-        let _lock = super::ENV_MUTEX.lock().unwrap();
+        let _lock = ENV_MUTEX.lock().unwrap();
         let user = std::env::var("TEST_CASSANDRA_USER")
             .expect("TEST_CASSANDRA_USER must be set");
         let password = std::env::var("TEST_CASSANDRA_PASSWORD")

@@ -16,8 +16,8 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-RustQuant = { version = "0.3", optional = true }
+# TODO RustQuant = { version = "0.3", optional = true }
 
 [features]
 default = []
-rustquant = ["dep:RustQuant"]
+rustquant = [] # TODO "dep:RustQuant"]

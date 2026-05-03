@@ -3,7 +3,6 @@
 // // COMING SOON
 // ANCHOR_END: example
 
-
 // //! # OpenRR Example
 // //!
 // //! This example demonstrates how to use the `openrr` crate to control a
