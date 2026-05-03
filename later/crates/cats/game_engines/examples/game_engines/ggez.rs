@@ -69,7 +69,7 @@ pub fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
-pub fn run() -> GameResult {
+pub fn run() -> anyhow::Result<()> {
     main()
 }
 

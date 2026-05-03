@@ -12,16 +12,19 @@
 //! - Build the native module: `cargo build`
 //! - Run the JavaScript file: `node index.js`
 
+#[cfg(feature = "neon")]
 use neon::prelude::*;
 
 /// A simple function that returns a JavaScript string.
+#[cfg(feature = "neon")]
 fn hello(mut cx: FunctionContext) -> JsResult<JsString> {
     // Create a JavaScript string
     Ok(cx.string("hello from neon!"))
 }
 
 // Entry point of the Neon module.
-#[neon::main]
+#[cfg(feature = "neon")]
+#[::neon::main]
 fn main(mut cx: ModuleContext) -> NeonResult<()> {
     // Expose the hello function to JavaScript
     cx.export_function("hello", hello)?;
@@ -29,8 +32,17 @@ fn main(mut cx: ModuleContext) -> NeonResult<()> {
 }
 // ANCHOR_END: example
 
-pub fn run() -> anyhow::Result<()> {
-    // TODO main()?;
+#[cfg(not(feature = "neon"))]
+fn main() {
+    println!("Neon example requires the `neon` feature.");
+}
+
+/// Runs the Neon example.
+///
+/// Note: This is a placeholder as Neon modules are typically executed
+/// within a Node.js environment.
+pub fn run() -> Result<(), Box<dyn std::error::Error>> {
+    main();
     Ok(())
 }
 

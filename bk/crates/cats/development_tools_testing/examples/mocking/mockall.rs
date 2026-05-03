@@ -82,8 +82,8 @@ struct ActualRepository;
 
 impl UserRepository for ActualRepository {
     fn find_by_id(&self, id: u64) -> Option<User> {
-        // In a real implementation, this would query a database. For this example,
-        // we'll just return a dummy user if the ID is 1.
+        // In a real implementation, this would query a database. For this
+        // example, we'll just return a dummy user if the ID is 1.
         (id == 1).then(|| User {
             id,
             name: "John Doe".to_string(),

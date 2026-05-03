@@ -12,7 +12,8 @@
 
 #[tokio::main]
 async fn main() -> Result<(), tokio_postgres::Error> {
-    // Connect to the database. The connection string is read from the `PG_URL` environment variable.
+    // Connect to the database. The connection string is read from the `PG_URL`
+    // environment variable.
     let url = std::env::var("PG_URL").expect("PG_URL must be set");
     let (client, connection) =
         tokio_postgres::connect(&url, tokio_postgres::NoTls).await?;

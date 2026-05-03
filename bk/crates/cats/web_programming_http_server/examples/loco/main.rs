@@ -8,18 +8,28 @@
 
 use std::path::Path;
 
+#[cfg(feature = "loco")]
 use loco_rs::app::Hooks;
+#[cfg(feature = "loco")]
 use loco_rs::bgworker::Queue;
+#[cfg(feature = "loco")]
 use loco_rs::boot::BootResult;
+#[cfg(feature = "loco")]
 use loco_rs::boot::StartMode;
+#[cfg(feature = "loco")]
 use loco_rs::controller::AppRoutes;
+#[cfg(feature = "loco")]
 use loco_rs::environment::Environment;
+#[cfg(feature = "loco")]
 use loco_rs::prelude::*;
+#[cfg(feature = "loco")]
 use loco_rs::task::Tasks;
 
 /// The application's main structure.
+#[cfg(feature = "loco")]
 pub struct App;
 
+#[cfg(feature = "loco")]
 #[async_trait]
 impl Hooks for App {
     /// Sets the application name.
@@ -57,6 +67,7 @@ impl Hooks for App {
 }
 
 /// A simple controller for the home page.
+#[cfg(feature = "loco")]
 mod home {
     use super::*;
 
@@ -87,6 +98,7 @@ async fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    #[cfg(feature = "loco")]
     #[tokio::test]
     async fn test_app_init() {
         // Verification that the main logic is accessible
