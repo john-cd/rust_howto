@@ -27,26 +27,27 @@ enum Commands {
     UrlEncode,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Base64 => {
-                base64::run();
+                base64::run()?;
             }
             Commands::Hex => {
-                hex::run();
+                hex::run()?;
             }
             Commands::PercentEncode => {
-                percent_encode::run();
+                percent_encode::run()?;
             }
             Commands::PercentEncoding => {
-                percent_encoding::run();
+                percent_encoding::run()?;
             }
             Commands::UrlEncode => {
                 url_encode::run();
             }
         }
     }
+    Ok(())
 }

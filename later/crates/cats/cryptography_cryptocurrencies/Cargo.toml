@@ -11,7 +11,7 @@ homepage.workspace = true
 repository.workspace = true
 
 keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-categories = [ "cryptography::cryptocurrencies" ]
+categories = ["cryptography::cryptocurrencies"]
 publish.workspace = true
 autolib = false
 

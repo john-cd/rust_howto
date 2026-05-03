@@ -17,10 +17,10 @@ build = "build.rs"
 autolib = false
 
 [dependencies]
-clap = { version = "4.6.1", features = ["derive"] }
 anyhow = "1.0.102"
 autocfg = "1.5.0"
 cc = "1.2.61"
+clap = { version = "4.6.1", features = ["derive"] }
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 

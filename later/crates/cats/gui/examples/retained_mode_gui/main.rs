@@ -46,7 +46,7 @@ fn main() -> anyhow::Result<()> {
                 iced::run();
             }
             Commands::Slint => {
-                slint::run();
+                slint::run()?;
             }
             #[cfg(feature = "vizia")]
             Commands::Vizia => {

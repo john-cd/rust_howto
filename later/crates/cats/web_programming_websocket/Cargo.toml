@@ -15,12 +15,12 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
+anyhow = "1.0.102"
 async-tungstenite = { version = "0.34.1", features = [
-   "tokio-runtime",
-   "tokio-native-tls",
+    "tokio-runtime",
+    "tokio-native-tls",
 ] }
+futures-util = "0.3.32"
+tokio = { version = "1.52.1", features = ["macros", "rt-multi-thread", "net"] }
 tokio-tungstenite = "0.29.0"
 tungstenite = "0.29.0"
-anyhow = "1.0.102"
-futures-util = "0.3.32"
-tokio = { version = "1.52.1", features = ["macros", "rt-multi-thread", "net"]  }

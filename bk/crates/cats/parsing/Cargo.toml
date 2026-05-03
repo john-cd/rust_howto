@@ -19,8 +19,8 @@ autolib = false
 ignored = ["pest_generator"]
 
 [dependencies]
-clap = { version = "4.6.1", features = ["derive"] }
 anyhow = "1.0.102"
+clap = { version = "4.6.1", features = ["derive"] }
 nom = "8.0.0"
 pest = "2.8.6"
 pest_derive = "2.8.6"

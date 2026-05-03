@@ -15,8 +15,8 @@ categories = ["development-tools"]
 publish.workspace = true
 
 [dependencies]
-clap = { version = "4.6.1", features = ["derive"] }
 anyhow = "1.0.102"
+clap = { version = "4.6.1", features = ["derive"] }
 crates_io_api = "0.12.0"
 doc-comment = "0.3.4"
 semver = "1.0.28"

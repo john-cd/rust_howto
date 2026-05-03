@@ -27,19 +27,19 @@ enum Commands {
     StateMachine,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Cqrs => {
-                cqrs::run();
+                cqrs::run()?;
             }
             Commands::Di => {
                 di::run();
             }
             Commands::LayeredArchitecture => {
-                layered_architecture::run();
+                layered_architecture::run()?;
             }
             Commands::Repository => {
                 repository::run();
@@ -49,4 +49,5 @@ fn main() {
             }
         }
     }
+    Ok(())
 }

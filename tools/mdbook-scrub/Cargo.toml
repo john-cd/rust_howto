@@ -7,11 +7,7 @@ description = "A mdbook preprocessor"
 readme = "README.md"
 homepage = "https://github.com/john-cd/rust_howto/"
 keywords = ["book", "mdbook", "rustbook", "documentation"]
-categories = [
-    "command-line-utilities",
-    "text-processing",
-    "parser-implementations",
-]
+categories = ["command-line-utilities", "text-processing", "parser-implementations"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]

@@ -16,9 +16,9 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-clap = { version = "4.6.1", features = ["derive"] }
 anyhow = "1.0.102"
 axum = { version = "0.8.9", features = ["tokio"] }
+clap = { version = "4.6.1", features = ["derive"] }
 ngrok = { version = "0.18.0", features = ["axum"] }
 pingora = { version = "0.8.0", features = ["lb"] }
 tokio = { version = "1.52.1", features = ["macros", "rt-multi-thread"] }

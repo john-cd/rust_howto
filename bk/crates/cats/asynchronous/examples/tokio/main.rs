@@ -21,7 +21,7 @@ enum Commands {
     TokioGracefulShutdown,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -33,8 +33,9 @@ fn main() {
                 tokio21::run();
             }
             Commands::TokioGracefulShutdown => {
-                tokio_graceful_shutdown::run();
+                tokio_graceful_shutdown::run()?;
             }
         }
     }
+    Ok(())
 }

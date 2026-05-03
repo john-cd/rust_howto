@@ -1,5 +1,6 @@
 mod basic;
 
-fn main() {
-    basic::run();
+fn main() -> anyhow::Result<()> {
+    basic::run()?;
+    Ok(())
 }

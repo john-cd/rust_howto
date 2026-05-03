@@ -14,16 +14,16 @@ categories = ["science"]
 publish.workspace = true
 autolib = false
 
-[dependencies]
-clap = { version = "4.6.1", features = ["derive"] }
-candle-core = { version = "0.10.2", optional = true }
-candle-nn = { version = "0.10.2", optional = true }
-linfa = "0.8.1"
-linfa-linear = "0.8.1"
-ndarray = "0.16.1" # TODO upgrade to 0.17.2+
-smartcore = "0.5.0"
-rand = { version = "0.10.1", features = ["std"] }
-
 [features]
 default = []
 candle = ["dep:candle-core", "dep:candle-nn"]
+
+[dependencies]
+candle-core = { version = "0.10.2", optional = true }
+candle-nn = { version = "0.10.2", optional = true }
+clap = { version = "4.6.1", features = ["derive"] }
+linfa = "0.8.1"
+linfa-linear = "0.8.1"
+ndarray = "0.16.1" # TODO upgrade to 0.17.2+
+rand = { version = "0.10.1", features = ["std"] }
+smartcore = "0.5.0"

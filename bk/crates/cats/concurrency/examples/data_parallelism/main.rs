@@ -39,7 +39,7 @@ enum Commands {
     RayonThumbnails,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -69,8 +69,9 @@ fn main() {
                 rayon_parallel_sort::run();
             }
             Commands::RayonThumbnails => {
-                rayon_thumbnails::run();
+                rayon_thumbnails::run()?;
             }
         }
     }
+    Ok(())
 }

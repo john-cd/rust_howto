@@ -18,7 +18,7 @@ enum Commands {
     Rkyv,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -27,8 +27,9 @@ fn main() {
                 postcard::run();
             }
             Commands::Rkyv => {
-                rkyv::run();
+                rkyv::run()?;
             }
         }
     }
+    Ok(())
 }

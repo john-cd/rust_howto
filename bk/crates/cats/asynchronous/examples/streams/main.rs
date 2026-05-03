@@ -21,7 +21,7 @@ enum Commands {
     Streams3,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -30,11 +30,12 @@ fn main() {
                 streams::run();
             }
             Commands::Streams2 => {
-                streams2::run();
+                streams2::run()?;
             }
             Commands::Streams3 => {
                 streams3::run();
             }
         }
     }
+    Ok(())
 }

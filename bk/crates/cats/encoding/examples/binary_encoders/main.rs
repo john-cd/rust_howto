@@ -35,20 +35,20 @@ enum Commands {
     RmpSerde,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Bincode => {
-                bincode::run();
+                bincode::run()?;
             }
             #[cfg(target_os = "linux")]
             Commands::Capnp => {
                 capnp::run();
             }
             Commands::Ciborium => {
-                ciborium::run();
+                ciborium::run()?;
             }
             Commands::Flatbuffers => {
                 flatbuffers::run();
@@ -60,8 +60,9 @@ fn main() {
                 protobuf::run();
             }
             Commands::RmpSerde => {
-                rmp_serde::run();
+                rmp_serde::run()?;
             }
         }
     }
+    Ok(())
 }

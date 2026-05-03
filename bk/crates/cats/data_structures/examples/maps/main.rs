@@ -24,7 +24,7 @@ enum Commands {
     Slotmap,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -36,11 +36,12 @@ fn main() {
                 linked_hash_map::run();
             }
             Commands::Multimap => {
-                multimap::run();
+                multimap::run()?;
             }
             Commands::Slotmap => {
                 slotmap::run();
             }
         }
     }
+    Ok(())
 }
