@@ -8,6 +8,7 @@ mod log_env_variable;
 mod log_error;
 mod log_mod;
 mod log_stdout;
+#[cfg(target_os = "linux")]
 mod log_syslog;
 mod log_timestamp;
 
@@ -33,6 +34,7 @@ enum Commands {
     LogMod,
     #[command(name = "log_stdout")]
     LogStdout,
+    #[cfg(target_os = "linux")]
     #[command(name = "log_syslog")]
     LogSyslog,
     #[command(name = "log_timestamp")]
@@ -65,6 +67,7 @@ fn main() {
             Commands::LogStdout => {
                 log_stdout::run();
             }
+            #[cfg(target_os = "linux")]
             Commands::LogSyslog => {
                 log_syslog::run();
             }

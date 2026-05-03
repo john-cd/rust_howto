@@ -1,6 +1,7 @@
 use clap::Parser;
 use clap::Subcommand;
 
+#[cfg(not(windows))]
 mod afl;
 mod bolero_example;
 
@@ -12,6 +13,7 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Commands {
+    #[cfg(not(windows))]
     #[command(name = "afl")]
     Afl,
     #[command(name = "bolero_example")]
@@ -23,6 +25,7 @@ fn main() {
 
     if let Some(command) = cli.command {
         match command {
+            #[cfg(not(windows))]
             Commands::Afl => {
                 afl::run();
             }

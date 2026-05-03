@@ -1,6 +1,7 @@
 use clap::Parser;
 use clap::Subcommand;
 
+#[cfg(target_os = "linux")]
 mod glommio;
 mod listen_unused;
 
@@ -12,6 +13,7 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Commands {
+    #[cfg(target_os = "linux")]
     #[command(name = "glommio")]
     Glommio,
     #[command(name = "listen_unused")]
@@ -23,6 +25,7 @@ fn main() {
 
     if let Some(command) = cli.command {
         match command {
+            #[cfg(target_os = "linux")]
             Commands::Glommio => {
                 glommio::run();
             }

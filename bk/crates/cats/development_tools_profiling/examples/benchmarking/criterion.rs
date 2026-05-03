@@ -31,6 +31,11 @@ criterion_group!(benches, benchmark_fibonacci);
 criterion_main!(benches);
 // ANCHOR_END: example
 
+pub fn run() {
+    let mut criterion = Criterion::default().configure_from_args();
+    benchmark_fibonacci(&mut criterion);
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

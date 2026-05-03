@@ -1,5 +1,5 @@
 #![allow(dead_code)]
-#![cfg(not(windows))]
+#![cfg(not(windows))] // TODO make work on Windows
 // ANCHOR: example
 use std::process::Command;
 

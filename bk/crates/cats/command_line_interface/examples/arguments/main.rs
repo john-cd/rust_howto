@@ -1,9 +1,10 @@
-use clap::Parser;
-use clap::Subcommand;
+use ::clap::Parser;
+use ::clap::Subcommand;
 
-mod clap;
 mod clap_basic;
 mod clap_complete;
+#[path = "clap.rs"]
+mod clap_example;
 mod lexopt;
 mod pico_args;
 
@@ -33,7 +34,7 @@ fn main() {
     if let Some(command) = cli.command {
         match command {
             Commands::Clap => {
-                clap::run();
+                clap_example::run();
             }
             Commands::ClapBasic => {
                 clap_basic::run();
