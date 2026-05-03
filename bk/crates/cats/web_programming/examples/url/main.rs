@@ -34,25 +34,28 @@ fn main() {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
-        match command {
+        if let Err(e) = match command {
             Commands::Base => {
-                base::run();
+                base::run()
             }
             Commands::Fragment => {
-                fragment::run();
+                fragment::run()
             }
             Commands::New => {
-                new::run();
+                new::run()
             }
             Commands::Origin => {
-                origin::run();
+                origin::run()
             }
             Commands::Origin1 => {
-                origin1::run();
+                origin1::run()
             }
             Commands::Parse => {
-                parse::run();
+                parse::run()
             }
+        }
+        {
+            eprintln!("{e}");
         }
     }
 }
