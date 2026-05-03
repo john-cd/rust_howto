@@ -1,5 +1,5 @@
 mod drones1;
 
-fn main() {
-    drones1::run();
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    drones1::run()
 }

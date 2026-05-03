@@ -15,7 +15,7 @@ use rodio::source::SineWave;
 
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let sink_handle = DeviceSinkBuilder::open_default_sink()?;
-    let player = Player::connect_new(&sink_handle.mixer());
+    let player = Player::connect_new(sink_handle.mixer());
 
     let source = SineWave::new(440.0);
     player.append(source.take_duration(Duration::from_secs(2)));

@@ -27,19 +27,19 @@ enum Commands {
     Xmlparser,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::QuickXml => {
-                quick_xml::run();
+                quick_xml::run()?;
             }
             Commands::Roxmltree => {
-                roxmltree::run();
+                roxmltree::run()?;
             }
             Commands::Xml => {
-                xml::run();
+                xml::run()?;
             }
             Commands::Xml5ever => {
                 xml5ever::run();
@@ -49,4 +49,5 @@ fn main() {
             }
         }
     }
+    Ok(())
 }

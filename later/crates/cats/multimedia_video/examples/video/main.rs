@@ -1,5 +1,5 @@
 mod video;
 
-fn main() {
-    video::run();
+fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+    video::run()
 }

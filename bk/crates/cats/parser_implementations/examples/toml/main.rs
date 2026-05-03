@@ -21,20 +21,21 @@ enum Commands {
     TomlEdit,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::BasicToml => {
-                basic_toml::run();
+                basic_toml::run()?;
             }
             Commands::Toml => {
                 toml::run();
             }
             Commands::TomlEdit => {
-                toml_edit::run();
+                toml_edit::run()?;
             }
         }
     }
+    Ok(())
 }

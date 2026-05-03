@@ -1,9 +1,10 @@
 #[cfg(feature = "sqlparser")]
 mod sqlparser;
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     #[cfg(feature = "sqlparser")]
     {
-        sqlparser::run();
+        sqlparser::run()?;
     }
+    Ok(())
 }

@@ -19,10 +19,10 @@ fn main() -> Result<(), Box<dyn Error>> {
         let dy = y as f32 - 32.0;
         let dz = z as f32 - 32.0;
         let radius = (dx * dx + dy * dy + dz * dz).sqrt();
-        *pixel = ((radius.sin() * 40.0 + 80.0).max(0.0).min(255.0)) as i16;
+        *pixel = ((radius.sin() * 40.0 + 80.0).clamp(0.0, 255.0)) as i16;
     }
 
-    let mut out_path = PathBuf::from(std::env::temp_dir());
+    let mut out_path = std::env::temp_dir();
     out_path.push("rust_howto_neuro_example.nii");
     println!(
         "Prepared synthetic NIfTI-like volume at {} with shape {:?}",
