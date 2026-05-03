@@ -20,8 +20,8 @@ clap = { version = "4.6.1", features = ["derive"] }
 arboard = "3.6.1"
 cosmic-text = "0.19.0"
 dioxus = { version = "0.7.7", optional = true }
-eframe = "0.33.3"
-egui = "0.33.3"
+eframe = "0.33.3" # TODO upgrade
+egui = "0.33.3" # TODO upgrade
 femtovg = { version = "0.23.2", optional = true }
 floem = { version = "0.2.0", optional = true }
 iced = { version = "0.14.0", optional = true }
@@ -38,7 +38,7 @@ morphorm = "0.8.0"
 # # FIXME https://gtk-rs.org/gtk4-rs/git/book/installation_linux.html
 # # FIXME https://gtk-rs.org/gtk4-rs/git/book/installation_windows.html
 rfd = "0.17.2"
-skia-safe = { version = "0.97.0", features = [
+skia-safe = { version = "0.90.0", features = [ # TODO upgrade to 0.97.0
     "gl",
 ], optional = true } # TODO pinned for slint
 slint = "1.16.1"
@@ -46,14 +46,13 @@ taffy = "0.10.1"
 baseview = { git = "https://github.com/RustAudio/baseview", branch = "master" }
 tao = "0.35.0"
 tauri = "2.11.0" # Requires multiple libraries. See Dockerfile
-vello = { version = "0.7.0", optional = true }
+vello = { version = "0.7.0", optional = true } # TODO upgrade to 0.8.0+
 vger = "0.4.0"
-vizia = { version = "0.4.0", optional = true }
 webrender = { version = "0.68.0", optional = true }
 glutin = { version = "0.32.3", optional = true }
 gl = { version = "0.14.0", optional = true }
 winit = "0.30.13"                               # for vello, winit examples
-wgpu = "29"
+wgpu = "29.0.3"
 pollster = "0.4"
 anyhow = "1.0.102"
 
@@ -66,4 +65,3 @@ iced = ["dep:iced"]
 skia = ["dep:skia-safe", "dep:glutin", "dep:gl"]
 vello = ["dep:vello"]
 floem = ["dep:floem"]
-vizia = ["dep:vizia"]
