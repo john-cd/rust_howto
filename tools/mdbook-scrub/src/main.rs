@@ -32,7 +32,7 @@ fn main() {
         .open("mdbook-scrub.log")
         .unwrap();
 
-    tracing_subscriber::fmt()
+    let _ = tracing_subscriber::fmt()
         .with_max_level(tracing::Level::INFO)
         .json()
         .with_writer(std::sync::Mutex::new(log_file))

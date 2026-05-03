@@ -5,8 +5,8 @@
 //!
 //! To run this example, ensure the `Greeter` server is already running.
 
-use helloworld::greeter_client::GreeterClient;
 use helloworld::HelloRequest;
+use helloworld::greeter_client::GreeterClient;
 
 /// The module containing generated code from the proto file.
 pub mod helloworld {
@@ -15,7 +15,8 @@ pub mod helloworld {
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    // Connect to the gRPC server using the address defined in the server example.
+    // Connect to the gRPC server using the address defined in the server
+    // example.
     let mut client = GreeterClient::connect("http://[::1]:50051").await?;
 
     // Prepare a request containing the name to be greeted.
@@ -41,8 +42,8 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Full-stack integration test that spawns the server from the sibling `tonic`
-    /// module and connects to it using the client.
+    /// Full-stack integration test that spawns the server from the sibling
+    /// `tonic` module and connects to it using the client.
     #[tokio::test]
     async fn test_grpc_full_stack() -> anyhow::Result<()> {
         let port = 50052;
@@ -64,7 +65,9 @@ mod tests {
 
         // 3. Run client logic against the test server
         let mut client = GreeterClient::connect(client_url).await?;
-        let request = tonic::Request::new(HelloRequest { name: "Integration".into() });
+        let request = tonic::Request::new(HelloRequest {
+            name: "Integration".into(),
+        });
         let response = client.say_hello(request).await?;
 
         assert_eq!(response.into_inner().message, "Hello Integration!");

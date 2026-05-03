@@ -1,19 +1,18 @@
 #![allow(dead_code)]
 // ANCHOR: example
-/// In this example, we:
-///
-/// - Connect to a PostgreSQL database using `tokio_postgres::connect`.
-/// - Spawn the connection on a separate task using `tokio::spawn`.
-/// - Create a table if it does not already exist.
-/// - Insert a new row into the table.
-/// - Query the table for rows and print the results.
-/// - Update a row in the table.
-/// - Delete a row from the table.
+//! In this example, we:
+//!
+//! - Connect to a PostgreSQL database using `tokio_postgres::connect`.
+//! - Spawn the connection on a separate task using `tokio::spawn`.
+//! - Create a table if it does not already exist.
+//! - Insert a new row into the table.
+//! - Query the table for rows and print the results.
+//! - Update a row in the table.
+//! - Delete a row from the table.
+
 #[tokio::main]
 async fn main() -> Result<(), tokio_postgres::Error> {
-    // Connect to the database.
-    //  The libpq-style connection strings consist of space-separated
-    // key-value pairs: <https://docs.rs/tokio-postgres/latest/tokio_postgres/config/struct.Config.html>.
+    // Connect to the database. The connection string is read from the `PG_URL` environment variable.
     let url = std::env::var("PG_URL").expect("PG_URL must be set");
     let (client, connection) =
         tokio_postgres::connect(&url, tokio_postgres::NoTls).await?;
@@ -83,22 +82,22 @@ async fn main() -> Result<(), tokio_postgres::Error> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
 
-pub fn run() -> Result<(), tokio_postgres::Error> {
-    main()
-}
-
-#[tokio::test]
-async fn require_external_svc() -> anyhow::Result<()> {
-    let _lock = super::ENV_MUTEX.lock().unwrap();
-    let test_url =
-        std::env::var("TEST_PG_URL").expect("TEST_PG_URL must be set");
-    unsafe {
-        std::env::set_var("PG_URL", test_url);
-    }
-    tokio::task::spawn_blocking(|| main()).await??;
+pub fn run() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }
-// [finish](https://github.com/john-cd/rust_howto/issues/719) need heay test
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[tokio::test]
+    async fn require_external_svc() -> anyhow::Result<()> {
+        tokio::task::spawn_blocking(|| main()).await??;
+        Ok(())
+    }
+}
+// [finish](https://github.com/john-cd/rust_howto/issues/719) need heavy test
+//  The libpq-style connection strings consist of space-separated
+// key-value pairs: <https://docs.rs/tokio-postgres/latest/tokio_postgres/config/struct.Config.html>.
