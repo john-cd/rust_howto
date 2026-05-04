@@ -29,6 +29,10 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example_start
 
+pub fn run() -> Result<()> {
+    main()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -37,8 +41,4 @@ mod tests {
         main()?;
         Ok(())
     }
-}
-
-pub fn run() -> Result<()> {
-    main()
 }

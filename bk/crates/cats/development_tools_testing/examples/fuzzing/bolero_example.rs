@@ -28,6 +28,11 @@ fn main() {
         process_data(data);
     });
 }
+// ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
@@ -37,9 +42,4 @@ mod tests {
         // When running as a test, it uses a default number of iterations.
         main();
     }
-}
-// ANCHOR_END: example
-
-pub fn run() {
-    main();
 }

@@ -1,21 +1,21 @@
-#[cfg(feature = "gtk")]
+#[cfg(all(feature = "gtk", not(target_os = "windows")))]
 use clap::Parser;
-#[cfg(feature = "gtk")]
+#[cfg(all(feature = "gtk", not(target_os = "windows")))]
 use clap::Subcommand;
 
-#[cfg(feature = "gtk")]
+#[cfg(all(feature = "gtk", not(target_os = "windows")))]
 mod gtk4;
-#[cfg(feature = "gtk")]
+#[cfg(all(feature = "gtk", not(target_os = "windows")))]
 mod relm4;
 
-#[cfg(feature = "gtk")]
+#[cfg(all(feature = "gtk", not(target_os = "windows")))]
 #[derive(Parser)]
 struct Cli {
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
-#[cfg(feature = "gtk")]
+#[cfg(all(feature = "gtk", not(target_os = "windows")))]
 #[derive(Subcommand)]
 enum Commands {
     #[command(name = "gtk4")]
@@ -25,7 +25,7 @@ enum Commands {
 }
 
 fn main() {
-    #[cfg(feature = "gtk")]
+    #[cfg(all(feature = "gtk", not(target_os = "windows")))]
     {
         let cli = Cli::parse();
 
@@ -39,5 +39,10 @@ fn main() {
                 }
             }
         }
+    }
+
+    #[cfg(all(feature = "gtk", target_os = "windows"))]
+    {
+        eprintln!("GTK examples are disabled on Windows.");
     }
 }

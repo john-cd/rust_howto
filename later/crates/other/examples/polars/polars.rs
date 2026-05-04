@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-#![cfg(feature = "polars")]
 // ANCHOR: example
 //! # Polars Data Processing Example
 //!

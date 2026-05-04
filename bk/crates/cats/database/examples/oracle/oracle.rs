@@ -63,7 +63,6 @@ mod tests {
     #[test]
     #[ignore = "requires external oracle db and oracle client library"]
     fn require_external_svc() -> anyhow::Result<()> {
-        let _lock = super::ENV_MUTEX.lock().unwrap();
         let username = std::env::var("TEST_ORACLE_DB_USERNAME")
             .expect("TEST_ORACLE_DB_USERNAME must be set");
         let password = std::env::var("TEST_ORACLE_DB_PASSWORD")

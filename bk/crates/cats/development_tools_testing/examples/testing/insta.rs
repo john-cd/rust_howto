@@ -1,7 +1,12 @@
 #![allow(dead_code)]
+
+pub fn run() {
+    main();
+}
+
 // ANCHOR: example
-//! Snapshot testing with the `insta` crate keeps track of how your data
-//! structures or output change over time.
+// Snapshot testing with the `insta` crate keeps track of how your data
+// structures or output change over time.
 
 /// This is a sample function that formats user details.
 pub fn format_user(name: &str, age: u32) -> String {
@@ -29,7 +34,3 @@ mod tests {
     }
 }
 // ANCHOR_END: example
-
-pub fn run() {
-    main();
-}

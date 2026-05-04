@@ -34,8 +34,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+#[allow(clippy::main_recursion)]
 pub fn run() -> anyhow::Result<()> {
-    main()
+    main()?;
+    Ok(())
 }
 
 #[cfg(test)]

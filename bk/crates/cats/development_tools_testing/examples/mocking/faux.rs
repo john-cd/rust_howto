@@ -1,7 +1,12 @@
 #![allow(dead_code)]
+
+pub fn run() {
+    main();
+}
+
 // ANCHOR: example
-//! `faux` mocks the methods of structs for testing without
-//! complicating or polluting our code.
+// `faux` mocks the methods of structs for testing without
+// complicating or polluting our code.
 
 /// Represents a user with an ID and a name.
 #[derive(Debug, Clone, PartialEq)]
@@ -157,7 +162,3 @@ mod tests {
     }
 }
 // ANCHOR_END: example
-
-pub fn run() {
-    main();
-}

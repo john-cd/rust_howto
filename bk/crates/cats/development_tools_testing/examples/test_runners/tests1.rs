@@ -1,7 +1,12 @@
 #![allow(dead_code)]
 #![allow(clippy::eq_op)]
+
+pub fn run() {
+    main();
+}
+
 // ANCHOR: example
-//! This example demonstrates how to write unit tests.
+// This example demonstrates how to write unit tests.
 
 /// Represents a rectangle with a width and height.
 struct Rectangle {
@@ -86,7 +91,3 @@ mod tests {
     }
 }
 // ANCHOR_END: example
-
-pub fn run() {
-    main();
-}

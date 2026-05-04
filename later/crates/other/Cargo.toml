@@ -80,16 +80,15 @@ test = true
 required-features = ["arrow"]
 
 [[example]]
-name = "data_processing_datafusion"
-path = "examples/data_processing_datafusion.rs"
+name = "datafusion"
+path = "examples/datafusion/main.rs"
 test = true
 required-features = ["datafusion"]
 
-
 # TODO optional polars and datafusion dependencies in the same package pull in incompatible chrono versions (polars-arrow vs datafusion).
 #[[example]]
-#name = "data_processing_polars"
-#path = "examples/data_processing_polars.rs"
+#name = "polars"
+#path = "examples/polars/main.rs"
 #test = true
 #required-features = ["polars"]
 

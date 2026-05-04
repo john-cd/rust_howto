@@ -32,6 +32,15 @@ pub fn run() {
     main();
 }
 
+// Local tests are omitted since shuttle depends on a specific runtime.
+// The code itself is type-checked during compilation.
+
+// Workaround for unused code warnings when not compiled by shuttle:
+#[allow(dead_code)]
+fn dummy() {
+    std::mem::drop(hello_world());
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -41,13 +50,4 @@ mod tests {
     fn test_main() {
         main();
     }
-}
-
-// Local tests are omitted since shuttle depends on a specific runtime.
-// The code itself is type-checked during compilation.
-
-// Workaround for unused code warnings when not compiled by shuttle:
-#[allow(dead_code)]
-fn dummy() {
-    std::mem::drop(hello_world());
 }

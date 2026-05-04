@@ -1,16 +1,21 @@
 #![allow(dead_code)]
+
+pub fn run() {
+    main();
+}
+
 // ANCHOR: example
-//! This example demonstrates how to use the `mockall` crate for mocking.
-//!
-//! First, add `mockall` to your `Cargo.toml` dependencies:
-//! ```toml
-//! [dependencies]
-//! mockall = "0.11.3"
-//! ```
-//!
-//! Then define a `UserRepository` trait and a `UserService` struct that uses
-//! it. We then use `mockall` to create a mock implementation of
-//! `UserRepository` for testing `UserService`.
+// This example demonstrates how to use the `mockall` crate for mocking.
+//
+// First, add `mockall` to your `Cargo.toml` dependencies:
+// ```toml
+// [dependencies]
+// mockall = "0.11.3"
+// ```
+//
+// Then define a `UserRepository` trait and a `UserService` struct that uses
+// it. We then use `mockall` to create a mock implementation of
+// `UserRepository` for testing `UserService`.
 
 use mockall::predicate::*;
 use mockall::*;
@@ -227,7 +232,3 @@ mod tests {
     }
 }
 // ANCHOR_END: example
-
-pub fn run() {
-    main();
-}

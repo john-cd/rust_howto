@@ -1,4 +1,4 @@
-// #![cfg(feature = "async-graphql")]
+#![cfg(feature = "async-graphql-support")]
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
@@ -67,8 +67,12 @@ async fn main() {
 //     schema.execute(req.into_inner()).await.into()
 // }
 
-// #[test]
-// fn require_network() {
-//     main();
-// }
-// // [finish;  https://github.com/async-graphql/examples](https://github.com/john-cd/rust_howto/issues/864)
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main();
+    }
+}
+// [finish;  https://github.com/async-graphql/examples](https://github.com/john-cd/rust_howto/issues/864)

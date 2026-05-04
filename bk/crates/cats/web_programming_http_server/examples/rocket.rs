@@ -17,13 +17,9 @@
 // // [Implement Rocket Hello World and route mounting](https://github.com/john-cd/rust_howto/issues/869)
 
 fn main() {
-// TODO
+    // TODO
 }
 // ANCHOR_END: example
-
-pub fn run() {
-    main();
-}
 
 #[cfg(test)]
 mod tests {

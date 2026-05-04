@@ -65,13 +65,16 @@ async fn main() -> anyhow::Result<()> {
 
     Ok(())
 }
-// // ANCHOR_END: example_start
+// ANCHOR_END: example
 
-// #[test]
-// fn require_network() -> anyhow::Result<()> {
-//     main()?;
-//     Ok(())
-// }
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test() {
+        main().expect("in test");
+    }
+}
 // // [Update Hyper server example to 1.0 API and implement request routing](https://github.com/john-cd/rust_howto/issues/866)
 // // <https://hyper.rs/>
 // // <https://hyper.rs/guides/1/server/hello-world/>

@@ -90,7 +90,7 @@
 
 ## HUMAN REVIEW
 
-- [?] [Web] Migrate to modern WebSocket echo service [async_tungstenite.rs](later/crates/cats/web_programming_websocket/examples/async_tungstenite.rs) ([#1058](https://github.com/john-cd/rust_howto/issues/1058))
+- [?] [Web] Migrate to modern WebSocket echo service [async_tungstenite.rs] ([#1058](https://github.com/john-cd/rust_howto/issues/1058))
 - [?] [Web] Implement Tonic gRPC example and server boilerplate [tonic.rs](bk/crates/cats/web_programming_http_server/examples/grpc/tonic.rs) ([#870](https://github.com/john-cd/rust_howto/issues/870))
 - [?] [Web] Update Hyper server example to 1.0 API and implement routing [hyper_server.rs](bk/crates/cats/web_programming_http_server/examples/hyper_server.rs) ([#866](https://github.com/john-cd/rust_howto/issues/866))
 - [?] [Web] Implement Axum routing, state, and review time limits [axum.rs](bk/crates/cats/web_programming_http_server/examples/axum.rs) ([#865](https://github.com/john-cd/rust_howto/issues/865))
@@ -4103,7 +4103,7 @@
 
 ### later/crates/cats/web_programming_websocket/examples/tokio_tungstenite.rs
 
-- [ ] [review https://github.com/snapview/tokio-tungstenite/tree/master/examples](https://github.com/john-cd/rust_howto/issues/1145) ([later/crates/cats/web_programming_websocket/examples/tokio_tungstenite.rs](./later/crates/cats/web_programming_websocket/examples/tokio_tungstenite.rs#L57))
+- [ ] [review https://github.com/snapview/tokio-tungstenite/tree/master/examples](https://github.com/john-cd/rust_howto/issues/1145) -> later/crates/cats/web_programming_websocket/examples/tokio_tungstenite.rs
 
 ### later/crates/other/examples/architecture/cqrs.rs
 
@@ -4867,11 +4867,11 @@
 
 #### later/crates/cats/web_programming_websocket/examples/async_tungstenite.rs
 
-- [?] Review issue [#1058](https://github.com/john-cd/rust_howto/issues/1058) in [later/crates/cats/web_programming_websocket/examples/async_tungstenite.rs](./later/crates/cats/web_programming_websocket/examples/async_tungstenite.rs#L58)
+- [?] Review issue [#1058](https://github.com/john-cd/rust_howto/issues/1058) -> later/crates/cats/web_programming_websocket/examples/websocket/async_tungstenite.rs
 
 #### later/crates/cats/web_programming_websocket/examples/tokio_tungstenite.rs
 
-- [ ] Review issue [#1145](https://github.com/john-cd/rust_howto/issues/1145) in [later/crates/cats/web_programming_websocket/examples/tokio_tungstenite.rs](./later/crates/cats/web_programming_websocket/examples/tokio_tungstenite.rs#L57)
+- [ ] Review issue [#1145](https://github.com/john-cd/rust_howto/issues/1145) in later/crates/cats/web_programming_websocket/examples/websocket/tokio_tungstenite.rs
 
 #### later/crates/other/examples/cloud/aws_lambda.rs
 
@@ -4972,11 +4972,6 @@
 ### playground/bits_and_pieces/buildinfo/build-info.rs
 
 - [ ] [review / convert into example](https://github.com/john-cd/rust_howto/issues/1060)? ([playground/bits_and_pieces/buildinfo/build-info.rs](./playground/bits_and_pieces/buildinfo/build-info.rs#L49))
-
-### playground/bits_and_pieces/github/workflow.yml
-
-- [ ] [review https://github.com/actions-rust-lang/setup-rust-toolchain/tree/main](https://github.com/john-cd/rust_howto/issues/1269) ([playground/bits_and_pieces/github/workflow.yml](./playground/bits_and_pieces/github/workflow.yml#L43))
-- [ ] [consider using https://github.com/marketplace/actions/rust-cache](https://github.com/john-cd/rust_howto/issues/1270) ([playground/bits_and_pieces/github/workflow.yml](./playground/bits_and_pieces/github/workflow.yml#L103))
 
 ### playground/bits_and_pieces/just/justfile
 
@@ -5108,12 +5103,6 @@
 
 - [ ] Review issue [#1060](https://github.com/john-cd/rust_howto/issues/1060) in [playground/bits_and_pieces/buildinfo/build-info.rs](./playground/bits_and_pieces/buildinfo/build-info.rs#L49)
 
-#### playground/bits_and_pieces/github/workflow.yml
-
-- [ ] Review issue [#1268](https://github.com/john-cd/rust_howto/issues/1268) in [playground/bits_and_pieces/github/workflow.yml](./playground/bits_and_pieces/github/workflow.yml#L2)
-- [ ] Review issue [#1269](https://github.com/john-cd/rust_howto/issues/1269) in [playground/bits_and_pieces/github/workflow.yml](./playground/bits_and_pieces/github/workflow.yml#L43)
-- [ ] Review issue [#1270](https://github.com/john-cd/rust_howto/issues/1270) in [playground/bits_and_pieces/github/workflow.yml](./playground/bits_and_pieces/github/workflow.yml#L103)
-
 #### playground/bits_and_pieces/just/justfile
 
 - [ ] Review issue [#1249](https://github.com/john-cd/rust_howto/issues/1249) in [playground/bits_and_pieces/just/justfile](./playground/bits_and_pieces/just/justfile#L9)
@@ -5190,16 +5179,16 @@
 
 ### devcontainer/Dockerfile
 
-- [ ] [LATER https://lib.rs/crates/mdbook-open-on-gh add an "Edit this file on GitHub" link on the bottom of every page, linking directly to the source file.](https://github.com/john-cd/rust_howto/issues/1278) ([devcontainer/Dockerfile](./devcontainer/Dockerfile#L151))
-- [ ] [LATER reconsider when we can reliably use cached docker images in GitHub Actions; slow and takes space](https://github.com/john-cd/rust_howto/issues/1280) ([devcontainer/Dockerfile](./devcontainer/Dockerfile#L265))
+- [ ] [LATER https://lib.rs/crates/mdbook-open-on-gh add an "Edit this file on GitHub" link on the bottom of every page, linking directly to the source file.](https://github.com/john-cd/rust_howto/issues/1278) ([devcontainer/Dockerfile](./.devcontainer/Dockerfile#L151))
+- [ ] [LATER reconsider when we can reliably use cached docker images in GitHub Actions; slow and takes space](https://github.com/john-cd/rust_howto/issues/1280) ([devcontainer/Dockerfile](./.devcontainer/Dockerfile#L265))
 
 ### devcontainer/ci.sh
 
-- [ ] [add cargo plugins to CI script](https://github.com/john-cd/rust_howto/issues/1277) ([devcontainer/ci.sh](./devcontainer/ci.sh#L22))
+- [ ] [add cargo plugins to CI script](https://github.com/john-cd/rust_howto/issues/1277) ([devcontainer/ci.sh](./.devcontainer/ci.sh#L22))
 
 ### devcontainer/compose-ci.yaml
 
-- [ ] [make gha caching work in CI workflow](https://github.com/john-cd/rust_howto/issues/1271) ([devcontainer/compose-ci.yaml](./devcontainer/compose-ci.yaml#L19))
+- [ ] [make gha caching work in CI workflow](https://github.com/john-cd/rust_howto/issues/1271) ([devcontainer/compose-ci.yaml](./.devcontainer/compose-ci.yaml#L19))
 
 ### xmpl/clap_builder_xmpl/src/cli/args.rs
 
@@ -5209,8 +5198,8 @@
 
 #### devcontainer/Dockerfile
 
-- [ ] Review issue [#1278](https://github.com/john-cd/rust_howto/issues/1278) in [devcontainer/Dockerfile](./devcontainer/Dockerfile#L151)
-- [ ] Review issue [#1280](https://github.com/john-cd/rust_howto/issues/1280) in [devcontainer/Dockerfile](./devcontainer/Dockerfile#L265)
+- [ ] Review issue [#1278](https://github.com/john-cd/rust_howto/issues/1278) in [devcontainer/Dockerfile](./.devcontainer/Dockerfile#L151)
+- [ ] Review issue [#1280](https://github.com/john-cd/rust_howto/issues/1280) in [devcontainer/Dockerfile](./.devcontainer/Dockerfile#L265)
 
 #### devcontainer/ci.sh
 

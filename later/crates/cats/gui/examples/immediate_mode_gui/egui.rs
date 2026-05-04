@@ -5,8 +5,8 @@
 //! In `Cargo.toml`, add:
 //! ```toml
 //! [dependencies]
-//! egui = "0.17"
-//! eframe = "0.17"
+//! egui = "0.34"
+//! eframe = "0.34"
 //! ```
 
 use eframe::egui;
@@ -27,8 +27,8 @@ struct MyApp {
 
 // Simple GUI application with a button to increment a counter.
 impl eframe::App for MyApp {
-    fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
-        egui::CentralPanel::default().show(ctx, |ui| {
+    fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
+        egui::CentralPanel::default().show_inside(ui, |ui| {
             ui.heading("Hello egui!");
             if ui.button("Increment counter").clicked() {
                 self.counter += 1;

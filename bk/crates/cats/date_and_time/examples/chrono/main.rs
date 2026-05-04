@@ -45,7 +45,8 @@ fn main() -> anyhow::Result<()> {
                 format::run();
             }
             Commands::ParseStringIntoDatetime => {
-                parse_string_into_datetime::run().map_err(anyhow::Error::msg)?;
+                parse_string_into_datetime::run()
+                    .map_err(anyhow::Error::msg)?;
             }
             Commands::Timestamp => {
                 timestamp::run();

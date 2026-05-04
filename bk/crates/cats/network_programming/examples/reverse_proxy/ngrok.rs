@@ -85,10 +85,7 @@ mod tests {
     #[ignore = "Requires network access and NGROK_AUTHTOKEN"]
     #[test]
     fn require_network() {
-        tokio::runtime::Runtime::new()
-            .unwrap()
-            .block_on(run_inner())
-            .unwrap();
+        main().unwrap();
     }
 }
 // [finish](https://github.com/john-cd/rust_howto/issues/811)

@@ -89,7 +89,7 @@ pub fn run() {
 }
 
 #[cfg(test)]
-mod tests {
+mod tests_of_main {
     use super::*;
     #[test]
     fn test() {

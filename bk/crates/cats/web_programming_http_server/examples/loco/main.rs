@@ -96,10 +96,10 @@ async fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 #[cfg(test)]
+#[cfg(feature = "loco-support")]
 mod tests {
     use super::*;
 
-    #[cfg(feature = "loco-support")]
     #[tokio::test]
     async fn test_app_init() {
         // Verification that the main logic is accessible

@@ -111,11 +111,6 @@ mod tests {
             !custom_encoded.contains("%2B"),
             "Plus should not be encoded in this test"
         );
-        #[test]
-        fn test() -> Result<()> {
-            main()?;
-            Ok(())
-        }
     }
 }
 // [dedupe with other example in percent_encode](https://github.com/john-cd/rust_howto/issues/1353)
