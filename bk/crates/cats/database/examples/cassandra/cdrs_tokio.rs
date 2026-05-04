@@ -138,24 +138,10 @@ pub async fn run() -> anyhow::Result<()> {
 
 #[cfg(test)]
 mod tests {
-    use std::sync::Mutex;
-
     use super::*;
-
-    static ENV_MUTEX: Mutex<()> = Mutex::new(());
 
     #[tokio::test]
     async fn require_external_svc() -> anyhow::Result<()> {
-        let _lock = ENV_MUTEX.lock().unwrap();
-        let user = std::env::var("TEST_CASSANDRA_USER")
-            .expect("TEST_CASSANDRA_USER must be set");
-        let password = std::env::var("TEST_CASSANDRA_PASSWORD")
-            .expect("TEST_CASSANDRA_PASSWORD must be set");
-
-        unsafe {
-            std::env::set_var("CASSANDRA_USER", user);
-            std::env::set_var("CASSANDRA_PASSWORD", password);
-        }
         run().await?;
         Ok(())
     }

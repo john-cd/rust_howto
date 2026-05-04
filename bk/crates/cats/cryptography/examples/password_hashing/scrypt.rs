@@ -10,7 +10,7 @@ use scrypt::password_hash::phc::PasswordHash;
 
 /// This example demonstrates how to use the `scrypt` crate to hash and verify
 /// passwords.
-fn main() -> Result<(), Box<dyn Error>> {
+fn example() -> Result<(), Box<dyn Error>> {
     // 1) When setting the password, hash it and store the hash
 
     // Password to be hashed:
@@ -36,10 +36,13 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     Ok(())
 }
-// ANCHOR_END: example
 
+fn main() -> Result<(), Box<dyn Error>> {
+    example()
+}
+// ANCHOR_END: example
 pub fn run() -> Result<(), Box<dyn Error>> {
-    main()
+    example()
 }
 
 #[cfg(test)]

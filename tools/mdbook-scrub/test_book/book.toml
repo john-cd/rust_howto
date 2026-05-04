@@ -1,11 +1,10 @@
 [book]
 authors = []
 language = "en"
-multilingual = false
 src = "src"
 
 [preprocessor.scrub]
-command = "cargo run --manifest-path=Cargo.toml --locked"
+command = "cargo run --manifest-path=../Cargo.toml --locked"
 
 ## The order in which preprocessors are run can be controlled with the before and after fields.
 ## See https://rust-lang.github.io/mdBook/format/configuration/preprocessors.html
