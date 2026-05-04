@@ -26,22 +26,25 @@ enum Commands {
     CdrsTokio,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     #[cfg(feature = "cassandra")]
     {
         let cli = Cli::parse();
 
         if let Some(command) = cli.command {
             match command {
-                #[cfg(feature = "cassandra")]
                 Commands::CassandraProtocol => {
-                    cassandra_protocol::run();
+                    cassandra_protocol::run()?;
                 }
-                #[cfg(feature = "cassandra")]
                 Commands::CdrsTokio => {
-                    cdrs_tokio::run();
+                    let runtime = tokio::runtime::Runtime::new() // TODO move to run()
+                        .expect("failed to create Tokio runtime"); // TODO handle error gracefully
+                    runtime
+                        .block_on(cdrs_tokio::run())
+                        .expect("cdrs_tokio example failed");
                 }
             }
         }
     }
+    Ok(())
 }
