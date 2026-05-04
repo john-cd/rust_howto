@@ -37,7 +37,7 @@ enum Commands {
     Sibyl,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     #[cfg(any(
         feature = "oracle",
         all(target_os = "linux", feature = "oracle")
@@ -49,17 +49,18 @@ fn main() {
             match command {
                 #[cfg(feature = "oracle")]
                 Commands::DieselOci => {
-                    diesel_oci::run();
+                    diesel_oci::run()?;
                 }
                 #[cfg(feature = "oracle")]
                 Commands::Oracle => {
-                    oracle::run();
+                    oracle::run().map_err(anyhow::Error::msg)?;
                 }
                 #[cfg(all(target_os = "linux", feature = "oracle"))]
                 Commands::Sibyl => {
-                    sibyl::run();
+                    sibyl::run()?;
                 }
             }
         }
     }
+    Ok(())
 }

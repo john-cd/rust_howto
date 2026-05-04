@@ -4,7 +4,6 @@
 // the `redis` crate.
 use std::env;
 
-use anyhow::Context;
 use anyhow::Result;
 use redis::Commands;
 use redis::Connection;

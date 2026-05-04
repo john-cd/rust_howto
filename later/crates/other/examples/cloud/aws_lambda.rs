@@ -53,8 +53,9 @@ async fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
-pub fn run() {
-    main();
+pub fn run() -> anyhow::Result<()> {
+    main().map_err(|e| anyhow::anyhow!("{e}"))?;
+    Ok(())
 }
 
 #[cfg(test)]

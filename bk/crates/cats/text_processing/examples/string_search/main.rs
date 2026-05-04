@@ -24,13 +24,13 @@ enum Commands {
     Strsim,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::AhoCorasick => {
-                aho_corasick::run();
+                aho_corasick::run()?;
             }
             Commands::FuzzyMatcher => {
                 fuzzy_matcher::run();
@@ -43,4 +43,5 @@ fn main() {
             }
         }
     }
+    Ok(())
 }

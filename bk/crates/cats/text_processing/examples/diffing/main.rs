@@ -18,17 +18,18 @@ enum Commands {
     Similar,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Diff => {
-                diff::run();
+                diff::run()?;
             }
             Commands::Similar => {
                 similar::run();
             }
         }
     }
+    Ok(())
 }

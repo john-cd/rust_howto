@@ -50,23 +50,23 @@ fn main() -> anyhow::Result<()> {
             match command {
                 #[cfg(feature = "postgres")]
                 Commands::AggregateData => {
-                    aggregate_data::run();
+                    aggregate_data::run().map_err(anyhow::Error::msg)?;
                 }
                 #[cfg(feature = "postgres")]
                 Commands::Cornucopia => {
-                    cornucopia::run();
+                    cornucopia::run().map_err(anyhow::Error::msg)?;
                 }
                 #[cfg(feature = "postgres")]
                 Commands::CreateTables => {
-                    create_tables::run();
+                    create_tables::run()?;
                 }
                 #[cfg(feature = "postgres")]
                 Commands::InsertQueryData => {
-                    insert_query_data::run();
+                    insert_query_data::run().map_err(anyhow::Error::msg)?;
                 }
                 #[cfg(feature = "postgres")]
                 Commands::TokioPostgres => {
-                    tokio_postgres::run();
+                    tokio_postgres::run()?;
                 }
             }
         }

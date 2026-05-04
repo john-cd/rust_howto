@@ -14,16 +14,10 @@
 //     rocket::build().mount("/", routes![hello])
 // }
 
-// #[test]
-// fn require_network() {
-// }
 // // [Implement Rocket Hello World and route mounting](https://github.com/john-cd/rust_howto/issues/869)
 
 fn main() {
-    // TODO implement the Rocket example; see https://github.com/john-cd/rust_howto/issues/869
-    println!(
-        "rocket example: a web framework for Rust (see full implementation in the book)"
-    );
+// TODO
 }
 // ANCHOR_END: example
 
@@ -40,3 +34,4 @@ mod tests {
         main();
     }
 }
+// TODO implement the Rocket example; see https://github.com/john-cd/rust_howto/issues/869

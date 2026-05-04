@@ -173,8 +173,8 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-pub fn run() {
-    main();
+pub fn run() -> Result<()> {
+    main()
 }
 
 #[cfg(test)]

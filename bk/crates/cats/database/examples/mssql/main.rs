@@ -1,9 +1,10 @@
 #[cfg(feature = "mssql")]
 mod tiberius;
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     #[cfg(feature = "mssql")]
     {
-        tiberius::run();
+        tiberius::run()?;
     }
+    Ok(())
 }
