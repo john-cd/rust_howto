@@ -15,7 +15,7 @@ struct Cli {
 enum Commands {
     #[command(name = "dioxus")]
     Dioxus,
-    #[cfg(not(windows))]
+    #[cfg(not(windows), feature = "tauri")]
     #[command(name = "tauri")]
     Tauri,
 }

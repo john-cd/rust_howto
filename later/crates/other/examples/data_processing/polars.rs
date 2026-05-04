@@ -10,7 +10,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! polars = "0.49.1"
+//! polars = "0.49.1" # or latest
 //! ```
 //!
 //! `polars` has a large list of default features, therefore we may want to
