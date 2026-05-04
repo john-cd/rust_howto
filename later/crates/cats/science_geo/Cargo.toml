@@ -17,3 +17,9 @@ autolib = false
 
 [dependencies]
 geo = "0.33"
+
+[[example]]
+name = "geo"
+path = "examples/geo/main.rs"
+test = true
+

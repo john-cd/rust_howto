@@ -28,3 +28,29 @@ panic-halt = "0.2"
 
 #[features]
 # default = []
+
+[[example]]
+name = "embassy"
+path = "examples/embassy/main.rs"
+test = true
+
+[[example]]
+name = "flash"
+path = "examples/flash/main.rs"
+test = true
+
+[[example]]
+name = "hals"
+path = "examples/hals/main.rs"
+test = true
+
+[[example]]
+name = "rtos"
+path = "examples/rtos/main.rs"
+test = true
+
+[[example]]
+name = "sensors"
+path = "examples/sensors/main.rs"
+test = true
+

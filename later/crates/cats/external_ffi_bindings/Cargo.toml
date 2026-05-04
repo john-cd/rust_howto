@@ -17,3 +17,9 @@ publish.workspace = true
 
 [dependencies]
 # LATER
+
+[[example]]
+name = "external_ffi_bindings"
+path = "examples/external_ffi_bindings.rs"
+test = true
+

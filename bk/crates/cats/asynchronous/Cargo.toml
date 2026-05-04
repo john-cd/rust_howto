@@ -38,3 +38,54 @@ tokio = { version = "1.52.1", features = ["rt-multi-thread", "fs"] }
 tokio-graceful-shutdown = "0.19.3"
 tracing = "0.1.44"
 tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
+
+[[example]]
+name = "async"
+path = "examples/async/main.rs"
+test = true
+
+[[example]]
+name = "async_channels"
+path = "examples/async_channels/main.rs"
+test = true
+
+[[example]]
+name = "async_traits"
+path = "examples/async_traits/main.rs"
+test = true
+
+[[example]]
+name = "call_async_from_blocking"
+path = "examples/call_async_from_blocking/main.rs"
+test = true
+
+[[example]]
+name = "call_blocking_from_async"
+path = "examples/call_blocking_from_async/main.rs"
+test = true
+
+[[example]]
+name = "futures"
+path = "examples/futures/main.rs"
+test = true
+
+[[example]]
+name = "mio"
+path = "examples/mio.rs"
+test = true
+
+[[example]]
+name = "smol"
+path = "examples/smol.rs"
+test = true
+
+[[example]]
+name = "streams"
+path = "examples/streams/main.rs"
+test = true
+
+[[example]]
+name = "tokio"
+path = "examples/tokio/main.rs"
+test = true
+

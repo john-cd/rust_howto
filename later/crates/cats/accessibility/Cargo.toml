@@ -19,3 +19,9 @@ autolib = false
 accesskit = "0.24.0"
 accesskit_winit = "0.32.2"
 winit = "0.30.13"
+
+[[example]]
+name = "screen_readers"
+path = "examples/screen_readers/main.rs"
+test = true
+

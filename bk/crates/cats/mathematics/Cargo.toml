@@ -34,3 +34,29 @@ typenum = "1.20.0"
 
 [target.'cfg(target_os = "linux")'.dependencies]
 rug = "1.30.0"
+
+[[example]]
+name = "additional_numeric_types"
+path = "examples/additional_numeric_types/main.rs"
+test = true
+
+[[example]]
+name = "complex_numbers"
+path = "examples/complex_numbers/main.rs"
+test = true
+
+[[example]]
+name = "linear_algebra"
+path = "examples/linear_algebra/main.rs"
+test = true
+
+[[example]]
+name = "stats"
+path = "examples/stats/main.rs"
+test = true
+
+[[example]]
+name = "trigonometry"
+path = "examples/trigonometry/main.rs"
+test = true
+

@@ -16,3 +16,9 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
+
+[[example]]
+name = "rendering_engines"
+path = "examples/rendering_engines/main.rs"
+test = true
+

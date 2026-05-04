@@ -48,3 +48,59 @@ threadpool = "1.8.1"
 time = "0.3.47"
 tokio = { version = "1.52.1", features = ["macros", "rt-multi-thread"] }
 walkdir = "2.5.0"
+
+[[example]]
+name = "actors"
+path = "examples/actors/main.rs"
+test = true
+
+[[example]]
+name = "atomics"
+path = "examples/atomics/main.rs"
+test = true
+
+[[example]]
+name = "await_tree"
+path = "examples/await_tree.rs"
+test = true
+
+[[example]]
+name = "concurrent_data_structures"
+path = "examples/concurrent_data_structures/main.rs"
+test = true
+
+[[example]]
+name = "crossbeam"
+path = "examples/crossbeam/main.rs"
+test = true
+
+[[example]]
+name = "data_parallelism"
+path = "examples/data_parallelism/main.rs"
+test = true
+
+[[example]]
+name = "explicit_threads"
+path = "examples/explicit_threads/main.rs"
+test = true
+
+[[example]]
+name = "message_passing"
+path = "examples/message_passing/main.rs"
+test = true
+
+[[example]]
+name = "send_sync"
+path = "examples/send_sync/main.rs"
+test = true
+
+[[example]]
+name = "shared_state"
+path = "examples/shared_state/main.rs"
+test = true
+
+[[example]]
+name = "threadpool"
+path = "examples/threadpool/main.rs"
+test = true
+

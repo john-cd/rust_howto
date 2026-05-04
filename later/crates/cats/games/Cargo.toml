@@ -16,3 +16,14 @@ publish.workspace = true
 
 [dependencies]
 macroquad = "0.4.14"
+
+[[example]]
+name = "games"
+path = "examples/games.rs"
+test = true
+
+[[example]]
+name = "examples"
+path = "examples/main.rs"
+test = true
+

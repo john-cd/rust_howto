@@ -22,3 +22,24 @@ doc-comment = "0.3.4"
 semver = "1.0.28"
 tracing = "0.1.44"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[[example]]
+name = "crate_registries"
+path = "examples/crate_registries/main.rs"
+test = true
+
+[[example]]
+name = "documentation"
+path = "examples/documentation/main.rs"
+test = true
+
+[[example]]
+name = "rustdoc4"
+path = "examples/rustdoc4.rs"
+test = true
+
+[[example]]
+name = "semver"
+path = "examples/semver/main.rs"
+test = true
+

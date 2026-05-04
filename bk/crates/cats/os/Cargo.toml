@@ -21,3 +21,14 @@ clap = { version = "4.6.1", features = ["derive"] }
 libc = "0.2.186"
 regex = "1.12.3"
 which = "8.0.2"
+
+[[example]]
+name = "external_commands"
+path = "examples/external_commands/main.rs"
+test = true
+
+[[example]]
+name = "low_level_system_calls"
+path = "examples/low_level_system_calls/main.rs"
+test = true
+

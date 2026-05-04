@@ -22,3 +22,9 @@ tempfile = "3.27.0"
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 xshell = "0.2.7"
+
+[[example]]
+name = "building"
+path = "examples/building/main.rs"
+test = true
+

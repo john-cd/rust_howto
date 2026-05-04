@@ -20,3 +20,14 @@ anyhow = "1.0.102"
 serde = { version = "1.0.228", features = ["derive"] }
 tera = "1.20.1"
 tinytemplate = "1.2.1"
+
+[[example]]
+name = "tera"
+path = "examples/tera/main.rs"
+test = true
+
+[[example]]
+name = "tinytemplate"
+path = "examples/tinytemplate/main.rs"
+test = true
+

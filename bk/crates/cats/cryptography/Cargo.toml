@@ -49,3 +49,39 @@ subtle = "2.6.1"
 tokio-rustls = "0.26.4"
 x509-cert = { version = "0.2.5", features = ["builder"] }
 zeroize = "1.8.2"
+
+[[example]]
+name = "aead"
+path = "examples/aead/main.rs"
+test = true
+
+[[example]]
+name = "certs"
+path = "examples/certs/main.rs"
+test = true
+
+[[example]]
+name = "password_hashing"
+path = "examples/password_hashing/main.rs"
+test = true
+
+[[example]]
+name = "rsa"
+path = "examples/rsa.rs"
+test = true
+
+[[example]]
+name = "sign"
+path = "examples/sign/main.rs"
+test = true
+
+[[example]]
+name = "tls"
+path = "examples/tls/main.rs"
+test = true
+
+[[example]]
+name = "utilities"
+path = "examples/utilities/main.rs"
+test = true
+

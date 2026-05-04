@@ -17,3 +17,9 @@ autolib = false
 
 [dependencies]
 # LATER
+
+[[example]]
+name = "cryptocurrencies"
+path = "examples/cryptocurrencies/main.rs"
+test = true
+

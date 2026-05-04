@@ -28,3 +28,29 @@ inquire = "0.9.4"
 lexopt = "0.3.2"
 pico-args = "0.5.0"
 ratatui = "0.30.0"                                   # requires crossterm
+
+[[example]]
+name = "ansi_term"
+path = "examples/ansi_term/main.rs"
+test = true
+
+[[example]]
+name = "arguments"
+path = "examples/arguments/main.rs"
+test = true
+
+[[example]]
+name = "crossterm"
+path = "examples/crossterm.rs"
+test = true
+
+[[example]]
+name = "ratatui"
+path = "examples/ratatui.rs"
+test = true
+
+[[example]]
+name = "user_interaction"
+path = "examples/user_interaction/main.rs"
+test = true
+

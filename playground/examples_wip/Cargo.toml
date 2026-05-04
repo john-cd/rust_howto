@@ -14,3 +14,24 @@ publish = false
 
 [dependencies]
 anyhow = "1.0.102"
+
+[[example]]
+name = "anyhow_uptime"
+path = "examples/anyhow_uptime.rs"
+test = true
+
+[[example]]
+name = "asref2"
+path = "examples/asref2.rs"
+test = true
+
+[[example]]
+name = "modules1"
+path = "examples/modules1.rs"
+test = true
+
+[[example]]
+name = "split"
+path = "examples/split.rs"
+test = true
+

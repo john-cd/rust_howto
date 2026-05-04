@@ -22,3 +22,9 @@ anyhow = "1.0.102"
 clap = { version = "4.6.1", features = ["derive"] }
 comemo = "0.5.1"
 salsa = "0.26.1"
+
+[[example]]
+name = "incremental_computation"
+path = "examples/incremental_computation/main.rs"
+test = true
+

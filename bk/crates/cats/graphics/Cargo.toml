@@ -15,3 +15,9 @@ categories = ["graphics"]
 publish.workspace = true
 
 [dependencies]
+
+[[example]]
+name = "graphics"
+path = "examples/graphics.rs"
+test = true
+

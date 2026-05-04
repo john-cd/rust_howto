@@ -27,7 +27,7 @@ slint = ["dep:slint"]
 tauri = ["dep:tauri"]
 vello = ["dep:vello"]
 vger = ["dep:vger"]
-vizia = ["dep:vizia"]
+# TODO vizia = ["dep:vizia"]
 webrender = ["dep:webrender", "dep:glutin", "dep:gl"]
 
 [dependencies]
@@ -58,16 +58,71 @@ relm4-components = { version = "0.11.0", optional = true }
 # # FIXME https://gtk-rs.org/gtk4-rs/git/book/installation_linux.html
 # # FIXME https://gtk-rs.org/gtk4-rs/git/book/installation_windows.html
 rfd = "0.17.2"
-skia-safe = { version = "0.97.0", features = [
+skia-safe = { version = "0.90", features = [
     "gl",
-], optional = true } # TODO was pinned for slint
+], optional = true } # TODO pinned for vizia to 0.93.1 and to 0.90 for slint
 slint = { version = "1.16.1", optional = true }
 taffy = "0.10.1"
 tao = "0.35.0"
 tauri = { version = "2.11.0", optional = true } # Requires multiple libraries. See Dockerfile
 vello = { version = "0.8.0", optional = true } # TODO upgrade to 0.8.0+
 vger = { version = "0.4.0", optional = true }
-vizia = { version = "0.4.0", optional = true }
+# TODO vizia = { version = "0.4.0", optional = true }
 webrender = { version = "0.68.0", optional = true }
 wgpu = "29.0.3"
 winit = "0.30.13"  # for vello, winit examples
+
+[[example]]
+name = "2d_renderers"
+path = "examples/2d_renderers/main.rs"
+required-features = ["femtovg", "minifb", "skia", "vello", "vger", "webrender"]
+test = true
+
+[[example]]
+name = "gtk"
+path = "examples/gtk/main.rs"
+required-features = ["gtk"]
+test = true
+
+[[example]]
+name = "retained_mode_gui"
+path = "examples/retained_mode_gui/main.rs"
+required-features = ["floem", "iced", "slint", "xilem"]
+test = true
+
+[[example]]
+name = "web"
+path = "examples/web/main.rs"
+required-features = ["tauri"]
+test = true
+
+[[example]]
+name = "clipboard"
+path = "examples/clipboard/main.rs"
+test = true
+
+[[example]]
+name = "file_dialogs"
+path = "examples/file_dialogs/main.rs"
+test = true
+
+[[example]]
+name = "immediate_mode_gui"
+path = "examples/immediate_mode_gui/main.rs"
+test = true
+
+[[example]]
+name = "text_layout"
+path = "examples/text_layout/main.rs"
+test = true
+
+[[example]]
+name = "ui_layout"
+path = "examples/ui_layout/main.rs"
+test = true
+
+[[example]]
+name = "window_creation"
+path = "examples/window_creation/main.rs"
+test = true
+

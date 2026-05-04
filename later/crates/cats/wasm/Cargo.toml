@@ -29,3 +29,24 @@ wasmer = "6.1.0"
 wasmtime = { version = "41.0.4", optional = true } # Heavy compile
 web-sys = { version = "0.3.97", features = ["Window"] }
 yew = { version = "0.23.0", features = ["csr"] }
+
+[[example]]
+name = "interfacing_with_javascript"
+path = "examples/interfacing_with_javascript/main.rs"
+test = true
+
+[[example]]
+name = "wasm_development"
+path = "examples/wasm_development/main.rs"
+test = true
+
+[[example]]
+name = "wasm_standalone_runtimes"
+path = "examples/wasm_standalone_runtimes/main.rs"
+test = true
+
+[[example]]
+name = "yew"
+path = "examples/yew/main.rs"
+test = true
+

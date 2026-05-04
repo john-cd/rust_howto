@@ -29,3 +29,14 @@ proc-macro2 = "1.0.106"
 quote = "1.0.45"
 syn = { version = "2.0.117", features = ["full"] }
 watt = "0.5.0"
+
+[[example]]
+name = "compile_macros"
+path = "examples/compile_macros/main.rs"
+test = true
+
+[[example]]
+name = "write_proc_macros"
+path = "examples/write_proc_macros/main.rs"
+test = true
+

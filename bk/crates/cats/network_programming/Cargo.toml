@@ -26,3 +26,14 @@ url = "2.5.8"
 
 [target.'cfg(target_os = "linux")'.dependencies]
 glommio = "0.9.0"
+
+[[example]]
+name = "reverse_proxy"
+path = "examples/reverse_proxy/main.rs"
+test = true
+
+[[example]]
+name = "server"
+path = "examples/server/main.rs"
+test = true
+

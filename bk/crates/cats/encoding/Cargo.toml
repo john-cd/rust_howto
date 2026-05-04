@@ -49,3 +49,44 @@ zerocopy = { version = "0.8.48", features = ["derive"] }
 capnpc = "0.25.3"
 prost-build = "0.14.3"
 protoc-bin-vendored = "3"
+
+[[example]]
+name = "binary_encoders"
+path = "examples/binary_encoders/main.rs"
+test = true
+
+[[example]]
+name = "csv"
+path = "examples/csv/main.rs"
+test = true
+
+[[example]]
+name = "endian_byte"
+path = "examples/endian_byte.rs"
+test = true
+
+[[example]]
+name = "no_external_schema_file"
+path = "examples/no_external_schema_file/main.rs"
+test = true
+
+[[example]]
+name = "serde"
+path = "examples/serde/main.rs"
+test = true
+
+[[example]]
+name = "string_encoding"
+path = "examples/string_encoding/main.rs"
+test = true
+
+[[example]]
+name = "toml_encoding"
+path = "examples/toml_encoding/main.rs"
+test = true
+
+[[example]]
+name = "typecasts"
+path = "examples/typecasts/main.rs"
+test = true
+

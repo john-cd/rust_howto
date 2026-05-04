@@ -16,3 +16,9 @@ autolib = false
 
 [dependencies]
 rodio = "0.22.2"
+
+[[example]]
+name = "multimedia"
+path = "examples/multimedia/main.rs"
+test = true
+

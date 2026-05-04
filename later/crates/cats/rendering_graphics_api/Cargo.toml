@@ -20,3 +20,29 @@ wgpu = ["dep:wgpu"]
 
 [dependencies]
 wgpu = { version = "29.0.3", optional = true } # was pinned for ggez
+
+[[example]]
+name = "gpu_abstraction_layers"
+path = "examples/gpu_abstraction_layers/main.rs"
+test = true
+
+[[example]]
+name = "native_graphics_apis"
+path = "examples/native_graphics_apis/main.rs"
+test = true
+
+[[example]]
+name = "opengl"
+path = "examples/opengl/main.rs"
+test = true
+
+[[example]]
+name = "shaders"
+path = "examples/shaders/main.rs"
+test = true
+
+[[example]]
+name = "vulkan"
+path = "examples/vulkan/main.rs"
+test = true
+

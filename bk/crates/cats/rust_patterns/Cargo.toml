@@ -34,3 +34,34 @@ rpds = "1.2.0"
 scopeguard = "1.2.0"
 serde = { version = "1.0.228", features = ["derive"] }
 thiserror = "2.0.18"
+
+[[example]]
+name = "builder_pattern"
+path = "examples/builder_pattern/main.rs"
+test = true
+
+[[example]]
+name = "creational_patterns"
+path = "examples/creational_patterns/main.rs"
+test = true
+
+[[example]]
+name = "error"
+path = "examples/error/main.rs"
+test = true
+
+[[example]]
+name = "functional_programming"
+path = "examples/functional_programming/main.rs"
+test = true
+
+[[example]]
+name = "rust_specific_patterns"
+path = "examples/rust_specific_patterns/main.rs"
+test = true
+
+[[example]]
+name = "scopeguard"
+path = "examples/scopeguard.rs"
+test = true
+

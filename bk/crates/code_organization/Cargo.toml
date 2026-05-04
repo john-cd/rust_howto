@@ -18,3 +18,19 @@ autolib = false
 [dependencies]
 anyhow = "1.0.102"
 clap = { version = "4.6.1", features = ["derive"] }
+
+[[example]]
+name = "modules"
+path = "examples/modules/main.rs"
+test = true
+
+[[example]]
+name = "use"
+path = "examples/use/main.rs"
+test = true
+
+[[example]]
+name = "visibility"
+path = "examples/visibility/main.rs"
+test = true
+

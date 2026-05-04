@@ -20,3 +20,89 @@ anyhow = "1.0.102"
 clap = { version = "4.6.1", features = ["derive"] }
 derive_more = { version = "2.1.1", features = ["full"] }
 thiserror = "2.0.18"
+
+[[example]]
+name = "any"
+path = "examples/any/main.rs"
+test = true
+
+[[example]]
+name = "asref"
+path = "examples/asref/main.rs"
+test = true
+
+[[example]]
+name = "borrow"
+path = "examples/borrow/main.rs"
+test = true
+
+[[example]]
+name = "box"
+path = "examples/box/main.rs"
+test = true
+
+[[example]]
+name = "cmp"
+path = "examples/cmp/main.rs"
+test = true
+
+[[example]]
+name = "conversion_traits"
+path = "examples/conversion_traits/main.rs"
+test = true
+
+[[example]]
+name = "cow"
+path = "examples/cow/main.rs"
+test = true
+
+[[example]]
+name = "default"
+path = "examples/default/main.rs"
+test = true
+
+[[example]]
+name = "derive"
+path = "examples/derive/main.rs"
+test = true
+
+[[example]]
+name = "drop"
+path = "examples/drop/main.rs"
+test = true
+
+[[example]]
+name = "interior_mutability"
+path = "examples/interior_mutability/main.rs"
+test = true
+
+[[example]]
+name = "ops"
+path = "examples/ops/main.rs"
+test = true
+
+[[example]]
+name = "option"
+path = "examples/option/main.rs"
+test = true
+
+[[example]]
+name = "pin"
+path = "examples/pin/main.rs"
+test = true
+
+[[example]]
+name = "reference_counting"
+path = "examples/reference_counting/main.rs"
+test = true
+
+[[example]]
+name = "result"
+path = "examples/result/main.rs"
+test = true
+
+[[example]]
+name = "smart_pointers"
+path = "examples/smart_pointers/main.rs"
+test = true
+

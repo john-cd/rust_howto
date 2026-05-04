@@ -54,3 +54,49 @@ tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
 protoc-bin-vendored = "3.2.0"
 tonic-build = "0.14.5"
 tonic-prost-build = "0.14.5"
+
+[[example]]
+name = "actix_web"
+path = "examples/actix_web.rs"
+test = true
+
+[[example]]
+name = "async_graphql"
+path = "examples/async_graphql.rs"
+test = true
+
+[[example]]
+name = "axum"
+path = "examples/axum.rs"
+test = true
+
+[[example]]
+name = "grpc"
+path = "examples/grpc/main.rs"
+test = true
+
+[[example]]
+name = "hyper_server"
+path = "examples/hyper_server.rs"
+test = true
+
+[[example]]
+name = "leptos"
+path = "examples/leptos.rs"
+test = true
+
+[[example]]
+name = "loco"
+path = "examples/loco/main.rs"
+test = true
+
+[[example]]
+name = "middleware"
+path = "examples/middleware/main.rs"
+test = true
+
+[[example]]
+name = "rocket"
+path = "examples/rocket.rs"
+test = true
+

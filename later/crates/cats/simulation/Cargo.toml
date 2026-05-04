@@ -17,3 +17,14 @@ autolib = false
 
 [dependencies]
 rapier2d = "0.32"
+
+[[example]]
+name = "physics_engines"
+path = "examples/physics_engines/main.rs"
+test = true
+
+[[example]]
+name = "simulation"
+path = "examples/simulation/main.rs"
+test = true
+

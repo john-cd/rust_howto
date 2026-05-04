@@ -34,3 +34,9 @@ macroquad = "0.4.14"
 # TODO review on Windows
 [target.'cfg(not(target_os = "windows"))'.dependencies]
 ggez = { version = "0.10.0-rc0", optional = true }
+
+[[example]]
+name = "game_engines"
+path = "examples/game_engines/main.rs"
+test = true
+

@@ -35,3 +35,9 @@ divan = "0.1.21"
 name = "divan"
 # When set to false, you are responsible for defining a main() function to run tests and benchmarks.
 harness = false
+
+[[example]]
+name = "benchmarking"
+path = "examples/benchmarking/main.rs"
+test = true
+

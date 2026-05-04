@@ -21,3 +21,9 @@ default = []
 rustquant = []
 
 [dependencies]
+
+[[example]]
+name = "quant"
+path = "examples/quant/main.rs"
+test = true
+

@@ -47,3 +47,79 @@ uuid = { version = "1.23.1", features = [
     # Enable better diagnostics for compile-time UUIDs.
     "macro-diagnostics",
 ] }
+
+[[example]]
+name = "binaryheap"
+path = "examples/binaryheap/main.rs"
+test = true
+
+[[example]]
+name = "bitfield"
+path = "examples/bitfield/main.rs"
+test = true
+
+[[example]]
+name = "bloomfilter"
+path = "examples/bloomfilter/main.rs"
+test = true
+
+[[example]]
+name = "btrees"
+path = "examples/btrees/main.rs"
+test = true
+
+[[example]]
+name = "graph"
+path = "examples/graph/main.rs"
+test = true
+
+[[example]]
+name = "hashmap"
+path = "examples/hashmap/main.rs"
+test = true
+
+[[example]]
+name = "linkedlist"
+path = "examples/linkedlist/main.rs"
+test = true
+
+[[example]]
+name = "maps"
+path = "examples/maps/main.rs"
+test = true
+
+[[example]]
+name = "rangemap"
+path = "examples/rangemap/main.rs"
+test = true
+
+[[example]]
+name = "skiplist"
+path = "examples/skiplist/main.rs"
+test = true
+
+[[example]]
+name = "stack_allocated"
+path = "examples/stack_allocated/main.rs"
+test = true
+
+[[example]]
+name = "stacks_and_queues"
+path = "examples/stacks_and_queues/main.rs"
+test = true
+
+[[example]]
+name = "strings"
+path = "examples/strings/main.rs"
+test = true
+
+[[example]]
+name = "unique_ids"
+path = "examples/unique_ids/main.rs"
+test = true
+
+[[example]]
+name = "vector"
+path = "examples/vector/main.rs"
+test = true
+

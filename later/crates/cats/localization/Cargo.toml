@@ -16,3 +16,9 @@ autolib = false
 
 [dependencies]
 sys-locale = "0.3.2"
+
+[[example]]
+name = "localization"
+path = "examples/localization/main.rs"
+test = true
+

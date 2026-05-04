@@ -17,3 +17,9 @@ autolib = false
 
 [dependencies]
 nix = "0.31"
+
+[[example]]
+name = "freebsd"
+path = "examples/freebsd/main.rs"
+test = true
+

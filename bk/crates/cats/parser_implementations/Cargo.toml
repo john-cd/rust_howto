@@ -51,3 +51,49 @@ toml_edit = "0.25.11"
 xml = "1.2.1"
 xml5ever = "0.39.0"
 xmlparser = "0.13.6"
+
+[[example]]
+name = "html"
+path = "examples/html/main.rs"
+test = true
+
+[[example]]
+name = "ini"
+path = "examples/ini/main.rs"
+test = true
+
+[[example]]
+name = "javascript"
+path = "examples/javascript/main.rs"
+test = true
+
+[[example]]
+name = "json"
+path = "examples/json/main.rs"
+test = true
+
+[[example]]
+name = "markdown"
+path = "examples/markdown/main.rs"
+test = true
+
+[[example]]
+name = "programming_languages"
+path = "examples/programming_languages/main.rs"
+test = true
+
+[[example]]
+name = "toml"
+path = "examples/toml/main.rs"
+test = true
+
+[[example]]
+name = "xml"
+path = "examples/xml/main.rs"
+test = true
+
+[[example]]
+name = "yaml"
+path = "examples/yaml/main.rs"
+test = true
+

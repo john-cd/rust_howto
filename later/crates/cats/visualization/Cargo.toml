@@ -19,3 +19,9 @@ autolib = false
 ## General
 anyhow = "1.0.102"
 plotly = "0.14.1"
+
+[[example]]
+name = "visualization"
+path = "examples/visualization/main.rs"
+test = true
+

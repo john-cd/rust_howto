@@ -18,3 +18,9 @@ autolib = false
 [dependencies]
 ndarray = "0.17"
 nifti = { version = "0.17", features = ["ndarray_volumes"] }
+
+[[example]]
+name = "neuroscience"
+path = "examples/neuroscience/main.rs"
+test = true
+

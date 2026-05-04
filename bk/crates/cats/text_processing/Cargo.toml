@@ -40,3 +40,44 @@ strsim = "0.11.1"
 textwrap = { version = "0.16.2", features = ["hyphenation"] }
 unicode-segmentation = "1.13.2"
 ustr = "1.1.0"
+
+[[example]]
+name = "diffing"
+path = "examples/diffing/main.rs"
+test = true
+
+[[example]]
+name = "other_strings"
+path = "examples/other_strings/main.rs"
+test = true
+
+[[example]]
+name = "regex"
+path = "examples/regex/main.rs"
+test = true
+
+[[example]]
+name = "string_concat"
+path = "examples/string_concat/main.rs"
+test = true
+
+[[example]]
+name = "string_manipulation"
+path = "examples/string_manipulation/main.rs"
+test = true
+
+[[example]]
+name = "string_parsing"
+path = "examples/string_parsing/main.rs"
+test = true
+
+[[example]]
+name = "string_search"
+path = "examples/string_search/main.rs"
+test = true
+
+[[example]]
+name = "unicode"
+path = "examples/unicode/main.rs"
+test = true
+
