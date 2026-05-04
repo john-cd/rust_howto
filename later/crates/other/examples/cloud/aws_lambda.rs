@@ -20,7 +20,6 @@ use lambda_runtime::LambdaEvent;
 use lambda_runtime::service_fn;
 use serde::Deserialize;
 use serde::Serialize;
-use tracing_subscriber;
 
 #[derive(Deserialize)]
 struct Request {

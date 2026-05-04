@@ -2,33 +2,36 @@
     all(not(debug_assertions), target_os = "windows"),
     windows_subsystem = "windows"
 )]
-
 // ANCHOR: example
 //! Create a simple Tauri app with a menu and counter command handlers.
 //!
 //! This example defines backend commands and opens a Tauri window using the
 //! generated application context.
 
-use tauri::CustomMenuItem;
+use std::sync::Mutex;
+
 use tauri::Manager;
-use tauri::Menu;
-use tauri::MenuItem;
 use tauri::State;
-use tauri::StateMut;
-use tauri::Submenu;
+use tauri::menu::CustomMenuItem;
+use tauri::menu::Menu;
+use tauri::menu::MenuItem;
+use tauri::menu::Submenu;
 
 #[tauri::command]
-fn get_counter(counter: State<'_, CounterState>) -> i32 {
+fn get_counter(counter: State<'_, Mutex<CounterState>>) -> i32 {
+    let counter = counter.inner().lock().unwrap();
     counter.value
 }
 
 #[tauri::command]
-fn increment_counter(mut counter: StateMut<'_, CounterState>) {
+fn increment_counter(counter: State<'_, Mutex<CounterState>>) {
+    let mut counter = counter.inner().lock().unwrap();
     counter.value += 1;
 }
 
 #[tauri::command]
-fn decrement_counter(mut counter: StateMut<'_, CounterState>) {
+fn decrement_counter(counter: State<'_, Mutex<CounterState>>) {
+    let mut counter = counter.inner().lock().unwrap();
     counter.value -= 1;
 }
 
@@ -46,7 +49,7 @@ fn main() {
 
     tauri::Builder::default()
         .menu(menu)
-        .on_menu_event(|event| match event.menu_item_id() {
+        .on_menu_event(|_, event| match event.menu_item_id() {
             "quit" => {
                 std::process::exit(0);
             }
@@ -55,7 +58,7 @@ fn main() {
             }
             _ => {}
         })
-        .manage(CounterState { value: 0 })
+        .manage(Mutex::new(CounterState { value: 0 }))
         .invoke_handler(tauri::generate_handler![
             get_counter,
             increment_counter,

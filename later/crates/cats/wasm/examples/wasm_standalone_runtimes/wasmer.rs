@@ -70,7 +70,7 @@ mod tests {
     use super::*;
     #[test]
     fn test() -> anyhow::Result<()> {
-        main()?;
+        main();
         Ok(())
     }
 }

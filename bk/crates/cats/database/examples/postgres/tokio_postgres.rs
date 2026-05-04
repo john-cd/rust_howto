@@ -95,7 +95,7 @@ mod tests {
     use super::*;
     #[tokio::test]
     async fn require_external_svc() -> anyhow::Result<()> {
-        tokio::task::spawn_blocking(|| main()).await??;
+        tokio::task::spawn_blocking(main).await??;
         Ok(())
     }
 }

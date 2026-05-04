@@ -26,17 +26,6 @@ tokio-tungstenite = "0.29.0"
 tungstenite = "0.29.0"
 
 [[example]]
-name = "async_tungstenite"
-path = "examples/async_tungstenite.rs"
+name = "websocket"
+path = "examples/websocket/main.rs"
 test = true
-
-[[example]]
-name = "tokio_tungstenite"
-path = "examples/tokio_tungstenite.rs"
-test = true
-
-[[example]]
-name = "tungstenite"
-path = "examples/tungstenite.rs"
-test = true
-

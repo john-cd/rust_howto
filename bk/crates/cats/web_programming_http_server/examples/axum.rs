@@ -117,11 +117,12 @@ async fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
-// // ANCHOR_END: example
+// ANCHOR_END: example
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    // use super::*;
+
     #[test]
     fn require_network() -> anyhow::Result<()> {
         // main()?;

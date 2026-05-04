@@ -12,6 +12,7 @@
 /// Note that this example is commented out because it requires a C file to be
 /// present in the `src` directory.
 fn main() {
+    // TODO
     // cc::Build::new().file("src/hello.c").compile("hello");
     // // outputs `libhello.a`
     println!(
@@ -25,7 +26,6 @@ pub fn run() {
     main();
 }
 
-#[ignore = "Needs review"]
 #[cfg(test)]
 mod tests {
     use super::*;

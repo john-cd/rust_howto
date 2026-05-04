@@ -7,85 +7,93 @@
 // Rust. If you wish to use Cassandra without dealing with protocol-level
 // details, consider a higher-level crate such as `cdrs_tokio`.
 
+use std::convert::TryInto;
+
+use cassandra_protocol::compression::Compression;
 use cassandra_protocol::consistency::Consistency;
 use cassandra_protocol::error::Error;
-use cassandra_protocol::frame::Frame;
-use cassandra_protocol::frame::Opcode;
-use cassandra_protocol::protocol::ProtocolVersion;
-use cassandra_protocol::protocol::Request;
-use cassandra_protocol::types::Value;
+use cassandra_protocol::error::Result;
+use cassandra_protocol::frame::Envelope;
+use cassandra_protocol::frame::Flags;
+use cassandra_protocol::frame::Version;
+use cassandra_protocol::frame::message_response::ResponseBody;
+use cassandra_protocol::types::ByName;
+use cassandra_protocol::types::prelude::*;
 use tokio::io::AsyncReadExt;
 use tokio::io::AsyncWriteExt;
 use tokio::net::TcpStream;
 
-async fn read_frame(stream: &mut TcpStream) -> Result<Frame, Error> {
-    let mut buffer = vec![0; 4096];
-    let n = stream.read(&mut buffer).await?;
-    Frame::decode(&buffer[..n])
+async fn read_envelope(stream: &mut TcpStream) -> Result<Envelope, Error> {
+    let mut header = [0u8; 9];
+    stream.read_exact(&mut header).await?;
+
+    let body_len =
+        i32::from_be_bytes(header[5..9].try_into().unwrap()) as usize;
+    let mut buffer = Vec::with_capacity(9 + body_len);
+    buffer.extend_from_slice(&header);
+    buffer.resize(9 + body_len, 0);
+    stream.read_exact(&mut buffer[9..]).await?;
+
+    Ok(Envelope::from_buffer(&buffer, Compression::None)?.envelope)
 }
 
 #[tokio::main]
 async fn main() -> Result<(), Error> {
     let mut stream = TcpStream::connect("127.0.0.1:9042").await?;
-    let protocol_version = ProtocolVersion::V3;
+    let protocol_version = Version::V4;
 
     // 1. STARTUP
-    let startup_options =
-        vec![("CQL_VERSION".to_string(), "3.0.0".to_string())];
-    let startup_request = Request::Startup {
-        options: startup_options,
-    };
+    let startup_request = Envelope::new_req_startup(None, protocol_version);
     stream
-        .write_all(&startup_request.encode(protocol_version)?)
+        .write_all(&startup_request.encode_with(Compression::None)?)
         .await?;
-    let startup_response = read_frame(&mut stream).await?;
-    println!("Startup response opcode: {:?}", startup_response.opcode());
+    let startup_response = read_envelope(&mut stream).await?;
+    println!("Startup response opcode: {:?}", startup_response.opcode);
 
     // 2. OPTIONS
-    let options_request = Request::Options;
+    let options_request = Envelope::new_req_options(protocol_version);
     stream
-        .write_all(&options_request.encode(protocol_version)?)
+        .write_all(&options_request.encode_with(Compression::None)?)
         .await?;
-    let _options_response = read_frame(&mut stream).await?;
+    let _options_response = read_envelope(&mut stream).await?;
     println!("Received OPTIONS response");
 
     // 3. QUERY
     let query = "SELECT key, bootstrapped FROM system.local".to_string();
-    let query_request = Request::Query {
+    let query_request = Envelope::new_req_query(
         query,
-        consistency: Consistency::One as u16,
-        values: vec![],
-    };
+        Consistency::One,
+        None,
+        true,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        Flags::empty(),
+        protocol_version,
+    );
     stream
-        .write_all(&query_request.encode(protocol_version)?)
+        .write_all(&query_request.encode_with(Compression::None)?)
         .await?;
-    let query_response = read_frame(&mut stream).await?;
+    let query_response = read_envelope(&mut stream).await?;
 
-    match query_response.opcode() {
-        Opcode::Result => {
+    match query_response.response_body()? {
+        ResponseBody::Result(result) => {
             println!("Received query result");
-            let result = query_response.result().expect("Expected Result");
-            match result {
-                cassandra_protocol::frame::Result::Rows(rows) => {
-                    for row in rows.rows_content {
-                        println!("Row: {row:?}");
-                        for value in row {
-                            match value {
-                                Value::Text(t) => println!("Text value: {t}"),
-                                Value::Int(i) => println!("Int value: {i}"),
-                                _ => println!("Other value: {value:?}"),
-                            }
-                        }
-                    }
-                }
-                other => println!("Other result type: {other:?}"),
+            let rows = result.into_rows().unwrap_or_default();
+            for row in rows {
+                let key: Option<String> = row.by_name("key")?;
+                let bootstrapped: Option<bool> = row.by_name("bootstrapped")?;
+                println!("Row: key={:?}, bootstrapped={:?}", key, bootstrapped);
             }
         }
-        Opcode::Error => {
-            println!("Received query error: {:?}", query_response.error());
+        ResponseBody::Error(error_body) => {
+            println!("Received query error: {:?}", error_body);
         }
         other => {
-            println!("Received other response: {:?}", other);
+            println!("Unexpected response body: {:?}", other);
         }
     }
 
@@ -102,7 +110,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
     #[test]
-    fn require_external_svc() -> Result<(), Box<dyn std::error::Error>> {
+    fn require_external_svc() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

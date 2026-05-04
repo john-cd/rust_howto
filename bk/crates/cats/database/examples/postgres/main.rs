@@ -79,10 +79,10 @@ fn main() -> anyhow::Result<()> {
 pub(crate) static ENV_MUTEX: std::sync::Mutex<()> = std::sync::Mutex::new(());
 
 #[cfg(test)]
+#[cfg(feature = "postgres")]
 mod tests {
     use super::*;
 
-    #[cfg(feature = "postgres")]
     #[test]
     fn require_external_svc() -> anyhow::Result<()> {
         let _lock = ENV_MUTEX.lock().unwrap();

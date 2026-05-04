@@ -48,7 +48,6 @@ pub fn run() -> Result<()> {
     main()
 }
 
-#[ignore]
 #[cfg(test)]
 mod tests {
     use super::*;

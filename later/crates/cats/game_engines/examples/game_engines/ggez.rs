@@ -79,7 +79,7 @@ mod tests {
     #[test]
     #[ignore = "requires interactive example runtime"]
     fn test_main() {
-        main().unwrap();
+        main();
     }
 }
 // [finish](https://github.com/john-cd/rust_howto/issues/769)

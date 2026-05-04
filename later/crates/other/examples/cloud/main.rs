@@ -28,7 +28,7 @@ fn main() -> Result<()> {
     if let Some(command) = cli.command {
         match command {
             Commands::AwsLambda => aws_lambda::run()?,
-            Commands::AwsSdk => aws_sdk::run(),
+            Commands::AwsSdk => aws_sdk::run()?,
             Commands::Shuttle => shuttle::run(),
         }
     }

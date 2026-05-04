@@ -90,7 +90,7 @@ mod tests {
     fn test() -> anyhow::Result<()> {
         use anyhow::Context;
         let temp = Path::new("./temp");
-        utils::clean_folder(&temp)
+        utils::clean_folder(temp)
             .context("Failed to clean up the temp directory.")?;
         if !temp.exists() {
             fs::create_dir(temp)
