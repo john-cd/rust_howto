@@ -30,7 +30,7 @@ enum Commands {
     Timezone,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -45,7 +45,7 @@ fn main() {
                 format::run();
             }
             Commands::ParseStringIntoDatetime => {
-                parse_string_into_datetime::run();
+                parse_string_into_datetime::run().map_err(anyhow::Error::msg)?;
             }
             Commands::Timestamp => {
                 timestamp::run();
@@ -55,4 +55,5 @@ fn main() {
             }
         }
     }
+    Ok(())
 }

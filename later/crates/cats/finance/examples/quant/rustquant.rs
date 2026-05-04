@@ -4,6 +4,7 @@
 //! This example is self-contained and does not depend on an external finance
 //! crate.
 
+#[allow(dead_code)]
 #[derive(Clone, Copy)]
 enum OptionType {
     Call,
@@ -17,6 +18,7 @@ struct BlackScholesMerton {
     volatility: f64,
     risk_free_rate: f64,
     cost_of_carry: f64,
+    #[allow(dead_code)]
     option_type: OptionType,
 }
 

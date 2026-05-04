@@ -1,9 +1,10 @@
 #[cfg(feature = "lapin")]
 mod lapin;
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     #[cfg(feature = "lapin")]
     {
-        lapin::run();
+        lapin::run()?;
     }
+    Ok(())
 }

@@ -26,7 +26,7 @@ enum Commands {
     Rocksdb,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     #[cfg(any(feature = "lmdb", feature = "rocksdb"))]
     {
         let cli = Cli::parse();
@@ -35,13 +35,14 @@ fn main() {
             match command {
                 #[cfg(feature = "lmdb")]
                 Commands::Heed => {
-                    heed::run();
+                    heed::run()?;
                 }
                 #[cfg(feature = "rocksdb")]
                 Commands::Rocksdb => {
-                    rocksdb::run();
+                    rocksdb::run()?;
                 }
             }
         }
     }
+    Ok(())
 }

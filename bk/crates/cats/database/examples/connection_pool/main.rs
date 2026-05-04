@@ -20,18 +20,19 @@ enum Commands {
     Deadpool2,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Deadpool => {
-                deadpool::run();
+                deadpool::run()?;
             }
             #[cfg(feature = "postgres")]
             Commands::Deadpool2 => {
-                deadpool2::run();
+                deadpool2::run()?;
             }
         }
     }
+    Ok(())
 }

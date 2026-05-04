@@ -33,7 +33,7 @@ enum Commands {
     Replace,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -45,13 +45,13 @@ fn main() {
                 fancy_regex::run();
             }
             Commands::FilterLog => {
-                filter_log::run();
+                filter_log::run()?;
             }
             Commands::Hashtags => {
                 hashtags::run();
             }
             Commands::Phone => {
-                phone::run();
+                phone::run()?;
             }
             Commands::Regex => {
                 regex::run();
@@ -61,4 +61,5 @@ fn main() {
             }
         }
     }
+    Ok(())
 }

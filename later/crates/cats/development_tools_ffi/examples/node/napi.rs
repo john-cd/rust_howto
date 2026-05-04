@@ -2,7 +2,7 @@
 // ANCHOR: example
 // Framework for building pre-compiled Node.js addons in Rust.
 
-/// Import the preludes:
+// Import the preludes:
 // use napi_derive::napi;
 
 // #[napi] // Indicates that the function is exposed to JavaScript.

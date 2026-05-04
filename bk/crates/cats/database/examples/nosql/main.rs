@@ -26,7 +26,7 @@ enum Commands {
     Redis,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     #[cfg(any(feature = "mongodb", feature = "redis"))]
     {
         let cli = Cli::parse();
@@ -35,13 +35,14 @@ fn main() {
             match command {
                 #[cfg(feature = "mongodb")]
                 Commands::Mongodb => {
-                    mongodb::run();
+                    mongodb::run()?;
                 }
                 #[cfg(feature = "redis")]
                 Commands::Redis => {
-                    redis::run();
+                    redis::run()?;
                 }
             }
         }
     }
+    Ok(())
 }

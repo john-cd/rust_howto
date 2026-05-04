@@ -1,9 +1,10 @@
 #[cfg(feature = "elasticsearch")]
 mod elasticsearch;
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     #[cfg(feature = "elasticsearch")]
     {
-        elasticsearch::run();
+        elasticsearch::run()?;
     }
+    Ok(())
 }

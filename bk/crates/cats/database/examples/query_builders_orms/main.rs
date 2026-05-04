@@ -36,7 +36,7 @@ enum Commands {
     Sqlx,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     #[cfg(any(feature = "diesel", feature = "sea_orm", feature = "sqlx"))]
     {
         let cli = Cli::parse();
@@ -49,7 +49,7 @@ fn main() {
                 }
                 #[cfg(feature = "sea_orm")]
                 Commands::SeaOrm => {
-                    sea_orm::run();
+                    sea_orm::run().map_err(anyhow::Error::msg)?;
                 }
                 #[cfg(feature = "sea_orm")]
                 Commands::Seaography => {
@@ -57,9 +57,10 @@ fn main() {
                 }
                 #[cfg(feature = "sqlx")]
                 Commands::Sqlx => {
-                    sqlx::run();
+                    sqlx::run()?;
                 }
             }
         }
     }
+    Ok(())
 }

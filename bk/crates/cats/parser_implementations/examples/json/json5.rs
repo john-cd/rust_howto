@@ -28,10 +28,10 @@ fn main() {
         Ok(value) => {
             println!("Parsed JSON5: {value:#?}");
 
-            if let Some(nested) = value.get("nested") {
-                if let Some(pi) = nested.get("pi") {
-                    println!("Pi: {pi}");
-                }
+            if let Some(nested) = value.get("nested")
+                && let Some(pi) = nested.get("pi")
+            {
+                println!("Pi: {pi}");
             }
 
             if let Some(hex) = value.get("hexadecimal") {
