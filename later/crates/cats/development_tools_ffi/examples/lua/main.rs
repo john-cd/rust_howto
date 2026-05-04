@@ -2,6 +2,8 @@
 use clap::Parser;
 #[cfg(feature = "lua")]
 use clap::Subcommand;
+#[cfg(feature = "lua")]
+use ::mlua::prelude::LuaResult;
 
 #[cfg(feature = "lua")]
 mod mlua;

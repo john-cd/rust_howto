@@ -11,10 +11,10 @@
 //! without expensive serialization/deserialization.
 //!
 //! - SQL Support: We can query data registered within DataFusion using
-//! standard SQL.
+//!   standard SQL.
 //! - DataFrame API: It also provides a programmatic DataFrame
-//! API (similar in concept to Pandas or Polars) for building query plans
-//! step-by-step in Rust code.
+//!   API (similar in concept to Pandas or Polars) for building query plans
+//!   step-by-step in Rust code.
 //!
 //! The following creates a table named "people" with columns "name" and
 //! "age", inserts some data, and then runs a query to select people older
@@ -37,7 +37,7 @@ async fn run_query() -> datafusion::error::Result<()> {
         Field::new("age", DataType::Int32, false),
     ]);
 
-    let data = vec![
+    let data = [
         vec!["Alice".to_string(), "30".to_string()],
         vec!["Bob".to_string(), "40".to_string()],
     ];

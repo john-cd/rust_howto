@@ -107,4 +107,4 @@ mod tests {
         main();
     }
 }
-// // [finish](https://github.com/john-cd/rust_howto/issues/783)
+// [finish](https://github.com/john-cd/rust_howto/issues/783)

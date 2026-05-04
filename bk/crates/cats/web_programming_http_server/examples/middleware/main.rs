@@ -18,17 +18,18 @@ enum Commands {
     TowerHttp,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Cors => {
-                cors::run();
+                cors::run()?;
             }
             Commands::TowerHttp => {
                 tower_http::run();
             }
         }
     }
+    Ok(())
 }

@@ -42,15 +42,14 @@ path = "src/main.rs"
     if let Some(Item::Value(tokio)) = doc
         .get_mut("dependencies")
         .and_then(|deps| deps.get_mut("tokio"))
+        && let Some(t) = tokio.as_inline_table_mut()
     {
-        if let Some(t) = tokio.as_inline_table_mut() {
-            let features = t
-                .get_mut("features")
-                .and_then(|f| f.as_array_mut())
-                .expect("`tokio` features should be an array");
+        let features = t
+            .get_mut("features")
+            .and_then(|f| f.as_array_mut())
+            .expect("`tokio` features should be an array");
 
-            features.push("time");
-        }
+        features.push("time");
     }
 
     // Add a new table.

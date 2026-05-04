@@ -21,13 +21,13 @@ enum Commands {
     Result3,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Result => {
-                result::run();
+                result::run().map_err(|e| anyhow::anyhow!("{e}"))?;
             }
             Commands::Result2 => {
                 result2::run();
@@ -37,4 +37,5 @@ fn main() {
             }
         }
     }
+    Ok(())
 }

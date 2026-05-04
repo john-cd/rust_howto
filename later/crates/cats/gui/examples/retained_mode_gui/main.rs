@@ -1,9 +1,13 @@
+#![allow(unexpected_cfgs)]
+
 use clap::Parser;
 use clap::Subcommand;
 
 #[cfg(feature = "floem")]
 mod floem;
+#[cfg(feature = "iced")]
 mod iced;
+#[cfg(feature = "slint")]
 mod slint;
 #[cfg(feature = "vizia")]
 mod vizia;
@@ -21,8 +25,10 @@ enum Commands {
     #[cfg(feature = "floem")]
     #[command(name = "floem")]
     Floem,
+    #[cfg(feature = "iced")]
     #[command(name = "iced")]
     Iced,
+    #[cfg(feature = "slint")]
     #[command(name = "slint")]
     Slint,
     #[cfg(feature = "vizia")]
@@ -42,9 +48,11 @@ fn main() -> anyhow::Result<()> {
             Commands::Floem => {
                 floem::run();
             }
+            #[cfg(feature = "iced")]
             Commands::Iced => {
                 iced::run();
             }
+            #[cfg(feature = "slint")]
             Commands::Slint => {
                 slint::run()?;
             }
@@ -60,5 +68,3 @@ fn main() -> anyhow::Result<()> {
     }
     Ok(())
 }
-
-// [finish fix](https://github.com/john-cd/rust_howto/issues/1051)

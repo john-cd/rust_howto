@@ -3,12 +3,14 @@ use clap::Subcommand;
 
 #[cfg(feature = "femtovg")]
 mod femtovg;
+#[cfg(feature = "minifb")]
 mod minifb;
 #[cfg(feature = "skia")]
 mod skia_safe;
 #[cfg(all(feature = "vello", not(windows)))]
 // TODO review Vello support for Windows
 mod vello;
+#[cfg(feature = "vger")]
 mod vger;
 #[cfg(all(feature = "webrender", not(windows)))]
 // TODO Webrender support Windows
@@ -25,6 +27,7 @@ enum Commands {
     #[cfg(feature = "femtovg")]
     #[command(name = "femtovg")]
     Femtovg,
+    #[cfg(feature = "minifb")]
     #[command(name = "minifb")]
     Minifb,
     #[cfg(feature = "skia")]
@@ -33,6 +36,7 @@ enum Commands {
     #[cfg(all(feature = "vello", not(windows)))]
     #[command(name = "vello")]
     Vello,
+    #[cfg(feature = "vger")]
     #[command(name = "vger")]
     Vger,
     #[cfg(all(feature = "webrender", not(windows)))]
@@ -49,6 +53,7 @@ fn main() {
             Commands::Femtovg => {
                 femtovg::run();
             }
+            #[cfg(feature = "minifb")]
             Commands::Minifb => {
                 minifb::run();
             }
@@ -60,6 +65,7 @@ fn main() {
             Commands::Vello => {
                 vello::run();
             }
+            #[cfg(feature = "vger")]   
             Commands::Vger => {
                 vger::run();
             }

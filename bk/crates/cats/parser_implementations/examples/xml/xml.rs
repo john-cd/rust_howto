@@ -44,10 +44,8 @@ fn main() -> anyhow::Result<()> {
             Ok(XmlEvent::EndElement { name }) => {
                 println!("End: {name}");
             }
-            Ok(XmlEvent::Characters(text)) => {
-                if !text.trim().is_empty() {
-                    println!("  Text: {text}");
-                }
+            Ok(XmlEvent::Characters(text)) if !text.trim().is_empty() => {
+                println!("  Text: {text}");
             }
             Err(e) => {
                 eprintln!("Error: {e}");

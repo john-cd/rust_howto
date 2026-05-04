@@ -2,7 +2,7 @@ use clap::Parser;
 use clap::Subcommand;
 
 mod dioxus;
-#[cfg(not(windows))] // TODO review Windows support
+#[cfg(not(windows), feature = "tauri")] // TODO review Windows support
 mod tauri;
 
 #[derive(Parser)]
@@ -28,7 +28,7 @@ fn main() {
             Commands::Dioxus => {
                 dioxus::run();
             }
-            #[cfg(not(windows))]
+            #[cfg(not(windows), feature = "tauri")]
             Commands::Tauri => {
                 tauri::run();
             }

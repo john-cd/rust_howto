@@ -49,5 +49,5 @@ mod tests {
 // Workaround for unused code warnings when not compiled by shuttle:
 #[allow(dead_code)]
 fn dummy() {
-    let _ = hello_world();
+    std::mem::drop(hello_world());
 }

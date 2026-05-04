@@ -13,6 +13,7 @@ struct Cli {
     command: Option<Commands>,
 }
 
+#[allow(clippy::enum_variant_names)]
 #[derive(Subcommand)]
 enum Commands {
     #[command(name = "box_basics")]

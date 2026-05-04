@@ -1,5 +1,3 @@
-#![allow(unexpected_cfgs)]
-
 #[cfg(feature = "gtk")]
 use clap::Parser;
 #[cfg(feature = "gtk")]
@@ -20,10 +18,8 @@ struct Cli {
 #[cfg(feature = "gtk")]
 #[derive(Subcommand)]
 enum Commands {
-    #[cfg(feature = "gtk")]
     #[command(name = "gtk4")]
     Gtk4,
-    #[cfg(feature = "gtk")]
     #[command(name = "relm4")]
     Relm4,
 }
@@ -35,11 +31,9 @@ fn main() {
 
         if let Some(command) = cli.command {
             match command {
-                #[cfg(feature = "gtk")]
                 Commands::Gtk4 => {
                     gtk4::run();
                 }
-                #[cfg(feature = "gtk")]
                 Commands::Relm4 => {
                     relm4::run();
                 }

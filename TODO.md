@@ -26,7 +26,7 @@
 ## WRITING
 
 - [ ] polish stack-allocated
-- [ ] polish directory_traversal
+- [?] polish directory_traversal
 - [ ] polish hashing + algorithms
 - [?] polish [contributing](bk/src/appendices/contributing/index.md) [#529](https://github.com/john-cd/rust_howto/issues/529)
 
@@ -3696,7 +3696,7 @@
 
 ### bk/crates/cats/web_programming_http_server/examples/grpc/tonic.rs
 
-- [?] [Web] Implement Tonic gRPC example and full integration tests (https://github.com/john-cd/rust_howto/issues/870) - COMPLETED ([bk/crates/cats/web_programming_http_server/examples/grpc/tonic.rs](./bk/crates/cats/web_programming_http_server/examples/grpc/tonic.rs#L87))
+- [?] [Web] Implement Tonic gRPC example and full integration tests (https://github.com/john-cd/rust_howto/issues/870) - COMPLETED (bk/crates/cats/web_programming_http_server/examples/grpc/tonic.rs)
 
 ### bk/crates/cats/web_programming_http_server/examples/hyper_server.rs
 
@@ -4099,7 +4099,7 @@
 
 ### later/crates/cats/web_programming_websocket/examples/async_tungstenite.rs
 
-- [?] [Web] Migrate to wss://echo.websocket.events and enable async-tungstenite example (https://github.com/john-cd/rust_howto/issues/1058) - COMPLETED ([later/crates/cats/web_programming_websocket/examples/async_tungstenite.rs](./later/crates/cats/web_programming_websocket/examples/async_tungstenite.rs#L58))
+- [?] [Web] Migrate to wss://echo.websocket.events and enable async-tungstenite example (https://github.com/john-cd/rust_howto/issues/1058) - COMPLETED (later/crates/cats/web_programming_websocket/examples/async_tungstenite.rs)
 
 ### later/crates/cats/web_programming_websocket/examples/tokio_tungstenite.rs
 
@@ -4975,7 +4975,6 @@
 
 ### playground/bits_and_pieces/github/workflow.yml
 
-- [ ] [clean up](https://github.com/john-cd/rust_howto/issues/1268) ([playground/bits_and_pieces/github/workflow.yml](./playground/bits_and_pieces/github/workflow.yml#L2))
 - [ ] [review https://github.com/actions-rust-lang/setup-rust-toolchain/tree/main](https://github.com/john-cd/rust_howto/issues/1269) ([playground/bits_and_pieces/github/workflow.yml](./playground/bits_and_pieces/github/workflow.yml#L43))
 - [ ] [consider using https://github.com/marketplace/actions/rust-cache](https://github.com/john-cd/rust_howto/issues/1270) ([playground/bits_and_pieces/github/workflow.yml](./playground/bits_and_pieces/github/workflow.yml#L103))
 
