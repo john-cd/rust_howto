@@ -1,9 +1,13 @@
 #![allow(dead_code)]
 use std::env;
+use std::sync::Mutex;
 
 use dotenvy::dotenv;
+use once_cell::sync::Lazy;
 use oracle::Connection;
 use oracle::Error;
+
+static ENV_MUTEX: Lazy<Mutex<()>> = Lazy::new(|| Mutex::new(()));
 
 // ANCHOR: example
 /// Rust bindings to ODPI-C.
@@ -63,18 +67,6 @@ mod tests {
     #[test]
     #[ignore = "requires external oracle db and oracle client library"]
     fn require_external_svc() -> anyhow::Result<()> {
-        let username = std::env::var("TEST_ORACLE_DB_USERNAME")
-            .expect("TEST_ORACLE_DB_USERNAME must be set");
-        let password = std::env::var("TEST_ORACLE_DB_PASSWORD")
-            .expect("TEST_ORACLE_DB_PASSWORD must be set");
-        let db_url = std::env::var("TEST_ORACLE_DB_URL")
-            .expect("TEST_ORACLE_DB_URL must be set");
-
-        unsafe {
-            std::env::set_var("ORACLE_DB_USERNAME", username);
-            std::env::set_var("ORACLE_DB_PASSWORD", password);
-            std::env::set_var("ORACLE_DB_URL", db_url);
-        }
         main()?;
         Ok(())
     }

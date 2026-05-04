@@ -101,17 +101,6 @@ mod tests {
     #[test]
     #[ignore = "requires external oracle db and oracle client library"]
     fn require_external_svc() -> anyhow::Result<()> {
-        let username = std::env::var("ORACLE_DB_USERNAME")
-            .expect("ORACLE_DB_USERNAME must be set");
-        let password = std::env::var("ORACLE_DB_PASSWORD")
-            .expect("ORACLE_DB_PASSWORD must be set");
-        let db_url =
-            std::env::var("ORACLE_DB_URL").expect("ORACLE_DB_URL must be set");
-        // unsafe {
-        //     env::set_var("ORACLE_DB_USERNAME", username);
-        //     env::set_var("ORACLE_DB_PASSWORD", password);
-        //     env::set_var("ORACLE_DB_URL", db_url);
-        // }
         main()?;
         Ok(())
     }

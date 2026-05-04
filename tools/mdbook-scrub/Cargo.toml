@@ -1,3 +1,5 @@
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
 [package]
 name = "mdbook-scrub"
 version = "0.2.0"
@@ -8,10 +10,9 @@ readme = "README.md"
 homepage = "https://github.com/john-cd/rust_howto/"
 keywords = ["book", "mdbook", "rustbook", "documentation"]
 categories = ["command-line-utilities", "text-processing", "parser-implementations"]
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-clap = "4.6.1"
+clap = { version = "4.6.1", features = ["cargo"] }
 mdbook-preprocessor = "0.5.2"
 regex = "1.12.3"
 semver = "1.0.28"

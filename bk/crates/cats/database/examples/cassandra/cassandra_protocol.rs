@@ -18,12 +18,11 @@ use cassandra_protocol::frame::Flags;
 use cassandra_protocol::frame::Version;
 use cassandra_protocol::frame::message_response::ResponseBody;
 use cassandra_protocol::types::ByName;
-use cassandra_protocol::types::prelude::*;
 use tokio::io::AsyncReadExt;
 use tokio::io::AsyncWriteExt;
 use tokio::net::TcpStream;
 
-async fn read_envelope(stream: &mut TcpStream) -> Result<Envelope, Error> {
+async fn read_envelope(stream: &mut TcpStream) -> Result<Envelope> {
     let mut header = [0u8; 9];
     stream.read_exact(&mut header).await?;
 
@@ -34,11 +33,14 @@ async fn read_envelope(stream: &mut TcpStream) -> Result<Envelope, Error> {
     buffer.resize(9 + body_len, 0);
     stream.read_exact(&mut buffer[9..]).await?;
 
-    Ok(Envelope::from_buffer(&buffer, Compression::None)?.envelope)
+    Ok(Envelope::from_buffer(&buffer, Compression::None)
+        .map_err(|err| Error::General(err.to_string()))?
+        .envelope)
 }
 
+#[allow(clippy::result_large_err)]
 #[tokio::main]
-async fn main() -> Result<(), Error> {
+async fn main() -> Result<()> {
     let mut stream = TcpStream::connect("127.0.0.1:9042").await?;
     let protocol_version = Version::V4;
 
