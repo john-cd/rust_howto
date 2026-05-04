@@ -34,3 +34,39 @@ zenoh = "1.9.0"
 [target.'cfg(not(target_os = "windows"))'.dependencies]
 rosrust = { version = "0.9.12", optional = true }
 rosrust_msg = { version = "0.1.8", optional = true }
+
+[[example]]
+name = "artificial_intelligence"
+path = "examples/artificial_intelligence/main.rs"
+test = true
+
+[[example]]
+name = "control_systems"
+path = "examples/control_systems/main.rs"
+test = true
+
+[[example]]
+name = "hardware_integration"
+path = "examples/hardware_integration/main.rs"
+test = true
+
+[[example]]
+name = "perception_and_sensors"
+path = "examples/perception_and_sensors/main.rs"
+test = true
+
+[[example]]
+name = "robot_operating_systems"
+path = "examples/robot_operating_systems/main.rs"
+test = true
+
+[[example]]
+name = "robotics_frameworks"
+path = "examples/robotics_frameworks/main.rs"
+test = true
+
+[[example]]
+name = "simulation_visualization"
+path = "examples/simulation_visualization/main.rs"
+test = true
+

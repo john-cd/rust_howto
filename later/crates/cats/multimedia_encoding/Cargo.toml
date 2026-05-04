@@ -17,3 +17,9 @@ autolib = false
 
 [dependencies]
 rav1e = { version = "0.8.1", default-features = false }
+
+[[example]]
+name = "encoding"
+path = "examples/encoding/main.rs"
+test = true
+

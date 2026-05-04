@@ -26,3 +26,9 @@ rand = { version = "0.10.1", features = ["thread_rng"] }
 [target.'cfg(target_os = "linux")'.dependencies]
 image = { version = "0.25.10", optional = true }
 opencv = { version = "0.98.2", default-features = false, features = ["clang-runtime", "imgcodecs", "imgproc"], optional = true }
+
+[[example]]
+name = "opencv"
+path = "examples/opencv/main.rs"
+test = true
+

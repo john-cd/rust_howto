@@ -26,3 +26,14 @@ confy = "2.0.0"
 dotenvy = "0.15.7"
 envy = "0.4.2"
 serde = { version = "1.0.228", features = ["derive"] }
+
+[[example]]
+name = "configuration"
+path = "examples/configuration/main.rs"
+test = true
+
+[[example]]
+name = "env"
+path = "examples/env/main.rs"
+test = true
+

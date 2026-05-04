@@ -33,3 +33,59 @@ same-file = "1.0.6"
 tempfile = "3.27.0"
 utils = { path = "../../utils" }
 walkdir = "2.5.0"
+
+[[example]]
+name = "directories"
+path = "examples/directories/main.rs"
+test = true
+
+[[example]]
+name = "directory_traversal"
+path = "examples/directory_traversal/main.rs"
+test = true
+
+[[example]]
+name = "file_watching"
+path = "examples/file_watching/main.rs"
+test = true
+
+[[example]]
+name = "metadata"
+path = "examples/metadata/main.rs"
+test = true
+
+[[example]]
+name = "open"
+path = "examples/open.rs"
+test = true
+
+[[example]]
+name = "paths"
+path = "examples/paths/main.rs"
+test = true
+
+[[example]]
+name = "read_write"
+path = "examples/read_write/main.rs"
+test = true
+
+[[example]]
+name = "stdin_stdout"
+path = "examples/stdin_stdout/main.rs"
+test = true
+
+[[example]]
+name = "symbolic_links"
+path = "examples/symbolic_links/main.rs"
+test = true
+
+[[example]]
+name = "tempfile"
+path = "examples/tempfile/main.rs"
+test = true
+
+[[example]]
+name = "user_directories"
+path = "examples/user_directories/main.rs"
+test = true
+

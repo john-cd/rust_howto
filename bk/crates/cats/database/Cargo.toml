@@ -87,3 +87,59 @@ uuid = { version = "1.23.1", features = ["v4"] }
 
 [target.'cfg(target_os = "linux")'.dependencies]
 sibyl = { version = "0.7.0", features = ["blocking"], optional = true }
+
+[[example]]
+name = "amqp"
+path = "examples/amqp/main.rs"
+test = true
+
+[[example]]
+name = "cassandra"
+path = "examples/cassandra/main.rs"
+test = true
+
+[[example]]
+name = "connection_pool"
+path = "examples/connection_pool/main.rs"
+test = true
+
+[[example]]
+name = "kv"
+path = "examples/kv/main.rs"
+test = true
+
+[[example]]
+name = "mssql"
+path = "examples/mssql/main.rs"
+test = true
+
+[[example]]
+name = "nosql"
+path = "examples/nosql/main.rs"
+test = true
+
+[[example]]
+name = "oracle"
+path = "examples/oracle/main.rs"
+test = true
+
+[[example]]
+name = "postgres"
+path = "examples/postgres/main.rs"
+test = true
+
+[[example]]
+name = "query_builders_orms"
+path = "examples/query_builders_orms/main.rs"
+test = true
+
+[[example]]
+name = "search"
+path = "examples/search/main.rs"
+test = true
+
+[[example]]
+name = "sqlite"
+path = "examples/sqlite/main.rs"
+test = true
+

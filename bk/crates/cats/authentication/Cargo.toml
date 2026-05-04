@@ -20,3 +20,9 @@ autolib = false
 ## General
 anyhow = "1.0.102"
 reqwest = { version = "0.13.3", features = ["blocking"] }
+
+[[example]]
+name = "basic_authentication"
+path = "examples/basic_authentication/main.rs"
+test = true
+

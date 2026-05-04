@@ -27,3 +27,9 @@ linfa-linear = "0.8.1"
 ndarray = "0.16.1" # TODO upgrade to 0.17.2+
 rand = { version = "0.10.1", features = ["std"] }
 smartcore = "0.5.0"
+
+[[example]]
+name = "ml"
+path = "examples/ml/main.rs"
+test = true
+

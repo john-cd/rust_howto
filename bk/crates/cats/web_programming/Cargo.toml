@@ -27,3 +27,24 @@ reqwest = "0.13.3"
 select = "0.6.1"
 tokio = { version = "1.52.1", features = ["macros", "rt-multi-thread"] }
 url = "2.5.8"
+
+[[example]]
+name = "http_types_and_interfaces"
+path = "examples/http_types_and_interfaces/main.rs"
+test = true
+
+[[example]]
+name = "mime"
+path = "examples/mime/main.rs"
+test = true
+
+[[example]]
+name = "scraping"
+path = "examples/scraping/main.rs"
+test = true
+
+[[example]]
+name = "url"
+path = "examples/url/main.rs"
+test = true
+

@@ -20,3 +20,9 @@ autolib = false
 [target.'cfg(target_os = "macos")'.dependencies]
 cocoa = "0.26"
 objc = "0.2.7"
+
+[[example]]
+name = "macos"
+path = "examples/macos/main.rs"
+test = true
+

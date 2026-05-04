@@ -32,3 +32,19 @@ tar = "0.4.45"
 tokio = { version = "1.52.1", features = ["macros", "rt-multi-thread", "fs", "io-util", "io-std"] }
 tokio-util = { version = "0.7.18", features = ["codec"] }
 zip = "8.6.0"
+
+[[example]]
+name = "async_zip"
+path = "examples/async_zip/main.rs"
+test = true
+
+[[example]]
+name = "compression"
+path = "examples/compression/main.rs"
+test = true
+
+[[example]]
+name = "tar"
+path = "examples/tar/main.rs"
+test = true
+

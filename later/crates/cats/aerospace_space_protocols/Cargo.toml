@@ -18,3 +18,9 @@ autolib = false
 [dependencies]
 arbitrary-int = "2.1.1"
 spacepackets = "0.17.0"
+
+[[example]]
+name = "space_protocols"
+path = "examples/space_protocols/main.rs"
+test = true
+

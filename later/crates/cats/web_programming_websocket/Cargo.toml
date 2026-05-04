@@ -24,3 +24,19 @@ futures-util = "0.3.32"
 tokio = { version = "1.52.1", features = ["macros", "rt-multi-thread", "net"] }
 tokio-tungstenite = "0.29.0"
 tungstenite = "0.29.0"
+
+[[example]]
+name = "async_tungstenite"
+path = "examples/async_tungstenite.rs"
+test = true
+
+[[example]]
+name = "tokio_tungstenite"
+path = "examples/tokio_tungstenite.rs"
+test = true
+
+[[example]]
+name = "tungstenite"
+path = "examples/tungstenite.rs"
+test = true
+

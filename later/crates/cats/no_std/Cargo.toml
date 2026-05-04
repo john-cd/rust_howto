@@ -16,3 +16,9 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
+
+[[example]]
+name = "no_std"
+path = "examples/no_std/main.rs"
+test = true
+

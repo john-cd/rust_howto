@@ -19,3 +19,19 @@ autolib = false
 anyhow = "1.0.102"
 rand = { version = "0.10.1", features = ["thread_rng"] }
 url = "2.5.8"
+
+[[example]]
+name = "about"
+path = "examples/about.rs"
+test = true
+
+[[example]]
+name = "about1"
+path = "examples/about1.rs"
+test = true
+
+[[example]]
+name = "about2"
+path = "examples/about2.rs"
+test = true
+

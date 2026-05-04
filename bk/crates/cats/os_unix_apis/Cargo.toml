@@ -22,3 +22,9 @@ clap = { version = "4.6.1", features = ["derive"] }
 [target.'cfg(target_family = "unix")'.dependencies]
 nix = { version = "0.31.2", features = ["fs"] }
 rustix = { version = "1.1.4", features = ["fs"] }
+
+[[example]]
+name = "unix"
+path = "examples/unix/main.rs"
+test = true
+

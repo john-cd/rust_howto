@@ -17,3 +17,9 @@ autolib = false
 
 [dependencies]
 gltf = "1.4"
+
+[[example]]
+name = "data_formats"
+path = "examples/data_formats/main.rs"
+test = true
+

@@ -17,3 +17,9 @@ autolib = false
 
 [dependencies]
 nix = "0.31"
+
+[[example]]
+name = "linux"
+path = "examples/linux/main.rs"
+test = true
+

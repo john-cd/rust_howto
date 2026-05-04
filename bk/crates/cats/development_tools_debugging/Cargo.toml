@@ -53,3 +53,19 @@ syslog = "7.0.0"
 
 [dev-dependencies]
 anyhow = "1.0.102"
+
+[[example]]
+name = "log"
+path = "examples/log/main.rs"
+test = true
+
+[[example]]
+name = "other"
+path = "examples/other/main.rs"
+test = true
+
+[[example]]
+name = "tracing"
+path = "examples/tracing/main.rs"
+test = true
+

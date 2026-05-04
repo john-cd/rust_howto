@@ -33,3 +33,14 @@ sled = { version = "0.34.7", optional = true }
 surrealdb = { version = "3.0.5", features = ["kv-mem"], optional = true }
 tantivy = { version = "0.26.1", optional = true }
 tokio = { version = "1.52.1", features = ["macros", "rt-multi-thread"] }
+
+[[example]]
+name = "databases"
+path = "examples/databases/main.rs"
+test = true
+
+[[example]]
+name = "search_engines"
+path = "examples/search_engines/main.rs"
+test = true
+

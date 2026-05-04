@@ -17,3 +17,9 @@ autolib = false
 
 [dependencies]
 tello = "0.6.3"
+
+[[example]]
+name = "drones"
+path = "examples/drones/main.rs"
+test = true
+

@@ -91,11 +91,11 @@ async fn main() -> Result<(), Error> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
 
-pub fn run() -> Result<(), Error> {
-    main()
+pub fn run() -> anyhow::Result<()> {
+    main()?;
+    Ok(())
 }
 
 #[cfg(test)]

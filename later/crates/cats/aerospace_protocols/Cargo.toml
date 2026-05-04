@@ -17,3 +17,9 @@ autolib = false
 
 [dependencies]
 mavlink = "0.17.1"
+
+[[example]]
+name = "aerospace_protocols"
+path = "examples/aerospace_protocols/main.rs"
+test = true
+

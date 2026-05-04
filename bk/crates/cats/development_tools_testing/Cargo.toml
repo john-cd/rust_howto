@@ -28,3 +28,39 @@ mockall = "0.14.0"
 proptest = "1.11.0"
 
 ## General
+
+[[example]]
+name = "assertions"
+path = "examples/assertions/main.rs"
+test = true
+
+[[example]]
+name = "code_coverage"
+path = "examples/code_coverage/main.rs"
+test = true
+
+[[example]]
+name = "fuzzing"
+path = "examples/fuzzing/main.rs"
+test = true
+
+[[example]]
+name = "mocking"
+path = "examples/mocking/main.rs"
+test = true
+
+[[example]]
+name = "property_based_testing"
+path = "examples/property_based_testing/main.rs"
+test = true
+
+[[example]]
+name = "test_runners"
+path = "examples/test_runners/main.rs"
+test = true
+
+[[example]]
+name = "testing"
+path = "examples/testing/main.rs"
+test = true
+

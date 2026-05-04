@@ -59,3 +59,59 @@ cbindgen = "0.29.2"
 cc = "1.2.61"
 cxx-build = { version = "1.0.194", optional = true }
 uniffi = { version = "0.31.1", optional = true }
+
+[[example]]
+name = "c"
+path = "examples/c/main.rs"
+test = true
+
+[[example]]
+name = "cpp"
+path = "examples/cpp/main.rs"
+test = true
+
+[[example]]
+name = "erlang_elixir"
+path = "examples/erlang_elixir/main.rs"
+test = true
+
+[[example]]
+name = "flutter"
+path = "examples/flutter/main.rs"
+test = true
+
+[[example]]
+name = "java"
+path = "examples/java/main.rs"
+test = true
+
+[[example]]
+name = "lua"
+path = "examples/lua/main.rs"
+test = true
+
+[[example]]
+name = "node"
+path = "examples/node/main.rs"
+test = true
+
+[[example]]
+name = "objc"
+path = "examples/objc/main.rs"
+test = true
+
+[[example]]
+name = "python"
+path = "examples/python/main.rs"
+test = true
+
+[[example]]
+name = "ruby"
+path = "examples/ruby/main.rs"
+test = true
+
+[[example]]
+name = "uniffi"
+path = "examples/uniffi.rs"
+test = true
+

@@ -32,3 +32,24 @@ ring = "0.17.14"
 sha1 = "0.11.0"
 sha2 = "0.11.0"
 tempfile = "3.27.0"
+
+[[example]]
+name = "graph"
+path = "examples/graph/main.rs"
+test = true
+
+[[example]]
+name = "hashing"
+path = "examples/hashing/main.rs"
+test = true
+
+[[example]]
+name = "rand"
+path = "examples/rand/main.rs"
+test = true
+
+[[example]]
+name = "sort"
+path = "examples/sort/main.rs"
+test = true
+

@@ -16,3 +16,9 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
+
+[[example]]
+name = "no_alloc"
+path = "examples/no_alloc/main.rs"
+test = true
+

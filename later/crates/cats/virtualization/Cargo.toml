@@ -17,3 +17,9 @@ autolib = false
 
 [dependencies]
 wasmi = "1.0.9"
+
+[[example]]
+name = "virtualization"
+path = "examples/virtualization/main.rs"
+test = true
+

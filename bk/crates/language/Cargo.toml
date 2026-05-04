@@ -24,3 +24,104 @@ clap = { version = "4.6.1", features = ["derive"] }
 proc_macros = { path = "../proc_macros" }
 strum = { version = "0.28.0", features = ["derive"] }
 tokio = { version = "1.52.1", features = ["macros", "rt-multi-thread"] }
+
+[[example]]
+name = "attributes"
+path = "examples/attributes/main.rs"
+test = true
+
+[[example]]
+name = "closures"
+path = "examples/closures/main.rs"
+test = true
+
+[[example]]
+name = "constants_and_statics"
+path = "examples/constants_and_statics/main.rs"
+test = true
+
+[[example]]
+name = "control_flow"
+path = "examples/control_flow/main.rs"
+test = true
+
+[[example]]
+name = "data_types"
+path = "examples/data_types/main.rs"
+test = true
+
+[[example]]
+name = "entrypoint"
+path = "examples/entrypoint/main.rs"
+test = true
+
+[[example]]
+name = "enums"
+path = "examples/enums/main.rs"
+test = true
+
+[[example]]
+name = "functions"
+path = "examples/functions/main.rs"
+test = true
+
+[[example]]
+name = "generics"
+path = "examples/generics/main.rs"
+test = true
+
+[[example]]
+name = "impl_trait"
+path = "examples/impl_trait/main.rs"
+test = true
+
+[[example]]
+name = "iterators"
+path = "examples/iterators/main.rs"
+test = true
+
+[[example]]
+name = "lifetimes"
+path = "examples/lifetimes/main.rs"
+test = true
+
+[[example]]
+name = "macros"
+path = "examples/macros/main.rs"
+test = true
+
+[[example]]
+name = "match"
+path = "examples/match/main.rs"
+test = true
+
+[[example]]
+name = "ownership_borrowing"
+path = "examples/ownership_borrowing/main.rs"
+test = true
+
+[[example]]
+name = "slices"
+path = "examples/slices/main.rs"
+test = true
+
+[[example]]
+name = "structs"
+path = "examples/structs/main.rs"
+test = true
+
+[[example]]
+name = "trait_objects"
+path = "examples/trait_objects/main.rs"
+test = true
+
+[[example]]
+name = "traits"
+path = "examples/traits/main.rs"
+test = true
+
+[[example]]
+name = "variables"
+path = "examples/variables/main.rs"
+test = true
+

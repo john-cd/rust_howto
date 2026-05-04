@@ -17,3 +17,9 @@ autolib = false
 
 [dependencies]
 image = "0.25.10"
+
+[[example]]
+name = "images"
+path = "examples/images/main.rs"
+test = true
+

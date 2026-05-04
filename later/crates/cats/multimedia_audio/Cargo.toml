@@ -17,3 +17,9 @@ autolib = false
 
 [dependencies]
 cpal = "0.17"
+
+[[example]]
+name = "audio"
+path = "examples/audio/main.rs"
+test = true
+

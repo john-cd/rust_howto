@@ -16,3 +16,29 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
+
+[[example]]
+name = "2d_raster_graphics"
+path = "examples/2d_raster_graphics/main.rs"
+test = true
+
+[[example]]
+name = "2d_vector_graphics"
+path = "examples/2d_vector_graphics/main.rs"
+test = true
+
+[[example]]
+name = "3d_renderers"
+path = "examples/3d_renderers/main.rs"
+test = true
+
+[[example]]
+name = "svg_rendering"
+path = "examples/svg_rendering/main.rs"
+test = true
+
+[[example]]
+name = "text_rendering"
+path = "examples/text_rendering/main.rs"
+test = true
+

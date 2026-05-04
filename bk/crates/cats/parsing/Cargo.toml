@@ -30,3 +30,14 @@ winnow = "1.0.2"
 
 [build-dependencies]
 pest_generator = "2.8.6"
+
+[[example]]
+name = "parsing"
+path = "examples/parsing/main.rs"
+test = true
+
+[[example]]
+name = "pest"
+path = "examples/pest/main.rs"
+test = true
+

@@ -17,3 +17,9 @@ autolib = false
 
 [dependencies]
 ryu = "1.0.23"
+
+[[example]]
+name = "number_formatting"
+path = "examples/number_formatting/main.rs"
+test = true
+

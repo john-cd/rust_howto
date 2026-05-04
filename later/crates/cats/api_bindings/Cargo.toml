@@ -15,3 +15,9 @@ categories = ["api-bindings"]
 publish.workspace = true
 
 [dependencies]
+
+[[example]]
+name = "api_bindings"
+path = "examples/api_bindings/main.rs"
+test = true
+

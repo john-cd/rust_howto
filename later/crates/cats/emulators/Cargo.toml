@@ -17,3 +17,9 @@ autolib = false
 
 [dependencies]
 polkavm = "0.33.1"
+
+[[example]]
+name = "emulators"
+path = "examples/emulators/main.rs"
+test = true
+

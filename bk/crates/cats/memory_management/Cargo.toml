@@ -28,3 +28,34 @@ slab = "0.4.12"
 [target.'cfg(not(target_env = "msvc"))'.dependencies]
 tikv-jemalloc-ctl = { version = "0.6.1", features = ["stats", "use_std"] }
 tikv-jemallocator = "0.6.1"
+
+[[example]]
+name = "bumpalo"
+path = "examples/bumpalo.rs"
+test = true
+
+[[example]]
+name = "jemalloc"
+path = "examples/jemalloc.rs"
+test = true
+
+[[example]]
+name = "lazy_initialization"
+path = "examples/lazy_initialization/main.rs"
+test = true
+
+[[example]]
+name = "mimalloc"
+path = "examples/mimalloc.rs"
+test = true
+
+[[example]]
+name = "seize"
+path = "examples/seize.rs"
+test = true
+
+[[example]]
+name = "slab"
+path = "examples/slab.rs"
+test = true
+

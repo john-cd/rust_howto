@@ -19,3 +19,9 @@ sgp4 = "2.4.0"
 
 ## General
 #anyhow = "1.0.95"
+
+[[example]]
+name = "aerospace"
+path = "examples/aerospace/main.rs"
+test = true
+

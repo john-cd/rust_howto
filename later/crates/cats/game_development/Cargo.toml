@@ -19,3 +19,9 @@ autolib = false
 clap = { version = "4.6.1", features = ["derive"] }
 glam = "0.32.1"
 parry2d = "0.26"
+
+[[example]]
+name = "game_development"
+path = "examples/game_development/main.rs"
+test = true
+

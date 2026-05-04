@@ -17,3 +17,9 @@ autolib = false
 [dependencies]
 icu_locale_core = { version = "2.2.0", features = ["alloc"] }
 sys-locale = "0.3.2"
+
+[[example]]
+name = "internationalization"
+path = "examples/internationalization/main.rs"
+test = true
+
