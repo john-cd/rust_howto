@@ -8,6 +8,7 @@ set -euo pipefail
 MDBOOK_VERSION="0.4.43"
 PANDOC_VERSION="3.6"
 
+# GTK4 and pkg-config are required for the Rust GUI examples that depend on gtk4/relm4.
 sudo apt-get update \
 && export DEBIAN_FRONTEND=noninteractive \
 && sudo apt-get install -y --no-install-recommends \
@@ -51,7 +52,21 @@ sudo apt-get update \
     xorg-dev \
     jq \
     fzf \
-&& sudo apt-get clean -y
+    libxkbcommon-dev \
+    libxkbcommon-x11-dev \
+    libz-dev \
+    mold \
+    llvm \
+    m4 \
+    make \
+    pkg-config \
+    protobuf-compiler \
+    python3 \
+    wget \
+    xorg-dev \
+    jq \
+    fzf \
+&& sudo apt-get clean -y \
 && rm -rf /var/lib/apt/lists/*
 
 # Install Pandoc binary

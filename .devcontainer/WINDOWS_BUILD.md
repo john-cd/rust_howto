@@ -11,6 +11,13 @@ This repository is designed to work on Windows with PowerShell.
 3. Install native toolchain dependencies for Windows examples:
    - `winget install --id LLVM.LLVM -e --source winget`
    - ensure `clang.exe` and `llvm-config.exe` are on `PATH`
+   - For GTK 4 GUI examples, install `pkg-config` and GTK 4 dev libraries via MSYS2:
+     - `winget install --id MSYS2.MSYS2 -e --source winget`
+     - Open the MSYS2 MinGW 64-bit shell and run:
+       - `pacman -Syu`
+       - `pacman -S mingw-w64-x86_64-pkg-config mingw-w64-x86_64-gtk4 mingw-w64-x86_64-gdk-pixbuf2 mingw-w64-x86_64-cairo mingw-w64-x86_64-glib2`
+     - Add `C:\msys64\mingw64\bin` to your `PATH` or set `PKG_CONFIG_PATH` to the MSYS2 pkg-config location.
+     - Verify with `pkg-config --modversion gtk4`.
 
 4. Run the book workspace commands from `bk`:
    - `cd bk`

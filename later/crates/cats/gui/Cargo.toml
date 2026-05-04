@@ -20,6 +20,7 @@ default = []
 dioxus = ["dep:dioxus"]
 femtovg = ["dep:femtovg"]
 floem = ["dep:floem"]
+gtk = ["dep:gtk4", "dep:relm4", "dep:relm4-components"]
 minifb = ["dep:minifb"]
 iced = ["dep:iced"]
 skia = ["dep:skia-safe", "dep:glutin", "dep:gl"]
@@ -29,6 +30,7 @@ vello = ["dep:vello"]
 vger = ["dep:vger"]
 # TODO vizia = ["dep:vizia"]
 webrender = ["dep:webrender", "dep:glutin", "dep:gl"]
+xilem = ["dep:xilem"]
 
 [dependencies]
 anyhow = "1.0.102"
@@ -71,6 +73,7 @@ vger = { version = "0.4.0", optional = true }
 webrender = { version = "0.68.0", optional = true }
 wgpu = "29.0.3"
 winit = "0.30.13"  # for vello, winit examples
+xilem = { version = "0.4.0", optional = true }
 
 [[example]]
 name = "2d_renderers"
