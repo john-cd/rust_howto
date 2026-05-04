@@ -6,30 +6,31 @@
 //!
 //! Loco is a web framework for Rust inspired by Ruby on Rails.
 
+#[cfg(feature = "loco-support")]
 use std::path::Path;
 
-#[cfg(feature = "loco")]
+#[cfg(feature = "loco-support")]
 use loco_rs::app::Hooks;
-#[cfg(feature = "loco")]
+#[cfg(feature = "loco-support")]
 use loco_rs::bgworker::Queue;
-#[cfg(feature = "loco")]
+#[cfg(feature = "loco-support")]
 use loco_rs::boot::BootResult;
-#[cfg(feature = "loco")]
+#[cfg(feature = "loco-support")]
 use loco_rs::boot::StartMode;
-#[cfg(feature = "loco")]
+#[cfg(feature = "loco-support")]
 use loco_rs::controller::AppRoutes;
-#[cfg(feature = "loco")]
+#[cfg(feature = "loco-support")]
 use loco_rs::environment::Environment;
-#[cfg(feature = "loco")]
+#[cfg(feature = "loco-support")]
 use loco_rs::prelude::*;
-#[cfg(feature = "loco")]
+#[cfg(feature = "loco-support")]
 use loco_rs::task::Tasks;
 
 /// The application's main structure.
-#[cfg(feature = "loco")]
+#[cfg(feature = "loco-support")]
 pub struct App;
 
-#[cfg(feature = "loco")]
+#[cfg(feature = "loco-support")]
 #[async_trait]
 impl Hooks for App {
     /// Sets the application name.
@@ -67,7 +68,7 @@ impl Hooks for App {
 }
 
 /// A simple controller for the home page.
-#[cfg(feature = "loco")]
+#[cfg(feature = "loco-support")]
 mod home {
     use super::*;
 
@@ -98,7 +99,7 @@ async fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    #[cfg(feature = "loco")]
+    #[cfg(feature = "loco-support")]
     #[tokio::test]
     async fn test_app_init() {
         // Verification that the main logic is accessible

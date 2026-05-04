@@ -30,7 +30,7 @@ enum Commands {
     UseShortcuts,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -48,11 +48,12 @@ fn main() {
                 use3::run();
             }
             Commands::UseExternalCrate => {
-                use_external_crate::run();
+                use_external_crate::run()?;
             }
             Commands::UseShortcuts => {
                 use_shortcuts::run();
             }
         }
     }
+    Ok(())
 }

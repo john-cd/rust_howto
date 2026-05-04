@@ -39,5 +39,3 @@ mod tests {
         main().unwrap();
     }
 }
-
-// TODO add a test

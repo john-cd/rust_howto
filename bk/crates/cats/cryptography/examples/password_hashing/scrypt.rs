@@ -4,9 +4,9 @@
 use std::error::Error;
 
 use scrypt::Scrypt;
-use scrypt::password_hash::phc::PasswordHash;
 use scrypt::password_hash::PasswordHasher;
 use scrypt::password_hash::PasswordVerifier;
+use scrypt::password_hash::phc::PasswordHash;
 
 /// This example demonstrates how to use the `scrypt` crate to hash and verify
 /// passwords.

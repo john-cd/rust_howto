@@ -20,7 +20,7 @@ enum Commands {
     Wasmtime,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -30,8 +30,9 @@ fn main() {
             }
             #[cfg(feature = "wasmtime")]
             Commands::Wasmtime => {
-                wasmtime::run();
+                wasmtime::run()?;
             }
         }
     }
+    Ok(())
 }

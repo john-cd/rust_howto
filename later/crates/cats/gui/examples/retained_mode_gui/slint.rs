@@ -31,5 +31,4 @@ mod tests {
         main().unwrap();
     }
 }
-
 // [finish; figure how to test - neither WAYLAND_DISPLAY nor WAYLAND_SOCKET nor DISPLAY is set. see vs code Wayland setting](https://github.com/john-cd/rust_howto/issues/787)

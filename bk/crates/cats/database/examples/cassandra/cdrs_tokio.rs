@@ -17,7 +17,6 @@ use cdrs_tokio::load_balancing::RoundRobinLoadBalancingStrategy;
 use cdrs_tokio::query::*;
 use cdrs_tokio::query_values;
 use cdrs_tokio::transport::TransportTcp;
-use tokio;
 use uuid::Uuid;
 
 // `cdrs_tokio` is a native async Cassandra DB client written in Rust.

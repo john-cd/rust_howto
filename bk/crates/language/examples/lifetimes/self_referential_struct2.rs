@@ -144,7 +144,7 @@ fn main() {
     let pinned: Pin<Box<SelfRef>> =
         SelfRef::new("I am a self-referential struct.");
 
-    assert!(&pinned.data as *const String == pinned.ptr);
+    assert!(std::ptr::eq(&pinned.data, pinned.ptr));
 
     // `Pin` and `Box` implement `Debug` if the underlying type does.
     println!("{pinned:?}");
@@ -161,7 +161,7 @@ fn main() {
 
     assert_eq!(still_unmoved.data, "I am another self-referential struct.");
     // Verify the self-pointer was updated correctly to the target's address.
-    assert!(&still_unmoved.data as *const String == still_unmoved.ptr);
+    assert!(std::ptr::eq(&still_unmoved.data, still_unmoved.ptr));
 }
 
 // ANCHOR_END: example

@@ -1,13 +1,13 @@
+#![cfg_attr(
+    all(not(debug_assertions), target_os = "windows"),
+    windows_subsystem = "windows"
+)]
+
 // ANCHOR: example
 //! Create a simple Tauri app with a menu and counter command handlers.
 //!
 //! This example defines backend commands and opens a Tauri window using the
 //! generated application context.
-
-#![cfg_attr(
-    all(not(debug_assertions), target_os = "windows"),
-    windows_subsystem = "windows"
-)]
 
 use tauri::CustomMenuItem;
 use tauri::Manager;

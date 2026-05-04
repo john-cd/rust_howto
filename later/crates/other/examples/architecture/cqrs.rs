@@ -58,8 +58,9 @@ mod events {
     /// Examples:
     /// - `ProductCreated`.
     /// - `ProductQuantityUpdated`.
-    #[derive(Debug, Clone, Serialize, Deserialize)]
+    ///
     /// Represents events related to products.
+    #[derive(Debug, Clone, Serialize, Deserialize)]
     pub enum ProductEvent {
         ProductCreated {
             id: u32,

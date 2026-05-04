@@ -21,7 +21,7 @@ enum Commands {
     From3,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -30,11 +30,12 @@ fn main() {
                 from::run();
             }
             Commands::From2 => {
-                from2::run();
+                from2::run().map_err(|e| anyhow::anyhow!("{e:?}"))?;
             }
             Commands::From3 => {
                 from3::run();
             }
         }
     }
+    Ok(())
 }

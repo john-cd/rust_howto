@@ -21,20 +21,21 @@ enum Commands {
     MainFnWithResult,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::AsyncMain => {
-                async_main::run();
+                async_main::run()?;
             }
             Commands::MainFn => {
                 main_fn::run();
             }
             Commands::MainFnWithResult => {
-                main_fn_with_result::run();
+                main_fn_with_result::run()?;
             }
         }
     }
+    Ok(())
 }

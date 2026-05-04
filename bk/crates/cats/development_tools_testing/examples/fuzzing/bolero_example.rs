@@ -7,16 +7,17 @@
 use bolero::check;
 
 fn process_data(data: &[u8]) {
-    if data.len() >= 3 && data[0] == b'b' && data[1] == b'o' && data[2] == b'l'
+    if data.len() >= 3
+        && data[0] == b'b'
+        && data[1] == b'o'
+        && data[2] == b'l'
+        && data.len() >= 6
+        && data[3] == b'e'
+        && data[4] == b'r'
+        && data[5] == b'o'
     {
-        if data.len() >= 6
-            && data[3] == b'e'
-            && data[4] == b'r'
-            && data[5] == b'o'
-        {
-            // Potential bug discovered by fuzzer
-            // panic!("Bolero found a crash!");
-        }
+        // Potential bug discovered by fuzzer
+        // panic!("Bolero found a crash!");
     }
 }
 
