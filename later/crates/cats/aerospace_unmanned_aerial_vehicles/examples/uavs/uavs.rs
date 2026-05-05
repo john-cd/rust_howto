@@ -1,7 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
 
-
 use tello::Drone;
 use tello::Message;
 use tello::Package;

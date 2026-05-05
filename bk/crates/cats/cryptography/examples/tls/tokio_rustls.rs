@@ -2,10 +2,14 @@
 // ANCHOR: example
 //! This example demonstrates an async TLS client using `tokio-rustls`.
 
-use rustls::{ClientConfig, OwnedTrustAnchor, RootCertStore};
-use rustls::client::ServerName;
 use std::sync::Arc;
-use tokio::io::{AsyncReadExt, AsyncWriteExt};
+
+use rustls::ClientConfig;
+use rustls::OwnedTrustAnchor;
+use rustls::RootCertStore;
+use rustls::client::ServerName;
+use tokio::io::AsyncReadExt;
+use tokio::io::AsyncWriteExt;
 use tokio::net::TcpStream;
 use tokio_rustls::TlsConnector;
 use webpki_roots::TLS_SERVER_ROOTS;
@@ -31,7 +35,11 @@ async fn main() -> anyhow::Result<()> {
     let server_name = ServerName::try_from("example.com")?;
     let mut stream = connector.connect(server_name, stream).await?;
 
-    stream.write_all(b"GET / HTTP/1.1\r\nHost: example.com\r\nConnection: close\r\n\r\n").await?;
+    stream
+        .write_all(
+            b"GET / HTTP/1.1\r\nHost: example.com\r\nConnection: close\r\n\r\n",
+        )
+        .await?;
     let mut response = Vec::new();
     stream.read_to_end(&mut response).await?;
 
@@ -50,7 +58,7 @@ mod tests {
 
     #[tokio::test]
     #[ignore = "Requires network"]
-    async fn test_example() {
+    async fn test_main() {
         main().await.unwrap();
     }
 }

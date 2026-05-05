@@ -20,7 +20,7 @@
 
 ## NEXT
 
-- [?] fix windows install script / install LLVM
+- [?] fix windows install script
 - [ ] consolidate GitHub workflows (use Docker always)
 
 ## WRITING

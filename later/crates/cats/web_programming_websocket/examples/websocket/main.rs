@@ -1,6 +1,6 @@
 mod async_tungstenite;
-mod tungstenite;
 mod tokio_tungstenite;
+mod tungstenite;
 
 fn main() -> anyhow::Result<()> {
     async_tungstenite::run();
