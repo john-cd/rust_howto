@@ -586,16 +586,6 @@
 			]
 		},
 		{
-			"path": "LICENSE",
-			"bookmarks": [
-				{
-					"line": 20,
-					"column": 68,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "bk/crates/cats/data_structures/Cargo.toml",
 			"bookmarks": [
 				{
