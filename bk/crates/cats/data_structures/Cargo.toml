@@ -1,4 +1,5 @@
 [package]
+license-file.workspace = true
 name = "data_structures"
 version.workspace = true
 authors.workspace = true

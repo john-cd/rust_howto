@@ -1,4 +1,5 @@
 [package]
+license-file.workspace = true
 name = "cryptography_cryptocurrencies"
 version.workspace = true
 authors.workspace = true

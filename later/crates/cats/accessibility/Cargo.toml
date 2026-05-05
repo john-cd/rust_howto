@@ -1,4 +1,5 @@
 [package]
+license-file.workspace = true
 name = "accessibility"
 edition = "2024"
 version.workspace = true

@@ -1,4 +1,5 @@
 [package]
+license-file.workspace = true
 name = "crate_indices"
 version.workspace = true
 authors.workspace = true

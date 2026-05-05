@@ -16,3 +16,4 @@ keywords = ["rust-howto", "tooling", "mdbook", "automation", "preprocessor"]
 categories = ["development-tools"]
 readme = "README.md"
 publish = false
+license-file = "../LICENSE"

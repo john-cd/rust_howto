@@ -1,4 +1,5 @@
 [package]
+license-file.workspace = true
 name = "clap_builder_xmpl"
 version.workspace = true
 authors.workspace = true

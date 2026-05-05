@@ -1,4 +1,5 @@
 [package]
+license-file.workspace = true
 name = "os_linux_apis"
 version.workspace = true
 authors.workspace = true

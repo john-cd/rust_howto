@@ -1,4 +1,5 @@
 [package]
+license-file.workspace = true
 name = "web_programming_http_server"
 version.workspace = true
 authors.workspace = true
