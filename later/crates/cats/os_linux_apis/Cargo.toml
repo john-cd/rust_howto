@@ -22,4 +22,3 @@ nix = "0.31"
 name = "linux"
 path = "examples/linux/main.rs"
 test = true
-

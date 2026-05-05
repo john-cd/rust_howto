@@ -22,4 +22,3 @@ ryu = "1.0.23"
 name = "number_formatting"
 path = "examples/number_formatting/main.rs"
 test = true
-

@@ -22,4 +22,3 @@ polkavm = "0.33.1"
 name = "emulators"
 path = "examples/emulators/main.rs"
 test = true
-

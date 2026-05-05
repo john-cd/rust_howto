@@ -25,4 +25,3 @@ moka = { version = "0.12.15", features = ["sync"] }
 name = "in_memory_cache"
 path = "examples/in_memory_cache/main.rs"
 test = true
-

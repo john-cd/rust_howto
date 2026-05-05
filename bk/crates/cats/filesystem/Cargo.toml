@@ -88,4 +88,3 @@ test = true
 name = "user_directories"
 path = "examples/user_directories/main.rs"
 test = true
-

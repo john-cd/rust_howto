@@ -22,4 +22,3 @@ sys-locale = "0.3.2"
 name = "internationalization"
 path = "examples/internationalization/main.rs"
 test = true
-

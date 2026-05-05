@@ -36,4 +36,3 @@ test = true
 name = "server"
 path = "examples/server/main.rs"
 test = true
-

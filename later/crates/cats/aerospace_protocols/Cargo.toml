@@ -22,4 +22,3 @@ mavlink = "0.17.1"
 name = "aerospace_protocols"
 path = "examples/aerospace_protocols/main.rs"
 test = true
-

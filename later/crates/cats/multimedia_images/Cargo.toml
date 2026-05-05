@@ -22,4 +22,3 @@ image = "0.25.10"
 name = "images"
 path = "examples/images/main.rs"
 test = true
-

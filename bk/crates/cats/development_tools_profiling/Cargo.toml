@@ -40,4 +40,3 @@ harness = false
 name = "benchmarking"
 path = "examples/benchmarking/main.rs"
 test = true
-

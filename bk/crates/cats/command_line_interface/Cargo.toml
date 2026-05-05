@@ -53,4 +53,3 @@ test = true
 name = "user_interaction"
 path = "examples/user_interaction/main.rs"
 test = true
-

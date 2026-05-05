@@ -24,4 +24,3 @@ parry2d = "0.26"
 name = "game_development"
 path = "examples/game_development/main.rs"
 test = true
-

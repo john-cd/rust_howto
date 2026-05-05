@@ -142,4 +142,3 @@ test = true
 name = "sqlite"
 path = "examples/sqlite/main.rs"
 test = true
-

@@ -22,4 +22,3 @@ gltf = "1.4"
 name = "data_formats"
 path = "examples/data_formats/main.rs"
 test = true
-

@@ -41,4 +41,3 @@ test = true
 name = "time"
 path = "examples/time.rs"
 test = true
-

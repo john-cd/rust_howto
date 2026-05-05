@@ -34,4 +34,3 @@ test = true
 name = "split"
 path = "examples/split.rs"
 test = true
-

@@ -22,4 +22,3 @@ tello = "0.6.3"
 name = "drones"
 path = "examples/drones/main.rs"
 test = true
-

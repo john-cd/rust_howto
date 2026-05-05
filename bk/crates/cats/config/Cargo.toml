@@ -36,4 +36,3 @@ test = true
 name = "env"
 path = "examples/env/main.rs"
 test = true
-

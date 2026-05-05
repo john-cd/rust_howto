@@ -37,4 +37,3 @@ test = true
 name = "build_time_tooling"
 path = "examples/build_time_tooling/main.rs"
 test = true
-

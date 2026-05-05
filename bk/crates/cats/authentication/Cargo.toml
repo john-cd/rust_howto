@@ -25,4 +25,3 @@ reqwest = { version = "0.13.3", features = ["blocking"] }
 name = "basic_authentication"
 path = "examples/basic_authentication/main.rs"
 test = true
-

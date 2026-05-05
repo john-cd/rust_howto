@@ -23,4 +23,3 @@ nifti = { version = "0.17", features = ["ndarray_volumes"] }
 name = "neuroscience"
 path = "examples/neuroscience/main.rs"
 test = true
-

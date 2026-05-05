@@ -39,4 +39,3 @@ ggez = { version = "0.10.0-rc0", optional = true }
 name = "game_engines"
 path = "examples/game_engines/main.rs"
 test = true
-

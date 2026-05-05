@@ -22,4 +22,3 @@ autolib = false
 name = "cryptocurrencies"
 path = "examples/cryptocurrencies/main.rs"
 test = true
-

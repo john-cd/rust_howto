@@ -24,6 +24,8 @@ fn main() -> Result<(), std::io::Error> {
     // Archive a directory and all of its contents
     // (recursively), renaming it in the process:
     tar.append_dir_all("backup", "./temp")?;
+    let enc = tar.into_inner()?;
+    enc.finish()?;
     println!("`archive.tar.gz` file created!");
     Ok(())
 }

@@ -48,4 +48,3 @@ Rust offers several frameworks and libraries to facilitate incremental computati
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-

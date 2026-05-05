@@ -21,4 +21,3 @@ autolib = false
 name = "no_std"
 path = "examples/no_std/main.rs"
 test = true
-

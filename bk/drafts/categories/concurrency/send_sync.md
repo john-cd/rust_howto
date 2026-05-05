@@ -100,4 +100,3 @@ PHANTOM DATA:
 
 - [Understanding the `Send` trait][stackoverflow~understanding-the-send-trait]↗.
 </div>
-

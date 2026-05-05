@@ -42,4 +42,3 @@ test = true
 name = "semver"
 path = "examples/semver/main.rs"
 test = true
-
