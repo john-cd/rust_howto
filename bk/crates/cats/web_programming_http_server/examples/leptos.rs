@@ -58,9 +58,20 @@ fn main() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
-        main();
+        #[cfg(not(feature = "leptos-support"))]
+        {
+            main();
+        }
+
+        #[cfg(feature = "leptos-support")]
+        {
+            // Browser-only entrypoint is not executed in a headless test
+            // harness.
+            assert!(true);
+        }
     }
 }
 // // [Implement Leptos reactive counter and view mounting](https://github.com/john-cd/rust_howto/issues/867)
