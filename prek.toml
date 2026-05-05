@@ -28,3 +28,9 @@ hooks = [
     # { id = "check-executables-have-shebangs" },
     # { id = "check-shebang-scripts-are-executable" },
 ]
+
+[[repos]]
+repo = "local"
+hooks = [
+    { id = "format-rust-code", name = "Format Rust code with just fa", entry = "just", args = ["all", "fa"], language = "system", files = "\\.rs$", stages = ["pre-commit"] },
+]
