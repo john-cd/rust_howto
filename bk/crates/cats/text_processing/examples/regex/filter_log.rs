@@ -46,7 +46,7 @@ quis nostrud exercitation ullamco
 "#;
 
     #[test]
-    fn test() -> Result<()> {
+    fn test_main() -> Result<()> {
         use std::fs;
         if !fs::exists("temp")? {
             fs::create_dir("temp")?;

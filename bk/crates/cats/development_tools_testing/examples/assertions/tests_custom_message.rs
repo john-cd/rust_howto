@@ -26,7 +26,7 @@ mod tests {
     use super::*;
     #[should_panic]
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

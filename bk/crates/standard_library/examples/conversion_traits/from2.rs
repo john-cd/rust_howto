@@ -34,7 +34,7 @@ pub fn run() -> Result<(), MyError> {
     main()
 }
 
-fn test() {
+fn test_main() {
     assert!(main().is_err());
 }
 
@@ -42,7 +42,7 @@ fn test() {
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         assert!(main().is_err());
     }
 }

@@ -28,7 +28,7 @@ mod tests {
     use super::*;
     #[test]
     #[ignore = "Displays a message box"]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

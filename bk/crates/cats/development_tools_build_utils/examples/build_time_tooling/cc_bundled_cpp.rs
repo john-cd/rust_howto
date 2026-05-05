@@ -31,7 +31,7 @@ pub fn run() {
 }
 
 // #[test]
-// fn test() {
+// fn test_main() {
 //     main();
 // }
 // [FIX finish; deal with cc](https://github.com/john-cd/rust_howto/issues/897)

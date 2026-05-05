@@ -65,7 +65,7 @@ mod tests {
     use super::*;
     #[test]
     #[ignore = "Needs review"]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

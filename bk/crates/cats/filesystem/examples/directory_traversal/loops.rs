@@ -61,7 +61,7 @@ pub fn run() {
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         // mkdir -p /tmp/foo/bar/baz
         if let Ok(exists) = std::fs::exists("/tmp/foo/bar/baz") {
             if !exists {

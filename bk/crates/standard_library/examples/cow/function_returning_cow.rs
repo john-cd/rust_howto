@@ -48,7 +48,7 @@ pub fn run() {
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

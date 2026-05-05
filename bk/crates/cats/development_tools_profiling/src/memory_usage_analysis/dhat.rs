@@ -125,7 +125,7 @@ mod tests {
     }
 
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

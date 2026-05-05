@@ -390,7 +390,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         // We just execute main, which shouldn't panic
         main()?;
         Ok(())

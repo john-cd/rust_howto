@@ -49,7 +49,7 @@ pub fn run() -> Result<(), Box<dyn Error>> {
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main().unwrap();
     }
 }

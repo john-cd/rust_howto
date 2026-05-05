@@ -93,7 +93,7 @@ fn main() -> anyhow::Result<()> {
 ///
 /// This function sets up temporary configuration files, runs the main
 /// function, and cleans up afterwards.
-fn test() -> anyhow::Result<()> {
+fn test_main() -> anyhow::Result<()> {
     use std::fs;
 
     // Create the temp folder, if needed.
@@ -161,7 +161,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         use std::fs;
 
         // Create the temp folder, if needed.

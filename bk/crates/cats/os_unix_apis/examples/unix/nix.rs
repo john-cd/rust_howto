@@ -72,7 +72,7 @@ pub fn run() -> nix::Result<()> {
 mod tests {
     use super::*;
     #[test]
-    fn test() -> nix::Result<()> {
+    fn test_main() -> nix::Result<()> {
         main()?;
         Ok(())
     }

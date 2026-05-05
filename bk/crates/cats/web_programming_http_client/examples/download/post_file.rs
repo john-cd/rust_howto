@@ -28,7 +28,7 @@ mod tests {
     // use super::*;
 
     #[tokio::test]
-    async fn test() -> anyhow::Result<()> {
+    async fn test_main() -> anyhow::Result<()> {
         use tokio::io::AsyncWriteExt;
         if !tokio::fs::try_exists("temp").await? {
             tokio::fs::create_dir("temp").await?;

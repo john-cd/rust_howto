@@ -23,7 +23,7 @@ mod tests {
 
     #[ignore = "Needs review"]
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

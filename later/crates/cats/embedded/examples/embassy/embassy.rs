@@ -88,7 +88,7 @@ pub fn run() -> ! {
 mod tests { use super::*;
     #[test]
     #[ignore = "requires embassy crate"]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

@@ -32,7 +32,7 @@ pub fn run() -> Result<(), DecodeError> {
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

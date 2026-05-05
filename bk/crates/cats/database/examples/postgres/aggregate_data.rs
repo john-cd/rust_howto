@@ -51,7 +51,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn require_postgres_environment() -> Result<(), Error> {
+    fn require_external_svc() -> Result<(), Error> {
         if std::env::var("PG_URL").is_err() {
             eprintln!(
                 "Skipping PostgreSQL aggregation example test; set PG_URL to run this test."

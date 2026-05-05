@@ -71,7 +71,7 @@ async fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main().expect("in test");
     }
 }

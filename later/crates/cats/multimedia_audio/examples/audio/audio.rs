@@ -75,7 +75,7 @@ mod tests {
     use super::*;
     #[test]
     #[ignore = "requires audio device"]
-    fn test() {
+    fn test_main() {
         main().unwrap();
     }
 }

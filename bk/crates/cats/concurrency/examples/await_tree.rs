@@ -109,7 +109,7 @@ async fn baz(n: i32) {
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

@@ -39,7 +39,7 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         assert!(main().is_err());
     }
 }

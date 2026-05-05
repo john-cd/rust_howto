@@ -47,7 +47,7 @@ pub fn run() {
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         // Make sure the `temp` folder exists.
         if !std::fs::exists("temp").unwrap() {
             std::fs::create_dir("temp").unwrap();

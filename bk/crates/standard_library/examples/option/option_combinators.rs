@@ -33,7 +33,7 @@ pub fn run() {
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         if !std::fs::exists("temp")? {
             std::fs::create_dir("temp")?;
         }

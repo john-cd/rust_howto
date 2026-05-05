@@ -66,7 +66,7 @@ pub fn run() -> Result<(), aes_gcm_siv::Error> {
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         main()
             .map_err(|_| anyhow::anyhow!("Failed encryption or decryption"))?;
         Ok(())

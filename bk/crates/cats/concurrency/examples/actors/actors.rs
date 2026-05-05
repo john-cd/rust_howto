@@ -45,7 +45,7 @@ pub fn run() {
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
     // [finish](https://github.com/john-cd/rust_howto/issues/1011)

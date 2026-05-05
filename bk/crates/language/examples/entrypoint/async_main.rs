@@ -30,7 +30,7 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
     #[test]
-    fn test() -> Result<()> {
+    fn test_main() -> Result<()> {
         main()?;
         Ok(())
     }

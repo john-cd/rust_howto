@@ -53,7 +53,7 @@ mod tests {
     use super::*;
     #[test]
     #[ignore]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }
