@@ -1,4 +1,5 @@
 [package]
+license-file.workspace = true
 name = "web_programming_websocket"
 version.workspace = true
 authors.workspace = true

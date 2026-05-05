@@ -1,4 +1,5 @@
 [package]
+license-file.workspace = true
 name = "computer_vision"
 version.workspace = true
 authors.workspace = true

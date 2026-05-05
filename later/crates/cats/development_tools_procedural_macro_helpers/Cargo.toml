@@ -1,4 +1,5 @@
 [package]
+license-file.workspace = true
 name = "development_tools_procedural_macro_helpers"
 version.workspace = true
 authors.workspace = true

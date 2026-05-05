@@ -58,7 +58,7 @@ description = "A documentation summary and a compendium of snippets and recipes 
 documentation = "https://docs.rs/rust_howto/"
 homepage = "https://john-cd.com/rust_howto/"
 repository = "https://github.com/john-cd/rust_howto/"
-license-file = "../LICENSE"
+license-file = "../../LICENSE"
 keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = [
     "algorithms",

@@ -1,4 +1,5 @@
 [package]
+license-file.workspace = true
 name = "standard_library"
 version.workspace = true
 authors.workspace = true

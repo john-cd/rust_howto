@@ -1,4 +1,5 @@
 [package]
+license-file.workspace = true
 name = "language"
 version.workspace = true
 authors.workspace = true

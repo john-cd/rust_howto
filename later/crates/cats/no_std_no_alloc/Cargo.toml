@@ -1,4 +1,5 @@
 [package]
+license-file.workspace = true
 name = "no_std_no_alloc"
 version.workspace = true
 authors.workspace = true

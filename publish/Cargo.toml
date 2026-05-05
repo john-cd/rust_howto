@@ -1,5 +1,6 @@
 # This crate is a placeholder published to crates.io to make rust_howto searchable there.
 [package]
+license = "MIT OR Apache-2.0"
 name = "rust_howto"
 version = "0.1.2"
 authors = ["John CD"]

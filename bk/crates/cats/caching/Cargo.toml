@@ -1,4 +1,5 @@
 [package]
+license-file.workspace = true
 name = "caching"
 version.workspace = true
 authors.workspace = true

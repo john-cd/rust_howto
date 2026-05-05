@@ -1,4 +1,5 @@
 [package]
+license-file.workspace = true
 name = "external_ffi_bindings"
 version.workspace = true
 authors.workspace = true
