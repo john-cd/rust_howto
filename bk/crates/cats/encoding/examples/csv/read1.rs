@@ -41,7 +41,7 @@ pub fn run() -> Result<(), csv::Error> {
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

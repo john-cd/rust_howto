@@ -38,7 +38,7 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         std::fs::create_dir_all("temp/log/")?;
         main()?;
         Ok(())

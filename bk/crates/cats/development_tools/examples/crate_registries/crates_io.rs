@@ -98,6 +98,7 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
     #[test]
+    #[ignore = "requires crates.io API access"]
     fn test() -> anyhow::Result<()> {
         main()?;
         Ok(())

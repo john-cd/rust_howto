@@ -47,7 +47,7 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         let res = main();
         println!("{res:?}");
         assert!(res.is_err())

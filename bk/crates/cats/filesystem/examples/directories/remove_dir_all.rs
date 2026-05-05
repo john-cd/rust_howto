@@ -55,7 +55,7 @@ pub fn run() -> io::Result<()> {
 mod tests {
     use super::*;
     #[test]
-    fn test() -> io::Result<()> {
+    fn test_main() -> io::Result<()> {
         main()?;
         Ok(())
     }
