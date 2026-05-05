@@ -32,7 +32,7 @@
 
 ## LOGISTICS
 
-- [ ] License / legal rethink.
+- [?] License / legal rethink.
 - [ ] Manually insert rest of cross-links between pages?
 - [ ] finish to add RBE link [#29](https://github.com/john-cd/rust_howto/issues/29).
 - [ ] Indices.
