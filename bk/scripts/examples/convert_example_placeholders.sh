@@ -79,7 +79,7 @@ mod tests {
     use super::*;
     #[test]
     #[ignore = "not yet implemented"]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

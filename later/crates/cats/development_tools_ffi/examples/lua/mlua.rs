@@ -37,7 +37,7 @@ pub fn run() -> LuaResult<()> {
 mod tests {
     use super::*;
     #[test]
-    fn test() -> LuaResult<()> {
+    fn test_main() -> LuaResult<()> {
         main()?;
         Ok(())
     }

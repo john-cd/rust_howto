@@ -50,7 +50,7 @@ mod tests {
     use super::*;
     #[test]
     #[cfg(target_family = "unix")]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

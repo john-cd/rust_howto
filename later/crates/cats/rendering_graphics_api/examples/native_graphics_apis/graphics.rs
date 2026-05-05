@@ -17,7 +17,7 @@ mod tests {
     use super::*;
     #[test]
     #[ignore = "later"]
-    fn test() {
+    fn test_main() {
         main();
     }
     // // [write LATER](https://github.com/john-cd/rust_howto/issues/831)

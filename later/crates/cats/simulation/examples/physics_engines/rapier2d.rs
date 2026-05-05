@@ -69,7 +69,7 @@ pub fn run() {
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
     // TODO review / add to a chapter on physics engines with rapier2d

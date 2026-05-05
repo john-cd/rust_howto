@@ -70,7 +70,7 @@ fn try_create<'a>() -> &'a String {
 }
 
 #[test]
-fn test() {
+fn test_main() {
     let _ = try_create();
 }
 ```

@@ -43,7 +43,7 @@ pub fn run() -> Result<(), Unspecified> {
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         main().map_err(|_| anyhow::anyhow!("hmac.rs failure"))?;
         Ok(())
     }

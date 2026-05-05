@@ -42,7 +42,7 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

@@ -45,7 +45,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         main()
     }
     // [finish](https://github.com/john-cd/rust_howto/issues/1040)

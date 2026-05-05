@@ -30,7 +30,7 @@ mod tests {
     use super::*;
     #[ignore = "Needs review"]
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

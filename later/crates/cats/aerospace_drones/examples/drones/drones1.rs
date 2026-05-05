@@ -24,7 +24,7 @@ mod tests {
     use super::*;
     #[test]
     #[ignore = "requires real drone"]
-    fn test() {
+    fn test_main() {
         main().unwrap();
     }
 }

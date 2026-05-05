@@ -92,7 +92,7 @@ pub fn run() {
 mod tests_of_main {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

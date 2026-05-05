@@ -101,7 +101,7 @@
 // }
 
 // #[test]
-// fn test() {
+// fn test_main() {
 
 //     let a = Tensor::arange(0f32, 6f32, &Device::Cpu)?.reshape((2, 3))?;
 //     let b = Tensor::arange(0f32, 12f32, &Device::Cpu)?.reshape((3, 4))?;

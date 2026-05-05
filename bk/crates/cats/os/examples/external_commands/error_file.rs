@@ -46,7 +46,7 @@ pub fn run() -> Result<(), std::io::Error> {
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         // Preparation.
         if !std::fs::exists("temp")? {
             std::fs::create_dir("temp")?;

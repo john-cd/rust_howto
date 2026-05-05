@@ -48,7 +48,7 @@ fn main() {
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         // In a real fuzzing environment, this would run indefinitely.
         // Here we just check that the function exists and can be called.
         fuzz_me(b"safe");

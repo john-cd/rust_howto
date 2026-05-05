@@ -147,7 +147,7 @@ mod tests {
     use super::*;
     #[test]
     #[cfg(target_os = "linux")]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

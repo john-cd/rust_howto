@@ -86,7 +86,7 @@ pub fn run() -> Result<(), Box<EvalAltResult>> {
 mod tests {
     use super::*;
     #[test]
-    fn test() -> Result<(), Box<EvalAltResult>> {
+    fn test_main() -> Result<(), Box<EvalAltResult>> {
         main()?;
         Ok(())
     }

@@ -37,7 +37,7 @@ pub fn run() -> Result<(), std::io::Error> {
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main().unwrap();
     }
 }

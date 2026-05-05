@@ -133,7 +133,7 @@ Start small: fix a typo, improve a code example, or add a link before taking on 
 - All Rust code examples must be formatted with `rustfmt`. Run `just fmtall` or `cargo +nightly fmt --all`.
 - Code must pass `clippy` lints (`just clippyall` or `cargo clippy --all-targets`).
 - Examples should be concise, self-contained, and focused on demonstrating a single concept or crate.
-- Include `// ANCHOR: example` / `// ANCHOR_END: example` markers and a `#[test] fn test() { main(); }` function so that the example is tested automatically (see the [repository structure][ex~contributing~examples-fully-tested]↗ page for the standard test boilerplate).
+- Include `// ANCHOR: example` / `// ANCHOR_END: example` markers and a `#[test] fn test_main() { main(); }` function so that the example is tested automatically (see the [repository structure][ex~contributing~examples-fully-tested]↗ page for the standard test boilerplate).
 
 ### Documentation Style
 
