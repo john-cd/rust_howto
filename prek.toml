@@ -32,5 +32,5 @@ hooks = [
 [[repos]]
 repo = "local"
 hooks = [
-    { id = "format-rust-code", name = "Format Rust code with just fa", entry = "just", args = ["all", "fa"], language = "system", files = "\\.rs$", stages = ["pre-commit"] },
+    { id = "format-rust-code", name = "Format Rust code with just fa", entry = "just", args = ["all", "fa"], language = "system", stages = ["pre-commit"], pass_filenames = false, },
 ]
