@@ -96,4 +96,3 @@ test = true
 name = "yaml"
 path = "examples/yaml/main.rs"
 test = true
-

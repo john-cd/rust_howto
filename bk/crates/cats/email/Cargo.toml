@@ -23,4 +23,3 @@ lettre = { version = "0.11.21", features = ["tokio1-native-tls"] }
 name = "lettre"
 path = "examples/lettre.rs"
 test = true
-

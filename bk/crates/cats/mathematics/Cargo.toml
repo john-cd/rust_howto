@@ -59,4 +59,3 @@ test = true
 name = "trigonometry"
 path = "examples/trigonometry/main.rs"
 test = true
-

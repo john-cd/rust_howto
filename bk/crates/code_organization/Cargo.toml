@@ -33,4 +33,3 @@ test = true
 name = "visibility"
 path = "examples/visibility/main.rs"
 test = true
-

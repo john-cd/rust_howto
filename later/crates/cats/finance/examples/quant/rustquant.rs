@@ -132,7 +132,7 @@ pub fn run() {
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 
@@ -182,7 +182,7 @@ mod tests {
     // }
 
     // #[test]
-    // fn test() {
+    // fn test_main() {
     //     main();
     // }
     // // [finish; review](https://github.com/john-cd/rust_howto/issues/764)

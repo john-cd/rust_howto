@@ -27,4 +27,3 @@ xshell = "0.2.7"
 name = "building"
 path = "examples/building/main.rs"
 test = true
-
