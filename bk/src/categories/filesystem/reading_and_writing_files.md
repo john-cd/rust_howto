@@ -55,4 +55,3 @@ It is also possible to write to a `File` as if it were a `&mut [u8]` by using mu
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-

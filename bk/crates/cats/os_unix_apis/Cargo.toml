@@ -27,4 +27,3 @@ rustix = { version = "1.1.4", features = ["fs"] }
 name = "unix"
 path = "examples/unix/main.rs"
 test = true
-

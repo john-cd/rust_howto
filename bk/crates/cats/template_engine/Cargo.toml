@@ -30,4 +30,3 @@ test = true
 name = "tinytemplate"
 path = "examples/tinytemplate/main.rs"
 test = true
-

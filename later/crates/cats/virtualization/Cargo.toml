@@ -22,4 +22,3 @@ wasmi = "1.0.9"
 name = "virtualization"
 path = "examples/virtualization/main.rs"
 test = true
-

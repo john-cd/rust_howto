@@ -18,4 +18,3 @@ You can get file metadata in Rust using the `fs::metadata` function from the sta
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-

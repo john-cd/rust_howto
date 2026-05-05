@@ -26,4 +26,3 @@ windows = { version = "0.62.2", features = ["Win32_Foundation", "Win32_UI_Window
 name = "windows"
 path = "examples/windows/main.rs"
 test = true
-

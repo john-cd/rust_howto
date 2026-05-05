@@ -20,4 +20,3 @@ publish.workspace = true
 name = "graphics"
 path = "examples/graphics.rs"
 test = true
-

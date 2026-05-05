@@ -27,4 +27,3 @@ salsa = "0.26.1"
 name = "incremental_computation"
 path = "examples/incremental_computation/main.rs"
 test = true
-

@@ -57,13 +57,11 @@ fn main() {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
-
     #[test]
     fn test_main() {
         #[cfg(not(feature = "leptos-support"))]
         {
-            main();
+            super::main();
         }
 
         #[cfg(feature = "leptos-support")]

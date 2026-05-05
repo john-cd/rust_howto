@@ -21,4 +21,3 @@ rodio = "0.22.2"
 name = "multimedia"
 path = "examples/multimedia/main.rs"
 test = true
-

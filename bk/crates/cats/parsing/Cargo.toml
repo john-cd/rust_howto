@@ -40,4 +40,3 @@ test = true
 name = "pest"
 path = "examples/pest/main.rs"
 test = true
-

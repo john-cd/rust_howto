@@ -103,4 +103,3 @@ test = true
 name = "threadpool"
 path = "examples/threadpool/main.rs"
 test = true
-

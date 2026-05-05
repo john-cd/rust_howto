@@ -54,4 +54,3 @@ See [[encoding | Encoding]] and especially [[complex_encoding | Complex Encoding
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-

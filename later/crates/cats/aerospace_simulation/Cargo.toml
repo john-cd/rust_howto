@@ -20,4 +20,3 @@ autolib = false
 name = "aerospace_simulation"
 path = "examples/aerospace_simulation/main.rs"
 test = true
-

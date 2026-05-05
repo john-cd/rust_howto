@@ -1,6 +1,8 @@
 use clap::Parser;
 use clap::Subcommand;
 
+static CWD_LOCK: std::sync::Mutex<()> = std::sync::Mutex::new(());
+
 mod tar_compress;
 mod tar_decompress;
 mod tar_strip_prefix;
@@ -44,6 +46,7 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use std::fs::File;
     use std::fs::{self};
+    use std::time::SystemTime;
 
     use flate2::Compression;
     use flate2::write::GzEncoder;
@@ -66,8 +69,16 @@ mod tests {
     #[test]
     fn test_strip_prefix() -> anyhow::Result<()> {
         let work_dir = std::env::temp_dir().join(format!(
-            "rust_howto_tar_strip_prefix_{}",
-            std::process::id()
+            "rust_howto_tar_strip_prefix_{}_{:?}_{}_{}",
+            std::process::id(),
+            std::thread::current().id(),
+            std::path::Path::new(file!())
+                .file_name()
+                .unwrap()
+                .to_string_lossy(),
+            SystemTime::now()
+                .duration_since(std::time::UNIX_EPOCH)?
+                .as_nanos()
         ));
         if work_dir.exists() {
             fs::remove_dir_all(&work_dir)?;
@@ -83,8 +94,10 @@ mod tests {
         let mut tar_builder = tar::Builder::new(enc);
         tar_builder
             .append_path_with_name(&source_file, "bundle/logs/example.txt")?;
-        tar_builder.finish()?;
+        let enc = tar_builder.into_inner()?;
+        enc.finish()?;
 
+        let _cwd_lock = CWD_LOCK.lock().unwrap();
         let original_dir = std::env::current_dir()?;
         std::env::set_current_dir(&work_dir)?;
         let result = tar_strip_prefix::run();

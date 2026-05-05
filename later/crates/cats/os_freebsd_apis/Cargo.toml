@@ -22,4 +22,3 @@ nix = "0.31"
 name = "freebsd"
 path = "examples/freebsd/main.rs"
 test = true
-

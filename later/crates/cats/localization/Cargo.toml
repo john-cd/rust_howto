@@ -21,4 +21,3 @@ sys-locale = "0.3.2"
 name = "localization"
 path = "examples/localization/main.rs"
 test = true
-
