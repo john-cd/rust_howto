@@ -27,7 +27,7 @@ fn main() -> Result<()> {
         return Ok(());
     }
 
-    let thumb_dir = "thumbnails";
+    let thumb_dir = "temp/thumbnails";
     create_dir_all(thumb_dir)?;
 
     println!("Saving {} thumbnails into '{thumb_dir}'...", files.len());
@@ -99,7 +99,7 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }
