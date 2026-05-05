@@ -25,12 +25,13 @@ fn main() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_format_user() {
         use insta::assert_snapshot;
 
         let formatted = format_user("Alice", 30);
-        assert_snapshot!("format_user_snapshot", formatted);
+        assert_snapshot!(formatted, @r###"Name: Alice, Age: 30"###);
     }
 }
 // ANCHOR_END: example
