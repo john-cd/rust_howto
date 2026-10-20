@@ -1,19 +1,18 @@
 #![allow(dead_code)]
 // ANCHOR: example
-//! In this example, we:
-//!
-//! - Connect to a PostgreSQL database using `tokio_postgres::connect`.
-//! - Spawn the connection on a separate task using `tokio::spawn`.
-//! - Create a table if it does not already exist.
-//! - Insert a new row into the table.
-//! - Query the table for rows and print the results.
-//! - Update a row in the table.
-//! - Delete a row from the table.
-
-#[tokio::main]
-async fn main() -> Result<(), tokio_postgres::Error> {
-    // Connect to the database. The connection string is read from the `PG_URL`
-    // environment variable.
+/// In this example, we:
+///
+/// - Connect to a PostgreSQL database using `tokio_postgres::connect`.
+/// - Spawn the connection on a separate task using `tokio::spawn`.
+/// - Create a table if it does not already exist.
+/// - Insert a new row into the table.
+/// - Query the table for rows and print the results.
+/// - Update a row in the table.
+/// - Delete a row from the table.
+pub async fn run() -> Result<(), tokio_postgres::Error> {
+    // Connect to the database.
+    //  The libpq-style connection strings consist of space-separated
+    // key-value pairs: <https://docs.rs/tokio-postgres/latest/tokio_postgres/config/struct.Config.html>.
     let url = std::env::var("PG_URL").expect("PG_URL must be set");
     let (client, connection) =
         tokio_postgres::connect(&url, tokio_postgres::NoTls).await?;
@@ -83,22 +82,30 @@ async fn main() -> Result<(), tokio_postgres::Error> {
 
     Ok(())
 }
-// ANCHOR_END: example
 
-pub fn run() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+pub fn main() -> Result<(), tokio_postgres::Error> {
+    tokio::runtime::Runtime::new().unwrap().block_on(run())
 }
+// ANCHOR_END: example
 
 #[cfg(test)]
 mod tests {
-    use super::*;
     #[tokio::test]
     async fn require_external_svc() -> anyhow::Result<()> {
-        tokio::task::spawn_blocking(main).await??;
+        let test_url = match std::env::var("TEST_PG_URL") {
+            Ok(url) => url,
+            Err(_) => {
+                eprintln!(
+                    "Skipping PostgreSQL integration test; set TEST_PG_URL to run it."
+                );
+                return Ok(());
+            }
+        };
+
+        unsafe {
+            std::env::set_var("PG_URL", test_url);
+        }
+        tokio::task::spawn_blocking(super::main).await??;
         Ok(())
     }
 }
-// [finish](https://github.com/john-cd/rust_howto/issues/719) need heavy test
-//  The libpq-style connection strings consist of space-separated
-// key-value pairs: <https://docs.rs/tokio-postgres/latest/tokio_postgres/config/struct.Config.html>.

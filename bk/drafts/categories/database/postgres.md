@@ -44,7 +44,7 @@ This recipe lists the nationalities of the first 7999 artists in the [database][
 [`tokio-postgres`][c~tokio-postgres~docs]↗{{hi:tokio-postgres}} provides an asynchronous PostgreSQL client. It is built on top of the [`tokio`][c~tokio~docs]↗{{hi:tokio}} runtime and thus supports non-blocking interactions with PostgreSQL databases. This crate offers connection pooling, prepared statements, transactions, and support for various PostgreSQL data types. It performs better than [`SQLx`][c~sqlx~docs]↗{{hi:SQLx}}.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/database/examples/postgres/tokio_postgres.rs:example}}
+{{#include ../../../crates/cats/database/tests/postgres/tokio_postgres.rs:example}}
 ```
 
 ## `cornucopia` for Postgres {#cornucopia}

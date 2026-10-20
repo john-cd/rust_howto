@@ -11,8 +11,6 @@ mod cornucopia;
 mod create_tables;
 #[cfg(feature = "postgres")]
 mod insert_query_data;
-#[cfg(feature = "postgres")]
-mod tokio_postgres;
 
 #[cfg(feature = "postgres")]
 #[derive(Parser)]
