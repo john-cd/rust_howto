@@ -41,10 +41,9 @@ alias ca := clippyall
 
 alias nta := nextestall
 
-# Test all code in the workspace (incl. doctests) (all features)
+# Test all examples in the scratch workspace (all features).
 @nextestall:
-  echo "Test all code in the workspace in $(pwd) (incl. doctests) (all features)"
-  -cargo test --doc --workspace --quiet # nextest does not handle doctests
+  echo "Test all examples in the scratch workspace in $(pwd) (all features)"
   cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all --all-features
 
 # Build and display the `cargo doc` documentation

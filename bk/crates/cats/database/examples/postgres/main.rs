@@ -34,9 +34,6 @@ enum Commands {
     #[cfg(feature = "postgres")]
     #[command(name = "insert_query_data")]
     InsertQueryData,
-    #[cfg(feature = "postgres")]
-    #[command(name = "tokio_postgres")]
-    TokioPostgres,
 }
 
 fn main() -> anyhow::Result<()> {
@@ -61,10 +58,6 @@ fn main() -> anyhow::Result<()> {
                 #[cfg(feature = "postgres")]
                 Commands::InsertQueryData => {
                     insert_query_data::run().map_err(anyhow::Error::msg)?;
-                }
-                #[cfg(feature = "postgres")]
-                Commands::TokioPostgres => {
-                    tokio_postgres::run()?;
                 }
             }
         }
