@@ -24,13 +24,18 @@ fn main() {
     let direct_string = String::from("Another example");
     process_text(direct_string.into());
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

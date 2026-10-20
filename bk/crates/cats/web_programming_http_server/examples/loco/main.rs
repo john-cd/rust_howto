@@ -1,24 +1,36 @@
 #![allow(dead_code)]
 #![allow(unused_variables)]
-
 // ANCHOR: example
 //! This example demonstrates a basic HTTP server using the Loco framework.
 //! It defines a simple application with a controller and routes.
 //!
 //! Loco is a web framework for Rust inspired by Ruby on Rails.
 
+#[cfg(feature = "loco-support")]
 use std::path::Path;
-use loco_rs::prelude::*;
+
+#[cfg(feature = "loco-support")]
 use loco_rs::app::Hooks;
-use loco_rs::task::Tasks;
-use loco_rs::boot::{BootResult, StartMode};
-use loco_rs::controller::AppRoutes;
+#[cfg(feature = "loco-support")]
 use loco_rs::bgworker::Queue;
+#[cfg(feature = "loco-support")]
+use loco_rs::boot::BootResult;
+#[cfg(feature = "loco-support")]
+use loco_rs::boot::StartMode;
+#[cfg(feature = "loco-support")]
+use loco_rs::controller::AppRoutes;
+#[cfg(feature = "loco-support")]
 use loco_rs::environment::Environment;
+#[cfg(feature = "loco-support")]
+use loco_rs::prelude::*;
+#[cfg(feature = "loco-support")]
+use loco_rs::task::Tasks;
 
 /// The application's main structure.
+#[cfg(feature = "loco-support")]
 pub struct App;
 
+#[cfg(feature = "loco-support")]
 #[async_trait]
 impl Hooks for App {
     /// Sets the application name.
@@ -56,6 +68,7 @@ impl Hooks for App {
 }
 
 /// A simple controller for the home page.
+#[cfg(feature = "loco-support")]
 mod home {
     use super::*;
 
@@ -74,8 +87,8 @@ mod home {
 async fn main() -> anyhow::Result<()> {
     // In a real application, you would use:
     // use loco_rs::boot::{create_app, StartMode};
-    // let boot = create_app::<App>(StartMode::Server, &Environment::Development).await?;
-    // boot.start().await?;
+    // let boot = create_app::<App>(StartMode::Server,
+    // &Environment::Development).await?; boot.start().await?;
 
     println!("Loco application initialized (simulated).");
     Ok(())
@@ -83,6 +96,7 @@ async fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 #[cfg(test)]
+#[cfg(feature = "loco-support")]
 mod tests {
     use super::*;
 

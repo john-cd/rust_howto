@@ -6,6 +6,7 @@
 // ANCHOR: C
 /// Compile a C file into a static library.
 fn c() {
+    println!("cargo::rerun-if-changed=examples/hello.c");
     // Compile `examples/hello.c` into `libhello.a`:
     cc::Build::new().file("examples/hello.c").compile("hello");
 }
@@ -14,12 +15,12 @@ fn c() {
 // ANCHOR: CPP
 /// Compile a C++ file into a static library.
 fn cpp() {
-    // Compile `src/foo.cpp` into `libfoo.a`
+    // Compile `examples/foo.cpp` into `libfoo.a`
     // Tell Cargo that if the given file changes, to rerun this build script.
     println!("cargo::rerun-if-changed=examples/foo.cpp");
     cc::Build::new()
         .cpp(true)
-        .file("src/foo.cpp")
+        .file("examples/foo.cpp")
         .compile("foo");
 }
 // ANCHOR_END: CPP
@@ -27,6 +28,7 @@ fn cpp() {
 // ANCHOR: C_DEFINES
 /// Compile a C file with specific `#define` directives.
 fn cc_defines() {
+    println!("cargo::rerun-if-changed=examples/foo.c");
     // Compile `examples/foo.c` into `libfoo.a` with defines:
     cc::Build::new()
         .define("APP_NAME", "\"foo\"")
@@ -40,6 +42,7 @@ fn cc_defines() {
 }
 // ANCHOR_END: C_DEFINES
 
+/// Entry point for the build script.
 fn main() {
     // c();
     // cc_defines();
@@ -60,4 +63,3 @@ mod tests {
         let _ = cc_defines as fn();
     }
 }
-// [fix](https://github.com/john-cd/rust_howto/issues/998)

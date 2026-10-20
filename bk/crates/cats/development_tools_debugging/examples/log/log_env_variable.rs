@@ -49,6 +49,10 @@ fn init_logger() {
 }
 // ANCHOR_END: example
 
+pub fn run() {
+    main();
+}
+
 // #[cfg(test)]
 // fn init_logger() {
 //     let _ = env_logger::builder()
@@ -65,7 +69,7 @@ fn init_logger() {
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

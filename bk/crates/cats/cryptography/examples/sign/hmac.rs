@@ -32,13 +32,18 @@ fn main() -> Result<(), Unspecified> {
     println!("Message verified.");
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), Unspecified> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         main().map_err(|_| anyhow::anyhow!("hmac.rs failure"))?;
         Ok(())
     }

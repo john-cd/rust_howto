@@ -53,13 +53,25 @@ fn main() {
         "leptos example: a reactive web framework for building web UIs (see full implementation in the book)"
     );
 }
-
 // ANCHOR_END: example
 
-// #[test]
-// fn test() {
-//     main();
-// }
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test_main() {
+        #[cfg(not(feature = "leptos-support"))]
+        {
+            super::main();
+        }
+
+        #[cfg(feature = "leptos-support")]
+        {
+            // Browser-only entrypoint is not executed in a headless test
+            // harness.
+            assert!(true);
+        }
+    }
+}
 // // [Implement Leptos reactive counter and view mounting](https://github.com/john-cd/rust_howto/issues/867)
 // // <https://leptos.dev/>
 // // <https://github.com/leptos-rs/awesome-leptos>

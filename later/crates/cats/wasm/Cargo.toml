@@ -1,30 +1,52 @@
 [package]
+license-file.workspace = true
 name = "wasm"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - wasm"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = ["wasm"]
 publish.workspace = true
 autolib = false
 
-[dependencies]
-# LATER add example?
-js-sys = "0.3.77"
-web-sys = { version = "0.3.77", features = ["Window"] }
-wasm-bindgen = "0.2.100"
-wasmer = "6.0.1"
-wasmtime = { version = "36.0.7", optional = true } # Heavy compile
-yew = { version = "0.21.0", features = ["csr"] }
-
-## General
-anyhow = "1.0.95"
-
 [features]
 wasmtime = ["dep:wasmtime"]
+
+[dependencies]
+
+## General
+anyhow = "1.0.102"
+clap = { version = "4.6.1", features = ["derive"] }
+# LATER add example?
+js-sys = "0.3.97"
+wasm-bindgen = "0.2.120"
+wasmer = "6.1.0"
+wasmtime = { version = "41.0.4", optional = true } # Heavy compile
+web-sys = { version = "0.3.97", features = ["Window"] }
+yew = { version = "0.23.0", features = ["csr"] }
+
+[[example]]
+name = "interfacing_with_javascript"
+path = "examples/interfacing_with_javascript/main.rs"
+test = true
+
+[[example]]
+name = "wasm_development"
+path = "examples/wasm_development/main.rs"
+test = true
+
+[[example]]
+name = "wasm_standalone_runtimes"
+path = "examples/wasm_standalone_runtimes/main.rs"
+test = true
+
+[[example]]
+name = "yew"
+path = "examples/yew/main.rs"
+test = true

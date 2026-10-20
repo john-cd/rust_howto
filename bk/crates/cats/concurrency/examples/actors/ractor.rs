@@ -103,13 +103,18 @@ async fn main() {
     // Sleep for a bit to let the actor finish any remaining work:
     sleep(Duration::from_millis(50)).await;
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

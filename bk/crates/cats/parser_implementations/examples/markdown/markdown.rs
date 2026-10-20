@@ -28,13 +28,18 @@ This is a simple paragraph with **bold** and *italic* text.
 
     println!("{html_output}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

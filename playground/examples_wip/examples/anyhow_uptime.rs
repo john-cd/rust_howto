@@ -23,11 +23,16 @@ fn read_uptime() -> Result<u64> {
         .parse()?)
 }
 
-fn main() {
+/// Reads the system uptime.
+///
+/// Returns the uptime in seconds as a `u64`.
+/// Returns an error if the file cannot be read or the data cannot be parsed.
+fn main() -> Result<()> {
     match read_uptime() {
         Ok(uptime) => println!("uptime: {uptime} seconds"),
         Err(err) => eprintln!("error: {err}"),
     }
+    Ok(())
 }
 // ANCHOR_END: example
 
@@ -35,7 +40,7 @@ fn main() {
 mod tests {
     use super::*;
     #[test]
-    fn test() {
-        main();
+    fn test_main() {
+        main().unwrap();
     }
 }

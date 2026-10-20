@@ -59,13 +59,18 @@ fn main() {
     let expected: SmallVec<[i32; 4]> = smallvec![2, 3, 4, 5];
     assert_eq!(small_vec, expected);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

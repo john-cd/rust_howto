@@ -10,13 +10,18 @@ fn main() {
     // `val` falls out of scope at the end of the block.
     // println!("{val}"); // ERROR: cannot find value `val` in this scope.
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

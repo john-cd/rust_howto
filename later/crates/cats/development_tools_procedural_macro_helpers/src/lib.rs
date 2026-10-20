@@ -5,6 +5,21 @@ use proc_macro::TokenStream;
 use quote::quote;
 use syn::{parse_macro_input, DeriveInput, ItemFn};
 
+// Retain the macro used by the existing `compile_macros` example.
+#[proc_macro_derive(MyMacro)]
+pub fn my_macro(input: TokenStream) -> TokenStream {
+    let input = parse_macro_input!(input as DeriveInput);
+    let name = input.ident;
+    let expanded = quote! {
+        impl #name {
+            fn hello_world() {
+                println!("Hello, World! I am #name");
+            }
+        }
+    };
+    TokenStream::from(expanded)
+}
+
 // ANCHOR: attribute_macro
 /// This is an attribute macro example.
 ///
@@ -75,3 +90,15 @@ pub fn derive_debug(input: TokenStream) -> TokenStream {
     TokenStream::from(expanded)
 }
 // ANCHOR_END: proc_macro2_example
+
+// Retain the shim imported by the existing `compile_macros` Watt example.
+#[proc_macro]
+pub fn watt_macro(input: TokenStream) -> TokenStream {
+    let input_str = input.to_string();
+    let expanded = quote! {
+        fn watt_demo() {
+            println!("Watt macro received: {}", #input_str);
+        }
+    };
+    TokenStream::from(expanded)
+}

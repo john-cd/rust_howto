@@ -37,17 +37,21 @@ pub(crate) struct S;
 
 /// Here is the required documentation
 /// for the main function.
-pub(crate) fn main() {
+fn main() {
     let s = S;
     println!("{s:?}");
 }
 // ANCHOR_END: example
 
+pub(crate) fn run() {
+    main();
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

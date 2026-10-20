@@ -25,7 +25,12 @@ async fn main() -> reqwest::Result<()> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> reqwest::Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

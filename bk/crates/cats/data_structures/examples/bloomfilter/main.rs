@@ -1,3 +1,5 @@
 mod bloomfilter;
 
-fn main() {}
+fn main() {
+    bloomfilter::run();
+}

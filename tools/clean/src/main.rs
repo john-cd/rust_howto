@@ -74,7 +74,7 @@ fn clean_folder(dir: &Path) -> anyhow::Result<()> {
 }
 
 #[cfg(test)]
-mod tests { use super::*;
+mod tests {
     use std::path::Path;
 
     use tempfile::tempdir;

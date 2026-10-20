@@ -19,13 +19,18 @@ fn main() {
     thread_one.join().expect("thread one panicked");
     thread_two.join().expect("thread two panicked");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

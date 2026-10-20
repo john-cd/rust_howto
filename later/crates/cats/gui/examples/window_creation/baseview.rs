@@ -49,7 +49,7 @@ impl WindowDelegate for BaseviewExample {
     }
 }
 
-pub fn main() -> Result<()> {
+fn main() -> Result<()> {
     let size = Size::new(640.0, 480.0);
     let mut open_options =
         WindowOpenOptions::new("Baseview Example".to_string(), size);
@@ -59,3 +59,18 @@ pub fn main() -> Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires interactive example runtime"]
+    fn test_main() {
+        main().unwrap();
+    }
+}

@@ -48,13 +48,18 @@ fn main() {
     // ERROR: use m::private_module;
     println!("pub_keyword example: public items accessible, private items not");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

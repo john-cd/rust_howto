@@ -1,18 +1,24 @@
 [package]
+license-file.workspace = true
 name = "localization"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - localization"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
-categories = [ "localization" ]
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["localization"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
 sys-locale = "0.3.2"
+
+[[example]]
+name = "localization"
+path = "examples/localization/main.rs"
+test = true

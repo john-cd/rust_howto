@@ -53,13 +53,18 @@ key4 = value4
 
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         use std::fs;
         if !fs::exists("temp")? {
             fs::create_dir("temp")?;

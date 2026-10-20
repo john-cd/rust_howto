@@ -1,25 +1,37 @@
 [package]
+license-file.workspace = true
 name = "about"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories.workspace = true
 publish = false
-readme = "README.md"
 autolib = false
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow = "1.0.100"
+anyhow = "1.0.102"
 rand = { version = "0.10.1", features = ["thread_rng"] }
-url = "2.5.7"
+url = "2.5.8"
 
-[dev-dependencies]
-cargo-husky = { version = "1", default-features = false, features = ["user-hooks"] }
+[[example]]
+name = "about"
+path = "examples/about.rs"
+test = true
+
+[[example]]
+name = "about1"
+path = "examples/about1.rs"
+test = true
+
+[[example]]
+name = "about2"
+path = "examples/about2.rs"
+test = true

@@ -33,13 +33,18 @@ fn main() {
     let deserialized_person: Person = serde_json::from_str(&json).unwrap();
     println!("Deserialized: {deserialized_person:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

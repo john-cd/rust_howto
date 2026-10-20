@@ -1,3 +1,5 @@
 mod builder_pattern;
 
-fn main() {}
+fn main() {
+    builder_pattern::run();
+}

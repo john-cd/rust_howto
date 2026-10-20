@@ -16,13 +16,18 @@ fn main() {
     mymap.entry(42).or_insert("my favorite number".into());
     println!("{mymap:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

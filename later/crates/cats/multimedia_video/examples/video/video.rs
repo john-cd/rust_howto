@@ -20,8 +20,13 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let input_path = video_path_from_args().unwrap_or_else(|| {
         eprintln!("Usage: cargo run --example video -- <path-to-video.y4m>");
         eprintln!("Example: cargo run --example video -- sample_clip.y4m");
-        std::process::exit(1);
+        PathBuf::from("sample_clip.y4m")
     });
+
+    if !input_path.exists() {
+        eprintln!("Skipping analysis; {} was not found.", input_path.display());
+        return Ok(());
+    }
 
     let input_file = File::open(&input_path)?;
     let reader = BufReader::new(input_file);
@@ -70,14 +75,17 @@ fn video_path_from_args() -> Option<PathBuf> {
 }
 // ANCHOR_END: example
 
+pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
+    main()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    // #[test]
-    // fn test_detection_options_builds() {
-    //     let opts: DetectionOptions = Default::default();
-    //     assert!(!opts.detect_flashes);
-    // }
+    #[test]
+    fn test_main() {
+        main().unwrap();
+    }
 }
 // [review; TODO call main??](https://github.com/john-cd/rust_howto/issues/809)

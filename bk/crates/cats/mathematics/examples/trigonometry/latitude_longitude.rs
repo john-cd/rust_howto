@@ -40,13 +40,18 @@ fn main() {
         "Distance between Paris and London on the surface of Earth is {distance:.1} kilometers"
     );
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

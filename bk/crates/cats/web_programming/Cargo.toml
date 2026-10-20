@@ -1,27 +1,50 @@
 [package]
+license-file.workspace = true
 name = "web_programming"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - web_programming"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = ["web-programming"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-anyhow = "1.0.100"
-http = "1.3.1"
+anyhow = "1.0.102"
+clap = { version = "4.6.1", features = ["derive"] }
+http = "1.4.0"
+http-body-util = "0.1.3"
 lazy_static = "1.5.0"
 mime = "0.3.17"
-regex = "1.12.2"
-reqwest = "0.12.24"
+regex = "1.12.3"
+reqwest = "0.13.3"
 select = "0.6.1"
-tokio = { version = "1.48.0", features = ["macros", "rt-multi-thread"] }
-# FIXME http-body-util = "0.1.2"
-url = "2.5.7"
+tokio = { version = "1.52.1", features = ["macros", "rt-multi-thread"] }
+url = "2.5.8"
+
+[[example]]
+name = "http_types_and_interfaces"
+path = "examples/http_types_and_interfaces/main.rs"
+test = true
+
+[[example]]
+name = "mime"
+path = "examples/mime/main.rs"
+test = true
+
+[[example]]
+name = "scraping"
+path = "examples/scraping/main.rs"
+test = true
+
+[[example]]
+name = "url"
+path = "examples/url/main.rs"
+test = true

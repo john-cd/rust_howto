@@ -49,13 +49,18 @@ fn main() {
     unwrap_expect();
     unwrap_or_unwrap_or_else();
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

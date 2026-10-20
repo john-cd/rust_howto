@@ -44,10 +44,8 @@ fn main() -> anyhow::Result<()> {
             Ok(XmlEvent::EndElement { name }) => {
                 println!("End: {name}");
             }
-            Ok(XmlEvent::Characters(text)) => {
-                if !text.trim().is_empty() {
-                    println!("  Text: {text}");
-                }
+            Ok(XmlEvent::Characters(text)) if !text.trim().is_empty() => {
+                println!("  Text: {text}");
             }
             Err(e) => {
                 eprintln!("Error: {e}");
@@ -94,13 +92,18 @@ fn main() -> anyhow::Result<()> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

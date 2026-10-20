@@ -1,17 +1,44 @@
 [package]
+license-file.workspace = true
 name = "rendering"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - rendering"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
-categories = [ "rendering" ]
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["rendering"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
+
+[[example]]
+name = "2d_raster_graphics"
+path = "examples/2d_raster_graphics/main.rs"
+test = true
+
+[[example]]
+name = "2d_vector_graphics"
+path = "examples/2d_vector_graphics/main.rs"
+test = true
+
+[[example]]
+name = "3d_renderers"
+path = "examples/3d_renderers/main.rs"
+test = true
+
+[[example]]
+name = "svg_rendering"
+path = "examples/svg_rendering/main.rs"
+test = true
+
+[[example]]
+name = "text_rendering"
+path = "examples/text_rendering/main.rs"
+test = true

@@ -67,7 +67,12 @@ async fn main() -> Result<()> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
 
 // [flaky test](https://github.com/john-cd/rust_howto/issues/1419)
 

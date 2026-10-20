@@ -35,13 +35,18 @@ fn main() {
         rio_timezone.from_utc_datetime(&utc_time)
     );
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

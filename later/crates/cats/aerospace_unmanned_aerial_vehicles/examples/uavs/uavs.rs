@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-use std::time::Duration;
 
 use tello::Drone;
 use tello::Message;
@@ -34,12 +33,16 @@ fn main() {
 }
 // ANCHOR_END: example
 
+pub fn run() {
+    main();
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
     #[ignore = "requires real drone"]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

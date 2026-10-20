@@ -20,13 +20,18 @@ fn main() {
     }
     tracing::info!("Dropping the guard exits the span.");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         tracing_subscriber::fmt()
             .with_max_level(tracing::Level::TRACE)
             .init();

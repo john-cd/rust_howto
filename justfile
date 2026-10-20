@@ -14,16 +14,22 @@ _default:
 all cmd:
   #!/usr/bin/env bash
   set -euo pipefail
-  for wkspace in "bk" "scrub" "playground" "publish" "tools" "xmpl"
+  for wkspace in "bk" "later" "mdbook-utils" "playground" "publish" "tools" "xmpl"
   do
     just ${wkspace} {{cmd}} || true
     echo "------------------------"
   done
 
+[windows]
+@all cmd:
+  $wkspaces = @("bk", "later", "mdbook-utils", "playground", "publish", "tools", "xmpl"); foreach ($wk in $wkspaces) { just $wk {{cmd}} ; Write-Host "------------------------" }
+
 # Book
 mod bk
 # Later
 mod later
+# mdBook utilities
+mod mdbook-utils
 # Playground
 mod playground
 # Placeholder crate on `crates.io`

@@ -4,7 +4,6 @@
 // the `redis` crate.
 use std::env;
 
-use anyhow::Context;
 use anyhow::Result;
 use redis::Commands;
 use redis::Connection;
@@ -59,7 +58,12 @@ fn main() -> Result<()> {
     println!("{my_int}");
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

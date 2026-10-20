@@ -28,18 +28,22 @@ fn main() {
 }
 
 #[cfg(not(target_os = "linux"))]
-pub fn main() {
+fn main() {
     println!(
         "This example is intended to demonstrate Linux API interop and is only supported on Linux."
     );
 }
 // ANCHOR_END: example
 
+pub fn run() {
+    main();
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

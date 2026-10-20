@@ -36,13 +36,18 @@ fn main() {
     // y = "hello"; // ERROR: cannot change the type of `y`
     println!("y: {y}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

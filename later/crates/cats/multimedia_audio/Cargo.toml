@@ -1,18 +1,25 @@
 [package]
+license-file.workspace = true
 name = "multimedia_audio"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - multimedia_audio"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
-categories = [ "multimedia::audio" ]
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["multimedia::audio"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-cpal = "0.15"
+cpal = "0.17"
+
+[[example]]
+name = "audio"
+path = "examples/audio/main.rs"
+test = true

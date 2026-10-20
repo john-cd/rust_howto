@@ -15,13 +15,18 @@ fn main() {
     let value = parse_number("42");
     println!("Parsed value: {value}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

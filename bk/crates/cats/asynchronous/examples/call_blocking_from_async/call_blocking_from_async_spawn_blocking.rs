@@ -20,13 +20,18 @@ async fn main() {
     // Await the completion of the blocking task.
     blocking_task.await.unwrap();
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

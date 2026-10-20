@@ -44,13 +44,18 @@ fn main() {
         .collect();
     println!("Even numbers doubled: {even_doubled:?}"); // Output: Even numbers doubled: [4, 8]
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

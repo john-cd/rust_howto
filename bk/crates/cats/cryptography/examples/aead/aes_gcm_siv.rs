@@ -55,13 +55,18 @@ fn main() -> Result<(), aes_gcm_siv::Error> {
     assert_eq!(plaintext, decrypted_ciphertext.as_slice());
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), aes_gcm_siv::Error> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         main()
             .map_err(|_| anyhow::anyhow!("Failed encryption or decryption"))?;
         Ok(())

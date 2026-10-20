@@ -62,13 +62,18 @@ fn main() {
     });
     // Example adapted from <https://docs.rs/papaya/latest/papaya>
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

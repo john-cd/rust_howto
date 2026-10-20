@@ -28,6 +28,10 @@ fn move_system(mut query: Query<&mut Transform>, time: Res<Time>) {
 }
 // ANCHOR_END: example
 
+pub fn run() {
+    main();
+}
+
 #[test]
 fn test() {
     main();

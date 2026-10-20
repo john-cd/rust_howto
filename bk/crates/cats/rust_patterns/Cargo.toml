@@ -1,21 +1,24 @@
 [package]
+license-file.workspace = true
 name = "rust_patterns"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - rust_patterns"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = ["rust-patterns"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-anyhow = "1.0.100"
+anyhow = "1.0.102"
+clap = { version = "4.6.1", features = ["derive"] }
 color-eyre = "0.6.5"
 csv = "1.4.0"
 dyn-clone = "1.0.20"
@@ -26,9 +29,39 @@ im = "15.1.0"
 # eyre is outdated, see color-eyre
 itertools = "0.14.0"
 miette = { version = "7.6.0", features = ["fancy"] }
-pin-project = "1.1.10"
+pin-project = "1.1.11"
 # pin-project-lite = "0.2.16"
-rpds = "1.1.2"
+rpds = "1.2.0"
 scopeguard = "1.2.0"
 serde = { version = "1.0.228", features = ["derive"] }
-thiserror = "2.0.17"
+thiserror = "2.0.18"
+
+[[example]]
+name = "builder_pattern"
+path = "examples/builder_pattern/main.rs"
+test = true
+
+[[example]]
+name = "creational_patterns"
+path = "examples/creational_patterns/main.rs"
+test = true
+
+[[example]]
+name = "error"
+path = "examples/error/main.rs"
+test = true
+
+[[example]]
+name = "functional_programming"
+path = "examples/functional_programming/main.rs"
+test = true
+
+[[example]]
+name = "rust_specific_patterns"
+path = "examples/rust_specific_patterns/main.rs"
+test = true
+
+[[example]]
+name = "scopeguard"
+path = "examples/scopeguard.rs"
+test = true

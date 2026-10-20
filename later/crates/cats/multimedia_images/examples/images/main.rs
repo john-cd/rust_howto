@@ -1,5 +1,5 @@
 mod images;
 
-fn main() {
-    images::run().expect("image example failed");
+fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+    images::run()
 }

@@ -32,13 +32,18 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), Box<dyn Error>> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() -> Result<(), Box<dyn Error>> {
+    fn test_main() -> Result<(), Box<dyn Error>> {
         main()?;
         Ok(())
     }

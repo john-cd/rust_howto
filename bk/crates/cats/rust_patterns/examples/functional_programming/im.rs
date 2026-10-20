@@ -110,13 +110,18 @@ fn main() {
     println!("Original set: {set1:?}");
     println!("Modified set: {set2:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

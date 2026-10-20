@@ -1,18 +1,25 @@
 [package]
+license-file.workspace = true
 name = "external_ffi_bindings"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - external_ffi_bindings"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
-categories = [ "external-ffi-bindings" ]
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["external-ffi-bindings"]
 publish.workspace = true
 #autolib = false
 
 [dependencies]
 # LATER
+
+[[example]]
+name = "external_ffi_bindings"
+path = "examples/external_ffi_bindings.rs"
+test = true

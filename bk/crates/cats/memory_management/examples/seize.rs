@@ -23,6 +23,7 @@ use std::sync::atomic::AtomicPtr;
 use std::sync::atomic::Ordering;
 
 use seize::Collector;
+use seize::Guard;
 
 fn main() {
     // A `Collector` manages the access and retirement of concurrent objects.
@@ -80,7 +81,7 @@ fn main() {
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

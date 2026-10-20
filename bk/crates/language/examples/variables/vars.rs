@@ -34,13 +34,18 @@ fn main() {
     // println!("Inner var outside inner scope: {inner_var}"); // ERROR.
     println!("Outer var outside inner scope: {outer_var}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

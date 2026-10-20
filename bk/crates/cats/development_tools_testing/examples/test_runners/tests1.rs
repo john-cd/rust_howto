@@ -1,7 +1,12 @@
 #![allow(dead_code)]
 #![allow(clippy::eq_op)]
+
+pub fn run() {
+    main();
+}
+
 // ANCHOR: example
-//! This example demonstrates how to write unit tests.
+// This example demonstrates how to write unit tests.
 
 /// Represents a rectangle with a width and height.
 struct Rectangle {
@@ -14,6 +19,22 @@ impl Rectangle {
     fn can_hold(&self, another: &Rectangle) -> bool {
         self.width > another.width && self.height > another.height
     }
+}
+
+fn main() {
+    let larger = Rectangle {
+        width: 8,
+        height: 7,
+    };
+    let smaller = Rectangle {
+        width: 5,
+        height: 1,
+    };
+
+    println!(
+        "Can the larger rectangle hold the smaller one? {}",
+        larger.can_hold(&smaller)
+    );
 }
 
 /// This module contains unit tests for the `Rectangle` struct.

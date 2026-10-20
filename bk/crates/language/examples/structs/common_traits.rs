@@ -82,13 +82,18 @@ fn main() {
     let p4 = Point2D::default();
     println!("{p4:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }
