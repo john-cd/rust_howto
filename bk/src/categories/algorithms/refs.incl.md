@@ -15,6 +15,9 @@
 [ex~algorithms~petgraph-dfs]: graph_algorithms.md#petgraph-dfs
 [ex~algorithms~petgraph-dijkstra]: graph_algorithms.md#petgraph-dijkstra
 [ex~algorithms~petgraph-toposort]: graph_algorithms.md#petgraph-toposort
+[ex~algorithms~petgraph-astar]: graph_algorithms.md#petgraph-astar
+[ex~algorithms~pathfinding-astar]: graph_algorithms.md#pathfinding-astar
+[ex~algorithms~petgraph-mst]: graph_algorithms.md#petgraph-mst
 [ex~algorithms~sha1]: hashing.md#sha1
 [ex~algorithms~sha256]: hashing.md#sha256
 [ex~algorithms~sha2]: hashing.md#sha2
