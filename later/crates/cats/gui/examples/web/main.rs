@@ -1,6 +1,7 @@
 use clap::Parser;
 use clap::Subcommand;
 
+#[cfg(feature = "dioxus")]
 mod dioxus;
 #[cfg(all(not(windows), feature = "tauri"))] // TODO review Windows support
 mod tauri;
@@ -14,6 +15,7 @@ struct Cli {
 #[derive(Subcommand)]
 enum Commands {
     #[command(name = "dioxus")]
+    #[cfg(feature = "dioxus")]
     Dioxus,
     #[cfg(all(not(windows), feature = "tauri"))]
     #[command(name = "tauri")]
@@ -25,6 +27,7 @@ fn main() {
 
     if let Some(command) = cli.command {
         match command {
+            #[cfg(feature = "dioxus")]
             Commands::Dioxus => {
                 dioxus::run();
             }
