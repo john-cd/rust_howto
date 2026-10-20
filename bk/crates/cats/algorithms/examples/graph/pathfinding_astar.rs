@@ -12,7 +12,7 @@ fn main() {
 
     impl Pos {
         fn distance(&self, other: &Pos) -> u32 {
-            (self.0.abs_diff(other.0) + self.1.abs_diff(other.1)) as u32
+            self.0.abs_diff(other.0) + self.1.abs_diff(other.1)
         }
 
         fn successors(&self) -> Vec<(Pos, u32)> {
