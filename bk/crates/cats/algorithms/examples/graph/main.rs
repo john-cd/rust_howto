@@ -1,10 +1,12 @@
 use clap::Parser;
 use clap::Subcommand;
 
+mod pathfinding_astar;
 mod petgraph_astar;
 mod petgraph_bfs;
 mod petgraph_dfs;
 mod petgraph_dijkstra;
+mod petgraph_mst;
 mod petgraph_toposort;
 
 #[derive(Parser)]
@@ -15,6 +17,8 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Commands {
+    #[command(name = "pathfinding_astar")]
+    PathfindingAstar,
     #[command(name = "petgraph_astar")]
     Astar,
     #[command(name = "petgraph_bfs")]
@@ -25,6 +29,8 @@ enum Commands {
     Dijkstra,
     #[command(name = "petgraph_toposort")]
     Toposort,
+    #[command(name = "petgraph_mst")]
+    Mst,
 }
 
 fn main() {
@@ -32,6 +38,7 @@ fn main() {
 
     if let Some(command) = cli.command {
         match command {
+            Commands::PathfindingAstar => pathfinding_astar::run(),
             Commands::Astar => {
                 petgraph_astar::run();
             }
@@ -47,6 +54,7 @@ fn main() {
             Commands::Toposort => {
                 petgraph_toposort::run();
             }
+            Commands::Mst => petgraph_mst::run(),
         }
     }
 }
