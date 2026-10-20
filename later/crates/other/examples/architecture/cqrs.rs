@@ -271,31 +271,28 @@ mod read_store {
             }
         }
 
-        /// Updates the read model based on an event.
-        fn update(&self, event: ProductEvent) {
-            match event {
-                ProductEvent::ProductCreated { id, name, quantity } => {
-                    let mut read_model = self.read_model.write().unwrap();
-                    read_model.insert(id, Product::new(id, name, quantity));
-                }
-                ProductEvent::ProductQuantityUpdated { id, new_quantity } => {
-                    let mut read_model = self.read_model.write().unwrap();
-                    if let Some(product) = read_model.get_mut(&id) {
-                        product.set_quantity(new_quantity);
-                    }
-                }
-            }
-        }
-
         /// Rebuilds the read model from the event store.
         ///
         /// This is used to re-create the read model from the event store.
         pub fn rebuild_read_model(&self, events: Vec<ProductEvent>) {
-            let mut read_model = self.read_model.write().unwrap();
-            read_model.clear();
-            for event in events.into_iter() {
-                self.update(event);
+            let mut read_model = HashMap::new();
+            for event in events {
+                match event {
+                    ProductEvent::ProductCreated { id, name, quantity } => {
+                        read_model.insert(id, Product::new(id, name, quantity));
+                    }
+                    ProductEvent::ProductQuantityUpdated {
+                        id,
+                        new_quantity,
+                    } => {
+                        if let Some(product) = read_model.get_mut(&id) {
+                            product.set_quantity(new_quantity);
+                        }
+                    }
+                }
             }
+            // Publish the complete snapshot with one write-lock acquisition.
+            *self.read_model.write().unwrap() = read_model;
         }
     }
 }
@@ -394,6 +391,35 @@ mod tests {
         // We just execute main, which shouldn't panic
         main()?;
         Ok(())
+    }
+
+    #[test]
+    fn rebuild_replaces_snapshot_and_applies_quantity_updates() {
+        let read_store = read_store::SimpleReadStore::new();
+        let query_handler = query::QueryHandler::new(read_store.clone());
+        read_store.rebuild_read_model(vec![
+            events::ProductEvent::ProductCreated {
+                id: 2,
+                name: "Old product".to_owned(),
+                quantity: 1,
+            },
+        ]);
+        read_store.rebuild_read_model(vec![
+            events::ProductEvent::ProductCreated {
+                id: 1,
+                name: "Laptop".to_owned(),
+                quantity: 10,
+            },
+            events::ProductEvent::ProductQuantityUpdated {
+                id: 1,
+                new_quantity: 7,
+            },
+        ]);
+
+        assert!(query_handler.get_product(2).is_none());
+        let product = query_handler.get_product(1).unwrap();
+        assert_eq!(product.name(), "Laptop");
+        assert_eq!(product.quantity(), 7);
     }
 
     #[test]

@@ -100,6 +100,14 @@ mod tests {
     // TODO proper test
     #[test]
     fn compile_event_loop() {
-        let _event_loop = EventLoop::new().expect("create event loop");
+        let mut builder = EventLoop::<()>::builder();
+        #[cfg(target_os = "windows")]
+        {
+            use winit::platform::windows::EventLoopBuilderExtWindows;
+
+            // The test harness runs this test on a worker thread.
+            builder.with_any_thread(true);
+        }
+        let _event_loop = builder.build().expect("create event loop");
     }
 }

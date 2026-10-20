@@ -32,6 +32,10 @@ struct Point {
 struct UserId(u64);
 
 /// Struct with a constructor.
+#[allow(
+    clippy::redundant_field_names,
+    reason = "The Constructor derive generates the field initializers."
+)]
 #[derive(Constructor, Debug)]
 struct User {
     id: UserId,

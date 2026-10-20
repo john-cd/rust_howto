@@ -14915,6 +14915,7 @@ name = "multimedia_images"
 version = "0.1.2"
 dependencies = [
  "image 0.25.10",
+ "tempfile",
 ]
 
 [[package]]

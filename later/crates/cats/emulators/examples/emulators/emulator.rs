@@ -38,7 +38,11 @@ struct HostState {
 }
 
 fn main() -> ExampleResult<()> {
-    let guest_path = match guest_path_from_args() {
+    run_guest(guest_path_from_args())
+}
+
+fn run_guest(guest_path: Option<PathBuf>) -> ExampleResult<()> {
+    let guest_path = match guest_path {
         Some(path) => path,
         None => {
             print_usage();
@@ -140,8 +144,8 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_main() {
-        main().unwrap();
+    fn no_guest_path_prints_usage() {
+        run_guest(None).unwrap();
     }
 
     #[test]
