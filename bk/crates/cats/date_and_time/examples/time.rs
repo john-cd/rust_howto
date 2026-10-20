@@ -16,7 +16,8 @@ fn main() {
     // Parse a date from a string.
     let date = Date::parse(
         "2025-01-02",
-        &format_description::parse("[year]-[month]-[day]").unwrap(),
+        &format_description::parse_borrowed::<2>("[year]-[month]-[day]")
+            .unwrap(),
     )
     .unwrap();
     println!("Parsed date: {date}");
@@ -36,7 +37,7 @@ fn main() {
     // Format a date and time as a string.
     let formatted = now
         .format(
-            &format_description::parse(
+            &format_description::parse_borrowed::<2>(
                 "[year]-[month]-[day] [hour]:[minute]:[second]",
             )
             .unwrap(),

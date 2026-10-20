@@ -6,8 +6,6 @@
 //! The `approx` crate provides macros for comparing floating-point numbers with
 //! a tolerance, which is necessary due to the inherent imprecision of
 //! floating-point arithmetic.
-use std::f64;
-
 use approx::assert_abs_diff_eq;
 use approx::assert_relative_eq;
 use approx::assert_ulps_eq;

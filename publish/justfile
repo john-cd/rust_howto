@@ -41,11 +41,10 @@ alias ca := clippyall
 
 alias nta := nextestall
 
-# Test all code in the workspace (incl. doctests) (all features)
+# Test the placeholder binary (an empty test set is expected).
 @nextestall:
-  echo "Test all code in the workspace in $(pwd) (incl. doctests) (all features)"
-  -cargo test --doc --workspace --quiet # nextest does not handle doctests
-  cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all --all-features
+  echo "Test the placeholder binary in $(pwd) (all features)"
+  cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all --all-features --no-tests pass
 
 # Build and display the `cargo doc` documentation
 @docall:
