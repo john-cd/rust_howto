@@ -19,4 +19,3 @@ Symbolic links are handled primarily through the standard library's `std::fs` mo
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-

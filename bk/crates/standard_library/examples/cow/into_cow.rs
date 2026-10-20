@@ -33,9 +33,18 @@ fn main() {
     println!("{}", describe_status(&status2)); // Output: Status: 404 Not Found
     println!("{}", describe_status(&status3)); // Output: Status: 500 Internal Server Error
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

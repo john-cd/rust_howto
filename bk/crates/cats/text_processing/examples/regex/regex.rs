@@ -131,9 +131,18 @@ image_lbl6: image_url6
 
     search_with_all_regexes(md);
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

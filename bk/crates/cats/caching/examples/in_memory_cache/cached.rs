@@ -6,8 +6,6 @@
 //!
 //! Remember to add `cached = "0.55.1"` or latest to your Cargo.toml.
 
-use std::time::Duration;
-
 use cached::proc_macro::cached;
 
 /// Cached function with default configuration. Uses the unbounded cache.
@@ -47,7 +45,7 @@ fn main() {
     // Check the underlying cache:
     {
         use cached::Cached;
-        let cache = FIBONACCI.lock().unwrap();
+        let cache = FIBONACCI.lock();
         println!("misses: {:?}", cache.cache_misses());
         assert_eq!(cache.cache_misses(), Some(11));
         // Make sure the lock is dropped.
@@ -57,11 +55,20 @@ fn main() {
     println!("User data: {}", fetch_data(123));
     println!("Cached user data: {}", fetch_data(123));
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }
 // [review further](https://github.com/john-cd/rust_howto/issues/1354)
 // <https://docs.rs/cached/latest/cached/proc_macro/index.html>

@@ -47,9 +47,18 @@ fn main() {
         println!("Shape area: {:.2}", shape.area());
     }
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

@@ -1,11 +1,13 @@
 #![allow(dead_code)]
 // ANCHOR: example
+//! This example demonstrates signing and verifying messages with ed25519-dalek.
+
 use ed25519_dalek::Signature;
 use ed25519_dalek::Signer;
 use ed25519_dalek::SigningKey;
 use ed25519_dalek::Verifier;
 use ed25519_dalek::VerifyingKey;
-use rand::rngs::OsRng;
+use rand_core::OsRng;
 
 /// Ed25519 Signature Example
 ///
@@ -40,10 +42,19 @@ fn main() -> anyhow::Result<()> {
     println!("Ed25519 signature verified successfully!");
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }

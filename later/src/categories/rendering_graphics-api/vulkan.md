@@ -18,7 +18,10 @@ Safe wrapper for the Vulkan graphics API.
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[graphics | Graphics]].
+- [[rendering | Rendering]].
+- [[gpu | GPU]].
+- [[shaders | Shaders]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

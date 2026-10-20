@@ -20,7 +20,9 @@ fn main() {
     tracing::info!("Testing for i128 support...");
     ac.emit_has_type("i128");
     tracing::info!("Emitted has_type check for i128.");
-    println!("autocfg: checked i128 support (see CARGO_ENCODED_RUSTFLAGS for results)");
+    println!(
+        "autocfg: checked i128 support (see CARGO_ENCODED_RUSTFLAGS for results)"
+    );
 
     // If the type test succeeds, this will write a `cargo:rustc-cfg=has_i128``
     // line for Cargo, which translates to Rust arguments `--cfg has_i128`. Then
@@ -30,9 +32,18 @@ fn main() {
     // (optional) You don't need to rerun for anything external.
     // autocfg::rerun_path("build.rs");
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

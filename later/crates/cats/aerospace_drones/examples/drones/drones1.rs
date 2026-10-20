@@ -2,7 +2,7 @@
 // ANCHOR: example
 use tello::Drone;
 
-pub fn main() -> Result<(), String> {
+fn main() -> Result<(), String> {
     let mut drone = Drone::new("192.168.10.1:8889");
     drone.connect(11111);
     println!("Drone connected.");
@@ -15,8 +15,16 @@ pub fn main() -> Result<(), String> {
 }
 // ANCHOR_END: example
 
-#[test]
-#[ignore = "requires real drone"]
-fn test() {
-    main().unwrap();
+pub fn run() -> Result<(), String> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    #[ignore = "requires real drone"]
+    fn test_main() {
+        main().unwrap();
+    }
 }

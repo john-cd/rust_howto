@@ -1,4 +1,5 @@
-#[cfg(feature = "objc")]
 mod objc2;
 
-fn main() {}
+fn main() {
+    objc2::run();
+}

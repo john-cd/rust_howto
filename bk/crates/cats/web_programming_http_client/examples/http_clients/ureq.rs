@@ -18,11 +18,20 @@ fn main() -> anyhow::Result<()> {
     println!("Response: {response}");
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn require_network() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn require_network() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }
 // [write more?](https://github.com/john-cd/rust_howto/issues/862)

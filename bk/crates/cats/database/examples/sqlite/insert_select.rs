@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
+// This example demonstrates inserting and selecting SQLite data using
+// `rusqlite`.
 use std::collections::HashMap;
 
 use rusqlite::Connection;
@@ -14,7 +16,7 @@ struct Cat {
 
 /// This function demonstrates inserting data into a SQLite database and then
 /// selecting it back.
-pub fn main() -> Result<()> {
+fn main() -> Result<()> {
     let conn = Connection::open("temp/cats.db")?;
 
     // Create a HashMap to store cat colors and their corresponding names.
@@ -63,3 +65,7 @@ pub fn main() -> Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}

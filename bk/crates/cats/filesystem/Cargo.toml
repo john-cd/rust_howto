@@ -1,33 +1,91 @@
 [package]
+license-file.workspace = true
 name = "filesystem"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - filesystem"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = ["filesystem"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-anyhow = "1.0.100"
-camino = "1.2.1"
+anyhow = "1.0.102"
+camino = "1.2.2"
+clap = { version = "4.6.1", features = ["derive"] }
 directories = "6.0.0"
 dirs = "6.0.0"
 glob = "0.3.3"
 globset = "0.4.18"
-ignore = "0.4.24"
-memmap2 = "0.9.9"
+ignore = "0.4.25"
+memmap2 = "0.9.10"
 notify = "8.2.0"
-open = "5.3.2"
+open = "5.3.4"
 remove_dir_all = { version = "1.0.0", features = ["parallel"] }
 same-file = "1.0.6"
 # tempdir is outdated, replaced by tempfile
-tempfile = "3.23.0"
+tempfile = "3.27.0"
 utils = { path = "../../utils" }
 walkdir = "2.5.0"
+
+[[example]]
+name = "directories"
+path = "examples/directories/main.rs"
+test = true
+
+[[example]]
+name = "directory_traversal"
+path = "examples/directory_traversal/main.rs"
+test = true
+
+[[example]]
+name = "file_watching"
+path = "examples/file_watching/main.rs"
+test = true
+
+[[example]]
+name = "metadata"
+path = "examples/metadata/main.rs"
+test = true
+
+[[example]]
+name = "open"
+path = "examples/open.rs"
+test = true
+
+[[example]]
+name = "paths"
+path = "examples/paths/main.rs"
+test = true
+
+[[example]]
+name = "read_write"
+path = "examples/read_write/main.rs"
+test = true
+
+[[example]]
+name = "stdin_stdout"
+path = "examples/stdin_stdout/main.rs"
+test = true
+
+[[example]]
+name = "symbolic_links"
+path = "examples/symbolic_links/main.rs"
+test = true
+
+[[example]]
+name = "tempfile"
+path = "examples/tempfile/main.rs"
+test = true
+
+[[example]]
+name = "user_directories"
+path = "examples/user_directories/main.rs"
+test = true

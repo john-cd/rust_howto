@@ -1,7 +1,7 @@
 // ANCHOR: example
 use bloomfilter::Bloom;
 
-pub fn main() {
+fn main() {
     let items_count = 100;
     let mut bloom = Bloom::new_for_fp_rate(items_count, 0.01).unwrap();
 
@@ -14,7 +14,15 @@ pub fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

@@ -30,11 +30,20 @@ fn main() -> Result<()> {
     // unsafe { greet(c_name.as_ptr()) }
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[test]
-#[ignore = "Needs review"]
-fn test() {
-    println!("{:?}", main());
+pub fn run() -> Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    #[ignore = "Needs review"]
+    fn test_main() {
+        println!("{:?}", main());
+    }
 }
 // [finish; deal with extern](https://github.com/john-cd/rust_howto/issues/900)

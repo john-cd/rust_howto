@@ -12,9 +12,18 @@ fn main() {
         sql!(INSERT INTO products (name, price) VALUES ("Widget", 9.99));
     println!("Query result: {product_query}");
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

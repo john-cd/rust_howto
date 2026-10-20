@@ -23,9 +23,18 @@ fn main() {
     println!("Array length: {len}");
     assert_eq!(len, 3);
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

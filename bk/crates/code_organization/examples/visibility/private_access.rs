@@ -25,11 +25,22 @@ fn main() {
     // ERROR: private_module::also_private();
     // ERROR: alias::also_private();
     // ERROR: use private_module::submodule;
-    println!("private_access example: private items accessed only from parent/same module");
+    println!(
+        "private_access example: private items accessed only from parent/same module"
+    );
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

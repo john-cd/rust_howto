@@ -49,7 +49,10 @@ See [[rendering_graphics-api | Rendering: Graphics API]].
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- Image decoding and encoding.
+- Graphics rendering.
+- Multimedia file formats.
+- GPU and CPU image processing.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

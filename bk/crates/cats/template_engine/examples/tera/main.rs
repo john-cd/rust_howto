@@ -1,3 +1,6 @@
 mod tera;
 
-fn main() {}
+fn main() -> anyhow::Result<()> {
+    tera::run()?;
+    Ok(())
+}

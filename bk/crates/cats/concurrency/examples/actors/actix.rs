@@ -53,11 +53,20 @@ fn main() {
     system.run().unwrap();
     std::thread::sleep(Duration::from_secs(1));
 }
+
 // ANCHOR_END: example
 
-#[test]
-#[ignore = "Needs review"]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    #[ignore = "Needs review"]
+    fn test_main() {
+        main();
+    }
 }
 // [finish; test fails: `spawn_local` called from outside of a `task::LocalSet` or LocalRuntime](https://github.com/john-cd/rust_howto/issues/682)

@@ -35,9 +35,18 @@ fn main() {
     // `get` returns an Option with a reference to the value
     assert_eq!(cell.get().unwrap(), "Hello, World!");
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

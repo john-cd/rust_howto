@@ -1,3 +1,6 @@
 mod symbolic_links;
 
-fn main() {}
+fn main() -> anyhow::Result<()> {
+    symbolic_links::run()?;
+    Ok(())
+}

@@ -11,10 +11,19 @@ fn main() -> Result<()> {
     println!("The current directory is {}", cwd.display());
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+pub fn run() -> Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }

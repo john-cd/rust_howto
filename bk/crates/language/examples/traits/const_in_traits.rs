@@ -23,9 +23,18 @@ impl Example for S {
 fn main() {
     println!("{} {}", S::CONST_NO_DEFAULT, S::CONST_WITH_DEFAULT);
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

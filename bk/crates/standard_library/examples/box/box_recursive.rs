@@ -50,9 +50,18 @@ fn main() {
 
     head.print(); // Output: 1 -> 2 -> 3 -> 4.
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

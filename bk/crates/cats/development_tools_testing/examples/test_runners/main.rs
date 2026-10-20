@@ -1,3 +1,5 @@
 mod tests1;
 
-fn main() {}
+fn main() {
+    tests1::run();
+}

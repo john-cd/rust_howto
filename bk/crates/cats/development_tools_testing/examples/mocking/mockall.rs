@@ -1,16 +1,22 @@
 #![allow(dead_code)]
+
+pub fn run() {
+    main();
+}
+
 // ANCHOR: example
-//! This example demonstrates how to use the `mockall` crate for mocking.
-//!
-//! First, add `mockall` to your `Cargo.toml` dependencies:
-//! ```toml
-//! [dependencies]
-//! mockall = "0.11.3"
-//! ```
-//!
-//! Then define a `UserRepository` trait and a `UserService` struct that uses
-//! it. We then use `mockall` to create a mock implementation of
-//! `UserRepository` for testing `UserService`.
+// This example demonstrates how to use the `mockall` crate for mocking.
+//
+// First, add `mockall` to your `Cargo.toml` dependencies:
+// ```toml
+// [dependencies]
+// mockall = "0.11.3"
+// ```
+//
+// Then define a `UserRepository` trait and a `UserService` struct that uses
+// it. We then use `mockall` to create a mock implementation of
+// `UserRepository` for testing `UserService`.
+
 use mockall::predicate::*;
 use mockall::*;
 
@@ -75,6 +81,34 @@ impl<T: UserRepository> UserService<T> {
 
         Ok(user)
     }
+}
+
+struct ActualRepository;
+
+impl UserRepository for ActualRepository {
+    fn find_by_id(&self, id: u64) -> Option<User> {
+        // In a real implementation, this would query a database. For this
+        // example, we'll just return a dummy user if the ID is 1.
+        (id == 1).then(|| User {
+            id,
+            name: "John Doe".to_string(),
+            email: "john@example.com".to_string(),
+        })
+    }
+
+    fn save(&self, user: User) -> Result<(), String> {
+        println!("Persisted user: {user:?}");
+        Ok(())
+    }
+}
+
+fn main() {
+    let service = UserService::new(ActualRepository);
+    let updated = service
+        .update_user_email(1, "updated@example.com".to_string())
+        .expect("Repository should return a user");
+
+    println!("Updated user from main(): {updated:?}");
 }
 
 /// The `tests` module contains unit tests for `UserService` using the mock

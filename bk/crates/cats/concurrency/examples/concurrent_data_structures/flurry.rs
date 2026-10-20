@@ -106,8 +106,16 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }
 // [review https://github.com/jonhoo/flurry/blob/main/benches/flurry_dashmap.rs](https://github.com/john-cd/rust_howto/issues/1152)

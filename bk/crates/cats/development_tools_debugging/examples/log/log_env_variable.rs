@@ -11,7 +11,9 @@ fn main() {
         let x = 3 * 4; // "Expensive" computation
         log::trace!("the answer was: {x}");
     }
-    println!("log_env_variable example: set MY_APP_LOG=debug to see log output above");
+    println!(
+        "log_env_variable example: set MY_APP_LOG=debug to see log output above"
+    );
 }
 
 //#[cfg(not(test))]
@@ -47,6 +49,10 @@ fn init_logger() {
 }
 // ANCHOR_END: example
 
+pub fn run() {
+    main();
+}
+
 // #[cfg(test)]
 // fn init_logger() {
 //     let _ = env_logger::builder()
@@ -59,11 +65,11 @@ fn init_logger() {
 //             .try_init();
 // }
 
-use rusty_fork::rusty_fork_test;
-// Runs in a separate process.
-rusty_fork_test! {
+#[cfg(test)]
+mod tests {
+    use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

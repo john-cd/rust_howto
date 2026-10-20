@@ -13,9 +13,18 @@ fn main() {
 
     println!("Hypotenuse: {hypotenuse}");
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

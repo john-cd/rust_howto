@@ -37,9 +37,18 @@ fn main() {
     println!("Determinant of M: {}", m.determinant());
     println!("Trace of M: {}", m.trace());
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

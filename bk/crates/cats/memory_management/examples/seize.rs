@@ -7,8 +7,8 @@
 //!
 //! The key types are:
 //! - [`Collector`]: tracks threads and manages reclamation epochs.
-//! - [`LocalGuard`] (via `Collector::enter`): a per-thread guard that
-//!   protects objects from being reclaimed while it is held.
+//! - [`LocalGuard`] (via `Collector::enter`): a per-thread guard that protects
+//!   objects from being reclaimed while it is held.
 //!
 //! `seize` is primarily useful when building lock-free data structures
 //! where multiple threads share ownership of heap-allocated nodes.
@@ -23,6 +23,7 @@ use std::sync::atomic::AtomicPtr;
 use std::sync::atomic::Ordering;
 
 use seize::Collector;
+use seize::Guard;
 
 fn main() {
     // A `Collector` manages the access and retirement of concurrent objects.
@@ -76,7 +77,11 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

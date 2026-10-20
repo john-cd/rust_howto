@@ -165,9 +165,18 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let _ = unit_return_value(file_path);
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main().unwrap();
+pub fn run() -> Result<(), Box<dyn std::error::Error>> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main().unwrap();
+    }
 }

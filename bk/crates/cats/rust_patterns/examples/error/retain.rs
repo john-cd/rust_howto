@@ -32,15 +32,24 @@ fn main() -> anyhow::Result<()> {
     println!("The number is: {n}");
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    use std::io::Write;
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
 
-    std::fs::create_dir_all("temp").unwrap();
-    let mut f = std::fs::File::create("temp/number.txt").unwrap();
-    writeln!(f, "42").unwrap();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        use std::io::Write;
 
-    main().unwrap();
+        std::fs::create_dir_all("temp").unwrap();
+        let mut f = std::fs::File::create("temp/number.txt").unwrap();
+        writeln!(f, "42").unwrap();
+
+        main().unwrap();
+    }
 }

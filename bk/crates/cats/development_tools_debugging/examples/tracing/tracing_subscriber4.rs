@@ -36,15 +36,21 @@ fn main() {
     // Test it out.
     tracing::error!("tracing configured!");
 }
+
 // ANCHOR_END: example
 
-use rusty_fork::rusty_fork_test;
+pub fn run() {
+    main();
+}
 
-// Runs in a separate process.
-rusty_fork_test! {
+#[cfg(test)]
+mod tests {
+    use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }
-// FIXME cover same functions on fmt()
+// TODO The same builder methods used here are also available on `fmt()` if
+// you prefer to configure the subscriber directly instead of providing a
+// custom `Format`.

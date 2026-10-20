@@ -120,11 +120,20 @@ fn main() -> Result<()> {
     println!("Image saved!");
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+pub fn run() -> Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }
 // [review; threadpool_fractal.rs is noplayground - linking with cc](https://github.com/john-cd/rust_howto/issues/268)

@@ -72,4 +72,3 @@ For a multi-threaded context, use [`OnceLock<T>`][c~std::sync::OnceLock~docs]↗
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-

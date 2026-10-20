@@ -21,11 +21,21 @@ mod crate_helper_module {
 
 fn main() {
     crate_helper_module::crate_helper();
-    println!("visibility_external_code example: public and private visibility in a crate");
+    println!(
+        "visibility_external_code example: public and private visibility in a crate"
+    );
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

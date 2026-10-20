@@ -9,7 +9,7 @@
 //! clipboard, and get text from the clipboard.
 use arboard::Clipboard;
 
-pub fn main() {
+fn main() {
     // Create a new Clipboard instance.
     let mut clipboard = Clipboard::new().unwrap();
 
@@ -22,8 +22,22 @@ pub fn main() {
     println!("Text from clipboard: {clipboard_text}");
 }
 // You may also use:  get/set_html/image...
-
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires clipboard access"]
+    fn test_main() {
+        main();
+    }
+}
 
 // Requires a clipboard on Linux; otherwise,
 // "Unknown error while interacting with the clipboard: X11 server connection

@@ -57,9 +57,18 @@ fn main() {
     let path_os_string: OsString = path_buf.into_os_string();
     println!("Path as OsString: {path_os_string:?}");
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

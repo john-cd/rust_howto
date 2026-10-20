@@ -13,11 +13,24 @@ fn main() {
     // Lookup with `&str` - no need to allocate a `String`:
     assert_eq!(scores.get("alice"), Some(&10));
     assert_eq!(scores.get("bob"), Some(&20));
-    println!("alice: {:?}, bob: {:?}", scores.get("alice"), scores.get("bob"));
+    println!(
+        "alice: {:?}, bob: {:?}",
+        scores.get("alice"),
+        scores.get("bob")
+    );
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

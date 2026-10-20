@@ -46,9 +46,18 @@ fn value_in_cents(coin: Coin) -> u8 {
 fn main() {
     println!("{}", value_in_cents(Coin::Penny));
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

@@ -1,16 +1,18 @@
 [package]
+license-file.workspace = true
 name = "development_tools_profiling"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - development_tools_profiling"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
-categories = ["development_tools_profiling"]
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["development-tools::profiling"]
 publish.workspace = true
 
 ## Config for dhat example below:
@@ -23,15 +25,19 @@ dhat-heap = []
 dhat-ad-hoc = []
 
 [dependencies]
-criterion = "0.7.0"
+criterion = "0.8.2"
 dhat = "0.3.3"
+measure_time = "0.9"
 
-# FIXME
-## Config for `divan` example below:
-#[dev-dependencies]
-#divan = "0.1.17"
+[dev-dependencies]
+divan = "0.1.21"
 
 [[bench]]
 name = "divan"
 # When set to false, you are responsible for defining a main() function to run tests and benchmarks.
 harness = false
+
+[[example]]
+name = "benchmarking"
+path = "examples/benchmarking/main.rs"
+test = true

@@ -89,8 +89,16 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
+pub fn run() {
     main();
-    Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> anyhow::Result<()> {
+        main();
+        Ok(())
+    }
 }

@@ -27,11 +27,20 @@ fn main() -> Result<(), confy::ConfyError> {
     println!("{cfg:?}");
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+pub fn run() -> Result<(), confy::ConfyError> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }
 // [review](https://github.com/john-cd/rust_howto/issues/148)

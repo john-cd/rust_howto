@@ -9,7 +9,7 @@ use tokio::io::AsyncWriteExt;
 use tokio::io::BufReader;
 
 #[tokio::main]
-pub async fn main() -> anyhow::Result<()> {
+async fn main() -> anyhow::Result<()> {
     let input_filename = "temp/uncompressed_async.txt";
     let compressed_filename = "temp/compressed_async.gz";
     let decompressed_filename = "temp/decompressed_async.txt";
@@ -23,9 +23,7 @@ pub async fn main() -> anyhow::Result<()> {
     println!("Created '{input_filename}'");
 
     // 2. Asynchronously compress the file.
-    println!(
-        "Compressing '{input_filename}' to '{compressed_filename}'..."
-    );
+    println!("Compressing '{input_filename}' to '{compressed_filename}'...");
     compress_file_async(input_filename, compressed_filename).await?;
     println!("Compression complete.");
 
@@ -77,14 +75,22 @@ async fn decompress_file_async(
 
     Ok(())
 }
-
-#[test]
-fn test() -> anyhow::Result<()> {
-    use std::fs;
-    if !fs::exists("temp")? {
-       fs::create_dir("temp")?;
-    }
-    main()?;
-    Ok(())
-}
 // ANCHOR_END: example
+
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> anyhow::Result<()> {
+        use std::fs;
+        if !fs::exists("temp")? {
+            fs::create_dir("temp")?;
+        }
+        main()?;
+        Ok(())
+    }
+}

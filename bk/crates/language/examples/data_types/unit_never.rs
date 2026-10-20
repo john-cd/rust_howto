@@ -18,7 +18,7 @@ fn b_func() {
 // The `!` type, also called "never", represents the type of computations which
 // never resolve to any value at all.
 fn diverge() -> ! {
-    panic!("This function never returns!");
+    panic!("This function never returns!")
 }
 // This function could also contain an infinite loop,
 // or call the `exit` function.
@@ -27,15 +27,24 @@ fn main() {
     a_func();
     b_func();
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
 }
 
-#[should_panic]
-#[test]
-fn test_panic() {
-    diverge();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
+
+    #[should_panic]
+    #[test]
+    fn test_panic() {
+        diverge();
+    }
 }

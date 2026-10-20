@@ -9,8 +9,6 @@ use winapi::shared::minwindef::LPARAM;
 use winapi::shared::minwindef::LRESULT;
 use winapi::shared::minwindef::UINT;
 use winapi::shared::minwindef::WPARAM;
-// use winapi::shared::windef::HBRUSH;
-// use winapi::shared::windef::HINSTANCE;
 use winapi::shared::windef::HWND;
 use winapi::um::libloaderapi::GetModuleHandleW;
 use winapi::um::winuser::CS_HREDRAW;
@@ -19,10 +17,7 @@ use winapi::um::winuser::CreateWindowExW;
 use winapi::um::winuser::DefWindowProcW;
 use winapi::um::winuser::DispatchMessageW;
 use winapi::um::winuser::GetMessageW;
-// use winapi::um::winuser::MB_ICONINFORMATION;
-// use winapi::um::winuser::MB_OK;
 use winapi::um::winuser::MSG;
-// use winapi::um::winuser::MessageBoxW;
 use winapi::um::winuser::RegisterClassW;
 use winapi::um::winuser::SW_SHOW;
 use winapi::um::winuser::ShowWindow;
@@ -124,9 +119,17 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-#[ignore = "Needs review"]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    #[ignore = "Needs review"]
+    fn test_main() {
+        main();
+    }
 }
 // [review / test](https://github.com/john-cd/rust_howto/issues/822)

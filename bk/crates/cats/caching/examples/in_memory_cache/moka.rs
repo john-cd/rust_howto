@@ -47,10 +47,19 @@ fn main() {
     });
     handle.join().unwrap();
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
 }
-// See also examples in <https://docs.rs/crate/moka/0.12.10>
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
+}
+// TODO See also examples in <https://docs.rs/crate/moka/0.12.10>

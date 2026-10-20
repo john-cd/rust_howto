@@ -88,8 +88,16 @@ fn key_derivation() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() -> Result<(), Error> {
-    main()?;
-    Ok(())
+pub fn run() -> Result<(), Error> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> Result<(), Error> {
+        main()?;
+        Ok(())
+    }
 }

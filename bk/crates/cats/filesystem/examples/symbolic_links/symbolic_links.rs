@@ -76,17 +76,27 @@ fn main() -> anyhow::Result<()> {
     inspect_path(link)?;
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    use anyhow::Context;
-    let temp = Path::new("./temp");
-    utils::clean_folder(&temp)
-        .context("Failed to clean up the temp directory.")?;
-    if !temp.exists() {
-        fs::create_dir(temp).context("Failed to create the temp directory.")?;
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> anyhow::Result<()> {
+        use anyhow::Context;
+        let temp = Path::new("./temp");
+        utils::clean_folder(temp)
+            .context("Failed to clean up the temp directory.")?;
+        if !temp.exists() {
+            fs::create_dir(temp)
+                .context("Failed to create the temp directory.")?;
+        }
+        main()?;
+        Ok(())
     }
-    main()?;
-    Ok(())
 }

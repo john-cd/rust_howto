@@ -25,10 +25,19 @@ async fn main() -> reqwest::Result<()> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn require_network() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+pub fn run() -> reqwest::Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn require_network() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }

@@ -71,9 +71,18 @@ fn main() {
     let default_val = none_opt.unwrap_or(0);
     println!("Unwrapped default value: {default_val}");
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

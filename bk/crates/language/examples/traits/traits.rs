@@ -38,9 +38,18 @@ fn main() {
     // Or, if we needed to fully disambiguate:
     <NewsArticle as Summary>::summarize(&na);
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

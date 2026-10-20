@@ -63,9 +63,21 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn test_main() -> Result<()> {
+        main()?;
+        Ok(())
+    }
 
     #[test]
     fn test_encode_decode() -> Result<()> {
@@ -100,12 +112,5 @@ mod tests {
             "Plus should not be encoded in this test"
         );
     }
-}
-// ANCHOR_END: example
-
-#[test]
-fn test() -> Result<()> {
-    main()?;
-    Ok(())
 }
 // [dedupe with other example in percent_encode](https://github.com/john-cd/rust_howto/issues/1353)

@@ -1,7 +1,12 @@
 #![allow(dead_code)]
 #![allow(clippy::eq_op)]
+
+pub fn run() {
+    main();
+}
+
 // ANCHOR: example
-//! This example demonstrates how to write unit tests.
+// This example demonstrates how to write unit tests.
 
 /// Represents a rectangle with a width and height.
 struct Rectangle {
@@ -16,14 +21,28 @@ impl Rectangle {
     }
 }
 
+fn main() {
+    let larger = Rectangle {
+        width: 8,
+        height: 7,
+    };
+    let smaller = Rectangle {
+        width: 5,
+        height: 1,
+    };
+
+    println!(
+        "Can the larger rectangle hold the smaller one? {}",
+        larger.can_hold(&smaller)
+    );
+}
+
 /// This module contains unit tests for the `Rectangle` struct.
 /// You will typically write the unit tests in the same file than the main code.
 /// The `cfg` attribute ensures that the tests are conditionally compiled only
 /// when running `cargo test`.
 #[cfg(test)]
 mod tests {
-    // The following provides access to all objects in the parent module,
-    // which contains the main code.
     use super::*;
 
     /// Test functions must be free, monomorphic functions that take no

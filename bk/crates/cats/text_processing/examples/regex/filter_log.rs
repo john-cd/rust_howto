@@ -27,24 +27,34 @@ fn main() -> Result<()> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() -> Result<()> {
-    use std::fs;
-    if !fs::exists("temp")? {
-        fs::create_dir("temp")?;
-    }
-    use std::io::Write;
-    let mut file = File::create("temp/application.log")?;
-    file.write_all(EXAMPLE_TEXT.as_bytes())?;
-    main()?;
-    Ok(())
+pub fn run() -> Result<()> {
+    main()
 }
 
-static EXAMPLE_TEXT: &str = r#"
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    static EXAMPLE_TEXT: &str = r#"
 Lorem ipsum dolor sit amet version "0.1.2"
 127.0.0.1:443 consectetur adipisicing elit
 WARNING sunt in culpa qui officia TIMEOUT EXPIRED
 quis nostrud exercitation ullamco
 "#;
+
+    #[test]
+    fn test_main() -> Result<()> {
+        use std::fs;
+        if !fs::exists("temp")? {
+            fs::create_dir("temp")?;
+        }
+        use std::io::Write;
+        let mut file = File::create("temp/application.log")?;
+        file.write_all(EXAMPLE_TEXT.as_bytes())?;
+        main()?;
+        Ok(())
+    }
+}

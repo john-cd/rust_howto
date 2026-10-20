@@ -1,3 +1,5 @@
 mod ryu;
 
-fn main() {}
+fn main() {
+    ryu::run();
+}

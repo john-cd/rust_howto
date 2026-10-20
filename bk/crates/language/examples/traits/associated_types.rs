@@ -38,9 +38,18 @@ fn main() {
     let mut it = MyIterator(42);
     println!("{:?}", use_iterator(&mut it));
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

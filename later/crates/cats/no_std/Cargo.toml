@@ -1,17 +1,24 @@
 [package]
+license-file.workspace = true
 name = "no_std"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - no_std"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
-categories = [ "no_std" ]
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["no-std"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
+
+[[example]]
+name = "no_std"
+path = "examples/no_std/main.rs"
+test = true

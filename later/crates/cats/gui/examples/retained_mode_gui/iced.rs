@@ -1,6 +1,6 @@
-// // ANCHOR: example
+// ANCHOR: example
 // // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR_END: example
 
 // use iced::Element;
 // use iced::Settings;
@@ -82,5 +82,20 @@
 //     Counter::run(Settings::default())
 // }
 
-pub fn main() {}
+fn main() {}
+
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires interactive example runtime"]
+    fn test_main() {
+        main();
+    }
+}
 // // [finish](https://github.com/john-cd/rust_howto/issues/781)

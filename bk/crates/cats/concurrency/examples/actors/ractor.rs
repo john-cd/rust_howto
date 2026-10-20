@@ -104,8 +104,17 @@ async fn main() {
     sleep(Duration::from_millis(50)).await;
 }
 
-#[test]
-fn test() {
+// ANCHOR_END: example
+
+pub fn run() {
     main();
 }
-// ANCHOR_END: example
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
+}

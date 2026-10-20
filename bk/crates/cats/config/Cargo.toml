@@ -1,15 +1,17 @@
 [package]
+license-file.workspace = true
 name = "config"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - config"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = ["config"]
 publish.workspace = true
 autolib = false
@@ -17,11 +19,21 @@ autolib = false
 [dependencies]
 
 ## General
-anyhow = "1.0.100"
-clap = { version = "4.5.50", features = ["cargo"] }
-config = "0.15.18"
-confy = "1.0.0"
+anyhow = "1.0.102"
+clap = { version = "4.6.1", features = ["cargo"] }
+config = "0.15.22"
+confy = "2.0.0"
 # dotenv is outdated, replaced by dotenvy
 dotenvy = "0.15.7"
 envy = "0.4.2"
 serde = { version = "1.0.228", features = ["derive"] }
+
+[[example]]
+name = "configuration"
+path = "examples/configuration/main.rs"
+test = true
+
+[[example]]
+name = "env"
+path = "examples/env/main.rs"
+test = true

@@ -1,5 +1,5 @@
 #![allow(dead_code)]
-// ANCHOR_END: example
+// ANCHOR: example
 //! String slice examples.
 
 fn main() {
@@ -24,7 +24,15 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

@@ -12,9 +12,18 @@ fn main() {
     let path = env::var("PATH").unwrap_or("".to_string());
     println!("Path: {path}");
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

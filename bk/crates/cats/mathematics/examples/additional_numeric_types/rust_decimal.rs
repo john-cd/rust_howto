@@ -45,9 +45,18 @@ fn main() {
     println!("Number to string: {number_to_str}");
     assert_eq!(number_to_str, "98.76");
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

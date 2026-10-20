@@ -1,23 +1,52 @@
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR: example
+use vizia::prelude::*;
 
-// use vizia::*;
+#[derive(Lens)]
+struct AppData {
+    count: i32,
+}
 
-// // A declarative GUI library written in Rust
+enum AppEvent {
+    Increment,
+}
 
-// fn main() {
-//     // Create a new application
-//     let app = Application::new(|cx| {
-//         // Create a window
-//         Window::new(cx).with_title("Vizia Example");
+impl Model for AppData {
+    fn event(&mut self, _cx: &mut EventContext, event: &mut Event) {
+        event.map(|app_event, _| match app_event {
+            AppEvent::Increment => self.count += 1,
+        });
+    }
+}
 
-//         // Create a column to arrange elements vertically
-//         Column::new(cx);
-//     });
+fn main() {
+    Application::new(|cx| {
+        AppData { count: 0 }.build(cx);
 
-//     // Run the application
-//     app.run();
-// }
+        HStack::new(cx, |cx| {
+            Button::new(cx, |cx| Label::new(cx, "Increment"))
+                .on_press(|cx| cx.emit(AppEvent::Increment));
+            Label::new(cx, AppData::count).width(Pixels(50.0));
+        })
+        .child_space(Stretch(1.0))
+        .col_between(Pixels(10.0));
+    })
+    .title("Vizia Counter")
+    .inner_size((400, 100))
+    .run();
+}
+// ANCHOR_END: example
 
-// [finish](https://github.com/john-cd/rust_howto/issues/1052)
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires interactive example runtime"]
+    fn test_main() {
+        main();
+    }
+}

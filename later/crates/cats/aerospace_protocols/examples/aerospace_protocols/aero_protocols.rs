@@ -1,7 +1,7 @@
+// ANCHOR: example
 use mavlink::common;
 
-// ANCHOR: example
-pub fn main() {
+fn main() {
     // Create a new heartbeat message using the `common` dialect
     let heartbeat = common::HEARTBEAT_DATA {
         custom_mode: 0,
@@ -29,7 +29,15 @@ pub fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

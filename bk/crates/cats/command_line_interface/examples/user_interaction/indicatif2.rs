@@ -38,12 +38,23 @@ fn progress() {
 
 fn main() -> anyhow::Result<()> {
     progress();
-    println!("indicatif example: progress bar displayed (visible in terminal, suppressed in non-terminal output)");
+    println!(
+        "indicatif example: progress bar displayed (visible in terminal, suppressed in non-terminal output)"
+    );
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main().unwrap();
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main().unwrap();
+    }
 }

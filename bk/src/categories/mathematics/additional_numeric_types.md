@@ -80,4 +80,3 @@ Typenum is a Rust library for type-level numbers evaluated at compile time. It c
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-

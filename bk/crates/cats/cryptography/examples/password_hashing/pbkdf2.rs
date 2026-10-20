@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
+// This example demonstrates how to hash and verify passwords using PBKDF2.
 use std::num::NonZeroU32;
 
 use data_encoding::HEXUPPER;
@@ -51,9 +52,18 @@ fn main() -> Result<(), Unspecified> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    println!("{:?}", main());
+pub fn run() -> Result<(), Unspecified> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        println!("{:?}", main());
+    }
 }

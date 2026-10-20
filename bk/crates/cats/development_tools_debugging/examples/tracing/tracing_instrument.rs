@@ -46,14 +46,18 @@ async fn main() {
     my_function(42);
     my_async_function().await;
 }
+
 // ANCHOR_END: example
 
-use rusty_fork::rusty_fork_test;
+pub fn run() {
+    main();
+}
 
-// Runs in a separate process.
-rusty_fork_test! {
-#[test]
-    fn test() {
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
         tracing_subscriber::fmt()
             .with_max_level(tracing::Level::TRACE)
             .init();

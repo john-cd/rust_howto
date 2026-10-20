@@ -3,7 +3,8 @@
 use petgraph::Graph;
 use petgraph::algo::min_spanning_tree;
 use petgraph::data::FromElements;
-use petgraph::dot::{Config, Dot};
+use petgraph::dot::Config;
+use petgraph::dot::Dot;
 
 /// Demonstrates finding the Minimum Spanning Tree (MST) of a graph using
 /// Kruskal's algorithm in `petgraph`.
@@ -27,9 +28,13 @@ fn main() {
     // Compute the Minimum Spanning Tree.
     // `min_spanning_tree` returns an iterator of `Element`s (nodes and edges).
     let mst_elements = min_spanning_tree(&graph);
-    let mst_graph = Graph::<&str, u32, petgraph::Undirected>::from_elements(mst_elements);
+    let mst_graph =
+        Graph::<&str, u32, petgraph::Undirected>::from_elements(mst_elements);
 
-    println!("MST in DOT format:\n{:?}", Dot::with_config(&mst_graph, &[Config::EdgeNoLabel]));
+    println!(
+        "MST in DOT format:\n{:?}",
+        Dot::with_config(&mst_graph, &[Config::EdgeNoLabel])
+    );
 
     // Total weight of MST should be 1 (A-B) + 1 (B-C) + 1 (C-D) + 1 (D-E) = 4.
     let total_weight: u32 = mst_graph.edge_weights().sum();
@@ -37,6 +42,10 @@ fn main() {
     assert_eq!(total_weight, 4);
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[test]
 fn test() {

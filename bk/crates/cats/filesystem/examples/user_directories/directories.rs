@@ -42,9 +42,18 @@ fn main() {
     println!("{:?}", get_data_dir());
     println!("{:?}", get_config_dir());
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }
