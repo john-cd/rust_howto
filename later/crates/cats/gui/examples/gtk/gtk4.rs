@@ -1,96 +1,91 @@
+#![allow(dead_code)]
 // ANCHOR: example
-// // COMING SOON
+use gtk::prelude::*;
+use gtk::{Application, ApplicationWindow, Button, Label, Orientation};
+
+pub fn main() {
+    let app = Application::builder()
+        .application_id("org.example.gtk4_counter")
+        .build();
+
+    app.connect_activate(build_ui);
+
+    app.run();
+}
+
+fn build_ui(app: &Application) {
+    let window = ApplicationWindow::builder()
+        .application(app)
+        .title("GTK4 Counter")
+        .default_width(300)
+        .default_height(200)
+        .build();
+
+    let vbox = gtk::Box::new(Orientation::Vertical, 10);
+    vbox.set_margin_top(10);
+    vbox.set_margin_bottom(10);
+    vbox.set_margin_start(10);
+    vbox.set_margin_end(10);
+
+    let counter_value = std::sync::Arc::new(std::sync::Mutex::new(0));
+
+    let label = Label::builder()
+        .label("Counter: 0")
+        .build();
+
+    let button_inc = Button::builder()
+        .label("Increment")
+        .build();
+
+    let button_dec = Button::builder()
+        .label("Decrement")
+        .build();
+
+    let conditional_label = Label::builder()
+        .label("Counter is even!")
+        .build();
+
+    button_inc.connect_clicked({
+        let counter_value = counter_value.clone();
+        let label = label.clone();
+        let conditional_label = conditional_label.clone();
+        move |_| {
+            let mut value = counter_value.lock().unwrap();
+            *value += 1;
+            label.set_text(&format!("Counter: {}", *value));
+            update_conditional_label(&conditional_label, *value);
+        }
+    });
+
+    button_dec.connect_clicked({
+        let counter_value = counter_value.clone();
+        let label = label.clone();
+        let conditional_label = conditional_label.clone();
+        move |_| {
+            let mut value = counter_value.lock().unwrap();
+            *value -= 1;
+            label.set_text(&format!("Counter: {}", *value));
+            update_conditional_label(&conditional_label, *value);
+        }
+    });
+
+    vbox.append(&label);
+    vbox.append(&button_inc);
+    vbox.append(&button_dec);
+    vbox.append(&conditional_label);
+
+    window.set_child(Some(&vbox));
+    window.present();
+}
+
+fn update_conditional_label(label: &Label, value: i32) {
+    if value % 2 == 0 {
+        label.set_text("Counter is even!");
+    } else {
+        label.set_text("Counter is odd!");
+    }
+}
 // ANCHOR_END: example
-// //! This example demonstrates a simple GTK4 application with a counter.
-// //!
-// //! It includes increment and decrement buttons, a label to display the
-// //! counter value, and a conditional label that indicates whether the
-// //! counter is even or odd.
-
-// use gtk::Application;
-// use gtk::ApplicationWindow;
-// use gtk::Button;
-// use gtk::Label;
-// use gtk::Orientation;
-// use gtk::prelude::*;
-
-// fn main() {
-//     // Create a new application.
-//     let application = Application::builder()
-//         .application_id("org.example.gtk4_counter")
-//         .build();
-
-//     application.connect_activate(|app| {
-//         // Create a new window.
-//         let window = ApplicationWindow::builder()
-//             .application(app)
-//             .title("GTK4 Counter")
-//             .build();
-
-//         // Create a vertical box to hold the widgets.
-//         let vbox = gtk::Box::new(Orientation::Vertical, 6);
-//         // 6 is the spacing between widgets.
-
-//         // Create widgets using the builder pattern, which is the recommended
-//         // way in GTK4. Create the counter label.
-//         let counter_label = Label::builder().label("Counter: 0").build();
-//         vbox.append(&counter_label);
-
-//         // Create the increment button.
-//         let increment_button = Button::builder().label("Increment").build();
-//         vbox.append(&increment_button);
-
-//         // Create the decrement button.
-//         let decrement_button = Button::builder().label("Decrement").build();
-//         vbox.append(&decrement_button);
-
-//         // Create the conditional label.
-//         let conditional_label = Label::builder().label("").build();
-//         vbox.append(&conditional_label);
-
-//         // Store the counter value.
-//         let mut counter_value = 0;
-
-//         // Connect the increment button to a callback.
-//         increment_button.connect_clicked(move |_| {
-//             counter_value += 1;
-//             counter_label.set_label(&format!("Counter: {}", counter_value));
-//             // Connect the button clicks to closures that update the counter
-//             // value and the label.
-//             update_conditional_label(&conditional_label, counter_value);
-//         });
-
-//         // Connect the decrement button to a callback.
-//         decrement_button.connect_clicked(move |_| {
-//             counter_value -= 1;
-//             counter_label.set_label(&format!("Counter: {}", counter_value));
-//             update_conditional_label(&conditional_label, counter_value);
-//         });
-
-//         update_conditional_label(&conditional_label, counter_value);
-
-//         // Add the box to the window.
-//         window.set_child(Some(&vbox));
-
-//         // Present the window.
-//         window.present();
-//     });
-
-//     application.run();
-// }
-
-// // Implements the conditional rendering logic within the button click
-// // handlers, updating the conditional_label text and background
-// // color.
-// fn update_conditional_label(label: &Label, value: i32) {
-//     if value % 2 == 0 {
-//         label.set_label("Counter is even!");
-//     } else {
-//         label.set_label("Counter is odd!");
-//     }
-// }
-
-fn main() {}
 
 pub fn run() {
     main();
@@ -101,9 +96,8 @@ mod tests {
     use super::*;
 
     #[test]
-    #[ignore = "requires interactive example runtime"]
+    #[ignore = "requires an interactive GTK session"]
     fn test_main() {
         main();
     }
 }
-// [finish; review https://gtk-rs.org/](https://github.com/john-cd/rust_howto/issues/780)
