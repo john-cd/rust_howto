@@ -1,11 +1,20 @@
 #![allow(dead_code)]
+
+pub fn run() {
+    main();
+}
+
 // ANCHOR: example
-//! Snapshot testing with the `insta` crate keeps track of how your data
-//! structures or output change over time.
+// Snapshot testing with the `insta` crate keeps track of how your data
+// structures or output change over time.
 
 /// This is a sample function that formats user details.
 pub fn format_user(name: &str, age: u32) -> String {
     format!("Name: {name}, Age: {age}")
+}
+
+fn main() {
+    println!("{}", format_user("Alice", 30));
 }
 
 /// The following is a test that uses `insta` to snapshot the output.
@@ -16,12 +25,13 @@ pub fn format_user(name: &str, age: u32) -> String {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_format_user() {
         use insta::assert_snapshot;
 
         let formatted = format_user("Alice", 30);
-        assert_snapshot!("format_user_snapshot", formatted);
+        assert_snapshot!(formatted, @r###"Name: Alice, Age: 30"###);
     }
 }
 // ANCHOR_END: example

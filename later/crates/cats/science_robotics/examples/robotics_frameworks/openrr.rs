@@ -1,7 +1,8 @@
 #![allow(dead_code)]
-// // ANCHOR: example
+// ANCHOR: example
 // // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR_END: example
+
 // //! # OpenRR Example
 // //!
 // //! This example demonstrates how to use the `openrr` crate to control a
@@ -148,9 +149,21 @@
 //     }
 // }
 
-// #[test]
-// fn test() {
-//     main();
-// }
+fn main() {}
+
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires interactive example runtime"]
+    fn test_main() {
+        main();
+    }
+}
 // // [write](https://github.com/john-cd/rust_howto/issues/843)
 // // <https://openrr.github.io/openrr-tutorial/en/html/index.html>

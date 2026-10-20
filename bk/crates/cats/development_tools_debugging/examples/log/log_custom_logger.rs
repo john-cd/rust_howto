@@ -38,13 +38,18 @@ fn main() -> Result<(), SetLoggerError> {
     log::error!("oops");
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), SetLoggerError> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main().unwrap();
     }
 }

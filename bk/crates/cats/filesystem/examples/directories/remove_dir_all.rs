@@ -44,13 +44,18 @@ fn main() -> io::Result<()> {
     // dir.remove_dir_contents(None)?;
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> io::Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() -> io::Result<()> {
+    fn test_main() -> io::Result<()> {
         main()?;
         Ok(())
     }

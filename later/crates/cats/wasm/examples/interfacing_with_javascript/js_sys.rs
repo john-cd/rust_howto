@@ -11,4 +11,20 @@ pub fn get_current_time() -> String {
     let date = Date::new_0();
     String::from(date.to_utc_string())
 }
+
+fn main() {} // TODO
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main() {
+        main();
+    }
+}

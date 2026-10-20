@@ -1,3 +1,6 @@
 mod metadata;
 
-fn main() {}
+fn main() -> anyhow::Result<()> {
+    metadata::run()?;
+    Ok(())
+}

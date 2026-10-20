@@ -80,7 +80,12 @@ fn main() { println!("hello world!"); }
     );
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

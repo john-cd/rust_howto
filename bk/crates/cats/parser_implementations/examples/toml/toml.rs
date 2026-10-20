@@ -40,13 +40,18 @@ fn main() {
         toml::from_str(toml_string).expect("Failed to parse TOML");
     println!("{parsed_toml:#?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

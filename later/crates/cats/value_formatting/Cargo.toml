@@ -1,18 +1,25 @@
 [package]
+license-file.workspace = true
 name = "value_formatting"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - value_formatting"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
-categories = ["value_formatting"]
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["value-formatting"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-ryu = "1.0.19"
+ryu = "1.0.23"
+
+[[example]]
+name = "number_formatting"
+path = "examples/number_formatting/main.rs"
+test = true

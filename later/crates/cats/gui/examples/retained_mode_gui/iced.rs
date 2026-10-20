@@ -43,3 +43,18 @@ impl Counter {
     }
 }
 // ANCHOR_END: example
+
+pub fn run() -> iced::Result {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires an interactive example runtime"]
+    fn test_main() -> iced::Result {
+        main()
+    }
+}

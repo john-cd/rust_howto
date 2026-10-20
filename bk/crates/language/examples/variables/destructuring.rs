@@ -30,13 +30,18 @@ fn main() {
     // This is equivalent to `let Point { x: x, y: y } = p;`.
     print!("x and y: {:?}", (x, y));
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

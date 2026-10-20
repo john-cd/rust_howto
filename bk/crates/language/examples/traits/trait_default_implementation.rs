@@ -44,14 +44,19 @@ fn main() {
     // trait has given us the behavior of the `summarize` method without
     // requiring us to write any more code.
 }
+
 // Adapted from <https://doc.rust-lang.org/book/ch10-02-traits.html>
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

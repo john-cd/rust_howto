@@ -26,14 +26,19 @@ fn main() {
     }; // Semicolon here, because `let` is a statement.
     println!("{result}");
 }
+
 // All branches of an `if/else` expression must evaluate to the same type.
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

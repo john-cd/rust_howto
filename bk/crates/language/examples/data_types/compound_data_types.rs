@@ -116,13 +116,18 @@ fn main() {
     mutable_array[2] = 99;
     println!("Mutated array: {mutable_array:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

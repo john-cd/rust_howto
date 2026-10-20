@@ -58,8 +58,9 @@ mod events {
     /// Examples:
     /// - `ProductCreated`.
     /// - `ProductQuantityUpdated`.
-    #[derive(Debug, Clone, Serialize, Deserialize)]
+    ///
     /// Represents events related to products.
+    #[derive(Debug, Clone, Serialize, Deserialize)]
     pub enum ProductEvent {
         ProductCreated {
             id: u32,
@@ -248,9 +249,7 @@ mod read_store {
         // `get_all_products()`.
     }
 
-    /// `SimpleProductRepository` struct.
-
-    /// SimpleReadStore struct.
+    /// `SimpleReadStore` struct.
     ///
     /// Data Access Layer (DAL) with database entities (events here).
     #[derive(Clone)]
@@ -331,9 +330,9 @@ mod query {
     }
 }
 
-/// Main function.
 use events::EventRepository;
 
+/// Main function.
 fn main() -> anyhow::Result<()> {
     use commands::Command;
 
@@ -380,15 +379,20 @@ fn main() -> anyhow::Result<()> {
     }
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         // We just execute main, which shouldn't panic
-        let _ = main();
+        main()?;
         Ok(())
     }
 

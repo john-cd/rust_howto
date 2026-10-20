@@ -27,13 +27,18 @@ fn main() -> Result<()> {
     );
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         std::fs::create_dir_all("temp/log/")?;
         main()?;
         Ok(())

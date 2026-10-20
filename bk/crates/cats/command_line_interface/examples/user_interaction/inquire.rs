@@ -31,7 +31,12 @@ fn main() {
     println!("Hello, {name}!");
     println!("Your favorite programming language is {favorite_language}.");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

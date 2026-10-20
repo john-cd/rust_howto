@@ -26,15 +26,20 @@ pub fn main_vs(
         1.0,
     );
 }
-// ANCHOR_END: example
 
 fn main() {} // TODO
+
+// ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

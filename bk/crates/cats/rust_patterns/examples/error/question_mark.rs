@@ -36,13 +36,18 @@ fn main() {
         Err(err) => println!("Error: {err}"),
     }
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         // Make sure the `temp` folder exists.
         if !std::fs::exists("temp").unwrap() {
             std::fs::create_dir("temp").unwrap();

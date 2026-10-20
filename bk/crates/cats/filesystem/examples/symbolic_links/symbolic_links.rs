@@ -76,16 +76,21 @@ fn main() -> anyhow::Result<()> {
     inspect_path(link)?;
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         use anyhow::Context;
         let temp = Path::new("./temp");
-        utils::clean_folder(&temp)
+        utils::clean_folder(temp)
             .context("Failed to clean up the temp directory.")?;
         if !temp.exists() {
             fs::create_dir(temp)

@@ -1,3 +1,5 @@
 mod no_std1;
 
-fn main() {}
+fn main() {
+    no_std1::run();
+}

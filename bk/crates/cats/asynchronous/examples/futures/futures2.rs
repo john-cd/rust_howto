@@ -20,13 +20,18 @@ async fn main() {
     let futures = vec![foo(1), foo(2), foo(3)];
     assert_eq!(futures::future::join_all(futures).await, [1, 2, 3]);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

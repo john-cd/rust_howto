@@ -39,13 +39,18 @@ fn main() -> Result<(), ParseError> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), ParseError> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main().unwrap();
     }
 }

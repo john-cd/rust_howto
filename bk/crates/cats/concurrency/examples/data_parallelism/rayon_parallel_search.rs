@@ -16,13 +16,18 @@ fn main() {
     assert!(f3 > Some(&8));
     println!("{v:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

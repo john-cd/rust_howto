@@ -1,4 +1,4 @@
-use mdbook::MDBook;
+use mdbook_driver::MDBook;
 
 #[test]
 fn hidden_sections_and_hidden_files_includes_are_removed() {

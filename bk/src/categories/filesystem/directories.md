@@ -45,4 +45,3 @@ In particular, its optional 'parallel' feature parallelizes the deletion. This i
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-

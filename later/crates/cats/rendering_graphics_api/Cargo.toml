@@ -1,22 +1,48 @@
 [package]
+license-file.workspace = true
 name = "rendering_graphics_api"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description = "Book code examples and their crate dependencies - rendering_graphics_api"
+readme = "README.md"
+description = "Book code examples for low-level Rendering Graphics APIs like WGPU."
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
-categories = [ "rendering_graphics_api" ]
+keywords = ["rendering", "graphics", "wgpu", "gpu", "api"]
+categories = ["rendering::graphics-api"]
 publish.workspace = true
 autolib = false
 
-[dependencies]
-# FIXME
-# wgpu = { version = "25.0.0", optional = true } # was pinned for ggez
-
 [features]
-wgpu = [] # FIXME "dep:wgpu"
+default = []
+wgpu = ["dep:wgpu"]
+
+[dependencies]
+wgpu = { version = "29.0.3", optional = true } # was pinned for ggez
+
+[[example]]
+name = "gpu_abstraction_layers"
+path = "examples/gpu_abstraction_layers/main.rs"
+test = true
+
+[[example]]
+name = "native_graphics_apis"
+path = "examples/native_graphics_apis/main.rs"
+test = true
+
+[[example]]
+name = "opengl"
+path = "examples/opengl/main.rs"
+test = true
+
+[[example]]
+name = "shaders"
+path = "examples/shaders/main.rs"
+test = true
+
+[[example]]
+name = "vulkan"
+path = "examples/vulkan/main.rs"
+test = true

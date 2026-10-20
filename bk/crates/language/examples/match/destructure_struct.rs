@@ -25,13 +25,18 @@ fn main() {
         Point { x, y } => println!("On neither axis: ({x}, {y})"),
     }
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

@@ -3,6 +3,8 @@
 // COMING SOON
 // ANCHOR_END: example
 
+pub fn run() {}
+
 // This example demonstrates basic CRUD operations using Diesel ORM with SQLite.
 // It covers creating a database connection, defining a schema, creating a
 // table, inserting data, and querying data.

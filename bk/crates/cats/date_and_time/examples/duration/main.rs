@@ -1,3 +1,5 @@
 mod profile;
 
-fn main() {}
+fn main() {
+    profile::run();
+}

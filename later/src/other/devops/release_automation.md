@@ -71,7 +71,7 @@ The following are the typical steps to release a crate to [`crates.io`][crates.i
 
 [`cargo-dist`][c~cargo-dist~docs]↗{{hi:cargo-dist}} packages shippable applications for Rust.
 
-FIXME got archived??
+`cargo-dist` has evolved over time, and you should verify the current project status before adopting it. If your needs are simpler, prefer `cargo-release`, `cargo-deb`, or `cargo-rpm` for packaging native installers or crates.io releases.
 
 ## Create Debian and RPM Packages with `cargo-deb` and `cargo-rpm` {#cargo-deb}
 

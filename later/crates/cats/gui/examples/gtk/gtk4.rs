@@ -86,3 +86,18 @@ fn update_conditional_label(label: &Label, value: i32) {
     }
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires an interactive GTK session"]
+    fn test_main() {
+        main();
+    }
+}

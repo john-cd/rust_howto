@@ -1,18 +1,25 @@
 [package]
+license-file.workspace = true
 name = "virtualization"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - virtualization"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
-categories = [ "virtualization" ]
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["virtualization"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-# [LATER review wasmi](https://github.com/john-cd/rust_howto/issues/1263)
+wasmi = "1.0.9"
+
+[[example]]
+name = "virtualization"
+path = "examples/virtualization/main.rs"
+test = true

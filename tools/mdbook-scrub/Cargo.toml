@@ -1,36 +1,27 @@
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
 [package]
+license-file.workspace = true
 name = "mdbook-scrub"
 version = "0.2.0"
 edition = "2024"
-license = "MIT OR Apache-2.0"
+
 description = "A mdbook preprocessor"
 readme = "README.md"
 homepage = "https://github.com/john-cd/rust_howto/"
 keywords = ["book", "mdbook", "rustbook", "documentation"]
-categories = [
-    "command-line-utilities",
-    "text-processing",
-    "parser-implementations",
-]
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+categories = ["command-line-utilities", "text-processing", "parser-implementations"]
 
 [dependencies]
-# FIXME
-#anyhow = "1.0.95"
-clap = "4.6.0"
-#futures-util = "0.3.31"
-mdbook = "0.4.52"
-#moka = { version = "0.12.10", features = ["future"] }
-# simd available for the x64 platform
-#pulldown-cmark = { version = "0.13.0", default-features = false, features = [
-#    "simd",
-#] }
+clap = { version = "4.6.1", features = ["cargo"] }
+mdbook-preprocessor = "0.5.2"
 regex = "1.12.3"
-#reqwest = "0.12.15"
-semver = "1.0.27"
+semver = "1.0.28"
 serde = { version = "1.0.228", features = ["derive"] }
 serde_json = "1.0.149"
-toml = "1.0.6"
+toml = "1.1.2"
 tracing = "0.1.44"
-tracing-subscriber = { version = "0.3.20", features = ["json"] }
-#url = "2.5.4"
+tracing-subscriber = { version = "0.3.23", features = ["json"] }
+
+[dev-dependencies]
+mdbook-driver = "0.5.2"

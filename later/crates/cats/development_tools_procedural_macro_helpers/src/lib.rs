@@ -1,62 +1,104 @@
-// // ANCHOR: derive_macro
-// use proc_macro::TokenStream;
-// use quote::quote;
-// use syn::DeriveInput;
-// use syn::parse_macro_input;
+extern crate proc_macro;
 
-// /// This is a derive macro example.
-// ///
-// /// It will be used like this:
-// ///
-// /// ```ignore
-// /// #[derive(MyMacro)]
-// /// ```
-// #[proc_macro_derive(MyMacro)]
-// pub fn my_macro(input: TokenStream) -> TokenStream {
-//     // Parse the input tokens into a syntax tree
-//     let input = parse_macro_input!(input as DeriveInput);
+use darling::FromDeriveInput;
+use proc_macro::TokenStream;
+use quote::quote;
+use syn::{parse_macro_input, DeriveInput, ItemFn};
 
-//     // Build the output, possibly using quasi-quotation
-//     let expanded = quote! {
-//         // ...
-//     };
+// Retain the macro used by the existing `compile_macros` example.
+#[proc_macro_derive(MyMacro)]
+pub fn my_macro(input: TokenStream) -> TokenStream {
+    let input = parse_macro_input!(input as DeriveInput);
+    let name = input.ident;
+    let expanded = quote! {
+        impl #name {
+            fn hello_world() {
+                println!("Hello, World! I am #name");
+            }
+        }
+    };
+    TokenStream::from(expanded)
+}
 
-//     // Hand the output tokens back to the compiler
-//     TokenStream::from(expanded)
-// }
-// ANCHOR_END: derive_macro
+// ANCHOR: attribute_macro
+/// This is an attribute macro example.
+///
+/// It will be used like this:
+///
+/// ```ignore
+/// #[log_fn]
+/// ```
+#[proc_macro_attribute]
+pub fn log_fn(_attr: TokenStream, item: TokenStream) -> TokenStream {
+    let input = parse_macro_input!(item as ItemFn);
+    let name = &input.sig.ident;
+    let block = &input.block;
+    let vis = &input.vis;
+    let sig = &input.sig;
 
-// // For more details, review the `syn` parser documentation:
-// // https://docs.rs/syn/latest/syn/index.html
+    let expanded = quote! {
+        #vis #sig {
+            println!("Function {} is called", stringify!(#name));
+            #block
+        }
+    };
 
-// // ANCHOR: attribute_macro
-// extern crate proc_macro;
+    expanded.into()
+}
+// ANCHOR_END: attribute_macro
 
-// use proc_macro::TokenStream;
-// use quote::quote;
-// use syn::{parse_macro_input, ItemFn};
+// ANCHOR: darling_example
+/// Options for the `MyDarlingMacro` derive macro.
+#[derive(Debug, FromDeriveInput)]
+#[darling(attributes(my_macro))]
+struct MyMacroOpts {
+    name: String,
+}
 
-// /// This is an attribute macro example.
-// ///
-// /// It will be used like this:
-// ///
-// /// ```ignore
-// /// #[log_fn]
-// /// ```
-// #[proc_macro_attribute]
-// pub fn log_fn(_attr: TokenStream, item: TokenStream) -> TokenStream {
-//     let input = parse_macro_input!(item as ItemFn);
-//     let name = &input.sig.ident;
+#[proc_macro_derive(MyDarlingMacro, attributes(my_macro))]
+pub fn my_darling_macro_derive(input: TokenStream) -> TokenStream {
+    let input = parse_macro_input!(input as DeriveInput);
+    let opts = MyMacroOpts::from_derive_input(&input).expect("Wrong options!");
 
-//     let gen = quote! {
-//         fn #name() {
-//             println!("Function {} is called", stringify!(#name));
-//             #input
-//         }
-//     };
+    let name = &opts.name;
+    let struct_name = &input.ident;
 
-//     gen.into()
-// }
-// // ANCHOR_END: attribute_macro
+    let expanded = quote! {
+        impl MyDarlingTrait for #struct_name {
+            fn hello() {
+                println!("Hello, {}!", #name);
+            }
+        }
+    };
 
-// // [finish](https://github.com/john-cd/rust_howto/issues/1157)
+    TokenStream::from(expanded)
+}
+// ANCHOR_END: darling_example
+
+// ANCHOR: proc_macro2_example
+#[proc_macro_derive(MyDebug)]
+pub fn derive_debug(input: TokenStream) -> TokenStream {
+    let input = parse_macro_input!(input as DeriveInput);
+    let name = &input.ident;
+    let expanded = quote! {
+        impl std::fmt::Debug for #name {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(f, "{} {{ ... }}", stringify!(#name))
+            }
+        }
+    };
+    TokenStream::from(expanded)
+}
+// ANCHOR_END: proc_macro2_example
+
+// Retain the shim imported by the existing `compile_macros` Watt example.
+#[proc_macro]
+pub fn watt_macro(input: TokenStream) -> TokenStream {
+    let input_str = input.to_string();
+    let expanded = quote! {
+        fn watt_demo() {
+            println!("Watt macro received: {}", #input_str);
+        }
+    };
+    TokenStream::from(expanded)
+}

@@ -41,7 +41,7 @@ mod tests {
     use super::*;
     #[test]
     fn test() -> anyhow::Result<()> {
-        main()?;
+        example()?;
         Ok(())
     }
 }

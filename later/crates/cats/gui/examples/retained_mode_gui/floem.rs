@@ -17,3 +17,18 @@ fn counter_view() -> impl IntoView {
     .style(|s| s.size_full().items_center().justify_center().gap(10))
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires an interactive example runtime"]
+    fn test_main() {
+        main();
+    }
+}

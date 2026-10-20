@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+// ANCHOR: example
 use std::any::Any;
 use std::any::TypeId;
 use std::collections::HashMap;
@@ -50,6 +52,7 @@ impl Plugin for MyCounterPlugin {
 }
 
 pub struct MyStringPlugin;
+
 impl Plugin for MyStringPlugin {
     fn name(&self) -> &'static str {
         "MyStringPlugin"
@@ -127,12 +130,17 @@ fn main() {
         println!("Host retrieved CustomPluginService: {}", svc.value);
     }
 }
+// ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

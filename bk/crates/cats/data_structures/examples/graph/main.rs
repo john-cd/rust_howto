@@ -1,3 +1,5 @@
 mod petgraph;
 
-fn main() {}
+fn main() {
+    petgraph::run();
+}

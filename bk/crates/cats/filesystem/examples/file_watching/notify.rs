@@ -52,14 +52,19 @@ fn main() -> Result<()> {
 
     Ok(())
 }
+
 // Look for additional examples in <https://github.com/notify-rs/notify/tree/main/examples>.
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

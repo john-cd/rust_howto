@@ -1,4 +1,4 @@
-name: rust_howto_ci
+name: rust_howto
 services:
   book:
     # When pull_policy is missing from the service definition, Compose attempts to pull the image first

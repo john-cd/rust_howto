@@ -66,7 +66,8 @@ fn search_for_crates(search: impl Into<String>) -> Result<CratesPage> {
 #[tracing::instrument(err)]
 fn main() -> Result<()> {
     // Initialize tracing subscriber
-    let _ = tracing_subscriber::fmt::try_init();
+    tracing_subscriber::fmt::try_init()
+        .map_err(|e| anyhow::anyhow!(e.to_string()))?;
     tracing::info!("Starting crates_io API example");
 
     // Search for crates that mention "signature verification":
@@ -86,13 +87,19 @@ fn main() -> Result<()> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    #[ignore = "requires crates.io API access"]
+    fn test_main() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

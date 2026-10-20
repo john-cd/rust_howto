@@ -30,13 +30,18 @@ impl OutlinePrint for String {}
 fn main() {
     String::from("test").outline_print();
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

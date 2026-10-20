@@ -26,7 +26,10 @@ File dialogs in [WASM][p~wasm] are restricted due to security reasons. You'll ty
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- File system access in desktop applications.
+- Cross-platform UI utilities.
+- Native dialog integration.
+- WebAssembly file handling.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

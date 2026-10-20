@@ -40,13 +40,18 @@ fn main() {
     println!("m4 after removal: {m4}");
     println!("m3 is unchanged: {m3}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

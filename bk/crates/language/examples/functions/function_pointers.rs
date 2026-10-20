@@ -17,13 +17,18 @@ fn main() {
     let answer = do_twice(add_one, 5); // Pass `add_one` as an argument.
     println!("The answer is: {answer}"); // Output: 12 ( (5+1) + (5+1) )
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

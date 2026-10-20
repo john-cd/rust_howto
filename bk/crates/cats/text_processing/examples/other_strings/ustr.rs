@@ -84,13 +84,18 @@ fn main() {
     map.insert(s1, 17);
     assert_eq!(*map.get(&s1).unwrap(), 17);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

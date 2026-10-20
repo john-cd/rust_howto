@@ -304,7 +304,7 @@
 					"label": ""
 				},
 				{
-					"line": 145,
+					"line": 141,
 					"column": 21,
 					"label": ""
 				}
@@ -589,12 +589,7 @@
 			"path": "LICENSE",
 			"bookmarks": [
 				{
-					"line": 16,
-					"column": 23,
-					"label": ""
-				},
-				{
-					"line": 28,
+					"line": 20,
 					"column": 68,
 					"label": ""
 				}
@@ -604,12 +599,12 @@
 			"path": "bk/crates/cats/data_structures/Cargo.toml",
 			"bookmarks": [
 				{
-					"line": 23,
+					"line": 22,
 					"column": 11,
 					"label": ""
 				},
 				{
-					"line": 33,
+					"line": 32,
 					"column": 21,
 					"label": ""
 				}
@@ -674,7 +669,7 @@
 					"label": ""
 				},
 				{
-					"line": 95,
+					"line": 91,
 					"column": 13,
 					"label": ""
 				}

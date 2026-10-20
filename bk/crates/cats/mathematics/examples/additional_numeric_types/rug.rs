@@ -73,13 +73,18 @@ fn main() {
     println!("Product of floats: {product}");
     assert_eq!(product.to_string(), "2.8465780742245217");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

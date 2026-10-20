@@ -29,3 +29,18 @@ pub fn main() -> Result<(), xilem::winit::error::EventLoopError> {
     Ok(())
 }
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), xilem::winit::error::EventLoopError> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires an interactive example runtime"]
+    fn test_main() -> Result<(), xilem::winit::error::EventLoopError> {
+        main()
+    }
+}

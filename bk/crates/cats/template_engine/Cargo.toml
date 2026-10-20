@@ -1,21 +1,33 @@
 [package]
+license-file.workspace = true
 name = "template_engine"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description = "Book code examples and their crate dependencies - template_engine"
+readme = "README.md"
+description = "Code examples for popular Rust template engines including Tera and TinyTemplate."
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
-categories = ["template_engine"]
+
+keywords = ["templates", "tera", "tinytemplate", "web", "rendering"]
+categories = ["template-engine"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-anyhow = "1.0.100"
+anyhow = "1.0.102"
 serde = { version = "1.0.228", features = ["derive"] }
-tera = "1.20.0"
+tera = "1.20.1"
 tinytemplate = "1.2.1"
+
+[[example]]
+name = "tera"
+path = "examples/tera/main.rs"
+test = true
+
+[[example]]
+name = "tinytemplate"
+path = "examples/tinytemplate/main.rs"
+test = true

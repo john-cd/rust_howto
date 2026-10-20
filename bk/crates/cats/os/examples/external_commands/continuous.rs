@@ -37,7 +37,12 @@ fn main() -> Result<(), Error> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), Error> {
+    main()
+}
 
 #[cfg(target_family = "unix")]
 #[cfg(test)]
@@ -45,7 +50,7 @@ mod tests {
     use super::*;
     #[test]
     #[cfg(target_family = "unix")]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

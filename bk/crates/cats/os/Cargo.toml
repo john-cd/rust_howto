@@ -1,21 +1,34 @@
 [package]
+license-file.workspace = true
 name = "os"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - os"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = ["os"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-anyhow = "1.0.100"
-libc = "0.2.177"
-regex = "1.12.2"
-which = "8.0.0"
+anyhow = "1.0.102"
+clap = { version = "4.6.1", features = ["derive"] }
+libc = "0.2.186"
+regex = "1.12.3"
+which = "8.0.2"
+
+[[example]]
+name = "external_commands"
+path = "examples/external_commands/main.rs"
+test = true
+
+[[example]]
+name = "low_level_system_calls"
+path = "examples/low_level_system_calls/main.rs"
+test = true

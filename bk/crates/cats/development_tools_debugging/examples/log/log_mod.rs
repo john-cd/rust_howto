@@ -29,16 +29,20 @@ fn main() {
     log::debug!("[root] debug");
     foo::run();
     println!(
-        "log_mod example: set RUST_LOG=debug to see module-specific log output above"
+        "log_mod example: set RUST_LOG=debug to see all module-specific log output above"
     );
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

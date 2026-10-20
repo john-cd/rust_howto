@@ -29,13 +29,18 @@ fn main() {
 
     println!("Stack is empty: {}", stack.is_empty());
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

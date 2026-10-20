@@ -27,13 +27,18 @@ fn main() {
     let var = 39;
     println!("`apply_to_3` result: {}", apply_to_3(|x| x + var));
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

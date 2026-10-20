@@ -37,13 +37,18 @@ fn main() {
         Cow::Owned(s) => println!("Spaces removed, allocated String: {s}"),
     }
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

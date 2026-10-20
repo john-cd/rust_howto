@@ -30,7 +30,10 @@
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- Embedded networking and sensors.
+- Safety-critical Rust patterns.
+- No-std development and toolchains.
+- Firmware build and deployment.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

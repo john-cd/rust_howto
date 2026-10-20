@@ -44,13 +44,18 @@ fn main() -> zip::result::ZipResult<()> {
     println!("Successfully created '{}'", path.display());
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> zip::result::ZipResult<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         use std::fs;
         if !fs::exists("temp")? {
             fs::create_dir("temp")?;

@@ -1,18 +1,24 @@
 [package]
+license-file.workspace = true
 name = "aerospace_unmanned_aerial_vehicles"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - aerospace_unmanned_aerial_vehicles"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
-categories = ["aerospace_unmanned_aerial_vehicles"]
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["aerospace::unmanned-aerial-vehicles"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
 tello = "0.6.3"
+
+[[example]]
+name = "uavs"
+path = "examples/uavs/main.rs"
+test = true

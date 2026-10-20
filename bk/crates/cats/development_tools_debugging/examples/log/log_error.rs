@@ -17,13 +17,18 @@ fn main() {
         "log_error example: set RUST_LOG=error to see the error log above"
     );
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

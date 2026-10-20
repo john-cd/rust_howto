@@ -25,13 +25,18 @@ fn main() {
     println!("{s}");
     assert_eq!(s, 10);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

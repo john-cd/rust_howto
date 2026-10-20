@@ -35,7 +35,12 @@ async fn main() -> Result<()> {
     copy(&mut content.as_bytes(), &mut dest)?;
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {
