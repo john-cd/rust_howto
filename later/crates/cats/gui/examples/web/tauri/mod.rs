@@ -1,86 +1,57 @@
+// ANCHOR: example
+// (backend)
 #![cfg_attr(
     all(not(debug_assertions), target_os = "windows"),
     windows_subsystem = "windows"
 )]
-// ANCHOR: example
-//! Create a simple Tauri app with a menu and counter command handlers.
-//!
-//! This example defines backend commands and opens a Tauri window using the
-//! generated application context.
 
 use std::sync::Mutex;
 
 use tauri::Manager;
-use tauri::State;
-use tauri::menu::CustomMenuItem;
-use tauri::menu::Menu;
-use tauri::menu::MenuItem;
-use tauri::menu::Submenu;
+use tauri::menu::MenuBuilder;
+use tauri::menu::MenuItemBuilder;
 
 #[tauri::command]
-fn get_counter(counter: State<'_, Mutex<CounterState>>) -> i32 {
-    let counter = counter.inner().lock().unwrap();
-    counter.value
+fn get_counter(state: tauri::State<'_, CounterState>) -> i32 {
+    *state.value.lock().unwrap()
 }
 
 #[tauri::command]
-fn increment_counter(counter: State<'_, Mutex<CounterState>>) {
-    let mut counter = counter.inner().lock().unwrap();
-    counter.value += 1;
-}
-
-#[tauri::command]
-fn decrement_counter(counter: State<'_, Mutex<CounterState>>) {
-    let mut counter = counter.inner().lock().unwrap();
-    counter.value -= 1;
+fn increment_counter(state: tauri::State<'_, CounterState>) {
+    *state.value.lock().unwrap() += 1;
 }
 
 struct CounterState {
-    value: i32,
+    value: Mutex<i32>,
 }
 
-fn main() {
-    let quit = CustomMenuItem::new("quit".to_string(), "Quit");
-    let submenu = Submenu::new("File", Menu::new().add_item(quit));
-    let menu = Menu::new()
-        .add_native_item(MenuItem::Copy)
-        .add_item(CustomMenuItem::new("hide", "Hide"))
-        .add_submenu(submenu);
-
+pub fn main() {
     tauri::Builder::default()
-        .menu(menu)
-        .on_menu_event(|_, event| match event.menu_item_id() {
-            "quit" => {
-                std::process::exit(0);
-            }
-            "hide" => {
-                event.window().hide().unwrap();
-            }
-            _ => {}
+        .plugin(tauri_plugin_shell::init())
+        .setup(|app| {
+            let quit = MenuItemBuilder::with_id("quit", "Quit").build(app)?;
+            let menu = MenuBuilder::new(app).items(&[&quit]).build()?;
+            app.set_menu(menu)?;
+
+            app.on_menu_event(move |app_handle, event| {
+                if event.id().as_ref() == "quit" {
+                    app_handle.exit(0);
+                }
+            });
+
+            app.manage(CounterState {
+                value: Mutex::new(0),
+            });
+            Ok(())
         })
-        .manage(Mutex::new(CounterState { value: 0 }))
         .invoke_handler(tauri::generate_handler![
             get_counter,
-            increment_counter,
-            decrement_counter,
+            increment_counter
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
-
-// ANCHOR_END: example
-
 pub fn run() {
     main();
 }
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    #[ignore = "requires interactive example runtime"]
-    fn test_main() {
-        main();
-    }
-}
+// ANCHOR_END: example
