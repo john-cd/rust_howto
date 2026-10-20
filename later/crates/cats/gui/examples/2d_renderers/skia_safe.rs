@@ -16,6 +16,10 @@ pub fn main() {
 }
 // ANCHOR_END: example
 
+pub fn run() {
+    main();
+}
+
 #[test]
 fn test() {
     main();
