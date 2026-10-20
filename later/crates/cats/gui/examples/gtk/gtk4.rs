@@ -1,7 +1,11 @@
 #![allow(dead_code)]
 // ANCHOR: example
+use gtk::Application;
+use gtk::ApplicationWindow;
+use gtk::Button;
+use gtk::Label;
+use gtk::Orientation;
 use gtk::prelude::*;
-use gtk::{Application, ApplicationWindow, Button, Label, Orientation};
 
 pub fn main() {
     let app = Application::builder()
@@ -29,21 +33,13 @@ fn build_ui(app: &Application) {
 
     let counter_value = std::sync::Arc::new(std::sync::Mutex::new(0));
 
-    let label = Label::builder()
-        .label("Counter: 0")
-        .build();
+    let label = Label::builder().label("Counter: 0").build();
 
-    let button_inc = Button::builder()
-        .label("Increment")
-        .build();
+    let button_inc = Button::builder().label("Increment").build();
 
-    let button_dec = Button::builder()
-        .label("Decrement")
-        .build();
+    let button_dec = Button::builder().label("Decrement").build();
 
-    let conditional_label = Label::builder()
-        .label("Counter is even!")
-        .build();
+    let conditional_label = Label::builder().label("Counter is even!").build();
 
     button_inc.connect_clicked({
         let counter_value = counter_value.clone();

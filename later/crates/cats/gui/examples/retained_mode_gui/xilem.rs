@@ -1,7 +1,12 @@
 #![allow(dead_code)]
 // ANCHOR: example
-use xilem::view::{button, flex, label, Axis};
-use xilem::{EventLoop, WindowOptions, Xilem};
+use xilem::EventLoop;
+use xilem::WindowOptions;
+use xilem::Xilem;
+use xilem::view::Axis;
+use xilem::view::button;
+use xilem::view::flex;
+use xilem::view::label;
 
 #[derive(Default)]
 struct Counter {

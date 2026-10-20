@@ -74,26 +74,19 @@ impl Preprocessor for Preproc {
 
 impl Preproc {
     fn retrieve_config(&self, ctx: &PreprocessorContext) -> PreprocConfig {
-        // Get the table associated with a particular preprocessor.
-        match ctx.config.get_preprocessor(self.name()) {
-            Some(raw) => {
-                // `raw` is `toml::Table`.
-                let s = toml::to_string(&raw).expect("toml::to_string failed!");
-                let pc: PreprocConfig = match toml::from_str(&s) {
-                    Ok(pc) => pc,
-                    Err(e) => {
-                        warn!(
-                            "Error in `preprocessor.{}` configuration: {e}; using defaults",
-                            self.name()
-                        );
-                        PreprocConfig::default()
-                    }
-                };
-                pc
-            }
-            None => {
+        let config_key = format!("preprocessor.{}", self.name());
+        match ctx.config.get::<PreprocConfig>(&config_key) {
+            Ok(Some(config)) => config,
+            Ok(None) => {
                 warn!(
                     "Could not retrieve `preprocessor.{}` configuration; using defaults",
+                    self.name()
+                );
+                PreprocConfig::default()
+            }
+            Err(e) => {
+                warn!(
+                    "Error in `preprocessor.{}` configuration: {e}; using defaults",
                     self.name()
                 );
                 PreprocConfig::default()

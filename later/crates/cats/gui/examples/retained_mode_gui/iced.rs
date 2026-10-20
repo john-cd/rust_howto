@@ -1,7 +1,13 @@
 #![allow(dead_code)]
 // ANCHOR: example
-use iced::widget::{button, column, text, center, container};
-use iced::{Alignment, Element, Length};
+use iced::Alignment;
+use iced::Element;
+use iced::Length;
+use iced::widget::button;
+use iced::widget::center;
+use iced::widget::column;
+use iced::widget::container;
+use iced::widget::text;
 
 pub fn main() -> iced::Result {
     iced::run(Counter::update, Counter::view)

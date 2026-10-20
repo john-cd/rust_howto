@@ -4,7 +4,8 @@ use bevy::prelude::*;
 
 fn main() {
     // Creates a new Bevy app.
-    // In many CI/headless environments, running the full App with a window will fail.
+    // In many CI/headless environments, running the full App with a window will
+    // fail.
     App::new()
         .add_plugins(MinimalPlugins)
         .add_systems(Startup, setup)

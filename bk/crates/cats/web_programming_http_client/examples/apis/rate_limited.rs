@@ -1,89 +1,89 @@
 #![allow(dead_code)]
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
-// //! This example demonstrates how to handle rate limiting when interacting
-// //! with an API.
-// //!
-// //! It specifically targets the GitHub API, which provides rate limit
-// //! information in its headers. The code checks for the `x-ratelimit-limit`,
-// //! `x-ratelimit-remaining`, and `x-ratelimit-reset` headers. If the rate
-// //! limit is exceeded, the program will sleep until the reset time.
-// use std::thread;
-// use std::time::Duration;
-// use std::time::UNIX_EPOCH;
+// ANCHOR: example
+//! Calculate how long an application should wait after hitting a rate limit.
 
-// use anyhow::Result;
-// use anyhow::anyhow;
-// use reqwest::StatusCode;
+use std::time::Duration;
+use std::time::SystemTime;
+use std::time::UNIX_EPOCH;
 
-// /// Demonstrates rate limit handling.
-// ///
-// /// It fetches user information from the GitHub API and checks for rate
-// /// limit headers. If the rate limit is exceeded, it sleeps until the reset
-// /// time.
-// fn main() -> Result<()> {
-//     let url = "https://api.github.com/users/john-cd";
-//     let client = reqwest::blocking::Client::new();
+use anyhow::Result;
+use anyhow::anyhow;
+use reqwest::header::HeaderMap;
+use reqwest::header::HeaderValue;
 
-//     loop {
-//         let response = client.get(url).send()?;
-//         let hdrs = response.headers();
+fn parse_rate_limit_wait(
+    headers: &HeaderMap,
+    now: SystemTime,
+) -> Result<Option<Duration>> {
+    let limit: u64 = headers
+        .get("x-ratelimit-limit")
+        .ok_or_else(|| anyhow!("missing x-ratelimit-limit"))?
+        .to_str()?
+        .parse()?;
+    let remaining: u64 = headers
+        .get("x-ratelimit-remaining")
+        .ok_or_else(|| anyhow!("missing x-ratelimit-remaining"))?
+        .to_str()?
+        .parse()?;
+    let reset_epoch: u64 = headers
+        .get("x-ratelimit-reset")
+        .ok_or_else(|| anyhow!("missing x-ratelimit-reset"))?
+        .to_str()?
+        .parse()?;
 
-//         let rate_limit: usize = hdrs
-//             .get("x-ratelimit-limit")
-//             .ok_or_else(|| {
-//                 anyhow!(
-//              "Response doesn't include the expected x-ratelimit-limit header"
-//                 )
-//             })?
-//             .to_str()?
-//             .parse()?;
+    println!("Current limit window: {remaining}/{limit} remaining");
 
-//         let rate_remaining: usize = hdrs
-//             .get("x-ratelimit-remaining")
-//             .ok_or_else(|| {
-//                 anyhow!(
-//   "Response doesn't include the expected x-ratelimit-remaining header"
-//                )
-//             })?
-//             .to_str()?
-//             .parse()?;
+    if remaining == 0 {
+        let reset_at = UNIX_EPOCH
+            .checked_add(Duration::from_secs(reset_epoch))
+            .ok_or_else(|| anyhow!("x-ratelimit-reset is out of range"))?;
+        let wait = reset_at.duration_since(now).unwrap_or_default();
+        return Ok(Some(wait));
+    }
 
-//         let rate_reset_at: u64 = hdrs
-//             .get("x-ratelimit-reset")
-//             .ok_or_else(|| {
-//                 anyhow!(
-//        "Response doesn't include the expected x-ratelimit-reset header"
-//                 )
-//             })?
-//             .to_str()?
-//             .parse()?;
+    Ok(None)
+}
 
-//         let rate_reset_within =
-//             Duration::from_secs(rate_reset_at) - UNIX_EPOCH.elapsed()?;
+fn main() -> Result<()> {
+    let now = UNIX_EPOCH + Duration::from_secs(1_700_000_000);
+    let mut headers = HeaderMap::new();
+    headers.insert("x-ratelimit-limit", HeaderValue::from_static("60"));
+    headers.insert("x-ratelimit-remaining", HeaderValue::from_static("0"));
+    headers.insert("x-ratelimit-reset", HeaderValue::from_static("1700000060"));
 
-//         if response.status() == StatusCode::FORBIDDEN && rate_remaining == 0
-// {             println!("Sleeping for {} seconds.",
-// rate_reset_within.as_secs());             thread::sleep(rate_reset_within);
-//             continue;
-//         } else {
-//             println!(
-//                 "Rate limit is currently {rate_remaining}/{rate_limit}, the
-// reset of this limit will be within {} seconds.",
-//                 rate_reset_within.as_secs(),
-//             );
-//             break;
-//         }
-//     }
-//     Ok(())
-// }
+    if let Some(wait) = parse_rate_limit_wait(&headers, now)? {
+        println!("Wait {} seconds before retrying", wait.as_secs());
+    }
 
-// #[test]
-// fn require_network() -> anyhow::Result<()> {
-//     let res = main();
-//     println!("{res:?}");
-//     res?;
-//     Ok(())
-// }
-// // [fix interaction with https://docs.github.com/en/rest?apiVersion=2022-11-28](https://github.com/john-cd/rust_howto/issues/177)
+    Ok(())
+}
+// ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> Result<()> {
+        main()
+    }
+
+    #[test]
+    fn expired_rate_limit_window_does_not_require_waiting() -> Result<()> {
+        let mut headers = HeaderMap::new();
+        headers.insert("x-ratelimit-limit", HeaderValue::from_static("60"));
+        headers.insert("x-ratelimit-remaining", HeaderValue::from_static("0"));
+        headers.insert(
+            "x-ratelimit-reset",
+            HeaderValue::from_static("1700000000"),
+        );
+
+        let now = UNIX_EPOCH + Duration::from_secs(1_700_000_060);
+        assert_eq!(parse_rate_limit_wait(&headers, now)?, Some(Duration::ZERO));
+        Ok(())
+    }
+    // [fix interaction with https://docs.github.com/en/rest?apiVersion=2022-11-28](https://github.com/john-cd/rust_howto/issues/177)
+}

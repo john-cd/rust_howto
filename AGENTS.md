@@ -31,7 +31,9 @@ This repo is primarily an mdBook publishing repo with Rust workspaces attached t
 - `later\src\` and `later\crates\` mirror the book/example structure for work-in-progress or future content that is not yet part of the main published book.
 - `xmpl\` holds standalone examples that are too large to embed directly in the book, `playground\` is for exploratory code, and `publish\` is the small placeholder crate published to crates.io so the book is discoverable there.
 
-Each workspace has its own `.cargo\config.toml`, but they all redirect builds into the repo-level `target\...` tree instead of using per-workspace `target` folders.
+Each workspace has its own `.cargo\config.toml`. Cargo artifacts go outside the checkout to `D:\target\rust_howto\<worktree name>`; Cargo's intermediate build artifacts go to `C:\code_build\rust_howto\<worktree name>`. The root `justfile` exports `CARGO_TARGET_DIR` and `CARGO_BUILD_BUILD_DIR` for root fan-out recipes. Workspace configs provide the same paths for direct Cargo commands.
+
+Set `RUST_HOWTO_WORKTREE_NAME` before invoking root `just` recipes in another worktree so its target and build outputs remain isolated. The default name is `coherent-book-tooling-commits`, matching the current checkout. When using Cargo directly in another worktree, set `CARGO_TARGET_DIR` and `CARGO_BUILD_BUILD_DIR` to that worktree's corresponding paths; environment values override `.cargo/config.toml`.
 
 ## Key conventions
 

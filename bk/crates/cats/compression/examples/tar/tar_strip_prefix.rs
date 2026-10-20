@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-use std::fs;
 use std::fs::File;
 use std::path::Path;
 use std::path::PathBuf;
@@ -78,12 +77,12 @@ mod tests {
                 .as_nanos()
         ));
         if work_dir.exists() {
-            fs::remove_dir_all(&work_dir)?;
+            std::fs::remove_dir_all(&work_dir)?;
         }
-        fs::create_dir_all(work_dir.join("bundle/logs"))?;
+        std::fs::create_dir_all(work_dir.join("bundle/logs"))?;
         let source_file = work_dir.join("bundle/logs/example.txt");
-        fs::write(&source_file, b"hello world")?;
-        fs::create_dir_all(work_dir.join("temp"))?;
+        std::fs::write(&source_file, b"hello world")?;
+        std::fs::create_dir_all(work_dir.join("temp"))?;
 
         let archive_path = work_dir.join("temp/archive.tar.gz");
         let archive_file = File::create(&archive_path)?;
@@ -102,7 +101,7 @@ mod tests {
 
         result?;
         assert!(work_dir.join("example.txt").exists());
-        fs::remove_dir_all(&work_dir)?;
+        std::fs::remove_dir_all(&work_dir)?;
         Ok(())
     }
 }

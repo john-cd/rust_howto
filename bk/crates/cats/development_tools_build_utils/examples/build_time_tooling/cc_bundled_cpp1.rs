@@ -1,31 +1,28 @@
-// #![allow(dead_code)]
-// // ANCHOR: example
-// /// External block for declaring function interfaces that Rust code can call
-// /// foreign code by. This is a declaration of a foreign function interface
-// /// (FFI).
-// ///
-// /// `unsafe` indicates that calling this function is unsafe because the Rust
-// /// compiler cannot guarantee the safety of the code in the foreign library.
-// ///
-// /// `extern "C"` specifies the calling convention. "C" is the most common
-// /// calling convention for interoperability with C and C++ code.
-// unsafe extern "C" {
-//     /// Declares a function `multiply` that takes two 32-bit integers and
-// returns a 32-bit integer.     /// This function is defined in a foreign
-// library (C/C++).     fn multiply(x: i32, y: i32) -> i32;
-// }
+#![allow(dead_code)]
+// ANCHOR: example
+// Declare a C-compatible symbol that can be implemented in bundled C++ code.
+unsafe extern "C" {
+    fn multiply(x: i32, y: i32) -> i32;
+}
 
-// fn main() {
-//     unsafe {
-//          println!("{}", multiply(5, 7));
-//     }
-// }
-// // ANCHOR_END: example
+fn main() {
+    let _ffi_symbol: unsafe extern "C" fn(i32, i32) -> i32 = multiply;
+    println!(
+        "Declared the `multiply` symbol. A build script can compile and link the corresponding C++ implementation."
+    );
+}
+// ANCHOR_END: example
 
-// #[test]
-// fn test() {
-//     main();
-// }
-// // [finish](https://github.com/john-cd/rust_howto/issues/898)
+pub fn run() {
+    main();
+}
 
-pub fn run() {}
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
+    // [finish](https://github.com/john-cd/rust_howto/issues/898)
+}

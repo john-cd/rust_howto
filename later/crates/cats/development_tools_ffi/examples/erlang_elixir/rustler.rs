@@ -1,39 +1,41 @@
 #![allow(dead_code)]
 // ANCHOR: example
 #![allow(unused)]
+
+#[cfg(feature = "erlang")]
 use rustler::Env;
+#[cfg(feature = "erlang")]
 use rustler::NifResult;
 
-// The `rustler` crate provides macros and functions for creating NIFs
-// (Native Implemented Functions). NIFs are functions written in Rust that
-// can be called directly from Erlang or Elixir code. This allows to
-// leverage the performance and safety of Rust within your Erlang/Elixir
-// applications.
+#[cfg(feature = "erlang")]
+mod nif {
+    use super::*;
 
-// `greet` is a NIF that takes a string and returns a string.
-// `Env` represents the current execution environment in Elixir.
-#[rustler::nif]
-fn greet(env: Env, name: String) -> NifResult<String> {
-    Ok(format!("Hello, {name}!"))
+    /// The `rustler` crate provides macros and functions for creating NIFs
+    /// (Native Implemented Functions). NIFs are functions written in Rust that
+    /// can be called directly from Erlang or Elixir code.
+    #[rustler::nif]
+    fn greet(name: String) -> String {
+        format!("Hello, {name}!")
+    }
+
+    /// `add` is a NIF that takes two integers and returns their sum.
+    #[rustler::nif]
+    fn add(a: i32, b: i32) -> i32 {
+        a + b
+    }
+
+    rustler::init!("Elixir.MyRustLibrary");
 }
-
-// `add` is a NIF that takes two integers and returns their sum.
-#[rustler::nif]
-fn add(env: Env, a: i32, b: i32) -> NifResult<i32> {
-    Ok(a + b)
-}
-
-// Initialize the NIF module.
-// "Elixir.MyRustLibrary" specifies the name of the Elixir module that will
-// call these NIFs.
-rustler::init!("Elixir.MyRustLibrary");
 
 fn main() {
-    // TODO
-    // The main function is not used in this context, as the NIFs are called
-    // from Elixir.
+    #[cfg(not(feature = "erlang"))]
+    println!("Rustler example requires the `erlang` feature.");
+    #[cfg(feature = "erlang")]
+    println!(
+        "Rustler NIFs defined. These are intended to be loaded by an Elixir/Erlang VM."
+    );
 }
-
 // ANCHOR_END: example
 
 pub fn run() {
@@ -44,7 +46,7 @@ pub fn run() {
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

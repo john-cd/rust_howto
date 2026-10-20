@@ -1,5 +1,9 @@
 # Reference: https://doc.rust-lang.org/cargo/reference/config.html
 
+[build]
+target-dir = "D:/target/rust_howto/coherent-book-tooling-commits"
+build-dir = "C:/code_build/rust_howto/coherent-book-tooling-commits"
+
 [env]
 CLANG_SYS_STATIC = "1"
 
@@ -17,7 +21,7 @@ CLANG_SYS_STATIC = "1"
 # recursive_example = "rr --example recursions"
 # space_example = ["run", "--release", "--", "\"command list\""]
 
-[build]
+# Build option reference (the active [build] table is above).
 # jobs = 1                      # number of parallel jobs, defaults to # of CPUs
 # rustc = "rustc"               # the rust compiler tool
 # rustc-wrapper = "..."           # run this wrapper instead of `rustc`
@@ -28,7 +32,7 @@ CLANG_SYS_STATIC = "1"
 ## The target directories of all workspaces are kept in `<root>/target/<workspace_name>`.
 ## `<root>/target` is mounted on a separate docker volume to avoid bind mounting (which is very slow).
 ## See `compose.override.yaml` for more details.
-target-dir="../../target/bk/"
+# target-dir="../../target/bk/"
 # rustflags = ["...", "..."]        # custom flags to pass to all compiler invocations
 # rustflags = ["-C", "link-arg=-fuse-ld=lld"]
 # rustdocflags = ["...", "..."]     # custom flags to pass to rustdoc

@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
-use relm4::prelude::*;
 use gtk::prelude::*;
+use relm4::prelude::*;
 
 struct CounterModel {
     value: i32,

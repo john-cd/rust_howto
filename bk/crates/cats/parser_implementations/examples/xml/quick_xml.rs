@@ -1,156 +1,82 @@
 #![allow(dead_code)]
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
-// //! This example demonstrates how to use the `quick-xml` crate for parsing
-// //! and generating XML data in Rust. It covers low-level parsing,
-// //! deserialization with `serde`, creating XML with the writer API, and
-// //! serialization with `serde`.
-// //! See [quick-xml](https://docs.rs/quick-xml/latest/quick_xml).
-// use std::io::Cursor;
+// ANCHOR: example
+//! Parse, deserialize, and write XML with `quick-xml`.
 
-// use quick_xml::Reader;
-// use quick_xml::Writer;
-// use quick_xml::de::from_str;
-// use quick_xml::events::BytesStart;
-// use quick_xml::events::Event;
-// use serde::Deserialize;
-// use serde::Serialize;
+use std::io::Cursor;
 
-// // Define structs for serialization/deserialization
-// #[derive(Debug, Serialize, Deserialize, PartialEq)]
-// struct Person {
-//     name: String,
-//     age: u8,
-//     #[serde(rename = "hobbies")]
-//     hobby_list: Hobbies,
-// }
+use quick_xml::Reader;
+use quick_xml::Writer;
+use quick_xml::de::from_str;
+use quick_xml::events::BytesEnd;
+use quick_xml::events::BytesStart;
+use quick_xml::events::BytesText;
+use quick_xml::events::Event;
+use serde::Deserialize;
 
-// #[derive(Debug, Serialize, Deserialize, PartialEq)]
-// struct Hobbies {
-//     #[serde(rename = "hobby")]
-//     entries: Vec<String>,
-// }
+#[derive(Debug, Deserialize)]
+#[serde(rename = "person")]
+struct Person {
+    name: String,
+    age: u8,
+}
 
-// fn main() -> anyhow::Result<()> {
-//     // Example 1: Parse XML using the Reader API.
-//     println!("Example 1: Low-level parsing");
-//     let xml = r#"
-//         <person>
-//             <name>John Doe</name>
-//             <age>32</age>
-//             <hobbies>
-//                 <hobby>Reading</hobby>
-//                 <hobby>Hiking</hobby>
-//                 <hobby>Programming</hobby>
-//             </hobbies>
-//         </person>
-//     "#;
+fn main() -> anyhow::Result<()> {
+    let xml = r#"<person><name>John Doe</name><age>32</age></person>"#;
 
-//     let mut reader = Reader::from_str(xml);
-//     reader.trim_text(true);
+    let mut reader = Reader::from_str(xml);
+    reader.config_mut().trim_text(true);
 
-//     let mut buf = Vec::new();
-//     let mut depth = 0;
-//     let mut txt = Vec::new();
+    loop {
+        match reader.read_event()? {
+            Event::Start(event) => {
+                println!(
+                    "start: {}",
+                    String::from_utf8_lossy(event.name().as_ref())
+                );
+            }
+            Event::Text(event) => {
+                println!("text: {}", event.decode()?.into_owned());
+            }
+            Event::End(event) => {
+                println!(
+                    "end: {}",
+                    String::from_utf8_lossy(event.name().as_ref())
+                );
+            }
+            Event::Eof => break,
+            _ => {}
+        }
+    }
 
-//     // Manual parsing loop.
-//     loop {
-//         match reader.read_event_into(&mut buf) {
-//             Ok(Event::Start(ref e)) => {
-//                 println!(
-//                     "{:indent$}Start: {}",
-//                     "",
-//                     e.name().as_ref(),
-//                     indent = depth * 2
-//                 );
-//                 depth += 1;
-//             }
-//             Ok(Event::End(ref e)) => {
-//                 depth -= 1;
-//                 println!(
-//                     "{:indent$}End: {}",
-//                     "",
-//                     e.name().as_ref(),
-//                     indent = depth * 2
-//                 );
-//             }
-//             Ok(Event::Text(e)) => {
-//                 txt = e.unescape()?.into_owned();
-//                 println!(
-//                     "{:indent$}Text: {}",
-//                     "",
-//                     String::from_utf8_lossy(&txt),
-//                     indent = depth * 2
-//                 );
-//             }
-//             Ok(Event::Eof) => break,
-//             Err(e) => panic!(
-//                 "Error at position {}: {:?}",
-//                 reader.buffer_position(),
-//                 e
-//             ),
-//             _ => (),
-//         }
-//         buf.clear();
-//     }
+    let person: Person = from_str(xml)?;
+    println!("Deserialized: {} ({})", person.name, person.age);
 
-//     // Example 2: Using `serde` for deserialization.
-//     println!("\nExample 2: Deserializing XML");
-//     let person: Person = from_str(xml)?;
-//     println!("Deserialized: {person:#?}");
+    let mut writer = Writer::new(Cursor::new(Vec::new()));
+    writer.write_event(Event::Start(BytesStart::new("person")))?;
+    writer.write_event(Event::Start(BytesStart::new("name")))?;
+    writer.write_event(Event::Text(BytesText::new("Jane Smith")))?;
+    writer.write_event(Event::End(BytesEnd::new("name")))?;
+    writer.write_event(Event::Start(BytesStart::new("age")))?;
+    writer.write_event(Event::Text(BytesText::new("28")))?;
+    writer.write_event(Event::End(BytesEnd::new("age")))?;
+    writer.write_event(Event::End(BytesEnd::new("person")))?;
 
-//     // Example 3: Creating XML with `Writer`.
-//     println!("\nExample 3: Creating XML");
-//     let mut writer = Writer::new(Cursor::new(Vec::new()));
+    let output = writer.into_inner().into_inner();
+    println!("{}", String::from_utf8(output)?);
+    Ok(())
+}
+// ANCHOR_END: example
 
-//     writer.write_event(Event::Start(BytesStart::new("person")))?;
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
 
-//     writer
-//         .create_element("name")
-//         .write_text_content("Jane Smith")?;
-//     writer.create_element("age").write_text_content("28")?;
-
-//     writer.write_event(Event::Start(BytesStart::new("hobbies")))?;
-//     writer
-//         .create_element("hobby")
-//         .write_text_content("Swimming")?;
-//     writer
-//         .create_element("hobby")
-//         .write_text_content("Cooking")?;
-//     writer
-//         .create_element("hobby")
-//         .write_text_content("Painting")?;
-//     writer.write_event(Event::End(BytesStart::new("hobbies").to_end()))?;
-
-//     writer.write_event(Event::End(BytesStart::new("person").to_end()))?;
-
-//     let result = writer.into_inner().into_inner();
-//     println!("{}", String::from_utf8(result)?);
-
-//     // Example 4: Serializing with `serde`.
-//     println!("\nExample 4: Serializing to XML");
-//     let jane = Person {
-//         name: "Jane Smith".to_string(),
-//         age: 28,
-//         hobby_list: Hobbies {
-//             entries: vec![
-//                 "Swimming".to_string(),
-//                 "Cooking".to_string(),
-//                 "Painting".to_string(),
-//             ],
-//         },
-//     };
-
-//     let serialized = quick_xml::se::to_string(&jane)?;
-//     println!("{serialized}");
-
-//     Ok(())
-// }
-
-// #[test]
-// fn test() -> anyhow::Result<()> {
-//     main()?;
-//     Ok(())
-// }
-// // [finish](https://github.com/john-cd/rust_howto/issues/1236)
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> anyhow::Result<()> {
+        main()
+    }
+    // [finish](https://github.com/john-cd/rust_howto/issues/1236)
+}
