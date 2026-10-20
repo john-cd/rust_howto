@@ -22,6 +22,10 @@ use tokio::io::AsyncReadExt;
 use tokio::io::AsyncWriteExt;
 use tokio::net::TcpStream;
 
+#[allow(
+    clippy::result_large_err,
+    reason = "Keep the protocol crate's Result type, as in the calling example."
+)]
 async fn read_envelope(stream: &mut TcpStream) -> Result<Envelope> {
     let mut header = [0u8; 9];
     stream.read_exact(&mut header).await?;

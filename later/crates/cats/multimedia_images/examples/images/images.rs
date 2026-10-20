@@ -5,6 +5,7 @@
 //! This example builds a gradient image in memory and writes it to a PNG file.
 
 use std::error::Error;
+use std::path::Path;
 use std::path::PathBuf;
 
 use image::ImageBuffer;
@@ -17,11 +18,17 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
         default
     });
 
-    let width = 512;
-    let height = 256;
+    save_gradient_image(&output_path, 512, 256)
+}
+
+fn save_gradient_image(
+    output_path: &Path,
+    width: u32,
+    height: u32,
+) -> Result<(), Box<dyn Error + Send + Sync>> {
     let img = build_gradient_image(width, height);
 
-    img.save(&output_path)?;
+    img.save(output_path)?;
     println!("Saved generated image to {}", output_path.display());
     println!("Dimensions: {}x{}", width, height);
 
@@ -33,11 +40,14 @@ fn build_gradient_image(
     height: u32,
 ) -> ImageBuffer<Rgb<u8>, Vec<u8>> {
     let mut img = ImageBuffer::new(width, height);
+    let max_x = u64::from(width.saturating_sub(1));
+    let max_y = u64::from(height.saturating_sub(1));
 
     for (x, y, pixel) in img.enumerate_pixels_mut() {
-        let r = (x * 255 / (width - 1)) as u8;
-        let g = (y * 255 / (height - 1)) as u8;
-        let b = ((x + y) * 255 / (width + height - 2)) as u8;
+        let r = (u64::from(x) * 255 / max_x.max(1)) as u8;
+        let g = (u64::from(y) * 255 / max_y.max(1)) as u8;
+        let b = ((u64::from(x) + u64::from(y)) * 255 / (max_x + max_y).max(1))
+            as u8;
         *pixel = Rgb([r, g, b]);
     }
 
@@ -58,16 +68,30 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_main() {
-        main().unwrap();
+    fn gradient_image_round_trips_through_png()
+    -> Result<(), Box<dyn Error + Send + Sync>> {
+        let temp_dir = tempfile::tempdir()?;
+        let output_path = temp_dir.path().join("gradient.png");
+        save_gradient_image(&output_path, 3, 3)?;
+        let decoded = image::open(output_path)?.to_rgb8();
+        assert_eq!(decoded.dimensions(), (3, 3));
+        assert_eq!(decoded[(0, 0)], Rgb([0, 0, 0]));
+        assert_eq!(decoded[(2, 2)], Rgb([255, 255, 255]));
+        Ok(())
     }
 
     #[test]
     fn build_gradient_image_has_expected_pixel_values() {
         let img = build_gradient_image(3, 3);
         assert_eq!(img[(0, 0)], Rgb([0, 0, 0]));
-        assert_eq!(img[(2, 0)], Rgb([255, 0, 90]));
-        assert_eq!(img[(0, 2)], Rgb([0, 255, 90]));
+        assert_eq!(img[(2, 0)], Rgb([255, 0, 127]));
+        assert_eq!(img[(0, 2)], Rgb([0, 255, 127]));
         assert_eq!(img[(2, 2)], Rgb([255, 255, 255]));
+    }
+
+    #[test]
+    fn single_pixel_gradient_is_black() {
+        let img = build_gradient_image(1, 1);
+        assert_eq!(img[(0, 0)], Rgb([0, 0, 0]));
     }
 }

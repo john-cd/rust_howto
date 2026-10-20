@@ -66,9 +66,13 @@ mod tests {
 
         #[cfg(feature = "leptos-support")]
         {
-            // Browser-only entrypoint is not executed in a headless test
-            // harness.
-            assert!(true);
+            use leptos::prelude::Owner;
+
+            // Construct the reactive component without mounting a browser DOM.
+            // HTML serialization requires Leptos's separate SSR feature.
+            Owner::new().with(|| {
+                let _view = super::App();
+            });
         }
     }
 }

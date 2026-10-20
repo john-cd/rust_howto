@@ -73,6 +73,10 @@ mod home {
     use super::*;
 
     /// A basic handler that returns a "Hello, World!" message.
+    #[allow(
+        clippy::result_large_err,
+        reason = "Loco handlers use the framework's Result<Response> error type."
+    )]
     async fn hello(State(_ctx): State<AppContext>) -> Result<Response> {
         format::text("Hello, Loco!")
     }

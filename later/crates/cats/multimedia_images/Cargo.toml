@@ -19,6 +19,10 @@ autolib = false
 [dependencies]
 image = "0.25.10"
 
+[dev-dependencies]
+# Isolate generated image files during tests.
+tempfile = "3.27.0"
+
 [[example]]
 name = "images"
 path = "examples/images/main.rs"
