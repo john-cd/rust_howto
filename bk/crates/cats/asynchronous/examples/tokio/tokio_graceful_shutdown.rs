@@ -12,10 +12,10 @@
 // - Partial shutdown of a selected subsystem tree
 
 use tokio::time::Duration;
+use tokio_graceful_shutdown::ErrorAction;
 use tokio_graceful_shutdown::SubsystemBuilder;
 use tokio_graceful_shutdown::SubsystemHandle;
 use tokio_graceful_shutdown::Toplevel;
-use tokio_graceful_shutdown::ErrorAction;
 
 /// Counts down from 3 to 1, logging each number.
 async fn countdown() {
@@ -59,8 +59,10 @@ async fn panic_subsystem(_subsys: &mut SubsystemHandle) -> anyhow::Result<()> {
 
 async fn parent_subsystem(subsys: &mut SubsystemHandle) -> anyhow::Result<()> {
     tracing::info!("Parent subsystem started.");
-    let nested = subsys.start(SubsystemBuilder::new("Nested", nested_subsystem));
-    let _panic_sub = subsys.start(SubsystemBuilder::new("Panic", panic_subsystem));
+    let nested =
+        subsys.start(SubsystemBuilder::new("Nested", nested_subsystem));
+    let _panic_sub =
+        subsys.start(SubsystemBuilder::new("Panic", panic_subsystem));
 
     // Demonstrate partial shutdown
     tokio::time::sleep(Duration::from_millis(100)).await;
@@ -99,10 +101,19 @@ async fn main() -> anyhow::Result<()> {
     .await;
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }

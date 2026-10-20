@@ -56,11 +56,20 @@ fn main() -> anyhow::Result<()> {
     }
     Ok(())
 }
+
 // Adapted from: <https://github.com/rust-cli/config-rs/blob/main/examples/static_env.rs>
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }

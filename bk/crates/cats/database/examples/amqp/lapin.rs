@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
+// This example demonstrates how to publish and consume messages with the
+// `lapin` AMQP client.
 use futures::stream::StreamExt; /* or: use futures_lite::stream::StreamExt; */
 use lapin::BasicProperties;
 use lapin::Channel;
@@ -40,7 +42,7 @@ async fn main() -> anyhow::Result<()> {
     // arguments.
     let _queue: Queue = channel
         .queue_declare(
-            "my_queue",
+            "my_queue".into(),
             QueueDeclareOptions::default(),
             FieldTable::default(), // a Map<String, AMQPValue>
         )
@@ -56,8 +58,8 @@ async fn main() -> anyhow::Result<()> {
     let message = "Hello from Rust!";
     channel
         .basic_publish(
-            "",         // exchange
-            "my_queue", // routing key
+            "".into(),         // exchange
+            "my_queue".into(), // routing key
             BasicPublishOptions::default(),
             message.as_bytes(),
             BasicProperties::default(),
@@ -77,8 +79,8 @@ async fn main() -> anyhow::Result<()> {
     // - `FieldTable` is for additional arguments.
     let mut consumer = channel
         .basic_consume(
-            "my_queue",
-            "consumer_tag",
+            "my_queue".into(),
+            "consumer_tag".into(),
             BasicConsumeOptions::default(),
             FieldTable::default(),
         )
@@ -104,17 +106,27 @@ async fn main() -> anyhow::Result<()> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn require_external_svc() -> anyhow::Result<()> {
-    unsafe {
-        // Refer to the `compose*.yaml` files:
-        std::env::set_var(
-            "AMQP_ADDR",
-            "amqp://guest:guest@rust_howto_dev-amqp-1:5672",
-        );
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    // TODO
+    #[test]
+    fn require_external_svc() -> anyhow::Result<()> {
+        unsafe {
+            // TODO replace by config in `compose*.yaml` files:
+            std::env::set_var(
+                "AMQP_ADDR",
+                "amqp://guest:guest@rust_howto_dev-amqp-1:5672",
+            );
+        }
+        main()?;
+        Ok(())
     }
-    main()?;
-    Ok(())
 }

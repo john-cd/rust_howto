@@ -67,9 +67,18 @@ fn main() {
     let path_buffer: PathBuf = ["/", "home", "user"].iter().collect();
     println!("Another path: {}", path_buffer.display());
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

@@ -12,14 +12,18 @@ fn main() {
     log::error!("This error has been printed to Stdout");
     println!("log_stdout example: configured env_logger to write to stdout");
 }
+
 // ANCHOR_END: example
 
-use rusty_fork::rusty_fork_test;
+pub fn run() {
+    main();
+}
 
-// Runs in a separate process:
-rusty_fork_test! {
+#[cfg(test)]
+mod tests {
+    use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

@@ -39,14 +39,23 @@ fn main() {
         }
     }
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    use std::fs;
-    if !fs::exists("temp")? {
-        fs::create_dir("temp")?;
-    }
+pub fn run() {
     main();
-    Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> anyhow::Result<()> {
+        use std::fs;
+        if !fs::exists("temp")? {
+            fs::create_dir("temp")?;
+        }
+        main();
+        Ok(())
+    }
 }

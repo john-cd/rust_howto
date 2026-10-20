@@ -1,6 +1,6 @@
-// // ANCHOR: example
+// ANCHOR: example
 // // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR_END: example
 // //! This example demonstrates a simple GTK4 application with a counter.
 // //!
 // //! It includes increment and decrement buttons, a label to display the
@@ -90,5 +90,20 @@
 //     }
 // }
 
-pub fn main() {}
-// // [finish; review https://gtk-rs.org/](https://github.com/john-cd/rust_howto/issues/780)
+fn main() {}
+
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires interactive example runtime"]
+    fn test_main() {
+        main();
+    }
+}
+// [finish; review https://gtk-rs.org/](https://github.com/john-cd/rust_howto/issues/780)

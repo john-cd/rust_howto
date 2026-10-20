@@ -20,17 +20,21 @@ fn main() {
     }
     tracing::info!("Dropping the guard exits the span.");
 }
+
 // ANCHOR_END: example
 
-use rusty_fork::rusty_fork_test;
-
-// Runs in a separate process.
-rusty_fork_test! {
-#[test]
-fn test() {
-    tracing_subscriber::fmt()
-        .with_max_level(tracing::Level::TRACE)
-        .init();
+pub fn run() {
     main();
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        tracing_subscriber::fmt()
+            .with_max_level(tracing::Level::TRACE)
+            .init();
+        main();
+    }
 }

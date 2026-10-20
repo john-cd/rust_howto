@@ -1,6 +1,7 @@
-// // ANCHOR: example
+// ANCHOR: example
 // // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR_END: example
+
 // //! # Femtovg Example
 // //! This example demonstrates how to use the `femtovg` crate for 2D
 // //! rendering. It showcases drawing shapes, text, images, and applying
@@ -132,5 +133,20 @@
 //     }
 // }
 
-pub fn main() {}
-// // [finish](https://github.com/john-cd/rust_howto/issues/777)
+fn main() {}
+
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires interactive example runtime"]
+    fn test_main() {
+        main();
+    }
+}
+// [finish](https://github.com/john-cd/rust_howto/issues/777)

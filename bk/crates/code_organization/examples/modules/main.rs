@@ -1,3 +1,5 @@
 mod module_visibility;
 
-fn main() {}
+fn main() {
+    module_visibility::run();
+}

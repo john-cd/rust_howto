@@ -1,3 +1,5 @@
 mod swc_ecma_parser;
 
-fn main() {}
+fn main() {
+    swc_ecma_parser::run();
+}

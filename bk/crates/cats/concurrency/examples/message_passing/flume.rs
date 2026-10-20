@@ -101,7 +101,15 @@ fn select() {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main()
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main()
+    }
 }

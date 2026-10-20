@@ -33,9 +33,18 @@ fn main() {
     process_optional_string(Some("Alice".to_string()));
     process_optional_string(None);
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

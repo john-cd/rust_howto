@@ -1,17 +1,24 @@
 [package]
+license-file.workspace = true
 name = "multimedia"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - multimedia"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
-categories = [ "multimedia" ]
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["multimedia"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
+rodio = "0.22.2"
+
+[[example]]
+name = "multimedia"
+path = "examples/multimedia/main.rs"
+test = true

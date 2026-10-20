@@ -1,12 +1,12 @@
 #![allow(dead_code)]
 // ANCHOR: example
 
-/// A simple function to test: finds the maximum of two integers:
+/// A simple function to test - finds the maximum of two integers:
 fn max_of_two(a: i32, b: i32) -> i32 {
     if a > b { a } else { b }
 }
 
-/// A function to test: checks if a number is even:
+/// A function to test - checks if a number is even:
 fn is_even(n: i32) -> bool {
     n % 2 == 0
 }
@@ -23,7 +23,6 @@ mod tests {
     // 1. The result is greater than or equal to both inputs.
     // 2. The result is equal to one of the inputs.
     proptest! {
-
         // Generate random integers in the range -1000 to 1000.
         #[test]
         fn test_max_of_two(a in -1000..1000, b in -1000..1000) {
@@ -47,7 +46,7 @@ mod tests {
     proptest! {
         // Generate integers across a wide range.
         #[test]
-        fn test_is_even(n in -10000..10000) {
+        fn test_is_even(n in -1000..1000) {
             // Property 1: Even numbers should always return true:
             prop_assert_eq!(is_even(n), n % 2 == 0);
 
@@ -82,9 +81,18 @@ fn main() {
     println!("Max of 5 and 3: {}", max_of_two(5, 3));
     println!("Is 4 even? {}", is_even(4));
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests_of_main {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

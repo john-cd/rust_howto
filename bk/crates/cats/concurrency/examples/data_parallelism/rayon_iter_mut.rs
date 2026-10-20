@@ -13,9 +13,18 @@ fn main() {
     arr.par_iter_mut().for_each(|p| *p -= 1);
     println!("{arr:?}");
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

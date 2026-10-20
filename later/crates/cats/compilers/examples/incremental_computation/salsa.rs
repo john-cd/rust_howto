@@ -63,7 +63,6 @@ struct MyDatabase {
 
 #[salsa::db]
 impl salsa::Database for MyDatabase {}
-
 fn main() {
     let mut db = MyDatabase::default();
 
@@ -93,8 +92,16 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
+pub fn run() {
     main();
-    Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> anyhow::Result<()> {
+        main();
+        Ok(())
+    }
 }

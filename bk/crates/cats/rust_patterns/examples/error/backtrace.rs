@@ -54,17 +54,26 @@ fn main() -> Result<()> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    unsafe {
-        std::env::set_var("RUST_BACKTRACE", "1");
+pub fn run() -> Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        unsafe {
+            std::env::set_var("RUST_BACKTRACE", "1");
+        }
+        let res = main();
+        println!("{res:?}");
+        unsafe {
+            std::env::set_var("RUST_BACKTRACE", "");
+        }
+        assert!(res.is_err());
     }
-    let res = main();
-    println!("{res:?}");
-    unsafe {
-        std::env::set_var("RUST_BACKTRACE", "");
-    }
-    assert!(res.is_err());
 }

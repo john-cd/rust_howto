@@ -35,10 +35,19 @@ fn main() {
     println!("Request URI: {}", request.uri());
     println!("Response Status: {}", response.status());
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }
 // [expand; HTTP header interpretation and generation.  LATER](https://github.com/john-cd/rust_howto/issues/1355)

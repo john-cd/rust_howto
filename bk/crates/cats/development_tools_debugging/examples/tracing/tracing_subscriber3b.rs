@@ -74,13 +74,18 @@ fn main() -> anyhow::Result<()> {
     tracing::info!("This will be logged by all layers.");
     Ok(())
 }
+
 // ANCHOR_END: example
 
-use rusty_fork::rusty_fork_test;
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
 
-rusty_fork_test! {
+#[cfg(test)]
+mod tests {
+    use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         use std::fs;
         if !std::path::Path::new("temp").exists() {
             fs::create_dir("temp").unwrap();

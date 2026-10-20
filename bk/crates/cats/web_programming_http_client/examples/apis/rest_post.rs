@@ -80,10 +80,19 @@ fn main() { println!("hello world!"); }
     );
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn require_network() {
-    println!("{:?}", main());
+pub fn run() -> Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn require_network() {
+        println!("{:?}", main());
+    }
 }
 // [review; rewrite so that a username and password are not required?](https://github.com/john-cd/rust_howto/issues/178)

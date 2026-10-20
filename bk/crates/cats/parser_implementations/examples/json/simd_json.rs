@@ -58,10 +58,10 @@ fn main() {
                 println!("Numbers: {numbers:?}");
             }
 
-            if let Some(nested) = json.get("nested") {
-                if let Some(nested_value) = nested.get_bool("value") {
-                    println!("Nested Value: {nested_value}");
-                }
+            if let Some(nested) = json.get("nested")
+                && let Some(nested_value) = nested.get_bool("value")
+            {
+                println!("Nested Value: {nested_value}");
             }
         }
         Err(e) => {
@@ -81,8 +81,18 @@ fn main() {
 
     println!("Modified Owned JSON: {owned_json}");
 }
+
 // ANCHOR_END: example
-#[test]
-fn test() {
+
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

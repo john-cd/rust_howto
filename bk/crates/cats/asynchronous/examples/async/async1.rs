@@ -58,9 +58,18 @@ async fn main() {
     // Note: `await` must be called or nothing is executing!
     // Futures are lazy.
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

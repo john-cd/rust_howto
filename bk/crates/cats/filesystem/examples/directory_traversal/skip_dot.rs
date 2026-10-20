@@ -25,9 +25,18 @@ fn main() {
         .filter_map(|v| v.ok())
         .for_each(|x| println!("{}", x.path().display()));
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

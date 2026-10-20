@@ -39,9 +39,18 @@ fn main() {
     let x = Rc::new(6);
     assert_eq!(Rc::try_unwrap(x), Ok(6));
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

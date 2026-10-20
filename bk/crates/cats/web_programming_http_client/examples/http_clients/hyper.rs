@@ -1,7 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-// // COMING SOON
-// ANCHOR_END: example
 //! Example of using the `hyper` low-level HTTP client to fetch a URL.
 //!
 //! This example demonstrates how to:
@@ -13,9 +11,7 @@ use anyhow::Context;
 use http_body_util::BodyExt;
 use http_body_util::Empty;
 use hyper::Request;
-// use hyper::body::Body;
 use hyper::body::Bytes;
-// use hyper::http::response::Response;
 use hyper_util::rt::TokioIo;
 use tokio::io;
 use tokio::io::AsyncWriteExt as _;
@@ -86,10 +82,20 @@ async fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
-#[test]
-fn require_network() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+// ANCHOR_END: example
+
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn require_network() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }
 // [review](https://github.com/john-cd/rust_howto/issues/859)
 // review <https://hyper.rs/>

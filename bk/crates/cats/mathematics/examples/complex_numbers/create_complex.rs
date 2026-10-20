@@ -11,9 +11,18 @@ fn main() {
     println!("Complex integer: {complex_integer}");
     println!("Complex float: {complex_float}");
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

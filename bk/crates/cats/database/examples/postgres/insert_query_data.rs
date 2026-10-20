@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
+//! This example demonstrates inserting rows into PostgreSQL and querying the
+//! inserted data back.
 use std::collections::HashMap;
 use std::fmt::Write;
 
@@ -15,7 +17,7 @@ struct Author {
     country: String,
 }
 
-pub fn main() -> Result<(), Error> {
+fn main() -> Result<(), Error> {
     // Connect to the PostgreSQL database using the provided connection string.
     // The connection URL is formatted as
     // postgresql://<user>:<password>@<host>/<db>,
@@ -32,7 +34,8 @@ pub fn main() -> Result<(), Error> {
     // Bulk insert the authors into the database to prevent N+1 queries.
     // Build the query string and the parameters vector.
     if !authors.is_empty() {
-        let mut query = String::from("INSERT INTO author (name, country) VALUES ");
+        let mut query =
+            String::from("INSERT INTO author (name, country) VALUES ");
         let mut params: Vec<&(dyn ToSql + Sync)> = Vec::new();
 
         for (i, (key, value)) in authors.iter().enumerate() {
@@ -63,3 +66,7 @@ pub fn main() -> Result<(), Error> {
     Ok(())
 }
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), Error> {
+    main()
+}

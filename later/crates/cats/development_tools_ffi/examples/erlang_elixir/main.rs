@@ -1,4 +1,5 @@
-#[cfg(feature = "erlang")]
 mod rustler;
 
-fn main() {}
+fn main() {
+    rustler::run();
+}

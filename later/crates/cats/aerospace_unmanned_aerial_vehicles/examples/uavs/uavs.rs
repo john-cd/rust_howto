@@ -1,5 +1,5 @@
 #![allow(dead_code)]
-use std::time::Duration;
+// ANCHOR: example
 
 use tello::Drone;
 use tello::Message;
@@ -7,7 +7,6 @@ use tello::Package;
 use tello::PackageData;
 use tello::ResponseMsg;
 
-// ANCHOR: example
 fn connect_drone() -> Result<(), String> {
     let mut drone = Drone::new("192.168.10.1:8889");
     drone.connect(11111);
@@ -26,15 +25,25 @@ fn connect_drone() -> Result<(), String> {
             _ => (),
         }
     }
-    ::std::thread::sleep(Duration::new(0, 1_000_000_000u32 / 20));
     Ok(())
+}
+
+fn main() {
+    let _ = connect_drone();
 }
 // ANCHOR_END: example
 
-fn main() {}
-
-#[test]
-#[ignore = "requires real drone"]
-fn test() {
-    let _ = connect_drone();
+pub fn run() {
+    main();
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    #[ignore = "requires real drone"]
+    fn test_main() {
+        main();
+    }
+}
+// TODO

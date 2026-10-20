@@ -32,11 +32,20 @@ fn main() -> Result<(), Error> {
     println!("{addr:?} says {input}");
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[ignore = "Needs review"]
-#[test]
-fn test() {
-    println!("{:?}", main());
+pub fn run() -> Result<(), Error> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[ignore = "Needs review"]
+    #[test]
+    fn test_main() {
+        println!("{:?}", main());
+    }
 }
 // [finish; listens to a connection forever](https://github.com/john-cd/rust_howto/issues/166)

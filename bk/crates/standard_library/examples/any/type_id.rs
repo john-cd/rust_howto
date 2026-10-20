@@ -41,9 +41,18 @@ fn main() {
     // versions.
     println!("{}", std::any::type_name::<String>());
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

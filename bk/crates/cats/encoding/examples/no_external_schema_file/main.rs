@@ -1,4 +1,35 @@
+use clap::Parser;
+use clap::Subcommand;
+
 mod postcard;
 mod rkyv;
 
-fn main() {}
+#[derive(Parser)]
+struct Cli {
+    #[command(subcommand)]
+    command: Option<Commands>,
+}
+
+#[derive(Subcommand)]
+enum Commands {
+    #[command(name = "postcard")]
+    Postcard,
+    #[command(name = "rkyv")]
+    Rkyv,
+}
+
+fn main() -> anyhow::Result<()> {
+    let cli = Cli::parse();
+
+    if let Some(command) = cli.command {
+        match command {
+            Commands::Postcard => {
+                postcard::run();
+            }
+            Commands::Rkyv => {
+                rkyv::run()?;
+            }
+        }
+    }
+    Ok(())
+}

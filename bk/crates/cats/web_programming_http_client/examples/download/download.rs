@@ -35,11 +35,20 @@ async fn main() -> Result<()> {
     copy(&mut content.as_bytes(), &mut dest)?;
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn require_network() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+pub fn run() -> Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn require_network() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }
 // [review; noplayground because of network use. rewrite?](https://github.com/john-cd/rust_howto/issues/225)

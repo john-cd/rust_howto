@@ -22,6 +22,8 @@ use frunk::hlist;
 use frunk::hlist_pat;
 use frunk::monoid::combine_all;
 
+type Sculpted = frunk::HList![f32, i32, &'static str];
+
 fn main() {
     // -----------------------------------------------------------------------
     // HList: a statically typed heterogeneous list.
@@ -29,7 +31,7 @@ fn main() {
     // -----------------------------------------------------------------------
 
     // Build an HList with the `hlist!` macro.
-    let h = hlist![42i32, "hello", 3.14f64, true];
+    let h = hlist![42i32, "hello", std::f64::consts::PI, true];
 
     // Destructure with `hlist_pat!`.
     let hlist_pat![n, s, f, b] = h;
@@ -54,8 +56,7 @@ fn main() {
 
     // Sculpt: re-order / select a subset of types from an HList.
     let h5 = hlist![9000i32, "joe", 41.0f32, true];
-    let (reshaped, remainder2): (frunk::HList![f32, i32, &str], _) =
-        h5.sculpt();
+    let (reshaped, remainder2): (Sculpted, _) = h5.sculpt();
     assert_eq!(reshaped, hlist![41.0f32, 9000i32, "joe"]);
     assert_eq!(remainder2, hlist![true]);
 
@@ -75,7 +76,8 @@ fn main() {
     let p: Point = frunk::from_generic(h6);
     assert_eq!(p, Point { x: 1.0, y: 2.0 });
 
-    // Convert a struct into its HList representation with `frunk::into_generic`.
+    // Convert a struct into its HList representation with
+    // `frunk::into_generic`.
     let p2 = Point { x: 3.0, y: 4.0 };
     let h7 = frunk::into_generic(p2);
     assert_eq!(h7, hlist![3.0f64, 4.0f64]);
@@ -101,7 +103,14 @@ fn main() {
         z: 3.0,
     };
     let v: Vec3 = frunk::convert_from(pt);
-    assert_eq!(v, Vec3 { x: 1.0, y: 2.0, z: 3.0 });
+    assert_eq!(
+        v,
+        Vec3 {
+            x: 1.0,
+            y: 2.0,
+            z: 3.0
+        }
+    );
 
     // -----------------------------------------------------------------------
     // LabelledGeneric: struct-to-struct conversion that checks field *names*.
@@ -138,7 +147,7 @@ fn main() {
     // `transform_from` additionally handles reordered fields via `Sculptor`.
     #[derive(LabelledGeneric, Debug, PartialEq)]
     struct ArchivedUser<'a> {
-        age: usize,        // fields in a different order
+        age: usize, // fields in a different order
         last_name: &'a str,
         first_name: &'a str,
     }
@@ -163,10 +172,19 @@ fn main() {
 
     println!("All frunk assertions passed!");
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }
 // [finish example](https://github.com/john-cd/rust_howto/issues/1318)

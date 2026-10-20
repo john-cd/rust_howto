@@ -38,9 +38,18 @@ fn main() {
     assert!(map.contains_key(&key));
     assert_eq!(*map.get(&key).unwrap(), "e");
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

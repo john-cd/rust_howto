@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
+// This example demonstrates AES-GCM-SIV encryption and decryption with the
+// `aes-gcm-siv` crate.
 use aes_gcm_siv::Aes256GcmSiv;
 use aes_gcm_siv::Key;
 use aes_gcm_siv::Nonce;
@@ -53,10 +55,20 @@ fn main() -> Result<(), aes_gcm_siv::Error> {
     assert_eq!(plaintext, decrypted_ciphertext.as_slice());
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    main().map_err(|_| anyhow::anyhow!("Failed encryption or decryption"))?;
-    Ok(())
+pub fn run() -> Result<(), aes_gcm_siv::Error> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> anyhow::Result<()> {
+        main()
+            .map_err(|_| anyhow::anyhow!("Failed encryption or decryption"))?;
+        Ok(())
+    }
 }

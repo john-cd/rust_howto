@@ -50,9 +50,18 @@ fn main() {
         println!("In slotmap: {}; in secondary map: {}", val, sec[key]);
     }
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

@@ -173,8 +173,16 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() -> Result<()> {
-    main()?;
-    Ok(())
+pub fn run() -> Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> Result<()> {
+        main()?;
+        Ok(())
+    }
 }

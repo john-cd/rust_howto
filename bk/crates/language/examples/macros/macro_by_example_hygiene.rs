@@ -32,9 +32,18 @@ fn main() {
     // The function defined in the macro is available at the invocation site:
     f();
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

@@ -1,7 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-// COMING SOON
-// ANCHOR_END: example
 //! This example demonstrates how to use the `fake` crate to generate fake data
 //! for testing. It covers basic usage, generating data for custom structs, and
 //! using different data providers.
@@ -131,8 +129,18 @@ fn main() {
     println!("User Agents: {user_agents:#?}");
 }
 
-#[test]
-fn test() {
+// ANCHOR_END: example
+
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }
 // [review https://docs.rs/fake/4.2.0/fake/index.html](https://github.com/john-cd/rust_howto/issues/1124)

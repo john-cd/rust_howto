@@ -118,9 +118,17 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+pub fn run() -> Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }
 // [review; https://docs.wasmtime.dev/introduction.html https://docs.rs/wasmtime/latest/wasmtime/](https://github.com/john-cd/rust_howto/issues/855)

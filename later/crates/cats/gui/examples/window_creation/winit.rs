@@ -1,6 +1,4 @@
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR: example
 // Trait that handles the application events:
 use winit::application::ApplicationHandler;
 // An event from a `Window`: Resized, Moved, etc.
@@ -64,7 +62,7 @@ impl ApplicationHandler for App {
     }
 }
 
-pub fn main() -> anyhow::Result<()> {
+fn main() -> anyhow::Result<()> {
     let event_loop = EventLoop::new()?;
 
     // `ControlFlow::Poll` continuously runs the event loop, even if the OS
@@ -83,5 +81,25 @@ pub fn main() -> anyhow::Result<()> {
     event_loop.run_app(&mut app)?;
     Ok(())
 }
+// ANCHOR_END: example
 
-// // [review; https://github.com/rust-windowing/winit/tree/master/examples](https://github.com/john-cd/rust_howto/issues/794)
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires interactive example runtime"]
+    fn test_main() {
+        main().unwrap();
+    }
+
+    // TODO proper test
+    #[test]
+    fn compile_event_loop() {
+        let _event_loop = EventLoop::new().expect("create event loop");
+    }
+}

@@ -14,9 +14,18 @@ fn main() {
     println!("a: {a}, b: {b}");
     assert_eq!(a, b);
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

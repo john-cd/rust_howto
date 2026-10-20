@@ -10,9 +10,18 @@ fn main() {
     let absent_number: Option<i32> = None;
     println!("{absent_number:?}");
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

@@ -1,7 +1,7 @@
 #![allow(dead_code)]
-// // ANCHOR: example
+// ANCHOR: example
 // // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR_END: example
 // //! This example demonstrates how to create a simple window with a text
 // widget using the Fyrox game engine. //!
 // //! It creates a window with the title "Hello, Fyrox!" and a text widget that
@@ -65,9 +65,20 @@
 //         }
 //     });
 // }
+fn main() {}
 
-// #[test]
-// fn test() {
-//     main();
-// }
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires interactive example runtime"]
+    fn test_main() {
+        main();
+    }
+}
 // // [finish](https://github.com/john-cd/rust_howto/issues/768)

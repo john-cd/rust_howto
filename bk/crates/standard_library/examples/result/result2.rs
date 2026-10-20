@@ -40,9 +40,18 @@ fn main() {
     println!("Final value: {}", result.unwrap_or(-1));
     // You could also write: .or_else(|_| Ok(-1));
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

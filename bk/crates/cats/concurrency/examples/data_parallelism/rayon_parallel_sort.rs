@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
-use rand::Rng;
+use rand::RngExt;
 use rand::distr::Alphanumeric;
 use rand::rng;
 use rayon::prelude::*;
@@ -19,9 +19,18 @@ fn main() {
     vec.par_sort_unstable();
     println!("{vec:?}");
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

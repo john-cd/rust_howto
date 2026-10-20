@@ -124,9 +124,18 @@ fn main() {
     concatenate_with_write_macro();
     concatenate_with_chain();
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

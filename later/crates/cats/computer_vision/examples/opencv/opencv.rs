@@ -10,7 +10,7 @@ use opencv::core::Vector;
 use opencv::imgcodecs;
 use opencv::imgproc;
 use opencv::prelude::*;
-use rand::Rng;
+use rand::RngExt;
 
 /// This example demonstrates how to load an image, convert it to grayscale, and
 /// save the result using the `opencv` crate.
@@ -19,8 +19,9 @@ use rand::Rng;
 /// Windows.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Prep: create a temporary directory:
-    if !fs::exists("temp")? {
-        fs::create_dir("temp")?;
+    let temp_dir = std::path::Path::new("temp");
+    if !temp_dir.exists() {
+        fs::create_dir(temp_dir)?;
     }
     // Prep: create a random image:
     let width = 100;
@@ -29,7 +30,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut rgb_image = RgbImage::new(width, height);
     for x in 0..width {
         for y in 0..height {
-            let (r, g, b): (u8, u8, u8) = rng.random();
+            // Generate a noisy RGB image so the grayscale conversion has
+            // something visible to transform.
+            let r = rng.random::<u8>();
+            let g = rng.random::<u8>();
+            let b = rng.random::<u8>();
             rgb_image.put_pixel(x, y, Rgb([r, g, b]));
         }
     }
@@ -53,8 +58,16 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main().unwrap();
+pub fn run() -> Result<(), Box<dyn std::error::Error>> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main().unwrap();
+    }
 }
 // [review; expand example; review https://blog.devgenius.io/rust-and-opencv-bb0467bf35ff](https://github.com/john-cd/rust_howto/issues/1079)

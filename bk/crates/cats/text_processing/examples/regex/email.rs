@@ -30,9 +30,18 @@ fn main() {
     assert_eq!(extract_login(r"More@Than@One@at.com"), None);
     assert_eq!(extract_login(r"Not an email@email"), None);
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

@@ -67,12 +67,22 @@ async fn main() -> Result<()> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[ignore = "Needs review"]
-#[test]
-fn require_network() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+pub fn run() -> Result<()> {
+    main()
 }
+
 // [flaky test](https://github.com/john-cd/rust_howto/issues/1419)
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[ignore = "Needs review"]
+    #[test]
+    fn require_network() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
+}

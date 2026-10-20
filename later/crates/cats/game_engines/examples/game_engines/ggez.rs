@@ -1,7 +1,7 @@
 #![allow(dead_code)]
-// // ANCHOR: example
+// ANCHOR: example
 // // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR_END: example
 // //! This is a simple example of using the `ggez` game engine.
 // //!
 // //! `ggez` is a lightweight game framework for Rust.
@@ -64,8 +64,22 @@
 //     ggez::event::run(&mut ctx, &mut event_loop, &mut state)
 // }
 
-// #[test]
-// fn test() {
-//     main();
-// }
-// // [finish](https://github.com/john-cd/rust_howto/issues/769)
+pub fn main() {
+    // main();
+}
+
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires interactive example runtime"]
+    fn test_main() {
+        main();
+    }
+}
+// [finish](https://github.com/john-cd/rust_howto/issues/769)

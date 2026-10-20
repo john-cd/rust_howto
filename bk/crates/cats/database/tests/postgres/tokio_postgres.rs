@@ -87,3 +87,25 @@ pub fn main() -> Result<(), tokio_postgres::Error> {
     tokio::runtime::Runtime::new().unwrap().block_on(run())
 }
 // ANCHOR_END: example
+
+#[cfg(test)]
+mod tests {
+    #[tokio::test]
+    async fn require_external_svc() -> anyhow::Result<()> {
+        let test_url = match std::env::var("TEST_PG_URL") {
+            Ok(url) => url,
+            Err(_) => {
+                eprintln!(
+                    "Skipping PostgreSQL integration test; set TEST_PG_URL to run it."
+                );
+                return Ok(());
+            }
+        };
+
+        unsafe {
+            std::env::set_var("PG_URL", test_url);
+        }
+        tokio::task::spawn_blocking(super::main).await??;
+        Ok(())
+    }
+}

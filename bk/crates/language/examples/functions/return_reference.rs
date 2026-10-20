@@ -60,9 +60,18 @@ fn main() {
     assert_eq!(use_static(), "hello");
     assert_eq!(use_const(), "hello");
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
+// This example demonstrates DER encoding and decoding with the `der` crate.
 use der::Decode;
 use der::Encode;
 use der::Sequence;
@@ -33,9 +34,18 @@ fn main() {
     // Verify that the decoded struct matches the original:
     assert_eq!(my_struct, decoded_struct);
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

@@ -22,14 +22,23 @@ fn main() {
     let contents = contents_maybe.unwrap_or_else(String::new);
     println!("{contents}");
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    if !std::fs::exists("temp")? {
-        std::fs::create_dir("temp")?;
-    }
-    fs::write("temp/poem.txt", b" Lorem ipsum ")?;
+pub fn run() {
     main();
-    Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> anyhow::Result<()> {
+        if !std::fs::exists("temp")? {
+            std::fs::create_dir("temp")?;
+        }
+        fs::write("temp/poem.txt", b" Lorem ipsum ")?;
+        main();
+        Ok(())
+    }
 }

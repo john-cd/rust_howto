@@ -12,9 +12,18 @@ fn main() -> std::io::Result<()> {
     // meaningful return value.
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    assert!(main().is_err());
+pub fn run() -> std::io::Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        assert!(main().is_err());
+    }
 }

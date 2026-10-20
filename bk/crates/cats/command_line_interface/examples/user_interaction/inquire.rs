@@ -31,10 +31,19 @@ fn main() {
     println!("Hello, {name}!");
     println!("Your favorite programming language is {favorite_language}.");
 }
+
 // ANCHOR_END: example
 
-#[test]
-#[ignore = "Requires user input"]
-fn require_user_input() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    #[ignore = "Requires user input"]
+    fn require_user_input() {
+        main();
+    }
 }

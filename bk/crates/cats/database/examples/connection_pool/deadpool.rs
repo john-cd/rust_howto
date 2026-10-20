@@ -64,9 +64,18 @@ async fn main() -> anyhow::Result<()> {
     println!("The answer is {answer}");
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main().unwrap();
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main().unwrap();
+    }
 }

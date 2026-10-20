@@ -14,10 +14,19 @@ fn main() {
     println!("Checking if 'Carl' contains 'Carol'...");
     check_name("Carl");
 }
+
 // ANCHOR_END: example
 
-#[should_panic]
-#[test]
-fn test() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[should_panic]
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

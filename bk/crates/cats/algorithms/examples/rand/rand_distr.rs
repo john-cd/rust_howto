@@ -6,7 +6,7 @@
 //! standard deviation. The `sample` method is used to draw a random sample from
 //! the distribution.
 
-use rand::distr::Distribution;
+use rand_distr::Distribution;
 use rand_distr::Normal;
 use rand_distr::NormalError;
 
@@ -18,10 +18,19 @@ fn main() -> Result<(), NormalError> {
     println!("{v} is from a N(2, 3) distribution");
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+pub fn run() -> Result<(), NormalError> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }

@@ -9,8 +9,7 @@
 //! config = "0.15.6" # Or latest
 //! ```
 
-#[test]
-fn test_config() -> anyhow::Result<(), ::config::ConfigError> {
+fn main() -> anyhow::Result<(), ::config::ConfigError> {
     // The `Environment::source` method can be used when you want to test
     // your code, without the need to change the actual system
     // environment variables.
@@ -31,3 +30,16 @@ fn test_config() -> anyhow::Result<(), ::config::ConfigError> {
     Ok(())
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main().unwrap();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_config() -> anyhow::Result<(), ::config::ConfigError> {
+        main()
+    }
+}

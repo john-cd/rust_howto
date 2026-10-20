@@ -30,7 +30,10 @@ The Rust geoscience ecosystem is developing, and while not as mature as Python's
 
 ## Related Topics
 
-FIXME
+- Geospatial data processing.
+- Mapping and visualization.
+- Coordinate systems and projections.
+- Environmental and scientific applications.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

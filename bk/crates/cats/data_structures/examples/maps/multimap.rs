@@ -41,11 +41,20 @@ fn main() -> Result<()> {
     }
     Ok(())
 }
+
 // ANCHOR_END: example
 
-#[test]
-#[ignore]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+pub fn run() -> Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    #[ignore]
+    fn test_main() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
+    }
 }
