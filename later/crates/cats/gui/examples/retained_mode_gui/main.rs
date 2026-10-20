@@ -50,7 +50,7 @@ fn main() -> anyhow::Result<()> {
             }
             #[cfg(feature = "iced")]
             Commands::Iced => {
-                iced::run();
+                iced::run()?;
             }
             #[cfg(feature = "slint")]
             Commands::Slint => {
@@ -62,7 +62,7 @@ fn main() -> anyhow::Result<()> {
             }
             #[cfg(feature = "xilem")]
             Commands::Xilem => {
-                xilem::run();
+                xilem::run()?;
             }
         }
     }
