@@ -1,42 +1,41 @@
 #![allow(dead_code)]
-// // ANCHOR: example
-// use pem_rfc7468::LineEnding;
-// use pem_rfc7468::decode_vec;
-// use pem_rfc7468::encode_string;
+// ANCHOR: example
+//! Encode and decode PEM data with the `pem_rfc7468` crate.
+//!
+//! This example converts raw DER bytes into a PEM document and parses them
+//! back to verify the round-trip.
 
-// fn main() -> Result<(), Box<dyn std::error::Error>> {
-//     // Example DER-encoded data (replace with your actual data)
-//     let der_data = vec![
-//         0x30, 0x82, 0x01, 0x22, 0x30, 0x0D, 0x06, 0x09, 0x2A, 0x86, 0x48,
-// 0x86,         0xF7, 0x0D, 0x01, 0x01, 0x01, 0x05, 0x00, 0x04, 0x20, 0x41,
-// 0x20, 0x42,         0x20, 0x43, 0x20, 0x20, 0x48,
-//     ];
+use pem_rfc7468::LineEnding;
+use pem_rfc7468::decode_vec;
+use pem_rfc7468::encode_string;
 
-//     // Encode DER data to PEM
-//     let type_label = "MY_DATA";
-//     let pem_encoded =
-//         encode_string(type_label, LineEnding::default(), &der_data)?;
-//     // Specifies the line ending for PEM encoding (default is \r\n).
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let der_data = vec![0x30, 0x03, 0x02, 0x01, 0x2a];
+    let label = "TEST DATA";
 
-//     println!("PEM-encoded data:\n{pem_encoded}");
+    let pem = encode_string(label, LineEnding::default(), &der_data)?;
+    let (decoded_label, decoded_der) = decode_vec(pem.as_bytes())?;
 
-//     // Decode PEM data back to DER
-//     let (decoded_type_label, decoded_data) =
-//         decode_vec(pem_encoded.as_bytes())?;
+    println!("PEM document:\n{pem}");
+    println!("Decoded label: {decoded_label}");
+    println!("Decoded {} DER bytes", decoded_der.len());
 
-//     assert_eq!(type_label, decoded_type_label);
-//     assert_eq!(der_data, decoded_data);
+    assert_eq!(label, decoded_label);
+    assert_eq!(der_data, decoded_der);
+    Ok(())
+}
+// ANCHOR_END: example
 
-//     println!("Successfully decoded PEM data.");
+pub fn run() -> Result<(), Box<dyn std::error::Error>> {
+    main()
+}
 
-//     Ok(())
-// }
-// // ANCHOR_END: example
-
-// #[test]
-// fn test() {
-//     main();
-// }
-// // [finish](https://github.com/john-cd/rust_howto/issues/697)
-
-pub fn run() {}
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> Result<(), Box<dyn std::error::Error>> {
+        main()
+    }
+    // [finish](https://github.com/john-cd/rust_howto/issues/697)
+}

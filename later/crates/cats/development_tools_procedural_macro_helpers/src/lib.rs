@@ -3,7 +3,9 @@ extern crate proc_macro;
 use darling::FromDeriveInput;
 use proc_macro::TokenStream;
 use quote::quote;
-use syn::{parse_macro_input, DeriveInput, ItemFn};
+use syn::DeriveInput;
+use syn::ItemFn;
+use syn::parse_macro_input;
 
 // Retain the macro used by the existing `compile_macros` example.
 #[proc_macro_derive(MyMacro)]

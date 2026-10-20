@@ -1,2 +1,3 @@
 [build]
-target-dir = "../target/publish/"
+target-dir = "D:/target/rust_howto/coherent-book-tooling-commits"
+build-dir = "C:/code_build/rust_howto/coherent-book-tooling-commits"

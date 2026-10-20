@@ -1,53 +1,67 @@
 #![allow(dead_code)]
-// // ANCHOR: example
-// //COMING SOON
-// // ANCHOR_END: example
+// ANCHOR: example
+//! Build SeaORM queries from an inline entity definition.
+//!
+//! This example creates a simple active model and prints the generated SQL
+//! for an insert and select statement.
 
-// use sea_orm::prelude::*;
-// use sea_orm::{Database, EntityTrait, ModelTrait, Set};
-// use tokio::runtime::Runtime;
+use sea_orm::ActiveValue::NotSet;
+use sea_orm::ActiveValue::Set;
+use sea_orm::ColumnTrait;
+use sea_orm::DbBackend;
+use sea_orm::DbErr;
+use sea_orm::EntityTrait;
+use sea_orm::QueryFilter;
+use sea_orm::QueryTrait;
 
-// mod entity;
+mod post {
+    use sea_orm::entity::prelude::*;
 
-// use entity::prelude::*;
+    #[derive(Clone, Debug, PartialEq, Eq, DeriveEntityModel)]
+    #[sea_orm(table_name = "posts")]
+    pub struct Model {
+        #[sea_orm(primary_key)]
+        pub id: i32,
+        pub title: String,
+        pub content: String,
+    }
 
-// #[tokio::main]
-// async fn main() -> Result<(), DbErr> {
-//     // Connect to the database
-//     let db = Database::connect("sqlite://example.db").await?;
+    #[derive(Copy, Clone, Debug, EnumIter, DeriveRelation)]
+    pub enum Relation {}
 
-//     // Create a new record
-//     let new_post = post::ActiveModel {
-//         title: Set("Hello World".to_owned()),
-//         content: Set(Some("This is a new post".to_owned())),
-//         ..Default::default()
-//     };
+    impl ActiveModelBehavior for ActiveModel {}
+}
 
-//     let inserted_post = Post::insert(new_post).exec(&db).await?;
+fn main() -> Result<(), DbErr> {
+    let insert_sql = post::Entity::insert(post::ActiveModel {
+        id: NotSet,
+        title: Set("Hello SeaORM".to_owned()),
+        content: Set("Building SQL without opening a database".to_owned()),
+    })
+    .build(DbBackend::Sqlite)
+    .to_string();
 
-//     println!("Inserted post: {inserted_post:?}");
+    let select_sql = post::Entity::find()
+        .filter(post::Column::Title.contains("SeaORM"))
+        .build(DbBackend::Sqlite)
+        .to_string();
 
-//     // Read records
-//     let posts: Vec<post::Model> = Post::find().all(&db).await?;
-//     println!("All posts: {posts:?}");
+    println!("INSERT SQL: {insert_sql}");
+    println!("SELECT SQL: {select_sql}");
+    Ok(())
+}
+// ANCHOR_END: example
 
-//     // Update a record
-//     let mut post_to_update: post::ActiveModel =
-// Post::find_by_id(1).one(&db).await?.unwrap().into();     post_to_update.
-// content = Set(Some("Updated content".to_owned()));
+pub fn run() -> Result<(), DbErr> {
+    main()
+}
 
-//     let updated_post = post_to_update.update(&db).await?;
-//     println!("Updated post: {updated_post:?}");
-
-//     // Delete a record
-//     let result = Post::delete_by_id(1).exec(&db).await?;
-//     println!("Deleted post: {result:?}");
-
-//     Ok(())
-// }
-
-// #[test]
-// fn require_external_svc() {
-//     main();
-// }
-// // [finish](https://github.com/john-cd/rust_howto/issues/715)
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> Result<(), DbErr> {
+        main()
+    }
+    // [finish](https://github.com/john-cd/rust_howto/issues/715)
+}

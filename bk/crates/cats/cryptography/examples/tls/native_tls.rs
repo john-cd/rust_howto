@@ -1,37 +1,32 @@
 #![allow(dead_code)]
-// // ANCHOR: example
-// use hyper::Uri;
-// use hyper::client;
-// use hyper_tls::HttpsConnector;
-// use tokio::runtime::Runtime;
+// ANCHOR: example
+//! Build a platform TLS connector with `native-tls`.
+//!
+//! This example constructs a `TlsConnector` and prints a note about when to
+//! use it with a TCP stream.
 
-// fn main() -> anyhow::Result<()> {
-//     // Create a new runtime
-//     let rt = Runtime::new().unwrap();
+use native_tls::TlsConnector;
 
-//     rt.block_on(async {
-//         // Create an HTTPS connector
-//         let https = HttpsConnector::new();
-//         let client = Client::builder().build::<_, hyper::body::Body>(https);
+fn main() -> anyhow::Result<()> {
+    let _connector = TlsConnector::builder().build()?;
 
-//         // Create a request to fetch data from an HTTPS endpoint
-//         let uri: Uri = "https://www.example.com".parse()?;
-//         match client.get(uri).await {
-//             Ok(response) => {
-//                 println!("Response status: {}", response.status());
-//             }
-//             Err(e) => {
-//                 eprintln!("Error: {e}");
-//             }
-//         }
-//     });
-//     Ok(())
-// }
-// // ANCHOR_END: example
+    println!(
+        "Built a native-tls connector. Use it with a TCP stream when you need a platform TLS implementation."
+    );
+    Ok(())
+}
+// ANCHOR_END: example
 
-// #[test]
-// fn test() -> anyhow::Result<()> {
-//     main()?;
-//     Ok(())
-// }
-// // [finish](https://github.com/john-cd/rust_howto/issues/696)
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> anyhow::Result<()> {
+        main()
+    }
+    // [finish](https://github.com/john-cd/rust_howto/issues/696)
+}

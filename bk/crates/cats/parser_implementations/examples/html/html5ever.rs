@@ -1,67 +1,97 @@
 #![allow(dead_code)]
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
-// //! # `html5ever` example
-// //!
-// //! `html5ever` is an HTML parser developed as part of the Servo project.
-// //! It can parse and serialize HTML according to the WHATWG specs (aka
-// //! "HTML5"). `html5ever`` uses callbacks to manipulate the DOM, therefore it
-// //! does not provide any DOM tree representation itself.
-// //! It exclusively uses UTF-8 to represent strings.
-// use std::default::Default;
+// ANCHOR: example
+//! Tokenize HTML with `html5ever` and print the parsed tokens.
 
-// // Options for the parser
-// use html5ever::driver::ParseOpts;
-// use html5ever::parse_document;
-// use html5ever::tendril::TendrilSink;
-// use html5ever::tree_builder::TreeBuilder;
-// use html5ever::tree_builder::TreeBuilderOpts;
-// use html5ever::tree_builder::TreeSink;
-// // A simple thread-safe reference-counted DOM.
-// // See <https://en.wikipedia.org/wiki/Document_Object_Model>
-// use markup5ever_arcdom::ArcDom;
-// use markup5ever_arcdom::Handle;
+use std::cell::Cell;
 
-// fn main() {
-//     let html = "<html><head><title>Example</title></head><body><p>Hello,
-// world!</p></body></html>";
+use html5ever::tendril::ByteTendril;
+use html5ever::tokenizer::BufferQueue;
+use html5ever::tokenizer::CharacterTokens;
+use html5ever::tokenizer::NullCharacterToken;
+use html5ever::tokenizer::ParseError;
+use html5ever::tokenizer::TagToken;
+use html5ever::tokenizer::Token;
+use html5ever::tokenizer::TokenSink;
+use html5ever::tokenizer::TokenSinkResult;
+use html5ever::tokenizer::Tokenizer;
 
-//     // Parse the HTML document.
-//     let parser: html5ever::driver::Parser<_> =
-//         parse_document(ArcDom::default(), ParseOpts::default());
-//     let dom = parser.read_from(&mut html.as_bytes()).unwrap();
+#[derive(Clone)]
+struct TokenPrinter {
+    in_char_run: Cell<bool>,
+}
 
-//     let document = dom.document;
-//     walk(document);
-// }
+impl TokenPrinter {
+    fn is_char(&self, is_char: bool) {
+        match (self.in_char_run.get(), is_char) {
+            (false, true) => print!("text: \""),
+            (true, false) => println!("\""),
+            _ => {}
+        }
+        self.in_char_run.set(is_char);
+    }
+}
 
-// fn walk(handle: Handle) {
-//     let node = handle;
-//     match node.data {
-//         markup5ever_arcdom::NodeData::Document => {
-//             for child in node.children.borrow().iter() {
-//                 walk(child.clone());
-//             }
-//         }
-//         markup5ever_arcdom::NodeData::Element { ref name, .. } => {
-//             println!("Element: {:?}", name.local);
-//             for child in node.children.borrow().iter() {
-//                 walk(child.clone());
-//             }
-//         }
-//         markup5ever_arcdom::NodeData::Text { ref contents } => {
-//             println!("Text: {:?}", contents.borrow());
-//         }
-//         _ => {}
-//     }
-// }
+impl TokenSink for TokenPrinter {
+    type Handle = ();
 
-// #[test]
-// fn test() {
-//     main();
-// }
-// // [finish](https://github.com/john-cd/rust_howto/issues/1090)
-// // Look at
-// // <https://github.com/servo/html5ever/blob/main/rcdom/examples/html2html.rs>
-// // <https://github.com/servo/html5ever/blob/main/rcdom/examples/print-rcdom.rs>
+    fn process_token(
+        &self,
+        token: Token,
+        _line_number: u64,
+    ) -> TokenSinkResult<()> {
+        match token {
+            CharacterTokens(text) => {
+                self.is_char(true);
+                print!("{text}");
+            }
+            NullCharacterToken => {
+                self.is_char(true);
+                print!("\\0");
+            }
+            TagToken(tag) => {
+                self.is_char(false);
+                println!("tag: {:?} {}", tag.kind, tag.name);
+            }
+            ParseError(err) => {
+                self.is_char(false);
+                println!("error: {err}");
+            }
+            _ => {
+                self.is_char(false);
+            }
+        }
+        TokenSinkResult::Continue
+    }
+}
+
+fn main() {
+    let html = "<html><body><p>Hello, world!</p></body></html>";
+    let sink = TokenPrinter {
+        in_char_run: Cell::new(false),
+    };
+
+    let mut chunk = ByteTendril::new();
+    chunk.extend(html.as_bytes());
+    let input = BufferQueue::default();
+    input.push_back(chunk.try_reinterpret().expect("valid UTF-8 HTML"));
+
+    let tokenizer = Tokenizer::new(sink.clone(), Default::default());
+    let _ = tokenizer.feed(&input);
+    tokenizer.end();
+    sink.is_char(false);
+}
+// ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
+    // [finish](https://github.com/john-cd/rust_howto/issues/1090)
+}

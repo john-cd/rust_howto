@@ -1,6 +1,7 @@
 use clap::Parser;
 use clap::Subcommand;
 
+#[cfg(test)]
 static CWD_LOCK: std::sync::Mutex<()> = std::sync::Mutex::new(());
 
 mod tar_compress;
@@ -55,12 +56,14 @@ mod tests {
 
     #[test]
     fn test_compress() -> anyhow::Result<()> {
+        let _cwd_lock = CWD_LOCK.lock().unwrap();
         tar_compress::run()?;
         Ok(())
     }
 
     #[test]
     fn test_decompress() -> anyhow::Result<()> {
+        let _cwd_lock = CWD_LOCK.lock().unwrap();
         tar_compress::run()?;
         tar_decompress::run()?;
         Ok(())

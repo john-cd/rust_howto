@@ -1,67 +1,40 @@
 #![allow(dead_code)]
-// // ANCHOR: example
-// use std::fs::File;
-// use std::io::BufReader;
+// ANCHOR: example
+//! Build and inspect basic X.509 certificate data with the `x509_cert` crate.
+//!
+//! The example demonstrates DER encoding of names, serial numbers, and
+//! validity periods.
 
-// use chrono::Utc;
-// use rustls::internal::pemfile::certs;
-// use rustls::internal::pemfile::rsa_private_keys;
-// use x509_cert::builder::CertificateBuilder;
-// use x509_cert::builder::Profile;
-// use x509_cert::name::Name;
-// use x509_cert::serial_number::SerialNumber;
-// use x509_cert::time::Duration;
-// use x509_cert::time::Time;
+use std::str::FromStr;
+use std::time::Duration;
 
-// fn main() -> anyhow::Result<()> {
-//     // Load existing certificate and private key (replace with your actual
-//     // paths)
-//     let cert_file = File::open("path/to/your/cert.pem")?;
-//     let key_file = File::open("path/to/your/key.pem")?;
-//     let cert_reader = BufReader::new(cert_file);
-//     let key_reader = BufReader::new(key_file);
+use x509_cert::der::Encode;
+use x509_cert::name::Name;
+use x509_cert::serial_number::SerialNumber;
+use x509_cert::time::Validity;
 
-//     let certs = certs(&mut cert_reader).unwrap();
-//     let keys = rsa_private_keys(&mut key_reader).unwrap();
+fn main() -> anyhow::Result<()> {
+    let subject = Name::from_str("CN=example.com,O=Rust HowTo,C=US")?;
+    let serial_number = SerialNumber::from(42u32);
+    let validity = Validity::from_now(Duration::from_secs(24 * 60 * 60))?;
 
-//     // Create a new certificate builder
-//     let now = Utc::now();
-//     let not_before = Time::from(now);
-//     // Valid for one year.
-//     let not_after = Time::from(now + Duration::days(365));
-//     let serial_number = SerialNumber::random();
-//     let subject = Name::build_common_name("example.com").unwrap();
-//     let issuer = subject.clone();
+    println!("Subject DER length: {}", subject.to_der()?.len());
+    println!("Serial number: {serial_number}");
+    println!("Validity DER length: {}", validity.to_der()?.len());
+    Ok(())
+}
+// ANCHOR_END: example
 
-//     let mut builder = CertificateBuilder::new(
-//         Profile::Server,
-//         serial_number,
-//         Validity {
-//             not_before,
-//             not_after,
-//         },
-//         issuer,
-//         subject,
-//     )?;
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
 
-//     // Add extensions (optional).
-//     // ...
-
-//     // Sign the certificate:
-//     let certificate = builder.sign(&keys[0])?;
-
-//     // Print or save the certificate (DER encoding):
-//     println!("Certificate: {:?}", certificate.to_der()?);
-
-//     Ok(())
-// }
-// // ANCHOR_END: example
-
-// #[test]
-// fn test() -> anyhow::Result<()> {
-//     main()?;
-//     Ok(())
-// }
-// // [finish](https://github.com/john-cd/rust_howto/issues/705)
-
-pub fn run() {}
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> anyhow::Result<()> {
+        main()
+    }
+    // [finish](https://github.com/john-cd/rust_howto/issues/705)
+}

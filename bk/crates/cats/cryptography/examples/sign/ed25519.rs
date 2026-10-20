@@ -1,67 +1,39 @@
 #![allow(dead_code)]
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR: example
+//! Create and verify an Ed25519 signature using `ed25519-dalek`.
+//!
+//! The example generates a new keypair, signs a message, and verifies it.
 
-// use ed25519::Keypair;
-// use ed25519::PublicKey;
-// use ed25519::SecretKey;
-// use ed25519::Signature;
-// use rand_core::OsRng;
+use ed25519_dalek::Signer;
+use ed25519_dalek::SigningKey;
+use ed25519_dalek::Verifier;
+use rand_core::OsRng;
 
-// // "Edwards Digital Signature Algorithm" (EdDSA) over "Curve25519" (as
-// // specified in RFC 8032) support library providing signature type
-// // definitions and PKCS#8 private key decoding/encoding support.
+fn main() -> anyhow::Result<()> {
+    let mut rng = OsRng;
+    let signing_key = SigningKey::generate(&mut rng);
+    let verifying_key = signing_key.verifying_key();
+    let message = b"This is a message to be signed.";
 
-// fn main() {
-//     // 1. Generate a keypair:
-//     let mut rng = OsRng;
-//     let keypair: Keypair = Keypair::generate(&mut rng);
+    let signature: ed25519::Signature = signing_key.sign(message);
+    verifying_key.verify(message, &signature)?;
 
-//     // 2. Extract public and secret keys:
-//     let public_key: PublicKey = keypair.public;
-//     let secret_key: SecretKey = keypair.secret;
+    println!("Verifying key: {:?}", verifying_key.to_bytes());
+    println!("Signature bytes: {:?}", signature.to_bytes());
+    Ok(())
+}
+// ANCHOR_END: example
 
-//     // 3. Create a message to sign:
-//     let message: &[u8] = b"This is a message to be signed.";
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
 
-//     // 4. Sign the message:
-//     let signature: Signature = secret_key.sign(message);
-
-//     // 5. Verify the signature:
-//     let is_valid: bool = public_key.verify(message, &signature);
-
-//     // 6. Print the results (as byte arrays):
-//     println!("Public Key: {:?}", public_key.to_bytes());
-//     println!("Secret Key: (Keep this SECRET!)");
-//     // Seriously, don't print this in real code!
-//     println!("Signature: {:?}", signature.to_bytes());
-//     println!("Signature is valid: {is_valid}");
-
-//     // 7. Demonstrate an invalid signature (for testing):
-//     let different_message: &[u8] = b"A different message.";
-//     let invalid_signature: Signature = secret_key.sign(different_message);
-//     let is_invalid: bool = public_key.verify(message, &invalid_signature);
-//     println!("Invalid signature test: {is_invalid}");
-
-//     // Example of using from_bytes (error handling included):
-//     let public_key_bytes = public_key.to_bytes();
-//     let recovered_public_key = PublicKey::from_bytes(&public_key_bytes);
-//     match recovered_public_key {
-//         Ok(pk) => println!("Recovered public key: {:?}", pk.to_bytes()),
-//         Err(e) => println!("Error recovering public key: {e}"),
-//     }
-
-//     let signature_bytes = signature.to_bytes();
-//     let recovered_signature = Signature::from_bytes(&signature_bytes);
-//     match recovered_signature {
-//         Ok(sig) => println!("Recovered signature: {:?}", sig.to_bytes()),
-//         Err(e) => println!("Error recovering signature: {e}"),
-//     }
-// }
-
-// #[test]
-// fn test() {
-//     main();
-// }
-// // [finish](https://github.com/john-cd/rust_howto/issues/1084)
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() -> anyhow::Result<()> {
+        main()
+    }
+    // [finish](https://github.com/john-cd/rust_howto/issues/1084)
+}

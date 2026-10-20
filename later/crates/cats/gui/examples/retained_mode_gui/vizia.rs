@@ -30,8 +30,7 @@ pub fn main() {
         AppData { count: 0 }.build(cx);
 
         VStack::new(cx, |cx| {
-            Label::new(cx, AppData::count)
-                .font_size(30.0);
+            Label::new(cx, AppData::count).font_size(30.0);
 
             HStack::new(cx, |cx| {
                 Button::new(cx, |cx| Label::new(cx, "Increment"))
