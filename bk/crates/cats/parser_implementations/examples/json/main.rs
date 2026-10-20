@@ -1,5 +1,41 @@
+use clap::Parser;
+use clap::Subcommand;
+
 mod json5;
 mod serde_json;
 mod simd_json;
 
-fn main() {}
+#[derive(Parser)]
+struct Cli {
+    #[command(subcommand)]
+    command: Option<Commands>,
+}
+
+#[derive(Subcommand)]
+enum Commands {
+    #[command(name = "json5")]
+    Json5,
+    #[command(name = "serde_json")]
+    SerdeJson,
+    #[command(name = "simd_json")]
+    SimdJson,
+}
+
+fn main() -> anyhow::Result<()> {
+    let cli = Cli::parse();
+
+    if let Some(command) = cli.command {
+        match command {
+            Commands::Json5 => {
+                json5::run();
+            }
+            Commands::SerdeJson => {
+                serde_json::run().map_err(|e| anyhow::anyhow!("{}", e))?;
+            }
+            Commands::SimdJson => {
+                simd_json::run();
+            }
+        }
+    }
+    Ok(())
+}

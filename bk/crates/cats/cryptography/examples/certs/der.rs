@@ -34,13 +34,18 @@ fn main() {
     // Verify that the decoded struct matches the original:
     assert_eq!(my_struct, decoded_struct);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

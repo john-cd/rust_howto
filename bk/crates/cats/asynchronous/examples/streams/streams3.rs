@@ -20,7 +20,7 @@ use tokio::time;
 async fn fetch_data(id: u32) -> Result<String, String> {
     // Simulate network delay:
     time::sleep(Duration::from_millis(100)).await;
-    if id % 3 == 0 {
+    if id.is_multiple_of(3) {
         Err(format!("Error fetching data for id {id}"))
     } else {
         Ok(format!("Data for id {id}"))
@@ -76,13 +76,18 @@ async fn main() {
 
     println!("Filtered stream results: {filtered:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

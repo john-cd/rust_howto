@@ -18,13 +18,18 @@ fn main() {
     println!("Mean of the data is {mean:?}");
     assert_eq!(mean, Some(5.4));
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

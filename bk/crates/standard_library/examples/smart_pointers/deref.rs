@@ -24,13 +24,18 @@ fn main() {
     // We can also explicitly dereference:
     println!("Uppercase: {}", (*wrapped).to_uppercase());
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

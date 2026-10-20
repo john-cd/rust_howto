@@ -1,5 +1,9 @@
 // ANCHOR: example
-use parley::{Alignment, AlignmentOptions, FontContext, LayoutContext, StyleProperty};
+use parley::Alignment;
+use parley::AlignmentOptions;
+use parley::FontContext;
+use parley::LayoutContext;
+use parley::StyleProperty;
 
 // Parley is a rich text layout engine.
 // It handles complex text shaping, line breaking, and bidirectional text.
@@ -41,3 +45,18 @@ pub fn main() {
     }
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires an interactive example runtime"]
+    fn test_main() {
+        main();
+    }
+}

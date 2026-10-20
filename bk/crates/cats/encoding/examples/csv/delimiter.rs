@@ -33,13 +33,18 @@ fn main() -> Result<(), Error> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), Error> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

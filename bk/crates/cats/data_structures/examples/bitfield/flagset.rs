@@ -50,14 +50,19 @@ fn main() {
 
     assert_eq!(Container::new(None).0.bits(), 0b000);
 }
+
 // Adapted from <https://docs.rs/flagset>
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

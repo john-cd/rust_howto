@@ -134,7 +134,12 @@ fn main() -> anyhow::Result<()> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
 
 #[cfg(target_os = "linux")]
 #[cfg(test)]
@@ -142,7 +147,7 @@ mod tests {
     use super::*;
     #[test]
     #[cfg(target_os = "linux")]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

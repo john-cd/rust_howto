@@ -1,6 +1,8 @@
 // ANCHOR: example
-use tao::event::{Event, WindowEvent};
-use tao::event_loop::{ControlFlow, EventLoop};
+use tao::event::Event;
+use tao::event::WindowEvent;
+use tao::event_loop::ControlFlow;
+use tao::event_loop::EventLoop;
 use tao::window::WindowBuilder;
 
 // Tao is a cross-platform window manager library.
@@ -34,3 +36,18 @@ pub fn main() {
     });
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires an interactive example runtime"]
+    fn test_main() {
+        main();
+    }
+}

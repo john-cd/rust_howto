@@ -8,14 +8,19 @@ fn main() {
     );
     panic!("Crash and burn");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[should_panic]
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

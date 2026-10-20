@@ -122,4 +122,3 @@ Instead, you may:
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-

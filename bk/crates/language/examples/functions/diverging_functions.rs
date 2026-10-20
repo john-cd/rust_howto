@@ -25,14 +25,19 @@ fn forever() -> ! {
 fn main() {
     foo(); // This will panic.
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[should_panic]
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

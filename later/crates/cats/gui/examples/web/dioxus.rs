@@ -1,4 +1,5 @@
 // ANCHOR: example
+#[cfg(feature = "dioxus")]
 use dioxus::prelude::*;
 
 // Dioxus is a cross-platform UI framework for Rust.
@@ -21,5 +22,8 @@ fn App() -> Element {
             button { onclick: move |_| count -= 1, "-" }
         }
     }
+}
+pub fn run() {
+    main();
 }
 // ANCHOR_END: example

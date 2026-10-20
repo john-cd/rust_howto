@@ -20,7 +20,6 @@ use lambda_runtime::LambdaEvent;
 use lambda_runtime::service_fn;
 use serde::Deserialize;
 use serde::Serialize;
-use tracing_subscriber;
 
 #[derive(Deserialize)]
 struct Request {
@@ -53,12 +52,19 @@ async fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
+pub fn run() -> anyhow::Result<()> {
+    main().map_err(|e| anyhow::anyhow!("{e}"))?;
+    Ok(())
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
-    fn require_network() {
-        // main(); // TODO test removed to prevent lambda running directly
+    #[ignore = "requires Lambda runtime"]
+    fn test_main() {
+        main().unwrap();
     }
 }
 // [finish](https://github.com/john-cd/rust_howto/issues/878)

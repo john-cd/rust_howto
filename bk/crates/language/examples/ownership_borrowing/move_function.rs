@@ -29,13 +29,18 @@ fn main() {
     let s3 = consume_and_return(s2);
     println!("{s3}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

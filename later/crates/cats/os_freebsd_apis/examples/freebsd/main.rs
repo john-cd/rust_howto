@@ -1,3 +1,5 @@
 mod freebsd;
 
-fn main() {}
+fn main() {
+    freebsd::run();
+}

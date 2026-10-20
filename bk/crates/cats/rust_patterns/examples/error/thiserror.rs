@@ -36,13 +36,18 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Err(DataStoreError::Unknown)?;
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<(), Box<dyn std::error::Error>> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         let res = main();
         println!("{res:?}");
         assert!(res.is_err())

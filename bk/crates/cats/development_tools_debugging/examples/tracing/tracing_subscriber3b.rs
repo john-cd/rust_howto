@@ -74,13 +74,18 @@ fn main() -> anyhow::Result<()> {
     tracing::info!("This will be logged by all layers.");
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         use std::fs;
         if !std::path::Path::new("temp").exists() {
             fs::create_dir("temp").unwrap();

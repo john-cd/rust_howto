@@ -1,7 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-// COMING SOON
-// ANCHOR_END: example
 //! Pingora example.
 //!
 //! Pingora is a high-performance and low-level async multithreaded library that
@@ -38,11 +36,21 @@ fn main() {
     my_server.bootstrap();
     my_server.run_forever();
 }
+// ANCHOR_END: example
 
-#[ignore = "Needs review"]
-#[test]
-fn require_network() {
+pub fn run() {
     main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[ignore = "Needs review"]
+    #[test]
+    fn require_network() {
+        main();
+    }
 }
 // [finish](https://github.com/john-cd/rust_howto/issues/812)
 // <https://github.com/cloudflare/pingora/blob/main/pingora/examples/server.rs>

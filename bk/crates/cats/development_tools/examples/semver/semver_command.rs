@@ -1,5 +1,5 @@
 #![allow(dead_code)]
-#![cfg(not(windows))]
+#![cfg(not(windows))] // TODO make work on Windows
 // ANCHOR: example
 use std::process::Command;
 
@@ -47,13 +47,18 @@ fn main() -> Result<()> {
     println!("{parsed_version:?}");
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

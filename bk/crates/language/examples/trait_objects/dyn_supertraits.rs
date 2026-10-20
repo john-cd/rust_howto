@@ -48,13 +48,18 @@ fn main() {
     let greet_obj: &dyn Greet = &person;
     say_hello_and_goodbye(greet_obj);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

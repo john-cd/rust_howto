@@ -26,13 +26,18 @@ fn main() {
     s1.push('!');
     assert_ne!(s1, s2);
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

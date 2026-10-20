@@ -153,13 +153,18 @@ fn main() {
     // We could also write:
     let _map2: StringMap<String> = StringMap::new();
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

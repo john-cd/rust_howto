@@ -57,13 +57,18 @@ fn main() {
     assert_eq!(Six::USIZE, 6);
     assert_eq!(buf1.capacity(), buf2.capacity());
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

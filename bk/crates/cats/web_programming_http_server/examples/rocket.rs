@@ -1,6 +1,5 @@
-// // ANCHOR: example
+// ANCHOR: example
 // // COMING SOON
-// // ANCHOR_END: example
 // //! This is a simple example of a Rocket web server.
 // //!
 // //! It defines a single route that returns "Hello, world!" when accessed.
@@ -15,14 +14,20 @@
 //     rocket::build().mount("/", routes![hello])
 // }
 
-// #[test]
-// fn require_network() {
-// }
 // // [Implement Rocket Hello World and route mounting](https://github.com/john-cd/rust_howto/issues/869)
 
 fn main() {
-    // TODO implement the Rocket example; see https://github.com/john-cd/rust_howto/issues/869
-    println!(
-        "rocket example: a web framework for Rust (see full implementation in the book)"
-    );
+    // TODO
 }
+// ANCHOR_END: example
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main() {
+        main();
+    }
+}
+// TODO implement the Rocket example; see https://github.com/john-cd/rust_howto/issues/869

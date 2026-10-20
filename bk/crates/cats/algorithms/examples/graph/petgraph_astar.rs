@@ -27,7 +27,7 @@ fn main() {
         |node| {
             let (x, y) = graph[node];
             let (ex, ey) = graph[e];
-            (x.abs_diff(ex) + y.abs_diff(ey)) as u32
+            x.abs_diff(ex) + y.abs_diff(ey)
         },
     );
 
@@ -42,13 +42,18 @@ fn main() {
         println!("No path found.");
     }
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

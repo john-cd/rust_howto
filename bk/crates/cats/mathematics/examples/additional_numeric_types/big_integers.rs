@@ -21,13 +21,18 @@ fn main() {
     println!("100! equals {}", factorial(100));
     assert_eq!(factorial(100).to_string().len(), 158); // factorial(100) is a 158-digit number
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

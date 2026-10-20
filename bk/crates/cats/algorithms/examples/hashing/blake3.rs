@@ -55,13 +55,18 @@ fn main() {
     output_reader.fill(&mut output); // OutputReader also implements Read and Seek.
     println!("Output: {output:x?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

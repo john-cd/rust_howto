@@ -35,8 +35,11 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-#[ignore = "later"]
-fn test() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_main() {
+        main();
+    }
 }

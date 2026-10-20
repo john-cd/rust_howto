@@ -1,5 +1,11 @@
 // ANCHOR: example
-use cosmic_text::{Attrs, Buffer, Color, FontSystem, Metrics, Shaping, SwashCache};
+use cosmic_text::Attrs;
+use cosmic_text::Buffer;
+use cosmic_text::Color;
+use cosmic_text::FontSystem;
+use cosmic_text::Metrics;
+use cosmic_text::Shaping;
+use cosmic_text::SwashCache;
 
 // Advanced text handling in a generic way.
 // `cosmic_text` provides abstractions for shaping, font discovery,
@@ -24,10 +30,10 @@ pub fn main() {
     let mut buffer = Buffer::new(&mut font_system, metrics);
 
     // Set buffer size
-    buffer.set_size(&mut font_system, Some(800.0), Some(600.0));
+    buffer.set_size(Some(800.0), Some(600.0));
 
     // Set text with attributes and shaping strategy
-    buffer.set_text(&mut font_system, text, &attrs, Shaping::Advanced);
+    buffer.set_text(text, &attrs, Shaping::Advanced, None);
 
     // Shape text for rendering
     buffer.shape_until_scroll(&mut font_system, true);
@@ -46,3 +52,18 @@ pub fn main() {
     );
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires an interactive example runtime"]
+    fn test_main() {
+        main();
+    }
+}

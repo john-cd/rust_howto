@@ -42,13 +42,18 @@ fn main() {
         }
     });
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         use std::fs;
         if !fs::exists("temp").unwrap() {
             fs::create_dir("temp").unwrap();

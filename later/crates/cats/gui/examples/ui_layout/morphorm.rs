@@ -20,11 +20,31 @@ pub struct SimpleCache {
 
 impl Cache for SimpleCache {
     type Node = Entity;
-    fn width(&self, node: &Self::Node) -> f32 { self.rects.get(node).map(|r| r.2).unwrap_or(0.0) }
-    fn height(&self, node: &Self::Node) -> f32 { self.rects.get(node).map(|r| r.3).unwrap_or(0.0) }
-    fn posx(&self, node: &Self::Node) -> f32 { self.rects.get(node).map(|r| r.0).unwrap_or(0.0) }
-    fn posy(&self, node: &Self::Node) -> f32 { self.rects.get(node).map(|r| r.1).unwrap_or(0.0) }
-    fn set_bounds(&mut self, node: &Self::Node, x: f32, y: f32, w: f32, h: f32) {
+
+    fn width(&self, node: &Self::Node) -> f32 {
+        self.rects.get(node).map(|r| r.2).unwrap_or(0.0)
+    }
+
+    fn height(&self, node: &Self::Node) -> f32 {
+        self.rects.get(node).map(|r| r.3).unwrap_or(0.0)
+    }
+
+    fn posx(&self, node: &Self::Node) -> f32 {
+        self.rects.get(node).map(|r| r.0).unwrap_or(0.0)
+    }
+
+    fn posy(&self, node: &Self::Node) -> f32 {
+        self.rects.get(node).map(|r| r.1).unwrap_or(0.0)
+    }
+
+    fn set_bounds(
+        &mut self,
+        node: &Self::Node,
+        x: f32,
+        y: f32,
+        w: f32,
+        h: f32,
+    ) {
         self.rects.insert(*node, (x, y, w, h));
     }
 }
@@ -48,6 +68,7 @@ pub struct ChildIter<'a> {
 
 impl<'a> Iterator for ChildIter<'a> {
     type Item = &'a Entity;
+
     fn next(&mut self) -> Option<Self::Item> {
         self.iter.next()
     }
@@ -55,58 +76,176 @@ impl<'a> Iterator for ChildIter<'a> {
 
 impl Node for Entity {
     type CacheKey = Entity;
-    type Tree = SimpleTree;
+    type ChildIter<'t> = ChildIter<'t>;
     type Store = SimpleStore;
     type SubLayout<'a> = ();
-    type ChildIter<'t> = ChildIter<'t>;
+    type Tree = SimpleTree;
 
-    fn key(&self) -> Self::CacheKey { *self }
+    fn key(&self) -> Self::CacheKey {
+        *self
+    }
+
     fn children<'t>(&self, tree: &'t Self::Tree) -> Self::ChildIter<'t> {
         static EMPTY: Vec<Entity> = Vec::new();
         ChildIter {
-            iter: tree.children.get(self).unwrap_or(&EMPTY).iter()
+            iter: tree.children.get(self).unwrap_or(&EMPTY).iter(),
         }
     }
 
-    fn layout_type(&self, _store: &Self::Store) -> Option<LayoutType> { Some(LayoutType::Row) }
-    fn width(&self, store: &Self::Store) -> Option<Units> { store.width.get(self).copied() }
-    fn height(&self, store: &Self::Store) -> Option<Units> { store.height.get(self).copied() }
+    fn layout_type(&self, _store: &Self::Store) -> Option<LayoutType> {
+        Some(LayoutType::Row)
+    }
+
+    fn width(&self, store: &Self::Store) -> Option<Units> {
+        store.width.get(self).copied()
+    }
+
+    fn height(&self, store: &Self::Store) -> Option<Units> {
+        store.height.get(self).copied()
+    }
 
     // Required methods with default/stub implementations
-    fn visible(&self, _: &Self::Store) -> bool { true }
-    fn position_type(&self, _: &Self::Store) -> Option<PositionType> { Some(PositionType::Relative) }
-    fn alignment(&self, _: &Self::Store) -> Option<Alignment> { None }
-    fn left(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
-    fn right(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
-    fn top(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
-    fn bottom(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
-    fn content_size(&self, _: &Self::Store, _: &mut Self::SubLayout<'_>, _: Option<f32>, _: Option<f32>) -> Option<(f32, f32)> { None }
-    fn padding_left(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
-    fn padding_right(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
-    fn padding_top(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
-    fn padding_bottom(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
-    fn vertical_gap(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
-    fn horizontal_gap(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
-    fn min_vertical_gap(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
-    fn min_horizontal_gap(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
-    fn max_vertical_gap(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
-    fn max_horizontal_gap(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
-    fn min_width(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
-    fn min_height(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
-    fn max_width(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
-    fn max_height(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
-    fn border_left(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
-    fn border_right(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
-    fn border_top(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
-    fn border_bottom(&self, _: &Self::Store) -> Option<Units> { Some(Units::Auto) }
-    fn vertical_scroll(&self, _: &Self::Store) -> Option<f32> { Some(0.0) }
-    fn horizontal_scroll(&self, _: &Self::Store) -> Option<f32> { Some(0.0) }
-    fn grid_columns(&self, _: &Self::Store) -> Option<Vec<Units>> { None }
-    fn grid_rows(&self, _: &Self::Store) -> Option<Vec<Units>> { None }
-    fn column_start(&self, _: &Self::Store) -> Option<usize> { None }
-    fn row_start(&self, _: &Self::Store) -> Option<usize> { None }
-    fn column_span(&self, _: &Self::Store) -> Option<usize> { None }
-    fn row_span(&self, _: &Self::Store) -> Option<usize> { None }
+    fn visible(&self, _: &Self::Store) -> bool {
+        true
+    }
+
+    fn position_type(&self, _: &Self::Store) -> Option<PositionType> {
+        Some(PositionType::Relative)
+    }
+
+    fn alignment(&self, _: &Self::Store) -> Option<Alignment> {
+        None
+    }
+
+    fn left(&self, _: &Self::Store) -> Option<Units> {
+        Some(Units::Auto)
+    }
+
+    fn right(&self, _: &Self::Store) -> Option<Units> {
+        Some(Units::Auto)
+    }
+
+    fn top(&self, _: &Self::Store) -> Option<Units> {
+        Some(Units::Auto)
+    }
+
+    fn bottom(&self, _: &Self::Store) -> Option<Units> {
+        Some(Units::Auto)
+    }
+
+    fn content_size(
+        &self,
+        _: &Self::Store,
+        _: &mut Self::SubLayout<'_>,
+        _: Option<f32>,
+        _: Option<f32>,
+    ) -> Option<(f32, f32)> {
+        None
+    }
+
+    fn padding_left(&self, _: &Self::Store) -> Option<Units> {
+        Some(Units::Auto)
+    }
+
+    fn padding_right(&self, _: &Self::Store) -> Option<Units> {
+        Some(Units::Auto)
+    }
+
+    fn padding_top(&self, _: &Self::Store) -> Option<Units> {
+        Some(Units::Auto)
+    }
+
+    fn padding_bottom(&self, _: &Self::Store) -> Option<Units> {
+        Some(Units::Auto)
+    }
+
+    fn vertical_gap(&self, _: &Self::Store) -> Option<Units> {
+        Some(Units::Auto)
+    }
+
+    fn horizontal_gap(&self, _: &Self::Store) -> Option<Units> {
+        Some(Units::Auto)
+    }
+
+    fn min_vertical_gap(&self, _: &Self::Store) -> Option<Units> {
+        Some(Units::Auto)
+    }
+
+    fn min_horizontal_gap(&self, _: &Self::Store) -> Option<Units> {
+        Some(Units::Auto)
+    }
+
+    fn max_vertical_gap(&self, _: &Self::Store) -> Option<Units> {
+        Some(Units::Auto)
+    }
+
+    fn max_horizontal_gap(&self, _: &Self::Store) -> Option<Units> {
+        Some(Units::Auto)
+    }
+
+    fn min_width(&self, _: &Self::Store) -> Option<Units> {
+        Some(Units::Auto)
+    }
+
+    fn min_height(&self, _: &Self::Store) -> Option<Units> {
+        Some(Units::Auto)
+    }
+
+    fn max_width(&self, _: &Self::Store) -> Option<Units> {
+        Some(Units::Auto)
+    }
+
+    fn max_height(&self, _: &Self::Store) -> Option<Units> {
+        Some(Units::Auto)
+    }
+
+    fn border_left(&self, _: &Self::Store) -> Option<Units> {
+        Some(Units::Auto)
+    }
+
+    fn border_right(&self, _: &Self::Store) -> Option<Units> {
+        Some(Units::Auto)
+    }
+
+    fn border_top(&self, _: &Self::Store) -> Option<Units> {
+        Some(Units::Auto)
+    }
+
+    fn border_bottom(&self, _: &Self::Store) -> Option<Units> {
+        Some(Units::Auto)
+    }
+
+    fn vertical_scroll(&self, _: &Self::Store) -> Option<f32> {
+        Some(0.0)
+    }
+
+    fn horizontal_scroll(&self, _: &Self::Store) -> Option<f32> {
+        Some(0.0)
+    }
+
+    fn grid_columns(&self, _: &Self::Store) -> Option<Vec<Units>> {
+        None
+    }
+
+    fn grid_rows(&self, _: &Self::Store) -> Option<Vec<Units>> {
+        None
+    }
+
+    fn column_start(&self, _: &Self::Store) -> Option<usize> {
+        None
+    }
+
+    fn row_start(&self, _: &Self::Store) -> Option<usize> {
+        None
+    }
+
+    fn column_span(&self, _: &Self::Store) -> Option<usize> {
+        None
+    }
+
+    fn row_span(&self, _: &Self::Store) -> Option<usize> {
+        None
+    }
 }
 
 pub fn main() {
@@ -131,8 +270,41 @@ pub fn main() {
 
     root.layout(&mut cache, &tree, &store, &mut ());
 
-    println!("Root bounds: ({}, {}, {}, {})", cache.posx(&root), cache.posy(&root), cache.width(&root), cache.height(&root));
-    println!("Child 1 bounds: ({}, {}, {}, {})", cache.posx(&child1), cache.posy(&child1), cache.width(&child1), cache.height(&child1));
-    println!("Child 2 bounds: ({}, {}, {}, {})", cache.posx(&child2), cache.posy(&child2), cache.width(&child2), cache.height(&child2));
+    println!(
+        "Root bounds: ({}, {}, {}, {})",
+        cache.posx(&root),
+        cache.posy(&root),
+        cache.width(&root),
+        cache.height(&root)
+    );
+    println!(
+        "Child 1 bounds: ({}, {}, {}, {})",
+        cache.posx(&child1),
+        cache.posy(&child1),
+        cache.width(&child1),
+        cache.height(&child1)
+    );
+    println!(
+        "Child 2 bounds: ({}, {}, {}, {})",
+        cache.posx(&child2),
+        cache.posy(&child2),
+        cache.width(&child2),
+        cache.height(&child2)
+    );
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires an interactive example runtime"]
+    fn test_main() {
+        main();
+    }
+}

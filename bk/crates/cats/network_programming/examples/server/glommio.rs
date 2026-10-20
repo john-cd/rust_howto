@@ -89,14 +89,19 @@ fn main() {
         .unwrap();
     println!("glommio example finished");
 }
+
 // Example adapted from <https://docs.rs/glommio/latest/glommio/>
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_main() -> anyhow::Result<()> {
         use std::fs;
         if !fs::exists("temp")? {
             fs::create_dir("temp")?;

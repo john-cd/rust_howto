@@ -16,6 +16,16 @@ winget install --id Casey.Just --exact
 winget install --id LLVM.LLVM -e --source winget
 winget install --id SQLite.SQLite -e --source winget
 
+# Install MSYS2 to provide pkg-config and GTK4 development libraries on Windows
+winget install --id MSYS2.MSYS2 -e --source winget
+$msys2Path = 'C:\msys64\usr\bin\bash.exe'
+if (Test-Path $msys2Path) {
+    Write-Host "Installing MSYS2 GTK4 packages..." -ForegroundColor Cyan
+    & $msys2Path -lc "pacman -Syu --noconfirm && pacman -S --noconfirm mingw-w64-x86_64-pkg-config mingw-w64-x86_64-gtk4 mingw-w64-x86_64-gdk-pixbuf2 mingw-w64-x86_64-cairo mingw-w64-x86_64-glib2"
+} else {
+    Write-Host "MSYS2 installation path not found at $msys2Path. Please install MSYS2 and GTK4 packages manually." -ForegroundColor Yellow
+}
+
 # Install cargo-binstall for Rust-based tools
 Set-ExecutionPolicy Unrestricted -Scope Process; iex (iwr "https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.ps1").Content
 

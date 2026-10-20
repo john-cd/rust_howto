@@ -5,9 +5,11 @@
     windows_subsystem = "windows"
 )]
 
-use tauri::menu::{MenuBuilder, MenuItemBuilder};
-use tauri::Manager;
 use std::sync::Mutex;
+
+use tauri::Manager;
+use tauri::menu::MenuBuilder;
+use tauri::menu::MenuItemBuilder;
 
 #[tauri::command]
 fn get_counter(state: tauri::State<'_, CounterState>) -> i32 {
@@ -28,9 +30,7 @@ pub fn main() {
         .plugin(tauri_plugin_shell::init())
         .setup(|app| {
             let quit = MenuItemBuilder::with_id("quit", "Quit").build(app)?;
-            let menu = MenuBuilder::new(app)
-                .items(&[&quit])
-                .build()?;
+            let menu = MenuBuilder::new(app).items(&[&quit]).build()?;
             app.set_menu(menu)?;
 
             app.on_menu_event(move |app_handle, event| {
@@ -39,7 +39,9 @@ pub fn main() {
                 }
             });
 
-            app.manage(CounterState { value: Mutex::new(0) });
+            app.manage(CounterState {
+                value: Mutex::new(0),
+            });
             Ok(())
         })
         .invoke_handler(tauri::generate_handler![
@@ -48,5 +50,8 @@ pub fn main() {
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
+}
+pub fn run() {
+    main();
 }
 // ANCHOR_END: example

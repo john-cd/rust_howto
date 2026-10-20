@@ -1,7 +1,7 @@
 // ANCHOR: example
 use rangemap::RangeMap;
 
-pub fn main() {
+fn main() {
     let mut rm = RangeMap::new();
 
     rm.insert(0..50, "first half");
@@ -13,11 +13,15 @@ pub fn main() {
 }
 // ANCHOR_END: example
 
+pub fn run() {
+    main();
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

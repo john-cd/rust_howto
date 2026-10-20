@@ -58,7 +58,7 @@ cat > "${path}/Cargo.toml" <<-EOF
 	documentation.workspace = true
 	homepage.workspace = true
 	repository.workspace = true
-	license = "CC0-1.0"
+
 	keywords.workspace = true
 	categories = ["${cat}"]
 	publish.workspace = true

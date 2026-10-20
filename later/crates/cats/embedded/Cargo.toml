@@ -1,15 +1,17 @@
 [package]
+license-file.workspace = true
 name = "embedded"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - embedded"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = ["embedded"]
 publish.workspace = true
 autolib = false
@@ -17,13 +19,38 @@ autolib = false
 [dependencies]
 
 [dev-dependencies]
+cortex-m = "0.7"
+cortex-m-rt = "0.7"
 embassy = { git = "https://github.com/embassy-rs/embassy", branch = "main", features = [
     "alloc",
     "std",
 ] }
-cortex-m = "0.7"
-cortex-m-rt = "0.7"
 panic-halt = "0.2"
 
 #[features]
 # default = []
+
+[[example]]
+name = "embassy"
+path = "examples/embassy/main.rs"
+test = true
+
+[[example]]
+name = "flash"
+path = "examples/flash/main.rs"
+test = true
+
+[[example]]
+name = "hals"
+path = "examples/hals/main.rs"
+test = true
+
+[[example]]
+name = "rtos"
+path = "examples/rtos/main.rs"
+test = true
+
+[[example]]
+name = "sensors"
+path = "examples/sensors/main.rs"
+test = true

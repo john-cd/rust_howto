@@ -1,3 +1,7 @@
 mod tonic;
+mod tonic_client;
 
-fn main() {}
+fn main() -> anyhow::Result<()> {
+    tonic::run()?;
+    Ok(())
+}

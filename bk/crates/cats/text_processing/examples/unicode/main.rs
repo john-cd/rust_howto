@@ -1,3 +1,5 @@
 mod graphemes;
 
-fn main() {}
+fn main() {
+    graphemes::run();
+}

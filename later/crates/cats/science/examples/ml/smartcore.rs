@@ -1,9 +1,11 @@
 #![allow(dead_code)]
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR: example
+// COMING SOON
+fn main() {}
+// ANCHOR_END: example
 // //! This example demonstrates a basic usage of the `smartcore` crate for
-// machine learning tasks. //!
+// //! machine learning tasks.
+// //!
 // //! `smartcore` provides various algorithms for clustering, classification,
 // // regression, and more.
 // //!
@@ -70,10 +72,19 @@
 
 //     DenseMatrix::from_array(n_samples, n_features, &data)
 // }
-// // ANCHOR_END: example
+// ANCHOR_END: example
 
-// #[test]
-// fn test() {
-//     main();
-// }
-// // [finish; kNN example; syn data generation for linear regr.; 70/30 split; etc](https://github.com/john-cd/rust_howto/issues/837)
+pub fn run() {
+    main();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main() {
+        main();
+    }
+}
+// [finish; kNN example; syn data generation for linear regr.; 70/30 split; etc](https://github.com/john-cd/rust_howto/issues/837)

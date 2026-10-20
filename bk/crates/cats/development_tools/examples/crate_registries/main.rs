@@ -1,4 +1,8 @@
 //! Crate registries examples.
+
 mod crates_io;
 
-fn main() {}
+fn main() -> anyhow::Result<()> {
+    crates_io::run()?;
+    Ok(())
+}

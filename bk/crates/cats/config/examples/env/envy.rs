@@ -24,13 +24,18 @@ fn main() {
 
     println!("c: {c:?} c2: {c2:?}");
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         unsafe {
             std::env::set_var("PORT", "80"); // TODO use Mutex
             std::env::set_var("MY_APP__PORT", "8080");

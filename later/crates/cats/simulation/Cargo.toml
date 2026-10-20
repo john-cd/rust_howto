@@ -1,18 +1,30 @@
 [package]
+license-file.workspace = true
 name = "simulation"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+readme = "README.md"
 description = "Book code examples and their crate dependencies - simulation"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
-categories = [ "simulation" ]
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["simulation"]
 publish.workspace = true
 autolib = false
 
 [dependencies]
-rapier2d = "0.25"
+rapier2d = "0.32"
+
+[[example]]
+name = "physics_engines"
+path = "examples/physics_engines/main.rs"
+test = true
+
+[[example]]
+name = "simulation"
+path = "examples/simulation/main.rs"
+test = true

@@ -112,13 +112,18 @@ fn main() -> Result<()> {
     mylib::this_fails()?;
     Ok(())
 }
+
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         let res = main();
         println!("{res:?}");
         assert!(res.is_err());

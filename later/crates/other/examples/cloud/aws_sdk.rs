@@ -44,9 +44,15 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+pub fn run() -> anyhow::Result<()> {
+    main()?;
+    Ok(())
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn require_network() -> anyhow::Result<()> {
         // TODO

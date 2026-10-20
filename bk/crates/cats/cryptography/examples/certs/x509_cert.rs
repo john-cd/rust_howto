@@ -63,3 +63,5 @@
 //     Ok(())
 // }
 // // [finish](https://github.com/john-cd/rust_howto/issues/705)
+
+pub fn run() {}

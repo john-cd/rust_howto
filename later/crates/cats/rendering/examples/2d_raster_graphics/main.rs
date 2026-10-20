@@ -1,3 +1,5 @@
 mod render;
 
-fn main() {}
+fn main() {
+    render::run();
+}

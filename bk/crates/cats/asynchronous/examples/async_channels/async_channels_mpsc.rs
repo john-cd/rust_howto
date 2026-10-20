@@ -28,13 +28,18 @@ pub async fn multi_producer_single_receiver() {
 async fn main() {
     multi_producer_single_receiver().await;
 }
+
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }

@@ -1,38 +1,76 @@
 // ANCHOR: example
-use baseview::{Event, EventStatus, Size, Window, WindowHandler, WindowOpenOptions, WindowScalePolicy};
+//! Create a simple `baseview` window and respond to basic window events.
+//!
+//! The window stays open until the close button is requested.
+//!
+//! `baseview` is a specialized, low-level window creation library targetting
+//! windows to be embedded in other applications (e.g. audio plugin UIs).
+//!
+//! `baseview` abstracts the platform-specific windowing APIs (`winapi`,
+//! `cocoa`, `xcb`) into a platform-independent API, but otherwise gets out of
+//! your way so we can write plugin UIs.
+//!
+//! Requirements (Linux):
+//! ```sh
+//! sudo apt-get install libx11-dev libxcb1-dev libx11-xcb-dev libgl1-mesa-dev
+//! ```
+use anyhow::Result;
+use baseview::ControlFlow;
+use baseview::Size;
+use baseview::Window;
+use baseview::WindowDelegate;
+use baseview::WindowEvent;
+use baseview::WindowOpenOptions;
+use baseview::WindowScalePolicy;
 
-// Baseview is a low-level windowing system for audio plugin UIs.
+struct BaseviewExample;
 
-struct MyHandler;
-
-impl WindowHandler for MyHandler {
-    fn on_frame(&mut self, _window: &mut Window) {
-        // Handle frame updates
+impl WindowDelegate for BaseviewExample {
+    fn on_frame(&mut self, _window: &mut Window<'_>) {
+        // No drawing is performed in this example; just keep the window
+        // responsive.
     }
 
-    fn on_event(&mut self, _window: &mut Window, event: Event) -> EventStatus {
+    fn on_window_event(
+        &mut self,
+        event: WindowEvent<'_>,
+        control_flow: &mut ControlFlow,
+    ) {
         match event {
-            Event::Mouse(_) => println!("Mouse event"),
-            Event::Keyboard(_) => println!("Keyboard event"),
-            Event::Window(baseview::WindowEvent::WillClose) => {
-                println!("Window will close");
+            WindowEvent::CloseRequested => *control_flow = ControlFlow::Exit,
+            WindowEvent::Resized(size) => {
+                println!("Window resized to: {}x{}", size.width, size.height);
             }
-            _ => {}
+            WindowEvent::Moved(position) => {
+                println!("Window moved to: {}x{}", position.x, position.y);
+            }
+            _ => (),
         }
-        EventStatus::Captured
     }
 }
 
-pub fn main() -> anyhow::Result<()> {
-    let options = WindowOpenOptions {
-        title: "Baseview Example".into(),
-        size: Size::new(800.0, 600.0),
-        scale: WindowScalePolicy::SystemScaleFactor,
-    };
+fn main() -> Result<()> {
+    let size = Size::new(640.0, 480.0);
+    let mut open_options =
+        WindowOpenOptions::new("Baseview Example".to_string(), size);
+    open_options.scale = WindowScalePolicy::ScaleFactor(1.0);
 
-    // This will block the current thread until the window is closed.
-    Window::open_blocking(options, |_window| MyHandler);
-
+    Window::open_parentless(open_options, Box::new(BaseviewExample));
     Ok(())
 }
 // ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[ignore = "requires interactive example runtime"]
+    fn test_main() {
+        main().unwrap();
+    }
+}

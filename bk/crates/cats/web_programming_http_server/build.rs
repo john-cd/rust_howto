@@ -1,18 +1,15 @@
-// // ANCHOR: example
-fn main() {
-    //     // `tonic-build` compiles ProtoBuf files via `prost` and generates
-    // service     // stubs and proto definitions for use with `tonic`.
-    //     // Install `protoc` first: <https://grpc.io/docs/protoc-installation/>.
-    //     tonic_prost_build::compile_protos("proto/helloworld.proto").unwrap();
+//! Build script to compile gRPC service definitions at compile time.
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    // Instruct Cargo to re-run this script if the proto file changes.
+    println!("cargo:rerun-if-changed=proto/helloworld.proto");
+
+    let protoc = protoc_bin_vendored::protoc_bin_path()?; // TODO review
+    unsafe {
+        std::env::set_var("PROTOC", protoc);
+    }
+
+    // Compile the helloworld.proto file.
+    tonic_prost_build::compile_protos("proto/helloworld.proto")?;
+    Ok(())
 }
-// // A more complicated example may be:
-// // fn main() -> Result<(), Box<dyn std::error::Error>> {
-// //    tonic_build::configure()
-// //         .build_server(false) // Disable gRPC server code generation
-// //         .compile_protos(
-// //             &["proto/helloworld.proto"],
-// //             &["proto"],
-// //         )?;
-// //    Ok(())
-// // }
-// // ANCHOR_END: example

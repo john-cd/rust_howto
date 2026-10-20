@@ -31,17 +31,22 @@ pub fn hello_from_rust(name: &str) -> String {
     format!("Hello, {}! This is Rust speaking.", name)
 }
 
-fn main() {}
+fn main() {
+    // TODO
+}
 
 // ANCHOR_END: example
 
-// [finish; reorg as a project using flutter_rust_bridge_codegen](https://github.com/john-cd/rust_howto/issues/1028)
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }
+// [finish; reorg as a project using flutter_rust_bridge_codegen](https://github.com/john-cd/rust_howto/issues/1028)

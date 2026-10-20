@@ -1,8 +1,8 @@
 // ANCHOR: example
 use skiplist::SkipMap;
 
-pub fn main() {
-    let mut map = SkipMap::new();
+fn main() {
+    let mut map: SkipMap<i32, &str, 16> = SkipMap::new();
 
     map.insert(3, "three");
     map.insert(1, "one");
@@ -14,11 +14,15 @@ pub fn main() {
 }
 // ANCHOR_END: example
 
+pub fn run() {
+    main();
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test() {
+    fn test_main() {
         main();
     }
 }
