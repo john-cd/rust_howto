@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # Hardware Support
 
 [![cat~hardware-support][cat~hardware-support~badge]][cat~hardware-support]

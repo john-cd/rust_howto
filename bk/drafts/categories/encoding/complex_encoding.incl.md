@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Serialize and Deserialize Unstructured JSON][ex~encoding~serde-json] | [![serde_json][c~serde_json~docs~badge]][c~serde_json~docs] | [![cat~encoding][cat~encoding~badge]][cat~encoding] |

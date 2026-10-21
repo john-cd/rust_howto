@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # Badges {#badges}
 
 {{#include badges.incl.md}}

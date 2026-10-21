@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Send Emails][ex~email~lettre] | [![lettre][c~lettre~docs~badge]][c~lettre~docs] | [![cat~email][cat~email~badge]][cat~email] |

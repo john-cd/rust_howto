@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # Rust How-To
 
 **A documentation summary and a compendium of snippets and recipes for the Rust language and ecosystem.**

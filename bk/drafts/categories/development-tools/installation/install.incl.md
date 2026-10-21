@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |---|---|---|
 | [Build and Install a Rust Binary with `cargo install`][ex~installation~cargo-install] | [![cargo~website][c~cargo~website~badge]][c~cargo~website] | [![cat~development-tools][cat~development-tools~badge]][cat~development-tools] |

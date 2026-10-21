@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of an asynchronous WebSocket client with `tokio_tungstenite`.
 //!

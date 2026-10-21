@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 [ex~language~accept-various-iterable-types]: iterators.md#accept-various-iterable-types
 [ex~language~adapters]: iterators.md#adapters
 [ex~language~assert-macros]: macros.md#assert-macros

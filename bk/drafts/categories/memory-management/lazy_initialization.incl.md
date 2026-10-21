@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Lazy Initialize Variables][ex~memory-management~std] | [![std][c~std~docs~badge]][c~std~docs] | [![cat~memory-management][cat~memory-management~badge]][cat~memory-management] |

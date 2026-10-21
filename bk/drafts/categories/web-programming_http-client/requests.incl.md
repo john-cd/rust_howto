@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Make a HTTP GET Request][ex~web-programming_http-client~make-a-http-get-request] | [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs] | [![cat~network-programming][cat~network-programming~badge]][cat~network-programming] [![cat~web-programming][cat~web-programming~badge]][cat~web-programming] [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client] |

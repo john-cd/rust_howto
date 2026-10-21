@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [`bytemuck`][ex~encoding~bytemuck] | [![bytemuck][c~bytemuck~docs~badge]][c~bytemuck~docs] | [![cat~encoding][cat~encoding~badge]][cat~encoding] |

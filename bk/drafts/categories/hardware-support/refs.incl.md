@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 [ex~hardware-support~check-number-of-logical-cpu-cores]: processor.md#check-number-of-logical-cpu-cores
 [ex~hardware-support~simd]: processor.md#simd
 [p~assembly]: ../development-tools_profiling/assembly.md

@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Select Futures][ex~asynchronous~selecting-futures] | [![futures][c~futures~docs~badge]][c~futures~docs] | [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous] |

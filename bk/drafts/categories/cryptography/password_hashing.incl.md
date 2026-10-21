@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Hash a Password, then Verify a Password Against the Hash][ex~cryptography~argon2] | [![argon2][c~argon2~docs~badge]][c~argon2~docs] | [![cat~cryptography][cat~cryptography~badge]][cat~cryptography] |

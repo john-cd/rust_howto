@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 [ex~other~bacon]: code_build.md#bacon
 [ex~other~binary-minimizer]: other.md#binary-minimizer
 [ex~other~code-generators]: other.md#code-generators

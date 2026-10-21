@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 //! Handle the `categories_badges_for_crate` CLI subcommand
 
 use clap::ArgMatches;

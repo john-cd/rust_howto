@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # Command-line Utilities Written in Rust
 
 [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}}

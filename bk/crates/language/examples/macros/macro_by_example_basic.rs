@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 #![allow(unused)]
 // ANCHOR: example
 /// A basic macro-by-example (from the Rust By Example book).

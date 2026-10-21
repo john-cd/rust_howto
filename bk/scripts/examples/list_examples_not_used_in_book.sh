@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# TODO Reviewed ??-??-2026
 set -eu
 
 # List examples (.rs files) in `tests` that are not included in the book markdown.

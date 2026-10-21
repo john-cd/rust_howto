@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # Global Statics and Lazy Initialization
 
 {{#include lazy_initialization.incl.md}}

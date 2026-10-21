@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 #![allow(unused)]
 // ANCHOR: example
 // Trait for a fixed-size buffer.

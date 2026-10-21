@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # Append-only Collections with `elsa`
 
 {{#include elsa.incl.md}}

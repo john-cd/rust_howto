@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 //! Build badges, index of the book, etc... using a template engine.
 
 use tinytemplate::TinyTemplate;

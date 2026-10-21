@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Write Rust Code with VS Code][ex~text-editors~vs-code] | [VS Code][rust-in-vs-code~website]↗ | [![cat~text-editors][cat~text-editors~badge]][cat~text-editors] |

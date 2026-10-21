@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # VS Code Configuration
 
 ## `rust-analyzer` Configuration {#rust-analyzer-configuration}

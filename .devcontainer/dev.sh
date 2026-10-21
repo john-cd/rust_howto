@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# TODO Reviewed ??-??-2026
 
 # Script executed at the end of the development Docker image build.
 # Format the book code, then fetch the dependencies of the book code.

@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates a small asynchronous workload using `smol`.
 

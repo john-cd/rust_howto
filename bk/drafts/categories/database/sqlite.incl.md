@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Create a SQLite Database][ex~database~create-database-sqlite] | [![rusqlite][c~rusqlite~docs~badge]][c~rusqlite~docs] | [![cat~database][cat~database~badge]][cat~database] |

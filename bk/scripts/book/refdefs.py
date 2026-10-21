@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# TODO Reviewed ??-??-2026
 """Generate or check the owned crate-dependency reference fragment."""
 
 from __future__ import annotations

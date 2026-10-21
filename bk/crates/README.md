@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # README
 
 The `bk/crates/` folder contains the Rust example code that is embedded into the book.

@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 #![allow(unused_assignments, dead_code)]
 // ANCHOR: example
 //! Demonstrates the concept of borrowing in Rust.

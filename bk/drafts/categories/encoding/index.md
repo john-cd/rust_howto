@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # Encoding
 
 [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}

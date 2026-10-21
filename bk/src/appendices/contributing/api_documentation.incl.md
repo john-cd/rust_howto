@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 Rustdoc turns comments in Rust source into searchable, linked API documentation. Write docs beside the public items they describe, and keep examples and links checked as part of the crate workflow.
 
 ## Document the public contract

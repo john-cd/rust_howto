@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # Optimize Linking {#faster-linking}
 
 {{#include faster_linking.incl.md}}

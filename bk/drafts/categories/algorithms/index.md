@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # Algorithms
 
 [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}

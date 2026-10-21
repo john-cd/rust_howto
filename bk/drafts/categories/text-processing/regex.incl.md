@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Verify and Extract Login from an Email Address][ex~text-processing~verify-and-extract-login-from-an-email-address] | [![regex][c~regex~docs~badge]][c~regex~docs] [![lazy_static][c~lazy_static~docs~badge]][c~lazy_static~docs] | [![cat~text-processing][cat~text-processing~badge]][cat~text-processing] |

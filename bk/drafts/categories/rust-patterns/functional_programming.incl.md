@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Compose Iterators][ex~rust-patterns~compose-iterators-with-itertools] | [![itertools][c~itertools~docs~badge]][c~itertools~docs] | [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns] |

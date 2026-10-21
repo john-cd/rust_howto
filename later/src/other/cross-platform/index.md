@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # Cross-platform Development
 
 Cross-platform development refers to the practice of creating software applications that can run on multiple operating systems and devices (Windows, macOS, Linux, and mobile operating systems like iOS and Android) without requiring multiple codebases.

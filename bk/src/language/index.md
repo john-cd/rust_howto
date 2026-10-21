@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # Rust Language
 
 This section is designed to provide a quick reference for Rust's language features, syntax, and best practices.

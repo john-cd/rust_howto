@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 [ex~embedded~embassy]: embassy.md#embassy
 [ex~embedded~embedded-hal]: hals.md#embedded-hal
 [ex~embedded~portable-atomic]: useful_crates_embedded.md#portable-atomic

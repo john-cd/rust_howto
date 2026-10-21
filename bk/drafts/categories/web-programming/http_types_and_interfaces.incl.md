@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [`http`][ex~web-programming~http] | [![http][c~http~docs~badge]][c~http~docs]{{hi:http}} | [![cat~web-programming][cat~web-programming~badge]][cat~web-programming] |

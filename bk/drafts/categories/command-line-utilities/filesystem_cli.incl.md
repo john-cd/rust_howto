@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [`lsd`][ex~command-line-utilities~lsd] | [![lsd][c~lsd~docs~badge]][c~lsd~docs] | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |

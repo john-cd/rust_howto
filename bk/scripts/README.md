@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # Scripts
 
 The `scripts` folder contains [just][just~website]↗ modules (`mod.just` files within a folder) and [bash][bash~website]↗ shell scripts (`*.sh` files).

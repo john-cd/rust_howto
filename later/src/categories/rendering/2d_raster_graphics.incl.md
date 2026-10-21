@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [`pixels`][ex~rendering~pixels] | [![pixels][c~pixels~docs~badge]][c~pixels~docs]{{hi:pixels}} | [![cat~rendering][cat~rendering~badge]][cat~rendering] |

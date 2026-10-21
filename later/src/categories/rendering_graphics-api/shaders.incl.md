@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [`cubecl`][ex~rendering_graphics-api~cubecl] | [![cubecl][c~cubecl~docs~badge]][c~cubecl~docs]{{hi:cubecl}} | [![cat~rendering::graphics-api][cat~rendering::graphics-api~badge]][cat~rendering::graphics-api] |

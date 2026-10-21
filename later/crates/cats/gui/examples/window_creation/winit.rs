@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 // Trait that handles the application events:
 use winit::application::ApplicationHandler;

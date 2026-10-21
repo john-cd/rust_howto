@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # Embedded Systems
 
 [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded systems}}

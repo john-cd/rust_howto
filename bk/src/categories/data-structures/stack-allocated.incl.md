@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Store Fixed-size Vectors and Strings on the Stack with `arrayvec`][ex~data-structures~arrayvec] | [![arrayvec][c~arrayvec~docs~badge]][c~arrayvec~docs] | [![cat~data-structures][cat~data-structures~badge]][cat~data-structures] |
