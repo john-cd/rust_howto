@@ -55,13 +55,14 @@ alias bb := buildbook
   cd "{{root}}/../tools"
   tmp="$(mktemp)"
   trap 'rm -f "$tmp"' EXIT
-  cat "{{root}}/master/crates.txt" | cargo run --locked -p crate_indices -- category_page_from_metadata --metadata "{{root}}/master/crate_categories.toml" > "$tmp"
+  cat "{{root}}/master/crates.txt" | cargo run --locked -p crate_indices -- category_page_from_metadata --metadata "{{root}}/master/crate_categories.toml" --book-root "{{root}}" > "$tmp"
   mv "$tmp" "{{root}}/src/indices/crates_by_category.md"
 
 [windows]
 @_generate-index-category:
   pwsh.exe -NoLogo -NoProfile -File "{{source_directory()}}/generate_category_index.ps1" -BookRoot "{{root}}" -ToolsRoot "{{root}}/../tools"
 # [generate index of crates by category](https://github.com/john-cd/rust_howto/issues/1274)
+# [link crates to published recipes](https://github.com/john-cd/rust_howto/issues/28)
 
 # Generate the alphabetical crate index with links to published recipes.
 [unix]
