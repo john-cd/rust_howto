@@ -27,6 +27,10 @@ enum Commands {
 }
 
 fn main() -> anyhow::Result<()> {
+    run()
+}
+
+fn run() -> anyhow::Result<()> {
     #[cfg(feature = "cassandra")]
     {
         let cli = Cli::parse();
@@ -37,11 +41,8 @@ fn main() -> anyhow::Result<()> {
                     cassandra_protocol::run()?;
                 }
                 Commands::CdrsTokio => {
-                    let runtime = tokio::runtime::Runtime::new() // TODO move to run()
-                        .expect("failed to create Tokio runtime"); // TODO handle error gracefully
-                    runtime
-                        .block_on(cdrs_tokio::run())
-                        .expect("cdrs_tokio example failed");
+                    let runtime = tokio::runtime::Runtime::new()?;
+                    runtime.block_on(cdrs_tokio::run())?;
                 }
             }
         }
