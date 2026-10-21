@@ -63,6 +63,22 @@ alias bb := buildbook
   pwsh.exe -NoLogo -NoProfile -File "{{source_directory()}}/generate_category_index.ps1" -BookRoot "{{root}}" -ToolsRoot "{{root}}/../tools"
 # [generate index of crates by category](https://github.com/john-cd/rust_howto/issues/1274)
 
+# Generate the alphabetical crate index with links to published recipes.
+[unix]
+@_generate-index-alphabetical:
+  #!/usr/bin/env bash
+  set -euo pipefail
+  cd "{{root}}/../tools"
+  tmp="$(mktemp)"
+  trap 'rm -f "$tmp"' EXIT
+  cat "{{root}}/master/crates.txt" | cargo run --locked -p crate_indices -- alphabetical_page --book-root "{{root}}" > "$tmp"
+  mv "$tmp" "{{root}}/src/indices/crates_alphabetical.md"
+
+[windows]
+@_generate-index-alphabetical:
+  pwsh.exe -NoLogo -NoProfile -File "{{source_directory()}}/generate_alphabetical_index.ps1" -BookRoot "{{root}}" -ToolsRoot "{{root}}/../tools"
+# [link crates to published recipes](https://github.com/john-cd/rust_howto/issues/27)
+
 # Add static assets to book output
 [unix]
 @_copystatic:

@@ -10,6 +10,7 @@ mod crates_by_category;
 mod detect_github_url;
 mod index_anchors;
 mod normalize_url;
+mod published_recipes;
 mod rbe;
 mod remove_empty_lines;
 
@@ -20,6 +21,7 @@ pub use crates_by_category::*;
 pub use detect_github_url::*;
 pub use index_anchors::*;
 pub use normalize_url::*;
+pub use published_recipes::*;
 pub use rbe::*;
 pub use remove_empty_lines::*;
 
@@ -48,7 +50,6 @@ fn get_template_engine() -> anyhow::Result<TinyTemplate<'static>> {
         }
         Ok(())
     });
-    tt.add_template("ALPHABETICAL_ROW", ALPHABETICAL_ROW)?;
     tt.add_template("CAT_BADGE", CAT_BADGE)?;
     tt.add_template("CRATE_BLOCK_BADGES", CRATE_BLOCK_BADGES)?;
     tt.add_template("CRATE_DESCRIPTION", CRATE_DESCRIPTION)?;

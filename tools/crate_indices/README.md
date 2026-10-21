@@ -47,12 +47,17 @@ generator and review the resulting diff.
 
 ## Generate the alphabetical list of crates used in the book
 
-To generate the alphabetical index of crates, update `crates.txt` then use
+The alphabetical index also discovers crate badges in the published recipe tables
+and links each crate to every matching recipe anchor. Generate it from the book root:
 
 ```sh
 cd bk
-cat ./master/crates.txt | just indices crate_indices alphabetical_page > crates_alphabetical.md
+just book _generate-index-alphabetical
 ```
+
+The generator follows the include fragments listed by `src/indices/examples_index.md`,
+checks that each recipe reference is defined, and sorts crate and recipe links for
+repeatable output.
 
 ## Update the master file of reference definitions
 

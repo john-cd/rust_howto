@@ -40,7 +40,8 @@ fn subcommand_category_page_from_metadata() -> Command {
 fn subcommand_alphabetical_page() -> Command {
     Command::new("alphabetical_page")
         .visible_alias("a")
-        .about("Returns the markdown for the alphabetical page, given a list of crates")
+        .about("Returns the alphabetical page with links to published recipes")
+        .arg(arg_book_root())
         .arg(arg_crate_name())
 }
 
@@ -117,6 +118,19 @@ fn arg_metadata_file() -> clap::Arg {
         .value_parser(clap::value_parser!(PathBuf))
         .value_hint(ValueHint::FilePath)
         .help("TOML category metadata snapshot")
+}
+
+/// Builds the book root argument used to discover published recipe links.
+fn arg_book_root() -> clap::Arg {
+    Arg::new("book_root")
+        .long("book-root")
+        .required(false)
+        .action(clap::ArgAction::Set)
+        .value_name("DIR_PATH")
+        .value_parser(clap::value_parser!(PathBuf))
+        .value_hint(ValueHint::DirPath)
+        .default_value(".")
+        .help("Book root containing src/indices/examples_index.md")
 }
 
 /// Builds the `file_path` argument without a default value (used by `expand_crate_blocks`).
