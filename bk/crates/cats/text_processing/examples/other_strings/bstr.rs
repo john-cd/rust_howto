@@ -58,7 +58,6 @@ fn main() {
         println!("Line: {line:?}");
     }
 }
-
 // ANCHOR_END: example
 
 pub fn run() {
