@@ -33,8 +33,9 @@ just crates check
 ## Generate the 'crates by category' page
 
 `bk/master/crate_categories.toml` is the checked-in snapshot of external crates.io
-category metadata. Regenerate the published page from that snapshot and the book's
-crate inventory without network access:
+category metadata. Regenerate the published page from that snapshot, the book's crate
+inventory, and the crates found in published recipes without network access. Each
+crate links to its published recipes:
 
 ```sh
 cd bk

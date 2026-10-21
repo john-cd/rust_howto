@@ -40,6 +40,7 @@ pub(crate) struct CmdArgs2 {
 pub(crate) struct CategoryPageFromMetadataCmdArgs {
     pub crate_names: Vec<String>,
     pub metadata_path: PathBuf,
+    pub book_root: PathBuf,
 }
 
 /// Arguments for generating an alphabetical index with published recipe links.
@@ -74,6 +75,7 @@ pub(super) fn get_cmd() -> anyhow::Result<Cmd> {
             CategoryPageFromMetadataCmdArgs {
                 crate_names: get_crate_names(m),
                 metadata_path: get_metadata_path(m),
+                book_root: get_book_root(m),
             },
         ))
     } else if let Some(m) = matches.subcommand_matches("alphabetical_page") {
