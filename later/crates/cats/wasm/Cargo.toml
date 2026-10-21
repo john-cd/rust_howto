@@ -21,14 +21,14 @@ wasmtime = ["dep:wasmtime"]
 [dependencies]
 
 ## General
-anyhow = "1.0.102"
-clap = { version = "4.6.1", features = ["derive"] }
+anyhow = "1.0.104"
+clap = { version = "4.6.7", features = ["derive"] }
 # LATER add example?
-js-sys = "0.3.97"
-wasm-bindgen = "0.2.120"
+js-sys = "0.3.106"
+wasm-bindgen = "0.2.129"
 wasmer = "6.1.0"
 wasmtime = { version = "43.0.2", optional = true } # Heavy compile
-web-sys = { version = "0.3.97", features = ["Window"] }
+web-sys = { version = "0.3.106", features = ["Window"] }
 yew = { version = "0.23.0", features = ["csr"] }
 
 [[example]]

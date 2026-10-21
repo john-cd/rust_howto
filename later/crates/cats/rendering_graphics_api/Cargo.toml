@@ -20,7 +20,7 @@ default = []
 wgpu = ["dep:wgpu"]
 
 [dependencies]
-wgpu = { version = "29.0.3", optional = true } # was pinned for ggez
+wgpu = { version = "29.0.4", optional = true } # was pinned for ggez
 
 [[example]]
 name = "gpu_abstraction_layers"

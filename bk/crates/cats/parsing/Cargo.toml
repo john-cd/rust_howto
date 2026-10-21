@@ -20,17 +20,17 @@ autolib = false
 ignored = ["pest_generator"]
 
 [dependencies]
-anyhow = "1.0.102"
-clap = { version = "4.6.1", features = ["derive"] }
+anyhow = "1.0.104"
+clap = { version = "4.6.7", features = ["derive"] }
 nom = "8.0.0"
-pest = "2.8.6"
-pest_derive = "2.8.6"
-tree-sitter = "0.26.8"
+pest = "2.9.4"
+pest_derive = "2.9.4"
+tree-sitter = "0.26.13"
 tree-sitter-rust = "0.24.2"
-winnow = "1.0.2"
+winnow = "1.0.4"
 
 [build-dependencies]
-pest_generator = "2.8.6"
+pest_generator = "2.9.4"
 
 [[example]]
 name = "parsing"

@@ -18,9 +18,9 @@ autolib = false
 
 [dependencies]
 cached = "0.59.0"
-clap = { version = "4.6.1", features = ["derive"] }
-lru = "0.18.0"
-moka = { version = "0.12.15", features = ["sync"] }
+clap = { version = "4.6.7", features = ["derive"] }
+lru = "0.18.5"
+moka = { version = "0.12.16", features = ["sync"] }
 
 [[example]]
 name = "in_memory_cache"

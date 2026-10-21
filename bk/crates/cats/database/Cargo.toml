@@ -39,32 +39,32 @@ sqlx = ["dep:sqlx"]
 sqlite = ["dep:rusqlite"]
 
 [dependencies]
-anyhow = "1.0.102"
+anyhow = "1.0.104"
 byteorder = "1.5.0"
-cassandra-protocol = { version = "4.0.0", optional = true }
-cdrs-tokio = { version = "9.0.1", features = ["derive"], optional = true }
-clap = { version = "4.6.1", features = ["derive"] }
-config = "0.15.22"
+cassandra-protocol = { version = "4.0.1", optional = true }
+cdrs-tokio = { version = "9.0.2", features = ["derive"], optional = true }
+clap = { version = "4.6.7", features = ["derive"] }
+config = "0.15.27"
 cornucopia = { version = "0.9.0", optional = true }
-deadpool = "0.13.0"
-deadpool-postgres = { version = "0.14.1", features = [
+deadpool = "0.13.1"
+deadpool-postgres = { version = "0.14.2", features = [
     "serde",
 ], optional = true }
-diesel = { version = "2.3.9", features = ["sqlite"], optional = true }
+diesel = { version = "2.3.14", features = ["sqlite"], optional = true }
 diesel-oci = { version = "0.5.1", optional = true }
 diesel_migrations = { version = "2.3.2", features = [
     "sqlite",
 ], optional = true }
 dotenvy = "0.15.7"
 elasticsearch = { version = "9.1.0-alpha.1", optional = true } # NOTE: alpha version
-futures = "0.3.32"
+futures = "0.3.34"
 heed = { version = "0.22.1", optional = true }
-lapin = { version = "4.7.0", optional = true }
-mongodb = { version = "3.6.0", optional = true }
+lapin = { version = "4.12.3", optional = true }
+mongodb = { version = "3.9.1", optional = true }
 once_cell = "1.21.4"
 oracle = { version = "0.6.3", optional = true }
-postgres = { version = "0.19.13", optional = true }
-redis = { version = "1.2.0", optional = true }
+postgres = { version = "0.19.14", optional = true }
+redis = { version = "1.7.1", optional = true }
 # Use bindgen-runtime so Windows can load libclang.dll from the LLVM installation.
 rocksdb = { version = "0.24.0", optional = true, default-features = false, features = [
     "bindgen-runtime",
@@ -72,8 +72,8 @@ rocksdb = { version = "0.24.0", optional = true, default-features = false, featu
 rusqlite = { version = "=0.32.1", optional = true } # Keep sqlite linkage compatible with sqlx 0.8.x.
 sea-orm = { version = "1.1.20", optional = true }
 seaography = { version = "1.1.4", optional = true }
-serde = { version = "1.0.228", features = ["derive"] }
-serde_json = { version = "1.0.149", optional = true }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = { version = "1.0.154", optional = true }
 sqlx = { version = "0.8.6", features = [
     "runtime-tokio",
     "sqlite",
@@ -81,13 +81,13 @@ sqlx = { version = "0.8.6", features = [
 ], optional = true }
 tempfile = { version = "3.27.0", optional = true }
 tiberius = { version = "0.12.3", optional = true }
-tokio = { version = "1.52.1", features = ["macros", "rt-multi-thread"] }
-tokio-postgres = { version = "0.7.17", optional = true }
-tokio-util = { version = "0.7.18", features = ["compat"] }
-uuid = { version = "1.23.1", features = ["v4"] }
+tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
+tokio-postgres = { version = "0.7.18", optional = true }
+tokio-util = { version = "0.7.20", features = ["compat"] }
+uuid = { version = "1.28.0", features = ["v4"] }
 
 [target.'cfg(target_os = "linux")'.dependencies]
-sibyl = { version = "0.7.0", features = ["blocking"], optional = true }
+sibyl = { version = "0.7.1", features = ["blocking"], optional = true }
 
 [[example]]
 name = "amqp"

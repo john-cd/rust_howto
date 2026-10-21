@@ -17,12 +17,12 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-anyhow = "1.0.102"
-clap = { version = "4.6.1", features = ["derive"] }
+anyhow = "1.0.104"
+clap = { version = "4.6.7", features = ["derive"] }
 color-eyre = "0.6.5"
 csv = "1.4.0"
 dyn-clone = "1.0.20"
-either = "1.15.0"
+either = "1.19.0"
 frunk = "0.4.4"
 frunk_core = "0.4.4"
 # `im` has an unsound OrdSet insertion path; `imbl` is its maintained fork.
@@ -30,12 +30,12 @@ im = { package = "imbl", version = "7.0.2" }
 # eyre is outdated, see color-eyre
 itertools = "0.14.0"
 miette = { version = "7.6.0", features = ["fancy"] }
-pin-project = "1.1.11"
+pin-project = "1.1.13"
 # pin-project-lite = "0.2.16"
-rpds = "1.2.0"
+rpds = "1.2.1"
 scopeguard = "1.2.0"
-serde = { version = "1.0.228", features = ["derive"] }
-thiserror = "2.0.18"
+serde = { version = "1.0.229", features = ["derive"] }
+thiserror = "2.0.21"
 
 [[example]]
 name = "builder_pattern"

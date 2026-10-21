@@ -19,14 +19,14 @@ autolib = false
 [dependencies]
 
 ## General
-anyhow = "1.0.102"
-clap = { version = "4.6.1", features = ["cargo"] }
-config = "0.15.22"
+anyhow = "1.0.104"
+clap = { version = "4.6.7", features = ["cargo"] }
+config = "0.15.27"
 confy = "2.0.0"
 # dotenv is outdated, replaced by dotenvy
 dotenvy = "0.15.7"
 envy = "0.4.2"
-serde = { version = "1.0.228", features = ["derive"] }
+serde = { version = "1.0.229", features = ["derive"] }
 
 [[example]]
 name = "configuration"

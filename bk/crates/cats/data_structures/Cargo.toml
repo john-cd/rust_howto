@@ -17,30 +17,30 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-anyhow = "1.0.102"
-arrayvec = "0.7.6"
-bitflags = "2.11.1"
-bitvec = "1.0.1"
-bloomfilter = "3.0.1"
-bytes = "1.11.1"
-clap = { version = "4.6.1", features = ["derive"] }
+anyhow = "1.0.104"
+arrayvec = "0.7.8"
+bitflags = "2.13.2"
+bitvec = "1.1.1"
+bloomfilter = "3.0.2"
+bytes = "1.12.1"
+clap = { version = "4.6.7", features = ["derive"] }
 crates_io_api = "0.12.0"
 flagset = "0.4.7"
 fnv = "1.0.7"
 heapless = "0.9.3" # TODO pinned elsewhere to 0.7.17 for postcard
-indexmap = "2.14.0"
+indexmap = "2.14.2"
 linked-hash-map = "0.5.6"
 multimap = "0.10.1"
 petgraph = "0.8.3"
 priority-queue = "2.7.0"
-rangemap = "1.7.1"
-roaring = "0.11.4"
-skiplist = "1.1.0"
+rangemap = "1.8.0"
+roaring = "0.11.5"
+skiplist = "1.2.0"
 slotmap = "1.1.1"
-smallvec = "1.15.1" # alpha
-tinyvec = { version = "1.11.0", features = ["alloc"] }
+smallvec = "1.16.3" # alpha
+tinyvec = { version = "1.13.3", features = ["alloc"] }
 ulid = "1.2.1"
-uuid = { version = "1.23.1", features = [
+uuid = { version = "1.28.0", features = [
     # Lets us generate random UUIDs.
     "v4",
     # Use a faster (but still sufficiently random) RNG.

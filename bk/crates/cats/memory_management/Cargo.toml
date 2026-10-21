@@ -17,11 +17,11 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-anyhow = "1.0.102"
-bumpalo = "3.20.2"
-clap = { version = "4.6.1", features = ["derive"] }
-lazy_static = "1.5.0"
-mimalloc = "0.1.50"
+anyhow = "1.0.104"
+bumpalo = "3.20.3"
+clap = { version = "4.6.7", features = ["derive"] }
+lazy_static = "1.5.1"
+mimalloc = "0.1.52"
 once_cell = "1.21.4"
 seize = "0.5.1"
 slab = "0.4.12"
