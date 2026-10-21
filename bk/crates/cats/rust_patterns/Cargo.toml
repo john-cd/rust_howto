@@ -25,7 +25,8 @@ dyn-clone = "1.0.20"
 either = "1.15.0"
 frunk = "0.4.4"
 frunk_core = "0.4.4"
-im = "15.1.0"
+# `im` has an unsound OrdSet insertion path; `imbl` is its maintained fork.
+im = { package = "imbl", version = "7.0.2" }
 # eyre is outdated, see color-eyre
 itertools = "0.14.0"
 miette = { version = "7.6.0", features = ["fancy"] }

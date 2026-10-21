@@ -1,6 +1,8 @@
 #![allow(dead_code)]
 // ANCHOR: example
 // This example demonstrates how to encode and decode PKCS#8 private keys.
+// Security: `rsa` has no fix for RUSTSEC-2023-0071. This local key-format
+// demonstration must not be used as production cryptography.
 use std::fs::File;
 use std::io::Write;
 

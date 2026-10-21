@@ -4,6 +4,11 @@
 //! This example demonstrates the usage of the `glommio` library for
 //! asynchronous I/O operations in Rust.
 //!
+//! Security: this Glommio release transitively uses `owned-alloc`, which has
+//! no fix for RUSTSEC-2026-0291. Its double-free requires a panicking `Drop`
+//! during `OwnedAlloc::drop_in_place`; this isolated Linux example is kept for
+//! education and must not be copied into production services.
+//!
 //! `glommio` is a library providing a safe Rust interface for asynchronous,
 //! thread-local I/O, based on the Linux `io_uring` interface plus Rust's async
 //! support. `glommio` is therefore Linux-only, with a kernel version 5.8 or

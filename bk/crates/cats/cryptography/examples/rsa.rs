@@ -1,4 +1,7 @@
 // ANCHOR: example
+// Security: `rsa` has no fix for RUSTSEC-2023-0071. This example performs a
+// local round trip only; do not expose decryption timing to attackers or use
+// this crate for production cryptography.
 // Operating System's Random Number Generator compatible with rsa.
 // Encryption using PKCS#1 v1.5 padding.
 use rsa::Pkcs1v15Encrypt;

@@ -1,8 +1,8 @@
 #![allow(dead_code)]
 // ANCHOR: example
-use ansi_term::Style;
+use nu_ansi_term::Style;
 
-/// Basic example of using `ansi_term` to print bold text.
+/// Basic example of using `nu-ansi-term` to print bold text.
 fn main() {
     println!(
         "{} and this is not",
