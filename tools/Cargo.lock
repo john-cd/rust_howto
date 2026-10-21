@@ -1306,6 +1306,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "mdbook-private"
+version = "0.3.0"
+dependencies = [
+ "mdbook-preprocessor",
+ "regex",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "mdbook-renderer"
 version = "0.5.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"

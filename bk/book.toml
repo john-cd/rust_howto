@@ -20,6 +20,7 @@ edition = "2024" # the default edition for code blocks. Default is "2015"
 # # An mdbook preprocessor for defining and optionally hiding private sections and chapters in your book.
 # # https://github.com/RealAtix/mdbook-private
 [preprocessor.private]
+command = "../bin/mdbook-private"
 remove = true # Determines whether to remove or retain sections marked as private
 style = true  # Styles the private sections (when retained) using blockquote CSS.
 notice = "WORK IN PROGRESS" # Adds a notice to styled sections at the top right corner.
@@ -61,6 +62,7 @@ after = [ "links" ]
 # # A backend for mdbook which will check your links for you. For use alongside the built-in HTML renderer.
 # # https://github.com/Michael-F-Bryan/mdbook-linkcheck
 [output.linkcheck]
+command = "../bin/mdbook-linkcheck-compat"
 # # Should we check links on the internet? Enabling this option adds a
 # # non-negligible performance impact
 follow-web-links = false

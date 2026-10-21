@@ -2,6 +2,9 @@
 *.bak
 !README.md
 /bin
+__pycache__/
+*.py[cod]
+mdbook-scrub.log
 
 # Windows ------------------------
 

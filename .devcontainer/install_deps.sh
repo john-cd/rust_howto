@@ -77,7 +77,6 @@ curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-
 cargo binstall --no-confirm --secure --version "$CARGO_NEXTEST_VERSION" cargo-nextest
 cargo binstall --no-confirm --secure --version "$MDBOOK_VERSION" mdbook
 cargo binstall --no-confirm --secure --version "$MDBOOK_LINKCHECK_VERSION" mdbook-linkcheck
-cargo binstall --no-confirm --secure --version "$MDBOOK_PRIVATE_VERSION" mdbook-private
 cargo binstall --no-confirm --secure --version "$MDBOOK_PANDOC_VERSION" mdbook-pandoc
 cargo binstall --no-confirm --secure --version "$TECTONIC_VERSION" tectonic
 cargo binstall --no-confirm --secure --version "$JUST_VERSION" just

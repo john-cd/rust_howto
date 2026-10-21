@@ -13,7 +13,7 @@ _default:
 alias bb := buildbook
 
 # Build the book from its Markdown files (incl. refdefs, index, categories, sitemap, and static assets)
-@buildbook: _release_mbdbook-scrub _install-mdbook-utils refdefs-check _generate-index-category _mdbook-build-book && _sitemap _copystatic
+@buildbook: _release_mbdbook-scrub refdefs-check _generate-index-category _mdbook-build-book && _sitemap _copystatic
 
 # Generate the book's HTML / JS
 [unix]
@@ -28,16 +28,16 @@ alias bb := buildbook
 
 # Regenerate only the owned dependency-reference fragment.
 [unix]
-@refdefs-generate:
+@refdefs-generate: _install-mdbook-utils
   python3 "{{source_directory()}}/refdefs.py" generate --book-root "{{root}}"
 
 [windows]
 @refdefs-generate: _install-mdbook-utils
   python "{{source_directory()}}/refdefs.py" generate --book-root "{{root}}"
 
-# Check generated refs before rendering; builds report drift without rewriting authoring files.
+# Check generated refs without rewriting authoring files.
 [unix]
-@refdefs-check:
+@refdefs-check: _install-mdbook-utils
   python3 "{{source_directory()}}/refdefs.py" check --book-root "{{root}}"
 
 [windows]
@@ -45,7 +45,7 @@ alias bb := buildbook
   python "{{source_directory()}}/refdefs.py" check --book-root "{{root}}"
 
 @_install-mdbook-utils:
-  cargo install --git https://github.com/john-cd/mdbook-utils --rev {{mdbook_utils_rev}} --locked --force mdbook-utils
+  cargo install --git https://github.com/john-cd/mdbook-utils --rev {{mdbook_utils_rev}} --locked mdbook-utils
 
 # Generate the index and the category page.
 @_generate-index-category:
@@ -63,6 +63,12 @@ alias bb := buildbook
   copy {{root}}\static\*.* {{root}}\book\html\
 
 # Generate the sitemap.xml file
+[unix]
+@_sitemap:
+  echo "Generate the sitemap"
+  cd {{root}} && mdbook-utils sitemap
+
+[windows]
 @_sitemap:
   echo "Generate the sitemap"
   cd {{root}} && mdbook-utils sitemap
@@ -71,12 +77,12 @@ alias bb := buildbook
 [unix]
 @_release_mbdbook-scrub:
   echo "Build mdbook-scrub, if needed"
-  if [ ! -f {{root}}/../bin/mdbook-scrub ]; then just -f {{root}}/../tools/justfile release; fi
+  if [ ! -f {{root}}/../bin/mdbook-scrub ] || [ ! -f {{root}}/../bin/mdbook-private ] || [ ! -f {{root}}/../bin/mdbook-linkcheck-compat ]; then just -f {{root}}/../tools/justfile release; fi
 
 [windows]
 @_release_mbdbook-scrub:
   echo "Build mdbook-scrub, if needed"
-  if (-Not (Test-Path -Path {{root}}\..\bin\mdbook-scrub.exe )) { just -f {{root}}\..\tools\justfile release }
+  if (-not (Test-Path {{root}}\..\bin\mdbook-scrub.exe) -or -not (Test-Path {{root}}\..\bin\mdbook-private.exe) -or -not (Test-Path {{root}}\..\bin\mdbook-linkcheck-compat.exe)) { just -f {{root}}\..\tools\justfile release }
 
 ## ---- BOOK SERVING -----------------------------------
 

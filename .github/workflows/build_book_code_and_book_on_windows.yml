@@ -26,6 +26,8 @@ on:
 
 env:
   CARGO_TERM_COLOR: always
+  CARGO_TARGET_DIR: ${{ github.workspace }}/target
+  CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/target/build
 
 ## ---------------------------------------------------------------------
 
@@ -94,7 +96,6 @@ jobs:
         run: |
           cargo binstall --version $env:MDBOOK_VERSION --no-confirm mdbook
           cargo binstall --version $env:MDBOOK_LINKCHECK_VERSION --no-confirm mdbook-linkcheck
-          cargo binstall --version $env:MDBOOK_PRIVATE_VERSION --no-confirm mdbook-private
 
       - name: Install mdBook indexing from its locked source
         run: cargo install --locked --force --version $env:MDBOOK_INDEXING_VERSION mdbook-indexing
@@ -106,7 +107,7 @@ jobs:
         run: cargo binstall --version $env:JUST_VERSION --no-confirm --secure just
 
       - name: Install `mdbook-utils`
-        run: cargo install --git https://github.com/john-cd/mdbook-utils --rev $env:MDBOOK_UTILS_REV --locked --force mdbook-utils
+        run: cargo install --git https://github.com/john-cd/mdbook-utils --rev $env:MDBOOK_UTILS_REV --locked mdbook-utils
 
       - name: Update Rust; Install nightly Rust
         run: |
@@ -155,5 +156,7 @@ jobs:
         working-directory: '.\tools'
 
       - name: Build the book
-        run: just bb
+        run: |
+          python scripts\book\test_refdefs.py
+          just bb
         working-directory: '.\bk'
