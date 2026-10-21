@@ -1,3 +1,1 @@
-[build]
-target-dir = "D:/target/rust_howto/coherent-book-tooling-commits"
-build-dir = "C:/code_build/rust_howto/coherent-book-tooling-commits"
+# Shared build paths and sccache settings are inherited from the root .cargo/config.toml.

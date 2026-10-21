@@ -1,0 +1,12 @@
+# Paths are relative to the repository root. `just build-setup` creates junctions
+# on Windows or symlinks on Linux to persistent directories outside the checkout.
+[build]
+target-dir = "target"
+build-dir = "build"
+rustc-wrapper = "sccache"
+incremental = false
+
+[env]
+SCCACHE_DIR = { value = ".sccache", relative = true }
+# Cargo expands this to the current checkout, including a reused worktree slot.
+SCCACHE_BASEDIRS = { value = ".", relative = true, force = true }
