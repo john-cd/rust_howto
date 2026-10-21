@@ -47,7 +47,11 @@ mod tests {
         assert!(rendered.contains("[![Rust by example - hello-world_test example]"));
         assert!(rendered.contains("book~rust-by-example~hello_world_test example"));
         assert!(rendered.contains("https://img.shields.io/badge/Rust_By_Example-hello--world__test_example-violet?logo=mdbook"));
-        assert!(rendered.contains("https://doc.rust-lang.org/rust-by-example/hello_world_test example.html"));
+        assert!(
+            rendered.contains(
+                "https://doc.rust-lang.org/rust-by-example/hello_world_test example.html"
+            )
+        );
     }
 
     #[test]

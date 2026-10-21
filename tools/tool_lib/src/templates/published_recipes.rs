@@ -37,6 +37,7 @@ pub fn collect_published_recipe_links(book_root: impl AsRef<Path>) -> Result<Rec
     let crate_badge_pattern = Regex::new(
         r"\[!\[(?P<name>[^\]]+)\]\[c~(?P<badge>[^~\]]+)~docs~badge\]\]\[c~(?P<link>[^\]]+)~docs\]",
     )?;
+    let crate_directive_pattern = Regex::new(r"\{\{\s*#crate\s*:?\s+(?P<name>[^\s}]+)[^}]*\}\}")?;
     let reference_pattern = Regex::new(r"(?m)^\s*\[(ex~[^\]]+)\]:\s*\S+")?;
 
     let mut pending = vec![examples_index.clone()];
@@ -68,6 +69,10 @@ pub fn collect_published_recipe_links(book_root: impl AsRef<Path>) -> Result<Rec
             };
             let title = recipe["title"].trim().to_owned();
             let reference = recipe["reference"].trim().to_owned();
+            let link = RecipeLink {
+                title: title.clone(),
+                reference: reference.clone(),
+            };
             for badge in crate_badge_pattern.captures_iter(line) {
                 let name = badge["name"].trim();
                 ensure!(
@@ -83,10 +88,13 @@ pub fn collect_published_recipe_links(book_root: impl AsRef<Path>) -> Result<Rec
                 recipes
                     .entry(name.to_owned())
                     .or_default()
-                    .insert(RecipeLink {
-                        title: title.clone(),
-                        reference: reference.clone(),
-                    });
+                    .insert(link.clone());
+            }
+            for directive in crate_directive_pattern.captures_iter(line) {
+                recipes
+                    .entry(directive["name"].trim().to_owned())
+                    .or_default()
+                    .insert(link.clone());
             }
         }
     }
@@ -149,7 +157,8 @@ mod tests {
                 "| --- | --- |\n",
                 "| [One recipe][ex~sample~one] | [![crate-a][c~crate-a~docs~badge]][c~crate-a~docs] [![crate-b][c~crate-b~docs~badge]][c~crate-b~docs] |\n",
                 "| [One recipe][ex~sample~one] | [![crate-a][c~crate-a~docs~badge]][c~crate-a~docs] |\n",
-                "| [Another recipe][ex~sample~two] | [![crate-a][c~crate-a~docs~badge]][c~crate-a~docs] |\n"
+                "| [Another recipe][ex~sample~two] | [![crate-a][c~crate-a~docs~badge]][c~crate-a~docs] |\n",
+                "| [Directive recipe][ex~sample~three] | {{#crate crate-c testing}} {{#categories testing=Testing}} |\n"
             ),
         )
         .unwrap();
@@ -157,7 +166,8 @@ mod tests {
             indices.join("refs.incl.md"),
             concat!(
                 "[ex~sample~one]: ../recipes/recipes.md#one\n",
-                "[ex~sample~two]: ../recipes/recipes.md#two\n"
+                "[ex~sample~two]: ../recipes/recipes.md#two\n",
+                "[ex~sample~three]: ../recipes/recipes.md#three\n"
             ),
         )
         .unwrap();
@@ -166,8 +176,10 @@ mod tests {
 
         assert_eq!(recipes["crate-a"].len(), 2);
         assert_eq!(recipes["crate-b"].len(), 1);
+        assert_eq!(recipes["crate-c"].len(), 1);
         assert_eq!(recipes["crate-a"][0].title, "Another recipe");
         assert_eq!(recipes["crate-a"][1].reference, "ex~sample~one");
+        assert_eq!(recipes["crate-c"][0].title, "Directive recipe");
     }
 
     #[test]
