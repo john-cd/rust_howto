@@ -1,21 +1,29 @@
+use std::collections::BTreeSet;
+use std::collections::HashSet;
+
+use anyhow::Context as _;
 use anyhow::Result;
-use serde::Serialize;
+use serde::Deserialize;
 
-pub(super) static CATEGORY_ROW: &str = r"| [![cat~{slug}][cat~{slug}~badge]][cat~{slug}]\{\{hi:{category}}} | {description} | {{ for name in crate_names }}[![{name}][c~{name}~docs~badge]][c~{name}~docs]\{\{hi:{name}}} {{ endfor }}|";
+const UNCATEGORIZED_SLUG: &str = "uncategorized";
+const UNCATEGORIZED_DESCRIPTION: &str =
+    "No crates.io category is recorded for these crates in the book's current inventory.";
+const CATEGORY_PAGE_HEADER: &str =
+    "# Crates by Category\n\n| Category | Description | Crates |\n| --- | --- | --- |\n";
+const CATEGORY_PAGE_FOOTER: &str = "\n[All Valid Categories][crates.io~category_slugs]↗.\n\n{{#include refs.incl.md}}\n{{#include ../refs/link-refs.md}}\n\n<div class=\"hidden\">\n</div>\n";
 
-/// Context for rendering a category row in the crates by category table.
-///
-/// category: category name e.g. Encoding
-/// slug: category slug used by the crates.io website e.g. encoding
-/// description: description of the category
-/// crate_names: list of the names of the crates to include in the category (per
-/// lib.rs)
-#[derive(Serialize)]
-struct Context<'a> {
-    category: &'a str,
-    slug: &'a str,
-    description: &'a str,
-    crate_names: Vec<&'a str>,
+#[derive(Deserialize)]
+struct CategoryCatalog {
+    categories: Vec<CategoryRecord>,
+}
+
+#[derive(Deserialize)]
+struct CategoryRecord {
+    category: String,
+    slug: String,
+    description: String,
+    #[serde(default)]
+    crates: Vec<String>,
 }
 
 /// Create_category_and_crates
@@ -33,15 +41,118 @@ pub fn create_category_and_crates(
     description: &str,
     crate_names: Vec<&str>,
 ) -> Result<String> {
-    let tt = super::get_template_engine()?;
-    let context = Context {
-        category: category.trim(),
-        slug: slug.trim(),
-        description: description.trim(),
-        crate_names,
+    let category = category.trim();
+    let slug = slug.trim();
+    let description = description.trim();
+    let mut row = if slug == UNCATEGORIZED_SLUG {
+        String::from("| Uncategorized | ")
+    } else {
+        format!("| [![cat~{slug}][cat~{slug}~badge]][cat~{slug}]{{{{hi:{category}}}}} | ")
     };
-    let rendered = tt.render("CATEGORY_ROW", &context)?;
-    Ok(rendered)
+    row.push_str(description);
+    row.push_str(" | ");
+    for name in crate_names {
+        row.push_str("[![");
+        row.push_str(name);
+        row.push_str("][c~");
+        row.push_str(name);
+        row.push_str("~docs~badge]][c~");
+        row.push_str(name);
+        row.push_str("~docs]{{hi:");
+        row.push_str(name);
+        row.push_str("}} ");
+    }
+    row.push('|');
+    Ok(row)
+}
+
+/// Render the external crates.io category index from a checked-in metadata snapshot.
+///
+/// Crates not listed in the snapshot are added to the uncategorized row. Entries in
+/// the snapshot that are absent from the current inventory are ignored, so crate
+/// renames do not leave stale badges behind.
+pub fn create_category_page_from_metadata(
+    crate_names: &[String],
+    metadata: &str,
+) -> Result<String> {
+    let catalog: CategoryCatalog =
+        toml::from_str(metadata).context("parse crate category metadata")?;
+    let inventory: BTreeSet<String> = crate_names
+        .iter()
+        .map(|name| name.trim())
+        .filter(|name| !name.is_empty() && *name != "std")
+        .map(str::to_owned)
+        .collect();
+
+    let mut slugs = HashSet::new();
+    let mut groups: Vec<(String, String, String, BTreeSet<String>)> = Vec::new();
+    let mut uncategorized_index = None;
+    let mut categorized = BTreeSet::new();
+
+    for record in catalog.categories {
+        let category = record.category.trim().to_owned();
+        let slug = record.slug.trim().to_owned();
+        let description = record.description.trim().to_owned();
+        anyhow::ensure!(!category.is_empty(), "category name cannot be empty");
+        anyhow::ensure!(!slug.is_empty(), "category slug cannot be empty");
+        anyhow::ensure!(
+            slugs.insert(slug.clone()),
+            "duplicate category slug in crate category metadata: {slug}"
+        );
+
+        let names: BTreeSet<String> = record
+            .crates
+            .iter()
+            .map(|name| name.trim())
+            .filter(|name| inventory.contains(*name))
+            .map(str::to_owned)
+            .collect();
+        categorized.extend(names.iter().cloned());
+
+        if slug == UNCATEGORIZED_SLUG {
+            uncategorized_index = Some(groups.len());
+        }
+        groups.push((category, slug, description, names));
+    }
+
+    let uncategorized: BTreeSet<String> = inventory.difference(&categorized).cloned().collect();
+    if !uncategorized.is_empty() {
+        let index = match uncategorized_index {
+            Some(index) => index,
+            None => {
+                anyhow::ensure!(
+                    slugs.insert(UNCATEGORIZED_SLUG.to_owned()),
+                    "crate category metadata reserves the uncategorized slug"
+                );
+                let index = groups.len();
+                groups.push((
+                    "Uncategorized".to_owned(),
+                    UNCATEGORIZED_SLUG.to_owned(),
+                    UNCATEGORIZED_DESCRIPTION.to_owned(),
+                    BTreeSet::new(),
+                ));
+                index
+            }
+        };
+        groups[index].3.extend(uncategorized);
+    }
+
+    let mut markdown = String::from(CATEGORY_PAGE_HEADER);
+    for (category, slug, description, names) in groups {
+        if names.is_empty() {
+            continue;
+        }
+        let crate_names = names.iter().map(String::as_str).collect();
+        markdown.push_str(&create_category_and_crates(
+            &category,
+            &slug,
+            &description,
+            crate_names,
+        )?);
+        markdown.push('\n');
+    }
+    markdown.push_str(CATEGORY_PAGE_FOOTER);
+    Ok(markdown)
 }
 
 #[cfg(test)]
@@ -86,5 +197,90 @@ mod tests {
 
         // Ensure it doesn't contain crate badges (it should end with a '|')
         assert!(result.ends_with("|"));
+    }
+
+    #[test]
+    fn category_row_preserves_existing_markdown_entities() {
+        let row = create_category_and_crates(
+            "Game engines",
+            "game-engines",
+            "A &quot;one-stop-shop&quot; category &amp; description.",
+            vec!["glam"],
+        )
+        .unwrap();
+
+        assert!(row.contains("A &quot;one-stop-shop&quot; category &amp; description."));
+        assert!(!row.contains("&amp;quot;"));
+        assert!(!row.contains("&amp;amp;"));
+    }
+
+    #[test]
+    fn category_page_from_metadata_handles_duplicates_renames_and_missing_categories() {
+        let inventory = ["shared", "shared", "new-name", "std"].map(str::to_owned);
+        let metadata = r#"
+            [[categories]]
+            category = "Data structures"
+            slug = "data-structures"
+            description = "Structures and collections."
+            crates = ["shared", "shared", "old-name"]
+
+            [[categories]]
+            category = "Uncategorized"
+            slug = "uncategorized"
+            description = "No metadata is recorded."
+            crates = ["old-name", "removed"]
+        "#;
+
+        let page = create_category_page_from_metadata(&inventory, metadata).unwrap();
+
+        assert_eq!(page.matches("[![shared][c~shared~docs~badge]").count(), 1);
+        assert_eq!(
+            page.matches("[![new-name][c~new-name~docs~badge]").count(),
+            1
+        );
+        assert!(!page.contains("[![old-name][c~old-name~docs~badge]"));
+        assert!(!page.contains("[![removed][c~removed~docs~badge]"));
+        assert!(!page.contains("[![std][c~std~docs~badge]"));
+        assert!(page.contains("| Uncategorized | No metadata is recorded. |"));
+    }
+
+    #[test]
+    fn category_page_from_metadata_is_deterministic() {
+        let metadata = r#"
+            [[categories]]
+            category = "A category"
+            slug = "a-category"
+            description = "Example category."
+            crates = ["beta", "alpha"]
+        "#;
+        let first = vec!["beta".to_owned(), "alpha".to_owned(), "alpha".to_owned()];
+        let second = vec!["alpha".to_owned(), "beta".to_owned()];
+
+        assert_eq!(
+            create_category_page_from_metadata(&first, metadata).unwrap(),
+            create_category_page_from_metadata(&second, metadata).unwrap()
+        );
+    }
+
+    #[test]
+    fn category_page_from_metadata_rejects_duplicate_slugs() {
+        let metadata = r#"
+            [[categories]]
+            category = "First"
+            slug = "same"
+            description = "First category."
+            crates = ["crate-a"]
+
+            [[categories]]
+            category = "Second"
+            slug = "same"
+            description = "Second category."
+            crates = ["crate-b"]
+        "#;
+
+        let error =
+            create_category_page_from_metadata(&["crate-a".to_owned()], metadata).unwrap_err();
+
+        assert!(error.to_string().contains("duplicate category slug"));
     }
 }

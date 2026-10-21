@@ -13,6 +13,7 @@ pub(crate) enum Cmd {
     #[default]
     None,
     CategoryPage(CmdArgs),
+    CategoryPageFromMetadata(CategoryPageFromMetadataCmdArgs),
     AlphabeticalCratePage(CmdArgs),
     CratePage(CmdArgs),
     ListCrates(DirectoryCmdArgs),
@@ -32,6 +33,13 @@ pub(crate) struct CmdArgs {
 pub(crate) struct CmdArgs2 {
     pub crate_names: Vec<String>,
     pub filepathbuf: PathBuf,
+}
+
+/// Arguments for generating a category page from a local metadata snapshot.
+#[derive(Debug)]
+pub(crate) struct CategoryPageFromMetadataCmdArgs {
+    pub crate_names: Vec<String>,
+    pub metadata_path: PathBuf,
 }
 
 /// Command arguments with a directory
@@ -54,6 +62,13 @@ pub(super) fn get_cmd() -> anyhow::Result<Cmd> {
         Ok(Cmd::CategoryPage(CmdArgs {
             crate_names: get_crate_names(m),
         }))
+    } else if let Some(m) = matches.subcommand_matches("category_page_from_metadata") {
+        Ok(Cmd::CategoryPageFromMetadata(
+            CategoryPageFromMetadataCmdArgs {
+                crate_names: get_crate_names(m),
+                metadata_path: get_metadata_path(m),
+            },
+        ))
     } else if let Some(m) = matches.subcommand_matches("alphabetical_page") {
         Ok(Cmd::AlphabeticalCratePage(CmdArgs {
             crate_names: get_crate_names(m),
@@ -107,6 +122,13 @@ fn get_crate_names(m: &clap::ArgMatches) -> Vec<String> {
 fn get_file_path(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("file_path")
         .expect("file_path has a default value")
+        .to_path_buf()
+}
+
+/// Get the required category metadata path.
+fn get_metadata_path(m: &clap::ArgMatches) -> PathBuf {
+    m.get_one::<PathBuf>("metadata")
+        .expect("metadata is required")
         .to_path_buf()
 }
 
