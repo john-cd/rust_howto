@@ -29,19 +29,16 @@ fn main() -> anyhow::Result<()> {
     loop {
         match reader.read_event()? {
             Event::Start(event) => {
-                println!(
-                    "start: {}",
-                    String::from_utf8_lossy(event.name().as_ref())
-                );
+                println!("start: {}", event.name().as_ref());
             }
             Event::Text(event) => {
-                println!("text: {}", event.decode()?.into_owned());
+                println!(
+                    "text: {}",
+                    quick_xml::escape::unescape(event.as_ref())?
+                );
             }
             Event::End(event) => {
-                println!(
-                    "end: {}",
-                    String::from_utf8_lossy(event.name().as_ref())
-                );
+                println!("end: {}", event.name().as_ref());
             }
             Event::Eof => break,
             _ => {}

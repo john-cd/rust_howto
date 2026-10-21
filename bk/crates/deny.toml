@@ -1,0 +1,69 @@
+[graph]
+# Match the feature set used by the workspace's ordinary builds. Optional
+# framework integrations are not enabled implicitly by the audit.
+all-features = false
+
+[advisories]
+# Record each no-fix advisory explicitly with a reason. Revisit the entries
+# when an upstream fix is available.
+ignore = [
+    { id = "RUSTSEC-2023-0071", reason = "No fixed rsa release exists. The only use is a local encryption/key-format teaching example; both examples warn against network exposure and production use." },
+    { id = "RUSTSEC-2025-0141", reason = "The encoding chapter demonstrates Bincode 2 format interoperability; 1.3.3 is also transitive through hyphenation and syntect. Bincode 3.0.0 is an intentional compile_error release, so these stable versions remain with an explicit maintenance warning." },
+    { id = "RUSTSEC-2026-0291", reason = "No fixed owned-alloc or lockfree release exists. The sole path is the Linux-only Glommio teaching example, which documents the panicking-Drop trigger and production risk." },
+]
+unmaintained = "workspace"
+unsound = "workspace"
+
+[licenses]
+allow = [
+    "0BSD",
+    "Apache-2.0",
+    "Apache-2.0 WITH LLVM-exception",
+    "BSD-1-Clause",
+    "BSD-2-Clause",
+    "BSD-2-Clause-Patent",
+    "BSD-3-Clause",
+    "BSL-1.0",
+    "CC0-1.0",
+    "CDLA-Permissive-2.0",
+    "ISC",
+    "MIT",
+    "MIT-0",
+    "MITNFA",
+    "MPL-2.0",
+    "NCSA",
+    "Unicode-3.0",
+    "Unicode-DFS-2016",
+    "Unlicense",
+    "X11",
+    "Zlib",
+    "bzip2-1.0.6",
+]
+confidence-threshold = 0.8
+exceptions = [
+    # The text_processing example specifically teaches concat_strs; it is not
+    # linked into a product binary or distributed as part of the book build.
+    { crate = "concat_strs@1.0.2", allow = ["AGPL-3.0"] },
+    { crate = "concat_strs_impl@1.0.1", allow = ["AGPL-3.0"] },
+    # The mathematics examples intentionally demonstrate arbitrary precision
+    # through rug/GMP. Readers obtain these LGPL crates independently from
+    # crates.io; the book publishes neither their sources nor linked binaries.
+    { crate = "rug@1.30.0", allow = ["LGPL-3.0-or-later"] },
+    { crate = "gmp-mpfr-sys@1.7.1", allow = ["LGPL-3.0-or-later"] },
+]
+
+[licenses.private]
+# Workspace examples are not published packages; the root LICENSE is not an
+# SPDX license grant for these private workspace members.
+ignore = true
+
+[bans]
+# Keep duplicate and wildcard dependency debt visible without hiding crates.
+multiple-versions = "warn"
+wildcards = "warn"
+
+[sources]
+unknown-registry = "deny"
+unknown-git = "deny"
+allow-registry = ["https://github.com/rust-lang/crates.io-index"]
+allow-git = []

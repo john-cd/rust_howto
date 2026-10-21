@@ -1,14 +1,14 @@
 #![allow(dead_code)]
 // ANCHOR: example
-use ansi_term::Colour;
+use nu_ansi_term::Color;
 
-/// Demonstrates basic usage of the `ansi_term` crate for colored output.
+/// Demonstrates basic usage of the maintained `nu-ansi-term` crate.
 fn main() {
     println!(
         "This is {} in color, {} in color and {} in color",
-        Colour::Red.paint("red"),
-        Colour::Blue.paint("blue"),
-        Colour::Green.paint("green")
+        Color::Red.paint("red"),
+        Color::Blue.paint("blue"),
+        Color::Green.paint("green")
     );
 }
 
