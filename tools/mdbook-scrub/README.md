@@ -86,6 +86,19 @@ The order is `private` → `scrub` → mdBook's `links` → `directives`. This l
 mdBook expand its own include, rustdoc-include, and playground helpers first,
 then applies custom directives to the included content while preserving code.
 
+## Relationship to badge generators
+
+The `templ badge`, `templ category_badge`, and
+`templ categories_badges_for_crate` commands generate static badge Markdown.
+`crate_indices expand_crate_blocks` rewrites crate directives into static badge
+blocks, and `crate_indices update_refdefs` maintains the generated reference
+definitions. Keep these commands for workflows that need checked-in, expanded
+Markdown. The `directives` preprocessor instead expands crate and category
+directives during publication without changing source files. Its fixture checks
+the rendered badge labels, image URLs, links, and recipe anchors; the current
+`sorting.incl.md` chapter uses that same syntax in a table. Leave the generators
+in place until their source-generation workflows have an explicit replacement.
+
 ## Remove Hidden Sections
 
 ```html
