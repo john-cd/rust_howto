@@ -16,7 +16,7 @@ $metadataPath = Join-Path $BookRoot 'master/crate_categories.toml'
 Push-Location $ToolsRoot
 try {
     Get-Content -LiteralPath $crateListPath |
-        cargo run --locked -p crate_indices -- category_page_from_metadata --metadata $metadataPath > $candidatePath
+        cargo run --locked -p crate_indices -- category_page_from_metadata --metadata $metadataPath --book-root $BookRoot > $candidatePath
     if ($LASTEXITCODE -ne 0) {
         throw "crate_indices exited with code $LASTEXITCODE"
     }

@@ -31,8 +31,9 @@ fn subcommand_category_page() -> Command {
 /// Builds the offline `category_page_from_metadata` subcommand.
 fn subcommand_category_page_from_metadata() -> Command {
     Command::new("category_page_from_metadata")
-        .about("Returns the category page from a checked-in metadata snapshot and crate list")
+        .about("Returns the category page from metadata and published recipe links")
         .arg(arg_metadata_file())
+        .arg(arg_book_root())
         .arg(arg_crate_name())
 }
 

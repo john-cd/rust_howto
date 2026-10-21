@@ -64,7 +64,12 @@ fn main() -> anyhow::Result<()> {
         cli::Cmd::CategoryPageFromMetadata(c) => {
             let metadata = std::fs::read_to_string(&c.metadata_path)
                 .with_context(|| format!("read {}", c.metadata_path.display()))?;
-            let markdown = tool_lib::create_category_page_from_metadata(&c.crate_names, &metadata)?;
+            let recipe_links = tool_lib::collect_published_recipe_links(&c.book_root)?;
+            let markdown = tool_lib::create_category_page_from_metadata_with_recipe_links(
+                &c.crate_names,
+                &metadata,
+                &recipe_links,
+            )?;
             print!("{markdown}");
         }
         cli::Cmd::AlphabeticalCratePage(crates) => {
@@ -183,11 +188,19 @@ mod tests {
 
     #[test]
     fn category_index_covers_master_crates() {
-        let expected: BTreeSet<_> = MASTER_CRATES
+        let book_root = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("../../bk");
+        let recipe_links = tool_lib::collect_published_recipe_links(book_root).unwrap();
+        let mut expected: BTreeSet<_> = MASTER_CRATES
             .lines()
             .map(str::trim)
             .filter(|name| !name.is_empty() && *name != "std")
             .collect();
+        expected.extend(
+            recipe_links
+                .keys()
+                .map(String::as_str)
+                .filter(|name| *name != "std"),
+        );
         let indexed = category_index_crates(CATEGORY_INDEX);
         let missing: Vec<_> = expected.difference(&indexed).copied().collect();
 
@@ -201,8 +214,14 @@ mod tests {
     #[test]
     fn category_index_matches_offline_generation() {
         let crate_names: Vec<_> = MASTER_CRATES.lines().map(str::to_owned).collect();
-        let generated =
-            tool_lib::create_category_page_from_metadata(&crate_names, CATEGORY_METADATA).unwrap();
+        let book_root = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("../../bk");
+        let recipe_links = tool_lib::collect_published_recipe_links(&book_root).unwrap();
+        let generated = tool_lib::create_category_page_from_metadata_with_recipe_links(
+            &crate_names,
+            CATEGORY_METADATA,
+            &recipe_links,
+        )
+        .unwrap();
 
         assert_eq!(generated, CATEGORY_INDEX);
     }

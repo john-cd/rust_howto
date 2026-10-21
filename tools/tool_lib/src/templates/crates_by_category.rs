@@ -5,6 +5,8 @@ use anyhow::Context as _;
 use anyhow::Result;
 use serde::Deserialize;
 
+use super::RecipeLinksByCrate;
+
 const UNCATEGORIZED_SLUG: &str = "uncategorized";
 const UNCATEGORIZED_DESCRIPTION: &str =
     "No crates.io category is recorded for these crates in the book's current inventory.";
@@ -41,6 +43,22 @@ pub fn create_category_and_crates(
     description: &str,
     crate_names: Vec<&str>,
 ) -> Result<String> {
+    create_category_row(
+        category,
+        slug,
+        description,
+        crate_names,
+        &RecipeLinksByCrate::new(),
+    )
+}
+
+fn create_category_row(
+    category: &str,
+    slug: &str,
+    description: &str,
+    crate_names: Vec<&str>,
+    recipe_links: &RecipeLinksByCrate,
+) -> Result<String> {
     let category = category.trim();
     let slug = slug.trim();
     let description = description.trim();
@@ -51,7 +69,19 @@ pub fn create_category_and_crates(
     };
     row.push_str(description);
     row.push_str(" | ");
+    let mut previous_crate_had_recipes = false;
     for name in crate_names {
+        let links = recipe_links
+            .get(name)
+            .map(Vec::as_slice)
+            .unwrap_or_default();
+        if !row.ends_with(" | ") {
+            row.push_str(if previous_crate_had_recipes || !links.is_empty() {
+                "<br>"
+            } else {
+                " "
+            });
+        }
         row.push_str("[![");
         row.push_str(name);
         row.push_str("][c~");
@@ -60,7 +90,15 @@ pub fn create_category_and_crates(
         row.push_str(name);
         row.push_str("~docs]{{hi:");
         row.push_str(name);
-        row.push_str("}} ");
+        row.push_str("}}");
+        for link in links {
+            row.push_str("<br>&nbsp;&nbsp;↳ [");
+            row.push_str(&link.title);
+            row.push_str("][");
+            row.push_str(&link.reference);
+            row.push(']');
+        }
+        previous_crate_had_recipes = !links.is_empty();
     }
     row.push('|');
     Ok(row)
@@ -75,6 +113,19 @@ pub fn create_category_page_from_metadata(
     crate_names: &[String],
     metadata: &str,
 ) -> Result<String> {
+    create_category_page_from_metadata_with_recipe_links(
+        crate_names,
+        metadata,
+        &RecipeLinksByCrate::new(),
+    )
+}
+
+/// Render the external crates.io category index and link each crate to its published recipes.
+pub fn create_category_page_from_metadata_with_recipe_links(
+    crate_names: &[String],
+    metadata: &str,
+    recipe_links: &RecipeLinksByCrate,
+) -> Result<String> {
     let catalog: CategoryCatalog =
         toml::from_str(metadata).context("parse crate category metadata")?;
     let inventory: BTreeSet<String> = crate_names
@@ -82,6 +133,12 @@ pub fn create_category_page_from_metadata(
         .map(|name| name.trim())
         .filter(|name| !name.is_empty() && *name != "std")
         .map(str::to_owned)
+        .chain(
+            recipe_links
+                .keys()
+                .filter(|name| name.as_str() != "std")
+                .cloned(),
+        )
         .collect();
 
     let mut slugs = HashSet::new();
@@ -143,11 +200,12 @@ pub fn create_category_page_from_metadata(
             continue;
         }
         let crate_names = names.iter().map(String::as_str).collect();
-        markdown.push_str(&create_category_and_crates(
+        markdown.push_str(&create_category_row(
             &category,
             &slug,
             &description,
             crate_names,
+            recipe_links,
         )?);
         markdown.push('\n');
     }
@@ -157,6 +215,7 @@ pub fn create_category_page_from_metadata(
 
 #[cfg(test)]
 mod tests {
+    use super::super::RecipeLink;
     use super::*;
 
     #[test]
@@ -242,6 +301,66 @@ mod tests {
         assert!(!page.contains("[![removed][c~removed~docs~badge]"));
         assert!(!page.contains("[![std][c~std~docs~badge]"));
         assert!(page.contains("| Uncategorized | No metadata is recorded. |"));
+    }
+
+    #[test]
+    fn category_page_from_metadata_nests_recipe_links_under_their_crates() {
+        let inventory = ["glam", "vello"].map(str::to_owned);
+        let metadata = r#"
+            [[categories]]
+            category = "Graphics"
+            slug = "graphics"
+            description = "Graphics crates."
+            crates = ["vello", "glam"]
+        "#;
+        let recipe_links = RecipeLinksByCrate::from([(
+            "glam".to_owned(),
+            vec![RecipeLink {
+                title: "Draw with glam".to_owned(),
+                reference: "ex~graphics~glam".to_owned(),
+            }],
+        )]);
+
+        let page = create_category_page_from_metadata_with_recipe_links(
+            &inventory,
+            metadata,
+            &recipe_links,
+        )
+        .unwrap();
+
+        assert!(page.contains(
+            "[![glam][c~glam~docs~badge]][c~glam~docs]{{hi:glam}}<br>&nbsp;&nbsp;↳ [Draw with glam][ex~graphics~glam]<br>[![vello]"
+        ));
+    }
+
+    #[test]
+    fn category_page_from_metadata_includes_crates_found_only_in_recipes() {
+        let inventory = ["known".to_owned(), "std".to_owned()];
+        let metadata = r#"
+            [[categories]]
+            category = "Data structures"
+            slug = "data-structures"
+            description = "Data structures crates."
+            crates = ["known"]
+        "#;
+        let recipe_links = RecipeLinksByCrate::from([(
+            "recipe-only".to_owned(),
+            vec![RecipeLink {
+                title: "Use recipe-only".to_owned(),
+                reference: "ex~examples~recipe-only".to_owned(),
+            }],
+        )]);
+
+        let page = create_category_page_from_metadata_with_recipe_links(
+            &inventory,
+            metadata,
+            &recipe_links,
+        )
+        .unwrap();
+
+        assert!(page.contains(
+            "| Uncategorized | No crates.io category is recorded for these crates in the book's current inventory. | [![recipe-only][c~recipe-only~docs~badge]][c~recipe-only~docs]{{hi:recipe-only}}<br>&nbsp;&nbsp;↳ [Use recipe-only][ex~examples~recipe-only]|"
+        ));
     }
 
     #[test]
