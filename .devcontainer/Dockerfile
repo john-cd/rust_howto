@@ -45,7 +45,7 @@ ARG MDBOOK_LINKCHECK_VERSION=invalid
 ARG MDBOOK_PRIVATE_VERSION=invalid
 ARG MDBOOK_INDEXING_VERSION=invalid
 ARG MDBOOK_PANDOC_VERSION=invalid
-ARG MDBOOK_UTILS_VERSION=invalid
+ARG MDBOOK_UTILS_REV=invalid
 ARG CARGO_NEXTEST_VERSION=invalid
 ARG JUST_VERSION=invalid
 ARG TECTONIC_VERSION=invalid
@@ -75,7 +75,7 @@ EOF
 
 ## Install the mdbook-utils tool that is a companion to the book.
 ## Installed last, because the tool is still in development
-RUN cargo install --locked --version ${MDBOOK_UTILS_VERSION} mdbook-utils
+RUN cargo install --git https://github.com/john-cd/mdbook-utils --rev ${MDBOOK_UTILS_REV} --locked --force mdbook-utils
 
 ## ------------------------------------------------------------------------------------------------
 
@@ -105,8 +105,8 @@ FROM rust-core AS base
 
 SHELL ["bash", "-c"]
 
-ARG MDBOOK_UTILS_VERSION=invalid
-ENV MDBOOK_UTILS_VERSION=${MDBOOK_UTILS_VERSION}
+ARG MDBOOK_UTILS_REV=invalid
+ENV MDBOOK_UTILS_REV=${MDBOOK_UTILS_REV}
 
 WORKDIR /code
 

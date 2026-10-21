@@ -106,7 +106,7 @@ jobs:
         run: cargo binstall --version $env:JUST_VERSION --no-confirm --secure just
 
       - name: Install `mdbook-utils`
-        run: cargo install --locked --version $env:MDBOOK_UTILS_VERSION --force mdbook-utils
+        run: cargo install --git https://github.com/john-cd/mdbook-utils --rev $env:MDBOOK_UTILS_REV --locked --force mdbook-utils
 
       - name: Update Rust; Install nightly Rust
         run: |

@@ -1,0 +1,6 @@
+[workspace]
+members = ["app", "fixture-library"]
+resolver = "3"
+
+[workspace.dependencies]
+fixture-alias = { package = "fixture-library", path = "fixture-library" }
