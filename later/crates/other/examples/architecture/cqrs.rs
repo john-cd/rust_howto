@@ -245,8 +245,7 @@ mod read_store {
     /// Repository with domain objects.
     pub trait ProductRepository {
         fn get_product(&self, id: u32) -> Option<Product>;
-        // Additional read methods can be added here, such as
-        // `get_all_products()`.
+        fn get_all_products(&self) -> Vec<Product>;
     }
 
     /// `SimpleReadStore` struct.
@@ -261,6 +260,11 @@ mod read_store {
         fn get_product(&self, id: u32) -> Option<Product> {
             let read_model = self.read_model.read().unwrap();
             read_model.get(&id).cloned()
+        }
+
+        fn get_all_products(&self) -> Vec<Product> {
+            let read_model = self.read_model.read().unwrap();
+            read_model.values().cloned().collect()
         }
     }
 
@@ -324,6 +328,11 @@ mod query {
             // Business logic goes here
             self.read_repo.get_product(id)
         }
+
+        /// Gets all products.
+        pub fn get_all_products(&self) -> Vec<Product> {
+            self.read_repo.get_all_products()
+        }
     }
 }
 
@@ -374,6 +383,10 @@ fn main() -> anyhow::Result<()> {
     } else {
         println!("Product not found");
     }
+
+    let all_products = query_handler.get_all_products();
+    println!("All products: {all_products:?}");
+
     Ok(())
 }
 
@@ -449,11 +462,43 @@ mod tests {
 
         Ok(())
     }
+
+    #[test]
+    fn test_get_all_products() {
+        let read_store = read_store::SimpleReadStore::new();
+        let query_handler = query::QueryHandler::new(read_store.clone());
+
+        assert!(query_handler.get_all_products().is_empty());
+
+        read_store.rebuild_read_model(vec![
+            events::ProductEvent::ProductCreated {
+                id: 1,
+                name: "Laptop".to_string(),
+                quantity: 10,
+            },
+            events::ProductEvent::ProductCreated {
+                id: 2,
+                name: "Mouse".to_string(),
+                quantity: 20,
+            },
+        ]);
+
+        let products = query_handler.get_all_products();
+        assert_eq!(products.len(), 2);
+        assert!(products.iter().any(|p| p.id() == 1
+            && p.name() == "Laptop"
+            && p.quantity() == 10));
+        assert!(
+            products.iter().any(|p| p.id() == 2
+                && p.name() == "Mouse"
+                && p.quantity() == 20)
+        );
+    }
 }
 // TODO
 // Notes:
-// - This example can be extended with a `get_all_products()` query method,
-//   event store snapshots, and more advanced read-model reconstruction.
+// - This example can be extended with event store snapshots and more advanced
+//   read-model reconstruction.
 // - See the CQRS pattern for additional architecture guidance: https://martinfowler.com/bliki/CQRS.html
 //   https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-1 https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-2
 //   https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs https://doc.rust-cqrs.org/intro.html
