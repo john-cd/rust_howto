@@ -14,15 +14,39 @@ mod nif {
     /// The `rustler` crate provides macros and functions for creating NIFs
     /// (Native Implemented Functions). NIFs are functions written in Rust that
     /// can be called directly from Erlang or Elixir code.
-    #[rustler::nif]
-    fn greet(name: String) -> String {
+    fn greeting(name: String) -> String {
         format!("Hello, {name}!")
     }
 
+    #[rustler::nif]
+    fn greet(name: String) -> String {
+        greeting(name)
+    }
+
     /// `add` is a NIF that takes two integers and returns their sum.
+    fn sum(a: i32, b: i32) -> i32 {
+        a + b
+    }
+
     #[rustler::nif]
     fn add(a: i32, b: i32) -> i32 {
-        a + b
+        sum(a, b)
+    }
+
+    #[cfg(test)]
+    mod tests {
+        use super::greeting;
+        use super::sum;
+
+        #[test]
+        fn greet_returns_a_personalized_message() {
+            assert_eq!(greeting("Rust".to_owned()), "Hello, Rust!");
+        }
+
+        #[test]
+        fn add_returns_the_sum() {
+            assert_eq!(sum(20, 22), 42);
+        }
     }
 
     rustler::init!("Elixir.MyRustLibrary");
