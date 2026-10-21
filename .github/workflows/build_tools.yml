@@ -2,7 +2,7 @@ name: Build tools on Linux
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "develop" ]
     paths:
       - 'tools/**'
       - '.devcontainer/**'
@@ -10,7 +10,7 @@ on:
       - 'Cargo.toml'
       - 'Cargo.lock'
   pull_request:
-    branches: [ "main" ]
+    branches: [ "develop" ]
     paths:
       - 'tools/**'
       - '.devcontainer/**'
