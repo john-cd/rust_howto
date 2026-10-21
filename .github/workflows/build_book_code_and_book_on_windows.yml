@@ -4,11 +4,23 @@ on:
   push:
     branches: [main]
     paths:
-      - 'bk\**'
+      - 'bk/**'
+      - 'tools/**'
+      - '.devcontainer/**'
+      - '.github/workflows/**'
+      - 'justfile'
+      - 'Cargo.toml'
+      - 'Cargo.lock'
   pull_request:
     branches: [main]
     paths:
-      - 'bk\**'
+      - 'bk/**'
+      - 'tools/**'
+      - '.devcontainer/**'
+      - '.github/workflows/**'
+      - 'justfile'
+      - 'Cargo.toml'
+      - 'Cargo.lock'
   ## Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -32,6 +44,16 @@ jobs:
       - name: Code checkout (clones the Git repository)
         uses: actions/checkout@v6
 
+      - name: Load pinned book tool versions
+        shell: pwsh
+        run: |
+          Get-Content '.devcontainer/.env' | ForEach-Object {
+            if ($_ -match '^(?<name>MDBOOK_[A-Z_]+|CARGO_NEXTEST_VERSION|RUST_VERSION|JUST_VERSION)="(?<value>[^"]+)"$') {
+              "$($Matches.name)=$($Matches.value)" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+            }
+          }
+          if (-not $env:MDBOOK_VERSION) { throw 'MDBOOK_VERSION was not found in .devcontainer/.env' }
+
       # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/caching-dependencies-to-speed-up-workflows
       # Install paths for Rust / Cargo in https://github.com/actions/runner-images/blob/main/images/windows/scripts/build/Install-Rust.ps1
       - name: Cache Cargo registry and dependencies
@@ -43,14 +65,10 @@ jobs:
             ~/.cargo/registry/index/
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
-            /usr/local/cargo/bin/
-            /usr/local/cargo/binstall/
-            /usr/local/cargo/registry/index/
-            /usr/local/cargo/registry/cache/
-            /usr/local/cargo/git/db/
             target/
-            bk/crates/target/
-          key: rust_howto-book-${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+            bk/target/
+            tools/target/
+          key: rust_howto-book-${{ runner.os }}-cargo-${{ hashFiles('.devcontainer/.env', '**/Cargo.lock') }}
           restore-keys: |
             rust_howto-book-${{ runner.os }}-cargo-
 
@@ -74,21 +92,26 @@ jobs:
 
       - name: Install mdBook
         run: |
-          cargo binstall --version "0.4.35" --no-confirm mdbook
-          cargo binstall --no-confirm mdbook-linkcheck
-          cargo binstall --no-confirm mdbook-private
-          cargo binstall --no-confirm mdbook-indexing
+          cargo binstall --version $env:MDBOOK_VERSION --no-confirm mdbook
+          cargo binstall --version $env:MDBOOK_LINKCHECK_VERSION --no-confirm mdbook-linkcheck
+          cargo binstall --version $env:MDBOOK_PRIVATE_VERSION --no-confirm mdbook-private
+
+      - name: Install mdBook indexing from its locked source
+        run: cargo install --locked --force --version $env:MDBOOK_INDEXING_VERSION mdbook-indexing
 
       - name: Install Nextest
-        run: cargo binstall --no-confirm --secure cargo-nextest
+        run: cargo binstall --version $env:CARGO_NEXTEST_VERSION --no-confirm --secure cargo-nextest
+
+      - name: Install Just
+        run: cargo binstall --version $env:JUST_VERSION --no-confirm --secure just
 
       - name: Install `mdbook-utils`
-        run: cargo install --locked --force mdbook-utils
+        run: cargo install --locked --version $env:MDBOOK_UTILS_VERSION --force mdbook-utils
 
       - name: Update Rust; Install nightly Rust
         run: |
-          rustup update stable
-          rustup default stable
+          rustup toolchain install $env:RUST_VERSION --profile minimal
+          rustup default $env:RUST_VERSION
           rustup toolchain install nightly
           rustup component add rustfmt --toolchain nightly
           rustup show
@@ -122,6 +145,15 @@ jobs:
         run: cargo +nightly build --bins --locked --release -Z unstable-options --artifact-dir "..\bin"
         working-directory: '.\tools'
 
+      - name: Format, lint, build, and test helper workspace
+        run: |
+          cargo +nightly fmt --all --check
+          cargo build --workspace --all-targets --locked --all-features
+          cargo clippy --workspace --all-targets --locked --all-features -- --deny warnings
+          cargo nextest run --workspace --all-targets --locked --all-features
+          cargo test --workspace --doc --locked --all-features
+        working-directory: '.\tools'
+
       - name: Build the book
-        run: mdbook build; copy static\*.* book\html; mdbook-utils sitemap
+        run: just bb
         working-directory: '.\bk'
