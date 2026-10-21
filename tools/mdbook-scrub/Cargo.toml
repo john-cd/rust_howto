@@ -14,10 +14,10 @@ categories = ["command-line-utilities", "text-processing", "parser-implementatio
 
 [dependencies]
 anyhow = "1.0.102" # Adds chapter and directive context to preprocessing errors.
-book_tool = { git = "https://github.com/john-cd/book_tooling", rev = "c2bdd8599d4e1bb740e55e5998e8a4de9312eda6", default-features = false, features = ["directives"] } # Reuses directives without the CLI's HTTP stack.
+book_tool = { git = "https://github.com/john-cd/book_tooling", rev = "404e8fe0d4adc40517b0b40a2536cc6833b29059", default-features = false, features = ["directives"] } # Reuses directives without the CLI's HTTP stack.
 clap = { version = "4.6.1", features = ["cargo"] }
 mdbook-preprocessor = "0.5.2"
-parse_lib = { git = "https://github.com/john-cd/book_tooling", rev = "c2bdd8599d4e1bb740e55e5998e8a4de9312eda6" } # Protects code and comments during legacy cleanup.
+parse_lib = { git = "https://github.com/john-cd/book_tooling", rev = "404e8fe0d4adc40517b0b40a2536cc6833b29059" } # Protects code and comments during legacy cleanup.
 regex = "1.12.3"
 semver = "1.0.28"
 serde = { version = "1.0.228", features = ["derive"] }

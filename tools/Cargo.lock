@@ -162,7 +162,7 @@ dependencies = [
 [[package]]
 name = "book_tool"
 version = "0.1.3"
-source = "git+https://github.com/john-cd/book_tooling?rev=c2bdd8599d4e1bb740e55e5998e8a4de9312eda6#c2bdd8599d4e1bb740e55e5998e8a4de9312eda6"
+source = "git+https://github.com/john-cd/book_tooling?rev=404e8fe0d4adc40517b0b40a2536cc6833b29059#404e8fe0d4adc40517b0b40a2536cc6833b29059"
 dependencies = [
  "anyhow",
  "parse_lib",
@@ -1591,7 +1591,7 @@ dependencies = [
 [[package]]
 name = "parse_lib"
 version = "0.1.3"
-source = "git+https://github.com/john-cd/book_tooling?rev=c2bdd8599d4e1bb740e55e5998e8a4de9312eda6#c2bdd8599d4e1bb740e55e5998e8a4de9312eda6"
+source = "git+https://github.com/john-cd/book_tooling?rev=404e8fe0d4adc40517b0b40a2536cc6833b29059#404e8fe0d4adc40517b0b40a2536cc6833b29059"
 dependencies = [
  "annotate-snippets",
  "anyhow",
