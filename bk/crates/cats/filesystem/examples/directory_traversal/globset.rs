@@ -28,6 +28,11 @@ fn main() -> anyhow::Result<()> {
             println!("Matched: {}", path.display());
         }
     }
+
+    // Compile a single glob when you do not need a set of patterns.
+    let glob = Glob::new("*.rs")?.compile_matcher();
+    assert!(glob.is_match("foo/bar.rs"));
+
     Ok(())
 }
 
