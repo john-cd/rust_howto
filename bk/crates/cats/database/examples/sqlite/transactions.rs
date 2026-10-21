@@ -55,6 +55,8 @@ pub fn run() -> Result<()> {
 
 #[cfg(test)]
 mod tests {
+    use super::main;
+
     #[test]
     fn test_main() -> Result<()> {
         main()
