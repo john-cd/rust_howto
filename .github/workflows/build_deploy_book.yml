@@ -13,17 +13,43 @@ on:
         description: "If true, deploy the book to GitHub Pages"
         type: boolean
         default: false
+      build_pdf:
+        description: "Build the optional Pandoc PDF output"
+        type: boolean
+        default: false
   ## Runs on pushes targeting the default branch
   push:
     branches: ["main"]
     paths:
       - 'bk/**'
+      - 'tools/**'
+      - '.devcontainer/**'
+      - '.github/workflows/**'
+      - 'justfile'
+      - 'Cargo.toml'
+      - 'Cargo.lock'
+
+  pull_request:
+    branches: ["main"]
+    paths:
+      - 'bk/**'
+      - 'tools/**'
+      - '.devcontainer/**'
+      - '.github/workflows/**'
+      - 'justfile'
+      - 'Cargo.toml'
+      - 'Cargo.lock'
 
   ## Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
       deploy_to_gh_pages:
         description: "If true, deploy the book to GitHub Pages"
+        type: boolean
+        required: true
+        default: false
+      build_pdf:
+        description: "Build the optional Pandoc PDF output"
         type: boolean
         required: true
         default: false
@@ -46,9 +72,30 @@ env:
   IMAGE_NAME: johncd/rust_howto_ci
 
 jobs:
+  validate-pr:
+    if: ${{ github.event_name == 'pull_request' }}
+    name: Validate book and examples on Linux (PR)
+    runs-on: ubuntu-latest
+    env:
+      IMAGE_PULL_POLICY: never
+      GHA_CACHE_SCOPE: rust-howto-${{ runner.os }}-${{ hashFiles('.devcontainer/.env', 'bk/crates/Cargo.lock', 'tools/Cargo.lock') }}
+    steps:
+      - name: Code checkout
+        uses: actions/checkout@v6
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+      - name: Build, test, lint, and render through Compose
+        run: |
+          docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml run \
+            --rm --build --pull never \
+            book
+
   ## Introduction to GitHub Actions with Docker: https://docs.docker.com/guides/gha/
   build-image:
+    if: ${{ github.event_name != 'pull_request' }}
     runs-on: ubuntu-latest
+    env:
+      GHA_CACHE_SCOPE: rust-howto-${{ runner.os }}-${{ hashFiles('.devcontainer/.env', 'bk/crates/Cargo.lock', 'tools/Cargo.lock') }}
     outputs:
       image_name: ${{ env.IMAGE_NAME }}
     steps:
@@ -93,8 +140,12 @@ jobs:
         working-directory: ./.devcontainer/
 
   test:
+    if: ${{ github.event_name != 'pull_request' }}
     needs: build-image
     runs-on: ubuntu-latest
+    env:
+      IMAGE_PULL_POLICY: missing
+      GHA_CACHE_SCOPE: rust-howto-${{ runner.os }}-${{ hashFiles('.devcontainer/.env', 'bk/crates/Cargo.lock', 'tools/Cargo.lock') }}
     strategy:
       fail-fast: false
       matrix:
@@ -114,14 +165,18 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Run partitioned tests
         run: |
-          docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml run \
+          docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml run --rm \
             -e NEXTEST_ARGS="--partition hash:${{ matrix.partition }}/2" \
             -e SKIP_BOOK_BUILD="true" \
             book
 
   build-book:
+    if: ${{ github.event_name != 'pull_request' }}
     needs: test
     runs-on: ubuntu-latest
+    env:
+      IMAGE_PULL_POLICY: missing
+      GHA_CACHE_SCOPE: rust-howto-${{ runner.os }}-${{ hashFiles('.devcontainer/.env', 'bk/crates/Cargo.lock', 'tools/Cargo.lock') }}
     steps:
       - name: Code checkout
         uses: actions/checkout@v6
@@ -138,8 +193,9 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build the book
         run: |
-          docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml run \
+          docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml run --rm \
             -e SKIP_TESTS="true" \
+            -e BUILD_PDF="${{ inputs.build_pdf || false }}" \
             book
       - name: Setup GitHub Pages
         id: pages
@@ -153,7 +209,7 @@ jobs:
   ## https://github.com/actions/deploy-pages
   deploy:
     name: Deploy to GitHub Pages
-    if: ${{ inputs.deploy_to_gh_pages }}
+    if: ${{ github.event_name != 'pull_request' && inputs.deploy_to_gh_pages }}
     needs: build-book
     ## Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
     permissions:

@@ -5,8 +5,12 @@ set -euo pipefail
 #
 # Essentially a copy of the Dockerfile.
 
-MDBOOK_VERSION="0.4.43"
-PANDOC_VERSION="3.6"
+repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+# Keep Linux developer installs aligned with the versions used by Docker and CI.
+set -a
+# shellcheck source=.env
+source "$repo_root/.devcontainer/.env"
+set +a
 
 # GTK4 and pkg-config are required for the Rust GUI examples that depend on gtk4/relm4.
 sudo apt-get update \
@@ -84,22 +88,17 @@ rustup toolchain install nightly \
 ## binstall
 curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
 
-cargo binstall --no-confirm --secure \
-    cargo-nextest \
-    mdbook@${MDBOOK_VERSION} \
-    mdbook-linkcheck \
-    mdbook-private \
-    mdbook-pandoc \
-    tectonic \
-    sccache \
-    just \
-    cargo-deny \
-    lychee \
-    bacon \
-    ripgrep
+cargo binstall --no-confirm --secure --version "$CARGO_NEXTEST_VERSION" cargo-nextest
+cargo binstall --no-confirm --secure --version "$MDBOOK_VERSION" mdbook
+cargo binstall --no-confirm --secure --version "$MDBOOK_LINKCHECK_VERSION" mdbook-linkcheck
+cargo binstall --no-confirm --secure --version "$MDBOOK_PRIVATE_VERSION" mdbook-private
+cargo binstall --no-confirm --secure --version "$MDBOOK_PANDOC_VERSION" mdbook-pandoc
+cargo binstall --no-confirm --secure --version "$TECTONIC_VERSION" tectonic
+cargo binstall --no-confirm --secure --version "$JUST_VERSION" just
+cargo binstall --no-confirm --secure sccache cargo-deny lychee bacon ripgrep
 
-cargo install --force mdbook-indexing
-cargo install --locked mdbook-utils
+cargo install --locked --force --version "$MDBOOK_INDEXING_VERSION" mdbook-indexing
+cargo install --locked --version "$MDBOOK_UTILS_VERSION" mdbook-utils
 
 # GitHub
 curl -sS https://webi.sh/gh | sh

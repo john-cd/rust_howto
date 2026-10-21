@@ -5,23 +5,19 @@ services:
     # and then builds from source if the image isn't found in the registry or platform cache.
     # IMAGE_VERSION = version of the Docker image to create e.g. 0.1.0
     image: johncd/rust_howto_ci:${IMAGE_VERSION:-latest} # Name and tag of the image that will be built
-    pull_policy: always # Always check for newer base image versions in CI
+    pull_policy: ${IMAGE_PULL_POLICY:-always}
     build:
       target: ci
       cache_from:
         ## Cache from sibling
         - johncd/rust_howto_dev:${IMAGE_VERSION:-latest}
-        ## Registry cache: https://docs.docker.com/build/ci/github-actions/cache/#registry-cache
-        ## This cache storage backend is not supported with the default `docker` driver.
-        - type=registry,ref=johncd/rust_howto_ci:buildcache
         ## GitHub Action cache https://docs.docker.com/build/ci/github-actions/cache/#github-cache
         ## As above, it only works when using a buildx builder with `docker-container` driver, etc in a GitHub Actions workflow
         ## Ignored otherwise
-        - type=gha,scope=rust_howto_ci
+        - type=gha,scope=${GHA_CACHE_SCOPE:-rust_howto_ci}
       cache_to:
         ##  In the `max` cache mode, all docker layers are cached, even those of intermediate steps.
-        - type=registry,ref=johncd/rust_howto_ci:buildcache,mode=max
-        - type=gha,mode=max,scope=rust_howto_ci
+        - type=gha,mode=max,scope=${GHA_CACHE_SCOPE:-rust_howto_ci}
     volumes:
       ## Path where the container will write the book HTML / JS to, on the CI host (provided by GitHub Action)
       - type: bind

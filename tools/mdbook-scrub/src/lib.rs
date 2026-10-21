@@ -74,6 +74,8 @@ impl Preprocessor for Preproc {
 
 impl Preproc {
     fn retrieve_config(&self, ctx: &PreprocessorContext) -> PreprocConfig {
+        // Deserialize the preprocessor's table through mdBook's supported Config API.
+        // `get_preprocessor` was removed in mdBook 0.5.
         let config_key = format!("preprocessor.{}", self.name());
         match ctx.config.get::<PreprocConfig>(&config_key) {
             Ok(Some(config)) => config,
@@ -84,9 +86,9 @@ impl Preproc {
                 );
                 PreprocConfig::default()
             }
-            Err(e) => {
+            Err(error) => {
                 warn!(
-                    "Error in `preprocessor.{}` configuration: {e}; using defaults",
+                    "Error in `preprocessor.{}` configuration: {error}; using defaults",
                     self.name()
                 );
                 PreprocConfig::default()

@@ -41,6 +41,14 @@ FROM rust-core AS tool-builder
 # The default value is overriden by the build arg passed by compose.yaml,
 # itself set from the RUST_IMAGE_LABEL env. variable in `.devcontainer/.env` file
 ARG MDBOOK_VERSION=invalid
+ARG MDBOOK_LINKCHECK_VERSION=invalid
+ARG MDBOOK_PRIVATE_VERSION=invalid
+ARG MDBOOK_INDEXING_VERSION=invalid
+ARG MDBOOK_PANDOC_VERSION=invalid
+ARG MDBOOK_UTILS_VERSION=invalid
+ARG CARGO_NEXTEST_VERSION=invalid
+ARG JUST_VERSION=invalid
+ARG TECTONIC_VERSION=invalid
 
 ## Install cargo binstall (binary install)
 ## Install nextest
@@ -54,23 +62,20 @@ RUN --mount=type=cache,target=/usr/local/cargo/registry \
     <<EOF
     set -e
     curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
-    cargo binstall --no-confirm --secure \
-        cargo-nextest \
-        mdbook@${MDBOOK_VERSION} \
-        mdbook-linkcheck \
-        mdbook-private \
-        mdbook-pandoc \
-        tectonic \
-        sccache \
-        just \
-        cargo-deny \
-        lychee
-    cargo install --force mdbook-indexing
+    cargo binstall --no-confirm --secure --version ${CARGO_NEXTEST_VERSION} cargo-nextest
+    cargo binstall --no-confirm --secure --version ${MDBOOK_VERSION} mdbook
+    cargo binstall --no-confirm --secure --version ${MDBOOK_LINKCHECK_VERSION} mdbook-linkcheck
+    cargo binstall --no-confirm --secure --version ${MDBOOK_PRIVATE_VERSION} mdbook-private
+    cargo binstall --no-confirm --secure --version ${MDBOOK_PANDOC_VERSION} mdbook-pandoc
+    cargo binstall --no-confirm --secure --version ${TECTONIC_VERSION} tectonic
+    cargo binstall --no-confirm --secure --version ${JUST_VERSION} just
+    cargo binstall --no-confirm --secure sccache cargo-deny lychee
+    cargo install --locked --force --version ${MDBOOK_INDEXING_VERSION} mdbook-indexing
 EOF
 
 ## Install the mdbook-utils tool that is a companion to the book.
 ## Installed last, because the tool is still in development
-RUN cargo install --locked mdbook-utils
+RUN cargo install --locked --version ${MDBOOK_UTILS_VERSION} mdbook-utils
 
 ## ------------------------------------------------------------------------------------------------
 
@@ -99,6 +104,9 @@ RUN --mount=type=cache,target=/usr/local/cargo/registry \
 FROM rust-core AS base
 
 SHELL ["bash", "-c"]
+
+ARG MDBOOK_UTILS_VERSION=invalid
+ENV MDBOOK_UTILS_VERSION=${MDBOOK_UTILS_VERSION}
 
 WORKDIR /code
 

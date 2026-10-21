@@ -2,6 +2,7 @@ set unstable
 set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 
 root := clean(source_directory() + "/../..")
+mdbook_utils_version := env("MDBOOK_UTILS_VERSION", "0.1.4")
 
 [no-exit-message]
 _default:
@@ -46,8 +47,13 @@ alias bb := buildbook
 
 # Generate the sitemap.xml file
 @_sitemap:
-  echo "Install mdbook-utils if needed"
-  cargo install mdbook-utils
+  if ! command -v mdbook-utils >/dev/null 2>&1; then cargo install --locked --version {{mdbook_utils_version}} mdbook-utils; fi
+  echo "Generate the sitemap"
+  cd {{root}} && mdbook-utils sitemap
+
+[windows]
+@_sitemap:
+  if (-not (Get-Command mdbook-utils -ErrorAction SilentlyContinue)) { cargo install --locked --version {{mdbook_utils_version}} mdbook-utils }
   echo "Generate the sitemap"
   cd {{root}} && mdbook-utils sitemap
 

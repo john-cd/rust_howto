@@ -180,6 +180,7 @@ expand = true            # partial words will match longer terms
 # Requires `pandoc` and `tectonic` to be installed.
 
 [output.pandoc]
+optional = true # CI and Windows HTML builds may skip the PDF backend; request it explicitly in CI to run it.
 hosted-html = "https://john-cd.com/rust_howto/" # URL of a HTML version of the book
 
 # [output.pandoc.markdown.extensions] # enable additional Markdown extensions
