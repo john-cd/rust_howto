@@ -2,12 +2,12 @@ name: Test PostgreSQL book example
 
 on:
   pull_request:
-    branches: [main]
+    branches: [develop]
     paths:
       - "bk/crates/cats/database/**"
       - ".github/workflows/test-postgres-example.yml"
   push:
-    branches: [main, "codex/**"]
+    branches: [develop, "codex/**"]
     paths:
       - "bk/crates/cats/database/**"
       - ".github/workflows/test-postgres-example.yml"

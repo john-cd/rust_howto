@@ -19,7 +19,7 @@ on:
         default: false
   ## Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: ["develop"]
     paths:
       - 'bk/**'
       - 'tools/**'
@@ -30,7 +30,7 @@ on:
       - 'Cargo.lock'
 
   pull_request:
-    branches: ["main"]
+    branches: ["develop"]
     paths:
       - 'bk/**'
       - 'tools/**'

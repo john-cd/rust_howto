@@ -33,7 +33,9 @@ This repo is primarily an mdBook publishing repo with Rust workspaces attached t
 
 ## Worktrees and compilation caches
 
-- Keep the primary checkout at `D:\code\rust_howto` on `main`. Use known reusable slots `D:\code\rust_howto\.worktrees\a`, `b`, `c`, and so on for topic branches. Inspect `git worktree list` and each slot's status before choosing one; preserve dirty or active slots.
+- `develop` is the default integration branch. `main` starts with an empty root commit and has independent history. The primary checkout keeps its stable `main` cache identity so the branch rename does not invalidate compiled artifacts.
+
+- Keep the primary checkout at `D:\code\rust_howto` on `develop`. Use known reusable slots `D:\code\rust_howto\.worktrees\a`, `b`, `c`, and so on for topic branches. Inspect `git worktree list` and each slot's status before choosing one; preserve dirty or active slots.
 - Create a new slot with `just worktree a codex/topic`. Existing slots are intentionally preserved: inspect their status and branch, then switch a clean inactive slot to the next topic instead of removing and recreating it. Do not use task, issue, branch, or random names for worktree directories.
 - On Windows, build artifacts belong in `D:\target\rust_howto\<slot>` and intermediate artifacts in `C:\code_build\rust_howto\<slot>`, where `<slot>` is `main`, `a`, `b`, etc. On Linux, the defaults are `${XDG_CACHE_HOME:-$HOME/.cache}/rust_howto/target/<slot>` and `${XDG_CACHE_HOME:-$HOME/.cache}/rust_howto/build/<slot>`. Keep these directories across branch changes to reuse compiled dependencies.
 - Every workspace `justfile` imports `scripts/build.just`, which detects the slot automatically. Explicit `CARGO_TARGET_DIR` and `CARGO_BUILD_BUILD_DIR` environment overrides remain supported, including CI and containers. No `RUST_HOWTO_WORKTREE_NAME` variable is needed.
