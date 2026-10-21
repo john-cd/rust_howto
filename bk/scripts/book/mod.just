@@ -1,5 +1,5 @@
 set unstable
-set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
+set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]
 
 root := clean(source_directory() + "/../..")
 mdbook_utils_rev := env("MDBOOK_UTILS_REV", "dedddf3699e461cd418c1a044d82aabd3fec62e0")
@@ -47,8 +47,20 @@ alias bb := buildbook
 @_install-mdbook-utils:
   cargo install --git https://github.com/john-cd/mdbook-utils --rev {{mdbook_utils_rev}} --locked mdbook-utils
 
-# Generate the index and the category page.
+# Generate the external crates.io category page from its checked-in snapshot.
+[unix]
 @_generate-index-category:
+  #!/usr/bin/env bash
+  set -euo pipefail
+  cd "{{root}}/../tools"
+  tmp="$(mktemp)"
+  trap 'rm -f "$tmp"' EXIT
+  cat "{{root}}/master/crates.txt" | cargo run --locked -p crate_indices -- category_page_from_metadata --metadata "{{root}}/master/crate_categories.toml" > "$tmp"
+  mv "$tmp" "{{root}}/src/indices/crates_by_category.md"
+
+[windows]
+@_generate-index-category:
+  pwsh.exe -NoLogo -NoProfile -File "{{source_directory()}}/generate_category_index.ps1" -BookRoot "{{root}}" -ToolsRoot "{{root}}/../tools"
 # [generate index of crates by category](https://github.com/john-cd/rust_howto/issues/1274)
 
 # Add static assets to book output
