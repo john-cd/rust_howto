@@ -479,6 +479,7 @@
 [book~rust-programming-language]: https://oreilly.com/library/view/the-rust-programming/9781098156817
 [book~rust-quest]: https://dev.rust-quest.com/en
 [book~rust-reference]: https://doc.rust-lang.org/reference
+[book~rust-reference~procedural-macros]: https://doc.rust-lang.org/reference/procedural-macros.html
 [book~rust-reference~TokenStream]: https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.proc_macro.token-stream
 [book~rust-reference~async]: https://doc.rust-lang.org/reference/items/functions.html#async-functions
 [book~rust-reference~attributes]: https://doc.rust-lang.org/reference/attributes.html

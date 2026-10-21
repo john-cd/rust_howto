@@ -6,40 +6,34 @@
 
 [![std][c~std~docs~badge]][c~std~docs]
 
-Dynamic typing in Rust is limited compared to other languages, but the [`std::any`][c~std::any~docs]↗{{hi:std::any}} module provides ways to obtain type information at runtime.
+Rust does not provide general-purpose runtime reflection. For concrete types that satisfy `'static`, the [`std::any`][c~std::any~docs]↗{{hi:std::any}} module provides limited runtime type identification and downcasting through [`TypeId`][c~std::any::TypeId~docs]↗ and [`Any`][c~std::any::Any~docs]↗. These APIs compare a value's concrete type; they do not inspect its fields or determine whether it implements an arbitrary trait. Prefer generics, enums, or trait objects when they can express the set of types your program expects.
 
-`std::any` is primarily used in scenarios where you need to store and retrieve data of various, unknown concrete types within a collection or context that uses trait objects (specifically `dyn Any`{{hi:dyn Any}}). This often comes up in:
+`TypeId` is an opaque identifier for a type. Use it to compare types or as an in-process key, not as a type name or a durable identifier. Its hash and ordering can change between Rust releases, so do not persist them or rely on their order.
 
-- Plugins: If you're building a system where users can register custom data or components, and you need to store them polymorphically, [`Any`][c~std::any::Any~docs]↗{{hi:std::any::Any}} allows you to later retrieve them and process them based on their original concrete type.
-- Generic Event Systems: In an event system where different types of events might be processed by a single handler, `Any` can help identify and process specific event types.
-- Reflection-like capabilities: While Rust doesn't have full reflection like some other languages, `Any` provides a limited form of runtime type inspection.
-
-The [`TypeId`][c~std::any::TypeId~docs]↗{{hi:std::any::TypeId}} struct represents a globally unique, opaque identifier for a type, allowing you to compare types without needing to know their names at compile time. A `TypeId` is currently only available for types which are `'static`.
-
-You can use `TypeId` to check if two types are the same or as a key to store type information in e.g. a `HashMap`:
+The example compares two types and obtains the identifier of a value:
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/any/type_id.rs:example}}
 ```
 
-The [`std::any::Any`][c~std::any::Any~docs]↗{{hi:std::any::Any}} trait is the core of the `std::any` module. It is a special built-in trait that determines the concrete type of a trait object _at runtime_ and provides the ability to _downcast_ a trait object to a concrete type, when the concrete type is known ("downcasting" converts a reference of a general type (here `dyn Any` and related types) to a reference of a more specific type, if the value is of that type). The `Any` trait provides a few methods:
+The [`std::any::Any`][c~std::any::Any~docs]↗{{hi:std::any::Any}} trait supports type checks and safe downcasts from a `dyn Any` trait object. A borrowed trait object can be checked with [`is::<T>()`][c~std::any::Any::is~docs]↗ and downcast with `downcast_ref::<T>()` or `downcast_mut::<T>()`. A `Box<dyn Any>` can be consumed with `downcast::<T>()`. A failed downcast is reported as `false`, `None`, or `Err`, depending on the method; it does not guess or coerce to a related type.
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/any/any.rs:example}}
 ```
 
-Note a few caveats with `Any`:
+Keep these limits in mind when using `Any`:
 
-- The `Any` trait can only be used with types that have a `'static` lifetime. This means they must not contain any non-`'static` references.
-- Runtime Overhead: Downcasting involves runtime checks ([`is::<T>`][c~std::any::Any::is~docs]↗{{hi:std::any::Any::is}}). While not excessively slow, it's less performant than static dispatch.
-- Loss of Compile-Time Guarantees: When you put something into `Box<dyn Any>` or similar, you lose type information at compile time. This makes it harder for the compiler to catch errors for you.
-- If there's a way to achieve your goal using generics with trait bounds, enums, or other more type-safe Rust patterns, those are generally preferred over `Any`. `Any` should be used when you genuinely need runtime type introspection for heterogeneous collections.
+- `Any` is implemented for types that satisfy `'static`, which excludes a type containing a borrowed reference with a shorter lifetime. This is a bound on the concrete type; a value of that type can still be dropped normally.
+- `Any` checks exact concrete type identity. It cannot check whether a value implements some other trait.
+- Storing values behind `dyn Any` erases their concrete type from the static interface. Code must handle a failed check or downcast, and the runtime type check has a cost.
+- Prefer a generic bound, enum, or domain-specific trait when it expresses the required behavior. Use `Any` when a heterogeneous collection or registry must recover a concrete type at runtime.
 
-## Compile-time Reflection {#compile-type-reflection}
+## Compile-time Type Inspection in Procedural Macros {#compile-type-reflection}
 
 [![reflect][c~reflect~docs~badge]][c~reflect~docs] [![reflect~crates.io][c~reflect~crates.io~badge]][c~reflect~crates.io] [![reflect~repo][c~reflect~repo~badge]][c~reflect~repo] [![reflect~lib.rs][c~reflect~lib.rs~badge]][c~reflect~lib.rs]{{hi:reflect}}{{hi:Reflection}} [![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
 
-The "but I thought Rust doesn't have reflection?" memorial brand new way of defining procedural macros.
+The [`reflect`][c~reflect~docs]↗ crate explores a reflection-like API for writing derive macros. Procedural macros operate on Rust syntax during compilation and generate Rust code; the generated program does not gain general runtime reflection automatically ([Rust Reference][book~rust-reference~procedural-macros]). This crate is an experiment, not a standard-library facility or a replacement for runtime reflection in other languages.
 
 ## Related Topics {#related-topics .skip}
 
@@ -49,7 +43,3 @@ The "but I thought Rust doesn't have reflection?" memorial brand new way of defi
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-TODO review
-</div>
