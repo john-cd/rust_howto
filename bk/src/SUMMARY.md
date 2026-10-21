@@ -125,6 +125,7 @@
   - [Repository Structure](appendices/contributing/repository_structure.md)
   - [Development Environment Setup](appendices/contributing/development_environment_setup.md)
   - [Book Editing and Example Code Development](appendices/contributing/book_editing_and_example_code_development.md)
+  - [API Documentation](appendices/contributing/api_documentation.md)
   - [mdBook Pre-processors](appendices/contributing/mdBook_pre-processors.md)
   - [Dev Containers and Docker](appendices/contributing/dev_container_and_docker.md)
   - [Documentation Generation](appendices/contributing/documentation_generation.md)
