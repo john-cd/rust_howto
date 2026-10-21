@@ -1,9483 +1,1 @@
-
-[c~RustQuant~crates.io]: https://crates.io/crates/rustquant
-[c~RustQuant~crates.io~badge]: https://img.shields.io/badge/crates.io-rustquant-crimson
-[c~RustQuant~docs]: https://docs.rs/rustquant
-[c~RustQuant~docs~badge]: https://img.shields.io/crates/v/rustquant?label=rustquant
-[c~RustQuant~lib.rs]: https://lib.rs/crates/rustquant
-[c~RustQuant~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rustquant-yellow
-[c~RustQuant~repo]: https://github.com/avhz/RustQuant
-[c~RustQuant~repo~badge]: https://img.shields.io/badge/rustquant-steelblue?logo=github
-[c~ab_glyph~crates.io]: https://crates.io/crates/ab_glyph
-[c~ab_glyph~crates.io~badge]: https://img.shields.io/badge/crates.io-ab__glyph-crimson
-[c~ab_glyph~docs]: https://docs.rs/ab_glyph
-[c~ab_glyph~docs~badge]: https://img.shields.io/crates/v/ab_glyph?label=ab_glyph
-[c~ab_glyph~lib.rs]: https://lib.rs/crates/ab_glyph
-[c~ab_glyph~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ab__glyph-yellow
-[c~ab_glyph~repo]: https://github.com/alexheretic/ab-glyph
-[c~ab_glyph~repo~badge]: https://img.shields.io/badge/ab__glyph-steelblue?logo=github
-[c~abnf_to_pest~crates.io]: https://crates.io/crates/abnf_to_pest
-[c~abnf_to_pest~crates.io~badge]: https://img.shields.io/badge/crates.io-abnf__to__pest-crimson
-[c~abnf_to_pest~docs]: https://docs.rs/abnf_to_pest
-[c~abnf_to_pest~docs~badge]: https://img.shields.io/crates/v/abnf_to_pest?label=abnf_to_pest
-[c~abnf_to_pest~lib.rs]: https://lib.rs/crates/abnf_to_pest
-[c~abnf_to_pest~lib.rs~badge]: https://img.shields.io/badge/lib.rs-abnf__to__pest-yellow
-[c~abnf_to_pest~repo]: https://github.com/Nadrieril/dhall-rust
-[c~abnf_to_pest~repo~badge]: https://img.shields.io/badge/abnf__to__pest-steelblue?logo=github
-[c~accesskit_winit~crates.io]: https://crates.io/crates/accesskit_winit
-[c~accesskit_winit~crates.io~badge]: https://img.shields.io/badge/crates.io-accesskit__winit-crimson
-[c~accesskit_winit~docs]: https://docs.rs/accesskit_winit
-[c~accesskit_winit~docs~badge]: https://img.shields.io/crates/v/accesskit_winit?label=accesskit_winit
-[c~accesskit_winit~lib.rs]: https://lib.rs/crates/accesskit_winit
-[c~accesskit_winit~lib.rs~badge]: https://img.shields.io/badge/lib.rs-accesskit__winit-yellow
-[c~accesskit_winit~repo]: https://github.com/AccessKit/accesskit/tree/main/platforms/winit
-[c~accesskit_winit~repo~badge]: https://img.shields.io/badge/accesskit__winit-steelblue?logo=github
-[c~accesskit~crates.io]: https://crates.io/crates/accesskit
-[c~accesskit~crates.io~badge]: https://img.shields.io/badge/crates.io-accesskit-crimson
-[c~accesskit~docs]: https://docs.rs/accesskit
-[c~accesskit~docs~badge]: https://img.shields.io/crates/v/accesskit?label=accesskit
-[c~accesskit~lib.rs]: https://lib.rs/crates/accesskit
-[c~accesskit~lib.rs~badge]: https://img.shields.io/badge/lib.rs-accesskit-yellow
-[c~accesskit~repo]: https://github.com/AccessKit/accesskit
-[c~accesskit~repo~badge]: https://img.shields.io/badge/accesskit-steelblue?logo=github
-[c~actix-web-httpauth~crates.io]: https://crates.io/crates/actix-web-httpauth
-[c~actix-web-httpauth~crates.io~badge]: https://img.shields.io/badge/crates.io-actix--web--httpauth-crimson
-[c~actix-web-httpauth~docs]: https://docs.rs/actix-web-httpauth
-[c~actix-web-httpauth~docs~badge]: https://img.shields.io/crates/v/actix-web-httpauth?label=actix-web-httpauth
-[c~actix-web-httpauth~lib.rs]: https://lib.rs/crates/actix-web-httpauth
-[c~actix-web-httpauth~lib.rs~badge]: https://img.shields.io/badge/lib.rs-actix--web--httpauth-yellow
-[c~actix-web-httpauth~repo]: https://github.com/actix/actix-extras
-[c~actix-web-httpauth~repo~badge]: https://img.shields.io/badge/actix--web--httpauth-steelblue?logo=github
-[c~actix-web-httpauth~website]: https://actix.rs
-[c~actix-web-httpauth~website~badge]: https://img.shields.io/badge/actix--web--httpauth-coral
-[c~actix-web~crates.io]: https://crates.io/crates/actix-web
-[c~actix-web~crates.io~badge]: https://img.shields.io/badge/crates.io-actix--web-crimson
-[c~actix-web~docs]: https://docs.rs/actix-web
-[c~actix-web~docs~badge]: https://img.shields.io/crates/v/actix-web?label=actix-web
-[c~actix-web~lib.rs]: https://lib.rs/crates/actix-web
-[c~actix-web~lib.rs~badge]: https://img.shields.io/badge/lib.rs-actix--web-yellow
-[c~actix-web~repo]: https://github.com/actix/actix-web
-[c~actix-web~repo~badge]: https://img.shields.io/badge/actix--web-steelblue?logo=github
-[c~actix-web~website]: https://actix.rs
-[c~actix-web~website~badge]: https://img.shields.io/badge/actix--web-coral
-[c~actix~crates.io]: https://crates.io/crates/actix
-[c~actix~crates.io~badge]: https://img.shields.io/badge/crates.io-actix-crimson
-[c~actix~docs]: https://docs.rs/actix
-[c~actix~docs~badge]: https://img.shields.io/crates/v/actix?label=actix
-[c~actix~examples~repo]: https://github.com/actix/examples
-[c~actix~examples~repo~badge]: https://img.shields.io/badge/actix_examples-steelblue?logo=github
-[c~actix~lib.rs]: https://lib.rs/crates/actix
-[c~actix~lib.rs~badge]: https://img.shields.io/badge/lib.rs-actix-yellow
-[c~actix~repo]: https://github.com/actix/actix
-[c~actix~repo~badge]: https://img.shields.io/badge/actix-steelblue?logo=github
-[c~aes-gcm-siv~crates.io]: https://crates.io/crates/aes-gcm-siv
-[c~aes-gcm-siv~crates.io~badge]: https://img.shields.io/badge/crates.io-aes--gcm--siv-crimson
-[c~aes-gcm-siv~docs]: https://docs.rs/aes-gcm-siv
-[c~aes-gcm-siv~docs~badge]: https://img.shields.io/crates/v/aes-gcm-siv?label=aes-gcm-siv
-[c~aes-gcm-siv~lib.rs]: https://lib.rs/crates/aes-gcm-siv
-[c~aes-gcm-siv~lib.rs~badge]: https://img.shields.io/badge/lib.rs-aes--gcm--siv-yellow
-[c~aes-gcm-siv~repo]: https://github.com/RustCrypto/AEADs/tree/master/aes-gcm-siv
-[c~aes-gcm-siv~repo~badge]: https://img.shields.io/badge/aes--gcm--siv-steelblue?logo=github
-[c~aes-gcm~crates.io]: https://crates.io/crates/aes-gcm
-[c~aes-gcm~crates.io~badge]: https://img.shields.io/badge/crates.io-aes--gcm-crimson
-[c~aes-gcm~docs]: https://docs.rs/aes-gcm
-[c~aes-gcm~docs~badge]: https://img.shields.io/crates/v/aes-gcm?label=aes-gcm
-[c~aes-gcm~lib.rs]: https://lib.rs/crates/aes-gcm
-[c~aes-gcm~lib.rs~badge]: https://img.shields.io/badge/lib.rs-aes--gcm-yellow
-[c~aes-gcm~repo]: https://github.com/RustCrypto/AEADs/tree/master/aes-gcm
-[c~aes-gcm~repo~badge]: https://img.shields.io/badge/aes--gcm-steelblue?logo=github
-[c~afl~crates.io]: https://crates.io/crates/afl
-[c~afl~crates.io~badge]: https://img.shields.io/badge/crates.io-afl-crimson
-[c~afl~docs]: https://docs.rs/afl
-[c~afl~docs~badge]: https://img.shields.io/crates/v/afl?label=afl
-[c~afl~lib.rs]: https://lib.rs/crates/afl
-[c~afl~lib.rs~badge]: https://img.shields.io/badge/lib.rs-afl-yellow
-[c~afl~repo]: https://github.com/rust-fuzz/afl.rs
-[c~afl~repo~badge]: https://img.shields.io/badge/afl-steelblue?logo=github
-[c~aho-corasick~crates.io]: https://crates.io/crates/aho-corasick
-[c~aho-corasick~crates.io~badge]: https://img.shields.io/badge/crates.io-aho--corasick-crimson
-[c~aho-corasick~docs]: https://docs.rs/aho-corasick
-[c~aho-corasick~docs~badge]: https://img.shields.io/crates/v/aho-corasick?label=aho-corasick
-[c~aho-corasick~lib.rs]: https://lib.rs/crates/aho-corasick
-[c~aho-corasick~lib.rs~badge]: https://img.shields.io/badge/lib.rs-aho--corasick-yellow
-[c~aho-corasick~repo]: https://github.com/BurntSushi/aho-corasick
-[c~aho-corasick~repo~badge]: https://img.shields.io/badge/aho--corasick-steelblue?logo=github
-[c~alexandrie~crates.io]: https://crates.io/crates/alexandrie
-[c~alexandrie~crates.io~badge]: https://img.shields.io/badge/crates.io-alexandrie-crimson
-[c~alexandrie~docs]: https://docs.rs/alexandrie
-[c~alexandrie~docs~badge]: https://img.shields.io/crates/v/alexandrie?label=alexandrie
-[c~alexandrie~lib.rs]: https://lib.rs/crates/alexandrie
-[c~alexandrie~lib.rs~badge]: https://img.shields.io/badge/lib.rs-alexandrie-yellow
-[c~alexandrie~repo]: https://github.com/Hirevo/alexandrie
-[c~alexandrie~repo~badge]: https://img.shields.io/badge/alexandrie-steelblue?logo=github
-[c~alga~crates.io]: https://crates.io/crates/alga
-[c~alga~crates.io~badge]: https://img.shields.io/badge/crates.io-alga-crimson
-[c~alga~docs]: https://docs.rs/alga
-[c~alga~docs~badge]: https://img.shields.io/crates/v/alga?label=alga
-[c~alga~lib.rs]: https://lib.rs/crates/alga
-[c~alga~lib.rs~badge]: https://img.shields.io/badge/lib.rs-alga-yellow
-[c~alga~repo]: https://github.com/rustsim/alga
-[c~alga~repo~badge]: https://img.shields.io/badge/alga-steelblue?logo=github
-[c~alsa-sys~crates.io]: https://crates.io/crates/alsa-sys
-[c~alsa-sys~crates.io~badge]: https://img.shields.io/badge/crates.io-alsa--sys-crimson
-[c~alsa-sys~docs]: https://docs.rs/alsa-sys
-[c~alsa-sys~docs~badge]: https://img.shields.io/crates/v/alsa-sys?label=alsa-sys
-[c~alsa-sys~lib.rs]: https://lib.rs/crates/alsa-sys
-[c~alsa-sys~lib.rs~badge]: https://img.shields.io/badge/lib.rs-alsa--sys-yellow
-[c~alsa-sys~repo]: https://github.com/diwic/alsa-sys
-[c~alsa-sys~repo~badge]: https://img.shields.io/badge/alsa--sys-steelblue?logo=github
-[c~amethyst~crates.io]: https://crates.io/crates/amethyst
-[c~amethyst~crates.io~badge]: https://img.shields.io/badge/crates.io-amethyst-crimson
-[c~amethyst~docs]: https://docs.amethyst.rs/stable/amethyst
-[c~amethyst~docs~badge]: https://img.shields.io/crates/v/amethyst?label=amethyst
-[c~amethyst~lib.rs]: https://lib.rs/crates/amethyst
-[c~amethyst~lib.rs~badge]: https://img.shields.io/badge/lib.rs-amethyst-yellow
-[c~amethyst~repo]: https://github.com/amethyst/amethyst
-[c~amethyst~repo~badge]: https://img.shields.io/badge/amethyst-steelblue?logo=github
-[c~amethyst~website]: https://github.com/amethyst/amethyst
-[c~amethyst~website~badge]: https://img.shields.io/badge/amethyst-coral
-[c~ansi_term::ANSIString~docs]: https://docs.rs/ansi_term/latest/ansi_term/type.ANSIString.html
-[c~ansi_term::Color~docs]: https://docs.rs/ansi_term/latest/ansi_term/enum.Colour.html
-[c~ansi_term::Style::new~docs]: https://docs.rs/ansi_term/latest/ansi_term/struct.Style.html#method.new
-[c~ansi_term::Style~docs]: https://docs.rs/ansi_term/latest/ansi_term/struct.Style.html
-[c~ansi_term~crates.io]: https://crates.io/crates/ansi_term
-[c~ansi_term~crates.io~badge]: https://img.shields.io/badge/crates.io-ansi__term-crimson
-[c~ansi_term~docs]: https://docs.rs/ansi_term
-[c~ansi_term~docs~badge]: https://img.shields.io/crates/v/ansi_term?label=ansi_term
-[c~ansi_term~lib.rs]: https://lib.rs/crates/ansi_term
-[c~ansi_term~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ansi__term-yellow
-[c~ansi_term~repo]: https://github.com/ogham/rust-ansi-term
-[c~ansi_term~repo~badge]: https://img.shields.io/badge/ansi__term-steelblue?logo=github
-[c~ansiterm~crates.io]: https://crates.io/crates/ansiterm
-[c~ansiterm~crates.io~badge]: https://img.shields.io/badge/crates.io-ansiterm-crimson
-[c~ansiterm~docs]: https://docs.rs/ansiterm
-[c~ansiterm~docs~badge]: https://img.shields.io/crates/v/ansiterm?label=ansiterm
-[c~ansiterm~lib.rs]: https://lib.rs/crates/ansiterm
-[c~ansiterm~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ansiterm-yellow
-[c~ansiterm~repo]: https://github.com/rustadopt/ansiterm-rs
-[c~ansiterm~repo~badge]: https://img.shields.io/badge/ansiterm-steelblue?logo=github
-[c~anstream~crates.io]: https://crates.io/crates/anstream
-[c~anstream~crates.io~badge]: https://img.shields.io/badge/crates.io-anstream-crimson
-[c~anstream~docs]: https://docs.rs/anstream
-[c~anstream~docs~badge]: https://img.shields.io/crates/v/anstream?label=anstream
-[c~anstream~lib.rs]: https://lib.rs/crates/anstream
-[c~anstream~lib.rs~badge]: https://img.shields.io/badge/lib.rs-anstream-yellow
-[c~anstream~repo]: https://github.com/rust-cli/anstyle/tree/main/crates/anstream
-[c~anstream~repo~badge]: https://img.shields.io/badge/anstream-steelblue?logo=github
-[c~anstream~website]: https://github.com/rust-cli/anstyle/blob/main/crates/anstream/README.md
-[c~anstream~website~badge]: https://img.shields.io/badge/anstream-coral
-[c~anstyle~crates.io]: https://crates.io/crates/anstyle
-[c~anstyle~crates.io~badge]: https://img.shields.io/badge/crates.io-anstyle-crimson
-[c~anstyle~docs]: https://docs.rs/anstyle
-[c~anstyle~docs~badge]: https://img.shields.io/crates/v/anstyle?label=anstyle
-[c~anstyle~lib.rs]: https://lib.rs/crates/anstyle
-[c~anstyle~lib.rs~badge]: https://img.shields.io/badge/lib.rs-anstyle-yellow
-[c~anstyle~repo]: https://github.com/rust-cli/anstyle
-[c~anstyle~repo~badge]: https://img.shields.io/badge/anstyle-steelblue?logo=github
-[c~anstyle~website]: https://github.com/rust-cli/anstyle/blob/main/README.md
-[c~anstyle~website~badge]: https://img.shields.io/badge/anstyle-coral
-[c~anyhow::Result~docs]: https://docs.rs/anyhow/latest/anyhow/type.Result.html
-[c~anyhow~crates.io]: https://crates.io/crates/anyhow
-[c~anyhow~crates.io~badge]: https://img.shields.io/badge/crates.io-anyhow-crimson
-[c~anyhow~docs]: https://docs.rs/anyhow
-[c~anyhow~docs~badge]: https://img.shields.io/crates/v/anyhow?label=anyhow
-[c~anyhow~lib.rs]: https://lib.rs/crates/anyhow
-[c~anyhow~lib.rs~badge]: https://img.shields.io/badge/lib.rs-anyhow-yellow
-[c~anyhow~repo]: https://github.com/dtolnay/anyhow
-[c~anyhow~repo~badge]: https://img.shields.io/badge/anyhow-steelblue?logo=github
-[c~apca~crates.io]: https://crates.io/crates/apca
-[c~apca~crates.io~badge]: https://img.shields.io/badge/crates.io-apca-crimson
-[c~apca~docs]: https://docs.rs/apca
-[c~apca~docs~badge]: https://img.shields.io/crates/v/apca?label=apca
-[c~apca~lib.rs]: https://lib.rs/crates/apca
-[c~apca~lib.rs~badge]: https://img.shields.io/badge/lib.rs-apca-yellow
-[c~apca~repo]: https://github.com/d-e-s-o/apca
-[c~apca~repo~badge]: https://img.shields.io/badge/apca-steelblue?logo=github
-[c~apca~website]: https://github.com/d-e-s-o/apca
-[c~apca~website~badge]: https://img.shields.io/badge/apca-coral
-[c~approx::assert_abs_diff_eq~docs]: https://docs.rs/approx/latest/approx/macro.assert_abs_diff_eq.html
-[c~approx~crates.io]: https://crates.io/crates/approx
-[c~approx~crates.io~badge]: https://img.shields.io/badge/crates.io-approx-crimson
-[c~approx~docs]: https://docs.rs/approx
-[c~approx~docs~badge]: https://img.shields.io/crates/v/approx?label=approx
-[c~approx~lib.rs]: https://lib.rs/crates/approx
-[c~approx~lib.rs~badge]: https://img.shields.io/badge/lib.rs-approx-yellow
-[c~approx~repo]: https://github.com/brendanzab/approx
-[c~approx~repo~badge]: https://img.shields.io/badge/approx-steelblue?logo=github
-[c~arboard~crates.io]: https://crates.io/crates/arboard
-[c~arboard~crates.io~badge]: https://img.shields.io/badge/crates.io-arboard-crimson
-[c~arboard~docs]: https://docs.rs/arboard
-[c~arboard~docs~badge]: https://img.shields.io/crates/v/arboard?label=arboard
-[c~arboard~lib.rs]: https://lib.rs/crates/arboard
-[c~arboard~lib.rs~badge]: https://img.shields.io/badge/lib.rs-arboard-yellow
-[c~arboard~repo]: https://github.com/1Password/arboard
-[c~arboard~repo~badge]: https://img.shields.io/badge/arboard-steelblue?logo=github
-[c~arc-swap::ArcSwap~docs]: https://docs.rs/arc-swap/latest/arc-swap/type.ArcSwap.html
-[c~arc-swap~crates.io]: https://crates.io/crates/arc-swap
-[c~arc-swap~crates.io~badge]: https://img.shields.io/badge/crates.io-arc--swap-crimson
-[c~arc-swap~docs]: https://docs.rs/arc-swap
-[c~arc-swap~docs~badge]: https://img.shields.io/crates/v/arc-swap?label=arc-swap
-[c~arc-swap~lib.rs]: https://lib.rs/crates/arc-swap
-[c~arc-swap~lib.rs~badge]: https://img.shields.io/badge/lib.rs-arc--swap-yellow
-[c~arc-swap~repo]: https://github.com/vorner/arc-swap
-[c~arc-swap~repo~badge]: https://img.shields.io/badge/arc--swap-steelblue?logo=github
-[c~argh~crates.io]: https://crates.io/crates/argh
-[c~argh~crates.io~badge]: https://img.shields.io/badge/crates.io-argh-crimson
-[c~argh~docs]: https://docs.rs/argh
-[c~argh~docs~badge]: https://img.shields.io/crates/v/argh?label=argh
-[c~argh~lib.rs]: https://lib.rs/crates/argh
-[c~argh~lib.rs~badge]: https://img.shields.io/badge/lib.rs-argh-yellow
-[c~argh~repo]: https://github.com/google/argh
-[c~argh~repo~badge]: https://img.shields.io/badge/argh-steelblue?logo=github
-[c~argmin~crates.io]: https://crates.io/crates/argmin
-[c~argmin~crates.io~badge]: https://img.shields.io/badge/crates.io-argmin-crimson
-[c~argmin~docs]: https://docs.rs/argmin
-[c~argmin~docs~badge]: https://img.shields.io/crates/v/argmin?label=argmin
-[c~argmin~lib.rs]: https://lib.rs/crates/argmin
-[c~argmin~lib.rs~badge]: https://img.shields.io/badge/lib.rs-argmin-yellow
-[c~argmin~repo]: https://github.com/argmin-rs/argmin
-[c~argmin~repo~badge]: https://img.shields.io/badge/argmin-steelblue?logo=github
-[c~argmin~website]: https://argmin-rs.org
-[c~argmin~website~badge]: https://img.shields.io/badge/argmin-coral
-[c~argon2~crates.io]: https://crates.io/crates/argon2
-[c~argon2~crates.io~badge]: https://img.shields.io/badge/crates.io-argon2-crimson
-[c~argon2~docs]: https://docs.rs/argon2
-[c~argon2~docs~badge]: https://img.shields.io/crates/v/argon2?label=argon2
-[c~argon2~lib.rs]: https://lib.rs/crates/argon2
-[c~argon2~lib.rs~badge]: https://img.shields.io/badge/lib.rs-argon2-yellow
-[c~argon2~repo]: https://github.com/RustCrypto/password-hashes/tree/master/argon2
-[c~argon2~repo~badge]: https://img.shields.io/badge/argon2-steelblue?logo=github
-[c~argon2~website]: https://github.com/RustCrypto/password-hashes/tree/master/argon2
-[c~argon2~website~badge]: https://img.shields.io/badge/argon2-coral
-[c~arrayvec~commit-activity~badge]: https://img.shields.io/github/commit-activity/y/bluss/arrayvec
-[c~arrayvec~crates.io]: https://crates.io/crates/arrayvec
-[c~arrayvec~crates.io~badge]: https://img.shields.io/badge/crates.io-arrayvec-crimson
-[c~arrayvec~dependents~badge]: https://img.shields.io/crates/dependents/arrayvec
-[c~arrayvec~deps-rs~badge]: https://img.shields.io/deps-rs/arrayvec/latest
-[c~arrayvec~docs]: https://docs.rs/arrayvec
-[c~arrayvec~docs~badge]: https://img.shields.io/crates/v/arrayvec?label=arrayvec
-[c~arrayvec~last-commit~badge]: https://img.shields.io/github/last-commit/bluss/arrayvec
-[c~arrayvec~lib.rs]: https://lib.rs/crates/arrayvec
-[c~arrayvec~lib.rs~badge]: https://img.shields.io/badge/lib.rs-arrayvec-yellow
-[c~arrayvec~license~badge]: https://img.shields.io/crates/l/arrayvec
-[c~arrayvec~recent-downloads~badge]: https://img.shields.io/crates/dr/arrayvec
-[c~arrayvec~repo]: https://github.com/bluss/arrayvec
-[c~arrayvec~repo~badge]: https://img.shields.io/badge/arrayvec-steelblue?logo=github
-[c~arrow~crates.io]: https://crates.io/crates/arrow
-[c~arrow~crates.io~badge]: https://img.shields.io/badge/crates.io-arrow-crimson
-[c~arrow~docs]: https://docs.rs/arrow
-[c~arrow~docs~badge]: https://img.shields.io/crates/v/arrow?label=arrow
-[c~arrow~lib.rs]: https://lib.rs/crates/arrow
-[c~arrow~lib.rs~badge]: https://img.shields.io/badge/lib.rs-arrow-yellow
-[c~arrow~repo]: https://github.com/apache/arrow-rs
-[c~arrow~repo~badge]: https://img.shields.io/badge/arrow-steelblue?logo=github
-[c~ash~crates.io]: https://crates.io/crates/ash
-[c~ash~crates.io~badge]: https://img.shields.io/badge/crates.io-ash-crimson
-[c~ash~docs]: https://docs.rs/ash
-[c~ash~docs~badge]: https://img.shields.io/crates/v/ash?label=ash
-[c~ash~lib.rs]: https://lib.rs/crates/ash
-[c~ash~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ash-yellow
-[c~ash~repo]: https://github.com/ash-rs/ash
-[c~ash~repo~badge]: https://img.shields.io/badge/ash-steelblue?logo=github
-[c~askama~crates.io]: https://crates.io/crates/askama
-[c~askama~crates.io~badge]: https://img.shields.io/badge/crates.io-askama-crimson
-[c~askama~docs]: https://docs.rs/askama
-[c~askama~docs~badge]: https://img.shields.io/crates/v/askama?label=askama
-[c~askama~lib.rs]: https://lib.rs/crates/askama
-[c~askama~lib.rs~badge]: https://img.shields.io/badge/lib.rs-askama-yellow
-[c~askama~repo]: https://github.com/djc/askama
-[c~askama~repo~badge]: https://img.shields.io/badge/askama-steelblue?logo=github
-[c~assert_matches~crates.io]: https://crates.io/crates/assert_matches
-[c~assert_matches~crates.io~badge]: https://img.shields.io/badge/crates.io-assert__matches-crimson
-[c~assert_matches~docs]: https://docs.rs/assert_matches
-[c~assert_matches~docs~badge]: https://img.shields.io/crates/v/assert_matches?label=assert_matches
-[c~assert_matches~lib.rs]: https://lib.rs/crates/assert_matches
-[c~assert_matches~lib.rs~badge]: https://img.shields.io/badge/lib.rs-assert__matches-yellow
-[c~assert_matches~repo]: https://github.com/murarth/assert_matches
-[c~assert_matches~repo~badge]: https://img.shields.io/badge/assert__matches-steelblue?logo=github
-[c~assertables~crates.io]: https://crates.io/crates/assertables
-[c~assertables~crates.io~badge]: https://img.shields.io/badge/crates.io-assertables-crimson
-[c~assertables~docs]: https://docs.rs/assertables
-[c~assertables~docs~badge]: https://img.shields.io/crates/v/assertables?label=assertables
-[c~assertables~lib.rs]: https://lib.rs/crates/assertables
-[c~assertables~lib.rs~badge]: https://img.shields.io/badge/lib.rs-assertables-yellow
-[c~assertables~repo]: https://github.com/sixarm/assertables-rust-crate
-[c~assertables~repo~badge]: https://img.shields.io/badge/assertables-steelblue?logo=github
-[c~assimp~crates.io]: https://crates.io/crates/assimp
-[c~assimp~crates.io~badge]: https://img.shields.io/badge/crates.io-assimp-crimson
-[c~assimp~docs]: https://docs.rs/assimp
-[c~assimp~docs~badge]: https://img.shields.io/crates/v/assimp?label=assimp
-[c~assimp~lib.rs]: https://lib.rs/crates/assimp
-[c~assimp~lib.rs~badge]: https://img.shields.io/badge/lib.rs-assimp-yellow
-[c~assimp~repo]: https://github.com/Eljay/assimp-rs
-[c~assimp~repo~badge]: https://img.shields.io/badge/assimp-steelblue?logo=github
-[c~async-channel~crates.io]: https://crates.io/crates/async-channel
-[c~async-channel~crates.io~badge]: https://img.shields.io/badge/crates.io-async--channel-crimson
-[c~async-channel~docs]: https://docs.rs/async-channel
-[c~async-channel~docs~badge]: https://img.shields.io/crates/v/async-channel?label=async-channel
-[c~async-channel~lib.rs]: https://lib.rs/crates/async-channel
-[c~async-channel~lib.rs~badge]: https://img.shields.io/badge/lib.rs-async--channel-yellow
-[c~async-channel~repo]: https://github.com/smol-rs/async-channel
-[c~async-channel~repo~badge]: https://img.shields.io/badge/async--channel-steelblue?logo=github
-[c~async-fs~crates.io]: https://crates.io/crates/async-fs
-[c~async-fs~crates.io~badge]: https://img.shields.io/badge/crates.io-async--fs-crimson
-[c~async-fs~docs]: https://docs.rs/async-fs
-[c~async-fs~docs~badge]: https://img.shields.io/crates/v/async-fs?label=async-fs
-[c~async-fs~lib.rs]: https://lib.rs/crates/async-fs
-[c~async-fs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-async--fs-yellow
-[c~async-fs~repo]: https://github.com/smol-rs/async-fs
-[c~async-fs~repo~badge]: https://img.shields.io/badge/async--fs-steelblue?logo=github
-[c~async-graphql-axum~crates.io]: https://crates.io/crates/async-graphql-axum
-[c~async-graphql-axum~crates.io~badge]: https://img.shields.io/badge/crates.io-async--graphql--axum-crimson
-[c~async-graphql-axum~docs]: https://docs.rs/async-graphql-axum
-[c~async-graphql-axum~docs~badge]: https://img.shields.io/crates/v/async-graphql-axum?label=async-graphql-axum
-[c~async-graphql-axum~lib.rs]: https://lib.rs/crates/async-graphql-axum
-[c~async-graphql-axum~lib.rs~badge]: https://img.shields.io/badge/lib.rs-async--graphql--axum-yellow
-[c~async-graphql-axum~repo]: https://github.com/async-graphql/async-graphql
-[c~async-graphql-axum~repo~badge]: https://img.shields.io/badge/async--graphql--axum-steelblue?logo=github
-[c~async-graphql~crates.io]: https://crates.io/crates/async-graphql
-[c~async-graphql~crates.io~badge]: https://img.shields.io/badge/crates.io-async--graphql-crimson
-[c~async-graphql~docs]: https://docs.rs/async-graphql
-[c~async-graphql~docs~badge]: https://img.shields.io/crates/v/async-graphql?label=async-graphql
-[c~async-graphql~lib.rs]: https://lib.rs/crates/async-graphql
-[c~async-graphql~lib.rs~badge]: https://img.shields.io/badge/lib.rs-async--graphql-yellow
-[c~async-graphql~repo]: https://github.com/async-graphql/async-graphql
-[c~async-graphql~repo~badge]: https://img.shields.io/badge/async--graphql-steelblue?logo=github
-[c~async-std~crates.io]: https://crates.io/crates/async-std
-[c~async-std~crates.io~badge]: https://img.shields.io/badge/crates.io-async--std-crimson
-[c~async-std~docs]: https://docs.rs/async-std
-[c~async-std~docs~badge]: https://img.shields.io/crates/v/async-std?label=async-std
-[c~async-std~lib.rs]: https://lib.rs/crates/async-std
-[c~async-std~lib.rs~badge]: https://img.shields.io/badge/lib.rs-async--std-yellow
-[c~async-std~repo]: https://github.com/async-rs/async-std
-[c~async-std~repo~badge]: https://img.shields.io/badge/async--std-steelblue?logo=github
-[c~async-std~website]: https://async.rs
-[c~async-std~website~badge]: https://img.shields.io/badge/async--std-coral
-[c~async-stream~crates.io]: https://crates.io/crates/async-stream
-[c~async-stream~crates.io~badge]: https://img.shields.io/badge/crates.io-async--stream-crimson
-[c~async-stream~docs]: https://docs.rs/async-stream
-[c~async-stream~docs~badge]: https://img.shields.io/crates/v/async-stream?label=async-stream
-[c~async-stream~lib.rs]: https://lib.rs/crates/async-stream
-[c~async-stream~lib.rs~badge]: https://img.shields.io/badge/lib.rs-async--stream-yellow
-[c~async-stream~repo]: https://github.com/tokio-rs/async-stream
-[c~async-stream~repo~badge]: https://img.shields.io/badge/async--stream-steelblue?logo=github
-[c~async-trait~crates.io]: https://crates.io/crates/async-trait
-[c~async-trait~crates.io~badge]: https://img.shields.io/badge/crates.io-async--trait-crimson
-[c~async-trait~docs]: https://docs.rs/async-trait
-[c~async-trait~docs~badge]: https://img.shields.io/crates/v/async-trait?label=async-trait
-[c~async-trait~lib.rs]: https://lib.rs/crates/async-trait
-[c~async-trait~lib.rs~badge]: https://img.shields.io/badge/lib.rs-async--trait-yellow
-[c~async-trait~repo]: https://github.com/dtolnay/async-trait
-[c~async-trait~repo~badge]: https://img.shields.io/badge/async--trait-steelblue?logo=github
-[c~async-tungstenite~crates.io]: https://crates.io/crates/async-tungstenite
-[c~async-tungstenite~crates.io~badge]: https://img.shields.io/badge/crates.io-async--tungstenite-crimson
-[c~async-tungstenite~docs]: https://docs.rs/async-tungstenite
-[c~async-tungstenite~docs~badge]: https://img.shields.io/crates/v/async-tungstenite?label=async-tungstenite
-[c~async-tungstenite~lib.rs]: https://lib.rs/crates/async-tungstenite
-[c~async-tungstenite~lib.rs~badge]: https://img.shields.io/badge/lib.rs-async--tungstenite-yellow
-[c~async-tungstenite~repo]: https://github.com/sdroege/async-tungstenite
-[c~async-tungstenite~repo~badge]: https://img.shields.io/badge/async--tungstenite-steelblue?logo=github
-[c~async_zip~crates.io]: https://crates.io/crates/async_zip
-[c~async_zip~crates.io~badge]: https://img.shields.io/badge/crates.io-async__zip-crimson
-[c~async_zip~docs]: https://docs.rs/async_zip
-[c~async_zip~docs~badge]: https://img.shields.io/crates/v/async_zip?label=async_zip
-[c~async_zip~lib.rs]: https://lib.rs/crates/async_zip
-[c~async_zip~lib.rs~badge]: https://img.shields.io/badge/lib.rs-async__zip-yellow
-[c~async_zip~repo]: https://github.com/Majored/rs-async-zip
-[c~async_zip~repo~badge]: https://img.shields.io/badge/async__zip-steelblue?logo=github
-[c~atomic~crates.io]: https://crates.io/crates/atomic
-[c~atomic~crates.io~badge]: https://img.shields.io/badge/crates.io-atomic-crimson
-[c~atomic~docs]: https://docs.rs/atomic
-[c~atomic~docs~badge]: https://img.shields.io/crates/v/atomic?label=atomic
-[c~atomic~lib.rs]: https://lib.rs/crates/atomic
-[c~atomic~lib.rs~badge]: https://img.shields.io/badge/lib.rs-atomic-yellow
-[c~atomic~repo]: https://github.com/Amanieu/atomic-rs
-[c~atomic~repo~badge]: https://img.shields.io/badge/atomic-steelblue?logo=github
-[c~autocfg~crates.io]: https://crates.io/crates/autocfg
-[c~autocfg~crates.io~badge]: https://img.shields.io/badge/crates.io-autocfg-crimson
-[c~autocfg~docs]: https://docs.rs/autocfg
-[c~autocfg~docs~badge]: https://img.shields.io/crates/v/autocfg?label=autocfg
-[c~autocfg~lib.rs]: https://lib.rs/crates/autocfg
-[c~autocfg~lib.rs~badge]: https://img.shields.io/badge/lib.rs-autocfg-yellow
-[c~autocfg~repo]: https://github.com/cuviper/autocfg
-[c~autocfg~repo~badge]: https://img.shields.io/badge/autocfg-steelblue?logo=github
-[c~await-tree~crates.io]: https://crates.io/crates/await-tree
-[c~await-tree~crates.io~badge]: https://img.shields.io/badge/crates.io-await--tree-crimson
-[c~await-tree~docs]: https://docs.rs/await-tree
-[c~await-tree~docs~badge]: https://img.shields.io/crates/v/await-tree?label=await-tree
-[c~await-tree~lib.rs]: https://lib.rs/crates/await-tree
-[c~await-tree~lib.rs~badge]: https://img.shields.io/badge/lib.rs-await--tree-yellow
-[c~await-tree~repo]: https://github.com/risingwavelabs/await-tree
-[c~await-tree~repo~badge]: https://img.shields.io/badge/await--tree-steelblue?logo=github
-[c~await~crates.io]: https://crates.io/crates/await
-[c~await~crates.io~badge]: https://img.shields.io/badge/crates.io-await-crimson
-[c~await~docs]: http://icorderi.github.io/rust-await
-[c~await~docs~badge]: https://img.shields.io/crates/v/await?label=await
-[c~await~lib.rs]: https://lib.rs/crates/await
-[c~await~lib.rs~badge]: https://img.shields.io/badge/lib.rs-await-yellow
-[c~await~repo]: https://github.com/icorderi/rust-await
-[c~await~repo~badge]: https://img.shields.io/badge/await-steelblue?logo=github
-[c~aws-config~crates.io]: https://crates.io/crates/aws-config
-[c~aws-config~crates.io~badge]: https://img.shields.io/badge/crates.io-aws--config-crimson
-[c~aws-config~docs]: https://docs.rs/aws-config
-[c~aws-config~docs~badge]: https://img.shields.io/crates/v/aws-config?label=aws-config
-[c~aws-config~lib.rs]: https://lib.rs/crates/aws-config
-[c~aws-config~lib.rs~badge]: https://img.shields.io/badge/lib.rs-aws--config-yellow
-[c~aws-config~repo]: https://github.com/smithy-lang/smithy-rs
-[c~aws-config~repo~badge]: https://img.shields.io/badge/aws--config-steelblue?logo=github
-[c~aws-sdk-s3~crates.io]: https://crates.io/crates/aws-sdk-s3
-[c~aws-sdk-s3~crates.io~badge]: https://img.shields.io/badge/crates.io-aws--sdk--s3-crimson
-[c~aws-sdk-s3~docs]: https://docs.rs/aws-sdk-s3
-[c~aws-sdk-s3~docs~badge]: https://img.shields.io/crates/v/aws-sdk-s3?label=aws-sdk-s3
-[c~aws-sdk-s3~lib.rs]: https://lib.rs/crates/aws-sdk-s3
-[c~aws-sdk-s3~lib.rs~badge]: https://img.shields.io/badge/lib.rs-aws--sdk--s3-yellow
-[c~aws-sdk-s3~repo]: https://github.com/awslabs/aws-sdk-rust
-[c~aws-sdk-s3~repo~badge]: https://img.shields.io/badge/aws--sdk--s3-steelblue?logo=github
-[c~aws~crates.io]: https://crates.io/crates/aws
-[c~aws~crates.io~badge]: https://img.shields.io/badge/crates.io-aws-crimson
-[c~aws~docs]: https://docs.rs/aws
-[c~aws~docs~badge]: https://img.shields.io/crates/v/aws?label=aws
-[c~aws~lib.rs]: https://lib.rs/crates/aws
-[c~aws~lib.rs~badge]: https://img.shields.io/badge/lib.rs-aws-yellow
-[c~aws~repo]: https://github.com/ghmlee/aws
-[c~aws~repo~badge]: https://img.shields.io/badge/aws-steelblue?logo=github
-[c~aws~website]: https://github.com/ghmlee/aws
-[c~aws~website~badge]: https://img.shields.io/badge/aws-coral
-[c~axum~crates.io]: https://crates.io/crates/axum
-[c~axum~crates.io~badge]: https://img.shields.io/badge/crates.io-axum-crimson
-[c~axum~docs]: https://docs.rs/axum
-[c~axum~docs~badge]: https://img.shields.io/crates/v/axum?label=axum
-[c~axum~examples]: https://github.com/tokio-rs/axum/tree/main/examples
-[c~axum~lib.rs]: https://lib.rs/crates/axum
-[c~axum~lib.rs~badge]: https://img.shields.io/badge/lib.rs-axum-yellow
-[c~axum~repo]: https://github.com/tokio-rs/axum
-[c~axum~repo~badge]: https://img.shields.io/badge/axum-steelblue?logo=github
-[c~azul~crates.io]: https://crates.io/crates/azul
-[c~azul~crates.io~badge]: https://img.shields.io/badge/crates.io-azul-crimson
-[c~azul~docs]: https://docs.rs/azul
-[c~azul~docs~badge]: https://img.shields.io/crates/v/azul?label=azul
-[c~azul~lib.rs]: https://lib.rs/crates/azul
-[c~azul~lib.rs~badge]: https://img.shields.io/badge/lib.rs-azul-yellow
-[c~azul~repo]: https://github.com/fschutt/azul
-[c~azul~repo~badge]: https://img.shields.io/badge/azul-steelblue?logo=github
-[c~azul~website]: https://azul.rs
-[c~azul~website~badge]: https://img.shields.io/badge/azul-coral
-[c~azure_sdk_for_rust~crates.io]: https://crates.io/crates/azure_sdk_for_rust
-[c~azure_sdk_for_rust~crates.io~badge]: https://img.shields.io/badge/crates.io-azure__sdk__for__rust-crimson
-[c~azure_sdk_for_rust~docs]: http://mindflavor.github.io/AzureSDKForRust/azure_sdk_for_rust
-[c~azure_sdk_for_rust~docs~badge]: https://img.shields.io/crates/v/azure_sdk_for_rust?label=azure_sdk_for_rust
-[c~azure_sdk_for_rust~lib.rs]: https://lib.rs/crates/azure_sdk_for_rust
-[c~azure_sdk_for_rust~lib.rs~badge]: https://img.shields.io/badge/lib.rs-azure__sdk__for__rust-yellow
-[c~azure_sdk_for_rust~repo]: https://github.com/MindFlavor/AzureSDKForRust
-[c~azure_sdk_for_rust~repo~badge]: https://img.shields.io/badge/azure__sdk__for__rust-steelblue?logo=github
-[c~bacon~crates.io]: https://crates.io/crates/bacon
-[c~bacon~crates.io~badge]: https://img.shields.io/badge/crates.io-bacon-crimson
-[c~bacon~docs]: https://docs.rs/bacon
-[c~bacon~docs~badge]: https://img.shields.io/crates/v/bacon?label=bacon
-[c~bacon~lib.rs]: https://lib.rs/crates/bacon
-[c~bacon~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bacon-yellow
-[c~bacon~repo]: https://github.com/Canop/bacon
-[c~bacon~repo~badge]: https://img.shields.io/badge/bacon-steelblue?logo=github
-[c~bare-metal~crates.io]: https://crates.io/crates/bare-metal
-[c~bare-metal~crates.io~badge]: https://img.shields.io/badge/crates.io-bare--metal-crimson
-[c~bare-metal~docs]: https://docs.rs/bare-metal
-[c~bare-metal~docs~badge]: https://img.shields.io/crates/v/bare-metal?label=bare-metal
-[c~bare-metal~lib.rs]: https://lib.rs/crates/bare-metal
-[c~bare-metal~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bare--metal-yellow
-[c~bare-metal~repo]: https://github.com/rust-embedded/bare-metal
-[c~bare-metal~repo~badge]: https://img.shields.io/badge/bare--metal-steelblue?logo=github
-[c~base16ct~crates.io]: https://crates.io/crates/base16ct
-[c~base16ct~crates.io~badge]: https://img.shields.io/badge/crates.io-base16ct-crimson
-[c~base16ct~docs]: https://docs.rs/base16ct
-[c~base16ct~docs~badge]: https://img.shields.io/crates/v/base16ct?label=base16ct
-[c~base16ct~lib.rs]: https://lib.rs/crates/base16ct
-[c~base16ct~lib.rs~badge]: https://img.shields.io/badge/lib.rs-base16ct-yellow
-[c~base16ct~repo]: https://github.com/RustCrypto/formats/tree/master/base16ct
-[c~base16ct~repo~badge]: https://img.shields.io/badge/base16ct-steelblue?logo=github
-[c~base64::decode~docs]: https://docs.rs/base64/latest/base64/fn.decode.html
-[c~base64::encode~docs]: https://docs.rs/base64/latest/base64/fn.encode.html
-[c~base64ct~crates.io]: https://crates.io/crates/base64ct
-[c~base64ct~crates.io~badge]: https://img.shields.io/badge/crates.io-base64ct-crimson
-[c~base64ct~docs]: https://docs.rs/base64ct
-[c~base64ct~docs~badge]: https://img.shields.io/crates/v/base64ct?label=base64ct
-[c~base64ct~lib.rs]: https://lib.rs/crates/base64ct
-[c~base64ct~lib.rs~badge]: https://img.shields.io/badge/lib.rs-base64ct-yellow
-[c~base64ct~repo]: https://github.com/RustCrypto/formats
-[c~base64ct~repo~badge]: https://img.shields.io/badge/base64ct-steelblue?logo=github
-[c~base64ct~website]: https://github.com/RustCrypto/formats/tree/master/base64ct
-[c~base64ct~website~badge]: https://img.shields.io/badge/base64ct-coral
-[c~base64~crates.io]: https://crates.io/crates/base64
-[c~base64~crates.io~badge]: https://img.shields.io/badge/crates.io-base64-crimson
-[c~base64~docs]: https://docs.rs/base64
-[c~base64~docs~badge]: https://img.shields.io/crates/v/base64?label=base64
-[c~base64~lib.rs]: https://lib.rs/crates/base64
-[c~base64~lib.rs~badge]: https://img.shields.io/badge/lib.rs-base64-yellow
-[c~base64~repo]: https://github.com/marshallpierce/rust-base64
-[c~base64~repo~badge]: https://img.shields.io/badge/base64-steelblue?logo=github
-[c~basic-toml~crates.io]: https://crates.io/crates/basic-toml
-[c~basic-toml~crates.io~badge]: https://img.shields.io/badge/crates.io-basic--toml-crimson
-[c~basic-toml~docs]: https://docs.rs/basic-toml
-[c~basic-toml~docs~badge]: https://img.shields.io/crates/v/basic-toml?label=basic-toml
-[c~basic-toml~lib.rs]: https://lib.rs/crates/basic-toml
-[c~basic-toml~lib.rs~badge]: https://img.shields.io/badge/lib.rs-basic--toml-yellow
-[c~basic-toml~repo]: https://github.com/dtolnay/basic-toml
-[c~basic-toml~repo~badge]: https://img.shields.io/badge/basic--toml-steelblue?logo=github
-[c~bastion~crates.io]: https://crates.io/crates/bastion
-[c~bastion~crates.io~badge]: https://img.shields.io/badge/crates.io-bastion-crimson
-[c~bastion~docs]: https://docs.rs/bastion
-[c~bastion~docs~badge]: https://img.shields.io/crates/v/bastion?label=bastion
-[c~bastion~lib.rs]: https://lib.rs/crates/bastion
-[c~bastion~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bastion-yellow
-[c~bastion~repo]: https://github.com/bastion-rs/bastion
-[c~bastion~repo~badge]: https://img.shields.io/badge/bastion-steelblue?logo=github
-[c~bat~crates.io]: https://crates.io/crates/bat
-[c~bat~crates.io~badge]: https://img.shields.io/badge/crates.io-bat-crimson
-[c~bat~docs]: https://docs.rs/bat
-[c~bat~docs~badge]: https://img.shields.io/crates/v/bat?label=bat
-[c~bat~lib.rs]: https://lib.rs/crates/bat
-[c~bat~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bat-yellow
-[c~bat~repo]: https://github.com/sharkdp/bat
-[c~bat~repo~badge]: https://img.shields.io/badge/bat-steelblue?logo=github
-[c~bb8~crates.io]: https://crates.io/crates/bb8
-[c~bb8~crates.io~badge]: https://img.shields.io/badge/crates.io-bb8-crimson
-[c~bb8~docs]: https://docs.rs/bb8
-[c~bb8~docs~badge]: https://img.shields.io/crates/v/bb8?label=bb8
-[c~bb8~lib.rs]: https://lib.rs/crates/bb8
-[c~bb8~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bb8-yellow
-[c~bb8~repo]: https://github.com/djc/bb8
-[c~bb8~repo~badge]: https://img.shields.io/badge/bb8-steelblue?logo=github
-[c~bcrypt~crates.io]: https://crates.io/crates/bcrypt
-[c~bcrypt~crates.io~badge]: https://img.shields.io/badge/crates.io-bcrypt-crimson
-[c~bcrypt~docs]: https://docs.rs/bcrypt
-[c~bcrypt~docs~badge]: https://img.shields.io/crates/v/bcrypt?label=bcrypt
-[c~bcrypt~lib.rs]: https://lib.rs/crates/bcrypt
-[c~bcrypt~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bcrypt-yellow
-[c~bcrypt~repo]: https://github.com/Keats/rust-bcrypt
-[c~bcrypt~repo~badge]: https://img.shields.io/badge/bcrypt-steelblue?logo=github
-[c~bevy_ecs~crates.io]: https://crates.io/crates/bevy_ecs
-[c~bevy_ecs~crates.io~badge]: https://img.shields.io/badge/crates.io-bevy__ecs-crimson
-[c~bevy_ecs~docs]: https://docs.rs/bevy_ecs
-[c~bevy_ecs~docs~badge]: https://img.shields.io/crates/v/bevy_ecs?label=bevy_ecs
-[c~bevy_ecs~lib.rs]: https://lib.rs/crates/bevy_ecs
-[c~bevy_ecs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bevy__ecs-yellow
-[c~bevy_ecs~repo]: https://github.com/bevyengine/bevy
-[c~bevy_ecs~repo~badge]: https://img.shields.io/badge/bevy__ecs-steelblue?logo=github
-[c~bevy_ecs~website]: https://bevyengine.org
-[c~bevy_ecs~website~badge]: https://img.shields.io/badge/bevy__ecs-coral
-[c~bevy_render~crates.io]: https://crates.io/crates/bevy_render
-[c~bevy_render~crates.io~badge]: https://img.shields.io/badge/crates.io-bevy__render-crimson
-[c~bevy_render~docs]: https://docs.rs/bevy_render
-[c~bevy_render~docs~badge]: https://img.shields.io/crates/v/bevy_render?label=bevy_render
-[c~bevy_render~lib.rs]: https://lib.rs/crates/bevy_render
-[c~bevy_render~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bevy__render-yellow
-[c~bevy_render~repo]: https://github.com/bevyengine/bevy
-[c~bevy_render~repo~badge]: https://img.shields.io/badge/bevy__render-steelblue?logo=github
-[c~bevy_render~website]: https://bevyengine.org
-[c~bevy_render~website~badge]: https://img.shields.io/badge/bevy__render-coral
-[c~bevy~crates.io]: https://crates.io/crates/bevy
-[c~bevy~crates.io~badge]: https://img.shields.io/badge/crates.io-bevy-crimson
-[c~bevy~docs]: https://docs.rs/bevy
-[c~bevy~docs~badge]: https://img.shields.io/crates/v/bevy?label=bevy
-[c~bevy~enable-fast-compiles]: https://bevyengine.org/learn/book/getting-started/setup/#enable-fast-compiles-optional
-[c~bevy~lib.rs]: https://lib.rs/crates/bevy
-[c~bevy~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bevy-yellow
-[c~bevy~repo]: https://github.com/bevyengine/bevy
-[c~bevy~repo~badge]: https://img.shields.io/badge/bevy-steelblue?logo=github
-[c~bevy~website]: https://bevyengine.org
-[c~bevy~website~badge]: https://img.shields.io/badge/bevy-coral
-[c~binascii~crates.io]: https://crates.io/crates/binascii
-[c~binascii~crates.io~badge]: https://img.shields.io/badge/crates.io-binascii-crimson
-[c~binascii~docs]: https://docs.rs/binascii
-[c~binascii~docs~badge]: https://img.shields.io/crates/v/binascii?label=binascii
-[c~binascii~lib.rs]: https://lib.rs/crates/binascii
-[c~binascii~lib.rs~badge]: https://img.shields.io/badge/lib.rs-binascii-yellow
-[c~binascii~repo]: https://github.com/naim94a/binascii-rs
-[c~binascii~repo~badge]: https://img.shields.io/badge/binascii-steelblue?logo=github
-[c~bincode~crates.io]: https://crates.io/crates/bincode
-[c~bincode~crates.io~badge]: https://img.shields.io/badge/crates.io-bincode-crimson
-[c~bincode~docs]: https://docs.rs/bincode
-[c~bincode~docs~badge]: https://img.shields.io/crates/v/bincode?label=bincode
-[c~bincode~lib.rs]: https://lib.rs/crates/bincode
-[c~bincode~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bincode-yellow
-[c~bincode~repo]: https://github.com/bincode-org/bincode
-[c~bincode~repo~badge]: https://img.shields.io/badge/bincode-steelblue?logo=github
-[c~bindgen~crates.io]: https://crates.io/crates/bindgen
-[c~bindgen~crates.io~badge]: https://img.shields.io/badge/crates.io-bindgen-crimson
-[c~bindgen~docs]: https://docs.rs/bindgen
-[c~bindgen~docs~badge]: https://img.shields.io/crates/v/bindgen?label=bindgen
-[c~bindgen~lib.rs]: https://lib.rs/crates/bindgen
-[c~bindgen~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bindgen-yellow
-[c~bindgen~repo]: https://github.com/rust-lang/rust-bindgen
-[c~bindgen~repo~badge]: https://img.shields.io/badge/bindgen-steelblue?logo=github
-[c~bindgen~website]: https://rust-lang.github.io/rust-bindgen
-[c~bindgen~website~badge]: https://img.shields.io/badge/bindgen-coral
-[c~bit-set~crates.io]: https://crates.io/crates/bit-set
-[c~bit-set~crates.io~badge]: https://img.shields.io/badge/crates.io-bit--set-crimson
-[c~bit-set~docs]: https://docs.rs/bit-set
-[c~bit-set~docs~badge]: https://img.shields.io/crates/v/bit-set?label=bit-set
-[c~bit-set~lib.rs]: https://lib.rs/crates/bit-set
-[c~bit-set~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bit--set-yellow
-[c~bit-set~repo]: https://github.com/contain-rs/bit-set
-[c~bit-set~repo~badge]: https://img.shields.io/badge/bit--set-steelblue?logo=github
-[c~bitcoin~crates.io]: https://crates.io/crates/bitcoin
-[c~bitcoin~crates.io~badge]: https://img.shields.io/badge/crates.io-bitcoin-crimson
-[c~bitcoin~docs]: https://docs.rs/bitcoin
-[c~bitcoin~docs~badge]: https://img.shields.io/crates/v/bitcoin?label=bitcoin
-[c~bitcoin~lib.rs]: https://lib.rs/crates/bitcoin
-[c~bitcoin~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bitcoin-yellow
-[c~bitcoin~repo]: https://github.com/rust-bitcoin/rust-bitcoin
-[c~bitcoin~repo~badge]: https://img.shields.io/badge/bitcoin-steelblue?logo=github
-[c~bitflags::bitflags~docs]: https://docs.rs/bitflags/latest/bitflags/macro.bitflags.html
-[c~bitflags~crates.io]: https://crates.io/crates/bitflags
-[c~bitflags~crates.io~badge]: https://img.shields.io/badge/crates.io-bitflags-crimson
-[c~bitflags~docs]: https://docs.rs/bitflags
-[c~bitflags~docs~badge]: https://img.shields.io/crates/v/bitflags?label=bitflags
-[c~bitflags~lib.rs]: https://lib.rs/crates/bitflags
-[c~bitflags~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bitflags-yellow
-[c~bitflags~repo]: https://github.com/bitflags/bitflags
-[c~bitflags~repo~badge]: https://img.shields.io/badge/bitflags-steelblue?logo=github
-[c~bitvec~commit-activity~badge]: https://img.shields.io/github/commit-activity/y/bitvecto-rs/bitvec
-[c~bitvec~crates.io]: https://crates.io/crates/bitvec
-[c~bitvec~crates.io~badge]: https://img.shields.io/badge/crates.io-bitvec-crimson
-[c~bitvec~dependents~badge]: https://img.shields.io/crates/dependents/bitvec
-[c~bitvec~deps-rs~badge]: https://img.shields.io/deps-rs/bitvec/latest
-[c~bitvec~docs]: https://docs.rs/bitvec
-[c~bitvec~docs~badge]: https://img.shields.io/crates/v/bitvec?label=bitvec
-[c~bitvec~last-commit~badge]: https://img.shields.io/github/last-commit/bitvecto-rs/bitvec
-[c~bitvec~lib.rs]: https://lib.rs/crates/bitvec
-[c~bitvec~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bitvec-yellow
-[c~bitvec~license~badge]: https://img.shields.io/crates/l/bitvec
-[c~bitvec~recent-downloads~badge]: https://img.shields.io/crates/dr/bitvec
-[c~bitvec~repo]: https://github.com/bitvecto-rs/bitvec
-[c~bitvec~repo~badge]: https://img.shields.io/badge/bitvec-steelblue?logo=github
-[c~bitvec~website]: https://bitvecto-rs.github.io/bitvec
-[c~bitvec~website~badge]: https://img.shields.io/badge/bitvec-coral
-[c~blake3~crates.io]: https://crates.io/crates/blake3
-[c~blake3~crates.io~badge]: https://img.shields.io/badge/crates.io-blake3-crimson
-[c~blake3~docs]: https://docs.rs/blake3
-[c~blake3~docs~badge]: https://img.shields.io/crates/v/blake3?label=blake3
-[c~blake3~lib.rs]: https://lib.rs/crates/blake3
-[c~blake3~lib.rs~badge]: https://img.shields.io/badge/lib.rs-blake3-yellow
-[c~blake3~repo]: https://github.com/BLAKE3-team/BLAKE3
-[c~blake3~repo~badge]: https://img.shields.io/badge/blake3-steelblue?logo=github
-[c~bloomfilter~crates.io]: https://crates.io/crates/bloomfilter
-[c~bloomfilter~crates.io~badge]: https://img.shields.io/badge/crates.io-bloomfilter-crimson
-[c~bloomfilter~docs]: https://docs.rs/bloomfilter
-[c~bloomfilter~docs~badge]: https://img.shields.io/crates/v/bloomfilter?label=bloomfilter
-[c~bloomfilter~lib.rs]: https://lib.rs/crates/bloomfilter
-[c~bloomfilter~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bloomfilter-yellow
-[c~bloomfilter~repo]: https://github.com/jedisct1/rust-bloom-filter
-[c~bloomfilter~repo~badge]: https://img.shields.io/badge/bloomfilter-steelblue?logo=github
-[c~bolero~crates.io]: https://crates.io/crates/bolero
-[c~bolero~crates.io~badge]: https://img.shields.io/badge/crates.io-bolero-crimson
-[c~bolero~docs]: https://docs.rs/bolero
-[c~bolero~docs~badge]: https://img.shields.io/crates/v/bolero?label=bolero
-[c~bolero~lib.rs]: https://lib.rs/crates/bolero
-[c~bolero~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bolero-yellow
-[c~bolero~repo]: https://github.com/camshaft/bolero
-[c~bolero~repo~badge]: https://img.shields.io/badge/bolero-steelblue?logo=github
-[c~bollard~crates.io]: https://crates.io/crates/bollard
-[c~bollard~crates.io~badge]: https://img.shields.io/badge/crates.io-bollard-crimson
-[c~bollard~docs]: https://docs.rs/bollard
-[c~bollard~docs~badge]: https://img.shields.io/crates/v/bollard?label=bollard
-[c~bollard~lib.rs]: https://lib.rs/crates/bollard
-[c~bollard~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bollard-yellow
-[c~bollard~repo]: https://github.com/fussybeaver/bollard
-[c~bollard~repo~badge]: https://img.shields.io/badge/bollard-steelblue?logo=github
-[c~bonsai-bt~crates.io]: https://crates.io/crates/bonsai-bt
-[c~bonsai-bt~crates.io~badge]: https://img.shields.io/badge/crates.io-bonsai--bt-crimson
-[c~bonsai-bt~docs]: https://docs.rs/bonsai-bt
-[c~bonsai-bt~docs~badge]: https://img.shields.io/crates/v/bonsai-bt?label=bonsai-bt
-[c~bonsai-bt~lib.rs]: https://lib.rs/crates/bonsai-bt
-[c~bonsai-bt~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bonsai--bt-yellow
-[c~bonsai-bt~repo]: https://github.com/sollimann/bonsai
-[c~bonsai-bt~repo~badge]: https://img.shields.io/badge/bonsai--bt-steelblue?logo=github
-[c~bonsai-bt~website]: https://github.com/Sollimann/bonsai/blob/main/README.md
-[c~bonsai-bt~website~badge]: https://img.shields.io/badge/bonsai--bt-coral
-[c~bon~crates.io]: https://crates.io/crates/bon
-[c~bon~crates.io~badge]: https://img.shields.io/badge/crates.io-bon-crimson
-[c~bon~docs]: https://docs.rs/bon
-[c~bon~docs~badge]: https://img.shields.io/crates/v/bon?label=bon
-[c~bon~lib.rs]: https://lib.rs/crates/bon
-[c~bon~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bon-yellow
-[c~bon~repo]: https://github.com/elastio/bon
-[c~bon~repo~badge]: https://img.shields.io/badge/bon-steelblue?logo=github
-[c~bon~website]: https://bon-rs.com
-[c~bon~website~badge]: https://img.shields.io/badge/bon-coral
-[c~bottlerocket~crates.io]: https://crates.io/crates/bottlerocket
-[c~bottlerocket~crates.io~badge]: https://img.shields.io/badge/crates.io-bottlerocket-crimson
-[c~bottlerocket~docs]: https://docs.rs/bottlerocket
-[c~bottlerocket~docs~badge]: https://img.shields.io/crates/v/bottlerocket?label=bottlerocket
-[c~bottlerocket~lib.rs]: https://lib.rs/crates/bottlerocket
-[c~bottlerocket~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bottlerocket-yellow
-[c~bottlerocket~repo]: https://github.com/bottlerocket-os/bottlerocket
-[c~bottlerocket~repo~badge]: https://img.shields.io/badge/bottlerocket-steelblue?logo=github
-[c~bottom~crates.io]: https://crates.io/crates/bottom
-[c~bottom~crates.io~badge]: https://img.shields.io/badge/crates.io-bottom-crimson
-[c~bottom~docs]: https://clementtsang.github.io/bottom/stable
-[c~bottom~docs~badge]: https://img.shields.io/crates/v/bottom?label=bottom
-[c~bottom~lib.rs]: https://lib.rs/crates/bottom
-[c~bottom~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bottom-yellow
-[c~bottom~repo]: https://github.com/ClementTsang/bottom
-[c~bottom~repo~badge]: https://img.shields.io/badge/bottom-steelblue?logo=github
-[c~broot~crates.io]: https://crates.io/crates/broot
-[c~broot~crates.io~badge]: https://img.shields.io/badge/crates.io-broot-crimson
-[c~broot~docs]: https://docs.rs/broot/latest/broot
-[c~broot~docs~badge]: https://img.shields.io/crates/v/broot?label=broot
-[c~broot~lib.rs]: https://lib.rs/crates/broot
-[c~broot~lib.rs~badge]: https://img.shields.io/badge/lib.rs-broot-yellow
-[c~broot~repo]: https://github.com/Canop/broot
-[c~broot~repo~badge]: https://img.shields.io/badge/broot-steelblue?logo=github
-[c~broot~website]: https://dystroy.org/broot
-[c~broot~website~badge]: https://img.shields.io/badge/broot-coral
-[c~brotli~crates.io]: https://crates.io/crates/brotli
-[c~brotli~crates.io~badge]: https://img.shields.io/badge/crates.io-brotli-crimson
-[c~brotli~docs]: https://docs.rs/brotli
-[c~brotli~docs~badge]: https://img.shields.io/crates/v/brotli?label=brotli
-[c~brotli~lib.rs]: https://lib.rs/crates/brotli
-[c~brotli~lib.rs~badge]: https://img.shields.io/badge/lib.rs-brotli-yellow
-[c~brotli~repo]: https://github.com/dropbox/rust-brotli
-[c~brotli~repo~badge]: https://img.shields.io/badge/brotli-steelblue?logo=github
-[c~bson~crates.io]: https://crates.io/crates/bson
-[c~bson~crates.io~badge]: https://img.shields.io/badge/crates.io-bson-crimson
-[c~bson~docs]: https://docs.rs/bson
-[c~bson~docs~badge]: https://img.shields.io/crates/v/bson?label=bson
-[c~bson~lib.rs]: https://lib.rs/crates/bson
-[c~bson~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bson-yellow
-[c~bson~repo]: https://github.com/mongodb/bson-rust
-[c~bson~repo~badge]: https://img.shields.io/badge/bson-steelblue?logo=github
-[c~bstr~crates.io]: https://crates.io/crates/bstr
-[c~bstr~crates.io~badge]: https://img.shields.io/badge/crates.io-bstr-crimson
-[c~bstr~docs]: https://docs.rs/bstr
-[c~bstr~docs~badge]: https://img.shields.io/crates/v/bstr?label=bstr
-[c~bstr~lib.rs]: https://lib.rs/crates/bstr
-[c~bstr~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bstr-yellow
-[c~bstr~repo]: https://github.com/BurntSushi/bstr
-[c~bstr~repo~badge]: https://img.shields.io/badge/bstr-steelblue?logo=github
-[c~build-info~crates.io]: https://crates.io/crates/build-info
-[c~build-info~crates.io~badge]: https://img.shields.io/badge/crates.io-build--info-crimson
-[c~build-info~docs]: https://docs.rs/build-info
-[c~build-info~docs~badge]: https://img.shields.io/crates/v/build-info?label=build-info
-[c~build-info~lib.rs]: https://lib.rs/crates/build-info
-[c~build-info~lib.rs~badge]: https://img.shields.io/badge/lib.rs-build--info-yellow
-[c~build-info~repo]: https://github.com/danielschemmel/build-info
-[c~build-info~repo~badge]: https://img.shields.io/badge/build--info-steelblue?logo=github
-[c~bumpalo~crates.io]: https://crates.io/crates/bumpalo
-[c~bumpalo~crates.io~badge]: https://img.shields.io/badge/crates.io-bumpalo-crimson
-[c~bumpalo~docs]: https://docs.rs/bumpalo
-[c~bumpalo~docs~badge]: https://img.shields.io/crates/v/bumpalo?label=bumpalo
-[c~bumpalo~lib.rs]: https://lib.rs/crates/bumpalo
-[c~bumpalo~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bumpalo-yellow
-[c~bumpalo~repo]: https://github.com/fitzgen/bumpalo
-[c~bumpalo~repo~badge]: https://img.shields.io/badge/bumpalo-steelblue?logo=github
-[c~burn~crates.io]: https://crates.io/crates/burn
-[c~burn~crates.io~badge]: https://img.shields.io/badge/crates.io-burn-crimson
-[c~burn~docs]: https://docs.rs/burn
-[c~burn~docs~badge]: https://img.shields.io/crates/v/burn?label=burn
-[c~burn~lib.rs]: https://lib.rs/crates/burn
-[c~burn~lib.rs~badge]: https://img.shields.io/badge/lib.rs-burn-yellow
-[c~burn~repo]: https://github.com/tracel-ai/burn
-[c~burn~repo~badge]: https://img.shields.io/badge/burn-steelblue?logo=github
-[c~bye~crates.io]: https://crates.io/crates/bye
-[c~bye~crates.io~badge]: https://img.shields.io/badge/crates.io-bye-crimson
-[c~bye~docs]: https://docs.rs/bye
-[c~bye~docs~badge]: https://img.shields.io/crates/v/bye?label=bye
-[c~bye~lib.rs]: https://lib.rs/crates/bye
-[c~bye~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bye-yellow
-[c~bye~repo]: https://github.com/dgagn/bye
-[c~bye~repo~badge]: https://img.shields.io/badge/bye-steelblue?logo=github
-[c~bytemuck~crates.io]: https://crates.io/crates/bytemuck
-[c~bytemuck~crates.io~badge]: https://img.shields.io/badge/crates.io-bytemuck-crimson
-[c~bytemuck~docs]: https://docs.rs/bytemuck
-[c~bytemuck~docs~badge]: https://img.shields.io/crates/v/bytemuck?label=bytemuck
-[c~bytemuck~lib.rs]: https://lib.rs/crates/bytemuck
-[c~bytemuck~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bytemuck-yellow
-[c~bytemuck~repo]: https://github.com/Lokathor/bytemuck
-[c~bytemuck~repo~badge]: https://img.shields.io/badge/bytemuck-steelblue?logo=github
-[c~byteorder~crates.io]: https://crates.io/crates/byteorder
-[c~byteorder~crates.io~badge]: https://img.shields.io/badge/crates.io-byteorder-crimson
-[c~byteorder~docs]: https://docs.rs/byteorder
-[c~byteorder~docs~badge]: https://img.shields.io/crates/v/byteorder?label=byteorder
-[c~byteorder~lib.rs]: https://lib.rs/crates/byteorder
-[c~byteorder~lib.rs~badge]: https://img.shields.io/badge/lib.rs-byteorder-yellow
-[c~byteorder~repo]: https://github.com/BurntSushi/byteorder
-[c~byteorder~repo~badge]: https://img.shields.io/badge/byteorder-steelblue?logo=github
-[c~bytes~crates.io]: https://crates.io/crates/bytes
-[c~bytes~crates.io~badge]: https://img.shields.io/badge/crates.io-bytes-crimson
-[c~bytes~docs]: https://docs.rs/bytes
-[c~bytes~docs~badge]: https://img.shields.io/crates/v/bytes?label=bytes
-[c~bytes~lib.rs]: https://lib.rs/crates/bytes
-[c~bytes~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bytes-yellow
-[c~bytes~repo]: https://github.com/tokio-rs/bytes
-[c~bytes~repo~badge]: https://img.shields.io/badge/bytes-steelblue?logo=github
-[c~bzip2~crates.io]: https://crates.io/crates/bzip2
-[c~bzip2~crates.io~badge]: https://img.shields.io/badge/crates.io-bzip2-crimson
-[c~bzip2~docs]: https://docs.rs/bzip2
-[c~bzip2~docs~badge]: https://img.shields.io/crates/v/bzip2?label=bzip2
-[c~bzip2~lib.rs]: https://lib.rs/crates/bzip2
-[c~bzip2~lib.rs~badge]: https://img.shields.io/badge/lib.rs-bzip2-yellow
-[c~bzip2~repo]: https://github.com/trifectatechfoundation/bzip2-rs
-[c~bzip2~repo~badge]: https://img.shields.io/badge/bzip2-steelblue?logo=github
-[c~c2rust~crates.io]: https://crates.io/crates/c2rust
-[c~c2rust~crates.io~badge]: https://img.shields.io/badge/crates.io-c2rust-crimson
-[c~c2rust~docs]: https://docs.rs/c2rust
-[c~c2rust~docs~badge]: https://img.shields.io/crates/v/c2rust?label=c2rust
-[c~c2rust~lib.rs]: https://lib.rs/crates/c2rust
-[c~c2rust~lib.rs~badge]: https://img.shields.io/badge/lib.rs-c2rust-yellow
-[c~c2rust~repo]: https://github.com/immunant/c2rust
-[c~c2rust~repo~badge]: https://img.shields.io/badge/c2rust-steelblue?logo=github
-[c~c2rust~website]: https://c2rust.com
-[c~c2rust~website~badge]: https://img.shields.io/badge/c2rust-coral
-[c~cached~crates.io]: https://crates.io/crates/cached
-[c~cached~crates.io~badge]: https://img.shields.io/badge/crates.io-cached-crimson
-[c~cached~docs]: https://docs.rs/cached
-[c~cached~docs~badge]: https://img.shields.io/crates/v/cached?label=cached
-[c~cached~lib.rs]: https://lib.rs/crates/cached
-[c~cached~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cached-yellow
-[c~cached~repo]: https://github.com/jaemk/cached
-[c~cached~repo~badge]: https://img.shields.io/badge/cached-steelblue?logo=github
-[c~cadence~crates.io]: https://crates.io/crates/cadence
-[c~cadence~crates.io~badge]: https://img.shields.io/badge/crates.io-cadence-crimson
-[c~cadence~docs]: https://docs.rs/cadence
-[c~cadence~docs~badge]: https://img.shields.io/crates/v/cadence?label=cadence
-[c~cadence~lib.rs]: https://lib.rs/crates/cadence
-[c~cadence~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cadence-yellow
-[c~cadence~repo]: https://github.com/56quarters/cadence
-[c~cadence~repo~badge]: https://img.shields.io/badge/cadence-steelblue?logo=github
-[c~cairo~crates.io]: https://crates.io/crates/cairo
-[c~cairo~crates.io~badge]: https://img.shields.io/badge/crates.io-cairo-crimson
-[c~cairo~docs]: https://docs.rs/cairo
-[c~cairo~docs~badge]: https://img.shields.io/crates/v/cairo?label=cairo
-[c~cairo~lib.rs]: https://lib.rs/crates/cairo
-[c~cairo~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cairo-yellow
-[c~cairo~repo]: https://github.com/passcod/rust-cairo
-[c~cairo~repo~badge]: https://img.shields.io/badge/cairo-steelblue?logo=github
-[c~cairo~website]: https://github.com/passcod/rust-cairo
-[c~cairo~website~badge]: https://img.shields.io/badge/cairo-coral
-[c~callgrind~crates.io]: https://crates.io/crates/callgrind
-[c~callgrind~crates.io~badge]: https://img.shields.io/badge/crates.io-callgrind-crimson
-[c~callgrind~docs]: https://docs.rs/callgrind
-[c~callgrind~docs~badge]: https://img.shields.io/crates/v/callgrind?label=callgrind
-[c~callgrind~lib.rs]: https://lib.rs/crates/callgrind
-[c~callgrind~lib.rs~badge]: https://img.shields.io/badge/lib.rs-callgrind-yellow
-[c~callgrind~repo]: https://github.com/lemonrock/callgrind
-[c~callgrind~repo~badge]: https://img.shields.io/badge/callgrind-steelblue?logo=github
-[c~callgrind~website]: https://github.com/lemonrock/callgrind
-[c~callgrind~website~badge]: https://img.shields.io/badge/callgrind-coral
-[c~candle-core~crates.io]: https://crates.io/crates/candle-core
-[c~candle-core~crates.io~badge]: https://img.shields.io/badge/crates.io-candle--core-crimson
-[c~candle-core~docs]: https://docs.rs/candle-core
-[c~candle-core~docs~badge]: https://img.shields.io/crates/v/candle-core?label=candle-core
-[c~candle-core~lib.rs]: https://lib.rs/crates/candle-core
-[c~candle-core~lib.rs~badge]: https://img.shields.io/badge/lib.rs-candle--core-yellow
-[c~candle-core~repo]: https://github.com/huggingface/candle
-[c~candle-core~repo~badge]: https://img.shields.io/badge/candle--core-steelblue?logo=github
-[c~candle-nn~crates.io]: https://crates.io/crates/candle-nn
-[c~candle-nn~crates.io~badge]: https://img.shields.io/badge/crates.io-candle--nn-crimson
-[c~candle-nn~docs]: https://docs.rs/candle-nn
-[c~candle-nn~docs~badge]: https://img.shields.io/crates/v/candle-nn?label=candle-nn
-[c~candle-nn~lib.rs]: https://lib.rs/crates/candle-nn
-[c~candle-nn~lib.rs~badge]: https://img.shields.io/badge/lib.rs-candle--nn-yellow
-[c~candle-nn~repo]: https://github.com/huggingface/candle
-[c~candle-nn~repo~badge]: https://img.shields.io/badge/candle--nn-steelblue?logo=github
-[c~can~crates.io]: https://crates.io/crates/can
-[c~can~crates.io~badge]: https://img.shields.io/badge/crates.io-can-crimson
-[c~can~docs]: https://docs.rs/can
-[c~can~docs~badge]: https://img.shields.io/crates/v/can?label=can
-[c~can~lib.rs]: https://lib.rs/crates/can
-[c~can~lib.rs~badge]: https://img.shields.io/badge/lib.rs-can-yellow
-[c~can~repo]: https://github.com/nuclearfurnace/rust-can
-[c~can~repo~badge]: https://img.shields.io/badge/can-steelblue?logo=github
-[c~capnpc~crates.io]: https://crates.io/crates/capnpc
-[c~capnpc~crates.io~badge]: https://img.shields.io/badge/crates.io-capnpc-crimson
-[c~capnpc~docs]: https://docs.rs/capnpc
-[c~capnpc~docs~badge]: https://img.shields.io/crates/v/capnpc?label=capnpc
-[c~capnpc~lib.rs]: https://lib.rs/crates/capnpc
-[c~capnpc~lib.rs~badge]: https://img.shields.io/badge/lib.rs-capnpc-yellow
-[c~capnpc~repo]: https://github.com/capnproto/capnproto-rust
-[c~capnpc~repo~badge]: https://img.shields.io/badge/capnpc-steelblue?logo=github
-[c~capnp~crates.io]: https://crates.io/crates/capnp
-[c~capnp~crates.io~badge]: https://img.shields.io/badge/crates.io-capnp-crimson
-[c~capnp~docs]: https://docs.rs/capnp
-[c~capnp~docs~badge]: https://img.shields.io/crates/v/capnp?label=capnp
-[c~capnp~lib.rs]: https://lib.rs/crates/capnp
-[c~capnp~lib.rs~badge]: https://img.shields.io/badge/lib.rs-capnp-yellow
-[c~capnp~repo]: https://github.com/capnproto/capnproto-rust
-[c~capnp~repo~badge]: https://img.shields.io/badge/capnp-steelblue?logo=github
-[c~cargo-about~crates.io]: https://crates.io/crates/cargo-about
-[c~cargo-about~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--about-crimson
-[c~cargo-about~docs]: https://docs.rs/cargo-about
-[c~cargo-about~docs~badge]: https://img.shields.io/crates/v/cargo-about?label=cargo-about
-[c~cargo-about~lib.rs]: https://lib.rs/crates/cargo-about
-[c~cargo-about~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--about-yellow
-[c~cargo-about~repo]: https://github.com/EmbarkStudios/cargo-about
-[c~cargo-about~repo~badge]: https://img.shields.io/badge/cargo--about-steelblue?logo=github
-[c~cargo-add-dynamic~crates.io]: https://crates.io/crates/cargo-add-dynamic
-[c~cargo-add-dynamic~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--add--dynamic-crimson
-[c~cargo-add-dynamic~docs]: https://docs.rs/cargo-add-dynamic
-[c~cargo-add-dynamic~docs~badge]: https://img.shields.io/crates/v/cargo-add-dynamic?label=cargo-add-dynamic
-[c~cargo-add-dynamic~lib.rs]: https://lib.rs/crates/cargo-add-dynamic
-[c~cargo-add-dynamic~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--add--dynamic-yellow
-[c~cargo-add-dynamic~repo]: https://github.com/rksm/cargo-add-dynamic
-[c~cargo-add-dynamic~repo~badge]: https://img.shields.io/badge/cargo--add--dynamic-steelblue?logo=github
-[c~cargo-afl~crates.io]: https://crates.io/crates/cargo-afl
-[c~cargo-afl~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--afl-crimson
-[c~cargo-afl~docs]: https://docs.rs/cargo-afl
-[c~cargo-afl~docs~badge]: https://img.shields.io/crates/v/cargo-afl?label=cargo-afl
-[c~cargo-afl~lib.rs]: https://lib.rs/crates/cargo-afl
-[c~cargo-afl~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--afl-yellow
-[c~cargo-afl~repo]: https://github.com/rust-fuzz/afl.rs
-[c~cargo-afl~repo~badge]: https://img.shields.io/badge/cargo--afl-steelblue?logo=github
-[c~cargo-asm~crates.io]: https://crates.io/crates/cargo-asm
-[c~cargo-asm~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--asm-crimson
-[c~cargo-asm~docs]: https://docs.rs/cargo-asm
-[c~cargo-asm~docs~badge]: https://img.shields.io/crates/v/cargo-asm?label=cargo-asm
-[c~cargo-asm~lib.rs]: https://lib.rs/crates/cargo-asm
-[c~cargo-asm~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--asm-yellow
-[c~cargo-asm~repo]: https://github.com/gnzlbg/cargo-asm
-[c~cargo-asm~repo~badge]: https://img.shields.io/badge/cargo--asm-steelblue?logo=github
-[c~cargo-auditable~crates.io]: https://crates.io/crates/cargo-auditable
-[c~cargo-auditable~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--auditable-crimson
-[c~cargo-auditable~docs]: https://docs.rs/cargo-auditable
-[c~cargo-auditable~docs~badge]: https://img.shields.io/crates/v/cargo-auditable?label=cargo-auditable
-[c~cargo-auditable~lib.rs]: https://lib.rs/crates/cargo-auditable
-[c~cargo-auditable~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--auditable-yellow
-[c~cargo-auditable~repo]: https://github.com/rust-secure-code/cargo-auditable
-[c~cargo-auditable~repo~badge]: https://img.shields.io/badge/cargo--auditable-steelblue?logo=github
-[c~cargo-audit~crates.io]: https://crates.io/crates/cargo-audit
-[c~cargo-audit~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--audit-crimson
-[c~cargo-audit~docs]: https://docs.rs/cargo-audit
-[c~cargo-audit~docs~badge]: https://img.shields.io/crates/v/cargo-audit?label=cargo-audit
-[c~cargo-audit~lib.rs]: https://lib.rs/crates/cargo-audit
-[c~cargo-audit~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--audit-yellow
-[c~cargo-audit~repo]: https://github.com/rustsec/rustsec
-[c~cargo-audit~repo~badge]: https://img.shields.io/badge/cargo--audit-steelblue?logo=github
-[c~cargo-binstall~crates.io]: https://crates.io/crates/cargo-binstall
-[c~cargo-binstall~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--binstall-crimson
-[c~cargo-binstall~docs]: https://docs.rs/cargo-binstall
-[c~cargo-binstall~docs~badge]: https://img.shields.io/crates/v/cargo-binstall?label=cargo-binstall
-[c~cargo-binstall~lib.rs]: https://lib.rs/crates/cargo-binstall
-[c~cargo-binstall~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--binstall-yellow
-[c~cargo-binstall~repo]: https://github.com/cargo-bins/cargo-binstall
-[c~cargo-binstall~repo~badge]: https://img.shields.io/badge/cargo--binstall-steelblue?logo=github
-[c~cargo-binutils~crates.io]: https://crates.io/crates/cargo-binutils
-[c~cargo-binutils~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--binutils-crimson
-[c~cargo-binutils~docs]: https://github.com/rust-embedded/cargo-binutils#cargo-binutils
-[c~cargo-binutils~docs~badge]: https://img.shields.io/crates/v/cargo-binutils?label=cargo-binutils
-[c~cargo-binutils~lib.rs]: https://lib.rs/crates/cargo-binutils
-[c~cargo-binutils~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--binutils-yellow
-[c~cargo-binutils~repo]: https://github.com/rust-embedded/cargo-binutils
-[c~cargo-binutils~repo~badge]: https://img.shields.io/badge/cargo--binutils-steelblue?logo=github
-[c~cargo-bloat~crates.io]: https://crates.io/crates/cargo-bloat
-[c~cargo-bloat~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--bloat-crimson
-[c~cargo-bloat~docs]: https://docs.rs/cargo-bloat
-[c~cargo-bloat~docs~badge]: https://img.shields.io/crates/v/cargo-bloat?label=cargo-bloat
-[c~cargo-bloat~lib.rs]: https://lib.rs/crates/cargo-bloat
-[c~cargo-bloat~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--bloat-yellow
-[c~cargo-bloat~repo]: https://github.com/RazrFalcon/cargo-bloat
-[c~cargo-bloat~repo~badge]: https://img.shields.io/badge/cargo--bloat-steelblue?logo=github
-[c~cargo-bump~crates.io]: https://crates.io/crates/cargo-bump
-[c~cargo-bump~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--bump-crimson
-[c~cargo-bump~docs]: https://docs.rs/cargo-bump
-[c~cargo-bump~docs~badge]: https://img.shields.io/crates/v/cargo-bump?label=cargo-bump
-[c~cargo-bump~lib.rs]: https://lib.rs/crates/cargo-bump
-[c~cargo-bump~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--bump-yellow
-[c~cargo-bump~repo]: https://github.com/wraithan/cargo-bump
-[c~cargo-bump~repo~badge]: https://img.shields.io/badge/cargo--bump-steelblue?logo=github
-[c~cargo-cache~crates.io]: https://crates.io/crates/cargo-cache
-[c~cargo-cache~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--cache-crimson
-[c~cargo-cache~docs]: https://docs.rs/cargo-cache
-[c~cargo-cache~docs~badge]: https://img.shields.io/crates/v/cargo-cache?label=cargo-cache
-[c~cargo-cache~lib.rs]: https://lib.rs/crates/cargo-cache
-[c~cargo-cache~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--cache-yellow
-[c~cargo-cache~repo]: https://github.com/matthiaskrgr/cargo-cache
-[c~cargo-cache~repo~badge]: https://img.shields.io/badge/cargo--cache-steelblue?logo=github
-[c~cargo-crates~crates.io]: https://crates.io/crates/cargo-crates
-[c~cargo-crates~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--crates-crimson
-[c~cargo-crates~docs]: https://docs.rs/cargo-crates
-[c~cargo-crates~docs~badge]: https://img.shields.io/crates/v/cargo-crates?label=cargo-crates
-[c~cargo-crates~lib.rs]: https://lib.rs/crates/cargo-crates
-[c~cargo-crates~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--crates-yellow
-[c~cargo-crates~repo]: https://github.com/ThePuzzlemaker/cargo-crates
-[c~cargo-crates~repo~badge]: https://img.shields.io/badge/cargo--crates-steelblue?logo=github
-[c~cargo-cyclonedx~crates.io]: https://crates.io/crates/cargo-cyclonedx
-[c~cargo-cyclonedx~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--cyclonedx-crimson
-[c~cargo-cyclonedx~docs]: https://docs.rs/cargo-cyclonedx
-[c~cargo-cyclonedx~docs~badge]: https://img.shields.io/crates/v/cargo-cyclonedx?label=cargo-cyclonedx
-[c~cargo-cyclonedx~lib.rs]: https://lib.rs/crates/cargo-cyclonedx
-[c~cargo-cyclonedx~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--cyclonedx-yellow
-[c~cargo-cyclonedx~repo]: https://github.com/CycloneDX/cyclonedx-rust-cargo
-[c~cargo-cyclonedx~repo~badge]: https://img.shields.io/badge/cargo--cyclonedx-steelblue?logo=github
-[c~cargo-cyclonedx~website]: https://cyclonedx.org
-[c~cargo-cyclonedx~website~badge]: https://img.shields.io/badge/cargo--cyclonedx-coral
-[c~cargo-c~crates.io]: https://crates.io/crates/cargo-c
-[c~cargo-c~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--c-crimson
-[c~cargo-c~docs]: https://docs.rs/cargo-c
-[c~cargo-c~docs~badge]: https://img.shields.io/crates/v/cargo-c?label=cargo-c
-[c~cargo-c~lib.rs]: https://lib.rs/crates/cargo-c
-[c~cargo-c~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--c-yellow
-[c~cargo-c~repo]: https://github.com/lu-zero/cargo-c
-[c~cargo-c~repo~badge]: https://img.shields.io/badge/cargo--c-steelblue?logo=github
-[c~cargo-deadlinks~crates.io]: https://crates.io/crates/cargo-deadlinks
-[c~cargo-deadlinks~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--deadlinks-crimson
-[c~cargo-deadlinks~docs]: https://docs.rs/cargo-deadlinks
-[c~cargo-deadlinks~docs~badge]: https://img.shields.io/crates/v/cargo-deadlinks?label=cargo-deadlinks
-[c~cargo-deadlinks~lib.rs]: https://lib.rs/crates/cargo-deadlinks
-[c~cargo-deadlinks~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--deadlinks-yellow
-[c~cargo-deadlinks~repo]: https://github.com/deadlinks/cargo-deadlinks
-[c~cargo-deadlinks~repo~badge]: https://img.shields.io/badge/cargo--deadlinks-steelblue?logo=github
-[c~cargo-deb~crates.io]: https://crates.io/crates/cargo-deb
-[c~cargo-deb~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--deb-crimson
-[c~cargo-deb~docs]: https://docs.rs/cargo-deb
-[c~cargo-deb~docs~badge]: https://img.shields.io/crates/v/cargo-deb?label=cargo-deb
-[c~cargo-deb~lib.rs]: https://lib.rs/crates/cargo-deb
-[c~cargo-deb~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--deb-yellow
-[c~cargo-deb~repo]: https://github.com/kornelski/cargo-deb
-[c~cargo-deb~repo~badge]: https://img.shields.io/badge/cargo--deb-steelblue?logo=github
-[c~cargo-deb~website]: https://lib.rs/crates/cargo-deb
-[c~cargo-deb~website~badge]: https://img.shields.io/badge/cargo--deb-coral
-[c~cargo-deny~crates.io]: https://crates.io/crates/cargo-deny
-[c~cargo-deny~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--deny-crimson
-[c~cargo-deny~docs]: https://docs.rs/cargo-deny
-[c~cargo-deny~docs~badge]: https://img.shields.io/crates/v/cargo-deny?label=cargo-deny
-[c~cargo-deny~lib.rs]: https://lib.rs/crates/cargo-deny
-[c~cargo-deny~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--deny-yellow
-[c~cargo-deny~repo]: https://github.com/embarkstudios/cargo-deny
-[c~cargo-deny~repo~badge]: https://img.shields.io/badge/cargo--deny-steelblue?logo=github
-[c~cargo-dist~crates.io]: https://crates.io/crates/cargo-dist
-[c~cargo-dist~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--dist-crimson
-[c~cargo-dist~docs]: https://docs.rs/cargo-dist
-[c~cargo-dist~docs~badge]: https://img.shields.io/crates/v/cargo-dist?label=cargo-dist
-[c~cargo-dist~lib.rs]: https://lib.rs/crates/cargo-dist
-[c~cargo-dist~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--dist-yellow
-[c~cargo-dist~repo]: https://github.com/axodotdev/cargo-dist
-[c~cargo-dist~repo~badge]: https://img.shields.io/badge/cargo--dist-steelblue?logo=github
-[c~cargo-dist~website]: https://opensource.axo.dev/cargo-dist
-[c~cargo-dist~website~badge]: https://img.shields.io/badge/cargo--dist-coral
-[c~cargo-edit~crates.io]: https://crates.io/crates/cargo-edit
-[c~cargo-edit~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--edit-crimson
-[c~cargo-edit~docs]: https://github.com/killercup/cargo-edit/blob/master/README.md#available-subcommands
-[c~cargo-edit~docs~badge]: https://img.shields.io/crates/v/cargo-edit?label=cargo-edit
-[c~cargo-edit~lib.rs]: https://lib.rs/crates/cargo-edit
-[c~cargo-edit~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--edit-yellow
-[c~cargo-edit~repo]: https://github.com/killercup/cargo-edit
-[c~cargo-edit~repo~badge]: https://img.shields.io/badge/cargo--edit-steelblue?logo=github
-[c~cargo-expand~crates.io]: https://crates.io/crates/cargo-expand
-[c~cargo-expand~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--expand-crimson
-[c~cargo-expand~docs]: https://github.com/dtolnay/cargo-expand
-[c~cargo-expand~docs~badge]: https://img.shields.io/crates/v/cargo-expand?label=cargo-expand
-[c~cargo-expand~lib.rs]: https://lib.rs/crates/cargo-expand
-[c~cargo-expand~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--expand-yellow
-[c~cargo-expand~repo]: https://github.com/dtolnay/cargo-expand
-[c~cargo-expand~repo~badge]: https://img.shields.io/badge/cargo--expand-steelblue?logo=github
-[c~cargo-fuzz~crates.io]: https://crates.io/crates/cargo-fuzz
-[c~cargo-fuzz~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--fuzz-crimson
-[c~cargo-fuzz~docs]: https://docs.rs/cargo-fuzz
-[c~cargo-fuzz~docs~badge]: https://img.shields.io/crates/v/cargo-fuzz?label=cargo-fuzz
-[c~cargo-fuzz~lib.rs]: https://lib.rs/crates/cargo-fuzz
-[c~cargo-fuzz~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--fuzz-yellow
-[c~cargo-fuzz~repo]: https://github.com/rust-fuzz/cargo-fuzz
-[c~cargo-fuzz~repo~badge]: https://img.shields.io/badge/cargo--fuzz-steelblue?logo=github
-[c~cargo-geiger~crates.io]: https://crates.io/crates/cargo-geiger
-[c~cargo-geiger~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--geiger-crimson
-[c~cargo-geiger~docs]: https://docs.rs/cargo-geiger
-[c~cargo-geiger~docs~badge]: https://img.shields.io/crates/v/cargo-geiger?label=cargo-geiger
-[c~cargo-geiger~lib.rs]: https://lib.rs/crates/cargo-geiger
-[c~cargo-geiger~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--geiger-yellow
-[c~cargo-geiger~repo]: https://github.com/rust-secure-code/cargo-geiger
-[c~cargo-geiger~repo~badge]: https://img.shields.io/badge/cargo--geiger-steelblue?logo=github
-[c~cargo-generate~crates.io]: https://crates.io/crates/cargo-generate
-[c~cargo-generate~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--generate-crimson
-[c~cargo-generate~docs]: https://docs.rs/cargo-generate
-[c~cargo-generate~docs~badge]: https://img.shields.io/crates/v/cargo-generate?label=cargo-generate
-[c~cargo-generate~lib.rs]: https://lib.rs/crates/cargo-generate
-[c~cargo-generate~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--generate-yellow
-[c~cargo-generate~repo]: https://github.com/cargo-generate/cargo-generate
-[c~cargo-generate~repo~badge]: https://img.shields.io/badge/cargo--generate-steelblue?logo=github
-[c~cargo-hack~crates.io]: https://crates.io/crates/cargo-hack
-[c~cargo-hack~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--hack-crimson
-[c~cargo-hack~docs]: https://docs.rs/cargo-hack
-[c~cargo-hack~docs~badge]: https://img.shields.io/crates/v/cargo-hack?label=cargo-hack
-[c~cargo-hack~lib.rs]: https://lib.rs/crates/cargo-hack
-[c~cargo-hack~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--hack-yellow
-[c~cargo-hack~repo]: https://github.com/taiki-e/cargo-hack
-[c~cargo-hack~repo~badge]: https://img.shields.io/badge/cargo--hack-steelblue?logo=github
-[c~cargo-hakari~crates.io]: https://crates.io/crates/cargo-hakari
-[c~cargo-hakari~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--hakari-crimson
-[c~cargo-hakari~docs]: https://docs.rs/cargo-hakari
-[c~cargo-hakari~docs~badge]: https://img.shields.io/crates/v/cargo-hakari?label=cargo-hakari
-[c~cargo-hakari~lib.rs]: https://lib.rs/crates/cargo-hakari
-[c~cargo-hakari~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--hakari-yellow
-[c~cargo-hakari~repo]: https://github.com/guppy-rs/guppy
-[c~cargo-hakari~repo~badge]: https://img.shields.io/badge/cargo--hakari-steelblue?logo=github
-[c~cargo-husky~crates.io]: https://crates.io/crates/cargo-husky
-[c~cargo-husky~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--husky-crimson
-[c~cargo-husky~docs]: https://docs.rs/cargo-husky
-[c~cargo-husky~docs~badge]: https://img.shields.io/crates/v/cargo-husky?label=cargo-husky
-[c~cargo-husky~lib.rs]: https://lib.rs/crates/cargo-husky
-[c~cargo-husky~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--husky-yellow
-[c~cargo-husky~repo]: https://github.com/rhysd/cargo-husky
-[c~cargo-husky~repo~badge]: https://img.shields.io/badge/cargo--husky-steelblue?logo=github
-[c~cargo-husky~website]: https://github.com/rhysd/cargo-husky#readme
-[c~cargo-husky~website~badge]: https://img.shields.io/badge/cargo--husky-coral
-[c~cargo-insta~crates.io]: https://crates.io/crates/cargo-insta
-[c~cargo-insta~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--insta-crimson
-[c~cargo-insta~docs]: https://docs.rs/cargo-insta
-[c~cargo-insta~docs~badge]: https://img.shields.io/crates/v/cargo-insta?label=cargo-insta
-[c~cargo-insta~lib.rs]: https://lib.rs/crates/cargo-insta
-[c~cargo-insta~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--insta-yellow
-[c~cargo-insta~repo]: https://github.com/mitsuhiko/insta/tree/master/cargo-insta
-[c~cargo-insta~repo~badge]: https://img.shields.io/badge/cargo--insta-steelblue?logo=github
-[c~cargo-license~crates.io]: https://crates.io/crates/cargo-license
-[c~cargo-license~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--license-crimson
-[c~cargo-license~docs]: https://docs.rs/cargo-license
-[c~cargo-license~docs~badge]: https://img.shields.io/crates/v/cargo-license?label=cargo-license
-[c~cargo-license~lib.rs]: https://lib.rs/crates/cargo-license
-[c~cargo-license~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--license-yellow
-[c~cargo-license~repo]: https://github.com/onur/cargo-license
-[c~cargo-license~repo~badge]: https://img.shields.io/badge/cargo--license-steelblue?logo=github
-[c~cargo-lichking~crates.io]: https://crates.io/crates/cargo-lichking
-[c~cargo-lichking~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--lichking-crimson
-[c~cargo-lichking~docs]: https://docs.rs/cargo-lichking
-[c~cargo-lichking~docs~badge]: https://img.shields.io/crates/v/cargo-lichking?label=cargo-lichking
-[c~cargo-lichking~lib.rs]: https://lib.rs/crates/cargo-lichking
-[c~cargo-lichking~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--lichking-yellow
-[c~cargo-lichking~repo]: https://github.com/Nemo157/cargo-lichking
-[c~cargo-lichking~repo~badge]: https://img.shields.io/badge/cargo--lichking-steelblue?logo=github
-[c~cargo-limit~crates.io]: https://crates.io/crates/cargo-limit
-[c~cargo-limit~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--limit-crimson
-[c~cargo-limit~docs]: https://github.com/alopatindev/cargo-limit#readme
-[c~cargo-limit~docs~badge]: https://img.shields.io/crates/v/cargo-limit?label=cargo-limit
-[c~cargo-limit~lib.rs]: https://lib.rs/crates/cargo-limit
-[c~cargo-limit~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--limit-yellow
-[c~cargo-limit~repo]: https://github.com/alopatindev/cargo-limit
-[c~cargo-limit~repo~badge]: https://img.shields.io/badge/cargo--limit-steelblue?logo=github
-[c~cargo-machete~crates.io]: https://crates.io/crates/cargo-machete
-[c~cargo-machete~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--machete-crimson
-[c~cargo-machete~docs]: https://docs.rs/cargo-machete
-[c~cargo-machete~docs~badge]: https://img.shields.io/crates/v/cargo-machete?label=cargo-machete
-[c~cargo-machete~lib.rs]: https://lib.rs/crates/cargo-machete
-[c~cargo-machete~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--machete-yellow
-[c~cargo-machete~repo]: https://github.com/bnjbvr/cargo-machete
-[c~cargo-machete~repo~badge]: https://img.shields.io/badge/cargo--machete-steelblue?logo=github
-[c~cargo-make~blog]: https://medium.com/@sagiegurari/automating-your-rust-workflows-with-cargo-make-part-1-of-5-introduction-and-basics-b19ced7e7057
-[c~cargo-make~crates.io]: https://crates.io/crates/cargo-make
-[c~cargo-make~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--make-crimson
-[c~cargo-make~docs]: https://docs.rs/cargo-make/latest/cli
-[c~cargo-make~docs~badge]: https://img.shields.io/crates/v/cargo-make?label=cargo-make
-[c~cargo-make~lib.rs]: https://lib.rs/crates/cargo-make
-[c~cargo-make~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--make-yellow
-[c~cargo-make~repo]: https://github.com/sagiegurari/cargo-make
-[c~cargo-make~repo~badge]: https://img.shields.io/badge/cargo--make-steelblue?logo=github
-[c~cargo-make~website]: https://sagiegurari.github.io/cargo-make
-[c~cargo-make~website~badge]: https://img.shields.io/badge/cargo--make-coral
-[c~cargo-modules~crates.io]: https://crates.io/crates/cargo-modules
-[c~cargo-modules~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--modules-crimson
-[c~cargo-modules~docs]: https://docs.rs/cargo-modules
-[c~cargo-modules~docs~badge]: https://img.shields.io/crates/v/cargo-modules?label=cargo-modules
-[c~cargo-modules~lib.rs]: https://lib.rs/crates/cargo-modules
-[c~cargo-modules~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--modules-yellow
-[c~cargo-modules~repo]: https://github.com/regexident/cargo-modules
-[c~cargo-modules~repo~badge]: https://img.shields.io/badge/cargo--modules-steelblue?logo=github
-[c~cargo-nextest~crates.io]: https://crates.io/crates/cargo-nextest
-[c~cargo-nextest~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--nextest-crimson
-[c~cargo-nextest~docs]: https://nexte.st
-[c~cargo-nextest~docs~badge]: https://img.shields.io/crates/v/cargo-nextest?label=cargo-nextest
-[c~cargo-nextest~lib.rs]: https://lib.rs/crates/cargo-nextest
-[c~cargo-nextest~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--nextest-yellow
-[c~cargo-nextest~repo]: https://github.com/nextest-rs/nextest
-[c~cargo-nextest~repo~badge]: https://img.shields.io/badge/cargo--nextest-steelblue?logo=github
-[c~cargo-nextest~website]: https://github.com/nextest-rs/nextest/blob/main/README.md
-[c~cargo-nextest~website~badge]: https://img.shields.io/badge/cargo--nextest-coral
-[c~cargo-outdated~crates.io]: https://crates.io/crates/cargo-outdated
-[c~cargo-outdated~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--outdated-crimson
-[c~cargo-outdated~docs]: https://docs.rs/cargo-outdated
-[c~cargo-outdated~docs~badge]: https://img.shields.io/crates/v/cargo-outdated?label=cargo-outdated
-[c~cargo-outdated~lib.rs]: https://lib.rs/crates/cargo-outdated
-[c~cargo-outdated~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--outdated-yellow
-[c~cargo-outdated~repo]: https://github.com/kbknapp/cargo-outdated
-[c~cargo-outdated~repo~badge]: https://img.shields.io/badge/cargo--outdated-steelblue?logo=github
-[c~cargo-play~crates.io]: https://crates.io/crates/cargo-play
-[c~cargo-play~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--play-crimson
-[c~cargo-play~docs]: https://docs.rs/cargo-play
-[c~cargo-play~docs~badge]: https://img.shields.io/crates/v/cargo-play?label=cargo-play
-[c~cargo-play~lib.rs]: https://lib.rs/crates/cargo-play
-[c~cargo-play~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--play-yellow
-[c~cargo-play~repo~badge]: https://img.shields.io/badge/cargo--play-steelblue?logo=github
-[c~cargo-play~website]: https://github.com/fanzeyi/cargo-play
-[c~cargo-play~website~badge]: https://img.shields.io/badge/cargo--play-coral
-[c~cargo-prefetch~crates.io]: https://crates.io/crates/cargo-prefetch
-[c~cargo-prefetch~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--prefetch-crimson
-[c~cargo-prefetch~docs]: https://docs.rs/cargo-prefetch
-[c~cargo-prefetch~docs~badge]: https://img.shields.io/crates/v/cargo-prefetch?label=cargo-prefetch
-[c~cargo-prefetch~lib.rs]: https://lib.rs/crates/cargo-prefetch
-[c~cargo-prefetch~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--prefetch-yellow
-[c~cargo-prefetch~repo]: https://github.com/ehuss/cargo-prefetch
-[c~cargo-prefetch~repo~badge]: https://img.shields.io/badge/cargo--prefetch-steelblue?logo=github
-[c~cargo-prune~crates.io]: https://crates.io/crates/cargo-prune
-[c~cargo-prune~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--prune-crimson
-[c~cargo-prune~docs]: https://docs.rs/cargo-prune
-[c~cargo-prune~docs~badge]: https://img.shields.io/crates/v/cargo-prune?label=cargo-prune
-[c~cargo-prune~lib.rs]: https://lib.rs/crates/cargo-prune
-[c~cargo-prune~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--prune-yellow
-[c~cargo-prune~repo]: https://github.com/ustulation/cargo-prune
-[c~cargo-prune~repo~badge]: https://img.shields.io/badge/cargo--prune-steelblue?logo=github
-[c~cargo-quickinstall~repo]: https://github.com/cargo-bins/cargo-quickinstall
-[c~cargo-release~crates.io]: https://crates.io/crates/cargo-release
-[c~cargo-release~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--release-crimson
-[c~cargo-release~docs]: https://docs.rs/cargo-release
-[c~cargo-release~docs~badge]: https://img.shields.io/crates/v/cargo-release?label=cargo-release
-[c~cargo-release~lib.rs]: https://lib.rs/crates/cargo-release
-[c~cargo-release~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--release-yellow
-[c~cargo-release~repo]: https://github.com/crate-ci/cargo-release
-[c~cargo-release~repo~badge]: https://img.shields.io/badge/cargo--release-steelblue?logo=github
-[c~cargo-rpm~crates.io]: https://crates.io/crates/cargo-rpm
-[c~cargo-rpm~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--rpm-crimson
-[c~cargo-rpm~docs]: https://docs.rs/cargo-rpm
-[c~cargo-rpm~docs~badge]: https://img.shields.io/crates/v/cargo-rpm?label=cargo-rpm
-[c~cargo-rpm~lib.rs]: https://lib.rs/crates/cargo-rpm
-[c~cargo-rpm~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--rpm-yellow
-[c~cargo-rpm~repo]: https://github.com/iqlusioninc/cargo-rpm
-[c~cargo-rpm~repo~badge]: https://img.shields.io/badge/cargo--rpm-steelblue?logo=github
-[c~cargo-scripter~crates.io]: https://crates.io/crates/cargo-scripter
-[c~cargo-scripter~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--scripter-crimson
-[c~cargo-scripter~docs]: https://docs.rs/cargo-scripter
-[c~cargo-scripter~docs~badge]: https://img.shields.io/crates/v/cargo-scripter?label=cargo-scripter
-[c~cargo-scripter~lib.rs]: https://lib.rs/crates/cargo-scripter
-[c~cargo-scripter~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--scripter-yellow
-[c~cargo-scripter~repo]: https://github.com/artemshein/cargo-script
-[c~cargo-scripter~repo~badge]: https://img.shields.io/badge/cargo--scripter-steelblue?logo=github
-[c~cargo-script~crates.io]: https://crates.io/crates/cargo-script
-[c~cargo-script~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--script-crimson
-[c~cargo-script~docs]: https://docs.rs/cargo-script
-[c~cargo-script~docs~badge]: https://img.shields.io/crates/v/cargo-script?label=cargo-script
-[c~cargo-script~lib.rs]: https://lib.rs/crates/cargo-script
-[c~cargo-script~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--script-yellow
-[c~cargo-script~repo]: https://github.com/DanielKeep/cargo-script
-[c~cargo-script~repo~badge]: https://img.shields.io/badge/cargo--script-steelblue?logo=github
-[c~cargo-semver-checks~crates.io]: https://crates.io/crates/cargo-semver-checks
-[c~cargo-semver-checks~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--semver--checks-crimson
-[c~cargo-semver-checks~docs]: https://docs.rs/cargo-semver-checks
-[c~cargo-semver-checks~docs~badge]: https://img.shields.io/crates/v/cargo-semver-checks?label=cargo-semver-checks
-[c~cargo-semver-checks~lib.rs]: https://lib.rs/crates/cargo-semver-checks
-[c~cargo-semver-checks~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--semver--checks-yellow
-[c~cargo-semver-checks~repo]: https://github.com/obi1kenobi/cargo-semver-checks
-[c~cargo-semver-checks~repo~badge]: https://img.shields.io/badge/cargo--semver--checks-steelblue?logo=github
-[c~cargo-show-asm~crates.io]: https://crates.io/crates/cargo-show-asm
-[c~cargo-show-asm~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--show--asm-crimson
-[c~cargo-show-asm~docs]: https://docs.rs/cargo-show-asm
-[c~cargo-show-asm~docs~badge]: https://img.shields.io/crates/v/cargo-show-asm?label=cargo-show-asm
-[c~cargo-show-asm~lib.rs]: https://lib.rs/crates/cargo-show-asm
-[c~cargo-show-asm~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--show--asm-yellow
-[c~cargo-show-asm~repo]: https://github.com/pacak/cargo-show-asm
-[c~cargo-show-asm~repo~badge]: https://img.shields.io/badge/cargo--show--asm-steelblue?logo=github
-[c~cargo-spellcheck~crates.io]: https://crates.io/crates/cargo-spellcheck
-[c~cargo-spellcheck~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--spellcheck-crimson
-[c~cargo-spellcheck~docs]: https://docs.rs/cargo-spellcheck
-[c~cargo-spellcheck~docs~badge]: https://img.shields.io/crates/v/cargo-spellcheck?label=cargo-spellcheck
-[c~cargo-spellcheck~lib.rs]: https://lib.rs/crates/cargo-spellcheck
-[c~cargo-spellcheck~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--spellcheck-yellow
-[c~cargo-spellcheck~repo]: https://github.com/drahnr/cargo-spellcheck
-[c~cargo-spellcheck~repo~badge]: https://img.shields.io/badge/cargo--spellcheck-steelblue?logo=github
-[c~cargo-spellcheck~website]: https://github.com/drahnr/cargo-spellcheck
-[c~cargo-spellcheck~website~badge]: https://img.shields.io/badge/cargo--spellcheck-coral
-[c~cargo-sweep~crates.io]: https://crates.io/crates/cargo-sweep
-[c~cargo-sweep~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--sweep-crimson
-[c~cargo-sweep~docs]: https://docs.rs/cargo-sweep
-[c~cargo-sweep~docs~badge]: https://img.shields.io/crates/v/cargo-sweep?label=cargo-sweep
-[c~cargo-sweep~lib.rs]: https://lib.rs/crates/cargo-sweep
-[c~cargo-sweep~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--sweep-yellow
-[c~cargo-sweep~repo]: https://github.com/holmgr/cargo-sweep
-[c~cargo-sweep~repo~badge]: https://img.shields.io/badge/cargo--sweep-steelblue?logo=github
-[c~cargo-tarpaulin~crates.io]: https://crates.io/crates/cargo-tarpaulin
-[c~cargo-tarpaulin~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--tarpaulin-crimson
-[c~cargo-tarpaulin~docs]: https://docs.rs/cargo-tarpaulin
-[c~cargo-tarpaulin~docs~badge]: https://img.shields.io/crates/v/cargo-tarpaulin?label=cargo-tarpaulin
-[c~cargo-tarpaulin~lib.rs]: https://lib.rs/crates/cargo-tarpaulin
-[c~cargo-tarpaulin~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--tarpaulin-yellow
-[c~cargo-tarpaulin~repo]: https://github.com/xd009642/tarpaulin
-[c~cargo-tarpaulin~repo~badge]: https://img.shields.io/badge/cargo--tarpaulin-steelblue?logo=github
-[c~cargo-tree~crates.io]: https://crates.io/crates/cargo-tree
-[c~cargo-tree~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--tree-crimson
-[c~cargo-tree~docs]: https://docs.rs/cargo-tree
-[c~cargo-tree~docs~badge]: https://img.shields.io/crates/v/cargo-tree?label=cargo-tree
-[c~cargo-tree~lib.rs]: https://lib.rs/crates/cargo-tree
-[c~cargo-tree~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--tree-yellow
-[c~cargo-tree~repo]: https://github.com/sfackler/cargo-tree
-[c~cargo-tree~repo~badge]: https://img.shields.io/badge/cargo--tree-steelblue?logo=github
-[c~cargo-udeps~crates.io]: https://crates.io/crates/cargo-udeps
-[c~cargo-udeps~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--udeps-crimson
-[c~cargo-udeps~docs]: https://docs.rs/cargo-udeps
-[c~cargo-udeps~docs~badge]: https://img.shields.io/crates/v/cargo-udeps?label=cargo-udeps
-[c~cargo-udeps~lib.rs]: https://lib.rs/crates/cargo-udeps
-[c~cargo-udeps~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--udeps-yellow
-[c~cargo-udeps~repo]: https://github.com/est31/cargo-udeps
-[c~cargo-udeps~repo~badge]: https://img.shields.io/badge/cargo--udeps-steelblue?logo=github
-[c~cargo-update~crates.io]: https://crates.io/crates/cargo-update
-[c~cargo-update~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--update-crimson
-[c~cargo-update~docs]: https://rawcdn.githack.com/nabijaczleweli/cargo-update/doc/cargo-update
-[c~cargo-update~docs~badge]: https://img.shields.io/crates/v/cargo-update?label=cargo-update
-[c~cargo-update~lib.rs]: https://lib.rs/crates/cargo-update
-[c~cargo-update~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--update-yellow
-[c~cargo-update~repo]: https://github.com/nabijaczleweli/cargo-update
-[c~cargo-update~repo~badge]: https://img.shields.io/badge/cargo--update-steelblue?logo=github
-[c~cargo-wasi~crates.io]: https://crates.io/crates/cargo-wasi
-[c~cargo-wasi~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--wasi-crimson
-[c~cargo-wasi~docs]: https://docs.rs/cargo-wasi
-[c~cargo-wasi~docs~badge]: https://img.shields.io/crates/v/cargo-wasi?label=cargo-wasi
-[c~cargo-wasi~lib.rs]: https://lib.rs/crates/cargo-wasi
-[c~cargo-wasi~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--wasi-yellow
-[c~cargo-wasi~repo]: https://github.com/bytecodealliance/cargo-wasi
-[c~cargo-wasi~repo~badge]: https://img.shields.io/badge/cargo--wasi-steelblue?logo=github
-[c~cargo-watch~crates.io]: https://crates.io/crates/cargo-watch
-[c~cargo-watch~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--watch-crimson
-[c~cargo-watch~docs]: https://docs.rs/cargo-watch
-[c~cargo-watch~docs~badge]: https://img.shields.io/crates/v/cargo-watch?label=cargo-watch
-[c~cargo-watch~lib.rs]: https://lib.rs/crates/cargo-watch
-[c~cargo-watch~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--watch-yellow
-[c~cargo-watch~repo]: https://github.com/watchexec/cargo-watch
-[c~cargo-watch~repo~badge]: https://img.shields.io/badge/cargo--watch-steelblue?logo=github
-[c~cargo-wizard~crates.io]: https://crates.io/crates/cargo-wizard
-[c~cargo-wizard~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--wizard-crimson
-[c~cargo-wizard~docs]: https://docs.rs/cargo-wizard
-[c~cargo-wizard~docs~badge]: https://img.shields.io/crates/v/cargo-wizard?label=cargo-wizard
-[c~cargo-wizard~lib.rs]: https://lib.rs/crates/cargo-wizard
-[c~cargo-wizard~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--wizard-yellow
-[c~cargo-wizard~repo]: https://github.com/kobzol/cargo-wizard
-[c~cargo-wizard~repo~badge]: https://img.shields.io/badge/cargo--wizard-steelblue?logo=github
-[c~cargo-workspaces~crates.io]: https://crates.io/crates/cargo-workspaces
-[c~cargo-workspaces~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--workspaces-crimson
-[c~cargo-workspaces~docs]: https://docs.rs/cargo-workspaces
-[c~cargo-workspaces~docs~badge]: https://img.shields.io/crates/v/cargo-workspaces?label=cargo-workspaces
-[c~cargo-workspaces~lib.rs]: https://lib.rs/crates/cargo-workspaces
-[c~cargo-workspaces~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--workspaces-yellow
-[c~cargo-workspaces~repo]: https://github.com/pksunkara/cargo-workspaces
-[c~cargo-workspaces~repo~badge]: https://img.shields.io/badge/cargo--workspaces-steelblue?logo=github
-[c~cargo-xtask~crates.io]: https://crates.io/crates/cargo-xtask
-[c~cargo-xtask~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--xtask-crimson
-[c~cargo-xtask~docs]: https://docs.rs/cargo-xtask
-[c~cargo-xtask~docs~badge]: https://img.shields.io/crates/v/cargo-xtask?label=cargo-xtask
-[c~cargo-xtask~lib.rs]: https://lib.rs/crates/cargo-xtask
-[c~cargo-xtask~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--xtask-yellow
-[c~cargo-xtask~repo]: https://github.com/matklad/cargo-xtask
-[c~cargo-xtask~repo~badge]: https://img.shields.io/badge/cargo--xtask-steelblue?logo=github
-[c~cargo-zigbuild~crates.io]: https://crates.io/crates/cargo-zigbuild
-[c~cargo-zigbuild~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--zigbuild-crimson
-[c~cargo-zigbuild~docs]: https://docs.rs/cargo-zigbuild
-[c~cargo-zigbuild~docs~badge]: https://img.shields.io/crates/v/cargo-zigbuild?label=cargo-zigbuild
-[c~cargo-zigbuild~lib.rs]: https://lib.rs/crates/cargo-zigbuild
-[c~cargo-zigbuild~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--zigbuild-yellow
-[c~cargo-zigbuild~repo]: https://github.com/rust-cross/cargo-zigbuild
-[c~cargo-zigbuild~repo~badge]: https://img.shields.io/badge/cargo--zigbuild-steelblue?logo=github
-[c~cargo~book]: https://doc.rust-lang.org/stable/cargo
-[c~cargo~cargo.lock]: https://doc.rust-lang.org/cargo/guide/cargo-toml-vs-cargo-lock.html
-[c~cargo~crates.io]: https://crates.io/crates/cargo
-[c~cargo~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo-crimson
-[c~cargo~docs]: https://docs.rs/cargo
-[c~cargo~docs~badge]: https://img.shields.io/crates/v/cargo?label=cargo
-[c~cargo~lib.rs]: https://lib.rs/crates/cargo
-[c~cargo~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo-yellow
-[c~cargo~repo]: https://github.com/rust-lang/cargo
-[c~cargo~repo~badge]: https://img.shields.io/badge/cargo-steelblue?logo=github
-[c~cargo~rustflags]: https://doc.rust-lang.org/cargo/reference/config.html
-[c~cargo~website]: https://doc.rust-lang.org/cargo
-[c~cargo~website~badge]: https://img.shields.io/badge/cargo-coral
-[c~cassandra-protocol~crates.io]: https://crates.io/crates/cassandra-protocol
-[c~cassandra-protocol~crates.io~badge]: https://img.shields.io/badge/crates.io-cassandra--protocol-crimson
-[c~cassandra-protocol~docs]: https://docs.rs/cassandra-protocol
-[c~cassandra-protocol~docs~badge]: https://img.shields.io/crates/v/cassandra-protocol?label=cassandra-protocol
-[c~cassandra-protocol~lib.rs]: https://lib.rs/crates/cassandra-protocol
-[c~cassandra-protocol~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cassandra--protocol-yellow
-[c~cassandra-protocol~repo]: https://github.com/krojew/cdrs-tokio/tree/master/cassandra-protocol
-[c~cassandra-protocol~repo~badge]: https://img.shields.io/badge/cassandra--protocol-steelblue?logo=github
-[c~cbindgen~crates.io]: https://crates.io/crates/cbindgen
-[c~cbindgen~crates.io~badge]: https://img.shields.io/badge/crates.io-cbindgen-crimson
-[c~cbindgen~docs]: https://docs.rs/cbindgen
-[c~cbindgen~docs~badge]: https://img.shields.io/crates/v/cbindgen?label=cbindgen
-[c~cbindgen~lib.rs]: https://lib.rs/crates/cbindgen
-[c~cbindgen~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cbindgen-yellow
-[c~cbindgen~repo]: https://github.com/mozilla/cbindgen
-[c~cbindgen~repo~badge]: https://img.shields.io/badge/cbindgen-steelblue?logo=github
-[c~cc::Build::compile~docs]: https://docs.rs/cc/latest/cc/struct.Build.html#method.compile
-[c~cc::Build::cpp~docs]: https://docs.rs/cc/latest/cc/struct.Build.html#method.cpp
-[c~cc::Build::define~docs]: https://docs.rs/cc/latest/cc/struct.Build.html#method.define
-[c~cc::Build::flag~docs]: https://docs.rs/cc/latest/cc/struct.Build.html#method.flag
-[c~cc::Build::include~docs]: https://docs.rs/cc/latest/cc/struct.Build.html#method.include
-[c~cc::Build~docs]: https://docs.rs/cc/latest/cc/struct.Build.html
-[c~cc~crates.io]: https://crates.io/crates/cc
-[c~cc~crates.io~badge]: https://img.shields.io/badge/crates.io-cc-crimson
-[c~cc~docs]: https://docs.rs/cc
-[c~cc~docs~badge]: https://img.shields.io/crates/v/cc?label=cc
-[c~cc~lib.rs]: https://lib.rs/crates/cc
-[c~cc~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cc-yellow
-[c~cc~repo]: https://github.com/rust-lang/cc-rs
-[c~cc~repo~badge]: https://img.shields.io/badge/cc-steelblue?logo=github
-[c~cdrs-tokio~crates.io]: https://crates.io/crates/cdrs-tokio
-[c~cdrs-tokio~crates.io~badge]: https://img.shields.io/badge/crates.io-cdrs--tokio-crimson
-[c~cdrs-tokio~docs]: https://docs.rs/cdrs-tokio
-[c~cdrs-tokio~docs~badge]: https://img.shields.io/crates/v/cdrs-tokio?label=cdrs-tokio
-[c~cdrs-tokio~lib.rs]: https://lib.rs/crates/cdrs-tokio
-[c~cdrs-tokio~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cdrs--tokio-yellow
-[c~cdrs-tokio~repo]: https://github.com/krojew/cdrs-tokio
-[c~cdrs-tokio~repo~badge]: https://img.shields.io/badge/cdrs--tokio-steelblue?logo=github
-[c~cffi~crates.io]: https://crates.io/crates/cffi
-[c~cffi~crates.io~badge]: https://img.shields.io/badge/crates.io-cffi-crimson
-[c~cffi~docs]: https://docs.rs/cffi
-[c~cffi~docs~badge]: https://img.shields.io/crates/v/cffi?label=cffi
-[c~cffi~lib.rs]: https://lib.rs/crates/cffi
-[c~cffi~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cffi-yellow
-[c~cffi~repo]: https://github.com/cffi-rs/cffi
-[c~cffi~repo~badge]: https://img.shields.io/badge/cffi-steelblue?logo=github
-[c~cfg-if~crates.io]: https://crates.io/crates/cfg-if
-[c~cfg-if~crates.io~badge]: https://img.shields.io/badge/crates.io-cfg--if-crimson
-[c~cfg-if~docs]: https://docs.rs/cfg-if
-[c~cfg-if~docs~badge]: https://img.shields.io/crates/v/cfg-if?label=cfg-if
-[c~cfg-if~lib.rs]: https://lib.rs/crates/cfg-if
-[c~cfg-if~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cfg--if-yellow
-[c~cfg-if~repo]: https://github.com/rust-lang/cfg-if
-[c~cfg-if~repo~badge]: https://img.shields.io/badge/cfg--if-steelblue?logo=github
-[c~cgmath~crates.io]: https://crates.io/crates/cgmath
-[c~cgmath~crates.io~badge]: https://img.shields.io/badge/crates.io-cgmath-crimson
-[c~cgmath~docs]: https://docs.rs/cgmath
-[c~cgmath~docs~badge]: https://img.shields.io/crates/v/cgmath?label=cgmath
-[c~cgmath~lib.rs]: https://lib.rs/crates/cgmath
-[c~cgmath~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cgmath-yellow
-[c~cgmath~repo]: https://github.com/rustgd/cgmath
-[c~cgmath~repo~badge]: https://img.shields.io/badge/cgmath-steelblue?logo=github
-[c~cgroups~crates.io]: https://crates.io/crates/cgroups
-[c~cgroups~crates.io~badge]: https://img.shields.io/badge/crates.io-cgroups-crimson
-[c~cgroups~docs]: https://docs.rs/cgroups
-[c~cgroups~docs~badge]: https://img.shields.io/crates/v/cgroups?label=cgroups
-[c~cgroups~lib.rs]: https://lib.rs/crates/cgroups
-[c~cgroups~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cgroups-yellow
-[c~cgroups~repo]: https://github.com/levex/cgroups-rs
-[c~cgroups~repo~badge]: https://img.shields.io/badge/cgroups-steelblue?logo=github
-[c~cgroup~crates.io]: https://crates.io/crates/cgroup
-[c~cgroup~crates.io~badge]: https://img.shields.io/badge/crates.io-cgroup-crimson
-[c~cgroup~docs]: https://docs.rs/cgroup
-[c~cgroup~docs~badge]: https://img.shields.io/crates/v/cgroup?label=cgroup
-[c~cgroup~lib.rs]: https://lib.rs/crates/cgroup
-[c~cgroup~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cgroup-yellow
-[c~cgroup~repo~badge]: https://img.shields.io/badge/cgroup-steelblue?logo=github
-[c~chacha20poly1305~crates.io]: https://crates.io/crates/chacha20poly1305
-[c~chacha20poly1305~crates.io~badge]: https://img.shields.io/badge/crates.io-chacha20poly1305-crimson
-[c~chacha20poly1305~docs]: https://docs.rs/chacha20poly1305
-[c~chacha20poly1305~docs~badge]: https://img.shields.io/crates/v/chacha20poly1305?label=chacha20poly1305
-[c~chacha20poly1305~lib.rs]: https://lib.rs/crates/chacha20poly1305
-[c~chacha20poly1305~lib.rs~badge]: https://img.shields.io/badge/lib.rs-chacha20poly1305-yellow
-[c~chacha20poly1305~repo]: https://github.com/RustCrypto/AEADs
-[c~chacha20poly1305~repo~badge]: https://img.shields.io/badge/chacha20poly1305-steelblue?logo=github
-[c~chacha20poly1305~website]: https://github.com/RustCrypto/AEADs/tree/master/chacha20poly1305
-[c~chacha20poly1305~website~badge]: https://img.shields.io/badge/chacha20poly1305-coral
-[c~charming~crates.io]: https://crates.io/crates/charming
-[c~charming~crates.io~badge]: https://img.shields.io/badge/crates.io-charming-crimson
-[c~charming~docs]: https://github.com/yuankunzhang/charming
-[c~charming~docs~badge]: https://img.shields.io/crates/v/charming?label=charming
-[c~charming~lib.rs]: https://lib.rs/crates/charming
-[c~charming~lib.rs~badge]: https://img.shields.io/badge/lib.rs-charming-yellow
-[c~charming~repo]: https://github.com/yuankunzhang/charming
-[c~charming~repo~badge]: https://img.shields.io/badge/charming-steelblue?logo=github
-[c~chatgpt~crates.io]: https://crates.io/crates/chatgpt
-[c~chatgpt~crates.io~badge]: https://img.shields.io/badge/crates.io-chatgpt-crimson
-[c~chatgpt~docs]: https://docs.rs/chatgpt
-[c~chatgpt~docs~badge]: https://img.shields.io/crates/v/chatgpt?label=chatgpt
-[c~chatgpt~lib.rs]: https://lib.rs/crates/chatgpt
-[c~chatgpt~lib.rs~badge]: https://img.shields.io/badge/lib.rs-chatgpt-yellow
-[c~chatgpt~repo~badge]: https://img.shields.io/badge/chatgpt-steelblue?logo=github
-[c~chrono-tz~crates.io]: https://crates.io/crates/chrono-tz
-[c~chrono-tz~crates.io~badge]: https://img.shields.io/badge/crates.io-chrono--tz-crimson
-[c~chrono-tz~docs]: https://docs.rs/chrono-tz
-[c~chrono-tz~docs~badge]: https://img.shields.io/crates/v/chrono-tz?label=chrono-tz
-[c~chrono-tz~lib.rs]: https://lib.rs/crates/chrono-tz
-[c~chrono-tz~lib.rs~badge]: https://img.shields.io/badge/lib.rs-chrono--tz-yellow
-[c~chrono-tz~repo]: https://github.com/chronotope/chrono-tz
-[c~chrono-tz~repo~badge]: https://img.shields.io/badge/chrono--tz-steelblue?logo=github
-[c~chrono::Date::checked_add_signed~docs]: https://docs.rs/chrono/latest/chrono/struct.Date.html#method.checked_add_signed
-[c~chrono::Date::checked_sub_signed~docs]: https://docs.rs/chrono/latest/chrono/struct.Date.html#method.checked_sub_signed
-[c~chrono::DateTime::format~docs]: https://docs.rs/chrono/latest/chrono/struct.DateTime.html#method.format
-[c~chrono::DateTime::from_utc~docs]: https://docs.rs/chrono/latest/chrono/struct.DateTime.html#method.from_utc
-[c~chrono::DateTime::parse_from_rfc2822~docs]: https://docs.rs/chrono/latest/chrono/struct.DateTime.html#method.parse_from_rfc2822
-[c~chrono::DateTime::parse_from_rfc3339~docs]: https://docs.rs/chrono/latest/chrono/struct.DateTime.html#method.parse_from_rfc3339
-[c~chrono::DateTime::parse_from_str~docs]: https://docs.rs/chrono/latest/chrono/struct.DateTime.html#method.parse_from_str
-[c~chrono::DateTime::to_rfc2822~docs]: https://docs.rs/chrono/latest/chrono/struct.DateTime.html#method.to_rfc2822
-[c~chrono::DateTime::to_rfc3339~docs]: https://docs.rs/chrono/latest/chrono/struct.DateTime.html#method.to_rfc3339
-[c~chrono::DateTime~docs]: https://docs.rs/chrono/latest/chrono/struct.DateTime.html
-[c~chrono::Datelike~docs]: https://docs.rs/chrono/latest/chrono/trait.Datelike.html
-[c~chrono::Timelike~docs]: https://docs.rs/chrono/latest/chrono/trait.Timelike.html
-[c~chrono::format::strftime~docs]: https://docs.rs/chrono/latest/chrono/format/strftime
-[c~chrono::naive::NaiveDate::from_ymd~docs]: https://docs.rs/chrono/latest/chrono/naive/struct.NaiveDate.html#method.from_ymd
-[c~chrono::naive::NaiveDateTime::from_timestamp~docs]: https://docs.rs/chrono/latest/chrono/naive/struct.NaiveDateTime.html#method.from_timestamp
-[c~chrono::naive::NaiveDateTime::timestamp~docs]: https://docs.rs/chrono/latest/chrono/naive/struct.NaiveDateTime.html#method.timestamp
-[c~chrono::naive::NaiveDateTime~docs]: https://docs.rs/chrono/latest/chrono/naive/struct.NaiveDateTime.html
-[c~chrono::naive::NaiveDate~docs]: https://docs.rs/chrono/latest/chrono/naive/struct.NaiveDate.html
-[c~chrono::naive::NaiveTime::from_hms~docs]: https://docs.rs/chrono/latest/chrono/naive/struct.NaiveTime.html#method.from_hms
-[c~chrono::naive::NaiveTime~docs]: https://docs.rs/chrono/latest/chrono/naive/struct.NaiveTime.html
-[c~chrono::offset::FixedOffset~docs]: https://docs.rs/chrono/latest/chrono/offset/struct.FixedOffset.html
-[c~chrono::offset::Local::now~docs]: https://docs.rs/chrono/latest/chrono/offset/struct.Local.html#method.now
-[c~chrono::offset::Utc::now~docs]: https://docs.rs/chrono/latest/chrono/offset/struct.Utc.html#method.now
-[c~chrono~crates.io]: https://crates.io/crates/chrono
-[c~chrono~crates.io~badge]: https://img.shields.io/badge/crates.io-chrono-crimson
-[c~chrono~docs]: https://docs.rs/chrono
-[c~chrono~docs~badge]: https://img.shields.io/crates/v/chrono?label=chrono
-[c~chrono~lib.rs]: https://lib.rs/crates/chrono
-[c~chrono~lib.rs~badge]: https://img.shields.io/badge/lib.rs-chrono-yellow
-[c~chrono~repo]: https://github.com/chronotope/chrono
-[c~chrono~repo~badge]: https://img.shields.io/badge/chrono-steelblue?logo=github
-[c~chumsky~crates.io]: https://crates.io/crates/chumsky
-[c~chumsky~crates.io~badge]: https://img.shields.io/badge/crates.io-chumsky-crimson
-[c~chumsky~docs]: https://docs.rs/chumsky
-[c~chumsky~docs~badge]: https://img.shields.io/crates/v/chumsky?label=chumsky
-[c~chumsky~lib.rs]: https://lib.rs/crates/chumsky
-[c~chumsky~lib.rs~badge]: https://img.shields.io/badge/lib.rs-chumsky-yellow
-[c~chumsky~repo]: https://github.com/zesterer/chumsky
-[c~chumsky~repo~badge]: https://img.shields.io/badge/chumsky-steelblue?logo=github
-[c~ciborium~crates.io]: https://crates.io/crates/ciborium
-[c~ciborium~crates.io~badge]: https://img.shields.io/badge/crates.io-ciborium-crimson
-[c~ciborium~docs]: https://docs.rs/ciborium
-[c~ciborium~docs~badge]: https://img.shields.io/crates/v/ciborium?label=ciborium
-[c~ciborium~lib.rs]: https://lib.rs/crates/ciborium
-[c~ciborium~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ciborium-yellow
-[c~ciborium~repo]: https://github.com/enarx/ciborium
-[c~ciborium~repo~badge]: https://img.shields.io/badge/ciborium-steelblue?logo=github
-[c~clang~crates.io]: https://crates.io/crates/clang
-[c~clang~crates.io~badge]: https://img.shields.io/badge/crates.io-clang-crimson
-[c~clang~docs]: https://docs.rs/clang
-[c~clang~docs~badge]: https://img.shields.io/crates/v/clang?label=clang
-[c~clang~lib.rs]: https://lib.rs/crates/clang
-[c~clang~lib.rs~badge]: https://img.shields.io/badge/lib.rs-clang-yellow
-[c~clang~repo]: https://github.com/KyleMayes/clang-rs
-[c~clang~repo~badge]: https://img.shields.io/badge/clang-steelblue?logo=github
-[c~clap-verbosity-flag~crates.io]: https://crates.io/crates/clap-verbosity-flag
-[c~clap-verbosity-flag~crates.io~badge]: https://img.shields.io/badge/crates.io-clap--verbosity--flag-crimson
-[c~clap-verbosity-flag~docs]: https://docs.rs/clap-verbosity-flag
-[c~clap-verbosity-flag~docs~badge]: https://img.shields.io/crates/v/clap-verbosity-flag?label=clap-verbosity-flag
-[c~clap-verbosity-flag~lib.rs]: https://lib.rs/crates/clap-verbosity-flag
-[c~clap-verbosity-flag~lib.rs~badge]: https://img.shields.io/badge/lib.rs-clap--verbosity--flag-yellow
-[c~clap-verbosity-flag~repo]: https://github.com/clap-rs/clap-verbosity-flag
-[c~clap-verbosity-flag~repo~badge]: https://img.shields.io/badge/clap--verbosity--flag-steelblue?logo=github
-[c~clap::Arg::long~docs]: https://docs.rs/clap/latest/clap/struct.Arg.html#method.long
-[c~clap::Arg::short~docs]: https://docs.rs/clap/latest/clap/struct.Arg.html#method.short
-[c~clap_complete~crates.io]: https://crates.io/crates/clap_complete
-[c~clap_complete~crates.io~badge]: https://img.shields.io/badge/crates.io-clap__complete-crimson
-[c~clap_complete~docs]: https://docs.rs/clap_complete
-[c~clap_complete~docs~badge]: https://img.shields.io/crates/v/clap_complete?label=clap_complete
-[c~clap_complete~lib.rs]: https://lib.rs/crates/clap_complete
-[c~clap_complete~lib.rs~badge]: https://img.shields.io/badge/lib.rs-clap__complete-yellow
-[c~clap_complete~repo]: https://github.com/clap-rs/clap
-[c~clap_complete~repo~badge]: https://img.shields.io/badge/clap__complete-steelblue?logo=github
-[c~clap_derive~crates.io]: https://crates.io/crates/clap_derive
-[c~clap_derive~crates.io~badge]: https://img.shields.io/badge/crates.io-clap__derive-crimson
-[c~clap_derive~docs]: https://docs.rs/clap_derive
-[c~clap_derive~docs~badge]: https://img.shields.io/crates/v/clap_derive?label=clap_derive
-[c~clap_derive~lib.rs]: https://lib.rs/crates/clap_derive
-[c~clap_derive~lib.rs~badge]: https://img.shields.io/badge/lib.rs-clap__derive-yellow
-[c~clap_derive~repo]: https://github.com/clap-rs/clap
-[c~clap_derive~repo~badge]: https://img.shields.io/badge/clap__derive-steelblue?logo=github
-[c~clap~cookbook]: https://docs.rs/clap/latest/clap/_derive/_cookbook
-[c~clap~crates.io]: https://crates.io/crates/clap
-[c~clap~crates.io~badge]: https://img.shields.io/badge/crates.io-clap-crimson
-[c~clap~docs]: https://docs.rs/clap
-[c~clap~docs~badge]: https://img.shields.io/crates/v/clap?label=clap
-[c~clap~examples]: https://github.com/clap-rs/clap/tree/master/examples
-[c~clap~examples~badge]: https://img.shields.io/badge/examples-clap-silver
-[c~clap~lib.rs]: https://lib.rs/crates/clap
-[c~clap~lib.rs~badge]: https://img.shields.io/badge/lib.rs-clap-yellow
-[c~clap~repo]: https://github.com/clap-rs/clap
-[c~clap~repo~badge]: https://img.shields.io/badge/clap-steelblue?logo=github
-[c~clap~tutorial]: https://docs.rs/clap/latest/clap/_derive/_tutorial
-[c~clear~crates.io]: https://crates.io/crates/clear
-[c~clear~crates.io~badge]: https://img.shields.io/badge/crates.io-clear-crimson
-[c~clear~docs]: https://docs.rs/clear
-[c~clear~docs~badge]: https://img.shields.io/crates/v/clear?label=clear
-[c~clear~lib.rs]: https://lib.rs/crates/clear
-[c~clear~lib.rs~badge]: https://img.shields.io/badge/lib.rs-clear-yellow
-[c~clear~repo]: https://github.com/qe/clear
-[c~clear~repo~badge]: https://img.shields.io/badge/clear-steelblue?logo=github
-[c~clickhouse~crates.io]: https://crates.io/crates/clickhouse
-[c~clickhouse~crates.io~badge]: https://img.shields.io/badge/crates.io-clickhouse-crimson
-[c~clickhouse~docs]: https://docs.rs/clickhouse
-[c~clickhouse~docs~badge]: https://img.shields.io/crates/v/clickhouse?label=clickhouse
-[c~clickhouse~lib.rs]: https://lib.rs/crates/clickhouse
-[c~clickhouse~lib.rs~badge]: https://img.shields.io/badge/lib.rs-clickhouse-yellow
-[c~clickhouse~repo]: https://github.com/ClickHouse/clickhouse-rs
-[c~clickhouse~repo~badge]: https://img.shields.io/badge/clickhouse-steelblue?logo=github
-[c~clickhouse~website]: https://clickhouse.com
-[c~clickhouse~website~badge]: https://img.shields.io/badge/clickhouse-coral
-[c~clipboard~crates.io]: https://crates.io/crates/clipboard
-[c~clipboard~crates.io~badge]: https://img.shields.io/badge/crates.io-clipboard-crimson
-[c~clipboard~docs]: https://docs.rs/clipboard
-[c~clipboard~docs~badge]: https://img.shields.io/crates/v/clipboard?label=clipboard
-[c~clipboard~lib.rs]: https://lib.rs/crates/clipboard
-[c~clipboard~lib.rs~badge]: https://img.shields.io/badge/lib.rs-clipboard-yellow
-[c~clipboard~repo]: https://github.com/aweinstock314/rust-clipboard
-[c~clipboard~repo~badge]: https://img.shields.io/badge/clipboard-steelblue?logo=github
-[c~clippy~book]: https://doc.rust-lang.org/stable/clippy/usage.html
-[c~clippy~crates.io]: https://crates.io/crates/clippy
-[c~clippy~crates.io~badge]: https://img.shields.io/badge/crates.io-clippy-crimson
-[c~clippy~docs]: https://docs.rs/clippy
-[c~clippy~docs~badge]: https://img.shields.io/crates/v/clippy?label=clippy
-[c~clippy~lib.rs]: https://lib.rs/crates/clippy
-[c~clippy~lib.rs~badge]: https://img.shields.io/badge/lib.rs-clippy-yellow
-[c~clippy~repo]: https://github.com/rust-lang/rust-clippy
-[c~clippy~repo~badge]: https://img.shields.io/badge/clippy-steelblue?logo=github
-[c~clone_box~crates.io]: https://crates.io/crates/clone_box
-[c~clone_box~crates.io~badge]: https://img.shields.io/badge/crates.io-clone__box-crimson
-[c~clone_box~docs]: https://docs.rs/clone_box
-[c~clone_box~docs~badge]: https://img.shields.io/crates/v/clone_box?label=clone_box
-[c~clone_box~lib.rs]: https://lib.rs/crates/clone_box
-[c~clone_box~lib.rs~badge]: https://img.shields.io/badge/lib.rs-clone__box-yellow
-[c~clone_box~repo]: https://github.com/sigurd4/clone_box
-[c~clone_box~repo~badge]: https://img.shields.io/badge/clone__box-steelblue?logo=github
-[c~clorinde~crates.io]: https://crates.io/crates/clorinde
-[c~clorinde~crates.io~badge]: https://img.shields.io/badge/crates.io-clorinde-crimson
-[c~clorinde~docs]: https://docs.rs/clorinde
-[c~clorinde~docs~badge]: https://img.shields.io/crates/v/clorinde?label=clorinde
-[c~clorinde~lib.rs]: https://lib.rs/crates/clorinde
-[c~clorinde~lib.rs~badge]: https://img.shields.io/badge/lib.rs-clorinde-yellow
-[c~clorinde~repo]: https://github.com/halcyonnouveau/clorinde
-[c~clorinde~repo~badge]: https://img.shields.io/badge/clorinde-steelblue?logo=github
-[c~cloudflare~crates.io]: https://crates.io/crates/cloudflare
-[c~cloudflare~crates.io~badge]: https://img.shields.io/badge/crates.io-cloudflare-crimson
-[c~cloudflare~docs]: https://docs.rs/cloudflare
-[c~cloudflare~docs~badge]: https://img.shields.io/crates/v/cloudflare?label=cloudflare
-[c~cloudflare~lib.rs]: https://lib.rs/crates/cloudflare
-[c~cloudflare~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cloudflare-yellow
-[c~cloudflare~repo]: https://github.com/cloudflare/cloudflare-rs
-[c~cloudflare~repo~badge]: https://img.shields.io/badge/cloudflare-steelblue?logo=github
-[c~color-eyre~crates.io]: https://crates.io/crates/color-eyre
-[c~color-eyre~crates.io~badge]: https://img.shields.io/badge/crates.io-color--eyre-crimson
-[c~color-eyre~docs]: https://docs.rs/color-eyre
-[c~color-eyre~docs~badge]: https://img.shields.io/crates/v/color-eyre?label=color-eyre
-[c~color-eyre~lib.rs]: https://lib.rs/crates/color-eyre
-[c~color-eyre~lib.rs~badge]: https://img.shields.io/badge/lib.rs-color--eyre-yellow
-[c~color-eyre~repo]: https://github.com/eyre-rs/eyre/tree/master/color-eyre
-[c~color-eyre~repo~badge]: https://img.shields.io/badge/color--eyre-steelblue?logo=github
-[c~colored~crates.io]: https://crates.io/crates/colored
-[c~colored~crates.io~badge]: https://img.shields.io/badge/crates.io-colored-crimson
-[c~colored~docs]: https://docs.rs/colored
-[c~colored~docs~badge]: https://img.shields.io/crates/v/colored?label=colored
-[c~colored~lib.rs]: https://lib.rs/crates/colored
-[c~colored~lib.rs~badge]: https://img.shields.io/badge/lib.rs-colored-yellow
-[c~colored~repo]: https://github.com/mackwic/colored
-[c~colored~repo~badge]: https://img.shields.io/badge/colored-steelblue?logo=github
-[c~combine~crates.io]: https://crates.io/crates/combine
-[c~combine~crates.io~badge]: https://img.shields.io/badge/crates.io-combine-crimson
-[c~combine~docs]: https://docs.rs/combine
-[c~combine~docs~badge]: https://img.shields.io/crates/v/combine?label=combine
-[c~combine~lib.rs]: https://lib.rs/crates/combine
-[c~combine~lib.rs~badge]: https://img.shields.io/badge/lib.rs-combine-yellow
-[c~combine~repo]: https://github.com/Marwes/combine
-[c~combine~repo~badge]: https://img.shields.io/badge/combine-steelblue?logo=github
-[c~comemo~crates.io]: https://crates.io/crates/comemo
-[c~comemo~crates.io~badge]: https://img.shields.io/badge/crates.io-comemo-crimson
-[c~comemo~docs]: https://docs.rs/comemo
-[c~comemo~docs~badge]: https://img.shields.io/crates/v/comemo?label=comemo
-[c~comemo~lib.rs]: https://lib.rs/crates/comemo
-[c~comemo~lib.rs~badge]: https://img.shields.io/badge/lib.rs-comemo-yellow
-[c~comemo~repo]: https://github.com/typst/comemo
-[c~comemo~repo~badge]: https://img.shields.io/badge/comemo-steelblue?logo=github
-[c~compact_str~crates.io]: https://crates.io/crates/compact_str
-[c~compact_str~crates.io~badge]: https://img.shields.io/badge/crates.io-compact__str-crimson
-[c~compact_str~docs]: https://docs.rs/compact_str
-[c~compact_str~docs~badge]: https://img.shields.io/crates/v/compact_str?label=compact_str
-[c~compact_str~lib.rs]: https://lib.rs/crates/compact_str
-[c~compact_str~lib.rs~badge]: https://img.shields.io/badge/lib.rs-compact__str-yellow
-[c~compact_str~repo]: https://github.com/ParkMyCar/compact_str
-[c~compact_str~repo~badge]: https://img.shields.io/badge/compact__str-steelblue?logo=github
-[c~comrak~crates.io]: https://crates.io/crates/comrak
-[c~comrak~crates.io~badge]: https://img.shields.io/badge/crates.io-comrak-crimson
-[c~comrak~docs]: https://docs.rs/comrak
-[c~comrak~docs~badge]: https://img.shields.io/crates/v/comrak?label=comrak
-[c~comrak~lib.rs]: https://lib.rs/crates/comrak
-[c~comrak~lib.rs~badge]: https://img.shields.io/badge/lib.rs-comrak-yellow
-[c~comrak~repo]: https://github.com/kivikakk/comrak
-[c~comrak~repo~badge]: https://img.shields.io/badge/comrak-steelblue?logo=github
-[c~com~crates.io]: https://crates.io/crates/com
-[c~com~crates.io~badge]: https://img.shields.io/badge/crates.io-com-crimson
-[c~com~docs]: https://docs.rs/com
-[c~com~docs~badge]: https://img.shields.io/crates/v/com?label=com
-[c~com~lib.rs]: https://lib.rs/crates/com
-[c~com~lib.rs~badge]: https://img.shields.io/badge/lib.rs-com-yellow
-[c~com~repo]: https://github.com/microsoft/com-rs
-[c~com~repo~badge]: https://img.shields.io/badge/com-steelblue?logo=github
-[c~concat-string~crates.io]: https://crates.io/crates/concat-string
-[c~concat-string~crates.io~badge]: https://img.shields.io/badge/crates.io-concat~-string-crimson
-[c~concat-string~docs]: https://docs.rs/concat~string
-[c~concat-string~docs~badge]: https://img.shields.io/crates/v/concat~string?label=concat~string
-[c~concat-string~lib.rs]: https://lib.rs/crates/concat~string
-[c~concat-string~lib.rs~badge]: https://img.shields.io/badge/lib.rs-concat~-string-yellow
-[c~concat-string~repo]: https://github.com/FaultyRAM/concat~string
-[c~concat-string~repo~badge]: https://img.shields.io/badge/concat~-string-steelblue?logo=github
-[c~concat_strs~crates.io]: https://crates.io/crates/concat_strs
-[c~concat_strs~crates.io~badge]: https://img.shields.io/badge/crates.io-concat__strs-crimson
-[c~concat_strs~docs]: https://docs.rs/concat_strs
-[c~concat_strs~docs~badge]: https://img.shields.io/crates/v/concat_strs?label=concat_strs
-[c~concat_strs~lib.rs]: https://lib.rs/crates/concat_strs
-[c~concat_strs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-concat__strs-yellow
-[c~concat_strs~repo]: https://github.com/9999years/concat_strs
-[c~concat_strs~repo~badge]: https://img.shields.io/badge/concat__strs-steelblue?logo=github
-[c~configparser~crates.io]: https://crates.io/crates/configparser
-[c~configparser~crates.io~badge]: https://img.shields.io/badge/crates.io-configparser-crimson
-[c~configparser~docs]: https://docs.rs/configparser
-[c~configparser~docs~badge]: https://img.shields.io/crates/v/configparser?label=configparser
-[c~configparser~lib.rs]: https://lib.rs/crates/configparser
-[c~configparser~lib.rs~badge]: https://img.shields.io/badge/lib.rs-configparser-yellow
-[c~configparser~repo]: https://github.com/QEDK/configparser-rs
-[c~configparser~repo~badge]: https://img.shields.io/badge/configparser-steelblue?logo=github
-[c~config~crates.io]: https://crates.io/crates/config
-[c~config~crates.io~badge]: https://img.shields.io/badge/crates.io-config-crimson
-[c~config~docs]: https://docs.rs/config
-[c~config~docs~badge]: https://img.shields.io/crates/v/config?label=config
-[c~config~lib.rs]: https://lib.rs/crates/config
-[c~config~lib.rs~badge]: https://img.shields.io/badge/lib.rs-config-yellow
-[c~config~repo]: https://github.com/rust-cli/config-rs
-[c~config~repo~badge]: https://img.shields.io/badge/config-steelblue?logo=github
-[c~confy~crates.io]: https://crates.io/crates/confy
-[c~confy~crates.io~badge]: https://img.shields.io/badge/crates.io-confy-crimson
-[c~confy~docs]: https://docs.rs/confy
-[c~confy~docs~badge]: https://img.shields.io/crates/v/confy?label=confy
-[c~confy~lib.rs]: https://lib.rs/crates/confy
-[c~confy~lib.rs~badge]: https://img.shields.io/badge/lib.rs-confy-yellow
-[c~confy~repo]: https://github.com/rust-cli/confy
-[c~confy~repo~badge]: https://img.shields.io/badge/confy-steelblue?logo=github
-[c~conrod~crates.io]: https://crates.io/crates/conrod
-[c~conrod~crates.io~badge]: https://img.shields.io/badge/crates.io-conrod-crimson
-[c~conrod~docs]: https://docs.rs/conrod_core
-[c~conrod~docs~badge]: https://img.shields.io/crates/v/conrod?label=conrod
-[c~conrod~lib.rs]: https://lib.rs/crates/conrod
-[c~conrod~lib.rs~badge]: https://img.shields.io/badge/lib.rs-conrod-yellow
-[c~conrod~repo]: https://github.com/pistondevelopers/conrod
-[c~conrod~repo~badge]: https://img.shields.io/badge/conrod-steelblue?logo=github
-[c~conrod~website]: https://github.com/pistondevelopers/conrod
-[c~conrod~website~badge]: https://img.shields.io/badge/conrod-coral
-[c~console_error_panic_hook~crates.io]: https://crates.io/crates/console_error_panic_hook
-[c~console_error_panic_hook~crates.io~badge]: https://img.shields.io/badge/crates.io-console__error__panic__hook-crimson
-[c~console_error_panic_hook~docs]: https://docs.rs/console_error_panic_hook
-[c~console_error_panic_hook~docs~badge]: https://img.shields.io/crates/v/console_error_panic_hook?label=console_error_panic_hook
-[c~console_error_panic_hook~lib.rs]: https://lib.rs/crates/console_error_panic_hook
-[c~console_error_panic_hook~lib.rs~badge]: https://img.shields.io/badge/lib.rs-console__error__panic__hook-yellow
-[c~console_error_panic_hook~repo]: https://github.com/rustwasm/console_error_panic_hook
-[c~console_error_panic_hook~repo~badge]: https://img.shields.io/badge/console__error__panic__hook-steelblue?logo=github
-[c~console~crates.io]: https://crates.io/crates/console
-[c~console~crates.io~badge]: https://img.shields.io/badge/crates.io-console-crimson
-[c~console~docs]: https://docs.rs/console
-[c~console~docs~badge]: https://img.shields.io/crates/v/console?label=console
-[c~console~lib.rs]: https://lib.rs/crates/console
-[c~console~lib.rs~badge]: https://img.shields.io/badge/lib.rs-console-yellow
-[c~console~repo]: https://github.com/console-rs/console
-[c~console~repo~badge]: https://img.shields.io/badge/console-steelblue?logo=github
-[c~constcat~crates.io]: https://crates.io/crates/constcat
-[c~constcat~crates.io~badge]: https://img.shields.io/badge/crates.io-constcat-crimson
-[c~constcat~docs]: https://docs.rs/constcat
-[c~constcat~docs~badge]: https://img.shields.io/crates/v/constcat?label=constcat
-[c~constcat~lib.rs]: https://lib.rs/crates/constcat
-[c~constcat~lib.rs~badge]: https://img.shields.io/badge/lib.rs-constcat-yellow
-[c~constcat~repo]: https://github.com/rossmacarthur/constcat
-[c~constcat~repo~badge]: https://img.shields.io/badge/constcat-steelblue?logo=github
-[c~contracts~crates.io]: https://crates.io/crates/contracts
-[c~contracts~crates.io~badge]: https://img.shields.io/badge/crates.io-contracts-crimson
-[c~contracts~docs]: https://docs.rs/contracts
-[c~contracts~docs~badge]: https://img.shields.io/crates/v/contracts?label=contracts
-[c~contracts~lib.rs]: https://lib.rs/crates/contracts
-[c~contracts~lib.rs~badge]: https://img.shields.io/badge/lib.rs-contracts-yellow
-[c~contracts~repo]: https://github.com/x52dev/contracts
-[c~contracts~repo~badge]: https://img.shields.io/badge/contracts-steelblue?logo=github
-[c~copper~crates.io]: https://crates.io/crates/copper
-[c~copper~crates.io~badge]: https://img.shields.io/badge/crates.io-copper-crimson
-[c~copper~docs]: https://docs.rs/copper
-[c~copper~docs~badge]: https://img.shields.io/crates/v/copper?label=copper
-[c~copper~lib.rs]: https://lib.rs/crates/copper
-[c~copper~lib.rs~badge]: https://img.shields.io/badge/lib.rs-copper-yellow
-[c~copper~repo]: https://github.com/ffminus/copper
-[c~copper~repo~badge]: https://img.shields.io/badge/copper-steelblue?logo=github
-[c~core::cell::OnceCell~docs]: https://doc.rust-lang.org/core/cell/struct.OnceCell.html
-[c~core::iter::Iterator::filter_map~docs]: https://doc.rust-lang.org/core/iter/trait.Iterator.html#method.filter_map
-[c~cornucopia~crates.io]: https://crates.io/crates/cornucopia
-[c~cornucopia~crates.io~badge]: https://img.shields.io/badge/crates.io-cornucopia-crimson
-[c~cornucopia~docs]: https://docs.rs/cornucopia
-[c~cornucopia~docs~badge]: https://img.shields.io/crates/v/cornucopia?label=cornucopia
-[c~cornucopia~lib.rs]: https://lib.rs/crates/cornucopia
-[c~cornucopia~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cornucopia-yellow
-[c~cornucopia~repo]: https://github.com/cornucopia-rs/cornucopia
-[c~cornucopia~repo~badge]: https://img.shields.io/badge/cornucopia-steelblue?logo=github
-[c~cornucopia~website]: https://cornucopia-rs.netlify.app
-[c~cornucopia~website~badge]: https://img.shields.io/badge/cornucopia-coral
-[c~cortex-m~crates.io]: https://crates.io/crates/cortex-m
-[c~cortex-m~crates.io~badge]: https://img.shields.io/badge/crates.io-cortex--m-crimson
-[c~cortex-m~docs]: https://docs.rs/cortex-m
-[c~cortex-m~docs~badge]: https://img.shields.io/crates/v/cortex-m?label=cortex-m
-[c~cortex-m~lib.rs]: https://lib.rs/crates/cortex-m
-[c~cortex-m~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cortex--m-yellow
-[c~cortex-m~repo]: https://github.com/rust-embedded/cortex-m
-[c~cortex-m~repo~badge]: https://img.shields.io/badge/cortex--m-steelblue?logo=github
-[c~cosmic-text~crates.io]: https://crates.io/crates/cosmic-text
-[c~cosmic-text~crates.io~badge]: https://img.shields.io/badge/crates.io-cosmic--text-crimson
-[c~cosmic-text~docs]: https://docs.rs/cosmic-text
-[c~cosmic-text~docs~badge]: https://img.shields.io/crates/v/cosmic-text?label=cosmic-text
-[c~cosmic-text~lib.rs]: https://lib.rs/crates/cosmic-text
-[c~cosmic-text~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cosmic--text-yellow
-[c~cosmic-text~repo]: https://github.com/pop-os/cosmic-text
-[c~cosmic-text~repo~badge]: https://img.shields.io/badge/cosmic--text-steelblue?logo=github
-[c~cpal~crates.io]: https://crates.io/crates/cpal
-[c~cpal~crates.io~badge]: https://img.shields.io/badge/crates.io-cpal-crimson
-[c~cpal~docs]: https://docs.rs/cpal
-[c~cpal~docs~badge]: https://img.shields.io/crates/v/cpal?label=cpal
-[c~cpal~lib.rs]: https://lib.rs/crates/cpal
-[c~cpal~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cpal-yellow
-[c~cpal~repo]: https://github.com/rustaudio/cpal
-[c~cpal~repo~badge]: https://img.shields.io/badge/cpal-steelblue?logo=github
-[c~cpuid~crates.io]: https://crates.io/crates/cpuid
-[c~cpuid~crates.io~badge]: https://img.shields.io/badge/crates.io-cpuid-crimson
-[c~cpuid~docs]: https://docs.rs/cpuid
-[c~cpuid~docs~badge]: https://img.shields.io/crates/v/cpuid?label=cpuid
-[c~cpuid~lib.rs]: https://lib.rs/crates/cpuid
-[c~cpuid~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cpuid-yellow
-[c~cpuid~repo]: https://github.com/zsiciarz/rust-cpuid
-[c~cpuid~repo~badge]: https://img.shields.io/badge/cpuid-steelblue?logo=github
-[c~cpython~crates.io]: https://crates.io/crates/cpython
-[c~cpython~crates.io~badge]: https://img.shields.io/badge/crates.io-cpython-crimson
-[c~cpython~docs]: http://dgrunwald.github.io/rust-cpython/doc/cpython
-[c~cpython~docs~badge]: https://img.shields.io/crates/v/cpython?label=cpython
-[c~cpython~lib.rs]: https://lib.rs/crates/cpython
-[c~cpython~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cpython-yellow
-[c~cpython~repo]: https://github.com/dgrunwald/rust-cpython
-[c~cpython~repo~badge]: https://img.shields.io/badge/cpython-steelblue?logo=github
-[c~cpython~website]: https://github.com/dgrunwald/rust-cpython
-[c~cpython~website~badge]: https://img.shields.io/badge/cpython-coral
-[c~cranelift~crates.io]: https://crates.io/crates/cranelift
-[c~cranelift~crates.io~badge]: https://img.shields.io/badge/crates.io-cranelift-crimson
-[c~cranelift~docs]: https://docs.rs/cranelift
-[c~cranelift~docs~badge]: https://img.shields.io/crates/v/cranelift?label=cranelift
-[c~cranelift~lib.rs]: https://lib.rs/crates/cranelift
-[c~cranelift~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cranelift-yellow
-[c~cranelift~repo]: https://github.com/bytecodealliance/wasmtime
-[c~cranelift~repo~badge]: https://img.shields.io/badge/cranelift-steelblue?logo=github
-[c~crates-io~crates.io]: https://crates.io/crates/crates-io
-[c~crates-io~crates.io~badge]: https://img.shields.io/badge/crates.io-crates--io-crimson
-[c~crates-io~docs]: https://docs.rs/crates-io
-[c~crates-io~docs~badge]: https://img.shields.io/crates/v/crates-io?label=crates-io
-[c~crates-io~lib.rs]: https://lib.rs/crates/crates-io
-[c~crates-io~lib.rs~badge]: https://img.shields.io/badge/lib.rs-crates--io-yellow
-[c~crates-io~repo]: https://github.com/rust-lang/cargo
-[c~crates-io~repo~badge]: https://img.shields.io/badge/crates--io-steelblue?logo=github
-[c~crates_io_api~crates.io]: https://crates.io/crates/crates_io_api
-[c~crates_io_api~crates.io~badge]: https://img.shields.io/badge/crates.io-crates__io__api-crimson
-[c~crates_io_api~docs]: https://docs.rs/crates_io_api
-[c~crates_io_api~docs~badge]: https://img.shields.io/crates/v/crates_io_api?label=crates_io_api
-[c~crates_io_api~lib.rs]: https://lib.rs/crates/crates_io_api
-[c~crates_io_api~lib.rs~badge]: https://img.shields.io/badge/lib.rs-crates__io__api-yellow
-[c~crates_io_api~repo]: https://github.com/theduke/crates-io-api
-[c~crates_io_api~repo~badge]: https://img.shields.io/badge/crates__io__api-steelblue?logo=github
-[c~criterion~crates.io]: https://crates.io/crates/criterion
-[c~criterion~crates.io~badge]: https://img.shields.io/badge/crates.io-criterion-crimson
-[c~criterion~docs]: https://docs.rs/criterion
-[c~criterion~docs~badge]: https://img.shields.io/crates/v/criterion?label=criterion
-[c~criterion~lib.rs]: https://lib.rs/crates/criterion
-[c~criterion~lib.rs~badge]: https://img.shields.io/badge/lib.rs-criterion-yellow
-[c~criterion~repo]: https://github.com/bheisler/criterion.rs
-[c~criterion~repo~badge]: https://img.shields.io/badge/criterion-steelblue?logo=github
-[c~criterion~website]: https://bheisler.github.io/criterion.rs/book
-[c~criterion~website~badge]: https://img.shields.io/badge/criterion-coral
-[c~crossbeam-channel::Receiver::iter~docs]: https://docs.rs/crossbeam-channel/latest/crossbeam-channel/struct.Receiver.html#method.iter
-[c~crossbeam-channel::Sender::send~docs]: https://docs.rs/crossbeam-channel/latest/crossbeam-channel/struct.Sender.html#method.send
-[c~crossbeam-channel::bounded~docs]: https://docs.rs/crossbeam-channel/latest/crossbeam-channel/fn.bounded.html
-[c~crossbeam-channel::unbounded~docs]: https://docs.rs/crossbeam-channel/latest/crossbeam-channel/fn.unbounded.html
-[c~crossbeam-channel~crates.io]: https://crates.io/crates/crossbeam-channel
-[c~crossbeam-channel~crates.io~badge]: https://img.shields.io/badge/crates.io-crossbeam--channel-crimson
-[c~crossbeam-channel~docs]: https://docs.rs/crossbeam-channel
-[c~crossbeam-channel~docs~badge]: https://img.shields.io/crates/v/crossbeam-channel?label=crossbeam-channel
-[c~crossbeam-channel~lib.rs]: https://lib.rs/crates/crossbeam-channel
-[c~crossbeam-channel~lib.rs~badge]: https://img.shields.io/badge/lib.rs-crossbeam--channel-yellow
-[c~crossbeam-channel~repo]: https://github.com/crossbeam-rs/crossbeam/tree/master/crossbeam-channel
-[c~crossbeam-channel~repo~badge]: https://img.shields.io/badge/crossbeam--channel-steelblue?logo=github
-[c~crossbeam-channel~website]: https://github.com/crossbeam-rs/crossbeam/blob/master/crossbeam-channel/README.md
-[c~crossbeam-channel~website~badge]: https://img.shields.io/badge/crossbeam--channel-coral
-[c~crossbeam-queue~crates.io]: https://crates.io/crates/crossbeam-queue
-[c~crossbeam-queue~crates.io~badge]: https://img.shields.io/badge/crates.io-crossbeam--queue-crimson
-[c~crossbeam-queue~docs]: https://docs.rs/crossbeam-queue
-[c~crossbeam-queue~docs~badge]: https://img.shields.io/crates/v/crossbeam-queue?label=crossbeam-queue
-[c~crossbeam-queue~lib.rs]: https://lib.rs/crates/crossbeam-queue
-[c~crossbeam-queue~lib.rs~badge]: https://img.shields.io/badge/lib.rs-crossbeam--queue-yellow
-[c~crossbeam-queue~repo]: https://github.com/crossbeam-rs/crossbeam/tree/master/crossbeam-queue
-[c~crossbeam-queue~repo~badge]: https://img.shields.io/badge/crossbeam--queue-steelblue?logo=github
-[c~crossbeam-queue~website]: https://github.com/crossbeam-rs/crossbeam/blob/master/crossbeam-queue/README.md
-[c~crossbeam-queue~website~badge]: https://img.shields.io/badge/crossbeam--queue-coral
-[c~crossbeam-utils~crates.io]: https://crates.io/crates/crossbeam-utils
-[c~crossbeam-utils~crates.io~badge]: https://img.shields.io/badge/crates.io-crossbeam--utils-crimson
-[c~crossbeam-utils~docs]: https://docs.rs/crossbeam-utils
-[c~crossbeam-utils~docs~badge]: https://img.shields.io/crates/v/crossbeam-utils?label=crossbeam-utils
-[c~crossbeam-utils~lib.rs]: https://lib.rs/crates/crossbeam-utils
-[c~crossbeam-utils~lib.rs~badge]: https://img.shields.io/badge/lib.rs-crossbeam--utils-yellow
-[c~crossbeam-utils~repo]: https://github.com/crossbeam-rs/crossbeam/tree/master/crossbeam-utils
-[c~crossbeam-utils~repo~badge]: https://img.shields.io/badge/crossbeam--utils-steelblue?logo=github
-[c~crossbeam-utils~website]: https://github.com/crossbeam-rs/crossbeam/blob/master/crossbeam-utils/README.md
-[c~crossbeam-utils~website~badge]: https://img.shields.io/badge/crossbeam--utils-coral
-[c~crossbeam::atomic::AtomicCell~docs]: https://docs.rs/crossbeam/latest/crossbeam/atomic/struct.AtomicCell.html
-[c~crossbeam::scope~docs]: https://docs.rs/crossbeam/latest/crossbeam/fn.scope.html
-[c~crossbeam::thread::Scope::spawn~docs]: https://docs.rs/crossbeam/latest/crossbeam/thread/struct.Scope.html#method.spawn
-[c~crossbeam~crates.io]: https://crates.io/crates/crossbeam
-[c~crossbeam~crates.io~badge]: https://img.shields.io/badge/crates.io-crossbeam-crimson
-[c~crossbeam~docs]: https://docs.rs/crossbeam
-[c~crossbeam~docs~badge]: https://img.shields.io/crates/v/crossbeam?label=crossbeam
-[c~crossbeam~lib.rs]: https://lib.rs/crates/crossbeam
-[c~crossbeam~lib.rs~badge]: https://img.shields.io/badge/lib.rs-crossbeam-yellow
-[c~crossbeam~repo]: https://github.com/crossbeam-rs/crossbeam
-[c~crossbeam~repo~badge]: https://img.shields.io/badge/crossbeam-steelblue?logo=github
-[c~crossterm~crates.io]: https://crates.io/crates/crossterm
-[c~crossterm~crates.io~badge]: https://img.shields.io/badge/crates.io-crossterm-crimson
-[c~crossterm~docs]: https://docs.rs/crossterm
-[c~crossterm~docs~badge]: https://img.shields.io/crates/v/crossterm?label=crossterm
-[c~crossterm~lib.rs]: https://lib.rs/crates/crossterm
-[c~crossterm~lib.rs~badge]: https://img.shields.io/badge/lib.rs-crossterm-yellow
-[c~crossterm~repo]: https://github.com/crossterm-rs/crossterm
-[c~crossterm~repo~badge]: https://img.shields.io/badge/crossterm-steelblue?logo=github
-[c~cross~crates.io]: https://crates.io/crates/cross
-[c~cross~crates.io~badge]: https://img.shields.io/badge/crates.io-cross-crimson
-[c~cross~docs]: https://docs.rs/crate/cross
-[c~cross~docs~badge]: https://img.shields.io/crates/v/cross?label=cross
-[c~cross~lib.rs]: https://lib.rs/crates/cross
-[c~cross~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cross-yellow
-[c~cross~repo]: https://github.com/cross-rs/cross
-[c~cross~repo~badge]: https://img.shields.io/badge/cross-steelblue?logo=github
-[c~cross~toml-example]: https://github.com/cross-rs/wiki_assets/blob/main/Configuration/Cross.toml
-[c~cross~toml-example~badge]: https://img.shields.io/badge/cross_toml_example-steelblue?logo=github
-[c~cross~wiki]: https://github.com/cross-rs/cross/wiki/Getting-Started
-[c~cross~wiki~badge]: https://img.shields.io/badge/Wiki-cross-silver?logo=github
-[c~crs~crates.io]: https://crates.io/crates/crs
-[c~crs~crates.io~badge]: https://img.shields.io/badge/crates.io-crs-crimson
-[c~crs~docs]: https://docs.rs/crs
-[c~crs~docs~badge]: https://img.shields.io/crates/v/crs?label=crs
-[c~crs~lib.rs]: https://lib.rs/crates/crs
-[c~crs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-crs-yellow
-[c~crs~repo~badge]: https://img.shields.io/badge/crs-steelblue?logo=github
-[c~crucible~crates.io]: https://crates.io/crates/crucible
-[c~crucible~crates.io~badge]: https://img.shields.io/badge/crates.io-crucible-crimson
-[c~crucible~docs]: https://github.com/brayniac/crucible
-[c~crucible~docs~badge]: https://img.shields.io/crates/v/crucible?label=crucible
-[c~crucible~lib.rs]: https://lib.rs/crates/crucible
-[c~crucible~lib.rs~badge]: https://img.shields.io/badge/lib.rs-crucible-yellow
-[c~crucible~repo]: https://github.com/brayniac/crucible
-[c~crucible~repo~badge]: https://img.shields.io/badge/crucible-steelblue?logo=github
-[c~crux_core~crates.io]: https://crates.io/crates/crux_core
-[c~crux_core~crates.io~badge]: https://img.shields.io/badge/crates.io-crux__core-crimson
-[c~crux_core~docs]: https://docs.rs/crux_core
-[c~crux_core~docs~badge]: https://img.shields.io/crates/v/crux_core?label=crux_core
-[c~crux_core~lib.rs]: https://lib.rs/crates/crux_core
-[c~crux_core~lib.rs~badge]: https://img.shields.io/badge/lib.rs-crux__core-yellow
-[c~crux_core~repo]: https://github.com/redbadger/crux
-[c~crux_core~repo~badge]: https://img.shields.io/badge/crux__core-steelblue?logo=github
-[c~crux_macros~crates.io]: https://crates.io/crates/crux_macros
-[c~crux_macros~crates.io~badge]: https://img.shields.io/badge/crates.io-crux__macros-crimson
-[c~crux_macros~docs]: https://docs.rs/crux_macros
-[c~crux_macros~docs~badge]: https://img.shields.io/crates/v/crux_macros?label=crux_macros
-[c~crux_macros~lib.rs]: https://lib.rs/crates/crux_macros
-[c~crux_macros~lib.rs~badge]: https://img.shields.io/badge/lib.rs-crux__macros-yellow
-[c~crux_macros~repo]: https://github.com/redbadger/crux
-[c~crux_macros~repo~badge]: https://img.shields.io/badge/crux__macros-steelblue?logo=github
-[c~cssparser~crates.io]: https://crates.io/crates/cssparser
-[c~cssparser~crates.io~badge]: https://img.shields.io/badge/crates.io-cssparser-crimson
-[c~cssparser~docs]: https://docs.rs/cssparser
-[c~cssparser~docs~badge]: https://img.shields.io/crates/v/cssparser?label=cssparser
-[c~cssparser~lib.rs]: https://lib.rs/crates/cssparser
-[c~cssparser~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cssparser-yellow
-[c~cssparser~repo]: https://github.com/servo/rust-cssparser
-[c~cssparser~repo~badge]: https://img.shields.io/badge/cssparser-steelblue?logo=github
-[c~css~crates.io]: https://crates.io/crates/css
-[c~css~crates.io~badge]: https://img.shields.io/badge/crates.io-css-crimson
-[c~css~docs]: https://docs.rs/css
-[c~css~docs~badge]: https://img.shields.io/crates/v/css?label=css
-[c~css~lib.rs]: https://lib.rs/crates/css
-[c~css~lib.rs~badge]: https://img.shields.io/badge/lib.rs-css-yellow
-[c~css~repo]: https://github.com/lemonrock/css
-[c~css~repo~badge]: https://img.shields.io/badge/css-steelblue?logo=github
-[c~css~website]: https://github.com/lemonrock/css
-[c~css~website~badge]: https://img.shields.io/badge/css-coral
-[c~csv::ByteRecord~docs]: https://docs.rs/csv/latest/csv/struct.ByteRecord.html
-[c~csv::Reader::deserialize~docs]: https://docs.rs/csv/latest/csv/struct.Reader.html#method.deserialize
-[c~csv::ReaderBuilder::delimiter~docs]: https://docs.rs/csv/latest/csv/struct.ReaderBuilder.html#method.delimiter
-[c~csv::StringRecord~docs]: https://docs.rs/csv/latest/csv/struct.StringRecord.html
-[c~csv::Writer::flush~docs]: https://docs.rs/csv/latest/csv/struct.Writer.html#method.flush
-[c~csv::Writer::serialize~docs]: https://docs.rs/csv/latest/csv/struct.Writer.html#method.serialize
-[c~csv::Writer::write_record~docs]: https://docs.rs/csv/latest/csv/struct.Writer.html#method.write_record
-[c~csv::Writer~docs]: https://docs.rs/csv/latest/csv/struct.Writer.html
-[c~csv::invalid_option~docs]: https://docs.rs/csv/latest/csv/fn.invalid_option.html
-[c~csv~crates.io]: https://crates.io/crates/csv
-[c~csv~crates.io~badge]: https://img.shields.io/badge/crates.io-csv-crimson
-[c~csv~docs]: https://docs.rs/csv
-[c~csv~docs~badge]: https://img.shields.io/crates/v/csv?label=csv
-[c~csv~lib.rs]: https://lib.rs/crates/csv
-[c~csv~lib.rs~badge]: https://img.shields.io/badge/lib.rs-csv-yellow
-[c~csv~repo]: https://github.com/BurntSushi/rust-csv
-[c~csv~repo~badge]: https://img.shields.io/badge/csv-steelblue?logo=github
-[c~csv~tutorial]: https://docs.rs/csv/*/csv/tutorial
-[c~cubecl~crates.io]: https://crates.io/crates/cubecl
-[c~cubecl~crates.io~badge]: https://img.shields.io/badge/crates.io-cubecl-crimson
-[c~cubecl~docs]: https://docs.rs/cubecl
-[c~cubecl~docs~badge]: https://img.shields.io/crates/v/cubecl?label=cubecl
-[c~cubecl~lib.rs]: https://lib.rs/crates/cubecl
-[c~cubecl~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cubecl-yellow
-[c~cubecl~repo]: https://github.com/tracel-ai/cubecl
-[c~cubecl~repo~badge]: https://img.shields.io/badge/cubecl-steelblue?logo=github
-[c~curl~crates.io]: https://crates.io/crates/curl
-[c~curl~crates.io~badge]: https://img.shields.io/badge/crates.io-curl-crimson
-[c~curl~docs]: https://docs.rs/curl
-[c~curl~docs~badge]: https://img.shields.io/crates/v/curl?label=curl
-[c~curl~lib.rs]: https://lib.rs/crates/curl
-[c~curl~lib.rs~badge]: https://img.shields.io/badge/lib.rs-curl-yellow
-[c~curl~repo]: https://github.com/alexcrichton/curl-rust
-[c~curl~repo~badge]: https://img.shields.io/badge/curl-steelblue?logo=github
-[c~cxx-build~crates.io]: https://crates.io/crates/cxx-build
-[c~cxx-build~crates.io~badge]: https://img.shields.io/badge/crates.io-cxx--build-crimson
-[c~cxx-build~docs]: https://docs.rs/cxx-build
-[c~cxx-build~docs~badge]: https://img.shields.io/crates/v/cxx-build?label=cxx-build
-[c~cxx-build~lib.rs]: https://lib.rs/crates/cxx-build
-[c~cxx-build~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cxx--build-yellow
-[c~cxx-build~repo]: https://github.com/dtolnay/cxx
-[c~cxx-build~repo~badge]: https://img.shields.io/badge/cxx--build-steelblue?logo=github
-[c~cxx-build~website]: https://cxx.rs
-[c~cxx-build~website~badge]: https://img.shields.io/badge/cxx--build-coral
-[c~cxx~crates.io]: https://crates.io/crates/cxx
-[c~cxx~crates.io~badge]: https://img.shields.io/badge/crates.io-cxx-crimson
-[c~cxx~docs]: https://docs.rs/cxx
-[c~cxx~docs~badge]: https://img.shields.io/crates/v/cxx?label=cxx
-[c~cxx~lib.rs]: https://lib.rs/crates/cxx
-[c~cxx~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cxx-yellow
-[c~cxx~repo]: https://github.com/dtolnay/cxx
-[c~cxx~repo~badge]: https://img.shields.io/badge/cxx-steelblue?logo=github
-[c~cxx~website]: https://cxx.rs
-[c~cxx~website~badge]: https://img.shields.io/badge/cxx-coral
-[c~d3d12~crates.io]: https://crates.io/crates/d3d12
-[c~d3d12~crates.io~badge]: https://img.shields.io/badge/crates.io-d3d12-crimson
-[c~d3d12~docs]: https://docs.rs/d3d12
-[c~d3d12~docs~badge]: https://img.shields.io/crates/v/d3d12?label=d3d12
-[c~d3d12~lib.rs]: https://lib.rs/crates/d3d12
-[c~d3d12~lib.rs~badge]: https://img.shields.io/badge/lib.rs-d3d12-yellow
-[c~d3d12~repo]: https://github.com/gfx-rs/wgpu/tree/trunk/d3d12
-[c~d3d12~repo~badge]: https://img.shields.io/badge/d3d12-steelblue?logo=github
-[c~dapr~crates.io]: https://crates.io/crates/dapr
-[c~dapr~crates.io~badge]: https://img.shields.io/badge/crates.io-dapr-crimson
-[c~dapr~docs]: https://docs.rs/dapr
-[c~dapr~docs~badge]: https://img.shields.io/crates/v/dapr?label=dapr
-[c~dapr~lib.rs]: https://lib.rs/crates/dapr
-[c~dapr~lib.rs~badge]: https://img.shields.io/badge/lib.rs-dapr-yellow
-[c~dapr~repo]: https://github.com/dapr/rust-sdk
-[c~dapr~repo~badge]: https://img.shields.io/badge/dapr-steelblue?logo=github
-[c~darling~crates.io]: https://crates.io/crates/darling
-[c~darling~crates.io~badge]: https://img.shields.io/badge/crates.io-darling-crimson
-[c~darling~docs]: https://docs.rs/darling
-[c~darling~docs~badge]: https://img.shields.io/crates/v/darling?label=darling
-[c~darling~lib.rs]: https://lib.rs/crates/darling
-[c~darling~lib.rs~badge]: https://img.shields.io/badge/lib.rs-darling-yellow
-[c~darling~repo]: https://github.com/TedDriggs/darling
-[c~darling~repo~badge]: https://img.shields.io/badge/darling-steelblue?logo=github
-[c~dashmap~crates.io]: https://crates.io/crates/dashmap
-[c~dashmap~crates.io~badge]: https://img.shields.io/badge/crates.io-dashmap-crimson
-[c~dashmap~docs]: https://docs.rs/dashmap
-[c~dashmap~docs~badge]: https://img.shields.io/crates/v/dashmap?label=dashmap
-[c~dashmap~lib.rs]: https://lib.rs/crates/dashmap
-[c~dashmap~lib.rs~badge]: https://img.shields.io/badge/lib.rs-dashmap-yellow
-[c~dashmap~repo]: https://github.com/xacrimon/dashmap
-[c~dashmap~repo~badge]: https://img.shields.io/badge/dashmap-steelblue?logo=github
-[c~data-encoding::Encoding::encode~docs]: https://docs.rs/data-encoding/latest/data-encoding/struct.Encoding.html#method.encode
-[c~data-encoding::HEXUPPER~docs]: https://docs.rs/data-encoding/latest/data-encoding/constant.HEXUPPER.html
-[c~data-encoding~crates.io]: https://crates.io/crates/data-encoding
-[c~data-encoding~crates.io~badge]: https://img.shields.io/badge/crates.io-data--encoding-crimson
-[c~data-encoding~docs]: https://docs.rs/data-encoding
-[c~data-encoding~docs~badge]: https://img.shields.io/crates/v/data-encoding?label=data-encoding
-[c~data-encoding~lib.rs]: https://lib.rs/crates/data-encoding
-[c~data-encoding~lib.rs~badge]: https://img.shields.io/badge/lib.rs-data--encoding-yellow
-[c~data-encoding~repo]: https://github.com/ia0/data-encoding
-[c~data-encoding~repo~badge]: https://img.shields.io/badge/data--encoding-steelblue?logo=github
-[c~dataframe~crates.io]: https://crates.io/crates/dataframe
-[c~dataframe~crates.io~badge]: https://img.shields.io/badge/crates.io-dataframe-crimson
-[c~dataframe~docs]: https://docs.rs/dataframe
-[c~dataframe~docs~badge]: https://img.shields.io/crates/v/dataframe?label=dataframe
-[c~dataframe~lib.rs]: https://lib.rs/crates/dataframe
-[c~dataframe~lib.rs~badge]: https://img.shields.io/badge/lib.rs-dataframe-yellow
-[c~dataframe~repo]: https://github.com/EntilZha/dataframe
-[c~dataframe~repo~badge]: https://img.shields.io/badge/dataframe-steelblue?logo=github
-[c~datafusion~crates.io]: https://crates.io/crates/datafusion
-[c~datafusion~crates.io~badge]: https://img.shields.io/badge/crates.io-datafusion-crimson
-[c~datafusion~docs]: https://docs.rs/datafusion
-[c~datafusion~docs~badge]: https://img.shields.io/crates/v/datafusion?label=datafusion
-[c~datafusion~lib.rs]: https://lib.rs/crates/datafusion
-[c~datafusion~lib.rs~badge]: https://img.shields.io/badge/lib.rs-datafusion-yellow
-[c~datafusion~repo]: https://github.com/apache/datafusion
-[c~datafusion~repo~badge]: https://img.shields.io/badge/datafusion-steelblue?logo=github
-[c~datafusion~website]: https://datafusion.apache.org
-[c~datafusion~website~badge]: https://img.shields.io/badge/datafusion-coral
-[c~deadpool-postgres~crates.io]: https://crates.io/crates/deadpool-postgres
-[c~deadpool-postgres~crates.io~badge]: https://img.shields.io/badge/crates.io-deadpool--postgres-crimson
-[c~deadpool-postgres~docs]: https://docs.rs/deadpool-postgres
-[c~deadpool-postgres~docs~badge]: https://img.shields.io/crates/v/deadpool-postgres?label=deadpool-postgres
-[c~deadpool-postgres~lib.rs]: https://lib.rs/crates/deadpool-postgres
-[c~deadpool-postgres~lib.rs~badge]: https://img.shields.io/badge/lib.rs-deadpool--postgres-yellow
-[c~deadpool-postgres~repo]: https://github.com/bikeshedder/deadpool
-[c~deadpool-postgres~repo~badge]: https://img.shields.io/badge/deadpool--postgres-steelblue?logo=github
-[c~deadpool~crates.io]: https://crates.io/crates/deadpool
-[c~deadpool~crates.io~badge]: https://img.shields.io/badge/crates.io-deadpool-crimson
-[c~deadpool~docs]: https://docs.rs/deadpool
-[c~deadpool~docs~badge]: https://img.shields.io/crates/v/deadpool?label=deadpool
-[c~deadpool~lib.rs]: https://lib.rs/crates/deadpool
-[c~deadpool~lib.rs~badge]: https://img.shields.io/badge/lib.rs-deadpool-yellow
-[c~deadpool~repo]: https://github.com/bikeshedder/deadpool
-[c~deadpool~repo~badge]: https://img.shields.io/badge/deadpool-steelblue?logo=github
-[c~deflate~crates.io]: https://crates.io/crates/deflate
-[c~deflate~crates.io~badge]: https://img.shields.io/badge/crates.io-deflate-crimson
-[c~deflate~docs]: https://docs.rs/deflate
-[c~deflate~docs~badge]: https://img.shields.io/crates/v/deflate?label=deflate
-[c~deflate~lib.rs]: https://lib.rs/crates/deflate
-[c~deflate~lib.rs~badge]: https://img.shields.io/badge/lib.rs-deflate-yellow
-[c~deflate~repo]: https://github.com/image-rs/deflate-rs
-[c~deflate~repo~badge]: https://img.shields.io/badge/deflate-steelblue?logo=github
-[c~defmt~crates.io]: https://crates.io/crates/defmt
-[c~defmt~crates.io~badge]: https://img.shields.io/badge/crates.io-defmt-crimson
-[c~defmt~docs]: https://docs.rs/defmt
-[c~defmt~docs~badge]: https://img.shields.io/crates/v/defmt?label=defmt
-[c~defmt~lib.rs]: https://lib.rs/crates/defmt
-[c~defmt~lib.rs~badge]: https://img.shields.io/badge/lib.rs-defmt-yellow
-[c~defmt~repo]: https://github.com/knurling-rs/defmt
-[c~defmt~repo~badge]: https://img.shields.io/badge/defmt-steelblue?logo=github
-[c~defmt~website]: https://knurling.ferrous-systems.com
-[c~defmt~website~badge]: https://img.shields.io/badge/defmt-coral
-[c~delta~crates.io]: https://crates.io/crates/delta
-[c~delta~crates.io~badge]: https://img.shields.io/badge/crates.io-delta-crimson
-[c~delta~docs]: https://docs.rs/delta
-[c~delta~docs~badge]: https://img.shields.io/crates/v/delta?label=delta
-[c~delta~lib.rs]: https://lib.rs/crates/delta
-[c~delta~lib.rs~badge]: https://img.shields.io/badge/lib.rs-delta-yellow
-[c~delta~repo]: https://github.com/dylanmckay/delta
-[c~delta~repo~badge]: https://img.shields.io/badge/delta-steelblue?logo=github
-[c~deno~crates.io]: https://crates.io/crates/deno
-[c~deno~crates.io~badge]: https://img.shields.io/badge/crates.io-deno-crimson
-[c~deno~docs]: https://docs.rs/deno
-[c~deno~docs~badge]: https://img.shields.io/crates/v/deno?label=deno
-[c~deno~lib.rs]: https://lib.rs/crates/deno
-[c~deno~lib.rs~badge]: https://img.shields.io/badge/lib.rs-deno-yellow
-[c~deno~repo]: https://github.com/denoland/deno
-[c~deno~repo~badge]: https://img.shields.io/badge/deno-steelblue?logo=github
-[c~derive_builder~crates.io]: https://crates.io/crates/derive_builder
-[c~derive_builder~crates.io~badge]: https://img.shields.io/badge/crates.io-derive__builder-crimson
-[c~derive_builder~docs]: https://docs.rs/derive_builder
-[c~derive_builder~docs~badge]: https://img.shields.io/crates/v/derive_builder?label=derive_builder
-[c~derive_builder~lib.rs]: https://lib.rs/crates/derive_builder
-[c~derive_builder~lib.rs~badge]: https://img.shields.io/badge/lib.rs-derive__builder-yellow
-[c~derive_builder~repo]: https://github.com/colin-kiegel/rust-derive-builder
-[c~derive_builder~repo~badge]: https://img.shields.io/badge/derive__builder-steelblue?logo=github
-[c~derive_more~crates.io]: https://crates.io/crates/derive_more
-[c~derive_more~crates.io~badge]: https://img.shields.io/badge/crates.io-derive__more-crimson
-[c~derive_more~docs]: https://docs.rs/derive_more
-[c~derive_more~docs~badge]: https://img.shields.io/crates/v/derive_more?label=derive_more
-[c~derive_more~lib.rs]: https://lib.rs/crates/derive_more
-[c~derive_more~lib.rs~badge]: https://img.shields.io/badge/lib.rs-derive__more-yellow
-[c~derive_more~repo]: https://github.com/JelteF/derive_more
-[c~derive_more~repo~badge]: https://img.shields.io/badge/derive__more-steelblue?logo=github
-[c~derive~crates.io]: https://crates.io/crates/derive
-[c~derive~crates.io~badge]: https://img.shields.io/badge/crates.io-derive-crimson
-[c~derive~docs]: https://docs.rs/derive
-[c~derive~docs~badge]: https://img.shields.io/crates/v/derive?label=derive
-[c~derive~lib.rs]: https://lib.rs/crates/derive
-[c~derive~lib.rs~badge]: https://img.shields.io/badge/lib.rs-derive-yellow
-[c~derive~repo]: https://github.com/scooter-dangle/derive-rs
-[c~derive~repo~badge]: https://img.shields.io/badge/derive-steelblue?logo=github
-[c~der~crates.io]: https://crates.io/crates/der
-[c~der~crates.io~badge]: https://img.shields.io/badge/crates.io-der-crimson
-[c~der~docs]: https://docs.rs/der
-[c~der~docs~badge]: https://img.shields.io/crates/v/der?label=der
-[c~der~lib.rs]: https://lib.rs/crates/der
-[c~der~lib.rs~badge]: https://img.shields.io/badge/lib.rs-der-yellow
-[c~der~repo]: https://github.com/RustCrypto/formats/tree/master/der
-[c~der~repo~badge]: https://img.shields.io/badge/der-steelblue?logo=github
-[c~der~website]: https://github.com/RustCrypto/formats/blob/master/der/README.md
-[c~der~website~badge]: https://img.shields.io/badge/der-coral
-[c~devx-cmd~crates.io]: https://crates.io/crates/devx-cmd
-[c~devx-cmd~crates.io~badge]: https://img.shields.io/badge/crates.io-devx--cmd-crimson
-[c~devx-cmd~docs]: https://docs.rs/devx-cmd
-[c~devx-cmd~docs~badge]: https://img.shields.io/crates/v/devx-cmd?label=devx-cmd
-[c~devx-cmd~lib.rs]: https://lib.rs/crates/devx-cmd
-[c~devx-cmd~lib.rs~badge]: https://img.shields.io/badge/lib.rs-devx--cmd-yellow
-[c~devx-cmd~repo]: https://github.com/elastio/devx/tree/master/devx-cmd
-[c~devx-cmd~repo~badge]: https://img.shields.io/badge/devx--cmd-steelblue?logo=github
-[c~devx-pre-commit~crates.io]: https://crates.io/crates/devx-pre-commit
-[c~devx-pre-commit~crates.io~badge]: https://img.shields.io/badge/crates.io-devx--pre--commit-crimson
-[c~devx-pre-commit~docs]: https://docs.rs/devx-pre-commit
-[c~devx-pre-commit~docs~badge]: https://img.shields.io/crates/v/devx-pre-commit?label=devx-pre-commit
-[c~devx-pre-commit~lib.rs]: https://lib.rs/crates/devx-pre-commit
-[c~devx-pre-commit~lib.rs~badge]: https://img.shields.io/badge/lib.rs-devx--pre--commit-yellow
-[c~devx-pre-commit~repo]: https://github.com/elastio/devx/tree/master/devx-pre-commit
-[c~devx-pre-commit~repo~badge]: https://img.shields.io/badge/devx--pre--commit-steelblue?logo=github
-[c~dhat~crates.io]: https://crates.io/crates/dhat
-[c~dhat~crates.io~badge]: https://img.shields.io/badge/crates.io-dhat-crimson
-[c~dhat~docs]: https://docs.rs/dhat
-[c~dhat~docs~badge]: https://img.shields.io/crates/v/dhat?label=dhat
-[c~dhat~lib.rs]: https://lib.rs/crates/dhat
-[c~dhat~lib.rs~badge]: https://img.shields.io/badge/lib.rs-dhat-yellow
-[c~dhat~repo]: https://github.com/nnethercote/dhat-rs
-[c~dhat~repo~badge]: https://img.shields.io/badge/dhat-steelblue?logo=github
-[c~dialoguer~crates.io]: https://crates.io/crates/dialoguer
-[c~dialoguer~crates.io~badge]: https://img.shields.io/badge/crates.io-dialoguer-crimson
-[c~dialoguer~docs]: https://docs.rs/dialoguer
-[c~dialoguer~docs~badge]: https://img.shields.io/crates/v/dialoguer?label=dialoguer
-[c~dialoguer~lib.rs]: https://lib.rs/crates/dialoguer
-[c~dialoguer~lib.rs~badge]: https://img.shields.io/badge/lib.rs-dialoguer-yellow
-[c~dialoguer~repo]: https://github.com/console-rs/dialoguer
-[c~dialoguer~repo~badge]: https://img.shields.io/badge/dialoguer-steelblue?logo=github
-[c~dicom~crates.io]: https://crates.io/crates/dicom
-[c~dicom~crates.io~badge]: https://img.shields.io/badge/crates.io-dicom-crimson
-[c~dicom~docs]: https://docs.rs/dicom
-[c~dicom~docs~badge]: https://img.shields.io/crates/v/dicom?label=dicom
-[c~dicom~lib.rs]: https://lib.rs/crates/dicom
-[c~dicom~lib.rs~badge]: https://img.shields.io/badge/lib.rs-dicom-yellow
-[c~dicom~repo]: https://github.com/Enet4/dicom-rs
-[c~dicom~repo~badge]: https://img.shields.io/badge/dicom-steelblue?logo=github
-[c~diesel-async~docs]: https://docs.rs/diesel-async/latest/diesel-async
-[c~diesel-oci~crates.io]: https://crates.io/crates/diesel-oci
-[c~diesel-oci~crates.io~badge]: https://img.shields.io/badge/crates.io-diesel--oci-crimson
-[c~diesel-oci~docs]: https://docs.rs/diesel-oci
-[c~diesel-oci~docs~badge]: https://img.shields.io/crates/v/diesel-oci?label=diesel-oci
-[c~diesel-oci~lib.rs]: https://lib.rs/crates/diesel-oci
-[c~diesel-oci~lib.rs~badge]: https://img.shields.io/badge/lib.rs-diesel--oci-yellow
-[c~diesel-oci~repo]: https://github.com/GiGainfosystems/diesel-oci
-[c~diesel-oci~repo~badge]: https://img.shields.io/badge/diesel--oci-steelblue?logo=github
-[c~diesel_migrations~crates.io]: https://crates.io/crates/diesel_migrations
-[c~diesel_migrations~crates.io~badge]: https://img.shields.io/badge/crates.io-diesel__migrations-crimson
-[c~diesel_migrations~docs]: https://docs.rs/diesel_migrations
-[c~diesel_migrations~docs~badge]: https://img.shields.io/crates/v/diesel_migrations?label=diesel_migrations
-[c~diesel_migrations~lib.rs]: https://lib.rs/crates/diesel_migrations
-[c~diesel_migrations~lib.rs~badge]: https://img.shields.io/badge/lib.rs-diesel__migrations-yellow
-[c~diesel_migrations~repo]: https://github.com/diesel-rs/diesel
-[c~diesel_migrations~repo~badge]: https://img.shields.io/badge/diesel__migrations-steelblue?logo=github
-[c~diesel_migrations~website]: https://diesel.rs
-[c~diesel_migrations~website~badge]: https://img.shields.io/badge/diesel__migrations-coral
-[c~diesel~crates.io]: https://crates.io/crates/diesel
-[c~diesel~crates.io~badge]: https://img.shields.io/badge/crates.io-diesel-crimson
-[c~diesel~docs]: https://docs.rs/diesel
-[c~diesel~docs~badge]: https://img.shields.io/crates/v/diesel?label=diesel
-[c~diesel~lib.rs]: https://lib.rs/crates/diesel
-[c~diesel~lib.rs~badge]: https://img.shields.io/badge/lib.rs-diesel-yellow
-[c~diesel~repo]: https://github.com/diesel-rs/diesel
-[c~diesel~repo~badge]: https://img.shields.io/badge/diesel-steelblue?logo=github
-[c~diesel~website]: https://diesel.rs
-[c~diesel~website~badge]: https://img.shields.io/badge/diesel-coral
-[c~diff~crates.io]: https://crates.io/crates/diff
-[c~diff~crates.io~badge]: https://img.shields.io/badge/crates.io-diff-crimson
-[c~diff~docs]: https://docs.rs/diff
-[c~diff~docs~badge]: https://img.shields.io/crates/v/diff?label=diff
-[c~diff~lib.rs]: https://lib.rs/crates/diff
-[c~diff~lib.rs~badge]: https://img.shields.io/badge/lib.rs-diff-yellow
-[c~diff~repo]: https://github.com/utkarshkukreti/diff.rs
-[c~diff~repo~badge]: https://img.shields.io/badge/diff-steelblue?logo=github
-[c~digest::Context~docs]: https://docs.rs/ring/latest/ring/digest/struct.Context.html
-[c~digest::Digest~docs]: https://docs.rs/ring/latest/ring/digest/struct.Digest.html
-[c~digest~crates.io]: https://crates.io/crates/digest
-[c~digest~crates.io~badge]: https://img.shields.io/badge/crates.io-digest-crimson
-[c~digest~docs]: https://docs.rs/digest
-[c~digest~docs~badge]: https://img.shields.io/crates/v/digest?label=digest
-[c~digest~lib.rs]: https://lib.rs/crates/digest
-[c~digest~lib.rs~badge]: https://img.shields.io/badge/lib.rs-digest-yellow
-[c~digest~repo]: https://github.com/RustCrypto/traits
-[c~digest~repo~badge]: https://img.shields.io/badge/digest-steelblue?logo=github
-[c~dioxus-desktop~crates.io]: https://crates.io/crates/dioxus-desktop
-[c~dioxus-desktop~crates.io~badge]: https://img.shields.io/badge/crates.io-dioxus--desktop-crimson
-[c~dioxus-desktop~docs]: https://docs.rs/dioxus-desktop
-[c~dioxus-desktop~docs~badge]: https://img.shields.io/crates/v/dioxus-desktop?label=dioxus-desktop
-[c~dioxus-desktop~lib.rs]: https://lib.rs/crates/dioxus-desktop
-[c~dioxus-desktop~lib.rs~badge]: https://img.shields.io/badge/lib.rs-dioxus--desktop-yellow
-[c~dioxus-desktop~repo]: https://github.com/DioxusLabs/dioxus/tree/main/packages/desktop
-[c~dioxus-desktop~repo~badge]: https://img.shields.io/badge/dioxus--desktop-steelblue?logo=github
-[c~dioxus-desktop~website]: https://dioxuslabs.com/learn/0.6/getting_started
-[c~dioxus-desktop~website~badge]: https://img.shields.io/badge/dioxus--desktop-coral
-[c~dioxus-web~crates.io]: https://crates.io/crates/dioxus-web
-[c~dioxus-web~crates.io~badge]: https://img.shields.io/badge/crates.io-dioxus--web-crimson
-[c~dioxus-web~docs]: https://docs.rs/dioxus-web
-[c~dioxus-web~docs~badge]: https://img.shields.io/crates/v/dioxus-web?label=dioxus-web
-[c~dioxus-web~lib.rs]: https://lib.rs/crates/dioxus-web
-[c~dioxus-web~lib.rs~badge]: https://img.shields.io/badge/lib.rs-dioxus--web-yellow
-[c~dioxus-web~repo]: https://github.com/DioxusLabs/dioxus
-[c~dioxus-web~repo~badge]: https://img.shields.io/badge/dioxus--web-steelblue?logo=github
-[c~dioxus-web~website]: https://dioxuslabs.com/learn/0.6/getting_started
-[c~dioxus-web~website~badge]: https://img.shields.io/badge/dioxus--web-coral
-[c~dioxus~crates.io]: https://crates.io/crates/dioxus
-[c~dioxus~crates.io~badge]: https://img.shields.io/badge/crates.io-dioxus-crimson
-[c~dioxus~docs]: https://docs.rs/dioxus
-[c~dioxus~docs~badge]: https://img.shields.io/crates/v/dioxus?label=dioxus
-[c~dioxus~lib.rs]: https://lib.rs/crates/dioxus
-[c~dioxus~lib.rs~badge]: https://img.shields.io/badge/lib.rs-dioxus-yellow
-[c~dioxus~repo]: https://github.com/DioxusLabs/dioxus
-[c~dioxus~repo~badge]: https://img.shields.io/badge/dioxus-steelblue?logo=github
-[c~dioxus~website]: https://dioxuslabs.com
-[c~dioxus~website~badge]: https://img.shields.io/badge/dioxus-coral
-[c~directories~crates.io]: https://crates.io/crates/directories
-[c~directories~crates.io~badge]: https://img.shields.io/badge/crates.io-directories-crimson
-[c~directories~docs]: https://docs.rs/directories
-[c~directories~docs~badge]: https://img.shields.io/crates/v/directories?label=directories
-[c~directories~lib.rs]: https://lib.rs/crates/directories
-[c~directories~lib.rs~badge]: https://img.shields.io/badge/lib.rs-directories-yellow
-[c~directories~repo]: https://github.com/dirs-dev/directories-rs
-[c~directories~repo~badge]: https://img.shields.io/badge/directories-steelblue?logo=github
-[c~dirs~crates.io]: https://crates.io/crates/dirs
-[c~dirs~crates.io~badge]: https://img.shields.io/badge/crates.io-dirs-crimson
-[c~dirs~docs]: https://docs.rs/dirs
-[c~dirs~docs~badge]: https://img.shields.io/crates/v/dirs?label=dirs
-[c~dirs~lib.rs]: https://lib.rs/crates/dirs
-[c~dirs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-dirs-yellow
-[c~dirs~repo]: https://github.com/dirs-dev/dirs-rs
-[c~dirs~repo~badge]: https://img.shields.io/badge/dirs-steelblue?logo=github
-[c~divan~crates.io]: https://crates.io/crates/divan
-[c~divan~crates.io~badge]: https://img.shields.io/badge/crates.io-divan-crimson
-[c~divan~docs]: https://docs.rs/divan
-[c~divan~docs~badge]: https://img.shields.io/crates/v/divan?label=divan
-[c~divan~lib.rs]: https://lib.rs/crates/divan
-[c~divan~lib.rs~badge]: https://img.shields.io/badge/lib.rs-divan-yellow
-[c~divan~repo]: https://github.com/nvzqz/divan
-[c~divan~repo~badge]: https://img.shields.io/badge/divan-steelblue?logo=github
-[c~di~crates.io]: https://crates.io/crates/di
-[c~di~crates.io~badge]: https://img.shields.io/badge/crates.io-di-crimson
-[c~di~docs]: http://nercury.github.io/di-rs/di
-[c~di~docs~badge]: https://img.shields.io/crates/v/di?label=di
-[c~di~lib.rs]: https://lib.rs/crates/di
-[c~di~lib.rs~badge]: https://img.shields.io/badge/lib.rs-di-yellow
-[c~di~repo]: https://github.com/Nercury/di-rs
-[c~di~repo~badge]: https://img.shields.io/badge/di-steelblue?logo=github
-[c~doc-comment~crates.io]: https://crates.io/crates/doc-comment
-[c~doc-comment~crates.io~badge]: https://img.shields.io/badge/crates.io-doc--comment-crimson
-[c~doc-comment~docs]: https://docs.rs/doc-comment
-[c~doc-comment~docs~badge]: https://img.shields.io/crates/v/doc-comment?label=doc-comment
-[c~doc-comment~lib.rs]: https://lib.rs/crates/doc-comment
-[c~doc-comment~lib.rs~badge]: https://img.shields.io/badge/lib.rs-doc--comment-yellow
-[c~doc-comment~repo]: https://github.com/GuillaumeGomez/doc-comment
-[c~doc-comment~repo~badge]: https://img.shields.io/badge/doc--comment-steelblue?logo=github
-[c~dockworker~crates.io]: https://crates.io/crates/dockworker
-[c~dockworker~crates.io~badge]: https://img.shields.io/badge/crates.io-dockworker-crimson
-[c~dockworker~docs]: https://docs.rs/dockworker
-[c~dockworker~docs~badge]: https://img.shields.io/crates/v/dockworker?label=dockworker
-[c~dockworker~lib.rs]: https://lib.rs/crates/dockworker
-[c~dockworker~lib.rs~badge]: https://img.shields.io/badge/lib.rs-dockworker-yellow
-[c~dockworker~repo]: https://github.com/Idein/dockworker
-[c~dockworker~repo~badge]: https://img.shields.io/badge/dockworker-steelblue?logo=github
-[c~dominator~crates.io]: https://crates.io/crates/dominator
-[c~dominator~crates.io~badge]: https://img.shields.io/badge/crates.io-dominator-crimson
-[c~dominator~docs]: https://docs.rs/dominator
-[c~dominator~docs~badge]: https://img.shields.io/crates/v/dominator?label=dominator
-[c~dominator~lib.rs]: https://lib.rs/crates/dominator
-[c~dominator~lib.rs~badge]: https://img.shields.io/badge/lib.rs-dominator-yellow
-[c~dominator~repo]: https://github.com/Pauan/rust-dominator
-[c~dominator~repo~badge]: https://img.shields.io/badge/dominator-steelblue?logo=github
-[c~dora-rs~crates.io]: https://crates.io/crates/dora-rs
-[c~dora-rs~crates.io~badge]: https://img.shields.io/badge/crates.io-dora--rs-crimson
-[c~dora-rs~docs]: https://docs.rs/dora-rs
-[c~dora-rs~docs~badge]: https://img.shields.io/crates/v/dora-rs?label=dora-rs
-[c~dora-rs~lib.rs]: https://lib.rs/crates/dora-rs
-[c~dora-rs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-dora--rs-yellow
-[c~dora-rs~repo~badge]: https://img.shields.io/badge/dora--rs-steelblue?logo=github
-[c~dora~crates.io]: https://crates.io/crates/dora
-[c~dora~crates.io~badge]: https://img.shields.io/badge/crates.io-dora-crimson
-[c~dora~docs]: https://docs.rs/dora
-[c~dora~docs~badge]: https://img.shields.io/crates/v/dora?label=dora
-[c~dora~lib.rs]: https://lib.rs/crates/dora
-[c~dora~lib.rs~badge]: https://img.shields.io/badge/lib.rs-dora-yellow
-[c~dora~repo]: https://github.com/dinfuehr/dora
-[c~dora~repo~badge]: https://img.shields.io/badge/dora-steelblue?logo=github
-[c~dotenvy~crates.io]: https://crates.io/crates/dotenvy
-[c~dotenvy~crates.io~badge]: https://img.shields.io/badge/crates.io-dotenvy-crimson
-[c~dotenvy~docs]: https://docs.rs/dotenvy
-[c~dotenvy~docs~badge]: https://img.shields.io/crates/v/dotenvy?label=dotenvy
-[c~dotenvy~lib.rs]: https://lib.rs/crates/dotenvy
-[c~dotenvy~lib.rs~badge]: https://img.shields.io/badge/lib.rs-dotenvy-yellow
-[c~dotenvy~repo]: https://github.com/allan2/dotenvy
-[c~dotenvy~repo~badge]: https://img.shields.io/badge/dotenvy-steelblue?logo=github
-[c~dotenv~crates.io]: https://crates.io/crates/dotenv
-[c~dotenv~crates.io~badge]: https://img.shields.io/badge/crates.io-dotenv-crimson
-[c~dotenv~docs]: https://docs.rs/dotenv
-[c~dotenv~docs~badge]: https://img.shields.io/crates/v/dotenv?label=dotenv
-[c~dotenv~lib.rs]: https://lib.rs/crates/dotenv
-[c~dotenv~lib.rs~badge]: https://img.shields.io/badge/lib.rs-dotenv-yellow
-[c~dotenv~repo]: https://github.com/dotenv-rs/dotenv
-[c~dotenv~repo~badge]: https://img.shields.io/badge/dotenv-steelblue?logo=github
-[c~dot~crates.io]: https://crates.io/crates/dot
-[c~dot~crates.io~badge]: https://img.shields.io/badge/crates.io-dot-crimson
-[c~dot~docs]: https://docs.rs/dot
-[c~dot~docs~badge]: https://img.shields.io/crates/v/dot?label=dot
-[c~dot~lib.rs]: https://lib.rs/crates/dot
-[c~dot~lib.rs~badge]: https://img.shields.io/badge/lib.rs-dot-yellow
-[c~dot~repo]: https://github.com/GrahamDennis/dot-rust
-[c~dot~repo~badge]: https://img.shields.io/badge/dot-steelblue?logo=github
-[c~druid~crates.io]: https://crates.io/crates/druid
-[c~druid~crates.io~badge]: https://img.shields.io/badge/crates.io-druid-crimson
-[c~druid~docs]: https://docs.rs/druid
-[c~druid~docs~badge]: https://img.shields.io/crates/v/druid?label=druid
-[c~druid~lib.rs]: https://lib.rs/crates/druid
-[c~druid~lib.rs~badge]: https://img.shields.io/badge/lib.rs-druid-yellow
-[c~druid~repo]: https://github.com/linebender/druid
-[c~druid~repo~badge]: https://img.shields.io/badge/druid-steelblue?logo=github
-[c~dsa~crates.io]: https://crates.io/crates/dsa
-[c~dsa~crates.io~badge]: https://img.shields.io/badge/crates.io-dsa-crimson
-[c~dsa~docs]: https://docs.rs/dsa
-[c~dsa~docs~badge]: https://img.shields.io/crates/v/dsa?label=dsa
-[c~dsa~lib.rs]: https://lib.rs/crates/dsa
-[c~dsa~lib.rs~badge]: https://img.shields.io/badge/lib.rs-dsa-yellow
-[c~dsa~repo]: https://github.com/RustCrypto/signatures/tree/master/dsa
-[c~dsa~repo~badge]: https://img.shields.io/badge/dsa-steelblue?logo=github
-[c~dsa~website]: https://github.com/RustCrypto/signatures/blob/master/dsa/README.md
-[c~dsa~website~badge]: https://img.shields.io/badge/dsa-coral
-[c~dtrace~crates.io]: https://crates.io/crates/dtrace
-[c~dtrace~crates.io~badge]: https://img.shields.io/badge/crates.io-dtrace-crimson
-[c~dtrace~docs]: https://docs.rs/dtrace
-[c~dtrace~docs~badge]: https://img.shields.io/crates/v/dtrace?label=dtrace
-[c~dtrace~lib.rs]: https://lib.rs/crates/dtrace
-[c~dtrace~lib.rs~badge]: https://img.shields.io/badge/lib.rs-dtrace-yellow
-[c~dtrace~repo]: https://github.com/xiaopengli89/dtrace-rs
-[c~dtrace~repo~badge]: https://img.shields.io/badge/dtrace-steelblue?logo=github
-[c~duct~crates.io]: https://crates.io/crates/duct
-[c~duct~crates.io~badge]: https://img.shields.io/badge/crates.io-duct-crimson
-[c~duct~docs]: https://docs.rs/duct
-[c~duct~docs~badge]: https://img.shields.io/crates/v/duct?label=duct
-[c~duct~gotchas~repo]: https://github.com/oconnor663/duct.py/blob/master/gotchas.md
-[c~duct~lib.rs]: https://lib.rs/crates/duct
-[c~duct~lib.rs~badge]: https://img.shields.io/badge/lib.rs-duct-yellow
-[c~duct~repo]: https://github.com/oconnor663/duct.rs
-[c~duct~repo~badge]: https://img.shields.io/badge/duct-steelblue?logo=github
-[c~dust~crates.io]: https://crates.io/crates/dust
-[c~dust~crates.io~badge]: https://img.shields.io/badge/crates.io-dust-crimson
-[c~dust~docs]: https://docs.rs/dust
-[c~dust~docs~badge]: https://img.shields.io/crates/v/dust?label=dust
-[c~dust~lib.rs]: https://lib.rs/crates/dust
-[c~dust~lib.rs~badge]: https://img.shields.io/badge/lib.rs-dust-yellow
-[c~dust~repo]: https://github.com/farodin91/dust
-[c~dust~repo~badge]: https://img.shields.io/badge/dust-steelblue?logo=github
-[c~dyn-clone~crates.io]: https://crates.io/crates/dyn-clone
-[c~dyn-clone~crates.io~badge]: https://img.shields.io/badge/crates.io-dyn--clone-crimson
-[c~dyn-clone~docs]: https://docs.rs/dyn-clone
-[c~dyn-clone~docs~badge]: https://img.shields.io/crates/v/dyn-clone?label=dyn-clone
-[c~dyn-clone~lib.rs]: https://lib.rs/crates/dyn-clone
-[c~dyn-clone~lib.rs~badge]: https://img.shields.io/badge/lib.rs-dyn--clone-yellow
-[c~dyn-clone~repo]: https://github.com/dtolnay/dyn-clone
-[c~dyn-clone~repo~badge]: https://img.shields.io/badge/dyn--clone-steelblue?logo=github
-[c~ecdsa~crates.io]: https://crates.io/crates/ecdsa
-[c~ecdsa~crates.io~badge]: https://img.shields.io/badge/crates.io-ecdsa-crimson
-[c~ecdsa~docs]: https://docs.rs/ecdsa
-[c~ecdsa~docs~badge]: https://img.shields.io/crates/v/ecdsa?label=ecdsa
-[c~ecdsa~lib.rs]: https://lib.rs/crates/ecdsa
-[c~ecdsa~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ecdsa-yellow
-[c~ecdsa~repo]: https://github.com/RustCrypto/signatures/tree/master/ecdsa
-[c~ecdsa~repo~badge]: https://img.shields.io/badge/ecdsa-steelblue?logo=github
-[c~ecdsa~website]: https://github.com/RustCrypto/signatures/blob/master/ecdsa/README.md
-[c~ecdsa~website~badge]: https://img.shields.io/badge/ecdsa-coral
-[c~ed25519-dalek~crates.io]: https://crates.io/crates/ed25519-dalek
-[c~ed25519-dalek~crates.io~badge]: https://img.shields.io/badge/crates.io-ed25519--dalek-crimson
-[c~ed25519-dalek~docs]: https://docs.rs/ed25519-dalek
-[c~ed25519-dalek~docs~badge]: https://img.shields.io/crates/v/ed25519-dalek?label=ed25519-dalek
-[c~ed25519-dalek~lib.rs]: https://lib.rs/crates/ed25519-dalek
-[c~ed25519-dalek~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ed25519--dalek-yellow
-[c~ed25519-dalek~repo]: https://github.com/dalek-cryptography/curve25519-dalek/tree/main/ed25519-dalek
-[c~ed25519-dalek~repo~badge]: https://img.shields.io/badge/ed25519--dalek-steelblue?logo=github
-[c~ed25519-dalek~website]: https://github.com/dalek-cryptography/curve25519-dalek
-[c~ed25519-dalek~website~badge]: https://img.shields.io/badge/ed25519--dalek-coral
-[c~ed25519~crates.io]: https://crates.io/crates/ed25519
-[c~ed25519~crates.io~badge]: https://img.shields.io/badge/crates.io-ed25519-crimson
-[c~ed25519~docs]: https://docs.rs/ed25519
-[c~ed25519~docs~badge]: https://img.shields.io/crates/v/ed25519?label=ed25519
-[c~ed25519~lib.rs]: https://lib.rs/crates/ed25519
-[c~ed25519~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ed25519-yellow
-[c~ed25519~repo]: https://github.com/RustCrypto/signatures/tree/master/ed25519
-[c~ed25519~repo~badge]: https://img.shields.io/badge/ed25519-steelblue?logo=github
-[c~ed25519~website]: https://github.com/RustCrypto/signatures/blob/master/ed25519/README.md
-[c~ed25519~website~badge]: https://img.shields.io/badge/ed25519-coral
-[c~eframe~crates.io]: https://crates.io/crates/eframe
-[c~eframe~crates.io~badge]: https://img.shields.io/badge/crates.io-eframe-crimson
-[c~eframe~docs]: https://docs.rs/eframe
-[c~eframe~docs~badge]: https://img.shields.io/crates/v/eframe?label=eframe
-[c~eframe~lib.rs]: https://lib.rs/crates/eframe
-[c~eframe~lib.rs~badge]: https://img.shields.io/badge/lib.rs-eframe-yellow
-[c~eframe~repo]: https://github.com/emilk/egui/tree/master/crates/eframe
-[c~eframe~repo~badge]: https://img.shields.io/badge/eframe-steelblue?logo=github
-[c~egui::Ui~docs]: https://docs.rs/egui/latest/egui/struct.Ui.html
-[c~egui_demo_lib~repo]: https://github.com/emilk/egui/blob/master/crates/egui_demo_lib/src/demo/code_example.rs
-[c~egui~containers]: https://docs.rs/egui/latest/egui/containers
-[c~egui~crates.io]: https://crates.io/crates/egui
-[c~egui~crates.io~badge]: https://img.shields.io/badge/crates.io-egui-crimson
-[c~egui~docs]: https://docs.rs/egui
-[c~egui~docs~badge]: https://img.shields.io/crates/v/egui?label=egui
-[c~egui~lib.rs]: https://lib.rs/crates/egui
-[c~egui~lib.rs~badge]: https://img.shields.io/badge/lib.rs-egui-yellow
-[c~egui~repo]: https://github.com/emilk/egui
-[c~egui~repo~badge]: https://img.shields.io/badge/egui-steelblue?logo=github
-[c~egui~website]: https://egui.rs
-[c~egui~widgets]: https://docs.rs/egui/latest/egui/widgets#structs
-[c~ehmi~crates.io]: https://crates.io/crates/ehmi
-[c~ehmi~crates.io~badge]: https://img.shields.io/badge/crates.io-ehmi-crimson
-[c~ehmi~dependents~badge]: https://img.shields.io/crates/dependents/ehmi
-[c~ehmi~deps-rs~badge]: https://img.shields.io/deps-rs/ehmi/latest
-[c~ehmi~docs]: https://docs.rs/ehmi
-[c~ehmi~docs~badge]: https://img.shields.io/crates/v/ehmi?label=ehmi
-[c~ehmi~lib.rs]: https://lib.rs/crates/ehmi
-[c~ehmi~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ehmi-yellow
-[c~ehmi~license~badge]: https://img.shields.io/crates/l/ehmi
-[c~ehmi~recent-downloads~badge]: https://img.shields.io/crates/dr/ehmi
-[c~ehmi~repo]: https://github.com/roboplc/ehmi
-[c~ehmi~repo~badge]: https://img.shields.io/badge/ehmi-steelblue?logo=github
-[c~either~crates.io]: https://crates.io/crates/either
-[c~either~crates.io~badge]: https://img.shields.io/badge/crates.io-either-crimson
-[c~either~docs]: https://docs.rs/either
-[c~either~docs~badge]: https://img.shields.io/crates/v/either?label=either
-[c~either~lib.rs]: https://lib.rs/crates/either
-[c~either~lib.rs~badge]: https://img.shields.io/badge/lib.rs-either-yellow
-[c~either~repo]: https://github.com/rayon-rs/either
-[c~either~repo~badge]: https://img.shields.io/badge/either-steelblue?logo=github
-[c~elasticsearch~crates.io]: https://crates.io/crates/elasticsearch
-[c~elasticsearch~crates.io~badge]: https://img.shields.io/badge/crates.io-elasticsearch-crimson
-[c~elasticsearch~docs]: https://docs.rs/elasticsearch
-[c~elasticsearch~docs~badge]: https://img.shields.io/crates/v/elasticsearch?label=elasticsearch
-[c~elasticsearch~lib.rs]: https://lib.rs/crates/elasticsearch
-[c~elasticsearch~lib.rs~badge]: https://img.shields.io/badge/lib.rs-elasticsearch-yellow
-[c~elasticsearch~repo]: https://github.com/elastic/elasticsearch-rs
-[c~elasticsearch~repo~badge]: https://img.shields.io/badge/elasticsearch-steelblue?logo=github
-[c~elsa~crates.io]: https://crates.io/crates/elsa
-[c~elsa~crates.io~badge]: https://img.shields.io/badge/crates.io-elsa-crimson
-[c~elsa~docs]: https://docs.rs/elsa
-[c~elsa~docs~badge]: https://img.shields.io/crates/v/elsa?label=elsa
-[c~elsa~lib.rs]: https://lib.rs/crates/elsa
-[c~elsa~lib.rs~badge]: https://img.shields.io/badge/lib.rs-elsa-yellow
-[c~elsa~repo]: https://github.com/manishearth/elsa
-[c~elsa~repo~badge]: https://img.shields.io/badge/elsa-steelblue?logo=github
-[c~elusion~crates.io]: https://crates.io/crates/elusion
-[c~elusion~crates.io~badge]: https://img.shields.io/badge/crates.io-elusion-crimson
-[c~elusion~docs]: https://docs.rs/elusion
-[c~elusion~docs~badge]: https://img.shields.io/crates/v/elusion?label=elusion
-[c~elusion~lib.rs]: https://lib.rs/crates/elusion
-[c~elusion~lib.rs~badge]: https://img.shields.io/badge/lib.rs-elusion-yellow
-[c~elusion~repo]: https://github.com/DataBora/elusion
-[c~elusion~repo~badge]: https://img.shields.io/badge/elusion-steelblue?logo=github
-[c~embassy~crates.io]: https://crates.io/crates/embassy
-[c~embassy~crates.io~badge]: https://img.shields.io/badge/crates.io-embassy-crimson
-[c~embassy~docs]: https://docs.rs/embassy
-[c~embassy~docs~badge]: https://img.shields.io/crates/v/embassy?label=embassy
-[c~embassy~lib.rs]: https://lib.rs/crates/embassy
-[c~embassy~lib.rs~badge]: https://img.shields.io/badge/lib.rs-embassy-yellow
-[c~embassy~repo]: https://github.com/akiles/embassy
-[c~embassy~repo~badge]: https://img.shields.io/badge/embassy-steelblue?logo=github
-[c~embassy~website]: https://embassy.dev
-[c~embassy~website~badge]: https://img.shields.io/badge/embassy-coral
-[c~embedded-hal~crates.io]: https://crates.io/crates/embedded-hal
-[c~embedded-hal~crates.io~badge]: https://img.shields.io/badge/crates.io-embedded--hal-crimson
-[c~embedded-hal~docs]: https://docs.rs/embedded-hal
-[c~embedded-hal~docs~badge]: https://img.shields.io/crates/v/embedded-hal?label=embedded-hal
-[c~embedded-hal~lib.rs]: https://lib.rs/crates/embedded-hal
-[c~embedded-hal~lib.rs~badge]: https://img.shields.io/badge/lib.rs-embedded--hal-yellow
-[c~embedded-hal~repo]: https://github.com/rust-embedded/embedded-hal
-[c~embedded-hal~repo~badge]: https://img.shields.io/badge/embedded--hal-steelblue?logo=github
-[c~encoding_rs~crates.io]: https://crates.io/crates/encoding_rs
-[c~encoding_rs~crates.io~badge]: https://img.shields.io/badge/crates.io-encoding__rs-crimson
-[c~encoding_rs~docs]: https://docs.rs/encoding_rs
-[c~encoding_rs~docs~badge]: https://img.shields.io/crates/v/encoding_rs?label=encoding_rs
-[c~encoding_rs~lib.rs]: https://lib.rs/crates/encoding_rs
-[c~encoding_rs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-encoding__rs-yellow
-[c~encoding_rs~repo]: https://github.com/hsivonen/encoding_rs
-[c~encoding_rs~repo~badge]: https://img.shields.io/badge/encoding__rs-steelblue?logo=github
-[c~encoding_rs~website]: https://docs.rs/encoding_rs
-[c~encoding_rs~website~badge]: https://img.shields.io/badge/encoding__rs-coral
-[c~encoding~crates.io]: https://crates.io/crates/encoding
-[c~encoding~crates.io~badge]: https://img.shields.io/badge/crates.io-encoding-crimson
-[c~encoding~docs]: https://lifthrasiir.github.io/rust-encoding
-[c~encoding~docs~badge]: https://img.shields.io/crates/v/encoding?label=encoding
-[c~encoding~lib.rs]: https://lib.rs/crates/encoding
-[c~encoding~lib.rs~badge]: https://img.shields.io/badge/lib.rs-encoding-yellow
-[c~encoding~repo]: https://github.com/lifthrasiir/rust-encoding
-[c~encoding~repo~badge]: https://img.shields.io/badge/encoding-steelblue?logo=github
-[c~enumflags~crates.io]: https://crates.io/crates/enumflags
-[c~enumflags~crates.io~badge]: https://img.shields.io/badge/crates.io-enumflags-crimson
-[c~enumflags~docs]: https://docs.rs/enumflags
-[c~enumflags~docs~badge]: https://img.shields.io/crates/v/enumflags?label=enumflags
-[c~enumflags~lib.rs]: https://lib.rs/crates/enumflags
-[c~enumflags~lib.rs~badge]: https://img.shields.io/badge/lib.rs-enumflags-yellow
-[c~enumflags~repo]: https://github.com/MaikKlein/enumflags
-[c~enumflags~repo~badge]: https://img.shields.io/badge/enumflags-steelblue?logo=github
-[c~env_logger::Builder::format~docs]: https://docs.rs/env_logger/latest/env_logger/struct.Builder.html#method.format
-[c~env_logger::Builder::init~docs]: https://docs.rs/env_logger/latest/env_logger/struct.Builder.html#method.init
-[c~env_logger::Builder::parse~docs]: https://docs.rs/env_logger/latest/env_logger/struct.Builder.html#method.parse
-[c~env_logger::Builder::target~docs]: https://docs.rs/env_logger/latest/env_logger/struct.Builder.html#method.target
-[c~env_logger::Builder~docs]: https://docs.rs/env_logger/latest/env_logger/struct.Builder.html
-[c~env_logger::fmt::Target~docs]: https://docs.rs/env_logger/latest/env_logger/fmt/enum.Target.html
-[c~env_logger::init~docs]: https://docs.rs/env_logger/latest/env_logger/fn.init.html
-[c~env_logger~RUST_LOG]: https://docs.rs/env_logger/latest/env_logger/#enabling-logging
-[c~env_logger~crates.io]: https://crates.io/crates/env_logger
-[c~env_logger~crates.io~badge]: https://img.shields.io/badge/crates.io-env__logger-crimson
-[c~env_logger~docs]: https://docs.rs/env_logger
-[c~env_logger~docs~badge]: https://img.shields.io/crates/v/env_logger?label=env_logger
-[c~env_logger~lib.rs]: https://lib.rs/crates/env_logger
-[c~env_logger~lib.rs~badge]: https://img.shields.io/badge/lib.rs-env__logger-yellow
-[c~env_logger~repo]: https://github.com/rust-cli/env_logger
-[c~env_logger~repo~badge]: https://img.shields.io/badge/env__logger-steelblue?logo=github
-[c~envy~crates.io]: https://crates.io/crates/envy
-[c~envy~crates.io~badge]: https://img.shields.io/badge/crates.io-envy-crimson
-[c~envy~docs]: https://docs.rs/envy
-[c~envy~docs~badge]: https://img.shields.io/crates/v/envy?label=envy
-[c~envy~lib.rs]: https://lib.rs/crates/envy
-[c~envy~lib.rs~badge]: https://img.shields.io/badge/lib.rs-envy-yellow
-[c~envy~repo]: https://github.com/softprops/envy
-[c~envy~repo~badge]: https://img.shields.io/badge/envy-steelblue?logo=github
-[c~equivalent~crates.io]: https://crates.io/crates/equivalent
-[c~equivalent~crates.io~badge]: https://img.shields.io/badge/crates.io-equivalent-crimson
-[c~equivalent~docs]: https://docs.rs/equivalent
-[c~equivalent~docs~badge]: https://img.shields.io/crates/v/equivalent?label=equivalent
-[c~equivalent~lib.rs]: https://lib.rs/crates/equivalent
-[c~equivalent~lib.rs~badge]: https://img.shields.io/badge/lib.rs-equivalent-yellow
-[c~equivalent~repo]: https://github.com/indexmap-rs/equivalent
-[c~equivalent~repo~badge]: https://img.shields.io/badge/equivalent-steelblue?logo=github
-[c~erlang-term~crates.io]: https://crates.io/crates/erlang-term
-[c~erlang-term~crates.io~badge]: https://img.shields.io/badge/crates.io-erlang--term-crimson
-[c~erlang-term~docs]: https://docs.rs/erlang-term
-[c~erlang-term~docs~badge]: https://img.shields.io/crates/v/erlang-term?label=erlang-term
-[c~erlang-term~lib.rs]: https://lib.rs/crates/erlang-term
-[c~erlang-term~lib.rs~badge]: https://img.shields.io/badge/lib.rs-erlang--term-yellow
-[c~erlang-term~repo]: https://github.com/thomas9911/erlang-term
-[c~erlang-term~repo~badge]: https://img.shields.io/badge/erlang--term-steelblue?logo=github
-[c~error-chain::ChainedError::backtrace~docs]: https://docs.rs/error-chain/latest/error-chain/trait.ChainedError.html#tymethod.backtrace
-[c~error-chain::error-chain~docs]: https://docs.rs/error-chain/latest/error-chain/macro.error-chain.html
-[c~error-chain::example_generated::ErrorKind~docs]: https://docs.rs/error-chain/latest/error-chain/example_generated/enum.ErrorKind.html
-[c~error-chain~chaining-errors]: https://docs.rs/error-chain/latest/error-chain#chaining-errors
-[c~error-chain~crates.io]: https://crates.io/crates/error-chain
-[c~error-chain~docs]: https://docs.rs/error-chain
-[c~error-chain~docs~badge]: https://img.shields.io/crates/v/error-chain?label=error-chain
-[c~error-chain~foreign_links]: https://docs.rs/error-chain/latest/error-chain/#foreign-links
-[c~error-chain~lib.rs]: https://lib.rs/crates/error-chain
-[c~error-chain~lib.rs~badge]: https://img.shields.io/badge/lib.rs-error__chain-yellow
-[c~error-chain~matching-error]: https://docs.rs/error-chain/latest/error-chain/#matching-errors
-[c~esp-hal~crates.io]: https://crates.io/crates/esp-hal
-[c~esp-hal~crates.io~badge]: https://img.shields.io/badge/crates.io-esp--hal-crimson
-[c~esp-hal~docs]: https://docs.esp-rs.org/esp-hal
-[c~esp-hal~docs~badge]: https://img.shields.io/crates/v/esp-hal?label=esp-hal
-[c~esp-hal~lib.rs]: https://lib.rs/crates/esp-hal
-[c~esp-hal~lib.rs~badge]: https://img.shields.io/badge/lib.rs-esp--hal-yellow
-[c~esp-hal~repo]: https://github.com/esp-rs/esp-hal
-[c~esp-hal~repo~badge]: https://img.shields.io/badge/esp--hal-steelblue?logo=github
-[c~ethers~crates.io]: https://crates.io/crates/ethers
-[c~ethers~crates.io~badge]: https://img.shields.io/badge/crates.io-ethers-crimson
-[c~ethers~docs]: https://docs.rs/ethers
-[c~ethers~docs~badge]: https://img.shields.io/crates/v/ethers?label=ethers
-[c~ethers~lib.rs]: https://lib.rs/crates/ethers
-[c~ethers~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ethers-yellow
-[c~ethers~repo]: https://github.com/gakonst/ethers-rs
-[c~ethers~repo~badge]: https://img.shields.io/badge/ethers-steelblue?logo=github
-[c~euclid~crates.io]: https://crates.io/crates/euclid
-[c~euclid~crates.io~badge]: https://img.shields.io/badge/crates.io-euclid-crimson
-[c~euclid~docs]: https://docs.rs/euclid
-[c~euclid~docs~badge]: https://img.shields.io/crates/v/euclid?label=euclid
-[c~euclid~lib.rs]: https://lib.rs/crates/euclid
-[c~euclid~lib.rs~badge]: https://img.shields.io/badge/lib.rs-euclid-yellow
-[c~euclid~repo]: https://github.com/servo/euclid
-[c~euclid~repo~badge]: https://img.shields.io/badge/euclid-steelblue?logo=github
-[c~evcxr_jupyter~crates.io]: https://crates.io/crates/evcxr_jupyter
-[c~evcxr_jupyter~crates.io~badge]: https://img.shields.io/badge/crates.io-evcxr__jupyter-crimson
-[c~evcxr_jupyter~docs]: https://docs.rs/evcxr_jupyter
-[c~evcxr_jupyter~docs~badge]: https://img.shields.io/crates/v/evcxr_jupyter?label=evcxr_jupyter
-[c~evcxr_jupyter~lib.rs]: https://lib.rs/crates/evcxr_jupyter
-[c~evcxr_jupyter~lib.rs~badge]: https://img.shields.io/badge/lib.rs-evcxr__jupyter-yellow
-[c~evcxr_jupyter~readme~repo]: https://github.com/evcxr/evcxr/blob/main/evcxr_jupyter/README.md
-[c~evcxr_jupyter~repo]: https://github.com/evcxr/evcxr
-[c~evcxr_jupyter~repo~badge]: https://img.shields.io/badge/evcxr__jupyter-steelblue?logo=github
-[c~event-listener~crates.io]: https://crates.io/crates/event-listener
-[c~event-listener~crates.io~badge]: https://img.shields.io/badge/crates.io-event--listener-crimson
-[c~event-listener~docs]: https://docs.rs/event-listener
-[c~event-listener~docs~badge]: https://img.shields.io/crates/v/event-listener?label=event-listener
-[c~event-listener~lib.rs]: https://lib.rs/crates/event-listener
-[c~event-listener~lib.rs~badge]: https://img.shields.io/badge/lib.rs-event--listener-yellow
-[c~event-listener~repo]: https://github.com/smol-rs/event-listener
-[c~event-listener~repo~badge]: https://img.shields.io/badge/event--listener-steelblue?logo=github
-[c~exa~crates.io]: https://crates.io/crates/exa
-[c~exa~crates.io~badge]: https://img.shields.io/badge/crates.io-exa-crimson
-[c~exa~docs]: https://docs.rs/exa
-[c~exa~docs~badge]: https://img.shields.io/crates/v/exa?label=exa
-[c~exa~lib.rs]: https://lib.rs/crates/exa
-[c~exa~lib.rs~badge]: https://img.shields.io/badge/lib.rs-exa-yellow
-[c~exa~repo]: https://github.com/ogham/exa
-[c~exa~repo~badge]: https://img.shields.io/badge/exa-steelblue?logo=github
-[c~exa~website]: https://the.exa.website
-[c~exa~website~badge]: https://img.shields.io/badge/exa-coral
-[c~extrasafe~crates.io]: https://crates.io/crates/extrasafe
-[c~extrasafe~crates.io~badge]: https://img.shields.io/badge/crates.io-extrasafe-crimson
-[c~extrasafe~docs]: https://docs.rs/extrasafe
-[c~extrasafe~docs~badge]: https://img.shields.io/crates/v/extrasafe?label=extrasafe
-[c~extrasafe~lib.rs]: https://lib.rs/crates/extrasafe
-[c~extrasafe~lib.rs~badge]: https://img.shields.io/badge/lib.rs-extrasafe-yellow
-[c~extrasafe~repo]: https://github.com/boustrophedon/extrasafe
-[c~extrasafe~repo~badge]: https://img.shields.io/badge/extrasafe-steelblue?logo=github
-[c~eyre~crates.io]: https://crates.io/crates/eyre
-[c~eyre~crates.io~badge]: https://img.shields.io/badge/crates.io-eyre-crimson
-[c~eyre~docs]: https://docs.rs/eyre
-[c~eyre~docs~badge]: https://img.shields.io/crates/v/eyre?label=eyre
-[c~eyre~lib.rs]: https://lib.rs/crates/eyre
-[c~eyre~lib.rs~badge]: https://img.shields.io/badge/lib.rs-eyre-yellow
-[c~eyre~repo]: https://github.com/eyre-rs/eyre
-[c~eyre~repo~badge]: https://img.shields.io/badge/eyre-steelblue?logo=github
-[c~faiss~crates.io]: https://crates.io/crates/faiss
-[c~faiss~crates.io~badge]: https://img.shields.io/badge/crates.io-faiss-crimson
-[c~faiss~docs]: https://docs.rs/faiss
-[c~faiss~docs~badge]: https://img.shields.io/crates/v/faiss?label=faiss
-[c~faiss~lib.rs]: https://lib.rs/crates/faiss
-[c~faiss~lib.rs~badge]: https://img.shields.io/badge/lib.rs-faiss-yellow
-[c~faiss~repo]: https://github.com/Enet4/faiss-rs
-[c~faiss~repo~badge]: https://img.shields.io/badge/faiss-steelblue?logo=github
-[c~fake~crates.io]: https://crates.io/crates/fake
-[c~fake~crates.io~badge]: https://img.shields.io/badge/crates.io-fake-crimson
-[c~fake~docs]: https://docs.rs/fake
-[c~fake~docs~badge]: https://img.shields.io/crates/v/fake?label=fake
-[c~fake~lib.rs]: https://lib.rs/crates/fake
-[c~fake~lib.rs~badge]: https://img.shields.io/badge/lib.rs-fake-yellow
-[c~fake~repo]: https://github.com/cksac/fake-rs
-[c~fake~repo~badge]: https://img.shields.io/badge/fake-steelblue?logo=github
-[c~fancy-regex~crates.io]: https://crates.io/crates/fancy-regex
-[c~fancy-regex~crates.io~badge]: https://img.shields.io/badge/crates.io-fancy--regex-crimson
-[c~fancy-regex~docs]: https://docs.rs/fancy-regex
-[c~fancy-regex~docs~badge]: https://img.shields.io/crates/v/fancy-regex?label=fancy-regex
-[c~fancy-regex~lib.rs]: https://lib.rs/crates/fancy-regex
-[c~fancy-regex~lib.rs~badge]: https://img.shields.io/badge/lib.rs-fancy--regex-yellow
-[c~fancy-regex~repo]: https://github.com/fancy-regex/fancy-regex
-[c~fancy-regex~repo~badge]: https://img.shields.io/badge/fancy--regex-steelblue?logo=github
-[c~fast_image_resize~crates.io]: https://crates.io/crates/fast_image_resize
-[c~fast_image_resize~crates.io~badge]: https://img.shields.io/badge/crates.io-fast__image__resize-crimson
-[c~fast_image_resize~docs]: https://docs.rs/fast_image_resize
-[c~fast_image_resize~docs~badge]: https://img.shields.io/crates/v/fast_image_resize?label=fast_image_resize
-[c~fast_image_resize~lib.rs]: https://lib.rs/crates/fast_image_resize
-[c~fast_image_resize~lib.rs~badge]: https://img.shields.io/badge/lib.rs-fast__image__resize-yellow
-[c~fast_image_resize~repo]: https://github.com/cykooz/fast_image_resize
-[c~fast_image_resize~repo~badge]: https://img.shields.io/badge/fast__image__resize-steelblue?logo=github
-[c~fastrand~crates.io]: https://crates.io/crates/fastrand
-[c~fastrand~crates.io~badge]: https://img.shields.io/badge/crates.io-fastrand-crimson
-[c~fastrand~docs]: https://docs.rs/fastrand
-[c~fastrand~docs~badge]: https://img.shields.io/crates/v/fastrand?label=fastrand
-[c~fastrand~lib.rs]: https://lib.rs/crates/fastrand
-[c~fastrand~lib.rs~badge]: https://img.shields.io/badge/lib.rs-fastrand-yellow
-[c~fastrand~repo]: https://github.com/smol-rs/fastrand
-[c~fastrand~repo~badge]: https://img.shields.io/badge/fastrand-steelblue?logo=github
-[c~faux~crates.io]: https://crates.io/crates/faux
-[c~faux~crates.io~badge]: https://img.shields.io/badge/crates.io-faux-crimson
-[c~faux~docs]: https://docs.rs/faux
-[c~faux~docs~badge]: https://img.shields.io/crates/v/faux?label=faux
-[c~faux~lib.rs]: https://lib.rs/crates/faux
-[c~faux~lib.rs~badge]: https://img.shields.io/badge/lib.rs-faux-yellow
-[c~faux~repo]: https://github.com/nrxus/faux
-[c~faux~repo~badge]: https://img.shields.io/badge/faux-steelblue?logo=github
-[c~fbx~crates.io]: https://crates.io/crates/fbx
-[c~fbx~crates.io~badge]: https://img.shields.io/badge/crates.io-fbx-crimson
-[c~fbx~docs]: https://docs.rs/fbx
-[c~fbx~docs~badge]: https://img.shields.io/crates/v/fbx?label=fbx
-[c~fbx~lib.rs]: https://lib.rs/crates/fbx
-[c~fbx~lib.rs~badge]: https://img.shields.io/badge/lib.rs-fbx-yellow
-[c~fbx~repo]: https://github.com/mickvangelderen/fbx
-[c~fbx~repo~badge]: https://img.shields.io/badge/fbx-steelblue?logo=github
-[c~fd-find~crates.io]: https://crates.io/crates/fd-find
-[c~fd-find~crates.io~badge]: https://img.shields.io/badge/crates.io-fd--find-crimson
-[c~fd-find~docs]: https://docs.rs/fd-find
-[c~fd-find~docs~badge]: https://img.shields.io/crates/v/fd-find?label=fd-find
-[c~fd-find~lib.rs]: https://lib.rs/crates/fd-find
-[c~fd-find~lib.rs~badge]: https://img.shields.io/badge/lib.rs-fd--find-yellow
-[c~fd-find~repo]: https://github.com/sharkdp/fd
-[c~fd-find~repo~badge]: https://img.shields.io/badge/fd--find-steelblue?logo=github
-[c~fd~crates.io]: https://crates.io/crates/fd
-[c~fd~crates.io~badge]: https://img.shields.io/badge/crates.io-fd-crimson
-[c~fd~docs]: https://docs.rs/fd
-[c~fd~docs~badge]: https://img.shields.io/crates/v/fd?label=fd
-[c~fd~lib.rs]: https://lib.rs/crates/fd
-[c~fd~lib.rs~badge]: https://img.shields.io/badge/lib.rs-fd-yellow
-[c~fd~repo]: https://github.com/stemjail/fd-rs
-[c~fd~repo~badge]: https://img.shields.io/badge/fd-steelblue?logo=github
-[c~femtovg~crates.io]: https://crates.io/crates/femtovg
-[c~femtovg~crates.io~badge]: https://img.shields.io/badge/crates.io-femtovg-crimson
-[c~femtovg~docs]: https://docs.rs/femtovg
-[c~femtovg~docs~badge]: https://img.shields.io/crates/v/femtovg?label=femtovg
-[c~femtovg~lib.rs]: https://lib.rs/crates/femtovg
-[c~femtovg~lib.rs~badge]: https://img.shields.io/badge/lib.rs-femtovg-yellow
-[c~femtovg~repo]: https://github.com/femtovg/femtovg
-[c~femtovg~repo~badge]: https://img.shields.io/badge/femtovg-steelblue?logo=github
-[c~fetch~crates.io]: https://crates.io/crates/fetch
-[c~fetch~crates.io~badge]: https://img.shields.io/badge/crates.io-fetch-crimson
-[c~fetch~docs]: https://docs.rs/fetch
-[c~fetch~docs~badge]: https://img.shields.io/crates/v/fetch?label=fetch
-[c~fetch~lib.rs]: https://lib.rs/crates/fetch
-[c~fetch~lib.rs~badge]: https://img.shields.io/badge/lib.rs-fetch-yellow
-[c~fetch~repo]: https://github.com/tp/fetch-rs
-[c~fetch~repo~badge]: https://img.shields.io/badge/fetch-steelblue?logo=github
-[c~ffmpeg-next~crates.io]: https://crates.io/crates/ffmpeg-next
-[c~ffmpeg-next~crates.io~badge]: https://img.shields.io/badge/crates.io-ffmpeg--next-crimson
-[c~ffmpeg-next~docs]: https://docs.rs/ffmpeg-next
-[c~ffmpeg-next~docs~badge]: https://img.shields.io/crates/v/ffmpeg-next?label=ffmpeg-next
-[c~ffmpeg-next~lib.rs]: https://lib.rs/crates/ffmpeg-next
-[c~ffmpeg-next~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ffmpeg--next-yellow
-[c~ffmpeg-next~repo]: https://github.com/zmwangx/rust-ffmpeg
-[c~ffmpeg-next~repo~badge]: https://img.shields.io/badge/ffmpeg--next-steelblue?logo=github
-[c~ffmpeg-next~website]: https://github.com/zmwangx/rust-ffmpeg#readme
-[c~ffmpeg-next~website~badge]: https://img.shields.io/badge/ffmpeg--next-coral
-[c~ffmpeg~crates.io]: https://crates.io/crates/ffmpeg
-[c~ffmpeg~crates.io~badge]: https://img.shields.io/badge/crates.io-ffmpeg-crimson
-[c~ffmpeg~docs]: https://docs.rs/ffmpeg
-[c~ffmpeg~docs~badge]: https://img.shields.io/crates/v/ffmpeg?label=ffmpeg
-[c~ffmpeg~lib.rs]: https://lib.rs/crates/ffmpeg
-[c~ffmpeg~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ffmpeg-yellow
-[c~ffmpeg~repo]: https://github.com/meh/rust-ffmpeg
-[c~ffmpeg~repo~badge]: https://img.shields.io/badge/ffmpeg-steelblue?logo=github
-[c~financial~crates.io]: https://crates.io/crates/financial
-[c~financial~crates.io~badge]: https://img.shields.io/badge/crates.io-financial-crimson
-[c~financial~docs]: https://docs.rs/financial
-[c~financial~docs~badge]: https://img.shields.io/crates/v/financial?label=financial
-[c~financial~lib.rs]: https://lib.rs/crates/financial
-[c~financial~lib.rs~badge]: https://img.shields.io/badge/lib.rs-financial-yellow
-[c~financial~repo]: https://github.com/raymon1/financial
-[c~financial~repo~badge]: https://img.shields.io/badge/financial-steelblue?logo=github
-[c~find~crates.io]: https://crates.io/crates/find
-[c~find~crates.io~badge]: https://img.shields.io/badge/crates.io-find-crimson
-[c~find~docs]: https://docs.rs/find
-[c~find~docs~badge]: https://img.shields.io/crates/v/find?label=find
-[c~find~lib.rs]: https://lib.rs/crates/find
-[c~find~lib.rs~badge]: https://img.shields.io/badge/lib.rs-find-yellow
-[c~find~repo]: https://github.com/Centril/find
-[c~find~repo~badge]: https://img.shields.io/badge/find-steelblue?logo=github
-[c~flac~crates.io]: https://crates.io/crates/flac
-[c~flac~crates.io~badge]: https://img.shields.io/badge/crates.io-flac-crimson
-[c~flac~docs]: https://sourrust.github.io/flac
-[c~flac~docs~badge]: https://img.shields.io/crates/v/flac?label=flac
-[c~flac~lib.rs]: https://lib.rs/crates/flac
-[c~flac~lib.rs~badge]: https://img.shields.io/badge/lib.rs-flac-yellow
-[c~flac~repo]: https://github.com/sourrust/flac
-[c~flac~repo~badge]: https://img.shields.io/badge/flac-steelblue?logo=github
-[c~flagset~commit-activity~badge]: https://img.shields.io/github/commit-activity/y/enarx/flagset
-[c~flagset~crates.io]: https://crates.io/crates/flagset
-[c~flagset~crates.io~badge]: https://img.shields.io/badge/crates.io-flagset-crimson
-[c~flagset~dependents~badge]: https://img.shields.io/crates/dependents/flagset
-[c~flagset~deps-rs~badge]: https://img.shields.io/deps-rs/flagset/latest
-[c~flagset~docs]: https://docs.rs/flagset
-[c~flagset~docs~badge]: https://img.shields.io/crates/v/flagset?label=flagset
-[c~flagset~last-commit~badge]: https://img.shields.io/github/last-commit/enarx/flagset
-[c~flagset~lib.rs]: https://lib.rs/crates/flagset
-[c~flagset~lib.rs~badge]: https://img.shields.io/badge/lib.rs-flagset-yellow
-[c~flagset~license~badge]: https://img.shields.io/crates/l/flagset
-[c~flagset~recent-downloads~badge]: https://img.shields.io/crates/dr/flagset
-[c~flagset~repo]: https://github.com/enarx/flagset
-[c~flagset~repo~badge]: https://img.shields.io/badge/flagset-steelblue?logo=github
-[c~flamegraph~crates.io]: https://crates.io/crates/flamegraph
-[c~flamegraph~crates.io~badge]: https://img.shields.io/badge/crates.io-flamegraph-crimson
-[c~flamegraph~docs]: https://docs.rs/flamegraph
-[c~flamegraph~docs~badge]: https://img.shields.io/crates/v/flamegraph?label=flamegraph
-[c~flamegraph~lib.rs]: https://lib.rs/crates/flamegraph
-[c~flamegraph~lib.rs~badge]: https://img.shields.io/badge/lib.rs-flamegraph-yellow
-[c~flamegraph~repo]: https://github.com/flamegraph-rs/flamegraph
-[c~flamegraph~repo~badge]: https://img.shields.io/badge/flamegraph-steelblue?logo=github
-[c~flatbuffers~crates.io]: https://crates.io/crates/flatbuffers
-[c~flatbuffers~crates.io~badge]: https://img.shields.io/badge/crates.io-flatbuffers-crimson
-[c~flatbuffers~docs]: https://docs.rs/flatbuffers
-[c~flatbuffers~docs~badge]: https://img.shields.io/crates/v/flatbuffers?label=flatbuffers
-[c~flatbuffers~lib.rs]: https://lib.rs/crates/flatbuffers
-[c~flatbuffers~lib.rs~badge]: https://img.shields.io/badge/lib.rs-flatbuffers-yellow
-[c~flatbuffers~repo]: https://github.com/google/flatbuffers
-[c~flatbuffers~repo~badge]: https://img.shields.io/badge/flatbuffers-steelblue?logo=github
-[c~flatbuffers~website]: https://google.github.io/flatbuffers
-[c~flatbuffers~website~badge]: https://img.shields.io/badge/flatbuffers-coral
-[c~flate2::read::GzDecoder~docs]: https://docs.rs/flate2/latest/flate2/read/struct.GzDecoder.html
-[c~flate2::write::GzEncoder~docs]: https://docs.rs/flate2/latest/flate2/write/struct.GzEncoder.html
-[c~flate2~crates.io]: https://crates.io/crates/flate2
-[c~flate2~crates.io~badge]: https://img.shields.io/badge/crates.io-flate2-crimson
-[c~flate2~docs]: https://docs.rs/flate2
-[c~flate2~docs~badge]: https://img.shields.io/crates/v/flate2?label=flate2
-[c~flate2~lib.rs]: https://lib.rs/crates/flate2
-[c~flate2~lib.rs~badge]: https://img.shields.io/badge/lib.rs-flate2-yellow
-[c~flate2~repo]: https://github.com/rust-lang/flate2-rs
-[c~flate2~repo~badge]: https://img.shields.io/badge/flate2-steelblue?logo=github
-[c~floem~crates.io]: https://crates.io/crates/floem
-[c~floem~crates.io~badge]: https://img.shields.io/badge/crates.io-floem-crimson
-[c~floem~docs]: https://docs.rs/floem
-[c~floem~docs~badge]: https://img.shields.io/crates/v/floem?label=floem
-[c~floem~lib.rs]: https://lib.rs/crates/floem
-[c~floem~lib.rs~badge]: https://img.shields.io/badge/lib.rs-floem-yellow
-[c~floem~repo]: https://github.com/lapce/floem
-[c~floem~repo~badge]: https://img.shields.io/badge/floem-steelblue?logo=github
-[c~fltk~crates.io]: https://crates.io/crates/fltk
-[c~fltk~crates.io~badge]: https://img.shields.io/badge/crates.io-fltk-crimson
-[c~fltk~docs]: https://docs.rs/fltk
-[c~fltk~docs~badge]: https://img.shields.io/crates/v/fltk?label=fltk
-[c~fltk~lib.rs]: https://lib.rs/crates/fltk
-[c~fltk~lib.rs~badge]: https://img.shields.io/badge/lib.rs-fltk-yellow
-[c~fltk~repo]: https://github.com/fltk-rs/fltk-rs
-[c~fltk~repo~badge]: https://img.shields.io/badge/fltk-steelblue?logo=github
-[c~fluent~crates.io]: https://crates.io/crates/fluent
-[c~fluent~crates.io~badge]: https://img.shields.io/badge/crates.io-fluent-crimson
-[c~fluent~docs]: https://docs.rs/fluent
-[c~fluent~docs~badge]: https://img.shields.io/crates/v/fluent?label=fluent
-[c~fluent~lib.rs]: https://lib.rs/crates/fluent
-[c~fluent~lib.rs~badge]: https://img.shields.io/badge/lib.rs-fluent-yellow
-[c~fluent~repo]: https://github.com/projectfluent/fluent-rs
-[c~fluent~repo~badge]: https://img.shields.io/badge/fluent-steelblue?logo=github
-[c~fluent~website]: http://projectfluent.org
-[c~fluent~website~badge]: https://img.shields.io/badge/fluent-coral
-[c~flume~crates.io]: https://crates.io/crates/flume
-[c~flume~crates.io~badge]: https://img.shields.io/badge/crates.io-flume-crimson
-[c~flume~docs]: https://docs.rs/flume
-[c~flume~docs~badge]: https://img.shields.io/crates/v/flume?label=flume
-[c~flume~lib.rs]: https://lib.rs/crates/flume
-[c~flume~lib.rs~badge]: https://img.shields.io/badge/lib.rs-flume-yellow
-[c~flume~repo]: https://github.com/zesterer/flume
-[c~flume~repo~badge]: https://img.shields.io/badge/flume-steelblue?logo=github
-[c~flurry~crates.io]: https://crates.io/crates/flurry
-[c~flurry~crates.io~badge]: https://img.shields.io/badge/crates.io-flurry-crimson
-[c~flurry~docs]: https://docs.rs/flurry
-[c~flurry~docs~badge]: https://img.shields.io/crates/v/flurry?label=flurry
-[c~flurry~lib.rs]: https://lib.rs/crates/flurry
-[c~flurry~lib.rs~badge]: https://img.shields.io/badge/lib.rs-flurry-yellow
-[c~flurry~repo]: https://github.com/jonhoo/flurry
-[c~flurry~repo~badge]: https://img.shields.io/badge/flurry-steelblue?logo=github
-[c~flutter_rust_bridge~crates.io]: https://crates.io/crates/flutter_rust_bridge
-[c~flutter_rust_bridge~crates.io~badge]: https://img.shields.io/badge/crates.io-flutter__rust__bridge-crimson
-[c~flutter_rust_bridge~docs]: https://docs.rs/flutter_rust_bridge
-[c~flutter_rust_bridge~docs~badge]: https://img.shields.io/crates/v/flutter_rust_bridge?label=flutter_rust_bridge
-[c~flutter_rust_bridge~lib.rs]: https://lib.rs/crates/flutter_rust_bridge
-[c~flutter_rust_bridge~lib.rs~badge]: https://img.shields.io/badge/lib.rs-flutter__rust__bridge-yellow
-[c~flutter_rust_bridge~repo]: https://github.com/fzyzcjy/flutter_rust_bridge
-[c~flutter_rust_bridge~repo~badge]: https://img.shields.io/badge/flutter__rust__bridge-steelblue?logo=github
-[c~fnv~crates.io]: https://crates.io/crates/fnv
-[c~fnv~crates.io~badge]: https://img.shields.io/badge/crates.io-fnv-crimson
-[c~fnv~docs]: https://doc.servo.org/fnv
-[c~fnv~docs~badge]: https://img.shields.io/crates/v/fnv?label=fnv
-[c~fnv~lib.rs]: https://lib.rs/crates/fnv
-[c~fnv~lib.rs~badge]: https://img.shields.io/badge/lib.rs-fnv-yellow
-[c~fnv~repo]: https://github.com/servo/rust-fnv
-[c~fnv~repo~badge]: https://img.shields.io/badge/fnv-steelblue?logo=github
-[c~foldhash~crates.io]: https://crates.io/crates/foldhash
-[c~foldhash~crates.io~badge]: https://img.shields.io/badge/crates.io-foldhash-crimson
-[c~foldhash~docs]: https://docs.rs/foldhash
-[c~foldhash~docs~badge]: https://img.shields.io/crates/v/foldhash?label=foldhash
-[c~foldhash~lib.rs]: https://lib.rs/crates/foldhash
-[c~foldhash~lib.rs~badge]: https://img.shields.io/badge/lib.rs-foldhash-yellow
-[c~foldhash~repo]: https://github.com/orlp/foldhash
-[c~foldhash~repo~badge]: https://img.shields.io/badge/foldhash-steelblue?logo=github
-[c~fontdue~crates.io]: https://crates.io/crates/fontdue
-[c~fontdue~crates.io~badge]: https://img.shields.io/badge/crates.io-fontdue-crimson
-[c~fontdue~docs]: https://docs.rs/fontdue
-[c~fontdue~docs~badge]: https://img.shields.io/crates/v/fontdue?label=fontdue
-[c~fontdue~lib.rs]: https://lib.rs/crates/fontdue
-[c~fontdue~lib.rs~badge]: https://img.shields.io/badge/lib.rs-fontdue-yellow
-[c~fontdue~repo]: https://github.com/mooman219/fontdue
-[c~fontdue~repo~badge]: https://img.shields.io/badge/fontdue-steelblue?logo=github
-[c~form_urlencoded::byte_serialize~docs]: https://docs.rs/form_urlencoded/latest/form_urlencoded/fn.byte_serialize.html
-[c~form_urlencoded::parse~docs]: https://docs.rs/form_urlencoded/latest/form_urlencoded/fn.parse.html
-[c~form_urlencoded~crates.io]: https://crates.io/crates/form_urlencoded
-[c~form_urlencoded~crates.io~badge]: https://img.shields.io/badge/crates.io-form__urlencoded-crimson
-[c~form_urlencoded~docs]: https://docs.rs/form_urlencoded
-[c~form_urlencoded~docs~badge]: https://img.shields.io/crates/v/form_urlencoded?label=form_urlencoded
-[c~form_urlencoded~lib.rs]: https://lib.rs/crates/form_urlencoded
-[c~form_urlencoded~lib.rs~badge]: https://img.shields.io/badge/lib.rs-form__urlencoded-yellow
-[c~form_urlencoded~repo]: https://github.com/servo/rust-url/tree/main/form_urlencoded
-[c~form_urlencoded~repo~badge]: https://img.shields.io/badge/form__urlencoded-steelblue?logo=github
-[c~foundations~blog]: https://blog.cloudflare.com/introducing-foundations-our-open-source-rust-service-foundation-library
-[c~foundations~crates.io]: https://crates.io/crates/foundations
-[c~foundations~crates.io~badge]: https://img.shields.io/badge/crates.io-foundations-crimson
-[c~foundations~docs]: https://docs.rs/foundations
-[c~foundations~docs~badge]: https://img.shields.io/crates/v/foundations?label=foundations
-[c~foundations~lib.rs]: https://lib.rs/crates/foundations
-[c~foundations~lib.rs~badge]: https://img.shields.io/badge/lib.rs-foundations-yellow
-[c~foundations~repo]: https://github.com/cloudflare/foundations
-[c~foundations~repo~badge]: https://img.shields.io/badge/foundations-steelblue?logo=github
-[c~foyer~crates.io]: https://crates.io/crates/foyer
-[c~foyer~crates.io~badge]: https://img.shields.io/badge/crates.io-foyer-crimson
-[c~foyer~docs]: https://docs.rs/foyer
-[c~foyer~docs~badge]: https://img.shields.io/crates/v/foyer?label=foyer
-[c~foyer~lib.rs]: https://lib.rs/crates/foyer
-[c~foyer~lib.rs~badge]: https://img.shields.io/badge/lib.rs-foyer-yellow
-[c~foyer~repo]: https://github.com/foyer-rs/foyer
-[c~foyer~repo~badge]: https://img.shields.io/badge/foyer-steelblue?logo=github
-[c~foyer~website]: https://foyer.rs
-[c~foyer~website~badge]: https://img.shields.io/badge/foyer-coral
-[c~fraction~crates.io]: https://crates.io/crates/fraction
-[c~fraction~crates.io~badge]: https://img.shields.io/badge/crates.io-fraction-crimson
-[c~fraction~docs]: https://docs.rs/fraction
-[c~fraction~docs~badge]: https://img.shields.io/crates/v/fraction?label=fraction
-[c~fraction~lib.rs]: https://lib.rs/crates/fraction
-[c~fraction~lib.rs~badge]: https://img.shields.io/badge/lib.rs-fraction-yellow
-[c~fraction~repo]: https://github.com/dnsl48/fraction
-[c~fraction~repo~badge]: https://img.shields.io/badge/fraction-steelblue?logo=github
-[c~freertos~crates.io]: https://crates.io/crates/freertos
-[c~freertos~crates.io~badge]: https://img.shields.io/badge/crates.io-freertos-crimson
-[c~freertos~docs]: https://docs.rs/freertos
-[c~freertos~docs~badge]: https://img.shields.io/crates/v/freertos?label=freertos
-[c~freertos~lib.rs]: https://lib.rs/crates/freertos
-[c~freertos~lib.rs~badge]: https://img.shields.io/badge/lib.rs-freertos-yellow
-[c~freertos~repo~badge]: https://img.shields.io/badge/freertos-steelblue?logo=github
-[c~frp~crates.io]: https://crates.io/crates/frp
-[c~frp~crates.io~badge]: https://img.shields.io/badge/crates.io-frp-crimson
-[c~frp~docs]: https://gofrp.org
-[c~frp~docs~badge]: https://img.shields.io/crates/v/frp?label=frp
-[c~frp~lib.rs]: https://lib.rs/crates/frp
-[c~frp~lib.rs~badge]: https://img.shields.io/badge/lib.rs-frp-yellow
-[c~frp~repo~badge]: https://img.shields.io/badge/frp-steelblue?logo=github
-[c~frunk~crates.io]: https://crates.io/crates/frunk
-[c~frunk~crates.io~badge]: https://img.shields.io/badge/crates.io-frunk-crimson
-[c~frunk~docs]: https://docs.rs/frunk
-[c~frunk~docs~badge]: https://img.shields.io/crates/v/frunk?label=frunk
-[c~frunk~lib.rs]: https://lib.rs/crates/frunk
-[c~frunk~lib.rs~badge]: https://img.shields.io/badge/lib.rs-frunk-yellow
-[c~frunk~repo]: https://github.com/lloydmeta/frunk
-[c~frunk~repo~badge]: https://img.shields.io/badge/frunk-steelblue?logo=github
-[c~fs_extra~crates.io]: https://crates.io/crates/fs_extra
-[c~fs_extra~crates.io~badge]: https://img.shields.io/badge/crates.io-fs__extra-crimson
-[c~fs_extra~docs]: https://docs.rs/fs_extra
-[c~fs_extra~docs~badge]: https://img.shields.io/crates/v/fs_extra?label=fs_extra
-[c~fs_extra~lib.rs]: https://lib.rs/crates/fs_extra
-[c~fs_extra~lib.rs~badge]: https://img.shields.io/badge/lib.rs-fs__extra-yellow
-[c~fs_extra~repo]: https://github.com/webdesus/fs_extra
-[c~fs_extra~repo~badge]: https://img.shields.io/badge/fs__extra-steelblue?logo=github
-[c~future-utils~crates.io]: https://crates.io/crates/future-utils
-[c~future-utils~crates.io~badge]: https://img.shields.io/badge/crates.io-future--utils-crimson
-[c~future-utils~docs]: https://docs.rs/future-utils
-[c~future-utils~docs~badge]: https://img.shields.io/crates/v/future-utils?label=future-utils
-[c~future-utils~lib.rs]: https://lib.rs/crates/future-utils
-[c~future-utils~lib.rs~badge]: https://img.shields.io/badge/lib.rs-future--utils-yellow
-[c~future-utils~repo]: https://github.com/canndrew/future-utils
-[c~future-utils~repo~badge]: https://img.shields.io/badge/future--utils-steelblue?logo=github
-[c~futures-executor~crates.io]: https://crates.io/crates/futures-executor
-[c~futures-executor~crates.io~badge]: https://img.shields.io/badge/crates.io-futures--executor-crimson
-[c~futures-executor~docs]: https://docs.rs/futures-executor
-[c~futures-executor~docs~badge]: https://img.shields.io/crates/v/futures-executor?label=futures-executor
-[c~futures-executor~lib.rs]: https://lib.rs/crates/futures-executor
-[c~futures-executor~lib.rs~badge]: https://img.shields.io/badge/lib.rs-futures--executor-yellow
-[c~futures-executor~repo]: https://github.com/rust-lang/futures-rs/tree/master/futures-executor
-[c~futures-executor~repo~badge]: https://img.shields.io/badge/futures--executor-steelblue?logo=github
-[c~futures-executor~website]: https://github.com/rust-lang/futures-rs/blob/master/futures-executor/README.md
-[c~futures-executor~website~badge]: https://img.shields.io/badge/futures--executor-coral
-[c~futures-util~crates.io]: https://crates.io/crates/futures-util
-[c~futures-util~crates.io~badge]: https://img.shields.io/badge/crates.io-futures--util-crimson
-[c~futures-util~docs]: https://docs.rs/futures-util
-[c~futures-util~docs~badge]: https://img.shields.io/crates/v/futures-util?label=futures-util
-[c~futures-util~lib.rs]: https://lib.rs/crates/futures-util
-[c~futures-util~lib.rs~badge]: https://img.shields.io/badge/lib.rs-futures--util-yellow
-[c~futures-util~repo]: https://github.com/rust-lang/futures-rs
-[c~futures-util~repo~badge]: https://img.shields.io/badge/futures--util-steelblue?logo=github
-[c~futures-util~website]: https://rust-lang.github.io/futures-rs
-[c~futures-util~website~badge]: https://img.shields.io/badge/futures--util-coral
-[c~futures::future::Select~docs]: https://docs.rs/futures/latest/futures/future/struct.Select.html
-[c~futures::join~docs]: https://docs.rs/futures/latest/futures/macro.join.html
-[c~futures::prelude::stream::StreamExt::filter~docs]: https://docs.rs/futures/latest/futures/prelude/stream/trait.StreamExt.html#method.filter
-[c~futures::prelude::stream::StreamExt::fold~docs]: https://docs.rs/futures/latest/futures/prelude/stream/trait.StreamExt.html#method.fold
-[c~futures::prelude::stream::StreamExt::for_each_concurrent~docs]: https://docs.rs/futures/latest/futures/prelude/stream/trait.StreamExt.html#method.for_each_concurrent
-[c~futures::prelude::stream::StreamExt::map~docs]: https://docs.rs/futures/latest/futures/future/trait.FutureExt.html#method.map
-[c~futures::prelude::stream::TryStreamExt::try_filter~docs]: https://docs.rs/futures/latest/futures/prelude/stream/trait.TryStreamExt.html#method.try_filter
-[c~futures::prelude::stream::TryStreamExt::try_fold~docs]: https://docs.rs/futures/latest/futures/prelude/stream/trait.TryStreamExt.html#method.try_fold
-[c~futures::prelude::stream::TryStreamExt::try_for_each_concurrent~docs]: https://docs.rs/futures/latest/futures/prelude/stream/trait.TryStreamExt.html#method.try_for_each_concurrent
-[c~futures::stream::Stream~docs]: https://docs.rs/futures/latest/futures/stream/trait.Stream.html
-[c~futures_executor::block_on~docs]: https://docs.rs/futures-executor/latest/futures_executor/fn.block_on.html
-[c~futures~crates.io]: https://crates.io/crates/futures
-[c~futures~crates.io~badge]: https://img.shields.io/badge/crates.io-futures-crimson
-[c~futures~docs]: https://docs.rs/futures
-[c~futures~docs~badge]: https://img.shields.io/crates/v/futures?label=futures
-[c~futures~lib.rs]: https://lib.rs/crates/futures
-[c~futures~lib.rs~badge]: https://img.shields.io/badge/lib.rs-futures-yellow
-[c~futures~repo]: https://github.com/rust-lang/futures-rs
-[c~futures~repo~badge]: https://img.shields.io/badge/futures-steelblue?logo=github
-[c~futures~website]: https://rust-lang.github.io/futures-rs
-[c~futures~website~badge]: https://img.shields.io/badge/futures-coral
-[c~fuzzy-matcher~crates.io]: https://crates.io/crates/fuzzy-matcher
-[c~fuzzy-matcher~crates.io~badge]: https://img.shields.io/badge/crates.io-fuzzy--matcher-crimson
-[c~fuzzy-matcher~docs]: https://docs.rs/fuzzy-matcher
-[c~fuzzy-matcher~docs~badge]: https://img.shields.io/crates/v/fuzzy-matcher?label=fuzzy-matcher
-[c~fuzzy-matcher~lib.rs]: https://lib.rs/crates/fuzzy-matcher
-[c~fuzzy-matcher~lib.rs~badge]: https://img.shields.io/badge/lib.rs-fuzzy--matcher-yellow
-[c~fuzzy-matcher~repo]: https://github.com/lotabout/fuzzy-matcher
-[c~fuzzy-matcher~repo~badge]: https://img.shields.io/badge/fuzzy--matcher-steelblue?logo=github
-[c~fyrox-core~crates.io]: https://crates.io/crates/fyrox-core
-[c~fyrox-core~crates.io~badge]: https://img.shields.io/badge/crates.io-fyrox--core-crimson
-[c~fyrox-core~docs]: https://docs.rs/fyrox-core
-[c~fyrox-core~docs~badge]: https://img.shields.io/crates/v/fyrox-core?label=fyrox-core
-[c~fyrox-core~lib.rs]: https://lib.rs/crates/fyrox-core
-[c~fyrox-core~lib.rs~badge]: https://img.shields.io/badge/lib.rs-fyrox--core-yellow
-[c~fyrox-core~repo]: https://github.com/FyroxEngine/Fyrox/tree/master/fyrox-core
-[c~fyrox-core~repo~badge]: https://img.shields.io/badge/fyrox--core-steelblue?logo=github
-[c~fyrox-core~website]: https://fyrox.rs
-[c~fyrox-core~website~badge]: https://img.shields.io/badge/fyrox--core-coral
-[c~fyrox~crates.io]: https://crates.io/crates/fyrox
-[c~fyrox~crates.io~badge]: https://img.shields.io/badge/crates.io-fyrox-crimson
-[c~fyrox~docs]: https://docs.rs/fyrox
-[c~fyrox~docs~badge]: https://img.shields.io/crates/v/fyrox?label=fyrox
-[c~fyrox~lib.rs]: https://lib.rs/crates/fyrox
-[c~fyrox~lib.rs~badge]: https://img.shields.io/badge/lib.rs-fyrox-yellow
-[c~fyrox~repo]: https://github.com/FyroxEngine/Fyrox
-[c~fyrox~repo~badge]: https://img.shields.io/badge/fyrox-steelblue?logo=github
-[c~fyrox~website]: https://fyrox.rs
-[c~fyrox~website~badge]: https://img.shields.io/badge/fyrox-coral
-[c~gdal~crates.io]: https://crates.io/crates/gdal
-[c~gdal~crates.io~badge]: https://img.shields.io/badge/crates.io-gdal-crimson
-[c~gdal~docs]: https://docs.rs/gdal
-[c~gdal~docs~badge]: https://img.shields.io/crates/v/gdal?label=gdal
-[c~gdal~lib.rs]: https://lib.rs/crates/gdal
-[c~gdal~lib.rs~badge]: https://img.shields.io/badge/lib.rs-gdal-yellow
-[c~gdal~repo]: https://github.com/georust/gdal
-[c~gdal~repo~badge]: https://img.shields.io/badge/gdal-steelblue?logo=github
-[c~gdb~crates.io]: https://crates.io/crates/gdb
-[c~gdb~crates.io~badge]: https://img.shields.io/badge/crates.io-gdb-crimson
-[c~gdb~docs]: https://docs.rs/gdb
-[c~gdb~docs~badge]: https://img.shields.io/crates/v/gdb?label=gdb
-[c~gdb~lib.rs]: https://lib.rs/crates/gdb
-[c~gdb~lib.rs~badge]: https://img.shields.io/badge/lib.rs-gdb-yellow
-[c~gdb~repo]: https://github.com/lipk/rust-gdb
-[c~gdb~repo~badge]: https://img.shields.io/badge/gdb-steelblue?logo=github
-[c~gdk~crates.io]: https://crates.io/crates/gdk
-[c~gdk~crates.io~badge]: https://img.shields.io/badge/crates.io-gdk-crimson
-[c~gdk~docs~badge]: https://img.shields.io/crates/v/gdk?label=gdk
-[c~gdk~lib.rs]: https://lib.rs/crates/gdk
-[c~gdk~lib.rs~badge]: https://img.shields.io/badge/lib.rs-gdk-yellow
-[c~gdk~repo]: https://github.com/gtk-rs/gtk3-rs
-[c~gdk~repo~badge]: https://img.shields.io/badge/gdk-steelblue?logo=github
-[c~gdk~website]: https://gtk-rs.org/gtk3-rs/stable/latest/docs/gdk
-[c~gdk~website~badge]: https://img.shields.io/badge/gdk-coral
-[c~geos~crates.io]: https://crates.io/crates/geos
-[c~geos~crates.io~badge]: https://img.shields.io/badge/crates.io-geos-crimson
-[c~geos~docs]: https://docs.rs/geos
-[c~geos~docs~badge]: https://img.shields.io/crates/v/geos?label=geos
-[c~geos~lib.rs]: https://lib.rs/crates/geos
-[c~geos~lib.rs~badge]: https://img.shields.io/badge/lib.rs-geos-yellow
-[c~geos~repo]: https://github.com/georust/geos
-[c~geos~repo~badge]: https://img.shields.io/badge/geos-steelblue?logo=github
-[c~geotiff~crates.io]: https://crates.io/crates/geotiff
-[c~geotiff~crates.io~badge]: https://img.shields.io/badge/crates.io-geotiff-crimson
-[c~geotiff~docs]: https://docs.rs/geotiff
-[c~geotiff~docs~badge]: https://img.shields.io/crates/v/geotiff?label=geotiff
-[c~geotiff~lib.rs]: https://lib.rs/crates/geotiff
-[c~geotiff~lib.rs~badge]: https://img.shields.io/badge/lib.rs-geotiff-yellow
-[c~geotiff~repo]: https://github.com/georust/geotiff
-[c~geotiff~repo~badge]: https://img.shields.io/badge/geotiff-steelblue?logo=github
-[c~geo~crates.io]: https://crates.io/crates/geo
-[c~geo~crates.io~badge]: https://img.shields.io/badge/crates.io-geo-crimson
-[c~geo~docs]: https://docs.rs/geo
-[c~geo~docs~badge]: https://img.shields.io/crates/v/geo?label=geo
-[c~geo~lib.rs]: https://lib.rs/crates/geo
-[c~geo~lib.rs~badge]: https://img.shields.io/badge/lib.rs-geo-yellow
-[c~geo~repo]: https://github.com/georust/geo
-[c~geo~repo~badge]: https://img.shields.io/badge/geo-steelblue?logo=github
-[c~gettext~crates.io]: https://crates.io/crates/gettext
-[c~gettext~crates.io~badge]: https://img.shields.io/badge/crates.io-gettext-crimson
-[c~gettext~docs]: https://docs.rs/gettext
-[c~gettext~docs~badge]: https://img.shields.io/crates/v/gettext?label=gettext
-[c~gettext~lib.rs]: https://lib.rs/crates/gettext
-[c~gettext~lib.rs~badge]: https://img.shields.io/badge/lib.rs-gettext-yellow
-[c~gettext~repo]: https://github.com/justinas/gettext
-[c~gettext~repo~badge]: https://img.shields.io/badge/gettext-steelblue?logo=github
-[c~gfx-hal~crates.io]: https://crates.io/crates/gfx-hal
-[c~gfx-hal~crates.io~badge]: https://img.shields.io/badge/crates.io-gfx--hal-crimson
-[c~gfx-hal~docs]: https://docs.rs/gfx-hal
-[c~gfx-hal~docs~badge]: https://img.shields.io/crates/v/gfx-hal?label=gfx-hal
-[c~gfx-hal~lib.rs]: https://lib.rs/crates/gfx-hal
-[c~gfx-hal~lib.rs~badge]: https://img.shields.io/badge/lib.rs-gfx--hal-yellow
-[c~gfx-hal~repo]: https://github.com/gfx-rs/gfx
-[c~gfx-hal~repo~badge]: https://img.shields.io/badge/gfx--hal-steelblue?logo=github
-[c~gfx~crates.io]: https://crates.io/crates/gfx
-[c~gfx~crates.io~badge]: https://img.shields.io/badge/crates.io-gfx-crimson
-[c~gfx~docs]: https://docs.rs/gfx
-[c~gfx~docs~badge]: https://img.shields.io/crates/v/gfx?label=gfx
-[c~gfx~lib.rs]: https://lib.rs/crates/gfx
-[c~gfx~lib.rs~badge]: https://img.shields.io/badge/lib.rs-gfx-yellow
-[c~gfx~repo]: https://github.com/gfx-rs/gfx
-[c~gfx~repo~badge]: https://img.shields.io/badge/gfx-steelblue?logo=github
-[c~ggez~crates.io]: https://crates.io/crates/ggez
-[c~ggez~crates.io~badge]: https://img.shields.io/badge/crates.io-ggez-crimson
-[c~ggez~docs]: https://docs.rs/ggez
-[c~ggez~docs~badge]: https://img.shields.io/crates/v/ggez?label=ggez
-[c~ggez~lib.rs]: https://lib.rs/crates/ggez
-[c~ggez~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ggez-yellow
-[c~ggez~repo]: https://github.com/ggez/ggez
-[c~ggez~repo~badge]: https://img.shields.io/badge/ggez-steelblue?logo=github
-[c~ggez~website]: https://ggez.rs
-[c~ggez~website~badge]: https://img.shields.io/badge/ggez-coral
-[c~ggrs~crates.io]: https://crates.io/crates/ggrs
-[c~ggrs~crates.io~badge]: https://img.shields.io/badge/crates.io-ggrs-crimson
-[c~ggrs~docs]: https://docs.rs/ggrs
-[c~ggrs~docs~badge]: https://img.shields.io/crates/v/ggrs?label=ggrs
-[c~ggrs~lib.rs]: https://lib.rs/crates/ggrs
-[c~ggrs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ggrs-yellow
-[c~ggrs~repo]: https://github.com/gschup/ggrs
-[c~ggrs~repo~badge]: https://img.shields.io/badge/ggrs-steelblue?logo=github
-[c~gh-workflow~crates.io]: https://crates.io/crates/gh-workflow
-[c~gh-workflow~crates.io~badge]: https://img.shields.io/badge/crates.io-gh--workflow-crimson
-[c~gh-workflow~docs]: https://docs.rs/gh-workflow
-[c~gh-workflow~docs~badge]: https://img.shields.io/crates/v/gh-workflow?label=gh-workflow
-[c~gh-workflow~lib.rs]: https://lib.rs/crates/gh-workflow
-[c~gh-workflow~lib.rs~badge]: https://img.shields.io/badge/lib.rs-gh--workflow-yellow
-[c~gh-workflow~repo]: https://github.com/tailcallhq/gh-workflow
-[c~gh-workflow~repo~badge]: https://img.shields.io/badge/gh--workflow-steelblue?logo=github
-[c~gherkin~crates.io]: https://crates.io/crates/gherkin
-[c~gherkin~crates.io~badge]: https://img.shields.io/badge/crates.io-gherkin-crimson
-[c~gherkin~docs]: https://docs.rs/gherkin
-[c~gherkin~docs~badge]: https://img.shields.io/crates/v/gherkin?label=gherkin
-[c~gherkin~lib.rs]: https://lib.rs/crates/gherkin
-[c~gherkin~lib.rs~badge]: https://img.shields.io/badge/lib.rs-gherkin-yellow
-[c~gherkin~repo]: https://github.com/cucumber-rs/gherkin
-[c~gherkin~repo~badge]: https://img.shields.io/badge/gherkin-steelblue?logo=github
-[c~gif~crates.io]: https://crates.io/crates/gif
-[c~gif~crates.io~badge]: https://img.shields.io/badge/crates.io-gif-crimson
-[c~gif~docs]: https://docs.rs/gif
-[c~gif~docs~badge]: https://img.shields.io/crates/v/gif?label=gif
-[c~gif~lib.rs]: https://lib.rs/crates/gif
-[c~gif~lib.rs~badge]: https://img.shields.io/badge/lib.rs-gif-yellow
-[c~gif~repo]: https://github.com/image-rs/image-gif
-[c~gif~repo~badge]: https://img.shields.io/badge/gif-steelblue?logo=github
-[c~gio~crates.io]: https://crates.io/crates/gio
-[c~gio~crates.io~badge]: https://img.shields.io/badge/crates.io-gio-crimson
-[c~gio~docs]: https://gtk-rs.org/gtk-rs-core/stable/latest/docs/gio
-[c~gio~docs~badge]: https://img.shields.io/crates/v/gio?label=gio
-[c~gio~lib.rs]: https://lib.rs/crates/gio
-[c~gio~lib.rs~badge]: https://img.shields.io/badge/lib.rs-gio-yellow
-[c~gio~repo]: https://github.com/gtk-rs/gtk-rs-core
-[c~gio~repo~badge]: https://img.shields.io/badge/gio-steelblue?logo=github
-[c~gio~website]: https://gtk-rs.org
-[c~gio~website~badge]: https://img.shields.io/badge/gio-coral
-[c~gitoxide~crates.io]: https://crates.io/crates/gitoxide
-[c~gitoxide~crates.io~badge]: https://img.shields.io/badge/crates.io-gitoxide-crimson
-[c~gitoxide~docs]: https://docs.rs/gitoxide
-[c~gitoxide~docs~badge]: https://img.shields.io/crates/v/gitoxide?label=gitoxide
-[c~gitoxide~lib.rs]: https://lib.rs/crates/gitoxide
-[c~gitoxide~lib.rs~badge]: https://img.shields.io/badge/lib.rs-gitoxide-yellow
-[c~gitoxide~repo]: https://github.com/GitoxideLabs/gitoxide
-[c~gitoxide~repo~badge]: https://img.shields.io/badge/gitoxide-steelblue?logo=github
-[c~glam~crates.io]: https://crates.io/crates/glam
-[c~glam~crates.io~badge]: https://img.shields.io/badge/crates.io-glam-crimson
-[c~glam~docs]: https://docs.rs/glam
-[c~glam~docs~badge]: https://img.shields.io/crates/v/glam?label=glam
-[c~glam~lib.rs]: https://lib.rs/crates/glam
-[c~glam~lib.rs~badge]: https://img.shields.io/badge/lib.rs-glam-yellow
-[c~glam~repo]: https://github.com/bitshifter/glam-rs
-[c~glam~repo~badge]: https://img.shields.io/badge/glam-steelblue?logo=github
-[c~glfw-sys~crates.io]: https://crates.io/crates/glfw-sys
-[c~glfw-sys~crates.io~badge]: https://img.shields.io/badge/crates.io-glfw--sys-crimson
-[c~glfw-sys~docs]: http://glfw.org/documentation.html
-[c~glfw-sys~docs~badge]: https://img.shields.io/crates/v/glfw-sys?label=glfw-sys
-[c~glfw-sys~lib.rs]: https://lib.rs/crates/glfw-sys
-[c~glfw-sys~lib.rs~badge]: https://img.shields.io/badge/lib.rs-glfw--sys-yellow
-[c~glfw-sys~repo]: https://github.com/PistonDevelopers/glfw-sys
-[c~glfw-sys~repo~badge]: https://img.shields.io/badge/glfw--sys-steelblue?logo=github
-[c~glfw-sys~website]: http://glfw.org
-[c~glfw-sys~website~badge]: https://img.shields.io/badge/glfw--sys-coral
-[c~glfw~crates.io]: https://crates.io/crates/glfw
-[c~glfw~crates.io~badge]: https://img.shields.io/badge/crates.io-glfw-crimson
-[c~glfw~docs]: https://docs.rs/glfw
-[c~glfw~docs~badge]: https://img.shields.io/crates/v/glfw?label=glfw
-[c~glfw~lib.rs]: https://lib.rs/crates/glfw
-[c~glfw~lib.rs~badge]: https://img.shields.io/badge/lib.rs-glfw-yellow
-[c~glfw~repo]: https://github.com/bjz/glfw-rs
-[c~glfw~repo~badge]: https://img.shields.io/badge/glfw-steelblue?logo=github
-[c~glib~crates.io]: https://crates.io/crates/glib
-[c~glib~crates.io~badge]: https://img.shields.io/badge/crates.io-glib-crimson
-[c~glib~docs]: https://gtk-rs.org/gtk-rs-core/stable/latest/docs/glib
-[c~glib~docs~badge]: https://img.shields.io/crates/v/glib?label=glib
-[c~glib~lib.rs]: https://lib.rs/crates/glib
-[c~glib~lib.rs~badge]: https://img.shields.io/badge/lib.rs-glib-yellow
-[c~glib~repo]: https://github.com/gtk-rs/gtk-rs-core
-[c~glib~repo~badge]: https://img.shields.io/badge/glib-steelblue?logo=github
-[c~glib~website]: https://gtk-rs.org
-[c~glib~website~badge]: https://img.shields.io/badge/glib-coral
-[c~glidesort~crates.io]: https://crates.io/crates/glidesort
-[c~glidesort~crates.io~badge]: https://img.shields.io/badge/crates.io-glidesort-crimson
-[c~glidesort~docs]: https://docs.rs/glidesort
-[c~glidesort~docs~badge]: https://img.shields.io/crates/v/glidesort?label=glidesort
-[c~glidesort~lib.rs]: https://lib.rs/crates/glidesort
-[c~glidesort~lib.rs~badge]: https://img.shields.io/badge/lib.rs-glidesort-yellow
-[c~glidesort~repo]: https://github.com/orlp/glidesort
-[c~glidesort~repo~badge]: https://img.shields.io/badge/glidesort-steelblue?logo=github
-[c~glium~crates.io]: https://crates.io/crates/glium
-[c~glium~crates.io~badge]: https://img.shields.io/badge/crates.io-glium-crimson
-[c~glium~docs]: https://docs.rs/glium
-[c~glium~docs~badge]: https://img.shields.io/crates/v/glium?label=glium
-[c~glium~lib.rs]: https://lib.rs/crates/glium
-[c~glium~lib.rs~badge]: https://img.shields.io/badge/lib.rs-glium-yellow
-[c~glium~repo]: https://github.com/glium/glium
-[c~glium~repo~badge]: https://img.shields.io/badge/glium-steelblue?logo=github
-[c~glob::MatchOptions~docs]: https://docs.rs/glob/latest/glob/struct.MatchOptions.html
-[c~glob::glob_with~docs]: https://docs.rs/glob/latest/glob/fn.glob_with.html
-[c~globset~crates.io]: https://crates.io/crates/globset
-[c~globset~crates.io~badge]: https://img.shields.io/badge/crates.io-globset-crimson
-[c~globset~docs]: https://docs.rs/globset
-[c~globset~docs~badge]: https://img.shields.io/crates/v/globset?label=globset
-[c~globset~lib.rs]: https://lib.rs/crates/globset
-[c~globset~lib.rs~badge]: https://img.shields.io/badge/lib.rs-globset-yellow
-[c~globset~repo]: https://github.com/BurntSushi/ripgrep/tree/master/crates/globset
-[c~globset~repo~badge]: https://img.shields.io/badge/globset-steelblue?logo=github
-[c~glob~crates.io]: https://crates.io/crates/glob
-[c~glob~crates.io~badge]: https://img.shields.io/badge/crates.io-glob-crimson
-[c~glob~docs]: https://docs.rs/glob
-[c~glob~docs~badge]: https://img.shields.io/crates/v/glob?label=glob
-[c~glob~lib.rs]: https://lib.rs/crates/glob
-[c~glob~lib.rs~badge]: https://img.shields.io/badge/lib.rs-glob-yellow
-[c~glob~repo]: https://github.com/rust-lang/glob
-[c~glob~repo~badge]: https://img.shields.io/badge/glob-steelblue?logo=github
-[c~glommio~crates.io]: https://crates.io/crates/glommio
-[c~glommio~crates.io~badge]: https://img.shields.io/badge/crates.io-glommio-crimson
-[c~glommio~docs]: https://docs.rs/glommio
-[c~glommio~docs~badge]: https://img.shields.io/crates/v/glommio?label=glommio
-[c~glommio~lib.rs]: https://lib.rs/crates/glommio
-[c~glommio~lib.rs~badge]: https://img.shields.io/badge/lib.rs-glommio-yellow
-[c~glommio~repo]: https://github.com/DataDog/glommio
-[c~glommio~repo~badge]: https://img.shields.io/badge/glommio-steelblue?logo=github
-[c~glow~crates.io]: https://crates.io/crates/glow
-[c~glow~crates.io~badge]: https://img.shields.io/badge/crates.io-glow-crimson
-[c~glow~docs]: https://docs.rs/glow
-[c~glow~docs~badge]: https://img.shields.io/crates/v/glow?label=glow
-[c~glow~lib.rs]: https://lib.rs/crates/glow
-[c~glow~lib.rs~badge]: https://img.shields.io/badge/lib.rs-glow-yellow
-[c~glow~repo]: https://github.com/grovesNL/glow
-[c~glow~repo~badge]: https://img.shields.io/badge/glow-steelblue?logo=github
-[c~glow~website]: https://github.com/grovesNL/glow.git
-[c~glow~website~badge]: https://img.shields.io/badge/glow-coral
-[c~glsl-to-spirv~crates.io]: https://crates.io/crates/glsl-to-spirv
-[c~glsl-to-spirv~crates.io~badge]: https://img.shields.io/badge/crates.io-glsl--to--spirv-crimson
-[c~glsl-to-spirv~docs]: https://docs.rs/glsl-to-spirv
-[c~glsl-to-spirv~docs~badge]: https://img.shields.io/crates/v/glsl-to-spirv?label=glsl-to-spirv
-[c~glsl-to-spirv~lib.rs]: https://lib.rs/crates/glsl-to-spirv
-[c~glsl-to-spirv~lib.rs~badge]: https://img.shields.io/badge/lib.rs-glsl--to--spirv-yellow
-[c~glsl-to-spirv~repo]: https://github.com/vulkano-rs/vulkano
-[c~glsl-to-spirv~repo~badge]: https://img.shields.io/badge/glsl--to--spirv-steelblue?logo=github
-[c~glyph_brush~crates.io]: https://crates.io/crates/glyph_brush
-[c~glyph_brush~crates.io~badge]: https://img.shields.io/badge/crates.io-glyph__brush-crimson
-[c~glyph_brush~docs]: https://docs.rs/glyph_brush
-[c~glyph_brush~docs~badge]: https://img.shields.io/crates/v/glyph_brush?label=glyph_brush
-[c~glyph_brush~lib.rs]: https://lib.rs/crates/glyph_brush
-[c~glyph_brush~lib.rs~badge]: https://img.shields.io/badge/lib.rs-glyph__brush-yellow
-[c~glyph_brush~repo]: https://github.com/alexheretic/glyph-brush
-[c~glyph_brush~repo~badge]: https://img.shields.io/badge/glyph__brush-steelblue?logo=github
-[c~godot-rust~crates.io]: https://crates.io/crates/godot-rust
-[c~godot-rust~crates.io~badge]: https://img.shields.io/badge/crates.io-godot--rust-crimson
-[c~godot-rust~docs]: https://docs.rs/godot-rust
-[c~godot-rust~docs~badge]: https://img.shields.io/crates/v/godot-rust?label=godot-rust
-[c~godot-rust~lib.rs]: https://lib.rs/crates/godot-rust
-[c~godot-rust~lib.rs~badge]: https://img.shields.io/badge/lib.rs-godot--rust-yellow
-[c~godot-rust~repo]: https://github.com/godot-rust/godot-rust
-[c~godot-rust~repo~badge]: https://img.shields.io/badge/godot--rust-steelblue?logo=github
-[c~gping~crates.io]: https://crates.io/crates/gping
-[c~gping~crates.io~badge]: https://img.shields.io/badge/crates.io-gping-crimson
-[c~gping~docs]: https://docs.rs/gping
-[c~gping~docs~badge]: https://img.shields.io/crates/v/gping?label=gping
-[c~gping~lib.rs]: https://lib.rs/crates/gping
-[c~gping~lib.rs~badge]: https://img.shields.io/badge/lib.rs-gping-yellow
-[c~gping~repo]: https://github.com/orf/gping
-[c~gping~repo~badge]: https://img.shields.io/badge/gping-steelblue?logo=github
-[c~gpsd_client~crates.io]: https://crates.io/crates/gpsd_client
-[c~gpsd_client~crates.io~badge]: https://img.shields.io/badge/crates.io-gpsd__client-crimson
-[c~gpsd_client~docs]: https://docs.rs/gpsd_client
-[c~gpsd_client~docs~badge]: https://img.shields.io/crates/v/gpsd_client?label=gpsd_client
-[c~gpsd_client~lib.rs]: https://lib.rs/crates/gpsd_client
-[c~gpsd_client~lib.rs~badge]: https://img.shields.io/badge/lib.rs-gpsd__client-yellow
-[c~gpsd_client~repo~badge]: https://img.shields.io/badge/gpsd__client-steelblue?logo=github
-[c~gpui~crates.io]: https://crates.io/crates/gpui
-[c~gpui~crates.io~badge]: https://img.shields.io/badge/crates.io-gpui-crimson
-[c~gpui~docs]: https://docs.rs/gpui
-[c~gpui~docs~badge]: https://img.shields.io/crates/v/gpui?label=gpui
-[c~gpui~lib.rs]: https://lib.rs/crates/gpui
-[c~gpui~lib.rs~badge]: https://img.shields.io/badge/lib.rs-gpui-yellow
-[c~gpui~repo]: https://github.com/zed-industries/zed/tree/main/crates/gpui
-[c~gpui~repo~badge]: https://img.shields.io/badge/gpui-steelblue?logo=github
-[c~graph-rs~crates.io]: https://crates.io/crates/graph-rs
-[c~graph-rs~crates.io~badge]: https://img.shields.io/badge/crates.io-graph--rs-crimson
-[c~graph-rs~docs]: https://docs.rs/graph-rs
-[c~graph-rs~docs~badge]: https://img.shields.io/crates/v/graph-rs?label=graph-rs
-[c~graph-rs~lib.rs]: https://lib.rs/crates/graph-rs
-[c~graph-rs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-graph--rs-yellow
-[c~graph-rs~repo]: https://gitlab.com/binero/graph-rs
-[c~graph-rs~repo~badge]: https://img.shields.io/badge/graph--rs-steelblue?logo=github
-[c~graphql-parser~crates.io]: https://crates.io/crates/graphql-parser
-[c~graphql-parser~crates.io~badge]: https://img.shields.io/badge/crates.io-graphql--parser-crimson
-[c~graphql-parser~docs]: https://docs.rs/graphql-parser
-[c~graphql-parser~docs~badge]: https://img.shields.io/crates/v/graphql-parser?label=graphql-parser
-[c~graphql-parser~lib.rs]: https://lib.rs/crates/graphql-parser
-[c~graphql-parser~lib.rs~badge]: https://img.shields.io/badge/lib.rs-graphql--parser-yellow
-[c~graphql-parser~repo~badge]: https://img.shields.io/badge/graphql--parser-steelblue?logo=github
-[c~graphql-parser~website]: https://github.com/graphql-rust/graphql-parser
-[c~graphql-parser~website~badge]: https://img.shields.io/badge/graphql--parser-coral
-[c~graphql_client~crates.io]: https://crates.io/crates/graphql_client
-[c~graphql_client~crates.io~badge]: https://img.shields.io/badge/crates.io-graphql__client-crimson
-[c~graphql_client~docs]: https://docs.rs/graphql_client
-[c~graphql_client~docs~badge]: https://img.shields.io/crates/v/graphql_client?label=graphql_client
-[c~graphql_client~lib.rs]: https://lib.rs/crates/graphql_client
-[c~graphql_client~lib.rs~badge]: https://img.shields.io/badge/lib.rs-graphql__client-yellow
-[c~graphql_client~repo]: https://github.com/graphql-rust/graphql-client
-[c~graphql_client~repo~badge]: https://img.shields.io/badge/graphql__client-steelblue?logo=github
-[c~grcov~crates.io]: https://crates.io/crates/grcov
-[c~grcov~crates.io~badge]: https://img.shields.io/badge/crates.io-grcov-crimson
-[c~grcov~docs]: https://github.com/mozilla/grcov
-[c~grcov~docs~badge]: https://img.shields.io/crates/v/grcov?label=grcov
-[c~grcov~lib.rs]: https://lib.rs/crates/grcov
-[c~grcov~lib.rs~badge]: https://img.shields.io/badge/lib.rs-grcov-yellow
-[c~grcov~repo]: https://github.com/mozilla/grcov
-[c~grcov~repo~badge]: https://img.shields.io/badge/grcov-steelblue?logo=github
-[c~grep-cli~crates.io]: https://crates.io/crates/grep-cli
-[c~grep-cli~crates.io~badge]: https://img.shields.io/badge/crates.io-grep--cli-crimson
-[c~grep-cli~docs]: https://docs.rs/grep-cli
-[c~grep-cli~docs~badge]: https://img.shields.io/crates/v/grep-cli?label=grep-cli
-[c~grep-cli~lib.rs]: https://lib.rs/crates/grep-cli
-[c~grep-cli~lib.rs~badge]: https://img.shields.io/badge/lib.rs-grep--cli-yellow
-[c~grep-cli~repo]: https://github.com/BurntSushi/ripgrep/tree/master/crates/cli
-[c~grep-cli~repo~badge]: https://img.shields.io/badge/grep--cli-steelblue?logo=github
-[c~grex~crates.io]: https://crates.io/crates/grex
-[c~grex~crates.io~badge]: https://img.shields.io/badge/crates.io-grex-crimson
-[c~grex~docs]: https://docs.rs/grex
-[c~grex~docs~badge]: https://img.shields.io/crates/v/grex?label=grex
-[c~grex~lib.rs]: https://lib.rs/crates/grex
-[c~grex~lib.rs~badge]: https://img.shields.io/badge/lib.rs-grex-yellow
-[c~grex~repo]: https://github.com/pemistahl/grex
-[c~grex~repo~badge]: https://img.shields.io/badge/grex-steelblue?logo=github
-[c~grin~crates.io]: https://crates.io/crates/grin
-[c~grin~crates.io~badge]: https://img.shields.io/badge/crates.io-grin-crimson
-[c~grin~docs]: https://docs.rs/grin
-[c~grin~docs~badge]: https://img.shields.io/crates/v/grin?label=grin
-[c~grin~lib.rs]: https://lib.rs/crates/grin
-[c~grin~lib.rs~badge]: https://img.shields.io/badge/lib.rs-grin-yellow
-[c~grin~repo]: https://github.com/mimblewimble/grin
-[c~grin~repo~badge]: https://img.shields.io/badge/grin-steelblue?logo=github
-[c~grpc~crates.io]: https://crates.io/crates/grpc
-[c~grpc~crates.io~badge]: https://img.shields.io/badge/crates.io-grpc-crimson
-[c~grpc~docs]: https://docs.rs/grpc
-[c~grpc~docs~badge]: https://img.shields.io/crates/v/grpc?label=grpc
-[c~grpc~lib.rs]: https://lib.rs/crates/grpc
-[c~grpc~lib.rs~badge]: https://img.shields.io/badge/lib.rs-grpc-yellow
-[c~grpc~repo]: https://github.com/stepancheg/grpc-rust
-[c~grpc~repo~badge]: https://img.shields.io/badge/grpc-steelblue?logo=github
-[c~gtk4~crates.io]: https://crates.io/crates/gtk4
-[c~gtk4~crates.io~badge]: https://img.shields.io/badge/crates.io-gtk4-crimson
-[c~gtk4~docs]: https://gtk-rs.org/gtk4-rs/stable/latest/docs/gtk4
-[c~gtk4~docs~badge]: https://img.shields.io/crates/v/gtk4?label=gtk4
-[c~gtk4~lib.rs]: https://lib.rs/crates/gtk4
-[c~gtk4~lib.rs~badge]: https://img.shields.io/badge/lib.rs-gtk4-yellow
-[c~gtk4~repo]: https://github.com/gtk-rs/gtk4-rs
-[c~gtk4~repo~badge]: https://img.shields.io/badge/gtk4-steelblue?logo=github
-[c~gtk4~website]: https://gtk-rs.org/gtk4-rs
-[c~gtk4~website~badge]: https://img.shields.io/badge/gtk4-coral
-[c~gym~crates.io]: https://crates.io/crates/gym
-[c~gym~crates.io~badge]: https://img.shields.io/badge/crates.io-gym-crimson
-[c~gym~docs]: https://docs.rs/gym
-[c~gym~docs~badge]: https://img.shields.io/crates/v/gym?label=gym
-[c~gym~lib.rs]: https://lib.rs/crates/gym
-[c~gym~lib.rs~badge]: https://img.shields.io/badge/lib.rs-gym-yellow
-[c~gym~repo]: https://github.com/MrRobb/gym-rs
-[c~gym~repo~badge]: https://img.shields.io/badge/gym-steelblue?logo=github
-[c~gzip~crates.io]: https://crates.io/crates/gzip
-[c~gzip~crates.io~badge]: https://img.shields.io/badge/crates.io-gzip-crimson
-[c~gzip~docs]: https://docs.rs/gzip
-[c~gzip~docs~badge]: https://img.shields.io/crates/v/gzip?label=gzip
-[c~gzip~lib.rs]: https://lib.rs/crates/gzip
-[c~gzip~lib.rs~badge]: https://img.shields.io/badge/lib.rs-gzip-yellow
-[c~gzip~repo~badge]: https://img.shields.io/badge/gzip-steelblue?logo=github
-[c~h2~crates.io]: https://crates.io/crates/h2
-[c~h2~crates.io~badge]: https://img.shields.io/badge/crates.io-h2-crimson
-[c~h2~docs]: https://docs.rs/h2
-[c~h2~docs~badge]: https://img.shields.io/crates/v/h2?label=h2
-[c~h2~lib.rs]: https://lib.rs/crates/h2
-[c~h2~lib.rs~badge]: https://img.shields.io/badge/lib.rs-h2-yellow
-[c~h2~repo]: https://github.com/hyperium/h2
-[c~h2~repo~badge]: https://img.shields.io/badge/h2-steelblue?logo=github
-[c~half~crates.io]: https://crates.io/crates/half
-[c~half~crates.io~badge]: https://img.shields.io/badge/crates.io-half-crimson
-[c~half~docs]: https://docs.rs/half
-[c~half~docs~badge]: https://img.shields.io/crates/v/half?label=half
-[c~half~lib.rs]: https://lib.rs/crates/half
-[c~half~lib.rs~badge]: https://img.shields.io/badge/lib.rs-half-yellow
-[c~half~repo]: https://github.com/VoidStarKat/half-rs
-[c~half~repo~badge]: https://img.shields.io/badge/half-steelblue?logo=github
-[c~handlebars~crates.io]: https://crates.io/crates/handlebars
-[c~handlebars~crates.io~badge]: https://img.shields.io/badge/crates.io-handlebars-crimson
-[c~handlebars~docs]: https://docs.rs/handlebars
-[c~handlebars~docs~badge]: https://img.shields.io/crates/v/handlebars?label=handlebars
-[c~handlebars~lib.rs]: https://lib.rs/crates/handlebars
-[c~handlebars~lib.rs~badge]: https://img.shields.io/badge/lib.rs-handlebars-yellow
-[c~handlebars~repo]: https://github.com/sunng87/handlebars-rust
-[c~handlebars~repo~badge]: https://img.shields.io/badge/handlebars-steelblue?logo=github
-[c~heapless~crates.io]: https://crates.io/crates/heapless
-[c~heapless~crates.io~badge]: https://img.shields.io/badge/crates.io-heapless-crimson
-[c~heapless~docs]: https://docs.rs/heapless
-[c~heapless~docs~badge]: https://img.shields.io/crates/v/heapless?label=heapless
-[c~heapless~lib.rs]: https://lib.rs/crates/heapless
-[c~heapless~lib.rs~badge]: https://img.shields.io/badge/lib.rs-heapless-yellow
-[c~heapless~repo]: https://github.com/rust-embedded/heapless
-[c~heapless~repo~badge]: https://img.shields.io/badge/heapless-steelblue?logo=github
-[c~heaptrack~crates.io]: https://crates.io/crates/heaptrack
-[c~heaptrack~crates.io~badge]: https://img.shields.io/badge/crates.io-heaptrack-crimson
-[c~heaptrack~docs]: https://docs.rs/heaptrack
-[c~heaptrack~docs~badge]: https://img.shields.io/crates/v/heaptrack?label=heaptrack
-[c~heaptrack~lib.rs]: https://lib.rs/crates/heaptrack
-[c~heaptrack~lib.rs~badge]: https://img.shields.io/badge/lib.rs-heaptrack-yellow
-[c~heaptrack~repo~badge]: https://img.shields.io/badge/heaptrack-steelblue?logo=github
-[c~heck~crates.io]: https://crates.io/crates/heck
-[c~heck~crates.io~badge]: https://img.shields.io/badge/crates.io-heck-crimson
-[c~heck~docs]: https://docs.rs/heck
-[c~heck~docs~badge]: https://img.shields.io/crates/v/heck?label=heck
-[c~heck~lib.rs]: https://lib.rs/crates/heck
-[c~heck~lib.rs~badge]: https://img.shields.io/badge/lib.rs-heck-yellow
-[c~heck~repo]: https://github.com/withoutboats/heck
-[c~heck~repo~badge]: https://img.shields.io/badge/heck-steelblue?logo=github
-[c~hecs~crates.io]: https://crates.io/crates/hecs
-[c~hecs~crates.io~badge]: https://img.shields.io/badge/crates.io-hecs-crimson
-[c~hecs~docs]: https://docs.rs/hecs
-[c~hecs~docs~badge]: https://img.shields.io/crates/v/hecs?label=hecs
-[c~hecs~lib.rs]: https://lib.rs/crates/hecs
-[c~hecs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-hecs-yellow
-[c~hecs~repo]: https://github.com/Ralith/hecs
-[c~hecs~repo~badge]: https://img.shields.io/badge/hecs-steelblue?logo=github
-[c~heed~crates.io]: https://crates.io/crates/heed
-[c~heed~crates.io~badge]: https://img.shields.io/badge/crates.io-heed-crimson
-[c~heed~docs]: https://docs.rs/heed
-[c~heed~docs~badge]: https://img.shields.io/crates/v/heed?label=heed
-[c~heed~lib.rs]: https://lib.rs/crates/heed
-[c~heed~lib.rs~badge]: https://img.shields.io/badge/lib.rs-heed-yellow
-[c~heed~repo]: https://github.com/Kerollmops/heed
-[c~heed~repo~badge]: https://img.shields.io/badge/heed-steelblue?logo=github
-[c~hex-literal~crates.io]: https://crates.io/crates/hex-literal
-[c~hex-literal~crates.io~badge]: https://img.shields.io/badge/crates.io-hex--literal-crimson
-[c~hex-literal~docs]: https://docs.rs/hex-literal
-[c~hex-literal~docs~badge]: https://img.shields.io/crates/v/hex-literal?label=hex-literal
-[c~hex-literal~lib.rs]: https://lib.rs/crates/hex-literal
-[c~hex-literal~lib.rs~badge]: https://img.shields.io/badge/lib.rs-hex--literal-yellow
-[c~hex-literal~repo]: https://github.com/RustCrypto/utils
-[c~hex-literal~repo~badge]: https://img.shields.io/badge/hex--literal-steelblue?logo=github
-[c~html5ever~crates.io]: https://crates.io/crates/html5ever
-[c~html5ever~crates.io~badge]: https://img.shields.io/badge/crates.io-html5ever-crimson
-[c~html5ever~docs]: https://docs.rs/html5ever
-[c~html5ever~docs~badge]: https://img.shields.io/crates/v/html5ever?label=html5ever
-[c~html5ever~lib.rs]: https://lib.rs/crates/html5ever
-[c~html5ever~lib.rs~badge]: https://img.shields.io/badge/lib.rs-html5ever-yellow
-[c~html5ever~repo]: https://github.com/servo/html5ever
-[c~html5ever~repo~badge]: https://img.shields.io/badge/html5ever-steelblue?logo=github
-[c~http-body-util~crates.io]: https://crates.io/crates/http-body-util
-[c~http-body-util~crates.io~badge]: https://img.shields.io/badge/crates.io-http--body--util-crimson
-[c~http-body-util~docs]: https://docs.rs/http-body-util
-[c~http-body-util~docs~badge]: https://img.shields.io/crates/v/http-body-util?label=http-body-util
-[c~http-body-util~lib.rs]: https://lib.rs/crates/http-body-util
-[c~http-body-util~lib.rs~badge]: https://img.shields.io/badge/lib.rs-http--body--util-yellow
-[c~http-body-util~repo]: https://github.com/hyperium/http-body
-[c~http-body-util~repo~badge]: https://img.shields.io/badge/http--body--util-steelblue?logo=github
-[c~http-body~crates.io]: https://crates.io/crates/http-body
-[c~http-body~crates.io~badge]: https://img.shields.io/badge/crates.io-http--body-crimson
-[c~http-body~docs]: https://docs.rs/http-body
-[c~http-body~docs~badge]: https://img.shields.io/crates/v/http-body?label=http-body
-[c~http-body~lib.rs]: https://lib.rs/crates/http-body
-[c~http-body~lib.rs~badge]: https://img.shields.io/badge/lib.rs-http--body-yellow
-[c~http-body~repo]: https://github.com/hyperium/http-body
-[c~http-body~repo~badge]: https://img.shields.io/badge/http--body-steelblue?logo=github
-[c~http~crates.io]: https://crates.io/crates/http
-[c~http~crates.io~badge]: https://img.shields.io/badge/crates.io-http-crimson
-[c~http~docs]: https://docs.rs/http
-[c~http~docs~badge]: https://img.shields.io/crates/v/http?label=http
-[c~http~lib.rs]: https://lib.rs/crates/http
-[c~http~lib.rs~badge]: https://img.shields.io/badge/lib.rs-http-yellow
-[c~http~repo]: https://github.com/hyperium/http
-[c~http~repo~badge]: https://img.shields.io/badge/http-steelblue?logo=github
-[c~human-panic~crates.io]: https://crates.io/crates/human-panic
-[c~human-panic~crates.io~badge]: https://img.shields.io/badge/crates.io-human--panic-crimson
-[c~human-panic~docs]: https://docs.rs/human-panic
-[c~human-panic~docs~badge]: https://img.shields.io/crates/v/human-panic?label=human-panic
-[c~human-panic~lib.rs]: https://lib.rs/crates/human-panic
-[c~human-panic~lib.rs~badge]: https://img.shields.io/badge/lib.rs-human--panic-yellow
-[c~human-panic~repo]: https://github.com/rust-cli/human-panic
-[c~human-panic~repo~badge]: https://img.shields.io/badge/human--panic-steelblue?logo=github
-[c~humantime~crates.io]: https://crates.io/crates/humantime
-[c~humantime~crates.io~badge]: https://img.shields.io/badge/crates.io-humantime-crimson
-[c~humantime~docs]: https://docs.rs/humantime
-[c~humantime~docs~badge]: https://img.shields.io/crates/v/humantime?label=humantime
-[c~humantime~lib.rs]: https://lib.rs/crates/humantime
-[c~humantime~lib.rs~badge]: https://img.shields.io/badge/lib.rs-humantime-yellow
-[c~humantime~repo]: https://github.com/chronotope/humantime
-[c~humantime~repo~badge]: https://img.shields.io/badge/humantime-steelblue?logo=github
-[c~hyper-openssl~crates.io]: https://crates.io/crates/hyper-openssl
-[c~hyper-openssl~crates.io~badge]: https://img.shields.io/badge/crates.io-hyper--openssl-crimson
-[c~hyper-openssl~docs]: https://docs.rs/hyper-openssl
-[c~hyper-openssl~docs~badge]: https://img.shields.io/crates/v/hyper-openssl?label=hyper-openssl
-[c~hyper-openssl~lib.rs]: https://lib.rs/crates/hyper-openssl
-[c~hyper-openssl~lib.rs~badge]: https://img.shields.io/badge/lib.rs-hyper--openssl-yellow
-[c~hyper-openssl~repo]: https://github.com/sfackler/hyper-openssl
-[c~hyper-openssl~repo~badge]: https://img.shields.io/badge/hyper--openssl-steelblue?logo=github
-[c~hyper-rustls~crates.io]: https://crates.io/crates/hyper-rustls
-[c~hyper-rustls~crates.io~badge]: https://img.shields.io/badge/crates.io-hyper--rustls-crimson
-[c~hyper-rustls~docs]: https://docs.rs/hyper-rustls
-[c~hyper-rustls~docs~badge]: https://img.shields.io/crates/v/hyper-rustls?label=hyper-rustls
-[c~hyper-rustls~lib.rs]: https://lib.rs/crates/hyper-rustls
-[c~hyper-rustls~lib.rs~badge]: https://img.shields.io/badge/lib.rs-hyper--rustls-yellow
-[c~hyper-rustls~repo]: https://github.com/rustls/hyper-rustls
-[c~hyper-rustls~repo~badge]: https://img.shields.io/badge/hyper--rustls-steelblue?logo=github
-[c~hyper-tls~crates.io]: https://crates.io/crates/hyper-tls
-[c~hyper-tls~crates.io~badge]: https://img.shields.io/badge/crates.io-hyper--tls-crimson
-[c~hyper-tls~docs]: https://docs.rs/hyper-tls
-[c~hyper-tls~docs~badge]: https://img.shields.io/crates/v/hyper-tls?label=hyper-tls
-[c~hyper-tls~lib.rs]: https://lib.rs/crates/hyper-tls
-[c~hyper-tls~lib.rs~badge]: https://img.shields.io/badge/lib.rs-hyper--tls-yellow
-[c~hyper-tls~repo]: https://github.com/hyperium/hyper-tls
-[c~hyper-tls~repo~badge]: https://img.shields.io/badge/hyper--tls-steelblue?logo=github
-[c~hyper-tls~website]: https://hyper.rs
-[c~hyper-tls~website~badge]: https://img.shields.io/badge/hyper--tls-coral
-[c~hyper-util~crates.io]: https://crates.io/crates/hyper-util
-[c~hyper-util~crates.io~badge]: https://img.shields.io/badge/crates.io-hyper--util-crimson
-[c~hyper-util~docs]: https://docs.rs/hyper-util
-[c~hyper-util~docs~badge]: https://img.shields.io/crates/v/hyper-util?label=hyper-util
-[c~hyper-util~lib.rs]: https://lib.rs/crates/hyper-util
-[c~hyper-util~lib.rs~badge]: https://img.shields.io/badge/lib.rs-hyper--util-yellow
-[c~hyper-util~repo]: https://github.com/hyperium/hyper-util
-[c~hyper-util~repo~badge]: https://img.shields.io/badge/hyper--util-steelblue?logo=github
-[c~hyper-util~website]: https://hyper.rs
-[c~hyper-util~website~badge]: https://img.shields.io/badge/hyper--util-coral
-[c~hyper::header::AUTHORIZATION~docs]: https://docs.rs/http/1.1.0/http/header/constant.AUTHORIZATION.html
-[c~hyper::header::USER_AGENT~docs]: https://docs.rs/http/1.1.0/http/header/constant.USER_AGENT.html
-[c~hyperfine~crates.io]: https://crates.io/crates/hyperfine
-[c~hyperfine~crates.io~badge]: https://img.shields.io/badge/crates.io-hyperfine-crimson
-[c~hyperfine~docs]: https://docs.rs/hyperfine
-[c~hyperfine~docs~badge]: https://img.shields.io/crates/v/hyperfine?label=hyperfine
-[c~hyperfine~lib.rs]: https://lib.rs/crates/hyperfine
-[c~hyperfine~lib.rs~badge]: https://img.shields.io/badge/lib.rs-hyperfine-yellow
-[c~hyperfine~repo]: https://github.com/sharkdp/hyperfine
-[c~hyperfine~repo~badge]: https://img.shields.io/badge/hyperfine-steelblue?logo=github
-[c~hyperlight~crates.io]: https://crates.io/crates/hyperlight
-[c~hyperlight~crates.io~badge]: https://img.shields.io/badge/crates.io-hyperlight-crimson
-[c~hyperlight~docs]: https://docs.rs/hyperlight
-[c~hyperlight~docs~badge]: https://img.shields.io/crates/v/hyperlight?label=hyperlight
-[c~hyperlight~lib.rs]: https://lib.rs/crates/hyperlight
-[c~hyperlight~lib.rs~badge]: https://img.shields.io/badge/lib.rs-hyperlight-yellow
-[c~hyperlight~repo]: https://github.com/hyperlight-dev/hyperlight
-[c~hyperlight~repo~badge]: https://img.shields.io/badge/hyperlight-steelblue?logo=github
-[c~hyper~crates.io]: https://crates.io/crates/hyper
-[c~hyper~crates.io~badge]: https://img.shields.io/badge/crates.io-hyper-crimson
-[c~hyper~docs]: https://docs.rs/hyper
-[c~hyper~docs~badge]: https://img.shields.io/crates/v/hyper?label=hyper
-[c~hyper~examples~repo]: https://github.com/hyperium/hyper/tree/master/examples
-[c~hyper~lib.rs]: https://lib.rs/crates/hyper
-[c~hyper~lib.rs~badge]: https://img.shields.io/badge/lib.rs-hyper-yellow
-[c~hyper~repo]: https://github.com/hyperium/hyper
-[c~hyper~repo~badge]: https://img.shields.io/badge/hyper-steelblue?logo=github
-[c~hyper~website]: https://hyper.rs
-[c~hyper~website~badge]: https://img.shields.io/badge/hyper-coral
-[c~hyphenation~crates.io]: https://crates.io/crates/hyphenation
-[c~hyphenation~crates.io~badge]: https://img.shields.io/badge/crates.io-hyphenation-crimson
-[c~hyphenation~docs]: https://docs.rs/hyphenation
-[c~hyphenation~docs~badge]: https://img.shields.io/crates/v/hyphenation?label=hyphenation
-[c~hyphenation~lib.rs]: https://lib.rs/crates/hyphenation
-[c~hyphenation~lib.rs~badge]: https://img.shields.io/badge/lib.rs-hyphenation-yellow
-[c~hyphenation~repo]: https://github.com/tapeinosyne/hyphenation
-[c~hyphenation~repo~badge]: https://img.shields.io/badge/hyphenation-steelblue?logo=github
-[c~i2cdev~crates.io]: https://crates.io/crates/i2cdev
-[c~i2cdev~crates.io~badge]: https://img.shields.io/badge/crates.io-i2cdev-crimson
-[c~i2cdev~docs]: https://docs.rs/i2cdev
-[c~i2cdev~docs~badge]: https://img.shields.io/crates/v/i2cdev?label=i2cdev
-[c~i2cdev~lib.rs]: https://lib.rs/crates/i2cdev
-[c~i2cdev~lib.rs~badge]: https://img.shields.io/badge/lib.rs-i2cdev-yellow
-[c~i2cdev~repo]: https://github.com/rust-embedded/rust-i2cdev
-[c~i2cdev~repo~badge]: https://img.shields.io/badge/i2cdev-steelblue?logo=github
-[c~iced_audio~crates.io]: https://crates.io/crates/iced_audio
-[c~iced_audio~crates.io~badge]: https://img.shields.io/badge/crates.io-iced__audio-crimson
-[c~iced_audio~docs]: https://docs.rs/iced_audio
-[c~iced_audio~docs~badge]: https://img.shields.io/crates/v/iced_audio?label=iced_audio
-[c~iced_audio~lib.rs]: https://lib.rs/crates/iced_audio
-[c~iced_audio~lib.rs~badge]: https://img.shields.io/badge/lib.rs-iced__audio-yellow
-[c~iced_audio~repo]: https://github.com/iced-rs/iced_audio
-[c~iced_audio~repo~badge]: https://img.shields.io/badge/iced__audio-steelblue?logo=github
-[c~iced~crates.io]: https://crates.io/crates/iced
-[c~iced~crates.io~badge]: https://img.shields.io/badge/crates.io-iced-crimson
-[c~iced~docs]: https://docs.rs/iced
-[c~iced~docs~badge]: https://img.shields.io/crates/v/iced?label=iced
-[c~iced~lib.rs]: https://lib.rs/crates/iced
-[c~iced~lib.rs~badge]: https://img.shields.io/badge/lib.rs-iced-yellow
-[c~iced~repo]: https://github.com/iced-rs/iced
-[c~iced~repo~badge]: https://img.shields.io/badge/iced-steelblue?logo=github
-[c~iced~website]: https://iced.rs
-[c~iced~website~badge]: https://img.shields.io/badge/iced-coral
-[c~iconv~crates.io]: https://crates.io/crates/iconv
-[c~iconv~crates.io~badge]: https://img.shields.io/badge/crates.io-iconv-crimson
-[c~iconv~docs]: https://docs.rs/iconv
-[c~iconv~docs~badge]: https://img.shields.io/crates/v/iconv?label=iconv
-[c~iconv~lib.rs]: https://lib.rs/crates/iconv
-[c~iconv~lib.rs~badge]: https://img.shields.io/badge/lib.rs-iconv-yellow
-[c~iconv~repo]: https://github.com/andelf/rust-iconv
-[c~iconv~repo~badge]: https://img.shields.io/badge/iconv-steelblue?logo=github
-[c~icu_datetime~crates.io]: https://crates.io/crates/icu_datetime
-[c~icu_datetime~crates.io~badge]: https://img.shields.io/badge/crates.io-icu__datetime-crimson
-[c~icu_datetime~docs]: https://docs.rs/icu_datetime
-[c~icu_datetime~docs~badge]: https://img.shields.io/crates/v/icu_datetime?label=icu_datetime
-[c~icu_datetime~lib.rs]: https://lib.rs/crates/icu_datetime
-[c~icu_datetime~lib.rs~badge]: https://img.shields.io/badge/lib.rs-icu__datetime-yellow
-[c~icu_datetime~repo]: https://github.com/unicode-org/icu4x
-[c~icu_datetime~repo~badge]: https://img.shields.io/badge/icu__datetime-steelblue?logo=github
-[c~icu_datetime~website]: https://icu4x.unicode.org
-[c~icu_datetime~website~badge]: https://img.shields.io/badge/icu__datetime-coral
-[c~icu~crates.io]: https://crates.io/crates/icu
-[c~icu~crates.io~badge]: https://img.shields.io/badge/crates.io-icu-crimson
-[c~icu~docs]: https://docs.rs/icu
-[c~icu~docs~badge]: https://img.shields.io/crates/v/icu?label=icu
-[c~icu~lib.rs]: https://lib.rs/crates/icu
-[c~icu~lib.rs~badge]: https://img.shields.io/badge/lib.rs-icu-yellow
-[c~icu~repo]: https://github.com/unicode-org/icu4x
-[c~icu~repo~badge]: https://img.shields.io/badge/icu-steelblue?logo=github
-[c~icu~website]: https://icu4x.unicode.org
-[c~icu~website~badge]: https://img.shields.io/badge/icu-coral
-[c~ignore~crates.io]: https://crates.io/crates/ignore
-[c~ignore~crates.io~badge]: https://img.shields.io/badge/crates.io-ignore-crimson
-[c~ignore~docs]: https://docs.rs/ignore
-[c~ignore~docs~badge]: https://img.shields.io/crates/v/ignore?label=ignore
-[c~ignore~lib.rs]: https://lib.rs/crates/ignore
-[c~ignore~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ignore-yellow
-[c~ignore~repo]: https://github.com/BurntSushi/ripgrep/tree/master/crates/ignore
-[c~ignore~repo~badge]: https://img.shields.io/badge/ignore-steelblue?logo=github
-[c~ihex~crates.io]: https://crates.io/crates/ihex
-[c~ihex~crates.io~badge]: https://img.shields.io/badge/crates.io-ihex-crimson
-[c~ihex~docs]: https://martinmroz.github.io/ihex/master/ihex
-[c~ihex~docs~badge]: https://img.shields.io/crates/v/ihex?label=ihex
-[c~ihex~lib.rs]: https://lib.rs/crates/ihex
-[c~ihex~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ihex-yellow
-[c~ihex~repo]: http://github.com/martinmroz/ihex
-[c~ihex~repo~badge]: https://img.shields.io/badge/ihex-steelblue?logo=github
-[c~image::DynamicImage::resize~docs]: https://docs.rs/image/latest/image/enum.DynamicImage.html#method.resize
-[c~image::ImageBuffer::new~docs]: https://docs.rs/image/latest/image/struct.ImageBuffer.html#method.new
-[c~image::ImageBuffer::put_pixel~docs]: https://docs.rs/image/latest/image/struct.ImageBuffer.html#method.put_pixel
-[c~image::ImageBuffer::save~docs]: https://docs.rs/image/latest/image/struct.ImageBuffer.html#method.save
-[c~image::Rgb::from_channels~docs]: https://docs.rs/image/latest/image/struct.Rgb.html#method.from_channels
-[c~imageproc~crates.io]: https://crates.io/crates/imageproc
-[c~imageproc~crates.io~badge]: https://img.shields.io/badge/crates.io-imageproc-crimson
-[c~imageproc~docs]: https://docs.rs/imageproc
-[c~imageproc~docs~badge]: https://img.shields.io/crates/v/imageproc?label=imageproc
-[c~imageproc~lib.rs]: https://lib.rs/crates/imageproc
-[c~imageproc~lib.rs~badge]: https://img.shields.io/badge/lib.rs-imageproc-yellow
-[c~imageproc~repo]: https://github.com/image-rs/imageproc
-[c~imageproc~repo~badge]: https://img.shields.io/badge/imageproc-steelblue?logo=github
-[c~imageproc~website]: https://github.com/image-rs/imageproc
-[c~imageproc~website~badge]: https://img.shields.io/badge/imageproc-coral
-[c~image~crates.io]: https://crates.io/crates/image
-[c~image~crates.io~badge]: https://img.shields.io/badge/crates.io-image-crimson
-[c~image~docs]: https://docs.rs/image
-[c~image~docs~badge]: https://img.shields.io/crates/v/image?label=image
-[c~image~lib.rs]: https://lib.rs/crates/image
-[c~image~lib.rs~badge]: https://img.shields.io/badge/lib.rs-image-yellow
-[c~image~repo]: https://github.com/image-rs/image
-[c~image~repo~badge]: https://img.shields.io/badge/image-steelblue?logo=github
-[c~im~crates.io]: https://crates.io/crates/im
-[c~im~crates.io~badge]: https://img.shields.io/badge/crates.io-im-crimson
-[c~im~docs]: https://docs.rs/im/latest/im
-[c~im~docs~badge]: https://img.shields.io/crates/v/im?label=im
-[c~im~lib.rs]: https://lib.rs/crates/im
-[c~im~lib.rs~badge]: https://img.shields.io/badge/lib.rs-im-yellow
-[c~im~repo]: https://github.com/bodil/im-rs
-[c~im~repo~badge]: https://img.shields.io/badge/im-steelblue?logo=github
-[c~im~website]: http://immutable.rs
-[c~im~website~badge]: https://img.shields.io/badge/im-coral
-[c~include_dir~crates.io]: https://crates.io/crates/include_dir
-[c~include_dir~crates.io~badge]: https://img.shields.io/badge/crates.io-include__dir-crimson
-[c~include_dir~docs]: https://docs.rs/include_dir
-[c~include_dir~docs~badge]: https://img.shields.io/crates/v/include_dir?label=include_dir
-[c~include_dir~lib.rs]: https://lib.rs/crates/include_dir
-[c~include_dir~lib.rs~badge]: https://img.shields.io/badge/lib.rs-include__dir-yellow
-[c~include_dir~repo]: https://github.com/Michael-F-Bryan/include_dir
-[c~include_dir~repo~badge]: https://img.shields.io/badge/include__dir-steelblue?logo=github
-[c~indexmap::set::IndexSet~docs]: https://docs.rs/indexmap/latest/indexmap/set/struct.IndexSet.html
-[c~indexmap~commit-activity~badge]: https://img.shields.io/github/commit-activity/y/indexmap-rs/indexmap
-[c~indexmap~crates.io]: https://crates.io/crates/indexmap
-[c~indexmap~crates.io~badge]: https://img.shields.io/badge/crates.io-indexmap-crimson
-[c~indexmap~dependents~badge]: https://img.shields.io/crates/dependents/indexmap
-[c~indexmap~deps-rs~badge]: https://img.shields.io/deps-rs/indexmap/latest
-[c~indexmap~docs]: https://docs.rs/indexmap
-[c~indexmap~docs~badge]: https://img.shields.io/crates/v/indexmap?label=indexmap
-[c~indexmap~last-commit~badge]: https://img.shields.io/github/last-commit/indexmap-rs/indexmap
-[c~indexmap~lib.rs]: https://lib.rs/crates/indexmap
-[c~indexmap~lib.rs~badge]: https://img.shields.io/badge/lib.rs-indexmap-yellow
-[c~indexmap~license~badge]: https://img.shields.io/crates/l/indexmap
-[c~indexmap~recent-downloads~badge]: https://img.shields.io/crates/dr/indexmap
-[c~indexmap~repo]: https://github.com/indexmap-rs/indexmap
-[c~indexmap~repo~badge]: https://img.shields.io/badge/indexmap-steelblue?logo=github
-[c~indextree~crates.io]: https://crates.io/crates/indextree
-[c~indextree~crates.io~badge]: https://img.shields.io/badge/crates.io-indextree-crimson
-[c~indextree~docs]: https://docs.rs/indextree
-[c~indextree~docs~badge]: https://img.shields.io/crates/v/indextree?label=indextree
-[c~indextree~lib.rs]: https://lib.rs/crates/indextree
-[c~indextree~lib.rs~badge]: https://img.shields.io/badge/lib.rs-indextree-yellow
-[c~indextree~repo]: https://github.com/saschagrunert/indextree
-[c~indextree~repo~badge]: https://img.shields.io/badge/indextree-steelblue?logo=github
-[c~indicatif~crates.io]: https://crates.io/crates/indicatif
-[c~indicatif~crates.io~badge]: https://img.shields.io/badge/crates.io-indicatif-crimson
-[c~indicatif~docs]: https://docs.rs/indicatif
-[c~indicatif~docs~badge]: https://img.shields.io/crates/v/indicatif?label=indicatif
-[c~indicatif~lib.rs]: https://lib.rs/crates/indicatif
-[c~indicatif~lib.rs~badge]: https://img.shields.io/badge/lib.rs-indicatif-yellow
-[c~indicatif~repo]: https://github.com/console-rs/indicatif
-[c~indicatif~repo~badge]: https://img.shields.io/badge/indicatif-steelblue?logo=github
-[c~indoc~crates.io]: https://crates.io/crates/indoc
-[c~indoc~crates.io~badge]: https://img.shields.io/badge/crates.io-indoc-crimson
-[c~indoc~docs]: https://docs.rs/indoc
-[c~indoc~docs~badge]: https://img.shields.io/crates/v/indoc?label=indoc
-[c~indoc~lib.rs]: https://lib.rs/crates/indoc
-[c~indoc~lib.rs~badge]: https://img.shields.io/badge/lib.rs-indoc-yellow
-[c~indoc~repo]: https://github.com/dtolnay/indoc
-[c~indoc~repo~badge]: https://img.shields.io/badge/indoc-steelblue?logo=github
-[c~ini~crates.io]: https://crates.io/crates/ini
-[c~ini~crates.io~badge]: https://img.shields.io/badge/crates.io-ini-crimson
-[c~ini~docs]: https://docs.rs/ini
-[c~ini~docs~badge]: https://img.shields.io/crates/v/ini?label=ini
-[c~ini~lib.rs]: https://lib.rs/crates/ini
-[c~ini~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ini-yellow
-[c~ini~repo]: https://github.com/QEDK/ini-rs
-[c~ini~repo~badge]: https://img.shields.io/badge/ini-steelblue?logo=github
-[c~inotify~crates.io]: https://crates.io/crates/inotify
-[c~inotify~crates.io~badge]: https://img.shields.io/badge/crates.io-inotify-crimson
-[c~inotify~docs]: https://docs.rs/inotify
-[c~inotify~docs~badge]: https://img.shields.io/crates/v/inotify?label=inotify
-[c~inotify~lib.rs]: https://lib.rs/crates/inotify
-[c~inotify~lib.rs~badge]: https://img.shields.io/badge/lib.rs-inotify-yellow
-[c~inotify~repo]: https://github.com/hannobraun/inotify
-[c~inotify~repo~badge]: https://img.shields.io/badge/inotify-steelblue?logo=github
-[c~inquire~crates.io]: https://crates.io/crates/inquire
-[c~inquire~crates.io~badge]: https://img.shields.io/badge/crates.io-inquire-crimson
-[c~inquire~docs]: https://docs.rs/inquire
-[c~inquire~docs~badge]: https://img.shields.io/crates/v/inquire?label=inquire
-[c~inquire~lib.rs]: https://lib.rs/crates/inquire
-[c~inquire~lib.rs~badge]: https://img.shields.io/badge/lib.rs-inquire-yellow
-[c~inquire~repo]: https://github.com/mikaelmello/inquire
-[c~inquire~repo~badge]: https://img.shields.io/badge/inquire-steelblue?logo=github
-[c~insta~crates.io]: https://crates.io/crates/insta
-[c~insta~crates.io~badge]: https://img.shields.io/badge/crates.io-insta-crimson
-[c~insta~docs]: https://docs.rs/insta
-[c~insta~docs~badge]: https://img.shields.io/crates/v/insta?label=insta
-[c~insta~lib.rs]: https://lib.rs/crates/insta
-[c~insta~lib.rs~badge]: https://img.shields.io/badge/lib.rs-insta-yellow
-[c~insta~repo]: https://github.com/mitsuhiko/insta
-[c~insta~repo~badge]: https://img.shields.io/badge/insta-steelblue?logo=github
-[c~insta~website]: https://insta.rs
-[c~insta~website~badge]: https://img.shields.io/badge/insta-coral
-[c~intl-rs~crates.io]: https://crates.io/crates/intl-rs
-[c~intl-rs~crates.io~badge]: https://img.shields.io/badge/crates.io-intl--rs-crimson
-[c~intl-rs~docs]: https://docs.rs/intl-rs
-[c~intl-rs~docs~badge]: https://img.shields.io/crates/v/intl-rs?label=intl-rs
-[c~intl-rs~lib.rs]: https://lib.rs/crates/intl-rs
-[c~intl-rs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-intl--rs-yellow
-[c~intl-rs~repo]: https://github.com/LyunKi/intl-rs
-[c~intl-rs~repo~badge]: https://img.shields.io/badge/intl--rs-steelblue?logo=github
-[c~inventory~crates.io]: https://crates.io/crates/inventory
-[c~inventory~crates.io~badge]: https://img.shields.io/badge/crates.io-inventory-crimson
-[c~inventory~docs]: https://docs.rs/inventory
-[c~inventory~docs~badge]: https://img.shields.io/crates/v/inventory?label=inventory
-[c~inventory~lib.rs]: https://lib.rs/crates/inventory
-[c~inventory~lib.rs~badge]: https://img.shields.io/badge/lib.rs-inventory-yellow
-[c~inventory~repo]: https://github.com/dtolnay/inventory
-[c~inventory~repo~badge]: https://img.shields.io/badge/inventory-steelblue?logo=github
-[c~ipnet~crates.io]: https://crates.io/crates/ipnet
-[c~ipnet~crates.io~badge]: https://img.shields.io/badge/crates.io-ipnet-crimson
-[c~ipnet~docs]: https://docs.rs/ipnet
-[c~ipnet~docs~badge]: https://img.shields.io/crates/v/ipnet?label=ipnet
-[c~ipnet~lib.rs]: https://lib.rs/crates/ipnet
-[c~ipnet~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ipnet-yellow
-[c~ipnet~repo]: https://github.com/krisprice/ipnet
-[c~ipnet~repo~badge]: https://img.shields.io/badge/ipnet-steelblue?logo=github
-[c~isahc~crates.io]: https://crates.io/crates/isahc
-[c~isahc~crates.io~badge]: https://img.shields.io/badge/crates.io-isahc-crimson
-[c~isahc~docs]: https://docs.rs/isahc
-[c~isahc~docs~badge]: https://img.shields.io/crates/v/isahc?label=isahc
-[c~isahc~lib.rs]: https://lib.rs/crates/isahc
-[c~isahc~lib.rs~badge]: https://img.shields.io/badge/lib.rs-isahc-yellow
-[c~isahc~repo]: https://github.com/sagebind/isahc
-[c~isahc~repo~badge]: https://img.shields.io/badge/isahc-steelblue?logo=github
-[c~iso4217~crates.io]: https://crates.io/crates/iso4217
-[c~iso4217~crates.io~badge]: https://img.shields.io/badge/crates.io-iso4217-crimson
-[c~iso4217~docs]: https://docs.rs/iso4217
-[c~iso4217~docs~badge]: https://img.shields.io/crates/v/iso4217?label=iso4217
-[c~iso4217~lib.rs]: https://lib.rs/crates/iso4217
-[c~iso4217~lib.rs~badge]: https://img.shields.io/badge/lib.rs-iso4217-yellow
-[c~iso4217~repo]: https://github.com/zeyla/iso4217.rs
-[c~iso4217~repo~badge]: https://img.shields.io/badge/iso4217-steelblue?logo=github
-[c~itertools~crates.io]: https://crates.io/crates/itertools
-[c~itertools~crates.io~badge]: https://img.shields.io/badge/crates.io-itertools-crimson
-[c~itertools~docs]: https://docs.rs/itertools
-[c~itertools~docs~badge]: https://img.shields.io/crates/v/itertools?label=itertools
-[c~itertools~lib.rs]: https://lib.rs/crates/itertools
-[c~itertools~lib.rs~badge]: https://img.shields.io/badge/lib.rs-itertools-yellow
-[c~itertools~repo]: https://github.com/rust-itertools/itertools
-[c~itertools~repo~badge]: https://img.shields.io/badge/itertools-steelblue?logo=github
-[c~itoa~crates.io]: https://crates.io/crates/itoa
-[c~itoa~crates.io~badge]: https://img.shields.io/badge/crates.io-itoa-crimson
-[c~itoa~docs]: https://docs.rs/itoa
-[c~itoa~docs~badge]: https://img.shields.io/crates/v/itoa?label=itoa
-[c~itoa~lib.rs]: https://lib.rs/crates/itoa
-[c~itoa~lib.rs~badge]: https://img.shields.io/badge/lib.rs-itoa-yellow
-[c~itoa~repo]: https://github.com/dtolnay/itoa
-[c~itoa~repo~badge]: https://img.shields.io/badge/itoa-steelblue?logo=github
-[c~jemalloc~crates.io]: https://crates.io/crates/jemalloc
-[c~jemalloc~crates.io~badge]: https://img.shields.io/badge/crates.io-jemalloc-crimson
-[c~jemalloc~docs]: https://docs.rs/jemalloc
-[c~jemalloc~docs~badge]: https://img.shields.io/crates/v/jemalloc?label=jemalloc
-[c~jemalloc~lib.rs]: https://lib.rs/crates/jemalloc
-[c~jemalloc~lib.rs~badge]: https://img.shields.io/badge/lib.rs-jemalloc-yellow
-[c~jemalloc~repo~badge]: https://img.shields.io/badge/jemalloc-steelblue?logo=github
-[c~jnix~crates.io]: https://crates.io/crates/jnix
-[c~jnix~crates.io~badge]: https://img.shields.io/badge/crates.io-jnix-crimson
-[c~jnix~docs]: https://docs.rs/jnix
-[c~jnix~docs~badge]: https://img.shields.io/crates/v/jnix?label=jnix
-[c~jnix~lib.rs]: https://lib.rs/crates/jnix
-[c~jnix~lib.rs~badge]: https://img.shields.io/badge/lib.rs-jnix-yellow
-[c~jnix~repo]: https://github.com/mullvad/jnix
-[c~jnix~repo~badge]: https://img.shields.io/badge/jnix-steelblue?logo=github
-[c~jni~crates.io]: https://crates.io/crates/jni
-[c~jni~crates.io~badge]: https://img.shields.io/badge/crates.io-jni-crimson
-[c~jni~docs]: https://docs.rs/jni
-[c~jni~docs~badge]: https://img.shields.io/crates/v/jni?label=jni
-[c~jni~lib.rs]: https://lib.rs/crates/jni
-[c~jni~lib.rs~badge]: https://img.shields.io/badge/lib.rs-jni-yellow
-[c~jni~repo]: https://github.com/jni-rs/jni-rs
-[c~jni~repo~badge]: https://img.shields.io/badge/jni-steelblue?logo=github
-[c~job~crates.io]: https://crates.io/crates/job
-[c~job~crates.io~badge]: https://img.shields.io/badge/crates.io-job-crimson
-[c~job~docs]: https://docs.rs/job
-[c~job~docs~badge]: https://img.shields.io/crates/v/job?label=job
-[c~job~lib.rs]: https://lib.rs/crates/job
-[c~job~lib.rs~badge]: https://img.shields.io/badge/lib.rs-job-yellow
-[c~job~repo~badge]: https://img.shields.io/badge/job-steelblue?logo=github
-[c~joinery~crates.io]: https://crates.io/crates/joinery
-[c~joinery~crates.io~badge]: https://img.shields.io/badge/crates.io-joinery-crimson
-[c~joinery~docs]: https://docs.rs/joinery
-[c~joinery~docs~badge]: https://img.shields.io/crates/v/joinery?label=joinery
-[c~joinery~lib.rs]: https://lib.rs/crates/joinery
-[c~joinery~lib.rs~badge]: https://img.shields.io/badge/lib.rs-joinery-yellow
-[c~joinery~repo]: https://github.com/Lucretiel/joinery
-[c~joinery~repo~badge]: https://img.shields.io/badge/joinery-steelblue?logo=github
-[c~jpeg-decoder~crates.io]: https://crates.io/crates/jpeg-decoder
-[c~jpeg-decoder~crates.io~badge]: https://img.shields.io/badge/crates.io-jpeg--decoder-crimson
-[c~jpeg-decoder~docs]: https://docs.rs/jpeg-decoder
-[c~jpeg-decoder~docs~badge]: https://img.shields.io/crates/v/jpeg-decoder?label=jpeg-decoder
-[c~jpeg-decoder~lib.rs]: https://lib.rs/crates/jpeg-decoder
-[c~jpeg-decoder~lib.rs~badge]: https://img.shields.io/badge/lib.rs-jpeg--decoder-yellow
-[c~jpeg-decoder~repo]: https://github.com/image-rs/jpeg-decoder
-[c~jpeg-decoder~repo~badge]: https://img.shields.io/badge/jpeg--decoder-steelblue?logo=github
-[c~js-sys~crates.io]: https://crates.io/crates/js-sys
-[c~js-sys~crates.io~badge]: https://img.shields.io/badge/crates.io-js--sys-crimson
-[c~js-sys~docs]: https://docs.rs/js-sys
-[c~js-sys~docs~badge]: https://img.shields.io/crates/v/js-sys?label=js-sys
-[c~js-sys~lib.rs]: https://lib.rs/crates/js-sys
-[c~js-sys~lib.rs~badge]: https://img.shields.io/badge/lib.rs-js--sys-yellow
-[c~js-sys~repo]: https://github.com/rustwasm/wasm-bindgen/tree/master/crates/js-sys
-[c~js-sys~repo~badge]: https://img.shields.io/badge/js--sys-steelblue?logo=github
-[c~js-sys~website]: https://rustwasm.github.io/wasm-bindgen
-[c~js-sys~website~badge]: https://img.shields.io/badge/js--sys-coral
-[c~json5~crates.io]: https://crates.io/crates/json5
-[c~json5~crates.io~badge]: https://img.shields.io/badge/crates.io-json5-crimson
-[c~json5~docs]: https://docs.rs/json5
-[c~json5~docs~badge]: https://img.shields.io/crates/v/json5?label=json5
-[c~json5~lib.rs]: https://lib.rs/crates/json5
-[c~json5~lib.rs~badge]: https://img.shields.io/badge/lib.rs-json5-yellow
-[c~json5~repo]: https://github.com/callum-oakley/json5-rs
-[c~json5~repo~badge]: https://img.shields.io/badge/json5-steelblue?logo=github
-[c~jsonpath-rust~crates.io]: https://crates.io/crates/jsonpath-rust
-[c~jsonpath-rust~crates.io~badge]: https://img.shields.io/badge/crates.io-jsonpath--rust-crimson
-[c~jsonpath-rust~docs]: https://docs.rs/jsonpath-rust
-[c~jsonpath-rust~docs~badge]: https://img.shields.io/crates/v/jsonpath-rust?label=jsonpath-rust
-[c~jsonpath-rust~lib.rs]: https://lib.rs/crates/jsonpath-rust
-[c~jsonpath-rust~lib.rs~badge]: https://img.shields.io/badge/lib.rs-jsonpath--rust-yellow
-[c~jsonpath-rust~repo]: https://github.com/besok/jsonpath-rust
-[c~jsonpath-rust~repo~badge]: https://img.shields.io/badge/jsonpath--rust-steelblue?logo=github
-[c~jsonpath~crates.io]: https://crates.io/crates/jsonpath
-[c~jsonpath~crates.io~badge]: https://img.shields.io/badge/crates.io-jsonpath-crimson
-[c~jsonpath~docs]: https://docs.rs/jsonpath
-[c~jsonpath~docs~badge]: https://img.shields.io/crates/v/jsonpath?label=jsonpath
-[c~jsonpath~lib.rs]: https://lib.rs/crates/jsonpath
-[c~jsonpath~lib.rs~badge]: https://img.shields.io/badge/lib.rs-jsonpath-yellow
-[c~jsonpath~repo]: https://github.com/greyblake/jsonpath-rs
-[c~jsonpath~repo~badge]: https://img.shields.io/badge/jsonpath-steelblue?logo=github
-[c~jsonschema~crates.io]: https://crates.io/crates/jsonschema
-[c~jsonschema~crates.io~badge]: https://img.shields.io/badge/crates.io-jsonschema-crimson
-[c~jsonschema~docs]: https://docs.rs/jsonschema
-[c~jsonschema~docs~badge]: https://img.shields.io/crates/v/jsonschema?label=jsonschema
-[c~jsonschema~lib.rs]: https://lib.rs/crates/jsonschema
-[c~jsonschema~lib.rs~badge]: https://img.shields.io/badge/lib.rs-jsonschema-yellow
-[c~jsonschema~repo]: https://github.com/Stranger6667/jsonschema
-[c~jsonschema~repo~badge]: https://img.shields.io/badge/jsonschema-steelblue?logo=github
-[c~jsonwebtoken~crates.io]: https://crates.io/crates/jsonwebtoken
-[c~jsonwebtoken~crates.io~badge]: https://img.shields.io/badge/crates.io-jsonwebtoken-crimson
-[c~jsonwebtoken~docs]: https://docs.rs/jsonwebtoken
-[c~jsonwebtoken~docs~badge]: https://img.shields.io/crates/v/jsonwebtoken?label=jsonwebtoken
-[c~jsonwebtoken~lib.rs]: https://lib.rs/crates/jsonwebtoken
-[c~jsonwebtoken~lib.rs~badge]: https://img.shields.io/badge/lib.rs-jsonwebtoken-yellow
-[c~jsonwebtoken~repo]: https://github.com/Keats/jsonwebtoken
-[c~jsonwebtoken~repo~badge]: https://img.shields.io/badge/jsonwebtoken-steelblue?logo=github
-[c~juniper~crates.io]: https://crates.io/crates/juniper
-[c~juniper~crates.io~badge]: https://img.shields.io/badge/crates.io-juniper-crimson
-[c~juniper~docs]: https://docs.rs/juniper
-[c~juniper~docs~badge]: https://img.shields.io/crates/v/juniper?label=juniper
-[c~juniper~lib.rs]: https://lib.rs/crates/juniper
-[c~juniper~lib.rs~badge]: https://img.shields.io/badge/lib.rs-juniper-yellow
-[c~juniper~repo]: https://github.com/graphql-rust/juniper
-[c~juniper~repo~badge]: https://img.shields.io/badge/juniper-steelblue?logo=github
-[c~juniper~website]: https://graphql-rust.github.io/juniper
-[c~juniper~website~badge]: https://img.shields.io/badge/juniper-coral
-[c~just~crates.io]: https://crates.io/crates/just
-[c~just~crates.io~badge]: https://img.shields.io/badge/crates.io-just-crimson
-[c~just~docs]: https://docs.rs/just
-[c~just~docs~badge]: https://img.shields.io/crates/v/just?label=just
-[c~just~justfile]: https://just.systems/man/en/quick-start.html
-[c~just~lib.rs]: https://lib.rs/crates/just
-[c~just~lib.rs~badge]: https://img.shields.io/badge/lib.rs-just-yellow
-[c~just~mod.just]: https://just.systems/man/en/modules1190.html?highlight=mod.just#modules1190
-[c~just~programmer-manual]: https://just.systems/man/en
-[c~just~repo]: https://github.com/casey/just
-[c~just~repo~badge]: https://img.shields.io/badge/just-steelblue?logo=github
-[c~just~website]: https://just.systems
-[c~just~website~badge]: https://img.shields.io/badge/just-coral
-[c~kanal~crates.io]: https://crates.io/crates/kanal
-[c~kanal~crates.io~badge]: https://img.shields.io/badge/crates.io-kanal-crimson
-[c~kanal~docs]: https://docs.rs/kanal
-[c~kanal~docs~badge]: https://img.shields.io/crates/v/kanal?label=kanal
-[c~kanal~lib.rs]: https://lib.rs/crates/kanal
-[c~kanal~lib.rs~badge]: https://img.shields.io/badge/lib.rs-kanal-yellow
-[c~kanal~repo]: https://github.com/fereidani/kanal
-[c~kanal~repo~badge]: https://img.shields.io/badge/kanal-steelblue?logo=github
-[c~kani~announcing-the-kani-rust-verifier-project~blog]: https://model-checking.github.io/kani-verifier-blog/2022/05/04/announcing-the-kani-rust-verifier-project.html
-[c~kani~crates.io]: https://crates.io/crates/kani
-[c~kani~crates.io~badge]: https://img.shields.io/badge/crates.io-kani-crimson
-[c~kani~docs]: https://docs.rs/kani
-[c~kani~docs~badge]: https://img.shields.io/crates/v/kani?label=kani
-[c~kani~lib.rs]: https://lib.rs/crates/kani
-[c~kani~lib.rs~badge]: https://img.shields.io/badge/lib.rs-kani-yellow
-[c~kani~repo]: https://github.com/model-checking/kani
-[c~kani~repo~badge]: https://img.shields.io/badge/kani-steelblue?logo=github
-[c~kani~using-the-kani-rust-verifier-on-a-firecracker~example~blog]: https://model-checking.github.io/kani-verifier-blog/2022/07/13/using-the-kani-rust-verifier-on-a-firecracker-example.html
-[c~kani~using-the-kani-rust-verifier-on-a-rust-standard-library-cve]: https://model-checking.github.io/kani-verifier-blog/2022/06/01/using-the-kani-rust-verifier-on-a-rust-standard-library-cve.html
-[c~kani~website]: https://model-checking.github.io/kani/getting-started.html
-[c~kdtree~crates.io]: https://crates.io/crates/kdtree
-[c~kdtree~crates.io~badge]: https://img.shields.io/badge/crates.io-kdtree-crimson
-[c~kdtree~docs]: https://docs.rs/kdtree
-[c~kdtree~docs~badge]: https://img.shields.io/crates/v/kdtree?label=kdtree
-[c~kdtree~lib.rs]: https://lib.rs/crates/kdtree
-[c~kdtree~lib.rs~badge]: https://img.shields.io/badge/lib.rs-kdtree-yellow
-[c~kdtree~repo]: https://github.com/mrhooray/kdtree-rs
-[c~kdtree~repo~badge]: https://img.shields.io/badge/kdtree-steelblue?logo=github
-[c~kget~crates.io]: https://crates.io/crates/kget
-[c~kget~crates.io~badge]: https://img.shields.io/badge/crates.io-kget-crimson
-[c~kget~docs]: https://docs.rs/kget
-[c~kget~docs~badge]: https://img.shields.io/crates/v/kget?label=kget
-[c~kget~lib.rs]: https://lib.rs/crates/kget
-[c~kget~lib.rs~badge]: https://img.shields.io/badge/lib.rs-kget-yellow
-[c~kget~repo]: https://github.com/davimf721/KGet
-[c~kget~repo~badge]: https://img.shields.io/badge/kget-steelblue?logo=github
-[c~kickstart~crates.io]: https://crates.io/crates/kickstart
-[c~kickstart~crates.io~badge]: https://img.shields.io/badge/crates.io-kickstart-crimson
-[c~kickstart~dependents~badge]: https://img.shields.io/crates/dependents/kickstart
-[c~kickstart~deps-rs~badge]: https://img.shields.io/deps-rs/kickstart/latest
-[c~kickstart~docs]: https://docs.rs/kickstart
-[c~kickstart~docs~badge]: https://img.shields.io/crates/v/kickstart?label=kickstart
-[c~kickstart~lib.rs]: https://lib.rs/crates/kickstart
-[c~kickstart~lib.rs~badge]: https://img.shields.io/badge/lib.rs-kickstart-yellow
-[c~kickstart~license~badge]: https://img.shields.io/crates/l/kickstart
-[c~kickstart~recent-downloads~badge]: https://img.shields.io/crates/dr/kickstart
-[c~kickstart~repo]: https://github.com/Keats/kickstart
-[c~kickstart~repo~badge]: https://img.shields.io/badge/kickstart-steelblue?logo=github
-[c~kiss3d~crates.io]: https://crates.io/crates/kiss3d
-[c~kiss3d~crates.io~badge]: https://img.shields.io/badge/crates.io-kiss3d-crimson
-[c~kiss3d~docs]: https://docs.rs/kiss3d
-[c~kiss3d~docs~badge]: https://img.shields.io/crates/v/kiss3d?label=kiss3d
-[c~kiss3d~lib.rs]: https://lib.rs/crates/kiss3d
-[c~kiss3d~lib.rs~badge]: https://img.shields.io/badge/lib.rs-kiss3d-yellow
-[c~kiss3d~repo]: https://github.com/sebcrozet/kiss3d
-[c~kiss3d~repo~badge]: https://img.shields.io/badge/kiss3d-steelblue?logo=github
-[c~kube~crates.io]: https://crates.io/crates/kube
-[c~kube~crates.io~badge]: https://img.shields.io/badge/crates.io-kube-crimson
-[c~kube~docs]: https://docs.rs/kube
-[c~kube~docs~badge]: https://img.shields.io/crates/v/kube?label=kube
-[c~kube~lib.rs]: https://lib.rs/crates/kube
-[c~kube~lib.rs~badge]: https://img.shields.io/badge/lib.rs-kube-yellow
-[c~kube~repo]: https://github.com/kube-rs/kube
-[c~kube~repo~badge]: https://img.shields.io/badge/kube-steelblue?logo=github
-[c~kuchiki~crates.io]: https://crates.io/crates/kuchiki
-[c~kuchiki~crates.io~badge]: https://img.shields.io/badge/crates.io-kuchiki-crimson
-[c~kuchiki~docs]: https://docs.rs/kuchiki
-[c~kuchiki~docs~badge]: https://img.shields.io/crates/v/kuchiki?label=kuchiki
-[c~kuchiki~lib.rs]: https://lib.rs/crates/kuchiki
-[c~kuchiki~lib.rs~badge]: https://img.shields.io/badge/lib.rs-kuchiki-yellow
-[c~kuchiki~repo]: https://github.com/SimonSapin/kuchiki
-[c~kuchiki~repo~badge]: https://img.shields.io/badge/kuchiki-steelblue?logo=github
-[c~kvm-bindings~crates.io]: https://crates.io/crates/kvm-bindings
-[c~kvm-bindings~crates.io~badge]: https://img.shields.io/badge/crates.io-kvm--bindings-crimson
-[c~kvm-bindings~docs]: https://docs.rs/kvm-bindings
-[c~kvm-bindings~docs~badge]: https://img.shields.io/crates/v/kvm-bindings?label=kvm-bindings
-[c~kvm-bindings~lib.rs]: https://lib.rs/crates/kvm-bindings
-[c~kvm-bindings~lib.rs~badge]: https://img.shields.io/badge/lib.rs-kvm--bindings-yellow
-[c~kvm-bindings~repo]: https://github.com/rust-vmm/kvm
-[c~kvm-bindings~repo~badge]: https://img.shields.io/badge/kvm--bindings-steelblue?logo=github
-[c~kvm~crates.io]: https://crates.io/crates/kvm
-[c~kvm~crates.io~badge]: https://img.shields.io/badge/crates.io-kvm-crimson
-[c~kvm~docs]: https://docs.rs/kvm
-[c~kvm~docs~badge]: https://img.shields.io/crates/v/kvm?label=kvm
-[c~kvm~lib.rs]: https://lib.rs/crates/kvm
-[c~kvm~lib.rs~badge]: https://img.shields.io/badge/lib.rs-kvm-yellow
-[c~kvm~repo]: https://github.com/dschatzberg/kvm
-[c~kvm~repo~badge]: https://img.shields.io/badge/kvm-steelblue?logo=github
-[c~kvm~website]: https://github.com/dschatzberg/kvm
-[c~kvm~website~badge]: https://img.shields.io/badge/kvm-coral
-[c~k~crates.io]: https://crates.io/crates/k
-[c~k~crates.io~badge]: https://img.shields.io/badge/crates.io-k-crimson
-[c~k~docs]: https://docs.rs/k
-[c~k~docs~badge]: https://img.shields.io/crates/v/k?label=k
-[c~k~lib.rs]: https://lib.rs/crates/k
-[c~k~lib.rs~badge]: https://img.shields.io/badge/lib.rs-k-yellow
-[c~k~repo]: https://github.com/openrr/k
-[c~k~repo~badge]: https://img.shields.io/badge/k-steelblue?logo=github
-[c~lalrpop~crates.io]: https://crates.io/crates/lalrpop
-[c~lalrpop~crates.io~badge]: https://img.shields.io/badge/crates.io-lalrpop-crimson
-[c~lalrpop~docs]: https://docs.rs/lalrpop
-[c~lalrpop~docs~badge]: https://img.shields.io/crates/v/lalrpop?label=lalrpop
-[c~lalrpop~lib.rs]: https://lib.rs/crates/lalrpop
-[c~lalrpop~lib.rs~badge]: https://img.shields.io/badge/lib.rs-lalrpop-yellow
-[c~lalrpop~repo]: https://github.com/lalrpop/lalrpop
-[c~lalrpop~repo~badge]: https://img.shields.io/badge/lalrpop-steelblue?logo=github
-[c~lambda_runtime~crates.io]: https://crates.io/crates/lambda_runtime
-[c~lambda_runtime~crates.io~badge]: https://img.shields.io/badge/crates.io-lambda__runtime-crimson
-[c~lambda_runtime~docs]: https://docs.rs/lambda_runtime
-[c~lambda_runtime~docs~badge]: https://img.shields.io/crates/v/lambda_runtime?label=lambda_runtime
-[c~lambda_runtime~lib.rs]: https://lib.rs/crates/lambda_runtime
-[c~lambda_runtime~lib.rs~badge]: https://img.shields.io/badge/lib.rs-lambda__runtime-yellow
-[c~lambda_runtime~repo]: https://github.com/awslabs/aws-lambda-rust-runtime
-[c~lambda_runtime~repo~badge]: https://img.shields.io/badge/lambda__runtime-steelblue?logo=github
-[c~lapin~crates.io]: https://crates.io/crates/lapin
-[c~lapin~crates.io~badge]: https://img.shields.io/badge/crates.io-lapin-crimson
-[c~lapin~docs]: https://docs.rs/lapin
-[c~lapin~docs~badge]: https://img.shields.io/crates/v/lapin?label=lapin
-[c~lapin~lib.rs]: https://lib.rs/crates/lapin
-[c~lapin~lib.rs~badge]: https://img.shields.io/badge/lib.rs-lapin-yellow
-[c~lapin~repo]: https://github.com/amqp-rs/lapin
-[c~lapin~repo~badge]: https://img.shields.io/badge/lapin-steelblue?logo=github
-[c~lazy_static~crates.io]: https://crates.io/crates/lazy_static
-[c~lazy_static~crates.io~badge]: https://img.shields.io/badge/crates.io-lazy__static-crimson
-[c~lazy_static~docs]: https://docs.rs/lazy_static
-[c~lazy_static~docs~badge]: https://img.shields.io/crates/v/lazy_static?label=lazy_static
-[c~lazy_static~lib.rs]: https://lib.rs/crates/lazy_static
-[c~lazy_static~lib.rs~badge]: https://img.shields.io/badge/lib.rs-lazy__static-yellow
-[c~lazy_static~repo]: https://github.com/rust-lang-nursery/lazy-static.rs
-[c~lazy_static~repo~badge]: https://img.shields.io/badge/lazy__static-steelblue?logo=github
-[c~learnrust~crates.io]: https://crates.io/crates/learnrust
-[c~learnrust~crates.io~badge]: https://img.shields.io/badge/crates.io-learnrust-crimson
-[c~learnrust~docs]: https://docs.rs/learnrust
-[c~learnrust~docs~badge]: https://img.shields.io/crates/v/learnrust?label=learnrust
-[c~learnrust~lib.rs]: https://lib.rs/crates/learnrust
-[c~learnrust~lib.rs~badge]: https://img.shields.io/badge/lib.rs-learnrust-yellow
-[c~learnrust~repo~badge]: https://img.shields.io/badge/learnrust-steelblue?logo=github
-[c~lens-rs~crates.io]: https://crates.io/crates/lens-rs
-[c~lens-rs~crates.io~badge]: https://img.shields.io/badge/crates.io-lens--rs-crimson
-[c~lens-rs~docs]: https://docs.rs/lens-rs
-[c~lens-rs~docs~badge]: https://img.shields.io/crates/v/lens-rs?label=lens-rs
-[c~lens-rs~lib.rs]: https://lib.rs/crates/lens-rs
-[c~lens-rs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-lens--rs-yellow
-[c~lens-rs~repo]: https://github.com/TOETOE55/lens-rs
-[c~lens-rs~repo~badge]: https://img.shields.io/badge/lens--rs-steelblue?logo=github
-[c~leptosfmt~crates.io]: https://crates.io/crates/leptosfmt
-[c~leptosfmt~crates.io~badge]: https://img.shields.io/badge/crates.io-leptosfmt-crimson
-[c~leptosfmt~docs]: https://docs.rs/leptosfmt
-[c~leptosfmt~docs~badge]: https://img.shields.io/crates/v/leptosfmt?label=leptosfmt
-[c~leptosfmt~lib.rs]: https://lib.rs/crates/leptosfmt
-[c~leptosfmt~lib.rs~badge]: https://img.shields.io/badge/lib.rs-leptosfmt-yellow
-[c~leptosfmt~repo]: https://github.com/bram209/leptosfmt
-[c~leptosfmt~repo~badge]: https://img.shields.io/badge/leptosfmt-steelblue?logo=github
-[c~leptos~crates.io]: https://crates.io/crates/leptos
-[c~leptos~crates.io~badge]: https://img.shields.io/badge/crates.io-leptos-crimson
-[c~leptos~docs]: https://docs.rs/leptos
-[c~leptos~docs~badge]: https://img.shields.io/crates/v/leptos?label=leptos
-[c~leptos~lib.rs]: https://lib.rs/crates/leptos
-[c~leptos~lib.rs~badge]: https://img.shields.io/badge/lib.rs-leptos-yellow
-[c~leptos~repo]: https://github.com/leptos-rs/leptos
-[c~leptos~repo~badge]: https://img.shields.io/badge/leptos-steelblue?logo=github
-[c~leptos~website]: https://leptos.dev
-[c~lettre~crates.io]: https://crates.io/crates/lettre
-[c~lettre~crates.io~badge]: https://img.shields.io/badge/crates.io-lettre-crimson
-[c~lettre~docs]: https://docs.rs/lettre
-[c~lettre~docs~badge]: https://img.shields.io/crates/v/lettre?label=lettre
-[c~lettre~lib.rs]: https://lib.rs/crates/lettre
-[c~lettre~lib.rs~badge]: https://img.shields.io/badge/lib.rs-lettre-yellow
-[c~lettre~repo]: https://github.com/lettre/lettre
-[c~lettre~repo~badge]: https://img.shields.io/badge/lettre-steelblue?logo=github
-[c~lettre~website]: https://lettre.rs
-[c~lettre~website~badge]: https://img.shields.io/badge/lettre-coral
-[c~lexical~crates.io]: https://crates.io/crates/lexical
-[c~lexical~crates.io~badge]: https://img.shields.io/badge/crates.io-lexical-crimson
-[c~lexical~docs]: https://docs.rs/lexical
-[c~lexical~docs~badge]: https://img.shields.io/crates/v/lexical?label=lexical
-[c~lexical~lib.rs]: https://lib.rs/crates/lexical
-[c~lexical~lib.rs~badge]: https://img.shields.io/badge/lib.rs-lexical-yellow
-[c~lexical~repo]: https://github.com/Alexhuszagh/rust-lexical
-[c~lexical~repo~badge]: https://img.shields.io/badge/lexical-steelblue?logo=github
-[c~lexopt~crates.io]: https://crates.io/crates/lexopt
-[c~lexopt~crates.io~badge]: https://img.shields.io/badge/crates.io-lexopt-crimson
-[c~lexopt~docs]: https://docs.rs/lexopt
-[c~lexopt~docs~badge]: https://img.shields.io/crates/v/lexopt?label=lexopt
-[c~lexopt~lib.rs]: https://lib.rs/crates/lexopt
-[c~lexopt~lib.rs~badge]: https://img.shields.io/badge/lib.rs-lexopt-yellow
-[c~lexopt~repo]: https://github.com/blyxxyz/lexopt
-[c~lexopt~repo~badge]: https://img.shields.io/badge/lexopt-steelblue?logo=github
-[c~libc~crates.io]: https://crates.io/crates/libc
-[c~libc~crates.io~badge]: https://img.shields.io/badge/crates.io-libc-crimson
-[c~libc~docs]: https://docs.rs/libc
-[c~libc~docs~badge]: https://img.shields.io/crates/v/libc?label=libc
-[c~libc~lib.rs]: https://lib.rs/crates/libc
-[c~libc~lib.rs~badge]: https://img.shields.io/badge/lib.rs-libc-yellow
-[c~libc~repo]: https://github.com/rust-lang/libc
-[c~libc~repo~badge]: https://img.shields.io/badge/libc-steelblue?logo=github
-[c~libloading~crates.io]: https://crates.io/crates/libloading
-[c~libloading~crates.io~badge]: https://img.shields.io/badge/crates.io-libloading-crimson
-[c~libloading~docs]: https://docs.rs/libloading
-[c~libloading~docs~badge]: https://img.shields.io/crates/v/libloading?label=libloading
-[c~libloading~lib.rs]: https://lib.rs/crates/libloading
-[c~libloading~lib.rs~badge]: https://img.shields.io/badge/lib.rs-libloading-yellow
-[c~libloading~repo]: https://github.com/nagisa/rust_libloading
-[c~libloading~repo~badge]: https://img.shields.io/badge/libloading-steelblue?logo=github
-[c~libxml~crates.io]: https://crates.io/crates/libxml
-[c~libxml~crates.io~badge]: https://img.shields.io/badge/crates.io-libxml-crimson
-[c~libxml~docs]: https://kwarc.github.io/rust-libxml/libxml
-[c~libxml~docs~badge]: https://img.shields.io/crates/v/libxml?label=libxml
-[c~libxml~lib.rs]: https://lib.rs/crates/libxml
-[c~libxml~lib.rs~badge]: https://img.shields.io/badge/lib.rs-libxml-yellow
-[c~libxml~repo]: https://github.com/KWARC/rust-libxml
-[c~libxml~repo~badge]: https://img.shields.io/badge/libxml-steelblue?logo=github
-[c~linear-map::LinearMap~docs]: https://docs.rs/linear-map/latest/linear-map/struct.LinearMap.html
-[c~linfa-linear~crates.io]: https://crates.io/crates/linfa-linear
-[c~linfa-linear~crates.io~badge]: https://img.shields.io/badge/crates.io-linfa--linear-crimson
-[c~linfa-linear~docs]: https://docs.rs/linfa-linear
-[c~linfa-linear~docs~badge]: https://img.shields.io/crates/v/linfa-linear?label=linfa-linear
-[c~linfa-linear~lib.rs]: https://lib.rs/crates/linfa-linear
-[c~linfa-linear~lib.rs~badge]: https://img.shields.io/badge/lib.rs-linfa--linear-yellow
-[c~linfa-linear~repo]: https://github.com/rust-ml/linfa
-[c~linfa-linear~repo~badge]: https://img.shields.io/badge/linfa--linear-steelblue?logo=github
-[c~linfa~crates.io]: https://crates.io/crates/linfa
-[c~linfa~crates.io~badge]: https://img.shields.io/badge/crates.io-linfa-crimson
-[c~linfa~docs]: https://docs.rs/linfa
-[c~linfa~docs~badge]: https://img.shields.io/crates/v/linfa?label=linfa
-[c~linfa~lib.rs]: https://lib.rs/crates/linfa
-[c~linfa~lib.rs~badge]: https://img.shields.io/badge/lib.rs-linfa-yellow
-[c~linfa~repo]: https://github.com/rust-ml/linfa
-[c~linfa~repo~badge]: https://img.shields.io/badge/linfa-steelblue?logo=github
-[c~linfa~website]: https://rust-ml.github.io/linfa
-[c~linfa~website~badge]: https://img.shields.io/badge/linfa-coral
-[c~lingua~crates.io]: https://crates.io/crates/lingua
-[c~lingua~crates.io~badge]: https://img.shields.io/badge/crates.io-lingua-crimson
-[c~lingua~docs]: https://docs.rs/lingua
-[c~lingua~docs~badge]: https://img.shields.io/crates/v/lingua?label=lingua
-[c~lingua~lib.rs]: https://lib.rs/crates/lingua
-[c~lingua~lib.rs~badge]: https://img.shields.io/badge/lib.rs-lingua-yellow
-[c~lingua~repo]: https://github.com/pemistahl/lingua-rs
-[c~lingua~repo~badge]: https://img.shields.io/badge/lingua-steelblue?logo=github
-[c~linked-hash-map~crates.io]: https://crates.io/crates/linked-hash-map
-[c~linked-hash-map~crates.io~badge]: https://img.shields.io/badge/crates.io-linked--hash--map-crimson
-[c~linked-hash-map~docs]: https://docs.rs/linked-hash-map
-[c~linked-hash-map~docs~badge]: https://img.shields.io/crates/v/linked-hash-map?label=linked-hash-map
-[c~linked-hash-map~lib.rs]: https://lib.rs/crates/linked-hash-map
-[c~linked-hash-map~lib.rs~badge]: https://img.shields.io/badge/lib.rs-linked--hash--map-yellow
-[c~linked-hash-map~repo]: https://github.com/contain-rs/linked-hash-map
-[c~linked-hash-map~repo~badge]: https://img.shields.io/badge/linked--hash--map-steelblue?logo=github
-[c~linux-embedded-hal~crates.io]: https://crates.io/crates/linux-embedded-hal
-[c~linux-embedded-hal~crates.io~badge]: https://img.shields.io/badge/crates.io-linux--embedded--hal-crimson
-[c~linux-embedded-hal~docs]: https://docs.rs/linux-embedded-hal
-[c~linux-embedded-hal~docs~badge]: https://img.shields.io/crates/v/linux-embedded-hal?label=linux-embedded-hal
-[c~linux-embedded-hal~lib.rs]: https://lib.rs/crates/linux-embedded-hal
-[c~linux-embedded-hal~lib.rs~badge]: https://img.shields.io/badge/lib.rs-linux--embedded--hal-yellow
-[c~linux-embedded-hal~repo]: https://github.com/rust-embedded/linux-embedded-hal
-[c~linux-embedded-hal~repo~badge]: https://img.shields.io/badge/linux--embedded--hal-steelblue?logo=github
-[c~linux~crates.io]: https://crates.io/crates/linux
-[c~linux~crates.io~badge]: https://img.shields.io/badge/crates.io-linux-crimson
-[c~linux~docs]: https://docs.rs/linux
-[c~linux~docs~badge]: https://img.shields.io/crates/v/linux?label=linux
-[c~linux~lib.rs]: https://lib.rs/crates/linux
-[c~linux~lib.rs~badge]: https://img.shields.io/badge/lib.rs-linux-yellow
-[c~linux~repo~badge]: https://img.shields.io/badge/linux-steelblue?logo=github
-[c~lldb~crates.io]: https://crates.io/crates/lldb
-[c~lldb~crates.io~badge]: https://img.shields.io/badge/crates.io-lldb-crimson
-[c~lldb~docs]: https://docs.rs/lldb
-[c~lldb~docs~badge]: https://img.shields.io/crates/v/lldb?label=lldb
-[c~lldb~lib.rs]: https://lib.rs/crates/lldb
-[c~lldb~lib.rs~badge]: https://img.shields.io/badge/lib.rs-lldb-yellow
-[c~lldb~repo]: https://github.com/endoli/lldb.rs
-[c~lldb~repo~badge]: https://img.shields.io/badge/lldb-steelblue?logo=github
-[c~lmdb-rs~crates.io]: https://crates.io/crates/lmdb-rs
-[c~lmdb-rs~crates.io~badge]: https://img.shields.io/badge/crates.io-lmdb--rs-crimson
-[c~lmdb-rs~docs]: https://vhbit.github.io/lmdb-rs/lmdb-rs
-[c~lmdb-rs~docs~badge]: https://img.shields.io/crates/v/lmdb-rs?label=lmdb-rs
-[c~lmdb-rs~lib.rs]: https://lib.rs/crates/lmdb-rs
-[c~lmdb-rs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-lmdb--rs-yellow
-[c~lmdb-rs~repo]: https://github.com/vhbit/lmdb-rs
-[c~lmdb-rs~repo~badge]: https://img.shields.io/badge/lmdb--rs-steelblue?logo=github
-[c~locale~crates.io]: https://crates.io/crates/locale
-[c~locale~crates.io~badge]: https://img.shields.io/badge/crates.io-locale-crimson
-[c~locale~docs]: https://docs.rs/locale
-[c~locale~docs~badge]: https://img.shields.io/crates/v/locale?label=locale
-[c~locale~lib.rs]: https://lib.rs/crates/locale
-[c~locale~lib.rs~badge]: https://img.shields.io/badge/lib.rs-locale-yellow
-[c~locale~repo]: https://github.com/rust-locale/rust-locale
-[c~locale~repo~badge]: https://img.shields.io/badge/locale-steelblue?logo=github
-[c~locale~website]: https://github.com/ogham/rust-locale
-[c~locale~website~badge]: https://img.shields.io/badge/locale-coral
-[c~loco-rs~crates.io]: https://crates.io/crates/loco-rs
-[c~loco-rs~crates.io~badge]: https://img.shields.io/badge/crates.io-loco--rs-crimson
-[c~loco-rs~docs]: https://docs.rs/loco-rs
-[c~loco-rs~docs~badge]: https://img.shields.io/crates/v/loco-rs?label=loco-rs
-[c~loco-rs~lib.rs]: https://lib.rs/crates/loco-rs
-[c~loco-rs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-loco--rs-yellow
-[c~loco-rs~repo]: https://github.com/loco-rs/loco
-[c~loco-rs~repo~badge]: https://img.shields.io/badge/loco--rs-steelblue?logo=github
-[c~loco-rs~website]: https://loco.rs
-[c~loco-rs~website~badge]: https://img.shields.io/badge/loco--rs-coral
-[c~lodepng~crates.io]: https://crates.io/crates/lodepng
-[c~lodepng~crates.io~badge]: https://img.shields.io/badge/crates.io-lodepng-crimson
-[c~lodepng~docs]: https://docs.rs/lodepng
-[c~lodepng~docs~badge]: https://img.shields.io/crates/v/lodepng?label=lodepng
-[c~lodepng~lib.rs]: https://lib.rs/crates/lodepng
-[c~lodepng~lib.rs~badge]: https://img.shields.io/badge/lib.rs-lodepng-yellow
-[c~lodepng~repo]: https://github.com/kornelski/lodepng-rust
-[c~lodepng~repo~badge]: https://img.shields.io/badge/lodepng-steelblue?logo=github
-[c~lodepng~website]: https://lib.rs/crates/lodepng
-[c~lodepng~website~badge]: https://img.shields.io/badge/lodepng-coral
-[c~log-panics~crates.io]: https://crates.io/crates/log-panics
-[c~log-panics~crates.io~badge]: https://img.shields.io/badge/crates.io-log--panics-crimson
-[c~log-panics~docs]: https://docs.rs/log-panics
-[c~log-panics~docs~badge]: https://img.shields.io/crates/v/log-panics?label=log-panics
-[c~log-panics~lib.rs]: https://lib.rs/crates/log-panics
-[c~log-panics~lib.rs~badge]: https://img.shields.io/badge/lib.rs-log--panics-yellow
-[c~log-panics~repo]: https://github.com/sfackler/rust-log-panics
-[c~log-panics~repo~badge]: https://img.shields.io/badge/log--panics-steelblue?logo=github
-[c~log4rs::append::file::FileAppender~docs]: https://docs.rs/log4rs/latest/log4rs/append/file/struct.FileAppender.html
-[c~log4rs::config::Config~docs]: https://docs.rs/log4rs/latest/log4rs/config/runtime/struct.Config.html
-[c~log4rs::encode::pattern~docs]: https://docs.rs/log4rs/latest/log4rs/encode/pattern
-[c~log4rs~crates.io]: https://crates.io/crates/log4rs
-[c~log4rs~crates.io~badge]: https://img.shields.io/badge/crates.io-log4rs-crimson
-[c~log4rs~docs]: https://docs.rs/log4rs
-[c~log4rs~docs~badge]: https://img.shields.io/crates/v/log4rs?label=log4rs
-[c~log4rs~lib.rs]: https://lib.rs/crates/log4rs
-[c~log4rs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-log4rs-yellow
-[c~log4rs~repo]: https://github.com/estk/log4rs
-[c~log4rs~repo~badge]: https://img.shields.io/badge/log4rs-steelblue?logo=github
-[c~log::LevelFilter~docs]: https://docs.rs/log/latest/log/enum.LevelFilter.html
-[c~log::Level~docs]: https://docs.rs/log/latest/log/enum.Level.html
-[c~log::Log~docs]: https://docs.rs/log/latest/log/trait.Log.html
-[c~log::Record::args~docs]: https://docs.rs/log/latest/log/struct.Record.html#method.args
-[c~log::Record::level~docs]: https://docs.rs/log/latest/log/struct.Record.html#method.level
-[c~log::debug~docs]: https://docs.rs/log/latest/log/macro.debug.html
-[c~log::error~docs]: https://docs.rs/log/latest/log/macro.error.html
-[c~log::set_logger~docs]: https://docs.rs/log/latest/log/fn.set_logger.html
-[c~logos~crates.io]: https://crates.io/crates/logos
-[c~logos~crates.io~badge]: https://img.shields.io/badge/crates.io-logos-crimson
-[c~logos~docs]: https://docs.rs/logos
-[c~logos~docs~badge]: https://img.shields.io/crates/v/logos?label=logos
-[c~logos~lib.rs]: https://lib.rs/crates/logos
-[c~logos~lib.rs~badge]: https://img.shields.io/badge/lib.rs-logos-yellow
-[c~logos~repo]: https://github.com/maciejhirsz/logos
-[c~logos~repo~badge]: https://img.shields.io/badge/logos-steelblue?logo=github
-[c~logos~website]: https://logos.maciej.codes
-[c~logos~website~badge]: https://img.shields.io/badge/logos-coral
-[c~log~crates.io]: https://crates.io/crates/log
-[c~log~crates.io~badge]: https://img.shields.io/badge/crates.io-log-crimson
-[c~log~docs]: https://docs.rs/log
-[c~log~docs~badge]: https://img.shields.io/crates/v/log?label=log
-[c~log~lib.rs]: https://lib.rs/crates/log
-[c~log~lib.rs~badge]: https://img.shields.io/badge/lib.rs-log-yellow
-[c~log~repo]: https://github.com/rust-lang/log
-[c~log~repo~badge]: https://img.shields.io/badge/log-steelblue?logo=github
-[c~loom~crates.io]: https://crates.io/crates/loom
-[c~loom~crates.io~badge]: https://img.shields.io/badge/crates.io-loom-crimson
-[c~loom~docs]: https://docs.rs/loom
-[c~loom~docs~badge]: https://img.shields.io/crates/v/loom?label=loom
-[c~loom~lib.rs]: https://lib.rs/crates/loom
-[c~loom~lib.rs~badge]: https://img.shields.io/badge/lib.rs-loom-yellow
-[c~loom~repo]: https://github.com/tokio-rs/loom
-[c~loom~repo~badge]: https://img.shields.io/badge/loom-steelblue?logo=github
-[c~lru~crates.io]: https://crates.io/crates/lru
-[c~lru~crates.io~badge]: https://img.shields.io/badge/crates.io-lru-crimson
-[c~lru~docs]: https://docs.rs/lru
-[c~lru~docs~badge]: https://img.shields.io/crates/v/lru?label=lru
-[c~lru~lib.rs]: https://lib.rs/crates/lru
-[c~lru~lib.rs~badge]: https://img.shields.io/badge/lib.rs-lru-yellow
-[c~lru~repo]: https://github.com/jeromefroe/lru-rs
-[c~lru~repo~badge]: https://img.shields.io/badge/lru-steelblue?logo=github
-[c~lru~website]: https://github.com/jeromefroe/lru-rs/blob/master/README.md
-[c~lru~website~badge]: https://img.shields.io/badge/lru-coral
-[c~lsd~crates.io]: https://crates.io/crates/lsd
-[c~lsd~crates.io~badge]: https://img.shields.io/badge/crates.io-lsd-crimson
-[c~lsd~docs]: https://docs.rs/lsd
-[c~lsd~docs~badge]: https://img.shields.io/crates/v/lsd?label=lsd
-[c~lsd~lib.rs]: https://lib.rs/crates/lsd
-[c~lsd~lib.rs~badge]: https://img.shields.io/badge/lib.rs-lsd-yellow
-[c~lsd~repo]: https://github.com/lsd-rs/lsd
-[c~lsd~repo~badge]: https://img.shields.io/badge/lsd-steelblue?logo=github
-[c~lua~crates.io]: https://crates.io/crates/lua
-[c~lua~crates.io~badge]: https://img.shields.io/badge/crates.io-lua-crimson
-[c~lua~docs]: https://docs.rs/lua
-[c~lua~docs~badge]: https://img.shields.io/crates/v/lua?label=lua
-[c~lua~lib.rs]: https://lib.rs/crates/lua
-[c~lua~lib.rs~badge]: https://img.shields.io/badge/lib.rs-lua-yellow
-[c~lua~repo]: https://github.com/jcmoyer/rust-lua53
-[c~lua~repo~badge]: https://img.shields.io/badge/lua-steelblue?logo=github
-[c~lyon~crates.io]: https://crates.io/crates/lyon
-[c~lyon~crates.io~badge]: https://img.shields.io/badge/crates.io-lyon-crimson
-[c~lyon~docs]: https://docs.rs/lyon
-[c~lyon~docs~badge]: https://img.shields.io/crates/v/lyon?label=lyon
-[c~lyon~lib.rs]: https://lib.rs/crates/lyon
-[c~lyon~lib.rs~badge]: https://img.shields.io/badge/lib.rs-lyon-yellow
-[c~lyon~repo]: https://github.com/nical/lyon
-[c~lyon~repo~badge]: https://img.shields.io/badge/lyon-steelblue?logo=github
-[c~lz4~crates.io]: https://crates.io/crates/lz4
-[c~lz4~crates.io~badge]: https://img.shields.io/badge/crates.io-lz4-crimson
-[c~lz4~docs]: https://docs.rs/lz4
-[c~lz4~docs~badge]: https://img.shields.io/crates/v/lz4?label=lz4
-[c~lz4~lib.rs]: https://lib.rs/crates/lz4
-[c~lz4~lib.rs~badge]: https://img.shields.io/badge/lib.rs-lz4-yellow
-[c~lz4~repo]: https://github.com/10xGenomics/lz4-rs
-[c~lz4~repo~badge]: https://img.shields.io/badge/lz4-steelblue?logo=github
-[c~macroquad~crates.io]: https://crates.io/crates/macroquad
-[c~macroquad~crates.io~badge]: https://img.shields.io/badge/crates.io-macroquad-crimson
-[c~macroquad~docs]: https://docs.rs/macroquad
-[c~macroquad~docs~badge]: https://img.shields.io/crates/v/macroquad?label=macroquad
-[c~macroquad~lib.rs]: https://lib.rs/crates/macroquad
-[c~macroquad~lib.rs~badge]: https://img.shields.io/badge/lib.rs-macroquad-yellow
-[c~macroquad~repo]: https://github.com/not-fl3/macroquad
-[c~macroquad~repo~badge]: https://img.shields.io/badge/macroquad-steelblue?logo=github
-[c~magnus~crates.io]: https://crates.io/crates/magnus
-[c~magnus~crates.io~badge]: https://img.shields.io/badge/crates.io-magnus-crimson
-[c~magnus~docs]: https://docs.rs/magnus
-[c~magnus~docs~badge]: https://img.shields.io/crates/v/magnus?label=magnus
-[c~magnus~lib.rs]: https://lib.rs/crates/magnus
-[c~magnus~lib.rs~badge]: https://img.shields.io/badge/lib.rs-magnus-yellow
-[c~magnus~repo]: https://github.com/matsadler/magnus
-[c~magnus~repo~badge]: https://img.shields.io/badge/magnus-steelblue?logo=github
-[c~mail-send~crates.io]: https://crates.io/crates/mail-send
-[c~mail-send~crates.io~badge]: https://img.shields.io/badge/crates.io-mail--send-crimson
-[c~mail-send~docs]: https://docs.rs/mail-send
-[c~mail-send~docs~badge]: https://img.shields.io/crates/v/mail-send?label=mail-send
-[c~mail-send~lib.rs]: https://lib.rs/crates/mail-send
-[c~mail-send~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mail--send-yellow
-[c~mail-send~repo]: https://github.com/stalwartlabs/mail-send
-[c~mail-send~repo~badge]: https://img.shields.io/badge/mail--send-steelblue?logo=github
-[c~mailparse~crates.io]: https://crates.io/crates/mailparse
-[c~mailparse~crates.io~badge]: https://img.shields.io/badge/crates.io-mailparse-crimson
-[c~mailparse~docs]: https://docs.rs/mailparse
-[c~mailparse~docs~badge]: https://img.shields.io/crates/v/mailparse?label=mailparse
-[c~mailparse~lib.rs]: https://lib.rs/crates/mailparse
-[c~mailparse~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mailparse-yellow
-[c~mailparse~repo]: https://github.com/staktrace/mailparse
-[c~mailparse~repo~badge]: https://img.shields.io/badge/mailparse-steelblue?logo=github
-[c~mailparse~website]: https://github.com/staktrace/mailparse/blob/master/README.md
-[c~mailparse~website~badge]: https://img.shields.io/badge/mailparse-coral
-[c~markdown~crates.io]: https://crates.io/crates/markdown
-[c~markdown~crates.io~badge]: https://img.shields.io/badge/crates.io-markdown-crimson
-[c~markdown~docs]: https://docs.rs/markdown
-[c~markdown~docs~badge]: https://img.shields.io/crates/v/markdown?label=markdown
-[c~markdown~lib.rs]: https://lib.rs/crates/markdown
-[c~markdown~lib.rs~badge]: https://img.shields.io/badge/lib.rs-markdown-yellow
-[c~markdown~repo]: https://github.com/wooorm/markdown-rs
-[c~markdown~repo~badge]: https://img.shields.io/badge/markdown-steelblue?logo=github
-[c~markup5ever_arcdom~crates.io]: https://crates.io/crates/markup5ever_arcdom
-[c~markup5ever_arcdom~crates.io~badge]: https://img.shields.io/badge/crates.io-markup5ever__arcdom-crimson
-[c~markup5ever_arcdom~docs]: https://docs.rs/markup5ever_arcdom
-[c~markup5ever_arcdom~docs~badge]: https://img.shields.io/crates/v/markup5ever_arcdom?label=markup5ever_arcdom
-[c~markup5ever_arcdom~lib.rs]: https://lib.rs/crates/markup5ever_arcdom
-[c~markup5ever_arcdom~lib.rs~badge]: https://img.shields.io/badge/lib.rs-markup5ever__arcdom-yellow
-[c~markup5ever_arcdom~repo]: https://github.com/Gonzih/markup5ever_arcdom
-[c~markup5ever_arcdom~repo~badge]: https://img.shields.io/badge/markup5ever__arcdom-steelblue?logo=github
-[c~markup5ever~crates.io]: https://crates.io/crates/markup5ever
-[c~markup5ever~crates.io~badge]: https://img.shields.io/badge/crates.io-markup5ever-crimson
-[c~markup5ever~docs]: https://docs.rs/markup5ever
-[c~markup5ever~docs~badge]: https://img.shields.io/crates/v/markup5ever?label=markup5ever
-[c~markup5ever~lib.rs]: https://lib.rs/crates/markup5ever
-[c~markup5ever~lib.rs~badge]: https://img.shields.io/badge/lib.rs-markup5ever-yellow
-[c~markup5ever~repo]: https://github.com/servo/html5ever
-[c~markup5ever~repo~badge]: https://img.shields.io/badge/markup5ever-steelblue?logo=github
-[c~markup~crates.io]: https://crates.io/crates/markup
-[c~markup~crates.io~badge]: https://img.shields.io/badge/crates.io-markup-crimson
-[c~markup~docs]: https://docs.rs/markup
-[c~markup~docs~badge]: https://img.shields.io/crates/v/markup?label=markup
-[c~markup~lib.rs]: https://lib.rs/crates/markup
-[c~markup~lib.rs~badge]: https://img.shields.io/badge/lib.rs-markup-yellow
-[c~markup~repo]: https://github.com/utkarshkukreti/markup.rs
-[c~markup~repo~badge]: https://img.shields.io/badge/markup-steelblue?logo=github
-[c~matrix~crates.io]: https://crates.io/crates/matrix
-[c~matrix~crates.io~badge]: https://img.shields.io/badge/crates.io-matrix-crimson
-[c~matrix~docs]: https://docs.rs/matrix
-[c~matrix~docs~badge]: https://img.shields.io/crates/v/matrix?label=matrix
-[c~matrix~lib.rs]: https://lib.rs/crates/matrix
-[c~matrix~lib.rs~badge]: https://img.shields.io/badge/lib.rs-matrix-yellow
-[c~matrix~repo]: https://github.com/stainless-steel/matrix
-[c~matrix~repo~badge]: https://img.shields.io/badge/matrix-steelblue?logo=github
-[c~maturin~crates.io]: https://crates.io/crates/maturin
-[c~maturin~crates.io~badge]: https://img.shields.io/badge/crates.io-maturin-crimson
-[c~maturin~docs]: https://docs.rs/maturin
-[c~maturin~docs~badge]: https://img.shields.io/crates/v/maturin?label=maturin
-[c~maturin~lib.rs]: https://lib.rs/crates/maturin
-[c~maturin~lib.rs~badge]: https://img.shields.io/badge/lib.rs-maturin-yellow
-[c~maturin~repo]: https://github.com/pyo3/maturin
-[c~maturin~repo~badge]: https://img.shields.io/badge/maturin-steelblue?logo=github
-[c~maud~crates.io]: https://crates.io/crates/maud
-[c~maud~crates.io~badge]: https://img.shields.io/badge/crates.io-maud-crimson
-[c~maud~docs]: https://docs.rs/maud
-[c~maud~docs~badge]: https://img.shields.io/crates/v/maud?label=maud
-[c~maud~lib.rs]: https://lib.rs/crates/maud
-[c~maud~lib.rs~badge]: https://img.shields.io/badge/lib.rs-maud-yellow
-[c~maud~repo]: https://github.com/lambda-fairy/maud
-[c~maud~repo~badge]: https://img.shields.io/badge/maud-steelblue?logo=github
-[c~maud~website]: https://maud.lambda.xyz
-[c~maud~website~badge]: https://img.shields.io/badge/maud-coral
-[c~mavlink~crates.io]: https://crates.io/crates/mavlink
-[c~mavlink~crates.io~badge]: https://img.shields.io/badge/crates.io-mavlink-crimson
-[c~mavlink~docs]: https://docs.rs/mavlink
-[c~mavlink~docs~badge]: https://img.shields.io/crates/v/mavlink?label=mavlink
-[c~mavlink~lib.rs]: https://lib.rs/crates/mavlink
-[c~mavlink~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mavlink-yellow
-[c~mavlink~repo]: https://github.com/mavlink/rust-mavlink
-[c~mavlink~repo~badge]: https://img.shields.io/badge/mavlink-steelblue?logo=github
-[c~mcap~crates.io]: https://crates.io/crates/mcap
-[c~mcap~crates.io~badge]: https://img.shields.io/badge/crates.io-mcap-crimson
-[c~mcap~docs]: https://docs.rs/mcap
-[c~mcap~docs~badge]: https://img.shields.io/crates/v/mcap?label=mcap
-[c~mcap~lib.rs]: https://lib.rs/crates/mcap
-[c~mcap~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mcap-yellow
-[c~mcap~repo]: https://github.com/foxglove/mcap
-[c~mcap~repo~badge]: https://img.shields.io/badge/mcap-steelblue?logo=github
-[c~mcap~website]: https://mcap.dev
-[c~mcap~website~badge]: https://img.shields.io/badge/mcap-coral
-[c~md-5~crates.io]: https://crates.io/crates/md-5
-[c~md-5~crates.io~badge]: https://img.shields.io/badge/crates.io-md--5-crimson
-[c~md-5~docs]: https://docs.rs/md-5
-[c~md-5~docs~badge]: https://img.shields.io/crates/v/md-5?label=md-5
-[c~md-5~lib.rs]: https://lib.rs/crates/md-5
-[c~md-5~lib.rs~badge]: https://img.shields.io/badge/lib.rs-md--5-yellow
-[c~md-5~repo]: https://github.com/RustCrypto/hashes/tree/master/md5
-[c~md-5~repo~badge]: https://img.shields.io/badge/md--5-steelblue?logo=github
-[c~md5~crates.io]: https://crates.io/crates/md5
-[c~md5~crates.io~badge]: https://img.shields.io/badge/crates.io-md5-crimson
-[c~md5~docs]: https://docs.rs/md5
-[c~md5~docs~badge]: https://img.shields.io/crates/v/md5?label=md5
-[c~md5~lib.rs]: https://lib.rs/crates/md5
-[c~md5~lib.rs~badge]: https://img.shields.io/badge/lib.rs-md5-yellow
-[c~md5~repo]: https://github.com/stainless-steel/md5
-[c~md5~repo~badge]: https://img.shields.io/badge/md5-steelblue?logo=github
-[c~mdbook-cmdrun~crates.io]: https://crates.io/crates/mdbook-cmdrun
-[c~mdbook-cmdrun~crates.io~badge]: https://img.shields.io/badge/crates.io-mdbook--cmdrun-crimson
-[c~mdbook-cmdrun~docs]: https://docs.rs/mdbook-cmdrun
-[c~mdbook-cmdrun~docs~badge]: https://img.shields.io/crates/v/mdbook-cmdrun?label=mdbook-cmdrun
-[c~mdbook-cmdrun~lib.rs]: https://lib.rs/crates/mdbook-cmdrun
-[c~mdbook-cmdrun~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mdbook--cmdrun-yellow
-[c~mdbook-cmdrun~repo]: https://github.com/FauconFan/mdbook-cmdrun
-[c~mdbook-cmdrun~repo~badge]: https://img.shields.io/badge/mdbook--cmdrun-steelblue?logo=github
-[c~mdbook-hide~crates.io]: https://crates.io/crates/mdbook-hide
-[c~mdbook-hide~crates.io~badge]: https://img.shields.io/badge/crates.io-mdbook--hide-crimson
-[c~mdbook-hide~docs]: https://docs.rs/mdbook-hide
-[c~mdbook-hide~docs~badge]: https://img.shields.io/crates/v/mdbook-hide?label=mdbook-hide
-[c~mdbook-hide~lib.rs]: https://lib.rs/crates/mdbook-hide
-[c~mdbook-hide~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mdbook--hide-yellow
-[c~mdbook-hide~repo]: https://github.com/ankitrgadiya/mdbook-hide
-[c~mdbook-hide~repo~badge]: https://img.shields.io/badge/mdbook--hide-steelblue?logo=github
-[c~mdbook-journal~crates.io]: https://crates.io/crates/mdbook-journal
-[c~mdbook-journal~crates.io~badge]: https://img.shields.io/badge/crates.io-mdbook--journal-crimson
-[c~mdbook-journal~docs]: https://docs.rs/mdbook-journal
-[c~mdbook-journal~docs~badge]: https://img.shields.io/crates/v/mdbook-journal?label=mdbook-journal
-[c~mdbook-journal~lib.rs]: https://lib.rs/crates/mdbook-journal
-[c~mdbook-journal~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mdbook--journal-yellow
-[c~mdbook-journal~repo]: https://github.com/benfalk/mdbook-journal
-[c~mdbook-journal~repo~badge]: https://img.shields.io/badge/mdbook--journal-steelblue?logo=github
-[c~mdbook-journal~website]: https://benfalk.github.io/mdbook-journal
-[c~mdbook-journal~website~badge]: https://img.shields.io/badge/mdbook--journal-coral
-[c~mdbook-keeper~crates.io]: https://crates.io/crates/mdbook-keeper
-[c~mdbook-keeper~crates.io~badge]: https://img.shields.io/badge/crates.io-mdbook--keeper-crimson
-[c~mdbook-keeper~docs]: https://docs.rs/mdbook-keeper
-[c~mdbook-keeper~docs~badge]: https://img.shields.io/crates/v/mdbook-keeper?label=mdbook-keeper
-[c~mdbook-keeper~lib.rs]: https://lib.rs/crates/mdbook-keeper
-[c~mdbook-keeper~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mdbook--keeper-yellow
-[c~mdbook-keeper~repo]: https://github.com/tfpk/mdbook-keeper
-[c~mdbook-keeper~repo~badge]: https://img.shields.io/badge/mdbook--keeper-steelblue?logo=github
-[c~mdbook-keeper~website]: https://github.com/tfpk/mdbook-keeper/blob/main/README.md
-[c~mdbook-linkcheck~crates.io]: https://crates.io/crates/mdbook-linkcheck
-[c~mdbook-linkcheck~crates.io~badge]: https://img.shields.io/badge/crates.io-mdbook--linkcheck-crimson
-[c~mdbook-linkcheck~docs]: https://docs.rs/mdbook-linkcheck
-[c~mdbook-linkcheck~docs~badge]: https://img.shields.io/crates/v/mdbook-linkcheck?label=mdbook-linkcheck
-[c~mdbook-linkcheck~lib.rs]: https://lib.rs/crates/mdbook-linkcheck
-[c~mdbook-linkcheck~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mdbook--linkcheck-yellow
-[c~mdbook-linkcheck~repo]: https://github.com/Michael-F-Bryan/mdbook-linkcheck
-[c~mdbook-linkcheck~repo~badge]: https://img.shields.io/badge/mdbook--linkcheck-steelblue?logo=github
-[c~mdbook-pagetoc~crates.io]: https://crates.io/crates/mdbook-pagetoc
-[c~mdbook-pagetoc~crates.io~badge]: https://img.shields.io/badge/crates.io-mdbook--pagetoc-crimson
-[c~mdbook-pagetoc~docs]: https://docs.rs/mdbook-pagetoc
-[c~mdbook-pagetoc~docs~badge]: https://img.shields.io/crates/v/mdbook-pagetoc?label=mdbook-pagetoc
-[c~mdbook-pagetoc~lib.rs]: https://lib.rs/crates/mdbook-pagetoc
-[c~mdbook-pagetoc~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mdbook--pagetoc-yellow
-[c~mdbook-pagetoc~repo]: https://github.com/slowsage/mdbook-pagetoc
-[c~mdbook-pagetoc~repo~badge]: https://img.shields.io/badge/mdbook--pagetoc-steelblue?logo=github
-[c~mdbook-pagetoc~website]: https://github.com/slowsage/mdbook-pagetoc/blob/main/README.md
-[c~mdbook-pdf~crates.io]: https://crates.io/crates/mdbook-pdf
-[c~mdbook-pdf~crates.io~badge]: https://img.shields.io/badge/crates.io-mdbook--pdf-crimson
-[c~mdbook-pdf~docs]: https://docs.rs/mdbook-pdf
-[c~mdbook-pdf~docs~badge]: https://img.shields.io/crates/v/mdbook-pdf?label=mdbook-pdf
-[c~mdbook-pdf~lib.rs]: https://lib.rs/crates/mdbook-pdf
-[c~mdbook-pdf~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mdbook--pdf-yellow
-[c~mdbook-pdf~repo]: https://github.com/HollowMan6/mdbook-pdf
-[c~mdbook-pdf~repo~badge]: https://img.shields.io/badge/mdbook--pdf-steelblue?logo=github
-[c~mdbook-pdf~website]: https://hollowmansblog.wordpress.com/2022/01/30/mdbook-pdf-a-mdbook-backend-for-generating-pdf-files
-[c~mdbook-pdf~website~badge]: https://img.shields.io/badge/mdbook--pdf-coral
-[c~mdbook-private~crates.io]: https://crates.io/crates/mdbook-private
-[c~mdbook-private~crates.io~badge]: https://img.shields.io/badge/crates.io-mdbook--private-crimson
-[c~mdbook-private~docs]: https://docs.rs/mdbook-private
-[c~mdbook-private~docs~badge]: https://img.shields.io/crates/v/mdbook-private?label=mdbook-private
-[c~mdbook-private~lib.rs]: https://lib.rs/crates/mdbook-private
-[c~mdbook-private~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mdbook--private-yellow
-[c~mdbook-private~repo]: https://github.com/RealAtix/mdbook-private
-[c~mdbook-private~repo~badge]: https://img.shields.io/badge/mdbook--private-steelblue?logo=github
-[c~mdbook-tera~crates.io]: https://crates.io/crates/mdbook-tera
-[c~mdbook-tera~crates.io~badge]: https://img.shields.io/badge/crates.io-mdbook--tera-crimson
-[c~mdbook-tera~docs]: https://docs.rs/mdbook-tera
-[c~mdbook-tera~docs~badge]: https://img.shields.io/crates/v/mdbook-tera?label=mdbook-tera
-[c~mdbook-tera~lib.rs]: https://lib.rs/crates/mdbook-tera
-[c~mdbook-tera~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mdbook--tera-yellow
-[c~mdbook-tera~repo]: https://github.com/avitex/mdbook-tera
-[c~mdbook-tera~repo~badge]: https://img.shields.io/badge/mdbook--tera-steelblue?logo=github
-[c~mdbook-theme~crates.io]: https://crates.io/crates/mdbook-theme
-[c~mdbook-theme~crates.io~badge]: https://img.shields.io/badge/crates.io-mdbook--theme-crimson
-[c~mdbook-theme~docs]: https://docs.rs/mdbook-theme
-[c~mdbook-theme~docs~badge]: https://img.shields.io/crates/v/mdbook-theme?label=mdbook-theme
-[c~mdbook-theme~lib.rs]: https://lib.rs/crates/mdbook-theme
-[c~mdbook-theme~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mdbook--theme-yellow
-[c~mdbook-theme~repo]: https://github.com/zjp-CN/mdbook-theme
-[c~mdbook-theme~repo~badge]: https://img.shields.io/badge/mdbook--theme-steelblue?logo=github
-[c~mdbook-toc~crates.io]: https://crates.io/crates/mdbook-toc
-[c~mdbook-toc~crates.io~badge]: https://img.shields.io/badge/crates.io-mdbook--toc-crimson
-[c~mdbook-toc~docs]: https://docs.rs/mdbook-toc
-[c~mdbook-toc~docs~badge]: https://img.shields.io/crates/v/mdbook-toc?label=mdbook-toc
-[c~mdbook-toc~lib.rs]: https://lib.rs/crates/mdbook-toc
-[c~mdbook-toc~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mdbook--toc-yellow
-[c~mdbook-toc~repo]: https://github.com/badboy/mdbook-toc
-[c~mdbook-toc~repo~badge]: https://img.shields.io/badge/mdbook--toc-steelblue?logo=github
-[c~mdbook-tools~crates.io]: https://crates.io/crates/mdbook-tools
-[c~mdbook-tools~crates.io~badge]: https://img.shields.io/badge/crates.io-mdbook--tools-crimson
-[c~mdbook-tools~docs]: https://docs.rs/mdbook-tools
-[c~mdbook-tools~docs~badge]: https://img.shields.io/crates/v/mdbook-tools?label=mdbook-tools
-[c~mdbook-tools~lib.rs]: https://lib.rs/crates/mdbook-tools
-[c~mdbook-tools~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mdbook--tools-yellow
-[c~mdbook-tools~repo]: https://github.com/mcmah309/mdbook-tools
-[c~mdbook-tools~repo~badge]: https://img.shields.io/badge/mdbook--tools-steelblue?logo=github
-[c~mdbook-yapp~crates.io]: https://crates.io/crates/mdbook-yapp
-[c~mdbook-yapp~crates.io~badge]: https://img.shields.io/badge/crates.io-mdbook--yapp-crimson
-[c~mdbook-yapp~docs]: https://docs.rs/mdbook-yapp
-[c~mdbook-yapp~docs~badge]: https://img.shields.io/crates/v/mdbook-yapp?label=mdbook-yapp
-[c~mdbook-yapp~lib.rs]: https://lib.rs/crates/mdbook-yapp
-[c~mdbook-yapp~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mdbook--yapp-yellow
-[c~mdbook-yapp~repo]: https://github.com/EngosSoftware/yapp
-[c~mdbook-yapp~repo~badge]: https://img.shields.io/badge/mdbook--yapp-steelblue?logo=github
-[c~mdbook~api~docs]: https://docs.rs/mdbook
-[c~mdbook~book.toml]: https://rust-lang.github.io/mdBook/format/configuration
-[c~mdbook~crates.io]: https://crates.io/crates/mdbook
-[c~mdbook~crates.io~badge]: https://img.shields.io/badge/crates.io-mdbook-crimson
-[c~mdbook~docs]: https://rust-lang.github.io/mdBook
-[c~mdbook~docs~badge]: https://img.shields.io/crates/v/mdbook?label=mdbook
-[c~mdbook~lib.rs]: https://lib.rs/crates/mdbook
-[c~mdbook~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mdbook-yellow
-[c~mdbook~repo]: https://github.com/rust-lang/mdBook
-[c~mdbook~repo~badge]: https://img.shields.io/badge/mdbook-steelblue?logo=github
-[c~mdbook~third-party-plugins~wiki]: https://github.com/rust-lang/mdBook/wiki/Third-party-plugins
-[c~measure_time~crates.io]: https://crates.io/crates/measure_time
-[c~measure_time~crates.io~badge]: https://img.shields.io/badge/crates.io-measure__time-crimson
-[c~measure_time~docs]: https://docs.rs/measure_time
-[c~measure_time~docs~badge]: https://img.shields.io/crates/v/measure_time?label=measure_time
-[c~measure_time~lib.rs]: https://lib.rs/crates/measure_time
-[c~measure_time~lib.rs~badge]: https://img.shields.io/badge/lib.rs-measure__time-yellow
-[c~measure_time~repo]: https://github.com/PSeitz/rust_measure_time
-[c~measure_time~repo~badge]: https://img.shields.io/badge/measure__time-steelblue?logo=github
-[c~meilisearch-sdk~crates.io]: https://crates.io/crates/meilisearch-sdk
-[c~meilisearch-sdk~crates.io~badge]: https://img.shields.io/badge/crates.io-meilisearch--sdk-crimson
-[c~meilisearch-sdk~docs]: https://docs.rs/meilisearch-sdk
-[c~meilisearch-sdk~docs~badge]: https://img.shields.io/crates/v/meilisearch-sdk?label=meilisearch-sdk
-[c~meilisearch-sdk~lib.rs]: https://lib.rs/crates/meilisearch-sdk
-[c~meilisearch-sdk~lib.rs~badge]: https://img.shields.io/badge/lib.rs-meilisearch--sdk-yellow
-[c~meilisearch-sdk~repo]: https://github.com/meilisearch/meilisearch-sdk
-[c~meilisearch-sdk~repo~badge]: https://img.shields.io/badge/meilisearch--sdk-steelblue?logo=github
-[c~meilisearch~crates.io]: https://crates.io/crates/meilisearch
-[c~meilisearch~crates.io~badge]: https://img.shields.io/badge/crates.io-meilisearch-crimson
-[c~meilisearch~docs]: https://docs.rs/meilisearch
-[c~meilisearch~docs~badge]: https://img.shields.io/crates/v/meilisearch?label=meilisearch
-[c~meilisearch~lib.rs]: https://lib.rs/crates/meilisearch
-[c~meilisearch~lib.rs~badge]: https://img.shields.io/badge/lib.rs-meilisearch-yellow
-[c~meilisearch~repo]: https://github.com/meilisearch/meilisearch
-[c~meilisearch~repo~badge]: https://img.shields.io/badge/meilisearch-steelblue?logo=github
-[c~memchr~crates.io]: https://crates.io/crates/memchr
-[c~memchr~crates.io~badge]: https://img.shields.io/badge/crates.io-memchr-crimson
-[c~memchr~docs]: https://docs.rs/memchr
-[c~memchr~docs~badge]: https://img.shields.io/crates/v/memchr?label=memchr
-[c~memchr~lib.rs]: https://lib.rs/crates/memchr
-[c~memchr~lib.rs~badge]: https://img.shields.io/badge/lib.rs-memchr-yellow
-[c~memchr~repo]: https://github.com/BurntSushi/memchr
-[c~memchr~repo~badge]: https://img.shields.io/badge/memchr-steelblue?logo=github
-[c~memmap2::Mmap::map~docs]: https://docs.rs/memmap2/latest/memmap2/struct.Mmap.html#method.map
-[c~memmap2~crates.io]: https://crates.io/crates/memmap2
-[c~memmap2~crates.io~badge]: https://img.shields.io/badge/crates.io-memmap2-crimson
-[c~memmap2~docs]: https://docs.rs/memmap2
-[c~memmap2~docs~badge]: https://img.shields.io/crates/v/memmap2?label=memmap2
-[c~memmap2~lib.rs]: https://lib.rs/crates/memmap2
-[c~memmap2~lib.rs~badge]: https://img.shields.io/badge/lib.rs-memmap2-yellow
-[c~memmap2~repo]: https://github.com/RazrFalcon/memmap2-rs
-[c~memmap2~repo~badge]: https://img.shields.io/badge/memmap2-steelblue?logo=github
-[c~metal~crates.io]: https://crates.io/crates/metal
-[c~metal~crates.io~badge]: https://img.shields.io/badge/crates.io-metal-crimson
-[c~metal~docs]: https://docs.rs/metal
-[c~metal~docs~badge]: https://img.shields.io/crates/v/metal?label=metal
-[c~metal~lib.rs]: https://lib.rs/crates/metal
-[c~metal~lib.rs~badge]: https://img.shields.io/badge/lib.rs-metal-yellow
-[c~metal~repo]: https://github.com/gfx-rs/metal-rs
-[c~metal~repo~badge]: https://img.shields.io/badge/metal-steelblue?logo=github
-[c~micromath~crates.io]: https://crates.io/crates/micromath
-[c~micromath~crates.io~badge]: https://img.shields.io/badge/crates.io-micromath-crimson
-[c~micromath~docs]: https://docs.rs/micromath
-[c~micromath~docs~badge]: https://img.shields.io/crates/v/micromath?label=micromath
-[c~micromath~lib.rs]: https://lib.rs/crates/micromath
-[c~micromath~lib.rs~badge]: https://img.shields.io/badge/lib.rs-micromath-yellow
-[c~micromath~repo]: https://github.com/tarcieri/micromath
-[c~micromath~repo~badge]: https://img.shields.io/badge/micromath-steelblue?logo=github
-[c~miette~crates.io]: https://crates.io/crates/miette
-[c~miette~crates.io~badge]: https://img.shields.io/badge/crates.io-miette-crimson
-[c~miette~docs]: https://docs.rs/miette
-[c~miette~docs~badge]: https://img.shields.io/crates/v/miette?label=miette
-[c~miette~lib.rs]: https://lib.rs/crates/miette
-[c~miette~lib.rs~badge]: https://img.shields.io/badge/lib.rs-miette-yellow
-[c~miette~repo]: https://github.com/zkat/miette
-[c~miette~repo~badge]: https://img.shields.io/badge/miette-steelblue?logo=github
-[c~migrate~crates.io]: https://crates.io/crates/migrate
-[c~migrate~crates.io~badge]: https://img.shields.io/badge/crates.io-migrate-crimson
-[c~migrate~docs]: https://docs.rs/migrate
-[c~migrate~docs~badge]: https://img.shields.io/crates/v/migrate?label=migrate
-[c~migrate~lib.rs]: https://lib.rs/crates/migrate
-[c~migrate~lib.rs~badge]: https://img.shields.io/badge/lib.rs-migrate-yellow
-[c~migrate~repo~badge]: https://img.shields.io/badge/migrate-steelblue?logo=github
-[c~mimalloc~crates.io]: https://crates.io/crates/mimalloc
-[c~mimalloc~crates.io~badge]: https://img.shields.io/badge/crates.io-mimalloc-crimson
-[c~mimalloc~docs]: https://docs.rs/mimalloc
-[c~mimalloc~docs~badge]: https://img.shields.io/crates/v/mimalloc?label=mimalloc
-[c~mimalloc~lib.rs]: https://lib.rs/crates/mimalloc
-[c~mimalloc~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mimalloc-yellow
-[c~mimalloc~repo]: https://github.com/purpleprotocol/mimalloc_rust
-[c~mimalloc~repo~badge]: https://img.shields.io/badge/mimalloc-steelblue?logo=github
-[c~mime::FromStrError~docs]: https://docs.rs/mime/latest/mime/struct.FromStrError.html
-[c~mime::Mime~docs]: https://docs.rs/mime/latest/mime/struct.Mime.html
-[c~mime~crates.io]: https://crates.io/crates/mime
-[c~mime~crates.io~badge]: https://img.shields.io/badge/crates.io-mime-crimson
-[c~mime~docs]: https://docs.rs/mime
-[c~mime~docs~badge]: https://img.shields.io/crates/v/mime?label=mime
-[c~mime~lib.rs]: https://lib.rs/crates/mime
-[c~mime~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mime-yellow
-[c~mime~repo]: https://github.com/hyperium/mime
-[c~mime~repo~badge]: https://img.shields.io/badge/mime-steelblue?logo=github
-[c~miniaudio~crates.io]: https://crates.io/crates/miniaudio
-[c~miniaudio~crates.io~badge]: https://img.shields.io/badge/crates.io-miniaudio-crimson
-[c~miniaudio~docs]: https://docs.rs/miniaudio
-[c~miniaudio~docs~badge]: https://img.shields.io/crates/v/miniaudio?label=miniaudio
-[c~miniaudio~lib.rs]: https://lib.rs/crates/miniaudio
-[c~miniaudio~lib.rs~badge]: https://img.shields.io/badge/lib.rs-miniaudio-yellow
-[c~miniaudio~repo]: https://github.com/ExPixel/miniaudio-rs
-[c~miniaudio~repo~badge]: https://img.shields.io/badge/miniaudio-steelblue?logo=github
-[c~minidom~crates.io]: https://crates.io/crates/minidom
-[c~minidom~crates.io~badge]: https://img.shields.io/badge/crates.io-minidom-crimson
-[c~minidom~docs]: https://docs.rs/minidom
-[c~minidom~docs~badge]: https://img.shields.io/crates/v/minidom?label=minidom
-[c~minidom~lib.rs]: https://lib.rs/crates/minidom
-[c~minidom~lib.rs~badge]: https://img.shields.io/badge/lib.rs-minidom-yellow
-[c~minidom~repo]: https://gitlab.com/xmpp-rs/xmpp-rs
-[c~minidom~repo~badge]: https://img.shields.io/badge/minidom-steelblue?logo=github
-[c~minifb~crates.io]: https://crates.io/crates/minifb
-[c~minifb~crates.io~badge]: https://img.shields.io/badge/crates.io-minifb-crimson
-[c~minifb~docs]: https://docs.rs/minifb
-[c~minifb~docs~badge]: https://img.shields.io/crates/v/minifb?label=minifb
-[c~minifb~lib.rs]: https://lib.rs/crates/minifb
-[c~minifb~lib.rs~badge]: https://img.shields.io/badge/lib.rs-minifb-yellow
-[c~minifb~repo]: https://github.com/emoon/rust_minifb
-[c~minifb~repo~badge]: https://img.shields.io/badge/minifb-steelblue?logo=github
-[c~minijinja~crates.io]: https://crates.io/crates/minijinja
-[c~minijinja~crates.io~badge]: https://img.shields.io/badge/crates.io-minijinja-crimson
-[c~minijinja~docs]: https://docs.rs/minijinja
-[c~minijinja~docs~badge]: https://img.shields.io/crates/v/minijinja?label=minijinja
-[c~minijinja~lib.rs]: https://lib.rs/crates/minijinja
-[c~minijinja~lib.rs~badge]: https://img.shields.io/badge/lib.rs-minijinja-yellow
-[c~minijinja~repo]: https://github.com/mitsuhiko/minijinja
-[c~minijinja~repo~badge]: https://img.shields.io/badge/minijinja-steelblue?logo=github
-[c~miniquad~crates.io]: https://crates.io/crates/miniquad
-[c~miniquad~crates.io~badge]: https://img.shields.io/badge/crates.io-miniquad-crimson
-[c~miniquad~docs]: https://docs.rs/miniquad
-[c~miniquad~docs~badge]: https://img.shields.io/crates/v/miniquad?label=miniquad
-[c~miniquad~lib.rs]: https://lib.rs/crates/miniquad
-[c~miniquad~lib.rs~badge]: https://img.shields.io/badge/lib.rs-miniquad-yellow
-[c~miniquad~repo]: https://github.com/not-fl3/miniquad
-[c~miniquad~repo~badge]: https://img.shields.io/badge/miniquad-steelblue?logo=github
-[c~miniserve~crates.io]: https://crates.io/crates/miniserve
-[c~miniserve~crates.io~badge]: https://img.shields.io/badge/crates.io-miniserve-crimson
-[c~miniserve~docs]: https://docs.rs/miniserve
-[c~miniserve~docs~badge]: https://img.shields.io/crates/v/miniserve?label=miniserve
-[c~miniserve~lib.rs]: https://lib.rs/crates/miniserve
-[c~miniserve~lib.rs~badge]: https://img.shields.io/badge/lib.rs-miniserve-yellow
-[c~miniserve~repo]: https://github.com/svenstaro/miniserve
-[c~miniserve~repo~badge]: https://img.shields.io/badge/miniserve-steelblue?logo=github
-[c~miniz_oxide~crates.io]: https://crates.io/crates/miniz_oxide
-[c~miniz_oxide~crates.io~badge]: https://img.shields.io/badge/crates.io-miniz__oxide-crimson
-[c~miniz_oxide~docs]: https://docs.rs/miniz_oxide
-[c~miniz_oxide~docs~badge]: https://img.shields.io/crates/v/miniz_oxide?label=miniz_oxide
-[c~miniz_oxide~lib.rs]: https://lib.rs/crates/miniz_oxide
-[c~miniz_oxide~lib.rs~badge]: https://img.shields.io/badge/lib.rs-miniz__oxide-yellow
-[c~miniz_oxide~repo]: https://github.com/Frommi/miniz_oxide/tree/master/miniz_oxide
-[c~miniz_oxide~repo~badge]: https://img.shields.io/badge/miniz__oxide-steelblue?logo=github
-[c~mio~crates.io]: https://crates.io/crates/mio
-[c~mio~crates.io~badge]: https://img.shields.io/badge/crates.io-mio-crimson
-[c~mio~docs]: https://docs.rs/mio
-[c~mio~docs~badge]: https://img.shields.io/crates/v/mio?label=mio
-[c~mio~lib.rs]: https://lib.rs/crates/mio
-[c~mio~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mio-yellow
-[c~mio~repo]: https://github.com/tokio-rs/mio
-[c~mio~repo~badge]: https://img.shields.io/badge/mio-steelblue?logo=github
-[c~mirai~crates.io]: https://crates.io/crates/mirai
-[c~mirai~crates.io~badge]: https://img.shields.io/badge/crates.io-mirai-crimson
-[c~mirai~docs]: https://docs.rs/mirai
-[c~mirai~docs~badge]: https://img.shields.io/crates/v/mirai?label=mirai
-[c~mirai~lib.rs]: https://lib.rs/crates/mirai
-[c~mirai~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mirai-yellow
-[c~mirai~repo~badge]: https://img.shields.io/badge/mirai-steelblue?logo=github
-[c~mlua~crates.io]: https://crates.io/crates/mlua
-[c~mlua~crates.io~badge]: https://img.shields.io/badge/crates.io-mlua-crimson
-[c~mlua~docs]: https://docs.rs/mlua
-[c~mlua~docs~badge]: https://img.shields.io/crates/v/mlua?label=mlua
-[c~mlua~lib.rs]: https://lib.rs/crates/mlua
-[c~mlua~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mlua-yellow
-[c~mlua~repo]: https://github.com/mlua-rs/mlua
-[c~mlua~repo~badge]: https://img.shields.io/badge/mlua-steelblue?logo=github
-[c~mockall~crates.io]: https://crates.io/crates/mockall
-[c~mockall~crates.io~badge]: https://img.shields.io/badge/crates.io-mockall-crimson
-[c~mockall~docs]: https://docs.rs/mockall
-[c~mockall~docs~badge]: https://img.shields.io/crates/v/mockall?label=mockall
-[c~mockall~lib.rs]: https://lib.rs/crates/mockall
-[c~mockall~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mockall-yellow
-[c~mockall~repo]: https://github.com/asomers/mockall
-[c~mockall~repo~badge]: https://img.shields.io/badge/mockall-steelblue?logo=github
-[c~mockito~crates.io]: https://crates.io/crates/mockito
-[c~mockito~crates.io~badge]: https://img.shields.io/badge/crates.io-mockito-crimson
-[c~mockito~docs]: https://docs.rs/mockito
-[c~mockito~docs~badge]: https://img.shields.io/crates/v/mockito?label=mockito
-[c~mockito~lib.rs]: https://lib.rs/crates/mockito
-[c~mockito~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mockito-yellow
-[c~mockito~repo]: https://github.com/lipanski/mockito
-[c~mockito~repo~badge]: https://img.shields.io/badge/mockito-steelblue?logo=github
-[c~moka~crates.io]: https://crates.io/crates/moka
-[c~moka~crates.io~badge]: https://img.shields.io/badge/crates.io-moka-crimson
-[c~moka~docs]: https://docs.rs/moka
-[c~moka~docs~badge]: https://img.shields.io/crates/v/moka?label=moka
-[c~moka~lib.rs]: https://lib.rs/crates/moka
-[c~moka~lib.rs~badge]: https://img.shields.io/badge/lib.rs-moka-yellow
-[c~moka~repo]: https://github.com/moka-rs/moka
-[c~moka~repo~badge]: https://img.shields.io/badge/moka-steelblue?logo=github
-[c~mold~crates.io]: https://crates.io/crates/mold
-[c~mold~crates.io~badge]: https://img.shields.io/badge/crates.io-mold-crimson
-[c~mold~docs]: https://docs.rs/mold
-[c~mold~docs~badge]: https://img.shields.io/crates/v/mold?label=mold
-[c~mold~lib.rs]: https://lib.rs/crates/mold
-[c~mold~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mold-yellow
-[c~mold~repo]: https://github.com/YellowInnovation/mold
-[c~mold~repo~badge]: https://img.shields.io/badge/mold-steelblue?logo=github
-[c~mongodb~crates.io]: https://crates.io/crates/mongodb
-[c~mongodb~crates.io~badge]: https://img.shields.io/badge/crates.io-mongodb-crimson
-[c~mongodb~docs]: https://docs.rs/mongodb
-[c~mongodb~docs~badge]: https://img.shields.io/crates/v/mongodb?label=mongodb
-[c~mongodb~lib.rs]: https://lib.rs/crates/mongodb
-[c~mongodb~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mongodb-yellow
-[c~mongodb~repo]: https://github.com/mongodb/mongo-rust-driver
-[c~mongodb~repo~badge]: https://img.shields.io/badge/mongodb-steelblue?logo=github
-[c~mongodb~website]: https://mongodb.com/docs/drivers/rust
-[c~mongodb~website~badge]: https://img.shields.io/badge/mongodb-coral
-[c~monostate~crates.io]: https://crates.io/crates/monostate
-[c~monostate~crates.io~badge]: https://img.shields.io/badge/crates.io-monostate-crimson
-[c~monostate~docs]: https://docs.rs/monostate
-[c~monostate~docs~badge]: https://img.shields.io/crates/v/monostate?label=monostate
-[c~monostate~lib.rs]: https://lib.rs/crates/monostate
-[c~monostate~lib.rs~badge]: https://img.shields.io/badge/lib.rs-monostate-yellow
-[c~monostate~repo]: https://github.com/dtolnay/monostate
-[c~monostate~repo~badge]: https://img.shields.io/badge/monostate-steelblue?logo=github
-[c~morphorm~crates.io]: https://crates.io/crates/morphorm
-[c~morphorm~crates.io~badge]: https://img.shields.io/badge/crates.io-morphorm-crimson
-[c~morphorm~docs]: https://docs.rs/morphorm
-[c~morphorm~docs~badge]: https://img.shields.io/crates/v/morphorm?label=morphorm
-[c~morphorm~lib.rs]: https://lib.rs/crates/morphorm
-[c~morphorm~lib.rs~badge]: https://img.shields.io/badge/lib.rs-morphorm-yellow
-[c~morphorm~repo]: https://github.com/vizia/morphorm
-[c~morphorm~repo~badge]: https://img.shields.io/badge/morphorm-steelblue?logo=github
-[c~movable-ref~crates.io]: https://crates.io/crates/movable-ref
-[c~movable-ref~crates.io~badge]: https://img.shields.io/badge/crates.io-movable--ref-crimson
-[c~movable-ref~dependents~badge]: https://img.shields.io/crates/dependents/movable-ref
-[c~movable-ref~deps-rs~badge]: https://img.shields.io/deps-rs/movable-ref/latest
-[c~movable-ref~docs]: https://docs.rs/movable-ref
-[c~movable-ref~docs~badge]: https://img.shields.io/crates/v/movable-ref?label=movable-ref
-[c~movable-ref~lib.rs]: https://lib.rs/crates/movable-ref
-[c~movable-ref~lib.rs~badge]: https://img.shields.io/badge/lib.rs-movable--ref-yellow
-[c~movable-ref~license~badge]: https://img.shields.io/crates/l/movable-ref
-[c~movable-ref~recent-downloads~badge]: https://img.shields.io/crates/dr/movable-ref
-[c~movable-ref~repo]: https://github.com/engali94/movable-ref
-[c~movable-ref~repo~badge]: https://img.shields.io/badge/movable--ref-steelblue?logo=github
-[c~mpi~crates.io]: https://crates.io/crates/mpi
-[c~mpi~crates.io~badge]: https://img.shields.io/badge/crates.io-mpi-crimson
-[c~mpi~docs]: https://docs.rs/mpi
-[c~mpi~docs~badge]: https://img.shields.io/crates/v/mpi?label=mpi
-[c~mpi~lib.rs]: https://lib.rs/crates/mpi
-[c~mpi~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mpi-yellow
-[c~mpi~repo]: https://github.com/rsmpi/rsmpi
-[c~mpi~repo~badge]: https://img.shields.io/badge/mpi-steelblue?logo=github
-[c~msquic~crates.io]: https://crates.io/crates/msquic
-[c~msquic~crates.io~badge]: https://img.shields.io/badge/crates.io-msquic-crimson
-[c~msquic~docs]: https://docs.rs/msquic
-[c~msquic~docs~badge]: https://img.shields.io/crates/v/msquic?label=msquic
-[c~msquic~lib.rs]: https://lib.rs/crates/msquic
-[c~msquic~lib.rs~badge]: https://img.shields.io/badge/lib.rs-msquic-yellow
-[c~msquic~repo]: https://github.com/microsoft/msquic
-[c~msquic~repo~badge]: https://img.shields.io/badge/msquic-steelblue?logo=github
-[c~multimap~commit-activity~badge]: https://img.shields.io/github/commit-activity/y/havarnov/multimap
-[c~multimap~crates.io]: https://crates.io/crates/multimap
-[c~multimap~crates.io~badge]: https://img.shields.io/badge/crates.io-multimap-crimson
-[c~multimap~dependents~badge]: https://img.shields.io/crates/dependents/multimap
-[c~multimap~deps-rs~badge]: https://img.shields.io/deps-rs/multimap/latest
-[c~multimap~docs]: https://docs.rs/multimap
-[c~multimap~docs~badge]: https://img.shields.io/crates/v/multimap?label=multimap
-[c~multimap~last-commit~badge]: https://img.shields.io/github/last-commit/havarnov/multimap
-[c~multimap~lib.rs]: https://lib.rs/crates/multimap
-[c~multimap~lib.rs~badge]: https://img.shields.io/badge/lib.rs-multimap-yellow
-[c~multimap~license~badge]: https://img.shields.io/crates/l/multimap
-[c~multimap~recent-downloads~badge]: https://img.shields.io/crates/dr/multimap
-[c~multimap~repo]: https://github.com/havarnov/multimap
-[c~multimap~repo~badge]: https://img.shields.io/badge/multimap-steelblue?logo=github
-[c~multiversion~crates.io]: https://crates.io/crates/multiversion
-[c~multiversion~crates.io~badge]: https://img.shields.io/badge/crates.io-multiversion-crimson
-[c~multiversion~docs]: https://docs.rs/multiversion
-[c~multiversion~docs~badge]: https://img.shields.io/crates/v/multiversion?label=multiversion
-[c~multiversion~lib.rs]: https://lib.rs/crates/multiversion
-[c~multiversion~lib.rs~badge]: https://img.shields.io/badge/lib.rs-multiversion-yellow
-[c~multiversion~repo]: https://github.com/calebzulawski/multiversion
-[c~multiversion~repo~badge]: https://img.shields.io/badge/multiversion-steelblue?logo=github
-[c~mysql_async~crates.io]: https://crates.io/crates/mysql_async
-[c~mysql_async~crates.io~badge]: https://img.shields.io/badge/crates.io-mysql__async-crimson
-[c~mysql_async~docs]: https://docs.rs/mysql_async
-[c~mysql_async~docs~badge]: https://img.shields.io/crates/v/mysql_async?label=mysql_async
-[c~mysql_async~lib.rs]: https://lib.rs/crates/mysql_async
-[c~mysql_async~lib.rs~badge]: https://img.shields.io/badge/lib.rs-mysql__async-yellow
-[c~mysql_async~repo]: https://github.com/blackbeam/mysql_async
-[c~mysql_async~repo~badge]: https://img.shields.io/badge/mysql__async-steelblue?logo=github
-[c~naga~crates.io]: https://crates.io/crates/naga
-[c~naga~crates.io~badge]: https://img.shields.io/badge/crates.io-naga-crimson
-[c~naga~docs]: https://docs.rs/naga
-[c~naga~docs~badge]: https://img.shields.io/crates/v/naga?label=naga
-[c~naga~lib.rs]: https://lib.rs/crates/naga
-[c~naga~lib.rs~badge]: https://img.shields.io/badge/lib.rs-naga-yellow
-[c~naga~repo]: https://github.com/gfx-rs/wgpu/tree/trunk/naga
-[c~naga~repo~badge]: https://img.shields.io/badge/naga-steelblue?logo=github
-[c~nalgebra-lapack~crates.io]: https://crates.io/crates/nalgebra-lapack
-[c~nalgebra-lapack~crates.io~badge]: https://img.shields.io/badge/crates.io-nalgebra--lapack-crimson
-[c~nalgebra-lapack~docs]: https://nalgebra.rs/docs
-[c~nalgebra-lapack~docs~badge]: https://img.shields.io/crates/v/nalgebra-lapack?label=nalgebra-lapack
-[c~nalgebra-lapack~lib.rs]: https://lib.rs/crates/nalgebra-lapack
-[c~nalgebra-lapack~lib.rs~badge]: https://img.shields.io/badge/lib.rs-nalgebra--lapack-yellow
-[c~nalgebra-lapack~repo]: https://github.com/dimforge/nalgebra
-[c~nalgebra-lapack~repo~badge]: https://img.shields.io/badge/nalgebra--lapack-steelblue?logo=github
-[c~nalgebra-lapack~website]: https://nalgebra.rs
-[c~nalgebra-lapack~website~badge]: https://img.shields.io/badge/nalgebra--lapack-coral
-[c~nalgebra::Isometry3~docs]: https://docs.rs/nalgebra/latest/nalgebra/geometry/type.Isometry3.html
-[c~nalgebra::Matrix3~docs]: https://docs.rs/nalgebra/latest/nalgebra/base/type.Matrix3.html
-[c~nalgebra::Point3~docs]: https://docs.rs/nalgebra/latest/nalgebra/geometry/type.Point3.html
-[c~nalgebra::Rotation3~docs]: https://docs.rs/nalgebra/latest/nalgebra/geometry/type.Rotation3.html
-[c~nalgebra::Translation3~docs]: https://docs.rs/nalgebra/latest/nalgebra/geometry/type.Translation3.html
-[c~nalgebra::Unit~docs]: https://docs.rs/nalgebra/latest/nalgebra/base/struct.Unit.html
-[c~nalgebra::Vector3~docs]: https://docs.rs/nalgebra/latest/nalgebra/base/type.Vector3.html
-[c~nalgebra~crates.io]: https://crates.io/crates/nalgebra
-[c~nalgebra~crates.io~badge]: https://img.shields.io/badge/crates.io-nalgebra-crimson
-[c~nalgebra~docs]: https://docs.rs/nalgebra
-[c~nalgebra~docs~badge]: https://img.shields.io/crates/v/nalgebra?label=nalgebra
-[c~nalgebra~lib.rs]: https://lib.rs/crates/nalgebra
-[c~nalgebra~lib.rs~badge]: https://img.shields.io/badge/lib.rs-nalgebra-yellow
-[c~nalgebra~repo]: https://github.com/dimforge/nalgebra
-[c~nalgebra~repo~badge]: https://img.shields.io/badge/nalgebra-steelblue?logo=github
-[c~nalgebra~website]: https://nalgebra.rs
-[c~nalgebra~website~badge]: https://img.shields.io/badge/nalgebra-coral
-[c~napi~crates.io]: https://crates.io/crates/napi
-[c~napi~crates.io~badge]: https://img.shields.io/badge/crates.io-napi-crimson
-[c~napi~docs]: https://docs.rs/napi
-[c~napi~docs~badge]: https://img.shields.io/crates/v/napi?label=napi
-[c~napi~lib.rs]: https://lib.rs/crates/napi
-[c~napi~lib.rs~badge]: https://img.shields.io/badge/lib.rs-napi-yellow
-[c~napi~repo]: https://github.com/napi-rs/napi-rs
-[c~napi~repo~badge]: https://img.shields.io/badge/napi-steelblue?logo=github
-[c~native-tls~crates.io]: https://crates.io/crates/native-tls
-[c~native-tls~crates.io~badge]: https://img.shields.io/badge/crates.io-native--tls-crimson
-[c~native-tls~docs]: https://docs.rs/native-tls
-[c~native-tls~docs~badge]: https://img.shields.io/crates/v/native-tls?label=native-tls
-[c~native-tls~lib.rs]: https://lib.rs/crates/native-tls
-[c~native-tls~lib.rs~badge]: https://img.shields.io/badge/lib.rs-native--tls-yellow
-[c~native-tls~repo]: https://github.com/sfackler/rust-native-tls
-[c~native-tls~repo~badge]: https://img.shields.io/badge/native--tls-steelblue?logo=github
-[c~native-windows-gui~crates.io]: https://crates.io/crates/native-windows-gui
-[c~native-windows-gui~crates.io~badge]: https://img.shields.io/badge/crates.io-native--windows--gui-crimson
-[c~native-windows-gui~docs]: https://docs.rs/native-windows-gui
-[c~native-windows-gui~docs~badge]: https://img.shields.io/crates/v/native-windows-gui?label=native-windows-gui
-[c~native-windows-gui~lib.rs]: https://lib.rs/crates/native-windows-gui
-[c~native-windows-gui~lib.rs~badge]: https://img.shields.io/badge/lib.rs-native--windows--gui-yellow
-[c~native-windows-gui~repo]: https://github.com/gabdube/native-windows-gui
-[c~native-windows-gui~repo~badge]: https://img.shields.io/badge/native--windows--gui-steelblue?logo=github
-[c~native-windows-gui~website]: https://gabdube.github.io/native-windows-gui/native-windows-docs
-[c~navi~crates.io]: https://crates.io/crates/navi
-[c~navi~crates.io~badge]: https://img.shields.io/badge/crates.io-navi-crimson
-[c~navi~docs]: https://github.com/denisidoro/navi
-[c~navi~docs~badge]: https://img.shields.io/crates/v/navi?label=navi
-[c~navi~lib.rs]: https://lib.rs/crates/navi
-[c~navi~lib.rs~badge]: https://img.shields.io/badge/lib.rs-navi-yellow
-[c~navi~repo]: https://github.com/denisidoro/navi
-[c~navi~repo~badge]: https://img.shields.io/badge/navi-steelblue?logo=github
-[c~nb~crates.io]: https://crates.io/crates/nb
-[c~nb~crates.io~badge]: https://img.shields.io/badge/crates.io-nb-crimson
-[c~nb~docs]: https://docs.rs/nb
-[c~nb~docs~badge]: https://img.shields.io/crates/v/nb?label=nb
-[c~nb~lib.rs]: https://lib.rs/crates/nb
-[c~nb~lib.rs~badge]: https://img.shields.io/badge/lib.rs-nb-yellow
-[c~nb~repo]: https://github.com/rust-embedded/nb
-[c~nb~repo~badge]: https://img.shields.io/badge/nb-steelblue?logo=github
-[c~ndarray::Array1~docs]: https://docs.rs/ndarray/latest/ndarray/type.Array1.html
-[c~ndarray::ArrayBase::dot~docs]: https://docs.rs/ndarray/latest/ndarray/struct.ArrayBase.html#method.dot-1
-[c~ndarray::ArrayBase::fold~docs]: https://docs.rs/ndarray/latest/ndarray/struct.ArrayBase.html#method.fold
-[c~ndarray::ArrayBase~docs]: https://docs.rs/ndarray/latest/ndarray/struct.ArrayBase.html
-[c~ndarray::ArrayView1~docs]: https://docs.rs/ndarray/latest/ndarray/type.ArrayView1.html
-[c~ndarray::ArrayView~docs]: https://docs.rs/ndarray/latest/ndarray/type.ArrayView.html
-[c~ndarray::Array~docs]: https://docs.rs/ndarray/latest/ndarray/type.Array.html
-[c~ndarray::arr1~docs]: https://docs.rs/ndarray/latest/ndarray/fn.arr1.html
-[c~ndarray::arr2~docs]: https://docs.rs/ndarray/latest/ndarray/fn.arr2.html
-[c~ndarray::linalg::Dot~docs]: https://docs.rs/ndarray/latest/ndarray/linalg/trait.Dot.html
-[c~ndarray~crates.io]: https://crates.io/crates/ndarray
-[c~ndarray~crates.io~badge]: https://img.shields.io/badge/crates.io-ndarray-crimson
-[c~ndarray~docs]: https://docs.rs/ndarray
-[c~ndarray~docs~badge]: https://img.shields.io/crates/v/ndarray?label=ndarray
-[c~ndarray~lib.rs]: https://lib.rs/crates/ndarray
-[c~ndarray~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ndarray-yellow
-[c~ndarray~repo]: https://github.com/rust-ndarray/ndarray
-[c~ndarray~repo~badge]: https://img.shields.io/badge/ndarray-steelblue?logo=github
-[c~neon~crates.io]: https://crates.io/crates/neon
-[c~neon~crates.io~badge]: https://img.shields.io/badge/crates.io-neon-crimson
-[c~neon~docs]: https://docs.rs/neon
-[c~neon~docs~badge]: https://img.shields.io/crates/v/neon?label=neon
-[c~neon~lib.rs]: https://lib.rs/crates/neon
-[c~neon~lib.rs~badge]: https://img.shields.io/badge/lib.rs-neon-yellow
-[c~neon~repo]: https://github.com/neon-bindings/neon
-[c~neon~repo~badge]: https://img.shields.io/badge/neon-steelblue?logo=github
-[c~neon~website]: https://neon-bindings.com
-[c~neon~website~badge]: https://img.shields.io/badge/neon-coral
-[c~netavark~crates.io]: https://crates.io/crates/netavark
-[c~netavark~crates.io~badge]: https://img.shields.io/badge/crates.io-netavark-crimson
-[c~netavark~docs]: https://docs.rs/netavark
-[c~netavark~docs~badge]: https://img.shields.io/crates/v/netavark?label=netavark
-[c~netavark~lib.rs]: https://lib.rs/crates/netavark
-[c~netavark~lib.rs~badge]: https://img.shields.io/badge/lib.rs-netavark-yellow
-[c~netavark~repo]: https://github.com/containers/netavark
-[c~netavark~repo~badge]: https://img.shields.io/badge/netavark-steelblue?logo=github
-[c~ngrok~crates.io]: https://crates.io/crates/ngrok
-[c~ngrok~crates.io~badge]: https://img.shields.io/badge/crates.io-ngrok-crimson
-[c~ngrok~docs]: https://docs.rs/ngrok
-[c~ngrok~docs~badge]: https://img.shields.io/crates/v/ngrok?label=ngrok
-[c~ngrok~lib.rs]: https://lib.rs/crates/ngrok
-[c~ngrok~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ngrok-yellow
-[c~ngrok~repo]: https://github.com/ngrok/ngrok-rust
-[c~ngrok~repo~badge]: https://img.shields.io/badge/ngrok-steelblue?logo=github
-[c~ngrok~website]: https://ngrok.com
-[c~nifti~crates.io]: https://crates.io/crates/nifti
-[c~nifti~crates.io~badge]: https://img.shields.io/badge/crates.io-nifti-crimson
-[c~nifti~docs]: https://docs.rs/nifti
-[c~nifti~docs~badge]: https://img.shields.io/crates/v/nifti?label=nifti
-[c~nifti~lib.rs]: https://lib.rs/crates/nifti
-[c~nifti~lib.rs~badge]: https://img.shields.io/badge/lib.rs-nifti-yellow
-[c~nifti~repo]: https://github.com/Enet4/nifti-rs
-[c~nifti~repo~badge]: https://img.shields.io/badge/nifti-steelblue?logo=github
-[c~nix~crates.io]: https://crates.io/crates/nix
-[c~nix~crates.io~badge]: https://img.shields.io/badge/crates.io-nix-crimson
-[c~nix~docs]: https://docs.rs/nix
-[c~nix~docs~badge]: https://img.shields.io/crates/v/nix?label=nix
-[c~nix~lib.rs]: https://lib.rs/crates/nix
-[c~nix~lib.rs~badge]: https://img.shields.io/badge/lib.rs-nix-yellow
-[c~nix~repo]: https://github.com/nix-rust/nix
-[c~nix~repo~badge]: https://img.shields.io/badge/nix-steelblue?logo=github
-[c~no-panics-whatsoever~crates.io]: https://crates.io/crates/no-panics-whatsoever
-[c~no-panics-whatsoever~crates.io~badge]: https://img.shields.io/badge/crates.io-no--panics--whatsoever-crimson
-[c~no-panics-whatsoever~docs]: https://docs.rs/no-panics-whatsoever
-[c~no-panics-whatsoever~docs~badge]: https://img.shields.io/crates/v/no-panics-whatsoever?label=no-panics-whatsoever
-[c~no-panics-whatsoever~lib.rs]: https://lib.rs/crates/no-panics-whatsoever
-[c~no-panics-whatsoever~lib.rs~badge]: https://img.shields.io/badge/lib.rs-no--panics--whatsoever-yellow
-[c~no-panics-whatsoever~repo]: https://github.com/lachlansneff/no-panics-whatsoever
-[c~no-panics-whatsoever~repo~badge]: https://img.shields.io/badge/no--panics--whatsoever-steelblue?logo=github
-[c~nom~crates.io]: https://crates.io/crates/nom
-[c~nom~crates.io~badge]: https://img.shields.io/badge/crates.io-nom-crimson
-[c~nom~docs]: https://docs.rs/nom
-[c~nom~docs~badge]: https://img.shields.io/crates/v/nom?label=nom
-[c~nom~lib.rs]: https://lib.rs/crates/nom
-[c~nom~lib.rs~badge]: https://img.shields.io/badge/lib.rs-nom-yellow
-[c~nom~nominomicon]: https://tfpk.github.io/nominomicon/introduction.html
-[c~nom~repo]: https://github.com/rust-bakery/nom
-[c~nom~repo~badge]: https://img.shields.io/badge/nom-steelblue?logo=github
-[c~notify~crates.io]: https://crates.io/crates/notify
-[c~notify~crates.io~badge]: https://img.shields.io/badge/crates.io-notify-crimson
-[c~notify~docs]: https://docs.rs/notify
-[c~notify~docs~badge]: https://img.shields.io/crates/v/notify?label=notify
-[c~notify~lib.rs]: https://lib.rs/crates/notify
-[c~notify~lib.rs~badge]: https://img.shields.io/badge/lib.rs-notify-yellow
-[c~notify~repo]: https://github.com/notify-rs/notify
-[c~notify~repo~badge]: https://img.shields.io/badge/notify-steelblue?logo=github
-[c~notify~website]: https://github.com/notify-rs/notify/blob/main/README.md
-[c~notify~website~badge]: https://img.shields.io/badge/notify-coral
-[c~nrf52-hal~crates.io]: https://crates.io/crates/nrf52-hal
-[c~nrf52-hal~crates.io~badge]: https://img.shields.io/badge/crates.io-nrf52--hal-crimson
-[c~nrf52-hal~docs]: https://docs.rs/nrf52-hal
-[c~nrf52-hal~docs~badge]: https://img.shields.io/crates/v/nrf52-hal?label=nrf52-hal
-[c~nrf52-hal~lib.rs]: https://lib.rs/crates/nrf52-hal
-[c~nrf52-hal~lib.rs~badge]: https://img.shields.io/badge/lib.rs-nrf52--hal-yellow
-[c~nrf52-hal~repo]: https://github.com/jamesmunns/nrf52-hal
-[c~nrf52-hal~repo~badge]: https://img.shields.io/badge/nrf52--hal-steelblue?logo=github
-[c~nu-ansi-term~crates.io]: https://crates.io/crates/nu-ansi-term
-[c~nu-ansi-term~crates.io~badge]: https://img.shields.io/badge/crates.io-nu--ansi--term-crimson
-[c~nu-ansi-term~docs]: https://docs.rs/nu-ansi-term
-[c~nu-ansi-term~docs~badge]: https://img.shields.io/crates/v/nu-ansi-term?label=nu-ansi-term
-[c~nu-ansi-term~lib.rs]: https://lib.rs/crates/nu-ansi-term
-[c~nu-ansi-term~lib.rs~badge]: https://img.shields.io/badge/lib.rs-nu--ansi--term-yellow
-[c~nu-ansi-term~repo]: https://github.com/nushell/nu-ansi-term
-[c~nu-ansi-term~repo~badge]: https://img.shields.io/badge/nu--ansi--term-steelblue?logo=github
-[c~num-bigint~crates.io]: https://crates.io/crates/num-bigint
-[c~num-bigint~crates.io~badge]: https://img.shields.io/badge/crates.io-num--bigint-crimson
-[c~num-bigint~docs]: https://docs.rs/num-bigint
-[c~num-bigint~docs~badge]: https://img.shields.io/crates/v/num-bigint?label=num-bigint
-[c~num-bigint~lib.rs]: https://lib.rs/crates/num-bigint
-[c~num-bigint~lib.rs~badge]: https://img.shields.io/badge/lib.rs-num--bigint-yellow
-[c~num-bigint~repo]: https://github.com/rust-num/num-bigint
-[c~num-bigint~repo~badge]: https://img.shields.io/badge/num--bigint-steelblue?logo=github
-[c~num-complex~crates.io]: https://crates.io/crates/num-complex
-[c~num-complex~crates.io~badge]: https://img.shields.io/badge/crates.io-num--complex-crimson
-[c~num-complex~docs]: https://docs.rs/num-complex
-[c~num-complex~docs~badge]: https://img.shields.io/crates/v/num-complex?label=num-complex
-[c~num-complex~lib.rs]: https://lib.rs/crates/num-complex
-[c~num-complex~lib.rs~badge]: https://img.shields.io/badge/lib.rs-num--complex-yellow
-[c~num-complex~repo]: https://github.com/rust-num/num-complex
-[c~num-complex~repo~badge]: https://img.shields.io/badge/num--complex-steelblue?logo=github
-[c~num-format~crates.io]: https://crates.io/crates/num-format
-[c~num-format~crates.io~badge]: https://img.shields.io/badge/crates.io-num--format-crimson
-[c~num-format~docs]: https://docs.rs/num-format
-[c~num-format~docs~badge]: https://img.shields.io/crates/v/num-format?label=num-format
-[c~num-format~lib.rs]: https://lib.rs/crates/num-format
-[c~num-format~lib.rs~badge]: https://img.shields.io/badge/lib.rs-num--format-yellow
-[c~num-format~repo]: https://github.com/bcmyers/num-format
-[c~num-format~repo~badge]: https://img.shields.io/badge/num--format-steelblue?logo=github
-[c~num-rational~crates.io]: https://crates.io/crates/num-rational
-[c~num-rational~crates.io~badge]: https://img.shields.io/badge/crates.io-num--rational-crimson
-[c~num-rational~docs]: https://docs.rs/num-rational
-[c~num-rational~docs~badge]: https://img.shields.io/crates/v/num-rational?label=num-rational
-[c~num-rational~lib.rs]: https://lib.rs/crates/num-rational
-[c~num-rational~lib.rs~badge]: https://img.shields.io/badge/lib.rs-num--rational-yellow
-[c~num-rational~repo]: https://github.com/rust-num/num-rational
-[c~num-rational~repo~badge]: https://img.shields.io/badge/num--rational-steelblue?logo=github
-[c~num-traits~crates.io]: https://crates.io/crates/num-traits
-[c~num-traits~crates.io~badge]: https://img.shields.io/badge/crates.io-num--traits-crimson
-[c~num-traits~docs]: https://docs.rs/num-traits
-[c~num-traits~docs~badge]: https://img.shields.io/crates/v/num-traits?label=num-traits
-[c~num-traits~lib.rs]: https://lib.rs/crates/num-traits
-[c~num-traits~lib.rs~badge]: https://img.shields.io/badge/lib.rs-num--traits-yellow
-[c~num-traits~repo]: https://github.com/rust-num/num-traits
-[c~num-traits~repo~badge]: https://img.shields.io/badge/num--traits-steelblue?logo=github
-[c~num::BigInt~docs]: https://docs.rs/num/latest/num/struct.BigInt.html
-[c~num::complex::Complex~docs]: https://docs.rs/num/latest/num/complex/struct.Complex.html
-[c~num_cpus::get~docs]: https://docs.rs/num_cpus/latest/num_cpus/fn.get.html
-[c~num_cpus~crates.io]: https://crates.io/crates/num_cpus
-[c~num_cpus~crates.io~badge]: https://img.shields.io/badge/crates.io-num__cpus-crimson
-[c~num_cpus~docs]: https://docs.rs/num_cpus
-[c~num_cpus~docs~badge]: https://img.shields.io/crates/v/num_cpus?label=num_cpus
-[c~num_cpus~lib.rs]: https://lib.rs/crates/num_cpus
-[c~num_cpus~lib.rs~badge]: https://img.shields.io/badge/lib.rs-num__cpus-yellow
-[c~num_cpus~repo]: https://github.com/seanmonstar/num_cpus
-[c~num_cpus~repo~badge]: https://img.shields.io/badge/num__cpus-steelblue?logo=github
-[c~numpy~crates.io]: https://crates.io/crates/numpy
-[c~numpy~crates.io~badge]: https://img.shields.io/badge/crates.io-numpy-crimson
-[c~numpy~docs]: https://docs.rs/numpy
-[c~numpy~docs~badge]: https://img.shields.io/crates/v/numpy?label=numpy
-[c~numpy~lib.rs]: https://lib.rs/crates/numpy
-[c~numpy~lib.rs~badge]: https://img.shields.io/badge/lib.rs-numpy-yellow
-[c~numpy~repo]: https://github.com/PyO3/rust-numpy
-[c~numpy~repo~badge]: https://img.shields.io/badge/numpy-steelblue?logo=github
-[c~num~crates.io]: https://crates.io/crates/num
-[c~num~crates.io~badge]: https://img.shields.io/badge/crates.io-num-crimson
-[c~num~docs]: https://docs.rs/num
-[c~num~docs~badge]: https://img.shields.io/crates/v/num?label=num
-[c~num~lib.rs]: https://lib.rs/crates/num
-[c~num~lib.rs~badge]: https://img.shields.io/badge/lib.rs-num-yellow
-[c~num~repo]: https://github.com/rust-num/num
-[c~num~repo~badge]: https://img.shields.io/badge/num-steelblue?logo=github
-[c~oauth2~crates.io]: https://crates.io/crates/oauth2
-[c~oauth2~crates.io~badge]: https://img.shields.io/badge/crates.io-oauth2-crimson
-[c~oauth2~docs]: https://docs.rs/oauth2
-[c~oauth2~docs~badge]: https://img.shields.io/crates/v/oauth2?label=oauth2
-[c~oauth2~lib.rs]: https://lib.rs/crates/oauth2
-[c~oauth2~lib.rs~badge]: https://img.shields.io/badge/lib.rs-oauth2-yellow
-[c~oauth2~repo]: https://github.com/ramosbugs/oauth2-rs
-[c~oauth2~repo~badge]: https://img.shields.io/badge/oauth2-steelblue?logo=github
-[c~objc2~crates.io]: https://crates.io/crates/objc2
-[c~objc2~crates.io~badge]: https://img.shields.io/badge/crates.io-objc2-crimson
-[c~objc2~docs]: https://docs.rs/objc2
-[c~objc2~docs~badge]: https://img.shields.io/crates/v/objc2?label=objc2
-[c~objc2~lib.rs]: https://lib.rs/crates/objc2
-[c~objc2~lib.rs~badge]: https://img.shields.io/badge/lib.rs-objc2-yellow
-[c~objc2~repo]: https://github.com/madsmtm/objc2
-[c~objc2~repo~badge]: https://img.shields.io/badge/objc2-steelblue?logo=github
-[c~objc~crates.io]: https://crates.io/crates/objc
-[c~objc~crates.io~badge]: https://img.shields.io/badge/crates.io-objc-crimson
-[c~objc~docs]: http://ssheldon.github.io/rust-objc/objc
-[c~objc~docs~badge]: https://img.shields.io/crates/v/objc?label=objc
-[c~objc~lib.rs]: https://lib.rs/crates/objc
-[c~objc~lib.rs~badge]: https://img.shields.io/badge/lib.rs-objc-yellow
-[c~objc~repo]: http://github.com/SSheldon/rust-objc
-[c~objc~repo~badge]: https://img.shields.io/badge/objc-steelblue?logo=github
-[c~oci-spec~crates.io]: https://crates.io/crates/oci-spec
-[c~oci-spec~crates.io~badge]: https://img.shields.io/badge/crates.io-oci--spec-crimson
-[c~oci-spec~docs]: https://docs.rs/oci-spec
-[c~oci-spec~docs~badge]: https://img.shields.io/crates/v/oci-spec?label=oci-spec
-[c~oci-spec~lib.rs]: https://lib.rs/crates/oci-spec
-[c~oci-spec~lib.rs~badge]: https://img.shields.io/badge/lib.rs-oci--spec-yellow
-[c~oci-spec~repo]: https://github.com/youki-dev/oci-spec-rs
-[c~oci-spec~repo~badge]: https://img.shields.io/badge/oci--spec-steelblue?logo=github
-[c~octocrab~crates.io]: https://crates.io/crates/octocrab
-[c~octocrab~crates.io~badge]: https://img.shields.io/badge/crates.io-octocrab-crimson
-[c~octocrab~docs]: https://docs.rs/octocrab
-[c~octocrab~docs~badge]: https://img.shields.io/crates/v/octocrab?label=octocrab
-[c~octocrab~lib.rs]: https://lib.rs/crates/octocrab
-[c~octocrab~lib.rs~badge]: https://img.shields.io/badge/lib.rs-octocrab-yellow
-[c~octocrab~repo]: https://github.com/XAMPPRocky/octocrab
-[c~octocrab~repo~badge]: https://img.shields.io/badge/octocrab-steelblue?logo=github
-[c~octocrab~website]: https://github.com/XAMPPRocky/octocrab
-[c~octocrab~website~badge]: https://img.shields.io/badge/octocrab-coral
-[c~ogg~crates.io]: https://crates.io/crates/ogg
-[c~ogg~crates.io~badge]: https://img.shields.io/badge/crates.io-ogg-crimson
-[c~ogg~docs]: https://docs.rs/ogg
-[c~ogg~docs~badge]: https://img.shields.io/crates/v/ogg?label=ogg
-[c~ogg~lib.rs]: https://lib.rs/crates/ogg
-[c~ogg~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ogg-yellow
-[c~ogg~repo]: https://github.com/RustAudio/ogg
-[c~ogg~repo~badge]: https://img.shields.io/badge/ogg-steelblue?logo=github
-[c~once_cell::sync::Lazy~docs]: https://docs.rs/once_cell/latest/once_cell/sync/struct.Lazy.html
-[c~once_cell::sync::OnceCell~docs]: https://docs.rs/once_cell/latest/once_cell/sync/struct.OnceCell.html
-[c~once_cell::unsync::OnceCell~docs]: https://docs.rs/once_cell/latest/once_cell/unsync/struct.OnceCell.html
-[c~once_cell~crates.io]: https://crates.io/crates/once_cell
-[c~once_cell~crates.io~badge]: https://img.shields.io/badge/crates.io-once__cell-crimson
-[c~once_cell~docs]: https://docs.rs/once_cell
-[c~once_cell~docs~badge]: https://img.shields.io/crates/v/once_cell?label=once_cell
-[c~once_cell~lib.rs]: https://lib.rs/crates/once_cell
-[c~once_cell~lib.rs~badge]: https://img.shields.io/badge/lib.rs-once__cell-yellow
-[c~once_cell~repo]: https://github.com/matklad/once_cell
-[c~once_cell~repo~badge]: https://img.shields.io/badge/once__cell-steelblue?logo=github
-[c~onefetch~crates.io]: https://crates.io/crates/onefetch
-[c~onefetch~crates.io~badge]: https://img.shields.io/badge/crates.io-onefetch-crimson
-[c~onefetch~docs]: https://docs.rs/onefetch
-[c~onefetch~docs~badge]: https://img.shields.io/crates/v/onefetch?label=onefetch
-[c~onefetch~lib.rs]: https://lib.rs/crates/onefetch
-[c~onefetch~lib.rs~badge]: https://img.shields.io/badge/lib.rs-onefetch-yellow
-[c~onefetch~repo]: https://github.com/o2sh/onefetch
-[c~onefetch~repo~badge]: https://img.shields.io/badge/onefetch-steelblue?logo=github
-[c~onefetch~website]: https://onefetch.dev
-[c~onefetch~website~badge]: https://img.shields.io/badge/onefetch-coral
-[c~oneshot~crates.io]: https://crates.io/crates/oneshot
-[c~oneshot~crates.io~badge]: https://img.shields.io/badge/crates.io-oneshot-crimson
-[c~oneshot~docs]: https://docs.rs/oneshot
-[c~oneshot~docs~badge]: https://img.shields.io/crates/v/oneshot?label=oneshot
-[c~oneshot~lib.rs]: https://lib.rs/crates/oneshot
-[c~oneshot~lib.rs~badge]: https://img.shields.io/badge/lib.rs-oneshot-yellow
-[c~oneshot~repo]: https://github.com/faern/oneshot
-[c~oneshot~repo~badge]: https://img.shields.io/badge/oneshot-steelblue?logo=github
-[c~onnxruntime~crates.io]: https://crates.io/crates/onnxruntime
-[c~onnxruntime~crates.io~badge]: https://img.shields.io/badge/crates.io-onnxruntime-crimson
-[c~onnxruntime~docs]: https://docs.rs/onnxruntime
-[c~onnxruntime~docs~badge]: https://img.shields.io/crates/v/onnxruntime?label=onnxruntime
-[c~onnxruntime~lib.rs]: https://lib.rs/crates/onnxruntime
-[c~onnxruntime~lib.rs~badge]: https://img.shields.io/badge/lib.rs-onnxruntime-yellow
-[c~onnxruntime~repo]: https://github.com/nbigaouette/onnxruntime-rs
-[c~onnxruntime~repo~badge]: https://img.shields.io/badge/onnxruntime-steelblue?logo=github
-[c~oorandom~crates.io]: https://crates.io/crates/oorandom
-[c~oorandom~crates.io~badge]: https://img.shields.io/badge/crates.io-oorandom-crimson
-[c~oorandom~dependents~badge]: https://img.shields.io/crates/dependents/oorandom
-[c~oorandom~deps-rs~badge]: https://img.shields.io/deps-rs/oorandom/latest
-[c~oorandom~docs]: https://docs.rs/oorandom
-[c~oorandom~docs~badge]: https://img.shields.io/crates/v/oorandom?label=oorandom
-[c~oorandom~lib.rs]: https://lib.rs/crates/oorandom
-[c~oorandom~lib.rs~badge]: https://img.shields.io/badge/lib.rs-oorandom-yellow
-[c~oorandom~license~badge]: https://img.shields.io/crates/l/oorandom
-[c~oorandom~recent-downloads~badge]: https://img.shields.io/crates/dr/oorandom
-[c~oorandom~repo]: https://hg.sr.ht/~icefox/oorandom
-[c~oorandom~repo~badge]: https://img.shields.io/badge/oorandom-steelblue?logo=github
-[c~opencv~crates.io]: https://crates.io/crates/opencv
-[c~opencv~crates.io~badge]: https://img.shields.io/badge/crates.io-opencv-crimson
-[c~opencv~docs]: https://docs.rs/opencv
-[c~opencv~docs~badge]: https://img.shields.io/crates/v/opencv?label=opencv
-[c~opencv~example]: https://github.com/amar-laksh/workstation/blob/master/src/main.rs
-[c~opencv~example~badge]: https://img.shields.io/badge/opencv_example-steelblue?logo=github
-[c~opencv~lib.rs]: https://lib.rs/crates/opencv
-[c~opencv~lib.rs~badge]: https://img.shields.io/badge/lib.rs-opencv-yellow
-[c~opencv~repo]: https://github.com/twistedfall/opencv-rust
-[c~opencv~repo~badge]: https://img.shields.io/badge/opencv-steelblue?logo=github
-[c~opencv~website]: https://opencv.org
-[c~opencv~website~badge]: https://img.shields.io/badge/opencv-coral
-[c~openrr-planner~crates.io]: https://crates.io/crates/openrr-planner
-[c~openrr-planner~crates.io~badge]: https://img.shields.io/badge/crates.io-openrr--planner-crimson
-[c~openrr-planner~docs]: https://docs.rs/openrr-planner
-[c~openrr-planner~docs~badge]: https://img.shields.io/crates/v/openrr-planner?label=openrr-planner
-[c~openrr-planner~lib.rs]: https://lib.rs/crates/openrr-planner
-[c~openrr-planner~lib.rs~badge]: https://img.shields.io/badge/lib.rs-openrr--planner-yellow
-[c~openrr-planner~repo]: https://github.com/openrr/openrr
-[c~openrr-planner~repo~badge]: https://img.shields.io/badge/openrr--planner-steelblue?logo=github
-[c~openrr~crates.io]: https://crates.io/crates/openrr
-[c~openrr~crates.io~badge]: https://img.shields.io/badge/crates.io-openrr-crimson
-[c~openrr~docs]: https://docs.rs/openrr
-[c~openrr~docs~badge]: https://img.shields.io/crates/v/openrr?label=openrr
-[c~openrr~lib.rs]: https://lib.rs/crates/openrr
-[c~openrr~lib.rs~badge]: https://img.shields.io/badge/lib.rs-openrr-yellow
-[c~openrr~repo]: https://github.com/openrr/openrr
-[c~openrr~repo~badge]: https://img.shields.io/badge/openrr-steelblue?logo=github
-[c~openrr~website]: https://openrr.github.io
-[c~openrr~website~badge]: https://img.shields.io/badge/openrr-coral
-[c~openssl~crates.io]: https://crates.io/crates/openssl
-[c~openssl~crates.io~badge]: https://img.shields.io/badge/crates.io-openssl-crimson
-[c~openssl~docs]: https://docs.rs/openssl
-[c~openssl~docs~badge]: https://img.shields.io/crates/v/openssl?label=openssl
-[c~openssl~lib.rs]: https://lib.rs/crates/openssl
-[c~openssl~lib.rs~badge]: https://img.shields.io/badge/lib.rs-openssl-yellow
-[c~openssl~repo]: https://github.com/sfackler/rust-openssl
-[c~openssl~repo~badge]: https://img.shields.io/badge/openssl-steelblue?logo=github
-[c~opentelemetry-jaeger~crates.io]: https://crates.io/crates/opentelemetry-jaeger
-[c~opentelemetry-jaeger~crates.io~badge]: https://img.shields.io/badge/crates.io-opentelemetry--jaeger-crimson
-[c~opentelemetry-jaeger~docs]: https://docs.rs/opentelemetry-jaeger
-[c~opentelemetry-jaeger~docs~badge]: https://img.shields.io/crates/v/opentelemetry-jaeger?label=opentelemetry-jaeger
-[c~opentelemetry-jaeger~lib.rs]: https://lib.rs/crates/opentelemetry-jaeger
-[c~opentelemetry-jaeger~lib.rs~badge]: https://img.shields.io/badge/lib.rs-opentelemetry--jaeger-yellow
-[c~opentelemetry-jaeger~repo]: https://github.com/open-telemetry/opentelemetry-rust/tree/main/opentelemetry-jaeger
-[c~opentelemetry-jaeger~repo~badge]: https://img.shields.io/badge/opentelemetry--jaeger-steelblue?logo=github
-[c~opentelemetry-otlp~crates.io]: https://crates.io/crates/opentelemetry-otlp
-[c~opentelemetry-otlp~crates.io~badge]: https://img.shields.io/badge/crates.io-opentelemetry--otlp-crimson
-[c~opentelemetry-otlp~docs]: https://docs.rs/opentelemetry-otlp
-[c~opentelemetry-otlp~docs~badge]: https://img.shields.io/crates/v/opentelemetry-otlp?label=opentelemetry-otlp
-[c~opentelemetry-otlp~lib.rs]: https://lib.rs/crates/opentelemetry-otlp
-[c~opentelemetry-otlp~lib.rs~badge]: https://img.shields.io/badge/lib.rs-opentelemetry--otlp-yellow
-[c~opentelemetry-otlp~repo]: https://github.com/open-telemetry/opentelemetry-rust/tree/main/opentelemetry-otlp
-[c~opentelemetry-otlp~repo~badge]: https://img.shields.io/badge/opentelemetry--otlp-steelblue?logo=github
-[c~opentelemetry-semantic-conventions~crates.io]: https://crates.io/crates/opentelemetry-semantic-conventions
-[c~opentelemetry-semantic-conventions~crates.io~badge]: https://img.shields.io/badge/crates.io-opentelemetry--semantic--conventions-crimson
-[c~opentelemetry-semantic-conventions~docs]: https://docs.rs/opentelemetry-semantic-conventions
-[c~opentelemetry-semantic-conventions~docs~badge]: https://img.shields.io/crates/v/opentelemetry-semantic-conventions?label=opentelemetry-semantic-conventions
-[c~opentelemetry-semantic-conventions~lib.rs]: https://lib.rs/crates/opentelemetry-semantic-conventions
-[c~opentelemetry-semantic-conventions~lib.rs~badge]: https://img.shields.io/badge/lib.rs-opentelemetry--semantic--conventions-yellow
-[c~opentelemetry-semantic-conventions~repo]: https://github.com/open-telemetry/opentelemetry-rust/tree/main/opentelemetry-semantic-conventions
-[c~opentelemetry-semantic-conventions~repo~badge]: https://img.shields.io/badge/opentelemetry--semantic--conventions-steelblue?logo=github
-[c~opentelemetry_sdk~crates.io]: https://crates.io/crates/opentelemetry_sdk
-[c~opentelemetry_sdk~crates.io~badge]: https://img.shields.io/badge/crates.io-opentelemetry__sdk-crimson
-[c~opentelemetry_sdk~docs]: https://docs.rs/opentelemetry_sdk
-[c~opentelemetry_sdk~docs~badge]: https://img.shields.io/crates/v/opentelemetry_sdk?label=opentelemetry_sdk
-[c~opentelemetry_sdk~lib.rs]: https://lib.rs/crates/opentelemetry_sdk
-[c~opentelemetry_sdk~lib.rs~badge]: https://img.shields.io/badge/lib.rs-opentelemetry__sdk-yellow
-[c~opentelemetry_sdk~repo]: https://github.com/open-telemetry/opentelemetry-rust/tree/main/opentelemetry-sdk
-[c~opentelemetry_sdk~repo~badge]: https://img.shields.io/badge/opentelemetry__sdk-steelblue?logo=github
-[c~opentelemetry~crates.io]: https://crates.io/crates/opentelemetry
-[c~opentelemetry~crates.io~badge]: https://img.shields.io/badge/crates.io-opentelemetry-crimson
-[c~opentelemetry~docs]: https://docs.rs/opentelemetry
-[c~opentelemetry~docs~badge]: https://img.shields.io/crates/v/opentelemetry?label=opentelemetry
-[c~opentelemetry~lib.rs]: https://lib.rs/crates/opentelemetry
-[c~opentelemetry~lib.rs~badge]: https://img.shields.io/badge/lib.rs-opentelemetry-yellow
-[c~opentelemetry~repo]: https://github.com/open-telemetry/opentelemetry-rust/tree/main/opentelemetry
-[c~opentelemetry~repo~badge]: https://img.shields.io/badge/opentelemetry-steelblue?logo=github
-[c~opentype~crates.io]: https://crates.io/crates/opentype
-[c~opentype~crates.io~badge]: https://img.shields.io/badge/crates.io-opentype-crimson
-[c~opentype~docs]: https://docs.rs/opentype
-[c~opentype~docs~badge]: https://img.shields.io/crates/v/opentype?label=opentype
-[c~opentype~lib.rs]: https://lib.rs/crates/opentype
-[c~opentype~lib.rs~badge]: https://img.shields.io/badge/lib.rs-opentype-yellow
-[c~opentype~repo]: https://github.com/bodoni/opentype
-[c~opentype~repo~badge]: https://img.shields.io/badge/opentype-steelblue?logo=github
-[c~open~crates.io]: https://crates.io/crates/open
-[c~open~crates.io~badge]: https://img.shields.io/badge/crates.io-open-crimson
-[c~open~docs]: https://docs.rs/open
-[c~open~docs~badge]: https://img.shields.io/crates/v/open?label=open
-[c~open~lib.rs]: https://lib.rs/crates/open
-[c~open~lib.rs~badge]: https://img.shields.io/badge/lib.rs-open-yellow
-[c~open~repo]: https://github.com/Byron/open-rs
-[c~open~repo~badge]: https://img.shields.io/badge/open-steelblue?logo=github
-[c~optics~crates.io]: https://crates.io/crates/optics
-[c~optics~crates.io~badge]: https://img.shields.io/badge/crates.io-optics-crimson
-[c~optics~docs]: https://docs.rs/optics
-[c~optics~docs~badge]: https://img.shields.io/crates/v/optics?label=optics
-[c~optics~lib.rs]: https://lib.rs/crates/optics
-[c~optics~lib.rs~badge]: https://img.shields.io/badge/lib.rs-optics-yellow
-[c~optics~repo]: https://github.com/axos88/optics-rs
-[c~optics~repo~badge]: https://img.shields.io/badge/optics-steelblue?logo=github
-[c~oracle~crates.io]: https://crates.io/crates/oracle
-[c~oracle~crates.io~badge]: https://img.shields.io/badge/crates.io-oracle-crimson
-[c~oracle~docs]: https://docs.rs/oracle
-[c~oracle~docs~badge]: https://img.shields.io/crates/v/oracle?label=oracle
-[c~oracle~lib.rs]: https://lib.rs/crates/oracle
-[c~oracle~lib.rs~badge]: https://img.shields.io/badge/lib.rs-oracle-yellow
-[c~oracle~repo]: https://github.com/kubo/rust-oracle
-[c~oracle~repo~badge]: https://img.shields.io/badge/oracle-steelblue?logo=github
-[c~ordered-float~crates.io]: https://crates.io/crates/ordered-float
-[c~ordered-float~crates.io~badge]: https://img.shields.io/badge/crates.io-ordered--float-crimson
-[c~ordered-float~docs]: https://docs.rs/ordered-float
-[c~ordered-float~docs~badge]: https://img.shields.io/crates/v/ordered-float?label=ordered-float
-[c~ordered-float~lib.rs]: https://lib.rs/crates/ordered-float
-[c~ordered-float~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ordered--float-yellow
-[c~ordered-float~repo]: https://github.com/reem/rust-ordered-float
-[c~ordered-float~repo~badge]: https://img.shields.io/badge/ordered--float-steelblue?logo=github
-[c~owo-colors~crates.io]: https://crates.io/crates/owo-colors
-[c~owo-colors~crates.io~badge]: https://img.shields.io/badge/crates.io-owo--colors-crimson
-[c~owo-colors~docs]: https://docs.rs/owo-colors
-[c~owo-colors~docs~badge]: https://img.shields.io/crates/v/owo-colors?label=owo-colors
-[c~owo-colors~lib.rs]: https://lib.rs/crates/owo-colors
-[c~owo-colors~lib.rs~badge]: https://img.shields.io/badge/lib.rs-owo--colors-yellow
-[c~owo-colors~repo]: https://github.com/jam1garner/owo-colors
-[c~owo-colors~repo~badge]: https://img.shields.io/badge/owo--colors-steelblue?logo=github
-[c~oxc~crates.io]: https://crates.io/crates/oxc
-[c~oxc~crates.io~badge]: https://img.shields.io/badge/crates.io-oxc-crimson
-[c~oxc~docs]: https://docs.rs/oxc
-[c~oxc~docs~badge]: https://img.shields.io/crates/v/oxc?label=oxc
-[c~oxc~lib.rs]: https://lib.rs/crates/oxc
-[c~oxc~lib.rs~badge]: https://img.shields.io/badge/lib.rs-oxc-yellow
-[c~oxc~repo]: https://github.com/oxc-project/oxc
-[c~oxc~repo~badge]: https://img.shields.io/badge/oxc-steelblue?logo=github
-[c~oxc~website]: https://oxc.rs
-[c~oxc~website~badge]: https://img.shields.io/badge/oxc-coral
-[c~p256~crates.io]: https://crates.io/crates/p256
-[c~p256~crates.io~badge]: https://img.shields.io/badge/crates.io-p256-crimson
-[c~p256~docs]: https://docs.rs/p256
-[c~p256~docs~badge]: https://img.shields.io/crates/v/p256?label=p256
-[c~p256~lib.rs]: https://lib.rs/crates/p256
-[c~p256~lib.rs~badge]: https://img.shields.io/badge/lib.rs-p256-yellow
-[c~p256~repo]: https://github.com/RustCrypto/elliptic-curves
-[c~p256~repo~badge]: https://img.shields.io/badge/p256-steelblue?logo=github
-[c~p256~website]: https://github.com/RustCrypto/elliptic-curves/tree/master/p256
-[c~p256~website~badge]: https://img.shields.io/badge/p256-coral
-[c~packed_simd~crates.io]: https://crates.io/crates/packed_simd
-[c~packed_simd~crates.io~badge]: https://img.shields.io/badge/crates.io-packed__simd-crimson
-[c~packed_simd~docs]: https://docs.rs/packed_simd
-[c~packed_simd~docs~badge]: https://img.shields.io/crates/v/packed_simd?label=packed_simd
-[c~packed_simd~lib.rs]: https://lib.rs/crates/packed_simd
-[c~packed_simd~lib.rs~badge]: https://img.shields.io/badge/lib.rs-packed__simd-yellow
-[c~packed_simd~repo]: https://github.com/rust-lang/packed_simd
-[c~packed_simd~repo~badge]: https://img.shields.io/badge/packed__simd-steelblue?logo=github
-[c~palette~crates.io]: https://crates.io/crates/palette
-[c~palette~crates.io~badge]: https://img.shields.io/badge/crates.io-palette-crimson
-[c~palette~docs]: https://docs.rs/palette
-[c~palette~docs~badge]: https://img.shields.io/crates/v/palette?label=palette
-[c~palette~lib.rs]: https://lib.rs/crates/palette
-[c~palette~lib.rs~badge]: https://img.shields.io/badge/lib.rs-palette-yellow
-[c~palette~repo]: https://github.com/Ogeon/palette
-[c~palette~repo~badge]: https://img.shields.io/badge/palette-steelblue?logo=github
-[c~panamax~crates.io]: https://crates.io/crates/panamax
-[c~panamax~crates.io~badge]: https://img.shields.io/badge/crates.io-panamax-crimson
-[c~panamax~docs]: https://docs.rs/panamax
-[c~panamax~docs~badge]: https://img.shields.io/crates/v/panamax?label=panamax
-[c~panamax~lib.rs]: https://lib.rs/crates/panamax
-[c~panamax~lib.rs~badge]: https://img.shields.io/badge/lib.rs-panamax-yellow
-[c~panamax~repo]: https://github.com/panamax-rs/panamax
-[c~panamax~repo~badge]: https://img.shields.io/badge/panamax-steelblue?logo=github
-[c~panic-abort~crates.io]: https://crates.io/crates/panic-abort
-[c~panic-abort~crates.io~badge]: https://img.shields.io/badge/crates.io-panic--abort-crimson
-[c~panic-abort~docs]: https://japaric.github.io/panic-abort/panic-abort
-[c~panic-abort~docs~badge]: https://img.shields.io/crates/v/panic-abort?label=panic-abort
-[c~panic-abort~lib.rs]: https://lib.rs/crates/panic-abort
-[c~panic-abort~lib.rs~badge]: https://img.shields.io/badge/lib.rs-panic--abort-yellow
-[c~panic-abort~repo]: https://github.com/japaric/panic-abort
-[c~panic-abort~repo~badge]: https://img.shields.io/badge/panic--abort-steelblue?logo=github
-[c~panic-halt~crates.io]: https://crates.io/crates/panic-halt
-[c~panic-halt~crates.io~badge]: https://img.shields.io/badge/crates.io-panic--halt-crimson
-[c~panic-halt~docs]: https://docs.rs/panic-halt
-[c~panic-halt~docs~badge]: https://img.shields.io/crates/v/panic-halt?label=panic-halt
-[c~panic-halt~lib.rs]: https://lib.rs/crates/panic-halt
-[c~panic-halt~lib.rs~badge]: https://img.shields.io/badge/lib.rs-panic--halt-yellow
-[c~panic-halt~repo]: https://github.com/korken89/panic-halt
-[c~panic-halt~repo~badge]: https://img.shields.io/badge/panic--halt-steelblue?logo=github
-[c~panic~crates.io]: https://crates.io/crates/panic
-[c~panic~crates.io~badge]: https://img.shields.io/badge/crates.io-panic-crimson
-[c~panic~docs]: https://docs.rs/panic
-[c~panic~docs~badge]: https://img.shields.io/crates/v/panic?label=panic
-[c~panic~lib.rs]: https://lib.rs/crates/panic
-[c~panic~lib.rs~badge]: https://img.shields.io/badge/lib.rs-panic-yellow
-[c~panic~repo]: https://github.com/exact-labs/panic
-[c~panic~repo~badge]: https://img.shields.io/badge/panic-steelblue?logo=github
-[c~pants~crates.io]: https://crates.io/crates/pants
-[c~pants~crates.io~badge]: https://img.shields.io/badge/crates.io-pants-crimson
-[c~pants~docs]: https://docs.rs/pants
-[c~pants~docs~badge]: https://img.shields.io/crates/v/pants?label=pants
-[c~pants~lib.rs]: https://lib.rs/crates/pants
-[c~pants~lib.rs~badge]: https://img.shields.io/badge/lib.rs-pants-yellow
-[c~pants~repo]: https://github.com/dport/pants
-[c~pants~repo~badge]: https://img.shields.io/badge/pants-steelblue?logo=github
-[c~papaya~crates.io]: https://crates.io/crates/papaya
-[c~papaya~crates.io~badge]: https://img.shields.io/badge/crates.io-papaya-crimson
-[c~papaya~docs]: https://docs.rs/papaya
-[c~papaya~docs~badge]: https://img.shields.io/crates/v/papaya?label=papaya
-[c~papaya~lib.rs]: https://lib.rs/crates/papaya
-[c~papaya~lib.rs~badge]: https://img.shields.io/badge/lib.rs-papaya-yellow
-[c~papaya~repo]: https://github.com/ibraheemdev/papaya
-[c~papaya~repo~badge]: https://img.shields.io/badge/papaya-steelblue?logo=github
-[c~parity-wasm~crates.io]: https://crates.io/crates/parity-wasm
-[c~parity-wasm~crates.io~badge]: https://img.shields.io/badge/crates.io-parity--wasm-crimson
-[c~parity-wasm~docs]: https://docs.rs/parity-wasm
-[c~parity-wasm~docs~badge]: https://img.shields.io/crates/v/parity-wasm?label=parity-wasm
-[c~parity-wasm~lib.rs]: https://lib.rs/crates/parity-wasm
-[c~parity-wasm~lib.rs~badge]: https://img.shields.io/badge/lib.rs-parity--wasm-yellow
-[c~parity-wasm~repo]: https://github.com/paritytech/parity-wasm
-[c~parity-wasm~repo~badge]: https://img.shields.io/badge/parity--wasm-steelblue?logo=github
-[c~parking_lot::Condvar~docs]: https://docs.rs/parking_lot/latest/parking_lot/struct.Condvar.html
-[c~parking_lot::Mutex~docs]: https://docs.rs/parking_lot/latest/parking_lot/type.Mutex.html
-[c~parking_lot::Once~docs]: https://docs.rs/parking_lot/latest/parking_lot/struct.Once.html
-[c~parking_lot::ReentrantMutex~docs]: https://docs.rs/parking_lot/latest/parking_lot/type.ReentrantMutex.html
-[c~parking_lot::RwLock~docs]: https://docs.rs/parking_lot/latest/parking_lot/type.RwLock.html
-[c~parking_lot~crates.io]: https://crates.io/crates/parking_lot
-[c~parking_lot~crates.io~badge]: https://img.shields.io/badge/crates.io-parking__lot-crimson
-[c~parking_lot~docs]: https://docs.rs/parking_lot
-[c~parking_lot~docs~badge]: https://img.shields.io/crates/v/parking_lot?label=parking_lot
-[c~parking_lot~lib.rs]: https://lib.rs/crates/parking_lot
-[c~parking_lot~lib.rs~badge]: https://img.shields.io/badge/lib.rs-parking__lot-yellow
-[c~parking_lot~repo]: https://github.com/Amanieu/parking_lot
-[c~parking_lot~repo~badge]: https://img.shields.io/badge/parking__lot-steelblue?logo=github
-[c~parley~crates.io]: https://crates.io/crates/parley
-[c~parley~crates.io~badge]: https://img.shields.io/badge/crates.io-parley-crimson
-[c~parley~docs]: https://docs.rs/parley
-[c~parley~docs~badge]: https://img.shields.io/crates/v/parley?label=parley
-[c~parley~lib.rs]: https://lib.rs/crates/parley
-[c~parley~lib.rs~badge]: https://img.shields.io/badge/lib.rs-parley-yellow
-[c~parley~repo]: https://github.com/linebender/parley
-[c~parley~repo~badge]: https://img.shields.io/badge/parley-steelblue?logo=github
-[c~passwords~commit-activity~badge]: https://img.shields.io/github/commit-activity/y/magiclen/passwords
-[c~passwords~crates.io]: https://crates.io/crates/passwords
-[c~passwords~crates.io~badge]: https://img.shields.io/badge/crates.io-passwords-crimson
-[c~passwords~dependents~badge]: https://img.shields.io/crates/dependents/passwords
-[c~passwords~deps-rs~badge]: https://img.shields.io/deps-rs/passwords/latest
-[c~passwords~docs]: https://docs.rs/passwords
-[c~passwords~docs~badge]: https://img.shields.io/crates/v/passwords?label=passwords
-[c~passwords~last-commit~badge]: https://img.shields.io/github/last-commit/magiclen/passwords
-[c~passwords~lib.rs]: https://lib.rs/crates/passwords
-[c~passwords~lib.rs~badge]: https://img.shields.io/badge/lib.rs-passwords-yellow
-[c~passwords~license~badge]: https://img.shields.io/crates/l/passwords
-[c~passwords~recent-downloads~badge]: https://img.shields.io/crates/dr/passwords
-[c~passwords~repo]: https://github.com/magiclen/passwords
-[c~passwords~repo~badge]: https://img.shields.io/badge/passwords-steelblue?logo=github
-[c~passwords~website]: https://magiclen.org/passwords
-[c~passwords~website~badge]: https://img.shields.io/badge/passwords-coral
-[c~paste~crates.io]: https://crates.io/crates/paste
-[c~paste~crates.io~badge]: https://img.shields.io/badge/crates.io-paste-crimson
-[c~paste~docs]: https://docs.rs/paste
-[c~paste~docs~badge]: https://img.shields.io/crates/v/paste?label=paste
-[c~paste~lib.rs]: https://lib.rs/crates/paste
-[c~paste~lib.rs~badge]: https://img.shields.io/badge/lib.rs-paste-yellow
-[c~paste~repo]: https://github.com/dtolnay/paste
-[c~paste~repo~badge]: https://img.shields.io/badge/paste-steelblue?logo=github
-[c~pathdiff~crates.io]: https://crates.io/crates/pathdiff
-[c~pathdiff~crates.io~badge]: https://img.shields.io/badge/crates.io-pathdiff-crimson
-[c~pathdiff~docs]: https://docs.rs/pathdiff
-[c~pathdiff~docs~badge]: https://img.shields.io/crates/v/pathdiff?label=pathdiff
-[c~pathdiff~lib.rs]: https://lib.rs/crates/pathdiff
-[c~pathdiff~lib.rs~badge]: https://img.shields.io/badge/lib.rs-pathdiff-yellow
-[c~pathdiff~repo]: https://github.com/Manishearth/pathdiff
-[c~pathdiff~repo~badge]: https://img.shields.io/badge/pathdiff-steelblue?logo=github
-[c~pathfinding~crates.io]: https://crates.io/crates/pathfinding
-[c~pathfinding~crates.io~badge]: https://img.shields.io/badge/crates.io-pathfinding-crimson
-[c~pathfinding~docs]: https://docs.rs/pathfinding
-[c~pathfinding~docs~badge]: https://img.shields.io/crates/v/pathfinding?label=pathfinding
-[c~pathfinding~lib.rs]: https://lib.rs/crates/pathfinding
-[c~pathfinding~lib.rs~badge]: https://img.shields.io/badge/lib.rs-pathfinding-yellow
-[c~pathfinding~repo]: https://github.com/evenfurther/pathfinding
-[c~pathfinding~repo~badge]: https://img.shields.io/badge/pathfinding-steelblue?logo=github
-[c~pathfinding~website]: https://rfc1149.net/devel/pathfinding.html
-[c~pathfinding~website~badge]: https://img.shields.io/badge/pathfinding-coral
-[c~pbr~crates.io]: https://crates.io/crates/pbr
-[c~pbr~crates.io~badge]: https://img.shields.io/badge/crates.io-pbr-crimson
-[c~pbr~docs]: https://a8m.github.io/pb/doc/pbr
-[c~pbr~docs~badge]: https://img.shields.io/crates/v/pbr?label=pbr
-[c~pbr~lib.rs]: https://lib.rs/crates/pbr
-[c~pbr~lib.rs~badge]: https://img.shields.io/badge/lib.rs-pbr-yellow
-[c~pbr~repo]: https://github.com/a8m/pb
-[c~pbr~repo~badge]: https://img.shields.io/badge/pbr-steelblue?logo=github
-[c~peg~crates.io]: https://crates.io/crates/peg
-[c~peg~crates.io~badge]: https://img.shields.io/badge/crates.io-peg-crimson
-[c~peg~docs]: https://docs.rs/peg
-[c~peg~docs~badge]: https://img.shields.io/crates/v/peg?label=peg
-[c~peg~lib.rs]: https://lib.rs/crates/peg
-[c~peg~lib.rs~badge]: https://img.shields.io/badge/lib.rs-peg-yellow
-[c~peg~repo]: https://github.com/kevinmehall/rust-peg
-[c~peg~repo~badge]: https://img.shields.io/badge/peg-steelblue?logo=github
-[c~pem-rfc7468~crates.io]: https://crates.io/crates/pem-rfc7468
-[c~pem-rfc7468~crates.io~badge]: https://img.shields.io/badge/crates.io-pem--rfc7468-crimson
-[c~pem-rfc7468~docs]: https://docs.rs/pem-rfc7468
-[c~pem-rfc7468~docs~badge]: https://img.shields.io/crates/v/pem-rfc7468?label=pem-rfc7468
-[c~pem-rfc7468~lib.rs]: https://lib.rs/crates/pem-rfc7468
-[c~pem-rfc7468~lib.rs~badge]: https://img.shields.io/badge/lib.rs-pem--rfc7468-yellow
-[c~pem-rfc7468~repo]: https://github.com/RustCrypto/formats/tree/master/pem-rfc7468
-[c~pem-rfc7468~repo~badge]: https://img.shields.io/badge/pem--rfc7468-steelblue?logo=github
-[c~pem-rfc7468~website]: https://github.com/RustCrypto/formats/blob/master/pem-rfc7468/README.md
-[c~pem-rfc7468~website~badge]: https://img.shields.io/badge/pem--rfc7468-coral
-[c~percent-encoding::percent_decode~docs]: https://docs.rs/percent-encoding/latest/percent-encoding/fn.percent_decode.html
-[c~percent-encoding::utf8_percent_encode~docs]: https://docs.rs/percent-encoding/latest/percent-encoding/fn.utf8_percent_encode.html
-[c~percent-encoding~crates.io]: https://crates.io/crates/percent-encoding
-[c~percent-encoding~crates.io~badge]: https://img.shields.io/badge/crates.io-percent--encoding-crimson
-[c~percent-encoding~docs]: https://docs.rs/percent-encoding
-[c~percent-encoding~docs~badge]: https://img.shields.io/crates/v/percent-encoding?label=percent-encoding
-[c~percent-encoding~lib.rs]: https://lib.rs/crates/percent-encoding
-[c~percent-encoding~lib.rs~badge]: https://img.shields.io/badge/lib.rs-percent--encoding-yellow
-[c~percent-encoding~repo]: https://github.com/servo/rust-url/tree/main/percent-encoding
-[c~percent-encoding~repo~badge]: https://img.shields.io/badge/percent--encoding-steelblue?logo=github
-[c~perf~crates.io]: https://crates.io/crates/perf
-[c~perf~crates.io~badge]: https://img.shields.io/badge/crates.io-perf-crimson
-[c~perf~docs]: https://docs.rs/perf
-[c~perf~docs~badge]: https://img.shields.io/crates/v/perf?label=perf
-[c~perf~lib.rs]: https://lib.rs/crates/perf
-[c~perf~lib.rs~badge]: https://img.shields.io/badge/lib.rs-perf-yellow
-[c~perf~repo~badge]: https://img.shields.io/badge/perf-steelblue?logo=github
-[c~perseus~crates.io]: https://crates.io/crates/perseus
-[c~perseus~crates.io~badge]: https://img.shields.io/badge/crates.io-perseus-crimson
-[c~perseus~docs]: https://docs.rs/perseus
-[c~perseus~docs~badge]: https://img.shields.io/crates/v/perseus?label=perseus
-[c~perseus~lib.rs]: https://lib.rs/crates/perseus
-[c~perseus~lib.rs~badge]: https://img.shields.io/badge/lib.rs-perseus-yellow
-[c~perseus~repo]: https://github.com/framesurge/perseus
-[c~perseus~repo~badge]: https://img.shields.io/badge/perseus-steelblue?logo=github
-[c~perseus~website]: https://framesurge.sh/perseus
-[c~perseus~website~badge]: https://img.shields.io/badge/perseus-coral
-[c~pest_derive~crates.io]: https://crates.io/crates/pest_derive
-[c~pest_derive~crates.io~badge]: https://img.shields.io/badge/crates.io-pest__derive-crimson
-[c~pest_derive~docs]: https://docs.rs/pest_derive/latest/pest_derive
-[c~pest_derive~docs~badge]: https://img.shields.io/crates/v/pest_derive?label=pest_derive
-[c~pest_derive~lib.rs]: https://lib.rs/crates/pest_derive
-[c~pest_derive~lib.rs~badge]: https://img.shields.io/badge/lib.rs-pest__derive-yellow
-[c~pest_derive~repo]: https://github.com/pest-parser/pest
-[c~pest_derive~repo~badge]: https://img.shields.io/badge/pest__derive-steelblue?logo=github
-[c~pest_derive~website]: https://pest.rs
-[c~pest_derive~website~badge]: https://img.shields.io/badge/pest__derive-coral
-[c~pest_generator~crates.io]: https://crates.io/crates/pest_generator
-[c~pest_generator~crates.io~badge]: https://img.shields.io/badge/crates.io-pest__generator-crimson
-[c~pest_generator~docs]: https://docs.rs/pest
-[c~pest_generator~docs~badge]: https://img.shields.io/crates/v/pest_generator?label=pest_generator
-[c~pest_generator~lib.rs]: https://lib.rs/crates/pest_generator
-[c~pest_generator~lib.rs~badge]: https://img.shields.io/badge/lib.rs-pest__generator-yellow
-[c~pest_generator~repo]: https://github.com/pest-parser/pest
-[c~pest_generator~repo~badge]: https://img.shields.io/badge/pest__generator-steelblue?logo=github
-[c~pest_generator~website]: https://pest.rs
-[c~pest_generator~website~badge]: https://img.shields.io/badge/pest__generator-coral
-[c~pest~crates.io]: https://crates.io/crates/pest
-[c~pest~crates.io~badge]: https://img.shields.io/badge/crates.io-pest-crimson
-[c~pest~docs]: https://docs.rs/pest
-[c~pest~docs~badge]: https://img.shields.io/crates/v/pest?label=pest
-[c~pest~lib.rs]: https://lib.rs/crates/pest
-[c~pest~lib.rs~badge]: https://img.shields.io/badge/lib.rs-pest-yellow
-[c~pest~repo]: https://github.com/pest-parser/pest
-[c~pest~repo~badge]: https://img.shields.io/badge/pest-steelblue?logo=github
-[c~pest~website]: https://pest.rs
-[c~pest~website~badge]: https://img.shields.io/badge/pest-coral
-[c~petgraph~crates.io]: https://crates.io/crates/petgraph
-[c~petgraph~crates.io~badge]: https://img.shields.io/badge/crates.io-petgraph-crimson
-[c~petgraph~docs]: https://docs.rs/petgraph
-[c~petgraph~docs~badge]: https://img.shields.io/crates/v/petgraph?label=petgraph
-[c~petgraph~lib.rs]: https://lib.rs/crates/petgraph
-[c~petgraph~lib.rs~badge]: https://img.shields.io/badge/lib.rs-petgraph-yellow
-[c~petgraph~repo]: https://github.com/petgraph/petgraph
-[c~petgraph~repo~badge]: https://img.shields.io/badge/petgraph-steelblue?logo=github
-[c~phf~crates.io]: https://crates.io/crates/phf
-[c~phf~crates.io~badge]: https://img.shields.io/badge/crates.io-phf-crimson
-[c~phf~docs]: https://docs.rs/phf
-[c~phf~docs~badge]: https://img.shields.io/crates/v/phf?label=phf
-[c~phf~lib.rs]: https://lib.rs/crates/phf
-[c~phf~lib.rs~badge]: https://img.shields.io/badge/lib.rs-phf-yellow
-[c~phf~repo]: https://github.com/rust-phf/rust-phf
-[c~phf~repo~badge]: https://img.shields.io/badge/phf-steelblue?logo=github
-[c~pico-args~crates.io]: https://crates.io/crates/pico-args
-[c~pico-args~crates.io~badge]: https://img.shields.io/badge/crates.io-pico--args-crimson
-[c~pico-args~docs]: https://docs.rs/pico-args
-[c~pico-args~docs~badge]: https://img.shields.io/crates/v/pico-args?label=pico-args
-[c~pico-args~lib.rs]: https://lib.rs/crates/pico-args
-[c~pico-args~lib.rs~badge]: https://img.shields.io/badge/lib.rs-pico--args-yellow
-[c~pico-args~repo]: https://github.com/RazrFalcon/pico-args
-[c~pico-args~repo~badge]: https://img.shields.io/badge/pico--args-steelblue?logo=github
-[c~pid~crates.io]: https://crates.io/crates/pid
-[c~pid~crates.io~badge]: https://img.shields.io/badge/crates.io-pid-crimson
-[c~pid~docs]: https://docs.rs/pid
-[c~pid~docs~badge]: https://img.shields.io/crates/v/pid?label=pid
-[c~pid~lib.rs]: https://lib.rs/crates/pid
-[c~pid~lib.rs~badge]: https://img.shields.io/badge/lib.rs-pid-yellow
-[c~pid~repo]: https://github.com/braincore/pid-rs
-[c~pid~repo~badge]: https://img.shields.io/badge/pid-steelblue?logo=github
-[c~pin-project-lite~crates.io]: https://crates.io/crates/pin-project-lite
-[c~pin-project-lite~crates.io~badge]: https://img.shields.io/badge/crates.io-pin--project--lite-crimson
-[c~pin-project-lite~docs]: https://docs.rs/pin-project-lite
-[c~pin-project-lite~docs~badge]: https://img.shields.io/crates/v/pin-project-lite?label=pin-project-lite
-[c~pin-project-lite~lib.rs]: https://lib.rs/crates/pin-project-lite
-[c~pin-project-lite~lib.rs~badge]: https://img.shields.io/badge/lib.rs-pin--project--lite-yellow
-[c~pin-project-lite~repo]: https://github.com/taiki-e/pin-project-lite
-[c~pin-project-lite~repo~badge]: https://img.shields.io/badge/pin--project--lite-steelblue?logo=github
-[c~pin-project~crates.io]: https://crates.io/crates/pin-project
-[c~pin-project~crates.io~badge]: https://img.shields.io/badge/crates.io-pin--project-crimson
-[c~pin-project~docs]: https://docs.rs/pin-project
-[c~pin-project~docs~badge]: https://img.shields.io/crates/v/pin-project?label=pin-project
-[c~pin-project~lib.rs]: https://lib.rs/crates/pin-project
-[c~pin-project~lib.rs~badge]: https://img.shields.io/badge/lib.rs-pin--project-yellow
-[c~pin-project~repo]: https://github.com/taiki-e/pin-project
-[c~pin-project~repo~badge]: https://img.shields.io/badge/pin--project-steelblue?logo=github
-[c~pingora~crates.io]: https://crates.io/crates/pingora
-[c~pingora~crates.io~badge]: https://img.shields.io/badge/crates.io-pingora-crimson
-[c~pingora~docs]: https://docs.rs/pingora
-[c~pingora~docs~badge]: https://img.shields.io/crates/v/pingora?label=pingora
-[c~pingora~lib.rs]: https://lib.rs/crates/pingora
-[c~pingora~lib.rs~badge]: https://img.shields.io/badge/lib.rs-pingora-yellow
-[c~pingora~quick-start~repo]: https://github.com/cloudflare/pingora/blob/main/docs/quick_start.md
-[c~pingora~repo]: https://github.com/cloudflare/pingora
-[c~pingora~repo~badge]: https://img.shields.io/badge/pingora-steelblue?logo=github
-[c~ping~crates.io]: https://crates.io/crates/ping
-[c~ping~crates.io~badge]: https://img.shields.io/badge/crates.io-ping-crimson
-[c~ping~docs]: https://docs.rs/ping
-[c~ping~docs~badge]: https://img.shields.io/crates/v/ping?label=ping
-[c~ping~lib.rs]: https://lib.rs/crates/ping
-[c~ping~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ping-yellow
-[c~ping~repo]: https://github.com/aisk/rust-ping
-[c~ping~repo~badge]: https://img.shields.io/badge/ping-steelblue?logo=github
-[c~piston~crates.io]: https://crates.io/crates/piston
-[c~piston~crates.io~badge]: https://img.shields.io/badge/crates.io-piston-crimson
-[c~piston~docs]: https://docs.rs/piston
-[c~piston~docs~badge]: https://img.shields.io/crates/v/piston?label=piston
-[c~piston~lib.rs]: https://lib.rs/crates/piston
-[c~piston~lib.rs~badge]: https://img.shields.io/badge/lib.rs-piston-yellow
-[c~piston~repo]: https://github.com/PistonDevelopers/piston
-[c~piston~repo~badge]: https://img.shields.io/badge/piston-steelblue?logo=github
-[c~piston~website]: https://piston.rs
-[c~piston~website~badge]: https://img.shields.io/badge/piston-coral
-[c~pixels~crates.io]: https://crates.io/crates/pixels
-[c~pixels~crates.io~badge]: https://img.shields.io/badge/crates.io-pixels-crimson
-[c~pixels~docs]: https://docs.rs/pixels
-[c~pixels~docs~badge]: https://img.shields.io/crates/v/pixels?label=pixels
-[c~pixels~lib.rs]: https://lib.rs/crates/pixels
-[c~pixels~lib.rs~badge]: https://img.shields.io/badge/lib.rs-pixels-yellow
-[c~pixels~repo]: https://github.com/parasyte/pixels
-[c~pixels~repo~badge]: https://img.shields.io/badge/pixels-steelblue?logo=github
-[c~pkcs8~crates.io]: https://crates.io/crates/pkcs8
-[c~pkcs8~crates.io~badge]: https://img.shields.io/badge/crates.io-pkcs8-crimson
-[c~pkcs8~docs]: https://docs.rs/pkcs8
-[c~pkcs8~docs~badge]: https://img.shields.io/crates/v/pkcs8?label=pkcs8
-[c~pkcs8~lib.rs]: https://lib.rs/crates/pkcs8
-[c~pkcs8~lib.rs~badge]: https://img.shields.io/badge/lib.rs-pkcs8-yellow
-[c~pkcs8~repo]: https://github.com/RustCrypto/formats/tree/master/pkcs8
-[c~pkcs8~repo~badge]: https://img.shields.io/badge/pkcs8-steelblue?logo=github
-[c~pkcs8~website]: https://github.com/RustCrypto/formats/blob/master/pkcs8/README.md
-[c~pkcs8~website~badge]: https://img.shields.io/badge/pkcs8-coral
-[c~pkg-config~crates.io]: https://crates.io/crates/pkg-config
-[c~pkg-config~crates.io~badge]: https://img.shields.io/badge/crates.io-pkg--config-crimson
-[c~pkg-config~docs]: https://docs.rs/pkg-config
-[c~pkg-config~docs~badge]: https://img.shields.io/crates/v/pkg-config?label=pkg-config
-[c~pkg-config~lib.rs]: https://lib.rs/crates/pkg-config
-[c~pkg-config~lib.rs~badge]: https://img.shields.io/badge/lib.rs-pkg--config-yellow
-[c~pkg-config~repo]: https://github.com/rust-lang/pkg-config-rs
-[c~pkg-config~repo~badge]: https://img.shields.io/badge/pkg--config-steelblue?logo=github
-[c~plotly~crates.io]: https://crates.io/crates/plotly
-[c~plotly~crates.io~badge]: https://img.shields.io/badge/crates.io-plotly-crimson
-[c~plotly~docs]: https://docs.rs/plotly
-[c~plotly~docs~badge]: https://img.shields.io/crates/v/plotly?label=plotly
-[c~plotly~lib.rs]: https://lib.rs/crates/plotly
-[c~plotly~lib.rs~badge]: https://img.shields.io/badge/lib.rs-plotly-yellow
-[c~plotly~repo]: https://github.com/plotly/plotly.rs
-[c~plotly~repo~badge]: https://img.shields.io/badge/plotly-steelblue?logo=github
-[c~plotters~crates.io]: https://crates.io/crates/plotters
-[c~plotters~crates.io~badge]: https://img.shields.io/badge/crates.io-plotters-crimson
-[c~plotters~docs]: https://docs.rs/plotters
-[c~plotters~docs~badge]: https://img.shields.io/crates/v/plotters?label=plotters
-[c~plotters~lib.rs]: https://lib.rs/crates/plotters
-[c~plotters~lib.rs~badge]: https://img.shields.io/badge/lib.rs-plotters-yellow
-[c~plotters~repo]: https://github.com/plotters-rs/plotters
-[c~plotters~repo~badge]: https://img.shields.io/badge/plotters-steelblue?logo=github
-[c~plotters~website]: https://plotters-rs.github.io
-[c~plotters~website~badge]: https://img.shields.io/badge/plotters-coral
-[c~poem~crates.io]: https://crates.io/crates/poem
-[c~poem~crates.io~badge]: https://img.shields.io/badge/crates.io-poem-crimson
-[c~poem~docs]: https://docs.rs/poem
-[c~poem~docs~badge]: https://img.shields.io/crates/v/poem?label=poem
-[c~poem~lib.rs]: https://lib.rs/crates/poem
-[c~poem~lib.rs~badge]: https://img.shields.io/badge/lib.rs-poem-yellow
-[c~poem~repo]: https://github.com/poem-web/poem
-[c~poem~repo~badge]: https://img.shields.io/badge/poem-steelblue?logo=github
-[c~polars~book]: https://pola-rs.github.io/polars-book
-[c~polars~book~badge]: https://img.shields.io/badge/polars_book-coral
-[c~polars~crates.io]: https://crates.io/crates/polars
-[c~polars~crates.io~badge]: https://img.shields.io/badge/crates.io-polars-crimson
-[c~polars~docs]: https://docs.rs/polars
-[c~polars~docs~badge]: https://img.shields.io/crates/v/polars?label=polars
-[c~polars~lib.rs]: https://lib.rs/crates/polars
-[c~polars~lib.rs~badge]: https://img.shields.io/badge/lib.rs-polars-yellow
-[c~polars~more-docs~website]: https://docs.pola.rs
-[c~polars~repo]: https://github.com/pola-rs/polars
-[c~polars~repo~badge]: https://img.shields.io/badge/polars-steelblue?logo=github
-[c~polars~website]: https://pola.rs
-[c~polars~website~badge]: https://img.shields.io/badge/polars-coral
-[c~polkavm~crates.io]: https://crates.io/crates/polkavm
-[c~polkavm~crates.io~badge]: https://img.shields.io/badge/crates.io-polkavm-crimson
-[c~polkavm~docs]: https://docs.rs/polkavm
-[c~polkavm~docs~badge]: https://img.shields.io/crates/v/polkavm?label=polkavm
-[c~polkavm~lib.rs]: https://lib.rs/crates/polkavm
-[c~polkavm~lib.rs~badge]: https://img.shields.io/badge/lib.rs-polkavm-yellow
-[c~polkavm~repo]: https://github.com/koute/polkavm
-[c~polkavm~repo~badge]: https://img.shields.io/badge/polkavm-steelblue?logo=github
-[c~pollster~crates.io]: https://crates.io/crates/pollster
-[c~pollster~crates.io~badge]: https://img.shields.io/badge/crates.io-pollster-crimson
-[c~pollster~docs]: https://docs.rs/pollster
-[c~pollster~docs~badge]: https://img.shields.io/crates/v/pollster?label=pollster
-[c~pollster~lib.rs]: https://lib.rs/crates/pollster
-[c~pollster~lib.rs~badge]: https://img.shields.io/badge/lib.rs-pollster-yellow
-[c~pollster~repo]: https://github.com/zesterer/pollster
-[c~pollster~repo~badge]: https://img.shields.io/badge/pollster-steelblue?logo=github
-[c~polonius-engine~crates.io]: https://crates.io/crates/polonius-engine
-[c~polonius-engine~crates.io~badge]: https://img.shields.io/badge/crates.io-polonius--engine-crimson
-[c~polonius-engine~docs]: https://docs.rs/polonius-engine
-[c~polonius-engine~docs~badge]: https://img.shields.io/crates/v/polonius-engine?label=polonius-engine
-[c~polonius-engine~lib.rs]: https://lib.rs/crates/polonius-engine
-[c~polonius-engine~lib.rs~badge]: https://img.shields.io/badge/lib.rs-polonius--engine-yellow
-[c~polonius-engine~repo]: https://github.com/rust-lang-nursery/polonius
-[c~polonius-engine~repo~badge]: https://img.shields.io/badge/polonius--engine-steelblue?logo=github
-[c~portable-atomic~crates.io]: https://crates.io/crates/portable-atomic
-[c~portable-atomic~crates.io~badge]: https://img.shields.io/badge/crates.io-portable--atomic-crimson
-[c~portable-atomic~docs]: https://docs.rs/portable-atomic
-[c~portable-atomic~docs~badge]: https://img.shields.io/crates/v/portable-atomic?label=portable-atomic
-[c~portable-atomic~lib.rs]: https://lib.rs/crates/portable-atomic
-[c~portable-atomic~lib.rs~badge]: https://img.shields.io/badge/lib.rs-portable--atomic-yellow
-[c~portable-atomic~repo]: https://github.com/taiki-e/portable-atomic
-[c~portable-atomic~repo~badge]: https://img.shields.io/badge/portable--atomic-steelblue?logo=github
-[c~postage::broadcast~docs]: https://docs.rs/postage/latest/postage/broadcast
-[c~postage~crates.io]: https://crates.io/crates/postage
-[c~postage~crates.io~badge]: https://img.shields.io/badge/crates.io-postage-crimson
-[c~postage~docs]: https://docs.rs/postage
-[c~postage~docs~badge]: https://img.shields.io/crates/v/postage?label=postage
-[c~postage~lib.rs]: https://lib.rs/crates/postage
-[c~postage~lib.rs~badge]: https://img.shields.io/badge/lib.rs-postage-yellow
-[c~postage~repo]: https://github.com/austinjones/postage-rs
-[c~postage~repo~badge]: https://img.shields.io/badge/postage-steelblue?logo=github
-[c~postcard~crates.io]: https://crates.io/crates/postcard
-[c~postcard~crates.io~badge]: https://img.shields.io/badge/crates.io-postcard-crimson
-[c~postcard~docs]: https://docs.rs/postcard
-[c~postcard~docs~badge]: https://img.shields.io/crates/v/postcard?label=postcard
-[c~postcard~lib.rs]: https://lib.rs/crates/postcard
-[c~postcard~lib.rs~badge]: https://img.shields.io/badge/lib.rs-postcard-yellow
-[c~postcard~repo]: https://github.com/jamesmunns/postcard
-[c~postcard~repo~badge]: https://img.shields.io/badge/postcard-steelblue?logo=github
-[c~postgres::Client::connect~docs]: https://docs.rs/postgres/latest/postgres/struct.Client.html#method.connect
-[c~postgres::Client::execute~docs]: https://docs.rs/postgres/latest/postgres/struct.Client.html#method.execute
-[c~postgres::Client::query~docs]: https://docs.rs/postgres/latest/postgres/struct.Client.html#method.query
-[c~postgres::Client~docs]: https://docs.rs/postgres/latest/postgres/struct.Client.html
-[c~postgres~crates.io]: https://crates.io/crates/postgres
-[c~postgres~crates.io~badge]: https://img.shields.io/badge/crates.io-postgres-crimson
-[c~postgres~docs]: https://docs.rs/postgres
-[c~postgres~docs~badge]: https://img.shields.io/crates/v/postgres?label=postgres
-[c~postgres~lib.rs]: https://lib.rs/crates/postgres
-[c~postgres~lib.rs~badge]: https://img.shields.io/badge/lib.rs-postgres-yellow
-[c~postgres~repo]: https://github.com/sfackler/rust-postgres
-[c~postgres~repo~badge]: https://img.shields.io/badge/postgres-steelblue?logo=github
-[c~postscript~crates.io]: https://crates.io/crates/postscript
-[c~postscript~crates.io~badge]: https://img.shields.io/badge/crates.io-postscript-crimson
-[c~postscript~docs]: https://docs.rs/postscript
-[c~postscript~docs~badge]: https://img.shields.io/crates/v/postscript?label=postscript
-[c~postscript~lib.rs]: https://lib.rs/crates/postscript
-[c~postscript~lib.rs~badge]: https://img.shields.io/badge/lib.rs-postscript-yellow
-[c~postscript~repo]: https://github.com/bodoni/postscript
-[c~postscript~repo~badge]: https://img.shields.io/badge/postscript-steelblue?logo=github
-[c~pot~crates.io]: https://crates.io/crates/pot
-[c~pot~crates.io~badge]: https://img.shields.io/badge/crates.io-pot-crimson
-[c~pot~docs]: https://docs.rs/pot
-[c~pot~docs~badge]: https://img.shields.io/crates/v/pot?label=pot
-[c~pot~lib.rs]: https://lib.rs/crates/pot
-[c~pot~lib.rs~badge]: https://img.shields.io/badge/lib.rs-pot-yellow
-[c~pot~repo]: https://github.com/khonsulabs/pot
-[c~pot~repo~badge]: https://img.shields.io/badge/pot-steelblue?logo=github
-[c~predicates~crates.io]: https://crates.io/crates/predicates
-[c~predicates~crates.io~badge]: https://img.shields.io/badge/crates.io-predicates-crimson
-[c~predicates~docs]: https://docs.rs/predicates
-[c~predicates~docs~badge]: https://img.shields.io/crates/v/predicates?label=predicates
-[c~predicates~lib.rs]: https://lib.rs/crates/predicates
-[c~predicates~lib.rs~badge]: https://img.shields.io/badge/lib.rs-predicates-yellow
-[c~predicates~repo]: https://github.com/assert-rs/predicates-rs
-[c~predicates~repo~badge]: https://img.shields.io/badge/predicates-steelblue?logo=github
-[c~pretty_assertions~crates.io]: https://crates.io/crates/pretty_assertions
-[c~pretty_assertions~crates.io~badge]: https://img.shields.io/badge/crates.io-pretty__assertions-crimson
-[c~pretty_assertions~docs]: https://docs.rs/pretty_assertions
-[c~pretty_assertions~docs~badge]: https://img.shields.io/crates/v/pretty_assertions?label=pretty_assertions
-[c~pretty_assertions~lib.rs]: https://lib.rs/crates/pretty_assertions
-[c~pretty_assertions~lib.rs~badge]: https://img.shields.io/badge/lib.rs-pretty__assertions-yellow
-[c~pretty_assertions~repo]: https://github.com/rust-pretty-assertions/rust-pretty-assertions
-[c~pretty_assertions~repo~badge]: https://img.shields.io/badge/pretty__assertions-steelblue?logo=github
-[c~prettytable~crates.io]: https://crates.io/crates/prettytable
-[c~prettytable~crates.io~badge]: https://img.shields.io/badge/crates.io-prettytable-crimson
-[c~prettytable~docs]: https://docs.rs/prettytable-rs
-[c~prettytable~docs~badge]: https://img.shields.io/crates/v/prettytable?label=prettytable
-[c~prettytable~lib.rs]: https://lib.rs/crates/prettytable
-[c~prettytable~lib.rs~badge]: https://img.shields.io/badge/lib.rs-prettytable-yellow
-[c~prettytable~repo]: https://github.com/phsym/prettytable-rs
-[c~prettytable~repo~badge]: https://img.shields.io/badge/prettytable-steelblue?logo=github
-[c~priority-queue~crates.io]: https://crates.io/crates/priority-queue
-[c~priority-queue~crates.io~badge]: https://img.shields.io/badge/crates.io-priority--queue-crimson
-[c~priority-queue~docs]: https://docs.rs/priority-queue
-[c~priority-queue~docs~badge]: https://img.shields.io/crates/v/priority-queue?label=priority-queue
-[c~priority-queue~lib.rs]: https://lib.rs/crates/priority-queue
-[c~priority-queue~lib.rs~badge]: https://img.shields.io/badge/lib.rs-priority--queue-yellow
-[c~priority-queue~repo]: https://github.com/garro95/priority-queue
-[c~priority-queue~repo~badge]: https://img.shields.io/badge/priority--queue-steelblue?logo=github
-[c~probe-rs~crates.io]: https://crates.io/crates/probe-rs
-[c~probe-rs~crates.io~badge]: https://img.shields.io/badge/crates.io-probe--rs-crimson
-[c~probe-rs~docs]: https://docs.rs/probe-rs
-[c~probe-rs~docs~badge]: https://img.shields.io/crates/v/probe-rs?label=probe-rs
-[c~probe-rs~lib.rs]: https://lib.rs/crates/probe-rs
-[c~probe-rs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-probe--rs-yellow
-[c~probe-rs~repo]: https://github.com/probe-rs/probe-rs
-[c~probe-rs~repo~badge]: https://img.shields.io/badge/probe--rs-steelblue?logo=github
-[c~proc-macro2~crates.io]: https://crates.io/crates/proc-macro2
-[c~proc-macro2~crates.io~badge]: https://img.shields.io/badge/crates.io-proc--macro2-crimson
-[c~proc-macro2~docs]: https://docs.rs/proc-macro2
-[c~proc-macro2~docs~badge]: https://img.shields.io/crates/v/proc-macro2?label=proc-macro2
-[c~proc-macro2~lib.rs]: https://lib.rs/crates/proc-macro2
-[c~proc-macro2~lib.rs~badge]: https://img.shields.io/badge/lib.rs-proc--macro2-yellow
-[c~proc-macro2~repo]: https://github.com/dtolnay/proc-macro2
-[c~proc-macro2~repo~badge]: https://img.shields.io/badge/proc--macro2-steelblue?logo=github
-[c~proj~crates.io]: https://crates.io/crates/proj
-[c~proj~crates.io~badge]: https://img.shields.io/badge/crates.io-proj-crimson
-[c~proj~docs]: https://docs.rs/proj
-[c~proj~docs~badge]: https://img.shields.io/crates/v/proj?label=proj
-[c~proj~lib.rs]: https://lib.rs/crates/proj
-[c~proj~lib.rs~badge]: https://img.shields.io/badge/lib.rs-proj-yellow
-[c~proj~repo]: https://github.com/georust/proj
-[c~proj~repo~badge]: https://img.shields.io/badge/proj-steelblue?logo=github
-[c~prometheus~crates.io]: https://crates.io/crates/prometheus
-[c~prometheus~crates.io~badge]: https://img.shields.io/badge/crates.io-prometheus-crimson
-[c~prometheus~docs]: https://docs.rs/prometheus
-[c~prometheus~docs~badge]: https://img.shields.io/crates/v/prometheus?label=prometheus
-[c~prometheus~lib.rs]: https://lib.rs/crates/prometheus
-[c~prometheus~lib.rs~badge]: https://img.shields.io/badge/lib.rs-prometheus-yellow
-[c~prometheus~repo]: https://github.com/tikv/rust-prometheus
-[c~prometheus~repo~badge]: https://img.shields.io/badge/prometheus-steelblue?logo=github
-[c~proptest~crates.io]: https://crates.io/crates/proptest
-[c~proptest~crates.io~badge]: https://img.shields.io/badge/crates.io-proptest-crimson
-[c~proptest~docs]: https://docs.rs/proptest
-[c~proptest~docs~badge]: https://img.shields.io/crates/v/proptest?label=proptest
-[c~proptest~lib.rs]: https://lib.rs/crates/proptest
-[c~proptest~lib.rs~badge]: https://img.shields.io/badge/lib.rs-proptest-yellow
-[c~proptest~repo]: https://github.com/proptest-rs/proptest
-[c~proptest~repo~badge]: https://img.shields.io/badge/proptest-steelblue?logo=github
-[c~proptest~website]: https://proptest-rs.github.io/proptest/proptest
-[c~proptest~website~badge]: https://img.shields.io/badge/proptest-coral
-[c~prost-build~crates.io]: https://crates.io/crates/prost-build
-[c~prost-build~crates.io~badge]: https://img.shields.io/badge/crates.io-prost--build-crimson
-[c~prost-build~docs]: https://docs.rs/prost-build
-[c~prost-build~docs~badge]: https://img.shields.io/crates/v/prost-build?label=prost-build
-[c~prost-build~lib.rs]: https://lib.rs/crates/prost-build
-[c~prost-build~lib.rs~badge]: https://img.shields.io/badge/lib.rs-prost--build-yellow
-[c~prost-build~repo]: https://github.com/tokio-rs/prost
-[c~prost-build~repo~badge]: https://img.shields.io/badge/prost--build-steelblue?logo=github
-[c~prost-types~crates.io]: https://crates.io/crates/prost-types
-[c~prost-types~crates.io~badge]: https://img.shields.io/badge/crates.io-prost--types-crimson
-[c~prost-types~docs]: https://docs.rs/prost-types
-[c~prost-types~docs~badge]: https://img.shields.io/crates/v/prost-types?label=prost-types
-[c~prost-types~lib.rs]: https://lib.rs/crates/prost-types
-[c~prost-types~lib.rs~badge]: https://img.shields.io/badge/lib.rs-prost--types-yellow
-[c~prost-types~repo]: https://github.com/tokio-rs/prost
-[c~prost-types~repo~badge]: https://img.shields.io/badge/prost--types-steelblue?logo=github
-[c~prost~crates.io]: https://crates.io/crates/prost
-[c~prost~crates.io~badge]: https://img.shields.io/badge/crates.io-prost-crimson
-[c~prost~docs]: https://docs.rs/prost
-[c~prost~docs~badge]: https://img.shields.io/crates/v/prost?label=prost
-[c~prost~lib.rs]: https://lib.rs/crates/prost
-[c~prost~lib.rs~badge]: https://img.shields.io/badge/lib.rs-prost-yellow
-[c~prost~repo]: https://github.com/tokio-rs/prost
-[c~prost~repo~badge]: https://img.shields.io/badge/prost-steelblue?logo=github
-[c~protobuf~crates.io]: https://crates.io/crates/protobuf
-[c~protobuf~crates.io~badge]: https://img.shields.io/badge/crates.io-protobuf-crimson
-[c~protobuf~docs]: https://docs.rs/protobuf
-[c~protobuf~docs~badge]: https://img.shields.io/crates/v/protobuf?label=protobuf
-[c~protobuf~lib.rs]: https://lib.rs/crates/protobuf
-[c~protobuf~lib.rs~badge]: https://img.shields.io/badge/lib.rs-protobuf-yellow
-[c~protobuf~repo]: https://github.com/stepancheg/rust-protobuf
-[c~protobuf~repo~badge]: https://img.shields.io/badge/protobuf-steelblue?logo=github
-[c~protox~crates.io]: https://crates.io/crates/protox
-[c~protox~crates.io~badge]: https://img.shields.io/badge/crates.io-protox-crimson
-[c~protox~docs]: https://docs.rs/protox
-[c~protox~docs~badge]: https://img.shields.io/crates/v/protox?label=protox
-[c~protox~lib.rs]: https://lib.rs/crates/protox
-[c~protox~lib.rs~badge]: https://img.shields.io/badge/lib.rs-protox-yellow
-[c~protox~repo]: https://github.com/andrewhickman/protox
-[c~protox~repo~badge]: https://img.shields.io/badge/protox-steelblue?logo=github
-[c~pulldown-cmark~crates.io]: https://crates.io/crates/pulldown-cmark
-[c~pulldown-cmark~crates.io~badge]: https://img.shields.io/badge/crates.io-pulldown--cmark-crimson
-[c~pulldown-cmark~docs]: https://docs.rs/pulldown-cmark
-[c~pulldown-cmark~docs~badge]: https://img.shields.io/crates/v/pulldown-cmark?label=pulldown-cmark
-[c~pulldown-cmark~lib.rs]: https://lib.rs/crates/pulldown-cmark
-[c~pulldown-cmark~lib.rs~badge]: https://img.shields.io/badge/lib.rs-pulldown--cmark-yellow
-[c~pulldown-cmark~repo]: https://github.com/raphlinus/pulldown-cmark
-[c~pulldown-cmark~repo~badge]: https://img.shields.io/badge/pulldown--cmark-steelblue?logo=github
-[c~pyo3~crates.io]: https://crates.io/crates/pyo3
-[c~pyo3~crates.io~badge]: https://img.shields.io/badge/crates.io-pyo3-crimson
-[c~pyo3~docs]: https://docs.rs/pyo3
-[c~pyo3~docs~badge]: https://img.shields.io/crates/v/pyo3?label=pyo3
-[c~pyo3~lib.rs]: https://lib.rs/crates/pyo3
-[c~pyo3~lib.rs~badge]: https://img.shields.io/badge/lib.rs-pyo3-yellow
-[c~pyo3~repo]: https://github.com/pyo3/pyo3
-[c~pyo3~repo~badge]: https://img.shields.io/badge/pyo3-steelblue?logo=github
-[c~pyo3~website]: https://pyo3.rs
-[c~pyoxidizer~crates.io]: https://crates.io/crates/pyoxidizer
-[c~pyoxidizer~crates.io~badge]: https://img.shields.io/badge/crates.io-pyoxidizer-crimson
-[c~pyoxidizer~docs]: https://docs.rs/pyoxidizer
-[c~pyoxidizer~docs~badge]: https://img.shields.io/crates/v/pyoxidizer?label=pyoxidizer
-[c~pyoxidizer~lib.rs]: https://lib.rs/crates/pyoxidizer
-[c~pyoxidizer~lib.rs~badge]: https://img.shields.io/badge/lib.rs-pyoxidizer-yellow
-[c~pyoxidizer~repo]: https://github.com/indygreg/PyOxidizer
-[c~pyoxidizer~repo~badge]: https://img.shields.io/badge/pyoxidizer-steelblue?logo=github
-[c~pyoxidizer~website]: https://gregoryszorc.com/docs/pyoxidizer/main
-[c~pyoxidizer~website~badge]: https://img.shields.io/badge/pyoxidizer-coral
-[c~pyxel~crates.io]: https://crates.io/crates/pyxel
-[c~pyxel~crates.io~badge]: https://img.shields.io/badge/crates.io-pyxel-crimson
-[c~pyxel~docs]: https://docs.rs/pyxel
-[c~pyxel~docs~badge]: https://img.shields.io/crates/v/pyxel?label=pyxel
-[c~pyxel~lib.rs]: https://lib.rs/crates/pyxel
-[c~pyxel~lib.rs~badge]: https://img.shields.io/badge/lib.rs-pyxel-yellow
-[c~pyxel~repo]: https://github.com/adtennant/pyxel
-[c~pyxel~repo~badge]: https://img.shields.io/badge/pyxel-steelblue?logo=github
-[c~pyxel~website]: https://github.com/adtennant/pyxel
-[c~pyxel~website~badge]: https://img.shields.io/badge/pyxel-coral
-[c~qdrant~crates.io]: https://crates.io/crates/qdrant
-[c~qdrant~crates.io~badge]: https://img.shields.io/badge/crates.io-qdrant-crimson
-[c~qdrant~docs]: https://docs.rs/qdrant
-[c~qdrant~docs~badge]: https://img.shields.io/crates/v/qdrant?label=qdrant
-[c~qdrant~lib.rs]: https://lib.rs/crates/qdrant
-[c~qdrant~lib.rs~badge]: https://img.shields.io/badge/lib.rs-qdrant-yellow
-[c~qdrant~repo]: https://github.com/qdrant/qdrant
-[c~qdrant~repo~badge]: https://img.shields.io/badge/qdrant-steelblue?logo=github
-[c~qdrant~website]: https://qdrant.tech
-[c~qdrant~website~badge]: https://img.shields.io/badge/qdrant-coral
-[c~qemu~crates.io]: https://crates.io/crates/qemu
-[c~qemu~crates.io~badge]: https://img.shields.io/badge/crates.io-qemu-crimson
-[c~qemu~docs]: https://docs.rs/qemu
-[c~qemu~docs~badge]: https://img.shields.io/crates/v/qemu?label=qemu
-[c~qemu~lib.rs]: https://lib.rs/crates/qemu
-[c~qemu~lib.rs~badge]: https://img.shields.io/badge/lib.rs-qemu-yellow
-[c~qemu~repo]: https://github.com/novafacing/qemu-rs
-[c~qemu~repo~badge]: https://img.shields.io/badge/qemu-steelblue?logo=github
-[c~qt~crates.io]: https://crates.io/crates/qt
-[c~qt~crates.io~badge]: https://img.shields.io/badge/crates.io-qt-crimson
-[c~qt~docs]: https://docs.rs/qt
-[c~qt~docs~badge]: https://img.shields.io/crates/v/qt?label=qt
-[c~qt~lib.rs]: https://lib.rs/crates/qt
-[c~qt~lib.rs~badge]: https://img.shields.io/badge/lib.rs-qt-yellow
-[c~qt~repo]: https://github.com/cosmicoptima/qt
-[c~qt~repo~badge]: https://img.shields.io/badge/qt-steelblue?logo=github
-[c~quiche~crates.io]: https://crates.io/crates/quiche
-[c~quiche~crates.io~badge]: https://img.shields.io/badge/crates.io-quiche-crimson
-[c~quiche~docs]: https://docs.rs/quiche
-[c~quiche~docs~badge]: https://img.shields.io/crates/v/quiche?label=quiche
-[c~quiche~lib.rs]: https://lib.rs/crates/quiche
-[c~quiche~lib.rs~badge]: https://img.shields.io/badge/lib.rs-quiche-yellow
-[c~quiche~repo]: https://github.com/cloudflare/quiche
-[c~quiche~repo~badge]: https://img.shields.io/badge/quiche-steelblue?logo=github
-[c~quick-xml~crates.io]: https://crates.io/crates/quick-xml
-[c~quick-xml~crates.io~badge]: https://img.shields.io/badge/crates.io-quick--xml-crimson
-[c~quick-xml~docs]: https://docs.rs/quick-xml
-[c~quick-xml~docs~badge]: https://img.shields.io/crates/v/quick-xml?label=quick-xml
-[c~quick-xml~lib.rs]: https://lib.rs/crates/quick-xml
-[c~quick-xml~lib.rs~badge]: https://img.shields.io/badge/lib.rs-quick--xml-yellow
-[c~quick-xml~repo]: https://github.com/tafia/quick-xml
-[c~quick-xml~repo~badge]: https://img.shields.io/badge/quick--xml-steelblue?logo=github
-[c~quickcheck~crates.io]: https://crates.io/crates/quickcheck
-[c~quickcheck~crates.io~badge]: https://img.shields.io/badge/crates.io-quickcheck-crimson
-[c~quickcheck~docs]: https://docs.rs/quickcheck
-[c~quickcheck~docs~badge]: https://img.shields.io/crates/v/quickcheck?label=quickcheck
-[c~quickcheck~lib.rs]: https://lib.rs/crates/quickcheck
-[c~quickcheck~lib.rs~badge]: https://img.shields.io/badge/lib.rs-quickcheck-yellow
-[c~quickcheck~repo]: https://github.com/BurntSushi/quickcheck
-[c~quickcheck~repo~badge]: https://img.shields.io/badge/quickcheck-steelblue?logo=github
-[c~quickwit~crates.io]: https://crates.io/crates/quickwit
-[c~quickwit~crates.io~badge]: https://img.shields.io/badge/crates.io-quickwit-crimson
-[c~quickwit~docs]: https://docs.rs/quickwit
-[c~quickwit~docs~badge]: https://img.shields.io/crates/v/quickwit?label=quickwit
-[c~quickwit~lib.rs]: https://lib.rs/crates/quickwit
-[c~quickwit~lib.rs~badge]: https://img.shields.io/badge/lib.rs-quickwit-yellow
-[c~quickwit~repo~badge]: https://img.shields.io/badge/quickwit-steelblue?logo=github
-[c~quinn~crates.io]: https://crates.io/crates/quinn
-[c~quinn~crates.io~badge]: https://img.shields.io/badge/crates.io-quinn-crimson
-[c~quinn~docs]: https://docs.rs/quinn
-[c~quinn~docs~badge]: https://img.shields.io/crates/v/quinn?label=quinn
-[c~quinn~lib.rs]: https://lib.rs/crates/quinn
-[c~quinn~lib.rs~badge]: https://img.shields.io/badge/lib.rs-quinn-yellow
-[c~quinn~repo]: https://github.com/quinn-rs/quinn
-[c~quinn~repo~badge]: https://img.shields.io/badge/quinn-steelblue?logo=github
-[c~quote::quote~docs]: https://docs.rs/quote/latest/quote/macro.quote.html
-[c~quote~crates.io]: https://crates.io/crates/quote
-[c~quote~crates.io~badge]: https://img.shields.io/badge/crates.io-quote-crimson
-[c~quote~docs]: https://docs.rs/quote
-[c~quote~docs~badge]: https://img.shields.io/crates/v/quote?label=quote
-[c~quote~lib.rs]: https://lib.rs/crates/quote
-[c~quote~lib.rs~badge]: https://img.shields.io/badge/lib.rs-quote-yellow
-[c~quote~repo]: https://github.com/dtolnay/quote
-[c~quote~repo~badge]: https://img.shields.io/badge/quote-steelblue?logo=github
-[c~r2r~crates.io]: https://crates.io/crates/r2r
-[c~r2r~crates.io~badge]: https://img.shields.io/badge/crates.io-r2r-crimson
-[c~r2r~docs]: https://docs.rs/r2r
-[c~r2r~docs~badge]: https://img.shields.io/crates/v/r2r?label=r2r
-[c~r2r~lib.rs]: https://lib.rs/crates/r2r
-[c~r2r~lib.rs~badge]: https://img.shields.io/badge/lib.rs-r2r-yellow
-[c~r2r~repo]: https://github.com/sequenceplanner/r2r
-[c~r2r~repo~badge]: https://img.shields.io/badge/r2r-steelblue?logo=github
-[c~r3bl_tuify~crates.io]: https://crates.io/crates/r3bl_tuify
-[c~r3bl_tuify~crates.io~badge]: https://img.shields.io/badge/crates.io-r3bl__tuify-crimson
-[c~r3bl_tuify~docs]: https://docs.rs/r3bl_tuify
-[c~r3bl_tuify~docs~badge]: https://img.shields.io/crates/v/r3bl_tuify?label=r3bl_tuify
-[c~r3bl_tuify~lib.rs]: https://lib.rs/crates/r3bl_tuify
-[c~r3bl_tuify~lib.rs~badge]: https://img.shields.io/badge/lib.rs-r3bl__tuify-yellow
-[c~r3bl_tuify~repo]: https://github.com/r3bl-org/r3bl-open-core/tree/main/tuify
-[c~r3bl_tuify~repo~badge]: https://img.shields.io/badge/r3bl__tuify-steelblue?logo=github
-[c~r3bl_tuify~website]: https://r3bl.com
-[c~r3bl_tuify~website~badge]: https://img.shields.io/badge/r3bl__tuify-coral
-[c~ractor~blog]: https://slawlor.github.io/ractor
-[c~ractor~crates.io]: https://crates.io/crates/ractor
-[c~ractor~crates.io~badge]: https://img.shields.io/badge/crates.io-ractor-crimson
-[c~ractor~docs]: https://docs.rs/ractor
-[c~ractor~docs~badge]: https://img.shields.io/crates/v/ractor?label=ractor
-[c~ractor~lib.rs]: https://lib.rs/crates/ractor
-[c~ractor~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ractor-yellow
-[c~ractor~repo]: https://github.com/slawlor/ractor
-[c~ractor~repo~badge]: https://img.shields.io/badge/ractor-steelblue?logo=github
-[c~rake~crates.io]: https://crates.io/crates/rake
-[c~rake~crates.io~badge]: https://img.shields.io/badge/crates.io-rake-crimson
-[c~rake~docs]: https://docs.rs/rake
-[c~rake~docs~badge]: https://img.shields.io/crates/v/rake?label=rake
-[c~rake~lib.rs]: https://lib.rs/crates/rake
-[c~rake~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rake-yellow
-[c~rake~repo]: https://github.com/yaa110/rake-rs
-[c~rake~repo~badge]: https://img.shields.io/badge/rake-steelblue?logo=github
-[c~rand::Rng~docs]: https://docs.rs/rand/latest/rand/trait.Rng.html
-[c~rand_distr::Normal~docs]: https://docs.rs/rand_distr/latest/rand_distr/struct.Normal.html
-[c~rand_distr~crates.io]: https://crates.io/crates/rand_distr
-[c~rand_distr~crates.io~badge]: https://img.shields.io/badge/crates.io-rand__distr-crimson
-[c~rand_distr~docs]: https://docs.rs/rand_distr
-[c~rand_distr~docs~badge]: https://img.shields.io/crates/v/rand_distr?label=rand_distr
-[c~rand_distr~lib.rs]: https://lib.rs/crates/rand_distr
-[c~rand_distr~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rand__distr-yellow
-[c~rand_distr~repo]: https://github.com/rust-random/rand_distr
-[c~rand_distr~repo~badge]: https://img.shields.io/badge/rand__distr-steelblue?logo=github
-[c~rand_distr~website]: https://rust-random.github.io/book/crates.html
-[c~rand_distr~website~badge]: https://img.shields.io/badge/rand__distr-coral
-[c~rand_regex~commit-activity~badge]: https://img.shields.io/github/commit-activity/y/kennytm/rand_regex
-[c~rand_regex~crates.io]: https://crates.io/crates/rand_regex
-[c~rand_regex~crates.io~badge]: https://img.shields.io/badge/crates.io-rand__regex-crimson
-[c~rand_regex~dependents~badge]: https://img.shields.io/crates/dependents/rand_regex
-[c~rand_regex~deps-rs~badge]: https://img.shields.io/deps-rs/rand_regex/latest
-[c~rand_regex~docs]: https://docs.rs/rand_regex
-[c~rand_regex~docs~badge]: https://img.shields.io/crates/v/rand_regex?label=rand_regex
-[c~rand_regex~last-commit~badge]: https://img.shields.io/github/last-commit/kennytm/rand_regex
-[c~rand_regex~lib.rs]: https://lib.rs/crates/rand_regex
-[c~rand_regex~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rand__regex-yellow
-[c~rand_regex~license~badge]: https://img.shields.io/crates/l/rand_regex
-[c~rand_regex~recent-downloads~badge]: https://img.shields.io/crates/dr/rand_regex
-[c~rand_regex~repo]: https://github.com/kennytm/rand_regex
-[c~rand_regex~repo~badge]: https://img.shields.io/badge/rand__regex-steelblue?logo=github
-[c~rand~crates.io]: https://crates.io/crates/rand
-[c~rand~crates.io~badge]: https://img.shields.io/badge/crates.io-rand-crimson
-[c~rand~docs]: https://docs.rs/rand
-[c~rand~docs~badge]: https://img.shields.io/crates/v/rand?label=rand
-[c~rand~lib.rs]: https://lib.rs/crates/rand
-[c~rand~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rand-yellow
-[c~rand~repo]: https://github.com/rust-random/rand
-[c~rand~repo~badge]: https://img.shields.io/badge/rand-steelblue?logo=github
-[c~rand~website]: https://rust-random.github.io/book
-[c~rand~website~badge]: https://img.shields.io/badge/rand-coral
-[c~rangemap~crates.io]: https://crates.io/crates/rangemap
-[c~rangemap~crates.io~badge]: https://img.shields.io/badge/crates.io-rangemap-crimson
-[c~rangemap~docs]: https://docs.rs/rangemap
-[c~rangemap~docs~badge]: https://img.shields.io/crates/v/rangemap?label=rangemap
-[c~rangemap~lib.rs]: https://lib.rs/crates/rangemap
-[c~rangemap~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rangemap-yellow
-[c~rangemap~repo]: https://github.com/jeffparsons/rangemap
-[c~rangemap~repo~badge]: https://img.shields.io/badge/rangemap-steelblue?logo=github
-[c~raqote~crates.io]: https://crates.io/crates/raqote
-[c~raqote~crates.io~badge]: https://img.shields.io/badge/crates.io-raqote-crimson
-[c~raqote~docs]: https://docs.rs/raqote
-[c~raqote~docs~badge]: https://img.shields.io/crates/v/raqote?label=raqote
-[c~raqote~lib.rs]: https://lib.rs/crates/raqote
-[c~raqote~lib.rs~badge]: https://img.shields.io/badge/lib.rs-raqote-yellow
-[c~raqote~repo]: https://github.com/jrmuizel/raqote
-[c~raqote~repo~badge]: https://img.shields.io/badge/raqote-steelblue?logo=github
-[c~raster~crates.io]: https://crates.io/crates/raster
-[c~raster~crates.io~badge]: https://img.shields.io/badge/crates.io-raster-crimson
-[c~raster~docs]: https://docs.rs/raster
-[c~raster~docs~badge]: https://img.shields.io/crates/v/raster?label=raster
-[c~raster~lib.rs]: https://lib.rs/crates/raster
-[c~raster~lib.rs~badge]: https://img.shields.io/badge/lib.rs-raster-yellow
-[c~raster~repo]: https://github.com/kosinix/raster
-[c~raster~repo~badge]: https://img.shields.io/badge/raster-steelblue?logo=github
-[c~raster~website]: https://github.com/kosinix/raster
-[c~raster~website~badge]: https://img.shields.io/badge/raster-coral
-[c~ratatui~crates.io]: https://crates.io/crates/ratatui
-[c~ratatui~crates.io~badge]: https://img.shields.io/badge/crates.io-ratatui-crimson
-[c~ratatui~docs]: https://docs.rs/ratatui
-[c~ratatui~docs~badge]: https://img.shields.io/crates/v/ratatui?label=ratatui
-[c~ratatui~lib.rs]: https://lib.rs/crates/ratatui
-[c~ratatui~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ratatui-yellow
-[c~ratatui~repo]: https://github.com/ratatui/ratatui
-[c~ratatui~repo~badge]: https://img.shields.io/badge/ratatui-steelblue?logo=github
-[c~ratatui~website]: https://ratatui.rs
-[c~ratatui~website~badge]: https://img.shields.io/badge/ratatui-coral
-[c~rathole~crates.io]: https://crates.io/crates/rathole
-[c~rathole~crates.io~badge]: https://img.shields.io/badge/crates.io-rathole-crimson
-[c~rathole~docs]: https://docs.rs/rathole
-[c~rathole~docs~badge]: https://img.shields.io/crates/v/rathole?label=rathole
-[c~rathole~lib.rs]: https://lib.rs/crates/rathole
-[c~rathole~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rathole-yellow
-[c~rathole~repo]: https://github.com/rapiz1/rathole
-[c~rathole~repo~badge]: https://img.shields.io/badge/rathole-steelblue?logo=github
-[c~rav1e~crates.io]: https://crates.io/crates/rav1e
-[c~rav1e~crates.io~badge]: https://img.shields.io/badge/crates.io-rav1e-crimson
-[c~rav1e~docs]: https://docs.rs/rav1e
-[c~rav1e~docs~badge]: https://img.shields.io/crates/v/rav1e?label=rav1e
-[c~rav1e~lib.rs]: https://lib.rs/crates/rav1e
-[c~rav1e~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rav1e-yellow
-[c~rav1e~repo]: https://github.com/xiph/rav1e
-[c~rav1e~repo~badge]: https://img.shields.io/badge/rav1e-steelblue?logo=github
-[c~rayon::ThreadPool~docs]: https://docs.rs/rayon/latest/rayon/struct.ThreadPool.html
-[c~rayon::iter::IntoParallelIterator::into_par_iter~docs]: https://docs.rs/rayon/latest/rayon/iter/trait.IntoParallelIterator.html#tymethod.into_par_iter
-[c~rayon::iter::IntoParallelRefIterator::par_iter~docs]: https://docs.rs/rayon/latest/rayon/iter/trait.IntoParallelRefIterator.html#tymethod.par_iter
-[c~rayon::iter::IntoParallelRefMutIterator::par_iter_mut~docs]: https://docs.rs/rayon/latest/rayon/iter/trait.IntoParallelRefMutIterator.html#tymethod.par_iter_mut
-[c~rayon::iter::ParallelIterator::all~docs]: https://docs.rs/rayon/latest/rayon/iter/trait.ParallelIterator.html#method.all
-[c~rayon::iter::ParallelIterator::any~docs]: https://docs.rs/rayon/latest/rayon/iter/trait.ParallelIterator.html#method.any
-[c~rayon::iter::ParallelIterator::filter~docs]: https://docs.rs/rayon/latest/rayon/iter/trait.ParallelIterator.html#method.filter
-[c~rayon::iter::ParallelIterator::find_any~docs]: https://docs.rs/rayon/latest/rayon/iter/trait.ParallelIterator.html#method.find_any
-[c~rayon::iter::ParallelIterator::map~docs]: https://docs.rs/rayon/latest/rayon/iter/trait.ParallelIterator.html#method.map
-[c~rayon::iter::ParallelIterator::reduce~docs]: https://docs.rs/rayon/latest/rayon/iter/trait.ParallelIterator.html#method.reduce
-[c~rayon::iter::ParallelIterator::sum~docs]: https://docs.rs/rayon/latest/rayon/iter/trait.ParallelIterator.html#method.sum
-[c~rayon::join~docs]: https://docs.rs/rayon/latest/rayon/fn.join.html
-[c~rayon::scope~docs]: https://docs.rs/rayon/latest/rayon/fn.scope.html
-[c~rayon::slice::ParallelSliceMut::par_sort_unstable~docs]: https://docs.rs/rayon/latest/rayon/slice/trait.ParallelSliceMut.html#method.par_sort_unstable
-[c~rayon::slice::ParallelSliceMut::par_sort~docs]: https://docs.rs/rayon/latest/rayon/slice/trait.ParallelSliceMut.html#method.par_sort
-[c~rayon::slice::ParallelSliceMut~docs]: https://docs.rs/rayon/latest/rayon/slice/trait.ParallelSliceMut.html
-[c~rayon::spawn~docs]: https://docs.rs/rayon/latest/rayon/fn.spawn.html
-[c~rayon~crates.io]: https://crates.io/crates/rayon
-[c~rayon~crates.io~badge]: https://img.shields.io/badge/crates.io-rayon-crimson
-[c~rayon~docs]: https://docs.rs/rayon
-[c~rayon~docs~badge]: https://img.shields.io/crates/v/rayon?label=rayon
-[c~rayon~lib.rs]: https://lib.rs/crates/rayon
-[c~rayon~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rayon-yellow
-[c~rayon~repo]: https://github.com/rayon-rs/rayon
-[c~rayon~repo~badge]: https://img.shields.io/badge/rayon-steelblue?logo=github
-[c~rclrust~crates.io]: https://crates.io/crates/rclrust
-[c~rclrust~crates.io~badge]: https://img.shields.io/badge/crates.io-rclrust-crimson
-[c~rclrust~docs]: https://docs.rs/rclrust
-[c~rclrust~docs~badge]: https://img.shields.io/crates/v/rclrust?label=rclrust
-[c~rclrust~lib.rs]: https://lib.rs/crates/rclrust
-[c~rclrust~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rclrust-yellow
-[c~rclrust~repo]: https://github.com/rclrust/rclrust
-[c~rclrust~repo~badge]: https://img.shields.io/badge/rclrust-steelblue?logo=github
-[c~reactive_graph~crates.io]: https://crates.io/crates/reactive_graph
-[c~reactive_graph~crates.io~badge]: https://img.shields.io/badge/crates.io-reactive__graph-crimson
-[c~reactive_graph~docs]: https://docs.rs/reactive_graph
-[c~reactive_graph~docs~badge]: https://img.shields.io/crates/v/reactive_graph?label=reactive_graph
-[c~reactive_graph~lib.rs]: https://lib.rs/crates/reactive_graph
-[c~reactive_graph~lib.rs~badge]: https://img.shields.io/badge/lib.rs-reactive__graph-yellow
-[c~reactive_graph~repo]: https://github.com/leptos-rs/leptos
-[c~reactive_graph~repo~badge]: https://img.shields.io/badge/reactive__graph-steelblue?logo=github
-[c~reactive_stores~crates.io]: https://crates.io/crates/reactive_stores
-[c~reactive_stores~crates.io~badge]: https://img.shields.io/badge/crates.io-reactive__stores-crimson
-[c~reactive_stores~docs]: https://docs.rs/reactive_stores
-[c~reactive_stores~docs~badge]: https://img.shields.io/crates/v/reactive_stores?label=reactive_stores
-[c~reactive_stores~lib.rs]: https://lib.rs/crates/reactive_stores
-[c~reactive_stores~lib.rs~badge]: https://img.shields.io/badge/lib.rs-reactive__stores-yellow
-[c~reactive_stores~repo]: https://github.com/leptos-rs/leptos
-[c~reactive_stores~repo~badge]: https://img.shields.io/badge/reactive__stores-steelblue?logo=github
-[c~redis~crates.io]: https://crates.io/crates/redis
-[c~redis~crates.io~badge]: https://img.shields.io/badge/crates.io-redis-crimson
-[c~redis~docs]: https://docs.rs/redis
-[c~redis~docs~badge]: https://img.shields.io/crates/v/redis?label=redis
-[c~redis~lib.rs]: https://lib.rs/crates/redis
-[c~redis~lib.rs~badge]: https://img.shields.io/badge/lib.rs-redis-yellow
-[c~redis~repo]: https://github.com/redis-rs/redis-rs
-[c~redis~repo~badge]: https://img.shields.io/badge/redis-steelblue?logo=github
-[c~reflect~crates.io]: https://crates.io/crates/reflect
-[c~reflect~crates.io~badge]: https://img.shields.io/badge/crates.io-reflect-crimson
-[c~reflect~dependents~badge]: https://img.shields.io/crates/dependents/reflect
-[c~reflect~deps-rs~badge]: https://img.shields.io/deps-rs/reflect/latest
-[c~reflect~docs]: https://docs.rs/reflect
-[c~reflect~docs~badge]: https://img.shields.io/crates/v/reflect?label=reflect
-[c~reflect~lib.rs]: https://lib.rs/crates/reflect
-[c~reflect~lib.rs~badge]: https://img.shields.io/badge/lib.rs-reflect-yellow
-[c~reflect~license~badge]: https://img.shields.io/crates/l/reflect
-[c~reflect~recent-downloads~badge]: https://img.shields.io/crates/dr/reflect
-[c~reflect~repo]: https://github.com/dtolnay/reflect
-[c~reflect~repo~badge]: https://img.shields.io/badge/reflect-steelblue?logo=github
-[c~regex-automata~crates.io]: https://crates.io/crates/regex-automata
-[c~regex-automata~crates.io~badge]: https://img.shields.io/badge/crates.io-regex--automata-crimson
-[c~regex-automata~docs]: https://docs.rs/regex-automata
-[c~regex-automata~docs~badge]: https://img.shields.io/crates/v/regex-automata?label=regex-automata
-[c~regex-automata~lib.rs]: https://lib.rs/crates/regex-automata
-[c~regex-automata~lib.rs~badge]: https://img.shields.io/badge/lib.rs-regex--automata-yellow
-[c~regex-automata~repo]: https://github.com/rust-lang/regex/tree/master/regex-automata
-[c~regex-automata~repo~badge]: https://img.shields.io/badge/regex--automata-steelblue?logo=github
-[c~regex::Regex::captures_iter~docs]: https://docs.rs/regex/latest/regex/struct.Regex.html#method.captures_iter
-[c~regex::Regex::replace_all~docs]: https://docs.rs/regex/latest/regex/struct.Regex.html#method.replace_all
-[c~regex::RegexSetBuilder~docs]: https://docs.rs/regex/latest/regex/struct.RegexSetBuilder.html
-[c~regex::RegexSet~docs]: https://docs.rs/regex/latest/regex/struct.RegexSet.html
-[c~regex::Regex~docs]: https://docs.rs/regex/latest/regex/struct.Regex.html
-[c~regex::Regex~replacement-string-syntax]: https://docs.rs/regex/latest/regex/struct.Regex.html#replacement-string-syntax
-[c~regex::Replacer~docs]: https://docs.rs/regex/latest/regex/trait.Replacer.html
-[c~regex~crates.io]: https://crates.io/crates/regex
-[c~regex~crates.io~badge]: https://img.shields.io/badge/crates.io-regex-crimson
-[c~regex~docs]: https://docs.rs/regex
-[c~regex~docs~badge]: https://img.shields.io/crates/v/regex?label=regex
-[c~regex~lib.rs]: https://lib.rs/crates/regex
-[c~regex~lib.rs~badge]: https://img.shields.io/badge/lib.rs-regex-yellow
-[c~regex~repo]: https://github.com/rust-lang/regex
-[c~regex~repo~badge]: https://img.shields.io/badge/regex-steelblue?logo=github
-[c~release-plz~crates.io]: https://crates.io/crates/release-plz
-[c~release-plz~crates.io~badge]: https://img.shields.io/badge/crates.io-release--plz-crimson
-[c~release-plz~docs]: https://docs.rs/release-plz
-[c~release-plz~docs~badge]: https://img.shields.io/crates/v/release-plz?label=release-plz
-[c~release-plz~lib.rs]: https://lib.rs/crates/release-plz
-[c~release-plz~lib.rs~badge]: https://img.shields.io/badge/lib.rs-release--plz-yellow
-[c~release-plz~repo]: https://github.com/marcoieni/release-plz
-[c~release-plz~repo~badge]: https://img.shields.io/badge/release--plz-steelblue?logo=github
-[c~relm4~crates.io]: https://crates.io/crates/relm4
-[c~relm4~crates.io~badge]: https://img.shields.io/badge/crates.io-relm4-crimson
-[c~relm4~docs]: https://docs.rs/relm4
-[c~relm4~docs~badge]: https://img.shields.io/crates/v/relm4?label=relm4
-[c~relm4~lib.rs]: https://lib.rs/crates/relm4
-[c~relm4~lib.rs~badge]: https://img.shields.io/badge/lib.rs-relm4-yellow
-[c~relm4~repo]: https://github.com/Relm4/Relm4
-[c~relm4~repo~badge]: https://img.shields.io/badge/relm4-steelblue?logo=github
-[c~relm4~website]: https://relm4.org
-[c~relm4~website~badge]: https://img.shields.io/badge/relm4-coral
-[c~remove_dir_all~crates.io]: https://crates.io/crates/remove_dir_all
-[c~remove_dir_all~crates.io~badge]: https://img.shields.io/badge/crates.io-remove__dir__all-crimson
-[c~remove_dir_all~docs]: https://docs.rs/remove_dir_all
-[c~remove_dir_all~docs~badge]: https://img.shields.io/crates/v/remove_dir_all?label=remove_dir_all
-[c~remove_dir_all~lib.rs]: https://lib.rs/crates/remove_dir_all
-[c~remove_dir_all~lib.rs~badge]: https://img.shields.io/badge/lib.rs-remove__dir__all-yellow
-[c~remove_dir_all~repo]: https://github.com/XAMPPRocky/remove_dir_all
-[c~remove_dir_all~repo~badge]: https://img.shields.io/badge/remove__dir__all-steelblue?logo=github
-[c~rend3~crates.io]: https://crates.io/crates/rend3
-[c~rend3~crates.io~badge]: https://img.shields.io/badge/crates.io-rend3-crimson
-[c~rend3~docs]: https://docs.rs/rend3
-[c~rend3~docs~badge]: https://img.shields.io/crates/v/rend3?label=rend3
-[c~rend3~lib.rs]: https://lib.rs/crates/rend3
-[c~rend3~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rend3-yellow
-[c~rend3~repo]: https://github.com/BVE-Reborn/rend3
-[c~rend3~repo~badge]: https://img.shields.io/badge/rend3-steelblue?logo=github
-[c~reqwest::Client::delete~docs]: https://docs.rs/reqwest/latest/reqwest/struct.Client.html#method.delete
-[c~reqwest::Client::head~docs]: https://docs.rs/reqwest/latest/reqwest/struct.Client.html#method.head
-[c~reqwest::Client::post~docs]: https://docs.rs/reqwest/latest/reqwest/struct.Client.html#method.post
-[c~reqwest::ClientBuilder::build~docs]: https://docs.rs/reqwest/latest/reqwest/struct.ClientBuilder.html#method.build
-[c~reqwest::ClientBuilder::timeout~docs]: https://docs.rs/reqwest/latest/reqwest/struct.ClientBuilder.html#method.timeout
-[c~reqwest::Client~docs]: https://docs.rs/reqwest/latest/reqwest/struct.Client.html
-[c~reqwest::Error~docs]: https://docs.rs/reqwest/latest/reqwest/struct.Error.html
-[c~reqwest::RequestBuilder::basic_auth~docs]: https://docs.rs/reqwest/latest/reqwest/struct.RequestBuilder.html#method.basic_auth
-[c~reqwest::RequestBuilder::body~docs]: https://docs.rs/reqwest/latest/reqwest/struct.RequestBuilder.html#method.body
-[c~reqwest::RequestBuilder::header~docs]: https://docs.rs/reqwest/latest/reqwest/struct.RequestBuilder.html#method.header
-[c~reqwest::RequestBuilder::json~docs]: https://docs.rs/reqwest/latest/reqwest/struct.RequestBuilder.html#method.json
-[c~reqwest::RequestBuilder::send~docs]: https://docs.rs/reqwest/latest/reqwest/struct.RequestBuilder.html#method.send
-[c~reqwest::RequestBuilder~docs]: https://docs.rs/reqwest/latest/reqwest/struct.RequestBuilder.html
-[c~reqwest::Response::json~docs]: https://docs.rs/reqwest/latest/reqwest/struct.Response.html#method.json
-[c~reqwest::Response::url~docs]: https://docs.rs/reqwest/latest/reqwest/struct.Response.html#method.url
-[c~reqwest::Response~docs]: https://docs.rs/reqwest/latest/reqwest/struct.Response.html
-[c~reqwest::Result~docs]: https://docs.rs/reqwest/latest/reqwest/type.Result.html
-[c~reqwest::StatusCode::FORBIDDEN~docs]: https://docs.rs/reqwest/latest/reqwest/struct.StatusCode.html#associatedconstant.FORBIDDEN
-[c~reqwest::StatusCode~docs]: https://docs.rs/reqwest/latest/reqwest/struct.StatusCode.html
-[c~reqwest::blocking::Client::get~docs]: https://docs.rs/reqwest/latest/reqwest/blocking/struct.Client.html#method.get
-[c~reqwest::blocking::Client::head~docs]: https://docs.rs/reqwest/latest/reqwest/blocking/struct.Client.html#method.head
-[c~reqwest::blocking::Response~docs]: https://docs.rs/reqwest/latest/reqwest/blocking/struct.Response.html
-[c~reqwest::blocking::get~docs]: https://docs.rs/reqwest/latest/reqwest/blocking/fn.get.html
-[c~reqwest::blocking~docs]: https://docs.rs/reqwest/latest/reqwest/blocking
-[c~reqwest::get~docs]: https://docs.rs/reqwest/latest/reqwest/fn.get.html
-[c~reqwest::header::HeaderMap::get~docs]: https://docs.rs/reqwest/latest/reqwest/header/struct.HeaderMap.html#method.get
-[c~reqwest::header::HeaderValue~docs]: https://docs.rs/reqwest/latest/reqwest/header/struct.HeaderValue.html
-[c~reqwest::header~docs]: https://docs.rs/reqwest/latest/reqwest/header
-[c~reqwest~crates.io]: https://crates.io/crates/reqwest
-[c~reqwest~crates.io~badge]: https://img.shields.io/badge/crates.io-reqwest-crimson
-[c~reqwest~docs]: https://docs.rs/reqwest
-[c~reqwest~docs~badge]: https://img.shields.io/crates/v/reqwest?label=reqwest
-[c~reqwest~lib.rs]: https://lib.rs/crates/reqwest
-[c~reqwest~lib.rs~badge]: https://img.shields.io/badge/lib.rs-reqwest-yellow
-[c~reqwest~repo]: https://github.com/seanmonstar/reqwest
-[c~reqwest~repo~badge]: https://img.shields.io/badge/reqwest-steelblue?logo=github
-[c~rerun~crates.io]: https://crates.io/crates/rerun
-[c~rerun~crates.io~badge]: https://img.shields.io/badge/crates.io-rerun-crimson
-[c~rerun~docs]: https://docs.rs/rerun
-[c~rerun~docs~badge]: https://img.shields.io/crates/v/rerun?label=rerun
-[c~rerun~lib.rs]: https://lib.rs/crates/rerun
-[c~rerun~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rerun-yellow
-[c~rerun~repo]: https://github.com/rerun-io/rerun
-[c~rerun~repo~badge]: https://img.shields.io/badge/rerun-steelblue?logo=github
-[c~rerun~website]: https://rerun.io
-[c~rerun~website~badge]: https://img.shields.io/badge/rerun-coral
-[c~resvg~crates.io]: https://crates.io/crates/resvg
-[c~resvg~crates.io~badge]: https://img.shields.io/badge/crates.io-resvg-crimson
-[c~resvg~docs]: https://docs.rs/resvg
-[c~resvg~docs~badge]: https://img.shields.io/crates/v/resvg?label=resvg
-[c~resvg~lib.rs]: https://lib.rs/crates/resvg
-[c~resvg~lib.rs~badge]: https://img.shields.io/badge/lib.rs-resvg-yellow
-[c~resvg~repo]: https://github.com/RazrFalcon/resvg
-[c~resvg~repo~badge]: https://img.shields.io/badge/resvg-steelblue?logo=github
-[c~reval~crates.io]: https://crates.io/crates/reval
-[c~reval~crates.io~badge]: https://img.shields.io/badge/crates.io-reval-crimson
-[c~reval~docs]: https://docs.rs/reval
-[c~reval~docs~badge]: https://img.shields.io/crates/v/reval?label=reval
-[c~reval~lib.rs]: https://lib.rs/crates/reval
-[c~reval~lib.rs~badge]: https://img.shields.io/badge/lib.rs-reval-yellow
-[c~reval~repo]: https://github.com/mendelt/reval
-[c~reval~repo~badge]: https://img.shields.io/badge/reval-steelblue?logo=github
-[c~rfd~crates.io]: https://crates.io/crates/rfd
-[c~rfd~crates.io~badge]: https://img.shields.io/badge/crates.io-rfd-crimson
-[c~rfd~docs]: https://docs.rs/rfd
-[c~rfd~docs~badge]: https://img.shields.io/crates/v/rfd?label=rfd
-[c~rfd~lib.rs]: https://lib.rs/crates/rfd
-[c~rfd~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rfd-yellow
-[c~rfd~repo]: https://github.com/PolyMeilex/rfd
-[c~rfd~repo~badge]: https://img.shields.io/badge/rfd-steelblue?logo=github
-[c~rhai~crates.io]: https://crates.io/crates/rhai
-[c~rhai~crates.io~badge]: https://img.shields.io/badge/crates.io-rhai-crimson
-[c~rhai~docs]: https://docs.rs/rhai
-[c~rhai~docs~badge]: https://img.shields.io/crates/v/rhai?label=rhai
-[c~rhai~lib.rs]: https://lib.rs/crates/rhai
-[c~rhai~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rhai-yellow
-[c~rhai~repo]: https://github.com/rhaiscript/rhai
-[c~rhai~repo~badge]: https://img.shields.io/badge/rhai-steelblue?logo=github
-[c~rhai~website]: https://rhai.rs
-[c~rhai~website~badge]: https://img.shields.io/badge/rhai-coral
-[c~riker~crates.io]: https://crates.io/crates/riker
-[c~riker~crates.io~badge]: https://img.shields.io/badge/crates.io-riker-crimson
-[c~riker~docs]: https://docs.rs/riker
-[c~riker~docs~badge]: https://img.shields.io/crates/v/riker?label=riker
-[c~riker~lib.rs]: https://lib.rs/crates/riker
-[c~riker~lib.rs~badge]: https://img.shields.io/badge/lib.rs-riker-yellow
-[c~riker~repo]: https://github.com/riker-rs/riker
-[c~riker~repo~badge]: https://img.shields.io/badge/riker-steelblue?logo=github
-[c~riker~website]: https://riker.rs
-[c~riker~website~badge]: https://img.shields.io/badge/riker-coral
-[c~ring::hmac~docs]: https://briansmith.org/rustdoc/ring/hmac
-[c~ring::pbkdf2::derive~docs]: https://docs.rs/ring/latest/ring/pbkdf2/fn.derive.html
-[c~ring::pbkdf2::verify~docs]: https://docs.rs/ring/latest/ring/pbkdf2/fn.verify.html
-[c~ring::pbkdf2~docs]: https://docs.rs/ring/latest/ring/pbkdf2
-[c~ring::rand::SecureRandom::fill~docs]: https://docs.rs/ring/latest/ring/rand/trait.SecureRandom.html#tymethod.fill
-[c~ring::signature::Signature~docs]: https://docs.rs/ring/latest/ring/signature/struct.Signature.html
-[c~ring~crates.io]: https://crates.io/crates/ring
-[c~ring~crates.io~badge]: https://img.shields.io/badge/crates.io-ring-crimson
-[c~ring~docs]: https://docs.rs/ring
-[c~ring~docs~badge]: https://img.shields.io/crates/v/ring?label=ring
-[c~ring~lib.rs]: https://lib.rs/crates/ring
-[c~ring~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ring-yellow
-[c~ring~repo]: https://github.com/briansmith/ring
-[c~ring~repo~badge]: https://img.shields.io/badge/ring-steelblue?logo=github
-[c~ripgrep~crates.io]: https://crates.io/crates/ripgrep
-[c~ripgrep~crates.io~badge]: https://img.shields.io/badge/crates.io-ripgrep-crimson
-[c~ripgrep~docs]: https://docs.rs/crate/ripgrep
-[c~ripgrep~docs~badge]: https://img.shields.io/crates/v/ripgrep?label=ripgrep
-[c~ripgrep~lib.rs]: https://lib.rs/crates/ripgrep
-[c~ripgrep~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ripgrep-yellow
-[c~ripgrep~repo]: https://github.com/BurntSushi/ripgrep
-[c~ripgrep~repo~badge]: https://img.shields.io/badge/ripgrep-steelblue?logo=github
-[c~rkyv~crates.io]: https://crates.io/crates/rkyv
-[c~rkyv~crates.io~badge]: https://img.shields.io/badge/crates.io-rkyv-crimson
-[c~rkyv~docs]: https://docs.rs/rkyv
-[c~rkyv~docs~badge]: https://img.shields.io/crates/v/rkyv?label=rkyv
-[c~rkyv~lib.rs]: https://lib.rs/crates/rkyv
-[c~rkyv~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rkyv-yellow
-[c~rkyv~repo]: https://github.com/rkyv/rkyv
-[c~rkyv~repo~badge]: https://img.shields.io/badge/rkyv-steelblue?logo=github
-[c~rlua~crates.io]: https://crates.io/crates/rlua
-[c~rlua~crates.io~badge]: https://img.shields.io/badge/crates.io-rlua-crimson
-[c~rlua~docs]: https://docs.rs/rlua
-[c~rlua~docs~badge]: https://img.shields.io/crates/v/rlua?label=rlua
-[c~rlua~lib.rs]: https://lib.rs/crates/rlua
-[c~rlua~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rlua-yellow
-[c~rlua~repo]: https://github.com/mlua-rs/rlua
-[c~rlua~repo~badge]: https://img.shields.io/badge/rlua-steelblue?logo=github
-[c~rl~crates.io]: https://crates.io/crates/rl
-[c~rl~crates.io~badge]: https://img.shields.io/badge/crates.io-rl-crimson
-[c~rl~docs]: https://docs.rs/rl
-[c~rl~docs~badge]: https://img.shields.io/crates/v/rl?label=rl
-[c~rl~lib.rs]: https://lib.rs/crates/rl
-[c~rl~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rl-yellow
-[c~rl~repo]: https://github.com/benbaarber/rl
-[c~rl~repo~badge]: https://img.shields.io/badge/rl-steelblue?logo=github
-[c~rmp-serde~crates.io]: https://crates.io/crates/rmp-serde
-[c~rmp-serde~crates.io~badge]: https://img.shields.io/badge/crates.io-rmp--serde-crimson
-[c~rmp-serde~docs]: https://docs.rs/rmp-serde
-[c~rmp-serde~docs~badge]: https://img.shields.io/crates/v/rmp-serde?label=rmp-serde
-[c~rmp-serde~lib.rs]: https://lib.rs/crates/rmp-serde
-[c~rmp-serde~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rmp--serde-yellow
-[c~rmp-serde~repo]: https://github.com/3Hren/msgpack-rust
-[c~rmp-serde~repo~badge]: https://img.shields.io/badge/rmp--serde-steelblue?logo=github
-[c~roaring~commit-activity~badge]: https://img.shields.io/github/commit-activity/y/RoaringBitmap/roaring-rs
-[c~roaring~crates.io]: https://crates.io/crates/roaring
-[c~roaring~crates.io~badge]: https://img.shields.io/badge/crates.io-roaring-crimson
-[c~roaring~dependents~badge]: https://img.shields.io/crates/dependents/roaring
-[c~roaring~deps-rs~badge]: https://img.shields.io/deps-rs/roaring/latest
-[c~roaring~docs]: https://docs.rs/roaring
-[c~roaring~docs~badge]: https://img.shields.io/crates/v/roaring?label=roaring
-[c~roaring~last-commit~badge]: https://img.shields.io/github/last-commit/RoaringBitmap/roaring-rs
-[c~roaring~lib.rs]: https://lib.rs/crates/roaring
-[c~roaring~lib.rs~badge]: https://img.shields.io/badge/lib.rs-roaring-yellow
-[c~roaring~license~badge]: https://img.shields.io/crates/l/roaring
-[c~roaring~recent-downloads~badge]: https://img.shields.io/crates/dr/roaring
-[c~roaring~repo]: https://github.com/RoaringBitmap/roaring-rs
-[c~roaring~repo~badge]: https://img.shields.io/badge/roaring-steelblue?logo=github
-[c~roboplc~crates.io]: https://crates.io/crates/roboplc
-[c~roboplc~crates.io~badge]: https://img.shields.io/badge/crates.io-roboplc-crimson
-[c~roboplc~dependents~badge]: https://img.shields.io/crates/dependents/roboplc
-[c~roboplc~deps-rs~badge]: https://img.shields.io/deps-rs/roboplc/latest
-[c~roboplc~docs]: https://docs.rs/roboplc
-[c~roboplc~docs~badge]: https://img.shields.io/crates/v/roboplc?label=roboplc
-[c~roboplc~lib.rs]: https://lib.rs/crates/roboplc
-[c~roboplc~lib.rs~badge]: https://img.shields.io/badge/lib.rs-roboplc-yellow
-[c~roboplc~license~badge]: https://img.shields.io/crates/l/roboplc
-[c~roboplc~recent-downloads~badge]: https://img.shields.io/crates/dr/roboplc
-[c~roboplc~repo]: https://github.com/roboplc/roboplc
-[c~roboplc~repo~badge]: https://img.shields.io/badge/roboplc-steelblue?logo=github
-[c~roboplc~website]: https://www.bohemia-automation.com/software/roboplc
-[c~robustmq~crates.io]: https://crates.io/crates/robustmq
-[c~robustmq~crates.io~badge]: https://img.shields.io/badge/crates.io-robustmq-crimson
-[c~robustmq~docs]: https://docs.rs/robustmq
-[c~robustmq~docs~badge]: https://img.shields.io/crates/v/robustmq?label=robustmq
-[c~robustmq~lib.rs]: https://lib.rs/crates/robustmq
-[c~robustmq~lib.rs~badge]: https://img.shields.io/badge/lib.rs-robustmq-yellow
-[c~robustmq~repo]: https://github.com/robustmq/robustmq
-[c~robustmq~repo~badge]: https://img.shields.io/badge/robustmq-steelblue?logo=github
-[c~robustmq~website]: https://robustmq.com
-[c~robustmq~website~badge]: https://img.shields.io/badge/robustmq-coral
-[c~rocketmq-rust~crates.io]: https://crates.io/crates/rocketmq-rust
-[c~rocketmq-rust~crates.io~badge]: https://img.shields.io/badge/crates.io-rocketmq--rust-crimson
-[c~rocketmq-rust~docs]: https://docs.rs/rocketmq-rust
-[c~rocketmq-rust~docs~badge]: https://img.shields.io/crates/v/rocketmq-rust?label=rocketmq-rust
-[c~rocketmq-rust~lib.rs]: https://lib.rs/crates/rocketmq-rust
-[c~rocketmq-rust~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rocketmq--rust-yellow
-[c~rocketmq-rust~repo]: https://github.com/mxsm/rocketmq-rust
-[c~rocketmq-rust~repo~badge]: https://img.shields.io/badge/rocketmq--rust-steelblue?logo=github
-[c~rocket~crates.io]: https://crates.io/crates/rocket
-[c~rocket~crates.io~badge]: https://img.shields.io/badge/crates.io-rocket-crimson
-[c~rocket~docs]: https://docs.rs/rocket
-[c~rocket~docs~badge]: https://img.shields.io/crates/v/rocket?label=rocket
-[c~rocket~lib.rs]: https://lib.rs/crates/rocket
-[c~rocket~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rocket-yellow
-[c~rocket~repo]: https://github.com/rwf2/rocket
-[c~rocket~repo~badge]: https://img.shields.io/badge/rocket-steelblue?logo=github
-[c~rocksdb~crates.io]: https://crates.io/crates/rocksdb
-[c~rocksdb~crates.io~badge]: https://img.shields.io/badge/crates.io-rocksdb-crimson
-[c~rocksdb~docs]: https://docs.rs/rocksdb
-[c~rocksdb~docs~badge]: https://img.shields.io/crates/v/rocksdb?label=rocksdb
-[c~rocksdb~lib.rs]: https://lib.rs/crates/rocksdb
-[c~rocksdb~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rocksdb-yellow
-[c~rocksdb~repo]: https://github.com/rust-rocksdb/rust-rocksdb
-[c~rocksdb~repo~badge]: https://img.shields.io/badge/rocksdb-steelblue?logo=github
-[c~roogle~crates.io]: https://crates.io/crates/roogle
-[c~roogle~crates.io~badge]: https://img.shields.io/badge/crates.io-roogle-crimson
-[c~roogle~docs]: https://docs.rs/roogle
-[c~roogle~docs~badge]: https://img.shields.io/crates/v/roogle?label=roogle
-[c~roogle~lib.rs]: https://lib.rs/crates/roogle
-[c~roogle~lib.rs~badge]: https://img.shields.io/badge/lib.rs-roogle-yellow
-[c~roogle~repo]: https://github.com/roogle-rs/roogle
-[c~roogle~repo~badge]: https://img.shields.io/badge/roogle-steelblue?logo=github
-[c~roogle~website]: https://roogle.hkmatsumoto.com/search
-[c~rosbag~crates.io]: https://crates.io/crates/rosbag
-[c~rosbag~crates.io~badge]: https://img.shields.io/badge/crates.io-rosbag-crimson
-[c~rosbag~docs]: https://docs.rs/rosbag
-[c~rosbag~docs~badge]: https://img.shields.io/crates/v/rosbag?label=rosbag
-[c~rosbag~lib.rs]: https://lib.rs/crates/rosbag
-[c~rosbag~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rosbag-yellow
-[c~rosbag~repo]: https://github.com/newpavlov/rosbag-rs
-[c~rosbag~repo~badge]: https://img.shields.io/badge/rosbag-steelblue?logo=github
-[c~roslibrust~crates.io]: https://crates.io/crates/roslibrust
-[c~roslibrust~crates.io~badge]: https://img.shields.io/badge/crates.io-roslibrust-crimson
-[c~roslibrust~docs]: https://docs.rs/roslibrust
-[c~roslibrust~docs~badge]: https://img.shields.io/crates/v/roslibrust?label=roslibrust
-[c~roslibrust~lib.rs]: https://lib.rs/crates/roslibrust
-[c~roslibrust~lib.rs~badge]: https://img.shields.io/badge/lib.rs-roslibrust-yellow
-[c~roslibrust~repo]: https://github.com/roslibrust/roslibrust
-[c~roslibrust~repo~badge]: https://img.shields.io/badge/roslibrust-steelblue?logo=github
-[c~rosrust~crates.io]: https://crates.io/crates/rosrust
-[c~rosrust~crates.io~badge]: https://img.shields.io/badge/crates.io-rosrust-crimson
-[c~rosrust~docs]: https://docs.rs/rosrust
-[c~rosrust~docs~badge]: https://img.shields.io/crates/v/rosrust?label=rosrust
-[c~rosrust~lib.rs]: https://lib.rs/crates/rosrust
-[c~rosrust~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rosrust-yellow
-[c~rosrust~repo]: https://github.com/adnanademovic/rosrust
-[c~rosrust~repo~badge]: https://img.shields.io/badge/rosrust-steelblue?logo=github
-[c~roto~crates.io]: https://crates.io/crates/roto
-[c~roto~crates.io~badge]: https://img.shields.io/badge/crates.io-roto-crimson
-[c~roto~docs]: https://docs.rs/roto
-[c~roto~docs~badge]: https://img.shields.io/crates/v/roto?label=roto
-[c~roto~lib.rs]: https://lib.rs/crates/roto
-[c~roto~lib.rs~badge]: https://img.shields.io/badge/lib.rs-roto-yellow
-[c~roto~repo]: https://github.com/NLnetLabs/roto
-[c~roto~repo~badge]: https://img.shields.io/badge/roto-steelblue?logo=github
-[c~roto~website]: https://www.nlnetlabs.nl/projects/routing/rotonda
-[c~roto~website~badge]: https://img.shields.io/badge/roto-coral
-[c~roxmltree~crates.io]: https://crates.io/crates/roxmltree
-[c~roxmltree~crates.io~badge]: https://img.shields.io/badge/crates.io-roxmltree-crimson
-[c~roxmltree~docs]: https://docs.rs/roxmltree
-[c~roxmltree~docs~badge]: https://img.shields.io/crates/v/roxmltree?label=roxmltree
-[c~roxmltree~lib.rs]: https://lib.rs/crates/roxmltree
-[c~roxmltree~lib.rs~badge]: https://img.shields.io/badge/lib.rs-roxmltree-yellow
-[c~roxmltree~repo]: https://github.com/RazrFalcon/roxmltree
-[c~roxmltree~repo~badge]: https://img.shields.io/badge/roxmltree-steelblue?logo=github
-[c~roxygen~crates.io]: https://crates.io/crates/roxygen
-[c~roxygen~crates.io~badge]: https://img.shields.io/badge/crates.io-roxygen-crimson
-[c~roxygen~docs]: https://docs.rs/roxygen
-[c~roxygen~docs~badge]: https://img.shields.io/crates/v/roxygen?label=roxygen
-[c~roxygen~lib.rs]: https://lib.rs/crates/roxygen
-[c~roxygen~lib.rs~badge]: https://img.shields.io/badge/lib.rs-roxygen-yellow
-[c~roxygen~repo]: https://github.com/geo-ant/roxygen
-[c~roxygen~repo~badge]: https://img.shields.io/badge/roxygen-steelblue?logo=github
-[c~rpds~crates.io]: https://crates.io/crates/rpds
-[c~rpds~crates.io~badge]: https://img.shields.io/badge/crates.io-rpds-crimson
-[c~rpds~docs]: https://docs.rs/rpds
-[c~rpds~docs~badge]: https://img.shields.io/crates/v/rpds?label=rpds
-[c~rpds~lib.rs]: https://lib.rs/crates/rpds
-[c~rpds~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rpds-yellow
-[c~rpds~repo]: https://github.com/orium/rpds
-[c~rpds~repo~badge]: https://img.shields.io/badge/rpds-steelblue?logo=github
-[c~rppal~crates.io]: https://crates.io/crates/rppal
-[c~rppal~crates.io~badge]: https://img.shields.io/badge/crates.io-rppal-crimson
-[c~rppal~docs]: https://docs.rs/rppal
-[c~rppal~docs~badge]: https://img.shields.io/crates/v/rppal?label=rppal
-[c~rppal~lib.rs]: https://lib.rs/crates/rppal
-[c~rppal~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rppal-yellow
-[c~rppal~repo]: https://github.com/golemparts/rppal
-[c~rppal~repo~badge]: https://img.shields.io/badge/rppal-steelblue?logo=github
-[c~rquest~crates.io]: https://crates.io/crates/rquest
-[c~rquest~crates.io~badge]: https://img.shields.io/badge/crates.io-rquest-crimson
-[c~rquest~docs]: https://docs.rs/rquest
-[c~rquest~docs~badge]: https://img.shields.io/crates/v/rquest?label=rquest
-[c~rquest~lib.rs]: https://lib.rs/crates/rquest
-[c~rquest~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rquest-yellow
-[c~rquest~repo]: https://github.com/0x676e67/rquest
-[c~rquest~repo~badge]: https://img.shields.io/badge/rquest-steelblue?logo=github
-[c~rrt~crates.io]: https://crates.io/crates/rrt
-[c~rrt~crates.io~badge]: https://img.shields.io/badge/crates.io-rrt-crimson
-[c~rrt~docs]: https://docs.rs/rrt
-[c~rrt~docs~badge]: https://img.shields.io/crates/v/rrt?label=rrt
-[c~rrt~lib.rs]: https://lib.rs/crates/rrt
-[c~rrt~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rrt-yellow
-[c~rrt~repo]: https://github.com/openrr/rrt
-[c~rrt~repo~badge]: https://img.shields.io/badge/rrt-steelblue?logo=github
-[c~rs-opw-kinematics~crates.io]: https://crates.io/crates/rs-opw-kinematics
-[c~rs-opw-kinematics~crates.io~badge]: https://img.shields.io/badge/crates.io-rs--opw--kinematics-crimson
-[c~rs-opw-kinematics~docs]: https://docs.rs/rs-opw-kinematics
-[c~rs-opw-kinematics~docs~badge]: https://img.shields.io/crates/v/rs-opw-kinematics?label=rs-opw-kinematics
-[c~rs-opw-kinematics~lib.rs]: https://lib.rs/crates/rs-opw-kinematics
-[c~rs-opw-kinematics~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rs--opw--kinematics-yellow
-[c~rs-opw-kinematics~repo]: https://github.com/bourumir-wyngs/rs-opw-kinematics
-[c~rs-opw-kinematics~repo~badge]: https://img.shields.io/badge/rs--opw--kinematics-steelblue?logo=github
-[c~rsa~crates.io]: https://crates.io/crates/rsa
-[c~rsa~crates.io~badge]: https://img.shields.io/badge/crates.io-rsa-crimson
-[c~rsa~docs]: https://docs.rs/rsa
-[c~rsa~docs~badge]: https://img.shields.io/crates/v/rsa?label=rsa
-[c~rsa~lib.rs]: https://lib.rs/crates/rsa
-[c~rsa~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rsa-yellow
-[c~rsa~repo]: https://github.com/RustCrypto/RSA
-[c~rsa~repo~badge]: https://img.shields.io/badge/rsa-steelblue?logo=github
-[c~rstest~crates.io]: https://crates.io/crates/rstest
-[c~rstest~crates.io~badge]: https://img.shields.io/badge/crates.io-rstest-crimson
-[c~rstest~docs]: https://docs.rs/rstest
-[c~rstest~docs~badge]: https://img.shields.io/crates/v/rstest?label=rstest
-[c~rstest~lib.rs]: https://lib.rs/crates/rstest
-[c~rstest~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rstest-yellow
-[c~rstest~repo]: https://github.com/la10736/rstest
-[c~rstest~repo~badge]: https://img.shields.io/badge/rstest-steelblue?logo=github
-[c~rtic~crates.io]: https://crates.io/crates/rtic
-[c~rtic~crates.io~badge]: https://img.shields.io/badge/crates.io-rtic-crimson
-[c~rtic~docs]: https://rtic.rs
-[c~rtic~docs~badge]: https://img.shields.io/crates/v/rtic?label=rtic
-[c~rtic~lib.rs]: https://lib.rs/crates/rtic
-[c~rtic~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rtic-yellow
-[c~rtic~repo]: https://github.com/rtic-rs/rtic
-[c~rtic~repo~badge]: https://img.shields.io/badge/rtic-steelblue?logo=github
-[c~ruff~crates.io]: https://crates.io/crates/ruff
-[c~ruff~crates.io~badge]: https://img.shields.io/badge/crates.io-ruff-crimson
-[c~ruff~docs]: https://docs.rs/ruff
-[c~ruff~docs~badge]: https://img.shields.io/crates/v/ruff?label=ruff
-[c~ruff~lib.rs]: https://lib.rs/crates/ruff
-[c~ruff~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ruff-yellow
-[c~ruff~repo]: https://github.com/astral-sh/ruff
-[c~ruff~repo~badge]: https://img.shields.io/badge/ruff-steelblue?logo=github
-[c~ruff~website]: https://docs.astral.sh/ruff
-[c~ruff~website~badge]: https://img.shields.io/badge/ruff-coral
-[c~rug~crates.io]: https://crates.io/crates/rug
-[c~rug~crates.io~badge]: https://img.shields.io/badge/crates.io-rug-crimson
-[c~rug~docs]: https://docs.rs/rug
-[c~rug~docs~badge]: https://img.shields.io/crates/v/rug?label=rug
-[c~rug~lib.rs]: https://lib.rs/crates/rug
-[c~rug~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rug-yellow
-[c~rug~repo]: https://gitlab.com/tspiteri/rug
-[c~rug~repo~badge]: https://img.shields.io/badge/rug-steelblue?logo=github
-[c~rui~crates.io]: https://crates.io/crates/rui
-[c~rui~crates.io~badge]: https://img.shields.io/badge/crates.io-rui-crimson
-[c~rui~docs]: https://docs.rs/rui
-[c~rui~docs~badge]: https://img.shields.io/crates/v/rui?label=rui
-[c~rui~lib.rs]: https://lib.rs/crates/rui
-[c~rui~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rui-yellow
-[c~rui~repo]: https://github.com/audulus/rui
-[c~rui~repo~badge]: https://img.shields.io/badge/rui-steelblue?logo=github
-[c~runc~crates.io]: https://crates.io/crates/runc
-[c~runc~crates.io~badge]: https://img.shields.io/badge/crates.io-runc-crimson
-[c~runc~docs]: https://docs.rs/runc
-[c~runc~docs~badge]: https://img.shields.io/crates/v/runc?label=runc
-[c~runc~lib.rs]: https://lib.rs/crates/runc
-[c~runc~lib.rs~badge]: https://img.shields.io/badge/lib.rs-runc-yellow
-[c~runc~repo]: https://github.com/containerd/rust-extensions
-[c~runc~repo~badge]: https://img.shields.io/badge/runc-steelblue?logo=github
-[c~runc~website]: https://containerd.io
-[c~runc~website~badge]: https://img.shields.io/badge/runc-coral
-[c~rusb~crates.io]: https://crates.io/crates/rusb
-[c~rusb~crates.io~badge]: https://img.shields.io/badge/crates.io-rusb-crimson
-[c~rusb~docs]: https://docs.rs/rusb
-[c~rusb~docs~badge]: https://img.shields.io/crates/v/rusb?label=rusb
-[c~rusb~lib.rs]: https://lib.rs/crates/rusb
-[c~rusb~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rusb-yellow
-[c~rusb~repo]: https://github.com/a1ien/rusb
-[c~rusb~repo~badge]: https://img.shields.io/badge/rusb-steelblue?logo=github
-[c~rusb~website]: https://github.com/a1ien/rusb
-[c~rusb~website~badge]: https://img.shields.io/badge/rusb-coral
-[c~rusqlite::Connection::execute~docs]: https://docs.rs/rusqlite/latest/rusqlite/struct.Connection.html#method.execute
-[c~rusqlite::Connection::last_insert_rowid~docs]: https://docs.rs/rusqlite/latest/rusqlite/struct.Connection.html#method.last_insert_rowid
-[c~rusqlite::Connection::open~docs]: https://docs.rs/rusqlite/latest/rusqlite/struct.Connection.html#method.open
-[c~rusqlite::Connection::prepare~docs]: https://docs.rs/rusqlite/latest/rusqlite/struct.Connection.html#method.prepare
-[c~rusqlite::Connection::transaction~docs]: https://docs.rs/rusqlite/latest/rusqlite/struct.Connection.html#method.transaction
-[c~rusqlite::Connection~docs]: https://docs.rs/rusqlite/latest/rusqlite/struct.Connection.html
-[c~rusqlite::Statement::query_map~docs]: https://docs.rs/rusqlite/latest/rusqlite/struct.Statement.html#method.query_map
-[c~rusqlite::Statement~docs]: https://docs.rs/rusqlite/latest/rusqlite/struct.Statement.html
-[c~rusqlite::Transaction::commit~docs]: https://docs.rs/rusqlite/latest/rusqlite/struct.Transaction.html#method.commit
-[c~rusqlite~crates.io]: https://crates.io/crates/rusqlite
-[c~rusqlite~crates.io~badge]: https://img.shields.io/badge/crates.io-rusqlite-crimson
-[c~rusqlite~docs]: https://docs.rs/rusqlite
-[c~rusqlite~docs~badge]: https://img.shields.io/crates/v/rusqlite?label=rusqlite
-[c~rusqlite~documentation]: https://github.com/jgallagher/rusqlite#user-content-notes-on-building-rusqlite-and-libsqlite3-sys
-[c~rusqlite~documentation~badge]: https://img.shields.io/badge/rusqlite_documentation-steelblue?logo=github
-[c~rusqlite~lib.rs]: https://lib.rs/crates/rusqlite
-[c~rusqlite~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rusqlite-yellow
-[c~rusqlite~repo]: https://github.com/rusqlite/rusqlite
-[c~rusqlite~repo~badge]: https://img.shields.io/badge/rusqlite-steelblue?logo=github
-[c~rust-bert~crates.io]: https://crates.io/crates/rust-bert
-[c~rust-bert~crates.io~badge]: https://img.shields.io/badge/crates.io-rust--bert-crimson
-[c~rust-bert~docs]: https://docs.rs/rust-bert
-[c~rust-bert~docs~badge]: https://img.shields.io/crates/v/rust-bert?label=rust-bert
-[c~rust-bert~lib.rs]: https://lib.rs/crates/rust-bert
-[c~rust-bert~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rust--bert-yellow
-[c~rust-bert~repo]: https://github.com/guillaume-be/rust-bert
-[c~rust-bert~repo~badge]: https://img.shields.io/badge/rust--bert-steelblue?logo=github
-[c~rust-crypto~crates.io]: https://crates.io/crates/rust-crypto
-[c~rust-crypto~crates.io~badge]: https://img.shields.io/badge/crates.io-rust--crypto-crimson
-[c~rust-crypto~docs]: https://docs.rs/rust-crypto
-[c~rust-crypto~docs~badge]: https://img.shields.io/crates/v/rust-crypto?label=rust-crypto
-[c~rust-crypto~lib.rs]: https://lib.rs/crates/rust-crypto
-[c~rust-crypto~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rust--crypto-yellow
-[c~rust-crypto~repo]: https://github.com/DaGenix/rust-crypto
-[c~rust-crypto~repo~badge]: https://img.shields.io/badge/rust--crypto-steelblue?logo=github
-[c~rust-cv~crates.io]: https://crates.io/crates/rust-cv
-[c~rust-cv~crates.io~badge]: https://img.shields.io/badge/crates.io-rust--cv-crimson
-[c~rust-cv~docs]: https://docs.rs/rust-cv
-[c~rust-cv~docs~badge]: https://img.shields.io/crates/v/rust-cv?label=rust-cv
-[c~rust-cv~lib.rs]: https://lib.rs/crates/rust-cv
-[c~rust-cv~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rust--cv-yellow
-[c~rust-cv~repo~badge]: https://img.shields.io/badge/rust--cv-steelblue?logo=github
-[c~rust-gpu~crates.io]: https://crates.io/crates/rust-gpu
-[c~rust-gpu~crates.io~badge]: https://img.shields.io/badge/crates.io-rust--gpu-crimson
-[c~rust-gpu~docs]: https://docs.rs/rust-gpu
-[c~rust-gpu~docs~badge]: https://img.shields.io/crates/v/rust-gpu?label=rust-gpu
-[c~rust-gpu~lib.rs]: https://lib.rs/crates/rust-gpu
-[c~rust-gpu~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rust--gpu-yellow
-[c~rust-gpu~repo~badge]: https://img.shields.io/badge/rust--gpu-steelblue?logo=github
-[c~rust-ini~crates.io]: https://crates.io/crates/rust-ini
-[c~rust-ini~crates.io~badge]: https://img.shields.io/badge/crates.io-rust--ini-crimson
-[c~rust-ini~docs]: https://docs.rs/rust-ini
-[c~rust-ini~docs~badge]: https://img.shields.io/crates/v/rust-ini?label=rust-ini
-[c~rust-ini~lib.rs]: https://lib.rs/crates/rust-ini
-[c~rust-ini~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rust--ini-yellow
-[c~rust-ini~repo]: https://github.com/zonyitoo/rust-ini
-[c~rust-ini~repo~badge]: https://img.shields.io/badge/rust--ini-steelblue?logo=github
-[c~rust-money~crates.io]: https://crates.io/crates/rust-money
-[c~rust-money~crates.io~badge]: https://img.shields.io/badge/crates.io-rust--money-crimson
-[c~rust-money~docs]: https://docs.rs/rust-money
-[c~rust-money~docs~badge]: https://img.shields.io/crates/v/rust-money?label=rust-money
-[c~rust-money~lib.rs]: https://lib.rs/crates/rust-money
-[c~rust-money~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rust--money-yellow
-[c~rust-money~repo]: https://github.com/king54346/rust-money
-[c~rust-money~repo~badge]: https://img.shields.io/badge/rust--money-steelblue?logo=github
-[c~rust-script~crates.io]: https://crates.io/crates/rust-script
-[c~rust-script~crates.io~badge]: https://img.shields.io/badge/crates.io-rust--script-crimson
-[c~rust-script~docs]: https://rust-script.org
-[c~rust-script~docs~badge]: https://img.shields.io/crates/v/rust-script?label=rust-script
-[c~rust-script~lib.rs]: https://lib.rs/crates/rust-script
-[c~rust-script~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rust--script-yellow
-[c~rust-script~repo]: https://github.com/fornwall/rust-script
-[c~rust-script~repo~badge]: https://img.shields.io/badge/rust--script-steelblue?logo=github
-[c~rust-script~website]: https://rust-script.org
-[c~rust-script~website~badge]: https://img.shields.io/badge/rust--script-coral
-[c~rust-stemmers~crates.io]: https://crates.io/crates/rust-stemmers
-[c~rust-stemmers~crates.io~badge]: https://img.shields.io/badge/crates.io-rust--stemmers-crimson
-[c~rust-stemmers~docs]: https://docs.rs/rust-stemmers
-[c~rust-stemmers~docs~badge]: https://img.shields.io/crates/v/rust-stemmers?label=rust-stemmers
-[c~rust-stemmers~lib.rs]: https://lib.rs/crates/rust-stemmers
-[c~rust-stemmers~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rust--stemmers-yellow
-[c~rust-stemmers~repo]: https://github.com/CurrySoftware/rust-stemmers
-[c~rust-stemmers~repo~badge]: https://img.shields.io/badge/rust--stemmers-steelblue?logo=github
-[c~rust_cache~crates.io]: https://crates.io/crates/rust_cache
-[c~rust_cache~crates.io~badge]: https://img.shields.io/badge/crates.io-rust__cache-crimson
-[c~rust_cache~docs]: https://docs.rs/rust_cache
-[c~rust_cache~docs~badge]: https://img.shields.io/crates/v/rust_cache?label=rust_cache
-[c~rust_cache~lib.rs]: https://lib.rs/crates/rust_cache
-[c~rust_cache~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rust__cache-yellow
-[c~rust_cache~repo]: https://github.com/yjv/rust_cache
-[c~rust_cache~repo~badge]: https://img.shields.io/badge/rust__cache-steelblue?logo=github
-[c~rust_cache~website]: http://yjv.github.io/rust_cache/rust_cache
-[c~rust_decimal_macros~crates.io]: https://crates.io/crates/rust_decimal_macros
-[c~rust_decimal_macros~crates.io~badge]: https://img.shields.io/badge/crates.io-rust__decimal__macros-crimson
-[c~rust_decimal_macros~docs]: https://docs.rs/rust_decimal_macros/latest/rust_decimal_macros
-[c~rust_decimal_macros~docs~badge]: https://img.shields.io/crates/v/rust_decimal_macros?label=rust_decimal_macros
-[c~rust_decimal_macros~lib.rs]: https://lib.rs/crates/rust_decimal_macros
-[c~rust_decimal_macros~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rust__decimal__macros-yellow
-[c~rust_decimal_macros~repo]: https://github.com/paupino/rust-decimal
-[c~rust_decimal_macros~repo~badge]: https://img.shields.io/badge/rust__decimal__macros-steelblue?logo=github
-[c~rust_decimal~crates.io]: https://crates.io/crates/rust_decimal
-[c~rust_decimal~crates.io~badge]: https://img.shields.io/badge/crates.io-rust__decimal-crimson
-[c~rust_decimal~docs]: https://docs.rs/rust_decimal
-[c~rust_decimal~docs~badge]: https://img.shields.io/crates/v/rust_decimal?label=rust_decimal
-[c~rust_decimal~lib.rs]: https://lib.rs/crates/rust_decimal
-[c~rust_decimal~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rust__decimal-yellow
-[c~rust_decimal~repo]: https://github.com/paupino/rust-decimal
-[c~rust_decimal~repo~badge]: https://img.shields.io/badge/rust__decimal-steelblue?logo=github
-[c~rustdds~crates.io]: https://crates.io/crates/rustdds
-[c~rustdds~crates.io~badge]: https://img.shields.io/badge/crates.io-rustdds-crimson
-[c~rustdds~docs]: https://docs.rs/rustdds
-[c~rustdds~docs~badge]: https://img.shields.io/crates/v/rustdds?label=rustdds
-[c~rustdds~lib.rs]: https://lib.rs/crates/rustdds
-[c~rustdds~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rustdds-yellow
-[c~rustdds~repo]: https://github.com/Atostek/RustDDS
-[c~rustdds~repo~badge]: https://img.shields.io/badge/rustdds-steelblue?logo=github
-[c~rustdds~website]: https://atostek.com/en/products/rustdds
-[c~rustdds~website~badge]: https://img.shields.io/badge/rustdds-coral
-[c~rustdesk~crates.io]: https://crates.io/crates/rustdesk
-[c~rustdesk~crates.io~badge]: https://img.shields.io/badge/crates.io-rustdesk-crimson
-[c~rustdesk~docs]: https://docs.rs/rustdesk
-[c~rustdesk~docs~badge]: https://img.shields.io/crates/v/rustdesk?label=rustdesk
-[c~rustdesk~lib.rs]: https://lib.rs/crates/rustdesk
-[c~rustdesk~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rustdesk-yellow
-[c~rustdesk~repo]: https://github.com/rustdesk/rustdesk
-[c~rustdesk~repo~badge]: https://img.shields.io/badge/rustdesk-steelblue?logo=github
-[c~rustfix~crates.io]: https://crates.io/crates/rustfix
-[c~rustfix~crates.io~badge]: https://img.shields.io/badge/crates.io-rustfix-crimson
-[c~rustfix~docs]: https://docs.rs/rustfix
-[c~rustfix~docs~badge]: https://img.shields.io/crates/v/rustfix?label=rustfix
-[c~rustfix~lib.rs]: https://lib.rs/crates/rustfix
-[c~rustfix~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rustfix-yellow
-[c~rustfix~repo]: https://github.com/rust-lang/cargo/tree/master/crates/rustfix
-[c~rustfix~repo~badge]: https://img.shields.io/badge/rustfix-steelblue?logo=github
-[c~rustfmt~repo]: https://github.com/rust-lang/rustfmt
-[c~rustfmt~repo~badge]: https://img.shields.io/badge/rustfmt-steelblue?logo=github
-[c~rustix~crates.io]: https://crates.io/crates/rustix
-[c~rustix~crates.io~badge]: https://img.shields.io/badge/crates.io-rustix-crimson
-[c~rustix~docs]: https://docs.rs/rustix
-[c~rustix~docs~badge]: https://img.shields.io/crates/v/rustix?label=rustix
-[c~rustix~lib.rs]: https://lib.rs/crates/rustix
-[c~rustix~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rustix-yellow
-[c~rustix~repo]: https://github.com/bytecodealliance/rustix
-[c~rustix~repo~badge]: https://img.shields.io/badge/rustix-steelblue?logo=github
-[c~rustler~crates.io]: https://crates.io/crates/rustler
-[c~rustler~crates.io~badge]: https://img.shields.io/badge/crates.io-rustler-crimson
-[c~rustler~docs]: https://docs.rs/rustler
-[c~rustler~docs~badge]: https://img.shields.io/crates/v/rustler?label=rustler
-[c~rustler~lib.rs]: https://lib.rs/crates/rustler
-[c~rustler~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rustler-yellow
-[c~rustler~repo]: https://github.com/rusterlium/rustler
-[c~rustler~repo~badge]: https://img.shields.io/badge/rustler-steelblue?logo=github
-[c~rustlings~crates.io]: https://crates.io/crates/rustlings
-[c~rustlings~crates.io~badge]: https://img.shields.io/badge/crates.io-rustlings-crimson
-[c~rustlings~docs]: https://docs.rs/rustlings
-[c~rustlings~docs~badge]: https://img.shields.io/crates/v/rustlings?label=rustlings
-[c~rustlings~lib.rs]: https://lib.rs/crates/rustlings
-[c~rustlings~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rustlings-yellow
-[c~rustlings~repo]: https://github.com/rust-lang/rustlings
-[c~rustlings~repo~badge]: https://img.shields.io/badge/rustlings-steelblue?logo=github
-[c~rustls~crates.io]: https://crates.io/crates/rustls
-[c~rustls~crates.io~badge]: https://img.shields.io/badge/crates.io-rustls-crimson
-[c~rustls~docs]: https://docs.rs/rustls
-[c~rustls~docs~badge]: https://img.shields.io/crates/v/rustls?label=rustls
-[c~rustls~lib.rs]: https://lib.rs/crates/rustls
-[c~rustls~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rustls-yellow
-[c~rustls~repo]: https://github.com/rustls/rustls
-[c~rustls~repo~badge]: https://img.shields.io/badge/rustls-steelblue?logo=github
-[c~rustls~wikipedia]: https://en.wikipedia.org/wiki/Rustls
-[c~rustpython~crates.io]: https://crates.io/crates/rustpython
-[c~rustpython~crates.io~badge]: https://img.shields.io/badge/crates.io-rustpython-crimson
-[c~rustpython~docs]: https://docs.rs/rustpython
-[c~rustpython~docs~badge]: https://img.shields.io/crates/v/rustpython?label=rustpython
-[c~rustpython~lib.rs]: https://lib.rs/crates/rustpython
-[c~rustpython~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rustpython-yellow
-[c~rustpython~repo]: https://github.com/rustpython/rustpython
-[c~rustpython~repo~badge]: https://img.shields.io/badge/rustpython-steelblue?logo=github
-[c~rustros_tf~crates.io]: https://crates.io/crates/rustros_tf
-[c~rustros_tf~crates.io~badge]: https://img.shields.io/badge/crates.io-rustros__tf-crimson
-[c~rustros_tf~docs]: https://arjo129.github.io/rustros_tf/rustros_tf
-[c~rustros_tf~docs~badge]: https://img.shields.io/crates/v/rustros_tf?label=rustros_tf
-[c~rustros_tf~lib.rs]: https://lib.rs/crates/rustros_tf
-[c~rustros_tf~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rustros__tf-yellow
-[c~rustros_tf~repo]: https://github.com/arjo129/rustros_tf
-[c~rustros_tf~repo~badge]: https://img.shields.io/badge/rustros__tf-steelblue?logo=github
-[c~rustscan~crates.io]: https://crates.io/crates/rustscan
-[c~rustscan~crates.io~badge]: https://img.shields.io/badge/crates.io-rustscan-crimson
-[c~rustscan~docs]: https://docs.rs/rustscan
-[c~rustscan~docs~badge]: https://img.shields.io/crates/v/rustscan?label=rustscan
-[c~rustscan~lib.rs]: https://lib.rs/crates/rustscan
-[c~rustscan~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rustscan-yellow
-[c~rustscan~repo]: https://github.com/rustscan/rustscan
-[c~rustscan~repo~badge]: https://img.shields.io/badge/rustscan-steelblue?logo=github
-[c~rusttype~crates.io]: https://crates.io/crates/rusttype
-[c~rusttype~crates.io~badge]: https://img.shields.io/badge/crates.io-rusttype-crimson
-[c~rusttype~docs]: https://docs.rs/rusttype
-[c~rusttype~docs~badge]: https://img.shields.io/crates/v/rusttype?label=rusttype
-[c~rusttype~lib.rs]: https://lib.rs/crates/rusttype
-[c~rusttype~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rusttype-yellow
-[c~rusttype~repo]: https://gitlab.redox-os.org/redox-os/rusttype
-[c~rusttype~repo~badge]: https://img.shields.io/badge/rusttype-steelblue?logo=github
-[c~rutie~crates.io]: https://crates.io/crates/rutie
-[c~rutie~crates.io~badge]: https://img.shields.io/badge/crates.io-rutie-crimson
-[c~rutie~docs]: https://docs.rs/rutie
-[c~rutie~docs~badge]: https://img.shields.io/crates/v/rutie?label=rutie
-[c~rutie~lib.rs]: https://lib.rs/crates/rutie
-[c~rutie~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rutie-yellow
-[c~rutie~repo]: https://github.com/danielpclark/rutie
-[c~rutie~repo~badge]: https://img.shields.io/badge/rutie-steelblue?logo=github
-[c~rviz~crates.io]: https://crates.io/crates/rviz
-[c~rviz~crates.io~badge]: https://img.shields.io/badge/crates.io-rviz-crimson
-[c~rviz~docs]: https://docs.rs/rviz
-[c~rviz~docs~badge]: https://img.shields.io/crates/v/rviz?label=rviz
-[c~rviz~lib.rs]: https://lib.rs/crates/rviz
-[c~rviz~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rviz-yellow
-[c~rviz~repo]: https://github.com/RustRobitics/rviz
-[c~rviz~repo~badge]: https://img.shields.io/badge/rviz-steelblue?logo=github
-[c~rviz~website]: https://rrobotics.org
-[c~rviz~website~badge]: https://img.shields.io/badge/rviz-coral
-[c~rwasm~crates.io]: https://crates.io/crates/rwasm
-[c~rwasm~crates.io~badge]: https://img.shields.io/badge/crates.io-rwasm-crimson
-[c~rwasm~docs]: https://docs.rs/rwasm
-[c~rwasm~docs~badge]: https://img.shields.io/crates/v/rwasm?label=rwasm
-[c~rwasm~lib.rs]: https://lib.rs/crates/rwasm
-[c~rwasm~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rwasm-yellow
-[c~rwasm~repo]: https://github.com/rellfy/rwasm
-[c~rwasm~repo~badge]: https://img.shields.io/badge/rwasm-steelblue?logo=github
-[c~ryu~crates.io]: https://crates.io/crates/ryu
-[c~ryu~crates.io~badge]: https://img.shields.io/badge/crates.io-ryu-crimson
-[c~ryu~docs]: https://docs.rs/ryu
-[c~ryu~docs~badge]: https://img.shields.io/crates/v/ryu?label=ryu
-[c~ryu~lib.rs]: https://lib.rs/crates/ryu
-[c~ryu~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ryu-yellow
-[c~ryu~repo]: https://github.com/dtolnay/ryu
-[c~ryu~repo~badge]: https://img.shields.io/badge/ryu-steelblue?logo=github
-[c~salsa~crates.io]: https://crates.io/crates/salsa
-[c~salsa~crates.io~badge]: https://img.shields.io/badge/crates.io-salsa-crimson
-[c~salsa~docs]: https://docs.rs/salsa
-[c~salsa~docs~badge]: https://img.shields.io/crates/v/salsa?label=salsa
-[c~salsa~lib.rs]: https://lib.rs/crates/salsa
-[c~salsa~lib.rs~badge]: https://img.shields.io/badge/lib.rs-salsa-yellow
-[c~salsa~repo]: https://github.com/salsa-rs/salsa
-[c~salsa~repo~badge]: https://img.shields.io/badge/salsa-steelblue?logo=github
-[c~salsa~website]: https://salsa-rs.github.io/salsa/overview.html
-[c~same-file::Handle~docs]: https://docs.rs/same-file/latest/same-file/struct.Handle.html
-[c~same-file::is_same-file~docs]: https://docs.rs/same-file/latest/same-file/fn.is_same-file.html
-[c~same-file~crates.io]: https://crates.io/crates/same-file
-[c~same-file~crates.io~badge]: https://img.shields.io/badge/crates.io-same--file-crimson
-[c~same-file~docs]: https://docs.rs/same-file
-[c~same-file~docs~badge]: https://img.shields.io/crates/v/same-file?label=same-file
-[c~same-file~lib.rs]: https://lib.rs/crates/same-file
-[c~same-file~lib.rs~badge]: https://img.shields.io/badge/lib.rs-same--file-yellow
-[c~same-file~repo]: https://github.com/BurntSushi/same-file
-[c~same-file~repo~badge]: https://img.shields.io/badge/same--file-steelblue?logo=github
-[c~samoyed~crates.io]: https://crates.io/crates/samoyed
-[c~samoyed~crates.io~badge]: https://img.shields.io/badge/crates.io-samoyed-crimson
-[c~samoyed~docs]: https://docs.rs/samoyed
-[c~samoyed~docs~badge]: https://img.shields.io/crates/v/samoyed?label=samoyed
-[c~samoyed~lib.rs]: https://lib.rs/crates/samoyed
-[c~samoyed~lib.rs~badge]: https://img.shields.io/badge/lib.rs-samoyed-yellow
-[c~samoyed~repo]: https://github.com/nutthead/samoyed
-[c~samoyed~repo~badge]: https://img.shields.io/badge/samoyed-steelblue?logo=github
-[c~samply~crates.io]: https://crates.io/crates/samply
-[c~samply~crates.io~badge]: https://img.shields.io/badge/crates.io-samply-crimson
-[c~samply~docs]: https://docs.rs/samply
-[c~samply~docs~badge]: https://img.shields.io/crates/v/samply?label=samply
-[c~samply~lib.rs]: https://lib.rs/crates/samply
-[c~samply~lib.rs~badge]: https://img.shields.io/badge/lib.rs-samply-yellow
-[c~samply~repo]: https://github.com/mstange/samply
-[c~samply~repo~badge]: https://img.shields.io/badge/samply-steelblue?logo=github
-[c~saphyr~crates.io]: https://crates.io/crates/saphyr
-[c~saphyr~crates.io~badge]: https://img.shields.io/badge/crates.io-saphyr-crimson
-[c~saphyr~docs]: https://docs.rs/saphyr
-[c~saphyr~docs~badge]: https://img.shields.io/crates/v/saphyr?label=saphyr
-[c~saphyr~lib.rs]: https://lib.rs/crates/saphyr
-[c~saphyr~lib.rs~badge]: https://img.shields.io/badge/lib.rs-saphyr-yellow
-[c~saphyr~repo]: https://github.com/saphyr-rs/saphyr
-[c~saphyr~repo~badge]: https://img.shields.io/badge/saphyr-steelblue?logo=github
-[c~sbus~crates.io]: https://crates.io/crates/sbus
-[c~sbus~crates.io~badge]: https://img.shields.io/badge/crates.io-sbus-crimson
-[c~sbus~docs]: https://docs.rs/sbus
-[c~sbus~docs~badge]: https://img.shields.io/crates/v/sbus?label=sbus
-[c~sbus~lib.rs]: https://lib.rs/crates/sbus
-[c~sbus~lib.rs~badge]: https://img.shields.io/badge/lib.rs-sbus-yellow
-[c~sbus~repo]: https://github.com/zklapow/sbus
-[c~sbus~repo~badge]: https://img.shields.io/badge/sbus-steelblue?logo=github
-[c~sccache~crates.io]: https://crates.io/crates/sccache
-[c~sccache~crates.io~badge]: https://img.shields.io/badge/crates.io-sccache-crimson
-[c~sccache~docs]: https://docs.rs/sccache
-[c~sccache~docs~badge]: https://img.shields.io/crates/v/sccache?label=sccache
-[c~sccache~lib.rs]: https://lib.rs/crates/sccache
-[c~sccache~lib.rs~badge]: https://img.shields.io/badge/lib.rs-sccache-yellow
-[c~sccache~repo]: https://github.com/mozilla/sccache
-[c~sccache~repo~badge]: https://img.shields.io/badge/sccache-steelblue?logo=github
-[c~scopeguard~crates.io]: https://crates.io/crates/scopeguard
-[c~scopeguard~crates.io~badge]: https://img.shields.io/badge/crates.io-scopeguard-crimson
-[c~scopeguard~docs]: https://docs.rs/scopeguard
-[c~scopeguard~docs~badge]: https://img.shields.io/crates/v/scopeguard?label=scopeguard
-[c~scopeguard~lib.rs]: https://lib.rs/crates/scopeguard
-[c~scopeguard~lib.rs~badge]: https://img.shields.io/badge/lib.rs-scopeguard-yellow
-[c~scopeguard~repo]: https://github.com/bluss/scopeguard
-[c~scopeguard~repo~badge]: https://img.shields.io/badge/scopeguard-steelblue?logo=github
-[c~scraper~crates.io]: https://crates.io/crates/scraper
-[c~scraper~crates.io~badge]: https://img.shields.io/badge/crates.io-scraper-crimson
-[c~scraper~docs]: https://docs.rs/scraper
-[c~scraper~docs~badge]: https://img.shields.io/crates/v/scraper?label=scraper
-[c~scraper~lib.rs]: https://lib.rs/crates/scraper
-[c~scraper~lib.rs~badge]: https://img.shields.io/badge/lib.rs-scraper-yellow
-[c~scraper~repo]: https://github.com/causal-agent/scraper
-[c~scraper~repo~badge]: https://img.shields.io/badge/scraper-steelblue?logo=github
-[c~scroll~crates.io]: https://crates.io/crates/scroll
-[c~scroll~crates.io~badge]: https://img.shields.io/badge/crates.io-scroll-crimson
-[c~scroll~docs]: https://docs.rs/scroll
-[c~scroll~docs~badge]: https://img.shields.io/crates/v/scroll?label=scroll
-[c~scroll~lib.rs]: https://lib.rs/crates/scroll
-[c~scroll~lib.rs~badge]: https://img.shields.io/badge/lib.rs-scroll-yellow
-[c~scroll~repo]: https://github.com/m4b/scroll
-[c~scroll~repo~badge]: https://img.shields.io/badge/scroll-steelblue?logo=github
-[c~scrypt~crates.io]: https://crates.io/crates/scrypt
-[c~scrypt~crates.io~badge]: https://img.shields.io/badge/crates.io-scrypt-crimson
-[c~scrypt~docs]: https://docs.rs/scrypt
-[c~scrypt~docs~badge]: https://img.shields.io/crates/v/scrypt?label=scrypt
-[c~scrypt~lib.rs]: https://lib.rs/crates/scrypt
-[c~scrypt~lib.rs~badge]: https://img.shields.io/badge/lib.rs-scrypt-yellow
-[c~scrypt~repo]: https://github.com/RustCrypto/password-hashes
-[c~scrypt~repo~badge]: https://img.shields.io/badge/scrypt-steelblue?logo=github
-[c~scrypt~website]: https://github.com/RustCrypto/password-hashes/tree/master/scrypt
-[c~scrypt~website~badge]: https://img.shields.io/badge/scrypt-coral
-[c~sdl2~crates.io]: https://crates.io/crates/sdl2
-[c~sdl2~crates.io~badge]: https://img.shields.io/badge/crates.io-sdl2-crimson
-[c~sdl2~docs]: https://rust-sdl2.github.io/rust-sdl2/sdl2
-[c~sdl2~docs~badge]: https://img.shields.io/crates/v/sdl2?label=sdl2
-[c~sdl2~lib.rs]: https://lib.rs/crates/sdl2
-[c~sdl2~lib.rs~badge]: https://img.shields.io/badge/lib.rs-sdl2-yellow
-[c~sdl2~repo]: https://github.com/Rust-SDL2/rust-sdl2
-[c~sdl2~repo~badge]: https://img.shields.io/badge/sdl2-steelblue?logo=github
-[c~sd~crates.io]: https://crates.io/crates/sd
-[c~sd~crates.io~badge]: https://img.shields.io/badge/crates.io-sd-crimson
-[c~sd~docs]: https://docs.rs/sd
-[c~sd~docs~badge]: https://img.shields.io/crates/v/sd?label=sd
-[c~sd~lib.rs]: https://lib.rs/crates/sd
-[c~sd~lib.rs~badge]: https://img.shields.io/badge/lib.rs-sd-yellow
-[c~sd~repo]: https://github.com/chmln/sd
-[c~sd~repo~badge]: https://img.shields.io/badge/sd-steelblue?logo=github
-[c~sd~website]: https://github.com/chmln/sd
-[c~sd~website~badge]: https://img.shields.io/badge/sd-coral
-[c~sea-orm-cli~crates.io]: https://crates.io/crates/sea-orm-cli
-[c~sea-orm-cli~crates.io~badge]: https://img.shields.io/badge/crates.io-sea--orm--cli-crimson
-[c~sea-orm-cli~docs]: https://docs.rs/sea-orm-cli/latest/sea-orm-cli
-[c~sea-orm-cli~docs~badge]: https://img.shields.io/crates/v/sea-orm-cli?label=sea-orm-cli
-[c~sea-orm-cli~lib.rs]: https://lib.rs/crates/sea-orm-cli
-[c~sea-orm-cli~lib.rs~badge]: https://img.shields.io/badge/lib.rs-sea--orm--cli-yellow
-[c~sea-orm-cli~repo]: https://github.com/SeaQL/sea-orm
-[c~sea-orm-cli~repo~badge]: https://img.shields.io/badge/sea--orm--cli-steelblue?logo=github
-[c~sea-orm-cli~website]: https://sea-ql.org/SeaORM
-[c~sea-orm-cli~website~badge]: https://img.shields.io/badge/sea--orm--cli-coral
-[c~sea-orm~cookbook]: https://sea-ql.org/sea-orm-cookbook
-[c~sea-orm~cookbook~badge]: https://img.shields.io/badge/sea__orm_cookbook-coral
-[c~sea-orm~crates.io]: https://crates.io/crates/sea-orm
-[c~sea-orm~crates.io~badge]: https://img.shields.io/badge/crates.io-sea--orm-crimson
-[c~sea-orm~docs]: https://docs.rs/sea-orm
-[c~sea-orm~docs~badge]: https://img.shields.io/crates/v/sea-orm?label=sea-orm
-[c~sea-orm~lib.rs]: https://lib.rs/crates/sea-orm
-[c~sea-orm~lib.rs~badge]: https://img.shields.io/badge/lib.rs-sea--orm-yellow
-[c~sea-orm~repo]: https://github.com/SeaQL/sea-orm
-[c~sea-orm~repo~badge]: https://img.shields.io/badge/sea--orm-steelblue?logo=github
-[c~sea-orm~website]: https://sea-ql.org/SeaORM
-[c~sea-orm~website~badge]: https://img.shields.io/badge/sea--orm-coral
-[c~seaography~crates.io]: https://crates.io/crates/seaography
-[c~seaography~crates.io~badge]: https://img.shields.io/badge/crates.io-seaography-crimson
-[c~seaography~docs]: https://docs.rs/seaography
-[c~seaography~docs~badge]: https://img.shields.io/crates/v/seaography?label=seaography
-[c~seaography~lib.rs]: https://lib.rs/crates/seaography
-[c~seaography~lib.rs~badge]: https://img.shields.io/badge/lib.rs-seaography-yellow
-[c~seaography~repo]: https://github.com/SeaQL/seaography
-[c~seaography~repo~badge]: https://img.shields.io/badge/seaography-steelblue?logo=github
-[c~seaography~website]: https://sea-ql.org/Seaography
-[c~seaography~website~badge]: https://img.shields.io/badge/seaography-coral
-[c~secp256k1~crates.io]: https://crates.io/crates/secp256k1
-[c~secp256k1~crates.io~badge]: https://img.shields.io/badge/crates.io-secp256k1-crimson
-[c~secp256k1~docs]: https://docs.rs/secp256k1
-[c~secp256k1~docs~badge]: https://img.shields.io/crates/v/secp256k1?label=secp256k1
-[c~secp256k1~lib.rs]: https://lib.rs/crates/secp256k1
-[c~secp256k1~lib.rs~badge]: https://img.shields.io/badge/lib.rs-secp256k1-yellow
-[c~secp256k1~repo]: https://github.com/rust-bitcoin/rust-secp256k1
-[c~secp256k1~repo~badge]: https://img.shields.io/badge/secp256k1-steelblue?logo=github
-[c~seed~crates.io]: https://crates.io/crates/seed
-[c~seed~crates.io~badge]: https://img.shields.io/badge/crates.io-seed-crimson
-[c~seed~docs]: https://docs.rs/seed
-[c~seed~docs~badge]: https://img.shields.io/crates/v/seed?label=seed
-[c~seed~lib.rs]: https://lib.rs/crates/seed
-[c~seed~lib.rs~badge]: https://img.shields.io/badge/lib.rs-seed-yellow
-[c~seed~repo]: https://github.com/seed-rs/seed
-[c~seed~repo~badge]: https://img.shields.io/badge/seed-steelblue?logo=github
-[c~seed~website]: https://seed-rs.org
-[c~seed~website~badge]: https://img.shields.io/badge/seed-coral
-[c~seize~crates.io]: https://crates.io/crates/seize
-[c~seize~crates.io~badge]: https://img.shields.io/badge/crates.io-seize-crimson
-[c~seize~docs]: https://docs.rs/seize
-[c~seize~docs~badge]: https://img.shields.io/crates/v/seize?label=seize
-[c~seize~lib.rs]: https://lib.rs/crates/seize
-[c~seize~lib.rs~badge]: https://img.shields.io/badge/lib.rs-seize-yellow
-[c~seize~repo]: https://github.com/ibraheemdev/seize
-[c~seize~repo~badge]: https://img.shields.io/badge/seize-steelblue?logo=github
-[c~select::document::Document::find~docs]: https://docs.rs/select/latest/select/document/struct.Document.html#method.find
-[c~select::document::Document::from_read~docs]: https://docs.rs/select/latest/select/document/struct.Document.html#method.from_read
-[c~select::node::Node::attr~docs]: https://docs.rs/select/latest/select/node/struct.Node.html#method.attr
-[c~select::predicate::Name~docs]: https://docs.rs/select/latest/select/predicate/struct.Name.html
-[c~select::selection::Selection~docs]: https://docs.rs/select/latest/select/selection/struct.Selection.html
-[c~select~crates.io]: https://crates.io/crates/select
-[c~select~crates.io~badge]: https://img.shields.io/badge/crates.io-select-crimson
-[c~select~docs]: https://docs.rs/select
-[c~select~docs~badge]: https://img.shields.io/crates/v/select?label=select
-[c~select~lib.rs]: https://lib.rs/crates/select
-[c~select~lib.rs~badge]: https://img.shields.io/badge/lib.rs-select-yellow
-[c~select~repo]: https://github.com/utkarshkukreti/select.rs
-[c~select~repo~badge]: https://img.shields.io/badge/select-steelblue?logo=github
-[c~self_update~crates.io]: https://crates.io/crates/self_update
-[c~self_update~crates.io~badge]: https://img.shields.io/badge/crates.io-self__update-crimson
-[c~self_update~docs]: https://docs.rs/self_update
-[c~self_update~docs~badge]: https://img.shields.io/crates/v/self_update?label=self_update
-[c~self_update~lib.rs]: https://lib.rs/crates/self_update
-[c~self_update~lib.rs~badge]: https://img.shields.io/badge/lib.rs-self__update-yellow
-[c~self_update~repo]: https://github.com/jaemk/self_update
-[c~self_update~repo~badge]: https://img.shields.io/badge/self__update-steelblue?logo=github
-[c~semver::Version::parse~docs]: https://docs.rs/semver/latest/semver/struct.Version.html#method.parse
-[c~semver::VersionReq::matches~docs]: https://docs.rs/semver/latest/semver/struct.VersionReq.html#method.matches
-[c~semver::VersionReq~docs]: https://docs.rs/semver/latest/semver/struct.VersionReq.html
-[c~semver::Version~docs]: https://docs.rs/semver/latest/semver/struct.Version.html
-[c~semver~crates.io]: https://crates.io/crates/semver
-[c~semver~crates.io~badge]: https://img.shields.io/badge/crates.io-semver-crimson
-[c~semver~docs]: https://docs.rs/semver
-[c~semver~docs~badge]: https://img.shields.io/crates/v/semver?label=semver
-[c~semver~lib.rs]: https://lib.rs/crates/semver
-[c~semver~lib.rs~badge]: https://img.shields.io/badge/lib.rs-semver-yellow
-[c~semver~repo]: https://github.com/dtolnay/semver
-[c~semver~repo~badge]: https://img.shields.io/badge/semver-steelblue?logo=github
-[c~semver~spec]: http://semver.org
-[c~sentry~crates.io]: https://crates.io/crates/sentry
-[c~sentry~crates.io~badge]: https://img.shields.io/badge/crates.io-sentry-crimson
-[c~sentry~docs]: https://docs.rs/sentry
-[c~sentry~docs~badge]: https://img.shields.io/crates/v/sentry?label=sentry
-[c~sentry~lib.rs]: https://lib.rs/crates/sentry
-[c~sentry~lib.rs~badge]: https://img.shields.io/badge/lib.rs-sentry-yellow
-[c~sentry~repo]: https://github.com/getsentry/sentry-rust
-[c~sentry~repo~badge]: https://img.shields.io/badge/sentry-steelblue?logo=github
-[c~sentry~website]: https://sentry.io/welcome
-[c~sentry~website~badge]: https://img.shields.io/badge/sentry-coral
-[c~serde-encrypted-value~crates.io]: https://crates.io/crates/serde-encrypted-value
-[c~serde-encrypted-value~crates.io~badge]: https://img.shields.io/badge/crates.io-serde--encrypted--value-crimson
-[c~serde-encrypted-value~docs]: https://docs.rs/serde-encrypted-value
-[c~serde-encrypted-value~docs~badge]: https://img.shields.io/crates/v/serde-encrypted-value?label=serde-encrypted-value
-[c~serde-encrypted-value~lib.rs]: https://lib.rs/crates/serde-encrypted-value
-[c~serde-encrypted-value~lib.rs~badge]: https://img.shields.io/badge/lib.rs-serde--encrypted--value-yellow
-[c~serde-encrypted-value~repo]: https://github.com/palantir/serde-encrypted-value
-[c~serde-encrypted-value~repo~badge]: https://img.shields.io/badge/serde--encrypted--value-steelblue?logo=github
-[c~serde-xml-rs~crates.io]: https://crates.io/crates/serde-xml-rs
-[c~serde-xml-rs~crates.io~badge]: https://img.shields.io/badge/crates.io-serde--xml--rs-crimson
-[c~serde-xml-rs~docs]: https://docs.rs/serde-xml-rs
-[c~serde-xml-rs~docs~badge]: https://img.shields.io/crates/v/serde-xml-rs?label=serde-xml-rs
-[c~serde-xml-rs~lib.rs]: https://lib.rs/crates/serde-xml-rs
-[c~serde-xml-rs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-serde--xml--rs-yellow
-[c~serde-xml-rs~repo]: https://github.com/RReverser/serde-xml-rs
-[c~serde-xml-rs~repo~badge]: https://img.shields.io/badge/serde--xml--rs-steelblue?logo=github
-[c~serde::Deserialize~docs]: https://docs.rs/serde/latest/serde/trait.Deserialize.html
-[c~serde_arrow~crates.io]: https://crates.io/crates/serde_arrow
-[c~serde_arrow~crates.io~badge]: https://img.shields.io/badge/crates.io-serde__arrow-crimson
-[c~serde_arrow~docs]: https://docs.rs/serde_arrow
-[c~serde_arrow~docs~badge]: https://img.shields.io/crates/v/serde_arrow?label=serde_arrow
-[c~serde_arrow~lib.rs]: https://lib.rs/crates/serde_arrow
-[c~serde_arrow~lib.rs~badge]: https://img.shields.io/badge/lib.rs-serde__arrow-yellow
-[c~serde_arrow~repo]: https://github.com/chmp/serde_arrow
-[c~serde_arrow~repo~badge]: https://img.shields.io/badge/serde__arrow-steelblue?logo=github
-[c~serde_cbor~crates.io]: https://crates.io/crates/serde_cbor
-[c~serde_cbor~crates.io~badge]: https://img.shields.io/badge/crates.io-serde__cbor-crimson
-[c~serde_cbor~docs]: https://docs.rs/serde_cbor
-[c~serde_cbor~docs~badge]: https://img.shields.io/crates/v/serde_cbor?label=serde_cbor
-[c~serde_cbor~lib.rs]: https://lib.rs/crates/serde_cbor
-[c~serde_cbor~lib.rs~badge]: https://img.shields.io/badge/lib.rs-serde__cbor-yellow
-[c~serde_cbor~repo]: https://github.com/pyfisch/cbor
-[c~serde_cbor~repo~badge]: https://img.shields.io/badge/serde__cbor-steelblue?logo=github
-[c~serde_derive~crates.io]: https://crates.io/crates/serde_derive
-[c~serde_derive~crates.io~badge]: https://img.shields.io/badge/crates.io-serde__derive-crimson
-[c~serde_derive~docs]: https://serde.rs/derive.html
-[c~serde_derive~docs~badge]: https://img.shields.io/crates/v/serde_derive?label=serde_derive
-[c~serde_derive~lib.rs]: https://lib.rs/crates/serde_derive
-[c~serde_derive~lib.rs~badge]: https://img.shields.io/badge/lib.rs-serde__derive-yellow
-[c~serde_derive~repo]: https://github.com/serde-rs/serde
-[c~serde_derive~repo~badge]: https://img.shields.io/badge/serde__derive-steelblue?logo=github
-[c~serde_derive~website]: https://serde.rs
-[c~serde_derive~website~badge]: https://img.shields.io/badge/serde__derive-coral
-[c~serde_ignored~crates.io]: https://crates.io/crates/serde_ignored
-[c~serde_ignored~crates.io~badge]: https://img.shields.io/badge/crates.io-serde__ignored-crimson
-[c~serde_ignored~docs]: https://docs.rs/serde_ignored
-[c~serde_ignored~docs~badge]: https://img.shields.io/crates/v/serde_ignored?label=serde_ignored
-[c~serde_ignored~lib.rs]: https://lib.rs/crates/serde_ignored
-[c~serde_ignored~lib.rs~badge]: https://img.shields.io/badge/lib.rs-serde__ignored-yellow
-[c~serde_ignored~repo]: https://github.com/dtolnay/serde-ignored
-[c~serde_ignored~repo~badge]: https://img.shields.io/badge/serde__ignored-steelblue?logo=github
-[c~serde_json::Value~docs]: https://docs.serde.rs/serde_json/enum.Value.html
-[c~serde_json::from_str~docs]: https://docs.rs/serde_json/latest/serde_json/fn.from_str.html
-[c~serde_json::json~docs]: https://docs.rs/serde_json/latest/serde_json/macro.json.html
-[c~serde_json::to_string~docs]: https://docs.rs/serde_json/latest/serde_json/fn.to_string.html
-[c~serde_json~crates.io]: https://crates.io/crates/serde_json
-[c~serde_json~crates.io~badge]: https://img.shields.io/badge/crates.io-serde__json-crimson
-[c~serde_json~docs]: https://docs.rs/serde_json
-[c~serde_json~docs~badge]: https://img.shields.io/crates/v/serde_json?label=serde_json
-[c~serde_json~lib.rs]: https://lib.rs/crates/serde_json
-[c~serde_json~lib.rs~badge]: https://img.shields.io/badge/lib.rs-serde__json-yellow
-[c~serde_json~repo]: https://github.com/serde-rs/json
-[c~serde_json~repo~badge]: https://img.shields.io/badge/serde__json-steelblue?logo=github
-[c~serde_toml~crates.io]: https://crates.io/crates/serde_toml
-[c~serde_toml~crates.io~badge]: https://img.shields.io/badge/crates.io-serde__toml-crimson
-[c~serde_toml~docs]: https://docs.rs/serde_toml/0.0.1/serde_toml
-[c~serde_toml~docs~badge]: https://img.shields.io/crates/v/serde_toml?label=serde_toml
-[c~serde_toml~lib.rs]: https://lib.rs/crates/serde_toml
-[c~serde_toml~lib.rs~badge]: https://img.shields.io/badge/lib.rs-serde__toml-yellow
-[c~serde_toml~repo]: https://github.com/toml-rs/toml
-[c~serde_toml~repo~badge]: https://img.shields.io/badge/serde__toml-steelblue?logo=github
-[c~serde_with~crates.io]: https://crates.io/crates/serde_with
-[c~serde_with~crates.io~badge]: https://img.shields.io/badge/crates.io-serde__with-crimson
-[c~serde_with~docs]: https://docs.rs/serde_with
-[c~serde_with~docs~badge]: https://img.shields.io/crates/v/serde_with?label=serde_with
-[c~serde_with~lib.rs]: https://lib.rs/crates/serde_with
-[c~serde_with~lib.rs~badge]: https://img.shields.io/badge/lib.rs-serde__with-yellow
-[c~serde_with~repo]: https://github.com/jonasbb/serde_with
-[c~serde_with~repo~badge]: https://img.shields.io/badge/serde__with-steelblue?logo=github
-[c~serde_yml~crates.io]: https://crates.io/crates/serde_yml
-[c~serde_yml~crates.io~badge]: https://img.shields.io/badge/crates.io-serde__yml-crimson
-[c~serde_yml~docs]: https://docs.rs/serde_yml
-[c~serde_yml~docs~badge]: https://img.shields.io/crates/v/serde_yml?label=serde_yml
-[c~serde_yml~lib.rs]: https://lib.rs/crates/serde_yml
-[c~serde_yml~lib.rs~badge]: https://img.shields.io/badge/lib.rs-serde__yml-yellow
-[c~serde_yml~repo]: https://github.com/sebastienrousseau/serde_yml
-[c~serde_yml~repo~badge]: https://img.shields.io/badge/serde__yml-steelblue?logo=github
-[c~serde_yml~website]: https://serdeyml.com
-[c~serde_yml~website~badge]: https://img.shields.io/badge/serde__yml-coral
-[c~serde~crates.io]: https://crates.io/crates/serde
-[c~serde~crates.io~badge]: https://img.shields.io/badge/crates.io-serde-crimson
-[c~serde~docs]: https://docs.rs/serde
-[c~serde~docs~badge]: https://img.shields.io/crates/v/serde?label=serde
-[c~serde~lib.rs]: https://lib.rs/crates/serde
-[c~serde~lib.rs~badge]: https://img.shields.io/badge/lib.rs-serde-yellow
-[c~serde~repo]: https://github.com/serde-rs/serde
-[c~serde~repo~badge]: https://img.shields.io/badge/serde-steelblue?logo=github
-[c~serde~supported-formats]: https://docs.rs/serde/latest/serde/#data-formats
-[c~serde~website]: https://serde.rs
-[c~serde~website~badge]: https://img.shields.io/badge/serde-coral
-[c~serial_test~crates.io]: https://crates.io/crates/serial_test
-[c~serial_test~crates.io~badge]: https://img.shields.io/badge/crates.io-serial__test-crimson
-[c~serial_test~docs]: https://docs.rs/serial_test
-[c~serial_test~docs~badge]: https://img.shields.io/crates/v/serial_test?label=serial_test
-[c~serial_test~lib.rs]: https://lib.rs/crates/serial_test
-[c~serial_test~lib.rs~badge]: https://img.shields.io/badge/lib.rs-serial__test-yellow
-[c~serial_test~repo]: https://github.com/palfrey/serial_test
-[c~serial_test~repo~badge]: https://img.shields.io/badge/serial__test-steelblue?logo=github
-[c~serialport~crates.io]: https://crates.io/crates/serialport
-[c~serialport~crates.io~badge]: https://img.shields.io/badge/crates.io-serialport-crimson
-[c~serialport~docs]: https://docs.rs/serialport
-[c~serialport~docs~badge]: https://img.shields.io/crates/v/serialport?label=serialport
-[c~serialport~lib.rs]: https://lib.rs/crates/serialport
-[c~serialport~lib.rs~badge]: https://img.shields.io/badge/lib.rs-serialport-yellow
-[c~serialport~repo]: https://github.com/serialport/serialport-rs
-[c~serialport~repo~badge]: https://img.shields.io/badge/serialport-steelblue?logo=github
-[c~sha1~crates.io]: https://crates.io/crates/sha1
-[c~sha1~crates.io~badge]: https://img.shields.io/badge/crates.io-sha1-crimson
-[c~sha1~docs]: https://docs.rs/sha1
-[c~sha1~docs~badge]: https://img.shields.io/crates/v/sha1?label=sha1
-[c~sha1~lib.rs]: https://lib.rs/crates/sha1
-[c~sha1~lib.rs~badge]: https://img.shields.io/badge/lib.rs-sha1-yellow
-[c~sha1~repo]: https://github.com/RustCrypto/hashes/tree/master/sha1
-[c~sha1~repo~badge]: https://img.shields.io/badge/sha1-steelblue?logo=github
-[c~sha2~crates.io]: https://crates.io/crates/sha2
-[c~sha2~crates.io~badge]: https://img.shields.io/badge/crates.io-sha2-crimson
-[c~sha2~docs]: https://docs.rs/sha2
-[c~sha2~docs~badge]: https://img.shields.io/crates/v/sha2?label=sha2
-[c~sha2~lib.rs]: https://lib.rs/crates/sha2
-[c~sha2~lib.rs~badge]: https://img.shields.io/badge/lib.rs-sha2-yellow
-[c~sha2~repo]: https://github.com/RustCrypto/hashes/tree/master/sha2
-[c~sha2~repo~badge]: https://img.shields.io/badge/sha2-steelblue?logo=github
-[c~shaderc~crates.io]: https://crates.io/crates/shaderc
-[c~shaderc~crates.io~badge]: https://img.shields.io/badge/crates.io-shaderc-crimson
-[c~shaderc~docs]: https://docs.rs/shaderc
-[c~shaderc~docs~badge]: https://img.shields.io/crates/v/shaderc?label=shaderc
-[c~shaderc~lib.rs]: https://lib.rs/crates/shaderc
-[c~shaderc~lib.rs~badge]: https://img.shields.io/badge/lib.rs-shaderc-yellow
-[c~shaderc~repo]: https://github.com/google/shaderc-rs
-[c~shaderc~repo~badge]: https://img.shields.io/badge/shaderc-steelblue?logo=github
-[c~shaku~crates.io]: https://crates.io/crates/shaku
-[c~shaku~crates.io~badge]: https://img.shields.io/badge/crates.io-shaku-crimson
-[c~shaku~docs]: https://docs.rs/shaku
-[c~shaku~docs~badge]: https://img.shields.io/crates/v/shaku?label=shaku
-[c~shaku~lib.rs]: https://lib.rs/crates/shaku
-[c~shaku~lib.rs~badge]: https://img.shields.io/badge/lib.rs-shaku-yellow
-[c~shaku~repo]: https://github.com/AzureMarker/shaku
-[c~shaku~repo~badge]: https://img.shields.io/badge/shaku-steelblue?logo=github
-[c~shell2batch~crates.io]: https://crates.io/crates/shell2batch
-[c~shell2batch~crates.io~badge]: https://img.shields.io/badge/crates.io-shell2batch-crimson
-[c~shell2batch~docs]: https://sagiegurari.github.io/shell2batch/api/shell2batch
-[c~shell2batch~docs~badge]: https://img.shields.io/crates/v/shell2batch?label=shell2batch
-[c~shell2batch~lib.rs]: https://lib.rs/crates/shell2batch
-[c~shell2batch~lib.rs~badge]: https://img.shields.io/badge/lib.rs-shell2batch-yellow
-[c~shell2batch~repo]: https://github.com/sagiegurari/shell2batch
-[c~shell2batch~repo~badge]: https://img.shields.io/badge/shell2batch-steelblue?logo=github
-[c~shell2batch~website]: http://github.com/sagiegurari/shell2batch
-[c~shell2batch~website~badge]: https://img.shields.io/badge/shell2batch-coral
-[c~shiplift~crates.io]: https://crates.io/crates/shiplift
-[c~shiplift~crates.io~badge]: https://img.shields.io/badge/crates.io-shiplift-crimson
-[c~shiplift~docs]: https://docs.rs/shiplift
-[c~shiplift~docs~badge]: https://img.shields.io/crates/v/shiplift?label=shiplift
-[c~shiplift~lib.rs]: https://lib.rs/crates/shiplift
-[c~shiplift~lib.rs~badge]: https://img.shields.io/badge/lib.rs-shiplift-yellow
-[c~shiplift~repo]: https://github.com/softprops/shiplift
-[c~shiplift~repo~badge]: https://img.shields.io/badge/shiplift-steelblue?logo=github
-[c~shoes~crates.io]: https://crates.io/crates/shoes
-[c~shoes~crates.io~badge]: https://img.shields.io/badge/crates.io-shoes-crimson
-[c~shoes~docs]: https://docs.rs/shoes
-[c~shoes~docs~badge]: https://img.shields.io/crates/v/shoes?label=shoes
-[c~shoes~lib.rs]: https://lib.rs/crates/shoes
-[c~shoes~lib.rs~badge]: https://img.shields.io/badge/lib.rs-shoes-yellow
-[c~shoes~repo]: https://github.com/cfal/shoes
-[c~shoes~repo~badge]: https://img.shields.io/badge/shoes-steelblue?logo=github
-[c~show-option~crates.io]: https://crates.io/crates/show-option
-[c~show-option~crates.io~badge]: https://img.shields.io/badge/crates.io-show--option-crimson
-[c~show-option~docs]: https://docs.rs/show-option
-[c~show-option~docs~badge]: https://img.shields.io/crates/v/show-option?label=show-option
-[c~show-option~lib.rs]: https://lib.rs/crates/show-option
-[c~show-option~lib.rs~badge]: https://img.shields.io/badge/lib.rs-show--option-yellow
-[c~show-option~repo]: https://github.com/kriomant/show-option
-[c~show-option~repo~badge]: https://img.shields.io/badge/show--option-steelblue?logo=github
-[c~show-option~website]: https://github.com/kriomant/show-option
-[c~show-option~website~badge]: https://img.shields.io/badge/show--option-coral
-[c~shuttle~crates.io]: https://crates.io/crates/shuttle
-[c~shuttle~crates.io~badge]: https://img.shields.io/badge/crates.io-shuttle-crimson
-[c~shuttle~docs]: https://docs.rs/shuttle
-[c~shuttle~docs~badge]: https://img.shields.io/crates/v/shuttle?label=shuttle
-[c~shuttle~lib.rs]: https://lib.rs/crates/shuttle
-[c~shuttle~lib.rs~badge]: https://img.shields.io/badge/lib.rs-shuttle-yellow
-[c~shuttle~repo]: https://github.com/awslabs/shuttle
-[c~shuttle~repo~badge]: https://img.shields.io/badge/shuttle-steelblue?logo=github
-[c~sibyl~crates.io]: https://crates.io/crates/sibyl
-[c~sibyl~crates.io~badge]: https://img.shields.io/badge/crates.io-sibyl-crimson
-[c~sibyl~docs]: https://docs.rs/sibyl
-[c~sibyl~docs~badge]: https://img.shields.io/crates/v/sibyl?label=sibyl
-[c~sibyl~lib.rs]: https://lib.rs/crates/sibyl
-[c~sibyl~lib.rs~badge]: https://img.shields.io/badge/lib.rs-sibyl-yellow
-[c~sibyl~repo]: https://github.com/quietboil/sibyl
-[c~sibyl~repo~badge]: https://img.shields.io/badge/sibyl-steelblue?logo=github
-[c~sibyl~website]: https://quietboil.github.io/sibyl
-[c~sibyl~website~badge]: https://img.shields.io/badge/sibyl-coral
-[c~signal-hook~crates.io]: https://crates.io/crates/signal-hook
-[c~signal-hook~crates.io~badge]: https://img.shields.io/badge/crates.io-signal--hook-crimson
-[c~signal-hook~docs]: https://docs.rs/signal-hook
-[c~signal-hook~docs~badge]: https://img.shields.io/crates/v/signal-hook?label=signal-hook
-[c~signal-hook~lib.rs]: https://lib.rs/crates/signal-hook
-[c~signal-hook~lib.rs~badge]: https://img.shields.io/badge/lib.rs-signal--hook-yellow
-[c~signal-hook~repo]: https://github.com/vorner/signal-hook
-[c~signal-hook~repo~badge]: https://img.shields.io/badge/signal--hook-steelblue?logo=github
-[c~simd-json~crates.io]: https://crates.io/crates/simd-json
-[c~simd-json~crates.io~badge]: https://img.shields.io/badge/crates.io-simd--json-crimson
-[c~simd-json~docs]: https://docs.rs/simd-json
-[c~simd-json~docs~badge]: https://img.shields.io/crates/v/simd-json?label=simd-json
-[c~simd-json~lib.rs]: https://lib.rs/crates/simd-json
-[c~simd-json~lib.rs~badge]: https://img.shields.io/badge/lib.rs-simd--json-yellow
-[c~simd-json~repo]: https://github.com/simd-lite/simd-json
-[c~simd-json~repo~badge]: https://img.shields.io/badge/simd--json-steelblue?logo=github
-[c~similar~crates.io]: https://crates.io/crates/similar
-[c~similar~crates.io~badge]: https://img.shields.io/badge/crates.io-similar-crimson
-[c~similar~docs]: https://docs.rs/similar
-[c~similar~docs~badge]: https://img.shields.io/crates/v/similar?label=similar
-[c~similar~lib.rs]: https://lib.rs/crates/similar
-[c~similar~lib.rs~badge]: https://img.shields.io/badge/lib.rs-similar-yellow
-[c~similar~repo]: https://github.com/mitsuhiko/similar
-[c~similar~repo~badge]: https://img.shields.io/badge/similar-steelblue?logo=github
-[c~skia-safe~crates.io]: https://crates.io/crates/skia-safe
-[c~skia-safe~crates.io~badge]: https://img.shields.io/badge/crates.io-skia--safe-crimson
-[c~skia-safe~docs]: https://rust-skia.github.io/doc/skia-safe
-[c~skia-safe~docs~badge]: https://img.shields.io/crates/v/skia-safe?label=skia-safe
-[c~skia-safe~lib.rs]: https://lib.rs/crates/skia-safe
-[c~skia-safe~lib.rs~badge]: https://img.shields.io/badge/lib.rs-skia--safe-yellow
-[c~skia-safe~repo]: https://github.com/rust-skia/rust-skia
-[c~skia-safe~repo~badge]: https://img.shields.io/badge/skia--safe-steelblue?logo=github
-[c~skim~crates.io]: https://crates.io/crates/skim
-[c~skim~crates.io~badge]: https://img.shields.io/badge/crates.io-skim-crimson
-[c~skim~docs]: https://docs.rs/skim
-[c~skim~docs~badge]: https://img.shields.io/crates/v/skim?label=skim
-[c~skim~lib.rs]: https://lib.rs/crates/skim
-[c~skim~lib.rs~badge]: https://img.shields.io/badge/lib.rs-skim-yellow
-[c~skim~repo]: https://github.com/skim-rs/skim
-[c~skim~repo~badge]: https://img.shields.io/badge/skim-steelblue?logo=github
-[c~skiplist~crates.io]: https://crates.io/crates/skiplist
-[c~skiplist~crates.io~badge]: https://img.shields.io/badge/crates.io-skiplist-crimson
-[c~skiplist~docs]: https://docs.rs/skiplist
-[c~skiplist~docs~badge]: https://img.shields.io/crates/v/skiplist?label=skiplist
-[c~skiplist~lib.rs]: https://lib.rs/crates/skiplist
-[c~skiplist~lib.rs~badge]: https://img.shields.io/badge/lib.rs-skiplist-yellow
-[c~skiplist~repo]: https://github.com/JP-Ellis/rust-skiplist
-[c~skiplist~repo~badge]: https://img.shields.io/badge/skiplist-steelblue?logo=github
-[c~skiplist~website]: https://jpellis.me/projects/rust-skiplist
-[c~skiplist~website~badge]: https://img.shields.io/badge/skiplist-coral
-[c~slab~crates.io]: https://crates.io/crates/slab
-[c~slab~crates.io~badge]: https://img.shields.io/badge/crates.io-slab-crimson
-[c~slab~docs]: https://docs.rs/slab
-[c~slab~docs~badge]: https://img.shields.io/crates/v/slab?label=slab
-[c~slab~lib.rs]: https://lib.rs/crates/slab
-[c~slab~lib.rs~badge]: https://img.shields.io/badge/lib.rs-slab-yellow
-[c~slab~repo]: https://github.com/tokio-rs/slab
-[c~slab~repo~badge]: https://img.shields.io/badge/slab-steelblue?logo=github
-[c~sled~crates.io]: https://crates.io/crates/sled
-[c~sled~crates.io~badge]: https://img.shields.io/badge/crates.io-sled-crimson
-[c~sled~docs]: https://docs.rs/sled
-[c~sled~docs~badge]: https://img.shields.io/crates/v/sled?label=sled
-[c~sled~lib.rs]: https://lib.rs/crates/sled
-[c~sled~lib.rs~badge]: https://img.shields.io/badge/lib.rs-sled-yellow
-[c~sled~repo]: https://github.com/spacejam/sled
-[c~sled~repo~badge]: https://img.shields.io/badge/sled-steelblue?logo=github
-[c~slint~crates.io]: https://crates.io/crates/slint
-[c~slint~crates.io~badge]: https://img.shields.io/badge/crates.io-slint-crimson
-[c~slint~docs]: https://docs.rs/slint
-[c~slint~docs~badge]: https://img.shields.io/crates/v/slint?label=slint
-[c~slint~lib.rs]: https://lib.rs/crates/slint
-[c~slint~lib.rs~badge]: https://img.shields.io/badge/lib.rs-slint-yellow
-[c~slint~madewithslint~website]: https://madewithslint.com
-[c~slint~repo]: https://github.com/slint-ui/slint
-[c~slint~repo~badge]: https://img.shields.io/badge/slint-steelblue?logo=github
-[c~slint~website]: https://slint.rs
-[c~slint~website~badge]: https://img.shields.io/badge/slint-coral
-[c~slog-async~crates.io]: https://crates.io/crates/slog-async
-[c~slog-async~crates.io~badge]: https://img.shields.io/badge/crates.io-slog--async-crimson
-[c~slog-async~docs]: https://docs.rs/slog-async
-[c~slog-async~docs~badge]: https://img.shields.io/crates/v/slog-async?label=slog-async
-[c~slog-async~lib.rs]: https://lib.rs/crates/slog-async
-[c~slog-async~lib.rs~badge]: https://img.shields.io/badge/lib.rs-slog--async-yellow
-[c~slog-async~repo]: https://github.com/slog-rs/async
-[c~slog-async~repo~badge]: https://img.shields.io/badge/slog--async-steelblue?logo=github
-[c~slog-async~website]: https://github.com/slog-rs/slog
-[c~slog-async~website~badge]: https://img.shields.io/badge/slog--async-coral
-[c~slog-scope~crates.io]: https://crates.io/crates/slog-scope
-[c~slog-scope~crates.io~badge]: https://img.shields.io/badge/crates.io-slog--scope-crimson
-[c~slog-scope~docs]: https://docs.rs/slog-scope
-[c~slog-scope~docs~badge]: https://img.shields.io/crates/v/slog-scope?label=slog-scope
-[c~slog-scope~lib.rs]: https://lib.rs/crates/slog-scope
-[c~slog-scope~lib.rs~badge]: https://img.shields.io/badge/lib.rs-slog--scope-yellow
-[c~slog-scope~repo]: https://github.com/slog-rs/scope
-[c~slog-scope~repo~badge]: https://img.shields.io/badge/slog--scope-steelblue?logo=github
-[c~slog-scope~website]: https://github.com/slog-rs/slog
-[c~slog-scope~website~badge]: https://img.shields.io/badge/slog--scope-coral
-[c~slog-term~crates.io]: https://crates.io/crates/slog-term
-[c~slog-term~crates.io~badge]: https://img.shields.io/badge/crates.io-slog--term-crimson
-[c~slog-term~docs]: https://docs.rs/slog-term
-[c~slog-term~docs~badge]: https://img.shields.io/crates/v/slog-term?label=slog-term
-[c~slog-term~lib.rs]: https://lib.rs/crates/slog-term
-[c~slog-term~lib.rs~badge]: https://img.shields.io/badge/lib.rs-slog--term-yellow
-[c~slog-term~repo]: https://github.com/slog-rs/term
-[c~slog-term~repo~badge]: https://img.shields.io/badge/slog--term-steelblue?logo=github
-[c~slog-term~website]: https://github.com/slog-rs/slog
-[c~slog-term~website~badge]: https://img.shields.io/badge/slog--term-coral
-[c~slog~crates.io]: https://crates.io/crates/slog
-[c~slog~crates.io~badge]: https://img.shields.io/badge/crates.io-slog-crimson
-[c~slog~docs]: https://docs.rs/slog
-[c~slog~docs~badge]: https://img.shields.io/crates/v/slog?label=slog
-[c~slog~lib.rs]: https://lib.rs/crates/slog
-[c~slog~lib.rs~badge]: https://img.shields.io/badge/lib.rs-slog-yellow
-[c~slog~repo]: https://github.com/slog-rs/slog
-[c~slog~repo~badge]: https://img.shields.io/badge/slog-steelblue?logo=github
-[c~slotmap::HopSlotMap~docs]: https://docs.rs/slotmap/latest/slotmap/struct.HopSlotMap.html
-[c~slotmap::SecondaryMap~docs]: https://docs.rs/slotmap/latest/slotmap/struct.SecondaryMap.html
-[c~slotmap::SparseSecondaryMap~docs]: https://docs.rs/slotmap/latest/slotmap/struct.SparseSecondaryMap.html
-[c~slotmap~commit-activity~badge]: https://img.shields.io/github/commit-activity/y/orlp/slotmap
-[c~slotmap~crates.io]: https://crates.io/crates/slotmap
-[c~slotmap~crates.io~badge]: https://img.shields.io/badge/crates.io-slotmap-crimson
-[c~slotmap~dependents~badge]: https://img.shields.io/crates/dependents/slotmap
-[c~slotmap~deps-rs~badge]: https://img.shields.io/deps-rs/slotmap/latest
-[c~slotmap~docs]: https://docs.rs/slotmap
-[c~slotmap~docs~badge]: https://img.shields.io/crates/v/slotmap?label=slotmap
-[c~slotmap~last-commit~badge]: https://img.shields.io/github/last-commit/orlp/slotmap
-[c~slotmap~lib.rs]: https://lib.rs/crates/slotmap
-[c~slotmap~lib.rs~badge]: https://img.shields.io/badge/lib.rs-slotmap-yellow
-[c~slotmap~license~badge]: https://img.shields.io/crates/l/slotmap
-[c~slotmap~recent-downloads~badge]: https://img.shields.io/crates/dr/slotmap
-[c~slotmap~repo]: https://github.com/orlp/slotmap
-[c~slotmap~repo~badge]: https://img.shields.io/badge/slotmap-steelblue?logo=github
-[c~smallvec~commit-activity~badge]: https://img.shields.io/github/commit-activity/y/servo/rust-smallvec
-[c~smallvec~crates.io]: https://crates.io/crates/smallvec
-[c~smallvec~crates.io~badge]: https://img.shields.io/badge/crates.io-smallvec-crimson
-[c~smallvec~dependents~badge]: https://img.shields.io/crates/dependents/smallvec
-[c~smallvec~deps-rs~badge]: https://img.shields.io/deps-rs/smallvec/latest
-[c~smallvec~docs]: https://docs.rs/smallvec
-[c~smallvec~docs~badge]: https://img.shields.io/crates/v/smallvec?label=smallvec
-[c~smallvec~last-commit~badge]: https://img.shields.io/github/last-commit/servo/rust-smallvec
-[c~smallvec~lib.rs]: https://lib.rs/crates/smallvec
-[c~smallvec~lib.rs~badge]: https://img.shields.io/badge/lib.rs-smallvec-yellow
-[c~smallvec~license~badge]: https://img.shields.io/crates/l/smallvec
-[c~smallvec~recent-downloads~badge]: https://img.shields.io/crates/dr/smallvec
-[c~smallvec~repo]: https://github.com/servo/rust-smallvec
-[c~smallvec~repo~badge]: https://img.shields.io/badge/smallvec-steelblue?logo=github
-[c~smartcore~crates.io]: https://crates.io/crates/smartcore
-[c~smartcore~crates.io~badge]: https://img.shields.io/badge/crates.io-smartcore-crimson
-[c~smartcore~docs]: https://docs.rs/smartcore
-[c~smartcore~docs~badge]: https://img.shields.io/crates/v/smartcore?label=smartcore
-[c~smartcore~lib.rs]: https://lib.rs/crates/smartcore
-[c~smartcore~lib.rs~badge]: https://img.shields.io/badge/lib.rs-smartcore-yellow
-[c~smartcore~repo]: https://github.com/smartcorelib/smartcore
-[c~smartcore~repo~badge]: https://img.shields.io/badge/smartcore-steelblue?logo=github
-[c~smartcore~website]: https://smartcorelib.org
-[c~smartcore~website~badge]: https://img.shields.io/badge/smartcore-coral
-[c~smoltcp~crates.io]: https://crates.io/crates/smoltcp
-[c~smoltcp~crates.io~badge]: https://img.shields.io/badge/crates.io-smoltcp-crimson
-[c~smoltcp~docs]: https://docs.rs/smoltcp
-[c~smoltcp~docs~badge]: https://img.shields.io/crates/v/smoltcp?label=smoltcp
-[c~smoltcp~lib.rs]: https://lib.rs/crates/smoltcp
-[c~smoltcp~lib.rs~badge]: https://img.shields.io/badge/lib.rs-smoltcp-yellow
-[c~smoltcp~repo]: https://github.com/smoltcp-rs/smoltcp
-[c~smoltcp~repo~badge]: https://img.shields.io/badge/smoltcp-steelblue?logo=github
-[c~smoltcp~website]: https://github.com/smoltcp-rs/smoltcp
-[c~smoltcp~website~badge]: https://img.shields.io/badge/smoltcp-coral
-[c~smol~crates.io]: https://crates.io/crates/smol
-[c~smol~crates.io~badge]: https://img.shields.io/badge/crates.io-smol-crimson
-[c~smol~docs]: https://docs.rs/smol
-[c~smol~docs~badge]: https://img.shields.io/crates/v/smol?label=smol
-[c~smol~lib.rs]: https://lib.rs/crates/smol
-[c~smol~lib.rs~badge]: https://img.shields.io/badge/lib.rs-smol-yellow
-[c~smol~repo]: https://github.com/smol-rs/smol
-[c~smol~repo~badge]: https://img.shields.io/badge/smol-steelblue?logo=github
-[c~snap~crates.io]: https://crates.io/crates/snap
-[c~snap~crates.io~badge]: https://img.shields.io/badge/crates.io-snap-crimson
-[c~snap~docs]: https://docs.rs/snap
-[c~snap~docs~badge]: https://img.shields.io/crates/v/snap?label=snap
-[c~snap~lib.rs]: https://lib.rs/crates/snap
-[c~snap~lib.rs~badge]: https://img.shields.io/badge/lib.rs-snap-yellow
-[c~snap~repo]: https://github.com/BurntSushi/rust-snappy
-[c~snap~repo~badge]: https://img.shields.io/badge/snap-steelblue?logo=github
-[c~socket2~crates.io]: https://crates.io/crates/socket2
-[c~socket2~crates.io~badge]: https://img.shields.io/badge/crates.io-socket2-crimson
-[c~socket2~docs]: https://docs.rs/socket2
-[c~socket2~docs~badge]: https://img.shields.io/crates/v/socket2?label=socket2
-[c~socket2~lib.rs]: https://lib.rs/crates/socket2
-[c~socket2~lib.rs~badge]: https://img.shields.io/badge/lib.rs-socket2-yellow
-[c~socket2~repo]: https://github.com/rust-lang/socket2
-[c~socket2~repo~badge]: https://img.shields.io/badge/socket2-steelblue?logo=github
-[c~socketcan~crates.io]: https://crates.io/crates/socketcan
-[c~socketcan~crates.io~badge]: https://img.shields.io/badge/crates.io-socketcan-crimson
-[c~socketcan~docs]: https://docs.rs/socketcan
-[c~socketcan~docs~badge]: https://img.shields.io/crates/v/socketcan?label=socketcan
-[c~socketcan~lib.rs]: https://lib.rs/crates/socketcan
-[c~socketcan~lib.rs~badge]: https://img.shields.io/badge/lib.rs-socketcan-yellow
-[c~socketcan~repo]: https://github.com/mbr/socketcan-rs
-[c~socketcan~repo~badge]: https://img.shields.io/badge/socketcan-steelblue?logo=github
-[c~sodiumoxide~crates.io]: https://crates.io/crates/sodiumoxide
-[c~sodiumoxide~crates.io~badge]: https://img.shields.io/badge/crates.io-sodiumoxide-crimson
-[c~sodiumoxide~docs]: https://docs.rs/sodiumoxide
-[c~sodiumoxide~docs~badge]: https://img.shields.io/crates/v/sodiumoxide?label=sodiumoxide
-[c~sodiumoxide~lib.rs]: https://lib.rs/crates/sodiumoxide
-[c~sodiumoxide~lib.rs~badge]: https://img.shields.io/badge/lib.rs-sodiumoxide-yellow
-[c~sodiumoxide~repo]: https://github.com/sodiumoxide/sodiumoxide
-[c~sodiumoxide~repo~badge]: https://img.shields.io/badge/sodiumoxide-steelblue?logo=github
-[c~solana~crates.io]: https://crates.io/crates/solana
-[c~solana~crates.io~badge]: https://img.shields.io/badge/crates.io-solana-crimson
-[c~solana~docs]: https://docs.rs/solana
-[c~solana~docs~badge]: https://img.shields.io/crates/v/solana?label=solana
-[c~solana~lib.rs]: https://lib.rs/crates/solana
-[c~solana~lib.rs~badge]: https://img.shields.io/badge/lib.rs-solana-yellow
-[c~solana~repo]: https://github.com/solana-labs/solana
-[c~solana~repo~badge]: https://img.shields.io/badge/solana-steelblue?logo=github
-[c~solana~website]: https://solana.com
-[c~solana~website~badge]: https://img.shields.io/badge/solana-coral
-[c~sonic~crates.io]: https://crates.io/crates/sonic
-[c~sonic~crates.io~badge]: https://img.shields.io/badge/crates.io-sonic-crimson
-[c~sonic~docs]: http://sonic.unstable.build/rustdoc
-[c~sonic~docs~badge]: https://img.shields.io/crates/v/sonic?label=sonic
-[c~sonic~lib.rs]: https://lib.rs/crates/sonic
-[c~sonic~lib.rs~badge]: https://img.shields.io/badge/lib.rs-sonic-yellow
-[c~sonic~repo]: https://github.com/xarxa6/sonic-rs
-[c~sonic~repo~badge]: https://img.shields.io/badge/sonic-steelblue?logo=github
-[c~sonic~website]: http://sonic.unstable.build
-[c~sonic~website~badge]: https://img.shields.io/badge/sonic-coral
-[c~specs~crates.io]: https://crates.io/crates/specs
-[c~specs~crates.io~badge]: https://img.shields.io/badge/crates.io-specs-crimson
-[c~specs~docs]: https://docs.rs/specs
-[c~specs~docs~badge]: https://img.shields.io/crates/v/specs?label=specs
-[c~specs~lib.rs]: https://lib.rs/crates/specs
-[c~specs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-specs-yellow
-[c~specs~repo]: https://github.com/slide-rs/specs
-[c~specs~repo~badge]: https://img.shields.io/badge/specs-steelblue?logo=github
-[c~specs~website]: https://amethyst.github.io/specs
-[c~specs~website~badge]: https://img.shields.io/badge/specs-coral
-[c~spidev~crates.io]: https://crates.io/crates/spidev
-[c~spidev~crates.io~badge]: https://img.shields.io/badge/crates.io-spidev-crimson
-[c~spidev~docs]: https://docs.rs/spidev
-[c~spidev~docs~badge]: https://img.shields.io/crates/v/spidev?label=spidev
-[c~spidev~lib.rs]: https://lib.rs/crates/spidev
-[c~spidev~lib.rs~badge]: https://img.shields.io/badge/lib.rs-spidev-yellow
-[c~spidev~repo]: https://github.com/rust-embedded/rust-spidev
-[c~spidev~repo~badge]: https://img.shields.io/badge/spidev-steelblue?logo=github
-[c~sqlite~crates.io]: https://crates.io/crates/sqlite
-[c~sqlite~crates.io~badge]: https://img.shields.io/badge/crates.io-sqlite-crimson
-[c~sqlite~docs]: https://docs.rs/sqlite
-[c~sqlite~docs~badge]: https://img.shields.io/crates/v/sqlite?label=sqlite
-[c~sqlite~lib.rs]: https://lib.rs/crates/sqlite
-[c~sqlite~lib.rs~badge]: https://img.shields.io/badge/lib.rs-sqlite-yellow
-[c~sqlite~repo]: https://github.com/stainless-steel/sqlite
-[c~sqlite~repo~badge]: https://img.shields.io/badge/sqlite-steelblue?logo=github
-[c~sqlparser~crates.io]: https://crates.io/crates/sqlparser
-[c~sqlparser~crates.io~badge]: https://img.shields.io/badge/crates.io-sqlparser-crimson
-[c~sqlparser~docs]: https://docs.rs/sqlparser
-[c~sqlparser~docs~badge]: https://img.shields.io/crates/v/sqlparser?label=sqlparser
-[c~sqlparser~lib.rs]: https://lib.rs/crates/sqlparser
-[c~sqlparser~lib.rs~badge]: https://img.shields.io/badge/lib.rs-sqlparser-yellow
-[c~sqlparser~repo]: https://github.com/apache/datafusion-sqlparser-rs
-[c~sqlparser~repo~badge]: https://img.shields.io/badge/sqlparser-steelblue?logo=github
-[c~sqlx~crates.io]: https://crates.io/crates/sqlx
-[c~sqlx~crates.io~badge]: https://img.shields.io/badge/crates.io-sqlx-crimson
-[c~sqlx~docs]: https://docs.rs/sqlx
-[c~sqlx~docs~badge]: https://img.shields.io/crates/v/sqlx?label=sqlx
-[c~sqlx~lib.rs]: https://lib.rs/crates/sqlx
-[c~sqlx~lib.rs~badge]: https://img.shields.io/badge/lib.rs-sqlx-yellow
-[c~sqlx~repo]: https://github.com/launchbadge/sqlx
-[c~sqlx~repo~badge]: https://img.shields.io/badge/sqlx-steelblue?logo=github
-[c~stakker~crates.io]: https://crates.io/crates/stakker
-[c~stakker~crates.io~badge]: https://img.shields.io/badge/crates.io-stakker-crimson
-[c~stakker~docs]: https://docs.rs/stakker
-[c~stakker~docs~badge]: https://img.shields.io/crates/v/stakker?label=stakker
-[c~stakker~lib.rs]: https://lib.rs/crates/stakker
-[c~stakker~lib.rs~badge]: https://img.shields.io/badge/lib.rs-stakker-yellow
-[c~stakker~repo]: https://github.com/uazu/stakker
-[c~stakker~repo~badge]: https://img.shields.io/badge/stakker-steelblue?logo=github
-[c~stakker~website]: https://uazu.github.io/stakker
-[c~stakker~website~badge]: https://img.shields.io/badge/stakker-coral
-[c~starship~crates.io]: https://crates.io/crates/starship
-[c~starship~crates.io~badge]: https://img.shields.io/badge/crates.io-starship-crimson
-[c~starship~docs]: https://docs.rs/starship
-[c~starship~docs~badge]: https://img.shields.io/crates/v/starship?label=starship
-[c~starship~lib.rs]: https://lib.rs/crates/starship
-[c~starship~lib.rs~badge]: https://img.shields.io/badge/lib.rs-starship-yellow
-[c~starship~repo]: https://github.com/starship/starship
-[c~starship~repo~badge]: https://img.shields.io/badge/starship-steelblue?logo=github
-[c~starship~website]: https://starship.rs
-[c~starship~website~badge]: https://img.shields.io/badge/starship-coral
-[c~statrs~crates.io]: https://crates.io/crates/statrs
-[c~statrs~crates.io~badge]: https://img.shields.io/badge/crates.io-statrs-crimson
-[c~statrs~docs]: https://docs.rs/statrs
-[c~statrs~docs~badge]: https://img.shields.io/crates/v/statrs?label=statrs
-[c~statrs~lib.rs]: https://lib.rs/crates/statrs
-[c~statrs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-statrs-yellow
-[c~statrs~repo]: https://github.com/statrs-dev/statrs
-[c~statrs~repo~badge]: https://img.shields.io/badge/statrs-steelblue?logo=github
-[c~std::alloc~docs]: https://doc.rust-lang.org/std/alloc
-[c~std::any::Any::is~docs]: https://doc.rust-lang.org/std/any/trait.Any.html#method.is-1
-[c~std::any::Any~docs]: https://doc.rust-lang.org/std/any/trait.Any.html
-[c~std::any::TypeId~docs]: https://doc.rust-lang.org/std/any/struct.TypeId.html
-[c~std::any::type_name~docs]: https://doc.rust-lang.org/std/any/fn.type_name.html
-[c~std::any~docs]: https://doc.rust-lang.org/std/any
-[c~std::arch~docs]: https://doc.rust-lang.org/std/arch
-[c~std::arch~docs~badge]: https://img.shields.io/badge/std-firebrick?logo=rust
-[c~std::array~docs]: https://doc.rust-lang.org/std/array
-[c~std::ascii::escape_default~docs]: https://doc.rust-lang.org/std/ascii/fn.escape_default.html
-[c~std::ascii~docs]: https://doc.rust-lang.org/std/ascii
-[c~std::assert_eq~docs]: https://doc.rust-lang.org/std/macro.assert_eq.html
-[c~std::autodiff~docs]: https://doc.rust-lang.org/std/autodiff
-[c~std::backtrace~docs]: https://doc.rust-lang.org/std/backtrace
-[c~std::borrow::BorrowMut~docs]: https://doc.rust-lang.org/std/borrow/trait.BorrowMut.html
-[c~std::borrow::Borrow~docs]: https://doc.rust-lang.org/std/borrow/trait.Borrow.html
-[c~std::borrow::Cow::into_owned~docs]: https://doc.rust-lang.org/std/borrow/enum.Cow.html#method.into_owned
-[c~std::borrow::Cow::to_mut~docs]: https://doc.rust-lang.org/std/borrow/enum.Cow.html#method.to_mut
-[c~std::borrow::Cow~docs]: https://doc.rust-lang.org/std/borrow/enum.Cow.html
-[c~std::borrow::ToOwned~docs]: https://doc.rust-lang.org/std/borrow/trait.ToOwned.html
-[c~std::borrow~docs]: https://doc.rust-lang.org/std/borrow
-[c~std::boxed::Box~docs]: https://doc.rust-lang.org/std/boxed/struct.Box.html
-[c~std::boxed~docs]: https://doc.rust-lang.org/std/boxed
-[c~std::cell::Cell~docs]: https://doc.rust-lang.org/std/cell/struct.Cell.html
-[c~std::cell::LazyCell~docs]: https://doc.rust-lang.org/std/cell/struct.LazyCell.html
-[c~std::cell::OnceCell~docs]: https://doc.rust-lang.org/std/cell/struct.OnceCell.html
-[c~std::cell::RefCell::try_borrow~docs]: https://doc.rust-lang.org/std/cell/struct.RefCell.html#method.try_borrow
-[c~std::cell::RefCell~docs]: https://doc.rust-lang.org/std/cell/struct.RefCell.html
-[c~std::cell::UnsafeCell~docs]: https://doc.rust-lang.org/std/cell/struct.UnsafeCell.html
-[c~std::cell~docs]: https://doc.rust-lang.org/std/cell
-[c~std::char~docs]: https://doc.rust-lang.org/std/char
-[c~std::clone::Clone~docs]: https://doc.rust-lang.org/std/clone/trait.Clone.html
-[c~std::clone~docs]: https://doc.rust-lang.org/std/clone
-[c~std::cmp::Eq~docs]: https://doc.rust-lang.org/std/cmp/trait.Eq.html
-[c~std::cmp::Ord::cmp~docs]: https://doc.rust-lang.org/std/cmp/trait.Ord.html#tymethod.cmp
-[c~std::cmp::Ordering~docs]: https://doc.rust-lang.org/std/cmp/enum.Ordering.html
-[c~std::cmp::Ord~docs]: https://doc.rust-lang.org/std/cmp/trait.Ord.html
-[c~std::cmp::PartialEq~docs]: https://doc.rust-lang.org/std/cmp/trait.PartialEq.html
-[c~std::cmp::PartialOrd::partial_cmp~docs]: https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html#tymethod.partial_cmp
-[c~std::cmp::PartialOrd~docs]: https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html
-[c~std::cmp~docs]: https://doc.rust-lang.org/std/cmp
-[c~std::collections::BTreeMap~docs]: https://doc.rust-lang.org/std/collections/struct.BTreeMap.html
-[c~std::collections::BTreeSet~docs]: https://doc.rust-lang.org/std/collections/struct.BTreeSet.html
-[c~std::collections::BinaryHeap~docs]: https://doc.rust-lang.org/std/collections/struct.BinaryHeap.html
-[c~std::collections::HashMap~docs]: https://doc.rust-lang.org/std/collections/struct.HashMap.html
-[c~std::collections::HashSet~docs]: https://doc.rust-lang.org/std/collections/struct.HashSet.html
-[c~std::collections::LinkedList~docs]: https://doc.rust-lang.org/std/collections/struct.LinkedList.html
-[c~std::collections::hash_map::Entry~docs]: https://doc.rust-lang.org/std/collections/hash_map/enum.Entry.html
-[c~std::collections~docs]: https://doc.rust-lang.org/std/collections
-[c~std::convert::AsMut~docs]: https://doc.rust-lang.org/std/convert/trait.AsMut.html
-[c~std::convert::AsRef~docs]: https://doc.rust-lang.org/std/convert/trait.AsRef.html
-[c~std::convert::From~docs]: https://doc.rust-lang.org/std/convert/trait.From.html
-[c~std::convert::Into~docs]: https://doc.rust-lang.org/std/convert/trait.Into.html
-[c~std::convert::TryFrom~docs]: https://doc.rust-lang.org/std/convert/trait.TryFrom.html
-[c~std::convert::TryInto~docs]: https://doc.rust-lang.org/std/convert/trait.TryInto.html
-[c~std::convert~docs]: https://doc.rust-lang.org/std/convert
-[c~std::default::Default~docs]: https://doc.rust-lang.org/std/default/trait.Default.html
-[c~std::default~docs]: https://doc.rust-lang.org/std/default
-[c~std::env::current_dir~docs]: https://doc.rust-lang.org/std/env/fn.current_dir.html
-[c~std::env::var~docs]: https://doc.rust-lang.org/std/env/fn.var.html
-[c~std::env~docs]: https://doc.rust-lang.org/std/env
-[c~std::error::Error~docs]: https://doc.rust-lang.org/std/error/trait.Error.html
-[c~std::error~docs]: https://doc.rust-lang.org/std/error
-[c~std::f32~docs]: https://doc.rust-lang.org/std/f32
-[c~std::f64~docs]: https://doc.rust-lang.org/std/f64
-[c~std::ffi::CString~docs]: https://doc.rust-lang.org/std/ffi/struct.CString.html
-[c~std::ffi::CStr~docs]: https://doc.rust-lang.org/std/ffi/struct.CStr.html
-[c~std::ffi::OsString~docs]: https://doc.rust-lang.org/std/ffi/struct.OsString.html
-[c~std::ffi::OsStr~docs]: https://doc.rust-lang.org/std/ffi/struct.OsStr.html
-[c~std::ffi~docs]: https://doc.rust-lang.org/std/ffi
-[c~std::fmt::Debug~docs]: https://doc.rust-lang.org/std/fmt/trait.Debug.html
-[c~std::fmt::Display~docs]: https://doc.rust-lang.org/std/fmt/trait.Display.html
-[c~std::fmt::Pointer~docs]: https://doc.rust-lang.org/std/fmt/trait.Pointer.html
-[c~std::fmt::Write~docs]: https://doc.rust-lang.org/std/fmt/trait.Write.html
-[c~std::fmt~docs]: https://doc.rust-lang.org/std/fmt
-[c~std::fs::DirEntry::path~docs]: https://doc.rust-lang.org/std/fs/struct.DirEntry.html#method.path
-[c~std::fs::File::create~docs]: https://doc.rust-lang.org/std/fs/struct.File.html#method.create
-[c~std::fs::File::open~docs]: https://doc.rust-lang.org/std/fs/struct.File.html#method.open
-[c~std::fs::File::seek~docs]: https://doc.rust-lang.org/std/fs/struct.File.html#method.seek
-[c~std::fs::File::try_clone~docs]: https://doc.rust-lang.org/std/fs/struct.File.html#method.try_clone
-[c~std::fs::File~docs]: https://doc.rust-lang.org/std/fs/struct.File.html
-[c~std::fs::Metadata::is_file~docs]: https://doc.rust-lang.org/std/fs/struct.Metadata.html#method.is_file
-[c~std::fs::Metadata::modified~docs]: https://doc.rust-lang.org/std/fs/struct.Metadata.html#method.modified
-[c~std::fs::Metadata~docs]: https://doc.rust-lang.org/std/fs/struct.Metadata.html
-[c~std::fs::read_dir~docs]: https://doc.rust-lang.org/std/fs/fn.read_dir.html
-[c~std::fs~docs]: https://doc.rust-lang.org/std/fs
-[c~std::future::Future~docs]: https://doc.rust-lang.org/std/future/trait.Future.html
-[c~std::future~docs]: https://doc.rust-lang.org/std/future
-[c~std::hash::Hash~docs]: https://doc.rust-lang.org/std/hash/trait.Hash.html
-[c~std::hash~docs]: https://doc.rust-lang.org/std/hash
-[c~std::hint~docs]: https://doc.rust-lang.org/std/hint
-[c~std::io::BufRead::lines~docs]: https://doc.rust-lang.org/std/io/trait.BufRead.html#method.lines
-[c~std::io::BufReader~docs]: https://doc.rust-lang.org/std/io/struct.BufReader.html
-[c~std::io::BufRead~docs]: https://doc.rust-lang.org/std/io/trait.BufRead.html
-[c~std::io::Error~docs]: https://doc.rust-lang.org/std/io/struct.Error.html
-[c~std::io::Lines~docs]: https://doc.rust-lang.org/std/io/struct.Lines.html
-[c~std::io::Read::read_to_string~docs]: https://doc.rust-lang.org/std/io/trait.Read.html#method.read_to_string
-[c~std::io::Read~docs]: https://doc.rust-lang.org/std/io/trait.Read.html
-[c~std::io::Stderr~docs]: https://doc.rust-lang.org/std/io/struct.Stderr.html
-[c~std::io::Stdout~docs]: https://doc.rust-lang.org/std/io/struct.Stdout.html
-[c~std::io::Write~docs]: https://doc.rust-lang.org/std/io/trait.Write.html
-[c~std::io::copy~docs]: https://doc.rust-lang.org/std/io/fn.copy.html
-[c~std::io~docs]: https://doc.rust-lang.org/std/io
-[c~std::iter::IntoIterator::into_iter~docs]: https://doc.rust-lang.org/std/iter/trait.IntoIterator.html#tymethod.into_iter
-[c~std::iter::IntoIterator~docs]: https://doc.rust-lang.org/std/iter/trait.IntoIterator.html
-[c~std::iter::Iterator::all~docs]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.all
-[c~std::iter::Iterator::any~docs]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.any
-[c~std::iter::Iterator::filter~docs]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.filter
-[c~std::iter::Iterator::find~docs]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.find
-[c~std::iter::Iterator::fold~docs]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.fold
-[c~std::iter::Iterator::map~docs]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.map
-[c~std::iter::Iterator::max_by_key~docs]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.max_by_key
-[c~std::iter::Iterator::sum~docs]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.sum
-[c~std::iter::Iterator~docs]: https://doc.rust-lang.org/std/iter/trait.Iterator.html
-[c~std::iter~docs]: https://doc.rust-lang.org/std/iter
-[c~std::marker::Copy~docs]: https://doc.rust-lang.org/std/marker/trait.Copy.html
-[c~std::marker::PhantomData~docs]: https://doc.rust-lang.org/std/marker/struct.PhantomData.html
-[c~std::marker::PhantomPinned~docs]: https://doc.rust-lang.org/std/marker/struct.PhantomPinned.html
-[c~std::marker::Send~docs]: https://doc.rust-lang.org/std/marker/trait.Send.html
-[c~std::marker::Sized~docs]: https://doc.rust-lang.org/std/marker/trait.Sized.html
-[c~std::marker::Sync~docs]: https://doc.rust-lang.org/std/marker/trait.Sync.html
-[c~std::marker::Unpin~docs]: https://doc.rust-lang.org/std/marker/trait.Unpin.html
-[c~std::marker~docs]: https://doc.rust-lang.org/std/marker
-[c~std::mem::drop~docs]: https://doc.rust-lang.org/std/mem/fn.drop.html
-[c~std::mem~docs]: https://doc.rust-lang.org/std/mem
-[c~std::net::IpAddr~docs]: https://doc.rust-lang.org/std/net/enum.IpAddr.html
-[c~std::net::SocketAddrV4~docs]: https://doc.rust-lang.org/std/net/struct.SocketAddrV4.html
-[c~std::net::TcpListener~docs]: https://doc.rust-lang.org/std/net/struct.TcpListener.html
-[c~std::net~docs]: https://doc.rust-lang.org/std/net
-[c~std::num::NonZero~docs]: https://doc.rust-lang.org/std/num/struct.NonZero.html
-[c~std::num::Saturating~docs]: https://doc.rust-lang.org/std/num/struct.Saturating.html
-[c~std::num::Wrapping~docs]: https://doc.rust-lang.org/std/num/struct.Wrapping.html
-[c~std::num~docs]: https://doc.rust-lang.org/std/num
-[c~std::ops::Add~docs]: https://doc.rust-lang.org/std/ops/trait.Add.html
-[c~std::ops::BitAnd~docs]: https://doc.rust-lang.org/std/ops/trait.BitAnd.html
-[c~std::ops::BitOr~docs]: https://doc.rust-lang.org/std/ops/trait.BitOr.html
-[c~std::ops::Coroutine~docs]: https://doc.rust-lang.org/std/ops/trait.Coroutine.html
-[c~std::ops::DerefMut~docs]: https://doc.rust-lang.org/std/ops/trait.DerefMut.html
-[c~std::ops::Deref~docs]: https://doc.rust-lang.org/std/ops/trait.Deref.html
-[c~std::ops::Div~docs]: https://doc.rust-lang.org/std/ops/trait.Div.html
-[c~std::ops::Drop~docs]: https://doc.rust-lang.org/std/ops/trait.Drop.html
-[c~std::ops::FnMut~docs]: https://doc.rust-lang.org/std/ops/trait.FnMut.html
-[c~std::ops::FnOnce~docs]: https://doc.rust-lang.org/std/ops/trait.FnOnce.html
-[c~std::ops::Fn~docs]: https://doc.rust-lang.org/std/ops/trait.Fn.html
-[c~std::ops::FromResidual~docs]: https://doc.rust-lang.org/std/ops/trait.FromResidual.html
-[c~std::ops::Index~docs]: https://doc.rust-lang.org/std/ops/trait.Index.html
-[c~std::ops::Mul~docs]: https://doc.rust-lang.org/std/ops/trait.Mul.html
-[c~std::ops::Not~docs]: https://doc.rust-lang.org/std/ops/trait.Not.html
-[c~std::ops::Sub~docs]: https://doc.rust-lang.org/std/ops/trait.Sub.html
-[c~std::ops~docs]: https://doc.rust-lang.org/std/ops
-[c~std::option::Option::None~docs]: https://doc.rust-lang.org/std/option/enum.Option.html#variant.None
-[c~std::option::Option::Some~docs]: https://doc.rust-lang.org/std/option/enum.Option.html#variant.Some
-[c~std::option::Option::and_then~docs]: https://doc.rust-lang.org/std/option/enum.Option.html#method.and_then
-[c~std::option::Option::as_deref_mut~docs]: https://doc.rust-lang.org/std/option/enum.Option.html#method.as_deref_mut
-[c~std::option::Option::as_deref~docs]: https://doc.rust-lang.org/std/option/enum.Option.html#method.as_deref
-[c~std::option::Option::expect~docs]: https://doc.rust-lang.org/std/option/enum.Option.html#method.expect
-[c~std::option::Option::filter~docs]: https://doc.rust-lang.org/std/option/enum.Option.html#method.filter
-[c~std::option::Option::flatten~docs]: https://doc.rust-lang.org/std/option/enum.Option.html#method.flatten
-[c~std::option::Option::is_none~docs]: https://doc.rust-lang.org/std/option/enum.Option.html#method.is_none
-[c~std::option::Option::is_some~docs]: https://doc.rust-lang.org/std/option/enum.Option.html#method.is_some
-[c~std::option::Option::map~docs]: https://doc.rust-lang.org/std/option/enum.Option.html#method.map
-[c~std::option::Option::ok_or_else~docs]: https://doc.rust-lang.org/std/option/enum.Option.html#method.ok_or_else
-[c~std::option::Option::ok_or~docs]: https://doc.rust-lang.org/std/option/enum.Option.html#method.ok_or
-[c~std::option::Option::or_else~docs]: https://doc.rust-lang.org/std/option/enum.Option.html#method.or_else
-[c~std::option::Option::or~docs]: https://doc.rust-lang.org/std/option/enum.Option.html#method.or
-[c~std::option::Option::unwrap_or_default~docs]: https://doc.rust-lang.org/std/option/enum.Option.html#method.unwrap_or_default
-[c~std::option::Option::unwrap_or_else~docs]: https://doc.rust-lang.org/std/option/enum.Option.html#method.unwrap_or_else
-[c~std::option::Option::unwrap_or~docs]: https://doc.rust-lang.org/std/option/enum.Option.html#method.unwrap_or
-[c~std::option::Option::unwrap~docs]: https://doc.rust-lang.org/std/option/enum.Option.html#method.unwrap
-[c~std::option::Option::zip~docs]: https://doc.rust-lang.org/std/option/enum.Option.html#method.zip
-[c~std::option::Option~docs]: https://doc.rust-lang.org/std/option/enum.Option.html
-[c~std::option~docs]: https://doc.rust-lang.org/std/option
-[c~std::os~docs]: https://doc.rust-lang.org/std/os
-[c~std::panic::RefUnwindSafe~docs]: https://doc.rust-lang.org/std/panic/trait.RefUnwindSafe.html
-[c~std::panic::UnwindSafe~docs]: https://doc.rust-lang.org/std/panic/trait.UnwindSafe.html
-[c~std::panic::panic~docs]: https://doc.rust-lang.org/std/macro.panic.html
-[c~std::panic~docs]: https://doc.rust-lang.org/std/panic
-[c~std::path::Path::strip_prefix~docs]: https://doc.rust-lang.org/std/path/struct.Path.html#method.strip_prefix
-[c~std::path::PathBuf~docs]: https://doc.rust-lang.org/std/path/struct.PathBuf.html
-[c~std::path::Path~docs]: https://doc.rust-lang.org/std/path/struct.Path.html
-[c~std::path~docs]: https://doc.rust-lang.org/std/path
-[c~std::pin::Pin~docs]: https://doc.rust-lang.org/std/pin/struct.Pin.html
-[c~std::pin::Unpin~docs]: https://doc.rust-lang.org/std/pin/trait.Unpin.html
-[c~std::pin~docs]: https://doc.rust-lang.org/std/pin
-[c~std::pin~projections-and-structural-pinning~docs]: https://doc.rust-lang.org/std/pin#projections-and-structural-pinning
-[c~std::prelude~docs]: https://doc.rust-lang.org/std/prelude
-[c~std::primitive~docs]: https://doc.rust-lang.org/std/primitive
-[c~std::process::Command~docs]: https://doc.rust-lang.org/std/process/struct.Command.html
-[c~std::process::Output~docs]: https://doc.rust-lang.org/std/process/struct.Output.html
-[c~std::process::Stdio::piped~docs]: https://doc.rust-lang.org/std/process/struct.Stdio.html#method.piped
-[c~std::process::Stdio~docs]: https://doc.rust-lang.org/std/process/struct.Stdio.html
-[c~std::process::exit~docs]: https://doc.rust-lang.org/std/process/fn.exit.html
-[c~std::process~docs]: https://doc.rust-lang.org/std/process
-[c~std::ptr::NonNull~docs]: https://doc.rust-lang.org/std/ptr/struct.NonNull.html
-[c~std::ptr~docs]: https://doc.rust-lang.org/std/ptr
-[c~std::rc::Rc::downgrade~docs]: https://doc.rust-lang.org/std/rc/struct.Rc.html#method.downgrade
-[c~std::rc::Rc::make_mut~docs]: https://doc.rust-lang.org/std/rc/struct.Rc.html#method.make_mut
-[c~std::rc::Rc~docs]: https://doc.rust-lang.org/std/rc/struct.Rc.html
-[c~std::rc::Weak~docs]: https://doc.rust-lang.org/std/rc/struct.Weak.html
-[c~std::rc~docs]: https://doc.rust-lang.org/std/rc
-[c~std::result::Result::Err~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#variant.Err
-[c~std::result::Result::Ok~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#variant.Ok
-[c~std::result::Result::and_then~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.and_then
-[c~std::result::Result::as_deref~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.as_deref
-[c~std::result::Result::as_mut~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.as_mut
-[c~std::result::Result::as_ref~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.as_ref
-[c~std::result::Result::err~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.err
-[c~std::result::Result::is_err~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.is_err
-[c~std::result::Result::is_ok~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.is_ok
-[c~std::result::Result::map_err~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.map_err
-[c~std::result::Result::map_or_else~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.map_or_else
-[c~std::result::Result::map_or~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.map_or
-[c~std::result::Result::map~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.map
-[c~std::result::Result::ok~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.ok
-[c~std::result::Result::or_else~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.or_else
-[c~std::result::Result::unwrap_or_default~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap_or_default
-[c~std::result::Result::unwrap_or_else~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap_or_else
-[c~std::result::Result::unwrap_or~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap_or
-[c~std::result::Result::unwrap~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap
-[c~std::result::Result~docs]: https://doc.rust-lang.org/std/result/enum.Result.html
-[c~std::result~docs]: https://doc.rust-lang.org/std/result
-[c~std::simd~docs]: https://doc.rust-lang.org/std/simd
-[c~std::slice~docs]: https://doc.rust-lang.org/std/slice
-[c~std::str::FromStr~docs]: https://doc.rust-lang.org/std/str/trait.FromStr.html
-[c~std::string::String~docs]: https://doc.rust-lang.org/std/string/struct.String.html
-[c~std::string::ToString~docs]: https://doc.rust-lang.org/std/string/trait.ToString.html
-[c~std::string~docs]: https://doc.rust-lang.org/std/string
-[c~std::str~docs]: https://doc.rust-lang.org/std/str
-[c~std::sync::Arc::make_mut~docs]: https://doc.rust-lang.org/std/sync/struct.Arc.html#method.make_mut
-[c~std::sync::Arc~docs]: https://doc.rust-lang.org/std/sync/struct.Arc.html
-[c~std::sync::Barrier~docs]: https://doc.rust-lang.org/std/sync/struct.Barrier.html
-[c~std::sync::Condvar~docs]: https://doc.rust-lang.org/std/sync/struct.Condvar.html
-[c~std::sync::LazyLock~docs]: https://doc.rust-lang.org/std/sync/struct.LazyLock.html
-[c~std::sync::MutexGuard~docs]: https://doc.rust-lang.org/std/sync/struct.MutexGuard.html
-[c~std::sync::Mutex~docs]: https://doc.rust-lang.org/std/sync/struct.Mutex.html
-[c~std::sync::OnceLock~docs]: https://doc.rust-lang.org/std/sync/struct.OnceLock.html
-[c~std::sync::Once~docs]: https://doc.rust-lang.org/std/sync/struct.Once.html
-[c~std::sync::RwLockReadGuard~docs]: https://doc.rust-lang.org/std/sync/struct.RwLockReadGuard.html
-[c~std::sync::RwLockWriteGuard~docs]: https://doc.rust-lang.org/std/sync/struct.RwLockWriteGuard.html#method.downgrade
-[c~std::sync::RwLock~docs]: https://doc.rust-lang.org/std/sync/struct.RwLock.html
-[c~std::sync::atomic::AtomicBool~docs]: https://doc.rust-lang.org/std/sync/atomic/struct.AtomicBool.html
-[c~std::sync::atomic::AtomicI8~docs]: https://doc.rust-lang.org/std/sync/atomic/struct.AtomicI8.html
-[c~std::sync::atomic::AtomicIsize~docs]: https://doc.rust-lang.org/std/sync/atomic/struct.AtomicIsize.html
-[c~std::sync::atomic::AtomicU16~docs]: https://doc.rust-lang.org/std/sync/atomic/struct.AtomicU16.html
-[c~std::sync::atomic::AtomicUsize~docs]: https://doc.rust-lang.org/std/sync/atomic/struct.AtomicUsize.html
-[c~std::sync::atomic~docs]: https://doc.rust-lang.org/std/sync/atomic
-[c~std::sync::mpsc::Receiver::recv~docs]: https://doc.rust-lang.org/std/sync/mpsc/struct.Receiver.html#method.recv
-[c~std::sync::mpsc::channel~docs]: https://doc.rust-lang.org/std/sync/mpsc/fn.channel.html
-[c~std::sync~docs]: https://doc.rust-lang.org/std/sync
-[c~std::task::Poll~docs]: https://doc.rust-lang.org/std/task/enum.Poll.html
-[c~std::task~docs]: https://doc.rust-lang.org/std/task
-[c~std::thread::Thread~docs]: https://doc.rust-lang.org/std/thread/struct.Thread.html
-[c~std::thread::scope~docs]: https://doc.rust-lang.org/std/thread/fn.scope.html
-[c~std::thread::sleep~docs]: https://doc.rust-lang.org/std/thread/fn.sleep.html
-[c~std::thread::spawn~docs]: https://doc.rust-lang.org/std/thread/fn.spawn.html
-[c~std::thread~docs]: https://doc.rust-lang.org/std/thread
-[c~std::time::Duration::as_secs~docs]: https://doc.rust-lang.org/std/time/struct.Duration.html#method.as_secs
-[c~std::time::Duration~docs]: https://doc.rust-lang.org/std/time/struct.Duration.html
-[c~std::time::Instant::elapsed~docs]: https://doc.rust-lang.org/std/time/struct.Instant.html#method.elapsed
-[c~std::time::Instant::now~docs]: https://doc.rust-lang.org/std/time/struct.Instant.html#method.now
-[c~std::time::Instant~docs]: https://doc.rust-lang.org/std/time/struct.Instant.html
-[c~std::time::SystemTime::elapsed~docs]: https://doc.rust-lang.org/std/time/struct.SystemTime.html#method.elapsed
-[c~std::time~docs]: https://doc.rust-lang.org/std/time
-[c~std::vec::Vec::sort_by~docs]: https://doc.rust-lang.org/std/vec/struct.Vec.html#method.sort_by
-[c~std::vec::Vec::sort_unstable~docs]: https://doc.rust-lang.org/std/vec/struct.Vec.html#method.sort_unstable
-[c~std::vec::Vec::sort~docs]: https://doc.rust-lang.org/std/vec/struct.Vec.html#method.sort
-[c~std::vec::Vec~docs]: https://doc.rust-lang.org/std/vec/struct.Vec.html
-[c~std::vec~docs]: https://doc.rust-lang.org/std/vec
-[c~stdx~crates.io]: https://crates.io/crates/stdx
-[c~stdx~crates.io~badge]: https://img.shields.io/badge/crates.io-stdx-crimson
-[c~stdx~docs]: https://docs.rs/stdx
-[c~stdx~docs~badge]: https://img.shields.io/crates/v/stdx?label=stdx
-[c~stdx~lib.rs]: https://lib.rs/crates/stdx
-[c~stdx~lib.rs~badge]: https://img.shields.io/badge/lib.rs-stdx-yellow
-[c~stdx~repo]: https://github.com/brson/stdx
-[c~stdx~repo~badge]: https://img.shields.io/badge/stdx-steelblue?logo=github
-[c~std~docs]: https://doc.rust-lang.org/std
-[c~std~docs~badge]: https://img.shields.io/badge/std-firebrick?logo=rust
-[c~string_cache~crates.io]: https://crates.io/crates/string_cache
-[c~string_cache~crates.io~badge]: https://img.shields.io/badge/crates.io-string__cache-crimson
-[c~string_cache~docs]: https://docs.rs/string_cache
-[c~string_cache~docs~badge]: https://img.shields.io/crates/v/string_cache?label=string_cache
-[c~string_cache~lib.rs]: https://lib.rs/crates/string_cache
-[c~string_cache~lib.rs~badge]: https://img.shields.io/badge/lib.rs-string__cache-yellow
-[c~string_cache~repo]: https://github.com/servo/string-cache
-[c~string_cache~repo~badge]: https://img.shields.io/badge/string__cache-steelblue?logo=github
-[c~strsim~crates.io]: https://crates.io/crates/strsim
-[c~strsim~crates.io~badge]: https://img.shields.io/badge/crates.io-strsim-crimson
-[c~strsim~docs]: https://docs.rs/strsim
-[c~strsim~docs~badge]: https://img.shields.io/crates/v/strsim?label=strsim
-[c~strsim~lib.rs]: https://lib.rs/crates/strsim
-[c~strsim~lib.rs~badge]: https://img.shields.io/badge/lib.rs-strsim-yellow
-[c~strsim~repo]: https://github.com/rapidfuzz/strsim-rs
-[c~strsim~repo~badge]: https://img.shields.io/badge/strsim-steelblue?logo=github
-[c~structopt~crates.io]: https://crates.io/crates/structopt
-[c~structopt~crates.io~badge]: https://img.shields.io/badge/crates.io-structopt-crimson
-[c~structopt~docs]: https://docs.rs/structopt
-[c~structopt~docs~badge]: https://img.shields.io/crates/v/structopt?label=structopt
-[c~structopt~lib.rs]: https://lib.rs/crates/structopt
-[c~structopt~lib.rs~badge]: https://img.shields.io/badge/lib.rs-structopt-yellow
-[c~structopt~repo]: https://github.com/TeXitoi/structopt
-[c~structopt~repo~badge]: https://img.shields.io/badge/structopt-steelblue?logo=github
-[c~strum~crates.io]: https://crates.io/crates/strum
-[c~strum~crates.io~badge]: https://img.shields.io/badge/crates.io-strum-crimson
-[c~strum~docs]: https://docs.rs/strum
-[c~strum~docs~badge]: https://img.shields.io/crates/v/strum?label=strum
-[c~strum~lib.rs]: https://lib.rs/crates/strum
-[c~strum~lib.rs~badge]: https://img.shields.io/badge/lib.rs-strum-yellow
-[c~strum~repo]: https://github.com/Peternator7/strum
-[c~strum~repo~badge]: https://img.shields.io/badge/strum-steelblue?logo=github
-[c~stylish~crates.io]: https://crates.io/crates/stylish
-[c~stylish~crates.io~badge]: https://img.shields.io/badge/crates.io-stylish-crimson
-[c~stylish~docs]: https://docs.rs/stylish
-[c~stylish~docs~badge]: https://img.shields.io/crates/v/stylish?label=stylish
-[c~stylish~lib.rs]: https://lib.rs/crates/stylish
-[c~stylish~lib.rs~badge]: https://img.shields.io/badge/lib.rs-stylish-yellow
-[c~stylish~repo]: https://github.com/Nullus157/stylish-rs
-[c~stylish~repo~badge]: https://img.shields.io/badge/stylish-steelblue?logo=github
-[c~subtle~crates.io]: https://crates.io/crates/subtle
-[c~subtle~crates.io~badge]: https://img.shields.io/badge/crates.io-subtle-crimson
-[c~subtle~docs]: https://docs.rs/subtle
-[c~subtle~docs~badge]: https://img.shields.io/crates/v/subtle?label=subtle
-[c~subtle~lib.rs]: https://lib.rs/crates/subtle
-[c~subtle~lib.rs~badge]: https://img.shields.io/badge/lib.rs-subtle-yellow
-[c~subtle~repo]: https://github.com/dalek-cryptography/subtle
-[c~subtle~repo~badge]: https://img.shields.io/badge/subtle-steelblue?logo=github
-[c~subtle~website]: https://dalek.rs
-[c~subtle~website~badge]: https://img.shields.io/badge/subtle-coral
-[c~surf~crates.io]: https://crates.io/crates/surf
-[c~surf~crates.io~badge]: https://img.shields.io/badge/crates.io-surf-crimson
-[c~surf~docs]: https://docs.rs/surf
-[c~surf~docs~badge]: https://img.shields.io/crates/v/surf?label=surf
-[c~surf~lib.rs]: https://lib.rs/crates/surf
-[c~surf~lib.rs~badge]: https://img.shields.io/badge/lib.rs-surf-yellow
-[c~surf~repo]: https://github.com/http-rs/surf
-[c~surf~repo~badge]: https://img.shields.io/badge/surf-steelblue?logo=github
-[c~surrealdb~crates.io]: https://crates.io/crates/surrealdb
-[c~surrealdb~crates.io~badge]: https://img.shields.io/badge/crates.io-surrealdb-crimson
-[c~surrealdb~docs]: https://docs.rs/surrealdb
-[c~surrealdb~docs~badge]: https://img.shields.io/crates/v/surrealdb?label=surrealdb
-[c~surrealdb~lib.rs]: https://lib.rs/crates/surrealdb
-[c~surrealdb~lib.rs~badge]: https://img.shields.io/badge/lib.rs-surrealdb-yellow
-[c~surrealdb~repo]: https://github.com/surrealdb/surrealdb
-[c~surrealdb~repo~badge]: https://img.shields.io/badge/surrealdb-steelblue?logo=github
-[c~swc_common~crates.io]: https://crates.io/crates/swc_common
-[c~swc_common~crates.io~badge]: https://img.shields.io/badge/crates.io-swc__common-crimson
-[c~swc_common~docs]: https://rustdoc.swc.rs/swc_common
-[c~swc_common~docs~badge]: https://img.shields.io/crates/v/swc_common?label=swc_common
-[c~swc_common~lib.rs]: https://lib.rs/crates/swc_common
-[c~swc_common~lib.rs~badge]: https://img.shields.io/badge/lib.rs-swc__common-yellow
-[c~swc_common~repo]: https://github.com/swc-project/swc
-[c~swc_common~repo~badge]: https://img.shields.io/badge/swc__common-steelblue?logo=github
-[c~swc_ecma_ast~crates.io]: https://crates.io/crates/swc_ecma_ast
-[c~swc_ecma_ast~crates.io~badge]: https://img.shields.io/badge/crates.io-swc__ecma__ast-crimson
-[c~swc_ecma_ast~docs]: https://rustdoc.swc.rs/swc_ecma_ast
-[c~swc_ecma_ast~docs~badge]: https://img.shields.io/crates/v/swc_ecma_ast?label=swc_ecma_ast
-[c~swc_ecma_ast~lib.rs]: https://lib.rs/crates/swc_ecma_ast
-[c~swc_ecma_ast~lib.rs~badge]: https://img.shields.io/badge/lib.rs-swc__ecma__ast-yellow
-[c~swc_ecma_ast~repo]: https://github.com/swc-project/swc
-[c~swc_ecma_ast~repo~badge]: https://img.shields.io/badge/swc__ecma__ast-steelblue?logo=github
-[c~swc_ecma_parser~crates.io]: https://crates.io/crates/swc_ecma_parser
-[c~swc_ecma_parser~crates.io~badge]: https://img.shields.io/badge/crates.io-swc__ecma__parser-crimson
-[c~swc_ecma_parser~docs]: https://docs.rs/swc_ecma_parser
-[c~swc_ecma_parser~docs~badge]: https://img.shields.io/crates/v/swc_ecma_parser?label=swc_ecma_parser
-[c~swc_ecma_parser~lib.rs]: https://lib.rs/crates/swc_ecma_parser
-[c~swc_ecma_parser~lib.rs~badge]: https://img.shields.io/badge/lib.rs-swc__ecma__parser-yellow
-[c~swc_ecma_parser~repo]: https://github.com/swc-project/swc/tree/main/crates/swc_ecma_parser
-[c~swc_ecma_parser~repo~badge]: https://img.shields.io/badge/swc__ecma__parser-steelblue?logo=github
-[c~swc~crates.io]: https://crates.io/crates/swc
-[c~swc~crates.io~badge]: https://img.shields.io/badge/crates.io-swc-crimson
-[c~swc~docs]: https://docs.rs/swc
-[c~swc~docs~badge]: https://img.shields.io/crates/v/swc?label=swc
-[c~swc~lib.rs]: https://lib.rs/crates/swc
-[c~swc~lib.rs~badge]: https://img.shields.io/badge/lib.rs-swc-yellow
-[c~swc~repo]: https://github.com/swc-project/swc
-[c~swc~repo~badge]: https://img.shields.io/badge/swc-steelblue?logo=github
-[c~swift-rs~crates.io]: https://crates.io/crates/swift-rs
-[c~swift-rs~crates.io~badge]: https://img.shields.io/badge/crates.io-swift--rs-crimson
-[c~swift-rs~docs]: https://docs.rs/swift-rs
-[c~swift-rs~docs~badge]: https://img.shields.io/crates/v/swift-rs?label=swift-rs
-[c~swift-rs~lib.rs]: https://lib.rs/crates/swift-rs
-[c~swift-rs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-swift--rs-yellow
-[c~swift-rs~repo]: https://github.com/Brendonovich/swift-rs
-[c~swift-rs~repo~badge]: https://img.shields.io/badge/swift--rs-steelblue?logo=github
-[c~sycamore~crates.io]: https://crates.io/crates/sycamore
-[c~sycamore~crates.io~badge]: https://img.shields.io/badge/crates.io-sycamore-crimson
-[c~sycamore~docs]: https://docs.rs/sycamore
-[c~sycamore~docs~badge]: https://img.shields.io/crates/v/sycamore?label=sycamore
-[c~sycamore~lib.rs]: https://lib.rs/crates/sycamore
-[c~sycamore~lib.rs~badge]: https://img.shields.io/badge/lib.rs-sycamore-yellow
-[c~sycamore~repo]: https://github.com/sycamore-rs/sycamore
-[c~sycamore~repo~badge]: https://img.shields.io/badge/sycamore-steelblue?logo=github
-[c~symphonia~crates.io]: https://crates.io/crates/symphonia
-[c~symphonia~crates.io~badge]: https://img.shields.io/badge/crates.io-symphonia-crimson
-[c~symphonia~docs]: https://docs.rs/symphonia
-[c~symphonia~docs~badge]: https://img.shields.io/crates/v/symphonia?label=symphonia
-[c~symphonia~lib.rs]: https://lib.rs/crates/symphonia
-[c~symphonia~lib.rs~badge]: https://img.shields.io/badge/lib.rs-symphonia-yellow
-[c~symphonia~repo]: https://github.com/pdeljanov/Symphonia
-[c~symphonia~repo~badge]: https://img.shields.io/badge/symphonia-steelblue?logo=github
-[c~synth~crates.io]: https://crates.io/crates/synth
-[c~synth~crates.io~badge]: https://img.shields.io/badge/crates.io-synth-crimson
-[c~synth~docs]: https://docs.rs/synth
-[c~synth~docs~badge]: https://img.shields.io/crates/v/synth?label=synth
-[c~synth~lib.rs]: https://lib.rs/crates/synth
-[c~synth~lib.rs~badge]: https://img.shields.io/badge/lib.rs-synth-yellow
-[c~synth~repo]: https://github.com/RustAudio/synth
-[c~synth~repo~badge]: https://img.shields.io/badge/synth-steelblue?logo=github
-[c~synth~website]: https://github.com/RustAudio/synth
-[c~synth~website~badge]: https://img.shields.io/badge/synth-coral
-[c~syn~crates.io]: https://crates.io/crates/syn
-[c~syn~crates.io~badge]: https://img.shields.io/badge/crates.io-syn-crimson
-[c~syn~docs]: https://docs.rs/syn
-[c~syn~docs~badge]: https://img.shields.io/crates/v/syn?label=syn
-[c~syn~lib.rs]: https://lib.rs/crates/syn
-[c~syn~lib.rs~badge]: https://img.shields.io/badge/lib.rs-syn-yellow
-[c~syn~repo]: https://github.com/dtolnay/syn
-[c~syn~repo~badge]: https://img.shields.io/badge/syn-steelblue?logo=github
-[c~sysinfo~crates.io]: https://crates.io/crates/sysinfo
-[c~sysinfo~crates.io~badge]: https://img.shields.io/badge/crates.io-sysinfo-crimson
-[c~sysinfo~docs]: https://docs.rs/sysinfo
-[c~sysinfo~docs~badge]: https://img.shields.io/crates/v/sysinfo?label=sysinfo
-[c~sysinfo~lib.rs]: https://lib.rs/crates/sysinfo
-[c~sysinfo~lib.rs~badge]: https://img.shields.io/badge/lib.rs-sysinfo-yellow
-[c~sysinfo~repo]: https://github.com/GuillaumeGomez/sysinfo
-[c~sysinfo~repo~badge]: https://img.shields.io/badge/sysinfo-steelblue?logo=github
-[c~syslog::Facility~docs]: https://docs.rs/syslog/latest/syslog/enum.Facility.html
-[c~syslog::init~docs]: https://docs.rs/syslog/latest/syslog/fn.init.html
-[c~syslog~crates.io]: https://crates.io/crates/syslog
-[c~syslog~crates.io~badge]: https://img.shields.io/badge/crates.io-syslog-crimson
-[c~syslog~docs]: https://docs.rs/syslog
-[c~syslog~docs~badge]: https://img.shields.io/crates/v/syslog?label=syslog
-[c~syslog~lib.rs]: https://lib.rs/crates/syslog
-[c~syslog~lib.rs~badge]: https://img.shields.io/badge/lib.rs-syslog-yellow
-[c~syslog~repo]: https://github.com/Geal/rust-syslog
-[c~syslog~repo~badge]: https://img.shields.io/badge/syslog-steelblue?logo=github
-[c~taffy~crates.io]: https://crates.io/crates/taffy
-[c~taffy~crates.io~badge]: https://img.shields.io/badge/crates.io-taffy-crimson
-[c~taffy~docs]: https://docs.rs/taffy
-[c~taffy~docs~badge]: https://img.shields.io/crates/v/taffy?label=taffy
-[c~taffy~lib.rs]: https://lib.rs/crates/taffy
-[c~taffy~lib.rs~badge]: https://img.shields.io/badge/lib.rs-taffy-yellow
-[c~taffy~repo]: https://github.com/DioxusLabs/taffy
-[c~taffy~repo~badge]: https://img.shields.io/badge/taffy-steelblue?logo=github
-[c~tantivy~crates.io]: https://crates.io/crates/tantivy
-[c~tantivy~crates.io~badge]: https://img.shields.io/badge/crates.io-tantivy-crimson
-[c~tantivy~docs]: https://docs.rs/tantivy
-[c~tantivy~docs~badge]: https://img.shields.io/crates/v/tantivy?label=tantivy
-[c~tantivy~lib.rs]: https://lib.rs/crates/tantivy
-[c~tantivy~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tantivy-yellow
-[c~tantivy~repo]: https://github.com/quickwit-oss/tantivy
-[c~tantivy~repo~badge]: https://img.shields.io/badge/tantivy-steelblue?logo=github
-[c~tao~crates.io]: https://crates.io/crates/tao
-[c~tao~crates.io~badge]: https://img.shields.io/badge/crates.io-tao-crimson
-[c~tao~docs]: https://docs.rs/tao
-[c~tao~docs~badge]: https://img.shields.io/crates/v/tao?label=tao
-[c~tao~lib.rs]: https://lib.rs/crates/tao
-[c~tao~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tao-yellow
-[c~tao~repo]: https://github.com/tauri-apps/tao
-[c~tao~repo~badge]: https://img.shields.io/badge/tao-steelblue?logo=github
-[c~taplo~crates.io]: https://crates.io/crates/taplo
-[c~taplo~crates.io~badge]: https://img.shields.io/badge/crates.io-taplo-crimson
-[c~taplo~dependents~badge]: https://img.shields.io/crates/dependents/taplo
-[c~taplo~deps-rs~badge]: https://img.shields.io/deps-rs/taplo/latest
-[c~taplo~docs]: https://docs.rs/taplo
-[c~taplo~docs~badge]: https://img.shields.io/crates/v/taplo?label=taplo
-[c~taplo~lib.rs]: https://lib.rs/crates/taplo
-[c~taplo~lib.rs~badge]: https://img.shields.io/badge/lib.rs-taplo-yellow
-[c~taplo~license~badge]: https://img.shields.io/crates/l/taplo
-[c~taplo~recent-downloads~badge]: https://img.shields.io/crates/dr/taplo
-[c~taplo~repo]: https://github.com/tamasfe/taplo
-[c~taplo~repo~badge]: https://img.shields.io/badge/taplo-steelblue?logo=github
-[c~taplo~website]: https://taplo.tamasfe.dev
-[c~taplo~website~badge]: https://img.shields.io/badge/taplo-coral
-[c~tar::Archive::entries~docs]: https://docs.rs/tar/latest/tar/struct.Archive.html#method.entries
-[c~tar::Archive::unpack~docs]: https://docs.rs/tar/latest/tar/struct.Archive.html#method.unpack
-[c~tar::Builder::append_dir_all~docs]: https://docs.rs/tar/latest/tar/struct.Builder.html#method.append_dir_all
-[c~tar::Builder~docs]: https://docs.rs/tar/latest/tar/struct.Builder.html
-[c~tar::Entry::unpack~docs]: https://docs.rs/tar/latest/tar/struct.Entry.html#method.unpack
-[c~tar::Entry~docs]: https://docs.rs/tar/latest/tar/struct.Entry.html
-[c~tar~crates.io]: https://crates.io/crates/tar
-[c~tar~crates.io~badge]: https://img.shields.io/badge/crates.io-tar-crimson
-[c~tar~docs]: https://docs.rs/tar
-[c~tar~docs~badge]: https://img.shields.io/crates/v/tar?label=tar
-[c~tar~lib.rs]: https://lib.rs/crates/tar
-[c~tar~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tar-yellow
-[c~tar~repo]: https://github.com/alexcrichton/tar-rs
-[c~tar~repo~badge]: https://img.shields.io/badge/tar-steelblue?logo=github
-[c~tauri-bundler~crates.io]: https://crates.io/crates/tauri-bundler
-[c~tauri-bundler~crates.io~badge]: https://img.shields.io/badge/crates.io-tauri--bundler-crimson
-[c~tauri-bundler~docs]: https://docs.rs/tauri-bundler
-[c~tauri-bundler~docs~badge]: https://img.shields.io/crates/v/tauri-bundler?label=tauri-bundler
-[c~tauri-bundler~lib.rs]: https://lib.rs/crates/tauri-bundler
-[c~tauri-bundler~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tauri--bundler-yellow
-[c~tauri-bundler~repo]: https://github.com/tauri-apps/tauri
-[c~tauri-bundler~repo~badge]: https://img.shields.io/badge/tauri--bundler-steelblue?logo=github
-[c~tauri~crates.io]: https://crates.io/crates/tauri
-[c~tauri~crates.io~badge]: https://img.shields.io/badge/crates.io-tauri-crimson
-[c~tauri~docs]: https://docs.rs/tauri
-[c~tauri~docs~badge]: https://img.shields.io/crates/v/tauri?label=tauri
-[c~tauri~lib.rs]: https://lib.rs/crates/tauri
-[c~tauri~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tauri-yellow
-[c~tauri~repo]: https://github.com/tauri-apps/tauri
-[c~tauri~repo~badge]: https://img.shields.io/badge/tauri-steelblue?logo=github
-[c~tauri~website]: https://tauri.app
-[c~tauri~website~badge]: https://img.shields.io/badge/tauri-coral
-[c~tch~crates.io]: https://crates.io/crates/tch
-[c~tch~crates.io~badge]: https://img.shields.io/badge/crates.io-tch-crimson
-[c~tch~docs]: https://docs.rs/tch
-[c~tch~docs~badge]: https://img.shields.io/crates/v/tch?label=tch
-[c~tch~lib.rs]: https://lib.rs/crates/tch
-[c~tch~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tch-yellow
-[c~tch~repo]: https://github.com/LaurentMazare/tch-rs
-[c~tch~repo~badge]: https://img.shields.io/badge/tch-steelblue?logo=github
-[c~television~crates.io]: https://crates.io/crates/television
-[c~television~crates.io~badge]: https://img.shields.io/badge/crates.io-television-crimson
-[c~television~docs]: https://docs.rs/television
-[c~television~docs~badge]: https://img.shields.io/crates/v/television?label=television
-[c~television~lib.rs]: https://lib.rs/crates/television
-[c~television~lib.rs~badge]: https://img.shields.io/badge/lib.rs-television-yellow
-[c~television~repo]: https://github.com/alexpasmantier/television
-[c~television~repo~badge]: https://img.shields.io/badge/television-steelblue?logo=github
-[c~tempdir~crates.io]: https://crates.io/crates/tempdir
-[c~tempdir~crates.io~badge]: https://img.shields.io/badge/crates.io-tempdir-crimson
-[c~tempdir~docs]: https://doc.rust-lang.org/tempdir
-[c~tempdir~docs~badge]: https://img.shields.io/crates/v/tempdir?label=tempdir
-[c~tempdir~lib.rs]: https://lib.rs/crates/tempdir
-[c~tempdir~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tempdir-yellow
-[c~tempdir~repo]: https://github.com/rust-lang/tempdir
-[c~tempdir~repo~badge]: https://img.shields.io/badge/tempdir-steelblue?logo=github
-[c~tempfile::Builder::tempdir~docs]: https://docs.rs/tempfile/latest/tempfile/struct.Builder.html#method.tempdir
-[c~tempfile::Builder~docs]: https://docs.rs/tempfile/latest/tempfile/struct.Builder.html
-[c~tempfile~crates.io]: https://crates.io/crates/tempfile
-[c~tempfile~crates.io~badge]: https://img.shields.io/badge/crates.io-tempfile-crimson
-[c~tempfile~docs]: https://docs.rs/tempfile
-[c~tempfile~docs~badge]: https://img.shields.io/crates/v/tempfile?label=tempfile
-[c~tempfile~lib.rs]: https://lib.rs/crates/tempfile
-[c~tempfile~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tempfile-yellow
-[c~tempfile~repo]: https://github.com/Stebalien/tempfile
-[c~tempfile~repo~badge]: https://img.shields.io/badge/tempfile-steelblue?logo=github
-[c~tempfile~website]: https://stebalien.com/projects/tempfile-rs
-[c~tempfile~website~badge]: https://img.shields.io/badge/tempfile-coral
-[c~tera~crates.io]: https://crates.io/crates/tera
-[c~tera~crates.io~badge]: https://img.shields.io/badge/crates.io-tera-crimson
-[c~tera~docs]: https://docs.rs/tera
-[c~tera~docs~badge]: https://img.shields.io/crates/v/tera?label=tera
-[c~tera~lib.rs]: https://lib.rs/crates/tera
-[c~tera~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tera-yellow
-[c~tera~repo]: https://github.com/Keats/tera
-[c~tera~repo~badge]: https://img.shields.io/badge/tera-steelblue?logo=github
-[c~tera~website]: https://keats.github.io/tera
-[c~tera~website~badge]: https://img.shields.io/badge/tera-coral
-[c~term-table~crates.io]: https://crates.io/crates/term-table
-[c~term-table~crates.io~badge]: https://img.shields.io/badge/crates.io-term--table-crimson
-[c~term-table~docs]: https://docs.rs/term-table
-[c~term-table~docs~badge]: https://img.shields.io/crates/v/term-table?label=term-table
-[c~term-table~lib.rs]: https://lib.rs/crates/term-table
-[c~term-table~lib.rs~badge]: https://img.shields.io/badge/lib.rs-term--table-yellow
-[c~term-table~repo]: https://github.com/RyanBluth/term-table-rs
-[c~term-table~repo~badge]: https://img.shields.io/badge/term--table-steelblue?logo=github
-[c~termbook~crates.io]: https://crates.io/crates/termbook
-[c~termbook~crates.io~badge]: https://img.shields.io/badge/crates.io-termbook-crimson
-[c~termbook~docs]: https://docs.rs/termbook
-[c~termbook~docs~badge]: https://img.shields.io/crates/v/termbook?label=termbook
-[c~termbook~lib.rs]: https://lib.rs/crates/termbook
-[c~termbook~lib.rs~badge]: https://img.shields.io/badge/lib.rs-termbook-yellow
-[c~termbook~repo]: https://github.com/Byron/termbook
-[c~termbook~repo~badge]: https://img.shields.io/badge/termbook-steelblue?logo=github
-[c~termbook~website]: https://byron.github.io/termbook
-[c~termbook~website~badge]: https://img.shields.io/badge/termbook-coral
-[c~termcolor~crates.io]: https://crates.io/crates/termcolor
-[c~termcolor~crates.io~badge]: https://img.shields.io/badge/crates.io-termcolor-crimson
-[c~termcolor~docs]: https://docs.rs/termcolor
-[c~termcolor~docs~badge]: https://img.shields.io/crates/v/termcolor?label=termcolor
-[c~termcolor~lib.rs]: https://lib.rs/crates/termcolor
-[c~termcolor~lib.rs~badge]: https://img.shields.io/badge/lib.rs-termcolor-yellow
-[c~termcolor~repo]: https://github.com/BurntSushi/termcolor
-[c~termcolor~repo~badge]: https://img.shields.io/badge/termcolor-steelblue?logo=github
-[c~termimad~crates.io]: https://crates.io/crates/termimad
-[c~termimad~crates.io~badge]: https://img.shields.io/badge/crates.io-termimad-crimson
-[c~termimad~docs]: https://docs.rs/termimad
-[c~termimad~docs~badge]: https://img.shields.io/crates/v/termimad?label=termimad
-[c~termimad~lib.rs]: https://lib.rs/crates/termimad
-[c~termimad~lib.rs~badge]: https://img.shields.io/badge/lib.rs-termimad-yellow
-[c~termimad~repo]: https://github.com/Canop/termimad
-[c~termimad~repo~badge]: https://img.shields.io/badge/termimad-steelblue?logo=github
-[c~termion~crates.io]: https://crates.io/crates/termion
-[c~termion~crates.io~badge]: https://img.shields.io/badge/crates.io-termion-crimson
-[c~termion~docs]: https://docs.rs/termion
-[c~termion~docs~badge]: https://img.shields.io/crates/v/termion?label=termion
-[c~termion~lib.rs]: https://lib.rs/crates/termion
-[c~termion~lib.rs~badge]: https://img.shields.io/badge/lib.rs-termion-yellow
-[c~termion~repo]: https://gitlab.redox-os.org/redox-os/termion
-[c~termion~repo~badge]: https://img.shields.io/badge/termion-steelblue?logo=github
-[c~testcontainers~crates.io]: https://crates.io/crates/testcontainers
-[c~testcontainers~crates.io~badge]: https://img.shields.io/badge/crates.io-testcontainers-crimson
-[c~testcontainers~docs]: https://docs.rs/testcontainers
-[c~testcontainers~docs~badge]: https://img.shields.io/crates/v/testcontainers?label=testcontainers
-[c~testcontainers~lib.rs]: https://lib.rs/crates/testcontainers
-[c~testcontainers~lib.rs~badge]: https://img.shields.io/badge/lib.rs-testcontainers-yellow
-[c~testcontainers~repo]: https://github.com/testcontainers/testcontainers-rs
-[c~testcontainers~repo~badge]: https://img.shields.io/badge/testcontainers-steelblue?logo=github
-[c~tetra~crates.io]: https://crates.io/crates/tetra
-[c~tetra~crates.io~badge]: https://img.shields.io/badge/crates.io-tetra-crimson
-[c~tetra~docs]: https://docs.rs/tetra
-[c~tetra~docs~badge]: https://img.shields.io/crates/v/tetra?label=tetra
-[c~tetra~lib.rs]: https://lib.rs/crates/tetra
-[c~tetra~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tetra-yellow
-[c~tetra~repo]: https://github.com/17cupsofcoffee/tetra
-[c~tetra~repo~badge]: https://img.shields.io/badge/tetra-steelblue?logo=github
-[c~textwrap~crates.io]: https://crates.io/crates/textwrap
-[c~textwrap~crates.io~badge]: https://img.shields.io/badge/crates.io-textwrap-crimson
-[c~textwrap~docs]: https://docs.rs/textwrap
-[c~textwrap~docs~badge]: https://img.shields.io/crates/v/textwrap?label=textwrap
-[c~textwrap~lib.rs]: https://lib.rs/crates/textwrap
-[c~textwrap~lib.rs~badge]: https://img.shields.io/badge/lib.rs-textwrap-yellow
-[c~textwrap~repo]: https://github.com/mgeisler/textwrap
-[c~textwrap~repo~badge]: https://img.shields.io/badge/textwrap-steelblue?logo=github
-[c~thiserror~crates.io]: https://crates.io/crates/thiserror
-[c~thiserror~crates.io~badge]: https://img.shields.io/badge/crates.io-thiserror-crimson
-[c~thiserror~docs]: https://docs.rs/thiserror
-[c~thiserror~docs~badge]: https://img.shields.io/crates/v/thiserror?label=thiserror
-[c~thiserror~lib.rs]: https://lib.rs/crates/thiserror
-[c~thiserror~lib.rs~badge]: https://img.shields.io/badge/lib.rs-thiserror-yellow
-[c~thiserror~repo]: https://github.com/dtolnay/thiserror
-[c~thiserror~repo~badge]: https://img.shields.io/badge/thiserror-steelblue?logo=github
-[c~threadpool::ThreadPool::execute~docs]: https://docs.rs/threadpool/latest/threadpool/struct.ThreadPool.html#method.execute
-[c~threadpool::ThreadPool~docs]: https://docs.rs/threadpool/latest/threadpool/struct.ThreadPool.html
-[c~threadpool~crates.io]: https://crates.io/crates/threadpool
-[c~threadpool~crates.io~badge]: https://img.shields.io/badge/crates.io-threadpool-crimson
-[c~threadpool~docs]: https://docs.rs/threadpool
-[c~threadpool~docs~badge]: https://img.shields.io/crates/v/threadpool?label=threadpool
-[c~threadpool~lib.rs]: https://lib.rs/crates/threadpool
-[c~threadpool~lib.rs~badge]: https://img.shields.io/badge/lib.rs-threadpool-yellow
-[c~threadpool~repo]: https://github.com/rust-threadpool/rust-threadpool
-[c~threadpool~repo~badge]: https://img.shields.io/badge/threadpool-steelblue?logo=github
-[c~three-d~crates.io]: https://crates.io/crates/three-d
-[c~three-d~crates.io~badge]: https://img.shields.io/badge/crates.io-three--d-crimson
-[c~three-d~docs]: https://docs.rs/three-d
-[c~three-d~docs~badge]: https://img.shields.io/crates/v/three-d?label=three-d
-[c~three-d~lib.rs]: https://lib.rs/crates/three-d
-[c~three-d~lib.rs~badge]: https://img.shields.io/badge/lib.rs-three--d-yellow
-[c~three-d~repo]: https://github.com/asny/three-d
-[c~three-d~repo~badge]: https://img.shields.io/badge/three--d-steelblue?logo=github
-[c~thumbnails~crates.io]: https://crates.io/crates/thumbnails
-[c~thumbnails~crates.io~badge]: https://img.shields.io/badge/crates.io-thumbnails-crimson
-[c~thumbnails~docs]: https://docs.rs/thumbnails
-[c~thumbnails~docs~badge]: https://img.shields.io/crates/v/thumbnails?label=thumbnails
-[c~thumbnails~lib.rs]: https://lib.rs/crates/thumbnails
-[c~thumbnails~lib.rs~badge]: https://img.shields.io/badge/lib.rs-thumbnails-yellow
-[c~thumbnails~repo]: https://github.com/carrot-png/thumbnails
-[c~thumbnails~repo~badge]: https://img.shields.io/badge/thumbnails-steelblue?logo=github
-[c~tiberius~crates.io]: https://crates.io/crates/tiberius
-[c~tiberius~crates.io~badge]: https://img.shields.io/badge/crates.io-tiberius-crimson
-[c~tiberius~docs]: https://docs.rs/tiberius
-[c~tiberius~docs~badge]: https://img.shields.io/crates/v/tiberius?label=tiberius
-[c~tiberius~lib.rs]: https://lib.rs/crates/tiberius
-[c~tiberius~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tiberius-yellow
-[c~tiberius~repo]: https://github.com/prisma/tiberius
-[c~tiberius~repo~badge]: https://img.shields.io/badge/tiberius-steelblue?logo=github
-[c~tickers~crates.io]: https://crates.io/crates/tickers
-[c~tickers~crates.io~badge]: https://img.shields.io/badge/crates.io-tickers-crimson
-[c~tickers~docs]: https://github.com/lewisinc/tickers
-[c~tickers~docs~badge]: https://img.shields.io/crates/v/tickers?label=tickers
-[c~tickers~lib.rs]: https://lib.rs/crates/tickers
-[c~tickers~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tickers-yellow
-[c~tickers~repo]: https://github.com/lewisinc/tickers
-[c~tickers~repo~badge]: https://img.shields.io/badge/tickers-steelblue?logo=github
-[c~tide~crates.io]: https://crates.io/crates/tide
-[c~tide~crates.io~badge]: https://img.shields.io/badge/crates.io-tide-crimson
-[c~tide~docs]: https://docs.rs/tide
-[c~tide~docs~badge]: https://img.shields.io/crates/v/tide?label=tide
-[c~tide~lib.rs]: https://lib.rs/crates/tide
-[c~tide~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tide-yellow
-[c~tide~repo]: https://github.com/http-rs/tide
-[c~tide~repo~badge]: https://img.shields.io/badge/tide-steelblue?logo=github
-[c~tikv-jemalloc-ctl~crates.io]: https://crates.io/crates/tikv-jemalloc-ctl
-[c~tikv-jemalloc-ctl~crates.io~badge]: https://img.shields.io/badge/crates.io-tikv--jemalloc--ctl-crimson
-[c~tikv-jemalloc-ctl~docs]: https://docs.rs/tikv-jemalloc-ctl
-[c~tikv-jemalloc-ctl~docs~badge]: https://img.shields.io/crates/v/tikv-jemalloc-ctl?label=tikv-jemalloc-ctl
-[c~tikv-jemalloc-ctl~lib.rs]: https://lib.rs/crates/tikv-jemalloc-ctl
-[c~tikv-jemalloc-ctl~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tikv--jemalloc--ctl-yellow
-[c~tikv-jemalloc-ctl~repo]: https://github.com/tikv/jemallocator
-[c~tikv-jemalloc-ctl~repo~badge]: https://img.shields.io/badge/tikv--jemalloc--ctl-steelblue?logo=github
-[c~tikv-jemallocator~crates.io]: https://crates.io/crates/tikv-jemallocator
-[c~tikv-jemallocator~crates.io~badge]: https://img.shields.io/badge/crates.io-tikv--jemallocator-crimson
-[c~tikv-jemallocator~docs]: https://docs.rs/jemallocator
-[c~tikv-jemallocator~docs~badge]: https://img.shields.io/crates/v/tikv-jemallocator?label=tikv-jemallocator
-[c~tikv-jemallocator~lib.rs]: https://lib.rs/crates/tikv-jemallocator
-[c~tikv-jemallocator~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tikv--jemallocator-yellow
-[c~tikv-jemallocator~repo]: https://github.com/tikv/jemallocator
-[c~tikv-jemallocator~repo~badge]: https://img.shields.io/badge/tikv--jemallocator-steelblue?logo=github
-[c~time~crates.io]: https://crates.io/crates/time
-[c~time~crates.io~badge]: https://img.shields.io/badge/crates.io-time-crimson
-[c~time~docs]: https://docs.rs/time
-[c~time~docs~badge]: https://img.shields.io/crates/v/time?label=time
-[c~time~lib.rs]: https://lib.rs/crates/time
-[c~time~lib.rs~badge]: https://img.shields.io/badge/lib.rs-time-yellow
-[c~time~repo]: https://github.com/time-rs/time
-[c~time~repo~badge]: https://img.shields.io/badge/time-steelblue?logo=github
-[c~time~website]: https://time-rs.github.io
-[c~time~website~badge]: https://img.shields.io/badge/time-coral
-[c~tiny-skia~crates.io]: https://crates.io/crates/tiny-skia
-[c~tiny-skia~crates.io~badge]: https://img.shields.io/badge/crates.io-tiny--skia-crimson
-[c~tiny-skia~docs]: https://docs.rs/tiny-skia
-[c~tiny-skia~docs~badge]: https://img.shields.io/crates/v/tiny-skia?label=tiny-skia
-[c~tiny-skia~lib.rs]: https://lib.rs/crates/tiny-skia
-[c~tiny-skia~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tiny--skia-yellow
-[c~tiny-skia~repo]: https://github.com/RazrFalcon/tiny-skia
-[c~tiny-skia~repo~badge]: https://img.shields.io/badge/tiny--skia-steelblue?logo=github
-[c~tinysearch~blog]: https://news.ycombinator.com/item?id=23473303
-[c~tinysearch~crates.io]: https://crates.io/crates/tinysearch
-[c~tinysearch~crates.io~badge]: https://img.shields.io/badge/crates.io-tinysearch-crimson
-[c~tinysearch~docs]: https://docs.rs/tinysearch
-[c~tinysearch~docs~badge]: https://img.shields.io/crates/v/tinysearch?label=tinysearch
-[c~tinysearch~lib.rs]: https://lib.rs/crates/tinysearch
-[c~tinysearch~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tinysearch-yellow
-[c~tinysearch~readme]: https://github.com/mre/tinysearch/blob/master/README.md
-[c~tinysearch~repo]: https://github.com/mre/tinysearch
-[c~tinysearch~repo~badge]: https://img.shields.io/badge/tinysearch-steelblue?logo=github
-[c~tinysearch~website]: https://endler.dev/2019/tinysearch
-[c~tinytemplate~crates.io]: https://crates.io/crates/tinytemplate
-[c~tinytemplate~crates.io~badge]: https://img.shields.io/badge/crates.io-tinytemplate-crimson
-[c~tinytemplate~docs]: https://docs.rs/tinytemplate
-[c~tinytemplate~docs~badge]: https://img.shields.io/crates/v/tinytemplate?label=tinytemplate
-[c~tinytemplate~lib.rs]: https://lib.rs/crates/tinytemplate
-[c~tinytemplate~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tinytemplate-yellow
-[c~tinytemplate~repo]: https://github.com/bheisler/TinyTemplate
-[c~tinytemplate~repo~badge]: https://img.shields.io/badge/tinytemplate-steelblue?logo=github
-[c~tinyvec~commit-activity~badge]: https://img.shields.io/github/commit-activity/y/Lokathor/tinyvec
-[c~tinyvec~crates.io]: https://crates.io/crates/tinyvec
-[c~tinyvec~crates.io~badge]: https://img.shields.io/badge/crates.io-tinyvec-crimson
-[c~tinyvec~dependents~badge]: https://img.shields.io/crates/dependents/tinyvec
-[c~tinyvec~deps-rs~badge]: https://img.shields.io/deps-rs/tinyvec/latest
-[c~tinyvec~docs]: https://docs.rs/tinyvec
-[c~tinyvec~docs~badge]: https://img.shields.io/crates/v/tinyvec?label=tinyvec
-[c~tinyvec~last-commit~badge]: https://img.shields.io/github/last-commit/Lokathor/tinyvec
-[c~tinyvec~lib.rs]: https://lib.rs/crates/tinyvec
-[c~tinyvec~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tinyvec-yellow
-[c~tinyvec~license~badge]: https://img.shields.io/crates/l/tinyvec
-[c~tinyvec~recent-downloads~badge]: https://img.shields.io/crates/dr/tinyvec
-[c~tinyvec~repo]: https://github.com/Lokathor/tinyvec
-[c~tinyvec~repo~badge]: https://img.shields.io/badge/tinyvec-steelblue?logo=github
-[c~tl~crates.io]: https://crates.io/crates/tl
-[c~tl~crates.io~badge]: https://img.shields.io/badge/crates.io-tl-crimson
-[c~tl~docs]: https://docs.rs/tl
-[c~tl~docs~badge]: https://img.shields.io/crates/v/tl?label=tl
-[c~tl~lib.rs]: https://lib.rs/crates/tl
-[c~tl~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tl-yellow
-[c~tl~repo]: https://github.com/y21/tl
-[c~tl~repo~badge]: https://img.shields.io/badge/tl-steelblue?logo=github
-[c~toasty~blog]: https://tokio.rs/blog/2024-10-23-announcing-toasty
-[c~toasty~crates.io]: https://crates.io/crates/toasty
-[c~toasty~crates.io~badge]: https://img.shields.io/badge/crates.io-toasty-crimson
-[c~toasty~docs]: https://docs.rs/toasty
-[c~toasty~docs~badge]: https://img.shields.io/crates/v/toasty?label=toasty
-[c~toasty~lib.rs]: https://lib.rs/crates/toasty
-[c~toasty~lib.rs~badge]: https://img.shields.io/badge/lib.rs-toasty-yellow
-[c~toasty~repo]: https://github.com/tokio-rs/toasty
-[c~toasty~repo~badge]: https://img.shields.io/badge/toasty-steelblue?logo=github
-[c~tokei~crates.io]: https://crates.io/crates/tokei
-[c~tokei~crates.io~badge]: https://img.shields.io/badge/crates.io-tokei-crimson
-[c~tokei~docs]: https://docs.rs/tokei
-[c~tokei~docs~badge]: https://img.shields.io/crates/v/tokei?label=tokei
-[c~tokei~lib.rs]: https://lib.rs/crates/tokei
-[c~tokei~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tokei-yellow
-[c~tokei~repo]: https://github.com/XAMPPRocky/tokei
-[c~tokei~repo~badge]: https://img.shields.io/badge/tokei-steelblue?logo=github
-[c~tokei~website]: https://tokei.rs
-[c~tokei~website~badge]: https://img.shields.io/badge/tokei-coral
-[c~tokenizers~crates.io]: https://crates.io/crates/tokenizers
-[c~tokenizers~crates.io~badge]: https://img.shields.io/badge/crates.io-tokenizers-crimson
-[c~tokenizers~docs]: https://docs.rs/tokenizers
-[c~tokenizers~docs~badge]: https://img.shields.io/crates/v/tokenizers?label=tokenizers
-[c~tokenizers~lib.rs]: https://lib.rs/crates/tokenizers
-[c~tokenizers~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tokenizers-yellow
-[c~tokenizers~repo]: https://github.com/huggingface/tokenizers
-[c~tokenizers~repo~badge]: https://img.shields.io/badge/tokenizers-steelblue?logo=github
-[c~tokio-graceful-shutdown~crates.io]: https://crates.io/crates/tokio-graceful-shutdown
-[c~tokio-graceful-shutdown~crates.io~badge]: https://img.shields.io/badge/crates.io-tokio--graceful--shutdown-crimson
-[c~tokio-graceful-shutdown~docs]: https://docs.rs/tokio-graceful-shutdown
-[c~tokio-graceful-shutdown~docs~badge]: https://img.shields.io/crates/v/tokio-graceful-shutdown?label=tokio-graceful-shutdown
-[c~tokio-graceful-shutdown~lib.rs]: https://lib.rs/crates/tokio-graceful-shutdown
-[c~tokio-graceful-shutdown~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tokio--graceful--shutdown-yellow
-[c~tokio-graceful-shutdown~repo]: https://github.com/Finomnis/tokio-graceful-shutdown
-[c~tokio-graceful-shutdown~repo~badge]: https://img.shields.io/badge/tokio--graceful--shutdown-steelblue?logo=github
-[c~tokio-metrics~crates.io]: https://crates.io/crates/tokio-metrics
-[c~tokio-metrics~crates.io~badge]: https://img.shields.io/badge/crates.io-tokio--metrics-crimson
-[c~tokio-metrics~docs]: https://docs.rs/tokio-metrics
-[c~tokio-metrics~docs~badge]: https://img.shields.io/crates/v/tokio-metrics?label=tokio-metrics
-[c~tokio-metrics~lib.rs]: https://lib.rs/crates/tokio-metrics
-[c~tokio-metrics~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tokio--metrics-yellow
-[c~tokio-metrics~repo]: https://github.com/tokio-rs/tokio-metrics
-[c~tokio-metrics~repo~badge]: https://img.shields.io/badge/tokio--metrics-steelblue?logo=github
-[c~tokio-metrics~website]: https://tokio.rs
-[c~tokio-metrics~website~badge]: https://img.shields.io/badge/tokio--metrics-coral
-[c~tokio-postgres~crates.io]: https://crates.io/crates/tokio-postgres
-[c~tokio-postgres~crates.io~badge]: https://img.shields.io/badge/crates.io-tokio--postgres-crimson
-[c~tokio-postgres~docs]: https://docs.rs/tokio-postgres
-[c~tokio-postgres~docs~badge]: https://img.shields.io/crates/v/tokio-postgres?label=tokio-postgres
-[c~tokio-postgres~lib.rs]: https://lib.rs/crates/tokio-postgres
-[c~tokio-postgres~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tokio--postgres-yellow
-[c~tokio-postgres~repo]: https://github.com/sfackler/rust-postgres/tree/master/tokio-postgres
-[c~tokio-postgres~repo~badge]: https://img.shields.io/badge/tokio--postgres-steelblue?logo=github
-[c~tokio-rustls~crates.io]: https://crates.io/crates/tokio-rustls
-[c~tokio-rustls~crates.io~badge]: https://img.shields.io/badge/crates.io-tokio--rustls-crimson
-[c~tokio-rustls~docs]: https://docs.rs/tokio-rustls
-[c~tokio-rustls~docs~badge]: https://img.shields.io/crates/v/tokio-rustls?label=tokio-rustls
-[c~tokio-rustls~lib.rs]: https://lib.rs/crates/tokio-rustls
-[c~tokio-rustls~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tokio--rustls-yellow
-[c~tokio-rustls~repo]: https://github.com/rustls/tokio-rustls
-[c~tokio-rustls~repo~badge]: https://img.shields.io/badge/tokio--rustls-steelblue?logo=github
-[c~tokio-stream~crates.io]: https://crates.io/crates/tokio-stream
-[c~tokio-stream~crates.io~badge]: https://img.shields.io/badge/crates.io-tokio--stream-crimson
-[c~tokio-stream~docs]: https://docs.rs/tokio-stream
-[c~tokio-stream~docs~badge]: https://img.shields.io/crates/v/tokio-stream?label=tokio-stream
-[c~tokio-stream~lib.rs]: https://lib.rs/crates/tokio-stream
-[c~tokio-stream~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tokio--stream-yellow
-[c~tokio-stream~repo]: https://github.com/tokio-rs/tokio
-[c~tokio-stream~repo~badge]: https://img.shields.io/badge/tokio--stream-steelblue?logo=github
-[c~tokio-stream~website]: https://tokio.rs
-[c~tokio-stream~website~badge]: https://img.shields.io/badge/tokio--stream-coral
-[c~tokio-tungstenite~crates.io]: https://crates.io/crates/tokio-tungstenite
-[c~tokio-tungstenite~crates.io~badge]: https://img.shields.io/badge/crates.io-tokio--tungstenite-crimson
-[c~tokio-tungstenite~docs]: https://docs.rs/tokio-tungstenite
-[c~tokio-tungstenite~docs~badge]: https://img.shields.io/crates/v/tokio-tungstenite?label=tokio-tungstenite
-[c~tokio-tungstenite~lib.rs]: https://lib.rs/crates/tokio-tungstenite
-[c~tokio-tungstenite~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tokio--tungstenite-yellow
-[c~tokio-tungstenite~repo]: https://github.com/snapview/tokio-tungstenite
-[c~tokio-tungstenite~repo~badge]: https://img.shields.io/badge/tokio--tungstenite-steelblue?logo=github
-[c~tokio-util~crates.io]: https://crates.io/crates/tokio-util
-[c~tokio-util~crates.io~badge]: https://img.shields.io/badge/crates.io-tokio--util-crimson
-[c~tokio-util~docs]: https://docs.rs/tokio-util
-[c~tokio-util~docs~badge]: https://img.shields.io/crates/v/tokio-util?label=tokio-util
-[c~tokio-util~lib.rs]: https://lib.rs/crates/tokio-util
-[c~tokio-util~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tokio--util-yellow
-[c~tokio-util~repo]: https://github.com/tokio-rs/tokio
-[c~tokio-util~repo~badge]: https://img.shields.io/badge/tokio--util-steelblue?logo=github
-[c~tokio-util~website]: https://tokio.rs
-[c~tokio-util~website~badge]: https://img.shields.io/badge/tokio--util-coral
-[c~tokio::main~current-thread-runtime~docs]: https://docs.rs/tokio/latest/tokio/attr.main.html#current-thread-runtime
-[c~tokio::sync::oneshot~docs]: https://docs.rs/tokio/latest/tokio/sync/oneshot
-[c~tokio::sync~crates.io]: https://crates.io/crates/tokio::sync
-[c~tokio::sync~docs]: https://docs.rs/tokio/latest/tokio/sync
-[c~tokio::sync~lib.rs]: https://lib.rs/crates/tokio::sync
-[c~tokio::sync~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tokio--sync-yellow
-[c~tokio::task::LocalSet~docs]: https://docs.rs/tokio/latest/tokio/task/struct.LocalSet.html
-[c~tokio::task::spawn_blocking~docs]: https://docs.rs/tokio/latest/tokio/task/fn.spawn_blocking.html
-[c~tokio::task::spawn~docs]: https://docs.rs/tokio/latest/tokio/task/fn.spawn.html
-[c~tokio~bridging-with-sync-code~website]: https://tokio.rs/tokio/topics/bridging
-[c~tokio~crates.io]: https://crates.io/crates/tokio
-[c~tokio~crates.io~badge]: https://img.shields.io/badge/crates.io-tokio-crimson
-[c~tokio~docs]: https://docs.rs/tokio
-[c~tokio~docs~badge]: https://img.shields.io/crates/v/tokio?label=tokio
-[c~tokio~examples~docs]: https://github.com/tokio-rs/tokio/tree/master/examples
-[c~tokio~examples~docs~badge]: https://img.shields.io/badge/Tokio_examples-steelblue?logo=github
-[c~tokio~glossary~website]: https://tokio.rs/tokio/glossary
-[c~tokio~lib.rs]: https://lib.rs/crates/tokio
-[c~tokio~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tokio-yellow
-[c~tokio~mini-redis~repo]: https://github.com/tokio-rs/mini-redis
-[c~tokio~mini-redis~repo~badge]: https://img.shields.io/badge/Tokio_mini_redis-steelblue?logo=github
-[c~tokio~repo]: https://github.com/tokio-rs/tokio
-[c~tokio~repo~badge]: https://img.shields.io/badge/tokio-steelblue?logo=github
-[c~tokio~tutorial_hello_tokio~website]: https://tokio.rs/tokio/tutorial/hello-tokio#the-code
-[c~tokio~tutorial~docs]: https://tokio.rs/tokio/tutorial
-[c~tokio~website]: https://tokio.rs
-[c~tokio~website~badge]: https://img.shields.io/badge/tokio-coral
-[c~toml::Value~docs]: https://docs.rs/toml/latest/toml/enum.Value.html
-[c~toml_edit~crates.io]: https://crates.io/crates/toml_edit
-[c~toml_edit~crates.io~badge]: https://img.shields.io/badge/crates.io-toml__edit-crimson
-[c~toml_edit~docs]: https://docs.rs/toml_edit
-[c~toml_edit~docs~badge]: https://img.shields.io/crates/v/toml_edit?label=toml_edit
-[c~toml_edit~lib.rs]: https://lib.rs/crates/toml_edit
-[c~toml_edit~lib.rs~badge]: https://img.shields.io/badge/lib.rs-toml__edit-yellow
-[c~toml_edit~repo]: https://github.com/toml-rs/toml/tree/main/crates/toml_edit
-[c~toml_edit~repo~badge]: https://img.shields.io/badge/toml__edit-steelblue?logo=github
-[c~toml~crates.io]: https://crates.io/crates/toml
-[c~toml~crates.io~badge]: https://img.shields.io/badge/crates.io-toml-crimson
-[c~toml~docs]: https://docs.rs/toml
-[c~toml~docs~badge]: https://img.shields.io/crates/v/toml?label=toml
-[c~toml~lib.rs]: https://lib.rs/crates/toml
-[c~toml~lib.rs~badge]: https://img.shields.io/badge/lib.rs-toml-yellow
-[c~toml~repo]: https://github.com/toml-rs/toml
-[c~toml~repo~badge]: https://img.shields.io/badge/toml-steelblue?logo=github
-[c~tonic-build~crates.io]: https://crates.io/crates/tonic-build
-[c~tonic-build~crates.io~badge]: https://img.shields.io/badge/crates.io-tonic--build-crimson
-[c~tonic-build~docs]: https://docs.rs/tonic-build
-[c~tonic-build~docs~badge]: https://img.shields.io/crates/v/tonic-build?label=tonic-build
-[c~tonic-build~lib.rs]: https://lib.rs/crates/tonic-build
-[c~tonic-build~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tonic--build-yellow
-[c~tonic-build~repo]: https://github.com/hyperium/tonic
-[c~tonic-build~repo~badge]: https://img.shields.io/badge/tonic--build-steelblue?logo=github
-[c~tonic~crates.io]: https://crates.io/crates/tonic
-[c~tonic~crates.io~badge]: https://img.shields.io/badge/crates.io-tonic-crimson
-[c~tonic~docs]: https://docs.rs/tonic
-[c~tonic~docs~badge]: https://img.shields.io/crates/v/tonic?label=tonic
-[c~tonic~lib.rs]: https://lib.rs/crates/tonic
-[c~tonic~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tonic-yellow
-[c~tonic~repo]: https://github.com/hyperium/tonic
-[c~tonic~repo~badge]: https://img.shields.io/badge/tonic-steelblue?logo=github
-[c~tower-http~crates.io]: https://crates.io/crates/tower-http
-[c~tower-http~crates.io~badge]: https://img.shields.io/badge/crates.io-tower--http-crimson
-[c~tower-http~docs]: https://docs.rs/tower-http
-[c~tower-http~docs~badge]: https://img.shields.io/crates/v/tower-http?label=tower-http
-[c~tower-http~lib.rs]: https://lib.rs/crates/tower-http
-[c~tower-http~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tower--http-yellow
-[c~tower-http~repo]: https://github.com/tower-rs/tower-http
-[c~tower-http~repo~badge]: https://img.shields.io/badge/tower--http-steelblue?logo=github
-[c~tower-web~crates.io]: https://crates.io/crates/tower-web
-[c~tower-web~crates.io~badge]: https://img.shields.io/badge/crates.io-tower--web-crimson
-[c~tower-web~docs]: https://docs.rs/tower-web
-[c~tower-web~docs~badge]: https://img.shields.io/crates/v/tower-web?label=tower-web
-[c~tower-web~lib.rs]: https://lib.rs/crates/tower-web
-[c~tower-web~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tower--web-yellow
-[c~tower-web~repo]: https://github.com/carllerche/tower-web
-[c~tower-web~repo~badge]: https://img.shields.io/badge/tower--web-steelblue?logo=github
-[c~tower::Layer~docs]: https://docs.rs/tower/latest/tower/trait.Layer.html
-[c~tower::ServiceBuilder~docs]: https://docs.rs/tower/latest/tower/struct.ServiceBuilder.html
-[c~tower::Service~docs]: https://docs.rs/tower/latest/tower/trait.Service.html
-[c~tower~crates.io]: https://crates.io/crates/tower
-[c~tower~crates.io~badge]: https://img.shields.io/badge/crates.io-tower-crimson
-[c~tower~docs]: https://docs.rs/tower
-[c~tower~docs~badge]: https://img.shields.io/crates/v/tower?label=tower
-[c~tower~lib.rs]: https://lib.rs/crates/tower
-[c~tower~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tower-yellow
-[c~tower~repo]: https://github.com/tower-rs/tower
-[c~tower~repo~badge]: https://img.shields.io/badge/tower-steelblue?logo=github
-[c~tracing-appender~crates.io]: https://crates.io/crates/tracing-appender
-[c~tracing-appender~crates.io~badge]: https://img.shields.io/badge/crates.io-tracing--appender-crimson
-[c~tracing-appender~docs]: https://docs.rs/tracing-appender
-[c~tracing-appender~docs~badge]: https://img.shields.io/crates/v/tracing-appender?label=tracing-appender
-[c~tracing-appender~lib.rs]: https://lib.rs/crates/tracing-appender
-[c~tracing-appender~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tracing--appender-yellow
-[c~tracing-appender~repo]: https://github.com/tokio-rs/tracing
-[c~tracing-appender~repo~badge]: https://img.shields.io/badge/tracing--appender-steelblue?logo=github
-[c~tracing-appender~website]: https://tokio.rs
-[c~tracing-appender~website~badge]: https://img.shields.io/badge/tracing--appender-coral
-[c~tracing-journald~crates.io]: https://crates.io/crates/tracing-journald
-[c~tracing-journald~crates.io~badge]: https://img.shields.io/badge/crates.io-tracing__journald-crimson
-[c~tracing-journald~docs]: https://docs.rs/tracing-journald
-[c~tracing-journald~docs~badge]: https://img.shields.io/crates/v/tracing-journald?label=tracing-journald
-[c~tracing-journald~lib.rs]: https://lib.rs/crates/tracing-journald
-[c~tracing-journald~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tracing__journald-yellow
-[c~tracing-journald~repo]: https://github.com/tokio-rs/tracing/tree/master/tracing-journald
-[c~tracing-journald~repo~badge]: https://img.shields.io/badge/tracing__journald-steelblue?logo=github
-[c~tracing-opentelemetry~crates.io]: https://crates.io/crates/tracing-opentelemetry
-[c~tracing-opentelemetry~crates.io~badge]: https://img.shields.io/badge/crates.io-tracing--opentelemetry-crimson
-[c~tracing-opentelemetry~docs]: https://docs.rs/tracing-opentelemetry
-[c~tracing-opentelemetry~docs~badge]: https://img.shields.io/crates/v/tracing-opentelemetry?label=tracing-opentelemetry
-[c~tracing-opentelemetry~lib.rs]: https://lib.rs/crates/tracing-opentelemetry
-[c~tracing-opentelemetry~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tracing--opentelemetry-yellow
-[c~tracing-opentelemetry~repo]: https://github.com/tokio-rs/tracing-opentelemetry
-[c~tracing-opentelemetry~repo~badge]: https://img.shields.io/badge/tracing--opentelemetry-steelblue?logo=github
-[c~tracing-subscriber~crates.io]: https://crates.io/crates/tracing-subscriber
-[c~tracing-subscriber~crates.io~badge]: https://img.shields.io/badge/crates.io-tracing--subscriber-crimson
-[c~tracing-subscriber~docs]: https://docs.rs/tracing-subscriber
-[c~tracing-subscriber~docs~badge]: https://img.shields.io/crates/v/tracing-subscriber?label=tracing-subscriber
-[c~tracing-subscriber~lib.rs]: https://lib.rs/crates/tracing-subscriber
-[c~tracing-subscriber~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tracing--subscriber-yellow
-[c~tracing-subscriber~repo]: https://github.com/tokio-rs/tracing/tree/master/tracing-subscriber
-[c~tracing-subscriber~repo~badge]: https://img.shields.io/badge/tracing--subscriber-steelblue?logo=github
-[c~tracing-subscriber~website]: https://github.com/tokio-rs/tracing/blob/master/tracing-subscriber/README.md
-[c~tracing-subscriber~website~badge]: https://img.shields.io/badge/tracing--subscriber-coral
-[c~tracing::span::Span::enter~docs]: https://docs.rs/tracing/latest/tracing/span/struct.Span.html#method.enter
-[c~tracing::span::Span::in_scope~docs]: https://docs.rs/tracing/latest/tracing/span/struct.Span.html#method.in_scope
-[c~tracing~crates.io]: https://crates.io/crates/tracing
-[c~tracing~crates.io~badge]: https://img.shields.io/badge/crates.io-tracing-crimson
-[c~tracing~docs]: https://docs.rs/tracing
-[c~tracing~docs~badge]: https://img.shields.io/crates/v/tracing?label=tracing
-[c~tracing~lib.rs]: https://lib.rs/crates/tracing
-[c~tracing~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tracing-yellow
-[c~tracing~next-steps]: https://tokio.rs/tokio/topics/tracing-next-steps
-[c~tracing~repo]: https://github.com/tokio-rs/tracing
-[c~tracing~repo~badge]: https://img.shields.io/badge/tracing-steelblue?logo=github
-[c~tracing~website]: https://tracing.rs/tracing
-[c~tracing~website~badge]: https://img.shields.io/badge/tracing-coral
-[c~tract~crates.io]: https://crates.io/crates/tract
-[c~tract~crates.io~badge]: https://img.shields.io/badge/crates.io-tract-crimson
-[c~tract~docs]: https://docs.rs/tract
-[c~tract~docs~badge]: https://img.shields.io/crates/v/tract?label=tract
-[c~tract~lib.rs]: https://lib.rs/crates/tract
-[c~tract~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tract-yellow
-[c~tract~repo]: https://github.com/snipsco/tract
-[c~tract~repo~badge]: https://img.shields.io/badge/tract-steelblue?logo=github
-[c~transforms~crates.io]: https://crates.io/crates/transforms
-[c~transforms~crates.io~badge]: https://img.shields.io/badge/crates.io-transforms-crimson
-[c~transforms~docs]: https://docs.rs/transforms
-[c~transforms~docs~badge]: https://img.shields.io/crates/v/transforms?label=transforms
-[c~transforms~lib.rs]: https://lib.rs/crates/transforms
-[c~transforms~lib.rs~badge]: https://img.shields.io/badge/lib.rs-transforms-yellow
-[c~transforms~repo]: https://github.com/deniz-hofmeister/transforms
-[c~transforms~repo~badge]: https://img.shields.io/badge/transforms-steelblue?logo=github
-[c~tree-sitter-rust~crates.io]: https://crates.io/crates/tree-sitter-rust
-[c~tree-sitter-rust~crates.io~badge]: https://img.shields.io/badge/crates.io-tree--sitter--rust-crimson
-[c~tree-sitter-rust~docs]: https://docs.rs/tree-sitter-rust
-[c~tree-sitter-rust~docs~badge]: https://img.shields.io/crates/v/tree-sitter-rust?label=tree-sitter-rust
-[c~tree-sitter-rust~lib.rs]: https://lib.rs/crates/tree-sitter-rust
-[c~tree-sitter-rust~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tree--sitter--rust-yellow
-[c~tree-sitter-rust~repo]: https://github.com/tree-sitter/tree-sitter-rust
-[c~tree-sitter-rust~repo~badge]: https://img.shields.io/badge/tree--sitter--rust-steelblue?logo=github
-[c~tree-sitter~crates.io]: https://crates.io/crates/tree-sitter
-[c~tree-sitter~crates.io~badge]: https://img.shields.io/badge/crates.io-tree--sitter-crimson
-[c~tree-sitter~docs]: https://docs.rs/tree-sitter
-[c~tree-sitter~docs~badge]: https://img.shields.io/crates/v/tree-sitter?label=tree-sitter
-[c~tree-sitter~lib.rs]: https://lib.rs/crates/tree-sitter
-[c~tree-sitter~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tree--sitter-yellow
-[c~tree-sitter~repo]: https://github.com/tree-sitter/tree-sitter
-[c~tree-sitter~repo~badge]: https://img.shields.io/badge/tree--sitter-steelblue?logo=github
-[c~tree-sitter~website]: https://tree-sitter.github.io/tree-sitter
-[c~tree-sitter~website~badge]: https://img.shields.io/badge/tree--sitter-coral
-[c~trillium~crates.io]: https://crates.io/crates/trillium
-[c~trillium~crates.io~badge]: https://img.shields.io/badge/crates.io-trillium-crimson
-[c~trillium~docs]: https://docs.rs/trillium
-[c~trillium~docs~badge]: https://img.shields.io/crates/v/trillium?label=trillium
-[c~trillium~lib.rs]: https://lib.rs/crates/trillium
-[c~trillium~lib.rs~badge]: https://img.shields.io/badge/lib.rs-trillium-yellow
-[c~trillium~repo]: https://github.com/trillium-rs/trillium
-[c~trillium~repo~badge]: https://img.shields.io/badge/trillium-steelblue?logo=github
-[c~trillium~website]: https://trillium.rs/welcome
-[c~trillium~website~badge]: https://img.shields.io/badge/trillium-coral
-[c~trybuild~crates.io]: https://crates.io/crates/trybuild
-[c~trybuild~crates.io~badge]: https://img.shields.io/badge/crates.io-trybuild-crimson
-[c~trybuild~docs]: https://docs.rs/trybuild
-[c~trybuild~docs~badge]: https://img.shields.io/crates/v/trybuild?label=trybuild
-[c~trybuild~lib.rs]: https://lib.rs/crates/trybuild
-[c~trybuild~lib.rs~badge]: https://img.shields.io/badge/lib.rs-trybuild-yellow
-[c~trybuild~repo]: https://github.com/dtolnay/trybuild
-[c~trybuild~repo~badge]: https://img.shields.io/badge/trybuild-steelblue?logo=github
-[c~ttf-parser~crates.io]: https://crates.io/crates/ttf-parser
-[c~ttf-parser~crates.io~badge]: https://img.shields.io/badge/crates.io-ttf--parser-crimson
-[c~ttf-parser~docs]: https://docs.rs/ttf-parser
-[c~ttf-parser~docs~badge]: https://img.shields.io/crates/v/ttf-parser?label=ttf-parser
-[c~ttf-parser~lib.rs]: https://lib.rs/crates/ttf-parser
-[c~ttf-parser~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ttf--parser-yellow
-[c~ttf-parser~repo]: https://github.com/harfbuzz/ttf-parser
-[c~ttf-parser~repo~badge]: https://img.shields.io/badge/ttf--parser-steelblue?logo=github
-[c~tui~crates.io]: https://crates.io/crates/tui
-[c~tui~crates.io~badge]: https://img.shields.io/badge/crates.io-tui-crimson
-[c~tui~docs]: https://docs.rs/tui
-[c~tui~docs~badge]: https://img.shields.io/crates/v/tui?label=tui
-[c~tui~lib.rs]: https://lib.rs/crates/tui
-[c~tui~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tui-yellow
-[c~tui~repo]: https://github.com/fdehau/tui-rs
-[c~tui~repo~badge]: https://img.shields.io/badge/tui-steelblue?logo=github
-[c~tun-tap~crates.io]: https://crates.io/crates/tun-tap
-[c~tun-tap~crates.io~badge]: https://img.shields.io/badge/crates.io-tun--tap-crimson
-[c~tun-tap~docs]: https://docs.rs/tun-tap
-[c~tun-tap~docs~badge]: https://img.shields.io/crates/v/tun-tap?label=tun-tap
-[c~tun-tap~lib.rs]: https://lib.rs/crates/tun-tap
-[c~tun-tap~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tun--tap-yellow
-[c~tun-tap~repo]: https://github.com/vorner/tuntap
-[c~tun-tap~repo~badge]: https://img.shields.io/badge/tun--tap-steelblue?logo=github
-[c~tungstenite~crates.io]: https://crates.io/crates/tungstenite
-[c~tungstenite~crates.io~badge]: https://img.shields.io/badge/crates.io-tungstenite-crimson
-[c~tungstenite~docs]: https://docs.rs/tungstenite
-[c~tungstenite~docs~badge]: https://img.shields.io/crates/v/tungstenite?label=tungstenite
-[c~tungstenite~lib.rs]: https://lib.rs/crates/tungstenite
-[c~tungstenite~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tungstenite-yellow
-[c~tungstenite~repo]: https://github.com/snapview/tungstenite-rs
-[c~tungstenite~repo~badge]: https://img.shields.io/badge/tungstenite-steelblue?logo=github
-[c~twiggy~crates.io]: https://crates.io/crates/twiggy
-[c~twiggy~crates.io~badge]: https://img.shields.io/badge/crates.io-twiggy-crimson
-[c~twiggy~docs]: https://docs.rs/twiggy
-[c~twiggy~docs~badge]: https://img.shields.io/crates/v/twiggy?label=twiggy
-[c~twiggy~lib.rs]: https://lib.rs/crates/twiggy
-[c~twiggy~lib.rs~badge]: https://img.shields.io/badge/lib.rs-twiggy-yellow
-[c~twiggy~repo]: https://github.com/rustwasm/twiggy
-[c~twiggy~repo~badge]: https://img.shields.io/badge/twiggy-steelblue?logo=github
-[c~typed-builder~crates.io]: https://crates.io/crates/typed-builder
-[c~typed-builder~crates.io~badge]: https://img.shields.io/badge/crates.io-typed--builder-crimson
-[c~typed-builder~docs]: https://idanarye.github.io/rust-typed-builder
-[c~typed-builder~docs~badge]: https://img.shields.io/crates/v/typed-builder?label=typed-builder
-[c~typed-builder~lib.rs]: https://lib.rs/crates/typed-builder
-[c~typed-builder~lib.rs~badge]: https://img.shields.io/badge/lib.rs-typed--builder-yellow
-[c~typed-builder~repo]: https://github.com/idanarye/rust-typed-builder
-[c~typed-builder~repo~badge]: https://img.shields.io/badge/typed--builder-steelblue?logo=github
-[c~typenum~crates.io]: https://crates.io/crates/typenum
-[c~typenum~crates.io~badge]: https://img.shields.io/badge/crates.io-typenum-crimson
-[c~typenum~docs]: https://docs.rs/typenum
-[c~typenum~docs~badge]: https://img.shields.io/crates/v/typenum?label=typenum
-[c~typenum~lib.rs]: https://lib.rs/crates/typenum
-[c~typenum~lib.rs~badge]: https://img.shields.io/badge/lib.rs-typenum-yellow
-[c~typenum~repo]: https://github.com/paholg/typenum
-[c~typenum~repo~badge]: https://img.shields.io/badge/typenum-steelblue?logo=github
-[c~typify~crates.io]: https://crates.io/crates/typify
-[c~typify~crates.io~badge]: https://img.shields.io/badge/crates.io-typify-crimson
-[c~typify~docs]: https://docs.rs/typify
-[c~typify~docs~badge]: https://img.shields.io/crates/v/typify?label=typify
-[c~typify~lib.rs]: https://lib.rs/crates/typify
-[c~typify~lib.rs~badge]: https://img.shields.io/badge/lib.rs-typify-yellow
-[c~typify~repo]: https://github.com/oxidecomputer/typify
-[c~typify~repo~badge]: https://img.shields.io/badge/typify-steelblue?logo=github
-[c~ulid~commit-activity~badge]: https://img.shields.io/github/commit-activity/y/dylanhart/ulid-rs
-[c~ulid~crates.io]: https://crates.io/crates/ulid
-[c~ulid~crates.io~badge]: https://img.shields.io/badge/crates.io-ulid-crimson
-[c~ulid~dependents~badge]: https://img.shields.io/crates/dependents/ulid
-[c~ulid~deps-rs~badge]: https://img.shields.io/deps-rs/ulid/latest
-[c~ulid~docs]: https://docs.rs/ulid
-[c~ulid~docs~badge]: https://img.shields.io/crates/v/ulid?label=ulid
-[c~ulid~last-commit~badge]: https://img.shields.io/github/last-commit/dylanhart/ulid-rs
-[c~ulid~lib.rs]: https://lib.rs/crates/ulid
-[c~ulid~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ulid-yellow
-[c~ulid~license~badge]: https://img.shields.io/crates/l/ulid
-[c~ulid~recent-downloads~badge]: https://img.shields.io/crates/dr/ulid
-[c~ulid~repo]: https://github.com/dylanhart/ulid-rs
-[c~ulid~repo~badge]: https://img.shields.io/badge/ulid-steelblue?logo=github
-[c~ultraviolet~crates.io]: https://crates.io/crates/ultraviolet
-[c~ultraviolet~crates.io~badge]: https://img.shields.io/badge/crates.io-ultraviolet-crimson
-[c~ultraviolet~docs]: https://docs.rs/ultraviolet
-[c~ultraviolet~docs~badge]: https://img.shields.io/crates/v/ultraviolet?label=ultraviolet
-[c~ultraviolet~lib.rs]: https://lib.rs/crates/ultraviolet
-[c~ultraviolet~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ultraviolet-yellow
-[c~ultraviolet~repo]: https://github.com/termhn/ultraviolet
-[c~ultraviolet~repo~badge]: https://img.shields.io/badge/ultraviolet-steelblue?logo=github
-[c~unic-langid~crates.io]: https://crates.io/crates/unic-langid
-[c~unic-langid~crates.io~badge]: https://img.shields.io/badge/crates.io-unic--langid-crimson
-[c~unic-langid~docs]: https://docs.rs/unic-langid
-[c~unic-langid~docs~badge]: https://img.shields.io/crates/v/unic-langid?label=unic-langid
-[c~unic-langid~lib.rs]: https://lib.rs/crates/unic-langid
-[c~unic-langid~lib.rs~badge]: https://img.shields.io/badge/lib.rs-unic--langid-yellow
-[c~unic-langid~repo]: https://github.com/zbraniecki/unic-locale
-[c~unic-langid~repo~badge]: https://img.shields.io/badge/unic--langid-steelblue?logo=github
-[c~unicode-segmentation::UnicodeSegmentation::graphemes~docs]: https://docs.rs/unicode-segmentation/latest/unicode-segmentation/trait.UnicodeSegmentation.html#tymethod.graphemes
-[c~unicode-segmentation~crates.io]: https://crates.io/crates/unicode-segmentation
-[c~unicode-segmentation~crates.io~badge]: https://img.shields.io/badge/crates.io-unicode--segmentation-crimson
-[c~unicode-segmentation~docs]: https://docs.rs/unicode-segmentation
-[c~unicode-segmentation~docs~badge]: https://img.shields.io/crates/v/unicode-segmentation?label=unicode-segmentation
-[c~unicode-segmentation~lib.rs]: https://lib.rs/crates/unicode-segmentation
-[c~unicode-segmentation~lib.rs~badge]: https://img.shields.io/badge/lib.rs-unicode--segmentation-yellow
-[c~unicode-segmentation~repo]: https://github.com/unicode-rs/unicode-segmentation
-[c~unicode-segmentation~repo~badge]: https://img.shields.io/badge/unicode--segmentation-steelblue?logo=github
-[c~uniffi~crates.io]: https://crates.io/crates/uniffi
-[c~uniffi~crates.io~badge]: https://img.shields.io/badge/crates.io-uniffi-crimson
-[c~uniffi~docs]: https://docs.rs/uniffi/latest/uniffi
-[c~uniffi~docs~badge]: https://img.shields.io/crates/v/uniffi?label=uniffi
-[c~uniffi~lib.rs]: https://lib.rs/crates/uniffi
-[c~uniffi~lib.rs~badge]: https://img.shields.io/badge/lib.rs-uniffi-yellow
-[c~uniffi~repo]: https://github.com/mozilla/uniffi-rs
-[c~uniffi~repo~badge]: https://img.shields.io/badge/uniffi-steelblue?logo=github
-[c~uniffi~website]: https://mozilla.github.io/uniffi-rs
-[c~uniffi~website~badge]: https://img.shields.io/badge/uniffi-coral
-[c~uom~crates.io]: https://crates.io/crates/uom
-[c~uom~crates.io~badge]: https://img.shields.io/badge/crates.io-uom-crimson
-[c~uom~docs]: https://docs.rs/uom
-[c~uom~docs~badge]: https://img.shields.io/crates/v/uom?label=uom
-[c~uom~lib.rs]: https://lib.rs/crates/uom
-[c~uom~lib.rs~badge]: https://img.shields.io/badge/lib.rs-uom-yellow
-[c~uom~repo]: https://github.com/iliekturtles/uom
-[c~uom~repo~badge]: https://img.shields.io/badge/uom-steelblue?logo=github
-[c~urdf-rs~crates.io]: https://crates.io/crates/urdf-rs
-[c~urdf-rs~crates.io~badge]: https://img.shields.io/badge/crates.io-urdf--rs-crimson
-[c~urdf-rs~docs]: https://docs.rs/urdf-rs
-[c~urdf-rs~docs~badge]: https://img.shields.io/crates/v/urdf-rs?label=urdf-rs
-[c~urdf-rs~lib.rs]: https://lib.rs/crates/urdf-rs
-[c~urdf-rs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-urdf--rs-yellow
-[c~urdf-rs~repo]: https://github.com/openrr/urdf-rs
-[c~urdf-rs~repo~badge]: https://img.shields.io/badge/urdf--rs-steelblue?logo=github
-[c~urdf-viz~crates.io]: https://crates.io/crates/urdf-viz
-[c~urdf-viz~crates.io~badge]: https://img.shields.io/badge/crates.io-urdf--viz-crimson
-[c~urdf-viz~docs]: https://docs.rs/urdf-viz
-[c~urdf-viz~docs~badge]: https://img.shields.io/crates/v/urdf-viz?label=urdf-viz
-[c~urdf-viz~lib.rs]: https://lib.rs/crates/urdf-viz
-[c~urdf-viz~lib.rs~badge]: https://img.shields.io/badge/lib.rs-urdf--viz-yellow
-[c~urdf-viz~repo]: https://github.com/openrr/urdf-viz
-[c~urdf-viz~repo~badge]: https://img.shields.io/badge/urdf--viz-steelblue?logo=github
-[c~ureq~crates.io]: https://crates.io/crates/ureq
-[c~ureq~crates.io~badge]: https://img.shields.io/badge/crates.io-ureq-crimson
-[c~ureq~docs]: https://docs.rs/ureq
-[c~ureq~docs~badge]: https://img.shields.io/crates/v/ureq?label=ureq
-[c~ureq~lib.rs]: https://lib.rs/crates/ureq
-[c~ureq~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ureq-yellow
-[c~ureq~repo]: https://github.com/algesten/ureq
-[c~ureq~repo~badge]: https://img.shields.io/badge/ureq-steelblue?logo=github
-[c~url::ParseOptions~docs]: https://docs.rs/url/latest/url/struct.ParseOptions.html
-[c~url::PathSegmentsMut::clear~docs]: https://docs.rs/url/latest/url/struct.PathSegmentsMut.html#method.clear
-[c~url::Position::BeforePath~docs]: https://docs.rs/url/latest/url/enum.Position.html#variant.BeforePath
-[c~url::Position~docs]: https://docs.rs/url/latest/url/enum.Position.html
-[c~url::Url::join~docs]: https://docs.rs/url/latest/url/struct.Url.html#method.join
-[c~url::Url::origin~docs]: https://docs.rs/url/latest/url/struct.Url.html#method.origin
-[c~url::Url::parse_with_params~docs]: https://docs.rs/url/latest/url/struct.Url.html#method.parse_with_params
-[c~url::Url::parse~docs]: https://docs.rs/url/latest/url/struct.Url.html#method.parse
-[c~url::Url::set_query~docs]: https://docs.rs/url/latest/url/struct.Url.html#method.set_query
-[c~url::Url~docs]: https://docs.rs/url/latest/url/struct.Url.html
-[c~url~crates.io]: https://crates.io/crates/url
-[c~url~crates.io~badge]: https://img.shields.io/badge/crates.io-url-crimson
-[c~url~docs]: https://docs.rs/url
-[c~url~docs~badge]: https://img.shields.io/crates/v/url?label=url
-[c~url~lib.rs]: https://lib.rs/crates/url
-[c~url~lib.rs~badge]: https://img.shields.io/badge/lib.rs-url-yellow
-[c~url~repo]: https://github.com/servo/rust-url
-[c~url~repo~badge]: https://img.shields.io/badge/url-steelblue?logo=github
-[c~ustr~crates.io]: https://crates.io/crates/ustr
-[c~ustr~crates.io~badge]: https://img.shields.io/badge/crates.io-ustr-crimson
-[c~ustr~docs]: https://docs.rs/ustr
-[c~ustr~docs~badge]: https://img.shields.io/crates/v/ustr?label=ustr
-[c~ustr~lib.rs]: https://lib.rs/crates/ustr
-[c~ustr~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ustr-yellow
-[c~ustr~repo]: https://github.com/anderslanglands/ustr
-[c~ustr~repo~badge]: https://img.shields.io/badge/ustr-steelblue?logo=github
-[c~usvg~crates.io]: https://crates.io/crates/usvg
-[c~usvg~crates.io~badge]: https://img.shields.io/badge/crates.io-usvg-crimson
-[c~usvg~docs]: https://docs.rs/usvg
-[c~usvg~docs~badge]: https://img.shields.io/crates/v/usvg?label=usvg
-[c~usvg~lib.rs]: https://lib.rs/crates/usvg
-[c~usvg~lib.rs~badge]: https://img.shields.io/badge/lib.rs-usvg-yellow
-[c~usvg~repo]: https://github.com/linebender/resvg/tree/main/crates/usvg
-[c~usvg~repo~badge]: https://img.shields.io/badge/usvg-steelblue?logo=github
-[c~uuid~commit-activity~badge]: https://img.shields.io/github/commit-activity/y/uuid-rs/uuid
-[c~uuid~crates.io]: https://crates.io/crates/uuid
-[c~uuid~crates.io~badge]: https://img.shields.io/badge/crates.io-uuid-crimson
-[c~uuid~dependents~badge]: https://img.shields.io/crates/dependents/uuid
-[c~uuid~deps-rs~badge]: https://img.shields.io/deps-rs/uuid/latest
-[c~uuid~docs]: https://docs.rs/uuid
-[c~uuid~docs~badge]: https://img.shields.io/crates/v/uuid?label=uuid
-[c~uuid~last-commit~badge]: https://img.shields.io/github/last-commit/uuid-rs/uuid
-[c~uuid~lib.rs]: https://lib.rs/crates/uuid
-[c~uuid~lib.rs~badge]: https://img.shields.io/badge/lib.rs-uuid-yellow
-[c~uuid~license~badge]: https://img.shields.io/crates/l/uuid
-[c~uuid~recent-downloads~badge]: https://img.shields.io/crates/dr/uuid
-[c~uuid~repo]: https://github.com/uuid-rs/uuid
-[c~uuid~repo~badge]: https://img.shields.io/badge/uuid-steelblue?logo=github
-[c~valgrind~crates.io]: https://crates.io/crates/valgrind
-[c~valgrind~crates.io~badge]: https://img.shields.io/badge/crates.io-valgrind-crimson
-[c~valgrind~docs]: https://docs.rs/valgrind
-[c~valgrind~docs~badge]: https://img.shields.io/crates/v/valgrind?label=valgrind
-[c~valgrind~lib.rs]: https://lib.rs/crates/valgrind
-[c~valgrind~lib.rs~badge]: https://img.shields.io/badge/lib.rs-valgrind-yellow
-[c~valgrind~repo]: https://github.com/dtrebbien/valgrind-rs
-[c~valgrind~repo~badge]: https://img.shields.io/badge/valgrind-steelblue?logo=github
-[c~validator~crates.io]: https://crates.io/crates/validator
-[c~validator~crates.io~badge]: https://img.shields.io/badge/crates.io-validator-crimson
-[c~validator~docs]: https://docs.rs/validator
-[c~validator~docs~badge]: https://img.shields.io/crates/v/validator?label=validator
-[c~validator~lib.rs]: https://lib.rs/crates/validator
-[c~validator~lib.rs~badge]: https://img.shields.io/badge/lib.rs-validator-yellow
-[c~validator~repo]: https://github.com/Keats/validator
-[c~validator~repo~badge]: https://img.shields.io/badge/validator-steelblue?logo=github
-[c~vello~crates.io]: https://crates.io/crates/vello
-[c~vello~crates.io~badge]: https://img.shields.io/badge/crates.io-vello-crimson
-[c~vello~docs]: https://docs.rs/vello
-[c~vello~docs~badge]: https://img.shields.io/crates/v/vello?label=vello
-[c~vello~lib.rs]: https://lib.rs/crates/vello
-[c~vello~lib.rs~badge]: https://img.shields.io/badge/lib.rs-vello-yellow
-[c~vello~repo]: https://github.com/linebender/vello
-[c~vello~repo~badge]: https://img.shields.io/badge/vello-steelblue?logo=github
-[c~vger~crates.io]: https://crates.io/crates/vger
-[c~vger~crates.io~badge]: https://img.shields.io/badge/crates.io-vger-crimson
-[c~vger~docs]: https://docs.rs/vger
-[c~vger~docs~badge]: https://img.shields.io/crates/v/vger?label=vger
-[c~vger~lib.rs]: https://lib.rs/crates/vger
-[c~vger~lib.rs~badge]: https://img.shields.io/badge/lib.rs-vger-yellow
-[c~vger~repo]: https://github.com/audulus/vger-rs
-[c~vger~repo~badge]: https://img.shields.io/badge/vger-steelblue?logo=github
-[c~virt~crates.io]: https://crates.io/crates/virt
-[c~virt~crates.io~badge]: https://img.shields.io/badge/crates.io-virt-crimson
-[c~virt~docs]: https://docs.rs/virt
-[c~virt~docs~badge]: https://img.shields.io/crates/v/virt?label=virt
-[c~virt~lib.rs]: https://lib.rs/crates/virt
-[c~virt~lib.rs~badge]: https://img.shields.io/badge/lib.rs-virt-yellow
-[c~virt~repo]: https://gitlab.com/libvirt/libvirt-rust
-[c~virt~repo~badge]: https://img.shields.io/badge/virt-steelblue?logo=github
-[c~virt~website]: https://libvirt.org
-[c~virt~website~badge]: https://img.shields.io/badge/virt-coral
-[c~vision~crates.io]: https://crates.io/crates/vision
-[c~vision~crates.io~badge]: https://img.shields.io/badge/crates.io-vision-crimson
-[c~vision~docs]: https://docs.rs/vision
-[c~vision~docs~badge]: https://img.shields.io/crates/v/vision?label=vision
-[c~vision~lib.rs]: https://lib.rs/crates/vision
-[c~vision~lib.rs~badge]: https://img.shields.io/badge/lib.rs-vision-yellow
-[c~vision~repo]: https://github.com/AtheMathmo/vision-rs
-[c~vision~repo~badge]: https://img.shields.io/badge/vision-steelblue?logo=github
-[c~vizia~crates.io]: https://crates.io/crates/vizia
-[c~vizia~crates.io~badge]: https://img.shields.io/badge/crates.io-vizia-crimson
-[c~vizia~docs]: https://docs.rs/vizia
-[c~vizia~docs~badge]: https://img.shields.io/crates/v/vizia?label=vizia
-[c~vizia~lib.rs]: https://lib.rs/crates/vizia
-[c~vizia~lib.rs~badge]: https://img.shields.io/badge/lib.rs-vizia-yellow
-[c~vizia~repo]: https://github.com/vizia/vizia
-[c~vizia~repo~badge]: https://img.shields.io/badge/vizia-steelblue?logo=github
-[c~vpx~crates.io]: https://crates.io/crates/vpx
-[c~vpx~crates.io~badge]: https://img.shields.io/badge/crates.io-vpx-crimson
-[c~vpx~docs]: https://docs.rs/vpx
-[c~vpx~docs~badge]: https://img.shields.io/crates/v/vpx?label=vpx
-[c~vpx~lib.rs]: https://lib.rs/crates/vpx
-[c~vpx~lib.rs~badge]: https://img.shields.io/badge/lib.rs-vpx-yellow
-[c~vpx~repo]: https://github.com/DiamondLovesYou/rust-vpx
-[c~vpx~repo~badge]: https://img.shields.io/badge/vpx-steelblue?logo=github
-[c~vulkan-sys~crates.io]: https://crates.io/crates/vulkan-sys
-[c~vulkan-sys~crates.io~badge]: https://img.shields.io/badge/crates.io-vulkan--sys-crimson
-[c~vulkan-sys~docs]: https://docs.rs/vulkan-sys
-[c~vulkan-sys~docs~badge]: https://img.shields.io/crates/v/vulkan-sys?label=vulkan-sys
-[c~vulkan-sys~lib.rs]: https://lib.rs/crates/vulkan-sys
-[c~vulkan-sys~lib.rs~badge]: https://img.shields.io/badge/lib.rs-vulkan--sys-yellow
-[c~vulkan-sys~repo]: https://github.com/oezgurmakkurt/vulkan-sys
-[c~vulkan-sys~repo~badge]: https://img.shields.io/badge/vulkan--sys-steelblue?logo=github
-[c~vulkano~crates.io]: https://crates.io/crates/vulkano
-[c~vulkano~crates.io~badge]: https://img.shields.io/badge/crates.io-vulkano-crimson
-[c~vulkano~docs]: https://docs.rs/vulkano
-[c~vulkano~docs~badge]: https://img.shields.io/crates/v/vulkano?label=vulkano
-[c~vulkano~lib.rs]: https://lib.rs/crates/vulkano
-[c~vulkano~lib.rs~badge]: https://img.shields.io/badge/lib.rs-vulkano-yellow
-[c~vulkano~repo]: https://github.com/vulkano-rs/vulkano/tree/master/vulkano
-[c~vulkano~repo~badge]: https://img.shields.io/badge/vulkano-steelblue?logo=github
-[c~vulkano~website]: https://vulkano.rs
-[c~vulkano~website~badge]: https://img.shields.io/badge/vulkano-coral
-[c~walkdir::IntoIter::filter_entry~docs]: https://docs.rs/walkdir/latest/walkdir/struct.IntoIter.html#method.filter_entry
-[c~walkdir::WalkDir::DirEntry~docs]: https://docs.rs/walkdir/latest/walkdir/struct.DirEntry.html
-[c~walkdir::WalkDir::depth~docs]: https://docs.rs/walkdir/latest/walkdir/struct.DirEntry.html#method.depth
-[c~walkdir::WalkDir::follow_links~docs]: https://docs.rs/walkdir/latest/walkdir/struct.WalkDir.html#method.follow_links
-[c~walkdir::WalkDir::max_depth~docs]: https://docs.rs/walkdir/latest/walkdir/struct.WalkDir.html#method.max_depth
-[c~walkdir::WalkDir::min_depth~docs]: https://docs.rs/walkdir/latest/walkdir/struct.WalkDir.html#method.min_depth
-[c~walkdir::WalkDir::new~docs]: https://docs.rs/walkdir/latest/walkdir/struct.WalkDir.html#method.new
-[c~walkdir~crates.io]: https://crates.io/crates/walkdir
-[c~walkdir~crates.io~badge]: https://img.shields.io/badge/crates.io-walkdir-crimson
-[c~walkdir~docs]: https://docs.rs/walkdir
-[c~walkdir~docs~badge]: https://img.shields.io/crates/v/walkdir?label=walkdir
-[c~walkdir~lib.rs]: https://lib.rs/crates/walkdir
-[c~walkdir~lib.rs~badge]: https://img.shields.io/badge/lib.rs-walkdir-yellow
-[c~walkdir~repo]: https://github.com/BurntSushi/walkdir
-[c~walkdir~repo~badge]: https://img.shields.io/badge/walkdir-steelblue?logo=github
-[c~want~crates.io]: https://crates.io/crates/want
-[c~want~crates.io~badge]: https://img.shields.io/badge/crates.io-want-crimson
-[c~want~docs]: https://docs.rs/want
-[c~want~docs~badge]: https://img.shields.io/crates/v/want?label=want
-[c~want~lib.rs]: https://lib.rs/crates/want
-[c~want~lib.rs~badge]: https://img.shields.io/badge/lib.rs-want-yellow
-[c~want~repo]: https://github.com/seanmonstar/want
-[c~want~repo~badge]: https://img.shields.io/badge/want-steelblue?logo=github
-[c~warp~crates.io]: https://crates.io/crates/warp
-[c~warp~crates.io~badge]: https://img.shields.io/badge/crates.io-warp-crimson
-[c~warp~docs]: https://docs.rs/warp
-[c~warp~docs~badge]: https://img.shields.io/crates/v/warp?label=warp
-[c~warp~lib.rs]: https://lib.rs/crates/warp
-[c~warp~lib.rs~badge]: https://img.shields.io/badge/lib.rs-warp-yellow
-[c~warp~repo]: https://github.com/seanmonstar/warp
-[c~warp~repo~badge]: https://img.shields.io/badge/warp-steelblue?logo=github
-[c~wasi~crates.io]: https://crates.io/crates/wasi
-[c~wasi~crates.io~badge]: https://img.shields.io/badge/crates.io-wasi-crimson
-[c~wasi~docs]: https://docs.rs/wasi
-[c~wasi~docs~badge]: https://img.shields.io/crates/v/wasi?label=wasi
-[c~wasi~lib.rs]: https://lib.rs/crates/wasi
-[c~wasi~lib.rs~badge]: https://img.shields.io/badge/lib.rs-wasi-yellow
-[c~wasi~repo]: https://github.com/bytecodealliance/wasi-rs
-[c~wasi~repo~badge]: https://img.shields.io/badge/wasi-steelblue?logo=github
-[c~wasm-bindgen-test~crates.io]: https://crates.io/crates/wasm-bindgen-test
-[c~wasm-bindgen-test~crates.io~badge]: https://img.shields.io/badge/crates.io-wasm--bindgen--test-crimson
-[c~wasm-bindgen-test~docs]: https://docs.rs/wasm-bindgen-test
-[c~wasm-bindgen-test~docs~badge]: https://img.shields.io/crates/v/wasm-bindgen-test?label=wasm-bindgen-test
-[c~wasm-bindgen-test~lib.rs]: https://lib.rs/crates/wasm-bindgen-test
-[c~wasm-bindgen-test~lib.rs~badge]: https://img.shields.io/badge/lib.rs-wasm--bindgen--test-yellow
-[c~wasm-bindgen-test~repo]: https://github.com/rustwasm/wasm-bindgen
-[c~wasm-bindgen-test~repo~badge]: https://img.shields.io/badge/wasm--bindgen--test-steelblue?logo=github
-[c~wasm-bindgen~crates.io]: https://crates.io/crates/wasm-bindgen
-[c~wasm-bindgen~crates.io~badge]: https://img.shields.io/badge/crates.io-wasm--bindgen-crimson
-[c~wasm-bindgen~docs]: https://docs.rs/wasm-bindgen
-[c~wasm-bindgen~docs~badge]: https://img.shields.io/crates/v/wasm-bindgen?label=wasm-bindgen
-[c~wasm-bindgen~lib.rs]: https://lib.rs/crates/wasm-bindgen
-[c~wasm-bindgen~lib.rs~badge]: https://img.shields.io/badge/lib.rs-wasm--bindgen-yellow
-[c~wasm-bindgen~repo]: https://github.com/rustwasm/wasm-bindgen
-[c~wasm-bindgen~repo~badge]: https://img.shields.io/badge/wasm--bindgen-steelblue?logo=github
-[c~wasm-bindgen~website]: https://rustwasm.github.io
-[c~wasm-bindgen~website~badge]: https://img.shields.io/badge/wasm--bindgen-coral
-[c~wasm-opt~crates.io]: https://crates.io/crates/wasm-opt
-[c~wasm-opt~crates.io~badge]: https://img.shields.io/badge/crates.io-wasm--opt-crimson
-[c~wasm-opt~docs]: https://docs.rs/wasm-opt
-[c~wasm-opt~docs~badge]: https://img.shields.io/crates/v/wasm-opt?label=wasm-opt
-[c~wasm-opt~lib.rs]: https://lib.rs/crates/wasm-opt
-[c~wasm-opt~lib.rs~badge]: https://img.shields.io/badge/lib.rs-wasm--opt-yellow
-[c~wasm-opt~repo]: https://github.com/brson/wasm-opt-rs
-[c~wasm-opt~repo~badge]: https://img.shields.io/badge/wasm--opt-steelblue?logo=github
-[c~wasm-pack~crates.io]: https://crates.io/crates/wasm-pack
-[c~wasm-pack~crates.io~badge]: https://img.shields.io/badge/crates.io-wasm--pack-crimson
-[c~wasm-pack~docs]: https://rustwasm.github.io/wasm-pack
-[c~wasm-pack~docs~badge]: https://img.shields.io/crates/v/wasm-pack?label=wasm-pack
-[c~wasm-pack~lib.rs]: https://lib.rs/crates/wasm-pack
-[c~wasm-pack~lib.rs~badge]: https://img.shields.io/badge/lib.rs-wasm--pack-yellow
-[c~wasm-pack~repo]: https://github.com/rustwasm/wasm-pack
-[c~wasm-pack~repo~badge]: https://img.shields.io/badge/wasm--pack-steelblue?logo=github
-[c~wasmer~crates.io]: https://crates.io/crates/wasmer
-[c~wasmer~crates.io~badge]: https://img.shields.io/badge/crates.io-wasmer-crimson
-[c~wasmer~docs]: https://docs.rs/wasmer
-[c~wasmer~docs~badge]: https://img.shields.io/crates/v/wasmer?label=wasmer
-[c~wasmer~lib.rs]: https://lib.rs/crates/wasmer
-[c~wasmer~lib.rs~badge]: https://img.shields.io/badge/lib.rs-wasmer-yellow
-[c~wasmer~repo]: https://github.com/wasmerio/wasmer
-[c~wasmer~repo~badge]: https://img.shields.io/badge/wasmer-steelblue?logo=github
-[c~wasmer~website]: https://wasmer.io
-[c~wasmer~website~badge]: https://img.shields.io/badge/wasmer-coral
-[c~wasmi~crates.io]: https://crates.io/crates/wasmi
-[c~wasmi~crates.io~badge]: https://img.shields.io/badge/crates.io-wasmi-crimson
-[c~wasmi~docs]: https://docs.rs/wasmi
-[c~wasmi~docs~badge]: https://img.shields.io/crates/v/wasmi?label=wasmi
-[c~wasmi~lib.rs]: https://lib.rs/crates/wasmi
-[c~wasmi~lib.rs~badge]: https://img.shields.io/badge/lib.rs-wasmi-yellow
-[c~wasmi~repo]: https://github.com/wasmi-labs/wasmi
-[c~wasmi~repo~badge]: https://img.shields.io/badge/wasmi-steelblue?logo=github
-[c~wasmtime~crates.io]: https://crates.io/crates/wasmtime
-[c~wasmtime~crates.io~badge]: https://img.shields.io/badge/crates.io-wasmtime-crimson
-[c~wasmtime~docs]: https://docs.rs/wasmtime
-[c~wasmtime~docs~badge]: https://img.shields.io/crates/v/wasmtime?label=wasmtime
-[c~wasmtime~lib.rs]: https://lib.rs/crates/wasmtime
-[c~wasmtime~lib.rs~badge]: https://img.shields.io/badge/lib.rs-wasmtime-yellow
-[c~wasmtime~repo]: https://github.com/bytecodealliance/wasmtime
-[c~wasmtime~repo~badge]: https://img.shields.io/badge/wasmtime-steelblue?logo=github
-[c~wasmtime~website]: https://docs.wasmtime.dev/introduction.html
-[c~watchexec~crates.io]: https://crates.io/crates/watchexec
-[c~watchexec~crates.io~badge]: https://img.shields.io/badge/crates.io-watchexec-crimson
-[c~watchexec~docs]: https://docs.rs/watchexec
-[c~watchexec~docs~badge]: https://img.shields.io/crates/v/watchexec?label=watchexec
-[c~watchexec~lib.rs]: https://lib.rs/crates/watchexec
-[c~watchexec~lib.rs~badge]: https://img.shields.io/badge/lib.rs-watchexec-yellow
-[c~watchexec~repo]: https://github.com/watchexec/watchexec
-[c~watchexec~repo~badge]: https://img.shields.io/badge/watchexec-steelblue?logo=github
-[c~watchexec~website]: https://watchexec.github.io
-[c~watchexec~website~badge]: https://img.shields.io/badge/watchexec-coral
-[c~watt~crates.io]: https://crates.io/crates/watt
-[c~watt~crates.io~badge]: https://img.shields.io/badge/crates.io-watt-crimson
-[c~watt~docs]: https://docs.rs/watt
-[c~watt~docs~badge]: https://img.shields.io/crates/v/watt?label=watt
-[c~watt~lib.rs]: https://lib.rs/crates/watt
-[c~watt~lib.rs~badge]: https://img.shields.io/badge/lib.rs-watt-yellow
-[c~watt~repo]: https://github.com/dtolnay/watt
-[c~watt~repo~badge]: https://img.shields.io/badge/watt-steelblue?logo=github
-[c~wat~crates.io]: https://crates.io/crates/wat
-[c~wat~crates.io~badge]: https://img.shields.io/badge/crates.io-wat-crimson
-[c~wat~docs]: https://docs.rs/wat
-[c~wat~docs~badge]: https://img.shields.io/crates/v/wat?label=wat
-[c~wat~lib.rs]: https://lib.rs/crates/wat
-[c~wat~lib.rs~badge]: https://img.shields.io/badge/lib.rs-wat-yellow
-[c~wat~repo]: https://github.com/bytecodealliance/wasm-tools/tree/main/crates/wat
-[c~wat~repo~badge]: https://img.shields.io/badge/wat-steelblue?logo=github
-[c~wav~crates.io]: https://crates.io/crates/wav
-[c~wav~crates.io~badge]: https://img.shields.io/badge/crates.io-wav-crimson
-[c~wav~docs]: https://docs.rs/wav
-[c~wav~docs~badge]: https://img.shields.io/crates/v/wav?label=wav
-[c~wav~lib.rs]: https://lib.rs/crates/wav
-[c~wav~lib.rs~badge]: https://img.shields.io/badge/lib.rs-wav-yellow
-[c~wav~repo~badge]: https://img.shields.io/badge/wav-steelblue?logo=github
-[c~web-sys~crates.io]: https://crates.io/crates/web-sys
-[c~web-sys~crates.io~badge]: https://img.shields.io/badge/crates.io-web--sys-crimson
-[c~web-sys~docs]: https://rustwasm.github.io/wasm-bindgen/api/web_sys
-[c~web-sys~docs~badge]: https://img.shields.io/crates/v/web-sys?label=web-sys
-[c~web-sys~lib.rs]: https://lib.rs/crates/web-sys
-[c~web-sys~lib.rs~badge]: https://img.shields.io/badge/lib.rs-web--sys-yellow
-[c~web-sys~repo]: https://github.com/rustwasm/wasm-bindgen/tree/master/crates/web-sys
-[c~web-sys~repo~badge]: https://img.shields.io/badge/web--sys-steelblue?logo=github
-[c~web-sys~website]: https://rustwasm.github.io/wasm-bindgen/web-sys
-[c~web-sys~website~badge]: https://img.shields.io/badge/web--sys-coral
-[c~web3~crates.io]: https://crates.io/crates/web3
-[c~web3~crates.io~badge]: https://img.shields.io/badge/crates.io-web3-crimson
-[c~web3~docs]: https://docs.rs/web3
-[c~web3~docs~badge]: https://img.shields.io/crates/v/web3?label=web3
-[c~web3~lib.rs]: https://lib.rs/crates/web3
-[c~web3~lib.rs~badge]: https://img.shields.io/badge/lib.rs-web3-yellow
-[c~web3~repo]: https://github.com/tomusdrw/rust-web3
-[c~web3~repo~badge]: https://img.shields.io/badge/web3-steelblue?logo=github
-[c~webbrowser~crates.io]: https://crates.io/crates/webbrowser
-[c~webbrowser~crates.io~badge]: https://img.shields.io/badge/crates.io-webbrowser-crimson
-[c~webbrowser~docs]: https://docs.rs/webbrowser
-[c~webbrowser~docs~badge]: https://img.shields.io/crates/v/webbrowser?label=webbrowser
-[c~webbrowser~lib.rs]: https://lib.rs/crates/webbrowser
-[c~webbrowser~lib.rs~badge]: https://img.shields.io/badge/lib.rs-webbrowser-yellow
-[c~webbrowser~repo]: https://github.com/amodm/webbrowser-rs
-[c~webbrowser~repo~badge]: https://img.shields.io/badge/webbrowser-steelblue?logo=github
-[c~webpki-root-certs~crates.io]: https://crates.io/crates/webpki-root-certs
-[c~webpki-root-certs~crates.io~badge]: https://img.shields.io/badge/crates.io-webpki--root--certs-crimson
-[c~webpki-root-certs~docs]: https://docs.rs/webpki-root-certs
-[c~webpki-root-certs~docs~badge]: https://img.shields.io/crates/v/webpki-root-certs?label=webpki-root-certs
-[c~webpki-root-certs~lib.rs]: https://lib.rs/crates/webpki-root-certs
-[c~webpki-root-certs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-webpki--root--certs-yellow
-[c~webpki-root-certs~repo]: https://github.com/rustls/webpki-roots
-[c~webpki-root-certs~repo~badge]: https://img.shields.io/badge/webpki--root--certs-steelblue?logo=github
-[c~webpki-roots~crates.io]: https://crates.io/crates/webpki-roots
-[c~webpki-roots~crates.io~badge]: https://img.shields.io/badge/crates.io-webpki--roots-crimson
-[c~webpki-roots~docs]: https://docs.rs/webpki-roots
-[c~webpki-roots~docs~badge]: https://img.shields.io/crates/v/webpki-roots?label=webpki-roots
-[c~webpki-roots~lib.rs]: https://lib.rs/crates/webpki-roots
-[c~webpki-roots~lib.rs~badge]: https://img.shields.io/badge/lib.rs-webpki--roots-yellow
-[c~webpki-roots~repo]: https://github.com/rustls/webpki-roots
-[c~webpki-roots~repo~badge]: https://img.shields.io/badge/webpki--roots-steelblue?logo=github
-[c~webp~crates.io]: https://crates.io/crates/webp
-[c~webp~crates.io~badge]: https://img.shields.io/badge/crates.io-webp-crimson
-[c~webp~docs]: https://docs.rs/webp
-[c~webp~docs~badge]: https://img.shields.io/crates/v/webp?label=webp
-[c~webp~lib.rs]: https://lib.rs/crates/webp
-[c~webp~lib.rs~badge]: https://img.shields.io/badge/lib.rs-webp-yellow
-[c~webp~repo]: https://github.com/jaredforth/webp
-[c~webp~repo~badge]: https://img.shields.io/badge/webp-steelblue?logo=github
-[c~webp~website]: https://github.com/jaredforth/webp
-[c~webp~website~badge]: https://img.shields.io/badge/webp-coral
-[c~webrender~crates.io]: https://crates.io/crates/webrender
-[c~webrender~crates.io~badge]: https://img.shields.io/badge/crates.io-webrender-crimson
-[c~webrender~docs]: https://docs.rs/webrender
-[c~webrender~docs~badge]: https://img.shields.io/crates/v/webrender?label=webrender
-[c~webrender~lib.rs]: https://lib.rs/crates/webrender
-[c~webrender~lib.rs~badge]: https://img.shields.io/badge/lib.rs-webrender-yellow
-[c~webrender~repo]: https://github.com/servo/webrender
-[c~webrender~repo~badge]: https://img.shields.io/badge/webrender-steelblue?logo=github
-[c~wee_alloc~crates.io]: https://crates.io/crates/wee_alloc
-[c~wee_alloc~crates.io~badge]: https://img.shields.io/badge/crates.io-wee__alloc-crimson
-[c~wee_alloc~docs]: https://docs.rs/wee_alloc
-[c~wee_alloc~docs~badge]: https://img.shields.io/crates/v/wee_alloc?label=wee_alloc
-[c~wee_alloc~lib.rs]: https://lib.rs/crates/wee_alloc
-[c~wee_alloc~lib.rs~badge]: https://img.shields.io/badge/lib.rs-wee__alloc-yellow
-[c~wee_alloc~repo]: https://github.com/rustwasm/wee_alloc
-[c~wee_alloc~repo~badge]: https://img.shields.io/badge/wee__alloc-steelblue?logo=github
-[c~wgpu~crates.io]: https://crates.io/crates/wgpu
-[c~wgpu~crates.io~badge]: https://img.shields.io/badge/crates.io-wgpu-crimson
-[c~wgpu~docs]: https://docs.rs/wgpu
-[c~wgpu~docs~badge]: https://img.shields.io/crates/v/wgpu?label=wgpu
-[c~wgpu~examples]: https://github.com/gfx-rs/wgpu/tree/v24/examples
-[c~wgpu~lib.rs]: https://lib.rs/crates/wgpu
-[c~wgpu~lib.rs~badge]: https://img.shields.io/badge/lib.rs-wgpu-yellow
-[c~wgpu~repo]: https://github.com/gfx-rs/wgpu
-[c~wgpu~repo~badge]: https://img.shields.io/badge/wgpu-steelblue?logo=github
-[c~wgpu~website]: https://wgpu.rs
-[c~wgpu~website~badge]: https://img.shields.io/badge/wgpu-coral
-[c~which~crates.io]: https://crates.io/crates/which
-[c~which~crates.io~badge]: https://img.shields.io/badge/crates.io-which-crimson
-[c~which~docs]: https://docs.rs/which
-[c~which~docs~badge]: https://img.shields.io/crates/v/which?label=which
-[c~which~lib.rs]: https://lib.rs/crates/which
-[c~which~lib.rs~badge]: https://img.shields.io/badge/lib.rs-which-yellow
-[c~which~repo]: https://github.com/harryfei/which-rs
-[c~which~repo~badge]: https://img.shields.io/badge/which-steelblue?logo=github
-[c~winapi~crates.io]: https://crates.io/crates/winapi
-[c~winapi~crates.io~badge]: https://img.shields.io/badge/crates.io-winapi-crimson
-[c~winapi~docs]: https://docs.rs/winapi
-[c~winapi~docs~badge]: https://img.shields.io/crates/v/winapi?label=winapi
-[c~winapi~lib.rs]: https://lib.rs/crates/winapi
-[c~winapi~lib.rs~badge]: https://img.shields.io/badge/lib.rs-winapi-yellow
-[c~winapi~repo]: https://github.com/retep998/winapi-rs
-[c~winapi~repo~badge]: https://img.shields.io/badge/winapi-steelblue?logo=github
-[c~windows~crates.io]: https://crates.io/crates/windows
-[c~windows~crates.io~badge]: https://img.shields.io/badge/crates.io-windows-crimson
-[c~windows~docs]: https://docs.rs/windows
-[c~windows~docs~badge]: https://img.shields.io/crates/v/windows?label=windows
-[c~windows~lib.rs]: https://lib.rs/crates/windows
-[c~windows~lib.rs~badge]: https://img.shields.io/badge/lib.rs-windows-yellow
-[c~windows~repo]: https://github.com/microsoft/windows-rs
-[c~windows~repo~badge]: https://img.shields.io/badge/windows-steelblue?logo=github
-[c~windows~website]: https://microsoft.github.io/windows-docs-rs
-[c~winit~crates.io]: https://crates.io/crates/winit
-[c~winit~crates.io~badge]: https://img.shields.io/badge/crates.io-winit-crimson
-[c~winit~docs]: https://docs.rs/winit
-[c~winit~docs~badge]: https://img.shields.io/crates/v/winit?label=winit
-[c~winit~lib.rs]: https://lib.rs/crates/winit
-[c~winit~lib.rs~badge]: https://img.shields.io/badge/lib.rs-winit-yellow
-[c~winit~repo]: https://github.com/rust-windowing/winit
-[c~winit~repo~badge]: https://img.shields.io/badge/winit-steelblue?logo=github
-[c~winnow~crates.io]: https://crates.io/crates/winnow
-[c~winnow~crates.io~badge]: https://img.shields.io/badge/crates.io-winnow-crimson
-[c~winnow~docs]: https://docs.rs/winnow
-[c~winnow~docs~badge]: https://img.shields.io/crates/v/winnow?label=winnow
-[c~winnow~lib.rs]: https://lib.rs/crates/winnow
-[c~winnow~lib.rs~badge]: https://img.shields.io/badge/lib.rs-winnow-yellow
-[c~winnow~repo]: https://github.com/winnow-rs/winnow
-[c~winnow~repo~badge]: https://img.shields.io/badge/winnow-steelblue?logo=github
-[c~winreg~crates.io]: https://crates.io/crates/winreg
-[c~winreg~crates.io~badge]: https://img.shields.io/badge/crates.io-winreg-crimson
-[c~winreg~docs]: https://docs.rs/winreg
-[c~winreg~docs~badge]: https://img.shields.io/crates/v/winreg?label=winreg
-[c~winreg~lib.rs]: https://lib.rs/crates/winreg
-[c~winreg~lib.rs~badge]: https://img.shields.io/badge/lib.rs-winreg-yellow
-[c~winreg~repo]: https://github.com/gentoo90/winreg-rs
-[c~winreg~repo~badge]: https://img.shields.io/badge/winreg-steelblue?logo=github
-[c~wkt~crates.io]: https://crates.io/crates/wkt
-[c~wkt~crates.io~badge]: https://img.shields.io/badge/crates.io-wkt-crimson
-[c~wkt~docs]: https://docs.rs/wkt
-[c~wkt~docs~badge]: https://img.shields.io/crates/v/wkt?label=wkt
-[c~wkt~lib.rs]: https://lib.rs/crates/wkt
-[c~wkt~lib.rs~badge]: https://img.shields.io/badge/lib.rs-wkt-yellow
-[c~wkt~repo]: https://github.com/georust/wkt
-[c~wkt~repo~badge]: https://img.shields.io/badge/wkt-steelblue?logo=github
-[c~x264~crates.io]: https://crates.io/crates/x264
-[c~x264~crates.io~badge]: https://img.shields.io/badge/crates.io-x264-crimson
-[c~x264~docs]: https://docs.rs/x264
-[c~x264~docs~badge]: https://img.shields.io/crates/v/x264?label=x264
-[c~x264~lib.rs]: https://lib.rs/crates/x264
-[c~x264~lib.rs~badge]: https://img.shields.io/badge/lib.rs-x264-yellow
-[c~x264~repo]: https://github.com/quadrupleslap/x264
-[c~x264~repo~badge]: https://img.shields.io/badge/x264-steelblue?logo=github
-[c~x509-cert~crates.io]: https://crates.io/crates/x509-cert
-[c~x509-cert~crates.io~badge]: https://img.shields.io/badge/crates.io-x509--cert-crimson
-[c~x509-cert~docs]: https://docs.rs/x509-cert
-[c~x509-cert~docs~badge]: https://img.shields.io/crates/v/x509-cert?label=x509-cert
-[c~x509-cert~lib.rs]: https://lib.rs/crates/x509-cert
-[c~x509-cert~lib.rs~badge]: https://img.shields.io/badge/lib.rs-x509--cert-yellow
-[c~x509-cert~repo]: https://github.com/RustCrypto/formats/tree/master/x509-cert
-[c~x509-cert~repo~badge]: https://img.shields.io/badge/x509--cert-steelblue?logo=github
-[c~x509-cert~website]: https://github.com/RustCrypto/formats/blob/master/x509-cert/README.md
-[c~x509-cert~website~badge]: https://img.shields.io/badge/x509--cert-coral
-[c~xd~crates.io]: https://crates.io/crates/xd
-[c~xd~crates.io~badge]: https://img.shields.io/badge/crates.io-xd-crimson
-[c~xd~docs]: https://docs.rs/xd
-[c~xd~docs~badge]: https://img.shields.io/crates/v/xd?label=xd
-[c~xd~lib.rs]: https://lib.rs/crates/xd
-[c~xd~lib.rs~badge]: https://img.shields.io/badge/lib.rs-xd-yellow
-[c~xd~repo]: https://bitbucket.org/delan/xd
-[c~xd~repo~badge]: https://img.shields.io/badge/xd-steelblue?logo=github
-[c~xilem~crates.io]: https://crates.io/crates/xilem
-[c~xilem~crates.io~badge]: https://img.shields.io/badge/crates.io-xilem-crimson
-[c~xilem~docs]: https://docs.rs/xilem
-[c~xilem~docs~badge]: https://img.shields.io/crates/v/xilem?label=xilem
-[c~xilem~lib.rs]: https://lib.rs/crates/xilem
-[c~xilem~lib.rs~badge]: https://img.shields.io/badge/lib.rs-xilem-yellow
-[c~xilem~repo]: https://github.com/linebender/xilem
-[c~xilem~repo~badge]: https://img.shields.io/badge/xilem-steelblue?logo=github
-[c~xilem~website]: https://xilem.dev
-[c~xilem~website~badge]: https://img.shields.io/badge/xilem-coral
-[c~xml5ever~crates.io]: https://crates.io/crates/xml5ever
-[c~xml5ever~crates.io~badge]: https://img.shields.io/badge/crates.io-xml5ever-crimson
-[c~xml5ever~docs]: https://docs.rs/xml5ever
-[c~xml5ever~docs~badge]: https://img.shields.io/crates/v/xml5ever?label=xml5ever
-[c~xml5ever~lib.rs]: https://lib.rs/crates/xml5ever
-[c~xml5ever~lib.rs~badge]: https://img.shields.io/badge/lib.rs-xml5ever-yellow
-[c~xml5ever~repo]: https://github.com/servo/html5ever
-[c~xml5ever~repo~badge]: https://img.shields.io/badge/xml5ever-steelblue?logo=github
-[c~xml5ever~website]: https://github.com/servo/html5ever/blob/main/xml5ever/README.md
-[c~xml5ever~website~badge]: https://img.shields.io/badge/xml5ever-coral
-[c~xmlparser~crates.io]: https://crates.io/crates/xmlparser
-[c~xmlparser~crates.io~badge]: https://img.shields.io/badge/crates.io-xmlparser-crimson
-[c~xmlparser~docs]: https://docs.rs/xmlparser
-[c~xmlparser~docs~badge]: https://img.shields.io/crates/v/xmlparser?label=xmlparser
-[c~xmlparser~lib.rs]: https://lib.rs/crates/xmlparser
-[c~xmlparser~lib.rs~badge]: https://img.shields.io/badge/lib.rs-xmlparser-yellow
-[c~xmlparser~repo]: https://github.com/RazrFalcon/xmlparser
-[c~xmlparser~repo~badge]: https://img.shields.io/badge/xmlparser-steelblue?logo=github
-[c~xmltree~crates.io]: https://crates.io/crates/xmltree
-[c~xmltree~crates.io~badge]: https://img.shields.io/badge/crates.io-xmltree-crimson
-[c~xmltree~docs]: https://docs.rs/xmltree
-[c~xmltree~docs~badge]: https://img.shields.io/crates/v/xmltree?label=xmltree
-[c~xmltree~lib.rs]: https://lib.rs/crates/xmltree
-[c~xmltree~lib.rs~badge]: https://img.shields.io/badge/lib.rs-xmltree-yellow
-[c~xmltree~repo]: https://github.com/eminence/xmltree-rs
-[c~xmltree~repo~badge]: https://img.shields.io/badge/xmltree-steelblue?logo=github
-[c~xml~crates.io]: https://crates.io/crates/xml
-[c~xml~crates.io~badge]: https://img.shields.io/badge/crates.io-xml-crimson
-[c~xml~docs]: https://docs.rs/xml-rs
-[c~xml~docs~badge]: https://img.shields.io/crates/v/xml?label=xml
-[c~xml~lib.rs]: https://lib.rs/crates/xml
-[c~xml~lib.rs~badge]: https://img.shields.io/badge/lib.rs-xml-yellow
-[c~xml~repo]: https://github.com/kornelski/xml-rs
-[c~xml~repo~badge]: https://img.shields.io/badge/xml-steelblue?logo=github
-[c~xml~website]: https://lib.rs/crates/xml-rs
-[c~xml~website~badge]: https://img.shields.io/badge/xml-coral
-[c~xplr~crates.io]: https://crates.io/crates/xplr
-[c~xplr~crates.io~badge]: https://img.shields.io/badge/crates.io-xplr-crimson
-[c~xplr~docs]: https://xplr.dev/en
-[c~xplr~docs~badge]: https://img.shields.io/crates/v/xplr?label=xplr
-[c~xplr~lib.rs]: https://lib.rs/crates/xplr
-[c~xplr~lib.rs~badge]: https://img.shields.io/badge/lib.rs-xplr-yellow
-[c~xplr~repo]: https://github.com/sayanarijit/xplr
-[c~xplr~repo~badge]: https://img.shields.io/badge/xplr-steelblue?logo=github
-[c~xplr~website]: https://xplr.dev
-[c~xplr~website~badge]: https://img.shields.io/badge/xplr-coral
-[c~xshell~crates.io]: https://crates.io/crates/xshell
-[c~xshell~crates.io~badge]: https://img.shields.io/badge/crates.io-xshell-crimson
-[c~xshell~docs]: https://docs.rs/xshell
-[c~xshell~docs~badge]: https://img.shields.io/crates/v/xshell?label=xshell
-[c~xshell~lib.rs]: https://lib.rs/crates/xshell
-[c~xshell~lib.rs~badge]: https://img.shields.io/badge/lib.rs-xshell-yellow
-[c~xshell~repo]: https://github.com/matklad/xshell
-[c~xshell~repo~badge]: https://img.shields.io/badge/xshell-steelblue?logo=github
-[c~xsv~crates.io]: https://crates.io/crates/xsv
-[c~xsv~crates.io~badge]: https://img.shields.io/badge/crates.io-xsv-crimson
-[c~xsv~docs]: https://docs.rs/xsv
-[c~xsv~docs~badge]: https://img.shields.io/crates/v/xsv?label=xsv
-[c~xsv~lib.rs]: https://lib.rs/crates/xsv
-[c~xsv~lib.rs~badge]: https://img.shields.io/badge/lib.rs-xsv-yellow
-[c~xsv~repo]: https://github.com/BurntSushi/xsv
-[c~xsv~repo~badge]: https://img.shields.io/badge/xsv-steelblue?logo=github
-[c~xsv~website]: http://burntsushi.net/rustdoc/xsv
-[c~xtask~crates.io]: https://crates.io/crates/xtask
-[c~xtask~crates.io~badge]: https://img.shields.io/badge/crates.io-xtask-crimson
-[c~xtask~docs]: https://docs.rs/xtask
-[c~xtask~docs~badge]: https://img.shields.io/crates/v/xtask?label=xtask
-[c~xtask~lib.rs]: https://lib.rs/crates/xtask
-[c~xtask~lib.rs~badge]: https://img.shields.io/badge/lib.rs-xtask-yellow
-[c~xtask~repo~badge]: https://img.shields.io/badge/xtask-steelblue?logo=github
-[c~xz2~crates.io]: https://crates.io/crates/xz2
-[c~xz2~crates.io~badge]: https://img.shields.io/badge/crates.io-xz2-crimson
-[c~xz2~docs]: https://docs.rs/xz2
-[c~xz2~docs~badge]: https://img.shields.io/crates/v/xz2?label=xz2
-[c~xz2~lib.rs]: https://lib.rs/crates/xz2
-[c~xz2~lib.rs~badge]: https://img.shields.io/badge/lib.rs-xz2-yellow
-[c~xz2~repo]: https://github.com/alexcrichton/xz2-rs
-[c~xz2~repo~badge]: https://img.shields.io/badge/xz2-steelblue?logo=github
-[c~yaml-rust~crates.io]: https://crates.io/crates/yaml-rust
-[c~yaml-rust~crates.io~badge]: https://img.shields.io/badge/crates.io-yaml--rust-crimson
-[c~yaml-rust~docs]: https://docs.rs/yaml-rust
-[c~yaml-rust~docs~badge]: https://img.shields.io/crates/v/yaml-rust?label=yaml-rust
-[c~yaml-rust~lib.rs]: https://lib.rs/crates/yaml-rust
-[c~yaml-rust~lib.rs~badge]: https://img.shields.io/badge/lib.rs-yaml--rust-yellow
-[c~yaml-rust~repo]: https://github.com/chyh1990/yaml-rust
-[c~yaml-rust~repo~badge]: https://img.shields.io/badge/yaml--rust-steelblue?logo=github
-[c~yaml-rust~website]: http://chyh1990.github.io/yaml-rust
-[c~yaml-rust~website~badge]: https://img.shields.io/badge/yaml--rust-coral
-[c~yansi~crates.io]: https://crates.io/crates/yansi
-[c~yansi~crates.io~badge]: https://img.shields.io/badge/crates.io-yansi-crimson
-[c~yansi~docs]: https://docs.rs/yansi
-[c~yansi~docs~badge]: https://img.shields.io/crates/v/yansi?label=yansi
-[c~yansi~lib.rs]: https://lib.rs/crates/yansi
-[c~yansi~lib.rs~badge]: https://img.shields.io/badge/lib.rs-yansi-yellow
-[c~yansi~repo]: https://github.com/SergioBenitez/yansi
-[c~yansi~repo~badge]: https://img.shields.io/badge/yansi-steelblue?logo=github
-[c~yapp~crates.io]: https://crates.io/crates/yapp
-[c~yapp~crates.io~badge]: https://img.shields.io/badge/crates.io-yapp-crimson
-[c~yapp~docs]: https://docs.rs/yapp
-[c~yapp~docs~badge]: https://img.shields.io/crates/v/yapp?label=yapp
-[c~yapp~lib.rs]: https://lib.rs/crates/yapp
-[c~yapp~lib.rs~badge]: https://img.shields.io/badge/lib.rs-yapp-yellow
-[c~yapp~repo]: https://github.com/caleb9/yapp
-[c~yapp~repo~badge]: https://img.shields.io/badge/yapp-steelblue?logo=github
-[c~yata~crates.io]: https://crates.io/crates/yata
-[c~yata~crates.io~badge]: https://img.shields.io/badge/crates.io-yata-crimson
-[c~yata~docs]: https://docs.rs/yata
-[c~yata~docs~badge]: https://img.shields.io/crates/v/yata?label=yata
-[c~yata~lib.rs]: https://lib.rs/crates/yata
-[c~yata~lib.rs~badge]: https://img.shields.io/badge/lib.rs-yata-yellow
-[c~yata~repo]: https://github.com/amv-dev/yata
-[c~yata~repo~badge]: https://img.shields.io/badge/yata-steelblue?logo=github
-[c~yazi~crates.io]: https://crates.io/crates/yazi
-[c~yazi~crates.io~badge]: https://img.shields.io/badge/crates.io-yazi-crimson
-[c~yazi~docs]: https://docs.rs/yazi
-[c~yazi~docs~badge]: https://img.shields.io/crates/v/yazi?label=yazi
-[c~yazi~lib.rs]: https://lib.rs/crates/yazi
-[c~yazi~lib.rs~badge]: https://img.shields.io/badge/lib.rs-yazi-yellow
-[c~yazi~repo]: https://github.com/dfrg/yazi
-[c~yazi~repo~badge]: https://img.shields.io/badge/yazi-steelblue?logo=github
-[c~yew~crates.io]: https://crates.io/crates/yew
-[c~yew~crates.io~badge]: https://img.shields.io/badge/crates.io-yew-crimson
-[c~yew~docs]: https://docs.rs/yew
-[c~yew~docs~badge]: https://img.shields.io/crates/v/yew?label=yew
-[c~yew~lib.rs]: https://lib.rs/crates/yew
-[c~yew~lib.rs~badge]: https://img.shields.io/badge/lib.rs-yew-yellow
-[c~yew~realworld~example]: https://github.com/jetli/rust-yew~realworld-example-app
-[c~yew~realworld~example~badge]: https://img.shields.io/badge/rust_yew_realworld_example-steelblue?logo=github
-[c~yew~repo]: https://github.com/yewstack/yew
-[c~yew~repo~badge]: https://img.shields.io/badge/yew-steelblue?logo=github
-[c~yew~website]: https://yew.rs
-[c~yew~website~badge]: https://img.shields.io/badge/yew-coral
-[c~youki~crates.io]: https://crates.io/crates/youki
-[c~youki~crates.io~badge]: https://img.shields.io/badge/crates.io-youki-crimson
-[c~youki~docs]: https://docs.rs/youki
-[c~youki~docs~badge]: https://img.shields.io/crates/v/youki?label=youki
-[c~youki~lib.rs]: https://lib.rs/crates/youki
-[c~youki~lib.rs~badge]: https://img.shields.io/badge/lib.rs-youki-yellow
-[c~youki~repo]: https://github.com/containers/youki
-[c~youki~repo~badge]: https://img.shields.io/badge/youki-steelblue?logo=github
-[c~youki~website]: https://youki-dev.github.io/youki
-[c~youki~website~badge]: https://img.shields.io/badge/youki-coral
-[c~zed~crates.io]: https://crates.io/crates/zed
-[c~zed~crates.io~badge]: https://img.shields.io/badge/crates.io-zed-crimson
-[c~zed~docs~badge]: https://img.shields.io/crates/v/zed?label=zed
-[c~zed~lib.rs]: https://lib.rs/crates/zed
-[c~zed~lib.rs~badge]: https://img.shields.io/badge/lib.rs-zed-yellow
-[c~zed~repo]: https://github.com/zed-industries/zed
-[c~zed~repo~badge]: https://img.shields.io/badge/zed-steelblue?logo=github
-[c~zed~website]: https://zed.dev
-[c~zenoh~crates.io]: https://crates.io/crates/zenoh
-[c~zenoh~crates.io~badge]: https://img.shields.io/badge/crates.io-zenoh-crimson
-[c~zenoh~docs]: https://docs.rs/zenoh
-[c~zenoh~docs~badge]: https://img.shields.io/crates/v/zenoh?label=zenoh
-[c~zenoh~lib.rs]: https://lib.rs/crates/zenoh
-[c~zenoh~lib.rs~badge]: https://img.shields.io/badge/lib.rs-zenoh-yellow
-[c~zenoh~repo]: https://github.com/eclipse-zenoh/zenoh
-[c~zenoh~repo~badge]: https://img.shields.io/badge/zenoh-steelblue?logo=github
-[c~zenoh~website]: http://zenoh.io
-[c~zenoh~website~badge]: https://img.shields.io/badge/zenoh-coral
-[c~zerocopy~crates.io]: https://crates.io/crates/zerocopy
-[c~zerocopy~crates.io~badge]: https://img.shields.io/badge/crates.io-zerocopy-crimson
-[c~zerocopy~docs]: https://docs.rs/zerocopy
-[c~zerocopy~docs~badge]: https://img.shields.io/crates/v/zerocopy?label=zerocopy
-[c~zerocopy~lib.rs]: https://lib.rs/crates/zerocopy
-[c~zerocopy~lib.rs~badge]: https://img.shields.io/badge/lib.rs-zerocopy-yellow
-[c~zerocopy~repo]: https://github.com/google/zerocopy
-[c~zerocopy~repo~badge]: https://img.shields.io/badge/zerocopy-steelblue?logo=github
-[c~zeroize~crates.io]: https://crates.io/crates/zeroize
-[c~zeroize~crates.io~badge]: https://img.shields.io/badge/crates.io-zeroize-crimson
-[c~zeroize~docs]: https://docs.rs/zeroize
-[c~zeroize~docs~badge]: https://img.shields.io/crates/v/zeroize?label=zeroize
-[c~zeroize~lib.rs]: https://lib.rs/crates/zeroize
-[c~zeroize~lib.rs~badge]: https://img.shields.io/badge/lib.rs-zeroize-yellow
-[c~zeroize~repo]: https://github.com/RustCrypto/utils/tree/master/zeroize
-[c~zeroize~repo~badge]: https://img.shields.io/badge/zeroize-steelblue?logo=github
-[c~zip~crates.io]: https://crates.io/crates/zip
-[c~zip~crates.io~badge]: https://img.shields.io/badge/crates.io-zip-crimson
-[c~zip~docs]: https://docs.rs/zip
-[c~zip~docs~badge]: https://img.shields.io/crates/v/zip?label=zip
-[c~zip~lib.rs]: https://lib.rs/crates/zip
-[c~zip~lib.rs~badge]: https://img.shields.io/badge/lib.rs-zip-yellow
-[c~zip~repo]: https://github.com/zip-rs/zip2
-[c~zip~repo~badge]: https://img.shields.io/badge/zip-steelblue?logo=github
-[c~zola~crates.io]: https://crates.io/crates/zola
-[c~zola~crates.io~badge]: https://img.shields.io/badge/crates.io-zola-crimson
-[c~zola~docs]: https://docs.rs/zola
-[c~zola~docs~badge]: https://img.shields.io/crates/v/zola?label=zola
-[c~zola~lib.rs]: https://lib.rs/crates/zola
-[c~zola~lib.rs~badge]: https://img.shields.io/badge/lib.rs-zola-yellow
-[c~zola~repo~badge]: https://img.shields.io/badge/zola-steelblue?logo=github
-[c~zoxide~crates.io]: https://crates.io/crates/zoxide
-[c~zoxide~crates.io~badge]: https://img.shields.io/badge/crates.io-zoxide-crimson
-[c~zoxide~docs]: https://docs.rs/zoxide
-[c~zoxide~docs~badge]: https://img.shields.io/crates/v/zoxide?label=zoxide
-[c~zoxide~lib.rs]: https://lib.rs/crates/zoxide
-[c~zoxide~lib.rs~badge]: https://img.shields.io/badge/lib.rs-zoxide-yellow
-[c~zoxide~repo]: https://github.com/ajeetdsouza/zoxide
-[c~zoxide~repo~badge]: https://img.shields.io/badge/zoxide-steelblue?logo=github
-[c~zstd~crates.io]: https://crates.io/crates/zstd
-[c~zstd~crates.io~badge]: https://img.shields.io/badge/crates.io-zstd-crimson
-[c~zstd~docs]: https://docs.rs/zstd
-[c~zstd~docs~badge]: https://img.shields.io/crates/v/zstd?label=zstd
-[c~zstd~lib.rs]: https://lib.rs/crates/zstd
-[c~zstd~lib.rs~badge]: https://img.shields.io/badge/lib.rs-zstd-yellow
-[c~zstd~repo]: https://github.com/gyscos/zstd-rs
-[c~zstd~repo~badge]: https://img.shields.io/badge/zstd-steelblue?logo=github
+YªçŠx-®éÜj×¢ëiºÚ+Š§j[h‘éÜ¢éí×_8ë¤èµ©hºÚn¶X§zÍB–Øß”\İ]X[˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËÜ\İ]X[–Øß”\İ]X[˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[Ë\\İ]X[XÜš[\ÛÛ‚–Øß”\İ]X[™ØÜ×NˆÎ‹ËÙØÜËœœËÜ\İ]X[–Øß”\İ]X[™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ü\İ]X[ÛX™[\\İ]X[–Øß”\İ]X[›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËÜ\İ]X[–Øß”\İ]X[›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœË\\İ]X[^Y[İÂ–Øß”\İ]X[œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØ]š‹Ô\İ]X[–Øß”\İ]X[œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÜ\İ]X[\İY[›YOÛÙÛÏYÚ]X‚–Øß˜X—ÙÛ\™ØÜ×NˆÎ‹ËÙØÜËœœËØX—ÙÛ\–Øß˜X—ÙÛ\™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØX—ÙÛ\ÛX™[XX—ÙÛ\–Øß˜X›™—İ×Ü\İ˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØX›™—İ×Ü\İ–Øß˜XØÙ\ÜÚÚ]˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØXØÙ\ÜÚÚ]–Øß˜XØÙ\ÜÚÚ]˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXXØÙ\ÜÚÚ]XÜš[\ÛÛ‚–Øß˜XØÙ\ÜÚÚ]™ØÜ×NˆÎ‹ËÙØÜËœœËØXØÙ\ÜÚÚ]–Øß˜XØÙ\ÜÚÚ]™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØXØÙ\ÜÚÚ]ÛX™[XXØÙ\ÜÚÚ]–Øß˜XØÙ\ÜÚÚ]›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØXØÙ\ÜÚÚ]–Øß˜XØÙ\ÜÚÚ]›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXXØÙ\ÜÚÚ]^Y[İÂ–Øß˜XØÙ\ÜÚÚ]œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKĞXØÙ\ÜÒÚ]ØXØÙ\ÜÚÚ]–Øß˜XØÙ\ÜÚÚ]œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØXØÙ\ÜÚÚ]\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Xİ^]ÙX‹Z]]™ØÜ×NˆÎ‹ËÙØÜËœœËØXİ^]ÙX‹Z]]–Øß˜Xİ^]ÙXŸ˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØXİ^]ÙX‚–Øß˜Xİ^]ÙXŸ˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXXİ^K]ÙX‹XÜš[\ÛÛ‚–Øß˜Xİ^]ÙXŸ™ØÜ×NˆÎ‹ËÙØÜËœœËØXİ^]ÙX‚–Øß˜Xİ^]ÙXŸ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØXİ^]ÙXÛX™[XXİ^]ÙX‚–Øß˜Xİ^]ÙXŸ›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØXİ^]ÙX‚–Øß˜Xİ^]ÙXŸ›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXXİ^K]ÙX‹^Y[İÂ–Øß˜Xİ^]ÙXŸœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØXİ^ØXİ^]ÙX‚–Øß˜Xİ^]ÙXŸœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØXİ^K]ÙX‹\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Xİ^]ÙXŸÙXœÚ]WNˆÎ‹ËØXİ^œœÂ–Øß˜Xİ^]ÙXŸÙXœÚ]_˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØXİ^K]ÙX‹XÛÜ˜[–Øß˜Xİ^˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØXİ^–Øß˜Xİ^˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXXİ^XÜš[\ÛÛ‚–Øß˜Xİ^™ØÜ×NˆÎ‹ËÙØÜËœœËØXİ^–Øß˜Xİ^™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØXİ^ÛX™[XXİ^–Øß˜Xİ^™^[\\ßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØXİ^Ù^[\\Â–Øß˜Xİ^›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØXİ^–Øß˜Xİ^›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXXİ^^Y[İÂ–Øß˜Xİ^œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØXİ^ØXİ^–Øß˜Xİ^œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØXİ^\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Y\ËYØÛK\Ú]Ÿ˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØY\ËYØÛK\Ú]‚–Øß˜Y\ËYØÛK\Ú]Ÿ˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXY\ËKYØÛKK\Ú]‹XÜš[\ÛÛ‚–Øß˜Y\ËYØÛK\Ú]Ÿ™ØÜ×NˆÎ‹ËÙØÜËœœËØY\ËYØÛK\Ú]‚–Øß˜Y\ËYØÛK\Ú]Ÿ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØY\ËYØÛK\Ú]ÛX™[XY\ËYØÛK\Ú]‚–Øß˜Y\ËYØÛK\Ú]Ÿ›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØY\ËYØÛK\Ú]‚–Øß˜Y\ËYØÛK\Ú]Ÿ›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXY\ËKYØÛKK\Ú]‹^Y[İÂ–Øß˜Y\ËYØÛK\Ú]Ÿœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÔ\İÜ\ËĞQPQËİ™YKÛX\İ\‹ØY\ËYØÛK\Ú]‚–Øß˜Y\ËYØÛK\Ú]Ÿœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØY\ËKYØÛKK\Ú]‹\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Y\ËYØÛ_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØY\ËYØÛB–Øß˜Y\ËYØÛ_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXY\ËKYØÛKXÜš[\ÛÛ‚–Øß˜Y\ËYØÛ_™ØÜ×NˆÎ‹ËÙØÜËœœËØY\ËYØÛB–Øß˜Y\ËYØÛ_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØY\ËYØÛOÛX™[XY\ËYØÛB–Øß˜Y\ËYØÛ_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØY\ËYØÛB–Øß˜Y\ËYØÛ_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXY\ËKYØÛK^Y[İÂ–Øß˜Y\ËYØÛ_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÔ\İÜ\ËĞQPQËİ™YKÛX\İ\‹ØY\ËYØÛB–Øß˜Y\ËYØÛ_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØY\ËKYØÛK\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Y›˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØY›–Øß˜Y›˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXY›XÜš[\ÛÛ‚–Øß˜Y›™ØÜ×NˆÎ‹ËÙØÜËœœËØY›–Øß˜Y›™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØY›ÛX™[XY›–Øß˜Y››X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØY›–Øß˜Y››X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXY›^Y[İÂ–Øß˜Y›œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜ\İY^‹ØY›œœÂ–Øß˜Y›œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØY›\İY[›YOÛÙÛÏYÚ]X‚–Øß˜ZËXÛÜ˜\ÚXÚß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØZËXÛÜ˜\ÚXÚÂ–Øß˜ZËXÛÜ˜\ÚXÚß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXZËKXÛÜ˜\ÚXÚËXÜš[\ÛÛ‚–Øß˜ZËXÛÜ˜\ÚXÚß™ØÜ×NˆÎ‹ËÙØÜËœœËØZËXÛÜ˜\ÚXÚÂ–Øß˜ZËXÛÜ˜\ÚXÚß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØZËXÛÜ˜\ÚXÚÏÛX™[XZËXÛÜ˜\ÚXÚÂ–Øß˜ZËXÛÜ˜\ÚXÚß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØZËXÛÜ˜\ÚXÚÂ–Øß˜ZËXÛÜ˜\ÚXÚß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXZËKXÛÜ˜\ÚXÚË^Y[İÂ–Øß˜ZËXÛÜ˜\ÚXÚßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKĞ\›İ\ÚKØZËXÛÜ˜\ÚXÚÂ–Øß˜ZËXÛÜ˜\ÚXÚßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØZËKXÛÜ˜\ÚXÚË\İY[›YOÛÙÛÏYÚ]X‚–Øß˜[^[™šY_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÒ\™]›ËØ[^[™šYB–Øß˜[Ø_™ØÜ×NˆÎ‹ËÙØÜËœœËØ[ØB–Øß˜[ØK\Ş\ß™ØÜ×NˆÎ‹ËÙØÜËœœËØ[ØK\Ş\Â–Øß˜[Y]\İ™ØÜ×NˆÎ‹ËÙØÜË˜[Y]\İœœËÜİX›KØ[Y]\İ–Øß˜[œÚWİ\›NS”ÒTİš[™ß™ØÜ×NˆÎ‹ËÙØÜËœœËØ[œÚWİ\›KÛ]\İØ[œÚWİ\›Kİ\KS”ÒTİš[™Ëš[–Øß˜[œÚWİ\›NÛÛÜŸ™ØÜ×NˆÎ‹ËÙØÜËœœËØ[œÚWİ\›KÛ]\İØ[œÚWİ\›KÙ[[KÛÛİ\‹š[–Øß˜[œÚWİ\›N”İ[N›™]ß™ØÜ×NˆÎ‹ËÙØÜËœœËØ[œÚWİ\›KÛ]\İØ[œÚWİ\›KÜİXİ”İ[Kš[ÛY]Ù›™]Â–Øß˜[œÚWİ\›N”İ[_™ØÜ×NˆÎ‹ËÙØÜËœœËØ[œÚWİ\›KÛ]\İØ[œÚWİ\›KÜİXİ”İ[Kš[–Øß˜[œÚWİ\›_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ[œÚWİ\›B–Øß˜[œÚWİ\›_™ØÜ×NˆÎ‹ËÙØÜËœœËØ[œÚWİ\›B–Øß˜[œÚWİ\›_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø[œÚWİ\›OÛX™[X[œÚWİ\›B–Øß˜[œÚ]\›_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ[œÚ]\›B–Øß˜[œÚ]\›_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX[œÚ]\›KXÜš[\ÛÛ‚–Øß˜[œÚ]\›_™ØÜ×NˆÎ‹ËÙØÜËœœËØ[œÚ]\›B–Øß˜[œÚ]\›_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø[œÚ]\›OÛX™[X[œÚ]\›B–Øß˜[œÚ]\›_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ[œÚ]\›B–Øß˜[œÚ]\›_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX[œÚ]\›K^Y[İÂ–Øß˜[œÚ]\›_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜ\İYÜØ[œÚ]\›K\œÂ–Øß˜[œÚ]\›_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ[œÚ]\›K\İY[›YOÛÙÛÏYÚ]X‚–Øß˜[œİ™X[_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ[œİ™X[B–Øß˜[œİ™X[_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX[œİ™X[KXÜš[\ÛÛ‚–Øß˜[œİ™X[_™ØÜ×NˆÎ‹ËÙØÜËœœËØ[œİ™X[B–Øß˜[œİ™X[_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø[œİ™X[OÛX™[X[œİ™X[B–Øß˜[œİ™X[_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ[œİ™X[B–Øß˜[œİ™X[_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX[œİ™X[K^Y[İÂ–Øß˜[œİ™X[_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜ\İXÛKØ[œİ[Kİ™YKÛXZ[‹ØÜ˜]\ËØ[œİ™X[B–Øß˜[œİ™X[_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ[œİ™X[K\İY[›YOÛÙÛÏYÚ]X‚–Øß˜[œİ™X[_ÙXœÚ]WNˆÎ‹ËÙÚ]X‹˜ÛÛKÜ\İXÛKØ[œİ[KØ›Ø‹ÛXZ[‹ØÜ˜]\ËØ[œİ™X[KÔ‘PQQK›Y–Øß˜[œİ™X[_ÙXœÚ]_˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ[œİ™X[KXÛÜ˜[–Øß˜[œİ[_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ[œİ[B–Øß˜[œİ[_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX[œİ[KXÜš[\ÛÛ‚–Øß˜[œİ[_™ØÜ×NˆÎ‹ËÙØÜËœœËØ[œİ[B–Øß˜[œİ[_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø[œİ[OÛX™[X[œİ[B–Øß˜[œİ[_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ[œİ[B–Øß˜[œİ[_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX[œİ[K^Y[İÂ–Øß˜[œİ[_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜ\İXÛKØ[œİ[B–Øß˜[œİ[_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ[œİ[K\İY[›YOÛÙÛÏYÚ]X‚–Øß˜[œİ[_ÙXœÚ]WNˆÎ‹ËÙÚ]X‹˜ÛÛKÜ\İXÛKØ[œİ[KØ›Ø‹ÛXZ[‹Ô‘PQQK›Y–Øß˜[œİ[_ÙXœÚ]_˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ[œİ[KXÛÜ˜[–Øß˜[ZİÎ”™\İ[™ØÜ×NˆÎ‹ËÙØÜËœœËØ[ZİËÛ]\İØ[ZİËİ\K”™\İ[š[–Øß˜[Zİß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ[ZİÂ–Øß˜[Zİß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX[ZİËXÜš[\ÛÛ‚–Øß˜[Zİß™ØÜ×NˆÎ‹ËÙØÜËœœËØ[ZİÂ–Øß˜[Zİß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø[ZİÏÛX™[X[ZİÂ–Øß˜[Zİß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ[ZİÂ–Øß˜[Zİß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX[ZİË^Y[İÂ–Øß˜[Zİßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÙÛ˜^KØ[ZİÂ–Øß˜[Zİßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ[ZİË\İY[›YOÛÙÛÏYÚ]X‚–Øß˜\Ø_™ØÜ×NˆÎ‹ËÙØÜËœœËØ\ØB–Øß˜\›Ş˜\ÜÙ\ØXœ×ÙY™—Ù\_™ØÜ×NˆÎ‹ËÙØÜËœœËØ\›ŞÛ]\İØ\›ŞÛXXÜ›Ë˜\ÜÙ\ØXœ×ÙY™—Ù\Kš[–Øß˜\›Ş˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ\›Ş–Øß˜\›Ş˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX\›ŞXÜš[\ÛÛ‚–Øß˜\›Ş™ØÜ×NˆÎ‹ËÙØÜËœœËØ\›Ş–Øß˜\›Ş™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø\›ŞÛX™[X\›Ş–Øß˜\›Ş›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ\›Ş–Øß˜\›Ş›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX\›Ş^Y[İÂ–Øß˜\›Şœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØœ™[™[˜X‹Ø\›Ş–Øß˜\›Şœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ\›Ş\İY[›YOÛÙÛÏYÚ]X‚–Øß˜\˜›Ø\™˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ\˜›Ø\™–Øß˜\˜›Ø\™˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX\˜›Ø\™XÜš[\ÛÛ‚–Øß˜\˜›Ø\™™ØÜ×NˆÎ‹ËÙØÜËœœËØ\˜›Ø\™–Øß˜\˜›Ø\™™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø\˜›Ø\™ÛX™[X\˜›Ø\™–Øß˜\˜›Ø\™›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ\˜›Ø\™–Øß˜\˜›Ø\™›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX\˜›Ø\™^Y[İÂ–Øß˜\˜›Ø\™œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÌT\ÜİÛÜ™Ø\˜›Ø\™–Øß˜\˜›Ø\™œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ\˜›Ø\™\İY[›YOÛÙÛÏYÚ]X‚–Øß˜\˜Ë\İØ\\˜ÔİØ\™ØÜ×NˆÎ‹ËÙØÜËœœËØ\˜Ë\İØ\Û]\İØ\˜Ë\İØ\İ\K\˜ÔİØ\š[–Øß˜\˜Ë\İØ\˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ\˜Ë\İØ\–Øß˜\˜Ë\İØ\˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX\˜ËK\İØ\XÜš[\ÛÛ‚–Øß˜\˜Ë\İØ\™ØÜ×NˆÎ‹ËÙØÜËœœËØ\˜Ë\İØ\–Øß˜\˜Ë\İØ\™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø\˜Ë\İØ\ÛX™[X\˜Ë\İØ\–Øß˜\˜Ë\İØ\›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ\˜Ë\İØ\–Øß˜\˜Ë\İØ\›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX\˜ËK\İØ\^Y[İÂ–Øß˜\˜Ë\İØ\œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKİ›Ü›™\‹Ø\˜Ë\İØ\–Øß˜\˜Ë\İØ\œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ\˜ËK\İØ\\İY[›YOÛÙÛÏYÚ]X‚–Øß˜\™Ú™ØÜ×NˆÎ‹ËÙØÜËœœËØ\™Ú–Øß˜\™ÛZ[Ÿ™ØÜ×NˆÎ‹ËÙØÜËœœËØ\™ÛZ[‚–Øß˜\™ÛÛŒŸ˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ\™ÛÛŒ‚–Øß˜\™ÛÛŒŸ˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX\™ÛÛŒ‹XÜš[\ÛÛ‚–Øß˜\™ÛÛŒŸ™ØÜ×NˆÎ‹ËÙØÜËœœËØ\™ÛÛŒ‚–Øß˜\™ÛÛŒŸ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø\™ÛÛŒÛX™[X\™ÛÛŒ‚–Øß˜\™ÛÛŒŸ›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ\™ÛÛŒ‚–Øß˜\™ÛÛŒŸ›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX\™ÛÛŒ‹^Y[İÂ–Øß˜\™ÛÛŒŸœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÔ\İÜ\ËÜ\ÜİÛÜ™Z\Ú\Ëİ™YKÛX\İ\‹Ø\™ÛÛŒ‚–Øß˜\™ÛÛŒŸœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ\™ÛÛŒ‹\İY[›YOÛÙÛÏYÚ]X‚–Øß˜\œ˜^]™Xß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ\œ˜^]™XÂ–Øß˜\œ˜^]™Xß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX\œ˜^]™XËXÜš[\ÛÛ‚–Øß˜\œ˜^]™Xß™ØÜ×NˆÎ‹ËÙØÜËœœËØ\œ˜^]™XÂ–Øß˜\œ˜^]™Xß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø\œ˜^]™XÏÛX™[X\œ˜^]™XÂ–Øß˜\œ˜^]™Xß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ\œ˜^]™XÂ–Øß˜\œ˜^]™Xß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX\œ˜^]™XË^Y[İÂ–Øß˜\œ˜^]™Xßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØ›\ÜËØ\œ˜^]™XÂ–Øß˜\œ˜^]™Xßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ\œ˜^]™XË\İY[›YOÛÙÛÏYÚ]X‚–Øß˜\œ›İß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ\œ›İÂ–Øß˜\œ›İß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX\œ›İËXÜš[\ÛÛ‚–Øß˜\œ›İß™ØÜ×NˆÎ‹ËÙØÜËœœËØ\œ›İÂ–Øß˜\œ›İß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø\œ›İÏÛX™[X\œ›İÂ–Øß˜\œ›İß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ\œ›İÂ–Øß˜\œ›İß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX\œ›İË^Y[İÂ–Øß˜\œ›İßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØ\XÚKØ\œ›İË\œÂ–Øß˜\œ›İßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ\œ›İË\İY[›YOÛÙÛÏYÚ]X‚–Øß˜\Ú™ØÜ×NˆÎ‹ËÙØÜËœœËØ\Ú–Øß˜\Ú™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø\ÚÛX™[X\Ú–Øß˜\ÚØ[X_™ØÜ×NˆÎ‹ËÙØÜËœœËØ\ÚØ[XB–Øß˜\ÚØ[X_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÙ˜ËØ\ÚØ[XB–Øß˜\ÜÙ\ÛX]Ú\ß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ\ÜÙ\ÛX]Ú\Â–Øß˜\ÜÙ\ÛX]Ú\ß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX\ÜÙ\×ÛX]Ú\ËXÜš[\ÛÛ‚–Øß˜\ÜÙ\ÛX]Ú\ß™ØÜ×NˆÎ‹ËÙØÜËœœËØ\ÜÙ\ÛX]Ú\Â–Øß˜\ÜÙ\ÛX]Ú\ß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø\ÜÙ\ÛX]Ú\ÏÛX™[X\ÜÙ\ÛX]Ú\Â–Øß˜\ÜÙ\ÛX]Ú\ß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ\ÜÙ\ÛX]Ú\Â–Øß˜\ÜÙ\ÛX]Ú\ß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX\ÜÙ\×ÛX]Ú\Ë^Y[İÂ–Øß˜\ÜÙ\ÛX]Ú\ßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÛ]\˜\Ø\ÜÙ\ÛX]Ú\Â–Øß˜\ÜÙ\ÛX]Ú\ßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ\ÜÙ\×ÛX]Ú\Ë\İY[›YOÛÙÛÏYÚ]X‚–Øß˜\ÜÙ\X›\ß™ØÜ×NˆÎ‹ËÙØÜËœœËØ\ÜÙ\X›\Â–Øß˜\ÜÚ[\™ØÜ×NˆÎ‹ËÙØÜËœœËØ\ÜÚ[\–Øß˜\Ş[˜ËXÚ[›™[˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ\Ş[˜ËXÚ[›™[–Øß˜\Ş[˜ËXÚ[›™[˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX\Ş[˜ËKXÚ[›™[XÜš[\ÛÛ‚–Øß˜\Ş[˜ËXÚ[›™[™ØÜ×NˆÎ‹ËÙØÜËœœËØ\Ş[˜ËXÚ[›™[–Øß˜\Ş[˜ËXÚ[›™[™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø\Ş[˜ËXÚ[›™[ÛX™[X\Ş[˜ËXÚ[›™[–Øß˜\Ş[˜ËXÚ[›™[›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ\Ş[˜ËXÚ[›™[–Øß˜\Ş[˜ËXÚ[›™[›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX\Ş[˜ËKXÚ[›™[^Y[İÂ–Øß˜\Ş[˜ËXÚ[›™[œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜÛ[Û\œËØ\Ş[˜ËXÚ[›™[–Øß˜\Ş[˜ËXÚ[›™[œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ\Ş[˜ËKXÚ[›™[\İY[›YOÛÙÛÏYÚ]X‚–Øß˜\Ş[˜ËYœß™ØÜ×NˆÎ‹ËÙØÜËœœËØ\Ş[˜ËYœÂ–Øß˜\Ş[˜ËYÜ˜\[˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ\Ş[˜ËYÜ˜\[–Øß˜\Ş[˜ËYÜ˜\[˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX\Ş[˜ËKYÜ˜\[XÜš[\ÛÛ‚–Øß˜\Ş[˜ËYÜ˜\[™ØÜ×NˆÎ‹ËÙØÜËœœËØ\Ş[˜ËYÜ˜\[–Øß˜\Ş[˜ËYÜ˜\[™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø\Ş[˜ËYÜ˜\[ÛX™[X\Ş[˜ËYÜ˜\[–Øß˜\Ş[˜ËYÜ˜\[›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ\Ş[˜ËYÜ˜\[–Øß˜\Ş[˜ËYÜ˜\[›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX\Ş[˜ËKYÜ˜\[^Y[İÂ–Øß˜\Ş[˜ËYÜ˜\[œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØ\Ş[˜ËYÜ˜\[Ø\Ş[˜ËYÜ˜\[–Øß˜\Ş[˜ËYÜ˜\[œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ\Ş[˜ËKYÜ˜\[\İY[›YOÛÙÛÏYÚ]X‚–Øß˜\Ş[˜Ë\İ˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ\Ş[˜Ë\İ–Øß˜\Ş[˜Ë\İ˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX\Ş[˜ËK\İXÜš[\ÛÛ‚–Øß˜\Ş[˜Ë\İ™ØÜ×NˆÎ‹ËÙØÜËœœËØ\Ş[˜Ë\İ–Øß˜\Ş[˜Ë\İ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø\Ş[˜Ë\İÛX™[X\Ş[˜Ë\İ–Øß˜\Ş[˜Ë\İ™X[_™ØÜ×NˆÎ‹ËÙØÜËœœËØ\Ş[˜Ë\İ™X[B–Øß˜\Ş[˜Ë\İ™X[_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø\Ş[˜Ë\İ™X[OÛX™[X\Ş[˜Ë\İ™X[B–Øß˜\Ş[˜Ë\İ™X[_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ\Ş[˜Ë\İ™X[B–Øß˜\Ş[˜Ë\İ™X[_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKİÚÚ[Ë\œËØ\Ş[˜Ë\İ™X[B–Øß˜\Ş[˜Ë\İ™X[_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ\Ş[˜ËK\İ™X[K\İY[›YOÛÙÛÏYÚ]X‚–Øß˜\Ş[˜Ë]˜Z]™ØÜ×NˆÎ‹ËÙØÜËœœËØ\Ş[˜Ë]˜Z]–Øß˜\Ş[˜Ë]˜Z]™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø\Ş[˜Ë]˜Z]ÛX™[X\Ş[˜Ë]˜Z]–Øß˜\Ş[˜Ë]˜Z]œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÙÛ˜^KØ\Ş[˜Ë]˜Z]–Øß˜\Ş[˜Ë]˜Z]œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ\Ş[˜ËK]˜Z]\İY[›YOÛÙÛÏYÚ]X‚–Øß˜\Ş[˜Ë][™Üİ[š]_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ\Ş[˜Ë][™Üİ[š]B–Øß˜\Ş[˜Ë][™Üİ[š]_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX\Ş[˜ËK][™Üİ[š]KXÜš[\ÛÛ‚–Øß˜\Ş[˜Ë][™Üİ[š]_™ØÜ×NˆÎ‹ËÙØÜËœœËØ\Ş[˜Ë][™Üİ[š]B–Øß˜\Ş[˜Ë][™Üİ[š]_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø\Ş[˜Ë][™Üİ[š]OÛX™[X\Ş[˜Ë][™Üİ[š]B–Øß˜\Ş[˜Ë][™Üİ[š]_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ\Ş[˜Ë][™Üİ[š]B–Øß˜\Ş[˜Ë][™Üİ[š]_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX\Ş[˜ËK][™Üİ[š]K^Y[İÂ–Øß˜\Ş[˜Ë][™Üİ[š]_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜÙ›ÙYÙKØ\Ş[˜Ë][™Üİ[š]B–Øß˜\Ş[˜Ë][™Üİ[š]_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ\Ş[˜ËK][™Üİ[š]K\İY[›YOÛÙÛÏYÚ]X‚–Øß˜\Ş[˜×Şš\˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ\Ş[˜×Şš\–Øß˜\Ş[˜×Şš\˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX\Ş[˜××Şš\XÜš[\ÛÛ‚–Øß˜\Ş[˜×Şš\™ØÜ×NˆÎ‹ËÙØÜËœœËØ\Ş[˜×Şš\–Øß˜\Ş[˜×Şš\™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø\Ş[˜×Şš\ÛX™[X\Ş[˜×Şš\–Øß˜\Ş[˜×Şš\›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ\Ş[˜×Şš\–Øß˜\Ş[˜×Şš\›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX\Ş[˜××Şš\^Y[İÂ–Øß˜\Ş[˜×Şš\œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÓXZ›Ü™YÜœËX\Ş[˜Ë^š\–Øß˜\Ş[˜×Şš\œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ\Ş[˜××Şš\\İY[›YOÛÙÛÏYÚ]X‚–Øß˜]ÛZXß™ØÜ×NˆÎ‹ËÙØÜËœœËØ]ÛZXÂ–Øß˜]]ØÙ™ß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ]]ØÙ™Â–Øß˜]]ØÙ™ß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX]]ØÙ™ËXÜš[\ÛÛ‚–Øß˜]]ØÙ™ß™ØÜ×NˆÎ‹ËÙØÜËœœËØ]]ØÙ™Â–Øß˜]]ØÙ™ß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø]]ØÙ™ÏÛX™[X]]ØÙ™Â–Øß˜]]ØÙ™ß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ]]ØÙ™Â–Øß˜]]ØÙ™ß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX]]ØÙ™Ë^Y[İÂ–Øß˜]]ØÙ™ßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØİ]š\\‹Ø]]ØÙ™Â–Øß˜]]ØÙ™ßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ]]ØÙ™Ë\İY[›YOÛÙÛÏYÚ]X‚–Øß˜]ØZ]]™Y_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ]ØZ]]™YB–Øß˜]ØZ]]™Y_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX]ØZ]K]™YKXÜš[\ÛÛ‚–Øß˜]ØZ]]™Y_™ØÜ×NˆÎ‹ËÙØÜËœœËØ]ØZ]]™YB–Øß˜]ØZ]]™Y_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø]ØZ]]™YOÛX™[X]ØZ]]™YB–Øß˜]ØZ]]™Y_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ]ØZ]]™YB–Øß˜]ØZ]]™Y_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX]ØZ]K]™YK^Y[İÂ–Øß˜]ØZ]]™Y_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜš\Ú[™İØ]™[XœËØ]ØZ]]™YB–Øß˜]ØZ]]™Y_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ]ØZ]K]™YK\İY[›YOÛÙÛÏYÚ]X‚–Øß˜]ØZ]™ØÜ×Nˆ‹ËÚXÛÜ™\šK™Ú]X‹š[ËÜ\İX]ØZ]–Øß˜]ÜËXÛÛ™šYß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ]ÜËXÛÛ™šYÂ–Øß˜]Üß™ØÜ×NˆÎ‹ËÙØÜËœœËØ]ÜÂ–Øß˜^[_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ^[B–Øß˜^[_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX^[KXÜš[\ÛÛ‚–Øß˜^[_™ØÜ×NˆÎ‹ËÙØÜËœœËØ^[B–Øß˜^[_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø^[OÛX™[X^[B–Øß˜^[_™^[\\×NˆÎ‹ËÙÚ]X‹˜ÛÛKİÚÚ[Ë\œËØ^[Kİ™YKÛXZ[‹Ù^[\\Â–Øß˜^[_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ^[B–Øß˜^[_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX^[K^Y[İÂ–Øß˜^[_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKİÚÚ[Ë\œËØ^[B–Øß˜^[_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ^[K\İY[›YOÛÙÛÏYÚ]X‚–Øß˜^[˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ^[–Øß˜^[˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX^[XÜš[\ÛÛ‚–Øß˜^[™ØÜ×NˆÎ‹ËÙØÜËœœËØ^[–Øß˜^[™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø^[ÛX™[X^[–Øß˜^[›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ^[–Øß˜^[›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX^[^Y[İÂ–Øß˜^[œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÙœØÚ]Ø^[–Øß˜^[œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ^[\İY[›YOÛÙÛÏYÚ]X‚–Øß˜^[ÙXœÚ]WNˆÎ‹ËØ^[œœÂ–Øß˜^[ÙXœÚ]_˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ^[XÛÜ˜[–Øß˜˜XÛÛŸ˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ˜XÛÛ‚–Øß˜˜XÛÛŸ˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX˜XÛÛ‹XÜš[\ÛÛ‚–Øß˜˜XÛÛŸ™ØÜ×NˆÎ‹ËÙØÜËœœËØ˜XÛÛ‚–Øß˜˜XÛÛŸ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø˜XÛÛÛX™[X˜XÛÛ‚–Øß˜˜XÛÛŸ›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ˜XÛÛ‚–Øß˜˜XÛÛŸ›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX˜XÛÛ‹^Y[İÂ–Øß˜˜XÛÛŸœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKĞØ[›ÜØ˜XÛÛ‚–Øß˜˜XÛÛŸœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ˜XÛÛ‹\İY[›YOÛÙÛÏYÚ]X‚–Øß˜˜\™K[Y][™ØÜ×NˆÎ‹ËÙØÜËœœËØ˜\™K[Y][–Øß˜˜\ÙM™XÛÙ_™ØÜ×NˆÎ‹ËÙØÜËœœËØ˜\ÙMÛ]\İØ˜\ÙMÙ›‹™XÛÙKš[–Øß˜˜\ÙM™[˜ÛÙ_™ØÜ×NˆÎ‹ËÙØÜËœœËØ˜\ÙMÛ]\İØ˜\ÙMÙ›‹™[˜ÛÙKš[–Øß˜˜\ÙM™ØÜ×NˆÎ‹ËÙØÜËœœËØ˜\ÙM–Øß˜˜\ÙM™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø˜\ÙMÛX™[X˜\ÙM–Øß˜˜\ÚXË]Û[˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ˜\ÚXË]Û[–Øß˜˜\ÚXË]Û[˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX˜\ÚXËK]Û[XÜš[\ÛÛ‚–Øß˜˜\ÚXË]Û[™ØÜ×NˆÎ‹ËÙØÜËœœËØ˜\ÚXË]Û[–Øß˜˜\ÚXË]Û[™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø˜\ÚXË]Û[ÛX™[X˜\ÚXË]Û[–Øß˜˜\ÚXË]Û[›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ˜\ÚXË]Û[–Øß˜˜\ÚXË]Û[›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX˜\ÚXËK]Û[^Y[İÂ–Øß˜˜\ÚXË]Û[œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÙÛ˜^KØ˜\ÚXË]Û[–Øß˜˜\ÚXË]Û[œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ˜\ÚXËK]Û[\İY[›YOÛÙÛÏYÚ]X‚–Øß˜˜\İ[ÛŸœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØ˜\İ[Û‹\œËØ˜\İ[Û‚–Øß˜˜]™ØÜ×NˆÎ‹ËÙØÜËœœËØ˜]–Øß˜˜]™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø˜]ÛX™[X˜]–Øß˜˜]œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜÚ\šÙØ˜]–Øß˜˜]œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ˜]\İY[›YOÛÙÛÏYÚ]X‚–Øß˜˜™ØÜ×NˆÎ‹ËÙØÜËœœËØ˜–Øß˜˜Ü\˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ˜Ü\–Øß˜˜Ü\˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX˜Ü\XÜš[\ÛÛ‚–Øß˜˜Ü\™ØÜ×NˆÎ‹ËÙØÜËœœËØ˜Ü\–Øß˜˜Ü\™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø˜Ü\ÛX™[X˜Ü\–Øß˜˜Ü\›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ˜Ü\–Øß˜˜Ü\›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX˜Ü\^Y[İÂ–Øß˜˜Ü\œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÒÙX]ËÜ\İX˜Ü\–Øß˜˜Ü\œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ˜Ü\\İY[›YOÛÙÛÏYÚ]X‚–Øß˜™]WÙXÜß™ØÜ×NˆÎ‹ËÙØÜËœœËØ™]WÙXÜÂ–Øß˜™]WÜ™[™\Ÿ™ØÜ×NˆÎ‹ËÙØÜËœœËØ™]WÜ™[™\‚–Øß˜™]_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ™]B–Øß˜™]_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX™]KXÜš[\ÛÛ‚–Øß˜™]_™ØÜ×NˆÎ‹ËÙØÜËœœËØ™]B–Øß˜™]_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø™]OÛX™[X™]B–Øß˜™]_™[˜X›KY˜\İXÛÛ\[\×NˆÎ‹ËØ™]Y[™Ú[™K›Ü™ËÛX\›‹Ø›ÛÚËÙÙ][™Ë\İ\YÜÙ]\ÈÙ[˜X›KY˜\İXÛÛ\[\Ë[Ü[Û˜[–Øß˜™]_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ™]B–Øß˜™]_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX™]K^Y[İÂ–Øß˜™]_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØ™]Y[™Ú[™KØ™]B–Øß˜™]_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ™]K\İY[›YOÛÙÛÏYÚ]X‚–Øß˜™]_ÙXœÚ]WNˆÎ‹ËØ™]Y[™Ú[™K›Ü™Â–Øß˜™]_ÙXœÚ]_˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ™]KXÛÜ˜[–Øß˜š[˜\ØÚZ_™ØÜ×NˆÎ‹ËÙØÜËœœËØš[˜\ØÚZB–Øß˜š[˜ÛÙ_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØš[˜ÛÙB–Øß˜š[˜ÛÙ_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXš[˜ÛÙKXÜš[\ÛÛ‚–Øß˜š[˜ÛÙ_™ØÜ×NˆÎ‹ËÙØÜËœœËØš[˜ÛÙB–Øß˜š[˜ÛÙ_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Øš[˜ÛÙOÛX™[Xš[˜ÛÙB–Øß˜š[˜ÛÙ_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØš[˜ÛÙB–Øß˜š[˜ÛÙ_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXš[˜ÛÙK^Y[İÂ–Øß˜š[˜ÛÙ_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØš[˜ÛÙK[Ü™ËØš[˜ÛÙB–Øß˜š[˜ÛÙ_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØš[˜ÛÙK\İY[›YOÛÙÛÏYÚ]X‚–Øß˜š[™Ù[Ÿ˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØš[™Ù[‚–Øß˜š[™Ù[Ÿ˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXš[™Ù[‹XÜš[\ÛÛ‚–Øß˜š[™Ù[Ÿ™ØÜ×NˆÎ‹ËÙØÜËœœËØš[™Ù[‚–Øß˜š[™Ù[Ÿ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Øš[™Ù[ÛX™[Xš[™Ù[‚–Øß˜š[™Ù[Ÿ›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØš[™Ù[‚–Øß˜š[™Ù[Ÿ›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXš[™Ù[‹^Y[İÂ–Øß˜š[™Ù[Ÿœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜ\İ[[™ËÜ\İXš[™Ù[‚–Øß˜š[™Ù[Ÿœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØš[™Ù[‹\İY[›YOÛÙÛÏYÚ]X‚–Øß˜š[™Ù[ŸÙXœÚ]WNˆÎ‹ËÜ\İ[[™Ë™Ú]X‹š[ËÜ\İXš[™Ù[‚–Øß˜š]\Ù]™ØÜ×NˆÎ‹ËÙØÜËœœËØš]\Ù]–Øß˜š]ÛÚ[Ÿ™ØÜ×NˆÎ‹ËÙØÜËœœËØš]ÛÚ[‚–Øß˜š]›YÜÎ˜š]›YÜß™ØÜ×NˆÎ‹ËÙØÜËœœËØš]›YÜËÛ]\İØš]›YÜËÛXXÜ›Ë˜š]›YÜËš[–Øß˜š]›YÜß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØš]›YÜÂ–Øß˜š]›YÜß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXš]›YÜËXÜš[\ÛÛ‚–Øß˜š]›YÜß™ØÜ×NˆÎ‹ËÙØÜËœœËØš]›YÜÂ–Øß˜š]›YÜß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Øš]›YÜÏÛX™[Xš]›YÜÂ–Øß˜š]›YÜß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØš]›YÜÂ–Øß˜š]›YÜß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXš]›YÜË^Y[İÂ–Øß˜š]›YÜßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØš]›YÜËØš]›YÜÂ–Øß˜š]›YÜßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØš]›YÜË\İY[›YOÛÙÛÏYÚ]X‚–Øß˜š]™Xß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØš]™XÂ–Øß˜š]™Xß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXš]™XËXÜš[\ÛÛ‚–Øß˜š]™Xß™ØÜ×NˆÎ‹ËÙØÜËœœËØš]™XÂ–Øß˜š]™Xß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Øš]™XÏÛX™[Xš]™XÂ–Øß˜š]™Xß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØš]™XÂ–Øß˜š]™Xß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXš]™XË^Y[İÂ–Øß˜š]™Xßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØš]™XİË\œËØš]™XÂ–Øß˜š]™Xßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØš]™XË\İY[›YOÛÙÛÏYÚ]X‚–Øß˜š]™XßÙXœÚ]WNˆÎ‹ËØš]™XİË\œË™Ú]X‹š[ËØš]™XÂ–Øß˜š]™XßÙXœÚ]_˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØš]™XËXÛÜ˜[–Øß˜›ZÙLß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ›ZÙLÂ–Øß˜›ZÙLß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX›ZÙLËXÜš[\ÛÛ‚–Øß˜›ZÙLß™ØÜ×NˆÎ‹ËÙØÜËœœËØ›ZÙLÂ–Øß˜›ZÙLß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø›ZÙLÏÛX™[X›ZÙLÂ–Øß˜›ZÙLß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ›ZÙLÂ–Øß˜›ZÙLß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX›ZÙLË^Y[İÂ–Øß˜›ZÙLßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKĞ“RÑLË]X[KĞ“RÑLÂ–Øß˜›ZÙLßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ›ZÙLË\İY[›YOÛÙÛÏYÚ]X‚–Øß˜›ÛÛYš[\Ÿ™ØÜ×NˆÎ‹ËÙØÜËœœËØ›ÛÛYš[\‚–Øß˜›ÛÛYš[\Ÿ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø›ÛÛYš[\ÛX™[X›ÛÛYš[\‚–Øß˜›Û\›ß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ›Û\›Â–Øß˜›Û\›ß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX›Û\›ËXÜš[\ÛÛ‚–Øß˜›Û\›ß™ØÜ×NˆÎ‹ËÙØÜËœœËØ›Û\›Â–Øß˜›Û\›ß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø›Û\›ÏÛX™[X›Û\›Â–Øß˜›Û\›ß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ›Û\›Â–Øß˜›Û\›ß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX›Û\›Ë^Y[İÂ–Øß˜›Û\›ßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØØ[\ÚYØ›Û\›Â–Øß˜›Û\›ßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ›Û\›Ë\İY[›YOÛÙÛÏYÚ]X‚–Øß˜›Û\™˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ›Û\™–Øß˜›ÛœØZKX˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ›ÛœØZKX–Øß˜›ÛœØZKX˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX›ÛœØZKKXXÜš[\ÛÛ‚–Øß˜›ÛœØZKX™ØÜ×NˆÎ‹ËÙØÜËœœËØ›ÛœØZKX–Øß˜›ÛœØZKX™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø›ÛœØZKXÛX™[X›ÛœØZKX–Øß˜›ÛœØZKX›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ›ÛœØZKX–Øß˜›ÛœØZKX›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX›ÛœØZKKX^Y[İÂ–Øß˜›ÛœØZKXœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜÛÛ[X[›‹Ø›ÛœØZB–Øß˜›ÛœØZKXœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ›ÛœØZKKX\İY[›YOÛÙÛÏYÚ]X‚–Øß˜›ÛŸ˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ›Û‚–Øß˜›ÛŸ˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX›Û‹XÜš[\ÛÛ‚–Øß˜›ÛŸ™ØÜ×NˆÎ‹ËÙØÜËœœËØ›Û‚–Øß˜›ÛŸ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø›ÛÛX™[X›Û‚–Øß˜›ÛŸ›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ›Û‚–Øß˜›ÛŸ›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX›Û‹^Y[İÂ–Øß˜›ÛŸœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÙ[\İ[ËØ›Û‚–Øß˜›ÛŸœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ›Û‹\İY[›YOÛÙÛÏYÚ]X‚–Øß˜›ÛŸÙXœÚ]WNˆÎ‹ËØ›Û‹\œË˜ÛÛB–Øß˜›ÛŸÙXœÚ]_˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ›Û‹XÛÜ˜[–Øß˜›İ\›ØÚÙ]˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ›İ\›ØÚÙ]–Øß˜›İ\›ØÚÙ]˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX›İ\›ØÚÙ]XÜš[\ÛÛ‚–Øß˜›İ\›ØÚÙ]™ØÜ×NˆÎ‹ËÙØÜËœœËØ›İ\›ØÚÙ]–Øß˜›İ\›ØÚÙ]™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø›İ\›ØÚÙ]ÛX™[X›İ\›ØÚÙ]–Øß˜›İ\›ØÚÙ]›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ›İ\›ØÚÙ]–Øß˜›İ\›ØÚÙ]›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX›İ\›ØÚÙ]^Y[İÂ–Øß˜›İ\›ØÚÙ]œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØ›İ\›ØÚÙ][ÜËØ›İ\›ØÚÙ]–Øß˜›İ\›ØÚÙ]œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ›İ\›ØÚÙ]\İY[›YOÛÙÛÏYÚ]X‚–Øß˜›İÛ_™ØÜ×NˆÎ‹ËØÛ[Y[Ø[™Ë™Ú]X‹š[ËØ›İÛKÜİX›B–Øß˜›İÛ_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKĞÛ[Y[Ø[™ËØ›İÛB–Øß˜œ›Ûİ™ØÜ×NˆÎ‹ËÙØÜËœœËØœ›ÛİÛ]\İØœ›Ûİ–Øß˜œ›Ûİ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Øœ›ÛİÛX™[Xœ›Ûİ–Øß˜œ›Ûİœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKĞØ[›ÜØœ›Ûİ–Øß˜œ›Ûİœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØœ›Ûİ\İY[›YOÛÙÛÏYÚ]X‚–Øß˜œ›ÛİÙXœÚ]WNˆÎ‹ËÙ\İ›ŞK›Ü™ËØœ›Ûİ–Øß˜œ›İ_™ØÜ×NˆÎ‹ËÙØÜËœœËØœ›İB–Øß˜œÛÛŸ™ØÜ×NˆÎ‹ËÙØÜËœœËØœÛÛ‚–Øß˜œİŸ˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØœİ‚–Øß˜œİŸ˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXœİ‹XÜš[\ÛÛ‚–Øß˜œİŸ™ØÜ×NˆÎ‹ËÙØÜËœœËØœİ‚–Øß˜œİŸ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØœİÛX™[Xœİ‚–Øß˜œİŸ›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØœİ‚–Øß˜œİŸ›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXœİ‹^Y[İÂ–Øß˜œİŸœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKĞ\›İ\ÚKØœİ‚–Øß˜œİŸœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØœİ‹\İY[›YOÛÙÛÏYÚ]X‚–Øß˜[\[ß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ[\[Â–Øß˜[\[ß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX[\[ËXÜš[\ÛÛ‚–Øß˜[\[ß™ØÜ×NˆÎ‹ËÙØÜËœœËØ[\[Â–Øß˜[\[ß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø[\[ÏÛX™[X[\[Â–Øß˜[\[ß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ[\[Â–Øß˜[\[ß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX[\[Ë^Y[İÂ–Øß˜[\[ßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÙš]™Ù[‹Ø[\[Â–Øß˜[\[ßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ[\[Ë\İY[›YOÛÙÛÏYÚ]X‚–Øß˜\›Ÿ˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ\›‚–Øß˜\›Ÿ˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX\›‹XÜš[\ÛÛ‚–Øß˜\›Ÿ™ØÜ×NˆÎ‹ËÙØÜËœœËØ\›‚–Øß˜\›Ÿ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø\›ÛX™[X\›‚–Øß˜\›Ÿ›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ\›‚–Øß˜\›Ÿ›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX\›‹^Y[İÂ–Øß˜\›Ÿœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKİ˜XÙ[XZKØ\›‚–Øß˜\›Ÿœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ\›‹\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Y_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØYB–Øß˜Y_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXYKXÜš[\ÛÛ‚–Øß˜Y_™ØÜ×NˆÎ‹ËÙØÜËœœËØYB–Øß˜Y_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØYOÛX™[XYB–Øß˜Y_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØYB–Øß˜Y_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXYK^Y[İÂ–Øß˜Y_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÙØYÛ‹ØYB–Øß˜Y_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØYK\İY[›YOÛÙÛÏYÚ]X‚–Øß˜][]XÚß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ][]XÚÂ–Øß˜][]XÚß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX][]XÚËXÜš[\ÛÛ‚–Øß˜][]XÚß™ØÜ×NˆÎ‹ËÙØÜËœœËØ][]XÚÂ–Øß˜][]XÚß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø][]XÚÏÛX™[X][]XÚÂ–Øß˜][]XÚß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ][]XÚÂ–Øß˜][]XÚß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX][]XÚË^Y[İÂ–Øß˜][]XÚßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÓÚØ]Ü‹Ø][]XÚÂ–Øß˜][]XÚßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ][]XÚË\İY[›YOÛÙÛÏYÚ]X‚–Øß˜][Ü™\Ÿ˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØ][Ü™\‚–Øß˜][Ü™\Ÿ˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËX][Ü™\‹XÜš[\ÛÛ‚–Øß˜][Ü™\Ÿ™ØÜ×NˆÎ‹ËÙØÜËœœËØ][Ü™\‚–Øß˜][Ü™\Ÿ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Ø][Ü™\ÛX™[X][Ü™\‚–Øß˜][Ü™\Ÿ›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ][Ü™\‚–Øß˜][Ü™\Ÿ›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËX][Ü™\‹^Y[İÂ–Øß˜][Ü™\Ÿœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKĞ\›İ\ÚKØ][Ü™\‚–Øß˜][Ü™\Ÿœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØ][Ü™\‹\İY[›YOÛÙÛÏYÚ]X‚–Øß˜]\ß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØ]\Â–Øß˜š\Ÿ™ØÜ×NˆÎ‹ËÙØÜËœœËØš\‚–Øß˜š\Ÿ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹Øš\ÛX™[Xš\‚–Øß˜Ìœ\İ˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÌœ\İ–Øß˜Ìœ\İ˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXÌœ\İXÜš[\ÛÛ‚–Øß˜Ìœ\İ™ØÜ×NˆÎ‹ËÙØÜËœœËØÌœ\İ–Øß˜Ìœ\İ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÌœ\İÛX™[XÌœ\İ–Øß˜Ìœ\İ›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØÌœ\İ–Øß˜Ìœ\İ›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXÌœ\İ^Y[İÂ–Øß˜Ìœ\İœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÚ[[][˜[ØÌœ\İ–Øß˜Ìœ\İœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÌœ\İ\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ìœ\İÙXœÚ]WNˆÎ‹ËØÌœ\İ˜ÛÛB–Øß˜Ìœ\İÙXœÚ]_˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÌœ\İXÛÜ˜[–Øß˜ØXÚY˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØXÚY–Øß˜ØXÚY˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØXÚYXÜš[\ÛÛ‚–Øß˜ØXÚY™ØÜ×NˆÎ‹ËÙØÜËœœËØØXÚY–Øß˜ØXÚY™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØXÚYÛX™[XØXÚY–Øß˜ØXÚY›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØXÚY–Øß˜ØXÚY›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØXÚY^Y[İÂ–Øß˜ØXÚYœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÚ˜Y[ZËØØXÚY–Øß˜ØXÚYœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØXÚY\İY[›YOÛÙÛÏYÚ]X‚–Øß˜ØY[˜Ù_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØY[˜ÙB–Øß˜ØZ\›ß™ØÜ×NˆÎ‹ËÙØÜËœœËØØZ\›Â–Øß˜Ø[™KXÛÜ™_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ[™KXÛÜ™B–Øß˜Ø[™KXÛÜ™_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ[™KKXÛÜ™KXÜš[\ÛÛ‚–Øß˜Ø[™KXÛÜ™_™ØÜ×NˆÎ‹ËÙØÜËœœËØØ[™KXÛÜ™B–Øß˜Ø[™KXÛÜ™_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ[™KXÛÜ™OÛX™[XØ[™KXÛÜ™B–Øß˜Ø[™KXÛÜ™_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ[™KXÛÜ™B–Øß˜Ø[™KXÛÜ™_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ[™KKXÛÜ™K^Y[İÂ–Øß˜Ø[™KXÛÜ™_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÚYÙÚ[™Ù˜XÙKØØ[™B–Øß˜Ø[™KXÛÜ™_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ[™KKXÛÜ™K\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø[Ÿ™ØÜ×NˆÎ‹ËÙØÜËœœËØØ[‚–Øß˜Ø\œß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\œÂ–Øß˜Ø\œß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\œËXÜš[\ÛÛ‚–Øß˜Ø\œß™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\œÂ–Øß˜Ø\œß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\œÏÛX™[XØ\œÂ–Øß˜Ø\œß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\œÂ–Øß˜Ø\œß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\œË^Y[İÂ–Øß˜Ø\œßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØØ\œ›İËØØ\œ›İË\\İ–Øß˜Ø\œßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\œË\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\œ˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\œ–Øß˜Ø\œ˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\œXÜš[\ÛÛ‚–Øß˜Ø\œ™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\œ–Øß˜Ø\œ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\œÛX™[XØ\œ–Øß˜Ø\œ›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\œ–Øß˜Ø\œ›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\œ^Y[İÂ–Øß˜Ø\œœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØØ\œ›İËØØ\œ›İË\\İ–Øß˜Ø\œœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\œ\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛËXX›İ]™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛËXX›İ]–Øß˜Ø\™ÛËXYY[˜[ZXß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛËXYY[˜[ZXÂ–Øß˜Ø\™ÛËXYY[˜[ZXß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËKXYKY[˜[ZXËXÜš[\ÛÛ‚–Øß˜Ø\™ÛËXYY[˜[ZXß™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛËXYY[˜[ZXÂ–Øß˜Ø\™ÛËXYY[˜[ZXß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛËXYY[˜[ZXÏÛX™[XØ\™ÛËXYY[˜[ZXÂ–Øß˜Ø\™ÛËXYY[˜[ZXß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛËXYY[˜[ZXÂ–Øß˜Ø\™ÛËXYY[˜[ZXß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËKXYKY[˜[ZXË^Y[İÂ–Øß˜Ø\™ÛËXYY[˜[ZXßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜšÜÛKØØ\™ÛËXYY[˜[ZXÂ–Øß˜Ø\™ÛËXYY[˜[ZXßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËKXYKY[˜[ZXË\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛËXY›™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛËXY›–Øß˜Ø\™ÛËX\Û_™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛËX\ÛB–Øß˜Ø\™ÛËX]Y]X›_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛËX]Y]X›B–Øß˜Ø\™ÛËX]Y]X›_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËKX]Y]X›KXÜš[\ÛÛ‚–Øß˜Ø\™ÛËX]Y]X›_™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛËX]Y]X›B–Øß˜Ø\™ÛËX]Y]X›_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛËX]Y]X›OÛX™[XØ\™ÛËX]Y]X›B–Øß˜Ø\™ÛËX]Y]X›_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛËX]Y]X›B–Øß˜Ø\™ÛËX]Y]X›_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËKX]Y]X›K^Y[İÂ–Øß˜Ø\™ÛËX]Y]X›_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜ\İ\ÙXİ\™KXÛÙKØØ\™ÛËX]Y]X›B–Øß˜Ø\™ÛËX]Y]X›_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËKX]Y]X›K\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛËX]Y]˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛËX]Y]–Øß˜Ø\™ÛËX]Y]˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËKX]Y]XÜš[\ÛÛ‚–Øß˜Ø\™ÛËX]Y]™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛËX]Y]–Øß˜Ø\™ÛËX]Y]™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛËX]Y]ÛX™[XØ\™ÛËX]Y]–Øß˜Ø\™ÛËX]Y]›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛËX]Y]–Øß˜Ø\™ÛËX]Y]›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËKX]Y]^Y[İÂ–Øß˜Ø\™ÛËX]Y]œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜ\İÙXËÜ\İÙXÂ–Øß˜Ø\™ÛËX]Y]œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËKX]Y]\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛËXš[œİ[˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛËXš[œİ[–Øß˜Ø\™ÛËXš[œİ[˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËKXš[œİ[XÜš[\ÛÛ‚–Øß˜Ø\™ÛËXš[œİ[™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛËXš[œİ[–Øß˜Ø\™ÛËXš[œİ[™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛËXš[œİ[ÛX™[XØ\™ÛËXš[œİ[–Øß˜Ø\™ÛËXš[œİ[›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛËXš[œİ[–Øß˜Ø\™ÛËXš[œİ[›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËKXš[œİ[^Y[İÂ–Øß˜Ø\™ÛËXš[œİ[œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØØ\™ÛËXš[œËØØ\™ÛËXš[œİ[–Øß˜Ø\™ÛËXš[œİ[œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËKXš[œİ[\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛËXš[][ß™ØÜ×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜ\İY[X™YYØØ\™ÛËXš[][ÈØØ\™ÛËXš[][Â–Øß˜Ø\™ÛËX›Ø]™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛËX›Ø]–Øß˜Ø\™ÛËX›Ø]œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÔ˜^œ‘˜[ÛÛ‹ØØ\™ÛËX›Ø]–Øß˜Ø\™ÛËX[\™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛËX[\–Øß˜Ø\™ÛËX[\œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKİÜ˜Z][‹ØØ\™ÛËX[\–Øß˜Ø\™ÛËXØXÚ_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛËXØXÚB–Øß˜Ø\™ÛËXØXÚ_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËKXØXÚKXÜš[\ÛÛ‚–Øß˜Ø\™ÛËXØXÚ_™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛËXØXÚB–Øß˜Ø\™ÛËXØXÚ_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛËXØXÚOÛX™[XØ\™ÛËXØXÚB–Øß˜Ø\™ÛËXØXÚ_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛËXØXÚB–Øß˜Ø\™ÛËXØXÚ_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËKXØXÚK^Y[İÂ–Øß˜Ø\™ÛËXØXÚ_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÛX]X\ÚÜ™Ü‹ØØ\™ÛËXØXÚB–Øß˜Ø\™ÛËXØXÚ_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËKXØXÚK\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛËXÜ˜]\ß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛËXÜ˜]\Â–Øß˜Ø\™ÛËXÜ˜]\ß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËKXÜ˜]\ËXÜš[\ÛÛ‚–Øß˜Ø\™ÛËXÜ˜]\ß™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛËXÜ˜]\Â–Øß˜Ø\™ÛËXÜ˜]\ß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛËXÜ˜]\ÏÛX™[XØ\™ÛËXÜ˜]\Â–Øß˜Ø\™ÛËXÜ˜]\ß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛËXÜ˜]\Â–Øß˜Ø\™ÛËXÜ˜]\ß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËKXÜ˜]\Ë^Y[İÂ–Øß˜Ø\™ÛËXÜ˜]\ßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÕT^›[XZÙ\‹ØØ\™ÛËXÜ˜]\Â–Øß˜Ø\™ÛËXÜ˜]\ßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËKXÜ˜]\Ë\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛËXŞXÛÛ™Y˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛËXŞXÛÛ™Y–Øß˜Ø\™ÛËXß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛËXÂ–Øß˜Ø\™ÛËYXY[šÜß™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛËYXY[šÜÂ–Øß˜Ø\™ÛËYXŸ™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛËYX‚–Øß˜Ø\™ÛËYXŸ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛËYXÛX™[XØ\™ÛËYX‚–Øß˜Ø\™ÛËY[_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛËY[B–Øß˜Ø\™ÛËY[_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËKY[KXÜš[\ÛÛ‚–Øß˜Ø\™ÛËY[_™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛËY[B–Øß˜Ø\™ÛËY[_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛËY[OÛX™[XØ\™ÛËY[B–Øß˜Ø\™ÛËY[_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛËY[B–Øß˜Ø\™ÛËY[_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËKY[K^Y[İÂ–Øß˜Ø\™ÛËY[_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÙ[X˜\šÜİY[ÜËØØ\™ÛËY[B–Øß˜Ø\™ÛËY[_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËKY[K\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛËY\İ˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛËY\İ–Øß˜Ø\™ÛËY\İ˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËKY\İXÜš[\ÛÛ‚–Øß˜Ø\™ÛËY\İ™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛËY\İ–Øß˜Ø\™ÛËY\İ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛËY\İÛX™[XØ\™ÛËY\İ–Øß˜Ø\™ÛËY\İ›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛËY\İ–Øß˜Ø\™ÛËY\İ›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËKY\İ^Y[İÂ–Øß˜Ø\™ÛËY\İœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØ^Ùİ]‹ØØ\™ÛËY\İ–Øß˜Ø\™ÛËY\İœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËKY\İ\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛËY\İÙXœÚ]WNˆÎ‹ËÛÜ[œÛİ\˜ÙK˜^Ë™]‹ØØ\™ÛËY\İ–Øß˜Ø\™ÛËY\İÙXœÚ]_˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËKY\İXÛÜ˜[–Øß˜Ø\™ÛËYY]˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛËYY]–Øß˜Ø\™ÛËYY]˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËKYY]XÜš[\ÛÛ‚–Øß˜Ø\™ÛËYY]™ØÜ×NˆÎ‹ËÙÚ]X‹˜ÛÛKÚÚ[\˜İ\ØØ\™ÛËYY]Ø›Ø‹ÛX\İ\‹Ô‘PQQK›YØ]˜Z[X›K\İX˜ÛÛ[X[™Â–Øß˜Ø\™ÛËYY]™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛËYY]ÛX™[XØ\™ÛËYY]–Øß˜Ø\™ÛËYY]›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛËYY]–Øß˜Ø\™ÛËYY]›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËKYY]^Y[İÂ–Øß˜Ø\™ÛËYY]œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÚÚ[\˜İ\ØØ\™ÛËYY]–Øß˜Ø\™ÛËYY]œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËKYY]\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛËY^[™˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛËY^[™–Øß˜Ø\™ÛËY^[™˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËKY^[™XÜš[\ÛÛ‚–Øß˜Ø\™ÛËY^[™™ØÜ×NˆÎ‹ËÙÚ]X‹˜ÛÛKÙÛ˜^KØØ\™ÛËY^[™–Øß˜Ø\™ÛËY^[™™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛËY^[™ÛX™[XØ\™ÛËY^[™–Øß˜Ø\™ÛËY^[™›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛËY^[™–Øß˜Ø\™ÛËY^[™›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËKY^[™^Y[İÂ–Øß˜Ø\™ÛËY^[™œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÙÛ˜^KØØ\™ÛËY^[™–Øß˜Ø\™ÛËY^[™œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËKY^[™\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛËY^Ÿ˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛËY^‚–Øß˜Ø\™ÛËY^Ÿ˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËKY^‹XÜš[\ÛÛ‚–Øß˜Ø\™ÛËY^Ÿ™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛËY^‚–Øß˜Ø\™ÛËY^Ÿ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛËY^ÛX™[XØ\™ÛËY^‚–Øß˜Ø\™ÛËY^Ÿ›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛËY^‚–Øß˜Ø\™ÛËY^Ÿ›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËKY^‹^Y[İÂ–Øß˜Ø\™ÛËY^Ÿœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜ\İY^‹ØØ\™ÛËY^‚–Øß˜Ø\™ÛËY^Ÿœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËKY^‹\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛËYÙZYÙ\Ÿ™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛËYÙZYÙ\‚–Øß˜Ø\™ÛËYÙ[™\˜]_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛËYÙ[™\˜]B–Øß˜Ø\™ÛËYÙ[™\˜]_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËKYÙ[™\˜]KXÜš[\ÛÛ‚–Øß˜Ø\™ÛËYÙ[™\˜]_™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛËYÙ[™\˜]B–Øß˜Ø\™ÛËYÙ[™\˜]_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛËYÙ[™\˜]OÛX™[XØ\™ÛËYÙ[™\˜]B–Øß˜Ø\™ÛËYÙ[™\˜]_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛËYÙ[™\˜]B–Øß˜Ø\™ÛËYÙ[™\˜]_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËKYÙ[™\˜]K^Y[İÂ–Øß˜Ø\™ÛËYÙ[™\˜]_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØØ\™ÛËYÙ[™\˜]KØØ\™ÛËYÙ[™\˜]B–Øß˜Ø\™ÛËYÙ[™\˜]_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËKYÙ[™\˜]K\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛËZXÚß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛËZXÚÂ–Øß˜Ø\™ÛËZXÚß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËKZXÚËXÜš[\ÛÛ‚–Øß˜Ø\™ÛËZXÚß™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛËZXÚÂ–Øß˜Ø\™ÛËZXÚß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛËZXÚÏÛX™[XØ\™ÛËZXÚÂ–Øß˜Ø\™ÛËZXÚß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛËZXÚÂ–Øß˜Ø\™ÛËZXÚß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËKZXÚË^Y[İÂ–Øß˜Ø\™ÛËZXÚßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKİZZÚKYKØØ\™ÛËZXÚÂ–Øß˜Ø\™ÛËZXÚßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËKZXÚË\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛËZZØ\š_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛËZZØ\šB–Øß˜Ø\™ÛËZZØ\š_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËKZZØ\šKXÜš[\ÛÛ‚–Øß˜Ø\™ÛËZZØ\š_™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛËZZØ\šB–Øß˜Ø\™ÛËZZØ\š_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛËZZØ\šOÛX™[XØ\™ÛËZZØ\šB–Øß˜Ø\™ÛËZZØ\š_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛËZZØ\šB–Øß˜Ø\™ÛËZZØ\š_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËKZZØ\šK^Y[İÂ–Øß˜Ø\™ÛËZZØ\š_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÙİ\K\œËÙİ\B–Øß˜Ø\™ÛËZZØ\š_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËKZZØ\šK\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛËZ\ÚŞ_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛËZ\ÚŞB–Øß˜Ø\™ÛËZ\ÚŞ_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËKZ\ÚŞKXÜš[\ÛÛ‚–Øß˜Ø\™ÛËZ\ÚŞ_™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛËZ\ÚŞB–Øß˜Ø\™ÛËZ\ÚŞ_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛËZ\ÚŞOÛX™[XØ\™ÛËZ\ÚŞB–Øß˜Ø\™ÛËZ\ÚŞ_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛËZ\ÚŞB–Øß˜Ø\™ÛËZ\ÚŞ_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËKZ\ÚŞK^Y[İÂ–Øß˜Ø\™ÛËZ\ÚŞ_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜš\ÙØØ\™ÛËZ\ÚŞB–Øß˜Ø\™ÛËZ\ÚŞ_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËKZ\ÚŞK\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛËZ[œİ_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛËZ[œİB–Øß˜Ø\™ÛËZ[œİ_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËKZ[œİKXÜš[\ÛÛ‚–Øß˜Ø\™ÛËZ[œİ_™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛËZ[œİB–Øß˜Ø\™ÛËZ[œİ_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛËZ[œİOÛX™[XØ\™ÛËZ[œİB–Øß˜Ø\™ÛËZ[œİ_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛËZ[œİB–Øß˜Ø\™ÛËZ[œİ_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËKZ[œİK^Y[İÂ–Øß˜Ø\™ÛËZ[œİ_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÛZ]İZZÛËÚ[œİKİ™YKÛX\İ\‹ØØ\™ÛËZ[œİB–Øß˜Ø\™ÛËZ[œİ_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËKZ[œİK\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛË[XÙ[œÙ_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛË[XÙ[œÙB–Øß˜Ø\™ÛË[XÙ[œÙ_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËK[XÙ[œÙKXÜš[\ÛÛ‚–Øß˜Ø\™ÛË[XÙ[œÙ_™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛË[XÙ[œÙB–Øß˜Ø\™ÛË[XÙ[œÙ_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛË[XÙ[œÙOÛX™[XØ\™ÛË[XÙ[œÙB–Øß˜Ø\™ÛË[XÙ[œÙ_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛË[XÙ[œÙB–Øß˜Ø\™ÛË[XÙ[œÙ_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËK[XÙ[œÙK^Y[İÂ–Øß˜Ø\™ÛË[XÙ[œÙ_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÛÛ\‹ØØ\™ÛË[XÙ[œÙB–Øß˜Ø\™ÛË[XÙ[œÙ_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËK[XÙ[œÙK\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛË[XÚÚ[™ß™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛË[XÚÚ[™Â–Øß˜Ø\™ÛË[[Z]˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛË[[Z]–Øß˜Ø\™ÛË[[Z]˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËK[[Z]XÜš[\ÛÛ‚–Øß˜Ø\™ÛË[[Z]™ØÜ×NˆÎ‹ËÙÚ]X‹˜ÛÛKØ[Ü][™]‹ØØ\™ÛË[[Z]Ü™XYYB–Øß˜Ø\™ÛË[[Z]™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛË[[Z]ÛX™[XØ\™ÛË[[Z]–Øß˜Ø\™ÛË[[Z]›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛË[[Z]–Øß˜Ø\™ÛË[[Z]›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËK[[Z]^Y[İÂ–Øß˜Ø\™ÛË[[Z]œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØ[Ü][™]‹ØØ\™ÛË[[Z]–Øß˜Ø\™ÛË[[Z]œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËK[[Z]\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛË[XXÚ]_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛË[XXÚ]B–Øß˜Ø\™ÛË[XXÚ]_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËK[XXÚ]KXÜš[\ÛÛ‚–Øß˜Ø\™ÛË[XXÚ]_™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛË[XXÚ]B–Øß˜Ø\™ÛË[XXÚ]_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛË[XXÚ]OÛX™[XØ\™ÛË[XXÚ]B–Øß˜Ø\™ÛË[XXÚ]_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛË[XXÚ]B–Øß˜Ø\™ÛË[XXÚ]_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËK[XXÚ]K^Y[İÂ–Øß˜Ø\™ÛË[XXÚ]_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØ›š˜œ‹ØØ\™ÛË[XXÚ]B–Øß˜Ø\™ÛË[XXÚ]_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËK[XXÚ]K\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛË[XZÙ_˜›Ù×NˆÎ‹ËÛYY][K˜ÛÛKĞØYÚYYİ\˜\šKØ]]ÛX][™Ë^[İ\‹\\İ]ÛÜšÙ›İÜË]Ú]XØ\™ÛË[XZÙK\\LK[Ù‹MKZ[›ÙXİ[Û‹X[™X˜\ÚXÜËXŒNXÙYÙMÌMÂ–Øß˜Ø\™ÛË[XZÙ_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛË[XZÙB–Øß˜Ø\™ÛË[XZÙ_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËK[XZÙKXÜš[\ÛÛ‚–Øß˜Ø\™ÛË[XZÙ_™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛË[XZÙKÛ]\İØÛB–Øß˜Ø\™ÛË[XZÙ_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛË[XZÙOÛX™[XØ\™ÛË[XZÙB–Øß˜Ø\™ÛË[XZÙ_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛË[XZÙB–Øß˜Ø\™ÛË[XZÙ_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËK[XZÙK^Y[İÂ–Øß˜Ø\™ÛË[XZÙ_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜØYÚYYİ\˜\šKØØ\™ÛË[XZÙB–Øß˜Ø\™ÛË[XZÙ_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËK[XZÙK\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛË[[Ù[\ß™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛË[[Ù[\Â–Øß˜Ø\™ÛË[™^\İ˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛË[™^\İ–Øß˜Ø\™ÛË[™^\İ˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËK[™^\İXÜš[\ÛÛ‚–Øß˜Ø\™ÛË[™^\İ™ØÜ×NˆÎ‹ËÛ™^Kœİ–Øß˜Ø\™ÛË[™^\İ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛË[™^\İÛX™[XØ\™ÛË[™^\İ–Øß˜Ø\™ÛË[™^\İ›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛË[™^\İ–Øß˜Ø\™ÛË[™^\İ›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËK[™^\İ^Y[İÂ–Øß˜Ø\™ÛË[™^\İœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÛ™^\İ\œËÛ™^\İ–Øß˜Ø\™ÛË[™^\İœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËK[™^\İ\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛË[™^\İÙXœÚ]WNˆÎ‹ËÙÚ]X‹˜ÛÛKÛ™^\İ\œËÛ™^\İØ›Ø‹ÛXZ[‹Ô‘PQQK›Y–Øß˜Ø\™ÛË[İ]]Y˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛË[İ]]Y–Øß˜Ø\™ÛË[İ]]Y˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËK[İ]]YXÜš[\ÛÛ‚–Øß˜Ø\™ÛË[İ]]Y™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛË[İ]]Y–Øß˜Ø\™ÛË[İ]]Y™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛË[İ]]YÛX™[XØ\™ÛË[İ]]Y–Øß˜Ø\™ÛË[İ]]Y›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛË[İ]]Y–Øß˜Ø\™ÛË[İ]]Y›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËK[İ]]Y^Y[İÂ–Øß˜Ø\™ÛË[İ]]Yœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÚØšÛ˜\ØØ\™ÛË[İ]]Y–Øß˜Ø\™ÛË[İ]]Yœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËK[İ]]Y\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛË\^_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛË\^B–Øß˜Ø\™ÛË\™Y™]Úœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÙZ\ÜËØØ\™ÛË\™Y™]Ú–Øß˜Ø\™ÛË\[™_™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛË\[™B–Øß˜Ø\™ÛË\™[X\Ù_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛË\™[X\ÙB–Øß˜Ø\™ÛË\™[X\Ù_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËK\™[X\ÙKXÜš[\ÛÛ‚–Øß˜Ø\™ÛË\™[X\Ù_™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛË\™[X\ÙB–Øß˜Ø\™ÛË\™[X\Ù_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛË\™[X\ÙOÛX™[XØ\™ÛË\™[X\ÙB–Øß˜Ø\™ÛË\™[X\Ù_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛË\™[X\ÙB–Øß˜Ø\™ÛË\™[X\Ù_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËK\™[X\ÙK^Y[İÂ–Øß˜Ø\™ÛË\™[X\Ù_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØÜ˜]KXÚKØØ\™ÛË\™[X\ÙB–Øß˜Ø\™ÛË\™[X\Ù_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËK\™[X\ÙK\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛË\œ_™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛË\œB–Øß˜Ø\™ÛË\œ_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛË\œOÛX™[XØ\™ÛË\œB–Øß˜Ø\™ÛË\ØÜš\\Ÿ›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛË\ØÜš\\‚–Øß˜Ø\™ÛË\ØÜš\˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛË\ØÜš\–Øß˜Ø\™ÛË\Ù[]™\‹XÚXÚÜß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛË\Ù[]™\‹XÚXÚÜÂ–Øß˜Ø\™ÛË\Ù[]™\‹XÚXÚÜß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËK\Ù[]™\‹KXÚXÚÜËXÜš[\ÛÛ‚–Øß˜Ø\™ÛË\Ù[]™\‹XÚXÚÜß™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛË\Ù[]™\‹XÚXÚÜÂ–Øß˜Ø\™ÛË\Ù[]™\‹XÚXÚÜß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛË\Ù[]™\‹XÚXÚÜÏÛX™[XØ\™ÛË\Ù[]™\‹XÚXÚÜÂ–Øß˜Ø\™ÛË\Ù[]™\‹XÚXÚÜß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛË\Ù[]™\‹XÚXÚÜÂ–Øß˜Ø\™ÛË\Ù[]™\‹XÚXÚÜß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËK\Ù[]™\‹KXÚXÚÜË^Y[İÂ–Øß˜Ø\™ÛË\Ù[]™\‹XÚXÚÜßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÛØšLZÙ[›ØšKØØ\™ÛË\Ù[]™\‹XÚXÚÜÂ–Øß˜Ø\™ÛË\Ù[]™\‹XÚXÚÜßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËK\Ù[]™\‹KXÚXÚÜË\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛË\ÚİËX\Û_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛË\ÚİËX\ÛB–Øß˜Ø\™ÛË\ÚİËX\Û_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËK\ÚİËKX\ÛKXÜš[\ÛÛ‚–Øß˜Ø\™ÛË\ÚİËX\Û_™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛË\ÚİËX\ÛB–Øß˜Ø\™ÛË\ÚİËX\Û_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛË\ÚİËX\ÛOÛX™[XØ\™ÛË\ÚİËX\ÛB–Øß˜Ø\™ÛË\ÚİËX\Û_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛË\ÚİËX\ÛB–Øß˜Ø\™ÛË\ÚİËX\Û_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËK\ÚİËKX\ÛK^Y[İÂ–Øß˜Ø\™ÛË\ÚİËX\Û_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜXØZËØØ\™ÛË\ÚİËX\ÛB–Øß˜Ø\™ÛË\ÚİËX\Û_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËK\ÚİËKX\ÛK\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛË\Ü[ÚXÚß™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛË\Ü[ÚXÚÂ–Øß˜Ø\™ÛË\Ü[ÚXÚßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÙ˜Zœ‹ØØ\™ÛË\Ü[ÚXÚÂ–Øß˜Ø\™ÛË\İÙY\™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛË\İÙY\–Øß˜Ø\™ÛË\İÙY\œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÚÛYÜ‹ØØ\™ÛË\İÙY\–Øß˜Ø\™ÛË]\œ][[Ÿ™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛË]\œ][[‚–Øß˜Ø\™ÛË]\œ][[Ÿ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛË]\œ][[ÛX™[XØ\™ÛË]\œ][[‚–Øß˜Ø\™ÛË]\œ][[Ÿœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKŞM‹İ\œ][[‚–Øß˜Ø\™ÛË]\œ][[Ÿœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËK]\œ][[‹\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛË]Y\ß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛË]Y\Â–Øß˜Ø\™ÛË]Y\ß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËK]Y\ËXÜš[\ÛÛ‚–Øß˜Ø\™ÛË]Y\ß™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛË]Y\Â–Øß˜Ø\™ÛË]Y\ß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛË]Y\ÏÛX™[XØ\™ÛË]Y\Â–Øß˜Ø\™ÛË]Y\ß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛË]Y\Â–Øß˜Ø\™ÛË]Y\ß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËK]Y\Ë^Y[İÂ–Øß˜Ø\™ÛË]Y\ßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÙ\İÌKØØ\™ÛË]Y\Â–Øß˜Ø\™ÛË]Y\ßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËK]Y\Ë\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛË]\]_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛË]\]B–Øß˜Ø\™ÛË]\]_™ØÜ×NˆÎ‹ËÜ˜]ØÙ‹™Ú]XÚË˜ÛÛKÛ˜XšZ˜XŞ›]Ù[KØØ\™ÛË]\]KÙØËØØ\™ÛË]\]B–Øß˜Ø\™ÛË]\]_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÛ˜XšZ˜XŞ›]Ù[KØØ\™ÛË]\]B–Øß˜Ø\™ÛË]Ø\Ú_™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛË]Ø\ÚB–Øß˜Ø\™ÛË]Ø]Ú˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛË]Ø]Ú–Øß˜Ø\™ÛË]Ø]Ú˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËK]Ø]ÚXÜš[\ÛÛ‚–Øß˜Ø\™ÛË]Ø]Ú™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛË]Ø]Ú–Øß˜Ø\™ÛË]Ø]Ú™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛË]Ø]ÚÛX™[XØ\™ÛË]Ø]Ú–Øß˜Ø\™ÛË]Ø]Ú›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛË]Ø]Ú–Øß˜Ø\™ÛË]Ø]Ú›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËK]Ø]Ú^Y[İÂ–Øß˜Ø\™ÛË]Ø]Úœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKİØ]Ú^XËØØ\™ÛË]Ø]Ú–Øß˜Ø\™ÛË]Ø]Úœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËK]Ø]Ú\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛË]Ú^˜\™˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛË]Ú^˜\™–Øß˜Ø\™ÛË]Ú^˜\™˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËK]Ú^˜\™XÜš[\ÛÛ‚–Øß˜Ø\™ÛË]Ú^˜\™™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛË]Ú^˜\™–Øß˜Ø\™ÛË]Ú^˜\™™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛË]Ú^˜\™ÛX™[XØ\™ÛË]Ú^˜\™–Øß˜Ø\™ÛË]Ú^˜\™›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛË]Ú^˜\™–Øß˜Ø\™ÛË]Ú^˜\™›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËK]Ú^˜\™^Y[İÂ–Øß˜Ø\™ÛË]Ú^˜\™œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÚÛØ›ÛØØ\™ÛË]Ú^˜\™–Øß˜Ø\™ÛË]Ú^˜\™œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËK]Ú^˜\™\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛË]ÛÜšÜÜXÙ\ß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛË]ÛÜšÜÜXÙ\Â–Øß˜Ø\™ÛË^\Úß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛË^\ÚÂ–Øß˜Ø\™ÛË^\Úß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËK^\ÚËXÜš[\ÛÛ‚–Øß˜Ø\™ÛË^\Úß™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛË^\ÚÂ–Øß˜Ø\™ÛË^\Úß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛË^\ÚÏÛX™[XØ\™ÛË^\ÚÂ–Øß˜Ø\™ÛË^\Úß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛË^\ÚÂ–Øß˜Ø\™ÛË^\Úß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËK^\ÚË^Y[İÂ–Øß˜Ø\™ÛË^\Úßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÛX]ÛYØØ\™ÛË^\ÚÂ–Øß˜Ø\™ÛË^\Úßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËK^\ÚË\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛË^šYØZ[˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛË^šYØZ[–Øß˜Ø\™ÛË^šYØZ[˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËK^šYØZ[XÜš[\ÛÛ‚–Øß˜Ø\™ÛË^šYØZ[™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛË^šYØZ[–Øß˜Ø\™ÛË^šYØZ[™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛË^šYØZ[ÛX™[XØ\™ÛË^šYØZ[–Øß˜Ø\™ÛË^šYØZ[›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛË^šYØZ[–Øß˜Ø\™ÛË^šYØZ[›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛËK^šYØZ[^Y[İÂ–Øß˜Ø\™ÛË^šYØZ[œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜ\İXÜ›ÜÜËØØ\™ÛË^šYØZ[–Øß˜Ø\™ÛË^šYØZ[œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËK^šYØZ[\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™Ûß˜›ÛÚ×NˆÎ‹ËÙØËœ\İ[[™Ë›Ü™ËÜİX›KØØ\™ÛÂ–Øß˜Ø\™Ûß˜Ø\™ÛË›ØÚ×NˆÎ‹ËÙØËœ\İ[[™Ë›Ü™ËØØ\™ÛËÙİZYKØØ\™ÛË]Û[]œËXØ\™ÛË[ØÚËš[–Øß˜Ø\™Ûß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\™ÛÂ–Øß˜Ø\™Ûß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\™ÛËXÜš[\ÛÛ‚–Øß˜Ø\™Ûß™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\™ÛÂ–Øß˜Ø\™Ûß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\™ÛÏÛX™[XØ\™ÛÂ–Øß˜Ø\™Ûß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\™ÛÂ–Øß˜Ø\™Ûß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\™ÛË^Y[İÂ–Øß˜Ø\™Ûßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜ\İ[[™ËØØ\™ÛÂ–Øß˜Ø\™Ûßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛË\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ø\™ÛßÙXœÚ]WNˆÎ‹ËÙØËœ\İ[[™Ë›Ü™ËØØ\™ÛÂ–Øß˜Ø\™ÛßÙXœÚ]_˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\™ÛËXÛÜ˜[–Øß˜Ø\ÜØ[™˜K\›İØÛÛ˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØ\ÜØ[™˜K\›İØÛÛ–Øß˜Ø\ÜØ[™˜K\›İØÛÛ˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØ\ÜØ[™˜KK\›İØÛÛXÜš[\ÛÛ‚–Øß˜Ø\ÜØ[™˜K\›İØÛÛ™ØÜ×NˆÎ‹ËÙØÜËœœËØØ\ÜØ[™˜K\›İØÛÛ–Øß˜Ø\ÜØ[™˜K\›İØÛÛ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØ\ÜØ[™˜K\›İØÛÛÛX™[XØ\ÜØ[™˜K\›İØÛÛ–Øß˜Ø\ÜØ[™˜K\›İØÛÛ›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØ\ÜØ[™˜K\›İØÛÛ–Øß˜Ø\ÜØ[™˜K\›İØÛÛ›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØ\ÜØ[™˜KK\›İØÛÛ^Y[İÂ–Øß˜Ø\ÜØ[™˜K\›İØÛÛœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÚÜ›Ú™]ËØÙœË]ÚÚ[Ëİ™YKÛX\İ\‹ØØ\ÜØ[™˜K\›İØÛÛ–Øß˜Ø\ÜØ[™˜K\›İØÛÛœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØ\ÜØ[™˜KK\›İØÛÛ\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Øš[™Ù[Ÿ˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØØš[™Ù[‚–Øß˜Øš[™Ù[Ÿ˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXØš[™Ù[‹XÜš[\ÛÛ‚–Øß˜Øš[™Ù[Ÿ™ØÜ×NˆÎ‹ËÙØÜËœœËØØš[™Ù[‚–Øß˜Øš[™Ù[Ÿ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØš[™Ù[ÛX™[XØš[™Ù[‚–Øß˜Øš[™Ù[Ÿ›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØØš[™Ù[‚–Øß˜Øš[™Ù[Ÿ›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXØš[™Ù[‹^Y[İÂ–Øß˜Øš[™Ù[Ÿœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÛ[Şš[KØØš[™Ù[‚–Øß˜Øš[™Ù[Ÿœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØØš[™Ù[‹\İY[›YOÛÙÛÏYÚ]X‚–Øß˜ØÎZ[˜ÛÛ\[_™ØÜ×NˆÎ‹ËÙØÜËœœËØØËÛ]\İØØËÜİXİZ[š[ÛY]Ù˜ÛÛ\[B–Øß˜ØÎZ[˜Ü™ØÜ×NˆÎ‹ËÙØÜËœœËØØËÛ]\İØØËÜİXİZ[š[ÛY]Ù˜Ü–Øß˜ØÎZ[™Yš[™_™ØÜ×NˆÎ‹ËÙØÜËœœËØØËÛ]\İØØËÜİXİZ[š[ÛY]Ù™Yš[™B–Øß˜ØÎZ[™›Yß™ØÜ×NˆÎ‹ËÙØÜËœœËØØËÛ]\İØØËÜİXİZ[š[ÛY]Ù™›YÂ–Øß˜ØÎZ[š[˜ÛY_™ØÜ×NˆÎ‹ËÙØÜËœœËØØËÛ]\İØØËÜİXİZ[š[ÛY]Ùš[˜ÛYB–Øß˜ØÎZ[™ØÜ×NˆÎ‹ËÙØÜËœœËØØËÛ]\İØØËÜİXİZ[š[–Øß˜Øß™ØÜ×NˆÎ‹ËÙØÜËœœËØØÂ–Øß˜Øß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØØÏÛX™[XØÂ–Øß˜ÙœË]ÚÚ[ß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÙœË]ÚÚ[Â–Øß˜ÙœË]ÚÚ[ß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXÙœËK]ÚÚ[ËXÜš[\ÛÛ‚–Øß˜ÙœË]ÚÚ[ß™ØÜ×NˆÎ‹ËÙØÜËœœËØÙœË]ÚÚ[Â–Øß˜ÙœË]ÚÚ[ß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÙœË]ÚÚ[ÏÛX™[XÙœË]ÚÚ[Â–Øß˜ÙœË]ÚÚ[ß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØÙœË]ÚÚ[Â–Øß˜ÙœË]ÚÚ[ß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXÙœËK]ÚÚ[Ë^Y[İÂ–Øß˜ÙœË]ÚÚ[ßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÚÜ›Ú™]ËØÙœË]ÚÚ[Â–Øß˜ÙœË]ÚÚ[ßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÙœËK]ÚÚ[Ë\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ù™š_™ØÜ×NˆÎ‹ËÙØÜËœœËØÙ™šB–Øß˜Ù™ËZYŸ˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÙ™ËZY‚–Øß˜Ù™ËZYŸ˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXÙ™ËKZY‹XÜš[\ÛÛ‚–Øß˜Ù™ËZYŸ™ØÜ×NˆÎ‹ËÙØÜËœœËØÙ™ËZY‚–Øß˜Ù™ËZYŸ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÙ™ËZYÛX™[XÙ™ËZY‚–Øß˜Ù™ËZYŸ›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØÙ™ËZY‚–Øß˜Ù™ËZYŸ›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXÙ™ËKZY‹^Y[İÂ–Øß˜Ù™ËZYŸœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜ\İ[[™ËØÙ™ËZY‚–Øß˜Ù™ËZYŸœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÙ™ËKZY‹\İY[›YOÛÙÛÏYÚ]X‚–Øß˜ÙÛX]™ØÜ×NˆÎ‹ËÙØÜËœœËØÙÛX]–Øß˜ÙÜ›İ\ß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÙÜ›İ\Â–Øß˜ÚXÚLŒÛLLÌ_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÚXÚLŒÛLLÌB–Øß˜ÚXÚLŒÛLLÌ_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXÚXÚLŒÛLLÌKXÜš[\ÛÛ‚–Øß˜ÚXÚLŒÛLLÌ_™ØÜ×NˆÎ‹ËÙØÜËœœËØÚXÚLŒÛLLÌB–Øß˜ÚXÚLŒÛLLÌ_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÚXÚLŒÛLLÌOÛX™[XÚXÚLŒÛLLÌB–Øß˜ÚXÚLŒÛLLÌ_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØÚXÚLŒÛLLÌB–Øß˜ÚXÚLŒÛLLÌ_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXÚXÚLŒÛLLÌK^Y[İÂ–Øß˜ÚXÚLŒÛLLÌ_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÔ\İÜ\ËĞQPQÂ–Øß˜ÚXÚLŒÛLLÌ_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÚXÚLŒÛLLÌK\İY[›YOÛÙÛÏYÚ]X‚–Øß˜ÚXÚLŒÛLLÌ_ÙXœÚ]WNˆÎ‹ËÙÚ]X‹˜ÛÛKÔ\İÜ\ËĞQPQËİ™YKÛX\İ\‹ØÚXÚLŒÛLLÌB–Øß˜ÚXÚLŒÛLLÌ_ÙXœÚ]_˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÚXÚLŒÛLLÌKXÛÜ˜[–Øß˜Ú\›Z[™ß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÚ\›Z[™Â–Øß˜Ú›Û›Ë]Ÿ™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›Ë]‚–Øß˜Ú›Û›Î‘]N˜ÚXÚÙYØYÜÚYÛ™Y™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›ËÛ]\İØÚ›Û›ËÜİXİ‘]Kš[ÛY]Ù˜ÚXÚÙYØYÜÚYÛ™Y–Øß˜Ú›Û›Î‘]N˜ÚXÚÙYÜİX—ÜÚYÛ™Y™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›ËÛ]\İØÚ›Û›ËÜİXİ‘]Kš[ÛY]Ù˜ÚXÚÙYÜİX—ÜÚYÛ™Y–Øß˜Ú›Û›Î‘]U[YN™›Ü›X]™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›ËÛ]\İØÚ›Û›ËÜİXİ‘]U[YKš[ÛY]Ù™›Ü›X]–Øß˜Ú›Û›Î‘]U[YN™œ›ÛWİ]ß™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›ËÛ]\İØÚ›Û›ËÜİXİ‘]U[YKš[ÛY]Ù™œ›ÛWİ]Â–Øß˜Ú›Û›Î‘]U[YNœ\œÙWÙœ›ÛWÜ™˜ÌŒŸ™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›ËÛ]\İØÚ›Û›ËÜİXİ‘]U[YKš[ÛY]Ùœ\œÙWÙœ›ÛWÜ™˜ÌŒ‚–Øß˜Ú›Û›Î‘]U[YNœ\œÙWÙœ›ÛWÜİŸ™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›ËÛ]\İØÚ›Û›ËÜİXİ‘]U[YKš[ÛY]Ùœ\œÙWÙœ›ÛWÜİ‚–Øß˜Ú›Û›Î‘]U[YN×Ü™˜ÌŒŸ™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›ËÛ]\İØÚ›Û›ËÜİXİ‘]U[YKš[ÛY]Ù×Ü™˜ÌŒ‚–Øß˜Ú›Û›Î‘]U[YN×Ü™˜ÌÌÌÎ_™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›ËÛ]\İØÚ›Û›ËÜİXİ‘]U[YKš[ÛY]Ù×Ü™˜ÌÌÌÎB–Øß˜Ú›Û›Î‘]U[Y_™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›ËÛ]\İØÚ›Û›ËÜİXİ‘]U[YKš[–Øß˜Ú›Û›Î‘][ZÙ_™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›ËÛ]\İØÚ›Û›Ëİ˜Z]‘][ZÙKš[–Øß˜Ú›Û›Î•[Y[ZÙ_™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›ËÛ]\İØÚ›Û›Ëİ˜Z]•[Y[ZÙKš[–Øß˜Ú›Û›Î™›Ü›X]œİ™[Y_™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›ËÛ]\İØÚ›Û›ËÙ›Ü›X]Üİ™[YB–Øß˜Ú›Û›Î›˜Z]™N“˜Z]™Q]N™œ›ÛWŞ[Y™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›ËÛ]\İØÚ›Û›ËÛ˜Z]™KÜİXİ“˜Z]™Q]Kš[ÛY]Ù™œ›ÛWŞ[Y–Øß˜Ú›Û›Î›˜Z]™N“˜Z]™Q]U[YN™œ›ÛWİ[Y\İ[\™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›ËÛ]\İØÚ›Û›ËÛ˜Z]™KÜİXİ“˜Z]™Q]U[YKš[ÛY]Ù™œ›ÛWİ[Y\İ[\–Øß˜Ú›Û›Î›˜Z]™N“˜Z]™Q]U[YN[Y\İ[\™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›ËÛ]\İØÚ›Û›ËÛ˜Z]™KÜİXİ“˜Z]™Q]U[YKš[ÛY]Ù[Y\İ[\–Øß˜Ú›Û›Î›˜Z]™N“˜Z]™Q]U[Y_™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›ËÛ]\İØÚ›Û›ËÛ˜Z]™KÜİXİ“˜Z]™Q]U[YKš[–Øß˜Ú›Û›Î›˜Z]™N“˜Z]™Q]_™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›ËÛ]\İØÚ›Û›ËÛ˜Z]™KÜİXİ“˜Z]™Q]Kš[–Øß˜Ú›Û›Î›˜Z]™N“˜Z]™U[YN™œ›ÛWÚ\ß™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›ËÛ]\İØÚ›Û›ËÛ˜Z]™KÜİXİ“˜Z]™U[YKš[ÛY]Ù™œ›ÛWÚ\Â–Øß˜Ú›Û›Î›˜Z]™N“˜Z]™U[Y_™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›ËÛ]\İØÚ›Û›ËÛ˜Z]™KÜİXİ“˜Z]™U[YKš[–Øß˜Ú›Û›Î›Ù™œÙ]‘š^YÙ™œÙ]™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›ËÛ]\İØÚ›Û›ËÛÙ™œÙ]ÜİXİ‘š^YÙ™œÙ]š[–Øß˜Ú›Û›Î›Ù™œÙ]“ØØ[››İß™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›ËÛ]\İØÚ›Û›ËÛÙ™œÙ]ÜİXİ“ØØ[š[ÛY]Ù››İÂ–Øß˜Ú›Û›Î›Ù™œÙ]•]Î››İß™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›ËÛ]\İØÚ›Û›ËÛÙ™œÙ]ÜİXİ•]Ëš[ÛY]Ù››İÂ–Øß˜Ú›Û›ß™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ›Û›Â–Øß˜Ú›Û›ß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÚ›Û›ÏÛX™[XÚ›Û›Â–Øß˜Ú[\ÚŞ_™ØÜ×NˆÎ‹ËÙØÜËœœËØÚ[\ÚŞB–Øß˜ÚX›Üš][_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÚX›Üš][B–Øß˜ÚX›Üš][_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXÚX›Üš][KXÜš[\ÛÛ‚–Øß˜ÚX›Üš][_™ØÜ×NˆÎ‹ËÙØÜËœœËØÚX›Üš][B–Øß˜ÚX›Üš][_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÚX›Üš][OÛX™[XÚX›Üš][B–Øß˜ÚX›Üš][_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØÚX›Üš][B–Øß˜ÚX›Üš][_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXÚX›Üš][K^Y[İÂ–Øß˜ÚX›Üš][_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÙ[˜\ØÚX›Üš][B–Øß˜ÚX›Üš][_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÚX›Üš][K\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Û[™ß™ØÜ×NˆÎ‹ËÙØÜËœœËØÛ[™Â–Øß˜Û\\™Î›Û™ß™ØÜ×NˆÎ‹ËÙØÜËœœËØÛ\Û]\İØÛ\ÜİXİ\™Ëš[ÛY]Ù›Û™Â–Øß˜Û\\™ÎœÚÜ™ØÜ×NˆÎ‹ËÙØÜËœœËØÛ\Û]\İØÛ\ÜİXİ\™Ëš[ÛY]ÙœÚÜ–Øß˜Û\ØÛÛ\]_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÛ\ØÛÛ\]B–Øß˜Û\ØÛÛ\]_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXÛ\×ØÛÛ\]KXÜš[\ÛÛ‚–Øß˜Û\ØÛÛ\]_™ØÜ×NˆÎ‹ËÙØÜËœœËØÛ\ØÛÛ\]B–Øß˜Û\ØÛÛ\]_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÛ\ØÛÛ\]OÛX™[XÛ\ØÛÛ\]B–Øß˜Û\ØÛÛ\]_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØÛ\ØÛÛ\]B–Øß˜Û\ØÛÛ\]_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXÛ\×ØÛÛ\]K^Y[İÂ–Øß˜Û\ØÛÛ\]_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØÛ\\œËØÛ\–Øß˜Û\ØÛÛ\]_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÛ\×ØÛÛ\]K\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Û\Ù\š]™_™ØÜ×NˆÎ‹ËÙØÜËœœËØÛ\Ù\š]™B–Øß˜Û\˜ÛÛÚØ›ÛÚ×NˆÎ‹ËÙØÜËœœËØÛ\Û]\İØÛ\×Ù\š]™K×ØÛÛÚØ›ÛÚÂ–Øß˜Û\™ØÜ×NˆÎ‹ËÙØÜËœœËØÛ\–Øß˜Û\™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÛ\ÛX™[XÛ\–Øß˜Û\™^[\\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØÛ\\œËØÛ\İ™YKÛX\İ\‹Ù^[\\Â–Øß˜Û\™^[\\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÙ^[\\ËXÛ\\Ú[™\‚–Øß˜Û\œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØÛ\\œËØÛ\–Øß˜Û\œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÛ\\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Û\]ÜšX[NˆÎ‹ËÙØÜËœœËØÛ\Û]\İØÛ\×Ù\š]™K×İ]ÜšX[–Øß˜ÛX\Ÿ™ØÜ×NˆÎ‹ËÙØÜËœœËØÛX\‚–Øß˜ÛX\Ÿ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÛX\ÛX™[XÛX\‚–Øß˜Û\_˜›ÛÚ×NˆÎ‹ËÙØËœ\İ[[™Ë›Ü™ËÜİX›KØÛ\Kİ\ØYÙKš[–Øß˜Û\_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÛ\B–Øß˜Û\_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXÛ\KXÜš[\ÛÛ‚–Øß˜Û\_™ØÜ×NˆÎ‹ËÙØÜËœœËØÛ\B–Øß˜Û\_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÛ\OÛX™[XÛ\B–Øß˜Û\_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØÛ\B–Øß˜Û\_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXÛ\K^Y[İÂ–Øß˜Û\_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜ\İ[[™ËÜ\İXÛ\B–Øß˜Û\_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÛ\K\İY[›YOÛÙÛÏYÚ]X‚–Øß˜ÛÛ™WØ›Ş™ØÜ×NˆÎ‹ËÙØÜËœœËØÛÛ™WØ›Ş–Øß˜ÛÜš[™_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÛÜš[™B–Øß˜ÛÜš[™_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXÛÜš[™KXÜš[\ÛÛ‚–Øß˜ÛÜš[™_™ØÜ×NˆÎ‹ËÙØÜËœœËØÛÜš[™B–Øß˜ÛÜš[™_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÛÜš[™OÛX™[XÛÜš[™B–Øß˜ÛÜš[™_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØÛÜš[™B–Øß˜ÛÜš[™_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXÛÜš[™K^Y[İÂ–Øß˜ÛÜš[™_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÚ[Ş[Û››İ]™X]KØÛÜš[™B–Øß˜ÛÜš[™_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÛÜš[™K\İY[›YOÛÙÛÏYÚ]X‚–Øß˜ÛİY›\™_™ØÜ×NˆÎ‹ËÙØÜËœœËØÛİY›\™B–Øß˜ÛÛÜ‹Y^\™_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÛÛÜ‹Y^\™B–Øß˜ÛÛÜ‹Y^\™_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXÛÛÜ‹KY^\™KXÜš[\ÛÛ‚–Øß˜ÛÛÜ‹Y^\™_™ØÜ×NˆÎ‹ËÙØÜËœœËØÛÛÜ‹Y^\™B–Øß˜ÛÛÜ‹Y^\™_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÛÛÜ‹Y^\™OÛX™[XÛÛÜ‹Y^\™B–Øß˜ÛÛÜ‹Y^\™_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØÛÛÜ‹Y^\™B–Øß˜ÛÛÜ‹Y^\™_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXÛÛÜ‹KY^\™K^Y[İÂ–Øß˜ÛÛÜ‹Y^\™_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÙ^\™K\œËÙ^\™Kİ™YKÛX\İ\‹ØÛÛÜ‹Y^\™B–Øß˜ÛÛÜ‹Y^\™_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÛÛÜ‹KY^\™K\İY[›YOÛÙÛÏYÚ]X‚–Øß˜ÛÛÜ™Y˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÛÛÜ™Y–Øß˜ÛÛÜ™Y˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXÛÛÜ™YXÜš[\ÛÛ‚–Øß˜ÛÛÜ™Y™ØÜ×NˆÎ‹ËÙØÜËœœËØÛÛÜ™Y–Øß˜ÛÛÜ™Y™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÛÛÜ™YÛX™[XÛÛÜ™Y–Øß˜ÛÛÜ™Y›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØÛÛÜ™Y–Øß˜ÛÛÜ™Y›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXÛÛÜ™Y^Y[İÂ–Øß˜ÛÛÜ™Yœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÛXXÚİÚXËØÛÛÜ™Y–Øß˜ÛÛÜ™Yœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÛÛÜ™Y\İY[›YOÛÙÛÏYÚ]X‚–Øß˜ÛÛXš[™_™ØÜ×NˆÎ‹ËÙØÜËœœËØÛÛXš[™B–Øß˜ÛÛY[[ß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÛÛY[[Â–Øß˜ÛÛY[[ß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXÛÛY[[ËXÜš[\ÛÛ‚–Øß˜ÛÛY[[ß™ØÜ×NˆÎ‹ËÙØÜËœœËØÛÛY[[Â–Øß˜ÛÛY[[ß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÛÛY[[ÏÛX™[XÛÛY[[Â–Øß˜ÛÛY[[ß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØÛÛY[[Â–Øß˜ÛÛY[[ß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXÛÛY[[Ë^Y[İÂ–Øß˜ÛÛY[[ßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKİ\İØÛÛY[[Â–Øß˜ÛÛY[[ßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÛÛY[[Ë\İY[›YOÛÙÛÏYÚ]X‚–Øß˜ÛÛ\XİÜİŸ˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÛÛ\XİÜİ‚–Øß˜ÛÛ\XİÜİŸ˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXÛÛ\Xİ×Üİ‹XÜš[\ÛÛ‚–Øß˜ÛÛ\XİÜİŸ™ØÜ×NˆÎ‹ËÙØÜËœœËØÛÛ\XİÜİ‚–Øß˜ÛÛ\XİÜİŸ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÛÛ\XİÜİÛX™[XÛÛ\XİÜİ‚–Øß˜ÛÛ\XİÜİŸ›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØÛÛ\XİÜİ‚–Øß˜ÛÛ\XİÜİŸ›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXÛÛ\Xİ×Üİ‹^Y[İÂ–Øß˜ÛÛ\XİÜİŸœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÔ\šÓ^PØ\‹ØÛÛ\XİÜİ‚–Øß˜ÛÛ\XİÜİŸœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÛÛ\Xİ×Üİ‹\İY[›YOÛÙÛÏYÚ]X‚–Øß˜ÛÛ\˜Zß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÛÛ\˜ZÂ–Øß˜ÛÛ\˜Zß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXÛÛ\˜ZËXÜš[\ÛÛ‚–Øß˜ÛÛ\˜Zß™ØÜ×NˆÎ‹ËÙØÜËœœËØÛÛ\˜ZÂ–Øß˜ÛÛ\˜Zß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÛÛ\˜ZÏÛX™[XÛÛ\˜ZÂ–Øß˜ÛÛ\˜Zß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØÛÛ\˜ZÂ–Øß˜ÛÛ\˜Zß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXÛÛ\˜ZË^Y[İÂ–Øß˜ÛÛ\˜Zßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÚÚ]šZØZÚËØÛÛ\˜ZÂ–Øß˜ÛÛ\˜Zßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÛÛ\˜ZË\İY[›YOÛÙÛÏYÚ]X‚–Øß˜ÛÛ_™ØÜ×NˆÎ‹ËÙØÜËœœËØÛÛB–Øß˜ÛÛ™šYß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÛÛ™šYÂ–Øß˜ÛÛ™šYß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXÛÛ™šYËXÜš[\ÛÛ‚–Øß˜ÛÛ™šYß™ØÜ×NˆÎ‹ËÙØÜËœœËØÛÛ™šYÂ–Øß˜ÛÛ™šYß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÛÛ™šYÏÛX™[XÛÛ™šYÂ–Øß˜ÛÛ™šYß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØÛÛ™šYÂ–Øß˜ÛÛ™šYß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXÛÛ™šYË^Y[İÂ–Øß˜ÛÛ™šYßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜ\İXÛKØÛÛ™šYË\œÂ–Øß˜ÛÛ™šYßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÛÛ™šYË\İY[›YOÛÙÛÏYÚ]X‚–Øß˜ÛÛ™_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÛÛ™B–Øß˜ÛÛ™_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXÛÛ™KXÜš[\ÛÛ‚–Øß˜ÛÛ™_™ØÜ×NˆÎ‹ËÙØÜËœœËØÛÛ™B–Øß˜ÛÛ™_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÛÛ™OÛX™[XÛÛ™B–Øß˜ÛÛ™_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØÛÛ™B–Øß˜ÛÛ™_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXÛÛ™K^Y[İÂ–Øß˜ÛÛ™_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜ\İXÛKØÛÛ™B–Øß˜ÛÛ™_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÛÛ™K\İY[›YOÛÙÛÏYÚ]X‚–Øß˜ÛÛœ›Ù™ØÜ×NˆÎ‹ËÙØÜËœœËØÛÛœ›ÙØÛÜ™B–Øß˜ÛÛœÛÛWÙ\œ›Ü—Ü[šX×ÚÛÚß™ØÜ×NˆÎ‹ËÙØÜËœœËØÛÛœÛÛWÙ\œ›Ü—Ü[šX×ÚÛÚÂ–Øß˜ÛÛœÛÛ_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÛÛœÛÛB–Øß˜ÛÛœÛÛ_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXÛÛœÛÛKXÜš[\ÛÛ‚–Øß˜ÛÛœÛÛ_™ØÜ×NˆÎ‹ËÙØÜËœœËØÛÛœÛÛB–Øß˜ÛÛœÛÛ_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÛÛœÛÛOÛX™[XÛÛœÛÛB–Øß˜ÛÛœÛÛ_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØÛÛœÛÛB–Øß˜ÛÛœÛÛ_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXÛÛœÛÛK^Y[İÂ–Øß˜ÛÛœÛÛ_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØÛÛœÛÛK\œËØÛÛœÛÛB–Øß˜ÛÛœÛÛ_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÛÛœÛÛK\İY[›YOÛÙÛÏYÚ]X‚–Øß˜ÛÛœİØ]˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÛÛœİØ]–Øß˜ÛÛ˜Xİß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÛÛ˜XİÂ–Øß˜ÛÜ\Ÿ˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÛÜ\‚–Øß˜ÛÜ\Ÿ™ØÜ×NˆÎ‹ËÙØÜËœœËØÛÜ\‚–Øß˜ÛÜ\Ÿ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÛÜ\ÛX™[XÛÜ\‚–Øß˜ÛÜ™N˜Ù[“Û˜ÙPÙ[™ØÜ×NˆÎ‹ËÙØËœ\İ[[™Ë›Ü™ËØÛÜ™KØÙ[ÜİXİ“Û˜ÙPÙ[š[–Øß˜ÛÜ™Nš]\’]\˜]Ü™š[\—ÛX\™ØÜ×NˆÎ‹ËÙØËœ\İ[[™Ë›Ü™ËØÛÜ™KÚ]\‹İ˜Z]’]\˜]Ü‹š[ÛY]Ù™š[\—ÛX\–Øß˜ÛÜ›XÛÜX_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÛÜ›XÛÜXB–Øß˜ÛÜ›XÛÜX_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXÛÜ›XÛÜXKXÜš[\ÛÛ‚–Øß˜ÛÜ›XÛÜX_™ØÜ×NˆÎ‹ËÙØÜËœœËØÛÜ›XÛÜXB–Øß˜ÛÜ›XÛÜX_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÛÜ›XÛÜXOÛX™[XÛÜ›XÛÜXB–Øß˜ÛÜ›XÛÜX_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØÛÜ›XÛÜXB–Øß˜ÛÜ›XÛÜX_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXÛÜ›XÛÜXK^Y[İÂ–Øß˜ÛÜ›XÛÜX_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØÛÜ›XÛÜXK\œËØÛÜ›XÛÜXB–Øß˜ÛÜ›XÛÜX_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÛÜ›XÛÜXK\İY[›YOÛÙÛÏYÚ]X‚–Øß˜ÛÜ›XÛÜX_ÙXœÚ]WNˆÎ‹ËØÛÜ›XÛÜXK\œË›™]YK˜\–Øß˜ÛÜ›XÛÜX_ÙXœÚ]_˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÛÜ›XÛÜXKXÛÜ˜[–Øß˜ÛÜ^[_™ØÜ×NˆÎ‹ËÙØÜËœœËØÛÜ^[B–Øß˜ÛÜÛZXË]^˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÛÜÛZXË]^–Øß˜ÛÜÛZXË]^˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXÛÜÛZXËK]^XÜš[\ÛÛ‚–Øß˜ÛÜÛZXË]^™ØÜ×NˆÎ‹ËÙØÜËœœËØÛÜÛZXË]^–Øß˜ÛÜÛZXË]^™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÛÜÛZXË]^ÛX™[XÛÜÛZXË]^–Øß˜ÛÜÛZXË]^›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØÛÜÛZXË]^–Øß˜ÛÜÛZXË]^›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXÛÜÛZXËK]^^Y[İÂ–Øß˜ÛÜÛZXË]^œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜÜ[ÜËØÛÜÛZXË]^–Øß˜ÛÜÛZXË]^œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÛÜÛZXËK]^\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ü[™ØÜ×NˆÎ‹ËÙØÜËœœËØÜ[–Øß˜ÜZY™ØÜ×NˆÎ‹ËÙØÜËœœËØÜZY–Øß˜Ü]ÛŸ™ØÜ×Nˆ‹ËÙÜ[Ø[™Ú]X‹š[ËÜ\İXÜ]Û‹ÙØËØÜ]Û‚–Øß˜Ü˜[™[Y™ØÜ×NˆÎ‹ËÙØÜËœœËØÜ˜[™[Y–Øß˜Ü˜]\ËZ[ß˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÜ˜]\ËZ[Â–Øß˜Ü˜]\ËZ[ß˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXÜ˜]\ËKZ[ËXÜš[\ÛÛ‚–Øß˜Ü˜]\ËZ[ß™ØÜ×NˆÎ‹ËÙØÜËœœËØÜ˜]\ËZ[Â–Øß˜Ü˜]\ËZ[ß™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÜ˜]\ËZ[ÏÛX™[XÜ˜]\ËZ[Â–Øß˜Ü˜]\ËZ[ß›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØÜ˜]\ËZ[Â–Øß˜Ü˜]\ËZ[ß›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXÜ˜]\ËKZ[Ë^Y[İÂ–Øß˜Ü˜]\ËZ[ßœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKÜ\İ[[™ËØØ\™ÛÂ–Øß˜Ü˜]\ËZ[ßœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\ËKZ[Ë\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Üš]\š[ÛŸ˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÜš]\š[Û‚–Øß˜Üš]\š[ÛŸ˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXÜš]\š[Û‹XÜš[\ÛÛ‚–Øß˜Üš]\š[ÛŸ™ØÜ×NˆÎ‹ËÙØÜËœœËØÜš]\š[Û‚–Øß˜Üš]\š[ÛŸ™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÜš]\š[ÛÛX™[XÜš]\š[Û‚–Øß˜Üš]\š[ÛŸ›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØÜš]\š[Û‚–Øß˜Üš]\š[ÛŸ›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXÜš]\š[Û‹^Y[İÂ–Øß˜Üš]\š[ÛŸœ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØšZ\Û\‹ØÜš]\š[Û‹œœÂ–Øß˜Üš]\š[ÛŸœ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜš]\š[Û‹\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ü›ÜÜØ™X[KXÚ[›™[”™XÙZ]™\š]\Ÿ™ØÜ×NˆÎ‹ËÙØÜËœœËØÜ›ÜÜØ™X[KXÚ[›™[Û]\İØÜ›ÜÜØ™X[KXÚ[›™[ÜİXİ”™XÙZ]™\‹š[ÛY]Ùš]\‚–Øß˜Ü›ÜÜØ™X[KXÚ[›™[”Ù[™\œÙ[™™ØÜ×NˆÎ‹ËÙØÜËœœËØÜ›ÜÜØ™X[KXÚ[›™[Û]\İØÜ›ÜÜØ™X[KXÚ[›™[ÜİXİ”Ù[™\‹š[ÛY]ÙœÙ[™–Øß˜Ü›ÜÜØ™X[KXÚ[›™[˜›İ[™Y™ØÜ×NˆÎ‹ËÙØÜËœœËØÜ›ÜÜØ™X[KXÚ[›™[Û]\İØÜ›ÜÜØ™X[KXÚ[›™[Ù›‹˜›İ[™Yš[–Øß˜Ü›ÜÜØ™X[KXÚ[›™[˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÜ›ÜÜØ™X[KXÚ[›™[–Øß˜Ü›ÜÜØ™X[KXÚ[›™[˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXÜ›ÜÜØ™X[KKXÚ[›™[XÜš[\ÛÛ‚–Øß˜Ü›ÜÜØ™X[KXÚ[›™[™ØÜ×NˆÎ‹ËÙØÜËœœËØÜ›ÜÜØ™X[KXÚ[›™[–Øß˜Ü›ÜÜØ™X[KXÚ[›™[™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÜ›ÜÜØ™X[KXÚ[›™[ÛX™[XÜ›ÜÜØ™X[KXÚ[›™[–Øß˜Ü›ÜÜØ™X[KXÚ[›™[›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØÜ›ÜÜØ™X[KXÚ[›™[–Øß˜Ü›ÜÜØ™X[KXÚ[›™[›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXÜ›ÜÜØ™X[KKXÚ[›™[^Y[İÂ–Øß˜Ü›ÜÜØ™X[KXÚ[›™[œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØÜ›ÜÜØ™X[K\œËØÜ›ÜÜØ™X[Kİ™YKÛX\İ\‹ØÜ›ÜÜØ™X[KXÚ[›™[–Øß˜Ü›ÜÜØ™X[KXÚ[›™[œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ›ÜÜØ™X[KKXÚ[›™[\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ü›ÜÜØ™X[KXÚ[›™[ÙXœÚ]WNˆÎ‹ËÙÚ]X‹˜ÛÛKØÜ›ÜÜØ™X[K\œËØÜ›ÜÜØ™X[KØ›Ø‹ÛX\İ\‹ØÜ›ÜÜØ™X[KXÚ[›™[Ô‘PQQK›Y–Øß˜Ü›ÜÜØ™X[KXÚ[›™[ÙXœÚ]_˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ›ÜÜØ™X[KKXÚ[›™[XÛÜ˜[–Øß˜Ü›ÜÜØ™X[K\]Y]Y_˜Ü˜]\Ëš[×NˆÎ‹ËØÜ˜]\Ëš[ËØÜ˜]\ËØÜ›ÜÜØ™X[K\]Y]YB–Øß˜Ü›ÜÜØ™X[K\]Y]Y_˜Ü˜]\Ëš[ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ˜]\Ëš[ËXÜ›ÜÜØ™X[KK\]Y]YKXÜš[\ÛÛ‚–Øß˜Ü›ÜÜØ™X[K\]Y]Y_™ØÜ×NˆÎ‹ËÙØÜËœœËØÜ›ÜÜØ™X[K\]Y]YB–Øß˜Ü›ÜÜØ™X[K\]Y]Y_™ØÜß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØÜ˜]\Ëİ‹ØÜ›ÜÜØ™X[K\]Y]YOÛX™[XÜ›ÜÜØ™X[K\]Y]YB–Øß˜Ü›ÜÜØ™X[K\]Y]Y_›X‹œœ×NˆÎ‹ËÛX‹œœËØÜ˜]\ËØÜ›ÜÜØ™X[K\]Y]YB–Øß˜Ü›ÜÜØ™X[K\]Y]Y_›X‹œœß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKÛX‹œœËXÜ›ÜÜØ™X[KK\]Y]YK^Y[İÂ–Øß˜Ü›ÜÜØ™X[K\]Y]Y_œ™\×NˆÎ‹ËÙÚ]X‹˜ÛÛKØÜ›ÜÜØ™X[K\œËØÜ›ÜÜØ™X[Kİ™YKÛX\İ\‹ØÜ›ÜÜØ™X[K\]Y]YB–Øß˜Ü›ÜÜØ™X[K\]Y]Y_œ™\ß˜˜YÙWNˆÎ‹ËÚ[YËœÚY[Ëš[ËØ˜YÙKØÜ›ÜÜØ™X[KK\]Y]YK\İY[›YOÛÙÛÏYÚ]X‚–Øß˜Ü›ÜÜØ™X[K\]Y]Y_ÙXœÚ]WNˆÎ‹ËÙÚ]X‹˜ÛÛKØÜ›ÜÜØ™X[K\œËØÜ›ÜÜØ™zóº¶‰ËkºwµçiÁ…ÉÑ¥…±}µÁù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½µÀ½ÑÉ…¥Ğ¹A…ÉÑ¥…±=É¹¡Ñµ°Ñåµ•Ñ¡½¹Á…ÉÑ¥…±}µÀ)mùÍÑèéµÀèéA…ÉÑ¥…±=É‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½µÀ½ÑÉ…¥Ğ¹A…ÉÑ¥…±=É¹¡Ñµ°)mùÍÑèéµÁù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½µÀ)mùÍÑèé½±±•Ñ¥½¹Ìèé	QÉ••5…Áù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½±±•Ñ¥½¹Ì½ÍÑÉÕĞ¹	QÉ••5…À¹¡Ñµ°)mùÍÑèé½±±•Ñ¥½¹Ìèé!…Í¡5…Áù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½±±•Ñ¥½¹Ì½ÍÑÉÕĞ¹!…Í¡5…À¹¡Ñµ°)mùÍÑèé½±±•Ñ¥½¹Ìèé!…Í¡M•Ñù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½±±•Ñ¥½¹Ì½ÍÑÉÕĞ¹!…Í¡M•Ğ¹¡Ñµ°)mùÍÑèé½±±•Ñ¥½¹Ìèé¡…Í¡}µ…Àèé¹ÑÉåù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½±±•Ñ¥½¹Ì½¡…Í¡}µ…À½•¹Õ´¹¹ÑÉä¹¡Ñµ°)mùÍÑèé½±±•Ñ¥½¹Íù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½±±•Ñ¥½¹Ì)mùÍÑèé½¹Ù•ÉĞèéÍ5ÕÑù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½¹Ù•ÉĞ½ÑÉ…¥Ğ¹Í5ÕĞ¹¡Ñµ°)mùÍÑèé½¹Ù•ÉĞèéÍI•™ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½¹Ù•ÉĞ½ÑÉ…¥Ğ¹ÍI•˜¹¡Ñµ°)mùÍÑèé½¹Ù•ÉĞèéÉ½µù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½¹Ù•ÉĞ½ÑÉ…¥Ğ¹É½´¹¡Ñµ°)mùÍÑèé½¹Ù•ÉĞèé%¹Ñ½ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½¹Ù•ÉĞ½ÑÉ…¥Ğ¹%¹Ñ¼¹¡Ñµ°)mùÍÑèé½¹Ù•ÉĞèéQÉåÉ½µù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½¹Ù•ÉĞ½ÑÉ…¥Ğ¹QÉåÉ½´¹¡Ñµ°)mùÍÑèé½¹Ù•ÉĞèéQÉå%¹Ñ½ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½¹Ù•ÉĞ½ÑÉ…¥Ğ¹QÉå%¹Ñ¼¹¡Ñµ°)mùÍÑèé½¹Ù•ÉÑù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½¹Ù•ÉĞ)mùÍÑèé‘•™…Õ±Ğèé•™…Õ±Ñù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½‘•™…Õ±Ğ½ÑÉ…¥Ğ¹•™…Õ±Ğ¹¡Ñµ°)mùÍÑèé‘•™…Õ±Ñù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½‘•™…Õ±Ğ)mùÍÑèé•¹ØèéÕÉÉ•¹Ñ}‘¥Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½•¹Ø½™¸¹ÕÉÉ•¹Ñ}‘¥È¹¡Ñµ°)mùÍÑèé•¹ØèéÙ…Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½•¹Ø½™¸¹Ù…È¹¡Ñµ°)mùÍÑèé•¹Ùù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½•¹Ø)mùÍÑèé•ÉÉ½ÈèéÉÉ½Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½•ÉÉ½È½ÑÉ…¥Ğ¹ÉÉ½È¹¡Ñµ°)mùÍÑèé•ÉÉ½Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½•ÉÉ½È)mùÍÑèé˜ÌÉù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½˜ÌÈ)mùÍÑèé˜ØÑù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½˜ØĞ)mùÍÑèé™™¤èéMÑÉ¥¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½™™¤½ÍÑÉÕĞ¹MÑÉ¥¹œ¹¡Ñµ°)mùÍÑèé™™¤èéMÑÉù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½™™¤½ÍÑÉÕĞ¹MÑÈ¹¡Ñµ°)mùÍÑèé™™¤èé=ÍMÑÉ¥¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½™™¤½ÍÑÉÕĞ¹=ÍMÑÉ¥¹œ¹¡Ñµ°)mùÍÑèé™™¤èé=ÍMÑÉù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½™™¤½ÍÑÉÕĞ¹=ÍMÑÈ¹¡Ñµ°)mùÍÑèé™™¥ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½™™¤)mùÍÑèé™µĞèé•‰Õù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½™µĞ½ÑÉ…¥Ğ¹•‰Õœ¹¡Ñµ°)mùÍÑèé™µĞèé¥ÍÁ±…åù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½™µĞ½ÑÉ…¥Ğ¹¥ÍÁ±…ä¹¡Ñµ°)mùÍÑèé™µĞèéA½¥¹Ñ•Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½™µĞ½ÑÉ…¥Ğ¹A½¥¹Ñ•È¹¡Ñµ°)mùÍÑèé™µĞèé]É¥Ñ•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½™µĞ½ÑÉ…¥Ğ¹]É¥Ñ”¹¡Ñµ°)mùÍÑèé™µÑù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½™µĞ)mùÍÑèé™Ìèé¥É¹ÑÉäèéÁ…Ñ¡ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½™Ì½ÍÑÉÕĞ¹¥É¹ÑÉä¹¡Ñµ°µ•Ñ¡½¹Á…Ñ )mùÍÑèé™Ìèé¥±”èéÉ•…Ñ•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½™Ì½ÍÑÉÕĞ¹¥±”¹¡Ñµ°µ•Ñ¡½¹É•…Ñ”)mùÍÑèé™Ìèé¥±”èé½Á•¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½™Ì½ÍÑÉÕĞ¹¥±”¹¡Ñµ°µ•Ñ¡½¹½Á•¸)mùÍÑèé™Ìèé¥±”èéÍ••­ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½™Ì½ÍÑÉÕĞ¹¥±”¹¡Ñµ°µ•Ñ¡½¹Í••¬)mùÍÑèé™Ìèé¥±”èéÑÉå}±½¹•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½™Ì½ÍÑÉÕĞ¹¥±”¹¡Ñµ°µ•Ñ¡½¹ÑÉå}±½¹”)mùÍÑèé™Ìèé¥±•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½™Ì½ÍÑÉÕĞ¹¥±”¹¡Ñµ°)mùÍÑèé™Ìèé5•Ñ…‘…Ñ„èé¥Í}™¥±•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½™Ì½ÍÑÉÕĞ¹5•Ñ…‘…Ñ„¹¡Ñµ°µ•Ñ¡½¹¥Í}™¥±”)mùÍÑèé™Ìèé5•Ñ…‘…Ñ„èéµ½‘¥™¥•‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½™Ì½ÍÑÉÕĞ¹5•Ñ…‘…Ñ„¹¡Ñµ°µ•Ñ¡½¹µ½‘¥™¥•)mùÍÑèé™Ìèé5•Ñ…‘…Ñ…ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½™Ì½ÍÑÉÕĞ¹5•Ñ…‘…Ñ„¹¡Ñµ°)mùÍÑèé™ÌèéÉ•…‘}‘¥Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½™Ì½™¸¹É•…‘}‘¥È¹¡Ñµ°)mùÍÑèé™Íù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½™Ì)mùÍÑèé™ÕÑÕÉ”èéÕÑÕÉ•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½™ÕÑÕÉ”½ÑÉ…¥Ğ¹ÕÑÕÉ”¹¡Ñµ°)mùÍÑèé™ÕÑÕÉ•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½™ÕÑÕÉ”)mùÍÑèé¡…Í èé!…Í¡ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¡…Í ½ÑÉ…¥Ğ¹!…Í ¹¡Ñµ°)mùÍÑèé¡…Í¡ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¡…Í )mùÍÑèé¡¥¹Ñù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¡¥¹Ğ)mùÍÑèé¥¼èé	Õ™I•…‘•Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¥¼½ÍÑÉÕĞ¹	Õ™I•…‘•È¹¡Ñµ°)mùÍÑèé¥¼èéÉÉ½Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¥¼½ÍÑÉÕĞ¹ÉÉ½È¹¡Ñµ°)mùÍÑèé¥¼èé1¥¹•Íù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¥¼½ÍÑÉÕĞ¹1¥¹•Ì¹¡Ñµ°)mùÍÑèé¥¼èéI•…èéÉ•…‘}Ñ½}ÍÑÉ¥¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¥¼½ÑÉ…¥Ğ¹I•…¹¡Ñµ°µ•Ñ¡½¹É•…‘}Ñ½}ÍÑÉ¥¹œ)mùÍÑèé¥¼èéI•…‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¥¼½ÑÉ…¥Ğ¹I•…¹¡Ñµ°)mùÍÑèé¥¼èéMÑ‘•ÉÉù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¥¼½ÍÑÉÕĞ¹MÑ‘•ÉÈ¹¡Ñµ°)mùÍÑèé¥¼èéMÑ‘½ÕÑù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¥¼½ÍÑÉÕĞ¹MÑ‘½ÕĞ¹¡Ñµ°)mùÍÑèé¥¼èé]É¥Ñ•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¥¼½ÑÉ…¥Ğ¹]É¥Ñ”¹¡Ñµ°)mùÍÑèé¥¼èé½Áåù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¥¼½™¸¹½Áä¹¡Ñµ°)mùÍÑèé¥½ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¥¼)mùÍÑèé¥Ñ•Èèé%¹Ñ½%Ñ•É…Ñ½Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¥Ñ•È½ÑÉ…¥Ğ¹%¹Ñ½%Ñ•É…Ñ½È¹¡Ñµ°)mùÍÑèé¥Ñ•Èèé%Ñ•É…Ñ½Èèé…±±ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¥Ñ•È½ÑÉ…¥Ğ¹%Ñ•É…Ñ½È¹¡Ñµ°µ•Ñ¡½¹…±°)mùÍÑèé¥Ñ•Èèé%Ñ•É…Ñ½Èèé…¹åù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¥Ñ•È½ÑÉ…¥Ğ¹%Ñ•É…Ñ½È¹¡Ñµ°µ•Ñ¡½¹…¹ä)mùÍÑèé¥Ñ•Èèé%Ñ•É…Ñ½Èèé™¥±Ñ•Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¥Ñ•È½ÑÉ…¥Ğ¹%Ñ•É…Ñ½È¹¡Ñµ°µ•Ñ¡½¹™¥±Ñ•È)mùÍÑèé¥Ñ•Èèé%Ñ•É…Ñ½Èèé™¥¹‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¥Ñ•È½ÑÉ…¥Ğ¹%Ñ•É…Ñ½È¹¡Ñµ°µ•Ñ¡½¹™¥¹)mùÍÑèé¥Ñ•Èèé%Ñ•É…Ñ½Èèé™½±‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¥Ñ•È½ÑÉ…¥Ğ¹%Ñ•É…Ñ½È¹¡Ñµ°µ•Ñ¡½¹™½±)mùÍÑèé¥Ñ•Èèé%Ñ•É…Ñ½Èèéµ…Áù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¥Ñ•È½ÑÉ…¥Ğ¹%Ñ•É…Ñ½È¹¡Ñµ°µ•Ñ¡½¹µ…À)mùÍÑèé¥Ñ•Èèé%Ñ•É…Ñ½Èèéµ…á}‰å}­•åù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¥Ñ•È½ÑÉ…¥Ğ¹%Ñ•É…Ñ½È¹¡Ñµ°µ•Ñ¡½¹µ…á}‰å}­•ä)mùÍÑèé¥Ñ•Èèé%Ñ•É…Ñ½ÈèéÍÕµù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¥Ñ•È½ÑÉ…¥Ğ¹%Ñ•É…Ñ½È¹¡Ñµ°µ•Ñ¡½¹ÍÕ´)mùÍÑèé¥Ñ•Èèé%Ñ•É…Ñ½Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¥Ñ•È½ÑÉ…¥Ğ¹%Ñ•É…Ñ½È¹¡Ñµ°)mùÍÑèé¥Ñ•Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¥Ñ•È)mùÍÑèéµ…É­•Èèé½Áåù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½µ…É­•È½ÑÉ…¥Ğ¹½Áä¹¡Ñµ°)mùÍÑèéµ…É­•ÈèéA¡…¹Ñ½µ…Ñ…ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½µ…É­•È½ÍÑÉÕĞ¹A¡…¹Ñ½µ…Ñ„¹¡Ñµ°)mùÍÑèéµ…É­•ÈèéA¡…¹Ñ½µA¥¹¹•‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½µ…É­•È½ÍÑÉÕĞ¹A¡…¹Ñ½µA¥¹¹•¹¡Ñµ°)mùÍÑèéµ…É­•ÈèéM•¹‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½µ…É­•È½ÑÉ…¥Ğ¹M•¹¹¡Ñµ°)mùÍÑèéµ…É­•ÈèéM¥é•‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½µ…É­•È½ÑÉ…¥Ğ¹M¥é•¹¡Ñµ°)mùÍÑèéµ…É­•ÈèéMå¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½µ…É­•È½ÑÉ…¥Ğ¹Må¹Œ¹¡Ñµ°)mùÍÑèéµ…É­•ÈèéU¹Á¥¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½µ…É­•È½ÑÉ…¥Ğ¹U¹Á¥¸¹¡Ñµ°)mùÍÑèéµ…É­•Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½µ…É­•È)mùÍÑèéµ•´èé‘É½Áù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½µ•´½™¸¹‘É½À¹¡Ñµ°)mùÍÑèéµ•µù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½µ•´)mùÍÑèé¹•Ğèé%Á‘‘Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¹•Ğ½•¹Õ´¹%Á‘‘È¹¡Ñµ°)mùÍÑèé¹•ĞèéM½­•Ñ‘‘ÉXÑù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¹•Ğ½ÍÑÉÕĞ¹M½­•Ñ‘‘ÉXĞ¹¡Ñµ°)mùÍÑèé¹•ĞèéQÁ1¥ÍÑ•¹•Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¹•Ğ½ÍÑÉÕĞ¹QÁ1¥ÍÑ•¹•È¹¡Ñµ°)mùÍÑèé¹•Ñù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¹•Ğ)mùÍÑèé¹Õ´èé9½¹i•É½ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¹Õ´½ÍÑÉÕĞ¹9½¹i•É¼¹¡Ñµ°)mùÍÑèé¹Õ´èéM…ÑÕÉ…Ñ¥¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¹Õ´½ÍÑÉÕĞ¹M…ÑÕÉ…Ñ¥¹œ¹¡Ñµ°)mùÍÑèé¹Õ´èé]É…ÁÁ¥¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¹Õ´½ÍÑÉÕĞ¹]É…ÁÁ¥¹œ¹¡Ñµ°)mùÍÑèé¹Õµù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½¹Õ´)mùÍÑèé½ÁÌèé‘‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÌ½ÑÉ…¥Ğ¹‘¹¡Ñµ°)mùÍÑèé½ÁÌèé	¥Ñ¹‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÌ½ÑÉ…¥Ğ¹	¥Ñ¹¹¡Ñµ°)mùÍÑèé½ÁÌèé	¥Ñ=Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÌ½ÑÉ…¥Ğ¹	¥Ñ=È¹¡Ñµ°)mùÍÑèé½ÁÌèé½É½ÕÑ¥¹•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÌ½ÑÉ…¥Ğ¹½É½ÕÑ¥¹”¹¡Ñµ°)mùÍÑèé½ÁÌèé•É•™5ÕÑù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÌ½ÑÉ…¥Ğ¹•É•™5ÕĞ¹¡Ñµ°)mùÍÑèé½ÁÌèé•É•™ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÌ½ÑÉ…¥Ğ¹•É•˜¹¡Ñµ°)mùÍÑèé½ÁÌèé¥Ùù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÌ½ÑÉ…¥Ğ¹¥Ø¹¡Ñµ°)mùÍÑèé½ÁÌèéÉ½Áù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÌ½ÑÉ…¥Ğ¹É½À¹¡Ñµ°)mùÍÑèé½ÁÌèé¹5ÕÑù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÌ½ÑÉ…¥Ğ¹¹5ÕĞ¹¡Ñµ°)mùÍÑèé½ÁÌèé¹=¹•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÌ½ÑÉ…¥Ğ¹¹=¹”¹¡Ñµ°)mùÍÑèé½ÁÌèé¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÌ½ÑÉ…¥Ğ¹¸¹¡Ñµ°)mùÍÑèé½ÁÌèéÉ½µI•Í¥‘Õ…±ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÌ½ÑÉ…¥Ğ¹É½µI•Í¥‘Õ…°¹¡Ñµ°)mùÍÑèé½ÁÌèé%¹‘•áù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÌ½ÑÉ…¥Ğ¹%¹‘•à¹¡Ñµ°)mùÍÑèé½ÁÌèé5Õ±ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÌ½ÑÉ…¥Ğ¹5Õ°¹¡Ñµ°)mùÍÑèé½ÁÌèé9½Ñù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÌ½ÑÉ…¥Ğ¹9½Ğ¹¡Ñµ°)mùÍÑèé½ÁÌèéMÕ‰ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÌ½ÑÉ…¥Ğ¹MÕˆ¹¡Ñµ°)mùÍÑèé½ÁÍù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÌ)mùÍÑèé½ÁÑ¥½¸èé=ÁÑ¥½¸èé9½¹•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÑ¥½¸½•¹Õ´¹=ÁÑ¥½¸¹¡Ñµ°Ù…É¥…¹Ğ¹9½¹”)mùÍÑèé½ÁÑ¥½¸èé=ÁÑ¥½¸èéM½µ•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÑ¥½¸½•¹Õ´¹=ÁÑ¥½¸¹¡Ñµ°Ù…É¥…¹Ğ¹M½µ”)mùÍÑèé½ÁÑ¥½¸èé=ÁÑ¥½¸èé…¹‘}Ñ¡•¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÑ¥½¸½•¹Õ´¹=ÁÑ¥½¸¹¡Ñµ°µ•Ñ¡½¹…¹‘}Ñ¡•¸)mùÍÑèé½ÁÑ¥½¸èé=ÁÑ¥½¸èé…Í}‘•É•™}µÕÑù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÑ¥½¸½•¹Õ´¹=ÁÑ¥½¸¹¡Ñµ°µ•Ñ¡½¹…Í}‘•É•™}µÕĞ)mùÍÑèé½ÁÑ¥½¸èé=ÁÑ¥½¸èé…Í}‘•É•™ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÑ¥½¸½•¹Õ´¹=ÁÑ¥½¸¹¡Ñµ°µ•Ñ¡½¹…Í}‘•É•˜)mùÍÑèé½ÁÑ¥½¸èé=ÁÑ¥½¸èé•áÁ•Ñù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÑ¥½¸½•¹Õ´¹=ÁÑ¥½¸¹¡Ñµ°µ•Ñ¡½¹•áÁ•Ğ)mùÍÑèé½ÁÑ¥½¸èé=ÁÑ¥½¸èé™¥±Ñ•Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÑ¥½¸½•¹Õ´¹=ÁÑ¥½¸¹¡Ñµ°µ•Ñ¡½¹™¥±Ñ•È)mùÍÑèé½ÁÑ¥½¸èé=ÁÑ¥½¸èé™±…ÑÑ•¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÑ¥½¸½•¹Õ´¹=ÁÑ¥½¸¹¡Ñµ°µ•Ñ¡½¹™±…ÑÑ•¸)mùÍÑèé½ÁÑ¥½¸èé=ÁÑ¥½¸èé¥Í}¹½¹•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÑ¥½¸½•¹Õ´¹=ÁÑ¥½¸¹¡Ñµ°µ•Ñ¡½¹¥Í}¹½¹”)mùÍÑèé½ÁÑ¥½¸èé=ÁÑ¥½¸èé¥Í}Í½µ•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÑ¥½¸½•¹Õ´¹=ÁÑ¥½¸¹¡Ñµ°µ•Ñ¡½¹¥Í}Í½µ”)mùÍÑèé½ÁÑ¥½¸èé=ÁÑ¥½¸èéµ…Áù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÑ¥½¸½•¹Õ´¹=ÁÑ¥½¸¹¡Ñµ°µ•Ñ¡½¹µ…À)mùÍÑèé½ÁÑ¥½¸èé=ÁÑ¥½¸èé½­}½É}•±Í•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÑ¥½¸½•¹Õ´¹=ÁÑ¥½¸¹¡Ñµ°µ•Ñ¡½¹½­}½É}•±Í”)mùÍÑèé½ÁÑ¥½¸èé=ÁÑ¥½¸èé½­}½Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÑ¥½¸½•¹Õ´¹=ÁÑ¥½¸¹¡Ñµ°µ•Ñ¡½¹½­}½È)mùÍÑèé½ÁÑ¥½¸èé=ÁÑ¥½¸èé½É}•±Í•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÑ¥½¸½•¹Õ´¹=ÁÑ¥½¸¹¡Ñµ°µ•Ñ¡½¹½É}•±Í”)mùÍÑèé½ÁÑ¥½¸èé=ÁÑ¥½¸èé½Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÑ¥½¸½•¹Õ´¹=ÁÑ¥½¸¹¡Ñµ°µ•Ñ¡½¹½È)mùÍÑèé½ÁÑ¥½¸èé=ÁÑ¥½¸èéÕ¹İÉ…Á}½É}‘•™…Õ±Ñù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÑ¥½¸½•¹Õ´¹=ÁÑ¥½¸¹¡Ñµ°µ•Ñ¡½¹Õ¹İÉ…Á}½É}‘•™…Õ±Ğ)mùÍÑèé½ÁÑ¥½¸èé=ÁÑ¥½¸èéÕ¹İÉ…Á}½É}•±Í•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÑ¥½¸½•¹Õ´¹=ÁÑ¥½¸¹¡Ñµ°µ•Ñ¡½¹Õ¹İÉ…Á}½É}•±Í”)mùÍÑèé½ÁÑ¥½¸èé=ÁÑ¥½¸èéÕ¹İÉ…Á}½Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÑ¥½¸½•¹Õ´¹=ÁÑ¥½¸¹¡Ñµ°µ•Ñ¡½¹Õ¹İÉ…Á}½È)mùÍÑèé½ÁÑ¥½¸èé=ÁÑ¥½¸èéÕ¹İÉ…Áù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÑ¥½¸½•¹Õ´¹=ÁÑ¥½¸¹¡Ñµ°µ•Ñ¡½¹Õ¹İÉ…À)mùÍÑèé½ÁÑ¥½¸èé=ÁÑ¥½¸èéé¥Áù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÑ¥½¸½•¹Õ´¹=ÁÑ¥½¸¹¡Ñµ°µ•Ñ¡½¹é¥À)mùÍÑèé½ÁÑ¥½¸èé=ÁÑ¥½¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÑ¥½¸½•¹Õ´¹=ÁÑ¥½¸¹¡Ñµ°)mùÍÑèé½ÁÑ¥½¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½ÁÑ¥½¸)mùÍÑèé½Íù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½½Ì)mùÍÑèéÁ…¹¥ŒèéI•™U¹İ¥¹‘M…™•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Á…¹¥Œ½ÑÉ…¥Ğ¹I•™U¹İ¥¹‘M…™”¹¡Ñµ°)mùÍÑèéÁ…¹¥ŒèéU¹İ¥¹‘M…™•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Á…¹¥Œ½ÑÉ…¥Ğ¹U¹İ¥¹‘M…™”¹¡Ñµ°)mùÍÑèéÁ…¹¥ŒèéÁ…¹¥ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½µ…É¼¹Á…¹¥Œ¹¡Ñµ°)mùÍÑèéÁ…¹¥ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Á…¹¥Œ)mùÍÑèéÁ…Ñ èéA…Ñ èéÍÑÉ¥Á}ÁÉ•™¥áù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Á…Ñ ½ÍÑÉÕĞ¹A…Ñ ¹¡Ñµ°µ•Ñ¡½¹ÍÑÉ¥Á}ÁÉ•™¥à)mùÍÑèéÁ…Ñ èéA…Ñ¡	Õ™ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Á…Ñ ½ÍÑÉÕĞ¹A…Ñ¡	Õ˜¹¡Ñµ°)mùÍÑèéÁ…Ñ èéA…Ñ¡ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Á…Ñ ½ÍÑÉÕĞ¹A…Ñ ¹¡Ñµ°)mùÍÑèéÁ…Ñ¡ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Á…Ñ )mùÍÑèéÁ¥¸èéA¥¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Á¥¸½ÍÑÉÕĞ¹A¥¸¹¡Ñµ°)mùÍÑèéÁ¥¸èéU¹Á¥¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Á¥¸½ÑÉ…¥Ğ¹U¹Á¥¸¹¡Ñµ°)mùÍÑèéÁ¥¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Á¥¸)mùÍÑèéÁ¥¹ùÁÉ½©•Ñ¥½¹Ìµ…¹µÍÑÉÕÑÕÉ…°µÁ¥¹¹¥¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Á¥¸ÁÉ½©•Ñ¥½¹Ìµ…¹µÍÑÉÕÑÕÉ…°µÁ¥¹¹¥¹œ)mùÍÑèéÁÉ•±Õ‘•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½ÁÉ•±Õ‘”)mùÍÑèéÁÉ¥µ¥Ñ¥Ù•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½ÁÉ¥µ¥Ñ¥Ù”)mùÍÑèéÁÉ½•ÍÌèé½µµ…¹‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½ÁÉ½•ÍÌ½ÍÑÉÕĞ¹½µµ…¹¹¡Ñµ°)mùÍÑèéÁÉ½•ÍÌèé=ÕÑÁÕÑù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½ÁÉ½•ÍÌ½ÍÑÉÕĞ¹=ÕÑÁÕĞ¹¡Ñµ°)mùÍÑèéÁÉ½•ÍÌèéMÑ‘¥¼èéÁ¥Á•‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½ÁÉ½•ÍÌ½ÍÑÉÕĞ¹MÑ‘¥¼¹¡Ñµ°µ•Ñ¡½¹Á¥Á•)mùÍÑèéÁÉ½•ÍÌèéMÑ‘¥½ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½ÁÉ½•ÍÌ½ÍÑÉÕĞ¹MÑ‘¥¼¹¡Ñµ°)mùÍÑèéÁÉ½•ÍÌèé•á¥Ñù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½ÁÉ½•ÍÌ½™¸¹•á¥Ğ¹¡Ñµ°)mùÍÑèéÁÉ½•ÍÍù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½ÁÉ½•ÍÌ)mùÍÑèéÁÑÈèé9½¹9Õ±±ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½ÁÑÈ½ÍÑÉÕĞ¹9½¹9Õ±°¹¡Ñµ°)mùÍÑèéÁÑÉù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½ÁÑÈ)mùÍÑèéÉŒèéIŒèéµ…­•}µÕÑù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½ÉŒ½ÍÑÉÕĞ¹IŒ¹¡Ñµ°µ•Ñ¡½¹µ…­•}µÕĞ)mùÍÑèéÉŒèéIù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½ÉŒ½ÍÑÉÕĞ¹IŒ¹¡Ñµ°)mùÍÑèéÉŒèé]•…­ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½ÉŒ½ÍÑÉÕĞ¹]•…¬¹¡Ñµ°)mùÍÑèéÉù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½ÉŒ)mùÍÑèéÉ•ÍÕ±ĞèéI•ÍÕ±ĞèéÉÉù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½É•ÍÕ±Ğ½•¹Õ´¹I•ÍÕ±Ğ¹¡Ñµ°Ù…É¥…¹Ğ¹ÉÈ)mùÍÑèéÉ•ÍÕ±ĞèéI•ÍÕ±Ğèé=­ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½É•ÍÕ±Ğ½•¹Õ´¹I•ÍÕ±Ğ¹¡Ñµ°Ù…É¥…¹Ğ¹=¬)mùÍÑèéÉ•ÍÕ±ĞèéI•ÍÕ±Ğèé…¹‘}Ñ¡•¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½É•ÍÕ±Ğ½•¹Õ´¹I•ÍÕ±Ğ¹¡Ñµ°µ•Ñ¡½¹…¹‘}Ñ¡•¸)mùÍÑèéÉ•ÍÕ±ĞèéI•ÍÕ±Ğèé…Í}‘•É•™ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½É•ÍÕ±Ğ½•¹Õ´¹I•ÍÕ±Ğ¹¡Ñµ°µ•Ñ¡½¹…Í}‘•É•˜)mùÍÑèéÉ•ÍÕ±ĞèéI•ÍÕ±Ğèé…Í}µÕÑù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½É•ÍÕ±Ğ½•¹Õ´¹I•ÍÕ±Ğ¹¡Ñµ°µ•Ñ¡½¹…Í}µÕĞ)mùÍÑèéÉ•ÍÕ±ĞèéI•ÍÕ±Ğèé…Í}É•™ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½É•ÍÕ±Ğ½•¹Õ´¹I•ÍÕ±Ğ¹¡Ñµ°µ•Ñ¡½¹…Í}É•˜)mùÍÑèéÉ•ÍÕ±ĞèéI•ÍÕ±Ğèé•ÉÉù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½É•ÍÕ±Ğ½•¹Õ´¹I•ÍÕ±Ğ¹¡Ñµ°µ•Ñ¡½¹•ÉÈ)mùÍÑèéÉ•ÍÕ±ĞèéI•ÍÕ±Ğèé¥Í}•ÉÉù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½É•ÍÕ±Ğ½•¹Õ´¹I•ÍÕ±Ğ¹¡Ñµ°µ•Ñ¡½¹¥Í}•ÉÈ)mùÍÑèéÉ•ÍÕ±ĞèéI•ÍÕ±Ğèé¥Í}½­ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½É•ÍÕ±Ğ½•¹Õ´¹I•ÍÕ±Ğ¹¡Ñµ°µ•Ñ¡½¹¥Í}½¬)mùÍÑèéÉ•ÍÕ±ĞèéI•ÍÕ±Ğèéµ…Á}•ÉÉù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½É•ÍÕ±Ğ½•¹Õ´¹I•ÍÕ±Ğ¹¡Ñµ°µ•Ñ¡½¹µ…Á}•ÉÈ)mùÍÑèéÉ•ÍÕ±ĞèéI•ÍÕ±Ğèéµ…Á}½É}•±Í•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½É•ÍÕ±Ğ½•¹Õ´¹I•ÍÕ±Ğ¹¡Ñµ°µ•Ñ¡½¹µ…Á}½É}•±Í”)mùÍÑèéÉ•ÍÕ±ĞèéI•ÍÕ±Ğèéµ…Á}½Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½É•ÍÕ±Ğ½•¹Õ´¹I•ÍÕ±Ğ¹¡Ñµ°µ•Ñ¡½¹µ…Á}½È)mùÍÑèéÉ•ÍÕ±ĞèéI•ÍÕ±Ğèéµ…Áù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½É•ÍÕ±Ğ½•¹Õ´¹I•ÍÕ±Ğ¹¡Ñµ°µ•Ñ¡½¹µ…À)mùÍÑèéÉ•ÍÕ±ĞèéI•ÍÕ±Ğèé½­ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½É•ÍÕ±Ğ½•¹Õ´¹I•ÍÕ±Ğ¹¡Ñµ°µ•Ñ¡½¹½¬)mùÍÑèéÉ•ÍÕ±ĞèéI•ÍÕ±Ğèé½É}•±Í•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½É•ÍÕ±Ğ½•¹Õ´¹I•ÍÕ±Ğ¹¡Ñµ°µ•Ñ¡½¹½É}•±Í”)mùÍÑèéÉ•ÍÕ±ĞèéI•ÍÕ±ĞèéÕ¹İÉ…Á}½É}‘•™…Õ±Ñù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½É•ÍÕ±Ğ½•¹Õ´¹I•ÍÕ±Ğ¹¡Ñµ°µ•Ñ¡½¹Õ¹İÉ…Á}½É}‘•™…Õ±Ğ)mùÍÑèéÉ•ÍÕ±ĞèéI•ÍÕ±ĞèéÕ¹İÉ…Á}½É}•±Í•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½É•ÍÕ±Ğ½•¹Õ´¹I•ÍÕ±Ğ¹¡Ñµ°µ•Ñ¡½¹Õ¹İÉ…Á}½É}•±Í”)mùÍÑèéÉ•ÍÕ±ĞèéI•ÍÕ±ĞèéÕ¹İÉ…Á}½Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½É•ÍÕ±Ğ½•¹Õ´¹I•ÍÕ±Ğ¹¡Ñµ°µ•Ñ¡½¹Õ¹İÉ…Á}½È)mùÍÑèéÉ•ÍÕ±ĞèéI•ÍÕ±ĞèéÕ¹İÉ…Áù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½É•ÍÕ±Ğ½•¹Õ´¹I•ÍÕ±Ğ¹¡Ñµ°µ•Ñ¡½¹Õ¹İÉ…À)mùÍÑèéÉ•ÍÕ±ĞèéI•ÍÕ±Ñù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½É•ÍÕ±Ğ½•¹Õ´¹I•ÍÕ±Ğ¹¡Ñµ°)mùÍÑèéÉ•ÍÕ±Ñù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½É•ÍÕ±Ğ)mùÍÑèéÍ¥µ‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Í¥µ)mùÍÑèéÍ±¥•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Í±¥”)mùÍÑèéÍÑÈèéÉ½µMÑÉù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½ÍÑÈ½ÑÉ…¥Ğ¹É½µMÑÈ¹¡Ñµ°)mùÍÑèéÍÑÉ¥¹œèéMÑÉ¥¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½ÍÑÉ¥¹œ½ÍÑÉÕĞ¹MÑÉ¥¹œ¹¡Ñµ°)mùÍÑèéÍÑÉ¥¹œèéQ½MÑÉ¥¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½ÍÑÉ¥¹œ½ÑÉ…¥Ğ¹Q½MÑÉ¥¹œ¹¡Ñµ°)mùÍÑèéÍÑÉ¥¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½ÍÑÉ¥¹œ)mùÍÑèéÍÑÉù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½ÍÑÈ)mùÍÑèéÍå¹ŒèéÉŒèéµ…­•}µÕÑù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Íå¹Œ½ÍÑÉÕĞ¹ÉŒ¹¡Ñµ°µ•Ñ¡½¹µ…­•}µÕĞ)mùÍÑèéÍå¹ŒèéÉù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Íå¹Œ½ÍÑÉÕĞ¹ÉŒ¹¡Ñµ°)mùÍÑèéÍå¹Œèé	…ÉÉ¥•Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Íå¹Œ½ÍÑÉÕĞ¹	…ÉÉ¥•È¹¡Ñµ°)mùÍÑèéÍå¹Œèé½¹‘Ù…Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Íå¹Œ½ÍÑÉÕĞ¹½¹‘Ù…È¹¡Ñµ°)mùÍÑèéÍå¹Œèé1…éå1½­ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Íå¹Œ½ÍÑÉÕĞ¹1…éå1½¬¹¡Ñµ°)mùÍÑèéÍå¹Œèé5ÕÑ•áÕ…É‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Íå¹Œ½ÍÑÉÕĞ¹5ÕÑ•áÕ…É¹¡Ñµ°)mùÍÑèéÍå¹Œèé5ÕÑ•áù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Íå¹Œ½ÍÑÉÕĞ¹5ÕÑ•à¹¡Ñµ°)mùÍÑèéÍå¹Œèé=¹•1½­ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Íå¹Œ½ÍÑÉÕĞ¹=¹•1½¬¹¡Ñµ°)mùÍÑèéÍå¹Œèé=¹•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Íå¹Œ½ÍÑÉÕĞ¹=¹”¹¡Ñµ°)mùÍÑèéÍå¹ŒèéIİ1½­ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Íå¹Œ½ÍÑÉÕĞ¹Iİ1½¬¹¡Ñµ°)mùÍÑèéÍå¹Œèé…Ñ½µ¥ŒèéÑ½µ¥	½½±ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Íå¹Œ½…Ñ½µ¥Œ½ÍÑÉÕĞ¹Ñ½µ¥	½½°¹¡Ñµ°)mùÍÑèéÍå¹Œèé…Ñ½µ¥ŒèéÑ½µ¥$áù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Íå¹Œ½…Ñ½µ¥Œ½ÍÑÉÕĞ¹Ñ½µ¥$à¹¡Ñµ°)mùÍÑèéÍå¹Œèé…Ñ½µ¥ŒèéÑ½µ¥%Í¥é•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Íå¹Œ½…Ñ½µ¥Œ½ÍÑÉÕĞ¹Ñ½µ¥%Í¥é”¹¡Ñµ°)mùÍÑèéÍå¹Œèé…Ñ½µ¥ŒèéÑ½µ¥TÄÙù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Íå¹Œ½…Ñ½µ¥Œ½ÍÑÉÕĞ¹Ñ½µ¥TÄØ¹¡Ñµ°)mùÍÑèéÍå¹Œèé…Ñ½µ¥ŒèéÑ½µ¥UÍ¥é•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Íå¹Œ½…Ñ½µ¥Œ½ÍÑÉÕĞ¹Ñ½µ¥UÍ¥é”¹¡Ñµ°)mùÍÑèéÍå¹Œèé…Ñ½µ¥ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Íå¹Œ½…Ñ½µ¥Œ)mùÍÑèéÍå¹ŒèéµÁÍŒèéI••¥Ù•ÈèéÉ•Ùù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Íå¹Œ½µÁÍŒ½ÍÑÉÕĞ¹I••¥Ù•È¹¡Ñµ°µ•Ñ¡½¹É•Ø)mùÍÑèéÍå¹ŒèéµÁÍŒèé¡…¹¹•±ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Íå¹Œ½µÁÍŒ½™¸¹¡…¹¹•°¹¡Ñµ°)mùÍÑèéÍå¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Íå¹Œ)mùÍÑèéÑ…Í¬èéA½±±ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Ñ…Í¬½•¹Õ´¹A½±°¹¡Ñµ°)mùÍÑèéÑ…Í­ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Ñ…Í¬)mùÍÑèéÑ¡É•…èéQ¡É•…‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Ñ¡É•…½ÍÑÉÕĞ¹Q¡É•…¹¡Ñµ°)mùÍÑèéÑ¡É•…èéÍ½Á•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Ñ¡É•…½™¸¹Í½Á”¹¡Ñµ°)mùÍÑèéÑ¡É•…èéÍÁ…İ¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Ñ¡É•…½™¸¹ÍÁ…İ¸¹¡Ñµ°)mùÍÑèéÑ¡É•…‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Ñ¡É•…)mùÍÑèéÑ¥µ”èéÕÉ…Ñ¥½¸èé…Í}Í•Íù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Ñ¥µ”½ÍÑÉÕĞ¹ÕÉ…Ñ¥½¸¹¡Ñµ°µ•Ñ¡½¹…Í}Í•Ì)mùÍÑèéÑ¥µ”èéÕÉ…Ñ¥½¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Ñ¥µ”½ÍÑÉÕĞ¹ÕÉ…Ñ¥½¸¹¡Ñµ°)mùÍÑèéÑ¥µ”èé%¹ÍÑ…¹Ğèé•±…ÁÍ•‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Ñ¥µ”½ÍÑÉÕĞ¹%¹ÍÑ…¹Ğ¹¡Ñµ°µ•Ñ¡½¹•±…ÁÍ•)mùÍÑèéÑ¥µ”èé%¹ÍÑ…¹Ğèé¹½İù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Ñ¥µ”½ÍÑÉÕĞ¹%¹ÍÑ…¹Ğ¹¡Ñµ°µ•Ñ¡½¹¹½Ü)mùÍÑèéÑ¥µ”èé%¹ÍÑ…¹Ñù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Ñ¥µ”½ÍÑÉÕĞ¹%¹ÍÑ…¹Ğ¹¡Ñµ°)mùÍÑèéÑ¥µ”èéMåÍÑ•µQ¥µ”èé•±…ÁÍ•‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Ñ¥µ”½ÍÑÉÕĞ¹MåÍÑ•µQ¥µ”¹¡Ñµ°µ•Ñ¡½¹•±…ÁÍ•)mùÍÑèéÑ¥µ•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Ñ¥µ”)mùÍÑèéÙ•ŒèéY•ŒèéÍ½ÉÑ}‰åù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Ù•Œ½ÍÑÉÕĞ¹Y•Œ¹¡Ñµ°µ•Ñ¡½¹Í½ÉÑ}‰ä)mùÍÑèéÙ•ŒèéY•ŒèéÍ½ÉÑ}Õ¹ÍÑ…‰±•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Ù•Œ½ÍÑÉÕĞ¹Y•Œ¹¡Ñµ°µ•Ñ¡½¹Í½ÉÑ}Õ¹ÍÑ…‰±”)mùÍÑèéÙ•ŒèéY•ŒèéÍ½ÉÑù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Ù•Œ½ÍÑÉÕĞ¹Y•Œ¹¡Ñµ°µ•Ñ¡½¹Í½ÉĞ)mùÍÑèéÙ•ŒèéY•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Ù•Œ½ÍÑÉÕĞ¹Y•Œ¹¡Ñµ°)mùÍÑèéÙ•ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ½Ù•Œ)mùÍÑ‘áù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÍÑ‘à)mùÍÑ‘áù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÍÑ‘àı±…‰•°õÍÑ‘à)mùÍÑ‘áùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½‰ÉÍ½¸½ÍÑ‘à)mùÍÑ‘áùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÍÑ‘àµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÍÑ‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½ÍÑ)mùÍÑ‘ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÍÑµ™¥É•‰É¥¬ı±½¼õÉÕÍĞ)mùÍÑÉ¥¹}…¡•ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÍÑÉ¥¹}…¡”)mùÍÑÉÍ¥µùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÍÑÉÍ¥´)mùÍÑÉÍ¥µùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÍÑÉÍ¥´µÉ¥µÍ½¸)mùÍÑÉÍ¥µù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÍÑÉÍ¥´)mùÍÑÉÍ¥µù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÍÑÉÍ¥´ı±…‰•°õÍÑÉÍ¥´)mùÍÑÉÍ¥µù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½ÍÑÉÍ¥´)mùÍÑÉÍ¥µù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÍÑÉÍ¥´µå•±±½Ü)mùÍÑÉÍ¥µùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½É…Á¥‘™Õéè½ÍÑÉÍ¥´µÉÌ)mùÍÑÉÍ¥µùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÍÑÉÍ¥´µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÍÑÉÕÑ½ÁÑùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÍÑÉÕÑ½ÁĞ)mùÍÑÉÕÑ½ÁÑùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÍÑÉÕÑ½ÁĞµÉ¥µÍ½¸)mùÍÑÉÕÑ½ÁÑù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÍÑÉÕÑ½ÁĞ)mùÍÑÉÕÑ½ÁÑù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÍÑÉÕÑ½ÁĞı±…‰•°õÍÑÉÕÑ½ÁĞ)mùÍÑÉÕÑ½ÁÑù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½ÍÑÉÕÑ½ÁĞ)mùÍÑÉÕÑ½ÁÑù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÍÑÉÕÑ½ÁĞµå•±±½Ü)mùÍÑÉÕÑ½ÁÑùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Q•a¥Ñ½¤½ÍÑÉÕÑ½ÁĞ)mùÍÑÉÕÑ½ÁÑùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÍÑÉÕÑ½ÁĞµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÍÑÉÕµùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÍÑÉÕ´)mùÍÑÉÕµùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÍÑÉÕ´µÉ¥µÍ½¸)mùÍÑÉÕµù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÍÑÉÕ´)mùÍÑÉÕµù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÍÑÉÕ´ı±…‰•°õÍÑÉÕ´)mùÍÑÉÕµù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½ÍÑÉÕ´)mùÍÑÉÕµù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÍÑÉÕ´µå•±±½Ü)mùÍÑÉÕµùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½A•Ñ•É¹…Ñ½ÈÜ½ÍÑÉÕ´)mùÍÑÉÕµùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÍÑÉÕ´µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÍÑå±¥Í¡ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÍÑå±¥Í )mùÍÑå±¥Í¡ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÍÑå±¥Í µÉ¥µÍ½¸)mùÍÑå±¥Í¡ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÍÑå±¥Í )mùÍÑå±¥Í¡ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÍÑå±¥Í ı±…‰•°õÍÑå±¥Í )mùÍÑå±¥Í¡ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½ÍÑå±¥Í )mùÍÑå±¥Í¡ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÍÑå±¥Í µå•±±½Ü)mùÍÑå±¥Í¡ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½9Õ±±ÕÌÄÔÜ½ÍÑå±¥Í µÉÌ)mùÍÑå±¥Í¡ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÍÑå±¥Í µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÍÕ‰Ñ±•ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÍÕ‰Ñ±”)mùÍÕ‰Ñ±•ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÍÕ‰Ñ±”µÉ¥µÍ½¸)mùÍÕ‰Ñ±•ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÍÕ‰Ñ±”)mùÍÕ‰Ñ±•ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÍÕ‰Ñ±”ı±…‰•°õÍÕ‰Ñ±”)mùÍÕ‰Ñ±•ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½ÍÕ‰Ñ±”)mùÍÕ‰Ñ±•ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÍÕ‰Ñ±”µå•±±½Ü)mùÍÕ‰Ñ±•ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½‘…±•¬µÉåÁÑ½É…Á¡ä½ÍÕ‰Ñ±”)mùÍÕ‰Ñ±•ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÍÕ‰Ñ±”µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÍÕ‰Ñ±•ùİ•‰Í¥Ñ•tè¡ÑÑÁÌè¼½‘…±•¬¹ÉÌ)mùÍÕ‰Ñ±•ùİ•‰Í¥Ñ•ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÍÕ‰Ñ±”µ½É…°)mùÍÕÉ™ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÍÕÉ˜)mùÍÕÉÉ•…±‘‰ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÍÕÉÉ•…±‘ˆ)mùÍÕÉÉ•…±‘‰ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÍÕÉÉ•…±‘ˆµÉ¥µÍ½¸)mùÍÕÉÉ•…±‘‰ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÍÕÉÉ•…±‘ˆ)mùÍÕÉÉ•…±‘‰ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÍÕÉÉ•…±‘ˆı±…‰•°õÍÕÉÉ•…±‘ˆ)mùÍÕÉÉ•…±‘‰ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½ÍÕÉÉ•…±‘ˆ)mùÍÕÉÉ•…±‘‰ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÍÕÉÉ•…±‘ˆµå•±±½Ü)mùÍÕÉÉ•…±‘‰ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½ÍÕÉÉ•…±‘ˆ½ÍÕÉÉ•…±‘ˆ)mùÍÕÉÉ•…±‘‰ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÍÕÉÉ•…±‘ˆµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÍİ}•µ…}Á…ÉÍ•ÉùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Íİ}•µ…}Á…ÉÍ•È)mùÍİ}•µ…}Á…ÉÍ•ÉùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÍİ}}•µ…}}Á…ÉÍ•ÈµÉ¥µÍ½¸)mùÍİ}•µ…}Á…ÉÍ•Éù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Íİ}•µ…}Á…ÉÍ•È)mùÍİ}•µ…}Á…ÉÍ•Éù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Íİ}•µ…}Á…ÉÍ•Èı±…‰•°õÍİ}•µ…}Á…ÉÍ•È)mùÍİ}•µ…}Á…ÉÍ•Éù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Íİ}•µ…}Á…ÉÍ•È)mùÍİ}•µ…}Á…ÉÍ•Éù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÍİ}}•µ…}}Á…ÉÍ•Èµå•±±½Ü)mùÍİ}•µ…}Á…ÉÍ•ÉùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½ÍİŒµÁÉ½©•Ğ½ÍİŒ½ÑÉ•”½µ…¥¸½É…Ñ•Ì½Íİ}•µ…}Á…ÉÍ•È)mùÍİ}•µ…}Á…ÉÍ•ÉùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Íİ}}•µ…}}Á…ÉÍ•ÈµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÍİùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÍİŒ)mùÍİùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÍİŒµÉ¥µÍ½¸)mùÍİù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÍİŒ)mùÍİù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÍİŒı±…‰•°õÍİŒ)mùÍİù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½ÍİŒ)mùÍİù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÍİŒµå•±±½Ü)mùÍİùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½ÍİŒµÁÉ½©•Ğ½ÍİŒ)mùÍİùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÍİŒµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÍİ¥™ĞµÉÍù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Íİ¥™ĞµÉÌ)mùÍå…µ½É•ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Íå…µ½É”)mùÍå…µ½É•ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Íå…µ½É”µÉÌ½Íå…µ½É”)mùÍåµÁ¡½¹¥…ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÍåµÁ¡½¹¥„)mùÍå¹Ñ¡ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Íå¹Ñ )mùÍå¹ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Íå¸)mùÍå¹ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÍå¸µÉ¥µÍ½¸)mùÍå¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Íå¸)mùÍå¹ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Íå¸ı±…‰•°õÍå¸)mùÍå¹ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Íå¸)mùÍå¹ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÍå¸µå•±±½Ü)mùÍå¹ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½‘Ñ½±¹…ä½Íå¸)mùÍå¹ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Íå¸µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÍåÍ¥¹™½ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÍåÍ¥¹™¼)mùÍåÍ±½œèé¥¹¥Ñù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÍåÍ±½œ½±…Ñ•ÍĞ½ÍåÍ±½œ½™¸¹¥¹¥Ğ¹¡Ñµ°)mùÍåÍ±½ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÍåÍ±½œ)mùÍåÍ±½ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÍåÍ±½œı±…‰•°õÍåÍ±½œ)mùÑ…™™åùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ…™™ä)mùÑ…™™åùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ…™™äµÉ¥µÍ½¸)mùÑ…™™åù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ…™™ä)mùÑ…™™åù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ…™™äı±…‰•°õÑ…™™ä)mùÑ…™™åù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ…™™ä)mùÑ…™™åù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ…™™äµå•±±½Ü)mùÑ…™™åùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½¥½áÕÍ1…‰Ì½Ñ…™™ä)mùÑ…™™åùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ…™™äµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ…¹Ñ¥ÙåùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ…¹Ñ¥Ùä)mùÑ…¹Ñ¥ÙåùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ…¹Ñ¥ÙäµÉ¥µÍ½¸)mùÑ…¹Ñ¥Ùåù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ…¹Ñ¥Ùä)mùÑ…¹Ñ¥Ùåù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ…¹Ñ¥Ùäı±…‰•°õÑ…¹Ñ¥Ùä)mùÑ…¹Ñ¥Ùåù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ…¹Ñ¥Ùä)mùÑ…¹Ñ¥Ùåù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ…¹Ñ¥Ùäµå•±±½Ü)mùÑ…¹Ñ¥ÙåùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½ÅÕ¥­İ¥Ğµ½ÍÌ½Ñ…¹Ñ¥Ùä)mùÑ…¹Ñ¥ÙåùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ…¹Ñ¥ÙäµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ…½ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ…¼)mùÑ…½ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ…¼µÉ¥µÍ½¸)mùÑ…½ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ…¼)mùÑ…½ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ…¼ı±…‰•°õÑ…¼)mùÑ…½ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ…¼)mùÑ…½ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ…¼µå•±±½Ü)mùÑ…½ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Ñ…ÕÉ¤µ…ÁÁÌ½Ñ…¼)mùÑ…½ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ…¼µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ…Á±½ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ…Á±¼)mùÑ…Á±½ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ…Á±¼µÉ¥µÍ½¸)mùÑ…Á±½ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ…Á±¼)mùÑ…Á±½ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ…Á±¼ı±…‰•°õÑ…Á±¼)mùÑ…Á±½ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ…Á±¼)mùÑ…Á±½ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ…Á±¼µå•±±½Ü)mùÑ…Á±½ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Ñ…µ…Í™”½Ñ…Á±¼)mùÑ…Á±½ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ…Á±¼µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ…Á±½ùİ•‰Í¥Ñ•tè¡ÑÑÁÌè¼½Ñ…Á±¼¹Ñ…µ…Í™”¹‘•Ø)mùÑ…Á±½ùİ•‰Í¥Ñ•ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ…Á±¼µ½É…°)mùÑ…ÈèéÉ¡¥Ù”èé•¹ÑÉ¥•Íù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ…È½±…Ñ•ÍĞ½Ñ…È½ÍÑÉÕĞ¹É¡¥Ù”¹¡Ñµ°µ•Ñ¡½¹•¹ÑÉ¥•Ì)mùÑ…ÈèéÉ¡¥Ù”èéÕ¹Á…­ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ…È½±…Ñ•ÍĞ½Ñ…È½ÍÑÉÕĞ¹É¡¥Ù”¹¡Ñµ°µ•Ñ¡½¹Õ¹Á…¬)mùÑ…Èèé	Õ¥±‘•Èèé…ÁÁ•¹‘}‘¥É}…±±ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ…È½±…Ñ•ÍĞ½Ñ…È½ÍÑÉÕĞ¹	Õ¥±‘•È¹¡Ñµ°µ•Ñ¡½¹…ÁÁ•¹‘}‘¥É}…±°)mùÑ…Èèé	Õ¥±‘•Éù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ…È½±…Ñ•ÍĞ½Ñ…È½ÍÑÉÕĞ¹	Õ¥±‘•È¹¡Ñµ°)mùÑ…Èèé¹ÑÉäèéÕ¹Á…­ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ…È½±…Ñ•ÍĞ½Ñ…È½ÍÑÉÕĞ¹¹ÑÉä¹¡Ñµ°µ•Ñ¡½¹Õ¹Á…¬)mùÑ…Èèé¹ÑÉåù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ…È½±…Ñ•ÍĞ½Ñ…È½ÍÑÉÕĞ¹¹ÑÉä¹¡Ñµ°)mùÑ…Éù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ…È)mùÑ…Éù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ…Èı±…‰•°õÑ…È)mùÑ…ÕÉ¤µ‰Õ¹‘±•Éù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ…ÕÉ¤µ‰Õ¹‘±•È)mùÑ…ÕÉ¥ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ…ÕÉ¤)mùÑ…ÕÉ¥ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ…ÕÉ¤µÉ¥µÍ½¸)mùÑ…ÕÉ¥ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ…ÕÉ¤)mùÑ…ÕÉ¥ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ…ÕÉ¤ı±…‰•°õÑ…ÕÉ¤)mùÑ…ÕÉ¥ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ…ÕÉ¤)mùÑ…ÕÉ¥ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ…ÕÉ¤µå•±±½Ü)mùÑ…ÕÉ¥ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Ñ…ÕÉ¤µ…ÁÁÌ½Ñ…ÕÉ¤)mùÑ…ÕÉ¥ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ…ÕÉ¤µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ…ÕÉ¥ùİ•‰Í¥Ñ•tè¡ÑÑÁÌè¼½Ñ…ÕÉ¤¹…ÁÀ)mùÑ…ÕÉ¥ùİ•‰Í¥Ñ•ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ…ÕÉ¤µ½É…°)mùÑ¡ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ )mùÑ•±•Ù¥Í¥½¹ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ•±•Ù¥Í¥½¸)mùÑ•±•Ù¥Í¥½¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ•±•Ù¥Í¥½¸)mùÑ•±•Ù¥Í¥½¹ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…±•áÁ…Íµ…¹Ñ¥•È½Ñ•±•Ù¥Í¥½¸)mùÑ•µÁ‘¥Éù‘½Ítè¡ÑÑÁÌè¼½‘½Œ¹ÉÕÍĞµ±…¹œ¹½Éœ½Ñ•µÁ‘¥È)mùÑ•µÁ™¥±”èé	Õ¥±‘•ÈèéÑ•µÁ‘¥Éù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ•µÁ™¥±”½±…Ñ•ÍĞ½Ñ•µÁ™¥±”½ÍÑÉÕĞ¹	Õ¥±‘•È¹¡Ñµ°µ•Ñ¡½¹Ñ•µÁ‘¥È)mùÑ•µÁ™¥±”èé	Õ¥±‘•Éù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ•µÁ™¥±”½±…Ñ•ÍĞ½Ñ•µÁ™¥±”½ÍÑÉÕĞ¹	Õ¥±‘•È¹¡Ñµ°)mùÑ•µÁ™¥±•ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ•µÁ™¥±”)mùÑ•µÁ™¥±•ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ•µÁ™¥±”µÉ¥µÍ½¸)mùÑ•µÁ™¥±•ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ•µÁ™¥±”)mùÑ•µÁ™¥±•ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ•µÁ™¥±”ı±…‰•°õÑ•µÁ™¥±”)mùÑ•µÁ™¥±•ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ•µÁ™¥±”)mùÑ•µÁ™¥±•ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ•µÁ™¥±”µå•±±½Ü)mùÑ•µÁ™¥±•ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½MÑ•‰…±¥•¸½Ñ•µÁ™¥±”)mùÑ•µÁ™¥±•ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ•µÁ™¥±”µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ•µÁ™¥±•ùİ•‰Í¥Ñ•tè¡ÑÑÁÌè¼½ÍÑ•‰…±¥•¸¹½´½ÁÉ½©•ÑÌ½Ñ•µÁ™¥±”µÉÌ)mùÑ•µÁ™¥±•ùİ•‰Í¥Ñ•ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ•µÁ™¥±”µ½É…°)mùÑ•É…ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ•É„)mùÑ•É…ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ•É„µÉ¥µÍ½¸)mùÑ•É…ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ•É„)mùÑ•É…ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ•É„ı±…‰•°õÑ•É„)mùÑ•É…ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ•É„)mùÑ•É…ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ•É„µå•±±½Ü)mùÑ•É…ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½-•…ÑÌ½Ñ•É„)mùÑ•É…ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ•É„µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ•É…ùİ•‰Í¥Ñ•tè¡ÑÑÁÌè¼½­•…ÑÌ¹¥Ñ¡Õˆ¹¥¼½Ñ•É„)mùÑ•É…ùİ•‰Í¥Ñ•ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ•É„µ½É…°)mùÑ•É´µÑ…‰±•ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ•É´µÑ…‰±”)mùÑ•Éµ‰½½­ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ•Éµ‰½½¬)mùÑ•Éµ‰½½­ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ•Éµ‰½½¬ı±…‰•°õÑ•Éµ‰½½¬)mùÑ•Éµ‰½½­ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½	åÉ½¸½Ñ•Éµ‰½½¬)mùÑ•Éµ½±½ÉùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ•Éµ½±½È)mùÑ•Éµ½±½ÉùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ•Éµ½±½ÈµÉ¥µÍ½¸)mùÑ•Éµ½±½Éù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ•Éµ½±½È)mùÑ•Éµ½±½Éù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ•Éµ½±½Èı±…‰•°õÑ•Éµ½±½È)mùÑ•Éµ½±½Éù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ•Éµ½±½È)mùÑ•Éµ½±½Éù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ•Éµ½±½Èµå•±±½Ü)mùÑ•Éµ½±½ÉùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½	ÕÉ¹ÑMÕÍ¡¤½Ñ•Éµ½±½È)mùÑ•Éµ½±½ÉùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ•Éµ½±½ÈµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ•Éµ¥µ…‘ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…¹½À½Ñ•Éµ¥µ…)mùÑ•Éµ¥½¹ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ•Éµ¥½¸)mùÑ•Éµ¥½¹ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ•Éµ¥½¸µÉ¥µÍ½¸)mùÑ•Éµ¥½¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ•Éµ¥½¸)mùÑ•Éµ¥½¹ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ•Éµ¥½¸ı±…‰•°õÑ•Éµ¥½¸)mùÑ•Éµ¥½¹ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ•Éµ¥½¸)mùÑ•Éµ¥½¹ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ•Éµ¥½¸µå•±±½Ü)mùÑ•Éµ¥½¹ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ±…ˆ¹É•‘½àµ½Ì¹½Éœ½É•‘½àµ½Ì½Ñ•Éµ¥½¸)mùÑ•Éµ¥½¹ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ•Éµ¥½¸µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ•ÍÑ½¹Ñ…¥¹•ÉÍùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ•ÍÑ½¹Ñ…¥¹•ÉÌ)mùÑ•ÑÉ…ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ•ÑÉ„)mùÑ•áÑİÉ…ÁùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ•áÑİÉ…À)mùÑ•áÑİÉ…ÁùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ•áÑİÉ…ÀµÉ¥µÍ½¸)mùÑ•áÑİÉ…Áù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ•áÑİÉ…À)mùÑ•áÑİÉ…Áù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ•áÑİÉ…Àı±…‰•°õÑ•áÑİÉ…À)mùÑ•áÑİÉ…Áù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ•áÑİÉ…À)mùÑ•áÑİÉ…Áù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ•áÑİÉ…Àµå•±±½Ü)mùÑ•áÑİÉ…ÁùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½µ•¥Í±•È½Ñ•áÑİÉ…À)mùÑ•áÑİÉ…ÁùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ•áÑİÉ…ÀµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ¡¥Í•ÉÉ½ÉùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ¡¥Í•ÉÉ½È)mùÑ¡¥Í•ÉÉ½ÉùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ¡¥Í•ÉÉ½ÈµÉ¥µÍ½¸)mùÑ¡¥Í•ÉÉ½Éù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ¡¥Í•ÉÉ½È)mùÑ¡¥Í•ÉÉ½Éù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ¡¥Í•ÉÉ½Èı±…‰•°õÑ¡¥Í•ÉÉ½È)mùÑ¡¥Í•ÉÉ½Éù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ¡¥Í•ÉÉ½È)mùÑ¡¥Í•ÉÉ½Éù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ¡¥Í•ÉÉ½Èµå•±±½Ü)mùÑ¡¥Í•ÉÉ½ÉùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½‘Ñ½±¹…ä½Ñ¡¥Í•ÉÉ½È)mùÑ¡¥Í•ÉÉ½ÉùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ¡¥Í•ÉÉ½ÈµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ¡É•…‘Á½½°èéQ¡É•…‘A½½°èé•á•ÕÑ•ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ¡É•…‘Á½½°½±…Ñ•ÍĞ½Ñ¡É•…‘Á½½°½ÍÑÉÕĞ¹Q¡É•…‘A½½°¹¡Ñµ°µ•Ñ¡½¹•á•ÕÑ”)mùÑ¡É•…‘Á½½°èéQ¡É•…‘A½½±ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ¡É•…‘Á½½°½±…Ñ•ÍĞ½Ñ¡É•…‘Á½½°½ÍÑÉÕĞ¹Q¡É•…‘A½½°¹¡Ñµ°)mùÑ¡É•…‘Á½½±ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ¡É•…‘Á½½°)mùÑ¡É•…‘Á½½±ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ¡É•…‘Á½½°ı±…‰•°õÑ¡É•…‘Á½½°)mùÑ¡É•”µ‘ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ¡É•”µ)mùÑ¡É•”µ‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ¡É•”µ)mùÑ¡É•”µ‘ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ¡É•”µı±…‰•°õÑ¡É•”µ)mùÑ¡Õµ‰¹…¥±Íù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ¡Õµ‰¹…¥±Ì)mùÑ¥‰•É¥ÕÍùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ¥‰•É¥ÕÌ)mùÑ¥‰•É¥ÕÍùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ¥‰•É¥ÕÌµÉ¥µÍ½¸)mùÑ¥‰•É¥ÕÍù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ¥‰•É¥ÕÌ)mùÑ¥‰•É¥ÕÍù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ¥‰•É¥ÕÌı±…‰•°õÑ¥‰•É¥ÕÌ)mùÑ¥‰•É¥ÕÍù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ¥‰•É¥ÕÌ)mùÑ¥‰•É¥ÕÍù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ¥‰•É¥ÕÌµå•±±½Ü)mùÑ¥‰•É¥ÕÍùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½ÁÉ¥Íµ„½Ñ¥‰•É¥ÕÌ)mùÑ¥‰•É¥ÕÍùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ¥‰•É¥ÕÌµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ¥­•ÉÍù‘½Ítè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½±•İ¥Í¥¹Œ½Ñ¥­•ÉÌ)mùÑ¥‘•ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ¥‘”)mùÑ¥­Øµ©•µ…±±½…Ñ½ÉùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ¥­Øµ©•µ…±±½…Ñ½È)mùÑ¥­Øµ©•µ…±±½…Ñ½ÉùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ¥­Ø´µ©•µ…±±½…Ñ½ÈµÉ¥µÍ½¸)mùÑ¥­Øµ©•µ…±±½…Ñ½Éù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½©•µ…±±½…Ñ½È)mùÑ¥­Øµ©•µ…±±½…Ñ½Éù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ¥­Øµ©•µ…±±½…Ñ½Èı±…‰•°õÑ¥­Øµ©•µ…±±½…Ñ½È)mùÑ¥­Øµ©•µ…±±½…Ñ½Éù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ¥­Øµ©•µ…±±½…Ñ½È)mùÑ¥­Øµ©•µ…±±½…Ñ½Éù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ¥­Ø´µ©•µ…±±½…Ñ½Èµå•±±½Ü)mùÑ¥­Øµ©•µ…±±½…Ñ½ÉùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Ñ¥­Ø½©•µ…±±½…Ñ½È)mùÑ¥­Øµ©•µ…±±½…Ñ½ÉùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ¥­Ø´µ©•µ…±±½…Ñ½ÈµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ¥µ•ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ¥µ”)mùÑ¥µ•ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ¥µ”µÉ¥µÍ½¸)mùÑ¥µ•ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ¥µ”)mùÑ¥µ•ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ¥µ”ı±…‰•°õÑ¥µ”)mùÑ¥µ•ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ¥µ”)mùÑ¥µ•ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ¥µ”µå•±±½Ü)mùÑ¥µ•ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Ñ¥µ”µÉÌ½Ñ¥µ”)mùÑ¥µ•ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ¥µ”µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ¥µ•ùİ•‰Í¥Ñ•tè¡ÑÑÁÌè¼½Ñ¥µ”µÉÌ¹¥Ñ¡Õˆ¹¥¼)mùÑ¥µ•ùİ•‰Í¥Ñ•ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ¥µ”µ½É…°)mùÑ¥¹äµÍ­¥…ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ¥¹äµÍ­¥„)mùÑ¥¹äµÍ­¥…ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ¥¹äµÍ­¥„ı±…‰•°õÑ¥¹äµÍ­¥„)mùÑ¥¹åÍ•…É¡ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ¥¹åÍ•…É )mùÑ¥¹åÍ•…É¡ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ¥¹åÍ•…É µÉ¥µÍ½¸)mùÑ¥¹åÍ•…É¡ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ¥¹åÍ•…É )mùÑ¥¹åÍ•…É¡ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ¥¹åÍ•…É ı±…‰•°õÑ¥¹åÍ•…É )mùÑ¥¹åÍ•…É¡ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ¥¹åÍ•…É )mùÑ¥¹åÍ•…É¡ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ¥¹åÍ•…É µå•±±½Ü)mùÑ¥¹åÍ•…É¡ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½µÉ”½Ñ¥¹åÍ•…É )mùÑ¥¹åÍ•…É¡ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ¥¹åÍ•…É µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ¥¹åÍ•…É¡ùİ•‰Í¥Ñ•tè¡ÑÑÁÌè¼½•¹‘±•È¹‘•Ø¼ÈÀÄä½Ñ¥¹åÍ•…É )mùÑ¥¹åÑ•µÁ±…Ñ•ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ¥¹åÑ•µÁ±…Ñ”)mùÑ¥¹åÑ•µÁ±…Ñ•ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ¥¹åÑ•µÁ±…Ñ”µÉ¥µÍ½¸)mùÑ¥¹åÑ•µÁ±…Ñ•ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ¥¹åÑ•µÁ±…Ñ”)mùÑ¥¹åÑ•µÁ±…Ñ•ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ¥¹åÑ•µÁ±…Ñ”ı±…‰•°õÑ¥¹åÑ•µÁ±…Ñ”)mùÑ¥¹åÑ•µÁ±…Ñ•ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ¥¹åÑ•µÁ±…Ñ”)mùÑ¥¹åÑ•µÁ±…Ñ•ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ¥¹åÑ•µÁ±…Ñ”µå•±±½Ü)mùÑ¥¹åÑ•µÁ±…Ñ•ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½‰¡•¥Í±•È½Q¥¹åQ•µÁ±…Ñ”)mùÑ¥¹åÑ•µÁ±…Ñ•ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ¥¹åÑ•µÁ±…Ñ”µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ¥¹åÙ•ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ¥¹åÙ•Œ)mùÑ¥¹åÙ•ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ¥¹åÙ•ŒµÉ¥µÍ½¸)mùÑ¥¹åÙ•ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ¥¹åÙ•Œ)mùÑ¥¹åÙ•ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ¥¹åÙ•Œı±…‰•°õÑ¥¹åÙ•Œ)mùÑ¥¹åÙ•ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ¥¹åÙ•Œ)mùÑ¥¹åÙ•ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ¥¹åÙ•Œµå•±±½Ü)mùÑ¥¹åÙ•ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½1½­…Ñ¡½È½Ñ¥¹åÙ•Œ)mùÑ¥¹åÙ•ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ¥¹åÙ•ŒµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ±ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ°)mùÑ±ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ°µÉ¥µÍ½¸)mùÑ±ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ°)mùÑ±ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ°ı±…‰•°õÑ°)mùÑ±ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ°)mùÑ±ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ°µå•±±½Ü)mùÑ±ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½äÈÄ½Ñ°)mùÑ±ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ°µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ½…ÍÑåù‰±½tè¡ÑÑÁÌè¼½Ñ½­¥¼¹ÉÌ½‰±½œ¼ÈÀÈĞ´ÄÀ´ÈÌµ…¹¹½Õ¹¥¹œµÑ½…ÍÑä)mùÑ½…ÍÑåùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ½…ÍÑä)mùÑ½…ÍÑåùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ½…ÍÑäµÉ¥µÍ½¸)mùÑ½…ÍÑåù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½…ÍÑä)mùÑ½…ÍÑåù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ½…ÍÑäı±…‰•°õÑ½…ÍÑä)mùÑ½…ÍÑåù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ½…ÍÑä)mùÑ½…ÍÑåù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ½…ÍÑäµå•±±½Ü)mùÑ½…ÍÑåùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Ñ½­¥¼µÉÌ½Ñ½…ÍÑä)mùÑ½…ÍÑåùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ½…ÍÑäµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ½­•¥ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½­•¤)mùÑ½­•¹¥é•ÉÍù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½­•¹¥é•ÉÌ)mùÑ½­¥¼µÉ…•™Õ°µÍ¡ÕÑ‘½İ¹ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ½­¥¼µÉ…•™Õ°µÍ¡ÕÑ‘½İ¸)mùÑ½­¥¼µÉ…•™Õ°µÍ¡ÕÑ‘½İ¹ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ½­¥¼´µÉ…•™Õ°´µÍ¡ÕÑ‘½İ¸µÉ¥µÍ½¸)mùÑ½­¥¼µÉ…•™Õ°µÍ¡ÕÑ‘½İ¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½­¥¼µÉ…•™Õ°µÍ¡ÕÑ‘½İ¸)mùÑ½­¥¼µÉ…•™Õ°µÍ¡ÕÑ‘½İ¹ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ½­¥¼µÉ…•™Õ°µÍ¡ÕÑ‘½İ¸ı±…‰•°õÑ½­¥¼µÉ…•™Õ°µÍ¡ÕÑ‘½İ¸)mùÑ½­¥¼µÉ…•™Õ°µÍ¡ÕÑ‘½İ¹ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ½­¥¼µÉ…•™Õ°µÍ¡ÕÑ‘½İ¸)mùÑ½­¥¼µÉ…•™Õ°µÍ¡ÕÑ‘½İ¹ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ½­¥¼´µÉ…•™Õ°´µÍ¡ÕÑ‘½İ¸µå•±±½Ü)mùÑ½­¥¼µÉ…•™Õ°µÍ¡ÕÑ‘½İ¹ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½¥¹½µ¹¥Ì½Ñ½­¥¼µÉ…•™Õ°µÍ¡ÕÑ‘½İ¸)mùÑ½­¥¼µÉ…•™Õ°µÍ¡ÕÑ‘½İ¹ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ½­¥¼´µÉ…•™Õ°´µÍ¡ÕÑ‘½İ¸µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ½­¥¼µµ•ÑÉ¥ÍùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ½­¥¼µµ•ÑÉ¥Ì)mùÑ½­¥¼µÁ½ÍÑÉ•ÍùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ½­¥¼µÁ½ÍÑÉ•Ì)mùÑ½­¥¼µÁ½ÍÑÉ•ÍùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ½­¥¼´µÁ½ÍÑÉ•ÌµÉ¥µÍ½¸)mùÑ½­¥¼µÁ½ÍÑÉ•Íù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½­¥¼µÁ½ÍÑÉ•Ì)mùÑ½­¥¼µÁ½ÍÑÉ•Íù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ½­¥¼µÁ½ÍÑÉ•Ìı±…‰•°õÑ½­¥¼µÁ½ÍÑÉ•Ì)mùÑ½­¥¼µÁ½ÍÑÉ•Íù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ½­¥¼µÁ½ÍÑÉ•Ì)mùÑ½­¥¼µÁ½ÍÑÉ•Íù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ½­¥¼´µÁ½ÍÑÉ•Ìµå•±±½Ü)mùÑ½­¥¼µÁ½ÍÑÉ•ÍùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Í™…­±•È½ÉÕÍĞµÁ½ÍÑÉ•Ì½ÑÉ•”½µ…ÍÑ•È½Ñ½­¥¼µÁ½ÍÑÉ•Ì)mùÑ½­¥¼µÁ½ÍÑÉ•ÍùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ½­¥¼´µÁ½ÍÑÉ•ÌµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ½­¥¼µÍÑÉ•…µù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½­¥¼µÍÑÉ•…´)mùÑ½­¥¼µÑÕ¹ÍÑ•¹¥Ñ•ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ½­¥¼µÑÕ¹ÍÑ•¹¥Ñ”)mùÑ½­¥¼µÑÕ¹ÍÑ•¹¥Ñ•ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ½­¥¼´µÑÕ¹ÍÑ•¹¥Ñ”µÉ¥µÍ½¸)mùÑ½­¥¼µÑÕ¹ÍÑ•¹¥Ñ•ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½­¥¼µÑÕ¹ÍÑ•¹¥Ñ”)mùÑ½­¥¼µÑÕ¹ÍÑ•¹¥Ñ•ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ½­¥¼µÑÕ¹ÍÑ•¹¥Ñ”ı±…‰•°õÑ½­¥¼µÑÕ¹ÍÑ•¹¥Ñ”)mùÑ½­¥¼µÑÕ¹ÍÑ•¹¥Ñ•ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ½­¥¼µÑÕ¹ÍÑ•¹¥Ñ”)mùÑ½­¥¼µÑÕ¹ÍÑ•¹¥Ñ•ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ½­¥¼´µÑÕ¹ÍÑ•¹¥Ñ”µå•±±½Ü)mùÑ½­¥¼µÑÕ¹ÍÑ•¹¥Ñ•ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Í¹…ÁÙ¥•Ü½Ñ½­¥¼µÑÕ¹ÍÑ•¹¥Ñ”)mùÑ½­¥¼µÑÕ¹ÍÑ•¹¥Ñ•ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ½­¥¼´µÑÕ¹ÍÑ•¹¥Ñ”µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ½­¥¼èéµ…¥¹ùÕÉÉ•¹ĞµÑ¡É•…µÉÕ¹Ñ¥µ•ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½­¥¼½±…Ñ•ÍĞ½Ñ½­¥¼½…ÑÑÈ¹µ…¥¸¹¡Ñµ°ÕÉÉ•¹ĞµÑ¡É•…µÉÕ¹Ñ¥µ”)mùÑ½­¥¼èéÍå¹Œèé½¹•Í¡½Ñù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½­¥¼½±…Ñ•ÍĞ½Ñ½­¥¼½Íå¹Œ½½¹•Í¡½Ğ)mùÑ½­¥¼èéÍå¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½­¥¼½±…Ñ•ÍĞ½Ñ½­¥¼½Íå¹Œ)mùÑ½­¥¼èéÑ…Í¬èé1½…±M•Ñù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½­¥¼½±…Ñ•ÍĞ½Ñ½­¥¼½Ñ…Í¬½ÍÑÉÕĞ¹1½…±M•Ğ¹¡Ñµ°)mùÑ½­¥¼èéÑ…Í¬èéÍÁ…İ¹}‰±½­¥¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½­¥¼½±…Ñ•ÍĞ½Ñ½­¥¼½Ñ…Í¬½™¸¹ÍÁ…İ¹}‰±½­¥¹œ¹¡Ñµ°)mùÑ½­¥¼èéÑ…Í¬èéÍÁ…İ¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½­¥¼½±…Ñ•ÍĞ½Ñ½­¥¼½Ñ…Í¬½™¸¹ÍÁ…İ¸¹¡Ñµ°)mùÑ½­¥½ù‰É¥‘¥¹œµİ¥Ñ µÍå¹Œµ½‘•ùİ•‰Í¥Ñ•tè¡ÑÑÁÌè¼½Ñ½­¥¼¹ÉÌ½Ñ½­¥¼½Ñ½Á¥Ì½‰É¥‘¥¹œ)mùÑ½­¥½ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ½­¥¼)mùÑ½­¥½ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ½­¥¼µÉ¥µÍ½¸)mùÑ½­¥½ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½­¥¼)mùÑ½­¥½ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ½­¥¼ı±…‰•°õÑ½­¥¼)mùÑ½­¥½ù•á…µÁ±•Íù‘½Ítè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Ñ½­¥¼µÉÌ½Ñ½­¥¼½ÑÉ•”½µ…ÍÑ•È½•á…µÁ±•Ì)mùÑ½­¥½ù•á…µÁ±•Íù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Q½­¥½}•á…µÁ±•ÌµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ½­¥½ù±½ÍÍ…Éåùİ•‰Í¥Ñ•tè¡ÑÑÁÌè¼½Ñ½­¥¼¹ÉÌ½Ñ½­¥¼½±½ÍÍ…Éä)mùÑ½­¥½ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ½­¥¼)mùÑ½­¥½ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ½­¥¼µå•±±½Ü)mùÑ½­¥½ùµ¥¹¤µÉ•‘¥ÍùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Ñ½­¥¼µÉÌ½µ¥¹¤µÉ•‘¥Ì)mùÑ½­¥½ùµ¥¹¤µÉ•‘¥ÍùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Q½­¥½}µ¥¹¥}É•‘¥ÌµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ½­¥½ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Ñ½­¥¼µÉÌ½Ñ½­¥¼)mùÑ½­¥½ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ½­¥¼µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ½­¥½ùÑÕÑ½É¥…±}¡•±±½}Ñ½­¥½ùİ•‰Í¥Ñ•tè¡ÑÑÁÌè¼½Ñ½­¥¼¹ÉÌ½Ñ½­¥¼½ÑÕÑ½É¥…°½¡•±±¼µÑ½­¥¼Ñ¡”µ½‘”)mùÑ½­¥½ùÑÕÑ½É¥…±ù‘½Ítè¡ÑÑÁÌè¼½Ñ½­¥¼¹ÉÌ½Ñ½­¥¼½ÑÕÑ½É¥…°)mùÑ½­¥½ùİ•‰Í¥Ñ•tè¡ÑÑÁÌè¼½Ñ½­¥¼¹ÉÌ)mùÑ½­¥½ùİ•‰Í¥Ñ•ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ½­¥¼µ½É…°)mùÑ½µ°èéY…±Õ•ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½µ°½±…Ñ•ÍĞ½Ñ½µ°½•¹Õ´¹Y…±Õ”¹¡Ñµ°)mùÑ½µ±}•‘¥ÑùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ½µ±}•‘¥Ğ)mùÑ½µ±}•‘¥ÑùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ½µ±}}•‘¥ĞµÉ¥µÍ½¸)mùÑ½µ±}•‘¥Ñù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½µ±}•‘¥Ğ)mùÑ½µ±}•‘¥Ñù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ½µ±}•‘¥Ğı±…‰•°õÑ½µ±}•‘¥Ğ)mùÑ½µ±}•‘¥Ñù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ½µ±}•‘¥Ğ)mùÑ½µ±}•‘¥Ñù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ½µ±}}•‘¥Ğµå•±±½Ü)mùÑ½µ±}•‘¥ÑùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Ñ½µ°µÉÌ½Ñ½µ°½ÑÉ•”½µ…¥¸½É…Ñ•Ì½Ñ½µ±}•‘¥Ğ)mùÑ½µ±}•‘¥ÑùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ½µ±}}•‘¥ĞµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ½µ±ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ½µ°)mùÑ½µ±ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ½µ°µÉ¥µÍ½¸)mùÑ½µ±ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½µ°)mùÑ½µ±ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ½µ°ı±…‰•°õÑ½µ°)mùÑ½µ±ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ½µ°)mùÑ½µ±ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ½µ°µå•±±½Ü)mùÑ½µ±ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Ñ½µ°µÉÌ½Ñ½µ°)mùÑ½µ±ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ½µ°µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ½¹¥ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ½¹¥Œ)mùÑ½¹¥ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ½¹¥ŒµÉ¥µÍ½¸)mùÑ½¹¥ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½¹¥Œ)mùÑ½¹¥ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ½¹¥Œı±…‰•°õÑ½¹¥Œ)mùÑ½¹¥ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ½¹¥Œ)mùÑ½¹¥ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ½¹¥Œµå•±±½Ü)mùÑ½¹¥ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½¡åÁ•É¥Õ´½Ñ½¹¥Œ)mùÑ½¹¥ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ½¹¥ŒµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ½İ•Èµ¡ÑÑÁùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ½İ•Èµ¡ÑÑÀ)mùÑ½İ•Èµ¡ÑÑÁùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ½İ•È´µ¡ÑÑÀµÉ¥µÍ½¸)mùÑ½İ•Èµ¡ÑÑÁù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½İ•Èµ¡ÑÑÀ)mùÑ½İ•Èµ¡ÑÑÁù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ½İ•Èµ¡ÑÑÀı±…‰•°õÑ½İ•Èµ¡ÑÑÀ)mùÑ½İ•Èµ¡ÑÑÁù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ½İ•Èµ¡ÑÑÀ)mùÑ½İ•Èµ¡ÑÑÁù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ½İ•È´µ¡ÑÑÀµå•±±½Ü)mùÑ½İ•Èµ¡ÑÑÁùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Ñ½İ•ÈµÉÌ½Ñ½İ•Èµ¡ÑÑÀ)mùÑ½İ•Èµ¡ÑÑÁùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ½İ•È´µ¡ÑÑÀµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑ½İ•Èµİ•‰ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½İ•Èµİ•ˆ)mùÑ½İ•Èèé1…å•Éù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½İ•È½±…Ñ•ÍĞ½Ñ½İ•È½ÑÉ…¥Ğ¹1…å•È¹¡Ñµ°)mùÑ½İ•ÈèéM•ÉÙ¥•	Õ¥±‘•Éù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½İ•È½±…Ñ•ÍĞ½Ñ½İ•È½ÍÑÉÕĞ¹M•ÉÙ¥•	Õ¥±‘•È¹¡Ñµ°)mùÑ½İ•ÈèéM•ÉÙ¥•ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½İ•È½±…Ñ•ÍĞ½Ñ½İ•È½ÑÉ…¥Ğ¹M•ÉÙ¥”¹¡Ñµ°)mùÑ½İ•ÉùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ñ½İ•È)mùÑ½İ•ÉùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑ½İ•ÈµÉ¥µÍ½¸)mùÑ½İ•Éù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñ½İ•È)mùÑ½İ•Éù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ñ½İ•Èı±…‰•°õÑ½İ•È)mùÑ½İ•Éù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ñ½İ•È)mùÑ½İ•Éù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑ½İ•Èµå•±±½Ü)mùÑ½İ•ÉùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Ñ½İ•ÈµÉÌ½Ñ½İ•È)mùÑ½İ•ÉùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ñ½İ•ÈµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑÉ…¥¹œµ…ÁÁ•¹‘•ÉùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÑÉ…¥¹œµ…ÁÁ•¹‘•È)mùÑÉ…¥¹œµ©½ÕÉ¹…±‘ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÑÉ…¥¹œµ©½ÕÉ¹…±)mùÑÉ…¥¹œµ©½ÕÉ¹…±‘ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑÉ…¥¹}}©½ÕÉ¹…±µÉ¥µÍ½¸)mùÑÉ…¥¹œµ©½ÕÉ¹…±‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÑÉ…¥¹œµ©½ÕÉ¹…±)mùÑÉ…¥¹œµ©½ÕÉ¹…±‘ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÑÉ…¥¹œµ©½ÕÉ¹…±ı±…‰•°õÑÉ…¥¹œµ©½ÕÉ¹…±)mùÑÉ…¥¹œµ©½ÕÉ¹…±‘ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½ÑÉ…¥¹œµ©½ÕÉ¹…±)mùÑÉ…¥¹œµ©½ÕÉ¹…±‘ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑÉ…¥¹}}©½ÕÉ¹…±µå•±±½Ü)mùÑÉ…¥¹œµ©½ÕÉ¹…±‘ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Ñ½­¥¼µÉÌ½ÑÉ…¥¹œ½ÑÉ•”½µ…ÍÑ•È½ÑÉ…¥¹œµ©½ÕÉ¹…±)mùÑÉ…¥¹œµ©½ÕÉ¹…±‘ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÑÉ…¥¹}}©½ÕÉ¹…±µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑÉ…¥¹œµÍÕ‰ÍÉ¥‰•ÉùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÑÉ…¥¹œµÍÕ‰ÍÉ¥‰•È)mùÑÉ…¥¹œµÍÕ‰ÍÉ¥‰•ÉùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑÉ…¥¹œ´µÍÕ‰ÍÉ¥‰•ÈµÉ¥µÍ½¸)mùÑÉ…¥¹œµÍÕ‰ÍÉ¥‰•Éù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÑÉ…¥¹œµÍÕ‰ÍÉ¥‰•È)mùÑÉ…¥¹œµÍÕ‰ÍÉ¥‰•Éù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÑÉ…¥¹œµÍÕ‰ÍÉ¥‰•Èı±…‰•°õÑÉ…¥¹œµÍÕ‰ÍÉ¥‰•È)mùÑÉ…¥¹œèéÍÁ…¸èéMÁ…¸èé¥¹}Í½Á•ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÑÉ…¥¹œ½±…Ñ•ÍĞ½ÑÉ…¥¹œ½ÍÁ…¸½ÍÑÉÕĞ¹MÁ…¸¹¡Ñµ°µ•Ñ¡½¹¥¹}Í½Á”)mùÑÉ…¥¹ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÑÉ…¥¹œ)mùÑÉ…¥¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÑÉ…¥¹œ)mùÑÉ…¥¹ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÑÉ…¥¹œı±…‰•°õÑÉ…¥¹œ)mùÑÉ…¥¹ù¹•áĞµÍÑ•ÁÍtè¡ÑÑÁÌè¼½Ñ½­¥¼¹ÉÌ½Ñ½­¥¼½Ñ½Á¥Ì½ÑÉ…¥¹œµ¹•áĞµÍÑ•ÁÌ)mùÑÉ…¥¹ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Ñ½­¥¼µÉÌ½ÑÉ…¥¹œ)mùÑÉ…¥¹ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÑÉ…¥¹œµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑÉ…Ñù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÑÉ…Ğ)mùÑÉ…¹Í™½ÉµÍùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÑÉ…¹Í™½ÉµÌ)mùÑÉ•”µÍ¥ÑÑ•ÉùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÑÉ•”µÍ¥ÑÑ•È)mùÑÉ•”µÍ¥ÑÑ•ÉùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑÉ•”´µÍ¥ÑÑ•ÈµÉ¥µÍ½¸)mùÑÉ•”µÍ¥ÑÑ•Éù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÑÉ•”µÍ¥ÑÑ•È)mùÑÉ•”µÍ¥ÑÑ•Éù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÑÉ•”µÍ¥ÑÑ•Èı±…‰•°õÑÉ•”µÍ¥ÑÑ•È)mùÑÉ•”µÍ¥ÑÑ•Éù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½ÑÉ•”µÍ¥ÑÑ•È)mùÑÉ•”µÍ¥ÑÑ•Éù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑÉ•”´µÍ¥ÑÑ•Èµå•±±½Ü)mùÑÉ•”µÍ¥ÑÑ•ÉùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½ÑÉ•”µÍ¥ÑÑ•È½ÑÉ•”µÍ¥ÑÑ•È)mùÑÉ•”µÍ¥ÑÑ•ÉùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÑÉ•”´µÍ¥ÑÑ•ÈµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑÉ¥±±¥ÕµùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÑÉ¥±±¥Õ´)mùÑÉ¥±±¥ÕµùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑÉ¥±±¥Õ´µÉ¥µÍ½¸)mùÑÉ¥±±¥Õµù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÑÉ¥±±¥Õ´)mùÑÉ¥±±¥Õµù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÑÉ¥±±¥Õ´ı±…‰•°õÑÉ¥±±¥Õ´)mùÑÉ¥±±¥Õµù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½ÑÉ¥±±¥Õ´)mùÑÉ¥±±¥Õµù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑÉ¥±±¥Õ´µå•±±½Ü)mùÑÉ¥±±¥ÕµùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½ÑÉ¥±±¥Õ´µÉÌ½ÑÉ¥±±¥Õ´)mùÑÉ¥±±¥ÕµùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÑÉ¥±±¥Õ´µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑÉå‰Õ¥±‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÑÉå‰Õ¥±)mùÑÉå‰Õ¥±‘ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½‘Ñ½±¹…ä½ÑÉå‰Õ¥±)mùÑÑ˜µÁ…ÉÍ•ÉùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÑÑ˜µÁ…ÉÍ•È)mùÑÑ˜µÁ…ÉÍ•ÉùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑÑ˜´µÁ…ÉÍ•ÈµÉ¥µÍ½¸)mùÑÑ˜µÁ…ÉÍ•Éù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÑÑ˜µÁ…ÉÍ•È)mùÑÑ˜µÁ…ÉÍ•Éù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÑÑ˜µÁ…ÉÍ•Èı±…‰•°õÑÑ˜µÁ…ÉÍ•È)mùÑÑ˜µÁ…ÉÍ•Éù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½ÑÑ˜µÁ…ÉÍ•È)mùÑÑ˜µÁ…ÉÍ•Éù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑÑ˜´µÁ…ÉÍ•Èµå•±±½Ü)mùÑÑ˜µÁ…ÉÍ•ÉùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½¡…É™‰Õéè½ÑÑ˜µÁ…ÉÍ•È)mùÑÑ˜µÁ…ÉÍ•ÉùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÑÑ˜´µÁ…ÉÍ•ÈµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑÕ¥ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÑÕ¤)mùÑÕ¥ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑÕ¤µÉ¥µÍ½¸)mùÑÕ¥ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÑÕ¤)mùÑÕ¥ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÑÕ¤ı±…‰•°õÑÕ¤)mùÑÕ¥ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½ÑÕ¤)mùÑÕ¥ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑÕ¤µå•±±½Ü)mùÑÕ¥ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½™‘•¡…Ô½ÑÕ¤µÉÌ)mùÑÕ¥ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÑÕ¤µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑÕ¸µÑ…Áù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÑÕ¸µÑ…À)mùÑÕ¹ÍÑ•¹¥Ñ•ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÑÕ¹ÍÑ•¹¥Ñ”)mùÑÕ¹ÍÑ•¹¥Ñ•ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑÕ¹ÍÑ•¹¥Ñ”µÉ¥µÍ½¸)mùÑÕ¹ÍÑ•¹¥Ñ•ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÑÕ¹ÍÑ•¹¥Ñ”)mùÑÕ¹ÍÑ•¹¥Ñ•ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÑÕ¹ÍÑ•¹¥Ñ”ı±…‰•°õÑÕ¹ÍÑ•¹¥Ñ”)mùÑÕ¹ÍÑ•¹¥Ñ•ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½ÑÕ¹ÍÑ•¹¥Ñ”)mùÑÕ¹ÍÑ•¹¥Ñ•ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑÕ¹ÍÑ•¹¥Ñ”µå•±±½Ü)mùÑÕ¹ÍÑ•¹¥Ñ•ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Í¹…ÁÙ¥•Ü½ÑÕ¹ÍÑ•¹¥Ñ”µÉÌ)mùÑÕ¹ÍÑ•¹¥Ñ•ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÑÕ¹ÍÑ•¹¥Ñ”µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑİ¥åù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ñİ¥ä)mùÑåÁ•µ‰Õ¥±‘•ÉùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÑåÁ•µ‰Õ¥±‘•È)mùÑåÁ•µ‰Õ¥±‘•ÉùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑåÁ•´µ‰Õ¥±‘•ÈµÉ¥µÍ½¸)mùÑåÁ•µ‰Õ¥±‘•Éù‘½Ítè¡ÑÑÁÌè¼½¥‘…¹…Éå”¹¥Ñ¡Õˆ¹¥¼½ÉÕÍĞµÑåÁ•µ‰Õ¥±‘•È)mùÑåÁ•µ‰Õ¥±‘•Éù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÑåÁ•µ‰Õ¥±‘•Èı±…‰•°õÑåÁ•µ‰Õ¥±‘•È)mùÑåÁ•µ‰Õ¥±‘•Éù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½ÑåÁ•µ‰Õ¥±‘•È)mùÑåÁ•µ‰Õ¥±‘•Éù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑåÁ•´µ‰Õ¥±‘•Èµå•±±½Ü)mùÑåÁ•µ‰Õ¥±‘•ÉùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½¥‘…¹…Éå”½ÉÕÍĞµÑåÁ•µ‰Õ¥±‘•È)mùÑåÁ•µ‰Õ¥±‘•ÉùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÑåÁ•´µ‰Õ¥±‘•ÈµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑåÁ•¹ÕµùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÑåÁ•¹Õ´)mùÑåÁ•¹ÕµùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÑåÁ•¹Õ´µÉ¥µÍ½¸)mùÑåÁ•¹Õµù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÑåÁ•¹Õ´)mùÑåÁ•¹Õµù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÑåÁ•¹Õ´ı±…‰•°õÑåÁ•¹Õ´)mùÑåÁ•¹Õµù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½ÑåÁ•¹Õ´)mùÑåÁ•¹Õµù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÑåÁ•¹Õ´µå•±±½Ü)mùÑåÁ•¹ÕµùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Á…¡½±œ½ÑåÁ•¹Õ´)mùÑåÁ•¹ÕµùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÑåÁ•¹Õ´µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÑåÁ¥™åù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÑåÁ¥™ä)mùÕ±¥‘ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Õ±¥)mùÕ±¥‘ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÕ±¥µÉ¥µÍ½¸)mùÕ±¥‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Õ±¥)mùÕ±¥‘ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Õ±¥ı±…‰•°õÕ±¥)mùÕ±¥‘ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Õ±¥)mùÕ±¥‘ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÕ±¥µå•±±½Ü)mùÕ±¥‘ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½‘å±…¹¡…ÉĞ½Õ±¥µÉÌ)mùÕ±¥‘ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Õ±¥µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÕ±ÑÉ…Ù¥½±•Ñù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Õ±ÑÉ…Ù¥½±•Ğ)mùÕ±ÑÉ…Ù¥½±•Ñù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Õ±ÑÉ…Ù¥½±•Ğı±…‰•°õÕ±ÑÉ…Ù¥½±•Ğ)mùÕ¹¥Œµ±…¹¥‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Õ¹¥Œµ±…¹¥)mùÕ¹¥½‘”µÍ•µ•¹Ñ…Ñ¥½¸èéU¹¥½‘•M•µ•¹Ñ…Ñ¥½¸èéÉ…Á¡•µ•Íù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Õ¹¥½‘”µÍ•µ•¹Ñ…Ñ¥½¸½±…Ñ•ÍĞ½Õ¹¥½‘”µÍ•µ•¹Ñ…Ñ¥½¸½ÑÉ…¥Ğ¹U¹¥½‘•M•µ•¹Ñ…Ñ¥½¸¹¡Ñµ°Ñåµ•Ñ¡½¹É…Á¡•µ•Ì)mùÕ¹¥½‘”µÍ•µ•¹Ñ…Ñ¥½¹ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Õ¹¥½‘”µÍ•µ•¹Ñ…Ñ¥½¸)mùÕ¹¥½‘”µÍ•µ•¹Ñ…Ñ¥½¹ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÕ¹¥½‘”´µÍ•µ•¹Ñ…Ñ¥½¸µÉ¥µÍ½¸)mùÕ¹¥½‘”µÍ•µ•¹Ñ…Ñ¥½¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Õ¹¥½‘”µÍ•µ•¹Ñ…Ñ¥½¸)mùÕ¹¥½‘”µÍ•µ•¹Ñ…Ñ¥½¹ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Õ¹¥½‘”µÍ•µ•¹Ñ…Ñ¥½¸ı±…‰•°õÕ¹¥½‘”µÍ•µ•¹Ñ…Ñ¥½¸)mùÕ¹¥½‘”µÍ•µ•¹Ñ…Ñ¥½¹ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Õ¹¥½‘”µÍ•µ•¹Ñ…Ñ¥½¸)mùÕ¹¥½‘”µÍ•µ•¹Ñ…Ñ¥½¹ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÕ¹¥½‘”´µÍ•µ•¹Ñ…Ñ¥½¸µå•±±½Ü)mùÕ¹¥½‘”µÍ•µ•¹Ñ…Ñ¥½¹ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Õ¹¥½‘”µÉÌ½Õ¹¥½‘”µÍ•µ•¹Ñ…Ñ¥½¸)mùÕ¹¥½‘”µÍ•µ•¹Ñ…Ñ¥½¹ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Õ¹¥½‘”´µÍ•µ•¹Ñ…Ñ¥½¸µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÕ¹¥™™¥ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Õ¹¥™™¤)mùÕ¹¥™™¥ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÕ¹¥™™¤µÉ¥µÍ½¸)mùÕ¹¥™™¥ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Õ¹¥™™¤½±…Ñ•ÍĞ½Õ¹¥™™¤)mùÕ¹¥™™¥ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Õ¹¥™™¤ı±…‰•°õÕ¹¥™™¤)mùÕ¹¥™™¥ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Õ¹¥™™¤)mùÕ¹¥™™¥ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÕ¹¥™™¤µå•±±½Ü)mùÕ¹¥™™¥ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½µ½é¥±±„½Õ¹¥™™¤µÉÌ)mùÕ¹¥™™¥ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Õ¹¥™™¤µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÕ¹¥™™¥ùİ•‰Í¥Ñ•tè¡ÑÑÁÌè¼½µ½é¥±±„¹¥Ñ¡Õˆ¹¥¼½Õ¹¥™™¤µÉÌ)mùÕ¹¥™™¥ùİ•‰Í¥Ñ•ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Õ¹¥™™¤µ½É…°)mùÕ½µù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Õ½´)mùÕ½µù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Õ½´ı±…‰•°õÕ½´)mùÕÉ‘˜µÉÍùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÕÉ‘˜µÉÌ)mùÕÉ‘˜µÙ¥éùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÕÉ‘˜µÙ¥è)mùÕÉ‘˜µÙ¥éù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÕÉ‘˜µÙ¥è)mùÕÉ‘˜µÙ¥éù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÕÉ‘˜µÙ¥èı±…‰•°õÕÉ‘˜µÙ¥è)mùÕÉ•ÅùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÕÉ•Ä)mùÕÉ•ÅùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÕÉ•ÄµÉ¥µÍ½¸)mùÕÉ•Åù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÕÉ•Ä)mùÕÉ•Åù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÕÉ•Äı±…‰•°õÕÉ•Ä)mùÕÉ•Åù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½ÕÉ•Ä)mùÕÉ•Åù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÕÉ•Äµå•±±½Ü)mùÕÉ•ÅùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…±•ÍÑ•¸½ÕÉ•Ä)mùÕÉ•ÅùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÕÉ•ÄµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÕÉ°èéA…ÉÍ•=ÁÑ¥½¹Íù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÕÉ°½±…Ñ•ÍĞ½ÕÉ°½ÍÑÉÕĞ¹A…ÉÍ•=ÁÑ¥½¹Ì¹¡Ñµ°)mùÕÉ°èéA…Ñ¡M•µ•¹ÑÍ5ÕĞèé±•…Éù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÕÉ°½±…Ñ•ÍĞ½ÕÉ°½ÍÑÉÕĞ¹A…Ñ¡M•µ•¹ÑÍ5ÕĞ¹¡Ñµ°µ•Ñ¡½¹±•…È)mùÕÉ°èéA½Í¥Ñ¥½¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÕÉ°½±…Ñ•ÍĞ½ÕÉ°½•¹Õ´¹A½Í¥Ñ¥½¸¹¡Ñµ°)mùÕÉ°èéUÉ°èé©½¥¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÕÉ°½±…Ñ•ÍĞ½ÕÉ°½ÍÑÉÕĞ¹UÉ°¹¡Ñµ°µ•Ñ¡½¹©½¥¸)mùÕÉ°èéUÉ°èé½É¥¥¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÕÉ°½±…Ñ•ÍĞ½ÕÉ°½ÍÑÉÕĞ¹UÉ°¹¡Ñµ°µ•Ñ¡½¹½É¥¥¸)mùÕÉ°èéUÉ°èéÁ…ÉÍ•}İ¥Ñ¡}Á…É…µÍù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÕÉ°½±…Ñ•ÍĞ½ÕÉ°½ÍÑÉÕĞ¹UÉ°¹¡Ñµ°µ•Ñ¡½¹Á…ÉÍ•}İ¥Ñ¡}Á…É…µÌ)mùÕÉ°èéUÉ°èéÁ…ÉÍ•ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÕÉ°½±…Ñ•ÍĞ½ÕÉ°½ÍÑÉÕĞ¹UÉ°¹¡Ñµ°µ•Ñ¡½¹Á…ÉÍ”)mùÕÉ°èéUÉ°èéÍ•Ñ}ÅÕ•Éåù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÕÉ°½±…Ñ•ÍĞ½ÕÉ°½ÍÑÉÕĞ¹UÉ°¹¡Ñµ°µ•Ñ¡½¹Í•Ñ}ÅÕ•Éä)mùÕÉ°èéUÉ±ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÕÉ°½±…Ñ•ÍĞ½ÕÉ°½ÍÑÉÕĞ¹UÉ°¹¡Ñµ°)mùÕÉ±ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÕÉ°)mùÕÉ±ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÕÉ°µÉ¥µÍ½¸)mùÕÉ±ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÕÉ°)mùÕÉ±ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÕÉ°ı±…‰•°õÕÉ°)mùÕÉ±ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½ÕÉ°)mùÕÉ±ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÕÉ°µå•±±½Ü)mùÕÉ±ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Í•ÉÙ¼½ÉÕÍĞµÕÉ°)mùÕÉ±ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÕÉ°µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÕÍÑÉùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÕÍÑÈ)mùÕÍÑÉùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÕÍÑÈµÉ¥µÍ½¸)mùÕÍÑÉù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÕÍÑÈ)mùÕÍÑÉù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÕÍÑÈı±…‰•°õÕÍÑÈ)mùÕÍÑÉù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½ÕÍÑÈ)mùÕÍÑÉù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÕÍÑÈµå•±±½Ü)mùÕÍÑÉùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…¹‘•ÉÍ±…¹±…¹‘Ì½ÕÍÑÈ)mùÕÍÑÉùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÕÍÑÈµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÕÍÙù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÕÍÙœ)mùÕÍÙù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÕÍÙœı±…‰•°õÕÍÙœ)mùÕÕ¥‘ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½ÕÕ¥)mùÕÕ¥‘ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÕÕ¥µÉ¥µÍ½¸)mùÕÕ¥‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÕÕ¥)mùÕÕ¥‘ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÕÕ¥ı±…‰•°õÕÕ¥)mùÕÕ¥‘ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½ÕÕ¥)mùÕÕ¥‘ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÕÕ¥µå•±±½Ü)mùÕÕ¥‘ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½ÕÕ¥µÉÌ½ÕÕ¥)mùÕÕ¥‘ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÕÕ¥µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÙ…±É¥¹‘ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ù…±É¥¹)mùÙ…±É¥¹‘ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÙ…±É¥¹µÉ¥µÍ½¸)mùÙ…±É¥¹‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ù…±É¥¹)mùÙ…±É¥¹‘ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ù…±É¥¹ı±…‰•°õÙ…±É¥¹)mùÙ…±É¥¹‘ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ù…±É¥¹)mùÙ…±É¥¹‘ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÙ…±É¥¹µå•±±½Ü)mùÙ…±É¥¹‘ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½‘ÑÉ•‰‰¥•¸½Ù…±É¥¹µÉÌ)mùÙ…±É¥¹‘ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ù…±É¥¹µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÙ…±¥‘…Ñ½Éù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ù…±¥‘…Ñ½È)mùÙ•±±½ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ù•±±¼)mùÙ•±±½ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÙ•±±¼µÉ¥µÍ½¸)mùÙ•±±½ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ù•±±¼)mùÙ•±±½ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ù•±±¼ı±…‰•°õÙ•±±¼)mùÙ•±±½ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ù•±±¼)mùÙ•±±½ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÙ•±±¼µå•±±½Ü)mùÙ•±±½ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½±¥¹•‰•¹‘•È½Ù•±±¼)mùÙ•±±½ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ù•±±¼µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÙ•ÉùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ù•È)mùÙ•ÉùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÙ•ÈµÉ¥µÍ½¸)mùÙ•Éù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ù•È)mùÙ•Éù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ù•Èı±…‰•°õÙ•È)mùÙ•Éù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ù•È)mùÙ•Éù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÙ•Èµå•±±½Ü)mùÙ•ÉùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Õ‘Õ±ÕÌ½Ù•ÈµÉÌ)mùÙ•ÉùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ù•ÈµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÙ¥ÉÑù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ù¥ÉĞ)mùÙ¥Í¥½¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ù¥Í¥½¸)mùÙ¥é¥…ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½Ù¥é¥„)mùÙ¥é¥…ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µÙ¥é¥„µÉ¥µÍ½¸)mùÙ¥é¥…ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½Ù¥é¥„)mùÙ¥é¥…ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½Ù¥é¥„ı±…‰•°õÙ¥é¥„)mùÙ¥é¥…ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½Ù¥é¥„)mùÙ¥é¥…ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµÙ¥é¥„µå•±±½Ü)mùÙ¥é¥…ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Ù¥é¥„½Ù¥é¥„)mùÙ¥é¥…ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½Ù¥é¥„µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùÙÁáù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÙÁà)mùÙÕ±­…¸µÍåÍù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÙÕ±­…¸µÍåÌ)mùÙÕ±­…¹½ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½ÙÕ±­…¹¼)mùÙÕ±­…¹½ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½ÙÕ±­…¹¼ı±…‰•°õÙÕ±­…¹¼)mùİ…±­‘¥Èèé%¹Ñ½%Ñ•Èèé™¥±Ñ•É}•¹ÑÉåù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ…±­‘¥È½±…Ñ•ÍĞ½İ…±­‘¥È½ÍÑÉÕĞ¹%¹Ñ½%Ñ•È¹¡Ñµ°µ•Ñ¡½¹™¥±Ñ•É}•¹ÑÉä)mùİ…±­‘¥Èèé]…±­¥Èèé‘•ÁÑ¡ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ…±­‘¥È½±…Ñ•ÍĞ½İ…±­‘¥È½ÍÑÉÕĞ¹¥É¹ÑÉä¹¡Ñµ°µ•Ñ¡½¹‘•ÁÑ )mùİ…±­‘¥Èèé]…±­¥Èèé™½±±½İ}±¥¹­Íù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ…±­‘¥È½±…Ñ•ÍĞ½İ…±­‘¥È½ÍÑÉÕĞ¹]…±­¥È¹¡Ñµ°µ•Ñ¡½¹™½±±½İ}±¥¹­Ì)mùİ…±­‘¥Èèé]…±­¥Èèéµ…á}‘•ÁÑ¡ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ…±­‘¥È½±…Ñ•ÍĞ½İ…±­‘¥È½ÍÑÉÕĞ¹]…±­¥È¹¡Ñµ°µ•Ñ¡½¹µ…á}‘•ÁÑ )mùİ…±­‘¥Èèé]…±­¥Èèéµ¥¹}‘•ÁÑ¡ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ…±­‘¥È½±…Ñ•ÍĞ½İ…±­‘¥È½ÍÑÉÕĞ¹]…±­¥È¹¡Ñµ°µ•Ñ¡½¹µ¥¹}‘•ÁÑ )mùİ…±­‘¥Èèé]…±­¥Èèé¹•İù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ…±­‘¥È½±…Ñ•ÍĞ½İ…±­‘¥È½ÍÑÉÕĞ¹]…±­¥È¹¡Ñµ°µ•Ñ¡½¹¹•Ü)mùİ…±­‘¥ÉùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½İ…±­‘¥È)mùİ…±­‘¥ÉùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µİ…±­‘¥ÈµÉ¥µÍ½¸)mùİ…±­‘¥Éù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ…±­‘¥È)mùİ…±­‘¥Éù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½İ…±­‘¥Èı±…‰•°õİ…±­‘¥È)mùİ…±­‘¥Éù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½İ…±­‘¥È)mùİ…±­‘¥Éù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµİ…±­‘¥Èµå•±±½Ü)mùİ…±­‘¥ÉùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½	ÕÉ¹ÑMÕÍ¡¤½İ…±­‘¥È)mùİ…±­‘¥ÉùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½İ…±­‘¥ÈµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùİ…¹ÑùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½İ…¹Ğ)mùİ…¹ÑùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µİ…¹ĞµÉ¥µÍ½¸)mùİ…¹Ñù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ…¹Ğ)mùİ…¹Ñù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½İ…¹Ğı±…‰•°õİ…¹Ğ)mùİ…¹Ñù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½İ…¹Ğ)mùİ…¹Ñù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµİ…¹Ğµå•±±½Ü)mùİ…¹ÑùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Í•…¹µ½¹ÍÑ…È½İ…¹Ğ)mùİ…¹ÑùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½İ…¹ĞµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùİ…ÉÁù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ…ÉÀ)mùİ…Í¥ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ…Í¤)mùİ…Í´µ‰¥¹‘•¸µÑ•ÍÑù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ…Í´µ‰¥¹‘•¸µÑ•ÍĞ)mùİ…Í´µ‰¥¹‘•¹ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ…Í´µ‰¥¹‘•¸)mùİ…Í´µ‰¥¹‘•¹ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½İ…Í´µ‰¥¹‘•¸ı±…‰•°õİ…Í´µ‰¥¹‘•¸)mùİ…Í´µ½ÁÑù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ…Í´µ½ÁĞ)mùİ…Í´µÁ…­ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½İ…Í´µÁ…¬)mùİ…Í´µÁ…­ù‘½Ítè¡ÑÑÁÌè¼½ÉÕÍÑİ…Í´¹¥Ñ¡Õˆ¹¥¼½İ…Í´µÁ…¬)mùİ…Í´µÁ…­ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½İ…Í´µÁ…¬ı±…‰•°õİ…Í´µÁ…¬)mùİ…Íµ•ÉùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½İ…Íµ•È)mùİ…Íµ•ÉùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µİ…Íµ•ÈµÉ¥µÍ½¸)mùİ…Íµ•Éù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ…Íµ•È)mùİ…Íµ•Éù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½İ…Íµ•Èı±…‰•°õİ…Íµ•È)mùİ…Íµ•Éù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½İ…Íµ•È)mùİ…Íµ•Éù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµİ…Íµ•Èµå•±±½Ü)mùİ…Íµ•ÉùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½İ…Íµ•É¥¼½İ…Íµ•È)mùİ…Íµ•ÉùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½İ…Íµ•ÈµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùİ…Íµ¥ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ…Íµ¤)mùİ…ÍµÑ¥µ•ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½İ…ÍµÑ¥µ”)mùİ…ÍµÑ¥µ•ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µİ…ÍµÑ¥µ”µÉ¥µÍ½¸)mùİ…ÍµÑ¥µ•ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ…ÍµÑ¥µ”)mùİ…ÍµÑ¥µ•ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½İ…ÍµÑ¥µ”ı±…‰•°õİ…ÍµÑ¥µ”)mùİ…ÍµÑ¥µ•ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½İ…ÍµÑ¥µ”)mùİ…ÍµÑ¥µ•ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµİ…ÍµÑ¥µ”µå•±±½Ü)mùİ…ÍµÑ¥µ•ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½‰åÑ•½‘•…±±¥…¹”½İ…ÍµÑ¥µ”)mùİ…ÍµÑ¥µ•ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½İ…ÍµÑ¥µ”µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùİ…ÍµÑ¥µ•ùİ•‰Í¥Ñ•tè¡ÑÑÁÌè¼½‘½Ì¹İ…ÍµÑ¥µ”¹‘•Ø½¥¹ÑÉ½‘ÕÑ¥½¸¹¡Ñµ°)mùİ…Ñ¡•á•ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ…Ñ¡•á•Œ)mùİ…Ñ¡•á•ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½İ…Ñ¡•á•Œ½İ…Ñ¡•á•Œ)mùİ…ÑÑùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½İ…ÑĞ)mùİ…ÑÑùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µİ…ÑĞµÉ¥µÍ½¸)mùİ…ÑÑù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ…ÑĞ)mùİ…ÑÑù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½İ…ÑĞı±…‰•°õİ…ÑĞ)mùİ…ÑÑù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½İ…ÑĞ)mùİ…ÑÑù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµİ…ÑĞµå•±±½Ü)mùİ…ÑÑùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½‘Ñ½±¹…ä½İ…ÑĞ)mùİ…ÑÑùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½İ…ÑĞµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùİ…Ñù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ…Ğ)mùİ…Ñù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½İ…Ğı±…‰•°õİ…Ğ)mùİ…Ùù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ…Ø)mùİ•ˆµÍåÍùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½İ•ˆµÍåÌ)mùİ•ˆµÍåÍù‘½Ítè¡ÑÑÁÌè¼½ÉÕÍÑİ…Í´¹¥Ñ¡Õˆ¹¥¼½İ…Í´µ‰¥¹‘•¸½…Á¤½İ•‰}ÍåÌ)mùİ•ˆÍù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ•ˆÌ)mùİ•‰‰É½İÍ•Éù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½İ•‰‰É½İÍ•È)mùİ•‰Á­¤µÉ½½Ğµ•ÉÑÍù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½İ•‰Á­¤µÉ½½Ğµ•ÉÑÌ)mùİ•‰Áù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ•‰À)mùİ•‰É•¹‘•ÉùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½İ•‰É•¹‘•È)mùİ•‰É•¹‘•ÉùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µİ•‰É•¹‘•ÈµÉ¥µÍ½¸)mùİ•‰É•¹‘•Éù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ•‰É•¹‘•È)mùİ•‰É•¹‘•Éù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½İ•‰É•¹‘•Èı±…‰•°õİ•‰É•¹‘•È)mùİ•‰É•¹‘•Éù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½İ•‰É•¹‘•È)mùİ•‰É•¹‘•Éù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµİ•‰É•¹‘•Èµå•±±½Ü)mùİ•‰É•¹‘•ÉùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Í•ÉÙ¼½İ•‰É•¹‘•È)mùİ•‰É•¹‘•ÉùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½İ•‰É•¹‘•ÈµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùİ••}…±±½ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½İ••}…±±½Œ)mùİ••}…±±½ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µİ••}}…±±½ŒµÉ¥µÍ½¸)mùİ••}…±±½ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ••}…±±½Œ)mùİ••}…±±½ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½İ••}…±±½Œı±…‰•°õİ••}…±±½Œ)mùİ••}…±±½ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½İ••}…±±½Œ)mùİ••}…±±½ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµİ••}}…±±½Œµå•±±½Ü)mùİ••}…±±½ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½ÉÕÍÑİ…Í´½İ••}…±±½Œ)mùİ••}…±±½ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½İ••}}…±±½ŒµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùİÁÕùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½İÁÔ)mùİÁÕùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µİÁÔµÉ¥µÍ½¸)mùİÁÕù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İÁÔ)mùİÁÕù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½İÁÔı±…‰•°õİÁÔ)mùİÁÕù•á…µÁ±•Ítè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½™àµÉÌ½İÁÔ½ÑÉ•”½ØÈĞ½•á…µÁ±•Ì)mùİÁÕù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½İÁÔ)mùİÁÕù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµİÁÔµå•±±½Ü)mùİÁÕùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½™àµÉÌ½İÁÔ)mùİÁÕùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½İÁÔµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùİÁÕùİ•‰Í¥Ñ•tè¡ÑÑÁÌè¼½İÁÔ¹ÉÌ)mùİÁÕùİ•‰Í¥Ñ•ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½İÁÔµ½É…°)mùİ¡¥¡ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½İ¡¥ )mùİ¡¥¡ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µİ¡¥ µÉ¥µÍ½¸)mùİ¡¥¡ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ¡¥ )mùİ¡¥¡ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½İ¡¥ ı±…‰•°õİ¡¥ )mùİ¡¥¡ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½İ¡¥ )mùİ¡¥¡ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµİ¡¥ µå•±±½Ü)mùİ¡¥¡ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½¡…ÉÉå™•¤½İ¡¥ µÉÌ)mùİ¡¥¡ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½İ¡¥ µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùİ¥¹…Á¥ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½İ¥¹…Á¤)mùİ¥¹…Á¥ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µİ¥¹…Á¤µÉ¥µÍ½¸)mùİ¥¹…Á¥ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ¥¹…Á¤)mùİ¥¹…Á¥ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½İ¥¹…Á¤ı±…‰•°õİ¥¹…Á¤)mùİ¥¹…Á¥ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½İ¥¹…Á¤)mùİ¥¹…Á¥ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµİ¥¹…Á¤µå•±±½Ü)mùİ¥¹…Á¥ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½É•Ñ•Àääà½İ¥¹…Á¤µÉÌ)mùİ¥¹…Á¥ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½İ¥¹…Á¤µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùİ¥¹‘½İÍùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½İ¥¹‘½İÌ)mùİ¥¹‘½İÍùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µİ¥¹‘½İÌµÉ¥µÍ½¸)mùİ¥¹‘½İÍù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ¥¹‘½İÌ)mùİ¥¹‘½İÍù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½İ¥¹‘½İÌı±…‰•°õİ¥¹‘½İÌ)mùİ¥¹‘½İÍù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½İ¥¹‘½İÌ)mùİ¥¹‘½İÍù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµİ¥¹‘½İÌµå•±±½Ü)mùİ¥¹‘½İÍùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½µ¥É½Í½™Ğ½İ¥¹‘½İÌµÉÌ)mùİ¥¹‘½İÍùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½İ¥¹‘½İÌµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùİ¥¹¥ÑùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½İ¥¹¥Ğ)mùİ¥¹¥ÑùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µİ¥¹¥ĞµÉ¥µÍ½¸)mùİ¥¹¥Ñù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ¥¹¥Ğ)mùİ¥¹¥Ñù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½İ¥¹¥Ğı±…‰•°õİ¥¹¥Ğ)mùİ¥¹¥Ñù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½İ¥¹¥Ğ)mùİ¥¹¥Ñù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµİ¥¹¥Ğµå•±±½Ü)mùİ¥¹¥ÑùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½ÉÕÍĞµİ¥¹‘½İ¥¹œ½İ¥¹¥Ğ)mùİ¥¹¥ÑùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½İ¥¹¥ĞµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùİ¥¹¹½İù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ¥¹¹½Ü)mùİ¥¹É•ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ¥¹É•œ)mùİ­Ñù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½İ­Ğ)mùàÈØÑù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½àÈØĞ)mùàÔÀäµ•ÉÑùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½àÔÀäµ•ÉĞ)mùàÔÀäµ•ÉÑùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µàÔÀä´µ•ÉĞµÉ¥µÍ½¸)mùàÔÀäµ•ÉÑù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½àÔÀäµ•ÉĞ)mùàÔÀäµ•ÉÑù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½àÔÀäµ•ÉĞı±…‰•°õàÔÀäµ•ÉĞ)mùàÔÀäµ•ÉÑù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½àÔÀäµ•ÉĞ)mùàÔÀäµ•ÉÑù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµàÔÀä´µ•ÉĞµå•±±½Ü)mùàÔÀäµ•ÉÑùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½IÕÍÑÉåÁÑ¼½™½Éµ…ÑÌ½ÑÉ•”½µ…ÍÑ•È½àÔÀäµ•ÉĞ)mùàÔÀäµ•ÉÑùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½àÔÀä´µ•ÉĞµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùàÔÀäµ•ÉÑùİ•‰Í¥Ñ•tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½IÕÍÑÉåÁÑ¼½™½Éµ…ÑÌ½‰±½ˆ½µ…ÍÑ•È½àÔÀäµ•ÉĞ½I5¹µ)mùàÔÀäµ•ÉÑùİ•‰Í¥Ñ•ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½àÔÀä´µ•ÉĞµ½É…°)mùá‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½á)mùá¥±•µùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½á¥±•´)mùá¥±•µùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µá¥±•´µÉ¥µÍ½¸)mùá¥±•µù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½á¥±•´)mùá¥±•µù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½á¥±•´ı±…‰•°õá¥±•´)mùá¥±•µù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½á¥±•´)mùá¥±•µù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµá¥±•´µå•±±½Ü)mùá¥±•µùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½±¥¹•‰•¹‘•È½á¥±•´)mùá¥±•µùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½á¥±•´µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùá¥±•µùİ•‰Í¥Ñ•tè¡ÑÑÁÌè¼½á¥±•´¹‘•Ø)mùá¥±•µùİ•‰Í¥Ñ•ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½á¥±•´µ½É…°)mùáµ°Õ•Ù•ÉùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½áµ°Õ•Ù•È)mùáµ°Õ•Ù•ÉùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µáµ°Õ•Ù•ÈµÉ¥µÍ½¸)mùáµ°Õ•Ù•Éù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½áµ°Õ•Ù•È)mùáµ°Õ•Ù•Éù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½áµ°Õ•Ù•Èı±…‰•°õáµ°Õ•Ù•È)mùáµ°Õ•Ù•Éù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½áµ°Õ•Ù•È)mùáµ°Õ•Ù•Éù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµáµ°Õ•Ù•Èµå•±±½Ü)mùáµ°Õ•Ù•ÉùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Í•ÉÙ¼½¡Ñµ°Õ•Ù•È)mùáµ°Õ•Ù•ÉùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½áµ°Õ•Ù•ÈµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùáµ°Õ•Ù•Éùİ•‰Í¥Ñ•tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Í•ÉÙ¼½¡Ñµ°Õ•Ù•È½‰±½ˆ½µ…¥¸½áµ°Õ•Ù•È½I5¹µ)mùáµ°Õ•Ù•Éùİ•‰Í¥Ñ•ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½áµ°Õ•Ù•Èµ½É…°)mùáµ±Á…ÉÍ•ÉùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½áµ±Á…ÉÍ•È)mùáµ±Á…ÉÍ•ÉùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µáµ±Á…ÉÍ•ÈµÉ¥µÍ½¸)mùáµ±Á…ÉÍ•Éù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½áµ±Á…ÉÍ•È)mùáµ±Á…ÉÍ•Éù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½áµ±Á…ÉÍ•Èı±…‰•°õáµ±Á…ÉÍ•È)mùáµ±Á…ÉÍ•Éù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½áµ±Á…ÉÍ•È)mùáµ±Á…ÉÍ•Éù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµáµ±Á…ÉÍ•Èµå•±±½Ü)mùáµ±Á…ÉÍ•ÉùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½I…éÉ…±½¸½áµ±Á…ÉÍ•È)mùáµ±Á…ÉÍ•ÉùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½áµ±Á…ÉÍ•ÈµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùáµ±ÑÉ••ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½áµ±ÑÉ•”)mùáµ±ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½áµ°)mùáµ±ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µáµ°µÉ¥µÍ½¸)mùáµ±ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½áµ°µÉÌ)mùáµ±ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½áµ°ı±…‰•°õáµ°)mùáµ±ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½áµ°)mùáµ±ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµáµ°µå•±±½Ü)mùáµ±ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½­½É¹•±Í­¤½áµ°µÉÌ)mùáµ±ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½áµ°µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùáµ±ùİ•‰Í¥Ñ•tè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½áµ°µÉÌ)mùáµ±ùİ•‰Í¥Ñ•ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½áµ°µ½É…°)mùáÁ±Éù‘½Ítè¡ÑÑÁÌè¼½áÁ±È¹‘•Ø½•¸)mùáÍ¡•±±ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½áÍ¡•±°)mùáÍ¡•±±ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µáÍ¡•±°µÉ¥µÍ½¸)mùáÍ¡•±±ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½áÍ¡•±°)mùáÍ¡•±±ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½áÍ¡•±°ı±…‰•°õáÍ¡•±°)mùáÍ¡•±±ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½áÍ¡•±°)mùáÍ¡•±±ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµáÍ¡•±°µå•±±½Ü)mùáÍ¡•±±ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½µ…Ñ­±…½áÍ¡•±°)mùáÍ¡•±±ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½áÍ¡•±°µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùáÍÙùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½áÍØ)mùáÍÙùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µáÍØµÉ¥µÍ½¸)mùáÍÙù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½áÍØ)mùáÍÙù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½áÍØı±…‰•°õáÍØ)mùáÍÙù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½áÍØ)mùáÍÙù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµáÍØµå•±±½Ü)mùáÍÙùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½	ÕÉ¹ÑMÕÍ¡¤½áÍØ)mùáÍÙùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½áÍØµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùáÑ…Í­ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½áÑ…Í¬)mùáèÉù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½áèÈ)mùáèÉù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½áèÈı±…‰•°õáèÈ)mùå…µ°µÉÕÍÑù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½å…µ°µÉÕÍĞ)mùå…¹Í¥ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½å…¹Í¤)mùå…¹Í¥ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µå…¹Í¤µÉ¥µÍ½¸)mùå…¹Í¥ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½å…¹Í¤)mùå…¹Í¥ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½å…¹Í¤ı±…‰•°õå…¹Í¤)mùå…¹Í¥ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½å…¹Í¤)mùå…¹Í¥ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµå…¹Í¤µå•±±½Ü)mùå…¹Í¥ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½M•É¥½	•¹¥Ñ•è½å…¹Í¤)mùå…¹Í¥ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½å…¹Í¤µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùå…ÁÁù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½å…ÁÀ)mùå…Ñ…ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½å…Ñ„)mùå•İùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½å•Ü)mùå•İùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µå•ÜµÉ¥µÍ½¸)mùå•İù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½å•Ü)mùå•İù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½å•Üı±…‰•°õå•Ü)mùå•İù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½å•Ü)mùå•İù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµå•Üµå•±±½Ü)mùå•İùÉ•…±İ½É±‘ù•á…µÁ±•tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½©•Ñ±¤½ÉÕÍĞµå•İùÉ•…±İ½É±µ•á…µÁ±”µ…ÁÀ)mùå•İùÉ•…±İ½É±‘ù•á…µÁ±•ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½ÉÕÍÑ}å•İ}É•…±İ½É±‘}•á…µÁ±”µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùå•İùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½å•İÍÑ…¬½å•Ü)mùå•İùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½å•ÜµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùå•İùİ•‰Í¥Ñ•tè¡ÑÑÁÌè¼½å•Ü¹ÉÌ)mùå•İùİ•‰Í¥Ñ•ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½å•Üµ½É…°)mùé•‘ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½é•)mùé•‘ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µé•µÉ¥µÍ½¸)mùé•‘ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½é•ı±…‰•°õé•)mùé•‘ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½é•)mùé•‘ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµé•µå•±±½Ü)mùé•‘ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½é•µ¥¹‘ÕÍÑÉ¥•Ì½é•)mùé•‘ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½é•µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùé•‘ùİ•‰Í¥Ñ•tè¡ÑÑÁÌè¼½é•¹‘•Ø)mùé•¹½¡ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½é•¹½ )mùé•¹½¡ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µé•¹½ µÉ¥µÍ½¸)mùé•¹½¡ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½é•¹½ )mùé•¹½¡ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½é•¹½ ı±…‰•°õé•¹½ )mùé•¹½¡ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½é•¹½ )mùé•¹½¡ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµé•¹½ µå•±±½Ü)mùé•¹½¡ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½•±¥ÁÍ”µé•¹½ ½é•¹½ )mùé•¹½¡ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½é•¹½ µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùé•¹½¡ùİ•‰Í¥Ñ•tè¡ÑÑÀè¼½é•¹½ ¹¥¼)mùé•É½½ÁåùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½é•É½½Áä)mùé•É½½ÁåùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µé•É½½ÁäµÉ¥µÍ½¸)mùé•É½½Áåù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½é•É½½Áä)mùé•É½½Áåù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½é•É½½Áäı±…‰•°õé•É½½Áä)mùé•É½½Áåù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½é•É½½Áä)mùé•É½½Áåù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµé•É½½Áäµå•±±½Ü)mùé•É½½ÁåùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½½½±”½é•É½½Áä)mùé•É½½ÁåùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½é•É½½ÁäµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùé•É½¥é•ùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½é•É½¥é”)mùé•É½¥é•ùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µé•É½¥é”µÉ¥µÍ½¸)mùé•É½¥é•ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½é•É½¥é”)mùé•É½¥é•ù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½é•É½¥é”ı±…‰•°õé•É½¥é”)mùé•É½¥é•ù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½é•É½¥é”)mùé•É½¥é•ù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµé•É½¥é”µå•±±½Ü)mùé•É½¥é•ùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½IÕÍÑÉåÁÑ¼½ÕÑ¥±Ì½ÑÉ•”½µ…ÍÑ•È½é•É½¥é”)mùé•É½¥é•ùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½é•É½¥é”µÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùé¥ÁùÉ…Ñ•Ì¹¥½tè¡ÑÑÁÌè¼½É…Ñ•Ì¹¥¼½É…Ñ•Ì½é¥À)mùé¥ÁùÉ…Ñ•Ì¹¥½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½É…Ñ•Ì¹¥¼µé¥ÀµÉ¥µÍ½¸)mùé¥Áù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½é¥À)mùé¥Áù‘½Íù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½É…Ñ•Ì½Ø½é¥Àı±…‰•°õé¥À)mùé¥Áù±¥ˆ¹ÉÍtè¡ÑÑÁÌè¼½±¥ˆ¹ÉÌ½É…Ñ•Ì½é¥À)mùé¥Áù±¥ˆ¹ÉÍù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½±¥ˆ¹ÉÌµé¥Àµå•±±½Ü)mùé¥ÁùÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½é¥ÀµÉÌ½é¥ÀÈ)mùé¥ÁùÉ•Á½ù‰…‘•tè¡ÑÑÁÌè¼½¥µœ¹Í¡¥•±‘Ì¹¥¼½‰…‘”½é¥ÀµÍÑ••±‰±Õ”ı±½¼õ¥Ñ¡Õˆ)mùé½á¥‘•ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½é½á¥‘”)mùéÍÑ‘ù‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹ÉÌ½éÍÑ
