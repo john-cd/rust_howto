@@ -51,7 +51,6 @@
 [ex~standard-library~return-early-pattern]: optional_values.md#return-early-pattern
 [ex~standard-library~smart-pointer-comparison]: smart_pointers.md#smart-pointer-comparison
 [ex~standard-library~sync-primitives]: smart_pointers.md#sync-primitives
-[p~asref]: reference-to-reference_conversions.md
 [p~crates]: ../crate-selection/index.md
 [p~data-structures]: ../categories/data-structures/index.md
 [p~functions]: ../language/functions.md
