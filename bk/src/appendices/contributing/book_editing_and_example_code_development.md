@@ -2,21 +2,42 @@
 
 {{#include book_editing_and_example_code_development.incl.md}}
 
-Type [`just`][c~just~website]↗{{hi:just}} (a tool similar to [`make`][make~website]↗{{hi:make}}) in your favorite shell to lists all commonly used recipes during book editing and example code development.
+Run `just` from `bk/` to list the available book and example recipes. This directory contains the published book and its runnable Rust examples.
 
-Use `just serve` to preview the book by serving it locally on [http://localhost:3000][localhost:3000]↗.
+Use `just s` to serve a preview at [http://localhost:3000][localhost:3000]↗. Use `just q` for the faster preview path on Unix, and `just bb` to build the book.
 
-To add or edit the book, simply update or add a `.md` file in the appropriate [`src`][rust-howto~src~repo]↗{{hi:src}} sub-folder, then add a link in [`SUMMARY.md`][rust-howto~summary~repo]↗{{hi:SUMMARY.md}}.
+## Edit a chapter
 
-- Add Rust code examples{{hi:Rust code examples}} under [`crates/<section or cats/some_category>/examples/<chapter>/`][rust-howto~code-examples~repo]↗.
-  - Make sure to format your code (`just fmtall` or `cargo +nightly fmt --all`), check it compiles (`just buildall` or `cargo build --all-targets`), lint it (`just clippyall` or `cargo clippy --all-targets`), and test it (`just testall` or `cargo test --test <name>` for an individual example). You may also `cargo run --example <name>`.
-  - Include your code example{{hi:Code example}} in the Markdown via `{{# include /path/to/file.rs}}` within pairs of triple back-ticks.
-- You may write very short examples directly in the [[markdown | Markdown]] (but they won't be formatted / linted / tested automatically).
-- `rust` [language][p~language] code blocks in the [[markdown | Markdown]] will automatically get a _play_ button, which will execute the code in the [Rust Playground][rust-playground~website]↗{{hi:Rust playground}} and display the output just below the code block. Adding the `mdbook-runnable` attribute forces the _play_ button to be displayed when [`ignore`][book~mdbook~code-block-attributes]↗{{hi:ignore}} is set.
-- The Rust playground{{hi:Rust playground}} only supports the top 100 most downloaded libraries and libraries used by the Rust Cookbook. [`noplayground`][book~mdbook~code-block-attributes]↗{{hi:noplayground}} removes the play button if a code block does not work on the playground.
-- Example projects that are too complex to be inserted in the book itself (e.g. that include multiple [modules][p~modules]) should be added as separate folders below `crates/xmpl`. Use `cargo new` or `cargo init` to create packages as usual. Insert a link to the appropriate GitHub page in the [[markdown | Markdown]].
+Add or edit Markdown under `bk/src/`. The table of contents in `bk/src/SUMMARY.md` controls navigation, so add an entry whenever you add or move a published chapter. Many pages include a sibling `*.incl.md` file and shared reference definitions; preserve those fragments instead of copying their contents into generated pages.
 
-Verify the [[markdown | Markdown]] is properly rendered using `just serve` or `mdbook serve --open`. Pushing a commit to the `main` branch on GitHub will trigger a GitHub Action workflow that checks [[formatting]] / linting, builds / tests all examples, then deploys the book to GitHub Pages.
+## Add or update an example
+
+Runnable examples embedded in the book live under `bk/crates/<section-or-category>/examples/<chapter>/`. Keep the book-visible snippet between `// ANCHOR: example` and `// ANCHOR_END: example`, and include that anchor from the chapter:
+
+```text
+{{#include path/to/example.rs:example}}
+```
+
+The hidden part of an example normally provides `pub fn run() { main(); }` and a `#[test] fn test() { main(); }` so workspace tests exercise it. A very short snippet can live directly in Markdown, but it will not be formatted, linted, or tested by the Rust workspace.
+
+For a complex standalone example that does not fit the embedded-example layout, use the separate `xmpl/` workspace and link to it from the relevant chapter.
+
+## Validate your changes
+
+Run these commands from `bk/` for changes to the published examples:
+
+```text
+just fa
+just ba
+just ca
+just nta
+```
+
+Use `just ntt <keyword>` for a focused test. For one Cargo test, run `cargo test -p <crate> <test_name>` from `bk/crates/`. After changing book content, use `just bb` to build it. In your pull request, list the checks you ran and any service, GUI, or platform-specific checks that could not run locally. Pull requests validate changes without publishing the book.
+
+## Rust Playground
+
+A `rust` code block can show a play button that runs the code in the [Rust Playground][rust-playground~website]↗{{hi:Rust Playground}}. Add the `mdbook-runnable` attribute to keep the button when `ignore` is set. The Playground supports a limited set of libraries; use `noplayground` when an example cannot run there.
 
 ## Related Topics {#related-topics .skip}
 
