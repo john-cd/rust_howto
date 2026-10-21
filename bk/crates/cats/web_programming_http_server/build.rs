@@ -4,7 +4,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Instruct Cargo to re-run this script if the proto file changes.
     println!("cargo:rerun-if-changed=proto/helloworld.proto");
 
-    let protoc = protoc_bin_vendored::protoc_bin_path()?; // TODO review
+    // Use the vendored compiler so builds do not depend on a system protoc.
+    let protoc = protoc_bin_vendored::protoc_bin_path()?;
     unsafe {
         std::env::set_var("PROTOC", protoc);
     }

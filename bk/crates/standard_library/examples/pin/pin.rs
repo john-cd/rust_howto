@@ -1,8 +1,26 @@
 #![allow(dead_code)]
 // ANCHOR: example
-fn main() {
-    use std::pin::Pin;
+use std::marker::PhantomPinned;
+use std::pin::Pin;
 
+struct PinnedField {
+    _pin: PhantomPinned,
+}
+
+struct PinnedParent {
+    field: PinnedField,
+    _pin: PhantomPinned,
+}
+
+impl PinnedParent {
+    fn field(self: Pin<&mut Self>) -> Pin<&mut PinnedField> {
+        // SAFETY: `field` is structurally pinned: this API never exposes it as
+        // an unpinned mutable reference or moves it out of the parent.
+        unsafe { self.map_unchecked_mut(|parent| &mut parent.field) }
+    }
+}
+
+fn main() {
     // In order to pin a value, we wrap a pointer to that value (of some type
     // `Ptr`) in a `Pin<Ptr>`. `Pin<Ptr>` can wrap any pointer type,
     // forming a promise that the _pointee_ will not be moved or otherwise
@@ -24,24 +42,33 @@ fn main() {
 
     // 2. **General case:**
     // If the pointee value's type does not implement `Unpin`, then Rust will
-    // not let us use the `Pin::new` function and we'll need to
-    // use specialized ways, here unsafe code, to manipulate the inner value.
+    // not let us use `Pin::new`; creating a pin requires an unsafe operation.
     //
     // The programmer MUST guarantee the underlying data truly
     // does not move in the `unsafe` code. Here, we have exclusive control of
-    // the `String`.
+    // `y`.
     {
-        use std::marker::PhantomPinned;
-        pub struct Unpinned {
+        struct NotUnpin {
             // The `PhantomPinned` field makes the struct as `!Unpin`.
             _pin: PhantomPinned,
         }
 
-        let mut y = Unpinned {
+        let mut y = NotUnpin {
             _pin: PhantomPinned,
         };
         let _pinned_y = unsafe { Pin::new_unchecked(&mut y) };
     }
+
+    // A projection can preserve pinning for a field declared structurally
+    // pinned. Once the parent is pinned, this method returns a pinned borrow of
+    // its `!Unpin` field.
+    let mut parent = Box::pin(PinnedParent {
+        field: PinnedField {
+            _pin: PhantomPinned,
+        },
+        _pin: PhantomPinned,
+    });
+    let _pinned_field: Pin<&mut PinnedField> = parent.as_mut().field();
 
     // 3. **Pinned Box**: The simplest way to pin a value that
     // does not implement `Unpin` is to put that value inside a `Box` and

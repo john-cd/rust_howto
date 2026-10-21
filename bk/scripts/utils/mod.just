@@ -11,20 +11,17 @@ _default:
 help := 'help'
 empty := ''
 
-# Call mdbook-utils to manage links, ref definitions, etc...
+# Run mdbook-utils from the book root. Defaults to its help; pass a command and optional subcommands.
 @utils cmd=help *subcmd=empty:
     cd {{ quote(root) }} && mdbook-utils {{ quote(cmd) }}{{ if subcmd == "" { "" } else { " " + quote(subcmd) } }}
 
-# [clarify mdbook-utils](https://github.com/john-cd/rust_howto/issues/1254)
-
-# Run the templating tool e.g to create badges and reference definitions for a given crate or category
+# Run templ from the book root for crate/category badges and reference definitions; build its binary first if missing.
 [unix]
 @templ cmd=help *subcmd=empty:
     if [ ! -f {{ quote(root + "/../bin/templ") }} ]; then just -f {{ quote(root + "/../tools/justfile") }} release; fi
     cd {{ quote(root) }} && {{ quote(root + "/../bin/templ") }} {{ quote(cmd) }}{{ if subcmd == "" { "" } else { " " + quote(subcmd) } }}
 
-# [clarify templ](https://github.com/john-cd/rust_howto/issues/1254)
-
+# Run templ from the book root for crate/category badges and reference definitions; build its binary first if missing.
 [windows]
 @templ cmd=help *subcmd=empty:
     if (-not (Test-Path -LiteralPath {{ quote(root + "/../bin/templ.exe") }})) { just -f {{ quote(root + "/../tools/justfile") }} release }

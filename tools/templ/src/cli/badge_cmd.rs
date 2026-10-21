@@ -23,12 +23,13 @@ use crate::CmdArgs2;
 ///
 /// The `-a` or `--add` argument has the following characteristics:
 /// - It is optional (`required(false)`).
-/// - It can be set with or without an equals sign (`-a=/path/to/file` or `-a /path/to/file`).
-/// - It can take zero or one argument (`num_args(0..=1)`).
-/// - If no value is provided, it defaults to `"./src/refs/crate-refs.md"` (`default_missing_value`).
+/// - It accepts a reference-definition file path with or without an equals sign
+///   (`-a /path/to/file` or `-a=/path/to/file`).
+/// - It takes exactly one argument when provided (`num_args(1)`).
 /// - It expects a file path (`value_parser(clap::value_parser!(PathBuf))`).
 /// - It provides a file path hint to the shell for autocompletion (`value_hint(ValueHint::FilePath)`).
-/// - It has a help message: "Add the newly created refdefs to the master markdown file containing reference definitions (crate-refs.md by default), if they don't exist already".
+/// - It has a help message explaining that the generated reference definitions
+///   are merged into the specified file if they do not exist already.
 ///
 /// # Returns
 ///
@@ -44,16 +45,12 @@ pub(super) fn subcommand_badge() -> Command {
             .long("add")
             .required(false)
             .action(clap::ArgAction::Set)
-            .num_args(0..=1)
-            .require_equals(true)
-            .default_missing_value("./src/refs/crate-refs.md")
+            .num_args(1)
             .value_name("REFDEF_FILE")
             .value_parser(clap::value_parser!(PathBuf))
             .value_hint(ValueHint::FilePath)
-            .help("Add the newly created refdefs to the master markdown file containing reference definitions (crate-refs.md by default), if they don't exist already"))
+            .help("Merge newly created reference definitions into this file, if they do not exist already"))
 }
-// fix hardcoded path
-
 /// Extracts the command arguments for the `badge` subcommand.
 ///
 /// This function processes the command-line arguments provided to the `badge`
