@@ -7,7 +7,7 @@ on:
       - "bk/crates/cats/database/**"
       - ".github/workflows/test-postgres-example.yml"
   push:
-    branches: [main]
+    branches: [main, "codex/**"]
     paths:
       - "bk/crates/cats/database/**"
       - ".github/workflows/test-postgres-example.yml"
