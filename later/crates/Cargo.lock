@@ -4399,7 +4399,7 @@ dependencies = [
  "gemm",
  "half",
  "libm",
- "memmap2 0.9.11",
+ "memmap2 0.9.12",
  "num-traits",
  "num_cpus",
  "rand 0.9.5",
@@ -5016,6 +5016,19 @@ dependencies = [
  "ryu",
  "serde",
  "static_assertions",
+]
+
+[[package]]
+name = "compact_str"
+version = "0.10.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "79fcda08c33bb58b97008b2cdada6622500e949e060f5913361763121abd2416"
+dependencies = [
+ "castaway",
+ "cfg-if",
+ "itoa",
+ "static_assertions",
+ "zmij",
 ]
 
 [[package]]
@@ -9025,7 +9038,7 @@ dependencies = [
  "js-sys",
  "libc",
  "log 0.4.34",
- "memmap2 0.9.11",
+ "memmap2 0.9.12",
  "ndk 0.8.0",
  "ndk-sys 0.5.0+25.2.9519653",
  "objc2 0.4.1",
@@ -9268,7 +9281,7 @@ checksum = "b0299020c3ef3f60f526a4f64ab4a3d4ce116b1acbf24cdd22da0068e5d81dc3"
 dependencies = [
  "fontconfig-parser",
  "log 0.4.34",
- "memmap2 0.9.11",
+ "memmap2 0.9.12",
  "slotmap",
  "tinyvec",
  "ttf-parser 0.20.0",
@@ -9282,7 +9295,7 @@ checksum = "37be9fc20d966be438cd57a45767f73349477fb0f85ce86e000557f787298afb"
 dependencies = [
  "fontconfig-parser",
  "log 0.4.34",
- "memmap2 0.9.11",
+ "memmap2 0.9.12",
  "slotmap",
  "tinyvec",
  "ttf-parser 0.24.1",
@@ -9296,7 +9309,7 @@ checksum = "457e789b3d1202543297a350643cf459f836cade38934e7a4cf6a39e7cde2905"
 dependencies = [
  "fontconfig-parser",
  "log 0.4.34",
- "memmap2 0.9.11",
+ "memmap2 0.9.12",
  "slotmap",
  "tinyvec",
  "ttf-parser 0.25.1",
@@ -9330,7 +9343,7 @@ checksum = "23358480a54a886d51b306718d5ca743fdfe238e5df38ef650f4e72f29c5d9e9"
 dependencies = [
  "hashbrown 0.16.1",
  "linebender_resource_handle",
- "memmap2 0.9.11",
+ "memmap2 0.9.12",
  "objc2 0.6.5",
  "objc2-core-foundation",
  "objc2-core-text",
@@ -9352,7 +9365,7 @@ checksum = "7c20b425addb8661e97fe1d51c4d8bcec3ec29ed6ad0db983976a7521276b8f7"
 dependencies = [
  "hashbrown 0.17.1",
  "linebender_resource_handle",
- "memmap2 0.9.11",
+ "memmap2 0.9.12",
  "objc2 0.6.5",
  "objc2-core-foundation",
  "objc2-core-text",
@@ -12153,7 +12166,7 @@ dependencies = [
  "i-slint-renderer-femtovg",
  "i-slint-renderer-software",
  "input",
- "memmap2 0.9.11",
+ "memmap2 0.9.12",
  "nix 0.30.1",
  "raw-window-handle 0.6.2",
  "xkbcommon",
@@ -12655,12 +12668,12 @@ dependencies = [
 
 [[package]]
 name = "ico"
-version = "0.5.0"
+version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3e795dff5605e0f04bff85ca41b51a96b83e80b281e96231bcaaf1ac35103371"
+checksum = "d75e94d66081e4d8dcd098bd8dc5254800fea14a26389b298410158d834de167"
 dependencies = [
  "byteorder",
- "png 0.17.16",
+ "png 0.18.1",
 ]
 
 [[package]]
@@ -13682,9 +13695,9 @@ dependencies = [
 
 [[package]]
 name = "lambda_runtime"
-version = "1.4.0"
+version = "1.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1b4a47ba6672230da151bb4bc10e4c09c9dcb7f6b363f47dc3ce84df1ec9bbbd"
+checksum = "299ff04ffc8ff30a26f5a45fbad8f04dbaf9f05ba035e220045754955138c19c"
 dependencies = [
  "async-stream",
  "base64 0.22.1",
@@ -14612,9 +14625,9 @@ dependencies = [
 
 [[package]]
 name = "memmap2"
-version = "0.9.11"
+version = "0.9.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d1219ed1b7f229ee7104d281dd01d6802fe28bb6e95d292942c4daacdeb798c0"
+checksum = "6b0ca1155a9ecc25aa12e8313a119f32edf0255fea2f44839c4ac0a12b2ac157"
 dependencies = [
  "libc",
  "stable_deref_trait",
@@ -17461,9 +17474,9 @@ dependencies = [
 
 [[package]]
 name = "plist"
-version = "1.10.2"
+version = "1.10.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "65dca778f41c79ebbe8b2b2139fee86f01b766b67130d108c7c2b8ffbd949f77"
+checksum = "327a4cb2ad49dc48adfdc9da89e22c64d488b508c67a044d71ba729e4521a285"
 dependencies = [
  "base64 0.23.1",
  "indexmap 2.14.2",
@@ -17981,9 +17994,9 @@ checksum = "d55d956fa96f5ec02be2e13af0e20391a5aa83d6a074e3ad368959d0fab299ea"
 
 [[package]]
 name = "pyo3"
-version = "0.29.0"
+version = "0.29.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cd274650b21d4bfc26a0a47587962c1edb425f69287324355cd040c3ea66071c"
+checksum = "700d18fa267b73b9b521fd7e13580e2f446916f176cacee1ab63fcc8191f1655"
 dependencies = [
  "libc",
  "once_cell",
@@ -17995,18 +18008,18 @@ dependencies = [
 
 [[package]]
 name = "pyo3-build-config"
-version = "0.29.0"
+version = "0.29.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c5e2a7d2f0d013342f295c048ad19237add5154a55b1c5a254c0ec93d4109078"
+checksum = "7b3fc0c4d08f6bb10e71fe39dfb9e2f59c6eb6854e22ec8092f50c69a4499adb"
 dependencies = [
  "target-lexicon 0.13.5",
 ]
 
 [[package]]
 name = "pyo3-ffi"
-version = "0.29.0"
+version = "0.29.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ca85c467da1bbc8d866eea5deff9cf29ea5f7785054a17da36e65bda9c05845b"
+checksum = "dfc0b8e19df29aad7086cf977bb0c2a2f143e30567eb113e9cf72b62ca698330"
 dependencies = [
  "libc",
  "pyo3-build-config",
@@ -18014,9 +18027,9 @@ dependencies = [
 
 [[package]]
 name = "pyo3-macros"
-version = "0.29.0"
+version = "0.29.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9ac53762fd065daa3194dd09337a38bd793a188100fd1a9304c4ab312d901771"
+checksum = "6100e8a4b5eba53afaa5ed078364851a0b2499c553a44c31026b929049b49dc6"
 dependencies = [
  "proc-macro2",
  "pyo3-macros-backend",
@@ -18026,9 +18039,9 @@ dependencies = [
 
 [[package]]
 name = "pyo3-macros-backend"
-version = "0.29.0"
+version = "0.29.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4ca3a1557399783172dc5bf39cfca835157732532cba56b71d2292161e53b362"
+checksum = "6143877a16e82b5a727b7127ff4cd86858a24a28d745d72f43e6f227c7b1bdb3"
 dependencies = [
  "heck 0.5.0",
  "proc-macro2",
@@ -19090,12 +19103,13 @@ dependencies = [
 
 [[package]]
 name = "rhai"
-version = "1.26.1"
+version = "1.27.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0334639972c0ea5a3fd366aa36116754a11431b619fec3ed559b3f73bcbcebf5"
+checksum = "c3925b784c0bee6542637e425ed7511a63257bf11b7ecf51ffd845e2d24d9163"
 dependencies = [
  "ahash",
  "bitflags 2.13.2",
+ "compact_str 0.10.0",
  "num-traits",
  "once_cell",
  "rhai_codegen",
@@ -19107,9 +19121,9 @@ dependencies = [
 
 [[package]]
 name = "rhai_codegen"
-version = "3.2.0"
+version = "3.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3cd3a7535e50bf36857e7be7bec276d334e8c2dfa469c2201226fd01638ea5ca"
+checksum = "3d9661edb4a4b8145b017582d634c5eb88ff1a5284a5aa701f83a28f0657a826"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -20029,7 +20043,7 @@ checksum = "1729a30a469de249c6effc17ec8d039b0aa29b3af79b819b7f51cb6ab8046a90"
 dependencies = [
  "ab_glyph",
  "log 0.4.34",
- "memmap2 0.9.11",
+ "memmap2 0.9.12",
  "smithay-client-toolkit 0.18.1",
  "tiny-skia 0.11.4",
 ]
@@ -20042,7 +20056,7 @@ checksum = "b6277f0217056f77f1d8f49f2950ac6c278c0d607c45f5ee99328d792ede24ec"
 dependencies = [
  "ab_glyph",
  "log 0.4.34",
- "memmap2 0.9.11",
+ "memmap2 0.9.12",
  "smithay-client-toolkit 0.19.2",
  "tiny-skia 0.11.4",
 ]
@@ -21118,7 +21132,7 @@ dependencies = [
  "cursor-icon",
  "libc",
  "log 0.4.34",
- "memmap2 0.9.11",
+ "memmap2 0.9.12",
  "rustix 0.38.44",
  "thiserror 1.0.69",
  "wayland-backend",
@@ -21143,7 +21157,7 @@ dependencies = [
  "cursor-icon",
  "libc",
  "log 0.4.34",
- "memmap2 0.9.11",
+ "memmap2 0.9.12",
  "rustix 0.38.44",
  "thiserror 1.0.69",
  "wayland-backend",
@@ -21168,7 +21182,7 @@ dependencies = [
  "cursor-icon",
  "libc",
  "log 0.4.34",
- "memmap2 0.9.11",
+ "memmap2 0.9.12",
  "rustix 1.1.5",
  "thiserror 2.0.21",
  "wayland-backend",
@@ -21260,7 +21274,7 @@ dependencies = [
  "drm",
  "fastrand",
  "js-sys",
- "memmap2 0.9.11",
+ "memmap2 0.9.12",
  "ndk 0.9.0",
  "objc2 0.6.5",
  "objc2-core-foundation",
@@ -21695,7 +21709,7 @@ dependencies = [
  "libc",
  "libloading 0.8.9",
  "memfd",
- "memmap2 0.9.11",
+ "memmap2 0.9.12",
  "serde",
  "subsecond-types",
  "thiserror 2.0.21",
@@ -22286,9 +22300,9 @@ checksum = "adb6935a6f5c20170eeceb1a3835a49e12e19d792f6dd344ccc76a985ca5a6ca"
 
 [[package]]
 name = "tauri"
-version = "2.12.4"
+version = "2.12.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f316751027fc2644221d1a448564d519efb07067fda584879d9cda966391d212"
+checksum = "5fb0244332cfb9cee7e2a568bf5da29a36ed8fdbd717f6f47a66b6b7b358c072"
 dependencies = [
  "anyhow",
  "bytes",
@@ -22337,9 +22351,9 @@ dependencies = [
 
 [[package]]
 name = "tauri-build"
-version = "2.7.3"
+version = "2.7.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "641dd5fd297c99ab92717b0428cca5b9c6f960b2ac96ca131b3eebc9d70b8ddc"
+checksum = "adddb0e648752aaac5da9c3c3c6a68e1e87cab55e3b757b18a9441ef8c3ac614"
 dependencies = [
  "anyhow",
  "cargo_toml",
@@ -22360,9 +22374,9 @@ dependencies = [
 
 [[package]]
 name = "tauri-codegen"
-version = "2.7.3"
+version = "2.7.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a6585c5b536c00f039d12ce70a9755172d5423bbcfd3969863baa70314c3e02f"
+checksum = "fb37631cf71dab5e8ab55e1bdd701e18a52653d90b78e71d0e5598b1e0a61316"
 dependencies = [
  "base64 0.23.1",
  "brotli 9.0.0",
@@ -22387,9 +22401,9 @@ dependencies = [
 
 [[package]]
 name = "tauri-macros"
-version = "2.7.3"
+version = "2.7.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e2e83a0cfa1bae376e8fbbdc0b1692707aed50cd6072ce85cae4789af5d6c19f"
+checksum = "0cc38db58854c10fb5f91a887ed8bf82d3239bb92b5d8db86eda09e96d9963d1"
 dependencies = [
  "heck 0.5.0",
  "proc-macro2",
@@ -22465,9 +22479,9 @@ dependencies = [
 
 [[package]]
 name = "tauri-runtime-wry"
-version = "2.12.2"
+version = "2.12.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8d61892587aea2a85245bcaec98c6fe46268874c0a0deae5535fb71ca7b93eae"
+checksum = "e1aa9d8b7a120f879f44fdc1053f7b7dbf416bf0bbc6a72b714dec46b782b52f"
 dependencies = [
  "gtk",
  "http 1.5.0",
@@ -22475,7 +22489,6 @@ dependencies = [
  "log 0.4.34",
  "objc2 0.6.5",
  "objc2-app-kit 0.3.2",
- "once_cell",
  "percent-encoding 2.3.2",
  "raw-window-handle 0.6.2",
  "softbuffer",
@@ -22906,7 +22919,7 @@ checksum = "b238e22d44a15349529690fb07bd645cf58149a1b1e44d6cb5bd1641ff1a6223"
 dependencies = [
  "ahash",
  "aho-corasick",
- "compact_str",
+ "compact_str 0.9.1",
  "dary_heap",
  "derive_builder",
  "esaxx-rs",
@@ -26875,7 +26888,7 @@ dependencies = [
  "dpi",
  "js-sys",
  "libc",
- "memmap2 0.9.11",
+ "memmap2 0.9.12",
  "ndk 0.9.0",
  "objc2 0.5.3",
  "objc2-app-kit 0.2.2",
@@ -27176,7 +27189,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a7a974f48060a14e95705c01f24ad9c3345022f4d97441b8a36beb7ed5c4a02d"
 dependencies = [
  "libc",
- "memmap2 0.9.11",
+ "memmap2 0.9.12",
  "xkeysym",
 ]
 
