@@ -28,3 +28,32 @@ pub fn create_rbe_badge(concept: &str) -> Result<String> {
     let rendered = tt.render("RBE", &context)?;
     Ok(rendered)
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_create_rbe_badge_basic() {
+        let rendered = create_rbe_badge("attributes").unwrap();
+        let expected = "\n[![Rust by example - attributes][book~rust-by-example~attributes~badge]][book~rust-by-example~attributes]\n\n[book~rust-by-example~attributes~badge]: https://img.shields.io/badge/Rust_By_Example-attributes-violet?logo=mdbook\n[book~rust-by-example~attributes]: https://doc.rust-lang.org/rust-by-example/attributes.html\n";
+        assert_eq!(rendered, expected);
+    }
+
+    #[test]
+    fn test_create_rbe_badge_formatting() {
+        // Test concept with hyphens, underscores, and spaces
+        let rendered = create_rbe_badge("hello-world_test example").unwrap();
+        assert!(rendered.contains("[![Rust by example - hello-world_test example]"));
+        assert!(rendered.contains("book~rust-by-example~hello_world_test example"));
+        assert!(rendered.contains("https://img.shields.io/badge/Rust_By_Example-hello--world__test_example-violet?logo=mdbook"));
+        assert!(rendered.contains("https://doc.rust-lang.org/rust-by-example/hello_world_test example.html"));
+    }
+
+    #[test]
+    fn test_create_rbe_badge_empty() {
+        let rendered = create_rbe_badge("").unwrap();
+        let expected = "\n[![Rust by example - ][book~rust-by-example~~badge]][book~rust-by-example~]\n\n[book~rust-by-example~~badge]: https://img.shields.io/badge/Rust_By_Example--violet?logo=mdbook\n[book~rust-by-example~]: https://doc.rust-lang.org/rust-by-example/.html\n";
+        assert_eq!(rendered, expected);
+    }
+}
