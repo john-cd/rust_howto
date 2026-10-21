@@ -9,8 +9,8 @@ use tracing_subscriber::fmt::time::UtcTime;
 fn main() {
     // Configure a custom event formatter.
     let format: Format<_, _> = fmt::format() // Returns the default configuration for an event formatter.
-        .with_ansi(true)  // Enable ANSI terminal colors for formatted output.
-        .with_file(true)  // Displays the event's source code file path.
+        .with_ansi(true) // Enable ANSI terminal colors for formatted output.
+        .with_file(true) // Displays the event's source code file path.
         .with_line_number(true) // Displays the source code line number.
         // or: .with_source_location(true)
         .with_level(false) // Don't include event levels e.g. Error, Debug, etc.

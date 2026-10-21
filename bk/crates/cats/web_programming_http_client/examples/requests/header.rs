@@ -38,7 +38,8 @@ fn main() -> Result<()> {
         header::HeaderValue::from_static("image/png"),
     );
 
-    let response = client.get(url)
+    let response = client
+        .get(url)
         .headers(headers)
         .bearer_auth("DEadBEEfc001cAFeEDEcafBAd") // Enable HTTP bearer authentication.
         .send()?;

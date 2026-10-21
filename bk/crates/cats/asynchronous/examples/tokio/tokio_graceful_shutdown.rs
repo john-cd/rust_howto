@@ -89,14 +89,17 @@ async fn main() -> anyhow::Result<()> {
     // The `Toplevel` object represents the root object of the subsystem tree.
     let _ = Toplevel::new(async |s: &mut SubsystemHandle| {
         // Register and start a new subsystem.
-        // The provided `SubsystemHandle` object enables the subsystem to start nested subsystems,
-        // to react to shutdown requests or to initiate a shutdown.
+        // The provided `SubsystemHandle` object enables the subsystem to start
+        // nested subsystems, to react to shutdown requests or to
+        // initiate a shutdown.
         s.start(SubsystemBuilder::new("Countdown", countdown_subsystem));
         s.start(SubsystemBuilder::new("Parent", parent_subsystem));
     })
-    // Signals the `Toplevel` object to listen for SIGINT / SIGTERM / Ctrl + C and and initiate a shutdown thereafter:
+    // Signals the `Toplevel` object to listen for SIGINT / SIGTERM / Ctrl + C
+    // and and initiate a shutdown thereafter:
     .catch_signals()
-    // Collects all the return values of the subsystems, determines the global error state:
+    // Collects all the return values of the subsystems, determines the global
+    // error state:
     .handle_shutdown_requests(Duration::from_millis(400))
     .await;
     Ok(())

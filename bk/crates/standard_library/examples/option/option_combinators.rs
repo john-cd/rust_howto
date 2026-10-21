@@ -12,7 +12,8 @@ fn read_file(filename: &str) -> Option<String> {
         .ok()
         // `and_then` applies a function to the wrapped value if it's `Some`.
         .and_then(|contents| Some(contents.trim().to_string()))
-        // `map` is similar, but the closure does not need to return an `Option`:
+        // `map` is similar, but the closure does not need to return an
+        // `Option`:
         .map(|s| s.to_lowercase())
 }
 

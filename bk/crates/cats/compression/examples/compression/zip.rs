@@ -24,7 +24,8 @@ fn main() -> zip::result::ZipResult<()> {
     // Define file options for the files we'll add.
     let options = SimpleFileOptions::default()
         .compression_method(zip::CompressionMethod::Deflated)
-        // Read, write, execute for owner and group, read and execute for others.
+        // Read, write, execute for owner and group, read and execute for
+        // others.
         .unix_permissions(0o755);
 
     // Add a file to the archive with content.

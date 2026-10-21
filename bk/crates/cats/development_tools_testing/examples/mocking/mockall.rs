@@ -129,9 +129,11 @@ mod tests {
         // We expect `find_by_id` to be called once with id 1:
         mock_repo
             .expect_find_by_id() // The method we're setting expectations for
-            .with(eq(1)) // The argument we expect (using predicate). You can also use custom functions: .withf(|user| user.id == 1)
-            .times(1)  // How many times we expect it to be called
-            .returning(|_| { // What it should return
+            .with(eq(1)) // The argument we expect (using predicate). You can also use custom
+            // functions: .withf(|user| user.id == 1)
+            .times(1) // How many times we expect it to be called
+            .returning(|_| {
+                // What it should return
                 Some(User {
                     id: 1,
                     name: "John Doe".to_string(),

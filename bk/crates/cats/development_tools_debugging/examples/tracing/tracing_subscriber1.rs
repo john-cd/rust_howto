@@ -7,7 +7,8 @@ fn main() {
     tracing_subscriber::fmt()
         // Sets the maximum verbosity level.
         .with_max_level(tracing::Level::DEBUG)
-        // Sets this subscriber to be the global trace collector for this application.
+        // Sets this subscriber to be the global trace collector for this
+        // application.
         .init();
     // You may use `try_init()` instead.
 

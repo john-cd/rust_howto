@@ -20,7 +20,7 @@ fn main() -> Result<()> {
     .build()?;
 
     buffered
-        .lines()                // yield instances of io::Result<String>
+        .lines() // yield instances of io::Result<String>
         .map_while(Result::ok)
         .filter(|line| set.is_match(line.as_str()))
         .for_each(|x| println!("{x}"));

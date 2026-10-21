@@ -61,7 +61,8 @@ async fn main() {
     // Use tower's `ServiceBuilder` API to build a stack of tower middleware
     // wrapping our request handler.
     let _service = ServiceBuilder::new()
-        // Mark the `Authorization` request header as sensitive so it doesn't show in logs.
+        // Mark the `Authorization` request header as sensitive so it doesn't
+        // show in logs.
         .layer(SetSensitiveRequestHeadersLayer::new(once(AUTHORIZATION)))
         // High level logging of requests and responses.
         .layer(TraceLayer::new_for_http())
@@ -80,7 +81,8 @@ async fn main() {
         ))
         // Authorize requests using a token.
         //.layer(ValidateRequestHeaderLayer::bearer("passwordlol"))
-        // Accept only application/json, application/* and */* in a request's ACCEPT header.
+        // Accept only application/json, application/* and */* in a request's
+        // ACCEPT header.
         //.layer(ValidateRequestHeaderLayer::accept("application/json"))
         // Wrap the `Service` in our middleware stack.
         .service_fn(handler);

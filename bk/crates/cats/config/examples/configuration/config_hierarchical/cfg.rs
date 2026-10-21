@@ -17,14 +17,19 @@ static DEFAULT_CONFIG_FILE: &str = "temp/default";
 pub(crate) fn read_settings(cli_args: CommandLineArgs) -> Result<Settings> {
     let mut cb: ConfigBuilder<_> = Config::builder()
         // Provide defaults for some settings.
-        // Default settings will be overwritten by any source or override providing a value for the same key.
+        // Default settings will be overwritten by any source or override
+        // providing a value for the same key.
         .set_default("service.port", 80)?
         // Load settings from a base config file.
         // `File::with_name(..)` is shorthand for `File::from(Path::new(..))`.
         // The extension is implicit and could be TOML, JSON, YAML, INI, etc.
         .add_source(File::with_name(DEFAULT_CONFIG_FILE))
-        // Load settings from an run-mode-specific config file, if it is present.
-        .add_source(File::with_name(&format!("temp/{}", cli_args.run_mode)).required(false));
+        // Load settings from an run-mode-specific config file, if it is
+        // present.
+        .add_source(
+            File::with_name(&format!("temp/{}", cli_args.run_mode))
+                .required(false),
+        );
 
     if let Some(custom_config_file_path) = cli_args.custom_config_file_path {
         // Load settings from the custom file (which must exist), if a path
@@ -34,8 +39,8 @@ pub(crate) fn read_settings(cli_args: CommandLineArgs) -> Result<Settings> {
     }
 
     cb = cb
-        // Override settings with values from environment variables (with a prefix of
-        // APP) e.g., `APP_DATABASE__MAX_CONNECTIONS=100`.
+        // Override settings with values from environment variables (with a
+        // prefix of APP) e.g., `APP_DATABASE__MAX_CONNECTIONS=100`.
         .add_source(
             Environment::with_prefix("APP")
                 .prefix_separator("_")
@@ -43,7 +48,8 @@ pub(crate) fn read_settings(cli_args: CommandLineArgs) -> Result<Settings> {
                 .ignore_empty(true),
         )
         // Programmatic override.
-        // This will overwrite any value from other setting sources, if `port` is not `None`.
+        // This will overwrite any value from other setting sources, if `port`
+        // is not `None`.
         .set_override_option("service.port", cli_args.port)?;
 
     // Reads all config sources and attempt to deserialize the entire

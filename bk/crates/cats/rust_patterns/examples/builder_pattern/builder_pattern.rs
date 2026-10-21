@@ -85,7 +85,8 @@ impl DatabaseConfigBuilder {
 fn main() {
     // Create a builder struct.
     let config = DatabaseConfigBuilder::new("localhost".to_string(), 5432)
-        // Call (some of) the builder's methods to initialize or update the fields.
+        // Call (some of) the builder's methods to initialize or update the
+        // fields.
         .username("admin".to_string())
         .password("secret".to_string())
         .pool_size(20)
