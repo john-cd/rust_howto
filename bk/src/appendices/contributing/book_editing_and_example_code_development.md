@@ -12,11 +12,7 @@ Add or edit Markdown under `bk/src/`. The table of contents in `bk/src/SUMMARY.m
 
 ## Add or update an example
 
-Runnable examples embedded in the book live under `bk/crates/<section-or-category>/examples/<chapter>/`. Keep the book-visible snippet between `// ANCHOR: example` and `// ANCHOR_END: example`, and include that anchor from the chapter:
-
-```text
-{{#include path/to/example.rs:example}}
-```
+Runnable examples embedded in the book live under `bk/crates/<section-or-category>/examples/<chapter>/`. Keep the book-visible snippet between `// ANCHOR: example` and `// ANCHOR_END: example`. In a chapter, write an include directive by joining `{{` + `#include path/to/example.rs:example` + `}}` with no spaces.
 
 The hidden part of an example normally provides `pub fn run() { main(); }` and a `#[test] fn test() { main(); }` so workspace tests exercise it. A very short snippet can live directly in Markdown, but it will not be formatted, linted, or tested by the Rust workspace.
 
