@@ -154,3 +154,8 @@ rust-project.json
 *.msm
 *.msp
 *.txz
+
+# Persistent worktree slots and external Cargo build junctions
+/.worktrees/
+/build/
+/.sccache/

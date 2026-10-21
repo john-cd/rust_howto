@@ -1,3 +1,5 @@
+import "scripts/build.just"
+
 set unstable
 
 set shell := ["bash", "-uc"]
@@ -5,11 +7,6 @@ set shell := ["bash", "-uc"]
 # Set shell for Windows OSs:
 # PowerShell Core has some of the Unix shell skills we need, such as || and &&
 set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
-
-# Keep Cargo outputs outside the checkout; override the worktree name per checkout.
-rust_howto_worktree := env("RUST_HOWTO_WORKTREE_NAME", "coherent-book-tooling-commits")
-export CARGO_TARGET_DIR := join("D:/target/rust_howto", rust_howto_worktree)
-export CARGO_BUILD_BUILD_DIR := join("C:/code_build/rust_howto", rust_howto_worktree)
 
 [no-exit-message]
 _default:
