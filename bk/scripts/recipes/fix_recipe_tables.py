@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Update recipe tables from local example reference definitions."""
+"""Update recipe rows from local references and keep their titles in sync with headings."""
 
 from __future__ import annotations
 
