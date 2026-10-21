@@ -153,6 +153,7 @@ Start small: fix a typo, improve a code example, or add a link before taking on 
 - Keep prose short and to the point. The book is a reference, not a tutorial.
 - Prefer active voice.
 - Link to official documentation and crate pages where relevant.
+- For public Rust APIs, follow the [API documentation guide][p~api-documentation].
 
 ### Commit Messages {#commit-messages}
 

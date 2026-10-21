@@ -18,3 +18,7 @@
 [p~language]: ../../language/index.md
 [p~modules]: ../../code-organization/modules_and_paths.md
 [p~topics-of-interest]: topics_of_interest.md
+[p~api-documentation]: api_documentation.md
+[rustdoc~write-documentation]: https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html
+[rustdoc~intra-doc-links]: https://doc.rust-lang.org/rustdoc/write-documentation/linking-to-items-by-name.html
+[rustdoc~lints]: https://doc.rust-lang.org/rustdoc/lints.html
