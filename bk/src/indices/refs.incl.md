@@ -32,6 +32,7 @@
 [ex~code-organization~large-projects]: ../code-organization/code_organization_by_project_type.md#large-projects
 [ex~code-organization~less-common-code-organization]: ../code-organization/code_organization_by_project_type.md#less-common-code-organization
 [ex~code-organization~modules]: ../code-organization/modules_and_paths.md#modules
+[ex~code-organization~monorepos-and-git-submodules]: ../code-organization/code_organization_by_project_type.md#monorepos-and-git-submodules
 [ex~code-organization~naming-conventions]: ../code-organization/naming_conventions.md#naming-conventions
 [ex~code-organization~paths]: ../code-organization/modules_and_paths.md#paths
 [ex~code-organization~prelude]: ../code-organization/code_organization_by_project_type.md#prelude
@@ -59,6 +60,7 @@
 [ex~contributing~publication-steps]: ../appendices/contributing/publication_to_crates.io.md#publication-steps
 [ex~contributing~push-image-to-docker-hub]: ../appendices/contributing/dev_container_and_docker.md#push-image-to-docker-hub
 [ex~contributing~using-vs-code]: ../appendices/contributing/development_environment_setup.md#using-vs-code
+[ex~contributing~windows-install]: ../appendices/contributing/development_environment_setup.md#windows-install
 [ex~data-structures~arrayvec]: ../categories/data-structures/stack-allocated.md#arrayvec
 [ex~data-structures~bitflags]: ../categories/data-structures/bit_arrays.md#bitflags
 [ex~data-structures~bitvec]: ../categories/data-structures/bit_arrays.md#bitvec
@@ -70,6 +72,7 @@
 [ex~data-structures~generate-parse-uuid]: ../categories/data-structures/unique_identifiers.md#generate-parse-uuid
 [ex~data-structures~hashmap]: ../categories/data-structures/hashmaps.md#hashmap
 [ex~data-structures~hashset]: ../categories/data-structures/hashmaps.md#hashset
+[ex~data-structures~heapless]: ../categories/data-structures/stack-allocated.md#heapless
 [ex~data-structures~implement-a-priority-queue]: ../categories/data-structures/binary_heaps.md#implement-a-priority-queue
 [ex~data-structures~indexmap]: ../categories/data-structures/other_maps.md#indexmap
 [ex~data-structures~linkedlist]: ../categories/data-structures/linked_lists.md#linkedlist
@@ -337,6 +340,9 @@
 [ex~mathematics~measures-of-central-tendency]: ../categories/mathematics/statistics.md#measures-of-central-tendency
 [ex~mathematics~multiply-a-scalar-with-a-vector-and-a-matrix]: ../categories/mathematics/linear_algebra.md#multiply-a-scalar-with-a-vector-and-a-matrix
 [ex~mathematics~multiplying-matrices]: ../categories/mathematics/linear_algebra.md#multiplying-matrices
+[ex~mathematics~nalgebra-svd]: ../categories/mathematics/linear_algebra.md#nalgebra-svd
+[ex~mathematics~nalgebra-transformations]: ../categories/mathematics/linear_algebra.md#nalgebra-transformations
+[ex~mathematics~nalgebra-vectors]: ../categories/mathematics/linear_algebra.md#nalgebra-vectors
 [ex~mathematics~num-bigint]: ../categories/mathematics/additional_numeric_types.md#num-bigint
 [ex~mathematics~num]: ../categories/mathematics/additional_numeric_types.md#num
 [ex~mathematics~rug]: ../categories/mathematics/additional_numeric_types.md#rug

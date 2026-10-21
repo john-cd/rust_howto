@@ -9,6 +9,7 @@
 [ex~data-structures~generate-parse-uuid]: unique_identifiers.md#generate-parse-uuid
 [ex~data-structures~hashmap]: hashmaps.md#hashmap
 [ex~data-structures~hashset]: hashmaps.md#hashset
+[ex~data-structures~heapless]: stack-allocated.md#heapless
 [ex~data-structures~implement-a-priority-queue]: binary_heaps.md#implement-a-priority-queue
 [ex~data-structures~indexmap]: other_maps.md#indexmap
 [ex~data-structures~linkedlist]: linked_lists.md#linkedlist
