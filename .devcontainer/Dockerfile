@@ -42,7 +42,6 @@ FROM rust-core AS tool-builder
 # itself set from the RUST_IMAGE_LABEL env. variable in `.devcontainer/.env` file
 ARG MDBOOK_VERSION=invalid
 ARG MDBOOK_LINKCHECK_VERSION=invalid
-ARG MDBOOK_PRIVATE_VERSION=invalid
 ARG MDBOOK_INDEXING_VERSION=invalid
 ARG MDBOOK_PANDOC_VERSION=invalid
 ARG MDBOOK_UTILS_REV=invalid
@@ -65,7 +64,6 @@ RUN --mount=type=cache,target=/usr/local/cargo/registry \
     cargo binstall --no-confirm --secure --version ${CARGO_NEXTEST_VERSION} cargo-nextest
     cargo binstall --no-confirm --secure --version ${MDBOOK_VERSION} mdbook
     cargo binstall --no-confirm --secure --version ${MDBOOK_LINKCHECK_VERSION} mdbook-linkcheck
-    cargo binstall --no-confirm --secure --version ${MDBOOK_PRIVATE_VERSION} mdbook-private
     cargo binstall --no-confirm --secure --version ${MDBOOK_PANDOC_VERSION} mdbook-pandoc
     cargo binstall --no-confirm --secure --version ${TECTONIC_VERSION} tectonic
     cargo binstall --no-confirm --secure --version ${JUST_VERSION} just
@@ -75,7 +73,7 @@ EOF
 
 ## Install the mdbook-utils tool that is a companion to the book.
 ## Installed last, because the tool is still in development
-RUN cargo install --git https://github.com/john-cd/mdbook-utils --rev ${MDBOOK_UTILS_REV} --locked --force mdbook-utils
+RUN cargo install --git https://github.com/john-cd/mdbook-utils --rev ${MDBOOK_UTILS_REV} --locked mdbook-utils
 
 ## ------------------------------------------------------------------------------------------------
 
@@ -87,7 +85,8 @@ WORKDIR /code
 RUN mkdir -p /code/bin/
 
 ## Set target directory to a predictable path
-ENV CARGO_TARGET_DIR=/code/target/tools/
+ENV CARGO_TARGET_DIR=/code/target/tools/ \
+    CARGO_BUILD_BUILD_DIR=/code/build/tools/
 
 ## Copy only the tools source to optimize caching
 COPY tools/ /code/tools/
@@ -96,7 +95,7 @@ RUN cargo fetch --locked --manifest-path /code/tools/Cargo.toml
 
 ## Build the tools in release mode
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
-    cargo +nightly build --bins --locked --all-features --release --artifact-dir /code/bin --manifest-path /code/tools/Cargo.toml
+    cargo +nightly build --bins --locked --all-features --release -Z unstable-options --artifact-dir /code/bin --manifest-path /code/tools/Cargo.toml
 
 # ------------------------------------------------------------------------------------------------
 
@@ -107,6 +106,8 @@ SHELL ["bash", "-c"]
 
 ARG MDBOOK_UTILS_REV=invalid
 ENV MDBOOK_UTILS_REV=${MDBOOK_UTILS_REV}
+ENV CARGO_TARGET_DIR=/code/target/ \
+    CARGO_BUILD_BUILD_DIR=/code/build/
 
 WORKDIR /code
 

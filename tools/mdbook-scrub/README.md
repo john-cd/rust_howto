@@ -9,6 +9,14 @@ This is a **Work In Progress**. The API are subject to change.
 
 ## Installation
 
+The helper workspace also builds `mdbook-linkcheck-compat`, selected by the
+book's linkcheck output command. It adapts the mdBook 0.5 book container and
+unset config defaults for mdbook-linkcheck 0.7.7's older protocol (advertised
+as 0.4.43 to its version gate), and forwards
+the checker's exit status. Only the checker's copy of Rust edition metadata
+is mapped from 2024 to 2021; rendered examples keep edition 2024.
+Build the local helpers with `just release` from `tools/`.
+
 Make sure that:
 
 - [`Rust`][rust-lang]

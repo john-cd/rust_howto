@@ -78,10 +78,11 @@ jobs:
     runs-on: ubuntu-latest
     env:
       IMAGE_PULL_POLICY: never
-      GHA_CACHE_SCOPE: rust-howto-${{ runner.os }}-${{ hashFiles('.devcontainer/.env', 'bk/crates/Cargo.lock', 'tools/Cargo.lock') }}
     steps:
       - name: Code checkout
         uses: actions/checkout@v6
+      - name: Set build cache scope
+        run: echo "GHA_CACHE_SCOPE=rust-howto-${{ runner.os }}-${{ hashFiles('.devcontainer/.env', 'bk/crates/Cargo.lock', 'tools/Cargo.lock') }}" >> "$GITHUB_ENV"
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
       - name: Build, test, lint, and render through Compose
@@ -94,8 +95,6 @@ jobs:
   build-image:
     if: ${{ github.event_name != 'pull_request' }}
     runs-on: ubuntu-latest
-    env:
-      GHA_CACHE_SCOPE: rust-howto-${{ runner.os }}-${{ hashFiles('.devcontainer/.env', 'bk/crates/Cargo.lock', 'tools/Cargo.lock') }}
     outputs:
       image_name: ${{ env.IMAGE_NAME }}
     steps:
@@ -116,6 +115,8 @@ jobs:
           swap-storage: true
       - name: Code checkout (clones the Git repository)
         uses: actions/checkout@v6
+      - name: Set build cache scope
+        run: echo "GHA_CACHE_SCOPE=rust-howto-${{ runner.os }}-${{ hashFiles('.devcontainer/.env', 'bk/crates/Cargo.lock', 'tools/Cargo.lock') }}" >> "$GITHUB_ENV"
       # - name: Validate YAML files
       #   run: yamllint ./.devcontainer/ ./.github/ ./.github/workflows/
       - name: Login to Docker Hub
@@ -145,7 +146,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       IMAGE_PULL_POLICY: missing
-      GHA_CACHE_SCOPE: rust-howto-${{ runner.os }}-${{ hashFiles('.devcontainer/.env', 'bk/crates/Cargo.lock', 'tools/Cargo.lock') }}
     strategy:
       fail-fast: false
       matrix:
@@ -153,6 +153,8 @@ jobs:
     steps:
       - name: Code checkout
         uses: actions/checkout@v6
+      - name: Set build cache scope
+        run: echo "GHA_CACHE_SCOPE=rust-howto-${{ runner.os }}-${{ hashFiles('.devcontainer/.env', 'bk/crates/Cargo.lock', 'tools/Cargo.lock') }}" >> "$GITHUB_ENV"
       - name: Rust Cache
         uses: Swatinem/rust-cache@v2
         with:
@@ -176,10 +178,11 @@ jobs:
     runs-on: ubuntu-latest
     env:
       IMAGE_PULL_POLICY: missing
-      GHA_CACHE_SCOPE: rust-howto-${{ runner.os }}-${{ hashFiles('.devcontainer/.env', 'bk/crates/Cargo.lock', 'tools/Cargo.lock') }}
     steps:
       - name: Code checkout
         uses: actions/checkout@v6
+      - name: Set build cache scope
+        run: echo "GHA_CACHE_SCOPE=rust-howto-${{ runner.os }}-${{ hashFiles('.devcontainer/.env', 'bk/crates/Cargo.lock', 'tools/Cargo.lock') }}" >> "$GITHUB_ENV"
       - name: Rust Cache
         uses: Swatinem/rust-cache@v2
         with:

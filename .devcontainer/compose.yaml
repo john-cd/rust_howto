@@ -8,7 +8,6 @@ services:
         RUST_IMAGE_LABEL: ${RUST_IMAGE_LABEL:?rust image label must be defined}
         MDBOOK_VERSION: ${MDBOOK_VERSION:?mdbook version must be defined}
         MDBOOK_LINKCHECK_VERSION: ${MDBOOK_LINKCHECK_VERSION:?mdbook-linkcheck version must be defined}
-        MDBOOK_PRIVATE_VERSION: ${MDBOOK_PRIVATE_VERSION:?mdbook-private version must be defined}
         MDBOOK_INDEXING_VERSION: ${MDBOOK_INDEXING_VERSION:?mdbook-indexing version must be defined}
         MDBOOK_PANDOC_VERSION: ${MDBOOK_PANDOC_VERSION:?mdbook-pandoc version must be defined}
         MDBOOK_UTILS_REV: ${MDBOOK_UTILS_REV:?mdbook-utils revision must be defined}
