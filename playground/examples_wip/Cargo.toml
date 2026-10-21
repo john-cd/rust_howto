@@ -14,7 +14,7 @@ categories = ["development-tools"]
 publish = false
 
 [dependencies]
-anyhow = "1.0.102"
+anyhow = "1.0.104"
 
 [[example]]
 name = "anyhow_uptime"

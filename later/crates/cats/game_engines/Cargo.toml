@@ -26,15 +26,15 @@ ggez = ["dep:ggez"]
 
 [dependencies]
 # TODO fyrox-core = { version = "0.36.0", optional = true }
-anyhow = { version = "1.0.102", optional = true }
+anyhow = { version = "1.0.104", optional = true }
 bevy = { version = "0.18.1", optional = true }
-clap = { version = "4.6.1", features = ["derive"] }
+clap = { version = "4.6.7", features = ["derive"] }
 fyrox = { version = "1.0.1", optional = true }
-macroquad = "0.4.14"
+macroquad = "0.4.16"
 
 # TODO review on Windows
 [target.'cfg(not(target_os = "windows"))'.dependencies]
-ggez = { version = "0.10.0-rc0", optional = true }
+ggez = { version = "0.10.0", optional = true }
 
 [[example]]
 name = "game_engines"

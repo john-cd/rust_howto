@@ -8,10 +8,10 @@ description = "Repository-local mdBook 0.5 port of mdbook-private"
 
 [dependencies]
 # Use the same book protocol and configuration API as mdbook-scrub.
-mdbook-preprocessor = "0.5.2"
+mdbook-preprocessor = "0.5.4"
 # Match private comment blocks across lines.
-regex = "1.12.3"
+regex = "1.13.1"
 # Decode the private preprocessor's configuration.
-serde = { version = "1.0.228", features = ["derive"] }
+serde = { version = "1.0.229", features = ["derive"] }
 # Read and write mdBook's preprocessor protocol.
-serde_json = "1.0.149"
+serde_json = "1.0.154"

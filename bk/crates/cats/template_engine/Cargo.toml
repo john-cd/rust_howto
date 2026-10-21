@@ -17,8 +17,8 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-anyhow = "1.0.102"
-serde = { version = "1.0.228", features = ["derive"] }
+anyhow = "1.0.104"
+serde = { version = "1.0.229", features = ["derive"] }
 tera = "1.20.1"
 tinytemplate = "1.2.1"
 

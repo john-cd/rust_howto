@@ -19,10 +19,10 @@ autolib = false
 [dependencies]
 
 ## General
-anyhow = "1.0.102"
-clap = { version = "4.6.1", features = ["derive"] }
+anyhow = "1.0.104"
+clap = { version = "4.6.7", features = ["derive"] }
 comemo = "0.5.1"
-salsa = "0.26.1"
+salsa = "0.26.2"
 
 [[example]]
 name = "incremental_computation"

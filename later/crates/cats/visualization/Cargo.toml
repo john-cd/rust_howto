@@ -18,7 +18,7 @@ autolib = false
 [dependencies]
 
 ## General
-anyhow = "1.0.102"
+anyhow = "1.0.104"
 plotly = "0.14.1"
 
 [[example]]

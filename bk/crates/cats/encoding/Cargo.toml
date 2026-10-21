@@ -20,35 +20,35 @@ autolib = false
 ignored = ["capnpc", "prost", "prost-types", "prost-build"]
 
 [dependencies]
-anyhow = "1.0.102"
+anyhow = "1.0.104"
 base64 = "0.22.1"
 bincode = { version = "2.0.1", features = ["serde"] } # TODO update to 3.0.0
-bytemuck = { version = "1.25.0", features = ["derive"] }
+bytemuck = { version = "1.25.2", features = ["derive"] }
 byteorder = "1.5.0"
-capnp = "0.25.4"
+capnp = "0.25.6"
 ciborium = "0.2.2"
-clap = { version = "4.6.1", features = ["derive"] }
+clap = { version = "4.6.7", features = ["derive"] }
 csv = "1.4.0"
-data-encoding = "2.11.0"
+data-encoding = "2.11.1"
 flatbuffers = "25.12.19"
 heapless = "0.9.3" # pinned to 0.7.17 for postcard
-monostate = "1.0.2"
+monostate = "1.0.3"
 percent-encoding = "2.3.2"
 postcard = { version = "1.1.3", features = ["use-std"] }
-prost = "0.14.3"
-prost-types = "0.14.3"
-rkyv = "0.8.16"
+prost = "0.14.4"
+prost-types = "0.14.4"
+rkyv = "0.8.18"
 rmp-serde = "1.3.1"
-serde = { version = "1.0.228", features = ["derive"] }
+serde = { version = "1.0.229", features = ["derive"] }
 serde_ignored = "0.1.14"
-serde_json = "1.0.149"
-toml = "1.1.2"
+serde_json = "1.0.154"
+toml = "1.1.8"
 url = "2.5.8"
-zerocopy = { version = "0.8.48", features = ["derive"] }
+zerocopy = { version = "0.8.63", features = ["derive"] }
 
 [build-dependencies]
 capnpc = "0.25.3"
-prost-build = "0.14.3"
+prost-build = "0.14.4"
 protoc-bin-vendored = "3"
 
 [[example]]
