@@ -4,20 +4,21 @@ root := clean(source_directory() + "/../..")
 
 [no-exit-message]
 _default:
-  @just --list --unsorted --justfile {{source_file()}}
+    @just --list --unsorted --justfile {{ source_file() }}
 
 ## ---- CRATE MANAGEMENT -----------------------------------
 
 # Update Cargo.lock dependencies for all projects (incl. the book's examples, tools, and additional examples in `crates/xmpl`)
 [confirm]
 @update:
-  cargo update
+    cargo update
 
 # Get info about a crate (Rust 1.82+)
 @info crate:
-  cargo info {{crate}}
+    cargo info {{ crate }}
 
 # Check for security advisories, license issues, etc
 @check_crates:
-  cd {{root}}/crates && cargo deny --manifest-path Cargo.toml --workspace --config deny.toml check all --hide-inclusion-graph
+    cd {{ quote(root + "/crates") }} && cargo deny --manifest-path Cargo.toml --workspace --config deny.toml check all --hide-inclusion-graph
+
 # [review cargo deny](https://github.com/john-cd/rust_howto/issues/1275)
