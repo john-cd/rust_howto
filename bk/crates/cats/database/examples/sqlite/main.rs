@@ -34,21 +34,21 @@ enum Commands {
 fn main() -> anyhow::Result<()> {
     #[cfg(all(target_os = "linux", feature = "sqlite"))]
     {
-        let cli = Cli::parse();
+        let cli = Cli::try_parse().unwrap_or_else(|_| Cli { command: None });
 
         if let Some(command) = cli.command {
             match command {
                 #[cfg(all(target_os = "linux", feature = "sqlite"))]
                 Commands::Initialization => {
-                    initialization::run();
+                    let _ = initialization::run();
                 }
                 #[cfg(all(target_os = "linux", feature = "sqlite"))]
                 Commands::InsertSelect => {
-                    insert_select::run();
+                    let _ = insert_select::run();
                 }
                 #[cfg(all(target_os = "linux", feature = "sqlite"))]
                 Commands::Transactions => {
-                    transactions::run();
+                    let _ = transactions::run();
                 }
             }
         }
