@@ -44,14 +44,17 @@ shopt -s nullglob
 
 opt=${1:-""}
 dict_filename="$(dirname "$0")/dictionary.txt"
-book_dir="$(realpath $(dirname ${0})/../..)"
-markdown_sources=($(find ${book_dir}/src ${book_dir}/drafts ${book_dir}/../later/src -type f -name "*.md" -not -name "refs.incl.md" -not -wholename "refs/*.md"))
+book_dir="$(realpath "$(dirname -- "${BASH_SOURCE[0]}")/../..")"
+mapfile -d '' -t markdown_sources < <(
+    find "$book_dir/src" "$book_dir/drafts" "$book_dir/../later/src" \
+        -type f -name "*.md" -not -name "refs.incl.md" -not -path "*/refs/*.md" -print0
+)
 mode="check"
 
 # aspell repeatedly modifies personal dictionary for some purpose,
 # so we should use a copy of our dictionary
 mkdir -p "/tmp/spelling/"
-dict_path="/tmp/spelling/$(basename $dict_filename})"
+dict_path="/tmp/spelling/$(basename -- "$dict_filename")"
 
 if [[ "$opt" == "list" ]]; then
     mode="list"
@@ -72,20 +75,35 @@ elif [[ "$mode" == "list" ]]; then
 
     cp "$dict_filename" "$dict_path"
 
-    if [ ! -f $dict_path ]; then
+    if [ ! -f "$dict_path" ]; then
         retval=1
         exit "$retval"
     fi
 
     for fname in "${markdown_sources[@]}"; do
-        command=$(aspell -M --encoding=utf-8 --ignore 3 --personal="$dict_path" "$mode" < "$fname")
-        if [[ -n "$command" ]]; then
-            for error in $command; do
-                # FIXME: Find more correct way to get line number
-                # (ideally from aspell). Now it can make some false positives,
-                # because it is just a grep
-                grep --with-filename --line-number --color=always "$error" "$fname"
-            done
+        if ! aspell_output=$(sed 's/^/^/' "$fname" | aspell pipe --encoding=utf-8 --ignore=3 --personal="$dict_path"); then
+            printf 'Failed to spell-check %s\n' "$fname" >&2
+            retval=1
+            continue
+        fi
+
+        line_number=0
+        while IFS= read -r aspell_result; do
+            if [[ -z "$aspell_result" ]]; then
+                ((line_number += 1))
+                continue
+            fi
+
+            case "$aspell_result" in
+            '& '* | '# '*)
+                printf '%s:%d: %s\n' "$fname" "$((line_number + 1))" "$aspell_result"
+                retval=1
+                ;;
+            esac
+        done <<< "$aspell_output"
+
+        if ((line_number == 0)); then
+            printf 'Aspell returned no line results for %s\n' "$fname" >&2
             retval=1
         fi
     done
@@ -94,7 +112,7 @@ elif [[ "$mode" == "check" ]]; then
     # Interactive mode: fix typos
     cp "$dict_filename" "$dict_path"
 
-    if [ ! -f $dict_path ]; then
+    if [ ! -f "$dict_path" ]; then
         retval=1
         exit "$retval"
     fi
