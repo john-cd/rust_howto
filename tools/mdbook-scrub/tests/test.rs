@@ -3,9 +3,11 @@ use std::process::Command;
 use std::process::Stdio;
 
 use mdbook_driver::MDBook;
+use mdbook_preprocessor::Preprocessor;
 use mdbook_preprocessor::PreprocessorContext;
 use mdbook_preprocessor::book::Book;
 use mdbook_preprocessor::book::Chapter;
+use mdbook_scrub::Preproc;
 
 #[test]
 fn mdbook_05_preprocessors_expand_directives_after_native_includes() {
@@ -91,4 +93,32 @@ fn preprocessor_protocol_keeps_json_on_stdout() {
             .content
             .contains("SAMPLE_VALUE")
     );
+}
+
+#[test]
+fn directive_processing_is_idempotent_and_preserves_rust_snippets() {
+    let root = std::path::Path::new("test_book").canonicalize().unwrap();
+    let config = mdbook_preprocessor::config::Config::from_disk(root.join("book.toml")).unwrap();
+    let context = PreprocessorContext::new(root.clone(), config, "html".into());
+    let mut content = std::fs::read_to_string(root.join("src/crate_blocks.md")).unwrap();
+    let rust_snippet = "```rust\nlet directive = \"{{#crate untouched}}\";\n```";
+    content.push('\n');
+    content.push_str(rust_snippet);
+
+    let mut book = Book::new();
+    book.push_item(Chapter::new(
+        "Crate Blocks",
+        content,
+        "crate_blocks.md",
+        Vec::new(),
+    ));
+
+    let preprocessor = Preproc::directives();
+    let once = preprocessor.run(&context, book).unwrap();
+    let once_content = once.chapters().next().unwrap().content.clone();
+    assert!(once_content.contains(rust_snippet));
+
+    let twice = preprocessor.run(&context, once).unwrap();
+    let twice_content = twice.chapters().next().unwrap().content.clone();
+    assert_eq!(once_content, twice_content);
 }
