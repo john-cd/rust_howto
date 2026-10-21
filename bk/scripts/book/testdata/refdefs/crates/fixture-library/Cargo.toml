@@ -1,0 +1,8 @@
+[package]
+name = "fixture-library"
+version = "0.1.0"
+edition = "2024"
+repository = "https://example.com/fixture-library"
+
+[lib]
+name = "fixture_library_lib"

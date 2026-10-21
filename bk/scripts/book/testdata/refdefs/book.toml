@@ -1,0 +1,6 @@
+[book]
+title = "Reference generation fixture"
+src = "src"
+
+[build]
+create-missing = false

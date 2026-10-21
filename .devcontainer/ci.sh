@@ -78,6 +78,8 @@ fi
 
 ## Build the book through the supported recipe. PDF output is opt-in.
 cd ..
+python3 scripts/book/test_refdefs.py
+python3 scripts/book/refdefs.py check --book-root .
 PANDOC_BACKEND="$(command -v mdbook-pandoc || true)"
 if [ "${BUILD_PDF:-false}" != "true" ] && [ -n "$PANDOC_BACKEND" ]; then
     mv "$PANDOC_BACKEND" "$PANDOC_BACKEND.ci-disabled"

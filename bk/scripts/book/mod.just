@@ -2,7 +2,7 @@ set unstable
 set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 
 root := clean(source_directory() + "/../..")
-mdbook_utils_version := env("MDBOOK_UTILS_VERSION", "0.1.4")
+mdbook_utils_rev := env("MDBOOK_UTILS_REV", "dedddf3699e461cd418c1a044d82aabd3fec62e0")
 
 [no-exit-message]
 _default:
@@ -13,7 +13,7 @@ _default:
 alias bb := buildbook
 
 # Build the book from its Markdown files (incl. refdefs, index, categories, sitemap, and static assets)
-@buildbook: _release_mbdbook-scrub _generate-refdefs _generate-index-category _mdbook-build-book && _sitemap _copystatic
+@buildbook: _release_mbdbook-scrub _install-mdbook-utils refdefs-check _generate-index-category _mdbook-build-book && _sitemap _copystatic
 
 # Generate the book's HTML / JS
 [unix]
@@ -26,9 +26,26 @@ alias bb := buildbook
   echo "Build book in {{root}}"
   cd {{root}}; mdbook build {{root}}
 
-# Generate new reference definitions for all crate the book's examples depend on...
-@_generate-refdefs:
-# [mdbook-utils refdefs](https://github.com/john-cd/rust_howto/issues/1237)
+# Regenerate only the owned dependency-reference fragment.
+[unix]
+@refdefs-generate:
+  python3 "{{source_directory()}}/refdefs.py" generate --book-root "{{root}}"
+
+[windows]
+@refdefs-generate: _install-mdbook-utils
+  python "{{source_directory()}}/refdefs.py" generate --book-root "{{root}}"
+
+# Check generated refs before rendering; builds report drift without rewriting authoring files.
+[unix]
+@refdefs-check:
+  python3 "{{source_directory()}}/refdefs.py" check --book-root "{{root}}"
+
+[windows]
+@refdefs-check: _install-mdbook-utils
+  python "{{source_directory()}}/refdefs.py" check --book-root "{{root}}"
+
+@_install-mdbook-utils:
+  cargo install --git https://github.com/john-cd/mdbook-utils --rev {{mdbook_utils_rev}} --locked --force mdbook-utils
 
 # Generate the index and the category page.
 @_generate-index-category:
@@ -47,13 +64,6 @@ alias bb := buildbook
 
 # Generate the sitemap.xml file
 @_sitemap:
-  if ! command -v mdbook-utils >/dev/null 2>&1; then cargo install --locked --version {{mdbook_utils_version}} mdbook-utils; fi
-  echo "Generate the sitemap"
-  cd {{root}} && mdbook-utils sitemap
-
-[windows]
-@_sitemap:
-  if (-not (Get-Command mdbook-utils -ErrorAction SilentlyContinue)) { cargo install --locked --version {{mdbook_utils_version}} mdbook-utils }
   echo "Generate the sitemap"
   cd {{root}} && mdbook-utils sitemap
 

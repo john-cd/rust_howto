@@ -41,7 +41,6 @@ $tools = @(
     @{ Name = "mdbook"; Version = $toolVersions["MDBOOK_VERSION"] },
     @{ Name = "mdbook-linkcheck"; Version = $toolVersions["MDBOOK_LINKCHECK_VERSION"] },
     @{ Name = "mdbook-private"; Version = $toolVersions["MDBOOK_PRIVATE_VERSION"] },
-    @{ Name = "mdbook-utils"; Version = $toolVersions["MDBOOK_UTILS_VERSION"] },
     @{ Name = "cargo-nextest"; Version = $toolVersions["CARGO_NEXTEST_VERSION"] },
     @{ Name = "just"; Version = $toolVersions["JUST_VERSION"] }
 )
@@ -55,6 +54,8 @@ cargo install --locked --force --version $toolVersions["MDBOOK_INDEXING_VERSION"
 cargo binstall --no-confirm --version $toolVersions["MDBOOK_PANDOC_VERSION"] mdbook-pandoc
 cargo binstall --no-confirm --version $toolVersions["TECTONIC_VERSION"] tectonic
 cargo binstall --no-confirm mdbook-admonish
+Write-Host "Installing pinned mdbook-utils..." -ForegroundColor Yellow
+cargo install --git https://github.com/john-cd/mdbook-utils --rev $toolVersions["MDBOOK_UTILS_REV"] --locked --force mdbook-utils
 
 Write-Host "Environment check:" -ForegroundColor Cyan
 just --version
