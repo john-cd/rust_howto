@@ -1,111 +1,117 @@
 #![allow(dead_code)]
 // ANCHOR: example
+use anyhow::Context as _;
+use anyhow::ensure;
+use tokio_postgres::Client;
+
 /// In this example, we:
 ///
 /// - Connect to a PostgreSQL database using `tokio_postgres::connect`.
 /// - Spawn the connection on a separate task using `tokio::spawn`.
-/// - Create a table if it does not already exist.
-/// - Insert a new row into the table.
-/// - Query the table for rows and print the results.
-/// - Update a row in the table.
-/// - Delete a row from the table.
-pub async fn run() -> Result<(), tokio_postgres::Error> {
-    // Connect to the database.
-    //  The libpq-style connection strings consist of space-separated
-    // key-value pairs: <https://docs.rs/tokio-postgres/latest/tokio_postgres/config/struct.Config.html>.
-    let url = std::env::var("PG_URL").expect("PG_URL must be set");
-    let (client, connection) =
-        tokio_postgres::connect(&url, tokio_postgres::NoTls).await?;
+/// - Create a temporary table for this connection.
+/// - Insert, query, update, and delete one row.
+/// - Wait for the connection task to finish after closing the client.
+pub async fn run() -> anyhow::Result<()> {
+    let url = std::env::var("PG_URL").context("PG_URL must be set")?;
+    run_with_url(&url).await
+}
 
-    // Spawn the connection on a separate task.
+pub(crate) async fn run_with_url(url: &str) -> anyhow::Result<()> {
+    // The libpq-style connection strings consist of space-separated
+    // key-value pairs: <https://docs.rs/tokio-postgres/latest/tokio_postgres/config/struct.Config.html>.
+    let (client, connection) =
+        tokio_postgres::connect(url, tokio_postgres::NoTls).await?;
+
     // The connection object performs the actual communication with the
     // database.
-    tokio::spawn(async move {
-        if let Err(e) = connection.await {
-            eprintln!("Connection error: {e}");
-        }
-    });
+    let connection_task = tokio::spawn(connection);
+    let result = run_queries(&client).await;
+    drop(client);
 
-    // Create a table.
+    // Dropping the last client closes the connection. Wait for its driver so
+    // the example does not leave a detached task behind.
+    match connection_task.await? {
+        Ok(()) => {}
+        Err(error) if error.is_closed() => {}
+        Err(error) => return Err(error.into()),
+    }
+
+    result
+}
+
+async fn run_queries(client: &Client) -> anyhow::Result<()> {
+    // A temporary table keeps repeated runs isolated and is removed when the
+    // connection closes.
     client
-        .execute(
-            "CREATE TABLE IF NOT EXISTS person (
+        .batch_execute(
+            "CREATE TEMP TABLE person (
                 id SERIAL PRIMARY KEY,
                 name VARCHAR NOT NULL,
                 data BYTEA
             )",
-            &[],
         )
         .await?;
 
-    // Insert a new row.
-    client
-        .execute(
-            "INSERT INTO person (name, data) VALUES ($1, $2)",
+    let id: i32 = client
+        .query_one(
+            "INSERT INTO person (name, data) VALUES ($1, $2) RETURNING id",
             &[&"John Doe", &Some(b"example data".to_vec())],
         )
-        .await?;
-
-    // Query the rows.
-    let mut id: i32 = 0;
-    for row in client
-        .query("SELECT id, name, data FROM person", &[])
         .await?
-    {
-        id = row.get(0);
-        let name: &str = row.get(1);
-        let data: Option<Vec<u8>> = row.get(2);
+        .get(0);
 
-        println!("Found person: {name} with id: {id}");
-        if let Some(data) = data {
-            println!("Data: {:?}", String::from_utf8(data));
-        }
+    let row = client
+        .query_one("SELECT name, data FROM person WHERE id = $1", &[&id])
+        .await?;
+    let name: String = row.get(0);
+    let data: Option<Vec<u8>> = row.get(1);
+    ensure!(name == "John Doe", "inserted name was not preserved");
+    ensure!(
+        data.as_deref() == Some(&b"example data"[..]),
+        "inserted byte data was not preserved"
+    );
+    println!("Found person: {name} with id: {id}");
+    if let Some(data) = data {
+        println!("Data: {:?}", String::from_utf8(data));
     }
-    // Note: calling a method like `Client::query` on its own does nothing.
-    // The associated request is not sent to the database until the future
-    // returned by the method is first polled (awaited). Requests are
-    // executed in the order that they are first polled, not in the order that
-    // their futures are created.
 
-    // Update a row.
-    client
+    // Calling a method like `Client::query` has no effect until its future is
+    // polled. Requests execute in the order their futures are first polled.
+    let updated = client
         .execute(
             "UPDATE person SET name = $1 WHERE id = $2",
             &[&"Jane Doe", &id],
         )
         .await?;
+    ensure!(
+        updated == 1,
+        "expected one row to be updated, got {updated}"
+    );
+    let updated_name: String = client
+        .query_one("SELECT name FROM person WHERE id = $1", &[&id])
+        .await?
+        .get(0);
+    ensure!(updated_name == "Jane Doe", "updated name was not persisted");
 
-    // Delete a row.
-    client
+    let deleted = client
         .execute("DELETE FROM person WHERE id = $1", &[&id])
         .await?;
+    ensure!(
+        deleted == 1,
+        "expected one row to be deleted, got {deleted}"
+    );
+    ensure!(
+        client
+            .query_opt("SELECT id FROM person WHERE id = $1", &[&id])
+            .await?
+            .is_none(),
+        "deleted row is still present"
+    );
 
     Ok(())
 }
 
-pub fn main() -> Result<(), tokio_postgres::Error> {
-    tokio::runtime::Runtime::new().unwrap().block_on(run())
+pub fn main() -> anyhow::Result<()> {
+    tokio::runtime::Runtime::new()?.block_on(run())
 }
 // ANCHOR_END: example
-
-#[cfg(test)]
-mod tests {
-    #[tokio::test]
-    async fn require_external_svc() -> anyhow::Result<()> {
-        let test_url = match std::env::var("TEST_PG_URL") {
-            Ok(url) => url,
-            Err(_) => {
-                eprintln!(
-                    "Skipping PostgreSQL integration test; set TEST_PG_URL to run it."
-                );
-                return Ok(());
-            }
-        };
-
-        unsafe {
-            std::env::set_var("PG_URL", test_url);
-        }
-        tokio::task::spawn_blocking(super::main).await??;
-        Ok(())
-    }
-}

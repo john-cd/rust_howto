@@ -2,10 +2,6 @@
 mod tokio_postgres;
 
 #[cfg(feature = "postgres")]
-#[allow(dead_code)]
-pub(crate) static ENV_MUTEX: std::sync::Mutex<()> = std::sync::Mutex::new(());
-
-#[cfg(feature = "postgres")]
 fn main() -> anyhow::Result<()> {
     tokio_postgres::main()?;
     Ok(())
@@ -14,9 +10,13 @@ fn main() -> anyhow::Result<()> {
 #[cfg(feature = "postgres")]
 #[test]
 fn require_external_svc() -> anyhow::Result<()> {
-    let _lock = ENV_MUTEX.lock().unwrap();
     let test_url = match std::env::var("TEST_PG_URL") {
         Ok(url) => url,
+        Err(_) if std::env::var_os("REQUIRE_PG_SERVICE").is_some() => {
+            anyhow::bail!(
+                "REQUIRE_PG_SERVICE is set but TEST_PG_URL is missing"
+            );
+        }
         Err(_) => {
             eprintln!(
                 "Skipping PostgreSQL integration test; set TEST_PG_URL to run it."
@@ -24,11 +24,8 @@ fn require_external_svc() -> anyhow::Result<()> {
             return Ok(());
         }
     };
-    unsafe {
-        std::env::set_var("PG_URL", test_url);
-    }
-    main()?;
-    Ok(())
+    tokio::runtime::Runtime::new()?
+        .block_on(tokio_postgres::run_with_url(&test_url))
 }
 
 #[cfg(not(feature = "postgres"))]

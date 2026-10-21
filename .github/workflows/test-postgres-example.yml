@@ -1,0 +1,58 @@
+name: Test PostgreSQL book example
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "bk/crates/cats/database/**"
+      - ".github/workflows/test-postgres-example.yml"
+  push:
+    branches: [main, "codex/**"]
+    paths:
+      - "bk/crates/cats/database/**"
+      - ".github/workflows/test-postgres-example.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  postgres-example:
+    name: PostgreSQL example integration test
+    runs-on: ubuntu-24.04
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: library
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d library"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      CARGO_TARGET_DIR: ${{ github.workspace }}/target
+      CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/target/build
+      REQUIRE_PG_SERVICE: "1"
+      TEST_PG_URL: host=127.0.0.1 port=5432 user=postgres password=password dbname=library
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install pinned Rust toolchain
+        shell: bash
+        run: |
+          rust_version="$(sed -n 's/^RUST_VERSION="\([^"]*\)"$/\1/p' .devcontainer/.env)"
+          if [[ -z "$rust_version" ]]; then
+            echo "RUST_VERSION is missing from .devcontainer/.env" >&2
+            exit 1
+          fi
+          rustup toolchain install "$rust_version" --profile minimal
+          rustup default "$rust_version"
+
+      - name: Run the PostgreSQL CRUD and connection teardown test
+        run: cargo test --locked -p database --features postgres --test postgres -- --test-threads=1
+        working-directory: bk/crates
