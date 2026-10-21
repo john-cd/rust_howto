@@ -39,6 +39,13 @@ fn mdbook_05_preprocessors_expand_directives_after_native_includes() {
     let crate_blocks = std::fs::read_to_string("test_book/book/html/crate_blocks.html").unwrap();
     assert!(!crate_blocks.contains("{{#crate"));
     assert!(crate_blocks.contains("cat1"));
+    assert!(crate_blocks.contains("Badge Migration Fixture"));
+    assert!(crate_blocks.contains("Sort a Vector of Integers"));
+    assert!(crate_blocks.contains("sorting.html#sort-vector-integers"));
+    assert!(crate_blocks.contains("https://doc.rust-lang.org/std"));
+    assert!(crate_blocks.contains("https://img.shields.io/badge/std-firebrick?logo=rust"));
+    assert!(crate_blocks.contains("https://crates.io/categories/algorithms"));
+    assert!(crate_blocks.contains("Algorithms"));
 
     let wikilinks = std::fs::read_to_string("test_book/book/html/wikilinks.html").unwrap();
     assert!(!wikilinks.contains("[["));
