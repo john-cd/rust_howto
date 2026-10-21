@@ -1,3 +1,4 @@
+# TODO Reviewed ??-??-2026
 # Imported by every workspace entry point, including root fan-out commands.
 build_repo := parent_directory(source_directory())
 build_slot := if file_name(parent_directory(build_repo)) == ".worktrees" { file_name(build_repo) } else { "main" }

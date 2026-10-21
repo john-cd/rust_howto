@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
 // ANCHOR: example
 /// Return an iterator from a function using the `impl Iterator<Item = T>`

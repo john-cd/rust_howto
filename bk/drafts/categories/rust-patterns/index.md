@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # Rust Patterns
 
 [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}

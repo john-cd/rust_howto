@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 [ex~code-organization~binary-crate-organization]: code_organization_by_project_type.md#binary-crate-organization
 [ex~code-organization~bring-function-in-scope]: use_declarations.md#bring-function-in-scope
 [ex~code-organization~bring-item-from-external-crate-into-scope]: use_declarations.md#bring-item-from-external-crate-into-scope

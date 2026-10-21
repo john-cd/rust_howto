@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 
 [c~RustQuant~crates.io]: https://crates.io/crates/rustquant
 [c~RustQuant~crates.io~badge]: https://img.shields.io/badge/crates.io-rustquant-crimson

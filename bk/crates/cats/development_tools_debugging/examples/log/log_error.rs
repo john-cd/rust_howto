@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
 // ANCHOR: example
 /// Simulates executing a database query.

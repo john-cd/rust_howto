@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# TODO Reviewed ??-??-2026
 set -euo pipefail
 
 script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"

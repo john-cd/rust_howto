@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
 // ANCHOR: example
 //! Demonstrates how to build a URL by joining a base URL with a path.

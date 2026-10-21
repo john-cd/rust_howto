@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 [ex~architecture~actor-model]: common_architectures.md#actor-model
 [ex~architecture~choose-a-project-structure]: software_architecture_process.md#choose-a-project-structure
 [ex~architecture~choose-key-technologies]: software_architecture_process.md#choose-key-technologies

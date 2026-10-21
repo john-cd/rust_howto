@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
 // ANCHOR: example
 //! This example demonstrates two key uses of the `cached` crate:

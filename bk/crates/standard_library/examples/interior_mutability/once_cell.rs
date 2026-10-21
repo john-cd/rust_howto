@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
 // ANCHOR: example
 //! `OnceCell<T>` allows for single assignment, interior mutability.

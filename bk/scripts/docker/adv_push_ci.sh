@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# TODO Reviewed ??-??-2026
 set -euo pipefail
 
 ## Build the CI Docker image, then push it to DockerHub.

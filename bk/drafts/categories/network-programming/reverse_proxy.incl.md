@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [`rathole`][ex~network-programming~rathole] | [![rathole][c~rathole~docs~badge]][c~rathole~docs] | [![cat~network-programming][cat~network-programming~badge]][cat~network-programming] |

@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates |
 |---|---|
 | [Store Homogeneous Data in a Contiguous, Growable Array with `Vec`][ex~data-structures~vec] | [![std][c~std~docs~badge]][c~std~docs] |

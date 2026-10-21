@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # DevOps and Rust
 
 DevOps is the integration and automation of the software development and information technology operations. It prioritizes automation, collaboration, and continuous improvement. The following is a brief description of key DevOps practices and common tools:

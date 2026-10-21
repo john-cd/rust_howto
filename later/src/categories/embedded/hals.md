@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # Embedded Frameworks/HALs (Hardware Abstraction Layers)
 
 {{#include hals.incl.md}}

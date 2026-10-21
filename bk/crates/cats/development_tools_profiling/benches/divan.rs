@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `divan` is a Rust benchmarking framework.
 //!

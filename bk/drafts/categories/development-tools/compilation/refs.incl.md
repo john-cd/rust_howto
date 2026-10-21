@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 [ex~compilation~build-time]: reduce_compilation_duration.md#build-time
 [ex~compilation~dynamic-linking]: reduce_compilation_duration.md#dynamic-linking
 [ex~compilation~faster-linking]: faster_linking.md#faster-linking

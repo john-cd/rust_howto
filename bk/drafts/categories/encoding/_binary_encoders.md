@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # Binary Encoders
 
 {{#include binary_encoders.incl.md}}

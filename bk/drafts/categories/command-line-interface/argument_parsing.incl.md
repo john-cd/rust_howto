@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Using `clap`'s Builder API][ex~command-line-interface~clap-builder] | [![clap][c~clap~docs~badge]][c~clap~docs] | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |

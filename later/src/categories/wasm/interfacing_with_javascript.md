@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # Interfacing with JavaScript (`wasm-bindgen` and `web-sys`)
 
 {{#include interfacing_with_javascript.incl.md}}

@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
 // ANCHOR: example
 /// Struct with a type parameter `T` and a lifetime parameter `'a`.

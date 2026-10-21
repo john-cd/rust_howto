@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [URL Encoding][ex~encoding~percent-encoding] | [![url][c~percent-encoding~docs~badge]][c~url~docs] | [![cat~encoding][cat~encoding~badge]][cat~encoding] |

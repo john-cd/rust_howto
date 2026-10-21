@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Generate a Rust Project from a Template][ex~development-tools_cargo-plugins~cargo-generate] | [![cargo-generate][c~cargo-generate~docs~badge]][c~cargo-generate~docs] | [![cat~development-tools][cat~development-tools~badge]][cat~development-tools] [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins] |

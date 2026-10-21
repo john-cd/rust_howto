@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 [ex~introduction~additional-examples]: how_to_read_this_book.md#additional-examples
 [ex~introduction~how-to-use-code-examples]: how_to_read_this_book.md#how-to-use-code-examples
 [ex~introduction~note-about-crate-representation]: how_to_read_this_book.md#note-about-crate-representation

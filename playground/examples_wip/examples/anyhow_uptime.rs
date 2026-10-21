@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates reading system uptime using `anyhow` for error handling.
 

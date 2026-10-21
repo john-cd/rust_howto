@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # Scripting and Rust
 
 Scripting involves writing small programs, often in high-level, interpreted languages, to automate tasks, manipulate data, or control software workflows. It is widely used for system administration, task automation, web development, and integrating various software components efficiently.

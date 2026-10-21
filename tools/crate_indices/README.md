@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # Index of crates
 
 The `crate_indices` tool creates indexes of crates e.g. by category and by alphabetical order.

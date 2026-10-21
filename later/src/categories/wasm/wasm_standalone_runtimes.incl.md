@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [`wasmer`][ex~wasm~wasmer] | [![wasmer][c~wasmer~docs~badge]][c~wasmer~docs] | [![cat~wasm][cat~wasm~badge]][cat~wasm] |

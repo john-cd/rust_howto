@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # Hardware Integration
 
 {{#include hardware_integration.incl.md}}

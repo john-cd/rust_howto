@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # `templ` tool
 
 `templ` is a simple CLI tool to generate markdown fragments, e.g. markdown links and reference definitions.

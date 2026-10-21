@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 ||
 |---|
 | [Chat Platforms, Forums, and Social Media][ex~links~chat] |

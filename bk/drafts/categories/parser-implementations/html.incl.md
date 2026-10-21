@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Parse HTML with `html5ever`][ex~parser-implementations~html5ever] | [![html5ever][c~html5ever~docs~badge]][c~html5ever~docs] | [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations] |

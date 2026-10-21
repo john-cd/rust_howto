@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 //! Configuration struct and the associated builder.
 
 use std::path::PathBuf;

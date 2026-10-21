@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Calculate the SHA256 of ISO Files Concurrently][ex~concurrency~sha256-of-iso-files-concurrently] | [![threadpool][c~threadpool~docs~badge]][c~threadpool~docs] [![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![num_cpus][c~num_cpus~docs~badge]][c~num_cpus~docs] [![ring][c~ring~docs~badge]][c~ring~docs] | [![cat~concurrency][cat~concurrency~badge]][cat~concurrency] [![cat~filesystem][cat~filesystem~badge]][cat~filesystem] |

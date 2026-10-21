@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Implement Websocket Using a low-level Library][ex~web-programming_websocket~low-level] | [![tungstenite][c~tungstenite~docs~badge]][c~tungstenite~docs] | [![cat~web-programming::websocket][cat~web-programming::websocket~badge]][cat~web-programming::websocket] |

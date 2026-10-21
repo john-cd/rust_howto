@@ -1,3 +1,4 @@
+# TODO Reviewed ??-??-2026
 # Configuration file for `prek`, a git hook framework written in Rust.
 # See https://prek.j178.dev for more information.
 #:schema https://www.schemastore.org/prek.json

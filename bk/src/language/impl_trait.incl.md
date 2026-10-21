@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 ||
 |--------|
 | [Simplify Method Signatures with `impl Trait`][ex~language~impl-trait] | | |

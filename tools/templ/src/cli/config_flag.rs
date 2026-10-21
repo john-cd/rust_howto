@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 //! Handle the global CLI argument `--verbose`
 
 use clap::Arg;

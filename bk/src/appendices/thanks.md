@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # Thanks
 
 This reference guide is written and edited by [John CD][john-cd~repo]↗.

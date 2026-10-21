@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates a basic WebSocket client using the `tungstenite`
 //! crate.

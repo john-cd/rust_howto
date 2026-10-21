@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Simplified implementation of the `Arc` smart pointer.
 //!

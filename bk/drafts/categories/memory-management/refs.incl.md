@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 [ex~memory-management~bumpalo]: memory_allocation.md#bumpalo
 [ex~memory-management~declare-lazily-evaluated-constant]: lazy_initialization.md#declare-lazily-evaluated-constant
 [ex~memory-management~lazy-static]: lazy_initialization.md#lazy-static

@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # Behavioral Patterns
 
 {{#include behavioral_patterns.incl.md}}

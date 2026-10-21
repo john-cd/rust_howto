@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# TODO Reviewed ??-??-2026
 # Create a new cat crate for a given crates.io category.
 #
 # Usage: ./scripts/examples/create.sh <root folder> <category name>

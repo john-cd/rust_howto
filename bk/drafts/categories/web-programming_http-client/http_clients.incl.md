@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [`reqwest`][ex~web-programming_http-client~reqwest] | [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs] | [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client] |

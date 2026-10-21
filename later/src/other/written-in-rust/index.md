@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 # Software Built in Rust
 
 This section provides a few examples of software written in Rust, organized by topic, to give an idea of what has been and can be built with Rust. The [`awesome-rust`][awesome-rust~repo]↗ repository contains a far more complete list of Rust applications, dev tools, and libraries.

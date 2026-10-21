@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates |
 |--------|--------|
 | [`rustpython`][ex~written-in-rust~rustpython] | [![rustpython][c~rustpython~docs~badge]][c~rustpython~docs]↗ |
