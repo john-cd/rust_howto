@@ -14,7 +14,7 @@ pub(crate) enum Cmd {
     None,
     CategoryPage(CmdArgs),
     CategoryPageFromMetadata(CategoryPageFromMetadataCmdArgs),
-    AlphabeticalCratePage(CmdArgs),
+    AlphabeticalCratePage(AlphabeticalCratePageCmdArgs),
     CratePage(CmdArgs),
     ListCrates(DirectoryCmdArgs),
     UpdateRefDefs(CmdArgs2),
@@ -40,6 +40,13 @@ pub(crate) struct CmdArgs2 {
 pub(crate) struct CategoryPageFromMetadataCmdArgs {
     pub crate_names: Vec<String>,
     pub metadata_path: PathBuf,
+}
+
+/// Arguments for generating an alphabetical index with published recipe links.
+#[derive(Debug)]
+pub(crate) struct AlphabeticalCratePageCmdArgs {
+    pub crate_names: Vec<String>,
+    pub book_root: PathBuf,
 }
 
 /// Command arguments with a directory
@@ -70,8 +77,9 @@ pub(super) fn get_cmd() -> anyhow::Result<Cmd> {
             },
         ))
     } else if let Some(m) = matches.subcommand_matches("alphabetical_page") {
-        Ok(Cmd::AlphabeticalCratePage(CmdArgs {
+        Ok(Cmd::AlphabeticalCratePage(AlphabeticalCratePageCmdArgs {
             crate_names: get_crate_names(m),
+            book_root: get_book_root(m),
         }))
     } else if let Some(m) = matches.subcommand_matches("crate_page") {
         Ok(Cmd::CratePage(CmdArgs {
@@ -129,6 +137,13 @@ fn get_file_path(m: &clap::ArgMatches) -> PathBuf {
 fn get_metadata_path(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("metadata")
         .expect("metadata is required")
+        .to_path_buf()
+}
+
+/// Get the book root used to find published recipe links.
+fn get_book_root(m: &clap::ArgMatches) -> PathBuf {
+    m.get_one::<PathBuf>("book_root")
+        .expect("book_root has a default value")
         .to_path_buf()
 }
 

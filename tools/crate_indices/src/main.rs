@@ -1,5 +1,7 @@
 mod cli;
 
+use std::collections::BTreeMap;
+use std::collections::BTreeSet;
 use std::collections::HashMap;
 
 use anyhow::Context;
@@ -66,24 +68,11 @@ fn main() -> anyhow::Result<()> {
             print!("{markdown}");
         }
         cli::Cmd::AlphabeticalCratePage(crates) => {
-            // Group by first letter, uppercased
-            let grouped = crates
-                .crate_names
-                .iter()
-                .sorted()
-                .map(|n| {
-                    let f: String = n.chars().next().unwrap().to_uppercase().collect();
-                    (f, n)
-                })
-                .into_group_map();
-
-            for (first_letter, crates) in grouped.iter().sorted_by_key(|x| x.0) {
-                let markdown = tool_lib::create_alphabetical_crate_page_section(
-                    first_letter,
-                    crates.iter().map(AsRef::as_ref).collect(),
-                )?;
-                println!("{markdown}");
-            }
+            let recipe_links = tool_lib::collect_published_recipe_links(&crates.book_root)?;
+            print!(
+                "{}",
+                create_alphabetical_page(&crates.crate_names, &recipe_links)?
+            );
         }
         cli::Cmd::CratePage(crates) => {
             // Group by first letter, uppercased
@@ -139,13 +128,58 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+const ALPHABETICAL_PAGE_HEADER: &str = "# Crates in Alphabetical Order\n\n\
+Crates mentioned in this book, in alphabetical order. Nested links point to published recipes that use each crate.\n\n";
+const ALPHABETICAL_PAGE_FOOTER: &str = "{{#include refs.incl.md}}\n\
+{{#include ../refs/link-refs.md}}\n\n\
+<div class=\"hidden\">\n\
+</div>\n";
+
+fn create_alphabetical_page(
+    crate_names: &[String],
+    recipe_links: &tool_lib::RecipeLinksByCrate,
+) -> anyhow::Result<String> {
+    let crate_names: BTreeSet<String> = crate_names
+        .iter()
+        .map(|name| name.trim().to_owned())
+        .filter(|name| !name.is_empty())
+        .chain(recipe_links.keys().cloned())
+        .collect();
+    let mut grouped = BTreeMap::<String, Vec<String>>::new();
+
+    for name in crate_names {
+        let first_letter: String = name
+            .chars()
+            .next()
+            .expect("empty crate names were filtered")
+            .to_uppercase()
+            .collect();
+        grouped.entry(first_letter).or_default().push(name);
+    }
+
+    let mut markdown = String::from(ALPHABETICAL_PAGE_HEADER);
+    for (first_letter, crates) in grouped {
+        markdown.push_str(&tool_lib::create_alphabetical_crate_page_section(
+            &first_letter,
+            crates.iter().map(String::as_str).collect(),
+            recipe_links,
+        )?);
+        markdown.push('\n');
+    }
+    markdown.push_str(ALPHABETICAL_PAGE_FOOTER);
+    Ok(markdown)
+}
+
 #[cfg(test)]
 mod tests {
     use std::collections::BTreeSet;
 
+    use super::create_alphabetical_page;
+
     const MASTER_CRATES: &str = include_str!("../../../bk/master/crates.txt");
     const CATEGORY_INDEX: &str = include_str!("../../../bk/src/indices/crates_by_category.md");
     const CATEGORY_METADATA: &str = include_str!("../../../bk/master/crate_categories.toml");
+    const ALPHABETICAL_INDEX: &str = include_str!("../../../bk/src/indices/crates_alphabetical.md");
 
     #[test]
     fn category_index_covers_master_crates() {
@@ -171,6 +205,24 @@ mod tests {
             tool_lib::create_category_page_from_metadata(&crate_names, CATEGORY_METADATA).unwrap();
 
         assert_eq!(generated, CATEGORY_INDEX);
+    }
+
+    #[test]
+    fn alphabetical_index_matches_published_recipe_generation() {
+        let book_root = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("../../bk");
+        let recipe_links = tool_lib::collect_published_recipe_links(book_root).unwrap();
+        let crate_names: Vec<_> = MASTER_CRATES.lines().map(str::to_owned).collect();
+        let generated = create_alphabetical_page(&crate_names, &recipe_links).unwrap();
+
+        assert_eq!(generated, ALPHABETICAL_INDEX);
+        for crate_name in recipe_links.keys() {
+            assert!(
+                generated.contains(&format!(
+                    "[![{crate_name}][c~{crate_name}~docs~badge]][c~{crate_name}~docs]"
+                )),
+                "published recipe crate {crate_name} is missing from the alphabetical index"
+            );
+        }
     }
 
     fn category_index_crates(contents: &str) -> BTreeSet<&str> {
