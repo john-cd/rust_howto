@@ -32,16 +32,18 @@ just crates check
 
 ## Generate the 'crates by category' page
 
-To generate `crates_by_category.md`, call the tool:
+`bk/master/crate_categories.toml` is the checked-in snapshot of external crates.io
+category metadata. Regenerate the published page from that snapshot and the book's
+crate inventory without network access:
 
 ```sh
 cd bk
-cat ./master/crates.txt | just indices crate_indices category_page > output.md
+just book _generate-index-category
 ```
 
-`just` calls `../bin/crate-indices`
-
-You can merge with the existing table in `crates_by_category.md` using `sort -u -o file.md file.md`
+The `category_page` command remains available to query crates.io when refreshing
+the metadata snapshot. Update the snapshot deliberately, then rerun the offline
+generator and review the resulting diff.
 
 ## Generate the alphabetical list of crates used in the book
 

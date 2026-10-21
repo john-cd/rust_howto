@@ -59,6 +59,12 @@ fn main() -> anyhow::Result<()> {
                 println!("{markdown}");
             }
         }
+        cli::Cmd::CategoryPageFromMetadata(c) => {
+            let metadata = std::fs::read_to_string(&c.metadata_path)
+                .with_context(|| format!("read {}", c.metadata_path.display()))?;
+            let markdown = tool_lib::create_category_page_from_metadata(&c.crate_names, &metadata)?;
+            print!("{markdown}");
+        }
         cli::Cmd::AlphabeticalCratePage(crates) => {
             // Group by first letter, uppercased
             let grouped = crates
@@ -139,6 +145,7 @@ mod tests {
 
     const MASTER_CRATES: &str = include_str!("../../../bk/master/crates.txt");
     const CATEGORY_INDEX: &str = include_str!("../../../bk/src/indices/crates_by_category.md");
+    const CATEGORY_METADATA: &str = include_str!("../../../bk/master/crate_categories.toml");
 
     #[test]
     fn category_index_covers_master_crates() {
@@ -155,6 +162,15 @@ mod tests {
             "crates in master/crates.txt missing from the category index: {}",
             missing.join(", ")
         );
+    }
+
+    #[test]
+    fn category_index_matches_offline_generation() {
+        let crate_names: Vec<_> = MASTER_CRATES.lines().map(str::to_owned).collect();
+        let generated =
+            tool_lib::create_category_page_from_metadata(&crate_names, CATEGORY_METADATA).unwrap();
+
+        assert_eq!(generated, CATEGORY_INDEX);
     }
 
     fn category_index_crates(contents: &str) -> BTreeSet<&str> {

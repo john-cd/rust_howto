@@ -1,0 +1,223 @@
+# Checked-in crates.io category snapshot used by the offline book index generator.
+
+[[categories]]
+category = "API bindings"
+slug = "api-bindings"
+description = "Idiomatic wrappers of specific APIs for convenient access from Rust. Includes HTTP API wrappers as well. Non-idiomatic or unsafe bindings can be found in External FFI bindings."
+crates = ["bzip2", "flate2", "rug", "xz2"]
+
+[[categories]]
+category = "Algorithms"
+slug = "algorithms"
+description = "Rust implementations of core algorithms such as hashing, sorting, searching, and more."
+crates = ["fastrand", "glidesort", "itertools", "num", "num-bigint", "num-complex", "num-rational", "num-traits", "pathfinding", "priority-queue", "rand", "rand_distr"]
+
+[[categories]]
+category = "Asynchronous"
+slug = "asynchronous"
+description = "Crates to deal with events independently of the main program flow, using techniques like futures, promises, waiting, or eventing."
+crates = ["axum"]
+
+[[categories]]
+category = "Caching"
+slug = "caching"
+description = "Crates to store the results of previous computations in order to reuse the results."
+crates = ["slotmap"]
+
+[[categories]]
+category = "Cargo plugins"
+slug = "development-tools::cargo-plugins"
+description = "Subcommands that extend the capabilities of Cargo."
+crates = ["cargo-expand"]
+
+[[categories]]
+category = "Command line utilities"
+slug = "command-line-utilities"
+description = "Applications to run at the command line."
+crates = ["just"]
+
+[[categories]]
+category = "Compression"
+slug = "compression"
+description = "Algorithms for making data smaller."
+crates = ["bzip2", "flate2", "gzip", "xz2"]
+
+[[categories]]
+category = "Concurrency"
+slug = "concurrency"
+description = "Crates for implementing concurrent and parallel computation."
+crates = ["parking_lot"]
+
+[[categories]]
+category = "Cryptography"
+slug = "cryptography"
+description = "Algorithms intended for securing data."
+crates = ["ring", "sha2"]
+
+[[categories]]
+category = "Data structures"
+slug = "data-structures"
+description = "Rust implementations of particular ways of organizing data suited for specific purposes."
+crates = ["arrayvec", "bitvec", "graph-rs", "heapless", "im", "indexmap", "indextree", "ndarray", "num", "num-bigint", "num-complex", "num-rational", "petgraph", "priority-queue", "rangemap", "roaring", "rpds", "rust_decimal", "skiplist", "slotmap", "smallvec", "tinyvec", "uuid"]
+
+[[categories]]
+category = "Debugging"
+slug = "development-tools::debugging"
+description = "Crates to help figure out what is going on with your code such as logging, tracing, or assertions."
+crates = ["cargo-expand"]
+
+[[categories]]
+category = "Development tools"
+slug = "development-tools"
+description = "Crates that provide developer-facing features such as testing, debugging, linting, performance profiling, autocompletion, formatting, and more."
+crates = ["derive_more", "just"]
+
+[[categories]]
+category = "Embedded development"
+slug = "embedded"
+description = "Crates that are primarily useful on embedded devices or without an operating system."
+crates = ["bitvec"]
+
+[[categories]]
+category = "Encoding"
+slug = "encoding"
+description = "Encoding and/or decoding data from one data format to another."
+crates = ["serde", "serde_ignored", "serde_json"]
+
+[[categories]]
+category = "Filesystem"
+slug = "filesystem"
+description = "Crates for dealing with files and filesystems."
+crates = ["glob", "notify", "remove_dir_all", "walkdir"]
+
+[[categories]]
+category = "GUI"
+slug = "gui"
+description = "Crates to help create a graphical user interface."
+crates = ["slint", "yew"]
+
+[[categories]]
+category = "Game engines"
+slug = "game-engines"
+description = "For crates that try to provide a &quot;one-stop-shop&quot; for all of your game development needs."
+crates = ["glam"]
+
+[[categories]]
+category = "Graphics"
+slug = "graphics"
+description = "Crates for graphics libraries and applications, including raster and vector graphics primitives such as geometry, curves, and color."
+crates = ["vello"]
+
+[[categories]]
+category = "HTTP server"
+slug = "web-programming::http-server"
+description = "Crates to serve data over HTTP."
+crates = ["axum"]
+
+[[categories]]
+category = "Mathematics"
+slug = "mathematics"
+description = "Crates with a mathematical aspect."
+crates = ["nalgebra", "nalgebra-lapack", "rug", "rust_decimal"]
+
+[[categories]]
+category = "Memory management"
+slug = "memory-management"
+description = "Crates to help with allocation, memory mapping, garbage collection, reference counting, or interfaces to foreign memory managers."
+crates = ["slotmap"]
+
+[[categories]]
+category = "Network programming"
+slug = "network-programming"
+description = "Crates dealing with higher-level network protocols such as FTP, HTTP, or SSH, or lower-level network protocols such as TCP or UDP."
+crates = ["axum"]
+
+[[categories]]
+category = "No dynamic allocation"
+slug = "no-std::no-alloc"
+description = "Crates that are able to function without the Rust alloc crate."
+crates = ["itertools", "serde"]
+
+[[categories]]
+category = "No standard library"
+slug = "no-std"
+description = "Crates that are able to function without the Rust standard library."
+crates = ["anyhow", "arrayvec", "bitflags", "bitvec", "derive_more", "glam", "heapless", "indexmap", "itertools", "nalgebra", "num-traits", "ordered-float", "rand", "rand_distr", "ring", "serde", "serde_ignored", "serde_json", "sha2", "slint", "tinyvec", "typenum", "uom", "uuid"]
+
+[[categories]]
+category = "Parser implementations"
+slug = "parser-implementations"
+description = "Parsers implemented for particular formats or languages."
+crates = ["serde_json", "uuid"]
+
+[[categories]]
+category = "Parsing tools"
+slug = "parsing"
+description = "Crates to help create parsers of binary and text formats. Format-specific parsers belong in other, more specific categories."
+crates = ["strum"]
+
+[[categories]]
+category = "Procedural macro helpers"
+slug = "development-tools::procedural-macro-helpers"
+description = "Crates to help write procedural macros in Rust."
+crates = ["derive_more", "strum"]
+
+[[categories]]
+category = "Rendering"
+slug = "rendering"
+description = "Real-time or offline rendering of 2D or 3D graphics, usually with the help of a graphics card."
+crates = ["vello"]
+
+[[categories]]
+category = "Rendering engine"
+slug = "rendering::engine"
+description = "High-level solutions for rendering on the screen."
+crates = ["slint"]
+
+[[categories]]
+category = "Rust patterns"
+slug = "rust-patterns"
+description = "Shared solutions for particular situations specific to programming in Rust."
+crates = ["anyhow", "bitvec", "itertools", "ordered-float"]
+
+[[categories]]
+category = "Science"
+slug = "science"
+description = "Crates related to solving problems involving physics, chemistry, biology, machine learning, geoscience, and other scientific fields."
+crates = ["nalgebra", "nalgebra-lapack", "ndarray", "num", "num-bigint", "num-complex", "num-rational", "num-traits", "ordered-float", "rust_decimal", "statrs", "uom"]
+
+[[categories]]
+category = "Text processing"
+slug = "text-processing"
+description = "Crates to deal with the complexities of human language when expressed in textual form."
+crates = ["aho-corasick", "regex", "strsim"]
+
+[[categories]]
+category = "Value formatting"
+slug = "value-formatting"
+description = "Crates to allow an application to format values for display to a user, potentially adapting the display to various languages and regions."
+crates = ["uom"]
+
+[[categories]]
+category = "Web programming"
+slug = "web-programming"
+description = "Crates to create applications for the web."
+crates = ["yew"]
+
+[[categories]]
+category = "WebAssembly"
+slug = "wasm"
+description = "Crates for use when targeting WebAssembly, or for manipulating WebAssembly."
+crates = ["nalgebra", "uuid", "yew"]
+
+[[categories]]
+category = "Windows APIs"
+slug = "os::windows-apis"
+description = "Bindings to Windows-specific APIs."
+crates = ["windows"]
+
+[[categories]]
+category = "Uncategorized"
+slug = "uncategorized"
+description = "No crates.io category is recorded for these crates in the book's current inventory."
+crates = ["approx", "bloomfilter", "cargo", "cargo-generate", "cfg-if", "clear", "dioxus", "directories", "dirs", "enumflags", "flagset", "fnv", "fs_extra", "globset", "ignore", "leptos", "mdbook", "mdbook-linkcheck", "mdbook-private", "memmap2", "multimap", "open", "rust-crypto", "same-file", "sqlx", "stdx", "tar", "tempfile", "ultraviolet", "zip"]

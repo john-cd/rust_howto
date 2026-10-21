@@ -12,6 +12,7 @@ pub(super) fn cli() -> Command {
         .flatten_help(true) // Flatten subcommand help into the current command's help
         .version(clap::crate_version!()) // Sets the version for the short version (-V) and help messages.
         .subcommand(subcommand_category_page())
+        .subcommand(subcommand_category_page_from_metadata())
         .subcommand(subcommand_alphabetical_page())
         .subcommand(subcommand_crate_page())
         .subcommand(subcommand_list_crates())
@@ -24,6 +25,14 @@ fn subcommand_category_page() -> Command {
     Command::new("category_page")
         .visible_alias("c")
         .about("Returns the markdown for the category page, given a list of crates")
+        .arg(arg_crate_name())
+}
+
+/// Builds the offline `category_page_from_metadata` subcommand.
+fn subcommand_category_page_from_metadata() -> Command {
+    Command::new("category_page_from_metadata")
+        .about("Returns the category page from a checked-in metadata snapshot and crate list")
+        .arg(arg_metadata_file())
         .arg(arg_crate_name())
 }
 
@@ -96,6 +105,18 @@ fn arg_file_path_with_default() -> clap::Arg {
         .value_hint(ValueHint::FilePath)
         .default_value("./src/refs/crate-refs.md")
         .help("File path")
+}
+
+/// Builds the required metadata file argument.
+fn arg_metadata_file() -> clap::Arg {
+    Arg::new("metadata")
+        .long("metadata")
+        .required(true)
+        .action(clap::ArgAction::Set)
+        .value_name("FILE")
+        .value_parser(clap::value_parser!(PathBuf))
+        .value_hint(ValueHint::FilePath)
+        .help("TOML category metadata snapshot")
 }
 
 /// Builds the `file_path` argument without a default value (used by `expand_crate_blocks`).
