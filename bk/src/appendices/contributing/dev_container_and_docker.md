@@ -21,20 +21,15 @@ The project uses several tools and techniques to optimize the Rust development e
 -   **`cargo binstall`**: To speed up the image build process, we use [`cargo-binstall`][c~cargo-binstall~repo]↗ to install Rust tools as pre-compiled binaries whenever possible, rather than compiling them from source.
 -   **`sccache`**: We use [`sccache`][c~sccache~repo]↗ (Shared Compilation Cache) to cache Rust compilation artifacts. This significantly speeds up subsequent builds by avoiding redundant compilation.
 
-If you don't want to use Dev Container{{hi:Dev Container}}, use the following from the project's root directory to manually build the [`docker`][docker~website]↗{{hi:docker}} image and run it.
+To run the development container manually, use Compose from `.devcontainer`. This reads the pinned tool versions from `.env` and applies the development volume configuration:
 
 ```bash
-docker build --file .devcontainer/Dockerfile --target development --tag rust_howto_dev --build-arg RUST_IMAGE_LABEL=1.88.0-slim-trixie --build-arg MDBOOK_VERSION=0.4.49 .
-docker run --rm --detach --name rust_howto_dev1 --volume $(pwd):/code rust_howto_dev
-docker exec -it rust_howto_dev1 bash
+cd ./.devcontainer
+docker compose up --build -d
+docker compose exec book bash
 ```
 
-To cache the crate and the target folders from run to run, add
-
-```bash
---mount type=volume,src=rust_howto_cargo_crate_cache,dst=/usr/local/cargo/registry/
---mount type=volume,src=rust_howto_cargo_target_cache,dst=/code/target/
-```
+The Compose configuration keeps Cargo's registry, direct Cargo target directory, and `just`/`sccache` caches in named Docker volumes. The latter is mounted at `/root/.cache`; `just` stores per-checkout target and intermediate build outputs below `/root/.cache/rust_howto`, while `sccache` uses `/root/.cache/sccache`. Volume names include the Rust toolchain version so caches are reused only with a matching toolchain.
 
 To connect to the (host OS) docker engine from within the container, add
 
@@ -48,6 +43,7 @@ Test the docker compose{{hi:docker compose}} setup used during development (whic
 
 ```bash
 cd ./.devcontainer
+docker compose config --quiet
 docker compose build # Uses `compose.yaml` and `compose.override.yaml`
 docker compose up -d
 # Or simply
