@@ -18,45 +18,25 @@ do
   do
     if [[ -n "${examplename}" ]]; then
         echo "Processing example: ${examplename}"
-        # [does not handle non-category examples](https://github.com/john-cd/rust_howto/issues/1257)
-        current_file_dir=$(dirname $file)
-        category=$(basename $current_file_dir | tr '-' '_')
-        folder_in_examples=$(basename $file '.md')
-    #     case ${category:0:1} in
+        current_file_dir=$(dirname -- "$file")
+        source_dir=${current_file_dir#"$root"src/}
+        folder_in_examples=$(basename -- "$file" .md)
 
-    #     "a"|"b")
-    #       example_crate_name="ab"
-    #       ;;
+        if [[ "$source_dir" == categories/* ]]; then
+          category=${source_dir#categories/}
+          category=${category%%/*}
+          crate_path="cats/$(tr '-' '_' <<< "$category")"
+        else
+          section=${source_dir%%/*}
+          if [[ -z "$section" ]]; then
+            echo "Cannot determine the example crate for $file" >&2
+            exit 1
+          fi
+          crate_path=$(tr '-' '_' <<< "$section")
+        fi
 
-    #     "c")
-    #       example_crate_name="c"
-    #       ;;
-
-    #     "d")
-    #       example_crate_name="d"
-    #       ;;
-    #     "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l")
-    #       example_crate_name="efghijkl"
-    #       ;;
-    #     "m" | "n")
-    #       example_crate_name="mn"
-    #       ;;
-    #     "o" | "p" | "q" |"r")
-    #       example_crate_name="opqr"
-    #       ;;
-    #     "s" | "t" | "u" | "v")
-    #       example_crate_name="stuv"
-    #       ;;
-    #     "w" | "x" | "y" | "z")
-    #       example_crate_name="wxyz"
-    #       ;;
-    #     *)
-    #       exit 108
-    #       ;;
-    #   esac
-
-      absoluteexampledir="${root}crates/cats/${category}/examples/${folder_in_examples}"
-      exampledir=$(realpath --relative-to=$current_file_dir "${absoluteexampledir}" | tr '-' '_')
+      absoluteexampledir="${root}crates/${crate_path}/examples/${folder_in_examples}"
+      exampledir=$(realpath --relative-to="$current_file_dir" "$absoluteexampledir" | tr '-' '_')
       # echo "exampledir: $exampledir"
       examplefilename=$(tr '-' '_' <<< ${examplename})
       examplefile="${exampledir}/${examplefilename}.rs"

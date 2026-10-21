@@ -8,34 +8,24 @@ assignees: ''
 ---
 
 **Describe the bug**
-A clear and concise description of what the bug is.
+Describe what went wrong and what you were trying to do.
 
 **To Reproduce**
-Steps to reproduce the behavior:
+Provide the smallest set of steps or command that reproduces the problem:
 
 1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+2. Run '...'
+3. Observe the error
 
 **Expected behavior**
-A clear and concise description of what you expected to happen.
+Describe what you expected to happen.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+**Environment**
 
-**Desktop (please complete the following information):**
+- Workspace or crate:
+- Rust version (`rustc --version`):
+- Operating system:
+- Command or `just` recipe:
 
-- OS: [e.g. iOS]
-- Browser [e.g. chrome, safari]
-- Version [e.g. 22]
-
-**Smartphone (please complete the following information):**
-
-- Device: [e.g. iPhone6]
-- OS: [e.g. iOS8.1]
-- Browser [e.g. stock browser, safari]
-- Version [e.g. 22]
-
-**Additional context**
-Add any other context about the problem here.
+**Logs or screenshots**
+Paste relevant output, a backtrace, or screenshots here. Remove secrets and personal data.

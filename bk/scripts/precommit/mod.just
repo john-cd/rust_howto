@@ -42,10 +42,10 @@ _default:
     pre-commit install --install-hooks # uninstall: `pre-commit uninstall`
 
 ## ---- GIT TOWN -----------------------------------------
-# [review git town](https://github.com/john-cd/rust_howto/issues/1246)
-# https://www.git-town.com/ (setup receipt)
+# [review Git Town configuration](https://github.com/john-cd/rust_howto/issues/1246)
+# Optional repository-local configuration for Git Town (https://www.git-town.com/).
 
-# Configure `git town`
+# Configure Git Town to use this repository's GitHub remote
 @config_git_town:
-    git config git-town.code-hosting-driver gitea # Setup git-town with gitea
-    git config git-town.code-hosting-origin-hostname gitea.example.org # Setup git-town origin hostname
+    git config git-town.forge-type github
+    git config git-town.hosting-origin-hostname github.com

@@ -13,12 +13,9 @@
 //! an ASCII letter or digit.
 
 use anyhow::Result;
-use percent_encoding::AsciiSet;
-use percent_encoding::CONTROLS;
 use percent_encoding::NON_ALPHANUMERIC;
 use percent_encoding::percent_decode_str;
 use percent_encoding::percent_encode;
-use percent_encoding::utf8_percent_encode;
 
 /// Encodes a string for use as a URL component.
 fn encode_url_component(input: &str) -> String {
@@ -32,17 +29,6 @@ fn decode_url_component(encoded: &str) -> Result<String> {
     Ok(decoded)
 }
 
-// Custom encoding with a specific ASCII set.
-fn custom_encode(input: &str) -> String {
-    // Create a 'fragment' custom set that only encodes spaces and some special
-    // characters.
-    /// See <https://url.spec.whatwg.org/#fragment-percent-encode-set>.
-    const FRAGMENT: &AsciiSet =
-        &CONTROLS.add(b' ').add(b'"').add(b'<').add(b'>').add(b'`');
-    // Percent-encode the UTF-8 encoding of the given string.
-    utf8_percent_encode(input, FRAGMENT).to_string()
-}
-
 fn main() -> Result<()> {
     // Example URL component encoding:
     let original = "Hello, World! @#$%^&*()";
@@ -52,13 +38,6 @@ fn main() -> Result<()> {
     println!("Original:  {original}");
     println!("Encoded:   {encoded}");
     println!("Decoded:   {decoded}");
-
-    // Demonstrate custom encoding:
-    let custom_input = "special chars: %+";
-    let custom_encoded = custom_encode(custom_input);
-    println!("\nCustom Encoding:");
-    println!("Original:  {custom_input}");
-    println!("Encoded:   {custom_encoded}");
 
     Ok(())
 }
@@ -99,18 +78,6 @@ mod tests {
         }
 
         Ok(())
-    }
-
-    #[test]
-    fn test_custom_encoding() {
-        let input = "test with spaces";
-        let custom_encoded = custom_encode(input);
-
-        assert!(custom_encoded.contains("%20"), "Spaces should be encoded");
-        assert!(
-            !custom_encoded.contains("%2B"),
-            "Plus should not be encoded in this test"
-        );
     }
 }
 // [dedupe with other example in percent_encode](https://github.com/john-cd/rust_howto/issues/1353)

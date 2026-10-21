@@ -116,16 +116,10 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    // TODO
     #[test]
     fn require_external_svc() -> anyhow::Result<()> {
-        unsafe {
-            // TODO replace by config in `compose*.yaml` files:
-            std::env::set_var(
-                "AMQP_ADDR",
-                "amqp://guest:guest@rust_howto_dev-amqp-1:5672",
-            );
-        }
+        // `.devcontainer/compose-heavy-tests.yaml` configures AMQP_ADDR for the
+        // book service that runs this external-service test.
         main()?;
         Ok(())
     }

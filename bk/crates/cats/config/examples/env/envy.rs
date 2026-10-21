@@ -33,11 +33,18 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
+    use std::sync::Mutex;
+
     use super::*;
+
+    static ENV_LOCK: Mutex<()> = Mutex::new(());
+
     #[test]
     fn test_main() {
+        let _guard =
+            ENV_LOCK.lock().expect("environment variable lock poisoned");
         unsafe {
-            std::env::set_var("PORT", "80"); // TODO use Mutex
+            std::env::set_var("PORT", "80");
             std::env::set_var("MY_APP__PORT", "8080");
         }
         main();
