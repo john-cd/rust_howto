@@ -1,27 +1,131 @@
 mod conf;
 mod regexes;
 
+use std::path::Path;
+use std::path::PathBuf;
+
+use anyhow::Context;
+use anyhow::ensure;
+use conf::DirectivePreprocConfig;
 use conf::PreprocConfig;
 use mdbook_preprocessor::Preprocessor;
 use mdbook_preprocessor::PreprocessorContext;
 use mdbook_preprocessor::book::Book;
 use mdbook_preprocessor::book::BookItem;
 use mdbook_preprocessor::errors::Result;
-use regexes::*;
+use regexes::get_regexes;
+use regexes::replace_outside_protected_spans;
+use regexes::wikilink_regex;
 use tracing::info;
-use tracing::warn;
 
-// Inspired from <https://github.com/rust-lang/mdBook/blob/master/examples/nop-preprocessor.rs>
+#[derive(Clone, Copy)]
+enum Stage {
+    Scrub,
+    Directives,
+}
 
-/// The main preprocessor struct.
-pub struct Preproc;
+/// The book preprocessor, configured for either its pre-link scrub or directive stage.
+pub struct Preproc {
+    stage: Stage,
+}
 
 impl Preproc {
-    pub(crate) const NAME: &'static str = "scrub";
-
-    /// Create a new `Preproc` object.
+    /// Create the pre-link stage that removes hidden includes and sections.
     pub fn new() -> Self {
-        Self
+        Self {
+            stage: Stage::Scrub,
+        }
+    }
+
+    /// Create the post-link stage that expands custom directives in memory.
+    pub fn directives() -> Self {
+        Self {
+            stage: Stage::Directives,
+        }
+    }
+
+    fn config_key(&self) -> &'static str {
+        match self.stage {
+            Stage::Scrub => "preprocessor.scrub",
+            Stage::Directives => "preprocessor.directives",
+        }
+    }
+
+    fn run_scrub(&self, ctx: &PreprocessorContext, mut book: Book) -> Result<Book> {
+        let conf = ctx
+            .config
+            .get::<PreprocConfig>(self.config_key())?
+            .unwrap_or_default();
+        let regexes = get_regexes(&conf);
+
+        book.for_each_mut(|item: &mut BookItem| {
+            let BookItem::Chapter(chapter) = item else {
+                return;
+            };
+
+            info!("Removing hidden content from chapter '{}'", chapter.name);
+            if let Some(regex) = &regexes.hidden_sections {
+                chapter.content = regex.replace_all(&chapter.content, "").into_owned();
+            }
+            if let Some(regex) = &regexes.hidden_includes {
+                chapter.content = regex.replace_all(&chapter.content, "").into_owned();
+            }
+        });
+
+        Ok(book)
+    }
+
+    fn run_directives(&self, ctx: &PreprocessorContext, mut book: Book) -> Result<Book> {
+        let conf = ctx
+            .config
+            .get::<DirectivePreprocConfig>(self.config_key())?
+            .unwrap_or_default();
+        let book_root = resolve_book_root(&ctx.root)?;
+        let source_root = book_root.join(&ctx.config.book.src);
+        let mut errors = Vec::new();
+
+        book.for_each_mut(|item: &mut BookItem| {
+            let BookItem::Chapter(chapter) = item else {
+                return;
+            };
+
+            info!("Expanding directives in chapter '{}'", chapter.name);
+            let chapter_source = chapter
+                .source_path
+                .as_ref()
+                .or(chapter.path.as_ref())
+                .map(|path| source_root.join(path));
+            let transformed = book_tool::directives::process_markdown_with_example_resolver(
+                &chapter.content,
+                &conf.directives,
+                |example| resolve_example(&book_root, chapter_source.as_deref(), example),
+            )
+            .and_then(|content| {
+                let content =
+                    replace_outside_protected_spans(&content, &wikilink_regex(), |captures| {
+                        captures
+                            .get(1)
+                            .map_or("", |matched| matched.as_str().trim())
+                            .to_string()
+                    })?;
+                book_tool::directives::validate_no_unexpanded_directives(&content)?;
+                Ok(content)
+            });
+
+            match transformed {
+                Ok(content) => chapter.content = content,
+                Err(error) => errors.push(format!("{}: {error:#}", chapter.name)),
+            }
+        });
+
+        if !errors.is_empty() {
+            anyhow::bail!(
+                "Failed to process custom directives:\n{}",
+                errors.join("\n")
+            );
+        }
+
+        Ok(book)
     }
 }
 
@@ -33,66 +137,234 @@ impl Default for Preproc {
 
 impl Preprocessor for Preproc {
     fn name(&self) -> &str {
-        Self::NAME
+        self.config_key()
+            .strip_prefix("preprocessor.")
+            .expect("preprocessor config keys have a prefix")
     }
 
-    fn run(&self, ctx: &PreprocessorContext, mut book: Book) -> Result<Book> {
-        info!("Running `mdbook-scrub` preprocessor");
-
-        let conf: PreprocConfig = self.retrieve_config(ctx);
-        // Compile the replacement Regex(es) only once per book.
-        let rrs = get_regexes_and_replacements(&conf);
-
-        // If the preprocessor configuration is fully disabled,
-        // return the orginal book.
-        if !rrs.is_empty() {
-            book.for_each_mut(|item: &mut BookItem| {
-                if let BookItem::Chapter(chapter) = item {
-                    info!("Processing chapter '{}'", chapter.name);
-                    let content = &mut chapter.content;
-                    for rr in rrs.iter() {
-                        *content = if let Some(ref repl) = rr.replacement {
-                            rr.re.replace_all(content, repl).into_owned()
-                        } else {
-                            // If replacement is `None`,
-                            // just delete the matching text.
-                            rr.re.replace_all(content, "").into_owned()
-                        };
-                        // tracing::debug!(content);
-                    }
-                };
-            });
+    fn run(&self, ctx: &PreprocessorContext, book: Book) -> Result<Book> {
+        info!("Running `{}` mdBook preprocessor", self.name());
+        match self.stage {
+            Stage::Scrub => self.run_scrub(ctx, book),
+            Stage::Directives => self.run_directives(ctx, book),
         }
-        Ok(book)
     }
 
-    // All usual renderers are supported.
     fn supports_renderer(&self, renderer: &str) -> Result<bool> {
         Ok(renderer != "not-supported")
     }
 }
 
-impl Preproc {
-    fn retrieve_config(&self, ctx: &PreprocessorContext) -> PreprocConfig {
-        // Deserialize the preprocessor's table through mdBook's supported Config API.
-        // `get_preprocessor` was removed in mdBook 0.5.
-        let config_key = format!("preprocessor.{}", self.name());
-        match ctx.config.get::<PreprocConfig>(&config_key) {
-            Ok(Some(config)) => config,
-            Ok(None) => {
-                warn!(
-                    "Could not retrieve `preprocessor.{}` configuration; using defaults",
-                    self.name()
-                );
-                PreprocConfig::default()
-            }
-            Err(error) => {
-                warn!(
-                    "Error in `preprocessor.{}` configuration: {error}; using defaults",
-                    self.name()
-                );
-                PreprocConfig::default()
-            }
+fn resolve_example(
+    book_root: &Path,
+    chapter_source: Option<&Path>,
+    name: &str,
+) -> anyhow::Result<String> {
+    let (path, anchor) = name
+        .trim()
+        .rsplit_once(':')
+        .filter(|(_, anchor)| !anchor.trim().is_empty())
+        .map_or((name.trim(), "example"), |(path, anchor)| {
+            (path.trim(), anchor.trim())
+        });
+    ensure!(!path.is_empty(), "example path cannot be empty");
+
+    let relative_path = Path::new(path);
+    ensure!(
+        !relative_path.is_absolute(),
+        "example path must be relative to its chapter: {path}"
+    );
+    ensure!(
+        relative_path
+            .extension()
+            .and_then(|extension| extension.to_str())
+            == Some("rs"),
+        "example path must name a Rust source file: {path}"
+    );
+
+    let chapter_source =
+        chapter_source.context("example directive is in a chapter without a source file")?;
+    let chapter_directory = chapter_source
+        .parent()
+        .context("chapter source path has no parent directory")?;
+    let root = book_root
+        .canonicalize()
+        .with_context(|| format!("failed to resolve book root {}", book_root.display()))?;
+    let source = chapter_directory
+        .join(relative_path)
+        .canonicalize()
+        .with_context(|| {
+            format!(
+                "failed to resolve example {} from chapter {}",
+                path,
+                chapter_source.display()
+            )
+        })?;
+    ensure!(
+        source.starts_with(&root),
+        "example path escapes the book root: {}",
+        source.display()
+    );
+
+    let text = std::fs::read_to_string(&source)
+        .with_context(|| format!("failed to read example {}", source.display()))?;
+    let snippet = extract_anchor(&text, anchor).with_context(|| {
+        format!(
+            "failed to find anchor '{anchor}' in example {}",
+            source.display()
+        )
+    })?;
+
+    let fence = code_fence(&snippet);
+    Ok(format!("{fence}rust\n{}\n{fence}", snippet.trim_end()))
+}
+
+fn resolve_book_root(root: &Path) -> anyhow::Result<PathBuf> {
+    if let Ok(root) = root.canonicalize() {
+        return Ok(root);
+    }
+
+    let current_dir = std::env::current_dir().context("failed to read current directory")?;
+    ensure!(
+        current_dir.join("book.toml").is_file(),
+        "failed to resolve book root {}",
+        root.display()
+    );
+    current_dir
+        .canonicalize()
+        .context("failed to resolve current book directory")
+}
+
+fn extract_anchor(source: &str, anchor: &str) -> anyhow::Result<String> {
+    let mut in_anchor = false;
+    let mut found_start = false;
+    let mut found_end = false;
+    let mut lines = Vec::new();
+
+    for line in source.lines() {
+        let trimmed = line.trim_start();
+        if !in_anchor
+            && trimmed
+                .strip_prefix("// ANCHOR:")
+                .is_some_and(|value| value.trim() == anchor)
+        {
+            in_anchor = true;
+            found_start = true;
+            continue;
         }
+        if in_anchor
+            && trimmed
+                .strip_prefix("// ANCHOR_END:")
+                .is_some_and(|value| value.trim() == anchor)
+        {
+            found_end = true;
+            break;
+        }
+        if in_anchor {
+            lines.push(line);
+        }
+    }
+
+    ensure!(found_start, "anchor start marker is missing");
+    ensure!(found_end, "anchor end marker is missing");
+    Ok(lines.join("\n"))
+}
+
+fn code_fence(source: &str) -> String {
+    let mut longest_run = 0;
+    let mut current_run = 0;
+    for character in source.chars() {
+        if character == '`' {
+            current_run += 1;
+            longest_run = longest_run.max(current_run);
+        } else {
+            current_run = 0;
+        }
+    }
+    "`".repeat(longest_run.max(2) + 1)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn example_anchor_excludes_marker_lines() {
+        let source = "before\n// ANCHOR: example\nfn main() {}\n// ANCHOR_END: example\nafter\n";
+        assert_eq!(extract_anchor(source, "example").unwrap(), "fn main() {}");
+    }
+
+    #[test]
+    fn example_anchor_reports_missing_markers() {
+        let error = extract_anchor("fn main() {}\n", "example").unwrap_err();
+        assert!(error.to_string().contains("anchor start marker is missing"));
+    }
+
+    #[test]
+    fn code_fence_is_longer_than_backticks_in_example() {
+        assert_eq!(code_fence("let ticks = ```;"), "````");
+    }
+
+    #[test]
+    fn malformed_directive_configuration_is_an_error() {
+        use std::str::FromStr;
+
+        let config = mdbook_preprocessor::config::Config::from_str(
+            "[preprocessor.directives]\nprocess-example-directives = 'yes'\n",
+        )
+        .unwrap();
+        let context = PreprocessorContext::new(PathBuf::from("."), config, "html".into());
+        let error = Preproc::directives()
+            .run(&context, Book::new())
+            .unwrap_err();
+
+        assert!(error.to_string().contains("preprocessor.directives"));
+    }
+
+    #[test]
+    fn unresolved_example_paths_are_errors() {
+        let root = PathBuf::from("test_book").canonicalize().unwrap();
+        let chapter = root.join("src/language/examples.md");
+        let error = resolve_example(
+            &root,
+            Some(&chapter),
+            "../../crates/language/examples/constants_and_statics/missing.rs:example",
+        )
+        .unwrap_err();
+
+        assert!(format!("{error:#}").contains("failed to resolve example"));
+    }
+
+    #[test]
+    fn unresolved_custom_directives_are_errors() {
+        use std::str::FromStr;
+
+        let config = mdbook_preprocessor::config::Config::from_str(
+            "[preprocessor.directives]\nprocess-example-directives = true\n",
+        )
+        .unwrap();
+        let root = std::env::current_dir().unwrap();
+        let context = PreprocessorContext::new(root, config, "html".into());
+        let mut book = Book::new();
+        book.push_item(mdbook_preprocessor::book::Chapter::new(
+            "Unknown directive",
+            "{{#unknown value}}".into(),
+            "unknown.md",
+            Vec::new(),
+        ));
+
+        let error = Preproc::directives().run(&context, book).unwrap_err();
+        assert!(format!("{error:#}").contains("{{#unknown value}}"));
+    }
+
+    #[test]
+    fn both_stages_report_renderer_support() {
+        assert!(Preproc::new().supports_renderer("html").unwrap());
+        assert!(Preproc::directives().supports_renderer("markdown").unwrap());
+        assert!(
+            !Preproc::directives()
+                .supports_renderer("not-supported")
+                .unwrap()
+        );
     }
 }

@@ -2,7 +2,7 @@
 
 ## Example Directives
 
-- [Scrub example directives](./examples.md)
+- [Example Directives](./language/examples.md)
 
 ### Category Directives (TODO NOT IMPLEMENTED)
 

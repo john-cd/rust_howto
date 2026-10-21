@@ -15,6 +15,13 @@ use semver::VersionReq;
 fn make_app() -> Command {
     Command::new(crate_name!())
         .about("A mdbook preprocessor which removes hidden sections and stops the inclusion of hidden chapters")
+        .arg(
+            Arg::new("stage")
+                .long("stage")
+                .value_parser(["scrub", "directives"])
+                .default_value("scrub")
+                .help("Run the pre-link scrub or post-link directive stage"),
+        )
         .subcommand(
             Command::new("supports")
                 .arg(Arg::new("renderer").required(true))
@@ -38,7 +45,10 @@ fn main() {
         .with_writer(std::sync::Mutex::new(log_file))
         .try_init();
 
-    let preprocessor = mdbook_scrub::Preproc::new();
+    let preprocessor = match matches.get_one::<String>("stage").map(String::as_str) {
+        Some("directives") => mdbook_scrub::Preproc::directives(),
+        _ => mdbook_scrub::Preproc::new(),
+    };
 
     if let Some(sub_args) = matches.subcommand_matches("supports") {
         handle_supports(&preprocessor, sub_args);
