@@ -55,7 +55,8 @@ async fn main() -> anyhow::Result<()> {
     // Set up a `ngrok` tunnel.
     let sess = ngrok::Session::builder()
         //.authtoken(authtoken)
-        // Call `authtoken` with the value of the NGROK_AUTHTOKEN environment variable.
+        // Call `authtoken` with the value of the NGROK_AUTHTOKEN environment
+        // variable.
         .authtoken_from_env()
         // Begin a new ngrok Session by connecting to the ngrok service.
         .connect()

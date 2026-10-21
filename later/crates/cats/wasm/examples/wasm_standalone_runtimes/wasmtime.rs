@@ -99,7 +99,8 @@ fn main() -> Result<()> {
     // let greet = instance.get_typed_func::<(), ()>(&mut store, "greet")?;
 
     // Call the "greet" function with no parameters and no results.
-    greet.call(&mut store, &[], &mut []) // store, parameters, results.
+    greet
+        .call(&mut store, &[], &mut []) // store, parameters, results.
         .context("failed to call `greet` function")?;
 
     // Example with arguments:

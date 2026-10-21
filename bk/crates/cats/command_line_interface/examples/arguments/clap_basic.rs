@@ -14,18 +14,23 @@ fn cli() -> Command {
         .author("Hackerman Jones <hckrmnjones@hack.gov>")
         .about("Teaches argument parsing")
         // First possible argument: `--num` or `-n`.
-        .arg(Arg::new("num")
-                .short('n')           // `-n` argument.
-                .long("number")       // `--number` long-form argument.
-                .value_name("NUMBER") // Placeholder for the argument's value in the help message / usage.
+        .arg(
+            Arg::new("num")
+                .short('n') // `-n` argument.
+                .long("number") // `--number` long-form argument.
+                .value_name("NUMBER") // Placeholder for the argument's value in the help message /
+                // usage.
                 .required(false)
-                .help("Enter your favorite number"))
+                .help("Enter your favorite number"),
+        )
         // Second possible argument: `--file` or `-f`:
-        .arg(Arg::new("file")
+        .arg(
+            Arg::new("file")
                 .short('f')
                 .long("file")
                 .value_parser(value_parser!(PathBuf))
-                .help("Enter the path of a file"))
+                .help("Enter the path of a file"),
+        )
     // We can also use the `arg!` macro:
     // `.arg(clap::arg!(-c --config <CONFIG> "Optionally sets a config file to
     // use"))`.

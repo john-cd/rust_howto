@@ -71,8 +71,10 @@ async fn main() -> Result<()> {
     println!("Specific person: {people:?}");
 
     // Update a person's age.
-    let _updated: Option<Person> = db.update(("person", "John Doe"))
-    // Assumes that the name is unique for simplicity. In real applications, use a proper ID.
+    let _updated: Option<Person> = db
+        .update(("person", "John Doe"))
+        // Assumes that the name is unique for simplicity. In real applications,
+        // use a proper ID.
         .content(Person {
             name: "J. Doe".to_string(),
             age: 43,

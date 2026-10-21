@@ -19,7 +19,7 @@ fn main() {
     // A lot more options are available.
     let walker = WalkBuilder::new(root)
         .add("temp/") // Add another directory to walk.
-        .standard_filters(true)  // Respect `.gitignore` and other ignore files.
+        .standard_filters(true) // Respect `.gitignore` and other ignore files.
         .build();
 
     // Iterate over the entries.

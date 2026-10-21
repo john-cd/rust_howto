@@ -35,11 +35,11 @@ fn main() -> anyhow::Result<()> {
     if cfg.enable_log_file {
         let file = File::create("temp/myapp.log")?;
         let layer = fmt::layer()
-        .json()
-        .with_writer(file)
-        // More layer configuration here...
-        .with_thread_names(true)
-        .boxed(); // Equivalent to `Box::new`.
+            .json()
+            .with_writer(file)
+            // More layer configuration here...
+            .with_thread_names(true)
+            .boxed(); // Equivalent to `Box::new`.
         layers.push(layer);
     }
 

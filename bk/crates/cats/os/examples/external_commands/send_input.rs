@@ -34,7 +34,8 @@ fn main() -> Result<()> {
         .stdin
         // Convert from `&mut Option<T>` to `Option<&mut T>`.
         .as_mut()
-        // Transform the `Option<T>` into a `Result<T, E>`, mapping `Some(v)` to `Ok(v)` and `None` to `Err(err)`.
+        // Transform the `Option<T>` into a `Result<T, E>`, mapping `Some(v)` to
+        // `Ok(v)` and `None` to `Err(err)`.
         .ok_or(anyhow!("Child process' stdin has not been captured!"))?
         .write_all(b"1234 56789")?;
 

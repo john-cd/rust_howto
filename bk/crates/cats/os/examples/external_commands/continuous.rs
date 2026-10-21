@@ -19,9 +19,7 @@ fn main() -> Result<(), Error> {
         .spawn()?
         .stdout
         // Ensure that standard output was captured successfully.
-        .ok_or_else(|| {
-            Error::other("Could not capture standard output.")
-        })?;
+        .ok_or_else(|| Error::other("Could not capture standard output."))?;
 
     // Create a buffered reader for efficient line-by-line reading.
     let reader = BufReader::new(stdout);

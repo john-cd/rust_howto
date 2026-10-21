@@ -64,11 +64,12 @@ fn main() {
         }
     }
     // Most commonly you will use `or_insert` and related methods:
-    book_ratings.entry("The Hitchhiker's Guide to the Galaxy")
-     .and_modify(|e| { *e += 1 }) // Provides in-place mutable access to an occupied entry.
-     // Ensures a value is in the entry by inserting the default if empty,
-     // and returns a mutable reference to the value in the entry.
-     .or_insert(5);
+    book_ratings
+        .entry("The Hitchhiker's Guide to the Galaxy")
+        .and_modify(|e| *e += 1) // Provides in-place mutable access to an occupied entry.
+        // Ensures a value is in the entry by inserting the default if empty,
+        // and returns a mutable reference to the value in the entry.
+        .or_insert(5);
     println!("Updated book ratings:");
     for (book, rating) in &book_ratings {
         println!("{book}: {rating}");

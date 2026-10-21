@@ -19,11 +19,14 @@ fn main() {
         .with_max_level(tracing::Level::TRACE) // Log everything.
         .flatten_event(false) // Do not flatten event metadata.
         .with_current_span(true) // Include the current span in formatted events.
-        .with_span_list(true) // Include a list (from root to leaf) of all currently entered spans in formatted events.
-        .with_span_events(FmtSpan::FULL) // Events will be logged whenever a span is created, entered, exited, or closed.
+        .with_span_list(true) // Include a list (from root to leaf) of all currently entered spans in
+        // formatted events.
+        .with_span_events(FmtSpan::FULL) // Events will be logged whenever a span is created, entered, exited, or
+        // closed.
         .with_thread_ids(true) // Include the thread ID of the current thread.
         .with_thread_names(true) // Include the thread name of the current thread.
-        .with_ansi(false) // Disable ANSI terminal escape codes for colors and other text formatting.
+        .with_ansi(false) // Disable ANSI terminal escape codes for colors and other text
+        // formatting.
         .finish();
 
     // Register it as the global default. Equivalent to

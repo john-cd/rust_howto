@@ -11,7 +11,8 @@ use super::CommandLineArgs;
 /// Define the command-line arguments.
 fn cmd() -> clap::Command {
     command!()
-        // Optional run mode (a.k.a. "environment"), which can be "production" or "development" and defaults to the latter.
+        // Optional run mode (a.k.a. "environment"), which can be "production"
+        // or "development" and defaults to the latter.
         .arg(
             Arg::new("run_mode")
                 .short('e')

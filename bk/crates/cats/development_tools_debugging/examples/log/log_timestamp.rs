@@ -13,7 +13,8 @@ fn main() {
     Builder::new()
         // Set the format for log messages.
         .format(|buf, record| {
-            writeln!( // Write the formatted log message to the buffer.
+            writeln!(
+                // Write the formatted log message to the buffer.
                 buf,
                 "{} [{}] - {}",
                 Local::now().format("%Y-%m-%dT%H:%M:%S"),
