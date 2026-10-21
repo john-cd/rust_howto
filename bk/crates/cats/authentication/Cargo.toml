@@ -19,8 +19,8 @@ autolib = false
 [dependencies]
 
 ## General
-anyhow = "1.0.102"
-reqwest = { version = "0.13.3", features = ["blocking"] }
+anyhow = "1.0.104"
+reqwest = { version = "0.13.5", features = ["blocking"] }
 
 [[example]]
 name = "basic_authentication"
