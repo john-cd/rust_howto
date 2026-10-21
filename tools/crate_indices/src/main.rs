@@ -132,3 +132,41 @@ fn main() -> anyhow::Result<()> {
     }
     Ok(())
 }
+
+#[cfg(test)]
+mod tests {
+    use std::collections::BTreeSet;
+
+    const MASTER_CRATES: &str = include_str!("../../../bk/master/crates.txt");
+    const CATEGORY_INDEX: &str = include_str!("../../../bk/src/indices/crates_by_category.md");
+
+    #[test]
+    fn category_index_covers_master_crates() {
+        let expected: BTreeSet<_> = MASTER_CRATES
+            .lines()
+            .map(str::trim)
+            .filter(|name| !name.is_empty() && *name != "std")
+            .collect();
+        let indexed = category_index_crates(CATEGORY_INDEX);
+        let missing: Vec<_> = expected.difference(&indexed).copied().collect();
+
+        assert!(
+            missing.is_empty(),
+            "crates in master/crates.txt missing from the category index: {}",
+            missing.join(", ")
+        );
+    }
+
+    fn category_index_crates(contents: &str) -> BTreeSet<&str> {
+        contents
+            .lines()
+            .flat_map(|line| line.split("[!["))
+            .filter_map(|badge| {
+                let (label, reference) = badge.split_once("][c~")?;
+                let reference = reference.split(']').next()?;
+                let name = reference.strip_suffix("~docs~badge")?;
+                (label == name).then_some(name)
+            })
+            .collect()
+    }
+}
