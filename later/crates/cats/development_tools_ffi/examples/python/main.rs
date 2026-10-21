@@ -26,7 +26,7 @@ enum Commands {
     UseRustFromPython,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     #[cfg(target_os = "linux")]
     {
         let cli = Cli::parse();
@@ -35,7 +35,7 @@ fn main() {
             match command {
                 #[cfg(target_os = "linux")]
                 Commands::Pyo3 => {
-                    pyo3::run();
+                    pyo3::run()?;
                 }
                 #[cfg(target_os = "linux")]
                 Commands::UseRustFromPython => {
@@ -44,4 +44,5 @@ fn main() {
             }
         }
     }
+    Ok(())
 }

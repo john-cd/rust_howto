@@ -5,8 +5,8 @@
 //!
 //! It showcases loading a module from WAT (WebAssembly Text Format), defining
 //! host functions, instantiating the module, and calling exported functions.
-use anyhow::Context;
 use anyhow::Result;
+use wasmtime::error::Context;
 use wasmtime::*;
 
 // Simple example written in WAT (WebAssembly Text Format).
@@ -113,6 +113,7 @@ fn main() -> Result<()> {
         .context("failed to call `add` function")?;
 
     println!("\nResult of add function: {}", results[0].unwrap_i32());
+    assert_eq!(results[0].unwrap_i32(), 30);
 
     Ok(())
 }

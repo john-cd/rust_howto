@@ -16,8 +16,8 @@ use pyo3::prelude::*;
 use pyo3::types::PyTuple;
 
 fn test_my_function() -> PyResult<()> {
-    Python::with_gil(|py| {
-        let fun: PyObject = PyModule::from_code(
+    Python::attach(|py| {
+        let fun: Py<PyAny> = PyModule::from_code(
             py,
             c_str!(
                 "def example(*args, **kwargs):
@@ -32,7 +32,7 @@ fn test_my_function() -> PyResult<()> {
             c_str!(""),
         )?
         .getattr("example")?
-        .into();
+        .unbind();
 
         // Call object without any arguments:
         fun.call0(py)?;
@@ -47,34 +47,29 @@ fn test_my_function() -> PyResult<()> {
     })
 }
 
-fn main() {
+fn main() -> PyResult<()> {
     // Prepares the use of Python in a free-threaded context:
-    pyo3::prepare_freethreaded_python();
+    Python::initialize();
 
     // Run a Python script:
-    println!(
-        "{:?}",
-        Python::with_gil(|py| py.run(
-            pyo3::ffi::c_str!("print('Hello World')"),
-            None,
-            None
-        ))
-    );
+    Python::attach(|py| {
+        py.run(pyo3::ffi::c_str!("print('Hello World')"), None, None)
+    })?;
 
-    println!("{:?}", test_my_function());
+    test_my_function()
 }
 // ANCHOR_END: example
 
-pub fn run() {
-    main();
+pub fn run() -> PyResult<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test_main() {
-        main();
+    fn test_main() -> PyResult<()> {
+        main()
     }
 }
 // [finish; fix py examples](https://github.com/john-cd/rust_howto/issues/78)
