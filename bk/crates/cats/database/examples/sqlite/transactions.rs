@@ -56,7 +56,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     #[test]
-    fn test_main() {
-        // TODO main().unwrap();
+    fn test_main() -> Result<()> {
+        main()
     }
 }
