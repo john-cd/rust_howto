@@ -25,6 +25,16 @@ This repository is designed to work on Windows with PowerShell.
    - `just ca` — run clippy across the workspace
    - `just ba` — build all code (all features)
    - `just nta` — run all tests including doctests
+   - `just bb` — build the book; `just s` — serve it locally
+
+`just` uses PowerShell on Windows. Recipes implemented for Windows appear in
+`just --list`; recipes that run Bash scripts are tagged Unix-only and are
+omitted there. `just q`, `just spell`, and `just lnk <pattern>` report an error
+on Windows; use `just s` to serve the book and `just bb` to build it.
+
+From `bk`, `just recipes fix_recipe_tables` and `just refdefs sort` also have
+native Windows implementations. Run a subcommand module such as `just indices`
+to see the Windows-supported recipes it exposes.
 
 5. If you want to compile or test a single crate directly:
    - `cd bk/crates`

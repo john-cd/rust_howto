@@ -4,7 +4,7 @@ root := clean(join(source_directory(), "..", ".."))
 
 [no-exit-message]
 _default:
-  @just --list --unsorted --justfile {{source_file()}}
+    @just --list --unsorted --justfile {{ source_file() }}
 
 ## ---- UTILITIES -----------------------------------
 
@@ -13,17 +13,19 @@ empty := ''
 
 # Call mdbook-utils to manage links, ref definitions, etc...
 @utils cmd=help *subcmd=empty:
-  cd {{root}} && mdbook-utils {{cmd}} {{subcmd}}
+    cd {{ quote(root) }} && mdbook-utils {{ quote(cmd) }}{{ if subcmd == "" { "" } else { " " + quote(subcmd) } }}
+
 # [clarify mdbook-utils](https://github.com/john-cd/rust_howto/issues/1254)
 
 # Run the templating tool e.g to create badges and reference definitions for a given crate or category
 [unix]
 @templ cmd=help *subcmd=empty:
-  if [ ! -f {{root}}/../bin/templ ]; then just -f {{root}}/../tools/justfile release; fi
-  cd {{root}} && ../bin/templ {{cmd}} {{subcmd}}
+    if [ ! -f {{ quote(root + "/../bin/templ") }} ]; then just -f {{ quote(root + "/../tools/justfile") }} release; fi
+    cd {{ quote(root) }} && {{ quote(root + "/../bin/templ") }} {{ quote(cmd) }}{{ if subcmd == "" { "" } else { " " + quote(subcmd) } }}
+
 # [clarify templ](https://github.com/john-cd/rust_howto/issues/1254)
 
 [windows]
 @templ cmd=help *subcmd=empty:
-  if ( -Not (Test-Path -Path {{root}}\..\bin\templ.exe )) { just -f {{root}}\..\tools\justfile release }
-  cd {{root}}; {{root}}\..\bin\templ.exe {{cmd}} {{subcmd}}
+    if (-not (Test-Path -LiteralPath {{ quote(root + "/../bin/templ.exe") }})) { just -f {{ quote(root + "/../tools/justfile") }} release }
+    Set-Location -LiteralPath {{ quote(root) }}; & {{ quote(root + "/../bin/templ.exe") }} {{ quote(cmd) }}{{ if subcmd == "" { "" } else { " " + quote(subcmd) } }}
