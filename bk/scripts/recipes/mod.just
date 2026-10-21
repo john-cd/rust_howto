@@ -12,4 +12,9 @@ _default:
 [confirm]
 [unix]
 @fix_recipe_tables:
-  ./fix_recipe_tables.sh {{root}}
+  python3 "{{source_directory()}}/fix_recipe_tables.py" "{{root}}"
+
+[confirm]
+[windows]
+@fix_recipe_tables:
+  python "{{source_directory()}}/fix_recipe_tables.py" "{{root}}"
