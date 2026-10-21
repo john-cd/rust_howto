@@ -64,15 +64,6 @@
 [aho_corasick-github]: https://github.com/BurntSushi/aho-corasick
 
 
-[ansi_term]: https://docs.rs/ansi_term
-
-
-[ansi_term-crate]: https://crates.io/crates/ansi_term
-
-
-[ansi_term-github]: https://github.com/ogham/rust-ansi-term
-
-
 [anyhow]: https://docs.rs/anyhow
 
 
@@ -206,15 +197,6 @@
 
 
 [base64ct-github]: https://github.com/RustCrypto/formats
-
-
-[basic_toml]: https://docs.rs/basic_toml
-
-
-[basic_toml-crate]: https://crates.io/crates/basic_toml
-
-
-[basic_toml-github]: https://github.com/dtolnay/basic-toml
 
 
 [bcrypt]: https://docs.rs/bcrypt
@@ -1036,15 +1018,6 @@
 [ignore-github]: https://github.com/BurntSushi/ripgrep/tree/master/crates/ignore
 
 
-[im]: https://docs.rs/im
-
-
-[im-crate]: https://crates.io/crates/im
-
-
-[im-github]: https://github.com/bodil/im-rs
-
-
 [image]: https://docs.rs/image
 
 
@@ -1052,6 +1025,15 @@
 
 
 [image-github]: https://github.com/image-rs/image
+
+
+[imbl]: https://docs.rs/imbl
+
+
+[imbl-crate]: https://crates.io/crates/imbl
+
+
+[imbl-github]: https://github.com/jneem/imbl
 
 
 [indexmap]: https://docs.rs/indexmap
@@ -1405,6 +1387,15 @@
 [notify-github]: https://github.com/notify-rs/notify.git
 
 
+[nu_ansi_term]: https://docs.rs/nu_ansi_term
+
+
+[nu_ansi_term-crate]: https://crates.io/crates/nu_ansi_term
+
+
+[nu_ansi_term-github]: https://github.com/nushell/nu-ansi-term
+
+
 [num]: https://docs.rs/num
 
 
@@ -1565,15 +1556,6 @@
 
 
 [pin_project-github]: https://github.com/taiki-e/pin-project
-
-
-[pingora]: https://docs.rs/pingora
-
-
-[pingora-crate]: https://crates.io/crates/pingora
-
-
-[pingora-github]: https://github.com/cloudflare/pingora
 
 
 [pkcs8]: https://docs.rs/pkcs8
@@ -1936,13 +1918,13 @@
 [serde_json-github]: https://github.com/serde-rs/json (*)
 
 
-[serde_yml]: https://docs.rs/serde_yml
+[serde_norway]: https://docs.rs/serde_norway
 
 
-[serde_yml-crate]: https://crates.io/crates/serde_yml
+[serde_norway-crate]: https://crates.io/crates/serde_norway
 
 
-[serde_yml-github]: https://github.com/sebastienrousseau/serde_yml
+[serde_norway-github]: https://github.com/cafkafk/serde-yaml
 
 
 [sha1]: https://docs.rs/sha1
