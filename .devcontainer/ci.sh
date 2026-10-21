@@ -76,20 +76,18 @@ if [ "${SKIP_BOOK_BUILD:-false}" = "true" ]; then
     exit 0
 fi
 
-## Build the book (html)
+## Build the book through the supported recipe. PDF output is opt-in.
 cd ..
-mdbook build
-
-## Add static assets
-cp static/*.* book/html/
-
-## `sitemap.xml` generator
-##  We used https://lib.rs/crates/mdbook-sitemap-generator but there is now custom code in the mdbook-utils tool
-## that is a companion to the book
-# mdbook-sitemap-generator --domain john-cd.com/rust_howto/ --output book/sitemap.xml
-# sed -i -e 's/<urls>/<url>/g' -e 's/<\/urls>/<\/url>/g' book/sitemap.xml
-
-mdbook-utils sitemap
+PANDOC_BACKEND="$(command -v mdbook-pandoc || true)"
+if [ "${BUILD_PDF:-false}" != "true" ] && [ -n "$PANDOC_BACKEND" ]; then
+    mv "$PANDOC_BACKEND" "$PANDOC_BACKEND.ci-disabled"
+    trap 'kill "$MONITOR_PID" 2>/dev/null || true; mv "$PANDOC_BACKEND.ci-disabled" "$PANDOC_BACKEND" 2>/dev/null || true' EXIT
+fi
+just bb
+if [ -n "$PANDOC_BACKEND" ] && [ -f "$PANDOC_BACKEND.ci-disabled" ]; then
+    mv "$PANDOC_BACKEND.ci-disabled" "$PANDOC_BACKEND"
+    trap 'kill "$MONITOR_PID" 2>/dev/null || true' EXIT
+fi
 
 echo "----------"
 

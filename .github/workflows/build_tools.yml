@@ -5,10 +5,18 @@ on:
     branches: [ "main" ]
     paths:
       - 'tools/**'
+      - '.devcontainer/**'
+      - '.github/workflows/**'
+      - 'Cargo.toml'
+      - 'Cargo.lock'
   pull_request:
     branches: [ "main" ]
     paths:
       - 'tools/**'
+      - '.devcontainer/**'
+      - '.github/workflows/**'
+      - 'Cargo.toml'
+      - 'Cargo.lock'
   workflow_dispatch:
 
 concurrency:
@@ -34,14 +42,17 @@ jobs:
 
     - name: Build local-tool-builder image
       run: |
+        source .devcontainer/.env
+        cache_scope="rust_howto_tools-${RUST_VERSION}-$(sha256sum tools/Cargo.lock | cut -c1-12)"
         docker buildx build \
           --file .devcontainer/Dockerfile \
           --target local-tool-builder \
           --tag rust_howto_tools_app_builder:latest \
-          --cache-from type=gha,scope=rust_howto_tools \
-          --cache-to type=gha,mode=max,scope=rust_howto_tools \
-          --load ..
+          --build-arg RUST_IMAGE_LABEL="$RUST_IMAGE_LABEL" \
+          --cache-from type=gha,scope="$cache_scope" \
+          --cache-to type=gha,mode=max,scope="$cache_scope" \
+          --load .
 
     - name: Run tools tests inside container
       run: |
-        docker run --rm rust_howto_tools_app_builder:latest bash -lc "cd /code/tools && cargo +nightly test --locked --all-features"
+        docker run --rm rust_howto_tools_app_builder:latest bash -lc "cd /code/tools && cargo +nightly fmt --all --check && cargo build --workspace --all-targets --locked --all-features && cargo clippy --workspace --all-targets --locked --all-features -- --deny warnings && cargo test --workspace --all-targets --locked --all-features && cargo test --workspace --doc --locked --all-features"
