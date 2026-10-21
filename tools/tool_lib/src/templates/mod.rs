@@ -32,14 +32,14 @@ pub use remove_empty_lines::*;
 fn get_template_engine() -> anyhow::Result<TinyTemplate<'static>> {
     let mut tt = TinyTemplate::new();
 
-    // // Replace - by _ per the Rust convention for module names:
-    // tt.add_formatter("underscored", |val, str| {
-    //     info!("underscored called with str: {str}, val: {val}");
-    //     if let Some(v) = val.as_str() {
-    //         str.push_str(&v.replace("-", "_"));
-    //     }
-    //     Ok(())
-    // });
+    // Replace - by _ per the Rust convention for module names:
+    tt.add_formatter("underscored", |val, str| {
+        info!("underscored called with str: {str}, val: {val}");
+        if let Some(v) = val.as_str() {
+            str.push_str(&v.replace("-", "_"));
+        }
+        Ok(())
+    });
 
     // Escape - to --, _ to __, and replace " " by _ for use in
     // `shields.io` URLs.
