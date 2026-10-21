@@ -25,7 +25,12 @@ services:
       - cargo_home_cache:/usr/local/cargo/
       # Contains the compile cache:
       - cargo_target_cache:/code/target/ # See {bk, tool, ...}/.cargo/config.toml. Note this should override the bind mount for that subfolder.
+      # just routes slot-specific build outputs and sccache through XDG_CACHE_HOME.
+      - cargo_build_cache:/root/.cache/
       - command_history:/command_history
+    environment:
+      XDG_CACHE_HOME: /root/.cache
+      SCCACHE_DIR: /root/.cache/sccache
     ## Required for ptrace-based debugger like C++, Go, and Rust.
     cap_add:
       - SYS_PTRACE
@@ -38,6 +43,8 @@ volumes:
     name: "${COMPOSE_PROJECT_NAME}_cargo_home_cache_${RUST_VERSION:?rust version must be defined}"
   cargo_target_cache:
     name: "${COMPOSE_PROJECT_NAME}_cargo_target_cache_${RUST_VERSION:?rust version must be defined}"
+  cargo_build_cache:
+    name: "${COMPOSE_PROJECT_NAME}_cargo_build_cache_${RUST_VERSION:?rust version must be defined}"
   command_history:
     name: "${COMPOSE_PROJECT_NAME}_command_history"
 
