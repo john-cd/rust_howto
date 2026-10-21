@@ -39,6 +39,18 @@ Draft chapters are kept in the [`bk/drafts`][rust-howto~drafts~repo]↗ and [`la
 
 Embedded examples should be ideally _runnable_ on the [Rust playground][rust-playground~website]↗ or at least directly copy-pasteable into Rust code.
 
+## Work on this repository
+
+This repository has several workspaces and include-heavy book sources. Start with the guide that matches your change:
+
+- [Repository Structure](repository_structure.md#folders-and-key-files) maps the book sources, examples, and tools to their folders.
+- [Development Environment Setup](development_environment_setup.md) explains how to prepare a local checkout.
+- [Book Editing and Example Code Development](book_editing_and_example_code_development.md) covers chapter and runnable-example changes.
+- [Documentation Generation](documentation_generation.md) explains how to preview and generate the documentation.
+- [mdBook Pre-processors](mdBook_pre-processors.md) describes the book's preprocessor pipeline.
+
+The repository root is not a single Cargo workspace. Run `just` recipes from the workspace you change. For a new or moved published chapter, update `bk/src/SUMMARY.md`.
+
 ## I Have a Question {#i-have-a-question}
 
 > If you want to ask a question, we assume that you have read the [README][rust-howto~readme~repo]↗.
