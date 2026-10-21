@@ -2,10 +2,15 @@
 
 This is a **Work In Progress**. The API are subject to change.
 
-`mdbook-scrub` is a simple `mdbook` preprocessor that:
+`mdbook-scrub` provides two mdBook preprocessing stages. The first removes hidden
+sections and hidden file helpers before mdBook expands native includes. The
+second expands the book's custom directives after those includes, including
+directives in included Markdown. Both stages work on the in-memory book; they do
+not rewrite source files.
 
-- removes the hidden sections between `<div class="hidden">` and `</div>`,
-- removes `{{#includes }}` that points to hidden files (files that start with `_`).
+Custom directives in code spans, fenced code blocks and HTML comments remain
+literal. An unresolved custom directive or example path fails the build with a
+chapter-specific error.
 
 ## Installation
 
@@ -30,10 +35,11 @@ cargo install mdbook-scrub
 
 Create a book using `mdbook init`, if not done already.
 
-Add a new table to `book.toml` and update the configuration as required:
+Configure both stages in `book.toml`:
 
 ```toml
 [preprocessor.scrub]
+command = "../bin/mdbook-scrub"
 # Remove all markdown within HTML tags with class `hidden` from the book
 # (default = true)
 remove-hidden-sections = true
@@ -42,14 +48,43 @@ remove-hidden-sections = true
 do-not-include-hidden-chapters = true
 # Define the prefix for hidden chapters (default = '_')
 hidden-chapter-prefix = "_"
-# The order in which preprocessors are run can be controlled with the `before`
-# and `after` fields.
+# Remove hidden includes before mdBook's built-in links preprocessor expands them.
 # <https://rust-lang.github.io/mdBook/format/configuration/preprocessors.html>
+after = [ "private" ]
 before = [ "links" ]
-#after = [ "" ]
+
+[preprocessor.directives]
+command = "../bin/mdbook-scrub --stage directives"
+after = [ "links" ]
+# Directive families can be disabled independently (all default to true).
+process-crate-block-directives = true
+process-example-directives = true
+process-link-and-badge-directives = true
+process-wikilinks = true
 ```
 
 Please review the `test_book\book.toml` for a complete example.
+
+## Expand Custom Directives
+
+The directive stage supports crate and category blocks, crate and category
+links or badges, examples, and wikilinks. For example:
+
+```md
+{{#crate serde filesystem}}
+{{#categories filesystem=Filesystem,testing="Testing"}}
+{{#example ../../crates/language/examples/constants_and_statics/statics.rs:example}}
+```
+
+An example path is relative to its chapter's source file and must resolve to a
+Rust file inside the book root. The optional anchor defaults to `example`.
+Anchored snippets use `// ANCHOR: name` and `// ANCHOR_END: name` comments;
+only the lines between those markers are emitted in a Rust code fence. Missing
+files or anchors stop the build instead of silently dropping the example.
+
+The order is `private` → `scrub` → mdBook's `links` → `directives`. This lets
+mdBook expand its own include, rustdoc-include, and playground helpers first,
+then applies custom directives to the included content while preserving code.
 
 ## Remove Hidden Sections
 

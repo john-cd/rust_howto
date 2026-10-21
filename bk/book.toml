@@ -33,11 +33,17 @@ chapter-prefix = "_" # If the remove option is active, chapters with filenames p
 [preprocessor.scrub]
 command = "../bin/mdbook-scrub"
 after = [ "private" ]
+before = [ "links" ]
+
+# Expand custom book directives after mdBook has expanded native includes.
+[preprocessor.directives]
+command = "../bin/mdbook-scrub --stage directives"
+after = [ "links" ]
 
 # # Default preprocessor: `index`.
 # Convert all chapter files named README.md into index.md. That is to say, all `README.md` would be rendered to an index file `index.html` in the rendered book.
 [preprocessor.index]
-after = [ "scrub" ]
+after = [ "directives" ]
 
 # # Default preprocessor: `links`.
 # # Expands the {{ #playground }}, {{ #include }}, and {{ #rustdoc_include }} handlebars helpers in a chapter
@@ -49,7 +55,7 @@ after = [ "scrub" ]
 [preprocessor.indexing]
 # use_chapter_names = true
 # # Run after removal of hidden chapters
-after = [ "links" ]
+after = [ "directives" ]
 
 #[preprocessor.indexing.see_instead]
 # "unit type" = "`()`"  # index entries where the key should point to the value
