@@ -56,20 +56,6 @@ sudo apt-get update \
     xorg-dev \
     jq \
     fzf \
-    libxkbcommon-dev \
-    libxkbcommon-x11-dev \
-    libz-dev \
-    mold \
-    llvm \
-    m4 \
-    make \
-    pkg-config \
-    protobuf-compiler \
-    python3 \
-    wget \
-    xorg-dev \
-    jq \
-    fzf \
 && sudo apt-get clean -y \
 && rm -rf /var/lib/apt/lists/*
 
@@ -98,7 +84,7 @@ cargo binstall --no-confirm --secure --version "$JUST_VERSION" just
 cargo binstall --no-confirm --secure sccache cargo-deny lychee bacon ripgrep
 
 cargo install --locked --force --version "$MDBOOK_INDEXING_VERSION" mdbook-indexing
-cargo install --locked --version "$MDBOOK_UTILS_VERSION" mdbook-utils
+cargo install --git https://github.com/john-cd/mdbook-utils --rev "$MDBOOK_UTILS_REV" --locked --force mdbook-utils
 
 # GitHub
 curl -sS https://webi.sh/gh | sh

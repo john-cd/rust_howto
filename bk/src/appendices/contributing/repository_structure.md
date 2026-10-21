@@ -44,7 +44,7 @@ Each recipe in a given chapter contains a short description of the crates used, 
 
 Each book section or category has an introductory `index.md` file that lists its recipes by topic / chapter.
 
-In the `bk/src/refs` folder, you will find `category-refs.md` for link references to the `crates.io` [category pages][crates.io-categories~website]↗; `crate-refs.md` for links to [`crates.io`][crates.io~website]↗, [`lib.rs`][lib.rs~website]↗ and GitHub for each crate used in the book; and `other-refs.md` for links to blogs, books, company websites related to Rust.
+In the `bk/src/refs` folder, you will find `category-refs.md` for link references to the `crates.io` [category pages][crates.io-categories~website]↗; `crate-refs.md` for curated links to [`crates.io`][crates.io~website], [`lib.rs`][lib.rs~website] and GitHub; `dependency-refs.md` for the generated references derived from the book examples' Cargo dependencies; and `other-refs.md` for links to blogs, books, company websites related to Rust. Run `just book refdefs-generate` to update the generated file; normal book builds only check it for drift.
 
 The [`bk/drafts`][rust-howto~drafts~repo]↗ and [`later/src`][rust-howto~bk-later~repo]↗ folders follow the same basic organization.
 

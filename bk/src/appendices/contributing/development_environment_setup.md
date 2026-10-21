@@ -25,7 +25,7 @@ cargo install cargo-nextest
 cargo install mdbook
 cargo install just
 cargo install mdbook-linkcheck
-cargo install mdbook-utils
+cargo install --git https://github.com/john-cd/mdbook-utils --rev dedddf3699e461cd418c1a044d82aabd3fec62e0 --locked --force mdbook-utils
 # for `cargo +nightly fmt`
 rustup toolchain install nightly
 rustup component add rustfmt --toolchain nightly
@@ -55,7 +55,7 @@ rustup component add clippy
 cargo install cargo-nextest
 cargo install mdbook
 cargo install mdbook-linkcheck
-cargo install mdbook-utils
+cargo install --git https://github.com/john-cd/mdbook-utils --rev dedddf3699e461cd418c1a044d82aabd3fec62e0 --locked --force mdbook-utils
 rustup toolchain install nightly
 rustup component add rustfmt --toolchain nightly
 ```
