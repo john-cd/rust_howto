@@ -107,7 +107,6 @@
 [ex~filesystem~memory-map]: ../categories/filesystem/reading_and_writing_files.md#memory-map
 [ex~filesystem~metadata]: ../categories/filesystem/file_metadata.md#metadata
 [ex~filesystem~open]: ../categories/filesystem/user_directories_and_preferred_applications.md#open
-[ex~filesystem~other-options]: ../categories/filesystem/temporary_files_and_directories.md#other-options
 [ex~filesystem~read-and-write]: ../categories/filesystem/reading_and_writing_files.md#read-and-write
 [ex~filesystem~recursively-calculate-file-sizes-at-given-depth]: ../categories/filesystem/directory_traversal.md#recursively-calculate-file-sizes-at-given-depth
 [ex~filesystem~recursively-find-all-files-with-given-predicate]: ../categories/filesystem/directory_traversal.md#recursively-find-all-files-with-given-predicate
@@ -134,7 +133,6 @@
 [ex~language~attribute-macros]: ../language/macros.md#attribute-macros
 [ex~language~attribute]: ../language/attributes.md#attribute
 [ex~language~blanket-implementations]: ../language/traits.md#blanket-implementations
-[ex~language~borrowing]: ../language/ownership_and_borrowing.md#borrowing
 [ex~language~cfg-if]: ../language/attributes.md#cfg-if
 [ex~language~cfg-macro]: ../language/macros.md#cfg-macro
 [ex~language~clone]: ../language/ownership_and_borrowing.md#clone

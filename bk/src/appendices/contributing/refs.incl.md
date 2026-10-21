@@ -16,8 +16,5 @@
 [ex~contributing~using-vs-code]: development_environment_setup.md#using-vs-code
 [ex~contributing~windows-install]: development_environment_setup.md#windows-install
 [p~language]: ../../language/index.md
-[p~learning]: ../../links/learning_rust.md
-[p~main]: ../../language/entry_points.md
 [p~modules]: ../../code-organization/modules_and_paths.md
-[p~src]: ../../introduction/index.md
 [p~topics-of-interest]: topics_of_interest.md

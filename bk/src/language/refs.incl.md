@@ -9,7 +9,6 @@
 [ex~language~attribute-macros]: macros.md#attribute-macros
 [ex~language~attribute]: attributes.md#attribute
 [ex~language~blanket-implementations]: traits.md#blanket-implementations
-[ex~language~borrowing]: ownership_and_borrowing.md#borrowing
 [ex~language~cfg-if]: attributes.md#cfg-if
 [ex~language~cfg-macro]: macros.md#cfg-macro
 [ex~language~clone]: ownership_and_borrowing.md#clone

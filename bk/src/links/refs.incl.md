@@ -61,6 +61,4 @@
 [p~crates]: ../crate-selection/index.md
 [p~generics]: ../language/generics.md
 [p~language]: ../language/index.md
-[p~learning]: learning_rust.md
 [p~links]: index.md
-[p~main]: ../language/entry_points.md
