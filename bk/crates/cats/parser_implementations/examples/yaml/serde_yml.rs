@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
 //! This example demonstrates how to serialize and deserialize a struct to and
-//! from YAML using the `serde_yaml` crate.
+//! from YAML using the maintained `serde_norway` crate.
 //!
 //! First, we define two structs, `Person` and `Address`, and derive `Serialize`
 //! and `Deserialize` for them. Then, in the `main` function, we create an
@@ -9,7 +9,7 @@
 //! to a file, read the YAML string back from the file, and finally deserialize
 //! it back into a `Person` struct.
 //!
-//! To run this example, we need to have the `serde`, `serde_yaml`, and
+//! To run this example, we need to have the `serde`, `serde_norway`, and
 //! `anyhow` crates in your `Cargo.toml` file.
 use std::fs::File;
 use std::io::prelude::*;
@@ -57,7 +57,7 @@ fn main() -> anyhow::Result<()> {
     };
 
     // Serialize to YAML:
-    let yaml = serde_yml::to_string(&person)?;
+    let yaml = serde_norway::to_string(&person)?;
     println!("Serialized YAML:\n{yaml}");
 
     // Write to file:
@@ -70,7 +70,7 @@ fn main() -> anyhow::Result<()> {
     file.read_to_string(&mut contents)?;
 
     // Deserialize from YAML:
-    let deserialized: Person = serde_yml::from_str(&contents)?;
+    let deserialized: Person = serde_norway::from_str(&contents)?;
     println!("\nDeserialized person: {deserialized:?}");
 
     Ok(())

@@ -32,7 +32,7 @@ futures-lite = "2.6.1"
 tar = "0.4.45"
 tokio = { version = "1.52.1", features = ["macros", "rt-multi-thread", "fs", "io-util", "io-std"] }
 tokio-util = { version = "0.7.18", features = ["codec"] }
-zip = "8.6.0"
+zip = "9.0.5"
 
 [[example]]
 name = "async_zip"

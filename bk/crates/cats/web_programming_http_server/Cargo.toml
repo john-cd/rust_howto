@@ -27,7 +27,9 @@ loco-support = ["dep:loco-rs"]
 [dependencies]
 # trillium = "0.2.20"
 # [trillium: do we need LATER](https://github.com/john-cd/rust_howto/issues/1314)
-actix-web = "4.13.0"
+# The example uses HTTP/1 only; enabling Actix's default HTTP/2 feature pulls
+# the vulnerable h2 0.3 line.
+actix-web = { version = "4.13.0", default-features = false, features = ["macros"] }
 anyhow = "1.0.102"
 async-graphql = { version = "7.2.1", optional = true }
 async-graphql-axum = { version = "7.2.1", optional = true }

@@ -1,12 +1,12 @@
 #![allow(dead_code)]
 // ANCHOR: example
-//! This example demonstrates how to use the `basic-toml` crate to parse and
-//! serialize TOML data.
+//! This example demonstrates how to use the maintained `toml` crate to parse
+//! and serialize TOML data.
 //!
 //! Add to your `Cargo.toml`:
 //! ```toml
 //! [dependencies]
-//! basic-toml = "0.1.9" # Or latest
+//! toml = "1.1"
 //! chrono = { version = "0.4.40", features = [ "serde" ] }
 //! serde = { version = "1.0.219", features = [ "derive" ] }
 //! ```
@@ -51,11 +51,11 @@ fn main() -> anyhow::Result<()> {
     "#;
 
     // Parse the TOML string into our `Config` struct.
-    let config: Config = basic_toml::from_str(toml_str)?;
+    let config: Config = toml::from_str(toml_str)?;
     println!("Parsed config: {config:#?}");
 
     // 2. Convert back to TOML string.
-    let modified_toml = basic_toml::to_string(&config)?;
+    let modified_toml = toml::to_string(&config)?;
     println!("\nModified TOML:\n{modified_toml}");
 
     // 3. Write TOML to file.
@@ -63,7 +63,7 @@ fn main() -> anyhow::Result<()> {
 
     // 4. Read TOML from file.
     let file_content = fs::read_to_string("temp/config.toml")?;
-    let file_config: Config = basic_toml::from_str(&file_content)?;
+    let file_config: Config = toml::from_str(&file_content)?;
     println!("\nConfig from file: {file_config:#?}");
 
     // 5. Error handling.
@@ -74,7 +74,7 @@ fn main() -> anyhow::Result<()> {
         # Missing fields
     "#;
 
-    match basic_toml::from_str::<Config>(invalid_toml) {
+    match toml::from_str::<Config>(invalid_toml) {
         Ok(config) => println!("Successfully parsed: {config:?}"),
         Err(e) => println!("Parse error: {e}"),
     }
