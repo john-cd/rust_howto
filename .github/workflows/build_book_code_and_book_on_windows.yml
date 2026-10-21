@@ -9,6 +9,8 @@ on:
       - '.devcontainer/**'
       - '.github/workflows/**'
       - 'justfile'
+      - 'scripts/**'
+      - '.cargo/**'
       - 'Cargo.toml'
       - 'Cargo.lock'
   pull_request:
@@ -19,6 +21,8 @@ on:
       - '.devcontainer/**'
       - '.github/workflows/**'
       - 'justfile'
+      - 'scripts/**'
+      - '.cargo/**'
       - 'Cargo.toml'
       - 'Cargo.lock'
   ## Allows you to run this workflow manually from the Actions tab
@@ -89,8 +93,18 @@ jobs:
         run: protoc --version
 
       - name: Install `cargo binstall`
+        env:
+          RUSTC_WRAPPER: '' # Bootstrap before the configured wrapper is installed.
         shell: pwsh
         run: Set-ExecutionPolicy Unrestricted -Scope Process; iex (iwr "https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.ps1").Content
+
+      - name: Install sccache
+        env:
+          RUSTC_WRAPPER: ''
+          SCCACHE_DIR: ${{ runner.temp }}/sccache
+        run: |
+          cargo binstall --version 0.18.0 --no-confirm --secure sccache
+          "SCCACHE_DIR=$env:SCCACHE_DIR" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
 
       - name: Install mdBook
         run: |
