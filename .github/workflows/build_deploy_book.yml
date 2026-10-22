@@ -88,6 +88,11 @@ jobs:
           if grep -nRE 'https://github\.com/john-cd/rust_howto/(blob|tree|edit)/main' README.md LICENSE bk; then
             echo 'Repository links must target develop, not the empty main branch.' >&2
             exit 1
+          else
+            status=$?
+            if [ "$status" -ne 1 ]; then
+              exit "$status"
+            fi
           fi
       - name: Reject visible TODO placeholders
         run: python bk/scripts/check_visible_todos.py
