@@ -42,6 +42,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     example()
 }
 // ANCHOR_END: example
+
 pub fn run() -> Result<(), Box<dyn Error>> {
     example()
 }
@@ -49,6 +50,7 @@ pub fn run() -> Result<(), Box<dyn Error>> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main().unwrap();

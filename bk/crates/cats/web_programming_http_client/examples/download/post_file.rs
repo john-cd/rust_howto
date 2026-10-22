@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example shows how to POST a file to a server.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::path::Path;
 

@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates how to implement a custom distribution for the `rand` crate.
+//!
+//! TODO Reviewed ??-??-2026
 
 use rand::Rng;
 use rand::RngExt;
@@ -46,6 +48,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

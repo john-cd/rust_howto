@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use the `heck` crate to convert strings
 //! between different casing conventions.
@@ -12,6 +12,8 @@
 //! [dependencies]
 //! heck = "0.4.1"
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
 
 use heck::ToKebabCase;
 use heck::ToLowerCamelCase;
@@ -39,6 +41,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

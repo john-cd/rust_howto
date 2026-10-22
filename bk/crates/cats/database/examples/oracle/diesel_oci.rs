@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! `diesel_oci` is a Diesel backend and connection implementation for Oracle
 //! databases.
@@ -12,6 +12,8 @@
 //! dotenvy = "0.15.7"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::env;
 
@@ -99,6 +101,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     #[ignore = "requires external oracle db and oracle client library"]
     fn require_external_svc() -> anyhow::Result<()> {

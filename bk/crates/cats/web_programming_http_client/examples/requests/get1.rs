@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates a simple HTTP GET request using the `reqwest`
 //! crate.
+//!
+//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 
@@ -26,6 +28,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn require_network() -> anyhow::Result<()> {
         main()?;

@@ -1,11 +1,14 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates how to use the `color-eyre` crate for enhanced error reporting.
 //!
 //! `color_eyre` provides beautiful error reporting and backtraces with colors,
 //! making it easier to understand and debug errors.
 //! It's especially useful for debugging in command-line applications.
+//!
+//! TODO Reviewed ??-??-2026
+
 use color_eyre::eyre::Result;
 use color_eyre::eyre::eyre;
 
@@ -39,6 +42,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         assert!(main().is_err());

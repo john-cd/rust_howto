@@ -1,9 +1,11 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to parse a semantic version string.
 //!
 //! `semver` is a parser for Cargo's flavor of Semantic Versioning.
+//!
+//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use semver::Version;
@@ -34,6 +36,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> Result<()> {
         main()?;

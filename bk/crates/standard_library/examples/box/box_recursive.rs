@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Example using `Box<T>` for recursive data structures.
+//!
+//! TODO Reviewed ??-??-2026
 
 /// Represents a single element in a (highly simplified) linked list.
 struct Node {
@@ -61,6 +63,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

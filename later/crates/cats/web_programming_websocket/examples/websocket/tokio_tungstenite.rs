@@ -1,4 +1,3 @@
-// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of an asynchronous WebSocket client with `tokio_tungstenite`.
 //!
@@ -8,6 +7,8 @@
 //!
 //! This example connects to a test WebSocket server, sends a message, and
 //! receives an echoed message back.
+//!
+//! TODO Reviewed ??-??-2026
 
 // Extension trait for Sinks; defines `send()`.
 use futures_util::SinkExt;
@@ -58,6 +59,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn require_network() -> anyhow::Result<()> {
         main()?;

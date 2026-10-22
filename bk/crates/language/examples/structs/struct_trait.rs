@@ -20,6 +20,7 @@ trait SomeBehavior {
 
     // Associated constants with and without default:
     const CONSTANT: i32 = 42;
+
     const ANOTHER_CONST: &str;
 }
 
@@ -36,6 +37,7 @@ impl SomeBehavior for MyStruct {
 
     // Define the const that did not have a default:
     const ANOTHER_CONST: &str = "Another constant value";
+
     // Override the const that did have a default:
     const CONSTANT: i32 = 43;
 
@@ -78,6 +80,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

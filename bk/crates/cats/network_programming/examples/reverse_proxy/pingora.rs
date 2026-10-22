@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Pingora example.
 //!
@@ -23,6 +23,8 @@
 //! Make sure that the following is installed on your system:
 //! - Clang (for the boringssl optional feature),
 //! - Perl 5 (for openssl).
+//!
+//! TODO Reviewed ??-??-2026
 
 // use std::net::SocketAddr;
 // use std::sync::Arc;

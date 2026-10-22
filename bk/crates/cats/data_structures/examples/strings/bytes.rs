@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates basic usage of the `bytes` crate.
+//!
+//! TODO Reviewed ??-??-2026
 
 use bytes::BufMut;
 use bytes::BytesMut;
@@ -25,6 +27,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

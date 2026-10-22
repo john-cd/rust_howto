@@ -1,9 +1,11 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to define custom error types using `miette`
 //! and `thiserror`. It showcases various features like error codes, URLs, help
 //! text, source code snippets, and wrapping other errors.
+//!
+//! TODO Reviewed ??-??-2026
 
 /// Example code for a library.
 /// In real-life, this code would be in a separate crate.
@@ -123,6 +125,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         let res = main();

@@ -1,7 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Alternatives to `Cow`.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::rc::Rc;
 use std::sync::Arc;
 use std::sync::RwLock;
@@ -57,6 +60,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

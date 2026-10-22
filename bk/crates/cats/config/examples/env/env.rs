@@ -1,7 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Examples for working with standard environment variables.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::env;
 
 /// Extracts the value of the `RUST_LOG` environment variable.
@@ -38,6 +41,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

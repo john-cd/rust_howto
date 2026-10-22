@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use the `open` crate to open files and URLs
 //! using the default program associated with the file type.
+//!
+//! TODO Reviewed ??-??-2026
 
 fn main() {
     //  The `that` function attempts to open the specified path with the
@@ -33,6 +35,7 @@ fn main() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[ignore = "Relies on default programs that may not be installed by default."]
     #[test]
     fn test_main() {

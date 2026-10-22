@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use the `sqlparser` crate to parse SQL
 //! statements, extract information from them, and regenerate the original SQL
@@ -10,6 +10,9 @@
 //! [dependencies]
 //! sqlparser = { version = "0.54.0", features = ["visitor"] }
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::ops::ControlFlow;
 
 use sqlparser::ast::SetExpr;
@@ -79,6 +82,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

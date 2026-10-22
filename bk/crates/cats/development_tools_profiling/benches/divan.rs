@@ -1,4 +1,3 @@
-// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `divan` is a Rust benchmarking framework.
 //!
@@ -16,6 +15,8 @@
 //! Run the benchmark with `cargo bench`.
 //!
 //! This example demonstrates how to benchmark a simple `fibonacci` function.
+//!
+//! TODO Reviewed ??-??-2026
 
 /// Define a `fibonacci` function to benchmark.
 fn compute_fibonacci(n: u64) -> u64 {

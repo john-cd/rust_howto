@@ -23,6 +23,7 @@ trait Database {
     /// Returns `Some(User)` if a user with the given ID exists, otherwise
     /// `None`.
     fn get_user(&self, id: u64) -> Option<User>;
+
     /// Saves a user to the database.
     ///
     /// Returns `true` if the save operation was successful, `false` otherwise.

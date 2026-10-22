@@ -74,6 +74,7 @@ pub fn run() -> Result<(), Box<dyn Error>> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     #[ignore = "requires audio device"]
     fn test_main() {

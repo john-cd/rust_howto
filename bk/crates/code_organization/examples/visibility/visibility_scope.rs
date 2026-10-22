@@ -4,7 +4,9 @@
 mod a {
     pub mod b {
         pub(crate) fn visible_in_crate() {}
+
         pub(super) fn visible_in_parent_module() {}
+
         pub mod c {
             pub(in super::super) fn visible_in_a() {}
         }
@@ -44,6 +46,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

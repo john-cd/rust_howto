@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
-#![allow(unused)]
 //! Example of a sealed trait, preventing external implementations.
-// ANCHOR: example
+//!
+//! TODO Reviewed ??-??-2026
 
+#![allow(unused)]
+
+// ANCHOR: example
 mod a_module {
     #[allow(private_bounds)]
     pub trait MySealedTrait: Sealed {
@@ -49,6 +51,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

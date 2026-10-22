@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrate using a custom type as the key in a `HashMap`.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 use std::hash::DefaultHasher;
@@ -66,6 +68,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

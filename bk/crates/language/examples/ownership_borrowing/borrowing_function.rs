@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(unused_assignments, dead_code)]
+
 // ANCHOR: example
 //! Demonstrates the concept of borrowing in Rust.
+//!
+//! TODO Reviewed ??-??-2026
 
 // This struct does not implement `Copy` and has therefore "move semantics":
 #[derive(Debug)]
@@ -40,6 +42,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

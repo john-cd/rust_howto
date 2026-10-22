@@ -1,5 +1,6 @@
-// TODO Reviewed ??-??-2026
 //! Handle the `category_badge` CLI subcommand
+//!
+//! TODO Reviewed ??-??-2026
 
 use clap::ArgMatches;
 use clap::Command;

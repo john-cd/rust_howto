@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! # Bindgen Example
 //!
@@ -30,6 +30,8 @@
 //! ```sh
 //! cargo run
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
 
 // extern crate example;
 // use example::add;
@@ -54,6 +56,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

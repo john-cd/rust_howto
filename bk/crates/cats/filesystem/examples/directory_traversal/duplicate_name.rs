@@ -1,7 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Find duplicate filenames in the current directory.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::collections::HashMap;
 
 use walkdir::WalkDir;
@@ -33,6 +36,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

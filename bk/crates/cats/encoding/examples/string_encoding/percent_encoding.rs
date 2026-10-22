@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! The following demonstrates how to use percent encoding to handle special
 //! characters in URLs.
@@ -12,6 +12,8 @@
 //!
 //! This example uses the NON_ALPHANUMERIC set to encode everything that is not
 //! an ASCII letter or digit.
+//!
+//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use percent_encoding::NON_ALPHANUMERIC;

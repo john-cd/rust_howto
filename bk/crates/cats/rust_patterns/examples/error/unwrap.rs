@@ -1,9 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
-#![allow(clippy::unnecessary_literal_unwrap)]
 //! Demonstrates the use of `unwrap()` and `expect()` for handling `Result`
 //! types.
+//!
+//! TODO Reviewed ??-??-2026
+
+#![allow(clippy::unnecessary_literal_unwrap)]
 
 fn main() {
     let number_str = "42";
@@ -41,6 +44,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

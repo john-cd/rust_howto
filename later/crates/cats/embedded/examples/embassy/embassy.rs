@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Embassy is an async runtime designed for embedded systems in Rust. It
 //! provides async capabilities to work with hardware, making it easier to
@@ -19,6 +19,9 @@
 //!
 //! [build-dependencies]
 //! cortex-m-rtic = "0.7"
+//!
+//! TODO Reviewed ??-??-2026
+
 #![no_std]
 #![no_main]
 
@@ -87,6 +90,7 @@ pub fn run() -> ! {
 
 #[cfg(test)]
 mod tests { use super::*;
+
     #[test]
     #[ignore = "requires embassy crate"]
     fn test_main() {

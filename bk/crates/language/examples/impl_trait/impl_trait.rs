@@ -7,6 +7,7 @@ trait Speak {
 }
 
 struct Dog;
+
 impl Speak for Dog {
     fn speak(&self) -> String {
         "Woof!".to_string()
@@ -14,6 +15,7 @@ impl Speak for Dog {
 }
 
 struct Cat;
+
 impl Speak for Cat {
     fn speak(&self) -> String {
         "Meow!".to_string()
@@ -68,6 +70,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

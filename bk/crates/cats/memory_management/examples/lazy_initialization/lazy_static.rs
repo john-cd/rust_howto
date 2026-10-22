@@ -1,10 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! `lazy_static` defines statically initialized values that are
 //! computed lazily at runtime. It can be particularly useful for initializing
 //! data that is expensive to compute or that needs to be shared across multiple
 //! threads.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 use std::sync::Mutex;
@@ -90,6 +92,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

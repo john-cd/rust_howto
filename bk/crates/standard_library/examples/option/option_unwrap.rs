@@ -1,9 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
-#![allow(clippy::unnecessary_literal_unwrap)]
 //! Demonstrates the use of `unwrap`, `expect`, `unwrap_or`, and
 //! `unwrap_or_else` with `Option`.
+//!
+//! TODO Reviewed ??-??-2026
+
+#![allow(clippy::unnecessary_literal_unwrap)]
 
 /// `unwrap()` and `expect()` retrieve the inner value of a `Option`.
 /// BEWARE: if the `Option` is `None`, they will cause your program to panic.
@@ -60,6 +63,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

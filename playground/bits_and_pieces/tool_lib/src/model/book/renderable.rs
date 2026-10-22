@@ -3,6 +3,7 @@ use serde::Serialize;
 
 pub trait Renderable: Serialize {
     fn get_what_to_render(&self) -> Vec<RenderInfo>;
+
     fn get_children(&self) -> impl IntoIterator<Item = impl Renderable>;
 }
 

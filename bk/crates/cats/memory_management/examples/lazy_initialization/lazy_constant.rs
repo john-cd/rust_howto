@@ -1,7 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates the use of the `lazy_static` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::collections::HashMap;
 
 use lazy_static::lazy_static;
@@ -38,6 +41,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

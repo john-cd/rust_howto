@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to serialize and deserialize a struct to and
 //! from YAML using the maintained `serde_norway` crate.
@@ -12,6 +12,9 @@
 //!
 //! To run this example, we need to have the `serde`, `serde_norway`, and
 //! `anyhow` crates in your `Cargo.toml` file.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::fs::File;
 use std::io::prelude::*;
 
@@ -86,6 +89,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         use std::fs;

@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use `deadpool-postgres` to manage a pool of
 //! PostgreSQL connections.
@@ -20,6 +20,8 @@
 //! PG__POOL__MAX_SIZE=16
 //! PG__POOL__TIMEOUTS__WAIT__SECS=5
 //! PG__POOL__TIMEOUTS__WAIT__NANOS=0
+//!
+//! TODO Reviewed ??-??-2026
 
 use deadpool_postgres::Runtime;
 use dotenvy::dotenv;
@@ -74,6 +76,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn require_external_svc() -> anyhow::Result<()> {
         main()?;

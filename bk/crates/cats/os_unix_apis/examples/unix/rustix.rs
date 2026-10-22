@@ -1,7 +1,6 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
-#![cfg(target_family = "unix")]
 //! `rustix` is a library that provides a safe and idiomatic Rust interface to
 //! low-level system calls.
 //!
@@ -9,6 +8,10 @@
 //! ```toml
 //! rustix = { version = "0.38.42", features = ["fs"] }
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
+
+#![cfg(target_family = "unix")]
 
 // S_I* constants for use with `openat`, `chmodat`, and `fchmod`:
 use rustix::fs::Mode;
@@ -77,6 +80,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

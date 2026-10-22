@@ -1,12 +1,15 @@
-// TODO Reviewed ??-??-2026
 #![allow(unused_imports)]
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Add to your `Cargo.toml`:
 //! ```toml
 //! [dependencies]
 //! notify = "8.1.0" # Or latest.
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::path::Path;
 
 use notify::EventHandler;
@@ -64,6 +67,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

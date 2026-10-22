@@ -1,5 +1,6 @@
-// TODO Reviewed ??-??-2026
 //! Build script to compile gRPC service definitions at compile time.
+//!
+//! TODO Reviewed ??-??-2026
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Instruct Cargo to re-run this script if the proto file changes.

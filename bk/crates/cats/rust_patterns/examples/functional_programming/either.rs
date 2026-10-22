@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use the `Either` enum from the `either`
 //! crate.
@@ -7,6 +7,8 @@
 //! The `Either` enum is a type that represents a value that can be one of two
 //! possible types. It is commonly used in functional programming to handle
 //! situations where a function might return one of two different types.
+//!
+//! TODO Reviewed ??-??-2026
 
 use either::Either;
 
@@ -64,6 +66,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

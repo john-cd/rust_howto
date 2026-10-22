@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates parsing MIME types from strings and handling invalid input.
+//!
+//! TODO Reviewed ??-??-2026
 
 use mime::APPLICATION_OCTET_STREAM;
 use mime::Mime;
@@ -32,6 +34,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

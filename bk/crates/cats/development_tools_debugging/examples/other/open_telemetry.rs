@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Create a manual OpenTelemetry span and pair it with regular tracing output.
+//!
+//! TODO Reviewed ??-??-2026
 
 #[cfg(feature = "opentelemetry")]
 use opentelemetry::global;
@@ -35,6 +37,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

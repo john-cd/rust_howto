@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Example of a slice as a function argument.
+//!
+//! TODO Reviewed ??-??-2026
 
 fn sum(slice: &[i32]) -> i32 {
     let mut sum = 0;
@@ -34,6 +36,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

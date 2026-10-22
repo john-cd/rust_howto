@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! # Polars Data Processing Example
 //!
@@ -19,6 +19,8 @@
 //! ```toml
 //! polars = { version = "0.49.1", default-features = false, features = ["lazy", "csv"] }
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
 
 use polars::prelude::*;
 
@@ -67,6 +69,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         use std::fs;

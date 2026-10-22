@@ -1,9 +1,11 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
 #![cfg(target_family = "unix")]
+
 // ANCHOR: example
 //! This example demonstrates how to read an environment variable.
 //! If the environment variable is not set, a default value is used.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::env;
 
@@ -23,6 +25,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

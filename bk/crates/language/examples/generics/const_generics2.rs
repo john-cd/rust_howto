@@ -4,6 +4,7 @@
 // Trait for a fixed-size buffer.
 trait FixedSizeBuffer {
     const CAPACITY: usize;
+
     fn get_buffer(&self) -> &[u8];
 }
 
@@ -39,6 +40,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

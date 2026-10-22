@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to make a GET request to a REST API and
 //! deserialize the JSON response.
+//!
+//! TODO Reviewed ??-??-2026
 
 use reqwest::Error;
 use serde::Deserialize;
@@ -52,6 +54,7 @@ pub fn run() -> Result<(), Error> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn require_network() -> anyhow::Result<()> {
         main()?;

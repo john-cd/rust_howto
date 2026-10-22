@@ -1,10 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(unused)]
+
 // ANCHOR: example
 //! This macro provides a domain-specific language (DSL) for defining
 //! configuration for an application. Instead of using a `HashMap`, or a
 //! `struct` directly, we want a more declarative, human-readable way to specify
 //! settings.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 
@@ -187,6 +189,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

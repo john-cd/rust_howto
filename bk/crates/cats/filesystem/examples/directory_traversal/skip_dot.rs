@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to skip hidden files and directories during
 //! directory traversal.
+//!
+//! TODO Reviewed ??-??-2026
 
 use walkdir::DirEntry;
 use walkdir::WalkDir;
@@ -36,6 +38,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

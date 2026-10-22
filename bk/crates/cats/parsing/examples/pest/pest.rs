@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates the use of the `pest` parser generator framework
 //! for parsing a simple arithmetic expression like 3 + 5 * 2 - 8 / 4.
@@ -19,6 +19,9 @@
 //! `pest` uses parsing expression grammars (or PEG) as its input, which are
 //! similar in spirit to regular expressions, but which offer the enhanced
 //! expressivity needed to parse complex languages.
+//!
+//! TODO Reviewed ??-??-2026
+
 use pest::Parser;
 use pest_derive::Parser;
 
@@ -59,6 +62,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

@@ -1,10 +1,13 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use backtraces to debug errors.
 //!
 //! The example code defines a struct `Rgb` that represents a color in RGB
 //! format.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::fmt;
 
 use anyhow::Result;
@@ -65,6 +68,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         unsafe {

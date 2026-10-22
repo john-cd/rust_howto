@@ -4,15 +4,18 @@
 // ANCHOR: example
 mod a_module {
     fn private() {}
+
     pub fn public() {}
 
     pub mod public_nested_module {
         fn private() {}
+
         pub fn public() {}
     }
 
     mod private_nested_module {
         fn private() {}
+
         pub fn public() {}
     }
 }
@@ -58,6 +61,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

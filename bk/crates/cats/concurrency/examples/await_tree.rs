@@ -1,4 +1,3 @@
-// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `await-tree` crate.
 //!
@@ -10,6 +9,9 @@
 //! ```toml
 //! await-tree = "0.3.1" # Or latest
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
+
 use await_tree::ConfigBuilder;
 use await_tree::InstrumentAwait;
 use await_tree::Registry;
@@ -109,6 +111,7 @@ async fn baz(n: i32) {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

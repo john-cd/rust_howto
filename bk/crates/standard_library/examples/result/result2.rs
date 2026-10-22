@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Example of `Result` methods for value transformation and control flow.
+//!
+//! TODO Reviewed ??-??-2026
 
 // A contrived example of a function returning a `Result`:
 fn divide(a: i32, b: i32) -> Result<i32, &'static str> {
@@ -51,6 +53,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

@@ -17,7 +17,9 @@ enum CounterInput {
 #[relm4::component(pub)]
 impl SimpleComponent for CounterModel {
     type Init = i32;
+
     type Input = CounterInput;
+
     type Output = ();
 
     view! {

@@ -1,6 +1,7 @@
-// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates opening a file dialog using the `rfd` crate.
+//!
+//! TODO Reviewed ??-??-2026
 
 use rfd::FileDialog;
 

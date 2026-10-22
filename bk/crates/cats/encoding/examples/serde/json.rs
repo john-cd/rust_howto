@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates parsing a JSON string into a `serde_json::Value`
 //! and comparing it to a `serde_json::Value` created using the `json!` macro.
+//!
+//! TODO Reviewed ??-??-2026
 
 use serde_json::Error;
 use serde_json::Value;
@@ -43,6 +45,7 @@ pub fn run() -> Result<(), Error> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

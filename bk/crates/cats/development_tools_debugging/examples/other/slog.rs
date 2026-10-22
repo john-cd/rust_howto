@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates basic usage of the `slog` logging crate.
 //! `slog` is a structured, composable logging framework.
@@ -15,6 +15,9 @@
 //! slog-term = "2.8"
 //! slog-scope = "4.4"
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
+
 use slog::Drain;
 use slog::o;
 
@@ -77,6 +80,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

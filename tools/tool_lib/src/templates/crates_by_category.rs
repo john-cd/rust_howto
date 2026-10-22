@@ -9,10 +9,13 @@ use serde::Deserialize;
 use super::RecipeLinksByCrate;
 
 const UNCATEGORIZED_SLUG: &str = "uncategorized";
+
 const UNCATEGORIZED_DESCRIPTION: &str =
     "No crates.io category is recorded for these crates in the book's current inventory.";
+
 const CATEGORY_PAGE_HEADER: &str =
     "# Crates by Category\n\n| Category | Description | Crates |\n| --- | --- | --- |\n";
+
 const CATEGORY_PAGE_FOOTER: &str = "\n[All Valid Categories][crates.io~category_slugs]↗.\n\n{{#include refs.incl.md}}\n{{#include ../refs/link-refs.md}}\n\n<div class=\"hidden\">\n</div>\n";
 
 #[derive(Deserialize)]

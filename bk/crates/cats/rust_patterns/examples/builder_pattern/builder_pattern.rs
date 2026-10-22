@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 // ANCHOR: example
-#![allow(dead_code)]
 //! Example builder pattern.
+//!
+//! TODO Reviewed ??-??-2026
+
+#![allow(dead_code)]
 
 /// The object to build.
 #[derive(Debug)]
@@ -105,6 +107,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

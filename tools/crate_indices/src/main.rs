@@ -136,6 +136,7 @@ fn main() -> anyhow::Result<()> {
 
 const ALPHABETICAL_PAGE_HEADER: &str = "# Crates in Alphabetical Order\n\n\
 Crates mentioned in this book, in alphabetical order. Nested links point to published recipes that use each crate.\n\n";
+
 const ALPHABETICAL_PAGE_FOOTER: &str = "{{#include refs.incl.md}}\n\
 {{#include ../refs/link-refs.md}}\n\n\
 <div class=\"hidden\">\n\
@@ -183,8 +184,11 @@ mod tests {
     use super::create_alphabetical_page;
 
     const MASTER_CRATES: &str = include_str!("../../../bk/master/crates.txt");
+
     const CATEGORY_INDEX: &str = include_str!("../../../bk/src/indices/crates_by_category.md");
+
     const CATEGORY_METADATA: &str = include_str!("../../../bk/master/crate_categories.toml");
+
     const ALPHABETICAL_INDEX: &str = include_str!("../../../bk/src/indices/crates_alphabetical.md");
 
     #[test]

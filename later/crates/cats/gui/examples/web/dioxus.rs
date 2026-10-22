@@ -24,6 +24,7 @@ fn App() -> Element {
         }
     }
 }
+
 pub fn run() {
     main();
 }

@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates the use of `unwrap_or` and `unwrap_or_else` for handling
 //! `Option` and `Result` types.
@@ -7,7 +7,11 @@
 //! `unwrap_or` provides a default value if the `Option` is `None` or the
 //! `Result` is `Err`. `unwrap_or_else` provides a closure to compute a default
 //! value in the same scenarios.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(clippy::unnecessary_literal_unwrap)]
+
 use std::fs::File;
 use std::io::ErrorKind;
 
@@ -53,6 +57,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         use std::fs;

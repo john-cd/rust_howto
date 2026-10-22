@@ -1,7 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Examples of password hashing and key derivation with Argon2.
+//!
+//! TODO Reviewed ??-??-2026
+
 use argon2::Argon2;
 use argon2::password_hash::Error;
 use argon2::password_hash::PasswordHash;
@@ -96,6 +99,7 @@ pub fn run() -> Result<(), Error> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> Result<(), Error> {
         main()?;

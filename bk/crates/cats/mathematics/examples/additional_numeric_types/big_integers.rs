@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates big integer manipulation.
+//!
+//! TODO Reviewed ??-??-2026
 
 use num::bigint::BigInt;
 use num::bigint::ToBigInt;
@@ -32,6 +34,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

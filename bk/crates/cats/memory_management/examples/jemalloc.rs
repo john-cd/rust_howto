@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates using a custom global allocator.
 //!
@@ -9,6 +9,8 @@
 //! tikv-jemallocator = "0.6"
 //! tikv-jemalloc-ctl = { version = "0.6.0", features = [ "stats", "use_std" ] } # optional - for introspection.
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
 
 #[cfg(not(target_env = "msvc"))]
 mod example {
@@ -58,6 +60,7 @@ fn main() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

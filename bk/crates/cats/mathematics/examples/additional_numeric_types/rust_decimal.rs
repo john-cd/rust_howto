@@ -1,11 +1,14 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates the use of the `rust_decimal` crate for high-precision decimal
 //! arithmetic, which can be particularly useful for financial calculations.
 //!
 //! This example showcases creating `Decimal` numbers, performing arithmetic
 //! operations, and converting between `Decimal` and string representations.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::str::FromStr;
 
 use rust_decimal::Decimal;
@@ -56,6 +59,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

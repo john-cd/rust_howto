@@ -1,8 +1,11 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
-#![cfg(target_os = "windows")]
 //! Example of a basic Windows application using the `winapi` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
+#![cfg(target_os = "windows")]
 
 use std::ptr::null_mut;
 
@@ -127,6 +130,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     #[ignore = "Needs review"]
     fn test_main() {

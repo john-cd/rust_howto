@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! BEWARE: `fastrand` is NOT cryptographically secure.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::iter::repeat_with;
 
@@ -45,6 +47,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

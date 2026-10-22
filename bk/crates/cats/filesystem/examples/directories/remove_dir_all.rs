@@ -1,10 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Add to `Cargo.toml`:
 //! ```toml
 //! remove_dir_all = { version = "1.0.0", features = [ "parallel" ] }
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::io;
 
@@ -55,6 +57,7 @@ pub fn run() -> io::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> io::Result<()> {
         main()?;

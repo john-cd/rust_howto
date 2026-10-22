@@ -1,7 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! `comrak` is a CommonMark and GitHub-flavored Markdown compatible parser.
+//!
+//! TODO Reviewed ??-??-2026
+
 use comrak::Arena;
 use comrak::Options;
 use comrak::format_html;
@@ -71,6 +74,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

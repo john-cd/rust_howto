@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates basic error handling in Rust using the `Result`
 //! type.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::io;
 use std::io::BufRead;
@@ -38,6 +40,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

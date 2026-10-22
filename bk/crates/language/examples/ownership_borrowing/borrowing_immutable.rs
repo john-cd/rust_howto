@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Immutable Reference Example.
+//!
+//! TODO Reviewed ??-??-2026
 
 fn main() {
     let a = 42;
@@ -36,6 +38,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

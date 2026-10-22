@@ -1,11 +1,14 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! `static` Example.
+//!
+//! TODO Reviewed ??-??-2026
 
 // Statics are in SCREAMING_SNAKE_CASE, must declare their type, must be
 // initialized:
 static APPLICATION_NAME: &str = "My Awesome App";
+
 static VERSION: u32 = 1;
 
 fn main() {
@@ -32,6 +35,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

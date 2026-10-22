@@ -1,11 +1,13 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates the basic usage of the `tracing` crate for logging
 //! events.
 //!
 //! It showcases how to use different log levels (trace, debug, info, warn,
 //! error) and how to add structured data to log messages.
+//!
+//! TODO Reviewed ??-??-2026
 
 use tracing::Level;
 use tracing::debug;
@@ -72,6 +74,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         tracing_subscriber::fmt()

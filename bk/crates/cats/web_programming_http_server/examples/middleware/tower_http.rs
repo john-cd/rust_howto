@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Example of using the `tower-http` middleware.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::iter::once;
 use std::sync::Arc;
@@ -101,6 +103,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn require_network() {
         main();

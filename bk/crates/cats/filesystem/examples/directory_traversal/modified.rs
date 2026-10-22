@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to traverse a directory and check the last
 //! modified time of each file.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::env;
 use std::fs;
@@ -55,6 +57,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

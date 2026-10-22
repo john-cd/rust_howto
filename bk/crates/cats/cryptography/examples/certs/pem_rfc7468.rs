@@ -1,10 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Encode and decode PEM data with the `pem_rfc7468` crate.
 //!
 //! This example converts raw DER bytes into a PEM document and parses them
 //! back to verify the round-trip.
+//!
+//! TODO Reviewed ??-??-2026
 
 use pem_rfc7468::LineEnding;
 use pem_rfc7468::decode_vec;
@@ -34,6 +36,7 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> Result<(), Box<dyn std::error::Error>> {
         main()

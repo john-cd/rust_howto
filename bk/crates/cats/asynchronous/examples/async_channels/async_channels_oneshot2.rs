@@ -1,9 +1,11 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates the use of `tokio::sync::oneshot` channels to
 //! communicate between asynchronous tasks. It simulates downloading a file
 //! and then processing it in separate tasks.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::time::Duration;
 
@@ -59,6 +61,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

@@ -15,6 +15,7 @@ impl FnOnce<(i32,)> for Adder {
         self.offset + args.0
     }
 }
+
 use std::ops::FnMut;
 
 impl FnMut<(i32,)> for Adder {
@@ -22,6 +23,7 @@ impl FnMut<(i32,)> for Adder {
         self.offset + args.0
     }
 }
+
 use std::ops::Fn;
 
 impl Fn<(i32,)> for Adder {
@@ -41,6 +43,7 @@ fn main() {
 
 #[cfg(test)]
 mod tests { use super::*;
+
     #[test]
     fn test_main() {
         main();

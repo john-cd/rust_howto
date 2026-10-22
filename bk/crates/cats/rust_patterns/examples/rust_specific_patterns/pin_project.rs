@@ -1,8 +1,11 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! The following demonstrates the use of the `pin_project` crate for pin
 //! projection.
+//!
+//! TODO Reviewed ??-??-2026
+
 // //!
 // //! Pin projection enables safely getting mutable references to fields of a
 // //! `Pin`-ned struct.
@@ -229,6 +232,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

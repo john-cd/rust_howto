@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 // ANCHOR: example
-#![allow(dead_code)]
 //! Implement `AsRef` to "emulate inheritance".
+//!
+//! TODO Reviewed ??-??-2026
+
+#![allow(dead_code)]
 
 // "Base type".
 #[derive(Debug)]
@@ -95,6 +97,7 @@ fn main() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

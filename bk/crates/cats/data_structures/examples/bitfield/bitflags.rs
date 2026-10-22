@@ -1,7 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(unused)]
+
 // ANCHOR: example
 //! `bitflags` generate types for C-style flags with ergonomic APIs.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::fmt;
 
 use bitflags::bitflags;
@@ -86,6 +89,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

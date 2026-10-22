@@ -42,8 +42,10 @@ struct GreeterState {
 impl ractor::Actor for Greeter {
     // Startup initialization args:
     type Arguments = ();
+
     // Actor's message type:
     type Msg = Greet;
+
     // Optional internal state:
     type State = GreeterState;
 
@@ -114,6 +116,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

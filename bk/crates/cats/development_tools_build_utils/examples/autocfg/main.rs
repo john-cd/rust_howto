@@ -1,5 +1,6 @@
-// TODO Reviewed ??-??-2026
 //! Autocfg examples.
+//!
+//! TODO Reviewed ??-??-2026
 
 mod autocfg;
 

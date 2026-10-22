@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! In the crate root:
+//!
+//! TODO Reviewed ??-??-2026
 
 // This function is available to external code using this crate as a dependency.
 pub fn public_to_external_crates() {}
@@ -35,6 +37,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

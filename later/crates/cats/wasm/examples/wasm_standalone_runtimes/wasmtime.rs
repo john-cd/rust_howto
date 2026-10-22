@@ -1,11 +1,14 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use the `wasmtime` crate to run WebAssembly
 //! modules.
 //!
 //! It showcases loading a module from WAT (WebAssembly Text Format), defining
 //! host functions, instantiating the module, and calling exported functions.
+//!
+//! TODO Reviewed ??-??-2026
+
 use anyhow::Result;
 use wasmtime::error::Context;
 use wasmtime::*;
@@ -128,6 +131,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

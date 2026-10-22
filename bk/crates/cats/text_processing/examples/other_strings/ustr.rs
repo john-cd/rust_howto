@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! String interning example.
 //!
@@ -15,6 +15,8 @@
 //!
 //! The downside is no strings are ever freed, so if we're creating lots of
 //! strings, we might run out of memory.
+//!
+//! TODO Reviewed ??-??-2026
 
 use ustr::Ustr;
 use ustr::ustr;
@@ -95,6 +97,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

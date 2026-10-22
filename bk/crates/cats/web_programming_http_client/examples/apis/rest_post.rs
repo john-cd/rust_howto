@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Example of using the `reqwest` crate to create and delete a GitHub Gist.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 use std::env;

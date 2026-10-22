@@ -1,5 +1,6 @@
-// TODO Reviewed ??-??-2026
 //! Handle the `badge` CLI subcommand
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::path::PathBuf;
 
@@ -52,6 +53,7 @@ pub(super) fn subcommand_badge() -> Command {
             .value_hint(ValueHint::FilePath)
             .help("Merge newly created reference definitions into this file, if they do not exist already"))
 }
+
 /// Extracts the command arguments for the `badge` subcommand.
 ///
 /// This function processes the command-line arguments provided to the `badge`

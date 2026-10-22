@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use the `monostate` crate with `serde` to
 //! deserialize untagged enums where certain fields must have specific values.
@@ -15,6 +15,9 @@
 //! `serde` deserializable only if they have one specific value. This is
 //! particularly helpful when deserializing untagged enums, as it allows
 //! to differentiate between variants based on the values of their fields.
+//!
+//! TODO Reviewed ??-??-2026
+
 use monostate::MustBe;
 use serde::Deserialize;
 
@@ -66,6 +69,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

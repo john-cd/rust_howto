@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Downloads a file in verified byte ranges.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::fs::File;
 use std::io;

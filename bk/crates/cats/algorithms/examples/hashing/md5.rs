@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! MD5 hashing example.
 //!
@@ -9,6 +9,9 @@
 //!
 //! The `md5` crate does not implement the `digest` traits, so it is not
 //! interoperable with the RustCrypto ecosystem.
+//!
+//! TODO Reviewed ??-??-2026
+
 fn main() {
     // Input data:
     let data = "hello world";
@@ -29,6 +32,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

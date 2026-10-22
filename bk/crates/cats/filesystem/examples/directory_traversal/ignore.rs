@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use the `ignore` crate to traverse a
 //! directory recursively, respecting `.gitignore` and similar files, and
@@ -9,6 +9,8 @@
 //! ```toml
 //! ignore = "0.4" # or latest.
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
 
 use ignore::WalkBuilder;
 
@@ -50,6 +52,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         use std::fs;

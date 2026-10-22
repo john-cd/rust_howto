@@ -36,6 +36,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[should_panic]
     #[test]
     fn test_main() {

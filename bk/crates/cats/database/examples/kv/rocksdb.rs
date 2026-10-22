@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Example using Facebook's RocksDB embeddable database.
 //!
@@ -14,6 +14,8 @@
 //! brew install rocksdb
 //! ```
 //! You will also need Clang and LLVM.
+//!
+//! TODO Reviewed ??-??-2026
 
 use rocksdb::DB;
 use rocksdb::Options;
@@ -73,6 +75,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;
