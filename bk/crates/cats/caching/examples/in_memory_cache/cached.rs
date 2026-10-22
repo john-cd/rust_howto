@@ -74,6 +74,15 @@ mod tests {
     fn test_main() {
         main();
     }
+
+    /// Memoized functions return the expected values on repeated calls.
+    #[test]
+    fn cached_functions_return_the_same_values_on_repeated_calls() {
+        assert_eq!(fibonacci(10), 55);
+        assert_eq!(fibonacci(10), 55);
+        assert_eq!(fetch_data(123), "Data for key 123");
+        assert_eq!(fetch_data(123), "Data for key 123");
+    }
 }
 // [review further](https://github.com/john-cd/rust_howto/issues/1354)
 // <https://docs.rs/cached/latest/cached/proc_macro/index.html>
