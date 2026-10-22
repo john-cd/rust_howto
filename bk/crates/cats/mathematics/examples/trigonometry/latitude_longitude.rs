@@ -32,7 +32,7 @@ fn main() {
         + paris_latitude.cos()
             * london_latitude.cos()
             * (delta_longitude / 2.0).sin().powi(2);
-    let central_angle = 2.0 * central_angle_inner.sqrt().asin();
+    let central_angle = 2.0 * central_angle_inner.clamp(0.0, 1.0).sqrt().asin();
 
     // Distance = radius * central angle.
     let distance = earth_radius_kilometer * central_angle;
