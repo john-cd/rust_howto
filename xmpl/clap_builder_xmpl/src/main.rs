@@ -1,8 +1,12 @@
-// TODO Reviewed ??-??-2026
+//! A demo command-line tool built with the `clap` builder API.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![warn(clippy::all, rust_2018_idioms)]
 
 mod cli;
 
+/// Parses the command line and prints the configuration and the commands.
 fn main() {
     env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("info")).init(); // Log to stderr.
 

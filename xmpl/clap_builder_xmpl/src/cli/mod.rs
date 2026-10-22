@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! The command-line interface: arguments, subcommands and their parsing.
+//!
+//! TODO Reviewed ??-??-2026
+
 use args::*;
 use clap::ArgMatches;
 use clap::Command;
@@ -46,12 +49,14 @@ fn cli() -> Command {
         .subcommand(testcmd::cmd())
 }
 
+/// Parses the command line of the program, exiting on failure.
 pub(crate) fn get_args() -> (config::Config, Vec<Cmd>) {
     // Parse [env::args_os], exiting on failure.
     let matches = cli().get_matches();
     parse_args(matches)
 }
 
+/// Converts the matches into a configuration and a list of commands.
 fn parse_args(matches: ArgMatches) -> (config::Config, Vec<Cmd>) {
     let config = config::Config::builder()
         .set_verbose(get_arg_verbose(&matches))
@@ -99,6 +104,7 @@ fn parse_args(matches: ArgMatches) -> (config::Config, Vec<Cmd>) {
 mod tests {
     use super::*;
 
+    /// Checks that global arguments are parsed without a command.
     #[test]
     fn test_parse_args_global_arguments_no_cmd() {
         let m = cli().get_matches_from(vec!["foo", "-c", "config.toml", "-v"]);
@@ -110,6 +116,7 @@ mod tests {
         }
     }
 
+    /// Checks that the `test` command is parsed.
     #[test]
     fn test_parse_args_test_cmd() {
         let m = cli().get_matches_from(vec!["foo", "-c", "config.toml", "test"]);
@@ -120,6 +127,7 @@ mod tests {
         }
     }
 
+    /// Checks that the `query` command is parsed with its words.
     #[test]
     fn test_parse_args_query_cmd() {
         let m = cli().get_matches_from(vec!["foo", "query", "SELECT", "col", "FROM", "tbl"]);
@@ -137,6 +145,7 @@ mod tests {
         }
     }
 
+    /// Checks that the `open` command is parsed with its files.
     #[test]
     fn test_parse_args_open_cmd() {
         let m = cli().get_matches_from(vec!["foo", "-vv", "open", "a.csv"]);
@@ -154,6 +163,7 @@ mod tests {
     // .args_conflicts_with_subcommands(true) // If true, the use of an
     // argument prevents the use of subcommands, i.e. arguments can only
     // follow the final subcommand.  to change that behavior.
+    /// Checks that file paths and the `open` command conflict.
     #[test]
     fn test_both_arg_filepaths_and_cmd_open() {
         let m = cli().get_matches_from(vec!["foo", "a.csv", "open", "b.csv"]);
@@ -167,6 +177,7 @@ mod tests {
     }
 
     // Passing multiple commands is not supported.
+    /// Checks that only one command is accepted.
     #[test]
     fn test_multiple_cmds() {
         let m = cli().get_matches_from(vec![

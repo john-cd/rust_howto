@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Tasks that run on a worker thread and that can be cancelled.
+//!
+//! TODO Reviewed ??-??-2026
+
 mod cancel;
 mod errors;
 mod task;

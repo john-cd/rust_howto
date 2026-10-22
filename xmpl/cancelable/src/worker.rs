@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! A worker thread that runs queued tasks.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::thread;
 
 use crossbeam::channel;
@@ -11,6 +14,7 @@ use super::task::TaskResponse;
 use crate::*;
 
 // Messages:
+/// A request that makes the worker thread stop.
 struct Die;
 
 /// Maximum number of tasks that can be queued.
@@ -19,10 +23,15 @@ const MAX_QUEUED_TASKS: usize = 5;
 
 /// Manage a thread to execute tasks.
 pub struct Worker {
+    /// The worker thread.
     thread: Option<thread::JoinHandle<()>>,
+    /// Sends the kill signal.
     s_die: Option<Sender<Die>>,       // Send the kill signal,
+    /// Sends interrupt requests to the running task.
     cancel_source: CancelTokenSource, // Send interrupt to a task,
+    /// Sends the tasks to the worker thread.
     s_task: Sender<Task>,             // Send tasks to the worker thread.
+    /// Receives the progress reports of the tasks.
     r_taskresponse: Receiver<TaskResponse>,
 }
 
@@ -33,6 +42,7 @@ impl Default for Worker {
 }
 
 impl Worker {
+    /// Starts the worker thread.
     pub fn new() -> Self {
         let (s_task, r_task) = channel::bounded::<Task>(MAX_QUEUED_TASKS);
         let (s_die, r_die) = channel::bounded::<Die>(1);
@@ -119,6 +129,7 @@ impl Worker {
         Ok(())
     }
 
+    /// Prints the responses that the tasks have sent so far.
     pub fn process_responses(&self) {
         loop {
             match self.r_taskresponse.try_recv() {
