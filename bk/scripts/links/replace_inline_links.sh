@@ -2,50 +2,122 @@
 # TODO Reviewed ??-??-2026
 set -euo pipefail
 
-# WORK IN PROGRESS
-# - Convert inline links e.g. [...](http://...) into reference-style links: [...][...] [...]: http://...
-# - Process http://... naked links
+usage() {
+  echo "Usage: $0 [--write] <root folder of book>" >&2
+}
 
-# Examples of URLs to process:
-# https://arangodb.com/
-# https://crates.io/crates/sd
-# https://github.com/rustdesk/rustdesk
-# Examples of URLs to skip:
-# https://github.com/john-cd/rust_howto/issues/1375
+write=0
+if [[ "${1:-}" == "--write" ]]; then
+  write=1
+  shift
+fi
+if [[ $# -ne 1 ]]; then
+  usage
+  exit 2
+fi
 
+root="$(realpath -- "$1")"
+if [[ ! -d "$root/src" ]]; then
+  echo "Error: '$root' does not contain src/." >&2
+  exit 1
+fi
 
-# [fix](https://github.com/john-cd/rust_howto/issues/1238)
-# 1. do not convert links to GitHub issues e.g. https://github.com/john-cd/rust_howto/issues/1375 links
-# 2. skip text between ``` and ```
-# p = print; t = branch; : = label
-# '/```/, /```/n; tx;     ; :x ;' "${file}"
-# 3. move refdefs into central file
-# 4. respect conventions
+python3 - "$root" "$write" <<'PY'
+from __future__ import annotations
 
-root="$(realpath $1)/"
+import difflib
+import hashlib
+import re
+import sys
+from pathlib import Path
 
-for file in $( find ${root}src ${root}drafts ${root}../later/src -type f -name "*.md"  -not -name "refs.incl.md" -not -name "SUMMARY.md" -not -name "*refs.md" )
-do
-  echo ">> $file"
-  # Replace naked URLs by reference-style link.
-  #
-  # -n = quiet -E = extended regex -s = separate files
-  # \=...= instead of /.../
-  # Trick: '\'' to escape ' in bash
-  # for lines that start with http... or for http... not preceded by " ' or (
-  sed -n -E -s '\=(^|[^"'\''(])https?://= {
-  # replace https::/github.com/.../...
-  s=([^"'\''(]?https?://github.com/)([^/ ]+/)([^/ ]+)(/[^"'\'')↗]*)?=[`\3`][\3~repo] [\3~repo]: \1\2\3\4=gp;
-  # skip to end if the above matched
-  tx;
-  # General case http://...
-  s=([^"'\''(]?https?://)([^/\s]+)(/[^"'\'')↗]*)?=[\2][\2] [\2]: \1\2\3=gp ;
-  :x
-  }
-  ' "${file}"
+root = Path(sys.argv[1])
+write = sys.argv[2] == "1"
+link_pattern = re.compile(r"(?<!!)\[([^\]\n]+)\]\((https?://[^\s)]+)\)")
+excluded = {"SUMMARY.md", "refs.incl.md"}
+refs: dict[Path, set[tuple[str, str]]] = {}
+changes: list[tuple[Path, str, str]] = []
 
-  # Replace [...](...)
-  #sed -E -n 's=\[(`)?([^`]+?)(`)?\]\((.+?)\)=[\1\2\3][\L\2] \n[\2]: \4\n=gp' "${file}" # use -i to replace in-place
-done
+def transform(path: Path, text: str) -> str:
+    fenced = False
+    fence_marker = ""
+    output: list[str] = []
+    definitions: set[tuple[str, str]] = set()
 
-echo "DONE"
+    for line in text.splitlines(keepends=True):
+        fence = re.match(r"^\s{0,3}(```+|~~~+)", line)
+        if fence:
+            marker = fence.group(1)
+            if not fenced:
+                fenced, fence_marker = True, marker[0]
+            elif marker[0] == fence_marker:
+                fenced = False
+            output.append(line)
+            continue
+        if fenced:
+            output.append(line)
+            continue
+
+        def replace(match: re.Match[str]) -> str:
+            label, url = match.groups()
+            if "github.com/" in url and "/issues/" in url:
+                return match.group(0)
+            digest = hashlib.sha256(url.encode()).hexdigest()[:12]
+            ref = f"url~{digest}"
+            definitions.add((ref, url))
+            return f"[{label}][{ref}]"
+
+        # Avoid rewriting links inside inline code spans.
+        spans = re.split(r"(`+[^\n]*?`+)", line)
+        for index in range(0, len(spans), 2):
+            spans[index] = link_pattern.sub(replace, spans[index])
+        output.append("".join(spans))
+
+    if definitions:
+        refs_path = path.parent / "refs.incl.md"
+        refs.setdefault(refs_path, set()).update(definitions)
+    return "".join(output)
+
+for base in (root / "src", root / "drafts", root.parent / "later" / "src"):
+    if not base.is_dir():
+        continue
+    for path in sorted(base.rglob("*.md")):
+        if path.name in excluded or path.name.endswith("refs.md"):
+            continue
+        before = path.read_text(encoding="utf-8")
+        after = transform(path, before)
+        if after != before:
+            changes.append((path, before, after))
+
+if not changes:
+    print("No eligible inline HTTP(S) links found.")
+    sys.exit(0)
+
+if not write:
+    for path, before, after in changes:
+        print("".join(difflib.unified_diff(
+            before.splitlines(keepends=True),
+            after.splitlines(keepends=True),
+            fromfile=str(path),
+            tofile=str(path) + " (updated)",
+        )))
+    print(f"Previewed {len(changes)} file(s); rerun with --write to apply.")
+    sys.exit(0)
+
+for path, _, after in changes:
+    path.write_text(after, encoding="utf-8", newline="")
+
+for path, definitions in refs.items():
+    existing = path.read_text(encoding="utf-8") if path.exists() else ""
+    present = set(re.findall(r"^\[(url~[0-9a-f]{12})\]:", existing, re.M))
+    additions = [
+        f"[{ref}]: {url}\n"
+        for ref, url in sorted(definitions)
+        if ref not in present
+    ]
+    if additions:
+        separator = "" if not existing or existing.endswith("\n\n") else "\n"
+        path.write_text(existing + separator + "".join(additions), encoding="utf-8", newline="")
+
+print(f"Updated {len(changes)} Markdown file(s) and their reference files.")
+PY
