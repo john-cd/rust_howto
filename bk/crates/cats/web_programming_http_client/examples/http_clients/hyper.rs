@@ -10,8 +10,8 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use anyhow::Context;
-use http_body_util::BodyExt;
+use anyhow::Context as _;
+use http_body_util::BodyExt as _;
 use http_body_util::Empty;
 use hyper::Request;
 use hyper::body::Bytes;

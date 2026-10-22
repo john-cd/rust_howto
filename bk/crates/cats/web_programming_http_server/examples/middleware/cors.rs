@@ -14,9 +14,9 @@ use http::Request;
 use http::Response;
 use http::header;
 use http_body_util::Full;
-use tower::Service;
+use tower::Service as _;
 use tower::ServiceBuilder;
-use tower::ServiceExt;
+use tower::ServiceExt as _;
 use tower_http::cors::Any;
 use tower_http::cors::CorsLayer;
 

@@ -25,8 +25,8 @@ lazy_static! {
     // `CONFIG` is a lazily-initialized HashMap that holds configuration data.
     static ref CONFIG: HashMap<String, String> = {
         let mut m = HashMap::new();
-        m.insert("host".to_string(), "localhost".to_string());
-        m.insert("port".to_string(), "8080".to_string());
+        m.insert("host".to_owned(), "localhost".to_owned());
+        m.insert("port".to_owned(), "8080".to_owned());
         m
     };
     // You can call a method or a function:

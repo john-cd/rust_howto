@@ -17,7 +17,7 @@ struct CsvRecord<'a> {
     fields: Vec<&'a str>,
 }
 
-fn load_record<'a>(line: &'a str) -> CsvRecord<'a> {
+fn load_record(line: &str) -> CsvRecord<'_> {
     let mut record = CsvRecord {
         line,
         fields: Vec::new(),
@@ -28,7 +28,7 @@ fn load_record<'a>(line: &'a str) -> CsvRecord<'a> {
 }
 
 fn outside() {
-    let s = "Joe,Doe,1994-01-01".to_string();
+    let s = "Joe,Doe,1994-01-01".to_owned();
     let c = load_record(&s);
     println!("{c:?}");
 }
@@ -46,7 +46,7 @@ struct SelfRefRc {
 impl SelfRefRc {
     fn new(data: String) -> Self {
         let shared_data = Rc::new(data);
-        SelfRefRc {
+        Self {
             data: Rc::clone(&shared_data),
             reference: Rc::clone(&shared_data),
         }
@@ -54,7 +54,7 @@ impl SelfRefRc {
 }
 
 fn rc() {
-    let self_ref = SelfRefRc::new("Hello, Rust!".to_string());
+    let self_ref = SelfRefRc::new("Hello, Rust!".to_owned());
     println!("Data: {}", self_ref.reference);
 }
 

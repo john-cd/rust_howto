@@ -8,12 +8,12 @@ use std::os::raw::c_char;
 use anyhow::Result;
 
 fn prompt(s: &str) -> Result<String> {
-    use std::io::Write;
+    use std::io::Write as _;
     print!("{s}");
     std::io::stdout().flush()?;
     let mut input = String::new();
     std::io::stdin().read_line(&mut input)?;
-    Ok(input.trim().to_string())
+    Ok(input.trim().to_owned())
 }
 
 unsafe extern "C" {

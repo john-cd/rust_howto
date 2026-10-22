@@ -34,7 +34,7 @@ pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs> {
         let concepts = m
             .get_many::<String>("concept")
             .unwrap_or_default()
-            .map(|v| v.into())
+            .map(std::convert::Into::into)
             .collect::<Vec<String>>();
         badge = Some(CmdArgs { args: concepts });
     }

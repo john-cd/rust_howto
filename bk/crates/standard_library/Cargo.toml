@@ -107,3 +107,6 @@ test = true
 name = "smart_pointers"
 path = "examples/smart_pointers/main.rs"
 test = true
+
+[lints]
+workspace = true

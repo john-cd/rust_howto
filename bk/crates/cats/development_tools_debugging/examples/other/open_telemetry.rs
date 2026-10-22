@@ -8,9 +8,9 @@
 #[cfg(feature = "opentelemetry")]
 use opentelemetry::global;
 #[cfg(feature = "opentelemetry")]
-use opentelemetry::trace::Span;
+use opentelemetry::trace::Span as _;
 #[cfg(feature = "opentelemetry")]
-use opentelemetry::trace::Tracer;
+use opentelemetry::trace::Tracer as _;
 
 #[cfg(feature = "opentelemetry")]
 fn main() {

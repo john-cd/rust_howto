@@ -26,10 +26,10 @@ struct Config2 {
 
 impl Default for Config2 {
     fn default() -> Self {
-        Config2 {
+        Self {
             timeout: 5000,
             retries: 3,
-            endpoint: "https://api.example.com".to_string(),
+            endpoint: "https://api.example.com".to_owned(),
             logging_enabled: true,
         }
     }

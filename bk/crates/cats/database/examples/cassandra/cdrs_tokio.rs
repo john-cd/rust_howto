@@ -5,13 +5,13 @@
 
 use std::sync::Arc;
 
-use anyhow::Context;
+use anyhow::Context as _;
 use cdrs_tokio::IntoCdrsValue;
 use cdrs_tokio::authenticators::StaticPasswordAuthenticatorProvider;
 use cdrs_tokio::cluster::NodeTcpConfigBuilder;
 use cdrs_tokio::cluster::TcpConnectionManager;
 use cdrs_tokio::cluster::session::Session;
-use cdrs_tokio::cluster::session::SessionBuilder;
+use cdrs_tokio::cluster::session::SessionBuilder as _;
 use cdrs_tokio::cluster::session::TcpSessionBuilder;
 use cdrs_tokio::frame::TryFromRow as TryFromRowTrait;
 use cdrs_tokio::load_balancing::RoundRobinLoadBalancingStrategy;
@@ -96,7 +96,7 @@ KEY, name TEXT, age INT);",
     let age = 30;
     let row = RowStruct {
         key: id,
-        name: name.to_string(),
+        name: name.to_owned(),
         age,
     };
     session

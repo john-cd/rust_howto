@@ -1,9 +1,9 @@
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
-use std::io::Write;
+use std::io::Write as _;
 use std::io::stdout;
 
-use crossterm::ExecutableCommand;
+use crossterm::ExecutableCommand as _;
 use crossterm::cursor;
 use crossterm::event;
 use crossterm::event::DisableMouseCapture;

@@ -29,3 +29,6 @@ rustix = { version = "1.1.5", features = ["fs"] }
 name = "unix"
 path = "examples/unix/main.rs"
 test = true
+
+[lints]
+workspace = true

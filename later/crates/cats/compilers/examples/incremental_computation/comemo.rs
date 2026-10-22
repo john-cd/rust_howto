@@ -19,7 +19,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use comemo::Track;
+use comemo::Track as _;
 use comemo::Tracked;
 use comemo::memoize;
 use comemo::track;
@@ -31,7 +31,7 @@ use comemo::track;
 /// We also wrapped the `config` argument in comemo's `Tracked` container.
 /// It automatically track all config accesses during a memoized call.
 #[memoize]
-fn compute_derived_value(config: Tracked<Config>) -> i32 {
+fn compute_derived_value(config: Tracked<'_, Config>) -> i32 {
     // The only methods accessible on `Tracked<T>` are those defined in an
     // implementation block or trait for T annotated with `#[track]`. See below.
     let base_value = config.get_value();

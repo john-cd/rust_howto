@@ -17,7 +17,7 @@ struct Rectangle {
 
 impl Rectangle {
     /// Checks if this rectangle can hold another rectangle.
-    fn can_hold(&self, another: &Rectangle) -> bool {
+    fn can_hold(&self, another: &Self) -> bool {
         self.width > another.width && self.height > another.height
     }
 }

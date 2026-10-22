@@ -1,7 +1,7 @@
 // TODO Reviewed ??-??-2026
 #![allow(dead_code)]
 // ANCHOR: example
-use std::str::FromStr;
+use std::str::FromStr as _;
 
 use ulid::Ulid;
 

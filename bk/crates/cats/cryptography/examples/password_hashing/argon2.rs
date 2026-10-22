@@ -8,8 +8,8 @@
 use argon2::Argon2;
 use argon2::password_hash::Error;
 use argon2::password_hash::PasswordHash;
-use argon2::password_hash::PasswordHasher;
-use argon2::password_hash::PasswordVerifier;
+use argon2::password_hash::PasswordHasher as _;
+use argon2::password_hash::PasswordVerifier as _;
 use argon2::password_hash::SaltString;
 use argon2::password_hash::rand_core::OsRng;
 

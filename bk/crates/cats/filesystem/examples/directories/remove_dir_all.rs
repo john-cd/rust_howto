@@ -22,7 +22,7 @@ fn main() -> io::Result<()> {
 
     // Now, remove the subdirectory and all of its contents.
     match remove_dir_all(path) {
-        Ok(_) => println!(
+        Ok(()) => println!(
             "Directory 'sub_dir' and all contents removed successfully!"
         ),
         Err(e) => eprintln!("Failed to remove directory: {e}"),

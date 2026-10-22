@@ -1,7 +1,7 @@
 // TODO Reviewed ??-??-2026
 #![allow(dead_code)]
 // ANCHOR: example
-use std::io::Write;
+use std::io::Write as _;
 
 /// Example of using the `print` and `println!` macros:
 fn print() {
@@ -32,7 +32,7 @@ fn variants() {
     // The writer may be any value with a `write_fmt` method,
     // and usually implements the `fmt::Write` or `io::Write` traits.
     // Here this is a simple buffer String:
-    use std::fmt::Write;
+    use std::fmt::Write as _;
     let mut output = String::new();
     let z = "Rust";
     write!(&mut output, "Hello {z}!")

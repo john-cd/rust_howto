@@ -93,7 +93,7 @@ fn demo_arrays() {
     // Iterating over an array:
     // The `iter()` method provides an iterator over the array elements.
     println!("Iterating over array:");
-    for num in numbers.iter() {
+    for num in &numbers {
         println!("  Value: {num}");
     }
 
@@ -107,7 +107,7 @@ fn demo_arrays() {
     // Iterating over an array of tuples allows access
     // to both parts of each tuple.
     println!("Iterating over array of tuples:");
-    for (number, name) in pairs.iter() {
+    for (number, name) in &pairs {
         println!("  {number} is written as {name}");
     }
 
@@ -116,7 +116,7 @@ fn demo_arrays() {
     let matrix: [[i32; 3]; 2] = [[1, 2, 3], [4, 5, 6]];
 
     println!("Multi-dimensional array:");
-    for row in matrix.iter() {
+    for row in &matrix {
         println!("  {row:?}");
     }
 

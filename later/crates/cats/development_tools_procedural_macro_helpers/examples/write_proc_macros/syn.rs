@@ -14,7 +14,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use anyhow::Context;
+use anyhow::Context as _;
 use quote::quote;
 use syn::Expr;
 use syn::ItemFn;
@@ -33,11 +33,11 @@ fn simple() -> Result<()> {
 /// Parse a function and modify it.
 fn m() -> anyhow::Result<()> {
     // Example Rust code to parse:
-    let code = r#"
+    let code = r"
         fn example_function(x: i32) -> i32 {
             x + 1
         }
-    "#;
+    ";
 
     // Parse the code into a syntax tree.
     let ast: ItemFn = syn::parse_str(code).context("Failed to parse code")?;

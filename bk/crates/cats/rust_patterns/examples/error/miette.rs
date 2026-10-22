@@ -56,7 +56,7 @@ mod mylib {
 
             // Related errors.
             #[related]
-            others: Vec<MyLibError>,
+            others: Vec<Self>,
         },
 
         // Wrap an Error:
@@ -83,19 +83,20 @@ mod mylib {
     }
 
     /// Example function that fails.
+    #[expect(unreachable_code, reason = "the example returns an error on purpose")]
     pub fn this_fails() -> Result<()> {
         // You can use plain strings as a `Source`,
         // or anything that implements the one-method `Source` trait.
-        let src = "source\n  text\n    here".to_string();
+        let src = "source\n  text\n    here".to_owned();
         // You may also use `map_err(|error| {
         // error.with_source_code(String::from("source code")) })` later.
 
-        Err(MyLibError::SomethingWentWrong {
+        return Err(MyLibError::SomethingWentWrong {
             src: NamedSource::new("bad_file.rs", src),
             bad_bit: (9, 4).into(),
-            advice: Some("Some help text".to_string()),
+            advice: Some("Some help text".to_owned()),
             others: vec![MyLibError::BadThingHappened],
-        })?;
+        }.into());
         Ok(())
     }
 }

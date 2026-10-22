@@ -7,7 +7,7 @@
 //! TODO Reviewed ??-??-2026
 
 use std::io;
-use std::io::BufRead;
+use std::io::BufRead as _;
 
 fn main() {
     // A `Cursor` behaves like a `File` but wraps an in-memory buffer.

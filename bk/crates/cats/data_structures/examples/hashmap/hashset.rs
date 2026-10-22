@@ -44,28 +44,28 @@ fn main() {
     }
 
     // Set operations:
-    let set1: HashSet<_> = [1, 2, 3].iter().cloned().collect();
-    let set2: HashSet<_> = [3, 4, 5].iter().cloned().collect();
+    let set1: HashSet<_> = [1, 2, 3].iter().copied().collect();
+    let set2: HashSet<_> = [3, 4, 5].iter().copied().collect();
 
     // Union.
-    let union: HashSet<_> = set1.union(&set2).cloned().collect();
+    let union: HashSet<_> = set1.union(&set2).copied().collect();
     println!("Union: {union:?}"); // 1, 2, 3, 4, 5.
 
     // Intersection.
-    let intersection: HashSet<_> = set1.intersection(&set2).cloned().collect();
+    let intersection: HashSet<_> = set1.intersection(&set2).copied().collect();
     println!("Intersection: {intersection:?}"); // 3.
 
     // Difference.
-    let difference: HashSet<_> = set1.difference(&set2).cloned().collect();
+    let difference: HashSet<_> = set1.difference(&set2).copied().collect();
     println!("Difference (set1 - set2): {difference:?}"); // 1, 2.
 
     // Symmetric difference (elements in either set but not both).
     let symmetric_difference: HashSet<_> =
-        set1.symmetric_difference(&set2).cloned().collect();
+        set1.symmetric_difference(&set2).copied().collect();
     println!("Symmetric Difference: {symmetric_difference:?}"); // 1, 2, 4, 5.
 
     // Check if a set is a subset of another:
-    let subset: HashSet<_> = [1, 2].iter().cloned().collect();
+    let subset: HashSet<_> = [1, 2].iter().copied().collect();
     println!(
         "Is {subset:?} a subset of {set1:?}? {}",
         subset.is_subset(&set1)

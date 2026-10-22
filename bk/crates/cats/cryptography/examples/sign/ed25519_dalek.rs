@@ -6,9 +6,9 @@
 //! TODO Reviewed ??-??-2026
 
 use ed25519_dalek::Signature;
-use ed25519_dalek::Signer;
+use ed25519_dalek::Signer as _;
 use ed25519_dalek::SigningKey;
-use ed25519_dalek::Verifier;
+use ed25519_dalek::Verifier as _;
 use ed25519_dalek::VerifyingKey;
 use rand_core::OsRng;
 

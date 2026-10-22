@@ -42,7 +42,7 @@ struct DatabaseConnectionPool;
 
 impl DatabaseConnectionPool {
     fn new() -> Self {
-        DatabaseConnectionPool
+        Self
     }
 }
 

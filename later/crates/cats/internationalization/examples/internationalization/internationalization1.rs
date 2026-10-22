@@ -15,7 +15,7 @@ use sys_locale::get_locale;
 use sys_locale::get_locales;
 
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
-    let current_locale = get_locale().unwrap_or_else(|| "und".to_string());
+    let current_locale = get_locale().unwrap_or_else(|| "und".to_owned());
     let mut preferred_locales = get_locales();
     let locale_tag = preferred_locales
         .next()
@@ -28,15 +28,13 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let language = locale.id.language.to_string();
     let region = locale
         .id
-        .region
-        .map(|r| r.to_string())
-        .unwrap_or_else(|| "unknown".to_string());
+        .region.map_or_else(|| "unknown".to_owned(), |r| r.to_string());
 
-    println!("System locale: {}", current_locale);
-    println!("Preferred locale: {}", locale_tag);
-    println!("Canonical locale: {}", canonical);
-    println!("Language: {}", language);
-    println!("Region: {}", region);
+    println!("System locale: {current_locale}");
+    println!("Preferred locale: {locale_tag}");
+    println!("Canonical locale: {canonical}");
+    println!("Language: {language}");
+    println!("Region: {region}");
     println!("Greeting: {}", render_greeting(&language, &region));
     println!(
         "Locale preference order: {:?}",

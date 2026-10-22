@@ -17,7 +17,7 @@
 #![cfg(target_family = "unix")]
 
 use std::collections::HashSet;
-use std::io::Write;
+use std::io::Write as _;
 use std::process::Command;
 use std::process::Stdio;
 
@@ -54,7 +54,7 @@ fn main() -> Result<()> {
         // collect them into a unique set.
         let words = raw_output
             .split_whitespace()
-            .map(|s| s.to_lowercase())
+            .map(str::to_lowercase)
             .collect::<HashSet<_>>();
         println!("Found {} unique words:", words.len());
         println!("{words:#?}");

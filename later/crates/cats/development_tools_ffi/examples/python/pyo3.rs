@@ -41,7 +41,7 @@ fn test_my_function() -> PyResult<()> {
         // Pass object with Python tuple of positional arguments:
         let elements: Vec<i32> = vec![0, 1, 2, 3, 4, 5];
         let tuple = PyTuple::new(py, elements)?;
-        assert_eq!(format!("{:?}", tuple), "(0, 1, 2, 3, 4, 5)");
+        assert_eq!(format!("{tuple:?}"), "(0, 1, 2, 3, 4, 5)");
         fun.call1(py, tuple)?;
 
         Ok(())

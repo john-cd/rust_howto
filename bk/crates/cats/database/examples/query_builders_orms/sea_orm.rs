@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 
 // ANCHOR: example
-//! Build SeaORM queries from an inline entity definition.
+//! Build `SeaORM` queries from an inline entity definition.
 //!
 //! This example creates a simple active model and prints the generated SQL
 //! for an insert and select statement.
@@ -10,12 +10,12 @@
 
 use sea_orm::ActiveValue::NotSet;
 use sea_orm::ActiveValue::Set;
-use sea_orm::ColumnTrait;
+use sea_orm::ColumnTrait as _;
 use sea_orm::DbBackend;
 use sea_orm::DbErr;
-use sea_orm::EntityTrait;
-use sea_orm::QueryFilter;
-use sea_orm::QueryTrait;
+use sea_orm::EntityTrait as _;
+use sea_orm::QueryFilter as _;
+use sea_orm::QueryTrait as _;
 
 mod post {
     use sea_orm::entity::prelude::*;

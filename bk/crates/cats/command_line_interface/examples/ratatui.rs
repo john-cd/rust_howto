@@ -98,7 +98,7 @@ impl App {
                 self.handle_key_event(key_event);
             }
             _ => {}
-        };
+        }
         Ok(())
     }
 
@@ -109,7 +109,7 @@ impl App {
     fn handle_key_event(&mut self, key_event: KeyEvent) {
         match self.mode {
             Mode::Running if key_event.code == KeyCode::Char('q') => {
-                self.mode = Mode::Exiting
+                self.mode = Mode::Exiting;
                 // Call additional methods here to handle other
                 // key events.
             }

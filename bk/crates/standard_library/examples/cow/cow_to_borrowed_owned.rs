@@ -1,9 +1,8 @@
 // TODO Reviewed ??-??-2026
 #![allow(dead_code)]
 // ANCHOR: example
-use std::borrow::Borrow;
+use std::borrow::Borrow as _;
 use std::borrow::Cow;
-use std::ops::Deref;
 
 /// Demonstrates various uses and conversions of `Cow` (Clone-on-Write).
 fn main() {
@@ -21,7 +20,7 @@ fn main() {
     println!("{my_string}");
     my_string.push_str(example.as_ref());
     println!("{my_string}");
-    my_string.push_str(example.deref());
+    my_string.push_str(&example);
     println!("{my_string}");
     // Unstable feature: my_string.push_str(&example.as_str());
 

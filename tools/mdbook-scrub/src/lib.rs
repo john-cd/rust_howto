@@ -1,11 +1,12 @@
 // TODO Reviewed ??-??-2026
+//! An `mdbook` preprocessor that scrubs hidden chapters and wikilinks.
 mod conf;
 mod regexes;
 
 use std::path::Path;
 use std::path::PathBuf;
 
-use anyhow::Context;
+use anyhow::Context as _;
 use anyhow::ensure;
 use conf::DirectivePreprocConfig;
 use conf::PreprocConfig;
@@ -32,6 +33,7 @@ pub struct Preproc {
 
 impl Preproc {
     /// Create the pre-link stage that removes hidden includes and sections.
+    #[must_use]
     pub fn new() -> Self {
         Self {
             stage: Stage::Scrub,
@@ -39,6 +41,7 @@ impl Preproc {
     }
 
     /// Create the post-link stage that expands custom directives in memory.
+    #[must_use]
     pub fn directives() -> Self {
         Self {
             stage: Stage::Directives,
@@ -107,7 +110,7 @@ impl Preproc {
                         captures
                             .get(1)
                             .map_or("", |matched| matched.as_str().trim())
-                            .to_string()
+                            .to_owned()
                     })?;
                 book_tool::directives::validate_no_unexpanded_directives(&content)?;
                 Ok(content)
@@ -292,12 +295,16 @@ mod tests {
     #[test]
     fn example_anchor_excludes_marker_lines() {
         let source = "before\n// ANCHOR: example\nfn main() {}\n// ANCHOR_END: example\nafter\n";
-        assert_eq!(extract_anchor(source, "example").unwrap(), "fn main() {}");
+        assert_eq!(
+            extract_anchor(source, "example").expect("input should parse"),
+            "fn main() {}"
+        );
     }
 
     #[test]
     fn example_anchor_reports_missing_markers() {
-        let error = extract_anchor("fn main() {}\n", "example").unwrap_err();
+        let error =
+            extract_anchor("fn main() {}\n", "example").expect_err("input should be rejected");
         assert!(error.to_string().contains("anchor start marker is missing"));
     }
 
@@ -308,43 +315,45 @@ mod tests {
 
     #[test]
     fn malformed_directive_configuration_is_an_error() {
-        use std::str::FromStr;
+        use std::str::FromStr as _;
 
         let config = mdbook_preprocessor::config::Config::from_str(
             "[preprocessor.directives]\nprocess-example-directives = 'yes'\n",
         )
-        .unwrap();
+        .expect("input should parse");
         let context = PreprocessorContext::new(PathBuf::from("."), config, "html".into());
         let error = Preproc::directives()
             .run(&context, Book::new())
-            .unwrap_err();
+            .expect_err("input should be rejected");
 
         assert!(error.to_string().contains("preprocessor.directives"));
     }
 
     #[test]
     fn unresolved_example_paths_are_errors() {
-        let root = PathBuf::from("test_book").canonicalize().unwrap();
+        let root = PathBuf::from("test_book")
+            .canonicalize()
+            .expect("input should parse");
         let chapter = root.join("src/language/examples.md");
         let error = resolve_example(
             &root,
             Some(&chapter),
             "../../crates/language/examples/constants_and_statics/missing.rs:example",
         )
-        .unwrap_err();
+        .expect_err("input should be rejected");
 
         assert!(format!("{error:#}").contains("failed to resolve example"));
     }
 
     #[test]
     fn unresolved_custom_directives_are_errors() {
-        use std::str::FromStr;
+        use std::str::FromStr as _;
 
         let config = mdbook_preprocessor::config::Config::from_str(
             "[preprocessor.directives]\nprocess-example-directives = true\n",
         )
-        .unwrap();
-        let root = std::env::current_dir().unwrap();
+        .expect("input should parse");
+        let root = std::env::current_dir().expect("input should parse");
         let context = PreprocessorContext::new(root, config, "html".into());
         let mut book = Book::new();
         book.push_item(mdbook_preprocessor::book::Chapter::new(
@@ -354,18 +363,28 @@ mod tests {
             Vec::new(),
         ));
 
-        let error = Preproc::directives().run(&context, book).unwrap_err();
+        let error = Preproc::directives()
+            .run(&context, book)
+            .expect_err("input should be rejected");
         assert!(format!("{error:#}").contains("{{#unknown value}}"));
     }
 
     #[test]
     fn both_stages_report_renderer_support() {
-        assert!(Preproc::new().supports_renderer("html").unwrap());
-        assert!(Preproc::directives().supports_renderer("markdown").unwrap());
+        assert!(
+            Preproc::new()
+                .supports_renderer("html")
+                .expect("input should parse")
+        );
+        assert!(
+            Preproc::directives()
+                .supports_renderer("markdown")
+                .expect("input should parse")
+        );
         assert!(
             !Preproc::directives()
                 .supports_renderer("not-supported")
-                .unwrap()
+                .expect("input should parse")
         );
     }
 }

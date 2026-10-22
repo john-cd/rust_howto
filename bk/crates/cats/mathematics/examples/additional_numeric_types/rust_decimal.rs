@@ -9,7 +9,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use std::str::FromStr;
+use std::str::FromStr as _;
 
 use rust_decimal::Decimal;
 use rust_decimal_macros::dec;

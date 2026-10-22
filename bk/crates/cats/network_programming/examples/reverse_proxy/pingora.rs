@@ -9,7 +9,7 @@
 //! websocket proxying.
 //!
 //! Features:
-//! - Modern TLS with OpenSSL or BoringSSL (FIPS compatible).
+//! - Modern TLS with OpenSSL or `BoringSSL` (FIPS compatible).
 //! - Zero-downtime upgrade.
 //! - Integration with Syslog, Prometheus, Sentry, OpenTelemetry and other
 //!   observability tools.

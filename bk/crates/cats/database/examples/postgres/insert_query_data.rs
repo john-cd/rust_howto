@@ -7,7 +7,7 @@
 //! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
-use std::fmt::Write;
+use std::fmt::Write as _;
 
 use postgres::Client;
 use postgres::Error;
@@ -52,7 +52,7 @@ fn main() -> Result<(), Error> {
             params.push(value);
         }
 
-        client.execute(&query, &params[..])?;
+        client.execute(&query, &params)?;
     }
 
     // Query the database to retrieve all authors and print their details.

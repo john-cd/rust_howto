@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 
 // ANCHOR: example
-//! Example: create a dummy neuroimaging volume and save it as a NIfTI file.
+//! Example: create a dummy neuroimaging volume and save it as a `NIfTI` file.
 //!
 //! This example uses the `nifti` crate to build a synthetic 3D brain-like
 //! volume, then writes it to the system temporary directory.

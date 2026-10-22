@@ -6,7 +6,7 @@ use std::io::Result as IoResult;
 use async_compression::tokio::bufread::GzipDecoder;
 use async_compression::tokio::write::GzipEncoder;
 use tokio::fs::File;
-use tokio::io::AsyncWriteExt;
+use tokio::io::AsyncWriteExt as _;
 use tokio::io::BufReader;
 
 #[tokio::main]

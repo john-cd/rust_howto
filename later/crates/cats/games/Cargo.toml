@@ -28,3 +28,6 @@ test = true
 name = "examples"
 path = "examples/main.rs"
 test = true
+
+[lints]
+workspace = true

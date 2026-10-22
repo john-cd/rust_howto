@@ -85,7 +85,7 @@ fn main() -> Result<()> {
 
     // Use `unwrap_or` to set defaults for optional arguments
     // (or use `default_value_t` as above).
-    println!("Pattern: {:?}", cli.pattern.unwrap_or("".to_string()));
+    println!("Pattern: {:?}", cli.pattern.unwrap_or("".to_owned()));
 
     // We can also see how many times a particular flag or argument occurred.
     // Note, only flags can have multiple occurrences.

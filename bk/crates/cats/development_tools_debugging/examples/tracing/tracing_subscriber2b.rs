@@ -5,7 +5,7 @@ use std::io;
 
 use tracing_subscriber::filter::EnvFilter;
 use tracing_subscriber::fmt;
-use tracing_subscriber::layer::SubscriberExt;
+use tracing_subscriber::layer::SubscriberExt as _;
 
 /// Demonstrates how to write logs to multiple destinations (in this instance,
 /// stdout and a file) simultaneously.

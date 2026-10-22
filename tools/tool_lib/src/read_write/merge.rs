@@ -4,13 +4,13 @@
 //! TODO Reviewed ??-??-2026
 
 use std::fs::File;
-use std::io::BufRead;
+use std::io::BufRead as _;
 use std::io::BufReader;
-use std::io::Write;
+use std::io::Write as _;
 use std::path::Path;
 
 use anyhow::Result;
-use itertools::Itertools;
+use itertools::Itertools as _;
 
 /// Merge the contents of a text file and a `Vec` of text lines.
 ///
@@ -33,7 +33,7 @@ pub fn merge<P: AsRef<Path>>(filepath: P, new_lines: Vec<String>) -> Result<()> 
         .iter()
         .chain(&existing_lines)
         // Remove end white spaces (incl. remaining newlines in new_lines).
-        .map(|s| s.trim_end().to_string())
+        .map(|s| s.trim_end().to_owned())
         .sorted()
         .dedup()
         .map(|s| s + "\n")
@@ -68,7 +68,7 @@ fn write_each(
 #[cfg(test)]
 mod tests {
     use std::fs;
-    use std::io::Read;
+    use std::io::Read as _;
 
     use tempfile::tempdir;
 
@@ -100,7 +100,7 @@ mod tests {
     fn test_write_each_vec_string() -> Result<()> {
         let dir = tempdir()?;
         let file_path = dir.path().join("vec_string_test.txt");
-        let items = vec!["line a\n".to_string(), "line b\n".to_string()];
+        let items = vec!["line a\n".to_owned(), "line b\n".to_owned()];
 
         write_each(&file_path, items)?;
 
@@ -113,7 +113,7 @@ mod tests {
     fn test_write_each_ref_vec_string() -> Result<()> {
         let dir = tempdir()?;
         let file_path = dir.path().join("ref_vec_string_test.txt");
-        let items = vec!["ref_line1\n".to_string(), "ref_line2\n".to_string()];
+        let items = vec!["ref_line1\n".to_owned(), "ref_line2\n".to_owned()];
 
         // Pass reference instead of vector.
         write_each(&file_path, &items)?;
@@ -127,7 +127,7 @@ mod tests {
     fn test_merge_new_file() -> Result<()> {
         let dir = tempdir()?;
         let file_path = dir.path().join("merge_new.txt");
-        let new_lines = vec!["c".to_string(), "a".to_string(), "b".to_string()];
+        let new_lines = vec!["c".to_owned(), "a".to_owned(), "b".to_owned()];
 
         merge(&file_path, new_lines)?;
 
@@ -170,7 +170,7 @@ mod tests {
         let initial_content = "c\na\ne\n";
         fs::write(&file_path, initial_content)?;
 
-        let new_lines = vec!["b".to_string(), "d".to_string(), "a".to_string()]; // "a" overlaps.
+        let new_lines = vec!["b".to_owned(), "d".to_owned(), "a".to_owned()]; // "a" overlaps.
         merge(&file_path, new_lines)?;
 
         let content = read_file_content(&file_path)?;
@@ -192,10 +192,10 @@ mod tests {
         fs::write(&file_path, "")?; // Create empty file
 
         let new_lines = vec![
-            "z".to_string(),
-            "y".to_string(),
-            "x".to_string(),
-            "y".to_string(),
+            "z".to_owned(),
+            "y".to_owned(),
+            "x".to_owned(),
+            "y".to_owned(),
         ];
         merge(&file_path, new_lines)?;
 

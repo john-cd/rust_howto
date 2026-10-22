@@ -40,8 +40,11 @@ pub(super) static CRATE_BLOCK_REFDEFS: &str = "\
 ///
 /// This enum defines the different types of content that can be generated for a crate, such as badges, description, and reference definitions.
 pub enum GenerationMode {
+    /// The full crate block: badges, description and reference definitions.
     CrateBlock,
+    /// The crate description only.
     CrateDescription,
+    /// The reference definitions only.
     CrateBlockRefdefs,
 }
 
@@ -54,7 +57,7 @@ pub fn create_crate_block_badges_or_refdefs(
     crate_data: &crates_io_api::Crate,
     mode: GenerationMode,
 ) -> Result<String> {
-    use trim_in_place::TrimInPlace;
+    use trim_in_place::TrimInPlace as _;
 
     use super::detect_github_url;
     use super::normalize_docs_url;
@@ -128,21 +131,21 @@ pub fn create_crate_block_badges_or_refdefs(
 /// * `s` - The string to capitalize.
 /// * `should_not_be` - The string that `s` should not be equal to.
 fn capitalize_if_not(s: String, should_not_be: &str) -> String {
-    if s != should_not_be {
+    if s == should_not_be {
+        s
+    } else {
         let mut c = s.chars();
         match c.next() {
             None => String::new(),
             Some(f) => f.to_uppercase().collect::<String>() + c.as_str(),
         }
-    } else {
-        s
     }
 }
 
 /// Creates a crate page section for use in the `crates_and_examples.md` index page.
 ///
 /// Each section includes:
-/// - An H3 header with an anchor: `### \`{name}\` {#{name}}`
+/// - An H3 header with an anchor: `### `{name}` {#{name}}`
 /// - Badges for docs.rs, crates.io, GitHub repo, and lib.rs
 /// - Keyword index entries (`{{hi:...}}`)
 /// - Category badges
@@ -154,7 +157,7 @@ fn capitalize_if_not(s: String, should_not_be: &str) -> String {
 ///
 /// Returns the generated markdown section as a `String`.
 pub fn create_crate_page_section(name: &str) -> Result<String> {
-    use anyhow::Context;
+    use anyhow::Context as _;
 
     let mut section = String::new();
 
@@ -201,7 +204,7 @@ pub fn create_crate_page_section(name: &str) -> Result<String> {
 /// Returns the crate block as a `String`.
 /// Also return the reference definitions as a separate vector of strings.
 pub fn create_crate_block(name: &str) -> Result<(String, Vec<String>)> {
-    use anyhow::Context;
+    use anyhow::Context as _;
 
     use super::remove_empty_lines;
 
@@ -295,11 +298,11 @@ pub fn process_crate_block_directives(content: &str) -> Result<(String, Vec<Stri
     // Collect unique crate names from all directives in the content.
     let crate_names: HashSet<String> = re
         .captures_iter(content)
-        .map(|caps| caps[1].trim().to_string())
+        .map(|caps| caps[1].trim().to_owned())
         .collect();
 
     if crate_names.is_empty() {
-        return Ok((content.to_string(), vec![]));
+        return Ok((content.to_owned(), vec![]));
     }
 
     // Pre-fetch crate data for all unique crate names.
@@ -321,7 +324,7 @@ pub fn process_crate_block_directives(content: &str) -> Result<(String, Vec<Stri
 
     // Replace directives with the pre-fetched crate block content.
     // If crate lookup failed, leave the original directive unchanged.
-    let new_content = re.replace_all(content, |caps: &Captures| {
+    let new_content = re.replace_all(content, |caps: &Captures<'_>| {
         let name = caps[1].trim();
         cache
             .get(name)
@@ -458,7 +461,7 @@ mod tests {
         let content = "See {{#crate serde}} and {{#crate: anyhow }}.";
         let names: Vec<&str> = re
             .captures_iter(content)
-            .map(|c| c.get(1).unwrap().as_str().trim())
+            .map(|c| c.get(1).expect("input should parse").as_str().trim())
             .collect();
         // Order depends on iteration; just check both are present.
         assert!(names.contains(&"serde"), "expected 'serde' in {names:?}");
@@ -470,7 +473,7 @@ mod tests {
         let content = "# Hello\n\nNo directives here.\n";
         let result = super::process_crate_block_directives(content);
         assert!(result.is_ok());
-        let (out, refdefs) = result.unwrap();
+        let (out, refdefs) = result.expect("input should parse");
         assert_eq!(out, content);
         assert!(refdefs.is_empty());
     }

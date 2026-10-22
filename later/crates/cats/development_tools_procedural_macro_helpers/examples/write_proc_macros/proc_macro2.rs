@@ -8,7 +8,7 @@ struct MyStruct;
 
 fn main() {
     let s = MyStruct;
-    println!("{:?}", s);
+    println!("{s:?}");
 }
 // ANCHOR_END: example
 

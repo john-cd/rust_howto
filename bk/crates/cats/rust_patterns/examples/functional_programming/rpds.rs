@@ -24,23 +24,23 @@ fn main() {
     println!("v1 is unchanged: {v1}"); // [1, 2, 3]
 
     // Iterating:
-    for item in v2.iter() {
+    for item in &v2 {
         println!("Item: {item}");
     }
 
     // Persistent map implemented with a hash array mapped trie:
     let m1: HashTrieMap<String, i32> = HashTrieMap::new();
-    let m2 = m1.insert("one".to_string(), 1).insert("two".to_string(), 2);
-    let m3 = m2.insert("three".to_string(), 3);
+    let m2 = m1.insert("one".to_owned(), 1).insert("two".to_owned(), 2);
+    let m3 = m2.insert("three".to_owned(), 3);
 
     println!("m2 size: {}", m2.size()); // 2
     println!("m3 size: {}", m3.size()); // 3
 
     // Lookup:
-    println!("Value for 'two': {:?}", m3.get(&"two".to_string())); // Some(2)
+    println!("Value for 'two': {:?}", m3.get(&"two".to_owned())); // Some(2)
 
     // Removal (creates a new map):
-    let m4 = m3.remove(&"one".to_string());
+    let m4 = m3.remove(&"one".to_owned());
     println!("m4 after removal: {m4}");
     println!("m3 is unchanged: {m3}");
 }

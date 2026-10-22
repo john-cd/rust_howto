@@ -5,7 +5,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use anyhow::Context;
+use anyhow::Context as _;
 use anyhow::Result;
 
 /// Simulates a function that returns an error.
@@ -20,7 +20,7 @@ fn main() -> anyhow::Result<()> {
     // Demonstrates adding context to a standard library error.
     // The closure is only evaluated if there is an error.
     let _content = std::fs::read("/notafile.txt")
-        .with_context(|| "Failed to read instrs from file".to_string())?;
+        .with_context(|| "Failed to read instrs from file".to_owned())?;
 
     Ok(())
 }
@@ -39,6 +39,6 @@ mod tests {
     fn test_main() {
         let res = main();
         println!("{res:?}");
-        assert!(res.is_err())
+        assert!(res.is_err());
     }
 }

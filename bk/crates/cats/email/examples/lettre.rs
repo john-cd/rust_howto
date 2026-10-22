@@ -12,17 +12,17 @@
 
 use lettre::Message;
 use lettre::SmtpTransport;
-use lettre::Transport;
+use lettre::Transport as _;
 use lettre::message::header::ContentType;
 use lettre::transport::smtp::authentication::Credentials;
 
 fn main() -> anyhow::Result<()> {
     let smtp_server = std::env::var("SMTP_SERVER")
-        .unwrap_or_else(|_| "smtp.gmail.com".to_string());
+        .unwrap_or_else(|_| "smtp.gmail.com".to_owned());
     let smtp_username = std::env::var("SMTP_USERNAME")
-        .unwrap_or_else(|_| "smtp_username".to_string());
+        .unwrap_or_else(|_| "smtp_username".to_owned());
     let smtp_password = std::env::var("SMTP_PASSWORD")
-        .unwrap_or_else(|_| "smtp_password".to_string());
+        .unwrap_or_else(|_| "smtp_password".to_owned());
 
     let email = Message::builder()
         .from("NoBody <nobody@domain.tld>".parse().unwrap())

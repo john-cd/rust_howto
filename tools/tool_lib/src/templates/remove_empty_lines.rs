@@ -23,11 +23,12 @@
 /// let (_, result) = remove_empty_lines(input);
 /// assert_eq!(result, expected);
 /// ```
+#[must_use]
 pub fn remove_empty_lines(text: &str) -> (Vec<String>, String) {
     let lines = text
         .lines()
         .filter(|line| !line.trim().is_empty())
-        .map(|str| str.to_string())
+        .map(std::borrow::ToOwned::to_owned)
         .collect::<Vec<String>>();
     (lines.clone(), lines.join("\n"))
 }

@@ -18,7 +18,7 @@ fn main() {
 
     // When needing to mutate a shared string, use interior mutability.
     let shared_mutable_string: Arc<RwLock<String>> =
-        Arc::new(RwLock::new("String".to_string()));
+        Arc::new(RwLock::new("String".to_owned()));
 
     let mut handles = vec![];
     for i in 0..2 {

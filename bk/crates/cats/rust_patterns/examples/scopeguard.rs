@@ -9,7 +9,7 @@
 
 use std::fs::File;
 use std::io::Error;
-use std::io::Write;
+use std::io::Write as _;
 
 use scopeguard::defer;
 

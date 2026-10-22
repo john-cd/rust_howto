@@ -9,7 +9,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use bitvec::field::BitField;
+use bitvec::field::BitField as _;
 use bitvec::prelude::*;
 
 fn basic_operations() {
@@ -40,7 +40,7 @@ fn basic_operations() {
 
     // Iterate through bits:
     print!("Iterating through bits: ");
-    for bit in bv.iter() {
+    for bit in &bv {
         print!("{bit} ");
     }
     println!();

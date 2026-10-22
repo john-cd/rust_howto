@@ -124,3 +124,6 @@ test = true
 name = "vector"
 path = "examples/vector/main.rs"
 test = true
+
+[lints]
+workspace = true

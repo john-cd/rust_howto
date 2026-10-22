@@ -6,7 +6,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use std::str::FromStr;
+use std::str::FromStr as _;
 
 use anyhow::Result;
 use http::HeaderMap;
@@ -40,7 +40,7 @@ async fn main() -> Result<()> {
 
             println!("The reponse contains {media_type}.");
         }
-    };
+    }
 
     Ok(())
 }

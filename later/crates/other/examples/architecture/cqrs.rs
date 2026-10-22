@@ -27,7 +27,7 @@ mod domain {
     /// Implementation of the Product struct.
     impl Product {
         pub fn new(id: u32, name: String, quantity: u32) -> Self {
-            Product { id, name, quantity }
+            Self { id, name, quantity }
         }
 
         // Getters.
@@ -111,7 +111,7 @@ mod events {
 
     impl SimpleEventStore {
         pub fn new() -> Self {
-            SimpleEventStore {
+            Self {
                 events: RwLock::new(Vec::new()),
             }
         }
@@ -150,7 +150,7 @@ mod commands {
 
     impl<S: EventRepository> CommandHandler<S> {
         pub fn new(event_store: S) -> Self {
-            CommandHandler { event_store }
+            Self { event_store }
         }
 
         /// Validates a command before applying it.
@@ -216,7 +216,7 @@ mod commands {
             let events = self.event_store.get_events(None);
             let mut current_quantity: Option<u32> = None;
 
-            for event in events.iter() {
+            for event in &events {
                 match event {
                     ProductEvent::ProductCreated { id, quantity, .. }
                         if *id == product_id =>
@@ -275,7 +275,7 @@ mod read_store {
 
     impl SimpleReadStore {
         pub fn new() -> Self {
-            SimpleReadStore {
+            Self {
                 read_model: std::sync::Arc::new(RwLock::new(HashMap::new())),
             }
         }
@@ -323,7 +323,7 @@ mod query {
 
     impl<S: ProductRepository> QueryHandler<S> {
         pub fn new(read_store: S) -> Self {
-            QueryHandler {
+            Self {
                 read_repo: read_store,
             }
         }
@@ -341,7 +341,7 @@ mod query {
     }
 }
 
-use events::EventRepository;
+use events::EventRepository as _;
 
 /// Main function.
 fn main() -> anyhow::Result<()> {
@@ -355,7 +355,7 @@ fn main() -> anyhow::Result<()> {
 
     command_handler.process(Command::CreateProduct {
         id: 1,
-        name: "Laptop".to_string(),
+        name: "Laptop".to_owned(),
         quantity: 10,
     })?;
 
@@ -376,7 +376,7 @@ fn main() -> anyhow::Result<()> {
     command_handler
         .process(Command::CreateProduct {
             id: 2,
-            name: "Mouse".to_string(),
+            name: "Mouse".to_owned(),
             quantity: 20,
         })
         .unwrap();
@@ -448,7 +448,7 @@ mod tests {
 
         command_handler.process(commands::Command::CreateProduct {
             id: 1,
-            name: "Test Product".to_string(),
+            name: "Test Product".to_owned(),
             quantity: 10,
         })?;
 
@@ -479,12 +479,12 @@ mod tests {
         read_store.rebuild_read_model(vec![
             events::ProductEvent::ProductCreated {
                 id: 1,
-                name: "Laptop".to_string(),
+                name: "Laptop".to_owned(),
                 quantity: 10,
             },
             events::ProductEvent::ProductCreated {
                 id: 2,
-                name: "Mouse".to_string(),
+                name: "Mouse".to_owned(),
                 quantity: 20,
             },
         ]);

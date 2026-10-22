@@ -77,7 +77,7 @@ mod my {
             assert!(!ptr.is_null());
             assert!(ptr.is_aligned());
             println!("Created `Arc` with reference count 1.");
-            Arc {
+            Self {
                 ptr,
                 phantom: PhantomData,
             }
@@ -193,7 +193,7 @@ fn main() {
             std::thread::spawn(move || {
                 println!("Data: {:?}", *my_clone);
                 assert_eq!(my_clone.0, 42);
-                println!("`my_clone` in thread {i} will drop next.")
+                println!("`my_clone` in thread {i} will drop next.");
             })
         })
         .collect();

@@ -16,7 +16,7 @@ struct MyStruct<T> {
 
 impl<T> MyStruct<T> {
     fn new(value: T) -> Self {
-        MyStruct {
+        Self {
             value: Cell::new(value),
         }
     }
@@ -56,7 +56,7 @@ fn main() {
     // Get the updated value.
     println!("Updated value: {}", my_int_ref.get_value());
 
-    let my_string_struct = MyStruct::new("example".to_string());
+    let my_string_struct = MyStruct::new("example".to_owned());
     let my_string_ref = &my_string_struct;
 
     // ERROR, `String` is not `Copy`: `my_string.get_value();`

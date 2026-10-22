@@ -1,5 +1,4 @@
 // TODO Reviewed ??-??-2026
-extern crate proc_macro;
 
 use darling::FromDeriveInput;
 use proc_macro::TokenStream;

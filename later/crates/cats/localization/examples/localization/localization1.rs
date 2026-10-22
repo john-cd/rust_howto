@@ -14,7 +14,7 @@ use sys_locale::get_locale;
 use sys_locale::get_locales;
 
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
-    let current_locale = get_locale().unwrap_or_else(|| "en-US".to_string());
+    let current_locale = get_locale().unwrap_or_else(|| "en-US".to_owned());
     let mut preferred_locales = get_locales();
     let locale = preferred_locales
         .next()
@@ -22,8 +22,8 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 
     let message = translate_greeting(&locale);
 
-    println!("Detected locale: {}", locale);
-    println!("Localized greeting: {}", message);
+    println!("Detected locale: {locale}");
+    println!("Localized greeting: {message}");
     println!(
         "Full locale preference list: {:?}",
         preferred_locales.collect::<Vec<_>>()

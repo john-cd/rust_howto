@@ -44,14 +44,14 @@ fn main() -> Result<()> {
 
     // Regular expression to match phone numbers.
     let re = Regex::new(
-        r#"(?x)
+        r"(?x)
           (?:\+?1)?                       # Country Code Optional
           [\s\.]?
           (([2-9]\d{2})|\(([2-9]\d{2})\)) # Area Code
           [\s\.\-]?
           ([2-9]\d{2})                    # Exchange Code
           [\s\.\-]?
-          (\d{4})                         # Subscriber Number"#,
+          (\d{4})                         # Subscriber Number",
     )?;
 
     // Extract phone numbers from the text.

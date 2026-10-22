@@ -35,10 +35,10 @@ async fn countdown_subsystem(
     tokio::select! {
         // `on_shutdown_requested` waits for the shutdown mode to be triggered.
         // Most often, it will be used in `tokio::select` statements to cancel other code as soon as the shutdown is requested.
-        _ = subsys.on_shutdown_requested() => {
+        () = subsys.on_shutdown_requested() => {
             tracing::info!("Countdown cancelled.");
         },
-        _ = countdown() => {
+        () = countdown() => {
             subsys.request_shutdown(); // Triggers a shutdown of the entire subsystem tree.
         }
     };

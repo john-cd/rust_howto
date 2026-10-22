@@ -90,3 +90,6 @@ test = true
 name = "tokio"
 path = "examples/tokio/main.rs"
 test = true
+
+[lints]
+workspace = true

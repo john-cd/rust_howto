@@ -111,7 +111,7 @@ impl SelfReferential {
     }
 
     fn init(self: Pin<&mut Self>) {
-        let ptr = &self.value as *const String;
+        let ptr = std::ptr::from_ref::<String>(&self.value);
         unsafe {
             let mut_self = self.get_unchecked_mut();
             mut_self.pointer = ptr;
@@ -160,8 +160,7 @@ impl<T: Debug, U: Debug> PinnedEnum<T, U> {
             // Note the named projection type:
             EnumProj::Variant1(pinned, unpinned) => {
                 println!(
-                    "Processing Variant1 with pinned {:?} and unpinned: {:?}",
-                    pinned, unpinned
+                    "Processing Variant1 with pinned {pinned:?} and unpinned: {unpinned:?}"
                 );
                 // `pinned` is `Pin<&mut T>`,
                 // `unpinned` is `&mut U`.

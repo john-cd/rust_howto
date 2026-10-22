@@ -6,8 +6,8 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use geo::Area;
-use geo::Centroid;
+use geo::Area as _;
+use geo::Centroid as _;
 use geo::LineString;
 use geo::Polygon;
 
@@ -26,7 +26,7 @@ fn main() {
     let area = park.unsigned_area();
     let centroid = park.centroid().expect("polygon should have a centroid");
 
-    println!("Polygon area = {:.2}", area);
+    println!("Polygon area = {area:.2}");
     println!("Centroid = ({:.2}, {:.2})", centroid.x(), centroid.y());
 }
 // ANCHOR_END: example

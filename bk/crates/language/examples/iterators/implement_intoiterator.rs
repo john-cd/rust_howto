@@ -18,7 +18,7 @@ struct MyVec<T> {
 impl<T> MyVec<T> {
     /// Constructor.
     fn new() -> Self {
-        MyVec { data: Vec::new() }
+        Self { data: Vec::new() }
     }
 
     fn push(&mut self, item: T) {
@@ -55,16 +55,7 @@ impl<T> Iterator for MyVecIntoIterator<T> {
 
     /// The core iterator method.
     fn next(&mut self) -> Option<Self::Item> {
-        if !self.data.is_empty() {
-            // In this example, we use `remove` for simplicity, noting that its
-            // complexity is O(n). `remove` takes the item at a given
-            // position and returns it to us, giving up the ownership.
-            // We use `0` to return the first element.
-            Some(self.data.remove(0))
-            // We could use `pop` to remove the last element instead.
-        } else {
-            None
-        }
+        (!self.data.is_empty()).then(|| self.data.remove(0))
     }
     // `next()` is the only method we are required to implement.
     // The `Iterator` trait implements a large number of default methods, which

@@ -23,13 +23,13 @@ impl TokenSink for TokenPrinter {
         match token {
             Token::Characters(text) => println!("text: {text}"),
             Token::Tag(tag) => {
-                println!("tag: {:?} {}", tag.kind, tag.name.local)
+                println!("tag: {:?} {}", tag.kind, tag.name.local);
             }
             Token::ProcessingInstruction(Pi { target, data }) => {
                 println!("pi: {target} {data}");
             }
             Token::Doctype(Doctype { name, .. }) => {
-                println!("doctype: {name:?}")
+                println!("doctype: {name:?}");
             }
             Token::ParseError(err) => println!("error: {err}"),
             Token::Comment(comment) => println!("comment: {comment}"),

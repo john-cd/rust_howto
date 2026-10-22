@@ -8,7 +8,7 @@
 //! trivial.
 //!
 //! The `md5` crate does not implement the `digest` traits, so it is not
-//! interoperable with the RustCrypto ecosystem.
+//! interoperable with the `RustCrypto` ecosystem.
 //!
 //! TODO Reviewed ??-??-2026
 

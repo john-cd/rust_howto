@@ -7,7 +7,7 @@
 
 use std::fs::File;
 use std::io::Error;
-use std::io::Write;
+use std::io::Write as _;
 
 use memmap2::Mmap;
 use memmap2::MmapMut;
@@ -30,7 +30,7 @@ fn main() -> Result<(), Error> {
     let random_indexes = [0, 1, 2, 19, 22, 10, 11, 29];
     let random_bytes: Vec<u8> =
         random_indexes.iter().map(|&idx| map[idx]).collect();
-    assert_eq!(&random_bytes[..], b"My loaf!");
+    assert_eq!(&*random_bytes, b"My loaf!");
     // A file-backed memory map remains valid even after the File is dropped.
 
     // You also create mutable memory-mapped buffers - either file-backed or

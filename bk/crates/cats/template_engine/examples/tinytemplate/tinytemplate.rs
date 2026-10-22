@@ -3,15 +3,15 @@
 // ANCHOR: example
 //! Example showcasing `tinytemplate`.
 //!
-//! TinyTemplate is a minimal templating library.
+//! `TinyTemplate` is a minimal templating library.
 //!
 //! It was designed with the assumption that the templates are available as
 //! static strings, either using string literals or the `include_str!` macro.
 //!
-//! Although it is possible to use TinyTemplate with template
+//! Although it is possible to use `TinyTemplate` with template
 //! strings loaded at runtime, this is not recommended.
 //!
-//! TinyTemplate can only render templates into Strings, not socket or file.
+//! `TinyTemplate` can only render templates into Strings, not socket or file.
 //!
 //! TODO Reviewed ??-??-2026
 

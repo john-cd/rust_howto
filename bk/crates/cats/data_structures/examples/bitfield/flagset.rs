@@ -41,8 +41,8 @@ struct Container(FlagSet<FlagsA>);
 impl Container {
     // However, if you want to receive flags as an input to a function, you
     // should use `impl Into<FlagSet<T>>`.
-    fn new(flags: impl Into<FlagSet<FlagsA>>) -> Container {
-        Container(flags.into())
+    fn new(flags: impl Into<FlagSet<FlagsA>>) -> Self {
+        Self(flags.into())
     }
 }
 

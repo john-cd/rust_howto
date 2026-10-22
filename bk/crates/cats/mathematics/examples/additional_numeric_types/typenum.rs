@@ -21,7 +21,7 @@ struct FixedBuffer<T, N: Unsigned> {
 
 impl<T: Default + Clone, N: Unsigned> FixedBuffer<T, N> {
     fn new() -> Self {
-        FixedBuffer {
+        Self {
             data: vec![T::default(); N::USIZE],
             _size: PhantomData,
         }

@@ -5,7 +5,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use colored::Colorize;
+use colored::Colorize as _;
 
 fn main() {
     // Print styled text using foreground color and bold formatting.

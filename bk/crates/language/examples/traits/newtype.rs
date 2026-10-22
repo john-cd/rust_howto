@@ -28,7 +28,7 @@ impl fmt::Display for Wrapper {
 fn main() {
     println!(
         "{}",
-        Wrapper(vec!["example".to_string(), "example 2".to_string()])
+        Wrapper(vec!["example".to_owned(), "example 2".to_owned()])
     );
 }
 

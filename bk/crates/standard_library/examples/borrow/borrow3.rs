@@ -40,20 +40,20 @@ mod cis {
 }
 
 fn calculate_hash<T: std::hash::Hash>(t: &T) -> u64 {
-    use std::hash::Hasher;
+    use std::hash::Hasher as _;
     let mut s = std::hash::DefaultHasher::new();
     t.hash(&mut s);
     s.finish()
 }
 
 fn main() {
-    use std::borrow::Borrow;
+    use std::borrow::Borrow as _;
     use std::collections::HashMap;
 
     use cis::CaseInsensitiveString;
 
-    let x = CaseInsensitiveString::from("Hello".to_string());
-    let y = CaseInsensitiveString::from("HELLO".to_string());
+    let x = CaseInsensitiveString::from("Hello".to_owned());
+    let y = CaseInsensitiveString::from("HELLO".to_owned());
 
     assert!(x == *"heLLo");
     assert!(*"HellO" == y);
@@ -71,7 +71,7 @@ fn main() {
     assert_eq!(calculate_hash(&xb), calculate_hash(&yb));
 
     // Conversely:
-    let z = CaseInsensitiveString::from("World".to_string());
+    let z = CaseInsensitiveString::from("World".to_owned());
     let zb: &str = z.borrow();
     assert!(x != z);
     assert_ne!(calculate_hash(&x), calculate_hash(&z));
@@ -80,7 +80,7 @@ fn main() {
 
     // Use the new `CaseInsensitiveString` type:
     let mut map: HashMap<CaseInsensitiveString, usize> = HashMap::new();
-    map.insert(CaseInsensitiveString::from("HelLO".to_string()), 1);
+    map.insert(CaseInsensitiveString::from("HelLO".to_owned()), 1);
 
     // Lookup with a (lowercase) `&str` thanks to `Borrow<str>`.
     if let Some(value) = map.get("hello") {

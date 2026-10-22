@@ -6,7 +6,7 @@
 //! TODO Reviewed ??-??-2026
 
 use num::bigint::BigInt;
-use num::bigint::ToBigInt;
+use num::bigint::ToBigInt as _;
 
 /// Calculates the factorial of a non-negative integer using `BigInt`.
 fn factorial(x: u32) -> BigInt {

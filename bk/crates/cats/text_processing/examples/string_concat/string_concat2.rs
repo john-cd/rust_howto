@@ -89,7 +89,7 @@ fn main() {
 
     // Using `+` operator with `to_string` for the first part and string slices
     // for the rest.
-    let _datetime = &(DATE.to_string() + T + TIME);
+    let _datetime = &(DATE.to_owned() + T + TIME);
 
     // Using the `concat_string!` macro.
     let _datetime = concat_string!(DATE, T, TIME);

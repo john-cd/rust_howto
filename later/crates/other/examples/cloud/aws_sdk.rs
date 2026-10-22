@@ -29,7 +29,7 @@ async fn main() -> anyhow::Result<()> {
     // List objects in the S3 bucket. The bucket can be overridden with
     // the `AWS_S3_BUCKET` environment variable for real runs and tests.
     let bucket_name = std::env::var("AWS_S3_BUCKET")
-        .unwrap_or_else(|_| "your-bucket-name".to_string());
+        .unwrap_or_else(|_| "your-bucket-name".to_owned());
     let result = client.list_objects_v2().bucket(bucket_name).send().await;
 
     match result {

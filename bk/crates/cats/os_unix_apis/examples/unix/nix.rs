@@ -26,7 +26,7 @@ use nix::unistd::read;
 use nix::unistd::unlink;
 // Write to a raw file descriptor:
 use nix::unistd::write;
-use rustix::fd::AsFd;
+use rustix::fd::AsFd as _;
 use rustix::fd::BorrowedFd;
 
 fn main() -> nix::Result<()> {

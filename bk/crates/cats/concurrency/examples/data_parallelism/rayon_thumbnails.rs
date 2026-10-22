@@ -4,7 +4,7 @@
 use std::fs::create_dir_all;
 use std::path::Path;
 
-use anyhow::Context;
+use anyhow::Context as _;
 use anyhow::Result;
 use glob::MatchOptions;
 use glob::glob_with;
@@ -20,7 +20,7 @@ fn main() -> Result<()> {
 
     let options: MatchOptions = Default::default();
     let files: Vec<_> = glob_with("temp/test_images/*.jpg", options)?
-        .filter_map(|x| x.ok())
+        .filter_map(std::result::Result::ok)
         .collect();
 
     if files.is_empty() {
@@ -40,7 +40,7 @@ fn main() -> Result<()> {
                 format!("Failed to create thumbnail for: {}", path.display())
             })
         })
-        .filter_map(|x| x.err())
+        .filter_map(std::result::Result::err)
         .collect();
 
     image_failures.iter().for_each(|x| println!("{x}"));

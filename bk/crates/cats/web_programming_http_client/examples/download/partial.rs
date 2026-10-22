@@ -9,9 +9,9 @@ use std::fs::File;
 use std::io;
 use std::io::Write;
 use std::ops::RangeInclusive;
-use std::str::FromStr;
+use std::str::FromStr as _;
 
-use anyhow::Context;
+use anyhow::Context as _;
 use anyhow::Result;
 use anyhow::bail;
 use reqwest::StatusCode;
@@ -180,15 +180,15 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use std::io;
-    use std::io::Read;
-    use std::io::Write;
+    use std::io::Read as _;
+    use std::io::Write as _;
     use std::net::TcpListener;
     use std::net::TcpStream;
     use std::thread::JoinHandle;
     use std::time::Duration;
     use std::time::Instant;
 
-    use anyhow::Context;
+    use anyhow::Context as _;
     use anyhow::Result;
     use reqwest::StatusCode;
 

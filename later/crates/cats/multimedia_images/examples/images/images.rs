@@ -33,7 +33,7 @@ fn save_gradient_image(
 
     img.save(output_path)?;
     println!("Saved generated image to {}", output_path.display());
-    println!("Dimensions: {}x{}", width, height);
+    println!("Dimensions: {width}x{height}");
 
     Ok(())
 }

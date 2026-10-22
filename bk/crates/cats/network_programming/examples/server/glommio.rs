@@ -19,7 +19,7 @@
 #![cfg(target_os = "linux")]
 
 use std::fs::File;
-use std::io::Write;
+use std::io::Write as _;
 
 // use glommio::prelude::*;
 use glommio::Latency;

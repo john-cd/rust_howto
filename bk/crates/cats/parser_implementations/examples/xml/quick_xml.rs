@@ -24,7 +24,7 @@ struct Person {
 }
 
 fn main() -> anyhow::Result<()> {
-    let xml = r#"<person><name>John Doe</name><age>32</age></person>"#;
+    let xml = "<person><name>John Doe</name><age>32</age></person>";
 
     let mut reader = Reader::from_str(xml);
     reader.config_mut().trim_text(true);
@@ -89,7 +89,7 @@ mod tests {
     #[test]
     fn deserializes_person_fields() -> anyhow::Result<()> {
         let person: Person =
-            from_str(r#"<person><name>John Doe</name><age>32</age></person>"#)?;
+            from_str("<person><name>John Doe</name><age>32</age></person>")?;
 
         assert_eq!(
             person,

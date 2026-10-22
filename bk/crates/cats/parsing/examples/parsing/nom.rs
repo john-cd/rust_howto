@@ -8,7 +8,7 @@
 //! TODO Reviewed ??-??-2026
 
 use nom::IResult;
-use nom::Parser;
+use nom::Parser as _;
 use nom::bytes::complete::tag;
 use nom::character::complete::digit1;
 use nom::combinator::map_res;

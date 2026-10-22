@@ -67,3 +67,6 @@ test = true
 name = "scopeguard"
 path = "examples/scopeguard.rs"
 test = true
+
+[lints]
+workspace = true

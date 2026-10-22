@@ -6,7 +6,7 @@
 //!
 //! It covers:
 //! - `HList`: statically typed heterogeneous lists.
-//! - `Generic`: converting between structs and their generic (HList)
+//! - `Generic`: converting between structs and their generic (`HList`)
 //!   representations.
 //! - `LabelledGeneric`: field-name-safe struct-to-struct conversions.
 //! - `Monoid`/`Semigroup`: combining values generically.

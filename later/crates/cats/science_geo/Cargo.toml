@@ -24,3 +24,6 @@ geo = "0.33"
 name = "geo"
 path = "examples/geo/main.rs"
 test = true
+
+[lints]
+workspace = true

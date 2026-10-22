@@ -9,9 +9,9 @@ use std::fs;
 use std::fs::File;
 use std::fs::OpenOptions;
 use std::io;
-use std::io::BufRead;
+use std::io::BufRead as _;
 use std::io::BufReader;
-use std::io::Write;
+use std::io::Write as _;
 
 fn write_to_file() -> Result<(), io::Error> {
     // The simplest way is to write a slice as the entire contents of a file

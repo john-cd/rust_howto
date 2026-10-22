@@ -25,7 +25,7 @@ struct Rgb {
 impl Rgb {
     /// The `Rgb::from_csv` function parses a CSV string and returns an `Rgb`
     /// struct.
-    fn from_csv(csv_data: &[u8]) -> Result<Rgb> {
+    fn from_csv(csv_data: &[u8]) -> Result<Self> {
         let color = csv::Reader::from_reader(csv_data)
             // Returns a borrowed iterator over deserialized records.
             // Each item is a `Result<Rgb, Error>`.

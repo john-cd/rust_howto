@@ -71,3 +71,6 @@ test = true
 name = "simulation_visualization"
 path = "examples/simulation_visualization/main.rs"
 test = true
+
+[lints]
+workspace = true

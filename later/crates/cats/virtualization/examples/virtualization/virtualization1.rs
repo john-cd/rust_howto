@@ -36,7 +36,7 @@ fn main() {
         .call(&mut store, ())
         .expect("failed to invoke exported function");
     assert_eq!(value, 42);
-    println!("wasmi result: {}", value);
+    println!("wasmi result: {value}");
 }
 // ANCHOR_END: example
 

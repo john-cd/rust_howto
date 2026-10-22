@@ -23,3 +23,6 @@ autolib = false
 name = "no_alloc"
 path = "examples/no_alloc/main.rs"
 test = true
+
+[lints]
+workspace = true

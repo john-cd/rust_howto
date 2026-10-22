@@ -25,3 +25,6 @@ spacepackets = "0.17.0"
 name = "space_protocols"
 path = "examples/space_protocols/main.rs"
 test = true
+
+[lints]
+workspace = true

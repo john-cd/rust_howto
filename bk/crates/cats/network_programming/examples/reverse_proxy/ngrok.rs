@@ -23,7 +23,7 @@
 //! - Receive webhooks.
 //! - Test with ephemeral/random domains.
 //! - Share your website / app from your localhost.
-//! - Connect to IoT devices behind NAT/firewalls.
+//! - Connect to `IoT` devices behind NAT/firewalls.
 //! - Debug HTTP requests.
 //!
 //! ## Usage
@@ -40,7 +40,7 @@ use std::net::SocketAddr;
 
 use axum::Router;
 use axum::routing::get;
-use ngrok::config::ForwarderBuilder;
+use ngrok::config::ForwarderBuilder as _;
 use url::Url;
 
 #[tokio::main]

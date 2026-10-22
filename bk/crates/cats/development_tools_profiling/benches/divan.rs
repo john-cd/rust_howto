@@ -37,7 +37,7 @@ mod bench {
     }
 }
 
-/// When `harness` is set to false, we are responsible for defining a main()
+/// When `harness` is set to false, we are responsible for defining a `main()`
 /// function to run tests and benchmarks.
 fn main() {
     // Run registered benchmarks.

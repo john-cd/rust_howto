@@ -4,7 +4,7 @@
 //! TODO Reviewed ??-??-2026
 
 use std::fs::File;
-use std::io::Read;
+use std::io::Read as _;
 
 use anyhow::Result;
 use anyhow::anyhow;
@@ -21,7 +21,7 @@ fn read_uptime() -> Result<u64> {
     Ok(uptime
         .split('.')
         .next()
-        .ok_or(anyhow!("Cannot parse uptime data"))? // `ok_or` transforms an `Option` into a `Result`.
+        .ok_or_else(|| anyhow!("Cannot parse uptime data"))? // `ok_or` transforms an `Option` into a `Result`.
         .parse()?)
 }
 

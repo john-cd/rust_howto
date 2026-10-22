@@ -41,22 +41,22 @@ struct Address {
 fn main() -> anyhow::Result<()> {
     // Create a struct instance.
     let person = Person {
-        name: "John Doe".to_string(),
+        name: "John Doe".to_owned(),
         age: 30,
         emails: vec![
-            "john.work@example.com".to_string(),
-            "john.personal@example.com".to_string(),
+            "john.work@example.com".to_owned(),
+            "john.personal@example.com".to_owned(),
         ],
         address: Address {
-            street: "123 Main St".to_string(),
-            city: "Anytown".to_string(),
-            country: "USA".to_string(),
-            postal_code: "12345".to_string(),
+            street: "123 Main St".to_owned(),
+            city: "Anytown".to_owned(),
+            country: "USA".to_owned(),
+            postal_code: "12345".to_owned(),
         },
         skills: vec![
-            "Rust".to_string(),
-            "Python".to_string(),
-            "DevOps".to_string(),
+            "Rust".to_owned(),
+            "Python".to_owned(),
+            "DevOps".to_owned(),
         ],
     };
 

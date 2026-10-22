@@ -5,18 +5,18 @@
 // Security: `rsa` has no fix for RUSTSEC-2023-0071. This local key-format
 // demonstration must not be used as production cryptography.
 use std::fs::File;
-use std::io::Write;
+use std::io::Write as _;
 
 use rsa::RsaPrivateKey;
 // Trait to parse a private key from a PKCS#8 encoded document:
-use rsa::pkcs8::DecodePrivateKey;
+use rsa::pkcs8::DecodePrivateKey as _;
 // Trait to serialize a private key to a PKCS#8 encoded document:
-use rsa::pkcs8::EncodePrivateKey;
+use rsa::pkcs8::EncodePrivateKey as _;
 use rsa::pkcs8::LineEnding;
 // Operating System's Random Number Generator:
 use rsa::rand_core::OsRng;
 // Components of an RSA private key:
-use rsa::traits::PrivateKeyParts;
+use rsa::traits::PrivateKeyParts as _;
 
 /// Encoding and decoding private keys in PKCS#8 format.
 ///

@@ -49,7 +49,7 @@ impl Screen {
     /// Creates a new screen with some components. The list below
     /// could be dynamically generated at run time.
     fn new() -> Self {
-        Screen {
+        Self {
             components: vec![Box::new(Button), Box::new(Text), Box::new(Text)],
         }
     }

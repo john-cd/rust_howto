@@ -4,7 +4,7 @@
 use chrono::DateTime;
 use chrono::FixedOffset;
 use chrono::Local;
-use chrono::TimeZone;
+use chrono::TimeZone as _;
 
 /// Demonstrates how to work with timezones in Chrono.
 fn main() {

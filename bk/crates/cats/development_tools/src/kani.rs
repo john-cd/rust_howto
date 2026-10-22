@@ -13,9 +13,7 @@
 fn add(a: i32, b: i32) -> i32 {
     // For testing purposes, we make it fail for only 1 in billions of possible
     // inputs:
-    if a == 42 {
-        panic!("Oh no, a failing corner case!");
-    }
+    assert!(a != 42, "Oh no, a failing corner case!");
     a + b // Note the possibility of overflow as well
 }
 

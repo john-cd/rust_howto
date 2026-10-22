@@ -19,9 +19,9 @@
 //! TODO Reviewed ??-??-2026
 
 use simd_json::OwnedValue;
-use simd_json::derived::ValueObjectAccess;
-use simd_json::derived::ValueObjectAccessAsArray;
-use simd_json::derived::ValueObjectAccessAsScalar;
+use simd_json::derived::ValueObjectAccess as _;
+use simd_json::derived::ValueObjectAccessAsArray as _;
+use simd_json::derived::ValueObjectAccessAsScalar as _;
 use simd_json::prelude::*;
 
 fn main() {

@@ -10,8 +10,8 @@
 use p256::ecdsa::Signature;
 use p256::ecdsa::SigningKey;
 use p256::ecdsa::VerifyingKey;
-use p256::ecdsa::signature::Signer;
-use p256::ecdsa::signature::Verifier;
+use p256::ecdsa::signature::Signer as _;
+use p256::ecdsa::signature::Verifier as _;
 use p256::elliptic_curve::rand_core::OsRng;
 
 fn main() -> anyhow::Result<()> {

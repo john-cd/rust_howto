@@ -126,3 +126,6 @@ test = true
 name = "variables"
 path = "examples/variables/main.rs"
 test = true
+
+[lints]
+workspace = true

@@ -23,7 +23,7 @@ fn main() {
     // that accepts `&[T]`.
     println!("Sum of {:?}: {}", vector, sum(&vector));
 
-    let slice: &[i32] = &vector[..];
+    let slice: &[i32] = &vector;
     let _ = sum(slice);
 }
 
