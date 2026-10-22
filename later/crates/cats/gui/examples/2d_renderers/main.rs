@@ -57,7 +57,7 @@ enum Commands {
 }
 
 /// Runs the example selected on the command line.
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -68,7 +68,7 @@ fn main() {
             }
             #[cfg(feature = "minifb")]
             Commands::Minifb => {
-                minifb::run();
+                minifb::run()?;
             }
             #[cfg(feature = "skia")]
             Commands::SkiaSafe => {
@@ -88,4 +88,6 @@ fn main() {
             }
         }
     }
+
+    Ok(())
 }

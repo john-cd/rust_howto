@@ -12,7 +12,7 @@ fn main() {
         .pick_file();
 
     match file {
-        Some(path) => println!("Selected file: {path:?}"),
+        Some(path) => println!("Selected file: {}", path.display()),
         None => println!("No file selected"),
     }
 }

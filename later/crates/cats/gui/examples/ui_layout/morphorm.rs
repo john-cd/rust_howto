@@ -31,30 +31,30 @@ impl Cache for SimpleCache {
     type Node = Entity;
 
     fn width(&self, node: &Self::Node) -> f32 {
-        self.rects.get(node).map(|r| r.2).unwrap_or(0.0)
+        self.rects.get(node).map_or(0.0, |r| r.2)
     }
 
     fn height(&self, node: &Self::Node) -> f32 {
-        self.rects.get(node).map(|r| r.3).unwrap_or(0.0)
+        self.rects.get(node).map_or(0.0, |r| r.3)
     }
 
     fn posx(&self, node: &Self::Node) -> f32 {
-        self.rects.get(node).map(|r| r.0).unwrap_or(0.0)
+        self.rects.get(node).map_or(0.0, |r| r.0)
     }
 
     fn posy(&self, node: &Self::Node) -> f32 {
-        self.rects.get(node).map(|r| r.1).unwrap_or(0.0)
+        self.rects.get(node).map_or(0.0, |r| r.1)
     }
 
     fn set_bounds(
         &mut self,
         node: &Self::Node,
-        x: f32,
-        y: f32,
-        w: f32,
-        h: f32,
+        posx: f32,
+        posy: f32,
+        width: f32,
+        height: f32,
     ) {
-        self.rects.insert(*node, (x, y, w, h));
+        self.rects.insert(*node, (posx, posy, width, height));
     }
 }
 
@@ -89,7 +89,7 @@ impl<'a> Iterator for ChildIter<'a> {
 }
 
 impl Node for Entity {
-    type CacheKey = Entity;
+    type CacheKey = Self;
     type ChildIter<'t> = ChildIter<'t>;
     type Store = SimpleStore;
     type SubLayout<'a> = ();

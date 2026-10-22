@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of encoding and decoding a string using hexadecimal encoding.
@@ -20,7 +19,7 @@ fn main() -> Result<(), DecodeError> {
 
     let decoded = HEXUPPER.decode(&encoded.into_bytes())?;
     println!("{decoded:?}");
-    assert_eq!(&decoded[..], &original[..]);
+    assert_eq!(&*decoded, &original[..]);
 
     Ok(())
 }

@@ -8,6 +8,7 @@
 use std::time::Duration;
 use std::time::Instant;
 
+use anyhow::Result;
 use minifb::Key;
 use minifb::Window;
 use minifb::WindowOptions;
@@ -19,14 +20,13 @@ const WIDTH: usize = 320;
 const HEIGHT: usize = 240;
 
 /// Opens a window and draws into a pixel buffer until the window is closed.
-fn main() {
+fn main() -> Result<()> {
     let mut window = Window::new(
         "minifb native graphics example",
         WIDTH,
         HEIGHT,
         WindowOptions::default(),
-    )
-    .unwrap_or_else(|e| panic!("Unable to open window: {e}"));
+    )?;
 
     let mut buffer = vec![0u32; WIDTH * HEIGHT];
     let mut offset = 0u32;
@@ -42,25 +42,27 @@ fn main() {
             }
         }
 
-        window
-            .update_with_buffer(&buffer, WIDTH, HEIGHT)
-            .unwrap_or_else(|e| panic!("Window update failed: {e}"));
+        window.update_with_buffer(&buffer, WIDTH, HEIGHT)?;
 
         offset = offset.wrapping_add(1);
 
         let elapsed = last_frame.elapsed();
         if elapsed < Duration::from_millis(16) {
-            std::thread::sleep(Duration::from_millis(16) - elapsed);
+            std::thread::sleep(
+                Duration::from_millis(16).saturating_sub(elapsed),
+            );
         }
         last_frame = Instant::now();
     }
+
+    Ok(())
 }
 
 // ANCHOR_END: example
 
 /// Runs the example.
-pub fn run() {
-    main();
+pub fn run() -> Result<()> {
+    main()
 }
 
 #[cfg(test)]
@@ -69,8 +71,8 @@ mod tests {
 
     #[test]
     #[ignore = "requires interactive example runtime"]
-    fn test_main() {
-        main();
+    fn test_main() -> Result<()> {
+        main()
     }
 }
 // TODO review

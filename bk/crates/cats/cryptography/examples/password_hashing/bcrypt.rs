@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `bcrypt` crate to hash and verify
@@ -22,7 +21,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     // Password to be hashed (in production, avoid hardcoding passwords and read
     // from environment or secrets store):
     let password = std::env::var("APP_PASSWORD")
-        .unwrap_or_else(|_| "sample_password_for_demo_only".to_string());
+        .unwrap_or_else(|_| "sample_password_for_demo_only".to_owned());
 
     // Generate a password hash using the default cost.
     // The salt is generated randomly using OS-derived randomness:

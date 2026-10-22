@@ -43,11 +43,14 @@ where
     // Produce a 440Hz sine wave.
     let mut sample_clock = 0f32;
     let mut next_value = move || {
-        sample_clock = (sample_clock + 1.0) % sample_rate;
+        sample_clock += 1.0;
+        if sample_clock >= sample_rate {
+            sample_clock = 0.0;
+        }
         (sample_clock * 440.0 * 2.0 * std::f32::consts::PI / sample_rate).sin()
     };
 
-    let err_fn = |err| eprintln!("an error occurred on stream: {}", err);
+    let err_fn = |err| eprintln!("an error occurred on stream: {err}");
 
     let stream = device.build_output_stream(
         config,
@@ -83,7 +86,8 @@ mod tests {
 
     #[test]
     #[ignore = "requires audio device"]
-    fn test_main() {
-        main().unwrap();
+    fn test_main() -> Result<(), Box<dyn Error>> {
+        main()?;
+        Ok(())
     }
 }

@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example show how to (de)serialize CBOR data using the ciborium crate.
@@ -36,7 +35,7 @@ struct MyData {
 fn main() -> anyhow::Result<()> {
     // Create a sample data object.
     let data = MyData {
-        name: "Alice".to_string(),
+        name: "Alice".to_owned(),
         age: 30,
         is_active: true,
     };
@@ -47,7 +46,7 @@ fn main() -> anyhow::Result<()> {
 
     // Deserialize from CBOR.
     // (the `Cursor` just wraps the in-memory buffer).
-    let mut cursor = Cursor::new(&buf[..]);
+    let mut cursor = Cursor::new(&*buf);
     let deserialized_data: MyData = from_reader(&mut cursor)?;
 
     // Print the deserialized data.

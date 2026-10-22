@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! # Behavior Tree Example
@@ -58,7 +57,7 @@ fn main() -> anyhow::Result<()> {
 
     // Create a `HashMap` to store the state of the counter.
     let mut blackboard = HashMap::new();
-    blackboard.insert("counter".to_string(), 0);
+    blackboard.insert("counter".to_owned(), 0);
 
     // Create a composite behavior.
     // Runs behaviors one by one until all succeeded.
@@ -77,27 +76,32 @@ fn main() -> anyhow::Result<()> {
     // process. When the process terminates, it signals `Success` or `Failure`.
     let mut bt = BT::new(behavior, blackboard);
 
-    let dt: f64 = 0.1f64;
+    let dt = 0.1;
 
     // Run the behavior tree.
     loop {
         let e: Event = UpdateArgs { dt }.into();
         let (status, _dt) = bt.tick(&e, &mut |args, blackboard| {
-            let acc = blackboard.get_mut("counter").unwrap();
+            let Some(acc) = blackboard.get_mut("counter") else {
+                return (Status::Failure, args.dt);
+            };
             match *args.action {
                 Actions::Inc => {
                     *acc += 1;
                     println!("Inc");
-                    (Success, args.dt)
                 }
                 Actions::Dec => {
                     *acc -= 1;
                     println!("Dec");
-                    (Success, args.dt)
                 }
             }
-
-        }).ok_or(anyhow::anyhow!("Attempted to tick after this tree has already returned Status::Success or Status::Failure."))?;
+            (Success, args.dt)
+        })
+        .ok_or_else(|| {
+            anyhow::anyhow!(
+                "Attempted to tick after this tree has already returned Status::Success or Status::Failure."
+            )
+        })?;
 
         match status {
             Status::Success => {
@@ -113,7 +117,9 @@ fn main() -> anyhow::Result<()> {
         }
     }
 
-    let count = bt.blackboard().get("counter").unwrap();
+    let count = bt.blackboard().get("counter").ok_or_else(|| {
+        anyhow::anyhow!("counter is missing from the blackboard")
+    })?;
     assert_eq!(*count, 1);
 
     // If the behavior tree concludes (reaches a steady state),

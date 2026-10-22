@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Serializing and deserializing a struct to and from JSON with `serde_json`.
@@ -25,9 +24,9 @@ struct Person {
 fn main() {
     // Create an instance of `Person`.
     let person = Person {
-        name: "Alice".to_string(),
+        name: "Alice".to_owned(),
         age: 30,
-        email: "alice@example.com".to_string(),
+        email: "alice@example.com".to_owned(),
     };
 
     // Serialize the `Person` instance to a JSON string.

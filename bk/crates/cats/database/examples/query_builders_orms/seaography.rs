@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Generating a GraphQL server from a database with Seaography.
@@ -7,7 +6,8 @@
 //! Seaography is an automated GraphQL framework for SeaORM.
 //!
 //! This example demonstrates building an executable GraphQL schema from
-//! SeaORM entities and executing GraphQL queries against an in-memory SQLite database.
+//! SeaORM entities and executing GraphQL queries against an in-memory SQLite
+//! database.
 //!
 //! 1. Generate SeaORM entities from your existing database:
 //! ```sh
@@ -24,11 +24,15 @@
 //! cd seaography-sqlite-example && cargo run
 //! ```
 
-use sea_orm::{
-    ActiveValue::NotSet, ActiveValue::Set, ConnectionTrait, Database, DbBackend, EntityTrait,
-    Schema,
-};
-use seaography::{Builder, BuilderContext};
+use sea_orm::ActiveValue::NotSet;
+use sea_orm::ActiveValue::Set;
+use sea_orm::ConnectionTrait;
+use sea_orm::Database;
+use sea_orm::DbBackend;
+use sea_orm::EntityTrait;
+use sea_orm::Schema;
+use seaography::Builder;
+use seaography::BuilderContext;
 
 /// The `posts` SeaORM entity.
 mod post {
@@ -61,16 +65,16 @@ async fn main() -> anyhow::Result<()> {
     let db = Database::connect("sqlite::memory:").await?;
 
     // 2. Create table schema from entity definition.
-    let stmt = db
-        .get_database_backend()
-        .build(&Schema::new(DbBackend::Sqlite).create_table_from_entity(post::Entity));
+    let stmt = db.get_database_backend().build(
+        &Schema::new(DbBackend::Sqlite).create_table_from_entity(post::Entity),
+    );
     db.execute(stmt).await?;
 
     // 3. Insert sample data.
     post::Entity::insert(post::ActiveModel {
         id: NotSet,
-        title: Set("Seaography Example".to_string()),
-        content: Set("GraphQL framework for SeaORM".to_string()),
+        title: Set("Seaography Example".to_owned()),
+        content: Set("GraphQL framework for SeaORM".to_owned()),
     })
     .exec(&db)
     .await?;
@@ -82,7 +86,7 @@ async fn main() -> anyhow::Result<()> {
     let schema = builder.schema_builder().data(db).finish()?;
 
     // 5. Query the generated GraphQL schema.
-    let query = r#"{
+    let query = "{
         post {
             nodes {
                 id
@@ -90,7 +94,7 @@ async fn main() -> anyhow::Result<()> {
                 content
             }
         }
-    }"#;
+    }";
     let res = schema.execute(query).await;
 
     println!("GraphQL response: {:?}", res.data);
@@ -109,7 +113,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn require_external_svc() {
-        run().unwrap();
+    fn require_external_svc() -> anyhow::Result<()> {
+        run()
     }
 }

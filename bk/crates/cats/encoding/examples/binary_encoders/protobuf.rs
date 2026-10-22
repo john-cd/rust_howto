@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Serialize and deserialize a Protocol Buffers message generated with `prost`.
@@ -15,7 +14,7 @@ mod person {
 /// Encodes a `Person` message, then decodes it and compares the result.
 fn main() {
     let person = Person {
-        name: "Alice".to_string(),
+        name: "Alice".to_owned(),
         age: 30,
     };
 

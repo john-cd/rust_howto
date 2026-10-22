@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `rkyv` (short for "archive") is a high-performance, zero-copy
@@ -27,7 +26,7 @@ struct MyStruct {
 fn main() -> anyhow::Result<()> {
     // Create an instance of `MyStruct`.
     let data = MyStruct {
-        field1: "Hello, world!".to_string(),
+        field1: "Hello, world!".to_owned(),
         field2: 42,
     };
 
@@ -38,7 +37,7 @@ fn main() -> anyhow::Result<()> {
     println!("Serialized data: {buffer:?}");
 
     // Deserialize the data from the byte array.
-    let deserialized_data = rkyv::from_bytes::<MyStruct, Error>(&buffer[..])?;
+    let deserialized_data = rkyv::from_bytes::<MyStruct, Error>(&buffer)?;
 
     println!("{deserialized_data:?}");
 

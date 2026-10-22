@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `prost` crate to serialize and
@@ -20,7 +19,7 @@ mod person {
 fn main() {
     // Create a `Person` message.
     let person = Person {
-        name: "Alice".to_string(),
+        name: "Alice".to_owned(),
         age: 30,
     };
 

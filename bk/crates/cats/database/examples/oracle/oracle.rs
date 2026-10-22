@@ -12,7 +12,8 @@ use oracle::Connection;
 use oracle::Error;
 
 /// Serializes the tests, which share environment variables.
-static ENV_MUTEX: std::sync::LazyLock<Mutex<()>> = std::sync::LazyLock::new(|| Mutex::new(()));
+static ENV_MUTEX: std::sync::LazyLock<Mutex<()>> =
+    std::sync::LazyLock::new(|| Mutex::new(()));
 
 // ANCHOR: example
 /// Rust bindings to ODPI-C.

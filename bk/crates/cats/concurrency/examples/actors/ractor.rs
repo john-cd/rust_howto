@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! An actor with the `ractor` crate: a greeter that counts the greetings it
@@ -60,13 +59,13 @@ impl ractor::Actor for Greeter {
     async fn pre_start(
         &self,
         myself: ActorRef<Self::Msg>,
-        _: (),
+        _args: (),
     ) -> Result<Self::State, ActorProcessingErr> {
         println!("Greeter actor is starting.");
 
         // Startup the event processing:
         // Actors communicate by passing messages to each other.
-        cast!(myself, Greet("Hello!".to_string()))?;
+        cast!(myself, Greet("Hello!".to_owned()))?;
         // Or: myself.send_message(Greet("Hello!".to_string()))?;
 
         // Create the initial state:
@@ -103,10 +102,9 @@ impl ractor::Actor for Greeter {
 #[tokio::main]
 async fn main() {
     // Create a `Greeter` actor:
-    let (_actor, handle) =
-        Actor::spawn(Some("Actor1".to_string()), Greeter, ())
-            .await
-            .expect("Failed to start the actor"); // panic in `pre_start()`.
+    let (_actor, handle) = Actor::spawn(Some("Actor1".to_owned()), Greeter, ())
+        .await
+        .expect("Failed to start the actor"); // panic in `pre_start()`.
 
     handle.await.expect("Actor failed to exit properly");
 

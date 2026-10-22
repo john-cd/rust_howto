@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Serialize and deserialize a struct with MessagePack via `rmp-serde`.
@@ -21,7 +20,7 @@ struct MyData {
 /// Encodes a struct as MessagePack, then decodes it.
 fn main() -> anyhow::Result<()> {
     let data = MyData {
-        name: "Alice".to_string(),
+        name: "Alice".to_owned(),
         age: 30,
         is_active: true,
     };

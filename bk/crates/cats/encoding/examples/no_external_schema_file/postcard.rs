@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `postcard` crate for serialization
@@ -18,8 +17,6 @@
 //! ```
 //!
 //! Example adapted from <https://lib.rs/crates/postcard>.
-
-use std::ops::Deref;
 
 use postcard::from_bytes;
 use postcard::to_stdvec;
@@ -48,15 +45,12 @@ fn main() {
     })
     .expect("failed to serialize");
 
-    assert_eq!(
-        &[
-            0x04, 0x01, 0x10, 0x02, 0x20, 0x05, b'h', b'E', b'l', b'L', b'o',
-        ],
-        output.deref()
-    );
+    let expected: &[u8] = &[
+        0x04, 0x01, 0x10, 0x02, 0x20, 0x05, b'h', b'E', b'l', b'L', b'o',
+    ];
+    assert_eq!(expected, output.as_slice());
 
-    let out: RefStruct =
-        from_bytes(output.deref()).expect("failed to deserialize");
+    let out: RefStruct = from_bytes(&output).expect("failed to deserialize");
     assert_eq!(
         out,
         RefStruct {

@@ -1,5 +1,7 @@
 #![allow(dead_code)]
-
+// Slint's macro emits accessibility methods whose names match framework trait
+// methods.
+#![allow(clippy::same_name_method)]
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A window defined with `slint`.
@@ -33,8 +35,8 @@ mod tests {
 
     #[test]
     #[ignore = "requires interactive example runtime"]
-    fn test_main() {
-        main().unwrap();
+    fn test_main() -> anyhow::Result<()> {
+        main()
     }
 }
 // [finish; figure how to test - neither WAYLAND_DISPLAY nor WAYLAND_SOCKET nor DISPLAY is set. see vs code Wayland setting](https://github.com/john-cd/rust_howto/issues/787)

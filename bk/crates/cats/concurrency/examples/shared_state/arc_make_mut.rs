@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Sharing a configuration between threads with `Arc`, and cloning it on write
@@ -25,10 +24,7 @@ mod cfg {
 
     impl Configuration {
         /// Creates a shared configuration.
-        pub fn new(
-            server_address: String,
-            max_connections: u8,
-        ) -> Arc<Self> {
+        pub fn new(server_address: String, max_connections: u8) -> Arc<Self> {
             Arc::new(Self {
                 server_address,
                 max_connections,

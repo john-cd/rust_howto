@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates a basic actor implementation pattern.
@@ -35,9 +34,7 @@ fn main() {
     });
 
     sender
-        .send(Message::Print(
-            "Hello from an actor-like worker".to_string(),
-        ))
+        .send(Message::Print("Hello from an actor-like worker".to_owned()))
         .expect("channel should be open");
     sender.send(Message::Stop).expect("channel should be open");
 

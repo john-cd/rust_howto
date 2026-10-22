@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example uses the macroquad game engine to create a simple window
@@ -33,7 +32,7 @@ async fn main() {
 
         draw_rectangle(position.x, position.y, 50.0, 50.0, RED);
 
-        next_frame().await
+        next_frame().await;
     }
 }
 // ANCHOR_END: example

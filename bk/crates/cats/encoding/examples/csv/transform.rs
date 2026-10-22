@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example shows how to transform CSV data from one format to
@@ -39,14 +38,14 @@ impl FromStr for HexColor {
     /// Parse a hex color string into a `HexColor`.
     fn from_str(hex_color: &str) -> std::result::Result<Self, Self::Err> {
         let trimmed = hex_color.trim_matches('#');
-        if trimmed.len() != 6 {
-            Err(anyhow!("Invalid length of hex string"))
-        } else {
-            Ok(HexColor {
+        if trimmed.len() == 6 {
+            Ok(Self {
                 red: u8::from_str_radix(&trimmed[..2], 16)?,
                 green: u8::from_str_radix(&trimmed[2..4], 16)?,
                 blue: u8::from_str_radix(&trimmed[4..6], 16)?,
             })
+        } else {
+            Err(anyhow!("Invalid length of hex string"))
         }
     }
 }
