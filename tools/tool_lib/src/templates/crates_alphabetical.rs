@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! The alphabetical index of crates.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::collections::BTreeMap;
 
 use anyhow::Result;

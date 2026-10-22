@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Integration tests of the `mdbook-scrub` preprocessor.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::io::Write;
 use std::process::Command;
 use std::process::Output;

@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Parsing the categories file of `crates.io`.
+//!
+//! TODO Reviewed ??-??-2026
+
 use anyhow::Context;
 use anyhow::Result;
 

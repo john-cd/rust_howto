@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! The page of crates by category.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::collections::BTreeSet;
 use std::collections::HashSet;
 

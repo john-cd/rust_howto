@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Index anchors for `mdbook-indexing`.
+//!
+//! TODO Reviewed ??-??-2026
+
 use anyhow::Result;
 use serde::Serialize;
 

@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Detecting differences between texts.
+//!
+//! TODO Reviewed ??-??-2026
+
 use similar::ChangeTag;
 use similar::TextDiff;
 
@@ -49,6 +52,7 @@ pub fn print_diffs(s1: &str, s2: &str) {
 mod tests {
     use super::*;
 
+    /// Checks that equal lines are identical.
     #[test]
     fn test_detect_diff_identical_single_line() {
         let s1 = "hello world";
@@ -59,6 +63,7 @@ mod tests {
         );
     }
 
+    /// Checks that different lines are detected.
     #[test]
     fn test_detect_diff_different_single_line() {
         let s1 = "hello world";
@@ -69,6 +74,7 @@ mod tests {
         );
     }
 
+    /// Checks that equal texts of several lines are identical.
     #[test]
     fn test_detect_diff_identical_multi_line() {
         let s1 = "line one\nline two\nline three";
@@ -79,6 +85,7 @@ mod tests {
         );
     }
 
+    /// Checks that an inserted line is detected.
     #[test]
     fn test_detect_diff_different_multi_line_insertion() {
         let s1 = "line one\nline three";
@@ -89,6 +96,7 @@ mod tests {
         );
     }
 
+    /// Checks that a deleted line is detected.
     #[test]
     fn test_detect_diff_different_multi_line_deletion() {
         let s1 = "line one\nline two\nline three";
@@ -99,6 +107,7 @@ mod tests {
         );
     }
 
+    /// Checks that a modified line is detected.
     #[test]
     fn test_detect_diff_different_multi_line_modification() {
         let s1 = "line one\nline two\nline three";
@@ -109,6 +118,7 @@ mod tests {
         );
     }
 
+    /// Checks that two empty strings are identical.
     #[test]
     fn test_detect_diff_empty_strings() {
         let s1 = "";
@@ -119,6 +129,7 @@ mod tests {
         );
     }
 
+    /// Checks that an empty string differs from a non-empty one.
     #[test]
     fn test_detect_diff_one_empty_string() {
         let s1 = "hello";
@@ -136,6 +147,7 @@ mod tests {
         );
     }
 
+    /// Checks that a trailing newline in both texts is ignored.
     #[test]
     fn test_detect_diff_trailing_newline_identical() {
         let s1 = "hello\n";
@@ -146,6 +158,7 @@ mod tests {
         );
     }
 
+    /// Checks that a trailing newline in only one text is a difference.
     #[test]
     fn test_detect_diff_trailing_newline_different() {
         let s1 = "hello";

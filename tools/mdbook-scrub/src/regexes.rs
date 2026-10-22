@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Regular expressions that find hidden content, applied outside of code.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::ops::Range;
 
 use anyhow::Context;
@@ -12,9 +15,12 @@ use regex::Regex;
 
 use super::conf::PreprocConfig;
 
+/// The regular expressions of the scrub stage.
 #[derive(Default)]
 pub struct ScrubRegexes {
+    /// Matches hidden sections.
     pub hidden_sections: Option<Regex>,
+    /// Matches includes of hidden chapters.
     pub hidden_includes: Option<Regex>,
 }
 
@@ -37,6 +43,7 @@ pub fn get_regexes(conf: &PreprocConfig) -> ScrubRegexes {
     }
 }
 
+/// Returns the regular expression that matches wikilinks.
 pub fn wikilink_regex() -> Regex {
     Regex::new(r#"\[\[ *[^|\]]*?(?:\| *([^\]]+)?)?\]\]"#).expect("Invalid wikilink regex")
 }
@@ -82,13 +89,19 @@ where
     Ok(output)
 }
 
+/// Collects the byte ranges of code spans, fenced code blocks and HTML
+/// comments.
 struct ProtectedSpanCollector {
+    /// Address of the start of the Markdown source.
     source_base: usize,
+    /// Length of the Markdown source.
     source_len: usize,
+    /// The byte ranges that must not be modified.
     spans: Vec<Range<usize>>,
 }
 
 impl ProtectedSpanCollector {
+    /// Records the range of `text`, a slice of the source.
     fn add_span(&mut self, text: &str) {
         let Some(start) = (text.as_ptr() as usize).checked_sub(self.source_base) else {
             return;
@@ -124,6 +137,7 @@ impl<'a> Visitor<'a> for ProtectedSpanCollector {
 mod tests {
     use super::*;
 
+    /// Checks that code and comments are left untouched.
     #[test]
     fn replacement_skips_code_and_html_comments() {
         let source = concat!(
@@ -141,6 +155,7 @@ mod tests {
         assert!(result.contains("[[hidden-comment]]"));
     }
 
+    /// Checks that the title of a wikilink is kept.
     #[test]
     fn legacy_wikilink_cleanup_keeps_its_title() {
         let regex = wikilink_regex();

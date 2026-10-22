@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Backing up files before they are overwritten.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::fs;
 use std::fs::File;
 use std::io::Write;
@@ -56,6 +59,7 @@ mod tests {
 
     // --- Tests for `backup` ---
 
+    /// Checks that the file is copied to a `.bak` file.
     #[test]
     fn test_backup_file_exists() -> Result<()> {
         let dir = tempdir()?;
@@ -88,6 +92,7 @@ mod tests {
         Ok(())
     }
 
+    /// Checks that nothing happens when there is no file to back up.
     #[test]
     fn test_backup_file_does_not_exist() -> Result<()> {
         let dir = tempdir()?;
@@ -110,6 +115,7 @@ mod tests {
         Ok(())
     }
 
+    /// Checks that an older backup is replaced.
     #[test]
     fn test_backup_overwrites_existing_backup() -> Result<()> {
         let dir = tempdir()?;
@@ -140,6 +146,7 @@ mod tests {
 
     // --- Tests for `backup_then_write_to` ---
 
+    /// Checks that an existing file is backed up before it is overwritten.
     #[test]
     fn test_backup_then_write_to_file_exists() -> Result<()> {
         let dir = tempdir()?;
@@ -173,6 +180,7 @@ mod tests {
         Ok(())
     }
 
+    /// Checks that a file is created when none exists.
     #[test]
     fn test_backup_then_write_to_file_does_not_exist() -> Result<()> {
         let dir = tempdir()?;
@@ -199,6 +207,7 @@ mod tests {
         Ok(())
     }
 
+    /// Checks that an older backup is replaced when writing.
     #[test]
     fn test_backup_then_write_to_overwrites_existing_backup() -> Result<()> {
         let dir = tempdir()?;
@@ -234,6 +243,7 @@ mod tests {
         Ok(())
     }
 
+    /// Checks that writing empty content empties the file after the backup.
     #[test]
     fn test_backup_then_write_to_empty_content() -> Result<()> {
         let dir = tempdir()?;

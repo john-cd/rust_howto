@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Removing empty lines from text.
+//!
+//! TODO Reviewed ??-??-2026
+
 /// Removes empty lines from a given string slice.
 ///
 /// This function takes a string slice as input, splits it into lines,

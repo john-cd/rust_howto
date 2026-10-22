@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! The templates of the badges and reference definitions of a crate block.
+//!
+//! TODO Reviewed ??-??-2026
+
 use anyhow::Result;
 use serde::Serialize;
 

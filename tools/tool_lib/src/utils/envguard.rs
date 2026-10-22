@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! A guard that restores an environment variable when dropped.
+//!
+//! TODO Reviewed ??-??-2026
+
 /// Helper struct to safely set/unset environment variables during e.g. tests.
 pub struct EnvGuard {
     key: String,

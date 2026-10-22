@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! The template of a category badge.
+//!
+//! TODO Reviewed ??-??-2026
+
 use anyhow::Result;
 use serde::Serialize;
 

@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Detecting GitHub URLs.
+//!
+//! TODO Reviewed ??-??-2026
+
 /// Detect a GitHub URL, returning `(detected, username, repo)`, where `detected` is `true` if it is a proper Github URL,
 /// `false` otherwise. In the latter case, `username` and `repo` are empty string slices.
 pub fn detect_github_url(url: &str) -> (bool, &str, &str) {

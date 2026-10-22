@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! The Rust By Example badge.
+//!
+//! TODO Reviewed ??-??-2026
+
 use anyhow::Result;
 use serde::Serialize;
 

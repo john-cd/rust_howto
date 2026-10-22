@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Getting the categories of a crate from `crates.io`.
+//!
+//! TODO Reviewed ??-??-2026
+
 use anyhow::Result;
 use tracing::debug;
 
@@ -57,6 +60,7 @@ mod tests {
         }
     }
 
+    /// Checks that the fields are copied from the API category.
     #[test]
     fn test_category_new() {
         let api_cat = mock_crates_io_category("web", "Web Stuff", "All about web");

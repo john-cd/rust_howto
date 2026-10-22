@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Command-line tool that empties the `temp` folders of a directory tree.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::fs;
 use std::fs::DirEntry;
 use std::path::Path;
@@ -8,13 +11,16 @@ use clap::Parser;
 use tracing::info;
 use walkdir::WalkDir;
 
+/// Command-line arguments.
 #[derive(Parser, Debug)]
 #[clap(version)]
 struct Args {
+    /// Root of the directory tree to search for `temp` folders.
     #[clap(help = "Path to the directory to clean.")]
     directory: PathBuf,
 }
 
+/// Cleans every `temp` folder under the given directory.
 fn main() -> anyhow::Result<()> {
     tracing_subscriber::fmt()
         .with_max_level(tracing::Level::WARN)
@@ -82,6 +88,7 @@ mod tests {
 
     use super::*;
 
+    /// Checks that only names starting with a dot are hidden.
     #[test]
     fn test_is_hidden() {
         let dir = tempdir().unwrap();
@@ -118,6 +125,7 @@ mod tests {
         fs::File::create(root.join(".gitkeep")).unwrap();
     }
 
+    /// Checks that files and folders are removed, except hidden ones.
     #[test]
     fn test_clean_folder() {
         let dir = tempdir().unwrap();
@@ -143,6 +151,7 @@ mod tests {
         assert!(dir.path().join(".gitkeep").exists()); // should not be removed
     }
 
+    /// Checks that a missing folder is not an error.
     #[test]
     fn test_clean_folder_nonexistent() {
         let dir = tempdir().unwrap();

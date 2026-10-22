@@ -1,9 +1,15 @@
-// TODO Reviewed ??-??-2026
+//! Downloading the categories file of `crates.io`.
+//!
+//! TODO Reviewed ??-??-2026
+
 use anyhow::Result;
 
 // The master list of categories is a TOML file in the `crates.io` repo:
+/// URL of the categories TOML file.
 static CATEGORIES_URL: &str = "https://raw.githubusercontent.com/rust-lang/crates.io/refs/heads/main/src/boot/categories.toml";
 
+/// Downloads the categories TOML file, or the mock URL in
+/// `MOCK_CATEGORIES_URL`.
 pub(super) fn get_categories_toml_string() -> Result<String> {
     // Allows tests to override the URL.
     let url_str =
@@ -44,6 +50,7 @@ mod tests {
     static ENV_MUTEX: Mutex<()> = Mutex::new(());
 
     // Test successful retrieval of the TOML string.
+    /// Checks that the TOML text is returned on success.
     #[test]
     fn test_get_categories_toml_string_success() -> Result<()> {
         let _lock = ENV_MUTEX.lock().unwrap();
@@ -77,6 +84,7 @@ mod tests {
     }
 
     // Test handling of a network/server error (e.g., 404 Not Found).
+    /// Checks that an unsuccessful response is an error.
     #[test]
     fn test_get_categories_toml_string_error() -> Result<()> {
         let _lock = ENV_MUTEX.lock().unwrap();
