@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! A minimal game example using the `macroquad` rendering engine.
 //!

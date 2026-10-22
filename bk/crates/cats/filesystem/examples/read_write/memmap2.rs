@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Demonstrates reading from a memory-mapped file.
 //!

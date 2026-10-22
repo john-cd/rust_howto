@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Demonstrates the use of the `lazy_static` crate.
 //!

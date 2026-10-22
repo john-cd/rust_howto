@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! `strum` provides derive macros that automatically implement various traits
 //! for your enums, making it easy to convert them to and from strings, iterate

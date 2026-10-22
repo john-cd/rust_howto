@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates how to serialize and deserialize a struct to and
 //! from YAML using the maintained `serde_norway` crate.

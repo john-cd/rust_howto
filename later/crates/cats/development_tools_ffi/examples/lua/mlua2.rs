@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Example of creating a Lua module using `mlua`.
 //! In module mode, `mlua` allows a compiled Lua module to be loaded from Lua

@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Examples of password hashing and key derivation with Argon2.
 //!

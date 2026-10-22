@@ -1,5 +1,4 @@
 #![allow(unused)]
-
 // ANCHOR: example
 //! This macro provides a domain-specific language (DSL) for defining
 //! configuration for an application. Instead of using a `HashMap`, or a

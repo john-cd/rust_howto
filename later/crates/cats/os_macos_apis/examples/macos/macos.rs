@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! A macOS-specific example using the `cocoa` crate to call native macOS APIs.
 //!

@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Demonstrates parsing, comparing, and serializing complex semantic version
 //! strings.

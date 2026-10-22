@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Demonstrates how to use a custom delimiter during CSV deserialization.
 //!

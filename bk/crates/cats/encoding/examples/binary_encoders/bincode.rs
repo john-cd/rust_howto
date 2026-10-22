@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Serialize and deserialize a struct with `bincode` 2.x.
 //!

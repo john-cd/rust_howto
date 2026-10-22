@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates how to use the `markdown` crate to parse Markdown
 //! text and convert it to HTML.

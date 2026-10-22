@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates how to extract and format phone numbers from a
 //! text using regular expressions.

@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Create a manual OpenTelemetry span and pair it with regular tracing output.
 //!

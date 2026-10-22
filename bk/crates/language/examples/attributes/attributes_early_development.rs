@@ -11,7 +11,6 @@
 #![allow(unused_mut)]
 #![allow(unused_imports)]
 #![allow(unused_must_use)]
-
 // Or simply use: `#![allow(unused)]`.
 #![allow(dead_code)]
 #![allow(missing_docs)]

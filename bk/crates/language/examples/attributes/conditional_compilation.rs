@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates conditional compilation using the `#[cfg]`
 //! attribute and `cfg!` macro.

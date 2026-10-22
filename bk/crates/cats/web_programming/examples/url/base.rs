@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This module demonstrates how to extract the base URL from a given URL.
 //!

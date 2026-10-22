@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! The `bstr` crate provides types and traits for working with byte strings,
 //! which are sequences of bytes that may or may not be valid UTF-8.

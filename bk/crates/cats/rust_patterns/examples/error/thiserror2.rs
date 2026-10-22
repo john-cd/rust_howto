@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Demonstrates the use of the `thiserror` crate for creating custom error
 //! types. This example shows how to wrap an underlying `std::io::Error` and

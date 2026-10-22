@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates a simple HTTP server that can be exposed to the
 //! internet using `ngrok`.

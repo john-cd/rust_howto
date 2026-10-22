@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Examples for working with `.env` files and `envy`.
 //!

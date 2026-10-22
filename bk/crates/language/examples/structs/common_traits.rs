@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Implementation of Common Traits on a `struct`.
 //!

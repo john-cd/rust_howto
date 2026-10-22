@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Example of using the `reqwest` crate to create and delete a GitHub Gist.
 //!

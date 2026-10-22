@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! `syn` is a library for parsing Rust code into a syntax tree.
 //! It is used in procedural macros to manipulate Rust code at compile time.

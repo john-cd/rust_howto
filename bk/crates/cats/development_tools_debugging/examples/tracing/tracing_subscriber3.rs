@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates how to enable or
 //! disable layers at runtime based on a configuration flag.

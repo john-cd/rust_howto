@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Calculate how long an application should wait after hitting a rate limit.
 //!

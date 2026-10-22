@@ -1,5 +1,4 @@
 #![allow(unused)]
-
 // ANCHOR: example
 //! `bitflags` generate types for C-style flags with ergonomic APIs.
 //!
