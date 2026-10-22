@@ -54,7 +54,7 @@ fn main() -> anyhow::Result<()> {
                 }
                 #[cfg(feature = "sea_orm")]
                 Commands::Seaography => {
-                    seaography::run();
+                    seaography::run()?;
                 }
                 #[cfg(feature = "sqlx")]
                 Commands::Sqlx => {
