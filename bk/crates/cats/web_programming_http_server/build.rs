@@ -7,13 +7,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Instruct Cargo to re-run this script if the proto file changes.
     println!("cargo:rerun-if-changed=proto/helloworld.proto");
 
-    // Use the vendored compiler so builds do not depend on a system protoc.
-    let protoc = protoc_bin_vendored::protoc_bin_path()?;
-    unsafe {
-        std::env::set_var("PROTOC", protoc);
-    }
-
-    // Compile the helloworld.proto file.
-    tonic_prost_build::compile_protos("proto/helloworld.proto")?;
+    // Compile the schema and generate the gRPC service code without launching
+    // an external protoc executable.
+    let descriptors = protox::compile(["proto/helloworld.proto"], ["proto"])?;
+    tonic_prost_build::compile_fds(descriptors)?;
     Ok(())
 }

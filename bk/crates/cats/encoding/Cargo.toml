@@ -50,7 +50,7 @@ zerocopy = { version = "0.8.63", features = ["derive"] }
 [build-dependencies]
 capnpc = "0.25.3"
 prost-build = "0.14.4"
-protoc-bin-vendored = "3"
+protox = "0.10.0" # Compile .proto files without launching a protoc executable.
 
 [[example]]
 name = "binary_encoders"

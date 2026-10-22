@@ -55,7 +55,7 @@ tracing = "0.1.44"
 tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
 
 [build-dependencies]
-protoc-bin-vendored = "3.3.0"
+protox = "0.10.0" # Compile .proto files without launching a protoc executable.
 tonic-build = "0.14.6"
 tonic-prost-build = "0.14.6"
 

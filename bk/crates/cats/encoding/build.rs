@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: capnp
 //! Entry point for the build script.
@@ -16,28 +15,33 @@ fn capnp() {
 // ANCHOR_END: capnp
 
 // ANCHOR: prost
-/// Compile a `ProtoBuf` schema.
-fn prost() {
+/// Compiles the Protocol Buffers schema and generates its Rust types.
+///
+/// # Errors
+///
+/// Returns an error if parsing the schema or generating Rust code fails.
+fn prost() -> Result<(), Box<dyn std::error::Error>> {
     println!("cargo::rerun-if-changed=examples/binary_encoders/person.proto");
 
-    let protoc = protoc_bin_vendored::protoc_bin_path()
-        .expect("Failed to locate vendored protoc binary.");
-    unsafe {
-        std::env::set_var("PROTOC", protoc);
-    }
+    let descriptors = protox::compile(
+        ["examples/binary_encoders/person.proto"],
+        ["examples/binary_encoders/"],
+    )?;
+    prost_build::compile_fds(descriptors)?;
 
-    prost_build::compile_protos(
-        &["examples/binary_encoders/person.proto"],
-        &["examples/binary_encoders/"],
-    )
-    .expect("Failed to compile Protocol Buffers. Ensure `protoc` is installed and on your PATH.");
+    Ok(())
 }
 // ANCHOR_END: prost
 
-/// Entry point for the build script.
-fn main() {
+/// Runs the schema compilers needed by this crate's examples.
+///
+/// # Errors
+///
+/// Returns an error if Protocol Buffers code generation fails.
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     #[cfg(target_os = "linux")]
     capnp();
-    prost();
+    prost()?;
+    Ok(())
 }
 // [is prost fixed?](https://github.com/john-cd/rust_howto/issues/1417)
