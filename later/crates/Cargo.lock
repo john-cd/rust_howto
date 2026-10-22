@@ -20855,6 +20855,7 @@ dependencies = [
  "linfa",
  "linfa-linear",
  "ndarray 0.16.1",
+ "ndarray 0.17.2",
  "rand 0.10.3",
  "smartcore",
 ]
