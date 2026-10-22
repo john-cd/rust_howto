@@ -1,10 +1,15 @@
-// TODO Reviewed ??-??-2026
+//! Generating and parsing ULIDs, sortable unique identifiers.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::str::FromStr;
 
 use ulid::Ulid;
 
+/// Generates a ULID and inspects its components.
 fn main() {
     // Generate a new ULID.
     // It automatically captures the current system time for the timestamp

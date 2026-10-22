@@ -1,9 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! A `BTreeMap`, an ordered map, storing book ratings.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::collections::BTreeMap;
 use std::collections::btree_map::Entry;
 
+/// Creates, fills, queries and iterates over a `BTreeMap`.
 fn main() {
     // Create a new `BTreeMap`:
     let mut book_ratings = BTreeMap::new();

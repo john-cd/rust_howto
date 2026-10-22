@@ -1,9 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! Creating, modifying, iterating over and slicing a `Vec`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 #![allow(clippy::vec_init_then_push)]
 #![allow(clippy::useless_vec)]
 #![allow(clippy::unnecessary_fold)]
+
 // ANCHOR: example
+/// Runs each of the `Vec` demonstrations.
 fn main() {
     demonstrate_creation();
     demonstrate_manipulation();
@@ -11,6 +16,7 @@ fn main() {
     demonstrate_slices();
 }
 
+/// Shows how to create a `Vec`.
 fn demonstrate_creation() {
     // Vectors are resizable arrays.
 
@@ -35,6 +41,7 @@ fn demonstrate_creation() {
     let _zeroes: Vec<u8> = vec![0u8; 10];
 }
 
+/// Shows how to add, remove and modify elements.
 fn demonstrate_manipulation() {
     let mut numbers = vec![1, 2, 3];
 
@@ -69,6 +76,7 @@ fn demonstrate_manipulation() {
     println!("Sorted numbers: {sorted_numbers:?}");
 }
 
+/// Shows how to iterate over a `Vec`.
 fn demonstrate_iteration() {
     let numbers = vec![1, 2, 3, 4, 5, 6];
     let mut zeroes: Vec<u8> = vec![0u8; 10];
@@ -126,6 +134,7 @@ fn demonstrate_iteration() {
     }
 }
 
+/// Shows how to borrow a `Vec` as a slice.
 fn demonstrate_slices() {
     let numbers = vec![1, 2, 3, 4, 5];
 
@@ -138,6 +147,7 @@ fn demonstrate_slices() {
 
     // In Rust, it's common to use slices, rather than vectors, as
     // arguments, when we just want to provide read access:
+    /// Prints a vector through a slice.
     fn read_vec(v: &[i32]) {
         println!("Inside read_vec: {v:?}");
     }

@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Building and traversing a directed graph with `petgraph`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use petgraph::Directed;
 use petgraph::Undirected;
@@ -8,6 +12,7 @@ use petgraph::dot::Config;
 use petgraph::dot::Dot;
 use petgraph::graph::Graph;
 
+/// Builds a small directed graph and queries it.
 fn main() {
     // Create a new directed graph:
     let mut graph = Graph::<&str, &str, Directed>::new();

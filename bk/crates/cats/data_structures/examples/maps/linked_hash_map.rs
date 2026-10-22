@@ -1,7 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! A `LinkedHashMap`, a hash map that remembers insertion order.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 use linked_hash_map::LinkedHashMap;
 
+/// Inserts into a `LinkedHashMap` and iterates in insertion order.
 fn main() {
     let mut map = LinkedHashMap::new();
     map.insert("one", 1);

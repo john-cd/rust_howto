@@ -1,9 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! A `SmallVec`, which stores a few elements inline before moving to the heap.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use smallvec::SmallVec;
 use smallvec::smallvec;
 
+/// Grows a `SmallVec` past its inline capacity.
 fn main() {
     // Create a SmallVec with a small inline capacity of 4.
     // This means that the first 4 elements will be stored directly within the
