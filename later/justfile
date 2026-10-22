@@ -41,7 +41,9 @@ alias ca := clippyall
 # Scan all code for common mistakes (all packages, all features)
 @clippyall:
   echo "Scan all code for common mistakes (all packages, all features) in $(pwd)"
-  cd {{code_root}}; cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
+  # sccache 0.18.0 expands web-sys rustc arguments past Windows' process limit.
+  cd {{code_root}}; cargo clippy --workspace --exclude wasm --all-targets --locked --all-features -- -D warnings
+  cd {{code_root}}; $env:RUSTC_WRAPPER = ""; cargo clippy --package wasm --all-targets --locked --all-features -- -D warnings
 
 alias nta := nextestall
 
