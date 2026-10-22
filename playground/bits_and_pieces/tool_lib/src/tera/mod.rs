@@ -3,7 +3,6 @@ use std::path::PathBuf;
 use std::sync::LazyLock;
 
 use anyhow::Result;
-use anyhow::bail;
 use tera::Context;
 use tera::Tera;
 
@@ -32,36 +31,35 @@ static TEMPLATES: LazyLock<Result<Tera, tera::Error>> = LazyLock::new(|| {
 /// - the context to use for rendering
 /// - the destination file path for each rendered template
 pub fn render(r: impl Renderable) -> Result<()> {
-    let templ: &Result<Tera, tera::Error> = &TEMPLATES;
-    if let Err(e) = templ {
-        bail!("The Tera template engine failed to initialize: {e}");
-    }
+    let templ = TEMPLATES
+        .as_ref()
+        .map_err(|e| anyhow::anyhow!("The Tera template engine failed to initialize: {e}"))?;
     let context = Context::from_serialize(&r)?;
-    render_one(r, &context)?;
+    render_one(r, templ, &context)?;
     Ok(())
 }
 
 #[allow(dead_code)]
-fn render_one(r: impl Renderable, context: &Context) -> Result<()> {
-    let templ = (*TEMPLATES).as_ref().unwrap();
-
+fn render_one(r: impl Renderable, templ: &Tera, context: &Context) -> Result<()> {
     for renderinfo in r.get_what_to_render() {
         let template_name: &str = &renderinfo.template_name;
         let rendered = templ.render(template_name, context)?;
-        let where_to_write = generate_path(&renderinfo.dest_filepath_template)?;
+        let where_to_write = generate_path(&renderinfo.dest_filepath_template, context)?;
         read_write::backup_then_write_to(where_to_write, rendered)?;
     }
     for child in r.get_children() {
-        render_one(child, context)?;
+        render_one(child, templ, context)?;
     }
     Ok(())
 }
 
-fn generate_path(path_template: &str) -> Result<PathBuf> {
-    let context = Context::new();
-    // context.insert("product", &product);
-    // context.insert("vat_rate", &0.20);
-    Ok(PathBuf::from(Tera::one_off(path_template, &context, true)?))
+fn generate_path(path_template: &str, context: &Context) -> Result<PathBuf> {
+    // Fast-path: if the path template does not contain Tera template syntax ('{'),
+    // avoid constructing a new Tera instance and AST parsing via `one_off`.
+    if !path_template.contains('{') {
+        return Ok(PathBuf::from(path_template));
+    }
+    Ok(PathBuf::from(Tera::one_off(path_template, context, true)?))
 }
 
 // TODO
