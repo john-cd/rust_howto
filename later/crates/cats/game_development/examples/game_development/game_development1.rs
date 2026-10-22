@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Detecting the collision of two shapes with `parry2d`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use parry2d::math::Pose;
 use parry2d::math::Vector;
@@ -7,6 +11,7 @@ use parry2d::query;
 use parry2d::shape::Ball;
 use parry2d::shape::Cuboid;
 
+/// Creates two shapes and tests whether they intersect.
 fn main() {
     // Define shapes
     let ball = Ball::new(1.0);

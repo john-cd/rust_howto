@@ -1,8 +1,13 @@
-// TODO Reviewed ??-??-2026
+//! A minimal `bevy` app with a system that moves entities.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use bevy::prelude::*;
 
+/// Builds and updates a headless Bevy app.
 fn main() {
     // Creates a new Bevy app.
     // In many CI/headless environments, running the full App with a window will

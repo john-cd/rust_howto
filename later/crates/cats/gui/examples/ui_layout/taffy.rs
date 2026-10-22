@@ -1,10 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! Computing a flexbox layout with `taffy`.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 use taffy::prelude::*;
 
 // Taffy is a flexible, high-performance UI layout library.
 // It implements CSS Block, Flexbox, and CSS Grid layout algorithms.
 
+/// Builds a tree of nodes and computes its layout.
 pub fn main() {
     // Create a new TaffyTree instance
     let mut tree: TaffyTree<()> = TaffyTree::new();

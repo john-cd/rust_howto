@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Creating a window with `winit`.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 // Trait that handles the application events:
 use winit::application::ApplicationHandler;
@@ -16,8 +19,10 @@ use winit::window::Window;
 // Identifier, unique for each window:
 use winit::window::WindowId;
 
+/// The application state.
 #[derive(Default)]
 struct App {
+    /// The window, created when the application is resumed.
     window: Option<Window>,
 }
 
@@ -63,6 +68,7 @@ impl ApplicationHandler for App {
     }
 }
 
+/// Creates the event loop and runs the application.
 fn main() -> anyhow::Result<()> {
     let event_loop = EventLoop::new()?;
 
@@ -100,6 +106,7 @@ mod tests {
     }
 
     // TODO proper test
+    /// Checks that the event loop can be created.
     #[test]
     fn compile_event_loop() {
         let mut builder = EventLoop::<()>::builder();

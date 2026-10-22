@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Placeholder for a 2D rendering example with `skia-safe`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // skia-safe example (commented out due to native build requirements in the
 // workspace)
@@ -10,6 +14,7 @@
 // to create Skia surface"); let canvas = surface.canvas();
 // canvas.clear(Color::WHITE);
 // }
+/// Prints a message: the example is skipped.
 pub fn main() {
     println!(
         "Skia-safe example updated but execution skipped in this environment."

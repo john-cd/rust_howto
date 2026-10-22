@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Placeholder for a 2D rendering example with `vger`.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 // // COMING SOON
 // ANCHOR_END: example
@@ -69,6 +72,7 @@
 //     );
 // }
 
+/// Does nothing yet.
 fn main() {}
 // ANCHOR_END: example
 

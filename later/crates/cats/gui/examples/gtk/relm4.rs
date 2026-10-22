@@ -1,16 +1,25 @@
-// TODO Reviewed ??-??-2026
+//! A counter application with `relm4`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use gtk::prelude::*;
 use relm4::prelude::*;
 
+/// The model of the counter.
 struct CounterModel {
+    /// The current count.
     value: i32,
 }
 
+/// The messages that the counter handles.
 #[derive(Debug)]
 enum CounterInput {
+    /// Increases the count.
     Increment,
+    /// Decreases the count.
     Decrement,
 }
 
@@ -74,6 +83,7 @@ impl SimpleComponent for CounterModel {
     }
 }
 
+/// Runs the application.
 pub fn main() {
     let app = RelmApp::new("relm4.example.counter");
     app.run::<CounterModel>(0);

@@ -1,12 +1,18 @@
-// TODO Reviewed ??-??-2026
+//! A counter application with `floem`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use floem::prelude::*;
 
+/// Runs the application.
 pub fn main() {
     floem::launch(counter_view);
 }
 
+/// Returns the view of the counter.
 fn counter_view() -> impl IntoView {
     let counter = RwSignal::new(0);
 

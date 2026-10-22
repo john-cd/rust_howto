@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A GTK 4 application with a button and a label.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use gtk::Application;
 use gtk::ApplicationWindow;
@@ -8,6 +12,7 @@ use gtk::Label;
 use gtk::Orientation;
 use gtk::prelude::*;
 
+/// Creates and runs the application.
 pub fn main() {
     let app = Application::builder()
         .application_id("org.example.gtk4_counter")
@@ -18,6 +23,7 @@ pub fn main() {
     app.run();
 }
 
+/// Builds the window of the application.
 fn build_ui(app: &Application) {
     let window = ApplicationWindow::builder()
         .application(app)
@@ -75,6 +81,7 @@ fn build_ui(app: &Application) {
     window.present();
 }
 
+/// Updates `label` according to `value`.
 fn update_conditional_label(label: &Label, value: i32) {
     if value % 2 == 0 {
         label.set_text("Counter is even!");

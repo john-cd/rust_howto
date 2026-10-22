@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Placeholder for a `fyrox` game engine example.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // fyrox example (commented out due to complex system dependencies like ALSA in
 // the workspace)
@@ -45,6 +49,7 @@
 // }
 // }).unwrap();
 // }
+/// Prints a message: the example is disabled.
 fn main() {
     println!(
         "Fyrox example code updated to 1.0 API, but disabled due to workspace build issues."

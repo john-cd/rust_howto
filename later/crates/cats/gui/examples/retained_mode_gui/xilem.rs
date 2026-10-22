@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A counter application with `xilem`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use xilem::EventLoop;
 use xilem::WindowOptions;
@@ -9,11 +13,14 @@ use xilem::view::button;
 use xilem::view::flex;
 use xilem::view::label;
 
+/// The state of the counter.
 #[derive(Default)]
 struct Counter {
+    /// The current count.
     num: i32,
 }
 
+/// Returns the view of the application for the current state.
 fn app_logic(data: &mut Counter) -> impl xilem::WidgetView<Counter> + use<> {
     flex(
         Axis::Vertical,
@@ -25,6 +32,7 @@ fn app_logic(data: &mut Counter) -> impl xilem::WidgetView<Counter> + use<> {
     )
 }
 
+/// Runs the application.
 pub fn main() -> Result<(), xilem::winit::error::EventLoopError> {
     let app = Xilem::new_simple(
         Counter::default(),

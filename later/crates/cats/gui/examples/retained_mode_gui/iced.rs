@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A counter application with `iced`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use iced::Alignment;
 use iced::Element;
@@ -10,22 +14,29 @@ use iced::widget::column;
 use iced::widget::container;
 use iced::widget::text;
 
+/// Runs the application.
 pub fn main() -> iced::Result {
     iced::run(Counter::update, Counter::view)
 }
 
+/// The state of the counter.
 #[derive(Default)]
 struct Counter {
+    /// The current count.
     value: i32,
 }
 
+/// The messages that the counter handles.
 #[derive(Debug, Clone, Copy)]
 enum Message {
+    /// Increases the count.
     Increment,
+    /// Decreases the count.
     Decrement,
 }
 
 impl Counter {
+    /// Updates the count according to `message`.
     fn update(&mut self, message: Message) {
         match message {
             Message::Increment => self.value += 1,
@@ -33,6 +44,7 @@ impl Counter {
         }
     }
 
+    /// Returns the view of the counter.
     fn view(&self) -> Element<'_, Message> {
         let content = column![
             button("+").on_press(Message::Increment),

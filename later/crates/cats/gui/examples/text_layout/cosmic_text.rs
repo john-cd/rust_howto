@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Laying out and rasterizing text with `cosmic-text`.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 use cosmic_text::Attrs;
 use cosmic_text::Buffer;
@@ -12,6 +15,7 @@ use cosmic_text::SwashCache;
 // `cosmic_text` provides abstractions for shaping, font discovery,
 // font fallback, layout, rasterization, and editing.
 
+/// Lays out a text and draws its glyphs into a buffer.
 pub fn main() {
     // Initialize the font system (allows access to any installed system fonts)
     // Create one per application

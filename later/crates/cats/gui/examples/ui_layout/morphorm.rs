@@ -1,21 +1,30 @@
-// TODO Reviewed ??-??-2026
+//! Computing a layout with `morphorm`.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 use morphorm::*;
 
 // Morphorm is a UI layout engine.
 // In version 0.8, it requires implementing Cache, Tree, and Store traits.
 
+/// A node of the layout tree.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
 pub struct Entity(u32);
 
+/// The sizes of the nodes.
 #[derive(Default)]
 pub struct SimpleStore {
+    /// The width of each node.
     pub width: std::collections::HashMap<Entity, Units>,
+    /// The height of each node.
     pub height: std::collections::HashMap<Entity, Units>,
 }
 
+/// The computed positions and sizes.
 #[derive(Default)]
 pub struct SimpleCache {
+    /// The computed rectangle of each node.
     pub rects: std::collections::HashMap<Entity, (f32, f32, f32, f32)>,
 }
 
@@ -50,12 +59,15 @@ impl Cache for SimpleCache {
     }
 }
 
+/// The tree of nodes.
 #[derive(Default)]
 pub struct SimpleTree {
+    /// The children of each node.
     pub children: std::collections::HashMap<Entity, Vec<Entity>>,
 }
 
 impl SimpleTree {
+    /// Adds `entity` to the tree, as a child of `parent` if there is one.
     pub fn add(&mut self, entity: Entity, parent: Option<Entity>) {
         if let Some(p) = parent {
             self.children.entry(p).or_default().push(entity);
@@ -63,7 +75,9 @@ impl SimpleTree {
     }
 }
 
+/// An iterator over the children of a node.
 pub struct ChildIter<'a> {
+    /// The underlying iterator.
     pub iter: std::slice::Iter<'a, Entity>,
 }
 
@@ -253,6 +267,7 @@ impl Node for Entity {
     }
 }
 
+/// Builds a tree of nodes and computes its layout.
 pub fn main() {
     let mut cache = SimpleCache::default();
     let mut tree = SimpleTree::default();

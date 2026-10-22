@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Placeholder for a 2D rendering example with `femtovg`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // femtovg example (commented out due to GL/windowing requirements in the
 // workspace)
@@ -12,6 +16,7 @@
 // *const _).unwrap(); let mut canvas = Canvas::new(renderer).unwrap();
 // canvas.clear_rect(0, 0, 600, 400, Color::rgb(220, 220, 220));
 // }
+/// Prints a message: the example is skipped.
 pub fn main() {
     println!(
         "FemtoVG example updated but execution skipped in headless environment."
