@@ -69,8 +69,8 @@ wget -q "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pando
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source "$HOME/.cargo/env"
 rustup update && rustup component add clippy rustfmt
-rustup toolchain install nightly \
-    && rustup component add rustfmt clippy --toolchain nightly
+rustup toolchain install nightly-2026-10-22 \
+    && rustup component add rustfmt clippy --toolchain nightly-2026-10-22
 
 ## binstall
 curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash

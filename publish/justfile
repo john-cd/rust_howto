@@ -18,7 +18,7 @@ alias fa := fmtall
 # Format all packages and their local path-based dependencies
 @fmtall:
   echo "Formatting all packages and their local path-based dependencies in $(pwd)"
-  cargo +nightly fmt --all
+  cargo +nightly-2026-10-22 fmt --all
 
 alias cka := checkall
 

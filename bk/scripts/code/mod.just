@@ -15,12 +15,12 @@ _default:
 [no-cd]
 @fmtcurrent:
     echo "Formatting $(pwd)"
-    cargo +nightly fmt
+    cargo +nightly-2026-10-22 fmt
 
 # Format all packages and their local path-based dependencies
 @fmtall:
     echo "Formatting all packages and their local path-based dependencies in {{ code_root }}"
-    cd {{ quote(code_root) }}; cargo +nightly fmt --all
+    cd {{ quote(code_root) }}; cargo +nightly-2026-10-22 fmt --all
 
 # Check code in the current crate (or the default packages of the workspace if in the root) (all features)
 [no-cd]
