@@ -140,4 +140,14 @@ mod tests {
     fn test_main() {
         main();
     }
+
+    #[test]
+    fn test_demo_tuples() {
+        demo_tuples();
+    }
+
+    #[test]
+    fn test_demo_arrays() {
+        demo_arrays();
+    }
 }
