@@ -1,20 +1,25 @@
 // TODO Reviewed ??-??-2026
 #![allow(dead_code)]
 // ANCHOR: example
-//! Partial download example.
+//! Downloads a file in verified byte ranges.
 
 use std::fs::File;
+use std::io;
+use std::io::Write;
+use std::ops::RangeInclusive;
 use std::str::FromStr;
 
+use anyhow::Context;
 use anyhow::Result;
-use anyhow::anyhow;
 use anyhow::bail;
 use reqwest::StatusCode;
+use reqwest::blocking::Client;
 use reqwest::header::CONTENT_LENGTH;
+use reqwest::header::CONTENT_RANGE;
 use reqwest::header::HeaderValue;
 use reqwest::header::RANGE;
 
-/// An iterator that yields `Range` headers.
+/// An iterator that yields adjacent, inclusive byte ranges.
 struct PartialRangeIter {
     start: u64,
     end: u64,
@@ -23,20 +28,19 @@ struct PartialRangeIter {
 }
 
 impl PartialRangeIter {
-    /// Creates a new `PartialRangeIter`.
+    /// Creates a range iterator for the inclusive interval from `start` to
+    /// `end`.
     ///
-    /// # Arguments
+    /// An interval with `start > end` is empty.
     ///
-    /// * `start` - The start of the range.
-    /// * `end` - The end of the range.
-    /// * `buffer_size` - The size of each chunk.
+    /// # Errors
+    ///
+    /// Returns an error if `buffer_size` is zero.
     pub fn new(start: u64, end: u64, buffer_size: u32) -> Result<Self> {
         if buffer_size == 0 {
-            Err(anyhow!(
-                "invalid buffer_size, give a value greater than zero."
-            ))?;
+            bail!("buffer_size must be greater than zero");
         }
-        Ok(PartialRangeIter {
+        Ok(Self {
             start,
             end,
             buffer_size,
@@ -45,109 +49,405 @@ impl PartialRangeIter {
     }
 }
 
-/// Implements the `Iterator` trait for `PartialRangeIter`.
+/// Iterates over consecutive byte ranges without gaps or overlaps.
 impl Iterator for PartialRangeIter {
-    type Item = HeaderValue;
+    type Item = RangeInclusive<u64>;
 
     fn next(&mut self) -> Option<Self::Item> {
         if self.finished {
-            None
-        } else {
-            let chunk_end = self
-                .start
-                .saturating_add(u64::from(self.buffer_size) - 1)
-                .min(self.end);
-            let header = HeaderValue::from_str(&format!(
-                "bytes={}-{}",
-                self.start, chunk_end
-            ))
-            .expect("string provided by format!");
-            if chunk_end == self.end {
-                self.finished = true;
-            } else {
-                self.start = chunk_end + 1;
-            }
-            Some(header)
+            return None;
         }
+
+        let chunk_end = self
+            .start
+            .saturating_add(u64::from(self.buffer_size) - 1)
+            .min(self.end);
+        let range = self.start..=chunk_end;
+        if chunk_end == self.end {
+            self.finished = true;
+        } else {
+            self.start = chunk_end + 1;
+        }
+        Some(range)
     }
 }
 
-/// This function downloads a file from a given URL in chunks,
-/// using the `PartialRangeIter` to generate the `Range` headers.
-fn main() -> Result<()> {
-    let url = "https://httpbin.org/range/102400?duration=2";
-    const CHUNK_SIZE: u32 = 10240;
-
-    let client = reqwest::blocking::Client::new();
-    let response = client.head(url).send()?;
-    if !response.status().is_success() {
-        bail!("HEAD request failed: {}", response.status());
+/// Downloads a URL to a writer using verified HTTP byte ranges.
+///
+/// # Errors
+///
+/// Returns an error if the server omits or provides invalid length metadata,
+/// does not return `206 Partial Content` for a range, returns a mismatched or
+/// incomplete range, or if a request or write fails.
+fn download_to<W: Write>(
+    url: &str,
+    chunk_size: u32,
+    output: &mut W,
+) -> Result<()> {
+    if chunk_size == 0 {
+        bail!("chunk_size must be greater than zero");
     }
-    let length = response
+
+    let client = Client::new();
+    let head_response = client.head(url).send()?.error_for_status()?;
+    let content_length = head_response
         .headers()
         .get(CONTENT_LENGTH)
-        .ok_or(anyhow!("response doesn't include the content length"))?;
-    let length = u64::from_str(length.to_str()?)
-        .map_err(|_| anyhow!("invalid Content-Length header"))?;
+        .context("HEAD response omitted Content-Length")?
+        .to_str()
+        .context("HEAD response Content-Length was not valid text")?;
+    let content_length = u64::from_str(content_length).context(
+        "HEAD response Content-Length was not a valid unsigned integer",
+    )?;
+
+    if content_length == 0 {
+        return Ok(());
+    }
+
+    for range in PartialRangeIter::new(0, content_length - 1, chunk_size)? {
+        let start = *range.start();
+        let end = *range.end();
+        let range_header =
+            HeaderValue::from_str(&format!("bytes={start}-{end}"))?;
+        let mut response =
+            client.get(url).header(RANGE, range_header).send()?;
+        let status = response.status();
+        if status != StatusCode::PARTIAL_CONTENT {
+            bail!(
+                "Expected 206 Partial Content for bytes {start}-{end}, got {status}"
+            );
+        }
+
+        let content_range = response
+            .headers()
+            .get(CONTENT_RANGE)
+            .context("206 response omitted Content-Range")?
+            .to_str()
+            .context("206 response Content-Range was not valid text")?;
+        let expected_content_range =
+            format!("bytes {start}-{end}/{content_length}");
+        if content_range != expected_content_range {
+            bail!(
+                "Expected Content-Range {expected_content_range}, got {content_range}"
+            );
+        }
+
+        let expected_bytes = end
+            .checked_sub(start)
+            .and_then(|range_length| range_length.checked_add(1))
+            .context("generated byte range had an invalid length")?;
+        let copied_bytes = io::copy(&mut response, output)?;
+        if copied_bytes != expected_bytes {
+            bail!(
+                "Expected {expected_bytes} bytes for range {start}-{end}, received {copied_bytes}"
+            );
+        }
+    }
+
+    Ok(())
+}
+
+/// Downloads a sample file in chunks and writes it under `temp`.
+///
+/// # Errors
+///
+/// Returns any directory, file, network, response, or write error.
+fn main() -> Result<()> {
+    const CHUNK_SIZE: u32 = 10_240;
+    let url = "https://httpbin.org/range/102400?duration=2";
 
     std::fs::create_dir_all("temp")?;
     let mut output_file = File::create("temp/download.bin")?;
 
     println!("starting download...");
-    if length > 0 {
-        for range in PartialRangeIter::new(0, length - 1, CHUNK_SIZE)? {
-            println!("range {range:?}");
-            let mut response = client.get(url).header(RANGE, range).send()?;
-
-            let status = response.status();
-            if status != StatusCode::PARTIAL_CONTENT {
-                bail!("Unexpected server response: {status}")
-            }
-            std::io::copy(&mut response, &mut output_file)?;
-        }
-    }
-
+    download_to(url, CHUNK_SIZE, &mut output_file)?;
     println!("Finished with success!");
     Ok(())
 }
-
 // ANCHOR_END: example
 
+/// Runs the partial-download example.
+///
+/// # Errors
+///
+/// Returns any error from the example's file or HTTP operations.
 pub fn run() -> Result<()> {
     main()
 }
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use std::io;
+    use std::io::Read;
+    use std::io::Write;
+    use std::net::TcpListener;
+    use std::net::TcpStream;
+    use std::thread::JoinHandle;
+    use std::time::Duration;
+    use std::time::Instant;
 
+    use anyhow::Context;
+    use anyhow::Result;
+    use reqwest::StatusCode;
+
+    use super::PartialRangeIter;
+    use super::download_to;
+
+    /// Starts a local server that responds to one HEAD and the requested
+    /// ranges.
+    fn start_range_server(
+        content: Vec<u8>,
+        range_status: StatusCode,
+        request_count: usize,
+    ) -> Result<(String, JoinHandle<io::Result<Vec<String>>>)> {
+        let listener = TcpListener::bind("127.0.0.1:0")?;
+        let address = listener.local_addr()?;
+        listener.set_nonblocking(true)?;
+
+        let server = std::thread::spawn(move || -> io::Result<Vec<String>> {
+            let mut requests = Vec::with_capacity(request_count);
+            for _ in 0..request_count {
+                let mut stream = accept_with_timeout(&listener)?;
+                stream.set_nonblocking(false)?;
+                stream.set_read_timeout(Some(Duration::from_secs(5)))?;
+                let request = read_request(&mut stream)?;
+                requests.push(request.clone());
+
+                if request.starts_with("HEAD ") {
+                    let headers = format!(
+                        "HTTP/1.1 200 OK\r\nContent-Length: {}\r\nConnection: close\r\n\r\n",
+                        content.len()
+                    );
+                    stream.write_all(headers.as_bytes())?;
+                    continue;
+                }
+
+                let (start, end) = parse_range_header(&request)?;
+                if range_status == StatusCode::PARTIAL_CONTENT {
+                    let start = usize::try_from(start).map_err(|error| {
+                        io::Error::new(io::ErrorKind::InvalidData, error)
+                    })?;
+                    let end = usize::try_from(end).map_err(|error| {
+                        io::Error::new(io::ErrorKind::InvalidData, error)
+                    })?;
+                    let body = content.get(start..=end).ok_or_else(|| {
+                        io::Error::new(
+                            io::ErrorKind::InvalidData,
+                            "requested test range was outside the content",
+                        )
+                    })?;
+                    let headers = format!(
+                        "HTTP/1.1 206 Partial Content\r\nContent-Length: {}\r\nContent-Range: bytes {start}-{end}/{}\r\nConnection: close\r\n\r\n",
+                        body.len(),
+                        content.len()
+                    );
+                    stream.write_all(headers.as_bytes())?;
+                    stream.write_all(body)?;
+                } else {
+                    let headers = format!(
+                        "HTTP/1.1 {range_status}\r\nContent-Length: {}\r\nConnection: close\r\n\r\n",
+                        content.len()
+                    );
+                    stream.write_all(headers.as_bytes())?;
+                    stream.write_all(&content)?;
+                }
+            }
+            Ok(requests)
+        });
+
+        Ok((format!("http://{address}/resource"), server))
+    }
+
+    /// Accepts a local request until the server's bounded wait expires.
+    fn accept_with_timeout(listener: &TcpListener) -> io::Result<TcpStream> {
+        let deadline = Instant::now() + Duration::from_secs(5);
+        loop {
+            match listener.accept() {
+                Ok((stream, _)) => return Ok(stream),
+                Err(error)
+                    if error.kind() == io::ErrorKind::WouldBlock
+                        && Instant::now() < deadline =>
+                {
+                    std::thread::sleep(Duration::from_millis(10));
+                }
+                Err(error) => return Err(error),
+            }
+        }
+    }
+
+    /// Reads one HTTP request header block from a local client.
+    fn read_request(stream: &mut TcpStream) -> io::Result<String> {
+        let mut request = Vec::new();
+        let mut buffer = [0; 1024];
+        loop {
+            let bytes_read = stream.read(&mut buffer)?;
+            if bytes_read == 0 {
+                return Err(io::Error::new(
+                    io::ErrorKind::UnexpectedEof,
+                    "client closed before sending an HTTP header block",
+                ));
+            }
+            let chunk = buffer.get(..bytes_read).ok_or_else(|| {
+                io::Error::new(
+                    io::ErrorKind::InvalidData,
+                    "HTTP read exceeded the request buffer",
+                )
+            })?;
+            request.extend_from_slice(chunk);
+            if request.windows(4).any(|window| window == b"\r\n\r\n") {
+                return String::from_utf8(request).map_err(|error| {
+                    io::Error::new(io::ErrorKind::InvalidData, error)
+                });
+            }
+        }
+    }
+
+    /// Extracts the inclusive `Range` bounds sent by the client.
+    fn parse_range_header(request: &str) -> io::Result<(u64, u64)> {
+        let range = request
+            .lines()
+            .find_map(|line| {
+                let (name, value) = line.split_once(':')?;
+                name.eq_ignore_ascii_case("range").then_some(value.trim())
+            })
+            .ok_or_else(|| {
+                io::Error::new(
+                    io::ErrorKind::InvalidData,
+                    "GET request omitted its Range header",
+                )
+            })?;
+        let range = range.strip_prefix("bytes=").ok_or_else(|| {
+            io::Error::new(
+                io::ErrorKind::InvalidData,
+                "Range header did not use byte units",
+            )
+        })?;
+        let (start, end) = range.split_once('-').ok_or_else(|| {
+            io::Error::new(
+                io::ErrorKind::InvalidData,
+                "Range header omitted its start or end",
+            )
+        })?;
+        let start = start.parse::<u64>().map_err(|error| {
+            io::Error::new(io::ErrorKind::InvalidData, error)
+        })?;
+        let end = end.parse::<u64>().map_err(|error| {
+            io::Error::new(io::ErrorKind::InvalidData, error)
+        })?;
+        if start > end {
+            return Err(io::Error::new(
+                io::ErrorKind::InvalidData,
+                "Range header start exceeded its end",
+            ));
+        }
+        Ok((start, end))
+    }
+
+    /// Joins the server and returns its captured requests.
+    fn join_server(
+        server: JoinHandle<io::Result<Vec<String>>>,
+    ) -> Result<Vec<String>> {
+        server
+            .join()
+            .map_err(|_| anyhow::anyhow!("local range server panicked"))?
+            .context("local range server failed")
+    }
+
+    /// Returns the value of a request's Range header, if present.
+    fn range_header(request: &str) -> Option<&str> {
+        request.lines().find_map(|line| {
+            let (name, value) = line.split_once(':')?;
+            name.eq_ignore_ascii_case("range").then_some(value.trim())
+        })
+    }
+
+    /// Verifies adjacent inclusive ranges, empty intervals, and the integer
+    /// boundary.
     #[test]
-    fn iterates_inclusive_ranges_without_gaps_or_overflow() -> anyhow::Result<()>
-    {
+    fn iterator_produces_inclusive_non_overlapping_ranges() -> Result<()> {
         let ranges = PartialRangeIter::new(0, 24, 10)?
-            .map(|header| header.to_str().unwrap().to_owned())
+            .map(|range| format!("bytes={}-{}", range.start(), range.end()))
             .collect::<Vec<_>>();
         assert_eq!(ranges, ["bytes=0-9", "bytes=10-19", "bytes=20-24"]);
 
         let final_range = PartialRangeIter::new(u64::MAX - 1, u64::MAX, 10)?
             .next()
-            .expect("non-empty range")
-            .to_str()?
-            .to_owned();
-        assert_eq!(final_range, format!("bytes={}-{}", u64::MAX - 1, u64::MAX));
+            .context("the maximum-boundary interval should not be empty")?;
+        assert_eq!(
+            format!("bytes={}-{}", final_range.start(), final_range.end()),
+            format!("bytes={}-{}", u64::MAX - 1, u64::MAX)
+        );
         assert!(PartialRangeIter::new(1, 0, 10)?.next().is_none());
+        assert!(PartialRangeIter::new(0, 1, 0).is_err());
         Ok(())
     }
 
-    #[ignore = "Needs review"]
+    /// Verifies range headers and exact output bytes against a local server.
     #[test]
-    fn require_network() -> anyhow::Result<()> {
-        use std::fs;
-        if !fs::exists("temp")? {
-            fs::create_dir("temp")?;
-        }
-        main()?;
+    fn downloads_all_ranges_without_gaps_or_overlaps() -> Result<()> {
+        let content = b"0123456789".to_vec();
+        let (url, server) = start_range_server(
+            content.clone(),
+            StatusCode::PARTIAL_CONTENT,
+            4,
+        )?;
+        let mut output = Vec::new();
+
+        let download_result = download_to(&url, 4, &mut output);
+        let requests = join_server(server)?;
+        download_result?;
+
+        assert_eq!(output, content);
+        assert_eq!(requests.len(), 4);
+        assert!(requests.first().is_some_and(|request| {
+            request.starts_with("HEAD /resource HTTP/1.1\r\n")
+        }));
+        let ranges = requests
+            .iter()
+            .skip(1)
+            .map(|request| {
+                range_header(request)
+                    .context("GET request omitted its Range header")
+            })
+            .collect::<Result<Vec<_>>>()?;
+        assert_eq!(ranges, ["bytes=0-3", "bytes=4-7", "bytes=8-9"]);
+        Ok(())
+    }
+
+    /// Verifies an empty file needs only HEAD and leaves the output empty.
+    #[test]
+    fn empty_file_does_not_send_range_requests() -> Result<()> {
+        let (url, server) =
+            start_range_server(Vec::new(), StatusCode::PARTIAL_CONTENT, 1)?;
+        let mut output = Vec::new();
+
+        download_to(&url, 4, &mut output)?;
+        let requests = join_server(server)?;
+
+        assert!(output.is_empty());
+        assert_eq!(requests.len(), 1);
+        assert!(requests.first().is_some_and(|request| {
+            request.starts_with("HEAD /resource HTTP/1.1\r\n")
+        }));
+        Ok(())
+    }
+
+    /// Verifies that a server which ignores Range and returns 200 is rejected.
+    #[test]
+    fn rejects_non_partial_range_response() -> Result<()> {
+        let content = b"abcd".to_vec();
+        let (url, server) = start_range_server(content, StatusCode::OK, 2)?;
+        let mut output = Vec::new();
+
+        let download_result = download_to(&url, 2, &mut output);
+        let requests = join_server(server)?;
+        let error = download_result
+            .err()
+            .context("a 200 response to a range request was accepted")?;
+
+        assert_eq!(requests.len(), 2);
+        assert!(error.to_string().contains("206 Partial Content"));
+        assert!(output.is_empty());
         Ok(())
     }
 }
-// [review; flaky test](https://github.com/john-cd/rust_howto/issues/176)
