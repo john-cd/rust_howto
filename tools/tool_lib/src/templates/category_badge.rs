@@ -24,3 +24,32 @@ pub fn create_category_badge(category: &str, slug: &str) -> Result<String> {
 
     Ok(rendered)
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_create_category_badge_basic() {
+        let result = create_category_badge("Encoding", "encoding").unwrap();
+        assert_eq!(
+            result,
+            "[![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} "
+        );
+    }
+
+    #[test]
+    fn test_create_category_badge_trimming() {
+        let result = create_category_badge("  Command line interface  \n", "\tcli\t ").unwrap();
+        assert_eq!(
+            result,
+            "[![cat~cli][cat~cli~badge]][cat~cli]{{hi:Command line interface}} "
+        );
+    }
+
+    #[test]
+    fn test_create_category_badge_empty() {
+        let result = create_category_badge("", "").unwrap();
+        assert_eq!(result, "[![cat~][cat~~badge]][cat~]{{hi:}} ");
+    }
+}
