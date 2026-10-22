@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates the use of `once_cell::sync::Lazy` to create a
 //! static variable that is initialized only once, on first access.

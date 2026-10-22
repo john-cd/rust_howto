@@ -69,15 +69,12 @@ impl App for Counter {
     // This is typically a form of I/O or similar interaction with the host
     // platform. Updating the UI is considered an effect.
     type Effect = Effect;
-
     // Events are main input for the core, typically triggered by user
     // interaction in the UI.
     type Event = Event;
-
     // Model is a data structure (typically tree-like)
     // holding the entire application state.
     type Model = Model;
-
     // Data structure describing the current state of the user interface.
     type ViewModel = ViewModel;
 

@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates the use of the `rug` crate for arbitrary precision
 //! arithmetic.

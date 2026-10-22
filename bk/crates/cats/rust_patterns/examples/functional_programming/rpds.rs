@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! # RPDS (Rust Persistent Data Structures) Example
 //!

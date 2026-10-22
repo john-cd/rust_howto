@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Example using `Box<T>` for recursive data structures.
 //!

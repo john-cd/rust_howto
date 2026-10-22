@@ -4,7 +4,6 @@
 //! TODO Reviewed ??-??-2026
 
 #![allow(dead_code)]
-
 // ANCHOR: example
 #![allow(clippy::useless_vec)]
 #![allow(clippy::manual_contains)]

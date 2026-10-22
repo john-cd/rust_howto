@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Example demonstrating TOML parsing and deserialization.
 //!

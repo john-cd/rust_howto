@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Download a file from a URL and save it to a temporary directory.
 //!

@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates how to use the `postcard` crate for serialization
 //! and deserialization without an external schema file.

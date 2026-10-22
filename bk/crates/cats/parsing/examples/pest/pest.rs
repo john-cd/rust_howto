@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates the use of the `pest` parser generator framework
 //! for parsing a simple arithmetic expression like 3 + 5 * 2 - 8 / 4.

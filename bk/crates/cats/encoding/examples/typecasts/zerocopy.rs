@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates zero-cost memory manipulation with `zerocopy`.
 //!

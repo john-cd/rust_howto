@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Add to `Cargo.toml`:
 //! ```toml

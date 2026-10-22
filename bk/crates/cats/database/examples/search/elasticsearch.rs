@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This module provides examples of interacting with Elasticsearch using the
 //! official Rust client.

@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates how to use the AWS SDK for Rust to interact with
 //! Amazon S3. It lists the contents of a specified S3 bucket.

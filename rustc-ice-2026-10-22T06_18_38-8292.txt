@@ -1,0 +1,30 @@
+thread 'main' panicked at /cargo/registry/25cdd57fae9f0462/ignore-0.4.25/src/gitignore.rs:232:9:
+path is expected to be under the root
+stack backtrace:
+   0:     0x7fd91ba14f35 - <std[baf2b90485fc6078]::backtrace::Backtrace>::create
+   1:     0x7fd91ba14e85 - <std[baf2b90485fc6078]::backtrace::Backtrace>::force_capture
+   2:     0x7fd91a7dcd4a - std[baf2b90485fc6078]::panicking::update_hook::<alloc[80ee00932cf970dc]::boxed::Box<rustc_driver_impl[91988e45e8a0ace]::install_ice_hook::{closure#1}>>::{closure#0}
+   3:     0x7fd91ba2b152 - std[baf2b90485fc6078]::panicking::panic_with_hook
+   4:     0x7fd91ba08044 - std[baf2b90485fc6078]::panicking::panic_handler::{closure#0}
+   5:     0x7fd91ba00689 - std[baf2b90485fc6078]::sys::backtrace::__rust_end_short_backtrace::<std[baf2b90485fc6078]::panicking::panic_handler::{closure#0}, !>
+   6:     0x7fd91ba09d3d - __rustc[52ede4f89a11bdfe]::rust_begin_unwind
+   7:     0x7fd9183e411c - core[adca8bfee8c18f77]::panicking::panic_fmt
+   8:     0x55bca1d70cde - <rustfmt_nightly[fc4657baa7d0b5e]::ignore_path::IgnorePathSet>::is_match
+   9:     0x55bca1cee502 - <scoped_tls[fef592c7275df55e]::ScopedKey<rustc_span[caeeb930fa8e2ce1]::SessionGlobals>>::with::<<rustfmt_nightly[fc4657baa7d0b5e]::Session<std[baf2b90485fc6078]::io::stdio::Stdout>>::format_input_inner::{closure#0}, core[adca8bfee8c18f77]::result::Result<rustfmt_nightly[fc4657baa7d0b5e]::FormatReport, rustfmt_nightly[fc4657baa7d0b5e]::ErrorKind>>
+  10:     0x55bca1ce963f - rustfmt[1ac99ba4bc334168]::format_and_emit_report::<std[baf2b90485fc6078]::io::stdio::Stdout>
+  11:     0x55bca1cfe76b - rustfmt[1ac99ba4bc334168]::execute
+  12:     0x55bca1cf9e62 - rustfmt[1ac99ba4bc334168]::main
+  13:     0x55bca1cf7feb - std[baf2b90485fc6078]::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14:     0x55bca1cf8979 - std[baf2b90485fc6078]::rt::lang_start::<()>::{closure#0}
+  15:     0x7fd91d32e80c - std[baf2b90485fc6078]::rt::lang_start_internal
+  16:     0x55bca1d09068 - main
+  17:     0x7fd91622a1ca - __libc_start_call_main
+                               at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  18:     0x7fd91622a28b - __libc_start_main_impl
+                               at ./csu/../csu/libc-start.c:360:3
+  19:     0x55bca1bcf079 - <unknown>
+  20:                0x0 - <unknown>
+
+
+rustc version: 1.101.0-nightly (1a2c4797e 2026-10-21)
+platform: x86_64-unknown-linux-gnu

@@ -1,5 +1,4 @@
 #![allow(unused)]
-
 // ANCHOR: example
 //! Converting Custom Errors.
 //!

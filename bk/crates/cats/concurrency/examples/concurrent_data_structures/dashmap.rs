@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Demonstrates the use of `DashMap` for concurrent data access and
 //! modification.

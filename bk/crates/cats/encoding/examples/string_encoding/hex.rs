@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Example of encoding and decoding a string using hexadecimal encoding.
 //!

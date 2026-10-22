@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Example of using the `simd-json` crate for parsing and manipulating JSON
 //! data.

@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Add this dependency to your `Cargo.toml`:
 //! ```toml

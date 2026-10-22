@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Example using Facebook's RocksDB embeddable database.
 //!

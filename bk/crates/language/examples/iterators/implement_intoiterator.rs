@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Example of `IntoIterator` implementation.
 //!
@@ -30,7 +29,6 @@ impl<T> MyVec<T> {
 impl<T> IntoIterator for MyVec<T> {
     /// Associated type for the iterator.
     type IntoIter = MyVecIntoIterator<T>;
-
     /// Type of the elements that the iterator will yield.
     type Item = T;
 

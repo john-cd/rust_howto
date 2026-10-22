@@ -22,17 +22,17 @@ struct InnerStruct(i32);
 #[derive(Debug)]
 struct ComplexStruct<'a> {
     /// A primitive.
-    primitive: u32,            // Primitive type.
+    primitive: u32, // Primitive type.
     /// A tuple.
-    tuple_field: (i32, f64),   // Tuple type.
+    tuple_field: (i32, f64), // Tuple type.
     /// An array.
-    array_field: [u8; 3],      // Array type.
+    array_field: [u8; 3], // Array type.
     /// An enum.
-    enum_field: Status,        // Enum type.
+    enum_field: Status, // Enum type.
     /// Another struct.
     struct_field: InnerStruct, // Another struct, here a tuple struct.
     /// A reference.
-    reference_field: &'a str,  // Reference type.
+    reference_field: &'a str, // Reference type.
 }
 
 /// Creates and prints the struct.

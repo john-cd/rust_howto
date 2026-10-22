@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates how to define custom error types using `miette`
 //! and `thiserror`. It showcases various features like error codes, URLs, help

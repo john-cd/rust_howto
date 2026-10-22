@@ -1,0 +1,31 @@
+thread 'main' panicked at /cargo/registry/25cdd57fae9f0462/ignore-0.4.25/src/gitignore.rs:232:9:
+path is expected to be under the root
+stack backtrace:
+   0:     0x7fe641614f35 - <std[baf2b90485fc6078]::backtrace::Backtrace>::create
+   1:     0x7fe641614e85 - <std[baf2b90485fc6078]::backtrace::Backtrace>::force_capture
+   2:     0x7fe6403dcd4a - std[baf2b90485fc6078]::panicking::update_hook::<alloc[80ee00932cf970dc]::boxed::Box<rustc_driver_impl[91988e45e8a0ace]::install_ice_hook::{closure#1}>>::{closure#0}
+   3:     0x7fe64162b152 - std[baf2b90485fc6078]::panicking::panic_with_hook
+   4:     0x7fe641608044 - std[baf2b90485fc6078]::panicking::panic_handler::{closure#0}
+   5:     0x7fe641600689 - std[baf2b90485fc6078]::sys::backtrace::__rust_end_short_backtrace::<std[baf2b90485fc6078]::panicking::panic_handler::{closure#0}, !>
+   6:     0x7fe641609d3d - __rustc[52ede4f89a11bdfe]::rust_begin_unwind
+   7:     0x7fe63dfe411c - core[adca8bfee8c18f77]::panicking::panic_fmt
+   8:     0x55651ea3acde - <rustfmt_nightly[fc4657baa7d0b5e]::ignore_path::IgnorePathSet>::is_match
+   9:     0x55651e9d0cde - <core[adca8bfee8c18f77]::iter::adapters::filter::Filter<alloc[80ee00932cf970dc]::collections::btree::map::IntoIter<rustfmt_nightly[fc4657baa7d0b5e]::config::file_lines::FileName, rustfmt_nightly[fc4657baa7d0b5e]::modules::Module>, rustfmt_nightly[fc4657baa7d0b5e]::formatting::format_project<rustfmt_nightly[fc4657baa7d0b5e]::Session<std[baf2b90485fc6078]::io::stdio::Stdout>>::{closure#1}> as core[adca8bfee8c18f77]::iter::traits::iterator::Iterator>::next
+  10:     0x55651e9b8853 - <scoped_tls[fef592c7275df55e]::ScopedKey<rustc_span[caeeb930fa8e2ce1]::SessionGlobals>>::with::<<rustfmt_nightly[fc4657baa7d0b5e]::Session<std[baf2b90485fc6078]::io::stdio::Stdout>>::format_input_inner::{closure#0}, core[adca8bfee8c18f77]::result::Result<rustfmt_nightly[fc4657baa7d0b5e]::FormatReport, rustfmt_nightly[fc4657baa7d0b5e]::ErrorKind>>
+  11:     0x55651e9b363f - rustfmt[1ac99ba4bc334168]::format_and_emit_report::<std[baf2b90485fc6078]::io::stdio::Stdout>
+  12:     0x55651e9c876b - rustfmt[1ac99ba4bc334168]::execute
+  13:     0x55651e9c3e62 - rustfmt[1ac99ba4bc334168]::main
+  14:     0x55651e9c1feb - std[baf2b90485fc6078]::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15:     0x55651e9c2979 - std[baf2b90485fc6078]::rt::lang_start::<()>::{closure#0}
+  16:     0x7fe642f2e80c - std[baf2b90485fc6078]::rt::lang_start_internal
+  17:     0x55651e9d3068 - main
+  18:     0x7fe63be2a1ca - __libc_start_call_main
+                               at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  19:     0x7fe63be2a28b - __libc_start_main_impl
+                               at ./csu/../csu/libc-start.c:360:3
+  20:     0x55651e899079 - <unknown>
+  21:                0x0 - <unknown>
+
+
+rustc version: 1.101.0-nightly (1a2c4797e 2026-10-21)
+platform: x86_64-unknown-linux-gnu

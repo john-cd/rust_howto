@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Tokenize XML with `xml5ever` and print the parsed tokens.
 //!

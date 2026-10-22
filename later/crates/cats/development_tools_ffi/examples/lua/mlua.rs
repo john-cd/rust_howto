@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! `mlua` provides bindings to Lua programming language for Rust.
 //! By default, `mlua` does not enable any features.

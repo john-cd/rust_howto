@@ -26,11 +26,11 @@ pub struct Worker {
     /// The worker thread.
     thread: Option<thread::JoinHandle<()>>,
     /// Sends the kill signal.
-    s_die: Option<Sender<Die>>,       // Send the kill signal,
+    s_die: Option<Sender<Die>>, // Send the kill signal,
     /// Sends interrupt requests to the running task.
     cancel_source: CancelTokenSource, // Send interrupt to a task,
     /// Sends the tasks to the worker thread.
-    s_task: Sender<Task>,             // Send tasks to the worker thread.
+    s_task: Sender<Task>, // Send tasks to the worker thread.
     /// Receives the progress reports of the tasks.
     r_taskresponse: Receiver<TaskResponse>,
 }

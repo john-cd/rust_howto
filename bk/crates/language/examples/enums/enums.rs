@@ -9,7 +9,7 @@
 #[derive(Debug)]
 enum Message {
     /// A variant without data.
-    Quit,                       // Unit-like variant (no fields).
+    Quit, // Unit-like variant (no fields).
     /// A variant with named fields.
     Move {
         /// Distance to move in the x direction.
@@ -18,7 +18,7 @@ enum Message {
         y: i32,
     }, // Struct-like variant (named fields).
     /// A variant that holds a string.
-    Write(String),              // Tuple-like variant (numbered fields).
+    Write(String), // Tuple-like variant (numbered fields).
     /// A variant that holds three color components.
     ChangeColor(i32, i32, i32), // Another tuple-like variant.
 }

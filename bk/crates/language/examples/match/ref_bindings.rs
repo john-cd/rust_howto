@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Variable binding moves or copies the bound value by default.
 //! Use `ref` or `ref mut` to get a reference instead.

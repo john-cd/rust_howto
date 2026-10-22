@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 #![allow(clippy::async_yields_async)]
-
 // ANCHOR: example
 //! # Futures
 //!

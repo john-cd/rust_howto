@@ -4,7 +4,6 @@
 //! TODO Reviewed ??-??-2026
 
 #![allow(dead_code)]
-
 // ANCHOR: example
 #![allow(unexpected_cfgs)]
 
@@ -51,10 +50,8 @@ struct GreeterState {
 impl ractor::Actor for Greeter {
     // Startup initialization args:
     type Arguments = ();
-
     // Actor's message type:
     type Msg = Greet;
-
     // Optional internal state:
     type State = GreeterState;
 

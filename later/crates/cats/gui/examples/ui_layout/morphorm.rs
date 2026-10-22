@@ -91,13 +91,9 @@ impl<'a> Iterator for ChildIter<'a> {
 
 impl Node for Entity {
     type CacheKey = Entity;
-
     type ChildIter<'t> = ChildIter<'t>;
-
     type Store = SimpleStore;
-
     type SubLayout<'a> = ();
-
     type Tree = SimpleTree;
 
     fn key(&self) -> Self::CacheKey {

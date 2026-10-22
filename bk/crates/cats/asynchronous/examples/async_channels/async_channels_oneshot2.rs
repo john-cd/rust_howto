@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates the use of `tokio::sync::oneshot` channels to
 //! communicate between asynchronous tasks. It simulates downloading a file

@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Example: create a geographic polygon, compute its area, and find its
 //! centroid using the `geo` crate.

@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Example of a function accepting either owned or borrowed values
 //! at its input.

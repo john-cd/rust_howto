@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Sign and verify a message with ECDSA using the P-256 curve.
 //!

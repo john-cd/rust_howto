@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! A slice is a view into a contiguous sequence of elements in a collection.
 //! It does not own the data it points to.

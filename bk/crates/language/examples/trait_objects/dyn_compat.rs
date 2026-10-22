@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 #![allow(unused_variables)]
-
 // ANCHOR: example
 //! Example of (non-)dyn-compatible traits.
 //!

@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates basic interactions with an Ethereum-compatible
 //! blockchain using the `alloy` library.

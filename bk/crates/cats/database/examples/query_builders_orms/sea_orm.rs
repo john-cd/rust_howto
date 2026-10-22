@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Build SeaORM queries from an inline entity definition.
 //!

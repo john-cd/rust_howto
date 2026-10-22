@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates how to use the `globset` crate to match file paths
 //! against a set of glob patterns.

@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 #![cfg(feature = "datafusion")]
-
 // ANCHOR: example
 //! This example demonstrates how to use DataFusion to set up a simple
 //! in-memory table and run a SQL query on it.

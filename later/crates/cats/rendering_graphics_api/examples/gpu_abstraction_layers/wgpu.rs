@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates how to initialize the `wgpu` GPU abstraction layer
 //! without creating a window.

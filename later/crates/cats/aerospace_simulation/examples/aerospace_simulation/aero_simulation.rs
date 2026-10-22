@@ -10,19 +10,19 @@ struct Rocket {
     /// Mass of the rocket without fuel, in kg.
     mass_empty: f64, // kg
     /// Mass of the fuel, in kg.
-    fuel_mass: f64,  // kg
+    fuel_mass: f64, // kg
     /// Thrust of the engine, in N.
-    thrust: f64,     // N
+    thrust: f64, // N
     /// Fuel burn rate, in kg/s.
-    burn_rate: f64,  // kg/s
+    burn_rate: f64, // kg/s
     /// Drag coefficient; dimensionless.
     drag_coeff: f64, // dimensionless
     /// Cross-section area, in m^2.
-    area: f64,       // m^2
+    area: f64, // m^2
     /// Vertical velocity, in m/s.
-    velocity: f64,   // m/s
+    velocity: f64, // m/s
     /// Altitude, in m.
-    altitude: f64,   // m
+    altitude: f64, // m
 }
 
 impl Rocket {

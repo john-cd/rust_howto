@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Demonstrate using a custom type as the key in a `HashMap`.
 //!

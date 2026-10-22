@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Demonstrates the use of `unwrap_or` and `unwrap_or_else` for handling
 //! `Option` and `Result` types.

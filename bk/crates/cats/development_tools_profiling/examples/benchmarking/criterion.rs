@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Run the benchmarks with `cargo bench`:
 //!

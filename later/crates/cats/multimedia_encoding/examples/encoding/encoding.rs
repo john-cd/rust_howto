@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Encode a blank AV1 frame using the `rav1e` crate.
 //!
