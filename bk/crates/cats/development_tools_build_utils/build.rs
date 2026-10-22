@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: C
 //! Build script examples for `development_tools_build_utils`.

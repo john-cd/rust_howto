@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Splitting a string into grapheme clusters.

@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Locating the standard directories of the current user with `dirs`.

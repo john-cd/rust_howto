@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates the usage of `BigInt` for large integer arithmetic.

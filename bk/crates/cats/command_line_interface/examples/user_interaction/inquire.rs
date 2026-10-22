@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! The `inquire` crate is used for creating interactive CLI prompts.

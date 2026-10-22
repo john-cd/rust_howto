@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Implementing `Borrow` for a case-insensitive string type.

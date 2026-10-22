@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Hashing with the `sha2` crate: SHA-256 and SHA-512 digests, encoded as

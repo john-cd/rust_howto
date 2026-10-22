@@ -130,9 +130,9 @@ mod tests {
         // Define the behavior.
         when!(mock_db.get_user).then(|id| {
             (id == 1).then(|| User {
-                    id: 1,
-                    name: "Alice".to_owned(),
-                })
+                id: 1,
+                name: "Alice".to_owned(),
+            })
         });
 
         // Create a service with the mock DB.
@@ -154,8 +154,7 @@ mod tests {
         };
 
         // Configure `get_user` to return our test user.
-        when!(mock_db.get_user)
-            .then(move |id| (id == 1).then(|| user.clone()));
+        when!(mock_db.get_user).then(move |id| (id == 1).then(|| user.clone()));
 
         // Configure `save_user` to always succeed.
         when!(mock_db.save_user).then(|_| true);

@@ -13,7 +13,8 @@ mod crate_name_arg;
 mod info_cmd;
 mod rbe;
 
-use crate_name_arg::{arg_crate_name, get_cmd_arg_crate_name};
+use crate_name_arg::arg_crate_name;
+use crate_name_arg::get_cmd_arg_crate_name;
 
 use super::Cmd;
 use super::Config;

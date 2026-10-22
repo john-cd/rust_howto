@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Enums with unit-like, struct-like and tuple-like variants.
@@ -36,7 +35,9 @@ impl Message {
             ),
             Self::Write(text) => println!("Message: {text}"),
             Self::ChangeColor(r, g, b) => {
-                println!("Change the color to red {r}, green {g}, and blue {b}");
+                println!(
+                    "Change the color to red {r}, green {g}, and blue {b}"
+                );
             }
         }
         // Enums make your code safer, because the compiler knows all the

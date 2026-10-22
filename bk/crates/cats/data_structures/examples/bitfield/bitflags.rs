@@ -1,5 +1,4 @@
 #![allow(unused)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `bitflags` generate types for C-style flags with ergonomic APIs.

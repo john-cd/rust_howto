@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! The `ordered-float` crate provides a wrapper type `OrderedFloat` for

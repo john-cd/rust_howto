@@ -1,12 +1,18 @@
 // TODO Reviewed ??-??-2026
 //! Generates files from templates for the book.
 use anyhow::anyhow;
-use tool_lib::{create_category_badge, create_crate_block, create_rbe_badge, get_info_for_crate};
+use tool_lib::create_category_badge;
+use tool_lib::create_crate_block;
+use tool_lib::create_rbe_badge;
+use tool_lib::get_info_for_crate;
 
 mod cli;
 mod config_cmd;
 
-pub(crate) use config_cmd::{Cmd, CmdArgs, CmdArgs2, Config};
+pub(crate) use config_cmd::Cmd;
+pub(crate) use config_cmd::CmdArgs;
+pub(crate) use config_cmd::CmdArgs2;
+pub(crate) use config_cmd::Config;
 
 /// The main function of the `templ` tool.
 ///

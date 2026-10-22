@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates basic usage of the `nu-ansi-term` crate for colored and styled

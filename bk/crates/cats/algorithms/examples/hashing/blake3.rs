@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Hashing with `blake3`: one-shot, incremental, keyed, key derivation and

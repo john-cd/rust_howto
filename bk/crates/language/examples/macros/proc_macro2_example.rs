@@ -1,5 +1,4 @@
 #![allow(unused)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Rewriting tokens with a procedural macro built on `proc-macro2`.

@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 #![allow(unused_variables)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates a basic HTTP server using the Loco framework.

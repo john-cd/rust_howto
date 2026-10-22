@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 #![allow(unused_imports)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Accessing private items from the same module and its children.

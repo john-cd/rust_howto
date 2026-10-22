@@ -1,7 +1,6 @@
 #![allow(dead_code)]
 #![allow(clippy::bind_instead_of_map)]
 #![allow(clippy::unwrap_or_default)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Combining `Option` values with `map`, `and_then` and other combinators.

@@ -90,7 +90,9 @@ mod tests {
     #[test]
     fn require_external_svc() -> anyhow::Result<()> {
         let _lock = ENV_MUTEX.lock().unwrap();
-        let test_url = if let Ok(val) = std::env::var("TEST_PG_URL") { val } else {
+        let test_url = if let Ok(val) = std::env::var("TEST_PG_URL") {
+            val
+        } else {
             eprintln!(
                 "Skipping Postgres integration test; set TEST_PG_URL to run."
             );

@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 #![allow(unused_variables)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A lifetime parameter on a struct and on its `impl` blocks.

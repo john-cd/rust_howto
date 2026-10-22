@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `Result` is a type that represents either success (`Ok`) or failure (`Err`):

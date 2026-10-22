@@ -1,6 +1,5 @@
 #![cfg(all(feature = "rosrust", not(windows)))] // TODO review Windows support
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example: publish and subscribe to a simple ROS topic using `rosrust`.

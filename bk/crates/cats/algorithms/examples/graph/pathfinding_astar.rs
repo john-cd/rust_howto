@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A* pathfinding on a grid with the `pathfinding` crate.
@@ -21,12 +20,17 @@ fn main() {
 
         fn successors(&self) -> Vec<(Self, u32)> {
             let &Self(x, y) = self;
-            vec![Self(x + 1, y), Self(x - 1, y), Self(x, y + 1), Self(x, y - 1)]
-                .into_iter()
-                .filter(|p| p.0 >= 0 && p.0 <= 4 && p.1 >= 0 && p.1 <= 4)
-                .filter(|p| ![(1, 1), (1, 2), (2, 1)].contains(&(p.0, p.1)))
-                .map(|p| (p, 1))
-                .collect()
+            vec![
+                Self(x + 1, y),
+                Self(x - 1, y),
+                Self(x, y + 1),
+                Self(x, y - 1),
+            ]
+            .into_iter()
+            .filter(|p| p.0 >= 0 && p.0 <= 4 && p.1 >= 0 && p.1 <= 4)
+            .filter(|p| ![(1, 1), (1, 2), (2, 1)].contains(&(p.0, p.1)))
+            .map(|p| (p, 1))
+            .collect()
         }
     }
 
