@@ -5,7 +5,7 @@
 
 ## Lists of Rust Links and Resources {#lists-of-rust-links-and-resources}
 
-TODO
+The resources below cover different learning styles, from structured courses and books to curated collections and hands-on tutorials.
 
 - [Rust Learning][rust-learning~repo]↗: A bunch of links to blog posts, articles, videos, etc. for learning Rust.
 - [Idiomatic Rust][idiomatic-rust~repo]↗: A peer-reviewed collection of articles, talks, repos which teach concise, idiomatic Rust.

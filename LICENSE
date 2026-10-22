@@ -18,11 +18,11 @@ Unless you explicitly state otherwise, any contribution intentionally submitted 
 
 This project incorporates most of the [Rust Cookbook][rust-cookbook~website]↗, licensed under the Creative Commons Zero v1.0 Universal License. Thanks to its many [contributors][rust-cookbook~contributors~website]↗.
 
-This project, by its very nature, includes code examples for hundreds of Rust crates, and uses TODO
+This project, by its very nature, includes code examples for hundreds of Rust crates, distributed under their respective licenses.
 
 The vast majority of these libraries are licensed under the [MIT] and/or [Apache 2.0] licenses.
 
-Copyright and permission notices for Rust crates are found TODO
+Copyright and permission notices for Rust crates are available from each crate's source distribution and repository.
 
 ## Acknowledgments: Rust Foundation
 
@@ -34,7 +34,7 @@ This project operates under a [Code of Conduct][code-of-conduct], in the spirit 
 
 [Apache 2.0]: https://choosealicense.com/licenses/apache-2.0
 [CC0]: https://creativecommons.org/publicdomain/zero/1.0
-[code-of-conduct]: https://github.com/john-cd/rust_howto/blob/main/CODE_OF_CONDUCT.md
+[code-of-conduct]: https://github.com/john-cd/rust_howto/blob/develop/CODE_OF_CONDUCT.md
 [john-cd]: https://github.com/john-cd
 [MIT]: https://choosealicense.com/licenses/mit
 [rust-foundation~website]: https://foundation.rust-lang.org

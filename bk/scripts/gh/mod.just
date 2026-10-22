@@ -42,7 +42,7 @@ create_issues_for_markdown:
       echo ">> $rel"
       for todo in $(sed -nE 's~'"${prefix}"'(.+)$~\1~pg' $file)
       do
-        issue_url=$(gh issue create --title "${rel}: ${todo:-fix}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/main/${rel})" --label "markdown,auto" --assignee "@me")
+        issue_url=$(gh issue create --title "${rel}: ${todo:-fix}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/develop/${rel})" --label "markdown,auto" --assignee "@me")
         echo "$issue_url"
         # Escape [ ] ? ( )
         todo=$( echo "$todo" | sed -E 's~[[]~\\[~g; s~[]]~\\]~g; s~([?()])~\\\1~g' )
@@ -69,7 +69,7 @@ create_issues_for_code:
       do
         todo=$( echo "$todo" | sed -E 's~[[]~\\[~g; s~[]]~\\]~g; s~([?()])~\\\1~g' )
         echo ">${todo}<"
-        issue_url=$(gh issue create --title "${rel}: ${todo:-fix}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/main/${rel})" --label "code example,auto" --assignee "@me")
+        issue_url=$(gh issue create --title "${rel}: ${todo:-fix}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/develop/${rel})" --label "code example,auto" --assignee "@me")
         echo "$issue_url"
         sed -E -i 's~'"${pattern}${todo}"'~['"${todo}"']('"${issue_url}"')~' $file
         sleep 3
@@ -94,7 +94,7 @@ create_issues_for_other:
       do
         todo=$( echo "$todo" | sed -E 's~[[]~\\[~g; s~[]]~\\]~g; s~([?()])~\\\1~g' )
         echo ">${todo}<"
-        issue_url=$(gh issue create --title "${rel}: ${todo:-fix}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/main/${rel})" --label "auto" --assignee "@me")
+        issue_url=$(gh issue create --title "${rel}: ${todo:-fix}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/develop/${rel})" --label "auto" --assignee "@me")
         echo "$issue_url"
         sed -E -i 's~'"${pattern}${todo}"'~['"${todo}"']('"${issue_url}"')~' $file
         sleep 3
@@ -125,8 +125,8 @@ refresh:
           echo "id: ${id}"
           echo "previous title: $existing_title"
           echo "title: ${rel}: ${todo:-fix}"
-          echo "body: [$rel](https://github.com/john-cd/rust_howto/blob/main/${rel})"
-          gh issue edit "${id}" --title "${rel}: ${todo:-fix}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/main/${rel})" --add-assignee "@me" --add-label "auto"
+          echo "body: [$rel](https://github.com/john-cd/rust_howto/blob/develop/${rel})"
+          gh issue edit "${id}" --title "${rel}: ${todo:-fix}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/develop/${rel})" --add-assignee "@me" --add-label "auto"
           sleep 2
         fi
       done

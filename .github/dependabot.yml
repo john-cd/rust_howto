@@ -10,13 +10,18 @@ version: 2
 updates:
   - package-ecosystem: "cargo" # See documentation for possible values
     directories:
-      - "/bk"
+      - "/bk/crates"
+      - "/later/crates"
       - "/playground"
       - "/publish"
       - "/tools"
       - "/xmpl"
     schedule:
       interval: "monthly"
+    groups:
+      cargo-dependencies:
+        patterns:
+          - "*"
     # Dependabot will update public Dev Container Features in `devcontainer.json`,
     # keeping them up-to-date with the latest published versions.
     # https://containers.dev/guide/dependabot

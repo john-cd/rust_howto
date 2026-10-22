@@ -82,6 +82,15 @@ jobs:
     steps:
       - name: Code checkout
         uses: actions/checkout@v7
+      - name: Reject repository links to the empty main branch
+        shell: bash
+        run: |
+          if grep -nRE 'https://github\.com/john-cd/rust_howto/(blob|tree|edit)/main' README.md LICENSE bk; then
+            echo 'Repository links must target develop, not the empty main branch.' >&2
+            exit 1
+          fi
+      - name: Reject visible TODO placeholders
+        run: python bk/scripts/check_visible_todos.py
       - name: Set build cache scope
         run: echo "GHA_CACHE_SCOPE=rust-howto-${{ runner.os }}-${{ hashFiles('.devcontainer/.env', 'bk/crates/Cargo.lock', 'tools/Cargo.lock') }}" >> "$GITHUB_ENV"
       - name: Set up Docker Buildx
@@ -101,7 +110,7 @@ jobs:
     steps:
       ## https://github.com/marketplace/actions/free-disk-space-ubuntu
       - name: Free Disk Space (Ubuntu)
-        uses: jlumbroso/free-disk-space@main
+        uses: jlumbroso/free-disk-space@v1.3.1
         with:
           # this might remove tools that are actually needed,
           # if set to "true" but frees about 6 GB

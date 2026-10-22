@@ -33,5 +33,5 @@ Please refer to the LICENSE file.
 [c~mdbook-utils~user-guide]: https://john-cd.github.io/mdbook-utils
 [rust-howto~website]: https://john-cd.com/rust_howto
 [rust-howto~contributing~website]: https://john-cd.com/rust_howto/appendices/contributing/index.html
-[rust-howto~tools~repo]: https://github.com/john-cd/rust_howto/tree/main/tools
+[rust-howto~tools~repo]: https://github.com/john-cd/rust_howto/tree/develop/tools
 [rust-howto~repo]: https://github.com/john-cd/rust_howto
