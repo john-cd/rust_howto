@@ -36,7 +36,10 @@ fn init_logger() {
     env_logger::Builder::new()
         .filter_level(log::LevelFilter::Off)
         .parse_env("MY_APP_LOG")
-        .init();
+        // Example runners may invoke `main` more than once in one process.
+        // Keep the first logger instead of panicking on later calls.
+        .try_init()
+        .ok();
 
     // Alternatively, `Env` lets us tweak which environment variables to read
     // and what the default value is if they're missing.
