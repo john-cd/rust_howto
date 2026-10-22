@@ -2,13 +2,13 @@
 #![allow(clippy::vec_init_then_push)]
 #![allow(clippy::useless_vec)]
 #![allow(clippy::unnecessary_fold)]
-
 // ANCHOR: example
 //! This example demonstrates vector creation, manipulation, iteration, and
 //! slices in Rust.
 //!
 //! TODO Reviewed ??-??-2026
 
+/// Runs the vector creation, manipulation, iteration, and slice demonstrations.
 fn main() {
     demonstrate_creation();
     demonstrate_manipulation();
@@ -16,8 +16,8 @@ fn main() {
     demonstrate_slices();
 }
 
-/// Demonstrates creating vectors using macros, `Vec::new()`, and
-/// `Vec::with_capacity()`.
+/// Demonstrates vector creation with macros, constructors, capacity, and
+/// repeated values.
 fn demonstrate_creation() {
     // Vectors are resizable arrays.
 
@@ -42,7 +42,8 @@ fn demonstrate_creation() {
     let _zeroes: Vec<u8> = vec![0u8; 10];
 }
 
-/// Demonstrates modifying, indexing, searching, and sorting vector elements.
+/// Demonstrates reading, mutating, extending, searching, and sorting vector
+/// elements.
 fn demonstrate_manipulation() {
     let mut numbers = vec![1, 2, 3];
 
@@ -77,8 +78,8 @@ fn demonstrate_manipulation() {
     println!("Sorted numbers: {sorted_numbers:?}");
 }
 
-/// Demonstrates vector iteration techniques including loops, mapping,
-/// filtering, and functional combinators.
+/// Demonstrates traversal, mutation, filtering, mapping, aggregation,
+/// enumeration, and zipping.
 fn demonstrate_iteration() {
     let numbers = vec![1, 2, 3, 4, 5, 6];
     let mut zeroes: Vec<u8> = vec![0u8; 10];
@@ -136,8 +137,8 @@ fn demonstrate_iteration() {
     }
 }
 
-/// Demonstrates borrowing slices from vectors, slice coercion, and slice
-/// mutation.
+/// Demonstrates borrowing, coercing, iterating over, and mutating vector
+/// slices.
 fn demonstrate_slices() {
     let numbers = vec![1, 2, 3, 4, 5];
 
@@ -150,6 +151,7 @@ fn demonstrate_slices() {
 
     // In Rust, it's common to use slices, rather than vectors, as
     // arguments, when we just want to provide read access:
+    /// Prints each value in an integer slice.
     fn read_vec(v: &[i32]) {
         println!("Inside read_vec: {v:?}");
     }
@@ -174,6 +176,7 @@ fn demonstrate_slices() {
 }
 // ANCHOR_END: example
 
+/// Runs the vector example demonstration.
 pub fn run() {
     main();
 }
@@ -182,6 +185,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Tests the vector demonstration functions.
     #[test]
     fn test_main() {
         main();
