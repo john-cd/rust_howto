@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Placeholder for a robotics example with `openrr`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // // COMING SOON
 // ANCHOR_END: example
@@ -150,6 +154,7 @@
 //     }
 // }
 
+/// Does nothing yet.
 fn main() {}
 
 /// Runs the example.
