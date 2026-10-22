@@ -29,6 +29,7 @@ fn main() -> Result<(), std::io::Error> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), std::io::Error> {
     main()
 }

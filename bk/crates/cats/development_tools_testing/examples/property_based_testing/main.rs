@@ -5,20 +5,26 @@ use clap::Subcommand;
 mod fake;
 mod proptest;
 
+/// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `fake` example.
     #[command(name = "fake")]
     Fake,
+    /// Runs the `proptest` example.
     #[command(name = "proptest")]
     Proptest,
 }
 
+/// Runs the example selected on the command line.
 fn main() {
     let cli = Cli::parse();
 

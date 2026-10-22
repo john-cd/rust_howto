@@ -13,30 +13,38 @@ mod seaography;
 #[cfg(feature = "sqlx")]
 mod sqlx;
 
+/// Command-line arguments.
 #[cfg(any(feature = "diesel", feature = "sea_orm", feature = "sqlx"))]
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[cfg(any(feature = "diesel", feature = "sea_orm", feature = "sqlx"))]
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `diesel1` example.
     #[cfg(feature = "diesel")]
     #[command(name = "diesel1")]
     Diesel1,
+    /// Runs the `sea_orm` example.
     #[cfg(feature = "sea_orm")]
     #[command(name = "sea_orm")]
     SeaOrm,
+    /// Runs the `seaography` example.
     #[cfg(feature = "sea_orm")]
     #[command(name = "seaography")]
     Seaography,
+    /// Runs the `sqlx` example.
     #[cfg(feature = "sqlx")]
     #[command(name = "sqlx")]
     Sqlx,
 }
 
+/// Runs the example selected on the command line.
 fn main() -> anyhow::Result<()> {
     #[cfg(any(feature = "diesel", feature = "sea_orm", feature = "sqlx"))]
     {

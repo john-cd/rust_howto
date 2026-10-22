@@ -61,6 +61,7 @@ fn calculate_hash<T: Hash>(t: &T) -> u64 {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

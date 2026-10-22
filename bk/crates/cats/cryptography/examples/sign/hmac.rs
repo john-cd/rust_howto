@@ -36,6 +36,7 @@ fn main() -> Result<(), Unspecified> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Unspecified> {
     main()
 }

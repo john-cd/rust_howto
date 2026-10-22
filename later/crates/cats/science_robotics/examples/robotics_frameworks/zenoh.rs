@@ -75,6 +75,7 @@ fn ze(e: impl std::fmt::Display) -> anyhow::Error {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

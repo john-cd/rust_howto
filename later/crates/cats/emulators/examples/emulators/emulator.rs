@@ -138,6 +138,7 @@ fn _guest_contract(_path: &Path) -> ExampleResult<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> ExampleResult<()> {
     main()
 }

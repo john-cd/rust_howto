@@ -102,6 +102,7 @@ fn main() {
 // Example adapted from <https://docs.rs/glommio/latest/glommio/>
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

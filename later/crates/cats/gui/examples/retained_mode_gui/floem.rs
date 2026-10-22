@@ -19,6 +19,7 @@ fn counter_view() -> impl IntoView {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

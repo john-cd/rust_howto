@@ -8,26 +8,35 @@ mod percent_encode;
 mod percent_encoding;
 mod url_encode;
 
+/// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `base64` example.
     #[command(name = "base64")]
     Base64,
+    /// Runs the `hex` example.
     #[command(name = "hex")]
     Hex,
+    /// Runs the `percent_encode` example.
     #[command(name = "percent_encode")]
     PercentEncode,
+    /// Runs the `percent_encoding` example.
     #[command(name = "percent_encoding")]
     PercentEncoding,
+    /// Runs the `url_encode` example.
     #[command(name = "url_encode")]
     UrlEncode,
 }
 
+/// Runs the example selected on the command line.
 fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 

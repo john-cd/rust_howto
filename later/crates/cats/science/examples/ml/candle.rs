@@ -116,6 +116,7 @@
 
 fn main() {}
 
+/// Runs the example.
 pub fn run() {
     main();
 }

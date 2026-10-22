@@ -53,6 +53,7 @@ fn main() -> tantivy::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> tantivy::Result<()> {
     main()
 }

@@ -2,6 +2,7 @@
 #![allow(dead_code)]
 #![allow(clippy::eq_op)]
 
+/// Runs the example.
 pub fn run() {
     main();
 }

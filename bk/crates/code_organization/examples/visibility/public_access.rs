@@ -54,6 +54,7 @@ mod another_module {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

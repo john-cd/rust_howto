@@ -15,31 +15,40 @@ mod vizia;
 #[cfg(feature = "xilem")]
 mod xilem;
 
+/// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `floem` example.
     #[cfg(feature = "floem")]
     #[command(name = "floem")]
     Floem,
+    /// Runs the `iced` example.
     #[cfg(feature = "iced")]
     #[command(name = "iced")]
     Iced,
+    /// Runs the `slint` example.
     #[cfg(feature = "slint")]
     #[command(name = "slint")]
     Slint,
+    /// Runs the `vizia` example.
     #[cfg(feature = "vizia")]
     #[command(name = "vizia")]
     Vizia,
+    /// Runs the `xilem` example.
     #[cfg(feature = "xilem")]
     #[command(name = "xilem")]
     Xilem,
 }
 
+/// Runs the example selected on the command line.
 fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 

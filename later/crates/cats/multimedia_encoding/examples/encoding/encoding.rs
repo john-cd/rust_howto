@@ -37,6 +37,7 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()
 }

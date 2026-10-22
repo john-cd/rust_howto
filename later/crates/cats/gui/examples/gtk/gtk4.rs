@@ -84,6 +84,7 @@ fn update_conditional_label(label: &Label, value: i32) {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

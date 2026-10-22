@@ -51,6 +51,7 @@ fn main() -> zip::result::ZipResult<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> zip::result::ZipResult<()> {
     main()
 }

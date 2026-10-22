@@ -10,30 +10,41 @@ mod visibility_external_code;
 mod visibility_pub_crate;
 mod visibility_scope;
 
+/// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `private_access` example.
     #[command(name = "private_access")]
     PrivateAccess,
+    /// Runs the `pub_keyword` example.
     #[command(name = "pub_keyword")]
     PubKeyword,
+    /// Runs the `public_access` example.
     #[command(name = "public_access")]
     PublicAccess,
+    /// Runs the `public_by_default` example.
     #[command(name = "public_by_default")]
     PublicByDefault,
+    /// Runs the `visibility_external_code` example.
     #[command(name = "visibility_external_code")]
     VisibilityExternalCode,
+    /// Runs the `visibility_pub_crate` example.
     #[command(name = "visibility_pub_crate")]
     VisibilityPubCrate,
+    /// Runs the `visibility_scope` example.
     #[command(name = "visibility_scope")]
     VisibilityScope,
 }
 
+/// Runs the example selected on the command line.
 fn main() {
     let cli = Cli::parse();
 

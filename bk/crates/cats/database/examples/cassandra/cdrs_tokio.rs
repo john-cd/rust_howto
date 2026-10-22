@@ -133,6 +133,7 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub async fn run() -> anyhow::Result<()> {
     example().await
 }

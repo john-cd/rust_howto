@@ -119,6 +119,7 @@ fn transfer_amount(
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -31,6 +31,7 @@ async fn main() -> reqwest::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> reqwest::Result<()> {
     main()
 }

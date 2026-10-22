@@ -34,6 +34,7 @@ fn main() -> Result<(), confy::ConfyError> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), confy::ConfyError> {
     main()
 }

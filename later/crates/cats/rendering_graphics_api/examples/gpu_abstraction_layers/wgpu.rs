@@ -89,6 +89,7 @@ fn noop_waker() -> Waker {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

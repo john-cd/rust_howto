@@ -16,42 +16,59 @@ mod proc_macro_derive;
 mod proc_macro_function;
 mod token_tree;
 
+/// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `macro_by_example_basic` example.
     #[command(name = "macro_by_example_basic")]
     MacroByExampleBasic,
+    /// Runs the `macro_by_example_dsl` example.
     #[command(name = "macro_by_example_dsl")]
     MacroByExampleDsl,
+    /// Runs the `macro_by_example_hygiene` example.
     #[command(name = "macro_by_example_hygiene")]
     MacroByExampleHygiene,
+    /// Runs the `macro_by_example_metavariables` example.
     #[command(name = "macro_by_example_metavariables")]
     MacroByExampleMetavariables,
+    /// Runs the `macro_by_example_repetitions` example.
     #[command(name = "macro_by_example_repetitions")]
     MacroByExampleRepetitions,
+    /// Runs the `macro_by_example_type_checking` example.
     #[command(name = "macro_by_example_type_checking")]
     MacroByExampleTypeChecking,
+    /// Runs the `macro_by_example_type_checking2` example.
     #[command(name = "macro_by_example_type_checking2")]
     MacroByExampleTypeChecking2,
+    /// Runs the `macros` example.
     #[command(name = "macros")]
     Macros,
+    /// Runs the `proc_macro2_example` example.
     #[command(name = "proc_macro2_example")]
     ProcMacro2Example,
+    /// Runs the `proc_macro_attribute` example.
     #[command(name = "proc_macro_attribute")]
     ProcMacroAttribute,
+    /// Runs the `proc_macro_derive` example.
     #[command(name = "proc_macro_derive")]
     ProcMacroDerive,
+    /// Runs the `proc_macro_function` example.
     #[command(name = "proc_macro_function")]
     ProcMacroFunction,
+    /// Runs the `token_tree` example.
     #[command(name = "token_tree")]
     TokenTree,
 }
 
+/// Runs the example selected on the command line.
 fn main() {
     let cli = Cli::parse();
 

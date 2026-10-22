@@ -16,42 +16,59 @@ mod thiserror2;
 mod unwrap;
 mod unwrap_or_else;
 
+/// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `anyhow` example.
     #[command(name = "anyhow")]
     Anyhow,
+    /// Runs the `backtrace` example.
     #[command(name = "backtrace")]
     Backtrace,
+    /// Runs the `color_eyre` example.
     #[command(name = "color_eyre")]
     ColorEyre,
+    /// Runs the `error_handling` example.
     #[command(name = "error_handling")]
     ErrorHandling,
+    /// Runs the `miette` example.
     #[command(name = "miette")]
     Miette,
+    /// Runs the `panic` example.
     #[command(name = "panic")]
     Panic,
+    /// Runs the `question_mark` example.
     #[command(name = "question_mark")]
     QuestionMark,
+    /// Runs the `question_mark2` example.
     #[command(name = "question_mark2")]
     QuestionMark2,
+    /// Runs the `retain` example.
     #[command(name = "retain")]
     Retain,
+    /// Runs the `thiserror` example.
     #[command(name = "thiserror")]
     Thiserror,
+    /// Runs the `thiserror2` example.
     #[command(name = "thiserror2")]
     Thiserror2,
+    /// Runs the `unwrap` example.
     #[command(name = "unwrap")]
     Unwrap,
+    /// Runs the `unwrap_or_else` example.
     #[command(name = "unwrap_or_else")]
     UnwrapOrElse,
 }
 
+/// Runs the example selected on the command line.
 fn main() -> ::anyhow::Result<()> {
     let cli = Cli::parse();
 

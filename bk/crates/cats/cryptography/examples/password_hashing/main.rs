@@ -7,24 +7,32 @@ mod bcrypt;
 mod pbkdf2;
 mod scrypt;
 
+/// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `argon2` example.
     #[command(name = "argon2")]
     Argon2,
+    /// Runs the `bcrypt` example.
     #[command(name = "bcrypt")]
     Bcrypt,
+    /// Runs the `pbkdf2` example.
     #[command(name = "pbkdf2")]
     Pbkdf2,
+    /// Runs the `scrypt` example.
     #[command(name = "scrypt")]
     Scrypt,
 }
 
+/// Runs the example selected on the command line.
 fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 

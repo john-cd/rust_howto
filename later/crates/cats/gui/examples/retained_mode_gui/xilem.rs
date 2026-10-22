@@ -36,6 +36,7 @@ pub fn main() -> Result<(), xilem::winit::error::EventLoopError> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), xilem::winit::error::EventLoopError> {
     main()
 }

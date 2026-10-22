@@ -48,6 +48,7 @@ pub extern "C" fn create_point(x: f64, y: f64) -> Point {
 fn main() {}
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

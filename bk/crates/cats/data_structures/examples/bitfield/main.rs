@@ -7,24 +7,32 @@ mod bitvec;
 mod flagset;
 mod roaring;
 
+/// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `bitflags` example.
     #[command(name = "bitflags")]
     Bitflags,
+    /// Runs the `bitvec` example.
     #[command(name = "bitvec")]
     Bitvec,
+    /// Runs the `flagset` example.
     #[command(name = "flagset")]
     Flagset,
+    /// Runs the `roaring` example.
     #[command(name = "roaring")]
     Roaring,
 }
 
+/// Runs the example selected on the command line.
 fn main() {
     let cli = Cli::parse();
 

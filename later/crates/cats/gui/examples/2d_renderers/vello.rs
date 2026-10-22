@@ -169,6 +169,7 @@ fn build_scene() -> vello::Scene {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

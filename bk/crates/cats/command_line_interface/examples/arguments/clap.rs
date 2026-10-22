@@ -17,6 +17,7 @@ use clap::Subcommand;
 
 // The struct declaring the desired command-line arguments and commands:
 // The `derive` feature flag is required (see `Cargo.toml`).
+/// Command-line arguments.
 #[derive(Parser, Debug)]
 // Reads the following attributes from the package's `Cargo.toml`
 // Alternatively, use `#[command(name = "MyApp")]`, etc...
@@ -54,6 +55,7 @@ pub struct Cli {
     // verbose: clap_verbosity_flag::Verbosity,
 
     // Subcommands:
+    /// The example to run.
     #[command(subcommand)]
     pub command: Option<Commands>,
 }
@@ -75,6 +77,7 @@ pub enum Commands {
     Tell,
 }
 
+/// Runs the example selected on the command line.
 fn main() -> Result<()> {
     // `Clap` returns a Cli struct populated from `std::env::args_os()`...
     let cli = Cli::try_parse()?;
@@ -121,6 +124,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

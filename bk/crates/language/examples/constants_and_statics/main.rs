@@ -6,22 +6,29 @@ mod constants;
 mod static_mut;
 mod statics;
 
+/// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `constants` example.
     #[command(name = "constants")]
     Constants,
+    /// Runs the `static_mut` example.
     #[command(name = "static_mut")]
     StaticMut,
+    /// Runs the `statics` example.
     #[command(name = "statics")]
     Statics,
 }
 
+/// Runs the example selected on the command line.
 fn main() {
     let cli = Cli::parse();
 

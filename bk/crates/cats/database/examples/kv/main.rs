@@ -9,24 +9,30 @@ mod heed;
 #[cfg(feature = "rocksdb")]
 mod rocksdb;
 
+/// Command-line arguments.
 #[cfg(any(feature = "lmdb", feature = "rocksdb"))]
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[cfg(any(feature = "lmdb", feature = "rocksdb"))]
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `heed` example.
     #[cfg(feature = "lmdb")]
     #[command(name = "heed")]
     Heed,
+    /// Runs the `rocksdb` example.
     #[cfg(feature = "rocksdb")]
     #[command(name = "rocksdb")]
     Rocksdb,
 }
 
+/// Runs the example selected on the command line.
 fn main() -> anyhow::Result<()> {
     #[cfg(any(feature = "lmdb", feature = "rocksdb"))]
     {

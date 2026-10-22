@@ -73,6 +73,7 @@ fn perform_global_logging() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

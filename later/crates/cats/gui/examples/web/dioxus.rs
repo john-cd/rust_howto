@@ -25,6 +25,7 @@ fn App() -> Element {
     }
 }
 
+/// Runs the example.
 pub fn run() {
     main();
 }

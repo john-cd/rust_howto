@@ -34,6 +34,7 @@ fn main() -> anyhow::Result<(), ::config::ConfigError> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main().unwrap();
 }

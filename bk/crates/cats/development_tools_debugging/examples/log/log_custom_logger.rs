@@ -44,6 +44,7 @@ fn main() -> Result<(), SetLoggerError> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), SetLoggerError> {
     main()
 }

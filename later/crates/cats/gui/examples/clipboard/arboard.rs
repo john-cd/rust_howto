@@ -27,6 +27,7 @@ fn main() {
 // You may also use:  get/set_html/image...
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -49,6 +49,7 @@ fn strip_prefix_path(path: &Path, prefix: &Path) -> Option<PathBuf> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

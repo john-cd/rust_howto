@@ -9,22 +9,28 @@ mod gtk4;
 #[cfg(all(feature = "gtk", not(target_os = "windows")))]
 mod relm4;
 
+/// Command-line arguments.
 #[cfg(all(feature = "gtk", not(target_os = "windows")))]
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[cfg(all(feature = "gtk", not(target_os = "windows")))]
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `gtk4` example.
     #[command(name = "gtk4")]
     Gtk4,
+    /// Runs the `relm4` example.
     #[command(name = "relm4")]
     Relm4,
 }
 
+/// Runs the example selected on the command line.
 fn main() {
     #[cfg(all(feature = "gtk", not(target_os = "windows")))]
     {

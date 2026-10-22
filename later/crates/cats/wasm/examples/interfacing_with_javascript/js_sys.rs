@@ -16,6 +16,7 @@ pub fn get_current_time() -> String {
 fn main() {} // TODO
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

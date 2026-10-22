@@ -9,24 +9,30 @@ mod meilisearch;
 #[cfg(feature = "tantivy")]
 mod tantivy;
 
+/// Command-line arguments.
 #[cfg(any(feature = "meilisearch", feature = "tantivy"))]
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[cfg(any(feature = "meilisearch", feature = "tantivy"))]
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `meilisearch` example.
     #[cfg(feature = "meilisearch")]
     #[command(name = "meilisearch")]
     Meilisearch,
+    /// Runs the `tantivy` example.
     #[cfg(feature = "tantivy")]
     #[command(name = "tantivy")]
     Tantivy,
 }
 
+/// Runs the example selected on the command line.
 fn main() -> anyhow::Result<()> {
     #[cfg(any(feature = "meilisearch", feature = "tantivy"))]
     {

@@ -58,6 +58,7 @@ fn render_greeting(language: &str, region: &str) -> &'static str {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()
 }

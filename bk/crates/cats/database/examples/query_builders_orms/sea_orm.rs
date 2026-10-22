@@ -55,6 +55,7 @@ fn main() -> Result<(), DbErr> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), DbErr> {
     main()
 }

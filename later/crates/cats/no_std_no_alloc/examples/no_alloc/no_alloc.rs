@@ -57,6 +57,7 @@ impl Write for ArrayString {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -24,6 +24,7 @@ fn main() -> Result<(), NormalError> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), NormalError> {
     main()
 }

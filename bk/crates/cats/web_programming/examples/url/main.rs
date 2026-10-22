@@ -9,28 +9,38 @@ mod origin;
 mod origin1;
 mod parse;
 
+/// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `base` example.
     #[command(name = "base")]
     Base,
+    /// Runs the `fragment` example.
     #[command(name = "fragment")]
     Fragment,
+    /// Runs the `new` example.
     #[command(name = "new")]
     New,
+    /// Runs the `origin` example.
     #[command(name = "origin")]
     Origin,
+    /// Runs the `origin1` example.
     #[command(name = "origin1")]
     Origin1,
+    /// Runs the `parse` example.
     #[command(name = "parse")]
     Parse,
 }
 
+/// Runs the example selected on the command line.
 fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 

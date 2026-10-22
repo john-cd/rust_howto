@@ -9,22 +9,29 @@ mod tar_compress;
 mod tar_decompress;
 mod tar_strip_prefix;
 
+/// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `tar_compress` example.
     #[command(name = "tar_compress")]
     Compress,
+    /// Runs the `tar_decompress` example.
     #[command(name = "tar_decompress")]
     Decompress,
+    /// Runs the `tar_strip_prefix` example.
     #[command(name = "tar_strip_prefix")]
     StripPrefix,
 }
 
+/// Runs the example selected on the command line.
 fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 

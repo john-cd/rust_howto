@@ -23,6 +23,7 @@
 
 fn main() {} // TODO: Add an example of using the generated code from Seaography to interact with the database.
 
+/// Runs the example.
 pub fn run() {
     main();
 }

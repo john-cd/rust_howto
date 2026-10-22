@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026
 #![allow(dead_code)]
 
+/// Runs the example.
 pub fn run() {
     main();
 }

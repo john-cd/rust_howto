@@ -9,24 +9,30 @@ mod cassandra_protocol;
 #[cfg(feature = "cassandra")]
 mod cdrs_tokio;
 
+/// Command-line arguments.
 #[cfg(feature = "cassandra")]
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[cfg(feature = "cassandra")]
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `cassandra_protocol` example.
     #[cfg(feature = "cassandra")]
     #[command(name = "cassandra_protocol")]
     CassandraProtocol,
+    /// Runs the `cdrs_tokio` example.
     #[cfg(feature = "cassandra")]
     #[command(name = "cdrs_tokio")]
     CdrsTokio,
 }
 
+/// Runs the example selected on the command line.
 fn main() -> anyhow::Result<()> {
     run()
 }

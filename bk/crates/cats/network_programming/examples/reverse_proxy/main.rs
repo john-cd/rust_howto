@@ -6,21 +6,27 @@ mod ngrok;
 #[cfg(target_family = "unix")]
 mod pingora;
 
+/// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `ngrok` example.
     #[command(name = "ngrok")]
     Ngrok,
+    /// Runs the `pingora` example.
     #[cfg(target_family = "unix")]
     #[command(name = "pingora")]
     Pingora,
 }
 
+/// Runs the example selected on the command line.
 fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
