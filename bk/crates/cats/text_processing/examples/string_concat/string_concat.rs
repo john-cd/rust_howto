@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Different ways to concatenate strings.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Concatenates with the `+` operator.
 fn concatenate_with_plus() {
     let a = String::from("hello");
     let b = " ";
@@ -10,6 +15,7 @@ fn concatenate_with_plus() {
     println!("{result}");
 }
 
+/// Concatenates with the `format!` macro.
 fn concatenate_with_format() {
     let a = String::from("hello");
     let b = String::from("world");
@@ -17,6 +23,7 @@ fn concatenate_with_format() {
     println!("{result}");
 }
 
+/// Concatenates with `String::push_str`.
 fn concatenate_with_push_str() {
     let mut a = String::from("hello");
     let b = " ";
@@ -26,17 +33,20 @@ fn concatenate_with_push_str() {
     println!("{a}");
 }
 
+/// Concatenates with `join`.
 fn concatenate_with_join() {
     let words = ["hello", "world"];
     let result: String = words.join(" ");
     println!("{result}");
 }
 
+/// Concatenates literals with the `concat!` macro.
 fn concatenate_with_concat_macro() {
     let result: &str = concat!("hello", " ", "world");
     println!("{result}");
 }
 
+/// Concatenates with `concat`.
 fn concatenate_with_concat() {
     let result: String = ["hello", " ", "world"].concat();
     println!("{result}");
@@ -47,10 +57,12 @@ use concat_string::concat_string;
 // The `concat_string!` macro concatenates string slices into owned strings.
 // concat_string! accepts any number of arguments that implement AsRef<str>
 // and creates a String with the appropriate capacity.
+/// Concatenates with the `concat_string!` macro.
 fn concatenate_with_concat_string() {
     println!("{}", concat_string!("Hello", String::from(" "), "world"));
 }
 
+/// Concatenates with `String::push`.
 fn concatenate_with_push() {
     let mut a = String::from("hello");
     let b = ' ';
@@ -61,6 +73,7 @@ fn concatenate_with_push() {
     println!("{a}");
 }
 
+/// Concatenates with `String::extend`.
 #[allow(clippy::string_extend_chars)]
 fn concatenate_with_extend() {
     let mut a = String::from("hello");
@@ -69,12 +82,14 @@ fn concatenate_with_extend() {
     println!("{a}");
 }
 
+/// Concatenates with `collect` on an iterator of strings.
 fn concatenate_with_collect() {
     let words = ["hello", " ", "world"];
     let result: String = words.into_iter().collect();
     println!("{result}");
 }
 
+/// Concatenates with `collect` on an iterator of string slices.
 fn concatenate_with_collect_iter() {
     let words = ["hello", " world"];
     let result: String = words.iter().copied().collect();
@@ -83,6 +98,7 @@ fn concatenate_with_collect_iter() {
 
 use joinery::JoinableIterator;
 
+/// Concatenates with the `joinery` crate.
 fn concatenate_with_joinery() {
     let words = ["hello", "world"];
 
@@ -94,6 +110,7 @@ fn concatenate_with_joinery() {
 
 use std::fmt::Write;
 
+/// Concatenates with the `write!` macro.
 fn concatenate_with_write_macro() {
     let part1 = "hello";
     let part2 = " world";
@@ -102,6 +119,7 @@ fn concatenate_with_write_macro() {
     println!("{result}");
 }
 
+/// Concatenates with `chain` on character iterators.
 fn concatenate_with_chain() {
     let part1 = "hello";
     let part2 = " world";
@@ -109,6 +127,7 @@ fn concatenate_with_chain() {
     println!("{result}");
 }
 
+/// Runs each of the concatenation examples.
 fn main() {
     concatenate_with_plus();
     concatenate_with_format();

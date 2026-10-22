@@ -1,10 +1,16 @@
-// TODO Reviewed ??-??-2026
+//! Searching a text for several patterns at once with the Aho-Corasick
+//! algorithm.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::collections::HashMap;
 
 use aho_corasick::AhoCorasick;
 
+/// Searches a text for several patterns at once.
 fn main() -> anyhow::Result<()> {
     // Search for occurrences of multiple patterns simultaneously.
     let patterns = &["apple", "banana", "orange"];

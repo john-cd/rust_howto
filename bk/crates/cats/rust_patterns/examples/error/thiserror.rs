@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Defining an error type with `thiserror`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // Import the `Error` derive macro from the `thiserror` crate.
 use thiserror::Error;
@@ -11,26 +15,34 @@ use thiserror::Error;
 pub enum DataStoreError {
     // A `Display` impl is generated for your error if we provide
     // #[error("...")] messages on the struct or each variant of your enum.
+    /// The data store disconnected.
     #[error("data store disconnected")]
     Disconnect(#[from] std::io::Error), /* A `From` impl is generated for
                                          * each variant containing
                                          * a #[from] attribute. */
 
+    /// The data for a key is not available.
     #[error("the data for key `{0}` is not available")]
     Redaction(String),
 
+    /// A header does not have the expected content.
+    /// The expected header.
     #[error("invalid header (expected {expected:?}, found {found:?})")]
     InvalidHeader { expected: String, found: String },
+/// The header that was found.
 
+    /// Any other error of the data store.
     #[error("unknown data store error")]
     Unknown,
 
+    /// Another error, forwarded as is.
     #[error(transparent)]
     // Forward the source and Display methods straight through to an
     // underlying error without adding an additional message.
     Other(#[from] anyhow::Error),
 }
 
+/// Returns an error of type `DataStoreError`.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // For demonstration purposes, return an error of type
     // `DataStoreError::Unknown`.
@@ -49,6 +61,7 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
 mod tests {
     use super::*;
 
+    /// Checks that the example returns an error.
     #[test]
     fn test_main() {
         let res = main();

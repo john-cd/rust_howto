@@ -1,12 +1,20 @@
-// TODO Reviewed ??-??-2026
+//! Parsing a color from a string by implementing `FromStr`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::str::FromStr;
 
+/// A color in RGB form.
 #[derive(Debug, PartialEq)]
 struct Rgb {
+    /// The red component.
     r: u8,
+    /// The green component.
     g: u8,
+    /// The blue component.
     b: u8,
 }
 
@@ -26,6 +34,7 @@ impl FromStr for Rgb {
     }
 }
 
+/// Parses a hexadecimal color code.
 fn main() {
     let code: &str = r"#fa7268";
     match Rgb::from_str(code) {

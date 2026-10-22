@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Type-level numbers with `typenum`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::marker::PhantomData;
 
@@ -15,11 +19,14 @@ use typenum::Unsigned;
 /// The size `N` is a type-level unsigned integer from `typenum`, so
 /// mismatched sizes are caught at compile time rather than at runtime.
 struct FixedBuffer<T, N: Unsigned> {
+    /// The elements of the buffer.
     data: Vec<T>,
+    /// Marker that carries the size `N` in the type.
     _size: PhantomData<N>,
 }
 
 impl<T: Default + Clone, N: Unsigned> FixedBuffer<T, N> {
+    /// Creates a buffer of `N` default elements.
     fn new() -> Self {
         FixedBuffer {
             data: vec![T::default(); N::USIZE],
@@ -27,11 +34,13 @@ impl<T: Default + Clone, N: Unsigned> FixedBuffer<T, N> {
         }
     }
 
+    /// Returns the capacity of the buffer, which is `N`.
     fn capacity(&self) -> usize {
         N::USIZE
     }
 }
 
+/// Computes with type-level numbers and creates a fixed-size buffer.
 fn main() {
     // `typenum` provides type-level numbers evaluated at compile time.
     // U2 and U3 are type aliases for the compile-time unsigned integers 2 and

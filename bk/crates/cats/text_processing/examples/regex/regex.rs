@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Extracting links from Markdown with several regular expressions.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::collections::BTreeMap;
 
@@ -102,6 +106,7 @@ fn search_with_all_regexes(contents: &str) {
     }
 }
 
+/// Extracts the inline links of a sample Markdown text.
 fn main() {
     // Example Markdown links to process:
     let md: &'static str = "

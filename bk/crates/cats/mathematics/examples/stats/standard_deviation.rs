@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Computing the mean and the standard deviation of a list of integers.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// Calculates the mean (average) of a slice of i32 integers.
 ///
@@ -50,6 +54,7 @@ fn std_deviation(data: &[i32]) -> Option<f32> {
     }
 }
 
+/// Prints the mean and standard deviation of a list.
 fn main() {
     let data = [3, 1, 6, 1, 5, 8, 1, 8, 10, 11];
 

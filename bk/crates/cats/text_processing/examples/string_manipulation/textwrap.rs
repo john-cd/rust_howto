@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Wrapping, filling and indenting text with `textwrap`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::borrow::Cow;
 
@@ -17,6 +21,7 @@ use textwrap::wrap;
 // textwrap = "0.16.0"
 // ```
 
+/// Wraps, fills and indents a sample text.
 fn main() {
     let text = "The quick brown fox jumps over the lazy dog. This is an example of text that will be wrapped to demonstrate the textwrap crate functionality in Rust. It offers various options to control how text wrapping behaves.";
 

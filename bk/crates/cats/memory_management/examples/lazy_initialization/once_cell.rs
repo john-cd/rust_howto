@@ -1,8 +1,13 @@
-// TODO Reviewed ??-??-2026
+//! Lazy initialization of a value with `OnceCell`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::cell::OnceCell;
 
+/// Initializes a `OnceCell` on first access.
 fn main() {
     // Create a new OnceCell instance.
     let cell = OnceCell::new();
