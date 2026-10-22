@@ -20,17 +20,24 @@ use std::net::Ipv4Addr;
 use std::net::SocketAddrV4;
 use std::net::TcpListener;
 
+fn read_one_connection(listener: TcpListener) -> Result<String, Error> {
+    let port = listener.local_addr()?;
+    println!(
+        "Listening on {port}; send one line and close the connection to finish"
+    );
+    let (mut tcp_stream, addr) = listener.accept()?;
+    println!("Connection received! {addr:?} is sending data.");
+    let mut input = String::new();
+    tcp_stream.read_to_string(&mut input)?;
+    Ok(input)
+}
+
 fn main() -> Result<(), Error> {
     let loopback = Ipv4Addr::new(127, 0, 0, 1);
     let socket = SocketAddrV4::new(loopback, 0); // 0 means any available port.
     let listener = TcpListener::bind(socket)?; // Bind to the socket.
-    let port = listener.local_addr()?;
-    println!("Listening on {port}, access this port to end the program");
-    let (mut tcp_stream, addr) = listener.accept()?; // Block until requested.
-    println!("Connection received! {addr:?} is sending data.");
-    let mut input = String::new();
-    let _ = tcp_stream.read_to_string(&mut input)?;
-    println!("{addr:?} says {input}");
+    let input = read_one_connection(listener)?;
+    println!("Received: {input}");
     Ok(())
 }
 
@@ -43,10 +50,23 @@ pub fn run() -> Result<(), Error> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    #[ignore = "Needs review"]
+
     #[test]
-    fn test_main() {
-        println!("{:?}", main());
+    fn reads_one_local_connection_and_returns() -> Result<(), Error> {
+        let listener = TcpListener::bind((Ipv4Addr::LOCALHOST, 0))?;
+        let address = listener.local_addr()?;
+        let client = std::thread::spawn(move || -> Result<(), Error> {
+            use std::io::Write;
+
+            let mut stream = std::net::TcpStream::connect(address)?;
+            stream.write_all(b"hello")?;
+            stream.shutdown(std::net::Shutdown::Write)?;
+            Ok(())
+        });
+
+        assert_eq!(read_one_connection(listener)?, "hello");
+        client.join().expect("client thread should complete")?;
+        Ok(())
     }
 }
 // [finish; listens to a connection forever](https://github.com/john-cd/rust_howto/issues/166)
