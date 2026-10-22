@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates reading from a memory-mapped file.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::fs::File;
 use std::io::Error;
@@ -12,6 +11,7 @@ use memmap2::Mmap;
 use memmap2::MmapMut;
 use memmap2::MmapOptions;
 
+/// Writes a file, then reads it through a read-only memory map.
 fn main() -> Result<(), Error> {
     write!(
         File::create("temp/content.txt")?,
@@ -45,6 +45,7 @@ fn main() -> Result<(), Error> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Error> {
     main()
 }

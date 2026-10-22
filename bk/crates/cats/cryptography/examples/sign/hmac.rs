@@ -1,5 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! This example demonstrates how to use the `ring` crate to generate an HMAC
+//! (Hash-based Message Authentication Code) signature for a message and then
+//! verify the signature. It uses SHA256 as the underlying hash function.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // An error with absolutely no details (on purpose):
 use ring::error::Unspecified;
@@ -36,6 +42,7 @@ fn main() -> Result<(), Unspecified> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Unspecified> {
     main()
 }

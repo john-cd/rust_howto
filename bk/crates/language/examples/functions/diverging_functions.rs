@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Functions that never return.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// This function diverges, meaning it never returns.
 /// It uses the `!` (Never) return type to indicate this.
@@ -8,6 +12,7 @@ fn foo() -> ! {
 }
 
 // This function never returns control.
+/// Exits the process with an error code.
 #[allow(dead_code)]
 fn exit_program() -> ! {
     println!("Exiting the process...");
@@ -15,6 +20,7 @@ fn exit_program() -> ! {
 }
 
 // This function loops forever.
+/// Loops forever.
 #[allow(dead_code)]
 fn forever() -> ! {
     loop {
@@ -23,12 +29,14 @@ fn forever() -> ! {
     }
 }
 
+/// Calls a function that panics.
 fn main() {
     foo(); // This will panic.
 }
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

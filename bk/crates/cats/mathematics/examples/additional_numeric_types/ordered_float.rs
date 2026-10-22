@@ -1,4 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! The `ordered-float` crate provides a wrapper type `OrderedFloat` for
+//! floating-point numbers that can be used as keys in ordered collections
+//! like `BTreeMap`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 // ANCHOR: example
 #![allow(clippy::approx_constant)]
@@ -42,6 +47,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

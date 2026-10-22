@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Placeholder for an HTTP server with `hyper`.
+//!
+//! TODO Reviewed ??-??-2026
+
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
@@ -36,6 +39,7 @@
 // // When the processing of this future is complete, it will resolve to a
 // // Response or an error.
 
+/// Does nothing yet.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     //     let addr = SocketAddr::from(([127, 0, 0, 1], 3000));

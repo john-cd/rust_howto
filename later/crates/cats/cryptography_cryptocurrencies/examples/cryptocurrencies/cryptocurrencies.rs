@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates basic interactions with an Ethereum-compatible
 //! blockchain using the `alloy` library.
@@ -7,11 +8,11 @@
 //! 1. Configure an RPC endpoint and target address.
 //! 2. Show where chain calls would be made.
 //! 3. Print a compile-safe walkthrough of the flow.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::error::Error;
 
+/// Prints the steps to query the balance of an address, without connecting to a
+/// network.
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     // Placeholder flow to keep the example compile-safe without external RPC
     // deps.
@@ -29,6 +30,7 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()
 }

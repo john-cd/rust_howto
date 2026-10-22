@@ -1,14 +1,23 @@
-// TODO Reviewed ??-??-2026
+//! The `main` function creates an instance of the `User` struct.
+//! It then prints the struct to the console.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// We first define the struct's fields (which can be of any type).
 /// The `User` struct has four fields: `active`, `username`, `email`, and
 /// `sign_in_count`.
 #[derive(Debug)]
 struct User {
+    /// Whether the user is active.
     active: bool,
+    /// The user name.
     username: String,
+    /// The email address.
     email: String,
+    /// The number of times the user signed in.
     sign_in_count: u64,
 }
 // The `#[derive(Debug)]` attribute is not required; it enables the use of
@@ -33,6 +42,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

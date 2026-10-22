@@ -1,9 +1,17 @@
-// TODO Reviewed ??-??-2026
+//! Re-exporting a name with `pub use`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 #![allow(unused_imports)]
+
 // ANCHOR: example
+/// A module that re-exports a function from a private module.
 mod a_module {
+    /// A private module.
     mod private_module {
+        /// A public function in a private module; reachable through the
+        /// re-export.
         pub fn public_function() {}
     }
 
@@ -15,6 +23,7 @@ mod a_module {
     pub use private_module::public_function as another_name;
 }
 
+/// Calls the function through its re-exported name.
 fn main() {
     // `private_module` is... private, therefore the inner function is not
     // accessible.
@@ -37,6 +46,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to parse an XML document using the `roxmltree`
 //! crate.
@@ -11,11 +12,10 @@
 //! the serde-roxmltree crate.
 //!
 //! This example parses a simple XML document representing a library of books.
-//!
-//! TODO Reviewed ??-??-2026
 
 use roxmltree::Document;
 
+/// Parses an XML document and prints its elements.
 fn main() -> anyhow::Result<()> {
     let xml = r#"<?xml version="1.0" encoding="UTF-8"?><library><book id="1"><title>The Rust Programming Language</title><author>Steve Klabnik</author><author>Carol Nichols</author><year>2018</year><categories><category>Programming</category><category>Rust</category></categories></book></library>"#;
 
@@ -67,6 +67,7 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

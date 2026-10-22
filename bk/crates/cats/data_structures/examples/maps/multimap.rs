@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A `MultiMap`, which associates several values with one key.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use anyhow::Result;
 use crates_io_api::Category;
@@ -8,6 +12,7 @@ use multimap::MultiMap;
 
 // Calls the `crates.io` API client and retrieve the categories a given crate
 // belongs to.
+/// Returns the categories of the crate `crate_name`, as listed on `crates.io`.
 fn get_categories_for_crate(crate_name: &str) -> Result<Vec<Category>> {
     let client = SyncClient::new(
         "my-user-agent (my-contact@domain.com)",
@@ -18,6 +23,7 @@ fn get_categories_for_crate(crate_name: &str) -> Result<Vec<Category>> {
     Ok(crt.categories)
 }
 
+/// Groups crates by category in a `MultiMap`.
 fn main() -> Result<()> {
     let crate_names = vec!["toml", "config", "nom", "pest"];
 
@@ -45,6 +51,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

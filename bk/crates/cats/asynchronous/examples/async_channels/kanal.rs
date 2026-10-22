@@ -1,5 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! The `kanal` crate is used for inter-thread communication, similar to Rust's
+//! standard `std::sync::mpsc` module but with additional features and
+//! capabilities. It provides channels for sending messages between threads.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use kanal::AsyncReceiver;
 use kanal::AsyncSender;
@@ -52,6 +58,7 @@ async fn consumer(rx: AsyncReceiver<i32>) -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

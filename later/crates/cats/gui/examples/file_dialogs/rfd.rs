@@ -1,10 +1,10 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates opening a file dialog using the `rfd` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 use rfd::FileDialog;
 
+/// Opens a file dialog and prints the selected file.
 fn main() {
     let file = FileDialog::new()
         .add_filter("Text files", &["txt"])
@@ -18,6 +18,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

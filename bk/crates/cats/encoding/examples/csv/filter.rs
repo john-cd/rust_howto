@@ -1,15 +1,15 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example shows how to filter CSV data based on a query.
 //! It reads CSV data from a string, filters rows where any field matches the
 //! query, and writes the filtered data to standard output.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::io;
 
 use anyhow::Result;
 
+/// Writes the CSV records that contain the query to the standard output.
 fn main() -> Result<()> {
     let query = "CA";
     let data = "\
@@ -37,6 +37,7 @@ West Hollywood,CA,37031,34.0900000,-118.3608333";
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

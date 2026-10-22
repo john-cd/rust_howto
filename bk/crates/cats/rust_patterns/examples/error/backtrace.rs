@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use backtraces to debug errors.
 //!
 //! The example code defines a struct `Rgb` that represents a color in RGB
 //! format.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::fmt;
 
@@ -14,10 +13,14 @@ use anyhow::anyhow;
 use serde::Deserialize;
 // use anyhow::Context;
 
+/// An RGB color.
 #[derive(Debug, Deserialize)]
 struct Rgb {
+    /// The red component.
     red: u8,
+    /// The blue component.
     blue: u8,
+    /// The green component.
     green: u8,
 }
 
@@ -60,6 +63,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

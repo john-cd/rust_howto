@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Walk a directory and computes the SHA256 digest of all iso files.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::fs::File;
 use std::io::BufReader;
@@ -67,6 +71,7 @@ fn main() -> Result<(), Error> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Error> {
     main()
 }

@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Ignoring values in patterns with `_` and `..`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Ignores parts of a value when destructuring.
 fn main() {
     // `_unused` is bound to the value `42`, but the compiler does not complain
     // if it is not used later.
@@ -23,6 +28,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

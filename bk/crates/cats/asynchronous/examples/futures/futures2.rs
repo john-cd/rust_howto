@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Polling several futures at once with `join!` and `join_all`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use futures::join;
 
@@ -9,6 +13,7 @@ async fn foo(i: u32) -> u32 {
     i
 }
 
+/// Awaits several calls of [`foo`] together with `join!` and `join_all`.
 #[tokio::main]
 async fn main() {
     // The `join!` macro polls multiple futures simultaneously, returning
@@ -24,6 +29,7 @@ async fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

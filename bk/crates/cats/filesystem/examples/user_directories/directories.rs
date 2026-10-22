@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `directories` crate to find the
 //! user's data and config directories for a specific application.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::path::PathBuf;
 
@@ -40,6 +39,7 @@ pub fn get_config_dir() -> Result<PathBuf> {
 }
 // Look into `BaseDirs` and `UserDirs` for additional directories as well.
 
+/// Prints the data and configuration directories of the application.
 fn main() {
     println!("{:?}", get_data_dir());
     println!("{:?}", get_config_dir());
@@ -47,6 +47,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

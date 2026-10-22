@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs the module visibility example.
+//!
+//! TODO Reviewed ??-??-2026
+
 mod module_visibility;
 
 fn main() {

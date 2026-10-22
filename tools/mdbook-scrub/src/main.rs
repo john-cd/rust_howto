@@ -31,6 +31,7 @@ fn make_app() -> Command {
         )
 }
 
+/// Selects the stage from the command line and runs it.
 fn main() {
     let matches = make_app().get_matches();
 
@@ -65,6 +66,8 @@ fn main() {
 // [context, book] where `context` is the serialized object
 // `PreprocessorContext` and `book` is a `Book` object containing the content of
 // the book.
+/// Reads the book from standard input, preprocesses it and writes it to
+/// standard output.
 fn handle_preprocessing(pre: &dyn Preprocessor) -> mdbook_preprocessor::errors::Result<()> {
     let (ctx, book) = mdbook_preprocessor::parse_input(io::stdin())?;
 
@@ -94,6 +97,7 @@ fn handle_preprocessing(pre: &dyn Preprocessor) -> mdbook_preprocessor::errors::
 // the string supports and the second argument is the renderer name.
 // The preprocessor should exit with a status code 0 if it supports the given
 // renderer, or return a non-zero exit code if it does not.
+/// Exits with a status that tells mdBook whether the renderer is supported.
 fn handle_supports(pre: &dyn Preprocessor, sub_args: &ArgMatches) -> ! {
     let renderer = sub_args
         .get_one::<String>("renderer")

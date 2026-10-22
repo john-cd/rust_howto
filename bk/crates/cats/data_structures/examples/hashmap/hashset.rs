@@ -1,14 +1,14 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates the basic usage of `HashSet`.
 //!
 //! `HashSet` is a collection that stores unique values. It's useful for
 //! scenarios where you need to ensure that no duplicate values are present.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::collections::HashSet;
 
+/// Creates a `HashSet` and checks its elements.
 fn main() {
     // Create a new `HashSet`:
     let mut languages = HashSet::new();
@@ -80,6 +80,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

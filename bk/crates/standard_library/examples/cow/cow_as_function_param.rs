@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of a function accepting either owned or borrowed values
 //! at its input.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::borrow::Cow;
 
@@ -14,6 +13,7 @@ fn process_text(input: Cow<str>) {
     }
 }
 
+/// Calls a function with borrowed and owned strings.
 fn main() {
     // Call the function with a `&str`, here a string literal.
     let borrowed_text: Cow<str> = Cow::Borrowed("Hello, Rust!");
@@ -30,6 +30,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

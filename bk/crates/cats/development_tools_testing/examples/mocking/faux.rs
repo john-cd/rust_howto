@@ -1,6 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! Mocking a struct's methods with `faux`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 
+/// Runs the example.
 pub fn run() {
     main();
 }
@@ -12,7 +16,9 @@ pub fn run() {
 /// Represents a user with an ID and a name.
 #[derive(Debug, Clone, PartialEq)]
 struct User {
+    /// Unique identifier of the user.
     id: u64,
+    /// Name of the user.
     name: String,
 }
 
@@ -44,10 +50,12 @@ impl<D: Database> UserService<D> {
         Self { database }
     }
 
+    /// Returns the name of the user `id`, if it exists.
     fn get_user_name(&self, id: u64) -> Option<String> {
         self.database.get_user(id).map(|user| user.name)
     }
 
+    /// Renames the user `id`; returns whether the update succeeded.
     fn update_user_name(&self, id: u64, name: String) -> bool {
         if let Some(mut user) = self.database.get_user(id) {
             user.name = name;
@@ -58,6 +66,7 @@ impl<D: Database> UserService<D> {
     }
 }
 
+/// A stand-in for a real database.
 struct ActualDatabase; // Well, sort of...
 
 impl Database for ActualDatabase {
@@ -93,6 +102,7 @@ impl Database for MockDatabase {
     }
 }
 
+/// Looks up and renames a user through the service.
 fn main() {
     let service = UserService::new(ActualDatabase);
     let original_name = service

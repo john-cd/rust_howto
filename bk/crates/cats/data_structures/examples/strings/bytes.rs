@@ -1,12 +1,12 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates basic usage of the `bytes` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 use bytes::BufMut as _;
 use bytes::BytesMut;
 
+/// Builds a `BytesMut` buffer, then freezes it into an immutable `Bytes`.
 fn main() {
     let mut buf = BytesMut::with_capacity(64);
     buf.put(&b"hello "[..]);
@@ -19,6 +19,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

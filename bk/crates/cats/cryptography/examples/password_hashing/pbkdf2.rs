@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Demonstrates the use of PBKDF2 for password hashing and verification.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // This example demonstrates how to hash and verify passwords using PBKDF2.
 use std::num::NonZeroU32;
@@ -56,6 +60,7 @@ fn main() -> Result<(), Unspecified> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Unspecified> {
     main()
 }

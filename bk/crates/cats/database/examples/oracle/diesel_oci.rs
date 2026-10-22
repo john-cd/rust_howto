@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `diesel_oci` is a Diesel backend and connection implementation for Oracle
 //! databases.
@@ -11,8 +12,6 @@
 //! dotenvy = "0.15.7"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::env;
 
@@ -39,14 +38,18 @@ diesel::table! {
 // The `diesel::table!` macro is used to define a table schema in Diesel.
 
 // Define a struct to hold the query results.
+/// A row of the `users` table.
 #[derive(QueryableByName, Queryable, PartialEq, Debug)]
 #[diesel(table_name = users)]
 struct User {
+    /// The user name.
     username: String,
+    /// The password.
     password: String,
 }
 // `#[derive(Queryable)]` allows Diesel to map database rows to this struct.
 
+/// Connects to an Oracle database and queries the users.
 fn main() -> anyhow::Result<()> {
     // Load environment variables (for secure handling of credentials)
     dotenv().ok();
@@ -93,6 +96,7 @@ fn establish_connection(
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

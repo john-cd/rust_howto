@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! SHA-256 digest of a file's contents with `ring`, printed as hexadecimal.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::fs;
 use std::fs::File;
@@ -29,6 +33,7 @@ fn sha256_digest<R: Read>(mut reader: R) -> Result<Digest> {
     Ok(context.finish())
 }
 
+/// Writes a file, computes its SHA-256 digest and prints it.
 fn main() -> Result<()> {
     if !fs::exists("temp")? {
         fs::create_dir("temp")?;
@@ -49,6 +54,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

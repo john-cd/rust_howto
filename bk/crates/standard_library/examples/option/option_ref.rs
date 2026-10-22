@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Borrowing the content of an `Option` with `as_ref` and `as_mut`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Reads an `Option<String>` without consuming it.
 fn as_ref() {
     let text: Option<String> = Some("Hello, world!".to_owned());
     // First, cast `Option<String>` to `Option<&String>` with `as_ref`,
@@ -9,6 +14,7 @@ fn as_ref() {
     println!("We still can print `text`: {text:?}. Length: {text_length:?}");
 }
 
+/// Modifies the content of an `Option` in place.
 fn as_mut() {
     let mut x = Some(2);
     match x.as_mut() {
@@ -23,6 +29,7 @@ fn as_mut() {
     assert_eq!(x, Some(42));
 }
 
+/// Runs both examples.
 fn main() {
     as_ref();
     as_mut();
@@ -30,6 +37,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

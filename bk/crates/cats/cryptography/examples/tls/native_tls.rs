@@ -1,14 +1,14 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Build a platform TLS connector with `native-tls`.
 //!
 //! This example constructs a `TlsConnector` and prints a note about when to
 //! use it with a TCP stream.
-//!
-//! TODO Reviewed ??-??-2026
 
 use native_tls::TlsConnector;
 
+/// Builds a TLS connector and prints a message.
 fn main() -> anyhow::Result<()> {
     let _connector = TlsConnector::builder().build()?;
 
@@ -19,6 +19,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Dereferencing a `Box`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Reads the value inside a `Box` with `*`.
 fn main() {
     // Dereferencing with `*`:
     let boxed: Box<u8> = Box::new(1);
@@ -17,6 +22,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

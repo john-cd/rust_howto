@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates a simple HTTP server that can be exposed to the
 //! internet using `ngrok`.
@@ -32,8 +33,6 @@
 //!    reverse_proxy`
 //! 3. Start ngrok: `ngrok http 3000`
 //! 4. Access the server from the internet using the ngrok URL.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::net::SocketAddr;
 
@@ -42,6 +41,7 @@ use axum::routing::get;
 use ngrok::config::ForwarderBuilder as _;
 use url::Url;
 
+/// Serves a web app and exposes it with an `ngrok` tunnel.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Create an Axum app.
@@ -77,6 +77,7 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

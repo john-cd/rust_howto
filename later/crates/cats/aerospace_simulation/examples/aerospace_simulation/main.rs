@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs the rocket simulation example.
+//!
+//! TODO Reviewed ??-??-2026
+
 mod aero_simulation;
 
 fn main() {

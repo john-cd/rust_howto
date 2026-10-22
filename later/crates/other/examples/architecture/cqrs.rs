@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! CQRS (Command Query Responsibility Segregation) is an architectural
 //! pattern that separates the models for reading and writing data.
@@ -9,8 +10,6 @@
 //! - Commands and queries are handled separately.
 //! - The write side (commands) focuses on state changes.
 //! - The read side (queries) focuses on efficient data retrieval.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// Domain Model.
 mod domain {
@@ -18,36 +17,45 @@ mod domain {
     /// Represents a product in the domain.
     #[derive(Debug, Clone)]
     pub struct Product {
+        /// The identifier of the product.
         id: u32,
+        /// The name of the product.
         name: String,
+        /// The quantity in stock.
         quantity: u32,
     }
 
     /// Implementation of the Product struct.
     impl Product {
+        /// Creates a product.
         pub fn new(id: u32, name: String, quantity: u32) -> Self {
             Self { id, name, quantity }
         }
 
         // Getters.
+        /// Returns the identifier of the product.
         pub fn id(&self) -> u32 {
             self.id
         }
 
+        /// Returns the name of the product.
         pub fn name(&self) -> &str {
             &self.name
         }
 
+        /// Returns the quantity in stock.
         pub fn quantity(&self) -> u32 {
             self.quantity
         }
 
+        /// Sets the quantity in stock.
         pub fn set_quantity(&mut self, quantity: u32) {
             self.quantity = quantity;
         }
     }
 }
 
+/// The events, which are the source of truth of the system.
 mod events {
 
     use std::sync::RwLock;
@@ -64,13 +72,20 @@ mod events {
     /// Represents events related to products.
     #[derive(Debug, Clone, Serialize, Deserialize)]
     pub enum ProductEvent {
+        /// A product was created.
         ProductCreated {
+            /// The identifier of the product.
             id: u32,
+            /// The name of the product.
             name: String,
+            /// The initial quantity.
             quantity: u32,
         },
+        /// The quantity of a product was updated.
         ProductQuantityUpdated {
+            /// The identifier of the product.
             id: u32,
+            /// The new quantity.
             new_quantity: u32,
         },
     }
@@ -80,8 +95,11 @@ mod events {
     /// Acts as the source of truth for the system's state.
     /// Events are stored in the Event Store.
     pub trait EventRepository {
+        /// Stores an event.
         fn apply_event(&self, event: ProductEvent);
 
+        /// Returns the events, or only the latest `limit` events if a limit is
+        /// given.
         fn get_events(&self, limit: Option<usize>) -> Vec<ProductEvent>;
     }
 
@@ -104,11 +122,14 @@ mod events {
 
     // In this example, the `EventStore` is held in memory,
     // but in a real world application, it would be a database.
+    /// An event store that keeps the events in memory.
     pub struct SimpleEventStore {
+        /// The events, in the order they were applied.
         events: RwLock<Vec<ProductEvent>>,
     }
 
     impl SimpleEventStore {
+        /// Creates an empty event store.
         pub fn new() -> Self {
             Self {
                 events: RwLock::new(Vec::new()),
@@ -126,15 +147,23 @@ mod commands {
     // Commands.
     // They represent intentions to change the system's state
     // (e.g., `CreateProduct`, `UpdateProductQuantity`).
+    /// A command, which is an intention to change the state of the system.
     #[derive(Debug)]
     pub enum Command {
+        /// Creates a product.
         CreateProduct {
+            /// The identifier of the product.
             id: u32,
+            /// The name of the product.
             name: String,
+            /// The initial quantity.
             quantity: u32,
         },
+        /// Changes the quantity of a product.
         UpdateProductQuantity {
+            /// The identifier of the product.
             id: u32,
+            /// The change in quantity, which can be negative.
             quantity_change: i32,
         },
     }
@@ -143,11 +172,14 @@ mod commands {
     // - Receives commands.
     // - Validates commands before applying them.
     // - Generates events based on successful command execution.
+    /// A handler that validates commands and stores the resulting events.
     pub struct CommandHandler<S: EventRepository> {
+        /// The event store.
         pub event_store: S,
     }
 
     impl<S: EventRepository> CommandHandler<S> {
+        /// Creates a handler that stores events in `event_store`.
         pub fn new(event_store: S) -> Self {
             Self { event_store }
         }
@@ -247,8 +279,10 @@ mod read_store {
     /// `ProductRepository` trait.
     /// Repository with domain objects.
     pub trait ProductRepository {
+        /// Returns the product with the given identifier, if any.
         fn get_product(&self, id: u32) -> Option<Product>;
 
+        /// Returns all products.
         fn get_all_products(&self) -> Vec<Product>;
     }
 
@@ -257,6 +291,7 @@ mod read_store {
     /// Data Access Layer (DAL) with database entities (events here).
     #[derive(Clone)]
     pub struct SimpleReadStore {
+        /// The products, by identifier.
         read_model: std::sync::Arc<RwLock<HashMap<u32, Product>>>,
     }
 
@@ -273,6 +308,7 @@ mod read_store {
     }
 
     impl SimpleReadStore {
+        /// Creates an empty read store.
         pub fn new() -> Self {
             Self {
                 read_model: std::sync::Arc::new(RwLock::new(HashMap::new())),
@@ -317,10 +353,12 @@ mod query {
     // - Is updated by processing events from the Event Store.
     // - Uses a hashmap as an in-memory database for the read model.
     pub struct QueryHandler<R: ProductRepository> {
+        /// The repository of products to read from.
         read_repo: R,
     }
 
     impl<S: ProductRepository> QueryHandler<S> {
+        /// Creates a handler that reads from `read_store`.
         pub fn new(read_store: S) -> Self {
             Self {
                 read_repo: read_store,
@@ -396,6 +434,7 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

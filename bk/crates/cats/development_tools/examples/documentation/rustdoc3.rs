@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Fast and easy queue abstraction.
 //!
@@ -8,9 +9,8 @@
 //! - `[Easy]`
 //!
 //! [Easy]: http://thatwaseasy.example.com
-//!
-//! TODO Reviewed ??-??-2026
 
+/// Prints a description of inner doc comments.
 fn main() {
     println!(
         "//! ... are `inner` comments that apply to the containing module (or crate)."
@@ -19,6 +19,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

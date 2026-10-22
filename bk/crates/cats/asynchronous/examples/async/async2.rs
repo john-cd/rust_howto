@@ -1,5 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! This is the main asynchronous function.
+//! It demonstrates that calling an async function does not execute its body
+//! immediately.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// Asynchronous function that prints "world".
 async fn say_world() {
@@ -28,6 +34,7 @@ async fn main() {
 // Example from <https://tokio.rs/tokio/tutorial/hello-tokio>
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

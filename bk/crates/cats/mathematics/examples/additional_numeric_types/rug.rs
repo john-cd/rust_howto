@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates the use of the `rug` crate for arbitrary precision
 //! arithmetic.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![cfg(target_os = "linux")]
 #![allow(clippy::approx_constant)]
@@ -16,6 +15,7 @@ use rug::Rational;
 use rug::float::Round;
 use rug::ops::DivAssignRound as _;
 
+/// Creates, converts and operates on arbitrary-precision numbers.
 fn main() {
     // 1. Working with large integers:
     let a = Integer::from(123456789012345678901234567890_u128);
@@ -79,6 +79,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

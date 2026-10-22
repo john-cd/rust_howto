@@ -1,14 +1,14 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates how to use the `which` crate to find the location of
 //! executables.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::env;
 
 use which::which;
 
+/// Looks up the location of executables in the `PATH`.
 fn main() {
     // Print the current PATH environment variable.
     println!("PATH = {:?}", env::var_os("PATH"));
@@ -28,6 +28,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

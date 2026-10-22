@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Reading from standard input and writing to standard output.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::io;
 use std::io::Write as _;
@@ -14,6 +18,7 @@ fn get_and_print_input() -> Result<String, io::Error> {
     Ok(user_input)
 }
 
+/// Writes to a locked standard output and reads a line.
 fn main() -> io::Result<()> {
     // Instead of using `print*!` to write to the standard output,
     // you may get an explicit handle...
@@ -35,6 +40,7 @@ fn main() -> io::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> io::Result<()> {
     main()
 }

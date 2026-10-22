@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example showcasing `tinytemplate`.
 //!
@@ -11,13 +12,12 @@
 //! strings loaded at runtime, this is not recommended.
 //!
 //! `TinyTemplate` can only render templates into Strings, not socket or file.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 
 use tinytemplate::TinyTemplate;
 
+/// Renders a template with values from a context and prints the result.
 fn main() {
     // Create a new template engine:
     let mut tt = TinyTemplate::new();
@@ -52,6 +52,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

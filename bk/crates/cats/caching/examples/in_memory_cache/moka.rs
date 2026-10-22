@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates the basic usage of the `moka` crate for creating
 //! a concurrent cache.
@@ -9,13 +10,13 @@
 //!
 //! `moka` also provides an asynchronous (futures aware) cache in its `future`
 //! module.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::time::Duration;
 
 use moka::sync::Cache;
 
+/// Builds a `moka` cache with a size limit and an idle timeout, then inserts
+/// and reads entries.
 fn main() {
     // Create a cache with a maximum of 100 entries.
     // Entries will be evicted after 10 minutes of not being accessed.
@@ -52,6 +53,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

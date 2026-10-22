@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Generating a GraphQL server from a database with Seaography.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 
 // ANCHOR: example
@@ -28,24 +31,31 @@ use sea_orm::{
 };
 use seaography::{Builder, BuilderContext};
 
+/// The `posts` SeaORM entity.
 mod post {
     use sea_orm::entity::prelude::*;
 
+    /// A blog post.
     #[derive(Clone, Debug, PartialEq, Eq, DeriveEntityModel)]
     #[sea_orm(table_name = "posts")]
     pub struct Model {
+        /// The primary key.
         #[sea_orm(primary_key)]
         pub id: i32,
+        /// The title of the post.
         pub title: String,
+        /// The body of the post.
         pub content: String,
     }
 
+    /// The relations of the entity; there are none.
     #[derive(Copy, Clone, Debug, EnumIter, DeriveRelation)]
     pub enum Relation {}
 
     impl ActiveModelBehavior for ActiveModel {}
 }
 
+/// Generates a GraphQL schema for an in-memory SQLite table and queries it.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // 1. Connect to an in-memory SQLite database using SeaORM.
@@ -90,6 +100,7 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

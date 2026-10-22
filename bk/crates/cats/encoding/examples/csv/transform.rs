@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example shows how to transform CSV data from one format to
 //! another.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::str::FromStr;
 
@@ -13,17 +12,23 @@ use serde::Deserialize;
 use serde::Deserializer;
 use serde::de;
 
+/// A row of CSV data.
 #[derive(Debug, Deserialize)]
 struct Row {
+    /// The name of the color.
     color_name: String,
+    /// The color.
     color: HexColor,
 }
 
 #[derive(Debug)]
 /// A color represented as a hex triplet.
 struct HexColor {
+    /// The red component.
     red: u8,
+    /// The green component.
     green: u8,
+    /// The blue component.
     blue: u8,
 }
 
@@ -56,6 +61,7 @@ impl<'de> Deserialize<'de> for HexColor {
     }
 }
 
+/// Reads colors as hex triplets and writes them as RGB values.
 fn main() -> Result<()> {
     let data = "color_name,color
 red,#ff0000
@@ -87,6 +93,7 @@ magenta,#ff00ff"
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

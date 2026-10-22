@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Examples of use of the 'crates.io' API.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use crates_io_api::CrateResponse;
@@ -91,6 +90,7 @@ fn search_for_crates(search: impl Into<String>) -> Result<CratesPage> {
     Ok(crates)
 }
 
+/// Searches `crates.io` for crates and displays information about a crate.
 #[tracing::instrument(err)]
 fn main() -> Result<()> {
     // Initialize tracing subscriber
@@ -118,6 +118,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

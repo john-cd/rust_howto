@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! The `inquire` crate is used for creating interactive CLI prompts.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use inquire::Confirm;
 use inquire::Select;
@@ -35,6 +39,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

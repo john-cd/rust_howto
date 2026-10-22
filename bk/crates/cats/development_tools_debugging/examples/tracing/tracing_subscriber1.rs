@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! Demonstrates how to configure the tracing subscriber
+//! to change the logging level.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// Demonstrates how to configure the tracing subscriber
 /// to change the logging level.
@@ -18,6 +23,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

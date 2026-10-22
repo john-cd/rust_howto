@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Generic type parameters on functions, structs, traits and type aliases.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::collections::HashMap;
 use std::fmt::Debug;
@@ -32,6 +36,7 @@ fn print_debug<T: Debug>(t: T) {
 }
 
 // This could also be written with a `where` clause:
+/// Prints a value with its `Debug` representation.
 fn print_debug2<T>(t: T)
 where
     T: Debug,
@@ -43,6 +48,7 @@ where
 ///
 /// `MyStruct<T>` is a struct that contains a single field `data` of type `T`.
 struct MyStruct<T> {
+    /// The value held by the struct.
     data: T,
 }
 
@@ -62,7 +68,9 @@ fn func2<U>(value: MyStruct<U>) -> U {
 /// type when creating a `HashMap`, it will use `RandomState` by default.
 #[allow(unused)]
 struct MyHashMap<K, V, S = RandomState> {
+    /// The key-value pairs.
     inner: Vec<(K, V)>,
+    /// The hasher.
     hasher: S,
 }
 
@@ -87,6 +95,7 @@ trait Processor<T> {
     fn process(&self, item: T) -> String;
 }
 
+/// A type that implements [`Processor`] for any item.
 struct S;
 
 // Generic implementation of a generic trait for a struct.
@@ -119,6 +128,7 @@ impl<T> Processor<T> for TupleStruct<T> {
 /// values are always `String`.
 type StringMap<K> = HashMap<K, String>;
 
+/// Calls the generic functions and uses the generic types.
 fn main() {
     // Use generic functions:
     //
@@ -157,6 +167,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

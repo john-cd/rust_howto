@@ -1,7 +1,10 @@
-// TODO Reviewed ??-??-2026
-#![allow(dead_code)]
-// ANCHOR: example
+//! Consuming any `IntoIterator` in a generic function.
+//!
+//! TODO Reviewed ??-??-2026
 
+#![allow(dead_code)]
+
+// ANCHOR: example
 /// This function demonstrates the use of `IntoIterator` as a trait bound,
 /// allowing it to accept various iterators or iterable types (like vectors,
 /// arrays, and ranges) and compute the sum of their elements.
@@ -19,6 +22,7 @@ where
     sum
 }
 
+/// Sums a vector and an array.
 fn main() {
     let numbers_vec = vec![1, 2, 3, 4, 5];
     let numbers_array = [10, 20, 30];
@@ -31,6 +35,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

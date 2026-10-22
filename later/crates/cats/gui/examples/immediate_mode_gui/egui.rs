@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Simple example of a GUI application with `egui`.
 //!
@@ -8,11 +9,10 @@
 //! egui = "0.34"
 //! eframe = "0.34"
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use eframe::egui;
 
+/// Opens a window that runs the app.
 fn main() -> Result<(), eframe::Error> {
     let options = eframe::NativeOptions::default();
     eframe::run_native(
@@ -22,8 +22,10 @@ fn main() -> Result<(), eframe::Error> {
     )
 }
 
+/// An app with a counter.
 #[derive(Default)]
 struct MyApp {
+    /// The number of clicks on the button.
     counter: i32,
 }
 
@@ -41,6 +43,7 @@ impl eframe::App for MyApp {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), eframe::Error> {
     main()
 }

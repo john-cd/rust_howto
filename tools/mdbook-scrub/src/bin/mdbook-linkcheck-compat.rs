@@ -11,6 +11,7 @@ use mdbook_preprocessor::errors::Error;
 use mdbook_preprocessor::errors::Result;
 use serde_json::Value;
 
+/// Translates an mdBook 0.5 render context to the 0.4 protocol.
 fn legacy_context(mut context: Value) -> Result<Value> {
     let book = context
         .get_mut("book")
@@ -39,6 +40,7 @@ fn legacy_context(mut context: Value) -> Result<Value> {
     Ok(context)
 }
 
+/// Removes the null values, which TOML cannot represent.
 fn remove_unset_defaults(value: &mut Value) {
     match value {
         Value::Object(table) => {
@@ -56,6 +58,8 @@ fn remove_unset_defaults(value: &mut Value) {
     }
 }
 
+/// Passes the translated context to `mdbook-linkcheck` and returns its exit
+/// code.
 fn run() -> Result<i32> {
     let context = legacy_context(serde_json::from_reader(io::stdin().lock())?)?;
     let mut child = Command::new("mdbook-linkcheck")
@@ -68,6 +72,7 @@ fn run() -> Result<i32> {
     Ok(status.code().unwrap_or(1))
 }
 
+/// Runs the wrapper and exits with the checker's status code.
 fn main() {
     let code = match run() {
         Ok(code) => code,

@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs the gRPC server example.
+//!
+//! TODO Reviewed ??-??-2026
+
 mod tonic;
 mod tonic_client;
 

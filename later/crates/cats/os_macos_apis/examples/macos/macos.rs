@@ -1,12 +1,12 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A macOS-specific example using the `cocoa` crate to call native macOS APIs.
 //!
 //! On macOS this example queries the current user name and operating system
 //! version using `NSProcessInfo`.
-//!
-//! TODO Reviewed ??-??-2026
 
+/// The macOS implementation, which calls Cocoa APIs.
 #[cfg(target_os = "macos")]
 mod macos_impl {
     use cocoa::base::id;
@@ -18,6 +18,7 @@ mod macos_impl {
     use objc::sel;
     use objc::sel_impl;
 
+    /// Converts an `NSString` to a Rust `String`.
     fn nsstring_to_string(nsstring: id) -> String {
         unsafe {
             if nsstring == nil {
@@ -31,6 +32,7 @@ mod macos_impl {
         }
     }
 
+    /// Calls Cocoa APIs.
     fn main() {
         unsafe {
             let _pool = NSAutoreleasePool::new(nil);
@@ -46,6 +48,7 @@ mod macos_impl {
     }
 }
 
+/// Prints a message, since the example only works on macOS.
 #[cfg(not(target_os = "macos"))]
 fn main() {
     println!("This example uses macOS APIs and is only supported on macOS.");
@@ -57,6 +60,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

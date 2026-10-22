@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Measuring the similarity of strings with `strsim`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use strsim::damerau_levenshtein;
 use strsim::hamming;
@@ -13,6 +17,7 @@ use strsim::sorensen_dice;
 // [dependencies]
 // strsim = "0.11.1" # Or latest
 
+/// Prints several string distances and similarities.
 fn main() {
     let s1 = "aleksandr";
     let s2 = "alexander";
@@ -61,6 +66,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

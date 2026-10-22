@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Locating the standard directories of the current user with `dirs`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Prints the home, configuration, data, cache and executable directories.
 fn main() {
     // Get the home directory.
     if let Some(home_dir) = dirs::home_dir() {
@@ -40,6 +45,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

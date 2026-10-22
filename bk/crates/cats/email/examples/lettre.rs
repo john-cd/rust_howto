@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of sending an email using the `lettre` crate.
 //!
@@ -7,8 +8,6 @@
 //! **Note:** This example requires valid SMTP credentials to run.
 //! You will need to replace `"smtp_username"` and `"smtp_password"`
 //! with your actual credentials.
-//!
-//! TODO Reviewed ??-??-2026
 
 use lettre::Message;
 use lettre::SmtpTransport;
@@ -16,6 +15,7 @@ use lettre::Transport as _;
 use lettre::message::header::ContentType;
 use lettre::transport::smtp::authentication::Credentials;
 
+/// Builds an email and sends it through an SMTP server.
 fn main() -> anyhow::Result<()> {
     let smtp_server = std::env::var("SMTP_SERVER")
         .unwrap_or_else(|_| "smtp.gmail.com".to_owned());

@@ -1,12 +1,12 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates the use of `unwrap()` and `expect()` for handling `Result`
 //! types.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![allow(clippy::unnecessary_literal_unwrap)]
 
+/// Extracts a value with `unwrap` and `expect`, which panic on failure.
 fn main() {
     let number_str = "42";
 
@@ -36,6 +36,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

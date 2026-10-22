@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Races two futures with `select!` from the `futures` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use futures::{
     future::FutureExt as _, // Provides the `.fuse()` method for futures.
@@ -8,15 +12,18 @@ use futures::{
 };
 
 // Define two asynchronous tasks.
+/// An example task.
 async fn task_one() {
     // ...
 }
 
+/// Another example task.
 async fn task_two() {
     // ...
 }
 
 // Define an asynchronous function that races two tasks.
+/// Runs both tasks and reports which one completes first.
 async fn race_tasks() {
     // Fuse the two tasks so that they can be used with `select!`.
     let t1 = task_one().fuse();
@@ -39,6 +46,7 @@ async fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

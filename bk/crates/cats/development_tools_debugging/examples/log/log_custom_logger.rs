@@ -1,10 +1,9 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to create a custom logger.
 //!
 //! The custom logger will print log messages to the console.
-//!
-//! TODO Reviewed ??-??-2026
 
 use log::Level;
 use log::LevelFilter;
@@ -15,6 +14,7 @@ use log::SetLoggerError;
 /// The custom logger.
 static CONSOLE_LOGGER: ConsoleLogger = ConsoleLogger;
 
+/// A logger that prints the records to the console.
 struct ConsoleLogger;
 
 impl log::Log for ConsoleLogger {
@@ -31,6 +31,7 @@ impl log::Log for ConsoleLogger {
     fn flush(&self) {}
 }
 
+/// Installs the custom logger and emits log messages at several levels.
 fn main() -> Result<(), SetLoggerError> {
     log::set_logger(&CONSOLE_LOGGER)?;
     log::set_max_level(LevelFilter::Info);
@@ -43,6 +44,7 @@ fn main() -> Result<(), SetLoggerError> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), SetLoggerError> {
     main()
 }

@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! Channels from the `flume` crate: bounded and unbounded, sync and async, and
+//! `select`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::thread;
 use std::time::Duration;
@@ -21,6 +26,8 @@ use flume::unbounded;
 // - `select`-like interface.
 // - No `unsafe` code.
 
+/// Sends messages over several kinds of `flume` channels and prints what is
+/// received.
 fn main() {
     // Create a bounded channel:
     let (tx, rx): (Sender<i32>, Receiver<i32>) = bounded(2);
@@ -102,6 +109,7 @@ fn select() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

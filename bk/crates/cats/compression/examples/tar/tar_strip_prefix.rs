@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! This example demonstrates how to extract a tar archive while stripping a
+//! common prefix from the paths of the extracted files.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::fs::File;
 use std::path::Path;
@@ -44,11 +49,14 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+/// Returns `path` without `prefix`, or `None` if `path` does not start with
+/// `prefix`.
 fn strip_prefix_path(path: &Path, prefix: &Path) -> Option<PathBuf> {
     path.strip_prefix(prefix).ok().map(std::path::Path::to_path_buf)
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

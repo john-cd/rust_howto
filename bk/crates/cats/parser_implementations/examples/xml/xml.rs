@@ -1,15 +1,15 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to read and write XML data using the
 //! `xml-rs` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 use xml::reader::EventReader;
 use xml::reader::XmlEvent;
 use xml::writer::EmitterConfig;
 use xml::writer::XmlEvent as WriteEvent;
 
+/// Reads XML events from a string, then writes an XML document.
 fn main() -> anyhow::Result<()> {
     // Example 1: Reading XML.
     let xml_input = r#"<?xml version="1.0"?>
@@ -98,6 +98,7 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

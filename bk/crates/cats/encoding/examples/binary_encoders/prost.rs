@@ -1,20 +1,21 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `prost` crate to serialize and
 //! deserialize a protobuf message.
 //!
 //! It defines a simple `Person` message, serializes it to a byte buffer,
 //! and then deserializes it back into a `Person` struct.
-//!
-//! TODO Reviewed ??-??-2026
 
 use person::Person;
 use prost::Message;
 
+/// The `Person` message, generated from the `.proto` file.
 mod person {
     include!(concat!(env!("OUT_DIR"), "/example.rs"));
 }
 
+/// Encodes a `Person` message with `prost`, then decodes it.
 fn main() {
     // Create a `Person` message.
     let person = Person {
@@ -34,6 +35,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

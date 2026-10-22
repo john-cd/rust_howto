@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! Demonstrates basic usage of the `nu-ansi-term` crate for colored and styled
+//! terminal output.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use nu_ansi_term::Color;
 use nu_ansi_term::Style;
@@ -17,6 +22,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

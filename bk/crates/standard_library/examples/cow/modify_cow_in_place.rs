@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Modifying a `Cow` in place, cloning it on write.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::borrow::Cow;
 
@@ -17,6 +21,7 @@ fn modify_string(input: &mut Cow<str>) {
     }
 }
 
+/// Modifies a borrowed and an owned `Cow`.
 fn main() {
     let mut borrowed = Cow::Borrowed("Hello");
     modify_string(&mut borrowed);
@@ -29,6 +34,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

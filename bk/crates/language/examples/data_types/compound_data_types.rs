@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! Demonstrates the use of tuples and arrays in Rust, including
+//! their declaration, access, destructuring, iteration, and mutation.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// Demonstrates the use of tuples and arrays in Rust, including
 /// their declaration, access, destructuring, iteration, and mutation.
@@ -9,6 +14,7 @@ fn main() {
     demo_arrays();
 }
 
+/// Creates and destructures tuples.
 fn demo_tuples() {
     println!("=== TUPLES ===");
 
@@ -61,6 +67,7 @@ fn demo_tuples() {
     println!("Swapped tuple: {swapped:?}");
 }
 
+/// Creates and indexes arrays.
 fn demo_arrays() {
     println!("=== ARRAYS ===");
 
@@ -128,6 +135,7 @@ fn demo_arrays() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `strum` provides derive macros that automatically implement various traits
 //! for your enums, making it easy to convert them to and from strings, iterate
@@ -9,8 +10,6 @@
 //! [dependencies]
 //! strum = { version = "0.27", features = ["derive"] }
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use strum::Display;
 use strum::EnumIter;
@@ -22,18 +21,24 @@ use strum::IntoEnumIterator as _; // Import the trait to use .iter().
 // - `Display` to easily print the enum variant as a string,
 // - `EnumString` to parse a string into an enum variant,
 // - `EnumIter` to iterate over all possible variants of the enum.
+/// The cardinal directions, with `strum` derive macros.
 #[derive(Debug, Display, EnumString, EnumIter, PartialEq)]
 enum Direction {
+    /// North, displayed as `N`.
     #[strum(serialize = "N")] // Customize the `Display` representation.
     North,
+    /// East, displayed as `E`.
     #[strum(serialize = "E")]
     East,
+    /// South, displayed as `S`.
     #[strum(serialize = "S")]
     South,
+    /// West, displayed as `W`.
     #[strum(serialize = "W")]
     West,
 }
 
+/// Displays, parses and iterates over the variants of an enum.
 fn main() {
     println!("--- Displaying Enum Variants ---");
     let dir = Direction::North;
@@ -71,6 +76,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,10 +1,9 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This module demonstrates how to extract the base URL from a given URL.
 //!
 //! It uses the `url` crate to parse and manipulate URLs.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use url::Url;
@@ -43,6 +42,7 @@ fn base_url(mut url: Url) -> Result<Url> {
     Ok(url)
 }
 
+/// Extracts the base of a URL.
 fn main() -> Result<()> {
     let full = "https://github.com/rust-lang/cargo?asdf";
 
@@ -57,6 +57,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

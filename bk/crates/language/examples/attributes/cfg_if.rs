@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! This example demonstrates how to use `cfg-if` to conditionally compile
+//! code blocks.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use cfg_if::cfg_if;
 
@@ -65,6 +70,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

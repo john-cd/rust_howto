@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to serialize and deserialize a struct to and
 //! from YAML using the maintained `serde_norway` crate.
@@ -11,8 +12,6 @@
 //!
 //! To run this example, we need to have the `serde`, `serde_norway`, and
 //! `anyhow` crates in your `Cargo.toml` file.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::fs::File;
 use std::io::prelude::*;
@@ -20,23 +19,35 @@ use std::io::prelude::*;
 use serde::Deserialize;
 use serde::Serialize;
 
+/// A person, serialized to and deserialized from YAML.
 #[derive(Debug, Serialize, Deserialize)]
 struct Person {
+    /// The name of the person.
     name: String,
+    /// The age of the person.
     age: u8,
+    /// The email addresses of the person.
     emails: Vec<String>,
+    /// The address of the person.
     address: Address,
+    /// The skills of the person.
     skills: Vec<String>,
 }
 
+/// A postal address.
 #[derive(Debug, Serialize, Deserialize)]
 struct Address {
+    /// The street.
     street: String,
+    /// The city.
     city: String,
+    /// The country.
     country: String,
+    /// The postal code.
     postal_code: String,
 }
 
+/// Serializes a struct to YAML and deserializes it back.
 fn main() -> anyhow::Result<()> {
     // Create a struct instance.
     let person = Person {
@@ -81,6 +92,7 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

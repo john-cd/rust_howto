@@ -1,9 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! Formatting the current time with `chrono`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use chrono::DateTime;
 use chrono::Utc;
 
+/// Prints the current time in several formats.
 fn main() {
     // Get the current time in UTC.
     let now: DateTime<Utc> = Utc::now();
@@ -20,6 +25,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

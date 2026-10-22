@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `rustix` is a library that provides a safe and idiomatic Rust interface to
 //! low-level system calls.
@@ -7,8 +8,6 @@
 //! ```toml
 //! rustix = { version = "0.38.42", features = ["fs"] }
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 #![cfg(target_family = "unix")]
 
@@ -23,6 +22,7 @@ use rustix::fs::unlink;
 use rustix::io::read;
 use rustix::io::write;
 
+/// Creates a file, writes to it and reads it back using `rustix`.
 fn main() -> anyhow::Result<()> {
     let data = b"Hello, rustix!";
     {
@@ -72,6 +72,7 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

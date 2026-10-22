@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Simple Rust example using the `nix` crate to handle Unix-like operating
 //! system tasks: create a file, write to it, read from it, and delete it.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![cfg(target_family = "unix")]
 
@@ -28,6 +27,7 @@ use nix::unistd::write;
 use rustix::fd::AsFd as _;
 use rustix::fd::BorrowedFd;
 
+/// Creates a file, writes to it and reads it back using `nix`.
 fn main() -> nix::Result<()> {
     let path = "example.txt";
     let data = b"Hello, nix!";
@@ -67,6 +67,7 @@ fn main() -> nix::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> nix::Result<()> {
     main()
 }

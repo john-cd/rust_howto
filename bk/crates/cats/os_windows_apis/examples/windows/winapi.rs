@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of a basic Windows application using the `winapi` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![cfg(target_os = "windows")]
 
@@ -27,6 +26,7 @@ use winapi::um::winuser::ShowWindow;
 use winapi::um::winuser::TranslateMessage;
 use winapi::um::winuser::WNDCLASSW;
 
+/// The window procedure, which handles the messages sent to the window.
 unsafe extern "system" fn window_proc(
     hwnd: HWND,
     msg: UINT,
@@ -122,6 +122,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

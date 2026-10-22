@@ -1,10 +1,15 @@
-// TODO Reviewed ??-??-2026
+//! Draft of a test that walks the templates folder; it is not part of the
+//! crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::collections::HashMap;
 use anyhow::anyhow;
 use walkdir::DirEntry;
 use walkdir::WalkDir;
 
 // fn build_table(templ: Tera) -> anyhow::Result<()> {
+/// Walks the templates folder, ignoring hidden entries.
 #[allow(dead_code)]
 fn build_table() -> anyhow::Result<()> {
     let walker = WalkDir::new("./templates").into_iter()
@@ -24,6 +29,7 @@ fn build_table() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Returns whether the entry name starts with a dot.
 fn is_hidden(entry: &DirEntry) -> bool {
     entry
         .file_name()

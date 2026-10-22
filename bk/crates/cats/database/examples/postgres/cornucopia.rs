@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates type-safe query generation for PostgreSQL
 //! with Cornucopia.
@@ -14,12 +15,11 @@
 //! cornucopia_async = "0.3.0"
 //! postgres = { version = "0.19", features = ["tokio-runtime"] }
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use tokio_postgres::Error;
 use tokio_postgres::NoTls;
 
+/// Connects to a PostgreSQL database and runs the generated queries.
 #[tokio::main]
 async fn main() -> Result<(), Error> {
     let (client, connection) = tokio_postgres::connect(
@@ -48,6 +48,7 @@ async fn main() -> Result<(), Error> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Error> {
     main()
 }

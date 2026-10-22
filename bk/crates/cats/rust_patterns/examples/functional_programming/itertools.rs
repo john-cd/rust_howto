@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates the usage of the `itertools` crate.
 //!
@@ -9,13 +10,12 @@
 //! ```toml
 //! itertools = "0.14.0"
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use itertools::Itertools as _;
 use itertools::assert_equal;
 use itertools::chain;
 
+/// Applies `itertools` functions and adaptors to iterators.
 fn main() {
     // `assert_equal`:
     // This function asserts that two iterables produce equal sequences.
@@ -57,6 +57,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

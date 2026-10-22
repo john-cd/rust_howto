@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! A broadcast channel from the `postage` crate: several receivers get every
+//! message.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use postage::broadcast;
 use postage::prelude::Sink as _;
@@ -34,6 +39,8 @@ async fn receiver(name: &'static str, mut rx: broadcast::Receiver<String>) {
     }
 }
 
+/// Spawns broadcasters and receivers on one channel and waits for them to
+/// finish.
 #[tokio::main]
 async fn main() {
     // Create a broadcast channel with a capacity of 10 messages.
@@ -71,6 +78,7 @@ async fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

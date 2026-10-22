@@ -1,8 +1,13 @@
-// TODO Reviewed ??-??-2026
+//! A `BTreeSet`, an ordered set of unique names.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::collections::BTreeSet;
 
+/// Creates, fills and queries a `BTreeSet`.
 fn main() {
     // Create a new `BTreeSet`:
     let mut names = BTreeSet::new();
@@ -83,6 +88,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

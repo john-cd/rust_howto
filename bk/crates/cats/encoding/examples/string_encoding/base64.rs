@@ -1,14 +1,14 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to encode and decode a string using `base64`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::str;
 
 use anyhow::Result;
 use base64::prelude::*;
 
+/// Encodes bytes as Base64, then decodes them.
 fn main() -> Result<()> {
     let hello = b"hello rustaceans";
     let encoded: String = BASE64_STANDARD.encode(hello);
@@ -23,6 +23,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

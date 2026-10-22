@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Setting and getting a value in Redis.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // This example demonstrates connecting to Redis and executing commands using
 // the `redis` crate.
@@ -60,6 +64,7 @@ fn fetch_an_integer() -> Result<isize> {
     Ok(con.get("my_key")?)
 }
 
+/// Prints the integer fetched from Redis.
 fn main() -> Result<()> {
     let my_int = fetch_an_integer()?;
     println!("{my_int}");
@@ -68,6 +73,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }
@@ -76,6 +82,7 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Checks that TLS is enabled only for an explicit `true`.
     #[test]
     fn tls_requires_an_explicit_true_value() {
         assert!(!tls_enabled(None));
@@ -85,6 +92,7 @@ mod tests {
         assert!(tls_enabled(Some("TRUE")));
     }
 
+    /// Runs the example against a Redis server; needs the external service.
     #[test]
     #[ignore = "Requires an external Redis server"]
     fn require_external_svc() -> Result<()> {

@@ -1,13 +1,14 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to traverse a directory and find files that
 //! have been modified within the last 24 hours.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use walkdir::WalkDir;
 
+/// Walks the current directory tree and prints the files that were modified
+/// recently.
 fn main() -> Result<()> {
     // Traverse the current directory recursively.
     for entry in WalkDir::new(".")
@@ -41,6 +42,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

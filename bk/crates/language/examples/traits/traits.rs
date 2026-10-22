@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Trait example.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// A trait with one method.
 pub trait Summary {
@@ -11,10 +10,15 @@ pub trait Summary {
     fn summarize(&self) -> String;
 }
 
+/// A news article, which can be summarized.
 pub struct NewsArticle {
+    /// The headline.
     pub headline: String,
+    /// The location where the news happened.
     pub location: String,
+    /// The author.
     pub author: String,
+    /// The text of the article.
     pub content: String,
 }
 
@@ -25,6 +29,7 @@ impl Summary for NewsArticle {
     }
 }
 
+/// Creates an article and calls the method of the trait.
 fn main() {
     let na = NewsArticle {
         headline: "headline".to_owned(),
@@ -43,6 +48,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -8,6 +8,7 @@ use syn::ItemFn;
 use syn::parse_macro_input;
 
 // Retain the macro used by the existing `compile_macros` example.
+/// A derive macro that adds a `hello_world` function to the type.
 #[proc_macro_derive(MyMacro)]
 pub fn my_macro(input: TokenStream) -> TokenStream {
     let input = parse_macro_input!(input as DeriveInput);
@@ -54,9 +55,11 @@ pub fn log_fn(_attr: TokenStream, item: TokenStream) -> TokenStream {
 #[derive(Debug, FromDeriveInput)]
 #[darling(attributes(my_macro))]
 struct MyMacroOpts {
+    /// The name given in the `my_macro` attribute.
     name: String,
 }
 
+/// A derive macro that uses `darling` to parse its options.
 #[proc_macro_derive(MyDarlingMacro, attributes(my_macro))]
 pub fn my_darling_macro_derive(input: TokenStream) -> TokenStream {
     let input = parse_macro_input!(input as DeriveInput);
@@ -78,6 +81,7 @@ pub fn my_darling_macro_derive(input: TokenStream) -> TokenStream {
 // ANCHOR_END: darling_example
 
 // ANCHOR: proc_macro2_example
+/// A derive macro, written with `proc-macro2`, that implements `Debug`.
 #[proc_macro_derive(MyDebug)]
 pub fn derive_debug(input: TokenStream) -> TokenStream {
     let input = parse_macro_input!(input as DeriveInput);
@@ -94,6 +98,7 @@ pub fn derive_debug(input: TokenStream) -> TokenStream {
 // ANCHOR_END: proc_macro2_example
 
 // Retain the shim imported by the existing `compile_macros` Watt example.
+/// A function-like macro used by the `watt` example.
 #[proc_macro]
 pub fn watt_macro(input: TokenStream) -> TokenStream {
     let input_str = input.to_string();

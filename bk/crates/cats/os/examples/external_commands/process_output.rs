@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to run an external command, capture its
 //! output, and parse it.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::process::Command;
 
@@ -14,7 +13,9 @@ use regex::Regex;
 /// Represents a Git commit with its hash and message.
 #[derive(PartialEq, Default, Clone, Debug)]
 struct Commit {
+    /// The abbreviated hash of the commit.
     hash: String,
+    /// The message of the commit.
     message: String,
 }
 
@@ -53,6 +54,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

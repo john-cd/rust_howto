@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Working with `OsString` and `OsStr`, the platform-native strings.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::env;
 use std::ffi::OsStr;
@@ -8,6 +12,7 @@ use std::path::Path;
 use std::path::PathBuf;
 use std::process::Command;
 
+/// Builds an `OsString` and converts it to and from other string types.
 fn main() {
     // Create an `OsString` (owned platform-native string):
     let mut os_string = OsString::new();
@@ -61,6 +66,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

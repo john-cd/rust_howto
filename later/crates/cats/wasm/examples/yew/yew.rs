@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! The main function to render the App component.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use yew::prelude::*;
 
@@ -47,12 +51,12 @@ fn app() -> Html {
     }
 }
 
-/// The main function to render the App component.
 fn main() {
     yew::Renderer::<App>::new().render();
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

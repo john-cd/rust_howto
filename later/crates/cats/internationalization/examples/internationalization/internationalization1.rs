@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates basic internationalization using `sys-locale` and `icu_locid`.
 //!
 //! This example obtains the system locale, canonicalizes it, extracts the
 //! language and region subtags, and prints a locale-aware greeting.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::error::Error;
 
@@ -13,6 +12,7 @@ use icu_locale_core::Locale;
 use sys_locale::get_locale;
 use sys_locale::get_locales;
 
+/// Detects the locale of the system and prints a greeting in that language.
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let current_locale = get_locale().unwrap_or_else(|| "und".to_owned());
     let mut preferred_locales = get_locales();
@@ -27,7 +27,8 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let language = locale.id.language.to_string();
     let region = locale
         .id
-        .region.map_or_else(|| "unknown".to_owned(), |r| r.to_string());
+        .region
+        .map_or_else(|| "unknown".to_owned(), |r| r.to_string());
 
     println!("System locale: {current_locale}");
     println!("Preferred locale: {locale_tag}");
@@ -43,6 +44,7 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     Ok(())
 }
 
+/// Returns a greeting for the `language` and `region`.
 fn render_greeting(language: &str, region: &str) -> &'static str {
     match (language, region) {
         ("es", _) => "¡Hola! Bienvenido a la internacionalización en Rust.",
@@ -55,6 +57,7 @@ fn render_greeting(language: &str, region: &str) -> &'static str {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()
 }

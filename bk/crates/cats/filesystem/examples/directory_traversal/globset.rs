@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `globset` crate to match file paths
 //! against a set of glob patterns.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::fs;
 
@@ -11,6 +10,7 @@ use globset::Glob;
 use globset::GlobSet;
 use globset::GlobSetBuilder;
 
+/// Prints the files of a directory that match a set of glob patterns.
 fn main() -> anyhow::Result<()> {
     // Create a glob set builder and add patterns.
     let mut builder = GlobSetBuilder::new();
@@ -40,6 +40,7 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! The templates of the badges and reference definitions of a crate block.
+//!
+//! TODO Reviewed ??-??-2026
+
 use anyhow::Result;
 use serde::Serialize;
 
@@ -13,6 +16,7 @@ pub(super) static CRATE_BLOCK_BADGES: &str = concat!(
     r"[![{crate_name}~lib.rs][c~{crate_name}~lib.rs~badge]][c~{crate_name}~lib.rs]\{\{hi:{crate_name}}} "
 );
 
+/// Template of the description of a crate.
 pub(super) static CRATE_DESCRIPTION: &str =
     "{{- if description_defined }}{description}{{ endif -}}";
 

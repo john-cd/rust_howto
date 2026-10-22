@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs the quantitative finance example.
+//!
+//! TODO Reviewed ??-??-2026
+
 mod rustquant;
 
 fn main() {

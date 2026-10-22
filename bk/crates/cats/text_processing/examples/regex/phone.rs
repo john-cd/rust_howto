@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to extract and format phone numbers from a
 //! text using regular expressions.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::fmt;
 
@@ -14,8 +13,11 @@ use regex::Regex;
 /// with its area code, exchange code,
 /// and subscriber number.
 struct PhoneNumber<'a> {
+    /// The area code.
     area: &'a str,
+    /// The exchange code.
     exchange: &'a str,
+    /// The subscriber number.
     subscriber: &'a str,
 }
 
@@ -85,6 +87,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

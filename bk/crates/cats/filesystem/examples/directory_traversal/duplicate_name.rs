@@ -1,13 +1,14 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Find duplicate filenames in the current directory.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 
 use walkdir::WalkDir;
 
+/// Prints the file names that appear more than once in the current directory
+/// tree.
 fn main() {
     let mut filenames = HashMap::new();
 
@@ -28,6 +29,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

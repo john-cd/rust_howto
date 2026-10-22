@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to parse JSON5 data using the `json5` crate.
 //!
@@ -6,11 +7,10 @@
 //! such as comments, unquoted keys, and trailing commas.
 //! It aims to be easier to write and maintain by hand (e.g. for config files).
 //! It is not intended to be used for machine-to-machine communication.
-//!
-//! TODO Reviewed ??-??-2026
 
 use serde_json::Value;
 
+/// Parses a JSON5 string and prints the result.
 fn main() {
     let json5_str = r#"{
         // Comments are allowed.
@@ -65,6 +65,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

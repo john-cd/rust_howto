@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of using the `hyper` low-level HTTP client to fetch a URL.
 //!
@@ -6,8 +7,6 @@
 //! - Connect to a remote server using TCP.
 //! - Perform an HTTP GET request.
 //! - Stream the response body to stdout.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Context as _;
 use http_body_util::BodyExt as _;
@@ -73,6 +72,7 @@ async fn fetch_url(url: hyper::Uri) -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Fetches a URL with `hyper` and prints the response.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Parse our URL...
@@ -86,6 +86,7 @@ async fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

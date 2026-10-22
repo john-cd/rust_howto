@@ -1,11 +1,16 @@
-// TODO Reviewed ??-??-2026
+//! Passing preprocessor definitions to C code compiled with the `cc` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // Declare an external C function that a build script could link in.
 unsafe extern "C" {
     fn print_app_info();
 }
 
+/// Declares the foreign `print_app_info` symbol.
 fn main() {
     let _ffi_symbol: unsafe extern "C" fn() = print_app_info;
     println!(
@@ -14,6 +19,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

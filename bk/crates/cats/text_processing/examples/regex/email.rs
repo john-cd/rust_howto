@@ -1,9 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! Extracting the login of an email address with a regular expression.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use lazy_static::lazy_static;
 use regex::Regex;
 
+/// Returns the login part of the first email address in `input`.
 fn extract_login(input: &str) -> Option<&str> {
     lazy_static! {
         static ref RE: Regex = Regex::new(
@@ -19,6 +24,7 @@ fn extract_login(input: &str) -> Option<&str> {
     cap.name("login").map(|login| login.as_str())
 }
 
+/// Extracts the login from several strings.
 fn main() {
     let login = extract_login("I❤email@example.com");
     println!("{login:?}");
@@ -34,6 +40,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

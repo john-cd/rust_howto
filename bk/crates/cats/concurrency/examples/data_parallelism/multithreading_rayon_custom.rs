@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Running `rayon` work on a custom thread pool.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Computes a Fibonacci number on a pool of eight threads.
 fn main() {
     // Build the threadpool:
     let pool = rayon::ThreadPoolBuilder::new()
@@ -26,6 +31,7 @@ fn fib(n: usize) -> usize {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

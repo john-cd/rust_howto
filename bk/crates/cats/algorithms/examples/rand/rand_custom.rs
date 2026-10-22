@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates how to implement a custom distribution for the `rand` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 use rand::Rng;
 use rand::RngExt as _;
@@ -13,7 +12,9 @@ use rand::distr::StandardUniform;
 #[derive(Debug)]
 #[allow(dead_code)]
 struct Point {
+    /// The horizontal coordinate.
     x: i32,
+    /// The vertical coordinate.
     y: i32,
 }
 
@@ -25,6 +26,7 @@ impl Distribution<Point> for StandardUniform {
     }
 }
 
+/// Generates and prints random values, including a custom `Point`.
 fn main() {
     // Access the standard random value generator:
     let mut rng = rand::rng();
@@ -40,6 +42,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

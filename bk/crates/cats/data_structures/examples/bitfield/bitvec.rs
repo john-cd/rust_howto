@@ -1,12 +1,11 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Add the following to your `Cargo.toml`:
 //! ```toml
 //! [dependencies]
 //! bitvec = "1.0.1" # Or latest
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use bitvec::field::BitField;
 use bitvec::prelude::*;

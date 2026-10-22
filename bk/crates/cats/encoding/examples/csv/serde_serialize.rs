@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates serializing structs to CSV using `serde`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::io;
 
@@ -12,8 +11,11 @@ use serde::Serialize;
 /// A simple struct representing a record with a name, place, and ID.
 #[derive(Serialize)]
 struct Record<'a> {
+    /// The name.
     name: &'a str,
+    /// The place.
     place: &'a str,
+    /// The identifier.
     id: u64,
 }
 
@@ -49,6 +51,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

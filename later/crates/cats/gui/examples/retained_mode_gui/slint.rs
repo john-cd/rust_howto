@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A window defined with `slint`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 slint::slint! {
     export component HelloWorld inherits Window {
@@ -10,6 +14,7 @@ slint::slint! {
     }
 }
 
+/// Shows the window and runs the event loop.
 fn main() -> anyhow::Result<()> {
     // `run` is a convenience function that first calls Self::show, followed by
     // crate::run_event_loop() and Self::hide.
@@ -18,6 +23,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

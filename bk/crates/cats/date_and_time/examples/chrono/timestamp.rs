@@ -1,10 +1,15 @@
-// TODO Reviewed ??-??-2026
+//! Converting between a date and time and a Unix timestamp with `chrono`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use chrono::DateTime;
 use chrono::NaiveDate;
 use chrono::NaiveDateTime;
 
+/// Converts a `NaiveDateTime` to a timestamp and back.
 fn main() {
     // Create a `NaiveDateTime` object representing November 12, 2017, at
     // 17:33:44.
@@ -31,6 +36,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

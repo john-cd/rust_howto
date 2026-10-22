@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates basic usage of the `slog` logging crate.
 //! `slog` is a structured, composable logging framework.
@@ -14,12 +15,11 @@
 //! slog-term = "2.8"
 //! slog-scope = "4.4"
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use slog::Drain as _;
 use slog::o;
 
+/// Builds an asynchronous terminal logger and logs messages with it.
 fn main() {
     // Create a terminal decorator.
     let decorator = slog_term::TermDecorator::new().build();
@@ -72,6 +72,7 @@ fn perform_global_logging() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

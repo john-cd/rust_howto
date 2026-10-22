@@ -1,7 +1,3 @@
-// TODO Reviewed ??-??-2026
-#![allow(dead_code)]
-#![allow(unused_variables)]
-// // ANCHOR: example
 //! This module demonstrates basic usage of axum.
 //!
 //! `axum` is a web application framework designed to work with `tokio`
@@ -12,6 +8,12 @@
 //! - <https://docs.rs/axum/latest/axum/index.html>
 //! - <https://docs.rs/axum/0.8.1/axum/extract/struct.State.html>
 //! - <https://docs.rs/axum/0.8.1/axum/extract/index.html>
+//!
+//! TODO Reviewed ??-??-2026
+
+#![allow(dead_code)]
+#![allow(unused_variables)]
+// // ANCHOR: example
 use std::collections::HashMap;
 use std::sync::Arc;
 
@@ -28,14 +30,17 @@ use tracing_subscriber::layer::SubscriberExt as _;
 use tracing_subscriber::util::SubscriberInitExt as _;
 
 // Application state.
+/// The state shared by all the handlers.
 #[derive(Clone)]
 struct AppState {
+    /// The number of requests received.
     request_count: u64,
 }
 
 // An Axum "handler" is an async function that accepts zero or more
 // "extractors" as arguments and returns something that can be converted into
 // a response.
+/// Returns a greeting.
 async fn root() -> &'static str {
     "Hello, world!"
     // Anything that implements `IntoResponse` can be returned from handlers.
@@ -45,20 +50,24 @@ async fn root() -> &'static str {
 
 // The `Path` extractor gives us the path parameters (here `id` in
 // `/users/{id}`) and deserializes them.
+/// Returns a message that contains the user identifier from the path.
 async fn get_user(Path(id): Path<u64>) -> String {
     format!("User {id}")
 }
 
+/// Returns a message that confirms the creation of a user.
 async fn post_user(Path(id): Path<u64>) -> (StatusCode, String) {
     (StatusCode::CREATED, format!("User {id} created"))
 }
 
 // The wildcard e.g. `/assets/{*path}` is passed as a `String`.
+/// Returns the path of the requested asset.
 async fn serve_asset(Path(path): Path<String>) -> String {
     path
 }
 
 // `Query` gives the query parameters and deserializes them.
+/// Returns the query parameters of the request.
 async fn query(Query(_params): Query<HashMap<String, String>>) -> String {
     format!("Query parameters: {_params:?}")
 }
@@ -66,6 +75,7 @@ async fn query(Query(_params): Query<HashMap<String, String>>) -> String {
 // Buffer the request body and deserialize it as JSON into a
 // `serde_json::Value`. `Json` supports any type that implements
 // `serde::Deserialize`.
+/// Returns the JSON body of the request.
 async fn json(
     Json(payload): Json<serde_json::Value>,
 ) -> Json<serde_json::Value> {
@@ -73,16 +83,19 @@ async fn json(
 }
 
 // Access the application state via the `State` extractor.
+/// Returns the request count from the application state.
 async fn state(State(state): State<Arc<AppState>>) -> String {
     format!("Request count: {}", state.request_count)
 }
 
 // Fallbacks apply to routes that aren't matched by anything in the router.
+/// Returns a `404 Not Found` response for the unmatched routes.
 async fn fallback(uri: Uri) -> (StatusCode, String) {
     (StatusCode::NOT_FOUND, format!("No route for {uri}"))
 }
 
 // `tokio` macros and rt-multi-thread features should be enabled.
+/// Creates a router with the handlers and serves it.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     let _ = tracing_subscriber::registry()

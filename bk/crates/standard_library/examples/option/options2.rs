@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Using `Option` for an optional argument.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// This function simulates baking a cake.
 ///
@@ -28,6 +32,7 @@ fn bake_cake(sprinkles: Option<&str>) -> String {
     cake
 }
 
+/// Bakes cakes with and without sprinkles.
 fn main() {
     println!("{}", bake_cake(Some("rainbow nonpareils")));
     // The absence of a value is noted explicitly with `None`.
@@ -36,6 +41,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

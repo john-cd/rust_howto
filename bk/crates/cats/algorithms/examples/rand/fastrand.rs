@@ -1,13 +1,14 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! BEWARE: `fastrand` is NOT cryptographically secure.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::iter::repeat_with;
 
 use fastrand::Rng;
 
+/// Generates random booleans, numbers and strings with `fastrand`, then samples
+/// and shuffles values.
 fn main() {
     // To get reproducible results on every run,
     // pick an arbitrary number as seed:
@@ -39,6 +40,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

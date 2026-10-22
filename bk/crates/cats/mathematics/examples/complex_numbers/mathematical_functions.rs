@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! This example shows how to use the `exp` function on a complex number.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::f64::consts::PI;
 
@@ -14,6 +18,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Computing the median of a list of integers with quickselect.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::cmp::Ordering;
 
@@ -105,6 +109,7 @@ fn median(data: &[i32]) -> Option<f32> {
     }
 }
 
+/// Partitions a list and finds its median.
 fn main() {
     let data = [3, 1, 6, 1, 5, 8, 1, 8, 10, 11];
 
@@ -125,6 +130,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

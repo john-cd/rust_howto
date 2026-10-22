@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates how to use a custom delimiter during CSV deserialization.
-//!
-//! TODO Reviewed ??-??-2026
 
 use csv::Error;
 use csv::ReaderBuilder;
@@ -11,12 +10,16 @@ use serde::Deserialize;
 /// Represents a record to import.
 #[derive(Debug, Deserialize)]
 struct Record {
+    /// The name.
     name: String,
+    /// The place.
     place: String,
+    /// The identifier, if any.
     #[serde(deserialize_with = "csv::invalid_option")]
     id: Option<u64>,
 }
 
+/// Reads tab-separated data and prints each record.
 fn main() -> Result<(), Error> {
     // Tab-separated data.
     let tab_separated_data = "name\tplace\tid
@@ -38,6 +41,7 @@ fn main() -> Result<(), Error> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Error> {
     main()
 }

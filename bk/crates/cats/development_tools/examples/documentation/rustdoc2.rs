@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Documentation comments on a struct and its constructor.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 #![allow(dead_code)]
 
@@ -22,11 +25,14 @@ fn new(name: &str) -> Person {
     }
 }
 
+/// A person with a name.
 #[derive(Debug)]
 struct Person {
+    /// Name of the person.
     name: String,
 }
 
+/// Creates a person and prints it.
 fn main() {
     let john = new("John");
     println!("{john:?}");
@@ -34,6 +40,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

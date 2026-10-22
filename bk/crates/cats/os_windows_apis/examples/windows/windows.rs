@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `windows` crate to call the
 //! `MessageBoxW` function from the Windows API.
 //! It displays a simple message box with the text "Hello, windows!" and
 //! the title "Greetings".
-//!
-//! TODO Reviewed ??-??-2026
 
 #![cfg(target_os = "windows")]
 
@@ -22,6 +21,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

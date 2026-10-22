@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `deadpool` crate to manage a pool
 //! of connections.
@@ -9,25 +10,28 @@
 //! In this example, we create a simple `Server` type that represents a
 //! connection to a server. The `Manager` type is responsible for creating and
 //! recycling `Server` instances.
-//!
-//! TODO Reviewed ??-??-2026
 
 use deadpool::managed;
 
+/// The errors of the connection manager.
 #[derive(Debug)]
 enum Error {
+    /// A failure in the connection or in the manager.
     Fail, // Represents a failure in the connection or manager.
 }
 
+/// A server, which stands for a database connection.
 struct Server;
 
 impl Server {
     // Represents a connection to a server.
+    /// Returns the answer of the server.
     async fn get_answer(&self) -> i32 {
         42
     }
 }
 
+/// Creates and recycles the `Server` connections of the pool.
 struct Manager;
 
 // The `Manager` is responsible for creating and recycling `Server` instances.
@@ -50,8 +54,10 @@ impl managed::Manager for Manager {
 }
 
 // Type alias for the connection pool.
+/// A pool of `Server` connections.
 type Pool = managed::Pool<Manager>;
 
+/// Builds a pool, gets a connection from it and queries the server.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     let mgr = Manager;
@@ -70,6 +76,7 @@ async fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

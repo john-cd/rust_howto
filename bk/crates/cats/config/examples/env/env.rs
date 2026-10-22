@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Examples for working with standard environment variables.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::env;
 
@@ -27,12 +26,14 @@ fn env_extract() -> String {
     optional_value.unwrap_or("no shell set").to_owned()
 }
 
+/// Prints the content of a standard environment variable.
 fn main() {
     println!("SHELL: {}", env_extract());
 }
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

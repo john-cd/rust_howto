@@ -1,12 +1,11 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of using the `flate2` crate.
 //!
 //! `flate2` is a stream compression library that supports DEFLATE, zlib,
 //! and gzip formats. This example compresses bytes into a Zlib buffer,
 //! then decompresses them back to text.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::io::Read as _;
 use std::io::Write as _;
@@ -15,6 +14,8 @@ use flate2::Compression;
 use flate2::read::ZlibDecoder;
 use flate2::write::ZlibEncoder;
 
+/// Compresses and decompresses a byte string with zlib and checks the round
+/// trip.
 fn main() -> anyhow::Result<()> {
     let input = b"Hello from flate2!";
 
@@ -37,6 +38,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

@@ -1,14 +1,23 @@
-// TODO Reviewed ??-??-2026
+//! Trait objects with auto traits such as `Send`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // Define a trait with a method:
+/// A thing that can send a message.
 trait Message {
+    /// Sends the message.
     fn send_message(&self);
 }
 
 // Create a struct that will implement our trait.
+/// A worker that sends a message.
 struct Worker {
+    /// Identifier of the worker.
     id: u32,
+    /// The message to send.
     msg: String,
 }
 
@@ -20,10 +29,12 @@ impl Message for Worker {
 }
 
 // A function that takes a trait object with an autotrait:
+/// Sends the message of a trait object that is `Send`.
 fn process_message(messenger: Box<dyn Message + Send>) {
     messenger.send_message();
 }
 
+/// Sends a message through a `Box<dyn Message + Send>`.
 fn main() {
     let worker = Worker {
         id: 1,
@@ -46,6 +57,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

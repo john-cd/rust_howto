@@ -1,10 +1,16 @@
-// TODO Reviewed ??-??-2026
+//! Printing the type of a value with `type_name_of_val`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Returns an iterator over a range of numbers.
 fn get_iter() -> impl Iterator<Item = i32> {
     [1, 2, 3].into_iter()
 }
 
+/// Prints the type name of the iterator.
 fn main() {
     let iter = get_iter();
     // NEW in Rust 1.76
@@ -17,6 +23,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

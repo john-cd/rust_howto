@@ -1,14 +1,22 @@
-// TODO Reviewed ??-??-2026
+//! Deriving traits with `#[derive]`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // This attribute tells the compiler to automatically generate
 // an implementation of the `std::fmt::Debug` trait for the `Point` struct.
+/// A point that derives `Debug`.
 #[derive(Debug)]
 struct Point {
+    /// The x coordinate.
     x: i32,
+    /// The y coordinate.
     y: i32,
 }
 
+/// Prints a point with the derived `Debug`.
 fn main() {
     let p1 = Point { x: 10, y: 20 };
 
@@ -20,6 +28,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

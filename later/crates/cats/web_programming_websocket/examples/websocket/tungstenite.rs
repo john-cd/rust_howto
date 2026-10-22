@@ -1,14 +1,14 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates a basic WebSocket client using the `tungstenite`
 //! crate.
 //!
 //! `tungstenite` provides lightweight, flexible WebSockets for Rust.
-//!
-//! TODO Reviewed ??-??-2026
 
 use tungstenite::Message;
 use tungstenite::connect;
 
+/// Connects to a WebSocket server, sends a message and prints the reply.
 fn main() -> anyhow::Result<()> {
     // Connect to a test WebSocket server in blocking mode.
     let (mut socket, response) = connect("ws://echo.websocket.in")?;
@@ -36,6 +36,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 #[allow(clippy::main_recursion)]
 pub fn run() -> anyhow::Result<()> {
     main()?;

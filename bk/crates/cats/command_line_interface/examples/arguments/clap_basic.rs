@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Main function that parses command line arguments and prints their values:
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::path::PathBuf;
 
@@ -55,6 +59,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

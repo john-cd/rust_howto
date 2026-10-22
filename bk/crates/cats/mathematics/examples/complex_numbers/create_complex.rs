@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Creates complex numbers with integer and floating-point components.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// Creates complex numbers with integer and floating-point components.
 fn main() {
@@ -15,6 +19,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

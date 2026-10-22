@@ -1,12 +1,11 @@
 #![cfg(target_family = "unix")]
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to continuously read from the standard output
 //! of an external command, filter the output, and print the filtered lines. It
 //! uses the `journalctl` command to read system logs, filters lines containing
 //! "usb", and prints them to the console.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::io::BufRead as _;
 use std::io::BufReader;
@@ -14,6 +13,7 @@ use std::io::Error;
 use std::process::Command;
 use std::process::Stdio;
 
+/// Runs `journalctl` and prints its output line by line as it is produced.
 fn main() -> Result<(), Error> {
     // NOTE: `systemd` should be installed for this example to work.
     let stdout = Command::new("journalctl")
@@ -41,6 +41,7 @@ fn main() -> Result<(), Error> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Error> {
     main()
 }

@@ -1,18 +1,18 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates the use of the `rust_decimal` crate for high-precision decimal
 //! arithmetic, which can be particularly useful for financial calculations.
 //!
 //! This example showcases creating `Decimal` numbers, performing arithmetic
 //! operations, and converting between `Decimal` and string representations.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::str::FromStr as _;
 
 use rust_decimal::Decimal;
 use rust_decimal_macros::dec;
 
+/// Creates decimal numbers and applies arithmetic operations to them.
 fn main() {
     // 1. Creating decimals from literals.
     let number1 = Decimal::new(1234, 2); // 12.34
@@ -51,6 +51,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

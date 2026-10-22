@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! This example demonstrates transformations in 3D using the `nalgebra` crate:
+//! rotations, translations, and composing them into isometries.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::f64::consts::PI;
 
@@ -38,6 +43,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Tokenize XML with `xml5ever` and print the parsed tokens.
-//!
-//! TODO Reviewed ??-??-2026
 
 use markup5ever::buffer_queue::BufferQueue;
 use xml5ever::tendril::ByteTendril;
@@ -13,6 +12,7 @@ use xml5ever::tokenizer::Token;
 use xml5ever::tokenizer::TokenSink;
 use xml5ever::tokenizer::XmlTokenizer;
 
+/// A token sink that prints the tokens of an XML document.
 struct TokenPrinter;
 
 impl TokenSink for TokenPrinter {
@@ -39,6 +39,7 @@ impl TokenSink for TokenPrinter {
     }
 }
 
+/// Tokenizes an XML string and prints the tokens.
 fn main() {
     let xml = r#"<library><book id="b1">Rust</book></library>"#;
     let mut input = ByteTendril::new();
@@ -53,6 +54,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

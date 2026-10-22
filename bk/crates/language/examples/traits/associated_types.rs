@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A trait with an associated type.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// A trait that represents an iterator (similar to what is in the standard
 /// library).
@@ -14,6 +18,7 @@ trait Iterator {
     fn next(&mut self) -> Option<Self::Item>;
 }
 
+/// An iterator over numbers.
 struct MyIterator(u32);
 
 // We implement the trait for a given struct...
@@ -35,6 +40,7 @@ fn use_iterator(it: &mut impl Iterator<Item = u32>) -> Option<u32> {
     it.next()
 }
 
+/// Uses the iterator through the trait.
 fn main() {
     let mut it = MyIterator(42);
     println!("{:?}", use_iterator(&mut it));
@@ -42,6 +48,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

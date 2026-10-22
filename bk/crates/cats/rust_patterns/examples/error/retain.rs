@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to avoid discarding errors during error
 //! conversions using the `anyhow` crate.
@@ -6,8 +7,6 @@
 //! The `?` operator automatically converts different error types (e.g.,
 //! [`std::io::Error`], [`std::num::ParseIntError`]) into [`anyhow::Error`],
 //! retaining the full error information along the call chain.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// Parses a string as a `u32`, propagating any [`std::num::ParseIntError`]
 /// via `?`.
@@ -29,6 +28,7 @@ fn read_number_from_file(path: &str) -> anyhow::Result<u32> {
 // The `main` function may return a `Result` itself.
 // We return `anyhow::Result<()>` but could also use
 // `Result<(), Box<dyn Error>>` as the return type.
+/// Reads a number from a file and prints it.
 fn main() -> anyhow::Result<()> {
     let n = read_number_from_file("temp/number.txt")?;
     println!("The number is: {n}");
@@ -37,6 +37,7 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

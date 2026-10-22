@@ -1,12 +1,13 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates a simple HTTP GET request using the `reqwest`
 //! crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 
+/// Sends a `GET` request and prints the status, headers and body of the
+/// response.
 #[tokio::main]
 async fn main() -> Result<()> {
     let res = reqwest::get("http://httpbin.org/get").await?;
@@ -20,6 +21,7 @@ async fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

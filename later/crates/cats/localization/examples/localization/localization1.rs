@@ -1,17 +1,17 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates locale-aware message selection using the `sys-locale` crate.
 //!
 //! This example reads the system locale, chooses a translation based on the
 //! language code, and prints a localized greeting.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::error::Error;
 
 use sys_locale::get_locale;
 use sys_locale::get_locales;
 
+/// Detects the locale of the system and prints a localized greeting.
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let current_locale = get_locale().unwrap_or_else(|| "en-US".to_owned());
     let mut preferred_locales = get_locales();
@@ -31,6 +31,7 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     Ok(())
 }
 
+/// Returns a greeting for `locale`.
 fn translate_greeting(locale: &str) -> &'static str {
     if locale.starts_with("es") {
         "¡Hola! Bienvenido al ejemplo de localización."
@@ -46,6 +47,7 @@ fn translate_greeting(locale: &str) -> &'static str {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()
 }

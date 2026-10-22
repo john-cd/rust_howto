@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs the immediate mode GUI example.
+//!
+//! TODO Reviewed ??-??-2026
+
 mod egui;
 
 fn main() -> Result<(), eframe::Error> {

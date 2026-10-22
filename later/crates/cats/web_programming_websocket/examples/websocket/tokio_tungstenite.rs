@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of an asynchronous WebSocket client with `tokio_tungstenite`.
 //!
@@ -7,8 +8,6 @@
 //!
 //! This example connects to a test WebSocket server, sends a message, and
 //! receives an echoed message back.
-//!
-//! TODO Reviewed ??-??-2026
 
 // Extension trait for Sinks; defines `send()`.
 use futures_util::SinkExt;
@@ -20,6 +19,7 @@ use tokio_tungstenite::tungstenite::client::IntoClientRequest;
 // text, binary...
 use tokio_tungstenite::tungstenite::protocol::Message;
 
+/// Connects to a WebSocket server, sends a message and prints the reply.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Connect to a test WebSocket server, which will echo the message we sent.
@@ -51,6 +51,7 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()?;
     Ok(())

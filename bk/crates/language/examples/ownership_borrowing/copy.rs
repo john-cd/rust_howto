@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Types that implement `Copy` are copied instead of moved.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Copies integers and a user-defined `Copy` type.
 fn main() {
     // Integers implement the `Copy` trait, so they are bit-wise copied instead
     // of "moved".
@@ -30,6 +35,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

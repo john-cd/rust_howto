@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! # Text Diffing Example
 //!
@@ -15,8 +16,6 @@
 //! similar = "2.7.0" # Or latest
 //! console = "0.15.11" # Or latest
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::fmt;
 
@@ -24,6 +23,7 @@ use console::Style;
 use similar::ChangeTag;
 use similar::TextDiff;
 
+/// A line of a diff, with its optional line number.
 struct Line(Option<usize>, String);
 
 impl fmt::Display for Line {
@@ -96,6 +96,7 @@ fn word_diff() {
     println!();
 }
 
+/// Prints a line diff, then a word diff.
 fn main() {
     line_diff();
     word_diff();
@@ -103,6 +104,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

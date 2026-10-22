@@ -1,11 +1,16 @@
-// TODO Reviewed ??-??-2026
+//! Backreferences, capture groups and splitting with `fancy_regex`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use fancy_regex::Regex;
 
 // `fancy_regex` support features, including backreferences and lookaround, that
 // are not available on the `regex` crate.
 
+/// Prints whether `s` consists of two identical words.
 fn match_two_identical_words(s: &str) {
     // Check if a text consists of two identical words.
     // Note the backreference `\1` to the 1st capture group `(...)`.
@@ -17,6 +22,7 @@ fn match_two_identical_words(s: &str) {
     }
 }
 
+/// Extracts capture groups from a text.
 fn capture_groups() {
     let text = "Lorem ipsum dolor sit amet";
 
@@ -47,6 +53,7 @@ fn capture_groups() {
     }
 }
 
+/// Splits a text on runs of whitespace.
 fn split_text() {
     let re = Regex::new(r"[ \t]+").unwrap();
     let target = "Lorem ipsum\t dolor sit amet";
@@ -54,6 +61,7 @@ fn split_text() {
     assert_eq!(fields, vec!["Lorem", "ipsum", "dolor", "sit", "amet"]);
 }
 
+/// Runs each of the examples.
 fn main() {
     match_two_identical_words("foo foo");
     capture_groups();
@@ -62,6 +70,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

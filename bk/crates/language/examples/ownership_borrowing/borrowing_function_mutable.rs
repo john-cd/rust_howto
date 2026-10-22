@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Passing a mutable reference to a function.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// This function takes a mutable reference `&mut` to a `String`
 /// and appends ", world" to it.
@@ -8,6 +12,7 @@ fn change(some_string: &mut String) {
     println!("{some_string}");
 }
 
+/// Modifies a string through mutable references.
 fn main() {
     let mut s = String::from("hello"); // The `mut` keyword is required.
 
@@ -36,6 +41,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

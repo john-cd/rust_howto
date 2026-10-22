@@ -1,12 +1,12 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A FreeBSD-specific example using the `nix` crate to call FreeBSD APIs.
 //!
 //! This example prints operating system information from `uname` and the
 //! current process ID / parent process ID.
-//!
-//! TODO Reviewed ??-??-2026
 
+/// Prints information about the FreeBSD system.
 #[cfg(target_os = "freebsd")]
 fn main() {
     use nix::sys::utsname::uname;
@@ -29,6 +29,7 @@ fn main() {
     println!("  ppid: {}", ppid);
 }
 
+/// Prints a message, since the example only works on FreeBSD.
 #[cfg(not(target_os = "freebsd"))]
 fn main() {
     println!(
@@ -38,6 +39,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

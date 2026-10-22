@@ -1,13 +1,13 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! The `num_traits` crate provides numeric traits for generic mathematics.
-//!
-//! TODO Reviewed ??-??-2026
 
 use num_traits::NumCast;
 use num_traits::One;
 use num_traits::Zero;
 
+/// Uses the `Zero`, `One` and `NumCast` traits on a number.
 fn main() {
     // Create a variable with an initial value of zero.
     let mut x: i32 = Zero::zero();
@@ -27,6 +27,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

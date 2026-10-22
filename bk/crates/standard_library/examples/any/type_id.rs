@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Comparing types at runtime with `TypeId`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::any::Any;
 use std::any::TypeId;
@@ -8,10 +12,12 @@ use std::any::TypeId;
 //
 // The `'static` bound below is necessary,
 // because `TypeId` only works with `'static` types.
+/// Returns whether `T` and `U` are the same type.
 fn is_same_type<T: 'static, U: 'static>() -> bool {
     TypeId::of::<T>() == TypeId::of::<U>()
 }
 
+/// Compares several types.
 fn main() {
     // Compare types with `TypeId::of`:
     println!("i32 vs i32: {}", is_same_type::<i32, i32>()); // true.
@@ -45,6 +51,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

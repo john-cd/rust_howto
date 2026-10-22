@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! The commands of the application.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::path::PathBuf;
 
 /// Internal representation of a command passed as an argument to the
@@ -13,5 +16,6 @@ pub enum Cmd {
     Open(Vec<PathBuf>),
     /// `query` command, storing query words.
     Query(Vec<String>),
+    /// A hidden command that does nothing.
     Test,
 }

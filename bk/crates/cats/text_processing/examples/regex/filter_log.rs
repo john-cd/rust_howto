@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Filtering the lines of a log file with a set of regular expressions.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::fs::File;
 use std::io::BufRead as _;
@@ -8,6 +12,7 @@ use std::io::BufReader;
 use anyhow::Result;
 use regex::RegexSetBuilder;
 
+/// Prints the lines of the log that match any of the patterns.
 fn main() -> Result<()> {
     let log_path = "temp/application.log";
     let buffered = BufReader::new(File::open(log_path)?);
@@ -31,6 +36,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }
@@ -46,6 +52,7 @@ WARNING sunt in culpa qui officia TIMEOUT EXPIRED
 quis nostrud exercitation ullamco
 "#;
 
+    /// Checks that the log is filtered.
     #[test]
     fn test_main() -> Result<()> {
         use std::fs;

@@ -1,15 +1,15 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example: create a geographic polygon, compute its area, and find its
 //! centroid using the `geo` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 use geo::Area as _;
 use geo::Centroid as _;
 use geo::LineString;
 use geo::Polygon;
 
+/// Creates a polygon, computes its area and finds its centroid.
 fn main() {
     let outer = LineString::from(vec![
         (0.0, 0.0),
@@ -30,6 +30,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

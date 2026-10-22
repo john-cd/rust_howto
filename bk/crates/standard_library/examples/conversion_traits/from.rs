@@ -1,9 +1,15 @@
-// TODO Reviewed ??-??-2026
+//! Converting between types with `From` and `Into`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// A length in millimeters.
 #[derive(Debug)]
 struct Millimeters(u32);
 
+/// A length in meters.
 #[derive(Debug)]
 struct Meters(u32);
 
@@ -13,6 +19,7 @@ impl From<Meters> for Millimeters {
     }
 }
 
+/// Converts meters to millimeters with `from` and `into`.
 fn main() {
     let m = Meters(2);
     let mm: Millimeters = m.into();
@@ -27,6 +34,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

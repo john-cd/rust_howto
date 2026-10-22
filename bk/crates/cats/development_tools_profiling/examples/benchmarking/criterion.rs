@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Run the benchmarks with `cargo bench`:
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::hint::black_box;
 
@@ -35,6 +34,7 @@ criterion_group!(benches, benchmark_fibonacci);
 criterion_main!(benches);
 // ANCHOR_END: example
 
+/// Runs the benchmark with the default `Criterion` configuration.
 pub fn run() {
     let mut criterion = Criterion::default().configure_from_args();
     benchmark_fibonacci(&mut criterion);

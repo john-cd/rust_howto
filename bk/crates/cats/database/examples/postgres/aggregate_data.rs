@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Aggregating rows with SQL in a PostgreSQL database.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // This example demonstrates aggregating query results in PostgreSQL using the
 // `postgres` crate.
@@ -10,7 +14,9 @@ use postgres::NoTls;
 /// Represents a nation with its nationality and the count of artists from that
 /// nation.
 struct Nation {
+    /// Nationality of the artists.
     nationality: String,
+    /// Number of artists of that nationality.
     count: i64,
 }
 
@@ -43,6 +49,7 @@ fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Error> {
     main()
 }
@@ -51,6 +58,8 @@ pub fn run() -> Result<(), Error> {
 mod tests {
     use super::*;
 
+    /// Runs the example against a PostgreSQL server; needs the external
+    /// service.
     #[test]
     fn require_external_svc() -> Result<(), Error> {
         if std::env::var("PG_URL").is_err() {

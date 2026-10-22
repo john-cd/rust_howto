@@ -1,12 +1,11 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to initialize the `wgpu` GPU abstraction layer
 //! without creating a window.
 //!
 //! It requests a GPU adapter, creates a device and queue, allocates a small
 //! buffer, and submits an empty command list to validate the initialized queue.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::future::Future;
 use std::pin::Pin;
@@ -21,6 +20,8 @@ fn main() {
     block_on(async_main());
 }
 
+/// Creates a `wgpu` instance, requests an adapter and a device, and submits
+/// empty commands.
 async fn async_main() {
     let mut instance_desc =
         wgpu::InstanceDescriptor::new_without_display_handle();
@@ -60,6 +61,7 @@ async fn async_main() {
     queue.submit(std::iter::empty());
 }
 
+/// Runs `future` to completion by polling it in a loop.
 fn block_on<F: Future>(mut future: F) -> F::Output {
     let waker = noop_waker();
     let mut cx = Context::from_waker(&waker);
@@ -72,6 +74,7 @@ fn block_on<F: Future>(mut future: F) -> F::Output {
     }
 }
 
+/// Returns a waker that does nothing.
 fn noop_waker() -> Waker {
     unsafe fn clone_raw(_: *const ()) -> RawWaker {
         RawWaker::new(ptr::null(), &VTABLE)
@@ -88,6 +91,7 @@ fn noop_waker() -> Waker {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

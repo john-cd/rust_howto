@@ -1,6 +1,12 @@
-// TODO Reviewed ??-??-2026
+//! Calls `async` code from blocking code by building a Tokio runtime by hand.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Spawns background tasks on a one-thread runtime, works on the main thread
+/// meanwhile, then waits for the tasks.
 fn main() {
     // Create a new multi-threaded runtime. The runtime is used to
     // execute asynchronous tasks.
@@ -31,6 +37,7 @@ fn main() {
 }
 
 // Example async code to execute
+/// A background task that prints its number `i`.
 async fn my_bg_task(i: u64) {
     // By subtracting, the tasks with larger values of i sleep for a
     // shorter duration.
@@ -43,6 +50,7 @@ async fn my_bg_task(i: u64) {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

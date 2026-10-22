@@ -1,12 +1,11 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `clap` crate to parse command-line
 //! arguments.
 //!
 //! It showcases various features such as positional arguments, named arguments,
 //! subcommands, default values, validation, and counting occurrences of flags.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::path::PathBuf;
 
@@ -16,6 +15,7 @@ use clap::Subcommand;
 
 // The struct declaring the desired command-line arguments and commands:
 // The `derive` feature flag is required (see `Cargo.toml`).
+/// Command-line arguments.
 #[derive(Parser, Debug)]
 // Reads the following attributes from the package's `Cargo.toml`
 // Alternatively, use `#[command(name = "MyApp")]`, etc...
@@ -33,6 +33,7 @@ pub struct Cli {
     port: u16,
 
     // Named argument example: the path to the file to look into:
+    /// Named argument: the path to the file to look into.
     #[arg(short, long)]
     path: Option<PathBuf>,
 
@@ -53,6 +54,7 @@ pub struct Cli {
     // verbose: clap_verbosity_flag::Verbosity,
 
     // Subcommands:
+    /// The example to run.
     #[command(subcommand)]
     pub command: Option<Commands>,
 }
@@ -67,6 +69,7 @@ pub enum Commands {
         #[arg(short, long)]
         all: bool,
 
+        /// The files to read.
         #[arg(required = true)]
         file: Vec<PathBuf>,
     },
@@ -74,6 +77,7 @@ pub enum Commands {
     Tell,
 }
 
+/// Runs the example selected on the command line.
 fn main() -> Result<()> {
     // `Clap` returns a Cli struct populated from `std::env::args_os()`...
     let cli = Cli::try_parse()?;
@@ -120,6 +124,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

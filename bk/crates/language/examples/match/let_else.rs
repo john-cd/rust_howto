@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! The `let ... else` statement.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Parses `input` as a number, or panics.
 fn parse_number(input: &str) -> u32 {
     // Try to parse the input string.
     let Ok(num) = input.parse::<u32>() else {
@@ -12,6 +17,7 @@ fn parse_number(input: &str) -> u32 {
     num
 }
 
+/// Parses a number with `let ... else`.
 fn main() {
     let value = parse_number("42");
     println!("Parsed value: {value}");
@@ -19,6 +25,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

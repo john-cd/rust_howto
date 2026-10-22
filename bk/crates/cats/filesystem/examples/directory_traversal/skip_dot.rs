@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to skip hidden files and directories during
 //! directory traversal.
-//!
-//! TODO Reviewed ??-??-2026
 
 use walkdir::DirEntry;
 use walkdir::WalkDir;
@@ -19,6 +18,8 @@ fn is_not_hidden(entry: &DirEntry) -> bool {
         .is_some_and(|s| entry.depth() == 0 || !s.starts_with('.'))
 }
 
+/// Prints the paths of the current directory tree, skipping hidden files and
+/// directories.
 fn main() {
     let w = WalkDir::new(".");
     w.into_iter()
@@ -29,6 +30,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

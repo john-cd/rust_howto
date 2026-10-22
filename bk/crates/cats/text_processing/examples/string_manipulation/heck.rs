@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `heck` crate to convert strings
 //! between different casing conventions.
@@ -11,8 +12,6 @@
 //! [dependencies]
 //! heck = "0.4.1"
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use heck::ToKebabCase as _;
 use heck::ToLowerCamelCase as _;
@@ -20,6 +19,7 @@ use heck::ToPascalCase as _;
 use heck::ToSnakeCase as _;
 use heck::ToTitleCase as _;
 
+/// Converts a string to several cases.
 fn main() {
     let input = "hello_world example-string";
 
@@ -33,6 +33,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

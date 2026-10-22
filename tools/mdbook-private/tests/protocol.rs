@@ -13,6 +13,7 @@ use mdbook_preprocessor::book::SectionNumber;
 use mdbook_preprocessor::config::Config;
 use serde_json::json;
 
+/// Creates a chapter that contains private content.
 fn chapter(name: &str, path: &str, number: Option<Vec<u32>>) -> Chapter {
     let mut chapter = Chapter::new(
         name,
@@ -24,6 +25,8 @@ fn chapter(name: &str, path: &str, number: Option<Vec<u32>>) -> Chapter {
     chapter
 }
 
+/// Runs the executable with the given settings and book, and returns its
+/// output.
 fn invoke(settings: serde_json::Value, book: Book) -> Output {
     let mut config = Config::default();
     config
@@ -45,6 +48,7 @@ fn invoke(settings: serde_json::Value, book: Book) -> Output {
     child.wait_with_output().expect("input should parse")
 }
 
+/// Checks that private chapters are removed and the rest renumbered.
 #[test]
 fn removes_private_subtrees_and_renumbers_visible_chapters() {
     let mut public = chapter("Public", "public.md", Some(vec![2]));
@@ -86,6 +90,7 @@ fn removes_private_subtrees_and_renumbers_visible_chapters() {
     assert_eq!(draft.name, "Draft");
 }
 
+/// Checks that private content is kept and styled when requested.
 #[test]
 fn retains_and_styles_private_content_when_requested() {
     let mut book = Book::new();
@@ -102,6 +107,7 @@ fn retains_and_styles_private_content_when_requested() {
     assert!(!chapter.content.contains("<!--private"));
 }
 
+/// Checks that a custom prefix and unstyled retention are honored.
 #[test]
 fn supports_custom_prefix_and_unstyled_retention() {
     let mut book = Book::new();
@@ -121,6 +127,7 @@ fn supports_custom_prefix_and_unstyled_retention() {
     assert!(!text.contains("blockquote"));
 }
 
+/// Checks that invalid settings produce an error and no book.
 #[test]
 fn invalid_privacy_configuration_fails_without_emitting_a_book() {
     let output = invoke(json!({"remove":"true"}), Book::new());
@@ -129,6 +136,7 @@ fn invalid_privacy_configuration_fails_without_emitting_a_book() {
     assert!(String::from_utf8_lossy(&output.stderr).contains("preprocessor.private"));
 }
 
+/// Checks that the `supports` query is answered by the exit status only.
 #[test]
 fn renderer_support_uses_only_exit_status() {
     for (renderer, supported) in [("html", true), ("not-supported", false)] {

@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Command-line arguments of the hierarchical configuration example.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::ffi::OsString;
 use std::path::PathBuf;
 

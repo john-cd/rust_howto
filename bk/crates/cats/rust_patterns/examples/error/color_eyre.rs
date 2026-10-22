@@ -1,16 +1,16 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates how to use the `color-eyre` crate for enhanced error reporting.
 //!
 //! `color_eyre` provides beautiful error reporting and backtraces with colors,
 //! making it easier to understand and debug errors.
 //! It's especially useful for debugging in command-line applications.
-//!
-//! TODO Reviewed ??-??-2026
 
 use color_eyre::eyre::Result;
 use color_eyre::eyre::eyre;
 
+/// Installs the `color-eyre` hook, then fails with a division by zero error.
 fn main() -> Result<()> {
     // Initializes color_eyre's error reporting hook. This hook intercepts
     // panics and errors, formatting them with colors and backtraces.
@@ -22,6 +22,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+/// Divides `a` by `b`, or returns an error if `b` is zero.
 fn divide(a: i32, b: i32) -> Result<i32> {
     if b == 0 {
         // Use the `eyre!` macro to construct an ad-hoc error from a string.
@@ -34,6 +35,7 @@ fn divide(a: i32, b: i32) -> Result<i32> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

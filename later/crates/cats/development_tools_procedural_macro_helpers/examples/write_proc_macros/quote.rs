@@ -1,5 +1,12 @@
-// TODO Reviewed ??-??-2026
+//! This example demonstrates the use of the `quote!` macro from the `quote`
+//! crate to generate Rust code dynamically. It shows how to create an
+//! identifier using `syn::parse_quote!` and then use it within a `quote!`
+//! block to generate a `TokenStream` representing a piece of Rust code.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use quote::quote;
 use syn::Ident;
@@ -25,6 +32,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,8 +1,13 @@
-// TODO Reviewed ??-??-2026
+//! A queue implemented with `VecDeque`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::collections::VecDeque;
 
+/// Adds elements to a queue and removes them in first-in, first-out order.
 fn main() {
     let mut queue = VecDeque::new();
     // You can also use `with_capacity`.
@@ -38,6 +43,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

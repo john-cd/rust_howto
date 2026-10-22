@@ -1,20 +1,24 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates deserializing CSV records into a struct.
-//!
-//! TODO Reviewed ??-??-2026
 
 use serde::Deserialize;
 
 /// Represents a record from the CSV data.
 #[derive(Deserialize)]
 struct Record {
+    /// The year the car was built.
     year: u16,
+    /// The manufacturer.
     make: String,
+    /// The model.
     model: String,
+    /// A description of the car.
     description: String,
 }
 
+/// Deserializes CSV records into a struct and prints them.
 fn main() -> Result<(), csv::Error> {
     let csv = "year,make,model,description
 1948,Porsche,356,Luxury sports car
@@ -35,6 +39,7 @@ fn main() -> Result<(), csv::Error> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), csv::Error> {
     main()
 }

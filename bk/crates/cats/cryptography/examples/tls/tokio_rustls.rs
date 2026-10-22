@@ -1,9 +1,7 @@
 #![allow(dead_code)]
-
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates an async TLS client using `tokio-rustls`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::sync::Arc;
 
@@ -17,6 +15,7 @@ use tokio::net::TcpStream;
 use tokio_rustls::TlsConnector;
 use webpki_roots::TLS_SERVER_ROOTS;
 
+/// Connects to a server over TLS and sends a request.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     let mut root_store = RootCertStore::empty();

@@ -1,9 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! Generating and parsing UUIDs.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use uuid::Uuid;
 use uuid::uuid;
 
+/// Generates, parses and prints UUIDs.
 fn main() {
     // Generate a new UUID (version 4) randomly:
     let my_uuid = Uuid::new_v4();
@@ -34,6 +39,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,14 +1,15 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates how to clone trait objects using the `dyn_clone` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 use dyn_clone::DynClone;
 
 // Define a trait named `MyTrait` that requires implementors to also implement
 // `DynClone`.
+/// A trait whose trait objects can be cloned.
 trait MyTrait: DynClone {
+    /// Prints the value.
     fn recite(&self);
 }
 
@@ -19,6 +20,7 @@ impl MyTrait for String {
     }
 }
 
+/// Clones a boxed trait object and calls a method on both objects.
 fn main() {
     let line = "The slithy structs did gyre and gimble the namespace";
 
@@ -39,6 +41,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Play a simple sine tone using the `rodio` audio crate.
 //!
 //! This example opens the default audio output device, generates a 440 Hz
 //! sine wave, and plays it for two seconds.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::error::Error;
 use std::time::Duration;
@@ -15,6 +14,7 @@ use rodio::Player;
 use rodio::Source;
 use rodio::source::SineWave;
 
+/// Plays a 440 Hz sine tone for two seconds.
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let sink_handle = DeviceSinkBuilder::open_default_sink()?;
     let player = Player::connect_new(sink_handle.mixer());
@@ -29,6 +29,7 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()
 }

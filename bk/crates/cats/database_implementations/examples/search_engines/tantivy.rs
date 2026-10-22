@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Create an in-memory Tantivy index and run a simple full-text search.
-//!
-//! TODO Reviewed ??-??-2026
 
 use tantivy::Index;
 use tantivy::TantivyDocument;
@@ -14,6 +13,7 @@ use tantivy::schema::Schema;
 use tantivy::schema::TEXT;
 use tantivy::schema::document::Document as _;
 
+/// Creates an in-memory index, adds documents to it and searches it.
 fn main() -> tantivy::Result<()> {
     let mut schema_builder = Schema::builder();
     let title = schema_builder.add_text_field("title", TEXT | STORED);
@@ -52,6 +52,7 @@ fn main() -> tantivy::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> tantivy::Result<()> {
     main()
 }

@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `config` crate to load
 //! application configuration.
@@ -16,8 +17,6 @@
 //! serde = { version = "1.0", features = ["derive"] }
 //! clap = { version = "4.5.37", features = [ "cargo" ] } # Optional, for CLI argument parsing.
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::path::PathBuf;
 
@@ -32,11 +31,15 @@ pub(crate) use cli::parse_command_line_args;
 /// Application settings, which consist of nested configuration objects.
 #[derive(Debug, Deserialize)]
 pub(crate) struct Settings {
+    /// Settings of the service.
     pub service: ServiceSettings,
+    /// Settings of the database.
     pub database: DatabaseSettings,
+    /// Settings of the logging.
     pub logging: LoggingSettings,
 }
 
+/// Settings of the service.
 #[derive(Debug, Deserialize)]
 pub(crate) struct ServiceSettings {
     /// The name of the application, here a service of some sort.
@@ -45,16 +48,19 @@ pub(crate) struct ServiceSettings {
     pub port: u16,
 }
 
+/// Settings of the database.
 #[derive(Debug, Deserialize)]
 pub(crate) struct DatabaseSettings {
     /// Connection URL.
     pub url: String,
-    // Maximum number of connections.
+    /// Maximum number of connections.
     pub max_connections: u32,
 }
 
+/// Settings of the logging.
 #[derive(Debug, Deserialize)]
 pub(crate) struct LoggingSettings {
+    /// The logging level, e.g. `info`.
     pub level: String,
 }
 
@@ -69,6 +75,7 @@ pub(crate) struct CommandLineArgs {
     pub port: Option<u16>,
 }
 
+/// Loads the layered configuration and prints it.
 fn main() -> anyhow::Result<()> {
     // 1. Retrieve command-line arguments - in this example, default run_mode
     //    ("development"), no custom config file, and port value overriden.
@@ -155,6 +162,7 @@ level = "debug"
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

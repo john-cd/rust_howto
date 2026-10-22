@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Simplified implementation of the `Arc` smart pointer.
 //!
@@ -6,11 +7,10 @@
 //! reference count.
 //!
 //! This implementation is not intended for production use.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![allow(dead_code)]
 
+/// A simplified `Arc` that implements `Send` and `Sync`.
 mod my {
 
     use std::marker::PhantomData;
@@ -26,7 +26,9 @@ mod my {
     /// It holds the actual data and the reference count.
     /// One instance is shared by / pointed to by multiple `Arc` clones.
     struct ArcInner<T> {
+        /// The number of references.
         count: AtomicUsize,
+        /// The shared data.
         data: T,
     }
 
@@ -39,9 +41,12 @@ mod my {
     /// The fields are private and unreachable outside of the module.
     pub struct Arc<T> {
         // Pointer to the inner data structure.
+        /// A pointer to the shared data and reference count.
         ptr: *mut ArcInner<T>,
         // We want `Arc` to behave like a `ArcInner<T>`, despite the fact that
         // it does not own one, thus we use `PhantomData`.
+        /// A marker that tells the compiler that `Arc` behaves like an owner
+        /// of the inner data.
         phantom: PhantomData<ArcInner<T>>,
     }
 
@@ -207,6 +212,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

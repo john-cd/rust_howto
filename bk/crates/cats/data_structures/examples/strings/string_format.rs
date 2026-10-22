@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Formatting strings with `print!`, `format!` and `write!`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::io::Write as _;
 
@@ -110,6 +114,7 @@ fn format() {
     let _q = dbg!(Point { x: 5, y: 5 });
 }
 
+/// Runs each of the formatting examples.
 fn main() {
     print();
     variants();
@@ -118,6 +123,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

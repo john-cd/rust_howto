@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! Authenticated encryption with ChaCha20-Poly1305, with and without associated
+//! data.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // Trait that provides in-place stateless AEAD:
 use chacha20poly1305::AeadInPlace as _;
@@ -32,6 +37,7 @@ use zeroize::Zeroize as _;
 // "ChaCha20Poly1305" is notable for being simple and fast when implemented in
 // pure software.
 
+/// Encrypts a message and decrypts it again.
 fn encrypt_then_decrypt() {
     // Example plaintext to encrypt.
     let mut plaintext: Vec<u8> = b"This is a secret message.".to_vec();
@@ -128,6 +134,7 @@ fn encrypt_then_decrypt() {
 }
 
 // --- Example with associated data (AAD) ---
+/// Encrypts with associated data, which must match when decrypting.
 fn aad() {
     let mut plaintext = Vec::from(b"This is a secret message.");
     let aad = b"Associated Data";
@@ -172,6 +179,7 @@ fn aad() {
     ciphertext_aad.zeroize();
 }
 
+/// Runs both examples.
 fn main() {
     encrypt_then_decrypt();
     aad();
@@ -179,6 +187,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `dhat` provides heap profiling and ad-hoc profiling capabilities,
 //! similar to those provided by `DHAT`, a powerful heap profiler that
@@ -19,8 +20,6 @@
 //! dhat-heap = []    # for heap profiling.
 //! dhat-ad-hoc = []  # for ad hoc profiling.
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 /// The heap profiling works by using a global allocator that wraps the system
 /// allocator and tracks all heap allocations.
@@ -77,6 +76,7 @@ fn adhoc_profiling() {
     }
 }
 
+/// Runs the heap profiling and ad hoc profiling examples.
 fn main() {
     heap_profiling();
     adhoc_profiling();
@@ -87,6 +87,7 @@ fn main() {
 // Example adapted from <https://docs.rs/dhat/latest/dhat/>
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

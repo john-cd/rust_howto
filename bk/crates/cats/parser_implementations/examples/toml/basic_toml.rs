@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the maintained `toml` crate to parse
 //! and serialize TOML data.
@@ -10,34 +11,43 @@
 //! chrono = { version = "0.4.40", features = [ "serde" ] }
 //! serde = { version = "1.0.219", features = [ "derive" ] }
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 use std::fs;
 
 // Struct that will be serialized/deserialized.
+/// The configuration, which is serialized to and deserialized from TOML.
 #[derive(Debug, serde::Serialize, serde::Deserialize)]
 struct Config {
     // Custom type.
+    /// The server settings, as a nested table.
     server: ServerConfig,
     // Hashmap.
+    /// The limits, as a map from names to values.
     limits: HashMap<String, i64>,
 }
 
+/// The settings of the server.
 #[derive(Debug, serde::Serialize, serde::Deserialize)]
 struct ServerConfig {
+    /// The host name or address.
     host: String,
+    /// The port to listen on.
     port: u16,
     // Option.
+    /// Whether debugging is enabled, if specified.
     debug: Option<bool>,
     // Vec.
+    /// The enabled features.
     features: Vec<String>,
     // Custom serialization: timestamp in seconds since the epoch.
+    /// The date and time of the reset, stored as seconds since the epoch.
     #[serde(with = "chrono::serde::ts_seconds")]
     reset_datetime: chrono::DateTime<chrono::Utc>,
 }
 
+/// Parses TOML, modifies it, writes it to a file and reads it back, then
+/// handles an invalid document.
 fn main() -> anyhow::Result<()> {
     // 1. Parse TOML from a string.
     let toml_str = r#"
@@ -87,6 +97,7 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

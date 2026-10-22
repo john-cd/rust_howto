@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Examples of password hashing and key derivation with Argon2.
-//!
-//! TODO Reviewed ??-??-2026
 
 use argon2::Argon2;
 use argon2::password_hash::Error;
@@ -12,6 +11,7 @@ use argon2::password_hash::PasswordVerifier as _;
 use argon2::password_hash::SaltString;
 use argon2::password_hash::rand_core::OsRng;
 
+/// Hashes a password with Argon2, then verifies it and derives a key.
 fn main() -> Result<(), Error> {
     let password_to_hash = b"super_secret_password"; // Bad password; don't actually use!
 
@@ -91,6 +91,7 @@ fn key_derivation() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Error> {
     main()
 }

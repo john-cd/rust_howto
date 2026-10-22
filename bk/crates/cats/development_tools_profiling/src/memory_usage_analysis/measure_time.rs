@@ -1,8 +1,7 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `measure_time` is a simple crate for measuring the execution time of code
 //! blocks using the `measure_time!` macro.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::thread;
 use std::time::Duration;
@@ -24,6 +23,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

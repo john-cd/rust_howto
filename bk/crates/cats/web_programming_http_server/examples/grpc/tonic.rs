@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example shows how to create a simple gRPC server using the `tonic`
 //! crate.
@@ -18,8 +19,6 @@
 //! [build-dependencies]
 //! tonic-build = "0.12"
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 // Imports from the module created by `tonic` (see below):
 use helloworld::HelloReply;
@@ -57,6 +56,7 @@ impl Greeter for MyGreeter {
     }
 }
 
+/// Starts the gRPC server.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     let addr = "[::1]:50051".parse().unwrap();
@@ -74,6 +74,7 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

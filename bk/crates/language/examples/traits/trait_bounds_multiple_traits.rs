@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Requiring several traits with `+`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::clone::Clone;
 use std::fmt::Debug;
@@ -27,9 +31,11 @@ fn func3(item: &(impl Debug + Clone)) {
     println!("{:?}", item.clone());
 }
 
+/// A type that implements `Debug` and `Clone`.
 #[derive(Debug, Clone)]
 struct S;
 
+/// Calls the functions that require both traits.
 fn main() {
     let s = S;
     // Sinc `S` implements both `Debug` and `Clone`, we can call the above
@@ -41,6 +47,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

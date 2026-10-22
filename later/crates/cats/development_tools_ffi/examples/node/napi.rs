@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Calling Rust from Node.js with `napi`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // Framework for building pre-compiled Node.js addons in Rust.
 
@@ -7,15 +11,18 @@
 // use napi_derive::napi;
 
 // #[napi] // Indicates that the function is exposed to JavaScript.
+/// Returns a greeting for `name`.
 fn hello(name: String) -> String {
     format!("Hello, {name}!")
 }
 
+/// Does nothing yet; the function above is called from Node.js.
 fn main() {
     // TODO
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

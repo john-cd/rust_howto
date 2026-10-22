@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! The following demonstrates how to use percent encoding to handle special
 //! characters in URLs.
@@ -11,8 +12,6 @@
 //!
 //! This example uses the NON_ALPHANUMERIC set to encode everything that is not
 //! an ASCII letter or digit.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use percent_encoding::NON_ALPHANUMERIC;
@@ -31,6 +30,7 @@ fn decode_url_component(encoded: &str) -> Result<String> {
     Ok(decoded)
 }
 
+/// Encodes and decodes a URL component.
 fn main() -> Result<()> {
     // Example URL component encoding:
     let original = "Hello, World! @#$%^&*()";
@@ -46,6 +46,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

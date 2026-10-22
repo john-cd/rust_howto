@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Adding a method to an external type with a trait.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// A trait for types that can be hashed to a `u64`.
 trait MyHash {
@@ -15,6 +19,7 @@ impl MyHash for i64 {
     }
 }
 
+/// Calls the method that the trait adds to `i64`.
 fn main() {
     let x = 1i64;
     // Since `i64` implements the `MyHash` trait, we can call its method.
@@ -23,6 +28,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

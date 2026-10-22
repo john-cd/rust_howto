@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates big integer manipulation.
-//!
-//! TODO Reviewed ??-??-2026
 
 use num::bigint::BigInt;
 use num::bigint::ToBigInt as _;
@@ -19,6 +18,7 @@ fn factorial(x: u32) -> BigInt {
     }
 }
 
+/// Prints the factorial of 100.
 fn main() {
     println!("100! equals {}", factorial(100));
     assert_eq!(factorial(100).to_string().len(), 158); // factorial(100) is a 158-digit number
@@ -26,6 +26,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,16 +1,17 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Serialize and deserialize a Protocol Buffers message generated with `prost`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use person::Person;
 use prost::Message;
 
+/// The `Person` message, generated from the `.proto` file.
 mod person {
     include!(concat!(env!("OUT_DIR"), "/example.rs"));
 }
 
+/// Encodes a `Person` message, then decodes it and compares the result.
 fn main() {
     let person = Person {
         name: "Alice".to_string(),
@@ -27,6 +28,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Bringing a function into scope with `use`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// This module represents the front of the house in a restaurant.
 mod front_of_house {
@@ -15,6 +19,7 @@ mod front_of_house {
 // Bring the hosting module in scope.
 use front_of_house::hosting;
 
+/// Calls a function through a shortened path.
 fn eat_at_restaurant() {
     // We can now access the function within the `hosting` module,
     // without writing the whole path e.g.
@@ -30,6 +35,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

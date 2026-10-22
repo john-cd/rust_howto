@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A* pathfinding on a grid with the `pathfinding` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use pathfinding::prelude::astar;
 
@@ -47,6 +51,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

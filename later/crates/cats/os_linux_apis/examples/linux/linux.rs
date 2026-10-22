@@ -1,12 +1,12 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A Rust example using the `nix` crate to interface with Linux APIs.
 //!
 //! This example prints the current process ID, parent process ID, and the
 //! operating system information obtained from `uname`.
-//!
-//! TODO Reviewed ??-??-2026
 
+/// Prints information about the Linux system.
 #[cfg(target_os = "linux")]
 fn main() {
     use nix::sys::utsname::uname;
@@ -29,6 +29,7 @@ fn main() {
     println!("  ppid: {}", ppid);
 }
 
+/// Prints a message, since the example only works on Linux.
 #[cfg(not(target_os = "linux"))]
 fn main() {
     println!(
@@ -37,6 +38,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

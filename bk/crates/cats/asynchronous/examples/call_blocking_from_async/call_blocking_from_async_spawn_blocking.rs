@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! This example demonstrates how to call a blocking function from an
+//! asynchronous context using `tokio::task::spawn_blocking`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// This example demonstrates how to call a blocking function from an
 /// asynchronous context using `tokio::task::spawn_blocking`.
@@ -24,6 +29,7 @@ async fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

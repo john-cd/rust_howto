@@ -1,8 +1,13 @@
-// TODO Reviewed ??-??-2026
+//! An `IndexMap`, a hash map that preserves insertion order.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use indexmap::IndexMap;
 
+/// Inserts into an `IndexMap` and iterates in insertion order.
 fn main() {
     // Create an IndexMap:
     let mut map = IndexMap::new();
@@ -34,6 +39,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

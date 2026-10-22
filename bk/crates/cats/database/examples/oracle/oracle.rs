@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Rust bindings to ODPI-C.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 use std::env;
 use std::sync::Mutex;
 
@@ -7,6 +11,7 @@ use dotenvy::dotenv;
 use oracle::Connection;
 use oracle::Error;
 
+/// Serializes the tests, which share environment variables.
 static ENV_MUTEX: std::sync::LazyLock<Mutex<()>> = std::sync::LazyLock::new(|| Mutex::new(()));
 
 // ANCHOR: example
@@ -57,6 +62,7 @@ async fn main() -> Result<(), Error> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Error> {
     main()
 }

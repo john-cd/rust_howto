@@ -15,26 +15,35 @@ mod proc_macro2;
 mod quote;
 mod syn;
 
+/// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `darling` example.
     #[command(name = "darling")]
     Darling,
+    /// Runs the `paste` example.
     #[command(name = "paste")]
     Paste,
+    /// Runs the `proc_macro2` example.
     #[command(name = "proc_macro2")]
     ProcMacro2,
+    /// Runs the `quote` example.
     #[command(name = "quote")]
     Quote,
+    /// Runs the `syn` example.
     #[command(name = "syn")]
     Syn,
 }
 
+/// Runs the example selected on the command line.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let cli = Cli::parse();
 

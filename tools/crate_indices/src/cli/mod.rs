@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Command-line interface of the crate indices tool.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::ffi::OsString;
 use std::io;
 use std::io::BufRead as _;
@@ -10,14 +13,22 @@ mod commands;
 /// The command that the end user selected
 #[derive(Default, Debug)]
 pub(crate) enum Cmd {
+    /// No command was selected.
     #[default]
     None,
+    /// Generate the page of a category.
     CategoryPage(CmdArgs),
+    /// Generate the page of a category from a local metadata snapshot.
     CategoryPageFromMetadata(CategoryPageFromMetadataCmdArgs),
+    /// Generate the alphabetical index of crates.
     AlphabeticalCratePage(AlphabeticalCratePageCmdArgs),
+    /// Generate the page of a crate.
     CratePage(CmdArgs),
+    /// List the crates used in a directory.
     ListCrates(DirectoryCmdArgs),
+    /// Update the reference definitions of a file.
     UpdateRefDefs(CmdArgs2),
+    /// Expand the crate blocks in a directory.
     ExpandCrateBlocks(ExpandCrateBlocksCmdArgs),
 }
 
@@ -25,44 +36,56 @@ pub(crate) enum Cmd {
 /// for `category_page` and `alphabetical_page`
 #[derive(Debug)]
 pub(crate) struct CmdArgs {
+    /// Names of the crates.
     pub crate_names: Vec<String>,
 }
 
 /// The command arguments for `update_refdefs`
 #[derive(Debug)]
 pub(crate) struct CmdArgs2 {
+    /// Names of the crates.
     pub crate_names: Vec<String>,
+    /// File that contains the reference definitions.
     pub filepathbuf: PathBuf,
 }
 
 /// Arguments for generating a category page from a local metadata snapshot.
 #[derive(Debug)]
 pub(crate) struct CategoryPageFromMetadataCmdArgs {
+    /// Names of the crates.
     pub crate_names: Vec<String>,
+    /// Path of the metadata snapshot.
     pub metadata_path: PathBuf,
+    /// Root folder of the book.
     pub book_root: PathBuf,
 }
 
 /// Arguments for generating an alphabetical index with published recipe links.
 #[derive(Debug)]
 pub(crate) struct AlphabeticalCratePageCmdArgs {
+    /// Names of the crates.
     pub crate_names: Vec<String>,
+    /// Root folder of the book.
     pub book_root: PathBuf,
 }
 
 /// Command arguments with a directory
 #[derive(Debug)]
 pub(crate) struct DirectoryCmdArgs {
+    /// Directory to process.
     pub dirpathbuf: PathBuf,
 }
 
 /// Command arguments for `expand_crate_blocks`
 #[derive(Debug)]
 pub(crate) struct ExpandCrateBlocksCmdArgs {
+    /// Directory to process.
     pub dirpathbuf: PathBuf,
+    /// File that contains the reference definitions, if any.
     pub refdefs_filepathbuf: Option<PathBuf>,
 }
 
+/// Parses the command line and returns the selected command.
 pub(super) fn get_cmd() -> anyhow::Result<Cmd> {
     // Parse the specified command-line arguments, exiting on failure.
     let matches = commands::cli().get_matches_from(capture_stdin()?);

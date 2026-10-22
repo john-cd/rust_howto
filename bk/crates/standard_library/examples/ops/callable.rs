@@ -1,7 +1,13 @@
-// TODO Reviewed ??-??-2026
+//! Making a struct callable by implementing the `Fn` traits.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// A callable that adds an offset.
 struct Adder {
+    /// The number to add.
     offset: i32,
 }
 
@@ -32,6 +38,7 @@ impl Fn<(i32,)> for Adder {
     }
 }
 
+/// Calls an `Adder` like a function.
 fn main() {
     let add_five = Adder { offset: 5 };
 

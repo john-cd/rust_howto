@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! # Rhai scripting
 //!
@@ -10,8 +11,6 @@
 //! [dependencies]
 //! rhai = "1.21.0" # or latest version
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use rhai::Engine;
 use rhai::EvalAltResult;
@@ -24,6 +23,7 @@ fn add(x: i64, y: i64) -> i64 {
     x + y
 }
 
+/// Registers Rust functions in a Rhai engine and calls them from scripts.
 fn main() -> Result<(), Box<EvalAltResult>> {
     // Create a new `Rhai` scripting engine.
     let mut engine = Engine::new();
@@ -80,6 +80,7 @@ fn main() -> Result<(), Box<EvalAltResult>> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Box<EvalAltResult>> {
     main()?;
     Ok(())

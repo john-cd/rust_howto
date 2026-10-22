@@ -1,7 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! A `RangeMap`, which maps ranges of keys to values.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 use rangemap::RangeMap;
 
+/// Maps two ranges to values and looks up keys.
 fn main() {
     let mut rm = RangeMap::new();
 
@@ -14,6 +18,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

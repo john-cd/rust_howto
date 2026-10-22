@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Encoding and decoding a struct in little-endian byte order with `byteorder`.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 use std::io::Error;
 
@@ -7,9 +10,12 @@ use byteorder::ReadBytesExt;
 use byteorder::WriteBytesExt;
 
 // Define a struct `Payload` to represent the data we want to encode/decode.
+/// The data to encode.
 #[derive(Default, PartialEq, Debug)]
 struct Payload {
+    /// Kind of payload.
     kind: u8,
+    /// Value of the payload.
     value: u16,
 }
 
@@ -32,6 +38,7 @@ fn decode(mut bytes: &[u8]) -> Result<Payload, Error> {
     Ok(payload)
 }
 
+/// Encodes a payload, decodes it and compares the two.
 fn main() -> Result<(), Error> {
     // Create a default `Payload` instance.
     let original_payload = Payload::default();

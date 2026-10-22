@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Placeholder for a machine learning example with `candle`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // COMING SOON
 // ANCHOR_END: example
@@ -114,8 +118,10 @@
 // // <https://github.com/ToluClassics/candle-tutorial>
 // // <https://huggingface.github.io/candle/index.html>
 
+/// Does nothing yet.
 fn main() {}
 
+/// Runs the example.
 pub fn run() {
     main();
 }

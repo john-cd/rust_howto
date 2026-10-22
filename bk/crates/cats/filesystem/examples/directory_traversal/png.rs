@@ -1,13 +1,13 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `glob` crate
 //! to find all PNG files in a directory tree.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use glob::glob;
 
+/// Prints the paths of all the PNG files in the current directory tree.
 fn main() -> Result<()> {
     // Find all PNG files in the current directory and its subdirectories.
     for entry in glob("**/*.png")? {
@@ -19,6 +19,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

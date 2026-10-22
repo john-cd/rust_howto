@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! A desktop application with a Rust backend, built with `tauri`.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 // (backend)
 #![cfg_attr(
@@ -12,20 +15,25 @@ use tauri::Manager;
 use tauri::menu::MenuBuilder;
 use tauri::menu::MenuItemBuilder;
 
+/// Returns the current value of the counter.
 #[tauri::command]
 fn get_counter(state: tauri::State<'_, CounterState>) -> i32 {
     *state.value.lock().unwrap()
 }
 
+/// Increments the counter.
 #[tauri::command]
 fn increment_counter(state: tauri::State<'_, CounterState>) {
     *state.value.lock().unwrap() += 1;
 }
 
+/// The state of the counter, managed by Tauri.
 struct CounterState {
+    /// The current value.
     value: Mutex<i32>,
 }
 
+/// Runs the application.
 pub fn main() {
     tauri::Builder::default()
         .plugin(tauri_plugin_shell::init())
@@ -53,6 +61,7 @@ pub fn main() {
         .expect("error while running tauri application");
 }
 
+/// Runs the example.
 pub fn run() {
     main();
 }

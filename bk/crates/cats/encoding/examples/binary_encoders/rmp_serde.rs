@@ -1,19 +1,23 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Serialize and deserialize a struct with MessagePack via `rmp-serde`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use serde::Deserialize;
 use serde::Serialize;
 
+/// A struct that is serialized to and deserialized from MessagePack.
 #[derive(Debug, Serialize, Deserialize, PartialEq)]
 struct MyData {
+    /// The name.
     name: String,
+    /// The age in years.
     age: u32,
+    /// Whether the data is active.
     is_active: bool,
 }
 
+/// Encodes a struct as MessagePack, then decodes it.
 fn main() -> anyhow::Result<()> {
     let data = MyData {
         name: "Alice".to_string(),
@@ -31,6 +35,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

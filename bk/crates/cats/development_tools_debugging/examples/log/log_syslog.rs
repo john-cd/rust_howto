@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Initializes syslog and logs debug and error messages.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 // ANCHOR: example
 #![cfg(target_os = "linux")]
@@ -21,6 +24,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Prints a message, since syslog is only supported on Linux.
 #[cfg(not(target_os = "linux"))]
 fn main() -> anyhow::Result<()> {
     println!("So far, only Linux systems are supported.");
@@ -28,6 +32,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

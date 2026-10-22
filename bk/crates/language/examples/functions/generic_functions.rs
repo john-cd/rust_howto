@@ -1,10 +1,14 @@
-// TODO Reviewed ??-??-2026
-#![allow(dead_code)]
-// ANCHOR: example
+//! Generic functions that take arguments of any type.
+//!
+//! TODO Reviewed ??-??-2026
 
+#![allow(dead_code)]
+
+// ANCHOR: example
 // This is a generic function that can take any type.
 // The type parameter `T` is written between < and >.
 // It often can be inferred from the argument passed to the function.
+/// Takes a value of any type and ignores it.
 fn generic<T>(_: T) {
     println!("Argument type: {}", std::any::type_name::<T>());
 }
@@ -20,6 +24,7 @@ fn take_two<T, U>(_a: T, _b: U) {
     );
 }
 
+/// Calls generic functions with several types.
 fn main() {
     // The type parameter `T` is inferred to be `char` in this case.
     generic('a');
@@ -36,6 +41,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

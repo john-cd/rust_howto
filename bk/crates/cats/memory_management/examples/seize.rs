@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates using `seize` for safe, concurrent memory reclamation.
 //!
@@ -17,8 +18,6 @@
 //! ```toml
 //! seize = "0.5"
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::sync::Arc;
 use std::sync::atomic::AtomicPtr;
@@ -27,6 +26,7 @@ use std::sync::atomic::Ordering;
 use seize::Collector;
 use seize::Guard as _;
 
+/// Retires a shared object and reclaims it once no thread can access it.
 fn main() {
     // A `Collector` manages the access and retirement of concurrent objects.
     // It is typically stored alongside the data structure it protects.

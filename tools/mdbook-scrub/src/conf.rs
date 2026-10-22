@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Configuration of the `mdbook-scrub` preprocessor.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::default::Default;
 
 use serde::Deserialize;

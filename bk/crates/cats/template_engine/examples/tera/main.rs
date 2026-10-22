@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs the `tera` template example.
+//!
+//! TODO Reviewed ??-??-2026
+
 mod tera;
 
 fn main() -> anyhow::Result<()> {

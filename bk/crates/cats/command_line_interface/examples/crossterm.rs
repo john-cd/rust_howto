@@ -1,4 +1,8 @@
-// TODO Reviewed ??-??-2026
+//! Terminal control with `crossterm`: raw mode, colors, cursor movement and key
+//! events.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 use std::io::Write as _;
 use std::io::stdout;
@@ -21,6 +25,7 @@ use crossterm::terminal;
 use crossterm::terminal::Clear;
 use crossterm::terminal::ClearType;
 
+/// Prints colored text and reacts to key presses until `q` is pressed.
 fn main() -> anyhow::Result<()> {
     let mut stdout = stdout();
 

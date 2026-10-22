@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Describing a user interface to screen readers with `accesskit`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use accesskit::Node;
 use accesskit::NodeId;
@@ -16,6 +20,7 @@ use accesskit::TreeUpdate;
 
 // In this example, we
 // - create a simple accessibility tree with a root node and a button node.
+/// Builds a small accessibility tree.
 fn main() {
     let root_id = NodeId(0);
     let button_id = NodeId(1);
@@ -42,6 +47,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

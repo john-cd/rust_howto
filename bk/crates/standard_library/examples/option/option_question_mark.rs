@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! The `?` operator shines when we have a sequence of operations, each of
 //! which might fail. It provides an early exit mechanism for functions that
@@ -6,8 +7,6 @@
 //! immediately returns `None`.
 //!
 //! `?` works as well within functions that return `Result`.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// Attempt to retrieve the first character from the input string `s`.
 fn get_first_char_uppercase(input: Option<String>) -> Option<char> {
@@ -27,6 +26,7 @@ fn get_first_char_uppercase(input: Option<String>) -> Option<char> {
     Some(first_char.to_ascii_uppercase())
 }
 
+/// Applies the `?` operator to `Option` values.
 fn main() {
     // `Option` contains a `String` and it's not empty.
     let s1 = Some("hello".to_owned());
@@ -46,6 +46,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

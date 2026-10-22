@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example using `Box<T>` for recursive data structures.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// Represents a single element in a (highly simplified) linked list.
 struct Node {
@@ -14,6 +13,7 @@ struct Node {
 }
 
 impl Node {
+    /// Creates a node without a successor.
     fn new(value: i32) -> Self {
         Self { value, next: None }
     }
@@ -44,6 +44,7 @@ impl Node {
 // compiler needs to know the size of the data type at compile time.
 // By using `Box`, which has a defined size on the stack, we can create the
 // `head` local variable . The actual `Node` data will be stored on the heap.
+/// Builds a linked list and prints it.
 fn main() {
     let mut head = Node::new(1);
     head.append(2);
@@ -55,6 +56,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

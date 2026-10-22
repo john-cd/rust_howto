@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! The arguments of the command line that apply to the whole application.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::path::PathBuf;
 
 use clap::Arg;
@@ -29,6 +32,7 @@ pub(super) fn arg_config() -> Arg {
     // subcommands.
 }
 
+/// Returns the path given with `--config`, if any.
 pub(super) fn get_arg_config(matches: &ArgMatches) -> Option<PathBuf> {
     matches.get_one::<PathBuf>("config").cloned()
 }
@@ -162,6 +166,7 @@ mod tests {
         assert_eq!(get_arg_filepaths(&m), None);
     }
 
+    /// Checks that several file paths are collected.
     #[test]
     fn test_arg_filepaths_multiple() {
         let m = cli().get_matches_from(vec!["prog", "a.csv", "b.csv"]);
@@ -171,12 +176,14 @@ mod tests {
         );
     }
 
+    /// Checks that the verbosity is 0 by default.
     #[test]
     fn test_arg_verbose_none() {
         let m = cli().get_matches_from(vec!["prog"]);
         assert_eq!(get_arg_verbose(&m), 0);
     }
 
+    /// Checks that repeated `-v` flags raise the verbosity.
     #[test]
     fn test_arg_verbose_multiple() {
         let m = cli().get_matches_from(vec!["prog", "-vvv"]);
@@ -186,6 +193,7 @@ mod tests {
         assert_eq!(get_arg_verbose(&m), 2);
     }
 
+    /// Checks that the verbosity can be set with an environment variable.
     #[test]
     fn test_arg_verbose_env() {
         let key = "TOOL_VERBOSE";

@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Alternatives to `Cow`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::rc::Rc;
 use std::sync::Arc;
@@ -10,6 +9,8 @@ use std::sync::RwLock;
 use std::thread;
 use std::time::Duration;
 
+/// Shows alternatives to `Cow`: shared immutable strings and strings behind a
+/// lock.
 fn main() {
     // When working with multiple threads, `Arc<str>` provides shared ownership
     // of an immutable string slice.
@@ -52,6 +53,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

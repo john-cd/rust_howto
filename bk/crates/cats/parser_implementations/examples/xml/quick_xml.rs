@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Parse, deserialize, and write XML with `quick-xml`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::io::Cursor;
 
@@ -15,13 +14,17 @@ use quick_xml::events::BytesText;
 use quick_xml::events::Event;
 use serde::Deserialize;
 
+/// A person, deserialized from XML.
 #[derive(Debug, Deserialize, PartialEq)]
 #[serde(rename = "person")]
 struct Person {
+    /// The name of the person.
     name: String,
+    /// The age of the person.
     age: u8,
 }
 
+/// Reads XML events, deserializes a struct from XML, and writes XML.
 fn main() -> anyhow::Result<()> {
     let xml = "<person><name>John Doe</name><age>32</age></person>";
 
@@ -71,6 +74,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

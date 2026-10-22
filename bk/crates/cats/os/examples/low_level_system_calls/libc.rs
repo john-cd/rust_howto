@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use `libc` to call into the C standard
 //! library from Rust.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::ffi::CStr;
 use std::ffi::CString;
@@ -29,6 +28,7 @@ use libc::c_int; // C int.
 
 // 1. Using `puts` to print a string.
 // In real life, use the Rust `print!` macro, of course.
+/// Prints a message by calling the C function `puts`.
 fn print() {
     // C strings (nul-terminated array of bytes) are different from Rust
     // strings, thus we can't pass the latter directly to a C function.
@@ -106,6 +106,7 @@ fn null_pointer() {
     }
 }
 
+/// Calls the `libc` examples in turn.
 fn main() {
     print();
     env();
@@ -115,6 +116,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

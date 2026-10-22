@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates zero-cost memory manipulation with `zerocopy`.
 //!
@@ -27,8 +28,6 @@
 //!
 //! For that purpose, Zerocopy provides several derivable traits: `FromBytes`,
 //! `TryFromBytes`, `FromZeros`, `Immutable`...
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::mem::size_of;
 
@@ -58,11 +57,14 @@ use zerocopy::KnownLayout;
 
 // 1. Let's first demonstrate `FromZeros`:
 
+/// A struct that can be created from zeroed bytes.
 #[derive(FromZeros, Debug)]
 struct MyZeroableStruct {
+    /// Eight bytes.
     field: [u8; 8],
 }
 
+/// Creates a struct from zeroed bytes, then zeroes its bytes.
 fn manipulate_zero_bytes() {
     // Creates an instance from zeroed bytes.
     let my_struct: MyZeroableStruct = FromZeros::new_zeroed();
@@ -91,11 +93,16 @@ fn manipulate_zero_bytes() {
 // It means that their layout is exactly that C or C++ expect.
 #[repr(C)]
 // We derive the Zerocopy traits that are required to convert from / to bytes.
+/// The header of a packet.
 #[derive(FromBytes, IntoBytes, Immutable, KnownLayout, PartialEq, Debug)]
 struct PacketHeader {
+    /// The source port.
     src_port: [u8; 2],
+    /// The destination port.
     dst_port: [u8; 2],
+    /// The length of the packet.
     length: [u8; 2],
+    /// The checksum.
     checksum: [u8; 2],
 }
 
@@ -107,7 +114,9 @@ struct PacketHeader {
 #[repr(C)]
 #[derive(FromBytes, Immutable, KnownLayout)]
 struct Packet {
+    /// The header of the packet.
     header: PacketHeader,
+    /// The body of the packet, whose length is only known at runtime.
     body: [u8],
 }
 
@@ -179,11 +188,14 @@ fn from_bytes() -> anyhow::Result<()> {
 #[repr(u8)]
 #[derive(IntoBytes, Immutable)]
 enum MyEnum {
+    /// The first variant, stored as 0.
     #[allow(dead_code)]
     A,
+    /// The second variant, stored as 1.
     B,
 }
 
+/// Converts an enum into its bytes.
 fn enums_also_work() {
     assert_eq!(size_of::<MyEnum>(), 1);
 
@@ -200,6 +212,7 @@ fn transmute() {
     assert_eq!(two_dimensional, [[0, 1, 2, 3], [4, 5, 6, 7]]);
 }
 
+/// Runs the `zerocopy` examples.
 fn main() -> anyhow::Result<()> {
     manipulate_zero_bytes();
     into_bytes()?;
@@ -212,6 +225,7 @@ fn main() -> anyhow::Result<()> {
 // Examples adapted from <https://docs.rs/zerocopy/>
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

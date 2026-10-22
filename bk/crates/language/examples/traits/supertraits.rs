@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A trait that requires another trait.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::fmt;
 
@@ -15,7 +19,9 @@ use std::fmt;
 // inherit data (fields) and default implementations from its superclass. This
 // is not true in Rust.
 
+/// A trait that requires `Display`.
 trait OutlinePrint: fmt::Display {
+    /// Prints `self` in a box of asterisks.
     fn outline_print(&self) {
         println!("* {self} *");
         // We can use `println!` here,
@@ -34,6 +40,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

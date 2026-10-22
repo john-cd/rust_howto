@@ -1,6 +1,12 @@
-// TODO Reviewed ??-??-2026
+//! Scalar data types: integers, floating-point numbers, booleans and
+//! characters.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Declares variables of each scalar type.
 fn main() {
     // Integer types:
     let a: i8 = -128; // 8-bit signed integer.
@@ -71,6 +77,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

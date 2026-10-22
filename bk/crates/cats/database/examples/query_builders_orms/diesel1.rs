@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Build Diesel queries without requiring a live database connection.
 //!
 //! This example defines a `users` table and prints the generated SQL for an
 //! insert and a filtered select.
-//!
-//! TODO Reviewed ??-??-2026
 
 use diesel::prelude::*;
 use diesel::sqlite::Sqlite;
@@ -19,15 +18,20 @@ table! {
     }
 }
 
+/// A row of the `users` table.
 #[derive(Debug, Insertable, Queryable, Selectable)]
 #[diesel(table_name = users)]
 #[diesel(check_for_backend(Sqlite))]
 struct User {
+    /// The identifier.
     id: i32,
+    /// The name.
     name: String,
+    /// The email address.
     email: String,
 }
 
+/// Builds insert and select queries and prints the SQL.
 fn main() {
     let new_user = User {
         id: 1,
@@ -51,6 +55,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

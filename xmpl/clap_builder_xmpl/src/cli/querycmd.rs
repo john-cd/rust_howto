@@ -1,8 +1,12 @@
-// TODO Reviewed ??-??-2026
+//! The `query` subcommand.
+//!
+//! TODO Reviewed ??-??-2026
+
 use clap::ArgMatches;
 use clap::Command;
 use clap::arg;
 
+/// Defines the `query` command, which takes the words of the query.
 pub(super) fn cmd() -> Command {
     Command::new("query")
         // optional: .short_flag('q')
@@ -36,17 +40,20 @@ mod tests {
     use super::*;
     use crate::cli::cli;
 
+    /// Lets clap check the command definition for mistakes.
     #[test]
     fn verify_query_cmd() {
         cmd().debug_assert(); // <https://docs.rs/clap/latest/clap/struct.Command.html#method.debug_assert>
     }
 
+    /// Checks that the words are collected.
     #[test]
     fn test_cmd_query() {
         let m = cli().get_matches_from(vec!["foo", "query", "SELECT", "col", "FROM", "tbl"]);
         assert_eq!(get_args(&m), vec!["SELECT", "col", "FROM", "tbl"]);
     }
 
+    /// Checks that at least one word is required.
     #[test]
     fn test_cmd_query_none() {
         let m = cli().try_get_matches_from(vec!["foo", "query"]);
@@ -59,6 +66,7 @@ mod tests {
 
     // Verify that we don't get confused by negative numbers (that look
     // like flags).
+    /// Checks that negative numbers are accepted as words.
     #[test]
     fn test_cmd_query_neg_numbers() {
         let m = cli().get_matches_from(vec!["foo", "query", "SELECT", "-1", "FROM", "tbl"]);

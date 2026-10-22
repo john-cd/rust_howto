@@ -1,12 +1,12 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to compare vectors using the `approx` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 use approx::assert_abs_diff_eq;
 use ndarray::Array;
 
+/// Adds vectors and compares the results approximately.
 fn main() {
     // Create vectors.
     let a = Array::from(vec![1., 2., 3., 4., 5.]);
@@ -32,6 +32,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

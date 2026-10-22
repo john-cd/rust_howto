@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Inserting and querying documents in MongoDB.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // This example demonstrates connecting to MongoDB and performing basic CRUD
 // operations with the `mongodb` crate.
@@ -14,10 +18,13 @@ use serde::Serialize;
 /// Represents a user with a name and age.
 #[derive(Debug, Serialize, Deserialize)]
 struct User {
+    /// Name of the user.
     name: String,
+    /// Age of the user, in years.
     age: i32,
 }
 
+/// Connects to MongoDB and inserts a user into a collection.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Read the .env file, if present.
@@ -54,6 +61,7 @@ async fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
@@ -62,6 +70,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the example against a MongoDB server; needs the external service.
     #[test]
     fn require_external_svc() -> anyhow::Result<()> {
         unsafe {

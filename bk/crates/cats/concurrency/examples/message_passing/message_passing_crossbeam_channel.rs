@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! Demonstrates the use of crossbeam channels for message passing between
+//! threads.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::thread;
 
@@ -65,6 +70,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

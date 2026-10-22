@@ -1,9 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! A generic lookup that accepts any type that `String` borrows as.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::borrow::Borrow;
 use std::collections::HashMap;
 
+/// Returns the score for `key`, which may be a `&str` or a `String`.
 fn find_score<K>(map: &HashMap<String, u32>, key: K) -> Option<u32>
 where
     K: Borrow<str>,
@@ -11,6 +16,7 @@ where
     map.get(key.borrow()).copied()
 }
 
+/// Looks up a score with several key types.
 fn main() {
     let mut scores = HashMap::new();
     scores.insert("eve".to_owned(), 30);
@@ -26,6 +32,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,13 +1,13 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Parse a small XML document token by token with `xmlparser`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use xmlparser::ElementEnd;
 use xmlparser::Token;
 use xmlparser::Tokenizer;
 
+/// Tokenizes an XML string and prints each token.
 fn main() {
     let xml = r#"<library><book id="b1">Rust</book></library>"#;
 
@@ -42,6 +42,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

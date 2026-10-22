@@ -1,9 +1,15 @@
-// TODO Reviewed ??-??-2026
+//! Methods and associated functions on a struct.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// A struct representing a rectangle with a width and height.
 struct Rectangle {
+    /// Width of the rectangle.
     width: u32,
+    /// Height of the rectangle.
     height: u32,
 }
 
@@ -28,6 +34,7 @@ impl Rectangle {
     }
 }
 
+/// Creates rectangles and calls their methods.
 fn main() {
     // Call the associated function.
     // Note the syntax: `<Type>::<function>`.
@@ -40,6 +47,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

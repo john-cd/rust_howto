@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Searching bytes quickly with `memchr`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use memchr::memchr;
 
@@ -11,6 +15,7 @@ use memchr::memchr;
 // memchr = "2.7.4" # Or latest
 // ```
 
+/// Finds the first, last and all occurrences of a byte.
 fn main() {
     let haystack = b"hello world";
 
@@ -21,6 +26,7 @@ fn main() {
     }
 
     // Using `memchr` in a function.
+    /// Returns the indexes of all occurrences of `needle` in `haystack`.
     fn find_all_occurrences(needle: u8, haystack: &[u8]) -> Vec<usize> {
         let mut indices = Vec::new();
         let mut start = 0;
@@ -45,6 +51,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Publishing and consuming a message with the `lapin` AMQP client.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // This example demonstrates how to publish and consume messages with the
 // `lapin` AMQP client.
@@ -110,6 +114,7 @@ async fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
@@ -118,6 +123,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the example against an AMQP broker; needs the external service.
     #[test]
     fn require_external_svc() -> anyhow::Result<()> {
         // `.devcontainer/compose-heavy-tests.yaml` configures AMQP_ADDR for the

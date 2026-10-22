@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates the use of the `same_file` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![cfg(target_os = "linux")]
 
@@ -41,6 +40,8 @@ fn contains_loop<P: AsRef<Path>>(
     Ok(None)
 }
 
+/// Checks that two paths refer to the same file and detects a loop in a
+/// directory path.
 fn main() {
     assert!(is_same_file("/tmp/foo", "/tmp/./foo").unwrap_or(false));
 
@@ -56,6 +57,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }
@@ -68,17 +70,16 @@ mod tests {
     fn test_main() -> anyhow::Result<()> {
         // mkdir -p /tmp/foo/bar/baz
         if let Ok(exists) = std::fs::exists("/tmp/foo/bar/baz")
-            && !exists {
-                std::fs::create_dir_all("/tmp/foo/bar/baz")?;
-            }
+            && !exists
+        {
+            std::fs::create_dir_all("/tmp/foo/bar/baz")?;
+        }
         // ln -s /tmp/foo/ /tmp/foo/bar/baz/qux
         if let Ok(exists) = std::fs::exists("/tmp/foo/bar/baz/qux")
-            && !exists {
-                std::os::unix::fs::symlink(
-                    "/tmp/foo/",
-                    "/tmp/foo/bar/baz/qux",
-                )?;
-            }
+            && !exists
+        {
+            std::os::unix::fs::symlink("/tmp/foo/", "/tmp/foo/bar/baz/qux")?;
+        }
         main();
         Ok(())
     }

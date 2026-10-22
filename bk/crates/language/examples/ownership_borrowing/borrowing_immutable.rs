@@ -1,9 +1,9 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Immutable Reference Example.
-//!
-//! TODO Reviewed ??-??-2026
 
+/// Creates and dereferences a shared reference.
 fn main() {
     let a = 42;
 
@@ -30,6 +30,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

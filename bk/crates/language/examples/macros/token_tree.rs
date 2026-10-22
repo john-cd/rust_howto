@@ -1,14 +1,21 @@
-// TODO Reviewed ??-??-2026
+//! Token trees as the arguments of declarative macros.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Accepts a single token tree and expands to nothing.
 macro_rules! accept_single_token_tree {
     ($_:tt) => {};
 }
 
+/// Accepts any number of token trees and expands to nothing.
 macro_rules! accept_multiple_token_trees {
     ( $( $_:tt )* ) => {};
 }
 
+/// Calls macros with single tokens and groups of tokens.
 fn main() {
     // A "token tree" can a single lexical token (identifier, Rust keyword,
     // operator, punctuation, or literal):
@@ -33,6 +40,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

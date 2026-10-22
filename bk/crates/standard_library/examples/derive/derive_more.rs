@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! The `derive_more` crate extends Rust's built-in derive functionality to
 //! provide more automatic implementations for common traits.
@@ -8,8 +9,6 @@
 //! [dependencies]
 //! derive_more = "2.0.1" # Or latest
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use derive_more::Add;
 use derive_more::AddAssign;
@@ -25,7 +24,9 @@ use derive_more::SubAssign;
 /// Basic numeric type with arithmetic operations.
 #[derive(Add, AddAssign, PartialEq, Debug)]
 struct Point {
+    /// The horizontal coordinate.
     x: i32,
+    /// The vertical coordinate.
     y: i32,
 }
 
@@ -40,19 +41,25 @@ struct UserId(u64);
 )]
 #[derive(Constructor, Debug)]
 struct User {
+    /// The identifier of the user.
     id: UserId,
+    /// The name of the user.
     name: String,
+    /// Whether the user is active.
     active: bool,
 }
 
 // Using `Deref` and `DerefMut`.
+/// A stack, which dereferences to its items.
 #[derive(Deref, DerefMut, Debug)]
 struct Stack<T> {
+    /// The items of the stack.
     #[deref]
     #[deref_mut]
     items: Vec<T>,
 }
 
+/// Uses the traits derived by `derive_more`.
 fn main() {
     // Using `Add` and `AddAssign`.
     let p1 = Point { x: 1, y: 2 };
@@ -88,20 +95,25 @@ fn main() {
 #[derive(
     Add, AddAssign, Sub, SubAssign, From, Into, Display, Debug, Clone, Copy,
 )]
+/// An amount of money.
 struct Amount(f64);
 
 // Custom error type with derive_more's `Error` trait.
 // `std::error::Error` requires `std::fmt::Debug` and `std::fmt::Display`.
+/// The errors of the application.
 #[derive(Debug, derive_more::Error, Display, From)]
 enum AppError {
+    /// A database error.
     #[display("Database error")]
     DatabaseError,
 
+    /// The balance is too low.
     #[display("Insufficient funds")]
     InsufficientFundsError,
 }
 
 // Using multiple types with `derive_more`.
+/// Moves `value` from one amount to another, unless the balance is too low.
 fn transfer_amount(
     from: &mut Amount,
     to: &mut Amount,
@@ -118,6 +130,7 @@ fn transfer_amount(
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

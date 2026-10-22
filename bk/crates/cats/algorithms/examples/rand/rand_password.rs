@@ -1,8 +1,13 @@
-// TODO Reviewed ??-??-2026
+//! Generates a random password from a custom set of characters with `rand`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use rand::RngExt as _;
 
+/// Prints a random password of fixed length.
 fn main() {
     // Define the character set to choose from:
     const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZ\
@@ -29,6 +34,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

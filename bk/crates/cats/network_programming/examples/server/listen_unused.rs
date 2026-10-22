@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates a simple TCP server that listens for a single
 //! connection, reads data from the connection, and then prints the received
@@ -13,8 +14,6 @@
 //! To test this, run the server and then use a tool like `telnet` or `netcat`
 //! to connect to the printed port. For example: `telnet 127.0.0.1 <port>` or
 //! `nc 127.0.0.1 <port>`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::io::Error;
 use std::io::Read as _;
@@ -22,6 +21,7 @@ use std::net::Ipv4Addr;
 use std::net::SocketAddrV4;
 use std::net::TcpListener;
 
+/// Accepts one connection on `listener` and returns the text it sends.
 fn read_one_connection(listener: TcpListener) -> Result<String, Error> {
     let port = listener.local_addr()?;
     println!(
@@ -34,6 +34,8 @@ fn read_one_connection(listener: TcpListener) -> Result<String, Error> {
     Ok(input)
 }
 
+/// Listens on an unused port of the loopback interface and prints what one
+/// client sends.
 fn main() -> Result<(), Error> {
     let loopback = Ipv4Addr::LOCALHOST;
     let socket = SocketAddrV4::new(loopback, 0); // 0 means any available port.
@@ -45,6 +47,7 @@ fn main() -> Result<(), Error> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Error> {
     main()
 }

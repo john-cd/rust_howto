@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs one of the `log` examples, chosen on the command line.
+//!
+//! TODO Reviewed ??-??-2026
+
 use clap::Parser;
 use clap::Subcommand;
 
@@ -13,35 +16,48 @@ mod log_stdout;
 mod log_syslog;
 mod log_timestamp;
 
+/// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `log_custom` example.
     #[command(name = "log_custom")]
     Custom,
+    /// Runs the `log_custom_logger` example.
     #[command(name = "log_custom_logger")]
     CustomLogger,
+    /// Runs the `log_debug` example.
     #[command(name = "log_debug")]
     Debug,
+    /// Runs the `log_env_variable` example.
     #[command(name = "log_env_variable")]
     EnvVariable,
+    /// Runs the `log_error` example.
     #[command(name = "log_error")]
     Error,
+    /// Runs the `log_mod` example.
     #[command(name = "log_mod")]
     Mod,
+    /// Runs the `log_stdout` example.
     #[command(name = "log_stdout")]
     Stdout,
+    /// Runs the `log_syslog` example.
     #[cfg(target_os = "linux")]
     #[command(name = "log_syslog")]
     Syslog,
+    /// Runs the `log_timestamp` example.
     #[command(name = "log_timestamp")]
     Timestamp,
 }
 
+/// Runs the example selected on the command line.
 fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 

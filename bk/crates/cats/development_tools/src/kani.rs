@@ -1,14 +1,14 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This module contains an example of verifying Rust code using Kani.
 //!
 //! See <https://model-checking.github.io/kani/tutorial-first-steps.html>.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![allow(unexpected_cfgs)]
 #![allow(dead_code)]
 
 // Define a very simple function to verify:
+/// Adds two numbers, but panics when the first one is 42.
 #[tracing::instrument]
 fn add(a: i32, b: i32) -> i32 {
     // For testing purposes, we make it fail for only 1 in billions of possible
@@ -25,6 +25,7 @@ fn add(a: i32, b: i32) -> i32 {
 //
 // The following Kani verification code is isolated in its own module and only
 // compiled when Kani is in use.
+/// The proofs that Kani verifies.
 #[cfg(kani)]
 mod verification {
 
@@ -34,6 +35,7 @@ mod verification {
     // It can only be added to functions without parameters.
     //
     // Proof that adding zero to any number returns the same number:
+    /// Proves that adding zero to a number returns that number.
     #[kani::proof]
     fn add_zero_identity() {
         // We use `kani::any()` to represent all possible `i32` values:
@@ -44,6 +46,7 @@ mod verification {
     }
 
     // Proof that addition is indeed commutative (a + b = b + a):
+    /// Proves that the addition is commutative.
     #[kani::proof]
     fn addition_is_commutative() {
         let a = kani::any();
@@ -57,6 +60,7 @@ mod verification {
 
     // Proof that adding two non-negative numbers results in a non-negative
     // number:
+    /// Proves that the sum of two non-negative numbers is non-negative.
     #[kani::proof]
     fn add_is_non_negative() {
         let a = kani::any();
@@ -90,6 +94,7 @@ mod verification {
     // a concrete example of a value of x that triggers the failure.
 }
 
+/// Calls the function that Kani verifies.
 #[tracing::instrument]
 fn main() {
     // Initialize tracing subscriber

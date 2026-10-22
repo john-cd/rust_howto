@@ -1,10 +1,9 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Sign and verify a message with ECDSA using the P-256 curve.
 //!
 //! This example uses `p256` and the `Signer`/`Verifier` traits.
-//!
-//! TODO Reviewed ??-??-2026
 
 use p256::ecdsa::Signature;
 use p256::ecdsa::SigningKey;
@@ -13,6 +12,7 @@ use p256::ecdsa::signature::Signer as _;
 use p256::ecdsa::signature::Verifier as _;
 use p256::elliptic_curve::rand_core::OsRng;
 
+/// Signs a message with a random P-256 key and verifies the signature.
 fn main() -> anyhow::Result<()> {
     let signing_key = SigningKey::random(&mut OsRng);
     let verifying_key = VerifyingKey::from(&signing_key);
@@ -30,6 +30,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

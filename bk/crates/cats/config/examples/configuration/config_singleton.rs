@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to load application configuration and store it
 //! in a singleton.
@@ -7,9 +8,8 @@
 //! ```toml
 //! config = "0.15.6" # Or latest
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
+/// Application settings, loaded once and shared.
 mod settings {
     use std::sync::OnceLock;
 
@@ -18,6 +18,7 @@ mod settings {
     use serde::Deserialize;
 
     // Centralized access point to the configuration.
+    /// Returns the configuration, which is loaded on first use.
     fn config() -> &'static Config {
         // The configuration is stored in a `static`.
         // `OnceLock` can be written to only once and is thread-safe.
@@ -43,6 +44,7 @@ mod settings {
     }
 }
 
+/// Sets an environment variable, then reads the configuration.
 fn main() -> anyhow::Result<()> {
     // Set an environment variable for testing.
     unsafe {
@@ -62,6 +64,7 @@ fn main() -> anyhow::Result<()> {
 // Adapted from: <https://github.com/rust-cli/config-rs/blob/main/examples/static_env.rs>
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

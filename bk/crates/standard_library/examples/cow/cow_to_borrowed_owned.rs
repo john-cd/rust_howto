@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Demonstrates various uses and conversions of `Cow` (Clone-on-Write).
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::borrow::Borrow as _;
 use std::borrow::Cow;
@@ -38,6 +42,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

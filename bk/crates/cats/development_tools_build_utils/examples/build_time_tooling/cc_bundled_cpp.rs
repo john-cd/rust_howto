@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `cc` crate to compile a C++ file as
 //! part of a Rust build process.
@@ -10,9 +11,8 @@
 //!
 //! In this example, we compile a simple C++ file named `src/foo.cpp` and link
 //! it into our Rust project. The compiled library will be named `foo`.
-//!
-//! TODO Reviewed ??-??-2026
 
+/// Shows how a build script compiles a C++ file.
 fn main() {
     // Create a new `cc::Build` instance:
     // cc::Build::new()
@@ -29,6 +29,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Placeholder for a build information example.
+//!
+//! TODO Reviewed ??-??-2026
+
 // // List build info, incl. dependencies
 // //
 // // See
@@ -46,5 +49,6 @@
 //     list_deps();
 // }
 
+/// Does nothing yet.
 fn main() {}
 // [review / convert into example](https://github.com/john-cd/rust_howto/issues/1060)?

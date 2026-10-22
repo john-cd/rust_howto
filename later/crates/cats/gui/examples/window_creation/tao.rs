@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Creating a window with `tao`.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 use tao::event::Event;
 use tao::event::WindowEvent;
@@ -8,6 +11,7 @@ use tao::window::WindowBuilder;
 
 // Tao is a cross-platform window manager library.
 
+/// Creates a window and runs its event loop.
 pub fn main() {
     let event_loop = EventLoop::new();
     let window = WindowBuilder::new()
@@ -38,6 +42,7 @@ pub fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,7 +1,13 @@
-// TODO Reviewed ??-??-2026
+//! Trait bounds written in several ways.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Something that can be summarized.
 trait Summary {
+    /// Returns a summary.
     fn summarize(&self) -> String;
 }
 
@@ -22,10 +28,12 @@ where
 
 // The "impl Trait" syntax is in this case equivalent.
 // `impl Summary` is an opaque type that implements the `Summary` trait:
+/// Accepts any type that implements [`Summary`].
 fn notify3(_item: &impl Summary) {}
 
 /// A struct that implements the `Summary` trait.
 struct Article {
+    /// The text of the article.
     txt: String,
 }
 
@@ -35,6 +43,7 @@ impl Summary for Article {
     }
 }
 
+/// Passes an article to functions that require [`Summary`].
 fn main() {
     let a = Article {
         txt: String::from("Some text"),
@@ -46,6 +55,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

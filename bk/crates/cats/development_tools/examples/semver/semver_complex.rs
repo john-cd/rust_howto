@@ -1,15 +1,16 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates parsing, comparing, and serializing complex semantic version
 //! strings.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use semver::BuildMetadata;
 use semver::Prerelease;
 use semver::Version;
 
+/// Parses a version with pre-release and build metadata, then compares and
+/// prints it.
 fn main() -> Result<()> {
     // Define a complex semantic version string.
     let version_str = "1.0.49-125+g72ee7853";
@@ -38,6 +39,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

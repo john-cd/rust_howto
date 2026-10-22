@@ -1,9 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! Canonicalizing paths.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::fs;
 use std::path::PathBuf;
 
+/// Canonicalizes a path with `..` components.
 fn main() -> std::io::Result<()> {
     // Create a directory for this example.
     let path = "./temp/examples";
@@ -25,6 +30,7 @@ fn main() -> std::io::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> std::io::Result<()> {
     main()
 }

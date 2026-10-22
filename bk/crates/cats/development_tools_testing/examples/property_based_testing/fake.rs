@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `fake` crate to generate fake data
 //! for testing. It covers basic usage, generating data for custom structs, and
@@ -8,8 +9,6 @@
 //! ```toml
 //! fake = { version = "4.3.0", features = [ "derive" ] }
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 // Trait that generates fake values given a type that implements `Dummy`.
 use fake::Dummy;
@@ -28,13 +27,20 @@ use fake::faker::name::en::FirstName;
 use fake::faker::name::en::LastName;
 
 // A structure to represent a User.
+/// A user.
 #[derive(Debug)]
 struct User {
+    /// The identifier of the user.
     id: u64,
+    /// The first name.
     first_name: String,
+    /// The last name.
     last_name: String,
+    /// The email address.
     email: String,
+    /// The age in years.
     age: u8,
+    /// Whether the user is active.
     active: bool,
 }
 
@@ -43,26 +49,38 @@ struct User {
 // for free.
 
 // A structure to represent an Order:
+/// An order, for which fake values can be generated.
 #[derive(Debug, Dummy)]
 struct Order {
+    /// The identifier of the order.
     #[dummy(faker = "1000..2000")]
     id: u64,
+    /// The identifier of the user who placed the order.
     user_id: u64,
+    /// The ordered items.
     items: Vec<String>,
+    /// The total price.
     total: f64,
+    /// The address to ship the order to.
     shipping_address: Address,
+    /// The creation date of the order.
     created_at: String,
     // #[dummy(default)]
     // other: String,
 }
 
+/// A postal address.
 #[derive(Debug, Dummy)]
 struct Address {
+    /// The street.
     street: String,
+    /// The city.
     city: String,
+    /// The postal code.
     zip: String,
 }
 
+/// Generates and prints fake values, such as tuples, strings, users and orders.
 fn main() {
     // Use `Faker` to generate default fake value of given type.
     let tuple = Faker.fake::<(u8, u32, f32)>();
@@ -133,6 +151,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

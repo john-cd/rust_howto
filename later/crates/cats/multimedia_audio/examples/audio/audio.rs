@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A simple example that plays a 440Hz sine wave (A4) for 1 second.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 use std::error::Error;
 
 use cpal::traits::DeviceTrait;
@@ -25,6 +29,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
+/// Plays a 440 Hz sine wave on the output `device` with the sample type `T`.
 fn run_stream<T>(
     device: &cpal::Device,
     config: &cpal::StreamConfig,
@@ -67,6 +72,7 @@ where
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()
 }

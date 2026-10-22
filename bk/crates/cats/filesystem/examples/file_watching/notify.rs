@@ -1,13 +1,12 @@
 #![allow(unused_imports)]
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Add to your `Cargo.toml`:
 //! ```toml
 //! [dependencies]
 //! notify = "8.1.0" # Or latest.
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::path::Path;
 
@@ -18,6 +17,7 @@ use notify::Watcher as _;
 use notify::event::Event;
 use notify::event::EventKind;
 
+/// An event handler that prints the file system events.
 struct EventPrinter;
 
 impl EventHandler for EventPrinter {
@@ -32,6 +32,7 @@ impl EventHandler for EventPrinter {
     }
 }
 
+/// Watches the current directory and prints the events received.
 fn main() -> Result<()> {
     // Initialize a file system watcher using the `notify` crate.
     // `recommended_watcher` automatically selects the best file system watcher
@@ -59,6 +60,7 @@ fn main() -> Result<()> {
 // Look for additional examples in <https://github.com/notify-rs/notify/tree/main/examples>.
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

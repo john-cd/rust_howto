@@ -1,18 +1,18 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `static mut` Example.
 //!
 //! `static mut` use is generally discouraged due to the potential for data
 //! races and undefined behavior. The following demonstrates alternatives.
 //! See <https://doc.rust-lang.org/nightly/edition-guide/rust-2024/static-mut-references.html>
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::sync::Mutex;
 use std::sync::atomic::AtomicU16;
 use std::sync::atomic::Ordering;
 use std::thread;
 
+/// Modifies a mutable static, which requires `unsafe` and is discouraged.
 fn dont_do_this() {
     // Declare a mutable static variable:
     static mut VAL: i32 = 0;
@@ -35,6 +35,7 @@ fn dont_do_this() {
     assert_eq!(READ_FROM_VAL, 0);
 }
 
+/// Uses a static atomic instead of a mutable static.
 fn do_instead() {
     // Use an _immutable_ static containing an Atomic.
     // Note that Atomic variables are safe to share between threads (they
@@ -73,6 +74,7 @@ fn do_instead() {
     assert_eq!(final_count, 20_001);
 }
 
+/// Uses a static `Mutex` to share mutable state.
 fn or_do_that() {
     // The preferred way to handle mutable global state is to use
     // synchronization primitives with interior mutability
@@ -109,6 +111,7 @@ fn or_do_that() {
     assert_eq!(final_count, 20_000);
 }
 
+/// Runs the three approaches in turn.
 fn main() {
     dont_do_this();
     do_instead();
@@ -117,6 +120,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }
