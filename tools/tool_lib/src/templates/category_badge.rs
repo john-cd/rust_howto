@@ -53,4 +53,28 @@ mod tests {
         let result = create_category_badge("", "").unwrap();
         assert_eq!(result, "[![cat~][cat~~badge]][cat~]{{hi:}} ");
     }
+
+    #[test]
+    fn test_create_category_badge_whitespace_only() {
+        let result = create_category_badge("   ", "\t \n").unwrap();
+        assert_eq!(result, "[![cat~][cat~~badge]][cat~]{{hi:}} ");
+    }
+
+    #[test]
+    fn test_create_category_badge_hyphenated_slug() {
+        let result = create_category_badge("Command-line Interface", "command-line-interface").unwrap();
+        assert_eq!(
+            result,
+            "[![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line Interface}} "
+        );
+    }
+
+    #[test]
+    fn test_create_category_badge_unicode_and_special_chars() {
+        let result = create_category_badge("GUI & Web 🚀", "gui-web").unwrap();
+        assert_eq!(
+            result,
+            "[![cat~gui-web][cat~gui-web~badge]][cat~gui-web]{{hi:GUI &amp; Web 🚀}} "
+        );
+    }
 }
