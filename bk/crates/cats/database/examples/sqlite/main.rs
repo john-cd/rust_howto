@@ -8,7 +8,7 @@ use clap::Subcommand;
 mod initialization;
 #[cfg(all(target_os = "linux", feature = "sqlite"))]
 mod insert_select;
-#[cfg(all(target_os = "linux", feature = "sqlite"))]
+#[cfg(all(feature = "sqlite", any(target_os = "linux", test)))]
 mod transactions;
 
 #[cfg(all(target_os = "linux", feature = "sqlite"))]
@@ -49,7 +49,7 @@ fn main() -> anyhow::Result<()> {
                 }
                 #[cfg(all(target_os = "linux", feature = "sqlite"))]
                 Commands::Transactions => {
-                    let _ = transactions::run();
+                    transactions::run()?;
                 }
             }
         }
