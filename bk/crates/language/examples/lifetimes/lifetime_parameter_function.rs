@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Lifetime parameters on a function.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// This function has a lifetime parameter `'a`.
 /// The lifetime parameter can be used by references within the function
@@ -12,6 +16,7 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() { x } else { y }
 }
 
+/// Compares strings with different lifetimes.
 fn main() {
     // We define two variables, one with a scope / lifetime
     // shorter than the other.

@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Passing and calling function pointers.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// Example function: add one to the input.
 fn add_one(x: i32) -> i32 {
@@ -11,6 +15,7 @@ fn do_twice(f: fn(i32) -> i32, arg: i32) -> i32 {
     f(arg) + f(arg)
 }
 
+/// Calls a function through a pointer and passes it to another function.
 fn main() {
     let func_ptr: fn(i32) -> i32 = add_one; // Assign a function pointer to a variable.
     println!("Calling via the pointer: {}", func_ptr(10)); // Output: 11.

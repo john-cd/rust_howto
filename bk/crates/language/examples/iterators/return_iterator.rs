@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Returning an iterator from a function with `impl Iterator`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// Return an iterator from a function using the `impl Iterator<Item = T>`
 /// syntax as the return type, where `T` is the type of the items the iterator
@@ -12,6 +16,7 @@ fn count_up_to(max: i32) -> impl Iterator<Item = i32> {
 // You could also return a boxed trait object e.g.,
 // `Box<dyn Iterator<Item = T>>`.
 
+/// Iterates over the numbers returned by `count_up_to`.
 fn main() {
     let my_iterator = count_up_to(5);
 

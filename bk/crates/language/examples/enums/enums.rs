@@ -1,17 +1,31 @@
-// TODO Reviewed ??-??-2026
+//! Enums with unit-like, struct-like and tuple-like variants.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// An enum to represent different types of messages.
 #[derive(Debug)]
 enum Message {
+    /// A variant without data.
     Quit,                       // Unit-like variant (no fields).
-    Move { x: i32, y: i32 },    // Struct-like variant (named fields).
+    /// A variant with named fields.
+    Move {
+        /// Distance to move in the x direction.
+        x: i32,
+        /// Distance to move in the y direction.
+        y: i32,
+    }, // Struct-like variant (named fields).
+    /// A variant that holds a string.
     Write(String),              // Tuple-like variant (numbered fields).
+    /// A variant that holds three color components.
     ChangeColor(i32, i32, i32), // Another tuple-like variant.
 }
 
 /// Define methods on enums.
 impl Message {
+    /// Prints a description of the message.
     fn call(&self) {
         // The `match` keyword allows us to compare a value against a series of
         // patterns. Each pattern can have associated code that will be
@@ -32,6 +46,7 @@ impl Message {
     }
 }
 
+/// Creates a message of each kind and calls it.
 fn main() {
     // `msg` is assigned one of the variants.
     // Note the :: between the name of the type and the name of the variant.

@@ -1,7 +1,12 @@
-// TODO Reviewed ??-??-2026
+//! The unit type `()` and the never type `!`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // The unit type is used when there is nothing to return:
+/// Returns the unit type explicitly.
 #[allow(clippy::unused_unit)]
 fn a_func() -> () {
     println!("a_func was called.");
@@ -10,6 +15,7 @@ fn a_func() -> () {
 // `()` is most commonly seen implicitly.
 // Functions without a `-> ...` implicitly have return type `()`.
 // The following is equivalent to the above:
+/// Returns the unit type implicitly.
 fn b_func() {
     println!("b_func was called.");
 }
@@ -18,12 +24,14 @@ fn b_func() {
 
 // The `!` type, also called "never", represents the type of computations which
 // never resolve to any value at all.
+/// Never returns; it panics.
 fn diverge() -> ! {
     panic!("This function never returns!")
 }
 // This function could also contain an infinite loop,
 // or call the `exit` function.
 
+/// Calls functions that return the unit type.
 fn main() {
     a_func();
     b_func();
@@ -45,6 +53,7 @@ mod tests {
         main();
     }
 
+    /// Checks that a diverging function panics.
     #[should_panic]
     #[test]
     fn test_panic() {

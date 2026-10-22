@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Macro hygiene: variables in a macro do not clash with variables outside it.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(unused)]
+
 // ANCHOR: example
 macro_rules! foo {
     () => {
@@ -22,6 +26,7 @@ macro_rules! baz {
     };
 }
 
+/// Calls the macros and shows which variables are visible.
 fn main() {
     foo!();
     // ERROR println!("{x}");

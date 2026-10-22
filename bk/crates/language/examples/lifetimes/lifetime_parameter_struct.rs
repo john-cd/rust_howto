@@ -1,14 +1,20 @@
-// TODO Reviewed ??-??-2026
+//! A lifetime parameter on a struct and on its `impl` blocks.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 #![allow(unused_variables)]
+
 // ANCHOR: example
 /// A struct that holds a reference to a string slice.
 struct Excerpt<'a> {
+    /// The excerpt, borrowed from a longer text.
     part: &'a str,
 }
 
 /// An implementation only defined for the `'static` lifetime.
 impl Excerpt<'static> {
+    /// A method that exists only when the lifetime is `'static`.
     fn only_if_static(&self) {}
 }
 
@@ -17,6 +23,7 @@ impl Excerpt<'static> {
 /// but it does not matter which, because the lifetime is not referenced in the
 /// block.
 impl Excerpt<'_> {
+    /// Returns a constant level, whatever the lifetime.
     fn level(&self) -> i32 {
         3
     }
@@ -25,11 +32,13 @@ impl Excerpt<'_> {
 /// A generic implementation block.
 /// Note the lifetime parameter `'a` after `impl`.
 impl<'a> Excerpt<'a> {
+    /// Returns the excerpt with its original lifetime.
     fn part(&self) -> &'a str {
         self.part
     }
 }
 
+/// Creates an excerpt and calls its methods.
 fn main() {
     // Create an instance of the `struct` using a string literal of type
     // `'static`. Therefore 'a = 'static.

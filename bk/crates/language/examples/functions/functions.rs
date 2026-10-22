@@ -1,7 +1,10 @@
-// TODO Reviewed ??-??-2026
-#![allow(dead_code)]
-// ANCHOR: example
+//! Defining functions with arguments and return values.
+//!
+//! TODO Reviewed ??-??-2026
 
+#![allow(dead_code)]
+
+// ANCHOR: example
 /// Function with no parameters, no return type.
 fn say_hello() {
     println!("Hello, Rust!");
@@ -13,6 +16,7 @@ fn greet(name: &str) {
 }
 
 // Function with two parameters: `a` and `b`, both of type `i32`.
+/// Adds two numbers and prints the sum.
 fn add_and_display(a: i32, b: i32) {
     let sum = a + b;
     println!("{a} + {b} = {sum}");
@@ -51,6 +55,7 @@ fn find_first_even(numbers: &[i32]) -> Option<i32> {
     None // Return `None` if no even number is found (last expression).
 }
 
+/// Calls each of the functions.
 fn main() {
     // Call the functions above.
     say_hello();

@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A generic function with a lifetime parameter.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// Function with an explicit lifetime parameter.
 ///
@@ -10,6 +14,7 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() { x } else { y }
 }
 
+/// Finds the longer of two strings.
 fn main() {
     // The compiler infers the concrete lifetime for `'a` at the call site,
     // choosing the shorter of the two input lifetimes.

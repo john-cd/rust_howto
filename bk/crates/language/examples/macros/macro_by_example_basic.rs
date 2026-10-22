@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A basic declarative macro.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(unused)]
+
 // ANCHOR: example
 /// A basic macro-by-example (from the Rust By Example book).
 macro_rules! say_hello {
@@ -11,6 +15,7 @@ macro_rules! say_hello {
     };
 }
 
+/// Calls the macro.
 fn main() {
     say_hello!();
 }

@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Metavariables in declarative macros.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(unused)]
+
 // ANCHOR: example
 macro_rules! print_args {
     // Rule 1: Matches one expression.
@@ -12,6 +16,7 @@ macro_rules! print_args {
     };
 }
 
+/// Calls the macro with different arguments.
 fn main() {
     // Note how macros can accept different combinations of
     // arguments by having multiple rules:

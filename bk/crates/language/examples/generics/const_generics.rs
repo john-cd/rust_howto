@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A struct generic over a constant, the length of an array.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// Struct with a const parameter.
 ///
@@ -8,15 +12,18 @@
 struct InnerArray<T, const N: usize>([T; N]);
 
 impl<T: std::marker::Copy, const N: usize> InnerArray<T, N> {
+    /// Creates an array of `N` copies of `val`.
     fn new(val: T) -> Self {
         InnerArray([val; N])
     }
 
+    /// Returns the length of the array.
     fn len(&self) -> usize {
         N // The size N is known at compile time.
     }
 }
 
+/// Creates an array with a const generic length and prints it.
 fn main() {
     // Use a type with a const generic.
     let array: InnerArray<i32, 3> = InnerArray::new(42);

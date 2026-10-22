@@ -1,7 +1,10 @@
-// TODO Reviewed ??-??-2026
-#![allow(dead_code)]
-// ANCHOR: example
+//! Returning references and owned values from functions.
+//!
+//! TODO Reviewed ??-??-2026
 
+#![allow(dead_code)]
+
+// ANCHOR: example
 /// Return an owned type instead of a reference.
 fn return_string() -> String {
     String::new()
@@ -44,6 +47,7 @@ fn use_const() -> &'static str {
 
 // You might also use `Box::leak`.
 
+/// Calls each function and checks the results.
 fn main() {
     let s = return_string();
     assert!(s.is_empty());

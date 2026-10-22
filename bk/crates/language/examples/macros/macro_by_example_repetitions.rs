@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Repetitions in declarative macros.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(unused)]
+
 // ANCHOR: example
 macro_rules! sum {
     // `$x:expr` matches an expression.
@@ -21,6 +25,7 @@ macro_rules! sum {
 // the other is a block that scopes the `temp` variable
 // and avoid name collisions.
 
+/// Sums a list of numbers with a macro.
 fn main() {
     let s = sum!(1, 2, 3, 4);
     println!("{s}");

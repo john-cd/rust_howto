@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Iterator adapters, such as `map`, that transform an iterator lazily.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Chains iterator adapters and collects the result.
 fn main() {
     let numbers = [1, 2, 3];
 

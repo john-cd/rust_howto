@@ -1,11 +1,16 @@
-// TODO Reviewed ??-??-2026
+//! A struct that holds a reference of any type with a lifetime parameter.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// Struct with a type parameter `T` and a lifetime parameter `'a`.
 ///
 /// The `T: ?Sized` trait bound indicates that `T` can be dynamically sized,
 /// which will be useful in the example below.
 struct DataHolder<'a, T: ?Sized> {
+    /// The borrowed data.
     data: &'a T, /* The lifetime parameter is used to specify the lifetime
                   * of the reference. */
 }
@@ -15,11 +20,13 @@ struct DataHolder<'a, T: ?Sized> {
 /// and in the method signature to ensure that the returned reference has the
 /// same lifetime as the struct.
 impl<'a, T> DataHolder<'a, T> {
+    /// Returns the borrowed data.
     fn get_data(&self) -> &'a T {
         self.data
     }
 }
 
+/// Creates a holder around a reference and reads it back.
 fn main() {
     // `T` is `u8`.
     let data = DataHolder { data: &10u8 };
