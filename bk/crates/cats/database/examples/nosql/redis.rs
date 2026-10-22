@@ -24,15 +24,21 @@ fn connect() -> Result<Connection> {
         .unwrap_or_else(|_| "127.0.0.1:6379".to_string());
     let redis_password = env::var("REDIS_PASSWORD").unwrap_or_default();
     // Does Redis server need a secure connection?
-    let uri_scheme = match env::var("IS_TLS") {
-        Ok(_) => "rediss",
-        Err(_) => "redis",
+    let uri_scheme = if tls_enabled(env::var("IS_TLS").ok().as_deref()) {
+        "rediss"
+    } else {
+        "redis"
     };
     let redis_conn_url =
         format!("{uri_scheme}://:{redis_password}@{redis_host_name}");
     // `open` does not actually open a connection yet, but it does perform some
     // basic checks on the URL that might make the operation fail.
     Ok(redis::Client::open(redis_conn_url)?.get_connection()?)
+}
+
+/// Enables TLS only for an explicit true value such as `IS_TLS=true`.
+fn tls_enabled(value: Option<&str>) -> bool {
+    value.is_some_and(|value| value.eq_ignore_ascii_case("true"))
 }
 
 /// Fetches an integer value from Redis.
@@ -69,6 +75,15 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn tls_requires_an_explicit_true_value() {
+        assert!(!tls_enabled(None));
+        assert!(!tls_enabled(Some("false")));
+        assert!(!tls_enabled(Some("0")));
+        assert!(tls_enabled(Some("true")));
+        assert!(tls_enabled(Some("TRUE")));
+    }
 
     #[test]
     #[ignore = "Requires an external Redis server"]
