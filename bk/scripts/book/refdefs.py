@@ -30,7 +30,9 @@ def _resolve_tool() -> str:
         "--locked --force mdbook-utils"
     )
     if not tool:
-        raise RuntimeError(f"mdbook-utils is not installed; install the pinned revision with:\n{install}")
+        raise RuntimeError(
+            f"mdbook-utils is not installed; install the pinned revision with:\n{install}"
+        )
 
     result = subprocess.run(
         [tool, "--version"],
@@ -54,7 +56,9 @@ def _resolve_tool() -> str:
 def _generated_bytes(book_root: Path, tool: str) -> bytes:
     cargo_root = book_root / "crates"
     if not (cargo_root / "Cargo.toml").is_file():
-        raise RuntimeError(f"Cargo workspace manifest not found: {cargo_root / 'Cargo.toml'}")
+        raise RuntimeError(
+            f"Cargo workspace manifest not found: {cargo_root / 'Cargo.toml'}"
+        )
 
     with tempfile.TemporaryDirectory(prefix="rust-howto-refdefs-") as temporary:
         temporary_path = Path(temporary)
@@ -82,16 +86,30 @@ def _generated_bytes(book_root: Path, tool: str) -> bytes:
             encoding="utf-8",
         )
         if result.returncode != 0:
-            detail = "\n".join(part.strip() for part in (result.stdout, result.stderr) if part.strip())
+            detail = "\n".join(
+                part.strip() for part in (result.stdout, result.stderr) if part.strip()
+            )
             raise RuntimeError(f"mdbook-utils refdefs generation failed:\n{detail}")
         if not generated.is_file():
-            raise RuntimeError("mdbook-utils completed without creating dependency-refs.md")
+            raise RuntimeError(
+                "mdbook-utils completed without creating dependency-refs.md"
+            )
         return generated.read_bytes().rstrip(b"\r\n") + b"\n"
+
+
+def _preserve_review_marker(current: bytes, generated: bytes) -> bytes:
+    """Retain a human review marker while regenerating the owned fragment."""
+    marker = re.match(rb"(<!-- TODO Reviewed [^\r\n]* -->\r?\n)", current)
+    if marker is not None and not generated.startswith(marker.group(1)):
+        return marker.group(1) + generated
+    return generated
 
 
 def _show_diff(current: bytes, generated: bytes, fragment: Path) -> None:
     current_lines = current.decode("utf-8", errors="replace").splitlines(keepends=True)
-    generated_lines = generated.decode("utf-8", errors="replace").splitlines(keepends=True)
+    generated_lines = generated.decode("utf-8", errors="replace").splitlines(
+        keepends=True
+    )
     diff = difflib.unified_diff(
         current_lines,
         generated_lines,
@@ -105,7 +123,7 @@ def process(book_root: Path, action: str, tool: str) -> int:
     book_root = book_root.resolve()
     fragment = book_root / "src" / "refs" / "dependency-refs.md"
     current = fragment.read_bytes() if fragment.exists() else b""
-    generated = _generated_bytes(book_root, tool)
+    generated = _preserve_review_marker(current, _generated_bytes(book_root, tool))
     if current == generated:
         print(f"{fragment} is up to date")
         return 0
@@ -122,7 +140,11 @@ def process(book_root: Path, action: str, tool: str) -> int:
     temporary_name: str | None = None
     try:
         with tempfile.NamedTemporaryFile(
-            mode="wb", dir=fragment.parent, prefix="dependency-refs.", suffix=".tmp", delete=False
+            mode="wb",
+            dir=fragment.parent,
+            prefix="dependency-refs.",
+            suffix=".tmp",
+            delete=False,
         ) as output:
             temporary_name = output.name
             output.write(generated)
