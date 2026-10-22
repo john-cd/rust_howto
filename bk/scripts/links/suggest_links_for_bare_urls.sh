@@ -45,21 +45,20 @@ patterns=(
 )
 
 process_files() {
-  for file in $( find "${search_paths[@]}" -type f -name "*.md"  -not -name "refs.incl.md" -not -name "SUMMARY.md" -not -name "*refs.md" )
-  do
+  while IFS= read -r -d '' file; do
     echo ">> $file" >&2
-    contents=$(rg --multiline --invert-match '`.*`' "$file")
+    contents=$(rg --multiline --invert-match '`.*`' -- "$file" || true)
     # Look for http(s)://... and outputs references
     # Outputs reference-style links
     {
       for ((i=0; i<${#patterns[@]}; i+=2)); do
         pattern="${patterns[$i]}"
         replacement="${patterns[$i+1]}"
-        echo "${contents}" | rg --pcre2 --only-matching -r "${replacement}" "${pattern}"
+        echo "${contents}" | rg --pcre2 --only-matching -r "${replacement}" "${pattern}" || true
       done
     # --pcre2 = Perl regex enabled (allows look-arounds) -g = glob, -r = replace
     } | sed 's=/$==' | sort
-  done
+  done < <(find "${search_paths[@]}" -type f -name "*.md" -not -name "refs.incl.md" -not -name "SUMMARY.md" -not -name "*refs.md" -print0)
 }
 
 if [[ -n "${output_path}" ]]; then
