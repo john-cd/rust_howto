@@ -62,4 +62,3 @@
 [p~crates]: ../crate-selection/index.md
 [p~generics]: ../language/generics.md
 [p~language]: ../language/index.md
-[p~links]: index.md

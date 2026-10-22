@@ -31,9 +31,28 @@ def expand_includes(path: Path, source_root: Path) -> str:
 
 
 class RefdefsIntegrationTests(unittest.TestCase):
+    def test_review_marker_survives_generated_fragment_refresh(self) -> None:
+        """Preserves the human review marker without duplicating it."""
+        marker = b"<!-- TODO Reviewed ??-??-2026 -->\n"
+        generated = b"# Reference Definitions\n\n[crate]: https://example.com\n"
+        current = marker + b"# Reference Definitions\n\n[old]: https://example.com\n"
+
+        self.assertEqual(
+            refdefs._preserve_review_marker(current, generated), marker + generated
+        )
+        self.assertEqual(
+            refdefs._preserve_review_marker(marker + generated, generated),
+            marker + generated,
+        )
+        self.assertEqual(
+            refdefs._preserve_review_marker(generated, generated), generated
+        )
+
     def test_workspace_aliases_and_includes_are_deterministic(self) -> None:
         tool = refdefs._resolve_tool()
-        with tempfile.TemporaryDirectory(prefix="rust-howto-refdefs-test-") as temporary:
+        with tempfile.TemporaryDirectory(
+            prefix="rust-howto-refdefs-test-"
+        ) as temporary:
             book_root = Path(temporary) / "book"
             shutil.copytree(FIXTURE, book_root)
             fragment = book_root / "src" / "refs" / "dependency-refs.md"
@@ -56,9 +75,12 @@ class RefdefsIntegrationTests(unittest.TestCase):
             self.assertEqual(refdefs.process(book_root, "generate", tool), 0)
             generated = fragment.read_bytes()
             text = generated.decode("utf-8")
-            self.assertIn("[fixture_library_lib]: https://docs.rs/fixture_library_lib", text)
             self.assertIn(
-                "[fixture_library_lib-github]: https://example.com/fixture-library", text
+                "[fixture_library_lib]: https://docs.rs/fixture_library_lib", text
+            )
+            self.assertIn(
+                "[fixture_library_lib-github]: https://example.com/fixture-library",
+                text,
             )
             self.assertEqual(chapter.read_bytes(), chapter_before)
             self.assertEqual(manual_refs.read_bytes(), manual_before)
@@ -66,7 +88,9 @@ class RefdefsIntegrationTests(unittest.TestCase):
 
             expanded = expand_includes(chapter, book_root / "src")
             self.assertIn("[fixture library][fixture_library_lib]", expanded)
-            self.assertIn("[fixture_library_lib]: https://docs.rs/fixture_library_lib", expanded)
+            self.assertIn(
+                "[fixture_library_lib]: https://docs.rs/fixture_library_lib", expanded
+            )
             self.assertIn("[manual]: https://example.com/manual", expanded)
             self.assertNotIn("{{#include", expanded)
             self.assertTrue(link_refs.is_file())

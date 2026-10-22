@@ -404,11 +404,4 @@
 [ex~standard-library~return-early-pattern]: ../standard-library/optional_values.md#return-early-pattern
 [ex~standard-library~smart-pointer-comparison]: ../standard-library/smart_pointers.md#smart-pointer-comparison
 [ex~standard-library~sync-primitives]: ../standard-library/smart_pointers.md#sync-primitives
-[p~contributing]: ../appendices/contributing/index.md
-[p~crates-alphabetical]: crates_alphabetical.md
-[p~crates-categories]: crates_by_category.md
-[p~index~examples]: examples_index.md
-[p~lang]: ../language/index.md
-[p~links]: ../links/index.md
 [p~standard-library]: ../standard-library/index.md
-[p~word-index]: ../word_index.md

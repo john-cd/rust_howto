@@ -55,9 +55,18 @@ alias bb := buildbook
     set -euo pipefail
     cd "{{ root }}/../tools"
     tmp="$(mktemp)"
-    trap 'rm -f "$tmp"' EXIT
+    marked_tmp="${tmp}.marked"
+    trap 'rm -f "$tmp" "$marked_tmp"' EXIT
     cat "{{ root }}/master/crates.txt" | cargo run --locked -p crate_indices -- category_page_from_metadata --metadata "{{ root }}/master/crate_categories.toml" --book-root "{{ root }}" > "$tmp"
-    mv "$tmp" "{{ root }}/src/indices/crates_by_category.md"
+    index="{{ root }}/src/indices/crates_by_category.md"
+    if [[ -f "$index" ]]; then
+        marker="$(head -n 1 "$index")"
+        if [[ "$marker" == '<!-- TODO Reviewed '* ]]; then
+            { printf '%s\n' "$marker"; cat "$tmp"; } > "$marked_tmp"
+            mv "$marked_tmp" "$tmp"
+        fi
+    fi
+    mv "$tmp" "$index"
 
 [windows]
 @_generate-index-category:
