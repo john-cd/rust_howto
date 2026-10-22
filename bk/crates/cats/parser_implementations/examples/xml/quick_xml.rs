@@ -47,6 +47,8 @@ fn main() -> anyhow::Result<()> {
     }
 
     let person: Person = from_str(xml)?;
+    assert_eq!(person.name, "John Doe");
+    assert_eq!(person.age, 32);
     println!("Deserialized: {} ({})", person.name, person.age);
 
     let mut writer = Writer::new(Cursor::new(Vec::new()));
@@ -60,7 +62,10 @@ fn main() -> anyhow::Result<()> {
     writer.write_event(Event::End(BytesEnd::new("person")))?;
 
     let output = writer.into_inner().into_inner();
-    println!("{}", String::from_utf8(output)?);
+    let output = String::from_utf8(output)?;
+    assert!(output.contains("<name>Jane Smith</name>"));
+    assert!(output.contains("<age>28</age>"));
+    println!("{output}");
     Ok(())
 }
 // ANCHOR_END: example
