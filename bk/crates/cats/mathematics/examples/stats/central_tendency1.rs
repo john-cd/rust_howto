@@ -136,4 +136,14 @@ mod tests {
     fn test_main() {
         main();
     }
+
+    /// Empty samples have no median, and extreme integers do not overflow.
+    #[test]
+    fn median_handles_extreme_values_without_overflow() {
+        assert_eq!(median(&[]), None);
+        assert_eq!(median(&[3, 1, 2]), Some(2.0));
+        assert_eq!(median(&[i32::MAX, i32::MAX]), Some(i32::MAX as f32));
+        assert_eq!(median(&[i32::MIN, i32::MIN]), Some(i32::MIN as f32));
+        assert_eq!(median(&[i32::MIN, i32::MAX]), Some(-0.5));
+    }
 }
