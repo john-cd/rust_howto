@@ -50,22 +50,44 @@ fn my_module(module: &Bound<'_, PyModule>) -> PyResult<()> {
     module.add_function(wrap_pyfunction!(my_function, module)?)
 }
 
-fn main() {
-    // TODO: Add code to build the Python module and demonstrate how to call it
-    // from Python.
+fn main() -> PyResult<()> {
+    // Initialize the Python interpreter.
+    Python::initialize();
+
+    Python::attach(|py| {
+        // Create the Rust-defined module.
+        let module = PyModule::new(py, "my_module")?;
+        my_module(&module)?;
+
+        // Register the module in sys.modules so Python code can import it.
+        let sys = py.import("sys")?;
+        let modules = sys.getattr("modules")?;
+        modules.set_item("my_module", module)?;
+
+        // Execute Python code that imports and calls the Rust module.
+        let code = pyo3::ffi::c_str!(
+            "import my_module\n\
+             result = my_module.my_function(10, 20)\n\
+             assert result == 30, f'Expected 30, got {result}'\n\
+             print(f'10 + 20 = {result}')"
+        );
+        py.run(code, None, None)?;
+
+        Ok(())
+    })
 }
 // ANCHOR_END: example
 
-pub fn run() {
-    main();
+pub fn run() -> PyResult<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test_main() {
-        main();
+    fn test_main() -> PyResult<()> {
+        main()
     }
 }
 // [finish; fix](https://github.com/john-cd/rust_howto/issues/996)

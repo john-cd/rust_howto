@@ -26,7 +26,7 @@ enum Commands {
     UseRustFromPython,
 }
 
-fn main() -> anyhow::Result<()> {
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     #[cfg(target_os = "linux")]
     {
         let cli = Cli::parse();
@@ -39,7 +39,7 @@ fn main() -> anyhow::Result<()> {
                 }
                 #[cfg(target_os = "linux")]
                 Commands::UseRustFromPython => {
-                    use_rust_from_python::run();
+                    use_rust_from_python::run()?;
                 }
             }
         }
