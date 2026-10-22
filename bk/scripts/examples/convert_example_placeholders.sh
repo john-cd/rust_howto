@@ -46,7 +46,7 @@ do
       # Create the folder for the test, if missing
       mkdir -p $absoluteexampledir
       # Create a GitHub ticket
-      issue=$( gh issue create --title "Add example for: ${examplename}" --body "[${examplefilename}](https://github.com/john-cd/rust_howto/tree/main/$(realpath --relative-to=${root} ${absoluteexampledir})/${examplefilename}.rs )" )
+      issue=$( gh issue create --title "Add example for: ${examplename}" --body "[${examplefilename}](https://github.com/john-cd/rust_howto/tree/develop/$(realpath --relative-to=${root} ${absoluteexampledir})/${examplefilename}.rs )" )
       sleep 3
       # Add a stub file for the example
       cat > "$absoluteexampledir/${examplefilename}.rs" <<- EOF
