@@ -53,4 +53,36 @@ mod tests {
         let result = create_category_badge("", "").unwrap();
         assert_eq!(result, "[![cat~][cat~~badge]][cat~]{{hi:}} ");
     }
+
+    #[test]
+    fn test_create_category_badge_special_characters_and_numbers() {
+        let result =
+            create_category_badge("GUI & 2D Graphics / C++", "gui-2d-graphics-cpp").unwrap();
+        assert_eq!(
+            result,
+            "[![cat~gui-2d-graphics-cpp][cat~gui-2d-graphics-cpp~badge]][cat~gui-2d-graphics-cpp]{{hi:GUI &amp; 2D Graphics / C++}} "
+        );
+    }
+
+    #[test]
+    fn test_create_category_badge_internal_whitespace() {
+        let result = create_category_badge(
+            "   Web  programming:   HTTP   ",
+            "   web-programming   ",
+        )
+        .unwrap();
+        assert_eq!(
+            result,
+            "[![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web  programming:   HTTP}} "
+        );
+    }
+
+    #[test]
+    fn test_create_category_badge_unicode() {
+        let result = create_category_badge("国际化 & 本地化", "i18n").unwrap();
+        assert_eq!(
+            result,
+            "[![cat~i18n][cat~i18n~badge]][cat~i18n]{{hi:国际化 &amp; 本地化}} "
+        );
+    }
 }
