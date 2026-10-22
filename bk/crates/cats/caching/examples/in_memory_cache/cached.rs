@@ -53,8 +53,12 @@ fn main() {
     }
 
     // Example with customized cache:
-    println!("User data: {}", fetch_data(123));
-    println!("Cached user data: {}", fetch_data(123));
+    let first_fetch = fetch_data(123);
+    let cached_fetch = fetch_data(123);
+    assert_eq!(first_fetch, "Data for key 123");
+    assert_eq!(cached_fetch, first_fetch);
+    println!("User data: {first_fetch}");
+    println!("Cached user data: {cached_fetch}");
 }
 
 // ANCHOR_END: example
