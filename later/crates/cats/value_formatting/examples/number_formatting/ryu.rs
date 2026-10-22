@@ -10,6 +10,7 @@
 
 use ryu::Buffer;
 
+/// Prints floating-point numbers with `ryu`.
 fn main() {
     let mut buffer = Buffer::new();
     let printed = buffer.format(1.234);

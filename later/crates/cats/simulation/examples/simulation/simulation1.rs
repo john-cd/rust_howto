@@ -9,6 +9,7 @@
 
 use rapier2d::prelude::*;
 
+/// Simulates a ball falling and bouncing on the ground.
 fn main() {
     let gravity = vector![0.0f32, -9.81f32];
     let integration_parameters = IntegrationParameters::default();

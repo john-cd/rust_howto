@@ -14,6 +14,7 @@ use wasmtime::*;
 
 // Simple example written in WAT (WebAssembly Text Format).
 // Imports a host function; exports a function as well.
+/// A WebAssembly module in text format, which imports and exports a function.
 static WAT: &str = r#"(module
   (import "host" "print_char" (func $print_char (param i32)))
 
@@ -46,6 +47,7 @@ static WAT: &str = r#"(module
     )
 )"#;
 
+/// Runs the WebAssembly module with `wasmtime`, linking a host function.
 fn main() -> Result<()> {
     // Create a WASM engine, which is the core of the Wasmtime runtime.
     let engine = Engine::default();

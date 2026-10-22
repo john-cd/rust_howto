@@ -10,6 +10,7 @@ use geo::Centroid;
 use geo::LineString;
 use geo::Polygon;
 
+/// Creates a polygon, computes its area and finds its centroid.
 fn main() {
     let outer = LineString::from(vec![
         (0.0, 0.0),

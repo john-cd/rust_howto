@@ -15,6 +15,7 @@
 use mlua::prelude::*;
 
 // In standalone mode, `mlua` allows to add scripting support.
+/// Creates a Lua table from Rust and iterates over it in Lua.
 fn main() -> LuaResult<()> {
     let lua = Lua::new();
 

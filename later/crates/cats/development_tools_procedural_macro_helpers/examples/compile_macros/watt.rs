@@ -70,6 +70,7 @@ use development_tools_procedural_macro_helpers::watt_macro;
 // In this example, 'watt_macro' is a shim that would normally load a WASM file.
 watt_macro!(some input);
 
+/// Runs the Watt demonstration.
 fn main() {
     println!("Demonstrating Watt-like macro usage:");
     watt_demo();

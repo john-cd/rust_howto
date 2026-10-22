@@ -12,6 +12,7 @@ use plotly::Plot;
 use plotly::Scatter;
 use plotly::common::Mode;
 
+/// Creates a scatter plot and saves it to an HTML file.
 fn main() -> anyhow::Result<()> {
     // Sample data.
     let x_data = vec![1, 2, 3, 4, 5];

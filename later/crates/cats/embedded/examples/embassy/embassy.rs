@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Embassy is an async runtime designed for embedded systems in Rust. It
 //! provides async capabilities to work with hardware, making it easier to
@@ -32,6 +31,7 @@ use embassy::time::Duration;
 use embassy::time::Timer;
 use panic_halt as _;
 
+/// A task that blinks an LED forever.
 #[embassy::task]
 async fn blink_task() {
     // Configure your LED pin here
@@ -50,8 +50,10 @@ async fn blink_task() {
     }
 }
 
+/// The executor that runs the tasks.
 static EXECUTOR: Executor = Executor::new();
 
+/// Starts the executor and spawns the blink task.
 #[entry]
 fn main() -> ! {
     // Initialize the executor
@@ -60,24 +62,29 @@ fn main() -> ! {
     })
 }
 
+/// Configures the pin of the LED.
 fn configure_led_pin() -> LedPin {
     // This is where you'd configure your LED pin
     // Replace with actual hardware setup code
     LedPin::new()
 }
 
+/// A placeholder for the pin of an LED.
 struct LedPin;
 
 impl LedPin {
+    /// Creates the pin.
     fn new() -> Self {
         // Initialize your LED pin here
         LedPin
     }
 
+    /// Sets the pin high, which turns the LED on.
     fn set_high(&self) {
         // Set the LED pin high
     }
 
+    /// Sets the pin low, which turns the LED off.
     fn set_low(&self) {
         // Set the LED pin low
     }
@@ -90,7 +97,8 @@ pub fn run() -> ! {
 }
 
 #[cfg(test)]
-mod tests { use super::*;
+mod tests {
+    use super::*;
 
     #[test]
     #[ignore = "requires embassy crate"]

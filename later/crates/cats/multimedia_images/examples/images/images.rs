@@ -13,6 +13,8 @@ use std::path::PathBuf;
 use image::ImageBuffer;
 use image::Rgb;
 
+/// Generates a gradient image and saves it to the path given on the command
+/// line.
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let output_path = image_output_path_from_args().unwrap_or_else(|| {
         let default = PathBuf::from("generated_image.png");
@@ -23,6 +25,7 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     save_gradient_image(&output_path, 512, 256)
 }
 
+/// Builds a gradient image of the given size and saves it to `output_path`.
 fn save_gradient_image(
     output_path: &Path,
     width: u32,
@@ -37,6 +40,7 @@ fn save_gradient_image(
     Ok(())
 }
 
+/// Returns a gradient image of the given `width` and `height`.
 fn build_gradient_image(
     width: u32,
     height: u32,
@@ -56,6 +60,7 @@ fn build_gradient_image(
     img
 }
 
+/// Returns the output path from the first command-line argument.
 fn image_output_path_from_args() -> Option<PathBuf> {
     std::env::args_os().nth(1).map(PathBuf::from)
 }

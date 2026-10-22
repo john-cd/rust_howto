@@ -11,6 +11,7 @@ use std::error::Error;
 
 use rav1e::prelude::*;
 
+/// Encodes a blank AV1 frame and counts the packets produced.
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let cfg = Config::default();
     let mut ctx: Context<u8> = cfg.new_context()?;

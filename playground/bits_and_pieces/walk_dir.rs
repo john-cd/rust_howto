@@ -21,9 +21,11 @@ use anyhow::Result;
 use clap::Parser;
 use walkdir::WalkDir;
 
+/// The command-line arguments.
 #[derive(Parser, Debug)]
 #[clap(version)]
 pub(crate) struct Args {
+    /// The path of the directory to process.
     #[clap(help = "Path to directory to process")]
     pub directory: PathBuf,
 }

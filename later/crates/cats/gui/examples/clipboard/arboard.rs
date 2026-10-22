@@ -12,6 +12,7 @@
 
 use arboard::Clipboard;
 
+/// Copies text to the clipboard, then reads it back.
 fn main() {
     // Create a new Clipboard instance.
     let mut clipboard = Clipboard::new().unwrap();

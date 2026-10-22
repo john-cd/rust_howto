@@ -24,6 +24,7 @@ fn add(x: i64, y: i64) -> i64 {
     x + y
 }
 
+/// Registers Rust functions in a Rhai engine and calls them from scripts.
 fn main() -> Result<(), Box<EvalAltResult>> {
     // Create a new `Rhai` scripting engine.
     let mut engine = Engine::new();
@@ -80,6 +81,7 @@ fn main() -> Result<(), Box<EvalAltResult>> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Box<EvalAltResult>> {
     main()?;
     Ok(())

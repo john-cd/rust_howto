@@ -32,17 +32,23 @@ use polkavm::Linker;
 use polkavm::Module;
 use polkavm::ProgramBlob;
 
+/// The result of the functions of the example.
 type ExampleResult<T> = Result<T, Box<dyn Error + Send + Sync>>;
 
+/// The state of the host, shared with the guest program.
 #[derive(Debug, Default)]
 struct HostState {
+    /// The number of calls to the host function.
     counter: u32,
 }
 
+/// Runs the guest program given on the command line.
 fn main() -> ExampleResult<()> {
     run_guest(guest_path_from_args())
 }
 
+/// Loads the guest program from `guest_path`, links a host function and calls
+/// the guest function. Prints the usage if no path is given.
 fn run_guest(guest_path: Option<PathBuf>) -> ExampleResult<()> {
     let guest_path = match guest_path {
         Some(path) => path,
@@ -118,10 +124,12 @@ fn run_guest(guest_path: Option<PathBuf>) -> ExampleResult<()> {
     Ok(())
 }
 
+/// Returns the path of the guest program from the first command-line argument.
 fn guest_path_from_args() -> Option<PathBuf> {
     env::args_os().nth(1).map(PathBuf::from)
 }
 
+/// Prints how to run the example.
 fn print_usage() {
     eprintln!(
         "Usage: cargo run --example emulators -- <path-to-guest.polkavm>"
@@ -131,6 +139,7 @@ fn print_usage() {
     );
 }
 
+/// Documents the contract that the guest program must fulfill.
 #[allow(clippy::unnecessary_wraps)]
 fn _guest_contract(_path: &Path) -> ExampleResult<()> {
     Ok(())

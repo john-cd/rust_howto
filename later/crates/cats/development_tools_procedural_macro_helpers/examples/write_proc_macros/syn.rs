@@ -67,6 +67,7 @@ fn m() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Runs the `syn` examples.
 fn main() -> anyhow::Result<()> {
     simple()?;
     m()?;

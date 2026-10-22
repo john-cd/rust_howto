@@ -27,6 +27,7 @@ use winit::event_loop::ControlFlow;
 use winit::event_loop::EventLoop;
 use winit::window::WindowBuilder;
 
+/// Opens a window and renders a scene with `vello`.
 fn main() {
     let event_loop = EventLoop::new();
     let window = WindowBuilder::new()
@@ -136,6 +137,7 @@ fn main() {
     });
 }
 
+/// Builds the scene to render.
 fn build_scene() -> vello::Scene {
     let mut scene_builder = SceneBuilder::new();
 

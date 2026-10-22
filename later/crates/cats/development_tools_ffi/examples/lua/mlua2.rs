@@ -39,6 +39,7 @@ fn my_module(lua: &Lua) -> LuaResult<LuaTable> {
     Ok(exports)
 }
 
+/// Builds a Lua module that exports a function.
 fn main() -> LuaResult<()> {
     let lua = Lua::new();
     let _exports = my_module(&lua)?;

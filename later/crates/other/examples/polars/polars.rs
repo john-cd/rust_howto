@@ -23,6 +23,7 @@
 
 use polars::prelude::*;
 
+/// Reads a CSV file into a data frame, then filters it and selects columns.
 fn main() -> anyhow::Result<()> {
     // Read a CSV file into a DataFrame.
     let df = CsvReadOptions::default()

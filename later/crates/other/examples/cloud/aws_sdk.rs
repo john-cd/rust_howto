@@ -11,6 +11,7 @@ use aws_sdk_s3::Client;
 use tracing::error;
 use tracing::info;
 
+/// Lists the objects of an S3 bucket.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Initialize tracing subscriber.
@@ -46,6 +47,7 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()?;
     Ok(())

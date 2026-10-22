@@ -19,6 +19,7 @@ use webrender::api::units::LayoutRect;
 use webrender::api::units::LayoutSize;
 use webrender::api::*;
 
+/// Opens a window and renders a rotating rectangle with WebRender.
 fn main() {
     let event_loop = EventLoop::new();
     let window_builder = WindowBuilder::new().with_title("WebRender Example");
@@ -106,6 +107,7 @@ fn main() {
     });
 }
 
+/// A profiler that does nothing.
 struct NullProfiler;
 
 impl Profiler for NullProfiler {

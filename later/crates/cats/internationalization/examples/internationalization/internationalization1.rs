@@ -13,6 +13,7 @@ use icu_locale_core::Locale;
 use sys_locale::get_locale;
 use sys_locale::get_locales;
 
+/// Detects the locale of the system and prints a greeting in that language.
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let current_locale = get_locale().unwrap_or_else(|| "und".to_string());
     let mut preferred_locales = get_locales();
@@ -45,6 +46,7 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     Ok(())
 }
 
+/// Returns a greeting for the `language` and `region`.
 fn render_greeting(language: &str, region: &str) -> &'static str {
     match (language, region) {
         ("es", _) => "¡Hola! Bienvenido a la internacionalización en Rust.",

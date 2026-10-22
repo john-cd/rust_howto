@@ -15,6 +15,7 @@ use rodio::Player;
 use rodio::Source;
 use rodio::source::SineWave;
 
+/// Plays a 440 Hz sine tone for two seconds.
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let sink_handle = DeviceSinkBuilder::open_default_sink()?;
     let player = Player::connect_new(sink_handle.mixer());

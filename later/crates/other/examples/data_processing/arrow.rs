@@ -39,9 +39,12 @@ where
     array.iter().map(|v| v.unwrap_or_default()).sum()
 }
 
+/// A struct whose fields are converted to Arrow arrays.
 #[derive(Serialize)]
 struct MyStruct {
+    /// A 32-bit integer.
     int32: i32,
+    /// A string.
     string: String,
 }
 

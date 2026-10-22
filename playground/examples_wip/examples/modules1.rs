@@ -1,19 +1,23 @@
-//! The main function of the program.
+//! Demonstrates module paths, `super` and re-exports with `pub use`.
 //!
 //! TODO Reviewed ??-??-2026
 
 #![allow(dead_code)]
 
+/// A module with a public struct.
 mod a {
+    /// A struct.
     pub struct A;
 }
 
+/// A module that refers to its sibling with `super`.
 mod c {
     // We can construct relative paths that begin in the parent module,
     // rather than the current module or the crate root, by using `super`
     // at the start of the path. `super` refers to the parent module.
     use super::a; // The `a` module is now in scope.
 
+    /// Creates an `A` and prints a message.
     pub fn do_something_else() {
         //
         let _a = a::A;
@@ -21,15 +25,20 @@ mod c {
     }
 }
 
+/// A module with a public function.
 mod d {
+    /// Does nothing.
     pub fn let_try_this() {}
 }
 // Absolute paths start with the literal `crate`.
 // You can try:
 // use crate::d;
 
+/// A module that contains the public module `f`.
 mod e {
+    /// A public module, re-exported at the root.
     pub mod f {
+        /// Prints a message.
         pub fn try_that() {
             println!("Try that.");
         }

@@ -20,6 +20,7 @@ use tokio_tungstenite::tungstenite::client::IntoClientRequest;
 // text, binary...
 use tokio_tungstenite::tungstenite::protocol::Message;
 
+/// Connects to a WebSocket server, sends a message and prints the reply.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Connect to a test WebSocket server, which will echo the message we sent.
@@ -51,6 +52,7 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()?;
     Ok(())

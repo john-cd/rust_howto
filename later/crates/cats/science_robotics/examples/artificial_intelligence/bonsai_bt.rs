@@ -39,11 +39,14 @@ use bonsai_bt::UpdateArgs;
 // Waits an amount of time before continuing.
 use bonsai_bt::Wait;
 
+/// The actions of the behavior tree.
 #[derive(Clone, Debug, Copy)]
 pub enum Actions {
     // Increment accumulator.
+    /// Increments the accumulator.
     Inc,
     // Decrement accumulator.
+    /// Decrements the accumulator.
     Dec,
 }
 

@@ -26,6 +26,7 @@ use baseview::WindowEvent;
 use baseview::WindowOpenOptions;
 use baseview::WindowScalePolicy;
 
+/// A window delegate that handles the window events.
 struct BaseviewExample;
 
 impl WindowDelegate for BaseviewExample {
@@ -52,6 +53,7 @@ impl WindowDelegate for BaseviewExample {
     }
 }
 
+/// Opens a window.
 fn main() -> Result<()> {
     let size = Size::new(640.0, 480.0);
     let mut open_options =

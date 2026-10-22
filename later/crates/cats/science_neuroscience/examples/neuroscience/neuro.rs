@@ -11,6 +11,8 @@ use std::error::Error;
 
 use ndarray::Array3;
 
+/// Creates a synthetic volume of neuroimaging data and prints its location and
+/// shape.
 fn main() -> Result<(), Box<dyn Error>> {
     let shape = (64, 64, 64);
     let mut volume = Array3::<i16>::zeros(shape);

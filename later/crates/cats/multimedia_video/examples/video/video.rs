@@ -10,6 +10,7 @@
 use std::error::Error;
 use std::path::PathBuf;
 
+/// Detects scene changes in a video file given on the command line.
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let input_path = video_path_from_args().unwrap_or_else(|| {
         eprintln!("Usage: cargo run --example video -- <path-to-video.y4m>");
@@ -31,6 +32,7 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     Ok(())
 }
 
+/// Returns the path of the video from the first command-line argument.
 fn video_path_from_args() -> Option<PathBuf> {
     std::env::args_os().nth(1).map(PathBuf::from)
 }

@@ -7,6 +7,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// Prints information about the FreeBSD system.
 #[cfg(target_os = "freebsd")]
 fn main() {
     use nix::sys::utsname::uname;
@@ -29,6 +30,7 @@ fn main() {
     println!("  ppid: {}", ppid);
 }
 
+/// Prints a message, since the example only works on FreeBSD.
 #[cfg(not(target_os = "freebsd"))]
 fn main() {
     println!(

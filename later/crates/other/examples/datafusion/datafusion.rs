@@ -32,6 +32,7 @@ use datafusion::arrow::record_batch::RecordBatch;
 use datafusion::datasource::MemTable;
 use datafusion::execution::context::SessionContext;
 
+/// Registers an in-memory table and queries it with SQL.
 async fn run_query() -> datafusion::error::Result<()> {
     // Create a simple schema and data.
     let schema = Schema::new(vec![
@@ -83,6 +84,7 @@ async fn run_query() -> datafusion::error::Result<()> {
     Ok(())
 }
 
+/// Runs the query on a Tokio runtime.
 fn main() {
     let rt = tokio::runtime::Runtime::new().unwrap();
     rt.block_on(run_query()).unwrap();

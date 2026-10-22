@@ -13,10 +13,13 @@ use minifb::Key;
 use minifb::Window;
 use minifb::WindowOptions;
 
+/// The width of the window in pixels.
 const WIDTH: usize = 320;
 
+/// The height of the window in pixels.
 const HEIGHT: usize = 240;
 
+/// Opens a window and draws into a pixel buffer until the window is closed.
 fn main() {
     let mut window = Window::new(
         "minifb native graphics example",

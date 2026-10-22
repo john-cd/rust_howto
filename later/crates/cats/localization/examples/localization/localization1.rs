@@ -12,6 +12,7 @@ use std::error::Error;
 use sys_locale::get_locale;
 use sys_locale::get_locales;
 
+/// Detects the locale of the system and prints a localized greeting.
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let current_locale = get_locale().unwrap_or_else(|| "en-US".to_string());
     let mut preferred_locales = get_locales();
@@ -31,6 +32,7 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     Ok(())
 }
 
+/// Returns a greeting for `locale`.
 fn translate_greeting(locale: &str) -> &'static str {
     if locale.starts_with("es") {
         "¡Hola! Bienvenido al ejemplo de localización."

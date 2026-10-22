@@ -5,6 +5,7 @@
 
 use rfd::FileDialog;
 
+/// Opens a file dialog and prints the selected file.
 fn main() {
     let file = FileDialog::new()
         .add_filter("Text files", &["txt"])

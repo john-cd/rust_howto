@@ -7,6 +7,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// The macOS implementation, which calls Cocoa APIs.
 #[cfg(target_os = "macos")]
 mod macos_impl {
     use cocoa::base::id;
@@ -18,6 +19,7 @@ mod macos_impl {
     use objc::sel;
     use objc::sel_impl;
 
+    /// Converts an `NSString` to a Rust `String`.
     fn nsstring_to_string(nsstring: id) -> String {
         unsafe {
             if nsstring == nil {
@@ -31,6 +33,7 @@ mod macos_impl {
         }
     }
 
+    /// Calls Cocoa APIs.
     fn main() {
         unsafe {
             let _pool = NSAutoreleasePool::new(nil);
@@ -46,11 +49,13 @@ mod macos_impl {
     }
 }
 
+/// Prints a message, since the example only works on macOS.
 #[cfg(not(target_os = "macos"))]
 fn main() {
     println!("This example uses macOS APIs and is only supported on macOS.");
 }
 
+/// Runs the macOS implementation.
 #[cfg(target_os = "macos")]
 fn main() {
     macos_impl::run();

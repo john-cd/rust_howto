@@ -7,6 +7,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// Prints information about the Linux system.
 #[cfg(target_os = "linux")]
 fn main() {
     use nix::sys::utsname::uname;
@@ -29,6 +30,7 @@ fn main() {
     println!("  ppid: {}", ppid);
 }
 
+/// Prints a message, since the example only works on Linux.
 #[cfg(not(target_os = "linux"))]
 fn main() {
     println!(

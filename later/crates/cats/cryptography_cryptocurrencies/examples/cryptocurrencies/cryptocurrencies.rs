@@ -12,6 +12,8 @@
 
 use std::error::Error;
 
+/// Prints the steps to query the balance of an address, without connecting to a
+/// network.
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     // Placeholder flow to keep the example compile-safe without external RPC
     // deps.

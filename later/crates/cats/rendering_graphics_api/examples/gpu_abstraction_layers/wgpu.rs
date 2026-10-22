@@ -17,10 +17,13 @@ use std::task::RawWaker;
 use std::task::RawWakerVTable;
 use std::task::Waker;
 
+/// Runs the asynchronous code that uses `wgpu`.
 fn main() {
     block_on(async_main());
 }
 
+/// Creates a `wgpu` instance, requests an adapter and a device, and submits
+/// empty commands.
 async fn async_main() {
     let mut instance_desc =
         wgpu::InstanceDescriptor::new_without_display_handle();
@@ -60,6 +63,7 @@ async fn async_main() {
     queue.submit(std::iter::empty());
 }
 
+/// Runs `future` to completion by polling it in a loop.
 fn block_on<F: Future>(mut future: F) -> F::Output {
     let waker = noop_waker();
     let mut cx = Context::from_waker(&waker);
@@ -72,6 +76,7 @@ fn block_on<F: Future>(mut future: F) -> F::Output {
     }
 }
 
+/// Returns a waker that does nothing.
 fn noop_waker() -> Waker {
     unsafe fn clone_raw(_: *const ()) -> RawWaker {
         RawWaker::new(ptr::null(), &VTABLE)

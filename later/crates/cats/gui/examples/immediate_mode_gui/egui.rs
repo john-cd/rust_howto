@@ -13,6 +13,7 @@
 
 use eframe::egui;
 
+/// Opens a window that runs the app.
 fn main() -> Result<(), eframe::Error> {
     let options = eframe::NativeOptions::default();
     eframe::run_native(
@@ -22,8 +23,10 @@ fn main() -> Result<(), eframe::Error> {
     )
 }
 
+/// An app with a counter.
 #[derive(Default)]
 struct MyApp {
+    /// The number of clicks on the button.
     counter: i32,
 }
 

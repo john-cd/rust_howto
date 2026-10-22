@@ -21,7 +21,9 @@ use shaku::Interface;
 use shaku::module;
 
 // Define an interface.
+/// A service that greets people.
 trait Greeter: Interface {
+    /// Returns a greeting for `name`.
     fn greet(&self, name: &str) -> String;
 }
 
@@ -29,6 +31,7 @@ trait Greeter: Interface {
 // components that can be managed by the dependency injection container.
 // `Component` represents a single instance of a service, aka a singleton.
 // Each time a component is resolved,  will get the same instance.
+/// A greeter that greets in English.
 #[derive(Component)]
 // The `#[shaku(interface = Greeter)]` attribute associates each component with
 // the `Greeter` interface.
@@ -45,18 +48,23 @@ impl Greeter for EnglishGreeter {
 // `Interface` traits require certain bounds, such as 'static and optionally
 // `Send + Sync` if using the `thread_safe` feature.
 // The `Interface` trait acts as a trait alias for these bounds.
+/// A service that starts a conversation.
 trait Conversation: Interface {
+    /// Returns the first sentence of the conversation.
     fn start(&self) -> String;
 }
 
+/// A conversation in English, which greets using an injected greeter.
 #[derive(Component)]
 #[shaku(interface = Conversation)]
 struct EnglishConversation {
     // Components can depend on other components.
     // Make sure the property is declared as a trait object wrapped in an
     // `Arc`.
+    /// The greeter, which is injected.
     #[shaku(inject)]
     greeter: Arc<dyn Greeter>,
+    /// The person to talk to.
     #[shaku(default)]
     person: String,
 }
@@ -78,6 +86,7 @@ module! {
     }
 }
 
+/// Resolves components from a module and uses them.
 fn main() {
     // Create an instance of the module, which manages the dependencies.
     let module = MyModule::builder().build();

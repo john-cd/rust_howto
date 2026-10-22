@@ -6,6 +6,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// Prints a message: the example is a placeholder.
 fn main() {
     println!("Placeholder example.");
 }

@@ -11,6 +11,7 @@
 use rosrust::api::raii::Publisher;
 use rosrust_msg::std_msgs::String;
 
+/// Publishes messages to a ROS topic and prints the messages received on it.
 fn main() {
     rosrust::init("rust_howto_robotics_example");
 

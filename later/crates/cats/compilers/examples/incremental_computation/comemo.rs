@@ -43,7 +43,9 @@ fn compute_derived_value(config: Tracked<Config>) -> i32 {
 /// Define a struct to represent a configuration.
 #[derive(Clone, Debug)]
 struct Config {
+    /// The value.
     value: i32,
+    /// A flag.
     a_bool: bool,
 }
 
@@ -54,11 +56,14 @@ struct Config {
 /// methods, among other [restrictions](https://docs.rs/comemo/0.4.0/comemo/attr.track.html).
 #[track]
 impl Config {
+    /// Returns the value.
     fn get_value(&self) -> i32 {
         self.value
     }
 }
 
+/// Calls a memoized function twice with the same tracked argument, then after a
+/// change.
 fn main() {
     let mut config = Config {
         value: 5,

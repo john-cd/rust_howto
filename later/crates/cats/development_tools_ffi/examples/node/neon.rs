@@ -26,6 +26,7 @@ fn hello(mut cx: FunctionContext) -> JsResult<JsString> {
 }
 
 // Entry point of the Neon module.
+/// Registers the `hello` function in the exports of the Node.js module.
 #[cfg(feature = "neon")]
 #[::neon::main]
 fn main(mut cx: ModuleContext) -> NeonResult<()> {
@@ -35,6 +36,7 @@ fn main(mut cx: ModuleContext) -> NeonResult<()> {
 }
 // ANCHOR_END: example
 
+/// Prints a message when the `neon` feature is not enabled.
 #[cfg(not(feature = "neon"))]
 fn main() {
     println!("Neon example requires the `neon` feature.");

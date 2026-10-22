@@ -6,28 +6,39 @@
 #![allow(dead_code)]
 
 // "Base type".
+/// A "base type" that stores the common data of media files.
 #[derive(Debug)]
 struct MediaFile {
+    /// The identifier.
     id: String,
+    /// The name of the file.
     filename: String,
+    /// The size of the file in bytes.
     file_size_bytes: u64,
+    /// The tags.
     tags: Vec<String>,
 }
 
 // `ImageFile` is a specialized media file and acts as a "derived type".
+/// A "derived type" that embeds a media file.
 #[derive(Debug)]
 struct ImageFile {
     // There is no 'is-a' inheritance in Rust. Use composition ('has-a').
     // The "base type" is simply embedded into the "derived type".
+    /// The embedded media file.
     media: MediaFile,
+    /// The width in pixels.
     width: u32,
+    /// The height in pixels.
     height: u32,
+    /// The model of the camera, if known.
     camera_model: Option<String>,
 }
 
 impl ImageFile {
     // The simplest way to access the nested data is, of course,
     // to write simple projection functions:
+    /// Returns the size of the file in bytes.
     fn get_file_size_bytes(&self) -> u64 {
         self.media.file_size_bytes
     }
@@ -62,6 +73,7 @@ fn print_media_details<M: AsRef<MediaFile>>(item: M) {
     println!("Tags: {:?}", media_ref.tags);
 }
 
+/// Creates an image file and prints the details of its media file.
 fn main() {
     // Create an ImageFile.
     let photo = ImageFile {
