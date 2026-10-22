@@ -19,7 +19,7 @@ Additional repo-specific commands:
 
 - `just all <cmd>` at the repo root fans out to the main subprojects.
 - `just release` in `tools\` builds the helper binaries and copies them into the repo-level `bin\` directory.
-- `cargo +nightly fmt --all` is the formatting path used by the workspace `just` recipes.
+- `cargo +nightly-2026-10-22 fmt --all` is the formatting path used by the workspace `just` recipes.
 
 ## High-level architecture
 

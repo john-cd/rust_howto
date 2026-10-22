@@ -56,4 +56,4 @@ jobs:
 
     - name: Run tools tests inside container
       run: |
-        docker run --rm rust_howto_tools_app_builder:latest bash -lc "cd /code/tools && cargo +nightly fmt --all --check && cargo build --workspace --all-targets --locked --all-features && cargo clippy --workspace --all-targets --locked --all-features -- --deny warnings && cargo test --workspace --all-targets --locked --all-features && cargo test --workspace --doc --locked --all-features"
+        docker run --rm rust_howto_tools_app_builder:latest bash -lc "cd /code/tools && cargo +nightly-2026-10-22 fmt --all --check && cargo build --workspace --all-targets --locked --all-features && cargo clippy --workspace --all-targets --locked --all-features -- --deny warnings && cargo test --workspace --all-targets --locked --all-features && cargo test --workspace --doc --locked --all-features"

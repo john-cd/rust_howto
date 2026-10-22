@@ -36,7 +36,7 @@ cd bk/crates
 
 ## Checks the Rust code formatting
 ## Fails if not formatted properly
-cargo +nightly fmt --all --check
+cargo +nightly-2026-10-22 fmt --all --check
 
 ## [add cargo plugins to CI script](https://github.com/john-cd/rust_howto/issues/1277)
 ## Check dependencies

@@ -27,9 +27,9 @@ cargo install mdbook
 cargo install just
 cargo install mdbook-linkcheck
 cargo install --git https://github.com/john-cd/mdbook-utils --rev dedddf3699e461cd418c1a044d82aabd3fec62e0 --locked --force mdbook-utils
-# for `cargo +nightly fmt`
-rustup toolchain install nightly
-rustup component add rustfmt --toolchain nightly
+# for `cargo +nightly-2026-10-22 fmt`
+rustup toolchain install nightly-2026-10-22
+rustup component add rustfmt --toolchain nightly-2026-10-22
 ```
 
 You may need `sudo apt-get install libsqlite3-dev` on WSL.
@@ -57,8 +57,8 @@ cargo install cargo-nextest
 cargo install mdbook
 cargo install mdbook-linkcheck
 cargo install --git https://github.com/john-cd/mdbook-utils --rev dedddf3699e461cd418c1a044d82aabd3fec62e0 --locked --force mdbook-utils
-rustup toolchain install nightly
-rustup component add rustfmt --toolchain nightly
+rustup toolchain install nightly-2026-10-22
+rustup component add rustfmt --toolchain nightly-2026-10-22
 ```
 
 > Note: On Windows, you may also need the [Microsoft C++ Build Tools][msvc~website]↗{{hi:MSVC}} or the Visual Studio C++ workload for compiling some crates.

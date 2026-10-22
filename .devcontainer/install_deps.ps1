@@ -6,9 +6,9 @@
 
 Write-Host "Installing Rust components..." -ForegroundColor Cyan
 rustup default stable
-rustup toolchain install nightly
+rustup toolchain install nightly-2026-10-22
 rustup component add clippy
-rustup component add rustfmt --toolchain nightly
+rustup component add rustfmt --toolchain nightly-2026-10-22
 
 Write-Host "Installing system tools via Winget..." -ForegroundColor Cyan
 # Install Just (Task Runner)
