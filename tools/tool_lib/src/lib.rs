@@ -10,6 +10,10 @@ mod read_write;
 mod templates;
 mod utils;
 
+/// Serializes tests that mutate process-wide environment variables.
+#[cfg(test)]
+pub(crate) static ENV_MUTEX: std::sync::Mutex<()> = std::sync::Mutex::new(());
+
 pub use all_categories::*;
 pub use cargo_toml::*;
 pub use crates_io::*;
