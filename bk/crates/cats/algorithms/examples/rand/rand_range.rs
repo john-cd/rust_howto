@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Demonstrates generating random numbers within a specified range.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use rand::RngExt;
 

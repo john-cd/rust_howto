@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Check whether we are reading & writing to the same file.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::io::Error;
 

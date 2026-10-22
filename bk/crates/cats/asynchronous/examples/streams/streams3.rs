@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Processing a `Stream` of fallible asynchronous fetches with `futures_util`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::time::Duration;
 
@@ -18,6 +22,7 @@ use tokio::time;
 // ```
 
 // Simulated async function that returns a `Result`:
+/// Simulates fetching the data of `id`; fails for some ids.
 async fn fetch_data(id: u32) -> Result<String, String> {
     // Simulate network delay:
     time::sleep(Duration::from_millis(100)).await;
@@ -28,6 +33,7 @@ async fn fetch_data(id: u32) -> Result<String, String> {
     }
 }
 
+/// Streams the results of several fetches and handles the errors.
 #[tokio::main]
 async fn main() {
     println!("\n===== Stream Utilities =====");

@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Writing and reading a zip archive asynchronously with `async_zip`.
+//!
+//! TODO Reviewed ??-??-2026
+
 use anyhow::Result;
 use async_zip::Compression;
 use async_zip::ZipEntryBuilder;
@@ -9,6 +12,8 @@ use tokio::fs::File;
 use tokio::io::AsyncReadExt;
 use tokio_util::compat::TokioAsyncWriteCompatExt;
 
+/// Writes a zip file with one entry to the temporary directory, reads it back,
+/// prints its entries and removes it.
 #[tokio::main]
 async fn main() -> Result<()> {
     println!("async_zip example");

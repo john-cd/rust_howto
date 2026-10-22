@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Parallel iterators with `rayon`: a sum of squares and an in-place update.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use rayon::prelude::*;
 
@@ -11,10 +15,12 @@ fn sum_of_squares(input: &[i32]) -> i32 {
     input.par_iter().map(|i| i * i).sum()
 }
 
+/// Adds one to each element of `input`, in parallel.
 fn increment_all(input: &mut [i32]) {
     input.par_iter_mut().for_each(|p| *p += 1);
 }
 
+/// Applies [`sum_of_squares`] and [`increment_all`] to sample data.
 fn main() {
     let mut v = [1, 2, 3];
     increment_all(&mut v[..]);

@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! This example demonstrates the basic usage of the `sort` method on a vector.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// This example demonstrates the basic usage of the `sort` method on a vector.
 ///

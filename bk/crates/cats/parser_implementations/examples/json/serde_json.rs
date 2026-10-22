@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Demonstrates parsing and serializing JSON data using the `serde_json` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use serde::Deserialize;
 use serde::Serialize;

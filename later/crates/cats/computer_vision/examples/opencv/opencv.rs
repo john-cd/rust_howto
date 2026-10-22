@@ -1,7 +1,13 @@
-// TODO Reviewed ??-??-2026
+//! This example demonstrates how to load an image, convert it to grayscale, and
+//! save the result using the `opencv` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 #![cfg(all(target_os = "linux", feature = "opencv"))]
+
 use std::fs;
 
 use image::Rgb;

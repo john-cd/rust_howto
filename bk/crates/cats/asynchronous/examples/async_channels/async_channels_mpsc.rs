@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A Tokio multi-producer, single-consumer (`mpsc`) channel.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use tokio::sync::mpsc;
 
@@ -25,6 +29,7 @@ pub async fn multi_producer_single_receiver() {
     }
 }
 
+/// Runs the multi-producer, single-consumer example.
 #[tokio::main]
 async fn main() {
     multi_producer_single_receiver().await;

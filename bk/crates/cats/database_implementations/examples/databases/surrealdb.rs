@@ -1,7 +1,13 @@
-// TODO Reviewed ??-??-2026
+//! SurrealDB is a scalable, distributed, collaborative,
+//! document-graph database for the realtime web.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 #![allow(clippy::result_large_err)]
+
 use serde::Deserialize;
 use serde::Serialize;
 use surrealdb::Result;

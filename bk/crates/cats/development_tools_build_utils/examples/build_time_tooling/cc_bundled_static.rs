@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! This example demonstrates how to use the `cc` crate to compile a C file into
+//! a static library.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// This example demonstrates how to use the `cc` crate to compile a C file into
 /// a static library.

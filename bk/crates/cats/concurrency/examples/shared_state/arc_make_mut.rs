@@ -1,10 +1,16 @@
-// TODO Reviewed ??-??-2026
+//! Sharing a configuration between threads with `Arc`, and cloning it on write
+//! with `Arc::make_mut`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::sync::Arc;
 use std::thread;
 use std::time::Duration;
 
+/// A configuration shared through an `Arc`.
 mod cfg {
 
     use std::sync::Arc;
@@ -12,7 +18,9 @@ mod cfg {
     /// A configuration struct to be shared among threads.
     #[derive(Debug, Clone)]
     pub struct Configuration {
+        /// Address of the server.
         server_address: String,
+        /// Maximum number of connections.
         max_connections: u8,
     }
 
@@ -55,6 +63,8 @@ mod cfg {
     }
 }
 
+/// Shares a configuration with reader threads, then updates it without
+/// disturbing them.
 fn main() {
     // Initialize the configuration and wrap it in an `Arc` for shared read
     // access.

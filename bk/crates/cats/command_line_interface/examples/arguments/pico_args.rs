@@ -1,8 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! Parsing command-line arguments with `pico-args`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use pico_args::Arguments;
 
+/// Parses the optional `--name` and `--age` values, the `--verbose` flag and a
+/// free argument, then prints them.
 fn main() -> anyhow::Result<()> {
     // Returns the arguments that this program was started with.
     // The executable path will be removed.
@@ -59,6 +65,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Checks that the example succeeds.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

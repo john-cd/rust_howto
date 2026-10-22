@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! This example demonstrates basic usage of `ArrayVec`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use arrayvec::ArrayVec;
 

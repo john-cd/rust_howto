@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Initializes syslog and logs debug and error messages.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 #![cfg(target_os = "linux")]
 

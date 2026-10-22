@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! This example demonstrates a simple panic.
+//! When executed, it will cause the program to terminate abruptly.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// This example demonstrates a simple panic.
 /// When executed, it will cause the program to terminate abruptly.

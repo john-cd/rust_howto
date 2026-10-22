@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! This binary creates markdown files for the crate indices
+//!
+//! TODO Reviewed ??-??-2026
+
 mod cli;
 
 use std::collections::BTreeMap;

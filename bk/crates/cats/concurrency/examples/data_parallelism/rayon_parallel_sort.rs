@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! This example demonstrates parallel sorting of a vector of strings using
+//! Rayon.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use rand::RngExt;
 use rand::distr::Alphanumeric;

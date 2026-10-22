@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! RSA encryption and decryption with PKCS#1 v1.5 padding.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 // Security: `rsa` has no fix for RUSTSEC-2023-0071. This example performs a
 // local round trip only; do not expose decryption timing to attackers or use
@@ -23,6 +26,7 @@ use rsa::rand_core::OsRng;
 // The example is based on the rsa crate documentation.
 // Read the security section of <https://docs.rs/rsa>.
 
+/// Generates a key pair, encrypts a message and decrypts it again.
 fn main() {
     // Define the message to be encrypted:
     let message = b"Secret message";

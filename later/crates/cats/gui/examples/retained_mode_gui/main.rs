@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs one of the `retained_mode_gui` examples, chosen on the command line.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(unexpected_cfgs)]
 
 use clap::Parser;

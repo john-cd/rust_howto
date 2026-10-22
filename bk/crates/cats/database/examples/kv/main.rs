@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs one of the `kv` examples, chosen on the command line.
+//!
+//! TODO Reviewed ??-??-2026
+
 #[cfg(any(feature = "lmdb", feature = "rocksdb"))]
 use clap::Parser;
 #[cfg(any(feature = "lmdb", feature = "rocksdb"))]

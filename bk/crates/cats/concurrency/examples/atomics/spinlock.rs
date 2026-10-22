@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A spinlock built on an atomic flag, with a guard that unlocks it on drop.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::cell::UnsafeCell;
 use std::ops::Deref;
@@ -11,7 +15,9 @@ use std::thread;
 
 /// A simple spinlock implementation.
 pub struct Spinlock<T> {
+    /// Whether the lock is currently held.
     locked: AtomicBool,
+    /// The protected data.
     data: UnsafeCell<T>, // Allows mutation through `&self` via unsafe code.
 }
 
@@ -52,6 +58,7 @@ impl<T> Spinlock<T> {
     }
 
     // Internal unlock method used by the guard.
+    /// Releases the lock.
     #[inline]
     fn unlock(&self) {
         self.locked.store(false, Ordering::Release);
@@ -72,6 +79,7 @@ unsafe impl<T: Send> Send for Spinlock<T> {}
 /// The `must_use` attribute helps prevent this mistake.
 #[must_use = "if unused, the spinlock will immediately unlock"]
 pub struct SpinlockGuard<'a, T> {
+    /// The spinlock that this guard holds.
     lock: &'a Spinlock<T>,
 }
 
@@ -109,6 +117,7 @@ impl<T> DerefMut for SpinlockGuard<'_, T> {
 use std::sync::Arc;
 use std::time::Duration;
 
+/// Increments a shared counter from several threads under the spinlock.
 fn main() {
     // Wrap shared data in `Spinlock` and `Arc`.
     let counter = Arc::new(Spinlock::new(0));

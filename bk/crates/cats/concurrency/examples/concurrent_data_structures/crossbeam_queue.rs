@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Demonstrates the basic usage of `ArrayQueue`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use crossbeam_queue::ArrayQueue;
 

@@ -9,6 +9,8 @@ use std::iter::repeat_with;
 
 use fastrand::Rng;
 
+/// Generates random booleans, numbers and strings with `fastrand`, then samples
+/// and shuffles values.
 fn main() {
     // To get reproducible results on every run,
     // pick an arbitrary number as seed:

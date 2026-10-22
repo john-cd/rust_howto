@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs one of the `mime` examples, chosen on the command line.
+//!
+//! TODO Reviewed ??-??-2026
+
 use anyhow::Result;
 use clap::Parser;
 use clap::Subcommand;

@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! The main function to render the App component.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use yew::prelude::*;
 

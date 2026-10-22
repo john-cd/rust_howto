@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! SHA-1 hashing with the `sha1` crate. SHA-1 is broken; do not use it for
+//! security.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use hex_literal::hex;
 use sha1::Digest;
@@ -9,6 +14,7 @@ use sha1::Sha1;
 // for new security-critical applications. It is primarily used for legacy
 // compatibility or non-security-sensitive purposes.
 
+/// Prints the SHA-1 digest of a string and compares it with a known value.
 fn main() {
     // Create a SHA-1 hasher:
     let mut hasher = Sha1::new();

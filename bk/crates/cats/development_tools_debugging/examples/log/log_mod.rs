@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! Initializes the logger and logs warning, info, and debug messages from the
+//! root module, then calls `foo::run()`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 mod foo {
     mod bar {

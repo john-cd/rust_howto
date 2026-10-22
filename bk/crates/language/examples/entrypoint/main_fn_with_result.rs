@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! Example of a `main` function returning a `Result`,
+//! in this case a specialized `Result` type for I/O operations.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::fs::File;
 

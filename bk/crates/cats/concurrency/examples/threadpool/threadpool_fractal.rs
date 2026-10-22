@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Drawing a Julia set fractal in parallel on a thread pool.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::fs;
 use std::sync::mpsc::channel;
@@ -89,6 +93,7 @@ fn normalize(color: f32, factor: f32) -> u8 {
     ((color * factor).powf(0.8) * 255.) as u8
 }
 
+/// Draws a Julia set on a thread pool and saves the image.
 fn main() -> Result<()> {
     let (width, height) = (1920, 1080);
     let mut img = ImageBuffer::new(width, height);

@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! Compressing and decompressing a file asynchronously with
+//! `async_compression`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::io::Result as IoResult;
 
@@ -9,6 +14,8 @@ use tokio::fs::File;
 use tokio::io::AsyncWriteExt;
 use tokio::io::BufReader;
 
+/// Creates a file, compresses it to gzip, decompresses it and prints the
+/// progress.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     let input_filename = "temp/uncompressed_async.txt";
@@ -49,6 +56,7 @@ async fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Compresses `source_path` into the gzip file `dest_path`.
 async fn compress_file_async(
     source_path: &str,
     dest_path: &str,
@@ -63,6 +71,7 @@ async fn compress_file_async(
     Ok(())
 }
 
+/// Decompresses the gzip file `source_path` into `dest_path`.
 async fn decompress_file_async(
     source_path: &str,
     dest_path: &str,
@@ -87,6 +96,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Checks that the example succeeds.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         use std::fs;

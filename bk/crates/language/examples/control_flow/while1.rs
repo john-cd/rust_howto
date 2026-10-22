@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! This is an example of a `while` loop.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// This is an example of a `while` loop.
 fn main() {

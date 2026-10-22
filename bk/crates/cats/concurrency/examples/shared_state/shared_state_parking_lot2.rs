@@ -1,8 +1,13 @@
-// TODO Reviewed ??-??-2026
+//! A reader-writer lock from `parking_lot`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use parking_lot::RwLock;
 
+/// Takes several read locks at once, then a single write lock.
 fn main() {
     // Create a new RwLock with an initial value of 5.
     let lock = RwLock::new(5);

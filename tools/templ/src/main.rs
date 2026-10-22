@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! The main function of the `templ` tool.
+//!
+//! TODO Reviewed ??-??-2026
+
 use anyhow::anyhow;
 use tool_lib::*;
 

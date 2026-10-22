@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Scoped threads that borrow local data and report through a channel.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::error::Error;
 use std::path::Path;
@@ -15,6 +19,7 @@ fn read_contents<T: AsRef<Path>>(
     Ok(file.as_ref().to_string_lossy().into_owned())
 }
 
+/// Reads two files on scoped threads and prints what the main thread receives.
 fn main() {
     // To share state between threads, consider using a channel:
     let (tx, rx) = mpsc::channel();

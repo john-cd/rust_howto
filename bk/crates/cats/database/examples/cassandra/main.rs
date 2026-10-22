@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs one of the `cassandra` examples, chosen on the command line.
+//!
+//! TODO Reviewed ??-??-2026
+
 #[cfg(feature = "cassandra")]
 use clap::Parser;
 #[cfg(feature = "cassandra")]

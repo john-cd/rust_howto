@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Entry point for the build script.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 
 // ANCHOR: capnp

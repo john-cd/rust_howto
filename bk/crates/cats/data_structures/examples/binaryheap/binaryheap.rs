@@ -1,9 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! A `BinaryHeap` used as a priority queue.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::cmp::Reverse;
 use std::collections::BinaryHeap;
 
+/// Pushes values into a binary heap and pops them in priority order.
 fn main() {
     // Declare a `BinaryHeap<i32>`.
     // Type inference lets us omit an explicit type signature.

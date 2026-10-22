@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Return-position `impl Trait` in a trait method.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// This example demonstrates how to use `impl Trait` in a trait definition.
 ///
@@ -15,6 +19,7 @@ trait Container {
 
 /// A concrete implementation of the `Container` trait.
 struct MyContainer {
+    /// The values that the container yields.
     items: Vec<u8>,
 }
 
@@ -25,6 +30,7 @@ impl Container for MyContainer {
     }
 }
 
+/// Iterates over the items of a [`MyContainer`].
 fn main() {
     let c = MyContainer {
         items: vec![1, 2, 3],

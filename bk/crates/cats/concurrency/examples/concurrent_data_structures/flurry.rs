@@ -1,5 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! This example demonstrates the basic usage of the `flurry::HashMap` for
+//! concurrent data access. It showcases how to insert, read, remove, and
+//! iterate over the map, both sequentially and concurrently.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::sync::Arc;
 use std::thread;

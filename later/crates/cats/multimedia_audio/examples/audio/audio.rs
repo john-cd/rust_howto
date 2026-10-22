@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A simple example that plays a 440Hz sine wave (A4) for 1 second.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 use std::error::Error;
 
 use cpal::traits::DeviceTrait;

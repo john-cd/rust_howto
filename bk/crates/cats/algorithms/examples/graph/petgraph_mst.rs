@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Minimum spanning tree of an undirected `petgraph` graph.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use petgraph::Graph;
 use petgraph::algo::min_spanning_tree;

@@ -1,10 +1,16 @@
-// TODO Reviewed ??-??-2026
+//! Sorts a vector of structs, by their derived order and by a chosen field.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// A struct with `name` and `age` fields.
 #[derive(Debug, Eq, Ord, PartialEq, PartialOrd)]
 struct Person {
+    /// The person's name.
     name: String,
+    /// The person's age in years.
     age: u32,
 }
 
@@ -15,6 +21,7 @@ impl Person {
     }
 }
 
+/// Sorts a vector of `Person`s in several ways and prints the results.
 fn main() {
     let mut people = vec![
         Person::new("Zoe".to_string(), 25),

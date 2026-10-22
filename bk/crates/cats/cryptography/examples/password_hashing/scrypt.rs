@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Hashing and verifying a password with `scrypt`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // This example demonstrates how to hash and verify passwords using scrypt.
 use std::error::Error;
@@ -38,6 +42,7 @@ fn example() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
+/// Runs `example`.
 fn main() -> Result<(), Box<dyn Error>> {
     example()
 }

@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Command-line arguments of the hierarchical configuration example.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::ffi::OsString;
 use std::path::PathBuf;
 
@@ -81,6 +84,7 @@ where
 mod tests {
     use super::*;
 
+    /// Lets clap check the command definition for mistakes.
     #[test]
     fn verify_cmd() {
         cmd().debug_assert();

@@ -8,6 +8,9 @@ use url::Url;
 
 // If `parse` fails, `main` returns `Err` and the error message is displayed on
 // the console.
+/// Parses a URL and prints it up to the end of its path.
+///
+/// Returns an error if the URL is invalid.
 fn example() -> anyhow::Result<()> {
     // Parse a URL. This call can fail if the URL is invalid. It early returns
     // via `?`:
@@ -19,6 +22,7 @@ fn example() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Runs `example`.
 fn main() -> anyhow::Result<()> {
     example()
 }
@@ -28,6 +32,7 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Checks that the example succeeds.
     #[test]
     fn test() -> anyhow::Result<()> {
         example()?;

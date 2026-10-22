@@ -1,4 +1,8 @@
-// TODO Reviewed ??-??-2026
+//! Runs one of the `wasm_standalone_runtimes` examples, chosen on the command
+//! line.
+//!
+//! TODO Reviewed ??-??-2026
+
 use clap::Parser;
 use clap::Subcommand;
 

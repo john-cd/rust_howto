@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! Demonstrates how to write logs to multiple destinations (in this instance,
+//! stdout and a file) simultaneously.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::io;
 

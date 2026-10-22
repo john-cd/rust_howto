@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Example of how to use `cc::Build` to define preprocessor macros.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// Example of how to use `cc::Build` to define preprocessor macros.
 fn main() {

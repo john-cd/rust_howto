@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! Hashing with the `sha2` crate: SHA-256 and SHA-512 digests, encoded as
+//! hexadecimal or Base64.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // Constant-Time Base64 encoding:
 use base64ct::Base64;
@@ -12,6 +17,8 @@ use sha2::Sha256;
 // SHA-512 hasher.
 use sha2::Sha512;
 
+/// Computes SHA-256 and SHA-512 digests of messages and of a file's contents,
+/// and prints them encoded as hexadecimal or Base64.
 fn main() -> anyhow::Result<()> {
     // If a complete message is available, then we can use the convenience
     // `Digest::digest` method:
@@ -82,6 +89,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Checks that the example succeeds.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A styled progress spinner with `indicatif` and `console`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::thread;
 use std::time::Duration;
@@ -16,6 +20,7 @@ use indicatif::ProgressStyle;
 // compilation process with a spinner and styled text.
 // `console` is a library for Rust that provides access to
 // terminal features, like styles and colors.
+/// Simulates compiler output with styled text and a spinner.
 fn spinner() -> anyhow::Result<()> {
     // The terminal is abstracted through the `console::Term` type.
     let term = Term::stdout();
@@ -63,6 +68,7 @@ fn spinner() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Runs [`spinner`].
 fn main() -> anyhow::Result<()> {
     spinner()?;
     Ok(())

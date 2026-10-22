@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs one of the `oracle` examples, chosen on the command line.
+//!
+//! TODO Reviewed ??-??-2026
+
 #[cfg(any(
     feature = "oracle",
     all(target_os = "linux", feature = "oracle")

@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Parses the directory argument and expands markers in its Markdown files.
+//!
+//! TODO Reviewed ??-??-2026
+
 // [dependencies]
 // anyhow = "1.0.95"
 // clap = { version = "4.5.31", features = ["derive"] }

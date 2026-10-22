@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Basic example of using `nu-ansi-term` to print bold text.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use nu_ansi_term::Style;
 

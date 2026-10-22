@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! The main function of the program.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 
 mod a {

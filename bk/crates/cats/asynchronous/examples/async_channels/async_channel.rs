@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! Multiple producers and consumers exchanging messages over an
+//! `async_channel`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use async_channel::Receiver;
 use async_channel::Sender;
@@ -55,6 +60,8 @@ async fn consumer(id: usize, rx: Receiver<String>) {
     assert_eq!(rx.try_recv(), Err(TryRecvError::Closed));
 }
 
+/// Spawns producers and consumers that share one channel and waits for them to
+/// finish.
 #[tokio::main]
 async fn main() {
     let (tx, rx) = bounded(2); // Create a bounded channel with a capacity of 2.

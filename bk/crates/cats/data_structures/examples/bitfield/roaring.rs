@@ -1,8 +1,13 @@
-// TODO Reviewed ??-??-2026
+//! Compressed bitmaps with the `roaring` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use roaring::RoaringBitmap;
 
+/// Builds roaring bitmaps and combines and queries them.
 fn main() {
     // Create two bitmaps representing two sets of user IDs:
     // These are highly optimized data structures for storing sets of 32-bit

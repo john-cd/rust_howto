@@ -1,4 +1,8 @@
-// TODO Reviewed ??-??-2026
+//! The main function initializes the terminal, runs the application, and
+//! restores the terminal to its original state.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 use std::io;
 

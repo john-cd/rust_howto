@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Runs CPU-bound work from `async` code on a dedicated thread.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Sums `nums` on a dedicated thread and returns the result through a channel.
 async fn parallel_sum(nums: Vec<i32>) -> i32 {
     let (tx, rx) = tokio::sync::oneshot::channel();
 
@@ -20,6 +25,7 @@ async fn parallel_sum(nums: Vec<i32>) -> i32 {
     rx.await.expect("Panic in rayon::spawn")
 }
 
+/// Sums a vector on a dedicated thread and prints the result.
 #[tokio::main]
 async fn main() {
     let nums = vec![1; 1024 * 1024];

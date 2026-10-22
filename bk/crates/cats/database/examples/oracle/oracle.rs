@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Rust bindings to ODPI-C.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 use std::env;
 use std::sync::Mutex;
 

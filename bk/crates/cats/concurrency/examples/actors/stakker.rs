@@ -1,16 +1,24 @@
-// TODO Reviewed ??-??-2026
+//! An actor with the `stakker` crate: a counter that processes messages.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use stakker::*;
 
 // Define the messages that the actor can process.
 // `Increment` increases the counter, while `GetValue` prints it.
+/// A message that a [`Counter`] can process.
 #[derive(Clone, Debug)]
 enum MyMessage {
+    /// Adds the given number to the count.
     Increment(u32),
+    /// Prints the current count.
     GetValue,
 }
 
+/// An actor that holds a running total.
 struct Counter {
     count: u32,
 }
@@ -46,6 +54,7 @@ impl Actor for Counter {
     }
 }
 
+/// Spawns a [`Counter`], sends it messages and runs the system.
 fn main() {
     // Create the actor system.
     let mut system = Stakker::new();

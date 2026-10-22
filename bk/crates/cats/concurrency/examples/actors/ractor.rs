@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! An actor with the `ractor` crate: a greeter that counts the greetings it
+//! handles.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 #![allow(unexpected_cfgs)]
 
@@ -25,6 +30,7 @@ use tokio::time::sleep;
 // ```
 
 // Message type that the actor accepts:
+/// A message that asks the greeter to greet someone.
 #[derive(Debug, Clone)]
 struct Greet(String);
 
@@ -32,10 +38,13 @@ struct Greet(String);
 impl ractor::Message for Greet {}
 
 // Main actor struct:
+/// An actor that greets and counts.
 struct Greeter;
 
 // Inner state of the actor:
+/// The state of a [`Greeter`].
 struct GreeterState {
+    /// Number of greetings handled so far.
     count: u64,
 }
 
@@ -93,6 +102,7 @@ impl ractor::Actor for Greeter {
     }
 }
 
+/// Spawns the greeter actor and waits for it to exit.
 #[tokio::main]
 async fn main() {
     // Create a `Greeter` actor:

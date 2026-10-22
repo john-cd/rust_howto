@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs one of the `postgres` examples, chosen on the command line.
+//!
+//! TODO Reviewed ??-??-2026
+
 #[cfg(feature = "postgres")]
 use clap::Parser;
 #[cfg(feature = "postgres")]

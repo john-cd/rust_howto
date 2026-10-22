@@ -1,4 +1,8 @@
-// TODO Reviewed ??-??-2026
+//! Runs one of the `interfacing_with_javascript` examples, chosen on the
+//! command line.
+//!
+//! TODO Reviewed ??-??-2026
+
 use clap::Parser;
 use clap::Subcommand;
 

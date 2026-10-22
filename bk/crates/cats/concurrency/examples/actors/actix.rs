@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A minimal `actix` actor that handles a `Ping` message.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::time::Duration;
 
@@ -7,6 +11,7 @@ use actix::prelude::*;
 
 // Define a message named `Ping`.
 // Messages are used to communicate with actors.
+/// A message sent to [`MyActor`].
 struct Ping;
 
 // Implement the `Message` trait for `Ping`.
@@ -19,6 +24,7 @@ impl Message for Ping {
 
 // Define an actor named `MyActor`.
 // Actors are the fundamental units of concurrency in Actix.
+/// An actor that handles [`Ping`] messages.
 struct MyActor;
 
 // Implement the `Actor` trait for `MyActor`.
@@ -41,6 +47,7 @@ impl Handler<Ping> for MyActor {
     }
 }
 
+/// Starts [`MyActor`], sends it a [`Ping`] and runs the actor system.
 fn main() {
     let system = System::new();
 

@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! This example demonstrates how to get the number of logical cores on the
+//! system. It uses the `num_cpus` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// This example demonstrates how to get the number of logical cores on the
 /// system. It uses the `num_cpus` crate.

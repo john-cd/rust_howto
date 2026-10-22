@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Finds the maximum value in an array using `crossbeam` for concurrency.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// Finds the maximum value in an array using `crossbeam` for concurrency.
 fn main() {

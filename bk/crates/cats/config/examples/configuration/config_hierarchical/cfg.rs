@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Layered application settings with the `config` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 use anyhow::Result;
 use config::Config;
 use config::ConfigBuilder;
@@ -8,6 +11,7 @@ use config::File;
 use super::CommandLineArgs;
 use super::Settings;
 
+/// Path of the default settings file, without extension.
 static DEFAULT_CONFIG_FILE: &str = "temp/default";
 
 /// Read the application's settings from multiple sources.

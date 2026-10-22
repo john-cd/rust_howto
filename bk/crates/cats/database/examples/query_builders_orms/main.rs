@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs one of the `query_builders_orms` examples, chosen on the command line.
+//!
+//! TODO Reviewed ??-??-2026
+
 #[cfg(any(feature = "diesel", feature = "sea_orm", feature = "sqlx"))]
 use clap::Parser;
 #[cfg(any(feature = "diesel", feature = "sea_orm", feature = "sqlx"))]

@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Graceful shutdown of nested subsystems with `tokio_graceful_shutdown`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // The `tokio_graceful_shutdown` crate provides utility functions to perform a
 // graceful shutdown on tokio-rs based services.
@@ -45,6 +49,7 @@ async fn countdown_subsystem(
     Ok(())
 }
 
+/// A subsystem that starts a countdown and ends when it is done.
 async fn nested_subsystem(subsys: &mut SubsystemHandle) -> anyhow::Result<()> {
     tracing::info!("Nested subsystem started.");
     subsys.on_shutdown_requested().await;
@@ -52,12 +57,14 @@ async fn nested_subsystem(subsys: &mut SubsystemHandle) -> anyhow::Result<()> {
     Ok(())
 }
 
+/// A subsystem that panics, to show how the shutdown handles it.
 async fn panic_subsystem(_subsys: &mut SubsystemHandle) -> anyhow::Result<()> {
     tracing::info!("Panic subsystem started.");
     tokio::time::sleep(Duration::from_millis(50)).await;
     panic!("Panic subsystem panicked!")
 }
 
+/// A subsystem that starts the other subsystems as its children.
 async fn parent_subsystem(subsys: &mut SubsystemHandle) -> anyhow::Result<()> {
     tracing::info!("Parent subsystem started.");
     let nested =
@@ -79,6 +86,7 @@ async fn parent_subsystem(subsys: &mut SubsystemHandle) -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Starts the subsystems under a shutdown handler and waits for them.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Init logging.
@@ -117,6 +125,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Checks that the example succeeds.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

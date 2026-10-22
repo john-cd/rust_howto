@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Authenticated encryption and decryption with AES-256-GCM.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 // Algorithm:
 use aes_gcm::Aes256Gcm; // Use Aes128Gcm or Aes256Gcm, respectively.
@@ -15,6 +18,7 @@ use aes_gcm::aead::KeyInit;
 // The operating-system's random data source:
 use aes_gcm::aead::OsRng;
 
+/// Encrypts a message with a random key and decrypts it again.
 fn main() {
     // Generate a random 256-bit key:
     let key: Key<Aes256Gcm> = Aes256Gcm::generate_key(&mut OsRng);

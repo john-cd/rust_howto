@@ -1,7 +1,13 @@
-// TODO Reviewed ??-??-2026
+//! This example demonstrates how to capture both standard output and standard
+//! error from an external command and redirect them to the same file.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 #![cfg(target_family = "unix")]
+
 use std::fs::File;
 use std::path::Path;
 use std::process::Command;

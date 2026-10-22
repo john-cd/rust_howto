@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Sorts the vector in parallel using Rayon's `par_sort` method.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use rayon::prelude::*;
 

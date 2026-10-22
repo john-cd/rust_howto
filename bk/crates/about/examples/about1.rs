@@ -13,6 +13,9 @@ use std::str;
 // - We have chosen to use the flexible `Result` type alias from the very
 //   commonly used `anyhow` library.
 // - This function does not panic.
+/// Converts a byte slice holding an IPv6 address into an `IpAddr`.
+///
+/// Returns an error if the bytes are not valid UTF-8 or not a valid address.
 fn example() -> anyhow::Result<()> {
     // A byte slice representing an IPv6 address:
     let bytes = b"2001:db8::1";
@@ -32,6 +35,7 @@ fn example() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Runs `example`.
 fn main() -> anyhow::Result<()> {
     example()?;
     Ok(())
@@ -42,6 +46,7 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Checks that the example succeeds.
     #[test]
     fn test() -> anyhow::Result<()> {
         example()?;

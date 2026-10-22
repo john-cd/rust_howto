@@ -12,6 +12,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// Prints the MD5 digest of a string.
 fn main() {
     // Input data:
     let data = "hello world";

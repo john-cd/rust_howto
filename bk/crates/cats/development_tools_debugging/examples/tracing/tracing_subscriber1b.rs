@@ -1,5 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Demonstrates how to log in JSON format.
+//! This is intended for production use with systems where structured logs are
+//! consumed as JSON by analysis and viewing tools.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::fs::File;
 

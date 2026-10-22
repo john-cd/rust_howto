@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs one of the `databases` examples, chosen on the command line.
+//!
+//! TODO Reviewed ??-??-2026
+
 #[cfg(any(feature = "sled", feature = "surrealdb"))]
 use clap::Parser;
 #[cfg(any(feature = "sled", feature = "surrealdb"))]

@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! One-time initialization with `parking_lot::Once`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use parking_lot::Once;
 use parking_lot::OnceState;
@@ -8,12 +12,15 @@ use parking_lot::OnceState;
 
 // `Once` is a synchronization primitive which can be used to run a one-time
 // initialization.
+/// Ensures that the initialization runs only once.
 static INIT: Once = Once::new();
 
+/// The cached value; written once under [`INIT`].
 static mut VAL: usize = 0;
 
 // This function will only call `expensive_computation` once, and will
 // otherwise always return the value returned from the first invocation.
+/// Returns the cached value, computing it on the first call.
 fn get_cached_val() -> usize {
     // Accessing a `static mut` is unsafe much of the time, unless we do so
     // in a synchronized fashion (e.g. write once or read all):
@@ -30,11 +37,13 @@ fn get_cached_val() -> usize {
     }
 }
 
+/// Simulates an expensive computation.
 fn expensive_computation() -> usize {
     // ...
     42
 }
 
+/// Reads the cached value from several threads.
 fn main() {
     // A closure has not been executed yet:
     assert_eq!(INIT.state(), OnceState::New);

@@ -1,8 +1,13 @@
-// TODO Reviewed ??-??-2026
+//! Mutating the elements of an array in parallel with `rayon`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use rayon::prelude::*;
 
+/// Decrements each element of an array in parallel and prints the result.
 fn main() {
     let mut arr = [0, 7, 9, 11];
 

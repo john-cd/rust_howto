@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! This function creates a compressed tar archive (tar.gz) of the 'tests'
+//! directory.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 #![allow(clippy::incompatible_msrv)]
+
 // ANCHOR: example
 use std::fs;
 use std::fs::File;

@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! This is an example of an async main function.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use anyhow::Result;
 

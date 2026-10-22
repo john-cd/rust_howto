@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Runs CPU-bound work from `async` code on the Rayon thread pool.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use rayon::prelude::*;
 
@@ -25,6 +29,7 @@ async fn parallel_sum(nums: Vec<i32>) -> i32 {
     rx.await.expect("Panic in rayon::spawn")
 }
 
+/// Sums a vector in parallel and prints the result.
 #[tokio::main]
 async fn main() {
     let nums = vec![1; 1024 * 1024];

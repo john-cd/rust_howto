@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Generates a random `f64` with the `rand` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 use rand::RngExt;
 
@@ -11,6 +14,7 @@ fn example() {
     println!("Random f64: {}", rng.random::<f64>());
 }
 
+/// Runs `example`.
 fn main() {
     example();
 }
@@ -20,6 +24,7 @@ fn main() {
 mod tests {
     use super::*;
 
+    /// Checks that the example runs without panicking.
     #[test]
     fn test() {
         example();

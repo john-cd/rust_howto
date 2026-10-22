@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! This example demonstrates the use of the `clone` method
+//! to create a deep copy of a `String`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// This example demonstrates the use of the `clone` method
 /// to create a deep copy of a `String`.

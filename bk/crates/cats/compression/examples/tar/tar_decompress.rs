@@ -1,11 +1,16 @@
-// TODO Reviewed ??-??-2026
+//! Unpacking a gzip-compressed tar archive with `flate2` and `tar`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::fs::File;
 
 use flate2::read::GzDecoder;
 use tar::Archive;
 
+/// Unpacks `temp/archive.tar.gz` into the `temp` directory.
 fn main() -> Result<(), std::io::Error> {
     // Define the path to the compressed tar archive.
     // This file should exist in the 'temp' directory.
