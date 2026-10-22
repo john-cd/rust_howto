@@ -9,11 +9,12 @@
 use ed25519_dalek::Signer as _;
 use ed25519_dalek::SigningKey;
 use ed25519_dalek::Verifier as _;
-use rand_core::OsRng;
+use rand::rngs::SysRng;
+use rand_core::UnwrapErr;
 
 /// Signs a message with a random Ed25519 key and verifies the signature.
 fn main() -> anyhow::Result<()> {
-    let mut rng = OsRng;
+    let mut rng = UnwrapErr(SysRng);
     let signing_key = SigningKey::generate(&mut rng);
     let verifying_key = signing_key.verifying_key();
     let message = b"This is a message to be signed.";
