@@ -1,7 +1,9 @@
 // TODO Reviewed ??-??-2026
 use std::io::Write;
 use std::process::Command;
+use std::process::Output;
 use std::process::Stdio;
+use std::str::FromStr;
 
 use mdbook_driver::MDBook;
 use mdbook_preprocessor::Preprocessor;
@@ -10,6 +12,31 @@ use mdbook_preprocessor::book::Book;
 use mdbook_preprocessor::book::Chapter;
 use mdbook_scrub::Preproc;
 
+/// Runs the directive preprocessor through mdBook's JSON protocol.
+fn run_directive_protocol(context: PreprocessorContext, book: Book) -> Output {
+    let input = serde_json::to_vec(&(&context, &book))
+        .expect("the preprocessor context and book should serialize");
+    let mut child = Command::new(env!("CARGO_BIN_EXE_mdbook-scrub"))
+        .args(["--stage", "directives"])
+        .current_dir("test_book")
+        .stdin(Stdio::piped())
+        .stdout(Stdio::piped())
+        .stderr(Stdio::piped())
+        .spawn()
+        .expect("the mdbook-scrub executable should start");
+    child
+        .stdin
+        .take()
+        .expect("the child should accept protocol input")
+        .write_all(&input)
+        .expect("the protocol input should be written");
+
+    child
+        .wait_with_output()
+        .expect("the mdbook-scrub process should finish")
+}
+
+/// Builds the test book and checks native and custom directive output.
 #[test]
 fn mdbook_05_preprocessors_expand_directives_after_native_includes() {
     let book = MDBook::load("test_book").unwrap();
@@ -54,6 +81,23 @@ fn mdbook_05_preprocessors_expand_directives_after_native_includes() {
     assert!(!wikilinks.contains("[["));
 }
 
+/// Reports supported and unsupported renderers through the executable CLI.
+#[test]
+fn supports_renderer_subcommand_matches_mdbook_protocol() {
+    let supported = Command::new(env!("CARGO_BIN_EXE_mdbook-scrub"))
+        .args(["--stage", "directives", "supports", "html"])
+        .output()
+        .expect("the mdbook-scrub executable should start");
+    assert!(supported.status.success());
+
+    let unsupported = Command::new(env!("CARGO_BIN_EXE_mdbook-scrub"))
+        .args(["--stage", "directives", "supports", "not-supported"])
+        .output()
+        .expect("the mdbook-scrub executable should start");
+    assert!(!unsupported.status.success());
+}
+
+/// Keeps JSON on stdout while expanding a valid Rust example directive.
 #[test]
 fn preprocessor_protocol_keeps_json_on_stdout() {
     let root = std::path::Path::new("test_book").canonicalize().unwrap();
@@ -67,17 +111,7 @@ fn preprocessor_protocol_keeps_json_on_stdout() {
         "language/examples.md",
         Vec::new(),
     ));
-    let input = serde_json::to_vec(&(&context, &book)).unwrap();
-    let mut child = Command::new(env!("CARGO_BIN_EXE_mdbook-scrub"))
-        .args(["--stage", "directives"])
-        .current_dir("test_book")
-        .stdin(Stdio::piped())
-        .stdout(Stdio::piped())
-        .stderr(Stdio::piped())
-        .spawn()
-        .unwrap();
-    child.stdin.take().unwrap().write_all(&input).unwrap();
-    let output = child.wait_with_output().unwrap();
+    let output = run_directive_protocol(context, book);
 
     assert!(
         output.status.success(),
@@ -96,6 +130,54 @@ fn preprocessor_protocol_keeps_json_on_stdout() {
     );
 }
 
+/// Fails with a useful diagnostic when directive configuration has the wrong type.
+#[test]
+fn malformed_directive_configuration_fails_through_the_protocol() {
+    let root = std::path::Path::new("test_book")
+        .canonicalize()
+        .expect("the test book root should exist");
+    let config = mdbook_preprocessor::config::Config::from_str(
+        "[preprocessor.directives]\nprocess-crate-block-directives = \"yes\"\n",
+    )
+    .expect("the malformed directive value should still be valid TOML");
+    let context = PreprocessorContext::new(root, config, "html".into());
+    let book = Book::new();
+    let output = run_directive_protocol(context, book);
+
+    assert!(!output.status.success());
+    let stderr = String::from_utf8_lossy(&output.stderr);
+    assert!(stderr.contains("Failed to deserialize"), "{stderr}");
+}
+
+/// Rejects directives left unresolved when their processing is disabled.
+#[test]
+fn disabled_directive_configuration_fails_through_the_protocol() {
+    let root = std::path::Path::new("test_book")
+        .canonicalize()
+        .expect("the test book root should exist");
+    let config = mdbook_preprocessor::config::Config::from_str(
+        "[preprocessor.directives]\nprocess-crate-block-directives = false\n",
+    )
+    .expect("the disabled directive configuration should parse");
+    let context = PreprocessorContext::new(root, config, "html".into());
+    let mut book = Book::new();
+    book.push_item(Chapter::new(
+        "Crate Blocks",
+        "{{#crate sample}}".into(),
+        "crate_blocks.md",
+        Vec::new(),
+    ));
+    let output = run_directive_protocol(context, book);
+
+    assert!(!output.status.success());
+    let stderr = String::from_utf8_lossy(&output.stderr);
+    assert!(
+        stderr.contains("Failed to process custom directives"),
+        "{stderr}"
+    );
+}
+
+/// Leaves Rust code spans and already expanded directives unchanged on a second pass.
 #[test]
 fn directive_processing_is_idempotent_and_preserves_rust_snippets() {
     let root = std::path::Path::new("test_book").canonicalize().unwrap();
