@@ -84,3 +84,21 @@ pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs2> {
     }
     cmdargs
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// The badge command preserves a caller-supplied reference-definition path.
+    #[test]
+    fn add_option_uses_the_path_supplied_by_the_caller() {
+        let matches = Command::new("templ")
+            .subcommand(subcommand_badge())
+            .try_get_matches_from(["templ", "badge", "serde", "--add", "custom/refs.md"])
+            .expect("arguments should parse");
+
+        let args = get_cmd(&matches).expect("badge subcommand should be present");
+
+        assert_eq!(args.file, Some(PathBuf::from("custom/refs.md")));
+    }
+}
