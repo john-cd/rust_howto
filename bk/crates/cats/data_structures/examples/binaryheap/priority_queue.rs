@@ -28,7 +28,7 @@ impl Task {
     }
 }
 
-fn main() {
+fn basic_usage() {
     println!("Basic Priority Queue Usage:");
 
     // Create a new priority queue where higher values have higher priority:
@@ -46,7 +46,9 @@ fn main() {
     while let Some((task, priority)) = pq.pop() {
         println!("Task: {task}, Priority: {priority}");
     }
+}
 
+fn min_priority_queue() {
     println!("\nMin Priority Queue:");
 
     // Create a min priority queue using `Reverse`.
@@ -60,7 +62,9 @@ fn main() {
     while let Some((task, Reverse(priority))) = min_pq.pop() {
         println!("Task: {task}, Priority: {priority}");
     }
+}
 
+fn custom_type_usage() {
     println!("\nPriority Queue with a Custom Type:");
 
     let mut task_queue = PriorityQueue::new();
@@ -94,7 +98,9 @@ fn main() {
     while let Some((task, priority)) = task_queue.pop() {
         println!("Processing: {task:?} (Priority: {priority})");
     }
+}
 
+fn advanced_usage() {
     println!("\nAdvanced Usage:");
 
     let mut advanced_pq = PriorityQueue::new();
@@ -128,6 +134,13 @@ fn main() {
     for item in items_vec {
         println!("{item}");
     }
+}
+
+fn main() {
+    basic_usage();
+    min_priority_queue();
+    custom_type_usage();
+    advanced_usage();
 }
 
 // ANCHOR_END: example
