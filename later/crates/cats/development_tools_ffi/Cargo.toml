@@ -59,7 +59,8 @@ pyo3 = "0.29.3"
 [build-dependencies]
 bindgen = "0.72.1"
 cbindgen = "0.29.4"
-cc = "1.9.0"
+# sccache 0.18 cannot parse the MSVC /Tp command emitted by cc 1.9.
+cc = "=1.8.0"
 cxx-build = { version = "1.0.205", optional = true }
 uniffi = { version = "0.31.2", optional = true }
 
