@@ -53,4 +53,32 @@ mod tests {
         let result = create_category_badge("", "").unwrap();
         assert_eq!(result, "[![cat~][cat~~badge]][cat~]{{hi:}} ");
     }
+
+    #[test]
+    fn test_create_category_badge_with_special_characters_and_symbols() {
+        let result =
+            create_category_badge("Asynchronous & Concurrency", "async-concurrency").unwrap();
+        assert_eq!(
+            result,
+            "[![cat~async-concurrency][cat~async-concurrency~badge]][cat~async-concurrency]{{hi:Asynchronous &amp; Concurrency}} "
+        );
+    }
+
+    #[test]
+    fn test_create_category_badge_unicode() {
+        let result = create_category_badge("Algorithmes & Catégories", "algo-cat").unwrap();
+        assert_eq!(
+            result,
+            "[![cat~algo-cat][cat~algo-cat~badge]][cat~algo-cat]{{hi:Algorithmes &amp; Catégories}} "
+        );
+    }
+
+    #[test]
+    fn test_create_category_badge_internal_whitespace() {
+        let result = create_category_badge("  Command   Line   Tool  ", " cli-tool ").unwrap();
+        assert_eq!(
+            result,
+            "[![cat~cli-tool][cat~cli-tool~badge]][cat~cli-tool]{{hi:Command   Line   Tool}} "
+        );
+    }
 }
