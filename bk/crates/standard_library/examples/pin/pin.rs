@@ -1,19 +1,29 @@
-// TODO Reviewed ??-??-2026
+//! Pinning values with `Pin` and `PhantomPinned`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::marker::PhantomPinned;
 use std::pin::Pin;
 
+/// A type that cannot be moved once pinned.
 struct PinnedField {
+    /// Marker that makes the type `!Unpin`.
     _pin: PhantomPinned,
 }
 
+/// A struct with a pinned field.
 struct PinnedParent {
+    /// The structurally pinned field.
     field: PinnedField,
+    /// Marker that makes the type `!Unpin`.
     _pin: PhantomPinned,
 }
 
 impl PinnedParent {
+    /// Returns a pinned mutable reference to the field.
     fn field(self: Pin<&mut Self>) -> Pin<&mut PinnedField> {
         // SAFETY: `field` is structurally pinned: this API never exposes it as
         // an unpinned mutable reference or moves it out of the parent.
@@ -21,6 +31,7 @@ impl PinnedParent {
     }
 }
 
+/// Pins values on the stack and on the heap.
 fn main() {
     // In order to pin a value, we wrap a pointer to that value (of some type
     // `Ptr`) in a `Pin<Ptr>`. `Pin<Ptr>` can wrap any pointer type,

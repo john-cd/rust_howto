@@ -1,14 +1,21 @@
-// TODO Reviewed ??-??-2026
+//! Overloading the `+` operator with `Add`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::ops::Add;
 
 // The struct we want to overload the '+' operator for.
 // We derive a few convenience traits, incl. `Debug` to allow for easy printing
 // with `{:?}`.
+/// A point in two dimensions.
 #[derive(Debug, Copy, Clone, PartialEq, Eq)]
 struct Point {
+    /// The x coordinate.
     x: i32,
+    /// The y coordinate.
     y: i32,
 }
 
@@ -28,6 +35,7 @@ impl Add for Point {
     }
 }
 
+/// Adds two points.
 fn main() {
     let p1 = Point { x: 1, y: 5 };
     let p2 = Point { x: 2, y: 3 };

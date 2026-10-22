@@ -1,9 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! Implementing `Deref` for a smart pointer.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::ops::Deref;
 
 // Define a custom smart pointer.
+/// A box that holds a value and dereferences to it.
 struct MyBox<T>(T);
 
 // Implement `Deref` for `MyBox`.
@@ -15,6 +20,7 @@ impl<T> Deref for MyBox<T> {
     }
 }
 
+/// Dereferences a `MyBox` and relies on deref coercion.
 fn main() {
     let wrapped = MyBox(String::from("Hello, Deref!"));
 

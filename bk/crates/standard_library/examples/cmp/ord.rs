@@ -1,14 +1,22 @@
-// TODO Reviewed ??-??-2026
+//! Implementing ordering with `PartialOrd` and `Ord`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::cmp::Ordering;
 
 // A struct to represent a software version.
 // The `Eq` trait has no methods, thus we can derive it automatically.
+/// A semantic version number.
 #[derive(Debug, Eq)]
 struct Version {
+    /// Major version; compared first.
     major: u32,
+    /// Minor version; compared after the major version.
     minor: u32,
+    /// Patch version; compared last.
     patch: u32,
 }
 
@@ -53,6 +61,7 @@ impl Ord for Version {
     }
 }
 
+/// Compares versions with the comparison operators and sorts them.
 fn main() {
     let v1 = Version {
         major: 1,

@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Deriving common traits for a struct.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::collections::HashMap;
 
@@ -11,6 +15,7 @@ use std::collections::HashMap;
 #[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Clone, Copy, Hash, Default)]
 struct S(i32);
 
+/// Uses the derived `Default`, `Debug`, `Clone`, `Copy` and comparison traits.
 fn simple_tests() {
     let zero = S::default(); // Courtesy of `Default`.
     println!("Debug formatting: {zero:?}"); // Courtesy of `Debug`.
@@ -26,6 +31,7 @@ fn simple_tests() {
 // When we use `#[derive(Hash)]` on a struct, the derived implementation
 // will typically hash each field of the struct in sequence and combine these
 // hashes into a single hash value for the entire struct instance.
+/// Hashes values with the derived `Hash`.
 fn hash() {
     let mut map = HashMap::new();
 
@@ -42,6 +48,7 @@ fn hash() {
     }
 }
 
+/// Runs both examples.
 fn main() {
     simple_tests();
     hash();

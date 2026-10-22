@@ -1,11 +1,19 @@
-// TODO Reviewed ??-??-2026
+//! Returning a borrowed or an owned string with `Cow`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::borrow::Cow;
 
+/// An HTTP status.
 enum HttpStatus {
+    /// The request succeeded.
     Ok,
+    /// The resource was not found.
     NotFound,
+    /// A status with a custom message.
     Custom(u16, String),
 }
 
@@ -25,6 +33,7 @@ fn describe_status(status: &HttpStatus) -> Cow<'static, str> {
     }
 }
 
+/// Describes several statuses.
 fn main() {
     let status1 = HttpStatus::Ok;
     let status2 = HttpStatus::NotFound;
