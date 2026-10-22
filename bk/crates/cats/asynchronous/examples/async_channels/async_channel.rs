@@ -1,11 +1,10 @@
-//! Multiple producers and consumers exchanging messages over an
-//! `async_channel`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Multiple producers and consumers exchanging messages over an
+//! `async_channel`.
+
 use async_channel::Receiver;
 use async_channel::Sender;
 use async_channel::TryRecvError;

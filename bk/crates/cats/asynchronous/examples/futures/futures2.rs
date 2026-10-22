@@ -1,10 +1,9 @@
-//! Polling several futures at once with `join!` and `join_all`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Polling several futures at once with `join!` and `join_all`.
+
 use futures::join;
 
 /// Print the input value and return it.

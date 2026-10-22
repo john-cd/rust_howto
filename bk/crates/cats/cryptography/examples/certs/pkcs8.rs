@@ -1,10 +1,9 @@
-//! Encoding and decoding private keys in PKCS#8 format.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Encoding and decoding private keys in PKCS#8 format.
+
 // This example demonstrates how to encode and decode PKCS#8 private keys.
 // Security: `rsa` has no fix for RUSTSEC-2023-0071. This local key-format
 // demonstration must not be used as production cryptography.

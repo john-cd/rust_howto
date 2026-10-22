@@ -1,10 +1,9 @@
-//! Connecting to Cassandra with the `cdrs-tokio` async client.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Connecting to Cassandra with the `cdrs-tokio` async client.
+
 // This example demonstrates asynchronous Cassandra access using `cdrs-tokio`.
 
 use std::sync::Arc;

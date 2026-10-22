@@ -1,10 +1,9 @@
-//! Removing the common indentation of multi-line strings with `indoc`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Removing the common indentation of multi-line strings with `indoc`.
+
 use indoc::indoc;
 
 /// Compares multi-line strings with and without `indoc`.

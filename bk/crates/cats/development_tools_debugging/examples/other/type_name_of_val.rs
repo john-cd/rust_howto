@@ -1,10 +1,9 @@
-//! Printing the type of a value with `type_name_of_val`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Printing the type of a value with `type_name_of_val`.
+
 /// Returns an iterator over a range of numbers.
 fn get_iter() -> impl Iterator<Item = i32> {
     [1, 2, 3].into_iter()

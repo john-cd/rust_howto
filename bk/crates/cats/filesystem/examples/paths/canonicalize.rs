@@ -1,10 +1,9 @@
-//! Canonicalizing paths.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Canonicalizing paths.
+
 use std::fs;
 use std::path::PathBuf;
 

@@ -1,10 +1,9 @@
-//! Filtering the lines of a log file with a set of regular expressions.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Filtering the lines of a log file with a set of regular expressions.
+
 use std::fs::File;
 use std::io::BufRead as _;
 use std::io::BufReader;

@@ -1,11 +1,10 @@
-//! Complex crossbeam channel example with multiple producers, workers, and a
-//! sink.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Complex crossbeam channel example with multiple producers, workers, and a
+//! sink.
+
 use std::thread;
 use std::time::Duration;
 

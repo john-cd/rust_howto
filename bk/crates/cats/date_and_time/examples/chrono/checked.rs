@@ -1,10 +1,9 @@
-//! Demonstrates checked arithmetic with `DateTime` and `Duration`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Demonstrates checked arithmetic with `DateTime` and `Duration`.
+
 use chrono::DateTime;
 use chrono::Duration;
 use chrono::TimeDelta;

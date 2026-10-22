@@ -1,10 +1,9 @@
-//! Reformatting dates with a regular expression replacement.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Reformatting dates with a regular expression replacement.
+
 use std::borrow::Cow;
 
 use lazy_static::lazy_static;

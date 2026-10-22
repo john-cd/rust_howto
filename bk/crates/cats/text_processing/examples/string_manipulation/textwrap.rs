@@ -1,10 +1,9 @@
-//! Wrapping, filling and indenting text with `textwrap`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Wrapping, filling and indenting text with `textwrap`.
+
 use std::borrow::Cow;
 
 use hyphenation::Language;

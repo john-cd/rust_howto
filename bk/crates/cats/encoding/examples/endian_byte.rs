@@ -1,8 +1,7 @@
-//! Encoding and decoding a struct in little-endian byte order with `byteorder`.
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Encoding and decoding a struct in little-endian byte order with `byteorder`.
+
 use std::io::Error;
 
 use byteorder::LittleEndian;

@@ -1,10 +1,9 @@
-//! A stack implemented with `Vec`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A stack implemented with `Vec`.
+
 /// Pushes elements onto a stack and pops them in last-in, first-out order.
 fn main() {
     // Initialize a stack with a minimum capacity.

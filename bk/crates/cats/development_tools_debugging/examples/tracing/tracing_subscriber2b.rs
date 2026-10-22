@@ -1,11 +1,10 @@
-//! Demonstrates how to write logs to multiple destinations (in this instance,
-//! stdout and a file) simultaneously.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Demonstrates how to write logs to multiple destinations (in this instance,
+//! stdout and a file) simultaneously.
+
 use std::io;
 
 use tracing_subscriber::filter::EnvFilter;

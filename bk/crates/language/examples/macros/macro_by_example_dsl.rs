@@ -1,4 +1,5 @@
 #![allow(unused)]
+
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This macro provides a domain-specific language (DSL) for defining

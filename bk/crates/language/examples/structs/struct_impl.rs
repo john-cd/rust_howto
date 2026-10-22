@@ -1,10 +1,9 @@
-//! Methods and associated functions on a struct.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Methods and associated functions on a struct.
+
 /// A struct representing a rectangle with a width and height.
 struct Rectangle {
     /// Width of the rectangle.

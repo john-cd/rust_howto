@@ -1,10 +1,9 @@
-//! Deriving common traits for a struct.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Deriving common traits for a struct.
+
 use std::collections::HashMap;
 
 /// `derive` is a powerful tool that automatically

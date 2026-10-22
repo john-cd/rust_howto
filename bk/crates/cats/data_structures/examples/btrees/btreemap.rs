@@ -1,10 +1,9 @@
-//! A `BTreeMap`, an ordered map, storing book ratings.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A `BTreeMap`, an ordered map, storing book ratings.
+
 use std::collections::BTreeMap;
 use std::collections::btree_map::Entry;
 

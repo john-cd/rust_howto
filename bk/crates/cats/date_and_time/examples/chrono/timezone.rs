@@ -1,10 +1,9 @@
-//! Demonstrates how to work with timezones in Chrono.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Demonstrates how to work with timezones in Chrono.
+
 use chrono::DateTime;
 use chrono::FixedOffset;
 use chrono::Local;

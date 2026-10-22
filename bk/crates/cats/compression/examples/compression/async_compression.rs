@@ -1,11 +1,10 @@
-//! Compressing and decompressing a file asynchronously with
-//! `async_compression`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Compressing and decompressing a file asynchronously with
+//! `async_compression`.
+
 use std::io::Result as IoResult;
 
 use async_compression::tokio::bufread::GzipDecoder;

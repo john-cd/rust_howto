@@ -1,10 +1,9 @@
-//! Comparing types at runtime with `TypeId`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Comparing types at runtime with `TypeId`.
+
 use std::any::Any;
 use std::any::TypeId;
 

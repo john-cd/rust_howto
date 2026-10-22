@@ -1,11 +1,10 @@
-//! This function demonstrates inserting data into a SQLite database and then
-//! selecting it back.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! This function demonstrates inserting data into a SQLite database and then
+//! selecting it back.
+
 // This example demonstrates inserting and selecting SQLite data using
 // `rusqlite`.
 use std::collections::HashMap;

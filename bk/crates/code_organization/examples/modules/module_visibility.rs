@@ -1,10 +1,9 @@
-//! Visibility of items in modules.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Visibility of items in modules.
+
 // This file is an (implicit) module.
 
 // A private function in this top module.

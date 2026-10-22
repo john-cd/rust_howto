@@ -1,10 +1,10 @@
+#![allow(dead_code)]
+
+// TODO Reviewed ??-??-2026
+// ANCHOR: example
 //! This example demonstrates the difference between `iter()`, `iter_mut()` and
 //! `into_iter()`.
-//!
-//! TODO Reviewed ??-??-2026
 
-#![allow(dead_code)]
-// ANCHOR: example
 #![allow(clippy::useless_vec)]
 #![allow(clippy::manual_contains)]
 

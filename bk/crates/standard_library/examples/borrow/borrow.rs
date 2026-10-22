@@ -1,10 +1,9 @@
-//! Looking up a `HashMap` of `String` keys with a `&str`, thanks to `Borrow`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Looking up a `HashMap` of `String` keys with a `&str`, thanks to `Borrow`.
+
 use std::collections::HashMap;
 
 // This is the most common use of `Borrow`.

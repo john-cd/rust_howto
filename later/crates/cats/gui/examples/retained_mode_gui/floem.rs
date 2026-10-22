@@ -1,10 +1,9 @@
-//! A counter application with `floem`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A counter application with `floem`.
+
 use floem::prelude::*;
 
 pub fn main() {

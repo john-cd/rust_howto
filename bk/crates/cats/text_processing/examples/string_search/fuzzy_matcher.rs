@@ -1,10 +1,9 @@
-//! Fuzzy matching of strings with `fuzzy-matcher`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Fuzzy matching of strings with `fuzzy-matcher`.
+
 use fuzzy_matcher::FuzzyMatcher as _;
 use fuzzy_matcher::skim::SkimMatcherV2;
 

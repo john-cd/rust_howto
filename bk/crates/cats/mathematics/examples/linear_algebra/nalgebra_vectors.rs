@@ -1,11 +1,10 @@
-//! This example demonstrates vector operations using the `nalgebra` crate:
-//! creating vectors, computing dot and cross products, norm, and normalization.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! This example demonstrates vector operations using the `nalgebra` crate:
+//! creating vectors, computing dot and cross products, norm, and normalization.
+
 use nalgebra::Vector3;
 
 /// This example demonstrates vector operations using the `nalgebra` crate:

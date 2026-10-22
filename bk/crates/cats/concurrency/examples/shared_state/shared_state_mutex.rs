@@ -1,10 +1,9 @@
-//! Demonstrates using a `Mutex` to safely share mutable state between threads.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Demonstrates using a `Mutex` to safely share mutable state between threads.
+
 use std::sync::Arc;
 use std::sync::Mutex;
 use std::thread;

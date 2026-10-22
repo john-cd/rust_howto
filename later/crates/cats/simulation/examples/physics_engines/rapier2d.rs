@@ -1,10 +1,9 @@
-//! A ball falling onto the ground in a 2D physics simulation with `rapier2d`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A ball falling onto the ground in a 2D physics simulation with `rapier2d`.
+
 use rapier2d::prelude::*;
 
 /// Simulates the ball and prints its position at each step.

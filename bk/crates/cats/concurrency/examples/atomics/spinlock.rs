@@ -1,10 +1,9 @@
-//! A spinlock built on an atomic flag, with a guard that unlocks it on drop.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A spinlock built on an atomic flag, with a guard that unlocks it on drop.
+
 use std::cell::UnsafeCell;
 use std::ops::Deref;
 use std::ops::DerefMut;

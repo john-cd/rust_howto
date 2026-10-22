@@ -1,8 +1,7 @@
-//! Laying out rich text with `parley`.
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Laying out rich text with `parley`.
+
 use parley::Alignment;
 use parley::AlignmentOptions;
 use parley::FontContext;

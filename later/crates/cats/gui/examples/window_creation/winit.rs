@@ -1,8 +1,7 @@
-//! Creating a window with `winit`.
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Creating a window with `winit`.
+
 // Trait that handles the application events:
 use winit::application::ApplicationHandler;
 // An event from a `Window`: Resized, Moved, etc.

@@ -1,11 +1,10 @@
-//! This example demonstrates a simple panic.
-//! When executed, it will cause the program to terminate abruptly.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! This example demonstrates a simple panic.
+//! When executed, it will cause the program to terminate abruptly.
+
 /// This example demonstrates a simple panic.
 /// When executed, it will cause the program to terminate abruptly.
 fn main() {

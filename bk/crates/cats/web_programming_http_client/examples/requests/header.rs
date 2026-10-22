@@ -1,10 +1,9 @@
-//! Demonstrates how to set headers in HTTP requests using the `reqwest` crate.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Demonstrates how to set headers in HTTP requests using the `reqwest` crate.
+
 use std::collections::HashMap;
 
 use anyhow::Result;

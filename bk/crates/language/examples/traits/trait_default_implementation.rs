@@ -1,10 +1,9 @@
-//! A trait method with a default implementation.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A trait method with a default implementation.
+
 /// A trait.
 trait Summary {
     /// Method signature.

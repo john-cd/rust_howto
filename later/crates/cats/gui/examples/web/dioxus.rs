@@ -1,8 +1,7 @@
-//! A web application with `dioxus`.
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A web application with `dioxus`.
+
 #[cfg(feature = "dioxus")]
 use dioxus::prelude::*;
 

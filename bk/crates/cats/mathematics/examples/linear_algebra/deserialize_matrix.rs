@@ -1,11 +1,10 @@
-//! This example demonstrates how to serialize and deserialize a `DMatrix` using
-//! `serde_json`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! This example demonstrates how to serialize and deserialize a `DMatrix` using
+//! `serde_json`.
+
 use nalgebra::DMatrix;
 
 /// This example demonstrates how to serialize and deserialize a `DMatrix` using

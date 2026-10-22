@@ -1,10 +1,9 @@
-//! Matching one of several patterns with `|`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Matching one of several patterns with `|`.
+
 /// Matches a number against alternatives.
 fn main() {
     let x = 3;

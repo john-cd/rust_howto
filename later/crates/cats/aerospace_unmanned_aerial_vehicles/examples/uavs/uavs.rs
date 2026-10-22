@@ -1,10 +1,9 @@
-//! Receiving telemetry from a Tello drone.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Receiving telemetry from a Tello drone.
+
 use tello::Drone;
 use tello::Message;
 use tello::Package;

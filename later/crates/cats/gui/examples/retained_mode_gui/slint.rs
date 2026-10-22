@@ -1,10 +1,9 @@
-//! A window defined with `slint`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A window defined with `slint`.
+
 slint::slint! {
     export component HelloWorld inherits Window {
         Text {

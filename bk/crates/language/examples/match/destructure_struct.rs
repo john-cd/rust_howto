@@ -1,10 +1,9 @@
-//! Destructuring a struct into its fields.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Destructuring a struct into its fields.
+
 /// A point in two dimensions.
 #[derive(Clone, Copy)]
 struct Point {

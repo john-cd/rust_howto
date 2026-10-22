@@ -1,10 +1,9 @@
-//! A generic function with a lifetime parameter.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A generic function with a lifetime parameter.
+
 /// Function with an explicit lifetime parameter.
 ///
 /// `x` and `y` are string slices that live at least as long as the lifetime

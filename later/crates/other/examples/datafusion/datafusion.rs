@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 #![cfg(feature = "datafusion")]
+
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use `DataFusion` to set up a simple

@@ -1,10 +1,9 @@
-//! Reading from standard input and writing to standard output.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Reading from standard input and writing to standard output.
+
 use std::io;
 use std::io::Write as _;
 

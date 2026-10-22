@@ -1,10 +1,9 @@
-//! An actor with the `stakker` crate: a counter that processes messages.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! An actor with the `stakker` crate: a counter that processes messages.
+
 use stakker::*;
 
 // Define the messages that the actor can process.

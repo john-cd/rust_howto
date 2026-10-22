@@ -1,10 +1,9 @@
-//! Inserting and querying documents in MongoDB.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Inserting and querying documents in MongoDB.
+
 // This example demonstrates connecting to MongoDB and performing basic CRUD
 // operations with the `mongodb` crate.
 use std::env;

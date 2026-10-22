@@ -1,10 +1,9 @@
-//! Encoding a struct to DER and decoding it back with the `der` crate.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Encoding a struct to DER and decoding it back with the `der` crate.
+
 // This example demonstrates DER encoding and decoding with the `der` crate.
 use der::Decode as _;
 use der::Encode as _;

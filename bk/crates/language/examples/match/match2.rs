@@ -1,11 +1,10 @@
-//! Matching a struct against patterns.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 #![allow(clippy::match_single_binding)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Matching a struct against patterns.
+
 // Define a struct named `Point` with three fields: x, y, and z,
 // all of type `i32`.
 /// A point in three dimensions.

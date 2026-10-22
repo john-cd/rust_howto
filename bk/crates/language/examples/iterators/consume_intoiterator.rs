@@ -1,10 +1,9 @@
-//! Consuming any `IntoIterator` in a generic function.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Consuming any `IntoIterator` in a generic function.
+
 /// This function demonstrates the use of `IntoIterator` as a trait bound,
 /// allowing it to accept various iterators or iterable types (like vectors,
 /// arrays, and ranges) and compute the sum of their elements.

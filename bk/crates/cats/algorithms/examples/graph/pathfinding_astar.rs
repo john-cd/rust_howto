@@ -1,10 +1,9 @@
-//! A* pathfinding on a grid with the `pathfinding` crate.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A* pathfinding on a grid with the `pathfinding` crate.
+
 use pathfinding::prelude::astar;
 
 /// Demonstrates grid-based A* pathfinding using the `pathfinding` crate.

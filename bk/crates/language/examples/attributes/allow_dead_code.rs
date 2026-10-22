@@ -1,8 +1,7 @@
-//! Silencing the warning about unused code with `#[allow(dead_code)]`.
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Silencing the warning about unused code with `#[allow(dead_code)]`.
+
 // Disables the `dead_code` lint for the entire file.
 #![allow(dead_code)]
 

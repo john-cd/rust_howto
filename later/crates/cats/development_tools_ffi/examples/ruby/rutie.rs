@@ -1,10 +1,9 @@
-//! Calling Rust from Ruby with `rutie`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Calling Rust from Ruby with `rutie`.
+
 use rutie::Object as _;
 use rutie::RString;
 use rutie::VM;

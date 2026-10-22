@@ -1,10 +1,9 @@
-//! A counter application with `iced`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A counter application with `iced`.
+
 use iced::Alignment;
 use iced::Element;
 use iced::Length;

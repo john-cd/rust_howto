@@ -1,10 +1,9 @@
-//! Destructuring tuples, arrays and structs into variables.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Destructuring tuples, arrays and structs into variables.
+
 /// Destructures several kinds of values in `let` statements.
 fn main() {
     // Destructuring a tuple.

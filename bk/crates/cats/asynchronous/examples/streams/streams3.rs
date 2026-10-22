@@ -1,10 +1,9 @@
-//! Processing a `Stream` of fallible asynchronous fetches with `futures_util`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Processing a `Stream` of fallible asynchronous fetches with `futures_util`.
+
 use std::time::Duration;
 
 use futures_util::stream;

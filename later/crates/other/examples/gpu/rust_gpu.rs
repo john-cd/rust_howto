@@ -1,10 +1,9 @@
-//! Writing shaders in Rust with `rust-gpu`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Writing shaders in Rust with `rust-gpu`.
+
 #[cfg(target_arch = "wasm32")]
 use spirv_std::glam::Vec4;
 #[cfg(target_arch = "wasm32")]

@@ -1,10 +1,9 @@
-//! Demonstrates using `tokio::task::LocalSet` to run non-`Send` tasks.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Demonstrates using `tokio::task::LocalSet` to run non-`Send` tasks.
+
 use std::rc::Rc;
 
 use tokio::task;

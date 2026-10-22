@@ -1,10 +1,9 @@
-//! This example demonstrates the basic usage of the `sort` method on a vector.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! This example demonstrates the basic usage of the `sort` method on a vector.
+
 /// This example demonstrates the basic usage of the `sort` method on a vector.
 ///
 /// The `sort` method sorts the elements of the vector in ascending order.

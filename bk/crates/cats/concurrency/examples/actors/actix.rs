@@ -1,10 +1,9 @@
-//! A minimal `actix` actor that handles a `Ping` message.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A minimal `actix` actor that handles a `Ping` message.
+
 use std::time::Duration;
 
 use actix::prelude::*;

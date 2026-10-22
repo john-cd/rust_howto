@@ -1,10 +1,9 @@
-//! Making a struct callable by implementing the `Fn` traits.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Making a struct callable by implementing the `Fn` traits.
+
 /// A callable that adds an offset.
 struct Adder {
     /// The number to add.

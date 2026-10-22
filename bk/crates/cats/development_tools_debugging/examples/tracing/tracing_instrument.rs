@@ -1,10 +1,9 @@
-//! Instrumenting sync and async functions with `tracing` spans.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Instrumenting sync and async functions with `tracing` spans.
+
 use tracing::Level;
 use tracing::event;
 use tracing::instrument;

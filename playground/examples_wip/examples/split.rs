@@ -1,5 +1,6 @@
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
+
 // Indices of / in the path
 /// Splits `path` into a directory, a file name and an extension.
 fn split_path(path: &str) -> (&str, &str, &str) {

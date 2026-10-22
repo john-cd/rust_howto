@@ -1,10 +1,9 @@
-//! Demonstrates parsing various date and time strings into `chrono` types.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Demonstrates parsing various date and time strings into `chrono` types.
+
 use chrono::DateTime;
 use chrono::NaiveDate;
 use chrono::NaiveDateTime;

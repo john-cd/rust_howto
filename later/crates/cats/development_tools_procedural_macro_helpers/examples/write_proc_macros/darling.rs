@@ -1,10 +1,9 @@
-//! Parsing derive macro options with `darling`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Parsing derive macro options with `darling`.
+
 use development_tools_procedural_macro_helpers::MyDarlingMacro;
 
 /// A trait implemented by the derive macro.

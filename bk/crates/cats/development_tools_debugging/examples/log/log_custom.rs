@@ -1,10 +1,9 @@
-//! Configures and initializes the logging system using log4rs.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Configures and initializes the logging system using log4rs.
+
 use anyhow::Result;
 use log::LevelFilter;
 use log4rs::append::file::FileAppender;

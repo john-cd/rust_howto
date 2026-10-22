@@ -1,10 +1,9 @@
-//! Splitting a string into grapheme clusters.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Splitting a string into grapheme clusters.
+
 use unicode_segmentation::UnicodeSegmentation;
 
 /// Prints the graphemes of a string.

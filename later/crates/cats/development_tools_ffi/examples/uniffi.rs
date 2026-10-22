@@ -1,10 +1,9 @@
-//! Generating bindings to other languages with `uniffi`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Generating bindings to other languages with `uniffi`.
+
 // #![allow(non_snake_case)]
 
 // This example demonstrates how to use UniFFI to create a Rust library that

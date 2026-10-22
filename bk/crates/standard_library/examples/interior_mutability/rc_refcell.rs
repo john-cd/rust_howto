@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A common pattern in Rust is using `Rc<RefCell<T>>` to allow multiple

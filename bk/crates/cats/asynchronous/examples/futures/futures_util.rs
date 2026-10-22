@@ -1,11 +1,10 @@
-//! Combinators from `futures_util`, applied to asynchronous fetches that may
-//! fail.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Combinators from `futures_util`, applied to asynchronous fetches that may
+//! fail.
+
 use std::time::Duration;
 
 use futures::future;

@@ -1,10 +1,9 @@
-//! Using a closure to filter a list.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Using a closure to filter a list.
+
 /// Finds all strings in a list that contain the '@' character.
 fn find_emails(list: Vec<String>) -> Vec<String> {
     list.into_iter()

@@ -1,10 +1,9 @@
-//! A basic declarative macro.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(unused)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A basic declarative macro.
+
 /// A basic macro-by-example (from the Rust By Example book).
 macro_rules! say_hello {
     // The matcher `()` indicates that the macro takes no argument.

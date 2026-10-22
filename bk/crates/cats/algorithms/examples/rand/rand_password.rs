@@ -1,10 +1,9 @@
-//! Generates a random password from a custom set of characters with `rand`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Generates a random password from a custom set of characters with `rand`.
+
 use rand::RngExt as _;
 
 /// Prints a random password of fixed length.

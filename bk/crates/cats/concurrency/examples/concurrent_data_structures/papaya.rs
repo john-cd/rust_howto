@@ -1,10 +1,9 @@
-//! A concurrent hash map from the `papaya` crate, used from several threads.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A concurrent hash map from the `papaya` crate, used from several threads.
+
 use papaya::HashMap;
 
 // `papaya` is a concurrent hash-table for read-heavy workloads.

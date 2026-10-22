@@ -1,10 +1,9 @@
-//! Connecting to PostgreSQL with `tokio-postgres`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Connecting to PostgreSQL with `tokio-postgres`.
+
 use anyhow::Context as _;
 use anyhow::ensure;
 use tokio_postgres::Client;

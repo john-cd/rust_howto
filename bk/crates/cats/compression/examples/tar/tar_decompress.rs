@@ -1,10 +1,9 @@
-//! Unpacking a gzip-compressed tar archive with `flate2` and `tar`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Unpacking a gzip-compressed tar archive with `flate2` and `tar`.
+
 use std::fs::File;
 
 use flate2::read::GzDecoder;

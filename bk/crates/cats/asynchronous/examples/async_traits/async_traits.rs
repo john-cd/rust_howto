@@ -1,10 +1,9 @@
-//! An `async fn` in a trait, implemented by a health checker.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! An `async fn` in a trait, implemented by a health checker.
+
 /// A health checker that implements [`HealthCheck`].
 struct MyHealthChecker;
 

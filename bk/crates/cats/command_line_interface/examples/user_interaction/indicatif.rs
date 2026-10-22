@@ -1,10 +1,9 @@
-//! A styled progress spinner with `indicatif` and `console`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A styled progress spinner with `indicatif` and `console`.
+
 use std::thread;
 use std::time::Duration;
 

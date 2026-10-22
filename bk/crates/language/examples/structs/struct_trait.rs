@@ -1,11 +1,10 @@
-//! Implementing a trait with methods, an associated type and associated
-//! constants.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Implementing a trait with methods, an associated type and associated
+//! constants.
+
 // First, define a trait (if it's not a pre-existing one):
 /// A trait with methods, an associated function, a type and constants.
 trait SomeBehavior {

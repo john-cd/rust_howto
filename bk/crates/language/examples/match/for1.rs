@@ -1,10 +1,9 @@
-//! Destructuring in a `for` loop.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Destructuring in a `for` loop.
+
 /// Destructures the tuples of a vector in a `for` loop.
 fn main() {
     // Create a `Vec` of tuples.

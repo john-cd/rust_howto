@@ -1,10 +1,9 @@
-//! The singleton pattern with a global `OnceLock`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! The singleton pattern with a global `OnceLock`.
+
 use std::sync::Mutex;
 use std::sync::OnceLock;
 

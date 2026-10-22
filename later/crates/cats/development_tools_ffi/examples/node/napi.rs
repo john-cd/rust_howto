@@ -1,10 +1,9 @@
-//! Calling Rust from Node.js with `napi`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Calling Rust from Node.js with `napi`.
+
 // Framework for building pre-compiled Node.js addons in Rust.
 
 // Import the preludes:

@@ -1,8 +1,7 @@
-//! Creating a MAVLink heartbeat message.
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Creating a MAVLink heartbeat message.
+
 use mavlink::common;
 
 /// Creates a heartbeat message; sending it is shown in comments.

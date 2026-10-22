@@ -1,10 +1,10 @@
+#![allow(dead_code)]
+
+// TODO Reviewed ??-??-2026
+// ANCHOR: example
 //! An actor with the `ractor` crate: a greeter that counts the greetings it
 //! handles.
-//!
-//! TODO Reviewed ??-??-2026
 
-#![allow(dead_code)]
-// ANCHOR: example
 #![allow(unexpected_cfgs)]
 
 use ractor::Actor;

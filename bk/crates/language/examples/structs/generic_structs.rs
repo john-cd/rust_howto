@@ -1,10 +1,9 @@
-//! A generic struct and its `impl` blocks.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A generic struct and its `impl` blocks.
+
 use std::fmt::Display;
 
 /// A generic struct `Point` that can hold two values of the same type `T`:

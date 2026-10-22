@@ -1,11 +1,10 @@
-//! Calling Python from Rust with `pyo3`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 #![cfg(target_os = "linux")]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Calling Python from Rust with `pyo3`.
+
 // This example demonstrates how to embed Python code within a Rust
 // application using the `pyo3` crate. It showcases the ability to define
 // Python functions within Rust, call them, and pass arguments.

@@ -1,10 +1,9 @@
-//! Calling Rust from Flutter with `flutter_rust_bridge`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Calling Rust from Flutter with `flutter_rust_bridge`.
+
 // Integrate a Rust function into a Flutter project using
 // `flutter_rust_bridge`.
 // Typical scenarios to combine them include:

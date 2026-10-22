@@ -1,10 +1,9 @@
-//! Generic functions that take arguments of any type.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Generic functions that take arguments of any type.
+
 // This is a generic function that can take any type.
 // The type parameter `T` is written between < and >.
 // It often can be inferred from the argument passed to the function.

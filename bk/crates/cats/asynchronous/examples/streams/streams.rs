@@ -1,10 +1,9 @@
-//! Creating and consuming a `Stream` of numbers.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Creating and consuming a `Stream` of numbers.
+
 use futures::Stream;
 use futures::stream;
 use futures::stream::StreamExt as _;

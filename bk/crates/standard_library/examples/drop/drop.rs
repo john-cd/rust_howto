@@ -1,10 +1,9 @@
-//! Running code when a value is dropped, with the `Drop` trait.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Running code when a value is dropped, with the `Drop` trait.
+
 /// A struct that prints a message when it is dropped.
 struct CustomStruct {
     /// Some data.

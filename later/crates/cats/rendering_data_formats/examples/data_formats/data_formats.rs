@@ -1,10 +1,9 @@
-//! Placeholder for a rendering data formats example.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Placeholder for a rendering data formats example.
+
 // COMING SOON
 // ANCHOR_END: example
 

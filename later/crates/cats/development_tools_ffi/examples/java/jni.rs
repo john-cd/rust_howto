@@ -1,10 +1,9 @@
-//! Calling Rust from Java with the Java Native Interface.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Calling Rust from Java with the Java Native Interface.
+
 use jni::JNIEnv;
 use jni::objects::JClass;
 use jni::objects::JString;

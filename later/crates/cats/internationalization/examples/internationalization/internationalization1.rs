@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates basic internationalization using `sys-locale` and `icu_locid`.

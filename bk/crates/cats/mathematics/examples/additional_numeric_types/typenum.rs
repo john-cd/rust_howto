@@ -1,10 +1,9 @@
-//! Type-level numbers with `typenum`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Type-level numbers with `typenum`.
+
 use std::marker::PhantomData;
 
 use typenum::Prod;

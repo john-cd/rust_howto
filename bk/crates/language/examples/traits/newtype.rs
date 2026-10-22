@@ -1,10 +1,9 @@
-//! The newtype pattern: implementing an external trait on an external type.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! The newtype pattern: implementing an external trait on an external type.
+
 use std::fmt;
 
 // // ERROR: only traits defined in the current crate can be implemented for

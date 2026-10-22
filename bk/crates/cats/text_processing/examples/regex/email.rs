@@ -1,10 +1,9 @@
-//! Extracting the login of an email address with a regular expression.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Extracting the login of an email address with a regular expression.
+
 use lazy_static::lazy_static;
 use regex::Regex;
 

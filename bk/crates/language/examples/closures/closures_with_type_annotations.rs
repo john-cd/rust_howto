@@ -1,10 +1,9 @@
-//! Demonstrates closures with type annotations.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Demonstrates closures with type annotations.
+
 use std::thread;
 use std::time::Duration;
 

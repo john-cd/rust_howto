@@ -1,10 +1,9 @@
-//! Entry point for the build script.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: capnp
+//! Entry point for the build script.
+
 /// Compile a Captain Proto schema.
 fn capnp() {
     println!("cargo::rerun-if-changed=examples/binary_encoders/foo.capnp");

@@ -1,13 +1,12 @@
+#![allow(dead_code)]
+
+// TODO Reviewed ??-??-2026
+// ANCHOR: example
 //! This function demonstrates basic usage of the `heed` crate for interacting
 //! with an LMDB database. It covers opening a database, creating a write
 //! transaction, writing data, committing the transaction, opening a read
 //! transaction, and reading data.
-//!
-//! TODO Reviewed ??-??-2026
 
-#![allow(dead_code)]
-
-// ANCHOR: example
 // This example demonstrates using the `heed` crate as an LMDB-backed key-value
 // store.
 use heed::Database;

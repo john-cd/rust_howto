@@ -1,10 +1,9 @@
-//! Using `Option` for an optional argument.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Using `Option` for an optional argument.
+
 /// This function simulates baking a cake.
 ///
 /// It takes an optional `sprinkles` argument, which determines

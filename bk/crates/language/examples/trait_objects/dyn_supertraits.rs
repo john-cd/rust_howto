@@ -1,10 +1,9 @@
-//! Trait objects of a trait with a supertrait.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Trait objects of a trait with a supertrait.
+
 // Supertrait.
 /// A thing that can format a message.
 trait Message {

@@ -1,10 +1,9 @@
-//! Match guards, the `if` conditions of match arms.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Match guards, the `if` conditions of match arms.
+
 /// Matches an optional number with guards.
 fn main() {
     let num = Some(4);

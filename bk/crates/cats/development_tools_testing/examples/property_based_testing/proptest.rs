@@ -1,10 +1,9 @@
-//! Property-based testing with `proptest`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Property-based testing with `proptest`.
+
 /// A simple function to test - finds the maximum of two integers:
 fn max_of_two(a: i32, b: i32) -> i32 {
     if a > b { a } else { b }

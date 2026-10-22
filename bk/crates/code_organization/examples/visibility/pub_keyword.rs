@@ -1,11 +1,10 @@
-//! The `pub` keyword on functions, types, traits and modules.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 #![allow(unused_imports)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! The `pub` keyword on functions, types, traits and modules.
+
 /// Private module.
 mod m {
     /// Private function.

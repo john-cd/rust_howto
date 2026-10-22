@@ -1,10 +1,9 @@
-//! Detecting the collision of two shapes with `parry2d`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Detecting the collision of two shapes with `parry2d`.
+
 use parry2d::math::Pose;
 use parry2d::math::Vector;
 use parry2d::query;

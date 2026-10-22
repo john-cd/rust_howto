@@ -1,10 +1,9 @@
-//! An `IndexMap`, a hash map that preserves insertion order.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! An `IndexMap`, a hash map that preserves insertion order.
+
 use indexmap::IndexMap;
 
 /// Inserts into an `IndexMap` and iterates in insertion order.

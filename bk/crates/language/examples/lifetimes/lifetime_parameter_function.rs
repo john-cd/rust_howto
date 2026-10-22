@@ -1,10 +1,9 @@
-//! Lifetime parameters on a function.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Lifetime parameters on a function.
+
 /// This function has a lifetime parameter `'a`.
 /// The lifetime parameter can be used by references within the function
 /// signature, return type, or body.

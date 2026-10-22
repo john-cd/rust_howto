@@ -1,10 +1,9 @@
-//! Computing the median of a list of integers with quickselect.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Computing the median of a list of integers with quickselect.
+
 use std::cmp::Ordering;
 
 /// Partitions a slice of integers into three parts:

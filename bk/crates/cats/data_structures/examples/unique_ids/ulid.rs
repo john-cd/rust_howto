@@ -1,10 +1,9 @@
-//! Generating and parsing ULIDs, sortable unique identifiers.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Generating and parsing ULIDs, sortable unique identifiers.
+
 use std::str::FromStr as _;
 
 use ulid::Ulid;

@@ -1,10 +1,9 @@
-//! Concatenating identifiers in macros with `paste`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Concatenating identifiers in macros with `paste`.
+
 // use paste::paste;
 
 // /// The `paste` macro is used to concatenate identifiers within the
