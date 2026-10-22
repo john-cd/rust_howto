@@ -1,7 +1,10 @@
-// TODO Reviewed ??-??-2026
-#![allow(unused)]
-// ANCHOR: example
+//! Restricting the types a declarative macro accepts.
+//!
+//! TODO Reviewed ??-??-2026
 
+#![allow(unused)]
+
+// ANCHOR: example
 // 1. If you want to allow expressions but ensure they are numeric, you can
 //    enforce type checking:
 macro_rules! ensure_numeric_expression {
@@ -45,7 +48,9 @@ macro_rules! must_be_string {
 // 4. Ensure that only certain types can be processed by a macro.
 //    - Define a trait that describes the action we want to perform. This
 //      creates a common interface for different types to implement.
+/// A trait implemented only for the types that the macro accepts.
 trait Processable {
+    /// Processes the value.
     fn process(&self) {}
 }
 
@@ -75,6 +80,7 @@ macro_rules! integer_only {
     };
 }
 
+/// Calls the macros with accepted types.
 fn main() {
     ensure_numeric_expression!(2.0 + 2.0);
     // ERROR ensure_numeric_expression!("text");

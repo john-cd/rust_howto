@@ -1,9 +1,15 @@
-// TODO Reviewed ??-??-2026
+//! Many shared references or one mutable reference.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// A struct holding a flag.
 #[derive(Debug)]
 struct MyStruct(bool);
 
+/// Takes shared references, then a mutable reference.
 fn main() {
     let mut s1 = MyStruct(true);
 

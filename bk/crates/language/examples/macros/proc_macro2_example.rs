@@ -1,9 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! Rewriting tokens with a procedural macro built on `proc-macro2`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(unused)]
+
 // ANCHOR: example
 // Import our custom procedural macro that was built using `proc-macro2`.
 use proc_macros::replace_ident;
 
+/// Uses `replace_ident!` to rename an identifier.
 fn main() {
     // The `replace_ident` macro replaces any occurrence of `old_ident`
     // with `new_ident` inside its token stream.

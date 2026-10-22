@@ -1,12 +1,26 @@
-// TODO Reviewed ??-??-2026
+//! Destructuring an enum in a `match`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// A message of different kinds.
 enum Message {
+    /// A message without data.
     Quit,
-    Move { x: i32, y: i32 },
+    /// A message with coordinates.
+    Move {
+        /// The x coordinate.
+        x: i32,
+        /// The y coordinate.
+        y: i32,
+    },
+    /// A message with text.
     Write(String),
 }
 
+/// Matches a message and extracts its data.
 fn main() {
     let msg = Message::Write(String::from("hello"));
 

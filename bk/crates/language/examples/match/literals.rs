@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Matching literals.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Matches a number against literals.
 fn main() {
     let x = 1;
     match x {

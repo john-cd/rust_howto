@@ -1,9 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! A function-like procedural macro that processes a SQL query.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(unused)]
+
 // ANCHOR: example
 // Import our custom function-like macro.
 use proc_macros::sql;
 
+/// Calls the macro with SQL queries.
 fn main() {
     // Function-like procedural macros are invoked using `!`.
     let user_query = sql!(SELECT * FROM users WHERE id = 1);

@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Destructuring references.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Destructures references with `&` and `ref`.
 fn main() {
     // Given a reference...
     let reference: &i32 = &42;

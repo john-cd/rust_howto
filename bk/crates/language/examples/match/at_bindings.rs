@@ -1,10 +1,20 @@
-// TODO Reviewed ??-??-2026
+//! Binding a value to a name while matching a pattern with `@`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// A message with an identifier.
 enum Message {
-    Hello { id: i32 },
+    /// A greeting.
+    Hello {
+        /// The identifier.
+        id: i32,
+    },
 }
 
+/// Matches an identifier against a range and binds it.
 fn main() {
     let msg = Message::Hello { id: 5 };
 

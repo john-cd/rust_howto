@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Looping with `while let`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Pops the elements of a vector with `while let`.
 fn main() {
     let mut stack = vec![1, 2, 3];
 

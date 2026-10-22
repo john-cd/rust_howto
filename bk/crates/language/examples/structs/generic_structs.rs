@@ -1,16 +1,23 @@
-// TODO Reviewed ??-??-2026
+//! A generic struct and its `impl` blocks.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::fmt::Display;
 
 /// A generic struct `Point` that can hold two values of the same type `T`:
 struct Point<T> {
+    /// The x coordinate.
     x: T,
+    /// The y coordinate.
     y: T,
 }
 
 /// Generic implementation block for `Point<T>` where `T` can be any type:
 impl<T> Point<T> {
+    /// Returns a reference to the x coordinate.
     fn x(&self) -> &T {
         &self.x
     }
@@ -28,6 +35,7 @@ impl Point<f32> {
 /// The following is only implemented for `Point<T>` when `T` implements both
 /// the `Display` and `PartialOrd` traits.
 impl<T: Display + PartialOrd> Point<T> {
+    /// Prints the larger coordinate.
     fn cmp_display(&self) {
         if self.x >= self.y {
             println!("The largest member is x = {}", self.x);
@@ -37,6 +45,7 @@ impl<T: Display + PartialOrd> Point<T> {
     }
 }
 
+/// Creates points with several types and calls their methods.
 fn main() {
     // Instantiate `Point` with integer coordinates (type `i32`).
     let integer_point = Point { x: 5, y: 10 };

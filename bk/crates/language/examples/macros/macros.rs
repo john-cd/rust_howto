@@ -1,10 +1,16 @@
-// TODO Reviewed ??-??-2026
+//! Ways to use function-like macros: as expressions, statements, items and
+//! types.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 #![allow(clippy::useless_vec)]
+
 // ANCHOR: example
 use std::cell::RefCell;
 
 // Example uses of function-like macros:
+/// Shows several uses of function-like macros.
 fn examples() {
     // 1. They can be used as expressions.
     // The following defines a vector:
@@ -35,6 +41,7 @@ macro_rules! Tuple {
 }
 
 // Define a tuple type alias with the macro above:
+/// A tuple type created with a macro.
 type T2 = Tuple!(i32, i32);
 
 /// Print the elements of the tuple type alias:
@@ -56,6 +63,7 @@ macro_rules! const_maker {
     };
 }
 
+/// A trait whose associated constant is created by a macro.
 #[allow(dead_code)]
 trait T {
     const_maker! {i32, 7}
@@ -73,6 +81,7 @@ macro_rules! _example {
     };
 }
 
+/// Calls the functions that use macros.
 fn main() {
     examples();
     print_tuple((1, 3));

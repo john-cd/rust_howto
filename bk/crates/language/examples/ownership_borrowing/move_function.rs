@@ -1,20 +1,27 @@
-// TODO Reviewed ??-??-2026
+//! Moving a value into a function and getting it back.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // Move semantics is not limited to assignments.
 // They apply to function parameters as well.
 
 // This function consumes its String parameter...
+/// Takes ownership of `x` and drops it.
 fn consume(x: String) {
     println!("{x}");
 } // ...then, when `x` goes out of scope, its value is dropped.
 
 // This function consumes, processes, then returns its `String` parameter.
+/// Takes ownership of `x` and gives it back.
 fn consume_and_return(x: String) -> String {
     println!("{x}");
     x
 }
 
+/// Moves a string into functions.
 fn main() {
     let s1 = String::from("Rust");
     // s1 is moved into the `consume` function:

@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Destructuring in a `let` statement.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Destructures tuples and structs in `let` statements.
 fn main() {
     let t: (i32, i32) = (1, 2);
     // Destructure the tuple into 2 variables:
