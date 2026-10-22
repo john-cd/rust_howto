@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Documenting a function, including documentation from an external file.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// This is a doc comment.
 /// Note the three slashes.
@@ -14,6 +18,7 @@ fn documented_function() {
 #[doc = include_str!("../../../../README.md")]
 fn function_including_external_file_as_documentation() {}
 
+/// Calls the documented functions.
 fn main() {
     documented_function();
     function_including_external_file_as_documentation();

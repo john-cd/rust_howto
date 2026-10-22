@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Talking to Cassandra over its native protocol with `cassandra-protocol`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // This example demonstrates how to build and serialize Cassandra protocol
 // frames using the `cassandra_protocol` crate.
@@ -23,6 +27,7 @@ use tokio::io::AsyncReadExt;
 use tokio::io::AsyncWriteExt;
 use tokio::net::TcpStream;
 
+/// Reads one protocol envelope from `stream`.
 #[allow(
     clippy::result_large_err,
     reason = "Keep the protocol crate's Result type, as in the calling example."
@@ -43,6 +48,8 @@ async fn read_envelope(stream: &mut TcpStream) -> Result<Envelope> {
         .envelope)
 }
 
+/// Sends startup, options and query requests to Cassandra and prints the
+/// responses.
 #[allow(clippy::result_large_err)]
 #[tokio::main]
 async fn main() -> Result<()> {
@@ -108,6 +115,7 @@ async fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example; needs a running Cassandra server.
 pub fn run() -> anyhow::Result<()> {
     main()?;
     Ok(())

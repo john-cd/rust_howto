@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Connecting to PostgreSQL with `tokio-postgres`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use anyhow::Context as _;
 use anyhow::ensure;
@@ -17,6 +21,7 @@ pub async fn run() -> anyhow::Result<()> {
     run_with_url(&url).await
 }
 
+/// Runs the example against the database at `url`.
 pub(crate) async fn run_with_url(url: &str) -> anyhow::Result<()> {
     // The libpq-style connection strings consist of space-separated
     // key-value pairs: <https://docs.rs/tokio-postgres/latest/tokio_postgres/config/struct.Config.html>.
@@ -40,6 +45,7 @@ pub(crate) async fn run_with_url(url: &str) -> anyhow::Result<()> {
     result
 }
 
+/// Creates a temporary table, then inserts, queries, updates and deletes a row.
 async fn run_queries(client: &Client) -> anyhow::Result<()> {
     // A temporary table keeps repeated runs isolated and is removed when the
     // connection closes.
@@ -112,6 +118,7 @@ async fn run_queries(client: &Client) -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Runs the example on a new Tokio runtime.
 pub fn main() -> anyhow::Result<()> {
     tokio::runtime::Runtime::new()?.block_on(run())
 }

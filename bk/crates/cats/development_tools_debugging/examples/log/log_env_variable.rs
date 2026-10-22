@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Configuring `env_logger` with an environment variable.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Initializes the logger and emits a message at each level.
 fn main() {
     // Initialize the logger.
     init_logger();

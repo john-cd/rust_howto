@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Composing a `tracing` subscriber from layers and filters.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::io;
 
@@ -38,6 +42,7 @@ use std::error::Error;
 // directives. `EnvFilter` implements both the `Layer` and `Filter` traits, so
 // it may be used for both global filtering and per-layer filtering,
 // respectively.
+/// Shows several ways to build an `EnvFilter`.
 #[allow(dead_code)]
 fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     // 1. Returns a new `EnvFilter` from the value of the `RUST_LOG` environment
@@ -70,6 +75,7 @@ fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     Ok(())
 }
 
+/// Initializes the layered subscriber.
 fn main() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     // Note: layers() and filter() both try to initialize the global subscriber.
     // In a real application, only one subscriber should be initialized.
@@ -119,11 +125,13 @@ pub fn run() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
 mod tests {
     use super::*;
 
+    /// Checks that layers can be composed.
     #[test]
     fn test_layers() {
         layers();
     }
 
+    /// Checks that filters can be built.
     #[test]
     fn test_filter() {
         unsafe {
@@ -132,6 +140,7 @@ mod tests {
         filter().unwrap();
     }
 
+    /// Checks that a filter can be attached to a single layer.
     #[test]
     fn test_per_layer_filtering() {
         per_layer_filtering();

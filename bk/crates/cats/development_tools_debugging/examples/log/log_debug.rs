@@ -1,11 +1,16 @@
-// TODO Reviewed ??-??-2026
+//! Emitting a debug message with the `log` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// Executes a database query and logs it at the debug level.
 fn execute_query(query: &str) {
     log::debug!("Executing query: {query}");
 }
 
+/// Initializes `env_logger` and runs a query, which logs a debug message.
 fn main() {
     // `env_logger` is a simple logger that can be configured via environment
     // variables. Example: `RUST_LOG=info ./app`.

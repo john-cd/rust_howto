@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Instrumenting sync and async functions with `tracing` spans.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use tracing::Level;
 use tracing::event;
@@ -33,10 +37,12 @@ async fn my_async_function() {
     some_other_async_function().await;
 }
 
+/// Emits an event from inside the caller's span.
 async fn some_other_async_function() {
     trace!("I'm in some_other_async_function.");
 }
 
+/// Initializes a subscriber and calls the instrumented functions.
 #[tokio::main]
 async fn main() {
     // Initialize a tracing subscriber to see the events below.
@@ -59,6 +65,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks that the instrumented functions run.
     #[test]
     fn test_main() {
         tracing_subscriber::fmt()

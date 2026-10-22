@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Generating a GraphQL server from a database with Seaography.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // Seaography is an automated GraphQL framework for SeaORM.
 // It is primarily driven by generated code rather than hand-written query
@@ -21,6 +25,7 @@
 // ```
 // ANCHOR_END: example
 
+/// Placeholder: the example is the set of shell commands above.
 fn main() {} // TODO: Add an example of using the generated code from Seaography to interact with the database.
 
 /// Runs the example.

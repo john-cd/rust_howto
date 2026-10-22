@@ -1,9 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! Creating and entering spans with `tracing`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use tracing::Level;
 use tracing::span;
 
+/// Creates a span, enters it and emits events inside.
 fn main() {
     // Create a new span named "my_span" with the TRACE level.
     // Spans are used to represent a period of time in the execution of a
@@ -33,6 +38,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks that the span example runs.
     #[test]
     fn test_main() {
         tracing_subscriber::fmt()

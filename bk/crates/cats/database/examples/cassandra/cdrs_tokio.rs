@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Connecting to Cassandra with the `cdrs-tokio` async client.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // This example demonstrates asynchronous Cassandra access using `cdrs-tokio`.
 
@@ -22,26 +26,33 @@ use uuid::Uuid;
 
 // `cdrs_tokio` is a native async Cassandra DB client written in Rust.
 
+/// A session that uses TCP transport and round-robin load balancing.
 type CurrentSession = Session<
     TransportTcp,
     TcpConnectionManager,
     RoundRobinLoadBalancingStrategy<TransportTcp, TcpConnectionManager>,
 >;
 
+/// A row of the example table.
 #[derive(Clone, Debug, IntoCdrsValue, cdrs_tokio::TryFromRow, PartialEq)]
 struct RowStruct {
+    /// Unique identifier of the row.
     key: Uuid,
+    /// Name of the person.
     name: String,
+    /// Age of the person, in years.
     age: i32,
 }
 
 impl RowStruct {
+    /// Converts the row into the values bound to an insert query.
     fn into_query_values(self) -> QueryValues {
         // Transforms arguments to values consumed by queries
         query_values!("id" => self.key, "name" => self.name, "age" => self.age)
     }
 }
 
+/// Creates a table, inserts a row, selects it back and drops the table.
 async fn example() -> anyhow::Result<()> {
     // Load environment variables from a .env file (for secure handling of
     // credentials).
@@ -127,6 +138,7 @@ KEY, name TEXT, age INT);",
     Ok(())
 }
 
+/// Runs [`example`].
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     example().await

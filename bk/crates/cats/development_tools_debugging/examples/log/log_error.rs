@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Logging an error with the `log` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// Simulates executing a database query.
 /// This function always returns an error for demonstration purposes.
@@ -7,6 +11,7 @@ fn execute_query(_query: &str) -> Result<(), &'static str> {
     Err("I'm afraid I can't do that")
 }
 
+/// Runs a query that fails and logs the error.
 fn main() {
     env_logger::init();
 
