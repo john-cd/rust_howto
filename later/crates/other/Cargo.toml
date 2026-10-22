@@ -23,6 +23,9 @@ datafusion = ["dep:datafusion"]
 arrow = ["dep:arrow"]
 typegen = ["crux_core/typegen"] # for Crux
 polars = ["dep:polars"]
+# `polars` and `datafusion` can be enabled together: `Cargo.lock` resolves a single `chrono`
+# (polars-arrow 0.51 and datafusion 55 both accept it). Re-check with
+# `cargo tree --locked -i chrono --features polars,datafusion` when bumping either crate.
 
 [dependencies]
 
