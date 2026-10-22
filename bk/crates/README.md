@@ -64,7 +64,7 @@ You may also manually execute one of the following commands:
 ```bash
 cd <crate_folder>
 
-cargo +nightly fmt --all
+cargo +nightly-2026-10-22 fmt --all
 
 cargo check --tests --examples
 

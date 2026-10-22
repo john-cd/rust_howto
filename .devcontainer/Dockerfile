@@ -29,9 +29,9 @@ FROM rust:${RUST_IMAGE_LABEL} AS rust-core
 RUN rustup component add clippy rustfmt
 
 ## Install nightly with rustfmt - last, since it changes often
-RUN rustup toolchain install nightly --profile minimal --component rustfmt
+RUN rustup toolchain install nightly-2026-10-22 --profile minimal --component rustfmt
 ## Optional: make nightly the default
-#     && rustup default nightly
+#     && rustup default nightly-2026-10-22
 ## You must update all .github wokflows as well
 
 # ------------------------------------------------------------------------------------------------
@@ -96,7 +96,7 @@ RUN cargo fetch --locked --manifest-path /code/tools/Cargo.toml
 
 ## Build the tools in release mode
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
-    cargo +nightly build --bins --locked --all-features --release -Z unstable-options --artifact-dir /code/bin --manifest-path /code/tools/Cargo.toml
+    cargo +nightly-2026-10-22 build --bins --locked --all-features --release -Z unstable-options --artifact-dir /code/bin --manifest-path /code/tools/Cargo.toml
 
 # ------------------------------------------------------------------------------------------------
 
