@@ -1370,6 +1370,7 @@
 [rustup~documentation]: https://rust-lang.github.io/rustup
 [rustup~website]: https://rustup.rs
 [rustup~website~badge]: https://img.shields.io/badge/rustup-coral
+[rustfmt~attributes]: https://github.com/rust-lang/rustfmt#tips
 [rustwasm~website]: https://rustwasm.github.io/docs/book/reference/deploying-to-production.html
 [rusty-cs~repo]: https://github.com/AbdesamedBendjeddou/Rusty-CS
 [rust~book~async-await]: https://doc.rust-lang.org/book/ch17-00-async-await.html
