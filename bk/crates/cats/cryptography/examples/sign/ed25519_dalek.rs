@@ -9,7 +9,8 @@ use ed25519_dalek::Signer as _;
 use ed25519_dalek::SigningKey;
 use ed25519_dalek::Verifier as _;
 use ed25519_dalek::VerifyingKey;
-use rand_core::OsRng;
+use rand::rngs::SysRng;
+use rand_core::UnwrapErr;
 
 /// Ed25519 Signature Example
 ///
@@ -21,7 +22,7 @@ fn main() -> anyhow::Result<()> {
     // cryptographically secure pseudorandom number generator (CSPRNG).
     // For this example, we'll use the operating system's builtin PRNG:
 
-    let mut csprng = OsRng;
+    let mut csprng = UnwrapErr(SysRng);
     let signing_key: SigningKey = SigningKey::generate(&mut csprng);
 
     // Message to be signed:

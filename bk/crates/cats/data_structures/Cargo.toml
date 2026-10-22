@@ -28,7 +28,7 @@ clap = { version = "4.6.7", features = ["derive"] }
 crates_io_api = "0.12.0"
 flagset = "0.4.7"
 fnv = "1.0.7"
-heapless = "0.9.3" # TODO pinned elsewhere to 0.7.17 for postcard
+heapless = "0.9.3"
 indexmap = "2.14.2"
 linked-hash-map = "0.5.6"
 multimap = "0.10.1"
