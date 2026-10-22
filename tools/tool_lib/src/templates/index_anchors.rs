@@ -20,3 +20,36 @@ pub fn create_index_anchors(keywords: Vec<&str>) -> Result<String> {
 
     Ok(rendered)
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_create_index_anchors_multiple_keywords() {
+        let keywords = vec!["serde", "json", "parsing"];
+        let rendered = create_index_anchors(keywords).unwrap();
+        assert_eq!(rendered, "{{hi:serde}}{{hi:json}}{{hi:parsing}} ");
+    }
+
+    #[test]
+    fn test_create_index_anchors_single_keyword() {
+        let keywords = vec!["async"];
+        let rendered = create_index_anchors(keywords).unwrap();
+        assert_eq!(rendered, "{{hi:async}} ");
+    }
+
+    #[test]
+    fn test_create_index_anchors_empty() {
+        let keywords = vec![];
+        let rendered = create_index_anchors(keywords).unwrap();
+        assert_eq!(rendered, " ");
+    }
+
+    #[test]
+    fn test_create_index_anchors_special_characters() {
+        let keywords = vec!["tokio::spawn", "hello world"];
+        let rendered = create_index_anchors(keywords).unwrap();
+        assert_eq!(rendered, "{{hi:tokio::spawn}}{{hi:hello world}} ");
+    }
+}
