@@ -1,9 +1,10 @@
-// TODO Reviewed ??-??-2026
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Adapted from https://github.com/RealAtix/mdbook-private (Razvan Nicolescu).
 //! mdBook 0.5-compatible private chapter and comment filtering.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::sync::LazyLock;
 

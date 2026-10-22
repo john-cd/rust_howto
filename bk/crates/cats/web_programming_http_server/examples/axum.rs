@@ -1,7 +1,3 @@
-// TODO Reviewed ??-??-2026
-#![allow(dead_code)]
-#![allow(unused_variables)]
-// // ANCHOR: example
 //! This module demonstrates basic usage of axum.
 //!
 //! `axum` is a web application framework designed to work with `tokio`
@@ -12,6 +8,12 @@
 //! - <https://docs.rs/axum/latest/axum/index.html>
 //! - <https://docs.rs/axum/0.8.1/axum/extract/struct.State.html>
 //! - <https://docs.rs/axum/0.8.1/axum/extract/index.html>
+//!
+//! TODO Reviewed ??-??-2026
+
+#![allow(dead_code)]
+#![allow(unused_variables)]
+// // ANCHOR: example
 use std::collections::HashMap;
 use std::sync::Arc;
 
