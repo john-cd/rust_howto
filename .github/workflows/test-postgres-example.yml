@@ -7,11 +7,13 @@ on:
     paths:
       - "bk/crates/cats/database/**"
       - ".github/workflows/test-postgres-example.yml"
+      - ".github/actions/**"
   push:
     branches: [develop, "codex/**"]
     paths:
       - "bk/crates/cats/database/**"
       - ".github/workflows/test-postgres-example.yml"
+      - ".github/actions/**"
   workflow_dispatch:
 
 permissions:
@@ -37,22 +39,24 @@ jobs:
     env:
       CARGO_TARGET_DIR: ${{ github.workspace }}/target
       CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/target/build
+      RUSTC_WRAPPER: "" # `.cargo/config.toml` enables sccache, which CI does not install.
       REQUIRE_PG_SERVICE: "1"
       TEST_PG_URL: host=127.0.0.1 port=5432 user=postgres password=password dbname=library
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        # actions/checkout v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
-      - name: Install pinned Rust toolchain
-        shell: bash
-        run: |
-          rust_version="$(sed -n 's/^RUST_VERSION="\([^"]*\)"$/\1/p' .devcontainer/.env)"
-          if [[ -z "$rust_version" ]]; then
-            echo "RUST_VERSION is missing from .devcontainer/.env" >&2
-            exit 1
-          fi
-          rustup toolchain install "$rust_version" --profile minimal
-          rustup default "$rust_version"
+      - name: Load pinned tool versions
+        uses: ./.github/actions/load-pinned-versions
+
+      - name: Set up Rust
+        uses: ./.github/actions/setup-rust
+        with:
+          toolchain: ${{ env.RUST_VERSION }}
+          nightly: ""
+          components: ""
+          cache-workspaces: bk/crates -> ../../target
 
       - name: Run the PostgreSQL CRUD and connection teardown test
         run: cargo test --locked -p database --features postgres --test postgres -- --test-threads=1
