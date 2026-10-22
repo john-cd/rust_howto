@@ -3,6 +3,8 @@
 
 {{#include reference-to-reference_conversions.incl.md}}
 
+[![Rust by Example - conversion][book~rust-by-example~conversion~badge]][book~rust-by-example~conversion]
+
 ## Accept Arguments of Multiple Types with `AsRef` {#asref}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}

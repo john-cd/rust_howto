@@ -3,6 +3,8 @@
 
 {{#include dynamic_typing.incl.md}}
 
+[![Rust by Example - dyn][book~rust-by-example~dyn~badge]][book~rust-by-example~dyn]
+
 ## Determine the Type of an Object at Runtime and Downcast with the `Any` Trait {#any-trait}
 
 [![std][c~std~docs~badge]][c~std~docs]

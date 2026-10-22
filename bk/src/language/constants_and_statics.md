@@ -3,6 +3,8 @@
 
 {{#include constants_and_statics.incl.md}}
 
+[![Rust by Example - constants][book~rust-by-example~constants~badge]][book~rust-by-example~constants]
+
 Both `const` (constants) and `static` (static variables) are used to declare values that live for the entire duration of a program.
 
 ## Declare Constants {#constants}

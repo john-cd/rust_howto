@@ -3,6 +3,8 @@
 
 {{#include value_comparison.incl.md}}
 
+[![Rust by Example - derive][book~rust-by-example~derive~badge]][book~rust-by-example~derive]
+
 ## Test for Equality with `PartialEq` and `Eq` {#eq}
 
 [![std][c~std~docs~badge]][c~std~docs]

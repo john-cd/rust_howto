@@ -3,6 +3,8 @@
 
 {{#include automatic_trait_derivation.incl.md}}
 
+[![Rust by Example - derive][book~rust-by-example~derive~badge]][book~rust-by-example~derive]
+
 ## Derive Common Traits Automatically {#derive}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:Attributes}}{{hi:derive}}{{hi:Default implementation}}

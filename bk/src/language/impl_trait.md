@@ -3,6 +3,8 @@
 
 {{#include impl_trait.incl.md}}
 
+[![Rust by Example - impl Trait][book~rust-by-example~impl_trait~badge]][book~rust-by-example~impl_trait]
+
 ## Simplify Method Signatures with `impl Trait` {#impl-trait}
 
 `impl Trait`, where `impl` is a keyword and `Trait` is a trait name, specifies an unnamed but concrete type that implements a specific trait. It can only appear in argument position (where it can act as an anonymous type parameter to functions) and in return position (where it can act as an opaque return type).

@@ -3,6 +3,8 @@
 
 {{#include recoverable_error_handling.incl.md}}
 
+[![Rust by Example - error][book~rust-by-example~error~badge]][book~rust-by-example~error]
+
 ## Handle Recoverable Errors with `Result` {#result}
 
 [![std][c~std~docs~badge]][c~std~docs]
