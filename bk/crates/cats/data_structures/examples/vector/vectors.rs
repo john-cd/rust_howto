@@ -1,9 +1,14 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
 #![allow(clippy::vec_init_then_push)]
 #![allow(clippy::useless_vec)]
 #![allow(clippy::unnecessary_fold)]
+
 // ANCHOR: example
+//! This example demonstrates vector creation, manipulation, iteration, and
+//! slices in Rust.
+//!
+//! TODO Reviewed ??-??-2026
+
 fn main() {
     demonstrate_creation();
     demonstrate_manipulation();
