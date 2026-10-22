@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates the usage of the `itertools` crate.
 //!
@@ -10,6 +10,9 @@
 //! ```toml
 //! itertools = "0.14.0"
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
+
 use itertools::Itertools;
 use itertools::assert_equal;
 use itertools::chain;
@@ -62,6 +65,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

@@ -1,7 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Run the benchmarks with `cargo bench`:
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::hint::black_box;
 
 use criterion::Criterion;
@@ -29,6 +32,7 @@ fn benchmark_fibonacci(c: &mut Criterion) {
 // Use `criterion_group!` and `criterion_main!` macros to specify and run the
 // benchmarks.
 criterion_group!(benches, benchmark_fibonacci);
+
 criterion_main!(benches);
 // ANCHOR_END: example
 
@@ -40,6 +44,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

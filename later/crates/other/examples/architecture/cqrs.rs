@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! CQRS (Command Query Responsibility Segregation) is an architectural
 //! pattern that separates the models for reading and writing data.
@@ -10,6 +10,8 @@
 //! - Commands and queries are handled separately.
 //! - The write side (commands) focuses on state changes.
 //! - The read side (queries) focuses on efficient data retrieval.
+//!
+//! TODO Reviewed ??-??-2026
 
 /// Domain Model.
 mod domain {
@@ -80,6 +82,7 @@ mod events {
     /// Events are stored in the Event Store.
     pub trait EventRepository {
         fn apply_event(&self, event: ProductEvent);
+
         fn get_events(&self, limit: Option<usize>) -> Vec<ProductEvent>;
     }
 
@@ -246,6 +249,7 @@ mod read_store {
     /// Repository with domain objects.
     pub trait ProductRepository {
         fn get_product(&self, id: u32) -> Option<Product>;
+
         fn get_all_products(&self) -> Vec<Product>;
     }
 
@@ -400,6 +404,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         // We just execute main, which shouldn't panic

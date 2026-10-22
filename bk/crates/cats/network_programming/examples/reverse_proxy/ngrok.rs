@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates a simple HTTP server that can be exposed to the
 //! internet using `ngrok`.
@@ -33,6 +33,8 @@
 //!    reverse_proxy`
 //! 3. Start ngrok: `ngrok http 3000`
 //! 4. Access the server from the internet using the ngrok URL.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::net::SocketAddr;
 

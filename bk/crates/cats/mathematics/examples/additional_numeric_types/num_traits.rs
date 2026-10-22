@@ -1,7 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! The `num_traits` crate provides numeric traits for generic mathematics.
+//!
+//! TODO Reviewed ??-??-2026
+
 use num_traits::NumCast;
 use num_traits::One;
 use num_traits::Zero;
@@ -32,6 +35,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

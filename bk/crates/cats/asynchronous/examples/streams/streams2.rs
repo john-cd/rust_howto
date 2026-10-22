@@ -1,6 +1,6 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
 #![allow(clippy::single_match)]
+
 // ANCHOR: example
 //! This example demonstrates downloading multiple files concurrently using
 //! streams.
@@ -8,6 +8,8 @@
 //! It uses `reqwest` to download files from URLs and `tokio` for asynchronous
 //! operations. The `futures` crate provides the `StreamExt` trait for working
 //! with streams.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::fs;
 
@@ -73,6 +75,7 @@ pub fn run() -> Result {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn require_network() -> anyhow::Result<()> {
         main()?;

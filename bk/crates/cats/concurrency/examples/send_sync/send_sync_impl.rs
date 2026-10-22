@@ -1,4 +1,3 @@
-// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Simplified implementation of the `Arc` smart pointer.
 //!
@@ -7,6 +6,9 @@
 //! reference count.
 //!
 //! This implementation is not intended for production use.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 
 mod my {
@@ -30,6 +32,7 @@ mod my {
 
     // `ArcInner` should be `Send` and `Sync` if the underlying data is.
     unsafe impl<T: Sync + Send> Send for ArcInner<T> {}
+
     unsafe impl<T: Sync + Send> Sync for ArcInner<T> {}
 
     /// A simplified implementation of `Arc`.
@@ -46,6 +49,7 @@ mod my {
     // across threads safely. By implementing `Sync`, we declare it can be
     // shared across threads safely.
     unsafe impl<T: Sync + Send> Send for Arc<T> {}
+
     unsafe impl<T: Sync + Send> Sync for Arc<T> {}
 
     impl<T> Arc<T> {
@@ -210,6 +214,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

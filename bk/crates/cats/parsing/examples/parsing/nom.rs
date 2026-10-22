@@ -1,9 +1,11 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! `nom` is a parser combinator library, which makes it easy to build parsers
 //! from small, reusable components. Below is a simple example demonstrating how
 //! to use `nom` to parse a comma-separated list of numbers.
+//!
+//! TODO Reviewed ??-??-2026
 
 use nom::IResult;
 use nom::Parser;
@@ -55,6 +57,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

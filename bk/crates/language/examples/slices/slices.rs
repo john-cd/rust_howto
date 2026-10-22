@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! A slice is a view into a contiguous sequence of elements in a collection.
 //! It does not own the data it points to.
+//!
+//! TODO Reviewed ??-??-2026
 
 /// Create slices from an array:
 fn slice_from_array() {
@@ -48,6 +50,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

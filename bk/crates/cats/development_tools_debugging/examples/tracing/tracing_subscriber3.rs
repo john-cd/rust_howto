@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to enable or
 //! disable layers at runtime based on a configuration flag.
@@ -7,6 +7,8 @@
 //! It configures a `tracing` subscriber with multiple layers, including a
 //! human-readable pretty-printed layer and an optional JSON-formatted layer
 //! that logs to a file.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::fs::File;
 
@@ -71,6 +73,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         use std::fs;

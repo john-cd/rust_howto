@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! `Result` is a type that represents either success (`Ok`) or failure (`Err`):
 //!
@@ -9,6 +9,8 @@
 //!     Err(E),
 //! }
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::fs::File;
 use std::io;
@@ -94,6 +96,7 @@ impl From<io::Error> for MyError {
         MyError::Io(err)
     }
 }
+
 impl From<ParseIntError> for MyError {
     fn from(err: ParseIntError) -> MyError {
         MyError::Parse(err)
@@ -176,6 +179,7 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main().unwrap();

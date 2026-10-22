@@ -1,4 +1,3 @@
-// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates using `seize` for safe, concurrent memory reclamation.
 //!
@@ -18,6 +17,8 @@
 //! ```toml
 //! seize = "0.5"
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::sync::Arc;
 use std::sync::atomic::AtomicPtr;
@@ -81,6 +82,7 @@ fn main() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Examples of use of the 'crates.io' API.
+//!
+//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use crates_io_api::CrateResponse;
@@ -98,6 +100,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     #[ignore = "requires crates.io API access"]
     fn test_main() -> anyhow::Result<()> {

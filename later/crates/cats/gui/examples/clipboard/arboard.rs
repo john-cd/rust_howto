@@ -1,4 +1,3 @@
-// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to interact with the system clipboard using
 //! the `arboard` crate.
@@ -8,6 +7,9 @@
 //!
 //! This example shows how to create a clipboard instance, set text to the
 //! clipboard, and get text from the clipboard.
+//!
+//! TODO Reviewed ??-??-2026
+
 use arboard::Clipboard;
 
 fn main() {

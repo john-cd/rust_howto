@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Calculate how long an application should wait after hitting a rate limit.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::time::Duration;
 use std::time::SystemTime;
@@ -67,6 +69,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> Result<()> {
         main()

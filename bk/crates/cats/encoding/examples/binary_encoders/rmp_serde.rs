@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Serialize and deserialize a struct with MessagePack via `rmp-serde`.
+//!
+//! TODO Reviewed ??-??-2026
 
 use serde::Deserialize;
 use serde::Serialize;
@@ -37,6 +39,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()

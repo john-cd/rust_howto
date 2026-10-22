@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Build successive paginated URLs for an HTTP API.
+//!
+//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use url::Url;
@@ -52,6 +54,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> Result<()> {
         main()

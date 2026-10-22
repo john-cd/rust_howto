@@ -1,10 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! The following demonstrates TOML decoding.
 //!
 //! TOML is a minimal configuration file format.
 //! It is designed to map unambiguously to a hash table.
+//!
+//! TODO Reviewed ??-??-2026
 
 // Representation of a TOML value e.g. String,
 // Integer, Float, Array, Table...
@@ -82,6 +84,7 @@ pub fn run() -> Result<(), Error> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

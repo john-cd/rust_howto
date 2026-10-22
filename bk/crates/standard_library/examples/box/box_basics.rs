@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Basic `Box` usage.
+//!
+//! TODO Reviewed ??-??-2026
 
 /// An example struct, which does not implement the `Copy` trait.
 /// This means that when an instance of `MyStruct` is moved, the original
@@ -51,6 +53,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

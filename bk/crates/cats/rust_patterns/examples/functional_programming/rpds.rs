@@ -1,11 +1,14 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! # RPDS (Rust Persistent Data Structures) Example
 //!
 //! This example demonstrates the use of the `rpds` crate, which provides
 //! purely functional (immutable) data structures with structural sharing for
 //! efficiency.
+//!
+//! TODO Reviewed ??-??-2026
+
 use rpds::HashTrieMap;
 use rpds::Vector;
 
@@ -51,6 +54,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

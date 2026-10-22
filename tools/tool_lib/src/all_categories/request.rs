@@ -40,6 +40,7 @@ mod tests {
 
     use super::*;
     use crate::EnvGuard;
+
     static ENV_MUTEX: Mutex<()> = Mutex::new(());
 
     // Test successful retrieval of the TOML string.

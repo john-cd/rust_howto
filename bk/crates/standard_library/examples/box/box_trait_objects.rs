@@ -1,9 +1,11 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Example of using `Box` as a smart pointer for trait objects.
 //!
 //! `Box` can be used to store an owned trait object on the heap.
+//!
+//! TODO Reviewed ??-??-2026
 
 // Let's define an example trait and implement it on two structs.
 trait Shape {
@@ -58,6 +60,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

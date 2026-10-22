@@ -1,10 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Build a Rustls client configuration and async connector.
 //!
 //! This example creates a `ClientConfig` with an empty root store and
 //! wraps it in a tokio-compatible TLS connector.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::sync::Arc;
 
@@ -36,6 +38,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()

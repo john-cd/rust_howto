@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates a simple `riker` actor that receives a message.
+//!
+//! TODO Reviewed ??-??-2026
 
 use riker::actors::*;
 
@@ -47,6 +49,7 @@ fn main() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

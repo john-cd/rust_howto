@@ -1,9 +1,10 @@
-// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Typical lint attributes for production code.
 //!
 //! The following is a set of attributes commonly used in production
 //! code to enforce good practices and catch potential issues early.
+//!
+//! TODO Reviewed ??-??-2026
 
 // The `warn` attribute creates compiler warnings in case of violation.
 #![warn(unused, missing_debug_implementations, missing_docs, rust_2018_idioms)]
@@ -51,6 +52,7 @@ pub(crate) fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

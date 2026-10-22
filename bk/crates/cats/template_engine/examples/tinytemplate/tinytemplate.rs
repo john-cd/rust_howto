@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Example showcasing `tinytemplate`.
 //!
@@ -12,6 +12,8 @@
 //! strings loaded at runtime, this is not recommended.
 //!
 //! TinyTemplate can only render templates into Strings, not socket or file.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 
@@ -58,6 +60,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

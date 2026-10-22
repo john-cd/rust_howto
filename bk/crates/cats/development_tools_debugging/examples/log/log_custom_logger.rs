@@ -1,9 +1,11 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to create a custom logger.
 //!
 //! The custom logger will print log messages to the console.
+//!
+//! TODO Reviewed ??-??-2026
 
 use log::Level;
 use log::LevelFilter;
@@ -49,6 +51,7 @@ pub fn run() -> Result<(), SetLoggerError> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main().unwrap();

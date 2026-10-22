@@ -29,6 +29,7 @@ mod a_module {
     /// Public trait.
     pub trait Trait {
         type Out; // Public-by-default associated type.
+
         // Visibility qualifiers are not permitted below:
         fn method(&self) -> Self::Out;
     }
@@ -56,6 +57,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

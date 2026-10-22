@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Serialize and deserialize a Protocol Buffers message generated with `prost`.
+//!
+//! TODO Reviewed ??-??-2026
 
 use person::Person;
 use prost::Message;
@@ -33,6 +35,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

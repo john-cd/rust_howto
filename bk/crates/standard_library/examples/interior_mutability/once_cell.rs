@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! `OnceCell<T>` allows for single assignment, interior mutability.
 //! It's typically used for lazy initialization of a value.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::cell::OnceCell;
 
@@ -46,6 +48,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

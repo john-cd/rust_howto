@@ -61,6 +61,7 @@ impl<T> Spinlock<T> {
 // Allow the spinlock to be shared across threads if the data is `Send`.
 // The `UnsafeCell` requires us to manually declare this.
 unsafe impl<T: Send> Sync for Spinlock<T> {}
+
 unsafe impl<T: Send> Send for Spinlock<T> {}
 
 // --- SpinlockGuard Implementation ---
@@ -162,6 +163,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

@@ -11,6 +11,7 @@ use crate::model::book::Renderable;
 use crate::read_write;
 
 mod filters;
+
 use filters::*;
 
 static TEMPLATES: LazyLock<Result<Tera, tera::Error>> = LazyLock::new(|| {

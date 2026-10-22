@@ -1,8 +1,11 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to run an external command, capture its
 //! output, and parse it.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::process::Command;
 
 use anyhow::Result;
@@ -58,6 +61,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn ignore_in_ci() -> anyhow::Result<()> {
         main()?;

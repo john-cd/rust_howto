@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! `const` Example.
+//!
+//! TODO Reviewed ??-??-2026
 
 // Declare a constant in the global scope.
 // - The type must be provided.
@@ -93,6 +95,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

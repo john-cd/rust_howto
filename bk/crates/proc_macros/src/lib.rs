@@ -34,6 +34,7 @@ pub fn log_calls(_attr: TokenStream, item: TokenStream) -> TokenStream {
     TokenStream::from(expanded)
 }
 // ANCHOR_END: attribute_macro
+
 // ANCHOR: derive_macro
 // The `proc_macro_derive` attribute marks the public function
 // `debug_print_derive` as a custom `derive` macro for the `DebugPrint` trait.

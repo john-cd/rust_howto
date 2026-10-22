@@ -1,8 +1,11 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
-#![allow(unused_assignments)]
 //! This example demonstrates common string types in Rust.
+//!
+//! TODO Reviewed ??-??-2026
+
+#![allow(unused_assignments)]
 
 // `String` is a growable, heap-allocated data structure that is
 // Unicode, not ASCII.
@@ -115,6 +118,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

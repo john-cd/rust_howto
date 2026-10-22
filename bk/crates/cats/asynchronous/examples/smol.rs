@@ -1,6 +1,7 @@
-// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates a small asynchronous workload using `smol`.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::time::Duration;
 
@@ -34,6 +35,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main().unwrap();

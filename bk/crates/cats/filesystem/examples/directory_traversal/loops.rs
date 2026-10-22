@@ -1,8 +1,11 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
-#![cfg(target_os = "linux")]
 //! This example demonstrates the use of the `same_file` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
+#![cfg(target_os = "linux")]
 
 use std::io;
 use std::path::Path;
@@ -61,6 +64,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         // mkdir -p /tmp/foo/bar/baz

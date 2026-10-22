@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates deserializing CSV records into a struct.
+//!
+//! TODO Reviewed ??-??-2026
 
 use serde::Deserialize;
 
@@ -41,6 +43,7 @@ pub fn run() -> Result<(), csv::Error> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

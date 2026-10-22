@@ -1,5 +1,6 @@
-// TODO Reviewed ??-??-2026
 //! Example building cargo plugins and executing shells
+//!
+//! TODO Reviewed ??-??-2026
 
 mod xshell;
 

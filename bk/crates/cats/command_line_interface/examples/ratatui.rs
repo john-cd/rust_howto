@@ -208,6 +208,7 @@ impl Widget for MiddleWidget {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn handle_key_event() -> io::Result<()> {
         let mut app = App::default();

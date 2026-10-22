@@ -1,10 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to check for broken links on a website.
 //!
 //! `select` is a library to extract useful data from HTML documents, suitable
 //! for web scraping.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::collections::HashSet;
 
@@ -80,6 +82,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[ignore = "Needs review"]
     #[test]
     fn require_network() -> anyhow::Result<()> {

@@ -1,7 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use the `tl` crate to parse HTML.
+//!
+//! TODO Reviewed ??-??-2026
+
 use tl::Node;
 use tl::Parser;
 use tl::VDom;
@@ -65,6 +68,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

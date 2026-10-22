@@ -1,8 +1,11 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Example of a function accepting either owned or borrowed values
 //! at its input.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::borrow::Cow;
 
 /// A function consuming a `Cow`:
@@ -35,6 +38,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

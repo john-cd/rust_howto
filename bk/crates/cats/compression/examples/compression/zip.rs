@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Example of using the `zip` crate.
 //!
@@ -8,6 +8,8 @@
 //! This example demonstrates how to create a ZIP archive, add files and
 //! directories to it, and set file options such as compression method and
 //! permissions.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::fs::File;
 use std::io::Write;
@@ -56,6 +58,7 @@ pub fn run() -> zip::result::ZipResult<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         use std::fs;

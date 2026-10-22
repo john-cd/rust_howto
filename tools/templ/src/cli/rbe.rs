@@ -1,5 +1,6 @@
-// TODO Reviewed ??-??-2026
 //! Handle the `rbe` CLI subcommand
+//!
+//! TODO Reviewed ??-??-2026
 
 use clap::Arg;
 use clap::ArgMatches;

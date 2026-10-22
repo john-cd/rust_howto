@@ -86,6 +86,7 @@ pub fn run() -> PyResult<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> PyResult<()> {
         main()

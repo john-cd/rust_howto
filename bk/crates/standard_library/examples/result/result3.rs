@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates the use of `as_ref`, `as_deref`, and `as_mut` methods on
 //! `Result`.
+//!
+//! TODO Reviewed ??-??-2026
 
 fn get_message(success: bool) -> Result<String, &'static str> {
     if success {
@@ -44,6 +46,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

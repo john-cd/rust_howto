@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use the `directories` crate to find the
 //! user's data and config directories for a specific application.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::path::PathBuf;
 
@@ -53,6 +55,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

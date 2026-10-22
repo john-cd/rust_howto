@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Example demonstrating TOML parsing and deserialization.
+//!
+//! TODO Reviewed ??-??-2026
 
 use serde::Deserialize;
 use toml::value::Datetime;
@@ -51,6 +53,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

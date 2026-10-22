@@ -1,7 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates invalid data handling when reading a CSV file.
+//!
+//! TODO Reviewed ??-??-2026
+
 use csv::Error;
 use serde::Deserialize;
 
@@ -43,6 +46,7 @@ pub fn run() -> Result<(), Error> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

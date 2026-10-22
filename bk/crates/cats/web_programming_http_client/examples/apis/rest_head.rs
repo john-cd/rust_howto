@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use the `HEAD` method to check if a
 //! resource exists.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::time::Duration;
 
@@ -36,6 +38,7 @@ pub fn run() -> reqwest::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn require_network() -> anyhow::Result<()> {
         main()?;

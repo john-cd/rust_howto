@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! A simple PolkaVM host example.
 //!
@@ -14,6 +14,8 @@
 //! ```
 //!
 //! The guest should import `host_increment` and export `add_one_with_host`.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::convert::Infallible;
 use std::env;

@@ -1,7 +1,6 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
-#![cfg(target_family = "unix")]
 //! This example demonstrates how to send input to an external command's
 //! standard input (`stdin`) and process its standard output (`stdout`) and
 //! standard error (`stderr`).
@@ -12,6 +11,10 @@
 //! output is successful. If successful, it parses the output, splits it into
 //! words, converts them to lowercase, and stores them in a `HashSet` to get
 //! unique words.
+//!
+//! TODO Reviewed ??-??-2026
+
+#![cfg(target_family = "unix")]
 
 use std::collections::HashSet;
 use std::io::Write;
@@ -71,6 +74,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

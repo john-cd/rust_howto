@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Tokenize HTML with `html5ever` and print the parsed tokens.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::cell::Cell;
 
@@ -90,6 +92,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

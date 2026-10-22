@@ -1,5 +1,6 @@
-// TODO Reviewed ??-??-2026
 //! Crate registries examples.
+//!
+//! TODO Reviewed ??-??-2026
 
 mod crates_io;
 

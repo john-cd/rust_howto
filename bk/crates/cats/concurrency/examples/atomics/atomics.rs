@@ -1,11 +1,14 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates the use of atomic types.
 //!
 //! This example uses `AtomicUsize` to maintain a global counter of threads.
 //! Atomic operations ensure that modifications to the counter are
 //! thread-safe.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::sync::atomic::AtomicUsize;
 use std::sync::atomic::Ordering;
 
@@ -49,6 +52,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

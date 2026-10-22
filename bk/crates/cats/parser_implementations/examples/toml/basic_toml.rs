@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use the maintained `toml` crate to parse
 //! and serialize TOML data.
@@ -11,6 +11,9 @@
 //! chrono = { version = "0.4.40", features = [ "serde" ] }
 //! serde = { version = "1.0.219", features = [ "derive" ] }
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::collections::HashMap;
 use std::fs;
 
@@ -92,6 +95,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         use std::fs;

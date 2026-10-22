@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates how to build a URL by joining a base URL with a path.
+//!
+//! TODO Reviewed ??-??-2026
 
 use url::ParseError;
 use url::Url;
@@ -43,6 +45,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use the `bcrypt` crate to hash and verify
 //! passwords.
@@ -7,6 +7,9 @@
 //! The `bcrypt` crate provides a way to securely hash passwords using the
 //! bcrypt algorithm. It is a one-way function, meaning that it is
 //! computationally infeasible to reverse the hash.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::error::Error;
 
 use bcrypt::DEFAULT_COST;
@@ -43,6 +46,7 @@ pub fn run() -> Result<(), Box<dyn Error>> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> Result<(), Box<dyn Error>> {
         main()?;

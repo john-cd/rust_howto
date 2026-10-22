@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates parsing, comparing, and serializing complex semantic version
 //! strings.
+//!
+//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use semver::BuildMetadata;
@@ -44,6 +46,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

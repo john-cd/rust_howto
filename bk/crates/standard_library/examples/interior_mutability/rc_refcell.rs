@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! A common pattern in Rust is using `Rc<RefCell<T>>` to allow multiple
 //! owners of mutable data in a single-threaded scenario.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::cell::RefCell;
 use std::rc::Rc;
@@ -40,6 +42,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

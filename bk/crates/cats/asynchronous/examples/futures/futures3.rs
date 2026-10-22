@@ -1,6 +1,6 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
 #![allow(clippy::async_yields_async)]
+
 // ANCHOR: example
 //! # Futures
 //!
@@ -12,6 +12,9 @@
 //! - Chain computations onto a future using `then`.
 //! - Use conditional `Either` futures.
 //! - Flatten nested futures.
+//!
+//! TODO Reviewed ??-??-2026
+
 use anyhow::Result;
 use futures::future::FutureExt;
 
@@ -59,6 +62,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> Result<()> {
         main()?;

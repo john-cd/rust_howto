@@ -1,11 +1,13 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Example using the `sled` embeddable database.
 //!
 //! `sled` is a pure-Rust high-performance embedded database.
 //!
 //! Add `sled = "0.34.7"` (or latest) to `Cargo.toml`.
+//!
+//! TODO Reviewed ??-??-2026
 
 fn main() -> anyhow::Result<()> {
     // Open a sled database.
@@ -81,6 +83,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

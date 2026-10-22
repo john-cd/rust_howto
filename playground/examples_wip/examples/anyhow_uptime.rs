@@ -1,6 +1,7 @@
-// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates reading system uptime using `anyhow` for error handling.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::fs::File;
 use std::io::Read;
@@ -40,6 +41,7 @@ fn main() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main().unwrap();

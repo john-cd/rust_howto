@@ -1,10 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to extract all the links from a web page.
 //!
 //! `select` is a library to extract useful data from HTML documents, suitable
 //! for web scraping.
+//!
+//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use select::document::Document;
@@ -34,6 +36,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn require_network() -> anyhow::Result<()> {
         main()?;

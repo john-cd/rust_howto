@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates the use of `DashMap` for concurrent data access and
 //! modification.
@@ -7,6 +7,8 @@
 //! This example showcases how to create a shared `DashMap`, access and modify
 //! it from multiple threads, and perform various operations like insertion,
 //! retrieval, modification, and removal.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::sync::Arc;
 use std::thread;
@@ -87,6 +89,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

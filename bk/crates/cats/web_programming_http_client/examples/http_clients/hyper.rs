@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Example of using the `hyper` low-level HTTP client to fetch a URL.
 //!
@@ -7,6 +7,8 @@
 //! - Connect to a remote server using TCP.
 //! - Perform an HTTP GET request.
 //! - Stream the response body to stdout.
+//!
+//! TODO Reviewed ??-??-2026
 
 use anyhow::Context;
 use http_body_util::BodyExt;
@@ -92,6 +94,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn require_network() -> anyhow::Result<()> {
         main()?;

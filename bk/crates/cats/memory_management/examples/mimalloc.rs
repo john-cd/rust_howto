@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates the use of the mimalloc memory allocator.
 //!
@@ -20,6 +20,8 @@
 //! [dependencies]
 //! mimalloc = { version = "*", features = ["secure"] }
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
 
 use mimalloc::MiMalloc;
 
@@ -36,6 +38,7 @@ fn main() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

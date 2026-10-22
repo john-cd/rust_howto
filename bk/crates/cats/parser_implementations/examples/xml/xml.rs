@@ -1,8 +1,11 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to read and write XML data using the
 //! `xml-rs` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 use xml::reader::EventReader;
 use xml::reader::XmlEvent;
 use xml::writer::EmitterConfig;
@@ -103,6 +106,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

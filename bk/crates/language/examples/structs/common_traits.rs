@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Implementation of Common Traits on a `struct`.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::fmt;
 use std::hash::Hash;
@@ -93,6 +95,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

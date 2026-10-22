@@ -1,10 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! A FreeBSD-specific example using the `nix` crate to call FreeBSD APIs.
 //!
 //! This example prints operating system information from `uname` and the
 //! current process ID / parent process ID.
+//!
+//! TODO Reviewed ??-??-2026
 
 #[cfg(target_os = "freebsd")]
 fn main() {

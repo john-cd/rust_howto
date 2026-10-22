@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to compare vectors using the `approx` crate.
+//!
+//! TODO Reviewed ??-??-2026
 
 use approx::assert_abs_diff_eq;
 use ndarray::Array;
@@ -38,6 +40,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

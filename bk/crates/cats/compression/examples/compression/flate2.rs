@@ -1,11 +1,13 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Example of using the `flate2` crate.
 //!
 //! `flate2` is a stream compression library that supports DEFLATE, zlib,
 //! and gzip formats. This example compresses bytes into a Zlib buffer,
 //! then decompresses them back to text.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::io::Read;
 use std::io::Write;
@@ -43,6 +45,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()

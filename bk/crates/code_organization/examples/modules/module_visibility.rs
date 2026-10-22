@@ -16,6 +16,7 @@ mod my_module {
     fn private_function() {
         println!("Called private_function inside my_module.");
     }
+
     // Use `pub` to make items public.
     pub fn public_function() {
         println!("Called public_function inside my_module.");
@@ -84,6 +85,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

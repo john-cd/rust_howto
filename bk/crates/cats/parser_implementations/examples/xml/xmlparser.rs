@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Parse a small XML document token by token with `xmlparser`.
+//!
+//! TODO Reviewed ??-??-2026
 
 use xmlparser::ElementEnd;
 use xmlparser::Token;
@@ -48,6 +50,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

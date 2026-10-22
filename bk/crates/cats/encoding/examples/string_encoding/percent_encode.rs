@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Example of percent encoding and decoding strings.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::str::Utf8Error;
 
@@ -48,6 +50,7 @@ pub fn run() -> Result<(), Utf8Error> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

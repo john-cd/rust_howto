@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Parsing from raw bytes.
+//!
+//! TODO Reviewed ??-??-2026
 
 #[derive(Debug)]
 struct Message(String);
@@ -28,6 +30,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

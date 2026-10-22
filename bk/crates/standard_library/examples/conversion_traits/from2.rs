@@ -1,7 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(unused)]
+
 // ANCHOR: example
 //! Converting Custom Errors.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::io;
 
 #[derive(Debug)]
@@ -42,6 +45,7 @@ fn test_main() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         assert!(main().is_err());

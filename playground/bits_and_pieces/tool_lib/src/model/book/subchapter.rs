@@ -16,6 +16,7 @@ impl Renderable for Subchapter {
             "{{}}".into(),
         )]
     }
+
     /// Returns the children of this subchapter.
     fn get_children(&self) -> impl IntoIterator<Item = impl Renderable> {
         std::iter::empty::<Render>()

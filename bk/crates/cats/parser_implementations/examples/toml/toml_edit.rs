@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use the `toml_edit` crate to
 //! parse, modify, and print TOML documents while preserving the
@@ -7,6 +7,9 @@
 //!
 //! Use `toml_edit` instead of `toml` for format-preserving editing or finer
 //! control over output.
+//!
+//! TODO Reviewed ??-??-2026
+
 use toml_edit::DocumentMut;
 use toml_edit::Item;
 use toml_edit::value;
@@ -84,6 +87,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

@@ -1,10 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Build and inspect basic X.509 certificate data with the `x509_cert` crate.
 //!
 //! The example demonstrates DER encoding of names, serial numbers, and
 //! validity periods.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::str::FromStr;
 use std::time::Duration;
@@ -33,6 +35,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()

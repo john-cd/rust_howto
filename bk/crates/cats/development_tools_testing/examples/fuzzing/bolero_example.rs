@@ -1,9 +1,11 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! `bolero` is a fuzzing frontend for Rust that supports multiple engines
 //! like libFuzzer, AFL, and Honggfuzz. It also allows running fuzz targets
 //! as regular unit tests.
+//!
+//! TODO Reviewed ??-??-2026
 
 use bolero::check;
 
@@ -38,6 +40,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_bolero() {
         // When running as a test, it uses a default number of iterations.

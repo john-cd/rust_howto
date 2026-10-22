@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates how to use tracing spans to instrument code,
 //! including synchronous and asynchronous code.
@@ -9,6 +9,8 @@
 //! - Entering and exiting spans using `in_scope`.
 //! - Instrumenting async blocks and functions using `instrument`.
 //! - How spans are handled across `await` points.
+//!
+//! TODO Reviewed ??-??-2026
 
 // Extension trait allowing futures to be instrumented with a tracing span,
 // via `instrument(...)`:
@@ -78,6 +80,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

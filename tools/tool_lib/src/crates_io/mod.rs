@@ -1,6 +1,7 @@
-// TODO Reviewed ??-??-2026
 //! Returns information / list of categories for a given crate, using the
 //! crates.io API
+//!
+//! TODO Reviewed ??-??-2026
 
 mod categories_for_crate;
 mod info;

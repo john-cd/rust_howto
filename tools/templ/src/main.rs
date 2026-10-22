@@ -1,8 +1,10 @@
 // TODO Reviewed ??-??-2026
 use anyhow::anyhow;
 use tool_lib::*;
+
 mod cli;
 mod config_cmd;
+
 pub(crate) use config_cmd::*;
 
 /// The main function of the `templ` tool.

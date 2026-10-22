@@ -1,9 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! A no_std example using only `core` and a fixed-size stack buffer.
 //!
 //! The example demonstrates how to format text without heap allocations.
+//!
+//! TODO Reviewed ??-??-2026
+
 use core::fmt;
 use core::fmt::Write;
 

@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to extract and format phone numbers from a
 //! text using regular expressions.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::fmt;
 
@@ -91,6 +93,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

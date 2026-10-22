@@ -1,10 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates basic internationalization using `sys-locale` and `icu_locid`.
 //!
 //! This example obtains the system locale, canonicalizes it, extracts the
 //! language and region subtags, and prints a locale-aware greeting.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::error::Error;
 

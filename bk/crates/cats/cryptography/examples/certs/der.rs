@@ -16,6 +16,7 @@ struct MyStruct {
     field1: u32,
     field2: String,
 }
+
 fn main() {
     // Create an instance of `MyStruct`:
     let my_struct = MyStruct {
@@ -45,6 +46,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

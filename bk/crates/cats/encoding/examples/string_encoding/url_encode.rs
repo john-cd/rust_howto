@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to URL-encode and decode strings using the
 //! `url` crate.
+//!
+//! TODO Reviewed ??-??-2026
 
 use url::form_urlencoded::byte_serialize;
 use url::form_urlencoded::parse;
@@ -31,6 +33,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

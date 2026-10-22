@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! `mlua` provides bindings to Lua programming language for Rust.
 //! By default, `mlua` does not enable any features.
@@ -10,6 +10,9 @@
 //! [dependencies]
 //! mlua = { version = "0.10.2", features = ["lua54", "vendored"] }
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
+
 use mlua::prelude::*;
 
 // In standalone mode, `mlua` allows to add scripting support.
@@ -37,6 +40,7 @@ pub fn run() -> LuaResult<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> LuaResult<()> {
         main()?;

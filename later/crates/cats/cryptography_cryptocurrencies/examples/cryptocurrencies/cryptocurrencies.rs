@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates basic interactions with an Ethereum-compatible
 //! blockchain using the `alloy` library.
@@ -8,6 +8,8 @@
 //! 1. Configure an RPC endpoint and target address.
 //! 2. Show where chain calls would be made.
 //! 3. Print a compile-safe walkthrough of the flow.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::error::Error;
 

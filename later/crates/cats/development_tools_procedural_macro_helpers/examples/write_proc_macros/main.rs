@@ -1,9 +1,10 @@
-// TODO Reviewed ??-??-2026
 //! Demonstrates how to use `darling`, `proc-macro2`, `syn`, and `quote`
 //! outside of a `proc-macro` crate.
 //!
 //! This example parses a simple struct syntax tree, generates a `Debug`
 //! implementation, and prints the resulting token stream.
+//!
+//! TODO Reviewed ??-??-2026
 
 use clap::Parser;
 use clap::Subcommand;

@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates how to use the `which` crate to find the location of
 //! executables.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::env;
 
@@ -34,6 +36,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Example of a self-referential struct using pinning.
+//!
+//! TODO Reviewed ??-??-2026
 
 mod selfref {
 
@@ -174,6 +176,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

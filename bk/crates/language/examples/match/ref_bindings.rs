@@ -1,11 +1,13 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Variable binding moves or copies the bound value by default.
 //! Use `ref` or `ref mut` to get a reference instead.
 //!
 //! `ref` and `ref mut` are most often used in `match`, `if let`, and `while
 //! let` expressions.
+//!
+//! TODO Reviewed ??-??-2026
 
 fn main() {
     // A sample tuple struct with an inner field that is not `Copy`:
@@ -63,6 +65,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

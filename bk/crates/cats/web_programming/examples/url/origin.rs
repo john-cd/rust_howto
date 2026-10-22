@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates parsing a URL and extracting its origin components.
+//!
+//! TODO Reviewed ??-??-2026
 
 use url::Host;
 use url::ParseError;
@@ -29,6 +31,7 @@ pub fn run() -> Result<(), ParseError> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

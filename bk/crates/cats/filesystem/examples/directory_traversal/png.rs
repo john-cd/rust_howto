@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use the `glob` crate
 //! to find all PNG files in a directory tree.
+//!
+//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use glob::glob;
@@ -25,6 +27,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         use std::fs;

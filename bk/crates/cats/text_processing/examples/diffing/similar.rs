@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! # Text Diffing Example
 //!
@@ -16,6 +16,9 @@
 //! similar = "2.7.0" # Or latest
 //! console = "0.15.11" # Or latest
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::fmt;
 
 use console::Style;
@@ -108,6 +111,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

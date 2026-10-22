@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Simple example of a GUI application with `egui`.
 //!
@@ -9,6 +9,8 @@
 //! egui = "0.34"
 //! eframe = "0.34"
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
 
 use eframe::egui;
 
