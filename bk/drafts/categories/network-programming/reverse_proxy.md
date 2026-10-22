@@ -24,14 +24,14 @@ Configuration of a service is split into the client side and the [server][p~serv
 bind_addr = "0.0.0.0:2333" # `2333` specifies the port that `rathole` listens for clients
 
 [server.services.my_nas_ssh]
-token = "use_a_secret_that_only_you_know" # Token that is used to authenticate the client for the service. Change to an arbitrary value.
+token = "$RATHOLE_SECRET_TOKEN" # Load authentication token from environment variable rather than hardcoding secrets
 bind_addr = "0.0.0.0:5202" # `5202` specifies the port that exposes `my_nas_ssh` to the Internet
 ```
 
 Run:
 
 ```sh
-./rathole server.toml
+RATHOLE_SECRET_TOKEN="your_secret_token" ./rathole server.toml
 ```
 
 - Client Setup: On the device behind NAT, create a `client.[toml][p~toml]` file to connect to the server.
@@ -42,12 +42,12 @@ Run:
 remote_addr = "myserver.com:2333" # The address of the server. The port must be the same with the port in `server.bind_addr`
 
 [client.services.my_nas_ssh]
-token = "use_a_secret_that_only_you_know" # Must be the same with the server to pass the validation
+token = "$RATHOLE_SECRET_TOKEN" # Must match the server token
 local_addr = "127.0.0.1:22" # The address of the service that needs to be forwarded
 ```
 
 ```sh
-./rathole client.toml
+RATHOLE_SECRET_TOKEN="your_secret_token" ./rathole client.toml
 ```
 
 [`rathole`][c~rathole~docs]↗{{hi:rathole}} can automatically determine to run in the server mode or the client mode, according to the content of the configuration file, if only one of `[server]` and `[client]` block is present.
