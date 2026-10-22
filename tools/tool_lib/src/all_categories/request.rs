@@ -31,18 +31,14 @@ pub(super) fn get_categories_toml_string() -> Result<String> {
 #[expect(unused_imports, reason = "used only by some test configurations")]
 #[cfg(test)]
 mod tests {
-    // A mutex to ensure that tests setting MOCK_CATEGORIES_URL don't run concurrently.
-    use std::sync::Mutex;
-
     use anyhow::Result;
     use url::Url;
 
     use super::*;
+    use crate::ENV_MUTEX;
     use crate::EnvGuard;
 
-    static ENV_MUTEX: Mutex<()> = Mutex::new(());
-
-    // Test successful retrieval of the TOML string.
+    /// Verifies that the category TOML request returns the server response.
     #[test]
     fn test_get_categories_toml_string_success() -> Result<()> {
         let _lock = ENV_MUTEX.lock().expect("input should parse");
@@ -75,7 +71,7 @@ mod tests {
         Ok(())
     }
 
-    // Test handling of a network/server error (e.g., 404 Not Found).
+    /// Verifies that an unsuccessful category TOML request returns an error.
     #[test]
     fn test_get_categories_toml_string_error() -> Result<()> {
         let _lock = ENV_MUTEX.lock().expect("input should parse");

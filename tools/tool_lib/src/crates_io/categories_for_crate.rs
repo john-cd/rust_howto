@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026
 use std::collections::HashMap;
-use std::sync::{LazyLock, Mutex};
+use std::sync::LazyLock;
+use std::sync::Mutex;
 
 use anyhow::Result;
 use tracing::debug;
@@ -33,11 +34,11 @@ impl model::Category {
 ///
 /// Returns a list of categories for a crate, given its name
 pub fn get_categories_for_crate(crate_name: &str) -> Result<Vec<model::Category>> {
-    if let Ok(cache) = CATEGORY_CACHE.lock() {
-        if let Some(cats) = cache.get(crate_name) {
-            debug!("Cache hit for crates.io category lookup of {crate_name}");
-            return Ok(cats.clone());
-        }
+    if let Ok(cache) = CATEGORY_CACHE.lock()
+        && let Some(cats) = cache.get(crate_name)
+    {
+        debug!("Cache hit for crates.io category lookup of {crate_name}");
+        return Ok(cats.clone());
     }
 
     let client = super::get_client()?;
@@ -50,7 +51,7 @@ pub fn get_categories_for_crate(crate_name: &str) -> Result<Vec<model::Category>
         .collect();
 
     if let Ok(mut cache) = CATEGORY_CACHE.lock() {
-        cache.insert(crate_name.to_string(), categories.clone());
+        cache.insert(crate_name.to_owned(), categories.clone());
     }
 
     Ok(categories)
@@ -65,13 +66,13 @@ pub fn clear_category_cache() {
 
 #[cfg(test)]
 mod tests {
-
+    use anyhow::Result;
     use chrono::Utc;
     use crates_io_api::Category as CratesIoCategory;
 
     use crate::model;
 
-    // Helper function to create a mock CratesIoCategory.
+    /// Creates a crates.io category fixture for cache and conversion tests.
     fn mock_crates_io_category(id: &str, name: &str, desc: &str) -> CratesIoCategory {
         CratesIoCategory {
             category: name.to_owned(),
@@ -83,6 +84,7 @@ mod tests {
         }
     }
 
+    /// Verifies that the API category fields are copied into the local model.
     #[test]
     fn test_category_new() {
         let api_cat = mock_crates_io_category("web", "Web Stuff", "All about web");
@@ -96,21 +98,24 @@ mod tests {
 
     static TEST_MUTEX: std::sync::Mutex<()> = std::sync::Mutex::new(());
 
+    /// Verifies that cached category results are returned and can be cleared.
     #[test]
     fn test_category_cache_hit_and_clear() {
-        let _guard = TEST_MUTEX.lock().unwrap();
+        let _guard = TEST_MUTEX
+            .lock()
+            .unwrap_or_else(std::sync::PoisonError::into_inner);
         super::clear_category_cache();
 
         let fake_crate = "mock-crate-for-cache-test";
         let fake_categories = vec![model::Category {
-            category: "Testing".to_string(),
-            slug: "testing".to_string(),
-            description: "Testing category".to_string(),
+            category: "Testing".to_owned(),
+            slug: "testing".to_owned(),
+            description: "Testing category".to_owned(),
         }];
 
         // Seed internal cache
         if let Ok(mut cache) = super::CATEGORY_CACHE.lock() {
-            cache.insert(fake_crate.to_string(), fake_categories.clone());
+            cache.insert(fake_crate.to_owned(), fake_categories.clone());
         }
 
         // Subsequent lookup hits the cache directly
@@ -124,26 +129,29 @@ mod tests {
         }
     }
 
+    /// Verifies that repeated cached lookups remain within the expected time budget.
     #[test]
-    fn test_category_cache_performance() {
-        let _guard = TEST_MUTEX.lock().unwrap();
+    fn test_category_cache_performance() -> Result<()> {
+        let _guard = TEST_MUTEX
+            .lock()
+            .unwrap_or_else(std::sync::PoisonError::into_inner);
         super::clear_category_cache();
 
         let fake_crate = "perf-test-crate";
         let fake_categories = vec![model::Category {
-            category: "Performance".to_string(),
-            slug: "performance".to_string(),
-            description: "Performance category".to_string(),
+            category: "Performance".to_owned(),
+            slug: "performance".to_owned(),
+            description: "Performance category".to_owned(),
         }];
 
         if let Ok(mut cache) = super::CATEGORY_CACHE.lock() {
-            cache.insert(fake_crate.to_string(), fake_categories.clone());
+            cache.insert(fake_crate.to_owned(), fake_categories);
         }
 
         let start = std::time::Instant::now();
         let iterations = 1_000;
         for _ in 0..iterations {
-            let res = super::get_categories_for_crate(fake_crate).unwrap();
+            let res = super::get_categories_for_crate(fake_crate)?;
             assert_eq!(res.len(), 1);
         }
         let elapsed = start.elapsed();
@@ -151,10 +159,10 @@ mod tests {
         // 1000 cached lookups should execute in < 50ms (typically < 1ms)
         assert!(
             elapsed.as_millis() < 50,
-            "1000 cached lookups took too long: {:?}",
-            elapsed
+            "1000 cached lookups took too long: {elapsed:?}"
         );
 
         super::clear_category_cache();
+        Ok(())
     }
 }
