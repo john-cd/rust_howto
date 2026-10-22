@@ -3,6 +3,12 @@
 /// Demonstrates the use of tuples and arrays in Rust, including
 /// their declaration, access, destructuring, iteration, and mutation.
 fn main() {
+    demo_tuples();
+    println!();
+    demo_arrays();
+}
+
+fn demo_tuples() {
     println!("=== TUPLES ===");
 
     // Tuple with mixed types:
@@ -20,7 +26,7 @@ fn main() {
     // Destructure a tuple:
     // Tuple elements can be extracted into separate variables.
     let (name, age, active) = person;
-    println!("Destructured - Name: {name}, Age: {age}, Active: {active}",);
+    println!("Destructured - Name: {name}, Age: {age}, Active: {active}");
 
     // Nested tuples:
     // Tuples can contain other tuples, allowing for complex data structures.
@@ -52,8 +58,10 @@ fn main() {
     let swapped = swap_tuple(original);
     println!("\nOriginal tuple: {original:?}");
     println!("Swapped tuple: {swapped:?}");
+}
 
-    println!("\n=== ARRAYS ===");
+fn demo_arrays() {
+    println!("=== ARRAYS ===");
 
     // Fixed-size array with explicit type:
     // Arrays are fixed-size collections of elements of the same type.
