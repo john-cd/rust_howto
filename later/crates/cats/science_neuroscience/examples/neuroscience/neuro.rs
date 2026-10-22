@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Example: create a dummy neuroimaging volume and save it as a NIfTI file.
 //!

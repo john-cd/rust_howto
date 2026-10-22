@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates how to encode and decode a string using `base64`.
 //!

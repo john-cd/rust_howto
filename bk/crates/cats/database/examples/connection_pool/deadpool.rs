@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates how to use the `deadpool` crate to manage a pool
 //! of connections.
@@ -34,7 +33,6 @@ struct Manager;
 // The `Manager` is responsible for creating and recycling `Server` instances.
 impl managed::Manager for Manager {
     type Error = Error;
-
     type Type = Server;
 
     /// Creates a new `Server` instance.

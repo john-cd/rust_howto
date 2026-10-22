@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! `autocfg` is a library for build scripts to automatically configure code
 //! based on compiler support. Code snippets are dynamically tested to see if

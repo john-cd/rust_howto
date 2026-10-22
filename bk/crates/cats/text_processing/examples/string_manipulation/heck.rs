@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates how to use the `heck` crate to convert strings
 //! between different casing conventions.

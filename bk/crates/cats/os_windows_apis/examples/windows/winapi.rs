@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Example of a basic Windows application using the `winapi` crate.
 //!

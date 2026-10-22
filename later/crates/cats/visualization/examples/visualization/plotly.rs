@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates how to create a simple scatter plot using the
 //! `plotly` crate.

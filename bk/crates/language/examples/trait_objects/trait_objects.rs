@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Trait object example: a highly simplified GUI.
 //!

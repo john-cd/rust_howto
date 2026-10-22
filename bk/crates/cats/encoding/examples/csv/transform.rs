@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example shows how to transform CSV data from one format to
 //! another.

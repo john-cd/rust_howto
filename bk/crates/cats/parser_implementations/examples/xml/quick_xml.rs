@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Parse, deserialize, and write XML with `quick-xml`.
 //!

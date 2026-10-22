@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates a simple HTTP GET request using the `reqwest`
 //! crate.

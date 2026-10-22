@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates the basic usage of the `http` crate for creating
 //! and manipulating HTTP requests and responses.

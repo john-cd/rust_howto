@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 #![allow(clippy::single_match)]
-
 // ANCHOR: example
 //! This example demonstrates downloading multiple files concurrently using
 //! streams.

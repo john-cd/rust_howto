@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 #![cfg(target_family = "unix")]
-
 // ANCHOR: example
 //! This example demonstrates how to read an environment variable.
 //! If the environment variable is not set, a default value is used.

@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Demonstrates the manipluation of complex numbers.
 //!

@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates parsing a JSON string into a `serde_json::Value`
 //! and comparing it to a `serde_json::Value` created using the `json!` macro.

@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates how to use the `wasmtime` crate to run WebAssembly
 //! modules.

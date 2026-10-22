@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Example of using `Box` as a smart pointer for trait objects.
 //!

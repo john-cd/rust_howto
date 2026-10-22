@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! `rustix` is a library that provides a safe and idiomatic Rust interface to
 //! low-level system calls.

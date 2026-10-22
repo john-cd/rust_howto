@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates reading and writing Cap'n Proto
 //! messages. It is intended to be used in conjunction with code

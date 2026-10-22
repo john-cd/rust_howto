@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Example demonstrating the use of `pulldown-cmark` to parse Markdown and
 //! convert it to HTML.

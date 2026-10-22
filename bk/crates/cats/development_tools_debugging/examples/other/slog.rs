@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates basic usage of the `slog` logging crate.
 //! `slog` is a structured, composable logging framework.

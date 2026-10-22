@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates how to use the `ignore` crate to traverse a
 //! directory recursively, respecting `.gitignore` and similar files, and

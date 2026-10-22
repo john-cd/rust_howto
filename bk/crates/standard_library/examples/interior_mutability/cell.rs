@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! `Cell<T>` provides a way to mutate data, even when the `Cell` itself is
 //!

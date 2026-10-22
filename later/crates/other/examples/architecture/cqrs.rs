@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! CQRS (Command Query Responsibility Segregation) is an architectural
 //! pattern that separates the models for reading and writing data.

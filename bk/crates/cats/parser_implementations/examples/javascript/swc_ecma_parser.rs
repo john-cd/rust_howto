@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates how to use the `swc_ecma_parser` crate to parse
 //! JavaScript code. It creates a simple JavaScript program, parses it, and

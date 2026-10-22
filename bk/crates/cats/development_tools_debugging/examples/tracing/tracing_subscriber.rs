@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! - `tracing` is a framework for instrumenting Rust programs to collect
 //!   scoped, structured, and async-aware diagnostics.

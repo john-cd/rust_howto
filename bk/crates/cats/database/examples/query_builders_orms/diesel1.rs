@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Build Diesel queries without requiring a live database connection.
 //!

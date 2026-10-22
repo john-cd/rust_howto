@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! Create an in-memory Tantivy index and run a simple full-text search.
 //!

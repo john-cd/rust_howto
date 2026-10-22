@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // ANCHOR: example
 //! This example demonstrates the basic usage of the `LruCache` from the `lru`
 //! crate. It shows how to create a cache, insert key-value pairs, access
