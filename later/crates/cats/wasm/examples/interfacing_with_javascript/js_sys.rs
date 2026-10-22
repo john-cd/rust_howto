@@ -1,11 +1,16 @@
-// TODO Reviewed ??-??-2026
+//! Calling JavaScript from Rust with `js-sys`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 #[cfg(target_arch = "wasm32")]
 use js_sys::Date;
 #[cfg(target_arch = "wasm32")]
 use wasm_bindgen::prelude::*;
 
+/// Returns the current time, as a string, from JavaScript's `Date`.
 #[cfg(target_arch = "wasm32")]
 #[wasm_bindgen]
 pub fn get_current_time() -> String {
@@ -13,6 +18,7 @@ pub fn get_current_time() -> String {
     String::from(date.to_utc_string())
 }
 
+/// Does nothing yet.
 fn main() {} // TODO
 // ANCHOR_END: example
 

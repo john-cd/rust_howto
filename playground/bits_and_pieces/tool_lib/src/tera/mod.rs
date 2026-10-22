@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Rendering objects with the Tera template engine.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::path::PathBuf;
 use std::sync::LazyLock;
 
@@ -14,6 +17,7 @@ mod filters;
 
 use filters::*;
 
+/// The templates, loaded on first use with the registered filters.
 static TEMPLATES: LazyLock<Result<Tera, tera::Error>> = LazyLock::new(|| {
     Tera::new("templates/**/*").map(|mut t| {
         // By default, Tera will auto-escape all content in files ending with
@@ -41,6 +45,7 @@ pub fn render(r: impl Renderable) -> Result<()> {
     Ok(())
 }
 
+/// Renders each template of `r` and writes the result to its destination.
 #[allow(dead_code)]
 fn render_one(r: impl Renderable, context: &Context) -> Result<()> {
     let templ = (*TEMPLATES).as_ref().unwrap();
@@ -57,6 +62,7 @@ fn render_one(r: impl Renderable, context: &Context) -> Result<()> {
     Ok(())
 }
 
+/// Replaces the placeholders in `path_template` and returns the path.
 fn generate_path(path_template: &str) -> Result<PathBuf> {
     let context = Context::new();
     // context.insert("product", &product);

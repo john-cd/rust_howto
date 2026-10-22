@@ -1,8 +1,12 @@
-// TODO Reviewed ??-??-2026
+//! Tests of an mdBook preprocessor.
+//!
+//! TODO Reviewed ??-??-2026
+
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Runs the preprocessor on a sample book.
     #[test]
     fn preprocessor_run() {
         let input_json = r##"[

@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A state machine whose transitions are triggered by events.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// Represents the possible states of the state machine.
 #[derive(Debug, PartialEq, Clone, Copy)]
@@ -17,15 +21,20 @@ enum State {
 
 /// Represents the state machine itself, holding the current state.
 struct StateMachine {
+    /// The current state.
     state: State,
 }
 
 /// Represents the possible events that can trigger state transitions.
 #[derive(Debug)]
 enum Event {
+    /// Starts processing.
     Start,
+    /// Finishes processing successfully.
     Finish,
+    /// Signals an error.
     Fail,
+    /// Resets the state machine to idle.
     Reset,
 }
 
@@ -57,6 +66,7 @@ impl StateMachine {
     }
 }
 
+/// Sends events to the state machine and prints its state.
 fn main() {
     let mut state_machine = StateMachine::new();
 

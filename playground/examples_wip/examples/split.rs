@@ -1,7 +1,12 @@
-// TODO Reviewed ??-??-2026
+//! Splitting a path into its directory, file name and extension.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // Indices of / in the path
+/// Splits `path` into a directory, a file name and an extension.
 fn split_path(path: &str) -> (&str, &str, &str) {
     let mut first = "";
     let mut second = "";
@@ -25,6 +30,7 @@ fn split_path(path: &str) -> (&str, &str, &str) {
     (first, second, third)
 }
 
+/// Splits a sample path and prints the parts.
 fn main() {
     let path = "src/playground/examples/split.rs";
     let (first, second, third) = split_path(path);

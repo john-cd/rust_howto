@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Running a WebAssembly module with the `wasmer` runtime.
+//!
+//! TODO Reviewed ??-??-2026
+
 // #![allow(dead_code)]
 // // ANCHOR: example
 // //! This example demonstrates how to use the `wasmer` crate to run a
@@ -56,6 +59,7 @@
 //     Ok(())
 // }
 //
+/// Compiles a module, instantiates it and calls an exported function.
 fn main() {
     // TODO
 }

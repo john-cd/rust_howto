@@ -1,10 +1,15 @@
-// TODO Reviewed ??-??-2026
+//! A subchapter of the book.
+//!
+//! TODO Reviewed ??-??-2026
+
 use serde::Serialize;
 
 use super::*;
 
+/// A subchapter, made of recipes.
 #[derive(Serialize, Debug)]
 pub struct Subchapter {
+    /// The recipes of the subchapter.
     recipes: Vec<Recipe>,
 }
 

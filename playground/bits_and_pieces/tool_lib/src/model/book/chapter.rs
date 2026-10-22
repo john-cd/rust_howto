@@ -1,13 +1,19 @@
-// TODO Reviewed ??-??-2026
+//! A chapter of the book.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 
 use serde::Serialize;
 
 use super::*;
 
+/// A chapter of the book, made of subchapters.
 #[derive(Serialize, Debug)]
 pub struct Chapter {
+    /// Description of the chapter.
     description: String,
+    /// The subchapters of the chapter.
     subchapters: Vec<Subchapter>,
 }
 

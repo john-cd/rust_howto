@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A WebSocket client and server with `async-tungstenite`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // //! This example demonstrates how to use `async-tungstenite` to connect to a
 // //! WebSocket server, send a message, and receive a response.
@@ -55,6 +59,7 @@
 //     }
 // }
 
+/// Runs the server and the client.
 fn main() {
     // TODO
 }

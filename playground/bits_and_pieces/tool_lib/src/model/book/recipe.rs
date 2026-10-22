@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! A recipe, a list of crates that work together.
+//!
+//! TODO Reviewed ??-??-2026
+
 use serde::Serialize;
 
 use crate::Crate;
@@ -6,7 +9,9 @@ use crate::Crate;
 #[derive(Serialize, Debug)]
 /// A recipe.
 pub struct Recipe {
+    /// Name of the recipe.
     name: String,
+    /// The crates used by the recipe.
     crates: Vec<Crate>,
 }
 
@@ -16,6 +21,7 @@ impl Recipe {
         Self { name, crates }
     }
 
+    /// Returns a builder for a recipe.
     fn builder() -> RecipeBuilder {
         RecipeBuilder {
             inner: Recipe {
@@ -28,6 +34,7 @@ impl Recipe {
 
 /// A builder for a recipe.
 struct RecipeBuilder {
+    /// The recipe being built.
     inner: Recipe,
 }
 

@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Writing shaders in Rust with `rust-gpu`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 #[cfg(target_arch = "wasm32")]
 use spirv_std::glam::Vec4;
@@ -8,12 +12,14 @@ use spirv_std::glam::vec4;
 #[cfg(target_arch = "wasm32")]
 use spirv_std::spirv;
 
+/// A fragment shader.
 #[cfg(target_arch = "wasm32")]
 #[spirv(fragment)]
 pub fn main_fs(output: &mut Vec4) {
     *output = vec4(1.0, 0.0, 0.0, 1.0);
 }
 
+/// A vertex shader.
 #[cfg(target_arch = "wasm32")]
 #[spirv(vertex)]
 pub fn main_vs(
@@ -29,6 +35,7 @@ pub fn main_vs(
 }
 // ANCHOR_END: example
 
+/// Does nothing yet.
 pub fn run() {}
 
 #[cfg(test)]
