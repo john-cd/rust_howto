@@ -81,7 +81,7 @@ jobs:
       IMAGE_PULL_POLICY: never
     steps:
       - name: Code checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Set build cache scope
         run: echo "GHA_CACHE_SCOPE=rust-howto-${{ runner.os }}-${{ hashFiles('.devcontainer/.env', 'bk/crates/Cargo.lock', 'tools/Cargo.lock') }}" >> "$GITHUB_ENV"
       - name: Set up Docker Buildx
@@ -115,7 +115,7 @@ jobs:
           docker-images: false
           swap-storage: true
       - name: Code checkout (clones the Git repository)
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Set build cache scope
         run: echo "GHA_CACHE_SCOPE=rust-howto-${{ runner.os }}-${{ hashFiles('.devcontainer/.env', 'bk/crates/Cargo.lock', 'tools/Cargo.lock') }}" >> "$GITHUB_ENV"
       # - name: Validate YAML files
@@ -153,7 +153,7 @@ jobs:
         partition: [1, 2]
     steps:
       - name: Code checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Set build cache scope
         run: echo "GHA_CACHE_SCOPE=rust-howto-${{ runner.os }}-${{ hashFiles('.devcontainer/.env', 'bk/crates/Cargo.lock', 'tools/Cargo.lock') }}" >> "$GITHUB_ENV"
       - name: Rust Cache
@@ -181,7 +181,7 @@ jobs:
       IMAGE_PULL_POLICY: missing
     steps:
       - name: Code checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Set build cache scope
         run: echo "GHA_CACHE_SCOPE=rust-howto-${{ runner.os }}-${{ hashFiles('.devcontainer/.env', 'bk/crates/Cargo.lock', 'tools/Cargo.lock') }}" >> "$GITHUB_ENV"
       - name: Rust Cache

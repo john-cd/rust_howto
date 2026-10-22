@@ -41,7 +41,7 @@ jobs:
       TEST_PG_URL: host=127.0.0.1 port=5432 user=postgres password=password dbname=library
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Install pinned Rust toolchain
         shell: bash
