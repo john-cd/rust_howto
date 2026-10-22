@@ -19,36 +19,14 @@ fn get_client() -> Result<SyncClient> {
     Ok(client)
 }
 
-// TODO
-// /// List, for most downloaded crates, the top dependencies
-// pub fn list_top_dependencies() -> Result<()> {
-//     let client = get_client()?;
-//     // Retrieve summary data.
-//     let summary = client.summary()?;
-//     for c in summary.most_downloaded {
-//         println!("{}:", c.id);
-//         for dep in client.crate_dependencies(&c.id, &c.max_version)? {
-//             // Ignore optional dependencies.
-//             if !dep.optional {
-//                 println!("    * {} - {}", dep.id, dep.version_id);
-//             }
-//         }
-//     }
-//     Ok(())
-// }
-
-// use crates_io_api::CratesPage;
-// use crates_io_api::Sort;
-// /// Search for crates
-// pub fn search_for_crates(search: impl Into<String>) -> Result<CratesPage> {
-//     let client = get_client()?;
-//
-//     let q = crates_io_api::CratesQuery::builder()
-//     .sort(Sort::Alphabetical)
-//     //.page_size(size)
-//     .search(search)
-//     .build();
-//     let crates = client.crates(q)?;
-//     Ok(crates)
-// }
 // [unit tests; cleanup](https://github.com/john-cd/rust_howto/issues/1356)
+
+#[cfg(test)]
+mod tests {
+    use super::get_client;
+
+    #[test]
+    fn client_initializes_without_making_a_request() {
+        assert!(get_client().is_ok());
+    }
+}
