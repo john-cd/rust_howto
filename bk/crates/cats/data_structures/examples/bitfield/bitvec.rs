@@ -11,7 +11,9 @@
 use bitvec::field::BitField as _;
 use bitvec::prelude::*;
 
-fn basic_operations() {
+fn bit_access_and_mutation() {
+    println!("===== Bit Access and Mutation =====");
+
     // Create a new `BitVec` with default parameters:
     let mut bv = bitvec![u8, Msb0; 0, 1, 0, 1, 1, 0, 1, 0];
     println!("Original BitVec: {bv}");
@@ -24,6 +26,12 @@ fn basic_operations() {
     bv.set(0, true);
     bv.set(5, true);
     println!("Modified BitVec: {bv}");
+}
+
+fn bit_checking() {
+    println!("\n===== Bit Checking and Querying =====");
+
+    let bv = bitvec![u8, Msb0; 1, 1, 0, 1, 1, 1, 1, 0];
 
     // Get the length:
     println!("BitVec length: {}", bv.len());
@@ -36,6 +44,12 @@ fn basic_operations() {
 
     // Count set bits:
     println!("Number of set bits: {}", bv.count_ones());
+}
+
+fn bit_iteration() {
+    println!("\n===== Bit Iteration =====");
+
+    let bv = bitvec![u8, Msb0; 1, 1, 0, 1, 1, 1, 1, 0];
 
     // Iterate through bits:
     print!("Iterating through bits: ");
@@ -148,7 +162,9 @@ fn practical_applications() {
 }
 
 fn main() {
-    basic_operations();
+    bit_access_and_mutation();
+    bit_checking();
+    bit_iteration();
     endianness_and_storage();
     bit_manipulation();
     slicing_and_ranges();
