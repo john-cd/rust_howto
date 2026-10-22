@@ -28,11 +28,9 @@ pub(super) fn get_categories_toml_string() -> Result<String> {
     Ok(body)
 }
 
-#[expect(unused_imports, reason = "used only by some test configurations")]
 #[cfg(test)]
 mod tests {
     use anyhow::Result;
-    use url::Url;
 
     use super::*;
     use crate::ENV_MUTEX;
@@ -41,7 +39,9 @@ mod tests {
     /// Verifies that the category TOML request returns the server response.
     #[test]
     fn test_get_categories_toml_string_success() -> Result<()> {
-        let _lock = ENV_MUTEX.lock().expect("input should parse");
+        let _lock = ENV_MUTEX
+            .lock()
+            .unwrap_or_else(std::sync::PoisonError::into_inner);
         let mut server = mockito::Server::new();
         let expected_toml = "[category1]\nname = \"Category One\"\ndescription = \"First category\"\n\n[category2]\nname = \"Category Two\"\n";
 
@@ -56,17 +56,10 @@ mod tests {
         let mock_url = format!("{}/", server.url());
         let _url_guard = EnvGuard::set("MOCK_CATEGORIES_URL", &mock_url);
 
-        // Call the function under test.
-        let result = get_categories_toml_string();
+        let result = get_categories_toml_string()?;
 
-        // Assertions
-        mock_endpoint.assert(); // Verify the mock endpoint was hit.
-        assert!(
-            result.is_ok(),
-            "Expected Ok result, got Err: {:?}",
-            result.err()
-        );
-        assert_eq!(result.expect("input should parse"), expected_toml);
+        mock_endpoint.assert();
+        assert_eq!(result, expected_toml);
 
         Ok(())
     }
@@ -74,7 +67,9 @@ mod tests {
     /// Verifies that an unsuccessful category TOML request returns an error.
     #[test]
     fn test_get_categories_toml_string_error() -> Result<()> {
-        let _lock = ENV_MUTEX.lock().expect("input should parse");
+        let _lock = ENV_MUTEX
+            .lock()
+            .unwrap_or_else(std::sync::PoisonError::into_inner);
         let mut server = mockito::Server::new();
 
         // Mock the GET request to return a 404 error.
@@ -87,15 +82,11 @@ mod tests {
         let mock_url = format!("{}/", server.url());
         let _url_guard = EnvGuard::set("MOCK_CATEGORIES_URL", &mock_url);
 
-        // Call the function under test.
-        let result = get_categories_toml_string();
+        let error =
+            get_categories_toml_string().expect_err("a 404 response should fail the request");
+        mock_endpoint.assert();
 
-        // Assertions.
-        mock_endpoint.assert(); // Verify the mock endpoint was hit.
-        assert!(result.is_err(), "Expected Err result, got Ok");
-
-        // Optionally, check the specific error kind or message if needed.
-        let err_string = result.expect_err("input should be rejected").to_string();
+        let err_string = error.to_string();
         assert!(
             err_string.contains("404") || err_string.contains("Not Found"),
             "Error message did not indicate a 404 error: {err_string}"
