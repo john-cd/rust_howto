@@ -4,8 +4,6 @@
 // ANCHOR: example
 //! A minimal `actix` actor that handles a `Ping` message.
 
-use std::time::Duration;
-
 use actix::prelude::*;
 
 // Define a message named `Ping`.
@@ -50,15 +48,20 @@ impl Handler<Ping> for MyActor {
 fn main() {
     let system = System::new();
 
-    // Start the actor:
-    let addr = MyActor.start();
+    // Actors must be started within a running system, hence `block_on`:
+    system.block_on(async {
+        // Start the actor:
+        let addr = MyActor.start();
 
-    // Send a Ping message to the actor:
-    addr.do_send(Ping);
+        // Send a Ping message to the actor and wait for it to be handled:
+        addr.send(Ping).await.unwrap();
 
-    // Stop the system after a delay:
+        // Ask the system to stop:
+        System::current().stop();
+    });
+
+    // Run the system until it stops:
     system.run().unwrap();
-    std::thread::sleep(Duration::from_secs(1));
 }
 
 // ANCHOR_END: example
@@ -73,9 +76,7 @@ mod tests {
     use super::*;
 
     #[test]
-    #[ignore = "Needs review"]
     fn test_main() {
         main();
     }
 }
-// [finish; test fails: `spawn_local` called from outside of a `task::LocalSet` or LocalRuntime](https://github.com/john-cd/rust_howto/issues/682)
