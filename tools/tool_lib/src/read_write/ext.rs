@@ -49,7 +49,10 @@ pub fn extend_extension<P: AsRef<Path>>(filepath: &P, insert: &str) -> PathBuf {
     }
 }
 
-// [file_prefix is still unstable.](https://github.com/john-cd/rust_howto/issues/902)
+// `Path::file_prefix` is stable, but it is deliberately not used above: it
+// stops at the first `.` (`a.tar.gz` -> `a`), whereas `file_stem` keeps
+// everything before the last `.` (`a.tar.gz` -> `a.tar`), which is what
+// `extend_extension` needs to preserve inner dots.
 
 #[cfg(test)]
 mod tests {
@@ -76,6 +79,10 @@ mod tests {
         assert_eq!(
             extend_extension(&Path::new("file.a.md"), "new"),
             Path::new("file.a.new.md")
+        );
+        assert_eq!(
+            extend_extension(&Path::new("a.tar.gz"), "new"),
+            Path::new("a.tar.new.gz")
         );
         assert_eq!(extend_extension(&Path::new(""), "new"), Path::new(""));
     }
