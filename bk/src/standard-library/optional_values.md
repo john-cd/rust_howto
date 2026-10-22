@@ -3,6 +3,8 @@
 
 {{#include optional_values.incl.md}}
 
+[![Rust by Example - option][book~rust-by-example~option~badge]][book~rust-by-example~option]
+
 ## Store Optional Values in `Option` {#option}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}{{hi:null}}

@@ -4,6 +4,8 @@
 
 {{#include operators.incl.md}}
 
+[![Rust by Example - ops][book~rust-by-example~ops~badge]][book~rust-by-example~ops]
+
 ## Overload Operators like `+`, `-`, `[]` {#operator-overloading}
 
 [![std][c~std~docs~badge]][c~std~docs]

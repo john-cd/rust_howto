@@ -3,6 +3,8 @@
 
 {{#include reference_counting.incl.md}}
 
+[![Rust by Example - rc][book~rust-by-example~rc~badge]][book~rust-by-example~rc]
+
 ## Share Ownership of a Value with `Rc` {#rc}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![book~rust~rc][book~rust~rc~badge]][book~rust~rc]{{hi:Rc}}{{hi:Multiple owners}}{{hi:Shared ownership}}

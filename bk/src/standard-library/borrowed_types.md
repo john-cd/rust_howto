@@ -3,6 +3,8 @@
 
 {{#include borrowed_types.incl.md}}
 
+[![Rust by Example - string][book~rust-by-example~string~badge]][book~rust-by-example~string]
+
 ## Use the `Borrow` Trait to Work with Borrowed Types Synonymous with Owned Types {#borrow}
 
 [![std][c~std~docs~badge]][c~std~docs]

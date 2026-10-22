@@ -3,6 +3,8 @@
 
 {{#include entry_points.incl.md}}{{hi:main}}
 
+[![Rust by Example - hello][book~rust-by-example~hello~badge]][book~rust-by-example~hello]
+
 ## Define the Entry Point of your Application with the Main Function {#main-function}
 
 In Rust, the main function is special. It serves as the mandatory entry point for every executable program.

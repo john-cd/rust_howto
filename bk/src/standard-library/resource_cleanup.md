@@ -3,6 +3,8 @@
 
 {{#include resource_cleanup.incl.md}}
 
+[![Rust by Example - raii][book~rust-by-example~raii~badge]][book~rust-by-example~raii]
+
 When a value is no longer needed, Rust will run a "destructor" on that value. The most common way that a value is no longer needed is when it goes out of scope. This destructor calls `Drop::drop` for that value, if the special `Drop` trait is implemented for its type.
 
 ## Release External Resources by Implementing the `Drop` Trait {#drop}

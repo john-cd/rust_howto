@@ -3,6 +3,8 @@
 
 {{#include conversion_traits.incl.md}}
 
+[![Rust by Example - conversion][book~rust-by-example~conversion~badge]][book~rust-by-example~conversion]
+
 Conversion traits like [`From`][c~std::convert::From~docs]↗{{hi:std::convert::From}}, [`Into`][c~std::convert::Into~docs]↗{{hi:std::convert::Into}}, [`TryFrom`][c~std::convert::TryFrom~docs]↗{{hi:std::convert::TryFrom}}, and [`TryInto`][c~std::convert::TryInto~docs]↗{{hi:std::convert::TryInto}} enable type-safe transformations between types. `From` is the most common trait for defining conversions - it is implemented on the destination type and lets you create an instance from another type. `Into` is automatically implemented when `From` is, allowing values to be converted with `.into()`. For fallible conversions,`TryFrom` and `TryInto` return a `Result`, adding error handling when the conversion might fail.
 
 ## Convert between Types with `From` {#from}

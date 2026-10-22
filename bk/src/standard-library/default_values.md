@@ -3,6 +3,8 @@
 
 {{#include default_values.incl.md}}
 
+[![Rust by Example - derive][book~rust-by-example~derive~badge]][book~rust-by-example~derive]
+
 ## Define Default Values for a Struct with `Default` {#default}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}

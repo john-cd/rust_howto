@@ -3,6 +3,8 @@
 
 {{#include trait_objects_and_dynamic_dispatch.incl.md}}
 
+[![Rust by Example - dyn][book~rust-by-example~dyn~badge]][book~rust-by-example~dyn]
+
 Trait objects enable "dynamic dispatch", a form of polymorphism. They treat different concrete types that implement a specific trait as if they were the same at runtime. They are particularly useful when you need to create collections of different types that share common behavior, or when the exact type of an object isn't known until runtime.
 
 ## Trait Objects Basics {#trait-objects-basics}
