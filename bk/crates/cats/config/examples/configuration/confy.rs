@@ -38,9 +38,22 @@ pub fn run() -> Result<(), confy::ConfyError> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
-    fn test_main() -> anyhow::Result<()> {
-        main()?;
+    fn loads_defaults_from_an_isolated_config_path() -> anyhow::Result<()> {
+        let dir = std::env::temp_dir().join(format!(
+            "rust-howto-confy-{}-{}",
+            std::process::id(),
+            std::time::SystemTime::now()
+                .duration_since(std::time::UNIX_EPOCH)?
+                .as_nanos()
+        ));
+        std::fs::create_dir_all(&dir)?;
+        let path = dir.join("my-app-name.toml");
+        let cfg: MyConfig = confy::load_path(&path)?;
+        assert_eq!(cfg.version, 0);
+        assert!(cfg.api_key.is_empty());
+        std::fs::remove_dir_all(dir)?;
         Ok(())
     }
 }

@@ -21,7 +21,7 @@ autolib = false
 
 ## General
 anyhow = "1.0.104"
-clap = { version = "4.6.7", features = ["cargo"] }
+clap = { version = "4.6.7", features = ["cargo", "derive"] }
 config = "0.15.27"
 confy = "2.0.0"
 # dotenv is outdated, replaced by dotenvy
