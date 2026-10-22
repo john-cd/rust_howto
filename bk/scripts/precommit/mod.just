@@ -22,9 +22,13 @@ _default:
 # [review](https://github.com/john-cd/rust_howto/issues/1246)
 # https://github.com/prettier/prettier (pre-commit hook)
 
-# FIXME Fix auto-fixable lint issues in staged files
+# Fix auto-fixable lint issues in staged files.
 @fix:
-    pre-commit run prettier # fixes all Markdown (& other) lint issues
+    pre-commit run prettier
+
+# Fix auto-fixable lint issues across all tracked files.
+@fix_all:
+    pre-commit run prettier --all-files
 
 # FIXME Install/update code automation: pre-commit...
 [unix]
