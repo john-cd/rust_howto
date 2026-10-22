@@ -1,4 +1,6 @@
 # TODO Reviewed ??-??-2026
+## Builds the `tools/` workspace inside the `local-tool-builder` Docker stage (Linux).
+## The Windows build of the tools lives in `build_book_code_and_book_on_windows.yml`.
 name: Build tools on Linux
 
 on:
@@ -8,6 +10,7 @@ on:
       - 'tools/**'
       - '.devcontainer/**'
       - '.github/workflows/**'
+      - '.github/actions/**'
       - 'Cargo.toml'
       - 'Cargo.lock'
   pull_request:
@@ -16,12 +19,16 @@ on:
       - 'tools/**'
       - '.devcontainer/**'
       - '.github/workflows/**'
+      - '.github/actions/**'
       - 'Cargo.toml'
       - 'Cargo.lock'
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 concurrency:
-  group: "tools"
+  group: "tools-${{ github.ref }}"
   cancel-in-progress: true
 
 defaults:
@@ -36,10 +43,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Code checkout (clones the Git repository)
-      uses: actions/checkout@v7
+      # actions/checkout v7.0.1
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
     - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v4
+      # docker/setup-buildx-action v4.4.1
+      uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069
 
     - name: Build local-tool-builder image
       run: |
