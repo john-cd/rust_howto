@@ -19010,6 +19010,7 @@ dependencies = [
  "hyper-util",
  "reqwest 0.13.5",
  "serde 1.0.229",
+ "serde_json",
  "tempfile",
  "tokio",
  "ureq",
