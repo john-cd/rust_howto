@@ -38,14 +38,11 @@ cd bk/crates
 ## Fails if not formatted properly
 cargo +nightly-2026-10-22 fmt --all --check
 
-## [add cargo plugins to CI script](https://github.com/john-cd/rust_howto/issues/1277)
-## Check dependencies
-# cargo deny check \
-#     && cargo outdated --exit-code 1 \
-#     && cargo udeps \
-#     && rm -rf ~/.cargo/advisory-db \
-#     && cargo audit \
-#     && cargo pants
+## Audit dependencies: advisories (RustSec), licenses, bans and sources.
+## - `cargo deny` covers the advisories that `cargo audit` reports, so `cargo audit` is not used.
+## - Configuration: `deny.toml`. Only the book's workspace is checked;
+##   `tools`, `xmpl` and `later/crates` are not published and are not part of the book's dependency set.
+cargo deny --workspace --config deny.toml check all --hide-inclusion-graph
 
 ## Fetch the dependencies
 cargo fetch
