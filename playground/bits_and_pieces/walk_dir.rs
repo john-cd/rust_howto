@@ -8,10 +8,14 @@
 // tracing-subscriber = {version = "0.3.20", features = ["env-filter"] }
 // walkdir = "2.5.0"
 
-use anyhow::Result;
-use clap::Parser;
+use std::fs;
+use std::io::Write;
 use std::path::Path;
 use std::path::PathBuf;
+
+use anyhow::Context;
+use anyhow::Result;
+use clap::Parser;
 use walkdir::WalkDir;
 
 #[derive(Parser, Debug)]
@@ -26,56 +30,70 @@ pub(crate) struct Args {
 /// # Arguments
 ///
 /// * `dir` - The directory to walk through.
+///
+/// # Errors
+/// Returns an error if traversal, reading, or atomic replacement fails.
 pub fn walk_directory(dir: &Path) -> Result<()> {
     for entry in WalkDir::new(dir) {
         let entry = entry?;
         let f_name = entry.file_name().to_string_lossy();
-        if f_name.ends_with(".md") {
-            replace_in_file(entry.path())?;
+        if entry.file_type().is_file() && f_name.ends_with(".md") {
+            let path = entry.path();
+            let contents = fs::read_to_string(path)
+                .with_context(|| format!("Failed to read {}", path.display()))?;
+            let updated = replace_crate_markers(&contents);
+            if updated != contents {
+                let parent = path
+                    .parent()
+                    .context("Markdown file must have a parent directory")?;
+                let mut temporary = tempfile::NamedTempFile::new_in(parent)?;
+                temporary.write_all(updated.as_bytes())?;
+                temporary
+                    .as_file()
+                    .set_permissions(fs::metadata(path)?.permissions())?;
+                temporary
+                    .persist(path)
+                    .with_context(|| format!("Failed to replace {}", path.display()))?;
+            }
         }
     }
     Ok(())
 }
 
-fn replace_in_file(path: &Path) -> Result<()> {
-    let original = std::fs::read_to_string(path)?;
-    let updated = replace_crate_placeholders(&original);
-    if updated != original {
-        std::fs::write(path, updated)?;
-    }
-    Ok(())
-}
+/// Expands complete crate markers and preserves malformed or unfinished markers.
+fn replace_crate_markers(contents: &str) -> String {
+    const PREFIX: &str = "{{!crate ";
 
-fn replace_crate_placeholders(input: &str) -> String {
-    let mut output = String::with_capacity(input.len());
-    let mut remaining = input;
-    while let Some(start) = remaining.find("{{!crate ") {
-        let after_start = &remaining[start + "{{!crate ".len()..];
-        let Some(end) = after_start.find("}}") else {
-            break;
-        };
-        let crate_name = after_start[..end].trim();
-        if crate_name.is_empty() || crate_name.chars().any(char::is_whitespace) {
-            output.push_str(&remaining[..start + "{{!crate ".len() + end + 2]);
-            remaining = &after_start[end + 2..];
-            continue;
-        }
+    let mut output = String::with_capacity(contents.len());
+    let mut remaining = contents;
+    while let Some(start) = remaining.find(PREFIX) {
         output.push_str(&remaining[..start]);
-        output.push_str(&format!(
-            "[![{crate_name}][c~{crate_name}~docs~badge]][c~{crate_name}~docs]{{{{hi:{crate_name}}}}}"
-        ));
-        remaining = &after_start[end + 2..];
+        let marker = &remaining[start + PREFIX.len()..];
+        let Some(end) = marker.find("}}") else {
+            output.push_str(&remaining[start..]);
+            return output;
+        };
+        let crate_name = marker[..end].trim();
+        if crate_name.is_empty() || crate_name.chars().any(char::is_whitespace) {
+            output.push_str(&remaining[start..start + PREFIX.len() + end + 2]);
+        } else {
+            output.push_str(&format!(
+                "[![{crate_name}][c~{crate_name}~docs~badge]][c~{crate_name}~docs]{{{{hi:{crate_name}}}}}"
+            ));
+        }
+        remaining = &marker[end + 2..];
     }
     output.push_str(remaining);
     output
 }
 
+/// Parses the directory argument and expands markers in its Markdown files.
 fn main() -> Result<()> {
     // Install a global tracing subscriber that listens for events and filters based on the value of the RUST_LOG environment variable.
     tracing_subscriber::fmt::init();
 
-    let args = cli::Args::parse();
-    walk::walk_directory(args.directory.as_path())?;
+    let args = Args::parse();
+    walk_directory(args.directory.as_path())?;
     Ok(())
 }
 
@@ -88,12 +106,14 @@ mod tests {
 
     use super::*;
 
+    /// Markdown files are rewritten while other files and Markdown-named directories survive.
     #[test]
     fn test_walk_directory() -> Result<()> {
         let dir = tempfile::tempdir()?;
         let file_path1 = dir.path().join("test1.md");
         let file_path2 = dir.path().join("test2.md");
         let file_path3 = dir.path().join("test3.txt");
+        fs::create_dir(dir.path().join("directory.md"))?;
 
         let mut file1 = File::create(&file_path1)?;
         writeln!(file1, "This is test1 with {{{{!crate clap}}}}.")?;
@@ -121,4 +141,12 @@ mod tests {
         Ok(())
     }
 
+    /// Multiple markers expand without consuming malformed trailing syntax.
+    #[test]
+    fn replaces_multiple_crate_markers_and_leaves_malformed_markers() {
+        assert_eq!(
+            replace_crate_markers("{{!crate clap}} and {{!crate serde}} {{!crate }} {{!crate"),
+            "[![clap][c~clap~docs~badge]][c~clap~docs]{{hi:clap}} and [![serde][c~serde~docs~badge]][c~serde~docs]{{hi:serde}} {{!crate }} {{!crate"
+        );
+    }
 }
