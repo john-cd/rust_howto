@@ -1,10 +1,9 @@
-//! Calls `async` code from blocking code with `futures::executor::block_on`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Calls `async` code from blocking code with `futures::executor::block_on`.
+
 /// Prints a greeting.
 async fn do_something() {
     println!("hello, world!");

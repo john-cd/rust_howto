@@ -1,10 +1,9 @@
-//! Calls `async` code from blocking code by building a Tokio runtime by hand.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Calls `async` code from blocking code by building a Tokio runtime by hand.
+
 /// Spawns background tasks on a one-thread runtime, works on the main thread
 /// meanwhile, then waits for the tasks.
 fn main() {

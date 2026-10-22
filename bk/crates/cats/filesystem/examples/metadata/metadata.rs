@@ -1,10 +1,9 @@
-//! Reading the metadata of files and directories.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Reading the metadata of files and directories.
+
 use std::fs;
 use std::time::UNIX_EPOCH;
 

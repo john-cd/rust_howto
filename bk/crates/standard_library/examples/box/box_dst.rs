@@ -1,10 +1,9 @@
-//! Boxing dynamically sized types.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Boxing dynamically sized types.
+
 /// Creates boxes of a slice and a string.
 fn main() {
     // Creating a Box containing a slice.

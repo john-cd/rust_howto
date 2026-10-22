@@ -1,10 +1,9 @@
-//! Example of a sealed trait, preventing external implementations.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(unused)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Example of a sealed trait, preventing external implementations.
+
 /// A module that exposes a trait that cannot be implemented outside of it.
 mod a_module {
     /// A trait that can be used, but not implemented, outside of the module.

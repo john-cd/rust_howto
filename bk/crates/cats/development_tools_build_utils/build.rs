@@ -1,12 +1,11 @@
+#![allow(dead_code)]
+
+// TODO Reviewed ??-??-2026
+// ANCHOR: C
 //! Build script examples for `development_tools_build_utils`.
 //!
 //! See <https://doc.rust-lang.org/cargo/reference/build-scripts.html>.
-//!
-//! TODO Reviewed ??-??-2026
 
-#![allow(dead_code)]
-
-// ANCHOR: C
 /// Compile a C file into a static library.
 fn c() {
     println!("cargo::rerun-if-changed=examples/hello.c");

@@ -1,10 +1,9 @@
-//! Creates complex numbers with integer and floating-point components.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Creates complex numbers with integer and floating-point components.
+
 /// Creates complex numbers with integer and floating-point components.
 fn main() {
     // Create a complex number with integer components.

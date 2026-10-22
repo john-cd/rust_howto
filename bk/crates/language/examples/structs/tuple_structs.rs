@@ -1,10 +1,9 @@
-//! Tuple structs and unit-like structs.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Tuple structs and unit-like structs.
+
 /// A tuple struct.
 ///
 /// Note the ( ) and the lack of field names.

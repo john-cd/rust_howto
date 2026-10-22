@@ -1,10 +1,9 @@
-//! A `SmallVec`, which stores a few elements inline before moving to the heap.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A `SmallVec`, which stores a few elements inline before moving to the heap.
+
 use smallvec::SmallVec;
 use smallvec::smallvec;
 

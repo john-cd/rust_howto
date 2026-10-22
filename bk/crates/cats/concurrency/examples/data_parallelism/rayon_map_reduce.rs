@@ -1,10 +1,9 @@
-//! Parallel `filter`, `map` and `reduce` over a vector with `rayon`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Parallel `filter`, `map` and `reduce` over a vector with `rayon`.
+
 use rayon::prelude::*;
 
 /// A person, reduced to an age.

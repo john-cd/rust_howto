@@ -1,10 +1,9 @@
-//! Calling C++ from Rust with the `cxx` crate.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Calling C++ from Rust with the `cxx` crate.
+
 // use cxx::CxxString;
 use cxx::let_cxx_string;
 

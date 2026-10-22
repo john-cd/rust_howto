@@ -1,10 +1,9 @@
-//! Implementing `Borrow` for a case-insensitive string type.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Implementing `Borrow` for a case-insensitive string type.
+
 /// A case-insensitive string type.
 mod cis {
     use std::borrow::Borrow;

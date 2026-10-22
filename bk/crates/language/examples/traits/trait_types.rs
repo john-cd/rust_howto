@@ -1,10 +1,9 @@
-//! Types that can implement a trait.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Types that can implement a trait.
+
 // An example trait (with a method with a default implementation):
 /// A trait with a default method.
 trait Tr {

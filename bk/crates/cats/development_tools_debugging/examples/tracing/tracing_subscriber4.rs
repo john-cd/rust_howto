@@ -1,12 +1,11 @@
+#![allow(dead_code)]
+
+// TODO Reviewed ??-??-2026
+// ANCHOR: example
 //! This example demonstrates customizing the formatting of log lines for spans
 //! and events. See
 //! <https://docs.rs/tracing-subscriber/latest/tracing_subscriber/fmt/index.html#customizing-formatters>
-//!
-//! TODO Reviewed ??-??-2026
 
-#![allow(dead_code)]
-
-// ANCHOR: example
 use tracing_subscriber::fmt;
 use tracing_subscriber::fmt::format::Format;
 use tracing_subscriber::fmt::time::UtcTime;

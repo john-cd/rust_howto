@@ -1,10 +1,9 @@
-//! Mutating the elements of an array in parallel with `rayon`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Mutating the elements of an array in parallel with `rayon`.
+
 use rayon::prelude::*;
 
 /// Decrements each element of an array in parallel and prints the result.

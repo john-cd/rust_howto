@@ -1,10 +1,9 @@
-//! Labeled block expressions, which `break` out with a value.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Labeled block expressions, which `break` out with a value.
+
 /// Breaks out of a labeled block with a value.
 fn main() {
     // Labeled block expressions must begin with a label, here `'block`.

@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to initialize the `wgpu` GPU abstraction layer

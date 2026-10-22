@@ -1,8 +1,7 @@
-//! Generates a random `f64` with the `rand` crate.
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Generates a random `f64` with the `rand` crate.
+
 use rand::RngExt as _;
 
 /// This is a simple example that demonstrates how to use the `rand` crate to

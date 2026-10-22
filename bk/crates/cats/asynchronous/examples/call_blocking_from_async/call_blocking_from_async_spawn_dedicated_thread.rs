@@ -1,10 +1,9 @@
-//! Runs CPU-bound work from `async` code on a dedicated thread.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Runs CPU-bound work from `async` code on a dedicated thread.
+
 /// Sums `nums` on a dedicated thread and returns the result through a channel.
 async fn parallel_sum(nums: Vec<i32>) -> i32 {
     let (tx, rx) = tokio::sync::oneshot::channel();

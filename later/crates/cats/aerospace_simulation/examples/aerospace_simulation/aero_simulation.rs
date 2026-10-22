@@ -1,10 +1,9 @@
-//! A basic one-dimensional rocket launch simulation.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A basic one-dimensional rocket launch simulation.
+
 /// A basic 1D rocket launch simulation.
 struct Rocket {
     /// Mass of the rocket without fuel, in kg.

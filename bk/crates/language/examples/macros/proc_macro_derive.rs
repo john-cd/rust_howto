@@ -1,10 +1,9 @@
-//! A derive procedural macro that implements a trait.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(unused)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A derive procedural macro that implements a trait.
+
 use proc_macros::DebugPrint;
 
 // Define the custom trait that the macro will implement.

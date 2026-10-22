@@ -1,11 +1,10 @@
-//! Demonstrates the use of crossbeam channels for message passing between
-//! threads.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Demonstrates the use of crossbeam channels for message passing between
+//! threads.
+
 use std::thread;
 
 use crossbeam_channel::RecvError;

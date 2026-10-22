@@ -1,10 +1,9 @@
-//! A WebSocket client and server with `async-tungstenite`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A WebSocket client and server with `async-tungstenite`.
+
 // //! This example demonstrates how to use `async-tungstenite` to connect to a
 // //! WebSocket server, send a message, and receive a response.
 // //!

@@ -1,10 +1,9 @@
-//! A state machine whose transitions are triggered by events.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A state machine whose transitions are triggered by events.
+
 /// Represents the possible states of the state machine.
 #[derive(Debug, PartialEq, Clone, Copy)]
 enum State {

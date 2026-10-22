@@ -1,8 +1,7 @@
-//! Placeholder for a web server with `rocket`.
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Placeholder for a web server with `rocket`.
+
 // // COMING SOON
 // //! This is a simple example of a Rocket web server.
 // //!

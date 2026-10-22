@@ -1,10 +1,9 @@
-//! Destructuring a tuple in a `match`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Destructuring a tuple in a `match`.
+
 /// Matches a pair against several patterns.
 fn main() {
     let pair = (0, -5);

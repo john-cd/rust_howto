@@ -1,8 +1,7 @@
-//! A `SkipMap`, an ordered map built on a skip list.
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A `SkipMap`, an ordered map built on a skip list.
+
 use skiplist::SkipMap;
 
 /// Inserts into a `SkipMap` and iterates in key order.

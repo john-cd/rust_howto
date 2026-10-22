@@ -1,10 +1,9 @@
-//! Closures that capture their environment.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Closures that capture their environment.
+
 /// Defines a closure that captures a variable and calls it.
 fn main() {
     let outer_variable = 10;

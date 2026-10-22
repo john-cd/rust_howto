@@ -1,10 +1,9 @@
-//! Creating and unwrapping `Option` values.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Creating and unwrapping `Option` values.
+
 /// Creates `Some` and `None` values and unwraps them.
 fn main() {
     // `Some` is a variant of the `Option` enum that represents a value.

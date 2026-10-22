@@ -1,10 +1,9 @@
-//! A `LinkedList`, a doubly linked list.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A `LinkedList`, a doubly linked list.
+
 use std::collections::LinkedList;
 
 /// Adds, removes and iterates over the elements of a `LinkedList`.

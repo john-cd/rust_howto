@@ -1,10 +1,9 @@
-//! Calling Rust from Ruby with `magnus`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Calling Rust from Ruby with `magnus`.
+
 use magnus::Error;
 use magnus::RString;
 use magnus::class;

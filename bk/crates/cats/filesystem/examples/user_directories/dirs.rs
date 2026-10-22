@@ -1,10 +1,9 @@
-//! Locating the standard directories of the current user with `dirs`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Locating the standard directories of the current user with `dirs`.
+
 /// Prints the home, configuration, data, cache and executable directories.
 fn main() {
     // Get the home directory.

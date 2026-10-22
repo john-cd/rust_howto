@@ -1,10 +1,9 @@
-//! The `let ... else` statement.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! The `let ... else` statement.
+
 /// Parses `input` as a number, or panics.
 fn parse_number(input: &str) -> u32 {
     // Try to parse the input string.

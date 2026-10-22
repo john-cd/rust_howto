@@ -1,10 +1,9 @@
-//! Placeholder for a machine learning example with `candle`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Placeholder for a machine learning example with `candle`.
+
 // COMING SOON
 // ANCHOR_END: example
 // //! This example demonstrates a simple linear regression model using the

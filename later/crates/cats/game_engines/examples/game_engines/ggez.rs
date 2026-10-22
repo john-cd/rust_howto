@@ -1,10 +1,9 @@
-//! Placeholder for a `ggez` game example.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Placeholder for a `ggez` game example.
+
 // ggez example (commented out due to dependency conflicts in the workspace)
 // use ggez::{Context, ContextBuilder, GameResult};
 // use ggez::graphics::{self, Color, Canvas};

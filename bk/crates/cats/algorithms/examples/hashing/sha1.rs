@@ -1,11 +1,10 @@
-//! SHA-1 hashing with the `sha1` crate. SHA-1 is broken; do not use it for
-//! security.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! SHA-1 hashing with the `sha1` crate. SHA-1 is broken; do not use it for
+//! security.
+
 use hex_literal::hex;
 use sha1::Digest as _;
 use sha1::Sha1;

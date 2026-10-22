@@ -1,10 +1,9 @@
-//! Hashing and verifying a password with `scrypt`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Hashing and verifying a password with `scrypt`.
+
 // This example demonstrates how to hash and verify passwords using scrypt.
 use std::error::Error;
 

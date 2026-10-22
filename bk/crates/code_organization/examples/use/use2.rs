@@ -1,10 +1,9 @@
-//! Bringing a function into scope with `use`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Bringing a function into scope with `use`.
+
 /// This module represents the front of the house in a restaurant.
 mod front_of_house {
     /// This module handles hosting duties within the front of the house.

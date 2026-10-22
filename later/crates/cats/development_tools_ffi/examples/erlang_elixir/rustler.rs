@@ -1,9 +1,9 @@
-//! Native implemented functions for Erlang and Elixir with `rustler`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
+
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Native implemented functions for Erlang and Elixir with `rustler`.
+
 #![allow(unused)]
 
 #[cfg(feature = "erlang")]

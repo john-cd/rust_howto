@@ -1,10 +1,9 @@
-//! Generates the bindings and the headers used by the FFI examples.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: BINDGEN
+//! Generates the bindings and the headers used by the FFI examples.
+
 use std::env;
 use std::path::PathBuf;
 

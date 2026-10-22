@@ -1,10 +1,9 @@
-//! A trait with an associated type.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A trait with an associated type.
+
 /// A trait that represents an iterator (similar to what is in the standard
 /// library).
 trait Iterator {

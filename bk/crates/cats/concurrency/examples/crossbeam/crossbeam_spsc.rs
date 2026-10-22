@@ -1,11 +1,10 @@
-//! Example of using crossbeam's unbounded channel for single-producer,
-//! single-consumer (SPSC) communication.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Example of using crossbeam's unbounded channel for single-producer,
+//! single-consumer (SPSC) communication.
+
 use std::thread;
 use std::time;
 

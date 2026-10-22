@@ -1,8 +1,7 @@
-//! A `LinkedHashMap`, a hash map that remembers insertion order.
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A `LinkedHashMap`, a hash map that remembers insertion order.
+
 use linked_hash_map::LinkedHashMap;
 
 /// Inserts into a `LinkedHashMap` and iterates in insertion order.

@@ -1,10 +1,9 @@
-//! Walk a directory and computes the SHA256 digest of all iso files.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Walk a directory and computes the SHA256 digest of all iso files.
+
 use std::fs::File;
 use std::io::BufReader;
 use std::io::Error;

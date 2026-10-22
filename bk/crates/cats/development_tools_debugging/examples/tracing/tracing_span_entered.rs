@@ -1,10 +1,9 @@
-//! Demonstrates entering and exiting a span using `entered()` and `exit()`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Demonstrates entering and exiting a span using `entered()` and `exit()`.
+
 use tracing::Level;
 use tracing::span;
 

@@ -1,11 +1,10 @@
-//! Accessing private items from the same module and its children.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 #![allow(unused_imports)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Accessing private items from the same module and its children.
+
 /// A function private to the parent module.
 fn private_in_parent() {}
 

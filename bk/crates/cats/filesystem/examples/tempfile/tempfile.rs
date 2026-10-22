@@ -1,10 +1,9 @@
-//! Creating temporary files and directories with `tempfile`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Creating temporary files and directories with `tempfile`.
+
 use std::fs::File;
 use std::io::Read;
 use std::io::Seek as _;

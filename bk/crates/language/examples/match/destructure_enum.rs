@@ -1,10 +1,9 @@
-//! Destructuring an enum in a `match`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Destructuring an enum in a `match`.
+
 /// A message of different kinds.
 enum Message {
     /// A message without data.

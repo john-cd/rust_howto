@@ -1,10 +1,9 @@
-//! A minimal `bevy` app with a system that moves entities.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A minimal `bevy` app with a system that moves entities.
+
 use bevy::prelude::*;
 
 /// Builds and updates a headless Bevy app.

@@ -1,10 +1,9 @@
-//! Talking to Cassandra over its native protocol with `cassandra-protocol`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Talking to Cassandra over its native protocol with `cassandra-protocol`.
+
 // This example demonstrates how to build and serialize Cassandra protocol
 // frames using the `cassandra_protocol` crate.
 //

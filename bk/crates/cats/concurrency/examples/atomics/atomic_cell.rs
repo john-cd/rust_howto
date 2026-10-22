@@ -1,10 +1,9 @@
-//! Demonstrates the use of `AtomicCell` from the `crossbeam-utils` crate.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Demonstrates the use of `AtomicCell` from the `crossbeam-utils` crate.
+
 use crossbeam_utils::atomic::AtomicCell;
 
 /// Demonstrates the use of `AtomicCell` from the `crossbeam-utils` crate.

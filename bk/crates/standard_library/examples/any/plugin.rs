@@ -1,10 +1,9 @@
-//! A plugin system that stores shared services by their `TypeId`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A plugin system that stores shared services by their `TypeId`.
+
 use std::any::Any;
 use std::any::TypeId;
 use std::collections::HashMap;

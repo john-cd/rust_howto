@@ -1,10 +1,9 @@
-//! Rewriting tokens with a procedural macro built on `proc-macro2`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(unused)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Rewriting tokens with a procedural macro built on `proc-macro2`.
+
 // Import our custom procedural macro that was built using `proc-macro2`.
 use proc_macros::replace_ident;
 

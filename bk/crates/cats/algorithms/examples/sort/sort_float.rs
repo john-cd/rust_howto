@@ -1,10 +1,9 @@
-//! Sort a vector of floats.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Sort a vector of floats.
+
 /// Sort a vector of floats.
 fn main() {
     let mut vec = vec![1.1, 1.15, 5.5, 1.123, 2.0];

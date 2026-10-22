@@ -1,10 +1,9 @@
-//! Running `rayon` work on a custom thread pool.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Running `rayon` work on a custom thread pool.
+
 /// Computes a Fibonacci number on a pool of eight threads.
 fn main() {
     // Build the threadpool:

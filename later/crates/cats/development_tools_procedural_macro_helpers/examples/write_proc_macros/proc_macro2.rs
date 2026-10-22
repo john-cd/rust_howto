@@ -1,10 +1,9 @@
-//! A derive macro written with `proc-macro2`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A derive macro written with `proc-macro2`.
+
 use development_tools_procedural_macro_helpers::MyDebug;
 
 /// A struct that derives `MyDebug`.

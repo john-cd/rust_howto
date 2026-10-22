@@ -1,10 +1,9 @@
-//! Scoped threads that borrow local data and report through a channel.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Scoped threads that borrow local data and report through a channel.
+
 use std::error::Error;
 use std::path::Path;
 use std::sync::mpsc;

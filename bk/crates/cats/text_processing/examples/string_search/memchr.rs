@@ -1,10 +1,9 @@
-//! Searching bytes quickly with `memchr`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Searching bytes quickly with `memchr`.
+
 use memchr::memchr;
 
 // Use `memchr` to efficiently search for a byte in a slice.

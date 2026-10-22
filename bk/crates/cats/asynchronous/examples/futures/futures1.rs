@@ -1,10 +1,9 @@
-//! Races two futures with `select!` from the `futures` crate.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Races two futures with `select!` from the `futures` crate.
+
 use futures::{
     future::FutureExt as _, // Provides the `.fuse()` method for futures.
     pin_mut,

@@ -1,10 +1,9 @@
-//! Converting between a date and time and a Unix timestamp with `chrono`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Converting between a date and time and a Unix timestamp with `chrono`.
+
 use chrono::DateTime;
 use chrono::NaiveDate;
 use chrono::NaiveDateTime;

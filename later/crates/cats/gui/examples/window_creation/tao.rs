@@ -1,8 +1,7 @@
-//! Creating a window with `tao`.
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Creating a window with `tao`.
+
 use tao::event::Event;
 use tao::event::WindowEvent;
 use tao::event_loop::ControlFlow;

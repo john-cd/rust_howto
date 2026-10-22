@@ -1,10 +1,9 @@
-//! Token trees as the arguments of declarative macros.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Token trees as the arguments of declarative macros.
+
 /// Accepts a single token tree and expands to nothing.
 macro_rules! accept_single_token_tree {
     ($_:tt) => {};

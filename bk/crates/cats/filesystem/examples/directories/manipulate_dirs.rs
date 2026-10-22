@@ -1,10 +1,9 @@
-//! Creating, listing and removing directories.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Creating, listing and removing directories.
+
 use std::fs;
 use std::path::Path;
 

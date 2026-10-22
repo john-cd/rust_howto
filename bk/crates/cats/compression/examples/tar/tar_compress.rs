@@ -1,12 +1,11 @@
-//! This function creates a compressed tar archive (tar.gz) of the 'tests'
-//! directory.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 #![allow(clippy::incompatible_msrv)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! This function creates a compressed tar archive (tar.gz) of the 'tests'
+//! directory.
+
 use std::fs;
 use std::fs::File;
 

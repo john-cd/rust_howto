@@ -1,10 +1,9 @@
-//! A trait that requires another trait.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A trait that requires another trait.
+
 use std::fmt;
 
 // A supertrait is a trait that another trait depends on.

@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates the use of `unwrap()` and `expect()` for handling `Result`

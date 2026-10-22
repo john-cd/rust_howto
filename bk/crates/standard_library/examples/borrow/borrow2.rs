@@ -1,10 +1,9 @@
-//! A generic lookup that accepts any type that `String` borrows as.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A generic lookup that accepts any type that `String` borrows as.
+
 use std::borrow::Borrow;
 use std::collections::HashMap;
 

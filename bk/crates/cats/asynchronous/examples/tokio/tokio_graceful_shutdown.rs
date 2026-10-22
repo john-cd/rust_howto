@@ -1,10 +1,9 @@
-//! Graceful shutdown of nested subsystems with `tokio_graceful_shutdown`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Graceful shutdown of nested subsystems with `tokio_graceful_shutdown`.
+
 // The `tokio_graceful_shutdown` crate provides utility functions to perform a
 // graceful shutdown on tokio-rs based services.
 //

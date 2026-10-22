@@ -1,10 +1,9 @@
-//! A reader-writer lock from `parking_lot`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A reader-writer lock from `parking_lot`.
+
 use parking_lot::RwLock;
 
 /// Takes several read locks at once, then a single write lock.

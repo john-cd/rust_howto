@@ -1,10 +1,9 @@
-//! Dynamic typing with the `Any` trait.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Dynamic typing with the `Any` trait.
+
 use std::any::Any;
 
 // - `is::<T>(&self) -> bool` checks if the underlying concrete type of the

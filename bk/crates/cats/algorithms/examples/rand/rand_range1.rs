@@ -1,10 +1,9 @@
-//! Generates random numbers in ranges with the `rand` crate.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Generates random numbers in ranges with the `rand` crate.
+
 // Import necessary traits and structs from the `rand` crate.
 use rand::distr::Distribution as _;
 use rand::distr::Uniform;

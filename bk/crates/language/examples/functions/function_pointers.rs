@@ -1,10 +1,9 @@
-//! Passing and calling function pointers.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Passing and calling function pointers.
+
 /// Example function: add one to the input.
 fn add_one(x: i32) -> i32 {
     x + 1

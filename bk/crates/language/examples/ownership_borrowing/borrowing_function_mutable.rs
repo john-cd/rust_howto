@@ -1,10 +1,9 @@
-//! Passing a mutable reference to a function.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Passing a mutable reference to a function.
+
 /// This function takes a mutable reference `&mut` to a `String`
 /// and appends ", world" to it.
 fn change(some_string: &mut String) {

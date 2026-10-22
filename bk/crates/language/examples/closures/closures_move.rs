@@ -1,10 +1,9 @@
-//! Demonstrates the use of the `move` keyword with closures.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Demonstrates the use of the `move` keyword with closures.
+
 use std::thread;
 
 /// Demonstrates the use of the `move` keyword with closures.

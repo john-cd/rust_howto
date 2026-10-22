@@ -1,10 +1,9 @@
-//! A queue implemented with `VecDeque`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A queue implemented with `VecDeque`.
+
 use std::collections::VecDeque;
 
 /// Adds elements to a queue and removes them in first-in, first-out order.

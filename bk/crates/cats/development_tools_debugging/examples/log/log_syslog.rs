@@ -1,9 +1,9 @@
-//! Initializes syslog and logs debug and error messages.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
+
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Initializes syslog and logs debug and error messages.
+
 #![cfg(target_os = "linux")]
 
 use syslog::Facility;

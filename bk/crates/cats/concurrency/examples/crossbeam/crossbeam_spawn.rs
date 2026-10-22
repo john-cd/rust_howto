@@ -1,10 +1,9 @@
-//! Finds the maximum value in an array using `crossbeam` for concurrency.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Finds the maximum value in an array using `crossbeam` for concurrency.
+
 /// Finds the maximum value in an array using `crossbeam` for concurrency.
 fn main() {
     let arr = &[1, 25, -4, 10];

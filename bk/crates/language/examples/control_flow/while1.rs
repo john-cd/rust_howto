@@ -1,10 +1,9 @@
-//! This is an example of a `while` loop.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! This is an example of a `while` loop.
+
 /// This is an example of a `while` loop.
 fn main() {
     // Initialize a mutable variable.

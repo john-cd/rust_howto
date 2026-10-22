@@ -1,10 +1,9 @@
-//! Overloading the `+` operator with `Add`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Overloading the `+` operator with `Add`.
+
 use std::ops::Add;
 
 // The struct we want to overload the '+' operator for.

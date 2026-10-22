@@ -1,10 +1,9 @@
-//! Spawning threads and waiting for them with `join`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Spawning threads and waiting for them with `join`.
+
 use std::thread;
 use std::time::Duration;
 

@@ -1,10 +1,9 @@
-//! Implementing `Deref` for a smart pointer.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Implementing `Deref` for a smart pointer.
+
 use std::ops::Deref;
 
 // Define a custom smart pointer.

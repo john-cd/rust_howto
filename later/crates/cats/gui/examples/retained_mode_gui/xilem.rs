@@ -1,10 +1,9 @@
-//! A counter application with `xilem`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A counter application with `xilem`.
+
 use xilem::EventLoop;
 use xilem::WindowOptions;
 use xilem::Xilem;

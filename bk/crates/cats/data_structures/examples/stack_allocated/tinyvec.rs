@@ -1,10 +1,9 @@
-//! A `TinyVec`, which stores a few elements inline before moving to the heap.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A `TinyVec`, which stores a few elements inline before moving to the heap.
+
 use tinyvec::TinyVec;
 
 /// Grows a `TinyVec` past its inline capacity.

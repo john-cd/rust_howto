@@ -1,10 +1,9 @@
-//! Calling JavaScript from Rust with `js-sys`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Calling JavaScript from Rust with `js-sys`.
+
 #[cfg(target_arch = "wasm32")]
 use js_sys::Date;
 #[cfg(target_arch = "wasm32")]

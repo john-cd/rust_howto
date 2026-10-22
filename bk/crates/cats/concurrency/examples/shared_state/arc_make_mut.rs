@@ -1,11 +1,10 @@
-//! Sharing a configuration between threads with `Arc`, and cloning it on write
-//! with `Arc::make_mut`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Sharing a configuration between threads with `Arc`, and cloning it on write
+//! with `Arc::make_mut`.
+
 use std::sync::Arc;
 use std::thread;
 use std::time::Duration;

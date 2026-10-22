@@ -1,10 +1,9 @@
-//! A counter application with `vizia`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A counter application with `vizia`.
+
 use vizia::prelude::*;
 
 /// The data of the application.

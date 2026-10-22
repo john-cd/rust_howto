@@ -1,11 +1,10 @@
-//! This example demonstrates how to use `cfg-if` to conditionally compile
-//! code blocks.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! This example demonstrates how to use `cfg-if` to conditionally compile
+//! code blocks.
+
 use cfg_if::cfg_if;
 
 /// This example demonstrates how to use `cfg-if` to conditionally compile

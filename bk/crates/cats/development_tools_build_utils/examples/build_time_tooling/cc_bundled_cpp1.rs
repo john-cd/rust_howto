@@ -1,10 +1,9 @@
-//! Calling a C++ function compiled by a build script with the `cc` crate.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Calling a C++ function compiled by a build script with the `cc` crate.
+
 // Declare a C-compatible symbol that can be implemented in bundled C++ code.
 unsafe extern "C" {
     fn multiply(x: i32, y: i32) -> i32;

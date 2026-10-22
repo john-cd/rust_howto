@@ -1,11 +1,10 @@
-//! Scalar data types: integers, floating-point numbers, booleans and
-//! characters.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Scalar data types: integers, floating-point numbers, booleans and
+//! characters.
+
 /// Declares variables of each scalar type.
 fn main() {
     // Integer types:

@@ -1,10 +1,9 @@
-//! Binding a value to a name while matching a pattern with `@`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Binding a value to a name while matching a pattern with `@`.
+
 /// A message with an identifier.
 enum Message {
     /// A greeting.

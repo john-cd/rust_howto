@@ -1,8 +1,7 @@
-//! A `RangeMap`, which maps ranges of keys to values.
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A `RangeMap`, which maps ranges of keys to values.
+
 use rangemap::RangeMap;
 
 /// Maps two ranges to values and looks up keys.

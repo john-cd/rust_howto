@@ -1,10 +1,9 @@
-//! This example demonstrates how to add two matrices using the `ndarray` crate.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! This example demonstrates how to add two matrices using the `ndarray` crate.
+
 use ndarray::arr2;
 
 /// This example demonstrates how to add two matrices using the `ndarray` crate.

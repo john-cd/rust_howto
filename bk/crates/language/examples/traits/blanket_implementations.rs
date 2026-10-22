@@ -1,10 +1,9 @@
-//! A blanket implementation of a trait for all types that implement another.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A blanket implementation of a trait for all types that implement another.
+
 /// A module that defines a trait and its blanket implementation.
 mod my {
     use std::fmt::Display;

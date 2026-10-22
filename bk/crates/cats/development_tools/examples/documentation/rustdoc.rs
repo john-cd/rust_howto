@@ -1,10 +1,9 @@
-//! Documenting a function, including documentation from an external file.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Documenting a function, including documentation from an external file.
+
 /// This is a doc comment.
 /// Note the three slashes.
 /// The first line is equivalent to the following:

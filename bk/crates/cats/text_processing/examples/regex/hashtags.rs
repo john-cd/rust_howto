@@ -1,10 +1,9 @@
-//! Extracting hashtags from a text with a regular expression.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Extracting hashtags from a text with a regular expression.
+
 use std::collections::HashSet;
 
 use lazy_static::lazy_static;

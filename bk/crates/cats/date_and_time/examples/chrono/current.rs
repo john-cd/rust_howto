@@ -1,12 +1,11 @@
+#![allow(dead_code)]
+
+// TODO Reviewed ??-??-2026
+// ANCHOR: example
 //! Demonstrates how to get the current UTC time and date using the chrono
 //! crate. It prints the time in 12-hour format with AM/PM, seconds since
 //! midnight, and the date in year-month-day format.
-//!
-//! TODO Reviewed ??-??-2026
 
-#![allow(dead_code)]
-
-// ANCHOR: example
 use chrono::Datelike as _;
 use chrono::Timelike as _;
 use chrono::Utc;

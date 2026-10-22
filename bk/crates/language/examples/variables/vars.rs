@@ -1,12 +1,11 @@
-//! Variables are used to store values.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 #![allow(unused)]
 #![allow(clippy::needless_late_init)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Variables are used to store values.
+
 /// Variables are used to store values.
 fn main() {
     // Rust is a statically typed language, meaning that

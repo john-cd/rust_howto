@@ -1,10 +1,9 @@
-//! Placeholder for a machine learning example with `smartcore`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Placeholder for a machine learning example with `smartcore`.
+
 // COMING SOON
 /// Does nothing yet.
 fn main() {}

@@ -1,10 +1,9 @@
-//! Warning about an ignored result with `#[must_use]`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Warning about an ignored result with `#[must_use]`.
+
 /// The `#[must_use]` attribute indicates that the return value of a function
 /// must be used. This attribute can also be applied to traits, structs, enums,
 /// etc.

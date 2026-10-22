@@ -1,10 +1,9 @@
-//! Computing the mean and the standard deviation of a list of integers.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Computing the mean and the standard deviation of a list of integers.
+
 /// Calculates the mean (average) of a slice of i32 integers.
 ///
 /// # Arguments

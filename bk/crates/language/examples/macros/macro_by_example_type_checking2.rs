@@ -1,10 +1,9 @@
-//! Restricting the types a declarative macro accepts.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(unused)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Restricting the types a declarative macro accepts.
+
 // 1. If you want to allow expressions but ensure they are numeric, you can
 //    enforce type checking:
 /// Prints an expression that must be coercible to `f64`.

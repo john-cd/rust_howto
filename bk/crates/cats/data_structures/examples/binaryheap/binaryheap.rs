@@ -1,10 +1,9 @@
-//! A `BinaryHeap` used as a priority queue.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A `BinaryHeap` used as a priority queue.
+
 use std::cmp::Reverse;
 use std::collections::BinaryHeap;
 

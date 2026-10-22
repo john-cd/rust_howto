@@ -1,10 +1,9 @@
-//! Dijkstra's shortest paths in a weighted `petgraph` graph.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Dijkstra's shortest paths in a weighted `petgraph` graph.
+
 use petgraph::Graph;
 use petgraph::algo::dijkstra;
 

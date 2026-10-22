@@ -1,10 +1,9 @@
-//! Creating CCSDS space packets with `spacepackets`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Creating CCSDS space packets with `spacepackets`.
+
 use arbitrary_int::u11;
 use arbitrary_int::u14;
 use spacepackets::CcsdsPacket as _;

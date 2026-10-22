@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 #![allow(clippy::single_match)]
+
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates downloading multiple files concurrently using

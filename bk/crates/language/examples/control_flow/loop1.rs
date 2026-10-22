@@ -1,10 +1,9 @@
-//! Demonstrates the use of a `loop` with a `break` statement to return a value.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Demonstrates the use of a `loop` with a `break` statement to return a value.
+
 /// Demonstrates the use of a `loop` with a `break` statement to return a value.
 fn main() {
     // Initialize a mutable counter.

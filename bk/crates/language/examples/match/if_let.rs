@@ -1,11 +1,10 @@
-//! The `if let` syntax allows you to combine `if` and `let`
-//! to handle values that match a specific pattern, while ignoring others.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! The `if let` syntax allows you to combine `if` and `let`
+//! to handle values that match a specific pattern, while ignoring others.
+
 /// The `if let` syntax allows you to combine `if` and `let`
 /// to handle values that match a specific pattern, while ignoring others.
 fn main() {

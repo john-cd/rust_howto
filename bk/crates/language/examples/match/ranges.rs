@@ -1,10 +1,9 @@
-//! Matching ranges of values.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Matching ranges of values.
+
 /// Matches a number against ranges.
 fn main() {
     let x = 5;

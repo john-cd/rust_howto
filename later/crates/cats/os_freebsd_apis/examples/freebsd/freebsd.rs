@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A FreeBSD-specific example using the `nix` crate to call FreeBSD APIs.

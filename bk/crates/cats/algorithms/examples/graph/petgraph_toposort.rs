@@ -1,10 +1,9 @@
-//! Topological sort of a directed acyclic `petgraph` graph.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Topological sort of a directed acyclic `petgraph` graph.
+
 use petgraph::Graph;
 use petgraph::algo::toposort;
 

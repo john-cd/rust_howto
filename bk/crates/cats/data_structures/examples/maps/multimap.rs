@@ -1,10 +1,9 @@
-//! A `MultiMap`, which associates several values with one key.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A `MultiMap`, which associates several values with one key.
+
 use anyhow::Result;
 use crates_io_api::Category;
 use crates_io_api::SyncClient;

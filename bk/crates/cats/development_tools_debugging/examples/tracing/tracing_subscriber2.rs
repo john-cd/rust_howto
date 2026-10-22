@@ -1,10 +1,9 @@
-//! Composing a `tracing` subscriber from layers and filters.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Composing a `tracing` subscriber from layers and filters.
+
 use std::io;
 
 use tracing_subscriber::Layer as _;

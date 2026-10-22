@@ -1,11 +1,10 @@
-//! Connects to a Microsoft SQL Server database, executes a query, and prints
-//! the result.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Connects to a Microsoft SQL Server database, executes a query, and prints
+//! the result.
+
 // This example demonstrates connecting to and querying Microsoft SQL Server
 // using the `tiberius` crate.
 use futures::stream::TryStreamExt as _;

@@ -1,10 +1,9 @@
-//! Restricting visibility to the current crate with `pub(crate)`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Restricting visibility to the current crate with `pub(crate)`.
+
 // In e.g. `lib.rs`:
 /// A module with a `pub(crate)` function.
 mod a_module {

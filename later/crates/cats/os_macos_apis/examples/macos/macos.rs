@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A macOS-specific example using the `cocoa` crate to call native macOS APIs.

@@ -1,10 +1,9 @@
-//! Compressed bitmaps with the `roaring` crate.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Compressed bitmaps with the `roaring` crate.
+
 use roaring::RoaringBitmap;
 
 /// Builds roaring bitmaps and combines and queries them.

@@ -1,10 +1,9 @@
-//! Trait bounds written in several ways.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Trait bounds written in several ways.
+
 /// Something that can be summarized.
 trait Summary {
     /// Returns a summary.

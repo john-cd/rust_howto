@@ -1,11 +1,10 @@
-//! A broadcast channel from the `postage` crate: several receivers get every
-//! message.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A broadcast channel from the `postage` crate: several receivers get every
+//! message.
+
 use postage::broadcast;
 use postage::prelude::Sink as _;
 use postage::prelude::Stream as _;
