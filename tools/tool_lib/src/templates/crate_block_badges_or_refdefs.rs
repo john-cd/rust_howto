@@ -16,6 +16,7 @@ pub(super) static CRATE_BLOCK_BADGES: &str = concat!(
     r"[![{crate_name}~lib.rs][c~{crate_name}~lib.rs~badge]][c~{crate_name}~lib.rs]\{\{hi:{crate_name}}} "
 );
 
+/// Template of the description of a crate.
 pub(super) static CRATE_DESCRIPTION: &str =
     "{{- if description_defined }}{description}{{ endif -}}";
 
@@ -43,8 +44,11 @@ pub(super) static CRATE_BLOCK_REFDEFS: &str = "\
 ///
 /// This enum defines the different types of content that can be generated for a crate, such as badges, description, and reference definitions.
 pub enum GenerationMode {
+    /// Badges for the crate.
     CrateBlock,
+    /// Description of the crate.
     CrateDescription,
+    /// Reference definitions for the badges.
     CrateBlockRefdefs,
 }
 

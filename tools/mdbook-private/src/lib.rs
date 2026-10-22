@@ -21,9 +21,13 @@ use serde::Deserialize;
 #[derive(Deserialize)]
 #[serde(default, rename_all = "kebab-case")]
 struct Config {
+    /// Whether to remove private chapters instead of keeping them.
     remove: bool,
+    /// Whether to style the private content.
     style: bool,
+    /// Notice displayed on private content.
     notice: String,
+    /// Prefix of the file names of private chapters.
     chapter_prefix: String,
 }
 
@@ -84,6 +88,7 @@ impl Preprocessor for Private {
     }
 }
 
+/// Removes the chapters, at any depth, whose file name starts with `prefix`.
 fn remove_chapters(items: &mut Vec<BookItem>, prefix: &str) {
     items.retain_mut(|item| {
         if let BookItem::Chapter(chapter) = item {
@@ -102,6 +107,7 @@ fn remove_chapters(items: &mut Vec<BookItem>, prefix: &str) {
     });
 }
 
+/// Renumbers the chapters that have a number, starting at 1 under `parent`.
 fn renumber(items: &mut [BookItem], parent: &mut Vec<u32>) {
     let mut next = 1;
     for item in items {

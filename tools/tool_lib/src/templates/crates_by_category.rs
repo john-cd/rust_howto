@@ -11,26 +11,37 @@ use serde::Deserialize;
 
 use super::RecipeLinksByCrate;
 
+/// Slug of the category of the crates that have no category.
 const UNCATEGORIZED_SLUG: &str = "uncategorized";
 
+/// Description of the category of the crates that have no category.
 const UNCATEGORIZED_DESCRIPTION: &str =
     "No crates.io category is recorded for these crates in the book's current inventory.";
 
+/// Header of the "crates by category" table.
 const CATEGORY_PAGE_HEADER: &str =
     "# Crates by Category\n\n| Category | Description | Crates |\n| --- | --- | --- |\n";
 
+/// Footer of the page, which includes the reference definitions.
 const CATEGORY_PAGE_FOOTER: &str = "\n[All Valid Categories][crates.io~category_slugs]↗.\n\n{{#include refs.incl.md}}\n{{#include ../refs/link-refs.md}}\n\n<div class=\"hidden\">\n</div>\n";
 
+/// The categories file.
 #[derive(Deserialize)]
 struct CategoryCatalog {
+    /// The categories.
     categories: Vec<CategoryRecord>,
 }
 
+/// A category and its crates.
 #[derive(Deserialize)]
 struct CategoryRecord {
+    /// Name of the category.
     category: String,
+    /// Slug of the category on `crates.io`.
     slug: String,
+    /// Description of the category.
     description: String,
+    /// Names of the crates in the category.
     #[serde(default)]
     crates: Vec<String>,
 }
@@ -59,6 +70,7 @@ pub fn create_category_and_crates(
     )
 }
 
+/// Returns one row of the table, with links to the recipes that use each crate.
 fn create_category_row(
     category: &str,
     slug: &str,

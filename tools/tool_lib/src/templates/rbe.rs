@@ -5,6 +5,7 @@
 use anyhow::Result;
 use serde::Serialize;
 
+/// Template of the Rust By Example badge and its reference definitions.
 pub(super) static RBE: &str = "
 [![Rust by example - {concept}][book~rust-by-example~{concept | underscored}~badge]][book~rust-by-example~{concept | underscored}]
 

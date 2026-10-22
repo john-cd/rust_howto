@@ -4,7 +4,9 @@
 
 /// Helper struct to safely set/unset environment variables during e.g. tests.
 pub struct EnvGuard {
+    /// Name of the environment variable.
     key: String,
+    /// Value of the variable when the guard was created, if it was set.
     original_value: Option<String>,
 }
 

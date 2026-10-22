@@ -137,14 +137,18 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Header of the alphabetical page.
 const ALPHABETICAL_PAGE_HEADER: &str = "# Crates in Alphabetical Order\n\n\
 Crates mentioned in this book, in alphabetical order. Nested links point to published recipes that use each crate.\n\n";
 
+/// Footer of the alphabetical page, which includes the reference definitions.
 const ALPHABETICAL_PAGE_FOOTER: &str = "{{#include refs.incl.md}}\n\
 {{#include ../refs/link-refs.md}}\n\n\
 <div class=\"hidden\">\n\
 </div>\n";
 
+/// Returns the alphabetical page of the given crates and the crates that have
+/// published recipes.
 fn create_alphabetical_page(
     crate_names: &[String],
     recipe_links: &tool_lib::RecipeLinksByCrate,
