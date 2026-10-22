@@ -26,16 +26,19 @@ pub enum DataStoreError {
     Redaction(String),
 
     /// A header does not have the expected content.
-    /// The expected header.
     #[error("invalid header (expected {expected:?}, found {found:?})")]
-    InvalidHeader { expected: String, found: String },
-/// The header that was found.
+    InvalidHeader {
+        /// The expected header.
+        expected: String,
+        /// The header that was found.
+        found: String,
+    },
 
-    /// Any other error of the data store.
+    /// An unknown error of the data store.
     #[error("unknown data store error")]
     Unknown,
 
-    /// Another error, forwarded as is.
+    /// Any other error, forwarded as is.
     #[error(transparent)]
     // Forward the source and Display methods straight through to an
     // underlying error without adding an additional message.
