@@ -71,3 +71,49 @@ fn get_template_engine() -> anyhow::Result<TinyTemplate<'static>> {
 // }
 
 // [finish; unit tests; tinytemplate vs tera?](https://github.com/john-cd/rust_howto/issues/1361)
+
+#[cfg(test)]
+mod tests {
+    use serde::Serialize;
+
+    use super::*;
+
+    /// Context holding a single string value for formatter tests.
+    #[derive(Serialize)]
+    struct Value {
+        v: &'static str,
+    }
+
+    /// Renders `template` against `input` using the shared engine's formatters.
+    fn render(template: &'static str, input: &'static str) -> String {
+        let mut tt = get_template_engine().expect("engine should build");
+        tt.add_template("TEST", template)
+            .expect("template should parse");
+        tt.render("TEST", &Value { v: input })
+            .expect("template should render")
+    }
+
+    /// The `underscored` formatter replaces every hyphen with an underscore.
+    #[test]
+    fn underscored_formatter_replaces_hyphens() {
+        assert_eq!(render("{v | underscored}", "a-b-c"), "a_b_c");
+    }
+
+    /// The `shielded` formatter escapes `-` and `_` and replaces spaces.
+    #[test]
+    fn shielded_formatter_escapes_for_shields_io() {
+        assert_eq!(render("{v | shielded}", "a-b_c d"), "a--b__c_d");
+    }
+
+    /// Formatters leave the output untouched when the value is not a string.
+    #[test]
+    fn formatters_ignore_non_string_values() {
+        let mut tt = get_template_engine().expect("engine should build");
+        tt.add_template("TEST", "[{v | underscored}{v | shielded}]")
+            .expect("template should parse");
+        let rendered = tt
+            .render("TEST", &serde_json::json!({ "v": 42 }))
+            .expect("template should render");
+        assert_eq!(rendered, "[]");
+    }
+}
