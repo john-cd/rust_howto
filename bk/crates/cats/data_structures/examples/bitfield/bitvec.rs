@@ -6,9 +6,10 @@
 //! bitvec = "1.0.1" # Or latest
 //! ```
 
+use bitvec::field::BitField;
 use bitvec::prelude::*;
 
-fn main() {
+fn basic_operations() {
     // Create a new `BitVec` with default parameters:
     let mut bv = bitvec![u8, Msb0; 0, 1, 0, 1, 1, 0, 1, 0];
     println!("Original BitVec: {bv}");
@@ -40,7 +41,9 @@ fn main() {
         print!("{bit} ");
     }
     println!();
+}
 
+fn endianness_and_storage() {
     println!("\n===== Different Endianness and Storage Types =====");
 
     // Create `BitVec`s with different storage types and endianness:
@@ -49,7 +52,9 @@ fn main() {
 
     let bv_u32 = bitvec![u32, Msb0; 0, 1, 0, 1, 1, 0, 1, 0];
     println!("u32 MSB BitVec: {bv_u32}");
+}
 
+fn bit_manipulation() {
     println!("\n===== Bit Manipulation Operations =====");
 
     // Create two `BitVec`s for bitwise operations:
@@ -78,7 +83,9 @@ fn main() {
     // In-place operations:
     a &= &b;
     println!("a &= b: {a}");
+}
 
+fn slicing_and_ranges() {
     println!("\n===== Slicing and Ranges =====");
 
     let mut bv_slice = bitvec![u8, Msb0; 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0];
@@ -91,7 +98,9 @@ fn main() {
     // Modify a slice:
     bv_slice[4..8].fill(true);
     println!("After filling [4..8] with `1`s: {bv_slice}");
+}
 
+fn practical_applications() {
     println!("\n===== Practical Applications =====");
 
     // Example 1: Bit flags e.g. file permissions.
@@ -119,8 +128,6 @@ fn main() {
     println!("Packed bits: {packed}");
 
     // Example 3: Bit-packed struct.
-    use bitvec::field::BitField;
-
     let mut data = bitvec![u16, Lsb0; 0; 16];
 
     // Pack (small) values into specific bit ranges:
@@ -136,6 +143,14 @@ fn main() {
     let value3: u8 = data[8..16].load();
 
     println!("Extracted values: {value1}, {value2}, {value3}");
+}
+
+fn main() {
+    basic_operations();
+    endianness_and_storage();
+    bit_manipulation();
+    slicing_and_ranges();
+    practical_applications();
 }
 
 // ANCHOR_END: example
