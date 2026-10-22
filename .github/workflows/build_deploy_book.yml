@@ -26,6 +26,7 @@ on:
       - 'tools/**'
       - '.devcontainer/**'
       - '.github/workflows/**'
+      - '.github/actions/**'
       - 'justfile'
       - 'Cargo.toml'
       - 'Cargo.lock'
@@ -37,6 +38,7 @@ on:
       - 'tools/**'
       - '.devcontainer/**'
       - '.github/workflows/**'
+      - '.github/actions/**'
       - 'justfile'
       - 'Cargo.toml'
       - 'Cargo.lock'
@@ -60,9 +62,10 @@ permissions:
 
 ## Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 ## However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+## Pull request validations are not deployments: they are grouped per branch and superseded by newer pushes.
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.ref) || 'pages' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 # Default to bash
 defaults:
@@ -81,7 +84,8 @@ jobs:
       IMAGE_PULL_POLICY: never
     steps:
       - name: Code checkout
-        uses: actions/checkout@v7
+        # actions/checkout v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - name: Reject repository links to the empty main branch
         shell: bash
         run: |
@@ -97,9 +101,10 @@ jobs:
       - name: Reject visible TODO placeholders
         run: python bk/scripts/check_visible_todos.py
       - name: Set build cache scope
-        run: echo "GHA_CACHE_SCOPE=rust-howto-${{ runner.os }}-${{ hashFiles('.devcontainer/.env', 'bk/crates/Cargo.lock', 'tools/Cargo.lock') }}" >> "$GITHUB_ENV"
+        uses: ./.github/actions/set-cache-scope
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v4
+        # docker/setup-buildx-action v4.4.1
+        uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069
       - name: Build, test, lint, and render through Compose
         run: |
           docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml run \
@@ -115,7 +120,8 @@ jobs:
     steps:
       ## https://github.com/marketplace/actions/free-disk-space-ubuntu
       - name: Free Disk Space (Ubuntu)
-        uses: jlumbroso/free-disk-space@ceedf095f4ec1a097402bc6bd80831f2e1a6fde6 # v2.0.0
+        # jlumbroso/free-disk-space v2.0.0
+        uses: jlumbroso/free-disk-space@ceedf095f4ec1a097402bc6bd80831f2e1a6fde6
         with:
           # this might remove tools that are actually needed,
           # if set to "true" but frees about 6 GB
@@ -129,13 +135,14 @@ jobs:
           docker-images: false
           swap-storage: true
       - name: Code checkout (clones the Git repository)
-        uses: actions/checkout@v7
+        # actions/checkout v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - name: Set build cache scope
-        run: echo "GHA_CACHE_SCOPE=rust-howto-${{ runner.os }}-${{ hashFiles('.devcontainer/.env', 'bk/crates/Cargo.lock', 'tools/Cargo.lock') }}" >> "$GITHUB_ENV"
+        uses: ./.github/actions/set-cache-scope
       # - name: Validate YAML files
       #   run: yamllint ./.devcontainer/ ./.github/ ./.github/workflows/
       - name: Login to Docker Hub
-        uses: docker/login-action@v4
+        uses: ./.github/actions/docker-login
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -145,7 +152,8 @@ jobs:
       ## https://github.com/docker/setup-buildx-action
       - name: Set up Docker Buildx
         id: builder
-        uses: docker/setup-buildx-action@v4
+        # docker/setup-buildx-action v4.4.1
+        uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069
       # - name: List Docker builders (debug)
       #   run: docker buildx ls
       - name: Build, cache (type=gha), and push to DockerHub
@@ -167,16 +175,18 @@ jobs:
         partition: [1, 2]
     steps:
       - name: Code checkout
-        uses: actions/checkout@v7
+        # actions/checkout v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - name: Set build cache scope
-        run: echo "GHA_CACHE_SCOPE=rust-howto-${{ runner.os }}-${{ hashFiles('.devcontainer/.env', 'bk/crates/Cargo.lock', 'tools/Cargo.lock') }}" >> "$GITHUB_ENV"
+        uses: ./.github/actions/set-cache-scope
       - name: Rust Cache
-        uses: Swatinem/rust-cache@v2
+        # Swatinem/rust-cache v2.9.3
+        uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0
         with:
           shared-key: "rust-howto-shared"
           cache-targets: "false"
       - name: Login to Docker Hub
-        uses: docker/login-action@v4
+        uses: ./.github/actions/docker-login
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -195,17 +205,19 @@ jobs:
       IMAGE_PULL_POLICY: missing
     steps:
       - name: Code checkout
-        uses: actions/checkout@v7
+        # actions/checkout v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - name: Set build cache scope
-        run: echo "GHA_CACHE_SCOPE=rust-howto-${{ runner.os }}-${{ hashFiles('.devcontainer/.env', 'bk/crates/Cargo.lock', 'tools/Cargo.lock') }}" >> "$GITHUB_ENV"
+        uses: ./.github/actions/set-cache-scope
       - name: Rust Cache
-        uses: Swatinem/rust-cache@v2
+        # Swatinem/rust-cache v2.9.3
+        uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0
         with:
           shared-key: "rust-howto-shared"
           cache-targets: "false"
           save-if: false # Only restore in the final build stage
       - name: Login to Docker Hub
-        uses: docker/login-action@v4
+        uses: ./.github/actions/docker-login
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -215,11 +227,9 @@ jobs:
             -e SKIP_TESTS="true" \
             -e BUILD_PDF="${{ inputs.build_pdf || false }}" \
             book
-      - name: Setup GitHub Pages
-        id: pages
-        uses: actions/configure-pages@v6
       - name: Upload artifacts
-        uses: actions/upload-pages-artifact@v5
+        # actions/upload-pages-artifact v5.0.0
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9
         with:
           path: ./book/html/
 
@@ -240,4 +250,5 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        # actions/deploy-pages v5.0.1
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346

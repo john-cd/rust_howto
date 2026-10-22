@@ -1,0 +1,14 @@
+# Composite action: set `GHA_CACHE_SCOPE`, the scope of the Docker layer cache (`type=gha`)
+# referenced by `.devcontainer/compose-ci.yaml`. The scope changes when the pinned versions
+# or the lock files change.
+name: Set Docker build cache scope
+description: Export GHA_CACHE_SCOPE for docker compose / buildx.
+
+runs:
+  using: composite
+  steps:
+    - name: Set GHA_CACHE_SCOPE
+      shell: bash
+      env:
+        HASH: ${{ hashFiles('.devcontainer/.env', 'bk/crates/Cargo.lock', 'tools/Cargo.lock') }}
+      run: echo "GHA_CACHE_SCOPE=rust-howto-${RUNNER_OS}-${HASH}" >> "$GITHUB_ENV"

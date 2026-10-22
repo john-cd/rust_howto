@@ -1,0 +1,27 @@
+# Composite action: export the tool versions pinned in `.devcontainer/.env`
+# (RUST_VERSION, MDBOOK_*, CARGO_NEXTEST_VERSION, JUST_VERSION) as environment
+# variables for the following steps. `.devcontainer/.env` stays the single source of truth,
+# shared with the Docker image. Works on every OS (bash).
+name: Load pinned tool versions
+description: Export the versions pinned in .devcontainer/.env to the job environment.
+
+inputs:
+  env-file:
+    description: Path of the env file, relative to the workspace.
+    default: ".devcontainer/.env"
+
+runs:
+  using: composite
+  steps:
+    - name: Export pinned versions
+      shell: bash
+      env:
+        ENV_FILE: ${{ inputs.env-file }}
+      run: |
+        set -euo pipefail
+        grep -E '^(MDBOOK_[A-Z_]+|CARGO_NEXTEST_VERSION|RUST_VERSION|JUST_VERSION)="[^"]+"\r?$' "$ENV_FILE" \
+          | tr -d '"\r' >> "$GITHUB_ENV"
+        if ! grep -q '^RUST_VERSION=' "$ENV_FILE"; then
+          echo "RUST_VERSION is missing from $ENV_FILE" >&2
+          exit 1
+        fi
