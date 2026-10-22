@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Using a closure to filter a list.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// Finds all strings in a list that contain the '@' character.
 fn find_emails(list: Vec<String>) -> Vec<String> {
@@ -9,6 +13,7 @@ fn find_emails(list: Vec<String>) -> Vec<String> {
         .collect()
 }
 
+/// Filters a list of strings with `find_emails`.
 fn main() {
     for s in find_emails(vec![
         String::from("example"),

@@ -1,25 +1,39 @@
-// TODO Reviewed ??-??-2026
+//! Which items are accessible through nested public and private modules.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 #![allow(unused_imports)]
+
 // ANCHOR: example
+/// A private module.
 mod a_module {
+    /// A private function.
     fn private() {}
 
+    /// A public function.
     pub fn public() {}
 
+    /// A public nested module.
     pub mod public_nested_module {
+        /// A private function.
         fn private() {}
 
+        /// A public function.
         pub fn public() {}
     }
 
+    /// A private nested module.
     mod private_nested_module {
+        /// A private function.
         fn private() {}
 
+        /// A public function.
         pub fn public() {}
     }
 }
 
+/// Calls the accessible items.
 fn main() {
     // For an item to be accessible, all elements in the paths
     // must be accessible from the current module.
@@ -42,7 +56,9 @@ fn main() {
 }
 
 // The same applies when calling from a brother module.
+/// A module that is a sibling of `a_module`.
 mod another_module {
+    /// Calls the items accessible from this module.
     fn call() {
         // `super` refers to the parent and is therefore accessible
         // from the child.

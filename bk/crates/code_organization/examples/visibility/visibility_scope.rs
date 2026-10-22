@@ -1,17 +1,29 @@
-// TODO Reviewed ??-??-2026
+//! Restricting visibility to a scope with `pub(in path)`, `pub(super)` and
+//! `pub(crate)`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// The module in which `pub(in ...)` items are visible.
 mod a {
+    /// A module that is public inside `a`.
     pub mod b {
+        /// A function visible in the whole crate.
         pub(crate) fn visible_in_crate() {}
 
+        /// A function visible in the parent module only.
         pub(super) fn visible_in_parent_module() {}
 
+        /// A public nested module.
         pub mod c {
+            /// A function visible in `a` only.
             pub(in super::super) fn visible_in_a() {}
         }
     }
 
+    /// Calls the functions visible in `a`.
     #[allow(dead_code)]
     fn use_in_a() {
         b::visible_in_crate();
@@ -20,7 +32,9 @@ mod a {
     }
 }
 
+/// A module that is not related to `a`.
 mod d {
+    /// Calls the functions visible in `d`.
     #[allow(dead_code)]
     fn use_in_d() {
         super::a::b::visible_in_crate();
@@ -29,6 +43,7 @@ mod d {
     }
 }
 
+/// Calls the functions that are visible from here.
 fn main() {
     a::b::visible_in_crate();
     // ERROR: a::b::visible_in_parent_module();

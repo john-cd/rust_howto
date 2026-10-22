@@ -1,6 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! The `pub` keyword on functions, types, traits and modules.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 #![allow(unused_imports)]
+
 // ANCHOR: example
 /// Private module.
 mod m {
@@ -32,6 +36,7 @@ mod m {
     pub mod public_module {}
 }
 
+/// Uses the public items of the module `m`.
 fn main() {
     // Access the public function within module `m`:
     m::public_function();

@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Placeholder for a GraphQL server with `async-graphql` and `axum`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![cfg(feature = "async-graphql-support")]
+
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
@@ -32,6 +36,7 @@
 //     }
 // }
 
+/// Does nothing yet.
 #[tokio::main]
 async fn main() {
     //     // Create the schema
@@ -72,6 +77,7 @@ async fn main() {
 mod tests {
     use super::*;
 
+    /// Checks that the placeholder runs.
     #[test]
     fn test_main() {
         main();

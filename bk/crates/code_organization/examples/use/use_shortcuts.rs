@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Shortcuts for `use`: globs, grouped imports, `self` and aliases.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 #![allow(unused_imports)]
 
@@ -17,6 +21,7 @@ use std::iter::{self, empty};
 // Use `as` to define aliases, for example in case of name conflict.
 use std::mem::drop as destruct;
 
+/// Uses items imported with the shortcuts.
 fn main() {
     // Use `std::default::Default` without writing down the whole path,
     // because all public objects from the `default` module have been imported.

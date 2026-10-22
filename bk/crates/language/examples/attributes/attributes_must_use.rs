@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Warning about an ignored result with `#[must_use]`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// The `#[must_use]` attribute indicates that the return value of a function
 /// must be used. This attribute can also be applied to traits, structs, enums,
@@ -9,6 +13,7 @@ fn add(a: i32, b: i32) -> i32 {
     a + b
 }
 
+/// Uses the result of a `#[must_use]` function.
 fn main() {
     // Use the return value of the function.
     println!("{}", add(1, 2));
