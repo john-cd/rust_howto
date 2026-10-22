@@ -59,7 +59,10 @@ _default:
 # Scan all code for common mistakes (all features)
 @clippyall:
     echo "Scan all code for common mistakes (all features) in {{ code_root }}"
-    cd {{ quote(code_root) }}; cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
+    # Keep the Leptos browser example out of the workspace-wide feature union:
+    # its web-sys rustc invocation exceeds Windows' process command-line limit.
+    cd {{ quote(code_root) }}; cargo clippy --workspace --exclude web_programming_http_server --all-targets --locked --all-features -- -D warnings
+    cd {{ quote(code_root) }}; cargo clippy --package web_programming_http_server --all-targets --locked --all-features -- -D warnings
 
 # Test any doctests in the workspace
 @doctest:
