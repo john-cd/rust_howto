@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Writing tests that pass, fail, return a `Result` or are ignored.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 #![allow(clippy::eq_op)]
 
@@ -12,7 +15,9 @@ pub fn run() {
 
 /// Represents a rectangle with a width and height.
 struct Rectangle {
+    /// Width of the rectangle.
     width: u32,
+    /// Height of the rectangle.
     height: u32,
 }
 
@@ -23,6 +28,7 @@ impl Rectangle {
     }
 }
 
+/// Checks whether a larger rectangle can hold a smaller one.
 fn main() {
     let larger = Rectangle {
         width: 8,

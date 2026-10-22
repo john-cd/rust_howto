@@ -1,9 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! Reading the metadata of files and directories.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::fs;
 use std::time::UNIX_EPOCH;
 
+/// Prints the metadata of the file or directory at `path`.
 fn inspect_file<P: AsRef<std::path::Path>>(path: P) -> anyhow::Result<()> {
     let path = path.as_ref();
 
@@ -39,6 +44,7 @@ fn inspect_file<P: AsRef<std::path::Path>>(path: P) -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Creates files and directories and prints their metadata.
 fn main() -> anyhow::Result<()> {
     // Create a few folders and files for the next step.
     let path = "./temp/files/subfolder";

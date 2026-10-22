@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Snapshot testing with `insta`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 
 /// Runs the example.
@@ -15,6 +18,7 @@ pub fn format_user(name: &str, age: u32) -> String {
     format!("Name: {name}, Age: {age}")
 }
 
+/// Prints a formatted user.
 fn main() {
     println!("{}", format_user("Alice", 30));
 }
@@ -28,6 +32,7 @@ fn main() {
 mod tests {
     use super::*;
 
+    /// Checks the formatted user against a stored snapshot.
     #[test]
     fn test_format_user() {
         use insta::assert_snapshot;

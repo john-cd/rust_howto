@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Building and inspecting paths with `Path` and `PathBuf`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::path::Path;
 use std::path::PathBuf;
@@ -41,6 +45,7 @@ fn inspect_path<P: AsRef<Path>>(path: P) {
     println!();
 }
 
+/// Builds paths and inspects their components.
 fn main() {
     // Create a `Path` from a string literal:
     let _path = Path::new("./temp/documents/report.txt");

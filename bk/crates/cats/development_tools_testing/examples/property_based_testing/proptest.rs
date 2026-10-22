@@ -1,7 +1,10 @@
-// TODO Reviewed ??-??-2026
-#![allow(dead_code)]
-// ANCHOR: example
+//! Property-based testing with `proptest`.
+//!
+//! TODO Reviewed ??-??-2026
 
+#![allow(dead_code)]
+
+// ANCHOR: example
 /// A simple function to test - finds the maximum of two integers:
 fn max_of_two(a: i32, b: i32) -> i32 {
     if a > b { a } else { b }
@@ -25,6 +28,8 @@ mod tests {
     // 2. The result is equal to one of the inputs.
     proptest! {
         // Generate random integers in the range -1000 to 1000.
+        /// Checks that the maximum is at least both inputs and equals one of
+        /// them.
         #[test]
         fn test_max_of_two(a in -1000..1000, b in -1000..1000) {
             let result = max_of_two(a, b);
@@ -46,6 +51,8 @@ mod tests {
     // 3. `is_even(n * 2)` should always be true.
     proptest! {
         // Generate integers across a wide range.
+        /// Checks that `is_even` agrees with the remainder of a division by
+        /// two.
         #[test]
         fn test_is_even(n in -1000..1000) {
             // Property 1: Even numbers should always return true:
@@ -78,6 +85,7 @@ mod tests {
     }
 }
 
+/// Prints the results of the functions under test.
 fn main() {
     println!("Max of 5 and 3: {}", max_of_two(5, 3));
     println!("Is 4 even? {}", is_even(4));

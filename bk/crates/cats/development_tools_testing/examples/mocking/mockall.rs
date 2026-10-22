@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Mocking a trait with `mockall`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 
 /// Runs the example.
@@ -25,8 +28,11 @@ use mockall::*;
 /// Define our data model.
 #[derive(Debug, Clone, PartialEq)]
 struct User {
+    /// Unique identifier of the user.
     id: u64,
+    /// Name of the user.
     name: String,
+    /// Email address of the user.
     email: String,
 }
 
@@ -36,17 +42,21 @@ struct User {
 /// a `MockUserRepository`.
 #[automock]
 trait UserRepository {
+    /// Finds the user with the given `id`.
     fn find_by_id(&self, id: u64) -> Option<User>;
 
+    /// Saves the `user`; returns an error message on failure.
     fn save(&self, user: User) -> Result<(), String>;
 }
 
 /// The service that uses the repository.
 struct UserService<T: UserRepository> {
+    /// The repository used to load and store users.
     repository: T,
 }
 
 impl<T: UserRepository> UserService<T> {
+    /// Creates a service backed by `repository`.
     fn new(repository: T) -> Self {
         Self { repository }
     }
@@ -86,6 +96,7 @@ impl<T: UserRepository> UserService<T> {
     }
 }
 
+/// A stand-in for a real repository.
 struct ActualRepository;
 
 impl UserRepository for ActualRepository {
@@ -105,6 +116,7 @@ impl UserRepository for ActualRepository {
     }
 }
 
+/// Updates a user's email through the service.
 fn main() {
     let service = UserService::new(ActualRepository);
     let updated = service

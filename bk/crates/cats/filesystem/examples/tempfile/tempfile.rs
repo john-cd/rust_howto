@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Creating temporary files and directories with `tempfile`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::fs::File;
 use std::io::Read;
@@ -14,6 +18,7 @@ use tempfile::spooled_tempfile;
 use tempfile::tempdir;
 use tempfile::tempfile;
 
+/// Creates temporary files and directories.
 fn main() -> std::io::Result<()> {
     // 1. Create a temporary file (inside of `env::temp_dir()`).
     // Use `tempfile()` when needing a real `File` but not needing to refer to

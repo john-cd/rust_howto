@@ -1,11 +1,16 @@
-// TODO Reviewed ??-??-2026
+//! Creating and inspecting symbolic links.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::fs;
 use std::path::Path;
 
 // Creating symbolic links is platform-specific, because different operating
 // systems handle them differently (e.g., file vs. directory links on Windows).
+/// Creates a symbolic link `link` that points to `original`.
 fn create_symlink(original: &Path, link: &Path) -> anyhow::Result<()> {
     #[cfg(target_family = "unix")]
     {
@@ -33,6 +38,7 @@ fn create_symlink(original: &Path, link: &Path) -> anyhow::Result<()> {
     }
 }
 
+/// Prints whether `path` is a symbolic link and where it points.
 fn inspect_path<P>(path: P) -> std::io::Result<()>
 where
     P: AsRef<Path>,
@@ -66,6 +72,7 @@ where
     Ok(())
 }
 
+/// Creates a file and a link to it, then inspects both.
 fn main() -> anyhow::Result<()> {
     let original = Path::new("temp/source.txt");
     fs::write(original, "Hello, world!")?;
@@ -89,6 +96,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the example in a clean `temp` folder.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         use anyhow::Context;
