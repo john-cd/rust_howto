@@ -1,7 +1,12 @@
-// TODO Reviewed ??-??-2026
+//! Shadowing a variable with a new binding.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 #![allow(unused_assignments)]
+
 // ANCHOR: example
+/// Shadows a variable in the same and in an inner scope.
 fn main() {
     // `x` is an immutable variable.
     let x = 5;

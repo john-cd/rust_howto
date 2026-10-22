@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A generic trait.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// A generic trait that can be implemented for different types.
 /// `T` between angle brackets is a generic type parameter:
@@ -8,6 +12,7 @@ trait Test<T> {
     fn test(_t: T);
 }
 
+/// A type that implements `Test` for any type.
 struct SomeStruct;
 
 /// Generic implementation of a generic trait for a `struct`.
@@ -18,6 +23,7 @@ impl<T> Test<T> for SomeStruct {
     }
 }
 
+/// Calls the generic trait method with several types.
 fn main() {
     // `T` is `i32`:
     SomeStruct::test(1);

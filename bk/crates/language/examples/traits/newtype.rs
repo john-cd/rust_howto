@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! The newtype pattern: implementing an external trait on an external type.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::fmt;
 
@@ -25,6 +29,7 @@ impl fmt::Display for Wrapper {
 // If you want the new type to have every method the inner type has,
 // implement the `Deref` trait.
 
+/// Prints a wrapped vector with its own `Display`.
 fn main() {
     println!(
         "{}",

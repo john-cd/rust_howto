@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Dynamic typing with the `Any` trait.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::any::Any;
 
@@ -12,6 +16,7 @@ use std::any::Any;
 //   `downcast_ref`, but provides a mutable reference.
 //
 // All are implemented on `dyn Any`, `dyn Any + Send`, `dyn Any + Send + Sync`.
+/// Returns whether `s` is a `String`.
 fn is_string(s: &dyn Any) -> bool {
     // `is<T>` is equivalent to `TypeId::of::<T>() == s.type_id()`.
     let res = s.is::<String>();
@@ -31,12 +36,14 @@ fn is_string(s: &dyn Any) -> bool {
 // `Box<dyn Any>` and attempts to downcast it to a `Box<T>`. `downcast` is
 // implemented on `Box<dyn Any>`, `Box<dyn Any + Send>`, `Box<dyn Any + Send +
 // Sync>`.
+/// Prints `value` if it is a `String`.
 fn print_if_string(value: Box<dyn Any>) {
     if let Ok(string) = value.downcast::<String>() {
         println!("String: {string}");
     }
 }
 
+/// Checks the type of values at runtime.
 fn main() {
     assert!(!is_string(&42));
     let s = "a string".to_string();

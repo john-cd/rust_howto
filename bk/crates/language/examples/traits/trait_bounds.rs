@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Trait bounds on functions and implementations.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::collections::hash_map::DefaultHasher;
 use std::hash::Hash;
@@ -22,7 +26,9 @@ fn print_hash<T: Hash>(t: &T) {
 ///
 /// It is generic over the types of the two values.
 struct Pair<A, B> {
+    /// The first value.
     first: A,
+    /// The second value.
     second: B,
 }
 
@@ -35,6 +41,7 @@ impl<A: Hash, B: Hash> Hash for Pair<A, B> {
     }
 }
 
+/// Hashes a value and a pair.
 fn main() {
     let p = Pair {
         first: 1,

@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Tuple structs and unit-like structs.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// A tuple struct.
 ///
@@ -17,6 +21,7 @@ struct Color(pub i32, pub i32, pub i32);
 #[derive(Debug)]
 struct UnitLike; // Note that there are no fields.
 
+/// Creates and accesses tuple structs.
 fn main() {
     // Initialize the tuple struct:
     let black = Color(0, 0, 0);

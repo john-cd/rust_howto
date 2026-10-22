@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A trait method with a default implementation.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// A trait.
 trait Summary {
@@ -23,6 +27,7 @@ trait Summary {
 
 /// Let's define a `Blog` struct...
 struct Blog {
+    /// The author of the blog post.
     author: String,
 }
 
@@ -34,6 +39,7 @@ impl Summary for Blog {
     }
 }
 
+/// Calls the default and the overridden methods.
 fn main() {
     // Instantiate a Blog struct...
     let blog = Blog {

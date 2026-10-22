@@ -1,20 +1,30 @@
-// TODO Reviewed ??-??-2026
+//! Trait objects of a trait with a supertrait.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // Supertrait.
+/// A thing that can format a message.
 trait Message {
+    /// Returns `msg` decorated by the implementor.
     fn message(&self, msg: &str) -> String;
 }
 
 // Subtrait.
+/// A thing that greets; requires [`Message`].
 trait Greet: Message {
+    /// Returns a greeting.
     fn greet(&self) -> String {
         self.message("Hello.")
     }
 }
 
 // An example struct that implements `Greet`:
+/// A person.
 struct Person {
+    /// Name of the person.
     name: String,
 }
 
@@ -28,6 +38,7 @@ impl Message for Person {
 }
 
 // This function takes a trait object.
+/// Greets and says goodbye through a trait object.
 fn say_hello_and_goodbye(entity: &dyn Greet) {
     println!("{}", entity.greet());
 
@@ -36,6 +47,7 @@ fn say_hello_and_goodbye(entity: &dyn Greet) {
     println!("{}", entity.message("Goodbye."));
 }
 
+/// Passes a person as a `&dyn Greet`.
 fn main() {
     let person = Person {
         name: String::from("Alice"),

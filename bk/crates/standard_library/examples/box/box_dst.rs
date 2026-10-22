@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Boxing dynamically sized types.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Creates boxes of a slice and a string.
 fn main() {
     // Creating a Box containing a slice.
     let boxed_slice: Box<[i32]> = Box::new([1, 2, 3]);
