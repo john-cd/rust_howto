@@ -1,17 +1,17 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! The following demonstrates TOML decoding.
 //!
 //! TOML is a minimal configuration file format.
 //! It is designed to map unambiguously to a hash table.
-//!
-//! TODO Reviewed ??-??-2026
 
 // Representation of a TOML value e.g. String,
 // Integer, Float, Array, Table...
 use toml::Value;
 use toml::de::Error;
 
+/// Decodes a TOML document and reads its values.
 fn main() -> Result<(), Error> {
     // Sample TOML.
     // Note the use of a Rust raw string,
@@ -76,6 +76,7 @@ fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Error> {
     main()
 }

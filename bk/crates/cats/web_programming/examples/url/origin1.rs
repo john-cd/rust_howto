@@ -1,18 +1,18 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to parse a URL and extract its origin.
 //!
 //! The `url::Url` struct is used to parse the URL string.
 //! The `url::Host` enum is used to represent the host part of the URL.
 //! The `url::Origin` enum is used to represent the origin of the URL.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use url::Host;
 use url::Origin;
 use url::Url;
 
+/// Parses a URL and compares its origin with the expected one.
 fn main() -> Result<()> {
     let s = "ftp://rust-lang.org/examples";
 
@@ -32,6 +32,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example_start
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

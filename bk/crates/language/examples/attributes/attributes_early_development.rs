@@ -1,11 +1,10 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `allow` attributes suppress specific warnings.
 //!
 //! These attributes are typically used during early development to temporarily
 //! ignore warnings that are not relevant at the moment, but should be
 //! addressed before releasing the code.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![allow(unused_variables)]
 #![allow(unused_mut)]
@@ -30,6 +29,7 @@ fn required() -> u32 {
     42
 }
 
+/// Defines variables that are not used, to show the effect of lint attributes.
 fn main() {
     // This variable is defined but not used.
     let x = 1;
@@ -43,6 +43,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

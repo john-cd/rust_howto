@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Generate a random string of 20 alphanumeric characters.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use rand::RngExt as _;
 use rand::distr::Alphanumeric;
@@ -24,6 +28,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

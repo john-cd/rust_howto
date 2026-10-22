@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates the use of `DashMap` for concurrent data access and
 //! modification.
@@ -6,14 +7,13 @@
 //! This example showcases how to create a shared `DashMap`, access and modify
 //! it from multiple threads, and perform various operations like insertion,
 //! retrieval, modification, and removal.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::sync::Arc;
 use std::thread;
 
 use dashmap::DashMap;
 
+/// Inserts, reads and modifies the entries of a `DashMap` from several threads.
 fn main() {
     // Create a shared `DashMap` with an `Arc`.
     let map: Arc<DashMap<&str, i32, _>> = Arc::new(DashMap::new());
@@ -81,6 +81,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

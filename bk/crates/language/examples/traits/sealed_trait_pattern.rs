@@ -5,15 +5,19 @@
 #![allow(unused)]
 
 // ANCHOR: example
+/// A module that exposes a trait that cannot be implemented outside of it.
 mod a_module {
+    /// A trait that can be used, but not implemented, outside of the module.
     #[allow(private_bounds)]
     pub trait MySealedTrait: Sealed {
         // Public method accessible to the user.
         // Associated items in a `pub` Trait are public by default.
+        /// A method that users of the trait can call.
         fn some_public_method(&self);
     }
 
     // A private trait that is only accessible from `a_module`.
+    /// A private trait that seals `MySealedTrait`.
     trait Sealed {}
 
     // Implement the trait for specified types only, here `usize`:
@@ -26,6 +30,7 @@ mod a_module {
     impl Sealed for usize {}
 }
 
+/// Calls a method of the sealed trait.
 fn main() {
     use a_module::MySealedTrait as _;
 
@@ -44,6 +49,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

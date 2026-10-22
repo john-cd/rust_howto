@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs one of the `result` examples, chosen on the command line.
+//!
+//! TODO Reviewed ??-??-2026
+
 use clap::Parser;
 use clap::Subcommand;
 
@@ -6,22 +9,29 @@ mod result;
 mod result2;
 mod result3;
 
+/// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `result` example.
     #[command(name = "result")]
     Result,
+    /// Runs the `result2` example.
     #[command(name = "result2")]
     Result2,
+    /// Runs the `result3` example.
     #[command(name = "result3")]
     Result3,
 }
 
+/// Runs the example selected on the command line.
 fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 

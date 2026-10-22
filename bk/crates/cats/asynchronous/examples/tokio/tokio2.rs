@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Example of using a single-threaded Tokio runtime.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// Example of using a single-threaded Tokio runtime.
 fn main() {
@@ -14,6 +18,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

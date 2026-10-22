@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to send input to an external command's
 //! standard input (`stdin`) and process its standard output (`stdout`) and
@@ -10,8 +11,6 @@
 //! output is successful. If successful, it parses the output, splits it into
 //! words, converts them to lowercase, and stores them in a `HashSet` to get
 //! unique words.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![cfg(target_family = "unix")]
 
@@ -24,6 +23,7 @@ use anyhow::Result;
 use anyhow::anyhow;
 use anyhow::bail;
 
+/// Sends text to the standard input of `rev` and prints the reversed output.
 fn main() -> Result<()> {
     let mut child = Command::new("rev")
         // Create pipes to connect parent and child processes.
@@ -66,6 +66,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

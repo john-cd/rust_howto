@@ -1,12 +1,11 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates two key uses of the `cached` crate:
 //! - Simple function memoization with `#[cached]`,
 //! - Advanced caching with custom configuration options.
 //!
 //! Remember to add `cached = "0.55.1"` or latest to your Cargo.toml.
-//!
-//! TODO Reviewed ??-??-2026
 
 use cached::proc_macro::cached;
 
@@ -37,6 +36,7 @@ fn fetch_data(key: usize) -> String {
 // type, execution synchronization options, handling of `Result` and `Option`
 // return values, etc.
 
+/// Calls the memoized functions and shows that repeated calls use the cache.
 fn main() {
     // First call computes and caches:
     println!("Fibonacci of 10: {}", fibonacci(10));
@@ -64,6 +64,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

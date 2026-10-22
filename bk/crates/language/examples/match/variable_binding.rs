@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Binding the content of an `Option` to a variable with `if let`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Binds the value inside an `Option`.
 fn main() {
     let x: Option<i32> = Some(5);
 
@@ -14,6 +19,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

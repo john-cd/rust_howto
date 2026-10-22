@@ -1,8 +1,13 @@
-// TODO Reviewed ??-??-2026
+//! Removing the common indentation of multi-line strings with `indoc`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use indoc::indoc;
 
+/// Compares multi-line strings with and without `indoc`.
 fn main() {
     // Without `indoc`, multi-line strings preserve indentation from source
     // code.
@@ -49,6 +54,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

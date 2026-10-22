@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A progress bar with `indicatif`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::thread;
 use std::time::Duration;
@@ -7,6 +11,7 @@ use std::time::Duration;
 use indicatif::ProgressBar;
 use indicatif::ProgressStyle;
 
+/// Advances a styled progress bar from 0 to 100.
 fn progress() {
     // Create a new progress bar with a length of 100.
     // This progress bar by default draws directly to stderr.
@@ -37,6 +42,7 @@ fn progress() {
     // }
 }
 
+/// Runs [`progress`].
 fn main() -> anyhow::Result<()> {
     progress();
     println!(
@@ -47,6 +53,7 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! Hashing with `blake3`: one-shot, incremental, keyed, key derivation and
+//! extended output.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use blake3::Hasher;
 
@@ -59,6 +64,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

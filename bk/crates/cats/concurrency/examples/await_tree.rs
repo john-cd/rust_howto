@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `await-tree` crate.
 //!
@@ -9,8 +10,6 @@
 //! ```toml
 //! await-tree = "0.3.1" # Or latest
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use await_tree::ConfigBuilder;
 use await_tree::InstrumentAwait as _;
@@ -21,6 +20,7 @@ use itertools::Itertools as _;
 use tokio::time::Duration;
 use tokio::time::sleep;
 
+/// Registers futures in an await-tree registry and prints the tree.
 #[tokio::main]
 async fn main() {
     // Create a configuration.

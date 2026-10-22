@@ -1,9 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! Borrowing the content of an `Option` with `as_ref`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // `Option::as_ref()` allows us to get an `Option<&String>`.
 // This lets us borrow the inner `String` if it exists, without moving it out of
 // `maybe_name`.
+/// Prints the name, if there is one, without consuming the `Option`.
 fn process_optional_string(maybe_name: Option<String>) {
     let borrowed_name: Option<&String> = maybe_name.as_ref();
     // If we used `maybe_name.unwrap()`, `maybe_name` would be consumed.
@@ -30,6 +35,7 @@ fn process_optional_string(maybe_name: Option<String>) {
     }
 }
 
+/// Processes a present and a missing name.
 fn main() {
     process_optional_string(Some("Alice".to_owned()));
     process_optional_string(None);
@@ -37,6 +43,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

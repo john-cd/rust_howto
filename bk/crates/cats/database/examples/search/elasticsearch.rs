@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This module provides examples of interacting with Elasticsearch using the
 //! official Rust client.
-//!
-//! TODO Reviewed ??-??-2026
 
 use elasticsearch::BulkParts;
 use elasticsearch::Elasticsearch;
@@ -22,10 +21,13 @@ use serde_json::json;
 /// Represents a document that can be indexed in Elasticsearch.
 #[derive(Debug, Serialize, Deserialize)]
 struct MyDocument {
+    /// The identifier of the document.
     id: i32,
+    /// The title of the document.
     title: String,
 }
 
+/// Indexes a document in Elasticsearch, then searches for it.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Create an asynchronous Elasticsearch client:
@@ -143,6 +145,7 @@ async fn cat_indices(client: Elasticsearch) -> Result<Response, Error> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

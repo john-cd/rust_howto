@@ -1,16 +1,24 @@
-// TODO Reviewed ??-??-2026
+//! Items that are public by default: enum variants, trait items and fields of
+//! public items.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// A module with public types and traits.
 mod a_module {
 
     /// Public enum.
     pub enum Enum {
         // Public-by-default variant.
+        /// A variant, public like its enum.
         Variant,
     }
 
     /// Public struct with a private field.
     pub struct PublicStruct {
+        /// A private field.
         private_val: bool,
     }
 
@@ -23,18 +31,22 @@ mod a_module {
 
     /// Public struct with a public field.
     pub struct PublicStructPublicField {
+        /// A public field.
         pub public_val: bool,
     }
 
     /// Public trait.
     pub trait Trait {
+        /// An associated type, public like the trait.
         type Out; // Public-by-default associated type.
 
         // Visibility qualifiers are not permitted below:
+        /// A method, public like the trait.
         fn method(&self) -> Self::Out;
     }
 }
 
+/// Uses the public items of the module.
 fn main() {
     let _ = a_module::Enum::Variant;
     let _ = a_module::PublicStructPublicField { public_val: true };
@@ -50,6 +62,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

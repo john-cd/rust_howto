@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the AWS SDK for Rust to interact with
 //! Amazon S3. It lists the contents of a specified S3 bucket.
-//!
-//! TODO Reviewed ??-??-2026
 
 use aws_config::BehaviorVersion;
 use aws_config::meta::region::RegionProviderChain;
@@ -11,6 +10,7 @@ use aws_sdk_s3::Client;
 use tracing::error;
 use tracing::info;
 
+/// Lists the objects of an S3 bucket.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Initialize tracing subscriber.
@@ -46,6 +46,7 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()?;
     Ok(())

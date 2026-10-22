@@ -1,19 +1,22 @@
 #![allow(unused)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This macro provides a domain-specific language (DSL) for defining
 //! configuration for an application. Instead of using a `HashMap`, or a
 //! `struct` directly, we want a more declarative, human-readable way to specify
 //! settings.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 
 // Simplified representation of the types of values our configuration can hold:
+/// A configuration value.
 #[derive(Debug, PartialEq, Clone)]
 pub enum ConfigValue {
+    /// A string.
     String(String),
+    /// A boolean.
     Boolean(bool),
+    /// A nested map of configuration values.
     Map(HashMap<String, Self>),
 }
 
@@ -21,6 +24,7 @@ pub enum ConfigValue {
 //
 // The `#[macro_export]` attribute makes the `config!` macro available to other
 // crates. See <https://doc.rust-lang.org/reference/macros-by-example.html#path-based-scope>.
+/// Builds a `HashMap` of configuration values from a declarative syntax.
 #[macro_export]
 macro_rules! config {
 
@@ -113,6 +117,7 @@ macro_rules! config {
 
 }
 
+/// Builds a nested configuration with the `config!` macro and prints it.
 fn main() {
     // Example usage of the `config!` macro to set up application settings in a
     // declarative way.
@@ -166,10 +171,7 @@ fn main() {
     assert_eq!(
         app_config.get("network"),
         Some(&ConfigValue::Map(HashMap::from([
-            (
-                "protocol".to_owned(),
-                ConfigValue::String("tcp".to_owned())
-            ),
+            ("protocol".to_owned(), ConfigValue::String("tcp".to_owned())),
             (
                 "timeout_seconds".to_owned(),
                 ConfigValue::String("30".into())
@@ -181,6 +183,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

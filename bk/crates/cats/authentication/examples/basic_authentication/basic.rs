@@ -1,12 +1,13 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use basic authentication with `reqwest`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use reqwest::Error;
 use reqwest::blocking::Client;
 
+/// Sends a request with basic authentication credentials and prints the
+/// response status.
 fn main() -> Result<(), Error> {
     // Create a new `reqwest` client:
     let client = Client::new();
@@ -26,6 +27,7 @@ fn main() -> Result<(), Error> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Error> {
     main()
 }

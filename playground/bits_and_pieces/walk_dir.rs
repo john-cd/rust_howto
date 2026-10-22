@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Parses the directory argument and expands markers in its Markdown files.
+//!
+//! TODO Reviewed ??-??-2026
+
 // [dependencies]
 // anyhow = "1.0.95"
 // clap = { version = "4.5.31", features = ["derive"] }
@@ -18,9 +21,11 @@ use anyhow::Result;
 use clap::Parser;
 use walkdir::WalkDir;
 
+/// The command-line arguments.
 #[derive(Parser, Debug)]
 #[clap(version)]
 pub(crate) struct Args {
+    /// The path of the directory to process.
     #[clap(help = "Path to directory to process")]
     pub directory: PathBuf,
 }

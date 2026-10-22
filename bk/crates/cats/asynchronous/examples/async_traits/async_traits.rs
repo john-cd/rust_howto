@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! An `async fn` in a trait, implemented by a health checker.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// A health checker that implements [`HealthCheck`].
 struct MyHealthChecker;
 
 /// A trait for checking the health of a system.
@@ -18,6 +23,7 @@ impl HealthCheck for MyHealthChecker {
     }
 }
 
+/// Checks the health of `hc` and logs a failure if it is unhealthy.
 async fn do_health_check(mut hc: impl HealthCheck) {
     if hc.check().await {
         println!("Health check was normal");
@@ -27,14 +33,17 @@ async fn do_health_check(mut hc: impl HealthCheck) {
     }
 }
 
+/// Simulates an asynchronous operation and returns whether it succeeded.
 async fn do_async_op() -> bool {
     true
 }
 
+/// Logs a failed health check.
 async fn log_health_check_failure() {
     println!("Health check failure");
 }
 
+/// Runs a health check on the Tokio runtime.
 #[tokio::main]
 async fn main() {
     let hc = MyHealthChecker;
@@ -42,6 +51,7 @@ async fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

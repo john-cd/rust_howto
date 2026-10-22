@@ -1,13 +1,13 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates basic error handling in Rust using the `Result`
 //! type.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::io;
 use std::io::BufRead as _;
 
+/// Reads a line from an in-memory buffer and handles the `Result`.
 fn main() {
     // A `Cursor` behaves like a `File` but wraps an in-memory buffer.
     let mut my_cursor = io::Cursor::new(b"foo\nbar");
@@ -32,6 +32,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

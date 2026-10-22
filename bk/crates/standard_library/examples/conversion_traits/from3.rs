@@ -1,9 +1,9 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Parsing from raw bytes.
-//!
-//! TODO Reviewed ??-??-2026
 
+/// A message, created from raw bytes.
 #[derive(Debug)]
 struct Message(String);
 
@@ -14,6 +14,7 @@ impl From<&[u8]> for Message {
     }
 }
 
+/// Converts raw bytes into a `Message`.
 fn main() {
     let raw: &[u8] = b"Hello world";
     let msg: Message = raw.into(); // Use `From<&[u8]>`.
@@ -22,6 +23,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

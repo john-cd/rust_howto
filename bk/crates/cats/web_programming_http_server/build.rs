@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// Compiles the gRPC service definitions.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Instruct Cargo to re-run this script if the proto file changes.
     println!("cargo:rerun-if-changed=proto/helloworld.proto");

@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates a simple HTTP GET request using the `reqwest`
 //! crate. It fetches data from http://<httpbin.org/get> and prints the status, headers, and body.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::io::Read as _;
 
@@ -24,6 +23,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

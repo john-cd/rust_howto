@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates the use of a global mutable state protected by a `Mutex`.
 //!
 //! This example uses `lazy_static` to initialize a global `Mutex` containing a
 //! `Vec<String>`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::sync::Mutex;
 
@@ -18,6 +17,7 @@ lazy_static! {
     static ref FRUIT: Mutex<Vec<String>> = Mutex::new(Vec::new());
 }
 
+/// Adds `fruit` to the global database.
 fn insert(fruit: &str) -> Result<()> {
     let mut db = FRUIT
         .lock()
@@ -26,6 +26,8 @@ fn insert(fruit: &str) -> Result<()> {
     Ok(())
 }
 
+/// Adds fruits to the global database from the main thread and prints its
+/// content.
 fn main() -> Result<()> {
     insert("apple")?;
     insert("orange")?;
@@ -45,6 +47,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

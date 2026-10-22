@@ -1,10 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of `Result` methods for value transformation and control flow.
-//!
-//! TODO Reviewed ??-??-2026
 
 // A contrived example of a function returning a `Result`:
+/// Divides `a` by `b`, or returns an error if `b` is zero.
 fn divide(a: i32, b: i32) -> Result<i32, &'static str> {
     if b == 0 {
         Err("Cannot divide by zero.")
@@ -13,6 +13,7 @@ fn divide(a: i32, b: i32) -> Result<i32, &'static str> {
     }
 }
 
+/// Transforms and chains `Result` values.
 #[allow(clippy::bind_instead_of_map)]
 fn main() {
     let result = divide(10, 2)
@@ -45,6 +46,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,16 +1,16 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Add to `Cargo.toml`:
 //! ```toml
 //! remove_dir_all = { version = "1.0.0", features = [ "parallel" ] }
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::io;
 
 use remove_dir_all::remove_dir_all;
 
+/// Creates a directory tree, then removes it with all its content.
 fn main() -> io::Result<()> {
     // Create a directory structure for demonstration purposes
     // (if it doesn't exist already).
@@ -49,6 +49,7 @@ fn main() -> io::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> io::Result<()> {
     main()
 }

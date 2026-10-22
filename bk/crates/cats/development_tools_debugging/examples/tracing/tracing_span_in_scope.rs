@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates how to use tracing spans to instrument code,
 //! including synchronous and asynchronous code.
@@ -8,8 +9,6 @@
 //! - Entering and exiting spans using `in_scope`.
 //! - Instrumenting async blocks and functions using `instrument`.
 //! - How spans are handled across `await` points.
-//!
-//! TODO Reviewed ??-??-2026
 
 // Extension trait allowing futures to be instrumented with a tracing span,
 // via `instrument(...)`:
@@ -59,8 +58,11 @@ async fn my_async_function() {
         .await;
 }
 
+/// An async function that does nothing, used to show how to instrument async
+/// code.
 async fn some_other_async_function() {}
 
+/// Initializes the subscriber and runs the instrumented async function.
 #[tokio::main]
 async fn main() {
     // Initialize the tracing subscriber to output logs to the console.
@@ -72,6 +74,7 @@ async fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

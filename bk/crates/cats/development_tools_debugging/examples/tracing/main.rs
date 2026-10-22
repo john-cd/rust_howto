@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs one of the `tracing` examples, chosen on the command line.
+//!
+//! TODO Reviewed ??-??-2026
+
 use clap::Parser;
 use clap::Subcommand;
 
@@ -16,42 +19,59 @@ mod tracing_subscriber3;
 mod tracing_subscriber3b;
 mod tracing_subscriber4;
 
+/// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `tracing` example.
     #[command(name = "tracing")]
     Tracing,
+    /// Runs the `tracing_instrument` example.
     #[command(name = "tracing_instrument")]
     TracingInstrument,
+    /// Runs the `tracing_span_entered` example.
     #[command(name = "tracing_span_entered")]
     TracingSpanEntered,
+    /// Runs the `tracing_span_in_scope` example.
     #[command(name = "tracing_span_in_scope")]
     TracingSpanInScope,
+    /// Runs the `tracing_spans` example.
     #[command(name = "tracing_spans")]
     TracingSpans,
+    /// Runs the `tracing_subscriber` example.
     #[command(name = "tracing_subscriber")]
     TracingSubscriber,
+    /// Runs the `tracing_subscriber1` example.
     #[command(name = "tracing_subscriber1")]
     TracingSubscriber1,
+    /// Runs the `tracing_subscriber1b` example.
     #[command(name = "tracing_subscriber1b")]
     TracingSubscriber1b,
+    /// Runs the `tracing_subscriber2` example.
     #[command(name = "tracing_subscriber2")]
     TracingSubscriber2,
+    /// Runs the `tracing_subscriber2b` example.
     #[command(name = "tracing_subscriber2b")]
     TracingSubscriber2b,
+    /// Runs the `tracing_subscriber3` example.
     #[command(name = "tracing_subscriber3")]
     TracingSubscriber3,
+    /// Runs the `tracing_subscriber3b` example.
     #[command(name = "tracing_subscriber3b")]
     TracingSubscriber3b,
+    /// Runs the `tracing_subscriber4` example.
     #[command(name = "tracing_subscriber4")]
     TracingSubscriber4,
 }
 
+/// Runs the example selected on the command line.
 fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 

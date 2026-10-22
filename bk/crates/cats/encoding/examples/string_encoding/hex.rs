@@ -1,12 +1,12 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of encoding and decoding a string using hexadecimal encoding.
-//!
-//! TODO Reviewed ??-??-2026
 
 use data_encoding::DecodeError;
 use data_encoding::HEXUPPER;
 
+/// Encodes bytes as hexadecimal, then decodes them.
 fn main() -> Result<(), DecodeError> {
     // The original string to be encoded.
     let original = b"The quick brown fox jumps over the lazy dog.";
@@ -26,6 +26,7 @@ fn main() -> Result<(), DecodeError> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), DecodeError> {
     main()
 }

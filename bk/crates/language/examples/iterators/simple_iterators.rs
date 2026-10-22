@@ -1,8 +1,13 @@
-// TODO Reviewed ??-??-2026
+//! Simple iterators that are built from a function or a value.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::iter;
 
+/// Creates and consumes each of the simple iterators.
 fn main() {
     // Creates an iterator that yields nothing.
     let mut empty_iter = iter::empty::<i32>();
@@ -77,6 +82,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

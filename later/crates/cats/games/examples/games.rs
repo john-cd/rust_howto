@@ -1,16 +1,16 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A minimal game example using the `macroquad` rendering engine.
 //!
 //! This example creates a window, animates a rotating triangle, and responds to
 //! the space bar by changing the triangle's color.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::f32::consts::PI;
 
 use macroquad::prelude::*;
 
+/// Draws a rotating shape whose color changes when the space key is pressed.
 #[macroquad::main("Rendering Engine Example")]
 async fn main() {
     let mut angle: f32 = 0.0;
@@ -59,6 +59,7 @@ async fn main() {
 }
 // ANCHOR_END: example
 
+/// Does nothing, since the game logic runs through the `macroquad` runtime.
 pub fn run() {
     // This example uses #[macroquad::main] which transforms the main function.
     // The actual game logic runs through the macroquad runtime and cannot be

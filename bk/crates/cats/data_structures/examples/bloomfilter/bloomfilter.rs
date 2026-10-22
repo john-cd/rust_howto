@@ -1,7 +1,12 @@
-// TODO Reviewed ??-??-2026
+//! A Bloom filter, a compact set that can give false positives but no false
+//! negatives.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 use bloomfilter::Bloom;
 
+/// Inserts items into a Bloom filter and checks for membership.
 fn main() {
     let items_count = 100;
     let mut bloom = Bloom::new_for_fp_rate(items_count, 0.01).unwrap();
@@ -15,6 +20,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

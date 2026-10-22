@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Placeholder for a web server with `rocket`.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 // // COMING SOON
 // //! This is a simple example of a Rocket web server.
@@ -17,6 +20,7 @@
 
 // // [Implement Rocket Hello World and route mounting](https://github.com/john-cd/rust_howto/issues/869)
 
+/// Does nothing yet.
 fn main() {
     // TODO
 }

@@ -1,9 +1,8 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A minimal Vello example using `winit`, `wgpu`, and `vello`.
 //!
 //! It creates a window, builds a simple 2D scene, and renders it every frame.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::time::Instant;
 
@@ -27,6 +26,7 @@ use winit::event_loop::ControlFlow;
 use winit::event_loop::EventLoop;
 use winit::window::WindowBuilder;
 
+/// Opens a window and renders a scene with `vello`.
 fn main() {
     let event_loop = EventLoop::new();
     let window = WindowBuilder::new()
@@ -136,6 +136,7 @@ fn main() {
     });
 }
 
+/// Builds the scene to render.
 fn build_scene() -> vello::Scene {
     let mut scene_builder = SceneBuilder::new();
 
@@ -169,6 +170,7 @@ fn build_scene() -> vello::Scene {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates creating database tables in PostgreSQL using the
 //! `postgres` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 use postgres::Client;
 use postgres::NoTls;
@@ -48,6 +47,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

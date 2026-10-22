@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates using `slab` for pre-allocated storage.
 //!
@@ -9,11 +10,10 @@
 //! ```toml
 //! slab = "0.4"
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use slab::Slab;
 
+/// Stores values in a slab and accesses them by key.
 fn main() {
     // Create a new slab with no pre-allocated storage.
     let mut slab: Slab<String> = Slab::new();

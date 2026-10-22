@@ -1,10 +1,9 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A minimal native graphics example using `minifb`.
 //!
 //! This example opens a native window and renders a simple animated pixel
 //! gradient by writing directly to a pixel buffer.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::time::Duration;
 use std::time::Instant;
@@ -13,10 +12,13 @@ use minifb::Key;
 use minifb::Window;
 use minifb::WindowOptions;
 
+/// The width of the window in pixels.
 const WIDTH: usize = 320;
 
+/// The height of the window in pixels.
 const HEIGHT: usize = 240;
 
+/// Opens a window and draws into a pixel buffer until the window is closed.
 fn main() {
     let mut window = Window::new(
         "minifb native graphics example",
@@ -56,6 +58,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

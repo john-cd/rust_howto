@@ -1,7 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Variables are used to store values.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 #![allow(unused)]
 #![allow(clippy::needless_late_init)]
+
 // ANCHOR: example
 /// Variables are used to store values.
 fn main() {
@@ -38,6 +42,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

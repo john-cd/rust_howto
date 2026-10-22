@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! This is an example of how to use the MeiliSearch Rust SDK to index and
+//! search documents.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::env;
 
@@ -14,8 +19,11 @@ use serde::Serialize;
 /// A document that can be indexed in `MeiliSearch`.
 #[derive(Debug, Serialize, Deserialize)]
 struct MyDocument {
+    /// The identifier of the document.
     id: usize,
+    /// The title of the document.
     title: String,
+    /// The content of the document.
     content: String,
 }
 
@@ -84,6 +92,7 @@ async fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

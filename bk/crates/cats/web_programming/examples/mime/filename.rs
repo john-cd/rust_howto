@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Finding the MIME type of a file from its name.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use mime::Mime;
 
@@ -19,6 +23,7 @@ fn find_mimetype(filename: &str) -> Mime {
     }
 }
 
+/// Prints the MIME type of several file names.
 fn main() {
     let filenames = vec!["foobar.jpg", "foo.bar", "foobar.png"];
     for file in filenames {
@@ -29,6 +34,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

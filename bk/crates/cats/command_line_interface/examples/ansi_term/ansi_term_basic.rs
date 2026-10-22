@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Demonstrates basic usage of the maintained `nu-ansi-term` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use nu_ansi_term::Color;
 
@@ -15,6 +19,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

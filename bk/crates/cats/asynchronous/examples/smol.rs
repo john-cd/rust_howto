@@ -1,12 +1,13 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates a small asynchronous workload using `smol`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::time::Duration;
 
 use smol::Timer;
 
+/// Runs several asynchronous tasks on the `smol` runtime and waits for their
+/// results.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Run the async block on the smol runtime.
     smol::block_on(async {

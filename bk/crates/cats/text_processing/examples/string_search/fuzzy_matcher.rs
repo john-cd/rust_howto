@@ -1,9 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! Fuzzy matching of strings with `fuzzy-matcher`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use fuzzy_matcher::FuzzyMatcher as _;
 use fuzzy_matcher::skim::SkimMatcherV2;
 
+/// Scores and ranks strings against a pattern.
 fn main() {
     // Create a new matcher
     let matcher = SkimMatcherV2::default();
@@ -65,6 +70,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

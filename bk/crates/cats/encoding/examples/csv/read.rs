@@ -1,11 +1,11 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example shows how to read a CSV file.
-//!
-//! TODO Reviewed ??-??-2026
 
 use csv::Error;
 
+/// Reads CSV records and prints their fields.
 fn main() -> Result<(), Error> {
     let csv = "year,make,model,description
 1948,Porsche,356,Luxury sports car
@@ -25,6 +25,7 @@ fn main() -> Result<(), Error> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Error> {
     main()
 }

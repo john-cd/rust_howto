@@ -27,12 +27,14 @@ use serde::Serialize;
 /// Define a `Model` struct to hold the state of the application.
 #[derive(Default)]
 pub struct Model {
+    /// The count.
     count: isize,
 }
 
 /// Define a `ViewModel` struct to represent the state of the UI.
 #[derive(Serialize, Deserialize, Clone, Default)]
 pub struct ViewModel {
+    /// The count, as text.
     pub count: String,
 }
 
@@ -40,8 +42,11 @@ pub struct ViewModel {
 /// the application can handle.
 #[derive(Serialize, Deserialize, Clone, Debug)]
 pub enum Event {
+    /// Increments the count.
     Increment,
+    /// Decrements the count.
     Decrement,
+    /// Resets the count to zero.
     Reset,
 }
 
@@ -52,6 +57,7 @@ pub enum Event {
 /// instances.
 #[crux_core::macros::effect(typegen)]
 pub enum Effect {
+    /// Asks the shell to render the view.
     Render(crux_core::render::RenderOperation),
 }
 
@@ -108,6 +114,7 @@ impl App for Counter {
 // - On iOS, as a native static library.
 // - On Android, as a dynamic library using Java Native Access.
 // - In a browser, as a WebAssembly module.
+/// Sends events to the core and checks the view.
 fn main() {
     let core = crux_core::Core::<Counter>::new();
 
@@ -125,6 +132,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,13 +1,13 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates parsing a URL and extracting its origin components.
-//!
-//! TODO Reviewed ??-??-2026
 
 use url::Host;
 use url::ParseError;
 use url::Url;
 
+/// Parses a URL and checks its scheme, host and port.
 fn main() -> Result<(), ParseError> {
     let s = "ftp://rust-lang.org/examples";
 
@@ -23,6 +23,7 @@ fn main() -> Result<(), ParseError> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), ParseError> {
     main()
 }

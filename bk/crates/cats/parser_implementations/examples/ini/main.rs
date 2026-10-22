@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs the INI parser example.
+//!
+//! TODO Reviewed ??-??-2026
+
 mod rust_ini;
 
 fn main() -> anyhow::Result<()> {

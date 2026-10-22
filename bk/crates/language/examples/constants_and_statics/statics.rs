@@ -1,15 +1,17 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `static` Example.
-//!
-//! TODO Reviewed ??-??-2026
 
 // Statics are in SCREAMING_SNAKE_CASE, must declare their type, must be
 // initialized:
+/// The name of the application.
 static APPLICATION_NAME: &str = "My Awesome App";
 
+/// The version of the application.
 static VERSION: u32 = 1;
 
+/// Prints statics and shows that they do not `Drop`.
 fn main() {
     println!("Welcome to {APPLICATION_NAME} v{VERSION}");
 
@@ -18,6 +20,7 @@ fn main() {
 }
 
 // A struct that implements a `Drop` destructor.
+/// A type that prints a message when it is dropped.
 struct PrintOnDrop(&'static str);
 
 impl Drop for PrintOnDrop {
@@ -27,6 +30,7 @@ impl Drop for PrintOnDrop {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

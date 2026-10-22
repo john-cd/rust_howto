@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates the use of `?`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::fs::File;
 use std::io;
@@ -41,6 +40,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

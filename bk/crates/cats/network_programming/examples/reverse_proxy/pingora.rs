@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Pingora example.
 //!
@@ -22,8 +23,6 @@
 //! Make sure that the following is installed on your system:
 //! - Clang (for the boringssl optional feature),
 //! - Perl 5 (for openssl).
-//!
-//! TODO Reviewed ??-??-2026
 
 // use std::net::SocketAddr;
 // use std::sync::Arc;
@@ -33,6 +32,7 @@
 use pingora::server::Server;
 
 // FIXME decide what to implement
+/// Creates a Pingora server and runs it forever.
 fn main() {
     let mut my_server = Server::new(None).unwrap();
     my_server.bootstrap();
@@ -40,6 +40,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

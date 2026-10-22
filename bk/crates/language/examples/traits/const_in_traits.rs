@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Associated constants in traits.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// A trait demonstrating the use of associated constants.
 trait Example {
@@ -21,12 +25,14 @@ impl Example for S {
     const CONST_NO_DEFAULT: i32 = 0;
 }
 
+/// Prints the associated constants.
 fn main() {
     println!("{} {}", S::CONST_NO_DEFAULT, S::CONST_WITH_DEFAULT);
 }
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

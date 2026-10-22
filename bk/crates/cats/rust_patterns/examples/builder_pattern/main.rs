@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs the builder pattern example.
+//!
+//! TODO Reviewed ??-??-2026
+
 mod builder_pattern;
 
 fn main() {

@@ -1,7 +1,13 @@
-// TODO Reviewed ??-??-2026
+//! Running code when a value is dropped, with the `Drop` trait.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// A struct that prints a message when it is dropped.
 struct CustomStruct {
+    /// Some data.
     data: String,
 }
 
@@ -14,6 +20,7 @@ impl Drop for CustomStruct {
     }
 }
 
+/// Creates and drops values.
 fn main() {
     let _c = CustomStruct {
         data: String::from("my data"),
@@ -39,6 +46,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

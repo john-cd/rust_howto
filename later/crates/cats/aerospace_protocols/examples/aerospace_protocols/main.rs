@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs the MAVLink example.
+//!
+//! TODO Reviewed ??-??-2026
+
 mod aero_protocols;
 
 fn main() {

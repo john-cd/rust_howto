@@ -1,20 +1,28 @@
-// TODO Reviewed ??-??-2026
+//! An associated constant on a struct.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// A unit struct.
 struct MyToken;
 
 impl MyToken {
     // Inherent implementations can contain associated constants,
     // in addition to associated functions or methods.
+    /// An identifier associated with the type.
     const ID: i32 = 1;
 }
 
+/// Prints the associated constant.
 fn main() {
     println!("ID: {}", MyToken::ID);
 }
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

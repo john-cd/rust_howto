@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A concurrent hash map from the `papaya` crate, used from several threads.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use papaya::HashMap;
 
@@ -8,6 +12,7 @@ use papaya::HashMap;
 // "pinning." Pins act like lock guards.
 
 // Use a map from multiple threads.
+/// Inserts into and reads from a shared `papaya` map from several threads.
 fn main() {
     // Create a map.
     let map = HashMap::new();
@@ -66,6 +71,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

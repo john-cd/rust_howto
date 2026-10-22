@@ -1,12 +1,13 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! In `Cargo.toml`, add:
 //! ```toml
 //! rand = { version = "0.9.0" } # Or latest.
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
+/// Generates and prints a random `u8`, a random `u32` in a range and a random
+/// sample.
 fn main() {
     // Generate a random value:
     let n1: u8 = rand::random();
@@ -32,6 +33,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

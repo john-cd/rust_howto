@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs the operator overloading example.
+//!
+//! TODO Reviewed ??-??-2026
+
 // LATER: fn_traits is not available on the stable channel at this point
 // #![feature(unboxed_closures, fn_traits)]
 // mod callable;

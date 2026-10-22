@@ -1,11 +1,11 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates text styling using the `colored` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 use colored::Colorize as _;
 
+/// Prints text with colors and styles.
 fn main() {
     // Print styled text using foreground color and bold formatting.
     println!("{}", "Success".green().bold());
@@ -19,6 +19,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Laying out rich text with `parley`.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 use parley::Alignment;
 use parley::AlignmentOptions;
@@ -9,6 +12,7 @@ use parley::StyleProperty;
 // Parley is a rich text layout engine.
 // It handles complex text shaping, line breaking, and bidirectional text.
 
+/// Builds a layout for a text and breaks it into lines.
 pub fn main() {
     // Initialize font context
     let mut font_cx = FontContext::new();
@@ -47,6 +51,7 @@ pub fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

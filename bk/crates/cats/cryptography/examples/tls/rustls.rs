@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Build a Rustls client configuration and async connector.
 //!
 //! This example creates a `ClientConfig` with an empty root store and
 //! wraps it in a tokio-compatible TLS connector.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::sync::Arc;
 
@@ -13,6 +12,7 @@ use rustls::ClientConfig;
 use rustls::RootCertStore;
 use rustls::crypto::aws_lc_rs;
 
+/// Builds a client configuration and an async connector, then prints a message.
 fn main() -> anyhow::Result<()> {
     let root_store = RootCertStore::empty();
     let config = ClientConfig::builder_with_provider(Arc::new(
@@ -30,6 +30,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

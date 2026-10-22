@@ -20,14 +20,19 @@ use regexes::replace_outside_protected_spans;
 use regexes::wikilink_regex;
 use tracing::info;
 
+/// The stage of the preprocessor.
 #[derive(Clone, Copy)]
 enum Stage {
+    /// Removes hidden sections and includes of hidden chapters, before mdBook
+    /// links the chapters.
     Scrub,
+    /// Expands custom directives, after mdBook links the chapters.
     Directives,
 }
 
 /// The book preprocessor, configured for either its pre-link scrub or directive stage.
 pub struct Preproc {
+    /// The stage to run.
     stage: Stage,
 }
 
@@ -48,6 +53,7 @@ impl Preproc {
         }
     }
 
+    /// Returns the key of the stage in the book configuration.
     fn config_key(&self) -> &'static str {
         match self.stage {
             Stage::Scrub => "preprocessor.scrub",
@@ -55,6 +61,8 @@ impl Preproc {
         }
     }
 
+    /// Removes the hidden sections, hidden includes and wikilinks from the
+    /// book.
     fn run_scrub(&self, ctx: &PreprocessorContext, mut book: Book) -> Result<Book> {
         let conf = ctx
             .config
@@ -79,6 +87,7 @@ impl Preproc {
         Ok(book)
     }
 
+    /// Expands the directives in the book.
     fn run_directives(&self, ctx: &PreprocessorContext, mut book: Book) -> Result<Book> {
         let conf = ctx
             .config
@@ -159,6 +168,7 @@ impl Preprocessor for Preproc {
     }
 }
 
+/// Returns the Rust snippet that the example `name` refers to, in a code fence.
 fn resolve_example(
     book_root: &Path,
     chapter_source: Option<&Path>,
@@ -223,6 +233,7 @@ fn resolve_example(
     Ok(format!("{fence}rust\n{}\n{fence}", snippet.trim_end()))
 }
 
+/// Returns the canonical book root, falling back to the current directory.
 fn resolve_book_root(root: &Path) -> anyhow::Result<PathBuf> {
     if let Ok(root) = root.canonicalize() {
         return Ok(root);
@@ -239,6 +250,7 @@ fn resolve_book_root(root: &Path) -> anyhow::Result<PathBuf> {
         .context("failed to resolve current book directory")
 }
 
+/// Returns the lines between the start and end markers of `anchor` in `source`.
 fn extract_anchor(source: &str, anchor: &str) -> anyhow::Result<String> {
     let mut in_anchor = false;
     let mut found_start = false;
@@ -274,6 +286,7 @@ fn extract_anchor(source: &str, anchor: &str) -> anyhow::Result<String> {
     Ok(lines.join("\n"))
 }
 
+/// Returns a code fence longer than any run of backticks in `source`.
 fn code_fence(source: &str) -> String {
     let mut longest_run = 0;
     let mut current_run = 0;
@@ -292,6 +305,7 @@ fn code_fence(source: &str) -> String {
 mod tests {
     use super::*;
 
+    /// Checks that the marker lines are not part of the snippet.
     #[test]
     fn example_anchor_excludes_marker_lines() {
         let source = "before\n// ANCHOR: example\nfn main() {}\n// ANCHOR_END: example\nafter\n";
@@ -301,6 +315,7 @@ mod tests {
         );
     }
 
+    /// Checks that a missing marker is an error.
     #[test]
     fn example_anchor_reports_missing_markers() {
         let error =
@@ -308,11 +323,13 @@ mod tests {
         assert!(error.to_string().contains("anchor start marker is missing"));
     }
 
+    /// Checks that the fence cannot be closed by the snippet's own backticks.
     #[test]
     fn code_fence_is_longer_than_backticks_in_example() {
         assert_eq!(code_fence("let ticks = ```;"), "````");
     }
 
+    /// Checks that a configuration of the wrong type is reported.
     #[test]
     fn malformed_directive_configuration_is_an_error() {
         use std::str::FromStr as _;
@@ -329,6 +346,7 @@ mod tests {
         assert!(error.to_string().contains("preprocessor.directives"));
     }
 
+    /// Checks that examples that cannot be found are errors.
     #[test]
     fn unresolved_example_paths_are_errors() {
         let root = PathBuf::from("test_book")
@@ -345,6 +363,7 @@ mod tests {
         assert!(format!("{error:#}").contains("failed to resolve example"));
     }
 
+    /// Checks that unknown directives are errors.
     #[test]
     fn unresolved_custom_directives_are_errors() {
         use std::str::FromStr as _;
@@ -369,6 +388,7 @@ mod tests {
         assert!(format!("{error:#}").contains("{{#unknown value}}"));
     }
 
+    /// Checks that both stages support every renderer except `not-supported`.
     #[test]
     fn both_stages_report_renderer_support() {
         assert!(

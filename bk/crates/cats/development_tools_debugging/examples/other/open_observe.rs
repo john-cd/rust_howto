@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Log telemetry fields for an `OpenObserve` integration.
 //!
 //! To transmit spans, first configure an OpenTelemetry SDK provider with an
 //! OTLP exporter. The global tracer is a no-op until a provider is installed.
-//!
-//! TODO Reviewed ??-??-2026
 
 #[cfg(feature = "opentelemetry")]
 use opentelemetry::global;
@@ -14,6 +13,7 @@ use opentelemetry::trace::Span as _;
 #[cfg(feature = "opentelemetry")]
 use opentelemetry::trace::Tracer as _;
 
+/// Creates a span with fields and logs events, for an OpenObserve endpoint.
 #[cfg(feature = "opentelemetry")]
 fn main() {
     let endpoint = std::env::var("OPENOBSERVE_OTLP_ENDPOINT")
@@ -29,12 +29,14 @@ fn main() {
     span.end();
 }
 
+/// Prints a message when the `opentelemetry` feature is not enabled.
 #[cfg(not(feature = "opentelemetry"))]
 fn main() {
     println!("Enable the `opentelemetry` feature to run this example.");
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

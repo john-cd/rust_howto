@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! The `bstr` crate provides types and traits for working with byte strings,
 //! which are sequences of bytes that may or may not be valid UTF-8.
@@ -8,8 +9,6 @@
 //! [dependencies]
 //! bstr = "1.11.3" # Or latest
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 // BStr is a byte string slice, analogous to str. It represents a borrowed
 // sequence of bytes that may or may not be valid UTF-8.
@@ -27,6 +26,7 @@ use bstr::ByteSlice;
 // pushing, extending, and other operations on byte vectors.
 use bstr::ByteVec;
 
+/// Creates and manipulates byte strings, which may not be valid UTF-8.
 fn main() {
     // Basic usage:
     let _bstring = BString::from("Hello, world!");
@@ -62,6 +62,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

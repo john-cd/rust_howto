@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Placeholder for a `ggez` game example.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // ggez example (commented out due to dependency conflicts in the workspace)
 // use ggez::{Context, ContextBuilder, GameResult};
@@ -36,6 +40,7 @@
 // println!("ggez context builder initialized.");
 // Ok(())
 // }
+/// Prints a message: the example is disabled.
 fn main() {
     println!(
         "ggez example is currently disabled due to workspace dependency conflicts."
@@ -43,6 +48,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

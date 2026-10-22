@@ -1,14 +1,14 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `Rc` is a smart pointer that allows multiple owners of the same data.
 //!
 //! `Rc` stands for "Reference Counted". It keeps track of the number of owners
 //! of the data. When the last owner is dropped, the data is deallocated.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::rc::Rc;
 
+/// Shares a vector between several owners with `Rc` and counts the references.
 fn main() {
     let a = Rc::new(vec![1.0, 2.0, 3.0]);
     // The two syntaxes below are equivalent for cloning an `Rc`:
@@ -45,6 +45,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs one of the `control_flow` examples, chosen on the command line.
+//!
+//! TODO Reviewed ??-??-2026
+
 use clap::Parser;
 use clap::Subcommand;
 
@@ -8,26 +11,35 @@ mod labeled_block_expression;
 mod loop1;
 mod while1;
 
+/// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `for1` example.
     #[command(name = "for1")]
     For1,
+    /// Runs the `if_else` example.
     #[command(name = "if_else")]
     IfElse,
+    /// Runs the `labeled_block_expression` example.
     #[command(name = "labeled_block_expression")]
     LabeledBlockExpression,
+    /// Runs the `loop1` example.
     #[command(name = "loop1")]
     Loop1,
+    /// Runs the `while1` example.
     #[command(name = "while1")]
     While1,
 }
 
+/// Runs the example selected on the command line.
 fn main() {
     let cli = Cli::parse();
 

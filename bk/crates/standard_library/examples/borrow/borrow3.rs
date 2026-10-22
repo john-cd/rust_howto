@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Implementing `Borrow` for a case-insensitive string type.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// A case-insensitive string type.
 mod cis {
     use std::borrow::Borrow;
     use std::convert::From;
@@ -8,6 +13,7 @@ mod cis {
 
     // Case-insensitive string.
     // Implement `Eq`, `PartialEq`, `Hash` (used by `HashMap`).
+    /// A string that is compared and hashed ignoring case.
     #[derive(Debug, PartialEq, Eq, Hash)]
     pub struct CaseInsensitiveString(String);
 
@@ -39,6 +45,7 @@ mod cis {
     }
 }
 
+/// Returns the hash of `t`.
 fn calculate_hash<T: std::hash::Hash>(t: &T) -> u64 {
     use std::hash::Hasher as _;
     let mut s = std::hash::DefaultHasher::new();
@@ -46,6 +53,7 @@ fn calculate_hash<T: std::hash::Hash>(t: &T) -> u64 {
     s.finish()
 }
 
+/// Looks up a map with case-insensitive keys.
 fn main() {
     use std::borrow::Borrow as _;
     use std::collections::HashMap;
@@ -92,6 +100,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

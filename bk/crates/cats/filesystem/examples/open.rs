@@ -1,10 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `open` crate to open files and URLs
 //! using the default program associated with the file type.
-//!
-//! TODO Reviewed ??-??-2026
 
+/// Opens a file with the default application.
 fn main() {
     //  The `that` function attempts to open the specified path with the
     // appropriate application. If an error occurs during the opening

@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Sort a vector of floats.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// Sort a vector of floats.
 fn main() {
@@ -18,6 +22,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

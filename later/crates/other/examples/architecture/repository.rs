@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Example usage of the `InMemoryUserRepository`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::collections::HashMap;
 use std::sync::Arc;
@@ -21,14 +25,19 @@ struct User {
 /// This trait outlines the operations that can be performed on a collection of
 /// users, such as retrieving, adding, updating, deleting, and listing users.
 trait UserRepository {
+    /// Returns the user with the given identifier, if any.
     fn get_user(&self, id: i32) -> Option<User>;
 
+    /// Adds a user.
     fn add_user(&self, user: User);
 
+    /// Replaces the user that has the same identifier.
     fn update_user(&self, user: User);
 
+    /// Deletes the user with the given identifier.
     fn delete_user(&self, id: i32);
 
+    /// Returns all users.
     fn get_all_users(&self) -> Vec<User>;
 }
 
@@ -37,10 +46,12 @@ trait UserRepository {
 /// This struct uses a `HashMap` to store users and `Arc<Mutex<>>` to allow for
 /// concurrent access and modification.
 struct InMemoryUserRepository {
+    /// The users, by identifier.
     users: Arc<Mutex<HashMap<i32, User>>>,
 }
 
 impl InMemoryUserRepository {
+    /// Creates an empty repository.
     fn new() -> Self {
         Self {
             users: Arc::new(Mutex::new(HashMap::new())),
@@ -127,6 +138,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

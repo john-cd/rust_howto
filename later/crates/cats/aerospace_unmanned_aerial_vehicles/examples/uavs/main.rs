@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs the UAV example.
+//!
+//! TODO Reviewed ??-??-2026
+
 mod uavs;
 
 fn main() {

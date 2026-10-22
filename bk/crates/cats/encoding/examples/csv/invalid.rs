@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates invalid data handling when reading a CSV file.
-//!
-//! TODO Reviewed ??-??-2026
 
 use csv::Error;
 use serde::Deserialize;
@@ -13,8 +12,11 @@ use serde::Deserialize;
 /// to handle cases where the ID might not be a valid u64.
 #[derive(Debug, Deserialize)]
 struct Record {
+    /// The name.
     name: String,
+    /// The place.
     place: String,
+    /// The identifier, or `None` if it is not a valid number.
     #[serde(deserialize_with = "csv::invalid_option")]
     id: Option<u64>,
 }
@@ -38,6 +40,7 @@ alisha,colombo,xyz";
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Error> {
     main()
 }

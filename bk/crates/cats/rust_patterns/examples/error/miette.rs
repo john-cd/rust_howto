@@ -1,10 +1,9 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to define custom error types using `miette`
 //! and `thiserror`. It showcases various features like error codes, URLs, help
 //! text, source code snippets, and wrapping other errors.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// Example code for a library.
 /// In real-life, this code would be in a separate crate.
@@ -20,6 +19,7 @@ mod mylib {
     // `thiserror` plays nicely with `miette`.
     use thiserror::Error;
 
+    /// The errors of the library.
     #[derive(Error, Diagnostic, Debug)]
     pub enum MyLibError {
         #[error("A bad thing happened!")] // Provided by `thisError`.
@@ -32,13 +32,16 @@ mod mylib {
             url(docsrs),
             // Supply help text:
             help("try doing it better next time?"))]
+        /// A bad thing happened.
         BadThingHappened,
 
+        /// Something went wrong at a location in the source code.
         #[error("Something went wrong!")]
         SomethingWentWrong {
             // The `Source` that we're gonna be printing snippets out of.
             // This can be a `String` if we don't have or care about file
             // names.
+            /// The source code to print snippets from.
             #[source_code]
             src: NamedSource<String>,
 
@@ -46,14 +49,17 @@ mod mylib {
             // You may also use `(usize, usize)`, the byte-offset and length
             // into an associated `SourceCode` or
             // `Option<SourceSpan>`.
+            /// The part of the source code that is highlighted.
             #[label("This bit highlighted here is the problem")]
             bad_bit: SourceSpan,
 
             // Programmatically supply the help text.
+            /// Help text supplied at run time.
             #[help]
             advice: Option<String>, // Can also be `String`.
 
             // Related errors.
+            /// Related errors.
             #[related]
             others: Vec<Self>,
         },
@@ -62,12 +68,14 @@ mod mylib {
         #[error(transparent)]
         // Forward the source and `Display` methods
         // straight through to the underlying error.
+        /// An I/O error.
         #[diagnostic(code(my_lib::io_error))]
         IoError(#[from] std::io::Error),
 
         // Wrap another `Diagnostic`.
         // Use `#[diagnostic(transparent)]` to wrap another `[Diagnostic]`
         // You won't see labels otherwise.
+        /// Another error, which is itself a diagnostic.
         #[error(transparent)]
         #[diagnostic(transparent)]
         AnotherError(#[from] AnotherError),
@@ -77,12 +85,16 @@ mod mylib {
     #[derive(Error, Diagnostic, Debug)]
     #[error("another error")]
     pub struct AnotherError {
+        /// The location of the error in the source code.
         #[label("here")]
         pub at: SourceSpan,
     }
 
     /// Example function that fails.
-    #[expect(unreachable_code, reason = "the example returns an error on purpose")]
+    #[expect(
+        unreachable_code,
+        reason = "the example returns an error on purpose"
+    )]
     pub fn this_fails() -> Result<()> {
         // You can use plain strings as a `Source`,
         // or anything that implements the one-method `Source` trait.
@@ -95,22 +107,14 @@ mod mylib {
             bad_bit: (9, 4).into(),
             advice: Some("Some help text".to_owned()),
             others: vec![MyLibError::BadThingHappened],
-        }.into());
+        }
+        .into());
         Ok(())
     }
 }
 
 use miette::Result;
 
-/// # To get errors printed nicely in application code, just return a `Result<()>`.
-///
-/// This `main` function demonstrates how to use the custom error types defined
-/// in the `mylib` module. It calls the `this_fails` function, which returns a
-/// `Result`, and if an error occurs, `miette` will format and print it nicely.
-///
-/// ## Note:
-/// You can swap out the default reporter for a custom one using
-/// `miette::set_hook()`.
 fn main() -> Result<()> {
     mylib::this_fails()?;
     Ok(())
@@ -118,6 +122,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

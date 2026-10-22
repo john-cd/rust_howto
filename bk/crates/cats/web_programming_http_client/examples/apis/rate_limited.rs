@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Calculate how long an application should wait after hitting a rate limit.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::time::Duration;
 use std::time::SystemTime;
@@ -13,6 +12,8 @@ use anyhow::anyhow;
 use reqwest::header::HeaderMap;
 use reqwest::header::HeaderValue;
 
+/// Returns how long to wait before the next request, according to the rate
+/// limit headers, or `None` if requests are still allowed at `now`.
 fn parse_rate_limit_wait(
     headers: &HeaderMap,
     now: SystemTime,
@@ -46,6 +47,7 @@ fn parse_rate_limit_wait(
     Ok(None)
 }
 
+/// Computes the wait time from example rate limit headers and prints it.
 fn main() -> Result<()> {
     let now = UNIX_EPOCH + Duration::from_secs(1_700_000_000);
     let mut headers = HeaderMap::new();
@@ -61,6 +63,7 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

@@ -1,13 +1,13 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to initialize a SQLite database with tables.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::fs;
 
 use rusqlite::Connection;
 
+/// Creates a SQLite database and a table.
 fn main() -> anyhow::Result<()> {
     // Create the "temp" directory if it doesn't exist.
     if !fs::exists("temp")? {
@@ -36,6 +36,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

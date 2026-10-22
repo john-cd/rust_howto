@@ -1,47 +1,59 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of lifetime parameters in various items.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![allow(dead_code)]
 
 // Function with a lifetime parameter `'a`.
 // The parameter is used by the function parameter declaration.
 // In this case, `s1`, `s2`, and the return value all share the same lifetime.
+/// Returns the longest of two string slices, which share the same lifetime.
 fn longest<'a>(s1: &'a str, s2: &'a str) -> &'a str {
     if s1.len() > s2.len() { s1 } else { s2 }
 }
 
 // Type alias with a lifetime parameter:
+/// A string slice with a lifetime parameter.
 type StrRef<'a> = &'a str;
 
 // Struct with lifetime and type parameters:
+/// A struct that holds a reference.
 struct RefHolder<'a, T> {
+    /// The reference held.
     reference: &'a T,
 }
 
 // Implementation for the struct, with lifetime and type parameters.
 // Note how the lifetime parameter appears directly after `impl`.
 impl<'a, T> RefHolder<'a, T> {
+    /// Creates a holder for `reference`.
     fn new(reference: &'a T) -> Self {
         Self { reference }
     }
 }
 
 // Enumeration with lifetime parameter:
+/// An enum whose variants hold references.
 enum Either<'a, T, U> {
+    /// A reference to a value of the first type.
     Left(&'a T),
+    /// A reference to a value of the second type.
     Right(&'a U),
 }
 
 // Union with lifetime parameter (unsafe, rarer):
+/// A union of references.
 union MyUnion<'a> {
+    /// A reference to an integer.
     int_ref: &'a i32,
+    /// A reference to a float.
     float_ref: &'a f32,
 }
 
 // Trait with a lifetime parameter:
+/// A trait with a lifetime parameter.
 trait Describable<'a> {
+    /// Returns a description that lives for `'a`.
     fn describe(&self) -> &'a str;
 }
 
@@ -69,6 +81,7 @@ impl<'a, T> Describable<'a> for RefHolder<'a, T> {
     }
 }
 
+/// Uses lifetime parameters in functions, structs and traits.
 fn main() {
     let s1 = "Hello";
     let s2 = "World!";
@@ -81,6 +94,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

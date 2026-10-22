@@ -1,16 +1,17 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example: create a dummy neuroimaging volume and save it as a `NIfTI` file.
 //!
 //! This example uses the `nifti` crate to build a synthetic 3D brain-like
 //! volume, then writes it to the system temporary directory.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::error::Error;
 
 use ndarray::Array3;
 
+/// Creates a synthetic volume of neuroimaging data and prints its location and
+/// shape.
 fn main() -> Result<(), Box<dyn Error>> {
     let shape = (64, 64, 64);
     let mut volume = Array3::<i16>::zeros(shape);
@@ -35,6 +36,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()
 }

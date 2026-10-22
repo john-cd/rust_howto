@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Generic functions with trait bounds.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::fmt::Debug;
 use std::fmt::Display;
@@ -32,6 +36,7 @@ fn generic<T: ?Sized + Display>(t: &T) {
     println!("{t}");
 }
 
+/// Calls the generic functions with several types.
 fn main() {
     // Call the generic function with an integer.
     print_value(10);
@@ -57,6 +62,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 #![allow(clippy::single_match)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates downloading multiple files concurrently using
 //! streams.
@@ -7,8 +8,6 @@
 //! It uses `reqwest` to download files from URLs and `tokio` for asynchronous
 //! operations. The `futures` crate provides the `StreamExt` trait for working
 //! with streams.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::fs;
 
@@ -16,8 +15,10 @@ use futures::StreamExt as _;
 use tokio::fs::File;
 use tokio::io;
 
+/// The result of the download functions.
 type Result = std::result::Result<(), anyhow::Error>;
 
+/// Downloads the content at `url` and saves it to the file `filename`.
 async fn download_file(url: &str, filename: &str) -> Result {
     let response = reqwest::get(url).await?;
     let content = response.bytes().await?;
@@ -26,6 +27,7 @@ async fn download_file(url: &str, filename: &str) -> Result {
     Ok(())
 }
 
+/// Downloads several files concurrently using a stream of futures.
 #[tokio::main]
 async fn main() -> Result {
     let urls = ["https://www.gutenberg.org/cache/epub/43/pg43.txt"]; // Add more here...
@@ -67,6 +69,7 @@ async fn main() -> Result {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result {
     main()
 }

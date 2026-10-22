@@ -1,13 +1,13 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates how to ignore case when matching file names.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use glob::MatchOptions;
 use glob::glob_with;
 
+/// Prints the paths that match a glob pattern, ignoring case.
 fn main() -> Result<()> {
     let options = MatchOptions {
         case_sensitive: false,
@@ -23,6 +23,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

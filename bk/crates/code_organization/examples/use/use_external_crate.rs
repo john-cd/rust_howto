@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to write `use` declarations to bring items
 //! from external crates into scope, without having to write their full paths.
-//!
-//! TODO Reviewed ??-??-2026
 
 // Import a module from an external crate (here, `std`, the standard library),
 // by writing a path that begins with the external crate name.
@@ -20,6 +19,7 @@ use std::collections::HashMap;
 // crate.
 use ::anyhow::Result;
 
+/// Uses items from external crates.
 fn main() -> Result<()> {
     // Use a function from the `array` module of the `std` crate.
     // In this case, create an array of length 1 from a reference.
@@ -40,6 +40,7 @@ fn main() -> Result<()> {
 mod anyhow {}
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! Combinators from `futures_util`, applied to asynchronous fetches that may
+//! fail.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::time::Duration;
 
@@ -31,6 +36,7 @@ async fn fetch_data(id: u32) -> Result<String, String> {
     }
 }
 
+/// Combines the results of several simulated fetches in different ways.
 #[tokio::main]
 async fn main() {
     println!("\n===== Combining Futures =====");
@@ -106,6 +112,7 @@ async fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

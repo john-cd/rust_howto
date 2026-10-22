@@ -1,14 +1,14 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A small Leptos counter example showing reactive signals and view mounting.
 //!
 //! This example is browser-targeted, so the default build path remains a
 //! lightweight placeholder unless the `leptos` feature is enabled.
-//!
-//! TODO Reviewed ??-??-2026
 
 #[cfg(feature = "leptos-support")]
 use leptos::prelude::*;
 
+/// A counter that displays whether its count is even or odd.
 #[cfg(feature = "leptos-support")]
 #[component] // Annotate a function, so it can be used as a component.
 fn App() -> impl IntoView {
@@ -42,11 +42,13 @@ fn App() -> impl IntoView {
     }
 }
 
+/// Mounts the app in the body of the page.
 #[cfg(feature = "leptos-support")]
 fn main() {
     mount_to_body(|| view! { <App/> });
 }
 
+/// Prints a message when the `leptos-support` feature is not enabled.
 #[cfg(not(feature = "leptos-support"))]
 fn main() {
     //     // FIXME

@@ -1,16 +1,16 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates the usage of the `xshell` crate for shell
 //! scripting in Rust.
 //!
 //! `xshell` provides a convenient way to execute shell commands, manipulate the
 //! file system, and manage environment variables within a Rust program.
-//!
-//! TODO Reviewed ??-??-2026
 
 use xshell::Shell;
 use xshell::cmd;
 
+/// Runs shell commands with `xshell`.
 #[tracing::instrument(err)]
 fn main() -> anyhow::Result<()> {
     // Initialize tracing subscriber
@@ -139,6 +139,7 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

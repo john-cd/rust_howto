@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 #![allow(clippy::async_yields_async)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! # Futures
 //!
@@ -11,12 +12,12 @@
 //! - Chain computations onto a future using `then`.
 //! - Use conditional `Either` futures.
 //! - Flatten nested futures.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use futures::future::FutureExt as _;
 
+/// Combines futures with `map`, `then`, `Either` and `flatten`, and prints the
+/// results.
 #[tokio::main]
 async fn main() -> Result<()> {
     // Create a future that resolves to the value 1.
@@ -54,6 +55,7 @@ async fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

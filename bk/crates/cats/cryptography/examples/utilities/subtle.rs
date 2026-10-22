@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates the usage of the `subtle` crate for
 //! constant-time cryptographic operations.
-//!
-//! TODO Reviewed ??-??-2026
 
 use subtle::Choice;
 use subtle::ConditionallySelectable as _;
@@ -14,6 +13,7 @@ use subtle::CtOption;
 // constant-time cryptographic code, which is crucial for preventing
 // timing attacks.
 
+/// Compares and selects values in constant time with `subtle`.
 fn main() {
     // Example 1: Constant-time equality:
     let a = 10u8;
@@ -76,6 +76,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

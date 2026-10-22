@@ -16,11 +16,13 @@ use anyhow::Result;
 use anyhow::bail;
 use walkdir::WalkDir;
 
+/// The tests to skip, which are no longer in use.
 const REMOVED_TESTS: &[&str] = &[];
 
 // NOTE: `skeptic` issues "cargo:rerun-if-changed={}" for all
 // markdown files it processes. A full code rebuild will happen every
 // time the markdown sources change.
+/// Generates the tests from the Markdown files, unless building on docs.rs.
 fn main() -> Result<()> {
     // Disable build.rs when building documentation at docs.rs
     // <https://docs.rs/about/builds>

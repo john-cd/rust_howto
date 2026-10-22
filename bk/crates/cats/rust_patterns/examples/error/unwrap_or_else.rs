@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates the use of `unwrap_or` and `unwrap_or_else` for handling
 //! `Option` and `Result` types.
@@ -6,14 +7,13 @@
 //! `unwrap_or` provides a default value if the `Option` is `None` or the
 //! `Result` is `Err`. `unwrap_or_else` provides a closure to compute a default
 //! value in the same scenarios.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![allow(clippy::unnecessary_literal_unwrap)]
 
 use std::fs::File;
 use std::io::ErrorKind;
 
+/// Provides default values with `unwrap_or` and `unwrap_or_else`.
 fn main() {
     // Use `unwrap_or` to provide a default value if `maybe_value` is `None`:
     let maybe_value: Option<i32> = None;
@@ -49,6 +49,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

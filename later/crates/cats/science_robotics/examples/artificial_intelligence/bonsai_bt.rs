@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! # Behavior Tree Example
 //!
@@ -11,8 +12,6 @@
 //! execute. BTs are a very efficient way of creating complex systems that are
 //! both modular and reactive. These properties have led to the spread of BT
 //! from computer game programming to AI and Robotics.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 
@@ -39,11 +38,14 @@ use bonsai_bt::UpdateArgs;
 // Waits an amount of time before continuing.
 use bonsai_bt::Wait;
 
+/// The actions of the behavior tree.
 #[derive(Clone, Debug, Copy)]
 pub enum Actions {
     // Increment accumulator.
+    /// Increments the accumulator.
     Inc,
     // Decrement accumulator.
+    /// Decrements the accumulator.
     Dec,
 }
 
@@ -121,6 +123,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

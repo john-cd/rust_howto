@@ -1,15 +1,24 @@
-// TODO Reviewed ??-??-2026
+//! Matching a struct against patterns.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 #![allow(clippy::match_single_binding)]
+
 // ANCHOR: example
 // Define a struct named `Point` with three fields: x, y, and z,
 // all of type `i32`.
+/// A point in three dimensions.
 struct Point {
+    /// The x coordinate.
     x: i32,
+    /// The y coordinate.
     y: i32,
+    /// The z coordinate.
     z: i32,
 }
 
+/// Matches a point against several patterns.
 fn main() {
     let p = Point { x: 0, y: 0, z: 1 };
 
@@ -35,6 +44,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

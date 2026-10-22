@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Tokenize HTML with `html5ever` and print the parsed tokens.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::cell::Cell;
 
@@ -17,12 +16,17 @@ use html5ever::tokenizer::TokenSink;
 use html5ever::tokenizer::TokenSinkResult;
 use html5ever::tokenizer::Tokenizer;
 
+/// A token sink that prints the tokens of an HTML document.
 #[derive(Clone)]
 struct TokenPrinter {
+    /// Whether the previous token was a character, so that consecutive
+    /// characters are printed as one text.
     in_char_run: Cell<bool>,
 }
 
 impl TokenPrinter {
+    /// Starts or ends the printing of a run of characters, depending on whether
+    /// the current token is a character.
     fn is_char(&self, is_char: bool) {
         match (self.in_char_run.get(), is_char) {
             (false, true) => print!("text: \""),
@@ -66,6 +70,7 @@ impl TokenSink for TokenPrinter {
     }
 }
 
+/// Tokenizes an HTML string and prints the tokens.
 fn main() {
     let html = "<html><body><p>Hello, world!</p></body></html>";
     let sink = TokenPrinter {
@@ -84,6 +89,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

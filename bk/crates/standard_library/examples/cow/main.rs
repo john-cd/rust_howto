@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs one of the `cow` examples, chosen on the command line.
+//!
+//! TODO Reviewed ??-??-2026
+
 use clap::Parser;
 use clap::Subcommand;
 
@@ -9,28 +12,38 @@ mod function_returning_cow;
 mod into_cow;
 mod modify_cow_in_place;
 
+/// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `cow_alternatives` example.
     #[command(name = "cow_alternatives")]
     CowAlternatives,
+    /// Runs the `cow_as_function_param` example.
     #[command(name = "cow_as_function_param")]
     CowAsFunctionParam,
+    /// Runs the `cow_to_borrowed_owned` example.
     #[command(name = "cow_to_borrowed_owned")]
     CowToBorrowedOwned,
+    /// Runs the `function_returning_cow` example.
     #[command(name = "function_returning_cow")]
     FunctionReturningCow,
+    /// Runs the `into_cow` example.
     #[command(name = "into_cow")]
     IntoCow,
+    /// Runs the `modify_cow_in_place` example.
     #[command(name = "modify_cow_in_place")]
     ModifyCowInPlace,
 }
 
+/// Runs the example selected on the command line.
 fn main() {
     let cli = Cli::parse();
 

@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Labeled block expressions, which `break` out with a value.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Breaks out of a labeled block with a value.
 fn main() {
     // Labeled block expressions must begin with a label, here `'block`.
     let result = 'block: {
@@ -21,11 +26,13 @@ fn main() {
     println!("Result: {result}");
 }
 
+/// Returns the condition that decides whether to break out of the block.
 fn condition() -> bool {
     false
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

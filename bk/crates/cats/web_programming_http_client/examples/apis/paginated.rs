@@ -1,19 +1,22 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Build successive paginated URLs for an HTTP API.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use url::Url;
 
+/// The position in a paginated API.
 #[derive(Clone, Copy, Debug)]
 struct Pagination {
+    /// The number of the page, starting at 1.
     page: u32,
+    /// The number of items per page.
     per_page: u32,
 }
 
 impl Pagination {
+    /// Returns the pagination of the next page.
     fn next(self) -> Self {
         Self {
             page: self.page + 1,
@@ -21,6 +24,8 @@ impl Pagination {
         }
     }
 
+    /// Returns the URL of the page, with the pagination as query parameters of
+    /// `base`.
     fn into_url(self, base: &str) -> Result<Url> {
         let mut url = Url::parse(base)?;
         url.query_pairs_mut()
@@ -30,6 +35,7 @@ impl Pagination {
     }
 }
 
+/// Prints the URLs of successive pages.
 fn main() -> Result<()> {
     let mut pagination = Pagination {
         page: 1,
@@ -46,6 +52,7 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

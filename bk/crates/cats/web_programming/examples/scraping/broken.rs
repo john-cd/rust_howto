@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to check for broken links on a website.
 //!
 //! `select` is a library to extract useful data from HTML documents, suitable
 //! for web scraping.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::collections::HashSet;
 
@@ -22,8 +21,7 @@ use url::Url;
 /// as the base URL. Otherwise, the base URL is derived from the URL of the
 /// document itself, up to the path component.
 async fn get_base_url(url: &Url, doc: &Document) -> Result<Url> {
-    let base_tag_href =
-        doc.find(Name("base")).find_map(|n| n.attr("href"));
+    let base_tag_href = doc.find(Name("base")).find_map(|n| n.attr("href"));
     let base_url = base_tag_href
         .map_or_else(|| Url::parse(&url[..Position::BeforePath]), Url::parse)?;
     Ok(base_url)
@@ -39,6 +37,7 @@ async fn check_link(url: &Url) -> Result<bool> {
     Ok(res.status() != StatusCode::NOT_FOUND)
 }
 
+/// Checks each link of a web page and prints whether it is broken.
 #[tokio::main]
 async fn main() -> Result<()> {
     let url = Url::parse("https://www.rust-lang.org/en-US/")?;
@@ -72,6 +71,7 @@ async fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

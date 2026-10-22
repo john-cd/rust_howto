@@ -1,12 +1,20 @@
-// TODO Reviewed ??-??-2026
+//! Destructuring a struct into its fields.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// A point in two dimensions.
 #[derive(Clone, Copy)]
 struct Point {
+    /// The x coordinate.
     x: i32,
+    /// The y coordinate.
     y: i32,
 }
 
+/// Destructures a point in `let` and in `match`.
 fn main() {
     let p = Point { x: 0, y: 7 };
 
@@ -29,6 +37,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

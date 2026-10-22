@@ -3,7 +3,9 @@
 ///
 /// Callers must serialize access to the process environment while a guard is active.
 pub struct EnvGuard {
+    /// Name of the environment variable.
     key: String,
+    /// Value of the variable when the guard was created, if it was set.
     original_value: Option<String>,
 }
 

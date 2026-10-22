@@ -1,8 +1,13 @@
-// TODO Reviewed ??-??-2026
+//! A `LinkedList`, a doubly linked list.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::collections::LinkedList;
 
+/// Adds, removes and iterates over the elements of a `LinkedList`.
 fn main() {
     // Create a new `LinkedList`.
     let mut list = LinkedList::new();
@@ -69,6 +74,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,16 +1,16 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates the basic usage of the `LruCache` from the `lru`
 //! crate. It shows how to create a cache, insert key-value pairs, access
 //! entries, and observe the eviction behavior of the LRU (Least Recently Used)
 //! cache.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::num::NonZeroUsize;
 
 use lru::LruCache;
 
+/// Fills an LRU cache beyond its capacity and shows which entries are evicted.
 fn main() {
     // Create an LRU cache with a capacity of 3:
     let mut cache = LruCache::new(NonZeroUsize::new(3).unwrap());
@@ -57,6 +57,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

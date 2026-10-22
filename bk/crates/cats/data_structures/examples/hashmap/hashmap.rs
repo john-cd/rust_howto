@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates the basic usage of `HashMap` in Rust.
 //!
@@ -8,11 +9,10 @@
 //!
 //! This example covers creating, inserting, updating, accessing, iterating, and
 //! removing elements from a `HashMap`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 
+/// Inserts, reads, updates and iterates over the entries of a `HashMap`.
 fn main() {
     // Create a new, empty HashMap called 'scores'.
     let mut scores = HashMap::new();
@@ -70,6 +70,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

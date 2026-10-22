@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! A `crates.io` category.
+//!
+//! TODO Reviewed ??-??-2026
+
 use serde::Serialize;
 
 /// Represents a category.

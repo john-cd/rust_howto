@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A simple `PolkaVM` host example.
 //!
@@ -13,8 +14,6 @@
 //! ```
 //!
 //! The guest should import `host_increment` and export `add_one_with_host`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::convert::Infallible;
 use std::env;
@@ -32,10 +31,13 @@ use polkavm::Linker;
 use polkavm::Module;
 use polkavm::ProgramBlob;
 
+/// The result of the functions of the example.
 type ExampleResult<T> = Result<T, Box<dyn Error + Send + Sync>>;
 
+/// The state of the host, shared with the guest program.
 #[derive(Debug, Default)]
 struct HostState {
+    /// The number of calls to the host function.
     counter: u32,
 }
 
@@ -43,8 +45,12 @@ fn main() -> ExampleResult<()> {
     run_guest(guest_path_from_args())
 }
 
+/// Loads the guest program from `guest_path`, links a host function and calls
+/// the guest function. Prints the usage if no path is given.
 fn run_guest(guest_path: Option<PathBuf>) -> ExampleResult<()> {
-    let guest_path = if let Some(path) = guest_path { path } else {
+    let guest_path = if let Some(path) = guest_path {
+        path
+    } else {
         print_usage();
         return Ok(());
     };
@@ -115,10 +121,12 @@ fn run_guest(guest_path: Option<PathBuf>) -> ExampleResult<()> {
     Ok(())
 }
 
+/// Returns the path of the guest program from the first command-line argument.
 fn guest_path_from_args() -> Option<PathBuf> {
     env::args_os().nth(1).map(PathBuf::from)
 }
 
+/// Prints how to run the example.
 fn print_usage() {
     eprintln!(
         "Usage: cargo run --example emulators -- <path-to-guest.polkavm>"
@@ -128,12 +136,14 @@ fn print_usage() {
     );
 }
 
+/// Documents the contract that the guest program must fulfill.
 #[allow(clippy::unnecessary_wraps)]
 fn _guest_contract(_path: &Path) -> ExampleResult<()> {
     Ok(())
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> ExampleResult<()> {
     main()
 }

@@ -1,14 +1,14 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Tokenize a small CSS declaration list with `cssparser`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use cssparser::Parser;
 use cssparser::ParserInput;
 use cssparser::ToCss as _;
 use cssparser::Token;
 
+/// Tokenizes a CSS declaration list and prints each token.
 fn main() {
     let css = "color: red; font-size: 16px;";
     let mut input = ParserInput::new(css);
@@ -28,6 +28,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,11 +1,16 @@
-// TODO Reviewed ??-??-2026
+//! Calling browser APIs from Rust with `web-sys`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 #[cfg(target_arch = "wasm32")]
 use wasm_bindgen::prelude::*;
 #[cfg(target_arch = "wasm32")]
 use web_sys::window;
 
+/// Shows an alert box with the browser's `window.alert`.
 #[cfg(target_arch = "wasm32")]
 #[wasm_bindgen]
 pub fn show_alert() {
@@ -16,12 +21,14 @@ pub fn show_alert() {
     }
 }
 
+/// Does nothing outside of a browser; the function above runs in WebAssembly.
 fn main() {
     // TODO
 }
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

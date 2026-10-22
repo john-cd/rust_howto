@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! The `open` subcommand.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::path::PathBuf;
 
 use clap::ArgMatches;
@@ -18,6 +21,7 @@ pub(super) fn cmd() -> Command {
     // marked required.
 }
 
+/// Returns the files given to the `open` command, if it was run.
 pub(super) fn get_args(matches: &ArgMatches) -> Option<Vec<PathBuf>> {
     let m = matches.subcommand_matches("open")?;
     // "$ myapp open ..." was run
@@ -29,11 +33,13 @@ mod tests {
     use super::*;
     use crate::cli::cli;
 
+    /// Lets clap check the command definition for mistakes.
     #[test]
     fn verify_open_cmd() {
         cmd().debug_assert(); // <https://docs.rs/clap/latest/clap/struct.Command.html#method.debug_assert>
     }
 
+    /// Checks that the files are collected.
     #[test]
     fn test_cmd_open() {
         let m = cli().get_matches_from(vec!["foo", "open", "a.csv", "b.csv"]);
@@ -43,6 +49,7 @@ mod tests {
         );
     }
 
+    /// Checks that at least one file is required.
     #[test]
     fn test_cmd_open_none() {
         let m = cli().try_get_matches_from(vec!["foo", "open"]);

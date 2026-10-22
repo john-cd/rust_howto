@@ -1,9 +1,13 @@
-// TODO Reviewed ??-??-2026
+//! Fixed-capacity collections from the `heapless` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 use heapless::FnvIndexMap;
 use heapless::String;
 use heapless::Vec;
 
+/// Fills a fixed-capacity vector and handles the error when it is full.
 fn main() {
     // `heapless` collections have a fixed capacity determined at compile time.
     // Here we define a fixed-size vector with capacity of 3.

@@ -1,8 +1,13 @@
-// TODO Reviewed ??-??-2026
+//! A `TinyVec`, which stores a few elements inline before moving to the heap.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use tinyvec::TinyVec;
 
+/// Grows a `TinyVec` past its inline capacity.
 fn main() {
     // Create a `TinyVec` with an inline capacity of 4 `i32` elements.
     let mut tiny_vec: TinyVec<[i32; 4]> = TinyVec::new();
@@ -38,6 +43,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

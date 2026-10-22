@@ -1,12 +1,20 @@
-// TODO Reviewed ??-??-2026
+//! This example demonstrates how to call C functions from Rust.
+//! It uses the `cc` crate to compile a C file into a static library,
+//! and then links against that library.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 #![allow(unused_variables)]
+
 // ANCHOR: example
 use std::ffi::CString;
 use std::os::raw::c_char;
 
 use anyhow::Result;
 
+/// Prints the prompt `s`, reads a line from the standard input and returns it
+/// trimmed.
 fn prompt(s: &str) -> Result<String> {
     use std::io::Write as _;
     print!("{s}");
@@ -34,6 +42,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

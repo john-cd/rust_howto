@@ -1,11 +1,16 @@
-// TODO Reviewed ??-??-2026
+//! Extracting hashtags from a text with a regular expression.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::collections::HashSet;
 
 use lazy_static::lazy_static;
 use regex::Regex;
 
+/// Returns the distinct hashtags in `text`.
 fn extract_hashtags(text: &str) -> HashSet<&str> {
     lazy_static! {
         static ref HASHTAG_REGEX: Regex =
@@ -17,6 +22,7 @@ fn extract_hashtags(text: &str) -> HashSet<&str> {
         .collect()
 }
 
+/// Extracts the hashtags of a sample tweet.
 fn main() {
     let tweet = "Hey #world, I just got my new #dog, say hello to Till. #dog #forever #2 #_ ";
     let tags = extract_hashtags(tweet);
@@ -31,6 +37,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

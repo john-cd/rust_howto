@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! This example demonstrates how to add two matrices using the `ndarray` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use ndarray::arr2;
 
@@ -22,6 +26,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

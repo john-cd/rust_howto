@@ -1,14 +1,14 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to multiply a scalar by a vector and then
 //! multiply a matrix by the resulting vector.
-//!
-//! TODO Reviewed ??-??-2026
 
 use ndarray::Array1;
 use ndarray::arr1;
 use ndarray::arr2;
 
+/// Multiplies a vector by a scalar, then multiplies a matrix by the result.
 fn main() {
     let scalar = 4;
 
@@ -25,6 +25,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

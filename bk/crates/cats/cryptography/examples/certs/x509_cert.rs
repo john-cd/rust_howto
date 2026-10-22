@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Build and inspect basic X.509 certificate data with the `x509_cert` crate.
 //!
 //! The example demonstrates DER encoding of names, serial numbers, and
 //! validity periods.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::str::FromStr as _;
 use std::time::Duration;
@@ -15,6 +14,8 @@ use x509_cert::name::Name;
 use x509_cert::serial_number::SerialNumber;
 use x509_cert::time::Validity;
 
+/// Builds the subject, serial number and validity of an X.509 certificate and
+/// prints their DER lengths.
 fn main() -> anyhow::Result<()> {
     let subject = Name::from_str("CN=example.com,O=Rust HowTo,C=US")?;
     let serial_number = SerialNumber::from(42u32);
@@ -27,6 +28,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

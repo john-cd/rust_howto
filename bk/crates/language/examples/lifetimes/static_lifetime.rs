@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! The `'static` lifetime.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Returns a string literal, which lives for the whole program.
 fn my_string() -> &'static str {
     // This string literal is stored directly in the binary,
     // and therefore has a `'static` lifetime.
@@ -8,12 +13,14 @@ fn my_string() -> &'static str {
     s
 }
 
+/// Prints a `'static` string.
 fn main() {
     println!("{}", my_string());
 }
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

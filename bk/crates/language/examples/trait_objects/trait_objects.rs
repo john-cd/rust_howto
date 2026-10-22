@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Trait object example: a highly simplified GUI.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// A trait for types that can be drawn.
 trait Draw {
@@ -64,12 +63,14 @@ impl Screen {
     }
 }
 
+/// Creates a screen and runs it.
 fn main() {
     let s = Screen::new();
     s.run();
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

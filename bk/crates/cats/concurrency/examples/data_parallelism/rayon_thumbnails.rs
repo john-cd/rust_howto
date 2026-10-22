@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Generating thumbnails of images in parallel with `rayon` and `image`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::fs::create_dir_all;
 use std::path::Path;
@@ -14,6 +18,7 @@ use image::RgbImage;
 use image::imageops::FilterType;
 use rayon::prelude::*;
 
+/// Creates sample images, then writes a thumbnail of each, in parallel.
 fn main() -> Result<()> {
     // Create test files for the test function.
     create_test_files()?;
@@ -52,6 +57,8 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+/// Resizes the image `original` so that its longest edge is `longest_edge`
+/// pixels, and saves it in `thumb_dir`.
 fn make_thumbnail<PA, PB>(
     original: PA,
     thumb_dir: PB,
@@ -71,6 +78,7 @@ where
         .save(file_path)?)
 }
 
+/// Creates the sample images in `temp/test_images`.
 fn create_test_files() -> Result<()> {
     // Create a directory for test files.
     let test_dir = Path::new("temp/test_images");
@@ -92,6 +100,7 @@ fn create_test_files() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

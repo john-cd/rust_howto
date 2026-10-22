@@ -1,9 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! A `SlotMap`, which hands out stable keys on insertion.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use slotmap::SecondaryMap;
 use slotmap::SlotMap;
 
+/// Inserts into, accesses and removes from a `SlotMap`.
 fn main() {
     // Create a new `SlotMap`:
     let mut sm = SlotMap::new();
@@ -54,6 +59,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Calling Rust from Flutter with `flutter_rust_bridge`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // Integrate a Rust function into a Flutter project using
 // `flutter_rust_bridge`.
@@ -32,12 +36,14 @@ pub fn hello_from_rust(name: &str) -> String {
     format!("Hello, {name}! This is Rust speaking.")
 }
 
+/// Does nothing yet; the function above is called from Flutter.
 fn main() {
     // TODO
 }
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

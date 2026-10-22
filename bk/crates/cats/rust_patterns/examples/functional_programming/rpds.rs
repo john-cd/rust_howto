@@ -1,16 +1,16 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! # RPDS (Rust Persistent Data Structures) Example
 //!
 //! This example demonstrates the use of the `rpds` crate, which provides
 //! purely functional (immutable) data structures with structural sharing for
 //! efficiency.
-//!
-//! TODO Reviewed ??-??-2026
 
 use rpds::HashTrieMap;
 use rpds::Vector;
 
+/// Uses persistent vectors, maps and sets, which are never modified in place.
 fn main() {
     // Persistent `Vector` with immutable updates:
     let v1: Vector<i32> = Vector::new().push_back(1).push_back(2).push_back(3);
@@ -46,6 +46,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

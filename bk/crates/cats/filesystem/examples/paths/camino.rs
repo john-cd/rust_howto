@@ -1,10 +1,15 @@
-// TODO Reviewed ??-??-2026
+//! UTF-8 paths with `camino`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::path::PathBuf;
 
 use camino::Utf8PathBuf;
 
+/// Compares standard paths with UTF-8 paths.
 fn main() {
     // The standard `PathBuf` can contain non-UTF-8 data:
     let mut path = PathBuf::from("/home/user");
@@ -42,6 +47,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

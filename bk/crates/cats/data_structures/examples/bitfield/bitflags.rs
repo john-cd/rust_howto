@@ -1,8 +1,7 @@
 #![allow(unused)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `bitflags` generate types for C-style flags with ergonomic APIs.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::fmt;
 
@@ -34,6 +33,7 @@ bitflags! {
 // `impl` blocks can be added to flags types to implement additional methods.
 impl MyFlags {
     // Convert the bitflags to a u64:
+    /// Returns the flags as a `u64`.
     pub fn as_u64(&self) -> u64 {
         u64::from(self.bits())
     }
@@ -47,6 +47,7 @@ impl fmt::Display for MyFlags {
     }
 }
 
+/// Combines, intersects and formats flags with bitwise operations.
 fn main() {
     // Demonstrate bitwise operations with the defined flags.
     // Union:
@@ -81,6 +82,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

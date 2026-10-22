@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `sqlparser` crate to parse SQL
 //! statements, extract information from them, and regenerate the original SQL
@@ -9,8 +10,6 @@
 //! [dependencies]
 //! sqlparser = { version = "0.54.0", features = ["visitor"] }
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::ops::ControlFlow;
 
@@ -19,6 +18,7 @@ use sqlparser::ast::Statement;
 use sqlparser::dialect::GenericDialect;
 use sqlparser::parser::Parser;
 
+/// Parses an SQL statement and prints the syntax tree.
 fn main() -> anyhow::Result<()> {
     let sql = "SELECT * FROM users WHERE age > 18";
 
@@ -74,6 +74,7 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

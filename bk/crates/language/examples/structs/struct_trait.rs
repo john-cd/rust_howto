@@ -1,32 +1,47 @@
-// TODO Reviewed ??-??-2026
+//! Implementing a trait with methods, an associated type and associated
+//! constants.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // First, define a trait (if it's not a pre-existing one):
+/// A trait with methods, an associated function, a type and constants.
 trait SomeBehavior {
     // Method declaration (signature only, no body):
+    /// Does something and returns a description.
     fn do_something(&self) -> String;
 
     // Method with default implementation:
+    /// Performs an action with `value`; has a default implementation.
     fn another_action(&self, value: i32) {
         println!("The default implementation received the value: {value}");
     }
 
     // Associated function. In this case, it references the associated type
     // defined below. Note the path syntax `Self::<AssociatedType>`.
+    /// An associated function that returns the associated type.
     fn assoc_func() -> Self::Output;
 
     // Associated type:
+    /// The type that the associated function returns.
     type Output;
 
     // Associated constants with and without default:
+    /// A constant with a default value.
     const CONSTANT: i32 = 42;
 
+    /// A constant without a default value.
     const ANOTHER_CONST: &str;
 }
 
 // Define your struct:
+/// A struct that implements [`SomeBehavior`].
 struct MyStruct {
+    /// A number.
     data: i32,
+    /// A name.
     name: String,
 }
 
@@ -56,6 +71,7 @@ impl SomeBehavior for MyStruct {
     }
 }
 
+/// Uses the trait implementation.
 fn main() {
     let m = MyStruct {
         data: 42,
@@ -72,6 +88,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

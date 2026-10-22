@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates basic usage of the `sqlx` crate for interacting
 //! with a SQLite database.
@@ -11,18 +12,21 @@
 //! [dependencies]
 //! sqlx = { version = "0.8", features = [ "runtime-tokio", "sqlite" ]
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use sqlx::SqlitePool;
 
+/// A row of the `users` table.
 #[derive(sqlx::FromRow, Debug, PartialEq, Eq)] // Derive FromRow to map database rows to this struct
 struct User {
+    /// The identifier.
     id: i32,
+    /// The name.
     name: String,
+    /// The email address.
     email: String,
 }
 
+/// Creates an in-memory database, inserts users and queries them.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Create a connection pool:
@@ -75,6 +79,7 @@ async fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

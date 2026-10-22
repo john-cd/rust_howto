@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Basic `Box` usage.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// An example struct, which does not implement the `Copy` trait.
 /// This means that when an instance of `MyStruct` is moved, the original
@@ -10,6 +9,7 @@
 #[derive(Debug)]
 struct MyStruct(i32);
 
+/// Moves a value from the stack to the heap with a `Box`.
 fn main() {
     // `in_stack` is an instance of `MyStruct` allocated on the stack.
     let in_stack = MyStruct(5);
@@ -45,6 +45,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

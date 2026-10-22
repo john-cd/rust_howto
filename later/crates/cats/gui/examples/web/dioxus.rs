@@ -1,16 +1,21 @@
-// TODO Reviewed ??-??-2026
+//! A web application with `dioxus`.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 #[cfg(feature = "dioxus")]
 use dioxus::prelude::*;
 
 // Dioxus is a cross-platform UI framework for Rust.
 
+/// Launches the application.
 pub fn main() {
     // Launch the application
     #[cfg(feature = "dioxus")]
     dioxus::launch(App);
 }
 
+/// The root component of the application.
 #[cfg(feature = "dioxus")]
 #[component]
 fn App() -> Element {
@@ -25,6 +30,7 @@ fn App() -> Element {
     }
 }
 
+/// Runs the example.
 pub fn run() {
     main();
 }

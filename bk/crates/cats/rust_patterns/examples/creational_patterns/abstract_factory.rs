@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! The Abstract Factory pattern creates families of related objects without
 //! tying-in to their concrete implementations.
@@ -13,29 +14,36 @@
 //! of widgets: buttons, text boxes, and so on. The Abstract Factory pattern
 //! lets us define an interface for creating these families of widgets,
 //!  and then we can have concrete factories for each theme.
-//!
-//! TODO Reviewed ??-??-2026
 
 // Operations common to all concrete objects.
+/// A button, which can be rendered.
 trait Button {
+    /// Renders the button.
     fn render(&self);
 }
 
+/// A text box, which can display text.
 trait TextBox {
+    /// Displays `text` in the text box.
     fn display_text(&self, text: &str);
 }
 
 // Abstract factory interface (trait).
+/// A factory of the GUI elements of a theme.
 trait GUIFactory {
+    /// Creates a button of the theme.
     fn create_button(&self) -> Box<dyn Button>;
 
+    /// Creates a text box of the theme.
     fn create_text_box(&self) -> Box<dyn TextBox>;
 }
 
+/// The elements of the light theme.
 mod light {
     use super::*;
 
     // Concrete object implementations for Light Theme.
+    /// A button of the light theme.
     struct LightButton;
 
     impl Button for LightButton {
@@ -44,6 +52,7 @@ mod light {
         }
     }
 
+    /// A text box of the light theme.
     struct LightTextBox;
 
     impl TextBox for LightTextBox {
@@ -54,6 +63,7 @@ mod light {
 
     // The concrete factory implementation produce concrete objects belonging to
     // a specific family (here, light theme).
+    /// The factory of the light theme.
     pub struct LightGUIFactory;
 
     impl GUIFactory for LightGUIFactory {
@@ -67,11 +77,13 @@ mod light {
     }
 }
 
+/// The elements of the dark theme.
 mod dark {
 
     use super::*;
 
     // Concrete object implementations for Dark Theme.
+    /// A button of the dark theme.
     struct DarkButton;
 
     impl Button for DarkButton {
@@ -80,6 +92,7 @@ mod dark {
         }
     }
 
+    /// A text box of the dark theme.
     struct DarkTextBox;
 
     impl TextBox for DarkTextBox {
@@ -89,6 +102,7 @@ mod dark {
     }
 
     // Concrete factory for Dark Theme.
+    /// The factory of the dark theme.
     pub struct DarkGUIFactory;
 
     impl GUIFactory for DarkGUIFactory {
@@ -102,6 +116,7 @@ mod dark {
     }
 }
 
+/// Renders a button and a text box created by `factory`, displaying `txt`.
 fn render(factory: &dyn GUIFactory, txt: &str) {
     let button = factory.create_button();
     let text_box = factory.create_text_box();
@@ -109,6 +124,7 @@ fn render(factory: &dyn GUIFactory, txt: &str) {
     text_box.display_text(txt);
 }
 
+/// Renders the GUI elements of the light theme, then of the dark theme.
 fn main() {
     // Using the Light theme factory.
     render(&light::LightGUIFactory, "Hello from light theme!");
@@ -120,6 +136,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,7 +1,6 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates basic `mio` event polling with a `Waker`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::time::Duration;
 
@@ -10,8 +9,10 @@ use mio::Poll;
 use mio::Token;
 use mio::Waker;
 
+/// The token that identifies the events sent by the waker.
 const WAKE_TOKEN: Token = Token(0);
 
+/// Wakes up a polling instance from another thread and handles the event.
 fn main() -> std::io::Result<()> {
     // Create a new polling instance and event storage.
     let mut poll = Poll::new()?;

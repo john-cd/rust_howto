@@ -1,7 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Index anchors for `mdbook-indexing`.
+//!
+//! TODO Reviewed ??-??-2026
+
 use anyhow::Result;
 use serde::Serialize;
 
+/// Template of the index anchors.
 pub(super) static INDEX_ANCHORS: &str =
     r"{{ for keyword in keywords }}\{\{hi:{keyword}}}{{ endfor }} ";
 

@@ -1,12 +1,12 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates parsing MIME types from strings and handling invalid input.
-//!
-//! TODO Reviewed ??-??-2026
 
 use mime::APPLICATION_OCTET_STREAM;
 use mime::Mime;
 
+/// Parses MIME types from strings, using a default value when parsing fails.
 fn main() {
     let invalid_mime_type = "i n v a l i d";
     let default_mime = invalid_mime_type
@@ -26,6 +26,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

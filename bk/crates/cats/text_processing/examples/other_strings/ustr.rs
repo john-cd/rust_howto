@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! String interning example.
 //!
@@ -14,12 +15,11 @@
 //!
 //! The downside is no strings are ever freed, so if we're creating lots of
 //! strings, we might run out of memory.
-//!
-//! TODO Reviewed ??-??-2026
 
 use ustr::Ustr;
 use ustr::ustr;
 
+/// Creates interned strings and compares them.
 fn main() {
     // Creating `Ustr` instances.
     // `Ustr` is the main type representing an interned string.
@@ -89,6 +89,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

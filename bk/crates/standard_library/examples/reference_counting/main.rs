@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs the reference counting example.
+//!
+//! TODO Reviewed ??-??-2026
+
 mod rc;
 
 fn main() {

@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs one of the `game_engines` examples, chosen on the command line.
+//!
+//! TODO Reviewed ??-??-2026
+
 use clap::Parser;
 use clap::Subcommand;
 
@@ -10,27 +13,35 @@ mod fyrox;
 mod ggez;
 mod macroquad;
 
+/// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `bevy` example.
     #[command(name = "bevy")]
     #[cfg(feature = "bevy")]
     Bevy,
+    /// Runs the `fyrox` example.
     #[command(name = "fyrox")]
     #[cfg(feature = "fyrox")]
     Fyrox,
+    /// Runs the `ggez` example.
     #[command(name = "ggez")]
     #[cfg(feature = "ggez")]
     Ggez,
+    /// Runs the `macroquad` example.
     #[command(name = "macroquad")]
     Macroquad,
 }
 
+/// Runs the example selected on the command line.
 fn main() {
     let cli = Cli::parse();
 

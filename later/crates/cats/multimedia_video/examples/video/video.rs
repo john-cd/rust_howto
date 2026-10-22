@@ -1,15 +1,15 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Detect scene changes in a Y4M video clip using the `av-scenechange` crate.
 //!
 //! This example loads a Y4M file, runs scene-cut analysis, and prints the
 //! frame indices where scene changes occur.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::error::Error;
 use std::path::PathBuf;
 
+/// Detects scene changes in a video file given on the command line.
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let input_path = video_path_from_args().unwrap_or_else(|| {
         eprintln!("Usage: cargo run --example video -- <path-to-video.y4m>");
@@ -31,11 +31,13 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     Ok(())
 }
 
+/// Returns the path of the video from the first command-line argument.
 fn video_path_from_args() -> Option<PathBuf> {
     std::env::args_os().nth(1).map(PathBuf::from)
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()
 }

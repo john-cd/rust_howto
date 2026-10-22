@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Destructuring in a `for` loop.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Destructures the tuples of a vector in a `for` loop.
 fn main() {
     // Create a `Vec` of tuples.
     let points = vec![(0, 1), (2, 3), (4, 5)];
@@ -14,6 +19,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

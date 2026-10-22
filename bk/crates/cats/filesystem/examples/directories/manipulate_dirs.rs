@@ -1,9 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! Creating, listing and removing directories.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::fs;
 use std::path::Path;
 
+/// Creates, lists and removes directories.
 fn main() -> std::io::Result<()> {
     // 1. Create a directory:
     let path = Path::new("./example_dir");
@@ -64,6 +69,7 @@ fn main() -> std::io::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> std::io::Result<()> {
     main()
 }

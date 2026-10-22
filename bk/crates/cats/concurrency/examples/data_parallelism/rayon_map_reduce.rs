@@ -1,12 +1,19 @@
-// TODO Reviewed ??-??-2026
+//! Parallel `filter`, `map` and `reduce` over a vector with `rayon`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use rayon::prelude::*;
 
+/// A person, reduced to an age.
 struct Person {
+    /// Age in years.
     age: u32,
 }
 
+/// Computes the average age of the people older than 30, in parallel.
 fn main() {
     // Create a vector of `Person` instances.
     let v: Vec<Person> = vec![
@@ -41,6 +48,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

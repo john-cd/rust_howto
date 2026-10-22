@@ -1,13 +1,13 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to URL-encode and decode strings using the
 //! `url` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 use url::form_urlencoded::byte_serialize;
 use url::form_urlencoded::parse;
 
+/// Encodes bytes in the URL-encoded form format, then decodes them.
 fn main() {
     // Encode a string to URL-encoded format.
     // The `byte_serialize` function takes a byte slice and returns an iterator
@@ -25,6 +25,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

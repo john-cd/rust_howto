@@ -1,14 +1,14 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates parsing a JSON string into a `serde_json::Value`
 //! and comparing it to a `serde_json::Value` created using the `json!` macro.
-//!
-//! TODO Reviewed ??-??-2026
 
 use serde_json::Error;
 use serde_json::Value;
 use serde_json::json;
 
+/// Parses a JSON string into a `serde_json::Value` and inspects it.
 fn main() -> Result<(), Error> {
     let json_string: &str = r#"{
                  "userid": 103609,
@@ -37,6 +37,7 @@ fn main() -> Result<(), Error> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Error> {
     main()
 }

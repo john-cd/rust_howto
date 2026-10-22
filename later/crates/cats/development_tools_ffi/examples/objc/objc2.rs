@@ -1,5 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! The main function where the Objective-C interaction takes place.
+//! This function uses `unsafe` because it interacts with raw pointers and
+//! foreign code.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 #[cfg(any(target_os = "macos", target_os = "ios"))]
 use objc2::class;
@@ -36,6 +42,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

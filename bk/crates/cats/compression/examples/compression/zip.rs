@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of using the `zip` crate.
 //!
@@ -7,8 +8,6 @@
 //! This example demonstrates how to create a ZIP archive, add files and
 //! directories to it, and set file options such as compression method and
 //! permissions.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::fs::File;
 use std::io::Write as _;
@@ -17,6 +16,7 @@ use std::path::Path;
 use zip::write::SimpleFileOptions;
 use zip::write::ZipWriter;
 
+/// Creates a zip archive with two files and an empty directory.
 fn main() -> zip::result::ZipResult<()> {
     // Create a new zip archive file:
     let path = Path::new("temp/my_archive.zip");
@@ -50,6 +50,7 @@ fn main() -> zip::result::ZipResult<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> zip::result::ZipResult<()> {
     main()
 }

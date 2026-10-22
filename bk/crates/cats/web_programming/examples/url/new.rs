@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates how to build a URL by joining a base URL with a path.
-//!
-//! TODO Reviewed ??-??-2026
 
 use url::ParseError;
 use url::Url;
@@ -24,6 +23,7 @@ fn build_github_url(path: &str) -> Result<Url, ParseError> {
     Ok(joined)
 }
 
+/// Builds a URL by joining a base URL and a path.
 fn main() -> Result<(), ParseError> {
     let path = "/rust-lang/cargo";
 
@@ -36,6 +36,7 @@ fn main() -> Result<(), ParseError> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()?;
     Ok(())

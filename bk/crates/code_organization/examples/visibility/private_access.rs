@@ -1,19 +1,28 @@
-// TODO Reviewed ??-??-2026
+//! Accessing private items from the same module and its children.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 #![allow(unused_imports)]
+
 // ANCHOR: example
+/// A function private to the parent module.
 fn private_in_parent() {}
 
+/// A private module.
 mod private_module {
+    /// A function private to `private_module`.
     fn also_private() {
         // `private_in_parent` is accessible,
         // since it is in a parent module.
         super::private_in_parent();
     }
 
+    /// A private submodule.
     mod submodule {}
 }
 
+/// Calls the private items that are accessible from here.
 fn main() {
     // `private_in_parent` is accessible, since it is
     // in the same module than `main`.
@@ -34,6 +43,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

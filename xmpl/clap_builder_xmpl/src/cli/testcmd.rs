@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! The hidden `test` subcommand.
+//!
+//! TODO Reviewed ??-??-2026
+
 use clap::ArgMatches;
 use clap::Command;
 
@@ -8,6 +11,7 @@ pub(super) fn cmd() -> Command {
     // not displayed in the help message.
 }
 
+/// Returns whether the `test` command was run.
 pub(super) fn is_present(matches: &ArgMatches) -> bool {
     matches.subcommand_name() == Some("test")
 }
@@ -17,11 +21,13 @@ mod tests {
     use super::*;
     use crate::cli::cli;
 
+    /// Lets clap check the command definition for mistakes.
     #[test]
     fn verify_test_cmd() {
         cmd().debug_assert(); // <https://docs.rs/clap/latest/clap/struct.Command.html#method.debug_assert>
     }
 
+    /// Checks that the command is recognized.
     #[test]
     fn test_cmd_test() {
         let m = cli().get_matches_from(vec!["foo", "test"]);
@@ -29,6 +35,7 @@ mod tests {
     }
 
     // Test partial matches of subcommand names and their aliases.
+    /// Checks that an abbreviated command is recognized.
     #[test]
     fn test_cmd_test_infer() {
         let m = cli().get_matches_from(vec!["foo", "te"]);

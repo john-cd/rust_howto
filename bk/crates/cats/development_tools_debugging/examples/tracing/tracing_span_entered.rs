@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Demonstrates entering and exiting a span using `entered()` and `exit()`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use tracing::Level;
 use tracing::span;
@@ -38,6 +42,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

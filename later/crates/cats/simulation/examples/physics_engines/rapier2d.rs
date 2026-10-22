@@ -1,8 +1,13 @@
-// TODO Reviewed ??-??-2026
+//! A ball falling onto the ground in a 2D physics simulation with `rapier2d`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use rapier2d::prelude::*;
 
+/// Simulates the ball and prints its position at each step.
 fn main() {
     // A small simulation: one dynamic ball falling onto a static ground.
     let gravity = vector![0.0, -9.81];
@@ -62,6 +67,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

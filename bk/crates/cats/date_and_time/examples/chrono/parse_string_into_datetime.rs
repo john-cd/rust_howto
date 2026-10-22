@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Demonstrates parsing various date and time strings into `chrono` types.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use chrono::DateTime;
 use chrono::NaiveDate;
@@ -43,6 +47,7 @@ fn main() -> Result<(), ParseError> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), ParseError> {
     main()
 }

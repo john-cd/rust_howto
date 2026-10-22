@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! The `bytemuck` crate provides functions for reinterpreting one type as
 //! another without use of `unsafe`, whenever this is safe e.g. because both
@@ -22,8 +23,6 @@
 //! It also offers casting for types that have some invalid bit patterns by
 //! performing a runtime check. This is particularly useful for types like
 //! fieldless ('C-style') enums, char, bool, and structs containing them.
-//!
-//! TODO Reviewed ??-??-2026
 
 use bytemuck::AnyBitPattern;
 use bytemuck::NoUninit;
@@ -50,7 +49,9 @@ fn cast() {
 #[repr(C)]
 #[derive(Debug, Clone, Copy, NoUninit, AnyBitPattern)]
 struct MyStruct {
+    /// A number.
     x: i32,
+    /// Four bytes.
     y: [u8; 4],
 }
 
@@ -87,6 +88,7 @@ fn to_from_bytes() {
     println!("Recovered: {recovered:?}");
 }
 
+/// Runs the `bytemuck` examples.
 fn main() {
     cast();
     cast_complex_type();
@@ -95,6 +97,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

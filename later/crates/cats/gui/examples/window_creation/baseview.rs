@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Create a simple `baseview` window and respond to basic window events.
 //!
@@ -14,8 +15,6 @@
 //! ```sh
 //! sudo apt-get install libx11-dev libxcb1-dev libx11-xcb-dev libgl1-mesa-dev
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use baseview::ControlFlow;
@@ -26,6 +25,7 @@ use baseview::WindowEvent;
 use baseview::WindowOpenOptions;
 use baseview::WindowScalePolicy;
 
+/// A window delegate that handles the window events.
 struct BaseviewExample;
 
 impl WindowDelegate for BaseviewExample {
@@ -52,6 +52,7 @@ impl WindowDelegate for BaseviewExample {
     }
 }
 
+/// Opens a window.
 fn main() -> Result<()> {
     let size = Size::new(640.0, 480.0);
     let mut open_options =
@@ -63,6 +64,7 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

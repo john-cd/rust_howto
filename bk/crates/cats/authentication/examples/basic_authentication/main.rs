@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs the basic authentication example.
+//!
+//! TODO Reviewed ??-??-2026
+
 mod basic;
 
 fn main() -> anyhow::Result<()> {

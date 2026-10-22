@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Generates a random `f64` with the `rand` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 use rand::RngExt as _;
 

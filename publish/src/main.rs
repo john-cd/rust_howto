@@ -4,6 +4,7 @@ use std::error::Error;
 
 use cargo_toml::Manifest;
 
+/// Prints fields of the `Cargo.toml` manifest.
 fn main() -> Result<(), Box<dyn Error>> {
     println!("This crate is a placeholder. It does nothing useful.\n");
 

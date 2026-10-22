@@ -1,7 +1,12 @@
-// TODO Reviewed ??-??-2026
+//! Variables: immutability, mutability, constants and statics.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 #![allow(unused)]
+
 // ANCHOR: example
+/// Declares and modifies variables.
 fn main() {
     // By default, variables are immutable.
     // Once we give the variable a value, the value won't change.
@@ -35,12 +40,15 @@ fn main() {
     // ERROR: st = 42;
 }
 
+/// A struct with a flag.
 #[derive(Debug)]
 struct MyStruct {
+    /// The flag.
     flag: bool,
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

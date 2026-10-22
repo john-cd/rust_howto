@@ -9,6 +9,7 @@ use std::process;
 use mdbook_preprocessor::Preprocessor as _;
 use mdbook_private::Private;
 
+/// Runs the preprocessor, or answers the `supports` query of mdBook.
 fn run() -> mdbook_preprocessor::errors::Result<()> {
     let arguments: Vec<_> = env::args().skip(1).collect();
     match arguments.as_slice() {
@@ -29,6 +30,7 @@ fn run() -> mdbook_preprocessor::errors::Result<()> {
     Ok(())
 }
 
+/// Runs the preprocessor and reports its error, if any.
 fn main() {
     if let Err(error) = run() {
         eprintln!("mdbook-private: {error:#}");

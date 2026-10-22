@@ -1,12 +1,12 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates how to work with pre-release versions using the `semver` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use semver::Version;
 
+/// Parses versions with and without a pre-release identifier.
 fn main() -> Result<()> {
     let version_1 = Version::parse("1.0.0-alpha")?;
     // Prints `Version { major: 1, minor: 0, patch: 0, pre: [Identifier(Alpha)],
@@ -23,6 +23,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

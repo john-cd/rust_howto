@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `lazy_static` defines statically initialized values that are
 //! computed lazily at runtime. It can be particularly useful for initializing
 //! data that is expensive to compute or that needs to be shared across multiple
 //! threads.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 use std::sync::Mutex;
@@ -36,6 +35,7 @@ lazy_static! {
     static ref COUNTER: Mutex<i32> = Mutex::new(0);
 }
 
+/// Reads values from a lazily initialized global map.
 fn main() -> anyhow::Result<()> {
     // Accessing the CONFIG.
     println!(
@@ -84,6 +84,7 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

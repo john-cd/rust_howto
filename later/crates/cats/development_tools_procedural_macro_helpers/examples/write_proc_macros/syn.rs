@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `syn` is a library for parsing Rust code into a syntax tree.
 //! It is used in procedural macros to manipulate Rust code at compile time.
@@ -10,8 +11,6 @@
 //! in `syn` representing items (like functions, structs, enums), expressions,
 //! statements, attributes, and more. You can then easily traverse the AST,
 //! inspect different parts of the code and modify it.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Context as _;
 use quote::quote;
@@ -67,6 +66,7 @@ fn m() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Runs the `syn` examples.
 fn main() -> anyhow::Result<()> {
     simple()?;
     m()?;
@@ -74,6 +74,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

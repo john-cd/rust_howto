@@ -1,15 +1,15 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates the use of `tokio::sync::oneshot` channels to
 //! communicate between asynchronous tasks. It simulates downloading a file
 //! and then processing it in separate tasks.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::time::Duration;
 
 use tokio::sync::oneshot;
 
+/// Simulates downloading a file and returns its name.
 async fn download_file() -> Result<String, std::io::Error> {
     // Simulate downloading a file:
     let filename = "data.txt";
@@ -18,6 +18,7 @@ async fn download_file() -> Result<String, std::io::Error> {
     Ok(filename.to_owned())
 }
 
+/// Simulates processing the downloaded file named `filename`.
 async fn process_file(filename: String) {
     // Simulate processing the downloaded file:
     println!("Processing file: {filename}");
@@ -25,6 +26,8 @@ async fn process_file(filename: String) {
     println!("Finished processing file.");
 }
 
+/// Downloads a file in a spawned task, sends its name through a `oneshot`
+/// channel, then processes it.
 async fn async_main() -> Result<(), Box<dyn std::error::Error>> {
     let (sender, receiver) = oneshot::channel();
 
@@ -46,6 +49,7 @@ async fn async_main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
+/// Creates a Tokio runtime and runs [`async_main`] on it.
 fn main() {
     let rt = tokio::runtime::Runtime::new().unwrap();
     rt.block_on(async { async_main().await }).unwrap();
@@ -53,6 +57,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

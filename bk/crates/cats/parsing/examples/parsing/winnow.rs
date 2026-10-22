@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates basic usage of the `winnow` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 use winnow::ascii::digit1;
 use winnow::combinator::separated;
@@ -13,6 +12,7 @@ fn parse_list(input: &mut &str) -> ModalResult<Vec<i32>> {
     separated(1.., digit1.parse_to::<i32>(), ",").parse_next(input)
 }
 
+/// Parses a comma-separated list of numbers with `winnow`.
 fn main() -> anyhow::Result<()> {
     let mut input = "1,2,3,4,5";
     let result = parse_list(&mut input)
@@ -26,6 +26,7 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

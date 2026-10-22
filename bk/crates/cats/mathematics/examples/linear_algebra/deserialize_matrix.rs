@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! This example demonstrates how to serialize and deserialize a `DMatrix` using
+//! `serde_json`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use nalgebra::DMatrix;
 
@@ -29,6 +34,7 @@ fn main() -> Result<(), std::io::Error> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), std::io::Error> {
     main()
 }

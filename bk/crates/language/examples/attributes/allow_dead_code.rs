@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Silencing the warning about unused code with `#[allow(dead_code)]`.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 // Disables the `dead_code` lint for the entire file.
 #![allow(dead_code)]
@@ -12,12 +15,14 @@
 /// to disable the lint for this function only.
 fn unused_function() {}
 
+/// Does not call `unused_function`.
 fn main() {
     println!("Nobody is calling `unused_function`.");
 }
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

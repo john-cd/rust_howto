@@ -1,10 +1,16 @@
-// TODO Reviewed ??-??-2026
+//! Ways to use function-like macros: as expressions, statements, items and
+//! types.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 #![allow(clippy::useless_vec)]
+
 // ANCHOR: example
 use std::cell::RefCell;
 
 // Example uses of function-like macros:
+/// Shows several uses of function-like macros.
 fn examples() {
     // 1. They can be used as expressions.
     // The following defines a vector:
@@ -30,11 +36,13 @@ fn examples() {
 
 // 4. Function-like macros can be used in a type alias.
 // Let's first write a macro-by-example that defines a tuple type:
+/// Defines a tuple type of the two given types.
 macro_rules! Tuple {
     { $A:ty, $B:ty } => { ($A, $B) };
 }
 
 // Define a tuple type alias with the macro above:
+/// A tuple type created with a macro.
 type T2 = Tuple!(i32, i32);
 
 /// Print the elements of the tuple type alias:
@@ -50,12 +58,14 @@ fn use_thread_local() {
 
 // 6. They can be used as an associated item (here, a `const`).
 // This macro creates a constant of a given type and value:
+/// Defines a constant `CONST` of the given type and value.
 macro_rules! const_maker {
     ($t:ty, $v:tt) => {
         const CONST: $t = $v;
     };
 }
 
+/// A trait whose associated constant is created by a macro.
 #[allow(dead_code)]
 trait T {
     const_maker! {i32, 7}
@@ -67,12 +77,14 @@ trait T {
 // then the inner macro `println` is expanded.
 //
 // This macro calls the `println!` macro:
+/// Expands to a call to the `println!` macro.
 macro_rules! _example {
     () => {
         println!("Macro call in a macro!")
     };
 }
 
+/// Calls the functions that use macros.
 fn main() {
     examples();
     print_tuple((1, 3));
@@ -81,6 +93,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

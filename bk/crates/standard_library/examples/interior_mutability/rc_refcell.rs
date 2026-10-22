@@ -1,13 +1,13 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A common pattern in Rust is using `Rc<RefCell<T>>` to allow multiple
 //! owners of mutable data in a single-threaded scenario.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::cell::RefCell;
 use std::rc::Rc;
 
+/// Shares a mutable vector between several owners with `Rc<RefCell<_>>`.
 fn main() {
     // Create a shared mutable vector
     let shared_vec: Rc<RefCell<Vec<i32>>> =
@@ -34,6 +34,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

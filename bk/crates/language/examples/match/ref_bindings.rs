@@ -1,13 +1,14 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Variable binding moves or copies the bound value by default.
 //! Use `ref` or `ref mut` to get a reference instead.
 //!
 //! `ref` and `ref mut` are most often used in `match`, `if let`, and `while
 //! let` expressions.
-//!
-//! TODO Reviewed ??-??-2026
 
+/// Shows that matching moves or copies the bound value, and how to bind by
+/// reference.
 fn main() {
     // A sample tuple struct with an inner field that is not `Copy`:
     #[derive(Debug)]
@@ -57,6 +58,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

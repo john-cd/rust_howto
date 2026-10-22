@@ -1,25 +1,34 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! The `Default` trait provides a way to create a default value for a type.
 //! It initializes a struct without manually specifying every field.
-//!
-//! TODO Reviewed ??-??-2026
 
 // `derive` implements it automatically:
+/// A configuration, with the default values of each type.
 #[derive(Default, Debug)]
 struct Config {
-    timeout: u32,          // defaults to `0`.
-    retries: u8,           // defaults to `0`.
-    endpoint: String,      // defaults to `"".to_string()`.
+    /// The timeout.
+    timeout: u32, // defaults to `0`.
+    /// The number of retries.
+    retries: u8, // defaults to `0`.
+    /// The address of the endpoint.
+    endpoint: String, // defaults to `"".to_string()`.
+    /// Whether logging is enabled.
     logging_enabled: bool, // defaults to `false`.
 }
 
 // For custom defaults, implement the trait manually:
+/// A configuration, with custom default values.
 #[derive(Debug)]
 struct Config2 {
+    /// The timeout.
     timeout: u32,
+    /// The number of retries.
     retries: u8,
+    /// The address of the endpoint.
     endpoint: String,
+    /// Whether logging is enabled.
     logging_enabled: bool,
 }
 
@@ -34,6 +43,7 @@ impl Default for Config2 {
     }
 }
 
+/// Creates configurations with default values and overrides some fields.
 fn main() {
     let config = Config::default();
     println!("{config:?}");

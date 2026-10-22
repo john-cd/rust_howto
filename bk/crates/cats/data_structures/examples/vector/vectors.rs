@@ -2,11 +2,10 @@
 #![allow(clippy::vec_init_then_push)]
 #![allow(clippy::useless_vec)]
 #![allow(clippy::unnecessary_fold)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates vector creation, manipulation, iteration, and
 //! slices in Rust.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// Runs the vector creation, manipulation, iteration, and slice demonstrations.
 fn main() {
@@ -185,7 +184,6 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Tests the vector demonstration functions.
     #[test]
     fn test_main() {
         main();

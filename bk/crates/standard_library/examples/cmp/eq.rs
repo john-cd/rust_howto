@@ -1,18 +1,25 @@
-// TODO Reviewed ??-??-2026
-#![allow(dead_code)]
-// ANCHOR: example
+//! Implementing equality with `PartialEq` and `Eq`.
+//!
+//! TODO Reviewed ??-??-2026
 
+#![allow(dead_code)]
+
+// ANCHOR: example
 // `#[derive(PartialEq, Eq)]` automatically implements equality traits.
 // When derived on structs, two instances are equal if all fields are equal,
 // and not equal if any fields are not equal.
 // When derived on enums, two instances are equal if they are the same variant
 // and all fields are equal.
+/// A point whose equality is derived.
 #[derive(Debug, PartialEq, Eq)]
 struct Point {
+    /// The x coordinate.
     x: i32,
+    /// The y coordinate.
     y: i32,
 }
 
+/// Compares points for equality.
 fn points() {
     let p1 = Point { x: 1, y: 2 };
     let p2 = Point { x: 1, y: 2 };
@@ -22,9 +29,12 @@ fn points() {
     println!("p1 == p3: {}", p1 == p3); // false
 }
 
+/// A person who is identified by an ID.
 #[derive(Debug)]
 struct Person {
+    /// Unique identifier; the only field compared.
     id: u64,
+    /// Last name of the person.
     last_name: String,
 }
 
@@ -39,6 +49,7 @@ impl PartialEq for Person {
 // `Eq` has no methods.
 impl Eq for Person {}
 
+/// Compares people for equality.
 fn people() {
     let p1 = Person {
         id: 1,
@@ -51,6 +62,7 @@ fn people() {
     assert_ne!(p1, p2);
 }
 
+/// Runs the examples.
 fn main() {
     points();
     people();
@@ -58,6 +70,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

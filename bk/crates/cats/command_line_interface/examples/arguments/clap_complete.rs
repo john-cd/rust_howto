@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates generating shell completions with `clap_complete`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use clap::Arg;
 use clap::Command;
@@ -10,6 +9,7 @@ use clap::builder::ValueParser;
 use clap_complete::generate_to;
 use clap_complete::shells::Bash;
 
+/// Builds the definition of the command-line interface.
 fn build_cli() -> Command {
     Command::new("myapp").about("A simple CLI application").arg(
         Arg::new("config")
@@ -21,6 +21,8 @@ fn build_cli() -> Command {
     )
 }
 
+/// Generates shell completion scripts for the command-line interface into a
+/// temporary directory.
 fn main() -> std::io::Result<()> {
     // Build the CLI application definition.
     let mut cmd = build_cli();
@@ -40,6 +42,7 @@ fn main() -> std::io::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> std::io::Result<()> {
     main()
 }

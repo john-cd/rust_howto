@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates the use of `unwrap`, `expect`, `unwrap_or`, and
 //! `unwrap_or_else` with `Option`.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![allow(clippy::unnecessary_literal_unwrap)]
 
@@ -29,6 +28,8 @@ fn unwrap_expect() {
         z.expect("Can't panic: the `Option` is guaranteed to be `Some`.");
 }
 
+/// Provides default values with `unwrap_or`, `unwrap_or_default` and
+/// `unwrap_or_else`.
 fn unwrap_or_unwrap_or_else() {
     let config_setting = Some(100);
     let _ = config_setting.unwrap_or(50); // 100.
@@ -48,6 +49,7 @@ fn unwrap_or_unwrap_or_else() {
     }); // 75.
 }
 
+/// Runs the `unwrap` examples.
 fn main() {
     unwrap_expect();
     unwrap_or_unwrap_or_else();
@@ -55,6 +57,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

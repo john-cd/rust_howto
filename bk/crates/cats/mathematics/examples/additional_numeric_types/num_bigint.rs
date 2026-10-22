@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Demonstrates the usage of `BigInt` for large integer arithmetic.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::str::FromStr as _;
 
@@ -43,6 +47,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

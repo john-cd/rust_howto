@@ -1,15 +1,24 @@
-// TODO Reviewed ??-??-2026
+//! A counter application with `vizia`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use vizia::prelude::*;
 
+/// The data of the application.
 #[derive(Lens)]
 pub struct AppData {
+    /// The current count.
     count: i32,
 }
 
+/// The events that the application handles.
 pub enum AppEvent {
+    /// Increases the count.
     Increment,
+    /// Decreases the count.
     Decrement,
 }
 
@@ -26,6 +35,7 @@ impl Model for AppData {
     }
 }
 
+/// Runs the application.
 pub fn main() {
     let _ = Application::new(|cx| {
         AppData { count: 0 }.build(cx);
@@ -48,6 +58,7 @@ pub fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

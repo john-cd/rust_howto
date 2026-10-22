@@ -1,9 +1,10 @@
-// TODO Reviewed ??-??-2026
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // Adapted from https://github.com/RealAtix/mdbook-private (Razvan Nicolescu).
 //! mdBook 0.5-compatible private chapter and comment filtering.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::sync::LazyLock;
 
@@ -21,9 +22,13 @@ use serde::Deserialize;
 #[derive(Deserialize)]
 #[serde(default, rename_all = "kebab-case")]
 struct Config {
+    /// Whether to remove private chapters instead of keeping them.
     remove: bool,
+    /// Whether to style the private content.
     style: bool,
+    /// Notice displayed on private content.
     notice: String,
+    /// Prefix of the file names of private chapters.
     chapter_prefix: String,
 }
 
@@ -84,6 +89,7 @@ impl Preprocessor for Private {
     }
 }
 
+/// Removes the chapters, at any depth, whose file name starts with `prefix`.
 fn remove_chapters(items: &mut Vec<BookItem>, prefix: &str) {
     items.retain_mut(|item| {
         if let BookItem::Chapter(chapter) = item {
@@ -102,6 +108,7 @@ fn remove_chapters(items: &mut Vec<BookItem>, prefix: &str) {
     });
 }
 
+/// Renumbers the chapters that have a number, starting at 1 under `parent`.
 fn renumber(items: &mut [BookItem], parent: &mut Vec<u32>) {
     let mut next = 1;
     for item in items {

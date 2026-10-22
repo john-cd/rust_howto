@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Demonstrates parsing and serializing JSON data using the `serde_json` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use serde::Deserialize;
 use serde::Serialize;
@@ -9,8 +13,11 @@ use serde_json::Value;
 /// Represents a user with a name, age, and a list of phone numbers.
 #[derive(Deserialize, Serialize, Debug)]
 struct User {
+    /// The name of the user.
     name: String,
+    /// The age of the user.
     age: u8,
+    /// The phone numbers of the user.
     phones: Vec<String>,
 }
 
@@ -67,6 +74,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

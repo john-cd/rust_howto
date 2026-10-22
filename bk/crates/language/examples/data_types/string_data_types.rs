@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! String data types: `&str`, `String` and string literals.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Creates and prints strings of different types.
 fn main() {
     // Basic string types:
     let u: &str = "Hello"; // String slice.
@@ -19,6 +24,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

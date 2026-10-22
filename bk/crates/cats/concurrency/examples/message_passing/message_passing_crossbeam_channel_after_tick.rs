@@ -1,5 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! This example demonstrates the use of `crossbeam_channel`'s `tick` and
+//! `after` functions to create channels that deliver messages periodically and
+//! after a certain duration, respectively.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::time::Duration;
 use std::time::Instant;
@@ -34,6 +40,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

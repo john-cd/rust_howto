@@ -1,7 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Combining `Option` values with `map`, `and_then` and other combinators.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 #![allow(clippy::bind_instead_of_map)]
 #![allow(clippy::unwrap_or_default)]
+
 // ANCHOR: example
 use std::fs;
 
@@ -18,6 +22,7 @@ fn read_file(filename: &str) -> Option<String> {
         .map(|s| s.to_lowercase())
 }
 
+/// Reads a file and transforms its content with combinators.
 fn main() {
     let contents_maybe = read_file("temp/poem.txt");
     // Provide a default with `unwrap_or_else` or `unwrap_or_default`.
@@ -27,6 +32,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }
@@ -35,6 +41,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks that the example runs.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         if !std::fs::exists("temp")? {

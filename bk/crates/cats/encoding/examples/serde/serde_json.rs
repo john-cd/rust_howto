@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Serializing and deserializing a struct to and from JSON with `serde_json`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use serde::Deserialize;
 use serde::Serialize;
@@ -7,13 +11,18 @@ use serde::Serialize;
 // Define a struct `Person`.
 // The `Serialize` and `Deserialize` derive macros automatically implement the
 // `Serialize` and `Deserialize` traits for `Person`.
+/// A person, serialized to and from JSON.
 #[derive(Serialize, Deserialize, Debug)]
 struct Person {
+    /// Name of the person.
     name: String,
+    /// Age of the person, in years.
     age: u8,
+    /// Email address of the person.
     email: String,
 }
 
+/// Serializes a person to JSON and deserializes it back.
 fn main() {
     // Create an instance of `Person`.
     let person = Person {
@@ -34,6 +43,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

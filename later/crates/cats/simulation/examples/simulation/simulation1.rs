@@ -1,14 +1,14 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Simulate a simple 2D bouncing ball using the `rapier2d` physics engine.
 //!
 //! This example creates a static ground and a dynamic ball, then steps the
 //! physics simulation for several frames.
-//!
-//! TODO Reviewed ??-??-2026
 
 use rapier2d::prelude::*;
 
+/// Simulates a ball falling and bouncing on the ground.
 fn main() {
     let gravity = vector![0.0f32, -9.81f32];
     let integration_parameters = IntegrationParameters::default();
@@ -74,6 +74,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

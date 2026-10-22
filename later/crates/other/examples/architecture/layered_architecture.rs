@@ -1,10 +1,9 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates a layered architecture in Rust,
 //! separating concerns into data access, business logic, and presentation
 //! layers.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::sync::Arc;
 
@@ -13,11 +12,14 @@ use anyhow::Result;
 #[derive(Debug, Clone)]
 /// Represents a user in the system.
 pub struct User {
+    /// The identifier of the user.
     pub id: u32,
+    /// The name of the user.
     pub name: String,
 }
 
 // --- Persistence / Data Access Layer ---
+/// The data access layer.
 mod data {
     use std::collections::HashMap;
 
@@ -30,18 +32,22 @@ mod data {
     #[async_trait]
     /// Defines the contract for interacting with user data.
     pub trait UserRepository {
+        /// Returns the user with the given identifier, if any.
         async fn get_user(&self, id: u32) -> Result<Option<User>>;
 
+        /// Stores a new user.
         async fn create_user(&self, user: User) -> Result<()>;
     }
 
     /// An in-memory implementation of `UserRepository` for testing and
     /// demonstration purposes.
     pub struct InMemoryUserRepository {
+        /// The users, by identifier.
         users: Mutex<HashMap<u32, User>>,
     }
 
     impl InMemoryUserRepository {
+        /// Creates an empty repository.
         pub fn new() -> Self {
             Self {
                 users: Mutex::new(HashMap::new()),
@@ -65,6 +71,7 @@ mod data {
 }
 
 // --- Service Layer ---
+/// The business layer.
 mod business {
     use std::sync::Arc;
 
@@ -75,18 +82,22 @@ mod business {
 
     /// Defines the contract for user-related business operations.
     pub trait UserService {
+        /// Returns the user with the given identifier, if any.
         async fn get_user(&self, id: u32) -> Result<Option<User>>;
 
+        /// Creates a user.
         async fn create_user(&self, user: User) -> Result<()>;
     }
 
     /// A simple implementation of `UserService` that delegates to a
     /// `UserRepository`.
     pub struct SimpleUserService<R: UserRepository + Send + Sync> {
+        /// The repository that stores the users.
         repo: Arc<R>,
     }
 
     impl<R: UserRepository + Send + Sync> SimpleUserService<R> {
+        /// Creates a service that uses `repo`.
         pub fn new(repo: Arc<R>) -> Self {
             Self { repo }
         }
@@ -106,6 +117,7 @@ mod business {
 }
 
 // --- Presentation Layer (simplistic CLI in this case) ---
+/// The presentation layer.
 mod presentation {
     use anyhow::Result;
 
@@ -145,6 +157,7 @@ async fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

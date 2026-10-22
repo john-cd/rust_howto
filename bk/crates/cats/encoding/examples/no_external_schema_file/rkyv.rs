@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `rkyv` (short for "archive") is a high-performance, zero-copy
 //! (de)serialization framework that allows arbitrary field types
@@ -6,20 +7,22 @@
 //!
 //! This example demonstrates how to serialize and deserialize a struct
 //! using `rkyv` without an external schema file.
-//!
-//! TODO Reviewed ??-??-2026
 
 use rkyv::Archive;
 use rkyv::Deserialize;
 use rkyv::Serialize;
 use rkyv::rancor::Error;
 
+/// A struct that can be archived.
 #[derive(Archive, Deserialize, Serialize, Debug)]
 struct MyStruct {
+    /// A string.
     field1: String,
+    /// A number.
     field2: i32,
 }
 
+/// Serializes a struct with `rkyv`, then deserializes it.
 fn main() -> anyhow::Result<()> {
     // Create an instance of `MyStruct`.
     let data = MyStruct {
@@ -43,6 +46,7 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

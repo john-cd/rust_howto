@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Examples for working with `.env` files using `dotenvy`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::env;
 
@@ -28,6 +27,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

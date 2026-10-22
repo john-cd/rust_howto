@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! Computing the L1 and L2 norms of a vector, and normalizing it, with
+//! `ndarray`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use ndarray::Array1;
 use ndarray::ArrayView1;
@@ -27,6 +32,7 @@ fn normalize(mut x: Array1<f64>) -> Array1<f64> {
     x
 }
 
+/// Prints the norms of a vector and its normalization.
 fn main() {
     let x = array![1., 2., 3., 4., 5.];
     println!("||x||_2 = {}", l2_norm(x.view()));
@@ -36,6 +42,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

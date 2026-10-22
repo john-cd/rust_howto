@@ -1,7 +1,12 @@
-// TODO Reviewed ??-??-2026
+//! SurrealDB is a scalable, distributed, collaborative,
+//! document-graph database for the realtime web.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 // ANCHOR: example
 #![allow(clippy::result_large_err)]
+
 use serde::Deserialize;
 use serde::Serialize;
 use surrealdb::Result;
@@ -14,10 +19,13 @@ use surrealdb::types::SurrealValue;
 // use surrealdb::engine::local::RocksDb;
 
 // The document to store in the database.
+/// A person, stored in the database.
 #[derive(Debug, Serialize, Deserialize, SurrealValue)]
 #[surreal(crate = "surrealdb::types")]
 struct Person {
+    /// The name of the person.
     name: String, // or: Cow<'static, str>
+    /// The age of the person.
     age: u16,
 }
 
@@ -95,6 +103,7 @@ async fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

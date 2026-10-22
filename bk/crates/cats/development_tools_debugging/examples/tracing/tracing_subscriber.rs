@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! - `tracing` is a framework for instrumenting Rust programs to collect
 //!   scoped, structured, and async-aware diagnostics.
@@ -18,9 +19,8 @@
 //! tracing = "0.1.41" # Or latest version
 //! tracing-subscriber = "0.3.20"
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
+/// Installs a global subscriber and emits events.
 fn main() {
     // In most cases, use the following to
     // initialize and install the global subscriber for your application:
@@ -48,6 +48,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

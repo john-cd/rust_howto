@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates the usage of the `comemo` crate for fine-grained
 //! memoization.
@@ -15,8 +16,6 @@
 //!
 //! This is particularly useful for incremental computation or
 //! compilation, where fine-grained access tracking is required.
-//!
-//! TODO Reviewed ??-??-2026
 
 use comemo::Track as _;
 use comemo::Tracked;
@@ -43,7 +42,9 @@ fn compute_derived_value(config: Tracked<'_, Config>) -> i32 {
 /// Define a struct to represent a configuration.
 #[derive(Clone, Debug)]
 struct Config {
+    /// The value.
     value: i32,
+    /// A flag.
     a_bool: bool,
 }
 
@@ -54,11 +55,14 @@ struct Config {
 /// methods, among other [restrictions](https://docs.rs/comemo/0.4.0/comemo/attr.track.html).
 #[track]
 impl Config {
+    /// Returns the value.
     fn get_value(&self) -> i32 {
         self.value
     }
 }
 
+/// Calls a memoized function twice with the same tracked argument, then after a
+/// change.
 fn main() {
     let mut config = Config {
         value: 5,
@@ -91,6 +95,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

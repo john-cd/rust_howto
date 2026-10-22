@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example shows how to create a simple gRPC client using the `tonic`
 //! crate to interact with the `Greeter` server.
 //!
 //! To run this example, ensure the `Greeter` server is already running.
-//!
-//! TODO Reviewed ??-??-2026
 
 use helloworld::HelloRequest;
 use helloworld::greeter_client::GreeterClient;
@@ -15,6 +14,7 @@ pub mod helloworld {
     tonic::include_proto!("helloworld");
 }
 
+/// Sends a request to the gRPC server and prints the reply.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Connect to the gRPC server using the address defined in the server

@@ -1,30 +1,41 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example: calculate Black-Scholes prices for European call and put options.
 //!
 //! This example is self-contained and does not depend on an external finance
 //! crate.
-//!
-//! TODO Reviewed ??-??-2026
 
+/// The type of an option.
 #[allow(dead_code)]
 #[derive(Clone, Copy)]
 enum OptionType {
+    /// A call option.
     Call,
+    /// A put option.
     Put,
 }
 
+/// The parameters of the Black-Scholes-Merton model.
 struct BlackScholesMerton {
+    /// The price of the underlying asset.
     spot_price: f64,
+    /// The strike price of the option.
     strike_price: f64,
+    /// The time to maturity in years.
     time_to_maturity: f64,
+    /// The volatility of the underlying asset.
     volatility: f64,
+    /// The risk-free interest rate.
     risk_free_rate: f64,
+    /// The cost of carry.
     cost_of_carry: f64,
+    /// The type of the option.
     #[allow(dead_code)]
     option_type: OptionType,
 }
 
 impl BlackScholesMerton {
+    /// Creates the parameters of the model.
     fn new(
         spot_price: f64,
         strike_price: f64,
@@ -45,6 +56,7 @@ impl BlackScholesMerton {
         }
     }
 
+    /// Returns the `d1` term of the model.
     fn d1(&self) -> f64 {
         let sigma_sq = self.volatility * self.volatility;
         (f64::ln(self.spot_price / self.strike_price)
@@ -53,10 +65,13 @@ impl BlackScholesMerton {
             / (self.volatility * f64::sqrt(self.time_to_maturity))
     }
 
+    /// Returns the `d2` term of the model.
     fn d2(&self) -> f64 {
         self.d1() - self.volatility * f64::sqrt(self.time_to_maturity)
     }
 
+    /// Returns the cumulative distribution function of the standard normal
+    /// distribution at `x`.
     fn norm_cdf(x: f64) -> f64 {
         // Abramowitz and Stegun approximation for the standard normal
         // cumulative distribution.
@@ -75,6 +90,7 @@ impl BlackScholesMerton {
         f64::midpoint(1.0, sign * y)
     }
 
+    /// Returns the price of a European call option.
     fn call_price(&self) -> f64 {
         let d1 = self.d1();
         let d2 = self.d2();
@@ -87,6 +103,7 @@ impl BlackScholesMerton {
             - discounted_strike * Self::norm_cdf(d2)
     }
 
+    /// Returns the price of a European put option.
     fn put_price(&self) -> f64 {
         let d1 = self.d1();
         let d2 = self.d2();
@@ -100,6 +117,7 @@ impl BlackScholesMerton {
     }
 }
 
+/// Computes and prints the prices of a call and a put option.
 fn main() {
     let spot_price = 100.0;
     let strike_price = 105.0;
@@ -126,6 +144,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

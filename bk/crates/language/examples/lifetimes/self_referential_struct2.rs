@@ -1,9 +1,9 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of a self-referential struct using pinning.
-//!
-//! TODO Reviewed ??-??-2026
 
+/// A self-referential struct, which is pinned.
 mod selfref {
 
     use std::marker::PhantomPinned;
@@ -14,17 +14,23 @@ mod selfref {
     // To create a `!Unpin` type on stable Rust,
     // embed `std::marker::PhantomPinned`.
     // This marker tells the compiler your type must never move once pinned.
+    /// A struct whose pointer refers to its own data.
     #[derive(Debug)]
     pub struct SelfRef {
+        /// The data.
         pub data: String,
         // Raw pointer to the field above.
         // You will often use `NotNull` as well.
+        /// A pointer to `data`.
         pub ptr: *const String,
         // The `PhantomPinned` field makes `SelfRef: !Unpin`.
+        /// A marker that prevents the struct from being moved once it is
+        /// pinned.
         _pin: PhantomPinned,
     }
 
     impl SelfRef {
+        /// Creates a pinned struct, with `ptr` pointing to `data`.
         pub fn new(txt: &str) -> Pin<Box<Self>> {
             // Allocate on heap and construct a new `Pin<Box<T>>`.
             // Since the type does not implement `Unpin`, then the newly created
@@ -47,8 +53,7 @@ mod selfref {
                 //   (here `Pointer` is a `Box`).
                 // - `get_unchecked_mut` gets a mutable reference to what's
                 //   inside of the `Pin`.
-                let mut_ref: &mut Self =
-                    Pin::get_unchecked_mut(boxed.as_mut());
+                let mut_ref: &mut Self = Pin::get_unchecked_mut(boxed.as_mut());
                 // Assign the right address.
                 mut_ref.ptr = self_ptr;
             }
@@ -107,11 +112,16 @@ mod selfref {
     }
 }
 
+/// Examples of structural and non-structural pinning.
 pub mod structural_pinning {
     use std::pin::Pin;
 
+    /// A struct with a structurally pinned field and a field that is not
+    /// pinned.
     pub struct Struct {
+        /// A field that is pinned when the struct is.
         pub structural_field: i32,
+        /// A field that is never pinned.
         pub unpinned_field: i32,
     }
 
@@ -119,6 +129,7 @@ pub mod structural_pinning {
         // Structural Pinning: Pinning is "structural" for this field, meaning
         // that if the struct is pinned, then so is the field.
         // It allows writing a projection that creates a `Pin<&mut Field>`.
+        /// Returns a pinned mutable reference to `structural_field`.
         pub fn structural_field(self: Pin<&mut Self>) -> Pin<&mut i32> {
             // SAFETY: This is okay because `structural_field` is pinned when
             // `self` is.
@@ -129,6 +140,7 @@ pub mod structural_pinning {
         // `Pin<&mut Field>`, so we don't need to be careful about other
         // code moving out of that field. It provides a projection
         // method that turns `Pin<&mut Struct>` into `&mut Field`.
+        /// Returns a mutable reference to `unpinned_field`.
         pub fn unpinned_field(self: Pin<&mut Self>) -> &mut i32 {
             // SAFETY: This is okay because `unpinned_field` is never considered
             // pinned, therefore we do not need to uphold any
@@ -138,6 +150,7 @@ pub mod structural_pinning {
     }
 }
 
+/// Creates a pinned self-referential struct and checks its pointer.
 fn main() {
     use std::pin::Pin;
 
@@ -168,6 +181,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

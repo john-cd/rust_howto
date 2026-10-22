@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `postcard` crate for serialization
 //! and deserialization without an external schema file.
@@ -16,8 +17,6 @@
 //! ```
 //!
 //! Example adapted from <https://lib.rs/crates/postcard>.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::ops::Deref;
 
@@ -26,13 +25,17 @@ use postcard::to_stdvec;
 use serde::Deserialize;
 use serde::Serialize;
 
+/// A struct that borrows its data.
 #[derive(Serialize, Deserialize, Debug, Eq, PartialEq)]
 struct RefStruct<'a> {
+    /// The bytes.
     bytes: &'a [u8], /* NOTE: postcard handles `&[u8]` and `&[u8; N]`
                       * differently. */
+    /// The string.
     str_s: &'a str,
 }
 
+/// Serializes a struct with `postcard`, then deserializes it.
 fn main() {
     let message = "hElLo";
 
@@ -68,6 +71,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

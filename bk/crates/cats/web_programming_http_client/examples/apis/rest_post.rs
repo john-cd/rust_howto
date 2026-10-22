@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of using the `reqwest` crate to create and delete a GitHub Gist.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 use std::env;
@@ -19,21 +18,27 @@ const GISTS_ENDPOINT: &str = "https://api.github.com/gists";
 /// Represents the JSON body used to create a gist.
 #[derive(Serialize, Debug)]
 struct Post<'a> {
+    /// The description of the gist.
     description: &'a str,
+    /// Whether the gist is public.
     public: bool,
+    /// The files of the gist, by name.
     files: HashMap<&'a str, Content<'a>>,
 }
 
 /// Represents the content of a file within a gist.
 #[derive(Serialize, Debug)]
 struct Content<'a> {
+    /// The text of the file.
     content: &'a str,
 }
 
 /// Represents the identifying fields returned for a created gist.
 #[derive(Deserialize, Debug)]
 struct Gist {
+    /// The identifier of the gist.
     id: String,
+    /// The URL of the gist.
     html_url: String,
 }
 

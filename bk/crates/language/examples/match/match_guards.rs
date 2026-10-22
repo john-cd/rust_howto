@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Match guards, the `if` conditions of match arms.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Matches an optional number with guards.
 fn main() {
     let num = Some(4);
 
@@ -14,6 +19,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

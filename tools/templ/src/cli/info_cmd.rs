@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! The `info` subcommand, which gets information about a crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 use clap::ArgMatches;
 use clap::Command;
 

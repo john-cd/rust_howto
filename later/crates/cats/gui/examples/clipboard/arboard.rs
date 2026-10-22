@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to interact with the system clipboard using
 //! the `arboard` crate.
@@ -7,11 +8,10 @@
 //!
 //! This example shows how to create a clipboard instance, set text to the
 //! clipboard, and get text from the clipboard.
-//!
-//! TODO Reviewed ??-??-2026
 
 use arboard::Clipboard;
 
+/// Copies text to the clipboard, then reads it back.
 fn main() {
     // Create a new Clipboard instance.
     let mut clipboard = Clipboard::new().unwrap();
@@ -27,6 +27,7 @@ fn main() {
 // You may also use:  get/set_html/image...
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

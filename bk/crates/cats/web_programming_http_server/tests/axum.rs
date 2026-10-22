@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates basic usage of the `axum` web framework.
 //!
@@ -16,8 +17,6 @@
 //! - <https://docs.rs/axum/latest/axum/index.html>
 //! - <https://docs.rs/axum/latest/axum/extract/struct.State.html>
 //! - <https://docs.rs/axum/latest/axum/extract/index.html>
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::sync::Arc;
 
@@ -31,6 +30,7 @@ use axum::routing::get;
 /// Application state shared across all handlers.
 #[derive(Clone)]
 struct AppState {
+    /// The greeting that the root handler returns.
     greeting: String,
 }
 

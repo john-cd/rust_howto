@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `comrak` is a `CommonMark` and GitHub-flavored Markdown compatible parser.
-//!
-//! TODO Reviewed ??-??-2026
 
 use comrak::Arena;
 use comrak::Options;
@@ -53,6 +52,7 @@ fn replace_text(
     html
 }
 
+/// Converts Markdown to HTML and replaces text in a Markdown document.
 fn main() {
     to_html();
 
@@ -66,6 +66,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

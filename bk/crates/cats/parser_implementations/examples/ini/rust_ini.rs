@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `ini` crate to parse and manipulate
 //! INI files.
@@ -6,8 +7,6 @@
 //! INI is an informal standard for configuration files.
 //! INI files are simple text files with a basic structure composed of
 //! "sections" and "properties".
-//!
-//! TODO Reviewed ??-??-2026
 
 use ini::Ini;
 
@@ -58,6 +57,7 @@ key4 = value4
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

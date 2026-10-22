@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Accepting several types through `AsRef`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// This function takes a generic type `T` that implements the `AsRef<str>`
 /// trait. It converts the input `s` to a string slice (`&str`) using
@@ -36,6 +40,7 @@ fn print_vec<T: AsRef<[i32]>>(input: T) {
 // `Vec<T>` and `[T; N]` implement `AsRef<[T]>`.
 // We can also pass a reference to a vector or array, thanks to a blanket
 // `impl AsRef<U> for &T where T: AsRef<U>` in the standard library.
+/// Passes a vector and an array to a function that takes `AsRef<[i32]>`.
 fn vec_example() {
     let vec: Vec<i32> = vec![1, 2, 3];
     print_vec(&vec);
@@ -48,6 +53,7 @@ fn vec_example() {
     print_vec(sli);
 }
 
+/// Runs both examples.
 fn main() {
     string_slice();
     vec_example();
@@ -55,6 +61,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

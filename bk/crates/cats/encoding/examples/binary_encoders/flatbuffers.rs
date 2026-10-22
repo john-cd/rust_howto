@@ -1,11 +1,11 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Build a minimal FlatBuffer payload without a generated schema.
-//!
-//! TODO Reviewed ??-??-2026
 
 use flatbuffers::FlatBufferBuilder;
 
+/// Builds a FlatBuffer that contains a string and prints it.
 fn main() {
     let mut builder = FlatBufferBuilder::new();
     let greeting = builder.create_string("Hello, FlatBuffers!");
@@ -18,6 +18,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

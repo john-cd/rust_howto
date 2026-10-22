@@ -1,8 +1,13 @@
-// TODO Reviewed ??-??-2026
+//! Splitting a string into grapheme clusters.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use unicode_segmentation::UnicodeSegmentation;
 
+/// Prints the graphemes of a string.
 fn main() {
     let name = "José Guimarães\r\n";
     let graphemes =
@@ -13,6 +18,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

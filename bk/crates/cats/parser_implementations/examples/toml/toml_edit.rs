@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `toml_edit` crate to
 //! parse, modify, and print TOML documents while preserving the
@@ -6,13 +7,13 @@
 //!
 //! Use `toml_edit` instead of `toml` for format-preserving editing or finer
 //! control over output.
-//!
-//! TODO Reviewed ??-??-2026
 
 use toml_edit::DocumentMut;
 use toml_edit::Item;
 use toml_edit::value;
 
+/// Parses a TOML document, edits it while preserving its formatting, and prints
+/// it.
 fn main() -> anyhow::Result<()> {
     // Parse existing TOML, here a `Cargo.toml` file:
     let toml_content = r#"
@@ -79,6 +80,7 @@ path = "src/main.rs"
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

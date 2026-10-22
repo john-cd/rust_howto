@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs one of the `postgres` examples, chosen on the command line.
+//!
+//! TODO Reviewed ??-??-2026
+
 #[cfg(feature = "postgres")]
 use clap::Parser;
 #[cfg(feature = "postgres")]
@@ -13,30 +16,38 @@ mod create_tables;
 #[cfg(feature = "postgres")]
 mod insert_query_data;
 
+/// Command-line arguments.
 #[cfg(feature = "postgres")]
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[cfg(feature = "postgres")]
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `aggregate_data` example.
     #[cfg(feature = "postgres")]
     #[command(name = "aggregate_data")]
     AggregateData,
+    /// Runs the `cornucopia` example.
     #[cfg(feature = "postgres")]
     #[command(name = "cornucopia")]
     Cornucopia,
+    /// Runs the `create_tables` example.
     #[cfg(feature = "postgres")]
     #[command(name = "create_tables")]
     CreateTables,
+    /// Runs the `insert_query_data` example.
     #[cfg(feature = "postgres")]
     #[command(name = "insert_query_data")]
     InsertQueryData,
 }
 
+/// Runs the example selected on the command line.
 fn main() -> anyhow::Result<()> {
     #[cfg(feature = "postgres")]
     {
@@ -66,6 +77,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Serializes the tests, which change the environment variables.
 #[cfg(feature = "postgres")]
 #[allow(dead_code)]
 pub(crate) static ENV_MUTEX: std::sync::Mutex<()> = std::sync::Mutex::new(());

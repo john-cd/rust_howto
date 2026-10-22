@@ -1,14 +1,14 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `HEAD` method to check if a
 //! resource exists.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::time::Duration;
 
 use reqwest::ClientBuilder;
 
+/// Sends a `HEAD` request to check whether a user exists.
 #[tokio::main]
 async fn main() -> reqwest::Result<()> {
     let user = "ferris-the-crab";
@@ -30,6 +30,7 @@ async fn main() -> reqwest::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> reqwest::Result<()> {
     main()
 }

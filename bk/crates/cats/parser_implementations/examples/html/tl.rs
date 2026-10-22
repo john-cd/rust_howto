@@ -1,13 +1,13 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `tl` crate to parse HTML.
-//!
-//! TODO Reviewed ??-??-2026
 
 use tl::Node;
 use tl::Parser;
 use tl::VDom;
 
+/// Parses an HTML document and queries its elements.
 fn main() -> anyhow::Result<()> {
     let html = r#"
         <!DOCTYPE html>
@@ -60,6 +60,7 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

@@ -1,7 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! Initializes the logger and logs warning, info, and debug messages from the
+//! root module, then calls `foo::run()`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// A module that logs messages and has a nested module.
 mod foo {
+    /// A nested module that logs messages.
     mod bar {
         /// Logs warning, info, and debug messages from the `bar` module.
         pub fn run() {
@@ -35,6 +42,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of using the `confy` crate for configuration management.
-//!
-//! TODO Reviewed ??-??-2026
 
 use serde::Deserialize;
 use serde::Serialize;
@@ -10,7 +9,9 @@ use serde::Serialize;
 /// Represents the configuration for the application.
 #[derive(Serialize, Deserialize, Debug)]
 struct MyConfig {
+    /// The version of the configuration.
     version: u8,
+    /// The key to access the API.
     api_key: String,
 }
 
@@ -24,6 +25,7 @@ impl ::std::default::Default for MyConfig {
     }
 }
 
+/// Loads the configuration file, creating it with default values if needed.
 fn main() -> Result<(), confy::ConfyError> {
     let cfg: MyConfig = confy::load("my-app-name", None)?;
     // confy::store("my-app-name", None, cfg)?;
@@ -33,6 +35,7 @@ fn main() -> Result<(), confy::ConfyError> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), confy::ConfyError> {
     main()
 }

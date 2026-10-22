@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Scope and drop.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Creates a string in an inner scope, where it is dropped at the end.
 fn main() {
     // `s` is not valid here, it is not yet declared.
 
@@ -22,6 +27,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

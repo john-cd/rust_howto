@@ -1,25 +1,41 @@
-// TODO Reviewed ??-??-2026
+//! A struct with fields of many types.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// A status.
 #[derive(Debug)]
 enum Status {
+    /// The item is active.
     Active,
+    /// The item is inactive.
     Inactive,
 }
 
+/// A tuple struct.
 #[derive(Debug)]
 struct InnerStruct(i32);
 
+/// A struct with a field of each kind of type.
 #[derive(Debug)]
 struct ComplexStruct<'a> {
-    primitive: u32,            // Primitive type.
-    tuple_field: (i32, f64),   // Tuple type.
-    array_field: [u8; 3],      // Array type.
-    enum_field: Status,        // Enum type.
+    /// A primitive.
+    primitive: u32, // Primitive type.
+    /// A tuple.
+    tuple_field: (i32, f64), // Tuple type.
+    /// An array.
+    array_field: [u8; 3], // Array type.
+    /// An enum.
+    enum_field: Status, // Enum type.
+    /// Another struct.
     struct_field: InnerStruct, // Another struct, here a tuple struct.
-    reference_field: &'a str,  // Reference type.
+    /// A reference.
+    reference_field: &'a str, // Reference type.
 }
 
+/// Creates and prints the struct.
 fn main() {
     let complex = ComplexStruct {
         primitive: 10,
@@ -35,6 +51,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

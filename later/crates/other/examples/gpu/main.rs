@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs the GPU example.
+//!
+//! TODO Reviewed ??-??-2026
+
 use anyhow::Result;
 
 mod rust_gpu;

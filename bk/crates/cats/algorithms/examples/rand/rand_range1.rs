@@ -1,10 +1,15 @@
-// TODO Reviewed ??-??-2026
+//! Generates random numbers in ranges with the `rand` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // Import necessary traits and structs from the `rand` crate.
 use rand::distr::Distribution as _;
 use rand::distr::Uniform;
 
+/// Prints random numbers drawn from several ranges.
 fn main() {
     // Create a random number generator:
     let mut rng = rand::rng();
@@ -22,6 +27,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

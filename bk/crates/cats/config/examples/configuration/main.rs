@@ -10,24 +10,32 @@ mod config_singleton;
 mod config_testing;
 mod confy;
 
+/// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `config_hierarchical` example.
     #[command(name = "config_hierarchical")]
     ConfigHierarchical,
+    /// Runs the `config_singleton` example.
     #[command(name = "config_singleton")]
     ConfigSingleton,
+    /// Runs the `config_testing` example.
     #[command(name = "config_testing")]
     ConfigTesting,
+    /// Runs the `confy` example.
     #[command(name = "confy")]
     Confy,
 }
 
+/// Runs the example selected on the command line.
 fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 

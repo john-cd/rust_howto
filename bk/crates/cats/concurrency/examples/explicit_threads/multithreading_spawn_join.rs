@@ -1,9 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! Spawning threads and waiting for them with `join`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::thread;
 use std::time::Duration;
 
+/// Spawns two threads and waits for both to finish.
 fn main() {
     // Spawn a new thread and store its handle in `thread_one`.
     let thread_one = thread::spawn(|| {
@@ -23,6 +28,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

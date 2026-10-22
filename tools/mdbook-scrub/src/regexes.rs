@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Regular expressions that find hidden content, applied outside of code.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::ops::Range;
 
 use anyhow::Context as _;

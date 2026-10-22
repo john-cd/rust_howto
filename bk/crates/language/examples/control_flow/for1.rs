@@ -1,9 +1,9 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Examples using `for`.
-//!
-//! TODO Reviewed ??-??-2026
 
+/// Loops over ranges and collections with `for`.
 fn main() {
     // Use a range to generate all numbers in sequence,
     // starting from one number and ending before another number.
@@ -75,6 +75,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

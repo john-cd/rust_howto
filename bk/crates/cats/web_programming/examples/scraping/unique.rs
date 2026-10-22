@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to extract unique links from a Wikipedia page.
 //!
 //! It uses the `reqwest` crate to fetch the page content, the `regex` crate to
 //! find links, and the `lazy_static` crate to compile the regex only once.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::borrow::Cow;
 use std::collections::HashSet;
@@ -14,6 +13,8 @@ use anyhow::Result;
 use lazy_static::lazy_static;
 use regex::Regex;
 
+/// Returns the unique internal and external links found in the wiki markup
+/// `content`.
 fn extract_links(content: &str) -> HashSet<Cow<'_, str>> {
     lazy_static! {
         static ref WIKI_REGEX: Regex = Regex::new(
@@ -38,6 +39,7 @@ fn extract_links(content: &str) -> HashSet<Cow<'_, str>> {
     links
 }
 
+/// Downloads a Wikipedia article and prints the unique links it contains.
 #[tokio::main]
 async fn main() -> Result<()> {
     let content = reqwest::get(
@@ -54,6 +56,7 @@ async fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

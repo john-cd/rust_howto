@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Demonstrate various functionalities of the `time` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 use time::Date;
 use time::Duration;

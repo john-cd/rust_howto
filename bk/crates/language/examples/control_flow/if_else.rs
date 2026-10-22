@@ -1,6 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! `if`, `else if` and `else` expressions.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
+/// Branches on numbers and on a boolean condition.
 fn main() {
     let number = 3;
     // The condition must be a boolean.
@@ -31,6 +36,7 @@ fn main() {
 // All branches of an `if/else` expression must evaluate to the same type.
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

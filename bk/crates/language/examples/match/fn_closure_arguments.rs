@@ -1,11 +1,17 @@
-// TODO Reviewed ??-??-2026
+//! Destructuring in function and closure arguments.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // Destructure a tuple passed as an argument:
+/// Prints the coordinates of a point given as a tuple.
 fn print_coordinates((x, y): (i32, i32)) {
     println!("x: {x}, y: {y}");
 }
 
+/// Destructures a tuple in the arguments of a function and a closure.
 fn main() {
     let point = (10, 20);
     print_coordinates(point);
@@ -24,6 +30,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

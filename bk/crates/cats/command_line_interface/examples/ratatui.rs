@@ -1,4 +1,8 @@
-// TODO Reviewed ??-??-2026
+//! The main function initializes the terminal, runs the application, and
+//! restores the terminal to its original state.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 use std::io;
 
@@ -47,16 +51,20 @@ fn main() {
 /// The `App` struct represents the main application state.
 #[derive(Debug, Default)]
 struct App {
+    /// The mode of the application.
     mode: Mode,
 }
 
 /// The `Mode` enum represents the different states of the application.
 #[derive(Debug, Default, PartialEq)]
 enum Mode {
+    /// The application is running.
     #[default]
     Running,
     // Add more states / screens as needed...
+    /// The application is exiting.
     Exiting,
+    /// The application is done.
     Done,
 }
 
@@ -183,10 +191,12 @@ impl Widget for &App {
 
 /// The `MiddleWidget` struct is a custom widget that displays text.
 struct MiddleWidget {
+    /// The text to display.
     text: String,
 }
 
 impl MiddleWidget {
+    /// Creates a widget that displays `text`.
     pub fn new(text: impl Into<String>) -> Self {
         Self { text: text.into() }
     }

@@ -1,11 +1,16 @@
-// TODO Reviewed ??-??-2026
+//! Looking up a `HashMap` of `String` keys with a `&str`, thanks to `Borrow`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::collections::HashMap;
 
 // This is the most common use of `Borrow`.
 // A `HashMap<String, V>` can be queried with a `&str`,
 // because `String: Borrow<str>`.
+/// Looks up scores with `&str` keys.
 fn main() {
     let mut scores: HashMap<String, u32> = HashMap::new();
     scores.insert("alice".to_owned(), 10);
@@ -23,6 +28,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

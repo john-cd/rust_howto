@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use `deadpool-postgres` to manage a pool of
 //! PostgreSQL connections.
@@ -19,8 +20,6 @@
 //! `PG__POOL__MAX_SIZE=16`
 //! `PG__POOL__TIMEOUTS__WAIT__SECS=5`
 //! `PG__POOL__TIMEOUTS__WAIT__NANOS=0`
-//!
-//! TODO Reviewed ??-??-2026
 
 use deadpool_postgres::Runtime;
 use dotenvy::dotenv;
@@ -29,12 +28,14 @@ use tokio_postgres::NoTls;
 /// Configuration for the application.
 #[derive(Debug, serde::Deserialize)]
 struct Config {
+    /// The settings of the PostgreSQL connection pool.
     pub pg: deadpool_postgres::Config,
 }
 
 impl Config {
     // With the `serde` feature enabled, we can read the configuration using the
     // `config` crate.
+    /// Reads the configuration from the environment variables.
     pub fn from_env() -> Result<Self, config::ConfigError> {
         config::Config::builder()
             .add_source(config::Environment::default().separator("__"))
@@ -43,6 +44,7 @@ impl Config {
     }
 }
 
+/// Creates a PostgreSQL connection pool and queries the database.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Loads the `.env` file from the current directory or parents.
@@ -68,6 +70,7 @@ async fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

@@ -1,12 +1,11 @@
 #![allow(dead_code)]
 #![allow(clippy::vec_init_then_push)]
 #![allow(clippy::useless_vec)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates various ways to concatenate strings in Rust.
 //! It includes examples using `concat`, `join`, `format`, `push_str`, `+`, and
 //! external macros.
-//!
-//! TODO Reviewed ??-??-2026
 
 // #[macro_use(concat_string)]
 // extern crate concat_string;
@@ -17,12 +16,16 @@
 use concat_string::concat_string;
 use concat_strs::concat_strs;
 
+/// The date part of a timestamp.
 static DATE: &str = "2024-01-15";
 
+/// The separator between the date and the time.
 static T: &str = "T";
 
+/// The time part of a timestamp.
 static TIME: &str = "12:00:09Z";
 
+/// Concatenates strings in several ways.
 fn main() {
     // Using `concat` on a slice of string slices.
     let _datetime = &[DATE, T, TIME].concat();
@@ -101,6 +104,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

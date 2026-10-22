@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Parse Rust source code and query its syntax tree with Tree-sitter.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::anyhow;
 use tree_sitter::Language;
@@ -11,6 +10,7 @@ use tree_sitter::Query;
 use tree_sitter::QueryCursor;
 use tree_sitter::StreamingIterator as _;
 
+/// Parses Rust source code and queries the syntax tree.
 fn main() -> anyhow::Result<()> {
     let language: Language = tree_sitter_rust::LANGUAGE.into();
     let mut parser = Parser::new();
@@ -53,6 +53,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

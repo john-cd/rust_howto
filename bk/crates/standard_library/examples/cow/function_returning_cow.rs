@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of a function returning a `Cow`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::borrow::Cow;
 
@@ -21,6 +20,7 @@ fn remove_whitespaces(s: &str) -> Cow<'_, str> {
     }
 }
 
+/// Removes the spaces of strings, allocating only when needed.
 fn main() {
     let original_string = "Hello world!  ";
     let modified_string = remove_whitespaces(original_string);
@@ -42,6 +42,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

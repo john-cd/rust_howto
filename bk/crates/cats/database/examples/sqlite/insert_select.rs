@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! This function demonstrates inserting data into a SQLite database and then
+//! selecting it back.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // This example demonstrates inserting and selecting SQLite data using
 // `rusqlite`.
@@ -8,10 +13,13 @@ use std::collections::HashMap;
 use rusqlite::Connection;
 use rusqlite::Result;
 
+/// A cat.
 #[derive(Debug)]
 #[allow(dead_code)]
 struct Cat {
+    /// The name of the cat.
     name: String,
+    /// The color of the cat.
     color: String,
 }
 
@@ -68,6 +76,7 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

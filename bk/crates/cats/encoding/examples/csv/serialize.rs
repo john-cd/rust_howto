@@ -1,13 +1,13 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example shows how to serialize data to a CSV file.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::io;
 
 use anyhow::Result;
 
+/// Writes records to the standard output as CSV.
 fn main() -> Result<()> {
     let mut wtr = csv::Writer::from_writer(io::stdout());
 
@@ -23,6 +23,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

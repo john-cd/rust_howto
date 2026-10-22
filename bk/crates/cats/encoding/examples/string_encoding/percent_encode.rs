@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of percent encoding and decoding strings.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::str::Utf8Error;
 
@@ -15,6 +14,7 @@ use percent_encoding::utf8_percent_encode;
 const FRAGMENT: &AsciiSet =
     &CONTROLS.add(b' ').add(b'"').add(b'<').add(b'>').add(b'`');
 
+/// Percent-encodes a string, then decodes it.
 fn main() -> Result<(), Utf8Error> {
     // The input string we want to encode.
     // Note that the string contains spaces, which are not allowed in the
@@ -42,6 +42,7 @@ fn main() -> Result<(), Utf8Error> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Utf8Error> {
     main()
 }

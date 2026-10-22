@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs one of the `apis` examples, chosen on the command line.
+//!
+//! TODO Reviewed ??-??-2026
+
 use clap::Parser;
 use clap::Subcommand;
 
@@ -8,26 +11,35 @@ mod rest_get;
 mod rest_head;
 mod rest_post;
 
+/// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `paginated` example.
     #[command(name = "paginated")]
     Paginated,
+    /// Runs the `rate_limited` example.
     #[command(name = "rate_limited")]
     RateLimited,
+    /// Runs the `rest_get` example.
     #[command(name = "rest_get")]
     RestGet,
+    /// Runs the `rest_head` example.
     #[command(name = "rest_head")]
     RestHead,
+    /// Runs the `rest_post` example.
     #[command(name = "rest_post")]
     RestPost,
 }
 
+/// Runs the example selected on the command line.
 fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 

@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This is a basic example of an AWS Lambda function written in Rust.
 //! It demonstrates how to use the `lambda_runtime` crate to create a simple
@@ -14,8 +15,6 @@
 //! sam build
 //! sam deploy --guided
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use lambda_runtime::Error;
 use lambda_runtime::LambdaEvent;
@@ -23,16 +22,21 @@ use lambda_runtime::service_fn;
 use serde::Deserialize;
 use serde::Serialize;
 
+/// The request that the function receives.
 #[derive(Deserialize)]
 struct Request {
+    /// The name of the person to greet.
     name: String,
 }
 
+/// The response that the function returns.
 #[derive(Serialize)]
 struct Response {
+    /// The greeting.
     message: String,
 }
 
+/// Handles a request by returning a greeting.
 async fn function_handler(
     event: LambdaEvent<Request>,
 ) -> Result<Response, Error> {
@@ -43,6 +47,7 @@ async fn function_handler(
     })
 }
 
+/// Starts the Lambda runtime with the function handler.
 #[tokio::main]
 async fn main() -> Result<(), Error> {
     // Initialize tracing subscriber
@@ -54,6 +59,7 @@ async fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main().map_err(|e| anyhow::anyhow!("{e}"))?;
     Ok(())

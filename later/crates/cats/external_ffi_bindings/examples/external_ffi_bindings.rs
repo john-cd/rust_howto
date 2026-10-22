@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Placeholder for an example of bindings to external libraries.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
+/// Does nothing yet.
 fn main() {} // TODO
 // ANCHOR_END: example
 

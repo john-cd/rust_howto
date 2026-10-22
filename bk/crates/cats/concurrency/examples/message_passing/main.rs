@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs one of the `message_passing` examples, chosen on the command line.
+//!
+//! TODO Reviewed ??-??-2026
+
 use clap::Parser;
 use clap::Subcommand;
 
@@ -7,24 +10,32 @@ mod message_passing_crossbeam_channel;
 mod message_passing_crossbeam_channel_after_tick;
 mod message_passing_mpsc;
 
+/// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `flume` example.
     #[command(name = "flume")]
     Flume,
+    /// Runs the `message_passing_crossbeam_channel` example.
     #[command(name = "message_passing_crossbeam_channel")]
     MessagePassingCrossbeamChannel,
+    /// Runs the `message_passing_crossbeam_channel_after_tick` example.
     #[command(name = "message_passing_crossbeam_channel_after_tick")]
     MessagePassingCrossbeamChannelAfterTick,
+    /// Runs the `message_passing_mpsc` example.
     #[command(name = "message_passing_mpsc")]
     MessagePassingMpsc,
 }
 
+/// Runs the example selected on the command line.
 fn main() {
     let cli = Cli::parse();
 

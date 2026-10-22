@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Runs one of the `oracle` examples, chosen on the command line.
+//!
+//! TODO Reviewed ??-??-2026
+
 #[cfg(any(
     feature = "oracle",
     all(target_os = "linux", feature = "oracle")
@@ -17,27 +20,34 @@ mod oracle;
 #[cfg(all(target_os = "linux", feature = "oracle"))]
 mod sibyl;
 
+/// Command-line arguments.
 #[cfg(any(feature = "oracle", all(target_os = "linux", feature = "oracle")))]
 #[derive(Parser)]
 struct Cli {
+    /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
 }
 
+/// The examples that can be run.
 #[cfg(any(feature = "oracle", all(target_os = "linux", feature = "oracle")))]
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `diesel_oci` example.
     #[cfg(feature = "oracle")]
     #[command(name = "diesel_oci")]
     DieselOci,
+    /// Runs the `oracle` example.
     #[cfg(feature = "oracle")]
     #[command(name = "oracle")]
     Oracle,
+    /// Runs the `sibyl` example.
     #[cfg(all(target_os = "linux", feature = "oracle"))]
     #[command(name = "sibyl")]
     Sibyl,
 }
 
+/// Runs the example selected on the command line.
 fn main() -> anyhow::Result<()> {
     #[cfg(any(
         feature = "oracle",

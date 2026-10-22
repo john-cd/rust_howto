@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Encoding a struct to DER and decoding it back with the `der` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // This example demonstrates DER encoding and decoding with the `der` crate.
 use der::Decode as _;
@@ -11,12 +15,16 @@ use der::Sequence;
 
 // Define a struct to be encoded/decoded
 // Note that we derive the `Sequence` trait.
+/// A sequence of two fields, encoded as a DER `SEQUENCE`.
 #[derive(Debug, PartialEq, Sequence)]
 struct MyStruct {
+    /// The first field.
     field1: u32,
+    /// The second field.
     field2: String,
 }
 
+/// Encodes a [`MyStruct`] to DER and decodes it back.
 fn main() {
     // Create an instance of `MyStruct`:
     let my_struct = MyStruct {
@@ -39,6 +47,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

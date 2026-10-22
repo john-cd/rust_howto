@@ -1,10 +1,16 @@
-// TODO Reviewed ??-??-2026
+//! Sharing a configuration between threads with `Arc`, and cloning it on write
+//! with `Arc::make_mut`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::sync::Arc;
 use std::thread;
 use std::time::Duration;
 
+/// A configuration shared through an `Arc`.
 mod cfg {
 
     use std::sync::Arc;
@@ -12,11 +18,14 @@ mod cfg {
     /// A configuration struct to be shared among threads.
     #[derive(Debug, Clone)]
     pub struct Configuration {
+        /// Address of the server.
         server_address: String,
+        /// Maximum number of connections.
         max_connections: u8,
     }
 
     impl Configuration {
+        /// Creates a shared configuration.
         pub fn new(
             server_address: String,
             max_connections: u8,
@@ -27,14 +36,18 @@ mod cfg {
             })
         }
 
+        /// Returns the address of the server.
         pub fn server_address(&self) -> &str {
             &self.server_address
         }
 
+        /// Returns the maximum number of connections.
         pub fn max_connections(&self) -> u8 {
             self.max_connections
         }
 
+        /// Updates the configuration, cloning it first if other `Arc` pointers
+        /// to it exist (clone-on-write).
         pub fn update(
             self: &mut Arc<Self>,
             server_address: String,
@@ -55,6 +68,8 @@ mod cfg {
     }
 }
 
+/// Shares a configuration with reader threads, then updates it without
+/// disturbing them.
 fn main() {
     // Initialize the configuration and wrap it in an `Arc` for shared read
     // access.
@@ -102,6 +117,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

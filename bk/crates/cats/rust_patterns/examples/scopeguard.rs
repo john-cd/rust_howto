@@ -1,11 +1,10 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A scope guard will run a given closure when it goes out of scope, even if
 //! the code panics (as long as `panic` doesn't abort).
 //!
 //! This is useful for resource management, like closing files, releasing locks,
 //! or cleaning up allocated memory.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::fs::File;
 use std::io::Error;
@@ -50,6 +49,7 @@ fn process_file(filename: &str) -> Result<(), Error> {
     Ok(())
 }
 
+/// Runs a closure at the end of a scope, and cleans up after processing a file.
 fn main() -> Result<(), Error> {
     defer();
     process_file("temp/my_document.txt")?;

@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates inserting rows into PostgreSQL and querying the
 //! inserted data back.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 use std::fmt::Write as _;
@@ -15,11 +14,15 @@ use postgres::types::ToSql;
 
 /// Represents an author with an ID, name, and country.
 struct Author {
+    /// The identifier.
     _id: i32,
+    /// The name.
     name: String,
+    /// The country.
     country: String,
 }
 
+/// Inserts authors in a PostgreSQL database, then queries them.
 fn main() -> Result<(), Error> {
     // Connect to the PostgreSQL database using the provided connection string.
     // The connection URL is formatted as
@@ -70,6 +73,7 @@ fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Error> {
     main()
 }

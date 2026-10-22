@@ -1,20 +1,23 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A `no_std` example using only `core` and a fixed-size stack buffer.
 //!
 //! The example demonstrates how to format text without heap allocations.
-//!
-//! TODO Reviewed ??-??-2026
 
 use core::fmt;
 use core::fmt::Write;
 
+/// A string stored in a fixed-size buffer on the stack.
 struct ArrayString {
+    /// The bytes of the string.
     buf: [u8; 64],
+    /// The number of bytes in use.
     len: usize,
 }
 
 impl ArrayString {
+    /// Creates an empty string.
     const fn new() -> Self {
         Self {
             buf: [0; 64],
@@ -22,6 +25,7 @@ impl ArrayString {
         }
     }
 
+    /// Returns the content as a string slice.
     fn as_str(&self) -> &str {
         unsafe { core::str::from_utf8_unchecked(&self.buf[..self.len]) }
     }
@@ -40,6 +44,7 @@ impl Write for ArrayString {
     }
 }
 
+/// Writes formatted text to a stack-allocated string and checks it.
 fn main() {
     let mut buffer = ArrayString::new();
     write!(&mut buffer, "no_std core example: {} + {} = {}", 3, 4, 7).unwrap();
@@ -47,6 +52,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

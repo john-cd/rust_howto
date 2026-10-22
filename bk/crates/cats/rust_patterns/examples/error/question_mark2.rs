@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! Propagating errors with the `?` operator through a function that parses a
+//! port.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::error::Error;
 
@@ -27,6 +32,7 @@ fn parse_port(s: &str) -> Result<u16, Box<dyn Error>> {
     }
 }
 
+/// Parses valid and invalid ports and prints the result.
 fn main() {
     match parse_port("123") {
         Ok(port) => println!("Port: {port}"),
@@ -41,6 +47,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

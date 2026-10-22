@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 #![cfg(feature = "datafusion")]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use `DataFusion` to set up a simple
 //! in-memory table and run a SQL query on it.
@@ -10,17 +11,15 @@
 //! other Arrow-compatible systems (like Python's `PyArrow`, Spark, etc.)
 //! without expensive serialization/deserialization.
 //!
-//! - SQL Support: We can query data registered within `DataFusion` using standard
-//!   SQL.
-//! - `DataFrame` API: It also provides a programmatic `DataFrame` API (similar in
-//!   concept to Pandas or Polars) for building query plans step-by-step in Rust
-//!   code.
+//! - SQL Support: We can query data registered within `DataFusion` using
+//!   standard SQL.
+//! - `DataFrame` API: It also provides a programmatic `DataFrame` API (similar
+//!   in concept to Pandas or Polars) for building query plans step-by-step in
+//!   Rust code.
 //!
 //! The following creates a table named "people" with columns "name" and
 //! "age", inserts some data, and then runs a query to select people older
 //! than 35.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::sync::Arc;
 
@@ -32,6 +31,7 @@ use datafusion::arrow::record_batch::RecordBatch;
 use datafusion::datasource::MemTable;
 use datafusion::execution::context::SessionContext;
 
+/// Registers an in-memory table and queries it with SQL.
 async fn run_query() -> datafusion::error::Result<()> {
     // Create a simple schema and data.
     let schema = Schema::new(vec![
@@ -83,12 +83,14 @@ async fn run_query() -> datafusion::error::Result<()> {
     Ok(())
 }
 
+/// Runs the query on a Tokio runtime.
 fn main() {
     let rt = tokio::runtime::Runtime::new().unwrap();
     rt.block_on(run_query()).unwrap();
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

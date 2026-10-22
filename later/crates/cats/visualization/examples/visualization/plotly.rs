@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to create a simple scatter plot using the
 //! `plotly` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::fs;
 
@@ -12,6 +11,7 @@ use plotly::Plot;
 use plotly::Scatter;
 use plotly::common::Mode;
 
+/// Creates a scatter plot and saves it to an HTML file.
 fn main() -> anyhow::Result<()> {
     // Sample data.
     let x_data = vec![1, 2, 3, 4, 5];
@@ -44,6 +44,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

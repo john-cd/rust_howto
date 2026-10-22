@@ -1,15 +1,15 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates the use of the `glam` crate.
 //!
 //! `glam` is a linear algebra library for games and graphics applications.
-//!
-//! TODO Reviewed ??-??-2026
 
 use glam::Mat4;
 use glam::Vec2;
 use glam::Vec3;
 
+/// Creates vectors and applies operations to them.
 fn main() {
     // Create some vectors.
     let v1 = Vec2::new(1.0, 2.0);
@@ -42,6 +42,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

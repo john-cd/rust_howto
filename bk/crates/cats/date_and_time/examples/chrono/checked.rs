@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Demonstrates checked arithmetic with `DateTime` and `Duration`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use chrono::DateTime;
 use chrono::Duration;
@@ -39,6 +43,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

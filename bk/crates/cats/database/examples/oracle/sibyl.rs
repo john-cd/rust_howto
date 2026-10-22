@@ -1,5 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Sibyl is an OCI-based interface between Rust applications and Oracle
+//! databases. Sibyl supports both blocking (threads) and nonblocking (async)
+//! API.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// Sibyl is an OCI-based interface between Rust applications and Oracle
 /// databases. Sibyl supports both blocking (threads) and nonblocking (async)
@@ -48,6 +54,7 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

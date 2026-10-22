@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Importing items from the standard library with `use`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // This `use` statement allows us to use `HashMap` directly without having to
 // specify its full path.
@@ -9,6 +13,7 @@ use std::collections::HashMap;
 // `HashMap` is declared in the standard library (`std`), which is an external
 // crate. We therefore prefix the path with the crate's name.
 
+/// Uses an imported `HashMap`.
 fn main() {
     // We now refer to `HashMap` by its name.
     let mut mymap: HashMap<u32, String> = HashMap::new();
@@ -20,6 +25,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

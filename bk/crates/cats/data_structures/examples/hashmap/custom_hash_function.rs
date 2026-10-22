@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates how to use a custom hash function (FNV) with `HashMap` and
 //! `HashSet` for better performance with small keys.
@@ -7,12 +8,11 @@
 //! attacks. Be certain that your program is not exposed to malicious inputs.
 //!
 //! Add to your `Cargo.toml`: `fnv = "1.0.7" # Or latest`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 use std::collections::HashSet;
 
+/// Creates a `HashMap` and a `HashSet` that use the FNV hash function.
 fn main() {
     let mut fnv_map = HashMap::with_hasher(fnv::FnvBuildHasher::default());
     fnv_map.insert("key1", "value1");
@@ -45,6 +45,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

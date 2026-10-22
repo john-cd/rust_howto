@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! Demonstrates the difference between taking a reference to a `Box` and using
+//! `as_ref()`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use std::boxed::Box;
 
@@ -28,6 +33,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

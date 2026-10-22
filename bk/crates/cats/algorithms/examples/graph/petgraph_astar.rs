@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! A* shortest path in a `petgraph` graph.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use petgraph::Graph;
 use petgraph::algo::astar;
@@ -46,6 +50,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

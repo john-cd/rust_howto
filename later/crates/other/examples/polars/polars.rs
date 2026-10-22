@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! # Polars Data Processing Example
 //!
@@ -18,11 +19,10 @@
 //! ```toml
 //! polars = { version = "0.49.1", default-features = false, features = ["lazy", "csv"] }
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use polars::prelude::*;
 
+/// Reads a CSV file into a data frame, then filters it and selects columns.
 fn main() -> anyhow::Result<()> {
     // Read a CSV file into a DataFrame.
     let df = CsvReadOptions::default()
@@ -61,6 +61,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

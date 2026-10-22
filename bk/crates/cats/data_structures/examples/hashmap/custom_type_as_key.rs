@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrate using a custom type as the key in a `HashMap`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 use std::hash::DefaultHasher;
@@ -12,8 +11,10 @@ use std::hash::Hasher;
 // Custom struct that will be used as a key.
 // `Hash` and `Eq` traits must be implemented in order to use the struct as a
 // `HashMap` key. Implement them manually or use the `derive` attribute.
+/// A student, used as a `HashMap` key.
 #[derive(Debug, PartialEq, Eq)]
 struct Student {
+    /// The identifier of the student, which determines equality and hash.
     id: u32,
 }
 
@@ -27,6 +28,7 @@ impl Hash for Student {
     }
 }
 
+/// Stores grades in a `HashMap` keyed by `Student`.
 fn main() {
     // Create a new HashMap to store student grades.
     let mut grades = HashMap::new();
@@ -53,6 +55,7 @@ fn main() {
     }
 }
 
+/// Returns the hash of `t` computed with the default hasher.
 fn calculate_hash<T: Hash>(t: &T) -> u64 {
     let mut s = DefaultHasher::new();
     t.hash(&mut s);
@@ -60,6 +63,7 @@ fn calculate_hash<T: Hash>(t: &T) -> u64 {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

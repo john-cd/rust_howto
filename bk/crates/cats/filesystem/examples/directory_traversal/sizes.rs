@@ -1,5 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! Calculates the total size of all files within a directory tree
+//! (within a given depth).
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use walkdir::WalkDir;
 
@@ -22,6 +27,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

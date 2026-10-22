@@ -1,17 +1,17 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Simple `wasmi` example for virtualization.
 //!
 //! This loads a tiny WebAssembly module from a raw byte array, instantiates it
 //! with `wasmi`, and calls the exported `run` function.
-//!
-//! TODO Reviewed ??-??-2026
 
 use wasmi::Engine;
 use wasmi::Linker;
 use wasmi::Module;
 use wasmi::Store;
 
+/// Runs a WebAssembly module with `wasmi` and checks the result.
 fn main() {
     let wasm_bytes: &[u8] = &[
         0x00, 0x61, 0x73, 0x6d, 0x01, 0x00, 0x00, 0x00, 0x01, 0x05, 0x01, 0x60,
@@ -39,6 +39,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }
