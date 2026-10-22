@@ -117,6 +117,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn require_external_svc() -> anyhow::Result<()> {
         // `.devcontainer/compose-heavy-tests.yaml` configures AMQP_ADDR for the

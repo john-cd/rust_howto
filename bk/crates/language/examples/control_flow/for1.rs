@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Examples using `for`.
+//!
+//! TODO Reviewed ??-??-2026
 
 fn main() {
     // Use a range to generate all numbers in sequence,
@@ -81,6 +83,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

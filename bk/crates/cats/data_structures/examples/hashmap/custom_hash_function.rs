@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates how to use a custom hash function (FNV) with `HashMap` and
 //! `HashSet` for better performance with small keys.
@@ -8,6 +8,8 @@
 //! attacks. Be certain that your program is not exposed to malicious inputs.
 //!
 //! Add to your `Cargo.toml`: `fnv = "1.0.7" # Or latest`.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 use std::collections::HashSet;
@@ -51,6 +53,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

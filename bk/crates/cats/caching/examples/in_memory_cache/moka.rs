@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates the basic usage of the `moka` crate for creating
 //! a concurrent cache.
@@ -10,6 +10,8 @@
 //!
 //! `moka` also provides an asynchronous (futures aware) cache in its `future`
 //! module.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::time::Duration;
 
@@ -58,6 +60,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

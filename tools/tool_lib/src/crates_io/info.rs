@@ -1,5 +1,6 @@
-// TODO Reviewed ??-??-2026
 //! Retrieves crate metadata and retains contextual lookup failures.
+//!
+//! TODO Reviewed ??-??-2026
 
 use anyhow::Context;
 use anyhow::Result;

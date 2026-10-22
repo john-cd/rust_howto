@@ -22,9 +22,13 @@ struct User {
 /// users, such as retrieving, adding, updating, deleting, and listing users.
 trait UserRepository {
     fn get_user(&self, id: i32) -> Option<User>;
+
     fn add_user(&self, user: User);
+
     fn update_user(&self, user: User);
+
     fn delete_user(&self, id: i32);
+
     fn get_all_users(&self) -> Vec<User>;
 }
 
@@ -130,6 +134,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use the `config` crate to load
 //! application configuration.
@@ -17,6 +17,8 @@
 //! serde = { version = "1.0", features = ["derive"] }
 //! clap = { version = "4.5.37", features = [ "cargo" ] } # Optional, for CLI argument parsing.
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::path::PathBuf;
 
@@ -161,6 +163,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         use std::fs;

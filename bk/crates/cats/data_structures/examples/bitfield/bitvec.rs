@@ -1,11 +1,13 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Add the following to your `Cargo.toml`:
 //! ```toml
 //! [dependencies]
 //! bitvec = "1.0.1" # Or latest
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
 
 use bitvec::field::BitField;
 use bitvec::prelude::*;
@@ -163,6 +165,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

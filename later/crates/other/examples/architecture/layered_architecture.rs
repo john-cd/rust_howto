@@ -1,9 +1,11 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates a layered architecture in Rust,
 //! separating concerns into data access, business logic, and presentation
 //! layers.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::sync::Arc;
 
@@ -30,6 +32,7 @@ mod data {
     /// Defines the contract for interacting with user data.
     pub trait UserRepository {
         async fn get_user(&self, id: u32) -> Result<Option<User>>;
+
         async fn create_user(&self, user: User) -> Result<()>;
     }
 
@@ -74,6 +77,7 @@ mod business {
     /// Defines the contract for user-related business operations.
     pub trait UserService {
         async fn get_user(&self, id: u32) -> Result<Option<User>>;
+
         async fn create_user(&self, user: User) -> Result<()>;
     }
 
@@ -149,6 +153,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> Result<()> {
         main()?;

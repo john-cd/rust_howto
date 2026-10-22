@@ -36,6 +36,7 @@ pub fn run() -> Result<(), std::io::Error> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

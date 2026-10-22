@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use basic authentication with `reqwest`.
+//!
+//! TODO Reviewed ??-??-2026
 
 use reqwest::Error;
 use reqwest::blocking::Client;
@@ -32,6 +34,7 @@ pub fn run() -> Result<(), Error> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn require_network() -> anyhow::Result<()> {
         main()?;

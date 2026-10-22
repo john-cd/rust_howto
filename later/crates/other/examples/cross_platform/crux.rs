@@ -1,5 +1,3 @@
-// TODO Reviewed ??-??-2026
-#![allow(dead_code)]
 //! # Crux Core Example
 //!
 //! This example demonstrates the core concepts of a Crux application.
@@ -14,6 +12,10 @@
 //! `crux_http` - HTTP client capability,
 //! `crux_kv` - Key-value store capability,
 //! `crux_time` - Time capability.
+//!
+//! TODO Reviewed ??-??-2026
+
+#![allow(dead_code)]
 
 // ANCHOR: example
 use crux_core::App;
@@ -67,12 +69,15 @@ impl App for Counter {
     // This is typically a form of I/O or similar interaction with the host
     // platform. Updating the UI is considered an effect.
     type Effect = Effect;
+
     // Events are main input for the core, typically triggered by user
     // interaction in the UI.
     type Event = Event;
+
     // Model is a data structure (typically tree-like)
     // holding the entire application state.
     type Model = Model;
+
     // Data structure describing the current state of the user interface.
     type ViewModel = ViewModel;
 
@@ -130,6 +135,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

@@ -1,7 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Example of using the Tera template engine.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::collections::HashMap;
 use std::sync::LazyLock;
 
@@ -80,6 +83,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

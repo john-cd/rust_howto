@@ -1,5 +1,6 @@
-// TODO Reviewed ??-??-2026
 //! Documentation tools examples.
+//!
+//! TODO Reviewed ??-??-2026
 
 use clap::Parser;
 use clap::Subcommand;

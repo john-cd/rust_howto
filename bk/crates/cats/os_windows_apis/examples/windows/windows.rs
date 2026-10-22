@@ -1,11 +1,14 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
-#![cfg(target_os = "windows")]
 //! This example demonstrates how to use the `windows` crate to call the
 //! `MessageBoxW` function from the Windows API.
 //! It displays a simple message box with the text "Hello, windows!" and
 //! the title "Greetings".
+//!
+//! TODO Reviewed ??-??-2026
+
+#![cfg(target_os = "windows")]
 
 use windows::Win32::UI::WindowsAndMessaging::MB_OK;
 use windows::Win32::UI::WindowsAndMessaging::MessageBoxW;
@@ -27,6 +30,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     #[ignore = "Displays a message box"]
     fn test_main() {

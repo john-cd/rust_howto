@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to avoid discarding errors during error
 //! conversions using the `anyhow` crate.
@@ -7,6 +7,8 @@
 //! The `?` operator automatically converts different error types (e.g.,
 //! [`std::io::Error`], [`std::num::ParseIntError`]) into [`anyhow::Error`],
 //! retaining the full error information along the call chain.
+//!
+//! TODO Reviewed ??-??-2026
 
 /// Parses a string as a `u32`, propagating any [`std::num::ParseIntError`]
 /// via `?`.
@@ -43,6 +45,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         use std::io::Write;

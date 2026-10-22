@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Example: create a geographic polygon, compute its area, and find its
 //! centroid using the `geo` crate.
+//!
+//! TODO Reviewed ??-??-2026
 
 use geo::Area;
 use geo::Centroid;
@@ -36,6 +38,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

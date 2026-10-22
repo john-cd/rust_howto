@@ -1,10 +1,13 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! A no-alloc example using `core` only.
 //!
 //! This example runs in a `#![no_std]` context and formats text into a
 //! fixed-size stack buffer without heap allocations.
+//!
+//! TODO Reviewed ??-??-2026
+
 use core::fmt;
 use core::fmt::Write;
 

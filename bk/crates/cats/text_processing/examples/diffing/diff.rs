@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use the `diff` crate to compare two strings
 //! and print the differences.
@@ -13,6 +13,9 @@
 //! [dependencies]
 //! diff = "0.1.13" # Or latest
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
+
 use diff::Result;
 
 /// Compares two strings line by line and prints the differences.
@@ -45,6 +48,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

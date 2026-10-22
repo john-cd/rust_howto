@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! String slice examples.
+//!
+//! TODO Reviewed ??-??-2026
 
 fn main() {
     // A string literal:
@@ -32,6 +34,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

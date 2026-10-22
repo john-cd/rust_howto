@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! - `tracing` is a framework for instrumenting Rust programs to collect
 //!   scoped, structured, and async-aware diagnostics.
@@ -19,6 +19,8 @@
 //! tracing = "0.1.41" # Or latest version
 //! tracing-subscriber = "0.3.20"
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
 
 fn main() {
     // In most cases, use the following to
@@ -54,6 +56,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

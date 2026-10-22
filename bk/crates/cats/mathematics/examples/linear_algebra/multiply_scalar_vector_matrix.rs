@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to multiply a scalar by a vector and then
 //! multiply a matrix by the resulting vector.
+//!
+//! TODO Reviewed ??-??-2026
 
 use ndarray::Array1;
 use ndarray::arr1;
@@ -31,6 +33,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

@@ -116,6 +116,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn require_external_svc() -> anyhow::Result<()> {
         main()?;

@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
 #![allow(unused_variables)]
+
 // ANCHOR: example
 //! Example of (non-)dyn-compatible traits.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::pin::Pin;
 use std::rc::Rc;
@@ -64,14 +66,22 @@ impl ObjectSafeClone for Circle {
 trait TraitMethods {
     // Trait methods must have a receiver with one of the following types:
     fn by_ref(&self) {} // Equivalent to self: &Self.
+
     fn by_ref_mut(&mut self) {} // Equivalent to self: &mut Self.
+
     fn by_box(self: Box<Self>) {}
+
     fn by_rc(self: Rc<Self>) {}
+
     fn by_arc(self: Arc<Self>) {}
+
     fn by_pin(self: Pin<&Self>) {}
+
     #[allow(clippy::needless_lifetimes)]
     fn with_lifetime<'a>(&'a self) {} // Equivalent to self: &'a Self.
+
     fn nested_pin(self: Pin<Arc<Self>>) {}
+
     // You can also constrain functions that otherwise could not be included in
     // a dyn-compatible trait, so they do not apply to trait objects.
     // They remain accessible on implementing concrete types.
@@ -80,15 +90,18 @@ trait TraitMethods {
         Self: Sized,
     {
     }
+
     // Same thing for methods that return `Self`:
     fn returns(&self) -> Self
     where
         Self: Sized;
+
     fn param(&self, other: Self)
     where
         Self: Sized,
     {
     }
+
     fn typed<T>(&self, x: T)
     where
         Self: Sized,
@@ -146,6 +159,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

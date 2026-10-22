@@ -78,6 +78,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     #[ignore = "Requires an external Microsoft SQL Server instance"]
     fn require_external_svc() -> anyhow::Result<()> {

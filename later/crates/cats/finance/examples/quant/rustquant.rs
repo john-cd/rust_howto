@@ -1,9 +1,10 @@
-// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example: calculate Black-Scholes prices for European call and put options.
 //!
 //! This example is self-contained and does not depend on an external finance
 //! crate.
+//!
+//! TODO Reviewed ??-??-2026
 
 #[allow(dead_code)]
 #[derive(Clone, Copy)]
@@ -132,6 +133,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

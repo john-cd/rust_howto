@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates basic usage of the `winnow` crate.
+//!
+//! TODO Reviewed ??-??-2026
 
 use winnow::ascii::digit1;
 use winnow::combinator::separated;
@@ -32,6 +34,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

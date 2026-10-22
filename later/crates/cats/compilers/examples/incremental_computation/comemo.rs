@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates the usage of the `comemo` crate for fine-grained
 //! memoization.
@@ -16,6 +16,8 @@
 //!
 //! This is particularly useful for incremental computation or
 //! compilation, where fine-grained access tracking is required.
+//!
+//! TODO Reviewed ??-??-2026
 
 use comemo::Track;
 use comemo::Tracked;
@@ -97,6 +99,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main();

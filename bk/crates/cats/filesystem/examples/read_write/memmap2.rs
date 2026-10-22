@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates reading from a memory-mapped file.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::fs::File;
 use std::io::Error;
@@ -51,6 +53,7 @@ pub fn run() -> Result<(), Error> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         use std::fs;

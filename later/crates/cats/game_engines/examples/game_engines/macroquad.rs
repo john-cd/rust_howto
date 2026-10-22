@@ -1,10 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example uses the macroquad game engine to create a simple window
 //! where a red square can be moved around using the arrow keys.
 //! The square's movement speed is constant, and it moves smoothly based on
 //! the frame time.
+//!
+//! TODO Reviewed ??-??-2026
 
 use macroquad::prelude::*;
 

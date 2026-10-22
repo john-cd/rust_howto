@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates signing and verifying messages with ed25519-dalek.
+//!
+//! TODO Reviewed ??-??-2026
 
 use ed25519_dalek::Signature;
 use ed25519_dalek::Signer;
@@ -53,6 +55,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

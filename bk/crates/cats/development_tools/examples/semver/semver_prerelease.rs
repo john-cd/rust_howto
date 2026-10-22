@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates how to work with pre-release versions using the `semver` crate.
+//!
+//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use semver::Version;
@@ -29,6 +31,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

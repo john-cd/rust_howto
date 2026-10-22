@@ -10,6 +10,7 @@ mod private_module {
         // since it is in a parent module.
         super::private_in_parent();
     }
+
     mod submodule {}
 }
 
@@ -40,6 +41,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use the `assert!` macro with a custom
 //! failure message.
+//!
+//! TODO Reviewed ??-??-2026
 
 fn check_name(name: &str) {
     assert!(
@@ -25,6 +27,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[should_panic]
     #[test]
     fn test_main() {

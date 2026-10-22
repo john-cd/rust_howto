@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates writing to and reading from a file.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::fs;
 use std::fs::File;
@@ -80,6 +82,7 @@ pub fn run() -> Result<(), io::Error> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         use std::fs;

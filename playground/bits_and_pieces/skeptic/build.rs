@@ -1,4 +1,3 @@
-// TODO Reviewed ??-??-2026
 //! NO LONGER IN USE
 //!
 //! We no longer use `skeptic` to test the code examples in the book.
@@ -7,6 +6,8 @@
 //!  under `crates/**/tests`, which are then included in the markdown.
 //!
 //! See <https://crates.io/crates/skeptic> for configuration.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::path::Path;
 

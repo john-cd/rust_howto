@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use the `approx` crate for approximate
 //! equality comparisons.
@@ -7,6 +7,9 @@
 //! The `approx` crate provides macros for comparing floating-point numbers with
 //! a tolerance, which is necessary due to the inherent imprecision of
 //! floating-point arithmetic.
+//!
+//! TODO Reviewed ??-??-2026
+
 use approx::assert_abs_diff_eq;
 use approx::assert_relative_eq;
 use approx::assert_ulps_eq;
@@ -48,6 +51,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

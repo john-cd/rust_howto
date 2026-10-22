@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Parse, deserialize, and write XML with `quick-xml`.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::io::Cursor;
 
@@ -77,6 +79,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()

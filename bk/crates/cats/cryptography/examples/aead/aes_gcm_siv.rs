@@ -66,6 +66,7 @@ pub fn run() -> Result<(), aes_gcm_siv::Error> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()

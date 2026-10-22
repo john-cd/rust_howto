@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use the `deadpool` crate to manage a pool
 //! of connections.
@@ -10,6 +10,9 @@
 //! In this example, we create a simple `Server` type that represents a
 //! connection to a server. The `Manager` type is responsible for creating and
 //! recycling `Server` instances.
+//!
+//! TODO Reviewed ??-??-2026
+
 use deadpool::managed;
 
 #[derive(Debug)]
@@ -31,6 +34,7 @@ struct Manager;
 // The `Manager` is responsible for creating and recycling `Server` instances.
 impl managed::Manager for Manager {
     type Error = Error;
+
     type Type = Server;
 
     /// Creates a new `Server` instance.
@@ -75,6 +79,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main().unwrap();

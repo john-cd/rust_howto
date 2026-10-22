@@ -1,10 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example defines different types of US coins using an `enum` and then
 //! uses a `match` expression to determine the value of a given coin in cents,
 //! demonstrating how `match` can handle different `enum` variants and extract
 //! data associated with them.
+//!
+//! TODO Reviewed ??-??-2026
 
 /// Define an `enum`.
 /// Each variant represents a type of US coin.
@@ -57,6 +59,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

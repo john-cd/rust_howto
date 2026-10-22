@@ -1,9 +1,11 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates the use of the `glam` crate.
 //!
 //! `glam` is a linear algebra library for games and graphics applications.
+//!
+//! TODO Reviewed ??-??-2026
 
 use glam::Mat4;
 use glam::Vec2;
@@ -48,6 +50,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

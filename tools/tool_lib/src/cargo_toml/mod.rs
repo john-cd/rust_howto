@@ -1,5 +1,6 @@
-// TODO Reviewed ??-??-2026
 //! Read Cargo.toml files and extract dependencies
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::path::Path;
 

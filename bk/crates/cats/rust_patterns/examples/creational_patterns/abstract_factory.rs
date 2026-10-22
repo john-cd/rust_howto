@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! The Abstract Factory pattern creates families of related objects without
 //! tying-in to their concrete implementations.
@@ -14,6 +14,8 @@
 //! of widgets: buttons, text boxes, and so on. The Abstract Factory pattern
 //! lets us define an interface for creating these families of widgets,
 //!  and then we can have concrete factories for each theme.
+//!
+//! TODO Reviewed ??-??-2026
 
 // Operations common to all concrete objects.
 trait Button {
@@ -27,6 +29,7 @@ trait TextBox {
 // Abstract factory interface (trait).
 trait GUIFactory {
     fn create_button(&self) -> Box<dyn Button>;
+
     fn create_text_box(&self) -> Box<dyn TextBox>;
 }
 
@@ -125,6 +128,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

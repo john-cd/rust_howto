@@ -1,10 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Build SeaORM queries from an inline entity definition.
 //!
 //! This example creates a simple active model and prints the generated SQL
 //! for an insert and select statement.
+//!
+//! TODO Reviewed ??-??-2026
 
 use sea_orm::ActiveValue::NotSet;
 use sea_orm::ActiveValue::Set;
@@ -60,6 +62,7 @@ pub fn run() -> Result<(), DbErr> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> Result<(), DbErr> {
         main()

@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Example of encoding and decoding a string using hexadecimal encoding.
+//!
+//! TODO Reviewed ??-??-2026
 
 use data_encoding::DecodeError;
 use data_encoding::HEXUPPER;
@@ -32,6 +34,7 @@ pub fn run() -> Result<(), DecodeError> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

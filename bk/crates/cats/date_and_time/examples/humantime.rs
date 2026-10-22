@@ -1,7 +1,8 @@
-// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates the `humantime` crate for parsing and formatting
 //! human-readable durations.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::time::Duration;
 
@@ -37,6 +38,7 @@ fn main() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()

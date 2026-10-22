@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates the usage of the `subtle` crate for
 //! constant-time cryptographic operations.
+//!
+//! TODO Reviewed ??-??-2026
 
 use subtle::Choice;
 use subtle::ConditionallySelectable;
@@ -82,6 +84,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

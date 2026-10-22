@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates generating shell completions with `clap_complete`.
+//!
+//! TODO Reviewed ??-??-2026
 
 use clap::Arg;
 use clap::Command;
@@ -46,6 +48,7 @@ pub fn run() -> std::io::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main().unwrap();

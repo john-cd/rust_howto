@@ -1,10 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Build Diesel queries without requiring a live database connection.
 //!
 //! This example defines a `users` table and prints the generated SQL for an
 //! insert and a filtered select.
+//!
+//! TODO Reviewed ??-??-2026
 
 use diesel::prelude::*;
 use diesel::sqlite::Sqlite;
@@ -57,6 +59,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

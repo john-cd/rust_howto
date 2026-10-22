@@ -32,6 +32,7 @@ mod e {
         }
     }
 }
+
 // `pub use` re-exports the `f` module from the root module, thus external code
 // can use the path `<crate_name>::f::try_that()` instead of
 // `<crate_name>::e::f::try_that()`.

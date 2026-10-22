@@ -1,9 +1,10 @@
-// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates a basic WebSocket client using the `tungstenite`
 //! crate.
 //!
 //! `tungstenite` provides lightweight, flexible WebSockets for Rust.
+//!
+//! TODO Reviewed ??-??-2026
 
 use tungstenite::Message;
 use tungstenite::connect;
@@ -44,6 +45,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn require_network() -> anyhow::Result<()> {
         main()

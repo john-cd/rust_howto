@@ -1,10 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! A macOS-specific example using the `cocoa` crate to call native macOS APIs.
 //!
 //! On macOS this example queries the current user name and operating system
 //! version using `NSProcessInfo`.
+//!
+//! TODO Reviewed ??-??-2026
 
 #[cfg(target_os = "macos")]
 mod macos_impl {
@@ -63,6 +65,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

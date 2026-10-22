@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates the `frunk` crate, a functional programming
 //! toolbelt for Rust.
@@ -16,6 +16,8 @@
 //! frunk = "0.4.4"
 //! frunk_core = "0.4.4"
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
 
 use frunk::Generic;
 use frunk::LabelledGeneric;
@@ -183,6 +185,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

@@ -1,7 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates serializing structs to CSV using `serde`.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::io;
 
 use anyhow::Result;
@@ -54,6 +57,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

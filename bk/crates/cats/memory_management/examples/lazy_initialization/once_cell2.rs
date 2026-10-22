@@ -1,8 +1,11 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates the use of `once_cell::sync::Lazy` to create a
 //! static variable that is initialized only once, on first access.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::collections::HashMap;
 use std::sync::Mutex;
 
@@ -31,6 +34,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

@@ -1,5 +1,7 @@
-// TODO Reviewed ??-??-2026
 //! Library used by all CLI tools (`tools` folder)
+//!
+//! TODO Reviewed ??-??-2026
+
 mod all_categories;
 mod cargo_toml;
 mod crates_io;

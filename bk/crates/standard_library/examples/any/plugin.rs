@@ -7,6 +7,7 @@ use std::collections::HashMap;
 
 pub trait Plugin: Send + Sync + 'static {
     fn name(&self) -> &'static str;
+
     fn execute(&mut self, context: &mut Context);
 }
 
@@ -39,6 +40,7 @@ struct AppState {
 }
 
 pub struct MyCounterPlugin;
+
 impl Plugin for MyCounterPlugin {
     fn name(&self) -> &'static str {
         "MyCounterPlugin"
@@ -73,6 +75,7 @@ pub struct CustomPluginService {
 }
 
 pub struct MyServiceConsumerPlugin;
+
 impl Plugin for MyServiceConsumerPlugin {
     fn name(&self) -> &'static str {
         "MyServiceConsumerPlugin"
@@ -140,6 +143,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

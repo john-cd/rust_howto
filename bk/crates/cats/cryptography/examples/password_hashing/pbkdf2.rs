@@ -63,6 +63,7 @@ pub fn run() -> Result<(), Unspecified> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         println!("{:?}", main());

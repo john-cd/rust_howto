@@ -1,8 +1,11 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates inserting rows into PostgreSQL and querying the
 //! inserted data back.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::collections::HashMap;
 use std::fmt::Write;
 

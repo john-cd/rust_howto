@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Example of using the `simd-json` crate for parsing and manipulating JSON
 //! data.
@@ -15,6 +15,9 @@
 //! #[global_allocator]
 //! static GLOBAL: MiMalloc = MiMalloc;
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
+
 use simd_json::OwnedValue;
 use simd_json::derived::ValueObjectAccess;
 use simd_json::derived::ValueObjectAccessAsArray;
@@ -92,6 +95,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

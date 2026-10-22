@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Trait object example: a highly simplified GUI.
+//!
+//! TODO Reviewed ??-??-2026
 
 /// A trait for types that can be drawn.
 trait Draw {
@@ -76,6 +78,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

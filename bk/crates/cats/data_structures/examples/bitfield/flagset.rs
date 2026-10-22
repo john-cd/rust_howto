@@ -1,10 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Example of using the `flagset` crate to define and use bit flags.
 //!
 //! `flagset` has no dependencies, incl. the stdlib, so it can be used in
 //! `no_std` environments, such as embedded systems or kernel development.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::os::raw::c_int;
 
@@ -62,6 +64,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates basic usage of the `sqlx` crate for interacting
 //! with a SQLite database.
@@ -12,6 +12,8 @@
 //! [dependencies]
 //! sqlx = { version = "0.8", features = [ "runtime-tokio", "sqlite" ]
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
 
 use sqlx::SqlitePool;
 
@@ -81,6 +83,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn require_external_svc() -> anyhow::Result<()> {
         main()?;

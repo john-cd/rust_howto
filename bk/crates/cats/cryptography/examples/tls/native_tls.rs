@@ -1,10 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Build a platform TLS connector with `native-tls`.
 //!
 //! This example constructs a `TlsConnector` and prints a note about when to
 //! use it with a TCP stream.
+//!
+//! TODO Reviewed ??-??-2026
 
 use native_tls::TlsConnector;
 
@@ -25,6 +27,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()

@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! The `Default` trait provides a way to create a default value for a type.
 //! It initializes a struct without manually specifying every field.
+//!
+//! TODO Reviewed ??-??-2026
 
 // `derive` implements it automatically:
 #[derive(Default, Debug)]
@@ -51,6 +53,7 @@ fn main() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

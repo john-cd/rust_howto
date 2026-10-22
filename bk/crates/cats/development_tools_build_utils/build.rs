@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 //! Build script examples for `development_tools_build_utils`.
 //!
 //! See <https://doc.rust-lang.org/cargo/reference/build-scripts.html>.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 
 // ANCHOR: C

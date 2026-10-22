@@ -1,10 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Serialize and deserialize a struct with `bincode` 2.x.
 //!
 //! Bincode is unmaintained. This example uses the stable 2.0.1 release for
 //! legacy format interoperability; choose a maintained format for new systems.
+//!
+//! TODO Reviewed ??-??-2026
 
 use bincode::config::standard;
 use bincode::serde::decode_from_slice;
@@ -48,6 +50,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()

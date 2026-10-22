@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to initialize a SQLite database with tables.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::fs;
 

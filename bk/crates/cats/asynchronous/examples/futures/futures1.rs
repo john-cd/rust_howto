@@ -11,6 +11,7 @@ use futures::{
 async fn task_one() {
     // ...
 }
+
 async fn task_two() {
     // ...
 }
@@ -45,6 +46,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

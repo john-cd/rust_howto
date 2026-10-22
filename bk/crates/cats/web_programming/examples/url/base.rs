@@ -1,9 +1,11 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This module demonstrates how to extract the base URL from a given URL.
 //!
 //! It uses the `url` crate to parse and manipulate URLs.
+//!
+//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use url::Url;
@@ -63,6 +65,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> Result<()> {
         main()?;

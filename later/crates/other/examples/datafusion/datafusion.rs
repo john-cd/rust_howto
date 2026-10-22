@@ -1,6 +1,6 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
 #![cfg(feature = "datafusion")]
+
 // ANCHOR: example
 //! This example demonstrates how to use DataFusion to set up a simple
 //! in-memory table and run a SQL query on it.
@@ -20,6 +20,8 @@
 //! The following creates a table named "people" with columns "name" and
 //! "age", inserts some data, and then runs a query to select people older
 //! than 35.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::sync::Arc;
 
@@ -95,6 +97,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

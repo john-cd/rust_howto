@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Build a minimal FlatBuffer payload without a generated schema.
+//!
+//! TODO Reviewed ??-??-2026
 
 use flatbuffers::FlatBufferBuilder;
 
@@ -24,6 +26,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

@@ -1,10 +1,13 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
-#![cfg(target_os = "linux")]
-#![allow(clippy::approx_constant)]
 //! This example demonstrates the use of the `rug` crate for arbitrary precision
 //! arithmetic.
+//!
+//! TODO Reviewed ??-??-2026
+
+#![cfg(target_os = "linux")]
+#![allow(clippy::approx_constant)]
 
 use core::cmp::Ordering;
 
@@ -84,6 +87,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Dependency Injection (DI) is a design pattern that allows us to decouple
 //! components of our application.
@@ -11,6 +11,9 @@
 //! [dependencies]
 //! shaku = "0.7.0" # Or latest
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::sync::Arc;
 
 use shaku::Component;
@@ -105,6 +108,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

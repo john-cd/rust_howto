@@ -1,8 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use the `use` keyword to bring items into
 //! scope without having to write their full path.
+//!
+//! TODO Reviewed ??-??-2026
 
 /// Modules are used to organize code into logical units.
 mod a {
@@ -18,6 +20,7 @@ mod a {
     }
 
     pub const CONST_IN_A: u8 = 1;
+
     pub type Point = (u8, u8);
 }
 
@@ -59,6 +62,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

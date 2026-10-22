@@ -42,6 +42,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     #[ignore = "Requires user input"]
     fn require_user_input() {

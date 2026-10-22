@@ -1,9 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
-#![cfg(target_family = "unix")]
 //! Simple Rust example using the `nix` crate to handle Unix-like operating
 //! system tasks: create a file, write to it, read from it, and delete it.
+//!
+//! TODO Reviewed ??-??-2026
+
+#![cfg(target_family = "unix")]
 
 // File descriptor:
 use std::os::fd::OwnedFd;
@@ -72,6 +75,7 @@ pub fn run() -> nix::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> nix::Result<()> {
         main()?;

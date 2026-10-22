@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! # Rhai scripting
 //!
@@ -11,6 +11,9 @@
 //! [dependencies]
 //! rhai = "1.21.0" # or latest version
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
+
 use rhai::Engine;
 use rhai::EvalAltResult;
 use rhai::Scope;
@@ -86,6 +89,7 @@ pub fn run() -> Result<(), Box<EvalAltResult>> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> Result<(), Box<EvalAltResult>> {
         main()?;

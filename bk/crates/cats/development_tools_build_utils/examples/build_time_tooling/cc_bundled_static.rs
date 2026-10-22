@@ -30,6 +30,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     #[ignore = "Needs review"]
     fn test_main() {

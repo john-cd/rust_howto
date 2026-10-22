@@ -1,11 +1,13 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Add this dependency to your `Cargo.toml`:
 //! ```toml
 //! [dependencies]
 //! priority-queue = "1.3.1" # Or latest.
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::cmp::Reverse;
 
@@ -138,6 +140,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

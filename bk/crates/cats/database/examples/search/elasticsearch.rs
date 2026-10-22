@@ -1,8 +1,11 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This module provides examples of interacting with Elasticsearch using the
 //! official Rust client.
+//!
+//! TODO Reviewed ??-??-2026
+
 use elasticsearch::BulkParts;
 use elasticsearch::Elasticsearch;
 use elasticsearch::Error;
@@ -148,6 +151,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn require_external_svc() -> anyhow::Result<()> {
         unsafe {

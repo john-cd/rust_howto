@@ -1,11 +1,13 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates two key uses of the `cached` crate:
 //! - Simple function memoization with `#[cached]`,
 //! - Advanced caching with custom configuration options.
 //!
 //! Remember to add `cached = "0.55.1"` or latest to your Cargo.toml.
+//!
+//! TODO Reviewed ??-??-2026
 
 use cached::proc_macro::cached;
 
@@ -70,6 +72,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

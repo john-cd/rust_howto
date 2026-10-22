@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to load application configuration and store it
 //! in a singleton.
@@ -8,6 +8,8 @@
 //! ```toml
 //! config = "0.15.6" # Or latest
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
 
 mod settings {
     use std::sync::OnceLock;
@@ -68,6 +70,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

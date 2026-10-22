@@ -1,5 +1,7 @@
-// TODO Reviewed ??-??-2026
 //! CLI commands
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::path::PathBuf;
 
 use clap::Arg;

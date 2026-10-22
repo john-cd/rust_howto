@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Trait example.
+//!
+//! TODO Reviewed ??-??-2026
 
 /// A trait with one method.
 pub trait Summary {
@@ -49,6 +51,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

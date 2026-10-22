@@ -65,6 +65,7 @@ pub fn run() -> Result<(), Error> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     #[ignore = "requires external oracle db and oracle client library"]
     fn require_external_svc() -> anyhow::Result<()> {

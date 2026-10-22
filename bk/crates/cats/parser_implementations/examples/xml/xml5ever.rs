@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Tokenize XML with `xml5ever` and print the parsed tokens.
+//!
+//! TODO Reviewed ??-??-2026
 
 use markup5ever::buffer_queue::BufferQueue;
 use xml5ever::tendril::ByteTendril;
@@ -59,6 +61,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

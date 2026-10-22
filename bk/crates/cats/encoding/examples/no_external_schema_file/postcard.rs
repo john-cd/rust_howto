@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! This example demonstrates how to use the `postcard` crate for serialization
 //! and deserialization without an external schema file.
@@ -17,6 +17,9 @@
 //! ```
 //!
 //! Example adapted from <https://lib.rs/crates/postcard>.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::ops::Deref;
 
 use postcard::from_bytes;
@@ -73,6 +76,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

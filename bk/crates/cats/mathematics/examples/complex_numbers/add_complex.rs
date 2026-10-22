@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates the manipluation of complex numbers.
+//!
+//! TODO Reviewed ??-??-2026
 
 fn main() {
     // Create two complex numbers.
@@ -23,6 +25,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

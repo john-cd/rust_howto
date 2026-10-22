@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! `autocfg` is a library for build scripts to automatically configure code
 //! based on compiler support. Code snippets are dynamically tested to see if
@@ -9,6 +9,8 @@
 //! Add to your `Cargo.toml`:
 //! [build-dependencies]
 //! autocfg = "1"
+//!
+//! TODO Reviewed ??-??-2026
 
 #[tracing::instrument]
 fn main() {
@@ -43,6 +45,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

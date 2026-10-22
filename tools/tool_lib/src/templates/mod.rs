@@ -1,5 +1,6 @@
-// TODO Reviewed ??-??-2026
 //! Build badges, index of the book, etc... using a template engine.
+//!
+//! TODO Reviewed ??-??-2026
 
 use tinytemplate::TinyTemplate;
 use tracing::info;

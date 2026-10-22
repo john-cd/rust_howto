@@ -1,7 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Examples for working with `.env` files and `envy`.
+//!
+//! TODO Reviewed ??-??-2026
+
 use serde::Deserialize;
 
 // Define a Configuration struct that can be deserialized from environment

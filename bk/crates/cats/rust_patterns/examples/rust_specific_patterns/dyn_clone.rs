@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates how to clone trait objects using the `dyn_clone` crate.
+//!
+//! TODO Reviewed ??-??-2026
 
 use dyn_clone::DynClone;
 
@@ -45,6 +47,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

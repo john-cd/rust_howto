@@ -1,7 +1,9 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Demonstrates the use of `?`.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::fs::File;
 use std::io;
@@ -47,6 +49,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         // Make sure the `temp` folder exists.

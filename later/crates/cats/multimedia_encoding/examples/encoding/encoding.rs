@@ -1,10 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Encode a blank AV1 frame using the `rav1e` crate.
 //!
 //! This example creates a default encoder context, sends one frame, flushes the
 //! encoder, and counts the packets emitted by the encoder.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::error::Error;
 

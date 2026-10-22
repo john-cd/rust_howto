@@ -1,10 +1,12 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! In `Cargo.toml`, add:
 //! ```toml
 //! rand = { version = "0.9.0" } # Or latest.
 //! ```
+//!
+//! TODO Reviewed ??-??-2026
 
 fn main() {
     // Generate a random value:
@@ -38,6 +40,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();

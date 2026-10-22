@@ -1,7 +1,10 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Examples for working with `.env` files using `dotenvy`.
+//!
+//! TODO Reviewed ??-??-2026
+
 use std::env;
 
 use anyhow::Result;
@@ -33,6 +36,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() -> Result<()> {
         main()?;

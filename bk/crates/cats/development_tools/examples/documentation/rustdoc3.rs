@@ -1,5 +1,5 @@
-// TODO Reviewed ??-??-2026
 #![allow(dead_code)]
+
 // ANCHOR: example
 //! Fast and easy queue abstraction.
 //!
@@ -9,6 +9,8 @@
 //! - `[Easy]`
 //!
 //! [Easy]: http://thatwaseasy.example.com
+//!
+//! TODO Reviewed ??-??-2026
 
 fn main() {
     println!(
@@ -25,6 +27,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_main() {
         main();
