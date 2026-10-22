@@ -23,17 +23,29 @@ mod tests {
     fn test_detect_github_url_valid() {
         let valid_cases = [
             ("https://github.com/user/repo", "user", "repo"),
-            ("http://github.com/another-user/another-repo.git", "another-user", "another-repo"),
+            (
+                "http://github.com/another-user/another-repo.git",
+                "another-user",
+                "another-repo",
+            ),
             ("https://www.github.com/user/repo", "user", "repo"),
             (
                 "https://github.com/user_with_underscores/repo-with-dashes/",
                 "user_with_underscores",
                 "repo-with-dashes",
             ),
-            ("https://github.com/user.name/repo.js", "user.name", "repo.js"),
+            (
+                "https://github.com/user.name/repo.js",
+                "user.name",
+                "repo.js",
+            ),
             ("https://github.com/user/repo/tree/main", "user", "repo"),
             ("https://github.com/user/repo/issues/123", "user", "repo"),
-            ("https://github.com/user/repo/blob/main/README.md", "user", "repo"),
+            (
+                "https://github.com/user/repo/blob/main/README.md",
+                "user",
+                "repo",
+            ),
         ];
 
         for (url, expected_user, expected_repo) in valid_cases {
