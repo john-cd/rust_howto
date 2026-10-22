@@ -35,10 +35,11 @@ struct Gist {
 /// Main function to demonstrate creating and deleting a Gist on GitHub.
 #[tokio::main]
 async fn main() -> Result<()> {
-    let gh_user = env::var("GH_USER")?;
-    let gh_pass = env::var("GH_PASS")?;
+    let gh_token = env::var("GH_TOKEN")?;
 
-    // Example POST to the GitHub gists API:
+    // Create a short-lived gist with a fine-grained token that has the
+    // `gists` permission. Basic authentication with a GitHub password is not
+    // supported by the REST API.
     let gist_body = Post {
         description: "the description for this gist",
         public: true,
@@ -57,22 +58,25 @@ fn main() { println!("hello world!"); }
     };
 
     let request_url = "https://api.github.com/gists";
-    let response = Client::new()
+    let client = Client::new();
+    let response = client
         .post(request_url)
-        .basic_auth(gh_user.clone(), Some(gh_pass.clone()))
+        .bearer_auth(&gh_token)
         .json(&gist_body)
         .send()
-        .await?;
+        .await?
+        .error_for_status()?;
 
     let gist: Gist = response.json().await?;
     println!("Created {gist:?}");
 
     let request_url = format!("{request_url}/{}", gist.id);
-    let response = Client::new()
+    let response = client
         .delete(&request_url)
-        .basic_auth(gh_user, Some(gh_pass))
+        .bearer_auth(gh_token)
         .send()
-        .await?;
+        .await?
+        .error_for_status()?;
 
     println!(
         "Gist {} deleted! Status code: {}",
@@ -92,8 +96,10 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
     #[test]
+    #[ignore = "requires GH_TOKEN and access to the GitHub API"]
     fn require_network() {
-        println!("{:?}", main());
+        let runtime = tokio::runtime::Runtime::new().unwrap();
+        runtime.block_on(main()).unwrap();
     }
 }
 // [review; rewrite so that a username and password are not required?](https://github.com/john-cd/rust_howto/issues/178)
