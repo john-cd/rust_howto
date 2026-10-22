@@ -7,14 +7,14 @@ use std::path::Path;
 fn main() -> std::io::Result<()> {
     // 1. Create a directory:
     let path = Path::new("./example_dir");
-    if !path.exists() {
+    if path.exists() {
+        println!("Directory 'example_dir' already exists.");
+    } else {
         fs::create_dir(path)?;
         // This function will return an error e.g. if the parent directory
         // doesn't exist, if the directory already exists, or if
         // permissions are lacking.
         println!("Directory 'example_dir' created successfully!");
-    } else {
-        println!("Directory 'example_dir' already exists.");
     }
 
     // 2. Remove it. The directory must be empty:

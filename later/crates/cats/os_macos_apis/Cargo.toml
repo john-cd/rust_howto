@@ -27,3 +27,6 @@ objc = "0.2.7"
 name = "macos"
 path = "examples/macos/main.rs"
 test = true
+
+[lints]
+workspace = true

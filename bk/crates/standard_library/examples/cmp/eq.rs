@@ -42,11 +42,11 @@ impl Eq for Person {}
 fn people() {
     let p1 = Person {
         id: 1,
-        last_name: "Smith".to_string(),
+        last_name: "Smith".to_owned(),
     };
     let p2 = Person {
         id: 2,
-        last_name: "Smith".to_string(),
+        last_name: "Smith".to_owned(),
     };
     assert_ne!(p1, p2);
 }

@@ -27,7 +27,7 @@ mod a_module {
 }
 
 fn main() {
-    use a_module::MySealedTrait;
+    use a_module::MySealedTrait as _;
 
     let a: usize = 42;
     a.some_public_method();

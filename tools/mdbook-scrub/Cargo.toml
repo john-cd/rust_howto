@@ -28,3 +28,6 @@ tracing-subscriber = { version = "0.3.23", features = ["json"] }
 
 [dev-dependencies]
 mdbook-driver = "0.5.4"
+
+[lints]
+workspace = true

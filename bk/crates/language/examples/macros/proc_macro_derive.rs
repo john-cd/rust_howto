@@ -21,7 +21,7 @@ struct User {
 fn main() {
     let u = User {
         id: 1,
-        name: "Alice".to_string(),
+        name: "Alice".to_owned(),
         active: true,
     };
     u.debug_print();

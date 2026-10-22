@@ -1,18 +1,18 @@
 #![allow(dead_code)]
 #![cfg(feature = "datafusion")]
 // ANCHOR: example
-//! This example demonstrates how to use DataFusion to set up a simple
+//! This example demonstrates how to use `DataFusion` to set up a simple
 //! in-memory table and run a SQL query on it.
 //!
-//! DataFusion is an extensible query execution framework, written in Rust,
+//! `DataFusion` is an extensible query execution framework, written in Rust,
 //! that uses Apache Arrow as its in-memory format. This means it's very
 //! efficient for columnar data processing and can easily share data with
-//! other Arrow-compatible systems (like Python's PyArrow, Spark, etc.)
+//! other Arrow-compatible systems (like Python's `PyArrow`, Spark, etc.)
 //! without expensive serialization/deserialization.
 //!
-//! - SQL Support: We can query data registered within DataFusion using standard
+//! - SQL Support: We can query data registered within `DataFusion` using standard
 //!   SQL.
-//! - DataFrame API: It also provides a programmatic DataFrame API (similar in
+//! - `DataFrame` API: It also provides a programmatic `DataFrame` API (similar in
 //!   concept to Pandas or Polars) for building query plans step-by-step in Rust
 //!   code.
 //!
@@ -40,8 +40,8 @@ async fn run_query() -> datafusion::error::Result<()> {
     ]);
 
     let data = [
-        vec!["Alice".to_string(), "30".to_string()],
-        vec!["Bob".to_string(), "40".to_string()],
+        vec!["Alice".to_owned(), "30".to_owned()],
+        vec!["Bob".to_owned(), "40".to_owned()],
     ];
 
     // Convert data into `RecordBatch`.

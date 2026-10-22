@@ -7,7 +7,7 @@
 use std::collections::HashMap;
 use std::env;
 
-use anyhow::Context;
+use anyhow::Context as _;
 use anyhow::Result;
 use reqwest::Client;
 use serde::Deserialize;
@@ -103,8 +103,8 @@ pub fn run() -> Result<()> {
 
 #[cfg(test)]
 mod tests {
-    use std::io::Read;
-    use std::io::Write;
+    use std::io::Read as _;
+    use std::io::Write as _;
     use std::io::{self};
     use std::net::TcpListener;
     use std::net::TcpStream;
@@ -243,7 +243,7 @@ mod tests {
 
         Ok(RecordedRequest {
             request_line: request_line.to_owned(),
-            headers: headers.to_owned(),
+            headers: headers.clone(),
             body: body.to_owned(),
         })
     }

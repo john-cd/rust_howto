@@ -1,5 +1,5 @@
 // TODO Reviewed ??-??-2026
-use anyhow::Context;
+use anyhow::Context as _;
 use anyhow::Result;
 
 use super::Category;
@@ -15,7 +15,7 @@ use super::Category;
 /// # Arguments:
 ///
 /// * `categories` - A reference to the TOML table containing category data.
-pub fn categories_from_toml(
+pub(super) fn categories_from_toml(
     categories: &toml::value::Table,
     parent: Option<&Category>,
 ) -> Result<Vec<Category>> {
@@ -41,7 +41,7 @@ pub fn categories_from_toml(
             result.extend(categories_from_toml(categories, Some(&category))?);
         }
 
-        result.push(category)
+        result.push(category);
     }
 
     Ok(result)
@@ -77,20 +77,15 @@ fn optional_string_from_toml<'a>(toml: &'a toml::value::Table, key: &str) -> &'a
 }
 
 impl Category {
-    /// Format a child category as "parent::child".
-    fn from_parent(
-        slug: &str,
-        category: &str,
-        description: &str,
-        parent: Option<&Category>,
-    ) -> Category {
+    /// Format a child category as "`parent::child`".
+    fn from_parent(slug: &str, category: &str, description: &str, parent: Option<&Self>) -> Self {
         match parent {
-            Some(parent) => Category {
+            Some(parent) => Self {
                 slug: format!("{}::{slug}", parent.slug),
                 category: format!("{}::{category}", parent.category),
                 description: description.into(),
             },
-            None => Category {
+            None => Self {
                 slug: slug.into(),
                 category: category.into(),
                 description: description.into(),

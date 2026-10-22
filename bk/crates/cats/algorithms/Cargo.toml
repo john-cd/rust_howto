@@ -55,3 +55,6 @@ test = true
 name = "sort"
 path = "examples/sort/main.rs"
 test = true
+
+[lints]
+workspace = true

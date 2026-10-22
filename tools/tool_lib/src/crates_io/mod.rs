@@ -28,6 +28,6 @@ mod tests {
 
     #[test]
     fn client_initializes_without_making_a_request() {
-        assert!(get_client().is_ok());
+        get_client().expect("input should parse");
     }
 }

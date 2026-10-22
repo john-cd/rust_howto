@@ -17,7 +17,7 @@
 //! TODO Reviewed ??-??-2026
 
 use std::io::Error;
-use std::io::Read;
+use std::io::Read as _;
 use std::net::Ipv4Addr;
 use std::net::SocketAddrV4;
 use std::net::TcpListener;
@@ -35,7 +35,7 @@ fn read_one_connection(listener: TcpListener) -> Result<String, Error> {
 }
 
 fn main() -> Result<(), Error> {
-    let loopback = Ipv4Addr::new(127, 0, 0, 1);
+    let loopback = Ipv4Addr::LOCALHOST;
     let socket = SocketAddrV4::new(loopback, 0); // 0 means any available port.
     let listener = TcpListener::bind(socket)?; // Bind to the socket.
     let input = read_one_connection(listener)?;
@@ -58,7 +58,7 @@ mod tests {
         let listener = TcpListener::bind((Ipv4Addr::LOCALHOST, 0))?;
         let address = listener.local_addr()?;
         let client = std::thread::spawn(move || -> Result<(), Error> {
-            use std::io::Write;
+            use std::io::Write as _;
 
             let mut stream = std::net::TcpStream::connect(address)?;
             stream.write_all(b"hello")?;

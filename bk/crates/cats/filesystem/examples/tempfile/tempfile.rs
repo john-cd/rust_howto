@@ -3,9 +3,9 @@
 // ANCHOR: example
 use std::fs::File;
 use std::io::Read;
-use std::io::Seek;
+use std::io::Seek as _;
 use std::io::SeekFrom;
-use std::io::Write;
+use std::io::Write as _;
 
 use tempfile::Builder;
 use tempfile::NamedTempFile;

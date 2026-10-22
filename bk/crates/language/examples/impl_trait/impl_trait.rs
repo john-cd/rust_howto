@@ -10,7 +10,7 @@ struct Dog;
 
 impl Speak for Dog {
     fn speak(&self) -> String {
-        "Woof!".to_string()
+        "Woof!".to_owned()
     }
 }
 
@@ -18,7 +18,7 @@ struct Cat;
 
 impl Speak for Cat {
     fn speak(&self) -> String {
-        "Meow!".to_string()
+        "Meow!".to_owned()
     }
 }
 

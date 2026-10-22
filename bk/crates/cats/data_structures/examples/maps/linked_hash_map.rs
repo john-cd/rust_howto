@@ -9,8 +9,8 @@ fn main() {
     map.insert("three", 3);
 
     // Iteration respects insertion order
-    for (k, v) in map.iter() {
-        println!("{}: {}", k, v);
+    for (k, v) in &map {
+        println!("{k}: {v}");
     }
 }
 // ANCHOR_END: example

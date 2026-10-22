@@ -81,7 +81,7 @@ fn concatenate_with_collect_iter() {
     println!("{result}");
 }
 
-use joinery::JoinableIterator;
+use joinery::JoinableIterator as _;
 
 fn concatenate_with_joinery() {
     let words = ["hello", "world"];
@@ -92,7 +92,7 @@ fn concatenate_with_joinery() {
     println!("{result}");
 }
 
-use std::fmt::Write;
+use std::fmt::Write as _;
 
 fn concatenate_with_write_macro() {
     let part1 = "hello";

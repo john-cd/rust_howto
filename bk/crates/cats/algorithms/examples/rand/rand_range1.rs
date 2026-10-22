@@ -2,7 +2,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
 // Import necessary traits and structs from the `rand` crate.
-use rand::distr::Distribution;
+use rand::distr::Distribution as _;
 use rand::distr::Uniform;
 
 fn main() {

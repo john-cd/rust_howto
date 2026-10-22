@@ -7,7 +7,7 @@ static CATEGORIES_URL: &str = "https://raw.githubusercontent.com/rust-lang/crate
 pub(super) fn get_categories_toml_string() -> Result<String> {
     // Allows tests to override the URL.
     let url_str =
-        std::env::var("MOCK_CATEGORIES_URL").unwrap_or_else(|_| CATEGORIES_URL.to_string());
+        std::env::var("MOCK_CATEGORIES_URL").unwrap_or_else(|_| CATEGORIES_URL.to_owned());
     let url = reqwest::Url::parse(&url_str)?;
 
     let is_localhost = url.host_str() == Some("127.0.0.1") || url.host_str() == Some("localhost");
@@ -28,8 +28,7 @@ pub(super) fn get_categories_toml_string() -> Result<String> {
     Ok(body)
 }
 
-#[allow(dead_code)]
-#[allow(unused_imports)]
+#[expect(unused_imports, reason = "used only by some test configurations")]
 #[cfg(test)]
 mod tests {
     // A mutex to ensure that tests setting MOCK_CATEGORIES_URL don't run concurrently.
@@ -46,7 +45,7 @@ mod tests {
     // Test successful retrieval of the TOML string.
     #[test]
     fn test_get_categories_toml_string_success() -> Result<()> {
-        let _lock = ENV_MUTEX.lock().unwrap();
+        let _lock = ENV_MUTEX.lock().expect("input should parse");
         let mut server = mockito::Server::new();
         let expected_toml = "[category1]\nname = \"Category One\"\ndescription = \"First category\"\n\n[category2]\nname = \"Category Two\"\n";
 
@@ -71,7 +70,7 @@ mod tests {
             "Expected Ok result, got Err: {:?}",
             result.err()
         );
-        assert_eq!(result.unwrap(), expected_toml);
+        assert_eq!(result.expect("input should parse"), expected_toml);
 
         Ok(())
     }
@@ -79,7 +78,7 @@ mod tests {
     // Test handling of a network/server error (e.g., 404 Not Found).
     #[test]
     fn test_get_categories_toml_string_error() -> Result<()> {
-        let _lock = ENV_MUTEX.lock().unwrap();
+        let _lock = ENV_MUTEX.lock().expect("input should parse");
         let mut server = mockito::Server::new();
 
         // Mock the GET request to return a 404 error.
@@ -100,7 +99,7 @@ mod tests {
         assert!(result.is_err(), "Expected Err result, got Ok");
 
         // Optionally, check the specific error kind or message if needed.
-        let err_string = result.unwrap_err().to_string();
+        let err_string = result.expect_err("input should be rejected").to_string();
         assert!(
             err_string.contains("404") || err_string.contains("Not Found"),
             "Error message did not indicate a 404 error: {err_string}"

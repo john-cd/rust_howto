@@ -26,3 +26,6 @@ sgp4 = "2.4.0"
 name = "aerospace"
 path = "examples/aerospace/main.rs"
 test = true
+
+[lints]
+workspace = true

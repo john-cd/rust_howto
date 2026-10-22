@@ -47,3 +47,6 @@ test = true
 name = "vulkan"
 path = "examples/vulkan/main.rs"
 test = true
+
+[lints]
+workspace = true

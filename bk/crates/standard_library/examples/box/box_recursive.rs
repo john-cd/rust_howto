@@ -10,12 +10,12 @@ struct Node {
     value: i32,
     /// The next node in the list, or `None` if this is the last node.
     /// Note that `Node` is a recursive data type.
-    next: Option<Box<Node>>,
+    next: Option<Box<Self>>,
 }
 
 impl Node {
     fn new(value: i32) -> Self {
-        Node { value, next: None }
+        Self { value, next: None }
     }
 
     /// Recursively traverses the list until it finds the last node
@@ -23,7 +23,7 @@ impl Node {
     fn append(&mut self, value: i32) {
         match self.next {
             Some(ref mut next_node) => next_node.append(value),
-            None => self.next = Some(Box::new(Node::new(value))),
+            None => self.next = Some(Box::new(Self::new(value))),
         }
     }
 

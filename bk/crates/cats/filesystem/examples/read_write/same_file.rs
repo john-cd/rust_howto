@@ -14,7 +14,7 @@ fn main() -> Result<(), Error> {
 
     // Check if the standard input is the same as the standard output or error
     // handle:
-    if (stdin == stdout) | (stdin == stderr) {
+    if (stdin == stdout) || (stdin == stderr) {
         println!("You are reading and writing to the same file!");
         // Return an error to exit the process:
         // return Err(Error::other(

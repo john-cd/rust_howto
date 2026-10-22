@@ -45,3 +45,6 @@ test = true
 name = "search_engines"
 path = "examples/search_engines/main.rs"
 test = true
+
+[lints]
+workspace = true

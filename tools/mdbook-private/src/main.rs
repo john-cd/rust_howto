@@ -1,11 +1,12 @@
 // TODO Reviewed ??-??-2026
+//! Command-line entry point of the `mdbook-private` preprocessor.
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. See LICENSE for details.
 use std::env;
 use std::io;
 use std::process;
 
-use mdbook_preprocessor::Preprocessor;
+use mdbook_preprocessor::Preprocessor as _;
 use mdbook_private::Private;
 
 fn run() -> mdbook_preprocessor::errors::Result<()> {

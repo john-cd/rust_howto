@@ -46,7 +46,7 @@ impl CancelTokenSource {
         match self.s_cancel.try_send(cancel) {
             Ok(()) => tracing::info!("Cancel request sent."),
             Err(crossbeam_channel::TrySendError::Full(_)) => {
-                tracing::error!("Cancellation channel is full.")
+                tracing::error!("Cancellation channel is full.");
             }
             Err(e) => {
                 tracing::error!("Error when trying to cancel: {e}");

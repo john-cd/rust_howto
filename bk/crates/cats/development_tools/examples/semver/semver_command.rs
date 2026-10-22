@@ -4,7 +4,7 @@
 // ANCHOR: example
 use std::process::Command;
 
-use anyhow::Context;
+use anyhow::Context as _;
 use anyhow::Result;
 use anyhow::anyhow;
 use anyhow::bail;
@@ -31,8 +31,8 @@ fn main() -> Result<()> {
 
     let stdout = String::from_utf8(output.stdout)?;
     let version = stdout
-        .split(" ")
-        .last()
+        .split(' ')
+        .next_back()
         .ok_or_else(|| anyhow!("Invalid command output."))?
         .trim(); // Remove any extraneous newlines.
     // Parse the version string into a `semver::Version`.

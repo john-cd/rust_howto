@@ -36,3 +36,6 @@ smartcore = "0.5.5"
 name = "ml"
 path = "examples/ml/main.rs"
 test = true
+
+[lints]
+workspace = true

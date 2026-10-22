@@ -33,3 +33,6 @@ opencv = { version = "0.98.2", default-features = false, features = ["clang-runt
 name = "opencv"
 path = "examples/opencv/main.rs"
 test = true
+
+[lints]
+workspace = true

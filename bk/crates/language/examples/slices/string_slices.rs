@@ -18,7 +18,7 @@ fn main() {
     println!("{world}");
 
     // Take a slice of the entire `String`:
-    let whole_slice = &s[..];
+    let whole_slice = &*s;
 
     // A string slice is a view into the `String`:
     // The inner pointers of the slice and the string are equal.

@@ -16,13 +16,13 @@ fn simple() {
     let right: Either<i32, &str> = Either::Right("hello");
 
     match left {
-        Either::Left(value) => println!("Left value: {}", value),
-        Either::Right(value) => println!("Right value: {}", value),
+        Either::Left(value) => println!("Left value: {value}"),
+        Either::Right(value) => println!("Right value: {value}"),
     }
 
     match right {
-        Either::Left(value) => println!("Left value: {}", value),
-        Either::Right(value) => println!("Right value: {}", value),
+        Either::Left(value) => println!("Left value: {value}"),
+        Either::Right(value) => println!("Right value: {value}"),
     }
 }
 

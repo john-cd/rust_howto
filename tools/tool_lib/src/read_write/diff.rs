@@ -16,6 +16,7 @@ use similar::TextDiff;
 /// # Returns
 ///
 /// `true` if the strings are identical, `false` otherwise.
+#[must_use]
 pub fn detect_diff(s1: &str, s2: &str) -> bool {
     let diff = TextDiff::from_lines(s1, s2);
     diff.ratio() == 1.0

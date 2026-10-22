@@ -49,3 +49,6 @@ test = true
 name = "tar"
 path = "examples/tar/main.rs"
 test = true
+
+[lints]
+workspace = true

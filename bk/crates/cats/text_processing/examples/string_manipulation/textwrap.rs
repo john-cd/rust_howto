@@ -4,7 +4,7 @@
 use std::borrow::Cow;
 
 use hyphenation::Language;
-use hyphenation::Load;
+use hyphenation::Load as _;
 use hyphenation::Standard;
 use textwrap::Options;
 use textwrap::WordSplitter;

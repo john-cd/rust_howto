@@ -9,7 +9,7 @@ struct InnerArray<T, const N: usize>([T; N]);
 
 impl<T: std::marker::Copy, const N: usize> InnerArray<T, N> {
     fn new(val: T) -> Self {
-        InnerArray([val; N])
+        Self([val; N])
     }
 
     fn len(&self) -> usize {

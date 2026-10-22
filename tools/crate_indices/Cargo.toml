@@ -28,3 +28,6 @@ itertools = "0.14.0"
 tool_lib = { path = "../tool_lib" }
 tracing = "0.1.44"
 tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
+
+[lints]
+workspace = true

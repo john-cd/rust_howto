@@ -1,7 +1,7 @@
 // TODO Reviewed ??-??-2026
 #![allow(dead_code)]
 // ANCHOR: example
-use fuzzy_matcher::FuzzyMatcher;
+use fuzzy_matcher::FuzzyMatcher as _;
 use fuzzy_matcher::skim::SkimMatcherV2;
 
 fn main() {
@@ -46,7 +46,7 @@ fn main() {
             let mut highlighted = String::new();
             let mut last_idx = 0;
 
-            for &idx in indices.iter() {
+            for &idx in &indices {
                 // Add text before the match
                 highlighted.push_str(&item[last_idx..idx]);
                 // Add the matched character with formatting

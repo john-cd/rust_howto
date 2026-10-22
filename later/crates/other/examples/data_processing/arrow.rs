@@ -36,7 +36,7 @@ fn sum<T: ArrowPrimitiveType>(array: &PrimitiveArray<T>) -> T::Native
 where
     T::Native: std::iter::Sum,
 {
-    array.iter().map(|v| v.unwrap_or_default()).sum()
+    array.iter().map(std::option::Option::unwrap_or_default).sum()
 }
 
 #[derive(Serialize)]
@@ -136,7 +136,7 @@ fn main() -> Result<()> {
     let reader = std::io::Cursor::new(json_data);
 
     let mut json_reader =
-        json::ReaderBuilder::new(schema.clone()).build(reader)?;
+        json::ReaderBuilder::new(schema).build(reader)?;
 
     if let Some(json_batch) = json_reader.next() {
         let json_batch = json_batch?;
@@ -155,11 +155,11 @@ fn main() -> Result<()> {
     let rows = vec![
         MyStruct {
             int32: 5,
-            string: "bar".to_string(),
+            string: "bar".to_owned(),
         },
         MyStruct {
             int32: 8,
-            string: "foo".to_string(),
+            string: "foo".to_owned(),
         },
     ];
 

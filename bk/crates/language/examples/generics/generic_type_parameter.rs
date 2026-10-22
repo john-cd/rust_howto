@@ -73,7 +73,7 @@ struct MyHashMap<K, V, S = RandomState> {
 impl<K, V, S> MyHashMap<K, V, S> {
     /// Creates a new `MyHashMap` with the specified hasher.
     fn new(hasher: S) -> Self {
-        MyHashMap {
+        Self {
             inner: Vec::new(),
             hasher,
         }

@@ -17,7 +17,7 @@ fn main() {
         );
         tracing::info!(
             "Any trace events that occur here will occur within the span."
-        )
+        );
     }
     tracing::info!("Dropping the guard exits the span.");
 }

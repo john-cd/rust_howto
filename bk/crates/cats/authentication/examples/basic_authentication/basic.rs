@@ -11,7 +11,7 @@ fn main() -> Result<(), Error> {
     // Create a new `reqwest` client:
     let client = Client::new();
 
-    let user_name = "testuser".to_string();
+    let user_name = "testuser".to_owned();
     let password: Option<String> = None;
 
     let response = client

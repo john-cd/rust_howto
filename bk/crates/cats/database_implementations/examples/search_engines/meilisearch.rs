@@ -11,7 +11,7 @@ use meilisearch_sdk::tasks::Task;
 use serde::Deserialize;
 use serde::Serialize;
 
-/// A document that can be indexed in MeiliSearch.
+/// A document that can be indexed in `MeiliSearch`.
 #[derive(Debug, Serialize, Deserialize)]
 struct MyDocument {
     id: usize,
@@ -19,10 +19,10 @@ struct MyDocument {
     content: String,
 }
 
-/// This is an example of how to use the MeiliSearch Rust SDK to index and
+/// This is an example of how to use the `MeiliSearch` Rust SDK to index and
 /// search documents.
 ///
-/// It requires a running MeiliSearch instance.
+/// It requires a running `MeiliSearch` instance.
 #[tokio::main(flavor = "current_thread")]
 async fn main() -> anyhow::Result<()> {
     let meilisearch_url =
@@ -39,18 +39,18 @@ async fn main() -> anyhow::Result<()> {
     let docs = vec![
         MyDocument {
             id: 1,
-            title: "First Document".to_string(),
-            content: "This is the first document content.".to_string(),
+            title: "First Document".to_owned(),
+            content: "This is the first document content.".to_owned(),
         },
         MyDocument {
             id: 2,
-            title: "Second Document".to_string(),
-            content: "This is the second document content.".to_string(),
+            title: "Second Document".to_owned(),
+            content: "This is the second document content.".to_owned(),
         },
         MyDocument {
             id: 3,
-            title: "Rust Programming".to_string(),
-            content: "Learning the Rust programming language.".to_string(),
+            title: "Rust Programming".to_owned(),
+            content: "Learning the Rust programming language.".to_owned(),
         },
     ];
 

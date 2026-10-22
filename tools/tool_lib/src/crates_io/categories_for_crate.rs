@@ -48,12 +48,12 @@ mod tests {
     // Helper function to create a mock CratesIoCategory.
     fn mock_crates_io_category(id: &str, name: &str, desc: &str) -> CratesIoCategory {
         CratesIoCategory {
-            category: name.to_string(),
+            category: name.to_owned(),
             crates_cnt: 1,          // Dummy value.
             created_at: Utc::now(), // Dummy value.
-            description: desc.to_string(),
-            id: id.to_string(),
-            slug: id.to_string(),
+            description: desc.to_owned(),
+            id: id.to_owned(),
+            slug: id.to_owned(),
         }
     }
 

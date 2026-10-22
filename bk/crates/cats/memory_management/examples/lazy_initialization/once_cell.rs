@@ -9,7 +9,7 @@ fn main() {
     // The cell is initially empty.
     assert!(cell.get().is_none());
 
-    let value: &String = cell.get_or_init(|| "Hello, World!".to_string());
+    let value: &String = cell.get_or_init(|| "Hello, World!".to_owned());
     println!("{value}");
     assert_eq!(value, "Hello, World!");
     assert!(cell.get().is_some());

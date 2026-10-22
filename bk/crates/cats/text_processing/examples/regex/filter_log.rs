@@ -2,7 +2,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
 use std::fs::File;
-use std::io::BufRead;
+use std::io::BufRead as _;
 use std::io::BufReader;
 
 use anyhow::Result;
@@ -14,8 +14,8 @@ fn main() -> Result<()> {
 
     let set = RegexSetBuilder::new([
         r#"version "\d\.\d\.\d""#,
-        r#"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:443"#,
-        r#"warning.*timeout expired"#,
+        r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:443",
+        "warning.*timeout expired",
     ])
     .case_insensitive(true)
     .build()?;
@@ -52,7 +52,7 @@ quis nostrud exercitation ullamco
         if !fs::exists("temp")? {
             fs::create_dir("temp")?;
         }
-        use std::io::Write;
+        use std::io::Write as _;
         let mut file = File::create("temp/application.log")?;
         file.write_all(EXAMPLE_TEXT.as_bytes())?;
         main()?;

@@ -31,7 +31,7 @@ fn process_optional_string(maybe_name: Option<String>) {
 }
 
 fn main() {
-    process_optional_string(Some("Alice".to_string()));
+    process_optional_string(Some("Alice".to_owned()));
     process_optional_string(None);
 }
 

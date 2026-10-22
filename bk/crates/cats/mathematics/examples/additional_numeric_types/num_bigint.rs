@@ -1,10 +1,10 @@
 // TODO Reviewed ??-??-2026
 #![allow(dead_code)]
 // ANCHOR: example
-use std::str::FromStr;
+use std::str::FromStr as _;
 
 use num_bigint::BigInt;
-use num_traits::One;
+use num_traits::One as _;
 
 /// Demonstrates the usage of `BigInt` for large integer arithmetic.
 fn main() {

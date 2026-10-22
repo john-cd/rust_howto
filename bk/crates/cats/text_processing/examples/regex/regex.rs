@@ -3,7 +3,6 @@
 // ANCHOR: example
 use std::collections::BTreeMap;
 
-use once_cell::sync::Lazy;
 use regex::Regex;
 
 /// Store a regular expression and the names of its capture groups.
@@ -11,7 +10,7 @@ struct Re(Regex, Vec<&'static str>);
 
 /// Regexes take a while to compile.
 /// It is reasonable to store them in a global static.
-static GLOBAL_REGEX: Lazy<BTreeMap<&str, Re>> = Lazy::new(|| {
+static GLOBAL_REGEX: std::sync::LazyLock<BTreeMap<&str, Re>> = std::sync::LazyLock::new(|| {
     println!("Initializing Regexes...\n");
     // A sorted map:
     let mut m = BTreeMap::new();
@@ -30,7 +29,7 @@ static GLOBAL_REGEX: Lazy<BTreeMap<&str, Re>> = Lazy::new(|| {
     // A Markdown autolink.
     m.insert(
         "<http...>",
-        Re(Regex::new(r"<(?<link>http.*?)>").unwrap(), vec!["link"]),
+        Re(Regex::new("<(?<link>http.*?)>").unwrap(), vec!["link"]),
     );
     // A Markdown shortcut link.
     // [text] not preceded by ! or ], not followed by <optional spaces>[ or ( or
@@ -88,7 +87,7 @@ fn search_with_all_regexes(contents: &str) {
         for caps in re.0.captures_iter(contents) {
             // Print the whole match.
             print!("{} -> ", &caps[0]);
-            for group in re.1.iter() {
+            for group in &re.1 {
                 print!(
                     "{group}={}; ",
                     // Retrieve each named capture group in turn...

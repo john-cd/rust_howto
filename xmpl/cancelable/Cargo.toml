@@ -21,3 +21,6 @@ crossbeam = "0.8.5"
 crossbeam-channel = "0.5.17"
 tracing = "0.1.44"
 tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
+
+[lints]
+workspace = true

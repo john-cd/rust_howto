@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
-//! A simple PolkaVM host example.
+//! A simple `PolkaVM` host example.
 //!
 //! This example loads a compiled `.polkavm` guest blob from the command line,
 //! registers a typed host callback, instantiates the guest module, and invokes
@@ -44,12 +44,9 @@ fn main() -> ExampleResult<()> {
 }
 
 fn run_guest(guest_path: Option<PathBuf>) -> ExampleResult<()> {
-    let guest_path = match guest_path {
-        Some(path) => path,
-        None => {
-            print_usage();
-            return Ok(());
-        }
+    let guest_path = if let Some(path) = guest_path { path } else {
+        print_usage();
+        return Ok(());
     };
 
     let raw_blob = fs::read(&guest_path)?;
@@ -86,7 +83,7 @@ fn run_guest(guest_path: Option<PathBuf>) -> ExampleResult<()> {
         if module.is_64_bit() { 64 } else { 32 },
         export_names.len()
     );
-    println!("Exports: {:?}", export_names);
+    println!("Exports: {export_names:?}");
 
     const EXPECTED_EXPORT: &str = "add_one_with_host";
     if !export_names.iter().any(|name| name == EXPECTED_EXPORT) {

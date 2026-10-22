@@ -47,7 +47,7 @@ fn main() {
         // - Read operations (such as get) reflect the results of the
         //   most-recent write.
         s.spawn(|| {
-            for (key, value) in map.pin().iter() {
+            for (key, value) in &map.pin() {
                 println!("{key}: {value}");
             }
         });

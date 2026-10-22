@@ -24,3 +24,6 @@ av-scenechange = { version = "0.23.0", default-features = false }
 name = "video"
 path = "examples/video/main.rs"
 test = true
+
+[lints]
+workspace = true

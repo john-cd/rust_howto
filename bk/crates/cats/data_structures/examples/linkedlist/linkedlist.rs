@@ -48,7 +48,7 @@ fn main() {
 
     // Iterate and modify elements (requires mutable iterator):
     println!("\nIterating and modifying:");
-    for element in list.iter_mut() {
+    for element in &mut list {
         *element *= 2; // Double each element.
     }
 

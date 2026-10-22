@@ -8,7 +8,7 @@
 // Rust. If you wish to use Cassandra without dealing with protocol-level
 // details, consider a higher-level crate such as `cdrs_tokio`.
 
-use std::convert::TryInto;
+use std::convert::TryInto as _;
 
 use cassandra_protocol::compression::Compression;
 use cassandra_protocol::consistency::Consistency;
@@ -18,9 +18,9 @@ use cassandra_protocol::frame::Envelope;
 use cassandra_protocol::frame::Flags;
 use cassandra_protocol::frame::Version;
 use cassandra_protocol::frame::message_response::ResponseBody;
-use cassandra_protocol::types::ByName;
-use tokio::io::AsyncReadExt;
-use tokio::io::AsyncWriteExt;
+use cassandra_protocol::types::ByName as _;
+use tokio::io::AsyncReadExt as _;
+use tokio::io::AsyncWriteExt as _;
 use tokio::net::TcpStream;
 
 #[allow(
@@ -66,7 +66,7 @@ async fn main() -> Result<()> {
     println!("Received OPTIONS response");
 
     // 3. QUERY
-    let query = "SELECT key, bootstrapped FROM system.local".to_string();
+    let query = "SELECT key, bootstrapped FROM system.local".to_owned();
     let query_request = Envelope::new_req_query(
         query,
         Consistency::One,
@@ -93,14 +93,14 @@ async fn main() -> Result<()> {
             for row in rows {
                 let key: Option<String> = row.by_name("key")?;
                 let bootstrapped: Option<bool> = row.by_name("bootstrapped")?;
-                println!("Row: key={:?}, bootstrapped={:?}", key, bootstrapped);
+                println!("Row: key={key:?}, bootstrapped={bootstrapped:?}");
             }
         }
         ResponseBody::Error(error_body) => {
-            println!("Received query error: {:?}", error_body);
+            println!("Received query error: {error_body:?}");
         }
         other => {
-            println!("Unexpected response body: {:?}", other);
+            println!("Unexpected response body: {other:?}");
         }
     }
 

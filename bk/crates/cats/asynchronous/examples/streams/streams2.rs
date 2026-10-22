@@ -12,7 +12,7 @@
 
 use std::fs;
 
-use futures::StreamExt;
+use futures::StreamExt as _;
 use tokio::fs::File;
 use tokio::io;
 

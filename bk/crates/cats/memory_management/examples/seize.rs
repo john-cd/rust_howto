@@ -25,7 +25,7 @@ use std::sync::atomic::AtomicPtr;
 use std::sync::atomic::Ordering;
 
 use seize::Collector;
-use seize::Guard;
+use seize::Guard as _;
 
 fn main() {
     // A `Collector` manages the access and retirement of concurrent objects.

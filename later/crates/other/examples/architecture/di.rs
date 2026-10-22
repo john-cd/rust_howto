@@ -16,7 +16,7 @@
 use std::sync::Arc;
 
 use shaku::Component;
-use shaku::HasComponent;
+use shaku::HasComponent as _;
 use shaku::Interface;
 use shaku::module;
 
@@ -91,7 +91,7 @@ fn main() {
     let module = MyModule::builder()
         .with_component_parameters::<EnglishConversation>(
             EnglishConversationParameters {
-                person: "John".to_string(),
+                person: "John".to_owned(),
             },
         )
         .build();

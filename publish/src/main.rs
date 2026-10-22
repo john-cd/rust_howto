@@ -1,4 +1,5 @@
 // TODO Reviewed ??-??-2026
+//! A placeholder crate published to make `rust_howto` searchable on crates.io.
 use std::error::Error;
 
 use cargo_toml::Manifest;

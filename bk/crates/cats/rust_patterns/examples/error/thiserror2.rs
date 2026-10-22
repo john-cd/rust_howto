@@ -40,14 +40,14 @@ impl std::fmt::Display for MyError {
 fn example() -> Result<(), Box<dyn std::error::Error>> {
     let io_error = std::io::Error::other("oh no!");
     Err(Box::new(MyError {
-        msg: "Error message".to_string(),
+        msg: "Error message".to_owned(),
         source: io_error,
     }))
 }
 
 fn main() {
     match example() {
-        Ok(_) => {
+        Ok(()) => {
             println!("Got OK");
         }
         Err(err) => {

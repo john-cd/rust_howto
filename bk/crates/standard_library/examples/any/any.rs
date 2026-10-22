@@ -39,7 +39,7 @@ fn print_if_string(value: Box<dyn Any>) {
 
 fn main() {
     assert!(!is_string(&42));
-    let s = "a string".to_string();
+    let s = "a string".to_owned();
     assert!(is_string(&s));
 
     print_if_string(Box::new(s));

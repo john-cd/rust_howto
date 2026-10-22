@@ -2,7 +2,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
 use futures::{
-    future::FutureExt, // Provides the `.fuse()` method for futures.
+    future::FutureExt as _, // Provides the `.fuse()` method for futures.
     pin_mut,
     select,
 };

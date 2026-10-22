@@ -60,3 +60,6 @@ test = true
 name = "slab"
 path = "examples/slab.rs"
 test = true
+
+[lints]
+workspace = true

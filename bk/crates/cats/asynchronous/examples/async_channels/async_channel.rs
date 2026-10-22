@@ -5,7 +5,7 @@ use async_channel::Receiver;
 use async_channel::Sender;
 use async_channel::TryRecvError;
 use async_channel::bounded;
-use rand::RngExt;
+use rand::RngExt as _;
 use tokio::task;
 use tokio::time;
 use tokio::time::Duration;

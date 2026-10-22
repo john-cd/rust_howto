@@ -27,3 +27,6 @@ clap_builder = "4.6.7"
 tool_lib = { path = "../tool_lib" }
 tracing = "0.1.44"
 tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
+
+[lints]
+workspace = true

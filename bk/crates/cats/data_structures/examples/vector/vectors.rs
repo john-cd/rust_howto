@@ -89,7 +89,7 @@ fn demonstrate_iteration() {
 
     // Filter elements (keep only even numbers):
     let even_numbers: Vec<i32> =
-        numbers.iter().filter(|&x| x % 2 == 0).cloned().collect();
+        numbers.iter().filter(|&x| x % 2 == 0).copied().collect();
     println!("Even numbers: {even_numbers:?}");
 
     // Map elements (square each number).
@@ -134,7 +134,7 @@ fn demonstrate_slices() {
     println!("Slice: {slice:?}");
 
     // Slice over the entire array:
-    let _whole_cake: &[_] = &numbers[..];
+    let _whole_cake: &[_] = &numbers;
 
     // In Rust, it's common to use slices, rather than vectors, as
     // arguments, when we just want to provide read access:
@@ -146,7 +146,7 @@ fn demonstrate_slices() {
 
     // Iterate over a slice:
     println!("Iterate over a slice:");
-    for num in slice.iter() {
+    for num in slice {
         println!("{num}");
     }
 

@@ -8,8 +8,12 @@ pub fn detect_github_url(url: &str) -> (bool, &str, &str) {
     if let Some(caps) = re2.captures(url) {
         return (
             true,
-            caps.name("username").unwrap().as_str(),
-            caps.name("repo").unwrap().as_str(),
+            caps.name("username")
+                .expect("regex defines a username group")
+                .as_str(),
+            caps.name("repo")
+                .expect("regex defines a repo group")
+                .as_str(),
         );
     }
     (false, "", "")

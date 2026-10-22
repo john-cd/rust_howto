@@ -37,7 +37,7 @@ fn main() {
             // Send a value into the channel, returning an error if all
             // receivers have been dropped or the timeout has expired.
             match tx2.send_timeout(i + 10, Duration::from_millis(5)) {
-                Ok(_) => println!("Produced: {}", i + 10),
+                Ok(()) => println!("Produced: {}", i + 10),
                 Err(e) => eprintln!("{e}"),
             }
         }
@@ -51,7 +51,7 @@ fn main() {
             match rx2.recv_timeout(Duration::from_millis(10)) {
                 Ok(value) => println!("Consumed: {value}"),
                 e @ Err(RecvTimeoutError::Timeout) => {
-                    eprintln!("The timeout has expired: {e:?}.")
+                    eprintln!("The timeout has expired: {e:?}.");
                 }
                 Err(RecvTimeoutError::Disconnected) => {
                     eprintln!(
@@ -66,7 +66,7 @@ fn main() {
 
     // Wait for producer thread to finish:
     match producer_handle.join() {
-        Ok(_) => println!("Producer thread finished."),
+        Ok(()) => println!("Producer thread finished."),
         Err(e) => eprintln!("Producer thread error: {e:?}"),
     }
     // Drop the original sender as well to signal to the consumer
@@ -76,7 +76,7 @@ fn main() {
     assert!(rx.is_disconnected());
 
     match consumer_handle.join() {
-        Ok(_) => println!("Consumer thread finished."),
+        Ok(()) => println!("Consumer thread finished."),
         Err(e) => eprintln!("Consumer thread error: {e:?}"),
     }
 
@@ -112,6 +112,6 @@ mod tests {
 
     #[test]
     fn test_main() {
-        main()
+        main();
     }
 }

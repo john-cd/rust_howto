@@ -1,5 +1,5 @@
 // TODO Reviewed ??-??-2026
-#![allow(dead_code)]
+#![expect(dead_code, reason = "scratch example with unused items")]
 
 mod a {
     pub struct A;
@@ -13,7 +13,7 @@ mod c {
 
     pub fn do_something_else() {
         //
-        let _a = a::A;
+        let _ = a::A;
         println!("Do something else.");
     }
 }

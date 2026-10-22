@@ -2,8 +2,8 @@
 #![allow(dead_code)]
 // ANCHOR: example
 // This example demonstrates DER encoding and decoding with the `der` crate.
-use der::Decode;
-use der::Encode;
+use der::Decode as _;
+use der::Encode as _;
 use der::Sequence;
 
 // This example demonstrates how to encode a struct to DER format, and decode it
@@ -21,7 +21,7 @@ fn main() {
     // Create an instance of `MyStruct`:
     let my_struct = MyStruct {
         field1: 42,
-        field2: "Hello, DER!".to_string(),
+        field2: "Hello, DER!".to_owned(),
     };
 
     // Encode the struct to DER:

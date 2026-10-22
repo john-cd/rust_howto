@@ -1,7 +1,7 @@
 // TODO Reviewed ??-??-2026
 use std::fs;
 use std::fs::File;
-use std::io::Write;
+use std::io::Write as _;
 use std::path::Path;
 use std::path::PathBuf;
 

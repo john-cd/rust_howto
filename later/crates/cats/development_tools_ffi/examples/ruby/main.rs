@@ -30,7 +30,7 @@ fn main() {
         match command {
             #[cfg(not(windows))]
             Commands::Magnus => {
-                magnus::run();
+                magnus::run().expect("the Ruby example should run");
             }
             #[cfg(not(windows))]
             Commands::Rutie => {

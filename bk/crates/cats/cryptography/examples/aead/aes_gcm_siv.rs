@@ -6,8 +6,8 @@
 use aes_gcm_siv::Aes256GcmSiv;
 use aes_gcm_siv::Key;
 use aes_gcm_siv::Nonce;
-use aes_gcm_siv::aead::Aead;
-use aes_gcm_siv::aead::KeyInit;
+use aes_gcm_siv::aead::Aead as _;
+use aes_gcm_siv::aead::KeyInit as _;
 use aes_gcm_siv::aead::OsRng;
 use aes_gcm_siv::aead::Payload;
 

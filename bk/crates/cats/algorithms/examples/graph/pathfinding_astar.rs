@@ -12,13 +12,13 @@ fn main() {
     struct Pos(i32, i32);
 
     impl Pos {
-        fn distance(&self, other: &Pos) -> u32 {
+        fn distance(&self, other: &Self) -> u32 {
             self.0.abs_diff(other.0) + self.1.abs_diff(other.1)
         }
 
-        fn successors(&self) -> Vec<(Pos, u32)> {
-            let &Pos(x, y) = self;
-            vec![Pos(x + 1, y), Pos(x - 1, y), Pos(x, y + 1), Pos(x, y - 1)]
+        fn successors(&self) -> Vec<(Self, u32)> {
+            let &Self(x, y) = self;
+            vec![Self(x + 1, y), Self(x - 1, y), Self(x, y + 1), Self(x, y - 1)]
                 .into_iter()
                 .filter(|p| p.0 >= 0 && p.0 <= 4 && p.1 >= 0 && p.1 <= 4)
                 .filter(|p| ![(1, 1), (1, 2), (2, 1)].contains(&(p.0, p.1)))
@@ -32,13 +32,13 @@ fn main() {
 
     let result = astar(
         &start,
-        |p| p.successors(),
+        Pos::successors,
         |p| p.distance(&goal),
         |p| p == &goal,
     );
 
     if let Some((path, cost)) = result {
-        println!("Found path with cost {}: {:?}", cost, path);
+        println!("Found path with cost {cost}: {path:?}");
         assert_eq!(cost, 8);
         assert_eq!(path.last(), Some(&goal));
     } else {

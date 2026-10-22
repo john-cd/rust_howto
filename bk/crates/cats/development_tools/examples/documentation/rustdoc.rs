@@ -11,7 +11,7 @@ fn documented_function() {
 
 // Alternatively, we may use an external file.
 // This is useful for including large amounts of documentation.
-#[doc = include_str!("../../../../README.md")]
+#[cfg_attr(doc, doc = include_str!("../../../../README.md"))]
 fn function_including_external_file_as_documentation() {}
 
 fn main() {

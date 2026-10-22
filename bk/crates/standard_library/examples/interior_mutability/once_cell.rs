@@ -16,7 +16,7 @@ fn main() {
     // Initialize the cell
     let value = cell.get_or_init(|| {
         println!("Initializing...");
-        "Hello, World!".to_string()
+        "Hello, World!".to_owned()
     });
 
     assert_eq!(value, "Hello, World!");
@@ -25,13 +25,13 @@ fn main() {
     // but return the already initialized value.
     let same_value = cell.get_or_init(|| {
         println!("This will not be printed");
-        "Goodbye!".to_string()
+        "Goodbye!".to_owned()
     });
 
     assert_eq!(same_value, "Hello, World!");
 
     // You can also use `set`, which returns an error if already initialized
-    let result = cell.set("New Value".to_string());
+    let result = cell.set("New Value".to_owned());
     assert!(result.is_err());
 
     // `get` returns an Option with a reference to the value

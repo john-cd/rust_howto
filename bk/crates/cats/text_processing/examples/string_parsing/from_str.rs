@@ -22,16 +22,16 @@ impl FromStr for Rgb {
         let g: u8 = u8::from_str_radix(&hex_code[3..5], 16)?;
         let b: u8 = u8::from_str_radix(&hex_code[5..7], 16)?;
 
-        Ok(Rgb { r, g, b })
+        Ok(Self { r, g, b })
     }
 }
 
 fn main() {
-    let code: &str = r"#fa7268";
+    let code: &str = "#fa7268";
     match Rgb::from_str(code) {
         Ok(rgb) => {
             println!(
-                r"The RGB color code is: R: {} G: {} B: {}",
+                "The RGB color code is: R: {} G: {} B: {}",
                 rgb.r, rgb.g, rgb.b
             );
         }
@@ -42,7 +42,7 @@ fn main() {
 
     // Test whether `from_str` performs as expected.
     assert_eq!(
-        Rgb::from_str(r"#fa7268").unwrap(),
+        Rgb::from_str("#fa7268").unwrap(),
         Rgb {
             r: 250,
             g: 114,

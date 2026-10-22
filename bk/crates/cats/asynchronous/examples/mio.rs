@@ -28,9 +28,9 @@ fn main() -> std::io::Result<()> {
     poll.poll(&mut events, Some(Duration::from_millis(100)))?;
 
     // Inspect each event, looking for the wake token.
-    for event in events.iter() {
+    for event in &events {
         if event.token() == WAKE_TOKEN {
-            println!("Received wake event: {:?}", event);
+            println!("Received wake event: {event:?}");
         }
     }
 

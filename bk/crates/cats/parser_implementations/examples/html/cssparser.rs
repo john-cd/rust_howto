@@ -6,7 +6,7 @@
 
 use cssparser::Parser;
 use cssparser::ParserInput;
-use cssparser::ToCss;
+use cssparser::ToCss as _;
 use cssparser::Token;
 
 fn main() {
@@ -20,7 +20,7 @@ fn main() {
             Token::Colon => println!("colon"),
             Token::Semicolon => println!("semicolon"),
             Token::Dimension { value, unit, .. } => {
-                println!("dimension: {value}{unit}")
+                println!("dimension: {value}{unit}");
             }
             other => println!("token: {}", other.to_css_string()),
         }
