@@ -53,4 +53,28 @@ mod tests {
         let result = create_category_badge("", "").unwrap();
         assert_eq!(result, "[![cat~][cat~~badge]][cat~]{{hi:}} ");
     }
+
+    #[test]
+    fn test_create_category_badge_whitespace_only() {
+        let result = create_category_badge("   \t", " \n ").unwrap();
+        assert_eq!(result, "[![cat~][cat~~badge]][cat~]{{hi:}} ");
+    }
+
+    #[test]
+    fn test_create_category_badge_special_chars_and_unicode() {
+        let result = create_category_badge("Asynchronous / I/O & Networking 🎉", "async-io").unwrap();
+        assert_eq!(
+            result,
+            "[![cat~async-io][cat~async-io~badge]][cat~async-io]{{hi:Asynchronous / I/O &amp; Networking 🎉}} "
+        );
+    }
+
+    #[test]
+    fn test_create_category_badge_hyphens_and_underscores() {
+        let result = create_category_badge("Data Structures", "data_structures-v2").unwrap();
+        assert_eq!(
+            result,
+            "[![cat~data_structures-v2][cat~data_structures-v2~badge]][cat~data_structures-v2]{{hi:Data Structures}} "
+        );
+    }
 }
